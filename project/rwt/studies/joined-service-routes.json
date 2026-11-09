@@ -1,0 +1,490 @@
+{
+  "id": "RWT-06-RAISED-ROOF-COURT-SERVICE",
+  "source": {
+    "path": "project/had/studies/court-intake-selection.json",
+    "blob": "80a8481b4e5a508164eff51b596e5a954c152a30"
+  },
+  "roof": {
+    "reach": {
+      "gutter": [
+        4350,
+        4700
+      ],
+      "inletAxis": [
+        4510,
+        4670
+      ],
+      "shoeRange": [
+        6595,
+        6705
+      ],
+      "returnLeg": 240,
+      "formerNominalGap": 10.419741698017788,
+      "formerAdverse": -7.6711987192529705,
+      "shortenedAdverse": 12.32880128074703,
+      "minimumPoleEffective": [
+        5795,
+        6610
+      ],
+      "poleClearOfGutter": 85
+    },
+    "tributary": {
+      "sky": 2.95,
+      "run": 2.4,
+      "perMetre": 0.144,
+      "face": 0.4248,
+      "valley": 0.34559999999999996,
+      "oneCorner": 0.7704,
+      "roofDuty": 3.0816,
+      "directCourt": 0.52215,
+      "combined": 3.60375
+    },
+    "straight": {
+      "oldPark": [
+        4490,
+        4670
+      ],
+      "dry": [
+        4565,
+        4745
+      ],
+      "endDry": [
+        4565,
+        4675
+      ],
+      "endWet": [
+        4475,
+        4585
+      ],
+      "stroke": 90,
+      "wetEndPickup": [
+        50,
+        40
+      ],
+      "frontReserve": 25,
+      "sideHeight": 175,
+      "crest": 6985,
+      "secondaryToCrest": 122.32880128074703,
+      "bootIntervalFromSeam": [
+        140,
+        250
+      ],
+      "bootZ": 6640,
+      "bootClearSide": 107,
+      "transverseRemaining": 237,
+      "freeThrow": 393.23628457990003,
+      "unhoodedLanding": 321.42857142857144,
+      "parkedApronGap": 25,
+      "minBedDischargeGapAfterTwo5": 23.25,
+      "lowerAreaTwoEdgesM2": 0.0049755,
+      "lowerExitBelowSpill": 35,
+      "rows": [
+        {
+          "q": 3.60375,
+          "rimHead": 115.87972728080464,
+          "rimReserve": 29.120272719195356,
+          "lowerEscapeK4": 106.95395232805251,
+          "floodedBootControlReserve": 173.0460476719475
+        },
+        {
+          "q": 4.43895,
+          "rimHead": 133.15511774383194,
+          "rimReserve": 11.844882256168063,
+          "lowerEscapeK4": 162.27366073043572,
+          "floodedBootControlReserve": 117.72633926956428
+        }
+      ],
+      "bays": [
+        {
+          "bay": 1,
+          "p": [
+            4821.428571428572,
+            5292.857142857143
+          ],
+          "direct": 0.0678857142857143,
+          "upstream": 0.10182857142857138,
+          "upstreamScupperP": [
+            5327.857142857143,
+            5427.857142857143
+          ],
+          "pickupWater": 6631.455461365137,
+          "boots": [
+            [
+              4571.428571428572,
+              4681.428571428572
+            ],
+            [
+              5432.857142857143,
+              5542.857142857143
+            ]
+          ],
+          "turningDripReserve": 26.42857142857156
+        },
+        {
+          "bay": 2,
+          "p": [
+            5292.857142857143,
+            5764.285714285715
+          ],
+          "direct": 0.0678857142857143,
+          "upstream": 0.03394285714285709,
+          "upstreamScupperP": [
+            5799.285714285715,
+            5899.285714285715
+          ],
+          "pickupWater": 6625.507211410514,
+          "boots": [
+            [
+              5042.857142857143,
+              5152.857142857143
+            ],
+            [
+              5904.285714285715,
+              6014.285714285715
+            ]
+          ],
+          "turningDripReserve": 497.8571428571431
+        },
+        {
+          "bay": 3,
+          "p": [
+            5764.285714285714,
+            6235.714285714285
+          ],
+          "direct": 0.0678857142857143,
+          "upstream": 0,
+          "upstreamScupperP": null,
+          "pickupWater": null,
+          "boots": [
+            [
+              5514.285714285714,
+              5624.285714285714
+            ],
+            [
+              6375.714285714285,
+              6485.714285714285
+            ]
+          ],
+          "turningDripReserve": 969.2857142857138
+        },
+        {
+          "bay": 4,
+          "p": [
+            6235.714285714286,
+            6707.142857142858
+          ],
+          "direct": 0.0678857142857143,
+          "upstream": 0.03394285714285721,
+          "upstreamScupperP": [
+            6100.714285714286,
+            6200.714285714286
+          ],
+          "pickupWater": 6625.507211410514,
+          "boots": [
+            [
+              5985.714285714286,
+              6095.714285714286
+            ],
+            [
+              6847.142857142858,
+              6957.142857142858
+            ]
+          ],
+          "turningDripReserve": 497.8571428571422
+        },
+        {
+          "bay": 5,
+          "p": [
+            6707.142857142857,
+            7178.571428571428
+          ],
+          "direct": 0.0678857142857143,
+          "upstream": 0.10182857142857138,
+          "upstreamScupperP": [
+            6572.142857142857,
+            6672.142857142857
+          ],
+          "pickupWater": 6631.455461365137,
+          "boots": [
+            [
+              6457.142857142857,
+              6567.142857142857
+            ],
+            [
+              7318.571428571428,
+              7428.571428571428
+            ]
+          ],
+          "turningDripReserve": 26.42857142857156
+        }
+      ],
+      "wallRelief": {
+        "scope": "Two end scuppers on the south face, with native vented relief to the opposite leader.",
+        "sill": 6610,
+        "ceiling": 6665,
+        "upstreamReserve": 3.7522750842090318
+      }
+    },
+    "major": {
+      "equipmentFootprint": {
+        "x": [
+          -1900,
+          13900
+        ],
+        "y": [
+          -3995,
+          15195
+        ],
+        "sizeMm": [
+          15800,
+          19190
+        ],
+        "rectangleAreaM2": 303.202,
+        "setbacksFromWallLineMm": {
+          "west": 1900,
+          "east": 1900,
+          "front": 3995,
+          "garden": 3195
+        }
+      },
+      "separateRoofFlow": 16.62276,
+      "corners": [
+        3156.554565352082,
+        1897.4907424495705
+      ],
+      "cornerAfter250": 147.49074244957046,
+      "unsupportedReach": 840.5950273467004
+    }
+  },
+  "ground": {
+    "sourceStage": -35,
+    "asBuiltStage": -40,
+    "aisle": 700,
+    "oldChamber": [
+      5450,
+      6650,
+      450,
+      450
+    ],
+    "concentrated": {
+      "spout": [
+        6750,
+        7000
+      ],
+      "localLength": 180,
+      "approach": 200,
+      "nominal": 1.2692913582591203,
+      "uniformHigh": 1.0089843096244167,
+      "localError": 0.9694847363987862,
+      "fromToe": 1.0252237266127755,
+      "allEdgeQuarter": 190.875,
+      "isolatedClear": 59.125,
+      "localWithAllEdgeBlock": 0.25808870608528056
+    },
+    "broad": {
+      "asBuilt": [
+        6630,
+        7393.5
+      ],
+      "capacity": 3.629998889079672,
+      "headReserve": 0.15930116909726166,
+      "withAdditionalQuarterMm": 3.58883552954387,
+      "withOneMm": 3.466357060930445,
+      "onePercentMeterSetpoint": 3.640151515151515,
+      "derivative": 0.1649888910243602
+    },
+    "underApron": {
+      "nozzle": [
+        6135,
+        6890,
+        7080,
+        -160
+      ],
+      "upper": -100,
+      "gauge": 1.5,
+      "westEdge": 5900,
+      "fixed": 6080,
+      "retracted": 6070,
+      "stroke": 65,
+      "bodyInitial": 6100,
+      "afterTwo5GapWhenParked": 10,
+      "nominalSurfaceToRoof": 15.299999999999997,
+      "pairedSurfaceToRoof": 5.299999999999997,
+      "pairedUndersideToPan": 16.727499999999992,
+      "toSeamBridge": 20,
+      "toGuardFootY": 135,
+      "channelCases": [
+        {
+          "load": 0.7704,
+          "clear": 140.25,
+          "depth": 14.54295299215713,
+          "loss": 24.65178691471082,
+          "freeboard": 35.457047007842874,
+          "reserveFromOldSill": 153.5337835970535
+        },
+        {
+          "load": 3.60375,
+          "clear": 140.25,
+          "depth": 40.67661964551883,
+          "loss": 64.72806752413524,
+          "freeboard": 9.323380354481174,
+          "reserveFromOldSill": 74.25700300758652
+        }
+      ],
+      "firstRelease": "Drain and isolate the feed. Withdraw the free nose west through its wet sleeve before the selected 50 mm east pan motion. Requires an opening in its west return and independent traffic support."
+    },
+    "failedBasket": {
+      "firstSideOvertopping": -180.1775,
+      "belowQuiet": 145.1775,
+      "basketTop": -110,
+      "normalBedAtEastSouth": -188.5,
+      "northCases": [
+        {
+          "rough": 0.02,
+          "fraction": 1,
+          "depth": 32.8421825883965,
+          "velocityHead": 9.818977568807876,
+          "nTail": -155.6578174116035,
+          "minClearToCover": 35.1578174116035,
+          "sourceAboveNearestN": -24.519682588396506,
+          "sourceAboveTrunkNorth": 0.7303174116034938
+        },
+        {
+          "rough": 0.02,
+          "fraction": 0.75,
+          "depth": 41.11941273008221,
+          "velocityHead": 11.13560857602562,
+          "nTail": -147.38058726991778,
+          "minClearToCover": 26.88058726991779,
+          "sourceAboveNearestN": -32.79691273008223,
+          "sourceAboveTrunkNorth": -7.5469127300822265
+        },
+        {
+          "rough": 0.03,
+          "fraction": 1,
+          "depth": 42.93968667208793,
+          "velocityHead": 5.743975095140329,
+          "nTail": -145.56031332791207,
+          "minClearToCover": 25.06031332791207,
+          "sourceAboveNearestN": -34.61718667208794,
+          "sourceAboveTrunkNorth": -9.36718667208794
+        },
+        {
+          "rough": 0.03,
+          "fraction": 0.75,
+          "depth": 54.46141688835099,
+          "velocityHead": 6.347897298809779,
+          "nTail": -134.03858311164902,
+          "minClearToCover": 13.538583111649011,
+          "sourceAboveNearestN": -46.13891688835099,
+          "sourceAboveTrunkNorth": -20.88891688835099
+        }
+      ],
+      "cornerOnlyCleanTail": -176.19168840541636,
+      "scope": "A low open delivery can spill before the upstream break registers a blocked basket. The adjacent full-height N liner has no below-return opening. A new local gravity leg must also defeat its actual tail."
+    },
+    "highReturn": {
+      "spillX": [
+        6200,
+        7100
+      ],
+      "spillY": [
+        7360,
+        7425
+      ],
+      "crest": -80,
+      "returnTop": -15,
+      "spillClear": 663,
+      "yCritical": 14.441237669551377,
+      "head": 28.882475339102754,
+      "pairedFreeboard": 11.117524660897246,
+      "nominalLandingAboveGrate": 17,
+      "receiverAtZ": -97,
+      "gratingCases": [
+        {
+          "run": 25,
+          "remainingOpenAreaM2": 0.0074551466291242156,
+          "orificeHead": 33.0822795880388
+        },
+        {
+          "run": 150,
+          "remainingOpenAreaM2": 0.04473087977474529,
+          "orificeHead": 0.918952210778856
+        },
+        {
+          "run": 250,
+          "remainingOpenAreaM2": 0.07455146629124217,
+          "orificeHead": 0.3308227958803878
+        }
+      ],
+      "receiverPocket": [
+        6200,
+        7400,
+        900,
+        150
+      ],
+      "pairedMinimumSillToHighestGrate": 6,
+      "minimumTopRiseOverFifthSide": 165.1775,
+      "returnClosureHeadKPa": 2.405191275,
+      "terraceWaterKgPer305x550": 41.128525625,
+      "panelDrawNorth": 55,
+      "parkedY": [
+        7415,
+        7480
+      ],
+      "parkedPastWellAfterTwo5": 5,
+      "ordered": "Maintain a lined connection from backed basket to every retained wet side and saddle up to the new top. Fit the three emergency sill sections before testing. Once E is isolated and a weather enclosure and N are proved, positively capture and park or remove all three before any linked cassette lifts. Before N work remove and blank their N projection while E and the direct nozzle still operate."
+    },
+    "normal": {
+      "inletRegions": [
+        [
+          4250,
+          7300,
+          1000,
+          395
+        ],
+        [
+          5250,
+          7400,
+          1950,
+          350
+        ]
+      ],
+      "perforationFraction": 0.44178646691106466,
+      "trunk": 250,
+      "nominalClean40": 4.859900499993678
+    },
+    "directHigh": {
+      "nominalPipeOD": 108,
+      "maximumOD": 108.27,
+      "axisInclinationDeg": 1.9091524329963763,
+      "protectedAperture": 160,
+      "pairedLateralReserve": 13.168266682861713,
+      "priorN": [
+        7450,
+        7000
+      ],
+      "spoutToOriginalNozzleVertical": 200.1775,
+      "nozzleSpoutPlanOverlap": 4
+    },
+    "northSourceLimits": [
+      "Actual125ID court takeoff, two plan turns, entry slot distribution and terminal impact are not uniform-flow sections.",
+      "The temporarychase blockage cases have no earned passive path; E assembled is NOT backup by association. No forecast, prompt crew response or timely repair substitutes for the missing route.",
+      "At n.025 and25%effective width lost, the90mm trial FAILS; do not delete this adverse case or assume a clean temporary drain.",
+      "Retain actual roofs/closed laps, guard access, fixed supports and short/long phased erection. Canopy geometry alone does not complete high-eave cleaning or receiver renewal.",
+      "The outer roof source domain144.15m2 is not assigned inward47.8125 plus court12.25=60.0625m2; neither source is silently expanded by this proposal."
+    ]
+  },
+  "disposition": {
+    "ordinary": "Develop the shortened return shoe, four available ground stations and deck corner access.",
+    "cassette": "Develop a guarded transfer with two contained boots. Other longitudinal water must have its own tested live route before opening.",
+    "major": "Retain the separately erected high over-roof and guided ridge repair as a conditional site proposition.",
+    "groundNorth": "Test the whole N entry, baffle and trunk with E unavailable. Keep the short-before-long source sequence and independent high-chase backup.",
+    "groundEast": "Develop continuous high containment and an above-grate emergency spill before relying on concentrated E delivery. Prove both independent receiving states.",
+    "firstWater": "Test the actual shoe, weep, portal collar, saddle and south pan-end backing against the imposed water stage.",
+    "complete": false,
+    "qualifiedFirstHarm": null,
+    "siteAccepted": false,
+    "physicalEventPerformed": false
+  }
+}
