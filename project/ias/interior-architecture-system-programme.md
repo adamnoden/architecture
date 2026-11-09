@@ -6,6 +6,8 @@
 
 **Programme map:** [`../book-resolution-programme.md`](../book-resolution-programme.md)
 
+**Current selected family.** [Interior selection, six exit decisions and disassembly set](ias-03-selection-closeout.md). IAS-03 completes at pre-site design scope. The shared house gate retains adoption, and the broader programme stays open.
+
 ## Question and scope
 
 What bounded interior assembly family best realises the Reference House proposition that faster-changing domestic layers should attach, carry services, be maintained and be replaced without routinely consuming slower permanent fabric?
@@ -73,9 +75,7 @@ performance questions forward.
 - [Selected dry family, dimensions and disassembly](../../docs/reference-house/interior-family-selection.md).
 - [Dimensioned dry interface sheet](studies/selected-dry-interfaces.svg).
 
-IAS-03 has a bounded dry-family result but remains incomplete. Wet depth, actual
-service-front section/task, small-en-suite fit and wet-component failure records
-remain explicit adoption obligations; TRIAD-GATE cannot pass on the partial set.
+This dry-family checkpoint preceded the [joined six-exit selection](ias-03-selection-closeout.md). The dated studies below retain their original evidence and limits.
 
 ## Parallel interfaces
 

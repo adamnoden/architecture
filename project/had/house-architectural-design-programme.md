@@ -129,6 +129,8 @@ This was a **physical spatial disposition**, not a hydraulic RWT-06 closeout. HA
 
 ### Select the inhabited service system
 
+The [occupied-house service option and cylinder exchange](inhabited-services-selection.md) reproduces the furnished local-extract option and its remaining first-release and fault-control duties.
+
 HAD-SERVICES-ADOPTION consumes the [ten-family materials offer](../mat/whole-service-material-offer.md), the actual Services projection from the selected house and the reconciled openings/structure. HAD, MAT and IAS own one lasting decision. Develop the six local room extracts, independent cooker/tempered outdoor air, separated primary and wide mineral cylinder, or demonstrate that the balanced plant and its different house fit deserve selection. If both fail, define the different occupied service territory and register that explicit house redesign.
 
 1. Publish **one** current Services architecture with the local fan/room schedule, heating and DHW duties, connection to the site, thirteen independent room or circulation budgets plus kitchen, defrost and cold/fault operation. Reproduce the selected HAD default with that exported source. Retain both the acquired six-station house and the optional rear-room change as separately costed configurations.

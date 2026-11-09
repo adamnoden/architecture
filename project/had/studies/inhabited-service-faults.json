@@ -1,0 +1,57 @@
+{
+  "reproduced": "Independent in-memory replay, 2026-11-09. Tight comparison against the local 96-case result, no whole-house implementation approval.",
+  "air": {
+    "masks": 32,
+    "cases": 96,
+    "hoodLps": [
+      69.44528912329952,
+      85.08906236773146
+    ],
+    "directLps": [
+      78,
+      100.4312814701425
+    ],
+    "hotPa": [
+      -4.000000000076426,
+      -3.5889498283993273
+    ],
+    "idlePa": [
+      -4.044475689786501,
+      -2.7717014903767527
+    ],
+    "seatedPa": [
+      -3.504429676760639,
+      -2.321811377677422
+    ],
+    "maxInlets": [
+      10.628309126968816,
+      10.628309126968816,
+      21.17850387649014,
+      21.17850387649014,
+      10.693186996559234,
+      10.693186996559234
+    ],
+    "oldFaultKitchenPa": -348.8521815615305,
+    "failedSupplyKitchenPa": -42.15908677175387,
+    "failedSupplyHallPa": -26.982607937017654,
+    "failedSupplyDoorN": 14.080398733722262,
+    "failedHoodDoorN": 7.900405831152213,
+    "acceptedOpenAreaProxy": 35000,
+    "requiredLoadedClosureS": 4.75,
+    "warning": "The nominal 4.75 s contract does not prove the maximum differential, a classified door or an approved grease-rated assembled damper."
+  },
+  "hotWater": {
+    "netOrderedLitres": 300,
+    "standingLoss60_20KWhDay": 3.5,
+    "netKWAt216point2V": 2.434502083333333,
+    "minimumMixedC": 46.884282430716766,
+    "missedL40": 0,
+    "finalDayChargeKWh": 14.854241580467416,
+    "draws": {
+      "420": 80,
+      "465": 80,
+      "510": 70,
+      "1140": 70
+    }
+  }
+}
