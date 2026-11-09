@@ -1026,7 +1026,25 @@
       13.415786
     ]
   },
-  "sourceMain": "2e16d4de0d1e1602965eadaba1de27fb18835d05",
+  "studySouth2100": {
+    "occupiedOpeningRequirements": "south-window-0",
+    "shiftedPlatform": [
+      1500,
+      465,
+      1200,
+      700
+    ],
+    "halfLandingWitness": [
+      2411.8536440243415,
+      -205.99999999999994
+    ],
+    "clearToUpperLandingGuardMm": 2364.438626678285,
+    "underHardwareAfterTwo10Mm": 2080.0,
+    "deskNorthGapMm": 135,
+    "headDrawMm": 250,
+    "innerZoneBearingOverlapMm": 85.5
+  },
+  "sourceMain": "126ae0c2c31025d2a1c1307fd7fe2849df75f6c1",
   "sourceBlobs": {
     "project/had/studies/water-replan.json": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
     "project/str/studies/current-house-arch-movement.json": "05db94a987c7bf45b885c6d02f701b31bcf91740",
@@ -1034,6 +1052,8 @@
     "project/str/studies/current-house-grid.json": "56aca6f99f5fa60b21d58c89115ac1ee824e3828",
     "project/mat/studies/raised-roof-edge.json": "8406cb6c76245ea63c5935f8a3915a4a55f03942",
     "project/str/studies/current-house-window-renewal.json": "9e190c8683dbd4ff2f341589fd1676abd31f090b",
-    "project/str/studies/corner-arch-end.json": "4554deed49057863d815c1d688693d88ae801b6c"
+    "project/str/studies/corner-arch-end.json": "4554deed49057863d815c1d688693d88ae801b6c",
+    "project/mat/studies/study-coupled-window.json": "00184ad7c13d39b38a1ac95a82fa462a8d13eea7",
+    "project/mat/studies/front-threshold.json": "cddb26cd95bc3d6b33d99be4ceb7e47f95a98de4"
   }
 }

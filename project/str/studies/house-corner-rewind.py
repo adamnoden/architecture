@@ -223,7 +223,24 @@ assert cards["hinge18"]["7"]["near"]["edges"][0]<-12
 assert min(tip.values())<-124 and end["pin"]["nominalCabinetPlanOverlap"]>6
 out["legacy"]=dict(occupation=legacy["occupation"]["pin"],case=legacy["case"],options=legacy["options"],
                     separatedWallNormalMm=tip,hingeEdgeLineKN=cards["hinge18"]["7"]["near"]["edges"])
-out["sourceMain"]="2e16d4de0d1e1602965eadaba1de27fb18835d05"
+# Recheck the new MAT sash relative to the fixed front approach. Translate
+# the head pack and interior working platform together, not the ramp or desk.
+coupled=read("project/mat/studies/study-coupled-window.json")
+entry=read("project/mat/studies/front-threshold.json")["foldRepair"]
+sash=coupled["section"]; service=coupled["service"]; landing=coupled["ramp"]["landing"]
+wx,wy=coupled["ramp"]["overLandingXYat30"]; wx+=300
+assert landing[0]<wx<landing[0]+landing[2] and landing[1]<wy<landing[1]+landing[3]
+reach_x=sash["movingHingeX"]+300+math.hypot(sash["movingWidth"],sash["depth"])
+top_guard=entry["revisedLandingsXYWH"][0][0]-entry["guardEach"]
+assert reach_x<top_guard and coupled["ramp"]["newAfterTwo10"]==2080
+platform=service["platformXYWH"].copy();platform[0]+=300
+assert service["deskParkY"]-platform[1]-platform[3]==135
+assert service["chairPark"][1]-platform[1]-platform[3]>300
+out["studySouth2100"]={"occupiedOpeningRequirements":coupled["current"],"shiftedPlatform":platform,
+ "halfLandingWitness":[wx,wy],"clearToUpperLandingGuardMm":top_guard-reach_x,
+ "underHardwareAfterTwo10Mm":coupled["ramp"]["newAfterTwo10"],"deskNorthGapMm":135,
+ "headDrawMm":service["headAndLatticeDraw"],"innerZoneBearingOverlapMm":sash["innerZoneBearingOverlap"]}
+out["sourceMain"]="126ae0c2c31025d2a1c1307fd7fe2849df75f6c1"
 out["sourceBlobs"]=sources
 data=json.dumps(out,indent=2)+'\n'
 
