@@ -44,6 +44,21 @@ def strip_area(x):
     return half_run*(t-half_run/2)
 
 
+# Keep the original and proposed house service positions in the comparison.
+# The selected wet-weather housing can be wider than its circular wall bore.
+structural_ports = read("had/studies/current-house-services.json")["structuralServiceReview"]
+weather_faces = [
+    (head["wall"], hole["point"], hole["faceWidth"]/2)
+    for head in structural_ports["fixedHeads"] for hole in head["holes"]
+]
+for old in structural_ports["ports"]:
+    replacement = old["replacement"]
+    if replacement:
+        weather_faces.append((replacement["wall"], replacement["point"], replacement["face"][0]/2))
+    else:
+        weather_faces.append((old["wall"], old["point"], old["radius"]))
+
+
 def facade_clearance(face, station):
     wall = "outer-" + face
     limits = [station, shell-station]
@@ -57,6 +72,7 @@ def facade_clearance(face, station):
     for port in house["exteriorPortGeometry"]:
         if port["wall"] == wall:
             limits.append(abs(station-port["p"][0])-port["r"])
+    limits.extend(abs(station-point[0])-half_width for side, point, half_width in weather_faces if side == wall)
     return min(limits)-120  # 240 wide installation and removal corridor
 
 
