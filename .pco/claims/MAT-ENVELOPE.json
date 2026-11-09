@@ -9,8 +9,8 @@
     "label": "fabric-60837041"
   },
   "claimedAt": "2026-11-09T01:22:25.208Z",
-  "heartbeatAt": "2026-11-09T01:32:42.576Z",
-  "expiresAt": "2026-11-09T02:17:42.576Z",
+  "heartbeatAt": "2026-11-09T01:44:28.624Z",
+  "expiresAt": "2026-11-09T02:29:28.624Z",
   "branch": "work/fabric-next-60837041",
   "predecessor": {
     "leaseId": "1e36d690-001c-4951-a675-10536e1e0918",
@@ -34,7 +34,7 @@
   },
   "pr": 1409,
   "checkpoint": {
-    "evidence": "PR #1409, 15aa1b7b, joins the ordinary eave, hip, ridge steel, gutter and raised saddle. MAT suite, source reproduction and SVG inspection passed; roof remains unadopted.",
-    "next": "Inspect independent review, reconcile current main with the companion PRs and verify exact-head CI and lease before merging."
+    "evidence": "Combined #1409 cb98447b contains main 7e4bdace and 5fb0259f. Five MAT roof files unchanged on the joint tree, diagrams and calculations reproduced. IAS/RWT changes retained.",
+    "next": "Verify all exact-head validation, coordinate fresh final preflights, merge and hand off in #1100."
   }
 }
