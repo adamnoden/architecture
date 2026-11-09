@@ -1,40 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
-  "generation": 27,
-  "state": "released",
-  "leaseId": "7ffaa9c8-17ff-41dd-b9d5-635737f061c2",
+  "generation": 28,
+  "state": "claimed",
+  "leaseId": "33b4fff0-e075-4b00-919b-c08087956e62",
   "holder": {
     "kind": "chatgpt",
-    "label": "Owner follow-on services study"
+    "label": "Owner follow-on: plant water repair"
   },
-  "claimedAt": "2026-11-09T01:53:12.515Z",
-  "heartbeatAt": "2026-11-09T02:27:15.242Z",
-  "expiresAt": "2026-11-09T02:27:15.242Z",
-  "branch": "work/swarm-services-20261109-0152",
+  "claimedAt": "2026-11-09T02:34:08.819Z",
+  "heartbeatAt": "2026-11-09T02:34:08.819Z",
+  "expiresAt": "2026-11-09T03:19:08.819Z",
+  "branch": "work/swarm-water-repair-20261109",
   "predecessor": {
-    "leaseId": "362edc89-66e0-44dc-9386-d87f530c657b",
-    "generation": 26,
-    "branch": "work/swarm-service-evidence-0143",
+    "leaseId": "7ffaa9c8-17ff-41dd-b9d5-635737f061c2",
+    "generation": 27,
+    "branch": "work/swarm-services-20261109-0152",
+    "pr": 1413,
     "checkpoint": {
-      "evidence": "Reviewed current public ProCASA E+ selector, SDHE technical sheet p4 and Genius Fig2 after merged #1408 at 7e4bdace. See #1100. No public transverse reset/hatch envelope or matching cold-dirty delivered-duty result verified; no source change warranted.",
-      "next": "To settle this W9 selection, obtain exact supplier geometry or a configured full-flow cold/dirty result. Other S01-S10 families retain their own internal design choices in the reconciled crosswalk."
+      "evidence": "Merged DHW study #1413 as 3e941b4d on #1409; current-head CI and preflight passed.",
+      "next": "Test a factory mineral-insulated 300 L potable alternative including expansion-vessel access, actual draw profile and both cold-day output modes. Other S01–S10 families retain separate study duties."
     }
   },
   "recoverySource": {
-    "leaseId": "362edc89-66e0-44dc-9386-d87f530c657b",
-    "generation": 26,
-    "branch": "work/swarm-service-evidence-0143",
+    "leaseId": "7ffaa9c8-17ff-41dd-b9d5-635737f061c2",
+    "generation": 27,
+    "branch": "work/swarm-services-20261109-0152",
+    "pr": 1413,
     "checkpoint": {
-      "evidence": "Reviewed current public ProCASA E+ selector, SDHE technical sheet p4 and Genius Fig2 after merged #1408 at 7e4bdace. See #1100. No public transverse reset/hatch envelope or matching cold-dirty delivered-duty result verified; no source change warranted.",
-      "next": "To settle this W9 selection, obtain exact supplier geometry or a configured full-flow cold/dirty result. Other S01-S10 families retain their own internal design choices in the reconciled crosswalk."
+      "evidence": "Merged DHW study #1413 as 3e941b4d on #1409; current-head CI and preflight passed.",
+      "next": "Test a factory mineral-insulated 300 L potable alternative including expansion-vessel access, actual draw profile and both cold-day output modes. Other S01–S10 families retain separate study duties."
     }
-  },
-  "pr": 1413,
-  "checkpoint": {
-    "evidence": "Merged DHW study #1413 as 3e941b4d on #1409; current-head CI and preflight passed.",
-    "next": "Test a factory mineral-insulated 300 L potable alternative including expansion-vessel access, actual draw profile and both cold-day output modes. Other S01–S10 families retain separate study duties."
-  },
-  "releasedAt": "2026-11-09T02:27:15.242Z",
-  "releaseReason": "handoff"
+  }
 }
