@@ -9,9 +9,9 @@
     "label": "Programme continuation 1140"
   },
   "claimedAt": "2026-11-09T11:39:16.747Z",
-  "heartbeatAt": "2026-11-09T12:16:22.752Z",
-  "expiresAt": "2026-11-09T13:01:22.752Z",
-  "branch": "work/swarm-after-services-1138-20261109",
+  "heartbeatAt": "2026-11-09T12:40:05.529Z",
+  "expiresAt": "2026-11-09T13:25:05.529Z",
+  "branch": "work/swarm-final-dispatch-1140",
   "predecessor": {
     "leaseId": "016db387-caaa-4e3e-8d89-96c0d6c37800",
     "generation": 68,
@@ -33,8 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Frozen immutable RWT source PR #1455 c4a912ce54baf96a0aa04396111956f3b7b1220b on 34b4058c, tree deb8e9f83b1d97b47c60e5a3db056cb78a0d1db9. G34 consents to shared #1454, preserving both original source parents and actual new main.",
-    "next": "After hosted integration verify all eighteen owned RWT/graph source paths and decision, run full tests, await exact CI, independent preflight, merge, verify and release."
+    "evidence": "Held shared #1454 before merge. The selected open HAD station is not the STR closed-spool comparison. Add exact 3D fixed-cup conflict as the actual house replan cost on immutable original successor.",
+    "next": "Amend only RWT source/registered outputs and the HAD acceptance condition; rebind to shared #1454 and rerun exact CI."
   },
-  "pr": 1454
+  "pr": 1455
 }
