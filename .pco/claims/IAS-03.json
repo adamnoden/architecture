@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T06:06:13.026Z",
-  "heartbeatAt": "2026-11-09T06:29:58.902Z",
-  "expiresAt": "2026-11-09T07:14:58.902Z",
+  "heartbeatAt": "2026-11-09T06:48:43.962Z",
+  "expiresAt": "2026-11-09T07:33:43.962Z",
   "branch": "work/swarm-house-disposition-20261109",
   "predecessor": {
     "leaseId": "d20ae003-5fbe-453a-ba68-f2557c7584f0",
@@ -33,8 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Original #1436 e97e65665b700115998a340953891a30912352ce/tree e133e11e on new 126ae0c2. Consent to join frozen STR40 as IAS36 on #1435. Registered checks and rendered four-room drawing.",
-    "next": "Confirm original as ancestor and four IAS blobs/package check on actual common head, rerun, require all exact workflows and own g36 merge-check. Keep IAS open; only the separately justified STR-HOUSE redesign verdict closes."
+    "evidence": "Final joint #1435 head 10a61fc282c08b96f0a9a491b257a1f7bb41cee0 on 126ae0c2 includes exact e97e6566 IAS source/package and supported-park join: ordinary rotated bed overlaps pan stage 65 mm, westward service park clears 195 mm. Local joint repo and docs passed.",
+    "next": "Await 14/14 exact hosted, run live IAS preflight and relay to STR-HOUSE integrator. After #1435 lands record actual STR-HOUSE closure in run journal, issue handoff and release IAS36."
   },
   "pr": 1435
 }
