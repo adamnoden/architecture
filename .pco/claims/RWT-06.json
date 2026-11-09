@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 71,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "9efa627d-a3f9-45f1-8c8c-269bae479e34",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6750969936"
   },
   "claimedAt": "2026-11-09T20:43:57.000Z",
-  "heartbeatAt": "2026-11-09T20:54:18.000Z",
-  "expiresAt": "2026-11-09T21:39:18.000Z",
+  "heartbeatAt": "2026-11-09T21:13:17.000Z",
+  "expiresAt": "2026-11-09T21:13:17.000Z",
   "branch": "work/mvb-chat-6750969936",
   "predecessor": {
     "leaseId": "62f4b0b9-82ab-4c74-979b-e1d601b17493",
@@ -38,5 +38,7 @@
   "checkpoint": {
     "evidence": "PR #1463 eee81fb6 with full predecessor history, three regenerated hydraulic and handling tests, rendered plate, complete-history graph and maturity projection.",
     "next": "Require the current PR health and publication checks, canonical fresh expected-head preflight, reconcile #992 and re-dispatch to network synthesis."
-  }
+  },
+  "releasedAt": "2026-11-09T21:13:17.000Z",
+  "releaseReason": "completed"
 }
