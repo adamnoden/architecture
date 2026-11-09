@@ -14,7 +14,7 @@ export function headBudget(flowLps, lengthMm, grade, diameterMm = 155) {
   const velocity = flowLps / 1000 / area;
   const velocityHead = 1000 * velocity ** 2 / (2 * gravity);
   const frictionSlope = (roughness * velocity / (diameter / 4) ** (2 / 3)) ** 2;
-  const drop = lengthMm * grade, friction = lengthMm * frictionSlope;
+  const drop = lengthMm * grade, friction = lengthMm * Math.hypot(1,grade) * frictionSlope;
   return {flowLps, diameterMm, grade, roughness, velocity, velocityHead, drop, friction,
     fittingKLimitAfterExit: (drop - friction) / velocityHead - 1,
     remainingHeadAtK2Mm: drop - friction - 3 * velocityHead};
@@ -32,7 +32,7 @@ export function forkStudy() {
   const lengths = paths.map(path => path.slice(1).map(([px,py],i) =>
     Math.hypot(px-path[i][0],py-path[i][1])));
   const length = lengths[0].reduce((a,b) => a+b, 0);
-  const straightPairM = lengths.reduce((sum,leg) => sum+(leg[1]+leg[2])/1000,0);
+  const straightPairM = lengths.reduce((sum,leg) => sum+(leg[1]+leg[2])*Math.hypot(1,grade)/1000,0);
   const allowance = parent.high.assumedCombinedRigidAndDeformation;
   const forkNorthAllowance = 75;
   const guides = [[12650,5400],[13750,5400],[12650,5900],[13750,5900]];
@@ -53,7 +53,7 @@ export function forkStudy() {
   const headHalfWidth = 275;
   const fixedGuideYs = guides.map(g=>g[1]);
   const supportSpan = Math.max(...fixedGuideYs)-Math.min(...fixedGuideYs);
-  const northReactionPerWeight = [outletY-shift-od/2,y+forkNorthAllowance].map(cg =>
+  const northReactionPerWeight = [outletY-shift-od/2-allowance,y+forkNorthAllowance+allowance].map(cg =>
     (cg-Math.min(...fixedGuideYs))/supportSpan);
   const crossTravel = 1650;
   const xLimits = [Math.min(...guides.map(g=>g[0]))-guideHalf, Math.max(...guides.map(g=>g[0]))+guideHalf];

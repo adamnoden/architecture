@@ -115,8 +115,8 @@
   "parkedClearOfDryField": 153,
   "fixedGuideToRim": 600,
   "minimumRailOverlap": 90,
-  "separateTubeCopperKg": 32.03917158005881,
-  "separateTubeFullWaterKg": 68.39857054094924,
+  "separateTubeCopperKg": 32.0491822572536,
+  "separateTubeFullWaterKg": 68.41994175551261,
   "crossTravel": 1650,
   "parkedBox": [
     14240,
@@ -141,12 +141,12 @@
   "headToKnownPostXAfterAllowance": 240,
   "eastBoreToKnownPostXInOccupiedY": 255.86000000000058,
   "northReactionPerWeight": [
-    -2.879,
-    2.644
+    -2.899,
+    2.664
   ],
   "southReactionPerWeight": [
-    -1.6440000000000001,
-    3.879
+    -1.6640000000000001,
+    3.899
   ],
   "budgets": [
     {
@@ -158,9 +158,9 @@
         "velocity": 0.3819718634205488,
         "velocityHead": 7.436417148061487,
         "drop": 56.157497476963,
-        "friction": 9.997579504911068,
-        "fittingKLimitAfterExit": 5.2072792654033435,
-        "remainingHeadAtK2Mm": 23.850666527867475
+        "friction": 10.000703260495785,
+        "fittingKLimitAfterExit": 5.206859203494158,
+        "remainingHeadAtK2Mm": 23.847542772282758
       },
       "shallow": {
         "flowLps": 3.60375,
@@ -170,9 +170,9 @@
         "velocity": 0.3819718634205488,
         "velocityHead": 7.436417148061487,
         "drop": 22.4629989907852,
-        "friction": 9.997579504911068,
-        "fittingKLimitAfterExit": 0.6762668416367141,
-        "remainingHeadAtK2Mm": -9.84383195831033
+        "friction": 9.998079371389963,
+        "fittingKLimitAfterExit": 0.6761996229117633,
+        "remainingHeadAtK2Mm": -9.844331824789226
       }
     },
     {
@@ -184,9 +184,9 @@
         "velocity": 0.47049712192317594,
         "velocityHead": 11.28274932405667,
         "drop": 56.157497476963,
-        "friction": 15.168619666614955,
-        "fittingKLimitAfterExit": 2.6328803054192687,
-        "remainingHeadAtK2Mm": 7.140629838178029
+        "friction": 15.173359119836883,
+        "fittingKLimitAfterExit": 2.6324602435100832,
+        "remainingHeadAtK2Mm": 7.135890384956106
       },
       "shallow": {
         "flowLps": 4.43895,
@@ -196,9 +196,9 @@
         "velocity": 0.47049712192317594,
         "velocityHead": 11.28274932405667,
         "drop": 22.4629989907852,
-        "friction": 15.168619666614955,
-        "fittingKLimitAfterExit": -0.3534927423569154,
-        "remainingHeadAtK2Mm": -26.55386864799977
+        "friction": 15.169378078638458,
+        "fittingKLimitAfterExit": -0.35355996108186627,
+        "remainingHeadAtK2Mm": -26.55462706002327
       }
     }
   ],
