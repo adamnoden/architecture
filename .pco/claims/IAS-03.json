@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-03",
   "generation": 33,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "e939437e-a556-4200-afdd-6b5035473434",
   "holder": {
     "kind": "chatgpt",
     "label": "fabric-60837041"
   },
   "claimedAt": "2026-11-09T03:29:56.193Z",
-  "heartbeatAt": "2026-11-09T04:03:59.310Z",
-  "expiresAt": "2026-11-09T04:48:59.310Z",
+  "heartbeatAt": "2026-11-09T04:04:23.102Z",
+  "expiresAt": "2026-11-09T04:04:23.102Z",
   "checkpoint": {
     "evidence": "Merged #1425 on main 4dabed3d/tree c62af3c8. IAS source #1424 1fbd9717 direct joint parent; five unchanged IAS blobs plus registered passing check. Stair rails retain permanent well guards. True two-height newel and supported plumb-cut wall grip. Ten IAS checks and all 14 hosted workflows green.",
     "next": "See #941 for qualified three-point re-grip and remaining actual duties: full-size user/anchor/edge/temporary protection, other dry, wet and service first releases, family bath and joined candidate selection. Do not treat an unobserved uninterrupted grasp as proved."
@@ -36,5 +36,7 @@
       "next": "Use #941 for supplied drain dimensions, support and reinstatement or advance a different internal IAS family exit."
     }
   },
-  "pr": 1425
+  "pr": 1425,
+  "releasedAt": "2026-11-09T04:04:23.102Z",
+  "releaseReason": "handoff"
 }
