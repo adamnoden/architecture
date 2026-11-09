@@ -9,9 +9,9 @@
     "label": "House water and assembly decisions 1031"
   },
   "claimedAt": "2026-11-09T10:33:44.944Z",
-  "heartbeatAt": "2026-11-09T11:10:01.518Z",
-  "expiresAt": "2026-11-09T11:55:01.518Z",
-  "branch": "work/swarm-house-successor-1031-20261109",
+  "heartbeatAt": "2026-11-09T11:11:18.754Z",
+  "expiresAt": "2026-11-09T11:56:18.754Z",
+  "branch": "work/swarm-frontier-1033-20261109",
   "predecessor": {
     "leaseId": "6aba4f0e-df76-4f58-a3ad-0879a54e0d43",
     "generation": 67,
@@ -33,8 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Independent upper boot audit reconciles 110 outside with actual 107 mm clear between two 1.5 walls. Both screened flows still pass with smaller margins.",
-    "next": "Publish this six-line numerical correction to the RWT source and return to the common host for exact integration."
+    "evidence": "Definitive RWT source 227906a911477a94dd2495c0a4cd595d3f46b22a on PR 1451 verifies the 107 mm clear upper throat and the solid weather plate interlock, with source data and figures reproduced.",
+    "next": "Verify eleven definitive RWT blobs on the common head and complete the live RWT merge fence only after all exact hosted checks are green."
   },
-  "pr": 1451
+  "pr": 1450
 }
