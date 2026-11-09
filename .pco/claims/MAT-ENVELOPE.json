@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
   "generation": 40,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "111ea1da-ce89-4fea-8f1d-9d27b104f73c",
   "holder": {
     "kind": "chatgpt",
     "label": "Fabric design swarm 0710"
   },
   "claimedAt": "2026-11-09T07:40:06.748Z",
-  "heartbeatAt": "2026-11-09T08:18:49.007Z",
-  "expiresAt": "2026-11-09T09:03:49.007Z",
+  "heartbeatAt": "2026-11-09T08:19:37.905Z",
+  "expiresAt": "2026-11-09T08:19:37.905Z",
   "branch": "work/fabric-rush-0710",
   "predecessor": {
     "leaseId": "627a9685-77aa-4175-ac04-62c5aa58dc3e",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Merged #1443 at 331d4e7d3d5c39cf2df7b52c326113225cc73384. Exact head 3873aeb2 passed 14 hosted workflows and g40 preflight. Issue #1100 comment 6735427392 records moisture and bearing decisions on the three occupied supports.",
     "next": "Join the three external door boundaries and renewable wet/dry wall returns to a single floor-exposure option, then reconcile the complete roof, glazing, and site duties in the envelope disposition. A positive barrier still requires joined field and structural proof."
-  }
+  },
+  "releasedAt": "2026-11-09T08:19:37.905Z",
+  "releaseReason": "handoff"
 }
