@@ -9,8 +9,8 @@
     "label": "Joined source decision 0700"
   },
   "claimedAt": "2026-11-09T07:05:00.748Z",
-  "heartbeatAt": "2026-11-09T08:20:07.943Z",
-  "expiresAt": "2026-11-09T09:05:07.943Z",
+  "heartbeatAt": "2026-11-09T08:47:12.905Z",
+  "expiresAt": "2026-11-09T09:32:12.905Z",
   "branch": "work/house-0702-20261109",
   "predecessor": {
     "leaseId": "c7bbb9e0-8a23-4657-afcf-8f3db52a34e0",
@@ -34,7 +34,7 @@
   },
   "pr": 1440,
   "checkpoint": {
-    "evidence": "Final source #1441 a3ea0fc6 is an ancestor of shared #1440 3767acf53de76cb83b4d441c5cf07a422fae305e. Whole IAS tree identical, manufacturer tray and socket CAD and drain vector verified. Both IAS and MAT test registry entries checked on main 331d4e7d.",
-    "next": "Await exact-head CI, run fresh joint publication preflight, verify main and release after branch and issue reconciliation."
+    "evidence": "Final IAS source #1441 a3ea0fc6 remains an ancestor of four-holder #1440 4c7947f8abb25c7176e157ba5b3c3eea08e30722. Source unchanged, manufacturer tray and pipe solids and native drain vector rechecked. Previous triple-head CI and preflight passed but #1444 moved main. This head contains actual main a68a5ac5 plus #1445 762e6b18.",
+    "next": "Wait for four-holder exact workflows, obtain final IAS publication fence, verify accepted main and reconcile issue and generation."
   }
 }
