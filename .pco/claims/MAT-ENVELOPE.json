@@ -9,8 +9,8 @@
     "label": "Whole occurrence decision 0840"
   },
   "claimedAt": "2026-11-09T09:12:42.801Z",
-  "heartbeatAt": "2026-11-09T09:12:42.801Z",
-  "expiresAt": "2026-11-09T09:57:42.801Z",
+  "heartbeatAt": "2026-11-09T09:40:12.773Z",
+  "expiresAt": "2026-11-09T10:25:12.773Z",
   "branch": "work/swarm-house-evidence-0840",
   "predecessor": {
     "leaseId": "a6a1ef75-2328-49d1-ab67-be70360701fa",
@@ -31,5 +31,10 @@
       "evidence": "MERGED #1440 at dac2777600c8425a2c7fc38d6c1a42776372b24c with frozen #1445 762e6b18e90416169b9edddab4bfbd40d89b11ce as direct parent of 4c7947f8abb25c7176e157ba5b3c3eea08e30722. Fourteen exact hosted workflows, local full MAT/docs and all three companion regressions passed. Held g41 preflight and #1100 comment 6736307378. Three doors on one dry-site RC floor with the plant reveal, fixed gasket, 35 up / 80 return and separate wet outlet/exposure conditions.",
       "next": "Complete a real ordinary-wall and sheltered loggia soffit/portal material and fixing section at the joined structural floor edge. Compare the 110 mm ordinary and 200 mm loggia wall glass with actual retained layers, safe soffit support, drainage, classified underside, heat and replaceability. Keep the three dry doors and requeued court receiver as source inputs. Respect the remaining roof and glazing choices."
     }
+  },
+  "pr": 1446,
+  "checkpoint": {
+    "evidence": "Frozen #1446 993daa39b64a007e683b3fcc00925a2d55ae7705, tree 40bcee01acb6d3b6594bc6ba8b2510211e833274. Two portal returns leave 6.744 square metres of flat soffit. Two-tier catch and 48 cast inserts, first supported release, north masonry shelf and dry thermal section. Full MAT suite, integrity and visual checks passed.",
+    "next": "Coordinate with Services holder on shared head or independently verify CI and guarded merge. Wall and soffit fit is bounded; shoulder, classified underside, tie, slate roof, glazing and water returns retain their owning duties."
   }
 }
