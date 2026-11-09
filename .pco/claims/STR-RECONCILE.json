@@ -2,15 +2,17 @@
   "schemaVersion": 1,
   "node": "STR-RECONCILE",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "a91679a0-6fc7-49b3-bf23-e16eb7a24393",
   "holder": {
     "kind": "chatgpt",
     "label": "Architecture swarm: shared follow-on"
   },
   "claimedAt": "2026-11-09T07:03:40.068Z",
-  "heartbeatAt": "2026-11-09T08:44:15.988Z",
-  "expiresAt": "2026-11-09T09:29:15.988Z",
+  "heartbeatAt": "2026-11-09T09:10:14.000Z",
+  "expiresAt": "2026-11-09T09:10:14.000Z",
   "branch": "work/house-0702-20261109",
-  "pr": 1440
+  "pr": 1440,
+  "releasedAt": "2026-11-09T09:10:14.000Z",
+  "releaseReason": "completed"
 }
