@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
-  "generation": 31,
-  "state": "released",
-  "leaseId": "07eb5e87-d15a-49a0-a416-d28d6f61908a",
+  "generation": 32,
+  "state": "claimed",
+  "leaseId": "524e14c3-49cd-4266-a5e0-4aef19f2f889",
   "holder": {
     "kind": "chatgpt",
-    "label": "junction-0710"
+    "label": "Owner follow-on after sink and spill"
   },
-  "claimedAt": "2026-11-09T07:57:45.052Z",
-  "heartbeatAt": "2026-11-09T08:44:08.331Z",
-  "expiresAt": "2026-11-09T08:44:08.331Z",
-  "branch": "work/junction-rush-0710",
+  "claimedAt": "2026-11-09T09:12:55.278Z",
+  "heartbeatAt": "2026-11-09T09:12:55.278Z",
+  "expiresAt": "2026-11-09T09:57:55.278Z",
+  "branch": "work/house-0910-20261109",
   "predecessor": {
-    "leaseId": "2186d0dd-0832-45df-b05c-a55cd52a2c75",
-    "generation": 30,
-    "branch": "work/house-rush-0710",
-    "pr": 1439,
+    "leaseId": "07eb5e87-d15a-49a0-a416-d28d6f61908a",
+    "generation": 31,
+    "branch": "work/junction-rush-0710",
+    "pr": 1444,
     "checkpoint": {
-      "evidence": "Merged #1439 at da56e962 following 14 successful workflows on be522efb. Two reproduced and inspected figures; combined MAT suite, 160 control tests and repository validation passed.",
-      "next": "Size and lay out the actual 300 L net factory tank, primary controls, complete removable safety group and lawful outfall with W9 branches, supports, energy/standing-loss/priority and room-temperature schedule. MAT-SERVICES remains planned."
+      "evidence": "Merged PR #1444 at a68a5ac5 after full exact-head CI on c9cfd18a. Two study lighting stations, actual branch, pole/plug/operator and 75/75 first withdrawal checked. Previous #1439 preserves the separate DHW system decision.",
+      "next": "MAT-SERVICES remains planned. Price the next whole-house cross-family duty against the S01–S10 crosswalk. S08 still needs the incoming electrical supply, actual glands/earth links, complete cable protection/disconnection and a two-end exchange specimen."
     }
   },
   "recoverySource": {
-    "leaseId": "2186d0dd-0832-45df-b05c-a55cd52a2c75",
-    "generation": 30,
-    "branch": "work/house-rush-0710",
-    "pr": 1439,
+    "leaseId": "07eb5e87-d15a-49a0-a416-d28d6f61908a",
+    "generation": 31,
+    "branch": "work/junction-rush-0710",
+    "pr": 1444,
     "checkpoint": {
-      "evidence": "Merged #1439 at da56e962 following 14 successful workflows on be522efb. Two reproduced and inspected figures; combined MAT suite, 160 control tests and repository validation passed.",
-      "next": "Size and lay out the actual 300 L net factory tank, primary controls, complete removable safety group and lawful outfall with W9 branches, supports, energy/standing-loss/priority and room-temperature schedule. MAT-SERVICES remains planned."
+      "evidence": "Merged PR #1444 at a68a5ac5 after full exact-head CI on c9cfd18a. Two study lighting stations, actual branch, pole/plug/operator and 75/75 first withdrawal checked. Previous #1439 preserves the separate DHW system decision.",
+      "next": "MAT-SERVICES remains planned. Price the next whole-house cross-family duty against the S01–S10 crosswalk. S08 still needs the incoming electrical supply, actual glands/earth links, complete cable protection/disconnection and a two-end exchange specimen."
     }
-  },
-  "pr": 1444,
-  "checkpoint": {
-    "evidence": "Merged PR #1444 at a68a5ac5 after full exact-head CI on c9cfd18a. Two study lighting stations, actual branch, pole/plug/operator and 75/75 first withdrawal checked. Previous #1439 preserves the separate DHW system decision.",
-    "next": "MAT-SERVICES remains planned. Price the next whole-house cross-family duty against the S01–S10 crosswalk. S08 still needs the incoming electrical supply, actual glands/earth links, complete cable protection/disconnection and a two-end exchange specimen."
-  },
-  "releasedAt": "2026-11-09T08:44:08.331Z",
-  "releaseReason": "handoff"
+  }
 }
