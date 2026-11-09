@@ -1,0 +1,88 @@
+{
+  "ordinaryFrameX": [
+    4700,
+    7300
+  ],
+  "frameAxisY": 11667.5,
+  "heelStationInwardQ": 332.5,
+  "formerPrimarySeatX": [
+    4377.5,
+    7622.5
+  ],
+  "retainedDepthToLowerBoardUndersideNormal": 420.7,
+  "strWallLineAndRidgeCoverZ": [
+    7297.520687,
+    8288.42446
+  ],
+  "existingDeckAtHeelZ": 6988.376892829017,
+  "hipEdgeNormalReserveBeforePacking": -1.5496256768486007e-07,
+  "fieldLiftVertical": 11.033779360607193,
+  "trialWallLineAndFieldRidgeZ": [
+    7308.554466360607,
+    8299.458239360607
+  ],
+  "ordinaryVerticalSeatAtHeel": 29.072880189623902,
+  "hipEdgeAndCentreVerticalSeat": [
+    11.033779189624918,
+    34.114830693668175
+  ],
+  "ringAndCassetteWidth": [
+    220,
+    300
+  ],
+  "remainingWallGlassAtRingAndCassette": [
+    70.0,
+    30.0
+  ],
+  "zincAndBreatherDripQ": [
+    -200,
+    -220
+  ],
+  "zincAndBreatherDripZ": [
+    7215.292934729608,
+    7122.441073101047
+  ],
+  "gutterBottomFrontBackZ": [
+    6938.554466360607,
+    7048.554466360607,
+    7088.554466360607
+  ],
+  "secondaryToBackCrest": 33.886606740439674,
+  "ventThroatAndNet": [
+    30,
+    15
+  ],
+  "deckUnderOriginalStrRidgeZ": 7824.23336949248,
+  "purlinCentreZ": 7895.856477242835,
+  "purlinTopAndCornerOffset": [
+    7970.856477242835,
+    40.0
+  ],
+  "fieldDeckAtRidgeCentreAndCorner": [
+    7835.267148853087,
+    7816.614842526887
+  ],
+  "fieldInterferenceAtTopCorner": 154.24163471594875,
+  "additionalCapLiftVertical": 165.27541390557326,
+  "trialRidgeCapHalfWidth": 250,
+  "trialRidgeCapApexAndEdgeZ": [
+    8464.73365326618,
+    8348.15673872743
+  ],
+  "ventCurbPanelEndAndDripFromRidge": [
+    250,
+    290,
+    330
+  ],
+  "screenAllowanceAndNet": [
+    10,
+    15.0
+  ],
+  "hoodDrop": 75,
+  "hoodLipAboveField": 90.27541390557235,
+  "ventTopAndBottomVerticalDepth": [
+    27.253434598373545,
+    82.42233054649813
+  ],
+  "upperClearanceNormal": 9.99999999999963
+}
