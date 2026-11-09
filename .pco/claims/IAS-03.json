@@ -9,9 +9,9 @@
     "label": "swarm-integration-2343"
   },
   "claimedAt": "2026-11-09T00:29:02.910Z",
-  "heartbeatAt": "2026-11-09T00:29:02.910Z",
-  "expiresAt": "2026-11-09T01:14:02.910Z",
-  "branch": "work/swarm-integrate-20261109",
+  "heartbeatAt": "2026-11-09T00:35:21.867Z",
+  "expiresAt": "2026-11-09T01:20:21.867Z",
+  "branch": "work/front-swarm-0002",
   "predecessor": {
     "leaseId": "f71f2550-f6d8-481f-8f2a-85c315c080b2",
     "generation": 28,
@@ -31,5 +31,10 @@
       "evidence": "Merged #1402 at f8417949 on top of #1397. Verified full CI, both final IAS blobs and actual radiator height.",
       "next": "Qualify the installed support and tap, clip, shutoff, drain and reconnection sequence before adopting the utility sink or closing IAS-03."
     }
+  },
+  "pr": 1406,
+  "checkpoint": {
+    "evidence": "PR #1406 at 4ddb988d includes IAS source 56e869d2, the generated two-leg route and the corrected IAS handoff.",
+    "next": "Validate the joined head, run all three lease-bound preflights, merge and release."
   }
 }
