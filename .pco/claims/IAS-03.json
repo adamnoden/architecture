@@ -9,8 +9,8 @@
     "label": "fabric-60837041"
   },
   "claimedAt": "2026-11-09T02:04:50.662Z",
-  "heartbeatAt": "2026-11-09T02:18:28.094Z",
-  "expiresAt": "2026-11-09T03:03:28.094Z",
+  "heartbeatAt": "2026-11-09T02:28:18.781Z",
+  "expiresAt": "2026-11-09T03:13:18.781Z",
   "branch": "work/swarm-third-20261109",
   "predecessor": {
     "leaseId": "d3ae039d-782a-423b-8d0e-69bc796478ac",
@@ -34,7 +34,7 @@
   },
   "pr": 1414,
   "checkpoint": {
-    "evidence": "STR/IAS/RWT integration lead #1414 exists; IAS source #1416 is preserved at 8630d8e2, with Study door result and rendering checked. Integration parent and final exact-head validation not yet observed.",
-    "next": "Commander combines IAS #1416, RWT and fresh main into #1414. Verify ancestry, source equality, exact-head CI and freshly preflight before controlled merge."
+    "evidence": "Joint #1414 head 6f5b7944 preserves IAS source #1416/8630d8e2, actual Study door/trim geometry plus checked EGGER comparison. Source regression outputs reproduce. Main 3e941b4d retained.",
+    "next": "Wait for all exact-head workflows, run fresh shared preflight, verify main, reconcile #941 with internal family exits and evidence ceilings, release gen31."
   }
 }
