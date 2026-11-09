@@ -128,6 +128,8 @@ This was a **physical spatial disposition**, not a hydraulic RWT-06 closeout. HA
 
 ### Select the permanent receiver and blocked-water return
 
+The [permanent west receiver selection](receiver-selection.md) completes this internal choice. Its separate low N branch and high E outlet, exposed screen removal, occupied east platform and changed court floor are the current source for RWT-06. The older selections continue to own the rest of the house.
+
 **HAD-COURT-BYPASS** starts from the completed guarded intake and reconciled structural house. Select or reject the complete [low return and divided receiver](../rwt/rwt-06-low-court-bypass.md) against a simpler permanent, independently accessible catch/receiver. Include the raised three-shutter scheme as the adverse control. Preserve the two existing site routes and both earlier HAD results. The successor owns one architectural selection on the actual house.
 
 * Register the floor contour from Y5750 to 7400, access ramp, maintenance adapter, occupied windows and unbroken weather skirt. Keep ordinary walking panels independent of both wet carriers and the fifth direct pipe.

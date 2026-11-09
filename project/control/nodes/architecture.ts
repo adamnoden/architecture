@@ -246,9 +246,9 @@ export const architectureNodes = defineNodes([
     owners: ['HAD', 'RWT', 'STR', 'MAT'],
     title: 'Select the permanent courtyard receiver and its blocked-basket return',
     dependencies: ['HAD-COURT-INTAKE', 'STR-RECONCILE'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/had/receiver-selection.md', 'project/had/studies/receiver-selection.json', 'project/had/studies/receiver-selection.svg', 'project/had/studies/receiver-service.svg']
   },
 
   // Final audit found the bounded OAS topology did not supply its dimensioned studies.
