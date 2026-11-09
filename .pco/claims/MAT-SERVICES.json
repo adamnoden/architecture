@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
-  "generation": 23,
-  "state": "released",
-  "leaseId": "c0a47f30-22d5-425b-bc4a-c8694dfcb7ad",
+  "generation": 24,
+  "state": "claimed",
+  "leaseId": "1a1f246d-0b7f-4eed-8b75-fb38e95b4e14",
   "holder": {
     "kind": "chatgpt",
-    "label": "Service cable termination and renewal geometry"
+    "label": "MAT W9 cold cooking and unchanged capture"
   },
-  "claimedAt": "2026-11-08T23:41:36.917Z",
-  "heartbeatAt": "2026-11-09T00:07:27.851Z",
-  "expiresAt": "2026-11-09T00:07:27.851Z",
-  "branch": "work/swarm-house-2332",
+  "claimedAt": "2026-11-09T00:08:05.751Z",
+  "heartbeatAt": "2026-11-09T00:08:05.751Z",
+  "expiresAt": "2026-11-09T00:53:05.751Z",
+  "branch": "work/swarm-house-0006",
   "predecessor": {
-    "leaseId": "a4dcf1e5-a25d-4573-bca4-31ab1d8caed9",
-    "generation": 22,
-    "branch": "work/swarm-materials-20261108-2234",
-    "pr": 1395,
+    "leaseId": "c0a47f30-22d5-425b-bc4a-c8694dfcb7ad",
+    "generation": 23,
+    "branch": "work/swarm-house-2332",
+    "pr": 1400,
     "checkpoint": {
-      "evidence": "Merged #1395 at ab6297f1, preserving #1396 head 21d9da0f. All 14 workflows passed; canonical preflight at 23:28:03 UTC. A 68.49 mm seat bound rules out the straight front approach on the nominal drawing datum; 125 mm extension clears only the finite static gauge.",
-      "next": "Measure actual foot/capture patches and seat, then prove supported cover rotation, withdrawal, finite catch and reassembly with independently supported discharge before cutting the enlarged aperture."
+      "evidence": "Merged #1400 90e9aba69d6fa98b04c1bc4f0f99c2e4e1ffa319 includes original #1401. All 14 workflows and generation-23 preflight passed, preserving the real study corner aperture, supports and furniture check.",
+      "next": "MAT-SERVICES stays open. Evaluate cold cooking and degraded W9/VTC at unchanged capture with matched room heat, pressure, sound and controls. Study ends still need actual gland, box entry and supported renewal."
     }
   },
   "recoverySource": {
-    "leaseId": "a4dcf1e5-a25d-4573-bca4-31ab1d8caed9",
-    "generation": 22,
-    "branch": "work/swarm-materials-20261108-2234",
-    "pr": 1395,
+    "leaseId": "c0a47f30-22d5-425b-bc4a-c8694dfcb7ad",
+    "generation": 23,
+    "branch": "work/swarm-house-2332",
+    "pr": 1400,
     "checkpoint": {
-      "evidence": "Merged #1395 at ab6297f1, preserving #1396 head 21d9da0f. All 14 workflows passed; canonical preflight at 23:28:03 UTC. A 68.49 mm seat bound rules out the straight front approach on the nominal drawing datum; 125 mm extension clears only the finite static gauge.",
-      "next": "Measure actual foot/capture patches and seat, then prove supported cover rotation, withdrawal, finite catch and reassembly with independently supported discharge before cutting the enlarged aperture."
+      "evidence": "Merged #1400 90e9aba69d6fa98b04c1bc4f0f99c2e4e1ffa319 includes original #1401. All 14 workflows and generation-23 preflight passed, preserving the real study corner aperture, supports and furniture check.",
+      "next": "MAT-SERVICES stays open. Evaluate cold cooking and degraded W9/VTC at unchanged capture with matched room heat, pressure, sound and controls. Study ends still need actual gland, box entry and supported renewal."
     }
-  },
-  "pr": 1400,
-  "checkpoint": {
-    "evidence": "Merged #1400 90e9aba69d6fa98b04c1bc4f0f99c2e4e1ffa319 includes original #1401. All 14 workflows and generation-23 preflight passed, preserving the real study corner aperture, supports and furniture check.",
-    "next": "MAT-SERVICES stays open. Evaluate cold cooking and degraded W9/VTC at unchanged capture with matched room heat, pressure, sound and controls. Study ends still need actual gland, box entry and supported renewal."
-  },
-  "releasedAt": "2026-11-09T00:07:27.851Z",
-  "releaseReason": "handoff"
+  }
 }
