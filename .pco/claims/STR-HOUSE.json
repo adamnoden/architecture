@@ -9,8 +9,8 @@
     "label": "Architecture swarm: east service and receiving"
   },
   "claimedAt": "2026-11-09T05:06:11.286Z",
-  "heartbeatAt": "2026-11-09T05:40:27.404Z",
-  "expiresAt": "2026-11-09T06:25:27.404Z",
+  "heartbeatAt": "2026-11-09T06:03:32.190Z",
+  "expiresAt": "2026-11-09T06:48:32.190Z",
   "branch": "work/house-0506-20261109",
   "predecessor": {
     "leaseId": "7cda0738-fae8-489d-a7bb-9bdc1363b337",
@@ -34,7 +34,7 @@
   },
   "pr": 1431,
   "checkpoint": {
-    "evidence": "Final shared #1431 bb1c4b9f keeps original STR 5442856a ancestor, all seven STR blobs and the independently tested panel/ladder geometry. Corrected IAS route has no STR diff.",
-    "next": "Await all final-head workflows, issue g39 publication preflight for bb1c4b9f, then confirm main, #1103 and cleanup."
+    "evidence": "Merged #1431 at 2e16d4de with frozen #1432 seven-file STR source 5442856a, exact CI 14/14 and certified g39 preflight. #1103 comment 6733443975.",
+    "next": "Choose the permanent corner openings/solid return and raised ridge on the current inhabited house or formally return its failed topology for redesign. Adoptability and member checks remain separate."
   }
 }
