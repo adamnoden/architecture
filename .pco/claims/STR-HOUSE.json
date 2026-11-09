@@ -9,8 +9,8 @@
     "label": "swarm-integration-2343"
   },
   "claimedAt": "2026-11-09T02:05:30.894Z",
-  "heartbeatAt": "2026-11-09T02:05:30.894Z",
-  "expiresAt": "2026-11-09T02:50:30.894Z",
+  "heartbeatAt": "2026-11-09T02:12:06.711Z",
+  "expiresAt": "2026-11-09T02:57:06.711Z",
   "branch": "work/swarm-third-20261109",
   "predecessor": {
     "leaseId": "4e8807ec-f146-42b4-8990-b1d49b2eba4b",
@@ -31,5 +31,10 @@
       "evidence": "Merged #1411 via #1409 on 0e0934f2 and verified on main; handoff #1103",
       "next": "Use #1103 to locate actual seat reaction lines before selecting a joint"
     }
+  },
+  "pr": 1414,
+  "checkpoint": {
+    "evidence": "Source caa5645d, #1414. Independently verified end-link clash on both draw directions, 13/14 mm extraction and 125.32 mm to the real opening. Resolved both bearing lines on two simultaneous signed pairs, tested and rendered.",
+    "next": "Join offered IAS/RWT sources with exact parent history, validate final head, run fresh merge-check, publish and hand off separate arch-side development and access pocket."
   }
 }
