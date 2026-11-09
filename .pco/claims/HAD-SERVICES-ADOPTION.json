@@ -9,8 +9,8 @@
     "label": "issue-comment-6750985217"
   },
   "claimedAt": "2026-11-09T20:44:45.000Z",
-  "heartbeatAt": "2026-11-09T20:46:36.000Z",
-  "expiresAt": "2026-11-09T21:31:36.000Z",
+  "heartbeatAt": "2026-11-09T21:00:52.000Z",
+  "expiresAt": "2026-11-09T21:45:52.000Z",
   "branch": "work/mvb-chat-6750985217",
   "predecessor": {
     "leaseId": "2b3a4b21-ab54-4802-97a9-ae99476967c3",
@@ -34,7 +34,7 @@
   },
   "pr": 1465,
   "checkpoint": {
-    "evidence": "#1465 preserves the eleven commits of draft #1461 at 5d29c2e6. The two original numerical tests reproduce in a clean detached worktree.",
-    "next": "Correct non-reproducible retained SVG and check whether the loaded plant actually fits through first movement and the east door before final integration."
+    "evidence": "#1465 64db44f6 has the independently reproduced house, eccentric store cradle, first discharge disconnection, pressure-time integration over 14 occupied nodes/32 other-fan states and source-bound comparison of both family bathing configurations. 37 HAD tests pass.",
+    "next": "Integrate IAS utility/fixture coordinates when reviewed, investigate the reverse fault and factory discharge first-release criteria, reconcile main and execute exact-head CI/preflight."
   }
 }
