@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
   "generation": 26,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "362edc89-66e0-44dc-9386-d87f530c657b",
   "holder": {
     "kind": "chatgpt",
     "label": "Swarm follow-on availability and source evidence"
   },
   "claimedAt": "2026-11-09T01:43:59.723Z",
-  "heartbeatAt": "2026-11-09T01:45:38.035Z",
-  "expiresAt": "2026-11-09T02:30:38.035Z",
+  "heartbeatAt": "2026-11-09T01:46:18.809Z",
+  "expiresAt": "2026-11-09T01:46:18.809Z",
   "branch": "work/swarm-service-evidence-0143",
   "predecessor": {
     "leaseId": "9d9b8d7d-91ca-46ed-ae4a-2b5203922ff1",
@@ -35,5 +35,7 @@
   "checkpoint": {
     "evidence": "Reviewed current public ProCASA E+ selector, SDHE technical sheet p4 and Genius Fig2 after merged #1408 at 7e4bdace. See #1100. No public transverse reset/hatch envelope or matching cold-dirty delivered-duty result verified; no source change warranted.",
     "next": "To settle this W9 selection, obtain exact supplier geometry or a configured full-flow cold/dirty result. Other S01-S10 families retain their own internal design choices in the reconciled crosswalk."
-  }
+  },
+  "releasedAt": "2026-11-09T01:46:18.809Z",
+  "releaseReason": "handoff"
 }
