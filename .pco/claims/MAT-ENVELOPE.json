@@ -9,8 +9,8 @@
     "label": "Ring roof and material choice 0629"
   },
   "claimedAt": "2026-11-09T06:30:15.973Z",
-  "heartbeatAt": "2026-11-09T07:17:06.563Z",
-  "expiresAt": "2026-11-09T08:02:06.563Z",
+  "heartbeatAt": "2026-11-09T07:30:29.557Z",
+  "expiresAt": "2026-11-09T08:15:29.557Z",
   "branch": "work/swarm-ring-roof-0629-20261109",
   "predecessor": {
     "leaseId": "42e6ae26-f42d-47b5-8bb7-eb67ae48b2f5",
@@ -34,7 +34,7 @@
   },
   "pr": 1438,
   "checkpoint": {
-    "evidence": "Corrected remote #1438 head 53c6ad32f3acddc43461b2b4309876ebef9038a0 based on d59be85e. Actual surface/cutoff and twelve-course calculation, 5.215 t slate and 1.706 t lead. Separate 40.50/14.30 kg/m gross ridge/valley lines. Severe Capital +9.50 kg/m² mean / +32.38 kN G3; County -0.87 / +16.09 and Celtic -13.15 / -3.18. MAT and docs pass; #1435 three scopes unchanged and previously validated.",
-    "next": "Confirm all fourteen exact-head workflows, canonical g39 merge preflight, expected-head merge and #1100 handoff. New roof/crown, wind board and cold support, lead-bearing RWT route, external site and the other envelope decisions remain unadopted."
+    "evidence": "Corrected #1438 frozen head 53c6ad32f3acddc43461b2b4309876ebef9038a0 on d59be85e. MAT, docs and inherited STR/IAS/RWT controls passed locally. Thirteen of fourteen hosted workflows passed. Validate pull request is in repository health. Finite Capital slate 5.215 t and lead 1.706 t. Severe Capital average has +9.50 kg/m2 but support line loads need signed capacity.",
+    "next": "Wait for exact-head CI, run g39 merge-check, integrate the standalone roof decision, reconcile on #1100 and release. Roof selection leaves the E receiving interface conditional."
   }
 }
