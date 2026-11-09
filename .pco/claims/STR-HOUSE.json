@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T01:19:50.135Z",
-  "heartbeatAt": "2026-11-09T01:34:47.080Z",
-  "expiresAt": "2026-11-09T02:19:47.080Z",
+  "heartbeatAt": "2026-11-09T01:37:09.295Z",
+  "expiresAt": "2026-11-09T02:22:09.295Z",
   "branch": "work/house-follow-on-20261109",
   "predecessor": {
     "leaseId": "7a83f34d-e43d-4142-a94f-6db17bb69cf8",
@@ -33,7 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Pushed commit d6dbec8d",
-    "next": "Check final revision, run CI and publication preflight"
-  }
+    "evidence": "PR #1411, head 3ed9528b",
+    "next": "Check exact-head CI and merge after fresh preflight; retain the released-bearing and cage interfaces as open."
+  },
+  "pr": 1411
 }
