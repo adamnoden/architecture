@@ -9,8 +9,8 @@
     "label": "swarm-integration-2343"
   },
   "claimedAt": "2026-11-09T02:05:30.894Z",
-  "heartbeatAt": "2026-11-09T02:12:06.711Z",
-  "expiresAt": "2026-11-09T02:57:06.711Z",
+  "heartbeatAt": "2026-11-09T02:28:47.849Z",
+  "expiresAt": "2026-11-09T03:13:47.849Z",
   "branch": "work/swarm-third-20261109",
   "predecessor": {
     "leaseId": "4e8807ec-f146-42b4-8990-b1d49b2eba4b",
@@ -34,7 +34,7 @@
   },
   "pr": 1414,
   "checkpoint": {
-    "evidence": "Source caa5645d, #1414. Independently verified end-link clash on both draw directions, 13/14 mm extraction and 125.32 mm to the real opening. Resolved both bearing lines on two simultaneous signed pairs, tested and rendered.",
-    "next": "Join offered IAS/RWT sources with exact parent history, validate final head, run fresh merge-check, publish and hand off separate arch-side development and access pocket."
+    "evidence": "Final four-lane #1414 at 6f5b794420a6e376e44ade9c76f0a993a328cc6b on merged #1413 3e941b4d. All original parents and source blobs verified. Complete 196608-response pivot envelope reproduced byte-for-byte; #1103 comment 6730707191. 190 RWT tests, 12 arch source tests, IAS and MAT checks passed.",
+    "next": "Wait for exact-head hosted CI, run four fresh merge preflights, merge and release with full handoff. STR still needs separated development, both arm anchors, thrust and a real replacement pocket."
   }
 }
