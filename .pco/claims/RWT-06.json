@@ -9,9 +9,9 @@
     "label": "House water and assembly decisions 1031"
   },
   "claimedAt": "2026-11-09T10:33:44.944Z",
-  "heartbeatAt": "2026-11-09T11:06:04.646Z",
-  "expiresAt": "2026-11-09T11:51:04.646Z",
-  "branch": "work/swarm-frontier-1033-20261109",
+  "heartbeatAt": "2026-11-09T11:10:01.518Z",
+  "expiresAt": "2026-11-09T11:55:01.518Z",
+  "branch": "work/swarm-house-successor-1031-20261109",
   "predecessor": {
     "leaseId": "6aba4f0e-df76-4f58-a3ad-0879a54e0d43",
     "generation": 67,
@@ -33,8 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "The corrected independent RWT PR 1451 e8f59788 prices the real 900 x 5 north skirt interference, verified in the graph-open disposition, arithmetic and first-motion regression. The host accepted this direct parent.",
-    "next": "Verify all 11 final RWT blobs on the shared commit, observe final hosted results, produce the g68 preflight, merge, record the handoff and redispatch."
+    "evidence": "Independent upper boot audit reconciles 110 outside with actual 107 mm clear between two 1.5 walls. Both screened flows still pass with smaller margins.",
+    "next": "Publish this six-line numerical correction to the RWT source and return to the common host for exact integration."
   },
-  "pr": 1450
+  "pr": 1451
 }
