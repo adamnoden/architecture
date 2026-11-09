@@ -7,7 +7,7 @@
 
 **30 October owner direction:** the [rainwater elegance and failure-tolerance brief](rainwater-elegance-brief.md) now controls development: free shedding into designed ground receivers where demonstrably forgiving; copper collection where control is needed; English-hedge and brass-channel studies; genuinely independent blockage routes. The [whole-house material policy](../../docs/reference-house/material-policy.md) includes hidden components. Earlier PVC/PE preferences are superseded, not erased. RWT-SHED, RWT-METALS and RWT-ROBUSTNESS feed RWT-07 through the canonical graph.
 
-**Failure result:** [RWT-05 blockage, failure and exceedance](rwt-05-blockage-failure-exceedance.md); comparative attack complete, with safe court escape still unproved. RWT-06/07 must resolve or reject the candidate before the joint gate.
+**Failure result:** [RWT-05 blockage, failure and exceedance](rwt-05-blockage-failure-exceedance.md); the original comparative attack left safe court escape unproved. RWT-06 subsequently selected the permanent west receiver and its maintenance states. RWT-07 carries that result into the whole-network comparison.
 
 **Materials result:** [RWT-04 materials, joints and shared compatibility](rwt-04-materials-joints-compatibility.md); candidate interfaces remain conditional, with no material selection. RWT-METALS reconciles that same compatibility record against the new material brief.
 
@@ -295,7 +295,7 @@ Do not create a generic hydraulic solver, false precision or pseudo-certificatio
 
 ## Parallel topology
 
-The executable graph is [the canonical node shard](../control/nodes/roof-water.ts); the [generated dependency map](../control/graph.md) is its navigable projection. RWT-02/03/04 were intentionally parallel after the hydraulic/interface basis. Under the successor brief, RWT-SHED and RWT-METALS can start independently after their completed prerequisites; both feed RWT-ROBUSTNESS and RWT-07. RWT-06 remains unfinished. The shared roof/water gate still precedes selected-house integration. Do not maintain an additional hand-edited scheduling diagram here.
+The executable graph is [the canonical node shard](../control/nodes/roof-water.ts); the [generated dependency map](../control/graph.md) is its navigable projection. RWT-02/03/04 were intentionally parallel after the hydraulic/interface basis. Under the successor brief, RWT-SHED and RWT-METALS can start independently after their completed prerequisites; both feed RWT-ROBUSTNESS and RWT-07. RWT-06 has completed its building-side access and ground-transition decision. RWT-07 now compares whole networks before the shared roof/water gate. Do not maintain an additional hand-edited scheduling diagram here.
 
 ## Interfaces
 
