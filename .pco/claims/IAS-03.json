@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "IAS-03",
-  "generation": 34,
-  "state": "released",
-  "leaseId": "d7a72cde-5597-44c4-8cfa-e8b0671f814e",
+  "generation": 35,
+  "state": "claimed",
+  "leaseId": "d20ae003-5fbe-453a-ba68-f2557c7584f0",
   "holder": {
     "kind": "chatgpt",
-    "label": "House water and access continuation 0405"
+    "label": "Owner follow-on after sink and spill"
   },
-  "claimedAt": "2026-11-09T04:08:23.377Z",
-  "heartbeatAt": "2026-11-09T05:03:50.187Z",
-  "expiresAt": "2026-11-09T05:03:50.187Z",
-  "branch": "work/house-0406-20261109",
+  "claimedAt": "2026-11-09T05:06:33.830Z",
+  "heartbeatAt": "2026-11-09T05:06:33.830Z",
+  "expiresAt": "2026-11-09T05:51:33.830Z",
+  "branch": "work/house-0506-20261109",
   "predecessor": {
-    "leaseId": "e939437e-a556-4200-afdd-6b5035473434",
-    "generation": 33,
-    "branch": "work/house-front-threshold-0328",
-    "pr": 1425,
+    "leaseId": "d7a72cde-5597-44c4-8cfa-e8b0671f814e",
+    "generation": 34,
+    "branch": "work/house-0406-20261109",
+    "pr": 1428,
     "checkpoint": {
-      "evidence": "Merged #1425 on main 4dabed3d/tree c62af3c8. IAS source #1424 1fbd9717 direct joint parent; five unchanged IAS blobs plus registered passing check. Stair rails retain permanent well guards. True two-height newel and supported plumb-cut wall grip. Ten IAS checks and all 14 hosted workflows green.",
-      "next": "See #941 for qualified three-point re-grip and remaining actual duties: full-size user/anchor/edge/temporary protection, other dry, wet and service first releases, family bath and joined candidate selection. Do not treat an unobserved uninterrupted grasp as proved."
+      "evidence": "Independent full clone verified #1428 f1253054/tree 52102729, direct #1429 parent, its four IAS blobs and registered check. Exact local repository suite passed.",
+      "next": "All 13 other hosted workflows passed. Wait for Validate, then exact-head IAS merge-check and merged-ref cleanup."
     }
   },
   "recoverySource": {
-    "leaseId": "e939437e-a556-4200-afdd-6b5035473434",
-    "generation": 33,
-    "branch": "work/house-front-threshold-0328",
-    "pr": 1425,
+    "leaseId": "d7a72cde-5597-44c4-8cfa-e8b0671f814e",
+    "generation": 34,
+    "branch": "work/house-0406-20261109",
+    "pr": 1428,
     "checkpoint": {
-      "evidence": "Merged #1425 on main 4dabed3d/tree c62af3c8. IAS source #1424 1fbd9717 direct joint parent; five unchanged IAS blobs plus registered passing check. Stair rails retain permanent well guards. True two-height newel and supported plumb-cut wall grip. Ten IAS checks and all 14 hosted workflows green.",
-      "next": "See #941 for qualified three-point re-grip and remaining actual duties: full-size user/anchor/edge/temporary protection, other dry, wet and service first releases, family bath and joined candidate selection. Do not treat an unobserved uninterrupted grasp as proved."
+      "evidence": "Independent full clone verified #1428 f1253054/tree 52102729, direct #1429 parent, its four IAS blobs and registered check. Exact local repository suite passed.",
+      "next": "All 13 other hosted workflows passed. Wait for Validate, then exact-head IAS merge-check and merged-ref cleanup."
     }
-  },
-  "pr": 1428,
-  "checkpoint": {
-    "evidence": "Independent full clone verified #1428 f1253054/tree 52102729, direct #1429 parent, its four IAS blobs and registered check. Exact local repository suite passed.",
-    "next": "All 13 other hosted workflows passed. Wait for Validate, then exact-head IAS merge-check and merged-ref cleanup."
-  },
-  "releasedAt": "2026-11-09T05:03:50.187Z",
-  "releaseReason": "handoff"
+  }
 }
