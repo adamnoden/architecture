@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
   "generation": 34,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "b99038d3-0c03-4ac4-84e4-89be44138ac4",
   "holder": {
     "kind": "chatgpt",
     "label": "Architecture swarm: current house frontier"
   },
   "claimedAt": "2026-11-09T11:39:36.739Z",
-  "heartbeatAt": "2026-11-09T13:08:15.954Z",
-  "expiresAt": "2026-11-09T13:53:15.954Z",
+  "heartbeatAt": "2026-11-09T13:08:52.847Z",
+  "expiresAt": "2026-11-09T13:08:52.847Z",
   "branch": "work/swarm-after-services-1138-20261109",
   "predecessor": {
     "leaseId": "f64a30d5-3ff3-415e-9faa-f944592a68ec",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Merged #1454 at 3c4c52e211db. Verified sources and handoff on #1100 (6740826158).",
     "next": "Resolve the complete S01–S10 materials offer and its owning services design handoff."
-  }
+  },
+  "releasedAt": "2026-11-09T13:08:52.847Z",
+  "releaseReason": "handoff"
 }
