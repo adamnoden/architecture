@@ -9,8 +9,8 @@
     "label": "MAT floor boundary 2333"
   },
   "claimedAt": "2026-11-08T23:33:23.308Z",
-  "heartbeatAt": "2026-11-08T23:47:45.963Z",
-  "expiresAt": "2026-11-09T00:32:45.963Z",
+  "heartbeatAt": "2026-11-09T00:03:26.832Z",
+  "expiresAt": "2026-11-09T00:48:26.832Z",
   "branch": "work/swarm-house-2332",
   "predecessor": {
     "leaseId": "9efd6390-5533-4e0c-85fa-69459e3f063c",
@@ -34,7 +34,7 @@
   },
   "pr": 1400,
   "checkpoint": {
-    "evidence": "PR #1399 at 1fe45097d4e02f83a37dd4c292a6d4e59995ca51 is the preserved south court cavity tray contribution for integration in PR #1400. Local MAT regression, negative controls and rendered elevation/section passed.",
-    "next": "Verify #1400 preserves this commit and current main; inspect full CI, run MAT merge-check on the combined head, and coordinate the guarded merge."
+    "evidence": "Combined #1400 at a04fb3667ffa20fbdf07404b19962ab7cb84ab28 includes MAT source commit 1fe45097 from #1399 and main 784265bd. Thirteen workflows passed; full health run 42536971767 is active.",
+    "next": "Verify final full CI, fresh lease and unchanged base, then coordinated expected-head merge. Next source review: prove the three direct shaft-to-core paths and compare the entire envelope."
   }
 }
