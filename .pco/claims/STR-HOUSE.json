@@ -9,8 +9,8 @@
     "label": "Architecture swarm: east service and receiving"
   },
   "claimedAt": "2026-11-09T05:06:11.286Z",
-  "heartbeatAt": "2026-11-09T05:06:11.286Z",
-  "expiresAt": "2026-11-09T05:51:11.286Z",
+  "heartbeatAt": "2026-11-09T05:27:17.474Z",
+  "expiresAt": "2026-11-09T06:12:17.474Z",
   "branch": "work/swarm-east-service-20261109",
   "predecessor": {
     "leaseId": "7cda0738-fae8-489d-a7bb-9bdc1363b337",
@@ -31,5 +31,10 @@
       "evidence": "Merged #1428 at 44807906; P32 sources and figures verified on main; handoff #1103",
       "next": "Compare independent east maintenance access on the actual plan or define its redesign. Qualify the P32 assembly before repetition."
     }
+  },
+  "pr": 1432,
+  "checkpoint": {
+    "evidence": "Frozen #1432 source 5442856a. Three captured lower panels, four independent heads, actual 450 bridge and shifted gate/ladder. Seven STR-only paths ready for agreed common PR.",
+    "next": "Verify new main, rebind to coordinated IAS/RWT/STR PR, validate common head and release after merge."
   }
 }
