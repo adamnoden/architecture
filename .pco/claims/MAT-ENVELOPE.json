@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 36,
-  "state": "released",
-  "leaseId": "0ec133b8-6cd9-4a3c-9eb6-4b9d2007d3cc",
+  "generation": 37,
+  "state": "claimed",
+  "leaseId": "19d47ec0-ec19-4efa-862e-81e60132b4c5",
   "holder": {
     "kind": "chatgpt",
-    "label": "front-threshold-0328"
+    "label": "Whole assembly decision 0441"
   },
-  "claimedAt": "2026-11-09T03:30:13.600Z",
-  "heartbeatAt": "2026-11-09T04:04:16.063Z",
-  "expiresAt": "2026-11-09T04:04:16.063Z",
-  "branch": "work/house-front-threshold-0328",
+  "claimedAt": "2026-11-09T04:42:06.434Z",
+  "heartbeatAt": "2026-11-09T04:42:06.434Z",
+  "expiresAt": "2026-11-09T05:27:06.434Z",
+  "branch": "work/swarm-assembly-0441-20261109",
   "predecessor": {
-    "leaseId": "4af5767e-41b7-4f8d-bb49-ac761e8f432c",
-    "generation": 35,
-    "branch": "work/swarm-fourth-20261109",
-    "pr": 1419,
+    "leaseId": "0ec133b8-6cd9-4a3c-9eb6-4b9d2007d3cc",
+    "generation": 36,
+    "branch": "work/house-front-threshold-0328",
+    "pr": 1425,
     "checkpoint": {
-      "evidence": "MERGED #1419 at 5fdcf5c9ee4ced3ff0b62090204abb57e5c5e28e; source #1422 direct ancestor. All fourteen workflows and MAT35 live preflight passed. #1100 comments 6731438349 and 6731508936 record corner/energy/billing and gate.",
-      "next": "Advance unjoined front/plant threshold sections on the actual door cuts, or qualify/reject the Study corner and rail/head specimen, including real bedding, bearing, first weather-side release and whole-window thermal budget. Preserve wider envelope gates."
+      "evidence": "MERGED #1425 at 4dabed3d9517f234dd2ce442c4c20b51438b5caa. Validated c91e7538/source 7a1d72ce. Issue #1100 comments 6731940022 and 6731834753 record folded landing, backed pan, DPC limit, tested carrier turn and incompatible winch anchors. All 14 hosted workflows and MAT36 preflight passed.",
+      "next": "Design the 1400 east plant threshold against actual export apparatus. Front still requires two real site outfalls, guarded maintenance, wet closure and a separate dry winch/socket/cage redesign; existing anchorage pierces the weather seat."
     }
   },
   "recoverySource": {
-    "leaseId": "4af5767e-41b7-4f8d-bb49-ac761e8f432c",
-    "generation": 35,
-    "branch": "work/swarm-fourth-20261109",
-    "pr": 1419,
+    "leaseId": "0ec133b8-6cd9-4a3c-9eb6-4b9d2007d3cc",
+    "generation": 36,
+    "branch": "work/house-front-threshold-0328",
+    "pr": 1425,
     "checkpoint": {
-      "evidence": "MERGED #1419 at 5fdcf5c9ee4ced3ff0b62090204abb57e5c5e28e; source #1422 direct ancestor. All fourteen workflows and MAT35 live preflight passed. #1100 comments 6731438349 and 6731508936 record corner/energy/billing and gate.",
-      "next": "Advance unjoined front/plant threshold sections on the actual door cuts, or qualify/reject the Study corner and rail/head specimen, including real bedding, bearing, first weather-side release and whole-window thermal budget. Preserve wider envelope gates."
+      "evidence": "MERGED #1425 at 4dabed3d9517f234dd2ce442c4c20b51438b5caa. Validated c91e7538/source 7a1d72ce. Issue #1100 comments 6731940022 and 6731834753 record folded landing, backed pan, DPC limit, tested carrier turn and incompatible winch anchors. All 14 hosted workflows and MAT36 preflight passed.",
+      "next": "Design the 1400 east plant threshold against actual export apparatus. Front still requires two real site outfalls, guarded maintenance, wet closure and a separate dry winch/socket/cage redesign; existing anchorage pierces the weather seat."
     }
-  },
-  "checkpoint": {
-    "evidence": "MERGED #1425 at 4dabed3d9517f234dd2ce442c4c20b51438b5caa. Validated c91e7538/source 7a1d72ce. Issue #1100 comments 6731940022 and 6731834753 record folded landing, backed pan, DPC limit, tested carrier turn and incompatible winch anchors. All 14 hosted workflows and MAT36 preflight passed.",
-    "next": "Design the 1400 east plant threshold against actual export apparatus. Front still requires two real site outfalls, guarded maintenance, wet closure and a separate dry winch/socket/cage redesign; existing anchorage pierces the weather seat."
-  },
-  "pr": 1425,
-  "releasedAt": "2026-11-09T04:04:16.063Z",
-  "releaseReason": "handoff"
+  }
 }
