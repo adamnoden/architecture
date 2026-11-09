@@ -245,7 +245,7 @@ Marble Hill and Danson both show section doing work that plan/elevation alone ca
 
 The relevant subject is therefore genuinely **plan / section / elevation coupling**, not a two-view façade coordination problem.
 
-In the provisional courtyard house, a 300 mm shift preserves a corner window’s raw area. Moving the upper window alone puts its entire new 205 mm jamb over the old ground opening. Moving both storeys gives the jamb a path to the ground girder and changes where the bedroom furniture and kitchen refrigerator can stand. The candidate records all three consequences together. [House and section study](../../project/str/whole-house-corner-rewind.md)
+In the provisional courtyard house, a 300 mm shift preserves a corner window’s raw area. Moving the upper window alone puts its entire new 205 mm jamb over the old ground opening. Moving both storeys gives the jamb a path to the ground girder and changes where the bedroom furniture and kitchen refrigerator can stand. The candidate records all three consequences together.
 
 ## Implication for authoring
 
