@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 63,
-  "state": "released",
-  "leaseId": "3fdbd23d-ed42-4f65-88d8-795759df6967",
+  "generation": 64,
+  "state": "claimed",
+  "leaseId": "639f69b0-c49d-4cc1-88a9-82e5134a5b74",
   "holder": {
     "kind": "chatgpt",
-    "label": "Separate the window head and vertical restraint"
+    "label": "Architecture swarm: independent design development"
   },
-  "claimedAt": "2026-11-09T03:29:24.772Z",
-  "heartbeatAt": "2026-11-09T04:04:51.175Z",
-  "expiresAt": "2026-11-09T04:04:51.175Z",
-  "branch": "work/house-front-threshold-0328",
+  "claimedAt": "2026-11-09T04:06:58.331Z",
+  "heartbeatAt": "2026-11-09T04:06:58.331Z",
+  "expiresAt": "2026-11-09T04:51:58.331Z",
+  "branch": "work/swarm-forward-ias-20261109",
   "predecessor": {
-    "leaseId": "2f1e836a-21ab-411f-b691-9e8ce9b9b788",
-    "generation": 62,
-    "branch": "work/swarm-fourth-20261109",
-    "pr": 1419,
+    "leaseId": "3fdbd23d-ed42-4f65-88d8-795759df6967",
+    "generation": 63,
+    "branch": "work/house-front-threshold-0328",
+    "pr": 1425,
     "checkpoint": {
-      "evidence": "Merged #1419 on main 5fdcf5c9; source #1420 d5f9404b is a direct joint parent, six RWT blobs byte-identical. The central eave two-drip exchange works on both live neighbours only. #992 records successor open-width and flooded-crossover tests, comment 6731423082.",
-      "next": "Use finite exit map; if addressing the high-eave centre fault, detail the two retained troughs and dryable 65x170 crossover or independent full-duty discharges, including actual tailwater/losses, cleanout and maintenance; wet corner renewal and protected routes separate."
+      "evidence": "Merged #1425 at 4dabed3d9517f234dd2ce442c4c20b51438b5caa; exact six RWT files from 36788df52d8a0402ea14f6b6591dcf5e70147bbc, RWT 196/196, 14 green workflows. RWT #992 comments 6731764503 and 6731944223 record conditional 1.081125 L/s roof share, 2 L/s controlled wet trial and retained 3.60375 L/s ground and full-branch duty.",
+      "next": "RWT-06 stays planned. Verify actual corner and secondary runoff boundaries, supporting frames, retained outlet levels and bidirectional blocked-outlet wet tests; otherwise locate an independently safe overflow outside this centre bay."
     }
   },
   "recoverySource": {
-    "leaseId": "2f1e836a-21ab-411f-b691-9e8ce9b9b788",
-    "generation": 62,
-    "branch": "work/swarm-fourth-20261109",
-    "pr": 1419,
+    "leaseId": "3fdbd23d-ed42-4f65-88d8-795759df6967",
+    "generation": 63,
+    "branch": "work/house-front-threshold-0328",
+    "pr": 1425,
     "checkpoint": {
-      "evidence": "Merged #1419 on main 5fdcf5c9; source #1420 d5f9404b is a direct joint parent, six RWT blobs byte-identical. The central eave two-drip exchange works on both live neighbours only. #992 records successor open-width and flooded-crossover tests, comment 6731423082.",
-      "next": "Use finite exit map; if addressing the high-eave centre fault, detail the two retained troughs and dryable 65x170 crossover or independent full-duty discharges, including actual tailwater/losses, cleanout and maintenance; wet corner renewal and protected routes separate."
+      "evidence": "Merged #1425 at 4dabed3d9517f234dd2ce442c4c20b51438b5caa; exact six RWT files from 36788df52d8a0402ea14f6b6591dcf5e70147bbc, RWT 196/196, 14 green workflows. RWT #992 comments 6731764503 and 6731944223 record conditional 1.081125 L/s roof share, 2 L/s controlled wet trial and retained 3.60375 L/s ground and full-branch duty.",
+      "next": "RWT-06 stays planned. Verify actual corner and secondary runoff boundaries, supporting frames, retained outlet levels and bidirectional blocked-outlet wet tests; otherwise locate an independently safe overflow outside this centre bay."
     }
-  },
-  "pr": 1425,
-  "checkpoint": {
-    "evidence": "Merged #1425 at 4dabed3d9517f234dd2ce442c4c20b51438b5caa; exact six RWT files from 36788df52d8a0402ea14f6b6591dcf5e70147bbc, RWT 196/196, 14 green workflows. RWT #992 comments 6731764503 and 6731944223 record conditional 1.081125 L/s roof share, 2 L/s controlled wet trial and retained 3.60375 L/s ground and full-branch duty.",
-    "next": "RWT-06 stays planned. Verify actual corner and secondary runoff boundaries, supporting frames, retained outlet levels and bidirectional blocked-outlet wet tests; otherwise locate an independently safe overflow outside this centre bay."
-  },
-  "releasedAt": "2026-11-09T04:04:51.175Z",
-  "releaseReason": "handoff"
+  }
 }
