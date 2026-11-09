@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "STR-HOUSE",
-  "generation": 34,
-  "state": "released",
-  "leaseId": "4e8807ec-f146-42b4-8990-b1d49b2eba4b",
+  "generation": 35,
+  "state": "claimed",
+  "leaseId": "ac421633-ba0e-4c64-bbf9-3cb4bb999171",
   "holder": {
     "kind": "chatgpt",
-    "label": "Owner follow-on after sink and spill"
+    "label": "swarm-integration-2343"
   },
-  "claimedAt": "2026-11-09T01:19:50.135Z",
-  "heartbeatAt": "2026-11-09T02:04:54.372Z",
-  "expiresAt": "2026-11-09T02:04:54.372Z",
-  "branch": "work/fabric-next-60837041",
+  "claimedAt": "2026-11-09T02:05:30.894Z",
+  "heartbeatAt": "2026-11-09T02:05:30.894Z",
+  "expiresAt": "2026-11-09T02:50:30.894Z",
+  "branch": "work/swarm-third-20261109",
   "predecessor": {
-    "leaseId": "7a83f34d-e43d-4142-a94f-6db17bb69cf8",
-    "generation": 33,
-    "branch": "work/front-swarm-0002",
-    "pr": 1406,
+    "leaseId": "4e8807ec-f146-42b4-8990-b1d49b2eba4b",
+    "generation": 34,
+    "branch": "work/fabric-next-60837041",
+    "pr": 1409,
     "checkpoint": {
-      "evidence": "Merged #1406 at d8e52d78; both #1407 and rotating-bearing parent f805f02b are on main; signed controls and validation in #1103 comment 6729956902.",
-      "next": "STR-HOUSE remains open: size a positively retained bearing or change support kinematics, test actual lever, joint clearance, both signed pier arms and foundation/guard compatibility."
+      "evidence": "Merged #1411 via #1409 on 0e0934f2 and verified on main; handoff #1103",
+      "next": "Use #1103 to locate actual seat reaction lines before selecting a joint"
     }
   },
   "recoverySource": {
-    "leaseId": "7a83f34d-e43d-4142-a94f-6db17bb69cf8",
-    "generation": 33,
-    "branch": "work/front-swarm-0002",
-    "pr": 1406,
+    "leaseId": "4e8807ec-f146-42b4-8990-b1d49b2eba4b",
+    "generation": 34,
+    "branch": "work/fabric-next-60837041",
+    "pr": 1409,
     "checkpoint": {
-      "evidence": "Merged #1406 at d8e52d78; both #1407 and rotating-bearing parent f805f02b are on main; signed controls and validation in #1103 comment 6729956902.",
-      "next": "STR-HOUSE remains open: size a positively retained bearing or change support kinematics, test actual lever, joint clearance, both signed pier arms and foundation/guard compatibility."
+      "evidence": "Merged #1411 via #1409 on 0e0934f2 and verified on main; handoff #1103",
+      "next": "Use #1103 to locate actual seat reaction lines before selecting a joint"
     }
-  },
-  "checkpoint": {
-    "evidence": "Merged #1411 via #1409 on 0e0934f2 and verified on main; handoff #1103",
-    "next": "Use #1103 to locate actual seat reaction lines before selecting a joint"
-  },
-  "pr": 1409,
-  "releasedAt": "2026-11-09T02:04:54.372Z",
-  "releaseReason": "handoff"
+  }
 }
