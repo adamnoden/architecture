@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 70,
-  "state": "released",
-  "leaseId": "62f4b0b9-82ab-4c74-979b-e1d601b17493",
+  "generation": 71,
+  "state": "claimed",
+  "leaseId": "9efa627d-a3f9-45f1-8c8c-269bae479e34",
   "holder": {
     "kind": "chatgpt",
-    "label": "Architecture swarm: current house frontier"
+    "label": "issue-comment-6750969936"
   },
-  "claimedAt": "2026-11-09T13:55:53.221Z",
-  "heartbeatAt": "2026-11-09T15:07:26.000Z",
-  "expiresAt": "2026-11-09T15:07:26.000Z",
-  "branch": "work/swarm-after-material-1354-20261109",
+  "claimedAt": "2026-11-09T20:43:57.000Z",
+  "heartbeatAt": "2026-11-09T20:43:57.000Z",
+  "expiresAt": "2026-11-09T21:28:57.000Z",
+  "branch": "work/mvb-chat-6750969936",
   "predecessor": {
-    "leaseId": "cc9391cb-d95f-4735-8041-7160ce60d843",
-    "generation": 69,
-    "branch": "work/swarm-after-services-1138-20261109",
-    "pr": 1454,
+    "leaseId": "62f4b0b9-82ab-4c74-979b-e1d601b17493",
+    "generation": 70,
+    "branch": "work/swarm-after-material-1354-20261109",
+    "pr": 1460,
     "checkpoint": {
-      "evidence": "Frozen corrected #1455 2f68a4455c349734cc5d774994cb3420e405be13 is a direct successor of c4a912ce. The selected open-HAD platform loses all R300 body positions, so the owner must restore the station or use a remotely serviced configuration; nine verified files carry this correction.",
-      "next": "Host #1454 retains source and correction as ancestors. Verify 18 effective source blobs, fresh exact CI, independent RWT publication preflight, safe merge and handoff."
+      "evidence": "PR #1460 fe56315e. The exact water source and access decision are published.",
+      "next": "Check hosted CI and run a fresh canonical publication preflight on a capable checkout before merging.",
+      "blocker": "The local execution environment is currently unavailable."
     }
   },
   "recoverySource": {
-    "leaseId": "cc9391cb-d95f-4735-8041-7160ce60d843",
-    "generation": 69,
-    "branch": "work/swarm-after-services-1138-20261109",
-    "pr": 1454,
+    "leaseId": "62f4b0b9-82ab-4c74-979b-e1d601b17493",
+    "generation": 70,
+    "branch": "work/swarm-after-material-1354-20261109",
+    "pr": 1460,
     "checkpoint": {
-      "evidence": "Frozen corrected #1455 2f68a4455c349734cc5d774994cb3420e405be13 is a direct successor of c4a912ce. The selected open-HAD platform loses all R300 body positions, so the owner must restore the station or use a remotely serviced configuration; nine verified files carry this correction.",
-      "next": "Host #1454 retains source and correction as ancestors. Verify 18 effective source blobs, fresh exact CI, independent RWT publication preflight, safe merge and handoff."
+      "evidence": "PR #1460 fe56315e. The exact water source and access decision are published.",
+      "next": "Check hosted CI and run a fresh canonical publication preflight on a capable checkout before merging.",
+      "blocker": "The local execution environment is currently unavailable."
     }
-  },
-  "pr": 1460,
-  "checkpoint": {
-    "evidence": "PR #1460 fe56315e. The exact water source and access decision are published.",
-    "next": "Check hosted CI and run a fresh canonical publication preflight on a capable checkout before merging.",
-    "blocker": "The local execution environment is currently unavailable."
-  },
-  "releasedAt": "2026-11-09T15:07:26.000Z",
-  "releaseReason": "handoff"
+  }
 }
