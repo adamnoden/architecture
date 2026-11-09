@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T05:06:33.830Z",
-  "heartbeatAt": "2026-11-09T05:18:10.351Z",
-  "expiresAt": "2026-11-09T06:03:10.351Z",
+  "heartbeatAt": "2026-11-09T05:26:07.617Z",
+  "expiresAt": "2026-11-09T06:11:07.617Z",
   "branch": "work/house-0506-20261109",
   "predecessor": {
     "leaseId": "d7a72cde-5597-44c4-8cfa-e8b0671f814e",
@@ -31,5 +31,10 @@
       "evidence": "Independent full clone verified #1428 f1253054/tree 52102729, direct #1429 parent, its four IAS blobs and registered check. Exact local repository suite passed.",
       "next": "All 13 other hosted workflows passed. Wait for Validate, then exact-head IAS merge-check and merged-ref cleanup."
     }
+  },
+  "pr": 1431,
+  "checkpoint": {
+    "evidence": "Frozen principal room source PR #1431, 58e6667831c978f3dfaed3f03ccfcab7ebed23be. Explicit privacy slider repair and 750 screen route have registered continuous checks.",
+    "next": "Coordinate exact current main and frozen STR39/RWT65 evidence if shared. Require exact suite and participating lease clearances before integration."
   }
 }
