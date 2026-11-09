@@ -68,7 +68,7 @@ def result():
     assert all(board['x'][0] < r['parkedNoseX'] and board['x'][1] > trough[1]+25
                and board['y'][0] < r['fullY'][1] and board['y'][1] > r['fullY'][0] for r in records)
     grade=house['approaches']['authoredExteriorGrade']
-    ext_end_z=-(dock[1]-dock[0])/80
+    ext_end_z=-(dock[1]-seats[1][1])/80  # The outer 20 mm plate ledge remains level.
     # A short undropped service grate and the manufacturer's full wheel, as an
     # ideal rigid wheel meeting a square step. It is not a measured push force.
     assert '200x40 wheels' in next(s for s in native['nativeEvidence'] if 'Fetra25011401' in s['name'])['scope']
@@ -100,7 +100,7 @@ def result():
                        'beamTop':steel['z'][1],'collectorLowestOuterSkin':-115,'verticalOverBeam':-115-steel['z'][1],
                        'normalCrest':15,'serviceTop':0,'servicePlateWidthY':strip,'plateThickness':thickness,
                        'jambToPlateMargins':[strip[0]-clear[0],clear[1]-strip[1]]},
-            'dock':{'plan':dock,'outsideGrade':grade,'outerEdgeZ':ext_end_z,'outerTransferRise':ext_end_z-grade,'rampAt1in20Mm':20*(ext_end_z-grade),
+            'dock':{'plan':dock,'fallStartsX':seats[1][1],'outsideGrade':grade,'outerEdgeZ':ext_end_z,'outerTransferRise':ext_end_z-grade,'rampAt1in20Mm':20*(ext_end_z-grade),
                     'foulStack':down,'oldNorthEdge':5500,'oldStackOverlap':5500-down[1],'northBayToStack':down[1]-dock[3],
                     'reliefWorkStripToStack':down[1]-(dock[3]+75),'scaffoldBoardPlan':[board['x'],board['y']]},
             'cargo':records,'carrierHeight':{'W9OnCart':fixture['height']['cartPortTopBound_mm'],

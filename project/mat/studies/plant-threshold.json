@@ -54,10 +54,11 @@
       3400,
       5350
     ],
+    "fallStartsX": 12150,
     "outsideGrade": -1800,
-    "outerEdgeZ": -26.25,
-    "outerTransferRise": 1773.75,
-    "rampAt1in20Mm": 35475.0,
+    "outerEdgeZ": -26.0,
+    "outerTransferRise": 1774.0,
+    "rampAt1in20Mm": 35480.0,
     "foulStack": [
       12000,
       5475,

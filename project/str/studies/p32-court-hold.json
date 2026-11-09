@@ -1,0 +1,375 @@
+{
+  "connector": {
+    "head": "P32",
+    "capAxis": [
+      3950,
+      4332.5
+    ],
+    "barCentres": [
+      [
+        3917.5,
+        4272.5
+      ],
+      [
+        3917.5,
+        4392.5
+      ]
+    ],
+    "strippedComparisonKN": 164.20513071019138,
+    "singleMostLoadedBarKN": 98.52307842611482,
+    "secondBarAtSameSplitKN": 65.68205228407656,
+    "twoEqualRodStiffnessTimesMaximumInitialMismatchKN": 32.84102614203828,
+    "singleM20ResistanceKN": 117.6,
+    "original": {
+      "stock": [
+        280,
+        140,
+        140
+      ],
+      "barPitch": 120.0,
+      "secondAxisShiftAt15And90": [
+        31.326286132812378,
+        169.70562748477138
+      ],
+      "preformedBarOffsetRadius": 73.47050191936204,
+      "rotatingBarClearanceWithSixVertical": 2.483009548664157
+    },
+    "candidate": {
+      "stockXYZ": [
+        140,
+        280,
+        180
+      ],
+      "stockZ": [
+        -150,
+        30
+      ],
+      "threadedRoundHead": [
+        70,
+        50
+      ],
+      "upperM20LowerM24FullEngagement": 45,
+      "throat": 42,
+      "chamberWidth": 84,
+      "shoulderThickness": 40,
+      "headBearingZ": -110,
+      "headTopZ": -60,
+      "lowerPocketRoofZ": -53,
+      "upperBoreFloorZ": -27,
+      "imperforateBand": [
+        -53,
+        -27
+      ],
+      "proposedSheetZ": -40,
+      "heightClearAboveHead": 7,
+      "clearEachSideOfHeadAfterSetout": 2.0,
+      "throatSideClearAfterSetoutAndBend": 1.7371993328518727,
+      "remainingSteelInPlanBetweenPockets": 36.0,
+      "localBearingPressureMPa": {
+        "0": [
+          89.9037141020123,
+          89.9037141020123
+        ],
+        "5": [
+          64.69263296765321,
+          151.69874085784426
+        ]
+      },
+      "continuousPressureUpperBoundMPa": 179.8074282040246,
+      "cantileverStripStressUpperMPa": 148.67826719620285,
+      "comparisonDesignStressMPa": 181.8181818181818,
+      "grossVerticalLigamentAreaMm2": 20384.0,
+      "averageNetSteelStressMPa": 8.055589222438746,
+      "entryTravelWestMm": 140,
+      "sweptWorldBoundsXYXY": [
+        3847.5,
+        4192.5,
+        4127.5,
+        4472.5
+      ],
+      "minimumPlanReserveToCapOutline": 122.5,
+      "initialClearToNominalHeads": 35.0,
+      "clearOverCapConcreteBeforeBedding": 30
+    },
+    "nonrotatingSpliceComparator": {
+      "source": "https://www.ancon.co.uk/downloads/83/Ancon_MBT_Couplers_International_Version.pdf.pdf",
+      "ukAvailability": "https://www.ancon.co.uk/products/reinforcing-bar-couplers/mbt-couplers",
+      "outsideDiameter": 48,
+      "length": 248,
+      "bolts": 10,
+      "straightCapDepthBeforeBend": 15,
+      "shaftCoverToBareSleeve": 35.0
+    },
+    "scope": "Trial threaded heads, keeper and shoulder geometry. Band pressure is a two-patch comparison. No stock, nut, field tolerances, anchorage, bearing, moisture or pile proof."
+  },
+  "cage": {
+    "head": "P32",
+    "headXY": [
+      3950,
+      4332.5
+    ],
+    "P45offset": [
+      -1007.5,
+      0.0
+    ],
+    "strippedHoldKN": 164.20513071019138,
+    "tieIndices": [
+      5,
+      2
+    ],
+    "straightYaw": {
+      "sideCoverMm": 50,
+      "validYawDeg": [
+        -7.1291154743331395,
+        11.33145601048774
+      ],
+      "bestYawDeg": 3.519813379151642,
+      "bestP45VerticalClearMm": 23.85900446886866
+    },
+    "westBarIndex": 4,
+    "firstHeadingSouthOfWestDeg": 19,
+    "interbendStraightMm": 110,
+    "finalTailStartLocal": [
+      -604.16029584645,
+      -200.36528840139624,
+      -315
+    ],
+    "finalTailEndLocal": [
+      -1804.16029584645,
+      -200.36528840139624,
+      -315
+    ],
+    "westFinalStraightMm": 1200.0,
+    "northLowerUpperZ": [
+      -355,
+      -296
+    ],
+    "northLowerIndices": [
+      0,
+      1,
+      3
+    ],
+    "northUpperIndices": [
+      6,
+      7
+    ],
+    "westTailToHeaderSideCoverMm": 88.63471159860376,
+    "westStraightToH8EnvelopeMm": 40.63471159860376,
+    "northTailEndToP33VerticalBarsLowerMm": 83.23298591590856,
+    "unchangedBottomNSRoam": {
+      "level": -552,
+      "holdBarX": -47.75573488831208,
+      "positiveBarX": 53.95836396347769,
+      "maxPossibleNominalCentralH20ClearMm": 29.857049425894886
+    },
+    "P32trialMats": {
+      "bottomEW": {
+        "stationAndZ": [
+          [
+            -242,
+            -572
+          ],
+          [
+            -186.8,
+            -572
+          ],
+          [
+            4,
+            -572
+          ],
+          [
+            200,
+            -572
+          ],
+          [
+            240,
+            -520
+          ]
+        ],
+        "centroidStationAndZ": [
+          3.039999999999998,
+          -561.6
+        ]
+      },
+      "bottomNS": {
+        "stationAndZ": [
+          [
+            -242,
+            -500
+          ],
+          [
+            -194,
+            -552
+          ],
+          [
+            215,
+            -500
+          ],
+          [
+            186.8,
+            -552
+          ],
+          [
+            242,
+            -552
+          ]
+        ],
+        "centroidStationAndZ": [
+          41.56,
+          -531.2
+        ]
+      },
+      "topEW": {
+        "stationAndZ": [
+          [
+            -240,
+            -238
+          ],
+          [
+            0,
+            -238
+          ],
+          [
+            240,
+            -238
+          ]
+        ],
+        "centroidStationAndZ": [
+          0.0,
+          -238.0
+        ]
+      },
+      "topNS": {
+        "stationAndZ": [
+          [
+            -240,
+            -258
+          ],
+          [
+            186.8,
+            -258
+          ],
+          [
+            242,
+            -258
+          ]
+        ],
+        "centroidStationAndZ": [
+          62.93333333333334,
+          -258.0
+        ]
+      }
+    },
+    "P32parallelMats": {
+      "items": [
+        "P32 bottom EW -242",
+        "P32 bottom EW -186.8"
+      ],
+      "nominalIntervalMm": [
+        35.19999999999999,
+        35.19999999999999
+      ],
+      "afterTwo5mmSetoutsLowerMm": 25.19999999999999
+    },
+    "P32crossedMats": {
+      "pairs": 64,
+      "intendedTies": 23,
+      "minimumNominalClearMm": 0.0,
+      "nextNominalClearMm": 12.0
+    },
+    "groups": {
+      "westToP45": {
+        "items": [
+          "P32 H22 4",
+          "P45 straight H22 5"
+        ],
+        "nominalIntervalMm": [
+          48.053953607814655,
+          48.14259502679494
+        ],
+        "afterTwo5mmSetoutsLowerMm": 38.053953607814655
+      },
+      "dueWestToP45": {
+        "items": [
+          "P32 H22 4",
+          "P45 straight H22 4"
+        ],
+        "nominalIntervalMm": [
+          -22.0,
+          -21.95567929050986
+        ],
+        "afterTwo5mmSetoutsLowerMm": -32.04432070949014
+      },
+      "westToP32Bars": {
+        "items": [
+          "P32 H22 4",
+          "P32 tie H22 5"
+        ],
+        "nominalIntervalMm": [
+          79.28359360159708,
+          79.43315695802086
+        ],
+        "afterTwo5mmSetoutsLowerMm": 69.28359360159708
+      },
+      "westToTransplantedMats": {
+        "items": [
+          "P32 H22 4",
+          "P45 top NS -1247.5"
+        ],
+        "nominalIntervalMm": [
+          35.955679290509856,
+          36.044320709490144
+        ],
+        "afterTwo5mmSetoutsLowerMm": 25.955679290509856
+      },
+      "allP32BarPairs": {
+        "items": [
+          "P32 H22 0",
+          "P32 H22 7"
+        ],
+        "nominalIntervalMm": [
+          36.91135858101972,
+          37.08864141898028
+        ],
+        "afterTwo5mmSetoutsLowerMm": 26.91135858101972
+      },
+      "allP32ToTransplantedMats": {
+        "items": [
+          "P32 H22 0",
+          "P32 bottom NS 186.8"
+        ],
+        "nominalIntervalMm": [
+          35.488665206418425,
+          35.57730662539871
+        ],
+        "afterTwo5mmSetoutsLowerMm": 25.488665206418425
+      }
+    },
+    "curveErrorPerR291Mm": 0.04432070949014055,
+    "scope": "Nominal geometric trial. The adverse displacement is up to 5 mm per member in total toward the other member, separate from tied crossings. P45 verticals are an obstacle surrogate. P45 returns, end and node hoops, transverse bend confinement, beam resistance, full-route continuity and actual sequencing remain to be determined."
+  },
+  "changedBeamLevers": {
+    "bottomEW": {
+      "barCount": 5,
+      "centroidChangeMm": 10.399999999999977,
+      "lossOfSteelCoupleKNm": 7.102731216811692
+    },
+    "bottomNS": {
+      "barCount": 5,
+      "centroidChangeMm": 20.799999999999955,
+      "lossOfSteelCoupleKNm": 14.205462433623383
+    },
+    "topEW": {
+      "barCount": 3,
+      "centroidChangeMm": 0.0,
+      "lossOfSteelCoupleKNm": 0.0
+    },
+    "topNS": {
+      "barCount": 3,
+      "centroidChangeMm": -20.0,
+      "lossOfSteelCoupleKNm": 8.1954590963212
+    }
+  },
+  "westBendFullYieldH22ForceTurnKN": 54.55651641200272,
+  "admitted": false
+}
