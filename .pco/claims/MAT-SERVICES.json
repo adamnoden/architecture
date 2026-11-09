@@ -9,8 +9,8 @@
     "label": "Service cable termination and renewal geometry"
   },
   "claimedAt": "2026-11-08T23:41:36.917Z",
-  "heartbeatAt": "2026-11-08T23:48:01.758Z",
-  "expiresAt": "2026-11-09T00:33:01.758Z",
+  "heartbeatAt": "2026-11-09T00:02:54.519Z",
+  "expiresAt": "2026-11-09T00:47:54.519Z",
   "branch": "work/swarm-house-2332",
   "predecessor": {
     "leaseId": "a4dcf1e5-a25d-4573-bca4-31ab1d8caed9",
@@ -34,7 +34,7 @@
   },
   "pr": 1400,
   "checkpoint": {
-    "evidence": "Independent source PR #1401 at fb491e04705a2d3f4857cf64832e9b7994661afb and tested tree d6667440 are preserved. #1400 is the designated joint publication.",
-    "next": "Check #1401 is present as an ancestor of the combined head, verify all checks on that head, run MAT-SERVICES publication preflight, reconcile and release after merge."
+    "evidence": "Combined #1400 a04fb366 contains preserved #1401 fb491e04. Both files equal reviewed originals, test:mat includes study cable, combined producer passed. Thirteen of fourteen exact-head CI workflows complete at last review.",
+    "next": "Check remaining Validate pull request, freshly preflight this generation on the unchanged combined head, then reconcile the source PR and release after verified main merge."
   }
 }
