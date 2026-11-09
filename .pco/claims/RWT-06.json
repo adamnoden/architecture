@@ -9,8 +9,8 @@
     "label": "South-side receiver and native outlet development"
   },
   "claimedAt": "2026-11-09T00:07:30.207Z",
-  "heartbeatAt": "2026-11-09T00:07:30.207Z",
-  "expiresAt": "2026-11-09T00:52:30.207Z",
+  "heartbeatAt": "2026-11-09T00:11:28.510Z",
+  "expiresAt": "2026-11-09T00:56:28.510Z",
   "branch": "work/swarm-house-0006",
   "predecessor": {
     "leaseId": "4dc14b02-121f-4265-a655-92ac747e4c42",
@@ -31,5 +31,10 @@
       "evidence": "Merged #1400 at 90e9aba6, preserving #1398 bab194dc. The fixed 172 mm rail cuts the west datum by 72.6 mm; the east seat lies in the spill. 176 tests passed locally and all exact-head CI passed.",
       "next": "Test a side receiver and upstream turn with a clear straight draw, separate spill and complete reversible native release."
     }
+  },
+  "pr": 1405,
+  "checkpoint": {
+    "evidence": "PR #1405 at bfd005a9 contains the side receiver, native high outlet and captured stow. 181 local RWT tests and rendered plan/sections passed.",
+    "next": "Inspect exact-head CI; preflight, integrate and reconcile #992. Rear-sill wetting and fixed-tail blockage remain internal failure questions before site-specific adoption."
   }
 }
