@@ -9,9 +9,9 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T01:19:50.135Z",
-  "heartbeatAt": "2026-11-09T01:37:09.295Z",
-  "expiresAt": "2026-11-09T02:22:09.295Z",
-  "branch": "work/house-follow-on-20261109",
+  "heartbeatAt": "2026-11-09T01:43:34.209Z",
+  "expiresAt": "2026-11-09T02:28:34.209Z",
+  "branch": "work/fabric-next-60837041",
   "predecessor": {
     "leaseId": "7a83f34d-e43d-4142-a94f-6db17bb69cf8",
     "generation": 33,
@@ -33,8 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1411, head 3ed9528b",
-    "next": "Check exact-head CI and merge after fresh preflight; retain the released-bearing and cage interfaces as open."
+    "evidence": "Frozen PR #1411, commit 4cfeb3c5",
+    "next": "Verify the combined head of PR #1409 and run final STR preflight"
   },
-  "pr": 1411
+  "pr": 1409
 }
