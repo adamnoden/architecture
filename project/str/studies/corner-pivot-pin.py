@@ -94,7 +94,7 @@ svg = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 890 420" role="img"
        '<rect width="890" height="420" fill="#faf8f2"/>',
        '<g fill="#263a40" font-family="sans-serif">',
        label(42,46,'The pivot at the corner window',28),
-       label(42,75,'Across the 180 mm concrete arch at the near spring. Dimensions in mm.',15),
+       label(42,75,'Across the 180 mm arch at the near spring. Horizontal dimensions in mm. Heights schematic.',15),
        rect(-40,140,104,174,'#e5e2d9'), label(x(-40),304,'Cold face −40'),
        label(x(140),304,'Room face +140',15,'end')]
 for line in link_y:

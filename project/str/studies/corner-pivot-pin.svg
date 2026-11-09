@@ -4,7 +4,7 @@
 <rect width="890" height="420" fill="#faf8f2"/>
 <g fill="#263a40" font-family="sans-serif">
 <text x="42" y="46" font-size="28" text-anchor="start">The pivot at the corner window</text>
-<text x="42" y="75" font-size="15" text-anchor="start">Across the 180 mm concrete arch at the near spring. Dimensions in mm.</text>
+<text x="42" y="75" font-size="15" text-anchor="start">Across the 180 mm arch at the near spring. Horizontal dimensions in mm. Heights schematic.</text>
 <rect x="70" y="104" width="540" height="174" fill="#e5e2d9"/>
 <text x="70" y="304" font-size="15" text-anchor="start">Cold face −40</text>
 <text x="610" y="304" font-size="15" text-anchor="end">Room face +140</text>
