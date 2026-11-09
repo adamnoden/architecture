@@ -1,0 +1,209 @@
+{
+  "port": [
+    12950,
+    6647,
+    -880.8823529411765
+  ],
+  "basin": [
+    12550,
+    2750,
+    1600,
+    2000
+  ],
+  "spill": [
+    12550,
+    1250,
+    1600,
+    1500
+  ],
+  "paths": [
+    [
+      [
+        12950,
+        6647
+      ],
+      [
+        12775,
+        6250
+      ],
+      [
+        13175,
+        5000
+      ],
+      [
+        13175,
+        4500
+      ]
+    ],
+    [
+      [
+        12950,
+        6647
+      ],
+      [
+        13125,
+        6250
+      ],
+      [
+        13525,
+        5000
+      ],
+      [
+        13525,
+        4500
+      ]
+    ]
+  ],
+  "lengths": [
+    [
+      433.8594242378515,
+      1312.4404748406687,
+      500
+    ],
+    [
+      433.8594242378515,
+      1312.4404748406687,
+      500
+    ]
+  ],
+  "lengthMm": 2246.29989907852,
+  "ordinaryFlow": 3.60375,
+  "grade": 0.025,
+  "od": 159,
+  "bore": 155,
+  "originalCatcherCutY": 6045,
+  "rootsY": 6250,
+  "forkNorthAllowance": 75,
+  "shift": 460,
+  "guides": [
+    [
+      12650,
+      5400
+    ],
+    [
+      13750,
+      5400
+    ],
+    [
+      12650,
+      5900
+    ],
+    [
+      13750,
+      5900
+    ]
+  ],
+  "guideHalf": 50,
+  "runnerY": [
+    5260,
+    6500
+  ],
+  "separatedClearMm": 191,
+  "doglegNormalClearMm": 174.3484515197635,
+  "terminalAxisZ": -937.0398504181395,
+  "conservativeOutsideSoffitZ": -1016.5398504181395,
+  "faultWaterClearAfterMovement": 223.4601495818606,
+  "rimClearAfterMovement": 198.4601495818606,
+  "terminalSideMargins": [
+    545.5,
+    545.5
+  ],
+  "lipToNorthRim": 250,
+  "lipToSouthCrest": 1750,
+  "stowedTipToSouthCrest": 1290,
+  "drawSouth": 6425,
+  "parkedClearOfDryField": 153,
+  "fixedGuideToRim": 600,
+  "minimumRailOverlap": 90,
+  "separateTubeCopperKg": 32.03917158005881,
+  "separateTubeFullWaterKg": 68.39857054094924,
+  "crossTravel": 1650,
+  "parkedBox": [
+    14240,
+    3950.5,
+    15460,
+    6272
+  ],
+  "parkedXClearOfBasin": 90,
+  "crossTravelClearOfPostsY": 53,
+  "parkedRunnerGapToRim": 50,
+  "servingAndStowedTubeCgY": [
+    5383.612762144114,
+    4923.612762144114
+  ],
+  "topTieAxisY": 6150,
+  "tieHalfDepth": 50,
+  "crossTieToKnownPostY": 115,
+  "noseTieSweepsPost": true,
+  "knownPostWestFace": 13475,
+  "knownPostSouthFace": 6325,
+  "commonHeadHalfWidth": 275,
+  "headToKnownPostXAfterAllowance": 240,
+  "eastBoreToKnownPostXInOccupiedY": 255.86000000000058,
+  "northReactionPerWeight": [
+    -2.879,
+    2.644
+  ],
+  "southReactionPerWeight": [
+    -1.6440000000000001,
+    3.879
+  ],
+  "budgets": [
+    {
+      "selected": {
+        "flowLps": 3.60375,
+        "diameterMm": 155,
+        "grade": 0.025,
+        "roughness": 0.02,
+        "velocity": 0.3819718634205488,
+        "velocityHead": 7.436417148061487,
+        "drop": 56.157497476963,
+        "friction": 9.997579504911068,
+        "fittingKLimitAfterExit": 5.2072792654033435,
+        "remainingHeadAtK2Mm": 23.850666527867475
+      },
+      "shallow": {
+        "flowLps": 3.60375,
+        "diameterMm": 155,
+        "grade": 0.01,
+        "roughness": 0.02,
+        "velocity": 0.3819718634205488,
+        "velocityHead": 7.436417148061487,
+        "drop": 22.4629989907852,
+        "friction": 9.997579504911068,
+        "fittingKLimitAfterExit": 0.6762668416367141,
+        "remainingHeadAtK2Mm": -9.84383195831033
+      }
+    },
+    {
+      "selected": {
+        "flowLps": 4.43895,
+        "diameterMm": 155,
+        "grade": 0.025,
+        "roughness": 0.02,
+        "velocity": 0.47049712192317594,
+        "velocityHead": 11.28274932405667,
+        "drop": 56.157497476963,
+        "friction": 15.168619666614955,
+        "fittingKLimitAfterExit": 2.6328803054192687,
+        "remainingHeadAtK2Mm": 7.140629838178029
+      },
+      "shallow": {
+        "flowLps": 4.43895,
+        "diameterMm": 155,
+        "grade": 0.01,
+        "roughness": 0.02,
+        "velocity": 0.47049712192317594,
+        "velocityHead": 11.28274932405667,
+        "drop": 22.4629989907852,
+        "friction": 15.168619666614955,
+        "fittingKLimitAfterExit": -0.3534927423569154,
+        "remainingHeadAtK2Mm": -26.55386864799977
+      }
+    }
+  ],
+  "actualFittingLoss": null,
+  "upstreamAvailableHead": null,
+  "supportsQualified": false,
+  "adopted": false
+}
