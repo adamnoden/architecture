@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 68,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "016db387-caaa-4e3e-8d89-96c0d6c37800",
   "holder": {
     "kind": "chatgpt",
     "label": "House water and assembly decisions 1031"
   },
   "claimedAt": "2026-11-09T10:33:44.944Z",
-  "heartbeatAt": "2026-11-09T11:38:02.687Z",
-  "expiresAt": "2026-11-09T12:23:02.687Z",
+  "heartbeatAt": "2026-11-09T11:38:29.789Z",
+  "expiresAt": "2026-11-09T11:38:29.789Z",
   "branch": "work/swarm-frontier-1033-20261109",
   "predecessor": {
     "leaseId": "6aba4f0e-df76-4f58-a3ad-0879a54e0d43",
@@ -36,5 +36,7 @@
     "evidence": "MERGED PR 1450 at 34b4058c81aee91f6813974e4bca74b8b09c841d with complete RWT original PR 1451 227906a9 and correct shared subtree b6562459. All 14 exact hosted workflows green, RWT 217, HAD 26 and dated live scope fence. Issue 992 comment 6739106824.",
     "next": "Compare the two independently recoverable wet carriers, high weather shutter interlock and complete blocked N or E event with the revised continuous court grade. Source the positive operating choice and all first rests before RWT closure."
   },
-  "pr": 1450
+  "pr": 1450,
+  "releasedAt": "2026-11-09T11:38:29.789Z",
+  "releaseReason": "handoff"
 }
