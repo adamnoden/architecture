@@ -84,6 +84,11 @@ def result():
     # No assumed wheel centres and no benefit from transverse plate action.
     # A single strip screen is valid only if its assumed effective width is
     # achieved. Missing bearing, fixings, moving boards and workers are separate.
+    gutter_y=[rough[0]-100,dock[3]]
+    invert=[-120,-101]  # South primary at the low end, northern relief at the high end.
+    length=gutter_y[1]-gutter_y[0]
+    outer_skin=min(invert)-5
+    assert invert[1]-invert[0]-2*5==9 and length==1550
     pressure=front['water']['rainMmH']
     area=(dock[1]-dock[0])*(dock[3]-dock[2])/1e6
     deck_q=area*pressure/3600
@@ -94,10 +99,18 @@ def result():
     energy=1500*((q/1000)**2/(9.81*.1**2))**(1/3)
     trial_high=-85+energy+5
     high=-95+energy+5
-    assert trial_high >= -60 > high and dock[3]+75<down[1]
+    # Extra upstream head through a full-length adverse return to the north.
+    # A 25 mm deep approach excludes the local drawdown at the outlet control.
+    w,d=0.1,0.025
+    velocity=(q/1000)/(w*d)
+    diameter=4*w*d/(w+2*d)
+    velocity_head=1000*velocity**2/(2*9.81)
+    upstream_head=(1+0.05*(length/1000)/diameter+1.5)*velocity_head
+    assert high-(invert[1]+5) >= 1000*d
+    assert trial_high >= -60 > high+upstream_head and dock[3]+75<down[1]
     return {'opening':{'roughY':rough,'clearY':clear,'height':door['requiredClearHeight'],'singleLeaf':'remove for exchange'},
             'section':{'collectorX':trough,'bearingX':seats,'span':span,'outerBeamX':beam,'innerSeatToBeamEdge':beam[1]-seats[0][1],
-                       'beamTop':steel['z'][1],'collectorLowestOuterSkin':-115,'verticalOverBeam':-115-steel['z'][1],
+                       'beamTop':steel['z'][1],'collectorLowestOuterSkin':outer_skin,'verticalOverBeam':outer_skin-steel['z'][1],
                        'normalCrest':15,'serviceTop':0,'servicePlateWidthY':strip,'plateThickness':thickness,
                        'jambToPlateMargins':[strip[0]-clear[0],clear[1]-strip[1]]},
             'dock':{'plan':dock,'fallStartsX':seats[1][1],'outsideGrade':grade,'outerEdgeZ':ext_end_z,'outerTransferRise':ext_end_z-grade,'rampAt1in20Mm':20*(ext_end_z-grade),
@@ -110,10 +123,15 @@ def result():
                 'stripStressMPa':[strip_value(25),strip_value(40)],'requiredWidthAt200over1p1':6*moment/(thickness**2*(200/1.1)),
                 'plateMassAt8000KgM3':(strip[1]-strip[0])*(seats[1][1]-seats[0][0])*thickness*8000/1e9,
                 'squareStepForceFractionOfWheelReaction':math.sqrt(2*radius*h-h*h)/(radius-h)},
-            'water':{'testRainMmH':pressure,'deckM2':area,'wholeDeckLitresPerSecond':deck_q,'additionalDoorRectangleM2':door_area,
+            'water':{'gutterY':gutter_y,'invertSouthNorth':invert,'adverseFallAfterTwo5':invert[1]-invert[0]-10,
+                     'testRainMmH':pressure,'deckM2':area,'wholeDeckLitresPerSecond':deck_q,'additionalDoorRectangleM2':door_area,
                      'deckAndDoorLitresPerSecond':q,'rejectedReliefCrest':-85,'rejectedLevel':trial_high,
                      'reliefWidth':100,'reliefCrest':-95,
-                     'idealHeadMm':energy,'adverse5Level':high,'panToeAboveReliefLevel':-60-high,'dryBackdam':-20},
+                     'idealHeadMm':energy,'adverse5Level':high,'panToeAboveReliefLevel':-60-high,
+                     'returnFlow':{'depthMm':1000*d,'velocityMS':velocity,'hydraulicDiameterMm':1000*diameter,
+                                   'darcyF':0.05,'minorK':1.5,'velocityHeadMm':velocity_head,'extraHeadMm':upstream_head,
+                                   'upperLevelWithLoss':high+upstream_head,'remainingToToe':-60-high-upstream_head},
+                     'dryBackdam':-20},
             'scope':'Development geometry. A level temporary deck needs an external load-rated lift or dock; actual wheels, operator, supports, positive wet and dry joints, receiving levels and water tests remain to be qualified.'}
 
 
@@ -147,7 +165,8 @@ def figure(record):
     plan(*[q[0],q[2],q[1],q[3]],'#e5eee8',green)
     plan(11650,5300,12000,5760,'#d1ccc3')
     plan(11650,3300,12000,3900,'#d1ccc3')
-    plan(12030,3800,12130,5400,'#b9dce6',blue)
+    gy=record['water']['gutterY']
+    plan(12030,gy[0],12130,gy[1],'#b9dce6',blue)
     a,b=s['servicePlateWidthY']
     plan(12010,a,12150,b,'#789b9c',green)
     stack=dock['foulStack'];plan(stack[0],stack[1],stack[0]+stack[2],stack[1]+stack[3],'#e6c1b3',umber)

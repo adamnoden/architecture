@@ -33,8 +33,8 @@
     ],
     "innerSeatToBeamEdge": 87.5,
     "beamTop": -180,
-    "collectorLowestOuterSkin": -115,
-    "verticalOverBeam": 65,
+    "collectorLowestOuterSkin": -125,
+    "verticalOverBeam": 55,
     "normalCrest": 15,
     "serviceTop": 0,
     "servicePlateWidthY": [
@@ -176,6 +176,15 @@
     "squareStepForceFractionOfWheelReaction": 0.6197443384031023
   },
   "water": {
+    "gutterY": [
+      3800.0,
+      5350
+    ],
+    "invertSouthNorth": [
+      -120,
+      -101
+    ],
+    "adverseFallAfterTwo5": 9,
     "testRainMmH": 216,
     "deckM2": 4.095,
     "wholeDeckLitresPerSecond": 0.2457,
@@ -188,6 +197,17 @@
     "idealHeadMm": 20.079633100152503,
     "adverse5Level": -69.9203668998475,
     "panToeAboveReliefLevel": 9.920366899847494,
+    "returnFlow": {
+      "depthMm": 25.0,
+      "velocityMS": 0.19403999999999996,
+      "hydraulicDiameterMm": 66.66666666666667,
+      "darcyF": 0.05,
+      "minorK": 1.5,
+      "velocityHeadMm": 1.919037798165137,
+      "extraHeadMm": 7.028475935779815,
+      "upperLevelWithLoss": -62.89189096406768,
+      "remainingToToe": 2.891890964067679
+    },
     "dryBackdam": -20
   },
   "scope": "Development geometry. A level temporary deck needs an external load-rated lift or dock; actual wheels, operator, supports, positive wet and dry joints, receiving levels and water tests remain to be qualified."

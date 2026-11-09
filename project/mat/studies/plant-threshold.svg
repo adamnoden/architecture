@@ -10,7 +10,7 @@
 <rect x="112.88" y="211.96" width="327.60" height="304.20" fill="#e5eee8" stroke="#176455"/>
 <rect x="38.00" y="148.00" width="54.60" height="71.76" fill="#d1ccc3" stroke="none"/>
 <rect x="38.00" y="438.16" width="54.60" height="93.60" fill="#d1ccc3" stroke="none"/>
-<rect x="97.28" y="204.16" width="15.60" height="249.60" fill="#b9dce6" stroke="#247597"/>
+<rect x="97.28" y="211.96" width="15.60" height="241.80" fill="#b9dce6" stroke="#247597"/>
 <rect x="94.16" y="256.81" width="21.84" height="148.20" fill="#789b9c" stroke="#176455"/>
 <rect x="92.60" y="145.66" width="70.20" height="46.80" fill="#e6c1b3" stroke="#8c5930"/>
 <text x="170.60" y="173.74" fill="#8c5930" font-size="13" font-weight="normal">Fixed foul stack</text>
