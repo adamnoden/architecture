@@ -9,8 +9,8 @@
     "label": "Fabric design swarm 0710"
   },
   "claimedAt": "2026-11-09T07:40:06.748Z",
-  "heartbeatAt": "2026-11-09T07:40:06.748Z",
-  "expiresAt": "2026-11-09T08:25:06.748Z",
+  "heartbeatAt": "2026-11-09T07:51:08.615Z",
+  "expiresAt": "2026-11-09T08:36:08.615Z",
   "branch": "work/fabric-rush-0710",
   "predecessor": {
     "leaseId": "627a9685-77aa-4175-ac04-62c5aa58dc3e",
@@ -31,5 +31,11 @@
       "evidence": "MERGED #1438 at 8057718f748befd48aecec8f854fa49ab166224c. Corrected final head 53c6ad32f3acddc43461b2b4309876ebef9038a0 passed 14/14 hosted checks and the live g39 merge-check. Issue #1100 comment 6734810867 records the raised Penrhyn/Hunton slate prototype, finite courses, lead runoff, local cap loading and repair access. No structural or water approval.",
       "next": "Develop P46, P47 and P24 dry upper concrete support interfaces together against occurrence-specific signed loads, capillary continuity, installability and actual groundwater exposure. Compare a positive separation with a stated dry-site boundary. The P32 court fixing is separate."
     }
+  },
+  "pr": 1443,
+  "checkpoint": {
+    "evidence": "PR #1443, aa8be576ebb9d27da42313132dc255381289a940, three upper-core load and moisture routes, site and phased assembly, local MAT checks pass.",
+    "next": "Reconcile exact hosted head with fresh main, repeat MAT tests and merge preflight, merge and record #1100 with unqualified structural and groundwater boundaries.",
+    "blocker": "Hosted CI and live main integration pending."
   }
 }
