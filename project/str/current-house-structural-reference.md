@@ -1,5 +1,8 @@
 # Current selected house — structural re-entry
 
+**Current candidate handoff.** [SAP-C1](provisional-house-handoff.md) supersedes the earlier single-corner-spring and low-crown arrangements below. It includes both storeys’ new jambs, 32 structural ties, 96 whole-house winds, the 52-head stripped uplift register and the affected inhabited/roof interfaces. Historical member and foundation envelopes retain their stated source.
+
+
 **Current disposition.** STR-HOUSE closed on the [documented architectural rewind](whole-house-corner-rewind.md). The numerical controls below belong to their original geometries. The altered two-storey jambs and the raised north roof need a joined successor before structural adoption.
 
 
