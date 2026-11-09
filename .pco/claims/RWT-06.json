@@ -9,8 +9,8 @@
     "label": "Separate the window head and vertical restraint"
   },
   "claimedAt": "2026-11-09T03:29:24.772Z",
-  "heartbeatAt": "2026-11-09T03:45:28.388Z",
-  "expiresAt": "2026-11-09T04:30:28.388Z",
+  "heartbeatAt": "2026-11-09T04:04:23.267Z",
+  "expiresAt": "2026-11-09T04:49:23.267Z",
   "branch": "work/house-front-threshold-0328",
   "predecessor": {
     "leaseId": "2f1e836a-21ab-411f-b691-9e8ce9b9b788",
@@ -34,7 +34,7 @@
   },
   "pr": 1425,
   "checkpoint": {
-    "evidence": "Frozen remote 36788df52d8a0402ea14f6b6591dcf5e70147bbc at tree b93614444c5a8b5939888865e42d59aedf4359c1 on 5fdcf5c9. Six files cover a fixed bidirectional courtyard gutter crossover with the central cassette out; the 155 mm mouth fails the assigned 3.60375 L/s fault and supplies a conditional 2.00 L/s trial. Target tests and generated data pass.",
-    "next": "Joint publication #1425 on work/house-front-threshold-0328. Preflight the exact tested integrated head after all required checks; otherwise recover source object from this checkpoint and preserve the conservative roof plus court stress duty."
+    "evidence": "Merged #1425 at 4dabed3d9517f234dd2ce442c4c20b51438b5caa; exact six RWT files from 36788df52d8a0402ea14f6b6591dcf5e70147bbc, RWT 196/196, 14 green workflows. RWT #992 comments 6731764503 and 6731944223 record conditional 1.081125 L/s roof share, 2 L/s controlled wet trial and retained 3.60375 L/s ground and full-branch duty.",
+    "next": "RWT-06 stays planned. Verify actual corner and secondary runoff boundaries, supporting frames, retained outlet levels and bidirectional blocked-outlet wet tests; otherwise locate an independently safe overflow outside this centre bay."
   }
 }
