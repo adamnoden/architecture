@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 890" role="img" aria-labelledby="title desc">
+<title id="title">Three door boundaries on the suspended floor</title>
+<desc id="desc">East reveal and equipment in plan, the cut lower cover and its discharge-facing notch, and separate water levels at the court, front and plant doors.</desc>
+<defs><clipPath id="room"><rect x="58" y="179" width="357" height="356"/></clipPath><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 6L6 0" stroke="#af6841" stroke-width="1.4"/></pattern><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#1c6d75"/></marker></defs>
+<style>text{font:16px system-ui,sans-serif;fill:#243742}.title{font-weight:700;font-size:32px}.h{font-weight:650;font-size:20px}.small{font-size:14px}.datum{font-size:13px;fill:#4a615e}</style>
+<rect width="1180" height="890" fill="#fbfaf5"/>
+<text x="42" y="53" style="font-family:DejaVu Sans,sans-serif;font-size:32px;font-weight:700">Three doors, one floor exposure</text>
+<text x="42" y="84" style="font-family:DejaVu Sans,sans-serif;font-size:16px;font-weight:400">The wet returns stay outside. The recessed plant closure opens from the dry side.</text>
+<line x1="42.00" y1="105.00" x2="1138.00" y2="105.00" stroke="#82928e" stroke-width="1" />
+<text x="42" y="138" style="font-family:DejaVu Sans,sans-serif;font-size:20px;font-weight:700">01   East room and replacement opening</text>
+<text x="611" y="138" style="font-family:DejaVu Sans,sans-serif;font-size:20px;font-weight:700">02   South end lid and fixed upright</text>
+<text x="42" y="162" style="font-family:DejaVu Sans,sans-serif;font-size:14px;font-weight:400">Plan · north up · original and revised strips superimposed</text>
+<text x="611" y="162" style="font-family:DejaVu Sans,sans-serif;font-size:14px;font-weight:400">Enlarged plan · n increases into the room, to the left</text>
+<g clip-path="url(#room)">
+<rect x="58.00" y="177.60" width="356.40" height="356.40" fill="#e9ede5" stroke="#91a39b" />
+<rect x="321.63" y="500.09" width="92.77" height="33.91" fill="#b5b9ad" stroke="#6f7a72" />
+<rect x="321.63" y="177.60" width="92.77" height="31.75" fill="#b5b9ad" stroke="#6f7a72" />
+<rect x="68.80" y="107.62" width="217.30" height="128.95" fill="#dadacf" stroke="#718079" />
+<rect x="68.80" y="236.57" width="217.30" height="129.60" fill="none" stroke="#8c9890" stroke-dasharray="5 3"/>
+<rect x="181.23" y="450.41" width="140.40" height="64.80" fill="#d9b397" stroke="#996147" />
+<rect x="286.53" y="203.52" width="30.24" height="302.40" fill="url(#hatch)" stroke="#a96949" />
+<rect x="330.16" y="214.32" width="30.24" height="280.80" fill="#56a5a6" stroke="#226a70" />
+<rect x="330.16" y="473.41" width="30.24" height="0.11" fill="none" stroke="#234e56" />
+<rect x="330.16" y="414.01" width="30.24" height="0.11" fill="none" stroke="#234e56" />
+<rect x="330.16" y="354.61" width="30.24" height="0.11" fill="none" stroke="#234e56" />
+<rect x="330.16" y="295.21" width="30.24" height="0.11" fill="none" stroke="#234e56" />
+<rect x="330.16" y="235.81" width="30.24" height="0.11" fill="none" stroke="#234e56" />
+<rect x="228.64" y="372.00" width="36.72" height="64.80" fill="#dbc981" stroke="#887643" />
+<circle cx="343.6" cy="382.8" r="64.8" fill="none" stroke="#508290" stroke-dasharray="4 3"/>
+<circle cx="343.6" cy="316.9" r="64.8" fill="none" stroke="#508290" stroke-dasharray="4 3"/>
+</g>
+<text x="74" y="208" style="font-family:DejaVu Sans,sans-serif;font-size:14px;font-weight:400">W9 body</text>
+<text x="436" y="230" style="font-family:DejaVu Sans,sans-serif;font-size:14px;font-weight:400">Recessed strip</text>
+<text x="436" y="250" style="font-family:DejaVu Sans,sans-serif;font-size:13px;font-weight:400">X11610–11750</text>
+<text x="436" y="302" style="font-family:DejaVu Sans,sans-serif;font-size:14px;font-weight:400">R300 crew</text>
+<text x="436" y="323" style="font-family:DejaVu Sans,sans-serif;font-size:13px;font-weight:400">separate states</text>
+<text x="68" y="558" style="font-family:DejaVu Sans,sans-serif;font-size:14px;font-weight:400">Warm room</text>
+<text x="324" y="558" style="font-family:DejaVu Sans,sans-serif;font-size:14px;font-weight:400">East wall →</text>
+<text x="42" y="588" style="font-family:DejaVu Sans,sans-serif;font-size:14px;font-weight:400">Hatched = common sill. Clay = controls. Gold = rest.</text>
+<text x="42" y="613" style="font-family:DejaVu Sans,sans-serif;font-size:14px;font-weight:400">Recessing the strip buys 39.5 mm to the W9 cabinets.</text>
+<rect x="680.50" y="351.25" width="161.00" height="115.00" fill="#5a9e9f" stroke="#24676c" />
+<rect x="770.20" y="374.25" width="71.30" height="92.00" fill="#fbfaf5" stroke="#24676c" />
+<rect x="781.70" y="385.75" width="46.00" height="46.00" fill="#aa684c" stroke="#74442f" />
+<rect x="680.50" y="236.25" width="161.00" height="115.00" fill="#e1e7df" stroke="#82928e" />
+<rect x="680.50" y="259.25" width="161.00" height="115.00" fill="none" stroke="#266970" stroke-dasharray="6 4" stroke-width="2"/>
+<line x1="708.00" y1="438.00" x2="708.00" y2="363.00" stroke="#1c6d75" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="857" y="249" style="font-family:DejaVu Sans,sans-serif;font-size:20px;font-weight:700">Lift 35, then move 80 north.</text>
+<text x="857" y="277" style="font-family:DejaVu Sans,sans-serif;font-size:14px;font-weight:400">The north panel mirrors this motion.</text>
+<text x="857" y="323" style="font-family:DejaVu Sans,sans-serif;font-size:14px;font-weight:400">Fixed leg and head fit within</text>
+<text x="857" y="346" style="font-family:DejaVu Sans,sans-serif;font-size:14px;font-weight:400">40 mm. Leave 10 on release.</text>
+<text x="857" y="400" style="font-family:DejaVu Sans,sans-serif;font-size:14px;font-weight:400">The two-edge cut leaves one</text>
+<text x="857" y="423" style="font-family:DejaVu Sans,sans-serif;font-size:14px;font-weight:400">20 mm finger, outside traffic.</text>
+<text x="857" y="474" style="font-family:DejaVu Sans,sans-serif;font-size:14px;font-weight:400">Remaining plates stay locked.</text>
+<text x="611" y="552" style="font-family:DejaVu Sans,sans-serif;font-size:14px;font-weight:400">Solid teal = installed end plate. Dashed = translated envelope.</text>
+<text x="611" y="578" style="font-family:DejaVu Sans,sans-serif;font-size:14px;font-weight:400">Brown = fixed upright. Remove the reveal trim first.</text>
+<text x="611" y="611" style="font-family:DejaVu Sans,sans-serif;font-size:14px;font-weight:400">Dimensions in mm. Handling and supports remain open.</text>
+<line x1="42.00" y1="640.00" x2="1138.00" y2="640.00" stroke="#82928e" stroke-width="1" />
+<text x="42" y="676" style="font-family:DejaVu Sans,sans-serif;font-size:20px;font-weight:700">03   Compare the actual wet levels</text>
+<text x="42" y="704" style="font-family:DejaVu Sans,sans-serif;font-size:14px;font-weight:400">Each column is its own event. A walking crest is visible above the earlier vulnerable joints.</text>
+<text x="43" y="747" style="font-family:DejaVu Sans,sans-serif;font-size:20px;font-weight:700">SOUTH COURT</text>
+<line x1="43.00" y1="762.00" x2="366.00" y2="762.00" stroke="#a3aba4" stroke-width="1" />
+<text x="43" y="787" style="font-family:DejaVu Sans,sans-serif;font-size:16px;font-weight:400">−35 quiet court</text>
+<text x="43" y="813" style="font-family:DejaVu Sans,sans-serif;font-size:16px;font-weight:400">+15 protective return</text>
+<text x="43" y="849" style="font-family:DejaVu Sans,sans-serif;font-size:14px;font-weight:400">50 mm allocated to splash and setout</text>
+<text x="416" y="747" style="font-family:DejaVu Sans,sans-serif;font-size:20px;font-weight:700">FRONT</text>
+<line x1="416.00" y1="762.00" x2="739.00" y2="762.00" stroke="#a3aba4" stroke-width="1" />
+<text x="416" y="787" style="font-family:DejaVu Sans,sans-serif;font-size:16px;font-weight:400">−37.94 blocked primary</text>
+<text x="416" y="813" style="font-family:DejaVu Sans,sans-serif;font-size:16px;font-weight:400">−20 dry backdam</text>
+<text x="416" y="849" style="font-family:DejaVu Sans,sans-serif;font-size:14px;font-weight:400">28.00 mm above the wet pan toe</text>
+<text x="790" y="747" style="font-family:DejaVu Sans,sans-serif;font-size:20px;font-weight:700">EAST PLANT</text>
+<line x1="790.00" y1="762.00" x2="1113.00" y2="762.00" stroke="#a3aba4" stroke-width="1" />
+<text x="790" y="787" style="font-family:DejaVu Sans,sans-serif;font-size:16px;font-weight:400">−62.89 blocked primary</text>
+<text x="790" y="813" style="font-family:DejaVu Sans,sans-serif;font-size:16px;font-weight:400">−20 dry backdam</text>
+<text x="790" y="849" style="font-family:DejaVu Sans,sans-serif;font-size:14px;font-weight:400">Only 2.89 mm below the wet toe</text>
+</svg>

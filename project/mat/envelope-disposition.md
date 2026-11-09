@@ -24,6 +24,8 @@ A separate sheet over the room field has 80 pieces and 116.94 m of seam. The rec
 
 The [three occupied support cuts](occupied-core-breaks.md) now separate the dry-site comparison from the continuous-field alternative. The stair loses full contact in the biaxial gravity tolerance case and the proposed 215 mm masonry base denies room-side access to 1.858 m of the three perimeters. Fabrication and installation must address the stair post, the crossing wall and the embedded north receiver differently.
 
+The [three-door floor decision](three-door-floor.md) carries one dry-site RC/mineral-floor option through the court, front and east plant openings. Keep the court's outward pan draw. Put the front dry clamp behind its weather dam. Recess the east return into the masonry reveal: copying the front inspection strip there puts 140 × 257 mm of it beneath the moved-wall W9 controls. Individually removable inner lids retain a separate cargo crossing. Both outer dry backdams are 35 mm below their +15 pedestrian crests. A pressure/gas site still requires a different complete enclosure or a different plot/level; the local pans and three trial support caps cannot certify one.
+
 ## Keep the whole exterior assembly in view
 
 These choices refer back to the existing inventory. Each source owns its supplied constituents, comparisons and rejected products. Design comparisons can proceed with declared assumptions. Installed quantities, supplier evidence, construction and owner dispositions remain tied to the assembly actually proposed.

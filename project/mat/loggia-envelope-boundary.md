@@ -201,6 +201,8 @@ The **.18 combined air-backed planar+ψ·P/A target is authored**, not the statu
 
 ## MAT-ENVELOPE owning exit table
 
+**9 November follow-through.** The [three-door floor decision](three-door-floor.md) carries the monolithic RC/brick-DPC option only for a drained, non-pressure site, joins the two outer dry clamps to actual wet pans and preserves the south court pan’s own release. The [three occupied support cuts](occupied-core-breaks.md) retain distinct load, inaccessible return and moisture failures for the positive-isolation challenger. The [raised slate roof](ring-roof-family.md) and [split Study light](study-coupled-window.md) now have preferred fabric and geometry for development. The earlier six rows retain their scope. Fabrication of the corner air/water joints, the protected soffit/portal and roof ties, concentrated valley capture, glazing performance and full renewal still require their owning designs and physical evidence.
+
 **Status: open — whole-envelope internal design remains incomplete. Coordination update: 6 November 2026, after selected water/renewal development in PR 1332 and bounded material evidence in PR 1337 (main `0a40215a8a562bc0d9e554edcf89778023598262`).** The earlier sections retain their dated study geometry. Their D1400/D1600, 320 mm glass/AAC and other thermal challengers remain unadopted; the current selected reference is RC 200 mm at −180..−380 mm with 100 mm floor glass. Current HAD/STR owning source governs actual supports and levels. A source-bound successor must identify any proposed rewind explicitly.
 
 | Interface | Earned internal development | Remaining real internal design | Later admission |
