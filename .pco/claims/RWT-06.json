@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 69,
-  "state": "released",
-  "leaseId": "cc9391cb-d95f-4735-8041-7160ce60d843",
+  "generation": 70,
+  "state": "claimed",
+  "leaseId": "62f4b0b9-82ab-4c74-979b-e1d601b17493",
   "holder": {
     "kind": "chatgpt",
-    "label": "Programme continuation 1140"
+    "label": "Architecture swarm: current house frontier"
   },
-  "claimedAt": "2026-11-09T11:39:16.747Z",
-  "heartbeatAt": "2026-11-09T13:08:49.745Z",
-  "expiresAt": "2026-11-09T13:08:49.745Z",
-  "branch": "work/swarm-after-services-1138-20261109",
+  "claimedAt": "2026-11-09T13:55:53.221Z",
+  "heartbeatAt": "2026-11-09T13:55:53.221Z",
+  "expiresAt": "2026-11-09T14:40:53.221Z",
+  "branch": "work/swarm-after-material-1354-20261109",
   "predecessor": {
-    "leaseId": "016db387-caaa-4e3e-8d89-96c0d6c37800",
-    "generation": 68,
-    "branch": "work/swarm-frontier-1033-20261109",
-    "pr": 1450,
+    "leaseId": "cc9391cb-d95f-4735-8041-7160ce60d843",
+    "generation": 69,
+    "branch": "work/swarm-after-services-1138-20261109",
+    "pr": 1454,
     "checkpoint": {
-      "evidence": "MERGED PR 1450 at 34b4058c81aee91f6813974e4bca74b8b09c841d with complete RWT original PR 1451 227906a9 and correct shared subtree b6562459. All 14 exact hosted workflows green, RWT 217, HAD 26 and dated live scope fence. Issue 992 comment 6739106824.",
-      "next": "Compare the two independently recoverable wet carriers, high weather shutter interlock and complete blocked N or E event with the revised continuous court grade. Source the positive operating choice and all first rests before RWT closure."
+      "evidence": "Frozen corrected #1455 2f68a4455c349734cc5d774994cb3420e405be13 is a direct successor of c4a912ce. The selected open-HAD platform loses all R300 body positions, so the owner must restore the station or use a remotely serviced configuration; nine verified files carry this correction.",
+      "next": "Host #1454 retains source and correction as ancestors. Verify 18 effective source blobs, fresh exact CI, independent RWT publication preflight, safe merge and handoff."
     }
   },
   "recoverySource": {
-    "leaseId": "016db387-caaa-4e3e-8d89-96c0d6c37800",
-    "generation": 68,
-    "branch": "work/swarm-frontier-1033-20261109",
-    "pr": 1450,
+    "leaseId": "cc9391cb-d95f-4735-8041-7160ce60d843",
+    "generation": 69,
+    "branch": "work/swarm-after-services-1138-20261109",
+    "pr": 1454,
     "checkpoint": {
-      "evidence": "MERGED PR 1450 at 34b4058c81aee91f6813974e4bca74b8b09c841d with complete RWT original PR 1451 227906a9 and correct shared subtree b6562459. All 14 exact hosted workflows green, RWT 217, HAD 26 and dated live scope fence. Issue 992 comment 6739106824.",
-      "next": "Compare the two independently recoverable wet carriers, high weather shutter interlock and complete blocked N or E event with the revised continuous court grade. Source the positive operating choice and all first rests before RWT closure."
+      "evidence": "Frozen corrected #1455 2f68a4455c349734cc5d774994cb3420e405be13 is a direct successor of c4a912ce. The selected open-HAD platform loses all R300 body positions, so the owner must restore the station or use a remotely serviced configuration; nine verified files carry this correction.",
+      "next": "Host #1454 retains source and correction as ancestors. Verify 18 effective source blobs, fresh exact CI, independent RWT publication preflight, safe merge and handoff."
     }
-  },
-  "checkpoint": {
-    "evidence": "Frozen corrected #1455 2f68a4455c349734cc5d774994cb3420e405be13 is a direct successor of c4a912ce. The selected open-HAD platform loses all R300 body positions, so the owner must restore the station or use a remotely serviced configuration; nine verified files carry this correction.",
-    "next": "Host #1454 retains source and correction as ancestors. Verify 18 effective source blobs, fresh exact CI, independent RWT publication preflight, safe merge and handoff."
-  },
-  "pr": 1454,
-  "releasedAt": "2026-11-09T13:08:49.745Z",
-  "releaseReason": "handoff"
+  }
 }
