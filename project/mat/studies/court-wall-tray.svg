@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1020" height="490" viewBox="0 0 1020 490">
+<svg xmlns="http://www.w3.org/2000/svg" width="1020" height="780" viewBox="0 0 1020 780">
 <title>South courtyard wall drainage beside the door</title>
-<rect width="1020" height="490" fill="#faf9f5"/><g font-family="sans-serif" fill="#243b40">
+<rect width="1020" height="780" fill="#faf9f5"/><g font-family="sans-serif" fill="#243b40">
 <text x="32" y="40" font-size="25">South courtyard wall drainage beside the door</text>
 <text x="32" y="68" font-size="15">Two straight tray wings. Elevations in millimetres relative to the ground floor.</text>
 <text x="32" y="112" font-size="14">COURT FACE</text>
@@ -32,5 +32,24 @@
 <text x="810.85" y="282.5" font-size="15">+120 to +270</text>
 <text x="810.85" y="302.5" font-size="15">compared DPC band</text>
 <text x="812.75" y="390" font-size="15">Landing 0</text>
-<text x="32" y="459" font-size="14">Straight-run comparison. End flashings, lower-wall wetting, masonry seating and installed drainage remain unresolved.</text>
+<polyline points="32,425 988,425" fill="none" stroke="#bcc6c0" stroke-width="1"/>
+<text x="32" y="462" font-size="14">WEST JAMB  /  DEVELOPED SECTION</text>
+<text x="32" y="489" font-size="15">The fixed high flashing drains left over the stop. The lower bridge drains onto its own apron.</text>
+<polyline points="75.25,608.41 249.5,605.37 249.5,567.37" fill="none" stroke="#243b40" stroke-width="3"/>
+<polyline points="331.5,532.98 331.5,540.58 208.5,546.28 208.5,556.54" fill="none" stroke="#176d74" stroke-width="4"/>
+<polyline points="438.1,662.56 327.4,664.08" fill="none" stroke="#176d74" stroke-width="3"/>
+<polyline points="249.5,715 372.5,715" fill="none" stroke="#243b40" stroke-width="3"/>
+<path d="M208.5 559.54 V601.37" stroke="#176d74" fill="none" stroke-dasharray="3 4"/>
+<path d="M327.4 667.08 V711" stroke="#176d74" fill="none" stroke-dasharray="3 4"/>
+<text x="75" y="635" font-size="13">Wing to spouts</text>
+<text x="345.5" y="544.58" font-size="14">High return</text>
+<text x="448.1" y="669.08" font-size="14">Bridge +217</text>
+<text x="448.1" y="720" font-size="14">Apron +150</text>
+<text x="577" y="530" font-size="14">AT THE HIGH DRIP</text>
+<text x="577" y="563" font-size="15">1 in 8 fall, with a 12 mm downturned nose</text>
+<text x="577" y="595" font-size="15">10.25 mm clear above the bounded stop</text>
+<text x="577" y="627" font-size="15">16 mm remains inside the receiving wing</text>
+<text x="577" y="659" font-size="15">6 mm remains outside the rough opening</text>
+<text x="577" y="691" font-size="15">Clearances include one 4 mm relative error.</text>
+<text x="32" y="753" font-size="14">West end shown, east end mirrored. Concealed support, jamb collection, lower-wall wetting and installed drainage remain open.</text>
 </g></svg>

@@ -116,7 +116,16 @@
     "troughRunPerRise": 50,
     "endDamHeight_mm": 40,
     "backTurnTopZ_mm": 455,
-    "role": "Two tapered limited-length metal tray wings outboard of the court door aprons. Outlets occupy formed perpendicular joints above the comparison mineral plinth. The lower wet wall, corner/jamb flashings, installed coursing, thermal and structural behaviour remain separate."
+    "jambTongue": {
+      "tipOverlap_mm": 20,
+      "setbackFromRoughJamb_mm": 10,
+      "outsideY_mm": [4115, 4135],
+      "tipFloorZ_mm": 372,
+      "dripDownstand_mm": 12,
+      "sideUpstand_mm": 10,
+      "fallRunPerRise": 8
+    },
+    "role": "Two tapered limited-length metal tray wings outboard of the court door aprons. Outlets occupy formed perpendicular joints above the comparison mineral plinth. The high jamb return laps over the wing. Collection at its heel, the lower wet wall, court corners, masonry support and thermal behaviour remain open."
   },
   "binderEvidence": {
     "product": "Cemex Portland, Rugby works, CEM I 52.5 N",

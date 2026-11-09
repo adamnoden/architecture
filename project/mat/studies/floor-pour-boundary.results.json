@@ -512,7 +512,19 @@
       "troughRunPerRise": 50,
       "endDamHeight_mm": 40,
       "backTurnTopZ_mm": 455,
-      "role": "Two tapered limited-length metal tray wings outboard of the court door aprons. Outlets occupy formed perpendicular joints above the comparison mineral plinth. The lower wet wall, corner/jamb flashings, installed coursing, thermal and structural behaviour remain separate."
+      "jambTongue": {
+        "tipOverlap_mm": 20,
+        "setbackFromRoughJamb_mm": 10,
+        "outsideY_mm": [
+          4115,
+          4135
+        ],
+        "tipFloorZ_mm": 372,
+        "dripDownstand_mm": 12,
+        "sideUpstand_mm": 10,
+        "fallRunPerRise": 8
+      },
+      "role": "Two tapered limited-length metal tray wings outboard of the court door aprons. Outlets occupy formed perpendicular joints above the comparison mineral plinth. The high jamb return laps over the wing. Collection at its heel, the lower wet wall, court corners, masonry support and thermal behaviour remain open."
     },
     "wingGeometry": [
       {
@@ -582,8 +594,67 @@
       5050,
       6950
     ],
+    "jambReturn": {
+      "westAndEast": [
+        {
+          "rootX_mm": 5090,
+          "tipX_mm": 5030,
+          "stopX_mm": 5050,
+          "rootFloorZ_mm": 379.5,
+          "tipFloorZ_mm": 372,
+          "dripBottomZ_mm": 358.5,
+          "stopCrestUpperBoundZ_mm": 344.25,
+          "dripClearOfStop_mm": 10.25,
+          "overlapAfterMovement_mm": 16,
+          "roughOpeningGapAfterMovement_mm": 6,
+          "fallAfterAdverseEndLevelError_mm": 3.5
+        },
+        {
+          "rootX_mm": 6910,
+          "tipX_mm": 6970,
+          "stopX_mm": 6950,
+          "rootFloorZ_mm": 379.5,
+          "tipFloorZ_mm": 372,
+          "dripBottomZ_mm": 358.5,
+          "stopCrestUpperBoundZ_mm": 344.25,
+          "dripClearOfStop_mm": 10.25,
+          "overlapAfterMovement_mm": 16,
+          "roughOpeningGapAfterMovement_mm": 6,
+          "fallAfterAdverseEndLevelError_mm": 3.5
+        }
+      ],
+      "clearCavityY_mm": [
+        4097.5,
+        4147.5
+      ],
+      "sideGapsAfterMovement_mm": [
+        13.5,
+        8.5
+      ],
+      "relativeChallenge_mm": 4,
+      "lowBridgeDischargeWestXYZ_mm": [
+        5088,
+        4102,
+        217
+      ],
+      "lowBridgeFrontEdgeWestXYZ_mm": [
+        [
+          5142,
+          4102,
+          219
+        ],
+        [
+          5088,
+          4102,
+          217
+        ]
+      ],
+      "lowBridgeAboveApron_mm": 67,
+      "minimumApronEdgeMarginAfterMovement_mm": 8,
+      "lowBridgeBelowHighTrough_mm": 77.25
+    },
     "quietStageZ_mm": -35,
-    "scope": "Trial geometry for two straight wings only. Below-tray rain and capillary bypass, both corner and apron ends, thermal bridging, support, actual joint set-out, surface runoff and first harm remain unqualified."
+    "scope": "Two straight wings and the two-level jamb handoff. Full jamb collection, corner ends, below-tray wetting, thermal bridging, supports, masonry set-out and installed performance remain open."
   },
   "proposedMonolithicCastUnion": {
     "drySlabAndSeatArea_m2": 104.895225,
