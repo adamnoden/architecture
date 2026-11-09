@@ -9,8 +9,8 @@
     "label": "fabric-60837041"
   },
   "claimedAt": "2026-11-09T01:22:25.208Z",
-  "heartbeatAt": "2026-11-09T01:54:27.887Z",
-  "expiresAt": "2026-11-09T02:39:27.887Z",
+  "heartbeatAt": "2026-11-09T02:02:54.196Z",
+  "expiresAt": "2026-11-09T02:47:54.196Z",
   "branch": "work/fabric-next-60837041",
   "predecessor": {
     "leaseId": "1e36d690-001c-4951-a675-10536e1e0918",
@@ -34,7 +34,7 @@
   },
   "pr": 1409,
   "checkpoint": {
-    "evidence": "Four-lane #1409 final head 9b47e87f contains main 7e4bdace and the checked 5fb0259f roof source. STR/IAS/RWT independently retained; 13 of 14 hosted workflows passed and packet declarations verified.",
-    "next": "When exact-head Validate succeeds, run fresh four-lease preflight and expected-head merge. Reconcile roof and lower-purlin options on #1100; release MAT-ENVELOPE for handoff."
+    "evidence": "Four-lane #1409 merged at 0e0934f2. MAT roof source 5fb0259f is on main; full MAT tests and 14 exact-head workflows passed. #1100 comment 6730471358 records the geometry and the 24/6 mm outer/court whole-face equal-area sensitivity.",
+    "next": "Develop actual ridge support/closures and hip interruptions, including differentiated net vent areas and removable mesh. Check a different crown node if preserving the continuous field profile."
   }
 }
