@@ -16,9 +16,10 @@ test('a blind in motion can surcharge the high outlet before the court reaches i
 });
 test('worker has a dry exit, a reachable surface eye and exclusion from every loaded movement',()=>{
   const h=r.handling;
-  assert.equal(h.shoes.length,4);
+  assert.equal(h.shoes.length,4); assert.equal(h.smallRests.length,3); assert(h.rackClear>=20);
   assert(h.entryGap>300 && h.bayAtFeet>=40 && h.guardGap>=35);
   assert(h.allClear>65 && h.innerWall>340 && h.wandReserve>13);
+  assert(h.thickSlotReserve>12 && h.hookFit.remainingGrossKgAfterLidAndHook>14 && h.includingMovingArmKNm.E>.24);
   assert(h.surfaceEyeMaximumReach<1900 && h.bareEyeVerticalReach>2100);
   assert(Object.values(h.minimumRestoringKNm).every(m=>m>.1));
 });

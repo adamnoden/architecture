@@ -56,6 +56,14 @@ function handling(h,old,home){
   const wet=[h.services.receiver,h.services.approach,h.services.westGate,...home.northNormalRoute.normal.inletRegions];
   const stageBox=centred(stage,450,350), path=[[body[0],4250],body];
   const shoeGap=Math.min(...shoes.flatMap(s=>[...wet,...cornerPads,stageBox].map(r=>gap(s,r))));
+  // One loose cover and three distinct screen/blind rests must be available
+  // while no operator leaves the guarded station. These three parks bear on
+  // the ballast frame. The heavy lid has its own grade-supported first rest.
+  const smallRests=[[4840,6415],[5050,6415],[5150,6920]].map(p=>centred(p,190,235));
+  const ballastBox=centred([4760,6800],500,400);
+  const rackClear=Math.min(...smallRests.flatMap((b,i)=>[...smallRests.slice(i+1),ballastBox,
+    ...cornerPads,...shoes,...wet,stageBox].map(a=>gap(a,b))));
+  assert(rackClear>=20,JSON.stringify({rackClear}));
   const thresholdX=home.southCourtWeatherDoor.hinges.map(p=>p[0]);
   const entryGap=Math.min(body[0]-thresholdX[0],thresholdX[1]-body[0])-44-300;
   const escapeWidth=Math.min(...[...shoes,stageBox,...wet,...cornerPads].map(r=>gap([body[0],4250,0,body[1]-4250],r)))-300;
@@ -72,14 +80,19 @@ function handling(h,old,home){
   }));
   const innerClear=dist(body,mast)-400-300-grossRadius;
   const dryClear=footDistance(body,dryInner,stage)-300-grossRadius;
-  const allClear=Math.min(wetStrokeClear,innerClear,dryClear);
+  const parkStrokeClear=Math.min(...smallRests.map(([x,y,w,h])=>{
+    const target=[x+w/2,y+h/2],r=dist(target,mast),n=Math.min(400,r);
+    const start=target.map((v,i)=>mast[i]+n*(v-mast[i])/r);
+    return footDistance(body,start,target)-300-grossRadius;
+  }));
+  const allClear=Math.min(wetStrokeClear,innerClear,dryClear,parkStrokeClear);
   const court=home.court;
   const innerWall=Math.min(mast[0]-court[0],mast[1]-court[1],court[0]+court[2]-mast[0],court[1]+court[3]-mast[1])-400-grossRadius;
   const screenedRange=c.windows.map(([Y,Z,W,H])=>[Z-5,Z+H+5]);
   const liftFrom=screenedRange[0][0],carryBottom=1250,hookedToTopReach=Math.max(...aims.map(a=>Math.hypot(dist(body,a),940-(-100))));
   // A protected operator bay is open SOUTH to the existing courtyard door.
   // A narrow vertical sleeve accepts the unloaded setting wand, not people or loads.
-  const guard={xs:[5400,6300],ys:[5520,6365],topZ:1100,portX:[5800,5898],portZ:[250,700],wandOD:24};
+  const guard={xs:[5400,6300],ys:[5520,6365],topZ:1100,portX:[5800,5898],portZ:[250,700],wandOD:24,portWall:50};
   const guardFeet=guard.xs.flatMap(X=>guard.ys.map(Y=>centred([X,Y],120,120)));
   const guardGap=Math.min(...guardFeet.flatMap(a=>[...shoes,...wet,...cornerPads,stageBox].map(b=>gap(a,b))));
   const bayAtFeet=Math.min(body[0]-guard.xs[0]-60,guard.xs[1]-60-body[0])-300;
@@ -87,11 +100,25 @@ function handling(h,old,home){
     return [body[0]+u*(X-body[0]),940+u*(-100-940)];});
   const wandReserve=Math.min(...reachCrossings.flatMap(([X,Z])=>[X-guard.portX[0],guard.portX[1]-X,Z-guard.portZ[0],guard.portZ[1]-Z]))-guard.wandOD/2;
   assert(guardGap>=25&&bayAtFeet>=25&&wandReserve>=5, JSON.stringify({guardGap,bayAtFeet,wandReserve}));
+  const thickSlotReserve=Math.min(...aims.flatMap(([X,Y],i)=>{
+    const [x,z]=reachCrossings[i],dx=(X-body[0])/(Y-body[1]),dz=(-100-940)/(Y-body[1]);
+    const rx=guard.wandOD/2*Math.hypot(1,dx)+guard.portWall/2*Math.abs(dx);
+    const rz=guard.wandOD/2*Math.hypot(1,dz)+guard.portWall/2*Math.abs(dz);
+    return [x-guard.portX[0]-rx,guard.portX[1]-x-rx,z-guard.portZ[0]-rz,guard.portZ[1]-z-rz];
+  }));
+  assert(thickSlotReserve>12);
+  // The dry nests are not on the wet wand sightline. An indexed automatic hook
+  // must engage their upright master rings with the worker still within the bay.
+  const yaw=5*Math.PI/180;
+  const hookWidth=131.5*Math.cos(yaw)+188*Math.sin(yaw),hookLength=188*Math.cos(yaw)+131.5*Math.sin(yaw);
+  const hookFit={body:[131.5,188,269.3],yawDeg:5,nominalMassKg:7,wetAndDryAutoLockRequired:true,
+    remainingGrossKgAfterLidAndHook:40-h.access.plate.firstGrossWeightKg-7,
+    acrossAfterTwo5:(190-hookWidth)/2-10,alongAfterTwo5:(235-hookLength)/2-10};
   const nakedReached=Math.hypot(dist(body,screens[1]),940-screenedRange[1][1]);
   // Avoid soft/uneven ground assumptions. Gravity restoring from ballast only.
   // Frame self-weight counts for bearing but supplies no favourable overturning credit.
   const G=250*9.81/1000,Q=.60, horizontal=.15,height=2.60,M=horizontal*height;
-  const ballast=[4760,6670], xrange=[4550,5260],yrange=[6200,7140];
+  const ballast=[4760,6800], xrange=[4550,5260],yrange=[6200,7140];
   const points=[...aims,stage,[x,y],[x+w,y+d]];
   // Within the retracted arc, a wet or dry payload can swing west of the ballast line.
   // Compare a complete bounding square, including corners that the real arc cannot reach.
@@ -101,17 +128,22 @@ function handling(h,old,home){
     const gravity=sign*G*(ballast[axis]-at)/1000;
     moments[label]=gravity-M+Math.min(0,...points.map(p=>sign*Q*(p[axis]-at)/1000));
   }
-  const total=G+Q+60*9.81/1000;
+  const armWeight=1.5*20*9.81/1000, armR=450;
+  const arm=[Math.max(0,xrange[0]-(mast[0]-armR)),Math.max(0,mast[0]+armR-xrange[1]),
+    Math.max(0,yrange[0]-(mast[1]-armR)),Math.max(0,mast[1]+armR-yrange[1])];
+  const withArm=Object.fromEntries(['W','E','S','N'].map((key,i)=>[key,moments[key]-armWeight*arm[i]/1000]));
+  assert(hookFit.remainingGrossKgAfterLidAndHook>14 && Math.min(...Object.values(withArm))>.1 && hookFit.acrossAfterTwo5>10 && hookFit.alongAfterTwo5>5);
+  const total=G+Q+100*9.81/1000;
   const slope=Math.hypot(h.access.maxGradient.x,h.access.maxGradient.y);
   assert(shoeGap>=25&&entryGap>=200&&escapeWidth>=50);
   assert(maxWetRadius<900&&rip<900&&allClear>20&&innerWall>300,JSON.stringify({maxWetRadius,rip,allClear,innerWall}));
   assert(hookedToTopReach<1900&&nakedReached>1900);
   assert(Math.min(...Object.values(moments))>0,JSON.stringify(moments));
-  return {mast,shoes,stageBox,body,guard,guardFeet,guardGap,bayAtFeet,reachCrossings,wandReserve,path,thresholdX,shoeGap,entryGap,escapeWidth,lids,screens,maxWetRadius,
+  return {mast,shoes,stageBox,smallRests,ballastBox,rackClear,parkStrokeClear,body,guard,guardFeet,guardGap,bayAtFeet,reachCrossings,wandReserve,thickSlotReserve,hookFit,path,thresholdX,shoeGap,entryGap,escapeWidth,lids,screens,maxWetRadius,
     toDryRest:rip,grossRadius,innerClear,wetStrokeClear,dryClear,allClear,innerWall,
     surfaceEyeMaximumReach:hookedToTopReach,bareEyeVerticalReach:nakedReached,screenBottom:liftFrom,carryBottom,
     screenLift:carryBottom-liftFrom,looseBlockAndLidLimitKg:40,ballastKg:250,ballastCentre:ballast, maximumHorizontalLoadKN:horizontal,maximumMomentHeightM:height,
-    minimumRestoringKNm:moments,onePadGrossKPa:total/(.28*.14),antiSlideFriction:(horizontal+slope*total)/total,
+    minimumRestoringKNm:moments,includingMovingArmKNm:withArm,onePadGrossKPa:total/(.28*.14),antiSlideFriction:(horizontal+slope*total)/total,
     minimumParkedGuardTop:1100,installed:false};
 }
 

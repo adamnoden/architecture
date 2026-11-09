@@ -23,6 +23,7 @@ export function serviceDrawing(r){
   box(r.ground.services.westGate,'#ded1bc','#9a876c');
   for(const a of c.shoes)box(a,'#9c9fa4','#475466');
   box(c.stageBox,'#edcfab','#ac7232');
+  for(const a of c.smallRests)box(a,'#f0ceaa','#a7794c');
   for(const a of c.guardFeet)box(a,'#ded9a7','#8b885b');
   const [l,u]=c.guard.ys,[w,e]=c.guard.xs;
   for(const [a,z] of [[[w,l],[w,u]],[[w,u],[e,u]],[[e,u],[e,l]]])line(pt(a),pt(z),'#8b885b',2);

@@ -123,6 +123,34 @@
       450,
       350
     ],
+    "smallRests": [
+      [
+        4745,
+        6297.5,
+        190,
+        235
+      ],
+      [
+        4955,
+        6297.5,
+        190,
+        235
+      ],
+      [
+        5055,
+        6802.5,
+        190,
+        235
+      ]
+    ],
+    "ballastBox": [
+      4510,
+      6600,
+      500,
+      400
+    ],
+    "rackClear": 20,
+    "parkStrokeClear": 381.6147182425915,
     "body": [
       5800,
       5910
@@ -145,7 +173,8 @@
         250,
         700
       ],
-      "wandOD": 24
+      "wandOD": 24,
+      "portWall": 50
     },
     "guardFeet": [
       [
@@ -198,6 +227,20 @@
       ]
     ],
     "wandReserve": 13.950570342205538,
+    "thickSlotReserve": 12.505213261324586,
+    "hookFit": {
+      "body": [
+        131.5,
+        188,
+        269.3
+      ],
+      "yawDeg": 5,
+      "nominalMassKg": 7,
+      "wetAndDryAutoLockRequired": true,
+      "remainingGrossKgAfterLidAndHook": 14.52,
+      "acrossAfterTwo5": 11.307558782187854,
+      "alongAfterTwo5": 8.127208293717388
+    },
     "path": [
       [
         5800,
@@ -256,18 +299,24 @@
     "ballastKg": 250,
     "ballastCentre": [
       4760,
-      6670
+      6800
     ],
     "maximumHorizontalLoadKN": 0.15,
     "maximumMomentHeightM": 2.6,
     "minimumRestoringKNm": {
       "W": 0.12502499999999994,
       "E": 0.36225000000000007,
-      "S": 0.5676749999999999,
-      "N": 0.6306749999999999
+      "S": 0.8865000000000001,
+      "N": 0.31184999999999996
     },
-    "onePadGrossKPa": 92.88520408163265,
-    "antiSlideFriction": 0.09504123994297572,
+    "includingMovingArmKNm": {
+      "W": 0.12502499999999994,
+      "E": 0.24305850000000007,
+      "S": 0.8865000000000001,
+      "N": 0.30596399999999996
+    },
+    "onePadGrossKPa": 102.89540816326529,
+    "antiSlideFriction": 0.09103344410597866,
     "minimumParkedGuardTop": 1100,
     "installed": false
   },
