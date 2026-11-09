@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 59,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "14bf81f1-0293-4bd2-89cb-ac47a3bef669",
   "holder": {
     "kind": "chatgpt",
     "label": "Upper-first side-seat publication"
   },
   "claimedAt": "2026-11-09T00:50:38.350Z",
-  "heartbeatAt": "2026-11-09T01:19:19.175Z",
-  "expiresAt": "2026-11-09T02:04:19.175Z",
+  "heartbeatAt": "2026-11-09T01:19:59.420Z",
+  "expiresAt": "2026-11-09T01:19:59.420Z",
   "branch": "work/front-swarm-0002",
   "predecessor": {
     "leaseId": "a7fe7d33-c771-46f1-b0ee-6e6ee52320b2",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "MERGED #1406 d8e52d78 includes 59c03180 on 673e5c46; full RWT subtree verified, 182 tests in the source rehearsal and all 14 workflows green on submitted head d3b81931.",
     "next": "RWT-06 remains started. Resolve the independent full-duty path during N renewal or change the operating topology. For the earlier east-removal alternative, address rim/sill profiles, sequenced extension after the 90-degree lock, and outboard support/arm loads before claiming safe access."
-  }
+  },
+  "releasedAt": "2026-11-09T01:19:59.420Z",
+  "releaseReason": "handoff"
 }
