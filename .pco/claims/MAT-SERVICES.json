@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
   "generation": 32,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "524e14c3-49cd-4266-a5e0-4aef19f2f889",
   "holder": {
     "kind": "chatgpt",
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T09:12:55.278Z",
-  "heartbeatAt": "2026-11-09T10:32:24.606Z",
-  "expiresAt": "2026-11-09T11:17:24.606Z",
+  "heartbeatAt": "2026-11-09T10:32:52.885Z",
+  "expiresAt": "2026-11-09T10:32:52.885Z",
   "branch": "work/swarm-house-evidence-0840",
   "predecessor": {
     "leaseId": "07eb5e87-d15a-49a0-a416-d28d6f61908a",
@@ -36,5 +36,7 @@
     "evidence": "Merged #1448 (7accc1c2) through #1446 at 771390d3dbf0720de2ff505986d8978b7963291a, final head 2e7164a3, 14 green exact-head checks and four live preflights. Native four-period winter water source, both room and tank conservation, routed glycol pair and stock/mineral vessel decision. Tracker #1100 comment 6737810813, #1448 comment 6737399862.",
     "next": "Frontier remains MAT-SERVICES planned. Compare the governing local-extract and two-stage cooker source, 55/45 emitters and higher-output outdoor/independent water alternative with W9 on the same day, alongside S01–S10 source inventory. Resolve actual room/plant access, cold pressure, controller/protection and residue alternatives; keep field acceptance separate."
   },
-  "pr": 1446
+  "pr": 1446,
+  "releasedAt": "2026-11-09T10:32:52.885Z",
+  "releaseReason": "handoff"
 }
