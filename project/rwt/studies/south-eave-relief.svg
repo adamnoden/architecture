@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="620" viewBox="0 0 1080 620">
+<title>South eave gravity relief with a blocked west leader</title><desc>Two scuppers feed a fixed wall-side channel. With the west leader blocked, water crosses behind the removable middle cassette to the east leader.</desc>
+<rect width="1080" height="620" fill="#faf9f5"/><g font-family="Arial,sans-serif" fill="#243d43">
+<text x="35" y="36" font-size="25">Gravity relief behind the south courtyard gutter</text>
+<text x="35" y="63" font-size="15">West leader blocked in this view. Repeat the test with the east leader blocked.</text>
+<text x="42" y="100" font-size="16">PLAN · wall above, court below</text>
+<rect x="44" y="125" width="956.9999999999999" height="3" fill="#b7b8ae"/>
+<rect x="44" y="126.8" width="956.9999999999999" height="14.399999999999999" fill="#276780"/>
+<rect x="44" y="143" width="956.9999999999999" height="63" fill="#d5d5c9"/>
+<rect x="454.14285714285694" y="143" width="136.71428571428572" height="63" fill="#d2aa92"/>
+<rect x="51.25" y="134.9" width="116" height="13.5" fill="#326e60"/>
+<rect x="877.7499999999999" y="134.9" width="116" height="13.5" fill="#326e60"/>
+<circle cx="87.5" cy="170" r="7" fill="#b65f3f"/>
+<circle cx="957.4999999999999" cy="170" r="7" fill="#b65f3f"/>
+<polyline points="357.2,134.0 699.4,134.0" fill="none" stroke="#ffffff" stroke-width="2" />
+<polyline points="690.1,131.0 699.4,134.0 690.1,137.0" fill="none" stroke="#ffffff" stroke-width="2" />
+<polyline points="82.5,165.0 92.5,175.0" fill="none" stroke="#ffffff" stroke-width="2" />
+<polyline points="82.5,175.0 92.5,165.0" fill="none" stroke="#ffffff" stroke-width="2" />
+<text x="42" y="237" font-size="15">Green = 400 mm relief sills</text>
+<text x="362" y="237" font-size="15">Ochre = centre cassette</text>
+<text x="655" y="237" font-size="15">Blue = fixed 77 mm clear channel</text>
+<text x="42" y="290" font-size="16">LONGITUDINAL SECTION · elevations exaggerated</text>
+<polyline points="44.0,368.2 1001.0,368.2" fill="none" stroke="#b65f3f" stroke-width="2" stroke-dasharray="7 5"/>
+<polyline points="44.0,401.6 1001.0,401.6" fill="none" stroke="#326e60" stroke-width="2" stroke-dasharray="5 4"/>
+<polyline points="44.0,485.4 87.5,486.0 522.5,480.3 957.5,486.0 1001.0,485.4" fill="none" stroke="#276780" stroke-width="5" />
+<polyline points="51.3,389.1 167.3,389.1" fill="none" stroke="#326e60" stroke-width="5" />
+<polyline points="877.7,389.1 993.7,389.1" fill="none" stroke="#326e60" stroke-width="5" />
+<text x="292" y="359.2" font-size="15">Donor limit +6665, 10 below the old front spill</text>
+<text x="313" y="423.6492660962094" font-size="15">Conservative collector energy bound +6577.0</text>
+<text x="382" y="468.3" font-size="15">Crown +6370</text>
+<text x="44" y="520" font-size="15">West outlet X4500</text>
+<text x="846" y="520" font-size="15">East outlet X7500</text>
+<text x="35" y="561" font-size="15">Water enters behind the outer retained modules. The middle cassette and its carrier can still drop towards the court.</text>
+<text x="35" y="589" font-size="15">Required tests include an obstructed downpipe, healthy tailwater, reversing the fault, concentrated inflow and wet-joint leakage.</text>
+</g></svg>
