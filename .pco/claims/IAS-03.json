@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-03",
   "generation": 29,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "f8444899-93c8-4f6b-ba1d-acb44431a691",
   "holder": {
     "kind": "chatgpt",
     "label": "swarm-integration-2343"
   },
   "claimedAt": "2026-11-09T00:29:02.910Z",
-  "heartbeatAt": "2026-11-09T00:50:44.732Z",
-  "expiresAt": "2026-11-09T01:35:44.732Z",
+  "heartbeatAt": "2026-11-09T01:19:00.459Z",
+  "expiresAt": "2026-11-09T01:19:00.459Z",
   "branch": "work/front-swarm-0002",
   "predecessor": {
     "leaseId": "f71f2550-f6d8-481f-8f2a-85c315c080b2",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Three-lane #1406 at 4e692d2f includes IAS source 56e869d2; final tree 9aeb00b5 adds verified rotating-bearing comparison on merged main 673e5c46.",
     "next": "Wait for exact-head validation; all three holders preflight the published revision before guarded merge and release."
-  }
+  },
+  "releasedAt": "2026-11-09T01:19:00.459Z",
+  "releaseReason": "handoff"
 }
