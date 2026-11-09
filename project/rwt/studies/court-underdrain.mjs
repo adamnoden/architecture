@@ -128,6 +128,6 @@ export function buriedReach(h,site,grid,crews){
       {from:'hood pocket',axis:[[7450,7270,-1030],[7160,7270,-1031],[7000,7400,-1031.9]]},
       {from:'north cup',axis:[[7020,7312.5,-965],[7000,7180,-1028.6]]}],receiver:[5050,13800,500,600],forebayFloor:-1350,
     forebayOpenEdge:-900,siteBasin:n.receiverBounds,basinBed:n.bedMaximum,normalTail:n.maximumWater,faultTail:wet,
-    originalN:n.outlet,outerPipeBottom:route.at(-1)[2]-(collared-bore)/2,crew:crews.platformXYZ,
+    originalN:n.outlet,outerPipeBottom:route.at(-1)[2]-(collared-bore)/2,closedSpoolPlatform:crews.platformXYZ,
     tails,scope:'Separate buried leg to the existing N site basin. It has no independent destination when that basin or its continuation is lost.'};
 }

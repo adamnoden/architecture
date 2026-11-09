@@ -35,6 +35,13 @@ export function exchange(h,water,ground){
   const sep=ground.basket, dryStrip=[7345,6875,305,250], railSpan=dryStrip[2], P=5000;
   const singleStrip=span=>({span,railBend:1.5*P*span/(25*45**2),railDeflection:P*span**3/(4*200000*25*45**3)});
   const casing=ground.gallery.dryCatchMouths.map(([x,y,w,d])=>({plan:[x,y,w,d],north:y+d,west:x,east:x+w,south:y}));
+  const open=water.renewal.courtIntakeOperatorPlatform, openZ=water.renewal.courtIntakeOperatorPlatformZ;
+  const limit=(v,a,b)=>Math.max(a-v,v-b,0);
+  const overlap=(a,b,w,d)=>Math.max(0,Math.min(a+w,b+d)-Math.max(a,b));
+  const intersections=casing.map(c=>[overlap(c.west,open[0],c.east-c.west,open[2]),overlap(c.south,open[1],c.north-c.south,open[3])]);
+  const radius=300, centreX=open[0]+radius, ys=[open[1]+radius,open[1]+open[3]-radius];
+  const south=casing[0];
+  const worstDistance=Math.max(...ys.map(y=>Math.hypot(limit(centreX,south.west,south.east),limit(y,south.south,south.north))));
   const cart=[585,550],railZ=90,railSeat=100,cartCentreY=(gate[0]+gate[1])/2;
   const route=[[6910,cartCentreY],[entry.innerPlaneX,cartCentreY],[(entry.innerPlaneX+entry.outerPlaneX)/2,cartCentreY],
     [entry.outerPlaneX,cartCentreY],[5070,cartCentreY],[5070,5510]];
@@ -51,6 +58,11 @@ export function exchange(h,water,ground){
     wholeHoodBought:[boughtUpper,boughtLower],collar:{faceWidth:20,nominalFootprint:[240,940],reservedOverallXY:[260,960],
       steelKgEach:(240*940-bw*bl)*6*8000/1e9,minimumBasketSideSkew:h.basket.minimumWidthAfterSkew},
     well,gate,forecast:'E well stays unoccupied with any unisolated projection or suspended carrier.',gateWidth,pocket,roomZ,
+    selectedOpenPlatform:{plan:open,z:openZ,source:'water-replan.json renewal.courtIntakeOperatorPlatform; used by the guarded open-chute maintenance state',
+      fixedCupOverlaps:intersections,cupRimAboveFeet:ground.gallery.receiverRim-openZ,bodyRadius:radius,
+      centreX,centreY:ys,maxDistanceToSouthCup:worstDistance,remainingStandingStation:worstDistance>=radius,
+      remainingPipeCrownAboveFloor:[-960,-965].map(z=>z+(150+200)/2-openZ),
+      consequence:'Fixed cups exclude every R300 standing position on the selected open platform. Removing them alone leaves branch crowns above the walking datum. Select a top-service receiver or move/isolate both complete drops and provide a reinstated load-bearing platform before crew entry.'},
     newNorth,wetSplit:split,weldedSteps:inlet.wetSeams.slice(1),packs:[west,east,hoodUpper,hoodLower],
     highAlternative:{box:[6170,7385,960,55],shutterY,slots:3,travel:115,
       remainingWidth:(3*300-6*5)*.75,centralFloor:ground.centralFloorWidth,
@@ -59,7 +71,7 @@ export function exchange(h,water,ground){
       reason:'Three movable seals and every return up to -15 are required to cross the temporary north skirt. The buried option keeps that skirt solid.'},
     firstLift:{firstEastVertical:true,spoutInOpenNotch:inlet.spout.notch,spout:inlet.spout.y,
       south30Interference:inlet.spout.notch[0]-(inlet.spout.y[0]-30),westStroke:inlet.newWesternRelease.captureThenEast,
-      dryCupToPlatformAfterTwo5:casing[0].south-(6220+600)-10,
+      dryCupToClosedSpoolPlatformAfterTwo5:casing[0].south-(6220+600)-10,
       howToClose:'Isolate/vent/drain both branches from protected dry controls. An independently restrained plug and drain/witness upstream of each isolation must confirm no residual pressure before lowering water barriers.'},
     hood:{origin:[bx,by],sourcePlan:hood.plan,sourceZ:hood.z,cutZ,jointLength:2*(bw+bl),
       aboveRetainedOutlet:cutZ-hood.clearOutlet.z[1],belowAddedWindow:sep.crest-cutZ,

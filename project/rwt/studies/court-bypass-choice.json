@@ -495,7 +495,7 @@
       -600
     ],
     "outerPipeBottom": -1182.9,
-    "crew": [
+    "closedSpoolPlatform": [
       6250,
       6220,
       -800,
@@ -698,6 +698,40 @@
     "gateWidth": 602.5,
     "pocket": 650,
     "roomZ": 1970,
+    "selectedOpenPlatform": {
+      "plan": [
+        6725,
+        6450,
+        600,
+        900
+      ],
+      "z": -800,
+      "source": "water-replan.json renewal.courtIntakeOperatorPlatform; used by the guarded open-chute maintenance state",
+      "fixedCupOverlaps": [
+        [
+          240,
+          135
+        ],
+        [
+          240,
+          105
+        ]
+      ],
+      "cupRimAboveFeet": 380,
+      "bodyRadius": 300,
+      "centreX": 7025,
+      "centreY": [
+        6750,
+        7050
+      ],
+      "maxDistanceToSouthCup": 95,
+      "remainingStandingStation": false,
+      "remainingPipeCrownAboveFloor": [
+        15,
+        10
+      ],
+      "consequence": "Fixed cups exclude every R300 standing position on the selected open platform. Removing them alone leaves branch crowns above the walking datum. Select a top-service receiver or move/isolate both complete drops and provide a reinstated load-bearing platform before crew entry."
+    },
     "newNorth": 7360,
     "wetSplit": 6430,
     "weldedSteps": [
@@ -819,7 +853,7 @@
       ],
       "south30Interference": 10,
       "westStroke": 50,
-      "dryCupToPlatformAfterTwo5": 15,
+      "dryCupToClosedSpoolPlatformAfterTwo5": 15,
       "howToClose": "Isolate/vent/drain both branches from protected dry controls. An independently restrained plug and drain/witness upstream of each isolation must confirm no residual pressure before lowering water barriers."
     },
     "hood": {
@@ -900,6 +934,10 @@
     [
       "E service",
       "Prove N entrance/receiver with both routes installed. Stop both incoming E feeds, fit storm roof and complete unperforated north skirt, blank/isolate the relief cups from outside, drain and witness. Lift eastern wet carrier vertically with spout through its notch; withdraw western carrier 50 east before lift. No person under the lift."
+    ],
+    [
+      "Open-HAD crew access",
+      "Stop at the top. Both fixed cups cut into the selected 600 by 900 platform and the south cup defeats every R300 stance. No descent, including after removing the pans alone. Reprovide and prove the complete pressure-safe dry station or choose the remotely serviceable receiver."
     ],
     [
       "Basket and native spool",
