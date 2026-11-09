@@ -9,9 +9,9 @@
     "label": "Architecture swarm: independent design development"
   },
   "claimedAt": "2026-11-09T04:06:58.331Z",
-  "heartbeatAt": "2026-11-09T04:20:09.493Z",
-  "expiresAt": "2026-11-09T05:05:09.493Z",
-  "branch": "work/swarm-forward-ias-20261109",
+  "heartbeatAt": "2026-11-09T04:38:38.422Z",
+  "expiresAt": "2026-11-09T05:23:38.422Z",
+  "branch": "work/house-0406-20261109",
   "predecessor": {
     "leaseId": "3fdbd23d-ed42-4f65-88d8-795759df6967",
     "generation": 63,
@@ -32,9 +32,9 @@
       "next": "RWT-06 stays planned. Verify actual corner and secondary runoff boundaries, supporting frames, retained outlet levels and bidirectional blocked-outlet wet tests; otherwise locate an independently safe overflow outside this centre bay."
     }
   },
-  "pr": 1427,
+  "pr": 1428,
   "checkpoint": {
-    "evidence": "PR #1427 at e4c06670 on #1425 main. Two outer scuppers, fixed wall-side gravity receiver and located connections checked for both faults.",
-    "next": "Wait for final head CI, preflight, merge and handoff on #992."
+    "evidence": "Corrected frozen #1427 at 69651e77 accurately reports RWT-06 canonical started. Owner agreed to integrate all six files and this parent with STR/IAS in #1428.",
+    "next": "Compare source ancestry and RWT content, verify exact common CI and live g64 preflight, then hand off #992 and close companion #1427."
   }
 }
