@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "IAS-03",
-  "generation": 40,
-  "state": "released",
-  "leaseId": "239b47c4-8a4b-4aa6-b635-1b512903a2f5",
+  "generation": 41,
+  "state": "claimed",
+  "leaseId": "7040ad01-003d-4794-ae77-2ed322f36a3f",
   "holder": {
     "kind": "chatgpt",
     "label": "Owner follow-on after sink and spill"
   },
-  "claimedAt": "2026-11-09T12:21:49.428Z",
-  "heartbeatAt": "2026-11-09T13:34:30.149Z",
-  "expiresAt": "2026-11-09T13:34:30.149Z",
-  "branch": "work/house-1221-20261109",
+  "claimedAt": "2026-11-09T13:35:15.512Z",
+  "heartbeatAt": "2026-11-09T13:35:15.512Z",
+  "expiresAt": "2026-11-09T14:35:15.512Z",
+  "branch": "work/house-1335-20261109",
   "predecessor": {
-    "leaseId": "2d520023-c8d8-4fba-968a-23970a6def89",
-    "generation": 39,
-    "branch": "work/house-1033-20261109",
-    "pr": 1453,
+    "leaseId": "239b47c4-8a4b-4aa6-b635-1b512903a2f5",
+    "generation": 40,
+    "branch": "work/house-1221-20261109",
+    "pr": 1456,
     "checkpoint": {
-      "evidence": "Merged PR #1453, 1b5f35c44c8f5b90140d084d63a16ad04efab2f8. Fourteen exact-head checks on 704b265e, canonical g39 fence, and issue #941 handoff 6739880460. Occupied upper route needs east window; controlled-vacancy entrance-void alternative is source-bound.",
-      "next": "Retain three-bathing control and use fresh dispatcher. Common upper WCs still need connected water/soil release, visible first-wet declaration and supported reinstatement at real room geometry. Reconcile six interiors exits without deferring design conflicts to commissioning."
+      "evidence": "Merged #1456 at 9edd51c80bb08278662dcdc6c52a011ff921334a after fourteen exact-head workflows on 8b27592c and a canonical g40 fence. Issue #941 handoff 6741343405. Complete upper WCs and corrected bath door are source-bound.",
+      "next": "Finish one governing three-bathing permanent wet section, including the rear flush versus serviceable 155 rim and the actual 1700 bath outlet, plant union/hatch and intact shell route. Material, engineering and physical claims remain with their owners."
     }
   },
   "recoverySource": {
-    "leaseId": "2d520023-c8d8-4fba-968a-23970a6def89",
-    "generation": 39,
-    "branch": "work/house-1033-20261109",
-    "pr": 1453,
+    "leaseId": "239b47c4-8a4b-4aa6-b635-1b512903a2f5",
+    "generation": 40,
+    "branch": "work/house-1221-20261109",
+    "pr": 1456,
     "checkpoint": {
-      "evidence": "Merged PR #1453, 1b5f35c44c8f5b90140d084d63a16ad04efab2f8. Fourteen exact-head checks on 704b265e, canonical g39 fence, and issue #941 handoff 6739880460. Occupied upper route needs east window; controlled-vacancy entrance-void alternative is source-bound.",
-      "next": "Retain three-bathing control and use fresh dispatcher. Common upper WCs still need connected water/soil release, visible first-wet declaration and supported reinstatement at real room geometry. Reconcile six interiors exits without deferring design conflicts to commissioning."
+      "evidence": "Merged #1456 at 9edd51c80bb08278662dcdc6c52a011ff921334a after fourteen exact-head workflows on 8b27592c and a canonical g40 fence. Issue #941 handoff 6741343405. Complete upper WCs and corrected bath door are source-bound.",
+      "next": "Finish one governing three-bathing permanent wet section, including the rear flush versus serviceable 155 rim and the actual 1700 bath outlet, plant union/hatch and intact shell route. Material, engineering and physical claims remain with their owners."
     }
-  },
-  "pr": 1456,
-  "checkpoint": {
-    "evidence": "Merged #1456 at 9edd51c80bb08278662dcdc6c52a011ff921334a after fourteen exact-head workflows on 8b27592c and a canonical g40 fence. Issue #941 handoff 6741343405. Complete upper WCs and corrected bath door are source-bound.",
-    "next": "Finish one governing three-bathing permanent wet section, including the rear flush versus serviceable 155 rim and the actual 1700 bath outlet, plant union/hatch and intact shell route. Material, engineering and physical claims remain with their owners."
-  },
-  "releasedAt": "2026-11-09T13:34:30.149Z",
-  "releaseReason": "handoff"
+  }
 }
