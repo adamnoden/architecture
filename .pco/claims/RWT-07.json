@@ -9,7 +9,12 @@
     "label": "issue-comment-6751604368"
   },
   "claimedAt": "2026-11-09T21:13:35.000Z",
-  "heartbeatAt": "2026-11-09T21:13:35.000Z",
-  "expiresAt": "2026-11-09T21:58:35.000Z",
-  "branch": "work/mvb-chat-6751604368"
+  "heartbeatAt": "2026-11-09T21:16:50.000Z",
+  "expiresAt": "2026-11-09T22:01:50.000Z",
+  "branch": "work/mvb-chat-6751604368",
+  "pr": 1466,
+  "checkpoint": {
+    "evidence": "PR #1466 e3386a38 compares two full drainage networks and four external outlets, demonstrates the NW/NE ground conflicts and prices a southern underwater branch. Source model, drawing, receiver tests and project-control checks passed.",
+    "next": "Review the source join with the occupied house, preserve exact contributor heads, validate the hosted candidate and run fresh holder publication checks."
+  }
 }
