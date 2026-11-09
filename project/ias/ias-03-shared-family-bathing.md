@@ -26,6 +26,8 @@ Use a three-sided curtain around the standing zone. The rear wet wall is at Y380
 
 For bath replacement isolate and drain, release the curtain, the mixer, demountable service rails/holders and sealing joints, support the shell, release the feet and bring the bare, protected body onto its independent handling frame. A 510 × 730 × 1690 carrier would leave 18.5 at each edge of the 767 family threshold if centred. The seated transfer and new 46 kg shell are not validated by the old 41 kg lift. Confirm forward and incoming load support, complete cradle, ninety-degree turn, stairs and actual assembly mass before ordering. For ordinary trap service those whole-bath moves are unnecessary if the matched fitting and supported outlet can be withdrawn through the north panel. [Existing bath first rest and carry limits](studies/selected-family-convergence.json)
 
+The [complete family-bath renewal comparison](ias-03-family-bath-exchange.md) supersedes the 730-wide doorway allowance once the actual handle is present. It prices an upright east-window exchange and checks the separate route to the front entrance against the stair carrier and its operator.
+
 ## From Bedroom 4 with both doors closed
 
 The current HAD paths meet at X3450/Y3782.5. The often-quoted **13.57 m** ends at an already-open family-door entry point. The walk to the old closed-door push position is 13.26 m. Neither length opens the bedroom door. Its current drawing represents an inward 900 × 44 leaf within a 900 rough opening and requires an E20 private doorset. With no room for a complete frame at that bare width, choose a declared frame/body rather than retrofitting a performance claim to that drawing.

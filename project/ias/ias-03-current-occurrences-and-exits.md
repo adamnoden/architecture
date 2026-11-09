@@ -58,6 +58,8 @@ The room-side family continues across all eighteen MAT occurrence roles: entranc
 | S-W / wet fixtures and kitchen | Keep principal 900 split renewal, family-bath native body, kitchen head-first direction and rear 1000 comparison separate. | Each needs its actual supported first release, complete moving body, incoming replacement and renewed water/service boundary. One fixture's mechanism never supplies another's pass. |
 | B-S / service access | Task-sized independently supported fronts, devices and complete crossing closures. | Actual component, connections, tool/body, withdrawal and qualified restoration must join. Do not hide an in-core service joint in permanent RC or make a cabinet face carry it. |
 
+The [family bath exchange](ias-03-family-bath-exchange.md) develops the intact 46 kg replacement through the actual east arch and prices the independent transfer down to site grade. The braked room carrier passes the occupied family doorway, but the tested stair machine needs an operator position its manual does not establish. OAS, STR and the site team must qualify the supported outside exchange and window restoration. This applies to the shared bathing option and leaves the household choice open.
+
 ## Explicit IAS-03 exit ledger
 
 | Exit | Present disposition | Concrete work still owned before IAS closure |
