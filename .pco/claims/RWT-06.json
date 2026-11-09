@@ -9,8 +9,8 @@
     "label": "swarm-integration-2343"
   },
   "claimedAt": "2026-11-09T01:20:39.685Z",
-  "heartbeatAt": "2026-11-09T01:43:07.587Z",
-  "expiresAt": "2026-11-09T02:28:07.587Z",
+  "heartbeatAt": "2026-11-09T01:57:34.105Z",
+  "expiresAt": "2026-11-09T02:42:34.105Z",
   "branch": "work/fabric-next-60837041",
   "predecessor": {
     "leaseId": "14bf81f1-0293-4bd2-89cb-ac47a3bef669",
@@ -34,7 +34,7 @@
   },
   "pr": 1409,
   "checkpoint": {
-    "evidence": "Joint #1409 cb98447b on 7e4bdace contains RWT source 3ab99fe8, roof and sink parents, including separate blocked branch and dry parking checks.",
-    "next": "Verify exact-head workflows, run fresh three-holder publication preflight, merge and release."
+    "evidence": "Shared four-lane head 9b47e87f8ecd32aea1d47772df620979605d6d85 contains the twin-outlet arithmetic and dry park, 186 RWT tests passed, all four new plates checked and 13 hosted workflows green.",
+    "next": "Finish the exact-head validation, recheck four live packet leases, merge #1409 and hand off physical inlet, receiver survey and tailwater measurement."
   }
 }
