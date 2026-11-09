@@ -9,8 +9,8 @@
     "label": "House closure priorities 0820"
   },
   "claimedAt": "2026-11-09T08:20:39.614Z",
-  "heartbeatAt": "2026-11-09T09:01:55.114Z",
-  "expiresAt": "2026-11-09T09:46:55.114Z",
+  "heartbeatAt": "2026-11-09T09:09:47.351Z",
+  "expiresAt": "2026-11-09T09:54:47.351Z",
   "branch": "work/house-0702-20261109",
   "predecessor": {
     "leaseId": "111ea1da-ce89-4fea-8f1d-9d27b104f73c",
@@ -34,7 +34,7 @@
   },
   "pr": 1440,
   "checkpoint": {
-    "evidence": "Combined #1440 exact head 4c7947f8abb25c7176e157ba5b3c3eea08e30722 on a68a5ac565b4c2019aecf91462ef7e6c0da867a0 has #1445 762e6b18e90416169b9edddab4bfbd40d89b11ce as direct parent with seven identical MAT files and test:mat entry. Full local MAT, docs and three STR/RWT/IAS controls passed. 13 of 14 hosted successes, repository health remains in progress.",
-    "next": "After exact hosted success recheck the live g41 publication, give root the final-preflight.json receipt, and reconcile #1100, original #1445, g41 release and branch cleanup after verified merge. Preserve the new HAD court intake predecessor."
+    "evidence": "MERGED #1440 at dac2777600c8425a2c7fc38d6c1a42776372b24c with frozen #1445 762e6b18e90416169b9edddab4bfbd40d89b11ce as direct parent of 4c7947f8abb25c7176e157ba5b3c3eea08e30722. Fourteen exact hosted workflows, local full MAT/docs and all three companion regressions passed. Held g41 preflight and #1100 comment 6736307378. Three doors on one dry-site RC floor with the plant reveal, fixed gasket, 35 up / 80 return and separate wet outlet/exposure conditions.",
+    "next": "Complete a real ordinary-wall and sheltered loggia soffit/portal material and fixing section at the joined structural floor edge. Compare the 110 mm ordinary and 200 mm loggia wall glass with actual retained layers, safe soffit support, drainage, classified underside, heat and replaceability. Keep the three dry doors and requeued court receiver as source inputs. Respect the remaining roof and glazing choices."
   }
 }
