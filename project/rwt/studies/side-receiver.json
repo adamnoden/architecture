@@ -1,0 +1,317 @@
+{
+  "duty": 3.60375,
+  "port": [
+    12946.43554078449,
+    6950,
+    -1183.861386259492
+  ],
+  "lowPort": -1184.7966156576208,
+  "basin": [
+    12146.43554078449,
+    4050,
+    1600,
+    2000
+  ],
+  "spill": [
+    12146.43554078449,
+    2550,
+    1600,
+    1500
+  ],
+  "oldBasin": [
+    12500,
+    6100,
+    2000,
+    1600
+  ],
+  "oldSpill": [
+    14500,
+    6100,
+    1500,
+    1600
+  ],
+  "nativeHorizontalAxisAtBend": -880.8823529411765,
+  "northRimY": 6050,
+  "southPostFace": 6325,
+  "southPostClear": 275,
+  "drawFieldY": [
+    6425,
+    7375
+  ],
+  "northStage": [
+    12250,
+    8100,
+    6600,
+    1200
+  ],
+  "landwardFaceToHouse": 146.4355407844905,
+  "lateralMargin": 500,
+  "lipDownstreamPlan": 1750,
+  "farLipY": 5800,
+  "crestY": 6750,
+  "chute": [
+    12644.43554078449,
+    5800,
+    604,
+    1350
+  ],
+  "chuteToParkedTrack": 194.4355407844905,
+  "fixedRailEnd": 12450,
+  "chuteToPost": 226.5644592155095,
+  "grade": 0.01,
+  "choices": {
+    "rimAllowance": 25,
+    "undersideGap": 5,
+    "downwardMovement": 5,
+    "sheet": 2,
+    "outletAirGap": 10,
+    "maximumQuietApproachVelocityMps": 0.15
+  },
+  "fault": -1250,
+  "crestAboveRim": 19,
+  "minimumCrest": -1206,
+  "highestPool": -1194.7966156576208,
+  "kineticCredit": 1.1467889908256879,
+  "availableEnergyMm": 12.350173333204882,
+  "limits": [
+    {
+      "width": 600,
+      "criticalDepth": 15.435212073291284,
+      "minimumEnergy": 23.152818109936927,
+      "deficit": 10.802644776732045,
+      "maximumRimAllowance": 14.197355223267866
+    },
+    {
+      "width": 300,
+      "criticalDepth": 24.50187188249484,
+      "minimumEnergy": 36.75280782374226,
+      "deficit": 24.402634490537377,
+      "maximumRimAllowance": 0.5973655094625343
+    }
+  ],
+  "intakeAdmitted": false,
+  "maintenanceAdmitted": false,
+  "receiverAdopted": false,
+  "high": {
+    "port": [
+      12950,
+      6647,
+      -880.8823529411765
+    ],
+    "nativeLeg": 303.00000000000006,
+    "basin": [
+      12550,
+      2750,
+      1600,
+      2000
+    ],
+    "spill": [
+      12550,
+      1250,
+      1600,
+      1500
+    ],
+    "rim": 4750,
+    "tailLine": [
+      [
+        12950,
+        6150
+      ],
+      [
+        12950,
+        5550
+      ],
+      [
+        13350,
+        4950
+      ],
+      [
+        13350,
+        4500
+      ]
+    ],
+    "tailPolygon": [
+      [
+        12608,
+        6150
+      ],
+      [
+        12608,
+        5550
+      ],
+      [
+        13008,
+        4950
+      ],
+      [
+        13048,
+        4500
+      ],
+      [
+        13652,
+        4500
+      ],
+      [
+        13692,
+        4950
+      ],
+      [
+        13292,
+        5550
+      ],
+      [
+        13292,
+        6150
+      ]
+    ],
+    "tailClear": 680,
+    "effectiveDoglegWidth": 565.7942001497337,
+    "nearbyCaps": [
+      {
+        "id": "P06",
+        "xy": [
+          11667.5,
+          1192.5
+        ],
+        "plan": [
+          900,
+          600
+        ],
+        "capZ": [
+          -750,
+          -180
+        ],
+        "excavationPlanGap": 432.5
+      },
+      {
+        "id": "P17",
+        "xy": [
+          11667.5,
+          3400
+        ],
+        "plan": [
+          900,
+          600
+        ],
+        "capZ": [
+          -750,
+          -180
+        ],
+        "excavationPlanGap": 432.5
+      }
+    ],
+    "tailFloorAtRim": -1125.211102550928,
+    "mobile": [
+      12648,
+      6045,
+      604,
+      700
+    ],
+    "parked": [
+      12648,
+      5585,
+      604,
+      700
+    ],
+    "shift": 460,
+    "rearSill": -1005,
+    "roof": -740,
+    "crest": -1060,
+    "shroudNorth": 6535,
+    "fixedGuides": [
+      6100,
+      6230
+    ],
+    "guideHead": 50,
+    "guideOffset": 400,
+    "highestPool": -1005,
+    "lowPort": -960.3823529411765,
+    "headGainedAtLowestLip": 224.41426271644434,
+    "maximumEnergyAtBackspill": 56.14678899082569,
+    "losslessAvailableMargins": [
+      32.99397088088877,
+      19.39398116708343
+    ],
+    "halfWidthPoolAtZeroApproach": -1023.2471921762577,
+    "frontRecessFromOpenPipe": 112,
+    "fixedTailToRim": 92.78889744907201,
+    "operatingOverlapY": 105,
+    "parkedEndToRim": 835,
+    "parkedEndToDogleg": 35,
+    "lateralClearFromTerminalEach": 500,
+    "widestMobileOrGuideY": 6285,
+    "parkedPlanGapToDryField": 140,
+    "tailWallInternalGap": 38,
+    "mobileBearingOverlap": [
+      30,
+      30
+    ],
+    "guideToKnownPostX": 100,
+    "northReactionPerUnitWeight": [
+      -3.9615384615384617,
+      4.961538461538462
+    ],
+    "southReactionPerUnitWeight": [
+      -3.9615384615384617,
+      4.961538461538462
+    ],
+    "filledBoxWaterKgUpper": 134.4,
+    "sweep": {
+      "installed": [
+        [
+          12572.934464599475,
+          13040.516960808774
+        ],
+        [
+          6570.614489438335,
+          7035.994049060644
+        ],
+        [
+          -976.927536771306,
+          -781.4660094099677
+        ]
+      ],
+      "sweep": [
+        [
+          12572.934464599475,
+          13040.516960808774
+        ],
+        [
+          6558.901079489939,
+          7078.14045603885
+        ],
+        [
+          -1267.759251026598,
+          -751.89452369013
+        ]
+      ],
+      "locked": [
+        [
+          12575,
+          13035.000000000002
+        ],
+        [
+          6855,
+          7045
+        ],
+        [
+          -1255.8823529411766,
+          -795.8823529411766
+        ]
+      ],
+      "oneDegreeChord": 6.8258772264135485
+    },
+    "assumedCombinedRigidAndDeformation": 10,
+    "stowedKitToRollY": 263.90107948993864,
+    "inletAndFrameToStowedKit": 180,
+    "installedBendToLowRearSill": 18.072463228694005,
+    "installedBendToTallShroud": 25.614489438335113,
+    "outerBridgeGap": 445.4344645994752,
+    "fixedRailEndToRollingBend": 112.93446459947518,
+    "lockedEndToTrackCapY": 178.17412277358653,
+    "lowestLockedDraw": -1337.698424214807,
+    "allDrawObstaclesQualified": false,
+    "hydraulicallyAccepted": false,
+    "siteAccepted": false
+  }
+}
