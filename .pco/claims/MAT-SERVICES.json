@@ -9,8 +9,8 @@
     "label": "MAT W9 cold cooking and unchanged capture"
   },
   "claimedAt": "2026-11-09T00:08:05.751Z",
-  "heartbeatAt": "2026-11-09T00:08:05.751Z",
-  "expiresAt": "2026-11-09T00:53:05.751Z",
+  "heartbeatAt": "2026-11-09T00:11:28.062Z",
+  "expiresAt": "2026-11-09T00:56:28.062Z",
   "branch": "work/swarm-house-0006",
   "predecessor": {
     "leaseId": "c0a47f30-22d5-425b-bc4a-c8694dfcb7ad",
@@ -31,5 +31,10 @@
       "evidence": "Merged #1400 90e9aba69d6fa98b04c1bc4f0f99c2e4e1ffa319 includes original #1401. All 14 workflows and generation-23 preflight passed, preserving the real study corner aperture, supports and furniture check.",
       "next": "MAT-SERVICES stays open. Evaluate cold cooking and degraded W9/VTC at unchanged capture with matched room heat, pressure, sound and controls. Study ends still need actual gland, box entry and supported renewal."
     }
+  },
+  "pr": 1405,
+  "checkpoint": {
+    "evidence": "PR #1405 bfd005a9 joins W9 cold cooking, VTC, kitchen envelope and the structurally coordinated work. Own producer and full test:mat passed locally.",
+    "next": "Verify integrated W9 files match, monitor exact-head checks, run all required lease/publication preflights and reconcile after merge."
   }
 }
