@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "HAD-COURT-INTAKE",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "38699e0c-a8d2-4316-8392-544f6d97c758",
   "holder": {
     "kind": "chatgpt",
     "label": "Coordinated house successor 0910"
   },
   "claimedAt": "2026-11-09T09:11:25.230Z",
-  "heartbeatAt": "2026-11-09T10:10:41.159Z",
-  "expiresAt": "2026-11-09T10:55:41.159Z",
+  "heartbeatAt": "2026-11-09T10:32:50.299Z",
+  "expiresAt": "2026-11-09T10:32:50.299Z",
   "branch": "work/swarm-house-evidence-0840",
   "checkpoint": {
     "evidence": "Corrected joint #1446 on 2e7164a3c6680ac51b94862b65bc9085cfe01b86 retains #1447 ab727db7 through d9d4e9a1. HAD source JSON 80a8481b4e5a508164eff51b596e5a954c152a30 describes its computed 700 mm aisle, the selected 50 mm release and its historical comparator. Numerical geometry, diagrams, graph and all compiled state tests remain intact. Prior final fence is invalid for this new head.",
     "next": "Verify corrected exact joint head and complete 14 hosted workflows, run fresh g1 merge-check and send rain-eighth-run/had-final-preflight.json. After merge reconcile #943/992, release completion and redispatch."
   },
-  "pr": 1446
+  "pr": 1446,
+  "releasedAt": "2026-11-09T10:32:50.299Z",
+  "releaseReason": "completed"
 }
