@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 35,
-  "state": "released",
-  "leaseId": "4af5767e-41b7-4f8d-bb49-ac761e8f432c",
+  "generation": 36,
+  "state": "claimed",
+  "leaseId": "0ec133b8-6cd9-4a3c-9eb6-4b9d2007d3cc",
   "holder": {
     "kind": "chatgpt",
-    "label": "high-eave-0252"
+    "label": "front-threshold-0328"
   },
-  "claimedAt": "2026-11-09T02:54:13.253Z",
-  "heartbeatAt": "2026-11-09T03:27:30.549Z",
-  "expiresAt": "2026-11-09T03:27:30.549Z",
-  "branch": "work/swarm-fourth-20261109",
+  "claimedAt": "2026-11-09T03:30:13.600Z",
+  "heartbeatAt": "2026-11-09T03:30:13.600Z",
+  "expiresAt": "2026-11-09T04:15:13.600Z",
+  "branch": "work/house-front-threshold-0328",
   "predecessor": {
-    "leaseId": "d1bcfeb1-3494-4ed3-95b9-b06143b89532",
-    "generation": 34,
-    "branch": "work/swarm-third-20261109",
-    "pr": 1414,
+    "leaseId": "4af5767e-41b7-4f8d-bb49-ac761e8f432c",
+    "generation": 35,
+    "branch": "work/swarm-fourth-20261109",
+    "pr": 1419,
     "checkpoint": {
-      "evidence": "Merged #1415 via #1414 at 85b99f22. Six roof sources verified. Handoff in #1100.",
-      "next": "Detail the hip cover, dry court feed and two insulation turns at the curb per #1100"
+      "evidence": "MERGED #1419 at 5fdcf5c9ee4ced3ff0b62090204abb57e5c5e28e; source #1422 direct ancestor. All fourteen workflows and MAT35 live preflight passed. #1100 comments 6731438349 and 6731508936 record corner/energy/billing and gate.",
+      "next": "Advance unjoined front/plant threshold sections on the actual door cuts, or qualify/reject the Study corner and rail/head specimen, including real bedding, bearing, first weather-side release and whole-window thermal budget. Preserve wider envelope gates."
     }
   },
   "recoverySource": {
-    "leaseId": "d1bcfeb1-3494-4ed3-95b9-b06143b89532",
-    "generation": 34,
-    "branch": "work/swarm-third-20261109",
-    "pr": 1414,
+    "leaseId": "4af5767e-41b7-4f8d-bb49-ac761e8f432c",
+    "generation": 35,
+    "branch": "work/swarm-fourth-20261109",
+    "pr": 1419,
     "checkpoint": {
-      "evidence": "Merged #1415 via #1414 at 85b99f22. Six roof sources verified. Handoff in #1100.",
-      "next": "Detail the hip cover, dry court feed and two insulation turns at the curb per #1100"
+      "evidence": "MERGED #1419 at 5fdcf5c9ee4ced3ff0b62090204abb57e5c5e28e; source #1422 direct ancestor. All fourteen workflows and MAT35 live preflight passed. #1100 comments 6731438349 and 6731508936 record corner/energy/billing and gate.",
+      "next": "Advance unjoined front/plant threshold sections on the actual door cuts, or qualify/reject the Study corner and rail/head specimen, including real bedding, bearing, first weather-side release and whole-window thermal budget. Preserve wider envelope gates."
     }
-  },
-  "checkpoint": {
-    "evidence": "MERGED #1419 at 5fdcf5c9ee4ced3ff0b62090204abb57e5c5e28e; source #1422 direct ancestor. All fourteen workflows and MAT35 live preflight passed. #1100 comments 6731438349 and 6731508936 record corner/energy/billing and gate.",
-    "next": "Advance unjoined front/plant threshold sections on the actual door cuts, or qualify/reject the Study corner and rail/head specimen, including real bedding, bearing, first weather-side release and whole-window thermal budget. Preserve wider envelope gates."
-  },
-  "pr": 1419,
-  "releasedAt": "2026-11-09T03:27:30.549Z",
-  "releaseReason": "handoff"
+  }
 }
