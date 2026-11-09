@@ -9,9 +9,9 @@
     "label": "Separate the window head and vertical restraint"
   },
   "claimedAt": "2026-11-09T03:29:24.772Z",
-  "heartbeatAt": "2026-11-09T03:29:24.772Z",
-  "expiresAt": "2026-11-09T04:14:24.772Z",
-  "branch": "work/swarm-separate-frame-0328",
+  "heartbeatAt": "2026-11-09T03:45:28.388Z",
+  "expiresAt": "2026-11-09T04:30:28.388Z",
+  "branch": "work/house-front-threshold-0328",
   "predecessor": {
     "leaseId": "2f1e836a-21ab-411f-b691-9e8ce9b9b788",
     "generation": 62,
@@ -31,5 +31,10 @@
       "evidence": "Merged #1419 on main 5fdcf5c9; source #1420 d5f9404b is a direct joint parent, six RWT blobs byte-identical. The central eave two-drip exchange works on both live neighbours only. #992 records successor open-width and flooded-crossover tests, comment 6731423082.",
       "next": "Use finite exit map; if addressing the high-eave centre fault, detail the two retained troughs and dryable 65x170 crossover or independent full-duty discharges, including actual tailwater/losses, cleanout and maintenance; wet corner renewal and protected routes separate."
     }
+  },
+  "pr": 1425,
+  "checkpoint": {
+    "evidence": "Frozen remote 36788df52d8a0402ea14f6b6591dcf5e70147bbc at tree b93614444c5a8b5939888865e42d59aedf4359c1 on 5fdcf5c9. Six files cover a fixed bidirectional courtyard gutter crossover with the central cassette out; the 155 mm mouth fails the assigned 3.60375 L/s fault and supplies a conditional 2.00 L/s trial. Target tests and generated data pass.",
+    "next": "Joint publication #1425 on work/house-front-threshold-0328. Preflight the exact tested integrated head after all required checks; otherwise recover source object from this checkpoint and preserve the conservative roof plus court stress duty."
   }
 }
