@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 33,
-  "state": "released",
-  "leaseId": "32cbfcf3-85b6-4d7d-bb68-db98071ca67c",
+  "generation": 34,
+  "state": "claimed",
+  "leaseId": "d1bcfeb1-3494-4ed3-95b9-b06143b89532",
   "holder": {
     "kind": "chatgpt",
-    "label": "fabric-60837041"
+    "label": "Owner follow-on after sink and spill"
   },
-  "claimedAt": "2026-11-09T01:22:25.208Z",
-  "heartbeatAt": "2026-11-09T02:03:10.049Z",
-  "expiresAt": "2026-11-09T02:03:10.049Z",
-  "branch": "work/fabric-next-60837041",
+  "claimedAt": "2026-11-09T02:06:02.574Z",
+  "heartbeatAt": "2026-11-09T02:06:02.574Z",
+  "expiresAt": "2026-11-09T02:51:02.574Z",
+  "branch": "work/house-0205-20261109",
   "predecessor": {
-    "leaseId": "1e36d690-001c-4951-a675-10536e1e0918",
-    "generation": 32,
-    "branch": "work/front-swarm-0002",
-    "pr": 1406,
+    "leaseId": "32cbfcf3-85b6-4d7d-bb68-db98071ca67c",
+    "generation": 33,
+    "branch": "work/fabric-next-60837041",
+    "pr": 1409,
     "checkpoint": {
-      "evidence": "Four-lane #1406 head d3b81931 / tree 6204a734 on #1405 main includes the five verified RWT files and all 11 unchanged envelope files originally validated at dfce27f1.",
-      "next": "Wait for full CI; run all four exact lease preflights and merge with expected SHA d3b81931. Then release and record residual evidence on #1100."
+      "evidence": "Four-lane #1409 merged at 0e0934f2. MAT roof source 5fb0259f is on main; full MAT tests and 14 exact-head workflows passed. #1100 comment 6730471358 records the geometry and the 24/6 mm outer/court whole-face equal-area sensitivity.",
+      "next": "Develop actual ridge support/closures and hip interruptions, including differentiated net vent areas and removable mesh. Check a different crown node if preserving the continuous field profile."
     }
   },
   "recoverySource": {
-    "leaseId": "1e36d690-001c-4951-a675-10536e1e0918",
-    "generation": 32,
-    "branch": "work/front-swarm-0002",
-    "pr": 1406,
+    "leaseId": "32cbfcf3-85b6-4d7d-bb68-db98071ca67c",
+    "generation": 33,
+    "branch": "work/fabric-next-60837041",
+    "pr": 1409,
     "checkpoint": {
-      "evidence": "Four-lane #1406 head d3b81931 / tree 6204a734 on #1405 main includes the five verified RWT files and all 11 unchanged envelope files originally validated at dfce27f1.",
-      "next": "Wait for full CI; run all four exact lease preflights and merge with expected SHA d3b81931. Then release and record residual evidence on #1100."
+      "evidence": "Four-lane #1409 merged at 0e0934f2. MAT roof source 5fb0259f is on main; full MAT tests and 14 exact-head workflows passed. #1100 comment 6730471358 records the geometry and the 24/6 mm outer/court whole-face equal-area sensitivity.",
+      "next": "Develop actual ridge support/closures and hip interruptions, including differentiated net vent areas and removable mesh. Check a different crown node if preserving the continuous field profile."
     }
-  },
-  "pr": 1409,
-  "checkpoint": {
-    "evidence": "Four-lane #1409 merged at 0e0934f2. MAT roof source 5fb0259f is on main; full MAT tests and 14 exact-head workflows passed. #1100 comment 6730471358 records the geometry and the 24/6 mm outer/court whole-face equal-area sensitivity.",
-    "next": "Develop actual ridge support/closures and hip interruptions, including differentiated net vent areas and removable mesh. Check a different crown node if preserving the continuous field profile."
-  },
-  "releasedAt": "2026-11-09T02:03:10.049Z",
-  "releaseReason": "handoff"
+  }
 }
