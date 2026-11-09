@@ -9,9 +9,9 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T02:06:02.574Z",
-  "heartbeatAt": "2026-11-09T02:14:34.826Z",
-  "expiresAt": "2026-11-09T02:59:34.826Z",
-  "branch": "work/house-0205-20261109",
+  "heartbeatAt": "2026-11-09T02:25:06.595Z",
+  "expiresAt": "2026-11-09T03:10:06.595Z",
+  "branch": "work/swarm-third-20261109",
   "predecessor": {
     "leaseId": "32cbfcf3-85b6-4d7d-bb68-db98071ca67c",
     "generation": 33,
@@ -32,9 +32,9 @@
       "next": "Develop actual ridge support/closures and hip interruptions, including differentiated net vent areas and removable mesh. Check a different crown node if preserving the continuous field profile."
     }
   },
-  "pr": 1415,
+  "pr": 1414,
   "checkpoint": {
-    "evidence": "Published #1415 at 47e6a4df; MAT checks and docs passed",
-    "next": "Verify current main and exact CI before publication"
+    "evidence": "Frozen #1415 head 290d8398 for joint release #1414 after #1413",
+    "next": "Run MAT final publication preflight on the common validated head"
   }
 }
