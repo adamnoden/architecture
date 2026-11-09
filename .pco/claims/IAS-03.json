@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T13:35:15.512Z",
-  "heartbeatAt": "2026-11-09T14:06:56.527Z",
-  "expiresAt": "2026-11-09T14:51:56.527Z",
+  "heartbeatAt": "2026-11-09T14:33:49.109Z",
+  "expiresAt": "2026-11-09T15:18:49.109Z",
   "branch": "work/house-1335-20261109",
   "predecessor": {
     "leaseId": "239b47c4-8a4b-4aa6-b635-1b512903a2f5",
@@ -34,7 +34,7 @@
   },
   "pr": 1459,
   "checkpoint": {
-    "evidence": "PR #1459 at 6007fcb2898d21b0e69946770d3a5bcdce988518. Three-bathing permanent sections, original 1700 bath exchange and reproducible diagrams. Local repo, public routes and docs passed.",
-    "next": "Verify fourteen hosted workflows on the exact head and holder/main fence. Merge, hand off #941 and dispatch the remaining IAS/source work."
+    "evidence": "Merged #1459 at 5fdd9d58e72be75052c013af747470b8523301c3 after 14 exact-head workflows and canonical holder fence on 1f534542. #941 handoff 6742645522. Three-bathing upper floor, lower hatch and original intact-shell exchange registered.",
+    "next": "Finish the selected actual six-service riser cabinet, basin, six matched kitchen breaks and utility first-wetting and renewal duties before judging IAS-03 as a whole."
   }
 }
