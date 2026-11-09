@@ -9,8 +9,8 @@
     "label": "Follow-on architectural dispatch"
   },
   "claimedAt": "2026-11-09T00:51:36.831Z",
-  "heartbeatAt": "2026-11-09T01:12:34.231Z",
-  "expiresAt": "2026-11-09T01:57:34.231Z",
+  "heartbeatAt": "2026-11-09T01:19:30.232Z",
+  "expiresAt": "2026-11-09T02:04:30.232Z",
   "branch": "work/swarm-review-0050",
   "predecessor": {
     "leaseId": "1a1f246d-0b7f-4eed-8b75-fb38e95b4e14",
@@ -34,7 +34,7 @@
   },
   "pr": 1408,
   "checkpoint": {
-    "evidence": "PR #1408 at 880868db locates the W9 horizontal heater, 5D spaces and probe through the plant arch. The final offset has 5.3 mm left after measured Y, and S01-S10 distinguishes the actual house baseline from this alternative.",
-    "next": "Merge current main, preserving parallel package checks and MAT updates. Verify rendering, full CI and lease preflight before integration."
+    "evidence": "PR #1408, final e5a1489b on d8e52d78, includes the four parallel studies from #1406. Exact integrated tree 1670f326e0e0231722b7cba614b90f9cc507972e passed MAT. The branch retains every prior test hook and records a 5.3 mm final fit budget.",
+    "next": "Check exact-head full validation and fresh publication preflight, merge, reconcile #1100 and release."
   }
 }
