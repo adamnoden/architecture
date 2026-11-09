@@ -1,0 +1,164 @@
+{
+  "sources": {
+    "trayStepSHA256": "95a083d401c39302805fa7a433e2bc5d2f78898ff63d38ffb0a88cc8133ac252",
+    "pipeStepSHA256": "514ab24caec354245c7a703997adc0de8e4e97f062b13c84e06afa515127e788",
+    "nativeDrawingSHA256": "982f052af2c76c3b2da163b0d111d2b92b195e5e7a57ac214d94faa49ac48acb"
+  },
+  "tray": {
+    "mainSolid": [
+      999,
+      999,
+      41.1
+    ],
+    "rimY": 0,
+    "drainLandUpperY": -38.6,
+    "drainLandLowerY": -41.1,
+    "annulusDiameters": [
+      90,
+      98
+    ],
+    "looseTrimSeparate": true,
+    "componentSubtotalKg": 26.6
+  },
+  "socket": {
+    "stopPlain": 48.68503999999996,
+    "pocketBelowMouth": [
+      7.5,
+      16.199999999999932
+    ],
+    "maxOuterDiameter": 63.5,
+    "lipID": 50.8,
+    "axialGross": 62.5,
+    "enlargedBelowMouth": 52.5,
+    "engagement": 40,
+    "sealBandFromTip": [
+      23.800000000000068,
+      32.5
+    ],
+    "straightFromTip": [
+      1.7677712541878188,
+      47.49631166259686
+    ],
+    "positiveCollarRadius": 27.12022139809831,
+    "lipToShoulder": 7.4963116625968595,
+    "stopShortfallBeforeBevel": 1.1887283374030986,
+    "flangeZAtG0": 3408.9,
+    "tailZAtG0": 3271.9,
+    "mouthZAtG0": 3311.9,
+    "grossToBoardAtG0": 19.40000000000009,
+    "enlargedToBoardAtG0": 29.40000000000009,
+    "drawingDatumStep": 1.5066430898852043,
+    "headedScrewClearance": -0.4821373805046889,
+    "maxRodODAt1p5Clear": 5.0003963484906535,
+    "screwPitchRadius": 40.99980182575467,
+    "sealFreeRimBand": 2.1726431140730043,
+    "centredSlipGapAtG0": -14.600000000000001
+  },
+  "change": {
+    "well": [
+      1812.5,
+      9252.5,
+      400,
+      400
+    ],
+    "route": [
+      [
+        1802.5,
+        8952.5,
+        1000,
+        1000
+      ],
+      [
+        1802.5,
+        9312.5,
+        1000,
+        1000
+      ],
+      [
+        720,
+        9312.5,
+        1000,
+        1000
+      ]
+    ],
+    "guardedWell": [
+      1787.5,
+      9227.5,
+      450,
+      450
+    ],
+    "mastBase": [
+      1500,
+      10650,
+      300,
+      300
+    ],
+    "mastAxis": [
+      1650,
+      10800
+    ],
+    "maxCGReach": 1497.168160227835,
+    "horizontalObstacleGap": 38.5,
+    "restToWellGuard": 55.5,
+    "restToDoorTip": 342.66966600503173,
+    "doorRack": [
+      3300,
+      11110,
+      900,
+      150
+    ],
+    "rackAisle": 650,
+    "rackToEmitter": 110.5,
+    "westGapAtPark": 128.5,
+    "walk": [
+      [
+        2500,
+        10800
+      ],
+      [
+        2500,
+        9990
+      ],
+      [
+        2100,
+        9990
+      ]
+    ],
+    "walkReserve": 12.5,
+    "toolTop": [
+      2012.5,
+      9760,
+      3800
+    ],
+    "workerReach": 469.63416613359806,
+    "liftProjection": 12,
+    "maxLift": 155,
+    "packageDepth": 120,
+    "restTop": 3475,
+    "railPairKg": 7.912799999999999,
+    "gantryTrialReach": 1650,
+    "overturningKNm": 1.65,
+    "totalWithSpiderKNm": 1.9988519116330021,
+    "anchorCoupleKN": 6.662839705443341,
+    "retainedPanelAtRoutineRepair": true,
+    "noActuationPerformed": true
+  },
+  "sideHatch": {
+    "clear": [
+      350,
+      400
+    ],
+    "outer": [
+      1220,
+      9200,
+      550,
+      600
+    ],
+    "areaM2": 0.33,
+    "westEdgeToTray": 32.5,
+    "toBasin": 27.5,
+    "clearEdgeToDrain": 342.5
+  },
+  "physicalAcceptance": false,
+  "selectedHouseChanged": false
+}

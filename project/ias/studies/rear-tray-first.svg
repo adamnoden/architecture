@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 650" role="img" aria-labelledby="t d">
+<title id="t">Rear shower tray-first exchange</title>
+<desc id="d">The rear shower is raised with the fixed drain held, then moved north and west onto its own crib. The upper pipe socket has a finite sealing pocket. A full-depth push is stopped early by the waste shoulder.</desc>
+<defs><style>text{font-family:DejaVu Sans,sans-serif;fill:#28373f}.t{font-size:25px;font-weight:bold}.h{font-size:17px;font-weight:bold}.s{font-size:14px}.m{font-size:12px}.p{fill:#f5f7f7;stroke:#bfcbcd}.f{fill:#d3d7db;stroke:#78868e}.w{fill:#c5dfec;stroke:#3a7187}.r{fill:#d7e9d7;stroke:#59795e}.arrow{stroke:#347565;stroke-width:3;fill:none;marker-end:url(#arrow)}</style>
+<marker id="arrow" markerWidth="8" markerHeight="7" refX="7" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="#347565"/></marker></defs>
+<rect width="1120" height="650" fill="#fff"/><text x="30" y="41" class="t">Rear shower · lift the tray, then release the waste</text><text x="30" y="66" class="s">Article-specific CAD / prepared repair proposal · house coordinates in mm</text>
+<rect class="p" x="25" y="88" width="525" height="526" rx="5"/><text x="43" y="118" class="h">Room plan · two translations to the first rest</text>
+<!-- x = 65 + (X−429.5)*.13; y = 500 − (Y−8952.5)*.13 -->
+<rect x="65" y="160" width="308.5" height="340" fill="#fff" stroke="#728189" stroke-width="2"/>
+<rect class="f" x="139.2" y="471.4" width="52" height="28.6"/><rect class="f" x="104" y="188" width="72.8" height="46"/>
+<rect class="f" x="65" y="260" width="19.5" height="112"/><rect class="f" x="65" y="162" width="39" height="97"/>
+<rect class="f" x="282" y="160" width="84.5" height="26"/>
+<rect class="w" x="243.5" y="370" width="130" height="130" fill-opacity=".45"/>
+<rect class="r" x="102.8" y="323.2" width="130" height="130"/>
+<rect x="244.8" y="409" width="52" height="52" fill="#fff" stroke="#6f5d84" stroke-dasharray="5 3"/>
+<circle cx="270.8" cy="435" r="5" fill="#6f5d84"/>
+<rect x="204.2" y="240.3" width="39" height="39" fill="#e9d3b8" stroke="#987448"/>
+<path d="M308 431V388H173" class="arrow"/>
+<path d="M382 313H276" stroke="#a76b50" stroke-width="4" stroke-dasharray="7 4"/>
+<text x="111" y="355" class="s">First rest</text><text x="249" y="482" class="s">Installed tray</text>
+<text x="254" y="260" class="m">Mast</text><text x="387" y="309" class="m">Door leaf</text><text x="387" y="326" class="m">removed</text>
+<text x="387" y="410" class="m">Formed well</text><text x="387" y="428" class="m">400 square</text>
+<text x="46" y="537" class="s">Lift 155; travel 360 north, then 1082.5 west.</text><text x="46" y="563" class="m">12 mm fittings included · 38.5 minimum horizontal clearance.</text>
+<text x="46" y="587" class="m">N ↑   E →     Bedroom 4 door park is beyond this plan.</text>
+<rect class="p" x="565" y="88" width="530" height="526" rx="5"/><text x="583" y="118" class="h">Socket and native spigot · assembled reference</text>
+<path d="M601 190H655Q683 190 689 219H732Q739 190 781 190H813" fill="none" stroke="#7b8e91" stroke-width="5"/>
+<text x="830" y="187" class="m">Rim +3450</text><text x="830" y="209" class="m">Ø90/98 seat −38.6 / −41.1</text>
+<path d="M675 228H746L738 244V277Q738 289 728 289H693Q684 289 684 277V244Z" class="w"/>
+<path d="M702 287V355H721V287" class="w"/>
+<path d="M684 311H699V358H722V311H737V368H730V433H691V368H684Z" fill="#ded4bd" stroke="#86744a"/>
+<path d="M688 323H699M722 323H733" stroke="#41534d" stroke-width="5"/>
+<path d="M742 323H819M728 354H819" fill="none" stroke="#66747a"/>
+<text x="830" y="317" class="m">Seal pocket 7.5–16.2</text><text x="830" y="334" class="m">below the socket lip</text>
+<text x="830" y="359" class="m">Trial insertion 40</text>
+<path d="M595 398H684M738 398H813" stroke="#8d7e9b" stroke-width="10"/><text x="830" y="402" class="m">Board top +3230</text>
+<text x="583" y="464" class="s">Full stop requires 48.69; shoulder limits entry to 47.50.</text>
+<text x="583" y="490" class="s">At 40, the seal sits on the straight Ø50 land.</text>
+<text x="583" y="521" class="m">Measure the compressed gasket and actual part agreement.</text>
+<text x="583" y="545" class="m">Substrate, jigs and supported pickup remain design conditions.</text>
+<text x="583" y="586" class="m">Section is schematic. The product CAD is the dimensional source.</text>
+</svg>
