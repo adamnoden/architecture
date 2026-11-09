@@ -9,8 +9,8 @@
     "label": "Integrate authorised final utility-sink patch"
   },
   "claimedAt": "2026-11-08T23:46:39.385Z",
-  "heartbeatAt": "2026-11-08T23:47:37.108Z",
-  "expiresAt": "2026-11-09T00:32:37.108Z",
+  "heartbeatAt": "2026-11-09T00:09:10.179Z",
+  "expiresAt": "2026-11-09T00:54:10.179Z",
   "branch": "work/ias-sink-final-20261108-2343",
   "predecessor": {
     "leaseId": "cd434864-2530-4edf-9f9c-997af6efe8d6",
@@ -34,7 +34,7 @@
   },
   "pr": 1402,
   "checkpoint": {
-    "evidence": "PR #1402 at 2529355d, verified tree fdfde694",
-    "next": "Verify full CI, current main and publication preflight before merge"
+    "evidence": "PR #1402 on merged #1400, exact head 5fe3d378",
+    "next": "Verify CI and run fresh IAS preflight before merge"
   }
 }
