@@ -116,3 +116,21 @@ test('new upper-first source and changed geometry sheet reproduce',()=>{
  assert.equal(fs.readFileSync('project/rwt/studies/upper-first-release.json','utf8'),JSON.stringify(o,null,2)+'\n');
  assert.equal(fs.readFileSync('project/rwt/studies/upper-first-release.svg','utf8'),renderUpper(o));
 });
+
+test('an east seat clear of the basin still occupies its spill and the west rim blocks a temporary track',()=>{
+ const {bankSpanComparison:bridge}=o.lowerTrackReference, c=bridge.crossing;
+ const [x,y,length,width]=c.spill;
+ assert(c.eastHeadX.every(u=>u>x && u<x+length));
+ assert(c.sidePostY.every(v=>v>y && v<y+width));
+ assert.equal(c.obstructedWidth,100);
+ assert.equal(c.remainingGrossWidth,1500);
+ assert(c.westRimNominalInterference>70);
+ assert(c.maximumCrossingDepthBeforeRimAllowance>90 && c.maximumCrossingDepthBeforeRimAllowance<95);
+ assert.equal(c.outerSeatX,16500);
+ assert(c.unchangedSingleWheelMm>11 && c.unchangedSingleWheelMm<12);
+ assert.equal(c.parkedWheelNoseX,12430);
+ assert.equal(c.noseToSeam,20);
+ assert.equal(c.seamToWestRim,50);
+ assert.deepEqual(c.parkedWheelSignedMomentKNm,[-.6,1.275]);
+ assert.equal(c.accepted,false);
+});
