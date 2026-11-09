@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "STR-HOUSE",
-  "generation": 37,
-  "state": "released",
-  "leaseId": "f10138d4-d192-41a6-8378-24d5f718dec4",
+  "generation": 38,
+  "state": "claimed",
+  "leaseId": "7cda0738-fae8-489d-a7bb-9bdc1363b337",
   "holder": {
     "kind": "chatgpt",
     "label": "Owner follow-on after sink and spill"
   },
-  "claimedAt": "2026-11-09T03:29:06.184Z",
-  "heartbeatAt": "2026-11-09T04:04:58.424Z",
-  "expiresAt": "2026-11-09T04:04:58.424Z",
-  "branch": "work/house-front-threshold-0328",
+  "claimedAt": "2026-11-09T04:06:33.815Z",
+  "heartbeatAt": "2026-11-09T04:06:33.815Z",
+  "expiresAt": "2026-11-09T04:51:33.815Z",
+  "branch": "work/house-0406-20261109",
   "predecessor": {
-    "leaseId": "5a0309f5-848f-4c71-904d-03be5537d2ae",
-    "generation": 36,
-    "branch": "work/swarm-fourth-20261109",
-    "pr": 1419,
+    "leaseId": "f10138d4-d192-41a6-8378-24d5f718dec4",
+    "generation": 37,
+    "branch": "work/house-front-threshold-0328",
+    "pr": 1425,
     "checkpoint": {
-      "evidence": "MERGED #1419 5fdcf5c9ee4ced3ff0b62090204abb57e5c5e28e, tree 759f9e5baf75cc9aaf264e9ef32a9ff4cbeb6911. Both roof studies plus whole-house baseline are on main, 14 hosted workflows green. Successor evidence confirmed in STR #1103.",
-      "next": "Use the four joined decisions in str-house-result.md, preferentially compare a separated arch end to a bypass restraint with the actual occupied corner window, guard and cabinet. Physical-adoption, site and material holds stay named. STR-HOUSE remains open."
+      "evidence": "Verified merged #1426 via #1425 at 4dabed3d. The joint and access handoff is in #1103.",
+      "next": "Detail the retained joint and both occupied access paths or identify the necessary house redesign; see #1103."
     }
   },
   "recoverySource": {
-    "leaseId": "5a0309f5-848f-4c71-904d-03be5537d2ae",
-    "generation": 36,
-    "branch": "work/swarm-fourth-20261109",
-    "pr": 1419,
+    "leaseId": "f10138d4-d192-41a6-8378-24d5f718dec4",
+    "generation": 37,
+    "branch": "work/house-front-threshold-0328",
+    "pr": 1425,
     "checkpoint": {
-      "evidence": "MERGED #1419 5fdcf5c9ee4ced3ff0b62090204abb57e5c5e28e, tree 759f9e5baf75cc9aaf264e9ef32a9ff4cbeb6911. Both roof studies plus whole-house baseline are on main, 14 hosted workflows green. Successor evidence confirmed in STR #1103.",
-      "next": "Use the four joined decisions in str-house-result.md, preferentially compare a separated arch end to a bypass restraint with the actual occupied corner window, guard and cabinet. Physical-adoption, site and material holds stay named. STR-HOUSE remains open."
+      "evidence": "Verified merged #1426 via #1425 at 4dabed3d. The joint and access handoff is in #1103.",
+      "next": "Detail the retained joint and both occupied access paths or identify the necessary house redesign; see #1103."
     }
-  },
-  "pr": 1425,
-  "checkpoint": {
-    "evidence": "Verified merged #1426 via #1425 at 4dabed3d. The joint and access handoff is in #1103.",
-    "next": "Detail the retained joint and both occupied access paths or identify the necessary house redesign; see #1103."
-  },
-  "releasedAt": "2026-11-09T04:04:58.424Z",
-  "releaseReason": "handoff"
+  }
 }
