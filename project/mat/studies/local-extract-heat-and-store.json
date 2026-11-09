@@ -127,14 +127,45 @@
       32.04347826086956,
       35.04347826086956
     ],
+    "correctedPrimary": {
+      "completeJacketODmm": 100,
+      "crownBelowCapMM": 140,
+      "edgeGapMM": 30.0,
+      "formedBore": 130,
+      "foulStackToJacketMM": 55,
+      "liftToJacketMM": 70,
+      "minIDmm": 32,
+      "minInsulationMM": 30,
+      "ratedKPaWithAccessories": 53.137822089602246,
+      "ratedLmin": 45.9,
+      "requiredHXAtRatedFlowKWperK": 1.1653398710118386,
+      "returnAt14KW": 59.28104575163399,
+      "sleeveObstacleLowerBoundsMM": [
+        35.0,
+        50.0
+      ],
+      "sleeves": [
+        [
+          9950,
+          5500
+        ],
+        [
+          9950,
+          5660
+        ]
+      ],
+      "tenKTrialKPaWithAccessories": 40.93223548094823,
+      "trialPipeODmm": 35,
+      "verticalJacketGapMM": 50
+    },
     "dailyHeatSpareKWh": 107.95199999870286,
-    "flowPathKPaWithAllowance": 50.774850248124615,
     "newBodyMM": [
       16950,
       3600,
       430,
       1200
     ],
+    "old26IDFlowPathKPaWithAllowance": 50.774850248124615,
     "openGroundZone": [
       15950,
       2600,

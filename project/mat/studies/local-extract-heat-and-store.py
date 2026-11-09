@@ -168,8 +168,30 @@ main_hp={'originalBodyMM':old_body,'overlapWithLiftXY':overlap(old_body,lift),'n
          'zoneToCargoLift':protect[0]-lift[0]-lift[2],'zoneToEastLimit':reserve[0]+reserve[2]-protect[0]-protect[2],
          'usefulRoomTargetKW':14,'roomMarginAtPeakKW':14-peak,'dailyHeatSpareKWh':14*24-daily,
          'wholeDaySourceHoursRequired':daily/14,'primaryLmin':14*60/(10*cv),'secondaryLmin':14*60/(10*4.186),
-         'requiredHXUAKWperK':14/10,'flowPathKPaWithAllowance':pipe['tubeAndFittingsKPa']*(14/(10*cv)/pipe['designLps'])**2+35}
+         'requiredHXUAKWperK':14/10,'old26IDFlowPathKPaWithAllowance':pipe['tubeAndFittingsKPa']*(14/(10*cv)/pipe['designLps'])**2+35}
 assert main_hp['zoneToCargoLift']==main_hp['zoneToEastLimit']==120
+# Manufacturer PCZ2411004CE §12.4.5.3 uses ID32/30 insulation on the 16 kW outdoor unit.
+# Move the northern sleeve 10 mm north. A point-to-obstacle distance is 1-Lipschitz;
+# the old minimum minus the radial growth and centre shift bounds the new local margin.
+route = site['routes']
+old_sleeve, sleeve, casing = site['formedSleeveOD'],130,100
+clear_bound=[r['sleevePerimeterClear']-(sleeve-old_sleeve)/2-shift for r,shift in zip(route,[0,10])]
+sleeves=[[9950,5500],[9950,5660]]
+rated_lps=45.9/60
+primary_return=65-14/(rated_lps*cv)
+cold_approach=primary_return-45
+lm=(cold_approach-10)/log(cold_approach/10)
+length=pipe['lengthM']+.010
+def pressure32(lps):
+    v=(lps/1000)/(pi*.032**2/4)
+    return (pipe['darcyF']*length/.032+pipe['sumK'])*pipe['density']*v*v/2000
+main_hp['correctedPrimary']={'minIDmm':32,'minInsulationMM':30,'trialPipeODmm':35,'completeJacketODmm':casing,
+    'sleeves':sleeves,'formedBore':sleeve,'edgeGapMM':dist(*sleeves)-sleeve,'sleeveObstacleLowerBoundsMM':clear_bound,
+    'liftToJacketMM':site['liftToPipeY']-5,'foulStackToJacketMM':site['foulStackToPipeY']-5,
+    'verticalJacketGapMM':site['pairVerticalClear']-10,'crownBelowCapMM':site['pipeCrownBelowCap']-5,
+    'ratedLmin':rated_lps*60,'returnAt14KW':primary_return,'requiredHXAtRatedFlowKWperK':14/lm,
+    'ratedKPaWithAccessories':pressure32(rated_lps)+35,'tenKTrialKPaWithAccessories':pressure32(14/(10*cv))+35}
+assert min(clear_bound)>=35 and dist(*sleeves)-sleeve==30 and primary_return>55 and 14/lm<1.4
 cook_amps = 2*cooker['nominalElectricalCurrentPerHeaterA']
 main_hp['cookingPhaseAllocationA'] = [19+32,19+cook_amps/2,19+cook_amps/2+3]
 main_hp['phaseAllocationWith9KWIndoorBackupA'] = [v+13.1 for v in main_hp['cookingPhaseAllocationA']]
