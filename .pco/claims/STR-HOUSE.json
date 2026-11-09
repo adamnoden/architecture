@@ -9,8 +9,8 @@
     "label": "November structural coordination swarm"
   },
   "claimedAt": "2026-11-08T23:32:16.150Z",
-  "heartbeatAt": "2026-11-08T23:57:50.414Z",
-  "expiresAt": "2026-11-09T00:42:50.414Z",
+  "heartbeatAt": "2026-11-09T00:06:38.284Z",
+  "expiresAt": "2026-11-09T00:51:38.284Z",
   "branch": "work/swarm-house-2332",
   "predecessor": {
     "leaseId": "3f88f41d-876d-4ade-ba9c-b03a36f1fb24",
@@ -34,7 +34,7 @@
   },
   "pr": 1400,
   "checkpoint": {
-    "evidence": "Combined #1400 at a04fb366 preserves all four authored heads. Both H16 throats can narrow to 15.5 mm on one permitted placement. Local MAT, 176 RWT cases and STR checks passed.",
-    "next": "Full CI 42536971767 is running. Recheck current main and all four lease identities immediately before merge, then reconcile and release."
+    "evidence": "Merged #1400 at 90e9aba6 after all 14 exact-head workflows. Guard sleeves remain; both crossed H16 throats can narrow to 15.5 mm.",
+    "next": "Compare an inclined or positively retained rotating bearing against the continuous joint. Rejoin simultaneous signed actions at both windows, placement and confinement."
   }
 }
