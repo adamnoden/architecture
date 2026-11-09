@@ -9,9 +9,9 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T09:12:55.278Z",
-  "heartbeatAt": "2026-11-09T09:50:43.902Z",
-  "expiresAt": "2026-11-09T10:35:43.902Z",
-  "branch": "work/swarm-house-evidence-0840",
+  "heartbeatAt": "2026-11-09T09:54:04.578Z",
+  "expiresAt": "2026-11-09T10:39:04.578Z",
+  "branch": "work/house-0910-20261109",
   "predecessor": {
     "leaseId": "07eb5e87-d15a-49a0-a416-d28d6f61908a",
     "generation": 31,
@@ -33,8 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Frozen independently as #1448 3dd69c0829af4820c398f92f0eac29c5490fe057, verified tree 5a7a1869, full MAT, repository/public integrity, docs and rendered drawing. Conditional 10 kW source and 6 kW coil meet all four draws, deferring 4.043 kWh room heat; stock 301 L fails station. Two primary sleeves clear dock.",
-    "next": "Join #1448 as direct source parent in #1446 with validated checkout, full exact-head CI and fresh holder fences. Keep MAT-SERVICES planned. Real controller, participating heat capacity, flow/pressure, operational cold/frost/noise and full material residues govern."
+    "evidence": "Independent verified source #1448 3dd69c08 remains intact. Manufacturer FTC7 DG79T729H02 p7 limits native schedule surface. New conservative four-window trial developed while checking combined host.",
+    "next": "Publish bounded source amendment for four native-sized prohibited periods with control deadband and changeover sensitivity before rebinding #1446."
   },
-  "pr": 1446
+  "pr": 1448
 }
