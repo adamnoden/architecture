@@ -9,8 +9,8 @@
     "label": "Whole occurrence decision 0840"
   },
   "claimedAt": "2026-11-09T09:12:42.801Z",
-  "heartbeatAt": "2026-11-09T10:11:33.645Z",
-  "expiresAt": "2026-11-09T10:56:33.645Z",
+  "heartbeatAt": "2026-11-09T10:33:19.874Z",
+  "expiresAt": "2026-11-09T11:18:19.874Z",
   "branch": "work/swarm-house-evidence-0840",
   "predecessor": {
     "leaseId": "a6a1ef75-2328-49d1-ab67-be70360701fa",
@@ -34,7 +34,7 @@
   },
   "pr": 1446,
   "checkpoint": {
-    "evidence": "Four-source #1446 d9d4e9a1 retains frozen 563df9cd, 7accc1c2, ab727db7 and 783bd640. Final 2e7164a3c6680ac51b94862b65bc9085cfe01b86 corrects HAD owned stage and historical labels. Expected tree fd000ba9. HAD and RWT targeted fixes 11/11; project-wide local tests, typecheck and docs validated at joint.",
-    "next": "Await corrected 14 workflows and fresh independent four-party fences, expected-head merge, canonical issue and source-ref reconcile, release g42 and redispatch."
+    "evidence": "MERGED #1446 at 771390d3dbf0720de2ff505986d8978b7963291a. All nine envelope paths/current joint registry verified on main; all four PRs merged and four remote refs absent. Final 14/14, all four live fences. #1100 comment 6737828346.",
+    "next": "Complete programme-level six-interface fit, costs, repair and unapproved residue disposition on latest HAD/STR/Services. The 122.5 mm garden leaf bearing gap and curved portal, slate underlay/valley, Study glazing and actual wet joint require explicit outcomes where not already earned."
   }
 }
