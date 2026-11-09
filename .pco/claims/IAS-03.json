@@ -9,8 +9,8 @@
     "label": "front-next-0120"
   },
   "claimedAt": "2026-11-09T01:21:53.772Z",
-  "heartbeatAt": "2026-11-09T01:43:14.875Z",
-  "expiresAt": "2026-11-09T02:28:14.875Z",
+  "heartbeatAt": "2026-11-09T01:49:45.073Z",
+  "expiresAt": "2026-11-09T02:34:45.073Z",
   "branch": "work/fabric-next-60837041",
   "predecessor": {
     "leaseId": "f8444899-93c8-4f6b-ba1d-acb44431a691",
@@ -34,7 +34,7 @@
   },
   "pr": 1409,
   "checkpoint": {
-    "evidence": "Joint #1409 at cb98447b includes IAS 27da3065 as parent and preserves the independently reviewed four-screw assembly and all new fit checks. Whole tree 0adf54c6.",
-    "next": "Wait for exact-head hosted validation; run fresh IAS branch/main/lease publication preflight before expected-head merge; reconcile #941 and release."
+    "evidence": "Four-lane #1409 at 9b47e87f / tree 37ab1224. Full IAS source matches independently reviewed 27da3065, and the added STR lines are isolated.",
+    "next": "Wait for exact CI and fresh lease/main/branch check; expected-head merge, provenance and issue reconciliation, then release."
   }
 }
