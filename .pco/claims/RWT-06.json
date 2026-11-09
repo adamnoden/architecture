@@ -9,8 +9,8 @@
     "label": "Upper-first side-seat publication"
   },
   "claimedAt": "2026-11-09T00:50:38.350Z",
-  "heartbeatAt": "2026-11-09T00:54:06.881Z",
-  "expiresAt": "2026-11-09T01:39:06.881Z",
+  "heartbeatAt": "2026-11-09T01:09:10.974Z",
+  "expiresAt": "2026-11-09T01:54:10.974Z",
   "branch": "work/front-swarm-0002",
   "predecessor": {
     "leaseId": "a7fe7d33-c771-46f1-b0ee-6e6ee52320b2",
@@ -34,7 +34,7 @@
   },
   "pr": 1406,
   "checkpoint": {
-    "evidence": "PR #1406 at d3b81931 contains the direct parent 59c03180 five-file side-seat and physical sill study on main 673e5c46. Exact RWT tree passed 182/182 and independent diagram review.",
-    "next": "After combined exact-head CI, run fresh RWT preflight, coordinate expected-head merge, verify main ancestry, reconcile #992 and release."
+    "evidence": "All 13 specialized PR proofs passed on d3b81931. Full health is running in Validate attempt 2, job 128921019573. Exact 59c03180 subtree and 182 RWT tests independently verified.",
+    "next": "Wait for the remaining complete validation; run fresh guard on the exact combined head immediately before merge, reconcile #992 and release this partial result."
   }
 }
