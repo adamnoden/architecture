@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
   "generation": 39,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "627a9685-77aa-4175-ac04-62c5aa58dc3e",
   "holder": {
     "kind": "chatgpt",
     "label": "Ring roof and material choice 0629"
   },
   "claimedAt": "2026-11-09T06:30:15.973Z",
-  "heartbeatAt": "2026-11-09T07:38:57.413Z",
-  "expiresAt": "2026-11-09T08:23:57.413Z",
+  "heartbeatAt": "2026-11-09T07:39:35.338Z",
+  "expiresAt": "2026-11-09T07:39:35.338Z",
   "branch": "work/swarm-ring-roof-0629-20261109",
   "predecessor": {
     "leaseId": "42e6ae26-f42d-47b5-8bb7-eb67ae48b2f5",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "MERGED #1438 at 8057718f748befd48aecec8f854fa49ab166224c. Corrected final head 53c6ad32f3acddc43461b2b4309876ebef9038a0 passed 14/14 hosted checks and the live g39 merge-check. Issue #1100 comment 6734810867 records the raised Penrhyn/Hunton slate prototype, finite courses, lead runoff, local cap loading and repair access. No structural or water approval.",
     "next": "Develop P46, P47 and P24 dry upper concrete support interfaces together against occurrence-specific signed loads, capillary continuity, installability and actual groundwater exposure. Compare a positive separation with a stated dry-site boundary. The P32 court fixing is separate."
-  }
+  },
+  "releasedAt": "2026-11-09T07:39:35.338Z",
+  "releaseReason": "handoff"
 }
