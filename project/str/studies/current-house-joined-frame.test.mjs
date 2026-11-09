@@ -56,3 +56,16 @@ test('independent east staff frame retains signed seats, four head actions and a
   assert.ok(part.possibleWaterKg>part.storageGrossUpperL);
   assert.equal(part.wholeMethodAccepted,false);
 });
+
+
+test('whole-house rewind rejects separated tips and moves the matching ground and first-floor corners together', () => {
+  execFileSync('python3',['-B',fileURLToPath(new URL('./house-corner-rewind.py', import.meta.url)),'--check']);
+  const r=read('house-corner-rewind.json');
+  assert.equal(r.changes.length,16);
+  assert.equal(r.oldGroundOpeningBelowJambMm,205);
+  assert.ok(r.windowBarrier.oldSocketShifted>r.windowBarrier.oldToe);
+  assert.ok(r.windowBarrier.oldSocketShifted<r.windowBarrier.newJamb[0]);
+  assert.equal(r.principal.eastStripMm,655.5);
+  assert.ok(r.roof.grossRiseAtNorthCap>373);
+  assert.equal(r.adopted,false);
+});

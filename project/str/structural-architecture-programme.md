@@ -92,6 +92,8 @@ Resolve at candidate level the courtyard doorway/entrance-void conflict, stair a
 
 **Exit:** one preferred, source-bound structural proposition with rejected alternatives and explicit adoption conditions, or a documented failure requiring redesign. It must pass both structural-topology and inhabited-space tests. A generic referral cannot close an identified reaction or fit conflict. Proposed geometry changes use the existing shared rewind procedure, with old/new values and affected views; no source adoption occurs merely because a study drawing exists.
 
+**9 November disposition.** STR-HOUSE completed through the documented-redesign exit. The [paired house and section](whole-house-corner-rewind.md) reject the supplied corner/crown combination and specify a two-storey architectural rewind, with the outstanding source and technical responsibilities stated explicitly.
+
 ### STR-RECONCILE — candidate handoff and affected-evidence review
 
 **Depends on:** STR-HOUSE. **Owner:** STR, with HAD/IAS/OAS/ROF/BCR reconciliation.

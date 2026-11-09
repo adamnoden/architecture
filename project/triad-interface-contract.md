@@ -62,6 +62,8 @@ The [structural brief](../docs/reference-house/structural-brief.md) and [STR pro
 
 STR-HOUSE coordinates proposed structure with HAD in the owning plan/section. STR-RECONCILE supplies exact candidate/source identities, support/reaction envelopes, interface budgets and affected-evidence dispositions. ROF-RWT-GATE must check its selected roof against that handoff. TRIAD-GATE must check actual selected walls, floor layers, opening heads, stair/void and service crossings against it, including the selected construction bay. Changed geometry or assembly outside the declared envelope requires targeted rechecking before admission; a completed study is not automatic compatibility.
 
+**9 November house rewind.** The [completed STR-HOUSE disposition](str/whole-house-corner-rewind.md) rejects selection of the supplied opening/crown combination. HAD/STR should redraw the paired ground and upper corner bays, two continuous jambs, revised bed and fridge, and raised north crown together. OAS/IAS own changed window capture, guards and room operations. MAT/ROF/RWT own changed reveals, ridge/hip weather, ventilation and drainage. STR-RECONCILE must distinguish this proposed successor from the controlled house before passing the roof or TRIAD gates.
+
 This adds no second source-rewind mechanism or retrospective technical approval. Existing selection packets may continue on explicitly provisional assumptions; the final gates cannot bypass the structural handoff.
 
 ## Candidate obligations
