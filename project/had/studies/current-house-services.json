@@ -12,7 +12,13 @@
     "project/mat/studies/whole-house-leakage-duty.json": "5b93cdd9ea1ee7d825fa4596a44caf06431afc49",
     "project/mat/studies/loggia-soffit.json": "c9c914169547bd42b90cd69512ba1a28d97ca6fe",
     "project/mat/studies/joined-cooker-system.json": "d04dd78ba3fd040c7abd1aecb94aa9a3ce95d5e0",
-    "project/ias/studies/shared-family-bathing.json": "08d6d466d515804a58d6cbd22a5f45188af7f56e"
+    "project/ias/studies/shared-family-bathing.json": "08d6d466d515804a58d6cbd22a5f45188af7f56e",
+    "project/ias/studies/household-water.json": "30c96e79dd3a35c96bb30e355b668c9a710a4060",
+    "project/ias/studies/fitted-wc-schedule.json": "5e20c73409b5406a2de9d7ee7e5853e9302189c8",
+    "project/ias/studies/utility-first-release.json": "be84a64623c8042a002af108a784b8668acd7542",
+    "project/ias/studies/utility-host-revised-route.json": "69e6b0aa5e1847f09c7ac3da3b98eec9bf1d5c0b",
+    "project/str/studies/reconciled-house-interface.json": "66143efe1bf357fe3b373777c93bdb25f861e11d",
+    "project/str/studies/current-house-arch-movement.json": "05db94a987c7bf45b885c6d02f701b31bcf91740"
   },
   "court": "HAD-COURT-BYPASS-01",
   "wholeHeat": {
@@ -1183,5 +1189,1580 @@
       160
     ],
     "basis": "Identical heated envelope, rear wet-room target and six fans. Keep the same four-person water draw, case and plant duty."
+  },
+  "fixtureJoin": {
+    "basins": 4,
+    "wcs": 4,
+    "utilityClearFrontMM": 235,
+    "status": "Located fixture, isolation and first-rest comparison; connected product, temporary support, wet testing and qualification remain separately owned."
+  },
+  "fittedWater": {
+    "basins": {
+      "guest": {
+        "back": [
+          7300,
+          850
+        ],
+        "normal": [
+          1,
+          0
+        ],
+        "room": [
+          7300,
+          432.5,
+          9200,
+          2550
+        ],
+        "fixed": [
+          [
+            9003,
+            1900,
+            200,
+            550
+          ],
+          [
+            8661,
+            492.5,
+            454,
+            218
+          ],
+          [
+            8720,
+            707.5,
+            360,
+            525
+          ]
+        ],
+        "bowl": [
+          7300,
+          622.5,
+          255,
+          455
+        ],
+        "pan": [
+          7300,
+          615,
+          290,
+          470
+        ],
+        "park": [
+          7700,
+          615,
+          290,
+          470
+        ],
+        "start": [
+          7910,
+          850
+        ],
+        "finish": [
+          8340,
+          850
+        ],
+        "solid": 671,
+        "worker": 50.00179,
+        "boltReach": 553.82759,
+        "stops": [
+          [
+            7400,
+            825
+          ],
+          [
+            7400,
+            975
+          ]
+        ],
+        "serviceAxis": [
+          7650,
+          700
+        ]
+      },
+      "rear": {
+        "back": [
+          1200,
+          8952.5
+        ],
+        "normal": [
+          0,
+          1
+        ],
+        "room": [
+          429.5,
+          8952.5,
+          2805.5,
+          11570.5
+        ],
+        "fixed": [
+          [
+            1802.5,
+            8952.5,
+            1000,
+            1000
+          ],
+          [
+            429.5,
+            10800,
+            300,
+            750
+          ],
+          [
+            729.5,
+            11000,
+            560,
+            355
+          ],
+          [
+            2100,
+            11367.5,
+            650,
+            200
+          ],
+          [
+            429.5,
+            9937.5,
+            150,
+            862.5
+          ],
+          [
+            1590,
+            9360,
+            212.5,
+            385
+          ]
+        ],
+        "bowl": [
+          972.5,
+          8952.5,
+          455,
+          255
+        ],
+        "pan": [
+          965,
+          8952.5,
+          470,
+          290
+        ],
+        "park": [
+          965,
+          9352.5,
+          470,
+          290
+        ],
+        "start": [
+          1200,
+          9562.5
+        ],
+        "finish": [
+          1200,
+          9992.5
+        ],
+        "solid": 155,
+        "worker": 90,
+        "boltReach": 553.82759,
+        "stops": [
+          [
+            1225,
+            9052.5
+          ],
+          [
+            1075,
+            9052.5
+          ]
+        ],
+        "serviceAxis": [
+          1200,
+          9000
+        ]
+      },
+      "family": {
+        "back": [
+          11567.5,
+          5440
+        ],
+        "normal": [
+          -1,
+          0
+        ],
+        "room": [
+          9397,
+          3800,
+          11567.5,
+          6400
+        ],
+        "fixed": [
+          [
+            9397,
+            4675,
+            600,
+            750
+          ],
+          [
+            9460,
+            3800,
+            1700,
+            700
+          ],
+          [
+            11297.5,
+            6135,
+            270,
+            265
+          ],
+          [
+            11367.5,
+            4525,
+            200,
+            650
+          ],
+          [
+            10813.35773,
+            5705,
+            640,
+            340
+          ],
+          [
+            10988.35773,
+            6135,
+            40,
+            30
+          ]
+        ],
+        "bowl": [
+          11312.5,
+          5212.5,
+          255,
+          455
+        ],
+        "pan": [
+          11277.5,
+          5205,
+          290,
+          470
+        ],
+        "park": [
+          10877.5,
+          5205,
+          290,
+          470
+        ],
+        "start": [
+          10957.5,
+          5370
+        ],
+        "finish": [
+          10527.5,
+          5370
+        ],
+        "solid": 30,
+        "worker": 35,
+        "boltReach": 575.5215,
+        "stops": [
+          [
+            11467.5,
+            5465
+          ],
+          [
+            11467.5,
+            5315
+          ]
+        ],
+        "serviceAxis": [
+          11400,
+          5400
+        ]
+      },
+      "principal": {
+        "back": [
+          9400,
+          7828.75
+        ],
+        "normal": [
+          1,
+          0
+        ],
+        "room": [
+          9400,
+          6600,
+          11567.5,
+          8152.5
+        ],
+        "fixed": [
+          [
+            9400,
+            6600,
+            900,
+            900
+          ],
+          [
+            11342.5,
+            7950,
+            180,
+            180
+          ],
+          [
+            10255,
+            7455,
+            50,
+            50
+          ],
+          [
+            10980,
+            7425.66193,
+            340,
+            640
+          ],
+          [
+            10860,
+            7905.66193,
+            30,
+            40
+          ]
+        ],
+        "bowl": [
+          9400,
+          7601.25,
+          255,
+          455
+        ],
+        "pan": [
+          9400,
+          7593.75,
+          290,
+          470
+        ],
+        "park": [
+          9800,
+          7593.75,
+          290,
+          470
+        ],
+        "start": [
+          10010,
+          7828.75
+        ],
+        "finish": [
+          10440,
+          7828.75
+        ],
+        "solid": 93.75,
+        "worker": 23.75,
+        "boltReach": 553.82759,
+        "stops": [
+          [
+            9500,
+            7803.75
+          ],
+          [
+            9500,
+            7953.75
+          ]
+        ],
+        "serviceAxis": [
+          9570,
+          7800
+        ]
+      }
+    },
+    "wcs": {
+      "basis": "Joined pre-site fixture selection; the pads, source interfaces and product limits retain their separate approval duties.",
+      "coordinateSystem": "All plan rectangles are X/Y/width/depth in millimetres. Section levels are local to the room FFL.",
+      "guest": {
+        "pan": [
+          8720,
+          707.5,
+          360,
+          525
+        ],
+        "cistern": [
+          8661,
+          492.5,
+          454,
+          218
+        ],
+        "valve": [
+          8745,
+          547.5
+        ],
+        "servicesReferenceXY": [
+          8900,
+          650
+        ],
+        "soilAxisZ": 195,
+        "southWall": [
+          8900,
+          0,
+          163.75
+        ],
+        "selectedTakeoff": "Continuous formed above-floor south-wall branch",
+        "firstDraw": [
+          0,
+          100
+        ],
+        "plugDraw": [
+          0,
+          180
+        ],
+        "dryPanRest": [
+          8070,
+          1500,
+          360,
+          525
+        ]
+      },
+      "rear": {
+        "pan": [
+          729.5,
+          11000,
+          560,
+          355
+        ],
+        "cabinet": [
+          429.5,
+          10800,
+          300,
+          750
+        ],
+        "valve": [
+          500,
+          10000
+        ],
+        "stack": [
+          567.5,
+          11177.5,
+          160
+        ],
+        "localSoilAxisZ": 185,
+        "soilSpigotTip": [
+          864.5,
+          11177.5,
+          185
+        ],
+        "flushAxisZ": 340,
+        "firstDraw": [
+          250,
+          0
+        ],
+        "dryPanRest": [
+          3800,
+          10622.5,
+          560,
+          355
+        ]
+      },
+      "replay": {
+        "guestBendDegrees": 3.51083,
+        "guestStraightY": 478.76275,
+        "guestCarrierClear": 430,
+        "guestWorkerClear": 6.44127,
+        "guestGripReach": 430.37774,
+        "guestCapReach": 565.00553,
+        "rearStackEntry": 176.70049,
+        "rearTransferClear": 62.5,
+        "rearWorkerClear": 20,
+        "rearGripReach": 451.69127
+      },
+      "family": {
+        "suite": [
+          10813.35772546,
+          5705,
+          640,
+          340
+        ],
+        "matchedSuiteMovement": [
+          10738.35772546,
+          5695,
+          720,
+          410
+        ],
+        "back": [
+          11453.35772546,
+          5875
+        ],
+        "fixedServicePort": [
+          11003.35772546,
+          6150
+        ],
+        "travellingServicePort": [
+          11003.35772546,
+          6085
+        ],
+        "firstDrawMM": 150,
+        "onwardCarrierCentrePath": [
+          [
+            10983.35772546,
+            5875
+          ],
+          [
+            10425,
+            5875
+          ],
+          [
+            10425,
+            5900
+          ]
+        ]
+      },
+      "principal": {
+        "suite": [
+          10980,
+          7425.66192979,
+          340,
+          640
+        ],
+        "matchedSuiteMovement": [
+          10920,
+          7350.66192979,
+          410,
+          720
+        ],
+        "back": [
+          11150,
+          8065.66192979
+        ],
+        "fixedServicePort": [
+          10875,
+          7920.66192979
+        ],
+        "travellingServicePort": [
+          10940,
+          7920.66192979
+        ],
+        "firstDrawMM": 150,
+        "onwardCarrierCentrePath": [
+          [
+            11150,
+            7595.66192979
+          ],
+          [
+            11150,
+            7525.66192979
+          ],
+          [
+            10537.5,
+            7525.66192979
+          ],
+          [
+            10537.5,
+            8865
+          ]
+        ]
+      }
+    },
+    "kitchen": {
+      "breaks": [
+        {
+          "id": "cold",
+          "A": [
+            9025,
+            10950.5,
+            475
+          ],
+          "B": [
+            9025,
+            10985.5,
+            625
+          ],
+          "disc": 70,
+          "tubeOD": 22,
+          "pitch": 25,
+          "plain": 55.3631,
+          "reach": 585.48121,
+          "kg": 0.79211
+        },
+        {
+          "id": "hot",
+          "A": [
+            9130,
+            10950.5,
+            475
+          ],
+          "B": [
+            9130,
+            10985.5,
+            625
+          ],
+          "disc": 70,
+          "tubeOD": 22,
+          "pitch": 25,
+          "plain": 55.3631,
+          "reach": 484.0475,
+          "kg": 0.79211
+        },
+        {
+          "id": "waste",
+          "A": [
+            9275,
+            10950.5,
+            475
+          ],
+          "B": [
+            9275,
+            10985.5,
+            625
+          ],
+          "disc": 94,
+          "tubeOD": 42,
+          "pitch": 38,
+          "plain": 55.3631,
+          "reach": 359.44852,
+          "kg": 1.1526
+        }
+      ],
+      "crossings": [
+        {
+          "y": 11250,
+          "old": -7.4875,
+          "axis": 356.37498,
+          "clearance": 16.12498
+        },
+        {
+          "y": 11350,
+          "old": -9.9875,
+          "axis": 353.87498,
+          "clearance": 13.62498
+        }
+      ],
+      "trapSeatOutletBottom": [
+        430,
+        359,
+        197
+      ],
+      "raisedTransom": 435,
+      "transomToSocket": 11,
+      "regrade": [
+        11412,
+        65,
+        40.6769,
+        11529.43781,
+        285.52655
+      ],
+      "sheet": [
+        8830,
+        10885.5,
+        640,
+        630
+      ],
+      "park": [
+        8830,
+        10235.5,
+        640,
+        630
+      ],
+      "plateOverlap": 20,
+      "legClear": 10,
+      "clearUnderPlate": 32.8,
+      "actualMassKg": 2.73681
+    },
+    "shaft": {
+      "hole": [
+        9440,
+        4760,
+        465,
+        545
+      ],
+      "cabinet": [
+        9397,
+        4675,
+        600,
+        750
+      ],
+      "feet": [
+        [
+          9410,
+          4690,
+          80,
+          50
+        ],
+        [
+          9410,
+          5345,
+          80,
+          50
+        ],
+        [
+          9880,
+          4690,
+          80,
+          50
+        ],
+        [
+          9880,
+          5345,
+          80,
+          50
+        ]
+      ],
+      "pipeTools": [
+        8.64897,
+        7.95272
+      ]
+    },
+    "wetting": {
+      "flowsLmin": [
+        6,
+        15,
+        30
+      ],
+      "secondsAfterFirstVisible": {
+        "basin": [
+          10.5,
+          4.2,
+          2.1
+        ],
+        "kitchen": [
+          3.5,
+          1.4,
+          0.7
+        ],
+        "utility": [
+          18,
+          7.2,
+          3.6
+        ]
+      }
+    },
+    "materials": "Review the appliance and mixer hoses, trap/shower parts, joints, four basin fittings, waste seals and relief unions with their actual material dispositions."
+  },
+  "utility": {
+    "status": "Independent supported washer, factory sink head, separate wet cutover and electrical task.",
+    "washer": [
+      10076,
+      800,
+      598,
+      600
+    ],
+    "sink": [
+      10935,
+      740,
+      600,
+      600
+    ],
+    "rearServiceChase": [
+      10050,
+      450,
+      1500,
+      250
+    ],
+    "valveBay": [
+      10700,
+      700,
+      235,
+      700
+    ],
+    "electricalStation": [
+      9397,
+      1750,
+      300,
+      650
+    ],
+    "electricalWorkingField": [
+      9697,
+      1750,
+      1000,
+      650
+    ],
+    "PVinverter": [
+      9400,
+      429.5,
+      500,
+      250
+    ],
+    "PVworkingField": [
+      9400,
+      679.5,
+      600,
+      1000
+    ],
+    "working": "Allocate room closure to washer and bench exchange. Preserve independent rack, capped connections and temporary electrical exclusion; restore the electrical field before re-energising.",
+    "washerReservation": [
+      10050,
+      700,
+      650,
+      700
+    ],
+    "washerFirstRest": [
+      10076,
+      1500,
+      598,
+      600
+    ],
+    "temporaryElectricalWorkingOverlapMM2": 209300,
+    "washerStop": {
+      "point": [
+        10800,
+        1250,
+        750
+      ],
+      "shoulder": [
+        10800,
+        1725,
+        1050
+      ],
+      "straightReach": 561.80512636
+    },
+    "rackFoot": [
+      10835,
+      1100,
+      70,
+      100
+    ],
+    "rackPost": [
+      10875,
+      1165,
+      20,
+      20
+    ],
+    "seatPlan": [
+      [
+        10930,
+        700,
+        90,
+        200
+      ],
+      [
+        10930,
+        1200,
+        90,
+        200
+      ],
+      [
+        11480,
+        700,
+        90,
+        200
+      ],
+      [
+        11480,
+        1200,
+        90,
+        200
+      ]
+    ],
+    "wasteAccess": [
+      10825,
+      1225,
+      100,
+      100
+    ],
+    "acquiredBranch": {
+      "floor": [
+        10050,
+        450,
+        1500,
+        950
+      ],
+      "trench": [
+        10050,
+        1400,
+        1500,
+        40
+      ],
+      "clearElectric": 310,
+      "clearStand": 25,
+      "netL": 2,
+      "grossL": 3.3,
+      "grips": [
+        524.00659,
+        508.36847,
+        539.63166
+      ],
+      "roomClear": 5,
+      "discharge": [
+        [
+          11270,
+          940
+        ],
+        [
+          10760,
+          940
+        ],
+        [
+          10760,
+          1275
+        ],
+        [
+          10875,
+          1275
+        ]
+      ],
+      "branchLength": 960,
+      "finalBranchZ": 586
+    }
+  },
+  "structuralServiceReview": {
+    "structuralCandidate": "SAP-C1",
+    "ports": [
+      {
+        "id": "ground-WC-exhaust",
+        "wall": "outer-south",
+        "point": [
+          8950,
+          0,
+          3010
+        ],
+        "radius": 140,
+        "ring": 196.61077853,
+        "aperture": 244.8376281,
+        "concrete": 105,
+        "minimum": 105,
+        "replacement": null
+      },
+      {
+        "id": "ground-WC-condensate",
+        "wall": "outer-south",
+        "point": [
+          9150,
+          0,
+          3010
+        ],
+        "radius": 20,
+        "ring": 242.62469327,
+        "aperture": 276.81644159,
+        "concrete": 25,
+        "minimum": 25,
+        "replacement": null
+      },
+      {
+        "id": "utility-exhaust",
+        "wall": "outer-east",
+        "point": [
+          12000,
+          900,
+          3010
+        ],
+        "radius": 140,
+        "ring": 481.2034073,
+        "aperture": 578.05292284,
+        "concrete": -140,
+        "minimum": -140,
+        "replacement": null
+      },
+      {
+        "id": "utility-condensate",
+        "wall": "outer-east",
+        "point": [
+          12000,
+          1100,
+          3010
+        ],
+        "radius": 20,
+        "ring": 434.47428179,
+        "aperture": 504.97618994,
+        "concrete": -20,
+        "minimum": -20,
+        "replacement": null
+      },
+      {
+        "id": "kitchen-exhaust",
+        "wall": "outer-north",
+        "point": [
+          11282.5,
+          12000,
+          3010
+        ],
+        "radius": 140,
+        "ring": 640.20382895,
+        "aperture": 756.88697727,
+        "concrete": -140,
+        "minimum": -140,
+        "replacement": null
+      },
+      {
+        "id": "kitchen-condensate",
+        "wall": "outer-north",
+        "point": [
+          11482.5,
+          12000,
+          3010
+        ],
+        "radius": 20,
+        "ring": 942.20354487,
+        "aperture": 1074.26059511,
+        "concrete": -20,
+        "minimum": -20,
+        "replacement": null
+      },
+      {
+        "id": "rear-bath-exhaust",
+        "wall": "outer-west",
+        "point": [
+          0,
+          9300,
+          6400
+        ],
+        "radius": 140,
+        "ring": -24.75839686,
+        "aperture": 1.42135624,
+        "concrete": -140,
+        "minimum": -140,
+        "replacement": null
+      },
+      {
+        "id": "rear-bath-condensate",
+        "wall": "outer-west",
+        "point": [
+          0,
+          9500,
+          6400
+        ],
+        "radius": 20,
+        "ring": -20,
+        "aperture": 80,
+        "concrete": 80,
+        "minimum": -20,
+        "replacement": null
+      },
+      {
+        "id": "family-bath-exhaust",
+        "wall": "outer-east",
+        "point": [
+          12000,
+          5750,
+          6400
+        ],
+        "radius": 140,
+        "ring": 407.59795877,
+        "aperture": 517.6473219,
+        "concrete": 2805,
+        "minimum": 407.59795877,
+        "replacement": null
+      },
+      {
+        "id": "family-bath-condensate",
+        "wall": "outer-east",
+        "point": [
+          12000,
+          5950,
+          6400
+        ],
+        "radius": 20,
+        "ring": 704.76466769,
+        "aperture": 835.86213843,
+        "concrete": 3125,
+        "minimum": 704.76466769,
+        "replacement": null
+      },
+      {
+        "id": "principal-bath-exhaust",
+        "wall": "outer-east",
+        "point": [
+          12000,
+          7400,
+          6060
+        ],
+        "radius": 140,
+        "ring": 100,
+        "aperture": 25,
+        "concrete": 1655,
+        "minimum": 25,
+        "replacement": null
+      },
+      {
+        "id": "principal-bath-condensate",
+        "wall": "outer-east",
+        "point": [
+          12000,
+          7600,
+          6060
+        ],
+        "radius": 20,
+        "ring": 163.63780207,
+        "aperture": 88.63780207,
+        "concrete": 1575,
+        "minimum": 88.63780207,
+        "replacement": null
+      },
+      {
+        "id": "study-supply",
+        "wall": "outer-west",
+        "point": [
+          0,
+          2700,
+          2850
+        ],
+        "radius": 180,
+        "ring": -136.37210646,
+        "aperture": -80,
+        "concrete": -180,
+        "minimum": -180,
+        "replacement": {
+          "wall": "outer-south",
+          "point": [
+            3045,
+            0,
+            2100
+          ],
+          "radius": 180,
+          "ring": 426.47058824,
+          "aperture": 175,
+          "concrete": 60,
+          "minimum": 60,
+          "face": [
+            400,
+            400
+          ],
+          "faceClearance": 40
+        }
+      },
+      {
+        "id": "living-supply",
+        "wall": "outer-west",
+        "point": [
+          0,
+          9200,
+          2850
+        ],
+        "radius": 180,
+        "ring": -61.04959426,
+        "aperture": 20,
+        "concrete": -180,
+        "minimum": -180,
+        "replacement": {
+          "wall": "outer-north",
+          "point": [
+            3090,
+            12000,
+            2100
+          ],
+          "radius": 180,
+          "ring": 447.67193567,
+          "aperture": 80,
+          "concrete": 105,
+          "minimum": 80,
+          "face": [
+            400,
+            400
+          ],
+          "faceClearance": 60
+        }
+      },
+      {
+        "id": "bed2-supply",
+        "wall": "outer-south",
+        "point": [
+          2850,
+          0,
+          6300
+        ],
+        "radius": 180,
+        "ring": -21.66075652,
+        "aperture": 70,
+        "concrete": -135,
+        "minimum": -135,
+        "replacement": {
+          "wall": "outer-south",
+          "point": [
+            3045,
+            0,
+            5550
+          ],
+          "radius": 180,
+          "ring": 426.47058824,
+          "aperture": 175,
+          "concrete": 60,
+          "minimum": 60,
+          "face": [
+            400,
+            400
+          ],
+          "faceClearance": 40
+        }
+      },
+      {
+        "id": "bed3-supply",
+        "wall": "outer-south",
+        "point": [
+          9150,
+          0,
+          6300
+        ],
+        "radius": 180,
+        "ring": -21.66075652,
+        "aperture": 70,
+        "concrete": -135,
+        "minimum": -135,
+        "replacement": {
+          "wall": "outer-south",
+          "point": [
+            8955,
+            0,
+            5550
+          ],
+          "radius": 180,
+          "ring": 384.11764706,
+          "aperture": 175,
+          "concrete": 60,
+          "minimum": 60,
+          "face": [
+            400,
+            400
+          ],
+          "faceClearance": 40
+        }
+      },
+      {
+        "id": "bed4-supply",
+        "wall": "outer-north",
+        "point": [
+          4800,
+          12000,
+          6300
+        ],
+        "radius": 180,
+        "ring": 406.44314109,
+        "aperture": 570,
+        "concrete": 1815,
+        "minimum": 406.44314109,
+        "replacement": null
+      },
+      {
+        "id": "principal-supply",
+        "wall": "outer-north",
+        "point": [
+          11150,
+          12000,
+          6300
+        ],
+        "radius": 180,
+        "ring": 414.52526785,
+        "aperture": 570,
+        "concrete": -180,
+        "minimum": -180,
+        "replacement": {
+          "wall": "outer-east",
+          "point": [
+            12000,
+            8800,
+            6300
+          ],
+          "radius": 180,
+          "ring": 275.92988367,
+          "aperture": 420,
+          "concrete": 215,
+          "minimum": 215,
+          "face": [
+            400,
+            400
+          ],
+          "faceClearance": 185
+        }
+      },
+      {
+        "id": "cooker-exhaust",
+        "wall": "outer-north",
+        "point": [
+          11125,
+          12000,
+          2600
+        ],
+        "radius": 160,
+        "ring": 377.73490079,
+        "aperture": 565,
+        "concrete": -160,
+        "minimum": -160,
+        "replacement": null
+      },
+      {
+        "id": "cooker-makeup",
+        "wall": "outer-east",
+        "point": [
+          12000,
+          8600,
+          2400
+        ],
+        "radius": 160,
+        "ring": 499.96100598,
+        "aperture": 640,
+        "concrete": 435,
+        "minimum": 435,
+        "replacement": null
+      },
+      {
+        "id": "east-foul-flashing",
+        "wall": "outer-east",
+        "point": [
+          12000,
+          5625,
+          2616.875
+        ],
+        "radius": 150,
+        "ring": 37.86189931,
+        "aperture": 175,
+        "concrete": 2670,
+        "minimum": 37.86189931,
+        "replacement": null
+      }
+    ],
+    "fixedHeads": [
+      {
+        "level": "GROUND",
+        "wall": "outer-east",
+        "id": "east-window-0",
+        "width": 1000,
+        "along": 2100,
+        "bandBottom": 2200,
+        "border": 75,
+        "holes": [
+          {
+            "id": "utility-exhaust",
+            "radius": 140,
+            "point": [
+              12000,
+              2100,
+              2500
+            ],
+            "frameGap": 85,
+            "faceShape": "square",
+            "faceWidth": 360,
+            "faceGap": 45
+          },
+          {
+            "id": "utility-condensate",
+            "radius": 20,
+            "point": [
+              12000,
+              2345,
+              2500
+            ],
+            "frameGap": 144.60483086,
+            "faceShape": "square",
+            "faceWidth": 60,
+            "faceGap": 122.24895669
+          }
+        ],
+        "grossHeadAreaM2": 0.56373608,
+        "interHoleWebMM": 85,
+        "betweenWeatherFacesMM": 35
+      },
+      {
+        "level": "FIRST",
+        "wall": "outer-west",
+        "id": "west-window-3",
+        "width": 1000,
+        "along": 9900,
+        "bandBottom": 2200,
+        "border": 75,
+        "holes": [
+          {
+            "id": "rear-bath-exhaust",
+            "radius": 140,
+            "point": [
+              0,
+              9900,
+              5950
+            ],
+            "frameGap": 85,
+            "faceShape": "square",
+            "faceWidth": 360,
+            "faceGap": 45
+          },
+          {
+            "id": "rear-bath-condensate",
+            "radius": 20,
+            "point": [
+              0,
+              10145,
+              5950
+            ],
+            "frameGap": 144.60483086,
+            "faceShape": "square",
+            "faceWidth": 60,
+            "faceGap": 122.24895669
+          }
+        ],
+        "grossHeadAreaM2": 0.56373608,
+        "interHoleWebMM": 85,
+        "betweenWeatherFacesMM": 35
+      },
+      {
+        "level": "GROUND",
+        "wall": "outer-north",
+        "id": "north-window-3",
+        "width": 700,
+        "along": 8300,
+        "bandBottom": 2200,
+        "border": 75,
+        "holes": [
+          {
+            "id": "kitchen-exhaust",
+            "radius": 140,
+            "point": [
+              8300,
+              12000,
+              2490
+            ],
+            "frameGap": 75,
+            "faceShape": "circle",
+            "faceWidth": 330,
+            "faceGap": 50
+          },
+          {
+            "id": "kitchen-condensate",
+            "radius": 20,
+            "point": [
+              8520,
+              12000,
+              2490
+            ],
+            "frameGap": 35,
+            "faceShape": "square",
+            "faceWidth": 60,
+            "faceGap": 25
+          }
+        ],
+        "grossHeadAreaM2": 0.40381336,
+        "interHoleWebMM": 60,
+        "betweenWeatherFacesMM": 25
+      },
+      {
+        "level": "GROUND",
+        "wall": "outer-north",
+        "id": "north-window-4",
+        "width": 1000,
+        "along": 9900,
+        "bandBottom": 2200,
+        "border": 75,
+        "holes": [
+          {
+            "id": "cooker-exhaust",
+            "radius": 160,
+            "point": [
+              9900,
+              12000,
+              2565
+            ],
+            "frameGap": 50,
+            "faceShape": "circle",
+            "faceWidth": 360,
+            "faceGap": 30
+          }
+        ],
+        "grossHeadAreaM2": 0.56373608,
+        "interHoleWebMM": null,
+        "betweenWeatherFacesMM": null
+      }
+    ],
+    "scope": "Furnished services design against the provisional structural apertures. Centre/ring, daylight rectangle, continuous jamb/toe and new inlet faces only. Existing port approval, wall section and air performance are not implied.",
+    "hoodReroute": {
+      "addedLengthM": 2,
+      "addedBendK": 2,
+      "cases": 96,
+      "hoodLps": [
+        65.88979218,
+        80.36668654
+      ],
+      "directLps": [
+        78,
+        95.70890564
+      ],
+      "kitchenPa": [
+        -4,
+        -3.11995402
+      ]
+    },
+    "principalBed": {
+      "ordinaryBed": [
+        9315,
+        9150,
+        1600,
+        2090
+      ],
+      "servicePark": [
+        8540,
+        9150,
+        1600,
+        2090
+      ],
+      "paddedStage": [
+        10175,
+        8440,
+        450,
+        1100
+      ],
+      "eastStripMm": 655.5,
+      "routes": [
+        [
+          [
+            8700,
+            8800
+          ],
+          [
+            11242.75,
+            8800
+          ],
+          [
+            11242.75,
+            10320
+          ]
+        ],
+        [
+          [
+            8700,
+            8800
+          ],
+          [
+            8990,
+            8800
+          ],
+          [
+            8990,
+            11245.5
+          ]
+        ],
+        [
+          [
+            8990,
+            11245.5
+          ],
+          [
+            8700,
+            11250
+          ]
+        ],
+        [
+          [
+            8700,
+            8800
+          ],
+          [
+            10400,
+            8825
+          ]
+        ]
+      ],
+      "routeToFurnitureMm": 25,
+      "serviceWardrobeClearMm": 130.5,
+      "wcPan": {
+        "paddedStage": [
+          10335,
+          8515,
+          405,
+          700
+        ],
+        "ordinaryYOverlapMm": 65,
+        "parkedToWholeSweepMm": 195
+      }
+    },
+    "kitchen": {
+      "newFridge": [
+        10920.5,
+        8725,
+        650,
+        650
+      ],
+      "hinge": [
+        10920.5,
+        9375
+      ],
+      "fridgeToWindowMm": 25,
+      "bodySweepAABB": [
+        10194.44249214,
+        8825,
+        10970.5,
+        10020
+      ],
+      "bodyToFixedMm": 44.62819468,
+      "armToFixedMm": 54.46987869
+    }
   }
 }

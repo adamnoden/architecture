@@ -1,7 +1,7 @@
 // Recovered calculation, independent of the archived room-allocation generator.
 // Dimensions mm, airflow L/s, pressure Pa. A through-flow and zero-reverse
 // inlet assumption only apply to the recorded operating and negative cases.
-export function controlAndStorage(nativeCharts){
+export function controlAndStorage(nativeCharts,addedLengthM=0,addedBendK=0){
   const dp=(q,a)=>.6*q*Math.abs(q)/(.61*a/1000)**2;
   function bisect(f,lo,hi){
     if(f(lo)*f(hi)>0)throw Error('Unbracketed physical state');
@@ -33,7 +33,7 @@ export function controlAndStorage(nativeCharts){
       const pressure=q=>{const direct=Math.max(78,q+20-n);return state(mask,q+20-direct,area).k};
       const q=bisect(q=>{
         const v=q/1000/(Math.PI*.125**2/4);
-        return fanPa(q)+error-(kh+kg)*q*q-(.03*1.2/.125+.6+1)*.6*v*v+pressure(q)-wind;
+        return fanPa(q)+error-(kh+kg)*q*q-(.03*(1.2+addedLengthM)/.125+.6+1+addedBendK)*.6*v*v+pressure(q)-wind;
       },50,99);
       const direct=Math.max(78,q+20-n),x=state(mask,q+20-direct,area);save(x.inlets);
       cases.push({q,direct,k:x.k,dp:x.h-x.k,reverse:Math.abs(dp(20-direct,area))});

@@ -42,7 +42,7 @@ test('store cradle clears the two piers and retained plant only after first rele
 test('published schedule and both figures reproduce from the complete house option',()=>{
   for(const [file,render] of [['current-house-services.json',scheduleText],['current-house-services.svg',servicePlate],['store-exchange.svg',storePlate]])
     assert.equal(readFileSync(new URL(file,import.meta.url),'utf8'),render(x),file);
-  assert.equal(Object.keys(x.inputs).length,10);
+  assert.equal(Object.keys(x.inputs).length,16);
 });
 
 test('same seat time, different flow histories: the room pressure can fail or recover',()=>{
@@ -83,4 +83,34 @@ test('the first cold draw separates all three flat faces and preserves the tank 
   assert(Object.values(first.jacketClearanceLowerMM).every(n=>n>=25));
   assert.equal(first.maxEngagementMM,0);
   assert.equal(s.cooker.fullInsulatedOD,227);
+});
+
+test('furnished sanitary and utility occurrences have one joined geometry',()=>{
+  assert.equal(x.fixtureJoin.utilityClearFrontMM,235);
+  assert.deepEqual(m.groundFurniture['guest-WC-pan'],s.fittedWater.wcs.guest.pan);
+  assert.deepEqual(m.upperFurniture['family-WC'],s.fittedWater.wcs.family.suite);
+  for(const [name,b] of Object.entries(s.fittedWater.basins)){
+    const item=name==='guest'?m.groundFurniture['guest-WC-basin']:m.upperFurniture[name+'-basin'];
+    assert.deepEqual(item,b.pan);
+  }
+  assert.equal(s.utility.acquiredBranch.branchLength,960);
+  assert.deepEqual(s.fittedWater.wcs.guest.southWall,[8900,0,163.75]);
+});
+test('SAP-C1 rejects the old service holes, and five full inlet faces can move into clear bays',()=>{
+  const {ports}=x.structuralServiceReview;
+  assert.equal(ports.length,21);
+  assert.equal(ports.filter(p=>p.ring<0).length,6);
+  assert.equal(ports.filter(p=>p.minimum<0).length,12);
+  const replacements=ports.filter(p=>p.replacement);
+  assert.equal(replacements.length,5);
+  assert(replacements.every(p=>p.replacement.minimum>=25&&p.replacement.faceClearance>=25));
+  assert.equal(ports.filter(p=>p.minimum<0&&!p.replacement).length,7);
+});
+
+test('four priced fixed heads can house the seven pipes before product and room acceptance',()=>{
+  const r=x.structuralServiceReview;
+  assert.equal(r.fixedHeads.flatMap(h=>h.holes).length,7);
+  assert(r.fixedHeads.flatMap(h=>h.holes).every(h=>h.frameGap>=25&&h.faceGap>=25));
+  assert(r.fixedHeads.every(h=>h.interHoleWebMM===null||h.interHoleWebMM>=25&&h.betweenWeatherFacesMM>=25));
+  assert.equal(r.hoodReroute.cases,96);assert(r.hoodReroute.hoodLps[0]>65);
 });
