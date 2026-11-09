@@ -9,9 +9,9 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T06:06:13.026Z",
-  "heartbeatAt": "2026-11-09T06:23:41.345Z",
-  "expiresAt": "2026-11-09T07:08:41.345Z",
-  "branch": "work/house-0605-20261109",
+  "heartbeatAt": "2026-11-09T06:29:58.902Z",
+  "expiresAt": "2026-11-09T07:14:58.902Z",
+  "branch": "work/swarm-house-disposition-20261109",
   "predecessor": {
     "leaseId": "d20ae003-5fbe-453a-ba68-f2557c7584f0",
     "generation": 35,
@@ -33,7 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Four actual WC feed stubs and independent source rooms joined. A north-wall family WC requires mutually exclusive centreline ranges, 281mm apart. Guest separate cistern and native G1/2 isolation; proposed exposed axes in three rooms and principal door trajectory rechecked.",
-    "next": "Finish the actual W25 wall outlet, first-wet/withdrawal and constituent comparison, registered figure/check, publication then exact-head CI."
-  }
+    "evidence": "Original #1436 e97e65665b700115998a340953891a30912352ce/tree e133e11e on new 126ae0c2. Consent to join frozen STR40 as IAS36 on #1435. Registered checks and rendered four-room drawing.",
+    "next": "Confirm original as ancestor and four IAS blobs/package check on actual common head, rerun, require all exact workflows and own g36 merge-check. Keep IAS open; only the separately justified STR-HOUSE redesign verdict closes."
+  },
+  "pr": 1435
 }
