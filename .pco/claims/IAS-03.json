@@ -9,9 +9,9 @@
     "label": "House water and access continuation 0405"
   },
   "claimedAt": "2026-11-09T04:08:23.377Z",
-  "heartbeatAt": "2026-11-09T04:26:57.698Z",
-  "expiresAt": "2026-11-09T05:11:57.698Z",
-  "branch": "work/swarm-rain-0405",
+  "heartbeatAt": "2026-11-09T04:27:49.553Z",
+  "expiresAt": "2026-11-09T05:12:49.553Z",
+  "branch": "work/house-0406-20261109",
   "predecessor": {
     "leaseId": "e939437e-a556-4200-afdd-6b5035473434",
     "generation": 33,
@@ -32,9 +32,9 @@
       "next": "See #941 for qualified three-point re-grip and remaining actual duties: full-size user/anchor/edge/temporary protection, other dry, wet and service first releases, family bath and joined candidate selection. Do not treat an unobserved uninterrupted grasp as proved."
     }
   },
-  "pr": 1429,
+  "pr": 1428,
   "checkpoint": {
-    "evidence": "Family bath waste #1429 at 9f417981; current native diagrams, clearance, new port and lower branch checked on #1425.",
-    "next": "Observe exact-head CI, coordinated integration or standalone merge, issue and ref cleanup. Family bath actual downturn, support and floor adoption remain."
+    "evidence": "Freeze #1429 at 9f417981; source-checked Geberit outlet and new floor/hatch proven as a bounded proposal. Independent source parent for combined #1428.",
+    "next": "Wait for final combined head, verify retained IAS parent/tree and perform IAS publication preflight. Close reference branch after merge."
   }
 }
