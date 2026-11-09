@@ -9,8 +9,8 @@
     "label": "front-utility-swarm-0002"
   },
   "claimedAt": "2026-11-09T00:06:32.175Z",
-  "heartbeatAt": "2026-11-09T00:06:32.175Z",
-  "expiresAt": "2026-11-09T00:51:32.175Z",
+  "heartbeatAt": "2026-11-09T00:16:00.629Z",
+  "expiresAt": "2026-11-09T01:01:00.629Z",
   "branch": "work/front-swarm-0002",
   "predecessor": {
     "leaseId": "495b5c0b-0ae4-4407-b0b6-dd8baae18dd1",
@@ -31,5 +31,10 @@
       "evidence": "Combined #1400 at a04fb3667ffa20fbdf07404b19962ab7cb84ab28 includes MAT source commit 1fe45097 from #1399 and main 784265bd. Thirteen workflows passed; full health run 42536971767 is active.",
       "next": "Verify final full CI, fresh lease and unchanged base, then coordinated expected-head merge. Next source review: prove the three direct shaft-to-core paths and compare the entire envelope."
     }
+  },
+  "pr": 1406,
+  "checkpoint": {
+    "evidence": "PR #1406 at 4ca1b571; mirrored two-level jamb returns preserve 10.25 mm of stop clearance and 3.2 mm of receiving grade in the stated challenge.",
+    "next": "Inspect full CI, reconcile shared integration branch and all leases, then run exact head preflight before merge."
   }
 }
