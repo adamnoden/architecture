@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 57,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "4dc14b02-121f-4265-a655-92ac747e4c42",
   "holder": {
     "kind": "chatgpt",
     "label": "RWT river crossing design"
   },
   "claimedAt": "2026-11-08T23:33:21.193Z",
-  "heartbeatAt": "2026-11-09T00:06:20.744Z",
-  "expiresAt": "2026-11-09T00:51:20.744Z",
+  "heartbeatAt": "2026-11-09T00:06:57.229Z",
+  "expiresAt": "2026-11-09T00:06:57.229Z",
   "branch": "work/swarm-house-2332",
   "predecessor": {
     "leaseId": "7bf6f0cc-ef65-4c58-b418-2dc1e295e26b",
@@ -31,5 +31,7 @@
   "checkpoint": {
     "evidence": "Merged #1400 at 90e9aba6, preserving #1398 bab194dc. The fixed 172 mm rail cuts the west datum by 72.6 mm; the east seat lies in the spill. 176 tests passed locally and all exact-head CI passed.",
     "next": "Test a side receiver and upstream turn with a clear straight draw, separate spill and complete reversible native release."
-  }
+  },
+  "releasedAt": "2026-11-09T00:06:57.229Z",
+  "releaseReason": "handoff"
 }
