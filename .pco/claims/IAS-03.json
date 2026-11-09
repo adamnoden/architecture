@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T10:34:20.965Z",
-  "heartbeatAt": "2026-11-09T10:34:20.965Z",
-  "expiresAt": "2026-11-09T11:19:20.965Z",
+  "heartbeatAt": "2026-11-09T11:00:14.505Z",
+  "expiresAt": "2026-11-09T11:45:14.505Z",
   "branch": "work/house-1033-20261109",
   "predecessor": {
     "leaseId": "143b555a-66ad-4544-bed6-dc6531d91dfa",
@@ -31,5 +31,9 @@
       "evidence": "The bound merged pull request and the open programme issue contain the verified handoff.",
       "next": "Continue the remaining fitted work against the recorded household choice."
     }
+  },
+  "checkpoint": {
+    "evidence": "Working current main 771390d3. Source-bound bath upending, constrained two-person door handle and package, whole upper-gallery route and carried stair arc solved. Native 107 kg tracked carrier, 956x556 plant, 480 x 730 x 1690 loaded cradle and 425-radius two-turn midlanding. Staging and actual final exit being verified.",
+    "next": "Publish reversible inward/outward family bath exchange comparison, stairs vs east window and dock. Include body and hand, catalogue limits, first/last support, fault and site/doorset conditions, then exact CI and integration."
   }
 }
