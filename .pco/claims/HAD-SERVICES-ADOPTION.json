@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-SERVICES-ADOPTION",
   "generation": 3,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "1bf31109-360f-403b-b43c-b6e601d606f3",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6753127194"
   },
   "claimedAt": "2026-11-09T22:26:49.000Z",
-  "heartbeatAt": "2026-11-09T22:58:01.000Z",
-  "expiresAt": "2026-11-09T23:43:01.000Z",
+  "heartbeatAt": "2026-11-09T22:58:52.000Z",
+  "expiresAt": "2026-11-09T22:58:52.000Z",
   "branch": "work/mvb-chat-6753127194",
   "predecessor": {
     "leaseId": "32fa2ba2-2c5a-4dc6-b159-08d233644d1e",
@@ -37,5 +37,7 @@
     "evidence": "Draft PR #1468 at 88f0d2bf preserves the complete earlier source module and detailed adverse-review recovery record. Main remains 6bc0562a. Executor unavailable.",
     "next": "Recover architecture-services local worktree or recreate integrated changes, fix first release, purge and gravity drain defects, regenerate outputs, run all HAD/affected checks and exact-head CI.",
     "blocker": "Execution environment unavailable. Later local revision unvalidated and generated artifacts stale."
-  }
+  },
+  "releasedAt": "2026-11-09T22:58:52.000Z",
+  "releaseReason": "handoff"
 }
