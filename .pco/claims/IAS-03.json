@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-03",
   "generation": 35,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "d20ae003-5fbe-453a-ba68-f2557c7584f0",
   "holder": {
     "kind": "chatgpt",
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T05:06:33.830Z",
-  "heartbeatAt": "2026-11-09T06:03:54.327Z",
-  "expiresAt": "2026-11-09T06:48:54.327Z",
+  "heartbeatAt": "2026-11-09T06:04:29.401Z",
+  "expiresAt": "2026-11-09T06:04:29.401Z",
   "branch": "work/house-0506-20261109",
   "predecessor": {
     "leaseId": "d7a72cde-5597-44c4-8cfa-e8b0671f814e",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "PR #1431 merged at 2e16d4de0d1e1602965eadaba1de27fb18835d05. All 14 checks and all three live preflights on bb1c4b9f. Principal and privacy door source, regression check and corrected whole-person path verified on main; issue #941 handoff.",
     "next": "IS-04 across all four WCs: current principal valve working box intersects the soil column. Locate real isolation, cistern, leakage, drying and replacement at each occurrence and reconcile with Services and the room routes."
-  }
+  },
+  "releasedAt": "2026-11-09T06:04:29.401Z",
+  "releaseReason": "handoff"
 }
