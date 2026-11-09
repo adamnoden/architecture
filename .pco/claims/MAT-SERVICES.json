@@ -9,8 +9,8 @@
     "label": "house-design-0710"
   },
   "claimedAt": "2026-11-09T07:12:48.641Z",
-  "heartbeatAt": "2026-11-09T07:27:30.694Z",
-  "expiresAt": "2026-11-09T08:12:30.694Z",
+  "heartbeatAt": "2026-11-09T07:40:35.201Z",
+  "expiresAt": "2026-11-09T08:25:35.201Z",
   "branch": "work/house-rush-0710",
   "predecessor": {
     "leaseId": "8e8e8995-89a1-43e7-a5c6-69f032a8e0aa",
@@ -34,7 +34,7 @@
   },
   "pr": 1439,
   "checkpoint": {
-    "evidence": "PR #1439 head ffebe2d8 computes native valve/tundish fixture, cart clearance and independent D2",
-    "next": "Integrate mineral successor and W9 energy, review exact-head CI, preflight and merge"
+    "evidence": "PR #1439 head be522efb includes main 8057718f, factory/trolley/winter screen and two verified drawings. 7.547m four-bend relief route, manifold and spill corrections checked.",
+    "next": "Inspect all 14 exact-head workflows, fresh canonical merge preflight, merge then hand off matched product, four-root layout and outfall."
   }
 }
