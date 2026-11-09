@@ -9,8 +9,8 @@
     "label": "issue-comment-6750986800"
   },
   "claimedAt": "2026-11-09T20:44:36.000Z",
-  "heartbeatAt": "2026-11-09T20:44:36.000Z",
-  "expiresAt": "2026-11-09T21:29:36.000Z",
+  "heartbeatAt": "2026-11-09T20:45:58.000Z",
+  "expiresAt": "2026-11-09T21:30:58.000Z",
   "branch": "work/mvb-chat-6750986800",
   "predecessor": {
     "leaseId": "a16b8ba4-0427-4e0c-8f73-f112d3af28ca",
@@ -33,5 +33,9 @@
       "next": "Observe exact hosted CI, run fresh canonical merge-check from a clean checkout and merge under the expected head. Then resolve the guest and rear WC first disconnections.",
       "blocker": "Hosted executor disconnected. Its terminal is unavailable; the GitHub mailbox cannot run merge-check."
     }
+  },
+  "checkpoint": {
+    "evidence": "PR #1464 preserves all seven files and the original b86131b7 commit from #1462. The household-water study was reproduced.",
+    "next": "Verify exact hosted checks and fresh preflight. Coordinate merge, then resolve guest and rear WC first disconnections."
   }
 }
