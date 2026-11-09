@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
-  "generation": 32,
-  "state": "released",
-  "leaseId": "524e14c3-49cd-4266-a5e0-4aef19f2f889",
+  "generation": 33,
+  "state": "claimed",
+  "leaseId": "f64a30d5-3ff3-415e-9faa-f944592a68ec",
   "holder": {
     "kind": "chatgpt",
-    "label": "Owner follow-on after sink and spill"
+    "label": "Architecture swarm: current house frontier"
   },
-  "claimedAt": "2026-11-09T09:12:55.278Z",
-  "heartbeatAt": "2026-11-09T10:32:52.885Z",
-  "expiresAt": "2026-11-09T10:32:52.885Z",
-  "branch": "work/swarm-house-evidence-0840",
+  "claimedAt": "2026-11-09T10:35:19.622Z",
+  "heartbeatAt": "2026-11-09T10:35:19.622Z",
+  "expiresAt": "2026-11-09T11:20:19.622Z",
+  "branch": "work/swarm-frontier-1033-20261109",
   "predecessor": {
-    "leaseId": "07eb5e87-d15a-49a0-a416-d28d6f61908a",
-    "generation": 31,
-    "branch": "work/junction-rush-0710",
-    "pr": 1444,
+    "leaseId": "524e14c3-49cd-4266-a5e0-4aef19f2f889",
+    "generation": 32,
+    "branch": "work/swarm-house-evidence-0840",
+    "pr": 1446,
     "checkpoint": {
-      "evidence": "Merged PR #1444 at a68a5ac5 after full exact-head CI on c9cfd18a. Two study lighting stations, actual branch, pole/plug/operator and 75/75 first withdrawal checked. Previous #1439 preserves the separate DHW system decision.",
-      "next": "MAT-SERVICES remains planned. Price the next whole-house cross-family duty against the S01–S10 crosswalk. S08 still needs the incoming electrical supply, actual glands/earth links, complete cable protection/disconnection and a two-end exchange specimen."
+      "evidence": "Merged #1448 (7accc1c2) through #1446 at 771390d3dbf0720de2ff505986d8978b7963291a, final head 2e7164a3, 14 green exact-head checks and four live preflights. Native four-period winter water source, both room and tank conservation, routed glycol pair and stock/mineral vessel decision. Tracker #1100 comment 6737810813, #1448 comment 6737399862.",
+      "next": "Frontier remains MAT-SERVICES planned. Compare the governing local-extract and two-stage cooker source, 55/45 emitters and higher-output outdoor/independent water alternative with W9 on the same day, alongside S01–S10 source inventory. Resolve actual room/plant access, cold pressure, controller/protection and residue alternatives; keep field acceptance separate."
     }
   },
   "recoverySource": {
-    "leaseId": "07eb5e87-d15a-49a0-a416-d28d6f61908a",
-    "generation": 31,
-    "branch": "work/junction-rush-0710",
-    "pr": 1444,
+    "leaseId": "524e14c3-49cd-4266-a5e0-4aef19f2f889",
+    "generation": 32,
+    "branch": "work/swarm-house-evidence-0840",
+    "pr": 1446,
     "checkpoint": {
-      "evidence": "Merged PR #1444 at a68a5ac5 after full exact-head CI on c9cfd18a. Two study lighting stations, actual branch, pole/plug/operator and 75/75 first withdrawal checked. Previous #1439 preserves the separate DHW system decision.",
-      "next": "MAT-SERVICES remains planned. Price the next whole-house cross-family duty against the S01–S10 crosswalk. S08 still needs the incoming electrical supply, actual glands/earth links, complete cable protection/disconnection and a two-end exchange specimen."
+      "evidence": "Merged #1448 (7accc1c2) through #1446 at 771390d3dbf0720de2ff505986d8978b7963291a, final head 2e7164a3, 14 green exact-head checks and four live preflights. Native four-period winter water source, both room and tank conservation, routed glycol pair and stock/mineral vessel decision. Tracker #1100 comment 6737810813, #1448 comment 6737399862.",
+      "next": "Frontier remains MAT-SERVICES planned. Compare the governing local-extract and two-stage cooker source, 55/45 emitters and higher-output outdoor/independent water alternative with W9 on the same day, alongside S01–S10 source inventory. Resolve actual room/plant access, cold pressure, controller/protection and residue alternatives; keep field acceptance separate."
     }
-  },
-  "checkpoint": {
-    "evidence": "Merged #1448 (7accc1c2) through #1446 at 771390d3dbf0720de2ff505986d8978b7963291a, final head 2e7164a3, 14 green exact-head checks and four live preflights. Native four-period winter water source, both room and tank conservation, routed glycol pair and stock/mineral vessel decision. Tracker #1100 comment 6737810813, #1448 comment 6737399862.",
-    "next": "Frontier remains MAT-SERVICES planned. Compare the governing local-extract and two-stage cooker source, 55/45 emitters and higher-output outdoor/independent water alternative with W9 on the same day, alongside S01–S10 source inventory. Resolve actual room/plant access, cold pressure, controller/protection and residue alternatives; keep field acceptance separate."
-  },
-  "pr": 1446,
-  "releasedAt": "2026-11-09T10:32:52.885Z",
-  "releaseReason": "handoff"
+  }
 }
