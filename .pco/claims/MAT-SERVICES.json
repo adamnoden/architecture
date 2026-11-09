@@ -9,9 +9,9 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T09:12:55.278Z",
-  "heartbeatAt": "2026-11-09T09:54:04.578Z",
-  "expiresAt": "2026-11-09T10:39:04.578Z",
-  "branch": "work/house-0910-20261109",
+  "heartbeatAt": "2026-11-09T09:58:45.866Z",
+  "expiresAt": "2026-11-09T10:43:45.866Z",
+  "branch": "work/swarm-house-evidence-0840",
   "predecessor": {
     "leaseId": "07eb5e87-d15a-49a0-a416-d28d6f61908a",
     "generation": 31,
@@ -33,8 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Independent verified source #1448 3dd69c08 remains intact. Manufacturer FTC7 DG79T729H02 p7 limits native schedule surface. New conservative four-window trial developed while checking combined host.",
-    "next": "Publish bounded source amendment for four native-sized prohibited periods with control deadband and changeover sensitivity before rebinding #1446."
+    "evidence": "Final #1448 7accc1c27e009419369ef8cc2cf658e2b9ac4081, source tree 679c46be, parent 3dd69c08. Actual FTC7 four daily prohibitions and restart below 49 C; matched cycles at 300 L, 5.884 kWh deferred rooms, 11.77 kWh/K required. Full MAT, documentation, visual and public integrity passed.",
+    "next": "Integrate this exact #1448 as direct parent of #1446, maintain current lease and per-holder merge fences. Verify cold W9, native kit including measured switch and periodic hygiene, actual room inertia, supply and residue dispositions."
   },
-  "pr": 1448
+  "pr": 1446
 }
