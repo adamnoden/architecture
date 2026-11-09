@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T01:19:50.135Z",
-  "heartbeatAt": "2026-11-09T01:19:50.135Z",
-  "expiresAt": "2026-11-09T02:04:50.135Z",
+  "heartbeatAt": "2026-11-09T01:34:47.080Z",
+  "expiresAt": "2026-11-09T02:19:47.080Z",
   "branch": "work/house-follow-on-20261109",
   "predecessor": {
     "leaseId": "7a83f34d-e43d-4142-a94f-6db17bb69cf8",
@@ -31,5 +31,9 @@
       "evidence": "Merged #1406 at d8e52d78; both #1407 and rotating-bearing parent f805f02b are on main; signed controls and validation in #1103 comment 6729956902.",
       "next": "STR-HOUSE remains open: size a positively retained bearing or change support kinematics, test actual lever, joint clearance, both signed pier arms and foundation/guard compatibility."
     }
+  },
+  "checkpoint": {
+    "evidence": "Pushed commit d6dbec8d",
+    "next": "Check final revision, run CI and publication preflight"
   }
 }
