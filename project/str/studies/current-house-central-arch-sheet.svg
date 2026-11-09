@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1400" width="1200" height="1400" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1800" width="1200" height="1800" role="img" aria-labelledby="title desc">
 <title id="title">Corner window arch and central H25 bar</title>
-<desc id="desc">Upper window elevation and bending interaction at 19 stations. The plan below shows the nominal vertical return beside a guard sleeve. Tangent intervals show where a forged head meets existing steel. The final plan and elevation show an in-plane pier cage shift and its tight bend crossing.</desc>
+<desc id="desc">Upper window elevation and bending interaction at 19 stations. The plan below shows the nominal vertical return beside a guard sleeve. Tangent intervals show where a forged head meets existing steel. The final plan and elevation show an in-plane pier cage shift and its tight bend crossing. The last plan compares a transverse U tie with the available wall width.</desc>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#152b31}.small{font-size:14px}.note{font-size:15px}.panel{font-size:20px;font-weight:bold}.tick{font-size:13px}</style>
-<rect width="1200" height="1400" fill="#fff"/>
+<rect width="1200" height="1800" fill="#fff"/>
 <text x="32.00" y="40.00" class="panel" text-anchor="start">Corner-window arch reinforcement</text>
 <text x="32.00" y="68.00" class="note" text-anchor="start">180 × 215 mm inner RC arch   ·   South elevation   ·   Occupied concrete face at Y 402.5 mm</text>
 <line x1="32.00" y1="84.00" x2="1168.00" y2="84.00" stroke="#899497" stroke-width="1"/>
@@ -207,4 +207,29 @@
 <text x="913.00" y="1225.41" class="small" text-anchor="start">22.3 mm on one permitted setout</text>
 <text x="632.00" y="1350.00" class="small" text-anchor="start">Teal H25 and grey H16 cross in elevation on the tangent.</text>
 <text x="632.00" y="1373.00" class="small" text-anchor="start">Concrete access and anchored confinement remain open.</text>
+<line x1="48.00" y1="1400.00" x2="1152.00" y2="1400.00" stroke="#899497" stroke-width="1"/>
+<text x="49.00" y="1435.00" class="panel" text-anchor="start">07    Adding a horizontal tie around the H25 turn</text>
+<text x="49.00" y="1464.00" class="small" text-anchor="start">Plan at Z5834.9 mm. One arm of the corner pier.</text>
+<line x1="52.00" y1="1503.00" x2="614.40" y2="1503.00" stroke="#28474a" stroke-width="2"/>
+<line x1="52.00" y1="1727.20" x2="614.40" y2="1727.20" stroke="#28474a" stroke-width="2"/>
+<line x1="52.00" y1="1529.60" x2="614.40" y2="1529.60" stroke="#9a7772" stroke-width="1.4" stroke-dasharray="6 5"/>
+<line x1="52.00" y1="1700.60" x2="614.40" y2="1700.60" stroke="#9a7772" stroke-width="1.4" stroke-dasharray="6 5"/>
+<polyline points="72.90,1539.10 476.65,1539.10 480.63,1539.20 484.59,1539.52 488.54,1540.04 492.45,1540.76 496.32,1541.69 500.14,1542.82 503.89,1544.15 507.56,1545.67 511.15,1547.38 514.65,1549.28 518.04,1551.36 521.32,1553.61 524.48,1556.04 527.50,1558.62 530.39,1561.36 533.13,1564.25 535.71,1567.27 538.14,1570.43 540.39,1573.71 542.47,1577.10 544.37,1580.60 546.08,1584.19 547.60,1587.86 548.93,1591.61 550.06,1595.43 550.99,1599.30 551.71,1603.21 552.23,1607.16 552.55,1611.12 552.65,1615.10 552.55,1619.08 552.23,1623.04 551.71,1626.99 550.99,1630.90 550.06,1634.77 548.93,1638.59 547.60,1642.34 546.08,1646.01 544.37,1649.60 542.47,1653.10 540.39,1656.49 538.14,1659.77 535.71,1662.93 533.13,1665.95 530.39,1668.84 527.50,1671.58 524.48,1674.16 521.32,1676.59 518.04,1678.84 514.65,1680.92 511.15,1682.82 507.56,1684.53 503.89,1686.05 500.14,1687.38 496.32,1688.51 492.45,1689.44 488.54,1690.16 484.59,1690.68 480.63,1691.00 476.65,1691.10 72.90,1691.10" fill="none" stroke="#006367" stroke-width="9.5" stroke-linejoin="round"/>
+<circle cx="308.02" cy="1608.45" r="9.5" fill="#555d61" stroke="#555d61" stroke-width="1"/>
+<circle cx="308.02" cy="1659.75" r="9.5" fill="#555d61" stroke="#555d61" stroke-width="1"/>
+<circle cx="374.52" cy="1608.45" r="9.5" fill="#555d61" stroke="#555d61" stroke-width="1"/>
+<circle cx="374.52" cy="1659.75" r="9.5" fill="#555d61" stroke="#555d61" stroke-width="1"/>
+<circle cx="583.39" cy="1576.15" r="7.6" fill="#899497" stroke="#899497" stroke-width="1"/>
+<circle cx="583.39" cy="1654.05" r="7.6" fill="#899497" stroke="#899497" stroke-width="1"/>
+<circle cx="485.31" cy="1576.15" r="7.6" fill="#899497" stroke="#899497" stroke-width="1"/>
+<circle cx="485.31" cy="1654.05" r="7.6" fill="#899497" stroke="#899497" stroke-width="1"/>
+<circle cx="441.23" cy="1615.10" r="11.875" fill="#a33328" stroke="#a33328" stroke-width="1"/>
+<text x="630.00" y="1518.00" class="panel" text-anchor="start">Teal  H10 U with two 425 mm straight legs</text>
+<text x="630.00" y="1551.00" class="small" text-anchor="start">Red  H25 turn      Dark grey  H20      Light grey  H16</text>
+<text x="630.00" y="1594.00" class="note" text-anchor="start">Dashed lines mark the existing 180 mm concrete.</text>
+<text x="630.00" y="1622.00" class="note" text-anchor="start">The solid lines add 28 mm at each face.</text>
+<text x="630.00" y="1650.00" class="note" text-anchor="start">42 mm of the trial glass insulation remains.</text>
+<text x="630.00" y="1692.00" class="note" text-anchor="start">One permitted setout leaves only 12.53 mm</text>
+<text x="630.00" y="1718.00" class="note" text-anchor="start">between the nose and a vertical H16.</text>
+<text x="49.00" y="1771.00" class="small" text-anchor="start">The expanded trial separates these bars. Concrete placing, anchorage and the two-arm force path remain open.</text>
 </svg>
