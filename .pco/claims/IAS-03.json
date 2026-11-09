@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "IAS-03",
-  "generation": 37,
-  "state": "released",
-  "leaseId": "93b1e8fd-0750-4b50-a5b6-6783e03e7d8b",
+  "generation": 38,
+  "state": "claimed",
+  "leaseId": "143b555a-66ad-4544-bed6-dc6531d91dfa",
   "holder": {
     "kind": "chatgpt",
-    "label": "Joined source decision 0700"
+    "label": "Architecture swarm: independent post-structure"
   },
-  "claimedAt": "2026-11-09T07:05:00.748Z",
-  "heartbeatAt": "2026-11-09T09:11:00.453Z",
-  "expiresAt": "2026-11-09T09:11:00.453Z",
-  "branch": "work/house-0702-20261109",
+  "claimedAt": "2026-11-09T09:12:12.136Z",
+  "heartbeatAt": "2026-11-09T09:12:12.136Z",
+  "expiresAt": "2026-11-09T09:57:12.136Z",
+  "branch": "work/swarm-after-structure-0910-20261109",
   "predecessor": {
-    "leaseId": "c7bbb9e0-8a23-4657-afcf-8f3db52a34e0",
-    "generation": 36,
-    "branch": "work/swarm-house-disposition-20261109",
-    "pr": 1435,
+    "leaseId": "93b1e8fd-0750-4b50-a5b6-6783e03e7d8b",
+    "generation": 37,
+    "branch": "work/house-0702-20261109",
+    "pr": 1440,
     "checkpoint": {
-      "evidence": "Merged #1435 ca7d89d44a738f75addc7dac52777a21916b9424 with #1436 four-WC stations/source e97e6566. All14 and 3 exact live preflights passed; #941 records concrete-room dispositions and structural 195 mm maintenance park.",
-      "next": "Rear shower IS02/06: compare whole-tray-first retirement on a separately supported B594 and fixed up-socket in the current 400mm well with the top-side hatch and historical underslung operator. Prove actual release, restraint, incoming and protected floor closure, and test compatibility with real wet room and retained house."
+      "evidence": "MERGED #1440 dac2777600c8425a2c7fc38d6c1a42776372b24c on main. Entire IAS tree equals a3ea0fc6. #1441 merged, both refs absent, #941 handoff 6736314679. 14 successful workflows and canonical fence at 09:08:47.413 UTC.",
+      "next": "Whole-family current-occurrence selection or explicit house replan; rear mixed socket and supported ties require measurement, incoming sanitary fixtures unresolved."
     }
   },
   "recoverySource": {
-    "leaseId": "c7bbb9e0-8a23-4657-afcf-8f3db52a34e0",
-    "generation": 36,
-    "branch": "work/swarm-house-disposition-20261109",
-    "pr": 1435,
+    "leaseId": "93b1e8fd-0750-4b50-a5b6-6783e03e7d8b",
+    "generation": 37,
+    "branch": "work/house-0702-20261109",
+    "pr": 1440,
     "checkpoint": {
-      "evidence": "Merged #1435 ca7d89d44a738f75addc7dac52777a21916b9424 with #1436 four-WC stations/source e97e6566. All14 and 3 exact live preflights passed; #941 records concrete-room dispositions and structural 195 mm maintenance park.",
-      "next": "Rear shower IS02/06: compare whole-tray-first retirement on a separately supported B594 and fixed up-socket in the current 400mm well with the top-side hatch and historical underslung operator. Prove actual release, restraint, incoming and protected floor closure, and test compatibility with real wet room and retained house."
+      "evidence": "MERGED #1440 dac2777600c8425a2c7fc38d6c1a42776372b24c on main. Entire IAS tree equals a3ea0fc6. #1441 merged, both refs absent, #941 handoff 6736314679. 14 successful workflows and canonical fence at 09:08:47.413 UTC.",
+      "next": "Whole-family current-occurrence selection or explicit house replan; rear mixed socket and supported ties require measurement, incoming sanitary fixtures unresolved."
     }
-  },
-  "pr": 1440,
-  "checkpoint": {
-    "evidence": "MERGED #1440 dac2777600c8425a2c7fc38d6c1a42776372b24c on main. Entire IAS tree equals a3ea0fc6. #1441 merged, both refs absent, #941 handoff 6736314679. 14 successful workflows and canonical fence at 09:08:47.413 UTC.",
-    "next": "Whole-family current-occurrence selection or explicit house replan; rear mixed socket and supported ties require measurement, incoming sanitary fixtures unresolved."
-  },
-  "releasedAt": "2026-11-09T09:11:00.453Z",
-  "releaseReason": "handoff"
+  }
 }
