@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 42,
-  "state": "released",
-  "leaseId": "0fe01b17-156a-48e7-9905-d3be45f79736",
+  "generation": 43,
+  "state": "claimed",
+  "leaseId": "cdd1d1d9-8a87-494b-abf9-bf7d792d8466",
   "holder": {
     "kind": "chatgpt",
-    "label": "Whole occurrence decision 0840"
+    "label": "Joined programme decision 1035"
   },
-  "claimedAt": "2026-11-09T09:12:42.801Z",
-  "heartbeatAt": "2026-11-09T10:33:43.350Z",
-  "expiresAt": "2026-11-09T10:33:43.350Z",
-  "branch": "work/swarm-house-evidence-0840",
+  "claimedAt": "2026-11-09T10:35:00.641Z",
+  "heartbeatAt": "2026-11-09T10:35:00.641Z",
+  "expiresAt": "2026-11-09T11:20:00.641Z",
+  "branch": "work/swarm-house-decision-1035",
   "predecessor": {
-    "leaseId": "a6a1ef75-2328-49d1-ab67-be70360701fa",
-    "generation": 41,
-    "branch": "work/house-0702-20261109",
-    "pr": 1440,
+    "leaseId": "0fe01b17-156a-48e7-9905-d3be45f79736",
+    "generation": 42,
+    "branch": "work/swarm-house-evidence-0840",
+    "pr": 1446,
     "checkpoint": {
-      "evidence": "MERGED #1440 at dac2777600c8425a2c7fc38d6c1a42776372b24c with frozen #1445 762e6b18e90416169b9edddab4bfbd40d89b11ce as direct parent of 4c7947f8abb25c7176e157ba5b3c3eea08e30722. Fourteen exact hosted workflows, local full MAT/docs and all three companion regressions passed. Held g41 preflight and #1100 comment 6736307378. Three doors on one dry-site RC floor with the plant reveal, fixed gasket, 35 up / 80 return and separate wet outlet/exposure conditions.",
-      "next": "Complete a real ordinary-wall and sheltered loggia soffit/portal material and fixing section at the joined structural floor edge. Compare the 110 mm ordinary and 200 mm loggia wall glass with actual retained layers, safe soffit support, drainage, classified underside, heat and replaceability. Keep the three dry doors and requeued court receiver as source inputs. Respect the remaining roof and glazing choices."
+      "evidence": "MERGED #1446 at 771390d3dbf0720de2ff505986d8978b7963291a. All nine envelope paths/current joint registry verified on main; all four PRs merged and four remote refs absent. Final 14/14, all four live fences. #1100 comment 6737828346.",
+      "next": "Complete programme-level six-interface fit, costs, repair and unapproved residue disposition on latest HAD/STR/Services. The 122.5 mm garden leaf bearing gap and curved portal, slate underlay/valley, Study glazing and actual wet joint require explicit outcomes where not already earned."
     }
   },
   "recoverySource": {
-    "leaseId": "a6a1ef75-2328-49d1-ab67-be70360701fa",
-    "generation": 41,
-    "branch": "work/house-0702-20261109",
-    "pr": 1440,
+    "leaseId": "0fe01b17-156a-48e7-9905-d3be45f79736",
+    "generation": 42,
+    "branch": "work/swarm-house-evidence-0840",
+    "pr": 1446,
     "checkpoint": {
-      "evidence": "MERGED #1440 at dac2777600c8425a2c7fc38d6c1a42776372b24c with frozen #1445 762e6b18e90416169b9edddab4bfbd40d89b11ce as direct parent of 4c7947f8abb25c7176e157ba5b3c3eea08e30722. Fourteen exact hosted workflows, local full MAT/docs and all three companion regressions passed. Held g41 preflight and #1100 comment 6736307378. Three doors on one dry-site RC floor with the plant reveal, fixed gasket, 35 up / 80 return and separate wet outlet/exposure conditions.",
-      "next": "Complete a real ordinary-wall and sheltered loggia soffit/portal material and fixing section at the joined structural floor edge. Compare the 110 mm ordinary and 200 mm loggia wall glass with actual retained layers, safe soffit support, drainage, classified underside, heat and replaceability. Keep the three dry doors and requeued court receiver as source inputs. Respect the remaining roof and glazing choices."
+      "evidence": "MERGED #1446 at 771390d3dbf0720de2ff505986d8978b7963291a. All nine envelope paths/current joint registry verified on main; all four PRs merged and four remote refs absent. Final 14/14, all four live fences. #1100 comment 6737828346.",
+      "next": "Complete programme-level six-interface fit, costs, repair and unapproved residue disposition on latest HAD/STR/Services. The 122.5 mm garden leaf bearing gap and curved portal, slate underlay/valley, Study glazing and actual wet joint require explicit outcomes where not already earned."
     }
-  },
-  "pr": 1446,
-  "checkpoint": {
-    "evidence": "MERGED #1446 at 771390d3dbf0720de2ff505986d8978b7963291a. All nine envelope paths/current joint registry verified on main; all four PRs merged and four remote refs absent. Final 14/14, all four live fences. #1100 comment 6737828346.",
-    "next": "Complete programme-level six-interface fit, costs, repair and unapproved residue disposition on latest HAD/STR/Services. The 122.5 mm garden leaf bearing gap and curved portal, slate underlay/valley, Study glazing and actual wet joint require explicit outcomes where not already earned."
-  },
-  "releasedAt": "2026-11-09T10:33:43.350Z",
-  "releaseReason": "handoff"
+  }
 }
