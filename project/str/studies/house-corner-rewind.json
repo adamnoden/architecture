@@ -1,0 +1,1039 @@
+{
+  "disposition": "Supplied house requires an architectural rewind; alternate geometry is a proposed successor, not an adopted or signed structure.",
+  "sourceWork": "HAD-WATER-REPLAN; current pitched steel/RC/52-head comparison; MAT north ordinary raised field and cap.",
+  "changes": [
+    {
+      "level": "GROUND",
+      "side": "outer-south",
+      "id": "south-window-0",
+      "old": 1800,
+      "new": 2100,
+      "clear": [
+        1600,
+        2600
+      ],
+      "sill": 750,
+      "head": 2850,
+      "area": 2.013736079062664,
+      "worldCentre": [
+        2100,
+        0,
+        750
+      ],
+      "jambAxes": [
+        1497.5,
+        2702.5
+      ],
+      "headPairs": [
+        [
+          [
+            "P02",
+            "P20"
+          ],
+          [
+            0.8618346545866364,
+            0.13816534541336353
+          ]
+        ],
+        [
+          [
+            "P02",
+            "P20"
+          ],
+          [
+            0.3159682899207248,
+            0.6840317100792752
+          ]
+        ]
+      ]
+    },
+    {
+      "level": "GROUND",
+      "side": "outer-south",
+      "id": "south-window-4",
+      "old": 10200,
+      "new": 9900,
+      "clear": [
+        9400,
+        10400
+      ],
+      "sill": 750,
+      "head": 2850,
+      "area": 2.013736079062664,
+      "worldCentre": [
+        9900,
+        0,
+        750
+      ],
+      "jambAxes": [
+        10502.5,
+        9297.5
+      ],
+      "headPairs": [
+        [
+          [
+            "P23",
+            "P05"
+          ],
+          [
+            0.20232172470978438,
+            0.7976782752902156
+          ]
+        ],
+        [
+          [
+            "P22",
+            "P23"
+          ],
+          [
+            0.0011904761904761862,
+            0.9988095238095238
+          ]
+        ]
+      ]
+    },
+    {
+      "level": "GROUND",
+      "side": "outer-east",
+      "id": "east-window-0",
+      "old": 1800,
+      "new": 2100,
+      "clear": [
+        1600,
+        2600
+      ],
+      "sill": 850,
+      "head": 2850,
+      "area": 1.9137360790626639,
+      "worldCentre": [
+        12000,
+        2100,
+        850
+      ],
+      "jambAxes": [
+        1497.5,
+        2702.5
+      ],
+      "headPairs": [
+        [
+          [
+            "P06",
+            "P17"
+          ],
+          [
+            0.8618346545866364,
+            0.13816534541336353
+          ]
+        ],
+        [
+          [
+            "P06",
+            "P17"
+          ],
+          [
+            0.3159682899207248,
+            0.6840317100792752
+          ]
+        ]
+      ]
+    },
+    {
+      "level": "GROUND",
+      "side": "outer-east",
+      "id": "east-window-3",
+      "old": 10200,
+      "new": 9900,
+      "clear": [
+        9400,
+        10400
+      ],
+      "sill": 850,
+      "head": 2850,
+      "area": 1.9137360790626639,
+      "worldCentre": [
+        12000,
+        9900,
+        850
+      ],
+      "jambAxes": [
+        10502.5,
+        9297.5
+      ],
+      "headPairs": [
+        [
+          [
+            "P19",
+            "P12"
+          ],
+          [
+            0.1014131338320865,
+            0.8985868661679135
+          ]
+        ],
+        [
+          [
+            "P19",
+            "P12"
+          ],
+          [
+            0.5020781379883624,
+            0.4979218620116376
+          ]
+        ]
+      ]
+    },
+    {
+      "level": "GROUND",
+      "side": "outer-north",
+      "id": "north-window-0",
+      "old": 1800,
+      "new": 2100,
+      "clear": [
+        1600,
+        2600
+      ],
+      "sill": 750,
+      "head": 2850,
+      "area": 2.013736079062664,
+      "worldCentre": [
+        2100,
+        12000,
+        750
+      ],
+      "jambAxes": [
+        1497.5,
+        2702.5
+      ],
+      "headPairs": [
+        [
+          [
+            "P08",
+            "P24"
+          ],
+          [
+            0.8216374269005848,
+            0.1783625730994152
+          ]
+        ],
+        [
+          [
+            "P08",
+            "P24"
+          ],
+          [
+            0.11695906432748537,
+            0.8830409356725146
+          ]
+        ]
+      ]
+    },
+    {
+      "level": "GROUND",
+      "side": "outer-north",
+      "id": "north-window-4",
+      "old": 10200,
+      "new": 9900,
+      "clear": [
+        9400,
+        10400
+      ],
+      "sill": 1050,
+      "head": 2850,
+      "area": 1.713736079062664,
+      "worldCentre": [
+        9900,
+        12000,
+        1050
+      ],
+      "jambAxes": [
+        10502.5,
+        9297.5
+      ],
+      "headPairs": [
+        [
+          [
+            "P27",
+            "P11"
+          ],
+          [
+            0.20232172470978438,
+            0.7976782752902156
+          ]
+        ],
+        [
+          [
+            "P26",
+            "P27"
+          ],
+          [
+            0.001388888888888884,
+            0.9986111111111111
+          ]
+        ]
+      ]
+    },
+    {
+      "level": "GROUND",
+      "side": "outer-west",
+      "id": "west-window-0",
+      "old": 1800,
+      "new": 2100,
+      "clear": [
+        1600,
+        2600
+      ],
+      "sill": 850,
+      "head": 2850,
+      "area": 1.9137360790626639,
+      "worldCentre": [
+        0,
+        2100,
+        850
+      ],
+      "jambAxes": [
+        1497.5,
+        2702.5
+      ],
+      "headPairs": [
+        [
+          [
+            "P03",
+            "P13"
+          ],
+          [
+            0.851581508515815,
+            0.14841849148418493
+          ]
+        ],
+        [
+          [
+            "P03",
+            "P13"
+          ],
+          [
+            0.26520681265206814,
+            0.7347931873479319
+          ]
+        ]
+      ]
+    },
+    {
+      "level": "GROUND",
+      "side": "outer-west",
+      "id": "west-window-3",
+      "old": 10200,
+      "new": 9900,
+      "clear": [
+        9400,
+        10400
+      ],
+      "sill": 850,
+      "head": 2850,
+      "area": 1.9137360790626639,
+      "worldCentre": [
+        0,
+        9900,
+        850
+      ],
+      "jambAxes": [
+        10502.5,
+        9297.5
+      ],
+      "headPairs": [
+        [
+          [
+            "P16",
+            "P09"
+          ],
+          [
+            0.15601023017902815,
+            0.8439897698209718
+          ]
+        ],
+        [
+          [
+            "P16",
+            "P09"
+          ],
+          [
+            0.7723785166240409,
+            0.22762148337595908
+          ]
+        ]
+      ]
+    },
+    {
+      "level": "FIRST",
+      "side": "outer-south",
+      "id": "south-window-0",
+      "old": 1800,
+      "new": 2100,
+      "clear": [
+        1600,
+        2600
+      ],
+      "sill": 4200,
+      "head": 6300,
+      "area": 2.013736079062664,
+      "worldCentre": [
+        2100,
+        0,
+        4200
+      ],
+      "jambAxes": [
+        1497.5,
+        2702.5
+      ],
+      "headPairs": [
+        [
+          [
+            "P02",
+            "P20"
+          ],
+          [
+            0.8618346545866364,
+            0.13816534541336353
+          ]
+        ],
+        [
+          [
+            "P02",
+            "P20"
+          ],
+          [
+            0.3159682899207248,
+            0.6840317100792752
+          ]
+        ]
+      ]
+    },
+    {
+      "level": "FIRST",
+      "side": "outer-south",
+      "id": "south-window-4",
+      "old": 10200,
+      "new": 9900,
+      "clear": [
+        9400,
+        10400
+      ],
+      "sill": 4200,
+      "head": 6300,
+      "area": 2.013736079062664,
+      "worldCentre": [
+        9900,
+        0,
+        4200
+      ],
+      "jambAxes": [
+        10502.5,
+        9297.5
+      ],
+      "headPairs": [
+        [
+          [
+            "P23",
+            "P05"
+          ],
+          [
+            0.20232172470978438,
+            0.7976782752902156
+          ]
+        ],
+        [
+          [
+            "P22",
+            "P23"
+          ],
+          [
+            0.0011904761904761862,
+            0.9988095238095238
+          ]
+        ]
+      ]
+    },
+    {
+      "level": "FIRST",
+      "side": "outer-east",
+      "id": "east-window-0",
+      "old": 1800,
+      "new": 2100,
+      "clear": [
+        1600,
+        2600
+      ],
+      "sill": 4200,
+      "head": 6300,
+      "area": 2.013736079062664,
+      "worldCentre": [
+        12000,
+        2100,
+        4200
+      ],
+      "jambAxes": [
+        1497.5,
+        2702.5
+      ],
+      "headPairs": [
+        [
+          [
+            "P06",
+            "P17"
+          ],
+          [
+            0.8618346545866364,
+            0.13816534541336353
+          ]
+        ],
+        [
+          [
+            "P06",
+            "P17"
+          ],
+          [
+            0.3159682899207248,
+            0.6840317100792752
+          ]
+        ]
+      ]
+    },
+    {
+      "level": "FIRST",
+      "side": "outer-east",
+      "id": "east-window-3",
+      "old": 10200,
+      "new": 9900,
+      "clear": [
+        9400,
+        10400
+      ],
+      "sill": 4200,
+      "head": 6300,
+      "area": 2.013736079062664,
+      "worldCentre": [
+        12000,
+        9900,
+        4200
+      ],
+      "jambAxes": [
+        10502.5,
+        9297.5
+      ],
+      "headPairs": [
+        [
+          [
+            "P19",
+            "P12"
+          ],
+          [
+            0.1014131338320865,
+            0.8985868661679135
+          ]
+        ],
+        [
+          [
+            "P19",
+            "P12"
+          ],
+          [
+            0.5020781379883624,
+            0.4979218620116376
+          ]
+        ]
+      ]
+    },
+    {
+      "level": "FIRST",
+      "side": "outer-north",
+      "id": "north-window-0",
+      "old": 1800,
+      "new": 2100,
+      "clear": [
+        1600,
+        2600
+      ],
+      "sill": 4300,
+      "head": 6300,
+      "area": 1.9137360790626639,
+      "worldCentre": [
+        2100,
+        12000,
+        4300
+      ],
+      "jambAxes": [
+        1497.5,
+        2702.5
+      ],
+      "headPairs": [
+        [
+          [
+            "P08",
+            "P24"
+          ],
+          [
+            0.8216374269005848,
+            0.1783625730994152
+          ]
+        ],
+        [
+          [
+            "P08",
+            "P24"
+          ],
+          [
+            0.11695906432748537,
+            0.8830409356725146
+          ]
+        ]
+      ]
+    },
+    {
+      "level": "FIRST",
+      "side": "outer-north",
+      "id": "north-window-4",
+      "old": 10200,
+      "new": 9900,
+      "clear": [
+        9400,
+        10400
+      ],
+      "sill": 4300,
+      "head": 6300,
+      "area": 1.9137360790626639,
+      "worldCentre": [
+        9900,
+        12000,
+        4300
+      ],
+      "jambAxes": [
+        10502.5,
+        9297.5
+      ],
+      "headPairs": [
+        [
+          [
+            "P27",
+            "P11"
+          ],
+          [
+            0.20232172470978438,
+            0.7976782752902156
+          ]
+        ],
+        [
+          [
+            "P26",
+            "P27"
+          ],
+          [
+            0.001388888888888884,
+            0.9986111111111111
+          ]
+        ]
+      ]
+    },
+    {
+      "level": "FIRST",
+      "side": "outer-west",
+      "id": "west-window-0",
+      "old": 1800,
+      "new": 2100,
+      "clear": [
+        1600,
+        2600
+      ],
+      "sill": 4200,
+      "head": 6300,
+      "area": 2.013736079062664,
+      "worldCentre": [
+        0,
+        2100,
+        4200
+      ],
+      "jambAxes": [
+        1497.5,
+        2702.5
+      ],
+      "headPairs": [
+        [
+          [
+            "P03",
+            "P13"
+          ],
+          [
+            0.851581508515815,
+            0.14841849148418493
+          ]
+        ],
+        [
+          [
+            "P03",
+            "P13"
+          ],
+          [
+            0.26520681265206814,
+            0.7347931873479319
+          ]
+        ]
+      ]
+    },
+    {
+      "level": "FIRST",
+      "side": "outer-west",
+      "id": "west-window-3",
+      "old": 10200,
+      "new": 9900,
+      "clear": [
+        9400,
+        10400
+      ],
+      "sill": 4200,
+      "head": 6300,
+      "area": 2.013736079062664,
+      "worldCentre": [
+        0,
+        9900,
+        4200
+      ],
+      "jambAxes": [
+        10502.5,
+        9297.5
+      ],
+      "headPairs": [
+        [
+          [
+            "P16",
+            "P09"
+          ],
+          [
+            0.15601023017902815,
+            0.8439897698209718
+          ]
+        ],
+        [
+          [
+            "P16",
+            "P09"
+          ],
+          [
+            0.7723785166240409,
+            0.22762148337595908
+          ]
+        ]
+      ]
+    }
+  ],
+  "jointGapMm": 132.5,
+  "oldGroundOpeningBelowJambMm": 205,
+  "roofStationClearanceLowerMm": 477.7941176470589,
+  "grossNearJambWeightKN": 40.303482348599985,
+  "grossNewNearJambReactionsKN": {
+    "P02": 4.341867223568034,
+    "P20": 0.6960680700069648,
+    "P23": 1.0192837575723879,
+    "P05": 4.018651536002611,
+    "P06": 4.341867223568034,
+    "P17": 0.6960680700069648,
+    "P19": 0.5109128061647135,
+    "P12": 4.527022487410286,
+    "P08": 4.139356191504605,
+    "P24": 0.8985791020703946,
+    "P27": 1.0192837575723879,
+    "P11": 4.018651536002611,
+    "P03": 4.290212537107664,
+    "P13": 0.7477227564673358,
+    "P16": 0.7859694447776855,
+    "P09": 4.2519658487973135
+  },
+  "upperWindowAreaM2": 15.909888632501312,
+  "lowerWindowAreaM2": 15.409888632501312,
+  "retainedOrientation": {
+    "minimumBedSouthMoveMm": 210.3847577293368,
+    "permittedBedSouthMoveMm": 14
+  },
+  "principal": {
+    "ordinaryBed": [
+      9315,
+      9150,
+      1600,
+      2090
+    ],
+    "servicePark": [
+      8540,
+      9150,
+      1600,
+      2090
+    ],
+    "paddedStage": [
+      10175,
+      8440,
+      450,
+      1100
+    ],
+    "eastStripMm": 655.5,
+    "routes": [
+      [
+        [
+          8700,
+          8800
+        ],
+        [
+          11242.75,
+          8800
+        ],
+        [
+          11242.75,
+          10320
+        ]
+      ],
+      [
+        [
+          8700,
+          8800
+        ],
+        [
+          8990,
+          8800
+        ],
+        [
+          8990,
+          11245.5
+        ]
+      ],
+      [
+        [
+          8990,
+          11245.5
+        ],
+        [
+          8700,
+          11250
+        ]
+      ],
+      [
+        [
+          8700,
+          8800
+        ],
+        [
+          10400,
+          8825
+        ]
+      ]
+    ],
+    "routeToFurnitureMm": 25.0,
+    "serviceWardrobeClearMm": 130.5
+  },
+  "kitchen": {
+    "newFridge": [
+      10920.5,
+      8725,
+      650,
+      650
+    ],
+    "hinge": [
+      10920.5,
+      9375
+    ],
+    "fridgeToWindowMm": 25,
+    "bodySweepAABB": [
+      10194.442492144546,
+      8825,
+      10970.5,
+      10020
+    ],
+    "bodyToFixedMm": 44.628194684254034,
+    "armToFixedMm": 54.46987868525971
+  },
+  "namedWindowActions": {
+    "living1800": {
+      "grip": [
+        2520,
+        11570.5
+      ],
+      "body": [
+        2300,
+        11045.5
+      ],
+      "reach": 569.2319386682374,
+      "clearance": 196.9169950806674
+    },
+    "kitchen10200": {
+      "grip": [
+        10320,
+        11570.5
+      ],
+      "body": [
+        10345,
+        11045.5
+      ],
+      "reach": 525.594901040716,
+      "clearance": 25.0
+    },
+    "studySouth1800": {
+      "grip": [
+        2520,
+        429.5
+      ],
+      "body": [
+        2580,
+        765
+      ],
+      "reach": 340.8229012258419,
+      "clearance": 25.0
+    },
+    "studyWest1800": {
+      "grip": [
+        429.5,
+        2520
+      ],
+      "body": [
+        754.5,
+        2724
+      ],
+      "reach": 383.7199499635118,
+      "clearance": 25.0
+    },
+    "principalEast10200": {
+      "grip": [
+        11570.5,
+        10320
+      ],
+      "body": [
+        11242.75,
+        10320
+      ],
+      "reach": 327.75,
+      "clearance": 27.75
+    },
+    "principalNorth8300": {
+      "grip": [
+        8570,
+        11570.5
+      ],
+      "body": [
+        8700,
+        11250
+      ],
+      "reach": 345.86160527008485,
+      "clearance": 20.5
+    },
+    "principalNorth10200": {
+      "grip": [
+        9480,
+        11570.5
+      ],
+      "body": [
+        8990,
+        11245.5
+      ],
+      "reach": 587.9838433154434,
+      "clearance": 25.0
+    }
+  },
+  "windowBarrier": {
+    "oldSocketShifted": 1280.0,
+    "oldToe": 1262.5,
+    "newJamb": [
+      1395,
+      1600
+    ],
+    "newJambSocket": 1497.5,
+    "nominalCentreEdge": 102.5,
+    "westCabinetGap": 297.5
+  },
+  "roof": {
+    "HADridge": 8090.903773579372,
+    "northField": [
+      7308.554466360607,
+      8299.458239360607
+    ],
+    "northCap": [
+      8464.73365326618,
+      8348.15673872743
+    ],
+    "capRise": 165.27541390557326,
+    "grossRiseAtNorthCap": 373.82987968680754
+  },
+  "adopted": false,
+  "newSignedWholeHouseRegister": null,
+  "programme": {
+    "bedroomCount": 4,
+    "bedFrames": [
+      [
+        1100,
+        1065.5,
+        950,
+        2055
+      ],
+      [
+        9942.5,
+        1518,
+        950,
+        2055
+      ],
+      [
+        5405.5,
+        9250,
+        2000,
+        1500
+      ],
+      [
+        9315,
+        9150,
+        1600,
+        2090
+      ]
+    ],
+    "bed2And3Windows": [
+      "South3900",
+      "South8100"
+    ],
+    "occupiedFloorChangeM2": 0,
+    "unchanged": [
+      "stair and entrance void",
+      "three sanitary rooms and independent ground WC",
+      "floor/room boundaries and protected stair/front door",
+      "court and two water routes",
+      "primary pitched roof, diaphragm and corner stability frame"
+    ],
+    "originalRoughAreaChangeM2": 0
+  },
+  "legacy": {
+    "occupation": {
+      "u": 1205.147059,
+      "y": 10794.852941,
+      "z": 6050.588235,
+      "diameter": 24.0,
+      "axisToCabinetPlan": 5.147059,
+      "nominalCabinetPlanOverlap": 6.852941,
+      "lowestPinZ": 6038.588235,
+      "axisToRawOpeningAtPinZ": 125.320793,
+      "scope": "Plan overlap only. Cabinet and low-box upper heights remain unbound."
+    },
+    "case": "Wind 31, active aperture pressure -2.25 kPa and guard -1.5 kN at W7 X2240; all eight inner arches re-solved. W7 and W3 are the same north-east pier. Local negative Y points outward.",
+    "options": {
+      "hinge": "Near rotation about wall normal free.",
+      "pin": "Three rotations free at physical centroid; retain three translations.",
+      "separated": "All six near degrees of freedom free. Far root only."
+    },
+    "separatedWallNormalMm": {
+      "7": -124.829688,
+      "3": -86.343938
+    },
+    "hingeEdgeLineKN": [
+      -12.639026,
+      13.415786
+    ]
+  },
+  "sourceMain": "2e16d4de0d1e1602965eadaba1de27fb18835d05",
+  "sourceBlobs": {
+    "project/had/studies/water-replan.json": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+    "project/str/studies/current-house-arch-movement.json": "05db94a987c7bf45b885c6d02f701b31bcf91740",
+    "project/str/studies/current-house-arch-jambs.json": "2d814bebd663f4358c43c92c3c52668b61cf0cb0",
+    "project/str/studies/current-house-grid.json": "56aca6f99f5fa60b21d58c89115ac1ee824e3828",
+    "project/mat/studies/raised-roof-edge.json": "8406cb6c76245ea63c5935f8a3915a4a55f03942",
+    "project/str/studies/current-house-window-renewal.json": "9e190c8683dbd4ff2f341589fd1676abd31f090b",
+    "project/str/studies/corner-arch-end.json": "4554deed49057863d815c1d688693d88ae801b6c"
+  }
+}

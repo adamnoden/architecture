@@ -69,9 +69,13 @@ export const structureNodes = defineNodes([
     // Whole-house selection needs the actual water-safe architecture, not a
     // further support calculation on the rejected north-only topology.
     dependencies: ['STR-MASONRY', 'STR-SPANS', 'BCR-PREFLIGHT', 'HAD-WATER-REPLAN'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: [
+      'project/str/whole-house-corner-rewind.md',
+      'project/str/studies/house-corner-rewind.json',
+      'project/str/studies/house-corner-rewind.svg'
+    ]
   },
   {
     id: 'STR-RECONCILE',

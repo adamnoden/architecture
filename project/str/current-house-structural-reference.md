@@ -1,5 +1,8 @@
 # Current selected house — structural re-entry
 
+**Current disposition.** STR-HOUSE closed on the [documented architectural rewind](whole-house-corner-rewind.md). The numerical controls below belong to their original geometries. The altered two-storey jambs and the raised north roof need a joined successor before structural adoption.
+
+
 STR-HOUSE consumes the architectural independent-water source merged in PR1332. This is structural development, not a whole-house structural selection. The [interface audit](studies/current-house-interfaces.json) preserves historical calculations and their input guards.
 
 The [eight corner-arch junctions](corner-arch-junction.md) now use altered, coupled RC piers and an independent outer brick arch. The current complete window still needs more allowance at the finished reveal. The spatial window/guard model now conserves five signed actions at all 52 proposed heads across 73,728 states. H6 at 55 mm pitch clears the nominal local shear/torsion geometry but fails the 5 mm inward cage-placement challenge in both arch and jamb. The junction record gives the simultaneous forces and site/fabrication limits. The eight roof/floor anchor terminals and the physical rear-west window renewal remain open.
@@ -18,7 +21,7 @@ The [eight corner-arch junctions](corner-arch-junction.md) now use altered, coup
 
 The [lower staff-bay comparator](studies/current-house-service-bay.json) requires 1.345 m³ of suspended concrete, 36.53 kN fixed on the two real east nodes and a local −1840 grade for 500 mm clear air. Its 140 mm floor passes 5 kN on 200 × 200 plus 5 kPa; the proposed anchorage has only **6.96 mm** clear to the eight starters against **25 mm**. **No bay joint passes.** Retain the 450 mm bridge and develop the [independent inboard platform](east-service-platform.md) with four separate heads, signed panel contacts and the shifted south ladder. No pipe sled load enters this staff slab.
 
-**Governing next action:** complete the eight actual roof/floor/pier and court-anchor bar junctions and the remaining physical window/guard joints, local RC stress fields and genuine outer masonry returns, including independent renewal at the rear-west fixed cabinet. Close the high purlin saddle, weak/strong collector corner, actual stirrup/rod/thermal clearance and temporary holding sequence. Then rerun the signed register for the selected assembly and admit or reject its real soil/site demands. Until those joins are earned, STR-HOUSE remains open; this is not an architectural geometry adoption.
+**Governing next action:** complete the eight actual roof/floor/pier and court-anchor bar junctions and the remaining physical window/guard joints, local RC stress fields and genuine outer masonry returns, including independent renewal at the rear-west fixed cabinet. Close the high purlin saddle, weak/strong collector corner, actual stirrup/rod/thermal clearance and temporary holding sequence. Then rerun the signed register for the selected assembly and admit or reject its real soil/site demands. Those joins remain conditions on the successor, which has not been adopted.
 
 ## Superseded 1343 mechanism comparison: load path, restraint and occupation
 
