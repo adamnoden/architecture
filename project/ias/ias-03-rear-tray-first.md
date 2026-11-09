@@ -1,5 +1,7 @@
 # Lift the rear shower tray before withdrawing its drain
 
+The [three-bathing wet sections](ias-03-three-bathing-sections.md) keep this flush structural control and compare it with a +155 side-serviced rear shower. Use the two complete details with their respective levels, supports and first-release conditions.
+
 **Develop the tray-first sequence for a prepared new-build installation. Reject the centred slip sleeve and an assumed fully bottomed Geberit socket.** Removing the upper wet junction, tray and frame opens a straight service route through the proposed 400 mm well. This costs four sacrificial perimeter releases, a prepared carrier and temporary lifting equipment. It keeps routine drain exchange off the Pecolift and out of the lower fire and acoustic closure. The mixed-product joint and positive restraint are real selection conditions.
 
 ![Rear tray-first exchange, separated pipe section and first rest in the actual room](studies/rear-tray-first.svg)

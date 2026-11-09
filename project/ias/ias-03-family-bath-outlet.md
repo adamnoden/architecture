@@ -1,5 +1,7 @@
 # Keep the family bath at its ordinary rim height
 
+The [permanent three-bathing section](ias-03-three-bathing-sections.md#original-family-bath-and-its-floor-crossing) supersedes the nominal 60 mm elbow throw below with a dimensioned MT4L comparison, moves the proposed floor axis to (11012,4366) at the stated engagement and prices the actual worker below. It also checks the complete original 1700 shell through the east opening.
+
 **Develop the Geberit PushControl straight outlet with a floor drop near the removable bath front.** It keeps the 560 mm rim and the required 50 mm water seal. Its supplied connector reaches beyond the existing floor axis. The new setout needs a compatible downturn and approval from Services, HAD and STR. Keep the existing port on the house drawings until those connections agree. [Current bath and lower branch](../mat/whole-house-service-baseline.md) · [Located calculation](studies/family-bath-outlet.py)
 
 ![The waste end of the family bath, a direct diagonal outlet and two under-bath depth comparisons](studies/family-bath-outlet.svg)

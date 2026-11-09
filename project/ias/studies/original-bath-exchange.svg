@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 490" width="1120" height="490">
+<title>Original 1700 bath through the family window</title>
+<desc>End view of the supported roll inside the bathroom and side view of the independently supported pitch outside.</desc>
+<rect width="1120" height="490" fill="#fbf8ef"/>
+<text x="28" y="40" font-family="sans-serif" font-size="27" font-weight="bold" fill="#263b34">Renewing the original 1700 mm family bath</text>
+<text x="28" y="69" font-family="sans-serif" font-size="15" font-weight="normal" fill="#263b34">The cradle rolls about its long axis inside. Outside, a separate pitch bed stands the goods upright.</text>
+<text x="28" y="108" font-family="sans-serif" font-size="19" font-weight="bold" fill="#263b34">01   Bathroom end view</text>
+<text x="565" y="108" font-family="sans-serif" font-size="19" font-weight="bold" fill="#263b34">02   Outdoor side view</text>
+<path d="M170.188 123 V359" fill="none" stroke="#a79985" stroke-width="2"/>
+<path d="M375.812 123 V359" fill="none" stroke="#a79985" stroke-width="2"/>
+<circle cx="273" cy="240" r="99.764" fill="none" stroke="#a48e71" stroke-dasharray="4 4"/>
+<rect x="188.400" y="187.125" width="169.200" height="105.750" stroke="#748c81" stroke-width="2" fill="none"/>
+<rect x="220.125" y="155.400" width="105.750" height="169.200" stroke="#087a72" stroke-width="2" fill="none"/>
+<circle cx="273" cy="240" r="4" fill="#263b34"/>
+<path d="M715.000 123 V359" fill="none" stroke="#a79985" stroke-width="2"/>
+<path d="M945.000 123 V359" fill="none" stroke="#a79985" stroke-width="2"/>
+<circle cx="830" cy="240" r="110.939" fill="none" stroke="#a48e71" stroke-dasharray="4 4"/>
+<rect x="727.075" y="198.600" width="205.850" height="82.800" stroke="#748c81" stroke-width="2" fill="none"/>
+<rect x="788.600" y="137.075" width="82.800" height="205.850" stroke="#087a72" stroke-width="2" fill="none"/>
+<circle cx="830" cy="240" r="4" fill="#263b34"/>
+<text x="28" y="387" font-family="sans-serif" font-size="15" font-weight="normal" fill="#263b34">720 × 450 around Y4237.5 at +850.</text>
+<text x="28" y="412" font-family="sans-serif" font-size="15" font-weight="normal" fill="#263b34">Wall and cabinet leave 2.97 mm after two 5 mm errors.</text>
+<text x="565" y="387" font-family="sans-serif" font-size="15" font-weight="normal" fill="#263b34">1790 × 720 on the 2000 mm bed, axis at +5500.</text>
+<text x="565" y="412" font-family="sans-serif" font-size="15" font-weight="normal" fill="#263b34">End reserve 25.31 mm. Shelter soffit at least +6665 mm.</text>
+<text x="28" y="464" font-family="sans-serif" font-size="14" font-weight="normal" fill="#263b34">Grey-green = received orientation. Teal = locked after turning. Dotted circle = full corner sweep.</text>
+</svg>

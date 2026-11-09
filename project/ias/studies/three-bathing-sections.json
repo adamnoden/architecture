@@ -1,0 +1,1115 @@
+{
+  "selection": {
+    "programme": "Four bedrooms, four WCs, two showers and the 1700 family bath.",
+    "rear": "Use the prepared flush 400 well for the three-bathing house unless a stepped rear shower is deliberately adopted.",
+    "rearWellXYZ": [
+      [
+        1812.5,
+        9252.5,
+        2212.5,
+        9652.5
+      ],
+      [
+        3170,
+        3370
+      ]
+    ],
+    "rearField": [
+      "NW-W",
+      [
+        332.5,
+        8852.5,
+        2902.5,
+        11667.5
+      ],
+      2570,
+      "EW"
+    ],
+    "wetBeamFaceClearance": 590.0,
+    "nativeTrayLand": -41.1,
+    "chosenB594TrialInsertion": 40,
+    "trayFirst": {
+      "maxLift": 155,
+      "walkReserve": 12.5,
+      "horizontalObstacleGap": 38.5,
+      "anchorCoupleKN": 6.662839705443341
+    },
+    "wetBeamDemand": [
+      40.814593,
+      68.2482
+    ],
+    "wetBeamResistance": [
+      71.446867,
+      68.81727
+    ],
+    "wholeBodyIsNotRoutineHairCup": true,
+    "houseSourceAdopted": false,
+    "historicalFront": {
+      "formerServiceFaceX": 9500,
+      "oldRewoundFaceY": [
+        2930,
+        3670
+      ],
+      "formerLiningX": [
+        9862.5,
+        10112.5
+      ],
+      "earlierRoomDepth": 1075,
+      "newWetSpineX": [
+        9203,
+        9397
+      ],
+      "bed3NorthReturnY": [
+        3603,
+        3800
+      ],
+      "oldLiningToBedOverlap": [
+        170.0,
+        643
+      ],
+      "newWallThroughOldFrontY": 67,
+      "currentCabinet": [
+        9397,
+        4675,
+        600,
+        750
+      ],
+      "actualRiser": [
+        9400,
+        4700,
+        550,
+        700
+      ],
+      "actualSixServiceFloorOpening": [
+        9440,
+        4760,
+        465,
+        545
+      ]
+    }
+  },
+  "rearSideOption": {
+    "tray": [
+      1802.5,
+      8952.5,
+      1000,
+      1000
+    ],
+    "apron": [
+      1590,
+      9360,
+      212.5,
+      385
+    ],
+    "nativeFootRangeAboveSeat": [
+      80,
+      200
+    ],
+    "nativeFeetInCaseA": 4,
+    "old400Well": [
+      1812.5,
+      9252.5,
+      400,
+      400
+    ],
+    "unchangedSmallPort": [
+      2122.5,
+      9452.5,
+      110
+    ],
+    "originalHatch": [
+      1722.5,
+      9052.5,
+      800,
+      800
+    ],
+    "keptLowerRoute": [
+      [
+        2122.5,
+        9452.5,
+        2777.375
+      ],
+      [
+        1750,
+        9452.5,
+        2768.0625
+      ],
+      [
+        1750,
+        11177.5,
+        2724.9375
+      ],
+      [
+        567.5,
+        11177.5,
+        2695.375
+      ]
+    ],
+    "nativeDrainCentre": [
+      2012.5,
+      9452.5
+    ],
+    "u": {
+      "OD": 50.8,
+      "wallTrial": 1.65,
+      "centres": 152.4,
+      "outsideDepth": 127,
+      "radius": 76.2,
+      "straightTangent": 25.4,
+      "rollDegrees": 6,
+      "planSpacing": 151.56513685412486,
+      "axisFall": 15.930137801990389,
+      "developed": 350.18936020354226,
+      "fallRequiredOneIn40": 8.754734005088556,
+      "afterOppositeTwo": 11.930137801990389,
+      "matingX": 1845.0,
+      "weldEndX": 1815,
+      "mouthX": 1880.0,
+      "firstTipY": 9452.5,
+      "returnTipY": 9604.065136854126,
+      "outside": [
+        1663,
+        9418.5,
+        1900.0,
+        9638.065136854126
+      ],
+      "pairedWithdrawal": 55,
+      "freeFrameWithdrawal": 125,
+      "gateClearAfter125": 27.5,
+      "routeToFirstRest": [
+        [
+          1656.5,
+          9528.282568427063
+        ],
+        [
+          1620,
+          9528.282568427063
+        ],
+        [
+          1620,
+          10130
+        ]
+      ],
+      "firstRestRouteClear": [
+        6.0,
+        "rear-shower1000"
+      ],
+      "storedU": [
+        1480.0,
+        9987.5,
+        280,
+        285
+      ]
+    },
+    "fixedReturn": {
+      "arcR": 75,
+      "afterU": 396.87486136374207,
+      "completeLength": 747.0642215672843,
+      "fallOnGradedFixedPart": 9.921871534093551,
+      "bodyClearAfterPaired10": 51.06513685412574
+    },
+    "entry": {
+      "dailyPath": [
+        [
+          2500,
+          10800
+        ],
+        [
+          1600,
+          10800
+        ],
+        [
+          1550,
+          10220
+        ],
+        [
+          1740,
+          10145
+        ],
+        [
+          1937,
+          10055
+        ],
+        [
+          2120,
+          9975
+        ],
+        [
+          2290,
+          9900
+        ],
+        [
+          2320,
+          9580
+        ]
+      ],
+      "dailyBodyClear": [
+        36.45473293090072,
+        "open privacy door"
+      ],
+      "crossing": [
+        2171.0,
+        9952.5
+      ],
+      "firstEastGrip": [
+        2675,
+        9952.5,
+        1000
+      ],
+      "firstGripReach": 613.6089960227115,
+      "wallCantileverGrip": [
+        2580,
+        9952.5,
+        1000
+      ],
+      "nearStepGripReach": 538.3131059151356,
+      "nativeWallFace": 2805.5,
+      "requiredReachFromWall": 225.5
+    },
+    "water": {
+      "sourceRatedLps": 0.5,
+      "fullBoreHeadScreen": {
+        "0.15": {
+          "speedAtFullBore": 0.08464750435912438,
+          "headAtK4PlusFriction": 1.661825482445926,
+          "headAtK7PlusFriction": 2.757421811838584
+        },
+        "0.25": {
+          "speedAtFullBore": 0.141079173931874,
+          "headAtK4PlusFriction": 4.6161818956831295,
+          "headAtK7PlusFriction": 7.659505032884958
+        },
+        "0.5": {
+          "speedAtFullBore": 0.282158347863748,
+          "headAtK4PlusFriction": 18.464727582732518,
+          "headAtK7PlusFriction": 30.638020131539832
+        }
+      },
+      "pipeOnlyHalfFullAtIDs": {
+        "44": 0.4573552627162537,
+        "46": 0.5149132822660234,
+        "47.5": 0.5609138571079638,
+        "48": 0.5767972438728478
+      },
+      "fallInUIsNotFittingLossProof": true
+    },
+    "vertical": [
+      {
+        "rim": 0,
+        "seat": -41.1,
+        "bodyBottom": -96.1,
+        "firstAxis": -71.1,
+        "secondAxis": -87.03013780199038,
+        "axisAtDownturn": -96.95200933608393,
+        "minHousingAboveFloor": -129.95200933608393,
+        "marginAt8LinerWithTwo5": -147.95200933608393,
+        "bodyLowered15Above10Support": -121.1
+      },
+      {
+        "rim": 55,
+        "seat": 13.899999999999999,
+        "bodyBottom": -41.1,
+        "firstAxis": -16.1,
+        "secondAxis": -32.03013780199039,
+        "axisAtDownturn": -41.95200933608395,
+        "minHousingAboveFloor": -74.95200933608395,
+        "marginAt8LinerWithTwo5": -92.95200933608395,
+        "bodyLowered15Above10Support": -66.1
+      },
+      {
+        "rim": 65,
+        "seat": 23.9,
+        "bodyBottom": -31.1,
+        "firstAxis": -6.100000000000001,
+        "secondAxis": -22.030137801990392,
+        "axisAtDownturn": -31.952009336083943,
+        "minHousingAboveFloor": -64.95200933608395,
+        "marginAt8LinerWithTwo5": -82.95200933608395,
+        "bodyLowered15Above10Support": -56.1
+      },
+      {
+        "rim": 120,
+        "seat": 78.9,
+        "bodyBottom": 23.900000000000006,
+        "firstAxis": 48.900000000000006,
+        "secondAxis": 32.969862198009615,
+        "axisAtDownturn": 23.047990663916064,
+        "minHousingAboveFloor": -9.952009336083936,
+        "marginAt8LinerWithTwo5": -27.952009336083936,
+        "bodyLowered15Above10Support": -1.0999999999999943
+      },
+      {
+        "rim": 135,
+        "seat": 93.9,
+        "bodyBottom": 38.900000000000006,
+        "firstAxis": 63.900000000000006,
+        "secondAxis": 47.969862198009615,
+        "axisAtDownturn": 38.04799066391607,
+        "minHousingAboveFloor": 5.047990663916067,
+        "marginAt8LinerWithTwo5": -12.952009336083933,
+        "bodyLowered15Above10Support": 13.900000000000006
+      },
+      {
+        "rim": 145,
+        "seat": 103.9,
+        "bodyBottom": 48.900000000000006,
+        "firstAxis": 73.9,
+        "secondAxis": 57.969862198009615,
+        "axisAtDownturn": 48.04799066391607,
+        "minHousingAboveFloor": 15.047990663916067,
+        "marginAt8LinerWithTwo5": -2.9520093360839326,
+        "bodyLowered15Above10Support": 23.900000000000006
+      },
+      {
+        "rim": 155,
+        "seat": 113.9,
+        "bodyBottom": 58.900000000000006,
+        "firstAxis": 83.9,
+        "secondAxis": 67.96986219800962,
+        "axisAtDownturn": 58.04799066391607,
+        "minHousingAboveFloor": 25.047990663916067,
+        "marginAt8LinerWithTwo5": 7.047990663916067,
+        "bodyLowered15Above10Support": 33.900000000000006
+      }
+    ],
+    "crew": {
+      "entry": [
+        [
+          2500,
+          10800
+        ],
+        [
+          1600,
+          10800
+        ],
+        [
+          1550,
+          10220
+        ],
+        [
+          1250,
+          9850
+        ],
+        [
+          1225,
+          9530
+        ]
+      ],
+      "entryClear": [
+        30.226160198858736,
+        "normal service enclosure"
+      ],
+      "withdrawBeforeLowering": [
+        [
+          1225,
+          9530
+        ],
+        [
+          1100,
+          9860
+        ],
+        [
+          980,
+          9850
+        ]
+      ],
+      "retreatClear": [
+        57.5,
+        "rear-basin"
+      ],
+      "approachAfterCapture": [
+        [
+          980,
+          9850
+        ],
+        [
+          995,
+          9550
+        ],
+        [
+          1050,
+          9530
+        ]
+      ],
+      "restClear": [
+        45.0,
+        "drain stand"
+      ],
+      "firstGripReach": 484.48426187029025,
+      "restGripReach": 527.7546778570513
+    },
+    "withdrawnBody": [
+      1425.0,
+      9395.0,
+      1650.0,
+      9510.0
+    ],
+    "drainRest": [
+      1395,
+      9360,
+      305,
+      215
+    ],
+    "bodyReleaseDrop": 15,
+    "bodySlide": 420
+  },
+  "family": {
+    "fixture": {
+      "cupTrialEntryBeyondBareFace": 24,
+      "hypotheticalEntriesAndFloorCentres": [
+        [
+          20,
+          274,
+          11014.4,
+          4369.2
+        ],
+        [
+          24,
+          270,
+          11012.0,
+          4366.0
+        ],
+        [
+          27,
+          267,
+          11010.2,
+          4363.6
+        ]
+      ],
+      "wasteHole": [
+        10850,
+        4150,
+        52
+      ],
+      "nativeTip": [
+        10994.0,
+        4342.0
+      ],
+      "newFloorPort": [
+        11012.0,
+        4366.0,
+        110
+      ],
+      "nativeTurnDeg": 126.86989764584402,
+      "availableOnFavouredSide": 130,
+      "sealToFront": 34.0,
+      "sealToEast": 48.0,
+      "sealEastOfNearestFootAxis": 202.0,
+      "downlegEndAt560NoSlope": 55.5,
+      "upperPlainTipStrokeTrial": 29,
+      "upperTrialShiftXY": [
+        -17.4,
+        -23.200000000000003
+      ],
+      "downLeg": {
+        "diameter": 44,
+        "axisToTip": 64.5,
+        "straightAtEnd": 40
+      },
+      "requiredReturn_m": 1.046,
+      "turnZ": 2733.65,
+      "upperFirstRelease": {
+        "fixedElbowAndStemStay": true,
+        "independentShellVerticalLift": 40,
+        "maximumRetainedFlangeProjection": 25,
+        "pairedAfterTwo5": 5,
+        "frontPanel": {
+          "frontY": 4500,
+          "clearX": [
+            10625,
+            11125
+          ],
+          "clearZLocal": [
+            0,
+            500
+          ],
+          "requiredAccess": "Firstunion/trapcleanout/wasteandfull52overflowreleasefromFRONTorTOP, neverblindrearreach. Panelisnotarequiredfoot/supportremovedforaccess."
+        },
+        "existingFirstCouplingXZ": [
+          10994,
+          120
+        ],
+        "postFlangeDryPullAlongAxis": 29,
+        "operator": [
+          11020,
+          4845,
+          550
+        ],
+        "extendedToolGripTargets": [
+          [
+            11010,
+            4380,
+            380
+          ],
+          [
+            11062,
+            4385,
+            450
+          ]
+        ],
+        "maxGripReach": 495.20197899443014,
+        "bodyToRoomSideAtBathFront": 45,
+        "originalFootCentres": [
+          [
+            10710,
+            4150
+          ],
+          [
+            9970,
+            4150
+          ]
+        ]
+      }
+    },
+    "structure": {
+      "shift": [
+        62.0,
+        216.0
+      ],
+      "centreDistance": 224.72205054244233,
+      "holeEdgeSeparation": 114.72205054244233,
+      "nominalFourMatLayers": "H12 at 150, top/bottom in X and Y. Cage phase is unknown.",
+      "safePhaseWidth": 28,
+      "phaseShiftXY": [
+        62.0,
+        66.0
+      ],
+      "noCommonClearPhaseOnEitherAxis": true,
+      "onEachFaceMaxOneEachAxis": true,
+      "preformedVolume_l": 1.900663555421825,
+      "clearEWSpan": 2367.5,
+      "ulsCorridor_kN": 3.4180781250000005,
+      "edgeToOuterCollectorFace": 530.5
+    },
+    "upperUnionCases": [
+      {
+        "A": 2830,
+        "verticalToT": 96.34999999999991,
+        "spaceAfter54BareFace": 42.34999999999991,
+        "bareReach": 521.7278984298233,
+        "armRadiusAtCeiling": 142.30392156862746,
+        "armToTurnWith40Arm50TurnAndTwo5": -0.002941176470599771,
+        "toHeadAtRest": 63.65000000000009,
+        "comparison": 90,
+        "upperStemStrokeTo100": 720
+      },
+      {
+        "A": 2860,
+        "verticalToT": 126.34999999999991,
+        "spaceAfter54BareFace": 72.34999999999991,
+        "bareReach": 551.0898293381941,
+        "armRadiusAtCeiling": 145.50925925925927,
+        "armToTurnWith40Arm50TurnAndTwo5": 5.552777777777763,
+        "toHeadAtRest": 63.65000000000009,
+        "comparison": 60,
+        "upperStemStrokeTo100": 690
+      },
+      {
+        "A": 3000,
+        "verticalToT": 266.3499999999999,
+        "spaceAfter54BareFace": 212.3499999999999,
+        "bareReach": 688.8396039717809,
+        "armRadiusAtCeiling": 156.72794117647058,
+        "armToTurnWith40Arm50TurnAndTwo5": 24.997794117647047,
+        "toHeadAtRest": 63.65000000000009,
+        "comparison": -80,
+        "upperStemStrokeTo100": 550
+      }
+    ],
+    "hatches": [
+      {
+        "clear": [
+          10812.0,
+          4176.0,
+          400,
+          400
+        ],
+        "gross": [
+          10792.0,
+          4156.0,
+          440,
+          440
+        ],
+        "toWorkField": [
+          257.0,
+          256.0,
+          303.0,
+          104.0
+        ],
+        "headClear": 40.0,
+        "armAfterAllowance": 4.490740740740733,
+        "wholeSweptSpoolClear": 60.0,
+        "lowestMovingLeaf": 2187.5,
+        "headToNorthLeaf": 30.0,
+        "outerToMainPipe": 282.0,
+        "outerToSecondary": 208.0,
+        "toEastDryWall": 338.5,
+        "extraClear_m2": 0.0,
+        "extraGross_m2": 0.0
+      },
+      {
+        "clear": [
+          10787.0,
+          4151.0,
+          450,
+          450
+        ],
+        "gross": [
+          10767.0,
+          4131.0,
+          490,
+          490
+        ],
+        "toWorkField": [
+          232.0,
+          231.0,
+          278.0,
+          79.0
+        ],
+        "headClear": 65.0,
+        "armAfterAllowance": 29.490740740740733,
+        "wholeSweptSpoolClear": 85.0,
+        "lowestMovingLeaf": 2137.5,
+        "headToNorthLeaf": 55.0,
+        "outerToMainPipe": 257.0,
+        "outerToSecondary": 183.0,
+        "toEastDryWall": 313.5,
+        "extraClear_m2": 0.0425,
+        "extraGross_m2": 0.0465
+      }
+    ],
+    "ladder": {
+      "model": "Werner AdjustaStepPRO 75076",
+      "unfolded": [
+        10560,
+        4131,
+        860,
+        470
+      ],
+      "platformHeight": 870,
+      "overallHeight": 1500,
+      "folded": [
+        1640,
+        470,
+        140
+      ],
+      "net_kg": 5.7,
+      "workingHeight": 2620,
+      "positionInField": [
+        25,
+        231,
+        115,
+        99
+      ],
+      "gapToObjects": {
+        "stair water riser": 617.9813913055958,
+        "cylinder station": 350.0,
+        "buffer station": 399.0,
+        "controls": 879.5,
+        "north radiator": 134.0,
+        "empty north rack": 44.94441010848846,
+        "selected cold bridge envelope": 124.0,
+        "old cold leg at 500": 0.0
+      },
+      "nativeDeckRegistrationToVerify": [
+        452.0,
+        235.0
+      ],
+      "shankTarget": 2860,
+      "supportedDriveGrip": 2550,
+      "driveDrop": 310,
+      "headTop": 2620
+    },
+    "postReleaseOperator": [
+      10580,
+      4450
+    ],
+    "spoolStrokes": [
+      [
+        0,
+        -20,
+        0
+      ],
+      [
+        0,
+        0,
+        -20
+      ],
+      [
+        0,
+        0,
+        -450
+      ]
+    ],
+    "sourceHatch": [
+      10750,
+      3950,
+      400,
+      400
+    ],
+    "sourceTerminal": [
+      10800,
+      5200,
+      2707.5
+    ],
+    "scope": "A prepared source change, including fixed independent support. No cross-brand fitting, structural bar, protected hatch or temporary work has a site approval."
+  },
+  "originalBathExchange": {
+    "native": {
+      "model": "363-1",
+      "body": [
+        9460,
+        3800,
+        1700,
+        700
+      ],
+      "depth": 410,
+      "footAxes": [
+        [
+          10710,
+          4150
+        ],
+        [
+          9970,
+          4150
+        ]
+      ],
+      "selectedRim": 560,
+      "groundUnchanged": true
+    },
+    "pack": [
+      1790,
+      720,
+      450
+    ],
+    "inside": {
+      "cx": 10310.0,
+      "initialCentreYZ": [
+        4150.0,
+        355.0
+      ],
+      "bareFirstNorth": 87.5,
+      "axleYZ": [
+        4237.5,
+        850
+      ],
+      "minMaxY": [
+        3812.970849057453,
+        4662.029150942547
+      ],
+      "cabinetAndWall": 12.970849057452824,
+      "afterTwo5": 2.970849057452824,
+      "nominalStartingAxisWouldEnterFloor": 69.52915094254718,
+      "minMaxZ": [
+        425.4708490574528,
+        1274.5291509425472
+      ],
+      "aboveMaxValve400AfterTwo5": 15.470849057452824,
+      "shellLiftBeforeRoll": 495.0,
+      "grossEndClearToWestFace": 18.0,
+      "eastToRadiator": 162.5,
+      "bareFirst20SouthClear": 20,
+      "thinFrame": {
+        "eachSideMM": [
+          4,
+          3,
+          3
+        ],
+        "sideOrder": "formed cheek, pad, complete fabrication reserve",
+        "aboveBelowRimEnvelope": [
+          15,
+          25
+        ],
+        "paddedBottomMember": [
+          20,
+          5
+        ],
+        "initialGrossFrameCentreZ": 350.0,
+        "grossLiftToRollAxis": 500.0,
+        "twoInsideLongRails": "Keep 40x20 rails below the shell within its 700 plan. A 20-wide RHS and pad outside each shell side exceeds the 720 limit. Price 4 mm captured cheek plates with 3 mm pad and 3 mm fabrication allowance per side; verify local pressure, rigidity and every projecting lock.",
+        "adverseRoomRollNm": 474.7679306650883
+      },
+      "firstPurchase": {
+        "oldFaceX": [
+          10625,
+          11125
+        ],
+        "farFoot": [
+          9970,
+          4150
+        ],
+        "distanceFromExistingOpening": 742.6472917879657,
+        "rareFrontPanelsX": [
+          [
+            9800,
+            10140
+          ],
+          [
+            10540,
+            11125
+          ]
+        ],
+        "stationaryHotCold": {
+          "hot": [
+            10800,
+            4450,
+            350
+          ],
+          "cold": [
+            10900,
+            4450,
+            350
+          ],
+          "actualKitRequirement": "Accessiblefrontisolationandtrueunion, independentsupportedretainedsupply; actualtap/overflow/WCsystemcompatibilitynotassumed."
+        },
+        "maximumCappedRelativeZ": 100,
+        "originalBodyLow": 150,
+        "firstBareBodyToCapsPaired": 40,
+        "order": "First remove apron and both upper heads, independently isolate the two removable valve stands upstream and take the tubes/retainers down to pressure-safe caps no higher than 100. Attach matched underside saddles through both access zones and take axle load before unfastening feet. Raise the shell off both original foot rails and their retainers before initial north travel. The current single 500 panel and unknown foot lengths do not establish those grips."
+      },
+      "yokeExample": {
+        "posts": [
+          [
+            10110,
+            4800
+          ],
+          [
+            11000,
+            4800
+          ]
+        ],
+        "pad": 160,
+        "headerYSweep": [
+          4550,
+          4650
+        ],
+        "headerBottom": 1950,
+        "cabinetPlanMargin": 25,
+        "finalLiftTopBeforeSeating": 1790,
+        "clearToHeaderOnHardRest": 160,
+        "operating": "Use positive independent end bearings and two mechanical locks. Centre-line trunnions only outside the shell ends; no axle through enamel. Release/end hanger must park before X translation."
+      }
+    },
+    "window": {
+      "height": 990,
+      "minUnderside": 950,
+      "roofLocal": 1710,
+      "netJambY": [
+        4175.0,
+        5025.0
+      ],
+      "packY": [
+        4205.0,
+        4655.0
+      ],
+      "sideJambMargins": [
+        30.0,
+        370.0
+      ],
+      "westCabinetGap": 20.0,
+      "aboveLinedSillBeforeDeflection": 25,
+      "aboveLinedSillAfterBendAndTwo5": 12.32264369341311,
+      "overRadiatorLifted": 200,
+      "belowArchSpringAfterTwo5": 830,
+      "oldNorthRailOutsideShell": 165.0,
+      "newRailYs": [
+        4305,
+        4555
+      ],
+      "newShoeOuterToShellEdge": 75.0,
+      "runwaySeatsX": [
+        9550,
+        10350,
+        11020,
+        12270,
+        14270
+      ],
+      "startingBogieX": [
+        9660.0,
+        10960.0
+      ],
+      "oldWestSeatAheadOfFrontBogie": 60.0,
+      "startingRearBogieToNewRailEnd": 110.0,
+      "westFeet": [
+        [
+          9550,
+          4135
+        ],
+        [
+          9550,
+          4570
+        ],
+        [
+          10350,
+          4135
+        ],
+        [
+          10350,
+          4570
+        ],
+        [
+          11020,
+          4135
+        ],
+        [
+          11020,
+          4990
+        ]
+      ],
+      "minimumPadToR270Seal": 51.0,
+      "nearestPadToCabinet": 25,
+      "rail2kN": {
+        "I": 151978.66666666666,
+        "stress": 82.24838573834924,
+        "deflection": 2.6773563065868893
+      },
+      "sequence": "Side-feed/lock the two tail rails remotely under the elevated doubly restrained package; no person underneath. Provide flush pre-purchased support seats in the exchange house. Land and prove both bogies before releasing the end bearings, remove the east yoke and draw east. Rebuild in reverse. A bare unsupported leading tip is rejected."
+    },
+    "outdoor": {
+      "centre": [
+        13270.0,
+        4430,
+        5500
+      ],
+      "YZaxis": "rotate about transverse Y; X-length becomes vertical",
+      "radiusXZ": 964.6890690787369,
+      "maxX": [
+        12305.310930921263,
+        14234.689069078737
+      ],
+      "pairedTo2mEnds": 25.310930921263093,
+      "minBottomAboveDeck": 95.3109309212632,
+      "maxTop": 6464.689069078737,
+      "shelterMinCeiling": 6664.689069078737,
+      "liftHorizontalPackageCentreToAxis": 700.0,
+      "priorTableX": [
+        13150,
+        14300
+      ],
+      "firstRestBeforePitch": [
+        12375.0,
+        14165.0
+      ],
+      "pivotPedestalCentreY": [
+        3700,
+        5160
+      ],
+      "portalIndependent": [
+        [
+          12270,
+          2850
+        ],
+        [
+          12270,
+          5930
+        ],
+        [
+          14120,
+          2850
+        ],
+        [
+          14120,
+          5930
+        ]
+      ],
+      "nativePortalSpansY": 3080,
+      "proposedPivotDeck": [
+        12270,
+        3580,
+        2000,
+        1700
+      ],
+      "travelCartFirstRestAndNorthLane": [
+        12820,
+        3750,
+        1450,
+        2330
+      ],
+      "brakeMomentNmWorst": 1078.8503735135148,
+      "singleSideCantileverMm": 505.0,
+      "earliestPivotSolidPastEave": 105.3109309212632,
+      "D50BendMPa": 82.30220417168093,
+      "D50TwistMPa": 43.95631866911066,
+      "verticalPinRoot": 4605.0,
+      "landingOnto100Cart": 65.0,
+      "sourceRailOffset": 150,
+      "required2kNSeatMoment": 0.3,
+      "planCartToBearingInnerAfter25": 40,
+      "shaftScope": "Opposed external stubs, positive anti-drop and brake. Retained pedestal tubes must not cut through the loading cart or prevent it exiting. Remove/retract the clear-side crosshead and lock roll before accepting the load on the cart."
+    },
+    "shipping": {
+      "bareShell": 41,
+      "frameMax": 35,
+      "40x20x2LengthM": 11.84,
+      "steelKg": 20.819456,
+      "hardwareBudget": 14.180544000000001,
+      "maxGoodsGross": 96,
+      "loadedFootprint": [
+        800,
+        1230
+      ],
+      "uprightPack": [
+        720,
+        450,
+        1790
+      ],
+      "uprightToCartSides": [
+        40.0,
+        390.0
+      ],
+      "wheelbase": 1130,
+      "maxWheelODFor1230": 100,
+      "permittedLoadedCGHeight": 1000,
+      "fixedCageAcross": 950,
+      "cageLong": 1320,
+      "cageSideEnd": [
+        75.0,
+        45.0
+      ],
+      "maxVerticalGoodsAboveCageFloor": 1890,
+      "brake0p1gRearMargin": 31.808599034067413,
+      "maxCGfor25Rear": 1014.0908944580896,
+      "lineUphillN": 358.15463088674653,
+      "arrestDesignN": 1412.6399999999999,
+      "route": [
+        [
+          13270.0,
+          4430
+        ],
+        [
+          13780,
+          4430
+        ],
+        [
+          13780,
+          5440
+        ],
+        [
+          14770,
+          5440
+        ],
+        [
+          14770,
+          4870
+        ],
+        [
+          14770,
+          3380
+        ]
+      ],
+      "groundRamp": 930,
+      "eastFirstBeforeNorth": 510.0,
+      "cartToNorthPivotPedestalWhenHeadingNorth": 50.0,
+      "bridgeDeckOverlap": 90,
+      "pairedNorthRunToLandingEdges": 15,
+      "existingCageTravel": 5890,
+      "status": "Check actual resultant CG, every rolling/retaining component, gatehead/strap allowances, mast ties, 10m foundation, emergency stop and protected access. No human rides in goods-only state."
+    },
+    "states": {
+      "ordinary": "Native feet and complete upper/lower wet system support the bath. Keep temporary machinery and portal rails out of normal room and east plant use.",
+      "plannedExchange": "Keep the upper protected route and other available bathing places live. Close family bath, room operator zone, outside dock and landing to other users. Build/anchor/test outdoor mast, both divided runways, weather enclosure, temporary window guard and first rest before releasing the original guard or bath. Remove/dry waste head, mixer and tails; the actual cap envelope must clear the lifted shell.",
+      "endHandoff": "Under positive double restraint pitch outdoors, place the upright independent cart under the shell from the WEST side, lower 65 to its 100-high deck, lock, then disengage stub shafts sideways. Translate the cart FIRST east 510 clear of the north pivot pedestal, THEN north. No person under a freely hanging shell or riding in the goods-only state. Restore bathroom against filled-overflow, floor boundaries and reconstructed window tests.",
+      "absentSite": "No transfer of the 1600-shell stair, door, entrance-void lift, or intact-window cargo result. Where independent west runway, external tipping bay, earthing/anchorage, mast/ground and safe discharge cannot be furnished, reject this intact export."
+    }
+  }
+}
