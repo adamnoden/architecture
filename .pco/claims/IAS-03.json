@@ -9,8 +9,8 @@
     "label": "Integrate authorised final utility-sink patch"
   },
   "claimedAt": "2026-11-08T23:46:39.385Z",
-  "heartbeatAt": "2026-11-09T00:09:10.179Z",
-  "expiresAt": "2026-11-09T00:54:10.179Z",
+  "heartbeatAt": "2026-11-09T00:28:10.194Z",
+  "expiresAt": "2026-11-09T01:13:10.194Z",
   "branch": "work/ias-sink-final-20261108-2343",
   "predecessor": {
     "leaseId": "cd434864-2530-4edf-9f9c-997af6efe8d6",
@@ -34,7 +34,7 @@
   },
   "pr": 1402,
   "checkpoint": {
-    "evidence": "PR #1402 on merged #1400, exact head 5fe3d378",
-    "next": "Verify CI and run fresh IAS preflight before merge"
+    "evidence": "Merged #1402 at f8417949 on top of #1397. Verified full CI, both final IAS blobs and actual radiator height.",
+    "next": "Qualify the installed support and tap, clip, shutoff, drain and reconnection sequence before adopting the utility sink or closing IAS-03."
   }
 }
