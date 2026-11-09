@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "STR-HOUSE",
-  "generation": 35,
-  "state": "released",
-  "leaseId": "ac421633-ba0e-4c64-bbf9-3cb4bb999171",
+  "generation": 36,
+  "state": "claimed",
+  "leaseId": "5a0309f5-848f-4c71-904d-03be5537d2ae",
   "holder": {
     "kind": "chatgpt",
     "label": "swarm-integration-2343"
   },
-  "claimedAt": "2026-11-09T02:05:30.894Z",
-  "heartbeatAt": "2026-11-09T02:52:08.396Z",
-  "expiresAt": "2026-11-09T02:52:08.396Z",
-  "branch": "work/swarm-third-20261109",
+  "claimedAt": "2026-11-09T02:53:05.298Z",
+  "heartbeatAt": "2026-11-09T02:53:05.298Z",
+  "expiresAt": "2026-11-09T03:38:05.298Z",
+  "branch": "work/swarm-fourth-20261109",
   "predecessor": {
-    "leaseId": "4e8807ec-f146-42b4-8990-b1d49b2eba4b",
-    "generation": 34,
-    "branch": "work/fabric-next-60837041",
-    "pr": 1409,
+    "leaseId": "ac421633-ba0e-4c64-bbf9-3cb4bb999171",
+    "generation": 35,
+    "branch": "work/swarm-third-20261109",
+    "pr": 1414,
     "checkpoint": {
-      "evidence": "Merged #1411 via #1409 on 0e0934f2 and verified on main; handoff #1103",
-      "next": "Use #1103 to locate actual seat reaction lines before selecting a joint"
+      "evidence": "MERGED #1414 at 85b99f2298d54eddafdc7745441f1d71deada77a with 14 green workflows, 196608 signed response audit, four preflights. Source geometry, four H16 returns and limited pin withdrawal now on main. Roof supplement d832fc775e177145cc74bb7b1e06a4d5ee52b40e is separate.",
+      "next": "Reconcile verified four-file normal-view roof outline and stale STR visual request from #1103 comment 6730878593; patch e19ca9f4e1cb23e8f631f77fb850175d6935f85310baaaf9833554d8fd634fb2. Arch next needs isolated development, both anchors and usable physical access. STR remains open."
     }
   },
   "recoverySource": {
-    "leaseId": "4e8807ec-f146-42b4-8990-b1d49b2eba4b",
-    "generation": 34,
-    "branch": "work/fabric-next-60837041",
-    "pr": 1409,
+    "leaseId": "ac421633-ba0e-4c64-bbf9-3cb4bb999171",
+    "generation": 35,
+    "branch": "work/swarm-third-20261109",
+    "pr": 1414,
     "checkpoint": {
-      "evidence": "Merged #1411 via #1409 on 0e0934f2 and verified on main; handoff #1103",
-      "next": "Use #1103 to locate actual seat reaction lines before selecting a joint"
+      "evidence": "MERGED #1414 at 85b99f2298d54eddafdc7745441f1d71deada77a with 14 green workflows, 196608 signed response audit, four preflights. Source geometry, four H16 returns and limited pin withdrawal now on main. Roof supplement d832fc775e177145cc74bb7b1e06a4d5ee52b40e is separate.",
+      "next": "Reconcile verified four-file normal-view roof outline and stale STR visual request from #1103 comment 6730878593; patch e19ca9f4e1cb23e8f631f77fb850175d6935f85310baaaf9833554d8fd634fb2. Arch next needs isolated development, both anchors and usable physical access. STR remains open."
     }
-  },
-  "pr": 1414,
-  "checkpoint": {
-    "evidence": "MERGED #1414 at 85b99f2298d54eddafdc7745441f1d71deada77a with 14 green workflows, 196608 signed response audit, four preflights. Source geometry, four H16 returns and limited pin withdrawal now on main. Roof supplement d832fc775e177145cc74bb7b1e06a4d5ee52b40e is separate.",
-    "next": "Reconcile verified four-file normal-view roof outline and stale STR visual request from #1103 comment 6730878593; patch e19ca9f4e1cb23e8f631f77fb850175d6935f85310baaaf9833554d8fd634fb2. Arch next needs isolated development, both anchors and usable physical access. STR remains open."
-  },
-  "releasedAt": "2026-11-09T02:52:08.396Z",
-  "releaseReason": "handoff"
+  }
 }
