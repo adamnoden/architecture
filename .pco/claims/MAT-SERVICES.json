@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
   "generation": 24,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "1a1f246d-0b7f-4eed-8b75-fb38e95b4e14",
   "holder": {
     "kind": "chatgpt",
     "label": "MAT W9 cold cooking and unchanged capture"
   },
   "claimedAt": "2026-11-09T00:08:05.751Z",
-  "heartbeatAt": "2026-11-09T00:49:22.028Z",
-  "expiresAt": "2026-11-09T01:34:22.028Z",
+  "heartbeatAt": "2026-11-09T00:50:32.007Z",
+  "expiresAt": "2026-11-09T00:50:32.007Z",
   "branch": "work/swarm-house-0006",
   "predecessor": {
     "leaseId": "c0a47f30-22d5-425b-bc4a-c8694dfcb7ad",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Merged #1405 673e5c46837841acf3d34282541a80b1db254433 from 120b06ff after all 14 workflows and fresh generation-24 preflight. W9 and VTC cooking comparisons, shared spigot-root boundary, 31.19 mm bore and 28 mm jacket clearances, and failed direct vertical SDHE sensor stack reproduced.",
     "next": "Bind a serviceable horizontal 200 mm supply heater, 1 m T7 run and silencers to actual pressure/room sound, plus a shared thermal-vapour root, reversible sleeve lift and coordinated cold fan/heater operation before selecting the unit."
-  }
+  },
+  "releasedAt": "2026-11-09T00:50:32.007Z",
+  "releaseReason": "handoff"
 }
