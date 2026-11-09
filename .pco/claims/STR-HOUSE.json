@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "STR-HOUSE",
-  "generation": 33,
-  "state": "released",
-  "leaseId": "7a83f34d-e43d-4142-a94f-6db17bb69cf8",
+  "generation": 34,
+  "state": "claimed",
+  "leaseId": "4e8807ec-f146-42b4-8990-b1d49b2eba4b",
   "holder": {
     "kind": "chatgpt",
-    "label": "fabric-60837041"
+    "label": "Owner follow-on after sink and spill"
   },
-  "claimedAt": "2026-11-09T00:07:47.473Z",
-  "heartbeatAt": "2026-11-09T01:19:26.656Z",
-  "expiresAt": "2026-11-09T01:19:26.656Z",
-  "branch": "work/front-swarm-0002",
+  "claimedAt": "2026-11-09T01:19:50.135Z",
+  "heartbeatAt": "2026-11-09T01:19:50.135Z",
+  "expiresAt": "2026-11-09T02:04:50.135Z",
+  "branch": "work/house-follow-on-20261109",
   "predecessor": {
-    "leaseId": "064434de-951d-45ba-b8d1-9b76ea3972a6",
-    "generation": 32,
-    "branch": "work/swarm-house-2332",
-    "pr": 1400,
+    "leaseId": "7a83f34d-e43d-4142-a94f-6db17bb69cf8",
+    "generation": 33,
+    "branch": "work/front-swarm-0002",
+    "pr": 1406,
     "checkpoint": {
-      "evidence": "Merged #1400 at 90e9aba6 after all 14 exact-head workflows. Guard sleeves remain; both crossed H16 throats can narrow to 15.5 mm.",
-      "next": "Compare an inclined or positively retained rotating bearing against the continuous joint. Rejoin simultaneous signed actions at both windows, placement and confinement."
+      "evidence": "Merged #1406 at d8e52d78; both #1407 and rotating-bearing parent f805f02b are on main; signed controls and validation in #1103 comment 6729956902.",
+      "next": "STR-HOUSE remains open: size a positively retained bearing or change support kinematics, test actual lever, joint clearance, both signed pier arms and foundation/guard compatibility."
     }
   },
   "recoverySource": {
-    "leaseId": "064434de-951d-45ba-b8d1-9b76ea3972a6",
-    "generation": 32,
-    "branch": "work/swarm-house-2332",
-    "pr": 1400,
+    "leaseId": "7a83f34d-e43d-4142-a94f-6db17bb69cf8",
+    "generation": 33,
+    "branch": "work/front-swarm-0002",
+    "pr": 1406,
     "checkpoint": {
-      "evidence": "Merged #1400 at 90e9aba6 after all 14 exact-head workflows. Guard sleeves remain; both crossed H16 throats can narrow to 15.5 mm.",
-      "next": "Compare an inclined or positively retained rotating bearing against the continuous joint. Rejoin simultaneous signed actions at both windows, placement and confinement."
+      "evidence": "Merged #1406 at d8e52d78; both #1407 and rotating-bearing parent f805f02b are on main; signed controls and validation in #1103 comment 6729956902.",
+      "next": "STR-HOUSE remains open: size a positively retained bearing or change support kinematics, test actual lever, joint clearance, both signed pier arms and foundation/guard compatibility."
     }
-  },
-  "pr": 1406,
-  "checkpoint": {
-    "evidence": "Merged #1406 at d8e52d78; both #1407 and rotating-bearing parent f805f02b are on main; signed controls and validation in #1103 comment 6729956902.",
-    "next": "STR-HOUSE remains open: size a positively retained bearing or change support kinematics, test actual lever, joint clearance, both signed pier arms and foundation/guard compatibility."
-  },
-  "releasedAt": "2026-11-09T01:19:26.656Z",
-  "releaseReason": "handoff"
+  }
 }
