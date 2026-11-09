@@ -9,8 +9,8 @@
     "label": "study-door-0203"
   },
   "claimedAt": "2026-11-09T02:04:35.386Z",
-  "heartbeatAt": "2026-11-09T02:18:06.744Z",
-  "expiresAt": "2026-11-09T03:03:06.744Z",
+  "heartbeatAt": "2026-11-09T02:28:02.364Z",
+  "expiresAt": "2026-11-09T03:13:02.364Z",
   "branch": "work/swarm-third-20261109",
   "predecessor": {
     "leaseId": "c4fad9be-30e6-47db-beac-1f728748b3fa",
@@ -34,7 +34,7 @@
   },
   "pr": 1414,
   "checkpoint": {
-    "evidence": "Source #1417 at d58481a2 / tree 387d3934 is frozen for combined #1414. Independently verified 60 mm spigot, actual joint data, level inlet and 1:30 alternate grade. All 190 RWT cases passed.",
-    "next": "Verify that combined head includes d58481a2 and the seven source files. On final green CI run fresh preflight against this lease, merge, reconcile #992 and release."
+    "evidence": "Joint #1414 head 6f5b7944 / tree f5b298ad includes original RWT d58481a2 as a direct parent; all 190 RWT tests passed and source scope is unchanged.",
+    "next": "Wait for all exact-head checks. Run RWT preflight against the joint branch and current main before expected-head merge. Reconcile #992 and release as handoff; follow the remaining internal high-eave/N duties."
   }
 }
