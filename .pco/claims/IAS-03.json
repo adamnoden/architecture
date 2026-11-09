@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "IAS-03",
-  "generation": 31,
-  "state": "released",
-  "leaseId": "2722d16a-ee33-4b11-8cfc-92f0f3608bb3",
+  "generation": 32,
+  "state": "claimed",
+  "leaseId": "8340d5c9-7c2b-4c0c-a059-19c382a175ce",
   "holder": {
     "kind": "chatgpt",
-    "label": "fabric-60837041"
+    "label": "Owner follow-on after sink and spill"
   },
-  "claimedAt": "2026-11-09T02:04:50.662Z",
-  "heartbeatAt": "2026-11-09T02:52:07.595Z",
-  "expiresAt": "2026-11-09T02:52:07.595Z",
-  "branch": "work/swarm-third-20261109",
+  "claimedAt": "2026-11-09T02:53:44.981Z",
+  "heartbeatAt": "2026-11-09T02:53:44.981Z",
+  "expiresAt": "2026-11-09T03:38:44.981Z",
+  "branch": "work/house-0253-20261109",
   "predecessor": {
-    "leaseId": "d3ae039d-782a-423b-8d0e-69bc796478ac",
-    "generation": 30,
-    "branch": "work/fabric-next-60837041",
-    "pr": 1409,
+    "leaseId": "2722d16a-ee33-4b11-8cfc-92f0f3608bb3",
+    "generation": 31,
+    "branch": "work/swarm-third-20261109",
+    "pr": 1414,
     "checkpoint": {
-      "evidence": "Four-lane #1409 at 9b47e87f / tree 37ab1224. Full IAS source matches independently reviewed 27da3065, and the added STR lines are isolated.",
-      "next": "Wait for exact CI and fresh lease/main/branch check; expected-head merge, provenance and issue reconciliation, then release."
+      "evidence": "Merged #1414 at 85b99f22; #1416 source on main. All 14 exact-head workflows passed. #941 comment 6730961516 records Study choice, five-family internal design exits, physical evidence boundaries and next bounded task.",
+      "next": "Resolve the rear B594/coupling seat and support dimensions or reject that connected pairing; compare one complete first release/reinstallation on current house. Keep Study matched doorset and 900/906 mm rough decision with OAS/HAD/STR."
     }
   },
   "recoverySource": {
-    "leaseId": "d3ae039d-782a-423b-8d0e-69bc796478ac",
-    "generation": 30,
-    "branch": "work/fabric-next-60837041",
-    "pr": 1409,
+    "leaseId": "2722d16a-ee33-4b11-8cfc-92f0f3608bb3",
+    "generation": 31,
+    "branch": "work/swarm-third-20261109",
+    "pr": 1414,
     "checkpoint": {
-      "evidence": "Four-lane #1409 at 9b47e87f / tree 37ab1224. Full IAS source matches independently reviewed 27da3065, and the added STR lines are isolated.",
-      "next": "Wait for exact CI and fresh lease/main/branch check; expected-head merge, provenance and issue reconciliation, then release."
+      "evidence": "Merged #1414 at 85b99f22; #1416 source on main. All 14 exact-head workflows passed. #941 comment 6730961516 records Study choice, five-family internal design exits, physical evidence boundaries and next bounded task.",
+      "next": "Resolve the rear B594/coupling seat and support dimensions or reject that connected pairing; compare one complete first release/reinstallation on current house. Keep Study matched doorset and 900/906 mm rough decision with OAS/HAD/STR."
     }
-  },
-  "pr": 1414,
-  "checkpoint": {
-    "evidence": "Merged #1414 at 85b99f22; #1416 source on main. All 14 exact-head workflows passed. #941 comment 6730961516 records Study choice, five-family internal design exits, physical evidence boundaries and next bounded task.",
-    "next": "Resolve the rear B594/coupling seat and support dimensions or reject that connected pairing; compare one complete first release/reinstallation on current house. Keep Study matched doorset and 900/906 mm rough decision with OAS/HAD/STR."
-  },
-  "releasedAt": "2026-11-09T02:52:07.595Z",
-  "releaseReason": "handoff"
+  }
 }
