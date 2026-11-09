@@ -12,7 +12,8 @@ function bisect(fn,a,b){
 }
 export function groundService(had,cornerRoof){
   const {inlet,basket,frame,incoming,limits}=had;
-  const {normal}=readSelected().model.model.northNormalRoute;
+  const house=readSelected().model.model, {normal}=house.northNormalRoute;
+  const skirt=house.maintenanceRainReference.eastMaintenance.weatherEnclosure;
   const {east,eastThroat,aisle}=frame.chambers, {spout}=inlet;
   const [start,end]=eastThroat.y, [, ,approach]=inlet.continuousApron;
   const selected=inlet.asBuilt[0], duty=incoming.duty, quiet=limits.quiet, actualStage=quiet-5;
@@ -53,6 +54,9 @@ export function groundService(had,cornerRoof){
   const spillClear=(spillX[1]-spillX[0]-2*5-2*3)*.75; // end setout and two 3 mm seam stops
   const yCritical=1000*Math.cbrt((duty/spillClear)**2/g),head=2*yCritical;
   const receiverY=7425,receivingSurface=floor(receiverY),perforation=normal.intakeCover.openAreaFraction;
+  const [sx,sy,sw,st]=skirt.northPlate;
+  const overlap=(a,b,c,d)=>Math.max(0,Math.min(b,d)-Math.max(a,c));
+  const hitX=overlap(...spillX,sx,sx+sw), hitY=overlap(...spillY,sy,sy+st);
   const receptorWidth=spillX[1]-spillX[0]; // Show both short projection and bought, unobstructed full grating area.
   const gratingCases=[25,150,250].map(run=>{
     const area=receptorWidth*run*perforation*.75/1e6;
@@ -88,7 +92,10 @@ export function groundService(had,cornerRoof){
       minimumTopRiseOverFifthSide:returnTop-lowSide,returnClosureHeadKPa:(quiet-spout.z)*.00981,
       terraceWaterKgPer305x550:(quiet-spout.z)*305*550/1e6,panelDrawNorth:55,
       parkedY:spillY.map(y=>y+55),parkedPastWellAfterTwo5:spillY[0]+55-7400-10,
-      ordered:'Maintain a lined connection from backed basket to every retained wet side and saddle up to the new top. Fit the three emergency sill sections before testing. Once E is isolated and a weather enclosure and N are proved, positively capture and park or remove all three before any linked cassette lifts. Before N work remove and blank their N projection while E and the direct nozzle still operate.'},
+      weatherPlate:{plan:skirt.northPlate,z:[skirt.plateBottom,skirt.plateCrest],overlapX:hitX,overlapY:hitY,
+        throughCrest:skirt.plateBottom<crest&&skirt.plateCrest>crest,northTravelUntilReleased:sy+st-spillY[0],
+        fixedSkirtBeforeDraw:false},
+      ordered:'The 55 north park clears the eventual well lift, but the intact weather plate crosses this entire first motion. Prove N and the supported weather roof, then develop a separately sealed or isolated changeover before closing the last north skirt or lifting a wet body. Before N work remove and blank the grate projection while E and its direct nozzle remain operable.'},
     normal:{inletRegions:normal.inletRegions,perforationFraction:normal.intakeCover.openAreaFraction,trunk:normal.channelClear,
       nominalClean40:normal.preliminaryManningScreen.dischargeLps},
     directHigh:{nominalPipeOD:108,maximumOD:maxOD,axisInclinationDeg:tilt*180/Math.PI,protectedAperture:aperture,pairedLateralReserve:highEdge,

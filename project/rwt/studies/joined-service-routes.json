@@ -433,7 +433,24 @@
         7480
       ],
       "parkedPastWellAfterTwo5": 5,
-      "ordered": "Maintain a lined connection from backed basket to every retained wet side and saddle up to the new top. Fit the three emergency sill sections before testing. Once E is isolated and a weather enclosure and N are proved, positively capture and park or remove all three before any linked cassette lifts. Before N work remove and blank their N projection while E and the direct nozzle still operate."
+      "weatherPlate": {
+        "plan": [
+          6075,
+          7395,
+          1150,
+          5
+        ],
+        "z": [
+          -120,
+          50
+        ],
+        "overlapX": 900,
+        "overlapY": 5,
+        "throughCrest": true,
+        "northTravelUntilReleased": 40,
+        "fixedSkirtBeforeDraw": false
+      },
+      "ordered": "The 55 north park clears the eventual well lift, but the intact weather plate crosses this entire first motion. Prove N and the supported weather roof, then develop a separately sealed or isolated changeover before closing the last north skirt or lifting a wet body. Before N work remove and blank the grate projection while E and its direct nozzle remain operable."
     },
     "normal": {
       "inletRegions": [

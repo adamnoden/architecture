@@ -24,6 +24,9 @@ test('concentrated feed, local basin failure and restricted N tail remain separa
   assert.ok(ground.underApron.channelCases.every(x=>x.reserveFromOldSill>70));
   assert.ok(ground.underApron.pairedSurfaceToRoof<6);eq(ground.directHigh.nozzleSpoutPlanOverlap,4);
   assert.ok(ground.highReturn.pairedFreeboard>11&&ground.highReturn.parkedPastWellAfterTwo5===5);
+  const skirt=ground.highReturn.weatherPlate;
+  assert.equal(skirt.overlapX,900);assert.equal(skirt.overlapY,5);
+  assert.equal(skirt.throughCrest,true);assert.equal(skirt.northTravelUntilReleased,40);
   assert.ok(ground.highReturn.gratingCases[0].orificeHead>ground.highReturn.nominalLandingAboveGrate);
   assert.ok(ground.highReturn.gratingCases[1].orificeHead<ground.highReturn.pairedMinimumSillToHighestGrate);
 });

@@ -18,12 +18,13 @@ export function servicePlate(r){
   for(const [x,y,w,h] of [r.had.frame.chambers.normal,r.had.frame.chambers.east])s+=plan(x,y,w,h,'#789c98',ink);
   s+=plan(...r.had.inlet.continuousApron,'#e1c977','#8e7d35')+plan(5900,6890,235,190,'url(#hatch)',rust);
   s+=plan(6200,7400,900,150,'url(#hatch)',rust)+plan(6200,7360,900,65,'url(#hatch)',rust);
+  s+=plan(...h.weatherPlate.plan,'#9a2419','#9a2419');
   s+=plan(5730,7215,140,140,'#52656b')+plan(...r.had.basket.basket,'#d88b65',rust);
   function mark(x,y,n){return `<circle cx="${X(x)}" cy="${Y(y)}" r="11" fill="${ink}"/>`+t(X(x),Y(y)+5,n,'num');}
   s+=mark(4525,7000,1)+mark(5660,6840,2)+mark(6005,7020,3)+mark(7475,6850,4)+mark(6640,7460,5);
   s+=t(52,385,'1   N break chamber')+t(322,385,'2   E break chamber');
   s+=t(52,412,'3   Short feed below 200 approach')+t(322,412,'4   E receiving basket');
-  s+=t(52,439,'5   Three spill pieces over the intact N grate');
+  s+=t(52,439,'5   Three spill pieces · solid skirt crosses all three');
   for(const [v,name,c] of [[-35,'Quiet courtyard limit −35',ink],[-80,'Proposed upper sill −80',rust],[-96,'N grate south edge −96',blue],[-134.04,'N water −134.0 · rough, width reduced',blue],[-155.66,'N water −155.7 · clean',blue],[-180.18,'Current E side spills −180.2',rust],[-188.5,'N east floor −188.5',ink]]){
     s+=line(642,z(v),711,z(v),c);
     const y=v===-188.5?z(v)+14:v===-96?z(v)+5:z(v)+4;
