@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-03",
   "generation": 34,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "d7a72cde-5597-44c4-8cfa-e8b0671f814e",
   "holder": {
     "kind": "chatgpt",
     "label": "House water and access continuation 0405"
   },
   "claimedAt": "2026-11-09T04:08:23.377Z",
-  "heartbeatAt": "2026-11-09T04:57:25.265Z",
-  "expiresAt": "2026-11-09T05:42:25.265Z",
+  "heartbeatAt": "2026-11-09T05:03:50.187Z",
+  "expiresAt": "2026-11-09T05:03:50.187Z",
   "branch": "work/house-0406-20261109",
   "predecessor": {
     "leaseId": "e939437e-a556-4200-afdd-6b5035473434",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Independent full clone verified #1428 f1253054/tree 52102729, direct #1429 parent, its four IAS blobs and registered check. Exact local repository suite passed.",
     "next": "All 13 other hosted workflows passed. Wait for Validate, then exact-head IAS merge-check and merged-ref cleanup."
-  }
+  },
+  "releasedAt": "2026-11-09T05:03:50.187Z",
+  "releaseReason": "handoff"
 }
