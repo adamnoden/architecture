@@ -9,9 +9,9 @@
     "label": "Architecture swarm: current house frontier"
   },
   "claimedAt": "2026-11-09T13:09:58.193Z",
-  "heartbeatAt": "2026-11-09T13:26:53.362Z",
-  "expiresAt": "2026-11-09T14:11:53.362Z",
-  "branch": "work/swarm-court-services-20261109-1250",
+  "heartbeatAt": "2026-11-09T13:28:25.334Z",
+  "expiresAt": "2026-11-09T14:13:25.334Z",
+  "branch": "work/swarm-house-successor-1304-20261109",
   "predecessor": {
     "leaseId": "b99038d3-0c03-4ac4-84e4-89be44138ac4",
     "generation": 34,
@@ -32,7 +32,7 @@
       "next": "Resolve the complete S01–S10 materials offer and its owning services design handoff."
     }
   },
-  "pr": 1458,
+  "pr": 1457,
   "checkpoint": {
     "evidence": "Published #1458 for independent review.",
     "next": "Integrate the verified material decision and the separate house-service gate."
