@@ -28,6 +28,8 @@ The [three-door floor decision](three-door-floor.md) carries one dry-site RC/min
 
 ## Keep the whole exterior assembly in view
 
+At the open loggia, shorten the two weather leaves and bring the 240 mm soffit glass across their heads. A separately retained 28-panel field permits local removal without loading glass or the west rain channel. The ordinary upper leaf still needs a masonry support at the garden portal. [Soffit, heat comparison and supported first repair](loggia-soffit.md)
+
 These choices refer back to the existing inventory. Each source owns its supplied constituents, comparisons and rejected products. Design comparisons can proceed with declared assumptions. Installed quantities, supplier evidence, construction and owner dispositions remain tied to the assembly actually proposed.
 
 | Register and occurrence | Material choice and rejected shortcut | Cost, first repair and decision still required |
