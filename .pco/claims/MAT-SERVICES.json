@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
   "generation": 35,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "62e3f738-4502-41a9-bf55-ecfa83491889",
   "holder": {
     "kind": "chatgpt",
     "label": "Architecture swarm: current house frontier"
   },
   "claimedAt": "2026-11-09T13:09:58.193Z",
-  "heartbeatAt": "2026-11-09T13:28:25.334Z",
-  "expiresAt": "2026-11-09T14:13:25.334Z",
+  "heartbeatAt": "2026-11-09T13:54:02.000Z",
+  "expiresAt": "2026-11-09T13:54:02.000Z",
   "branch": "work/swarm-house-successor-1304-20261109",
   "predecessor": {
     "leaseId": "b99038d3-0c03-4ac4-84e4-89be44138ac4",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Published #1458 for independent review.",
     "next": "Integrate the verified material decision and the separate house-service gate."
-  }
+  },
+  "releasedAt": "2026-11-09T13:54:02.000Z",
+  "releaseReason": "completed"
 }
