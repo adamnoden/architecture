@@ -62,6 +62,8 @@ The [family bath exchange](ias-03-family-bath-exchange.md) carries the intact 46
 
 The [connected upper-WC releases](ias-03-upper-wc-release.md) supersede the concealed coupled-pair assumption. The open-back family and principal positions preserve the existing stack axes. Each has a removable water bridge, supported 150 mm axial draw and visible leak lip. The principal room buys a further 70 mm before turning the narrow carrier, and the family bath needs the new attendant and six poses. The [dated six-row selection](ias-03-selection-closeout.md) identifies the remaining permanent rear-seat and family-outlet decision.
 
+The [joint three-bathing section](ias-03-three-bathing-sections.md) keeps the private rear shower flush over its priced well, quantifies a raised side-service option, and joins the original family bath to its proposed sleeve, ceiling hatch, worker, steel runway, intact exterior turn and incoming route. Keep the two-bathing programme conditional.
+
 ## Explicit IAS-03 exit ledger
 
 | Exit | Present disposition | Concrete work still owned before IAS closure |
