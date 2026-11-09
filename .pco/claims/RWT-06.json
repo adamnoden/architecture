@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 61,
-  "state": "released",
-  "leaseId": "da19f126-18f3-4dbb-b762-b868a709def9",
+  "generation": 62,
+  "state": "claimed",
+  "leaseId": "2f1e836a-21ab-411f-b691-9e8ce9b9b788",
   "holder": {
     "kind": "chatgpt",
-    "label": "study-door-0203"
+    "label": "fabric-60837041"
   },
-  "claimedAt": "2026-11-09T02:04:35.386Z",
-  "heartbeatAt": "2026-11-09T02:51:17.602Z",
-  "expiresAt": "2026-11-09T02:51:17.602Z",
-  "branch": "work/swarm-third-20261109",
+  "claimedAt": "2026-11-09T02:53:26.644Z",
+  "heartbeatAt": "2026-11-09T02:53:26.644Z",
+  "expiresAt": "2026-11-09T03:38:26.644Z",
+  "branch": "work/fabric-fourth-60837041",
   "predecessor": {
-    "leaseId": "c4fad9be-30e6-47db-beac-1f728748b3fa",
-    "generation": 60,
-    "branch": "work/fabric-next-60837041",
-    "pr": 1409,
+    "leaseId": "da19f126-18f3-4dbb-b762-b868a709def9",
+    "generation": 61,
+    "branch": "work/swarm-third-20261109",
+    "pr": 1414,
     "checkpoint": {
-      "evidence": "MERGED #1409 at 0e0934f20103b3c7a58b2d5d699e7780f9609fe2. Both source parents and 14 green workflows verified. Fork crosses the failed cut, parks 90 mm outside basin. Removable OPEN-FLEX trial and independently reproduced bare stub envelope at #992 comment 6730457002.",
-      "next": "Confirm actual clamp release and tool sweep, brazed spigot and frame, check wet fork with one leg blocked and actual upstream levels, then survey independent receiving ground. See #992, #1409 and finite exit map. RWT-06 remains started."
+      "evidence": "Joint #1414 head 6f5b7944 / tree f5b298ad includes original RWT d58481a2 as a direct parent; all 190 RWT tests passed and source scope is unchanged.",
+      "next": "Wait for all exact-head checks. Run RWT preflight against the joint branch and current main before expected-head merge. Reconcile #992 and release as handoff; follow the remaining internal high-eave/N duties."
     }
   },
   "recoverySource": {
-    "leaseId": "c4fad9be-30e6-47db-beac-1f728748b3fa",
-    "generation": 60,
-    "branch": "work/fabric-next-60837041",
-    "pr": 1409,
+    "leaseId": "da19f126-18f3-4dbb-b762-b868a709def9",
+    "generation": 61,
+    "branch": "work/swarm-third-20261109",
+    "pr": 1414,
     "checkpoint": {
-      "evidence": "MERGED #1409 at 0e0934f20103b3c7a58b2d5d699e7780f9609fe2. Both source parents and 14 green workflows verified. Fork crosses the failed cut, parks 90 mm outside basin. Removable OPEN-FLEX trial and independently reproduced bare stub envelope at #992 comment 6730457002.",
-      "next": "Confirm actual clamp release and tool sweep, brazed spigot and frame, check wet fork with one leg blocked and actual upstream levels, then survey independent receiving ground. See #992, #1409 and finite exit map. RWT-06 remains started."
+      "evidence": "Joint #1414 head 6f5b7944 / tree f5b298ad includes original RWT d58481a2 as a direct parent; all 190 RWT tests passed and source scope is unchanged.",
+      "next": "Wait for all exact-head checks. Run RWT preflight against the joint branch and current main before expected-head merge. Reconcile #992 and release as handoff; follow the remaining internal high-eave/N duties."
     }
-  },
-  "pr": 1414,
-  "checkpoint": {
-    "evidence": "Joint #1414 head 6f5b7944 / tree f5b298ad includes original RWT d58481a2 as a direct parent; all 190 RWT tests passed and source scope is unchanged.",
-    "next": "Wait for all exact-head checks. Run RWT preflight against the joint branch and current main before expected-head merge. Reconcile #992 and release as handoff; follow the remaining internal high-eave/N duties."
-  },
-  "releasedAt": "2026-11-09T02:51:17.602Z",
-  "releaseReason": "handoff"
+  }
 }
