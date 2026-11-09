@@ -9,7 +9,11 @@
     "label": "Coordinated house successor 0910"
   },
   "claimedAt": "2026-11-09T09:11:25.230Z",
-  "heartbeatAt": "2026-11-09T09:11:25.230Z",
-  "expiresAt": "2026-11-09T09:56:25.230Z",
-  "branch": "work/swarm-house-successor-0910-20261109"
+  "heartbeatAt": "2026-11-09T09:29:48.661Z",
+  "expiresAt": "2026-11-09T10:14:48.661Z",
+  "branch": "work/swarm-house-successor-0910-20261109",
+  "checkpoint": {
+    "evidence": "Developed six-wet open-pan regrade, independently priced invert-level outlet and roof/rest/ground-support module against #1440, all four signed corner loads, two chamber relocation and south ramp rehang. No downstream or construction admission.",
+    "next": "Complete the actual feeder tolerance, open-hood first release, protected walk and alternate closed carrier. Validate the joined HAD source and affected RWT/STR/OAS routes before publication."
+  }
 }
