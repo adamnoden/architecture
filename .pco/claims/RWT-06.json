@@ -9,9 +9,9 @@
     "label": "House water and assembly decisions 1031"
   },
   "claimedAt": "2026-11-09T10:33:44.944Z",
-  "heartbeatAt": "2026-11-09T10:51:06.053Z",
-  "expiresAt": "2026-11-09T11:36:06.053Z",
-  "branch": "work/swarm-house-successor-1031-20261109",
+  "heartbeatAt": "2026-11-09T10:59:44.769Z",
+  "expiresAt": "2026-11-09T11:44:44.769Z",
+  "branch": "work/swarm-frontier-1033-20261109",
   "predecessor": {
     "leaseId": "6aba4f0e-df76-4f58-a3ad-0879a54e0d43",
     "generation": 67,
@@ -33,7 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Active raised-roof tool and retained-bay transfer checks plus a paired court-entry test and adverse open-basket receiving head on merged HAD. Joined publication in preparation.",
-    "next": "Verify the north grate emergency spill and final repair interlocks, then publish the six-duty disposition, validate and reconcile."
-  }
+    "evidence": "Independent RWT source 00255fd73249e9dd3195c7ebf88824a96f622d98 on PR 1451 preserves 11 owned files, 217 RWT and 26 HAD checks. Authorized direct-parent join on PR 1450.",
+    "next": "Verify the shared head and exact RWT blobs, await checks, then run the live g68 exact preflight, reconcile, release and redispatch."
+  },
+  "pr": 1450
 }
