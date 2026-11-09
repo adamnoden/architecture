@@ -9,8 +9,8 @@
     "label": "Whole assembly decision 0441"
   },
   "claimedAt": "2026-11-09T04:42:06.434Z",
-  "heartbeatAt": "2026-11-09T04:42:06.434Z",
-  "expiresAt": "2026-11-09T05:27:06.434Z",
+  "heartbeatAt": "2026-11-09T05:00:35.974Z",
+  "expiresAt": "2026-11-09T05:45:35.974Z",
   "branch": "work/swarm-assembly-0441-20261109",
   "predecessor": {
     "leaseId": "0ec133b8-6cd9-4a3c-9eb6-4b9d2007d3cc",
@@ -31,5 +31,10 @@
       "evidence": "MERGED #1425 at 4dabed3d9517f234dd2ce442c4c20b51438b5caa. Validated c91e7538/source 7a1d72ce. Issue #1100 comments 6731940022 and 6731834753 record folded landing, backed pan, DPC limit, tested carrier turn and incompatible winch anchors. All 14 hosted workflows and MAT36 preflight passed.",
       "next": "Design the 1400 east plant threshold against actual export apparatus. Front still requires two real site outfalls, guarded maintenance, wet closure and a separate dry winch/socket/cage redesign; existing anchorage pierces the weather seat."
     }
+  },
+  "pr": 1430,
+  "checkpoint": {
+    "evidence": "PR #1430 c49dff0baa1d55807bd5632a4cbf0333a0f52fdf compares actual east plant carriers, load plate, guarded dock, water and restoration. MAT suite and docs build passed.",
+    "next": "Reconcile the frozen #1428 and current main before exact-head checks. Preserve the 1773.75 mm receiver, actual crew, seal, outlet, bearing and material qualification holds."
   }
 }
