@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
   "generation": 38,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "42e6ae26-f42d-47b5-8bb7-eb67ae48b2f5",
   "holder": {
     "kind": "chatgpt",
     "label": "Joined house assembly 0528"
   },
   "claimedAt": "2026-11-09T05:29:10.679Z",
-  "heartbeatAt": "2026-11-09T06:27:57.483Z",
-  "expiresAt": "2026-11-09T07:12:57.483Z",
+  "heartbeatAt": "2026-11-09T06:28:25.968Z",
+  "expiresAt": "2026-11-09T06:28:25.968Z",
   "branch": "work/swarm-house-assembly-0528-20261109",
   "predecessor": {
     "leaseId": "19d47ec0-ec19-4efa-862e-81e60132b4c5",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "MERGED #1434 at 126ae0c2c31025d2a1c1307fd7fe2849df75f6c1. Validated 83f5a19cb3428366691b6f359835fe53bcdfa017 by all 14 exact-head workflows and g38 preflight. #1100 comment 6733775263. Fixed Study arch and low tier resolve 69.11 raw masonry clash and 1718.4 ramp headroom; positive inward head/lattice movement and conditional material/heat budget.",
     "next": "Compare a whole 25-degree ring-roof family at one actual outer hip and inner valley: actual skin, underlay/valley weather and air route, net openings/supports, wind/rain and renewal. Existing RHEINZINK high-vent and 63% mesh, Hunton Sarket requiring a separate strong valley membrane, and traditional slate/1F are source-backed alternatives, not substitutions. Retain physical window admission and ground moisture crossings."
-  }
+  },
+  "releasedAt": "2026-11-09T06:28:25.968Z",
+  "releaseReason": "handoff"
 }
