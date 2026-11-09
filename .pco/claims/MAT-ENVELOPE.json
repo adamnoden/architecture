@@ -9,8 +9,8 @@
     "label": "front-threshold-0328"
   },
   "claimedAt": "2026-11-09T03:30:13.600Z",
-  "heartbeatAt": "2026-11-09T03:43:17.429Z",
-  "expiresAt": "2026-11-09T04:28:17.429Z",
+  "heartbeatAt": "2026-11-09T03:44:23.977Z",
+  "expiresAt": "2026-11-09T04:29:23.977Z",
   "branch": "work/house-front-threshold-0328",
   "predecessor": {
     "leaseId": "4af5767e-41b7-4f8d-bb49-ac761e8f432c",
@@ -33,7 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Six-file tested tree f63fefe43b43a58949ebe566be5ac2cdfecd86d5. Front door/revised return, exact structural seat, normal/blocked water and 28mm submerged toe, independent geometry review. Preparing lead PR.",
-    "next": "Publish reproducible source and compare exact remote tree; assemble named peers in lead PR. Check final hosted source and merge-check."
-  }
+    "evidence": "Source #1425 7a1d72ce2b3a1511e3f36ec887cdcc1d36fcdda4 tree f63fefe43b43a58949ebe566be5ac2cdfecd86d5. Six files source/carrier, independent hydraulic and folding review confirms −37.94 trial level, 28 toe immersion, 17.94 backdam reserve.",
+    "next": "Keep lead #1425; verify source after shared integration, full CI and canonical final preflight, then record merged SHA and remaining thresholds."
+  },
+  "pr": 1425
 }
