@@ -136,8 +136,8 @@ export const roofWaterNodes = defineNodes([
     id: 'RWT-06',
     owners: ['RWT'],
     title: 'Rainwater access, courtyard transition and site handoff',
-    // The selected two-exit house still needs a joined E mouth, guarded access and corner-service layout.
-    dependencies: ['RWT-03', 'RWT-05', 'HAD-WATER-REPLAN', 'HAD-COURT-INTAKE'],
+    // The floor, wet bodies, low socket and underside of the two loggia ties need one house choice.
+    dependencies: ['RWT-03', 'RWT-05', 'HAD-WATER-REPLAN', 'HAD-COURT-INTAKE', 'HAD-COURT-BYPASS'],
     lifecycle: 'planned',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/rwt/rwt-06-selected-water-event.md', 'project/rwt/rwt-06-court-intake-decision.md']

@@ -1,0 +1,1077 @@
+{
+  "sources": {
+    "../../mat/studies/front-threshold.json": "cddb26cd95bc3d6b33d99be4ceb7e47f95a98de4",
+    "../../had/studies/water-replan.json": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+    "shared-family-bathing.json": "08d6d466d515804a58d6cbd22a5f45188af7f56e",
+    "stair-rail-renewal.json": "8728211c0b15da946706453d797dc3f0b32d523d",
+    "../../mat/studies/plant-threshold.json": "58c0c78aa8985d4299c8d8b8750e55c98a129de2",
+    "../../mat/studies/winter-heat-and-water.json": "ec41d160769084b0c8e460a89a9756a337eff3a2"
+  },
+  "package": [
+    480,
+    730,
+    1690
+  ],
+  "approach": [
+    [
+      9775,
+      4215,
+      0
+    ],
+    [
+      10485,
+      4215,
+      0
+    ],
+    [
+      10485,
+      4995,
+      0
+    ],
+    [
+      10235,
+      5525,
+      30
+    ],
+    [
+      10195,
+      5585,
+      35
+    ],
+    [
+      10135,
+      5645,
+      50
+    ],
+    [
+      10035,
+      5695,
+      65
+    ],
+    [
+      9765,
+      5815,
+      80
+    ],
+    [
+      9765,
+      5815,
+      90
+    ]
+  ],
+  "upperGallery": [
+    [
+      9765,
+      5815,
+      90
+    ],
+    [
+      8780,
+      5815,
+      90
+    ],
+    [
+      8780,
+      3290,
+      90
+    ],
+    [
+      3390,
+      3290,
+      90
+    ],
+    [
+      3390,
+      3800,
+      90
+    ],
+    [
+      1450,
+      3800,
+      90
+    ],
+    [
+      1450,
+      4110,
+      90
+    ]
+  ],
+  "groundPath": [
+    [
+      1950,
+      3730,
+      90
+    ],
+    [
+      3400,
+      3730,
+      90
+    ],
+    [
+      3400,
+      3330,
+      90
+    ],
+    [
+      6000,
+      3330,
+      90
+    ],
+    [
+      6000,
+      -600,
+      90
+    ]
+  ],
+  "limits": {
+    "makerControl": "upstream in front of the handle; one operator near the moving machine",
+    "nominalPositionQualified": false,
+    "sideOnlyPlanIsNotManufacturerMethod": true,
+    "upstreamControlAndSingleOperatorRequired": true,
+    "loadedStairSelected": false,
+    "routeChosen": "guarded upright east-window exchange, conditional on aperture and site",
+    "historicalSaniformLength": 1700,
+    "historicalSaniformBareKg": 41
+  },
+  "firstRelease": {
+    "pivot": [
+      9560,
+      4215,
+      580
+    ],
+    "cornersXZ": [
+      -20,
+      1670,
+      -455,
+      25
+    ],
+    "maxX": 11290.874056654615,
+    "minX": 9527.984378812836,
+    "maxZ": 2250.1871152658314,
+    "minZ": 124.56065167796493,
+    "yRange": [
+      3850.0,
+      4580.0
+    ],
+    "startSideShiftNorth": 65,
+    "radiatorWestReserve": 76.62594334538517,
+    "roomSouthReserve": 50.0,
+    "ceilingAt3100Reserve": 849.8128847341684,
+    "uprightBottomBeforeLower": 560,
+    "uprightTopBeforeLower": 2250,
+    "lowerTo100Trolley": 460
+  },
+  "support": {
+    "stockKg": 107,
+    "batteryKg": 9,
+    "bathKg": 46,
+    "tareBudget": 25,
+    "bodyWidth": 556,
+    "bodyLength": 956,
+    "platenSize": [
+      530,
+      630,
+      135
+    ],
+    "platenOffsetRequired": 163.0,
+    "packageAheadOfBackMm": 428.0,
+    "sideOverhangEach": 100.0,
+    "platenRearPurchase": 102.0,
+    "platenFrontPurchase": 48.0,
+    "frameSteelArea": 224,
+    "railLengthM": 7.98,
+    "steelKg": 14.032032,
+    "loadedKg": 71,
+    "grossCarrierKg": 187,
+    "factoredUpendMomentKNm": 0.9611838000000001,
+    "jackRequiredKN": 2.912678181818182,
+    "trackActionKN": 2.751705
+  },
+  "throat": {
+    "frameNet": 767.0,
+    "southGripEdgeY": 6127.283006252214,
+    "southPassageToJamb": 610.7830062522144,
+    "old730CrossingConflict": 137.71699374778564,
+    "new480SouthClear": 58.5,
+    "new480NorthGripClear": 72.28300625221436
+  },
+  "keeper": {
+    "shoulderToGripCentre": 492.2047808286083,
+    "bodyToFixed": [
+      15.548428287106617,
+      "bath-north0"
+    ],
+    "previousWait": [
+      10474.5,
+      6011
+    ]
+  },
+  "sections": {
+    "room": {
+      "minimumContinuousGap": 11.530683911822207,
+      "nearest": "family-service-cabinet"
+    },
+    "gallery": {
+      "minimumContinuousGap": 32.00118764845606,
+      "nearest": "service-emitter-protected-F"
+    },
+    "earlier510SameDoorSweep": {
+      "minimumContinuousGap": -2.989551828461347,
+      "nearest": "attendant body"
+    }
+  },
+  "boarding": {
+    "loadBayCentre": [
+      1450,
+      4110
+    ],
+    "machineLevelPosition": [
+      2165.5,
+      3920
+    ],
+    "loadOnPlatenCentre": [
+      2165.5,
+      4110
+    ],
+    "sideTransferLength": 715.5,
+    "dollyRiseToPlaten": 35,
+    "rearToFinishedTrim": 79.5,
+    "frontToFirstNose": 34.5,
+    "bareGapBetweenParkedLoadAndChassis": 72.5,
+    "cargoParksBeforeEmptyCarrierArrives": true,
+    "attendant": {
+      "worst": [
+        684,
+        [
+          1887.9285714285716,
+          3811.0
+        ],
+        [
+          15.0,
+          "chassis"
+        ]
+      ],
+      "bodyClearLowerMm": 9.0,
+      "armClearLowerMm": 47.797007472004225,
+      "reachUpper3DMm": 410.5592233988666,
+      "start": [
+        1495.5,
+        3700
+      ],
+      "end": [
+        2165.5,
+        3927
+      ],
+      "gripLateralFromAxis": -260,
+      "gripAftOfAxis": 478,
+      "requiredClearTerminalHandPocket": 110
+    }
+  },
+  "turn": {
+    "envelopeWidth": 730,
+    "envelopeLength": 1016,
+    "loadGap": 35.469245988918814,
+    "attendantGap": 43.50694185834589,
+    "entireKitOnLevelWhileSteering": 27.20509768573031,
+    "fixedRearOperatorGapSampled": -249.2575213674677,
+    "shoulderToGrip3DUpper": 365.628863916388,
+    "upperAxis": 2165.5,
+    "lowerAxis": 1081.5,
+    "route": [
+      [
+        2165.5,
+        7670.0,
+        0.0,
+        2165.5,
+        6847.0
+      ],
+      [
+        2164.0403385615487,
+        7705.193488192687,
+        4.75,
+        2180.120945838585,
+        6880.693350794518
+      ],
+      [
+        2159.6713806533235,
+        7740.145232490788,
+        9.5,
+        2192.43871491602,
+        6911.184707613205
+      ],
+      [
+        2152.4231366253707,
+        7774.615149537322,
+        14.25,
+        2203.0803516916985,
+        6938.353582166368
+      ],
+      [
+        2142.3453946297095,
+        7808.366465644292,
+        19.0,
+        2212.6746034476923,
+        6962.160933644508
+      ],
+      [
+        2129.507378625765,
+        7841.1673431899635,
+        23.75,
+        2221.8427804595503,
+        6982.648423149063
+      ],
+      [
+        2113.9972728813354,
+        7872.792473110334,
+        28.5,
+        2231.189767755467,
+        6999.9367180481495
+      ],
+      [
+        2095.9216162352977,
+        7903.024622545963,
+        33.25,
+        2241.2947930806486,
+        7014.223614271475
+      ],
+      [
+        2075.4045702828566,
+        7931.656127013404,
+        38.0,
+        2249.9406933135197,
+        7029.315532213099
+      ],
+      [
+        2052.5870665101666,
+        7958.4903168515,
+        42.75,
+        2253.6361430251327,
+        7048.230765057577
+      ],
+      [
+        2027.6258382366557,
+        7983.342868144303,
+        47.5,
+        2250.2946264003285,
+        7070.615975254161
+      ],
+      [
+        2000.692344014641,
+        8006.043068841133,
+        52.25,
+        2236.3111218671816,
+        7096.710365872098
+      ],
+      [
+        1971.9715898813865,
+        8026.434991376806,
+        57.0,
+        2203.189442065295,
+        7128.668577877616
+      ],
+      [
+        1941.6608585535585,
+        8044.3785637372885,
+        61.75,
+        2141.390582635782,
+        7176.4661503463985
+      ],
+      [
+        1909.9683542932296,
+        8059.750531613678,
+        66.5,
+        2180.8823783674607,
+        7211.358221676897
+      ],
+      [
+        1877.1117727538438,
+        8072.44530503542,
+        71.25,
+        2217.3491897420736,
+        7249.40070109154
+      ],
+      [
+        1843.3168056298587,
+        8082.375683667298,
+        76.0,
+        2250.5405264144592,
+        7290.332274989273
+      ],
+      [
+        1808.8155903816262,
+        8089.473455788098,
+        80.75,
+        2280.2283972588234,
+        7333.871784593465
+      ],
+      [
+        1773.8451156843341,
+        8093.689866836579,
+        85.5,
+        2306.2088764386417,
+        7379.720157230149
+      ],
+      [
+        1738.16,
+        8095,
+        90,
+        2332.4227849147737,
+        7427.041699340079
+      ],
+      [
+        1703.06,
+        8095,
+        90,
+        2367.01181077027,
+        7456.3139888166115
+      ],
+      [
+        1667.96,
+        8095,
+        90,
+        2365.969425167385,
+        7478.760237327847
+      ],
+      [
+        1632.86,
+        8095,
+        90,
+        2344.277590142138,
+        7489.487455585441
+      ],
+      [
+        1597.76,
+        8095,
+        90,
+        2305.1734229776703,
+        7486.157249982025
+      ],
+      [
+        1562.66,
+        8095,
+        90,
+        2247.7544316532235,
+        7469.495561885365
+      ],
+      [
+        1527.56,
+        8095,
+        90,
+        2165.6873994863436,
+        7443.13442189255
+      ],
+      [
+        1491.667713901437,
+        8094.741101483116,
+        92.0,
+        2101.4330292294485,
+        7445.626180823538
+      ],
+      [
+        1456.546606080419,
+        8092.054094205843,
+        96.75,
+        2117.969727005231,
+        7495.662129885362
+      ],
+      [
+        1421.7686278726912,
+        8086.467999463853,
+        101.5,
+        2130.3062422808257,
+        7546.895604906098
+      ],
+      [
+        1387.5726690368283,
+        8078.021188114019,
+        106.25,
+        2138.357835594432,
+        7598.9746834017615
+      ],
+      [
+        1354.1936214432474,
+        8066.771681261311,
+        111.0,
+        2142.0692005917995,
+        7651.541634442329
+      ],
+      [
+        1321.8607656031227,
+        8052.7967517121,
+        115.75,
+        2141.414843925303,
+        7704.235375903705
+      ],
+      [
+        1290.7961957417006,
+        8036.192393187648,
+        120.5,
+        2136.399260367615,
+        7756.69395473902
+      ],
+      [
+        1261.2132942341757,
+        8017.072660943713,
+        125.25,
+        2127.0569019371383,
+        7808.557033232315
+      ],
+      [
+        1233.3152658832207,
+        7995.568888325565,
+        130.0,
+        2113.451941247261,
+        7859.4683641565025
+      ],
+      [
+        1207.2937421062134,
+        7971.828784639896,
+        134.75,
+        2095.677830704999,
+        7909.078237833793
+      ],
+      [
+        1183.3274646199868,
+        7946.015420540328,
+        139.5,
+        2073.8566605868755,
+        7957.045884289722
+      ],
+      [
+        1161.5810576648698,
+        7918.30610789591,
+        144.25,
+        2048.138320401424,
+        8003.041814000412
+      ],
+      [
+        1142.2038972016023,
+        7888.891181836773,
+        149.0,
+        2018.6994692989017,
+        8046.750081154449
+      ],
+      [
+        1125.3290848486074,
+        7857.972693343076,
+        153.75,
+        1985.7423226004692,
+        8087.8704538831
+      ],
+      [
+        1111.0725336076396,
+        7825.763021357826,
+        158.5,
+        1949.49326278216,
+        8126.120476551509
+      ],
+      [
+        1099.5321716579538,
+        7792.483413956988,
+        163.25,
+        1910.2012844547833,
+        8161.237409945048
+      ],
+      [
+        1090.7872696881327,
+        7758.362468597547,
+        168.0,
+        1868.1362840211857,
+        8192.980036023659
+      ],
+      [
+        1084.8978963861211,
+        7723.634561882728,
+        172.75,
+        1823.5872057592087,
+        8221.130314847385
+      ],
+      [
+        1081.9045058277104,
+        7688.5382396302675,
+        177.5,
+        1776.860057064888,
+        8245.494882291607
+      ],
+      [
+        1081.5,
+        7652.040358744394,
+        180,
+        1751.5,
+        8238.780437484513
+      ],
+      [
+        1081.5,
+        7616.121076233184,
+        180,
+        1751.5,
+        8202.861154973301
+      ],
+      [
+        1081.5,
+        7580.201793721973,
+        180,
+        1751.5,
+        8166.941872462092
+      ],
+      [
+        1081.5,
+        7544.282511210762,
+        180,
+        1751.5,
+        8131.0225899508805
+      ],
+      [
+        1081.5,
+        7508.363228699552,
+        180,
+        1751.5,
+        8095.10330743967
+      ],
+      [
+        1081.5,
+        7472.443946188341,
+        180,
+        1751.5,
+        8059.18402492846
+      ],
+      [
+        1081.5,
+        7436.52466367713,
+        180,
+        1697.6805420159876,
+        8134.612367941648
+      ],
+      [
+        1081.5,
+        7400.605381165919,
+        180,
+        1593.0461103528953,
+        8187.440883820149
+      ],
+      [
+        1081.5,
+        7364.686098654709,
+        180,
+        1488.411678689803,
+        8184.885411897712
+      ],
+      [
+        1081.5,
+        7328.766816143498,
+        180,
+        1383.777247026711,
+        8151.766816143498
+      ],
+      [
+        1081.5,
+        7292.847533632287,
+        180,
+        1279.1428153636186,
+        8115.847533632287
+      ],
+      [
+        1081.5,
+        7256.928251121076,
+        180,
+        1174.5083837005263,
+        8079.928251121076
+      ]
+    ]
+  },
+  "longTurn": {
+    "envelopeWidth": 730,
+    "envelopeLength": 1076,
+    "loadGap": 18.85647805508784,
+    "attendantGap": 13.506941858345893,
+    "entireKitOnLevelWhileSteering": -2.8485690344861396,
+    "fixedRearOperatorGapSampled": -276.0130810181963,
+    "shoulderToGrip3DUpper": 389.19464625662846,
+    "upperAxis": 2165.5,
+    "lowerAxis": 1081.5
+  },
+  "stairs": {
+    "riser": 172.5,
+    "going": 300,
+    "pitch": 29.89890183861456,
+    "availableWidth": 984.0,
+    "reducedClearAt60InsetEach": [
+      187.0,
+      67.0
+    ],
+    "maxBodyHeightRotatingOnFlight": 1756.843760839307,
+    "horizontalOverhangBudget": 1300,
+    "maxPlatenAboveReferenceTread": 250,
+    "headerReserve": 13.156239160693076
+  },
+  "front": {
+    "doorGross": [
+      5100.0,
+      6900.0
+    ],
+    "upperLanding": [
+      5000,
+      -1200,
+      2000,
+      1200
+    ],
+    "flightAxes": [
+      6000,
+      3900,
+      2400,
+      900
+    ],
+    "lowestLanding": [
+      300.0,
+      -1200,
+      1200.0,
+      1200
+    ],
+    "newFoot": [
+      900,
+      -600,
+      -1800
+    ],
+    "clearNominalEachSideOn1200Flight": 235.0,
+    "axialDepthOn1200Landing": 360.0,
+    "dynamicLongGradeLoadN": 71.32769603517126,
+    "approachLengths": [
+      9000,
+      9000,
+      9000,
+      9000
+    ],
+    "groundClear": {
+      "minimumContinuousGap": 34.50413223140496,
+      "nearest": "court"
+    }
+  },
+  "east": {
+    "window": 4600,
+    "roughWidth": 1000,
+    "trialEachFrame": 75,
+    "netIfFrame75": 850,
+    "sectionEverySide": 60.0,
+    "sillAboveGrade": 6100,
+    "dock": [
+      12130,
+      14230,
+      3400,
+      5350
+    ],
+    "liftBudget": [
+      14230,
+      3450,
+      1600,
+      1800
+    ],
+    "edgeReserveIf730": 610.0,
+    "horizontalPackLength": 1690,
+    "minimumCabinetOverlapX": 144.5,
+    "minimumCabinetOverlapY": 230,
+    "roomPose": [
+      [
+        9775,
+        4215,
+        0
+      ],
+      [
+        10525,
+        4215,
+        0
+      ],
+      [
+        10525,
+        4600,
+        0
+      ],
+      [
+        10525,
+        4600,
+        90
+      ],
+      [
+        10970,
+        4600,
+        90
+      ]
+    ],
+    "roomGap": {
+      "minimumContinuousGap": 31.0,
+      "nearest": "bed3-L-north0"
+    },
+    "roofOfPackLocal": 2680,
+    "transferPlaneLocal": 990,
+    "minimumUnderside": 950,
+    "standingSillReserve": 25,
+    "uprightCornerGap": 50.50243831449421,
+    "pairedUprightCornerGap": 38.548937575156174,
+    "deep150CornerGap": -240.0,
+    "archRadius": 566.6666666666667,
+    "archCentreZ": 2283.333333333333,
+    "archLiner": 75,
+    "railA": {
+      "section": [
+        50,
+        40,
+        4
+      ],
+      "span": 1250,
+      "singleRailPointN": 2000,
+      "inertia": 151978.66666666666,
+      "stressMPa": 82.24838573834924,
+      "deflectionMm": 2.6773563065868893
+    },
+    "railB": {
+      "section": [
+        75,
+        150,
+        5
+      ],
+      "span": 2000,
+      "singleRailPointN": 2000,
+      "inertia": 6230416.666666667,
+      "stressMPa": 12.037718183642077,
+      "deflectionMm": 0.26750484852537953
+    },
+    "railSupports": [
+      11020,
+      12270,
+      14270
+    ],
+    "railYs": [
+      4380,
+      4820
+    ],
+    "dockIndependentPadSize": 250,
+    "portalColumns": [
+      [
+        12270,
+        2850
+      ],
+      [
+        12270,
+        5930
+      ],
+      [
+        14120,
+        2850
+      ],
+      [
+        14120,
+        5930
+      ]
+    ],
+    "northPadToFoulStack": 30,
+    "northPadToY6100": 45,
+    "dockToSouthPad": 425,
+    "southPadToRoomFace": 145,
+    "transferZ": 4440,
+    "gradeFloorZ": -1800,
+    "totalLift": 6240,
+    "hoistBase": [
+      14270,
+      2550,
+      1600,
+      1660
+    ],
+    "hoistToPrimaryPair": 1110,
+    "groundRampTipY": 1620,
+    "southGoodsLanding": [
+      14120,
+      420,
+      1320,
+      1200
+    ],
+    "baseToDock": 40,
+    "baseToOpenR290": 80,
+    "rightGateRunMm": 1950,
+    "unloadNorth": true,
+    "loadSouth": true,
+    "grossPlatformUK": [
+      1350,
+      950
+    ],
+    "manualPlatform": [
+      1320,
+      960
+    ],
+    "baseWeightKg": 730,
+    "manual10mFoundationKPa": 73,
+    "mastTiesRequired": true,
+    "unsupportedFreeStandingRejected": true,
+    "temporarySleeveOrWallTieApproved": false,
+    "angleOrSashProved": false,
+    "groundFloorLocalToBase": 350,
+    "carTravel": 5890,
+    "newSouthGroundBeyondReserved": 2080,
+    "carriageClearanceAcross": 75.0,
+    "cageFloorCentreTargetX": 14770,
+    "centreToleranceFor25Each": 50.0,
+    "mastFirstBracketMax": 4000,
+    "subsequentBracketMax": 6000,
+    "workingMastOversailMax": 3000,
+    "manufacturerScaffoldTieABCm": [
+      2.5,
+      2.48,
+      0.2
+    ],
+    "manufacturerTopForcesWindKN": [
+      [
+        5.4,
+        5.7
+      ],
+      [
+        8.6,
+        8.6
+      ]
+    ],
+    "stopBarHeadroomMinimum": 1250,
+    "portalRowSpan": 3080,
+    "postFaceLimit": 190,
+    "southPadToPotable": 75,
+    "postToD2": 25.0,
+    "supportTableXY": [
+      13150,
+      4300,
+      1150,
+      1450
+    ],
+    "upperLoadRoute": [
+      [
+        10970,
+        4600
+      ],
+      [
+        13670,
+        4600
+      ],
+      [
+        13670,
+        5440
+      ],
+      [
+        14770,
+        5440
+      ],
+      [
+        14770,
+        4870
+      ],
+      [
+        14770,
+        3380
+      ]
+    ],
+    "upperLanding": [
+      14180,
+      4800,
+      1370,
+      1280
+    ],
+    "upperFirstLowerCartY": [
+      4825,
+      6055
+    ],
+    "upperDeckToRain": 20,
+    "northGateMaximumTargetY": 4800,
+    "additionalColumns": [
+      [
+        15780,
+        4770
+      ],
+      [
+        15780,
+        5900
+      ]
+    ],
+    "outerBeam": {
+      "section": [
+        75,
+        150,
+        5
+      ],
+      "span": 1660,
+      "singleRailPointN": 2000,
+      "inertia": 6230416.666666667,
+      "stressMPa": 9.991306092422924,
+      "deflectionMm": 0.1529557948237812
+    },
+    "secondPadToHoist": 25,
+    "railSeatOffset": 150,
+    "seatMomentKNm": 0.3,
+    "preliminaryCageCentre": [
+      14770,
+      3380
+    ],
+    "longStopAllowanceFor25": 20,
+    "lowerShipping": {
+      "grossKg": 91,
+      "size": [
+        800,
+        1230
+      ],
+      "wheelbaseMm": 1100,
+      "cgHeightBudget": 920,
+      "lateralOffsetBudget": 50,
+      "rampHorizontalRun": 930,
+      "rise": 350,
+      "slope": 0.3763440860215054,
+      "rearWheelReserveUnder0point1g": 55.463911111341986,
+      "short480SameLoadingReserve": -254.536088888658,
+      "lineForceAt0point03RollingN": 339.50074386139516,
+      "arrestDesignKN": 1.339065,
+      "minLongitudinalCageGap": 45.0
+    },
+    "crossBeamComponent": {
+      "section": [
+        100,
+        160,
+        6
+      ],
+      "span": 3080,
+      "singleRailPointN": 4000,
+      "inertia": 10360192.0,
+      "stressMPa": 23.783343011403648,
+      "deflectionMm": 1.1750953392884353,
+      "stressWith1point5KNmLine": 37.51822360048926,
+      "deflectionWithLine": 2.0233672873372743,
+      "reactionKN": 4.3100000000000005
+    },
+    "westSeat": {
+      "footCentres": [
+        [
+          11020,
+          4170
+        ],
+        [
+          11020,
+          5010
+        ]
+      ],
+      "pads": [
+        160,
+        160
+      ],
+      "sealCentre": [
+        11030,
+        4390
+      ],
+      "sealRadius": 100,
+      "nearestFootToSealKeepout": 40
+    },
+    "tailRunway": {
+      "bathCradleKg": 71,
+      "widthAcrossWindow": 480,
+      "lengthAlongRails": 730,
+      "goodsDollyKgAllowance": 20,
+      "loadedCageKg": 91,
+      "minCagePlanEachSide": 235.0,
+      "shelfHeightBudget": 990
+    }
+  },
+  "material": {
+    "comparison": "No exemption for transit equipment or permanently retained constituents",
+    "permanentChanges": "OAS removable infill and weather/guard restoration; no cut to slab/structural arch selected"
+  }
+}
