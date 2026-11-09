@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 60,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "c4fad9be-30e6-47db-beac-1f728748b3fa",
   "holder": {
     "kind": "chatgpt",
     "label": "swarm-integration-2343"
   },
   "claimedAt": "2026-11-09T01:20:39.685Z",
-  "heartbeatAt": "2026-11-09T02:02:50.499Z",
-  "expiresAt": "2026-11-09T02:47:50.499Z",
+  "heartbeatAt": "2026-11-09T02:03:58.860Z",
+  "expiresAt": "2026-11-09T02:03:58.860Z",
   "branch": "work/fabric-next-60837041",
   "predecessor": {
     "leaseId": "14bf81f1-0293-4bd2-89cb-ac47a3bef669",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "MERGED #1409 at 0e0934f20103b3c7a58b2d5d699e7780f9609fe2. Both source parents and 14 green workflows verified. Fork crosses the failed cut, parks 90 mm outside basin. Removable OPEN-FLEX trial and independently reproduced bare stub envelope at #992 comment 6730457002.",
     "next": "Confirm actual clamp release and tool sweep, brazed spigot and frame, check wet fork with one leg blocked and actual upstream levels, then survey independent receiving ground. See #992, #1409 and finite exit map. RWT-06 remains started."
-  }
+  },
+  "releasedAt": "2026-11-09T02:03:58.860Z",
+  "releaseReason": "handoff"
 }
