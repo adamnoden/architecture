@@ -9,9 +9,9 @@
     "label": "Architecture swarm: independent post-structure"
   },
   "claimedAt": "2026-11-09T09:12:12.136Z",
-  "heartbeatAt": "2026-11-09T09:38:52.707Z",
-  "expiresAt": "2026-11-09T10:23:52.707Z",
-  "branch": "work/swarm-after-structure-0910-20261109",
+  "heartbeatAt": "2026-11-09T10:00:33.712Z",
+  "expiresAt": "2026-11-09T10:45:33.712Z",
+  "branch": "work/swarm-house-evidence-0840",
   "predecessor": {
     "leaseId": "93b1e8fd-0750-4b50-a5b6-6783e03e7d8b",
     "generation": 37,
@@ -31,5 +31,6 @@
       "evidence": "MERGED #1440 dac2777600c8425a2c7fc38d6c1a42776372b24c on main. Entire IAS tree equals a3ea0fc6. #1441 merged, both refs absent, #941 handoff 6736314679. 14 successful workflows and canonical fence at 09:08:47.413 UTC.",
       "next": "Whole-family current-occurrence selection or explicit house replan; rear mixed socket and supported ties require measurement, incoming sanitary fixtures unresolved."
     }
-  }
+  },
+  "pr": 1446
 }
