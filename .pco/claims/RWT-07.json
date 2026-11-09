@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "RWT-07",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "fe0cd7af-6769-4bd0-a1ad-780309a88f27",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "issue-comment-6751604368"
+  },
+  "claimedAt": "2026-11-09T21:13:35.000Z",
+  "heartbeatAt": "2026-11-09T21:13:35.000Z",
+  "expiresAt": "2026-11-09T21:58:35.000Z",
+  "branch": "work/mvb-chat-6751604368"
+}
