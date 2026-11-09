@@ -9,9 +9,9 @@
     "label": "Joined programme decision 1035"
   },
   "claimedAt": "2026-11-09T10:35:00.641Z",
-  "heartbeatAt": "2026-11-09T10:35:00.641Z",
-  "expiresAt": "2026-11-09T11:20:00.641Z",
-  "branch": "work/swarm-house-decision-1035",
+  "heartbeatAt": "2026-11-09T11:10:02.019Z",
+  "expiresAt": "2026-11-09T11:55:02.019Z",
+  "branch": "work/swarm-frontier-1033-20261109",
   "predecessor": {
     "leaseId": "0fe01b17-156a-48e7-9905-d3be45f79736",
     "generation": 42,
@@ -31,5 +31,10 @@
       "evidence": "MERGED #1446 at 771390d3dbf0720de2ff505986d8978b7963291a. All nine envelope paths/current joint registry verified on main; all four PRs merged and four remote refs absent. Final 14/14, all four live fences. #1100 comment 6737828346.",
       "next": "Complete programme-level six-interface fit, costs, repair and unapproved residue disposition on latest HAD/STR/Services. The 122.5 mm garden leaf bearing gap and curved portal, slate underlay/valley, Study glazing and actual wet joint require explicit outcomes where not already earned."
     }
+  },
+  "pr": 1450,
+  "checkpoint": {
+    "evidence": "Own frozen #1452 at 34a0453e0277f4c59dad97f25772fd3c99d3ed58, tree cc04e85ab36abc5b924d2cbe1b22cae821bdbd21. Whole six-interface drained-site disposition, 49 openings and 16 moves, ring and tie, 22 roof reactions, true triple sash and unapproved local east gasket. Full MAT, structural replay, docs, control, typecheck and review passed. All parties consent to shared #1450 integration.",
+    "next": "Await the hosted expected tree and all exact CI. Verify final MAT sources, membership and lifecycle, fresh independent g43 fence, then check main and journal bounded completion."
   }
 }
