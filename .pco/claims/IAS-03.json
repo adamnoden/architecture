@@ -9,11 +9,11 @@
     "label": "fabric-60837041"
   },
   "claimedAt": "2026-11-09T03:29:56.193Z",
-  "heartbeatAt": "2026-11-09T03:49:13.820Z",
-  "expiresAt": "2026-11-09T04:34:13.820Z",
+  "heartbeatAt": "2026-11-09T04:03:59.310Z",
+  "expiresAt": "2026-11-09T04:48:59.310Z",
   "checkpoint": {
-    "evidence": "Verified exact joint c91e7538/tree c62af3c8 on main fb72f6e5. Direct parent 1fbd9717 #1424, five original IAS blobs identical, package registration present and focused stair check passes. All 10 registered IAS commands passed at the unchanged original sources.",
-    "next": "Wait for all 14 hosted workflows on the exact joint SHA. Fresh IAS gen33 merge-check, then merged #941 handoff for the two-height newel and independently supported timber repair; release after main verification."
+    "evidence": "Merged #1425 on main 4dabed3d/tree c62af3c8. IAS source #1424 1fbd9717 direct joint parent; five unchanged IAS blobs plus registered passing check. Stair rails retain permanent well guards. True two-height newel and supported plumb-cut wall grip. Ten IAS checks and all 14 hosted workflows green.",
+    "next": "See #941 for qualified three-point re-grip and remaining actual duties: full-size user/anchor/edge/temporary protection, other dry, wet and service first releases, family bath and joined candidate selection. Do not treat an unobserved uninterrupted grasp as proved."
   },
   "branch": "work/house-front-threshold-0328",
   "predecessor": {
