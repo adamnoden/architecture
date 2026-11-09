@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-HOUSE",
   "generation": 32,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "064434de-951d-45ba-b8d1-9b76ea3972a6",
   "holder": {
     "kind": "chatgpt",
     "label": "November structural coordination swarm"
   },
   "claimedAt": "2026-11-08T23:32:16.150Z",
-  "heartbeatAt": "2026-11-09T00:06:38.284Z",
-  "expiresAt": "2026-11-09T00:51:38.284Z",
+  "heartbeatAt": "2026-11-09T00:07:10.558Z",
+  "expiresAt": "2026-11-09T00:07:10.558Z",
   "branch": "work/swarm-house-2332",
   "predecessor": {
     "leaseId": "3f88f41d-876d-4ade-ba9c-b03a36f1fb24",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Merged #1400 at 90e9aba6 after all 14 exact-head workflows. Guard sleeves remain; both crossed H16 throats can narrow to 15.5 mm.",
     "next": "Compare an inclined or positively retained rotating bearing against the continuous joint. Rejoin simultaneous signed actions at both windows, placement and confinement."
-  }
+  },
+  "releasedAt": "2026-11-09T00:07:10.558Z",
+  "releaseReason": "handoff"
 }
