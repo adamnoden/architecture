@@ -9,8 +9,8 @@
     "label": "fabric-60837041"
   },
   "claimedAt": "2026-11-09T00:07:47.473Z",
-  "heartbeatAt": "2026-11-09T01:01:07.985Z",
-  "expiresAt": "2026-11-09T01:46:07.985Z",
+  "heartbeatAt": "2026-11-09T01:19:10.565Z",
+  "expiresAt": "2026-11-09T02:04:10.565Z",
   "branch": "work/front-swarm-0002",
   "predecessor": {
     "leaseId": "064434de-951d-45ba-b8d1-9b76ea3972a6",
@@ -34,7 +34,7 @@
   },
   "pr": 1406,
   "checkpoint": {
-    "evidence": "Four-way #1406 d3b81931 includes the fixed threshold, new tie and direct/rotating bearing studies on main 673e5c46. STR path identical to f805f02b. Complete recovered npm run test:str passed, 10 reconciled regressions and 4 coupled controls reproduced. 13 hosted workflows passed.",
-    "next": "Await final exact-head Validate pull request job 42542590164, coordinate the four fresh preflights and guarded merge, then update #1103 and release STR."
+    "evidence": "Merged #1406 at d8e52d78; both #1407 and rotating-bearing parent f805f02b are on main; signed controls and validation in #1103 comment 6729956902.",
+    "next": "STR-HOUSE remains open: size a positively retained bearing or change support kinematics, test actual lever, joint clearance, both signed pier arms and foundation/guard compatibility."
   }
 }
