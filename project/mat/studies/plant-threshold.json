@@ -1,0 +1,193 @@
+{
+  "opening": {
+    "roughY": [
+      3900.0,
+      5300.0
+    ],
+    "clearY": [
+      4100,
+      5100
+    ],
+    "height": 2300,
+    "singleLeaf": "remove for exchange"
+  },
+  "section": {
+    "collectorX": [
+      12030,
+      12130
+    ],
+    "bearingX": [
+      [
+        12010,
+        12030
+      ],
+      [
+        12130,
+        12150
+      ]
+    ],
+    "span": 120.0,
+    "outerBeamX": [
+      11217.5,
+      12117.5
+    ],
+    "innerSeatToBeamEdge": 87.5,
+    "beamTop": -180,
+    "collectorLowestOuterSkin": -115,
+    "verticalOverBeam": 65,
+    "normalCrest": 15,
+    "serviceTop": 0,
+    "servicePlateWidthY": [
+      4112.5,
+      5062.5
+    ],
+    "plateThickness": 12,
+    "jambToPlateMargins": [
+      12.5,
+      37.5
+    ]
+  },
+  "dock": {
+    "plan": [
+      12130,
+      14230,
+      3400,
+      5350
+    ],
+    "outsideGrade": -1800,
+    "outerEdgeZ": -26.25,
+    "outerTransferRise": 1773.75,
+    "rampAt1in20Mm": 35475.0,
+    "foulStack": [
+      12000,
+      5475,
+      450,
+      300
+    ],
+    "oldNorthEdge": 5500,
+    "oldStackOverlap": 25,
+    "northBayToStack": 125,
+    "reliefWorkStripToStack": 50,
+    "scaffoldBoardPlan": [
+      [
+        12135,
+        12535
+      ],
+      [
+        4515,
+        4915
+      ]
+    ]
+  },
+  "cargo": [
+    {
+      "item": "Cylinder",
+      "centreY": 4575,
+      "fullY": [
+        4150,
+        5000
+      ],
+      "doorMargins": [
+        50,
+        100
+      ],
+      "plateMargins": [
+        37.5,
+        62.5
+      ],
+      "plateMarginAfterTwo5": 27.5,
+      "oldTailX": 12075,
+      "requiredCentreX": 12580,
+      "addedTravel": 80,
+      "parkedNoseX": 13005,
+      "dockEndBeyondNose": 1225,
+      "southStripInsideGuard": 700,
+      "crewBeyondTwo25": 50
+    },
+    {
+      "item": "Cylinder, wall moved",
+      "centreY": 4600,
+      "fullY": [
+        4175,
+        5025
+      ],
+      "doorMargins": [
+        75,
+        75
+      ],
+      "plateMargins": [
+        62.5,
+        37.5
+      ],
+      "plateMarginAfterTwo5": 27.5,
+      "oldTailX": 12075,
+      "requiredCentreX": 12580,
+      "addedTravel": 80,
+      "parkedNoseX": 13005,
+      "dockEndBeyondNose": 1225,
+      "southStripInsideGuard": 725,
+      "crewBeyondTwo25": 75
+    },
+    {
+      "item": "W9 and cart",
+      "centreY": 4575,
+      "fullY": [
+        4270.5,
+        4879.5
+      ],
+      "doorMargins": [
+        170.5,
+        220.5
+      ],
+      "plateMargins": [
+        158.0,
+        183.0
+      ],
+      "plateMarginAfterTwo5": 148.0,
+      "oldTailX": 11875,
+      "requiredCentreX": 12780,
+      "addedTravel": 280,
+      "parkedNoseX": 13405,
+      "dockEndBeyondNose": 825,
+      "southStripInsideGuard": 820.5,
+      "crewBeyondTwo25": 170.5
+    }
+  ],
+  "carrierHeight": {
+    "W9OnCart": 2011,
+    "W9HeadAllowance": 289,
+    "cylinderBody": 1745,
+    "remainingForTrolleyFittingsAndClearance": 555
+  },
+  "plateComparison": {
+    "coarseMassKg": 234.054048,
+    "oneWheelIncluding1p5_N": 3442.9291947287993,
+    "widthMm": [
+      25,
+      40
+    ],
+    "stripStressMPa": [
+      172.14645973643997,
+      107.59153733527498
+    ],
+    "requiredWidthAt200over1p1": 23.670138213760495,
+    "plateMassAt8000KgM3": 12.768,
+    "squareStepForceFractionOfWheelReaction": 0.6197443384031023
+  },
+  "water": {
+    "testRainMmH": 216,
+    "deckM2": 4.095,
+    "wholeDeckLitresPerSecond": 0.2457,
+    "additionalDoorRectangleM2": 3.99,
+    "deckAndDoorLitresPerSecond": 0.48510000000000003,
+    "rejectedReliefCrest": -85,
+    "rejectedLevel": -59.920366899847494,
+    "reliefWidth": 100,
+    "reliefCrest": -95,
+    "idealHeadMm": 20.079633100152503,
+    "adverse5Level": -69.9203668998475,
+    "panToeAboveReliefLevel": 9.920366899847494,
+    "dryBackdam": -20
+  },
+  "scope": "Development geometry. A level temporary deck needs an external load-rated lift or dock; actual wheels, operator, supports, positive wet and dry joints, receiving levels and water tests remain to be qualified."
+}
