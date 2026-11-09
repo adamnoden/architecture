@@ -286,7 +286,6 @@
         "gauge": 202.5,
         "piecesPerSlopeM2": 16.191054442420562,
         "slateKgM2": 36.10605140659785,
-        "slateTonnes": 5.778890600772,
         "newTimberKgM2": 5.937434609750993,
         "postExtensionKgM2": 0.2640512947664745,
         "feltWithLapsKgM2": 1.875,
@@ -297,8 +296,19 @@
         "remainingWithin1p5KgM2": 17.045288584287135,
         "wholeWithScheduledLayersKN": 388.22560624392526,
         "marginTo3kPaHouseKN": 44.22439375607473,
-        "remainingAfterSpecialsKgM2": 6.387917197645567,
-        "g3MarginAfterSpecialsKN": 27.4910171895111
+        "wholeFieldEquivalentBeforeClippingTonnes": 5.778890600772,
+        "nominalRegularSlateAfterClippingTonnes": 4.797745208875813,
+        "finiteCourseSlateTonnes": 4.935238485383781,
+        "finiteCourseBattenExtraKgM2": 0.27015358682668417,
+        "finiteCourseMeanRemainingInBackgroundKgM2": 11.388835301191905,
+        "finiteCourseG3MarginKN": 35.34307026801011,
+        "omittedSlateKg": 981.1453918961868,
+        "fullUncutEnvelopeRemainingKgM2": 6.387917197645567,
+        "trimmedMeanRemainingInBackgroundKgM2": 12.51803600495053,
+        "trimmedG3MarginKN": 37.116053484012696,
+        "slateOverValleyLeadPatchKgM2": 156.26991019247126,
+        "ridgeNetMetalLessSlateKgPerPlanM": 11.815202901217148,
+        "valleyNetMetalLessSlateKgPerSlopeM": 6.7349403993028085
       },
       {
         "grade": "Capital",
@@ -307,7 +317,6 @@
         "gauge": 190.0,
         "piecesPerSlopeM2": 17.25625539257981,
         "slateKgM2": 38.48144952545297,
-        "slateTonnes": 6.159080771875422,
         "newTimberKgM2": 6.160793933987511,
         "postExtensionKgM2": 0.2640512947664745,
         "feltWithLapsKgM2": 1.875,
@@ -318,8 +327,19 @@
         "remainingWithin1p5KgM2": 14.446531141195493,
         "wholeWithScheduledLayersKN": 392.305973280296,
         "marginTo3kPaHouseKN": 40.144026719704016,
-        "remainingAfterSpecialsKgM2": 3.789159754553925,
-        "g3MarginAfterSpecialsKN": 23.410650153140384
+        "wholeFieldEquivalentBeforeClippingTonnes": 6.159080771875422,
+        "nominalRegularSlateAfterClippingTonnes": 5.113386341038696,
+        "finiteCourseSlateTonnes": 5.215049429076929,
+        "finiteCourseBattenExtraKgM2": 0.18668797691160777,
+        "finiteCourseMeanRemainingInBackgroundKgM2": 9.500704941628587,
+        "finiteCourseG3MarginKN": 32.378474668673405,
+        "omittedSlateKg": 1045.6944308367254,
+        "fullUncutEnvelopeRemainingKgM2": 3.789159754553925,
+        "trimmedMeanRemainingInBackgroundKgM2": 10.322575851813161,
+        "trimmedG3MarginKN": 33.66891251964866,
+        "slateOverValleyLeadPatchKgM2": 158.8686676355629,
+        "ridgeNetMetalLessSlateKgPerPlanM": 9.928110381392504,
+        "valleyNetMetalLessSlateKgPerSlopeM": 6.237112222074764
       },
       {
         "grade": "County",
@@ -328,7 +348,6 @@
         "gauge": 202.5,
         "piecesPerSlopeM2": 16.191054442420562,
         "slateKgM2": 47.60170006071645,
-        "slateTonnes": 7.618806442273399,
         "newTimberKgM2": 5.937434609750993,
         "postExtensionKgM2": 0.2640512947664745,
         "feltWithLapsKgM2": 1.875,
@@ -339,8 +358,19 @@
         "remainingWithin1p5KgM2": 5.549639930168524,
         "wholeWithScheduledLayersKN": 406.27518064905405,
         "marginTo3kPaHouseKN": 26.17481935094594,
-        "remainingAfterSpecialsKgM2": -5.107731456473044,
-        "g3MarginAfterSpecialsKN": 9.441442784382307
+        "wholeFieldEquivalentBeforeClippingTonnes": 7.618806442273399,
+        "nominalRegularSlateAfterClippingTonnes": 6.325278436813853,
+        "finiteCourseSlateTonnes": 6.506547599564267,
+        "finiteCourseBattenExtraKgM2": 0.27015358682668417,
+        "finiteCourseMeanRemainingInBackgroundKgM2": 1.571420234591164,
+        "finiteCourseG3MarginKN": 19.928527857899468,
+        "omittedSlateKg": 1293.5280054595469,
+        "fullUncutEnvelopeRemainingKgM2": -5.107731456473044,
+        "trimmedMeanRemainingInBackgroundKgM2": 2.9741292132474015,
+        "trimmedG3MarginKN": 22.13095251794046,
+        "slateOverValleyLeadPatchKgM2": 167.76555884658987,
+        "ridgeNetMetalLessSlateKgPerPlanM": 2.682690581061294,
+        "valleyNetMetalLessSlateKgPerSlopeM": 4.325719911121167
       },
       {
         "grade": "County",
@@ -349,7 +379,6 @@
         "gauge": 190.0,
         "piecesPerSlopeM2": 17.25625539257981,
         "slateKgM2": 50.73339085418464,
-        "slateTonnes": 8.120043708212439,
         "newTimberKgM2": 6.160793933987511,
         "postExtensionKgM2": 0.2640512947664745,
         "feltWithLapsKgM2": 1.875,
@@ -360,8 +389,19 @@
         "remainingWithin1p5KgM2": 2.1945898124638177,
         "wholeWithScheduledLayersKN": 411.54301968576215,
         "marginTo3kPaHouseKN": 20.906980314237842,
-        "remainingAfterSpecialsKgM2": -8.46278157417775,
-        "g3MarginAfterSpecialsKN": 4.1736037476742105
+        "wholeFieldEquivalentBeforeClippingTonnes": 8.120043708212439,
+        "nominalRegularSlateAfterClippingTonnes": 6.741415176077922,
+        "finiteCourseSlateTonnes": 6.875446332505011,
+        "finiteCourseBattenExtraKgM2": 0.18668797691160777,
+        "finiteCourseMeanRemainingInBackgroundKgM2": -0.8733235860132957,
+        "finiteCourseG3MarginKN": 16.089981046043896,
+        "omittedSlateKg": 1378.628532134517,
+        "fullUncutEnvelopeRemainingKgM2": -8.46278157417775,
+        "trimmedMeanRemainingInBackgroundKgM2": 0.15078045539272322,
+        "trimmedG3MarginKN": 17.697949647913823,
+        "slateOverValleyLeadPatchKgM2": 171.12060896429458,
+        "ridgeNetMetalLessSlateKgPerPlanM": 0.1947748822790274,
+        "valleyNetMetalLessSlateKgPerSlopeM": 3.6693903859864356
       },
       {
         "grade": "Celtic",
@@ -370,7 +410,6 @@
         "gauge": 202.5,
         "piecesPerSlopeM2": 16.191054442420562,
         "slateKgM2": 61.202185792349724,
-        "slateTonnes": 9.795608282922942,
         "newTimberKgM2": 5.937434609750993,
         "postExtensionKgM2": 0.2640512947664745,
         "feltWithLapsKgM2": 1.875,
@@ -381,8 +420,19 @@
         "remainingWithin1p5KgM2": -8.050845801464732,
         "wholeWithScheduledLayersKN": 427.629606705826,
         "marginTo3kPaHouseKN": 4.820393294173982,
-        "remainingAfterSpecialsKgM2": -18.7082171881063,
-        "g3MarginAfterSpecialsKN": -11.91298327238965
+        "wholeFieldEquivalentBeforeClippingTonnes": 9.795608282922942,
+        "nominalRegularSlateAfterClippingTonnes": 8.132500847332096,
+        "finiteCourseSlateTonnes": 8.365561199439771,
+        "finiteCourseBattenExtraKgM2": 0.27015358682668417,
+        "finiteCourseMeanRemainingInBackgroundKgM2": -10.043549703358972,
+        "finiteCourseG3MarginKN": 1.6916044431208332,
+        "omittedSlateKg": 1663.1074355908459,
+        "fullUncutEnvelopeRemainingKgM2": -18.7082171881063,
+        "trimmedMeanRemainingInBackgroundKgM2": -8.3172534698943,
+        "trimmedG3MarginKN": 4.40210067075655,
+        "slateOverValleyLeadPatchKgM2": 181.36604457822312,
+        "ridgeNetMetalLessSlateKgPerPlanM": -8.121971882221686,
+        "valleyNetMetalLessSlateKgPerSlopeM": 1.4753745448217668
       },
       {
         "grade": "Celtic",
@@ -391,7 +441,6 @@
         "gauge": 190.0,
         "piecesPerSlopeM2": 17.25625539257981,
         "slateKgM2": 65.22864538395167,
-        "slateTonnes": 10.440056196273135,
         "newTimberKgM2": 6.160793933987511,
         "postExtensionKgM2": 0.2640512947664745,
         "feltWithLapsKgM2": 1.875,
@@ -402,8 +451,19 @@
         "remainingWithin1p5KgM2": -12.300664717303192,
         "wholeWithScheduledLayersKN": 434.3023421936375,
         "marginTo3kPaHouseKN": -1.8523421936375257,
-        "remainingAfterSpecialsKgM2": -22.95803610394476,
-        "g3MarginAfterSpecialsKN": -18.585718760201157
+        "wholeFieldEquivalentBeforeClippingTonnes": 10.440056196273135,
+        "nominalRegularSlateAfterClippingTonnes": 8.667533797814471,
+        "finiteCourseSlateTonnes": 8.839859570363586,
+        "finiteCourseBattenExtraKgM2": 0.18668797691160777,
+        "finiteCourseMeanRemainingInBackgroundKgM2": -13.146822125758577,
+        "finiteCourseG3MarginKN": -3.1809128173486556,
+        "omittedSlateKg": 1772.5223984586644,
+        "fullUncutEnvelopeRemainingKgM2": -22.95803610394476,
+        "trimmedMeanRemainingInBackgroundKgM2": -11.883456351639866,
+        "trimmedG3MarginKN": -1.1972740313216588,
+        "slateOverValleyLeadPatchKgM2": 185.61586349406159,
+        "ridgeNetMetalLessSlateKgPerPlanM": -11.320720637798878,
+        "valleyNetMetalLessSlateKgPerSlopeM": 0.63152229821997
       }
     ],
     "zincPlusBoardIndicativeKgM2": 109.20800000000001,
@@ -421,6 +481,54 @@
     "originalPlanarPlusPostU": 0.15533665248045508,
     "addedColdWoodLayerU": 0.0012764412860488772,
     "simpleCompositeU": 0.15661309376650395,
+    "slateCoverage": {
+      "layouts": {
+        "moderate": {
+          "outer": {
+            "rowsPerFace": 11,
+            "gauge": 197.10341916011785,
+            "headlap": 105.7931616797643,
+            "undereavesLength": 327.8965808398822,
+            "lappedMaterialM2Before5mmSideJoints": 225.93128128713604,
+            "lappedSlateM2": 222.2274897906256
+          },
+          "court": {
+            "rowsPerFace": 12,
+            "gauge": 187.57424622362362,
+            "headlap": 124.85150755275276,
+            "undereavesLength": 337.4257537763764,
+            "lappedMaterialM2Before5mmSideJoints": 111.56821154740503,
+            "lappedSlateM2": 109.73922447285742
+          }
+        },
+        "severe": {
+          "outer": {
+            "rowsPerFace": 12,
+            "gauge": 180.67813423010804,
+            "headlap": 138.64373153978391,
+            "undereavesLength": 344.32186576989193,
+            "lappedMaterialM2Before5mmSideJoints": 245.06633461144327,
+            "lappedSlateM2": 241.0488537161737
+          },
+          "court": {
+            "rowsPerFace": 12,
+            "gauge": 187.57424622362362,
+            "headlap": 124.85150755275276,
+            "undereavesLength": 337.4257537763764,
+            "lappedMaterialM2Before5mmSideJoints": 111.56821154740503,
+            "lappedSlateM2": 109.73922447285742
+          }
+        }
+      },
+      "bareRoofSlopeM2": 160.05324247990166,
+      "unslatedCrownSlopeM2": 24.627395151242816,
+      "openValleySlopeM2": 2.546592412429044,
+      "nominalSlatedSlopeM2": 132.8792549162298,
+      "grossRidgeLeadKgPerPlanM": 40.49900920255172,
+      "grossValleyLeadKgPerSlopeM": 14.30192869316908,
+      "grossRidgeLeadKNAt550mm": 0.21851240415236783,
+      "grossValleyLeadKNAt550mm": 0.07716605626399378
+    },
     "joints": {
       "oneCheekWettedWidth": 723.7565178604957,
       "ridgePieceMm": 1100.0,
@@ -431,8 +539,8 @@
       "crownRollKg": 215.52960000000002,
       "twelveSaddleBlankKg": 88.17120000000001,
       "totalValleyHipRidgeAndSaddleKg": 1705.7468467445087,
-      "severeCapitalG3MarginAfterThoseItemsKN": 23.410650153140384,
-      "remainingSlopeAllowanceAfterThoseItemsKgM2": 3.789159754553925
+      "severeCapitalTrimmedG3MarginKN": 33.66891251964866,
+      "severeCapitalTrimmedMeanRemainingKgM2": 10.322575851813161
     }
   }
 }

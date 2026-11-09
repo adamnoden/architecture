@@ -30,6 +30,24 @@ def opening(length, gross, foot, pitch, closed_ends=0, mesh=.5, adverse=10):
             'screenFraction':mesh,'adverseNetMm2':(gross-adverse)*clear*mesh}
 
 
+def course_layout(run_plan, width_at_eave, width_rate, cosine, gauge_limit, slate):
+    """Four trapezoidal faces. Integrate each cut slate course and aligned undereaves course."""
+    length,width=slate['size']
+    run=run_plan/cosine
+    rows=math.ceil(run/gauge_limit)
+    gauge=run/rows
+    lap=length-2*gauge
+    undereaves=gauge+lap+25  # Welsh Slate eaves detail, p20.
+
+    def strip(lo,hi):
+        return 4*(width_at_eave*(hi-lo)+width_rate*cosine*(hi**2-lo**2)/2)/1e6
+
+    material=strip(0,undereaves)+sum(strip(i*gauge,min(i*gauge+length,run)) for i in range(rows))
+    return {'rowsPerFace':rows,'gauge':gauge,'headlap':lap,'undereavesLength':undereaves,
+            'lappedMaterialM2Before5mmSideJoints':material,
+            'lappedSlateM2':material*width/(width+slate['coverageSideJoint'])}
+
+
 def compare():
     native=read('mat/studies/ring-roof-family-sources.json')
     slate,board=native['slate'],native['sarket']
@@ -282,15 +300,56 @@ def compare():
     roll_mass=(4*8*ridge_piece/1000)*.30*20.41
     saddle_mass=12*.60**2*20.41  # Separate trial material allowance for corner and terminal blanks.
     field_skin_totals=valley_record['allFourValleysKg']+cap_mass+hip_mass+roll_mass+saddle_mass
+    # Slate stops at the 360 mm cutoffs, not the 520 mm hood lips. Thus the
+    # physical strip of lead OVER slate is retained. Each open valley is 200 mm
+    # in plan normal to x=q, between the inner board cutoff and the new eave.
+    unslated_crown=((ridge+2*high_slots['newCut'])**2-(ridge-2*high_slots['newCut'])**2)/1e6/c
+    clear_valley_slope=4*orphan*math.sqrt(2)*gutter_width/1e6/c
+    slated_area=new_surface-unslated_crown-clear_valley_slope
+    ridge_lead_per_m=(cap_mass+roll_mass)/(4*ridge/1000)
+    valley_lead_per_m=valley_record['allFourValleysKg']/(4*revised_diagonal/1000)
+    layouts={}
+    for kind,limit in slate['headlapAt25'].items():
+        gauge=(slate['size'][0]-limit)/2
+        layouts[kind]={'outer':course_layout((outer-outer_cut)/2,outer,-2,c,gauge,slate),
+                       'court':course_layout(orphan,inner_eave-gutter_width*math.sqrt(2),2,c,gauge,slate)}
     for row in rows:
-        row['remainingAfterSpecialsKgM2']=row['remainingWithin1p5KgM2']-field_skin_totals/new_surface
-        row['g3MarginAfterSpecialsKN']=row['marginTo3kPaHouseKN']-field_skin_totals*kg_to_kn
+        removed=(new_surface-slated_area)*row['slateKgM2']
+        layout=layouts[row['exposure']]
+        actual_gauge=min(side['gauge'] for side in layout.values())
+        extra_batten=50*25*550/1000*(1/actual_gauge-1/row['gauge'])
+        material_m2=sum(side['lappedSlateM2'] for side in layout.values())
+        finite_slate_kg=material_m2*slate['gradesKg'][row['grade']]/(.500*.300)
+        full_slate_kg=new_surface*row['slateKgM2']
+        delta=field_skin_totals+finite_slate_kg-full_slate_kg+extra_batten*new_surface
+        installed=row['slateKgM2']*slated_area
+        row.update({
+            'wholeFieldEquivalentBeforeClippingTonnes':row.pop('slateTonnes'),
+            'nominalRegularSlateAfterClippingTonnes':installed/1000,'finiteCourseSlateTonnes':finite_slate_kg/1000,
+            'finiteCourseBattenExtraKgM2':extra_batten,
+            'finiteCourseMeanRemainingInBackgroundKgM2':row['remainingWithin1p5KgM2']-delta/new_surface,
+            'finiteCourseG3MarginKN':row['marginTo3kPaHouseKN']-delta*kg_to_kn,
+            'omittedSlateKg':removed,
+            'fullUncutEnvelopeRemainingKgM2':row['remainingWithin1p5KgM2']-field_skin_totals/new_surface,
+            'trimmedMeanRemainingInBackgroundKgM2':row['remainingWithin1p5KgM2']-(field_skin_totals-removed)/new_surface,
+            'trimmedG3MarginKN':row['marginTo3kPaHouseKN']-(field_skin_totals-removed)*kg_to_kn,
+            'slateOverValleyLeadPatchKgM2':row['chargedLayersKgM2']+20.41,
+            'ridgeNetMetalLessSlateKgPerPlanM':ridge_lead_per_m-row['slateKgM2']*unslated_crown/(4*ridge/1000),
+            # Local running strip excluding intersections, using the actual diagonal slope.
+            'valleyNetMetalLessSlateKgPerSlopeM':valley_lead_per_m-row['slateKgM2']*gutter_width/1000*math.sqrt(2)/chord/c})
+    assert rows[3]['fullUncutEnvelopeRemainingKgM2']<0 and rows[3]['trimmedMeanRemainingInBackgroundKgM2']>0
+    supports['slateCoverage']={'layouts':layouts,'bareRoofSlopeM2':new_surface,'unslatedCrownSlopeM2':unslated_crown,
+                               'openValleySlopeM2':clear_valley_slope,'nominalSlatedSlopeM2':slated_area,
+                               'grossRidgeLeadKgPerPlanM':ridge_lead_per_m,'grossValleyLeadKgPerSlopeM':valley_lead_per_m,
+                               'grossRidgeLeadKNAt550mm':ridge_lead_per_m*.550*kg_to_kn,
+                               'grossValleyLeadKNAt550mm':valley_lead_per_m*.550*kg_to_kn}
+    assert rows[3]['finiteCourseMeanRemainingInBackgroundKgM2']<0
     supports['joints']={'oneCheekWettedWidth':cheek*1000,'ridgePieceMm':ridge_piece,'oneCheekKg':cheek*20.41*ridge_piece/1000,
                         'ridgeLeadWithLapsKg':cap_mass,'outerHipPieceMm':hip_piece,
                         'outerHipLeadKg':hip_mass,'crownRollKg':roll_mass,'twelveSaddleBlankKg':saddle_mass,
                         'totalValleyHipRidgeAndSaddleKg':field_skin_totals,
-                        'severeCapitalG3MarginAfterThoseItemsKN':grade_case['marginTo3kPaHouseKN']-field_skin_totals*kg_to_kn,
-                        'remainingSlopeAllowanceAfterThoseItemsKgM2':grade_case['remainingWithin1p5KgM2']-field_skin_totals/new_surface}
+                        'severeCapitalTrimmedG3MarginKN':grade_case['trimmedG3MarginKN'],
+                        'severeCapitalTrimmedMeanRemainingKgM2':grade_case['trimmedMeanRemainingInBackgroundKgM2']}
     cover=read('rwt/studies/over-roof-service.json')
     cfg=cover['assumptions']
     def cover_under(x):
