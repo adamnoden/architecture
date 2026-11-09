@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 61,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "da19f126-18f3-4dbb-b762-b868a709def9",
   "holder": {
     "kind": "chatgpt",
     "label": "study-door-0203"
   },
   "claimedAt": "2026-11-09T02:04:35.386Z",
-  "heartbeatAt": "2026-11-09T02:28:02.364Z",
-  "expiresAt": "2026-11-09T03:13:02.364Z",
+  "heartbeatAt": "2026-11-09T02:51:17.602Z",
+  "expiresAt": "2026-11-09T02:51:17.602Z",
   "branch": "work/swarm-third-20261109",
   "predecessor": {
     "leaseId": "c4fad9be-30e6-47db-beac-1f728748b3fa",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Joint #1414 head 6f5b7944 / tree f5b298ad includes original RWT d58481a2 as a direct parent; all 190 RWT tests passed and source scope is unchanged.",
     "next": "Wait for all exact-head checks. Run RWT preflight against the joint branch and current main before expected-head merge. Reconcile #992 and release as handoff; follow the remaining internal high-eave/N duties."
-  }
+  },
+  "releasedAt": "2026-11-09T02:51:17.602Z",
+  "releaseReason": "handoff"
 }
