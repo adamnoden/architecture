@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 31,
-  "state": "released",
-  "leaseId": "495b5c0b-0ae4-4407-b0b6-dd8baae18dd1",
+  "generation": 32,
+  "state": "claimed",
+  "leaseId": "1e36d690-001c-4951-a675-10536e1e0918",
   "holder": {
     "kind": "chatgpt",
-    "label": "MAT floor boundary 2333"
+    "label": "front-utility-swarm-0002"
   },
-  "claimedAt": "2026-11-08T23:33:23.308Z",
-  "heartbeatAt": "2026-11-09T00:06:05.235Z",
-  "expiresAt": "2026-11-09T00:06:05.235Z",
-  "branch": "work/swarm-house-2332",
+  "claimedAt": "2026-11-09T00:06:32.175Z",
+  "heartbeatAt": "2026-11-09T00:06:32.175Z",
+  "expiresAt": "2026-11-09T00:51:32.175Z",
+  "branch": "work/front-swarm-0002",
   "predecessor": {
-    "leaseId": "9efd6390-5533-4e0c-85fa-69459e3f063c",
-    "generation": 30,
-    "branch": "work/swarm-materials-20261108-2234",
-    "pr": 1395,
+    "leaseId": "495b5c0b-0ae4-4407-b0b6-dd8baae18dd1",
+    "generation": 31,
+    "branch": "work/swarm-house-2332",
+    "pr": 1400,
     "checkpoint": {
-      "evidence": "PR #1395 at 14be8efe draws the four real exterior mouths and reproduces their serial restrictions; local test:mat and section inspection passed",
-      "next": "Integrate the closed-loggia topology and challenge the lowered gallery crossing against the selected and upper-first moving rail. Then validate and merge."
+      "evidence": "Combined #1400 at a04fb3667ffa20fbdf07404b19962ab7cb84ab28 includes MAT source commit 1fe45097 from #1399 and main 784265bd. Thirteen workflows passed; full health run 42536971767 is active.",
+      "next": "Verify final full CI, fresh lease and unchanged base, then coordinated expected-head merge. Next source review: prove the three direct shaft-to-core paths and compare the entire envelope."
     }
   },
   "recoverySource": {
-    "leaseId": "9efd6390-5533-4e0c-85fa-69459e3f063c",
-    "generation": 30,
-    "branch": "work/swarm-materials-20261108-2234",
-    "pr": 1395,
+    "leaseId": "495b5c0b-0ae4-4407-b0b6-dd8baae18dd1",
+    "generation": 31,
+    "branch": "work/swarm-house-2332",
+    "pr": 1400,
     "checkpoint": {
-      "evidence": "PR #1395 at 14be8efe draws the four real exterior mouths and reproduces their serial restrictions; local test:mat and section inspection passed",
-      "next": "Integrate the closed-loggia topology and challenge the lowered gallery crossing against the selected and upper-first moving rail. Then validate and merge."
+      "evidence": "Combined #1400 at a04fb3667ffa20fbdf07404b19962ab7cb84ab28 includes MAT source commit 1fe45097 from #1399 and main 784265bd. Thirteen workflows passed; full health run 42536971767 is active.",
+      "next": "Verify final full CI, fresh lease and unchanged base, then coordinated expected-head merge. Next source review: prove the three direct shaft-to-core paths and compare the entire envelope."
     }
-  },
-  "pr": 1400,
-  "checkpoint": {
-    "evidence": "Combined #1400 at a04fb3667ffa20fbdf07404b19962ab7cb84ab28 includes MAT source commit 1fe45097 from #1399 and main 784265bd. Thirteen workflows passed; full health run 42536971767 is active.",
-    "next": "Verify final full CI, fresh lease and unchanged base, then coordinated expected-head merge. Next source review: prove the three direct shaft-to-core paths and compare the entire envelope."
-  },
-  "releasedAt": "2026-11-09T00:06:05.235Z",
-  "releaseReason": "handoff"
+  }
 }
