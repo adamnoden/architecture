@@ -3,6 +3,7 @@ from pathlib import Path
 import json
 import hashlib
 import math
+import runpy
 import sys
 
 here = Path(__file__).resolve().parent
@@ -241,6 +242,18 @@ out["studySouth2100"]={"occupiedOpeningRequirements":coupled["current"],"shifted
  "underHardwareAfterTwo10Mm":coupled["ramp"]["newAfterTwo10"],"deskNorthGapMm":135,
  "headDrawMm":service["headAndLatticeDraw"],"innerZoneBearingOverlapMm":sash["innerZoneBearingOverlap"]}
 out["sourceMain"]="126ae0c2c31025d2a1c1307fd7fe2849df75f6c1"
+# The four-WC scope came from the companion IAS parent. It uses a different
+# cart and swept outline from the existing shower-tray service stage.
+wc_file="project/ias/studies/wc-service-stations.py"
+wc_raw=(root/wc_file).read_bytes()
+sources[wc_file]=hashlib.sha1(b"blob "+str(len(wc_raw)).encode()+b"\0"+wc_raw).hexdigest()
+wc=runpy.run_path(str(root/wc_file))["solution"]()["principal"]
+px,py,pw,ph=wc["stage"]
+pan=[px-25,py-25,pw+50,ph+50]
+intersections=[min(newbed[i]+newbed[i+2],pan[i]+pan[i+2])-max(newbed[i],pan[i]) for i in (0,1)]
+park_gap=min(rect[0] for rect in wc["sweeps"])-(parked[0]+parked[2])
+assert intersections[0]>0 and intersections[1]==65 and park_gap==195
+out["principal"]["wcPan"]={"paddedStage":pan,"ordinaryYOverlapMm":65,"parkedToWholeSweepMm":park_gap}
 out["sourceBlobs"]=sources
 data=json.dumps(out,indent=2)+'\n'
 

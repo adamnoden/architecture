@@ -46,6 +46,10 @@ test('the old tool ports miss the high sill hidden behind a rail; separate obliq
   assert.ok(b.railBottomAtCrest>-1130);
   assert.deepEqual([b.targetCount,b.sillTargets,b.missed,b.sillMisses],[4105,1419,0,0]);
   assert.ok(b.longest<1804 && b.ports.length===13);
+  assert.equal(b.frames.length,11);
+  assert.deepEqual(b.frames.filter(f=>f.yMax-f.yMin>180),[
+    {x:14350,yMin:6010,yMax:6340},{x:14750,yMin:6010,yMax:6340}
+  ]);
 });
 
 test('price new clear E inlet after loss at the deepest quarter and the placed approach loss',()=>{

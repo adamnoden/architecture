@@ -822,7 +822,17 @@
       ]
     ],
     "routeToFurnitureMm": 25.0,
-    "serviceWardrobeClearMm": 130.5
+    "serviceWardrobeClearMm": 130.5,
+    "wcPan": {
+      "paddedStage": [
+        10335,
+        8515,
+        405,
+        700
+      ],
+      "ordinaryYOverlapMm": 65,
+      "parkedToWholeSweepMm": 195
+    }
   },
   "kitchen": {
     "newFridge": [
@@ -1054,6 +1064,7 @@
     "project/str/studies/current-house-window-renewal.json": "9e190c8683dbd4ff2f341589fd1676abd31f090b",
     "project/str/studies/corner-arch-end.json": "4554deed49057863d815c1d688693d88ae801b6c",
     "project/mat/studies/study-coupled-window.json": "00184ad7c13d39b38a1ac95a82fa462a8d13eea7",
-    "project/mat/studies/front-threshold.json": "cddb26cd95bc3d6b33d99be4ceb7e47f95a98de4"
+    "project/mat/studies/front-threshold.json": "cddb26cd95bc3d6b33d99be4ceb7e47f95a98de4",
+    "project/ias/studies/wc-service-stations.py": "00d4023a9422fa93fccd8f8140034f8a677ec537"
   }
 }
