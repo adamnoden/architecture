@@ -88,6 +88,11 @@ def compare():
     old_link = next(r for r in cage if r["id"] == "PL-50")
     assert old_link["dia"] == 6 and set(v[2] for v in old_link["points"]) == {-50}
     assert -42 - (-50+3) == 5 and -42 - (-75+3) == 30
+    # Perfect wetting between vertical parallel planes, an equilibrium counterexample
+    # to treating the short upstand as a free capillary break.
+    skirt_rise = -42-pan["z"][1]
+    rise_mm = 2*.07274/(1000*9.81*.00025)*1000
+    assert skirt_rise == 37 and 59.3 < rise_mm < 59.4 and rise_mm > skirt_rise
     assert floor["panelLayout"]["connectedCutPieces"] == 80
     return out
 
