@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T03:29:06.184Z",
-  "heartbeatAt": "2026-11-09T03:57:20.233Z",
-  "expiresAt": "2026-11-09T04:42:20.233Z",
+  "heartbeatAt": "2026-11-09T04:04:17.367Z",
+  "expiresAt": "2026-11-09T04:49:17.367Z",
   "branch": "work/house-front-threshold-0328",
   "predecessor": {
     "leaseId": "5a0309f5-848f-4c71-904d-03be5537d2ae",
@@ -34,7 +34,7 @@
   },
   "pr": 1425,
   "checkpoint": {
-    "evidence": "Verified and reproduced the frozen #1426 study on combined #1425 head c91e7538 after #1423",
-    "next": "Run STR final preflight after CI, then record the joint and access handoff"
+    "evidence": "Verified merged #1426 via #1425 at 4dabed3d. The joint and access handoff is in #1103.",
+    "next": "Detail the retained joint and both occupied access paths or identify the necessary house redesign; see #1103."
   }
 }
