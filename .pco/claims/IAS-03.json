@@ -9,9 +9,9 @@
     "label": "front-next-0120"
   },
   "claimedAt": "2026-11-09T01:21:53.772Z",
-  "heartbeatAt": "2026-11-09T01:35:40.869Z",
-  "expiresAt": "2026-11-09T02:20:40.869Z",
-  "branch": "work/front-next-0120",
+  "heartbeatAt": "2026-11-09T01:43:14.875Z",
+  "expiresAt": "2026-11-09T02:28:14.875Z",
+  "branch": "work/fabric-next-60837041",
   "predecessor": {
     "leaseId": "f8444899-93c8-4f6b-ba1d-acb44431a691",
     "generation": 29,
@@ -32,9 +32,9 @@
       "next": "Wait for exact-head validation; all three holders preflight the published revision before guarded merge and release."
     }
   },
-  "pr": 1410,
+  "pr": 1409,
   "checkpoint": {
-    "evidence": "PR #1410 at 27da3065 compares four factory M6 top fasteners and retained frame, required four floor-seat windows and separate head receiver. Full test:repo passed.",
-    "next": "Independently review and verify exact-head CI. If integrating several current lanes, bind this lease to the merge lead and recheck the final SHA before publication."
+    "evidence": "Joint #1409 at cb98447b includes IAS 27da3065 as parent and preserves the independently reviewed four-screw assembly and all new fit checks. Whole tree 0adf54c6.",
+    "next": "Wait for exact-head hosted validation; run fresh IAS branch/main/lease publication preflight before expected-head merge; reconcile #941 and release."
   }
 }
