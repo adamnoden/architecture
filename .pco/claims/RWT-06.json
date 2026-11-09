@@ -9,9 +9,9 @@
     "label": "House water and assembly decisions 1031"
   },
   "claimedAt": "2026-11-09T10:33:44.944Z",
-  "heartbeatAt": "2026-11-09T11:04:25.161Z",
-  "expiresAt": "2026-11-09T11:49:25.161Z",
-  "branch": "work/swarm-house-successor-1031-20261109",
+  "heartbeatAt": "2026-11-09T11:06:04.646Z",
+  "expiresAt": "2026-11-09T11:51:04.646Z",
+  "branch": "work/swarm-frontier-1033-20261109",
   "predecessor": {
     "leaseId": "6aba4f0e-df76-4f58-a3ad-0879a54e0d43",
     "generation": 67,
@@ -33,8 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "The host requested a successor to RWT 00255fd7 before joint publication. The existing 1150-wide E weather skirt occupies the proposed spill and north first stroke.",
-    "next": "Publish the measured veto on the independently reviewed original, then return this scope to PR 1450 for expected-head integration."
+    "evidence": "The corrected independent RWT PR 1451 e8f59788 prices the real 900 x 5 north skirt interference, verified in the graph-open disposition, arithmetic and first-motion regression. The host accepted this direct parent.",
+    "next": "Verify all 11 final RWT blobs on the shared commit, observe final hosted results, produce the g68 preflight, merge, record the handoff and redispatch."
   },
-  "pr": 1451
+  "pr": 1450
 }
