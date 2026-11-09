@@ -194,7 +194,7 @@ def case_gap(p,o):
     w,h=o[2]/2,o[3]/2
     return max(abs(dx)-w-length/2*abs(c)-width/2*abs(s),abs(dy)-h-length/2*abs(s)-width/2*abs(c),
                abs(dx*c+dy*s)-length/2-w*abs(c)-h*abs(s),abs(-dx*s+dy*c)-width/2-w*abs(s)-h*abs(c))
-route=[[9886,9080,0],[9950,9080,0],[9950,8800,0],[8625,8725,-5],[8625,8725,-10],[8550,8575,-55],[8550,8200,-90],[8700,7725,-90]]
+route=[[9886,south+standoff+185,0],[9886,9080,0],[9950,9080,0],[9950,8800,0],[8625,8725,-5],[8625,8725,-10],[8550,8575,-55],[8550,8200,-90],[8700,7725,-90]]
 spine=next(w for w in house['groundWalls'] if w['id']=='service-spine')
 loggia=next(w for w in house['groundWalls'] if w['id']=='loggia-east-weather')
 assert spine['finishedFaces'][0]==9203 and loggia['finishedFaces'][1]==7719.5
@@ -209,6 +209,14 @@ for a,b in zip(route,route[1:]):
                for j in range(steps+1) for o in obs)
     lower.append(sample-motion/(2*steps))
 assert min(lower)>17
+trial_force=geometry['bracketTwoGTotalKN']*1000
+geometry['straightDownRelease']={'cradleAndWetCaseMassLimitKg':39,'factoredTrialForceN':trial_force,
+    'fourHorizontalRetractingPinsODmm':8,'pinEngagedLengthTrialMM':12,'requiredRetractMM':20,
+    'throughLugThicknessMM':3,'onePinDoubleShearMPa':trial_force/(2*pi*8**2/4),
+    'oneLugBearingMPa':trial_force/(8*3),'geometricDropAtOriginalXY':True,
+    'cradleNosePlusCasingDepthMM':410,'forkReachMM':570,'maxAcceptedLoadCentreMM':300,
+    'rearToFrontCradleClearMM':standoff,'operationalInterlockQualified':False}
+assert geometry['straightDownRelease']['requiredRetractMM']-12>=5
 geometry.update(parkedChairs=chairs,chairPaths=chair_paths,clearances=checks,
                 loadedCartMax=[length,width],lowExport=route,continuousExportClearanceMM=min(lower))
 cross=next(d for d in house['protectedRoute']['doors'] if d['id']=='FD-EAST-CROSS')

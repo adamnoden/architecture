@@ -230,6 +230,22 @@
     ],
     "highTubeODmm": 50,
     "highTubeToSoffitMM": 200,
+    "straightDownRelease": {
+      "cradleAndWetCaseMassLimitKg": 39,
+      "factoredTrialForceN": 765.1800000000001,
+      "fourHorizontalRetractingPinsODmm": 8,
+      "pinEngagedLengthTrialMM": 12,
+      "requiredRetractMM": 20,
+      "throughLugThicknessMM": 3,
+      "onePinDoubleShearMPa": 7.61138620969103,
+      "oneLugBearingMPa": 31.882500000000004,
+      "geometricDropAtOriginalXY": true,
+      "cradleNosePlusCasingDepthMM": 410,
+      "forkReachMM": 570,
+      "maxAcceptedLoadCentreMM": 300,
+      "rearToFrontCradleClearMM": 260,
+      "operationalInterlockQualified": false
+    },
     "parkedChairs": [
       [
         7800,
@@ -295,6 +311,11 @@
       450
     ],
     "lowExport": [
+      [
+        9886,
+        8869.5,
+        0
+      ],
       [
         9886,
         9080,
