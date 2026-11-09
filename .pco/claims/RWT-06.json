@@ -9,9 +9,9 @@
     "label": "fabric-60837041"
   },
   "claimedAt": "2026-11-09T02:53:26.644Z",
-  "heartbeatAt": "2026-11-09T02:53:26.644Z",
-  "expiresAt": "2026-11-09T03:38:26.644Z",
-  "branch": "work/fabric-fourth-60837041",
+  "heartbeatAt": "2026-11-09T03:07:29.512Z",
+  "expiresAt": "2026-11-09T03:52:29.512Z",
+  "branch": "work/swarm-fourth-20261109",
   "predecessor": {
     "leaseId": "da19f126-18f3-4dbb-b762-b868a709def9",
     "generation": 61,
@@ -31,5 +31,10 @@
       "evidence": "Joint #1414 head 6f5b7944 / tree f5b298ad includes original RWT d58481a2 as a direct parent; all 190 RWT tests passed and source scope is unchanged.",
       "next": "Wait for all exact-head checks. Run RWT preflight against the joint branch and current main before expected-head merge. Reconcile #992 and release as handoff; follow the remaining internal high-eave/N duties."
     }
+  },
+  "pr": 1419,
+  "checkpoint": {
+    "evidence": "RWT source #1420 d5f9404b, tree df43321f, six RWT paths. Both south-court drips hand over on 90 mm slide; middle bay can reach stand. Downstream open-trough blockage spills before backup. 193/193 RWT tests.",
+    "next": "Verify source is an ancestor of joint #1419 and all six RWT blobs match. Fresh RWT preflight on exact joint green head before merge. After merge update #992 and release."
   }
 }
