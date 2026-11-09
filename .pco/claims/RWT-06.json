@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 62,
-  "state": "released",
-  "leaseId": "2f1e836a-21ab-411f-b691-9e8ce9b9b788",
+  "generation": 63,
+  "state": "claimed",
+  "leaseId": "3fdbd23d-ed42-4f65-88d8-795759df6967",
   "holder": {
     "kind": "chatgpt",
-    "label": "fabric-60837041"
+    "label": "Separate the window head and vertical restraint"
   },
-  "claimedAt": "2026-11-09T02:53:26.644Z",
-  "heartbeatAt": "2026-11-09T03:27:51.653Z",
-  "expiresAt": "2026-11-09T03:27:51.653Z",
-  "branch": "work/swarm-fourth-20261109",
+  "claimedAt": "2026-11-09T03:29:24.772Z",
+  "heartbeatAt": "2026-11-09T03:29:24.772Z",
+  "expiresAt": "2026-11-09T04:14:24.772Z",
+  "branch": "work/swarm-separate-frame-0328",
   "predecessor": {
-    "leaseId": "da19f126-18f3-4dbb-b762-b868a709def9",
-    "generation": 61,
-    "branch": "work/swarm-third-20261109",
-    "pr": 1414,
+    "leaseId": "2f1e836a-21ab-411f-b691-9e8ce9b9b788",
+    "generation": 62,
+    "branch": "work/swarm-fourth-20261109",
+    "pr": 1419,
     "checkpoint": {
-      "evidence": "Joint #1414 head 6f5b7944 / tree f5b298ad includes original RWT d58481a2 as a direct parent; all 190 RWT tests passed and source scope is unchanged.",
-      "next": "Wait for all exact-head checks. Run RWT preflight against the joint branch and current main before expected-head merge. Reconcile #992 and release as handoff; follow the remaining internal high-eave/N duties."
+      "evidence": "Merged #1419 on main 5fdcf5c9; source #1420 d5f9404b is a direct joint parent, six RWT blobs byte-identical. The central eave two-drip exchange works on both live neighbours only. #992 records successor open-width and flooded-crossover tests, comment 6731423082.",
+      "next": "Use finite exit map; if addressing the high-eave centre fault, detail the two retained troughs and dryable 65x170 crossover or independent full-duty discharges, including actual tailwater/losses, cleanout and maintenance; wet corner renewal and protected routes separate."
     }
   },
   "recoverySource": {
-    "leaseId": "da19f126-18f3-4dbb-b762-b868a709def9",
-    "generation": 61,
-    "branch": "work/swarm-third-20261109",
-    "pr": 1414,
+    "leaseId": "2f1e836a-21ab-411f-b691-9e8ce9b9b788",
+    "generation": 62,
+    "branch": "work/swarm-fourth-20261109",
+    "pr": 1419,
     "checkpoint": {
-      "evidence": "Joint #1414 head 6f5b7944 / tree f5b298ad includes original RWT d58481a2 as a direct parent; all 190 RWT tests passed and source scope is unchanged.",
-      "next": "Wait for all exact-head checks. Run RWT preflight against the joint branch and current main before expected-head merge. Reconcile #992 and release as handoff; follow the remaining internal high-eave/N duties."
+      "evidence": "Merged #1419 on main 5fdcf5c9; source #1420 d5f9404b is a direct joint parent, six RWT blobs byte-identical. The central eave two-drip exchange works on both live neighbours only. #992 records successor open-width and flooded-crossover tests, comment 6731423082.",
+      "next": "Use finite exit map; if addressing the high-eave centre fault, detail the two retained troughs and dryable 65x170 crossover or independent full-duty discharges, including actual tailwater/losses, cleanout and maintenance; wet corner renewal and protected routes separate."
     }
-  },
-  "pr": 1419,
-  "checkpoint": {
-    "evidence": "Merged #1419 on main 5fdcf5c9; source #1420 d5f9404b is a direct joint parent, six RWT blobs byte-identical. The central eave two-drip exchange works on both live neighbours only. #992 records successor open-width and flooded-crossover tests, comment 6731423082.",
-    "next": "Use finite exit map; if addressing the high-eave centre fault, detail the two retained troughs and dryable 65x170 crossover or independent full-duty discharges, including actual tailwater/losses, cleanout and maintenance; wet corner renewal and protected routes separate."
-  },
-  "releasedAt": "2026-11-09T03:27:51.653Z",
-  "releaseReason": "handoff"
+  }
 }
