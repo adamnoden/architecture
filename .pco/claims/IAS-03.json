@@ -9,11 +9,11 @@
     "label": "fabric-60837041"
   },
   "claimedAt": "2026-11-09T03:29:56.193Z",
-  "heartbeatAt": "2026-11-09T03:29:56.193Z",
-  "expiresAt": "2026-11-09T04:14:56.193Z",
+  "heartbeatAt": "2026-11-09T03:43:30.628Z",
+  "expiresAt": "2026-11-09T04:28:30.628Z",
   "checkpoint": {
-    "evidence": "Main 5fdcf5c9 carries the prior four-lane #1419 integration. Prior RWT generation released and #992 records successor comparison.",
-    "next": "Confirm assigned packet and its live issue before changing source. Develop the highest material finite architectural decision and test in isolation."
+    "evidence": "Source #1424 head 1fbd9717/tree 2a446033: two permanent well guards, fixed window span and two-height newel, plumb-joint removable timber on two supported treads. Rendering, generator, occurrence and diff checks passed.",
+    "next": "Attach source commit to joint integration branch for four exact CI/preflight steps; retain physical transfer, anchoring, temporary major-guard and escape duties. Then post merged #941 handoff and release."
   },
   "branch": "work/fabric-fifth-60837041",
   "predecessor": {
@@ -35,5 +35,6 @@
       "evidence": "Merged #1421 via #1419 at 5fdcf5c9 and verified the study on main; handoff #941.",
       "next": "Use #941 for supplied drain dimensions, support and reinstatement or advance a different internal IAS family exit."
     }
-  }
+  },
+  "pr": 1424
 }
