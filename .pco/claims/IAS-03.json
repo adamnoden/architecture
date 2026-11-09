@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "IAS-03",
-  "generation": 28,
-  "state": "released",
-  "leaseId": "f71f2550-f6d8-481f-8f2a-85c315c080b2",
+  "generation": 29,
+  "state": "claimed",
+  "leaseId": "f8444899-93c8-4f6b-ba1d-acb44431a691",
   "holder": {
     "kind": "chatgpt",
-    "label": "Integrate authorised final utility-sink patch"
+    "label": "swarm-integration-2343"
   },
-  "claimedAt": "2026-11-08T23:46:39.385Z",
-  "heartbeatAt": "2026-11-09T00:28:41.776Z",
-  "expiresAt": "2026-11-09T00:28:41.776Z",
-  "branch": "work/ias-sink-final-20261108-2343",
+  "claimedAt": "2026-11-09T00:29:02.910Z",
+  "heartbeatAt": "2026-11-09T00:29:02.910Z",
+  "expiresAt": "2026-11-09T01:14:02.910Z",
+  "branch": "work/swarm-integrate-20261109",
   "predecessor": {
-    "leaseId": "cd434864-2530-4edf-9f9c-997af6efe8d6",
-    "generation": 27,
-    "branch": "work/ias-sink-publish-20261108-2316",
-    "pr": 1397,
+    "leaseId": "f71f2550-f6d8-481f-8f2a-85c315c080b2",
+    "generation": 28,
+    "branch": "work/ias-sink-final-20261108-2343",
+    "pr": 1402,
     "checkpoint": {
-      "evidence": "Reviewed IAS sink study merged in #1397 at 784265bd. Exact-head CI 42535425570 passed; owner issue #941 records handoff.",
-      "next": "IAS-03 stays open for actual faucet and trap cutover, supported pickup, stand and grip ratings, physical export, reinstall and commissioning."
+      "evidence": "Merged #1402 at f8417949 on top of #1397. Verified full CI, both final IAS blobs and actual radiator height.",
+      "next": "Qualify the installed support and tap, clip, shutoff, drain and reconnection sequence before adopting the utility sink or closing IAS-03."
     }
   },
   "recoverySource": {
-    "leaseId": "cd434864-2530-4edf-9f9c-997af6efe8d6",
-    "generation": 27,
-    "branch": "work/ias-sink-publish-20261108-2316",
-    "pr": 1397,
+    "leaseId": "f71f2550-f6d8-481f-8f2a-85c315c080b2",
+    "generation": 28,
+    "branch": "work/ias-sink-final-20261108-2343",
+    "pr": 1402,
     "checkpoint": {
-      "evidence": "Reviewed IAS sink study merged in #1397 at 784265bd. Exact-head CI 42535425570 passed; owner issue #941 records handoff.",
-      "next": "IAS-03 stays open for actual faucet and trap cutover, supported pickup, stand and grip ratings, physical export, reinstall and commissioning."
+      "evidence": "Merged #1402 at f8417949 on top of #1397. Verified full CI, both final IAS blobs and actual radiator height.",
+      "next": "Qualify the installed support and tap, clip, shutoff, drain and reconnection sequence before adopting the utility sink or closing IAS-03."
     }
-  },
-  "pr": 1402,
-  "checkpoint": {
-    "evidence": "Merged #1402 at f8417949 on top of #1397. Verified full CI, both final IAS blobs and actual radiator height.",
-    "next": "Qualify the installed support and tap, clip, shutoff, drain and reconnection sequence before adopting the utility sink or closing IAS-03."
-  },
-  "releasedAt": "2026-11-09T00:28:41.776Z",
-  "releaseReason": "handoff"
+  }
 }
