@@ -1,6 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 const read = name => JSON.parse(readFileSync(new URL(name, import.meta.url), 'utf8'));
 const j = read('current-house-joined-foundation.json');
 test('Each of the 52 signed-head states returns its actual source force and two first moments', () => {
@@ -28,4 +30,18 @@ test('The larger roof and unselected pit retain separate failure controls', () =
   assert.ok(b.floor.M_V.every((v,i)=>v<b.floor.MR_VR[i]));
   assert.ok(b.cheeks.nominalMinimumClearToVerticalPileBars<25 && !b.admitted);
   assert.equal(j.admitted,false); // explicit comparison, never soil capacity
+});
+
+test('P32 needs independent head assembly and a two-bend west starter', () => {
+  const script = fileURLToPath(new URL('./p32-court-hold.py', import.meta.url));
+  execFileSync('python3', ['-B', script, '--check']);
+  const {connector, cage, changedBeamLevers, admitted} = read('./p32-court-hold.json');
+  assert.ok(connector.original.rotatingBarClearanceWithSixVertical < 2.5);
+  assert.deepEqual(connector.candidate.imperforateBand, [-53, -27]);
+  assert.ok(connector.singleM20ResistanceKN < connector.strippedComparisonKN);
+  assert.ok(cage.straightYaw.bestP45VerticalClearMm < 25);
+  assert.ok(cage.groups.westToP45.afterTwo5mmSetoutsLowerMm > 38);
+  assert.ok(cage.groups.allP32ToTransplantedMats.afterTwo5mmSetoutsLowerMm > 25);
+  assert.ok(changedBeamLevers.bottomNS.lossOfSteelCoupleKNm > 14);
+  assert.equal(admitted, false);
 });

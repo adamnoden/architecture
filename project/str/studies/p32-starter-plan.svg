@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1250 650" width="1250" height="650" role="img" aria-labelledby="title desc">
+<title id="title">P32 starter routing past pile P45</title>
+<desc id="desc">Plan of five north starters and one west starter at P32. A second horizontal bend takes the west tail past the eight vertical P45 axes. Two enlarged plans show the proposed bottom and top H20 rows.</desc>
+<rect width="1250" height="650" fill="#fcfbf7"/>
+<g font-family="DejaVu Sans,Arial,sans-serif">
+<text x="28.0" y="39.0" text-anchor="start" fill="#1d3038" font-size="27" font-weight="700">P32   Six starter tails around the court hold-down</text>
+<text x="29.0" y="68.0" text-anchor="start" fill="#4c6167" font-size="16" font-weight="400">Plan coordinates are local to the P32 shaft. North is up. Dimensions are in mm.</text>
+<polyline points="28.00,87.00 1222.00,87.00" fill="none" stroke="#c3cdcb" stroke-width="1" stroke-linejoin="round"/>
+<text x="28.0" y="119.0" text-anchor="start" fill="#1d3038" font-size="19" font-weight="700">01   Court wall and stair header</text>
+<text x="671.0" y="119.0" text-anchor="start" fill="#1d3038" font-size="19" font-weight="700">02   H20 rows through the P32 cap</text>
+<polyline points="639.00,108.00 639.00,552.00" fill="none" stroke="#c9d0cb" stroke-width="1" stroke-linejoin="round"/>
+<rect x="185.04" y="377.16" width="124.80" height="133.02" fill="#e4e9e1" stroke="none"/>
+<rect x="49.32" y="414.60" width="407.68" height="124.80" fill="#e4e9e1" stroke="none"/>
+<rect x="394.60" y="139.00" width="124.80" height="417.56" fill="#e4e9e1" stroke="none"/>
+<rect x="394.60" y="414.60" width="124.80" height="124.80" fill="#d3ded2" stroke="#8d9f98"/>
+<circle cx="457.00" cy="477.00" r="41.60" fill="none" stroke="#6e8179"/>
+<circle cx="484.10" cy="465.78" r="2.45" fill="#50646b" stroke="none"/>
+<circle cx="468.22" cy="449.90" r="2.45" fill="#50646b" stroke="none"/>
+<circle cx="445.78" cy="449.90" r="2.45" fill="#50646b" stroke="none"/>
+<circle cx="429.90" cy="465.78" r="2.45" fill="#50646b" stroke="none"/>
+<circle cx="429.90" cy="488.22" r="2.45" fill="#50646b" stroke="none"/>
+<circle cx="445.78" cy="504.10" r="2.45" fill="#50646b" stroke="none"/>
+<circle cx="468.22" cy="504.10" r="2.45" fill="#50646b" stroke="none"/>
+<circle cx="484.10" cy="488.22" r="2.45" fill="#50646b" stroke="none"/>
+<rect x="185.04" y="414.60" width="124.80" height="124.80" fill="#d3ded2" stroke="#8d9f98"/>
+<circle cx="247.44" cy="477.00" r="41.60" fill="none" stroke="#6e8179"/>
+<circle cx="274.54" cy="465.78" r="2.45" fill="#50646b" stroke="none"/>
+<circle cx="258.66" cy="449.90" r="2.45" fill="#50646b" stroke="none"/>
+<circle cx="236.22" cy="449.90" r="2.45" fill="#50646b" stroke="none"/>
+<circle cx="220.34" cy="465.78" r="2.45" fill="#50646b" stroke="none"/>
+<circle cx="220.34" cy="488.22" r="2.45" fill="#50646b" stroke="none"/>
+<circle cx="236.22" cy="504.10" r="2.45" fill="#50646b" stroke="none"/>
+<circle cx="258.66" cy="504.10" r="2.45" fill="#50646b" stroke="none"/>
+<circle cx="274.54" cy="488.22" r="2.45" fill="#50646b" stroke="none"/>
+<polyline points="484.10,465.78 484.10,465.78 484.10,465.74 484.10,465.63 484.10,465.45 484.10,465.19 484.10,464.86 484.10,464.45 484.10,463.98 484.10,463.43 484.10,462.81 484.10,462.13 484.10,461.37 484.10,460.54 484.10,459.65 484.10,458.69 484.10,457.67 484.10,456.58 484.10,455.43 484.10,454.22 484.10,452.95 484.10,451.62 484.10,450.23 484.10,448.79 484.10,447.29 484.10,445.75 484.10,444.16 484.10,442.51 484.10,440.83 484.10,439.10 484.10,437.32 484.10,435.51 484.10,433.66 484.10,431.78 484.10,429.87 484.10,427.92 484.10,425.95 484.10,423.95 484.10,421.93 484.10,419.89 484.10,417.83 484.10,415.76 484.10,413.67 484.10,411.58 484.10,409.47 484.10,407.36 484.10,405.25 484.10,155.65" fill="none" stroke="#12735c" stroke-width="2.5" stroke-linejoin="round"/>
+<polyline points="468.22,449.90 468.22,449.90 468.22,449.87 468.22,449.76 468.22,449.57 468.22,449.32 468.22,448.98 468.22,448.58 468.22,448.11 468.22,447.56 468.22,446.94 468.22,446.25 468.22,445.50 468.22,444.67 468.22,443.78 468.22,442.82 468.22,441.80 468.22,440.71 468.22,439.56 468.22,438.34 468.22,437.07 468.22,435.74 468.22,434.36 468.22,432.92 468.22,431.42 468.22,429.88 468.22,428.28 468.22,426.64 468.22,424.95 468.22,423.22 468.22,421.45 468.22,419.64 468.22,417.79 468.22,415.91 468.22,414.00 468.22,412.05 468.22,410.08 468.22,408.08 468.22,406.06 468.22,404.02 468.22,401.96 468.22,399.89 468.22,397.80 468.22,395.70 468.22,393.60 468.22,391.49 468.22,389.38 468.22,139.78" fill="none" stroke="#12735c" stroke-width="2.5" stroke-linejoin="round"/>
+<polyline points="429.90,465.78 429.90,465.78 429.90,465.74 429.90,465.63 429.90,465.45 429.90,465.19 429.90,464.86 429.90,464.45 429.90,463.98 429.90,463.43 429.90,462.81 429.90,462.13 429.90,461.37 429.90,460.54 429.90,459.65 429.90,458.69 429.90,457.67 429.90,456.58 429.90,455.43 429.90,454.22 429.90,452.95 429.90,451.62 429.90,450.23 429.90,448.79 429.90,447.29 429.90,445.75 429.90,444.16 429.90,442.51 429.90,440.83 429.90,439.10 429.90,437.32 429.90,435.51 429.90,433.66 429.90,431.78 429.90,429.87 429.90,427.92 429.90,425.95 429.90,423.95 429.90,421.93 429.90,419.89 429.90,417.83 429.90,415.76 429.90,413.67 429.90,411.58 429.90,409.47 429.90,407.36 429.90,405.25 429.90,155.65" fill="none" stroke="#12735c" stroke-width="2.5" stroke-linejoin="round"/>
+<polyline points="468.22,504.10 468.22,504.10 468.22,504.06 468.22,503.95 468.22,503.76 468.22,503.51 468.22,503.18 468.22,502.77 468.22,502.30 468.22,501.75 468.22,501.13 468.22,500.45 468.22,499.69 468.22,498.86 468.22,497.97 468.22,497.01 468.22,495.99 468.22,494.90 468.22,493.75 468.22,492.54 468.22,491.26 468.22,489.93 468.22,488.55 468.22,487.11 468.22,485.61 468.22,484.07 468.22,482.47 468.22,480.83 468.22,479.15 468.22,477.41 468.22,475.64 468.22,473.83 468.22,471.98 468.22,470.10 468.22,468.19 468.22,466.24 468.22,464.27 468.22,462.27 468.22,460.25 468.22,458.21 468.22,456.15 468.22,454.08 468.22,451.99 468.22,449.89 468.22,447.79 468.22,445.68 468.22,443.57 468.22,193.97" fill="none" stroke="#3e6c93" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="6 4"/>
+<polyline points="484.10,488.22 484.10,488.22 484.10,488.19 484.10,488.08 484.10,487.89 484.10,487.63 484.10,487.30 484.10,486.90 484.10,486.43 484.10,485.88 484.10,485.26 484.10,484.57 484.10,483.82 484.10,482.99 484.10,482.10 484.10,481.14 484.10,480.11 484.10,479.03 484.10,477.88 484.10,476.66 484.10,475.39 484.10,474.06 484.10,472.68 484.10,471.24 484.10,469.74 484.10,468.20 484.10,466.60 484.10,464.96 484.10,463.27 484.10,461.54 484.10,459.77 484.10,457.96 484.10,456.11 484.10,454.23 484.10,452.31 484.10,450.37 484.10,448.40 484.10,446.40 484.10,444.38 484.10,442.34 484.10,440.28 484.10,438.21 484.10,436.12 484.10,434.02 484.10,431.92 484.10,429.81 484.10,427.70 484.10,178.10" fill="none" stroke="#3e6c93" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="6 4"/>
+<polyline points="429.90,488.22 429.90,488.22 429.87,488.24 429.77,488.27 429.59,488.33 429.35,488.42 429.04,488.52 428.65,488.65 428.20,488.81 427.69,488.99 427.10,489.19 426.45,489.41 425.74,489.66 424.96,489.93 424.11,490.22 423.21,490.53 422.24,490.86 421.21,491.22 420.12,491.59 418.97,491.99 417.77,492.40 416.52,492.83 415.20,493.28 413.84,493.75 412.43,494.24 410.97,494.74 409.46,495.26 407.91,495.80 406.31,496.35 404.68,496.91 403.00,497.49 401.29,498.08 399.54,498.68 397.76,499.29 395.95,499.91 394.11,500.55 392.25,501.19 390.36,501.84 388.45,502.50 386.52,503.16 384.57,503.83 382.61,504.51 380.64,505.19 378.66,505.87 376.67,506.55 374.67,507.24 372.67,507.93 351.04,515.38 349.13,516.00 347.20,516.56 345.26,517.05 343.30,517.48 341.32,517.85 339.34,518.14 337.35,518.38 335.35,518.54 333.34,518.64 331.33,518.68 81.73,518.68" fill="none" stroke="#bb5134" stroke-width="4" stroke-linejoin="round"/>
+<polyline points="195.44,488.22 429.90,488.22" fill="none" stroke="#9b9281" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="4 4"/>
+<circle cx="450.24" cy="489.48" r="3.50" fill="#775080" stroke="white"/>
+<circle cx="450.24" cy="464.52" r="3.50" fill="#775080" stroke="white"/>
+<polyline points="280.20,518.68 268.20,540.68 77.00,540.68" fill="none" stroke="#bb5134" stroke-width="1" stroke-linejoin="round"/>
+<text x="76.0" y="560.7" text-anchor="start" fill="#bb5134" font-size="13" font-weight="700">West H22 passes south of P45</text>
+<text x="30.0" y="164.0" text-anchor="start" fill="#12735c" font-size="14" font-weight="700">Five north tails</text>
+<text x="30.0" y="185.0" text-anchor="start" fill="#4c6167" font-size="13" font-weight="400">Three at Z−355, two at Z−296.</text>
+<polyline points="264.00,180.00 372.00,180.00 457.00,187.88" fill="none" stroke="#12735c" stroke-width="1" stroke-linejoin="round"/>
+<text x="29.0" y="251.0" text-anchor="start" fill="#6d645b" font-size="14" font-weight="700">Due-west control</text>
+<text x="29.0" y="272.0" text-anchor="start" fill="#4c6167" font-size="13" font-weight="400">Crosses a P45 vertical bar.</text>
+<polyline points="208.00,267.00 233.00,267.00 220.40,488.22" fill="none" stroke="#9b9281" stroke-width="1" stroke-linejoin="round" stroke-dasharray="4 3"/>
+<text x="29.0" y="329.0" text-anchor="start" fill="#775080" font-size="14" font-weight="700">Two blind tie ends</text>
+<polyline points="177.00,325.00 341.00,325.00 450.24,464.52" fill="none" stroke="#775080" stroke-width="1" stroke-linejoin="round"/>
+<text x="247.4" y="402.1" text-anchor="middle" fill="#1d3038" font-size="15" font-weight="700">P45</text>
+<text x="457.0" y="560.6" text-anchor="middle" fill="#1d3038" font-size="15" font-weight="700">P32</text>
+<text x="677.0" y="151.0" text-anchor="start" fill="#1d3038" font-size="16" font-weight="700">Bottom mat</text>
+<rect x="677.00" y="167.00" width="202.00" height="202.00" fill="#edf1eb" stroke="#899d94"/>
+<circle cx="778.00" cy="268.00" r="67.33" fill="none" stroke="#bac6c0"/>
+<circle cx="821.86" cy="249.83" r="2.90" fill="#74847b" stroke="none"/>
+<circle cx="796.17" cy="224.14" r="2.90" fill="#74847b" stroke="none"/>
+<circle cx="759.83" cy="224.14" r="2.90" fill="#74847b" stroke="none"/>
+<circle cx="734.14" cy="249.83" r="2.90" fill="#74847b" stroke="none"/>
+<circle cx="734.14" cy="286.17" r="2.90" fill="#74847b" stroke="none"/>
+<circle cx="759.83" cy="311.86" r="2.90" fill="#74847b" stroke="none"/>
+<circle cx="796.17" cy="311.86" r="2.90" fill="#74847b" stroke="none"/>
+<circle cx="821.86" cy="286.17" r="2.90" fill="#74847b" stroke="none"/>
+<polyline points="677.00,349.47 879.00,349.47" fill="none" stroke="#bb5134" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="677.00,330.89 879.00,330.89" fill="none" stroke="#bb5134" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="677.00,266.65 879.00,266.65" fill="none" stroke="#bb5134" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="677.00,200.67 879.00,200.67" fill="none" stroke="#bb5134" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="677.00,187.20 879.00,187.20" fill="none" stroke="#bb5134" stroke-width="2" stroke-linejoin="round" stroke-dasharray="5 3"/>
+<polyline points="696.53,167.00 696.53,369.00" fill="none" stroke="#3e6c93" stroke-width="2" stroke-linejoin="round" stroke-dasharray="5 3"/>
+<polyline points="712.69,167.00 712.69,369.00" fill="none" stroke="#3e6c93" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="850.38,167.00 850.38,369.00" fill="none" stroke="#3e6c93" stroke-width="2" stroke-linejoin="round" stroke-dasharray="5 3"/>
+<polyline points="840.89,167.00 840.89,369.00" fill="none" stroke="#3e6c93" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="859.47,167.00 859.47,369.00" fill="none" stroke="#3e6c93" stroke-width="2" stroke-linejoin="round"/>
+<text x="968.0" y="151.0" text-anchor="start" fill="#1d3038" font-size="16" font-weight="700">Top mat</text>
+<rect x="968.00" y="167.00" width="202.00" height="202.00" fill="#edf1eb" stroke="#899d94"/>
+<circle cx="1069.00" cy="268.00" r="67.33" fill="none" stroke="#bac6c0"/>
+<circle cx="1112.86" cy="249.83" r="2.90" fill="#74847b" stroke="none"/>
+<circle cx="1087.17" cy="224.14" r="2.90" fill="#74847b" stroke="none"/>
+<circle cx="1050.83" cy="224.14" r="2.90" fill="#74847b" stroke="none"/>
+<circle cx="1025.14" cy="249.83" r="2.90" fill="#74847b" stroke="none"/>
+<circle cx="1025.14" cy="286.17" r="2.90" fill="#74847b" stroke="none"/>
+<circle cx="1050.83" cy="311.86" r="2.90" fill="#74847b" stroke="none"/>
+<circle cx="1087.17" cy="311.86" r="2.90" fill="#74847b" stroke="none"/>
+<circle cx="1112.86" cy="286.17" r="2.90" fill="#74847b" stroke="none"/>
+<polyline points="968.00,348.80 1170.00,348.80" fill="none" stroke="#bb5134" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="968.00,268.00 1170.00,268.00" fill="none" stroke="#bb5134" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="968.00,187.20 1170.00,187.20" fill="none" stroke="#bb5134" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="988.20,167.00 988.20,369.00" fill="none" stroke="#3e6c93" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="1131.89,167.00 1131.89,369.00" fill="none" stroke="#3e6c93" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="1150.47,167.00 1150.47,369.00" fill="none" stroke="#3e6c93" stroke-width="2" stroke-linejoin="round"/>
+<text x="677.0" y="396.0" text-anchor="start" fill="#bb5134" font-size="13" font-weight="700">EW at Z−572 / −520</text>
+<text x="677.0" y="418.0" text-anchor="start" fill="#3e6c93" font-size="13" font-weight="700">NS at Z−552 / −500</text>
+<text x="968.0" y="396.0" text-anchor="start" fill="#bb5134" font-size="13" font-weight="700">EW at Z−238</text>
+<text x="968.0" y="418.0" text-anchor="start" fill="#3e6c93" font-size="13" font-weight="700">NS at Z−258</text>
+<text x="677.0" y="451.0" text-anchor="start" fill="#4c6167" font-size="13" font-weight="400">Dashed rows sit on the higher bottom layers.</text>
+<text x="677.0" y="473.0" text-anchor="start" fill="#4c6167" font-size="13" font-weight="400">Dark dots show the initial eight H22 axes.</text>
+<text x="677.0" y="505.0" text-anchor="start" fill="#1d3038" font-size="14" font-weight="700">Bottom NS centroid shifts 41.56 east and 20.8 up.</text>
+<text x="677.0" y="528.0" text-anchor="start" fill="#4c6167" font-size="13" font-weight="400">The changed mat forces and continuation require a new check.</text>
+<polyline points="28.00,580.00 1222.00,580.00" fill="none" stroke="#b3c2bf" stroke-width="1" stroke-linejoin="round"/>
+<text x="28.0" y="607.0" text-anchor="start" fill="#1d3038" font-size="15" font-weight="700">West H22 to P45 verticals ≥48.05 nominal, ≥38.05 after two 5 mm shifts.</text>
+<text x="29.0" y="631.0" text-anchor="start" fill="#4c6167" font-size="14" font-weight="400">All P32 H22 to the named H20 rows ≥25.49 after the same shifts. P45 bends and cap confinement remain open.</text>
+</g></svg>
