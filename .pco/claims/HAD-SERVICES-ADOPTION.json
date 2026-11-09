@@ -9,11 +9,12 @@
     "label": "House scope and exchange 1354"
   },
   "claimedAt": "2026-11-09T13:57:47.929Z",
-  "heartbeatAt": "2026-11-09T14:21:26.358Z",
-  "expiresAt": "2026-11-09T15:06:26.358Z",
+  "heartbeatAt": "2026-11-09T14:59:46.000Z",
+  "expiresAt": "2026-11-09T15:44:46.000Z",
   "branch": "work/swarm-house-successor-1354-20261109",
   "checkpoint": {
-    "evidence": "Integrated occupied-house compositor and 46-opening study implemented with 18.095 kW hot duty and 4.346 kW local supplements. Source and derived records in current-house.mjs and inhabited-service-duty.py",
-    "next": "Complete defrost, pressure, first releases and adoption gate. Validate exact whole scene, publish, merge and release"
-  }
+    "evidence": "Draft #1461 on work/swarm-house-successor-1354-20261109 contains the reconstructed full occupied-house export, 46 source openings, 96 air cases, independent DHW, checks and drawing. Program remains open.",
+    "next": "Restore a capable checkout, complete the final first-release review and figure QA, validate the exact chosen source and finish normal publication. See #943 comment 6742966501."
+  },
+  "pr": 1461
 }
