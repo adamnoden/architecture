@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "IAS-03",
-  "generation": 35,
-  "state": "released",
-  "leaseId": "d20ae003-5fbe-453a-ba68-f2557c7584f0",
+  "generation": 36,
+  "state": "claimed",
+  "leaseId": "c7bbb9e0-8a23-4657-afcf-8f3db52a34e0",
   "holder": {
     "kind": "chatgpt",
     "label": "Owner follow-on after sink and spill"
   },
-  "claimedAt": "2026-11-09T05:06:33.830Z",
-  "heartbeatAt": "2026-11-09T06:04:29.401Z",
-  "expiresAt": "2026-11-09T06:04:29.401Z",
-  "branch": "work/house-0506-20261109",
+  "claimedAt": "2026-11-09T06:06:13.026Z",
+  "heartbeatAt": "2026-11-09T06:06:13.026Z",
+  "expiresAt": "2026-11-09T06:51:13.026Z",
+  "branch": "work/house-0605-20261109",
   "predecessor": {
-    "leaseId": "d7a72cde-5597-44c4-8cfa-e8b0671f814e",
-    "generation": 34,
-    "branch": "work/house-0406-20261109",
-    "pr": 1428,
+    "leaseId": "d20ae003-5fbe-453a-ba68-f2557c7584f0",
+    "generation": 35,
+    "branch": "work/house-0506-20261109",
+    "pr": 1431,
     "checkpoint": {
-      "evidence": "Independent full clone verified #1428 f1253054/tree 52102729, direct #1429 parent, its four IAS blobs and registered check. Exact local repository suite passed.",
-      "next": "All 13 other hosted workflows passed. Wait for Validate, then exact-head IAS merge-check and merged-ref cleanup."
+      "evidence": "PR #1431 merged at 2e16d4de0d1e1602965eadaba1de27fb18835d05. All 14 checks and all three live preflights on bb1c4b9f. Principal and privacy door source, regression check and corrected whole-person path verified on main; issue #941 handoff.",
+      "next": "IS-04 across all four WCs: current principal valve working box intersects the soil column. Locate real isolation, cistern, leakage, drying and replacement at each occurrence and reconcile with Services and the room routes."
     }
   },
   "recoverySource": {
-    "leaseId": "d7a72cde-5597-44c4-8cfa-e8b0671f814e",
-    "generation": 34,
-    "branch": "work/house-0406-20261109",
-    "pr": 1428,
+    "leaseId": "d20ae003-5fbe-453a-ba68-f2557c7584f0",
+    "generation": 35,
+    "branch": "work/house-0506-20261109",
+    "pr": 1431,
     "checkpoint": {
-      "evidence": "Independent full clone verified #1428 f1253054/tree 52102729, direct #1429 parent, its four IAS blobs and registered check. Exact local repository suite passed.",
-      "next": "All 13 other hosted workflows passed. Wait for Validate, then exact-head IAS merge-check and merged-ref cleanup."
+      "evidence": "PR #1431 merged at 2e16d4de0d1e1602965eadaba1de27fb18835d05. All 14 checks and all three live preflights on bb1c4b9f. Principal and privacy door source, regression check and corrected whole-person path verified on main; issue #941 handoff.",
+      "next": "IS-04 across all four WCs: current principal valve working box intersects the soil column. Locate real isolation, cistern, leakage, drying and replacement at each occurrence and reconcile with Services and the room routes."
     }
-  },
-  "pr": 1431,
-  "checkpoint": {
-    "evidence": "PR #1431 merged at 2e16d4de0d1e1602965eadaba1de27fb18835d05. All 14 checks and all three live preflights on bb1c4b9f. Principal and privacy door source, regression check and corrected whole-person path verified on main; issue #941 handoff.",
-    "next": "IS-04 across all four WCs: current principal valve working box intersects the soil column. Locate real isolation, cistern, leakage, drying and replacement at each occurrence and reconcile with Services and the room routes."
-  },
-  "releasedAt": "2026-11-09T06:04:29.401Z",
-  "releaseReason": "handoff"
+  }
 }
