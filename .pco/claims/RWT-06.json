@@ -9,9 +9,9 @@
     "label": "study-door-0203"
   },
   "claimedAt": "2026-11-09T02:04:35.386Z",
-  "heartbeatAt": "2026-11-09T02:04:35.386Z",
-  "expiresAt": "2026-11-09T02:49:35.386Z",
-  "branch": "work/study-door-0203",
+  "heartbeatAt": "2026-11-09T02:18:06.744Z",
+  "expiresAt": "2026-11-09T03:03:06.744Z",
+  "branch": "work/swarm-third-20261109",
   "predecessor": {
     "leaseId": "c4fad9be-30e6-47db-beac-1f728748b3fa",
     "generation": 60,
@@ -31,5 +31,10 @@
       "evidence": "MERGED #1409 at 0e0934f20103b3c7a58b2d5d699e7780f9609fe2. Both source parents and 14 green workflows verified. Fork crosses the failed cut, parks 90 mm outside basin. Removable OPEN-FLEX trial and independently reproduced bare stub envelope at #992 comment 6730457002.",
       "next": "Confirm actual clamp release and tool sweep, brazed spigot and frame, check wet fork with one leg blocked and actual upstream levels, then survey independent receiving ground. See #992, #1409 and finite exit map. RWT-06 remains started."
     }
+  },
+  "pr": 1414,
+  "checkpoint": {
+    "evidence": "Source #1417 at d58481a2 / tree 387d3934 is frozen for combined #1414. Independently verified 60 mm spigot, actual joint data, level inlet and 1:30 alternate grade. All 190 RWT cases passed.",
+    "next": "Verify that combined head includes d58481a2 and the seven source files. On final green CI run fresh preflight against this lease, merge, reconcile #992 and release."
   }
 }
