@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "HAD-COURT-BYPASS",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "a069c5c2-ac96-4bc0-855f-f122752090f8",
   "holder": {
     "kind": "chatgpt",
     "label": "House scope and exchange 1304"
   },
   "claimedAt": "2026-11-09T13:09:28.625Z",
-  "heartbeatAt": "2026-11-09T13:34:59.780Z",
-  "expiresAt": "2026-11-09T14:19:59.780Z",
+  "heartbeatAt": "2026-11-09T13:54:00.000Z",
+  "expiresAt": "2026-11-09T13:54:00.000Z",
   "branch": "work/swarm-house-successor-1304-20261109",
   "pr": 1457,
   "checkpoint": {
     "evidence": "Coordinated source f0008296 tree b38cac7b preserves both direct parents and actual 9edd51c8 main. All local hydraulic, material, repository, graph and documentation checks pass",
     "next": "Run two exact-head publication receipts after hosted 14 of 14. Merge then verify both closures and hand off"
-  }
+  },
+  "releasedAt": "2026-11-09T13:54:00.000Z",
+  "releaseReason": "completed"
 }
