@@ -1,6 +1,8 @@
 # RWT-06 — finite remaining exit map
 
-**Current continuation:** [One current closed copper control and corrected north canopy](rwt-06-closed-control-and-canopy.md) tests the ordinary alternative before more open-jet apparatus. The65critical-header slow-turn premise fails reduced-flow cases; all successors remain unadopted. Accepted788 failures remain preserved.
+**East terminal, 9 November.** The [south receiver comparison](rwt-06-side-receiver.md) keeps the receiver and its spill clear of the long draw. The low header fails its head budget. A higher native outlet and retracting catcher pass bounded geometric and ideal energy screens, but full blockage consumes its 23.1 litre quiet storage in at most 6.41 seconds. Even a separate full-depth west relief slot falls short of the assigned flow. Keep N-renewal full-duty survival open pending a changed escape path.
+
+**Earlier closed-control comparison:** [One current closed copper control and corrected north canopy](rwt-06-closed-control-and-canopy.md) tests the ordinary alternative before more open-jet apparatus. The65critical-header slow-turn premise fails reduced-flow cases; all successors remain unadopted. Accepted788 failures remain preserved.
 
 **6 November 2026; current continuation, not packet completion.** The owning [programme](rainwater-systems-programme.md#rwt-06--access-courtyardground-transition-and-site-handoff) requires access, courtyard/ground transition and a stable site handoff. The [selected event](rwt-06-selected-water-event.md) is one part of that scope. None of the historical access proposals below becomes current by association with the new HAD selection.
 
