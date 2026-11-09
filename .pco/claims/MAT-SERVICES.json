@@ -9,8 +9,8 @@
     "label": "Architecture swarm: current house frontier"
   },
   "claimedAt": "2026-11-09T11:39:36.739Z",
-  "heartbeatAt": "2026-11-09T12:14:53.581Z",
-  "expiresAt": "2026-11-09T12:59:53.581Z",
+  "heartbeatAt": "2026-11-09T12:39:30.228Z",
+  "expiresAt": "2026-11-09T13:24:30.228Z",
   "branch": "work/swarm-after-services-1138-20261109",
   "predecessor": {
     "leaseId": "f64a30d5-3ff3-415e-9faa-f944592a68ec",
