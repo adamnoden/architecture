@@ -9,8 +9,8 @@
     "label": "fabric-60837041"
   },
   "claimedAt": "2026-11-09T02:53:26.644Z",
-  "heartbeatAt": "2026-11-09T03:13:34.624Z",
-  "expiresAt": "2026-11-09T03:58:34.624Z",
+  "heartbeatAt": "2026-11-09T03:27:29.803Z",
+  "expiresAt": "2026-11-09T04:12:29.803Z",
   "branch": "work/swarm-fourth-20261109",
   "predecessor": {
     "leaseId": "da19f126-18f3-4dbb-b762-b868a709def9",
@@ -34,7 +34,7 @@
   },
   "pr": 1419,
   "checkpoint": {
-    "evidence": "Exact joint 70f854cb/tree 759f9e5b, direct source parent d5f9404b #1420, all six RWT blobs identical. Both generated cards reproduce; three targeted regressions pass at joint head; standalone full RWT 193 pass.",
-    "next": "All hosted workflows must pass on the exact joint head, then run fresh canonical gen62 merge-check. After expected-head merge verify source, update #992, release gen62."
+    "evidence": "Merged #1419 on main 5fdcf5c9; source #1420 d5f9404b is a direct joint parent, six RWT blobs byte-identical. The central eave two-drip exchange works on both live neighbours only. #992 records successor open-width and flooded-crossover tests, comment 6731423082.",
+    "next": "Use finite exit map; if addressing the high-eave centre fault, detail the two retained troughs and dryable 65x170 crossover or independent full-duty discharges, including actual tailwater/losses, cleanout and maintenance; wet corner renewal and protected routes separate."
   }
 }
