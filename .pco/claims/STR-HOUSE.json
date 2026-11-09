@@ -9,8 +9,8 @@
     "label": "swarm-integration-2343"
   },
   "claimedAt": "2026-11-09T02:53:05.298Z",
-  "heartbeatAt": "2026-11-09T02:54:27.390Z",
-  "expiresAt": "2026-11-09T03:39:27.390Z",
+  "heartbeatAt": "2026-11-09T03:13:52.439Z",
+  "expiresAt": "2026-11-09T03:58:52.439Z",
   "branch": "work/swarm-fourth-20261109",
   "predecessor": {
     "leaseId": "ac421633-ba0e-4c64-bbf9-3cb4bb999171",
@@ -34,7 +34,7 @@
   },
   "pr": 1419,
   "checkpoint": {
-    "evidence": "Recovered roof skyline snapshot d832fc77 onto merged #1414 as e5673da32c88f0079a1d53cb83980aa3213186d9, tree 2b284ff30fc64ec6892a422699755b93f3c2af26, under PR #1419. All four sightline thresholds checked independently, drawing rendered.",
-    "next": "Check published source, integrate eligible parallel sources on current main if agreed, validate exact SHA, preflight every lease and release transparently."
+    "evidence": "Final four-source #1419 70f854cb62697298d8151d9ecd5e10005f3057be on merged #1418 53d42459. Whole-house baseline and four governing interfaces, sightline correction and lower-purlin physical section; signed roof proofs and figures reproduce. 193 RWT tests passed on joint tree.",
+    "next": "Check exact-head hosted CI, four live preflights, merge and verify real main plus child cleanups. Whole-house baseline remains open for corner, crown, wet-ground and service-space decisions."
   }
 }
