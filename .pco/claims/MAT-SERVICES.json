@@ -9,8 +9,8 @@
     "label": "MAT W9 cold cooking and unchanged capture"
   },
   "claimedAt": "2026-11-09T00:08:05.751Z",
-  "heartbeatAt": "2026-11-09T00:29:57.626Z",
-  "expiresAt": "2026-11-09T01:14:57.626Z",
+  "heartbeatAt": "2026-11-09T00:45:21.426Z",
+  "expiresAt": "2026-11-09T01:30:21.426Z",
   "branch": "work/swarm-house-0006",
   "predecessor": {
     "leaseId": "c0a47f30-22d5-425b-bc4a-c8694dfcb7ad",
@@ -34,7 +34,7 @@
   },
   "pr": 1405,
   "checkpoint": {
-    "evidence": "PR #1405 rebased by clean ancestry merges to 120b06ff against 4fd4a8e1 after IAS #1402, publishing #1403 and DPL #1404. All three MAT source files reproduce previous tree and test hook remains. Conditional W9 port and cold tests passed.",
-    "next": "Monitor all checks on 120b06ff only; fresh current-main and generation-24 publication preflight, then release after verified merge. Horizontal AHU station and shared four-port root remain design inputs."
+    "evidence": "Thirteen exact-head workflows on 120b06ff passed, validation run 42540431000 still in repository health. Compared the integrated MAT files and test entry to reviewed source on current main 4fd4a8e1.",
+    "next": "Await remaining exact-head validation and rendered checks, run fresh generation-24 current-main merge preflight, reconcile and release after merge. No W9 adoption; common insulated root and accessible horizontal heater station remain open."
   }
 }
