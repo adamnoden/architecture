@@ -38,7 +38,7 @@ The100L primary buffer moves to650station10025/5525, with complete **round≤600
 
 Internal tube insulation is25radial atλ≤0.035, plus actual metal jacket, distinct from50exhaust-duct and external-primary duties. Complete84/84/74/74/67 bodies fit320×260 with declared margins. The indoor tree uses actual openings and lowered crossings; local panel underside2350 is an explicit750ceiling cost. Actual arch intrados, classified upper closure and matched seals must fit; no free floor/core bore or outdoor-loggia shortcut is assumed.
 
-300L at60°C has ideal17.44kWh10→60 reheat,4.36h at a required4kW net coil duty. This is not manufacturer recovery output. Separate demand-balanced returns address the15m20-ID main's4.71L failed3L-readiness control. Hygiene, scald mixing, backflow, expansion/relief, visible safe discharge and frost-safe condensate remain separate duties. Factory mineral-insulated vessel compatibility must be engineered; stripping a certified foam vessel is not authorised.
+300L at60°C has ideal17.44kWh10→60 reheat,4.36h at a required4kW net coil duty. This is not manufacturer recovery output. Separate demand-balanced returns address the15m20-ID main's4.71L failed3L-readiness control. Hygiene, scald mixing, backflow, expansion/relief, visible safe discharge and frost-safe condensate remain separate duties. Factory mineral-insulated vessel compatibility must be engineered; stripping a certified foam vessel is not authorised. The [identified 300 BES and cold-day comparison](domestic-hot-water-cylinder.md) establishes the actual 273.5 L potable capacity and polyurethane insulation, checks the separate expansion vessel, and prices the heating time shared with the rooms.
 
 ## Whole inventory and first release
 
