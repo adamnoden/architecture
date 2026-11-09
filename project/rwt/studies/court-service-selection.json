@@ -1,0 +1,454 @@
+{
+  "id": "RWT-06-PERMANENT-RECEIVER-SERVICE",
+  "house": "HAD-COURT-BYPASS-01",
+  "roofSource": "joined-service-routes / roof only",
+  "normalInlet": {
+    "split": 6850,
+    "floor": -85,
+    "yr": [
+      6630,
+      7345
+    ],
+    "length": 416,
+    "counted": 216,
+    "xRows": 18,
+    "yRows": 41,
+    "area": 0.0352121485586795,
+    "atDutyGrateLoss": 1.4829371874194035,
+    "adverse": 3.9506818126290475,
+    "next1": 3.8129789632020916,
+    "next2": 3.676300436491422
+  },
+  "windows": {
+    "shadows": [
+      62.5,
+      170
+    ],
+    "lowestSoffit": -145,
+    "highestSill": -295,
+    "cases": [
+      {
+        "q": 3.60375,
+        "lifts": [
+          {
+            "shadow": 62.5,
+            "restrictedCrestWidth": 148.125,
+            "quiet": -216.55633893081114,
+            "impact": -152.7402131822795,
+            "openSoffitClear": 71.55633893081114,
+            "impactToQuietReference": 117.74021318227949
+          },
+          {
+            "shadow": 170,
+            "restrictedCrestWidth": 67.5,
+            "quiet": -162.5330363920054,
+            "impact": -98.71691064347377,
+            "openSoffitClear": 17.533036392005414,
+            "impactToQuietReference": 63.71691064347377
+          }
+        ],
+        "holesToVerify": 102,
+        "holesCounted": 135,
+        "conservativeNOffImpactWithGaugedMate": -166.81280541134095,
+        "normalNHighIntakeDry": 183.41507170127517,
+        "shutNWithBothHardwareSeated": -165.8777832401768,
+        "halfMateDuringLong": -86.10762605451225,
+        "downstreamEHead": 278.9047660308799
+      },
+      {
+        "q": 4.43895,
+        "lifts": [
+          {
+            "shadow": 62.5,
+            "restrictedCrestWidth": 148.125,
+            "quiet": -204.86193037360283,
+            "impact": -108.03824023932157,
+            "openSoffitClear": 59.86193037360283,
+            "impactToQuietReference": 73.03824023932157
+          },
+          {
+            "shadow": 170,
+            "restrictedCrestWidth": 67.5,
+            "quiet": -142.78481490858462,
+            "impact": -45.96112477430336,
+            "openSoffitClear": -2.2151850914153783,
+            "impactToQuietReference": 10.961124774303357
+          }
+        ],
+        "holesToVerify": 102,
+        "holesCounted": 135,
+        "conservativeNOffImpactWithGaugedMate": -124.55300680923123,
+        "normalNHighIntakeDry": 105.01091880039934,
+        "shutNWithBothHardwareSeated": -123.13436385797743,
+        "halfMateDuringLong": -2.10475119012591,
+        "downstreamEHead": 211.04420406987154
+      }
+    ],
+    "allowLongWhileChangingScreen": false
+  },
+  "handling": {
+    "mast": [
+      5215,
+      6710
+    ],
+    "shoes": [
+      [
+        4410,
+        6130,
+        280,
+        140
+      ],
+      [
+        4410,
+        7070,
+        280,
+        140
+      ],
+      [
+        5120,
+        6130,
+        280,
+        140
+      ],
+      [
+        5120,
+        7070,
+        280,
+        140
+      ]
+    ],
+    "stageBox": [
+      4780,
+      5700,
+      450,
+      350
+    ],
+    "body": [
+      5800,
+      5910
+    ],
+    "guard": {
+      "xs": [
+        5400,
+        6300
+      ],
+      "ys": [
+        5520,
+        6365
+      ],
+      "topZ": 1100,
+      "portX": [
+        5800,
+        5898
+      ],
+      "portZ": [
+        250,
+        700
+      ],
+      "wandOD": 24
+    },
+    "guardFeet": [
+      [
+        5340,
+        5460,
+        120,
+        120
+      ],
+      [
+        5340,
+        6305,
+        120,
+        120
+      ],
+      [
+        6240,
+        5460,
+        120,
+        120
+      ],
+      [
+        6240,
+        6305,
+        120,
+        120
+      ]
+    ],
+    "guardGap": 35,
+    "bayAtFeet": 40,
+    "reachCrossings": [
+      [
+        5843.890675241158,
+        331.38263665594855
+      ],
+      [
+        5832.577565632459,
+        488.2577565632458
+      ],
+      [
+        5825.9505703422055,
+        580.1520912547528
+      ],
+      [
+        5864.069212410501,
+        488.2577565632458
+      ],
+      [
+        5851.036121673003,
+        580.1520912547528
+      ]
+    ],
+    "wandReserve": 13.950570342205538,
+    "path": [
+      [
+        5800,
+        4250
+      ],
+      [
+        5800,
+        5910
+      ]
+    ],
+    "thresholdX": [
+      5150,
+      6850
+    ],
+    "shoeGap": 30,
+    "entryGap": 306,
+    "escapeWidth": 156.50848842053307,
+    "lids": [
+      [
+        5875,
+        6687.5
+      ],
+      [
+        5875,
+        6957.5
+      ],
+      [
+        5875,
+        7225
+      ]
+    ],
+    "screens": [
+      [
+        5947.5,
+        6957.5
+      ],
+      [
+        5947.5,
+        7225
+      ]
+    ],
+    "maxWetRadius": 895.4223863629946,
+    "toDryRest": 861.0023228772383,
+    "grossRadius": 222.55617268456066,
+    "innerClear": 68.51647853733633,
+    "wetStrokeClear": 257.0477530703679,
+    "dryClear": 239.8982162957581,
+    "allClear": 68.51647853733633,
+    "innerWall": 342.4438273154393,
+    "surfaceEyeMaximumReach": 1683.0274061939695,
+    "bareEyeVerticalReach": 2182.01884730632,
+    "screenBottom": -925,
+    "carryBottom": 1250,
+    "screenLift": 2175,
+    "looseBlockAndLidLimitKg": 40,
+    "ballastKg": 250,
+    "ballastCentre": [
+      4760,
+      6670
+    ],
+    "maximumHorizontalLoadKN": 0.15,
+    "maximumMomentHeightM": 2.6,
+    "minimumRestoringKNm": {
+      "W": 0.12502499999999994,
+      "E": 0.36225000000000007,
+      "S": 0.5676749999999999,
+      "N": 0.6306749999999999
+    },
+    "onePadGrossKPa": 92.88520408163265,
+    "antiSlideFriction": 0.09504123994297572,
+    "minimumParkedGuardTop": 1100,
+    "installed": false
+  },
+  "roof": {
+    "pole": [
+      5795,
+      6610
+    ],
+    "return": 240,
+    "shortenedAdverse": 12.32880128074703,
+    "major": {
+      "equipmentFootprint": {
+        "x": [
+          -1900,
+          13900
+        ],
+        "y": [
+          -3995,
+          15195
+        ],
+        "sizeMm": [
+          15800,
+          19190
+        ],
+        "rectangleAreaM2": 303.202,
+        "setbacksFromWallLineMm": {
+          "west": 1900,
+          "east": 1900,
+          "front": 3995,
+          "garden": 3195
+        }
+      },
+      "separateRoofFlow": 16.62276,
+      "corners": [
+        3156.554565352082,
+        1897.4907424495705
+      ],
+      "cornerAfter250": 147.49074244957046,
+      "unsupportedReach": 840.5950273467004
+    },
+    "straight": [
+      {
+        "q": 3.60375,
+        "rimHead": 118.03570620569488,
+        "rimReserve": 26.96429379430512,
+        "lowerEscapeK4": 106.95395232805251,
+        "floodedBootControlReserve": 173.0460476719475
+      },
+      {
+        "q": 4.43895,
+        "rimHead": 135.63251076445334,
+        "rimReserve": 9.367489235546657,
+        "lowerEscapeK4": 162.27366073043572,
+        "floodedBootControlReserve": 117.72633926956428
+      }
+    ]
+  },
+  "ground": {
+    "basins": [
+      {
+        "bounds": [
+          4250,
+          13450,
+          1500,
+          1700
+        ],
+        "normal": -800,
+        "bed": -1000,
+        "spill": [
+          [
+            4250,
+            15150,
+            -700
+          ],
+          [
+            5750,
+            15150,
+            -700
+          ]
+        ],
+        "fault": -650,
+        "farEnd": -1000
+      },
+      {
+        "bounds": [
+          12500,
+          6100,
+          2000,
+          1600
+        ],
+        "normal": -1400,
+        "bed": -1650,
+        "spill": [
+          [
+            14500,
+            6100,
+            -1300
+          ],
+          [
+            14500,
+            7700,
+            -1300
+          ]
+        ],
+        "fault": -1250,
+        "farEnd": -1600
+      }
+    ],
+    "eastDry": {
+      "footEnd": 21900,
+      "stairY": [
+        8350,
+        9250
+      ],
+      "cargoLift": [
+        16200,
+        9450,
+        3000,
+        1500
+      ]
+    },
+    "eastWet": {
+      "normal": [
+        7275,
+        7675
+      ],
+      "bypass": [
+        6125,
+        7225
+      ]
+    },
+    "services": {
+      "receiver": [
+        5700,
+        6550,
+        350,
+        810
+      ],
+      "approach": [
+        5500,
+        6625,
+        200,
+        725
+      ],
+      "westGate": [
+        5430,
+        6557.5,
+        645,
+        40
+      ],
+      "northKeeper": [
+        6130,
+        7275
+      ]
+    },
+    "ordinary": {
+      "lowN": -1025,
+      "highE": -300,
+      "normalArea": 0.0352121485586795,
+      "maxBroad": 3.676300436491422,
+      "longWithNClosed": -123.13436385797743,
+      "crewAccess": [
+        6725,
+        6450,
+        600,
+        900
+      ]
+    },
+    "floorWaterReference": -35,
+    "protectedReference": 15
+  },
+  "duties": [
+    "Cleaning and rodding",
+    "Outlet and downpipe removal",
+    "Visible gullies and inspection",
+    "Court, doors and thresholds",
+    "Wall base and splash",
+    "Receiving site and dry escape"
+  ],
+  "successor": "RWT-07",
+  "qualifiedFirstHarm": null,
+  "installedPerformance": false,
+  "acceptedSite": false
+}
