@@ -1,0 +1,499 @@
+{
+  "candidate": "SAP-C1",
+  "acceptedHouse": "RH-LAYOUT-REVISION-02",
+  "inputMain": "d59be85e5aa06bfd3ec8abd26439ec1280025acf",
+  "sourceGitBlobs": {
+    "project/had/studies/water-replan.json": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+    "project/str/studies/house-corner-rewind.json": "6471d89c213724ec02a26d797c85185beadb25b5",
+    "project/mat/studies/raised-roof-edge.json": "8406cb6c76245ea63c5935f8a3915a4a55f03942",
+    "project/oas/studies/north-export-occurrence.json": "5a0860a715688f8ef4eda3184fd8fe8bc26774b6",
+    "project/ias/studies/bedroom4-wet-section.json": "2b9ca6642cf7baf330bbe36039241609355e892c",
+    "project/ias/studies/wc-service-stations.py": "00d4023a9422fa93fccd8f8140034f8a677ec537",
+    "project/str/studies/current-house-guard-bracket.json": "1a771395a3d326e93a94f01e1f020499ebbee981",
+    "project/str/studies/current-house-window-renewal.json": "9e190c8683dbd4ff2f341589fd1676abd31f090b",
+    "project/str/studies/reconciled-corner-portals.json": "0fe6b9c2007cf5ea39b584cc2a2ac0568a0116be",
+    "project/str/studies/current-house-grid.json": "56aca6f99f5fa60b21d58c89115ac1ee824e3828",
+    "project/str/studies/p32-court-hold.json": "e4895257d44765754dc449a8b0c4e6c59ccd80dd",
+    "project/mat/studies/study-coupled-window.json": "00184ad7c13d39b38a1ac95a82fa462a8d13eea7",
+    "project/str/studies/current-house-roof-route.json": "a49844fc7c472b980ba0cc2bf0f5264e4a4f8947",
+    "project/str/studies/current-house-floor-closure.json": "402cec2347ab9bf4efd624e269918096a1e70f97"
+  },
+  "architecturalBranch": "HAD-WATER-REPLAN, opening and pitched-roof rewind as listed",
+  "adopted": false,
+  "openingEdits": [
+    {
+      "level": "GROUND",
+      "side": "outer-south",
+      "id": "south-window-0",
+      "old": 1800,
+      "new": 2100,
+      "sill": 750,
+      "head": 2850
+    },
+    {
+      "level": "GROUND",
+      "side": "outer-south",
+      "id": "south-window-4",
+      "old": 10200,
+      "new": 9900,
+      "sill": 750,
+      "head": 2850
+    },
+    {
+      "level": "GROUND",
+      "side": "outer-east",
+      "id": "east-window-0",
+      "old": 1800,
+      "new": 2100,
+      "sill": 850,
+      "head": 2850
+    },
+    {
+      "level": "GROUND",
+      "side": "outer-east",
+      "id": "east-window-3",
+      "old": 10200,
+      "new": 9900,
+      "sill": 850,
+      "head": 2850
+    },
+    {
+      "level": "GROUND",
+      "side": "outer-north",
+      "id": "north-window-0",
+      "old": 1800,
+      "new": 2100,
+      "sill": 750,
+      "head": 2850
+    },
+    {
+      "level": "GROUND",
+      "side": "outer-north",
+      "id": "north-window-4",
+      "old": 10200,
+      "new": 9900,
+      "sill": 1050,
+      "head": 2850
+    },
+    {
+      "level": "GROUND",
+      "side": "outer-west",
+      "id": "west-window-0",
+      "old": 1800,
+      "new": 2100,
+      "sill": 850,
+      "head": 2850
+    },
+    {
+      "level": "GROUND",
+      "side": "outer-west",
+      "id": "west-window-3",
+      "old": 10200,
+      "new": 9900,
+      "sill": 850,
+      "head": 2850
+    },
+    {
+      "level": "FIRST",
+      "side": "outer-south",
+      "id": "south-window-0",
+      "old": 1800,
+      "new": 2100,
+      "sill": 4200,
+      "head": 6300
+    },
+    {
+      "level": "FIRST",
+      "side": "outer-south",
+      "id": "south-window-4",
+      "old": 10200,
+      "new": 9900,
+      "sill": 4200,
+      "head": 6300
+    },
+    {
+      "level": "FIRST",
+      "side": "outer-east",
+      "id": "east-window-0",
+      "old": 1800,
+      "new": 2100,
+      "sill": 4200,
+      "head": 6300
+    },
+    {
+      "level": "FIRST",
+      "side": "outer-east",
+      "id": "east-window-3",
+      "old": 10200,
+      "new": 9900,
+      "sill": 4200,
+      "head": 6300
+    },
+    {
+      "level": "FIRST",
+      "side": "outer-north",
+      "id": "north-window-0",
+      "old": 1800,
+      "new": 2100,
+      "sill": 4300,
+      "head": 6300
+    },
+    {
+      "level": "FIRST",
+      "side": "outer-north",
+      "id": "north-window-4",
+      "old": 10200,
+      "new": 9900,
+      "sill": 4300,
+      "head": 6300
+    },
+    {
+      "level": "FIRST",
+      "side": "outer-west",
+      "id": "west-window-0",
+      "old": 1800,
+      "new": 2100,
+      "sill": 4200,
+      "head": 6300
+    },
+    {
+      "level": "FIRST",
+      "side": "outer-west",
+      "id": "west-window-3",
+      "old": 10200,
+      "new": 9900,
+      "sill": 4200,
+      "head": 6300
+    }
+  ],
+  "principalBed": {
+    "ordinaryBed": [
+      9315,
+      9150,
+      1600,
+      2090
+    ],
+    "servicePark": [
+      8540,
+      9150,
+      1600,
+      2090
+    ],
+    "paddedStage": [
+      10175,
+      8440,
+      450,
+      1100
+    ],
+    "eastStripMm": 655.5,
+    "routes": [
+      [
+        [
+          8700,
+          8800
+        ],
+        [
+          11242.75,
+          8800
+        ],
+        [
+          11242.75,
+          10320
+        ]
+      ],
+      [
+        [
+          8700,
+          8800
+        ],
+        [
+          8990,
+          8800
+        ],
+        [
+          8990,
+          11245.5
+        ]
+      ],
+      [
+        [
+          8990,
+          11245.5
+        ],
+        [
+          8700,
+          11250
+        ]
+      ],
+      [
+        [
+          8700,
+          8800
+        ],
+        [
+          10400,
+          8825
+        ]
+      ]
+    ],
+    "routeToFurnitureMm": 25.0,
+    "serviceWardrobeClearMm": 130.5,
+    "wcPan": {
+      "paddedStage": [
+        10335,
+        8515,
+        405,
+        700
+      ],
+      "ordinaryYOverlapMm": 65,
+      "parkedToWholeSweepMm": 195
+    }
+  },
+  "kitchen": {
+    "newFridge": [
+      10920.5,
+      8725,
+      650,
+      650
+    ],
+    "hinge": [
+      10920.5,
+      9375
+    ],
+    "fridgeToWindowMm": 25,
+    "bodySweepAABB": [
+      10194.442492144546,
+      8825,
+      10970.5,
+      10020
+    ],
+    "bodyToFixedMm": 44.628194684254034,
+    "armToFixedMm": 54.46987868525971
+  },
+  "jambAndTies": {
+    "widthNormalAlong": [
+      180,
+      205
+    ],
+    "axes": [
+      1497.5,
+      2702.5
+    ],
+    "bearingZ": [
+      -180.0,
+      3370.0,
+      6600.0
+    ],
+    "ordinaryWallCoreQ": [
+      262.5,
+      402.5
+    ],
+    "portalCoreQ": [
+      222.5,
+      402.5
+    ],
+    "glassAndVentilatedCavity": [
+      70,
+      50
+    ],
+    "continuousJambH12X": [
+      -32.0,
+      32.0
+    ],
+    "continuousJambH12Q": [
+      260.5,
+      364.5
+    ],
+    "archH16Q": [
+      293.5,
+      331.5
+    ],
+    "tangentBendCentrelineRadius": 80,
+    "archReturningLegs": [
+      {
+        "springX": 1556.764705882353,
+        "verticalX": 1547.3529411764705,
+        "verticalTopZLocal": 2535.4117647058824,
+        "straightTailBottomZLocal": 1935.4117647058824
+      },
+      {
+        "springX": 1453.5294117647059,
+        "verticalX": 1444.1176470588234,
+        "verticalTopZLocal": 2590.470588235294,
+        "straightTailBottomZLocal": 1990.4705882352941
+      }
+    ],
+    "archToJambLongitudinalClearLowerMm": 19.0,
+    "nominalSocketODToJambBarClear": 17.5,
+    "nominalSleeveToJambBarClear": 13.0,
+    "formedHoopToSleeveOrSocketAfterTwo5": 2,
+    "wetTeeBackingPlateEdgeClear": 63.0,
+    "westBox": [
+      429.5,
+      9937.5,
+      150,
+      862.5
+    ],
+    "westBoxHeightLimit": 170,
+    "panelBottomToBoxTop": 560,
+    "lowSocketCentreToBoxTop": 780,
+    "symmetricTieQualificationKN": [
+      8,
+      3
+    ],
+    "minimumTieStiffnessNPerMm": 2000,
+    "elasticTieSlipAtPeak": [
+      3.83795,
+      1.3758
+    ],
+    "jambRoughClosureOrOpeningMM": 1.2914,
+    "facePlaneDepartureMM": 1.427
+  },
+  "roof": {
+    "structurallyPricedFirstPrototype": "Severe Capital slate over combined Sarket",
+    "slateEnvelopeAndGravityReceipt": {
+      "source": {
+        "PR": 1438,
+        "commit": "53c6ad32f3acddc43461b2b4309876ebef9038a0",
+        "resultBlob": "28afcd1cd63aa4d17cd8dfeb433dba1885b92478",
+        "path": "project/mat/studies/ring-roof-family.json"
+      },
+      "fieldEaveRidgeAndCapZ": [
+        7418.423322641297,
+        8409.327095641296,
+        8645.327095641296
+      ],
+      "unselectedPrecursorCapZ": 8464.73365326618,
+      "slateMassKg": 5215.049429076929,
+      "severeCapitalAverageResidualKgPerM2": 9.500704941628587,
+      "fullLeadMassKg": 1705.7468467445087,
+      "leadKgPerM": {
+        "ridge": 40.49900920255172,
+        "valley": 14.30192869316908
+      },
+      "sourceWeightsKg": {
+        "cheeks": 1039.9396852791033,
+        "roll": 215.52960000000002,
+        "outerHips": 157.6540346603396,
+        "valleys": 204.45232680506578,
+        "blanks": 88.17120000000001
+      },
+      "leadGkKN": 16.733376566563816,
+      "slateExtraCourtPlanM2": 0.9075,
+      "extraStrippedUpliftKN": -2.041875000000048,
+      "roofSupportOriginOrder": [
+        "lead Gk kN",
+        "additional uniform suction kN"
+      ],
+      "roofSupportOrigins": {
+        "332.5,332.5": [
+          1.18377,
+          -0.06272
+        ],
+        "332.5,3800": [
+          0.32693,
+          -0.01117
+        ],
+        "332.5,6000": [
+          0.49323,
+          0.00478
+        ],
+        "332.5,8200": [
+          0.32673,
+          -0.01115
+        ],
+        "332.5,11667.5": [
+          1.18392,
+          -0.06279
+        ],
+        "3917.5,3917.5": [
+          1.11136,
+          -0.0146
+        ],
+        "3917.5,6000": [
+          0.76779,
+          -0.41728
+        ],
+        "3917.5,8082.5": [
+          1.09619,
+          -0.00637
+        ],
+        "4700,332.5": [
+          0.54822,
+          -0.00723
+        ],
+        "4700,11667.5": [
+          0.54783,
+          -0.00694
+        ],
+        "5925,8082.5": [
+          0.76733,
+          -0.41822
+        ],
+        "6000,3917.5": [
+          0.7665,
+          -0.41766
+        ],
+        "7300,332.5": [
+          0.54817,
+          -0.0071
+        ],
+        "7300,11667.5": [
+          0.54857,
+          -0.00739
+        ],
+        "8082.5,3917.5": [
+          1.10932,
+          -0.01362
+        ],
+        "8082.5,6000": [
+          0.76911,
+          -0.41802
+        ],
+        "8082.5,8082.5": [
+          1.12367,
+          -0.02127
+        ],
+        "11667.5,332.5": [
+          1.18385,
+          -0.06276
+        ],
+        "11667.5,3800": [
+          0.32692,
+          -0.01123
+        ],
+        "11667.5,6000": [
+          0.49315,
+          0.00482
+        ],
+        "11667.5,8200": [
+          0.32712,
+          -0.01127
+        ],
+        "11667.5,11667.5": [
+          1.18369,
+          -0.06268
+        ]
+      }
+    },
+    "slateCourtOverhangMM": 275,
+    "slateDryIntakeMM": 160,
+    "slateTransferBandMM": 1250,
+    "leadRunoffAccepted": false,
+    "courtIntakeOrP32SiteAdopted": false,
+    "earlierMetalControlFieldZ": [
+      7308.554466360607,
+      8299.458239360607
+    ],
+    "earlierMetalCoverApexAndEdge": [
+      8464.73365326618,
+      8348.15673872743
+    ],
+    "hipOutletAndValleyInletGrossPerFlankMM": 40,
+    "netPerFlankAfterMeshAndPostsMM2": 48485.35862707672,
+    "minimumPerFlankMM2": 30525,
+    "diagonalRunMm": 3030.334914192295,
+    "hoodLipAboveField": 90.27541390557235
+  },
+  "houseExit": "Conditional candidate for joint design; no statutory, house-source, foundation-capacity or procurement authority."
+}

@@ -2,6 +2,8 @@
 
 **6 November 2026 · bounded development decision; no selected installation.** This supersedes the preferred next-step direction in the [modular furnishing handoff](ias-03-modular-furnishing-handoff.md) and the provisional-baseline wording in the [access/cold-boundary comparison](ias-03-access-and-cold-joint-comparison-wip.md). IAS-03 remains planned. The selected dry cases remain bounded by their existing source; this decision does not close the wet-family or whole-house occurrence obligations.
 
+**9 November, measured tray-first successor.** The [rear tray-first exchange](ias-03-rear-tray-first.md) uses the exact 5940 STEP seat and the Geberit single-socket STEP. The old full-stop assumption fails by at least 1.19 mm. A controlled 40 mm trial, independent body capture, upper first rest and full reinstatement define the successor without lower-board parking.
+
 ## Decision and reason
 
 **Reject the particular 48-package bespoke furnishing contract as the preferred way to enable rare wet repair. Develop the existing BetteUltra 5940 / B50-3064 / BetteDown B594 conventional control before extending that workaround or the all-welded pan.** Preserve the 1000 mm shower function and the two ordinary 1900 mm seat footprints as comparison controls. Neither a bought sofa's inseparability nor its exact construction is an owner requirement. This decision does not reject other modular furnishings, the Pecolift family or the correctly configured BoSS tower.

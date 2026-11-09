@@ -229,6 +229,16 @@ export const architectureNodes = defineNodes([
     closeoutEvidence: ['project/had/water-replan-result.md', 'project/had/studies/water-replan.json', 'project/had/studies/north-protective-return.svg', 'project/had/studies/maintenance-rain.svg']
   },
 
+  {
+    id: 'HAD-COURT-INTAKE',
+    owners: ['HAD', 'RWT', 'STR', 'OAS'],
+    title: 'Join the east court intake, guarded access and live roof-corner renewal',
+    dependencies: ['HAD-WATER-REPLAN', 'STR-HOUSE'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: []
+  },
+
   // Final audit found the bounded OAS topology did not supply its dimensioned studies.
   {
     id: 'OAS-DETAIL',

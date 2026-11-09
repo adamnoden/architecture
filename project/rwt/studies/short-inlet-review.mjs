@@ -26,7 +26,7 @@ function reduced(intervals,block){
  }
  return {intervals:out,f:1};
 }
-function capacity(original,stage,lipK,block,lengthMm,N=64){
+export function capacity(original,stage,lipK,block,lengthMm,N=64){
  const {intervals,f}=reduced(original,block);
  return intervals.reduce((total,[a,b])=>{
   const W=(b-a)/1000,low=floor(b),high=floor(a);

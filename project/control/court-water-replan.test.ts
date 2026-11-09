@@ -55,3 +55,17 @@ test('court architecture can be developed before downstream structural and hydra
     assert(!upstream.has(later), `Architectural replan must not wait for ${later}`)
   }
 })
+
+test('the two-exit intake and access replan can be claimed before the remaining water proofs', () => {
+  const pending = new Set(['HAD-COURT-INTAKE', 'RWT-06', 'RWT-07', 'STR-RECONCILE'])
+  const nodes: ControlNode[] = controlNodes.map(n => ({ ...n, lifecycle: pending.has(n.id) ? 'planned' : 'complete' }))
+  const get = (id: string) => nodes.find(n => n.id === id)!
+  const available = () => buildDispatchSnapshot(nodes, [], new Date('2026-11-09T07:00:00Z')).candidates.map(c => c.node.id)
+  assert.deepEqual(get('HAD-COURT-INTAKE').dependencies, ['HAD-WATER-REPLAN', 'STR-HOUSE'])
+  assert(available().includes('HAD-COURT-INTAKE'))
+  assert.deepEqual(directBlockers(get('RWT-06'), nodes), ['HAD-COURT-INTAKE'])
+  assert(!available().includes('RWT-06'))
+  nodes[nodes.indexOf(get('HAD-COURT-INTAKE'))] = { ...get('HAD-COURT-INTAKE'), lifecycle: 'complete' }
+  assert(available().includes('RWT-06'))
+  assert.equal(derivedState(get('RWT-07'), nodes), 'blocked')
+})
