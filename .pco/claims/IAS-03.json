@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T05:06:33.830Z",
-  "heartbeatAt": "2026-11-09T05:40:27.760Z",
-  "expiresAt": "2026-11-09T06:25:27.760Z",
+  "heartbeatAt": "2026-11-09T06:03:54.327Z",
+  "expiresAt": "2026-11-09T06:48:54.327Z",
   "branch": "work/house-0506-20261109",
   "predecessor": {
     "leaseId": "d7a72cde-5597-44c4-8cfa-e8b0671f814e",
@@ -34,7 +34,7 @@
   },
   "pr": 1431,
   "checkpoint": {
-    "evidence": "Final durable shared head bb1c4b9f44473f966aa1e7aa2bb75f91e71b7a77 on 2a50d0fc. Incorporates the 50 mm closing-corner fittings, 4.7 mm old overlap and corrected 70 degree route. Original STR/RWT trees verified.",
-    "next": "Require all 14 exact workflows, each of three live publication fences, expected-head integration, issue evidence and release."
+    "evidence": "PR #1431 merged at 2e16d4de0d1e1602965eadaba1de27fb18835d05. All 14 checks and all three live preflights on bb1c4b9f. Principal and privacy door source, regression check and corrected whole-person path verified on main; issue #941 handoff.",
+    "next": "IS-04 across all four WCs: current principal valve working box intersects the soil column. Locate real isolation, cistern, leakage, drying and replacement at each occurrence and reconcile with Services and the room routes."
   }
 }
