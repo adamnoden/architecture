@@ -30,6 +30,9 @@ def figure(data):
     box(x0,py(11555),2400*scale,275*scale,'#c8d2cc')
     box(x0,py(8470),2400*scale,275*scale,'#c8d2cc')
     box(x0,y0,2400*scale,2810*scale,'#e1eeea','#52685e')
+    trial=data['service']['sideRelease']['stations'][0]
+    left,lo,bw,bh=trial['panel']
+    box(px(left),py(lo+bh),bw*scale,bh*scale,'#f4d9b8')
     for ix in range(5):ln(px(4800+ix*600),y0,px(4800+ix*600),py(8470),'#6e8881',1.1)
     for yy in data['grid']['railY']:ln(px(4800),py(yy),px(7200),py(yy),'#314d50',2)
     for xx,yy in data['grid']['hangersXY']:dot(px(xx),py(yy),3.5,'#9b552f')
@@ -37,9 +40,13 @@ def figure(data):
     # Extent of the unrelated lower water cover. Dashed outline only.
     for xx in (4825,5225):ln(px(xx),py(11555),px(xx),py(8195),'#3289a1',2,'5 4')
     for xx in data['service']['footLinesX']:
-        for yy in (9650,10450):
+        for yy in (trial["stageY"]-400,trial["stageY"]+400):
             box(px(xx-100),py(yy+100),200*scale,200*scale,'none','#af6259',2)
     box(398,544,8,8,'#fffefa','#9b552f',1.5);t(417,552,'independent catch','dim')
+    wx,wy=trial["worker"]
+    out.append(f'<circle cx="{px(wx):.2f}" cy="{py(wy):.2f}" r="{300*scale:.2f}" fill="#d7ebe3" fill-opacity=".65" stroke="#23675f" stroke-width="1.5"/>')
+    box(398,570,11,8,'#f4d9b8','#805e42');t(417,579,'first moving panel','dim')
+    dot(403,602,5,'#4b9486');t(417,607,'worker above stage','dim')
     t(84,224,'Garden portal','dim');t(84,636,'Court portal','dim')
     ln(369,260,389,260);ln(369,592,389,592);ln(382,260,382,592)
     t(394,405,'2810 flat','dim');t(394,427,'Y8470–11280','dim')
@@ -80,7 +87,7 @@ def figure(data):
     t(61,791,'03  |  First supported release','h')
     for n,(left,title,lines) in enumerate([
         (60,'Hold the finish',['Keep both water routes available. Place the stage','on four pads east of the channel. Couple the','panel frame to a supported tray before release.']),
-        (449,'Lower one cassette',['Undo four captive frame screws from below.','Lower 80 mm on the guided tray. The glass bears','on other shelves. Keep people out from below.']),
+        (449,'Lower one cassette',['Stand beside the frame, 25 clear of its fall zone.','Use the guided side drives. Lower 80 mm on the','captured tray. The glass bears on other shelves.']),
         (837,'Exchange and restore',['Remove the catch tray and independent ledge','under a supported glass bay. Refit both courses,','catches and finish. Check the drained joint.'])]):
         t(left,838,f'{n+1}   {title}','h')
         for i,s in enumerate(lines):t(left,870+23*i,s,'dim')

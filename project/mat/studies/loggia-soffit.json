@@ -450,7 +450,465 @@
       400
     ],
     "largestPanelHalfDiagonal": 375.0,
-    "cornerToolReach": 571.0954386089946
+    "sideRelease": {
+      "stations": [
+        {
+          "panel": [
+            4800,
+            8470,
+            600,
+            450
+          ],
+          "worker": [
+            5175,
+            9245
+          ],
+          "controlY": 9045,
+          "stageY": 8970,
+          "nearFootMarginY": 125,
+          "maxControlReach": 557.79
+        },
+        {
+          "panel": [
+            5400,
+            8470,
+            600,
+            450
+          ],
+          "worker": [
+            5700,
+            9245
+          ],
+          "controlY": 9045,
+          "stageY": 8970,
+          "nearFootMarginY": 125,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6000,
+            8470,
+            600,
+            450
+          ],
+          "worker": [
+            6300,
+            9245
+          ],
+          "controlY": 9045,
+          "stageY": 8970,
+          "nearFootMarginY": 125,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6600,
+            8470,
+            600,
+            450
+          ],
+          "worker": [
+            6825,
+            9245
+          ],
+          "controlY": 9045,
+          "stageY": 8970,
+          "nearFootMarginY": 125,
+          "maxControlReach": 557.79
+        },
+        {
+          "panel": [
+            4800,
+            8920,
+            600,
+            450
+          ],
+          "worker": [
+            5175,
+            9695
+          ],
+          "controlY": 9495,
+          "stageY": 9370,
+          "nearFootMarginY": 75,
+          "maxControlReach": 557.79
+        },
+        {
+          "panel": [
+            5400,
+            8920,
+            600,
+            450
+          ],
+          "worker": [
+            5700,
+            9695
+          ],
+          "controlY": 9495,
+          "stageY": 9370,
+          "nearFootMarginY": 75,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6000,
+            8920,
+            600,
+            450
+          ],
+          "worker": [
+            6300,
+            9695
+          ],
+          "controlY": 9495,
+          "stageY": 9370,
+          "nearFootMarginY": 75,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6600,
+            8920,
+            600,
+            450
+          ],
+          "worker": [
+            6825,
+            9695
+          ],
+          "controlY": 9495,
+          "stageY": 9370,
+          "nearFootMarginY": 75,
+          "maxControlReach": 557.79
+        },
+        {
+          "panel": [
+            4800,
+            9370,
+            600,
+            300
+          ],
+          "worker": [
+            5175,
+            9995
+          ],
+          "controlY": 9795,
+          "stageY": 9670,
+          "nearFootMarginY": 75,
+          "maxControlReach": 557.79
+        },
+        {
+          "panel": [
+            5400,
+            9370,
+            600,
+            300
+          ],
+          "worker": [
+            5700,
+            9995
+          ],
+          "controlY": 9795,
+          "stageY": 9670,
+          "nearFootMarginY": 75,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6000,
+            9370,
+            600,
+            300
+          ],
+          "worker": [
+            6300,
+            9995
+          ],
+          "controlY": 9795,
+          "stageY": 9670,
+          "nearFootMarginY": 75,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6600,
+            9370,
+            600,
+            300
+          ],
+          "worker": [
+            6825,
+            9995
+          ],
+          "controlY": 9795,
+          "stageY": 9670,
+          "nearFootMarginY": 75,
+          "maxControlReach": 557.79
+        },
+        {
+          "panel": [
+            4800,
+            9670,
+            600,
+            450
+          ],
+          "worker": [
+            5175,
+            10445
+          ],
+          "controlY": 10245,
+          "stageY": 10120,
+          "nearFootMarginY": 75,
+          "maxControlReach": 557.79
+        },
+        {
+          "panel": [
+            5400,
+            9670,
+            600,
+            450
+          ],
+          "worker": [
+            5700,
+            10445
+          ],
+          "controlY": 10245,
+          "stageY": 10120,
+          "nearFootMarginY": 75,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6000,
+            9670,
+            600,
+            450
+          ],
+          "worker": [
+            6300,
+            10445
+          ],
+          "controlY": 10245,
+          "stageY": 10120,
+          "nearFootMarginY": 75,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6600,
+            9670,
+            600,
+            450
+          ],
+          "worker": [
+            6825,
+            10445
+          ],
+          "controlY": 10245,
+          "stageY": 10120,
+          "nearFootMarginY": 75,
+          "maxControlReach": 557.79
+        },
+        {
+          "panel": [
+            4800,
+            10120,
+            600,
+            300
+          ],
+          "worker": [
+            5175,
+            10745
+          ],
+          "controlY": 10545,
+          "stageY": 10420,
+          "nearFootMarginY": 75,
+          "maxControlReach": 557.79
+        },
+        {
+          "panel": [
+            5400,
+            10120,
+            600,
+            300
+          ],
+          "worker": [
+            5700,
+            10745
+          ],
+          "controlY": 10545,
+          "stageY": 10420,
+          "nearFootMarginY": 75,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6000,
+            10120,
+            600,
+            300
+          ],
+          "worker": [
+            6300,
+            10745
+          ],
+          "controlY": 10545,
+          "stageY": 10420,
+          "nearFootMarginY": 75,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6600,
+            10120,
+            600,
+            300
+          ],
+          "worker": [
+            6825,
+            10745
+          ],
+          "controlY": 10545,
+          "stageY": 10420,
+          "nearFootMarginY": 75,
+          "maxControlReach": 557.79
+        },
+        {
+          "panel": [
+            4800,
+            10420,
+            600,
+            450
+          ],
+          "worker": [
+            5175,
+            10095
+          ],
+          "controlY": 10295,
+          "stageY": 10420,
+          "nearFootMarginY": 75,
+          "maxControlReach": 557.79
+        },
+        {
+          "panel": [
+            5400,
+            10420,
+            600,
+            450
+          ],
+          "worker": [
+            5700,
+            10095
+          ],
+          "controlY": 10295,
+          "stageY": 10420,
+          "nearFootMarginY": 75,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6000,
+            10420,
+            600,
+            450
+          ],
+          "worker": [
+            6300,
+            10095
+          ],
+          "controlY": 10295,
+          "stageY": 10420,
+          "nearFootMarginY": 75,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6600,
+            10420,
+            600,
+            450
+          ],
+          "worker": [
+            6825,
+            10095
+          ],
+          "controlY": 10295,
+          "stageY": 10420,
+          "nearFootMarginY": 75,
+          "maxControlReach": 557.79
+        },
+        {
+          "panel": [
+            4800,
+            10870,
+            600,
+            410
+          ],
+          "worker": [
+            5175,
+            10545
+          ],
+          "controlY": 10745,
+          "stageY": 10780,
+          "nearFootMarginY": 165,
+          "maxControlReach": 557.79
+        },
+        {
+          "panel": [
+            5400,
+            10870,
+            600,
+            410
+          ],
+          "worker": [
+            5700,
+            10545
+          ],
+          "controlY": 10745,
+          "stageY": 10780,
+          "nearFootMarginY": 165,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6000,
+            10870,
+            600,
+            410
+          ],
+          "worker": [
+            6300,
+            10545
+          ],
+          "controlY": 10745,
+          "stageY": 10780,
+          "nearFootMarginY": 165,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6600,
+            10870,
+            600,
+            410
+          ],
+          "worker": [
+            6825,
+            10545
+          ],
+          "controlY": 10745,
+          "stageY": 10780,
+          "nearFootMarginY": 165,
+          "maxControlReach": 557.79
+        }
+      ],
+      "maxReach": 557.79,
+      "bodyToPanelPlan": 25,
+      "maxLongDriver": 545,
+      "shortDriver": 155,
+      "clearBetween20Heads": 15,
+      "stageHalfLength": 650,
+      "floorToDeckAdjustmentMM": 8
+    }
   },
   "northShoulder": {
     "outerRingFace": 11775,

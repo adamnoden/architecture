@@ -13,6 +13,7 @@
 <rect x="84.00" y="227.55" width="283.20" height="32.45" fill="#c8d2cc" stroke="none" stroke-width="1"/>
 <rect x="84.00" y="591.58" width="283.20" height="32.45" fill="#c8d2cc" stroke="none" stroke-width="1"/>
 <rect x="84.00" y="260.00" width="283.20" height="331.58" fill="#e1eeea" stroke="#52685e" stroke-width="1"/>
+<rect x="84.00" y="538.48" width="70.80" height="53.10" fill="#f4d9b8" stroke="none" stroke-width="1"/>
 <path d="M84.00 260.00L84.00 591.58" stroke="#6e8881" stroke-width="1.1" fill="none" stroke-dasharray=""/>
 <path d="M154.80 260.00L154.80 591.58" stroke="#6e8881" stroke-width="1.1" fill="none" stroke-dasharray=""/>
 <path d="M225.60 260.00L225.60 591.58" stroke="#6e8881" stroke-width="1.1" fill="none" stroke-dasharray=""/>
@@ -76,12 +77,17 @@
 <rect x="293.90" y="257.50" width="5.00" height="5.00" fill="#fffefa" stroke="#9b552f" stroke-width="1.5"/>
 <path d="M86.95 227.55L86.95 624.03" stroke="#3289a1" stroke-width="2" fill="none" stroke-dasharray="5 4"/>
 <path d="M134.15 227.55L134.15 624.03" stroke="#3289a1" stroke-width="2" fill="none" stroke-dasharray="5 4"/>
-<rect x="141.82" y="440.54" width="23.60" height="23.60" fill="none" stroke="#af6259" stroke-width="2"/>
-<rect x="141.82" y="346.14" width="23.60" height="23.60" fill="none" stroke="#af6259" stroke-width="2"/>
-<rect x="308.20" y="440.54" width="23.60" height="23.60" fill="none" stroke="#af6259" stroke-width="2"/>
-<rect x="308.20" y="346.14" width="23.60" height="23.60" fill="none" stroke="#af6259" stroke-width="2"/>
+<rect x="141.82" y="567.98" width="23.60" height="23.60" fill="none" stroke="#af6259" stroke-width="2"/>
+<rect x="141.82" y="473.58" width="23.60" height="23.60" fill="none" stroke="#af6259" stroke-width="2"/>
+<rect x="308.20" y="567.98" width="23.60" height="23.60" fill="none" stroke="#af6259" stroke-width="2"/>
+<rect x="308.20" y="473.58" width="23.60" height="23.60" fill="none" stroke="#af6259" stroke-width="2"/>
 <rect x="398.00" y="544.00" width="8.00" height="8.00" fill="#fffefa" stroke="#9b552f" stroke-width="1.5"/>
 <text x="417" y="552" class="dim" text-anchor="start">independent catch</text>
+<circle cx="128.25" cy="500.13" r="35.40" fill="#d7ebe3" fill-opacity=".65" stroke="#23675f" stroke-width="1.5"/>
+<rect x="398.00" y="570.00" width="11.00" height="8.00" fill="#f4d9b8" stroke="#805e42" stroke-width="1"/>
+<text x="417" y="579" class="dim" text-anchor="start">first moving panel</text>
+<circle cx="403.00" cy="602.00" r="5" fill="#4b9486"/>
+<text x="417" y="607" class="dim" text-anchor="start">worker above stage</text>
 <text x="84" y="224" class="dim" text-anchor="start">Garden portal</text>
 <text x="84" y="636" class="dim" text-anchor="start">Court portal</text>
 <path d="M369.00 260.00L389.00 260.00" stroke="#42575e" stroke-width="1" fill="none" stroke-dasharray=""/>
@@ -130,9 +136,9 @@
 <text x="60" y="893" class="dim" text-anchor="start">on four pads east of the channel. Couple the</text>
 <text x="60" y="916" class="dim" text-anchor="start">panel frame to a supported tray before release.</text>
 <text x="449" y="838" class="h" text-anchor="start">2   Lower one cassette</text>
-<text x="449" y="870" class="dim" text-anchor="start">Undo four captive frame screws from below.</text>
-<text x="449" y="893" class="dim" text-anchor="start">Lower 80 mm on the guided tray. The glass bears</text>
-<text x="449" y="916" class="dim" text-anchor="start">on other shelves. Keep people out from below.</text>
+<text x="449" y="870" class="dim" text-anchor="start">Stand beside the frame, 25 clear of its fall zone.</text>
+<text x="449" y="893" class="dim" text-anchor="start">Use the guided side drives. Lower 80 mm on the</text>
+<text x="449" y="916" class="dim" text-anchor="start">captured tray. The glass bears on other shelves.</text>
 <text x="837" y="838" class="h" text-anchor="start">3   Exchange and restore</text>
 <text x="837" y="870" class="dim" text-anchor="start">Remove the catch tray and independent ledge</text>
 <text x="837" y="893" class="dim" text-anchor="start">under a supported glass bay. Refit both courses,</text>

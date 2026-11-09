@@ -174,8 +174,29 @@ def build():
                "nearFootLineKN":load+component+2.4-(restoring-overturn)/((feet[1]-feet[0])/1000),
                "eastOverturnKNm":load*.350+component*.100,"eastRestoringKNm":2.4*.650,
                "stageAxisYRange":[8970,10780],"footYOffsets":[-400,400],"largestPanelHalfDiagonal":(.6**2+.45**2)**.5/2*1000}
-    support["cornerToolReach"] = ((2890-100-(950+1450))**2+2*295**2)**.5
-    assert support["cornerToolReach"]<600
+    # Approach from the next secured row. Put two long and two short drive
+    # shafts on staggered axes so the far pair clears the near drive heads.
+    stations = []
+    for lo, hi in zip(rows, rows[1:]):
+        for left in range(x,x+width,600):
+            sign = 1 if hi+325+300 <= rows[-1] else -1
+            seam = hi if sign==1 else lo
+            worker = [max(5175,min(6825,left+300)),seam+sign*325]
+            stage_y = max(8970,min(10780,seam))
+            controls_x = [left+30,left+65,left+230,left+370,left+535,left+570]
+            reach = max(((xx-worker[0])**2+200**2+390**2)**.5 for xx in controls_x)
+            assert reach < 600 and abs(worker[1]-stage_y) <= 400
+            assert worker[0]-300 >= 4850 and worker[0]+300 <= 7150
+            assert rows[0] <= worker[1]-300 and worker[1]+300 <= rows[-1]
+            near_foot = 400-abs(worker[1]-stage_y)
+            stations.append({"panel":[left,lo,600,hi-lo],"worker":worker,"controlY":seam+sign*125,
+                             "stageY":stage_y,"nearFootMarginY":near_foot,
+                             "maxControlReach":round(reach,2)})
+    support["sideRelease"] = {"stations":stations,"maxReach":max(s["maxControlReach"] for s in stations),
+                              "bodyToPanelPlan":325-300,"maxLongDriver":max(bays)-30+125,
+                              "shortDriver":30+125,"clearBetween20Heads":35-20,
+                              "stageHalfLength":650,"floorToDeckAdjustmentMM":8}
+    assert min(s["nearFootMarginY"] for s in stations) >= 0
     assert support["ratio"]>1.5 and support["floorClearToTrough"]==65
     # At the outer north end the 110 mm ordinary glass overlaps only part
     # of the lower 240 mm axial portal wrap. Glass cannot carry upper brick.
