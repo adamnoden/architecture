@@ -9,8 +9,8 @@
     "label": "Follow-on architectural dispatch"
   },
   "claimedAt": "2026-11-09T00:51:36.831Z",
-  "heartbeatAt": "2026-11-09T01:19:30.232Z",
-  "expiresAt": "2026-11-09T02:04:30.232Z",
+  "heartbeatAt": "2026-11-09T01:31:55.528Z",
+  "expiresAt": "2026-11-09T02:16:55.528Z",
   "branch": "work/swarm-review-0050",
   "predecessor": {
     "leaseId": "1a1f246d-0b7f-4eed-8b75-fb38e95b4e14",
@@ -34,7 +34,7 @@
   },
   "pr": 1408,
   "checkpoint": {
-    "evidence": "PR #1408, final e5a1489b on d8e52d78, includes the four parallel studies from #1406. Exact integrated tree 1670f326e0e0231722b7cba614b90f9cc507972e passed MAT. The branch retains every prior test hook and records a 5.3 mm final fit budget.",
-    "next": "Check exact-head full validation and fresh publication preflight, merge, reconcile #1100 and release."
+    "evidence": "PR #1408, e5a1489b on d8e52d78. Thirteen workflows passed. Final merged tree reproduced the 5.77/5.91 mm riser and pipe shoulder gaps and 5.3 mm measured spine allowance, with both MAT test hooks intact.",
+    "next": "Finish exact-head CI 42544940986, run canonical preflight, merge and reconcile the remaining equipment evidence in #1100."
   }
 }
