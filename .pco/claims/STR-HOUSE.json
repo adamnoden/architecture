@@ -9,8 +9,8 @@
     "label": "Architecture swarm: house design disposition"
   },
   "claimedAt": "2026-11-09T06:04:55.691Z",
-  "heartbeatAt": "2026-11-09T06:27:25.812Z",
-  "expiresAt": "2026-11-09T07:12:25.812Z",
+  "heartbeatAt": "2026-11-09T06:39:04.061Z",
+  "expiresAt": "2026-11-09T07:24:04.061Z",
   "branch": "work/swarm-house-disposition-20261109",
   "predecessor": {
     "leaseId": "81e9e457-2421-4265-b888-f69620b583df",
@@ -34,7 +34,7 @@
   },
   "pr": 1435,
   "checkpoint": {
-    "evidence": "Original #1435 at 65e518c6 completes STR-HOUSE by documented redesign. All sixteen matched openings, actual bedroom and kitchen, jamb/head routes, socket and raised roof are on one current source.",
-    "next": "Reconcile #1434 main, check the exact head, merge then release completed g40 and record bounded closure in the swarm journal."
+    "evidence": "Frozen combined #1435 at 10a61fc2, tree b48d10d9 on 126ae0c2. Three owner declarations and all original parent SHAs verified. Structural programme adverse exit, Study sash and WC park crosschecks pass locally.",
+    "next": "Require all 14 final workflows and all three live preflights, merge, update #1103 and record the completed STR-HOUSE packet against main."
   }
 }
