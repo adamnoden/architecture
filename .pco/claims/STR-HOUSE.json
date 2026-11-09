@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "STR-HOUSE",
-  "generation": 36,
-  "state": "released",
-  "leaseId": "5a0309f5-848f-4c71-904d-03be5537d2ae",
+  "generation": 37,
+  "state": "claimed",
+  "leaseId": "f10138d4-d192-41a6-8378-24d5f718dec4",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-integration-2343"
+    "label": "Owner follow-on after sink and spill"
   },
-  "claimedAt": "2026-11-09T02:53:05.298Z",
-  "heartbeatAt": "2026-11-09T03:28:11.471Z",
-  "expiresAt": "2026-11-09T03:28:11.471Z",
-  "branch": "work/swarm-fourth-20261109",
+  "claimedAt": "2026-11-09T03:29:06.184Z",
+  "heartbeatAt": "2026-11-09T03:29:06.184Z",
+  "expiresAt": "2026-11-09T04:14:06.184Z",
+  "branch": "work/house-0329-20261109",
   "predecessor": {
-    "leaseId": "ac421633-ba0e-4c64-bbf9-3cb4bb999171",
-    "generation": 35,
-    "branch": "work/swarm-third-20261109",
-    "pr": 1414,
+    "leaseId": "5a0309f5-848f-4c71-904d-03be5537d2ae",
+    "generation": 36,
+    "branch": "work/swarm-fourth-20261109",
+    "pr": 1419,
     "checkpoint": {
-      "evidence": "MERGED #1414 at 85b99f2298d54eddafdc7745441f1d71deada77a with 14 green workflows, 196608 signed response audit, four preflights. Source geometry, four H16 returns and limited pin withdrawal now on main. Roof supplement d832fc775e177145cc74bb7b1e06a4d5ee52b40e is separate.",
-      "next": "Reconcile verified four-file normal-view roof outline and stale STR visual request from #1103 comment 6730878593; patch e19ca9f4e1cb23e8f631f77fb850175d6935f85310baaaf9833554d8fd634fb2. Arch next needs isolated development, both anchors and usable physical access. STR remains open."
+      "evidence": "MERGED #1419 5fdcf5c9ee4ced3ff0b62090204abb57e5c5e28e, tree 759f9e5baf75cc9aaf264e9ef32a9ff4cbeb6911. Both roof studies plus whole-house baseline are on main, 14 hosted workflows green. Successor evidence confirmed in STR #1103.",
+      "next": "Use the four joined decisions in str-house-result.md, preferentially compare a separated arch end to a bypass restraint with the actual occupied corner window, guard and cabinet. Physical-adoption, site and material holds stay named. STR-HOUSE remains open."
     }
   },
   "recoverySource": {
-    "leaseId": "ac421633-ba0e-4c64-bbf9-3cb4bb999171",
-    "generation": 35,
-    "branch": "work/swarm-third-20261109",
-    "pr": 1414,
+    "leaseId": "5a0309f5-848f-4c71-904d-03be5537d2ae",
+    "generation": 36,
+    "branch": "work/swarm-fourth-20261109",
+    "pr": 1419,
     "checkpoint": {
-      "evidence": "MERGED #1414 at 85b99f2298d54eddafdc7745441f1d71deada77a with 14 green workflows, 196608 signed response audit, four preflights. Source geometry, four H16 returns and limited pin withdrawal now on main. Roof supplement d832fc775e177145cc74bb7b1e06a4d5ee52b40e is separate.",
-      "next": "Reconcile verified four-file normal-view roof outline and stale STR visual request from #1103 comment 6730878593; patch e19ca9f4e1cb23e8f631f77fb850175d6935f85310baaaf9833554d8fd634fb2. Arch next needs isolated development, both anchors and usable physical access. STR remains open."
+      "evidence": "MERGED #1419 5fdcf5c9ee4ced3ff0b62090204abb57e5c5e28e, tree 759f9e5baf75cc9aaf264e9ef32a9ff4cbeb6911. Both roof studies plus whole-house baseline are on main, 14 hosted workflows green. Successor evidence confirmed in STR #1103.",
+      "next": "Use the four joined decisions in str-house-result.md, preferentially compare a separated arch end to a bypass restraint with the actual occupied corner window, guard and cabinet. Physical-adoption, site and material holds stay named. STR-HOUSE remains open."
     }
-  },
-  "pr": 1419,
-  "checkpoint": {
-    "evidence": "MERGED #1419 5fdcf5c9ee4ced3ff0b62090204abb57e5c5e28e, tree 759f9e5baf75cc9aaf264e9ef32a9ff4cbeb6911. Both roof studies plus whole-house baseline are on main, 14 hosted workflows green. Successor evidence confirmed in STR #1103.",
-    "next": "Use the four joined decisions in str-house-result.md, preferentially compare a separated arch end to a bypass restraint with the actual occupied corner window, guard and cabinet. Physical-adoption, site and material holds stay named. STR-HOUSE remains open."
-  },
-  "releasedAt": "2026-11-09T03:28:11.471Z",
-  "releaseReason": "handoff"
+  }
 }
