@@ -182,3 +182,23 @@ test('the released spring reduces bending but a single signed case rules out a c
   assert.ok(trial.controls[0].coupled.some(row => row.nearBearing.compression.minimumKN < 0));
   assert.equal(trial.admitted, false);
 });
+
+test('deepening the near spring does not rescue the retained four bars on the archived adverse state', () => {
+  const path = fileURLToPath(new URL('./corner-arch-haunch.py', import.meta.url));
+  execFileSync('python3', ['-B', path, '--check']);
+  const { geometry, loadComparison, admitted } = JSON.parse(readFileSync(new URL('./corner-arch-haunch.json', import.meta.url)));
+  const [baseline, ...haunched] = loadComparison.cases;
+  assert.equal(admitted, false);
+  assert.deepEqual(haunched.map(row => row.archElements), [18, 36, 72]);
+  assert.ok(Math.abs(baseline.retained.binnedInteraction - 1.18870696945) < 1e-8);
+  for (const row of haunched) {
+    assert.deepEqual(row.retained.adverseRadialBarAxesMm, baseline.retained.adverseRadialBarAxesMm);
+    assert.deepEqual(row.retained.torsionCellMm, baseline.retained.torsionCellMm);
+    assert.ok(row.signedEnd.minusNormalKNm > baseline.signedEnd.minusNormalKNm);
+    assert.ok(row.retained.withoutPercentRoundingInteraction > 1.29);
+    assert.ok(row.relaid.torsionCellMm[0] > row.retained.torsionCellMm[0]);
+  }
+  const v = geometry.perWindow_m3;
+  assert.ok(Math.abs(v.union + v.outsideTheseDomains - geometry.grossWedgePerWindow_m3) < 1e-12);
+  assert.ok(geometry.fractionWithinPier > 0.82 && geometry.fractionWithinPier < 0.83);
+});
