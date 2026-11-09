@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 990 580" width="990" height="580">
+<title>Service joint at the removable rainwater fork</title>
+<desc>Plan of the straight joint and fork, with a larger axial section of the two plain tube ends and the removable coupling.</desc>
+<rect width="990" height="580" fill="#f9f8f3"/><g font-family="sans-serif" fill="#233936">
+<text x="32" y="39" font-size="25">Service joint at the removable rainwater fork</text>
+<text x="32" y="67" font-size="14">The clasp comes off before either the native spool or the outlet carriage moves.</text>
+<text x="32" y="110" font-size="14">PLAN  /  NORTH UP</text>
+<rect x="84" y="135.28" width="110" height="66" fill="#e3e3d5" stroke="none"/>
+<polyline points="128,154.86 128,209.2" fill="none" stroke="#a4633c" stroke-width="4" stroke-dasharray=""/>
+<polyline points="128,209.2 89.5,275.2" fill="none" stroke="#267477" stroke-width="5" stroke-dasharray=""/>
+<polyline points="128,209.2 166.5,275.2" fill="none" stroke="#267477" stroke-width="5" stroke-dasharray=""/>
+<text x="210" y="151" font-size="14">Native socket</text>
+<text x="210" y="181" font-size="14">Clasp and tool territory</text>
+<text x="210" y="214" font-size="14">Common inlet</text>
+<text x="40" y="321" font-size="14">Separate branch axes at Y6100.</text>
+<text x="40" y="348" font-size="14">Full 247 mm common reach charged at zero fall.</text>
+<text x="40" y="375" font-size="14">Both downstream legs fall 1 in 30.</text>
+<text x="453" y="110" font-size="14">AXIAL SECTION  /  SOUTH TO THE LEFT</text>
+<polyline points="505,196.76 710.2,196.76" fill="none" stroke="#a4633c" stroke-width="4" stroke-dasharray=""/>
+<polyline points="505,311.24 710.2,311.24" fill="none" stroke="#a4633c" stroke-width="4" stroke-dasharray=""/>
+<polyline points="714,196.76 886.9,196.76" fill="none" stroke="#a4633c" stroke-width="4" stroke-dasharray=""/>
+<polyline points="714,311.24 886.9,311.24" fill="none" stroke="#a4633c" stroke-width="4" stroke-dasharray=""/>
+<polyline points="610.45,188.84 813.75,188.84" fill="none" stroke="#344d49" stroke-width="6" stroke-dasharray=""/>
+<polyline points="610.45,319.15999999999997 813.75,319.15999999999997" fill="none" stroke="#344d49" stroke-width="6" stroke-dasharray=""/>
+<polyline points="828,193.52 886.9,193.52" fill="none" stroke="#ccd1c4" stroke-width="5" stroke-dasharray=""/>
+<polyline points="828,314.48 886.9,314.48" fill="none" stroke="#ccd1c4" stroke-width="5" stroke-dasharray=""/>
+<polyline points="712.1,172 712.1,335" fill="none" stroke="#344d49" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="496" y="154" font-size="14">107 mm removable casing</text>
+<text x="510" y="255" font-size="14">Fork</text>
+<text x="818" y="255" font-size="14">Spool</text>
+<text x="474" y="363" font-size="14">2 mm nominal end gap. Both sealing lands are plain copper.</text>
+<text x="474" y="389" font-size="14">60 mm exposed spigot / 31 mm socket engagement trial.</text>
+<text x="32" y="444" font-size="15">WITH ONE BRANCH BLOCKED</text>
+<text x="32" y="473" font-size="14">At 4.439 L/s and K = 2, 8.1 mm remains after a 10 mm adverse endpoint difference.</text>
+<text x="32" y="503" font-size="14">Test the actual inlet, fitting loss, level control and common receiver before relying on the second route.</text>
+<text x="32" y="552" font-size="13">Dimensional comparison. The gasket, tool opening, independent restraints and discharge are unqualified.</text>
+</g></svg>

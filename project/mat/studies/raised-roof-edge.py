@@ -4,6 +4,9 @@ import json
 import math
 from pathlib import Path
 
+from ridge_vent_plan import ring_plan
+from ridge_vent_routes import ring_routes
+
 HERE = Path(__file__).resolve().parent
 PROJECT = HERE.parents[1]
 
@@ -12,8 +15,8 @@ def read(path):
     return json.loads((PROJECT / path).read_text())
 
 
-def compare():
-    roof = read('had/studies/water-replan.json')['model']['roofDevelopment']
+def compare(model):
+    roof = model['roofDevelopment']
     old = read('mat/studies/ordinary-eave-joined.json')
     edge = read('mat/studies/loggia-roof-edge.json')
     network = read('str/studies/current-house-welded-network.json')
@@ -106,6 +109,11 @@ def compare():
     assert math.isclose(result['upperClearanceNormal'],proposed_pack,abs_tol=1e-6)
     assert math.isclose(result['secondaryToBackCrest'],edge['weather']['secondary']['clearOverBackCrest'])
     assert net_outlet >= cold['netEquivalent'] and lip_z > field_under_lip
+    result['fieldVentRoutes'] = ring_routes(model, result, cold)
+    clear_bay = old['plan']['clearBayCutP']
+    assert any(left < clear_bay < right for left, right in old['plan']['sixClearChannelsP'])
+    assert min(axes) < clear_bay < max(axes)
+    result['fieldVentRoutes']['ordinaryClearBayStationMm'] = clear_bay
     return result
 
 
@@ -161,9 +169,10 @@ if __name__ == '__main__':
     parser=argparse.ArgumentParser()
     parser.add_argument('--check',action='store_true')
     opts=parser.parse_args()
-    r=compare()
-    for ext,body in [('json',json.dumps(r,indent=2,ensure_ascii=False)+'\n'),('svg',figure(r))]:
-        p=Path(__file__).with_suffix('.'+ext)
+    model = read('had/studies/water-replan.json')['model']
+    r=compare(model)
+    for p,body in [(HERE/'raised-roof-edge.json',json.dumps(r,indent=2,ensure_ascii=False)+'\n'),
+                   (HERE/'raised-roof-edge.svg',figure(r)),(HERE/'ridge-vent-plan.svg',ring_plan(model,r))]:
         if opts.check:
             assert p.read_text()==body, f'Stale {p.name}'
         else:
