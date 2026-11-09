@@ -203,3 +203,23 @@ test('deepening the near spring does not rescue the retained four bars on the ar
   assert.ok(Math.abs(v.union + v.outsideTheseDomains - geometry.grossWedgePerWindow_m3) < 1e-12);
   assert.ok(geometry.fractionWithinPier > 0.82 && geometry.fractionWithinPier < 0.83);
 });
+
+test('the short spring pin hits the end link before releasing an eye, with reversed reactions on both arms', () => {
+  const script = fileURLToPath(new URL('./corner-pivot-pin.py', import.meta.url));
+  const result = JSON.parse(execFileSync('python3', [script], {encoding: 'utf8'}));
+  assert.deepEqual(result.endLinkY, [-2, 102]);
+  assert.equal(result.firstLinkContactOnAxialDrawMm, 13);
+  assert.equal(result.firstEyeReleaseMm, 14);
+  assert.ok(result.pinAxisToClearOpeningXmm > 125 && result.pinAxisToClearOpeningXmm < 126);
+  assert.ok(result.gapAfter15MmRelativeSetout < 0);
+  assert.ok(result.firstLinkTangentGapAfterTwoFiveMm > 1.8 && result.firstLinkTangentGapAfterTwoFiveMm < 2);
+  for (const arm of ['east', 'north']) {
+    const reverse = arm === 'east' ? result.reverseEast : result.reverseNorth;
+    assert.ok(result[arm].centre.normalKN[1] < 0 && reverse.normalKN[0] < 0);
+    assert.ok(result[arm].centre.resultantsKN.every(force => force > 50));
+  }
+  assert.ok(result.east.maxWithinEachStripKN[0] > 71 && result.east.maxWithinEachStripKN[0] < 72);
+  const svg = readFileSync(new URL('./corner-pivot-pin.svg', import.meta.url), 'utf8');
+  assert.equal(execFileSync('python3', [script, '--svg'], {encoding: 'utf8'}), svg);
+  assert.equal(result.admitted, false);
+});

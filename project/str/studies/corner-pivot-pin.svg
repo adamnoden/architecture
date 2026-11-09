@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 890 420" role="img" aria-labelledby="title description">
+<title id="title">The corner-window pivot at the end link</title>
+<desc id="description">Section through the pin axis at the near spring. Two bearing eyes lie between the sides of a closed reinforcing link. That link blocks withdrawal in either direction.</desc>
+<rect width="890" height="420" fill="#faf8f2"/>
+<g fill="#263a40" font-family="sans-serif">
+<text x="42" y="46" font-size="28" text-anchor="start">The pivot at the corner window</text>
+<text x="42" y="75" font-size="15" text-anchor="start">Across the 180 mm concrete arch at the near spring. Dimensions in mm.</text>
+<rect x="70" y="104" width="540" height="174" fill="#e5e2d9"/>
+<text x="70" y="304" font-size="15" text-anchor="start">Cold face −40</text>
+<text x="610" y="304" font-size="15" text-anchor="end">Room face +140</text>
+<rect x="175" y="112" width="18" height="156" fill="#825841"/>
+<text x="184.0" y="332" font-size="14" text-anchor="middle">H6 at Y-2</text>
+<rect x="487" y="112" width="18" height="156" fill="#825841"/>
+<text x="496.0" y="332" font-size="14" text-anchor="middle">H6 at Y102</text>
+<rect x="238" y="148" width="36" height="72" fill="#477174"/>
+<rect x="406" y="148" width="36" height="72" fill="#477174"/>
+<rect x="232" y="169" width="216" height="30" fill="#313e45"/>
+<text fill="white" x="340.0" y="191" font-size="14" text-anchor="middle">Ø24 pin</text>
+<text x="635" y="126" font-size="20" text-anchor="start">Two pier eyes</text>
+<text x="635" y="157" font-size="15" text-anchor="start">12 mm wide each.</text>
+<text x="635" y="186" font-size="15" text-anchor="start">Axial thrust needs a</text>
+<text x="635" y="207" font-size="15" text-anchor="start">separate restraint.</text>
+<path d="M256.0 222v22" stroke="#36464b"/>
+<path d="M424.0 222v22" stroke="#36464b"/>
+<path d="M256.0 239H424.0" stroke="#36464b"/>
+<text x="340.0" y="264" font-size="14" text-anchor="middle">56 mm between eye centres</text>
+<text x="42" y="378" font-size="17" text-anchor="start">The pin meets the H6 after 13 mm of axial travel. It needs 14 mm to clear even the first eye.</text>
+</g></svg>
