@@ -189,7 +189,7 @@
       300
     ],
     "tablePark": [
-      1700,
+      1800,
       10925,
       300,
       300
@@ -201,11 +201,13 @@
         11250
       ],
       [
-        2325,
+        2425,
         11250
       ]
     ],
     "tablePullNorthReserve": 20.5,
+    "remoteToParkedTable": 50.89172119045497,
+    "remoteToFixedFurniture": 50.0,
     "task": [
       1075,
       11225

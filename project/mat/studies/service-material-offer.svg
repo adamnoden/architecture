@@ -37,12 +37,12 @@
 <text x="35" y="622" font-size="14" font-weight="400">Plan. Move the side table east before opening the front.</text>
 <rect x="46.08" y="657.22" width="61.80" height="154.50" fill="#deded2" stroke="#60737a" stroke-width="1.5"/>
 <rect x="122.40" y="724.17" width="61.80" height="61.80" fill="#faf9f4" stroke="#967251" stroke-width="1.5"/>
-<rect x="307.80" y="724.17" width="61.80" height="61.80" fill="#e5ceb0" stroke="#885f39" stroke-width="1.5"/>
+<rect x="328.40" y="724.17" width="61.80" height="61.80" fill="#e5ceb0" stroke="#885f39" stroke-width="1.5"/>
 <rect x="152.27" y="713.36" width="37.08" height="41.20" fill="#b1cdc2" stroke="#315f5d" stroke-width="1.5"/>
 <circle cx="179.04999999999998" cy="724.173" r="61.8" fill="none" stroke="#41736f" stroke-width="1.5"/>
 <circle cx="74.505" cy="733.958" r="11.33" fill="#b6bfc1" stroke="#273d43" stroke-width="1.5"/>
 <text x="44" y="835" font-size="13" font-weight="400">R-01 cabinet</text>
-<text x="212" y="817" font-size="13" font-weight="400">900 table move</text>
+<text x="212" y="817" font-size="13" font-weight="400">1000 table move</text>
 <text x="42" y="865" font-size="14" font-weight="400">Circle shows the worker at the cabinet. The first rest is green.</text>
 <text x="525" y="645" font-size="15" font-weight="700">Elevation through the straight stack</text>
 <text x="525" y="675" font-size="14" font-weight="400">+1700     End of clear upper parking zone</text>

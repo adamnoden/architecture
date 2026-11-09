@@ -62,7 +62,7 @@ def figure(result):
     tx,ty=foul['task'];circle(40+(tx-400)*sx,653+(11570.5-ty)*sy,300*sx,'none','#41736f')
     px,py=foul['axis'];circle(40+(px-400)*sx,653+(11570.5-py)*sy,55*sx,'#b6bfc1','#273d43')
     text(44,835,'R-01 cabinet',13)
-    text(212,817,'900 table move',13)
+    text(212,817,'1000 table move',13)
     text(42,865,'Circle shows the worker at the cabinet. The first rest is green.')
     text(525,645,'Elevation through the straight stack',15,True)
     text(525,675,'+1700     End of clear upper parking zone')

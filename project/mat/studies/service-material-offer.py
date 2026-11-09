@@ -1,7 +1,7 @@
 """Source-bound service quantities, local heat budgets and pipe/finish interface."""
 import argparse
 import json
-from math import acos, log
+from math import acos, hypot, log
 from pathlib import Path
 from kitchen_transfer_pressure import standby
 
@@ -113,7 +113,7 @@ def comparison():
     assert stack[0][:2]==stack[1][:2]==[567.5,11177.5] and stack[0][2]>1700 and stack[1][2]<800
     furn=house['groundFurniture']
     cabinet=furn['rear-stack']; table=furn['reading-side-table300']; sofa=furn['reading-sofa1900x850']
-    table_park=[1700,table[1],*table[2:]]
+    table_park=[1800,table[1],*table[2:]]
     assert table[1]-sofa[1]-sofa[3]==25 and table_park[0]>table[0]+table[2]
     task=[1075,11225]; radius=300
     cabinet_front=cabinet[0]+cabinet[2]
@@ -122,11 +122,20 @@ def comparison():
     assert all(rect[1]+rect[3]<=10900 or rect[0]>=2625 or rect==table or rect==cabinet
                for rect in furn.values() if isinstance(rect,list) and len(rect)==4 and all(isinstance(n,(int,float)) for n in rect))
     rack=[1035,11177.5]; head=[1450,11250]
+    def circle_box(point, rect):
+        x,y=point; left,bottom,w,h=rect
+        return hypot(max(left-x,0,x-left-w),max(bottom-y,0,y-bottom-h))-radius
+    fixed=[r for r in furn.values() if isinstance(r,list) and len(r)==4 and r!=table and all(isinstance(n,(int,float)) for n in r)]
+    remote_furniture=min(circle_box(head,r) for r in fixed+[table_park])
+    remote_table=circle_box(head,table_park)
+    assert remote_furniture>=25 and remote_table>50
+    assert min(circle_box(task,r) for r in fixed+[table_park])>=25
     foul=dict(axis=stack[0][:2],cabinet=cabinet,proposedStraightZ=[950,1550],clearTailZones=[[800,950],[1550,1700]],
               couplingOverall=130,reservedParkingEach=150, measuredSpigotToleranceAndGap=None,
               table=table,tablePark=table_park,tableToSofa=table[1]-sofa[1]-sofa[3],
               tablePullCentres=[[table[0]+table[2]+325,11250],[table_park[0]+table_park[2]+325,11250]],
-              tablePullNorthReserve=edge-11250-radius, task=task,
+              tablePullNorthReserve=edge-11250-radius, remoteToParkedTable=remote_table,
+              remoteToFixedFurniture=remote_furniture,task=task,
               taskToCupboard=task[0]-radius-cabinet_front,taskToNorthWall=edge-task[1]-radius,
               taskToSofa=task[1]-radius-sofa[1]-sofa[3],rackCentre=rack,rackHalfWidth=90,
               remoteOperator=head,operatorClearOfRack=head[0]-radius-(rack[0]+90),
