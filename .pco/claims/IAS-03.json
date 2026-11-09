@@ -9,8 +9,8 @@
     "label": "Joined source decision 0700"
   },
   "claimedAt": "2026-11-09T07:05:00.748Z",
-  "heartbeatAt": "2026-11-09T07:57:03.262Z",
-  "expiresAt": "2026-11-09T08:42:03.262Z",
+  "heartbeatAt": "2026-11-09T08:20:07.943Z",
+  "expiresAt": "2026-11-09T09:05:07.943Z",
   "branch": "work/house-0702-20261109",
   "predecessor": {
     "leaseId": "c7bbb9e0-8a23-4657-afcf-8f3db52a34e0",
@@ -34,7 +34,7 @@
   },
   "pr": 1440,
   "checkpoint": {
-    "evidence": "Joined #1440 current head 0c9a64e0 over actual #1439 main and source #1441 a3ea0fc6. Six original files, M5 addendum, CAD readback and registered test; previous public-link failure corrected.",
-    "next": "Verify new base and all 14 final head workflows, independently run canonical preflight, merge/issue/branch cleanup and release."
+    "evidence": "Final source #1441 a3ea0fc6 is an ancestor of shared #1440 3767acf53de76cb83b4d441c5cf07a422fae305e. Whole IAS tree identical, manufacturer tray and socket CAD and drain vector verified. Both IAS and MAT test registry entries checked on main 331d4e7d.",
+    "next": "Await exact-head CI, run fresh joint publication preflight, verify main and release after branch and issue reconciliation."
   }
 }
