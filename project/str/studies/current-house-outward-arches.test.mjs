@@ -223,3 +223,17 @@ test('the short spring pin hits the end link before releasing an eye, with rever
   assert.equal(execFileSync('python3', [script, '--svg'], {encoding: 'utf8'}), svg);
   assert.equal(result.admitted, false);
 });
+
+test('a moment-free support and an unsupported arch end have different movements', () => {
+  const script = fileURLToPath(new URL('./corner-arch-end.py', import.meta.url));
+  execFileSync('python3', ['-B', script, '--check']);
+  const {cards, occupation, admitted} = JSON.parse(readFileSync(new URL('./corner-arch-end.json', import.meta.url)));
+  const east = cards.pin36[7], north = cards.separated36[3];
+  assert.deepEqual(east.near.M, [0, 0, 0]);
+  assert.ok(east.near.frictionRatioIfUnrestrained > 6);
+  assert.ok(east.faceNormalCornerRangeMM[1] > 1.85 && east.faceNormalCornerRangeMM[1] < 1.87);
+  assert.ok(cards.separated18[7].nearGapXYZmm[1] < -124 && cards.separated36[7].nearGapXYZmm[1] < -124);
+  assert.ok(north.faceNormalCornerRangeMM[1] < -15);
+  assert.ok(occupation.pin.nominalCabinetPlanOverlap > 6 && occupation.pin.nominalCabinetPlanOverlap < 7);
+  assert.equal(admitted, false);
+});
