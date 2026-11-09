@@ -9,8 +9,8 @@
     "label": "Architecture swarm: independent design development"
   },
   "claimedAt": "2026-11-09T04:06:58.331Z",
-  "heartbeatAt": "2026-11-09T04:06:58.331Z",
-  "expiresAt": "2026-11-09T04:51:58.331Z",
+  "heartbeatAt": "2026-11-09T04:20:09.493Z",
+  "expiresAt": "2026-11-09T05:05:09.493Z",
   "branch": "work/swarm-forward-ias-20261109",
   "predecessor": {
     "leaseId": "3fdbd23d-ed42-4f65-88d8-795759df6967",
@@ -31,5 +31,10 @@
       "evidence": "Merged #1425 at 4dabed3d9517f234dd2ce442c4c20b51438b5caa; exact six RWT files from 36788df52d8a0402ea14f6b6591dcf5e70147bbc, RWT 196/196, 14 green workflows. RWT #992 comments 6731764503 and 6731944223 record conditional 1.081125 L/s roof share, 2 L/s controlled wet trial and retained 3.60375 L/s ground and full-branch duty.",
       "next": "RWT-06 stays planned. Verify actual corner and secondary runoff boundaries, supporting frames, retained outlet levels and bidirectional blocked-outlet wet tests; otherwise locate an independently safe overflow outside this centre bay."
     }
+  },
+  "pr": 1427,
+  "checkpoint": {
+    "evidence": "PR #1427 at e4c06670 on #1425 main. Two outer scuppers, fixed wall-side gravity receiver and located connections checked for both faults.",
+    "next": "Wait for final head CI, preflight, merge and handoff on #992."
   }
 }
