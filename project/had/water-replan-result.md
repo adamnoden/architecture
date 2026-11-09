@@ -1,5 +1,7 @@
 # HAD-WATER-REPLAN — joined independent east route
 
+The later [court-intake and access selection](court-intake-selection.md) supersedes this record's east intake geometry and associated access/service states. Unaffected house inputs and historic studies retain this exact predecessor.
+
 **6 November 2026 — SELECT the joined architectural-development reference; HAD-WATER-REPLAN completes its bounded exit.** No construction, hydraulic, material, structural, temporary-weather, physical-renewal or site admission. Historical HAD source `25faad2c4d40df2b7da7212f73808843a88d2f52` remains immutable. This model is now the one coherent current architectural source; relocated Services and affected model occurrences match exactly. The older house remains historical evidence.
 
 [Whole source](studies/water-replan.json) · [generator](studies/water-replan.mjs) · [plan/section](studies/water-replan.svg) · [contract](house-architectural-design-programme.md#court-and-roof-water-replan) · [RWT topology rejection](../rwt/rwt-06-selected-topology-rejection.md). Draft #1332 preserves predecessor #1329 and its rejected comparisons.

@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
+import {readCurrentCourtIntake} from './selected-water-event.mjs';
 import { readFileSync } from 'node:fs';
 import { courtDecision, decisionDrawing } from './court-intake-decision.mjs';
 const d=courtDecision();
@@ -64,4 +65,12 @@ test('a partitioned 250 to 400 discharge prices real width, tail, back pressure 
 
 test('the published plan and stage section reproduce the comparison',()=>{
   assert.equal(readFileSync(new URL('court-intake-decision.svg',import.meta.url),'utf8'),decisionDrawing(d));
+});
+
+test('subsequent court work reads the adopted HAD successor while the earlier failed comparison replays',()=>{
+  const {model}=readCurrentCourtIntake();
+  assert.equal(model.id,'HAD-COURT-INTAKE-01');
+  assert.equal(model.incoming.duty,d.duty);
+  assert.deepEqual(model.access.oldWestInstalledAndStored,[d.chambers.installedOverlap,d.chambers.storedOverlap]);
+  assert.equal(model.limits.hydraulicAcceptance,false);
 });

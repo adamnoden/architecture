@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 770" role="img" aria-label="The six wet covers and two-cell east basket"><title>The six wet covers and two-cell east basket</title><rect width="1160" height="770" fill="#fbfaf6"/><defs><pattern id="h" width="7" height="7" patternUnits="userSpaceOnUse"><path d="M0 7L7 0" stroke="#a66b4d" stroke-width="1.3"/></pattern></defs><g font-family="DejaVu Sans,sans-serif" fill="#253c42">
+<text x="34" y="50" font-size="29" font-weight="700">The low point moves to the removable hood</text>
+<text x="34" y="82" font-size="15" font-weight="400">Door and court elevations use FFL 0. The two diagrams have independent scales.</text>
+<text x="34" y="129" font-size="20" font-weight="700">01   Along the low band of the five north pans</text>
+<line x1="317.40000000000003" y1="156" x2="317.40000000000003" y2="322" stroke="#bdc5bf" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="298.40000000000003" y="342" font-size="13" font-weight="400">6430</text>
+<line x1="555.3" y1="156" x2="555.3" y2="322" stroke="#bdc5bf" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="536.3" y="342" font-size="13" font-weight="400">6735</text>
+<line x1="793.2" y1="156" x2="793.2" y2="322" stroke="#bdc5bf" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="774.2" y="342" font-size="13" font-weight="400">7040</text>
+<line x1="988.2" y1="156" x2="988.2" y2="322" stroke="#bdc5bf" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="969.2" y="342" font-size="13" font-weight="400">7290</text>
+<polyline points="68.97,188.1 317.40000000000003,192.39975 317.40000000000003,208.59975 555.3,212.71724999999998 555.3,228.91725 793.2,233.03475 793.2,249.23475000000002 988.2,252.60975000000002 988.2,268.80975 1066.2,270.15975000000003" fill="none" stroke="#246f79" stroke-width="4" />
+<text x="62" y="370" font-size="15" font-weight="400">Four 18 mm drops. The last wet seam is 55 mm west of the walking-cover joint.</text>
+<text x="62" y="393" font-size="14" font-weight="400">The SW crossing enters from the side on its own captured bridge. No blind low point at the old closed inlet.</text>
+<line x1="34" y1="416" x2="1126" y2="416" stroke="#879591" stroke-width="1" />
+<text x="34" y="453" font-size="20" font-weight="700">02   Front of the open basket and the original beam</text>
+<polyline points="87,475 87,689.2 393,689.2 393,667.5411764705882" fill="none" stroke="#5c6563" stroke-width="3" />
+<polyline points="387.6,483.4 258,570.2 258,671.5600000000001" fill="none" stroke="#416b70" stroke-width="3" />
+<line x1="258" y1="682.76" x2="258" y2="689.2" stroke="#416b70" stroke-width="3" />
+<line x1="420" y1="667.5411764705882" x2="600" y2="667.5411764705882" stroke="#657976" stroke-width="3" />
+<line x1="420" y1="639.5411764705882" x2="600" y2="639.5411764705882" stroke="#82928e" stroke-width="2" />
+<line x1="96" y1="624.62483758367" x2="254.4" y2="624.62483758367" stroke="#438997" stroke-width="3" />
+<line x1="261.6" y1="649.0347969005342" x2="387.6" y2="649.0347969005342" stroke="#438997" stroke-width="3" />
+<rect x="600" y="589.8" width="80" height="30.800000000000068" fill="#ddd9cb" stroke="#9c9989" />
+<circle cx="240" cy="466.6" r="5" fill="#438997" stroke="#2d6e76"/>
+<line x1="240" y1="466.6" x2="240" y2="496" stroke="#438997" stroke-width="2" />
+<text x="710" y="502" font-size="15" font-weight="400">Temporary roof pipe at (7450,7000,−80).</text>
+<text x="710" y="529" font-size="15" font-weight="400">Sloped upper baffle leads into the impact cell.</text>
+<text x="710" y="569" font-size="15" font-weight="400">Eight low ports feed a quieter outlet cell.</text>
+<text x="710" y="596" font-size="15" font-weight="400">460 × 40 bottom opening, invert −797.65.</text>
+<text x="710" y="637" font-size="15" font-weight="400">2 cm freeboard is reserved in the 100 mm body.</text>
+<text x="710" y="665" font-size="15" font-weight="400">The complete low shoe releases before the draw.</text>
+<text x="34" y="736" font-size="14" font-weight="400">Levels shown for the 4.43895 L/s maintenance comparison. Upstream water and real transfer depend on losses, tailwater and obstruction.</text></g></svg>

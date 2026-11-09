@@ -1,5 +1,7 @@
 # OAS — Opening Assembly System
 
+At the east court window Y6850 the [adopted court service source](../had/court-intake-selection.md) retains the two inward-opening lower leaves, fixed arch and locked-cover cleaning position. Its south gate and removable ramp apply only to ordinary access; isolated renewal uses the west guarded stair. The doorset, restraints, cleaning equipment and installed guards remain OAS/STR qualification duties.
+
 **Execution authority:** `project/control/`; live occupancy is separate in ACO.
 
 **Tracking:** [#942 — OAS opening assembly system](https://github.com/adamnoden/architecture/issues/942)  

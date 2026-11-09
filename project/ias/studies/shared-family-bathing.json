@@ -1,0 +1,476 @@
+{
+  "basis": "bath-shower and private rear WC study; not adopted",
+  "inputs": {
+    "project/had/studies/water-replan.json": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+    "project/mat/studies/whole-house-service-baseline.json": "049161ebac29b24e0acc7d8085302fca906fe9d2",
+    "project/ias/studies/selected-family-convergence.json": "7922be5910c40198563d5bd67f4cf306ea221dbd",
+    "project/ias/studies/family-door-push-path.json": "3c41795f8f0a12b7c8b7170c1416c24957adaa54",
+    "project/str/studies/reconciled-house-interface.json": "66143efe1bf357fe3b373777c93bdb25f861e11d"
+  },
+  "sources": {
+    "Bath": "Kaldewei DYNA SET 626, 2627842-11",
+    "heldBath": "Kaldewei SANIFORM PLUS 363-1, 2627857-28"
+  },
+  "threeRoomComparators": {
+    "retained": [
+      4,
+      2,
+      1,
+      6
+    ],
+    "rearWCPlusSharedBathShower": [
+      4,
+      1,
+      1,
+      6
+    ],
+    "fullyDeletedRear": [
+      3,
+      1,
+      1,
+      5
+    ],
+    "order": [
+      "WC count",
+      "dedicated shower count",
+      "bath count",
+      "extract count"
+    ]
+  },
+  "room": {
+    "transportPack": [
+      510,
+      730,
+      1690
+    ],
+    "grossCargoThroatSideMargin": 18.5,
+    "candidateCargoPositions": [
+      [
+        10055,
+        3835
+      ],
+      [
+        10055,
+        5535.0
+      ],
+      [
+        8416.25,
+        5535.0
+      ]
+    ],
+    "tub": [
+      9560,
+      3800,
+      1600,
+      700
+    ],
+    "originalTub": [
+      9460,
+      3800,
+      1700,
+      700
+    ],
+    "rim": 580,
+    "waste": [
+      10850,
+      4150,
+      150
+    ],
+    "overflow": [
+      11056,
+      4150,
+      510
+    ],
+    "footX": [
+      10750,
+      10060
+    ],
+    "footMaxWidth": 445,
+    "unmeasuredFootHalfLengthCutoff": 181.543,
+    "proposedDrop": [
+      11030.0,
+      4390.0
+    ],
+    "existingPort": [
+      10950,
+      4150
+    ],
+    "minVisibleTrapBottom": 61,
+    "servicePanel": {
+      "frontY": 4500,
+      "clearX": [
+        10625,
+        11125
+      ],
+      "clearZLocal": [
+        0,
+        500
+      ],
+      "requiredAccess": "Firstunion/trapcleanout/wasteandfull52overflowreleasefromFRONTorTOP, neverblindrearreach. Panelisnotarequiredfoot/supportremovedforaccess."
+    },
+    "shower": {
+      "rearWallY": 3800,
+      "frontY": 4465,
+      "endX": [
+        10050,
+        11125
+      ],
+      "clearDrawWithTwo85Parks": 905,
+      "torsoClearMm": 12,
+      "railZ": 2200,
+      "ceilingZ": 3100,
+      "twoSupportsWorkLengthMm": 900,
+      "hemMaxZ": 480,
+      "minimumCombinedHangingDrop": 1720,
+      "pipesHotCold": {
+        "hot": [
+          [
+            10800,
+            4450,
+            350
+          ],
+          [
+            10800,
+            4480,
+            350
+          ],
+          [
+            10800,
+            4480,
+            548
+          ],
+          [
+            10800,
+            4565,
+            548
+          ],
+          [
+            11255,
+            4565,
+            548
+          ],
+          [
+            11255,
+            3820,
+            548
+          ],
+          [
+            11255,
+            3820,
+            1310
+          ],
+          [
+            10435,
+            3820,
+            1310
+          ],
+          [
+            10435,
+            3820,
+            1260
+          ],
+          [
+            10435,
+            3850,
+            1260
+          ]
+        ],
+        "cold": [
+          [
+            10900,
+            4450,
+            350
+          ],
+          [
+            10900,
+            4480,
+            350
+          ],
+          [
+            10900,
+            4480,
+            548
+          ],
+          [
+            10900,
+            4520,
+            548
+          ],
+          [
+            11210,
+            4520,
+            548
+          ],
+          [
+            11210,
+            3820,
+            548
+          ],
+          [
+            11210,
+            3820,
+            1210
+          ],
+          [
+            10285,
+            3820,
+            1210
+          ],
+          [
+            10285,
+            3820,
+            1260
+          ],
+          [
+            10285,
+            3850,
+            1260
+          ]
+        ]
+      },
+      "pipeAssemblyMaxOD": 36,
+      "mixerSpatialLimit": [
+        10235,
+        3800,
+        250,
+        240
+      ],
+      "wholeMixerBodyClearMm": 10.161248385416457,
+      "wetGripEnquiryCentre": [
+        10360,
+        3950,
+        1360
+      ],
+      "shoulder": [
+        10775,
+        4150,
+        1650
+      ],
+      "controlReachMm": 585.0213671311502,
+      "head": [
+        10775,
+        3970,
+        2250
+      ],
+      "maxRailBelowRim": 14,
+      "totalAddedHotColdMM": [
+        3175.0,
+        2945.0
+      ],
+      "pipeToPipeClearMm": 9.0,
+      "minRailAbovePanel": 30,
+      "minFrontPipeToSealPlanMm": 12.0
+    },
+    "operatingRoomBodyMin": [
+      20.0,
+      "family-bath"
+    ],
+    "existingDoorTask": 20
+  },
+  "access": {
+    "openFamilyDoorDistance": 13570.0,
+    "currentBed4OpenToClosedFamilyDoor": 13260.0,
+    "fullClosedFamilyApproachMargin": [
+      106.2622305851234,
+      "wet-spine0"
+    ],
+    "twoOperatedDoorsAndBathArrivalMm": 18764.2,
+    "familyNewPushStart": [
+      8774.5,
+      5521
+    ],
+    "familyArrivalAfterDoor": [
+      10474.5,
+      6011
+    ],
+    "familyClosedReturnStart": [
+      10024.5,
+      5731
+    ],
+    "familyNewDoorPhases": [
+      {
+        "fixedBody": 5.456,
+        "leafBody": 22.431,
+        "fixedArm": 7.604,
+        "leafArm": 27.4,
+        "spareReach": 7.995
+      },
+      {
+        "fixedBody": 69.232,
+        "leafBody": 9.351,
+        "fixedArm": 189.975,
+        "leafArm": 28.232,
+        "spareReach": 199.417
+      },
+      {
+        "fixedBody": 71.0,
+        "leafBody": 36.243,
+        "fixedArm": 190.975,
+        "leafArm": 13.954,
+        "spareReach": 191.212
+      },
+      {
+        "fixedBody": 5.97,
+        "leafBody": 8.437,
+        "fixedArm": 100.299,
+        "leafArm": 5.455,
+        "spareReach": 11.353
+      }
+    ],
+    "hardwareVsFixedBed4Family": [
+      [
+        [
+          11.027,
+          "west-flush-cheek"
+        ],
+        [
+          23.0,
+          "right-door-jamb"
+        ],
+        [
+          11.6,
+          "stair-east-edge"
+        ]
+      ],
+      [
+        [
+          10.84,
+          "north-door-jamb"
+        ],
+        [
+          22.826,
+          "south-door-jamb"
+        ],
+        [
+          22.857,
+          "bath-north0"
+        ]
+      ]
+    ],
+    "twoShoulderHandOff": {
+      "Bed4": [
+        [
+          265.57,
+          30.0,
+          200.89
+        ],
+        [
+          303.56,
+          28.58,
+          200.82
+        ]
+      ],
+      "family": [
+        [
+          309.79,
+          30.0,
+          200.89
+        ],
+        [
+          132.06,
+          28.58,
+          200.82
+        ]
+      ]
+    },
+    "armMutualClear": 94.9717194586874,
+    "familyPushStart": [
+      8780,
+      5500
+    ],
+    "bed4DoorTarget": {
+      "hinge": [
+        3140,
+        8735.5
+      ],
+      "leaf": [
+        762,
+        44
+      ],
+      "gripLength": 700,
+      "gripNormalFromFaces": 70,
+      "operatingAngles": [
+        75,
+        100
+      ],
+      "handChange": [
+        3410,
+        7670
+      ],
+      "fixedFrameOnly": false,
+      "push": {
+        "fixedBody": 5.414,
+        "leafBody": 51.573,
+        "fixedArm": 7.277,
+        "leafArm": 27.4,
+        "spareReach": 7.995
+      },
+      "hold": {
+        "fixedBody": 36.998,
+        "leafBody": 9.364,
+        "fixedArm": 178.115,
+        "leafArm": 28.232,
+        "spareReach": 78.5
+      },
+      "relax": {
+        "fixedBody": 92.5,
+        "leafBody": 36.243,
+        "fixedArm": 179.115,
+        "leafArm": 13.954,
+        "spareReach": 112.855
+      },
+      "pull": {
+        "fixedBody": 5.742,
+        "leafBody": 8.492,
+        "fixedArm": 102.263,
+        "leafArm": 6.226,
+        "spareReach": 186.28
+      },
+      "independentReturnUsesReversePush": true,
+      "waitClearOfAnyLeafPosition": 35.907794478680444,
+      "bladeOnlySpareToX3450At90": 10,
+      "bedroomStart": [
+        3900,
+        9380
+      ],
+      "galleryPullStart": [
+        3550,
+        8380
+      ],
+      "staticApproaches": [
+        [
+          47.212110963889074,
+          "rear-west2"
+        ],
+        [
+          11.548551593487616,
+          "court"
+        ],
+        [
+          52.5,
+          "court"
+        ]
+      ]
+    }
+  },
+  "services": {
+    "originalColdHot": [
+      14,
+      9
+    ],
+    "withDiverter": [
+      13,
+      8
+    ],
+    "rearShowerBranchesRemovedFromUseMm": 3370.0,
+    "normalSixLps": 78,
+    "normalFiveLps": 65,
+    "floorLps": 58.02352499999999,
+    "bedroomLps": 37,
+    "retainedRearPort": [
+      567.5,
+      11177.5,
+      160
+    ]
+  }
+}

@@ -1,0 +1,1867 @@
+{
+  "id": "HAD-COURT-INTAKE-01",
+  "status": "selected pre-site house geometry",
+  "acceptedHouseBase": "RH-LAYOUT-REVISION-02",
+  "sourceCommit": "dac2777600c8425a2c7fc38d6c1a42776372b24c",
+  "sourceBlobs": {
+    "project/had/studies/water-replan.json": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+    "project/rwt/studies/collector-access-recomposition.json": "3390e4bf579bb5ddc98a00b4f5df6062a7b7e851",
+    "project/rwt/studies/closed-east-control.json": "ba1161b7679e5a53ef745cf7e5fce91cf9b1bcd4",
+    "project/rwt/studies/upper-first-release.json": "cc05a34a380dcaadea4ba26763a12af63fd71915",
+    "project/rwt/studies/selected-water-event.json": "b5f8b7c6460c8d5838ccd5bc3107c2656081cf35",
+    "project/rwt/studies/temporary-two-path-control.json": "fefae8d975c82b7d88c0eaf14e0de30f9f5008af",
+    "project/str/studies/current-house-grid.json": "56aca6f99f5fa60b21d58c89115ac1ee824e3828",
+    "project/mat/studies/ring-roof-family.json": "28afcd1cd63aa4d17cd8dfeb433dba1885b92478",
+    "project/str/studies/reconciled-house-interface.json": "66143efe1bf357fe3b373777c93bdb25f861e11d"
+  },
+  "priorHADIdentity": "Composed HAD consumer for this result; canonicalMain metadata records INTEGRATION BASELINE4fef04ad/HAD265ac194. Only conditional receiver/garden/maintenance refinements are integrated; separate construction comparisons and hydraulic/physical/site acceptance remain unadopted/unaccepted",
+  "structuralCandidate": "SAP-C1",
+  "limits": {
+    "firstSusceptible": null,
+    "geometricProtection": 15,
+    "quiet": -35,
+    "hydraulicAcceptance": false,
+    "engineeredRatings": false,
+    "siteAccepted": false
+  },
+  "incoming": {
+    "duty": 3.60375,
+    "longBackup": 4.43895,
+    "directRoofTerminal": [
+      7450,
+      7000,
+      -80
+    ],
+    "nozzleBore": 125,
+    "nozzleOD": 128,
+    "keptCoverOpening": [
+      7370,
+      6920,
+      160,
+      160
+    ]
+  },
+  "inlet": {
+    "intervals": [
+      [
+        6625,
+        7398.5
+      ]
+    ],
+    "asBuilt": [
+      [
+        6630,
+        7393.5
+      ]
+    ],
+    "oldSix": [
+      [
+        6311.5,
+        6525
+      ],
+      [
+        6625,
+        6838.5
+      ],
+      [
+        6861.5,
+        7350
+      ]
+    ],
+    "continuousApron": [
+      5925,
+      6625,
+      200,
+      773.5
+    ],
+    "cases": [
+      {
+        "length": 100,
+        "flow": 4.871171970634256,
+        "stageForDuty": -42.103197146207094,
+        "flowOnUniform5HighLip": 3.96525969912249,
+        "pairedEdgeHighAndShort": 3.9221858829344773,
+        "oldSix": 4.321222163405563,
+        "oldSix5High": 3.3933051280001263
+      },
+      {
+        "length": 150,
+        "flow": 4.689840130049549,
+        "stageForDuty": -41.18224238976836,
+        "flowOnUniform5HighLip": 3.8036364252901724,
+        "pairedEdgeHighAndShort": 3.762349928382613,
+        "oldSix": 4.131157078514894,
+        "oldSix5High": 3.2319191263027722
+      },
+      {
+        "length": 200,
+        "flow": 4.538193614114808,
+        "stageForDuty": -40.39674671366811,
+        "flowOnUniform5HighLip": 3.669810682224488,
+        "pairedEdgeHighAndShort": 3.629998889079672,
+        "oldSix": 3.9753623695991047,
+        "oldSix5High": 3.101038773976554
+      }
+    ],
+    "oldWestFlow": 2.504565632452337,
+    "sixWet": true,
+    "wetSeams": [
+      6430,
+      6735,
+      7040,
+      7290
+    ],
+    "structuralSeams": [
+      6430,
+      6735,
+      7040,
+      7345
+    ],
+    "wetEdgeX": 6111.5,
+    "northWestZ": -189,
+    "grade": 0.015,
+    "step": 18,
+    "underlap": 25,
+    "fixedNorthernGable": {
+      "brinkEndY": 7398.5,
+      "outerSheetY": 7400,
+      "apronToeX": 6135,
+      "terminalY": 7370,
+      "terminalZ": -155
+    },
+    "newWesternRelease": {
+      "captureThenEast": 50,
+      "initialLeftX": 6100,
+      "releasedLeftX": 6150,
+      "fixedGableX": 6135,
+      "nominalGap": 15,
+      "pairedGap": 5
+    },
+    "sheet": 1.5,
+    "pairedStepClear": 6.5,
+    "northSouthBridgeGaps": [
+      17.525000000000006,
+      18.82499999999999,
+      22.36499999999998
+    ],
+    "treadMinimum": [
+      66.29750000000001,
+      225.2975,
+      402.2975
+    ],
+    "fifthWetOverhang": 55,
+    "lastSaddleEnds": 7340,
+    "saddleToHood": 10,
+    "originalSaddlePastSpout": 20,
+    "historicalWesternPanRelease": {
+      "neighboursRemoved": [
+        "northmodule2",
+        "southmodule2"
+      ],
+      "bridgeRemoved": true,
+      "translationE": 35,
+      "initialUnderlapX": [
+        6100,
+        6125
+      ],
+      "afterTranslationBodyX": [
+        6135,
+        6465
+      ],
+      "clearOfCourtFace": 10,
+      "liftTop": 1700,
+      "lowestLiftedBottom": 1485,
+      "guardTop": 1100,
+      "liftedGuardGap": 385,
+      "rainRoofUnderside": 1970,
+      "roofGap": 270,
+      "scope": "Superseded 35 mm release before the fixed northern gable. The selected 50 mm release is recorded in newWesternRelease."
+    },
+    "sourceClosedRiseToEast": 20,
+    "spout": {
+      "endX": 7390,
+      "y": [
+        6935,
+        7165
+      ],
+      "z": -280.1775,
+      "notch": [
+        6915,
+        7185,
+        -310,
+        -110
+      ],
+      "openingPlaneX": 7350,
+      "atOpening": -279.5775,
+      "undersideToBottomAfterTwo5": 18.922500000000014,
+      "grossSideRise": 100,
+      "quarterBlockedHead": 70.8680849668267,
+      "sideReserve": 19.1319150331733,
+      "hoodTopReserve": 88.70941503317329,
+      "nominalXIntoBasket": 25,
+      "nominalNorthInBasket": 15
+    },
+    "moduleDepthEnvelope": 300,
+    "northBodies": [
+      {
+        "plan": [
+          330,
+          550
+        ],
+        "waterKg": 54.45,
+        "fiveFaceSheetKg": 9.53568
+      },
+      {
+        "plan": [
+          305,
+          550
+        ],
+        "waterKg": 50.325,
+        "fiveFaceSheetKg": 9.14928
+      },
+      {
+        "plan": [
+          305,
+          550
+        ],
+        "waterKg": 50.325,
+        "fiveFaceSheetKg": 9.14928
+      },
+      {
+        "plan": [
+          305,
+          550
+        ],
+        "waterKg": 50.325,
+        "fiveFaceSheetKg": 9.14928
+      },
+      {
+        "plan": [
+          360,
+          550
+        ],
+        "waterKg": 59.4,
+        "fiveFaceSheetKg": 9.99936
+      }
+    ],
+    "southWestBody": {
+      "plan": [
+        330,
+        550
+      ],
+      "waterKg": 36.3,
+      "fiveFaceSheetKg": 7.17024
+    },
+    "fifthLiftTop": 1700,
+    "fifthLiftBottom": 1400,
+    "historical": "Original N18 low point collects westward at X7181.71; do not attach the open spout to the old profile."
+  },
+  "basket": {
+    "basket": [
+      7365,
+      6620,
+      170,
+      560
+    ],
+    "bottom": -875,
+    "topBasket": -110,
+    "spoutNotchInBasketY": [
+      6920,
+      7180
+    ],
+    "diverterTop": [
+      7532,
+      -140
+    ],
+    "diverterFoot": [
+      7460,
+      -450
+    ],
+    "nozzle": [
+      7450,
+      7000,
+      -80
+    ],
+    "fullPipeOD": 128,
+    "fullNozzleWestEastClear": [
+      21,
+      18
+    ],
+    "shaftHalfSlack": [
+      15,
+      20
+    ],
+    "pairedShift": 10,
+    "guideTiltDegrees": 0.25,
+    "minimumWidthAfterSkew": 1.6620366221633014,
+    "shoe": {
+      "runX": [
+        7525,
+        7585
+      ],
+      "releasedX": [
+        7550,
+        7610
+      ],
+      "operatingJointX": 7535,
+      "parkedGapToBasket": 15,
+      "parkedGapToBeam": 40,
+      "clearY": [
+        6675,
+        7135
+      ],
+      "outerWidth": 510,
+      "operatingClearZ": [
+        -797.6470588235294,
+        -757.6470588235294
+      ],
+      "release": "Isolate, vent and drain. Capture above, loosen captive face dogs, move shoe east 25 to release basket before any basket lift. Remove shoe upward within pre-beam service bay before east body draw."
+    },
+    "inletPortCountAndSize": [
+      8,
+      40
+    ],
+    "slot": [
+      6675,
+      7135
+    ],
+    "slotHeight": 40,
+    "slotX": 7550,
+    "invert": -797.6470588235294,
+    "top": -697.6470588235294,
+    "openAreaM2": 0.0138,
+    "cases": [
+      {
+        "flow": 3.60375,
+        "depth": 17.23087759501815,
+        "tail": -780.4161812285113,
+        "raisedTail": -775.4161812285113,
+        "slotControl": -752.6470588235294,
+        "velocityHead": 3.475778839780016,
+        "requiredHead": 13.903115359120063,
+        "quietPool": -738.7439434644093,
+        "impactPool": -681.2849745192959,
+        "portLoss": 57.45896894511338,
+        "insideFreeboard": 41.096884640879935,
+        "reserveAgainst20": 21.096884640879935,
+        "limitingK": 10.069685562104167,
+        "halfObstructedReserve": 3.7179904419798575,
+        "allowedNominalTail": -736.5501741826495,
+        "lipHead": 41.140259375738296,
+        "with25CrestRange": [
+          -760.4161812285113,
+          -738.7873181992677
+        ],
+        "freeLipMaxNominalTail": -772
+      },
+      {
+        "flow": 4.43895,
+        "depth": 19.584239721586336,
+        "tail": -778.0628191019431,
+        "raisedTail": -773.0628191019431,
+        "slotControl": -752.6470588235294,
+        "velocityHead": 5.273553187548297,
+        "requiredHead": 21.094212750193186,
+        "quietPool": -731.5528460733362,
+        "impactPool": -644.3744199416785,
+        "portLoss": 87.17842613165774,
+        "insideFreeboard": 33.905787249806814,
+        "reserveAgainst20": 13.905787249806814,
+        "limitingK": 6.636891438326744,
+        "halfObstructedReserve": -12.461978687934668,
+        "allowedNominalTail": -743.7412715737225,
+        "lipHead": 47.2734637001139,
+        "with25CrestRange": [
+          -758.0628191019431,
+          -744.9205225236433
+        ],
+        "freeLipMaxNominalTail": -772
+      }
+    ],
+    "maxDrainedSumpLitres": 7.364000000000002,
+    "fullWaterKg": 72.828,
+    "seamPressureKPa": 6.745817647058823,
+    "rejectedLip": {
+      "crest": -752,
+      "lipWidth": 520,
+      "extraSideHeight": 25,
+      "beamX": 7650
+    },
+    "removal": {
+      "yawCentre": [
+        7040,
+        6900
+      ],
+      "sweptBounds": [
+        6747.38250223201,
+        6607.38250223201,
+        585.2349955359812,
+        585.2349955359812
+      ],
+      "yawMargin": [
+        622.3825022320098,
+        307.38250223200976,
+        317.3825022320091,
+        207.38250223200907
+      ],
+      "gate": [
+        6597.5,
+        7200
+      ],
+      "broadsideMargin": 21.25,
+      "travelWidthWithHandles": 250,
+      "eachGateMargin": 176.25,
+      "carryY": 6898.75,
+      "liftedBottom": 100,
+      "liftedTop": 865,
+      "roofHeight": 1970,
+      "overhead": 1105,
+      "stage": [
+        4350,
+        4500,
+        1500,
+        1500
+      ],
+      "selectedFirstRest": [
+        4780,
+        5490,
+        650,
+        360
+      ]
+    }
+  },
+  "frame": {
+    "pads": [
+      [
+        4500,
+        5900
+      ],
+      [
+        7100,
+        6050
+      ],
+      [
+        4500,
+        6500
+      ]
+    ],
+    "padSize": 400,
+    "heads": [
+      {
+        "id": "P33",
+        "xy": [
+          3950,
+          6200
+        ],
+        "roles": [
+          "court-W"
+        ],
+        "capXY": [
+          600,
+          600
+        ],
+        "capZ": [
+          -750,
+          -180
+        ],
+        "shaftDiameter": 400,
+        "siteResistance": null
+      },
+      {
+        "id": "P36",
+        "xy": [
+          7950,
+          6100
+        ],
+        "roles": [
+          "court-E"
+        ],
+        "capXY": [
+          600,
+          650
+        ],
+        "capZ": [
+          -750,
+          -180
+        ],
+        "shaftDiameter": 400,
+        "siteResistance": null
+      }
+    ],
+    "cases": [
+      {
+        "corner": "SW",
+        "point": [
+          4350,
+          4350
+        ],
+        "rest": [
+          5200,
+          5200,
+          600,
+          600
+        ],
+        "deck": [
+          4350,
+          4350,
+          1800,
+          1800
+        ],
+        "containsRest": true,
+        "cornerPad": [
+          18.13301282051282,
+          -0.28846153846153844,
+          -12.844551282051283
+        ],
+        "restPad": [
+          6.8910256410256405,
+          1.9230769230769231,
+          -3.8141025641025643
+        ],
+        "combinedPad": [
+          27.391065705128206,
+          1.8028846153846152,
+          -18.321450320512824
+        ],
+        "pipeRoutes": {
+          "normal": [
+            [
+              5400,
+              4500
+            ],
+            [
+              5325,
+              4500
+            ],
+            [
+              5325,
+              7000
+            ],
+            [
+              4525,
+              7000
+            ]
+          ],
+          "east": [
+            [
+              4750,
+              5400
+            ],
+            [
+              5175,
+              5400
+            ],
+            [
+              5175,
+              6875
+            ],
+            [
+              5675,
+              6875
+            ]
+          ],
+          "highEast": [
+            4500,
+            5400
+          ],
+          "eastDrop": [
+            4750,
+            5400
+          ]
+        },
+        "clearPipeToTower": {
+          "normal": 350,
+          "east": 350
+        },
+        "tieCases": [
+          {
+            "force": [
+              1,
+              0
+            ],
+            "westTie": [
+              0.8470948012232415,
+              -0.3961584633853541
+            ],
+            "eastTie": [
+              0.8470948012232415,
+              0.3961584633853541
+            ],
+            "ground": [
+              -0.6941896024464831,
+              0
+            ],
+            "yawKNm": 1.65
+          },
+          {
+            "force": [
+              -1,
+              0
+            ],
+            "westTie": [
+              -0.8470948012232415,
+              0.3961584633853541
+            ],
+            "eastTie": [
+              -0.8470948012232415,
+              -0.3961584633853541
+            ],
+            "ground": [
+              0.6941896024464831,
+              0
+            ],
+            "yawKNm": -1.65
+          },
+          {
+            "force": [
+              0,
+              1
+            ],
+            "westTie": [
+              0,
+              1.2432532646085956
+            ],
+            "eastTie": [
+              0,
+              0.45093633783788745
+            ],
+            "ground": [
+              0,
+              -0.6941896024464831
+            ],
+            "yawKNm": -1.65
+          },
+          {
+            "force": [
+              0,
+              -1
+            ],
+            "westTie": [
+              0,
+              -1.2432532646085956
+            ],
+            "eastTie": [
+              0,
+              -0.45093633783788745
+            ],
+            "ground": [
+              0,
+              0.6941896024464831
+            ],
+            "yawKNm": 1.65
+          }
+        ],
+        "westRootPoint": [
+          5.288461538461538,
+          9.293269230769232,
+          2.908653846153845
+        ],
+        "eastRootPoint": [
+          -0.28846153846153844,
+          -0.014423076923076922,
+          0.24519230769230768
+        ],
+        "westRootCombined": [
+          9.069615384615382,
+          13.71375480769231,
+          4.98828846153846
+        ],
+        "eastRootCombined": [
+          1.8028846153846152,
+          0.09014423076923075,
+          -1.532451923076923
+        ],
+        "restOverWell": [
+          0,
+          0
+        ],
+        "restOverEastChamber": [
+          350,
+          0
+        ]
+      },
+      {
+        "corner": "SE",
+        "point": [
+          7650,
+          4350
+        ],
+        "rest": [
+          6200,
+          5200,
+          600,
+          600
+        ],
+        "deck": [
+          5850,
+          4350,
+          1800,
+          1800
+        ],
+        "containsRest": true,
+        "cornerPad": [
+          13.373397435897434,
+          6.0576923076923075,
+          -14.431089743589743
+        ],
+        "restPad": [
+          5.448717948717949,
+          3.8461538461538463,
+          -4.294871794871796
+        ],
+        "combinedPad": [
+          20.396378205128205,
+          10.690384615384614,
+          -20.50676282051282
+        ],
+        "pipeRoutes": {
+          "normal": [
+            [
+              6600,
+              4500
+            ],
+            [
+              5325,
+              4500
+            ],
+            [
+              5325,
+              7000
+            ],
+            [
+              4525,
+              7000
+            ]
+          ],
+          "east": [
+            [
+              7250,
+              5400
+            ],
+            [
+              6650,
+              5400
+            ],
+            [
+              6650,
+              6875
+            ],
+            [
+              5675,
+              6875
+            ]
+          ],
+          "highEast": [
+            7500,
+            5400
+          ],
+          "eastDrop": [
+            7250,
+            5400
+          ]
+        },
+        "clearPipeToTower": {
+          "normal": 350,
+          "east": 300
+        },
+        "tieCases": [
+          {
+            "force": [
+              1,
+              0
+            ],
+            "westTie": [
+              0.8470948012232415,
+              -0.3961584633853541
+            ],
+            "eastTie": [
+              0.8470948012232415,
+              0.3961584633853541
+            ],
+            "ground": [
+              -0.6941896024464831,
+              0
+            ],
+            "yawKNm": 1.65
+          },
+          {
+            "force": [
+              -1,
+              0
+            ],
+            "westTie": [
+              -0.8470948012232415,
+              0.3961584633853541
+            ],
+            "eastTie": [
+              -0.8470948012232415,
+              -0.3961584633853541
+            ],
+            "ground": [
+              0.6941896024464831,
+              0
+            ],
+            "yawKNm": -1.65
+          },
+          {
+            "force": [
+              0,
+              1
+            ],
+            "westTie": [
+              0,
+              0.45093633783788745
+            ],
+            "eastTie": [
+              0,
+              1.2432532646085956
+            ],
+            "ground": [
+              0,
+              -0.6941896024464831
+            ],
+            "yawKNm": 1.65
+          },
+          {
+            "force": [
+              0,
+              -1
+            ],
+            "westTie": [
+              0,
+              -0.45093633783788745
+            ],
+            "eastTie": [
+              0,
+              -1.2432532646085956
+            ],
+            "ground": [
+              0,
+              0.6941896024464831
+            ],
+            "yawKNm": -1.65
+          }
+        ],
+        "westRootPoint": [
+          -1.0576923076923084,
+          8.341346153846153,
+          -0.58173076923077
+        ],
+        "eastRootPoint": [
+          6.0576923076923075,
+          0.30288461538461536,
+          -5.149038461538461
+        ],
+        "westRootCombined": [
+          -0.1103846153846142,
+          12.270942307692307,
+          -0.060711538461537984
+        ],
+        "eastRootCombined": [
+          10.690384615384614,
+          0.5345192307692307,
+          -9.086826923076922
+        ],
+        "restOverWell": [
+          600,
+          0
+        ],
+        "restOverEastChamber": [
+          0,
+          0
+        ]
+      },
+      {
+        "corner": "NE",
+        "point": [
+          7650,
+          7650
+        ],
+        "rest": [
+          6200,
+          6200,
+          600,
+          600
+        ],
+        "deck": [
+          5850,
+          5850,
+          1800,
+          1800
+        ],
+        "containsRest": true,
+        "cornerPad": [
+          -14.126602564102566,
+          6.0576923076923075,
+          13.068910256410257
+        ],
+        "restPad": [
+          -2.8846153846153846,
+          3.8461538461538463,
+          4.038461538461538
+        ],
+        "combinedPad": [
+          -18.798621794871792,
+          10.690384615384614,
+          18.688237179487178
+        ],
+        "pipeRoutes": {
+          "normal": [
+            [
+              6600,
+              7500
+            ],
+            [
+              5325,
+              7500
+            ],
+            [
+              5325,
+              7000
+            ],
+            [
+              4525,
+              7000
+            ]
+          ],
+          "east": [
+            [
+              7250,
+              6600
+            ],
+            [
+              6650,
+              6600
+            ],
+            [
+              6650,
+              6875
+            ],
+            [
+              5675,
+              6875
+            ]
+          ],
+          "highEast": [
+            7500,
+            6600
+          ],
+          "eastDrop": [
+            7250,
+            6600
+          ]
+        },
+        "clearPipeToTower": {
+          "normal": 350,
+          "east": 400
+        },
+        "tieCases": [
+          {
+            "force": [
+              1,
+              0
+            ],
+            "westTie": [
+              0.8470948012232415,
+              0.3961584633853541
+            ],
+            "eastTie": [
+              0.8470948012232415,
+              -0.3961584633853541
+            ],
+            "ground": [
+              -0.6941896024464831,
+              0
+            ],
+            "yawKNm": -1.65
+          },
+          {
+            "force": [
+              -1,
+              0
+            ],
+            "westTie": [
+              -0.8470948012232415,
+              -0.3961584633853541
+            ],
+            "eastTie": [
+              -0.8470948012232415,
+              0.3961584633853541
+            ],
+            "ground": [
+              0.6941896024464831,
+              0
+            ],
+            "yawKNm": 1.65
+          },
+          {
+            "force": [
+              0,
+              1
+            ],
+            "westTie": [
+              0,
+              0.45093633783788745
+            ],
+            "eastTie": [
+              0,
+              1.2432532646085956
+            ],
+            "ground": [
+              0,
+              -0.6941896024464831
+            ],
+            "yawKNm": 1.65
+          },
+          {
+            "force": [
+              0,
+              -1
+            ],
+            "westTie": [
+              0,
+              -0.45093633783788745
+            ],
+            "eastTie": [
+              0,
+              -1.2432532646085956
+            ],
+            "ground": [
+              0,
+              0.6941896024464831
+            ],
+            "yawKNm": -1.65
+          }
+        ],
+        "westRootPoint": [
+          -1.0576923076923084,
+          -8.158653846153847,
+          -0.58173076923077
+        ],
+        "eastRootPoint": [
+          6.0576923076923075,
+          0.30288461538461536,
+          -5.149038461538461
+        ],
+        "westRootCombined": [
+          -0.1103846153846142,
+          -11.24605769230769,
+          -0.060711538461537984
+        ],
+        "eastRootCombined": [
+          10.690384615384614,
+          0.5345192307692307,
+          -9.086826923076922
+        ],
+        "restOverWell": [
+          600,
+          500
+        ],
+        "restOverEastChamber": [
+          0,
+          150
+        ]
+      },
+      {
+        "corner": "NW",
+        "point": [
+          4350,
+          7650
+        ],
+        "rest": [
+          5200,
+          6200,
+          600,
+          600
+        ],
+        "deck": [
+          4350,
+          5850,
+          1800,
+          1800
+        ],
+        "containsRest": true,
+        "cornerPad": [
+          -9.366987179487179,
+          -0.28846153846153844,
+          14.655448717948717
+        ],
+        "restPad": [
+          -1.4423076923076925,
+          1.9230769230769231,
+          4.519230769230769
+        ],
+        "combinedPad": [
+          -11.974559294871794,
+          1.8028846153846152,
+          21.04417467948718
+        ],
+        "pipeRoutes": {
+          "normal": [
+            [
+              5400,
+              7500
+            ],
+            [
+              5325,
+              7500
+            ],
+            [
+              5325,
+              7000
+            ],
+            [
+              4525,
+              7000
+            ]
+          ],
+          "east": [
+            [
+              4750,
+              6600
+            ],
+            [
+              5175,
+              6600
+            ],
+            [
+              5175,
+              6875
+            ],
+            [
+              5675,
+              6875
+            ]
+          ],
+          "highEast": [
+            4500,
+            6600
+          ],
+          "eastDrop": [
+            4750,
+            6600
+          ]
+        },
+        "clearPipeToTower": {
+          "normal": 350,
+          "east": 100
+        },
+        "tieCases": [
+          {
+            "force": [
+              1,
+              0
+            ],
+            "westTie": [
+              0.8470948012232415,
+              0.3961584633853541
+            ],
+            "eastTie": [
+              0.8470948012232415,
+              -0.3961584633853541
+            ],
+            "ground": [
+              -0.6941896024464831,
+              0
+            ],
+            "yawKNm": -1.65
+          },
+          {
+            "force": [
+              -1,
+              0
+            ],
+            "westTie": [
+              -0.8470948012232415,
+              -0.3961584633853541
+            ],
+            "eastTie": [
+              -0.8470948012232415,
+              0.3961584633853541
+            ],
+            "ground": [
+              0.6941896024464831,
+              0
+            ],
+            "yawKNm": 1.65
+          },
+          {
+            "force": [
+              0,
+              1
+            ],
+            "westTie": [
+              0,
+              1.2432532646085956
+            ],
+            "eastTie": [
+              0,
+              0.45093633783788745
+            ],
+            "ground": [
+              0,
+              -0.6941896024464831
+            ],
+            "yawKNm": -1.65
+          },
+          {
+            "force": [
+              0,
+              -1
+            ],
+            "westTie": [
+              0,
+              -1.2432532646085956
+            ],
+            "eastTie": [
+              0,
+              -0.45093633783788745
+            ],
+            "ground": [
+              0,
+              0.6941896024464831
+            ],
+            "yawKNm": 1.65
+          }
+        ],
+        "westRootPoint": [
+          5.288461538461538,
+          -7.206730769230768,
+          2.908653846153846
+        ],
+        "eastRootPoint": [
+          -0.28846153846153844,
+          -0.014423076923076922,
+          0.24519230769230768
+        ],
+        "westRootCombined": [
+          9.069615384615387,
+          -9.905620192307692,
+          4.988288461538463
+        ],
+        "eastRootCombined": [
+          1.8028846153846152,
+          0.09014423076923075,
+          -1.532451923076923
+        ],
+        "restOverWell": [
+          0,
+          500
+        ],
+        "restOverEastChamber": [
+          350,
+          150
+        ]
+      }
+    ],
+    "serviceDeck": {
+      "floorZ": 5540,
+      "topRestZ": 5750,
+      "oneActive": 1,
+      "landing": [
+        5650,
+        5500,
+        1000,
+        1000
+      ],
+      "ladderPlan": [
+        6300,
+        5200,
+        600,
+        600
+      ],
+      "coreBeamY": [
+        5900,
+        6500
+      ],
+      "centreLinesX": [
+        4500,
+        7100
+      ],
+      "deckGravityComparisonKPa": 1.5,
+      "unitHorizontalAtDeck": {
+        "x": [
+          -1.5980769230769232,
+          2.1307692307692307,
+          -0.5326923076923077
+        ],
+        "y": [
+          -9.233333333333333,
+          0,
+          9.233333333333333
+        ]
+      },
+      "positiveTies": {
+        "z": 3270,
+        "x": [
+          3917.5,
+          8082.5
+        ],
+        "y": 6000,
+        "topForcePerAppliedKN": 1.694189602446483,
+        "groundForcePerAppliedKN": -0.6941896024464831,
+        "groundWindowFreeY": [
+          5650,
+          6350
+        ]
+      }
+    },
+    "apronLatch": {
+      "mast": [
+        5800,
+        7285
+      ],
+      "foot": [
+        5730,
+        7215,
+        140,
+        140
+      ],
+      "postTop": 1100,
+      "catch": [
+        6075,
+        7222.5,
+        1000
+      ],
+      "planLever": 282.0128543169619,
+      "rimFeedClearX": 55,
+      "footToNorthGrate": 45,
+      "asBuiltModuleToFoot": 40,
+      "subRibFromWestFace": [
+        4250,
+        6200,
+        -465
+      ],
+      "subRibLength": 1892.0161204387239
+    },
+    "westAndEastBrackets": {
+      "rootXY": [
+        [
+          3950,
+          6200
+        ],
+        [
+          7950,
+          6100
+        ]
+      ],
+      "westCantileverToPadsMm": 250,
+      "eastFaceToBMm": 550,
+      "eastFaceToRampWestMm": 925,
+      "courtGirderTop": -180,
+      "blindPlateHeightZ": [
+        -675,
+        -465
+      ],
+      "anchorRowZ": [
+        -630,
+        -510
+      ]
+    },
+    "ramp": {
+      "layout": [
+        6725,
+        5750,
+        650,
+        550
+      ],
+      "pad": [
+        6900,
+        5850,
+        400,
+        400
+      ],
+      "removedTipOnly": [
+        400,
+        50
+      ],
+      "originalPadConflict": [
+        400,
+        400
+      ],
+      "oldGate": 6250,
+      "newGateY": 6290,
+      "closedLeafSouth": 6270,
+      "gateToPad": 20,
+      "pair": [
+        325,
+        550
+      ],
+      "turnCentre": [
+        6900,
+        5360
+      ],
+      "turnRadius": 319.4233084795159,
+      "rack": [
+        5900,
+        5840,
+        600,
+        350
+      ],
+      "stow": [
+        5925,
+        5852.5,
+        550,
+        325
+      ],
+      "fullBlockUpperPerHalfKg": 72.96575,
+      "toeThicknessMm": 3,
+      "wedgeMaximumMm": 52,
+      "fullSolidWedgePerHalfKg": 38.587656249999995,
+      "westStairGuardCatch": {
+        "post": [
+          5800,
+          7285
+        ],
+        "seatedGateX": 6075
+      },
+      "rackToChamberAisle": 450,
+      "rackOverFirstRest": [
+        [
+          0,
+          0
+        ],
+        [
+          275,
+          0
+        ],
+        [
+          275,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "roofWorkVehiclesExcluded": true
+    },
+    "capture": {
+      "oldPrimary": 4450,
+      "oldSecondary": 4470,
+      "primaryQ": 4525,
+      "secondaryQ": 4545,
+      "primaryZ": 7290.188716648673,
+      "secondaryZ": 7107.328801280747,
+      "oldDryToNew": -10,
+      "wetNear": 4440,
+      "wetFar": 4670,
+      "dryNear": 4590,
+      "dryToPrimary": 65,
+      "dryToSecondary": 45,
+      "wetPrimaryEach": [
+        85,
+        145
+      ],
+      "wetSecondaryEach": [
+        105,
+        125
+      ],
+      "upperJet": 150,
+      "head": 350,
+      "stroke": 150,
+      "nominalJetMargins": 25,
+      "firstRestStroke": 900,
+      "restReserve": 50,
+      "carrierMovementZ": [
+        6335,
+        6515
+      ],
+      "existingGutterFront": 4700,
+      "primaryFallToOriginalBottom": 700.1887166486731
+    },
+    "chambers": {
+      "normal": [
+        4300,
+        6775,
+        450,
+        450
+      ],
+      "east": [
+        5450,
+        6650,
+        450,
+        450
+      ],
+      "aisle": 700,
+      "normalThroat": {
+        "x": [
+          4400,
+          4650
+        ],
+        "startY": 7225,
+        "toY": 7325,
+        "overlapOnNorthIntake": 25
+      },
+      "eastThroat": {
+        "y": [
+          6750,
+          7000
+        ],
+        "startX": 5900,
+        "endX": 5945,
+        "overhangAbove200Approach": 20,
+        "undersideZ": 40,
+        "clearAboveQuiet": 75
+      },
+      "old": [
+        [
+          4350,
+          6775,
+          450,
+          450
+        ],
+        [
+          5550,
+          6650,
+          450,
+          450
+        ]
+      ],
+      "crewR300Each": 50,
+      "lidUplift": 9.755064,
+      "blockedPressure": 60.96915,
+      "pipeBandsZ": [
+        3650,
+        4050
+      ],
+      "stageOnly": "Both chambers and the 700 mm ground aisle stay clear in the same corner-service state."
+    }
+  },
+  "access": {
+    "windowCentreY": 6850,
+    "windowSource": "court-east-1",
+    "windowLeaf": 450,
+    "windowTask": {
+      "minimumConservativeBodyReserve": 25,
+      "maximumConservativeHandleReach": 485.4491146528364,
+      "maximumCleaningPoleReach": 1463.087488839953,
+      "scope": "Constructive spatial reference; no force, glass, hardware, walking-cover load or occupational/access-category qualification."
+    },
+    "ramp": [
+      6725,
+      5750,
+      650,
+      550
+    ],
+    "operator": [
+      [
+        7050,
+        5900
+      ],
+      [
+        7050,
+        6600
+      ],
+      [
+        7325,
+        6850
+      ]
+    ],
+    "openLeafX": 6682.5,
+    "bodyEnvelopeRadius": 300,
+    "sideClear": [
+      25,
+      25
+    ],
+    "gateNewY": 6290,
+    "gateAndPadClear": 20,
+    "westGateHinge": [
+      6075,
+      6577.5
+    ],
+    "westGatePark": [
+      5430,
+      6557.5,
+      645,
+      40
+    ],
+    "westGateY": [
+      6575,
+      7225
+    ],
+    "westStairs": {
+      "fixedSteps": [
+        6125,
+        6600,
+        600,
+        600
+      ],
+      "topLandingZ": -80,
+      "lowerLandingZ": -800,
+      "rises": 4,
+      "going": 200,
+      "riseMaximum": 180,
+      "method": "Four180 rises/three200 goings run EAST from west guard gate to a separate flat600x900 working platform. Level adapter must fit local sloping court; no stairs overlap the standing footprint. Guard before covers; isolate court water before entry."
+    },
+    "westPlatform": [
+      6725,
+      6450,
+      600,
+      900
+    ],
+    "weatherRoof": 1970,
+    "chamberTo200Approach": 25,
+    "bothBodiesClear": 700,
+    "oldWestInstalledAndStored": [
+      [
+        450,
+        450
+      ],
+      [
+        450,
+        450
+      ]
+    ],
+    "retractingWestRamp": [
+      4900,
+      6600,
+      1325,
+      600
+    ],
+    "oldSouthOverlap": [
+      400,
+      400
+    ],
+    "scope": "South gate opens only on all locked/readmitted covers, and the separate west gate guards isolated E renewal."
+  },
+  "eastExport": {
+    "permanentPieces": [
+      {
+        "id": "inner",
+        "bodyX": [
+          7550,
+          10050.5
+        ],
+        "length": 2500.5,
+        "bedEnds": [
+          [
+            7550,
+            -797.6470588235294
+          ],
+          [
+            10050.5,
+            -827.064705882353
+          ]
+        ],
+        "parkX": [
+          12250,
+          14750.5
+        ],
+        "translation": 4700
+      },
+      {
+        "id": "outer",
+        "bodyX": [
+          10050.5,
+          12250
+        ],
+        "length": 2199.5,
+        "bedEnds": [
+          [
+            10050.5,
+            -827.064705882353
+          ],
+          [
+            12250,
+            -852.9411764705883
+          ]
+        ],
+        "parkX": [
+          12250,
+          14449.5
+        ],
+        "translation": 2199.5
+      }
+    ],
+    "terminal": {
+      "identity": "REMOVABLE E OUTLET CHUTE CARTRIDGE",
+      "bed": [
+        [
+          12250,
+          -852.9411764705883
+        ],
+        [
+          12750,
+          -1200
+        ]
+      ],
+      "waterClear": 600,
+      "sheetBudget": 1.5,
+      "outwardFlangeEach": 30,
+      "sideHeight": 150,
+      "grossPlan": [
+        12225,
+        6568.5,
+        550,
+        663
+      ],
+      "connection": "Upstream25 open underlap beneath the installed E outlet, with open side returns capturing the600clear stream. No pressure seal or hidden upward return. Entire cartridge is removed before E body drawing.",
+      "support": {
+        "railInnerFacesY": [
+          6550,
+          7250
+        ],
+        "inwardBearingEach": 50,
+        "footprintOutsideRails": false,
+        "role": "Independent captured edge shoes bridge from actual rail edges to cartridge flanges; cartridge body stays BETWEEN rails while descending below their level. No transverse support passes through the water or moving body. Member/fixing/corrosion and actual loads remain STR/MAT."
+      },
+      "farLip": [
+        12750,
+        6900,
+        -1200
+      ],
+      "nozzleOrientation": "EAST and downward along the source bed; vertical/no-horizontal case also checked. No upturned discharge lip.",
+      "physicalAcceptance": false
+    },
+    "installedUpperOperator": [
+      6725,
+      6450,
+      600,
+      900
+    ],
+    "retainedTrack": {
+      "sectionVertical": 100,
+      "sectionNS": 50,
+      "wall": 5,
+      "axesY": [
+        6525,
+        7275
+      ],
+      "topRelativeBed": -150,
+      "supportX": [
+        7950,
+        9300,
+        11667.5,
+        12250,
+        13500,
+        14950
+      ],
+      "sidePostY": [
+        6350,
+        7450
+      ],
+      "postSection": [
+        50,
+        50,
+        5
+      ],
+      "loadpath": "Side posts/drop brackets OUTSIDE complete920movingprofile; cantilevers remain at/below railtop. No hanging part through movingframe. Primary supports/platform reaction/capacity require STR admission."
+    },
+    "westGateFirstRest": [
+      4780,
+      5490,
+      650,
+      360
+    ],
+    "temporaryExtensionRule": "Outboard track and receiver crossings are assembled only while E is isolated and N has been demonstrated.",
+    "siteStates": [
+      {
+        "id": "north",
+        "farMax": -1000,
+        "receiverFaultMax": -650
+      },
+      {
+        "id": "east",
+        "farMax": -1600,
+        "receiverFaultMax": -1250
+      }
+    ],
+    "limitingInternalTailLong": -743.7412715737225,
+    "screenUpperWater": -717.6470588235294
+  },
+  "alternatives": {
+    "closed": {
+      "walkingCoverCount": 10,
+      "wetCoverCount": 6,
+      "pipe": "Lawton TX1593/TX1596 TableX hard copper",
+      "id": 153.5,
+      "fitting": "Endex N18/89710,159",
+      "flange": "Endex N1FMGI159 item89719",
+      "nativeClosedAxis": [
+        7181.7128027681665,
+        7000,
+        -200
+      ],
+      "firstJoin": 72.02595065917788,
+      "park": [
+        12250,
+        16950
+      ],
+      "stage": [
+        12250,
+        8100,
+        4900,
+        1200
+      ],
+      "deckEnd": 17150,
+      "stageExtra": 2200,
+      "downOutlet": [
+        12950,
+        7000,
+        -1200
+      ],
+      "upperFirstBound": [
+        [
+          6735,
+          7040
+        ],
+        [
+          6807.5,
+          7400
+        ],
+        [
+          -381.67635458155155,
+          0
+        ]
+      ],
+      "lockClearY": [
+        6465,
+        7339.385510561665
+      ],
+      "upperGuardAndRoofGaps": [
+        208.32364541844845,
+        260
+      ],
+      "scope": "Distinct subsequent native upper-first geometry, receiver and blocked dry lane; its ports cannot drain the open pan."
+    },
+    "openAirCut": {
+      "box": [
+        7750,
+        6300,
+        1972.5,
+        1200
+      ],
+      "extraExteriorM2": 2.367,
+      "domesticGalleryM2": 1.2282,
+      "furnitureHits": [],
+      "decision": "Additional east exterior cut severs rear-east ground continuity with the open north loggia. Reject without another dry crossing or room replan."
+    }
+  },
+  "states": [
+    [
+      "Ordinary / east window",
+      "Both N/E assembled. Six wet and four dry walking covers locked. Both ramp wedges fitted above the flush socket covers. Open south gate over the covers, clean and close."
+    ],
+    [
+      "Failed N",
+      "N entry has zero credit. Graded court feeds the continuous west edge into its actual six bodies; the ordinary dock and services are separate."
+    ],
+    [
+      "E out of service",
+      "Prove N full duty and independent receiving/weather route. Close both gates, take out ramp, erect/test the E weather enclosure; remove all walking covers and baskets from above before using the western stair."
+    ],
+    [
+      "N short / long works",
+      "Install the existing pipe cartridge before N is opened. Capture direct court flow at the original overhead nozzle. Long loggia diversion can combine at 4.43895; separately protect the high N chase when E is blocked."
+    ],
+    [
+      "One roof corner",
+      "Close ordinary household access; both low chambers and both independent receivers are available. Remove/stage both ramp halves, erect restrained frame, both wet lines and chambers, then high catch before disturbing the ordinary L."
+    ],
+    [
+      "Restore",
+      "Return the L and leader, wet-test joints and both paths, shift catch dry, then strike hoses, chambers, frame and three sockets. Return ramp, prove gates and covers. For low-body renewal, reverse the captured basket, couplings, pans and weather protection before returning E."
+    ]
+  ]
+}

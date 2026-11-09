@@ -30,6 +30,8 @@ The old700-square/H400 platform control is **rejected**: it did not establish re
 
 ## Heating, water and plant
 
+The [9 November winter plant comparison](winter-heat-and-water.md) tests the current room emitters and four timed water draws against native outdoor ratings, actual cylinder volume, a revised plant seat, two floor sleeves and the external loading dock. Its 10 kW-class branch depends on the W9 ventilation alternative, enough participating room heat capacity, a matched 6 kW charging assembly and a viable site supply. The governing six local extracts still exceed the 8 kW room limit in its −10°C scenario.
+
 The8kW compatibility screen passes220W/K fabric-plus-infiltration and25K at7.84kW with78L/s ventilation, and fails the30K control at9.408kW. It is not a site heat loss, remembered heat-pump label, COP or annual-energy claim. Required45/40water and20°C habitable/22°C wet-room emitter targets are explicit. Actual design climate, losses, defrost and primary-separation loss may reject or resize this package.
 
 Sixteen finite radiator stations serve fourteen duties. Stelrad K3 catalogue output is reduced conservatively by0.342 for20°C rooms and0.302 for22°C wet rooms, checked below the actual n-coefficient prediction at the declared temperatures. Complete footprints include180mounted depth expanded to200, valves and real dry/water mass. They are compared with authored room budgets totalling8kW, not invented room heat losses. Exact finish, clips, valves, humidity compatibility, supports and apparatus remain unadmitted.
