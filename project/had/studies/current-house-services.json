@@ -11,7 +11,8 @@
     "project/had/studies/receiver-selection.json": "5408aac3d43c95e3f5240f8510f91fb04d7a23cd",
     "project/mat/studies/whole-house-leakage-duty.json": "5b93cdd9ea1ee7d825fa4596a44caf06431afc49",
     "project/mat/studies/loggia-soffit.json": "c9c914169547bd42b90cd69512ba1a28d97ca6fe",
-    "project/mat/studies/joined-cooker-system.json": "d04dd78ba3fd040c7abd1aecb94aa9a3ce95d5e0"
+    "project/mat/studies/joined-cooker-system.json": "d04dd78ba3fd040c7abd1aecb94aa9a3ce95d5e0",
+    "project/ias/studies/shared-family-bathing.json": "08d6d466d515804a58d6cbd22a5f45188af7f56e"
   },
   "court": "HAD-COURT-BYPASS-01",
   "wholeHeat": {
@@ -683,6 +684,60 @@
         "acceptedOpenAreaProxy": 35000,
         "requiredLoadedClosureS": 4.75,
         "warning": "The nominal 4.75 s contract does not prove the maximum differential, a classified door or an approved grease-rated assembled damper."
+      },
+      "supplyLoss": {
+        "lateSeat": {
+          "volumeM3": 600.39144135,
+          "healthyNet": 4.6577809,
+          "peak": 107.37613425,
+          "seated": 4.35,
+          "atDeadline": -12.35253631,
+          "lastBelow": 5.974,
+          "minimum": -41.61637718,
+          "doorDifferential": 15.12721399,
+          "final": -3.50720265
+        },
+        "stagedEarlyFlow": {
+          "volumeM3": 600.39144135,
+          "healthyNet": 4.6577809,
+          "peak": 107.37613425,
+          "seated": 4.35,
+          "atDeadline": -3.97462973,
+          "lastBelow": 4.4665,
+          "minimum": -35.26172975,
+          "doorDifferential": 14.51529424,
+          "final": -3.50453655
+        },
+        "largeAirVolume": {
+          "volumeM3": 720.46972962,
+          "healthyNet": 4.6577809,
+          "peak": 107.37613425,
+          "seated": 4.35,
+          "atDeadline": -4.23025818,
+          "lastBelow": 4.592,
+          "minimum": -33.72192574,
+          "doorDifferential": 14.35452285,
+          "final": -3.505102
+        },
+        "requiredFlowDeadlines": [
+          {
+            "seconds": 1.35,
+            "fraction": 0.5
+          },
+          {
+            "seconds": 2.35,
+            "fraction": 0.25
+          },
+          {
+            "seconds": 3.35,
+            "fraction": 0.1
+          },
+          {
+            "seconds": 4.35,
+            "fraction": 0
+          }
+        ],
+        "scope": "Maximum fraction of the peak-to-seated exhaust increment. Flow measurements must include the operating fans, bypass, wind draw and both closed-seat leakages. The loaded assembly is unqualified."
       }
     }
   },
@@ -1036,5 +1091,22 @@
     "firstManifoldAxisContact": 76.08485357,
     "tundishAxis": 91.57526073,
     "maxRetainedValveRadius": 45.96045419
+  },
+  "separateRearOption": {
+    "selected": false,
+    "cold": 13,
+    "hot": 8,
+    "wc": 4,
+    "bathingPlaces": 2,
+    "roomFans": 6,
+    "omittedRearBranchMM": 3370,
+    "bedroom4TwoDoorsToBathMM": 18764.2,
+    "bathRimMM": 580,
+    "retainedRearPort": [
+      567.5,
+      11177.5,
+      160
+    ],
+    "basis": "Identical heated envelope, rear wet-room target and six fans. Keep the same four-person water draw, case and plant duty."
   }
 }

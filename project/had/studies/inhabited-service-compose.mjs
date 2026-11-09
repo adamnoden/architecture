@@ -94,5 +94,5 @@ export function composeOccupiedHouse(twoExit,previous,offer,tempered,heatPurchas
   model.storeExchange = storeExchange(s, model.groundFurniture);
   model.currentCourt=court.id;model.water.currentReceiver=court.id;
   return {id:'HAD-SERVICES-ADOPTION-01-RECOVERY',model,courtReceiver:court,threeBathing:true,
-    separateRearOption:{selected:false,cold:13,hot:8,bathingPlaces:2,roomFans:6},siteAccepted:false,installedPerformance:false};
+    siteAccepted:false,installedPerformance:false};
 }

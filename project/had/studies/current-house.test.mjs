@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {deriveCurrentHouse,scheduleText} from './current-house.mjs';
+import {supplyLoss} from './cooker-supply-loss.mjs';
 import {servicePlate,storePlate} from './occupied-service-plate.mjs';
 const x=deriveCurrentHouse(),m=x.model,s=m.architecturalServices;
 const near=(a,b,tol=1e-5)=>assert(Math.abs(a-b)<tol,`${a} != ${b}`);
@@ -41,5 +42,23 @@ test('store cradle clears the two piers and retained plant only after first rele
 test('published schedule and both figures reproduce from the complete house option',()=>{
   for(const [file,render] of [['current-house-services.json',scheduleText],['current-house-services.svg',servicePlate],['store-exchange.svg',storePlate]])
     assert.equal(readFileSync(new URL(file,import.meta.url),'utf8'),render(x),file);
-  assert.equal(Object.keys(x.inputs).length,9);
+  assert.equal(Object.keys(x.inputs).length,10);
+});
+
+test('same seat time, different flow histories: the room pressure can fail or recover',()=>{
+  const {lateSeat,stagedEarlyFlow,largeAirVolume}=s.cooker.closure.supplyLoss;
+  assert(lateSeat.atDeadline<-12 && lateSeat.lastBelow>5.9);
+  assert(stagedEarlyFlow.atDeadline>-4 && stagedEarlyFlow.lastBelow<4.5);
+  assert(largeAirVolume.lastBelow<4.6);
+  assert(Math.abs(supplyLoss(x,{dt:.00025}).atDeadline-stagedEarlyFlow.atDeadline)<.002);
+  for(let mask=0;mask<32;mask++){
+    const result=supplyLoss(x,{mask,volumeScale:1.2});
+    assert(result.atDeadline>=-5 && result.lastBelow<4.61,`mask ${mask}`);
+  }
+});
+test('rear WC option costs the actual alternative without deleting a wet fan or lowering house duty',()=>{
+  const option=x.separateRearOption;
+  assert.equal(option.wc,4);assert.equal(option.roomFans,s.fanAccess.length);
+  assert.deepEqual([option.cold,option.hot,option.bathingPlaces],[13,8,2]);
+  assert.equal(option.omittedRearBranchMM,3370);assert.equal(option.bedroom4TwoDoorsToBathMM,18764.2);
 });

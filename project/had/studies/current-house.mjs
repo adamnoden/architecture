@@ -1,6 +1,7 @@
 import {readFileSync,writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {servicePlate,storePlate} from './occupied-service-plate.mjs';
+import {supplyLoss} from './cooker-supply-loss.mjs';
 import {fileURLToPath} from 'node:url';
 import {roomSelection} from './inhabited-service-rooms.mjs';
 import {controlAndStorage} from './inhabited-service-faults.mjs';
@@ -18,7 +19,21 @@ export function deriveCurrentHouse(){
     plant=read('mat/studies/local-extract-heat-and-store'),court=read('had/studies/receiver-selection');
   const thermal=roomSelection(h.model,read('mat/studies/whole-house-leakage-duty'),base,offer,read('mat/studies/loggia-soffit').thermal);
   const outcomes=controlAndStorage(read('mat/studies/joined-cooker-system').SwegonExternalMotorCandidate.fanChartSamplesPa);
-  return {...composeOccupiedHouse(h,base,offer,temp,plant,thermal,outcomes,court), inputs};
+  const house=composeOccupiedHouse(h,base,offer,temp,plant,thermal,outcomes,court);
+  const rear=read('ias/studies/shared-family-bathing');
+  const [cold,hot]=rear.services.withDiverter;
+  const [wc,showers,baths,roomFans]=rear.threeRoomComparators.rearWCPlusSharedBathShower;
+  house.separateRearOption={selected:false,cold,hot,wc,bathingPlaces:showers+baths,roomFans,
+    omittedRearBranchMM:rear.services.rearShowerBranchesRemovedFromUseMm,
+    bedroom4TwoDoorsToBathMM:rear.access.twoOperatedDoorsAndBathArrivalMm,
+    bathRimMM:rear.room.rim,retainedRearPort:rear.services.retainedRearPort,
+    basis:'Identical heated envelope, rear wet-room target and six fans. Keep the same four-person water draw, case and plant duty.'};
+  const closure=house.model.architecturalServices.cooker.closure;
+  closure.supplyLoss={lateSeat:supplyLoss(house,{profile:'late'}),
+    stagedEarlyFlow:supplyLoss(house),largeAirVolume:supplyLoss(house,{volumeScale:1.2}),
+    requiredFlowDeadlines:[{seconds:1.35,fraction:.50},{seconds:2.35,fraction:.25},{seconds:3.35,fraction:.10},{seconds:4.35,fraction:0}],
+    scope:'Maximum fraction of the peak-to-seated exhaust increment. Flow measurements must include the operating fans, bypass, wind draw and both closed-seat leakages. The loaded assembly is unqualified.'};
+  return {...house,inputs};
 }
 // Compact, reproducible review projection of the full furnished-house candidate.
 export function serviceSchedule(house){
@@ -29,7 +44,7 @@ export function serviceSchedule(house){
     localElectric:s.roomElectric,air:s.cooker,
     wetRoomFans:s.fanAccess.map(f=>({id:f.id,plan:f.podPlan,selectedMode:f.modes})),
     transferDoors:m.protectedDoorAirTransfer,wetTransferWalls:m.wetWallAirTransfer,
-    materials:s.materials,storeExchange:m.storeExchange};
+    materials:s.materials,storeExchange:m.storeExchange,separateRearOption:house.separateRearOption};
 }
 // Round derived quantities for reproducible text across supported Node engines.
 export const scheduleText=house=>JSON.stringify(serviceSchedule(house),(_,v)=>typeof v==='number'?Number(v.toFixed(8)):v,2)+'\n';
