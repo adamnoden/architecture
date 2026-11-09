@@ -9,8 +9,8 @@
     "label": "Owner follow-on: plant water repair"
   },
   "claimedAt": "2026-11-09T02:34:08.819Z",
-  "heartbeatAt": "2026-11-09T02:47:49.867Z",
-  "expiresAt": "2026-11-09T03:32:49.867Z",
+  "heartbeatAt": "2026-11-09T02:52:16.397Z",
+  "expiresAt": "2026-11-09T03:37:16.397Z",
   "branch": "work/swarm-water-repair-20261109",
   "predecessor": {
     "leaseId": "7ffaa9c8-17ff-41dd-b9d5-635737f061c2",
@@ -34,7 +34,7 @@
   },
   "pr": 1418,
   "checkpoint": {
-    "evidence": "PR #1418 at 3b1ddcf5 reproduces the 986 mm terminal requirement and two repair sleeve placements.",
-    "next": "Reconcile #1414 main, await exact CI, preflight, merge and hand off on #1100."
+    "evidence": "PR #1418 reconciled to 85b99f22 at f8b98349. HAD and plant geometry are identical and all four predecessor scopes remain intact.",
+    "next": "Await final repository validation, preflight, merge, and handoff on #1100."
   }
 }
