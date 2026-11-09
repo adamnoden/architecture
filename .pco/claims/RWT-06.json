@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T07:03:05.860Z",
-  "heartbeatAt": "2026-11-09T08:21:58.513Z",
-  "expiresAt": "2026-11-09T09:06:58.513Z",
+  "heartbeatAt": "2026-11-09T08:24:32.887Z",
+  "expiresAt": "2026-11-09T09:09:32.887Z",
   "branch": "work/house-0702-20261109",
   "predecessor": {
     "leaseId": "b61d5ecf-62c0-4f25-9c0b-c8081078b5f0",
@@ -34,7 +34,7 @@
   },
   "pr": 1440,
   "checkpoint": {
-    "evidence": "PR #1440 f0408c00. Joined ramp, blocked inlet, corner chamber and physical outlet. 212 RWT and 161 control tests, typecheck and repository integrity pass.",
-    "next": "Verify exact base and head, full hosted checks, merge fence and #992 handoff. HAD-COURT-INTAKE becomes the owning source gate once integrated."
+    "evidence": "The joined court decision and owning programme are on PR 1440 with independently preserved source history. Source 8aa3cf9f; programme correction 6390c5e9. See the current PR for final integration and validation.",
+    "next": "After merge, update issues 992 and 943, release this handoff and dispatch the newly registered HAD-COURT-INTAKE. RWT-06 resumes after that house input."
   }
 }
