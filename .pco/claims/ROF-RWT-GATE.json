@@ -9,8 +9,8 @@
     "label": "swarm-20261110-root"
   },
   "claimedAt": "2026-11-10T21:02:13.030Z",
-  "heartbeatAt": "2026-11-10T21:56:43.000Z",
-  "expiresAt": "2026-11-10T22:41:43.000Z",
+  "heartbeatAt": "2026-11-10T22:15:08.798Z",
+  "expiresAt": "2026-11-10T23:00:08.798Z",
   "branch": "work/swarm-roof-g3-20261110",
   "predecessor": {
     "leaseId": "47083968-9abd-4627-90bb-040ec3eb4792",
@@ -36,7 +36,7 @@
   },
   "pr": 1472,
   "checkpoint": {
-    "evidence": "Published840c2caa joins services main and finite144/independent134 removal plus22 receiving union.22HAD/227RWT/162control tests pass; joined CI failure under inspection. Private local inventory and lateral/blocked-weir checks reject old inner geometry.",
-    "next": "Inspect exact CI failure; join proposed350/425 inner channels,125 lower depth/190 water, exterior hangers and complete ordinary renewal, then replay native loads and physical route."
+    "evidence": "Published 43439645013016d4fed8b0ec06bba7e38358d57d; source identity fix has 53 HAD and 227 RWT tests passing; hosted exact-head CI running. New 280/60 geometry checkpoint and 170/190 hydraulic comparison are explicit unselected candidates.",
+    "next": "Review and preserve source-bound candidate; join added inner wind, corrected full head-plus-bay removals and 170 mm primary water; complete physical renewal paths."
   }
 }
