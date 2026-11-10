@@ -143,6 +143,95 @@ comparison at Z6800 is proposed to cover the raised rear, but does not change
 the selected route or qualify its seals and transients. Actual receiving
 contact, core and downstream resistance remain unqualified throughout.
 
+## Added-pressure failures and receiving stiffness
+
+The [pressure checkpoint](studies/roof_water_pressure_checkpoint.json) now
+preserves the missing wind comparison. It uses the frozen local candidate
+`4eb505e4…`, 170/190 mm water, 716 horizontal resultants in 20 shared face-sign
+groups and 96 independent zero-force couples bounding the provisional extra
+apron-stock centroids. The complete variant also retains the native roof/cap
+wind and adds all 52 actual floor resultants in 24 independent cassette-sign
+groups. It takes no shielding, projected-area cancellation or shared-root
+credit between the primary cap and lower floor.
+
+| 280 mm court comparison | Court interaction | M24 tension | Floor / roof normal tie maxima |
+|---|---:|---:|---:|
+| Added horizontal pressure, installed | 1.054539669 | 118.416362205 kN | 8.220266263 / 3.084916735 kN |
+| Complete added pressure, installed | 1.083076816 | 120.078448597 kN | 8.226548521 / 3.090342490 kN |
+| Complete pressure and revised finite renewal | 1.086484440 | 120.186266831 kN | 8.228008929 / 3.054485450 kN |
+
+All three comparisons **fail** the retained court-member, M24 and 8/3 kN tie
+screens. The revised finite family has the same 144 mutually exclusive
+operation identities, but its eight adjacent-bay/head cases now remove the
+complete source head and 8.4 m leader dry bound. The unchanged state remains
+available, so reducing that removal bound cannot fix the installed failure.
+The explicitly unadmitted 22-station ledger retains the larger installed roof
+tie demand, 208.559913 kN maximum compression and 120.186267 kN maximum tension.
+No failed result is folded into an admitted receiving union.
+
+Generation included native fixed-end, force, moment and water-superposition
+checks. The package and all 34 transitive native input hashes were verified;
+the receiving receipt passed exact reproduction. A duplicate full native
+reproduction has not yet been run for these failure receipts. Their reported
+validation does not imply that it has.
+
+The [receiving-component comparison](studies/roof_water_receiving_components.py)
+also tests the physical meaning of the native 40 kN/mm vertical springs. Even
+a perfect nominal 24 mm solid shank over the shortest 2620 mm source envelope
+gives only 34.533538 kN/mm at E200 GPa, before threads, plates, seating and the
+downstream receiver. A full-thread-area comparison gives 26.946565 kN/mm. The
+illustrative ordinary M24/two-M16 series gives 20.092539 kN/mm for a centred
+load, or 19.890172 kN/mm at the source 60/40 stud split. Those are comparative
+elastic calculations, not measured stiffnesses or lower bounds. A larger
+bespoke shank or different receiver must be explicitly authored.
+
+The same source preserves the existing rod material failing a 125 kN action
+comparison and a same-diameter class 8.8 material alternative passing its
+individual shaft and ordinary fitting screens. Its manufacturer reference
+supplies material properties only. Higher rod strength does not earn the
+40 kN/mm spring. The ordinary fitting expressly excludes all eight corners,
+including the governing north-west court station. The corner route,
+compression/contact, supporting collector and sliding portal receivers remain
+separate design duties. Neither spring nor tie-strength limits have been raised.
+
+## Located physical renewal candidates
+
+The [inner candidate memo](roof-water-inner-candidate.md), source and compact
+receipt preserve all 3584 local-frame case identities, actual members, stock,
+controlling forces and movements. The primary-arm relocation avoids the former
+clash with the wide lower hangers. Exact local section motion leaves
+12.007593 mm for native paired along-face closure and other motion after both
+local flexes and opposed settings. The additional apron-stock pressure still
+needs return through the local frame; the local stress screen is not a complete
+wind pass.
+
+The new continuous body-path calculation uses a fixed independent trough at
+Z6100–6250, rests at Z6300, short upper part gates and a 150 mm north landing
+extension. It retains 10 mm minimum post clearance and 15 mm rest margins in
+the declared translation geometry. The larger catch skirt fails the former
+worker position; the changed position is explicit. First interception, bowl,
+shutter, collar, support, head departure, whole-corner articulation and reverse
+water control remain unproved. The frozen candidate also records the 0.4 mm
+carrier-stack mismatch and the failed inherited 25 mm window-clearance target.
+
+The [outer renewal comparison](studies/roof_water_outer_renewal_candidate.py)
+prices an actual full-profile joint hypothesis. With those joint sets, the
+original 4 mm primary crossarm exceeds the 50 kg/m envelope; a 3 mm wall
+comparison gives 48.919818 kg/m and 10.667161 mm local-plus-native width roll
+against 11 mm. A lowered head-arm centre at Z6200 can retain the arm during
+body passage in the declared clearance comparison. Its actual fork, collar,
+joint elevations, full native movement and contained rain path remain open.
+The 60 mm long-arm thermal gap is not an every-bay wet joint. Inlet, apron,
+rest and head-absence negative controls are preserved.
+
+The [independent inner hydraulic audit](studies/inner_hydraulics_audit.py) uses
+Newton section inversion and numerical crest integration. It reproduces the
+owning flow, normal-profile and graded-spill arithmetic, including the former
+160 mm water/6790 rear and unknown-crest failures. Both audit and outer
+comparison passed exact standard-library reproduction against the joined
+repository inputs. These remain development evidence; the shared gate stays
+planned.
+
 The following sections preserve the interrupted predecessor's observations.
 Their references to missing files or pending services describe that earlier
 execution; the successor evidence above supersedes those specific statuses.

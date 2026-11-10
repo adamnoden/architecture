@@ -1,0 +1,1013 @@
+{
+  "status": "LOCAL FRAME MOVEMENT RECOVERY ONLY; native pair/facade motion and added apron-frame wind still required",
+  "candidateSourceSHA256": "4eb505e4349b1af1eaa98c96b0aa7174a8b6e3c4210628a969cc10c8252e7eba",
+  "sourceSHA256": "f30ab77a1096b0f365c2c8baf4e4f29983cfda071253c5d1c395f404bb967571",
+  "method": "Exact cubic beam interpolation plus consistent-load quartic displacement; exact polynomial extrema over the overlap; physical section rotation included.",
+  "points": {
+    "primaryOverlapQ": [
+      4325,
+      4345
+    ],
+    "primaryLocalZ": [
+      6579.25,
+      6604.25
+    ],
+    "nativePrimaryGradeExpandedZ": [
+      6579.25,
+      6633.5
+    ],
+    "lowerHangerQ": [
+      4325,
+      4345
+    ],
+    "lowerQueriedZ": [
+      6579.25,
+      6633.5
+    ]
+  },
+  "controls": [
+    {
+      "valueMM": 1.9404055189432583,
+      "scenarioIndex": 367,
+      "element": "moving-transverse-arm",
+      "elementFraction": 0.25,
+      "sectionOffsetPqZMM": [
+        -75,
+        0,
+        -12.5
+      ],
+      "circuit": "primary",
+      "rootP": 5025,
+      "stationP": 4800.0,
+      "component": "along",
+      "loadCase": {
+        "water": {
+          "4800": 170,
+          "5325": 0
+        },
+        "wind": {
+          "body": [
+            1,
+            1,
+            -1
+          ],
+          "apron": [
+            1,
+            1
+          ],
+          "vertical": 1
+        },
+        "gravity": 1.35
+      }
+    },
+    {
+      "valueMM": -2.137615854364971,
+      "scenarioIndex": 391,
+      "element": "moving-transverse-arm",
+      "elementFraction": 0.25,
+      "sectionOffsetPqZMM": [
+        -75,
+        0,
+        -12.5
+      ],
+      "circuit": "primary",
+      "rootP": 5025,
+      "stationP": 4800.0,
+      "component": "normal",
+      "loadCase": {
+        "water": {
+          "4800": 170,
+          "5325": 170
+        },
+        "wind": {
+          "body": [
+            -1,
+            -1,
+            -1
+          ],
+          "apron": [
+            -1,
+            1
+          ],
+          "vertical": 1
+        },
+        "gravity": 1.35
+      }
+    },
+    {
+      "valueMM": 1.818956153614717,
+      "scenarioIndex": 383,
+      "element": "moving-transverse-arm",
+      "elementFraction": 0.25,
+      "sectionOffsetPqZMM": [
+        -75,
+        0,
+        -12.5
+      ],
+      "circuit": "primary",
+      "rootP": 5025,
+      "stationP": 5325.0,
+      "component": "along",
+      "loadCase": {
+        "water": {
+          "4800": 170,
+          "5325": 0
+        },
+        "wind": {
+          "body": [
+            1,
+            1,
+            1
+          ],
+          "apron": [
+            1,
+            1
+          ],
+          "vertical": 1
+        },
+        "gravity": 1.35
+      }
+    },
+    {
+      "valueMM": -2.607818158207385,
+      "scenarioIndex": 495,
+      "element": "moving-transverse-arm",
+      "elementFraction": 0.25,
+      "sectionOffsetPqZMM": [
+        75,
+        0,
+        -12.5
+      ],
+      "circuit": "primary",
+      "rootP": 5025,
+      "stationP": 5325.0,
+      "component": "normal",
+      "loadCase": {
+        "water": {
+          "4800": 170,
+          "5325": 170
+        },
+        "wind": {
+          "body": [
+            1,
+            1,
+            -1
+          ],
+          "apron": [
+            1,
+            1
+          ],
+          "vertical": 1
+        },
+        "gravity": 1.35
+      }
+    },
+    {
+      "valueMM": 1.0446208825680878,
+      "scenarioIndex": 375,
+      "element": "moving-transverse-arm",
+      "elementFraction": 0.25,
+      "sectionOffsetPqZMM": [
+        -75,
+        0,
+        -12.5
+      ],
+      "circuit": "primary",
+      "rootP": 6000,
+      "stationP": 5775.0,
+      "component": "along",
+      "loadCase": {
+        "water": {
+          "5775": 170,
+          "6225": 0
+        },
+        "wind": {
+          "body": [
+            1,
+            1,
+            1
+          ],
+          "apron": [
+            -1,
+            1
+          ],
+          "vertical": 1
+        },
+        "gravity": 1.35
+      }
+    },
+    {
+      "valueMM": -1.9323488663920823,
+      "scenarioIndex": 391,
+      "element": "moving-transverse-arm",
+      "elementFraction": 0.25,
+      "sectionOffsetPqZMM": [
+        -75,
+        0,
+        -12.5
+      ],
+      "circuit": "primary",
+      "rootP": 6000,
+      "stationP": 5775.0,
+      "component": "normal",
+      "loadCase": {
+        "water": {
+          "5775": 170,
+          "6225": 170
+        },
+        "wind": {
+          "body": [
+            -1,
+            -1,
+            -1
+          ],
+          "apron": [
+            -1,
+            1
+          ],
+          "vertical": 1
+        },
+        "gravity": 1.35
+      }
+    },
+    {
+      "valueMM": -1.0446208825587968,
+      "scenarioIndex": 183,
+      "element": "moving-transverse-arm",
+      "elementFraction": 0.25,
+      "sectionOffsetPqZMM": [
+        -75,
+        0,
+        -12.5
+      ],
+      "circuit": "primary",
+      "rootP": 6000,
+      "stationP": 6225.0,
+      "component": "along",
+      "loadCase": {
+        "water": {
+          "5775": 0,
+          "6225": 170
+        },
+        "wind": {
+          "body": [
+            -1,
+            1,
+            1
+          ],
+          "apron": [
+            -1,
+            1
+          ],
+          "vertical": 1
+        },
+        "gravity": 1.35
+      }
+    },
+    {
+      "valueMM": -1.932348866392454,
+      "scenarioIndex": 455,
+      "element": "moving-transverse-arm",
+      "elementFraction": 0.25,
+      "sectionOffsetPqZMM": [
+        75,
+        0,
+        -12.5
+      ],
+      "circuit": "primary",
+      "rootP": 6000,
+      "stationP": 6225.0,
+      "component": "normal",
+      "loadCase": {
+        "water": {
+          "5775": 170,
+          "6225": 170
+        },
+        "wind": {
+          "body": [
+            1,
+            -1,
+            -1
+          ],
+          "apron": [
+            -1,
+            1
+          ],
+          "vertical": 1
+        },
+        "gravity": 1.35
+      }
+    },
+    {
+      "valueMM": -1.8189561537355408,
+      "scenarioIndex": 183,
+      "element": "moving-transverse-arm",
+      "elementFraction": 0.25,
+      "sectionOffsetPqZMM": [
+        -75,
+        0,
+        -12.5
+      ],
+      "circuit": "primary",
+      "rootP": 6975,
+      "stationP": 6675.0,
+      "component": "along",
+      "loadCase": {
+        "water": {
+          "6675": 0,
+          "7200": 170
+        },
+        "wind": {
+          "body": [
+            -1,
+            1,
+            1
+          ],
+          "apron": [
+            -1,
+            1
+          ],
+          "vertical": 1
+        },
+        "gravity": 1.35
+      }
+    },
+    {
+      "valueMM": -2.6078181582734254,
+      "scenarioIndex": 423,
+      "element": "moving-transverse-arm",
+      "elementFraction": 0.25,
+      "sectionOffsetPqZMM": [
+        -75,
+        0,
+        -12.5
+      ],
+      "circuit": "primary",
+      "rootP": 6975,
+      "stationP": 6675.0,
+      "component": "normal",
+      "loadCase": {
+        "water": {
+          "6675": 170,
+          "7200": 170
+        },
+        "wind": {
+          "body": [
+            -1,
+            1,
+            -1
+          ],
+          "apron": [
+            -1,
+            1
+          ],
+          "vertical": 1
+        },
+        "gravity": 1.35
+      }
+    },
+    {
+      "valueMM": -1.940405519094588,
+      "scenarioIndex": 167,
+      "element": "moving-transverse-arm",
+      "elementFraction": 0.25,
+      "sectionOffsetPqZMM": [
+        -75,
+        0,
+        -12.5
+      ],
+      "circuit": "primary",
+      "rootP": 6975,
+      "stationP": 7200.0,
+      "component": "along",
+      "loadCase": {
+        "water": {
+          "6675": 0,
+          "7200": 170
+        },
+        "wind": {
+          "body": [
+            -1,
+            1,
+            -1
+          ],
+          "apron": [
+            -1,
+            1
+          ],
+          "vertical": 1
+        },
+        "gravity": 1.35
+      }
+    },
+    {
+      "valueMM": -2.137615854426638,
+      "scenarioIndex": 463,
+      "element": "moving-transverse-arm",
+      "elementFraction": 0.25,
+      "sectionOffsetPqZMM": [
+        75,
+        0,
+        -12.5
+      ],
+      "circuit": "primary",
+      "rootP": 6975,
+      "stationP": 7200.0,
+      "component": "normal",
+      "loadCase": {
+        "water": {
+          "6675": 170,
+          "7200": 170
+        },
+        "wind": {
+          "body": [
+            1,
+            -1,
+            -1
+          ],
+          "apron": [
+            1,
+            1
+          ],
+          "vertical": 1
+        },
+        "gravity": 1.35
+      }
+    },
+    {
+      "valueMM": 1.0520010539463744,
+      "scenarioIndex": 367,
+      "element": "fixed-hanger-drop",
+      "elementFraction": 0.42138364779874216,
+      "sectionOffsetPqZMM": [
+        -100,
+        10,
+        0
+      ],
+      "circuit": "lower",
+      "rootP": 5041.6666667,
+      "stationP": 4600.0,
+      "component": "along",
+      "loadCase": {
+        "water": {
+          "4600": 190,
+          "5100": 0
+        },
+        "wind": {
+          "body": [
+            1,
+            1,
+            -1
+          ],
+          "apron": [
+            1,
+            1
+          ],
+          "vertical": 1
+        },
+        "gravity": 1.35
+      }
+    },
+    {
+      "valueMM": -2.3093257929640236,
+      "scenarioIndex": 387,
+      "element": "fixed-hanger-drop",
+      "elementFraction": 0.42138364779874216,
+      "sectionOffsetPqZMM": [
+        -100,
+        -10,
+        0
+      ],
+      "circuit": "lower",
+      "rootP": 5041.6666667,
+      "stationP": 4600.0,
+      "component": "normal",
+      "loadCase": {
+        "water": {
+          "4600": 190,
+          "5100": 190
+        },
+        "wind": {
+          "body": [
+            -1,
+            -1,
+            -1
+          ],
+          "apron": [
+            -1,
+            -1
+          ],
+          "vertical": 1
+        },
+        "gravity": 1.35
+      }
+    },
+    {
+      "valueMM": 0.8902452113629635,
+      "scenarioIndex": 367,
+      "element": "fixed-hanger-drop",
+      "elementFraction": 0.42138364779874216,
+      "sectionOffsetPqZMM": [
+        -100,
+        10,
+        0
+      ],
+      "circuit": "lower",
+      "rootP": 5041.6666667,
+      "stationP": 5100.0,
+      "component": "along",
+      "loadCase": {
+        "water": {
+          "4600": 190,
+          "5100": 0
+        },
+        "wind": {
+          "body": [
+            1,
+            1,
+            -1
+          ],
+          "apron": [
+            1,
+            1
+          ],
+          "vertical": 1
+        },
+        "gravity": 1.35
+      }
+    },
+    {
+      "valueMM": -0.9147620527808036,
+      "scenarioIndex": 463,
+      "element": "fixed-hanger-drop",
+      "elementFraction": 0.42138364779874216,
+      "sectionOffsetPqZMM": [
+        100,
+        -10,
+        0
+      ],
+      "circuit": "lower",
+      "rootP": 5041.6666667,
+      "stationP": 5100.0,
+      "component": "normal",
+      "loadCase": {
+        "water": {
+          "4600": 190,
+          "5100": 190
+        },
+        "wind": {
+          "body": [
+            1,
+            -1,
+            -1
+          ],
+          "apron": [
+            1,
+            1
+          ],
+          "vertical": 1
+        },
+        "gravity": 1.35
+      }
+    },
+    {
+      "valueMM": 0.7338458989979721,
+      "scenarioIndex": 887,
+      "element": "fixed-hanger-drop",
+      "elementFraction": 0.42138364779874216,
+      "sectionOffsetPqZMM": [
+        -100,
+        10,
+        0
+      ],
+      "circuit": "lower",
+      "rootP": 6000,
+      "stationP": 5550.0,
+      "component": "along",
+      "loadCase": {
+        "water": {
+          "5550": 190,
+          "6000": 190,
+          "6450": 0
+        },
+        "wind": {
+          "body": [
+            1,
+            1,
+            1
+          ],
+          "apron": [
+            -1,
+            1
+          ],
+          "vertical": 1
+        },
+        "gravity": 1.35
+      }
+    },
+    {
+      "valueMM": -1.934123605439792,
+      "scenarioIndex": 899,
+      "element": "fixed-hanger-drop",
+      "elementFraction": 0.42138364779874216,
+      "sectionOffsetPqZMM": [
+        -100,
+        -10,
+        0
+      ],
+      "circuit": "lower",
+      "rootP": 6000,
+      "stationP": 5550.0,
+      "component": "normal",
+      "loadCase": {
+        "water": {
+          "5550": 190,
+          "6000": 190,
+          "6450": 190
+        },
+        "wind": {
+          "body": [
+            -1,
+            -1,
+            -1
+          ],
+          "apron": [
+            -1,
+            -1
+          ],
+          "vertical": 1
+        },
+        "gravity": 1.35
+      }
+    },
+    {
+      "valueMM": -0.5357543642506111,
+      "scenarioIndex": 402,
+      "element": "fixed-hanger-drop",
+      "elementFraction": 0.42138364779874216,
+      "sectionOffsetPqZMM": [
+        -100,
+        10,
+        0
+      ],
+      "circuit": "lower",
+      "rootP": 6000,
+      "stationP": 6000.0,
+      "component": "along",
+      "loadCase": {
+        "water": {
+          "5550": 0,
+          "6000": 190,
+          "6450": 190
+        },
+        "wind": {
+          "body": [
+            -1,
+            -1,
+            1
+          ],
+          "apron": [
+            -1,
+            -1
+          ],
+          "vertical": 1
+        },
+        "gravity": 0.0
+      }
+    },
+    {
+      "valueMM": -0.8430656229579453,
+      "scenarioIndex": 903,
+      "element": "fixed-hanger-drop",
+      "elementFraction": 0.42138364779874216,
+      "sectionOffsetPqZMM": [
+        -100,
+        -10,
+        0
+      ],
+      "circuit": "lower",
+      "rootP": 6000,
+      "stationP": 6000.0,
+      "component": "normal",
+      "loadCase": {
+        "water": {
+          "5550": 190,
+          "6000": 190,
+          "6450": 190
+        },
+        "wind": {
+          "body": [
+            -1,
+            -1,
+            -1
+          ],
+          "apron": [
+            -1,
+            1
+          ],
+          "vertical": 1
+        },
+        "gravity": 1.35
+      }
+    },
+    {
+      "valueMM": -0.7338458989988013,
+      "scenarioIndex": 183,
+      "element": "fixed-hanger-drop",
+      "elementFraction": 0.42138364779874216,
+      "sectionOffsetPqZMM": [
+        -100,
+        10,
+        0
+      ],
+      "circuit": "lower",
+      "rootP": 6000,
+      "stationP": 6450.0,
+      "component": "along",
+      "loadCase": {
+        "water": {
+          "5550": 0,
+          "6000": 0,
+          "6450": 190
+        },
+        "wind": {
+          "body": [
+            -1,
+            1,
+            1
+          ],
+          "apron": [
+            -1,
+            1
+          ],
+          "vertical": 1
+        },
+        "gravity": 1.35
+      }
+    },
+    {
+      "valueMM": -1.9341236054368804,
+      "scenarioIndex": 963,
+      "element": "fixed-hanger-drop",
+      "elementFraction": 0.42138364779874216,
+      "sectionOffsetPqZMM": [
+        100,
+        -10,
+        0
+      ],
+      "circuit": "lower",
+      "rootP": 6000,
+      "stationP": 6450.0,
+      "component": "normal",
+      "loadCase": {
+        "water": {
+          "5550": 190,
+          "6000": 190,
+          "6450": 190
+        },
+        "wind": {
+          "body": [
+            1,
+            -1,
+            -1
+          ],
+          "apron": [
+            -1,
+            -1
+          ],
+          "vertical": 1
+        },
+        "gravity": 1.35
+      }
+    },
+    {
+      "valueMM": -0.8902452113515648,
+      "scenarioIndex": 167,
+      "element": "fixed-hanger-drop",
+      "elementFraction": 0.42138364779874216,
+      "sectionOffsetPqZMM": [
+        -100,
+        10,
+        0
+      ],
+      "circuit": "lower",
+      "rootP": 6958.3333333,
+      "stationP": 6900.0,
+      "component": "along",
+      "loadCase": {
+        "water": {
+          "6900": 0,
+          "7400": 190
+        },
+        "wind": {
+          "body": [
+            -1,
+            1,
+            -1
+          ],
+          "apron": [
+            -1,
+            1
+          ],
+          "vertical": 1
+        },
+        "gravity": 1.35
+      }
+    },
+    {
+      "valueMM": -0.9147620527789901,
+      "scenarioIndex": 391,
+      "element": "fixed-hanger-drop",
+      "elementFraction": 0.42138364779874216,
+      "sectionOffsetPqZMM": [
+        -100,
+        -10,
+        0
+      ],
+      "circuit": "lower",
+      "rootP": 6958.3333333,
+      "stationP": 6900.0,
+      "component": "normal",
+      "loadCase": {
+        "water": {
+          "6900": 190,
+          "7400": 190
+        },
+        "wind": {
+          "body": [
+            -1,
+            -1,
+            -1
+          ],
+          "apron": [
+            -1,
+            1
+          ],
+          "vertical": 1
+        },
+        "gravity": 1.35
+      }
+    },
+    {
+      "valueMM": -1.0520010539302798,
+      "scenarioIndex": 167,
+      "element": "fixed-hanger-drop",
+      "elementFraction": 0.42138364779874216,
+      "sectionOffsetPqZMM": [
+        -100,
+        10,
+        0
+      ],
+      "circuit": "lower",
+      "rootP": 6958.3333333,
+      "stationP": 7400.0,
+      "component": "along",
+      "loadCase": {
+        "water": {
+          "6900": 0,
+          "7400": 190
+        },
+        "wind": {
+          "body": [
+            -1,
+            1,
+            -1
+          ],
+          "apron": [
+            -1,
+            1
+          ],
+          "vertical": 1
+        },
+        "gravity": 1.35
+      }
+    },
+    {
+      "valueMM": -2.3093257929492577,
+      "scenarioIndex": 459,
+      "element": "fixed-hanger-drop",
+      "elementFraction": 0.42138364779874216,
+      "sectionOffsetPqZMM": [
+        100,
+        -10,
+        0
+      ],
+      "circuit": "lower",
+      "rootP": 6958.3333333,
+      "stationP": 7400.0,
+      "component": "normal",
+      "loadCase": {
+        "water": {
+          "6900": 190,
+          "7400": 190
+        },
+        "wind": {
+          "body": [
+            1,
+            -1,
+            -1
+          ],
+          "apron": [
+            1,
+            -1
+          ],
+          "vertical": 1
+        },
+        "gravity": 1.35
+      }
+    }
+  ],
+  "pairs": [
+    {
+      "primaryStationP": 4800,
+      "lowerStationP": 4600,
+      "nominalPGapMM": 25,
+      "primaryLocalAbsoluteAlongMM": 1.9404055189432583,
+      "lowerLocalAbsoluteAlongMM": 1.0520010539463744,
+      "opposedSettingMM": 10,
+      "remainingForNativeRelativeAndOtherMotionMM": 12.007593427110368
+    },
+    {
+      "primaryStationP": 5325,
+      "lowerStationP": 5100,
+      "nominalPGapMM": 50,
+      "primaryLocalAbsoluteAlongMM": 1.818956153614717,
+      "lowerLocalAbsoluteAlongMM": 0.8902452113629635,
+      "opposedSettingMM": 10,
+      "remainingForNativeRelativeAndOtherMotionMM": 37.29079863502232
+    },
+    {
+      "primaryStationP": 5325,
+      "lowerStationP": 5550,
+      "nominalPGapMM": 50,
+      "primaryLocalAbsoluteAlongMM": 1.818956153614717,
+      "lowerLocalAbsoluteAlongMM": 0.7338458989979721,
+      "opposedSettingMM": 10,
+      "remainingForNativeRelativeAndOtherMotionMM": 37.44719794738731
+    },
+    {
+      "primaryStationP": 5775,
+      "lowerStationP": 5550,
+      "nominalPGapMM": 50,
+      "primaryLocalAbsoluteAlongMM": 1.0446208825680878,
+      "lowerLocalAbsoluteAlongMM": 0.7338458989979721,
+      "opposedSettingMM": 10,
+      "remainingForNativeRelativeAndOtherMotionMM": 38.22153321843394
+    },
+    {
+      "primaryStationP": 5775,
+      "lowerStationP": 6000,
+      "nominalPGapMM": 50,
+      "primaryLocalAbsoluteAlongMM": 1.0446208825680878,
+      "lowerLocalAbsoluteAlongMM": 0.5357543642506111,
+      "opposedSettingMM": 10,
+      "remainingForNativeRelativeAndOtherMotionMM": 38.4196247531813
+    },
+    {
+      "primaryStationP": 6225,
+      "lowerStationP": 6000,
+      "nominalPGapMM": 50,
+      "primaryLocalAbsoluteAlongMM": 1.0446208825587968,
+      "lowerLocalAbsoluteAlongMM": 0.5357543642506111,
+      "opposedSettingMM": 10,
+      "remainingForNativeRelativeAndOtherMotionMM": 38.41962475319059
+    },
+    {
+      "primaryStationP": 6225,
+      "lowerStationP": 6450,
+      "nominalPGapMM": 50,
+      "primaryLocalAbsoluteAlongMM": 1.0446208825587968,
+      "lowerLocalAbsoluteAlongMM": 0.7338458989988013,
+      "opposedSettingMM": 10,
+      "remainingForNativeRelativeAndOtherMotionMM": 38.2215332184424
+    },
+    {
+      "primaryStationP": 6675,
+      "lowerStationP": 6450,
+      "nominalPGapMM": 50,
+      "primaryLocalAbsoluteAlongMM": 1.8189561537355408,
+      "lowerLocalAbsoluteAlongMM": 0.7338458989988013,
+      "opposedSettingMM": 10,
+      "remainingForNativeRelativeAndOtherMotionMM": 37.44719794726566
+    },
+    {
+      "primaryStationP": 6675,
+      "lowerStationP": 6900,
+      "nominalPGapMM": 50,
+      "primaryLocalAbsoluteAlongMM": 1.8189561537355408,
+      "lowerLocalAbsoluteAlongMM": 0.8902452113515648,
+      "opposedSettingMM": 10,
+      "remainingForNativeRelativeAndOtherMotionMM": 37.290798634912896
+    },
+    {
+      "primaryStationP": 7200,
+      "lowerStationP": 7400,
+      "nominalPGapMM": 25,
+      "primaryLocalAbsoluteAlongMM": 1.940405519094588,
+      "lowerLocalAbsoluteAlongMM": 1.0520010539302798,
+      "opposedSettingMM": 10,
+      "remainingForNativeRelativeAndOtherMotionMM": 12.007593426975134
+    }
+  ],
+  "qualification": "The frozen local model retains declared nonframe stock/guide/corner limitations. These local displacements cannot substitute for native relative movement or added pressure."
+}
