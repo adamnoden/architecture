@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-SERVICES-ADOPTION",
-  "generation": 5,
-  "state": "released",
-  "leaseId": "004ea4fa-7415-456f-80d8-8dc794a549a2",
+  "generation": 6,
+  "state": "claimed",
+  "leaseId": "aa78cb57-2c68-4191-9c16-8ea59ca4b0a2",
   "holder": {
     "kind": "chatgpt",
-    "label": "services-resume-20261110"
+    "label": "services-g6-20261110"
   },
-  "claimedAt": "2026-11-10T09:17:59.177Z",
-  "heartbeatAt": "2026-11-10T10:45:23.000Z",
-  "expiresAt": "2026-11-10T10:45:23.000Z",
-  "branch": "work/had-services-g5-20261110",
+  "claimedAt": "2026-11-10T21:03:34.035Z",
+  "heartbeatAt": "2026-11-10T21:03:34.035Z",
+  "expiresAt": "2026-11-10T21:48:34.035Z",
+  "branch": "work/swarm-services-g6-20261110",
   "predecessor": {
-    "leaseId": "5de368b7-93ea-4adb-abfd-eae3a2dbc559",
-    "generation": 4,
-    "branch": "work/mvb-chat-6761703008",
-    "pr": 1469,
+    "leaseId": "004ea4fa-7415-456f-80d8-8dc794a549a2",
+    "generation": 5,
+    "branch": "work/had-services-g5-20261110",
+    "pr": 1471,
     "checkpoint": {
-      "evidence": "PR1469 head 4a6ed89e selects finite paired purge leaves and reachable bronze stays, relocates two radiators and the inverter, and lowers upper fans20mm for complete support clearance. All16 current-house checks pass.",
-      "next": "Finish finite support and worker handover, principal-head weather/access, selected-interface drawing and adverse review, then full HAD/affected checks and exact-head CI."
+      "evidence": "Ready PR1471 head efcc7aa9 and tree dea47018 have final review and successful full CI42798410889. All source is pushed and the worktree was clean. Main remains6bc0562a.",
+      "next": "Reacquire canonical ownership after recovery, verify head/main/CI, execute fresh merge-check and expected-head merge, then complete issue, lease and branch closeout.",
+      "blocker": "Execution environment unavailable. The canonical merge-check could not start. Exact command and failure are preserved in the PR handoff."
     }
   },
   "recoverySource": {
-    "leaseId": "5de368b7-93ea-4adb-abfd-eae3a2dbc559",
-    "generation": 4,
-    "branch": "work/mvb-chat-6761703008",
-    "pr": 1469,
+    "leaseId": "004ea4fa-7415-456f-80d8-8dc794a549a2",
+    "generation": 5,
+    "branch": "work/had-services-g5-20261110",
+    "pr": 1471,
     "checkpoint": {
-      "evidence": "PR1469 head 4a6ed89e selects finite paired purge leaves and reachable bronze stays, relocates two radiators and the inverter, and lowers upper fans20mm for complete support clearance. All16 current-house checks pass.",
-      "next": "Finish finite support and worker handover, principal-head weather/access, selected-interface drawing and adverse review, then full HAD/affected checks and exact-head CI."
+      "evidence": "Ready PR1471 head efcc7aa9 and tree dea47018 have final review and successful full CI42798410889. All source is pushed and the worktree was clean. Main remains6bc0562a.",
+      "next": "Reacquire canonical ownership after recovery, verify head/main/CI, execute fresh merge-check and expected-head merge, then complete issue, lease and branch closeout.",
+      "blocker": "Execution environment unavailable. The canonical merge-check could not start. Exact command and failure are preserved in the PR handoff."
     }
-  },
-  "pr": 1471,
-  "checkpoint": {
-    "evidence": "Ready PR1471 head efcc7aa9 and tree dea47018 have final review and successful full CI42798410889. All source is pushed and the worktree was clean. Main remains6bc0562a.",
-    "next": "Reacquire canonical ownership after recovery, verify head/main/CI, execute fresh merge-check and expected-head merge, then complete issue, lease and branch closeout.",
-    "blocker": "Execution environment unavailable. The canonical merge-check could not start. Exact command and failure are preserved in the PR handoff."
-  },
-  "releasedAt": "2026-11-10T10:45:23.000Z",
-  "releaseReason": "handoff"
+  }
 }
