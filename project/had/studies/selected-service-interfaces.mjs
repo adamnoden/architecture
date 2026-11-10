@@ -210,7 +210,7 @@ export function selectServiceInterfaces(house,structure,corner,base,occupied){
       clearGlassEndY:2400,clearGlassToWallMM:53,serviceCassetteAlongY:[1800,2400],
       cassetteToWallMM:53,additionalGrossBlindAreaM2:.2*(head.bandBottom-opening.sill)/1000,
       support:'Independent opaque jamb/partition return within the existing rough opening. Retain the utility wall and both original load-path duties. The glazing and removable service panel carry no masonry.'}:null;
-    head.lowerGlazedFieldBeforeFramesM2=head.lowGlassWidthMM*head.lowGlassHeightMM/1e6;
+    head.lowerGlazedFieldBeforeGlassEdgeDeductionsM2=head.lowGlassWidthMM*head.lowGlassHeightMM/1e6;
     head.roomAccess=roomAccess[head.holes[0].id.replace('-exhaust','')];
     head.weather={metalFace:'316L outer and inner metal faces, mineral insulation and timber frame constituents charged to MAT.',
       outerProjectionMaximumMM:100,outwardThroatMinimumAreaMM2:Math.PI*125**2/4*.9,

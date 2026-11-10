@@ -1,5 +1,11 @@
 # Services adoption recovery checkpoint
 
+## Recovered selection on 10 November 2026
+
+The integrated selection is preserved at `efcc7aa94c27b17e3c29d1ff33046b24e89f6a37` in [PR #1471](https://github.com/adamnoden/architecture/pull/1471). Its 53 HAD checks, four OAS checks and occurrence reproduction passed; independent geometry/control review and [exact-head repository/publication CI](https://github.com/adamnoden/architecture/actions/runs/42798410889) completed before the environment interruption. All selected source and drawings were committed. The successor retains that complete ancestry and corrects the lower-glazing export label to `lowerGlazedFieldBeforeGlassEdgeDeductionsM2`: the calculation already deducts the frame budget, so this changes no dimensions or quantities.
+
+The [owning service selection](inhabited-services-selection.md), [current compositor](studies/current-house.mjs) and canonical node govern the recovered result. Every checkpoint below records its own earlier state, including subsequently rejected geometry and then-outstanding tests. Its words “current”, “planned” and “remaining” are historical, not present work instructions. No missing local-only source from those checkpoints is needed to reproduce the selected reference. Actual product, material, weather, loaded fault, handling and site evidence retains the named owners and resolution points in the selection.
+
 ## Joined selection checkpoint on 10 November
 
 The current revision passes all 22 current-house checks. It adds six complete inlet-module and hood exchanges, finite guard envelopes, three captured radiator exchanges, 96 normal/boost pressure states, the selected local-extract shutoff seat and its supported first release. The new source-bound interface drawing has been rendered and inspected. The owning selection, HAD programme and OAS junction now describe the same occupied reference. Full HAD and affected checks, final independent internal review and exact-head CI remain the publication steps for this checkpoint.

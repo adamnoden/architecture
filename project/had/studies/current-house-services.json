@@ -3079,7 +3079,7 @@
           "additionalGrossBlindAreaM2": 0.27,
           "support": "Independent opaque jamb/partition return within the existing rough opening. Retain the utility wall and both original load-path duties. The glazing and removable service panel carry no masonry."
         },
-        "lowerGlazedFieldBeforeFramesM2": 0.87,
+        "lowerGlazedFieldBeforeGlassEdgeDeductionsM2": 0.87,
         "roomAccess": {
           "platform": [
             10710,
@@ -3557,7 +3557,7 @@
         "lowGlassHeightMM": 1200,
         "lowGlassWidthMM": 850,
         "partitionReturn": null,
-        "lowerGlazedFieldBeforeFramesM2": 1.02,
+        "lowerGlazedFieldBeforeGlassEdgeDeductionsM2": 1.02,
         "roomAccess": {
           "platform": [
             640,
@@ -4035,7 +4035,7 @@
         "lowGlassHeightMM": 1000,
         "lowGlassWidthMM": 550,
         "partitionReturn": null,
-        "lowerGlazedFieldBeforeFramesM2": 0.55,
+        "lowerGlazedFieldBeforeGlassEdgeDeductionsM2": 0.55,
         "roomAccess": {
           "platform": [
             8000,
@@ -4500,7 +4500,7 @@
         "lowGlassHeightMM": 1000,
         "lowGlassWidthMM": 850,
         "partitionReturn": null,
-        "lowerGlazedFieldBeforeFramesM2": 0.85,
+        "lowerGlazedFieldBeforeGlassEdgeDeductionsM2": 0.85,
         "roomAccess": {
           "platform": [
             9615,
@@ -4838,7 +4838,7 @@
         "lowGlassHeightMM": 1460,
         "lowGlassWidthMM": 850,
         "partitionReturn": null,
-        "lowerGlazedFieldBeforeFramesM2": 1.241,
+        "lowerGlazedFieldBeforeGlassEdgeDeductionsM2": 1.241,
         "roomAccess": {
           "platform": [
             10675,
