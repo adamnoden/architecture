@@ -9,7 +9,12 @@
     "label": "mra-internal-leaks-worker-20261110"
   },
   "claimedAt": "2026-11-10T23:34:19.264Z",
-  "heartbeatAt": "2026-11-10T23:34:19.264Z",
-  "expiresAt": "2026-11-11T00:19:19.264Z",
-  "branch": "work/current-house-studies-20261110"
+  "heartbeatAt": "2026-11-10T23:46:37.419Z",
+  "expiresAt": "2026-11-11T00:31:37.419Z",
+  "branch": "work/current-house-studies-20261110",
+  "checkpoint": {
+    "evidence": "Local commit 5c1a740cde5045c5aa4dccaf3bbf9d14aa009a3f; internal-leak-study.md; 6 focused and 12 control tests pass; independent review complete",
+    "next": "Parent publishes the integrated shared branch, rebinds BCR producer identities, and verifies exact-head CI before merge",
+    "blocker": "Joint integration and exact-head CI pending"
+  }
 }
