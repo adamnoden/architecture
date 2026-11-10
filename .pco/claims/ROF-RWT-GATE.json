@@ -9,8 +9,8 @@
     "label": "issue-comment-6761668451"
   },
   "claimedAt": "2026-11-10T07:30:42.000Z",
-  "heartbeatAt": "2026-11-10T10:39:02.000Z",
-  "expiresAt": "2026-11-10T11:24:02.000Z",
+  "heartbeatAt": "2026-11-10T10:46:14.000Z",
+  "expiresAt": "2026-11-10T11:31:14.000Z",
   "branch": "work/mvb-chat-6761668451",
   "predecessor": {
     "leaseId": "978b85b8-07c1-4d8e-b770-b3c1c940ce7b",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1470 at912df4fe71b653d012929f9b4b44467cc28831cd preserves finite buried V-clamp release, rig pickups and revised drawing. Structural final260 replay passes collector/tie/shaft screens.",
-    "next": "Adopt frozen structural receipts. Resolve local gutter renewal without mandatory whole-house cover. Merge selected services and revalidate joined source.",
-    "blocker": "Local rain capture and whole-part removal under review. Services1471 exact-head CI running."
+    "evidence": "Draft PR #1470 at683d1c23f377931b6b776f905ce843ff44a95bea. roof-water-recovery.md and comments6765285655/6765298508 preserve source states, final native observations and exact open failures.",
+    "next": "Recover final native files, close local rain-control/withdrawal proof, integrate green services1471, reconcile source identities and rerun CI/preflight.",
+    "blocker": "Execution environment unavailable. Local renewal and final structural source adoption remain unfinished."
   },
   "pr": 1470
 }
