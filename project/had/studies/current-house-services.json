@@ -1,5 +1,5 @@
 {
-  "proposal": "HAD-SERVICES-ADOPTION-01-RECOVERY",
+  "proposal": "HAD-SERVICES-02",
   "structurallyAdopted": false,
   "qualifiedPhysical": false,
   "sources": {
@@ -18,7 +18,8 @@
     "project/ias/studies/utility-first-release.json": "be84a64623c8042a002af108a784b8668acd7542",
     "project/ias/studies/utility-host-revised-route.json": "69e6b0aa5e1847f09c7ac3da3b98eec9bf1d5c0b",
     "project/str/studies/reconciled-house-interface.json": "66143efe1bf357fe3b373777c93bdb25f861e11d",
-    "project/str/studies/current-house-arch-movement.json": "05db94a987c7bf45b885c6d02f701b31bcf91740"
+    "project/str/studies/current-house-arch-movement.json": "05db94a987c7bf45b885c6d02f701b31bcf91740",
+    "project/str/studies/house-corner-rewind.json": "6471d89c213724ec02a26d797c85185beadb25b5"
   },
   "court": "HAD-COURT-BYPASS-01",
   "wholeHeat": {
@@ -580,9 +581,9 @@
   ],
   "air": {
     "extractPoint": [
-      11125,
+      9900,
       12000,
-      2600
+      2565
     ],
     "duct": 125,
     "exhaustRadialInsulation": 50,
@@ -820,6 +821,104 @@
         "sixInletsEachReverseEquivalentMM2": 5000,
         "scope": "Bound the actively supplied airflow even if both kitchen extracts stop. Forward weather/insect/acoustic area is tested independently from unpowered outward area."
       }
+    },
+    "exhaustRoute": [
+      [
+        11125,
+        11443.5,
+        2600
+      ],
+      [
+        9900,
+        11275,
+        2572.25
+      ],
+      [
+        9900,
+        12000,
+        2565
+      ]
+    ],
+    "selectedRoute": {
+      "lengthFromStackMM": 1961.88195996,
+      "clearDuctMM": 125,
+      "completeInsulatedOD": 227,
+      "conservativeAddedLengthM": 2,
+      "conservativeAddedK": 2,
+      "operation": {
+        "addedLengthM": 2,
+        "addedBendK": 2,
+        "cases": 96,
+        "hoodLps": [
+          65.88979218,
+          80.36668654
+        ],
+        "directLps": [
+          78,
+          95.70890564
+        ],
+        "kitchenPa": [
+          -4,
+          -3.11995402
+        ]
+      },
+      "minimumOutwardGradient": 0.01,
+      "splitLengthsMaximumMM": 600,
+      "maintenance": {
+        "platform": [
+          9700,
+          10350,
+          1000,
+          1100
+        ],
+        "headReceiver": [
+          9625,
+          10550,
+          600,
+          600
+        ],
+        "cassetteAlong": [
+          9650,
+          10150
+        ],
+        "direction": [
+          0,
+          -600,
+          0
+        ],
+        "secondDraw": [
+          0,
+          -300,
+          0
+        ],
+        "parkedFurniture": {
+          "id": "low-food-larder",
+          "plan": [
+            7750,
+            10400,
+            1000,
+            200
+          ]
+        }
+      },
+      "cleaning": "Separate cleanout at each turn and independently supported split tubes. No sealed inaccessible elbow or shared wet-room duct. Close the cooking station for grease cleaning and retain the exhaust shut-off upstream."
+    },
+    "operatingAir": {
+      "addedLengthM": 2,
+      "addedBendK": 2,
+      "cases": 96,
+      "hoodLps": [
+        65.88979218,
+        80.36668654
+      ],
+      "directLps": [
+        78,
+        95.70890564
+      ],
+      "kitchenPa": [
+        -4,
+        -3.11995402
+      ]
     }
   },
   "wetRoomFans": [
@@ -1132,6 +1231,40 @@
       "S08 separate accessible MI power and data",
       "S09 wired pressure/travel/heat witnesses",
       "S10 restored boundary at every actual crossing"
+    ],
+    "serviceHeadOccurrences": [
+      {
+        "occurrence": "S10 GROUND east-window-0",
+        "fixedOuterHead": "316L faces and sleeve, mineral insulation, independently supported timber frame",
+        "innerCassette": "316L removable inner face and split-collar tubes with supported flat joints",
+        "ancillary": "Actual seals, coatings, binders, fasteners and joint constituents enter the strict material register before installation.",
+        "utilityBlindReturnM2": 0.27,
+        "approvedExceptions": 0
+      },
+      {
+        "occurrence": "S10 FIRST west-window-3",
+        "fixedOuterHead": "316L faces and sleeve, mineral insulation, independently supported timber frame",
+        "innerCassette": "316L removable inner face and split-collar tubes with supported flat joints",
+        "ancillary": "Actual seals, coatings, binders, fasteners and joint constituents enter the strict material register before installation.",
+        "utilityBlindReturnM2": 0,
+        "approvedExceptions": 0
+      },
+      {
+        "occurrence": "S10 GROUND north-window-3",
+        "fixedOuterHead": "316L faces and sleeve, mineral insulation, independently supported timber frame",
+        "innerCassette": "316L removable inner face and split-collar tubes with supported flat joints",
+        "ancillary": "Actual seals, coatings, binders, fasteners and joint constituents enter the strict material register before installation.",
+        "utilityBlindReturnM2": 0,
+        "approvedExceptions": 0
+      },
+      {
+        "occurrence": "S10 GROUND north-window-4",
+        "fixedOuterHead": "316L faces and sleeve, mineral insulation, independently supported timber frame",
+        "innerCassette": "316L removable inner face and split-collar tubes with supported flat joints",
+        "ancillary": "Actual seals, coatings, binders, fasteners and joint constituents enter the strict material register before installation.",
+        "utilityBlindReturnM2": 0,
+        "approvedExceptions": 0
+      }
     ]
   },
   "storeExchange": {
@@ -2512,27 +2645,27 @@
               2500
             ],
             "frameGap": 85,
-            "faceShape": "square",
-            "faceWidth": 360,
-            "faceGap": 45
+            "faceShape": "circle",
+            "faceWidth": 330,
+            "faceGap": 60
           },
           {
             "id": "utility-condensate",
             "radius": 20,
             "point": [
               12000,
-              2345,
+              2320,
               2500
             ],
-            "frameGap": 144.60483086,
+            "frameGap": 162.88770941,
             "faceShape": "square",
             "faceWidth": 60,
-            "faceGap": 122.24895669
+            "faceGap": 140.46238929
           }
         ],
         "grossHeadAreaM2": 0.56373608,
-        "interHoleWebMM": 85,
-        "betweenWeatherFacesMM": 35
+        "interHoleWebMM": 60,
+        "betweenWeatherFacesMM": 25
       },
       {
         "level": "FIRST",
@@ -2587,32 +2720,32 @@
             "id": "kitchen-exhaust",
             "radius": 140,
             "point": [
-              8300,
+              8400,
               12000,
               2490
             ],
-            "frameGap": 75,
+            "frameGap": 35,
             "faceShape": "circle",
-            "faceWidth": 330,
-            "faceGap": 50
+            "faceWidth": 300,
+            "faceGap": 25
           },
           {
             "id": "kitchen-condensate",
             "radius": 20,
             "point": [
-              8520,
+              8180,
               12000,
               2490
             ],
-            "frameGap": 35,
+            "frameGap": 135,
             "faceShape": "square",
             "faceWidth": 60,
-            "faceGap": 25
+            "faceGap": 124.94595542
           }
         ],
         "grossHeadAreaM2": 0.40381336,
         "interHoleWebMM": 60,
-        "betweenWeatherFacesMM": 25
+        "betweenWeatherFacesMM": 40
       },
       {
         "level": "GROUND",
@@ -2764,5 +2897,1222 @@
       "bodyToFixedMm": 44.62819468,
       "armToFixedMm": 54.46987869
     }
+  },
+  "architecturalServiceSelected": true,
+  "selectedServiceInterfaces": {
+    "id": "HAD-SERVICES-02",
+    "basis": "SAP-C1",
+    "heads": [
+      {
+        "level": "GROUND",
+        "wall": "outer-east",
+        "id": "east-window-0",
+        "width": 1000,
+        "along": 2100,
+        "bandBottom": 2200,
+        "border": 75,
+        "holes": [
+          {
+            "id": "utility-exhaust",
+            "radius": 140,
+            "point": [
+              12000,
+              2100,
+              2500
+            ],
+            "frameGap": 85,
+            "faceShape": "circle",
+            "faceWidth": 330,
+            "faceGap": 60
+          },
+          {
+            "id": "utility-condensate",
+            "radius": 20,
+            "point": [
+              12000,
+              2320,
+              2500
+            ],
+            "frameGap": 162.88770941,
+            "faceShape": "square",
+            "faceWidth": 60,
+            "faceGap": 140.46238929
+          }
+        ],
+        "grossHeadAreaM2": 0.56373608,
+        "interHoleWebMM": 60,
+        "betweenWeatherFacesMM": 25,
+        "room": "utility",
+        "lowerGlass": "FIXED",
+        "lowGlassHeightMM": 1200,
+        "lowGlassWidthMM": 725,
+        "partitionReturn": {
+          "rawApertureEndY": 2600,
+          "retainedWallFaceY": 2453,
+          "originalOverlapMM": 147,
+          "blindJambY": [
+            2400,
+            2600
+          ],
+          "clearGlassEndY": 2400,
+          "clearGlassToWallMM": 53,
+          "serviceCassetteAlongY": [
+            1800,
+            2400
+          ],
+          "cassetteToWallMM": 53,
+          "additionalGrossBlindAreaM2": 0.27,
+          "support": "Independent opaque jamb/partition return within the existing rough opening. Retain the utility wall and both original load-path duties. The glazing and removable service panel carry no masonry."
+        },
+        "lowerGlassClearAreaM2": 0.87,
+        "receiver": {
+          "platform": [
+            10245,
+            1525,
+            1100,
+            750
+          ],
+          "headReceiver": [
+            10350,
+            1775,
+            600,
+            650
+          ],
+          "cassetteAlong": [
+            1800,
+            2400
+          ],
+          "direction": [
+            -600,
+            0,
+            0
+          ],
+          "secondDraw": [
+            -300,
+            0,
+            0
+          ]
+        },
+        "weather": {
+          "metalFace": "316L outer and inner metal faces, mineral insulation and timber frame constituents charged to MAT.",
+          "outerProjectionMaximumMM": 100,
+          "outwardThroatMinimumAreaMM2": 11044.66167278,
+          "upperLapMM": 40,
+          "sideLapMM": 25,
+          "bottomDripProjectionMM": 30,
+          "drainedOuterJoint": true,
+          "innerBoundary": "Separate accessible air seal and insulated sleeve. No water path through mineral insulation or into the frame.",
+          "admission": "Actual joint constituents, pressure, wind-driven rain, thermal bridges and exhaust re-entry remain measured/product/site obligations."
+        },
+        "renewal": {
+          "part": "Room-side inner service cassette. The retained wall sleeve and outer weather head have their own exterior renewal operation.",
+          "maximumCompleteMassKG": 25,
+          "finishedWallNormalMM": 429.5,
+          "retainedOuterSleeveEndNormalMM": 455,
+          "cassetteNormalMM": [
+            455,
+            505
+          ],
+          "maximumPanelWidthMM": 600,
+          "panelLocalZ": [
+            2350,
+            2650
+          ],
+          "inwardDrawMM": 600,
+          "secondDrawMM": 300,
+          "firstDuctDropMM": 250,
+          "firstPiece": {
+            "part": "Room-side straight tube with two radial split collars and flat butt joints",
+            "normalMM": [
+              505,
+              600
+            ],
+            "completeOD": 227,
+            "axialPilotMM": 0,
+            "initialBox": [
+              11400,
+              1986.5,
+              2385.5,
+              95,
+              227,
+              229
+            ],
+            "droppedBox": [
+              11400,
+              1986.5,
+              2135.5,
+              95,
+              227,
+              229
+            ],
+            "clearOfFixedGlazingMM": 75.5
+          },
+          "removedNext": {
+            "part": "Separate elbow and lower riser",
+            "maximumCentrelineLengthMM": 600,
+            "retainedRiserBottomLocalZ": 2800,
+            "retainedRiserToCassetteMM": 150
+          },
+          "panelStates": [
+            [
+              11495,
+              1800,
+              2350,
+              50,
+              600,
+              300
+            ],
+            [
+              10895,
+              1800,
+              2350,
+              50,
+              600,
+              300
+            ],
+            [
+              10595,
+              1800,
+              2350,
+              50,
+              600,
+              300
+            ]
+          ],
+          "loweredBox": [
+            10595,
+            1800,
+            900,
+            50,
+            600,
+            300
+          ],
+          "receiver": {
+            "platform": [
+              10245,
+              1525,
+              1100,
+              750
+            ],
+            "headReceiver": [
+              10350,
+              1775,
+              600,
+              650
+            ],
+            "cassetteAlong": [
+              1800,
+              2400
+            ],
+            "direction": [
+              -600,
+              0,
+              0
+            ],
+            "secondDraw": [
+              -300,
+              0,
+              0
+            ]
+          },
+          "support": "Two independent temporary runners support the cassette before its accessible fasteners are released. They remain engaged through 600 mm and 300 mm travel. Transfer onto the supported carrier inside the dry-rest field before lowering its base to 900 mm. The selected feet, runners and anchors must support the complete 25 kg design envelope and task loads.",
+          "order": [
+            "Isolate the fan, cooker and hot duty. Support both duct sides, the retained sleeve and the inner cassette.",
+            "Open both radial collars of the 95 mm room-side tube at normal 505–600. Lower that supported tube 250 mm and carry it inward to the dry receiver.",
+            "Remove the separately supported elbow and lower riser. Cap the retained sleeve at its accessible room-side flat face. Release the inner cassette from the flat joint.",
+            "Draw the 50 mm-deep cassette inward 600 mm and then 300 mm on its runners. Transfer its complete body to the receiver before lowering. Restore and test the disturbed boundaries before enabling the room."
+          ],
+          "rejection": "A socket or pilot crossing the joint, an inaccessible fastener, a larger body or a retained elbow in the swept volume rejects this internal task."
+        }
+      },
+      {
+        "level": "FIRST",
+        "wall": "outer-west",
+        "id": "west-window-3",
+        "width": 1000,
+        "along": 9900,
+        "bandBottom": 2200,
+        "border": 75,
+        "holes": [
+          {
+            "id": "rear-bath-exhaust",
+            "radius": 140,
+            "point": [
+              0,
+              9900,
+              5950
+            ],
+            "frameGap": 85,
+            "faceShape": "square",
+            "faceWidth": 360,
+            "faceGap": 45
+          },
+          {
+            "id": "rear-bath-condensate",
+            "radius": 20,
+            "point": [
+              0,
+              10145,
+              5950
+            ],
+            "frameGap": 144.60483086,
+            "faceShape": "square",
+            "faceWidth": 60,
+            "faceGap": 122.24895669
+          }
+        ],
+        "grossHeadAreaM2": 0.56373608,
+        "interHoleWebMM": 85,
+        "betweenWeatherFacesMM": 35,
+        "room": "rearBath",
+        "lowerGlass": "FIXED",
+        "lowGlassHeightMM": 1300,
+        "lowGlassWidthMM": 850,
+        "partitionReturn": null,
+        "lowerGlassClearAreaM2": 1.105,
+        "receiver": {
+          "platform": [
+            650,
+            9550,
+            1100,
+            750
+          ],
+          "headReceiver": [
+            825,
+            9575,
+            650,
+            650
+          ],
+          "cassetteAlong": [
+            9600,
+            10200
+          ],
+          "direction": [
+            600,
+            0,
+            0
+          ],
+          "secondDraw": [
+            300,
+            0,
+            0
+          ]
+        },
+        "weather": {
+          "metalFace": "316L outer and inner metal faces, mineral insulation and timber frame constituents charged to MAT.",
+          "outerProjectionMaximumMM": 100,
+          "outwardThroatMinimumAreaMM2": 11044.66167278,
+          "upperLapMM": 40,
+          "sideLapMM": 25,
+          "bottomDripProjectionMM": 30,
+          "drainedOuterJoint": true,
+          "innerBoundary": "Separate accessible air seal and insulated sleeve. No water path through mineral insulation or into the frame.",
+          "admission": "Actual joint constituents, pressure, wind-driven rain, thermal bridges and exhaust re-entry remain measured/product/site obligations."
+        },
+        "renewal": {
+          "part": "Room-side inner service cassette. The retained wall sleeve and outer weather head have their own exterior renewal operation.",
+          "maximumCompleteMassKG": 25,
+          "finishedWallNormalMM": 429.5,
+          "retainedOuterSleeveEndNormalMM": 455,
+          "cassetteNormalMM": [
+            455,
+            505
+          ],
+          "maximumPanelWidthMM": 600,
+          "panelLocalZ": [
+            2350,
+            2650
+          ],
+          "inwardDrawMM": 600,
+          "secondDrawMM": 300,
+          "firstDuctDropMM": 250,
+          "firstPiece": {
+            "part": "Room-side straight tube with two radial split collars and flat butt joints",
+            "normalMM": [
+              505,
+              600
+            ],
+            "completeOD": 227,
+            "axialPilotMM": 0,
+            "initialBox": [
+              505,
+              9786.5,
+              5835.5,
+              95,
+              227,
+              229
+            ],
+            "droppedBox": [
+              505,
+              9786.5,
+              5585.5,
+              95,
+              227,
+              229
+            ],
+            "clearOfFixedGlazingMM": 75.5
+          },
+          "removedNext": {
+            "part": "Separate elbow and lower riser",
+            "maximumCentrelineLengthMM": 600,
+            "retainedRiserBottomLocalZ": 2800,
+            "retainedRiserToCassetteMM": 150
+          },
+          "panelStates": [
+            [
+              455,
+              9600,
+              5800,
+              50,
+              600,
+              300
+            ],
+            [
+              1055,
+              9600,
+              5800,
+              50,
+              600,
+              300
+            ],
+            [
+              1355,
+              9600,
+              5800,
+              50,
+              600,
+              300
+            ]
+          ],
+          "loweredBox": [
+            1355,
+            9600,
+            4350,
+            50,
+            600,
+            300
+          ],
+          "receiver": {
+            "platform": [
+              650,
+              9550,
+              1100,
+              750
+            ],
+            "headReceiver": [
+              825,
+              9575,
+              650,
+              650
+            ],
+            "cassetteAlong": [
+              9600,
+              10200
+            ],
+            "direction": [
+              600,
+              0,
+              0
+            ],
+            "secondDraw": [
+              300,
+              0,
+              0
+            ]
+          },
+          "support": "Two independent temporary runners support the cassette before its accessible fasteners are released. They remain engaged through 600 mm and 300 mm travel. Transfer onto the supported carrier inside the dry-rest field before lowering its base to 900 mm. The selected feet, runners and anchors must support the complete 25 kg design envelope and task loads.",
+          "order": [
+            "Isolate the fan, cooker and hot duty. Support both duct sides, the retained sleeve and the inner cassette.",
+            "Open both radial collars of the 95 mm room-side tube at normal 505–600. Lower that supported tube 250 mm and carry it inward to the dry receiver.",
+            "Remove the separately supported elbow and lower riser. Cap the retained sleeve at its accessible room-side flat face. Release the inner cassette from the flat joint.",
+            "Draw the 50 mm-deep cassette inward 600 mm and then 300 mm on its runners. Transfer its complete body to the receiver before lowering. Restore and test the disturbed boundaries before enabling the room."
+          ],
+          "rejection": "A socket or pilot crossing the joint, an inaccessible fastener, a larger body or a retained elbow in the swept volume rejects this internal task."
+        }
+      },
+      {
+        "level": "GROUND",
+        "wall": "outer-north",
+        "id": "north-window-3",
+        "width": 700,
+        "along": 8300,
+        "bandBottom": 2200,
+        "border": 75,
+        "holes": [
+          {
+            "id": "kitchen-exhaust",
+            "radius": 140,
+            "point": [
+              8400,
+              12000,
+              2490
+            ],
+            "frameGap": 35,
+            "faceShape": "circle",
+            "faceWidth": 300,
+            "faceGap": 25
+          },
+          {
+            "id": "kitchen-condensate",
+            "radius": 20,
+            "point": [
+              8180,
+              12000,
+              2490
+            ],
+            "frameGap": 135,
+            "faceShape": "square",
+            "faceWidth": 60,
+            "faceGap": 124.94595542
+          }
+        ],
+        "grossHeadAreaM2": 0.40381336,
+        "interHoleWebMM": 60,
+        "betweenWeatherFacesMM": 40,
+        "room": "kitchenDining",
+        "lowerGlass": "FIXED",
+        "lowGlassHeightMM": 1000,
+        "lowGlassWidthMM": 550,
+        "partitionReturn": null,
+        "lowerGlassClearAreaM2": 0.55,
+        "receiver": {
+          "platform": [
+            7750,
+            10300,
+            900,
+            1100
+          ],
+          "headReceiver": [
+            8100,
+            10450,
+            500,
+            600
+          ],
+          "cassetteAlong": [
+            8125,
+            8575
+          ],
+          "direction": [
+            0,
+            -600,
+            0
+          ],
+          "secondDraw": [
+            0,
+            -300,
+            0
+          ]
+        },
+        "weather": {
+          "metalFace": "316L outer and inner metal faces, mineral insulation and timber frame constituents charged to MAT.",
+          "outerProjectionMaximumMM": 100,
+          "outwardThroatMinimumAreaMM2": 11044.66167278,
+          "upperLapMM": 40,
+          "sideLapMM": 25,
+          "bottomDripProjectionMM": 30,
+          "drainedOuterJoint": true,
+          "innerBoundary": "Separate accessible air seal and insulated sleeve. No water path through mineral insulation or into the frame.",
+          "admission": "Actual joint constituents, pressure, wind-driven rain, thermal bridges and exhaust re-entry remain measured/product/site obligations."
+        },
+        "renewal": {
+          "part": "Room-side inner service cassette. The retained wall sleeve and outer weather head have their own exterior renewal operation.",
+          "maximumCompleteMassKG": 25,
+          "finishedWallNormalMM": 429.5,
+          "retainedOuterSleeveEndNormalMM": 455,
+          "cassetteNormalMM": [
+            455,
+            505
+          ],
+          "maximumPanelWidthMM": 450,
+          "panelLocalZ": [
+            2340,
+            2640
+          ],
+          "inwardDrawMM": 600,
+          "secondDrawMM": 300,
+          "firstDuctDropMM": 250,
+          "firstPiece": {
+            "part": "Room-side straight tube with two radial split collars and flat butt joints",
+            "normalMM": [
+              505,
+              600
+            ],
+            "completeOD": 227,
+            "axialPilotMM": 0,
+            "initialBox": [
+              8286.5,
+              11400,
+              2375.5,
+              227,
+              95,
+              229
+            ],
+            "droppedBox": [
+              8286.5,
+              11400,
+              2125.5,
+              227,
+              95,
+              229
+            ],
+            "clearOfFixedGlazingMM": 75.5
+          },
+          "removedNext": {
+            "part": "Separate elbow and lower riser",
+            "maximumCentrelineLengthMM": 600,
+            "retainedRiserBottomLocalZ": 2800,
+            "retainedRiserToCassetteMM": 160
+          },
+          "panelStates": [
+            [
+              8125,
+              11495,
+              2340,
+              450,
+              50,
+              300
+            ],
+            [
+              8125,
+              10895,
+              2340,
+              450,
+              50,
+              300
+            ],
+            [
+              8125,
+              10595,
+              2340,
+              450,
+              50,
+              300
+            ]
+          ],
+          "loweredBox": [
+            8125,
+            10595,
+            900,
+            450,
+            50,
+            300
+          ],
+          "receiver": {
+            "platform": [
+              7750,
+              10300,
+              900,
+              1100
+            ],
+            "headReceiver": [
+              8100,
+              10450,
+              500,
+              600
+            ],
+            "cassetteAlong": [
+              8125,
+              8575
+            ],
+            "direction": [
+              0,
+              -600,
+              0
+            ],
+            "secondDraw": [
+              0,
+              -300,
+              0
+            ]
+          },
+          "support": "Two independent temporary runners support the cassette before its accessible fasteners are released. They remain engaged through 600 mm and 300 mm travel. Transfer onto the supported carrier inside the dry-rest field before lowering its base to 900 mm. The selected feet, runners and anchors must support the complete 25 kg design envelope and task loads.",
+          "order": [
+            "Isolate the fan, cooker and hot duty. Support both duct sides, the retained sleeve and the inner cassette.",
+            "Open both radial collars of the 95 mm room-side tube at normal 505–600. Lower that supported tube 250 mm and carry it inward to the dry receiver.",
+            "Remove the separately supported elbow and lower riser. Cap the retained sleeve at its accessible room-side flat face. Release the inner cassette from the flat joint.",
+            "Draw the 50 mm-deep cassette inward 600 mm and then 300 mm on its runners. Transfer its complete body to the receiver before lowering. Restore and test the disturbed boundaries before enabling the room."
+          ],
+          "rejection": "A socket or pilot crossing the joint, an inaccessible fastener, a larger body or a retained elbow in the swept volume rejects this internal task."
+        }
+      },
+      {
+        "level": "GROUND",
+        "wall": "outer-north",
+        "id": "north-window-4",
+        "width": 1000,
+        "along": 9900,
+        "bandBottom": 2200,
+        "border": 75,
+        "holes": [
+          {
+            "id": "cooker-exhaust",
+            "radius": 160,
+            "point": [
+              9900,
+              12000,
+              2565
+            ],
+            "frameGap": 50,
+            "faceShape": "circle",
+            "faceWidth": 360,
+            "faceGap": 30
+          }
+        ],
+        "grossHeadAreaM2": 0.56373608,
+        "interHoleWebMM": null,
+        "betweenWeatherFacesMM": null,
+        "room": "kitchenDining",
+        "lowerGlass": "FIXED",
+        "lowGlassHeightMM": 1000,
+        "lowGlassWidthMM": 850,
+        "partitionReturn": null,
+        "lowerGlassClearAreaM2": 0.85,
+        "receiver": {
+          "platform": [
+            9700,
+            10350,
+            1000,
+            1100
+          ],
+          "headReceiver": [
+            9625,
+            10550,
+            600,
+            600
+          ],
+          "cassetteAlong": [
+            9650,
+            10150
+          ],
+          "direction": [
+            0,
+            -600,
+            0
+          ],
+          "secondDraw": [
+            0,
+            -300,
+            0
+          ],
+          "parkedFurniture": {
+            "id": "low-food-larder",
+            "plan": [
+              7750,
+              10400,
+              1000,
+              200
+            ]
+          }
+        },
+        "weather": {
+          "metalFace": "316L outer and inner metal faces, mineral insulation and timber frame constituents charged to MAT.",
+          "outerProjectionMaximumMM": 100,
+          "outwardThroatMinimumAreaMM2": 11044.66167278,
+          "upperLapMM": 40,
+          "sideLapMM": 25,
+          "bottomDripProjectionMM": 30,
+          "drainedOuterJoint": true,
+          "innerBoundary": "Separate accessible air seal and insulated sleeve. No water path through mineral insulation or into the frame.",
+          "admission": "Actual joint constituents, pressure, wind-driven rain, thermal bridges and exhaust re-entry remain measured/product/site obligations."
+        },
+        "renewal": {
+          "part": "Room-side inner service cassette. The retained wall sleeve and outer weather head have their own exterior renewal operation.",
+          "maximumCompleteMassKG": 25,
+          "finishedWallNormalMM": 429.5,
+          "retainedOuterSleeveEndNormalMM": 455,
+          "cassetteNormalMM": [
+            455,
+            505
+          ],
+          "maximumPanelWidthMM": 500,
+          "panelLocalZ": [
+            2415,
+            2715
+          ],
+          "inwardDrawMM": 600,
+          "secondDrawMM": 300,
+          "firstDuctDropMM": 250,
+          "firstPiece": {
+            "part": "Room-side straight tube with two radial split collars and flat butt joints",
+            "normalMM": [
+              505,
+              600
+            ],
+            "completeOD": 227,
+            "axialPilotMM": 0,
+            "initialBox": [
+              9786.5,
+              11400,
+              2450.5,
+              227,
+              95,
+              229
+            ],
+            "droppedBox": [
+              9786.5,
+              11400,
+              2200.5,
+              227,
+              95,
+              229
+            ],
+            "clearOfFixedGlazingMM": 75.5
+          },
+          "removedNext": {
+            "part": "Separate elbow and short diagonal tail",
+            "maximumCentrelineLengthMM": 600,
+            "retainedTrunkAlongMinimum": 10350,
+            "retainedTrunkToCassetteMM": 86.5
+          },
+          "panelStates": [
+            [
+              9650,
+              11495,
+              2415,
+              500,
+              50,
+              300
+            ],
+            [
+              9650,
+              10895,
+              2415,
+              500,
+              50,
+              300
+            ],
+            [
+              9650,
+              10595,
+              2415,
+              500,
+              50,
+              300
+            ]
+          ],
+          "loweredBox": [
+            9650,
+            10595,
+            900,
+            500,
+            50,
+            300
+          ],
+          "receiver": {
+            "platform": [
+              9700,
+              10350,
+              1000,
+              1100
+            ],
+            "headReceiver": [
+              9625,
+              10550,
+              600,
+              600
+            ],
+            "cassetteAlong": [
+              9650,
+              10150
+            ],
+            "direction": [
+              0,
+              -600,
+              0
+            ],
+            "secondDraw": [
+              0,
+              -300,
+              0
+            ],
+            "parkedFurniture": {
+              "id": "low-food-larder",
+              "plan": [
+                7750,
+                10400,
+                1000,
+                200
+              ]
+            }
+          },
+          "support": "Two independent temporary runners support the cassette before its accessible fasteners are released. They remain engaged through 600 mm and 300 mm travel. Transfer onto the supported carrier inside the dry-rest field before lowering its base to 900 mm. The selected feet, runners and anchors must support the complete 25 kg design envelope and task loads.",
+          "order": [
+            "Isolate the fan, cooker and hot duty. Support both duct sides, the retained sleeve and the inner cassette.",
+            "Open both radial collars of the 95 mm room-side tube at normal 505–600. Lower that supported tube 250 mm and carry it inward to the dry receiver.",
+            "Remove the separately supported elbow and lower riser. Cap the retained sleeve at its accessible room-side flat face. Release the inner cassette from the flat joint.",
+            "Draw the 50 mm-deep cassette inward 600 mm and then 300 mm on its runners. Transfer its complete body to the receiver before lowering. Restore and test the disturbed boundaries before enabling the room."
+          ],
+          "rejection": "A socket or pilot crossing the joint, an inaccessible fastener, a larger body or a retained elbow in the swept volume rejects this internal task."
+        }
+      }
+    ],
+    "ports": [
+      {
+        "id": "ground-WC-exhaust",
+        "point": [
+          8950,
+          0,
+          2985
+        ],
+        "radius": 140,
+        "minimumMM": 105
+      },
+      {
+        "id": "ground-WC-condensate",
+        "point": [
+          9130,
+          0,
+          2800
+        ],
+        "radius": 20,
+        "minimumMM": 45
+      },
+      {
+        "id": "utility-exhaust",
+        "point": [
+          12000,
+          2100,
+          2500
+        ],
+        "radius": 140,
+        "minimumMM": 135
+      },
+      {
+        "id": "utility-condensate",
+        "point": [
+          12000,
+          2320,
+          2500
+        ],
+        "radius": 20,
+        "minimumMM": 162.88770941
+      },
+      {
+        "id": "kitchen-exhaust",
+        "point": [
+          8400,
+          12000,
+          2490
+        ],
+        "radius": 140,
+        "minimumMM": 38.99667227
+      },
+      {
+        "id": "kitchen-condensate",
+        "point": [
+          8180,
+          12000,
+          2490
+        ],
+        "radius": 20,
+        "minimumMM": 139.02496792
+      },
+      {
+        "id": "rear-bath-exhaust",
+        "point": [
+          0,
+          9900,
+          5950
+        ],
+        "radius": 140,
+        "minimumMM": 135
+      },
+      {
+        "id": "rear-bath-condensate",
+        "point": [
+          0,
+          10145,
+          5950
+        ],
+        "radius": 20,
+        "minimumMM": 144.60483086
+      },
+      {
+        "id": "family-bath-exhaust",
+        "point": [
+          12000,
+          5750,
+          6400
+        ],
+        "radius": 140,
+        "minimumMM": 407.59795877
+      },
+      {
+        "id": "family-bath-condensate",
+        "point": [
+          12000,
+          5950,
+          6250
+        ],
+        "radius": 20,
+        "minimumMM": 656.85800926
+      },
+      {
+        "id": "principal-bath-exhaust",
+        "point": [
+          12000,
+          7400,
+          6060
+        ],
+        "radius": 140,
+        "minimumMM": 25
+      },
+      {
+        "id": "principal-bath-condensate",
+        "point": [
+          12000,
+          7600,
+          6060
+        ],
+        "radius": 20,
+        "minimumMM": 88.63780207
+      },
+      {
+        "id": "study-supply",
+        "point": [
+          3045,
+          0,
+          2100
+        ],
+        "radius": 180,
+        "minimumMM": 60
+      },
+      {
+        "id": "living-supply",
+        "point": [
+          3090,
+          12000,
+          2100
+        ],
+        "radius": 180,
+        "minimumMM": 80
+      },
+      {
+        "id": "bed2-supply",
+        "point": [
+          3045,
+          0,
+          5550
+        ],
+        "radius": 180,
+        "minimumMM": 60
+      },
+      {
+        "id": "bed3-supply",
+        "point": [
+          8955,
+          0,
+          5550
+        ],
+        "radius": 180,
+        "minimumMM": 60
+      },
+      {
+        "id": "bed4-supply",
+        "point": [
+          4800,
+          12000,
+          6300
+        ],
+        "radius": 180,
+        "minimumMM": 406.44314109
+      },
+      {
+        "id": "principal-supply",
+        "point": [
+          12000,
+          8800,
+          6300
+        ],
+        "radius": 180,
+        "minimumMM": 215
+      },
+      {
+        "id": "cooker-exhaust",
+        "point": [
+          9900,
+          12000,
+          2565
+        ],
+        "radius": 160,
+        "minimumMM": 50
+      },
+      {
+        "id": "cooker-makeup",
+        "point": [
+          12000,
+          8600,
+          2400
+        ],
+        "radius": 160,
+        "minimumMM": 435
+      },
+      {
+        "id": "east-foul-flashing",
+        "point": [
+          12000,
+          5625,
+          2616.875
+        ],
+        "radius": 150,
+        "minimumMM": 37.86189931
+      }
+    ],
+    "fixedHeadOpaqueAreaM2": 2.0950216,
+    "additionalUtilityBlindAreaM2": 0.27,
+    "purge": [
+      {
+        "room": "utility",
+        "opening": "south-window-4",
+        "roomAreaM2": 4.81459525,
+        "clearRectangularAreaM2": 0.7,
+        "centre": 9900,
+        "operatingTierLocalZ": [
+          1250,
+          2410
+        ],
+        "movingFrameWH": [
+          852,
+          1160
+        ],
+        "minimumClearAfterHardwareWH": [
+          700,
+          1000
+        ],
+        "floorTwentiethM2": 0.24072976,
+        "openingAngleMinimumDegrees": 35,
+        "lowerBoundAreaRatio": 2.90782491
+      },
+      {
+        "room": "rearBath",
+        "opening": "north-window-0",
+        "roomAreaM2": 6.721614,
+        "clearRectangularAreaM2": 0.7,
+        "centre": 2100,
+        "operatingTierLocalZ": [
+          1250,
+          2410
+        ],
+        "movingFrameWH": [
+          852,
+          1160
+        ],
+        "minimumClearAfterHardwareWH": [
+          700,
+          1000
+        ],
+        "floorTwentiethM2": 0.3360807,
+        "openingAngleMinimumDegrees": 35,
+        "lowerBoundAreaRatio": 2.08283308
+      },
+      {
+        "room": "kitchenDining",
+        "opening": "east-window-3",
+        "roomAreaM2": 12.6332055,
+        "clearRectangularAreaM2": 0.7,
+        "centre": 9900,
+        "operatingTierLocalZ": [
+          1250,
+          2410
+        ],
+        "movingFrameWH": [
+          852,
+          1160
+        ],
+        "minimumClearAfterHardwareWH": [
+          700,
+          1000
+        ],
+        "floorTwentiethM2": 0.63166027,
+        "openingAngleMinimumDegrees": 35,
+        "lowerBoundAreaRatio": 1.10819063
+      }
+    ],
+    "daylight": [
+      {
+        "room": "utility",
+        "oldGrossGlazingM2": 3.92747216,
+        "opaqueHeadM2": 0.83373608,
+        "retainedGrossGlazingM2": 3.09373608,
+        "retainedToFloorRatio": 0.64257449
+      },
+      {
+        "room": "rearBath",
+        "oldGrossGlazingM2": 3.92747216,
+        "opaqueHeadM2": 0.56373608,
+        "retainedGrossGlazingM2": 3.36373608,
+        "retainedToFloorRatio": 0.50043577
+      },
+      {
+        "room": "kitchenDining",
+        "oldGrossGlazingM2": 4.83628552,
+        "opaqueHeadM2": 0.96754944,
+        "retainedGrossGlazingM2": 3.86873608,
+        "retainedToFloorRatio": 0.30623551
+      }
+    ],
+    "separation": [
+      {
+        "outlet": "ground-WC-exhaust",
+        "nearestIntake": {
+          "id": "bed3-supply",
+          "axisDistanceMM": 2565.00487329,
+          "clearSphericalFaceBoundMM": 2027.60371959
+        }
+      },
+      {
+        "outlet": "utility-exhaust",
+        "nearestIntake": {
+          "id": "bed3-supply",
+          "axisDistanceMM": 4794.21787156,
+          "clearSphericalFaceBoundMM": 4256.81671786
+        }
+      },
+      {
+        "outlet": "kitchen-exhaust",
+        "nearestIntake": {
+          "id": "cooker-makeup",
+          "axisDistanceMM": 4952.58518352,
+          "clearSphericalFaceBoundMM": 4415.18402982
+        }
+      },
+      {
+        "outlet": "rear-bath-exhaust",
+        "nearestIntake": {
+          "id": "bed4-supply",
+          "axisDistanceMM": 5250.95229458,
+          "clearSphericalFaceBoundMM": 4713.55114088
+        }
+      },
+      {
+        "outlet": "family-bath-exhaust",
+        "nearestIntake": {
+          "id": "principal-supply",
+          "axisDistanceMM": 3051.63890393,
+          "clearSphericalFaceBoundMM": 2514.23775023
+        }
+      },
+      {
+        "outlet": "principal-bath-exhaust",
+        "nearestIntake": {
+          "id": "principal-supply",
+          "axisDistanceMM": 1420.42247237,
+          "clearSphericalFaceBoundMM": 883.02131866
+        }
+      },
+      {
+        "outlet": "cooker-exhaust",
+        "nearestIntake": {
+          "id": "cooker-makeup",
+          "axisDistanceMM": 3999.65310996,
+          "clearSphericalFaceBoundMM": 3462.25195626
+        }
+      }
+    ],
+    "normalHouseExtractLps": 70,
+    "conservativeFloorCriterionLps": 58.023525,
+    "heatBoundary": "Retain the former whole-opening Uw 1.6 upper limit and all opening perimeters. No heat-loss reduction is credited for the opaque bands.",
+    "outside": "All exhausts discharge openly outside the four external elevations. No outlet enters the courtyard, loggia or an architectural screen. Head glazing remains fixed below the new outlets. Resolve site wind, nearby open windows and buildings with the selected terminal before installation.",
+    "scope": "One occupied architectural reference with complete service locations. Installed apparatus, material exceptions, weather, fire, wind and structural acceptance remain separately owned."
   }
 }

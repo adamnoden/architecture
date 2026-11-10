@@ -25,7 +25,7 @@ export function serviceApertures(model,structure,corner){
     const concrete=Math.min(...solids.map(([lo,hi])=>Math.max(lo-along,along-hi,0)-r));
     const rows=openings[p.level?'FIRST':'GROUND'].filter(q=>q.wall===wall).map(q=>{
       const ring=ringGap(along,z,q,r);
-      if(p.cassette&&q.centre===7400){
+      if(p.cassette&&q.id===(p.windowHead??'east-window-2')){
         const hw=q.width/2,rise=q.head-q.spring,R=(hw**2+rise**2)/(2*rise);
         return {ring,opening:R-Math.hypot(along-q.centre,z-q.head+R)-r-75};
       }
@@ -60,22 +60,23 @@ export function serviceApertures(model,structure,corner){
     return {id:p.id,...axis,replacement};
   });
   const headGroups=[
-    ['GROUND','east-window-0','utility-exhaust','utility-condensate',245,2500],
+    ['GROUND','east-window-0','utility-exhaust','utility-condensate',220,2500],
     ['FIRST','west-window-3','rear-bath-exhaust','rear-bath-condensate',245,2500],
-    ['GROUND','north-window-3','kitchen-exhaust','kitchen-condensate',220,2490],
+    ['GROUND','north-window-3','kitchen-exhaust','kitchen-condensate',-120,2490],
     ['GROUND','north-window-4','cooker-exhaust',null,0,2565]
   ];
   const fixedHeads=headGroups.map(([level,id,main,drain,offset,z])=>{
     const q=openings[level].find(o=>o.id===id), h=q.width/2,rise=q.head-q.spring,R=(h*h+rise*rise)/(2*rise);
     const bottom=2200, border=75, base=level==='GROUND'?0:model.sections.firstFFL;
-    const holes=[[main,0],...(drain?[[drain,offset]]:[])].map(([key,local])=>{
+    const mainOffset=main==='kitchen-exhaust'?100:0;
+    const holes=[[main,mainOffset],...(drain?[[drain,offset]]:[])].map(([key,local])=>{
       const r=ports.find(p=>p.id===key).radius, along=q.centre+local;
       const gap=Math.min(R-Math.hypot(local,z-q.head+R)-r,h-Math.abs(local)-r,z-bottom-r)-border;
       const point=q.wall==='outer-west'?[0,along,z+base]:q.wall==='outer-east'?[model.shell,along,z+base]:[along,model.shell,z+base];
       // Large local outlets use a square face. The narrow kitchen fan needs a
       // round fascia; the cooker uses its separate round weather terminal.
-      const circular=key==='kitchen-exhaust'||key==='cooker-exhaust';
-      const halfFace=key===drain?30:key==='kitchen-exhaust'?165:180;
+      const circular=key==='utility-exhaust'||key==='kitchen-exhaust'||key==='cooker-exhaust';
+      const halfFace=key===drain?30:key==='kitchen-exhaust'?150:key==='utility-exhaust'?165:180;
       const radial=circular?Math.hypot(local,z-q.head+R)+halfFace:
         Math.hypot(Math.abs(local)+halfFace,Math.abs(z-q.head+R)+halfFace);
       const faceGap=Math.min(R-radial,h-Math.abs(local)-halfFace,z-bottom-halfFace)-border;
@@ -84,8 +85,8 @@ export function serviceApertures(model,structure,corner){
     const archedArea=R*R*Math.acos((R-rise)/R)-(R-rise)*h;
     return {level,wall:q.wall,id,width:q.width,along:q.centre,bandBottom:bottom,border,holes,
       grossHeadAreaM2:(archedArea+q.width*(q.spring-bottom))/1e6,
-      interHoleWebMM:drain?offset-holes[0].radius-holes[1].radius:null,
-      betweenWeatherFacesMM:drain?offset-(holes[0].faceWidth+holes[1].faceWidth)/2:null};
+      interHoleWebMM:drain?Math.abs(offset-mainOffset)-holes[0].radius-holes[1].radius:null,
+      betweenWeatherFacesMM:drain?Math.abs(offset-mainOffset)-(holes[0].faceWidth+holes[1].faceWidth)/2:null};
   });
   return {structuralCandidate:structure.candidate,ports,fixedHeads,
     scope:'Furnished services design against the provisional structural apertures. Centre/ring, daylight rectangle, continuous jamb/toe and new inlet faces only. Existing port approval, wall section and air performance are not implied.'};

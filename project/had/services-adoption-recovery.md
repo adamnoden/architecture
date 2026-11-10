@@ -1,5 +1,13 @@
 # Services adoption recovery checkpoint
 
+## Recovery on 10 November 2026
+
+The fresh worktree is based on the preserved 88f0d2bf commit. Its integrated current-house compositor now consumes the selected service interfaces, seventeen pinned source files, the shifted fridge and bed, and the fitted fixtures. The 15 current-house checks pass on this restored checkpoint. They include six outward-falling ducts, six independent gravity drain routes, the lowered ground-WC outlet with its original support allowance, reduced purge-area accounting and the complete room-side cassette displacement into each dry rest.
+
+The service-head and operating-window design remains under joined review. The complete outside weather faces, finite support/worker movements, retained principal-bath head and actual purge hardware still need their selected geometry and adverse checks. The new result drawing, final programme/result reconciliation, full HAD and affected checks and exact-head CI remain outstanding. HAD-SERVICES-ADOPTION remains planned.
+
+The earlier 9 November record below preserves the interruption and its source boundaries.
+
 The execution environment became unavailable on 9 November 2026 before this service work was committed. HAD-SERVICES-ADOPTION remains planned. The current main is 6bc0562aadd15b7e8652f0cb65bb844dcfca6a68.
 
 ## Preserved source and local residue
