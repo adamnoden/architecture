@@ -9,8 +9,8 @@
     "label": "issue-comment-6761668451"
   },
   "claimedAt": "2026-11-10T07:30:42.000Z",
-  "heartbeatAt": "2026-11-10T07:57:08.000Z",
-  "expiresAt": "2026-11-10T08:42:08.000Z",
+  "heartbeatAt": "2026-11-10T08:09:24.000Z",
+  "expiresAt": "2026-11-10T08:54:24.000Z",
   "branch": "work/mvb-chat-6761668451",
   "predecessor": {
     "leaseId": "978b85b8-07c1-4d8e-b770-b3c1c940ce7b",
@@ -35,7 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Recovered PR1467 at2a9753eb and reran its checks. New outer head, half-blocked return and complete support-frame checks pass locally. Publishing a new recovery PR.",
-    "next": "Finish inner transfer and E-spool movement, admit the actual240mm court collector replay, then run joined validation and exact-head CI."
-  }
+    "evidence": "Draft PR1470 at e32d2dd4. Corrected the lease declaration to include node and generation after the prior binding request was refused. Current g2 ownership was re-read and remains live.",
+    "next": "Integrate full240court structural replay, guarded inner transfer and E-spool removal, selected services and whole-support deflections; validate actual head."
+  },
+  "pr": 1470
 }
