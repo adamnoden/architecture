@@ -9,8 +9,8 @@
     "label": "issue-comment-6761668451"
   },
   "claimedAt": "2026-11-10T07:30:42.000Z",
-  "heartbeatAt": "2026-11-10T09:18:26.000Z",
-  "expiresAt": "2026-11-10T10:03:26.000Z",
+  "heartbeatAt": "2026-11-10T09:38:00.000Z",
+  "expiresAt": "2026-11-10T10:23:00.000Z",
   "branch": "work/mvb-chat-6761668451",
   "predecessor": {
     "leaseId": "978b85b8-07c1-4d8e-b770-b3c1c940ce7b",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1470 at63fe1362 preserves outer catches, frames, withdrawal checks and native collector hooks. Outer studies pass.",
-    "next": "Integrate260court,75kg heads, inner40kg/m frames and movement results. Review drawings and services, then exact-head tests."
+    "evidence": "PR1470 at9f1ce4b3 preserves260collector replay,672movement queries, matched outer component budgets and guarded head-to-ground transfer.",
+    "next": "Finish inner root/rail receipt and services integration. Validate joined drawings, source hashes and exact-head CI."
   },
   "pr": 1470
 }
