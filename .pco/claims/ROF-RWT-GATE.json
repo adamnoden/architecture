@@ -9,8 +9,8 @@
     "label": "issue-comment-6761668451"
   },
   "claimedAt": "2026-11-10T07:30:42.000Z",
-  "heartbeatAt": "2026-11-10T07:30:42.000Z",
-  "expiresAt": "2026-11-10T08:15:42.000Z",
+  "heartbeatAt": "2026-11-10T07:57:08.000Z",
+  "expiresAt": "2026-11-10T08:42:08.000Z",
   "branch": "work/mvb-chat-6761668451",
   "predecessor": {
     "leaseId": "978b85b8-07c1-4d8e-b770-b3c1c940ce7b",
@@ -33,5 +33,9 @@
       "next": "Recover executor. Resolve stage and E-spool extraction, head catches and full SAP-C1 wind replay. Run affected checks and exact-head preflight.",
       "blocker": "Execution environment unavailable. Selected geometry and full current-house structural replay remain unfinished."
     }
+  },
+  "checkpoint": {
+    "evidence": "Recovered PR1467 at2a9753eb and reran its checks. New outer head, half-blocked return and complete support-frame checks pass locally. Publishing a new recovery PR.",
+    "next": "Finish inner transfer and E-spool movement, admit the actual240mm court collector replay, then run joined validation and exact-head CI."
   }
 }
