@@ -9,8 +9,8 @@
     "label": "swarm-20261110-root"
   },
   "claimedAt": "2026-11-10T21:02:13.030Z",
-  "heartbeatAt": "2026-11-10T21:02:13.030Z",
-  "expiresAt": "2026-11-10T21:47:13.030Z",
+  "heartbeatAt": "2026-11-10T21:12:38.521Z",
+  "expiresAt": "2026-11-10T21:57:38.521Z",
   "branch": "work/swarm-roof-g3-20261110",
   "predecessor": {
     "leaseId": "47083968-9abd-4627-90bb-040ec3eb4792",
@@ -33,5 +33,10 @@
       "next": "Recover final native files, close local rain-control/withdrawal proof, integrate green services1471, reconcile source identities and rerun CI/preflight.",
       "blocker": "Execution environment unavailable. Local renewal and final structural source adoption remain unfinished."
     }
+  },
+  "pr": 1472,
+  "checkpoint": {
+    "evidence": "Draft PR #1472 preserves #1470 at 683d1c23. Native recovery selected and controls now reproduce; services PR #1473 is in full CI.",
+    "next": "Adopt reviewed reconstructed native sources; complete local rain control and source-bound renewal; integrate services main and validate joined result."
   }
 }
