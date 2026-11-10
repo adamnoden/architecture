@@ -1,5 +1,4 @@
-"""Read-only outer eaves proposal, current-source input. Millimetres and L/s.
-This is a finite selection check, with explicit unresolved support and head details.
+"""Source-bound outer eaves and joined catchment comparison. Millimetres and L/s.
 Run from any directory. The owning reconciliation source consumes this report.
 """
 import json
@@ -40,8 +39,9 @@ fault_q = normal_q+fault_extra_area*rain
 normal_head_extra = normal_head_area-normal_shadow
 whole_area = fault_side**2/1e6+2*(normal_head_extra+fault_head_extra)
 assert abs(2*fault_q+(ridge**2/1e6)*rain-whole_area*rain)<1e-9
-# Inner goods intercept sky: each projected annulus is counted once.
-inner_normal = (ridge**2-2600**2)/1e6*rain
+# The inward-draining cap carries the full q4800 sky envelope to primary.
+# Each projected annulus is counted once and the lower pan is ordinarily dry.
+inner_normal = (ridge**2-2400**2)/1e6*rain
 inner_fault = (ridge**2-2400**2)/1e6*rain
 inner_court = 2400**2/1e6*rain
 assert abs(inner_fault+inner_court-(ridge**2/1e6)*rain)<1e-9
@@ -185,7 +185,7 @@ report={
               'faultAdditionalAreaEach':fault_extra_area,
               'primaryCircuitLps':normal_q,'faultCircuitLps':fault_q,
               'wholeCapturedAreaM2':whole_area,'wholeLps':whole_area*rain,
-              'innerNormalWith2600SkyLps':inner_normal,'innerFaultWith2400SkyLps':inner_fault,
+              'innerNormalWith2400CapSkyLps':inner_normal,'innerFaultWith2400SkyLps':inner_fault,
               'remaining2400CourtLps':inner_court},
  'hydraulicSensitivities':{'primaryHalfWidthNormalDepth':pdepth,'primaryK4':p_local,
             'primaryReserveAfter10Setting25Splash11Movement':normal_reserve,
@@ -219,15 +219,16 @@ report={
          'secondaryApronRibsAndClipsKgM':secondary_apron_ribs,
          'rootBracketsPerCircuit':64,'primaryDryAllowance':50,'faultDryAllowance':50,
          'bothAtFrontWaterKgM':[water_p,water_f],'bothFilledCharacteristicKN':wet_kN},
- 'outstanding':[
- 'Root must apply exact eccentric loads and added wind/uplift to actual collector kernel; no spare mass argument.',
- 'The250head/catch width is rechecked against actual openings and service weather faces in roof_water_heads.py.',
- 'Each normal outer collecting head and its cross-spout require an independently supported continuous undercatch draining inward to fault trough. Without it a failed/outlet-blocked outboard head bypasses the lower trough.',
- 'Price normal-head walls high enough to send backed water to primaryfront spill first. Underhead leak return must pass full3.311Lps independently, be removable under temporary upstream diversion, and avoid normalbody/pipe joints.',
- 'Secondaryapron140 lies25beyond proposed80intake35..115. Exactfittedventandflashingsupports mustretain that freearea.',
- 'Root plates6550..6650 lie35above actualarchring6515. Cold/airbarrier return, welding, thermalbridge and corner continuity need a source section.',
- 'No immunity to shared ice blanket, simultaneous loss of both circuits or siteflood established.',
- 'The inner lower collector and its guarded transfer sequence are owned by the separate joined inner calculation.'
+ 'joinedStudies':[
+ 'roof_water_heads.py binds the450-wide high catches,250 pipe corridors, component frames, normal-head return and finite renewal sequence.',
+ 'roof_water_structure.py applies actual eccentric loads, independent water tributaries and signed added wind to the native collector and portal model.',
+ 'roof_water_inner.py owns the independent inner circuits, cap and guarded transfer sequence.'
+ ],
+ 'qualification':[
+ 'Retain the80-wide down-facing intake at radial35..115 behind the separately supported secondary apron.',
+ 'BCR receives root plates, welds, diaphragms, warm-side air barrier, thermal closure and corner continuity at the reported actions and clearances.',
+ 'PHY receives full-flow blockage, annular head leakage, wind-driven splash and complete captured renewal demonstrations.',
+ 'DPL must establish actual rainfall, ground levels, receiving territories and flood conditions. Shared ice and simultaneous destination loss remain rejected states.'
  ]}
 if __name__ == '__main__':
     print(json.dumps(report, indent=2))
