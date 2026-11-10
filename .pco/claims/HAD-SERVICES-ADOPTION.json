@@ -9,8 +9,8 @@
     "label": "services-resume-20261110"
   },
   "claimedAt": "2026-11-10T09:17:59.177Z",
-  "heartbeatAt": "2026-11-10T10:36:45.000Z",
-  "expiresAt": "2026-11-10T11:21:45.000Z",
+  "heartbeatAt": "2026-11-10T10:44:35.000Z",
+  "expiresAt": "2026-11-10T11:29:35.000Z",
   "branch": "work/had-services-g5-20261110",
   "predecessor": {
     "leaseId": "5de368b7-93ea-4adb-abfd-eae3a2dbc559",
@@ -34,7 +34,8 @@
   },
   "pr": 1471,
   "checkpoint": {
-    "evidence": "PR1471 head efcc7aa9 has final independent review, 53 HAD tests, 4 OAS tests plus occurrence reproduction, test:repo and rendered inspection passing. CI42798410889 continues full repository health.",
-    "next": "Observe exact-head CI, run fresh canonical merge preflight, merge services first and verify g5 release."
+    "evidence": "Ready PR1471 head efcc7aa9 and tree dea47018 have final review and successful full CI42798410889. All source is pushed and the worktree was clean. Main remains6bc0562a.",
+    "next": "Reacquire canonical ownership after recovery, verify head/main/CI, execute fresh merge-check and expected-head merge, then complete issue, lease and branch closeout.",
+    "blocker": "Execution environment unavailable. The canonical merge-check could not start. Exact command and failure are preserved in the PR handoff."
   }
 }
