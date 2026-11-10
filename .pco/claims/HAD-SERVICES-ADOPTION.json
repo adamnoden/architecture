@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-SERVICES-ADOPTION",
-  "generation": 3,
-  "state": "released",
-  "leaseId": "1bf31109-360f-403b-b43c-b6e601d606f3",
+  "generation": 4,
+  "state": "claimed",
+  "leaseId": "5de368b7-93ea-4adb-abfd-eae3a2dbc559",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6753127194"
+    "label": "issue-comment-6761703008"
   },
-  "claimedAt": "2026-11-09T22:26:49.000Z",
-  "heartbeatAt": "2026-11-09T22:58:52.000Z",
-  "expiresAt": "2026-11-09T22:58:52.000Z",
-  "branch": "work/mvb-chat-6753127194",
+  "claimedAt": "2026-11-10T07:32:46.000Z",
+  "heartbeatAt": "2026-11-10T07:32:46.000Z",
+  "expiresAt": "2026-11-10T08:17:46.000Z",
+  "branch": "work/mvb-chat-6761703008",
   "predecessor": {
-    "leaseId": "32fa2ba2-2c5a-4dc6-b159-08d233644d1e",
-    "generation": 2,
-    "branch": "work/mvb-chat-6751604368",
-    "pr": 1466,
+    "leaseId": "1bf31109-360f-403b-b43c-b6e601d606f3",
+    "generation": 3,
+    "branch": "work/mvb-chat-6753127194",
+    "pr": 1468,
     "checkpoint": {
-      "evidence": "#1466 merged 6bc0562a after 14 green checks and live g2 preflight. #943 records all 21 structural port checks.",
-      "next": "Choose four altered window heads or supported alternative routes for seven ports. Resolve daylight, purge, weather, grease and first release."
+      "evidence": "Draft PR #1468 at 88f0d2bf preserves the complete earlier source module and detailed adverse-review recovery record. Main remains 6bc0562a. Executor unavailable.",
+      "next": "Recover architecture-services local worktree or recreate integrated changes, fix first release, purge and gravity drain defects, regenerate outputs, run all HAD/affected checks and exact-head CI.",
+      "blocker": "Execution environment unavailable. Later local revision unvalidated and generated artifacts stale."
     }
   },
   "recoverySource": {
-    "leaseId": "32fa2ba2-2c5a-4dc6-b159-08d233644d1e",
-    "generation": 2,
-    "branch": "work/mvb-chat-6751604368",
-    "pr": 1466,
+    "leaseId": "1bf31109-360f-403b-b43c-b6e601d606f3",
+    "generation": 3,
+    "branch": "work/mvb-chat-6753127194",
+    "pr": 1468,
     "checkpoint": {
-      "evidence": "#1466 merged 6bc0562a after 14 green checks and live g2 preflight. #943 records all 21 structural port checks.",
-      "next": "Choose four altered window heads or supported alternative routes for seven ports. Resolve daylight, purge, weather, grease and first release."
+      "evidence": "Draft PR #1468 at 88f0d2bf preserves the complete earlier source module and detailed adverse-review recovery record. Main remains 6bc0562a. Executor unavailable.",
+      "next": "Recover architecture-services local worktree or recreate integrated changes, fix first release, purge and gravity drain defects, regenerate outputs, run all HAD/affected checks and exact-head CI.",
+      "blocker": "Execution environment unavailable. Later local revision unvalidated and generated artifacts stale."
     }
-  },
-  "pr": 1468,
-  "checkpoint": {
-    "evidence": "Draft PR #1468 at 88f0d2bf preserves the complete earlier source module and detailed adverse-review recovery record. Main remains 6bc0562a. Executor unavailable.",
-    "next": "Recover architecture-services local worktree or recreate integrated changes, fix first release, purge and gravity drain defects, regenerate outputs, run all HAD/affected checks and exact-head CI.",
-    "blocker": "Execution environment unavailable. Later local revision unvalidated and generated artifacts stale."
-  },
-  "releasedAt": "2026-11-09T22:58:52.000Z",
-  "releaseReason": "handoff"
+  }
 }
