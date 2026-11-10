@@ -9,8 +9,8 @@
     "label": "services-g6-20261110"
   },
   "claimedAt": "2026-11-10T21:03:34.035Z",
-  "heartbeatAt": "2026-11-10T21:08:12.542Z",
-  "expiresAt": "2026-11-10T21:53:12.542Z",
+  "heartbeatAt": "2026-11-10T21:21:00.162Z",
+  "expiresAt": "2026-11-10T22:06:00.162Z",
   "branch": "work/swarm-services-g6-20261110",
   "predecessor": {
     "leaseId": "004ea4fa-7415-456f-80d8-8dc794a549a2",
@@ -36,8 +36,8 @@
   },
   "pr": 1473,
   "checkpoint": {
-    "evidence": "PR #1473 head 9b694239477efaff9a078cb82493539b9e7191bc and tree 251fe2e0f12feba98a3b3a7eadffb07dff4691ac preserve the reviewed PR1471 ancestry. HAD53 and exact generated outputs pass; new exact-head CI and local full health are running.",
-    "next": "Inspect final CI, execute fresh canonical merge-check and expected-head merge, then reconcile issues and superseded recovery branches and release.",
-    "blocker": "Full exact-head validation in progress."
+    "evidence": "PR1473 head9b694239 and tree251fe2e0 preserve all recovered source. HAD53 and exact figures plus OAS4 and occurrence reproduction pass. Typecheck and control162 pass; local full health stopped only at sandbox tsx IPC EPERM. Hosted exact-head run42902000671 is in repository health.",
+    "next": "Inspect hosted gate, run fresh canonical merge-check against9b694239477efaff9a078cb82493539b9e7191bc, expected-head merge, then reconcile owning issues and retained recovery PRs/branches and release.",
+    "blocker": "Hosted full validation is still running."
   }
 }
