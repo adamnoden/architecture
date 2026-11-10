@@ -9,8 +9,8 @@
     "label": "issue-comment-6761668451"
   },
   "claimedAt": "2026-11-10T07:30:42.000Z",
-  "heartbeatAt": "2026-11-10T10:14:58.000Z",
-  "expiresAt": "2026-11-10T10:59:58.000Z",
+  "heartbeatAt": "2026-11-10T10:39:02.000Z",
+  "expiresAt": "2026-11-10T11:24:02.000Z",
   "branch": "work/mvb-chat-6761668451",
   "predecessor": {
     "leaseId": "978b85b8-07c1-4d8e-b770-b3c1c940ce7b",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1470 at a4908e63d32eac4b5689d3a01e15ac7a21fc0163 preserves court routes, outer figures and source reconciliation. CI identifies stale RWT source binding.",
-    "next": "Integrate final160 water/cassette/top-wind receipts, inner geometry and HAD1471. Rebind consumers, run exact-head CI and publication preflight.",
-    "blocker": "Final native movement and independent services publication checks running."
+    "evidence": "PR #1470 at912df4fe71b653d012929f9b4b44467cc28831cd preserves finite buried V-clamp release, rig pickups and revised drawing. Structural final260 replay passes collector/tie/shaft screens.",
+    "next": "Adopt frozen structural receipts. Resolve local gutter renewal without mandatory whole-house cover. Merge selected services and revalidate joined source.",
+    "blocker": "Local rain capture and whole-part removal under review. Services1471 exact-head CI running."
   },
   "pr": 1470
 }
