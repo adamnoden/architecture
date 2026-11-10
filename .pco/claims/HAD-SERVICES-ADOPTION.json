@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "HAD-SERVICES-ADOPTION",
-  "generation": 4,
+  "generation": 5,
   "state": "claimed",
-  "leaseId": "5de368b7-93ea-4adb-abfd-eae3a2dbc559",
+  "leaseId": "004ea4fa-7415-456f-80d8-8dc794a549a2",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6761703008"
+    "label": "services-resume-20261110"
   },
-  "claimedAt": "2026-11-10T07:32:46.000Z",
-  "heartbeatAt": "2026-11-10T08:20:38.000Z",
-  "expiresAt": "2026-11-10T09:05:38.000Z",
-  "branch": "work/mvb-chat-6761703008",
+  "claimedAt": "2026-11-10T09:17:59.177Z",
+  "heartbeatAt": "2026-11-10T09:17:59.177Z",
+  "expiresAt": "2026-11-10T10:47:59.177Z",
+  "branch": "work/had-services-g5-20261110",
   "predecessor": {
-    "leaseId": "1bf31109-360f-403b-b43c-b6e601d606f3",
-    "generation": 3,
-    "branch": "work/mvb-chat-6753127194",
-    "pr": 1468,
+    "leaseId": "5de368b7-93ea-4adb-abfd-eae3a2dbc559",
+    "generation": 4,
+    "branch": "work/mvb-chat-6761703008",
+    "pr": 1469,
     "checkpoint": {
-      "evidence": "Draft PR #1468 at 88f0d2bf preserves the complete earlier source module and detailed adverse-review recovery record. Main remains 6bc0562a. Executor unavailable.",
-      "next": "Recover architecture-services local worktree or recreate integrated changes, fix first release, purge and gravity drain defects, regenerate outputs, run all HAD/affected checks and exact-head CI.",
-      "blocker": "Execution environment unavailable. Later local revision unvalidated and generated artifacts stale."
+      "evidence": "PR1469 head 4a6ed89e selects finite paired purge leaves and reachable bronze stays, relocates two radiators and the inverter, and lowers upper fans20mm for complete support clearance. All16 current-house checks pass.",
+      "next": "Finish finite support and worker handover, principal-head weather/access, selected-interface drawing and adverse review, then full HAD/affected checks and exact-head CI."
     }
   },
   "recoverySource": {
-    "leaseId": "1bf31109-360f-403b-b43c-b6e601d606f3",
-    "generation": 3,
-    "branch": "work/mvb-chat-6753127194",
-    "pr": 1468,
+    "leaseId": "5de368b7-93ea-4adb-abfd-eae3a2dbc559",
+    "generation": 4,
+    "branch": "work/mvb-chat-6761703008",
+    "pr": 1469,
     "checkpoint": {
-      "evidence": "Draft PR #1468 at 88f0d2bf preserves the complete earlier source module and detailed adverse-review recovery record. Main remains 6bc0562a. Executor unavailable.",
-      "next": "Recover architecture-services local worktree or recreate integrated changes, fix first release, purge and gravity drain defects, regenerate outputs, run all HAD/affected checks and exact-head CI.",
-      "blocker": "Execution environment unavailable. Later local revision unvalidated and generated artifacts stale."
+      "evidence": "PR1469 head 4a6ed89e selects finite paired purge leaves and reachable bronze stays, relocates two radiators and the inverter, and lowers upper fans20mm for complete support clearance. All16 current-house checks pass.",
+      "next": "Finish finite support and worker handover, principal-head weather/access, selected-interface drawing and adverse review, then full HAD/affected checks and exact-head CI."
     }
-  },
-  "pr": 1469,
-  "checkpoint": {
-    "evidence": "PR1469 head 4a6ed89e selects finite paired purge leaves and reachable bronze stays, relocates two radiators and the inverter, and lowers upper fans20mm for complete support clearance. All16 current-house checks pass.",
-    "next": "Finish finite support and worker handover, principal-head weather/access, selected-interface drawing and adverse review, then full HAD/affected checks and exact-head CI."
   }
 }
