@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-SERVICES-ADOPTION",
   "generation": 6,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "aa78cb57-2c68-4191-9c16-8ea59ca4b0a2",
   "holder": {
     "kind": "chatgpt",
     "label": "services-g6-20261110"
   },
   "claimedAt": "2026-11-10T21:03:34.035Z",
-  "heartbeatAt": "2026-11-10T21:21:00.162Z",
-  "expiresAt": "2026-11-10T22:06:00.162Z",
+  "heartbeatAt": "2026-11-10T21:23:28.000Z",
+  "expiresAt": "2026-11-10T21:23:28.000Z",
   "branch": "work/swarm-services-g6-20261110",
   "predecessor": {
     "leaseId": "004ea4fa-7415-456f-80d8-8dc794a549a2",
@@ -39,5 +39,7 @@
     "evidence": "PR1473 head9b694239 and tree251fe2e0 preserve all recovered source. HAD53 and exact figures plus OAS4 and occurrence reproduction pass. Typecheck and control162 pass; local full health stopped only at sandbox tsx IPC EPERM. Hosted exact-head run42902000671 is in repository health.",
     "next": "Inspect hosted gate, run fresh canonical merge-check against9b694239477efaff9a078cb82493539b9e7191bc, expected-head merge, then reconcile owning issues and retained recovery PRs/branches and release.",
     "blocker": "Hosted full validation is still running."
-  }
+  },
+  "releasedAt": "2026-11-10T21:23:28.000Z",
+  "releaseReason": "completed"
 }
