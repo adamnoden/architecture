@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "ROF-RWT-GATE",
   "generation": 2,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "47083968-9abd-4627-90bb-040ec3eb4792",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6761668451"
   },
   "claimedAt": "2026-11-10T07:30:42.000Z",
-  "heartbeatAt": "2026-11-10T10:46:14.000Z",
-  "expiresAt": "2026-11-10T11:31:14.000Z",
+  "heartbeatAt": "2026-11-10T10:46:56.000Z",
+  "expiresAt": "2026-11-10T10:46:56.000Z",
   "branch": "work/mvb-chat-6761668451",
   "predecessor": {
     "leaseId": "978b85b8-07c1-4d8e-b770-b3c1c940ce7b",
@@ -39,5 +39,7 @@
     "next": "Recover final native files, close local rain-control/withdrawal proof, integrate green services1471, reconcile source identities and rerun CI/preflight.",
     "blocker": "Execution environment unavailable. Local renewal and final structural source adoption remain unfinished."
   },
-  "pr": 1470
+  "pr": 1470,
+  "releasedAt": "2026-11-10T10:46:56.000Z",
+  "releaseReason": "handoff"
 }
