@@ -9,8 +9,8 @@
     "label": "services-resume-20261110"
   },
   "claimedAt": "2026-11-10T09:17:59.177Z",
-  "heartbeatAt": "2026-11-10T09:17:59.177Z",
-  "expiresAt": "2026-11-10T10:47:59.177Z",
+  "heartbeatAt": "2026-11-10T09:29:46.000Z",
+  "expiresAt": "2026-11-10T10:14:46.000Z",
   "branch": "work/had-services-g5-20261110",
   "predecessor": {
     "leaseId": "5de368b7-93ea-4adb-abfd-eae3a2dbc559",
@@ -31,5 +31,10 @@
       "evidence": "PR1469 head 4a6ed89e selects finite paired purge leaves and reachable bronze stays, relocates two radiators and the inverter, and lowers upper fans20mm for complete support clearance. All16 current-house checks pass.",
       "next": "Finish finite support and worker handover, principal-head weather/access, selected-interface drawing and adverse review, then full HAD/affected checks and exact-head CI."
     }
+  },
+  "pr": 1471,
+  "checkpoint": {
+    "evidence": "PR1471 at58c91e82 preserves the sloping exterior cartridge and finite purge revision. All18 current-house tests pass. Prior PR1469 remains preserved.",
+    "next": "Complete wall-terminal renewal, radiator maintenance, pressure and drawing. Run full HAD and affected checks, adverse review and exact-head CI."
   }
 }
