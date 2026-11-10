@@ -9,8 +9,8 @@
     "label": "services-resume-20261110"
   },
   "claimedAt": "2026-11-10T09:17:59.177Z",
-  "heartbeatAt": "2026-11-10T10:22:20.000Z",
-  "expiresAt": "2026-11-10T11:07:20.000Z",
+  "heartbeatAt": "2026-11-10T10:36:45.000Z",
+  "expiresAt": "2026-11-10T11:21:45.000Z",
   "branch": "work/had-services-g5-20261110",
   "predecessor": {
     "leaseId": "5de368b7-93ea-4adb-abfd-eae3a2dbc559",
@@ -34,7 +34,7 @@
   },
   "pr": 1471,
   "checkpoint": {
-    "evidence": "PR1471 at efcc7aa9 selects the joined occupied service reference. All53 HAD and4 OAS tests plus test:repo pass. Finite purge, guards, cartridge renewals, radiator tools and the corrected actuator tray are source-bound.",
-    "next": "Verify final independent review and exact-head CI, run fresh merge preflight, integrate and release g5."
+    "evidence": "PR1471 head efcc7aa9 has final independent review, 53 HAD tests, 4 OAS tests plus occurrence reproduction, test:repo and rendered inspection passing. CI42798410889 continues full repository health.",
+    "next": "Observe exact-head CI, run fresh canonical merge preflight, merge services first and verify g5 release."
   }
 }
