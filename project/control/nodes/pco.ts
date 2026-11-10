@@ -2,6 +2,13 @@ import { defineNodes } from '../types.js'
 
 export const pcoNodes = defineNodes([
   {
+    id: 'PCO-INDEPENDENT-STUDIES', owners: ['PCO'],
+    title: 'Separate bounded bay and internal-water studies from final house integration',
+    dependencies: ['PCO-REVIEW-POLICY'], lifecycle: 'complete',
+    agentDispatch: { mode: 'manual', reason: 'Owner-directed independent-study split on 10 November 2026; exceptional registration bootstrap recorded in #1474.' },
+    closeoutEvidence: ['project/pco/independent-studies-result.md']
+  },
+  {
     id: 'PCO-GIT-DEADLINE', owners: ['PCO'],
     title: 'Bound configurable Git command deadlines across canonical lease operations',
     dependencies: ['PCO-SNAPSHOT'], lifecycle: 'complete',

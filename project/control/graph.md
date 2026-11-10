@@ -15,11 +15,12 @@ flowchart LR
   subgraph g_SHARED["Shared integration gates"]
     direction TB
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
-    n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>READY</b>"]
+    n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>BLOCKED</b>"]
   end
   subgraph g_BCR["BCR"]
     direction TB
     n_BCR_CONVERGENCE["BCR-CONVERGENCE<br/>Substantive construction-resolution convergence<br/><b>BLOCKED</b>"]
+    n_BCR_BAY_INTERFACES["BCR-BAY-INTERFACES<br/>Test current front-study bay interfaces and occupied renewal actions<br/><b>READY</b>"]
     n_BCR_BAY_DESIGN["BCR-BAY-DESIGN<br/>Resolve the selected bay as a coordinated design study<br/><b>BLOCKED</b>"]
   end
   subgraph g_HRS["HRS"]
@@ -35,6 +36,10 @@ flowchart LR
     direction TB
     n_RWT_08["RWT-08<br/>Rainwater formalisation and regression admission<br/><b>BLOCKED</b>"]
   end
+  subgraph g_STR["STR"]
+    direction TB
+    n_STR_FLOOR_PORTAL["STR-FLOOR-PORTAL<br/>Resolve the floor collector and portal load path before house selection<br/><b>READY</b>"]
+  end
   subgraph g_MAT["MAT"]
     direction TB
     n_MAT_COORDINATION["MAT-COORDINATION<br/>Reconcile selected-house material compliance and explicit owner exceptions<br/><b>BLOCKED</b>"]
@@ -42,6 +47,7 @@ flowchart LR
   subgraph g_MRA["MRA"]
     direction TB
     n_MRA_01["MRA-01<br/>External water and ground-envelope assault<br/><b>BLOCKED</b>"]
+    n_MRA_INTERNAL_LEAKS["MRA-INTERNAL-LEAKS<br/>Trace selected internal-water failures, isolation and repair consequences<br/><b>READY</b>"]
     n_MRA_02["MRA-02<br/>Internal water and wet-zone assault<br/><b>BLOCKED</b>"]
     n_MRA_03["MRA-03<br/>Vapour, condensation and drying assault<br/><b>BLOCKED</b>"]
     n_MRA_04["MRA-04<br/>Whole-house moisture failure matrix and adversarial gate<br/><b>BLOCKED</b>"]
@@ -92,6 +98,7 @@ flowchart LR
   end
   n_ROF_RWT_GATE --> n_TRIAD_GATE
   n_MAT_COORDINATION --> n_TRIAD_GATE
+  n_STR_FLOOR_PORTAL --> n_TRIAD_GATE
   n_TRIAD_GATE --> n_BCR_CONVERGENCE
   n_MRA_04 --> n_BCR_CONVERGENCE
   n_HRS_TECHNICAL --> n_BCR_CONVERGENCE
@@ -99,10 +106,12 @@ flowchart LR
   n_MRA_05 --> n_HRS_SYNTHESIS
   n_DEL_CURRENT --> n_HRS_SYNTHESIS
   n_TRIAD_GATE --> n_HRS_TECHNICAL
+  n_STR_FLOOR_PORTAL --> n_ROF_RWT_GATE
   n_ROF_RWT_GATE --> n_ROF_09
   n_ROF_RWT_GATE --> n_RWT_08
   n_ROF_RWT_GATE --> n_MAT_COORDINATION
   n_TRIAD_GATE --> n_MRA_01
+  n_MRA_INTERNAL_LEAKS --> n_MRA_02
   n_TRIAD_GATE --> n_MRA_02
   n_TRIAD_GATE --> n_MRA_03
   n_MRA_01 --> n_MRA_04
@@ -115,6 +124,7 @@ flowchart LR
   n_EDA_RENEWED --> n_PUB_02_FINAL
   n_HRS_SYNTHESIS --> n_PLT_FINAL_PREP
   n_PLT_FINAL_PREP --> n_PLT_PRINT_REVIEW
+  n_BCR_BAY_INTERFACES --> n_BCR_BAY_DESIGN
   n_TRIAD_GATE --> n_BCR_BAY_DESIGN
   n_HRS_TECHNICAL --> n_ADE_MODEL
   n_ADE_MODEL --> n_ADE_DETAILS
@@ -137,6 +147,7 @@ flowchart LR
   style g_HRS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_ROF fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_RWT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_STR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_MAT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_MRA fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_PLT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
@@ -162,11 +173,13 @@ flowchart LR
   class n_BCR_CONVERGENCE blocked;
   class n_HRS_SYNTHESIS blocked;
   class n_HRS_TECHNICAL blocked;
-  class n_ROF_RWT_GATE ready;
+  class n_ROF_RWT_GATE blocked;
   class n_ROF_09 blocked;
   class n_RWT_08 blocked;
+  class n_STR_FLOOR_PORTAL ready;
   class n_MAT_COORDINATION blocked;
   class n_MRA_01 blocked;
+  class n_MRA_INTERNAL_LEAKS ready;
   class n_MRA_02 blocked;
   class n_MRA_03 blocked;
   class n_MRA_04 blocked;
@@ -176,6 +189,7 @@ flowchart LR
   class n_PUB_02_FINAL blocked;
   class n_PLT_FINAL_PREP blocked;
   class n_PLT_PRINT_REVIEW blocked;
+  class n_BCR_BAY_INTERFACES ready;
   class n_BCR_BAY_DESIGN blocked;
   class n_ADE_MODEL blocked;
   class n_ADE_DETAILS blocked;
@@ -219,6 +233,7 @@ flowchart LR
   end
   subgraph g_PCO["PCO"]
     direction TB
+    n_PCO_INDEPENDENT_STUDIES["PCO-INDEPENDENT-STUDIES<br/>Separate bounded bay and internal-water studies from final house integration<br/><b>DONE</b>"]
     n_PCO_GIT_DEADLINE["PCO-GIT-DEADLINE<br/>Bound configurable Git command deadlines across canonical lease operations<br/><b>DONE</b>"]
     n_PCO_REVIEW_POLICY["PCO-REVIEW-POLICY<br/>Separate internal development from external assurance and remove unnecessary review waits<br/><b>DONE</b>"]
     n_PCO_MODES["PCO-MODES<br/>Close regular-chat PR association and confirm shared worker topologies<br/><b>DONE</b>"]
@@ -290,7 +305,7 @@ flowchart LR
     n_HAD_COURT_BYPASS["HAD-COURT-BYPASS<br/>Select the permanent courtyard receiver and its blocked-basket return<br/><b>DONE</b>"]
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
     n_RWT_SHED["RWT-SHED<br/>Develop free-shedding edges and planted ground-receiver comparisons<br/><b>DONE</b>"]
-    n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>READY</b>"]
+    n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>BLOCKED</b>"]
     n_STR_HOUSE["STR-HOUSE<br/>Coordinate whole-house structure with the inhabited plan and section<br/><b>DONE</b>"]
   end
   subgraph g_BCR["BCR"]
@@ -305,6 +320,7 @@ flowchart LR
     n_BCR_PROPORTIONALITY["BCR-PROPORTIONALITY<br/>Current-house conventional comparator and burden appraisal<br/><b>DONE</b>"]
     n_BCR_PREFLIGHT["BCR-PREFLIGHT<br/>Reconcile early feasibility findings into selection constraints<br/><b>DONE</b>"]
     n_BCR_BAY_BRIEF["BCR-BAY-BRIEF<br/>Select one consequential construction bay and its proof obligations<br/><b>DONE</b>"]
+    n_BCR_BAY_INTERFACES["BCR-BAY-INTERFACES<br/>Test current front-study bay interfaces and occupied renewal actions<br/><b>READY</b>"]
     n_BCR_BAY_DESIGN["BCR-BAY-DESIGN<br/>Resolve the selected bay as a coordinated design study<br/><b>BLOCKED</b>"]
   end
   subgraph g_HRS["HRS"]
@@ -346,6 +362,7 @@ flowchart LR
     n_STR_SPANS["STR-SPANS<br/>Compare primary floor and roof systems with direct support<br/><b>DONE</b>"]
     n_STR_GROUND["STR-GROUND<br/>Compare tree-tolerant foundations, ground movement isolation and substructure interfaces<br/><b>DONE</b>"]
     n_STR_RECONCILE["STR-RECONCILE<br/>Reconcile structural interfaces and affected evidence for house selection<br/><b>DONE</b>"]
+    n_STR_FLOOR_PORTAL["STR-FLOOR-PORTAL<br/>Resolve the floor collector and portal load path before house selection<br/><b>READY</b>"]
   end
   subgraph g_MAT["MAT"]
     direction TB
@@ -360,6 +377,7 @@ flowchart LR
     direction TB
     n_MRA_00["MRA-00<br/>Moisture constitution, inventory and threat model<br/><b>DONE</b>"]
     n_MRA_01["MRA-01<br/>External water and ground-envelope assault<br/><b>BLOCKED</b>"]
+    n_MRA_INTERNAL_LEAKS["MRA-INTERNAL-LEAKS<br/>Trace selected internal-water failures, isolation and repair consequences<br/><b>READY</b>"]
     n_MRA_02["MRA-02<br/>Internal water and wet-zone assault<br/><b>BLOCKED</b>"]
     n_MRA_03["MRA-03<br/>Vapour, condensation and drying assault<br/><b>BLOCKED</b>"]
     n_MRA_04["MRA-04<br/>Whole-house moisture failure matrix and adversarial gate<br/><b>BLOCKED</b>"]
@@ -439,6 +457,7 @@ flowchart LR
   n_CCR_PLAN --> n_CCR_IDENTITY
   n_CCR_STAIR --> n_CCR_IDENTITY
   n_CCR_DRAINAGE --> n_CCR_IDENTITY
+  n_PCO_REVIEW_POLICY --> n_PCO_INDEPENDENT_STUDIES
   n_PCO_SNAPSHOT --> n_PCO_GIT_DEADLINE
   n_PCO_HOUSE_PLAN --> n_PCO_REVIEW_POLICY
   n_PCO_GATEWAY --> n_PCO_MODES
@@ -540,6 +559,7 @@ flowchart LR
   n_BCR_PREFLIGHT --> n_TRIAD_GATE
   n_MAT_COORDINATION --> n_TRIAD_GATE
   n_STR_RECONCILE --> n_TRIAD_GATE
+  n_STR_FLOOR_PORTAL --> n_TRIAD_GATE
   n_BSR_ROOT --> n_BCR_SCAFFOLD
   n_BCR_SCAFFOLD --> n_BCR_CONVERGENCE
   n_TRIAD_GATE --> n_BCR_CONVERGENCE
@@ -620,6 +640,7 @@ flowchart LR
   n_OAS_03 --> n_ROF_RWT_GATE
   n_OAS_DETAIL --> n_ROF_RWT_GATE
   n_STR_RECONCILE --> n_ROF_RWT_GATE
+  n_STR_FLOOR_PORTAL --> n_ROF_RWT_GATE
   n_ROF_RWT_GATE --> n_ROF_09
   n_ROF_RWT_GATE --> n_RWT_08
   n_HRS_BASELINE --> n_STR_00
@@ -632,6 +653,7 @@ flowchart LR
   n_HAD_WATER_REPLAN --> n_STR_HOUSE
   n_STR_HOUSE --> n_STR_RECONCILE
   n_STR_GROUND --> n_STR_RECONCILE
+  n_STR_RECONCILE --> n_STR_FLOOR_PORTAL
   n_HRS_BASELINE --> n_MAT_00
   n_MAT_00 --> n_MAT_AUDIT
   n_MAT_AUDIT --> n_MAT_ENVELOPE
@@ -648,7 +670,12 @@ flowchart LR
   n_BSR_ROOT --> n_MRA_00
   n_MRA_00 --> n_MRA_01
   n_TRIAD_GATE --> n_MRA_01
+  n_MRA_00 --> n_MRA_INTERNAL_LEAKS
+  n_HAD_SERVICES_ADOPTION --> n_MRA_INTERNAL_LEAKS
+  n_IAS_03 --> n_MRA_INTERNAL_LEAKS
+  n_MAT_INTERIORS --> n_MRA_INTERNAL_LEAKS
   n_MRA_00 --> n_MRA_02
+  n_MRA_INTERNAL_LEAKS --> n_MRA_02
   n_TRIAD_GATE --> n_MRA_02
   n_MRA_00 --> n_MRA_03
   n_TRIAD_GATE --> n_MRA_03
@@ -672,7 +699,13 @@ flowchart LR
   n_DEL_BRIEF --> n_BCR_BAY_BRIEF
   n_HRS_BASELINE --> n_BCR_BAY_BRIEF
   n_BCR_PREFLIGHT --> n_BCR_BAY_BRIEF
+  n_BCR_BAY_BRIEF --> n_BCR_BAY_INTERFACES
+  n_IAS_03 --> n_BCR_BAY_INTERFACES
+  n_MAT_ENVELOPE --> n_BCR_BAY_INTERFACES
+  n_MAT_INTERIORS --> n_BCR_BAY_INTERFACES
+  n_HAD_SERVICES_ADOPTION --> n_BCR_BAY_INTERFACES
   n_BCR_BAY_BRIEF --> n_BCR_BAY_DESIGN
+  n_BCR_BAY_INTERFACES --> n_BCR_BAY_DESIGN
   n_TRIAD_GATE --> n_BCR_BAY_DESIGN
   n_ADE_DELIVERY_AUDIT --> n_ADE_SECTION_VIEW
   n_ADE_SECTION_VIEW --> n_ADE_SECTION_PARITY
@@ -757,6 +790,7 @@ flowchart LR
   class n_CCR_STAIR done;
   class n_CCR_DRAINAGE done;
   class n_CCR_IDENTITY done;
+  class n_PCO_INDEPENDENT_STUDIES done;
   class n_PCO_GIT_DEADLINE done;
   class n_PCO_REVIEW_POLICY done;
   class n_PCO_MODES done;
@@ -843,7 +877,7 @@ flowchart LR
   class n_RWT_METALS done;
   class n_RWT_ROBUSTNESS done;
   class n_RWT_07 done;
-  class n_ROF_RWT_GATE ready;
+  class n_ROF_RWT_GATE blocked;
   class n_ROF_09 blocked;
   class n_RWT_08 blocked;
   class n_STR_00 done;
@@ -852,6 +886,7 @@ flowchart LR
   class n_STR_GROUND done;
   class n_STR_HOUSE done;
   class n_STR_RECONCILE done;
+  class n_STR_FLOOR_PORTAL ready;
   class n_MAT_00 done;
   class n_MAT_AUDIT done;
   class n_MAT_ENVELOPE done;
@@ -860,6 +895,7 @@ flowchart LR
   class n_MAT_COORDINATION blocked;
   class n_MRA_00 done;
   class n_MRA_01 blocked;
+  class n_MRA_INTERNAL_LEAKS ready;
   class n_MRA_02 blocked;
   class n_MRA_03 blocked;
   class n_MRA_04 blocked;
@@ -878,6 +914,7 @@ flowchart LR
   class n_DEL_ISSUE_PROFILES done;
   class n_ADE_DELIVERY_AUDIT done;
   class n_BCR_BAY_BRIEF done;
+  class n_BCR_BAY_INTERFACES ready;
   class n_BCR_BAY_DESIGN blocked;
   class n_ADE_SECTION_VIEW done;
   class n_ADE_SECTION_PARITY done;

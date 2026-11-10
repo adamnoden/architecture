@@ -1,6 +1,25 @@
 # A provisional structure for the pitched courtyard house
 
-**Carry SAP-C1 into selection.** Move all sixteen outer corner openings, carry both inner arches on continuous jambs, retain the existing primary corner returns and give the continuous roof collector its raised weather cap. The former corner spring and uninterrupted low crown are rejected. This completes STR-RECONCILE’s internal structural proposition. The accepted architectural source remains RH-LAYOUT-REVISION-02. HAD may adopt SAP-C1 or return a specific incompatible interface through the shared rewind. [Exact input identities and sixteen occurrence changes](studies/reconciled-house-interface.json) · [existing authority and change procedure](../triad-interface-contract.md#structural-direction-and-selection-compatibility)
+**SAP-C1's current coherent structural handoff is withdrawn.** The 10 November
+[floor/portal review](floor-portal-interface-review.md) finds that the required
+independent jamb movement crosses a continuous concrete floor collector with
+no physical separation or bypass. The roof receiver also needs an actual
+non-intersecting connection. The new
+[STR-FLOOR-PORTAL correction](structural-architecture-programme.md#str-floor-portal--correct-the-floor-and-portal-load-path)
+must resolve the joined load system before ROF-RWT-GATE or TRIAD-GATE can pass.
+The original coherent-design exit is unchanged; a reproducible adverse model
+does not satisfy it.
+
+The following records the 9 November SAP-C1 candidate and its bounded evidence.
+It moved all sixteen outer corner openings, carried both inner arches on
+continuous jambs, retained the existing primary corner returns and raised the
+roof collector's weather cap. The former corner spring and uninterrupted low
+crown remain rejected. STR-RECONCILE retains its historical completion record,
+not a claim that the present structural interface is resolved. The accepted
+architectural source remains RH-LAYOUT-REVISION-02. Existing geometry and load
+receipts may be reused only within their stated model, pending the correction.
+[Exact input identities and sixteen occurrence changes](studies/reconciled-house-interface.json)
+· [existing authority and change procedure](../triad-interface-contract.md#structural-direction-and-selection-compatibility)
 
 ![Two storeys, independent jambs, the inhabited plan and the pitched north section](studies/house-corner-rewind.svg)
 
@@ -57,7 +76,7 @@ Keep both court exits, external staff landings and the fail-safe drainage duties
 | BCR obligations | Disposition and owner |
 |---|---|
 | 001, 027 | SAP-C1 names the source and owner at every changed interface. HAD selection or an explicit successor activates migration. DEL retains issue, product and procurement responsibility. |
-| 002, 003 | G1, both aligned jambs, floor/roof keys, grid and the signed 52-head suction register resolve the load route. ER-STR-01 must size the whole selected design and test movement, subsoil, bearing and positive ties. |
+| 002, 003 | The dated G1, paired-jamb, normal-key and 52-head model locates numerical force transfers; it does not resolve the physical floor/jamb join. STR-FLOOR-PORTAL must correct that load route and regenerate affected reactions and movements before selection. ER-STR-01 retains whole-design sizing and movement, subsoil, bearing and positive-tie acceptance. |
 | 004, 005, 006 | Retain the protected stair, entrance void, RC edge and independent guards. Preserve the wall/ceiling boundaries around each formed sleeve. Fire resistance, acoustic flanking and vibration need assembly-specific evidence. |
 | 007, 008, 009, 010 | The west low box fits below the temporary barrier, the north T-return preserves backing-plate access and the full stack stays in its cabinet. IAS must select and test the complete drain and protected wet floor/well, including failure discharge and reinstatement. |
 | 011, 012, 013 | Permanent structural zones are marked at the court, plant and eaves. No new service bore, floor void, duct or electrical capacity is credited. MAT/IAS retain plant replacement, heat/vent performance and isolation. |

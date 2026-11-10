@@ -1,6 +1,15 @@
 # Occupied house services and the first store movement
 
-HAD-SERVICES-02 selects the furnished local-extract service architecture on the reconciled SAP-C1 house. Six independent room extracts, separate cooker exhaust and tempered supply, a separated heating primary and a pressure-rated mineral-clad domestic store form one current occupied reference. The default `deriveCurrentHouse()` compositor exports that selection from seventeen recorded inputs. The earlier water, materials and structural studies retain their pinned historical sources. Run `node project/had/studies/current-house.mjs --write` to reproduce the schedule and three drawings. [Selected service schedule](studies/current-house-services.json) · [Executable current house](studies/current-house.mjs)
+HAD-SERVICES-02 selects the furnished local-extract service architecture on the source-bound SAP-C1 geometry. Six independent room extracts, separate cooker exhaust and tempered supply, a separated heating primary and a pressure-rated mineral-clad domestic store form one current occupied reference. The default `deriveCurrentHouse()` compositor exports that selection from seventeen recorded inputs. The earlier water, materials and structural studies retain their pinned historical sources. Run `node project/had/studies/current-house.mjs --write` to reproduce the schedule and three drawings. [Selected service schedule](studies/current-house-services.json) · [Executable current house](studies/current-house.mjs)
+
+**10 November structural applicability hold.** The selected service choices and
+their historical completion remain bounded results. SAP-C1's current coherent
+structural handoff is withdrawn by the floor/portal review. STR-FLOOR-PORTAL
+must recheck affected apertures, supports, jamb movement and roof-sensitive
+renewal before the integrated house is accepted. The
+[service applicability review](service-structural-applicability.md) identifies
+the exact preserved inputs and replay duties. No selected geometry is changed
+by this hold, and an empty compositor adoption-blocker list does not discharge it.
 
 The development selection fixes service locations, finite operating and renewal geometry, heating and airflow comparisons, and the consequential window and room changes. Product, assembled fault, material, site and statutory evidence remains assigned below. The selection introduces zero approved material exceptions.
 
@@ -115,6 +124,7 @@ The bounded architectural service selection is complete when the owning source, 
 
 | Missing evidence | Decision affected | Owning route and resolution point |
 |---|---|---|
+| Coherent floor/portal connection and corrected support, aperture and movement compatibility | Joined structural fit and affected service/window renewal claims | STR-FLOOR-PORTAL, with HAD/IAS/OAS occurrence replay, before ROF-RWT-GATE or TRIAD-GATE passes |
 | Complete constituent register for fans, controls, doors, windows, actuators, seals, coatings, insulation binders and supported assemblies | Material admission and any actual exception | MAT-COORDINATION and the owner material policy before procurement. Approved exceptions remain zero |
 | Loaded cooker flow cutoff, seat leakage, wind, stuck component, door forces and pressure recovery on a common clock | Enabling high cooking and its actual controls | MAT/BCR assembled rig before releasing that operating duty |
 | Whole-window wind/rain/cycle/Uw, actual daylight, terminal free areas, temporary weather closures and exhaust re-entry | Final window and terminal product acceptance | OAS/MAT/BCR with DPL façade conditions before product freeze and installation |

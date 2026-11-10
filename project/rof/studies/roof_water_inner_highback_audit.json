@@ -1,0 +1,547 @@
+{
+  "status": "INDEPENDENT ARITHMETIC/DOMAIN AUDIT; PHYSICAL ASSEMBLY AND ORDINARY RENEWAL REMAIN UNSELECTED",
+  "flowConservation": {
+    "fullInwardQ": 3.60375,
+    "weatherRoofOnlyQ": 3.0816,
+    "eachValleyQ": 0.3456,
+    "directEachFaceQ": 0.4248,
+    "allOtherFootprintRainAtCrownQ": 0.52215,
+    "adverseCrownQ": 0.86775,
+    "adverseIntermediateBeforeValleyQ": 1.29255,
+    "adverseIntermediateAfterValleyQ": 1.63815,
+    "adverseArmAtHeadQ": 2.06295,
+    "otherArmAtHeadQ": 1.1952,
+    "directSWHeadValleyQ": 0.3456
+  },
+  "normal5800Reference": {
+    "minimum": {
+      "reserveMM": 5.079069763,
+      "intervalMM": [
+        2900.0,
+        2901.0
+      ],
+      "flowLps": 1.638296483,
+      "bedMM": 6620.375,
+      "normalDepthMM": 34.74586429,
+      "K4HeadMM": 14.800065946,
+      "velocityMPS": 0.269433338,
+      "Froude": 0.461493159
+    },
+    "boundaryChecks": [
+      {
+        "face": 0,
+        "distanceMM": 0.0,
+        "flowLps": 0.86775,
+        "bedMM": 6635.0,
+        "reserveMM": 7.561481242,
+        "normalDepthMM": 22.771751284,
+        "K4HeadMM": 9.666767474,
+        "velocityMPS": 0.217750992,
+        "Froude": 0.46070977
+      },
+      {
+        "face": 0,
+        "distanceMM": 2900.0,
+        "flowLps": 1.29255,
+        "bedMM": 6620.375,
+        "reserveMM": 12.327001944,
+        "normalDepthMM": 29.628327578,
+        "K4HeadMM": 12.669670477,
+        "velocityMPS": 0.249288455,
+        "Froude": 0.462396026
+      },
+      {
+        "face": 1,
+        "distanceMM": 2900.0,
+        "flowLps": 1.63815,
+        "bedMM": 6620.375,
+        "reserveMM": 5.082027866,
+        "normalDepthMM": 34.743761148,
+        "K4HeadMM": 14.799210986,
+        "velocityMPS": 0.269425555,
+        "Froude": 0.461493797
+      },
+      {
+        "face": 1,
+        "distanceMM": 5800.0,
+        "flowLps": 2.06295,
+        "bedMM": 6605.75,
+        "reserveMM": 11.453272684,
+        "normalDepthMM": 40.660085356,
+        "K4HeadMM": 17.13664196,
+        "velocityMPS": 0.289922798,
+        "Froude": 0.459053942
+      }
+    ],
+    "pathLengthMM": 5800.0,
+    "authoredFall": 0.005043103,
+    "hydraulicFall": 0.004
+  },
+  "normal6500PhysicalBackEdgeGrid": {
+    "minimum": {
+      "reserveMM": 5.079388324,
+      "intervalMM": [
+        3250.0,
+        3251.0
+      ],
+      "flowLps": 1.638280708,
+      "bedMM": 6620.375,
+      "normalDepthMM": 34.7456378,
+      "K4HeadMM": 14.799973876,
+      "velocityMPS": 0.2694325,
+      "Froude": 0.461493228
+    },
+    "boundaryChecks": [
+      {
+        "face": 0,
+        "distanceMM": 0.0,
+        "flowLps": 0.86775,
+        "bedMM": 6635.0,
+        "reserveMM": 7.561481242,
+        "normalDepthMM": 22.771751284,
+        "K4HeadMM": 9.666767474,
+        "velocityMPS": 0.217750992,
+        "Froude": 0.46070977
+      },
+      {
+        "face": 0,
+        "distanceMM": 3250.0,
+        "flowLps": 1.29255,
+        "bedMM": 6620.375,
+        "reserveMM": 12.327001944,
+        "normalDepthMM": 29.628327578,
+        "K4HeadMM": 12.669670477,
+        "velocityMPS": 0.249288455,
+        "Froude": 0.462396026
+      },
+      {
+        "face": 1,
+        "distanceMM": 3250.0,
+        "flowLps": 1.63815,
+        "bedMM": 6620.375,
+        "reserveMM": 5.082027866,
+        "normalDepthMM": 34.743761148,
+        "K4HeadMM": 14.799210986,
+        "velocityMPS": 0.269425555,
+        "Froude": 0.461493797
+      },
+      {
+        "face": 1,
+        "distanceMM": 6500.0,
+        "flowLps": 2.06295,
+        "bedMM": 6605.75,
+        "reserveMM": 11.453272684,
+        "normalDepthMM": 40.660085356,
+        "K4HeadMM": 17.13664196,
+        "velocityMPS": 0.289922798,
+        "Froude": 0.459053942
+      }
+    ],
+    "pathLengthMM": 6500,
+    "authoredFall": 0.0045,
+    "hydraulicFall": 0.004
+  },
+  "normalParameterization": {
+    "referenceLengthMM": 5800,
+    "longestBackEdgeLengthMM": 6500,
+    "maximumRealIntervalForOneReferenceMM": 1.120689655,
+    "primaryBackEdgeGeometricFall": 0.0045,
+    "lowerBackEdgeGeometricFall": 0.004423077,
+    "hydraulicFallUsed": 0.004,
+    "proof": "At equal fractions of a face the bed and cumulative inflow are identical. A change of path length reparameterizes those same states. Earlier-bed/later-flow intervals still continuously cover all points; the reference1 mm interval maps to at most1.120690 mm on the longest path. Both geometric grades remain above the0.004 Manning comparison."
+  },
+  "lowerFullDoseNormal": {
+    "normalDepthMM": 50.753982365,
+    "K4HeadMM": 22.762092371,
+    "velocityMPS": 0.334137791,
+    "Froude": 0.473539303,
+    "frontReserveAfter10Setting25Splash25MovementMM": 6.483925264
+  },
+  "new6500TransportComparison": {
+    "primarySpillHeadMM": 14.840951987,
+    "lowerNumericalSpill": {
+      "headMM": 30.418197521,
+      "reproducedFlowLps": 3.60375,
+      "strips": 9600,
+      "clearOnEachPathMM": [
+        2400,
+        4800
+      ],
+      "factor": 1.0
+    },
+    "primaryTransport": {
+      "flowLps": 3.60375,
+      "clearWidthMM": 175,
+      "minimumFloodedDepthMM": 114.840951987,
+      "lengthMM": 6500,
+      "frictionHeadMM": 4.579853606,
+      "K4HeadMM": 6.55542169,
+      "totalHeadMM": 11.135275296
+    },
+    "lowerTransport": {
+      "flowLps": 3.60375,
+      "clearWidthMM": 212.5,
+      "minimumFloodedDepthMM": 140,
+      "lengthMM": 6500,
+      "frictionHeadMM": 1.609660938,
+      "K4HeadMM": 2.991550641,
+      "totalHeadMM": 4.601211579
+    },
+    "primaryStoredMM": 190.226227283,
+    "lowerStoredMM": 210.019409099,
+    "primaryRearAfterSplashMM": 9.023772717,
+    "lowerRearAfterSplashMM": 9.980590901,
+    "primaryWaterReserveMM": 9.773772717,
+    "lowerWaterReserveMM": 9.980590901,
+    "maximumCrestOnlyControl": {
+      "headAboveLowestCrestMM": 38.099213904,
+      "storedWaterMM": 217.700425483,
+      "waterReserveMM": 2.299574517,
+      "rearAfterSplashMM": 2.299574517,
+      "scope": "All remaining4.8 m spill length at the maximum+28.75 crest. Valid without linearity only if the actual maximum and continuous clear length are bounded."
+    }
+  },
+  "earlierCentrelineTransportControl": {
+    "primarySpillHeadMM": 14.840951987,
+    "lowerNumericalSpill": {
+      "headMM": 30.418197521,
+      "reproducedFlowLps": 3.60375,
+      "strips": 9600,
+      "clearOnEachPathMM": [
+        2400,
+        4800
+      ],
+      "factor": 1.0
+    },
+    "primaryTransport": {
+      "flowLps": 3.60375,
+      "clearWidthMM": 175,
+      "minimumFloodedDepthMM": 114.840951987,
+      "lengthMM": 5800,
+      "frictionHeadMM": 4.086638602,
+      "K4HeadMM": 6.55542169,
+      "totalHeadMM": 10.642060292
+    },
+    "lowerTransport": {
+      "flowLps": 3.60375,
+      "clearWidthMM": 212.5,
+      "minimumFloodedDepthMM": 140,
+      "lengthMM": 5650,
+      "frictionHeadMM": 1.399166815,
+      "K4HeadMM": 2.991550641,
+      "totalHeadMM": 4.390717456
+    },
+    "primaryStoredMM": 189.733012279,
+    "lowerStoredMM": 209.808914976,
+    "primaryRearAfterSplashMM": 9.516987721,
+    "lowerRearAfterSplashMM": 10.191085024,
+    "primaryWaterReserveMM": 10.266987721,
+    "lowerWaterReserveMM": 10.191085024,
+    "maximumCrestOnlyControl": {
+      "headAboveLowestCrestMM": 38.099213904,
+      "storedWaterMM": 217.48993136,
+      "waterReserveMM": 2.51006864,
+      "rearAfterSplashMM": 2.51006864,
+      "scope": "All remaining4.8 m spill length at the maximum+28.75 crest. Valid without linearity only if the actual maximum and continuous clear length are bounded."
+    }
+  },
+  "newSpillQuadratureControls": {
+    "uniformHalf": {
+      "headMM": 21.139572547,
+      "reproducedFlowLps": 3.60375,
+      "strips": 9600,
+      "clearOnEachPathMM": [
+        0,
+        4800
+      ],
+      "factor": 0.5
+    },
+    "lowestHalfBlocked": {
+      "headMM": 30.418197521,
+      "reproducedFlowLps": 3.60375,
+      "strips": 9600,
+      "clearOnEachPathMM": [
+        2400,
+        4800
+      ],
+      "factor": 1.0
+    },
+    "highestHalfBlocked": {
+      "headMM": 16.043197521,
+      "reproducedFlowLps": 3.60375,
+      "strips": 9600,
+      "clearOnEachPathMM": [
+        0,
+        2400
+      ],
+      "factor": 1.0
+    }
+  },
+  "historicalControls": {
+    "normal": {
+      "minimum": {
+        "reserveMM": 3.323805865,
+        "intervalMM": [
+          2900.0,
+          2901.0
+        ],
+        "flowLps": 1.292696483,
+        "bedMM": 6620.375,
+        "normalDepthMM": 29.630568977,
+        "K4HeadMM": 12.670625158,
+        "velocityMPS": 0.249297847,
+        "Froude": 0.462395957
+      },
+      "boundaryChecks": [
+        {
+          "face": 0,
+          "distanceMM": 0.0,
+          "flowLps": 0.52215,
+          "bedMM": 6635.0,
+          "reserveMM": 7.852845617,
+          "normalDepthMM": 16.394095699,
+          "K4HeadMM": 6.753058684,
+          "velocityMPS": 0.181999321,
+          "Froude": 0.453828255
+        },
+        {
+          "face": 0,
+          "distanceMM": 2900.0,
+          "flowLps": 0.94695,
+          "bedMM": 6620.375,
+          "reserveMM": 11.245123345,
+          "normalDepthMM": 24.113294457,
+          "K4HeadMM": 10.266582199,
+          "velocityMPS": 0.224404959,
+          "Froude": 0.461391587
+        },
+        {
+          "face": 1,
+          "distanceMM": 2900.0,
+          "flowLps": 1.29255,
+          "bedMM": 6620.375,
+          "reserveMM": 3.327001944,
+          "normalDepthMM": 29.628327578,
+          "K4HeadMM": 12.669670477,
+          "velocityMPS": 0.249288455,
+          "Froude": 0.462396026
+        },
+        {
+          "face": 1,
+          "distanceMM": 5800.0,
+          "flowLps": 1.71735,
+          "bedMM": 6605.75,
+          "reserveMM": 9.11993706,
+          "normalDepthMM": 35.873896491,
+          "K4HeadMM": 15.25616645,
+          "velocityMPS": 0.273553462,
+          "Froude": 0.461124753
+        }
+      ],
+      "pathLengthMM": 5800.0,
+      "authoredFall": 0.005043103,
+      "hydraulicFall": 0.004
+    },
+    "spillUniformHalf": {
+      "headMM": 20.304054438,
+      "reproducedFlowLps": 3.25815,
+      "strips": 9600,
+      "clearOnEachPathMM": [
+        0,
+        4800
+      ],
+      "factor": 0.5
+    },
+    "storage": {
+      "primarySpillHeadMM": 13.87626887,
+      "lowerNumericalSpill": {
+        "headMM": 29.769548898,
+        "reproducedFlowLps": 3.25815,
+        "strips": 9600,
+        "clearOnEachPathMM": [
+          2400,
+          4800
+        ],
+        "factor": 1.0
+      },
+      "primaryTransport": {
+        "flowLps": 3.25815,
+        "clearWidthMM": 175,
+        "minimumFloodedDepthMM": 93.87626887,
+        "lengthMM": 5800,
+        "frictionHeadMM": 5.652811677,
+        "K4HeadMM": 8.018911121,
+        "totalHeadMM": 13.671722798
+      },
+      "lowerTransport": {
+        "flowLps": 3.25815,
+        "clearWidthMM": 212.5,
+        "minimumFloodedDepthMM": 125,
+        "lengthMM": 5650,
+        "frictionHeadMM": 1.534510083,
+        "K4HeadMM": 3.067363482,
+        "totalHeadMM": 4.601873565
+      },
+      "primaryStoredMM": 160.797991667,
+      "lowerStoredMM": 183.371422464,
+      "primaryRearAfterSplashMM": 3.452008333,
+      "lowerRearAfterSplashMM": -83.371422464,
+      "primaryWaterReserveMM": 9.202008333,
+      "lowerWaterReserveMM": 6.628577536,
+      "maximumCrestOnlyControl": {
+        "headAboveLowestCrestMM": 37.491501621,
+        "storedWaterMM": 191.093375187,
+        "waterReserveMM": -1.093375187,
+        "rearAfterSplashMM": -91.093375187,
+        "scope": "All remaining4.8 m spill length at the maximum+28.75 crest. Valid without linearity only if the actual maximum and continuous clear length are bounded."
+      }
+    },
+    "former160PrimaryReserveMM": -0.797991667,
+    "former6790RearReserveAfterSplashMM": -1.547991667
+  },
+  "newDomainFailedWallControls": [
+    {
+      "primarySpillHeadMM": 14.840951987,
+      "lowerNumericalSpill": {
+        "headMM": 30.418197521,
+        "reproducedFlowLps": 3.60375,
+        "strips": 9600,
+        "clearOnEachPathMM": [
+          2400,
+          4800
+        ],
+        "factor": 1.0
+      },
+      "primaryTransport": {
+        "flowLps": 3.60375,
+        "clearWidthMM": 175,
+        "minimumFloodedDepthMM": 94.840951987,
+        "lengthMM": 6500,
+        "frictionHeadMM": 7.543769887,
+        "K4HeadMM": 9.611748363,
+        "totalHeadMM": 17.155518251
+      },
+      "lowerTransport": {
+        "flowLps": 3.60375,
+        "clearWidthMM": 212.5,
+        "minimumFloodedDepthMM": 125,
+        "lengthMM": 6500,
+        "frictionHeadMM": 2.159741716,
+        "K4HeadMM": 3.752601124,
+        "totalHeadMM": 5.91234284
+      },
+      "primaryStoredMM": 176.246470237,
+      "lowerStoredMM": 196.33054036,
+      "primaryRearAfterSplashMM": -11.996470237,
+      "lowerRearAfterSplashMM": -96.33054036,
+      "primaryWaterReserveMM": -6.246470237,
+      "lowerWaterReserveMM": -6.33054036,
+      "maximumCrestOnlyControl": {
+        "headAboveLowestCrestMM": 38.099213904,
+        "storedWaterMM": 204.011556744,
+        "waterReserveMM": -14.011556744,
+        "rearAfterSplashMM": -104.011556744,
+        "scope": "All remaining4.8 m spill length at the maximum+28.75 crest. Valid without linearity only if the actual maximum and continuous clear length are bounded."
+      },
+      "label": "old walls under the new flow and movement domain",
+      "primaryNormalReserveMM": -14.920930237,
+      "lowerNormalReserveMM": -8.516074736
+    },
+    {
+      "primarySpillHeadMM": 14.840951987,
+      "lowerNumericalSpill": {
+        "headMM": 30.418197521,
+        "reproducedFlowLps": 3.60375,
+        "strips": 9600,
+        "clearOnEachPathMM": [
+          2400,
+          4800
+        ],
+        "factor": 1.0
+      },
+      "primaryTransport": {
+        "flowLps": 3.60375,
+        "clearWidthMM": 175,
+        "minimumFloodedDepthMM": 94.840951987,
+        "lengthMM": 6500,
+        "frictionHeadMM": 7.543769887,
+        "K4HeadMM": 9.611748363,
+        "totalHeadMM": 17.155518251
+      },
+      "lowerTransport": {
+        "flowLps": 3.60375,
+        "clearWidthMM": 212.5,
+        "minimumFloodedDepthMM": 125,
+        "lengthMM": 6500,
+        "frictionHeadMM": 2.159741716,
+        "K4HeadMM": 3.752601124,
+        "totalHeadMM": 5.91234284
+      },
+      "primaryStoredMM": 176.246470237,
+      "lowerStoredMM": 196.33054036,
+      "primaryRearAfterSplashMM": 23.003529763,
+      "lowerRearAfterSplashMM": 23.66945964,
+      "primaryWaterReserveMM": 23.753529763,
+      "lowerWaterReserveMM": 23.66945964,
+      "maximumCrestOnlyControl": {
+        "headAboveLowestCrestMM": 38.099213904,
+        "storedWaterMM": 204.011556744,
+        "waterReserveMM": 15.988443256,
+        "rearAfterSplashMM": 15.988443256,
+        "scope": "All remaining4.8 m spill length at the maximum+28.75 crest. Valid without linearity only if the actual maximum and continuous clear length are bounded."
+      },
+      "label": "raising rear walls alone does not restore normal-profile freeboard",
+      "primaryNormalReserveMM": -14.920930237,
+      "lowerNormalReserveMM": -8.516074736
+    }
+  ],
+  "owningReceiptComparisons": [
+    {
+      "shiftMM": 120.0,
+      "normalReserveDifferenceMM": 0.0,
+      "primaryStorageDifferenceMM": -0.0,
+      "lowerStorageDifferenceMM": 6e-09,
+      "lowerCrestHeadDifferenceMM": 7e-09
+    },
+    {
+      "shiftMM": 150.0,
+      "normalReserveDifferenceMM": 0.0,
+      "primaryStorageDifferenceMM": -0.0,
+      "lowerStorageDifferenceMM": 6e-09,
+      "lowerCrestHeadDifferenceMM": 7e-09
+    },
+    {
+      "shiftMM": 180.0,
+      "normalReserveDifferenceMM": 0.0,
+      "primaryStorageDifferenceMM": -0.0,
+      "lowerStorageDifferenceMM": 6e-09,
+      "lowerCrestHeadDifferenceMM": 7e-09
+    },
+    {
+      "shiftMM": 200.0,
+      "normalReserveDifferenceMM": 0.0,
+      "primaryStorageDifferenceMM": -0.0,
+      "lowerStorageDifferenceMM": 6e-09,
+      "lowerCrestHeadDifferenceMM": 7e-09
+    }
+  ],
+  "domainConclusions": [
+    "The full3.60375 dose and corrected four-valley conservation reproduce. Putting all added footprint rain at the adverse crown bounds its cumulative presence on that arm.",
+    "The declared1D normal-depth plus K4 arithmetic is correct. Froude numbers below1 mean that it remains sensitive to downstream control; it is not a solved subcritical backwater profile.",
+    "Use6500 mm for blocked transport unless an actual shorter continuous residual-water path is authored. The roofward half next toq4375 is longer than the centreline path.",
+    "The lower220/rear245 proposal also passes the maximum-crest-only control by about2.30 mm with6500 transport. The earlier190 mm geometry still fails its unchanged control.",
+    "The source front/rear/water margins count10 setting+25 movement once in stage, and25 splash separately. They do not require a second35 mm deduction from the same bound.",
+    "The declared35 mm stage allowance must actually bound adverse bed-to-crest relative shifts so the minimum transport depths remain available.",
+    "All transport comparisons presume a continuous residual flow lane. Arbitrary alternating obstructions, actual head entry/outlet loss, corner jets and additional local losses are not qualified by half-clear width or by K4.",
+    "The constant vertical shifts120/150/180/200 leave hydraulic differences unchanged. They do not establish structural/solid clearances, retained pressure, or the new200/220 force-and-moment domain."
+  ],
+  "sourceHashes": {
+    "project/rof/studies/roof_water_inner_highback_hydraulics.py": "d5b624a10bfd98ff1a462561f9feedf221600a0acba14fef648d48aef147b070",
+    "project/rof/studies/roof_water_inner_highback_hydraulics.json": "db7e7bf96777f7fe4421aa909260e00cd656861f94ff9ed5849ed11ea73cd627",
+    "project/rof/studies/roof_water_inner_hydraulics.py": "49dc655d0e936cc08102c5688e35c1a14c19807396b418d69a9fb749f716dde7",
+    "project/rof/studies/roof_water_inner_hydraulics.json": "935e327beeb63086ea95f7e72edd44c161ba75d767481ea641af00bbb2ecf56f",
+    "project/mat/studies/ring-roof-family.json": "b8aa44fab2b13d329f4ccb6cda0210c1fe3aab1b13e8ec96a47e9e0271c07a81",
+    "project/rwt/studies/selected-water-event.json": "179832f10e0b3c2cc3cde05d7b99878819c49b4e5ef451785c5a5c99a6e7e0d3"
+  },
+  "scriptSHA256": "e1ce7a2c551edbd5b234e2ff62c0f1932d82c58e57b5d549acc11eb5b35869e4"
+}

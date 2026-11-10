@@ -1,6 +1,21 @@
 # Join the pitched roof to two independent drainage routes
 
-**The shared design remains under review.** Keep the raised 25° slate and lead-free 316L roof as the reference candidate. Develop controlled copper collection around the outside and two southern courtyard leaders. The south-west normal leader reaches the north drain directly. The south-east relief reaches the west receiver and its separate east outlet. This removes the proposed wet pipe across the north loggia and the alternative mast in the courtyard.
+**The shared gate has an adverse result; no roof/water assembly is selected.** The
+10 November [recovery and physical-interface review](roof-water-recovery.md)
+preserves the recovered calculations and rejects their use as a joined design.
+The inherited floor/portal model requires independent jamb movement through a
+continuous concrete floor collector without locating a separation or bypass.
+That structural correction must precede a new joined roof calculation. The
+inner wet barriers, first wet opening and complete outer renewal also remain
+unresolved; the earlier local margins below cannot be carried onto the revised
+geometry without rechecking them.
+
+The retained candidate uses the raised 25° slate and lead-free 316L roof,
+controlled copper collection around the outside and two southern courtyard
+leaders. The south-west normal leader reaches the north drain directly. The
+south-east relief reaches the west receiver and its separate east outlet. This
+removes the proposed wet pipe across the north loggia and the alternative mast
+in the courtyard. These are candidate relationships, not an adopted assembly.
 
 The selected court receiver and its existing north surface inlet remain the starting authority. The proposed permanent roof connections below are a new source decision. The shared gate remains planned until the high-level collectors, their first removal and the additional structural demands have been reconciled. [Previous whole-network comparison](../rwt/rwt-07-network-candidates.md) · [Permanent court receiver](../had/receiver-selection.md) · [Structural house handoff](../str/provisional-house-handoff.md)
 

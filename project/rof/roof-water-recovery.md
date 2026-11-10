@@ -1,5 +1,92 @@
 # Roof and rainwater recovery on 10 November 2026
 
+## Current disposition
+
+**The shared roof/water gate does not pass.** The recovered sources and additive
+comparisons below are reproducible development evidence. They do not establish
+a coherent installed assembly. Full repository CI passed at the published
+checkpoint `97b2920999d250d976702f39bf46cdd11760b716`
+([run 42921533919](https://github.com/adamnoden/architecture/actions/runs/42921533919));
+that validates the repository at that head, not the physical proposition.
+
+The [upstream floor/portal interface](../str/floor-portal-interface-review.md)
+is the first correction. SAP-C1 requires
+the jambs to slide tangentially and vertically relative to the floor, while the
+native floor collector remains continuous through them. A receiver pocket
+alone cannot provide that separation. The next structural comparison should
+test a monolithic floor/jamb connection against a real collector bypass around
+an independently moving jamb. Joining the floor changes the load system and
+requires a new coupled model and foundation reactions; neither option inherits
+the former normal-only connection results.
+
+Independent geometry and maintenance studies remain useful, but no further
+global roof variant can resolve an unrealised upstream connection. The later
+inner high-back, two-lane hydraulic and outer module studies retain their exact
+inputs, negative controls and open physical duties. The old frozen sources
+remain available as comparisons and must not be silently rewritten into a
+passed successor.
+
+The correction is registered as **STR-FLOOR-PORTAL**, a hard prerequisite of
+both ROF-RWT-GATE and TRIAD-GATE. The owning STR handoff and shared contract
+withdraw SAP-C1's current coherent-structure claim. The dated STR study,
+selected service system and independent courtyard/drainage investigations
+retain their bounded completion records. Their affected structural
+applicability must be reconciled by the correction. The new BCR and MRA
+independent studies remain available; their final integration gates stay held
+by the actual structural and roof prerequisites.
+
+The [services applicability audit](../had/service-structural-applicability.md)
+identifies the exact aperture, support, movement and occupied-fit checks to
+repeat. It retains the independent service decisions and static measurements
+at their recorded geometry, including explicit adverse bypass/radiator controls.
+
+## Additional conditional evidence
+
+The [next inner geometry](roof-water-inner-next-geometry.md) preserves a
+200 mm primary rise, 10 mm lower rise and separate upper-head hypothesis as
+unselected comparisons. It also exposes concrete failures: the frozen lower
+corner arms intersect by 150 × 150 × 25 mm, and the proposed temporary outlet's
+250 mm skirt intrudes 34.574 mm into the retained normal pipe. Both proposed
+port centres meet the perpendicular corner carrier. The first wet diversion
+is therefore rejected at these positions. New supports, stock, pressure and
+complete reverse handling have not been calculated or accepted. Its compact
+source/receipt reproduces exactly; the old 4eb source remains unchanged.
+
+The [high-back hydraulic comparison](studies/roof_water_inner_highback_hydraulics.py)
+bounds the entire inward ridge footprint at 3.60375 L/s and uses 6,500 mm
+blocked transport paths. It compares primary/lower native water bounds of
+200/220 mm, with stored depths of 190.226/210.019 mm under the stated rectangular
+section, loss, movement, setting and splash assumptions. The separately
+[implemented audit](studies/roof_water_inner_highback_audit.py) reproduces the
+normal-section and graded-spill arithmetic. These are conditional hydraulic
+screens, not a nonuniform backwater calculation or installed outlet rating.
+
+The proposed immersed primary leaf divides the wet section. A separate
+[two-lane screen](studies/roof_water_inner_leaf_hydraulic_screen.py) leaves
+only 1.972 mm normal reserve when 175 mm **net** residual clear width and common
+lane levels are assumed. A single 107 mm front lane fails by 15.751 mm. The
+actual ribs, inlet sharing, under-leaf transfer, corner routing and relative
+movement remain unresolved. The favorable rectangle cannot be inherited as a
+joined leaf pass. The 40 mm under-toe gap and illustrative transfer coefficient
+are explicitly unearned, and the failed narrower-width controls are retained.
+
+The [66-piece outer checkpoint](studies/outer_66_checkpoint/README.md) splits
+the four head-straddling pieces at their real changes in bed elevation. Its
+132 physical pieces map to 116 unique actual collector attachments. The
+inventory locates 2,072 removable material atoms and the ledger independently
+checks their force/moment transfer, including the native corner clamp. The
+stronger 80 mm spreader exceeds one old scalar root cap by 0.130 kg; a revised
+load bound is a legitimate candidate, not an admitted native result. Unlocated
+fixed stock, seams, joints, full wind, first wet opening and complete reverse
+renewal remain open. The full 80 mm receipt and vector ledger are retained;
+40/60 mm controls use compact summaries with exact full-receipt hashes and
+regeneration commands.
+
+All six outer/audit checks and the owning high-back check reproduced their
+receipts exactly after integration. The complete 30 mm collector replay also
+passed, as recorded below. These validations preserve useful evidence while
+the upstream structural and physical renewal corrections remain unresolved.
+
 ## Resumed structural reconstruction
 
 The successor execution has reconstructed the final native cassette model from
@@ -280,8 +367,10 @@ Its matching 920/1112 query runs give 17.851616977 mm maximum lower-body down,
 5.673547053 mm lower paired-width movement and 45.439335652 mm northern
 retained-head downward motion. Lower-hanger normal movement spans
 −35.418823117/+35.163027379 mm. Native generation and consistency guards,
-the receiving ledger and checkpoint reproduction passed. A duplicate full
-structural replay is recorded separately when complete. This member comparison
+the receiving ledger and checkpoint reproduction passed. The duplicate full
+structural replay also reproduced the frozen result exactly; its
+[verification record](studies/roof_water_wall30_verification.json) identifies
+the source and result hashes. This member comparison
 does not select a physical assembly or include the pending wet-barrier revision.
 
 ## Root attachment comparison
