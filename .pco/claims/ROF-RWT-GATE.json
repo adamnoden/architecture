@@ -9,8 +9,8 @@
     "label": "issue-comment-6761668451"
   },
   "claimedAt": "2026-11-10T07:30:42.000Z",
-  "heartbeatAt": "2026-11-10T10:00:49.000Z",
-  "expiresAt": "2026-11-10T10:45:49.000Z",
+  "heartbeatAt": "2026-11-10T10:14:58.000Z",
+  "expiresAt": "2026-11-10T10:59:58.000Z",
   "branch": "work/mvb-chat-6761668451",
   "predecessor": {
     "leaseId": "978b85b8-07c1-4d8e-b770-b3c1c940ce7b",
@@ -35,8 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1470 at9f1ce4b3 preserves native collector and movement studies, outer components, guarded renewal and drawing. Successor services PR1471 exists.",
-    "next": "Complete actual inner cassette reactions, spill bounds and remaining service release checks. Integrate final files and exact-head validation."
+    "evidence": "PR #1470 at a4908e63d32eac4b5689d3a01e15ac7a21fc0163 preserves court routes, outer figures and source reconciliation. CI identifies stale RWT source binding.",
+    "next": "Integrate final160 water/cassette/top-wind receipts, inner geometry and HAD1471. Rebind consumers, run exact-head CI and publication preflight.",
+    "blocker": "Final native movement and independent services publication checks running."
   },
   "pr": 1470
 }
