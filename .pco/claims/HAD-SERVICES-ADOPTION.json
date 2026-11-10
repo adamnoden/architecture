@@ -9,8 +9,8 @@
     "label": "services-resume-20261110"
   },
   "claimedAt": "2026-11-10T09:17:59.177Z",
-  "heartbeatAt": "2026-11-10T10:01:14.000Z",
-  "expiresAt": "2026-11-10T10:46:14.000Z",
+  "heartbeatAt": "2026-11-10T10:22:20.000Z",
+  "expiresAt": "2026-11-10T11:07:20.000Z",
   "branch": "work/had-services-g5-20261110",
   "predecessor": {
     "leaseId": "5de368b7-93ea-4adb-abfd-eae3a2dbc559",
@@ -34,7 +34,7 @@
   },
   "pr": 1471,
   "checkpoint": {
-    "evidence": "PR1471 at58c91e82 remains the durable18-test checkpoint. Local21-test revision adds wall-terminal/inlet renewal,96 airflow states and three radiator exchanges, with adverse guard/tool corrections in progress.",
-    "next": "Publish the corrected source and drawing checkpoint, finish joined result and full checks, then exact-head CI and merge preflight."
+    "evidence": "PR1471 at efcc7aa9 selects the joined occupied service reference. All53 HAD and4 OAS tests plus test:repo pass. Finite purge, guards, cartridge renewals, radiator tools and the corrected actuator tray are source-bound.",
+    "next": "Verify final independent review and exact-head CI, run fresh merge preflight, integrate and release g5."
   }
 }
