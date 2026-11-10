@@ -9,8 +9,8 @@
     "label": "swarm-20261110-root"
   },
   "claimedAt": "2026-11-10T21:02:13.030Z",
-  "heartbeatAt": "2026-11-10T21:31:31.298Z",
-  "expiresAt": "2026-11-10T22:16:31.298Z",
+  "heartbeatAt": "2026-11-10T21:56:43.000Z",
+  "expiresAt": "2026-11-10T22:41:43.000Z",
   "branch": "work/swarm-roof-g3-20261110",
   "predecessor": {
     "leaseId": "47083968-9abd-4627-90bb-040ec3eb4792",
@@ -36,7 +36,7 @@
   },
   "pr": 1472,
   "checkpoint": {
-    "evidence": "Recovered structural and movement sources published at 2af5d1c; native finite maintenance144 passes, broad134 control fails; joined merged services a060138 with 22 current-house tests passing.",
-    "next": "Resolve complete inner local support and inventory plus independently contained ordinary outer renewal; refresh current-source derived evidence and publish reviewed checkpoint."
+    "evidence": "Published840c2caa joins services main and finite144/independent134 removal plus22 receiving union.22HAD/227RWT/162control tests pass; joined CI failure under inspection. Private local inventory and lateral/blocked-weir checks reject old inner geometry.",
+    "next": "Inspect exact CI failure; join proposed350/425 inner channels,125 lower depth/190 water, exterior hangers and complete ordinary renewal, then replay native loads and physical route."
   }
 }
