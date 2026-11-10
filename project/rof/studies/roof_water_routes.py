@@ -81,7 +81,7 @@ def compare(primary_front=4725, relief_front=4800, blocked_roof_level=6750):
     assert abs(relief_q + direct_q - service["windows"]["cases"][0]["q"]) < 1e-8
 
     south_west, south_east = historical["profiles"]["A"]["outletsP"]
-    # Retain the low N corridor, moving its first transverse run north by70.
+    # Retain the low N corridor, moving its first transverse run north by 70 mm.
     # Both connections remain inside the actual court and beneath the N intake.
     old_n = receiver["services"]["buried"]["north"]
     normal_y = old_n[1][1] + 70
@@ -125,7 +125,7 @@ def compare(primary_front=4725, relief_front=4800, blocked_roof_level=6750):
     check = {"axis": [merger[0], 7430, old_n[0][2] - (7430 - old_n[0][1]) * slope + diameter / 2],
              "waferAxial": 30, "maximumOutsideDiameter": 300,
              "upstreamFlangeY": [7400, 7415], "waferY": [7415, 7445],
-             "downstreamFlangeY": [7445, 7460], "directTeeFlange": [7445, 7460], "firstWaferDrawNorth": 10,
+             "downstreamFlangeY": [7445, 7460], "directTeeFlange": [7445, 7460], "firstWaferDrawNorth": 20,
              "sourceOpeningHeadMm": 10,
              "productQualified": False}
     # The access opening is formed only after removing the appropriate N-liner
@@ -136,8 +136,8 @@ def compare(primary_front=4725, relief_front=4800, blocked_roof_level=6750):
     access = [5600, 7375, 700, 355]
     tee = {"centre": [*merger, merger_axis], "mainLength": 300, "gross": 200,
            "southFlangeFaceY": 7445, "maximumFlangeOD": 240,
-           "firstNorthDraw": 20, "nextSouthDraw": 30, "netSouthDraw": 10, "localK": 6}
-    drawn_tee = [5735, 7435, 330, 275]
+           "firstNorthDraw": 30, "nextSouthDraw": 40, "netSouthDraw": 10, "localK": 6}
+    drawn_tee = [5750, 7435, 300, 275]
     aperture_gaps = [drawn_tee[0] - access[0], drawn_tee[1] - access[1],
                      access[0] + access[2] - drawn_tee[0] - drawn_tee[2],
                      access[1] + access[3] - drawn_tee[1] - drawn_tee[3]]
@@ -151,10 +151,11 @@ def compare(primary_front=4725, relief_front=4800, blocked_roof_level=6750):
     assert tie_after_draw >= 40 and check_e_gap > 50
 
     # E is removed FIRST. Merely supporting it leaves it across the N lift.
-    # Both receivers are isolated, drained and under tested independent capture.
+    # Both receivers must be isolated and drained after the required independent-capture demonstration.
     crossover = east_crossover(receiver, check, tee, access, tie_south)
     releases = tee_releases(check, tee, access, tie_south)
     lift = junction_handling(access)
+    controls = junction_controls(access, check, tee, crossover, releases)
 
     # A600 section crossing the150-wide fixed guard root cannot lift vertically.
     # Give the isolated wet line a450 axial empty bay, then withdraw south425
@@ -224,6 +225,7 @@ def compare(primary_front=4725, relief_front=4800, blocked_roof_level=6750):
             "renewal": {"accessOpening": access, "teeAfterFirstDraw": drawn_tee,
                         "apertureGaps": aperture_gaps, "toTieAfterDraw": tie_after_draw,
                         "installedCheckToEastPipe": check_e_gap, "eastCrossoverFirst": crossover, "teeJointReleases": releases, "lift": lift,
+                        "controls":controls,
                         "underGuardModule": {"length": module_length, "axialEmptyBay": 450,
                                              "drawSouth": axial_draw, "remainingAfter25AndTwo5": guard_draw_gap},
                         "heelFeet": feet, "footToCaps": cap_gaps, "footToDoorHinges": door_gaps},
@@ -292,7 +294,7 @@ def east_crossover(receiver, check, tee, access, tie_south):
                                  z + union_od / 2 * sin(angle)])
     valve_box = [check["axis"][0] - 150, check["waferY"][0], check["axis"][2] - 150,
                  check["axis"][0] + 150, check["waferY"][1], check["axis"][2] + 150]
-    tee_box = [5735, 7445, tee["centre"][2] - 120, 6065, 7720, tee["centre"][2] + 120]
+    tee_box = [5750, 7445, tee["centre"][2] - 120, 6050, 7720, tee["centre"][2] + 120]
     tie_box = [4500, tie_south, -750, 7500, tie_south + 600, -550]
     cases = []
     for step in range(41):
@@ -306,7 +308,7 @@ def east_crossover(receiver, check, tee, access, tie_south):
     # Once E is gone, the retained upstream flange lies SOUTH of the wafer's
     # lift plane. The east retained flange is EAST of both N lift envelopes.
     wafer_to_retained = check["waferY"][0] + check["firstWaferDrawNorth"] - fixed_upstream_north
-    t_to_retained_e = downstream[0] - union_length / 2 - 6065
+    t_to_retained_e = downstream[0] - union_length / 2 - 6050
     installed_downstream_to_deck = source["boughtDeckUnderside"] - (joints[1][2] + union_od / 2) - 10
     assert developed < 3000
     assert min(margins) > 10 and min(case["tieGap"] for case in cases) > 10
@@ -330,8 +332,8 @@ def east_crossover(receiver, check, tee, access, tie_south):
                          "Remove the appropriate N liner module and local paving under a guarded lifting state",
                          "Capture E and both loose metal union parts before either joint releases",
                          "Release both E joints, translate40 west and40 north, lift vertically to the dedicated E rest",
-                         "Compress the W/E metal bellows20 and move T20 north, opening the direct south-wafer joint",
-                         "Draw the wafer10 north and lift; move T30 south from that first position, then lift to the distinct N rest",
+                         "Compress the W/E metal bellows20 and move T30 north, opening the direct south-wafer joint",
+                         "Draw the wafer20 north and lift; move T40 south from that first position, then lift to the distinct N rest",
                          "Rebuild and test N, E and the continuous N liner before releasing diversion"],
             "jointQualification": "The finite three-joint reference uses guided welded metal bellows, positive jacks and copper face gaskets; fabrication, pressure, leakage and stroke-fatigue tests remain required",
             "scope": "3D geometry and source loss-budget comparison; qualification of joints, pit, temporary support and lifting remains required"}
@@ -348,10 +350,11 @@ def tee_releases(check, tee, access, tie_south):
     component = {"clearBore": 150, "bellowsMaximumOD": 200,
                  "maximumFlangeOD": 240, "freeFaceLength": 100,
                  "controlledCompression": 20, "compressedFaceLength": 80,
-                 "flangeAxialEnvelope": 15, "maximumSpringForceAt20KN": 1,
-                 "maximumGuideFrictionKN": .5, "qualifiedPressureKPa": 100,
+                 "flangeAxialEnvelope": 15, "clampRimEachSide":5,"removableClampSectorAxial":12, "maximumSpringForceAt20KN": 1,
+                 "maximumGuideFrictionKN": .5, "pressureQualificationDutyKPa": 100,
                  "jacks": {"number": 2, "thread": "M12", "minimumTensileAreaMm2": 84.3,
                            "axisOffsetsY": [-110,110], "headHalfWidth":10},
+                 "faceConvention":"T west/east faces are5750/6050. T flanges extend inward from those faces; bellows flanges extend outward. The physical T is bounded by5750..6050 in X. Each5 mm clamping rim fits inside its15 mm flange envelope.",
                  "wetConstruction": "Formed or edge-welded metal bellows, welded necks, overlapping150-clear metal flow liner, copper face gaskets. No sliding wet seal.",
                  "fixedLoadPath": "Outer flange is anchored. Twin positive screw jacks and hard stops restrain the inner flange and full pressure thrust in every state; the lift captures T independently."}
     maximum_thrust = 100*pi*(.200**2)/4
@@ -363,13 +366,13 @@ def tee_releases(check, tee, access, tie_south):
     # Flange faces move apart AXIALLY first. The whole T may then translate in
     # Y through the open gaps, without flexing either retained pipe.
     flange_gaps = [5750-west["compressedFaceX"], east["compressedFaceX"]-6050]
-    t_north = [5735,7465,axis_z-120,6065,7740,axis_z+120]
-    t_final = [5735,7435,axis_z-120,6065,7710,axis_z+120]
-    wafer = [5750,7425,check["axis"][2]-150,6050,7455,check["axis"][2]+150]
+    t_north = [5750,7475,axis_z-120,6050,7750,axis_z+120]
+    t_final = [5750,7435,axis_z-120,6050,7710,axis_z+120]
+    wafer = [5750,7435,check["axis"][2]-150,6050,7465,check["axis"][2]+150]
     fixed_north_face = check["upstreamFlangeY"][1]
     wafer_face_gaps = [wafer[1]-fixed_north_face, t_north[1]-wafer[4]]
     tee_to_upstream = t_final[1]-fixed_north_face
-    # The small initial north move remains wholly BELOW the concrete tie.
+    # The guided initial30 north move remains wholly BELOW the concrete tie.
     initial_tie_underside = -750-t_north[5]
     final_margins = [t_final[0]-access[0],t_final[1]-access[1],
                      access[0]+access[2]-t_final[3],access[1]+access[3]-t_final[4]]
@@ -392,25 +395,145 @@ def tee_releases(check, tee, access, tie_south):
     return {"west":west,"east":east,"component":component,
             "maximumPressureThrustKN":maximum_thrust,"maximumControlledForceKN":operating_force,
             "forceEachJackKN":per_jack,"jackStressAt150MPaAllowable":jack_stress,
-            "firstAxialGaps":flange_gaps,"TAfterFirst20North":t_north,
-            "waferAfter10North":wafer,"waferFaceGaps":wafer_face_gaps,
-            "TAfterNext30South":t_final,"TToRetainedUpstreamFace":tee_to_upstream,
+            "firstAxialGaps":flange_gaps,"TAfterFirst30North":t_north,
+            "waferAfter20North":wafer,"waferFaceGaps":wafer_face_gaps,
+            "TAfterNext40South":t_final,"TToRetainedUpstreamFace":tee_to_upstream,
             "TToTieDuringNorthMove":initial_tie_underside,
             "TFinalApertureMargins":final_margins,"bellowsCartridgeRenewal":spool_paths,
             "minorLossBudget":{"T":4,"twoLinedBellowsAtMostEach":1,"combinedChargedK":6},
             "operation": ["Capture and remove E first; verify the N lines drained and isolated",
-                          "Support the T and both bellows independently, take jack load and release W/E T-face bolts",
+                          "Support the T and both bellows independently, take jack load and open the captured W/E T-face segmented V-clamps",
                           "Compress each bellows20 against its anchored outer flange and lock both hard stops",
-                          "Release the south wafer bolts and move T20 north, retaining its fixed elevation below the tie",
-                          "Draw wafer10 north into the20 gap and lift through its clear E-free plane",
-                          "Move T30 south, net10 south of its installed centre, then lift through the opening",
-                          "For cartridge renewal, remove its fixed bolts, draw30 axially into the vacated T bay, draw20 south and lift",
+                          "Open both captured wafer-face segmented V-clamps and move T30 north, retaining its fixed elevation below the tie",
+                          "Draw wafer20 north into the30 gap and lift through its clear E-free plane",
+                          "Move T40 south, net10 south of its installed centre, then lift through the opening",
+                          "For cartridge renewal, open its captured fixed-face segmented V-clamp, draw30 axially into the vacated T bay, draw20 south and lift",
                           "Rebuild at neutral stroke with new metal face gaskets; pressure, low-head and functional tests precede return to service"],
             "requiredEvidence": ["Complete bellows and liner pressure/low-head leakage,20 stroke and intended service-cycle fatigue tests",
                                  "Spring force no greater than1kN and guide force no greater than0.5kN over the complete stroke",
                                  "Metal seats, gasket compression, bolts, anchors and stops at100kPa plus the stated spring/guide force",
                                  "Tool sweep and captured load trials inside the declared opening; no assumption of a freely articulating pipe"],
             "qualificationStatus":False}
+
+
+def junction_controls(access, check, tee, crossover, releases):
+    """Captured segmented clamps, driven from the dry operator position."""
+    worker = [6850, 8500, 1000]
+    control = [6450, 8125, 1000]
+    pedestal = [6375, 8050, 150, 150]
+    reach = hypot(worker[0] - control[0], worker[1] - control[1])
+    assert reach < 600
+    assert rect_gap(centred(worker[:2], 600, 600), pedestal) > 10
+    # The four machined V-sectors open under a captured split cage. After the
+    # wet faces separate, each12-wide sector enters the empty axial gap and
+    # lifts through it. Nothing is pulled radially through a retained pipe.
+    joints = [
+        {"name":"E upstream", "axis":"Y", "centre":crossover["joints"][0], "radius":105,
+         "grooveRadius":95, "gap":[7395,7415], "parkSouth":0, "parkEast":150},
+        {"name":"E downstream", "axis":"X", "centre":crossover["joints"][1], "radius":105,
+         "grooveRadius":95, "gap":[6170,6190], "parkSouth":0},
+        {"name":"T west", "axis":"X", "centre":[5750,7600,tee["centre"][2]], "radius":120,
+         "grooveRadius":110, "gap":[5730,5750], "parkSouth":40},
+        {"name":"T east", "axis":"X", "centre":[6050,7600,tee["centre"][2]], "radius":120,
+         "grooveRadius":110, "gap":[6050,6070], "parkSouth":40},
+        {"name":"wafer north before wafer moves", "axis":"Y", "centre":[5900,7445,check["axis"][2]], "radius":120,
+         "grooveRadius":110, "gap":[7445,7475], "parkSouth":0, "parkEast":100},
+        {"name":"wafer south after wafer20 north", "axis":"Y", "centre":[5900,7415,check["axis"][2]], "radius":120,
+         "grooveRadius":110, "gap":[7415,7435], "parkSouth":0, "parkEast":100},
+    ]
+    for joint in joints:
+        opened = hypot(joint["grooveRadius"] + 30 / sqrt(2), 30 / sqrt(2))
+        joint["openedInnerRadiusMinimum"] = opened
+        joint["flangeClearanceAfterTwo1Fabrication"] = opened - joint["radius"] - 2
+        joint["initialDiagonalStrokeBeforeAxialClear"] = 8 if joint["name"].startswith("E ") else 0
+        assert joint["flangeClearanceAfterTwo1Fabrication"] > joint["initialDiagonalStrokeBeforeAxialClear"]
+        axial_centre = sum(joint["gap"]) / 2
+        joint["axialGapMarginEachAfterTwo1"] = (joint["gap"][1] - joint["gap"][0] - 12) / 2 - 2
+        assert joint["axialGapMarginEachAfterTwo1"] >= 2
+        pieces = []
+        for quadrant in range(4):
+            middle = (quadrant + .5) * pi / 2
+            points = []
+            for step in range(46):
+                angle = (quadrant + step / 45) * pi / 2
+                u = joint["radius"] * cos(angle) + 30 * cos(middle)
+                v = joint["radius"] * sin(angle) + 30 * sin(middle)
+                for axial in [-6, 6]:
+                    if joint["axis"] == "X":
+                        point = [axial_centre + axial, joint["centre"][1] + u - joint["parkSouth"], joint["centre"][2] + v]
+                    else:
+                        point = [joint["centre"][0] + u + joint.get("parkEast",0), axial_centre + axial, joint["centre"][2] + v]
+                    points.append(point)
+            box = bounds(points)
+            margin = min(box[0]-access[0], box[1]-access[1],
+                         access[0]+access[2]-box[3], access[1]+access[3]-box[4]) - 7
+            assert margin > 0 and box[2] > -1130
+            pick=[(box[0]+box[3])/2,(box[1]+box[4])/2]
+            radius=hypot(pick[0]-6200,pick[1]-8300)
+            angle=atan2(pick[1]-8300,pick[0]-6200)*180/pi%360
+            assert radius<950 and 90<=angle<=270
+            pieces.append({"quadrant":quadrant,"finalLiftBounds":box,"pickXY":pick,"pickRadius":radius,"pickAngle":angle,
+                           "openingMarginAfter5SettingAnd2Fabrication":margin})
+        joint["sectorLiftStates"] = pieces
+    # Tool drive bars are temporary and fully withdrawn before any assembly
+    # translates or lifts. Positive screw stops hold the bellows without them.
+    heads = [
+        {"name":"E upstream clamp", "xyz":[5900,7413,-505]},
+        {"name":"E downstream clamp", "xyz":[6228,7550,-509]},
+        {"name":"W synchronized jack bar", "xyz":[5625,7600,tee["centre"][2]+150]},
+        {"name":"E synchronized jack bar", "xyz":[6175,7600,tee["centre"][2]+150]},
+        {"name":"wafer south clamp", "xyz":[5900,7415,check["axis"][2]+170]},
+        {"name":"wafer north clamp", "xyz":[5900,7445,check["axis"][2]+170]},
+    ]
+    for head in heads:
+        x,y,z = head["xyz"]
+        head["guidePathXYZ"] = [control, [6450,8125,1400], [x,y,1400], [x,y,z]]
+        head["openingMarginAfter7And10HeadRadius"] = min(x-access[0],y-access[1],access[0]+access[2]-x,access[1]+access[3]-y)-17
+        assert head["openingMarginAfter7And10HeadRadius"] > 0
+    tube_od,tube_id,pole_length = 30,26,1900
+    inertia = pi*(tube_od**4-tube_id**4)/64
+    stress = 1.5*50*pole_length/(inertia/(tube_od/2))
+    deflection = 50*pole_length**3/(3*180000*inertia)
+    guide_points = [[5960,7520,1250],[5900,7430,1250],[5900,7590,1250]]
+    pole_reach = max(sqrt(sum((worker[i]-point[i])**2 for i in range(3))) for point in guide_points)
+    guard_cross = min(1000+(8500-7730)/(8500-point[1])*250-1100 for point in guide_points)
+    assert stress < 150 and pole_reach+deflection+10 < pole_length
+    assert guard_cross-deflection-10 > 0
+    return {
+        "operatorHand":worker,"surfaceControl":control,"controlFootprint":pedestal,"handReach":reach,
+        "clampConcept":{"sectors":4,"sectorAxialWidth":12,"rimEachSide":5,"radialOpening":30,
+            "construction":"Machined metal V-sectors held by a captive split tension band. A temporary split release cage captures every sector before the top drive relaxes the band, then guides30 radial travel. Copper face gaskets are replaced on exchange.",
+            "endRestraint":"Pipe anchors, guided bellows and positive screw stops retain the full end force independently of the temporary cage.",
+            "serviceAxialCapacityRequiredKN":5,"pressureQualificationKPa":100,
+            "wetFaceConvention":"Each flange extends into its own pipe. Both stationary and moving members end at the declared wet face. Temporary clamp sectors are removed from the axial opening before the captured pipe lift."},
+        "joints":joints,"clearPitBottomRequired":-1130,
+        "drive":{"heads":heads,"tubeOD":16,"tubeID":12,"material":"316L all-metal rigid shafts and enclosed bevel heads",
+            "maximumTorqueNm":20,"handleRadiusMm":200,"totalMovingArmAndTemporarilySupportedToolsKgMaximum":20,"maximumTangentialHandN":100,
+            "independentSupport":"Guide brackets attach to the temporary ground-supported rig. No hand or tool thrust is reacted by a wet pipe.",
+            "jackSynchronization":"A removable positive1:1 mechanical cross-drive turns the twin M12 jacks together. Fit both hard stops at20 compression and withdraw the drive before moving T.",
+            "temporaryJackBarBoundsY":[7480,7720],"barOpeningMarginAfter7":access[1]+access[3]-7720-7,
+            "toolState":"Drive shafts and capture cages enter only after the cover is removed and the component is independently held. Withdraw every shaft and the emptied cage above and north of the aperture before its associated part lifts. An opened and captured cage remains during the first guided face separation."},
+        "capture":{"method":"Rig-suspended camera-guided positive lifting clutch descends vertically into the component's flush metal pickup. Verify positive latch and proof take-up before releasing a clamp. The pole controls the visible guide at1250; the gantry carries the buried capture head.",
+            "buriedPickups":[[5960,7520,-541.4],[5900,7430,check["axis"][2]+150],[5900,7590,tee["centre"][2]+120]],
+            "surfaceGuidePoints":guide_points,"pole":{"sectionODID":[tube_od,tube_id],"length":pole_length,
+                "maximumGuideForceN":50,"factoredStressMPa":stress,"tipDeflectionMm":deflection,
+                "requiredReach":pole_reach,"guardClearanceAfterDeflectionAnd10":guard_cross-deflection-10}},
+        "sequence":["Prove the independent diversion, isolation and zero pressure; erect and lock the guarded rig",
+            "Capture E with the vertical lifting clutch and fit both segmented-clamp release cages",
+            "Open both E clamps30 radially, withdraw tool shafts, and make the captured40 west/40 north E translation",
+            "Move each retained clamp sector into its empty axial gap, lift it separately, remove cages, then lift E",
+            "Capture T and wafer; open W/E T clamps30, synchronize both bellows to20 compression and lock stops",
+            "Place W/E clamp sectors in their20 gaps, park40 south and lift them; withdraw drives and cages",
+            "Open both wafer clamps30 and move the guided T30 north, below the tie",
+            "Remove the north clamp sectors through their30 gap, draw wafer20 north and remove the south sectors through their20 gap",
+            "Lift wafer, move T40 south from that held position and lift T through its final clear aperture",
+            "Rebuild with new copper seals, verify neutral bellows stroke, and complete pressure, low-head and functional tests before returning flow"],
+        "qualificationRequired":["Fabricate and test the V-sector/copper-seat system inside the stated210/240 OD and12 axial envelopes",
+            "Demonstrate release-cage, capture-clutch and guide insertion/withdrawal with every retained pipe and actual cover edge",
+            "Verify20 mm controlled joint gaps with1 mm repeatability,5 kN restraint,100 kPa pressure and intended stroke-cycle fatigue",
+            "Verify guide-pole forces, mechanical drive torque and physical load-capture trials on the ground-supported rig"],
+        "physicalQualification":False,
+    }
 
 
 def junction_handling(access):
@@ -427,7 +550,7 @@ def junction_handling(access):
     angles = [atan2(p[1] - mast[1], p[0] - mast[0]) * 180 / pi % 360 for p in picks]
     minimum_rest_separation = min(rect_gap(e_rest, n_rest), rect_gap(e_rest, ballast), rect_gap(n_rest, ballast))
     minimum_shoe_to_rest = min(rect_gap(shoe, rest) for shoe in shoes for rest in [e_rest, n_rest, ballast])
-    # All load centres remain west of the mast in the90..260 degree sector.
+    # All load centres remain west of the mast in the90..270 degree sector.
     # A260 bounding radius contains the largest E assembly plan projection.
     load_to_body = worker[0] - 300 - (mast[0] + 260)
     approach_to_shoes = min(6850 - shoe[0] - shoe[2] - 300 for shoe in shoes)
@@ -439,8 +562,8 @@ def junction_handling(access):
     ballast_centre = [5600, 8850]
     # Allow each suspended point plus the complete400-radius swing. Only
     # adverse moments are charged, so no moving load provides stability credit.
-    load_points = picks + [[mast[0] + 400 * cos(i * pi / 180), mast[1] + 400 * sin(i * pi / 180)] for i in range(90, 261)]
-    arms = [[mast[0] + 450 * cos(i * pi / 180), mast[1] + 450 * sin(i * pi / 180)] for i in range(90, 261)]
+    load_points = picks + [[mast[0] + 400 * cos(i * pi / 180), mast[1] + 400 * sin(i * pi / 180)] for i in range(90, 271)]
+    arms = [[mast[0] + 450 * cos(i * pi / 180), mast[1] + 450 * sin(i * pi / 180)] for i in range(90, 271)]
     moments = {}
     for edge, axis, sign in [("W", 0, 1), ("E", 0, -1), ("S", 1, 1), ("N", 1, -1)]:
         lever = sign * (ballast_centre[axis] - support[edge]) / 1000
@@ -448,12 +571,12 @@ def junction_handling(access):
         adverse_arm = max(0, -min(sign * (p[axis] - support[edge]) / 1000 for p in arms)) * (20 * 9.81 / 1000 * 1.5)
         moments[edge] = mass_force * lever - horizontal_moment - adverse_load - adverse_arm
     setting_reach = max(hypot(hypot(worker[0] - p[0], worker[1] - p[1]), 1040) for p in picks[:3])
-    assert max(radii) < 950 and min(angles) >= 90 and max(angles) <= 260
+    assert max(radii) < 950 and min(angles) >= 90 and max(angles) <= 270
     assert minimum_rest_separation > 10 and minimum_shoe_to_rest > 10
     assert approach_to_shoes > 10 and load_to_body > 10
     assert min(moments.values()) > 0 and setting_reach < 1900
     assert rect_gap(body, access) > 10
-    return {"mast": mast, "maximumReach": 950, "sectorDegrees": [90, 260], "swingRadius": 400,
+    return {"mast": mast, "maximumReach": 950, "sectorDegrees": [90, 270], "swingRadius": 400,
             "worker": worker, "bodyRadius": 300, "operatorBay": [6500, 8150, 700, 700],
             "accessRoute": [[6850, 10000], [6850, 8500], [6850, 7600]],
             "approachToShoeAfterBody": approach_to_shoes, "workerToLiftedLoad": load_to_body,

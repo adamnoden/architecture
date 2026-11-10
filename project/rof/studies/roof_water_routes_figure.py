@@ -59,8 +59,8 @@ cross = data["renewal"]["eastCrossoverFirst"]
 envelope(junction, cross["initialEnvelope"], relief)
 envelope(junction, cross["postTranslationEnvelope"], relief, "--")
 releases = data["renewal"]["teeJointReleases"]
-envelope(junction, releases["TAfterNext30South"], normal)
-envelope(junction, releases["waferAfter10North"], steel)
+envelope(junction, releases["TAfterNext40South"], normal)
+envelope(junction, releases["waferAfter20North"], steel)
 for side in ["west", "east"]:
     row = releases[side]
     x0,x1 = sorted([row["fixedFaceX"],row["compressedFaceX"]])
@@ -68,10 +68,10 @@ for side in ["west", "east"]:
 junction.annotate("E first moves 40 west / 40 north", (5900,7650),
                   xytext=(5520,7890), fontsize=8,
                   arrowprops={"arrowstyle":"-", "color":relief})
-junction.annotate("T after 20 north, then 30 south", (5900,7585),
+junction.annotate("T after 30 north, then 40 south", (5900,7585),
                   xytext=(5520,7250), fontsize=8,
                   arrowprops={"arrowstyle":"-", "color":normal})
-junction.annotate("Wafer after 10 north", (5900,7440), xytext=(6060,7330),
+junction.annotate("Wafer after 20 north", (5900,7440), xytext=(6060,7330),
                   fontsize=8, arrowprops={"arrowstyle":"-", "color":steel})
 junction.text(5620,7775,"Concrete tie",fontsize=8)
 junction.text(5620,7385,"700 × 355 opening",fontsize=8)

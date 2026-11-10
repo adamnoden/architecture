@@ -406,18 +406,18 @@ z
 " clip-path="url(#pa3e0b9375c)" style="fill: #a76538; opacity: 0.2; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #a76538; stroke-linejoin: miter"/>
    </g>
    <g id="patch_16">
-    <path d="M 547.046257 304.011996
-L 672.782861 304.011996
-L 672.782861 199.231492
-L 547.046257 199.231492
+    <path d="M 552.761558 304.011996
+L 667.067561 304.011996
+L 667.067561 199.231492
+L 552.761558 199.231492
 z
 " clip-path="url(#pa3e0b9375c)" style="fill: #257ba1; opacity: 0.2; stroke: #257ba1; stroke-linejoin: miter"/>
    </g>
    <g id="patch_17">
-    <path d="M 552.761558 307.822196
-L 667.067561 307.822196
-L 667.067561 296.391595
-L 552.761558 296.391595
+    <path d="M 552.761558 304.011996
+L 667.067561 304.011996
+L 667.067561 292.581395
+L 552.761558 292.581395
 z
 " clip-path="url(#pa3e0b9375c)" style="fill: #657480; opacity: 0.2; stroke: #657480; stroke-linejoin: miter"/>
    </g>
@@ -666,7 +666,7 @@ Q 570.450108 306.641139 608.814861 248.524856
 " style="fill: none; stroke: #257ba1; stroke-linecap: round"/>
    </g>
    <g id="text_38">
-    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start" x="465.126955" y="374.500698" transform="rotate(-0 465.126955 374.500698)">T after 20 north, then 30 south</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start" x="465.126955" y="374.500698" transform="rotate(-0 465.126955 374.500698)">T after 30 north, then 40 south</text>
    </g>
    <g id="patch_24">
     <path d="M 694.733802 335.213016
@@ -674,7 +674,7 @@ Q 653.254738 319.023165 611.775675 302.833315
 " style="fill: none; stroke: #657480; stroke-linecap: round"/>
    </g>
    <g id="text_39">
-    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start" x="670.877761" y="344.019097" transform="rotate(-0 670.877761 344.019097)">Wafer after 10 north</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start" x="670.877761" y="344.019097" transform="rotate(-0 670.877761 344.019097)">Wafer after 20 north</text>
    </g>
    <g id="text_40">
     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start" x="503.228956" y="174.465191" transform="rotate(-0 503.228956 174.465191)">Concrete tie</text>
