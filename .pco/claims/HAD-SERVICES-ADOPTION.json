@@ -9,8 +9,8 @@
     "label": "issue-comment-6761703008"
   },
   "claimedAt": "2026-11-10T07:32:46.000Z",
-  "heartbeatAt": "2026-11-10T07:45:54.000Z",
-  "expiresAt": "2026-11-10T08:30:54.000Z",
+  "heartbeatAt": "2026-11-10T08:20:38.000Z",
+  "expiresAt": "2026-11-10T09:05:38.000Z",
   "branch": "work/mvb-chat-6761703008",
   "predecessor": {
     "leaseId": "1bf31109-360f-403b-b43c-b6e601d606f3",
@@ -36,7 +36,7 @@
   },
   "pr": 1469,
   "checkpoint": {
-    "evidence": "Draft PR #1469 at 24ea3239 restores the joined service export. All 15 current-house checks pass. Preserves #1468 ancestry.",
-    "next": "Finish actual purge operation and complete weather-face/first-release review, draw selected interfaces, run all HAD/affected checks and exact-head CI."
+    "evidence": "PR1469 head 4a6ed89e selects finite paired purge leaves and reachable bronze stays, relocates two radiators and the inverter, and lowers upper fans20mm for complete support clearance. All16 current-house checks pass.",
+    "next": "Finish finite support and worker handover, principal-head weather/access, selected-interface drawing and adverse review, then full HAD/affected checks and exact-head CI."
   }
 }
