@@ -1,0 +1,30 @@
+{
+  "status": "PRIVATE SOURCE-DERIVED PARAMETER SEAMS; default40000 preserved in each copied kernel, receiving physics unqualified",
+  "kernels": {
+    "roof.py": {
+      "source": "project/str/studies/current-house-roof-bracing.py",
+      "sourceSHA256": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+      "candidateSHA256": "1f3c2e584ee3c0136aba0fda97c55e92be672f181dbe12e02f27088686fc2f5e"
+    },
+    "ring.py": {
+      "source": "project/str/studies/current-house-ring-return.py",
+      "sourceSHA256": "e0e81c445ae210fc43f3335f1a6d8aac6faa7026af755fa4f1282eceeaa39cb6",
+      "candidateSHA256": "9a088788ad68626b6b9746702388c604cd95661d4ad14b023661e121d4063c6a"
+    },
+    "slate.py": {
+      "source": "project/str/studies/reconciled-slate-roof.py",
+      "sourceSHA256": "7f42a9c530092e077e5052f5e1f0c1872186790726cda31bb0a800902e031643",
+      "candidateSHA256": "b589ab5bd0a66f81d34df4f99d275a0e10d7d76e75827563981408f1e6df6051"
+    },
+    "portals.py": {
+      "source": "project/str/studies/reconciled-corner-portals.py",
+      "sourceSHA256": "a0c158fbff68bc250e6ab64ab6251cc396abc7efb6ef3f398325629e678b92bd",
+      "candidateSHA256": "eff6d7d7dc465cbd572eb6103dd6d6a427c7cb99c4edb74334b058c6a635ff97"
+    }
+  },
+  "changes": [
+    "Only explicit support stiffness/default and relative source input paths are changed in the copied kernels.",
+    "Both native96 roof backgrounds, independent ring, slate origins and portal backgrounds are rebuilt.",
+    "All reaction recovery and balance checks use the same selected spring coefficient."
+  ]
+}

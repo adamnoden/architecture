@@ -171,9 +171,14 @@ No failed result is folded into an admitted receiving union.
 
 Generation included native fixed-end, force, moment and water-superposition
 checks. The package and all 34 transitive native input hashes were verified;
-the receiving receipt passed exact reproduction. A duplicate full native
-reproduction has not yet been run for these failure receipts. Their reported
-validation does not imply that it has.
+the receiving receipt passed exact reproduction. A later duplicate native
+reproduction of both the complete-export installed and finite-144 failure
+receipts passed their exact standard-library `--check` commands. The
+[verification record](studies/roof_water_pressure_verification.json) binds
+those results to their source and receipt hashes. The published checkpoint
+`f49968e96ad7dceb35ea448d87d20c851d337b40` also passed full repository CI
+[42915906354](https://github.com/adamnoden/architecture/actions/runs/42915906354).
+That CI result applies to that head, not later additions.
 
 The [receiving-component comparison](studies/roof_water_receiving_components.py)
 also tests the physical meaning of the native 40 kN/mm vertical springs. Even
@@ -193,6 +198,116 @@ supplies material properties only. Higher rod strength does not earn the
 including the governing north-west court station. The corner route,
 compression/contact, supporting collector and sliding portal receivers remain
 separate design duties. Neither spring nor tie-strength limits have been raised.
+
+## Thicker collector, uncertain installed mass and relative movement
+
+The separate [300 mm comparison](studies/roof_water_wider_pressure_trial.py)
+retains the 20 mm wall and fails the complete frozen-export pressure screens:
+court interaction 1.024228300, M24 tension 119.549438077 kN and floor/roof ties
+8.209989570/3.084782524 kN. Its footprint also consumes the full 300 mm heel
+width, leaving no nominal shoulder for a transition detail. It is not selected.
+
+The [current checkpoint](studies/roof_water_current_checkpoint.json) instead
+retains the 280 mm footprint and explicitly increases its wall to 25 mm. It
+recalculates area, both bending properties, torsion and self-weight. The
+70 mm internal height and transition to the existing heel are new physical
+conditions, not implied fabrication approvals.
+
+The old fixed 50 kg/m exterior and 75 kg head quantities are upper load bounds;
+they do not earn stabilising minimum installed weight. The new comparison
+therefore admits 134 independent zero-to-cap dry-stock intervals while
+retaining the complete weather roof. This is an installed-mass uncertainty
+domain, not permission for simultaneous dismantling. Its constructive mapping
+contains all 144 source-point finite renewal choices, preserving every root,
+force and moment; already stripped cases are not subtracted twice. Actual
+part centroids and remaining-stock allocation must still fit these intervals.
+
+| 280 × 120 × 25, uncertain installed stock | 40 kN/mm spring | 20 kN/mm spring |
+|---|---:|---:|
+| Court interaction | 0.975725378 | 1.015566371 |
+| Maximum M24 tension | 119.914114192 kN | 110.978684190 kN |
+| Maximum receiving compression | 208.565650791 kN | 199.783419580 kN |
+| Floor normal tie | 8.221760210 kN | 8.234219351 kN |
+| Roof normal tie | 3.064154314 kN | 3.069072941 kN |
+
+The stiffer comparison passes the member screen and fails the original M24
+screen; the more flexible comparison reverses those two results. Both fail
+the retained 8/3 kN normal-tie screens. Neither spring is admitted as a physical
+receiving property. Four separately named native kernels rebuild all 96 roof
+backgrounds, ring/slate response, portal coupling and recovered reactions at
+the requested spring. The 40 kN/mm parameter seam reproduces the preceding
+fixed-stock control exactly, including all 22 receiving stations and 32 ties.
+
+Each spring has 920 vertical and 1112 lateral queries. The extra 12 vertical
+queries locate the normal-head arm corners at their actual ±125 mm along-face
+positions. Maximum inner lower-body downward motion is 14.969780846 mm at
+40 kN/mm and 18.558527046 mm at 20 kN/mm. The northern retained head-arm
+envelope is −28.736319677/+41.121575417 mm and
+−30.955922283/+45.445682468 mm respectively. These are fixed-base motions;
+an operation referenced to an already deflected capture position cannot use
+an absolute allowance without a separate datum or excursion check.
+
+The earlier complete-export 280 × 120 × 20 paired-motion comparison is also
+retained. Its actual ten arm/hanger pairs leave 11.768307855 mm conditional
+separation after both local flexibilities, native relative motion and opposed
+settings. Absolute lower-hanger normal motion reaches −35.192413804 mm,
+leaving only 14.807586196 mm of the proposed 50 mm static clearance before
+local/facade movement. These are different comparisons, not interchangeable
+clearance credits.
+
+The checkpoint and 22-station receiving receipts passed exact reproduction;
+all 34 native inputs and 23 added file hashes were checked after integration.
+Both full main 20/40 numerical replays subsequently reproduced their frozen
+receipts exactly; the [verification record](studies/roof_water_current_verification.json)
+identifies the commands, result hashes and successful exits. The motion runs
+completed their native and virtual-work consistency checks; a second complete
+motion replay is not claimed.
+The frozen export still omits the newly located upper roof lap and secondary
+baffle height; its extra apron rib/standoff load also needs return through
+the local frame. “Complete export” describes that frozen export only.
+
+A further [30 mm wall comparison](studies/roof_water_wall30_checkpoint.json)
+uses the same footprint, frozen export, 20 kN/mm spring and 134 installed-mass
+intervals. Its 20,400 mm² area and 1.6014 kN/m characteristic weight are fully
+included. Court interaction is 0.944747253, outer interaction 0.941559318 and
+M24 tension 110.164780448 kN, below the unchanged 113.922727273 kN comparison.
+Maximum receiving compression is 199.355576917 kN. Floor/roof normal ties still
+fail at 8.226605937/3.065680483 kN against 8/3. The thinner internal space is
+now 60 mm, so neither the original 80 mm heel interior nor the 25 mm proposal's
+70 mm webs can be silently reused.
+
+Its matching 920/1112 query runs give 17.851616977 mm maximum lower-body down,
+5.673547053 mm lower paired-width movement and 45.439335652 mm northern
+retained-head downward motion. Lower-hanger normal movement spans
+−35.418823117/+35.163027379 mm. Native generation and consistency guards,
+the receiving ledger and checkpoint reproduction passed. A duplicate full
+structural replay is recorded separately when complete. This member comparison
+does not select a physical assembly or include the pending wet-barrier revision.
+
+## Root attachment comparison
+
+The [root-foot study](studies/roof_water_inner_foot_connection.py) tests an
+explicit six-M12 layout against every one of the 3584 frozen local-frame cases,
+transferring the actual simultaneous reactions from Z6668 to Z6660. The
+inventory alone had not supplied this bolt/contact geometry. The trial has
+140 × 130 mm plates and bolt centres at p±50, q−40/0/+40. Its largest bolt
+tension is 17.525879 kN. A declared 20 mm cantilever and 40 mm independent
+strip give 821.525559 MPa for an 8 mm plate and 131.444089 MPa for a 20 mm
+plate. The latter adds 1.6832 kg over the actual 160 × 120 × 8 mm inventory
+plate, before longer bolts and internal webs. A 25 mm collector cap spanning
+to only one central web still gives 210.310543 MPa in that strip comparison,
+above the collector's retained 200/1.1 MPa budget. Contact, prying and actual
+weld geometry are not established by this screen.
+
+The ordinary wet-body route leaves the root stems fixed, so a permanent welded
+stub is a legitimate alternative topology. A separately authored nominal
+3 mm full-penetration end seam on the 60 × 120 × 3 RHS wall midline gives
+93.074090 MPa against the source 100 MPa weld comparison, and 94.760565 MPa
+in the separate material comparison. This is not a 3 mm-leg fillet, a qualified
+weld procedure or a cap/web load-introduction pass. Both weld toes and settings
+must fit the 15 mm gap between the two stems. The longer stem, matching internal
+webs, weld mass, dissimilar-material durability and new wind remain to be joined.
+Eventual roof-root replacement is separate from the ordinary pan operation.
 
 ## Located physical renewal candidates
 
@@ -214,6 +329,18 @@ shutter, collar, support, head departure, whole-corner articulation and reverse
 water control remain unproved. The frozen candidate also records the 0.4 mm
 carrier-stack mismatch and the failed inherited 25 mm window-clearance target.
 
+Subsequent solid/water tracing finds more fundamental failures in that frozen
+topology. The secondary downleg at q4346 ends only 35 mm above the lower bed,
+while the lower rear wall at q4375 rises 125 mm; the drawn low shoe cannot pass
+water through that intact wall. The primary crossarms also intersect the
+continuous secondary sheet. No sealed structural penetration was authored.
+Finally, the 125 mm lower rear is below the represented 183.371 mm blocked
+storage envelope, so it cannot be assumed to remain dry while only the front
+crest spills. The old shoe's q4310 rear edge also needs its own facade-motion
+check. These findings reject the continuous-sheet join as drawn. Raising the
+bodies by 10 mm alone does not repair it; a new physical support and wet-barrier
+topology is under investigation.
+
 The [outer renewal comparison](studies/roof_water_outer_renewal_candidate.py)
 prices an actual full-profile joint hypothesis. With those joint sets, the
 original 4 mm primary crossarm exceeds the 50 kg/m envelope; a 3 mm wall
@@ -223,6 +350,25 @@ body passage in the declared clearance comparison. Its actual fork, collar,
 joint elevations, full native movement and contained rain path remain open.
 The 60 mm long-arm thermal gap is not an every-bay wet joint. Inlet, apron,
 rest and head-absence negative controls are preserved.
+
+The later [outer physical checkpoint](studies/outer_physical_checkpoint/README.md)
+enumerates 128 actual pan polygons and their joint sets. Its complete plan
+lengths reach 956.054 mm primary and 1060.116 mm lower, so the inherited 600 mm
+head bay does not serve whole-pan departure. A 1200 mm bay is only a plan
+candidate until grips, workers, gates and site fields are joined. Four pans
+straddle real head-level jumps of 30.25, 51.5 or 57.5 mm; the proposed next
+split must retain the original head-end movement gap and actual root allocation.
+The priced 10 mm fabrication seam is not automatically a thermal joint.
+
+The new path checks also locate a first-pickup collision with the retained
+primary apron, an apron-toe excursion beyond the live lower collector, and a
+tray that misses the secondary drip. Four leader load allowances do not supply
+four head-renewal details: only the two normal heads have source transfer
+examples, leaving both relief-head sequences open. Exact retained-arm corner
+extracts independently reproduce the new 20/40 spring movement comparison;
+the proposed 50 mm absolute allowance survives its softer case by 4.554 mm.
+This does not qualify a path tied to an initially deflected capture position.
+All three portable outer scripts passed exact reproduction after integration.
 
 The [independent inner hydraulic audit](studies/inner_hydraulics_audit.py) uses
 Newton section inversion and numerical crest integration. It reproduces the

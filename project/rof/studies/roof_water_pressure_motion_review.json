@@ -1,0 +1,247 @@
+{
+  "status": "UNADMITTED FAILED-STRUCTURE MOVEMENT/GEOMETRY COMPARISON; NOT A SELECTED ASSEMBLY",
+  "widths": {
+    "primary": {
+      "rangeMM": [
+        -3.466520794,
+        4.607082844
+      ]
+    },
+    "lower": {
+      "rangeMM": [
+        -4.209346678,
+        5.594314882
+      ]
+    }
+  },
+  "fullHangerNativeNormalRangeMM": [
+    -35.192413804,
+    34.854472984
+  ],
+  "facadeStaticClearanceMM": 50.0,
+  "remainingBeforeLocalAndOpposingFacadeMM": 14.807586196000003,
+  "pairedArmGaps": [
+    {
+      "primaryStationP": 4800,
+      "lowerStationP": 4600,
+      "nominalPGapMM": 25,
+      "primaryLocalAbsoluteAlongMM": 1.9404055189432583,
+      "lowerLocalAbsoluteAlongMM": 1.0520010539463744,
+      "opposedSettingMM": 10,
+      "remainingForNativeRelativeAndOtherMotionMM": 12.007593427110368,
+      "nativeRelativeRangeMM": [
+        -0.233937478,
+        0.235413229
+      ],
+      "nativeClosingMM": 0.233937478,
+      "conditionalRemainingMM": 11.773655949110369
+    },
+    {
+      "primaryStationP": 5325,
+      "lowerStationP": 5100,
+      "nominalPGapMM": 50,
+      "primaryLocalAbsoluteAlongMM": 1.818956153614717,
+      "lowerLocalAbsoluteAlongMM": 0.8902452113629635,
+      "opposedSettingMM": 10,
+      "remainingForNativeRelativeAndOtherMotionMM": 37.29079863502232,
+      "nativeRelativeRangeMM": [
+        -0.233937478,
+        0.235413229
+      ],
+      "nativeClosingMM": 0.233937478,
+      "conditionalRemainingMM": 37.05686115702232
+    },
+    {
+      "primaryStationP": 5325,
+      "lowerStationP": 5550,
+      "nominalPGapMM": 50,
+      "primaryLocalAbsoluteAlongMM": 1.818956153614717,
+      "lowerLocalAbsoluteAlongMM": 0.7338458989979721,
+      "opposedSettingMM": 10,
+      "remainingForNativeRelativeAndOtherMotionMM": 37.44719794738731,
+      "nativeRelativeRangeMM": [
+        -0.607199276,
+        0.677076797
+      ],
+      "nativeClosingMM": 0.607199276,
+      "conditionalRemainingMM": 36.839998671387306
+    },
+    {
+      "primaryStationP": 5775,
+      "lowerStationP": 5550,
+      "nominalPGapMM": 50,
+      "primaryLocalAbsoluteAlongMM": 1.0446208825680878,
+      "lowerLocalAbsoluteAlongMM": 0.7338458989979721,
+      "opposedSettingMM": 10,
+      "remainingForNativeRelativeAndOtherMotionMM": 38.22153321843394,
+      "nativeRelativeRangeMM": [
+        -0.355223752,
+        0.355223752
+      ],
+      "nativeClosingMM": 0.355223752,
+      "conditionalRemainingMM": 37.86630946643394
+    },
+    {
+      "primaryStationP": 5775,
+      "lowerStationP": 6000,
+      "nominalPGapMM": 50,
+      "primaryLocalAbsoluteAlongMM": 1.0446208825680878,
+      "lowerLocalAbsoluteAlongMM": 0.5357543642506111,
+      "opposedSettingMM": 10,
+      "remainingForNativeRelativeAndOtherMotionMM": 38.4196247531813,
+      "nativeRelativeRangeMM": [
+        -0.355223752,
+        0.355223752
+      ],
+      "nativeClosingMM": 0.355223752,
+      "conditionalRemainingMM": 38.0644010011813
+    },
+    {
+      "primaryStationP": 6225,
+      "lowerStationP": 6000,
+      "nominalPGapMM": 50,
+      "primaryLocalAbsoluteAlongMM": 1.0446208825587968,
+      "lowerLocalAbsoluteAlongMM": 0.5357543642506111,
+      "opposedSettingMM": 10,
+      "remainingForNativeRelativeAndOtherMotionMM": 38.41962475319059,
+      "nativeRelativeRangeMM": [
+        -0.355223752,
+        0.355223752
+      ],
+      "nativeClosingMM": 0.355223752,
+      "conditionalRemainingMM": 38.06440100119059
+    },
+    {
+      "primaryStationP": 6225,
+      "lowerStationP": 6450,
+      "nominalPGapMM": 50,
+      "primaryLocalAbsoluteAlongMM": 1.0446208825587968,
+      "lowerLocalAbsoluteAlongMM": 0.7338458989988013,
+      "opposedSettingMM": 10,
+      "remainingForNativeRelativeAndOtherMotionMM": 38.2215332184424,
+      "nativeRelativeRangeMM": [
+        -0.355223752,
+        0.355223752
+      ],
+      "nativeClosingMM": 0.355223752,
+      "conditionalRemainingMM": 37.8663094664424
+    },
+    {
+      "primaryStationP": 6675,
+      "lowerStationP": 6450,
+      "nominalPGapMM": 50,
+      "primaryLocalAbsoluteAlongMM": 1.8189561537355408,
+      "lowerLocalAbsoluteAlongMM": 0.7338458989988013,
+      "opposedSettingMM": 10,
+      "remainingForNativeRelativeAndOtherMotionMM": 37.44719794726566,
+      "nativeRelativeRangeMM": [
+        -0.618334567,
+        0.671993289
+      ],
+      "nativeClosingMM": 0.618334567,
+      "conditionalRemainingMM": 36.82886338026566
+    },
+    {
+      "primaryStationP": 6675,
+      "lowerStationP": 6900,
+      "nominalPGapMM": 50,
+      "primaryLocalAbsoluteAlongMM": 1.8189561537355408,
+      "lowerLocalAbsoluteAlongMM": 0.8902452113515648,
+      "opposedSettingMM": 10,
+      "remainingForNativeRelativeAndOtherMotionMM": 37.290798634912896,
+      "nativeRelativeRangeMM": [
+        -0.239285572,
+        0.243575681
+      ],
+      "nativeClosingMM": 0.239285572,
+      "conditionalRemainingMM": 37.051513062912896
+    },
+    {
+      "primaryStationP": 7200,
+      "lowerStationP": 7400,
+      "nominalPGapMM": 25,
+      "primaryLocalAbsoluteAlongMM": 1.940405519094588,
+      "lowerLocalAbsoluteAlongMM": 1.0520010539302798,
+      "opposedSettingMM": 10,
+      "remainingForNativeRelativeAndOtherMotionMM": 12.007593426975134,
+      "nativeRelativeRangeMM": [
+        -0.239285572,
+        0.243575681
+      ],
+      "nativeClosingMM": 0.239285572,
+      "conditionalRemainingMM": 11.768307854975134
+    }
+  ],
+  "minimumConditionalPairedPReserveMM": 11.768307854975134,
+  "localClearanceReceiptSHA256": "b4a3b1d8002c075619dd5c8a5d498dee421f94d431c91d81059cf09bef57e971",
+  "localClearanceSourceSHA256": "f30ab77a1096b0f365c2c8baf4e4f29983cfda071253c5d1c395f404bb967571",
+  "localCandidateSourceSHA256": "4eb505e4349b1af1eaa98c96b0aa7174a8b6e3c4210628a969cc10c8252e7eba",
+  "localClearanceScope": "Separately supplied local-frame comparison. Added apron stock pressure, complete physical contacts, actual graded assembly and receiving stiffness remain unqualified.",
+  "nativeMovementScope": "908 signed vertical/paired queries and1112 normal/rotation/tangential queries; includes complete added pressure domain and enlarged finite144 alternatives.",
+  "sourceHashes": {
+    "project/rof/studies/roof_water_joined_pressure_movement.py": "b6acb5f665c105bfde85f9cd68759f8c675ff147450d7f2a95cd2a63a145ddd5",
+    "project/rof/studies/roof_water_joined_pressure_movement_280_60.json": "a667eeccc987c6571327c1b23ab1422276ff38e440578e7625a7584789ce2387",
+    "project/rof/studies/roof_water_joined_pressure_lateral.py": "035dcb1256083361541273b5323a49b2a54eb69d808a2436dbd900c60441f983",
+    "project/rof/studies/roof_water_joined_pressure_lateral_280_60.json": "94023eb47f687f3e02628d5992ca8d3052fceddf0c7a38d592180e76e78436e3",
+    "project/rof/studies/roof_water_wider_pressure_trial.py": "b762c31c88fc2f1002f58c403f74c01e69567e44450cd49373bd86d1c6992458",
+    "project/rof/studies/roof_water_wider_pressure_trial_300_60.json": "2414e1d4011aeaf022354db4b5e69665d1a1dd01f43f7b5401b31ac5a109f330"
+  },
+  "wider300Comparison": {
+    "screens": {
+      "outer": true,
+      "court": false,
+      "M24": false,
+      "floorTies": false,
+      "roofTies": false
+    },
+    "worstUpperTensionKN": 119.549438077,
+    "memberInteractions": {
+      "outer": 0.919372451,
+      "court": 1.0242283
+    },
+    "maximumPortalNormalTieKN": {
+      "floor": 8.20998957,
+      "roof": 3.084782524
+    },
+    "criticalTensionStation": {
+      "xy": [
+        3917.5,
+        8082.5
+      ],
+      "rangeKN": [
+        -119.549438077,
+        205.480504906
+      ],
+      "controllingCases": [
+        {
+          "case": "0.2|partial water down|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 28,
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.2|partial water up|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 58,
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    "physicalBoundsQZMM": [
+      3767.5,
+      4067.5,
+      6540,
+      6660
+    ],
+    "nominalHeelShoulderEachSideMM": 0,
+    "wallFaceSetbackMM": 182.5,
+    "qualification": "Matches300heel nominal width only; actual weld/web transition/tolerance is not qualified."
+  },
+  "validation": "Generation completed; physical virtual-work and native interface recovery checks passed. Exact duplicate checks are not yet claimed."
+}

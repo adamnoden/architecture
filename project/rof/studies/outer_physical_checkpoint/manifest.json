@@ -1,0 +1,38 @@
+{
+  "status": "UNSELECTED; no complete ordinary renewal accepted",
+  "files": {
+    "README.md": {
+      "bytes": 8149,
+      "sha256": "f58e2f62f903d1247659091e8f0a372a7777ee032bf188617a89a92dcaf7a28b"
+    },
+    "native-arm-checks.json": {
+      "bytes": 4870,
+      "sha256": "ec30c0dd41b429d1de40279fea3d5f8ac3fcb309ceb6a5df6ff51c6007bca537"
+    },
+    "native-arm-checks.py": {
+      "bytes": 4871,
+      "sha256": "fa5346e6f0ebb7fe9ff247727d81bf9d0cd37584b3e68713ed2a38dca50d5ce7"
+    },
+    "native-arm-inputs.json": {
+      "bytes": 33163,
+      "sha256": "e861fde17a7cac02f70093a8eed21c2492b3056df41f1270cf5d1b0a54940d51"
+    },
+    "outer-module-inventory.json": {
+      "bytes": 476854,
+      "sha256": "9baa465750cc067fb98ec564b3d07515cc7aba160668ee7f8e13e5019d90a635"
+    },
+    "outer-module-inventory.py": {
+      "bytes": 11216,
+      "sha256": "9f6735debb06007a579c64d2a341c10d2f5af663dbc92a88a016a6eed2bab308"
+    },
+    "outer-renewal-path-checks.json": {
+      "bytes": 14337,
+      "sha256": "f1672d280a2a7e0a2cc2e10cadc937333b4dbdd4622b95888a455e1de6ead1a2"
+    },
+    "outer-renewal-path-checks.py": {
+      "bytes": 14359,
+      "sha256": "c3e30519a54e548c80d314776e84a55885a534b27f04716b5539270135c1d06e"
+    }
+  },
+  "reproduction": "Three scripts regenerated and exact --check passed; repository was read only."
+}

@@ -1,0 +1,2234 @@
+{
+  "status": "UNADMITTED25/30MM WALL RECEIVING-ACTION COMPARISONS; NO CAPACITY OR REAL SUPPORT STIFFNESS SELECTED",
+  "stationCount": 22,
+  "stations": [
+    {
+      "xy": [
+        332.5,
+        332.5
+      ],
+      "historicalRangeKN": [
+        -47.749303251,
+        98.730954064
+      ],
+      "historicalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 55,
+          "programme": [
+            1,
+            1
+          ],
+          "guard": [
+            2,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 31,
+          "programme": [
+            4,
+            4
+          ],
+          "guard": [
+            2,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "candidateCases": {
+        "wall25_spring20": {
+          "rangeKN": [
+            -62.412408066,
+            128.645594533
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 55,
+              "guard": [
+                5,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 31,
+              "guard": [
+                5,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 29.914640469,
+          "tensionDifferenceFromHistoricalKN": 14.663104815
+        },
+        "wall30_spring20": {
+          "rangeKN": [
+            -62.418629001,
+            128.578169038
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 55,
+              "guard": [
+                5,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 31,
+              "guard": [
+                5,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 29.847214974,
+          "tensionDifferenceFromHistoricalKN": 14.66932575
+        }
+      }
+    },
+    {
+      "xy": [
+        332.5,
+        3800
+      ],
+      "historicalRangeKN": [
+        -40.160551187,
+        70.890009131
+      ],
+      "historicalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 84,
+          "programme": [
+            5,
+            2
+          ],
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 23,
+          "programme": [
+            3,
+            3
+          ],
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "candidateCases": {
+        "wall25_spring20": {
+          "rangeKN": [
+            -44.730136759,
+            86.974134263
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 84,
+              "guard": [
+                6,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 23,
+              "guard": [
+                6,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 16.084125132,
+          "tensionDifferenceFromHistoricalKN": 4.569585572
+        },
+        "wall30_spring20": {
+          "rangeKN": [
+            -44.732024806,
+            86.969039164
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 84,
+              "guard": [
+                6,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 23,
+              "guard": [
+                6,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 16.079030033,
+          "tensionDifferenceFromHistoricalKN": 4.571473619
+        }
+      }
+    },
+    {
+      "xy": [
+        332.5,
+        6000
+      ],
+      "historicalRangeKN": [
+        -45.413785934,
+        90.108394208
+      ],
+      "historicalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 59,
+          "programme": [
+            1,
+            5
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 81,
+          "programme": [
+            4,
+            6
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "candidateCases": {
+        "wall25_spring20": {
+          "rangeKN": [
+            -46.962430361,
+            97.975602338
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 55,
+              "guard": [
+                7,
+                1
+              ],
+              "guardSign": 1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 81,
+              "guard": [
+                7,
+                1
+              ],
+              "guardSign": -1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 7.86720813,
+          "tensionDifferenceFromHistoricalKN": 1.548644427
+        },
+        "wall30_spring20": {
+          "rangeKN": [
+            -46.954636721,
+            97.968102445
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 55,
+              "guard": [
+                7,
+                1
+              ],
+              "guardSign": 1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 81,
+              "guard": [
+                7,
+                1
+              ],
+              "guardSign": -1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 7.859708237,
+          "tensionDifferenceFromHistoricalKN": 1.540850787
+        }
+      }
+    },
+    {
+      "xy": [
+        332.5,
+        8200
+      ],
+      "historicalRangeKN": [
+        -40.194164133,
+        70.687432444
+      ],
+      "historicalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 95,
+          "programme": [
+            6,
+            6
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 18,
+          "programme": [
+            2,
+            5
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "candidateCases": {
+        "wall25_spring20": {
+          "rangeKN": [
+            -44.694693897,
+            86.536025886
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 26,
+              "guard": [
+                7,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 18,
+              "guard": [
+                7,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 15.848593442,
+          "tensionDifferenceFromHistoricalKN": 4.500529764
+        },
+        "wall30_spring20": {
+          "rangeKN": [
+            -44.692539684,
+            86.534784633
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 26,
+              "guard": [
+                7,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 18,
+              "guard": [
+                7,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 15.847352189,
+          "tensionDifferenceFromHistoricalKN": 4.498375551
+        }
+      }
+    },
+    {
+      "xy": [
+        332.5,
+        11667.5
+      ],
+      "historicalRangeKN": [
+        -47.737310795,
+        98.727239926
+      ],
+      "historicalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 58,
+          "programme": [
+            1,
+            4
+          ],
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 28,
+          "programme": [
+            4,
+            1
+          ],
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "candidateCases": {
+        "wall25_spring20": {
+          "rangeKN": [
+            -62.363267988,
+            128.584529655
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 58,
+              "guard": [
+                1,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 28,
+              "guard": [
+                1,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 29.857289729,
+          "tensionDifferenceFromHistoricalKN": 14.625957193
+        },
+        "wall30_spring20": {
+          "rangeKN": [
+            -62.372146714,
+            128.518354556
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 58,
+              "guard": [
+                1,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 28,
+              "guard": [
+                1,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 29.79111463,
+          "tensionDifferenceFromHistoricalKN": 14.634835919
+        }
+      }
+    },
+    {
+      "xy": [
+        3917.5,
+        3917.5
+      ],
+      "historicalRangeKN": [
+        -105.940128545,
+        195.254262108
+      ],
+      "historicalControllingCases": [
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 31,
+          "programme": [
+            4,
+            4
+          ],
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 55,
+          "programme": [
+            1,
+            1
+          ],
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "candidateCases": {
+        "wall25_spring20": {
+          "rangeKN": [
+            -110.572281596,
+            199.78341958
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 79,
+              "guard": [
+                4,
+                1
+              ],
+              "guardSign": 1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 55,
+              "guard": [
+                4,
+                1
+              ],
+              "guardSign": -1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 4.529157472,
+          "tensionDifferenceFromHistoricalKN": 4.632153051
+        },
+        "wall30_spring20": {
+          "rangeKN": [
+            -109.805308397,
+            199.355576917
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 79,
+              "guard": [
+                4,
+                1
+              ],
+              "guardSign": 1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 55,
+              "guard": [
+                4,
+                1
+              ],
+              "guardSign": -1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 4.101314809,
+          "tensionDifferenceFromHistoricalKN": 3.865179852
+        }
+      }
+    },
+    {
+      "xy": [
+        3917.5,
+        6000
+      ],
+      "historicalRangeKN": [
+        -74.414478505,
+        133.593356869
+      ],
+      "historicalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 6,
+          "programme": [
+            1,
+            0
+          ],
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 31,
+          "programme": [
+            4,
+            4
+          ],
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "candidateCases": {
+        "wall25_spring20": {
+          "rangeKN": [
+            -87.563163621,
+            160.157652755
+          ],
+          "controllingCases": [
+            {
+              "case": "0.35|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 27,
+              "guard": [
+                4,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 55,
+              "guard": [
+                4,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 26.564295886,
+          "tensionDifferenceFromHistoricalKN": 13.148685116
+        },
+        "wall30_spring20": {
+          "rangeKN": [
+            -87.240934727,
+            160.877086674
+          ],
+          "controllingCases": [
+            {
+              "case": "0.35|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 27,
+              "guard": [
+                4,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 55,
+              "guard": [
+                4,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 27.283729805,
+          "tensionDifferenceFromHistoricalKN": 12.826456222
+        }
+      }
+    },
+    {
+      "xy": [
+        3917.5,
+        8082.5
+      ],
+      "historicalRangeKN": [
+        -106.894050731,
+        194.995722113
+      ],
+      "historicalControllingCases": [
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 28,
+          "programme": [
+            4,
+            1
+          ],
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 58,
+          "programme": [
+            1,
+            4
+          ],
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "candidateCases": {
+        "wall25_spring20": {
+          "rangeKN": [
+            -110.731541362,
+            196.710354094
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 76,
+              "guard": [
+                0,
+                1
+              ],
+              "guardSign": 1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 58,
+              "guard": [
+                0,
+                1
+              ],
+              "guardSign": -1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 1.714631981,
+          "tensionDifferenceFromHistoricalKN": 3.837490631
+        },
+        "wall30_spring20": {
+          "rangeKN": [
+            -109.947870281,
+            196.24189845
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 76,
+              "guard": [
+                7,
+                1
+              ],
+              "guardSign": 1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 58,
+              "guard": [
+                7,
+                1
+              ],
+              "guardSign": -1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 1.246176337,
+          "tensionDifferenceFromHistoricalKN": 3.05381955
+        }
+      }
+    },
+    {
+      "xy": [
+        4700,
+        332.5
+      ],
+      "historicalRangeKN": [
+        -46.074572124,
+        96.837110899
+      ],
+      "historicalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original stripped suction",
+          "windIndex": 69,
+          "programme": [
+            3,
+            1
+          ],
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 66,
+          "programme": [
+            2,
+            5
+          ],
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "candidateCases": {
+        "wall25_spring20": {
+          "rangeKN": [
+            -55.333689268,
+            118.76502289
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 69,
+              "guard": [
+                0,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 59,
+              "guard": [
+                0,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 21.927911991,
+          "tensionDifferenceFromHistoricalKN": 9.259117144
+        },
+        "wall30_spring20": {
+          "rangeKN": [
+            -55.342009175,
+            118.742874673
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 69,
+              "guard": [
+                0,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 59,
+              "guard": [
+                0,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 21.905763774,
+          "tensionDifferenceFromHistoricalKN": 9.267437051
+        }
+      }
+    },
+    {
+      "xy": [
+        4700,
+        11667.5
+      ],
+      "historicalRangeKN": [
+        -46.07524877,
+        97.189040034
+      ],
+      "historicalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original stripped suction",
+          "windIndex": 65,
+          "programme": [
+            2,
+            4
+          ],
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 23,
+          "programme": [
+            3,
+            3
+          ],
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "candidateCases": {
+        "wall25_spring20": {
+          "rangeKN": [
+            -55.56505721,
+            118.999889956
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 65,
+              "guard": [
+                4,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 92,
+              "guard": [
+                4,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 21.810849922,
+          "tensionDifferenceFromHistoricalKN": 9.48980844
+        },
+        "wall30_spring20": {
+          "rangeKN": [
+            -55.571881552,
+            118.989369804
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 65,
+              "guard": [
+                4,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 92,
+              "guard": [
+                4,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 21.80032977,
+          "tensionDifferenceFromHistoricalKN": 9.496632782
+        }
+      }
+    },
+    {
+      "xy": [
+        5925,
+        8082.5
+      ],
+      "historicalRangeKN": [
+        -74.357454089,
+        133.826073621
+      ],
+      "historicalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 3,
+          "programme": [
+            0,
+            4
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 7,
+          "programme": [
+            1,
+            1
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "candidateCases": {
+        "wall25_spring20": {
+          "rangeKN": [
+            -88.299378032,
+            158.887702999
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 0,
+              "guard": [
+                7,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 58,
+              "guard": [
+                7,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 25.061629378,
+          "tensionDifferenceFromHistoricalKN": 13.941923943
+        },
+        "wall30_spring20": {
+          "rangeKN": [
+            -87.953210065,
+            159.605335345
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 0,
+              "guard": [
+                7,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 58,
+              "guard": [
+                7,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 25.779261724,
+          "tensionDifferenceFromHistoricalKN": 13.595755976
+        }
+      }
+    },
+    {
+      "xy": [
+        6000,
+        3917.5
+      ],
+      "historicalRangeKN": [
+        -74.287089141,
+        133.671040523
+      ],
+      "historicalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 0,
+          "programme": [
+            0,
+            1
+          ],
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 10,
+          "programme": [
+            1,
+            4
+          ],
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "candidateCases": {
+        "wall25_spring20": {
+          "rangeKN": [
+            -87.788626061,
+            162.241914636
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 86,
+              "guard": [
+                6,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 55,
+              "guard": [
+                6,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 28.570874113,
+          "tensionDifferenceFromHistoricalKN": 13.50153692
+        },
+        "wall30_spring20": {
+          "rangeKN": [
+            -87.450875224,
+            162.945194744
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 86,
+              "guard": [
+                6,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 55,
+              "guard": [
+                6,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 29.274154221,
+          "tensionDifferenceFromHistoricalKN": 13.163786083
+        }
+      }
+    },
+    {
+      "xy": [
+        7300,
+        332.5
+      ],
+      "historicalRangeKN": [
+        -46.057397403,
+        97.176829602
+      ],
+      "historicalControllingCases": [
+        {
+          "crack": 0.35,
+          "mode": "original stripped suction",
+          "windIndex": 83,
+          "programme": [
+            5,
+            1
+          ],
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 47,
+          "programme": [
+            6,
+            6
+          ],
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "candidateCases": {
+        "wall25_spring20": {
+          "rangeKN": [
+            -55.687819895,
+            122.400629466
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 55,
+              "guard": [
+                1,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 81,
+              "guard": [
+                1,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 25.223799864,
+          "tensionDifferenceFromHistoricalKN": 9.630422492
+        },
+        "wall30_spring20": {
+          "rangeKN": [
+            -55.690204039,
+            122.383278516
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 55,
+              "guard": [
+                1,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 81,
+              "guard": [
+                1,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 25.206448914,
+          "tensionDifferenceFromHistoricalKN": 9.632806636
+        }
+      }
+    },
+    {
+      "xy": [
+        7300,
+        11667.5
+      ],
+      "historicalRangeKN": [
+        -46.047982504,
+        96.835967781
+      ],
+      "historicalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original stripped suction",
+          "windIndex": 93,
+          "programme": [
+            6,
+            4
+          ],
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 36,
+          "programme": [
+            5,
+            2
+          ],
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "candidateCases": {
+        "wall25_spring20": {
+          "rangeKN": [
+            -55.94376824,
+            125.608913138
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 58,
+              "guard": [
+                5,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 77,
+              "guard": [
+                5,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 28.772945357,
+          "tensionDifferenceFromHistoricalKN": 9.895785736
+        },
+        "wall30_spring20": {
+          "rangeKN": [
+            -55.950409421,
+            125.595808989
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 58,
+              "guard": [
+                5,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 77,
+              "guard": [
+                5,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 28.759841208,
+          "tensionDifferenceFromHistoricalKN": 9.902426917
+        }
+      }
+    },
+    {
+      "xy": [
+        8082.5,
+        3917.5
+      ],
+      "historicalRangeKN": [
+        -106.16065923,
+        195.332282218
+      ],
+      "historicalControllingCases": [
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 10,
+          "programme": [
+            1,
+            4
+          ],
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 76,
+          "programme": [
+            4,
+            1
+          ],
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "candidateCases": {
+        "wall25_spring20": {
+          "rangeKN": [
+            -110.97868419,
+            199.266084344
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water down|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 58,
+              "guard": [
+                5,
+                1
+              ],
+              "guardSign": 1
+            },
+            {
+              "case": "0.2|partial water up|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 76,
+              "guard": [
+                5,
+                1
+              ],
+              "guardSign": -1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 3.933802126,
+          "tensionDifferenceFromHistoricalKN": 4.81802496
+        },
+        "wall30_spring20": {
+          "rangeKN": [
+            -110.164780448,
+            198.792956111
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water down|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 58,
+              "guard": [
+                5,
+                1
+              ],
+              "guardSign": 1
+            },
+            {
+              "case": "0.2|partial water up|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 76,
+              "guard": [
+                5,
+                1
+              ],
+              "guardSign": -1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 3.460673893,
+          "tensionDifferenceFromHistoricalKN": 4.004121218
+        }
+      }
+    },
+    {
+      "xy": [
+        8082.5,
+        6000
+      ],
+      "historicalRangeKN": [
+        -74.385803236,
+        133.687108653
+      ],
+      "historicalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 27,
+          "programme": [
+            4,
+            0
+          ],
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 7,
+          "programme": [
+            1,
+            1
+          ],
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "candidateCases": {
+        "wall25_spring20": {
+          "rangeKN": [
+            -88.342466728,
+            161.074221968
+          ],
+          "controllingCases": [
+            {
+              "case": "0.35|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 6,
+              "guard": [
+                1,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 79,
+              "guard": [
+                1,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 27.387113315,
+          "tensionDifferenceFromHistoricalKN": 13.956663492
+        },
+        "wall30_spring20": {
+          "rangeKN": [
+            -88.016376702,
+            161.797052509
+          ],
+          "controllingCases": [
+            {
+              "case": "0.35|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 6,
+              "guard": [
+                1,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 79,
+              "guard": [
+                1,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 28.109943856,
+          "tensionDifferenceFromHistoricalKN": 13.630573466
+        }
+      }
+    },
+    {
+      "xy": [
+        8082.5,
+        8082.5
+      ],
+      "historicalRangeKN": [
+        -105.454314166,
+        195.775269571
+      ],
+      "historicalControllingCases": [
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 7,
+          "programme": [
+            1,
+            1
+          ],
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 79,
+          "programme": [
+            4,
+            4
+          ],
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "candidateCases": {
+        "wall25_spring20": {
+          "rangeKN": [
+            -110.367375432,
+            198.065207281
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water down|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 55,
+              "guard": [
+                1,
+                1
+              ],
+              "guardSign": 1
+            },
+            {
+              "case": "0.2|partial water up|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 79,
+              "guard": [
+                1,
+                1
+              ],
+              "guardSign": -1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 2.28993771,
+          "tensionDifferenceFromHistoricalKN": 4.913061266
+        },
+        "wall30_spring20": {
+          "rangeKN": [
+            -109.609286265,
+            197.649077109
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 55,
+              "guard": [
+                1,
+                1
+              ],
+              "guardSign": 1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 79,
+              "guard": [
+                1,
+                1
+              ],
+              "guardSign": -1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 1.873807538,
+          "tensionDifferenceFromHistoricalKN": 4.154972099
+        }
+      }
+    },
+    {
+      "xy": [
+        11667.5,
+        332.5
+      ],
+      "historicalRangeKN": [
+        -47.711649425,
+        98.700184256
+      ],
+      "historicalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 76,
+          "programme": [
+            4,
+            1
+          ],
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 10,
+          "programme": [
+            1,
+            4
+          ],
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "candidateCases": {
+        "wall25_spring20": {
+          "rangeKN": [
+            -63.388679682,
+            140.868853566
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 76,
+              "guard": [
+                4,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 10,
+              "guard": [
+                4,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 42.16866931,
+          "tensionDifferenceFromHistoricalKN": 15.677030257
+        },
+        "wall30_spring20": {
+          "rangeKN": [
+            -63.393291087,
+            140.799432357
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 76,
+              "guard": [
+                4,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 10,
+              "guard": [
+                4,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 42.099248101,
+          "tensionDifferenceFromHistoricalKN": 15.681641662
+        }
+      }
+    },
+    {
+      "xy": [
+        11667.5,
+        3800
+      ],
+      "historicalRangeKN": [
+        -40.180423679,
+        70.689910431
+      ],
+      "historicalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 71,
+          "programme": [
+            3,
+            3
+          ],
+          "guard": [
+            2,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 36,
+          "programme": [
+            5,
+            2
+          ],
+          "guard": [
+            2,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "candidateCases": {
+        "wall25_spring20": {
+          "rangeKN": [
+            -48.38264588,
+            86.866591709
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 78,
+              "guard": [
+                2,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 39,
+              "guard": [
+                2,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 16.176681278,
+          "tensionDifferenceFromHistoricalKN": 8.202222201
+        },
+        "wall30_spring20": {
+          "rangeKN": [
+            -48.398860465,
+            86.854433413
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 78,
+              "guard": [
+                2,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 39,
+              "guard": [
+                2,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 16.164522982,
+          "tensionDifferenceFromHistoricalKN": 8.218436786
+        }
+      }
+    },
+    {
+      "xy": [
+        11667.5,
+        6000
+      ],
+      "historicalRangeKN": [
+        -45.413359834,
+        90.110408235
+      ],
+      "historicalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 77,
+          "programme": [
+            4,
+            2
+          ],
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 57,
+          "programme": [
+            1,
+            3
+          ],
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "candidateCases": {
+        "wall25_spring20": {
+          "rangeKN": [
+            -47.166963817,
+            99.01737107
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 76,
+              "guard": [
+                3,
+                1
+              ],
+              "guardSign": 1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 59,
+              "guard": [
+                3,
+                1
+              ],
+              "guardSign": -1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 8.906962835,
+          "tensionDifferenceFromHistoricalKN": 1.753603983
+        },
+        "wall30_spring20": {
+          "rangeKN": [
+            -47.158798733,
+            99.009854206
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 76,
+              "guard": [
+                3,
+                1
+              ],
+              "guardSign": 1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 59,
+              "guard": [
+                3,
+                1
+              ],
+              "guardSign": -1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 8.899445971,
+          "tensionDifferenceFromHistoricalKN": 1.745438899
+        }
+      }
+    },
+    {
+      "xy": [
+        11667.5,
+        8200
+      ],
+      "historicalRangeKN": [
+        -40.154072613,
+        70.904663703
+      ],
+      "historicalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 66,
+          "programme": [
+            2,
+            5
+          ],
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 47,
+          "programme": [
+            6,
+            6
+          ],
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "candidateCases": {
+        "wall25_spring20": {
+          "rangeKN": [
+            -47.610403128,
+            86.959581577
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 80,
+              "guard": [
+                3,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 44,
+              "guard": [
+                3,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 16.054917874,
+          "tensionDifferenceFromHistoricalKN": 7.456330515
+        },
+        "wall30_spring20": {
+          "rangeKN": [
+            -47.625883819,
+            86.9514842
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 80,
+              "guard": [
+                3,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 44,
+              "guard": [
+                3,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 16.046820497,
+          "tensionDifferenceFromHistoricalKN": 7.471811206
+        }
+      }
+    },
+    {
+      "xy": [
+        11667.5,
+        11667.5
+      ],
+      "historicalRangeKN": [
+        -47.724356274,
+        98.703549675
+      ],
+      "historicalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 79,
+          "programme": [
+            4,
+            4
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 7,
+          "programme": [
+            1,
+            1
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "candidateCases": {
+        "wall25_spring20": {
+          "rangeKN": [
+            -63.354953107,
+            137.771199904
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 79,
+              "guard": [
+                0,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 7,
+              "guard": [
+                0,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 39.067650229,
+          "tensionDifferenceFromHistoricalKN": 15.630596833
+        },
+        "wall30_spring20": {
+          "rangeKN": [
+            -63.359821259,
+            137.701716074
+          ],
+          "controllingCases": [
+            {
+              "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+              "windIndex": 79,
+              "guard": [
+                0,
+                1
+              ],
+              "guardSign": -1
+            },
+            {
+              "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+              "windIndex": 7,
+              "guard": [
+                0,
+                1
+              ],
+              "guardSign": 1
+            }
+          ],
+          "compressionDifferenceFromHistoricalKN": 38.998166399,
+          "tensionDifferenceFromHistoricalKN": 15.635464985
+        }
+      }
+    }
+  ],
+  "historicalBaseline": {
+    "courtWidthMM": 220,
+    "receivingSpringKNPerMM": 40.0,
+    "source": "project/rof/studies/roof_water_receiving_baseline.json"
+  },
+  "candidateCases": {
+    "wall25_spring20": {
+      "source": "project/rof/studies/roof_water_current_trial_280_25_60_20_independent.json",
+      "courtWidthMM": 280,
+      "courtWallMM": 25.0,
+      "receivingSpringKNPerMM": 20.0,
+      "maximumCompressionKN": 199.78341958,
+      "maximumTensionKN": 110.97868419,
+      "M24OriginalComparisonResistanceKN": 113.922727273,
+      "M24RemainingKN": 2.944043083,
+      "screens": {
+        "outer": true,
+        "court": false,
+        "M24": true,
+        "floorTies": false,
+        "roofTies": false
+      },
+      "maximumPortalNormalTieKN": {
+        "floor": 8.234219351,
+        "roof": 3.069072941
+      },
+      "retainedNativeVerticalWindKN": 62.622225,
+      "addedExplicitFloorWindGrossKN": 19.940625
+    },
+    "wall30_spring20": {
+      "source": "project/rof/studies/roof_water_wall30_trial_280_30_60_20_independent.json",
+      "courtWidthMM": 280,
+      "courtWallMM": 30.0,
+      "receivingSpringKNPerMM": 20.0,
+      "maximumCompressionKN": 199.355576917,
+      "maximumTensionKN": 110.164780448,
+      "M24OriginalComparisonResistanceKN": 113.922727273,
+      "M24RemainingKN": 3.757946825,
+      "screens": {
+        "outer": true,
+        "court": true,
+        "M24": true,
+        "floorTies": false,
+        "roofTies": false
+      },
+      "maximumPortalNormalTieKN": {
+        "floor": 8.226605937,
+        "roof": 3.065680483
+      },
+      "retainedNativeVerticalWindKN": 62.622225,
+      "addedExplicitFloorWindGrossKN": 19.940625
+    }
+  },
+  "upperCompressionResistanceKN": null,
+  "receivingDuty": "Qualify actual steel load introduction, finite contact and bedding, core material/section, spreading, splitting, eccentricity/slenderness and the downstream floor/foundation route. The stiffness spring and historical 200 kN collector screen supply no receiving resistance.",
+  "qualifications": [
+    "Both new wall-thickness cases use the same symmetric20kN/mm numerical hypothesis; actual tension/compression/contact assembly stiffness remains unqualified.",
+    "No interpolation or complete stiffness-interval envelope is inferred from these wall comparisons.",
+    "Historical differences include changed load, collector section and potentially stiffness; they are not attributed solely to roof goods.",
+    "All134 exterior/head dry masses vary0..cap at their declared source points; actual residual-piece centroids and roots remain to be joined.",
+    "The whole weather roof is retained. Independent mass uncertainty authorises no simultaneous physical renewal operations.",
+    "The retained native vertical projection is62.622225kN; added floor gross is19.940625kN under24 independent cassette sign groups. No area-only cancellation is credited.",
+    "Frozen4eb pressure inputs omit the primary120mm roof lap aboveZ7290.188718 up to7340.902909 and secondary baffle above7107.33 up to7145; no shielding is proved.",
+    "Actual apron rib/standoff contacts, local wind return, graded skins, complete corner articulation and renewal routes remain unqualified.",
+    "Same-diameter higher-strength rod material, if considered separately, does not increase elastic modulus or qualify the eight corner load paths."
+  ],
+  "sourceHashes": {
+    "project/rof/studies/roof_water_receiving_baseline.json": "8d9c3200f9cea459454884b5d569235286f2522cc7766eb999934f0001334c0d",
+    "project/rof/studies/roof_water_current_trial_280_25_60_20_independent.json": "b68add723f473528a0b0b306c7635e5272cc42ad25d561ab4720422fbb281889",
+    "project/rof/studies/roof_water_wall30_trial_280_30_60_20_independent.json": "388b78e1123ff0dc06b19a26f82c30b3d2db975aeba4c27603279beaa0089192",
+    "project/rof/studies/roof_water_wall30_receiving.py": "608e1fbd12d767ede2a9c521fde9609d4b806fad1e58497899525e6dfebea54a"
+  }
+}
