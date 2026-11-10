@@ -9,8 +9,8 @@
     "label": "swarm-20261110-root"
   },
   "claimedAt": "2026-11-10T21:02:13.030Z",
-  "heartbeatAt": "2026-11-10T22:51:35.013Z",
-  "expiresAt": "2026-11-10T23:36:35.013Z",
+  "heartbeatAt": "2026-11-10T23:13:45.126Z",
+  "expiresAt": "2026-11-10T23:58:45.126Z",
   "branch": "work/swarm-roof-g3-20261110",
   "predecessor": {
     "leaseId": "47083968-9abd-4627-90bb-040ec3eb4792",
@@ -36,7 +36,7 @@
   },
   "pr": 1472,
   "checkpoint": {
-    "evidence": "Published and verified f49968e96ad7dceb35ea448d87d20c851d337b40, tree 79013e9b5be6e3585fefb4a4c1a3103f63029510; frozen inner frame and pressure failure studies preserved; next dispatch via connector safe with zero unclaimed candidates at 22:43 UTC.",
-    "next": "Verify and publish 280x120x25 receiving-stiffness and installed-mass uncertainty studies plus paired movement; continue inner head wet-diversion and departure, outer module corner support and rain routing, and actual root-foot connection."
+    "evidence": "Published97b2920999d250d976702f39bf46cdd11760b716, treea8e09c63193cf5cf7cf93d2f3b33a36fb42f0140:20/40 spring and134installedmass studies,30mm member comparison,920/1112motion,22receivers,rootfoot andouterphysical failures. Priorf499 fullCI42915906354passed; currentheadCI required.",
+    "next": "Resolve actual inner high-back/secondary-apron and primary-arm topology with full wet/dry/wind joins; develop outer66-piece and head/rain sequencing; qualify actual normal-tie geometry and stiffness range before next native replay."
   }
 }
