@@ -1,5 +1,13 @@
 # Services adoption recovery checkpoint
 
+## Joined selection checkpoint on 10 November
+
+The current revision passes all 22 current-house checks. It adds six complete inlet-module and hood exchanges, finite guard envelopes, three captured radiator exchanges, 96 normal/boost pressure states, the selected local-extract shutoff seat and its supported first release. The new source-bound interface drawing has been rendered and inspected. The owning selection, HAD programme and OAS junction now describe the same occupied reference. Full HAD and affected checks, final independent internal review and exact-head CI remain the publication steps for this checkpoint.
+
+Principal Bath now uses the 400 × 600 K3 at local 2075–2675, with separate side-specific valve hands and 167.84 W room reserve. Bed4 and Principal inlets lower to Z6095, with Principal at east Y8950. Bed2/Bed3 exterior decks lower to4200 to keep the 400 mm hood above the finite guard. Family exhaust at6125 keeps31.95mm to the roof movement allowance. The actual local-extract shutoff sits on the selected trunk at [9850,10150,2997]. All material exceptions remain unapproved.
+
+The preceding checkpoints below describe their own intermediate state. Their geometry and test counts are retained for recovery provenance.
+
 ## Exterior cartridge checkpoint on 10 November
 
 The current g5 successor preserves PR1469 at4a6ed89e and replaces the rejected interior cassette rig. Its first tube and later elbow shared one occupied rest, and panel-only lowering crossed its solid carriage. The selected head stays fixed. One supported cartridge at a time moves650mm outward along its1%fall, then155mm farther into a dry rest. The exterior stage occupies normal250–950 with a2000mm worker envelope. Upper decks at4300 retain27mm below the roof carrier after48mm movement, body and setting allowance. The20mm room-side blank travels in the458–505 axial gap after the cartridge clears.

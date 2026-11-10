@@ -9,6 +9,7 @@ import {roomSelection} from './inhabited-service-rooms.mjs';
 import {controlAndStorage} from './inhabited-service-faults.mjs';
 import {composeOccupiedHouse} from './inhabited-service-compose.mjs';
 import {selectServiceInterfaces} from './selected-service-interfaces.mjs';
+import {selectedServicePlate} from './selected-service-plate.mjs';
 const project=new URL('../../',import.meta.url);
 export function deriveCurrentHouse(){
   const inputs={};
@@ -57,10 +58,10 @@ export function deriveCurrentHouse(){
   house.structuralServiceReview.principalBed=structure.principalBed;
   house.structuralServiceReview.kitchen=structure.kitchen;
   selectServiceInterfaces(house,structure,corner,base,read('str/studies/house-corner-rewind'));
-  house.model.currentAdoptionBlockers=['Joined service-head release, purge operation and complete outside faces remain under architectural review.'];
+  house.model.currentAdoptionBlockers=[];
   return {...house,inputs};
 }
-// Compact, reproducible review projection of the full furnished-house candidate.
+// Compact, reproducible review projection of the selected furnished house.
 export function serviceSchedule(house){
   const {model:m}=house, s=m.architecturalServices;
   return {proposal:house.id,structurallyAdopted:false,qualifiedPhysical:false,sources:house.inputs,court:house.courtReceiver.id,
@@ -78,7 +79,7 @@ export const scheduleText=house=>JSON.stringify(serviceSchedule(house),(_,v)=>ty
 if(process.argv[1]===fileURLToPath(import.meta.url)){
   const house=deriveCurrentHouse();
   if(process.argv.includes('--write')){
-    for(const [file,bytes] of [['current-house-services.json',scheduleText(house)],['current-house-services.svg',servicePlate(house)],['store-exchange.svg',storePlate(house)]])
+    for(const [file,bytes] of [['current-house-services.json',scheduleText(house)],['current-house-services.svg',servicePlate(house)],['store-exchange.svg',storePlate(house)],['selected-service-interfaces.svg',selectedServicePlate(house)]])
       writeFileSync(new URL(file,import.meta.url),bytes);
   } else process.stdout.write(JSON.stringify(house)+'\n');
 }

@@ -46,3 +46,17 @@ export function segmentBodyDistance(a,b,body,z,radius=300){
   }
   return Math.min(value(0),value(1),value((lo+hi)/2))-length*(hi-lo)/2;
 }
+
+export function segmentBoxDistance(a,b,box){
+  const delta=subtract(b,a),length=Math.hypot(...delta);
+  const value=t=>Math.hypot(...a.map((v,i)=>{
+    const p=v+t*delta[i];
+    return Math.max(box[i]-p,p-box[i]-box[i+3],0);
+  }));
+  let lo=0,hi=1;
+  for(let i=0;i<70;i++){
+    const left=(2*lo+hi)/3,right=(lo+2*hi)/3;
+    if(value(left)<value(right))hi=right;else lo=left;
+  }
+  return Math.min(value(0),value(1),value((lo+hi)/2))-length*(hi-lo)/2;
+}

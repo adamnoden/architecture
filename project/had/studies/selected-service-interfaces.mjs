@@ -1,7 +1,10 @@
 import {serviceApertures} from './service-apertures.mjs';
 import {selectPurgeWindows} from './purge-window-interfaces.mjs';
-import {pathSeparation} from './service-interface-geometry.mjs';
+import {pathSeparation,segmentBoxDistance,segmentDistance,pointRectDistance} from './service-interface-geometry.mjs';
 import {headMaintenance} from './service-head-maintenance.mjs';
+import {wetRoomPressureStates} from './inhabited-service-faults.mjs';
+import {selectedRadiatorMaintenance} from './radiator-maintenance.mjs';
+import {selectedInletMaintenance} from './inlet-maintenance.mjs';
 
 const distance=(a,b)=>Math.hypot(...a.map((v,i)=>v-b[i]));
 const length=path=>path.slice(1).reduce((sum,p,i)=>sum+distance(p,path[i]),0);
@@ -45,6 +48,8 @@ export function selectServiceInterfaces(house,structure,corner,base,occupied){
     'principal-bath':[[11075,6900,6210],[11075,7600,6203],[11075,7600,6063.25],[12000,7600,6054]]
   };
   const roomAccess={
+    'ground-WC':{platform:[8045,735,650,650],body:[8370,1060],deckZ:1100,handAlongMaximumMM:350,toolMaximumMM:600},
+    'family-bath':{platform:[10600,4975,650,650],body:[10925,5300],toolMaximumMM:700},
     utility:{platform:[10710,1765,650,650],body:[11035,2090]},
     kitchen:{platform:[8000,10700,650,650],body:[8325,11025]},
     'rear-bath':{platform:[640,9575,650,650],body:[965,9900]},
@@ -57,6 +62,8 @@ export function selectServiceInterfaces(house,structure,corner,base,occupied){
   for(const port of m.exteriorPortGeometry){
     const replacement=replacements.get(port.id),head=headByPort.get(port.id);
     if(replacement)port.p=clone(replacement.point);
+    if(port.id==='principal-supply')port.p=[12000,8950,6095];
+    if(port.id==='bed4-supply')port.p=[4800,12000,6095];
     if(head){
       port.p=clone(head.holes.find(p=>p.id===port.id).point);
       port.cassette=true;
@@ -85,7 +92,7 @@ export function selectServiceInterfaces(house,structure,corner,base,occupied){
       path:clone(drainPaths[fan.id]),routeStartMinimumZ:drainPaths[fan.id][0][2],
       scope:'Explicit falling route from the local trap outlet to its own visible outside sleeve. The drain remains independently accessible for cleaning.',
       fallRule:'Continuously falling independent 15 mm maximum outside drain. No return into the fan or concealed discharge into the head.'};
-    const q=13,v=q/1000/(Math.PI*.125**2/4),L=length(fan.path)/1000;
+    const q=fan.modes[0],v=q/1000/(Math.PI*.125**2/4),L=length(fan.path)/1000;
     const ductPa=.6*v*v*(7+.025*L/.125);
     const roomPa=base.air.transfer.twoDoorPathScreenDepressionPa;
     fan.selectedRoute={lengthMM:L*1000,clearDuctMM:125,completeInsulatedOD:227,maximumCollarOD:247,
@@ -104,12 +111,33 @@ export function selectServiceInterfaces(house,structure,corner,base,occupied){
     extract.path=clone(fan.path);
     extract.selectedRoute=fan.selectedRoute;
   }
+  const pressureStates=wetRoomPressureStates();
+  const fanOrder=['ground-WC','utility','kitchen','rear-bath','family-bath','principal-bath'];
+  for(const fan of s.fanAccess){
+    const index=fanOrder.indexOf(fan.id);
+    fan.selectedRoute.operatingModes=fan.modes.map(q=>{
+      const states=pressureStates.filter(row=>row.flowLps[index]===q);
+      const roomDepressionPa=Math.max(...states.map(row=>-row.pressurePa[index]));
+      const v=q/1000/(Math.PI*.125**2/4);
+      const ductPa=.6*v*v*(7+.025*fan.selectedRoute.lengthMM/1000/.125);
+      const totalPa=roomDepressionPa+ductPa+2;
+      const chartComparisonPa={5:20,13:35,16:40,20:50}[q];
+      return {flowLps:q,networkStates:states.length,roomDepressionPa,ductPa,secondaryFrontPa:2,totalPa,
+        chartComparisonPa,reservePa:chartComparisonPa-totalPa};
+    });
+  }
+  const airOperatingEnvelope={cases:pressureStates.length,
+    minimumWholeHouseLps:Math.min(...pressureStates.map(p=>p.totalExtractLps)),
+    maximumWholeHouseLps:Math.max(...pressureStates.map(p=>p.totalExtractLps)),
+    minimumModePressureReservePa:Math.min(...s.fanAccess.flatMap(f=>f.selectedRoute.operatingModes.map(p=>p.reservePa))),
+    comparisonSource:'https://products.titon.com/wp-content/uploads/2025/03/Titon-Ultimate-dMEV-Sales-Brochure.pdf',
+    comparison:'Page7 TOR graph. Conservative author readings20/35/40/50Pa at5/13/16/20L/s bound this feasibility comparison. Commission the actual fan in CF1 with every complete inlet, transfer, front, trap, bend and terminal. The published20Pa constant-flow table is retained separately.',
+    network:'Six15000mm² equivalent inlets,7600mm² small transfers,35000mm² kitchen transfer and90000mm² stair. All32 other-fan masks at each kitchen5/16/20 setting, no cooker makeup, zero facade wind.'};
   for(const inlet of s.supply){
     const port=m.exteriorPortGeometry.find(p=>p.id===inlet.id+'-supply');
     inlet.point=clone(port.p);inlet.wall=port.wall.replace('outer-','');
     inlet.faceTopLocal=port.localZ+200;inlet.ceilingClearance=3100-inlet.faceTopLocal;
-    inlet.selectedFirstRelease={inwardDrawMM:450,retainedOuterWeatherFlange:true,
-      sequence:'Isolate the local ventilation task, support the inner terminal, release the radial collar and draw its cartridge into the room. Keep the fixed outer sleeve and temporary weather closure supported.'};
+
   }
   s.cooker.extractPoint=clone(m.exteriorPortGeometry.find(p=>p.id==='cooker-exhaust').p);
   s.cooker.exhaustRoute=[[11125,11443.5,2600],[9900,11275,2572.25],[9900,12000,2565]];
@@ -119,6 +147,30 @@ export function selectServiceInterfaces(house,structure,corner,base,occupied){
     operation:review.hoodReroute,minimumOutwardGradient:.01,
     splitLengthsMaximumMM:600,maintenance:roomAccess.cooker,
     cleaning:'Separate cleanout at each turn and independently supported split tubes. No sealed inaccessible elbow or shared wet-room duct. Close the cooking station for grease cleaning and retain the exhaust shut-off upstream.'};
+  const localSeat=[9850,10150,2997];
+  s.cooker.closure.seats[1]=localSeat;
+  const actuatorBody=[9764,9853,2950.5,172,84,93];
+  const station=[10200,9500],shoulder=[...station,2150],hand=[9950,9850,2550],target=[9850,9937,2997];
+  const kitchenDuct=paths.kitchen;
+  s.cooker.closure.selectedLocalSeat={point:localSeat,axialX:[9750,9950],completeDuctOD:247,
+    actuatorBody,article:'Belimo NKQ24A-SR',shaftExtension:'Belimo AV8-25 240mm accessory, assembled engagement and torque qualified with the actual damper shaft',
+    platform:[9875,9175,650,650],deckZ:1100,body:station,bodyHeightMM:1380,shoulder,hand,target,
+    handReachMM:distance(shoulder,hand),socketMaximumMM:650,socketRequiredMM:distance(hand,target),
+    bodyToFurnitureMM:Math.min(...Object.values(m.groundFurniture).map(r=>pointRectDistance(station,r)-300)),
+    toolToMainDuctMM:Math.min(...kitchenDuct.slice(1).map((p,i)=>segmentDistance(hand,target,kitchenDuct[i],p)-123.5-15)),
+    ductToActuatorBodyMM:Math.min(...kitchenDuct.slice(1).map((p,i)=>segmentBoxDistance(kitchenDuct[i],p,actuatorBody)-123.5)),
+    ceilingReserveMM:3170-(localSeat[2]+123.5+20),
+    firstRelease:{selectedShaftEngagementMM:42,axialSouthDrawMM:50,
+      releasedBody:[9764,9803,2950.5,172,84,93],dryRestBody:[9764,9803,2500.5,172,84,93],
+      initialTray:[9739,9828,2930.5,222,109,20],releasedTray:[9739,9778,2930.5,222,109,20],
+      capturedTray:[9739,9778,2480.5,222,109,20],maximumCompleteMassKG:2,
+      initialTrayToPodMM:s.fanAccess.find(f=>f.id==='kitchen').podPlan[1]-(9828+109),
+      rejected134DeepTrayToPodMM:s.fanAccess.find(f=>f.id==='kitchen').podPlan[1]-(9828+134),
+      trayCapture:'Asymmetric tray has 25 mm side and south edges, ending flush with the drive north face. Positive side/front clamps retain the complete assembly. Its north edge moves away from the pod throughout release and lowering.',
+      bodyToTrayPlanMM:pointRectDistance(station,[9739,9778,222,109])-300,
+      control:[9950,9850,2550],maximumLoweringMM:450},
+    operation:'Close the fridge and cooking station. The 1100 deck leaves a full 1380 kneeling envelope below the fan pod. Approach the actuator from its south face with the recorded socket. Capture the complete drive on a wall-tied guided tray before releasing the shaft clamp and anti-rotation fixing. Draw it 50 mm south to clear the selected 42 mm shaft engagement, then lower it 450 mm onto the supported dry rest. The worker stays in the recorded station throughout. Qualify the complete shaft engagement, tray, guides, load and anti-rotation mounting before assembly.',
+    source:'https://www.belimo.com/mam/general-documents/datasheets/en-gb/belimo_NKQ24A-SR_datasheet_en-gb.pdf'};
   // The normal cooker duty now uses the longer selected route. Its fault
   // controls keep the greater inherited flow envelope as an adverse bound.
   s.cooker.operatingAir=review.hoodReroute;
@@ -195,14 +247,17 @@ export function selectServiceInterfaces(house,structure,corner,base,occupied){
     scope:'The preceding water-house proofs retain their exact old geometry. The occupied service composition does not inherit a whole-house pass from them.'};
   delete m.wholeHouseFit;
   delete m.architecturalDevelopmentProof;
+  const radiatorMaintenance=selectedRadiatorMaintenance(m);
+  const inletMaintenance=selectedInletMaintenance(m);
   const purge=purgeChoice.windows;
   const headArea=heads.filter(h=>h.newOpaque).reduce((total,h)=>total+h.grossHeadAreaM2,0);
   const daylight=['utility','rearBath','kitchenDining','principalBath'].map(room=>{
     const removed=heads.filter(h=>h.room===room).reduce((n,h)=>n+h.grossHeadAreaM2+(h.partitionReturn?.additionalGrossBlindAreaM2??0),0)
       +(room==='rearBath'?purgeChoice.additionalRearBlindAreaM2:0);
-    return {room,oldGrossGlazingM2:s.rooms[room].windows,opaqueHeadM2:removed,
-      retainedGrossGlazingM2:s.rooms[room].windows-removed,
-      retainedToFloorRatio:(s.rooms[room].windows-removed)/s.rooms[room].plan};
+    return {room,grossOpeningBeforeFramesM2:s.rooms[room].windows,opaqueHeadAndBlindM2:removed,
+      additionalOpaqueM2:heads.filter(h=>h.room===room).reduce((n,h)=>n+(h.newOpaque?h.grossHeadAreaM2:h.incrementalOpaqueAreaM2)+(h.partitionReturn?.additionalGrossBlindAreaM2??0),0)+(room==='rearBath'?.1:0),
+      retainedGrossGlazedFieldM2:s.rooms[room].windows-removed,
+      grossGlazedFieldToFloorRatio:(s.rooms[room].windows-removed)/s.rooms[room].plan};
   });
   const outlets=m.exteriorPortGeometry.filter(p=>p.id.endsWith('-exhaust'));
   const intakes=m.exteriorPortGeometry.filter(p=>p.id.endsWith('-supply')||p.id==='cooker-makeup');
@@ -211,15 +266,28 @@ export function selectServiceInterfaces(house,structure,corner,base,occupied){
       clearSphericalFaceBoundMM:distance(outlet.p,inlet.p)-Math.SQRT2*(200+180)}));
     return {outlet:outlet.id,nearestIntake:distances.sort((a,b)=>a.axisDistanceMM-b.axisDistanceMM)[0]};
   });
-  for(const head of heads)headMaintenance(head,m);
-  const interfaceSelection={id:'HAD-SERVICES-02',basis:structure.candidate,heads,
+  for(const head of heads){
+    headMaintenance(head,m);
+    for(const register of [m.openings,m.archOpeningRegister])register[head.level].find(q=>q.id===head.id).serviceHead=clone(head);
+  }
+  const wallTerminalRenewal=['ground-WC','family-bath'].map(id=>{
+    const fan=s.fanAccess.find(f=>f.id===id),ports=m.exteriorPortGeometry.filter(p=>p.id===id+'-exhaust'||p.id===id+'-condensate');
+    const terminal={id,level:fan.level?'FIRST':'GROUND',wall:ports[0].wall,roomAccess:roomAccess[id],
+      holes:ports.map(p=>({id:p.id,point:p.p,radius:p.r,faceWidth:p.id.endsWith('exhaust')?330:60}))};
+    headMaintenance(terminal,m);
+    return terminal;
+  });
+  const interfaceSelection={id:'HAD-SERVICES-02',basis:structure.candidate,heads,wallTerminalRenewal,
     ports:selectedCheck.ports.map(p=>({id:p.id,point:p.point,radius:p.radius,minimumMM:p.minimum})),
     weatherFaces:selectedCheck.ports.map(p=>p.weather),
     fixedHeadOpaqueAreaM2:headArea,additionalUtilityBlindAreaM2:.27,additionalPrincipalBandAreaM2:.01,purge,daylight,separation,
-    occupiedConsequences:{radiators:purgeChoice.relocations,inverter:purgeChoice.inverter,additionalRearBlindAreaM2:purgeChoice.additionalRearBlindAreaM2},
-    normalHouseExtractLps:s.fanAccess.reduce((n,f)=>n+f.modes[0],0),
+    radiatorMaintenance,inletMaintenance,occupiedConsequences:{radiators:purgeChoice.relocations,inverter:purgeChoice.inverter,additionalRearBlindAreaM2:purgeChoice.additionalRearBlindAreaM2},
+    airOperatingEnvelope,normalHouseExtractLps:s.fanAccess.reduce((n,f)=>n+f.modes[0],0),
     conservativeFloorCriterionLps:base.air.floorCriterionLps,
     heatBoundary:'Retain the former whole-opening Uw 1.6 upper limit and all opening perimeters. No heat-loss reduction is credited for the opaque bands.',
+    reentry:{principalPurge:'Operate the principal fan inhibit with the window positively latched. Keep the latch closed through motor coast-down until the local measured-flow indicator confirms at most 0.25 L/s, then release the manual catch and open the leaf. Positive reclosure permits normal humidity demand. The other five fans command 16 L/s during normal purge. Cooker safety shut-off, fire and frost controls retain priority and can reduce that mechanical total.',
+      beforeLeafReleaseMaximumLps:.25,commandedOtherMechanicalPurgeLps:80,
+      qualification:'Test each selected face with both neighboring-window states, measured facade pressures and a tracer at full extraction. Qualify the local inhibit, low-flow confirmation and return to normal duty, including power and component faults. Verify absence of exhaust or condensate return at every intake. Preserve wind-driven rain capture and the temporary closures in service states.'},
     outside:'All exhausts discharge openly outside the four external elevations. No outlet enters the courtyard, loggia or an architectural screen. Head glazing remains fixed below the new outlets. Resolve site wind, nearby open windows and buildings with the selected terminal before installation.',
     scope:'One occupied architectural reference with complete service locations. Installed apparatus, material exceptions, weather, fire, wind and structural acceptance remain separately owned.'};
   house.selectedServiceInterfaces=interfaceSelection;
@@ -228,6 +296,9 @@ export function selectServiceInterfaces(house,structure,corner,base,occupied){
     portCartridge:'316L removable outward cartridge and supported flat room-side joint, with retained fixed receiver and separate temporary weather blank',
     ancillary:'Actual seals, coatings, binders, fasteners and joint constituents enter the strict material register before installation.',
     utilityBlindReturnM2:h.partitionReturn?.additionalGrossBlindAreaM2??0,approvedExceptions:0}));
+  s.materials.principalPurgeControl={occurrence:'Principal purge sequencing',
+    components:'Local fan inhibit, measured low-flow indication and positive window catch. Include all sensors, conductors, insulation, electronics, enclosures and contacts in the complete constituent register.',
+    approvedExceptions:0};
   s.facade=interfaceSelection;s.authority='HAD-SERVICES-02 selected occupied architectural reference';
   m.servicesInterface.source=s.authority;
   m.servicesOccurrenceProof={source:s.authority,emitters:s.emitters.length,extract:s.fanAccess.length,fittedWC:4};

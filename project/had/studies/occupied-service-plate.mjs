@@ -5,7 +5,7 @@ const mm=n=>Number(n.toFixed(3));
 const rect=(x,y,w,h,c,stroke='none')=>'<rect x="'+mm(x)+'" y="'+mm(y)+'" width="'+mm(w)+'" height="'+mm(h)+'" fill="'+c+'" stroke="'+stroke+'"/>';
 const line=(x,y,X,Y,c,w=2)=>'<line x1="'+x+'" y1="'+y+'" x2="'+X+'" y2="'+Y+'" stroke="'+c+'" stroke-width="'+w+'"/>';
 let out='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1260 772" role="img" aria-labelledby="t"><title id="t">Room heat and first movement of the occupied house services</title><style>text{font:15px Arial,sans-serif;fill:'+ink+'}.title{font-size:26px;font-weight:700}.h{font-size:18px;font-weight:700}.sm{font-size:13px}</style>';
-out+=rect(0,0,1260,772,paper)+text(30,38,'The occupied house · winter heat and plant exchange','title')+text(30,68,'Pre-site recovery proposal. Blue is scheduled radiator output; copper is the local electrical supplement.');
+out+=rect(0,0,1260,772,paper)+text(30,38,'The occupied house · winter heat and plant exchange','title')+text(30,68,'Selected occupied reference. Blue shows radiator output and copper shows the local electrical supplement.');
 out+=text(30,110,'A   Heat in each served room','h')+text(675,110,'B   Plant room and east working bay','h');
 Object.entries(s.rooms).sort((a,b)=>a[0].localeCompare(b[0])).forEach(([n,r],i)=>{
  const y=147+i*28,start=165,scale=.150;
@@ -20,7 +20,7 @@ out+=line(X(10035),Y(4550),X(10035),Y(4800),blue,4)+line(X(10120),Y(4760),X(1003
 out+=text(682,620,'Remove the D1 manifold and cold bridge before the first roll.','sm');
 out+=rect(32,600,22,9,blue)+text(62,610,'Water radiator','sm')+rect(184,600,22,9,warm)+text(214,610,'Direct electric','sm')+rect(345,595,2,19,ink)+text(358,610,'Occupied room requirement','sm');
 out+=text(30,664,'C   During defrost, inhibit cooking and keep the charged 260 L useful buffer connected. Reheat before the next high-cooking period.','sm');
-out+=text(30,701,'The hot duty is '+(s.heat.designHotW/1000).toFixed(2)+' kW; the useful 14 kW source retains '+s.heat.hotSpareW.toFixed(0)+' W at the selected low-line room allocation.','h');
+out+=text(30,701,'Hot duty '+(s.heat.designHotW/1000).toFixed(2)+' kW · useful 14 kW source · '+s.heat.hotSpareW.toFixed(0)+' W reserve at the selected low-line room allocation.','h');
 out+=text(30,735,'Compare actual source regions, appliance ratings, sleeve admission, heat losses, occupied access, and both final inspections before use.','sm');
 return out+'</svg>\n';
 }

@@ -11,8 +11,8 @@ export function selectPurgeWindows(model){
       branch:[[1800,10800],[800,10800],[800,9900],[529.5,9900]]},
     {id:'kitchen-E',nextId:'kitchen-W',level:0,plan:[7719.5,10195,200,1350],
       branch:[[10500,10800],[8000,10800],[8000,10195],[7819.5,10195]]},
-    {id:'principal-E-high',nextId:'principal-S-high',level:1,plan:[10892.5,6600,650,200],z:[2100,2700],
-      branch:[[11200,7000],[11200,6700],[10942.5,6700]]}
+    {id:'principal-E-high',nextId:'principal-S-high',level:1,plan:[10975,6600,550,200],z:[2075,2675],length:400,
+      branch:[[11200,7000],[11200,6700],[11000,6700]]}
   ].map(change=>{
     const emitter=s.emitters.find(e=>e.id===change.id),old=clone(emitter);
     const furniture=change.level?model.upperFurniture:model.groundFurniture;
@@ -21,10 +21,24 @@ export function selectPurgeWindows(model){
     emitter.completePlanWithValvesAndBrackets=clone(change.plan);
     emitter.pressurePairBranchPlan=clone(change.branch);
     if(change.z)[emitter.bottomLocal,emitter.topLocal]=change.z;
+    let heatChangeW=0;
+    if(change.length){
+      emitter.length=change.length;
+      const room=s.rooms[emitter.room],oldOutput=room.selectedHydronicW;
+      room.selectedHydronicW*=956/(2389*.5);
+      heatChangeW=room.selectedHydronicW-oldOutput;
+      room.marginW+=heatChangeW;
+      emitter.selectedCatalogue={article:'Stelrad Compact K3 3063304',nominalDelta50W:956,
+        bodyHW:[600,400],dryMassKG:21,filledBodyMassKG:24.92,
+        outputAt55_45_22W:room.selectedHydronicW,roomDutyW:room.designDutyW,
+        source:'https://www.stelrad.com/wp-content/uploads/2019/12/25928_Compact_-K3_Web.pdf'};
+      emitter.renewal.handling='A21kg dry body plus valves and clips. Use the selected captured wall-tied carriage for its complete30kg exchange envelope.';
+    }
     furniture['service-emitter-'+change.nextId]=clone(change.plan);
     return {...change,previousPlan:old.completePlanWithValvesAndBrackets,previousBranch:old.pressurePairBranchPlan,
-      heatChangeW:0,reason:'Release the floor approach to the retained purge window. Keep the same complete radiator, valves, output and exchange duty.'};
+      heatChangeW,reason:'Release the floor approach to the retained purge window. Retain the complete valves and exchange duty. The separately scheduled principal400mm radiator retains its room heat margin.'};
   });
+  s.heat.minRoomMarginW=Math.min(...Object.values(s.rooms).map(r=>r.marginW));
   // The rear west light is already fixed by its service head. Give the moved
   // radiator its original 50 mm lifting reserve below a 50 mm maximum cill.
   for(const register of [model.openings,model.archOpeningRegister]){

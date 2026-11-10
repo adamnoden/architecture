@@ -87,11 +87,17 @@ No 50 mm drawing mark becomes a selected step. General −150 exterior ground
 and 0 entrance do not select courtyard/garden paving. A low/level access target
 is an intended duty, not proven weather performance or statutory acceptance.
 
+## Service-window revision · 10 November 2026
+
+HAD-SERVICES-02 selects four new fixed opaque service heads and a 10 mm extension to the existing principal-bath head. The utility has a 200 mm blind partition return. The already-fixed rear west light raises its sill from 750 to 850. Together these changes add 2.47502 m² of opaque aperture. Utility south, Rear Bath north and Kitchen east receive paired outward rectangular manual purge leaves. Principal Bath retains one southern rectangular leaf beneath its service head. Each selected leaf has a finite 35° operation, positive catch and bronze peg stay. The same current source records the shifted SAP-C1 opening centres, gross glazed-field costs, furniture changes and complete replacement envelopes. [Owning service selection](../had/inhabited-services-selection.md) · [Selected operating geometry](../had/studies/purge-window-interfaces.mjs)
+
+These named service occurrences use their newly defined sash, hinge and stay geometry. The earlier coupled-window and north-export occurrences retain their pinned proof sources. Actual glazing edges, flexible seals, whole-window heat, wind, rain, cycle and daylight performance enter the selected assembly qualification. The complete material register includes every joint constituent and carries zero approved exceptions.
+
 ## Result and residual owners
 
-Candidate opening expression now agrees with actual support/release/boundary
-intent and IAS depth costs. No facade/aperture/plan change or performance
-claim occurs.
+The earlier junction result aligned candidate opening expression with support,
+release and boundary intent and IAS depth costs. The named service-window
+revision above supplies the current geometric changes for those occurrences.
 
 OAS-03 owns the selected opening topology, replacement record and bounded
 details. HAD-02M/03 owns final material/room/visible synthesis. Source changes

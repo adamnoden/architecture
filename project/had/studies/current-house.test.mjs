@@ -5,6 +5,8 @@ import {deriveCurrentHouse,scheduleText} from './current-house.mjs';
 import {cookerFault} from './cooker-fault.mjs';
 import {servicePlate,storePlate} from './occupied-service-plate.mjs';
 import {segmentDistance} from './service-interface-geometry.mjs';
+import {wetRoomPressureStates} from './inhabited-service-faults.mjs';
+import {selectedServicePlate} from './selected-service-plate.mjs';
 const x=deriveCurrentHouse(),m=x.model,s=m.architecturalServices;
 const near=(a,b,tol=1e-5)=>assert(Math.abs(a-b)<tol,`${a} != ${b}`);
 test('recovered 46 openings and 15 actual level-specific occupied room loads reproduce',()=>{
@@ -40,8 +42,8 @@ test('store cradle clears the two piers and retained plant only after first rele
   near(route.maxRetainedValveRadius,45.96045419);
 });
 
-test('published schedule and both figures reproduce from the complete house option',()=>{
-  for(const [file,render] of [['current-house-services.json',scheduleText],['current-house-services.svg',servicePlate],['store-exchange.svg',storePlate]])
+test('published schedule and three figures reproduce from the complete house option',()=>{
+  for(const [file,render] of [['current-house-services.json',scheduleText],['current-house-services.svg',servicePlate],['store-exchange.svg',storePlate],['selected-service-interfaces.svg',selectedServicePlate]])
     assert.equal(readFileSync(new URL(file,import.meta.url),'utf8'),render(x),file);
   assert.equal(Object.keys(x.inputs).length,17);
 });
@@ -212,7 +214,7 @@ test('complete independent drains reject the old near-coincident main-duct route
 
 test('fixed heads renew one outward cartridge at a time on finite side stations',()=>{
   const overlap=(a,b)=>[0,1].every(i=>Math.min(a[i]+a[i+2],b[i]+b[i+2])>Math.max(a[i],b[i]));
-  for(const head of x.selectedServiceInterfaces.heads){
+  for(const head of [...x.selectedServiceInterfaces.heads,...x.selectedServiceInterfaces.wallTerminalRenewal]){
     const r=head.renewal;
     assert(r.roomBodyToFurnitureMM>=25);
     assert(r.roomBodyToInstalledDuctMM>=25);
@@ -230,6 +232,9 @@ test('fixed heads renew one outward cartridge at a time on finite side stations'
     }
     for(const c of r.cartridges){
       assert(c.minimumRadialRunningClearanceMM>=3);
+      assert(c.exteriorMovingBodyRoofReserveMM>=25,c.id+' moving roof body');
+      assert(c.movingBodyToInboardGuardMM>=25,c.id+' stage guard');
+      assert(c.temporaryBlank.controlToolRequiredMM<=c.temporaryBlank.controlToolMaximumMM,c.id+' blank control');
       assert.equal(c.firstOutwardDrawMM,650);
       assert.equal(c.finalOutwardDrawMM,805);
       near(c.initial.z[0]-c.clearanceState.z[0],6.5);
@@ -259,4 +264,87 @@ test('all21 complete weather faces retain the actual selected structural and hea
   const principal=x.selectedServiceInterfaces.heads.find(h=>h.id==='east-window-2');
   assert.equal(principal.holes[0].faceWidth,284);
   assert.equal(principal.weather.principalTelescopicJoint.minimumMeasuredRadialGap,.5);
+});
+
+test('the96 occupied airflow states preserve mass and fit the recorded native pressure comparisons',()=>{
+  const rows=wetRoomPressureStates();
+  assert.equal(rows.length,96);
+  for(const row of rows)near(row.inletLps.reduce((sum,q)=>sum+q,0),row.totalExtractLps,1e-6);
+  const a=x.selectedServiceInterfaces.airOperatingEnvelope;
+  assert.equal(a.minimumWholeHouseLps,70);
+  assert.equal(a.maximumWholeHouseLps,100);
+  assert(a.minimumWholeHouseLps>=x.selectedServiceInterfaces.conservativeFloorCriterionLps);
+  for(const fan of s.fanAccess)for(const mode of fan.selectedRoute.operatingModes){
+    assert(mode.reservePa>13);
+    near(mode.totalPa,mode.roomDepressionPa+mode.ductPa+mode.secondaryFrontPa);
+  }
+});
+
+test('all six inlet modules and fixed outer hoods have finite separate exchange states',()=>{
+  const overlap=(a,b)=>[0,1].every(i=>Math.min(a[i]+a[i+2],b[i]+b[i+2])>Math.max(a[i],b[i]));
+  for(const r of x.selectedServiceInterfaces.inletMaintenance){
+    assert(r.bodyToFurnitureMM>=25,r.id+' body');
+    assert(r.bodyToCarrierMM>=25,r.id+' carrier');
+    assert(r.handReachMM<=600&&r.socketRequiredMM<=r.socketMaximumMM);
+    assert.equal(r.innerCartridge.drawMM,250);
+    assert(r.exterior.roofReserveMM>=25);
+    assert(r.exterior.stage.roofReserveMM>=25);
+    assert(r.exterior.bodyToMovingHoodMM>=25);
+    assert(r.exterior.hoodToInboardGuardMM>=25,r.id+' guard');
+    assert(r.exterior.handReachMM<=600);
+    const furniture=structuredClone(['study','living'].includes(r.id)?m.groundFurniture:m.upperFurniture);
+    Object.assign(furniture,r.park??{});
+    if(r.platform)for(const [id,plan]of Object.entries(furniture))assert(!overlap(r.platform,plan),r.id+' '+id);
+  }
+});
+
+test('three radiator relocations retain reachable unions and complete captured exchange bodies',()=>{
+  for(const r of x.selectedServiceInterfaces.radiatorMaintenance){
+    assert(r.carrierToFurnitureMM>=25,r.id+' carrier');
+    assert(r.operatorToFurnitureMM>=25&&r.operatorToCarrierMM>=25,r.id+' operator');
+    assert(r.valveBodyToFurnitureMM>=25,r.id+' valves');
+    assert(r.valveHandReachMM.every(n=>n<=600));
+    if(r.valveToolMaximumMM){
+      assert(r.valveToolRequiredMM.every(n=>n<=r.valveToolMaximumMM));
+      assert(r.valveToolToPanelMinimumMM>=25);
+      assert(r.rejectedCentralHandToolToPanelMM<0);
+    }
+    assert(r.controlReachMM<=600);
+    assert(r.continuousReturnReserveMM>=25,r.id+' return');
+    assert.equal(r.liftMM,50);
+    assert.equal(r.frontDrawMM,200);
+  }
+  const principal=s.emitters.find(e=>e.id==='principal-S-high');
+  assert.equal(principal.length,400);
+  assert.equal(principal.selectedCatalogue.nominalDelta50W,956);
+  assert(s.rooms.principalBath.marginW>167);
+});
+
+test('the kitchen safety seat follows the selected trunk and releases into a supported clear rest',()=>{
+  const seat=s.cooker.closure.selectedLocalSeat;
+  const duct=s.fanAccess.find(f=>f.id==='kitchen').path;
+  assert.deepEqual(s.cooker.closure.seats[1],seat.point);
+  near(segmentDistance(seat.point,seat.point,duct[1],duct[2]),0);
+  assert(seat.handReachMM<=600);
+  assert(seat.socketRequiredMM<=seat.socketMaximumMM);
+  assert(seat.toolToMainDuctMM>=25);
+  assert(seat.ductToActuatorBodyMM>=25);
+  assert(seat.bodyToFurnitureMM>=25);
+  assert(seat.ceilingReserveMM>=25);
+  const first=seat.firstRelease;
+  assert(first.axialSouthDrawMM>first.selectedShaftEngagementMM);
+  assert(first.bodyToTrayPlanMM>=25);
+  near(first.releasedBody[1],seat.actuatorBody[1]-first.axialSouthDrawMM);
+  near(first.dryRestBody[2],first.releasedBody[2]-first.maximumLoweringMM);
+  near(first.initialTray[2]+first.initialTray[5],seat.actuatorBody[2]);
+  near(first.initialTray[1]+first.initialTray[4],seat.actuatorBody[1]+seat.actuatorBody[4]);
+  near(first.initialTrayToPodMM,13);
+  assert(first.rejected134DeepTrayToPodMM<0);
+  near(first.releasedTray[1],first.initialTray[1]-first.axialSouthDrawMM);
+  near(first.capturedTray[2],first.releasedTray[2]-first.maximumLoweringMM);
+  near(first.capturedTray[2]+first.capturedTray[5],first.dryRestBody[2]);
+  const overlap=(a,b)=>[0,1].every(i=>Math.min(a[i]+a[i+2],b[i]+b[i+2])>Math.max(a[i],b[i]));
+  for(const [id,plan]of Object.entries(m.groundFurniture))assert(!overlap(seat.platform,plan),id+' actuator platform');
+  assert.equal(x.selectedServiceInterfaces.reentry.commandedOtherMechanicalPurgeLps,80);
+  assert.equal(x.selectedServiceInterfaces.reentry.beforeLeafReleaseMaximumLps,.25);
 });

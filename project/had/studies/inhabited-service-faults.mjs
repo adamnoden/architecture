@@ -1,25 +1,26 @@
 // Recovered calculation, independent of the archived room-allocation generator.
 // Dimensions mm, airflow L/s, pressure Pa. A through-flow and zero-reverse
 // inlet assumption only apply to the recorded operating and negative cases.
+const dp=(q,a)=>.6*q*Math.abs(q)/(.61*a/1000)**2;
+function bisect(f,lo,hi){
+  if(f(lo)*f(hi)>0)throw Error('Unbracketed physical state');
+  const increasing=f(hi)>f(lo);
+  for(let i=0;i<38;i++){const x=(lo+hi)/2;if((f(x)<0)===increasing)lo=x;else hi=x}
+  return (lo+hi)/2;
+}
+function supply(p,wet){const f=q=>dp(q,15000)+dp(q-wet,7600)+p;return f(0)>=0?0:bisect(f,0,50)}
+function state(mask,net,area){
+  const fans=[0,1,3,4,5].map(i=>13+3*((mask>>i)&1));
+  const [guest,utility,rear,family,principal]=fans;
+  const bedrooms=p=>[supply(p,0),supply(p,0),supply(p,rear),supply(p,principal)];
+  const hall=(p,bed)=>p-dp(bed.reduce((a,b)=>a+b,0)-rear-family-principal,90000);
+  const ring=bisect(p=>{const b=bedrooms(p),h=hall(p,b);
+    return b.reduce((a,b)=>a+b,0)+2*supply(h,0)-fans.reduce((a,b)=>a+b,net);},-30,-.001);
+  const b=bedrooms(ring),h=hall(ring,b),k=h-dp(net,area);
+  return {h,k,ring,inlets:[...b,supply(h,0),supply(h,0)]};
+}
+
 export function controlAndStorage(nativeCharts,addedLengthM=0,addedBendK=0){
-  const dp=(q,a)=>.6*q*Math.abs(q)/(.61*a/1000)**2;
-  function bisect(f,lo,hi){
-    if(f(lo)*f(hi)>0)throw Error('Unbracketed physical state');
-    const increasing=f(hi)>f(lo);
-    for(let i=0;i<38;i++){const x=(lo+hi)/2;if((f(x)<0)===increasing)lo=x;else hi=x}
-    return (lo+hi)/2;
-  }
-  function supply(p,wet){const f=q=>dp(q,15000)+dp(q-wet,7600)+p;return f(0)>=0?0:bisect(f,0,50)}
-  function state(mask,net,area){
-    const fans=[0,1,3,4,5].map(i=>13+3*((mask>>i)&1));
-    const [guest,utility,rear,family,principal]=fans;
-    const bedrooms=p=>[supply(p,0),supply(p,0),supply(p,rear),supply(p,principal)];
-    const hall=(p,bed)=>p-dp(bed.reduce((a,b)=>a+b,0)-rear-family-principal,90000);
-    const ring=bisect(p=>{const b=bedrooms(p),h=hall(p,b);
-      return b.reduce((a,b)=>a+b,0)+2*supply(h,0)-fans.reduce((a,b)=>a+b,net);},-30,-.001);
-    const b=bedrooms(ring),h=hall(ring,b),k=h-dp(net,area);
-    return {h,k,inlets:[...b,supply(h,0),supply(h,0)]};
-  }
   const area=35000,chart=nativeCharts['10'],cases=[],idle=[],restored=[],maxInlets=Array(6).fill(0);
   const save=values=>values.forEach((x,i)=>maxInlets[i]=Math.max(maxInlets[i],x));
   function fanPa(q){const i=chart.findIndex((p,j)=>j&&q<=p[0]);
@@ -63,4 +64,24 @@ export function controlAndStorage(nativeCharts,addedLengthM=0,addedBendK=0){
   }
   return {air,hotWater:{netOrderedLitres:300,standingLoss60_20KWhDay:3.5,netKWAt216point2V:kw,
     minimumMixedC:worstTemp,missedL40:worstMiss,finalDayChargeKWh:last,draws}};
+}
+
+// All combinations of five normal/boost fans and the three kitchen settings.
+// This uses the identical fourteen-room reductions as the cooker comparison.
+export function wetRoomPressureStates(){
+  const result=[];
+  for(let mask=0;mask<64;mask++){
+    if(mask&4)continue;
+    for(const kitchenLps of [5,16,20]){
+      const flows=[0,1,3,4,5].map(i=>13+3*((mask>>i)&1));
+      const [guest,utility,rear,family,principal]=flows;
+      const q=state(mask,kitchenLps,35000);
+      const pressures=[q.h-dp(guest,7600),q.h-dp(utility,7600),q.k,
+        -dp(q.inlets[2],15000)-dp(rear,7600),q.ring-dp(family,7600),
+        -dp(q.inlets[3],15000)-dp(principal,7600)];
+      result.push({mask,flowLps:[guest,utility,kitchenLps,rear,family,principal],pressurePa:pressures,
+        totalExtractLps:flows.reduce((sum,v)=>sum+v,kitchenLps),inletLps:q.inlets});
+    }
+  }
+  return result;
 }

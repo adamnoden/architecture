@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 5 · **Active:** 0 · **Blocked:** 27 · **Held:** 2 · **Done:** 124 · **Cancelled:** 0
+**Structurally ready:** 4 · **Active:** 0 · **Blocked:** 27 · **Held:** 2 · **Done:** 125 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -21,8 +21,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
-| `HAD-SERVICES-ADOPTION` | Select and export one service system for the occupied house | HAD / MAT / IAS | — |
-| `ROF-RWT-GATE` | Reference House roof and rainwater reconciliation gate | ROF / RWT / HAD | ROF-09, RWT-08 |
+| `ROF-RWT-GATE` | Reference House roof and rainwater reconciliation gate | ROF / RWT / HAD | ROF-09, RWT-08, MAT-COORDINATION |
 | `DPL-COMMISSION` | Receive owner-nominated real plot and authorised assessment scope | DPL | DPL-SITE-ASSESSMENT |
 | `PHY-04` | Wall/ceiling movement-junction build and test | PHY | — |
 | `EPR-RH11` | Obtain and process competent Reference House reviews | EPR | — |
@@ -45,7 +44,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `HRS-TECHNICAL` | Current-house technical migration and computational applicability | TRIAD-GATE |
 | `ROF-09` | Roof formalisation and regression admission | ROF-RWT-GATE |
 | `RWT-08` | Rainwater formalisation and regression admission | ROF-RWT-GATE |
-| `MAT-COORDINATION` | Reconcile selected-house material compliance and explicit owner exceptions | HAD-SERVICES-ADOPTION, ROF-RWT-GATE |
+| `MAT-COORDINATION` | Reconcile selected-house material compliance and explicit owner exceptions | ROF-RWT-GATE |
 | `MRA-01` | External water and ground-envelope assault | TRIAD-GATE |
 | `MRA-02` | Internal water and wet-zone assault | TRIAD-GATE |
 | `MRA-03` | Vapour, condensation and drying assault | TRIAD-GATE |
@@ -69,7 +68,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 ### Structural critical path
 
-`HAD-SERVICES-ADOPTION` → `MAT-COORDINATION` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-PREP` → `PLT-PRINT-REVIEW` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
+`ROF-RWT-GATE` → `MAT-COORDINATION` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-PREP` → `PLT-PRINT-REVIEW` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
 
 This path is structural by node count. It is not a wall-clock estimate; weighted scheduling is withheld unless every remaining node on the model has an explicit planning estimate.
 <!-- project-control:end -->

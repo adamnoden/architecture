@@ -6,9 +6,9 @@ const distance=(a,b)=>Math.hypot(...a.map((v,i)=>v-b[i]));
 // outward onto a captured exterior cradle after its room-side collar releases.
 export function headMaintenance(head,model){
   const ffl=head.level==='FIRST'?model.sections.firstFFL:0;
-  const inside=head.wall==='outer-east'?[-1,0]:head.wall==='outer-west'?[1,0]:[0,-1];
+  const inside=head.wall==='outer-east'?[-1,0]:head.wall==='outer-west'?[1,0]:head.wall==='outer-south'?[0,1]:[0,-1];
   const point=(normal,along,z)=>head.wall==='outer-east'?[12000-normal,along,z]
-    :head.wall==='outer-west'?[normal,along,z]:[along,12000-normal,z];
+    :head.wall==='outer-west'?[normal,along,z]:head.wall==='outer-south'?[along,normal,z]:[along,12000-normal,z];
   const roomDeck=head.roomAccess.deckZ??900;
   const body=head.roomAccess.body,shoulder=[...body,ffl+roomDeck+1050];
   const allDucts=[...model.architecturalServices.fanAccess.map(f=>f.path),model.architecturalServices.cooker.exhaustRoute];
@@ -24,23 +24,26 @@ export function headMaintenance(head,model){
   const bodyToDuct=Math.min(...allDucts.flatMap(path=>path.slice(1).map((p,i)=>
     segmentBodyDistance(path[i],p,body,[ffl+roomDeck,ffl+roomDeck+1380])-123.5)));
   const deck=head.level==='FIRST'?4300:head.holes[0].id==='cooker-exhaust'?1090:990;
-  const minAlong=Math.min(...head.holes.map(p=>head.wall==='outer-north'?p.point[0]:p.point[1]));
-  const maxAlong=Math.max(...head.holes.map(p=>head.wall==='outer-north'?p.point[0]:p.point[1]));
+  const minAlong=Math.min(...head.holes.map(p=>head.wall==='outer-north'||head.wall==='outer-south'?p.point[0]:p.point[1]));
+  const maxAlong=Math.max(...head.holes.map(p=>head.wall==='outer-north'||head.wall==='outer-south'?p.point[0]:p.point[1]));
   const stage={alongMM:[minAlong-900,maxAlong+900],outwardNormalMM:[250,950],deckZ:deck,
     completeTopZ:deck+2000,standingBodyRadiusMM:300,maximumCombinedWorkerToolsAndPartKG:300,
-    guardTubeDiameterMM:20,guardCentreNormalsMM:[260,940],
+    guardTubeDiameterMM:20,guardCentreNormalsMM:[260,940],guardCentreZ:deck+1100,
     feet:[[minAlong-900,250,100,100],[minAlong-900,850,100,100],[maxAlong+800,250,100,100],[maxAlong+800,850,100,100]],
     roofLowerCarrierZ:6375,roofMovementBodyAndSettingMM:48,
     roofVerticalReserveMM:6375-(deck+2000)-48,
     roofLeaderInboardFaceMM:1000,roofLeaderNormalClearanceMM:50,
     admission:'Use a tied single-width exterior access scaffold and captured cartridge cradle qualified for two workers, complete task load, anchors, the four foot fields, ground bearing, guarding and access. The ground datum and support capacity require site evidence.'};
   const cartridges=head.holes.map(port=>{
-    const main=port.id.endsWith('-exhaust'),along=head.wall==='outer-north'?port.point[0]:port.point[1];
+    const main=port.id.endsWith('-exhaust'),along=head.wall==='outer-north'||head.wall==='outer-south'?port.point[0]:port.point[1];
     const completeTubeOD=main?247:28,faceHalf=port.faceWidth/2;
     const offset=Math.max(completeTubeOD/2,faceHalf)+330;
+    const bodyAlong=head.wall==='outer-north'||head.wall==='outer-south'?body[0]:body[1];
+    const alongTravel=head.roomAccess.handAlongMaximumMM??250;
+    const handAlong=bodyAlong+Math.max(-alongTravel,Math.min(alongTravel,along-bodyAlong));
+    const normal=inside[0]?(head.wall==='outer-east'?12000-body[0]:body[0]):head.wall==='outer-south'?body[1]:12000-body[1];
     const hand=port.id==='principal-bath-condensate'?[11250,7450,ffl+2000]
-      :[body[0]-inside[0]*350+(head.wall==='outer-north'?along-body[0]:0),
-        body[1]-inside[1]*350+(head.wall==='outer-north'?0:Math.max(-250,Math.min(250,along-body[1]))),ffl+(head.id==='east-window-2'?2050:2160)];
+      :point(normal-350,handAlong,ffl+(head.id==='east-window-2'?2050:roomDeck+1260));
     const target=point(505,along,port.point[2]+5.05-completeTubeOD/2);
     const armToDuct=Math.min(...allDucts.flatMap(path=>path.slice(1).map((p,i)=>segmentDistance(shoulder,hand,path[i],p)-123.5-40)));
     const half=Math.max(faceHalf,completeTubeOD/2);
@@ -50,6 +53,8 @@ export function headMaintenance(head,model){
     const bodyToPart=offset-300-half;
     return {id:port.id,wallAxis:port.point,completeTubeOD,formedDiameter:port.radius*2,
       fixedReceiverMaximumOD:port.radius*2-2,fixedReceiverMinimumID:port.radius*2-6,
+      exteriorMovingBodyRoofReserveMM:6375-(port.point[2]+half+5.05)-48,
+      movingBodyToInboardGuardMM:port.point[2]-half-1-8.05-(stage.guardCentreZ+10)-10,
       minimumRadialRunningClearanceMM:(port.radius*2-6-completeTubeOD)/2,
       completeAxialLengthMM:605,outwardFallRatio:.01,drawVectorOutwardDown:[1,-.01],initial:bound(0),clearanceState:bound(650),dryRest:bound(805),
       firstOutwardDrawMM:650,finalOutwardDrawMM:805,
@@ -57,7 +62,7 @@ export function headMaintenance(head,model){
       dryRestNormalMM:[275,930],dryRestAlongMM:[along-half-25,along+half+25],
       maximumCompleteMassKG:main?20:3,
       roomRelease:{body,shoulder,hand,target,handReachMM:distance(shoulder,hand),
-        steelSocketExtensionMaximumMM:port.id==='principal-bath-condensate'?700:head.id==='east-window-2'?500:400,
+        steelSocketExtensionMaximumMM:head.roomAccess.toolMaximumMM??(port.id==='principal-bath-condensate'?700:head.id==='east-window-2'?500:400),
         requiredExtensionMM:distance(hand,target),armToInstalledDuctMinimumMM:armToDuct},
       exterior:{frontBody:[along,600],sideBodies:[[along-offset,600],[along+offset,600]],
         bodyToCompleteMovingPartMM:bodyToPart,
@@ -69,7 +74,9 @@ export function headMaintenance(head,model){
         frontToolMaximumMM:300,frontToolRequiredMM:Math.hypot(150,Math.min(110,faceHalf-20),Math.min(90,faceHalf-20)+50),
         operation:'Capture the cartridge before releasing its face fasteners with the recorded tool. Both workers take the two side stations before any outward travel. A captive hand drive draws 650 mm, then a further 155 mm into the dry cradle. Each worker services the near half using the recorded hand and tool envelope. No crossing of the occupied draw lane is credited.'},
       temporaryBlank:{normalMM:[458,478],maximumOD:port.radius*2-2,retainedRoomDuctStartsNormalMM:505,
-        gapToRoomDuctMM:27,minimumRoomFaceClearanceMM:25.5,verticalGuideTravelMM:400,maximumMassKG:main?3:.5,
+        gapToRoomDuctMM:27,minimumRoomFaceClearanceMM:25.5,verticalGuideTravelMM:400,guideMaximumAlongBeyondRadiusMM:8,maximumMassKG:main?3:.5,
+        guideNormalMM:[458,478],controlTarget:point(505,along,port.point[2]-450),
+        controlToolRequiredMM:distance(hand,point(505,along,port.point[2]-450)),controlToolMaximumMM:head.roomAccess.toolMaximumMM??500,
         operation:'A captured room-side blank rises in the47mm axial gap between the fixed receiver end at458 and the retained duct at505. Its20mm body leaves27mm to the duct. Close it only after the complete cartridge has cleared. The fixed receiver falls outward and drains incidental rain back outside. Keep the inner duct separately capped.'},
       weatherClosure:'The temporary blank remains supported on its guide and fixed receiver. Isolate and close the room until the cartridge, water boundary and air/drain tests are restored. Temporary wind-driven-rain performance is an explicit qualification duty.',
       renewal:'The opaque window head and its lower glass stay fixed during cartridge renewal. Whole-head renewal uses the window assembly exterior replacement operation and requires independent glazing/frame support.'};

@@ -448,9 +448,9 @@
       "id": "principal-S-high",
       "room": "principalBath",
       "plan": [
-        10892.5,
+        10975,
         6600,
-        650,
+        550,
         200
       ]
     },
@@ -662,9 +662,9 @@
           1979
         ],
         [
-          11282.5,
-          11450,
-          3010
+          9850,
+          10150,
+          2997
         ],
         [
           11380,
@@ -820,6 +820,119 @@
         "maximumSeatedInwardLps": 0.25,
         "sixInletsEachReverseEquivalentMM2": 5000,
         "scope": "Bound the actively supplied airflow even if both kitchen extracts stop. Forward weather/insect/acoustic area is tested independently from unpowered outward area."
+      },
+      "selectedLocalSeat": {
+        "point": [
+          9850,
+          10150,
+          2997
+        ],
+        "axialX": [
+          9750,
+          9950
+        ],
+        "completeDuctOD": 247,
+        "actuatorBody": [
+          9764,
+          9853,
+          2950.5,
+          172,
+          84,
+          93
+        ],
+        "article": "Belimo NKQ24A-SR",
+        "shaftExtension": "Belimo AV8-25 240mm accessory, assembled engagement and torque qualified with the actual damper shaft",
+        "platform": [
+          9875,
+          9175,
+          650,
+          650
+        ],
+        "deckZ": 1100,
+        "body": [
+          10200,
+          9500
+        ],
+        "bodyHeightMM": 1380,
+        "shoulder": [
+          10200,
+          9500,
+          2150
+        ],
+        "hand": [
+          9950,
+          9850,
+          2550
+        ],
+        "target": [
+          9850,
+          9937,
+          2997
+        ],
+        "handReachMM": 587.36700622,
+        "socketMaximumMM": 650,
+        "socketRequiredMM": 466.23813658,
+        "bodyToFurnitureMM": 100,
+        "toolToMainDuctMM": 74.5,
+        "ductToActuatorBodyMM": 89.5,
+        "ceilingReserveMM": 29.5,
+        "firstRelease": {
+          "selectedShaftEngagementMM": 42,
+          "axialSouthDrawMM": 50,
+          "releasedBody": [
+            9764,
+            9803,
+            2950.5,
+            172,
+            84,
+            93
+          ],
+          "dryRestBody": [
+            9764,
+            9803,
+            2500.5,
+            172,
+            84,
+            93
+          ],
+          "initialTray": [
+            9739,
+            9828,
+            2930.5,
+            222,
+            109,
+            20
+          ],
+          "releasedTray": [
+            9739,
+            9778,
+            2930.5,
+            222,
+            109,
+            20
+          ],
+          "capturedTray": [
+            9739,
+            9778,
+            2480.5,
+            222,
+            109,
+            20
+          ],
+          "maximumCompleteMassKG": 2,
+          "initialTrayToPodMM": 13,
+          "rejected134DeepTrayToPodMM": -12,
+          "trayCapture": "Asymmetric tray has 25 mm side and south edges, ending flush with the drive north face. Positive side/front clamps retain the complete assembly. Its north edge moves away from the pod throughout release and lowering.",
+          "bodyToTrayPlanMM": 66.61287484,
+          "control": [
+            9950,
+            9850,
+            2550
+          ],
+          "maximumLoweringMM": 450
+        },
+        "operation": "Close the fridge and cooking station. The 1100 deck leaves a full 1380 kneeling envelope below the fan pod. Approach the actuator from its south face with the recorded socket. Capture the complete drive on a wall-tied guided tray before releasing the shaft clamp and anti-rotation fixing. Draw it 50 mm south to clear the selected 42 mm shaft engagement, then lower it 450 mm onto the supported dry rest. The worker stays in the recorded station throughout. Qualify the complete shaft engagement, tray, guides, load and anti-rotation mounting before assembly.",
+        "source": "https://www.belimo.com/mam/general-documents/datasheets/en-gb/belimo_NKQ24A-SR_datasheet_en-gb.pdf"
       }
     },
     "exhaustRoute": [
@@ -1257,7 +1370,12 @@
         "utilityBlindReturnM2": 0,
         "approvedExceptions": 0
       }
-    ]
+    ],
+    "principalPurgeControl": {
+      "occurrence": "Principal purge sequencing",
+      "components": "Local fan inhibit, measured low-flow indication and positive window catch. Include all sensors, conductors, insulation, electronics, enclosures and contacts in the complete constituent register.",
+      "approvedExceptions": 0
+    }
   },
   "storeExchange": {
     "margin": 25,
@@ -3023,6 +3141,7 @@
               260,
               940
             ],
+            "guardCentreZ": 2090,
             "feet": [
               [
                 1200,
@@ -3068,6 +3187,8 @@
               "formedDiameter": 280,
               "fixedReceiverMaximumOD": 278,
               "fixedReceiverMinimumID": 274,
+              "exteriorMovingBodyRoofReserveMM": 3656.95,
+              "movingBodyToInboardGuardMM": 215.95,
               "minimumRadialRunningClearanceMM": 13.5,
               "completeAxialLengthMM": 605,
               "outwardFallRatio": 0.01,
@@ -3197,7 +3318,19 @@
                 "gapToRoomDuctMM": 27,
                 "minimumRoomFaceClearanceMM": 25.5,
                 "verticalGuideTravelMM": 400,
+                "guideMaximumAlongBeyondRadiusMM": 8,
                 "maximumMassKG": 3,
+                "guideNormalMM": [
+                  458,
+                  478
+                ],
+                "controlTarget": [
+                  11495,
+                  2100,
+                  2050
+                ],
+                "controlToolRequiredMM": 155.56349186,
+                "controlToolMaximumMM": 500,
                 "operation": "A captured room-side blank rises in the47mm axial gap between the fixed receiver end at458 and the retained duct at505. Its20mm body leaves27mm to the duct. Close it only after the complete cartridge has cleared. The fixed receiver falls outward and drains incidental rain back outside. Keep the inner duct separately capped."
               },
               "weatherClosure": "The temporary blank remains supported on its guide and fixed receiver. Isolate and close the room until the cartridge, water boundary and air/drain tests are restored. Temporary wind-driven-rain performance is an explicit qualification duty.",
@@ -3214,6 +3347,8 @@
               "formedDiameter": 40,
               "fixedReceiverMaximumOD": 38,
               "fixedReceiverMinimumID": 34,
+              "exteriorMovingBodyRoofReserveMM": 3791.95,
+              "movingBodyToInboardGuardMM": 350.95,
               "minimumRadialRunningClearanceMM": 3,
               "completeAxialLengthMM": 605,
               "outwardFallRatio": 0.01,
@@ -3343,7 +3478,19 @@
                 "gapToRoomDuctMM": 27,
                 "minimumRoomFaceClearanceMM": 25.5,
                 "verticalGuideTravelMM": 400,
+                "guideMaximumAlongBeyondRadiusMM": 8,
                 "maximumMassKG": 0.5,
+                "guideNormalMM": [
+                  458,
+                  478
+                ],
+                "controlTarget": [
+                  11495,
+                  2320,
+                  2050
+                ],
+                "controlToolRequiredMM": 155.56349186,
+                "controlToolMaximumMM": 500,
                 "operation": "A captured room-side blank rises in the47mm axial gap between the fixed receiver end at458 and the retained duct at505. Its20mm body leaves27mm to the duct. Close it only after the complete cartridge has cleared. The fixed receiver falls outward and drains incidental rain back outside. Keep the inner duct separately capped."
               },
               "weatherClosure": "The temporary blank remains supported on its guide and fixed receiver. Isolate and close the room until the cartridge, water boundary and air/drain tests are restored. Temporary wind-driven-rain performance is an explicit qualification duty.",
@@ -3472,6 +3619,7 @@
               260,
               940
             ],
+            "guardCentreZ": 5400,
             "feet": [
               [
                 9000,
@@ -3517,6 +3665,8 @@
               "formedDiameter": 280,
               "fixedReceiverMaximumOD": 278,
               "fixedReceiverMinimumID": 274,
+              "exteriorMovingBodyRoofReserveMM": 191.95,
+              "movingBodyToInboardGuardMM": 340.95,
               "minimumRadialRunningClearanceMM": 13.5,
               "completeAxialLengthMM": 605,
               "outwardFallRatio": 0.01,
@@ -3646,7 +3796,19 @@
                 "gapToRoomDuctMM": 27,
                 "minimumRoomFaceClearanceMM": 25.5,
                 "verticalGuideTravelMM": 400,
+                "guideMaximumAlongBeyondRadiusMM": 8,
                 "maximumMassKG": 3,
+                "guideNormalMM": [
+                  458,
+                  478
+                ],
+                "controlTarget": [
+                  505,
+                  9900,
+                  5500
+                ],
+                "controlToolRequiredMM": 155.56349186,
+                "controlToolMaximumMM": 500,
                 "operation": "A captured room-side blank rises in the47mm axial gap between the fixed receiver end at458 and the retained duct at505. Its20mm body leaves27mm to the duct. Close it only after the complete cartridge has cleared. The fixed receiver falls outward and drains incidental rain back outside. Keep the inner duct separately capped."
               },
               "weatherClosure": "The temporary blank remains supported on its guide and fixed receiver. Isolate and close the room until the cartridge, water boundary and air/drain tests are restored. Temporary wind-driven-rain performance is an explicit qualification duty.",
@@ -3663,6 +3825,8 @@
               "formedDiameter": 40,
               "fixedReceiverMaximumOD": 38,
               "fixedReceiverMinimumID": 34,
+              "exteriorMovingBodyRoofReserveMM": 341.95,
+              "movingBodyToInboardGuardMM": 490.95,
               "minimumRadialRunningClearanceMM": 3,
               "completeAxialLengthMM": 605,
               "outwardFallRatio": 0.01,
@@ -3792,7 +3956,19 @@
                 "gapToRoomDuctMM": 27,
                 "minimumRoomFaceClearanceMM": 25.5,
                 "verticalGuideTravelMM": 400,
+                "guideMaximumAlongBeyondRadiusMM": 8,
                 "maximumMassKG": 0.5,
+                "guideNormalMM": [
+                  458,
+                  478
+                ],
+                "controlTarget": [
+                  505,
+                  10145,
+                  5500
+                ],
+                "controlToolRequiredMM": 155.56349186,
+                "controlToolMaximumMM": 500,
                 "operation": "A captured room-side blank rises in the47mm axial gap between the fixed receiver end at458 and the retained duct at505. Its20mm body leaves27mm to the duct. Close it only after the complete cartridge has cleared. The fixed receiver falls outward and drains incidental rain back outside. Keep the inner duct separately capped."
               },
               "weatherClosure": "The temporary blank remains supported on its guide and fixed receiver. Isolate and close the room until the cartridge, water boundary and air/drain tests are restored. Temporary wind-driven-rain performance is an explicit qualification duty.",
@@ -3921,6 +4097,7 @@
               260,
               940
             ],
+            "guardCentreZ": 2090,
             "feet": [
               [
                 7280,
@@ -3966,6 +4143,8 @@
               "formedDiameter": 280,
               "fixedReceiverMaximumOD": 278,
               "fixedReceiverMinimumID": 274,
+              "exteriorMovingBodyRoofReserveMM": 3681.95,
+              "movingBodyToInboardGuardMM": 220.95,
               "minimumRadialRunningClearanceMM": 13.5,
               "completeAxialLengthMM": 605,
               "outwardFallRatio": 0.01,
@@ -4095,7 +4274,19 @@
                 "gapToRoomDuctMM": 27,
                 "minimumRoomFaceClearanceMM": 25.5,
                 "verticalGuideTravelMM": 400,
+                "guideMaximumAlongBeyondRadiusMM": 8,
                 "maximumMassKG": 3,
+                "guideNormalMM": [
+                  458,
+                  478
+                ],
+                "controlTarget": [
+                  8400,
+                  11495,
+                  2040
+                ],
+                "controlToolRequiredMM": 169.70562748,
+                "controlToolMaximumMM": 500,
                 "operation": "A captured room-side blank rises in the47mm axial gap between the fixed receiver end at458 and the retained duct at505. Its20mm body leaves27mm to the duct. Close it only after the complete cartridge has cleared. The fixed receiver falls outward and drains incidental rain back outside. Keep the inner duct separately capped."
               },
               "weatherClosure": "The temporary blank remains supported on its guide and fixed receiver. Isolate and close the room until the cartridge, water boundary and air/drain tests are restored. Temporary wind-driven-rain performance is an explicit qualification duty.",
@@ -4112,6 +4303,8 @@
               "formedDiameter": 40,
               "fixedReceiverMaximumOD": 38,
               "fixedReceiverMinimumID": 34,
+              "exteriorMovingBodyRoofReserveMM": 3801.95,
+              "movingBodyToInboardGuardMM": 340.95,
               "minimumRadialRunningClearanceMM": 3,
               "completeAxialLengthMM": 605,
               "outwardFallRatio": 0.01,
@@ -4241,7 +4434,19 @@
                 "gapToRoomDuctMM": 27,
                 "minimumRoomFaceClearanceMM": 25.5,
                 "verticalGuideTravelMM": 400,
+                "guideMaximumAlongBeyondRadiusMM": 8,
                 "maximumMassKG": 0.5,
+                "guideNormalMM": [
+                  458,
+                  478
+                ],
+                "controlTarget": [
+                  8180,
+                  11495,
+                  2040
+                ],
+                "controlToolRequiredMM": 169.70562748,
+                "controlToolMaximumMM": 500,
                 "operation": "A captured room-side blank rises in the47mm axial gap between the fixed receiver end at458 and the retained duct at505. Its20mm body leaves27mm to the duct. Close it only after the complete cartridge has cleared. The fixed receiver falls outward and drains incidental rain back outside. Keep the inner duct separately capped."
               },
               "weatherClosure": "The temporary blank remains supported on its guide and fixed receiver. Isolate and close the room until the cartridge, water boundary and air/drain tests are restored. Temporary wind-driven-rain performance is an explicit qualification duty.",
@@ -4375,6 +4580,7 @@
               260,
               940
             ],
+            "guardCentreZ": 2190,
             "feet": [
               [
                 9000,
@@ -4420,6 +4626,8 @@
               "formedDiameter": 320,
               "fixedReceiverMaximumOD": 318,
               "fixedReceiverMinimumID": 314,
+              "exteriorMovingBodyRoofReserveMM": 3576.95,
+              "movingBodyToInboardGuardMM": 165.95,
               "minimumRadialRunningClearanceMM": 33.5,
               "completeAxialLengthMM": 605,
               "outwardFallRatio": 0.01,
@@ -4549,7 +4757,19 @@
                 "gapToRoomDuctMM": 27,
                 "minimumRoomFaceClearanceMM": 25.5,
                 "verticalGuideTravelMM": 400,
+                "guideMaximumAlongBeyondRadiusMM": 8,
                 "maximumMassKG": 3,
+                "guideNormalMM": [
+                  458,
+                  478
+                ],
+                "controlTarget": [
+                  9900,
+                  11495,
+                  2115
+                ],
+                "controlToolRequiredMM": 84.90583019,
+                "controlToolMaximumMM": 500,
                 "operation": "A captured room-side blank rises in the47mm axial gap between the fixed receiver end at458 and the retained duct at505. Its20mm body leaves27mm to the duct. Close it only after the complete cartridge has cleared. The fixed receiver falls outward and drains incidental rain back outside. Keep the inner duct separately capped."
               },
               "weatherClosure": "The temporary blank remains supported on its guide and fixed receiver. Isolate and close the room until the cartridge, water boundary and air/drain tests are restored. Temporary wind-driven-rain performance is an explicit qualification duty.",
@@ -4690,6 +4910,7 @@
               260,
               940
             ],
+            "guardCentreZ": 5400,
             "feet": [
               [
                 6500,
@@ -4735,6 +4956,8 @@
               "formedDiameter": 280,
               "fixedReceiverMaximumOD": 278,
               "fixedReceiverMinimumID": 274,
+              "exteriorMovingBodyRoofReserveMM": 125.95,
+              "movingBodyToInboardGuardMM": 482.95,
               "minimumRadialRunningClearanceMM": 13.5,
               "completeAxialLengthMM": 605,
               "outwardFallRatio": 0.01,
@@ -4864,7 +5087,19 @@
                 "gapToRoomDuctMM": 27,
                 "minimumRoomFaceClearanceMM": 25.5,
                 "verticalGuideTravelMM": 400,
+                "guideMaximumAlongBeyondRadiusMM": 8,
                 "maximumMassKG": 3,
+                "guideNormalMM": [
+                  458,
+                  478
+                ],
+                "controlTarget": [
+                  11495,
+                  7400,
+                  5604
+                ],
+                "controlToolRequiredMM": 204.5507272,
+                "controlToolMaximumMM": 500,
                 "operation": "A captured room-side blank rises in the47mm axial gap between the fixed receiver end at458 and the retained duct at505. Its20mm body leaves27mm to the duct. Close it only after the complete cartridge has cleared. The fixed receiver falls outward and drains incidental rain back outside. Keep the inner duct separately capped."
               },
               "weatherClosure": "The temporary blank remains supported on its guide and fixed receiver. Isolate and close the room until the cartridge, water boundary and air/drain tests are restored. Temporary wind-driven-rain performance is an explicit qualification duty.",
@@ -4881,6 +5116,8 @@
               "formedDiameter": 40,
               "fixedReceiverMaximumOD": 38,
               "fixedReceiverMinimumID": 34,
+              "exteriorMovingBodyRoofReserveMM": 237.95,
+              "movingBodyToInboardGuardMM": 594.95,
               "minimumRadialRunningClearanceMM": 3,
               "completeAxialLengthMM": 605,
               "outwardFallRatio": 0.01,
@@ -5010,7 +5247,921 @@
                 "gapToRoomDuctMM": 27,
                 "minimumRoomFaceClearanceMM": 25.5,
                 "verticalGuideTravelMM": 400,
+                "guideMaximumAlongBeyondRadiusMM": 8,
                 "maximumMassKG": 0.5,
+                "guideNormalMM": [
+                  458,
+                  478
+                ],
+                "controlTarget": [
+                  11495,
+                  7600,
+                  5604
+                ],
+                "controlToolRequiredMM": 325.9463146,
+                "controlToolMaximumMM": 500,
+                "operation": "A captured room-side blank rises in the47mm axial gap between the fixed receiver end at458 and the retained duct at505. Its20mm body leaves27mm to the duct. Close it only after the complete cartridge has cleared. The fixed receiver falls outward and drains incidental rain back outside. Keep the inner duct separately capped."
+              },
+              "weatherClosure": "The temporary blank remains supported on its guide and fixed receiver. Isolate and close the room until the cartridge, water boundary and air/drain tests are restored. Temporary wind-driven-rain performance is an explicit qualification duty.",
+              "renewal": "The opaque window head and its lower glass stay fixed during cartridge renewal. Whole-head renewal uses the window assembly exterior replacement operation and requires independent glazing/frame support."
+            }
+          ],
+          "sequence": [
+            "Isolate the local fan or cooker, close the room and erect the qualified exterior stage. Support the retained inner duct and each complete cartridge independently.",
+            "Kneel on the room platform. Release and remove both halves of the actual flat radial collar with the recorded socket extension into the supported tray. Withdraw the tool. The exterior cradle already carries the cartridge.",
+            "Release the outer fixings from the front stance, then occupy the two side stances. Draw one cartridge 650 mm and continue to805mm into its supported dry cradle.",
+            "Install the separate temporary weather blank and retain the room-side cap. Clean or exchange that cartridge and restore it before beginning the next port. Two removed cartridges never share one rest.",
+            "Restore the collar, independent gravity drain, insulation and complete weather/air boundary. Prove fall, flow, cleanability and sealing before enabling the local service."
+          ],
+          "rejectedInteriorRig": {
+            "partOverlap": "The first tube and later elbow occupied intersecting receiver volumes before any clearing step.",
+            "supportIntersection": "The proposed panel-only lowering crossed its solid support carriage.",
+            "decision": "Delete the removable inner cassette and its interior draw/lowering rig. Retain the fixed head and replace individual cartridges from outside."
+          },
+          "cleanout": "The removable cowl and full cartridge expose the complete clear passage from outside. Clean the retained duct from this end and its separate fan or hood end. Retain access at every bend and a removable grease trap where the actual appliance requires it. The installed cleanability and weather tests remain admission conditions."
+        }
+      }
+    ],
+    "wallTerminalRenewal": [
+      {
+        "id": "ground-WC",
+        "level": "GROUND",
+        "wall": "outer-south",
+        "roomAccess": {
+          "platform": [
+            8045,
+            735,
+            650,
+            650
+          ],
+          "body": [
+            8370,
+            1060
+          ],
+          "deckZ": 1100,
+          "handAlongMaximumMM": 350,
+          "toolMaximumMM": 600
+        },
+        "holes": [
+          {
+            "id": "ground-WC-exhaust",
+            "point": [
+              8950,
+              0,
+              2975
+            ],
+            "radius": 140,
+            "faceWidth": 330
+          },
+          {
+            "id": "ground-WC-condensate",
+            "point": [
+              9130,
+              0,
+              2700
+            ],
+            "radius": 20,
+            "faceWidth": 60
+          }
+        ],
+        "renewal": {
+          "method": "Fixed opaque head with individually outward-removable service cartridges",
+          "roomAccess": {
+            "platform": [
+              8045,
+              735,
+              650,
+              650
+            ],
+            "body": [
+              8370,
+              1060
+            ],
+            "deckZ": 1100,
+            "handAlongMaximumMM": 350,
+            "toolMaximumMM": 600
+          },
+          "roomDeckLocalZ": 1100,
+          "kneelingHeightMM": 1380,
+          "bodyRadiusMM": 300,
+          "roomBodyToFurnitureMM": 50,
+          "roomBodyToInstalledDuctMM": 416.61450961,
+          "stage": {
+            "alongMM": [
+              8050,
+              10030
+            ],
+            "outwardNormalMM": [
+              250,
+              950
+            ],
+            "deckZ": 990,
+            "completeTopZ": 2990,
+            "standingBodyRadiusMM": 300,
+            "maximumCombinedWorkerToolsAndPartKG": 300,
+            "guardTubeDiameterMM": 20,
+            "guardCentreNormalsMM": [
+              260,
+              940
+            ],
+            "guardCentreZ": 2090,
+            "feet": [
+              [
+                8050,
+                250,
+                100,
+                100
+              ],
+              [
+                8050,
+                850,
+                100,
+                100
+              ],
+              [
+                9930,
+                250,
+                100,
+                100
+              ],
+              [
+                9930,
+                850,
+                100,
+                100
+              ]
+            ],
+            "roofLowerCarrierZ": 6375,
+            "roofMovementBodyAndSettingMM": 48,
+            "roofVerticalReserveMM": 3337,
+            "roofLeaderInboardFaceMM": 1000,
+            "roofLeaderNormalClearanceMM": 50,
+            "admission": "Use a tied single-width exterior access scaffold and captured cartridge cradle qualified for two workers, complete task load, anchors, the four foot fields, ground bearing, guarding and access. The ground datum and support capacity require site evidence."
+          },
+          "cartridges": [
+            {
+              "id": "ground-WC-exhaust",
+              "wallAxis": [
+                8950,
+                0,
+                2975
+              ],
+              "completeTubeOD": 247,
+              "formedDiameter": 280,
+              "fixedReceiverMaximumOD": 278,
+              "fixedReceiverMinimumID": 274,
+              "exteriorMovingBodyRoofReserveMM": 3181.95,
+              "movingBodyToInboardGuardMM": 690.95,
+              "minimumRadialRunningClearanceMM": 13.5,
+              "completeAxialLengthMM": 605,
+              "outwardFallRatio": 0.01,
+              "drawVectorOutwardDown": [
+                1,
+                -0.01
+              ],
+              "initial": {
+                "outwardNormalMM": [
+                  -505,
+                  100
+                ],
+                "alongMM": [
+                  8785,
+                  9115
+                ],
+                "z": [
+                  2809,
+                  3145.05
+                ]
+              },
+              "clearanceState": {
+                "outwardNormalMM": [
+                  145,
+                  750
+                ],
+                "alongMM": [
+                  8785,
+                  9115
+                ],
+                "z": [
+                  2802.5,
+                  3138.55
+                ]
+              },
+              "dryRest": {
+                "outwardNormalMM": [
+                  300,
+                  905
+                ],
+                "alongMM": [
+                  8785,
+                  9115
+                ],
+                "z": [
+                  2800.95,
+                  3137
+                ]
+              },
+              "firstOutwardDrawMM": 650,
+              "finalOutwardDrawMM": 805,
+              "retainedOuterFaceMaximumOutwardMM": 100,
+              "after650InnerTipToRetainedFaceMM": 45,
+              "dryRestNormalMM": [
+                275,
+                930
+              ],
+              "dryRestAlongMM": [
+                8760,
+                9140
+              ],
+              "maximumCompleteMassKG": 20,
+              "roomRelease": {
+                "body": [
+                  8370,
+                  1060
+                ],
+                "shoulder": [
+                  8370,
+                  1060,
+                  2150
+                ],
+                "hand": [
+                  8720,
+                  710,
+                  2360
+                ],
+                "target": [
+                  8950,
+                  505,
+                  2856.55
+                ],
+                "handReachMM": 537.68020235,
+                "steelSocketExtensionMaximumMM": 600,
+                "requiredExtensionMM": 584.36880692,
+                "armToInstalledDuctMinimumMM": 501.1694345
+              },
+              "exterior": {
+                "frontBody": [
+                  8950,
+                  600
+                ],
+                "sideBodies": [
+                  [
+                    8455,
+                    600
+                  ],
+                  [
+                    9445,
+                    600
+                  ]
+                ],
+                "bodyToCompleteMovingPartMM": 30,
+                "sideHandAlongOffsetMM": 230,
+                "sideHandOutwardMM": 600,
+                "sideHandZ": 2975,
+                "sideHandReachMM": 597.03433737,
+                "sideToolMaximumMM": 400,
+                "sideToolRequiredMM": 382.0013089,
+                "frontHand": [
+                  8950,
+                  250,
+                  2925
+                ],
+                "frontHandReachMM": 598.10116201,
+                "frontToolMaximumMM": 300,
+                "frontToolRequiredMM": 232.80893454,
+                "operation": "Capture the cartridge before releasing its face fasteners with the recorded tool. Both workers take the two side stations before any outward travel. A captive hand drive draws 650 mm, then a further 155 mm into the dry cradle. Each worker services the near half using the recorded hand and tool envelope. No crossing of the occupied draw lane is credited."
+              },
+              "temporaryBlank": {
+                "normalMM": [
+                  458,
+                  478
+                ],
+                "maximumOD": 278,
+                "retainedRoomDuctStartsNormalMM": 505,
+                "gapToRoomDuctMM": 27,
+                "minimumRoomFaceClearanceMM": 25.5,
+                "verticalGuideTravelMM": 400,
+                "guideMaximumAlongBeyondRadiusMM": 8,
+                "maximumMassKG": 3,
+                "guideNormalMM": [
+                  458,
+                  478
+                ],
+                "controlTarget": [
+                  8950,
+                  505,
+                  2525
+                ],
+                "controlToolRequiredMM": 349.49964235,
+                "controlToolMaximumMM": 600,
+                "operation": "A captured room-side blank rises in the47mm axial gap between the fixed receiver end at458 and the retained duct at505. Its20mm body leaves27mm to the duct. Close it only after the complete cartridge has cleared. The fixed receiver falls outward and drains incidental rain back outside. Keep the inner duct separately capped."
+              },
+              "weatherClosure": "The temporary blank remains supported on its guide and fixed receiver. Isolate and close the room until the cartridge, water boundary and air/drain tests are restored. Temporary wind-driven-rain performance is an explicit qualification duty.",
+              "renewal": "The opaque window head and its lower glass stay fixed during cartridge renewal. Whole-head renewal uses the window assembly exterior replacement operation and requires independent glazing/frame support."
+            },
+            {
+              "id": "ground-WC-condensate",
+              "wallAxis": [
+                9130,
+                0,
+                2700
+              ],
+              "completeTubeOD": 28,
+              "formedDiameter": 40,
+              "fixedReceiverMaximumOD": 38,
+              "fixedReceiverMinimumID": 34,
+              "exteriorMovingBodyRoofReserveMM": 3591.95,
+              "movingBodyToInboardGuardMM": 550.95,
+              "minimumRadialRunningClearanceMM": 3,
+              "completeAxialLengthMM": 605,
+              "outwardFallRatio": 0.01,
+              "drawVectorOutwardDown": [
+                1,
+                -0.01
+              ],
+              "initial": {
+                "outwardNormalMM": [
+                  -505,
+                  100
+                ],
+                "alongMM": [
+                  9100,
+                  9160
+                ],
+                "z": [
+                  2669,
+                  2735.05
+                ]
+              },
+              "clearanceState": {
+                "outwardNormalMM": [
+                  145,
+                  750
+                ],
+                "alongMM": [
+                  9100,
+                  9160
+                ],
+                "z": [
+                  2662.5,
+                  2728.55
+                ]
+              },
+              "dryRest": {
+                "outwardNormalMM": [
+                  300,
+                  905
+                ],
+                "alongMM": [
+                  9100,
+                  9160
+                ],
+                "z": [
+                  2660.95,
+                  2727
+                ]
+              },
+              "firstOutwardDrawMM": 650,
+              "finalOutwardDrawMM": 805,
+              "retainedOuterFaceMaximumOutwardMM": 100,
+              "after650InnerTipToRetainedFaceMM": 45,
+              "dryRestNormalMM": [
+                275,
+                930
+              ],
+              "dryRestAlongMM": [
+                9075,
+                9185
+              ],
+              "maximumCompleteMassKG": 3,
+              "roomRelease": {
+                "body": [
+                  8370,
+                  1060
+                ],
+                "shoulder": [
+                  8370,
+                  1060,
+                  2150
+                ],
+                "hand": [
+                  8720,
+                  710,
+                  2360
+                ],
+                "target": [
+                  9130,
+                  505,
+                  2691.05
+                ],
+                "handReachMM": 537.68020235,
+                "steelSocketExtensionMaximumMM": 600,
+                "requiredExtensionMM": 565.43708978,
+                "armToInstalledDuctMinimumMM": 501.1694345
+              },
+              "exterior": {
+                "frontBody": [
+                  9130,
+                  600
+                ],
+                "sideBodies": [
+                  [
+                    8770,
+                    600
+                  ],
+                  [
+                    9490,
+                    600
+                  ]
+                ],
+                "bodyToCompleteMovingPartMM": 30,
+                "sideHandAlongOffsetMM": 95,
+                "sideHandOutwardMM": 600,
+                "sideHandZ": 2700,
+                "sideHandReachMM": 371.24789562,
+                "sideToolMaximumMM": 400,
+                "sideToolRequiredMM": 319.4526569,
+                "frontHand": [
+                  9130,
+                  250,
+                  2650
+                ],
+                "frontHandReachMM": 408.16663264,
+                "frontToolMaximumMM": 300,
+                "frontToolRequiredMM": 161.86414056,
+                "operation": "Capture the cartridge before releasing its face fasteners with the recorded tool. Both workers take the two side stations before any outward travel. A captive hand drive draws 650 mm, then a further 155 mm into the dry cradle. Each worker services the near half using the recorded hand and tool envelope. No crossing of the occupied draw lane is credited."
+              },
+              "temporaryBlank": {
+                "normalMM": [
+                  458,
+                  478
+                ],
+                "maximumOD": 38,
+                "retainedRoomDuctStartsNormalMM": 505,
+                "gapToRoomDuctMM": 27,
+                "minimumRoomFaceClearanceMM": 25.5,
+                "verticalGuideTravelMM": 400,
+                "guideMaximumAlongBeyondRadiusMM": 8,
+                "maximumMassKG": 0.5,
+                "guideNormalMM": [
+                  458,
+                  478
+                ],
+                "controlTarget": [
+                  9130,
+                  505,
+                  2250
+                ],
+                "controlToolRequiredMM": 471.40746706,
+                "controlToolMaximumMM": 600,
+                "operation": "A captured room-side blank rises in the47mm axial gap between the fixed receiver end at458 and the retained duct at505. Its20mm body leaves27mm to the duct. Close it only after the complete cartridge has cleared. The fixed receiver falls outward and drains incidental rain back outside. Keep the inner duct separately capped."
+              },
+              "weatherClosure": "The temporary blank remains supported on its guide and fixed receiver. Isolate and close the room until the cartridge, water boundary and air/drain tests are restored. Temporary wind-driven-rain performance is an explicit qualification duty.",
+              "renewal": "The opaque window head and its lower glass stay fixed during cartridge renewal. Whole-head renewal uses the window assembly exterior replacement operation and requires independent glazing/frame support."
+            }
+          ],
+          "sequence": [
+            "Isolate the local fan or cooker, close the room and erect the qualified exterior stage. Support the retained inner duct and each complete cartridge independently.",
+            "Kneel on the room platform. Release and remove both halves of the actual flat radial collar with the recorded socket extension into the supported tray. Withdraw the tool. The exterior cradle already carries the cartridge.",
+            "Release the outer fixings from the front stance, then occupy the two side stances. Draw one cartridge 650 mm and continue to805mm into its supported dry cradle.",
+            "Install the separate temporary weather blank and retain the room-side cap. Clean or exchange that cartridge and restore it before beginning the next port. Two removed cartridges never share one rest.",
+            "Restore the collar, independent gravity drain, insulation and complete weather/air boundary. Prove fall, flow, cleanability and sealing before enabling the local service."
+          ],
+          "rejectedInteriorRig": {
+            "partOverlap": "The first tube and later elbow occupied intersecting receiver volumes before any clearing step.",
+            "supportIntersection": "The proposed panel-only lowering crossed its solid support carriage.",
+            "decision": "Delete the removable inner cassette and its interior draw/lowering rig. Retain the fixed head and replace individual cartridges from outside."
+          },
+          "cleanout": "The removable cowl and full cartridge expose the complete clear passage from outside. Clean the retained duct from this end and its separate fan or hood end. Retain access at every bend and a removable grease trap where the actual appliance requires it. The installed cleanability and weather tests remain admission conditions."
+        }
+      },
+      {
+        "id": "family-bath",
+        "level": "FIRST",
+        "wall": "outer-east",
+        "roomAccess": {
+          "platform": [
+            10600,
+            4975,
+            650,
+            650
+          ],
+          "body": [
+            10925,
+            5300
+          ],
+          "toolMaximumMM": 700
+        },
+        "holes": [
+          {
+            "id": "family-bath-exhaust",
+            "point": [
+              12000,
+              5750,
+              6125
+            ],
+            "radius": 140,
+            "faceWidth": 330
+          },
+          {
+            "id": "family-bath-condensate",
+            "point": [
+              12000,
+              6000,
+              6100
+            ],
+            "radius": 20,
+            "faceWidth": 60
+          }
+        ],
+        "renewal": {
+          "method": "Fixed opaque head with individually outward-removable service cartridges",
+          "roomAccess": {
+            "platform": [
+              10600,
+              4975,
+              650,
+              650
+            ],
+            "body": [
+              10925,
+              5300
+            ],
+            "toolMaximumMM": 700
+          },
+          "roomDeckLocalZ": 900,
+          "kneelingHeightMM": 1380,
+          "bodyRadiusMM": 300,
+          "roomBodyToFurnitureMM": 52.5,
+          "roomBodyToInstalledDuctMM": 361.01257463,
+          "stage": {
+            "alongMM": [
+              4850,
+              6900
+            ],
+            "outwardNormalMM": [
+              250,
+              950
+            ],
+            "deckZ": 4300,
+            "completeTopZ": 6300,
+            "standingBodyRadiusMM": 300,
+            "maximumCombinedWorkerToolsAndPartKG": 300,
+            "guardTubeDiameterMM": 20,
+            "guardCentreNormalsMM": [
+              260,
+              940
+            ],
+            "guardCentreZ": 5400,
+            "feet": [
+              [
+                4850,
+                250,
+                100,
+                100
+              ],
+              [
+                4850,
+                850,
+                100,
+                100
+              ],
+              [
+                6800,
+                250,
+                100,
+                100
+              ],
+              [
+                6800,
+                850,
+                100,
+                100
+              ]
+            ],
+            "roofLowerCarrierZ": 6375,
+            "roofMovementBodyAndSettingMM": 48,
+            "roofVerticalReserveMM": 27,
+            "roofLeaderInboardFaceMM": 1000,
+            "roofLeaderNormalClearanceMM": 50,
+            "admission": "Use a tied single-width exterior access scaffold and captured cartridge cradle qualified for two workers, complete task load, anchors, the four foot fields, ground bearing, guarding and access. The ground datum and support capacity require site evidence."
+          },
+          "cartridges": [
+            {
+              "id": "family-bath-exhaust",
+              "wallAxis": [
+                12000,
+                5750,
+                6125
+              ],
+              "completeTubeOD": 247,
+              "formedDiameter": 280,
+              "fixedReceiverMaximumOD": 278,
+              "fixedReceiverMinimumID": 274,
+              "exteriorMovingBodyRoofReserveMM": 31.95,
+              "movingBodyToInboardGuardMM": 530.95,
+              "minimumRadialRunningClearanceMM": 13.5,
+              "completeAxialLengthMM": 605,
+              "outwardFallRatio": 0.01,
+              "drawVectorOutwardDown": [
+                1,
+                -0.01
+              ],
+              "initial": {
+                "outwardNormalMM": [
+                  -505,
+                  100
+                ],
+                "alongMM": [
+                  5585,
+                  5915
+                ],
+                "z": [
+                  5959,
+                  6295.05
+                ]
+              },
+              "clearanceState": {
+                "outwardNormalMM": [
+                  145,
+                  750
+                ],
+                "alongMM": [
+                  5585,
+                  5915
+                ],
+                "z": [
+                  5952.5,
+                  6288.55
+                ]
+              },
+              "dryRest": {
+                "outwardNormalMM": [
+                  300,
+                  905
+                ],
+                "alongMM": [
+                  5585,
+                  5915
+                ],
+                "z": [
+                  5950.95,
+                  6287
+                ]
+              },
+              "firstOutwardDrawMM": 650,
+              "finalOutwardDrawMM": 805,
+              "retainedOuterFaceMaximumOutwardMM": 100,
+              "after650InnerTipToRetainedFaceMM": 45,
+              "dryRestNormalMM": [
+                275,
+                930
+              ],
+              "dryRestAlongMM": [
+                5560,
+                5940
+              ],
+              "maximumCompleteMassKG": 20,
+              "roomRelease": {
+                "body": [
+                  10925,
+                  5300
+                ],
+                "shoulder": [
+                  10925,
+                  5300,
+                  5400
+                ],
+                "hand": [
+                  11275,
+                  5550,
+                  5610
+                ],
+                "target": [
+                  11495,
+                  5750,
+                  6006.55
+                ],
+                "handReachMM": 478.64391775,
+                "steelSocketExtensionMaximumMM": 700,
+                "requiredExtensionMM": 495.63283033,
+                "armToInstalledDuctMinimumMM": 395.71175839
+              },
+              "exterior": {
+                "frontBody": [
+                  5750,
+                  600
+                ],
+                "sideBodies": [
+                  [
+                    5255,
+                    600
+                  ],
+                  [
+                    6245,
+                    600
+                  ]
+                ],
+                "bodyToCompleteMovingPartMM": 30,
+                "sideHandAlongOffsetMM": 230,
+                "sideHandOutwardMM": 600,
+                "sideHandZ": 6125,
+                "sideHandReachMM": 459.18405896,
+                "sideToolMaximumMM": 400,
+                "sideToolRequiredMM": 382.0013089,
+                "frontHand": [
+                  5750,
+                  250,
+                  6075
+                ],
+                "frontHandReachMM": 477.62432936,
+                "frontToolMaximumMM": 300,
+                "frontToolRequiredMM": 232.80893454,
+                "operation": "Capture the cartridge before releasing its face fasteners with the recorded tool. Both workers take the two side stations before any outward travel. A captive hand drive draws 650 mm, then a further 155 mm into the dry cradle. Each worker services the near half using the recorded hand and tool envelope. No crossing of the occupied draw lane is credited."
+              },
+              "temporaryBlank": {
+                "normalMM": [
+                  458,
+                  478
+                ],
+                "maximumOD": 278,
+                "retainedRoomDuctStartsNormalMM": 505,
+                "gapToRoomDuctMM": 27,
+                "minimumRoomFaceClearanceMM": 25.5,
+                "verticalGuideTravelMM": 400,
+                "guideMaximumAlongBeyondRadiusMM": 8,
+                "maximumMassKG": 3,
+                "guideNormalMM": [
+                  458,
+                  478
+                ],
+                "controlTarget": [
+                  11495,
+                  5750,
+                  5675
+                ],
+                "controlToolRequiredMM": 304.34355587,
+                "controlToolMaximumMM": 700,
+                "operation": "A captured room-side blank rises in the47mm axial gap between the fixed receiver end at458 and the retained duct at505. Its20mm body leaves27mm to the duct. Close it only after the complete cartridge has cleared. The fixed receiver falls outward and drains incidental rain back outside. Keep the inner duct separately capped."
+              },
+              "weatherClosure": "The temporary blank remains supported on its guide and fixed receiver. Isolate and close the room until the cartridge, water boundary and air/drain tests are restored. Temporary wind-driven-rain performance is an explicit qualification duty.",
+              "renewal": "The opaque window head and its lower glass stay fixed during cartridge renewal. Whole-head renewal uses the window assembly exterior replacement operation and requires independent glazing/frame support."
+            },
+            {
+              "id": "family-bath-condensate",
+              "wallAxis": [
+                12000,
+                6000,
+                6100
+              ],
+              "completeTubeOD": 28,
+              "formedDiameter": 40,
+              "fixedReceiverMaximumOD": 38,
+              "fixedReceiverMinimumID": 34,
+              "exteriorMovingBodyRoofReserveMM": 191.95,
+              "movingBodyToInboardGuardMM": 640.95,
+              "minimumRadialRunningClearanceMM": 3,
+              "completeAxialLengthMM": 605,
+              "outwardFallRatio": 0.01,
+              "drawVectorOutwardDown": [
+                1,
+                -0.01
+              ],
+              "initial": {
+                "outwardNormalMM": [
+                  -505,
+                  100
+                ],
+                "alongMM": [
+                  5970,
+                  6030
+                ],
+                "z": [
+                  6069,
+                  6135.05
+                ]
+              },
+              "clearanceState": {
+                "outwardNormalMM": [
+                  145,
+                  750
+                ],
+                "alongMM": [
+                  5970,
+                  6030
+                ],
+                "z": [
+                  6062.5,
+                  6128.55
+                ]
+              },
+              "dryRest": {
+                "outwardNormalMM": [
+                  300,
+                  905
+                ],
+                "alongMM": [
+                  5970,
+                  6030
+                ],
+                "z": [
+                  6060.95,
+                  6127
+                ]
+              },
+              "firstOutwardDrawMM": 650,
+              "finalOutwardDrawMM": 805,
+              "retainedOuterFaceMaximumOutwardMM": 100,
+              "after650InnerTipToRetainedFaceMM": 45,
+              "dryRestNormalMM": [
+                275,
+                930
+              ],
+              "dryRestAlongMM": [
+                5945,
+                6055
+              ],
+              "maximumCompleteMassKG": 3,
+              "roomRelease": {
+                "body": [
+                  10925,
+                  5300
+                ],
+                "shoulder": [
+                  10925,
+                  5300,
+                  5400
+                ],
+                "hand": [
+                  11275,
+                  5550,
+                  5610
+                ],
+                "target": [
+                  11495,
+                  6000,
+                  6091.05
+                ],
+                "handReachMM": 478.64391775,
+                "steelSocketExtensionMaximumMM": 700,
+                "requiredExtensionMM": 694.48477485,
+                "armToInstalledDuctMinimumMM": 395.71175839
+              },
+              "exterior": {
+                "frontBody": [
+                  6000,
+                  600
+                ],
+                "sideBodies": [
+                  [
+                    5640,
+                    600
+                  ],
+                  [
+                    6360,
+                    600
+                  ]
+                ],
+                "bodyToCompleteMovingPartMM": 30,
+                "sideHandAlongOffsetMM": 95,
+                "sideHandOutwardMM": 600,
+                "sideHandZ": 6100,
+                "sideHandReachMM": 439.00455579,
+                "sideToolMaximumMM": 400,
+                "sideToolRequiredMM": 319.4526569,
+                "frontHand": [
+                  6000,
+                  250,
+                  6050
+                ],
+                "frontHandReachMM": 460.97722286,
+                "frontToolMaximumMM": 300,
+                "frontToolRequiredMM": 161.86414056,
+                "operation": "Capture the cartridge before releasing its face fasteners with the recorded tool. Both workers take the two side stations before any outward travel. A captive hand drive draws 650 mm, then a further 155 mm into the dry cradle. Each worker services the near half using the recorded hand and tool envelope. No crossing of the occupied draw lane is credited."
+              },
+              "temporaryBlank": {
+                "normalMM": [
+                  458,
+                  478
+                ],
+                "maximumOD": 38,
+                "retainedRoomDuctStartsNormalMM": 505,
+                "gapToRoomDuctMM": 27,
+                "minimumRoomFaceClearanceMM": 25.5,
+                "verticalGuideTravelMM": 400,
+                "guideMaximumAlongBeyondRadiusMM": 8,
+                "maximumMassKG": 0.5,
+                "guideNormalMM": [
+                  458,
+                  478
+                ],
+                "controlTarget": [
+                  11495,
+                  6000,
+                  5650
+                ],
+                "controlToolRequiredMM": 502.49378106,
+                "controlToolMaximumMM": 700,
                 "operation": "A captured room-side blank rises in the47mm axial gap between the fixed receiver end at458 and the retained duct at505. Its20mm body leaves27mm to the duct. Close it only after the complete cartridge has cleared. The fixed receiver falls outward and drains incidental rain back outside. Keep the inner duct separately capped."
               },
               "weatherClosure": "The temporary blank remains supported on its guide and fixed receiver. Isolate and close the room until the cartridge, water boundary and air/drain tests are restored. Temporary wind-driven-rain performance is an explicit qualification duty.",
@@ -5199,20 +6350,20 @@
         "point": [
           4800,
           12000,
-          6300
+          6095
         ],
         "radius": 180,
-        "minimumMM": 406.44314109
+        "minimumMM": 361.10670906
       },
       {
         "id": "principal-supply",
         "point": [
           12000,
-          8800,
-          6300
+          8950,
+          6095
         ],
         "radius": 180,
-        "minimumMM": 215
+        "minimumMM": 65
       },
       {
         "id": "cooker-exhaust",
@@ -5470,7 +6621,7 @@
         "point": [
           4800,
           12000,
-          6300
+          6095
         ],
         "wall": "outer-north",
         "minimumMM": 335
@@ -5482,11 +6633,11 @@
         "outerProjectionMaximumMM": 100,
         "point": [
           12000,
-          8800,
-          6300
+          8950,
+          6095
         ],
         "wall": "outer-east",
-        "minimumMM": 185
+        "minimumMM": 35
       },
       {
         "id": "cooker-exhaust",
@@ -6809,31 +7960,35 @@
     "daylight": [
       {
         "room": "utility",
-        "oldGrossGlazingM2": 3.92747216,
-        "opaqueHeadM2": 0.83373608,
-        "retainedGrossGlazingM2": 3.09373608,
-        "retainedToFloorRatio": 0.64257449
+        "grossOpeningBeforeFramesM2": 3.92747216,
+        "opaqueHeadAndBlindM2": 0.83373608,
+        "additionalOpaqueM2": 0.83373608,
+        "retainedGrossGlazedFieldM2": 3.09373608,
+        "grossGlazedFieldToFloorRatio": 0.64257449
       },
       {
         "room": "rearBath",
-        "oldGrossGlazingM2": 3.92747216,
-        "opaqueHeadM2": 0.66373608,
-        "retainedGrossGlazingM2": 3.26373608,
-        "retainedToFloorRatio": 0.48555839
+        "grossOpeningBeforeFramesM2": 3.92747216,
+        "opaqueHeadAndBlindM2": 0.66373608,
+        "additionalOpaqueM2": 0.66373608,
+        "retainedGrossGlazedFieldM2": 3.26373608,
+        "grossGlazedFieldToFloorRatio": 0.48555839
       },
       {
         "room": "kitchenDining",
-        "oldGrossGlazingM2": 4.83628552,
-        "opaqueHeadM2": 0.96754944,
-        "retainedGrossGlazingM2": 3.86873608,
-        "retainedToFloorRatio": 0.30623551
+        "grossOpeningBeforeFramesM2": 4.83628552,
+        "opaqueHeadAndBlindM2": 0.96754944,
+        "additionalOpaqueM2": 0.96754944,
+        "retainedGrossGlazedFieldM2": 3.86873608,
+        "grossGlazedFieldToFloorRatio": 0.30623551
       },
       {
         "room": "principalBath",
-        "oldGrossGlazingM2": 2.01373608,
-        "opaqueHeadM2": 0.40373608,
-        "retainedGrossGlazingM2": 1.61,
-        "retainedToFloorRatio": 0.39614241
+        "grossOpeningBeforeFramesM2": 2.01373608,
+        "opaqueHeadAndBlindM2": 0.40373608,
+        "additionalOpaqueM2": 0.01,
+        "retainedGrossGlazedFieldM2": 1.61,
+        "grossGlazedFieldToFloorRatio": 0.39614241
       }
     ],
     "separation": [
@@ -6865,24 +8020,24 @@
         "outlet": "rear-bath-exhaust",
         "nearestIntake": {
           "id": "bed4-supply",
-          "axisDistanceMM": 5250.95229458,
-          "clearSphericalFaceBoundMM": 4713.55114088
+          "axisDistanceMM": 5241.28085491,
+          "clearSphericalFaceBoundMM": 4703.8797012
         }
       },
       {
         "outlet": "family-bath-exhaust",
         "nearestIntake": {
           "id": "principal-supply",
-          "axisDistanceMM": 3055.01636657,
-          "clearSphericalFaceBoundMM": 2517.61521287
+          "axisDistanceMM": 3200.14062191,
+          "clearSphericalFaceBoundMM": 2662.73946821
         }
       },
       {
         "outlet": "principal-bath-exhaust",
         "nearestIntake": {
           "id": "principal-supply",
-          "axisDistanceMM": 1421.44855693,
-          "clearSphericalFaceBoundMM": 884.04740323
+          "axisDistanceMM": 1550.54216324,
+          "clearSphericalFaceBoundMM": 1013.14100954
         }
       },
       {
@@ -6892,6 +8047,1225 @@
           "axisDistanceMM": 3999.65310996,
           "clearSphericalFaceBoundMM": 3462.25195626
         }
+      }
+    ],
+    "radiatorMaintenance": [
+      {
+        "id": "kitchen-W",
+        "direction": [
+          1,
+          0
+        ],
+        "carrier": [
+          7894.5,
+          10170,
+          250,
+          1400
+        ],
+        "valveBodies": [
+          [
+            8244.5,
+            10540
+          ],
+          [
+            8244.5,
+            11160
+          ]
+        ],
+        "shoulderZ": 600,
+        "valves": [
+          [
+            7819.5,
+            10245,
+            350
+          ],
+          [
+            7819.5,
+            11495,
+            350
+          ]
+        ],
+        "operator": [
+          8469.5,
+          10645
+        ],
+        "control": [
+          8244.5,
+          10645,
+          1000
+        ],
+        "returnPath": [
+          [
+            8469.5,
+            10645
+          ],
+          [
+            8800,
+            10645
+          ]
+        ],
+        "park": {
+          "dining-chair-west-north": [
+            8200,
+            8450,
+            500,
+            500
+          ]
+        },
+        "maximumLoadKG": 80,
+        "installedPlan": [
+          7719.5,
+          10195,
+          200,
+          1350
+        ],
+        "firstRestPlan": [
+          7919.5,
+          10195,
+          200,
+          1350
+        ],
+        "liftMM": 50,
+        "frontDrawMM": 200,
+        "liftedZ": [
+          150,
+          750
+        ],
+        "finalZ": [
+          100,
+          700
+        ],
+        "carrierToFurnitureMM": 355.5,
+        "operatorToFurnitureMM": 46.34556443,
+        "operatorToCarrierMM": 25,
+        "valveBodyToFurnitureMM": 50.54279339,
+        "valveHandReachMM": [
+          574.58680806,
+          596.11240551
+        ],
+        "valveToolRequiredMM": [
+          0,
+          0
+        ],
+        "valveToolToPanelMinimumMM": null,
+        "rejectedCentralHandToolToPanelMM": null,
+        "controlReachMM": 503.11529494,
+        "continuousReturnReserveMM": 25.5,
+        "handling": "A wall-tied captured carriage supports the complete assembly through50mm lift,200mm front draw and lowering. Its carrier moves with the radiator and remains beneath it. Keep the operator at the recorded side station during every loaded movement.",
+        "sequence": "Isolate, cool, drain and support both retained pipes. Release and counterhold the flat unions while the radiator remains on its wall brackets. Cap the retained pipes. Leave the valve stations before erecting the captured carriage. Lift, draw and lower under positive mechanical capture, then reverse the proved movement for replacement. Leak-test, vent and restore the occupied room.",
+        "admission": "Qualify the tied carriage, anchors, brakes, end catches, complete mass and bracket lifting geometry for the selected room. The model retains the actual fixed furniture and complete moving body."
+      },
+      {
+        "id": "rear-W",
+        "direction": [
+          1,
+          0
+        ],
+        "carrier": [
+          604.5,
+          9225,
+          250,
+          700
+        ],
+        "valveBodies": [
+          [
+            954.5,
+            9575
+          ],
+          [
+            954.5,
+            9575
+          ]
+        ],
+        "shoulderZ": 600,
+        "valves": [
+          [
+            529.5,
+            9300,
+            350
+          ],
+          [
+            529.5,
+            9850,
+            350
+          ]
+        ],
+        "operator": [
+          1179.5,
+          9600
+        ],
+        "control": [
+          954.5,
+          9600,
+          1000
+        ],
+        "returnPath": [
+          [
+            1179.5,
+            9600
+          ],
+          [
+            1179.5,
+            10100
+          ]
+        ],
+        "maximumLoadKG": 40,
+        "installedPlan": [
+          429.5,
+          9250,
+          200,
+          650
+        ],
+        "firstRestPlan": [
+          629.5,
+          9250,
+          200,
+          650
+        ],
+        "liftMM": 50,
+        "frontDrawMM": 200,
+        "liftedZ": [
+          150,
+          750
+        ],
+        "finalZ": [
+          100,
+          700
+        ],
+        "carrierToFurnitureMM": 27.95084972,
+        "operatorToFurnitureMM": 57.5,
+        "operatorToCarrierMM": 25,
+        "valveBodyToFurnitureMM": 32.66574816,
+        "valveHandReachMM": [
+          564.57948953,
+          564.57948953
+        ],
+        "valveToolRequiredMM": [
+          0,
+          0
+        ],
+        "valveToolToPanelMinimumMM": null,
+        "rejectedCentralHandToolToPanelMM": null,
+        "controlReachMM": 503.11529494,
+        "continuousReturnReserveMM": 57.5,
+        "handling": "A wall-tied captured carriage supports the complete assembly through50mm lift,200mm front draw and lowering. Its carrier moves with the radiator and remains beneath it. Keep the operator at the recorded side station during every loaded movement.",
+        "sequence": "Isolate, cool, drain and support both retained pipes. Release and counterhold the flat unions while the radiator remains on its wall brackets. Cap the retained pipes. Leave the valve stations before erecting the captured carriage. Lift, draw and lower under positive mechanical capture, then reverse the proved movement for replacement. Leak-test, vent and restore the occupied room.",
+        "admission": "Qualify the tied carriage, anchors, brakes, end catches, complete mass and bracket lifting geometry for the selected room. The model retains the actual fixed furniture and complete moving body."
+      },
+      {
+        "id": "principal-S-high",
+        "direction": [
+          0,
+          1
+        ],
+        "carrier": [
+          10965,
+          6775,
+          570,
+          250
+        ],
+        "valveBodies": [
+          [
+            11242.5,
+            7100
+          ],
+          [
+            11242.5,
+            7100
+          ]
+        ],
+        "shoulderZ": 1450,
+        "valves": [
+          [
+            11000,
+            6700,
+            2125
+          ],
+          [
+            11500,
+            6700,
+            2125
+          ]
+        ],
+        "valveHands": [
+          [
+            11000,
+            6850,
+            1800
+          ],
+          [
+            11500,
+            6850,
+            1800
+          ]
+        ],
+        "valveToolMaximumMM": 450,
+        "actualPanelBox": [
+          11050,
+          6622,
+          2075,
+          400,
+          158,
+          600
+        ],
+        "operator": [
+          10625,
+          7100
+        ],
+        "control": [
+          11000,
+          6925,
+          1100
+        ],
+        "returnPath": [
+          [
+            10625,
+            7100
+          ],
+          [
+            10625,
+            7550
+          ]
+        ],
+        "maximumLoadKG": 30,
+        "loweredBottomMM": 100,
+        "installedPlan": [
+          10975,
+          6600,
+          550,
+          200
+        ],
+        "firstRestPlan": [
+          10975,
+          6800,
+          550,
+          200
+        ],
+        "liftMM": 50,
+        "frontDrawMM": 200,
+        "liftedZ": [
+          2125,
+          2725
+        ],
+        "finalZ": [
+          100,
+          700
+        ],
+        "carrierToFurnitureMM": 375,
+        "operatorToFurnitureMM": 25,
+        "operatorToCarrierMM": 48.17380717,
+        "valveBodyToFurnitureMM": 25.66192979,
+        "valveHandReachMM": [
+          493.76740476,
+          501.30454815
+        ],
+        "valveToolRequiredMM": [
+          357.94552658,
+          357.94552658
+        ],
+        "valveToolToPanelMinimumMM": 35,
+        "rejectedCentralHandToolToPanelMM": -15,
+        "controlReachMM": 541.98708472,
+        "continuousReturnReserveMM": 25,
+        "handling": "A wall-tied captured carriage supports the complete assembly through50mm lift,200mm front draw and lowering. Its carrier moves with the radiator and remains beneath it. Keep the operator at the recorded side station during every loaded movement.",
+        "sequence": "Isolate, cool, drain and support both retained pipes. Release and counterhold the flat unions while the radiator remains on its wall brackets. Cap the retained pipes. Leave the valve stations before erecting the captured carriage. Lift, draw and lower under positive mechanical capture, then reverse the proved movement for replacement. Leak-test, vent and restore the occupied room.",
+        "admission": "Qualify the tied carriage, anchors, brakes, end catches, complete mass and bracket lifting geometry for the selected room. The model retains the actual fixed furniture and complete moving body."
+      }
+    ],
+    "inletMaintenance": [
+      {
+        "id": "study",
+        "point": [
+          3045,
+          0,
+          2100
+        ],
+        "wall": "outer-south",
+        "body": [
+          3045,
+          1225
+        ],
+        "bodyHeightMM": 2000,
+        "shoulder": [
+          3045,
+          1225,
+          1450
+        ],
+        "hand": [
+          3045,
+          875,
+          1800
+        ],
+        "target": [
+          3045,
+          608,
+          1976.08
+        ],
+        "handReachMM": 494.97474683,
+        "socketMaximumMM": 500,
+        "socketRequiredMM": 319.83302894,
+        "bodyToFurnitureMM": 205.18560945,
+        "bodyToCarrierMM": 25,
+        "innerCartridge": {
+          "completeOD": 347,
+          "axialLength": 150,
+          "installedNormalMM": [
+            458,
+            608
+          ],
+          "drawMM": 250,
+          "finalNormalMM": [
+            708,
+            858
+          ],
+          "finalZ": [
+            1933.58,
+            2282.08
+          ],
+          "maximumCompleteMassKG": 12,
+          "flatRadialJoint": true,
+          "axialPilotMM": 0,
+          "retainedReceiverID": 354,
+          "radialGapMM": 3.5,
+          "supportedCarrier": [
+            2845,
+            675,
+            400,
+            225
+          ],
+          "normalDryRestMM": [
+            675,
+            900
+          ],
+          "temporaryBlank": {
+            "normalMM": [
+              458,
+              478
+            ],
+            "maximumOD": 358,
+            "verticalTravelMM": 400,
+            "roomFaceReserveMM": 25.5
+          }
+        },
+        "exterior": {
+          "fixedWeatherFaceWH": [
+            400,
+            400
+          ],
+          "projectionMM": 100,
+          "roofReserveMM": 4027,
+          "stage": {
+            "alongMM": [
+              2145,
+              3945
+            ],
+            "outwardNormalMM": [
+              250,
+              950
+            ],
+            "deckZ": 660,
+            "completeTopZ": 2660,
+            "guardTubeOD": 20,
+            "guardNormalsMM": [
+              260,
+              940
+            ],
+            "guardCentreZ": 1760,
+            "roofReserveMM": 3667
+          },
+          "hoodToInboardGuardMM": 116.5,
+          "sideBodies": [
+            [
+              2515,
+              600
+            ],
+            [
+              3575,
+              600
+            ]
+          ],
+          "bodyToMovingHoodMM": 30,
+          "hood": {
+            "maximumCompleteMassKG": 12,
+            "initialNormalMM": [
+              0,
+              100
+            ],
+            "finalNormalMM": [
+              350,
+              450
+            ],
+            "drawMM": 350,
+            "supportedRestNormalMM": [
+              325,
+              475
+            ],
+            "completeWHDepth": [
+              400,
+              400,
+              100
+            ],
+            "drawFallMM": 3.5,
+            "settingAllowanceMM": 10
+          },
+          "handReachMM": 265.18861212,
+          "socketMaximumMM": 450,
+          "socketRequiredMM": 304.50779957
+        },
+        "operation": "Isolate the served room and park the named empty furniture. Capture the150mm inner module, release its two flat radial collar halves and withdraw250mm along the1%axis onto the fixed dry cradle. Keep the retained outer hood and receiver supported. Fit the guided temporary blank before cleaning or exchange. Restore and test both flow directions before reopening the room.",
+        "exteriorOperation": "The fixed400mm weather hood remains during inner module renewal. For hood renewal, use the recorded tied exterior stage and captured cradle. Two workers take the side stations before its350mm outward draw. Lower only after it reaches the separate supported rest. The inner blank stays closed throughout.",
+        "performance": "The same assembled inlet must provide15000mm² inward and5000mm² unpowered outward equivalent area at Cd0.61, with its complete metal passages, insect/weather and acoustic elements. The150mm module and fixed receiver are the selected dimensional reference for product qualification.",
+        "admission": "Test complete weather, air, sound, thermal, fire, material and captured handling duties within these dimensions. The fixed receiver and hood drain to the outside."
+      },
+      {
+        "id": "living",
+        "point": [
+          3090,
+          12000,
+          2100
+        ],
+        "wall": "outer-north",
+        "body": [
+          3625,
+          10900
+        ],
+        "hand": [
+          3300,
+          11250,
+          1800
+        ],
+        "bodyHeightMM": 2000,
+        "shoulder": [
+          3625,
+          10900,
+          1450
+        ],
+        "target": [
+          3090,
+          11392,
+          1976.08
+        ],
+        "handReachMM": 592.13596412,
+        "socketMaximumMM": 500,
+        "socketRequiredMM": 308.65541693,
+        "bodyToFurnitureMM": 50,
+        "bodyToCarrierMM": 90.1602235,
+        "innerCartridge": {
+          "completeOD": 347,
+          "axialLength": 150,
+          "installedNormalMM": [
+            458,
+            608
+          ],
+          "drawMM": 250,
+          "finalNormalMM": [
+            708,
+            858
+          ],
+          "finalZ": [
+            1933.58,
+            2282.08
+          ],
+          "maximumCompleteMassKG": 12,
+          "flatRadialJoint": true,
+          "axialPilotMM": 0,
+          "retainedReceiverID": 354,
+          "radialGapMM": 3.5,
+          "supportedCarrier": [
+            2890,
+            11100,
+            400,
+            225
+          ],
+          "normalDryRestMM": [
+            675,
+            900
+          ],
+          "temporaryBlank": {
+            "normalMM": [
+              458,
+              478
+            ],
+            "maximumOD": 358,
+            "verticalTravelMM": 400,
+            "roomFaceReserveMM": 25.5
+          }
+        },
+        "exterior": {
+          "fixedWeatherFaceWH": [
+            400,
+            400
+          ],
+          "projectionMM": 100,
+          "roofReserveMM": 4027,
+          "stage": {
+            "alongMM": [
+              2190,
+              3990
+            ],
+            "outwardNormalMM": [
+              250,
+              950
+            ],
+            "deckZ": 660,
+            "completeTopZ": 2660,
+            "guardTubeOD": 20,
+            "guardNormalsMM": [
+              260,
+              940
+            ],
+            "guardCentreZ": 1760,
+            "roofReserveMM": 3667
+          },
+          "hoodToInboardGuardMM": 116.5,
+          "sideBodies": [
+            [
+              2560,
+              600
+            ],
+            [
+              3620,
+              600
+            ]
+          ],
+          "bodyToMovingHoodMM": 30,
+          "hood": {
+            "maximumCompleteMassKG": 12,
+            "initialNormalMM": [
+              0,
+              100
+            ],
+            "finalNormalMM": [
+              350,
+              450
+            ],
+            "drawMM": 350,
+            "supportedRestNormalMM": [
+              325,
+              475
+            ],
+            "completeWHDepth": [
+              400,
+              400,
+              100
+            ],
+            "drawFallMM": 3.5,
+            "settingAllowanceMM": 10
+          },
+          "handReachMM": 265.18861212,
+          "socketMaximumMM": 450,
+          "socketRequiredMM": 304.50779957
+        },
+        "operation": "Isolate the served room and park the named empty furniture. Capture the150mm inner module, release its two flat radial collar halves and withdraw250mm along the1%axis onto the fixed dry cradle. Keep the retained outer hood and receiver supported. Fit the guided temporary blank before cleaning or exchange. Restore and test both flow directions before reopening the room.",
+        "exteriorOperation": "The fixed400mm weather hood remains during inner module renewal. For hood renewal, use the recorded tied exterior stage and captured cradle. Two workers take the side stations before its350mm outward draw. Lower only after it reaches the separate supported rest. The inner blank stays closed throughout.",
+        "performance": "The same assembled inlet must provide15000mm² inward and5000mm² unpowered outward equivalent area at Cd0.61, with its complete metal passages, insect/weather and acoustic elements. The150mm module and fixed receiver are the selected dimensional reference for product qualification.",
+        "admission": "Test complete weather, air, sound, thermal, fire, material and captured handling duties within these dimensions. The fixed receiver and hood drain to the outside."
+      },
+      {
+        "id": "bed2",
+        "point": [
+          3045,
+          0,
+          5550
+        ],
+        "wall": "outer-south",
+        "body": [
+          3045,
+          1225
+        ],
+        "bodyHeightMM": 2000,
+        "shoulder": [
+          3045,
+          1225,
+          4900
+        ],
+        "hand": [
+          3045,
+          875,
+          5250
+        ],
+        "target": [
+          3045,
+          608,
+          5426.08
+        ],
+        "handReachMM": 494.97474683,
+        "socketMaximumMM": 500,
+        "socketRequiredMM": 319.83302894,
+        "bodyToFurnitureMM": 406.41365361,
+        "bodyToCarrierMM": 25,
+        "innerCartridge": {
+          "completeOD": 347,
+          "axialLength": 150,
+          "installedNormalMM": [
+            458,
+            608
+          ],
+          "drawMM": 250,
+          "finalNormalMM": [
+            708,
+            858
+          ],
+          "finalZ": [
+            5383.58,
+            5732.08
+          ],
+          "maximumCompleteMassKG": 12,
+          "flatRadialJoint": true,
+          "axialPilotMM": 0,
+          "retainedReceiverID": 354,
+          "radialGapMM": 3.5,
+          "supportedCarrier": [
+            2845,
+            675,
+            400,
+            225
+          ],
+          "normalDryRestMM": [
+            675,
+            900
+          ],
+          "temporaryBlank": {
+            "normalMM": [
+              458,
+              478
+            ],
+            "maximumOD": 358,
+            "verticalTravelMM": 400,
+            "roomFaceReserveMM": 25.5
+          }
+        },
+        "exterior": {
+          "fixedWeatherFaceWH": [
+            400,
+            400
+          ],
+          "projectionMM": 100,
+          "roofReserveMM": 577,
+          "stage": {
+            "alongMM": [
+              2145,
+              3945
+            ],
+            "outwardNormalMM": [
+              250,
+              950
+            ],
+            "deckZ": 4200,
+            "completeTopZ": 6200,
+            "guardTubeOD": 20,
+            "guardNormalsMM": [
+              260,
+              940
+            ],
+            "guardCentreZ": 5300,
+            "roofReserveMM": 127
+          },
+          "hoodToInboardGuardMM": 26.5,
+          "sideBodies": [
+            [
+              2515,
+              600
+            ],
+            [
+              3575,
+              600
+            ]
+          ],
+          "bodyToMovingHoodMM": 30,
+          "hood": {
+            "maximumCompleteMassKG": 12,
+            "initialNormalMM": [
+              0,
+              100
+            ],
+            "finalNormalMM": [
+              350,
+              450
+            ],
+            "drawMM": 350,
+            "supportedRestNormalMM": [
+              325,
+              475
+            ],
+            "completeWHDepth": [
+              400,
+              400,
+              100
+            ],
+            "drawFallMM": 3.5,
+            "settingAllowanceMM": 10
+          },
+          "handReachMM": 283.24018077,
+          "socketMaximumMM": 450,
+          "socketRequiredMM": 304.50779957
+        },
+        "operation": "Isolate the served room and park the named empty furniture. Capture the150mm inner module, release its two flat radial collar halves and withdraw250mm along the1%axis onto the fixed dry cradle. Keep the retained outer hood and receiver supported. Fit the guided temporary blank before cleaning or exchange. Restore and test both flow directions before reopening the room.",
+        "exteriorOperation": "The fixed400mm weather hood remains during inner module renewal. For hood renewal, use the recorded tied exterior stage and captured cradle. Two workers take the side stations before its350mm outward draw. Lower only after it reaches the separate supported rest. The inner blank stays closed throughout.",
+        "performance": "The same assembled inlet must provide15000mm² inward and5000mm² unpowered outward equivalent area at Cd0.61, with its complete metal passages, insect/weather and acoustic elements. The150mm module and fixed receiver are the selected dimensional reference for product qualification.",
+        "admission": "Test complete weather, air, sound, thermal, fire, material and captured handling duties within these dimensions. The fixed receiver and hood drain to the outside."
+      },
+      {
+        "id": "bed3",
+        "point": [
+          8955,
+          0,
+          5550
+        ],
+        "wall": "outer-south",
+        "body": [
+          8955,
+          1225
+        ],
+        "bodyHeightMM": 2000,
+        "shoulder": [
+          8955,
+          1225,
+          4900
+        ],
+        "hand": [
+          8955,
+          875,
+          5250
+        ],
+        "target": [
+          8955,
+          608,
+          5426.08
+        ],
+        "handReachMM": 494.97474683,
+        "socketMaximumMM": 500,
+        "socketRequiredMM": 319.83302894,
+        "bodyToFurnitureMM": 358.04274177,
+        "bodyToCarrierMM": 25,
+        "innerCartridge": {
+          "completeOD": 347,
+          "axialLength": 150,
+          "installedNormalMM": [
+            458,
+            608
+          ],
+          "drawMM": 250,
+          "finalNormalMM": [
+            708,
+            858
+          ],
+          "finalZ": [
+            5383.58,
+            5732.08
+          ],
+          "maximumCompleteMassKG": 12,
+          "flatRadialJoint": true,
+          "axialPilotMM": 0,
+          "retainedReceiverID": 354,
+          "radialGapMM": 3.5,
+          "supportedCarrier": [
+            8755,
+            675,
+            400,
+            225
+          ],
+          "normalDryRestMM": [
+            675,
+            900
+          ],
+          "temporaryBlank": {
+            "normalMM": [
+              458,
+              478
+            ],
+            "maximumOD": 358,
+            "verticalTravelMM": 400,
+            "roomFaceReserveMM": 25.5
+          }
+        },
+        "exterior": {
+          "fixedWeatherFaceWH": [
+            400,
+            400
+          ],
+          "projectionMM": 100,
+          "roofReserveMM": 577,
+          "stage": {
+            "alongMM": [
+              8055,
+              9855
+            ],
+            "outwardNormalMM": [
+              250,
+              950
+            ],
+            "deckZ": 4200,
+            "completeTopZ": 6200,
+            "guardTubeOD": 20,
+            "guardNormalsMM": [
+              260,
+              940
+            ],
+            "guardCentreZ": 5300,
+            "roofReserveMM": 127
+          },
+          "hoodToInboardGuardMM": 26.5,
+          "sideBodies": [
+            [
+              8425,
+              600
+            ],
+            [
+              9485,
+              600
+            ]
+          ],
+          "bodyToMovingHoodMM": 30,
+          "hood": {
+            "maximumCompleteMassKG": 12,
+            "initialNormalMM": [
+              0,
+              100
+            ],
+            "finalNormalMM": [
+              350,
+              450
+            ],
+            "drawMM": 350,
+            "supportedRestNormalMM": [
+              325,
+              475
+            ],
+            "completeWHDepth": [
+              400,
+              400,
+              100
+            ],
+            "drawFallMM": 3.5,
+            "settingAllowanceMM": 10
+          },
+          "handReachMM": 283.24018077,
+          "socketMaximumMM": 450,
+          "socketRequiredMM": 304.50779957
+        },
+        "operation": "Isolate the served room and park the named empty furniture. Capture the150mm inner module, release its two flat radial collar halves and withdraw250mm along the1%axis onto the fixed dry cradle. Keep the retained outer hood and receiver supported. Fit the guided temporary blank before cleaning or exchange. Restore and test both flow directions before reopening the room.",
+        "exteriorOperation": "The fixed400mm weather hood remains during inner module renewal. For hood renewal, use the recorded tied exterior stage and captured cradle. Two workers take the side stations before its350mm outward draw. Lower only after it reaches the separate supported rest. The inner blank stays closed throughout.",
+        "performance": "The same assembled inlet must provide15000mm² inward and5000mm² unpowered outward equivalent area at Cd0.61, with its complete metal passages, insect/weather and acoustic elements. The150mm module and fixed receiver are the selected dimensional reference for product qualification.",
+        "admission": "Test complete weather, air, sound, thermal, fire, material and captured handling duties within these dimensions. The fixed receiver and hood drain to the outside."
+      },
+      {
+        "id": "bed4",
+        "point": [
+          4800,
+          12000,
+          6095
+        ],
+        "wall": "outer-north",
+        "body": [
+          4800,
+          10775
+        ],
+        "platform": [
+          4475,
+          10450,
+          650,
+          650
+        ],
+        "deck": 900,
+        "park": {
+          "bed4-island-wardrobe": [
+            2942,
+            9800,
+            1500,
+            660
+          ]
+        },
+        "bodyHeightMM": 1380,
+        "shoulder": [
+          4800,
+          10775,
+          5400
+        ],
+        "hand": [
+          4800,
+          11125,
+          5750
+        ],
+        "target": [
+          4800,
+          11392,
+          5971.08
+        ],
+        "handReachMM": 494.97474683,
+        "socketMaximumMM": 500,
+        "socketRequiredMM": 346.64876518,
+        "bodyToFurnitureMM": 176.85322689,
+        "bodyToCarrierMM": 25,
+        "innerCartridge": {
+          "completeOD": 347,
+          "axialLength": 150,
+          "installedNormalMM": [
+            458,
+            608
+          ],
+          "drawMM": 250,
+          "finalNormalMM": [
+            708,
+            858
+          ],
+          "finalZ": [
+            5928.58,
+            6277.08
+          ],
+          "maximumCompleteMassKG": 12,
+          "flatRadialJoint": true,
+          "axialPilotMM": 0,
+          "retainedReceiverID": 354,
+          "radialGapMM": 3.5,
+          "supportedCarrier": [
+            4600,
+            11100,
+            400,
+            225
+          ],
+          "normalDryRestMM": [
+            675,
+            900
+          ],
+          "temporaryBlank": {
+            "normalMM": [
+              458,
+              478
+            ],
+            "maximumOD": 358,
+            "verticalTravelMM": 400,
+            "roomFaceReserveMM": 25.5
+          }
+        },
+        "exterior": {
+          "fixedWeatherFaceWH": [
+            400,
+            400
+          ],
+          "projectionMM": 100,
+          "roofReserveMM": 32,
+          "stage": {
+            "alongMM": [
+              3900,
+              5700
+            ],
+            "outwardNormalMM": [
+              250,
+              950
+            ],
+            "deckZ": 4300,
+            "completeTopZ": 6300,
+            "guardTubeOD": 20,
+            "guardNormalsMM": [
+              260,
+              940
+            ],
+            "guardCentreZ": 5400,
+            "roofReserveMM": 27
+          },
+          "hoodToInboardGuardMM": 471.5,
+          "sideBodies": [
+            [
+              4270,
+              600
+            ],
+            [
+              5330,
+              600
+            ]
+          ],
+          "bodyToMovingHoodMM": 30,
+          "hood": {
+            "maximumCompleteMassKG": 12,
+            "initialNormalMM": [
+              0,
+              100
+            ],
+            "finalNormalMM": [
+              350,
+              450
+            ],
+            "drawMM": 350,
+            "supportedRestNormalMM": [
+              325,
+              475
+            ],
+            "completeWHDepth": [
+              400,
+              400,
+              100
+            ],
+            "drawFallMM": 3.5,
+            "settingAllowanceMM": 10
+          },
+          "handReachMM": 435.02873468,
+          "socketMaximumMM": 450,
+          "socketRequiredMM": 304.50779957
+        },
+        "operation": "Isolate the served room and park the named empty furniture. Capture the150mm inner module, release its two flat radial collar halves and withdraw250mm along the1%axis onto the fixed dry cradle. Keep the retained outer hood and receiver supported. Fit the guided temporary blank before cleaning or exchange. Restore and test both flow directions before reopening the room.",
+        "exteriorOperation": "The fixed400mm weather hood remains during inner module renewal. For hood renewal, use the recorded tied exterior stage and captured cradle. Two workers take the side stations before its350mm outward draw. Lower only after it reaches the separate supported rest. The inner blank stays closed throughout.",
+        "performance": "The same assembled inlet must provide15000mm² inward and5000mm² unpowered outward equivalent area at Cd0.61, with its complete metal passages, insect/weather and acoustic elements. The150mm module and fixed receiver are the selected dimensional reference for product qualification.",
+        "admission": "Test complete weather, air, sound, thermal, fire, material and captured handling duties within these dimensions. The fixed receiver and hood drain to the outside."
+      },
+      {
+        "id": "principal",
+        "point": [
+          12000,
+          8950,
+          6095
+        ],
+        "wall": "outer-east",
+        "body": [
+          10775,
+          8950
+        ],
+        "platform": [
+          10450,
+          8625,
+          650,
+          650
+        ],
+        "deck": 900,
+        "park": {
+          "principal": [
+            8540,
+            9150,
+            1600,
+            2090
+          ]
+        },
+        "bodyHeightMM": 1380,
+        "shoulder": [
+          10775,
+          8950,
+          5400
+        ],
+        "hand": [
+          11125,
+          8950,
+          5750
+        ],
+        "target": [
+          11392,
+          8950,
+          5971.08
+        ],
+        "handReachMM": 494.97474683,
+        "socketMaximumMM": 500,
+        "socketRequiredMM": 346.64876518,
+        "bodyToFurnitureMM": 365.75145512,
+        "bodyToCarrierMM": 25,
+        "innerCartridge": {
+          "completeOD": 347,
+          "axialLength": 150,
+          "installedNormalMM": [
+            458,
+            608
+          ],
+          "drawMM": 250,
+          "finalNormalMM": [
+            708,
+            858
+          ],
+          "finalZ": [
+            5928.58,
+            6277.08
+          ],
+          "maximumCompleteMassKG": 12,
+          "flatRadialJoint": true,
+          "axialPilotMM": 0,
+          "retainedReceiverID": 354,
+          "radialGapMM": 3.5,
+          "supportedCarrier": [
+            11100,
+            8750,
+            225,
+            400
+          ],
+          "normalDryRestMM": [
+            675,
+            900
+          ],
+          "temporaryBlank": {
+            "normalMM": [
+              458,
+              478
+            ],
+            "maximumOD": 358,
+            "verticalTravelMM": 400,
+            "roomFaceReserveMM": 25.5
+          }
+        },
+        "exterior": {
+          "fixedWeatherFaceWH": [
+            400,
+            400
+          ],
+          "projectionMM": 100,
+          "roofReserveMM": 32,
+          "stage": {
+            "alongMM": [
+              8050,
+              9850
+            ],
+            "outwardNormalMM": [
+              250,
+              950
+            ],
+            "deckZ": 4300,
+            "completeTopZ": 6300,
+            "guardTubeOD": 20,
+            "guardNormalsMM": [
+              260,
+              940
+            ],
+            "guardCentreZ": 5400,
+            "roofReserveMM": 27
+          },
+          "hoodToInboardGuardMM": 471.5,
+          "sideBodies": [
+            [
+              8420,
+              600
+            ],
+            [
+              9480,
+              600
+            ]
+          ],
+          "bodyToMovingHoodMM": 30,
+          "hood": {
+            "maximumCompleteMassKG": 12,
+            "initialNormalMM": [
+              0,
+              100
+            ],
+            "finalNormalMM": [
+              350,
+              450
+            ],
+            "drawMM": 350,
+            "supportedRestNormalMM": [
+              325,
+              475
+            ],
+            "completeWHDepth": [
+              400,
+              400,
+              100
+            ],
+            "drawFallMM": 3.5,
+            "settingAllowanceMM": 10
+          },
+          "handReachMM": 435.02873468,
+          "socketMaximumMM": 450,
+          "socketRequiredMM": 304.50779957
+        },
+        "operation": "Isolate the served room and park the named empty furniture. Capture the150mm inner module, release its two flat radial collar halves and withdraw250mm along the1%axis onto the fixed dry cradle. Keep the retained outer hood and receiver supported. Fit the guided temporary blank before cleaning or exchange. Restore and test both flow directions before reopening the room.",
+        "exteriorOperation": "The fixed400mm weather hood remains during inner module renewal. For hood renewal, use the recorded tied exterior stage and captured cradle. Two workers take the side stations before its350mm outward draw. Lower only after it reaches the separate supported rest. The inner blank stays closed throughout.",
+        "performance": "The same assembled inlet must provide15000mm² inward and5000mm² unpowered outward equivalent area at Cd0.61, with its complete metal passages, insect/weather and acoustic elements. The150mm module and fixed receiver are the selected dimensional reference for product qualification.",
+        "admission": "Test complete weather, air, sound, thermal, fire, material and captured handling duties within these dimensions. The fixed receiver and hood drain to the outside."
       }
     ],
     "occupiedConsequences": {
@@ -6945,7 +9319,7 @@
             ]
           ],
           "heatChangeW": 0,
-          "reason": "Release the floor approach to the retained purge window. Keep the same complete radiator, valves, output and exchange duty."
+          "reason": "Release the floor approach to the retained purge window. Retain the complete valves and exchange duty. The separately scheduled principal400mm radiator retains its room heat margin."
         },
         {
           "id": "kitchen-E",
@@ -7000,22 +9374,23 @@
             ]
           ],
           "heatChangeW": 0,
-          "reason": "Release the floor approach to the retained purge window. Keep the same complete radiator, valves, output and exchange duty."
+          "reason": "Release the floor approach to the retained purge window. Retain the complete valves and exchange duty. The separately scheduled principal400mm radiator retains its room heat margin."
         },
         {
           "id": "principal-E-high",
           "nextId": "principal-S-high",
           "level": 1,
           "plan": [
-            10892.5,
+            10975,
             6600,
-            650,
+            550,
             200
           ],
           "z": [
-            2100,
-            2700
+            2075,
+            2675
           ],
+          "length": 400,
           "branch": [
             [
               11200,
@@ -7026,7 +9401,7 @@
               6700
             ],
             [
-              10942.5,
+              11000,
               6700
             ]
           ],
@@ -7046,8 +9421,8 @@
               7000
             ]
           ],
-          "heatChangeW": 0,
-          "reason": "Release the floor approach to the retained purge window. Keep the same complete radiator, valves, output and exchange duty."
+          "heatChangeW": -109.37480174,
+          "reason": "Release the floor approach to the retained purge window. Retain the complete valves and exchange duty. The separately scheduled principal400mm radiator retains its room heat margin."
         }
       ],
       "inverter": {
@@ -7073,9 +9448,24 @@
       },
       "additionalRearBlindAreaM2": 0.1
     },
+    "airOperatingEnvelope": {
+      "cases": 96,
+      "minimumWholeHouseLps": 70,
+      "maximumWholeHouseLps": 100,
+      "minimumModePressureReservePa": 13.17303822,
+      "comparisonSource": "https://products.titon.com/wp-content/uploads/2025/03/Titon-Ultimate-dMEV-Sales-Brochure.pdf",
+      "comparison": "Page7 TOR graph. Conservative author readings20/35/40/50Pa at5/13/16/20L/s bound this feasibility comparison. Commission the actual fan in CF1 with every complete inlet, transfer, front, trap, bend and terminal. The published20Pa constant-flow table is retained separately.",
+      "network": "Six15000mm² equivalent inlets,7600mm² small transfers,35000mm² kitchen transfer and90000mm² stair. All32 other-fan masks at each kitchen5/16/20 setting, no cooker makeup, zero facade wind."
+    },
     "normalHouseExtractLps": 70,
     "conservativeFloorCriterionLps": 58.023525,
     "heatBoundary": "Retain the former whole-opening Uw 1.6 upper limit and all opening perimeters. No heat-loss reduction is credited for the opaque bands.",
+    "reentry": {
+      "principalPurge": "Operate the principal fan inhibit with the window positively latched. Keep the latch closed through motor coast-down until the local measured-flow indicator confirms at most 0.25 L/s, then release the manual catch and open the leaf. Positive reclosure permits normal humidity demand. The other five fans command 16 L/s during normal purge. Cooker safety shut-off, fire and frost controls retain priority and can reduce that mechanical total.",
+      "beforeLeafReleaseMaximumLps": 0.25,
+      "commandedOtherMechanicalPurgeLps": 80,
+      "qualification": "Test each selected face with both neighboring-window states, measured facade pressures and a tracer at full extraction. Qualify the local inhibit, low-flow confirmation and return to normal duty, including power and component faults. Verify absence of exhaust or condensate return at every intake. Preserve wind-driven rain capture and the temporary closures in service states."
+    },
     "outside": "All exhausts discharge openly outside the four external elevations. No outlet enters the courtyard, loggia or an architectural screen. Head glazing remains fixed below the new outlets. Resolve site wind, nearby open windows and buildings with the selected terminal before installation.",
     "scope": "One occupied architectural reference with complete service locations. Installed apparatus, material exceptions, weather, fire, wind and structural acceptance remain separately owned."
   }
