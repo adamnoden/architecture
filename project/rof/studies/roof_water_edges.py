@@ -26,17 +26,19 @@ fault['front'] = fault['bed']+fault['frontDepth']
 # Bounded head+spout plan envelope, each 250 along the facade, extending
 # radially from its circuit's outer edge to1260. Normal upper spouts shadow
 # 250x150 of the lower square annulus. Each N/S circuit has one of each head.
-head = {'along':250,'axis':1130,'nearest':1000,'farthest':1260}
+head = {'along':250,'highNormalCatchAlong':450,'axis':1130,'nearest':1000,'farthest':1260}
 primary_side = shell+2*primary['outer']
 fault_side = shell+2*fault['outer']
 normal_area = (primary_side**2-ridge**2)/2e6
-normal_head_area = head['along']*(head['farthest']-primary['outer'])/1e6
+normal_head_area = (head['along']*(head['nearest']-primary['outer'])
+                   +head['highNormalCatchAlong']*(head['farthest']-head['nearest']))/1e6
 normal_shadow = head['along']*(fault['outer']-primary['outer'])/1e6
 fault_head_extra = head['along']*(head['farthest']-fault['outer'])/1e6
 fault_extra_area = (fault_side**2-primary_side**2)/2e6-normal_shadow+fault_head_extra
 normal_q = (normal_area+normal_head_area)*rain
 fault_q = normal_q+fault_extra_area*rain
-whole_area = fault_side**2/1e6+4*fault_head_extra
+normal_head_extra = normal_head_area-normal_shadow
+whole_area = fault_side**2/1e6+2*(normal_head_extra+fault_head_extra)
 assert abs(2*fault_q+(ridge**2/1e6)*rain-whole_area*rain)<1e-9
 # Inner goods intercept sky: each projected annulus is counted once.
 inner_normal = (ridge**2-2600**2)/1e6*rain
@@ -71,8 +73,11 @@ pdepth = normal_depth(normal_q,primary['width']/2)
 fdepth = normal_depth(fault_q,fault['width']/2)
 p_local = local_head(normal_q,primary['width']/2,pdepth)
 f_local = local_head(fault_q,fault['width']/2,fdepth)
-normal_reserve=primary['frontDepth']-(pdepth+p_local+10+25+5)
-fault_reserve=fault['frontDepth']-(fdepth+f_local+10+25+5)
+body_deflection = 8
+primary_cross_section_movement = 11
+fault_cross_section_movement = 19
+normal_reserve=primary['frontDepth']-(pdepth+p_local+10+25+primary_cross_section_movement)
+fault_reserve=fault['frontDepth']-(fdepth+f_local+10+25+fault_cross_section_movement)
 spill_head=weir_head(normal_q,1200)
 spill_reserve=primary['back']-primary['front']-spill_head-6-10-25-10
 assert min(normal_reserve,fault_reserve,spill_reserve)>0
@@ -102,8 +107,8 @@ lower_min=min(f_rim(f,x)-fault['frontDepth'] for f in ['north','south']
               for x in [0,12000,11750-.001,11750+.001])
 window_top=max(3450+o['head'] for o in house['openings']['FIRST']
                if 'head' in o and o['wall'].startswith('outer'))
-assert min_drop[0]-carrier_below_bed-20>25
-assert lower_min-carrier_below_bed-window_top-15>60
+assert min_drop[0]-carrier_below_bed-10-5-20>10
+assert lower_min-carrier_below_bed-window_top-10-body_deflection-30>25
 # The fixed primary apron ends 40 below the front lip. The whole moving
 # carrier, its 5 mm fittings, 5 mm deflection and opposed setting are charged.
 toe_over_front=primary['frontDepth']-apron_toe_above_bed
@@ -144,27 +149,30 @@ p_stock=(350+230+130+15+25+20)/1000
 f_stock=(545+2*125+20)/1000
 p_cu=p_stock*.001*cu_density
 f_cu=f_stock*.001*cu_density
-rhs_area=(60*40-54*34)
+rhs_area=(50*100-42*92)
 rhs_kg=rhs_area*steel_density/1e6
 root_plate=.120*.100*.008*steel_density
 gussets=2*.080*.080/2*.005*steel_density
-moving_crossarm_kg = (100*25-92*17)*steel_density/1e6
-lower_root_kg = (80*40-72*32)*steel_density/1e6
+moving_crossarm_kg = (160*25-152*17)*steel_density/1e6
+lower_root_kg = rhs_kg
 # Fixed roots stop behind each wet body. The shallow crossarm and its captured
 # tray first move 40 out to release the fork, then descend. A fixed full-width
 # seat would obstruct that first descent.
 p_brackets=64*(rhs_kg*.9+moving_crossarm_kg*.4+root_plate+gussets)/p_perimeter+.5
 f_brackets=64*(lower_root_kg*.8+moving_crossarm_kg*.6+root_plate+gussets)/f_perimeter+1.0
-p_apron=.580*.001*cu_density
-f_apron=.650*.0005*8000 # 316L, upstream of copper, independently supported
-rail_kg = (40*25-36*21)*steel_density/1e6
+p_apron=.580*.0007*8000*math.hypot(25,25)/25
+f_apron=.650*.0005*8000*math.hypot(25,6)/25
+rail_kg = (80*25-76*21)*steel_density/1e6
 rib_kg = (20*25-16*21)*steel_density/1e6
 p_backing = primary['width']/1000*.002*steel_density
 f_backing = fault['width']/1000*.002*steel_density
-p_frame = 2*rail_kg + rib_kg*primary['width']/1000/.25
-f_frame = 2*rail_kg + rib_kg*fault['width']/1000/.25
-p_dry=p_cu+p_brackets+p_apron+p_backing+p_frame
-f_dry=f_cu+f_brackets+f_apron+f_backing+f_frame
+p_frame = 2*rail_kg + rib_kg*primary['width']/1000/.20
+f_frame = 2*rail_kg + rib_kg*fault['width']/1000/.20
+secondary_apron_ribs = 2*rib_kg + .25
+# Fixed apron frames have their own clips and roots behind the wet bodies.
+# Charge both aprons and their continuous rails to the upper50kg/m envelope.
+p_dry=p_cu+p_brackets+p_apron+p_backing+p_frame+f_apron+secondary_apron_ribs
+f_dry=f_cu+f_brackets+f_backing+f_frame
 assert p_dry<50 and f_dry<50
 water_p=primary['width']*primary['frontDepth']/1000
 water_f=fault['width']*fault['frontDepth']/1000
@@ -180,18 +188,18 @@ report={
               'innerNormalWith2600SkyLps':inner_normal,'innerFaultWith2400SkyLps':inner_fault,
               'remaining2400CourtLps':inner_court},
  'hydraulicSensitivities':{'primaryHalfWidthNormalDepth':pdepth,'primaryK4':p_local,
-            'primaryReserveAfter10Setting25Splash5Deflection':normal_reserve,
+            'primaryReserveAfter10Setting25Splash11Movement':normal_reserve,
             'faultHalfWidthNormalDepth':fdepth,'faultK4':f_local,
-            'faultReserveAfter10Setting25Splash5Deflection':fault_reserve,
+            'faultReserveAfter10Setting25Splash19Movement':fault_reserve,
             'primary1200SpillHead':spill_head,'primaryRearReserve':spill_reserve,
             'rejectedFault100Reserve':fault_reserve-25},
  'release':{'initialOutwardForkRelease':40,'firstDrop':first_drop,
             'subsequentOutwardDraw':360,'totalDrawOut':400,'leastWetBedToRimGap':min_drop,
             'carrierBelowBed':carrier_below_bed,
-            'afterCarrier10Setting5Hardware5Deflection':min_drop[0]-carrier_below_bed-20,
+            'afterCarrier10Setting5Hardware20Movement':min_drop[0]-carrier_below_bed-35,
             'lowerMinimumBed':lower_min,'actualUpperWindowHead':window_top,
             'carrierGapToOpening':lower_min-carrier_below_bed-window_top,
-            'carrierGapAfter10Setting5Deflection':lower_min-carrier_below_bed-window_top-15,
+            'carrierGapAfter10Setting8Body30CollectorMovement':lower_min-carrier_below_bed-window_top-48,
             'wetBedGapTo215ArchRing':lower_min-window_top-215,
             'apronToeBelowFront':toe_over_front,'movingRearBelowFixedToe':apron_drop_gap,
             'headToDrawnTray':head['nearest']-(primary['outer']+400),
@@ -208,6 +216,7 @@ report={
          'primaryScheduledDryKgM':p_dry,'faultScheduledDryKgM':f_dry,
          'primaryBackingKgM':p_backing,'faultBackingKgM':f_backing,
          'primaryFrameKgM':p_frame,'faultFrameKgM':f_frame,
+         'secondaryApronRibsAndClipsKgM':secondary_apron_ribs,
          'rootBracketsPerCircuit':64,'primaryDryAllowance':50,'faultDryAllowance':50,
          'bothAtFrontWaterKgM':[water_p,water_f],'bothFilledCharacteristicKN':wet_kN},
  'outstanding':[

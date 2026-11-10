@@ -22,7 +22,9 @@ fields = read('open-loggia-support.json')['floor_fields']
 slate=runpy.run_path(str(D/'reconciled-slate-roof.py'))
 args = sys.argv[:]
 sys.argv = [args[0], '--check']
-roof = runpy.run_path(str(D/'current-house-roof-bracing.py'))
+roof = globals().get('roofKernel')
+if roof is None:
+    roof = runpy.run_path(str(D/'current-house-roof-bracing.py'))
 ceiling = runpy.run_path(str(D/'current-house-arch-jambs.py'))
 sys.argv = args
 kernel = runpy.run_path(str(D/'arch-space-kernel.py'))
@@ -244,9 +246,10 @@ def ring_vector(o,x):
 
 def symmetric_ring(m,n):
     if m[:3]!=n[:3]:return 0.
-    _,a,b,x=m
+    face,a,b,x=m
     L=b-a; x,y=sorted((x-a,n[3]-a))
-    EI=roof['Es']*roof['w']['sections']['collector']['Iminor']
+    section=roof['collectorSection'](roof['pt'](face,roof['A'],a),roof['pt'](face,roof['A'],b))
+    EI=roof['Es']*section['Iminor']
     return (L-y)**2*x*x*(3*y*L-(L+2*y)*x)/(6*EI*L**3)
 
 
@@ -461,11 +464,12 @@ def calculate():
 
 
 grid_heads=read('current-house-grid.json')['heads']
-result=calculate()
-target=Path(__file__).with_suffix('.json')
-contents=json.dumps(result,indent=2)+'\n'
-if '--check' in sys.argv:
-    assert target.read_text()==contents, 'Rebuild the portal reaction handoff'
-else:
-    target.write_text(contents)
-print('Eight two-storey portals, 96 roof/floor winds, and one two-sided guard point per state.')
+if not globals().get('definitionsOnly',False):
+    result=calculate()
+    target=Path(__file__).with_suffix('.json')
+    contents=json.dumps(result,indent=2)+'\n'
+    if '--check' in sys.argv:
+        assert target.read_text()==contents, 'Rebuild the portal reaction handoff'
+    else:
+        target.write_text(contents)
+    print('Eight two-storey portals, 96 roof/floor winds, and one two-sided guard point per state.')
