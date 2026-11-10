@@ -9,7 +9,11 @@
     "label": "swarm-20261110-bay-interfaces"
   },
   "claimedAt": "2026-11-10T23:34:37.246Z",
-  "heartbeatAt": "2026-11-10T23:34:37.246Z",
-  "expiresAt": "2026-11-11T00:19:37.246Z",
-  "branch": "work/current-house-studies-20261110"
+  "heartbeatAt": "2026-11-10T23:43:42.400Z",
+  "expiresAt": "2026-11-11T00:28:42.400Z",
+  "branch": "work/current-house-studies-20261110",
+  "checkpoint": {
+    "evidence": "work/current-house-studies-20261110 at 11eb720fd2a32e05a01e7032594fced62db2a13c; project/bcr/bay-interface-study.md; exact-tree probe and independent review passed",
+    "next": "Integrate MRA source metadata, regenerate bay fingerprint, run joint exact-head checks and publication preflight"
+  }
 }
