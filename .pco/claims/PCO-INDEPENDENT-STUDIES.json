@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "node": "PCO-INDEPENDENT-STUDIES",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "d0057bd7-747b-4a15-9f23-ec2a31f969ec",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "independent-studies-20261110-root"
+  },
+  "claimedAt": "2026-11-10T23:09:19.660Z",
+  "heartbeatAt": "2026-11-10T23:09:19.660Z",
+  "expiresAt": "2026-11-10T23:54:19.660Z",
+  "checkpoint": {
+    "evidence": "Owner-directed exceptional registration decision recorded in issue #1474; baseline a06013820dfdc2b5ee1918abf42abce8423eb0ad.",
+    "next": "Register two bounded studies, validate exact PR head, merge with preflight and release this bootstrap lease."
+  },
+  "branch": "work/independent-studies-20261110",
+  "note": "Exceptional new-node bootstrap: #1474. Unknown-node dispatch fails closed until registration reaches main; active roof ownership retained."
+}
