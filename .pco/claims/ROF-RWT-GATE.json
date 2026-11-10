@@ -9,8 +9,8 @@
     "label": "swarm-20261110-root"
   },
   "claimedAt": "2026-11-10T21:02:13.030Z",
-  "heartbeatAt": "2026-11-10T22:29:34.169Z",
-  "expiresAt": "2026-11-10T23:14:34.169Z",
+  "heartbeatAt": "2026-11-10T22:51:35.013Z",
+  "expiresAt": "2026-11-10T23:36:35.013Z",
   "branch": "work/swarm-roof-g3-20261110",
   "predecessor": {
     "leaseId": "47083968-9abd-4627-90bb-040ec3eb4792",
@@ -36,7 +36,7 @@
   },
   "pr": 1472,
   "checkpoint": {
-    "evidence": "Published a9f7fddc18103ef36f99a5e0e8fd0d86e09b4986: original-wind revised geometry, 170/190 hydraulic proposal and explicit unresolved joins. Original40/260 recovery and selected-service merge are retained; gate remains planned.",
-    "next": "Publish reviewed local frame/renewal, independent outer/hydraulic and complete added-wind failures; compare wider collector and physical receiving stiffness; finish first wet diversion and whole-part replacement."
+    "evidence": "Published and verified f49968e96ad7dceb35ea448d87d20c851d337b40, tree 79013e9b5be6e3585fefb4a4c1a3103f63029510; frozen inner frame and pressure failure studies preserved; next dispatch via connector safe with zero unclaimed candidates at 22:43 UTC.",
+    "next": "Verify and publish 280x120x25 receiving-stiffness and installed-mass uncertainty studies plus paired movement; continue inner head wet-diversion and departure, outer module corner support and rain routing, and actual root-foot connection."
   }
 }
