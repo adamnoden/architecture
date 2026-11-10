@@ -70,7 +70,78 @@ structural native hooks change only source identity in the reconciled house
 interface and court-intake record; their geometry and decisions are unchanged.
 The current RWT reader and its two derived records are rebound to that exact
 intake. Historical selected-event identity stays unchanged. All 22 current-house
-and 227 RWT tests pass after regeneration. Full joined-head CI remains required.
+and 227 RWT tests pass after regeneration. The first joined CI then identified
+two stale intake/bypass input identities in the HAD receiver receipt. Regenerating
+that receipt and the current service export changed only those identities and
+their dependent source hash; the geometry and decisions remained identical.
+All 53 HAD and 227 RWT tests pass at the resulting checkpoint
+`43439645013016d4fed8b0ec06bba7e38358d57d`. Full joined-head CI remains required.
+
+## Unselected revised geometry and hydraulic checkpoint
+
+The recovered 40 kg/m inner comparison is preserved above. A separate
+[new-geometry checkpoint](studies/roof_water_geometry_checkpoint.json) explores
+a 280 × 120 × 20 court collector, 350 mm primary and 425 mm lower wet widths,
+and 60 kg/m-derived individual cassette mass caps. The original physical roof
+roots remain fixed. Actual mitred corner areas and water centroids are
+recalculated; moving a wet-body centreline does not move its root. Each
+individual fabricated assembly and its permitted remaining-stock centroids
+must fit the corresponding cap and rectangle.
+
+This checkpoint uses 160/190 mm primary/lower water and the original house-wind
+domain. Its installed and finite-renewal M24 tensions are 113.565570876 and
+113.673389111 kN against 113.922727273 kN. The finite comparison gives court
+interaction 0.928835967 and outer interaction 0.871653955; maximum compression
+in its 22-station receiving union is 202.126933903 kN. The structure, finite
+maintenance, 908-query movement, 472-query lateral and receiving receipts each
+passed exact standard-library reproduction. Their 34 transitive native inputs
+and ten source/receipt files were independently hash-checked after integration.
+
+The lateral receipt uses the native fixed-base datum. At the proposed inner
+hanger envelope it gives −26.558683017/+26.227428538 mm normal motion. A 50 mm
+static clearance after the explicit 25 mm facade projection/setout challenge
+therefore leaves 23.441316983 mm before local frame flexibility and any opposing
+facade movement. No unmodelled facade co-movement is credited. The preceding
+20 mm hanger clearance fails this comparison and is discarded.
+
+These numerical screens do **not** select this candidate. Additional
+independent inner pan, apron and exposed-frame horizontal pressures are still
+being joined. The actual local frame, corner supports, complete stock and
+connections, rain continuity, whole-part removal and reverse installation
+remain under development. The old finite adjacent-head cases allow only
+25 kg absent with an adjacent bay; the intended head-first route can also
+remove the spout, catch, return and posts. The next candidate must enlarge
+those paired cases to bound the complete source head and leader, while
+retaining the old 144-case comparison unchanged as historical evidence.
+
+The separate [inner hydraulic comparison](studies/roof_water_inner_hydraulics.py)
+locates the actual roof-valley inflows and the newly exposed goods/cap rain.
+At the retained synthetic 216 mm/h comparison it routes 3.25815 L/s. With
+half width unavailable, Manning n = 0.020, residual hydraulic fall 0.004,
+K = 4 and explicit setting, splash and movement allowances, the proposed
+primary front at Z6715 and rear at Z6795 leave 3.323805865 mm in the continuous
+normal-depth profile comparison. The lower full-dose comparison leaves
+7.272197522 mm. These are declared normal-depth comparisons, not a solved
+nonuniform backwater profile or a qualified inlet/outlet rating.
+
+The blocked lower overflow explicitly rises linearly by 28.75 mm along each
+4800 mm path. Blocking the lowest half gives 29.769548892 mm head, compared
+with 20.304054410 mm for uniformly distributed half effectiveness. Added
+conservative full-dose friction and local transport heads are 13.671722798 mm
+for the primary and 4.601873565 mm for the lower. The resulting maximum stored
+depths are 160.797991667 and 183.371422457 mm. Thus this hydraulic proposal
+requires a **new 170/190 mm native water comparison**; the preceding 160/190
+structural checkpoint is insufficient for it. The proposed 170/190 bounds
+leave 9.202008333 and 6.628577543 mm respectively, and the primary rear has
+3.452008333 mm remaining freeboard under the declared allowances.
+
+Replacing the specified linear overflow crest by only a maximum-height limit
+fails the 190 mm lower water comparison once transport is included. The crest
+shape, clear lengths, actual corners, inlet/outlet behaviour and complete
+relative movements are therefore explicit conditions. Static buried-route
+comparison at Z6800 is proposed to cover the raised rear, but does not change
+the selected route or qualify its seals and transients. Actual receiving
+contact, core and downstream resistance remain unqualified throughout.
 
 The following sections preserve the interrupted predecessor's observations.
 Their references to missing files or pending services describe that earlier
