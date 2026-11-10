@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "ROF-RWT-GATE",
-  "generation": 2,
-  "state": "released",
-  "leaseId": "47083968-9abd-4627-90bb-040ec3eb4792",
+  "generation": 3,
+  "state": "claimed",
+  "leaseId": "e3c97957-956b-46e8-ae67-346007b092b6",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6761668451"
+    "label": "swarm-20261110-root"
   },
-  "claimedAt": "2026-11-10T07:30:42.000Z",
-  "heartbeatAt": "2026-11-10T10:46:56.000Z",
-  "expiresAt": "2026-11-10T10:46:56.000Z",
-  "branch": "work/mvb-chat-6761668451",
+  "claimedAt": "2026-11-10T21:02:13.030Z",
+  "heartbeatAt": "2026-11-10T21:02:13.030Z",
+  "expiresAt": "2026-11-10T21:47:13.030Z",
+  "branch": "work/swarm-roof-g3-20261110",
   "predecessor": {
-    "leaseId": "978b85b8-07c1-4d8e-b770-b3c1c940ce7b",
-    "generation": 1,
-    "branch": "work/mvb-chat-6753111267",
-    "pr": 1467,
+    "leaseId": "47083968-9abd-4627-90bb-040ec3eb4792",
+    "generation": 2,
+    "branch": "work/mvb-chat-6761668451",
+    "pr": 1470,
     "checkpoint": {
-      "evidence": "Draft PR #1467 at 2a9753eb. Comment6753738344 links preserved calculations, review findings and exact local residue. Gate planned.",
-      "next": "Recover executor. Resolve stage and E-spool extraction, head catches and full SAP-C1 wind replay. Run affected checks and exact-head preflight.",
-      "blocker": "Execution environment unavailable. Selected geometry and full current-house structural replay remain unfinished."
+      "evidence": "Draft PR #1470 at683d1c23f377931b6b776f905ce843ff44a95bea. roof-water-recovery.md and comments6765285655/6765298508 preserve source states, final native observations and exact open failures.",
+      "next": "Recover final native files, close local rain-control/withdrawal proof, integrate green services1471, reconcile source identities and rerun CI/preflight.",
+      "blocker": "Execution environment unavailable. Local renewal and final structural source adoption remain unfinished."
     }
   },
   "recoverySource": {
-    "leaseId": "978b85b8-07c1-4d8e-b770-b3c1c940ce7b",
-    "generation": 1,
-    "branch": "work/mvb-chat-6753111267",
-    "pr": 1467,
+    "leaseId": "47083968-9abd-4627-90bb-040ec3eb4792",
+    "generation": 2,
+    "branch": "work/mvb-chat-6761668451",
+    "pr": 1470,
     "checkpoint": {
-      "evidence": "Draft PR #1467 at 2a9753eb. Comment6753738344 links preserved calculations, review findings and exact local residue. Gate planned.",
-      "next": "Recover executor. Resolve stage and E-spool extraction, head catches and full SAP-C1 wind replay. Run affected checks and exact-head preflight.",
-      "blocker": "Execution environment unavailable. Selected geometry and full current-house structural replay remain unfinished."
+      "evidence": "Draft PR #1470 at683d1c23f377931b6b776f905ce843ff44a95bea. roof-water-recovery.md and comments6765285655/6765298508 preserve source states, final native observations and exact open failures.",
+      "next": "Recover final native files, close local rain-control/withdrawal proof, integrate green services1471, reconcile source identities and rerun CI/preflight.",
+      "blocker": "Execution environment unavailable. Local renewal and final structural source adoption remain unfinished."
     }
-  },
-  "checkpoint": {
-    "evidence": "Draft PR #1470 at683d1c23f377931b6b776f905ce843ff44a95bea. roof-water-recovery.md and comments6765285655/6765298508 preserve source states, final native observations and exact open failures.",
-    "next": "Recover final native files, close local rain-control/withdrawal proof, integrate green services1471, reconcile source identities and rerun CI/preflight.",
-    "blocker": "Execution environment unavailable. Local renewal and final structural source adoption remain unfinished."
-  },
-  "pr": 1470,
-  "releasedAt": "2026-11-10T10:46:56.000Z",
-  "releaseReason": "handoff"
+  }
 }
