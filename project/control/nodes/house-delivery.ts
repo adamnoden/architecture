@@ -23,8 +23,14 @@ export const houseDeliveryNodes = defineNodes([
     closeoutEvidence: ['project/bcr/bay-brief-result.md']
   },
   {
+    id: 'BCR-BAY-INTERFACES', owners: ['BCR'], title: 'Test current front-study bay interfaces and occupied renewal actions',
+    dependencies: ['BCR-BAY-BRIEF', 'IAS-03', 'MAT-ENVELOPE', 'MAT-INTERIORS', 'HAD-SERVICES-ADOPTION'],
+    lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: ['project/bcr/bay-interface-study.md']
+  },
+  {
     id: 'BCR-BAY-DESIGN', owners: ['BCR'], title: 'Resolve the selected bay as a coordinated design study',
-    dependencies: ['BCR-BAY-BRIEF', 'TRIAD-GATE'], lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
+    dependencies: ['BCR-BAY-BRIEF', 'BCR-BAY-INTERFACES', 'TRIAD-GATE'], lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/bcr/bay-design-result.md']
   },
   // Owner-directed ADE section-view uplift, 31 Oct 2026 (#1187).

@@ -149,4 +149,21 @@ The [completed bay brief](bay-brief-result.md) selects the actual ground-floor f
 
 **BCR-BAY-DESIGN** follows that brief and TRIAD-GATE. Coordinate actual selected layers, joints, supports/reservations, tolerances, water/air/thermal/fire/acoustic boundaries, access and reinstatement for this bay. Keep numeric source with its owning design layer and route material IAS/OAS/HAD changes back to that owner under the normal lease protocol. Produce `project/bcr/bay-design-result.md` and source-owned design records suitable for ADE to render and schedule. Distinguish adopted selections from candidate dimensions and essential external calculations. Exit: the represented design is internally coordinated at the declared review scope, with every unresolved technical choice explicit. It is not construction-authorised; no nominal support envelope can be presented as an engineered member.
 
+### Independent current-source interface investigation
+
+The owner's 10 November direction registers **BCR-BAY-INTERFACES** before final
+bay integration. Consume the completed bay brief, IAS interior selection,
+envelope/interior material studies and selected services. Reconcile the brief's
+29 October dimensions with the current controlling sources before using them.
+Investigate local window/wall/floor relationships, furnished access and finite
+operating, first-release and renewal actions. Record source-bound comparisons,
+separable candidate corrections or reproducible failures, including each owning
+correction and discharge condition, in `project/bcr/bay-interface-study.md`.
+
+The investigation can complete with an adverse result. It does not adopt the
+whole house, resolve roof reactions or grant physical/product performance.
+BCR-BAY-DESIGN consumes it and **still requires TRIAD-GATE** for final coordinated
+bay design. The [registration result](../pco/independent-studies-result.md) owns
+the scope split; it grants no architectural acceptance.
+
 Bay packets own separate results and design-study files. They do not concurrently mutate the whole-house BCR matrix or others' selected geometry. Integrate necessary source changes serially with the relevant owner. The current BCR-CONVERGENCE retains its existing graph prerequisites; no new bay/manual dependency is silently added.
