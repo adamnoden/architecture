@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "BCR-BAY-INTERFACES",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "9a11165a-e2b7-4254-adef-16e6856c79ad",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "swarm-20261110-bay-interfaces"
+  },
+  "claimedAt": "2026-11-10T23:34:37.246Z",
+  "heartbeatAt": "2026-11-10T23:34:37.246Z",
+  "expiresAt": "2026-11-11T00:19:37.246Z",
+  "branch": "work/current-house-studies-20261110"
+}
