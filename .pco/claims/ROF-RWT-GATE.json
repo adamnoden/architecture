@@ -9,8 +9,8 @@
     "label": "swarm-20261110-root"
   },
   "claimedAt": "2026-11-10T21:02:13.030Z",
-  "heartbeatAt": "2026-11-10T23:13:45.126Z",
-  "expiresAt": "2026-11-10T23:58:45.126Z",
+  "heartbeatAt": "2026-11-10T23:41:35.221Z",
+  "expiresAt": "2026-11-11T00:26:35.221Z",
   "branch": "work/swarm-roof-g3-20261110",
   "predecessor": {
     "leaseId": "47083968-9abd-4627-90bb-040ec3eb4792",
@@ -36,7 +36,7 @@
   },
   "pr": 1472,
   "checkpoint": {
-    "evidence": "Published97b2920999d250d976702f39bf46cdd11760b716, treea8e09c63193cf5cf7cf93d2f3b33a36fb42f0140:20/40 spring and134installedmass studies,30mm member comparison,920/1112motion,22receivers,rootfoot andouterphysical failures. Priorf499 fullCI42915906354passed; currentheadCI required.",
-    "next": "Resolve actual inner high-back/secondary-apron and primary-arm topology with full wet/dry/wind joins; develop outer66-piece and head/rain sequencing; qualify actual normal-tie geometry and stiffness range before next native replay."
+    "evidence": "PR #1472 head 97b2920999d250d976702f39bf46cdd11760b716 tree a8e09c63193cf5cf7cf93d2f3b33a36fb42f0140; exact-head full CI 42921533919 passed. Frozen receiving stiffness, mass intervals and physical failures preserved.",
+    "next": "Reconcile main e19ce0d9; preserve highback, leaf, outer inventory and floor-jamb conflict evidence; reopen owning STR-RECONCILE prerequisite through an explicit adverse gate result before any further selection."
   }
 }
