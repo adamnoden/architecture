@@ -251,9 +251,7 @@ assert abs(special_sum-(mat_roof['steelSpecialsKg']+mass*4)*.00981) < 1e-6
 wet = Load('new goods, blocked-water gravity')
 dry = Load('new goods, dry gravity')
 circuits = [('outer primary', 'outer', 345, 350*180/1000, 50),
-            ('outer lower', 'outer', 397.5, 545*175/1000, 50),
-            ('inner primary', 'court', -4537.5, 375*160/1000, 40),
-            ('inner lower', 'court', -4562.5, 475*150/1000, 40)]
+            ('outer lower', 'outer', 397.5, 545*175/1000, 50)]
 for tag, kind, radial, water_kg_m, dry_kg_m in circuits:
     length = 12000+2*radial
     count = 16 if kind == 'outer' else math.ceil(length/1200)
@@ -264,6 +262,58 @@ for tag, kind, radial, water_kg_m, dry_kg_m in circuits:
                       down=(1.5*water_kg_m+1.35*dry_kg_m)*9.81*length/1000/count, tag=tag)
             dry.place(kind, face, radial, station,
                       down=1.35*dry_kg_m*9.81*length/1000/count, tag=tag)
+
+# Recover the actual independent root-centred inner cassettes. A corner is
+# one diagonal half of the L-pan, not a straight equal-length tributary.
+court_circuits = []
+court_support_cassettes = []
+for name, centre, width, boundaries, arms, allocations, root_z in (
+        ('primary', 4537.5, 375.,
+         [4537.5, 4875., 5437.5, 6000., 6562.5, 7125., 7462.5],
+         [4600., 5156.25, 5718.75, 6281.25, 6843.75, 7400.],
+         [0, 0, 1, 1, 2, 2], 6640.),
+        ('lower', 4562.5, 475.,
+         [4562.5, 4875., 5325., 5775., 6225., 6675., 7125., 7437.5],
+         [4600., 5100., 5550., 6000., 6450., 6900., 7400.],
+         [0, 0, 1, 1, 1, 2, 2], 6555.)):
+    pitch = (12000-2*centre)/3
+    roots = [centre+pitch*(j+.5) for j in range(3)]
+    modules = []
+    for j, ((left, right), arm, root_id) in enumerate(zip(pairwise(boundaries), arms, allocations)):
+        tributary = right-left
+        water_q, water_p = centre, arm
+        if j in (0, len(arms)-1):
+            corner_length = 4875-centre
+            water_q = centre-width**2/(12*corner_length)
+            water_p = (4875+centre)/2-width**2/(24*corner_length)
+            if j == len(arms)-1:
+                water_p = 12000-water_p
+        modules.append({'armStation': arm, 'pRange': [left, right],
+                        'waterEquivalentLengthMM': tributary,
+                        'waterCentroid': [water_q, water_p],
+                        'waterAreaMM2': width*tributary,
+                        'rootStation': roots[root_id]})
+        for face in range(4):
+            wet.place('court', face, -water_q, water_p,
+                      down=1.5*9.81*width*160*tributary/1e6,
+                      root_station=roots[root_id], tag='inner '+name)
+            # Explicit zero preserves wet/dry placement pairing. Complete
+            # dry fabrication mass has an independent centroid bound below.
+            dry.place('court', face, -water_q, water_p, down=0.,
+                      root_station=roots[root_id], tag='inner '+name)
+    court_circuits.append({'name': name, 'centre': centre, 'width': width,
+                           'waterDepth': 160., 'rootAxisZ': root_z, 'modules': modules})
+    for j, root in enumerate(roots):
+        selected = [module for module in modules if module['rootStation'] == root]
+        actual_length = sum(module['waterEquivalentLengthMM'] for module in selected)
+        p_range = [min(selected[0]['pRange'][0], centre+j*pitch),
+                   max(selected[-1]['pRange'][1], centre+(j+1)*pitch)]
+        court_support_cassettes.append({'circuit': name, 'rootStation': root,
+                                        'rootAxisZ': root_z, 'dryKg': 40*max(actual_length, pitch)/1000,
+                                        'actualTributaryMM': actual_length,
+                                        'qCentroidRange': [3787.5, 4800.], 'pCentroidRange': p_range})
+inner_dry_kn = 4*sum(row['dryKg'] for row in court_support_cassettes)*1.35*9.81/1000
+assert abs(inner_dry_kn-13.437738) < 1e-9
 heads = [(0, 11150, 'south normal'), (0, 11750, 'south relief'),
          (2, 12000-9025, 'north normal'), (2, 12000-11750, 'north relief')]
 leader_locations = [('outer', face, 1130, station, tag) for face, station, tag in heads]
@@ -302,7 +352,23 @@ def annulus(name, q_from, q_to, root_radial, tag):
 
 annulus('outer', -520, -200, 345, 'primary outside old 200 overhang')
 annulus('outer', -670, -520, 397.5, 'lower outside primary')
-annulus('court', 4525, 4800, -4537.5, 'fixed cap and primary within old 2950 sky')
+# The inward cap's actual fixed module cuts allocate its complete sky strip
+# to primary cassettes. Changing integration q must not slide those cuts.
+court_wind_area = 0.
+q_mid, q_half = (4525+4800)/2, (4800-4525)/2
+for q, weight in ((q_mid-q_half*math.sqrt(.6), 5/9), (q_mid, 8/9),
+                  (q_mid+q_half*math.sqrt(.6), 5/9)):
+    modules = court_circuits[0]['modules']
+    for face in range(4):
+        for j, module in enumerate(modules):
+            left = q if j == 0 else module['pRange'][0]
+            right = 12000-q if j == len(modules)-1 else module['pRange'][1]
+            cell = (right-left)*q_half*weight
+            wind_vertical.place('court', face, -q, (left+right)/2,
+                                down=2.25*cell/1000, root_station=module['rootStation'],
+                                tag='fixed cap and primary within old 2950 sky')
+            court_wind_area += cell/1e6
+wind_areas.append(('fixed cap and primary within old 2950 sky', court_wind_area))
 for face, station, tag in heads:
     start = 520 if tag.endswith('normal') else 670
     area = .250*(1260-start)/1000
@@ -438,6 +504,57 @@ for spec in {spec for panels in panel_specs.values() for spec in panels}:
         load.place('outer', face, radial, station, fx=forces[0], fy=forces[1], z=z)
         rows.append(load)
     panel_loads[spec] = rows
+
+# Every inner cassette may carry its complete bounded fabrication mass at
+# any point of this rectangle, independently of adjacent cassettes. The
+# existing response-bound routine includes zero; no sliding link carries
+# vertical force, torsion or along-face moment between these groups.
+for face in range(4):
+    for cassette in court_support_cassettes:
+        key = ('inner dry cassette', face, cassette['circuit'], cassette['rootStation'])
+        choices = []
+        for q, station in product(cassette['qCentroidRange'], cassette['pCentroidRange']):
+            load = Load('complete inner cassette dry centroid bound')
+            load.place('court', face, -q, station, down=1.35*cassette['dryKg']*9.81,
+                       root_station=cassette['rootStation'], z=cassette['rootAxisZ'])
+            choices.append(load)
+        panel_loads[key] = choices
+        for specs in panel_specs.values():
+            specs.append(key)
+
+# Full 8.4 m leader wind at roof level is one comparison, not necessarily
+# the adverse member action. Each actual top 1.5 m may instead act anywhere
+# in Z6000..7400 or be unexposed. Difference loads retain signed equilibrium
+# relative to the original full-height base case, which remains the zero
+# option in each independent group.
+for programme, specs in panel_specs.items():
+    for axis, code in enumerate(programme):
+        if not code:
+            continue
+        sign, mode = (1 if code < 4 else -1), (code-1) % 3
+        face = (3 if sign == 1 else 1) if axis == 0 else (0 if sign == 1 else 2)
+        for kind, head_face, radial, station, tag in leader_locations:
+            xy = p['pt'](head_face, -radial, station)
+            projected = (xy[0], xy[1], 12000-xy[0], 12000-xy[1])[face]
+            if mode and ((projected < 6000) != (mode == 1)):
+                continue
+            key = ('leader top wind', axis, sign, kind, head_face, radial, station)
+            if key not in panel_loads:
+                choices = []
+                original_z = 6860. if tag == 'inner SW normal' else 6600.
+                for actual_z in (BODY_LOW, BODY_HIGH, None):
+                    load = Load(tag+' actual top wind minus complete leader comparison')
+                    forces = [0., 0.]
+                    forces[axis] = -sign*2.25*.250*8.4*1000
+                    load.place(kind, head_face, radial, station, fx=forces[0], fy=forces[1],
+                               z=original_z, tag=tag+' negative original wind')
+                    if actual_z is not None:
+                        forces[axis] = sign*2.25*.250*1.5*1000
+                        load.place(kind, head_face, radial, station, fx=forces[0], fy=forces[1],
+                                   z=actual_z, tag=tag+' actual top wind')
+                    choices.append(load)
+                panel_loads[key] = choices
+            specs.append(key)
 all_loads = [wet, dry, wind_vertical, *host_loads,
              *centroid_loads,
              *(load for pair in horizontal_cases.values() for load in pair),
@@ -954,14 +1071,16 @@ if __name__ == '__main__':
               'portalSourceComparisonMaxDelta': portal_parity, 'portalSourceComparison': portal_comparison,
               'extraVerticalAreaM2': wind_area,
               'extraVerticalWindKN': wind_area*2.25, 'extraWindAreas': wind_areas,
-              'wetGravityKN': sum(v['downN'] for v in wet.placed)/1000,
+              'wetGravityKN': sum(v['downN'] for v in wet.placed)/1000+inner_dry_kn,
               'independentWaterTributaries': len(water_responses),
               'independentWaterSuperpositionError': water_balance,
               'waterEnvelopeMethod': 'Each gutter tributary and each leader/head water load ranges independently from zero to its full bound. The component bounds need not occur simultaneously.',
-              'dryGravityKN': sum(v['downN'] for v in dry.placed)/1000,
+              'dryGravityKN': sum(v['downN'] for v in dry.placed)/1000+inner_dry_kn,
+              'courtModules': court_circuits, 'courtSupportCassettes': court_support_cassettes,
+              'independentInnerDryBoundKN': inner_dry_kn,
               'leaderDryKgEach': leader_dry_kg, 'leaderWaterKgEach': leader_water_kg,
               'loadBounds': {'outerDryKgPerM': [50, 50], 'innerDryKgPerM': [40, 40],
-                             'outerBlockedWaterDepthMM': [180, 175], 'innerBlockedWaterDepthMM': [160, 150],
+                             'outerBlockedWaterDepthMM': [180, 175], 'innerBlockedWaterDepthMM': [160, 160],
                              'outerWetWidthsMM': [350, 545], 'innerWetWidthsMM': [375, 475],
                              'innerCentrelineCoordinatesMM': [4537.5, 4562.5],
                              'outerRootsPerCircuit': 64, 'innerRootSpacingMaxMM': 1200,
@@ -986,11 +1105,15 @@ if __name__ == '__main__':
               'worstUpperTensionKN': -min(row['rangeKN'][0] for row in station_ranges),
               'worstUpperCompressionKN': max(row['rangeKN'][1] for row in station_ranges),
               'existingM24ComparisonResistanceKN': 353*(355/1.1)/1000,
+              'upperCompressionResistanceKN': None,
+              'upperCompressionDuty': 'Qualify actual steel load introduction, finite contact and bedding, core material/section, spreading, splitting, eccentricity/slenderness and the downstream floor/foundation route. The stiffness spring and historical 200 kN collector screen supply no receiving resistance.',
               'worst': worst, 'cases': results,
               'sourceHashes': {str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
                                for path in [D/'current-house-roof-bracing.py', D/'current-house-ring-return.py',
                                             portal_path, D/'reconciled-slate-roof.py',
-                                            ROOT/'project/mat/studies/whole-envelope.json', Path(__file__)]},
+                                            ROOT/'project/mat/studies/whole-envelope.json',
+                                            D/'reconciled-house-interface.json', D/'current-house-floor-closure.json',
+                                            Path(__file__)]},
               'limits': ['Source independent heel intervals remain a bounded stress screen.',
                          'Horizontal bodies use a 1400 mm high independent projected-panel envelope, with every force centroid within its four endpoint extremes and zero-to-full pressure area.',
                          'Complete leader wind is compared at the roof. The lower 6.9 m facade/floor support load and connection schedule remains an explicit separate receipt.',
@@ -1008,8 +1131,14 @@ if __name__ == '__main__':
         assert target.read_text() == contents, 'Rebuild the joined roof collector comparison'
     else:
         target.write_text(contents)
-    assert (worst['court']['interaction'] < 1) == (COURT_WIDTH in (240, 260))
+    floor_tie_limit, roof_tie_limit = json.loads((D/'reconciled-house-interface.json').read_text())['jambAndTies']['symmetricTieQualificationKN']
+    upper_tie = json.loads((D/'current-house-floor-closure.json').read_text())['upperTie']
+    assert upper_tie['M24TensileArea'] == 353
+    assert abs(upper_tie['axialResistance']-output['existingM24ComparisonResistanceKN']) < .000001
+    assert output['maximumPortalNormalTieKN']['floor'] < floor_tie_limit
+    assert output['maximumPortalNormalTieKN']['roof'] < roof_tie_limit
+    assert (worst['court']['interaction'] < 1) == (COURT_WIDTH == 260)
     assert worst['outer']['interaction'] < 1
-    assert output['worstUpperTensionKN'] < output['existingM24ComparisonResistanceKN']
+    assert (output['worstUpperTensionKN'] < output['existingM24ComparisonResistanceKN']) == (COURT_WIDTH != 220)
     print(json.dumps({key: output[key] for key in ('nativeEndParity', 'portalSourceComparisonMaxDelta', 'wetGravityKN',
                                                  'extraVerticalWindKN', 'worstUpperTensionKN', 'worst')}, indent=2))

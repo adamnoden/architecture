@@ -3,6 +3,7 @@ from pathlib import Path
 from contextlib import redirect_stdout
 from io import StringIO
 import json
+import hashlib
 import math
 import runpy
 import sys
@@ -120,18 +121,45 @@ for face in range(4):
         for radial in (125., 670.):
             queries.append((label+f' R{radial} absolute', reference(face, radial, station), None))
 
+assert len(queries) == 564
+court_circuits = m['court_circuits']
 for face in range(4):
-    inner_stations = {4500., 4525., 6000., 7475., 7500.}
-    inner_stations.update(4537.5+2925*(j+.5)/3 for j in range(3))
-    inner_stations.update(4562.5+2875*(j+.5)/3 for j in range(3))
-    for station in sorted(inner_stations):
-        for q in (4325., 4800.):
-            # A zero reference is represented separately by its absent flag.
-            queries.append((f'inner face{face} u{station} lower q{q} absolute',
-                            reference(face, -q, station, name='court'), None))
-        queries.append((f'inner face{face} u{station} lower q4800 minus primary q4350',
-                        reference(face, -4800, station, name='court'),
-                        reference(face, -4350, station, name='court')))
+    for circuit in court_circuits:
+        name = circuit['name']
+        q_edges = (4350., 4725.) if name == 'primary' else (4325., 4800.)
+        modules = circuit['modules']
+        for j, module in enumerate(modules):
+            # Corners include their complete L-body bounding territory,
+            # not only the equivalent-area module p range.
+            p_ends = [q_edges[0] if j == 0 else module['pRange'][0],
+                      12000-q_edges[0] if j == len(modules)-1 else module['pRange'][1]]
+            for station in p_ends:
+                for q in q_edges:
+                    queries.append((f'inner face{face} {name} module{j} p{station} q{q} absolute',
+                                    reference(face, -q, station, root_at=module['rootStation'], name='court'), None))
+        for root in sorted({module['rootStation'] for module in modules}):
+            queries.append((f'inner face{face} {name} width q{q_edges[1]} minus q{q_edges[0]} root{root}',
+                            reference(face, -q_edges[1], root, root_at=root, name='court'),
+                            reference(face, -q_edges[0], root, root_at=root, name='court')))
+
+    # A change of either owning cassette is a real discontinuity. Retain
+    # both one-sided references at every common interval boundary.
+    boundaries = sorted({4350., 7650., *(at for circuit in court_circuits
+                                       for module in circuit['modules'] for at in module['pRange'])})
+    assert len(boundaries) == 15
+    for left, right in zip(boundaries, boundaries[1:]):
+        middle = (left+right)/2
+        owners = []
+        for circuit in court_circuits:
+            modules = circuit['modules']
+            owner = next((module for module in modules if module['pRange'][0] <= middle <= module['pRange'][1]),
+                         modules[0] if middle < modules[0]['pRange'][0] else modules[-1])
+            owners.append(owner['rootStation'])
+        for station in (left, right):
+            queries.append((f'inner face{face} interval{left}:{right} p{station} lower q4800 minus primary q4350',
+                            reference(face, -4800., station, root_at=owners[1], name='court'),
+                            reference(face, -4350., station, root_at=owners[0], name='court')))
+assert len(queries) == 908
 
 
 def values(displacement, load=None, ring_self=None):
@@ -183,6 +211,13 @@ modes = [('partial water down', m['dry_bg'], dry, 1., 1., False),
 for crack in (.2, .35):
     portal, units, coupled, guards = m['portal_model'](crack)
     guard_values = [linear_combination([-v for v in row[3]], host) for row in guards]
+    # Only one signed guard acts at a time. For a scalar query its exact
+    # extrema are +/- the largest absolute of the sixteen linear responses.
+    # This preserves the original 33-state set without repeating every
+    # wind/mode loop 33 times.
+    guard_indices = [max(range(len(guard_values)), key=lambda j: abs(guard_values[j][i]))
+                     for i in range(len(queries))]
+    guard_peaks = [abs(guard_values[j][i]) for i, j in enumerate(guard_indices)]
     zero_weights = [[0., 0., 0., 0.] for _ in range(8)]
     panel_bounds = {}
     for spec, rows in panels.items():
@@ -222,34 +257,37 @@ for crack in (.2, .35):
                 _, actions = coupled(background, weights)
                 base = weighted_sum([(1., screen[wi]), (1., goods), (wind_sign, vertical), (1., horizontal[programme][2]),
                                      (court_scale, strip), (extra_specials, special), (-1., linear_combination(actions, host))])
-                for guard_id in [None, *range(16)]:
-                    for sign in ([0] if guard_id is None else (-1, 1)):
-                        response = base if guard_id is None else [a+sign*b for a, b in zip(base, guard_values[guard_id])]
-                        lo = [a+b+c for a, b, c in zip(response, native_bounds[stripped][0], body_bounds[programme][0])]
-                        hi = [a+b+c for a, b, c in zip(response, native_bounds[stripped][1], body_bounds[programme][1])]
-                        if mode.startswith('partial'):
-                            lo = [a+b for a, b in zip(lo, water_low)]
-                            hi = [a+b for a, b in zip(hi, water_high)]
-                        for i, row in enumerate(records):
-                            if mode.startswith('dry'):
-                                row['dryDiversionRangeMM'][0] = min(row['dryDiversionRangeMM'][0], lo[i])
-                                row['dryDiversionRangeMM'][1] = max(row['dryDiversionRangeMM'][1], hi[i])
-                            row['incrementOnlyRangeMM'][0] = min(row['incrementOnlyRangeMM'][0], response[i]+body_bounds[programme][0][i])
-                            row['incrementOnlyRangeMM'][1] = max(row['incrementOnlyRangeMM'][1], response[i]+body_bounds[programme][1][i])
-                            for side, value in enumerate((lo[i], hi[i])):
-                                better = value < row['rangeMM'][side] if side == 0 else value > row['rangeMM'][side]
-                                if better:
-                                    row['rangeMM'][side] = float(value)
-                                    row['control'][side] = {'crack': crack, 'mode': mode, 'specials': extra_specials,
-                                                          'windIndex': wi, 'guard': guard_id, 'sign': sign}
+                lo = [a+b+c-g for a, b, c, g in zip(base, native_bounds[stripped][0], body_bounds[programme][0], guard_peaks)]
+                hi = [a+b+c+g for a, b, c, g in zip(base, native_bounds[stripped][1], body_bounds[programme][1], guard_peaks)]
+                if mode.startswith('partial'):
+                    lo = [a+b for a, b in zip(lo, water_low)]
+                    hi = [a+b for a, b in zip(hi, water_high)]
+                for i, row in enumerate(records):
+                    if mode.startswith('dry'):
+                        row['dryDiversionRangeMM'][0] = min(row['dryDiversionRangeMM'][0], lo[i])
+                        row['dryDiversionRangeMM'][1] = max(row['dryDiversionRangeMM'][1], hi[i])
+                    row['incrementOnlyRangeMM'][0] = min(row['incrementOnlyRangeMM'][0], base[i]-guard_peaks[i]+body_bounds[programme][0][i])
+                    row['incrementOnlyRangeMM'][1] = max(row['incrementOnlyRangeMM'][1], base[i]+guard_peaks[i]+body_bounds[programme][1][i])
+                    for side, value in enumerate((lo[i], hi[i])):
+                        better = value < row['rangeMM'][side] if side == 0 else value > row['rangeMM'][side]
+                        if better:
+                            row['rangeMM'][side] = float(value)
+                            guard_id = guard_indices[i] if guard_peaks[i] else None
+                            guard_direction = 1 if guard_id is not None and guard_values[guard_id][i] > 0 else -1
+                            sign = (1 if side else -1)*guard_direction if guard_id is not None else 0
+                            row['control'][side] = {'crack': crack, 'mode': mode, 'specials': extra_specials,
+                                                  'windIndex': wi, 'guard': guard_id, 'sign': sign}
 output = {'role': 'Signed relative collector/root and rigid-arm movement. Local bracket bending is added separately.',
           'positive': 'First reference moves downward relative to second.',
           'courtWidthMM': width, 'independentWaterTributaries': len(water),
-          'newGoodsDryKN': sum(row['downN'] for row in m['dry'].placed)/1000,
-          'newGoodsFullWetKN': sum(row['downN'] for row in m['wet'].placed)/1000,
+          'newGoodsDryKN': sum(row['downN'] for row in m['dry'].placed)/1000+m['inner_dry_kn'],
+          'newGoodsFullWetKN': sum(row['downN'] for row in m['wet'].placed)/1000+m['inner_dry_kn'],
           'extraVerticalWindAreaM2': m['wind_area'], 'normalCatchCentroidYawKNm': .114,
           'nativeGravityIntervalsRetained': True, 'queries': records,
-          'primaryBracketStations': primary_stations, 'lowerBracketStations': fault_stations}
+          'primaryBracketStations': primary_stations, 'lowerBracketStations': fault_stations,
+          'courtSupportCassettes': m['court_support_cassettes'],
+          'sourceHashes': {str(path.relative_to(m['ROOT'])): hashlib.sha256(path.read_bytes()).hexdigest()
+                           for path in (HERE/'roof_water_structure.py', Path(__file__))}}
 def rounded(value):
     if isinstance(value, dict):
         return {key: rounded(item) for key, item in value.items()}

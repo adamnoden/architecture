@@ -1,5 +1,40 @@
 # Roof and rainwater recovery on 10 November 2026
 
+## Resumed structural reconstruction
+
+The successor execution has reconstructed the final native cassette model from
+the [published algorithm](https://github.com/adamnoden/architecture/pull/1470#issuecomment-6765408780)
+and independently checked its results against the
+[recorded observations](https://github.com/adamnoden/architecture/pull/1470#issuecomment-6765285655).
+This is a new source reconstruction, not a byte-identical recovery of the lost
+private files. The final export had failed before process creation; no final
+private manifest survived.
+
+The committed `roof_water_structure.py` now represents the actual corner and
+straight modules, independent root-centred cassettes, complete dry-centroid
+bounds, both inner circuits at 160 mm water and the actual upper-leader wind
+alternatives. The selected 260 and negative 220/240 comparisons reproduce the
+published numerical observations to the recorded precision. The regenerated
+movement receipt contains all 908 queries. Every source/receipt pair passed its
+standard-library-only `python -S ... --check` reproduction.
+
+The new `roof_water_receiving_baseline.py/json` and
+`roof_water_receiving_comparison.py/json` retain all 22 original and joined
+receiving reaction ranges and their controlling cases. They establish actions,
+not physical bearing resistance. Maximum joined compression is 201.475839390 kN;
+the largest station increase is 40.031647370 kN at the south-east outer support.
+The receiving contact, core material, section and load-introduction duty remains
+unqualified. The historical 200 kN collector example is not a resistance for it.
+
+The complete inner fabrication inventory and ordinary local renewal remain
+unresolved. In particular, the recovered 40 kg/m allowance is a load bound that
+the actual assembly must earn. Independent inner cassette dry-mass ranges do
+not automatically establish individual head or exterior dry-module removal;
+those maintenance combinations are being checked separately. The observations
+below preserve the interrupted state and the design questions that survived it.
+
+## Interrupted execution
+
 The execution environment disconnected at approximately 10:40 UTC. The joined gate remains planned. PR #1470 preserves the working branch. PR #1471 holds the reviewed selected service export at efcc7aa94c27b17e3c29d1ff33046b24e89f6a37 and passed exact-head validation run 42798410889. Its final canonical publication preflight could not execute after the disconnection. Current main was verified as 6bc0562aadd15b7e8652f0cb65bb844dcfca6a68.
 
 ## Durable source
