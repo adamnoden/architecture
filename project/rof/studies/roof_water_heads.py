@@ -30,34 +30,37 @@ def beam_screen(load_n_per_mm, length, shape, cantilever=False):
             "deflectionMm": deflection}
 
 
-house = read("had/studies/water-replan.json")["model"]
-shifts = read("str/studies/house-corner-rewind.json")["changes"]
 services = read("had/studies/current-house-services.json")
-review = services["structuralServiceReview"]
-faces = [(h["wall"], p["point"][0], p["faceWidth"]/2)
-         for h in review["fixedHeads"] for p in h["holes"]]
-for port in review["ports"]:
-    replacement = port["replacement"]
-    if replacement:
-        faces.append((replacement["wall"], replacement["point"][0], replacement["face"][0]/2))
-    else:
-        faces.append((port["wall"], port["point"][0], port["radius"]))
+assert services["architecturalServiceSelected"], "The joined roof requires the selected occupied service export"
+house = read("had/studies/water-replan.json")["model"]
+opening_edits = read("str/studies/reconciled-house-interface.json")["openingEdits"]
+selected_centres = {(row["level"], row["id"]): row["new"] for row in opening_edits}
+faces = services["selectedServiceInterfaces"]["weatherFaces"]
+assert len(faces) == 21
 
 
 def facade_gap(face, station):
     wall = "outer-"+face
+    axis = 0 if face in ("north", "south") else 1
     gaps = [station, house["shell"]-station]
     for level, openings in house["openings"].items():
         for opening in openings:
-            if opening["wall"] != wall:
-                continue
-            centres = [opening["centre"]] + [s["new"] for s in shifts
-                if (s["level"], s["id"]) == (level, opening["id"])]
-            gaps.extend(abs(station-c)-opening["width"]/2-215 for c in centres)
-    gaps.extend(abs(station-p["p"][0])-p["r"]
-                for p in house["exteriorPortGeometry"] if p["wall"] == wall)
-    gaps.extend(abs(station-centre)-radius for side, centre, radius in faces if side == wall)
+            if opening["wall"] == wall:
+                centre = selected_centres.get((level, opening["id"]), opening["centre"])
+                gaps.append(abs(station-centre)-opening["width"]/2-215)
+    gaps.extend(abs(station-port["point"][axis])-port["width"]/2
+                for port in faces if port["wall"] == wall)
     return min(gaps)-head["along"]/2
+
+
+weather_face_clearances = []
+for port in faces:
+    assert port["outerProjectionMaximumMM"] <= 100
+    clearance = lower_min-carrier_below_bed-48-port["point"][2]-port["width"]/2
+    assert clearance >= 25, (port["id"], clearance)
+    weather_face_clearances.append({"id":port["id"], "wall":port["wall"],
+        "point":port["point"], "completeFaceWidth":port["width"],
+        "roofVerticalClearanceAfter48":clearance})
 
 
 head_rows = []
@@ -418,6 +421,7 @@ for key, limit in zip(list(movement_receipt)[:4], movement_receipt["adoptedBudge
     assert movement_receipt[key] < limit, (key,movement_receipt[key],limit)
 
 report = {"heads":head_rows,"facade":facade,"frames":frames,"leaders":leaders,
+    "selectedWeatherFaceClearances":weather_face_clearances,
     "aprons":aprons,"secondaryRail25x20x2":secondary_rail,
     "fixedPrimaryApronToeRadial":260,
     "primaryApronToReleasedRearAfter10Setting6Movement":primary_apron_rear_clearance,
