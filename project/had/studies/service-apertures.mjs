@@ -9,7 +9,7 @@ function ringGap(along,z,opening,radius){
   const projection=Math.max(R,Math.min(R+opening.radialRingTrial,dx*c+dz*s));
   return Math.hypot(dx-projection*c,dz-projection*s)-radius;
 }
-export function serviceApertures(model,structure,corner){
+export function serviceApertures(model,structure,corner,weatherFaces=[]){
   const openings=structuredClone(model.archOpeningRegister);
   for(const e of structure.openingEdits){
     const opening=openings[e.level].find(q=>q.id===e.id&&q.wall===e.side);
@@ -35,6 +35,20 @@ export function serviceApertures(model,structure,corner){
     const ring=Math.min(...rows.map(row=>row.ring)), aperture=Math.min(...rows.map(row=>row.opening));
     return {wall,point,radius:r,ring,aperture,concrete,minimum:Math.min(ring,aperture,concrete)};
   }
+  function squareGap(p,point,halfFace){
+    const face=screen(p,point,halfFace);
+    const along=face.wall.endsWith('east')||face.wall.endsWith('west')?point[1]:point[0];
+    const z=point[2]-p.level*model.sections.firstFFL;
+    let minimum=face.concrete;
+    for(const q of openings[p.level?'FIRST':'GROUND'].filter(q=>q.wall===face.wall)){
+      const dx=Math.abs(along-q.centre)-q.width/2-halfFace;
+      const glass=Math.hypot(Math.max(dx,0),Math.max((q.sill??0)-z-halfFace,z-q.head-halfFace,0));
+      const t=q.radialRingTrial;
+      const ring=Math.hypot(Math.max(dx-t,0),Math.max(q.spring-z-halfFace,z-q.head-t-halfFace,0));
+      minimum=Math.min(minimum,glass,ring);
+    }
+    return minimum;
+  }
   const replacementPoints={'study-supply':[3045,0,2100],'living-supply':[3090,12000,2100],
     'bed2-supply':[3045,0,5550],'bed3-supply':[8955,0,5550],'principal-supply':[12000,8800,6300]};
   const ports=model.exteriorPortGeometry.map(p=>{
@@ -43,21 +57,16 @@ export function serviceApertures(model,structure,corner){
     let replacement=null;
     if(proposed){
       const face=screen(p,proposed,200), hole=screen(p,proposed);
-      const along=face.wall.endsWith('east')||face.wall.endsWith('west')?proposed[1]:proposed[0];
-      const z=proposed[2]-p.level*model.sections.firstFFL;
-      let faceGap=face.concrete;
-      for(const q of openings[p.level?'FIRST':'GROUND'].filter(q=>q.wall===face.wall)){
-        // Rectangle-to-rectangle separation. Enclose the whole finite ring
-        // by its wider bounding rectangle to give a conservative lower bound.
-        const dx=Math.abs(along-q.centre)-q.width/2-200;
-        const glass=Math.hypot(Math.max(dx,0),Math.max((q.sill??0)-z-200,z-q.head-200,0));
-        const t=q.radialRingTrial;
-        const ring=Math.hypot(Math.max(dx-t,0),Math.max(q.spring-z-200,z-q.head-t-200,0));
-        faceGap=Math.min(faceGap,glass,ring);
-      }
+      const faceGap=squareGap(p,proposed,200);
       replacement={...hole,face:[400,400],faceClearance:faceGap};
     }
-    return {id:p.id,...axis,replacement};
+    const weather=weatherFaces.find(f=>f.id===p.id);
+    if(!weather)return {id:p.id,...axis,replacement};
+    const face=screen(p,p.p,weather.width/2);
+    const minimum=weather.headGapMM===undefined
+      ?weather.shape==='square'?squareGap(p,p.p,weather.width/2):face.minimum
+      :Math.min(face.concrete,weather.headGapMM);
+    return {id:p.id,...axis,replacement,weather:{...weather,point:p.p,wall:axis.wall,minimumMM:minimum}};
   });
   const headGroups=[
     ['GROUND','east-window-0','utility-exhaust','utility-condensate',220,2500],

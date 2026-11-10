@@ -4,6 +4,7 @@ import {readFileSync} from 'node:fs';
 import {deriveCurrentHouse,scheduleText} from './current-house.mjs';
 import {cookerFault} from './cooker-fault.mjs';
 import {servicePlate,storePlate} from './occupied-service-plate.mjs';
+import {segmentDistance} from './service-interface-geometry.mjs';
 const x=deriveCurrentHouse(),m=x.model,s=m.architecturalServices;
 const near=(a,b,tol=1e-5)=>assert(Math.abs(a-b)<tol,`${a} != ${b}`);
 test('recovered 46 openings and 15 actual level-specific occupied room loads reproduce',()=>{
@@ -123,7 +124,7 @@ test('the service composition consumes shifted openings and resolves every forme
   for(const head of choice.heads){
     const opening=m.openings[head.level].find(q=>q.id===head.id);
     assert.equal(opening.centre,head.along);
-    assert.equal(opening.leaves,0);
+    assert.equal(opening.leaves,head.id==='east-window-2'?1:0);
   }
   assert.equal(m.groundFurniture['cold-storage'][1],8725);
   assert.deepEqual(m.upperFurniture.principal,x.structuralServiceReview.principalBed.ordinaryBed);
@@ -136,6 +137,7 @@ test('all six ducts and trap drains fall outward while the ground supports remai
     assert(fan.selectedRoute.normalResistancePa<18);
     assert(fan.selectedRoute.upperBodyToSectionMM>=25);
     assert(fan.selectedRoute.completeSupportToSectionMM>=25);
+    assert(fan.selectedRoute.mainToIndependentDrainMM>=25);
     if(fan.level===0)assert(fan.selectedRoute.groundSupportClearanceMM>=25);
     for(const [path,first]of [[fan.path,2],[fan.ceilingTrapDrainPort.path,1]]){
       for(let i=first;i<path.length;i++){
@@ -156,16 +158,17 @@ test('fixed heads charge the utility partition return and use the reduced operat
   assert.equal(utility.partitionReturn.cassetteToWallMM,53);
   near(utility.partitionReturn.additionalGrossBlindAreaM2,.27);
   for(const purge of choice.purge){
-    assert.equal(purge.clearRectangularAreaM2,.7);
+    assert.equal(purge.nominalOpeningAreaM2,purge.room==='principalBath'?.30625:.7);
+    assert(purge.openingAreaMethod.includes('Table1.4'));
     assert(purge.lowerBoundAreaRatio>1);
-    assert.deepEqual(purge.operatingTierLocalZ,[1250,2410]);
+    assert.deepEqual(purge.operatingTierLocalZ,[1250,purge.room==='principalBath'?2285:2410]);
   }
   assert(choice.purge.find(p=>p.room==='kitchenDining').lowerBoundAreaRatio<1.11);
 });
 
-test('three purge windows consume their shifted frames, finite leaves and reachable manual stays',()=>{
+test('four purge windows consume their shifted frames, finite leaves and reachable manual stays',()=>{
   const choice=x.selectedServiceInterfaces;
-  assert.deepEqual(choice.purge.map(p=>p.centre),[9900,2100,9900]);
+  assert.deepEqual(choice.purge.map(p=>p.centre),[9900,2100,9900,7400]);
   for(const p of choice.purge){
     assert(p.minimumFurnitureClearance.mm>=25,p.room+' '+JSON.stringify(p.minimumFurnitureClearance));
     assert(p.maximumGripReachMM<600,p.room+' grip');
@@ -178,10 +181,16 @@ test('three purge windows consume their shifted frames, finite leaves and reacha
       near(leaf.stay.openLengthMM,300);
       assert(leaf.stay.pegReachMM<600,p.room+' stay');
       assert.equal(leaf.completeWHDepth[2],128);
+      const a=leaf.articulatedArm;
+      assert(a.upperLengthMM<=350&&a.maximumForearmLengthMM<=350);
+      assert(a.maximumCombinedLengthMM<600);
+      assert(a.handToPostLowerMM>=25&&a.handToOwnLeafMM>=25);
+      assert(a.forearmToPostLowerMM>=25&&a.upperToPostLowerMM>=25);
+      assert(a.rejected350HandleToPostMM<0);
     }
   }
   assert.equal(m.archOpeningRegister.FIRST.find(w=>w.id==='west-window-3').sill,850);
-  assert.deepEqual(s.utility.PVinverterLocalZ,[1900,2450]);
+  assert.deepEqual(s.utility.PVinverterLocalZ,[2100,2650]);
   assert.equal(choice.occupiedConsequences.additionalRearBlindAreaM2,.1);
   assert(s.emitters.some(e=>e.id==='rear-W'));
   assert(s.emitters.some(e=>e.id==='kitchen-W'));
@@ -189,31 +198,65 @@ test('three purge windows consume their shifted frames, finite leaves and reacha
   for(const e of s.emitters)assert.deepEqual(m.servicesInterface.emitters.find(p=>p.id===e.id).plan,e.completePlanWithValvesAndBrackets);
 });
 
-test('the room-side first tube clears glazing and the whole cassette reaches a furniture-clear dry rest',()=>{
+test('complete independent drains reject the old near-coincident main-duct routes',()=>{
+  near(segmentDistance([0,0,0],[10,0,0],[5,-5,0],[5,5,0]),0);
+  near(segmentDistance([0,0,0],[10,0,0],[0,0,160],[10,0,160]),160);
+  near(segmentDistance([0,0,0],[0,0,0],[0,0,10],[0,0,20]),10);
+  assert(10-123.5-7.5<0);
+  for(const f of s.fanAccess){
+    near(f.path[0][2]-f.ceilingTrapDrainPort.path[0][2],160);
+    assert(f.selectedRoute.mainToIndependentDrainMM>=25);
+    assert.equal(f.selectedRoute.maximumCollarOD,247);
+  }
+});
+
+test('fixed heads renew one outward cartridge at a time on finite side stations',()=>{
   const overlap=(a,b)=>[0,1].every(i=>Math.min(a[i]+a[i+2],b[i]+b[i+2])>Math.max(a[i],b[i]));
   for(const head of x.selectedServiceInterfaces.heads){
-    const r=head.renewal,rest=head.receiver.headReceiver,first=r.panelStates[0],last=r.panelStates.at(-1);
-    assert.equal(r.firstPiece.axialPilotMM,0);
-    assert.equal(r.firstPiece.normalMM[0]-r.finishedWallNormalMM,75.5);
-    assert(r.removedNext.retainedRiserToCassetteMM>=90||r.removedNext.retainedTrunkToCassetteMM>=25);
-    near(Math.hypot(last[0]-first[0],last[1]-first[1]),900);
-    for(const i of [0,1]){
-      assert(last[i]-rest[i]>=25,head.id+' near receiver edge');
-      assert(rest[i]+rest[i+2]-last[i]-last[i+3]>=25,head.id+' far receiver edge');
+    const r=head.renewal;
+    assert(r.roomBodyToFurnitureMM>=25);
+    assert(r.roomBodyToInstalledDuctMM>=25);
+    assert.equal(r.kneelingHeightMM,1380);
+    assert.equal(r.stage.completeTopZ-r.stage.deckZ,2000);
+    assert(r.stage.roofVerticalReserveMM>=25);
+    assert.equal(r.stage.roofLeaderNormalClearanceMM,50);
+    const furniture=structuredClone(head.level==='GROUND'?m.groundFurniture:m.upperFurniture),park=r.roomAccess.parkedFurniture;
+    if(park)furniture[park.id]=park.plan;
+    for(const [id,item]of Object.entries(furniture)){
+      const emitter=s.emitters.find(e=>'service-emitter-'+e.id===id);
+      if(emitter&&emitter.bottomLocal>r.roomDeckLocalZ+r.kneelingHeightMM)continue;
+      if(id==='service-utility-PVinverter')continue;
+      assert(!overlap(r.roomAccess.platform,item),head.id+' platform '+id);
     }
-    assert.deepEqual(r.loweredBox.slice(0,2),last.slice(0,2));
-    const furniture=structuredClone(head.level==='GROUND'?m.groundFurniture:m.upperFurniture),park=head.receiver.parkedFurniture;
-    if(park){
-      assert(overlap(head.receiver.platform,furniture[park.id]));
-      furniture[park.id]=park.plan;
-    }
-    const chair=head.receiver.parkedChair;
-    if(chair)furniture[chair.id]=chair.plan;
-    for(const [id,item]of Object.entries(furniture))for(const field of ['platform','additionalPlatform','headReceiver'])
-      if(head.receiver[field])assert(!overlap(head.receiver[field],item),head.id+' '+field+' '+id);
-    if(head.holes[0].id!=='cooker-exhaust'){
-      const rejectedBottom=head.holes[0].point[2]-(head.level==='FIRST'?3450:0)-113.5-250;
-      assert(rejectedBottom<head.bandBottom);
+    for(const c of r.cartridges){
+      assert(c.minimumRadialRunningClearanceMM>=3);
+      assert.equal(c.firstOutwardDrawMM,650);
+      assert.equal(c.finalOutwardDrawMM,805);
+      near(c.initial.z[0]-c.clearanceState.z[0],6.5);
+      near(c.initial.z[0]-c.dryRest.z[0],8.05);
+      assert(c.after650InnerTipToRetainedFaceMM>=45);
+      assert(c.dryRest.outwardNormalMM[0]-c.dryRestNormalMM[0]>=25);
+      assert(c.dryRestNormalMM[1]-c.dryRest.outwardNormalMM[1]>=25);
+      assert(c.roomRelease.handReachMM<=600);
+      assert(c.roomRelease.requiredExtensionMM<=c.roomRelease.steelSocketExtensionMaximumMM);
+      assert(c.roomRelease.armToInstalledDuctMinimumMM>=25);
+      assert(c.exterior.bodyToCompleteMovingPartMM>=25);
+      assert(c.exterior.frontHandReachMM<=600&&c.exterior.sideHandReachMM<=600);
+      assert(c.exterior.frontToolRequiredMM<=c.exterior.frontToolMaximumMM);
+      assert(c.exterior.sideToolRequiredMM<=c.exterior.sideToolMaximumMM);
+      assert(c.temporaryBlank.gapToRoomDuctMM>=25&&c.temporaryBlank.minimumRoomFaceClearanceMM>=25);
+      assert(r.rejectedInteriorRig.partOverlap&&r.rejectedInteriorRig.supportIntersection);
     }
   }
+});
+
+test('all21 complete weather faces retain the actual selected structural and head margins',()=>{
+  assert.equal(x.selectedServiceInterfaces.weatherFaces.length,21);
+  for(const f of x.selectedServiceInterfaces.weatherFaces){
+    assert(f.minimumMM>=25,f.id+' '+f.minimumMM);
+    assert.equal(f.outerProjectionMaximumMM,100);
+  }
+  const principal=x.selectedServiceInterfaces.heads.find(h=>h.id==='east-window-2');
+  assert.equal(principal.holes[0].faceWidth,284);
+  assert.equal(principal.weather.principalTelescopicJoint.minimumMeasuredRadialGap,.5);
 });

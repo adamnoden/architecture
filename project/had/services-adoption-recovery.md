@@ -1,5 +1,17 @@
 # Services adoption recovery checkpoint
 
+## Exterior cartridge checkpoint on 10 November
+
+The current g5 successor preserves PR1469 at4a6ed89e and replaces the rejected interior cassette rig. Its first tube and later elbow shared one occupied rest, and panel-only lowering crossed its solid carriage. The selected head stays fixed. One supported cartridge at a time moves650mm outward along its1%fall, then155mm farther into a dry rest. The exterior stage occupies normal250–950 with a2000mm worker envelope. Upper decks at4300 retain27mm below the roof carrier after48mm movement, body and setting allowance. The20mm room-side blank travels in the458–505 axial gap after the cartridge clears.
+
+Four paired or single rectangular purge windows use finite370mm-wide leaves, corrected270/193mm grips and two-link40mm-radius arms. The former350mm grip struck the centre post. The selected35-degree operation uses the2021ADF opening-area method. Three paired openings provide0.700m² each. The principal southern leaf provides0.30625m². Its radiator moves to the south wall atlocal2100–2700 and the room collar platform lowers to600. The utility inverter starts at2100 above a2000mm standing envelope.
+
+All21 complete outside faces retain at least25mm on the selected structural interface. The principal main face is284mm, with a2mm telescopic skirt over a278mm receiver,45mm overlap and0.5mm minimum measured radial gap. Family exhaust lowers to6125 and its drain moves to east6000/Z6100 to avoid the lower roof gutter. The six drains begin160mm below their main axes and retain at least25mm from complete247mm main collars. Upper fan pods lower30mm. Heating capacities remain the recorded values.
+
+The18 current-house tests pass on this checkpoint. The remaining wall-terminal renewal states, complete radiator maintenance, normal/boost pressure comparison, source-bound drawing, joined result and full HAD/affected validation are active work. The packet lifecycle remains planned. Approved material exceptions remain zero.
+
+The earlier checkpoint sections below retain the intermediate choices and rejected routes for recovery history.
+
 ## Occupied window checkpoint on 10 November
 
 The current source selects three paired outward rectangular purge windows. Each carries two complete 370 × 1160 × 128 mm leaves, staggered bronze peg stays, a 300 mm standing-body radius and the actual shifted opening centre. The worst bounded grip reach is 537.18 mm. The discarded 400 mm-wide leaf intersects the retained centre post. The selected width keeps 8.48 mm at that moving interface, before product tolerances. The current 16 tests pass.

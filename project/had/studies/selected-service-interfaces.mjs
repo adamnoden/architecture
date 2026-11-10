@@ -1,79 +1,56 @@
 import {serviceApertures} from './service-apertures.mjs';
 import {selectPurgeWindows} from './purge-window-interfaces.mjs';
+import {pathSeparation} from './service-interface-geometry.mjs';
+import {headMaintenance} from './service-head-maintenance.mjs';
 
 const distance=(a,b)=>Math.hypot(...a.map((v,i)=>v-b[i]));
 const length=path=>path.slice(1).reduce((sum,p,i)=>sum+distance(p,path[i]),0);
 const clone=value=>structuredClone(value);
 
-function serviceRenewal(head,ffl){
-  const port=head.holes[0],axis=port.point[2]-ffl,receiver=head.receiver;
-  // Normal distance increases inward from the outer masonry face. The
-  // finished room face is 429.5, beyond the retained glazing and weather head.
-  const box=(normal,along,z)=>head.wall==='outer-east'
-    ?[12000-normal[1],along[0],ffl+z[0],normal[1]-normal[0],along[1]-along[0],z[1]-z[0]]
-    :head.wall==='outer-west'
-      ?[normal[0],along[0],ffl+z[0],normal[1]-normal[0],along[1]-along[0],z[1]-z[0]]
-      :[along[0],12000-normal[1],ffl+z[0],along[1]-along[0],normal[1]-normal[0],z[1]-z[0]];
-  const panelZ=[axis-150,axis+150],along=head.wall==='outer-north'?port.point[0]:port.point[1];
-  const states=[0,600,900].map(draw=>box([455+draw,505+draw],receiver.cassetteAlong,panelZ));
-  return {part:'Room-side inner service cassette. The retained wall sleeve and outer weather head have their own exterior renewal operation.',
-    maximumCompleteMassKG:25,finishedWallNormalMM:429.5,retainedOuterSleeveEndNormalMM:455,
-    cassetteNormalMM:[455,505],maximumPanelWidthMM:receiver.cassetteAlong[1]-receiver.cassetteAlong[0],
-    panelLocalZ:panelZ,inwardDrawMM:600,secondDrawMM:300,firstDuctDropMM:250,
-    firstPiece:{part:'Room-side straight tube with two radial split collars and flat butt joints',
-      normalMM:[505,600],completeOD:227,axialPilotMM:0,
-      initialBox:box([505,600],[along-113.5,along+113.5],[axis-114.5,axis+114.5]),
-      droppedBox:box([505,600],[along-113.5,along+113.5],[axis-364.5,axis-135.5]),
-      clearOfFixedGlazingMM:505-429.5},
-    removedNext:port.id==='cooker-exhaust'
-      ?{part:'Separate elbow and short diagonal tail',maximumCentrelineLengthMM:600,retainedTrunkAlongMinimum:10350,
-        retainedTrunkToCassetteMM:10350-113.5-receiver.cassetteAlong[1]}
-      :{part:'Separate elbow and lower riser',maximumCentrelineLengthMM:600,retainedRiserBottomLocalZ:2800,
-        retainedRiserToCassetteMM:2800-panelZ[1]},
-    panelStates:states,loweredBox:box([1355,1405],receiver.cassetteAlong,[900,1200]),receiver,
-    support:'Two independent temporary runners support the cassette before its accessible fasteners are released. They remain engaged through 600 mm and 300 mm travel. Transfer onto the supported carrier inside the dry-rest field before lowering its base to 900 mm. The selected feet, runners and anchors must support the complete 25 kg design envelope and task loads.',
-    order:['Isolate the fan, cooker and hot duty. Support both duct sides, the retained sleeve and the inner cassette.',
-      'Open both radial collars of the 95 mm room-side tube at normal 505–600. Lower that supported tube 250 mm and carry it inward to the dry receiver.',
-      'Remove the separately supported elbow and lower riser. Cap the retained sleeve at its accessible room-side flat face. Release the inner cassette from the flat joint.',
-      'Draw the 50 mm-deep cassette inward 600 mm and then 300 mm on its runners. Transfer its complete body to the receiver before lowering. Restore and test the disturbed boundaries before enabling the room.'],
-    rejection:'A socket or pilot crossing the joint, an inaccessible fastener, a larger body or a retained elbow in the swept volume rejects this internal task.'};
-}
-
 // An architectural interface selection on SAP-C1. Keep the failed inherited
 // ports in structuralServiceReview so the source rewind remains inspectable.
 export function selectServiceInterfaces(house,structure,corner,base,occupied){
   const m=house.model,s=m.architecturalServices,review=house.structuralServiceReview;
-  const heads=clone(review.fixedHeads);
+  const heads=clone(review.fixedHeads).map(h=>({...h,newOpaque:true}));
+  const principalOpening=m.archOpeningRegister.FIRST.find(w=>w.id==='east-window-2');
+  const rise=principalOpening.head-principalOpening.spring,half=principalOpening.width/2;
+  const R=(half**2+rise**2)/(2*rise),archArea=R*R*Math.acos((R-rise)/R)-(R-rise)*half;
+  const principalHoles=[['principal-bath-exhaust',7400,140,284],['principal-bath-condensate',7600,20,60]].map(([id,along,radius,faceWidth])=>{
+    const gap=(z,r)=>Math.min(R-Math.hypot(along-7400,z-principalOpening.head+R)-r,500-Math.abs(along-7400)-r,z-2360-r)-75;
+    return {id,radius,point:[12000,along,6054],frameGap:Math.min(gap(2604,radius),gap(2609.05,radius)),
+      faceShape:id.endsWith('exhaust')?'circle':'square',faceWidth,
+      faceGap:Math.min(gap(2603,faceWidth/2),gap(2604,faceWidth/2))};
+  });
+  heads.push({level:'FIRST',wall:'outer-east',id:'east-window-2',width:1000,along:7400,bandBottom:2360,border:75,
+    holes:principalHoles,grossHeadAreaM2:(archArea+1000*(2550-2360))/1e6,newOpaque:false,incrementalOpaqueAreaM2:.01,
+    interHoleWebMM:40,betweenWeatherFacesMM:28,
+    cowl:'The main cartridge has a round284 outer face and a196-square downturned cowl within it. Its196×60 clear throat is11760mm². A2mm metal telescopic skirt with280mm internal diameter overlaps the278mm fixed receiver45mm. Nominal radial gap1mm, measured minimum0.5mm, with a drained lower exit and separate inner air seal. The insulation and247mm collar pass through the274mm clear receiver.'});
   const paths={
-    'ground-WC':[[8200,1600,2950],[8400,1600,3010],[8950,1600,3004.5],[8950,0,2985]],
-    utility:[[10800,1900,2950],[11000,1900,3010],[11275,1900,3007.25],
-      [11275,2100,3005.25],[11275,2100,2507.25],[12000,2100,2500]],
-    kitchen:[[10150,9950,2950],[10150,10150,3010],[8400,10150,2992.5],
-      [8400,11275,2981.25],[8400,11275,2497.25],[8400,12000,2490]],
-    'rear-bath':[[1700,9400,6380],[750,9400,6370.5],[750,9900,6365.5],
+    'ground-WC':[[8200,1600,2950],[8400,1600,3000],[8950,1600,2994.5],[8950,0,2975]],
+    utility:[[10800,1900,2950],[11000,1900,3000],[11275,1900,2997.25],
+      [11275,2100,2995.25],[11275,2100,2507.25],[12000,2100,2500]],
+    kitchen:[[10150,9950,2950],[10150,10150,3000],[8400,10150,2982.5],
+      [8400,11275,2971.25],[8400,11275,2497.25],[8400,12000,2490]],
+    'rear-bath':[[1700,9400,6370],[750,9400,6360.5],[750,9900,6355.5],
       [750,9900,5957.5],[0,9900,5950]],
-    'family-bath':[[10875,5450,6380],[11275,5450,6390.25],[11275,5750,6387.25],[12000,5750,6380]],
-    'principal-bath':[[11075,6900,6380],[11275,6900,6385],[11275,7400,6380],[11275,7400,6067.25],[12000,7400,6060]]
+    'family-bath':[[10875,5450,6370],[11275,5450,6380.25],[11275,5750,6377.25],[11275,5750,6132.25],[12000,5750,6125]],
+    'principal-bath':[[11075,6900,6370],[11275,6900,6375],[11275,7400,6370],[11275,7400,6061.25],[12000,7400,6054]]
   };
   const drainPaths={
-    'ground-WC':[[8200,1600,2940],[9130,1600,2930.7],[9130,800,2922.7],[9130,800,2808],[9130,0,2800]],
-    utility:[[10800,1900,2940],[11200,1900,2936],[11200,2320,2931.8],[11200,2320,2508],[12000,2320,2500]],
-    kitchen:[[10150,9950,2940],[8180,9950,2920.3],[8180,11200,2907.8],[8180,11200,2498],[8180,12000,2490]],
-    'rear-bath':[[1700,9400,6370],[800,9400,6361],[800,10145,6353.55],[800,10145,5958],[0,10145,5950]],
-    'family-bath':[[10875,5450,6370],[11200,5450,6366.75],[11200,5950,6361.75],[11200,5950,6258],[12000,5950,6250]],
-    'principal-bath':[[11075,6900,6370],[11200,6900,6368.75],[11200,7600,6361.75],[11200,7600,6068],[12000,7600,6060]]
+    'ground-WC':[[8200,1600,2790],[9130,1600,2780.7],[9130,800,2772.7],[9130,800,2708],[9130,0,2700]],
+    utility:[[10800,1900,2790],[11075,1900,2787.25],[11075,2320,2783.05],[11075,2320,2509.25],[12000,2320,2500]],
+    kitchen:[[10150,9950,2790],[8180,9950,2770.3],[8180,11075,2759.05],[8180,11075,2499.25],[8180,12000,2490]],
+    'rear-bath':[[1700,9400,6210],[950,9400,6202.5],[950,10145,6195.05],[950,10145,5959.5],[0,10145,5950]],
+    'family-bath':[[10875,5450,6210],[11075,5450,6208],[11075,6000,6202.5],[11075,6000,6109.25],[12000,6000,6100]],
+    'principal-bath':[[11075,6900,6210],[11075,7600,6203],[11075,7600,6063.25],[12000,7600,6054]]
   };
-  const withdrawals={
-    utility:{platform:[9725,1675,1625,750],headReceiver:[10350,1775,600,650],cassetteAlong:[1800,2400],direction:[-600,0,0],secondDraw:[-300,0,0],
-      workerPath:[[11000,2090],[10270,2090]],workerDuringDraw:'Retreat 730 mm during the supported 900 mm draw. The body stays at least 25 mm ahead of the cassette.',railAlong:[1755,2425]},
-    kitchen:{platform:[7945,10300,700,1100],additionalPlatform:[7945,10310.25,1355,650],headReceiver:[8100,10450,500,600],cassetteAlong:[8125,8575],direction:[0,-600,0],secondDraw:[0,-300,0],
-      workerPath:[[8325,10975],[8325,10635.25],[8975,10635.25]],workerDuringDraw:'After supporting and releasing the panel, move south then east around its swept volume. Operate the captive hand winch from the side. The panel remains on two runners.',railAlong:[8090,8610]},
-    'rear-bath':{platform:[655,9550,1100,750],additionalPlatform:[755,10250,1000,650],headReceiver:[825,9575,650,650],cassetteAlong:[9600,10200],direction:[600,0,0],secondDraw:[300,0,0],
-      workerPath:[[1000,9900],[1100,10275],[1400,10550]],workerDuringDraw:'After supporting and releasing the panel, move north of the swept volume. Operate the captive hand winch from the side.',railAlong:[9565,10235]},
-    cooker:{platform:[9605,9945,1095,1505],headReceiver:[9625,10550,600,600],cassetteAlong:[9650,10150],direction:[0,-600,0],secondDraw:[0,-300,0],
-      workerPath:[[9930,10950],[9930,10270]],workerDuringDraw:'Retreat 680 mm during the supported 900 mm draw. The body stays at least 25 mm ahead of the cassette.',railAlong:[9615,10185],
-      parkedFurniture:{id:'low-food-larder',plan:[9700,8450,1000,200]},
-      parkedChair:{id:'dining-chair-east-north',plan:[10000,9000,500,500]}}
+  const roomAccess={
+    utility:{platform:[10710,1765,650,650],body:[11035,2090]},
+    kitchen:{platform:[8000,10700,650,650],body:[8325,11025]},
+    'rear-bath':{platform:[640,9575,650,650],body:[965,9900]},
+    'principal-bath':{platform:[10675,6725,650,650],body:[11000,7050],deckZ:600},
+    cooker:{platform:[9615,10748,650,650],body:[9940,11073],
+      parkedFurniture:{id:'low-food-larder',plan:[9700,8450,1000,200]}}
   };
   const headByPort=new Map(heads.flatMap(h=>h.holes.map(p=>[p.id,h])));
   const replacements=new Map(review.ports.filter(p=>p.replacement).map(p=>[p.id,p.replacement]));
@@ -97,10 +74,11 @@ export function selectServiceInterfaces(house,structure,corner,base,occupied){
     if(!paths[fan.id])continue;
     fan.path=clone(paths[fan.id]);
     if(fan.level){
-      fan.selectedLoweringMM=20;
-      fan.podZ=fan.podZ.map(z=>z-20);
-      fan.workerEquipmentRequirement.ceilingFaceLocal-=20;
-      fan.workerEquipmentRequirement.requiredTaskContactLocal=fan.workerEquipmentRequirement.requiredTaskContactLocal.map(z=>z-20);
+      fan.selectedLoweringMM=30;
+      fan.podZ=fan.podZ.map(z=>z-30);
+      fan.workerEquipmentRequirement.ceilingFaceLocal-=30;
+      fan.workerEquipmentRequirement.requiredTaskContactLocal=fan.workerEquipmentRequirement.requiredTaskContactLocal.map(z=>z-30);
+      fan.workerEquipmentRequirement.maximumHeadTopLocal=2740;
     }
     const drain=m.exteriorPortGeometry.find(p=>p.id===fan.id+'-condensate');
     fan.ceilingTrapDrainPort={...fan.ceilingTrapDrainPort,centre:clone(drain.p),
@@ -110,14 +88,15 @@ export function selectServiceInterfaces(house,structure,corner,base,occupied){
     const q=13,v=q/1000/(Math.PI*.125**2/4),L=length(fan.path)/1000;
     const ductPa=.6*v*v*(7+.025*L/.125);
     const roomPa=base.air.transfer.twoDoorPathScreenDepressionPa;
-    fan.selectedRoute={lengthMM:L*1000,clearDuctMM:125,completeInsulatedOD:227,
+    fan.selectedRoute={lengthMM:L*1000,clearDuctMM:125,completeInsulatedOD:227,maximumCollarOD:247,
       sumKMaximum:7,normalLps:q,ductPa,roomPa,secondaryFrontPa:2,
       normalResistancePa:ductPa+roomPa+2,comparisonBackpressurePa:20,
       minimumOutwardGradient:.01,
       upperBodyToSectionMM:(fan.level?6550:3170)-Math.max(...fan.path.map(p=>p[2]))-113.5,
-      groundSupportClearanceMM:fan.level?null:3170-Math.max(...fan.path.map(p=>p[2]))-113.5-20,
-      completeSupportToSectionMM:(fan.level?6550:3170)-Math.max(...fan.path.map(p=>p[2]))-113.5-20,
-      splitLengthsMaximumMM:600,maintenance:withdrawals[fan.id]??fan.maintenance,
+      groundSupportClearanceMM:fan.level?null:3170-Math.max(...fan.path.map(p=>p[2]))-123.5-20,
+      completeSupportToSectionMM:(fan.level?6550:3170)-Math.max(...fan.path.map(p=>p[2]))-123.5-20,
+      mainToIndependentDrainMM:pathSeparation(fan.path,drainPaths[fan.id])-123.5-7.5,
+      splitLengthsMaximumMM:600,maintenance:roomAccess[fan.id]??fan.maintenance,
       scope:'Whole installed K includes all bends, trap, transition, grille, terminal and connections. Fan CF1 and measured normal/boost flow remain acceptance conditions.'};
     const extract=m.servicesInterface.extract.find(p=>p.id===fan.id);
     extract.mainPort=clone(fan.path.at(-1));
@@ -138,14 +117,20 @@ export function selectServiceInterfaces(house,structure,corner,base,occupied){
     clearDuctMM:125,completeInsulatedOD:s.cooker.fullInsulatedOD,
     conservativeAddedLengthM:review.hoodReroute.addedLengthM,conservativeAddedK:review.hoodReroute.addedBendK,
     operation:review.hoodReroute,minimumOutwardGradient:.01,
-    splitLengthsMaximumMM:600,maintenance:withdrawals.cooker,
+    splitLengthsMaximumMM:600,maintenance:roomAccess.cooker,
     cleaning:'Separate cleanout at each turn and independently supported split tubes. No sealed inaccessible elbow or shared wet-room duct. Close the cooking station for grease cleaning and retain the exhaust shut-off upstream.'};
   // The normal cooker duty now uses the longer selected route. Its fault
   // controls keep the greater inherited flow envelope as an adverse bound.
   s.cooker.operatingAir=review.hoodReroute;
   m.servicesInterface.cooker=s.cooker;
   m.servicesInterface.supply=s.supply;
-  const selectedCheck=serviceApertures(m,structure,corner);
+  const weatherFaces=m.exteriorPortGeometry.map(p=>{
+    const selected=headByPort.get(p.id)?.holes.find(h=>h.id===p.id);
+    return {id:p.id,width:selected?.faceWidth??(p.id.endsWith('-supply')?400:p.id.endsWith('-condensate')?60:p.id==='east-foul-flashing'?320:p.id==='cooker-makeup'?360:330),
+      shape:selected?.faceShape??(p.id.endsWith('-supply')||p.id.endsWith('-condensate')?'square':'circle'),
+      outerProjectionMaximumMM:100,...(selected?{headGapMM:selected.faceGap}:{})};
+  });
+  const selectedCheck=serviceApertures(m,structure,corner,weatherFaces);
   for(const port of selectedCheck.ports){
     const current=m.exteriorPortGeometry.find(p=>p.id===port.id);
     current.minimumRingOrCassetteReserve=port.minimum;
@@ -164,8 +149,8 @@ export function selectServiceInterfaces(house,structure,corner,base,occupied){
   const purgeChoice=selectPurgeWindows(m);
   for(const head of heads){
     const opening=m.archOpeningRegister[head.level].find(o=>o.id===head.id);
-    const room=head.id==='east-window-0'?'utility':head.id==='west-window-3'?'rearBath':'kitchenDining';
-    head.room=room;head.lowerGlass='FIXED';head.lowGlassHeightMM=head.bandBottom-opening.sill-150;
+    const room=head.id==='east-window-0'?'utility':head.id==='west-window-3'?'rearBath':head.id==='east-window-2'?'principalBath':'kitchenDining';
+    head.room=room;head.lowerGlass=head.id==='east-window-2'?'SOUTH RECTANGULAR LEAF plus fixed remaining glass':'FIXED';head.lowGlassHeightMM=head.bandBottom-opening.sill-150;
     const utility=head.id==='east-window-0';
     head.lowGlassWidthMM=head.width-(utility?275:150);
     head.partitionReturn=utility?{rawApertureEndY:head.along+head.width/2,retainedWallFaceY:2453,
@@ -173,18 +158,21 @@ export function selectServiceInterfaces(house,structure,corner,base,occupied){
       clearGlassEndY:2400,clearGlassToWallMM:53,serviceCassetteAlongY:[1800,2400],
       cassetteToWallMM:53,additionalGrossBlindAreaM2:.2*(head.bandBottom-opening.sill)/1000,
       support:'Independent opaque jamb/partition return within the existing rough opening. Retain the utility wall and both original load-path duties. The glazing and removable service panel carry no masonry.'}:null;
-    head.lowerGlassClearAreaM2=head.lowGlassWidthMM*head.lowGlassHeightMM/1e6;
-    head.receiver=withdrawals[head.holes[0].id.replace('-exhaust','')];
+    head.lowerGlazedFieldBeforeFramesM2=head.lowGlassWidthMM*head.lowGlassHeightMM/1e6;
+    head.roomAccess=roomAccess[head.holes[0].id.replace('-exhaust','')];
     head.weather={metalFace:'316L outer and inner metal faces, mineral insulation and timber frame constituents charged to MAT.',
       outerProjectionMaximumMM:100,outwardThroatMinimumAreaMM2:Math.PI*125**2/4*.9,
-      upperLapMM:40,sideLapMM:25,bottomDripProjectionMM:30,drainedOuterJoint:true,
+      headPanelUpperLapMM:40,headPanelSideLapMM:25,bottomDripProjectionMM:30,drainedOuterJoint:true,
+      principalTelescopicJoint:head.id==='east-window-2'?{receiverOD:278,skirtOD:284,skirtMetal:2,nominalRadialGap:1,minimumMeasuredRadialGap:.5,axialOverlap:45,lowerDrainOpen:true}:null,
       innerBoundary:'Separate accessible air seal and insulated sleeve. No water path through mineral insulation or into the frame.',
       admission:'Actual joint constituents, pressure, wind-driven rain, thermal bridges and exhaust re-entry remain measured/product/site obligations.'};
-    head.renewal=serviceRenewal(head,head.level==='FIRST'?m.sections.firstFFL:0);
     for(const register of [m.openings,m.archOpeningRegister]){
       const q=register[head.level].find(o=>o.id===head.id);
-      q.operation='FIXED lower glazing with separately removable service head';q.leaves=0;
-      q.fixedTransomTopBand=q.head-head.bandBottom;q.openingLeafHeadMaximum=null;
+      if(head.id!=='east-window-2'){
+        q.operation='FIXED lower glazing and fixed service head with exterior cartridges';q.leaves=0;
+        q.openingLeafHeadMaximum=null;
+      }
+      q.fixedTransomTopBand=q.head-head.bandBottom;
       q.serviceHead=clone(head);
     }
   }
@@ -208,8 +196,8 @@ export function selectServiceInterfaces(house,structure,corner,base,occupied){
   delete m.wholeHouseFit;
   delete m.architecturalDevelopmentProof;
   const purge=purgeChoice.windows;
-  const headArea=heads.reduce((total,h)=>total+h.grossHeadAreaM2,0);
-  const daylight=['utility','rearBath','kitchenDining'].map(room=>{
+  const headArea=heads.filter(h=>h.newOpaque).reduce((total,h)=>total+h.grossHeadAreaM2,0);
+  const daylight=['utility','rearBath','kitchenDining','principalBath'].map(room=>{
     const removed=heads.filter(h=>h.room===room).reduce((n,h)=>n+h.grossHeadAreaM2+(h.partitionReturn?.additionalGrossBlindAreaM2??0),0)
       +(room==='rearBath'?purgeChoice.additionalRearBlindAreaM2:0);
     return {room,oldGrossGlazingM2:s.rooms[room].windows,opaqueHeadM2:removed,
@@ -223,9 +211,11 @@ export function selectServiceInterfaces(house,structure,corner,base,occupied){
       clearSphericalFaceBoundMM:distance(outlet.p,inlet.p)-Math.SQRT2*(200+180)}));
     return {outlet:outlet.id,nearestIntake:distances.sort((a,b)=>a.axisDistanceMM-b.axisDistanceMM)[0]};
   });
+  for(const head of heads)headMaintenance(head,m);
   const interfaceSelection={id:'HAD-SERVICES-02',basis:structure.candidate,heads,
     ports:selectedCheck.ports.map(p=>({id:p.id,point:p.point,radius:p.radius,minimumMM:p.minimum})),
-    fixedHeadOpaqueAreaM2:headArea,additionalUtilityBlindAreaM2:.27,purge,daylight,separation,
+    weatherFaces:selectedCheck.ports.map(p=>p.weather),
+    fixedHeadOpaqueAreaM2:headArea,additionalUtilityBlindAreaM2:.27,additionalPrincipalBandAreaM2:.01,purge,daylight,separation,
     occupiedConsequences:{radiators:purgeChoice.relocations,inverter:purgeChoice.inverter,additionalRearBlindAreaM2:purgeChoice.additionalRearBlindAreaM2},
     normalHouseExtractLps:s.fanAccess.reduce((n,f)=>n+f.modes[0],0),
     conservativeFloorCriterionLps:base.air.floorCriterionLps,
@@ -235,7 +225,7 @@ export function selectServiceInterfaces(house,structure,corner,base,occupied){
   house.selectedServiceInterfaces=interfaceSelection;
   s.materials.serviceHeadOccurrences=heads.map(h=>({occurrence:'S10 '+h.level+' '+h.id,
     fixedOuterHead:'316L faces and sleeve, mineral insulation, independently supported timber frame',
-    innerCassette:'316L removable inner face and split-collar tubes with supported flat joints',
+    portCartridge:'316L removable outward cartridge and supported flat room-side joint, with retained fixed receiver and separate temporary weather blank',
     ancillary:'Actual seals, coatings, binders, fasteners and joint constituents enter the strict material register before installation.',
     utilityBlindReturnM2:h.partitionReturn?.additionalGrossBlindAreaM2??0,approvedExceptions:0}));
   s.facade=interfaceSelection;s.authority='HAD-SERVICES-02 selected occupied architectural reference';
