@@ -1,23 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "ROF-RWT-GATE",
-  "generation": 1,
-  "state": "released",
-  "leaseId": "978b85b8-07c1-4d8e-b770-b3c1c940ce7b",
+  "generation": 2,
+  "state": "claimed",
+  "leaseId": "47083968-9abd-4627-90bb-040ec3eb4792",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6753111267"
+    "label": "issue-comment-6761668451"
   },
-  "claimedAt": "2026-11-09T22:26:06.000Z",
-  "heartbeatAt": "2026-11-09T23:00:46.000Z",
-  "expiresAt": "2026-11-09T23:00:46.000Z",
-  "branch": "work/mvb-chat-6753111267",
-  "checkpoint": {
-    "evidence": "Draft PR #1467 at 2a9753eb. Comment6753738344 links preserved calculations, review findings and exact local residue. Gate planned.",
-    "next": "Recover executor. Resolve stage and E-spool extraction, head catches and full SAP-C1 wind replay. Run affected checks and exact-head preflight.",
-    "blocker": "Execution environment unavailable. Selected geometry and full current-house structural replay remain unfinished."
+  "claimedAt": "2026-11-10T07:30:42.000Z",
+  "heartbeatAt": "2026-11-10T07:30:42.000Z",
+  "expiresAt": "2026-11-10T08:15:42.000Z",
+  "branch": "work/mvb-chat-6761668451",
+  "predecessor": {
+    "leaseId": "978b85b8-07c1-4d8e-b770-b3c1c940ce7b",
+    "generation": 1,
+    "branch": "work/mvb-chat-6753111267",
+    "pr": 1467,
+    "checkpoint": {
+      "evidence": "Draft PR #1467 at 2a9753eb. Comment6753738344 links preserved calculations, review findings and exact local residue. Gate planned.",
+      "next": "Recover executor. Resolve stage and E-spool extraction, head catches and full SAP-C1 wind replay. Run affected checks and exact-head preflight.",
+      "blocker": "Execution environment unavailable. Selected geometry and full current-house structural replay remain unfinished."
+    }
   },
-  "pr": 1467,
-  "releasedAt": "2026-11-09T23:00:46.000Z",
-  "releaseReason": "handoff"
+  "recoverySource": {
+    "leaseId": "978b85b8-07c1-4d8e-b770-b3c1c940ce7b",
+    "generation": 1,
+    "branch": "work/mvb-chat-6753111267",
+    "pr": 1467,
+    "checkpoint": {
+      "evidence": "Draft PR #1467 at 2a9753eb. Comment6753738344 links preserved calculations, review findings and exact local residue. Gate planned.",
+      "next": "Recover executor. Resolve stage and E-spool extraction, head catches and full SAP-C1 wind replay. Run affected checks and exact-head preflight.",
+      "blocker": "Execution environment unavailable. Selected geometry and full current-house structural replay remain unfinished."
+    }
+  }
 }
