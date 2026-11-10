@@ -20,10 +20,19 @@ export const mraNodes = defineNodes([
     closeoutEvidence: []
   },
   {
+    id: 'MRA-INTERNAL-LEAKS',
+    owners: ['MRA'],
+    title: 'Trace selected internal-water failures, isolation and repair consequences',
+    dependencies: ['MRA-00', 'HAD-SERVICES-ADOPTION', 'IAS-03', 'MAT-INTERIORS'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: ['project/mra/internal-leak-study.md']
+  },
+  {
     id: 'MRA-02',
     owners: ['MRA'],
     title: 'Internal water and wet-zone assault',
-    dependencies: ['MRA-00', 'TRIAD-GATE'],
+    dependencies: ['MRA-00', 'MRA-INTERNAL-LEAKS', 'TRIAD-GATE'],
     lifecycle: 'planned',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []

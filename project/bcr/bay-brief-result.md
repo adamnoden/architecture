@@ -85,3 +85,14 @@ Scale is a proposed communication choice, not an accuracy claim; ADE must establ
 The pre-site study can resolve internal fit, selected-component compatibility, supported release sequences and a coherent review issue. Actual plot orientation/exposure, ground levels/conditions, foundations, external working space and access, neighbouring constraints, applicable planning/statutory requirements and project-specific loads need the commissioned site's evidence. DPL/DEL own that activation; EPR and relevant designers determine applicability. Do not turn an unknown site into a blanket reason to leave the internal assembly undefined, or fabricate site assumptions to claim construction readiness.
 
 The brief is complete when ADE and a competent reviewer can locate the bay, understand the conventional control, identify each required drawing/evidence item and see its receiving owner. **BCR-BAY-DESIGN still depends on TRIAD-GATE.** Subsequent design must reconcile selected IAS/OAS/HAD sources before technical output; completion of this brief neither grants that gate nor resolves any shared construction-matrix row. No source geometry, assembly selection, matrix disposition or external evidence state changes here. A material source change triggers a brief applicability check before issuing the package.
+
+### Independent investigation — 10 November 2026
+
+The owner has authorised BCR-BAY-INTERFACES to investigate current source-bound
+local interfaces and occupied renewal before final integration. The dimensions
+above remain the inspected 29 October brief, not permission to reuse superseded
+window, wall, floor or service geometry. The new study must perform that
+applicability check and publish its positive or adverse findings. Final
+BCR-BAY-DESIGN consumes the study and retains TRIAD-GATE. See the
+[owning programme](buildability-construction-resolution-programme.md#independent-current-source-interface-investigation)
+and [scope split](../pco/independent-studies-result.md).

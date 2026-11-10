@@ -133,9 +133,29 @@ Apply the owner's [ground-water and rising-damp policy](../../docs/reference-hou
 
 For the substantial non-plastic damp barrier, attack bridges, joints, ground-level changes and movement, and examine the claimed benefit of extra thickness, courses or any justified backup. The owner clarified "triple redundancy" as overbuilding with the arrangement left to design judgement; no three-system test or numerical multiplier is mandatory. Preserve the existing single-failure and compound-case assurance rules. Carry findings into MRA-04's existing whole-house matrix, including structural interaction, detectability, intervention and drying. The owner's 1,000-year ambition is not a service-life result or zero-risk acceptance criterion that a desk review can certify. MRA-01 remains future assurance; this amendment records no passed assault or selected assembly.
 
+### MRA-INTERNAL-LEAKS — selected internal-water investigation
+
+The owner's 10 November direction permits a bounded source-specific investigation
+before whole-house integration. Consume MRA-00, the merged selected-services
+export, IAS interior selection and MAT interior assembly results. Trace current
+fixture/branch/plant failures from source through first wetting, detection,
+reachable isolation, stored-water release, containment, drainage/drying and
+repair. Challenge power loss, blocked primary paths and maintenance conditions
+where they affect the actual proposition. Use the existing scenario identities;
+do not introduce a second whole-house assurance matrix.
+
+Publish `project/mra/internal-leak-study.md` with recoverable input identities,
+reproducible comparisons and clear positive or adverse dispositions. A valve's
+label or a receiving volume does not establish accessible isolation, unattended
+containment or a dry permanent fabric. Separable corrective hypotheses remain
+identified as such. An adverse bounded investigation may complete this packet;
+it does not pass MRA-02, change the roof worker's sources or grant whole-house
+moisture acceptance. The [registration result](../pco/independent-studies-result.md)
+owns the scope split.
+
 ### MRA-02 — internal water and wet-zone assault
 
-After `TRIAD-GATE`, in parallel with MRA-01, attack:
+After `TRIAD-GATE`, consume `MRA-INTERNAL-LEAKS` and, in parallel with MRA-01, attack:
 
 `entry → distribution → joints/valves → fixtures/appliances → wastes → discharge`.
 

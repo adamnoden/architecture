@@ -3,6 +3,7 @@ import test from 'node:test'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import {
+  derivedState,
   directBlockers,
   nodesByDerivedState,
   readyFrontier,
@@ -74,14 +75,31 @@ test('triad fan-out advances only after constitutions and the shared interface g
 test('MRA starts in parallel but gates construction convergence and final synthesis at the correct boundaries', () => {
   assert.deepEqual(node('MRA-00').dependencies, ['BSR-ROOT'])
 
-  for (const id of ['MRA-01', 'MRA-02', 'MRA-03']) {
+  for (const id of ['MRA-01', 'MRA-03']) {
     assert.deepEqual(node(id).dependencies, ['MRA-00', 'TRIAD-GATE'])
   }
+  assert.deepEqual(node('MRA-02').dependencies, ['MRA-00', 'MRA-INTERNAL-LEAKS', 'TRIAD-GATE'])
 
   assert.deepEqual(node('MRA-04').dependencies, ['MRA-01', 'MRA-02', 'MRA-03'])
   assert.equal(node('BCR-CONVERGENCE').dependencies.includes('MRA-04'), true)
   assert.deepEqual(node('MRA-05').dependencies, ['BCR-CONVERGENCE'])
   assert.equal(node('HRS-SYNTHESIS').dependencies.includes('MRA-05'), true)
+})
+
+test('bounded current-source studies can run before roof integration without releasing final gates', () => {
+  const studies = ['BCR-BAY-INTERFACES', 'MRA-INTERNAL-LEAKS']
+  const finalGates = ['BCR-BAY-DESIGN', 'MRA-02']
+  const fixture: ControlNode[] = controlNodes.map((candidate) => ({
+    ...candidate,
+    lifecycle: [...studies, ...finalGates, 'ROF-RWT-GATE', 'TRIAD-GATE'].includes(candidate.id)
+      ? 'planned' : 'complete'
+  }))
+  const state = (id: string) => derivedState(fixture.find((candidate) => candidate.id === id)!, fixture)
+  for (const id of studies) assert.equal(state(id), 'ready')
+  for (const id of finalGates) assert.equal(state(id), 'blocked')
+  for (const id of studies) fixture.find((candidate) => candidate.id === id)!.lifecycle = 'complete'
+  for (const id of finalGates) assert.equal(state(id), 'blocked')
+  assert.equal(state('TRIAD-GATE'), 'blocked')
 })
 
 test('held evidence research never leaks into the ready frontier', () => {
