@@ -9,8 +9,8 @@
     "label": "swarm-20261110-root"
   },
   "claimedAt": "2026-11-10T21:02:13.030Z",
-  "heartbeatAt": "2026-11-10T23:41:35.221Z",
-  "expiresAt": "2026-11-11T00:26:35.221Z",
+  "heartbeatAt": "2026-11-10T23:55:01.688Z",
+  "expiresAt": "2026-11-11T00:40:01.688Z",
   "branch": "work/swarm-roof-g3-20261110",
   "predecessor": {
     "leaseId": "47083968-9abd-4627-90bb-040ec3eb4792",
@@ -36,7 +36,7 @@
   },
   "pr": 1472,
   "checkpoint": {
-    "evidence": "PR #1472 head 97b2920999d250d976702f39bf46cdd11760b716 tree a8e09c63193cf5cf7cf93d2f3b33a36fb42f0140; exact-head full CI 42921533919 passed. Frozen receiving stiffness, mass intervals and physical failures preserved.",
-    "next": "Reconcile main e19ce0d9; preserve highback, leaf, outer inventory and floor-jamb conflict evidence; reopen owning STR-RECONCILE prerequisite through an explicit adverse gate result before any further selection."
+    "evidence": "PR #1472 ready for review at f7942830ae24ef1d308f01e71a4f87f306f37ab0 tree d2aa2efe3f136901216192be51d4979e1aeea26f; remote/local verified. Adverse gate, STR-FLOOR-PORTAL registration, source-bound floor/service reviews and conditional inner/outer evidence. Typecheck, 163 control tests and targeted receipt checks pass; exact-head CI 42927109838 running.",
+    "next": "Observe exact-head CI, perform fresh canonical preflight, merge the adverse result, release the roof lease and dispatch again. New structural correction requires its own ordinary lease; independent BCR/MRA work remains available."
   }
 }
