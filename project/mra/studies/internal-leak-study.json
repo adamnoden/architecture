@@ -1,0 +1,1494 @@
+{
+  "packet": "MRA-INTERNAL-LEAKS",
+  "selection": "HAD-SERVICES-02",
+  "scope": "Bounded current internal-water investigation. MRA-02 and TRIAD-GATE remain open; no physical moisture pass, actual spill prediction or installed acceptance.",
+  "inputs": {
+    "project/had/studies/water-replan.json": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+    "project/mat/studies/whole-house-service-baseline.json": "049161ebac29b24e0acc7d8085302fca906fe9d2",
+    "project/mat/studies/service-material-offer.json": "e5686440fa6a3f68387576883b1e0c768e0596bb",
+    "project/mat/studies/tempered-kitchen-air.json": "b18044acaec99caf00eab9a542fff78e510857c9",
+    "project/mat/studies/local-extract-heat-and-store.json": "550709d0e0ca0acff81cb42e502640771f4ac2d0",
+    "project/had/studies/receiver-selection.json": "5408aac3d43c95e3f5240f8510f91fb04d7a23cd",
+    "project/mat/studies/whole-house-leakage-duty.json": "5b93cdd9ea1ee7d825fa4596a44caf06431afc49",
+    "project/mat/studies/loggia-soffit.json": "c9c914169547bd42b90cd69512ba1a28d97ca6fe",
+    "project/mat/studies/joined-cooker-system.json": "d04dd78ba3fd040c7abd1aecb94aa9a3ce95d5e0",
+    "project/ias/studies/shared-family-bathing.json": "08d6d466d515804a58d6cbd22a5f45188af7f56e",
+    "project/ias/studies/household-water.json": "30c96e79dd3a35c96bb30e355b668c9a710a4060",
+    "project/ias/studies/fitted-wc-schedule.json": "5e20c73409b5406a2de9d7ee7e5853e9302189c8",
+    "project/ias/studies/utility-first-release.json": "be84a64623c8042a002af108a784b8668acd7542",
+    "project/ias/studies/utility-host-revised-route.json": "69e6b0aa5e1847f09c7ac3da3b98eec9bf1d5c0b",
+    "project/str/studies/reconciled-house-interface.json": "66143efe1bf357fe3b373777c93bdb25f861e11d",
+    "project/str/studies/current-house-arch-movement.json": "05db94a987c7bf45b885c6d02f701b31bcf91740",
+    "project/str/studies/house-corner-rewind.json": "6471d89c213724ec02a26d797c85185beadb25b5"
+  },
+  "sources": {
+    "project/had/studies/current-house.mjs": "58bf1a6248af8268de70d838cce23f249ce30b91",
+    "project/had/studies/selected-water-duties.mjs": "1ea39eda8b8ba187c3ac0a7ccf4327322ea6f037",
+    "project/had/studies/inhabited-service-compose.mjs": "632421d4b4b4dcdc028590694e877d290d768485",
+    "project/had/studies/fitted-house-services.mjs": "a22e08e94dc1d8fc2ae84b5fed5a71eaf97e3dd5",
+    "project/had/studies/selected-service-interfaces.mjs": "712065e8dfefc0c2d357e232ca17bbed5a376ea2",
+    "project/had/inhabited-services-selection.md": "da8a374b204885ba0aebaf14d7a8b631523be83e",
+    "project/ias/ias-03-household-water.md": "98d4e7dede324b738f0400ad6206961c7b4a57ad",
+    "project/ias/ias-03-guest-rear-wc-takeoffs.md": "474ad1fca1ef0adc7c3d5d4ff4b363c65fc9ca73",
+    "project/ias/ias-03-upper-wc-release.md": "8a6207c0362da97beeb217e47a2871c0f9a80d46",
+    "project/mat/services-water-joints.md": "33faac02e395fc24ea05066575f6e19a7373981c",
+    "project/mat/plant-inlet-route.md": "19f9ba126da7a7e672db085690746b8936eaffb6",
+    "project/mat/tempered-kitchen-air.md": "1421ec724511ab618103b5731eae058facacdd08",
+    "project/mat/interiors-whole-house-assembly-schedule.md": "fbee773fba1c46cd7c403e08dfc99de7f3154649",
+    "project/mat/interiors-b-wetroom-assembly.md": "bd3fca8006fd8d4d63256fb2809645904cbc5850",
+    "project/mra/mra-00-moisture-constitution-threat-model.md": "40129a2e1149142769d34dfc10709ca73968c682",
+    "project/mra/studies/internal-leak-study.mjs": "05ae3eb083a0a5b824e56e286f49a17cf3f6304b"
+  },
+  "sourceCorrection": {
+    "preFix": {
+      "main": "a06013820dfdc2b5ee1918abf42abce8423eb0ad",
+      "scheduleBlob": "3f9de5555c01f39f5c666dfd49e4e6b87f0b9624",
+      "exteriorPortsSHA256": "9d16691683c6255acad78736c3f6a77ac3c27d01e5f6d7ab908fab1e8fdffabb",
+      "weatherFacesSHA256": "1155d413b399a8ea93c4097f402e2089ded7131a68177b93a37d881216d7986f",
+      "selectedInterfacesSHA256": "aefbf9f05d1dd275b0aebd6393a3c7fe09b31c6220ee0303424aff46bbb9deaa",
+      "houseExceptDeclaredChangesSHA256": "a602a4d87257d73fefa378d84eba7c96cd458e68378fd5ee136e55a7b3a77f49"
+    },
+    "observed": {
+      "scheduleBlob": "3f9de5555c01f39f5c666dfd49e4e6b87f0b9624",
+      "exteriorPortsSHA256": "9d16691683c6255acad78736c3f6a77ac3c27d01e5f6d7ab908fab1e8fdffabb",
+      "weatherFacesSHA256": "1155d413b399a8ea93c4097f402e2089ded7131a68177b93a37d881216d7986f",
+      "selectedInterfacesSHA256": "aefbf9f05d1dd275b0aebd6393a3c7fe09b31c6220ee0303424aff46bbb9deaa",
+      "houseExceptDeclaredChangesSHA256": "a602a4d87257d73fefa378d84eba7c96cd458e68378fd5ee136e55a7b3a77f49"
+    },
+    "unchanged": true,
+    "declaredChanges": [
+      "Both foul-kitchen duties: superseded downstream reservation corrected; upstream branch stays with IAS.",
+      "Both incoming-water duties: rejected status, current witness and adoption duty added; path geometry retained.",
+      "model.currentAdoptionBlockers: explicit incoming-water duty replaces the empty list."
+    ],
+    "scope": "Producer source and full current-model identities change. Only the enumerated comparison exclusions are allowed; neither a fresh whole-house fit nor an unchanged producer hash is claimed."
+  },
+  "stressBasis": {
+    "inheritedFlowsLmin": [
+      6,
+      15,
+      30
+    ],
+    "flowScope": "IAS stress scenarios, not measured available supply or a maximum rupture flow.",
+    "analystSensitivities": {
+      "slowLeakLh": 0.1,
+      "unattendedHours": [
+        8,
+        24
+      ],
+      "responseAfterVisibilitySeconds": 5,
+      "postIsolationResidualL": [
+        0,
+        0.25,
+        1
+      ]
+    },
+    "exclusions": "No guaranteed human response, alarm, automatic valve, powered pump, evaporation or independent gravity drain is credited. Spill beyond a witness is not proof of damage."
+  },
+  "inventory": {
+    "cold": 14,
+    "hot": 9,
+    "fixtures": [
+      {
+        "id": "guest-WC",
+        "level": 0,
+        "duties": [
+          "cold",
+          "soil"
+        ],
+        "nominalBranchLengthIncludingDropMM": 4195,
+        "endpointScope": "Retained service reservation; selected fittedWater/utility overrides final apparatus, stops and wastes."
+      },
+      {
+        "id": "guest-basin",
+        "level": 0,
+        "duties": [
+          "cold",
+          "hot",
+          "waste"
+        ],
+        "nominalBranchLengthIncludingDropMM": 4295,
+        "endpointScope": "Retained service reservation; selected fittedWater/utility overrides final apparatus, stops and wastes."
+      },
+      {
+        "id": "utility-sink-PROPOSED",
+        "level": 0,
+        "duties": [
+          "cold",
+          "hot",
+          "waste"
+        ],
+        "nominalBranchLengthIncludingDropMM": 3145,
+        "endpointScope": "Retained service reservation; selected fittedWater/utility overrides final apparatus, stops and wastes."
+      },
+      {
+        "id": "washer-PROPOSED",
+        "level": 0,
+        "duties": [
+          "cold",
+          "waste",
+          "power"
+        ],
+        "nominalBranchLengthIncludingDropMM": 3145,
+        "endpointScope": "Retained service reservation; selected fittedWater/utility overrides final apparatus, stops and wastes."
+      },
+      {
+        "id": "kitchen-sink",
+        "level": 0,
+        "duties": [
+          "cold",
+          "hot",
+          "waste"
+        ],
+        "nominalBranchLengthIncludingDropMM": 7179.5,
+        "endpointScope": "Retained service reservation; selected fittedWater/utility overrides final apparatus, stops and wastes."
+      },
+      {
+        "id": "principal-WC",
+        "level": 1,
+        "duties": [
+          "cold",
+          "soil"
+        ],
+        "nominalBranchLengthIncludingDropMM": 3517.5,
+        "endpointScope": "Retained service reservation; selected fittedWater/utility overrides final apparatus, stops and wastes."
+      },
+      {
+        "id": "principal-basin",
+        "level": 1,
+        "duties": [
+          "cold",
+          "hot",
+          "waste"
+        ],
+        "nominalBranchLengthIncludingDropMM": 4575,
+        "endpointScope": "Retained service reservation; selected fittedWater/utility overrides final apparatus, stops and wastes."
+      },
+      {
+        "id": "principal-shower",
+        "level": 1,
+        "duties": [
+          "cold",
+          "hot",
+          "waste"
+        ],
+        "nominalBranchLengthIncludingDropMM": 3745,
+        "endpointScope": "Retained service reservation; selected fittedWater/utility overrides final apparatus, stops and wastes."
+      },
+      {
+        "id": "family-WC",
+        "level": 1,
+        "duties": [
+          "cold",
+          "soil"
+        ],
+        "nominalBranchLengthIncludingDropMM": 3625,
+        "endpointScope": "Retained service reservation; selected fittedWater/utility overrides final apparatus, stops and wastes."
+      },
+      {
+        "id": "family-basin",
+        "level": 1,
+        "duties": [
+          "cold",
+          "hot",
+          "waste"
+        ],
+        "nominalBranchLengthIncludingDropMM": 2945,
+        "endpointScope": "Retained service reservation; selected fittedWater/utility overrides final apparatus, stops and wastes."
+      },
+      {
+        "id": "family-bath",
+        "level": 1,
+        "duties": [
+          "cold",
+          "hot",
+          "waste"
+        ],
+        "nominalBranchLengthIncludingDropMM": 3545,
+        "endpointScope": "Retained service reservation; selected fittedWater/utility overrides final apparatus, stops and wastes."
+      },
+      {
+        "id": "rear-WC",
+        "level": 1,
+        "duties": [
+          "cold",
+          "soil"
+        ],
+        "nominalBranchLengthIncludingDropMM": 4972.5,
+        "endpointScope": "Retained service reservation; selected fittedWater/utility overrides final apparatus, stops and wastes."
+      },
+      {
+        "id": "rear-basin",
+        "level": 1,
+        "duties": [
+          "cold",
+          "hot",
+          "waste"
+        ],
+        "nominalBranchLengthIncludingDropMM": 3945,
+        "endpointScope": "Retained service reservation; selected fittedWater/utility overrides final apparatus, stops and wastes."
+      },
+      {
+        "id": "rear-shower",
+        "level": 1,
+        "duties": [
+          "cold",
+          "hot",
+          "waste"
+        ],
+        "nominalBranchLengthIncludingDropMM": 3370,
+        "endpointScope": "Retained service reservation; selected fittedWater/utility overrides final apparatus, stops and wastes."
+      }
+    ],
+    "basins": [
+      {
+        "id": "guest",
+        "pan": [
+          7300,
+          615,
+          290,
+          470
+        ],
+        "stops": [
+          [
+            7400,
+            825
+          ],
+          [
+            7400,
+            975
+          ]
+        ],
+        "stopProjectionsInsidePan": true,
+        "sourceBranchReservation": [
+          7650,
+          700
+        ],
+        "scope": "Plan projection of fitted stops only. The older serviceAxis is not the selected final inlet. Neither a projected point nor a pan proves jet capture."
+      },
+      {
+        "id": "rear",
+        "pan": [
+          965,
+          8952.5,
+          470,
+          290
+        ],
+        "stops": [
+          [
+            1225,
+            9052.5
+          ],
+          [
+            1075,
+            9052.5
+          ]
+        ],
+        "stopProjectionsInsidePan": true,
+        "sourceBranchReservation": [
+          1200,
+          9000
+        ],
+        "scope": "Plan projection of fitted stops only. The older serviceAxis is not the selected final inlet. Neither a projected point nor a pan proves jet capture."
+      },
+      {
+        "id": "family",
+        "pan": [
+          11277.5,
+          5205,
+          290,
+          470
+        ],
+        "stops": [
+          [
+            11467.5,
+            5465
+          ],
+          [
+            11467.5,
+            5315
+          ]
+        ],
+        "stopProjectionsInsidePan": true,
+        "sourceBranchReservation": [
+          11400,
+          5400
+        ],
+        "scope": "Plan projection of fitted stops only. The older serviceAxis is not the selected final inlet. Neither a projected point nor a pan proves jet capture."
+      },
+      {
+        "id": "principal",
+        "pan": [
+          9400,
+          7593.75,
+          290,
+          470
+        ],
+        "stops": [
+          [
+            9500,
+            7803.75
+          ],
+          [
+            9500,
+            7953.75
+          ]
+        ],
+        "stopProjectionsInsidePan": true,
+        "sourceBranchReservation": [
+          9570,
+          7800
+        ],
+        "scope": "Plan projection of fitted stops only. The older serviceAxis is not the selected final inlet. Neither a projected point nor a pan proves jet capture."
+      }
+    ],
+    "waterCorridors": [
+      {
+        "id": "ground-front-west",
+        "duties": [
+          "heat",
+          "cold",
+          "hot",
+          "hot-return"
+        ],
+        "profileLengthMM": 18090,
+        "coverMM": [
+          320,
+          260
+        ]
+      },
+      {
+        "id": "ground-rear-east",
+        "duties": [
+          "heat",
+          "cold",
+          "hot",
+          "hot-return"
+        ],
+        "profileLengthMM": 11080,
+        "coverMM": [
+          320,
+          260
+        ]
+      },
+      {
+        "id": "upper-front-west",
+        "duties": [
+          "heat",
+          "cold",
+          "hot",
+          "hot-return"
+        ],
+        "profileLengthMM": 22170,
+        "coverMM": [
+          320,
+          260
+        ]
+      },
+      {
+        "id": "upper-rear-east",
+        "duties": [
+          "heat",
+          "cold",
+          "hot",
+          "hot-return"
+        ],
+        "profileLengthMM": 8780,
+        "coverMM": [
+          320,
+          260
+        ]
+      },
+      {
+        "id": "ground-WC-branch",
+        "duties": [
+          "heat",
+          "cold",
+          "hot"
+        ],
+        "profileLengthMM": 3390,
+        "coverMM": [
+          320,
+          260
+        ]
+      },
+      {
+        "id": "ground-utility",
+        "duties": [
+          "heat",
+          "cold",
+          "hot"
+        ],
+        "profileLengthMM": 3140,
+        "coverMM": [
+          320,
+          260
+        ]
+      },
+      {
+        "id": "upper-family-wet",
+        "duties": [
+          "heat",
+          "cold",
+          "hot"
+        ],
+        "profileLengthMM": 1400,
+        "coverMM": [
+          320,
+          260
+        ]
+      },
+      {
+        "id": "upper-principal-wet",
+        "duties": [
+          "heat",
+          "cold",
+          "hot",
+          "hot-return"
+        ],
+        "profileLengthMM": 200,
+        "coverMM": [
+          320,
+          260
+        ]
+      }
+    ],
+    "waterCorridorTotalMM": 68250,
+    "corridorScope": "These are routing territories, not multiplied pipe lengths, joint counts or a complete located isolation schedule.",
+    "hotReturns": [
+      {
+        "id": "ground-front-west",
+        "returnAxisZ": 2945,
+        "path": [
+          [
+            3500,
+            9200
+          ],
+          [
+            3500,
+            8500
+          ],
+          [
+            3500,
+            5000
+          ],
+          [
+            3390,
+            5000
+          ],
+          [
+            3390,
+            3500
+          ],
+          [
+            3500,
+            3500
+          ],
+          [
+            8500,
+            3500
+          ],
+          [
+            8500,
+            3200
+          ],
+          [
+            10350,
+            3200
+          ],
+          [
+            10350,
+            5000
+          ],
+          [
+            9800,
+            5000
+          ]
+        ]
+      },
+      {
+        "id": "ground-rear-east",
+        "returnAxisZ": 2945,
+        "path": [
+          [
+            10500,
+            10800
+          ],
+          [
+            10500,
+            8500
+          ],
+          [
+            8700,
+            8500
+          ],
+          [
+            8700,
+            5000
+          ],
+          [
+            8691.25,
+            5000
+          ],
+          [
+            8691.25,
+            3500
+          ],
+          [
+            8500,
+            3500
+          ]
+        ]
+      },
+      {
+        "id": "upper-front-west",
+        "returnAxisZ": 6395,
+        "path": [
+          [
+            1800,
+            10000
+          ],
+          [
+            1800,
+            10800
+          ],
+          [
+            3550,
+            10800
+          ],
+          [
+            3550,
+            8500
+          ],
+          [
+            3500,
+            8500
+          ],
+          [
+            3500,
+            3500
+          ],
+          [
+            8500,
+            3500
+          ],
+          [
+            8500,
+            5900
+          ],
+          [
+            9800,
+            5900
+          ],
+          [
+            9800,
+            5000
+          ]
+        ]
+      },
+      {
+        "id": "upper-rear-east",
+        "returnAxisZ": 6395,
+        "path": [
+          [
+            11200,
+            7200
+          ],
+          [
+            11200,
+            7900
+          ],
+          [
+            10350,
+            7900
+          ],
+          [
+            10350,
+            8700
+          ],
+          [
+            8700,
+            8700
+          ],
+          [
+            8700,
+            5900
+          ],
+          [
+            8500,
+            5900
+          ]
+        ]
+      }
+    ],
+    "hotReturnQualification": "One pump and four balancing/check/isolation stations are declared. Their located functional cut sets, orientation and residual release are not established by that declaration.",
+    "incoming": [
+      [
+        12000,
+        1000,
+        500
+      ],
+      [
+        11200,
+        1000,
+        500
+      ],
+      [
+        11200,
+        4300,
+        500
+      ],
+      [
+        10400,
+        4300,
+        500
+      ]
+    ],
+    "heatingEmitters": [
+      "study-W",
+      "living-W",
+      "living-N2",
+      "kitchen-W",
+      "bed2-S",
+      "bed3-S",
+      "bed4-N",
+      "principal-N",
+      "rear-W",
+      "family-E",
+      "principal-S-high",
+      "utility-E",
+      "plant-N",
+      "protected-G",
+      "protected-F",
+      "guest-WC-E"
+    ],
+    "electricHeaters": [
+      "protected-ground-fan",
+      "protected-ground-panel",
+      "protected-upper-fan",
+      "rear-bedroom-panel"
+    ],
+    "highLevelHydronicCoil": {
+      "model": "Blauberg EC MW 700 S31",
+      "plan": [
+        9400,
+        8684.5,
+        972,
+        370
+      ],
+      "z": [
+        2150,
+        2755
+      ],
+      "airIntakeRoute": [
+        [
+          12000,
+          8600,
+          2400
+        ],
+        [
+          11250,
+          8600,
+          2400
+        ],
+        [
+          10990.5,
+          8859.5,
+          2400
+        ],
+        [
+          10372,
+          8859.5,
+          2400
+        ]
+      ],
+      "hydraulicRoute": null,
+      "scope": "Located water-bearing unit. The supplied route is its air intake, not a qualified water-side pipe/isolation map."
+    },
+    "condensatePorts": [
+      {
+        "id": "ground-WC-condensate",
+        "point": [
+          9130,
+          0,
+          2700
+        ]
+      },
+      {
+        "id": "utility-condensate",
+        "point": [
+          12000,
+          2320,
+          2500
+        ]
+      },
+      {
+        "id": "kitchen-condensate",
+        "point": [
+          8180,
+          12000,
+          2490
+        ]
+      },
+      {
+        "id": "rear-bath-condensate",
+        "point": [
+          0,
+          10145,
+          5950
+        ]
+      },
+      {
+        "id": "family-bath-condensate",
+        "point": [
+          12000,
+          6000,
+          6100
+        ]
+      },
+      {
+        "id": "principal-bath-condensate",
+        "point": [
+          12000,
+          7600,
+          6054
+        ]
+      }
+    ],
+    "dhw": {
+      "family": "Bespoke pressure-rated unvented Howden mineral-clad direct store in MS103-size territory",
+      "body": [
+        9450,
+        3870,
+        760,
+        760
+      ],
+      "stockCatalogueComparisonL": 370,
+      "stockAcceptedAt3point5Bar": false,
+      "orderedMinimumUsableL": 300,
+      "drainableL": null,
+      "scope": "Bespoke pressure-rated selection; 370 L describes the stock catalogue comparison, not accepted drainable storage."
+    },
+    "heatingBuffer": {
+      "body": [
+        10177.5,
+        5052.5,
+        545,
+        545
+      ],
+      "nominalL": 300,
+      "usefulLayerRequiredL": 260,
+      "drainableL": null
+    }
+  },
+  "witnesses": [
+    {
+      "id": "basin",
+      "netL": 1.25,
+      "visibleByL": 0.2,
+      "afterVisibilitySeconds": [
+        10.5,
+        4.2,
+        2.1
+      ],
+      "scope": "Required net/visibility volumes, not measured products. All water is optimistically captured; no safe drain or evaporation is credited.",
+      "maximum24hLeakLhWithoutOutflow": 0.05208333,
+      "slowLeakSensitivity": {
+        "flowLh": 0.1,
+        "visibleHours": 2,
+        "fullHours": 12.5,
+        "eightHoursL": 0.8,
+        "twentyFourHoursL": 2.4,
+        "excessAfter24hL": 1.15
+      },
+      "fiveSecondsAfterVisibilityAt30Lmin": {
+        "retainedL": 2.7,
+        "excessL": 1.45
+      },
+      "residualSensitivityL": [
+        {
+          "residualL": 0,
+          "maxResponseSecondsAt30Lmin": 2.1,
+          "overCapacityAtImmediateIsolationL": 0
+        },
+        {
+          "residualL": 0.25,
+          "maxResponseSecondsAt30Lmin": 1.6,
+          "overCapacityAtImmediateIsolationL": 0
+        },
+        {
+          "residualL": 1,
+          "maxResponseSecondsAt30Lmin": 0.1,
+          "overCapacityAtImmediateIsolationL": 0
+        }
+      ]
+    },
+    {
+      "id": "kitchen",
+      "netL": 0.4,
+      "visibleByL": 0.05,
+      "afterVisibilitySeconds": [
+        3.5,
+        1.4,
+        0.7
+      ],
+      "scope": "Required net/visibility volumes, not measured products. All water is optimistically captured; no safe drain or evaporation is credited.",
+      "maximum24hLeakLhWithoutOutflow": 0.01666667,
+      "slowLeakSensitivity": {
+        "flowLh": 0.1,
+        "visibleHours": 0.5,
+        "fullHours": 4,
+        "eightHoursL": 0.8,
+        "twentyFourHoursL": 2.4,
+        "excessAfter24hL": 2
+      },
+      "fiveSecondsAfterVisibilityAt30Lmin": {
+        "retainedL": 2.55,
+        "excessL": 2.15
+      },
+      "residualSensitivityL": [
+        {
+          "residualL": 0,
+          "maxResponseSecondsAt30Lmin": 0.7,
+          "overCapacityAtImmediateIsolationL": 0
+        },
+        {
+          "residualL": 0.25,
+          "maxResponseSecondsAt30Lmin": 0.2,
+          "overCapacityAtImmediateIsolationL": 0
+        },
+        {
+          "residualL": 1,
+          "maxResponseSecondsAt30Lmin": 0,
+          "overCapacityAtImmediateIsolationL": 0.65
+        }
+      ]
+    },
+    {
+      "id": "utility",
+      "netL": 2,
+      "visibleByL": 0.2,
+      "afterVisibilitySeconds": [
+        18,
+        7.2,
+        3.6
+      ],
+      "scope": "Required net/visibility volumes, not measured products. All water is optimistically captured; no safe drain or evaporation is credited.",
+      "maximum24hLeakLhWithoutOutflow": 0.08333333,
+      "slowLeakSensitivity": {
+        "flowLh": 0.1,
+        "visibleHours": 2,
+        "fullHours": 20,
+        "eightHoursL": 0.8,
+        "twentyFourHoursL": 2.4,
+        "excessAfter24hL": 0.4
+      },
+      "fiveSecondsAfterVisibilityAt30Lmin": {
+        "retainedL": 2.7,
+        "excessL": 0.7
+      },
+      "residualSensitivityL": [
+        {
+          "residualL": 0,
+          "maxResponseSecondsAt30Lmin": 3.6,
+          "overCapacityAtImmediateIsolationL": 0
+        },
+        {
+          "residualL": 0.25,
+          "maxResponseSecondsAt30Lmin": 3.1,
+          "overCapacityAtImmediateIsolationL": 0
+        },
+        {
+          "residualL": 1,
+          "maxResponseSecondsAt30Lmin": 1.6,
+          "overCapacityAtImmediateIsolationL": 0
+        }
+      ]
+    }
+  ],
+  "cutCases": [
+    {
+      "case": "Cold hose downstream of its local stop",
+      "path": [
+        "hypothetical-entry-stop",
+        "branch",
+        "fixture-stop",
+        "hose"
+      ],
+      "closed": [
+        "fixture-stop"
+      ],
+      "source": "mains",
+      "basis": "Series ordering; actual fitted stop position is present for the four basins.",
+      "sourcePathRemains": false,
+      "scope": "Necessary path/cut reasoning, not a complete fitted circuit diagram or measured leak."
+    },
+    {
+      "case": "Cold branch joint upstream of that stop",
+      "path": [
+        "hypothetical-entry-stop",
+        "branch"
+      ],
+      "closed": [
+        "fixture-stop"
+      ],
+      "source": "mains",
+      "basis": "A downstream fixture stop cannot cut its upstream source.",
+      "sourcePathRemains": true,
+      "scope": "Necessary path/cut reasoning, not a complete fitted circuit diagram or measured leak."
+    },
+    {
+      "case": "Upstream joint with an entry stop actually closed",
+      "path": [
+        "hypothetical-entry-stop",
+        "branch"
+      ],
+      "closed": [
+        "hypothetical-entry-stop"
+      ],
+      "source": "mains",
+      "basis": "Conditional corrective cut, not proof that a located accessible house-entry stop has been selected.",
+      "sourcePathRemains": false,
+      "scope": "Necessary path/cut reasoning, not a complete fitted circuit diagram or measured leak."
+    },
+    {
+      "case": "DHW vessel outlet leak with mains closed and return pump off",
+      "path": [
+        "stored-DHW",
+        "vessel-outlet"
+      ],
+      "closed": [
+        "hypothetical-entry-stop",
+        "circulation-pump"
+      ],
+      "source": "DHW inventory",
+      "basis": "Residual release magnitude depends on head, drain point, air admission and checks; no litre figure is inferred.",
+      "sourcePathRemains": true,
+      "scope": "Necessary path/cut reasoning, not a complete fitted circuit diagram or measured leak."
+    },
+    {
+      "case": "Heating vessel/component leak with mains closed and pump off",
+      "path": [
+        "heating-inventory",
+        "component"
+      ],
+      "closed": [
+        "hypothetical-entry-stop",
+        "circulation-pump"
+      ],
+      "source": "heating inventory",
+      "basis": "Hydraulically distinct from DHW; pump stop is not inventory removal or a demonstrated valve cut.",
+      "sourcePathRemains": true,
+      "scope": "Necessary path/cut reasoning, not a complete fitted circuit diagram or measured leak."
+    }
+  ],
+  "commonWaste": {
+    "paths": {
+      "bowl": [
+        "bowl-waste",
+        "common-trap",
+        "downstream"
+      ],
+      "overflow": [
+        "bowl-overflow",
+        "common-trap",
+        "downstream"
+      ]
+    },
+    "commonBlock": "common-trap",
+    "bowlPasses": false,
+    "overflowPasses": false,
+    "scope": "Selected basin overflow requires the working shared downstream path; two entries are not two independent drains."
+  },
+  "cases": [
+    {
+      "status": "REWIND",
+      "firstVulnerableFabric": "Unestablished for the complete failure path; a visible/washable surface is not itself proof of damage or of dry concealed fabric.",
+      "maintenance": "Keep the declared access and receiving surfaces unobstructed; do not credit an attendant during temporary unoccupancy.",
+      "workmanship": "Actual falls, seals, supports, valve function and discharge/visibility require the located installed assembly.",
+      "drying": "Expose and inspect the affected path after isolation; establish a material-specific drying/cleaning and reinstatement condition before closing it.",
+      "evidenceLevel": "Current-source geometry and deterministic counterexample; no physical event.",
+      "scenarioIds": [
+        "INT-01"
+      ],
+      "occurrence": "Incoming-water route and upstream isolation",
+      "source": "Current incoming-water duty; selected plant-N; services-water-joints.md; plant-inlet-route.md",
+      "event": "A joint or valve on the retained entry/plant feed leaks or needs replacement.",
+      "path": "Retained X11200/Z500 route enters the required plant-N envelope for 200 mm.",
+      "defence": "Accessible upstream isolation and contained drain are required, but a coordinated adopted route/station is not established.",
+      "failurePath": "The rejected line cannot be treated as a serviceable current inlet; copying the lobby proposal would skip its adoption and wall/site duties.",
+      "declaration": "No proved first wetting/detection latency for the rejected route.",
+      "containment": "No credited safe first-wetting receiver.",
+      "isolation": "A fixture stop downstream cannot isolate this joint or its own upstream connection.",
+      "repair": "Adopt an actual route clear of the radiator and cores; retain independent supports, drain, release and utility/cylinder compatibility.",
+      "owner": "HAD/MAT with IAS/STR; resolve before MRA-02 and complete internal-water integration."
+    },
+    {
+      "status": "OBLIGATION",
+      "firstVulnerableFabric": "Unestablished for the complete failure path; a visible/washable surface is not itself proof of damage or of dry concealed fabric.",
+      "maintenance": "Keep the declared access and receiving surfaces unobstructed; do not credit an attendant during temporary unoccupancy.",
+      "workmanship": "Actual falls, seals, supports, valve function and discharge/visibility require the located installed assembly.",
+      "drying": "Expose and inspect the affected path after isolation; establish a material-specific drying/cleaning and reinstatement condition before closing it.",
+      "evidenceLevel": "Current-source geometry and deterministic counterexample; no physical event.",
+      "scenarioIds": [
+        "INT-01",
+        "CMP-03"
+      ],
+      "occurrence": "Eight retained hot/cold routing territories and four hot-return circuits",
+      "source": "whole-house-service-baseline.json trunks/hotWater; current-house input identity",
+      "event": "A concealed or partly concealed joint leaks slowly while the house is unoccupied.",
+      "path": "Demountable high-level covers and terminal drops; nominal corridor length is not a joint/location schedule.",
+      "defence": "Independent supports, demountable covers and joint minimisation remain the selected strategy.",
+      "failurePath": "An accessible cover does not prove gravity declaration before insulation, lining or a penetration becomes wet.",
+      "declaration": "Unknown joint-by-joint first surface and observation point; no numeric latency credited.",
+      "containment": "Receiver/room escape and drying route unknown for each necessary joint.",
+      "isolation": "Locate actual upstream branch valves and both hot feed/return paths, checks and drain points; do not infer backfeed or complete cuts from one pump/four station labels.",
+      "repair": "Expose only the independent cover; preserve the structural/fire/water penetration boundary; drain/cap/support and leak-test the restored joint.",
+      "owner": "HAD/MAT for distribution and cuts; IAS/MAT for first wetting; MRA-02 for joined closure."
+    },
+    {
+      "status": "OBLIGATION",
+      "firstVulnerableFabric": "Unestablished for the complete failure path; a visible/washable surface is not itself proof of damage or of dry concealed fabric.",
+      "maintenance": "Keep the declared access and receiving surfaces unobstructed; do not credit an attendant during temporary unoccupancy.",
+      "workmanship": "Actual falls, seals, supports, valve function and discharge/visibility require the located installed assembly.",
+      "drying": "Expose and inspect the affected path after isolation; establish a material-specific drying/cleaning and reinstatement condition before closing it.",
+      "evidenceLevel": "Current-source geometry and deterministic counterexample; no physical event.",
+      "scenarioIds": [
+        "INT-02",
+        "CMP-03"
+      ],
+      "occurrence": "Four basin stops, mixer tails and pans",
+      "source": "household-water.json basins/spill and ias-03-household-water.md",
+      "event": "A fitted tail releases water; separately, a stop itself or its upstream joint fails.",
+      "path": "All eight stop plan projections fall inside their local pan; jet trajectory and full capture remain unproved.",
+      "defence": "Independent basin support, exposed trap, two local stops and 1.25 L net witness requirement.",
+      "failurePath": "Captured water exceeds the witness in the stated no-attendant sensitivity; rim/back bypass can reach the room independently.",
+      "declaration": "Visible by 0.20 L is an owning requirement, not measured latency or guaranteed observation.",
+      "containment": "Pan overflow must reach the washable strip; the complete floor/toe/threshold first-harm route is unqualified.",
+      "isolation": "The cold/hot fixture stops can cut their downstream tails if operable; repair of either stop requires an upstream cut.",
+      "repair": "Drain/remove the pan and trap before supported ceramic withdrawal; inspect and dry the wall return and floor after separate reconnection tests.",
+      "owner": "IAS/HAD/MAT; qualify capture and the room route before MRA-02 acceptance."
+    },
+    {
+      "status": "OBLIGATION",
+      "firstVulnerableFabric": "Unestablished for the complete failure path; a visible/washable surface is not itself proof of damage or of dry concealed fabric.",
+      "maintenance": "Keep the declared access and receiving surfaces unobstructed; do not credit an attendant during temporary unoccupancy.",
+      "workmanship": "Actual falls, seals, supports, valve function and discharge/visibility require the located installed assembly.",
+      "drying": "Expose and inspect the affected path after isolation; establish a material-specific drying/cleaning and reinstatement condition before closing it.",
+      "evidenceLevel": "Current-source geometry and deterministic counterexample; no physical event.",
+      "scenarioIds": [
+        "INT-02",
+        "WST-01",
+        "CMP-03"
+      ],
+      "occurrence": "Kitchen supply/waste breaks, catch sheet and trough",
+      "source": "household-water.json kitchen/spill; corrected selected foul-kitchen duty",
+      "event": "A supply union/tail or trap/socket leaks; the kitchen is unoccupied.",
+      "path": "Selected breaks and raised Ø50 branch remain upstream of the corrected X9275 wall/tail reservation.",
+      "defence": "Removable catch sheet, exposed supported connections and 0.40 L net witness requirement.",
+      "failurePath": "Witness reserve after declaration is only 0.35 L; no-attendant spill requires the room-side path to work.",
+      "declaration": "Visible by 0.05 L is required. At the inherited 30 L/min scenario, the zero-residual post-declaration reserve lasts 0.7 s.",
+      "containment": "Visible overflow to washable floor; no proved independent safe drain or sufficient room storage.",
+      "isolation": "Close the actual upstream supply cuts before supported spool/trap release; a labelled break is not an operating isolator.",
+      "repair": "Keep the head on its independent receiver, capture residual water, restore supports and test each join separately.",
+      "owner": "HAD metadata corrected here; IAS/MAT/HAD retain actual isolation, receiver and room duties."
+    },
+    {
+      "status": "OBLIGATION",
+      "firstVulnerableFabric": "Unestablished for the complete failure path; a visible/washable surface is not itself proof of damage or of dry concealed fabric.",
+      "maintenance": "Keep the declared access and receiving surfaces unobstructed; do not credit an attendant during temporary unoccupancy.",
+      "workmanship": "Actual falls, seals, supports, valve function and discharge/visibility require the located installed assembly.",
+      "drying": "Expose and inspect the affected path after isolation; establish a material-specific drying/cleaning and reinstatement condition before closing it.",
+      "evidenceLevel": "Current-source geometry and deterministic counterexample; no physical event.",
+      "scenarioIds": [
+        "INT-02",
+        "CMP-03"
+      ],
+      "occurrence": "Utility washer and sink station",
+      "source": "current utility; household-water.json utility/spill; utility-first-release.json",
+      "event": "A supply hose, tap or internal appliance water-bearing part releases water.",
+      "path": "1500-wide graded catch field to the channel at Y1400; full jet bypass and foot/collar performance remain open.",
+      "defence": "Located front stop, independent supports, 9.5 mm field fall and 2 L net channel requirement.",
+      "failurePath": "Finite channel spills under the no-attendant sensitivity; it is not an emergency foul drain.",
+      "declaration": "Visible by 0.20 L is required; no observation or closure time is guaranteed.",
+      "containment": "Channel remains 310 mm from the electrical working field, which is a geometric gap, not water/electrical protection.",
+      "isolation": "Source stop is within 561.805 mm straight reach in the proposed lower stance; actual valve/jet-safe operation and upstream cut remain unqualified.",
+      "repair": "Isolate before bringing in the drain tray; controlled cooled drain batches; no credited 3.445 L usable tray capacity.",
+      "owner": "IAS/HAD/MAT; establish first wetting and safe isolation/receiving before MRA-02 closure."
+    },
+    {
+      "status": "OBLIGATION",
+      "firstVulnerableFabric": "Unestablished for the complete failure path; a visible/washable surface is not itself proof of damage or of dry concealed fabric.",
+      "maintenance": "Keep the declared access and receiving surfaces unobstructed; do not credit an attendant during temporary unoccupancy.",
+      "workmanship": "Actual falls, seals, supports, valve function and discharge/visibility require the located installed assembly.",
+      "drying": "Expose and inspect the affected path after isolation; establish a material-specific drying/cleaning and reinstatement condition before closing it.",
+      "evidenceLevel": "Current-source geometry and deterministic counterexample; no physical event.",
+      "scenarioIds": [
+        "INT-03"
+      ],
+      "occurrence": "Guest, rear, family and principal WCs",
+      "source": "fitted-wc-schedule.json; guest/rear takeoff and upper-WC release results",
+      "event": "Fill connection, bridge union or cistern leaks; compare a cracked cistern/severed feed separately.",
+      "path": "Guest/rear accessible connections and upper supply/soil troughs lead toward visible room-side lips.",
+      "defence": "Independent supports, remote/local isolation and removable drip receivers retain their finite geometry.",
+      "failurePath": "A cracked tank or pressurised jet can exceed/bypass a drip receiver; no larger containment is inferred.",
+      "declaration": "Owning lip visibility/fall comparisons are retained; actual first wetting with clear/fouled water is unproved.",
+      "containment": "Room floor, wall toe and threshold must accept the actual overflow path without concealed prolonged wetting.",
+      "isolation": "Stop the feed before release; draining the cistern and proving zero flow are distinct from closing a valve.",
+      "repair": "Support the ceramic and fixed soil/supply interfaces separately; cap foul/water ends and repeat fill/flush tests before closure.",
+      "owner": "IAS/MAT/HAD; MRA-02 retains fault containment and drying acceptance."
+    },
+    {
+      "status": "OBLIGATION",
+      "firstVulnerableFabric": "Unestablished for the complete failure path; a visible/washable surface is not itself proof of damage or of dry concealed fabric.",
+      "maintenance": "Keep the declared access and receiving surfaces unobstructed; do not credit an attendant during temporary unoccupancy.",
+      "workmanship": "Actual falls, seals, supports, valve function and discharge/visibility require the located installed assembly.",
+      "drying": "Expose and inspect the affected path after isolation; establish a material-specific drying/cleaning and reinstatement condition before closing it.",
+      "evidenceLevel": "Current-source geometry and deterministic counterexample; no physical event.",
+      "scenarioIds": [
+        "INT-04"
+      ],
+      "occurrence": "Domestic hot-water vessel and safety connections",
+      "source": "Current plant.cylinder and independentSafety; inhabited-services-selection.md",
+      "event": "Vessel, cold/hot connection or D1 connection leaks after mains/pump shutdown.",
+      "path": "DHW vessel inventory remains hydraulically distinct from the heating buffer; matched safety discharge only receives its connected relief flow.",
+      "defence": "Pressure-rated bespoke vessel requirement, accessible qualified safety group and dedicated visible D2 route.",
+      "failurePath": "Mains closure does not prove removal of stored water; the safety drain does not capture a split vessel or disconnected D1.",
+      "declaration": "Tundish visibility is positive for relief flow, not proof of vessel-leak declaration.",
+      "containment": "Actual drainable inventory and plant-floor destination are unknown; no 300/370 L spill prediction.",
+      "isolation": "Stop heat, close the proper cold control and drain/cool/prove zero pressure. Never isolate the vessel from its directly sensing safety valve.",
+      "repair": "Park the ladder; support retained services and remove the qualified discharge group/bridge before exchange; restore and prove open safety discharge before heat.",
+      "owner": "HAD/MAT/IAS; actual stored-release/floor route before MRA-02; matched pressure system before purchase/energisation."
+    },
+    {
+      "status": "OBLIGATION",
+      "firstVulnerableFabric": "Unestablished for the complete failure path; a visible/washable surface is not itself proof of damage or of dry concealed fabric.",
+      "maintenance": "Keep the declared access and receiving surfaces unobstructed; do not credit an attendant during temporary unoccupancy.",
+      "workmanship": "Actual falls, seals, supports, valve function and discharge/visibility require the located installed assembly.",
+      "drying": "Expose and inspect the affected path after isolation; establish a material-specific drying/cleaning and reinstatement condition before closing it.",
+      "evidenceLevel": "Current-source geometry and deterministic counterexample; no physical event.",
+      "scenarioIds": [
+        "INT-04"
+      ],
+      "occurrence": "Heating buffer, primary/secondary components and sixteen emitters",
+      "source": "Current plant.primaryBuffer/heatPump and emitters; whole-service-material-offer.md",
+      "event": "A hydronic vessel, joint, valve or emitter leaks with pump off or a local valve under repair.",
+      "path": "Heating inventory is separate from potable DHW and includes branches beyond the buffer.",
+      "defence": "Separated circuits, accessible paired emitter valves and independent supports.",
+      "failurePath": "Pump-off does not establish a positive cut or remove hydrostatic inventory; one closed emitter valve is not a two-ended isolation proof.",
+      "declaration": "No full first-wetting path or measured latency for the sixteen occurrences/plant loop.",
+      "containment": "Nominal 300 L buffer and 260 L useful-layer requirement are not drainable amounts and are never added to DHW.",
+      "isolation": "Show both local valve cuts, pump/makeup state, checks, drain and air admission for each intervention.",
+      "repair": "Drain and support both retained tails before union release; preserve room access, dry finishes and separate electrical work.",
+      "owner": "HAD/MAT with IAS; MRA-02 receives actual topology and failure routes."
+    },
+    {
+      "status": "OBLIGATION",
+      "firstVulnerableFabric": "Unestablished for the complete failure path; a visible/washable surface is not itself proof of damage or of dry concealed fabric.",
+      "maintenance": "Keep the declared access and receiving surfaces unobstructed; do not credit an attendant during temporary unoccupancy.",
+      "workmanship": "Actual falls, seals, supports, valve function and discharge/visibility require the located installed assembly.",
+      "drying": "Expose and inspect the affected path after isolation; establish a material-specific drying/cleaning and reinstatement condition before closing it.",
+      "evidenceLevel": "Current-source geometry and deterministic counterexample; no physical event.",
+      "scenarioIds": [
+        "INT-04"
+      ],
+      "occurrence": "High-level hydronic kitchen supply-air coil",
+      "source": "Current cooker.supplyUnit; tempered-kitchen-air.md",
+      "event": "Coil/connection leak or frost damage with electrical controls unavailable.",
+      "path": "Water-bearing unit at Z2150–2755; cabinet, duct and first room-side wetting route require actual definition.",
+      "defence": "Independent wall cradle, releasable water branches and required unpowered frost-safe arrangement.",
+      "failurePath": "Cooking/fan inhibition stops an operating duty, not a demonstrated hydraulic source; no drip receiver or harmless first-failure route is established.",
+      "declaration": "First declaration from the elevated unit remains unlocated.",
+      "containment": "Actual coil/circuit residual and cabinet/duct/floor escape unknown.",
+      "isolation": "Locate both water-side cuts/drain and prove the freeze/fault state independently of pump or software commands.",
+      "repair": "Isolate electricity and water, cool/drain, retain cradle support until the qualified lift is docked; inspect and dry wet cabinet/duct interfaces before return.",
+      "owner": "HAD/MAT with IAS; first-wetting/frost/source cuts before MRA-02 and enabling that supplied assembly."
+    },
+    {
+      "status": "OBLIGATION",
+      "firstVulnerableFabric": "Unestablished for the complete failure path; a visible/washable surface is not itself proof of damage or of dry concealed fabric.",
+      "maintenance": "Keep the declared access and receiving surfaces unobstructed; do not credit an attendant during temporary unoccupancy.",
+      "workmanship": "Actual falls, seals, supports, valve function and discharge/visibility require the located installed assembly.",
+      "drying": "Expose and inspect the affected path after isolation; establish a material-specific drying/cleaning and reinstatement condition before closing it.",
+      "evidenceLevel": "Current-source geometry and deterministic counterexample; no physical event.",
+      "scenarioIds": [
+        "WST-01",
+        "WST-03"
+      ],
+      "occurrence": "Four basin wastes and common bowl-overflow paths",
+      "source": "household-water.json; ias-03-household-water.md",
+      "event": "A trap leaks or its common downstream path is blocked during ordinary open-spout use.",
+      "path": "Bowl waste and CL25 overflow converge on the same trap/downstream path.",
+      "defence": "Exposed removable trap and overflow with a working common downstream path.",
+      "failurePath": "Blocking the common trap defeats both entries; the 15 L/min overflow comparison cannot be credited as an independent drain.",
+      "declaration": "An open-spout overrun can become visible at the rim; source-to-floor first harm and latency remain unqualified.",
+      "containment": "Rim bypass and pan spill use the same unresolved room boundary.",
+      "isolation": "Stop the supplied water; a supply stop cannot empty waste already in a basin or clear a blocked trap.",
+      "repair": "Drain into a measured receiver, cap the foul end, remove/clean the supported trap and restore/inspect under flow.",
+      "owner": "IAS/HAD/MAT; MRA-02 resolves blocked-path consequence."
+    },
+    {
+      "status": "OBLIGATION",
+      "firstVulnerableFabric": "Unestablished for the complete failure path; a visible/washable surface is not itself proof of damage or of dry concealed fabric.",
+      "maintenance": "Keep the declared access and receiving surfaces unobstructed; do not credit an attendant during temporary unoccupancy.",
+      "workmanship": "Actual falls, seals, supports, valve function and discharge/visibility require the located installed assembly.",
+      "drying": "Expose and inspect the affected path after isolation; establish a material-specific drying/cleaning and reinstatement condition before closing it.",
+      "evidenceLevel": "Current-source geometry and deterministic counterexample; no physical event.",
+      "scenarioIds": [
+        "WST-01"
+      ],
+      "occurrence": "Family bath, principal shower and retained rear shower",
+      "source": "Selected three-bathing house; IAS three-bathing/rear tray results; MAT wet-room assembly directions",
+      "event": "A waste, tray/bath perimeter or local wet-room junction leaks.",
+      "path": "Three distinct fitted waste/support/renewal arrangements; the upper local port and accessible lower branch do not imply a drained secondary cavity.",
+      "defence": "Complete water-boundary reservations, independently supported fixtures and bounded access/capping operations.",
+      "failurePath": "A failed primary joint can bypass the ordinary wet surface or wet the lower service zone; first vulnerable layer and drying delay are not established.",
+      "declaration": "No transferred pass from the 20 mm principal saddle or a removable lower panel.",
+      "containment": "80 mm floor/30 mm wet lining directions do not establish flood volume, watertight doors or a safe emergency drain.",
+      "isolation": "Stop use and the relevant feeds; cap and preserve the fixed port/water boundary during waste release.",
+      "repair": "Follow each occurrence-specific supported first release; reopen affected finishes/liner as needed and prove the restored boundary before use.",
+      "owner": "IAS/MAT/HAD; MRA-02 plus the actual MRA-03 drying boundary after integration."
+    },
+    {
+      "status": "OBLIGATION",
+      "firstVulnerableFabric": "Unestablished for the complete failure path; a visible/washable surface is not itself proof of damage or of dry concealed fabric.",
+      "maintenance": "Keep the declared access and receiving surfaces unobstructed; do not credit an attendant during temporary unoccupancy.",
+      "workmanship": "Actual falls, seals, supports, valve function and discharge/visibility require the located installed assembly.",
+      "drying": "Expose and inspect the affected path after isolation; establish a material-specific drying/cleaning and reinstatement condition before closing it.",
+      "evidenceLevel": "Current-source geometry and deterministic counterexample; no physical event.",
+      "scenarioIds": [
+        "WST-02",
+        "CMP-05"
+      ],
+      "occurrence": "Utility washer discharge and sink common branch",
+      "source": "Current utility.acquiredBranch and utility-first-release/host results",
+      "event": "Hose disconnect or restricted common branch with ordinary washer pumping and sink use.",
+      "path": "Selected 960 mm branch falls 24 mm to the retained connection; washer and sink share its downstream capacity.",
+      "defence": "Accessible supported spigot/trap/branch and the local washable catch field.",
+      "failurePath": "The restricted common branch cannot simultaneously be credited as the emergency leak drain; actual pump/discharge and receiving capacity are unqualified.",
+      "declaration": "Visible floor/channel escape is required; full hose and joint first-wetting path is not proved.",
+      "containment": "2 L witness and unknown appliance residual are distinct; no capacity is inferred from hose length or a sink trap alone.",
+      "isolation": "Stop the appliance and incoming water as appropriate; drain residual inventory independently of the blocked branch.",
+      "repair": "Use the supported fixed-end release and controlled front draining; restore clamp, trap, floor access and separate sink/washer tests, including simultaneous duty.",
+      "owner": "IAS/HAD/MAT; close before MRA-02 accepts the shared discharge."
+    },
+    {
+      "status": "OBLIGATION",
+      "firstVulnerableFabric": "Unestablished for the complete failure path; a visible/washable surface is not itself proof of damage or of dry concealed fabric.",
+      "maintenance": "Keep the declared access and receiving surfaces unobstructed; do not credit an attendant during temporary unoccupancy.",
+      "workmanship": "Actual falls, seals, supports, valve function and discharge/visibility require the located installed assembly.",
+      "drying": "Expose and inspect the affected path after isolation; establish a material-specific drying/cleaning and reinstatement condition before closing it.",
+      "evidenceLevel": "Current-source geometry and deterministic counterexample; no physical event.",
+      "scenarioIds": [
+        "WST-03"
+      ],
+      "occurrence": "Five foul exits and retained external tails",
+      "source": "Current corrected otherServiceDuties; selected kitchen and E-02 routes",
+      "event": "A named building-side branch/receiver blocks or is submerged.",
+      "path": "Guest, utility, kitchen, rear-soil and east-soil external reservations; real receiver levels and onward capacity are absent.",
+      "defence": "Above-floor accessible branches and distinct service duties; no roof/rainwater receiver sharing is credited.",
+      "failurePath": "First internal surcharge/spill level depends on actual connected invert/trap topology, not the drawn external centreline alone.",
+      "declaration": "Actual first overflowing fitting and contaminated-water path must be located.",
+      "containment": "Blocked primary path receives zero drainage credit until an independent safe path is demonstrated.",
+      "isolation": "Stop connected sources and control access; a valve cannot cancel stored/foul backwater.",
+      "repair": "Accessible cleanout/capping, contained removal, cleaning/disinfection and dry reinstatement without concealing the damaged boundary.",
+      "owner": "HAD/MAT for building-side consequences; DPL for real receiving levels/authority before site acceptance; MRA-02 retains the internal condition."
+    },
+    {
+      "status": "OBLIGATION",
+      "firstVulnerableFabric": "Unestablished for the complete failure path; a visible/washable surface is not itself proof of damage or of dry concealed fabric.",
+      "maintenance": "Keep the declared access and receiving surfaces unobstructed; do not credit an attendant during temporary unoccupancy.",
+      "workmanship": "Actual falls, seals, supports, valve function and discharge/visibility require the located installed assembly.",
+      "drying": "Expose and inspect the affected path after isolation; establish a material-specific drying/cleaning and reinstatement condition before closing it.",
+      "evidenceLevel": "Current-source geometry and deterministic counterexample; no physical event.",
+      "scenarioIds": [
+        "WST-04"
+      ],
+      "occurrence": "Six local-extract condensate occurrences",
+      "source": "Current fanAccess and six exteriorPortGeometry condensate ports",
+      "event": "Trap/condensate route disconnects or blocks.",
+      "path": "Ground WC, utility, kitchen, rear, family and principal routes have located external ports; complete internal first-failure capture is not thereby proved.",
+      "defence": "Separate removable traps/cleaning access and outward terminal duties.",
+      "failurePath": "A blocked/disconnected local drain can release water before the wall port; exterior weathering is not its indoor catch path.",
+      "declaration": "First indoor visible symptom and safe latency remain unqualified.",
+      "containment": "No inferred discharge into foul, rainwater, room ceiling or a roof receiver.",
+      "isolation": "Disable the affected apparatus as required for repair, then deal with retained condensate; stopping a fan is not draining its trap.",
+      "repair": "Use the selected platform/cover and supported receiver; clear/test the actual drain, inspect surrounding layers and restore dry boundaries.",
+      "owner": "HAD/MAT/IAS; MRA-02 joins internal first wetting, with exterior/interface duties retained by their owners."
+    }
+  ],
+  "retainedRejectedInlet": {
+    "radiator": "plant-N",
+    "box": {
+      "low": [
+        10980,
+        3797,
+        100
+      ],
+      "high": [
+        11530,
+        3997,
+        700
+      ]
+    },
+    "segments": [
+      {
+        "from": [
+          12000,
+          1000,
+          500
+        ],
+        "to": [
+          11200,
+          1000,
+          500
+        ],
+        "lengthInsideRequiredEnvelopeMM": 0
+      },
+      {
+        "from": [
+          11200,
+          1000,
+          500
+        ],
+        "to": [
+          11200,
+          4300,
+          500
+        ],
+        "lengthInsideRequiredEnvelopeMM": 200
+      },
+      {
+        "from": [
+          11200,
+          4300,
+          500
+        ],
+        "to": [
+          10400,
+          4300,
+          500
+        ],
+        "lengthInsideRequiredEnvelopeMM": 0
+      }
+    ],
+    "totalLengthInsideRequiredEnvelopeMM": 200,
+    "scope": "Current-source replay of the route already rejected in services-water-joints.md. An occupied exclusion envelope, not a solid detailed radiator or installed collision. The alternative lobby route is still an adoption obligation.",
+    "status": "REWIND"
+  },
+  "washerMaintenance": {
+    "localStop": {
+      "point": [
+        10800,
+        1250,
+        750
+      ],
+      "shoulder": [
+        10800,
+        1725,
+        1050
+      ],
+      "straightReach": 561.80512636
+    },
+    "channelToElectricalWorkingFieldMM": 310,
+    "dryRestElectricalOverlapMM2": 209300,
+    "frontDrainTrayUsableL": null,
+    "externalCuboidUpperBoundL": 3.445,
+    "simultaneousTapWorkerClearanceMM": -106,
+    "disposition": "Preserve source order: isolate before bringing the drain tray into the conflicting stance; drain in controlled batches; de-energise before the temporary electrical-field overlap and restore it before re-energising."
+  },
+  "currentKitchenDuty": {
+    "id": "foul-kitchen",
+    "count": 1,
+    "path": [
+      [
+        9275,
+        12000,
+        273.7625
+      ],
+      [
+        9275,
+        12450,
+        -2480
+      ]
+    ],
+    "decision": "Use the fitted kitchen raised Ø50 branch to the existing wall crossing and retained external tail. The former trap/straight-branch reservation is superseded. Actual opening, fittings, receiving crown/diameter/invert and discharge remain to qualify.",
+    "pathScope": "Downstream wall crossing and external-tail reservation only.",
+    "upstreamSource": "project/ias/studies/household-water.json#/kitchen",
+    "downstreamSource": "project/mat/studies/whole-house-service-baseline.json#/interfaces/kitchenSinkStation/wasteRequiredRoute"
+  },
+  "supersededKitchenWall": [
+    9150,
+    12000,
+    382.0625
+  ],
+  "kitchenWallCorrectionMM": {
+    "x": 125,
+    "z": -108.3
+  },
+  "selectedKitchenDownstream": [
+    [
+      9275,
+      12000,
+      273.7625
+    ],
+    [
+      9275,
+      12450,
+      -2480
+    ]
+  ],
+  "integrationBlockers": [
+    "Incoming-water REWIND: 200 mm of inherited centreline enters the current plant-N required envelope. Adopt a coordinated incoming-water route clear of plant-N and the actual wall cores, with a located accessible upstream isolator and contained drain. The lobby alternative remains unadopted; preserve site/frost, independent support, utility branch and cylinder-release duties."
+  ],
+  "receivingReservations": {
+    "foul": [
+      {
+        "id": "foul-ground-WC",
+        "tail": [
+          8900,
+          -450,
+          -2480
+        ]
+      },
+      {
+        "id": "foul-utility",
+        "tail": [
+          12450,
+          600,
+          -2480
+        ]
+      },
+      {
+        "id": "foul-kitchen",
+        "tail": [
+          9275,
+          12450,
+          -2480
+        ]
+      },
+      {
+        "id": "rear-soil",
+        "tail": [
+          -450,
+          11177.5,
+          -2480
+        ]
+      },
+      {
+        "id": "east-soil",
+        "tail": [
+          12450,
+          5625,
+          -2480
+        ]
+      }
+    ],
+    "domesticSafety": [
+      12350,
+      2500,
+      -1850
+    ],
+    "condition": "Coordinate actual opening/pipe/invert and the available receiving crown, backwater and onward fall. No external foul tail, blocked path or safety terminal is an accepted safe floor-leak outfall. Dedicated D2 must not share foul, rainwater or utility receptors."
+  }
+}
