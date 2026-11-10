@@ -223,9 +223,9 @@ export const architectureNodes = defineNodes([
     owners: ['HAD', 'MAT', 'IAS'],
     title: 'Select and export one service system for the occupied house',
     dependencies: ['MAT-SERVICES', 'HAD-WATER-REPLAN', 'STR-RECONCILE'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/had/inhabited-services-selection.md', 'project/had/studies/current-house-services.json', 'project/had/studies/selected-service-interfaces.svg']
   },
 
   // RWT-06 rejects the selected common north-mouth failure, not merely a fitting.
