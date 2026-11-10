@@ -1,5 +1,13 @@
 # Services adoption recovery checkpoint
 
+## Occupied window checkpoint on 10 November
+
+The current source selects three paired outward rectangular purge windows. Each carries two complete 370 × 1160 × 128 mm leaves, staggered bronze peg stays, a 300 mm standing-body radius and the actual shifted opening centre. The worst bounded grip reach is 537.18 mm. The discarded 400 mm-wide leaf intersects the retained centre post. The selected width keeps 8.48 mm at that moving interface, before product tolerances. The current 16 tests pass.
+
+The selection moves the same kitchen and rear radiators onto their west walls and raises the utility inverter to local +1900 above the 1800 mm standing envelope. Raising the already-fixed rear west sill from 750 to 850 costs another 0.100 m² of gross glazed aperture. Heating outputs retain their prior values. The three upper fan stations move 20 mm down, retaining at least 25 mm between the complete duct-plus-support envelope and the private ceiling.
+
+The expanded head-maintenance platforms and proposed worker routes are present for adverse review. Their complete temporary support frame, continuous worker movement and panel handover still need the next finite-body checks. The principal-bath existing head needs its complete weather face and access operation. The packet remains planned while those checks, the source-bound drawings, whole HAD suite and exact-head CI are outstanding.
+
 ## Recovery on 10 November 2026
 
 The fresh worktree is based on the preserved 88f0d2bf commit. Its integrated current-house compositor now consumes the selected service interfaces, seventeen pinned source files, the shifted fridge and bed, and the fitted fixtures. The 15 current-house checks pass on this restored checkpoint. They include six outward-falling ducts, six independent gravity drain routes, the lowered ground-WC outlet with its original support allowance, reduced purge-area accounting and the complete room-side cassette displacement into each dry rest.

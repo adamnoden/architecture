@@ -135,6 +135,7 @@ test('all six ducts and trap drains fall outward while the ground supports remai
   for(const fan of s.fanAccess){
     assert(fan.selectedRoute.normalResistancePa<18);
     assert(fan.selectedRoute.upperBodyToSectionMM>=25);
+    assert(fan.selectedRoute.completeSupportToSectionMM>=25);
     if(fan.level===0)assert(fan.selectedRoute.groundSupportClearanceMM>=25);
     for(const [path,first]of [[fan.path,2],[fan.ceilingTrapDrainPort.path,1]]){
       for(let i=first;i<path.length;i++){
@@ -162,6 +163,32 @@ test('fixed heads charge the utility partition return and use the reduced operat
   assert(choice.purge.find(p=>p.room==='kitchenDining').lowerBoundAreaRatio<1.11);
 });
 
+test('three purge windows consume their shifted frames, finite leaves and reachable manual stays',()=>{
+  const choice=x.selectedServiceInterfaces;
+  assert.deepEqual(choice.purge.map(p=>p.centre),[9900,2100,9900]);
+  for(const p of choice.purge){
+    assert(p.minimumFurnitureClearance.mm>=25,p.room+' '+JSON.stringify(p.minimumFurnitureClearance));
+    assert(p.maximumGripReachMM<600,p.room+' grip');
+    assert(p.completeLeafToCentrePostMM>8);
+    assert(p.rejected400WideLeafToCentrePostMM<0);
+    assert.equal(p.bodyRadiusMM,300);
+    assert.equal(p.bodyToAnyMovingLeafMM,25);
+    assert(p.stayVerticalSeparationMM>=15&&p.upperStayToMovingLeafMM>=15);
+    for(const leaf of p.leaves){
+      near(leaf.stay.openLengthMM,300);
+      assert(leaf.stay.pegReachMM<600,p.room+' stay');
+      assert.equal(leaf.completeWHDepth[2],128);
+    }
+  }
+  assert.equal(m.archOpeningRegister.FIRST.find(w=>w.id==='west-window-3').sill,850);
+  assert.deepEqual(s.utility.PVinverterLocalZ,[1900,2450]);
+  assert.equal(choice.occupiedConsequences.additionalRearBlindAreaM2,.1);
+  assert(s.emitters.some(e=>e.id==='rear-W'));
+  assert(s.emitters.some(e=>e.id==='kitchen-W'));
+  assert(!s.emitters.some(e=>e.id==='rear-N'||e.id==='kitchen-E'));
+  for(const e of s.emitters)assert.deepEqual(m.servicesInterface.emitters.find(p=>p.id===e.id).plan,e.completePlanWithValvesAndBrackets);
+});
+
 test('the room-side first tube clears glazing and the whole cassette reaches a furniture-clear dry rest',()=>{
   const overlap=(a,b)=>[0,1].every(i=>Math.min(a[i]+a[i+2],b[i]+b[i+2])>Math.max(a[i],b[i]));
   for(const head of x.selectedServiceInterfaces.heads){
@@ -180,8 +207,10 @@ test('the room-side first tube clears glazing and the whole cassette reaches a f
       assert(overlap(head.receiver.platform,furniture[park.id]));
       furniture[park.id]=park.plan;
     }
-    for(const [id,item]of Object.entries(furniture))for(const field of ['platform','headReceiver'])
-      assert(!overlap(head.receiver[field],item),head.id+' '+field+' '+id);
+    const chair=head.receiver.parkedChair;
+    if(chair)furniture[chair.id]=chair.plan;
+    for(const [id,item]of Object.entries(furniture))for(const field of ['platform','additionalPlatform','headReceiver'])
+      if(head.receiver[field])assert(!overlap(head.receiver[field],item),head.id+' '+field+' '+id);
     if(head.holes[0].id!=='cooker-exhaust'){
       const rejectedBottom=head.holes[0].point[2]-(head.level==='FIRST'?3450:0)-113.5-250;
       assert(rejectedBottom<head.bandBottom);
