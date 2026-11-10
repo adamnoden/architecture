@@ -1,7 +1,7 @@
 {
   "id": "RWT-06-LOW-COURT-BYPASS",
   "source": {
-    "court": "80a8481b4e5a508164eff51b596e5a954c152a30",
+    "court": "887a3df5b7a335b3eaafc7c8de4529a339428cbc",
     "original": "RWT-06-RAISED-ROOF-COURT-SERVICE",
     "structural": "current-house-grid.json / east-service-platform.json",
     "site": "RWT-SELECTED-RECEIVING-INTERFACE-2026-11-06"

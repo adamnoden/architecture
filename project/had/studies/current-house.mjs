@@ -8,6 +8,8 @@ import {fileURLToPath} from 'node:url';
 import {roomSelection} from './inhabited-service-rooms.mjs';
 import {controlAndStorage} from './inhabited-service-faults.mjs';
 import {composeOccupiedHouse} from './inhabited-service-compose.mjs';
+import {selectServiceInterfaces} from './selected-service-interfaces.mjs';
+import {selectedServicePlate} from './selected-service-plate.mjs';
 const project=new URL('../../',import.meta.url);
 export function deriveCurrentHouse(){
   const inputs={};
@@ -48,16 +50,18 @@ export function deriveCurrentHouse(){
   house.fixtureJoin=fitHousehold(house.model,read('ias/studies/household-water'),read('ias/studies/fitted-wc-schedule'),
     read('ias/studies/utility-first-release'),read('ias/studies/utility-host-revised-route'));
   const structure=read('str/studies/reconciled-house-interface');
-  house.structuralServiceReview=serviceApertures(house.model,structure,read('str/studies/current-house-arch-movement'));
+  const corner=read('str/studies/current-house-arch-movement');
+  house.structuralServiceReview=serviceApertures(house.model,structure,corner);
   const ductStress=controlAndStorage(fanCharts,2,2).air;
   house.structuralServiceReview.hoodReroute={addedLengthM:2,addedBendK:2,cases:ductStress.cases,
     hoodLps:ductStress.hoodLps,directLps:ductStress.directLps,kitchenPa:ductStress.hotPa};
   house.structuralServiceReview.principalBed=structure.principalBed;
   house.structuralServiceReview.kitchen=structure.kitchen;
-  house.model.currentAdoptionBlockers=['Seven inherited exhaust, condensate and hood holes still intersect the SAP-C1 corner structure. Join replacement ducts, openings and use states before adopting Services on that structural house.'];
+  selectServiceInterfaces(house,structure,corner,base,read('str/studies/house-corner-rewind'));
+  house.model.currentAdoptionBlockers=[];
   return {...house,inputs};
 }
-// Compact, reproducible review projection of the full furnished-house candidate.
+// Compact, reproducible review projection of the selected furnished house.
 export function serviceSchedule(house){
   const {model:m}=house, s=m.architecturalServices;
   return {proposal:house.id,structurallyAdopted:false,qualifiedPhysical:false,sources:house.inputs,court:house.courtReceiver.id,
@@ -67,14 +71,15 @@ export function serviceSchedule(house){
     wetRoomFans:s.fanAccess.map(f=>({id:f.id,plan:f.podPlan,selectedMode:f.modes})),
     transferDoors:m.protectedDoorAirTransfer,wetTransferWalls:m.wetWallAirTransfer,
     materials:s.materials,storeExchange:m.storeExchange,separateRearOption:house.separateRearOption,
-    fixtureJoin:house.fixtureJoin,fittedWater:s.fittedWater,utility:s.utility,structuralServiceReview:house.structuralServiceReview};
+    fixtureJoin:house.fixtureJoin,fittedWater:s.fittedWater,utility:s.utility,structuralServiceReview:house.structuralServiceReview,
+    architecturalServiceSelected:house.architecturalServiceSelected,selectedServiceInterfaces:house.selectedServiceInterfaces};
 }
 // Round derived quantities for reproducible text across supported Node engines.
 export const scheduleText=house=>JSON.stringify(serviceSchedule(house),(_,v)=>typeof v==='number'?Number(v.toFixed(8)):v,2)+'\n';
 if(process.argv[1]===fileURLToPath(import.meta.url)){
   const house=deriveCurrentHouse();
   if(process.argv.includes('--write')){
-    for(const [file,bytes] of [['current-house-services.json',scheduleText(house)],['current-house-services.svg',servicePlate(house)],['store-exchange.svg',storePlate(house)]])
+    for(const [file,bytes] of [['current-house-services.json',scheduleText(house)],['current-house-services.svg',servicePlate(house)],['store-exchange.svg',storePlate(house)],['selected-service-interfaces.svg',selectedServicePlate(house)]])
       writeFileSync(new URL(file,import.meta.url),bytes);
   } else process.stdout.write(JSON.stringify(house)+'\n');
 }

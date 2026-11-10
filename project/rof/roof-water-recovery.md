@@ -33,6 +33,49 @@ not automatically establish individual head or exterior dry-module removal;
 those maintenance combinations are being checked separately. The observations
 below preserve the interrupted state and the design questions that survived it.
 
+## Finite renewal and joined services checkpoint
+
+The reconstructed model now has a separate, reproducible
+[finite renewal comparison](studies/roof_water_maintenance.py). Its 144
+mutually exclusive alternatives cover one represented exterior tributary,
+its paired lower tributary, specified adjacent normal-head operations, or one
+complete head and leader. The unchanged state remains available. The weather
+roof, all 96 signed storm programmes and all 186 independent water groups
+remain in the calculation. No working-wind restriction is credited for an
+unattended state.
+
+At the recovered 260 mm court collector and 40 kg/m inner-circuit bounds, the
+finite comparison gives 113.354784179 kN M24 tension against 113.922727273 kN,
+leaving 0.567943094 kN. Court and outer interactions are 0.971113955 and
+0.872631624. The separate 134-group independent-removal control fails the M24
+comparison at 114.086691271 kN. Arbitrary simultaneous dismantling is therefore
+outside this represented renewal sequence.
+
+These are load comparisons, not a completed physical removal detail. Actual
+moving-part mass, centroid and root allocation must fit the represented
+tributaries. Removed parts and temporary apparatus must transfer to independent
+ground support. The local support, complete fabrication inventory, retained
+water routes, whole-part withdrawal and reverse installation remain unresolved.
+
+The [receiving union](studies/roof_water_receiving_union.py) retains all 22
+original, installed and finite-renewal reaction ranges with side-specific
+controlling cases. Maximum union compression is 201.671377409 kN. The rejected
+independent-removal control is excluded. Actual receiving resistance remains
+unqualified; neither the stiffness spring nor the historical collector example
+supplies it.
+
+Selected services were merged by [PR #1473](https://github.com/adamnoden/architecture/pull/1473)
+at `a06013820dfdc2b5ee1918abf42abce8423eb0ad` and joined to this branch. The
+structural native hooks change only source identity in the reconciled house
+interface and court-intake record; their geometry and decisions are unchanged.
+The current RWT reader and its two derived records are rebound to that exact
+intake. Historical selected-event identity stays unchanged. All 22 current-house
+and 227 RWT tests pass after regeneration. Full joined-head CI remains required.
+
+The following sections preserve the interrupted predecessor's observations.
+Their references to missing files or pending services describe that earlier
+execution; the successor evidence above supersedes those specific statuses.
+
 ## Interrupted execution
 
 The execution environment disconnected at approximately 10:40 UTC. The joined gate remains planned. PR #1470 preserves the working branch. PR #1471 holds the reviewed selected service export at efcc7aa94c27b17e3c29d1ff33046b24e89f6a37 and passed exact-head validation run 42798410889. Its final canonical publication preflight could not execute after the disconnection. Current main was verified as 6bc0562aadd15b7e8652f0cb65bb844dcfca6a68.
