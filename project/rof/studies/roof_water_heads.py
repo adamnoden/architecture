@@ -11,7 +11,7 @@ from roof_water_edges import (
     ROOT, read, primary, fault, head, normal_q, fault_q, primary_length,
     p_bed, f_rim, pstations, fstation, p_perimeter, f_perimeter, p_dry, f_dry,
     normal_depth, local_head, weir_head,
-    lower_min,carrier_below_bed,
+    lower_min,carrier_below_bed,exclusions,overlap,
 )
 
 
@@ -209,6 +209,18 @@ for name, width, water, perimeter, dry, root_shape, root_radial in [
     # rotation and the unloaded gap before the moving crossarm's wet load.
     assert whole_deflection < 8
     service_rail = beam_screen((50+characteristic_water)*9.81/2000,spacing,rail)
+    dry_ratio = (1.35*50*9.81/1000+wind)/line_load
+    dry_offset = unloaded_offset+(40 if name=="primary" else 0)
+    dry_length = width+dry_offset
+    dry_moment = load*dry_ratio*(dry_offset+width/2)
+    dry_arm = arm_load*dry_ratio*(3*dry_length**4-4*dry_length*dry_offset**3
+        +dry_offset**4)/(24*180000*crossarm["I"])
+    dry_root_translation = load*dry_ratio*root_length**3/(3*root_ei)+dry_moment*root_length**2/(2*root_ei)
+    dry_root_rotation = load*dry_ratio*root_length**2/(2*root_ei)+dry_moment*root_length/root_ei
+    # Scaling the plate and rib by the whole-load ratio overbounds their
+    # smaller dry ratio. The released primary includes its extra40 mm lever.
+    dry_whole = dry_root_translation+dry_length*dry_root_rotation+dry_arm
+    dry_whole += dry_ratio*(rail_check["deflectionMm"]+rib_check["deflectionMm"]+plate["deflectionMm"])
     frames.append({"name":name,"width":width,"rootCount":64,"rootSpacing":spacing,
         "scheduledDryKgM":dry,"completeDryAllowanceKgM":50,
         "waterDepthForStructure":water,"factoredGravityNPerMm":gravity,
@@ -218,6 +230,8 @@ for name, width, water, perimeter, dry, root_shape, root_radial in [
         "fixedRootEndRadial":root_radial,"fixedRootStressMPa":root_stress,
         "rootDeflectionAtCombinedLoad":root_deflection,
         "wholeSupportDeflectionAtCombinedLoad":whole_deflection,
+        "drySupportDeflectionWithSameWind":whole_deflection*(1.35*50*9.81/1000+wind)/line_load,
+        "dryReleasedSupportDeflectionWithSameWind":dry_whole,
         "serviceRailDeflection":service_rail["deflectionMm"],
         "requiredRootReactionKN":load/1000,"requiredRootMomentKNm":load*lever/1e6})
 
@@ -290,6 +304,44 @@ for row in head_rows:
     clear_above_collar=pipe_bottom_after_lift-row["pipePenetration"]["upstandTop"]-15
     spout_above_catch=row["normalFloor"]+350-row["catchRim"]-15
     assert min(fork_passage,collar_passage,clear_above_collar,spout_above_catch)>0
+    # Each part enters the whole guarded bay before its inner gate closes.
+    # The outer gate then opens while the worker stays behind the side guard.
+    # A second900 mm captured translation reaches the empty ground nest.
+    landed_parts = [
+        {"part":"spout", "radial":[1650,2165], "halfWidth":125,
+         "height":primary["backDepth"]+5},
+        {"part":"head and upper spool", "radial":[2005,2195], "halfWidth":95,
+         "height":row["normalRim"]-6000},
+        {"part":"catch and complete return", "radial":[1630,2290], "halfWidth":225,
+         "height":row["catchRim"]-row["return"]["exitFloor"]},
+    ]
+    for part in landed_parts:
+        near, far = part["radial"]
+        part["bayEdgeReserve"] = min(near-1600,2350-far,300-part["halfWidth"])-10
+        part["groundRadial"] = [near+900,far+900]
+        part["groundNestReserve"] = min(near+900-2500,3250-far-900,
+                                         300-part["halfWidth"])-10
+        part["hoistHeadroomAfter100RestLift100Rig"] = 8350-(6800+100+part["height"]+100)
+        assert min(part["bayEdgeReserve"],part["groundNestReserve"],
+                   part["hoistHeadroomAfter100RestLift100Rig"]) > 0
+    worker_guard_gap = (-350-10)-(-700+300)
+    body_to_part = 700-300-max(part["halfWidth"] for part in landed_parts)
+    control_reach = ((-420+700)**2+(7500-7850)**2)**.5
+    assert worker_guard_gap >= 40 and body_to_part >= 175 and control_reach < 650
+    # Only these two normal heads need this large temporary transfer bay.
+    # The plan is checked against the actual reserved paths, receivers, dock
+    # and independent diversion sole-board fields.
+    def world_box(radial, along):
+        y = 12000+radial[0] if row["face"]=="north" else -radial[1]
+        return [row["station"]+along[0],y,along[1]-along[0],radial[1]-radial[0]]
+    works_fields = {
+        "deck":world_box([1600,2400],[-1200,400]),
+        "groundNest":world_box([2500,3250],[-300,300]),
+        "groundOperator":world_box([2600,3200],[-1000,-400]),
+        "closedTransferLane":world_box([1600,3250],[-300,300]),
+    }
+    for name, field in works_fields.items():
+        assert not [item for item in exclusions if all(overlap(field,item))], (row["face"],name)
     renewal_geometry.append({"face":row["face"],"upperSpoolLowerJointZ":6000,
         "firstSpoutLift":350,"firstSpoutOutwardTransfer":1130,
         "headAndUpperSpoolLift":800,"headOutwardTransfer":970,
@@ -305,7 +357,14 @@ for row in head_rows:
         "firstRestRadialAlong":[2100,0],"firstRestBaseZ":6800,
         "catchOutwardTransfer":1030,"transferBayRadial":[1600,2350],
         "transferBayAlong":[-300,300],"workerSideGuardAlong":-350,
+        "workerHeight":2000,"workerToSideGuard":worker_guard_gap,
+        "workerToMovingPart":body_to_part,
+        "handDriveRadialAlongZ":[2000,-420,7500],"handDriveReach":control_reach,
+        "landedParts":landed_parts,"liftOffRest":100,"secondOutwardTransfer":900,
+        "groundNestRadial":[2500,3250],"groundNestAlong":[-300,300],
+        "groundWorkerRadialAlong":[2900,-700],"worksPlanFields":works_fields,
         "gateOrder":"Keep the outer and side gates locked during receipt. Close the inner gate after the whole part enters. The worker remains outside the transfer bay.",
+        "offRestOrder":"Close the inner gate and retain the worker-side guard. Capture and lift100 from the rest, open only the outer part gate, translate900 outward and lower into the closed empty ground nest. The ground worker stands beside that nest. Restore the outer gate before receiving another part.",
         "clearRestBeforeNextPart":True})
 leaders = {"number":4,"clearDiameter":150,"copperWall":2,
     "maximumSuspendedLengthM":leader_length,"dryPipeKgEach":leader_copper,
@@ -331,12 +390,40 @@ leaders = {"number":4,"clearDiameter":150,"copperWall":2,
     "wallHoopStressAt100kPaMPa":.1*150/(2*2),
     "oneDrained1200SpoolCopperKg":leader_copper*1.2/leader_length}
 
+movement = read("rof/studies/roof_water_movement.json")
+assert movement["courtWidthMM"] == 260
+
+
+def movement_bound(label, field="rangeMM"):
+    rows = [row for row in movement["queries"] if label in row["label"]]
+    assert rows, label
+    return max(abs(value) for row in rows for value in row[field])
+
+
+primary_roll = movement_bound("cross-section R520 minus R170")
+lower_roll = movement_bound("cross-section R670 minus R125")
+dry_release = movement_bound("moving R170 minus lower R670", "dryDiversionRangeMM")
+dry_extra_lever = movement_bound("cross-section R520 minus R170", "dryDiversionRangeMM")*40/350
+dry_release += dry_extra_lever+sum(row["dryReleasedSupportDeflectionWithSameWind"] for row in frames)
+return_differential = movement_bound("return R1260 minus R600 at actual lower root")
+return_differential += head_support_deflection+frames[1]["wholeSupportDeflectionAtCombinedLoad"]
+movement_receipt = {
+    "primaryLocalPlusCollectorRoll":primary_roll+frames[0]["wholeSupportDeflectionAtCombinedLoad"],
+    "lowerLocalPlusCollectorRoll":lower_roll+frames[1]["wholeSupportDeflectionAtCombinedLoad"],
+    "dryReleaseIncluding40ExtraLeverAndBothLocalFrames":dry_release,
+    "headReturnIncludingBothLocalFrames":return_differential,
+    "adoptedBudgets":[11,19,20,30],
+}
+for key, limit in zip(list(movement_receipt)[:4], movement_receipt["adoptedBudgets"]):
+    assert movement_receipt[key] < limit, (key,movement_receipt[key],limit)
+
 report = {"heads":head_rows,"facade":facade,"frames":frames,"leaders":leaders,
     "aprons":aprons,"secondaryRail25x20x2":secondary_rail,
     "fixedPrimaryApronToeRadial":260,
     "primaryApronToReleasedRearAfter10Setting6Movement":primary_apron_rear_clearance,
     "secondaryToPrimaryAfterThermal10Setting3Movement":secondary_to_primary,
     "headRenewalGeometry":renewal_geometry,
+    "joinedMovementReceipt":movement_receipt,
     "blockedReliefOutlet":relief_emergency,
     "steelScreen":{"requiredProofAt100C":165,"factor":1.1,"E":180000},
     "renewal":[
@@ -351,7 +438,7 @@ report = {"heads":head_rows,"facade":facade,"frames":frames,"leaders":leaders,
     ],
     "qualification":[
         "Qualify exact sheet/section properties, all formed joints, welds, dry sliding contacts, root plates and masonry/collector attachments at their reported actions.",
-        "Demonstrate the complete head, annular drip and half-obstructed return at3.310473L/s, including wind, inlet momentum, setting and movement.",
+        f"Demonstrate the complete head, annular drip and half-obstructed return at{normal_q:.6f}L/s, including wind, inlet momentum, setting and movement.",
         "Copper head, pipe and retained-joint pressure duties include the whole blocked column. The100kPa wall calculation gives demand only.",
         "Facade restraints carry wind to the actual piers and floor zones. Their anchors, thermal closures and water shedding need the BCR/DEL detail and wet demonstration.",
         "The remaining margin within50kg/m covers apron ribs, clips and minor metalwork. No installed polymer exception is added."
