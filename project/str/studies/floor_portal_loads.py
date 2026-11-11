@@ -222,6 +222,55 @@ def floor_fields(h,G,Q):
     return {'netAreaM2':area,'sourceAreaBeforeWetOpeningM2':100.6602,'wetPenetrationM2':.16,'finishGkKN':finishes,'useQkKN':2*area}
 
 
+
+def guide_hardware_gravity(h,G):
+    """Add selected-comparator guide/coupler metal and remove its displaced RC.
+
+    This is active only for the radial-guide candidate. Loads are applied at
+    actual jamb/L top ports with their finite vertical and plan offsets.
+    """
+    if h.p.key_direction_mode!='radial-guide':
+        return dict(active=False,hardwareKg=0.,concreteDisplacementM3=0.,netGravityKN=0.)
+    from floor_portal_receiver import geometry
+    from floor_portal_cap_stack import stack
+    receiver=geometry();cap=stack();hardware_kg=0.;displaced_m3=0.
+
+    jamb=receiver['jamb']
+    for j in h.jambs:
+        qcap,_=h.jamb_section(6515.);centre=xy(j['face'],qcap,j['u'])
+        point=[*centre,jamb['assemblyCentroidZ']]
+        mass=jamb['massPerAssemblyKg'];vol=jamb['concreteDisplacementPerAssemblyM3']
+        G.node(j['top'],point,[0,0,-mass*9.81],tag='jamb radial-guide tongue receiver and bronze slides')
+        G.node(j['top'],point,[0,0,vol*25*1000],tag='jamb radial-guide displaced RC correction')
+        hardware_kg+=mass;displaced_m3+=vol
+
+        per=cap['hardwareMass']['perForceLineKg'];z=cap['hardwareMass']['perForceLineCentroidZ']
+        dv=cap['netAdditionalConcreteDisplacement']['perForceLineM3'];dz=cap['netAdditionalConcreteDisplacement']['perForceLineCentroidZ']
+        for along_offset in (-32.,32.):
+            for normal_offset in (-52.,52.):
+                plan=np.asarray(centre)+along(j['face'])[:2]*along_offset+inward(j['face'])[:2]*normal_offset
+                G.node(j['top'],[*plan,z],[0,0,-per*9.81],tag='jamb weldable stub position-coupler hardware')
+                G.node(j['top'],[*plan,dz],[0,0,dv*25*1000],tag='jamb coupler displaced RC correction')
+                hardware_kg+=per;displaced_m3+=dv
+
+    Lgeo=receiver['L']
+    for L in h.Ls:
+        for centre0 in h.p.L_key_centres:
+            plan=L['origin']+L['sg']*np.asarray(centre0,float)
+            point=[*plan,Lgeo['assemblyCentroidZ']]
+            mass=Lgeo['massPerAssemblyKg'];vol=Lgeo['concreteDisplacementPerAssemblyM3']
+            G.node(L['top'],point,[0,0,-mass*9.81],tag='L radial-guide tongue receiver and bronze slides')
+            G.node(L['top'],point,[0,0,vol*25*1000],tag='L radial-guide displaced RC correction')
+            hardware_kg+=mass;displaced_m3+=vol
+
+    net=hardware_kg*9.81/1000-displaced_m3*25
+    expected=__import__('floor_portal_receiver').mass_ledger()
+    assert abs(hardware_kg-expected['totalAddedHardwareKg'])<1e-8,(hardware_kg,expected)
+    assert abs(displaced_m3-expected['totalConcreteDisplacementM3'])<1e-12,(displaced_m3,expected)
+    assert abs(net-expected['netAddedGravityKN'])<1e-9,(net,expected)
+    return dict(active=True,hardwareKg=hardware_kg,concreteDisplacementM3=displaced_m3,netGravityKN=net)
+
+
 def gravity(h):
     G,Q=Case(h,'G characteristic adverse'),Case(h,'Q characteristic')
     geometry=rc_origins(h,G);floor=floor_fields(h,G,Q);rows,source=source_origins()
@@ -312,7 +361,8 @@ def gravity(h):
     for j in h.jambs:
         for z in (1250.,4700.):G.node(j['levels'][z],[*xy(j['face'],227.5,j['u']),z],[0,0,-200*9.81/2],tag='window frame and glass200kg per unit')
         G.node(j['levels'][5430.],[*xy(j['face'],127.5,j['u']),5430.],[0,0,-(guard['guardMassULSKN']*1000/1.35+guard_stock*9.81)/2],tag='actual upper guard and bracket allowance')
-    return G,Q,{'RC':geometry,'floor':floor,'sourceTotalsKN':dict(source_totals),'sourceAdjustmentsKN':dict(adjustments)}
+    guide_hardware=guide_hardware_gravity(h,G)
+    return G,Q,{'RC':geometry,'floor':floor,'sourceTotalsKN':dict(source_totals),'sourceAdjustmentsKN':dict(adjustments),'guideHardware':guide_hardware}
 
 
 def roof_load_type(h):
