@@ -15,23 +15,29 @@ from floor_portal_roof_fields import spandrel_clearance
 from floor_portal_movements import roof_strain,superstructure_strain
 
 
-SHORT_L_KEYS=((200.,70.),(475.,70.),(725.,70.),(70.,200.),(70.,475.),(70.,725.))
+SIX_L_KEYS=((200.,70.),(475.,70.),(725.,70.),(70.,200.),(70.,475.),(70.,725.))
+CANDIDATES=('baseline','square','short-key','joint-half','joint-zero','mesh-half','flex-key-80','flex-key-100','flex-key-120')
 
 
 def parameters(name):
     common={}
-    if name in ('square','short-key','joint-half','joint-zero','mesh-half'):
+    if name!='baseline':
         common.update(corner_width=250.,corner_haunch=120.)
     if name in ('short-key','joint-half','joint-zero','mesh-half'):
         common.update(
             cap_key_width=90.,cap_key_thickness=12.,cap_key_depth=30.,
             L_key_width=70.,L_key_thickness=12.,L_key_depth=30.,
-            L_key_centres=SHORT_L_KEYS,key_profile='triangular depth bearing')
+            L_key_centres=SIX_L_KEYS,key_profile='triangular depth bearing')
+    if name.startswith('flex-key-'):
+        depth=float(name.rsplit('-',1)[1])
+        common.update(
+            cap_key_width=90.,cap_key_thickness=8.,cap_key_depth=depth,
+            L_key_width=70.,L_key_thickness=8.,L_key_depth=depth,
+            L_key_centres=SIX_L_KEYS,key_profile='triangular depth bearing')
     if name=='joint-half':common['joint_rigid_scale']=.5
     if name=='joint-zero':common['joint_rigid_scale']=0.
     if name=='mesh-half':common['mesh']=700.
-    if name not in ('baseline','square','short-key','joint-half','joint-zero','mesh-half'):
-        raise ValueError(name)
+    if name not in CANDIDATES:raise ValueError(name)
     return Parameters(**common)
 
 
@@ -51,9 +57,18 @@ def cases(h):
 
 def key_groups(h,u):
     groups=defaultdict(lambda:np.zeros(6))
+    slips=defaultdict(float)
     for e in h.cap_links:
-        groups[e['name']]+=e['k']@e['t']@u[e['ids']]
-    return groups
+        if not (e['name'].startswith('cap-key-') or e['name'].startswith('L-cap-key-')):continue
+        relative=e['t']@u[e['ids']]
+        groups[e['name']]+=e['k']@relative
+        translational=e['k'][:3,:3]
+        values,vectors=np.linalg.eigh(translational)
+        active=np.flatnonzero(values>max(1.,values.max()*1e-12))
+        if len(active):
+            slip=max(abs(float(vectors[:,i]@relative[:3])) for i in active)
+            slips[e['name']]=max(slips[e['name']],slip)
+    return groups,slips
 
 
 def key_stress(force_n,width,thickness,depth,profile):
@@ -75,11 +90,13 @@ def solve(name):
             action=e['k']@e['t']@u[e['ids']]-case.ends.get(id(e),np.zeros(12))
             collector=np.maximum(collector,np.max(abs(action.reshape(2,6)),axis=0))
 
-        groups=key_groups(h,u)
+        groups,slips=key_groups(h,u)
         jamb=[v for k,v in groups.items() if k.startswith('cap-key-')]
         lkeys=[v for k,v in groups.items() if k.startswith('L-cap-key-')]
         jamb_force=max((float(np.max(abs(v[:2]))) for v in jamb),default=0.)
         l_force=max((float(np.max(abs(v[:2]))) for v in lkeys),default=0.)
+        jamb_slip=max((v for k,v in slips.items() if k.startswith('cap-key-')),default=0.)
+        l_slip=max((v for k,v in slips.items() if k.startswith('L-cap-key-')),default=0.)
         jamb_stress=key_stress(jamb_force,p.cap_key_width,p.cap_key_thickness,p.cap_key_depth,p.key_profile)
         l_stress=key_stress(l_force,p.L_key_width,p.L_key_thickness,p.L_key_depth,p.key_profile)
 
@@ -100,6 +117,8 @@ def solve(name):
             minimumUpperSpandrelGapMM=float(gap),
             maximumJambKeyDirectionalForceKN=jamb_force/1000,
             maximumLKeyDirectionalForceKN=l_force/1000,
+            maximumJambKeyRelativeShearMM=float(jamb_slip),
+            maximumLKeyRelativeShearMM=float(l_slip),
             jambKeyElasticRootStressMPa=float(jamb_stress),
             LKeyElasticRootStressMPa=float(l_stress),
             activeContacts=int(sum(contact['active'])),
@@ -116,11 +135,13 @@ def solve(name):
     for label,eigen in movement_specs:
         case=Case.combination(h,'G reference; '+label,[(1,Gref),(1,eigen)])
         u,reaction,contact=solver(case.f)
-        groups=key_groups(h,u)
+        groups,slips=key_groups(h,u)
         jamb=[v for k,v in groups.items() if k.startswith('cap-key-')]
         lkeys=[v for k,v in groups.items() if k.startswith('L-cap-key-')]
         jamb_force=max((float(np.max(abs(v[:2]))) for v in jamb),default=0.)
         l_force=max((float(np.max(abs(v[:2]))) for v in lkeys),default=0.)
+        jamb_slip=max((v for k,v in slips.items() if k.startswith('cap-key-')),default=0.)
+        l_slip=max((v for k,v in slips.items() if k.startswith('L-cap-key-')),default=0.)
         balance=h.rigid.T@(case.f+reaction)
         movement.append(dict(
             name=label,
@@ -128,6 +149,8 @@ def solve(name):
             maximumTranslationMM=max(float(np.max(abs(u[6*i:6*i+3]))) for i in range(len(h.f.points))),
             maximumJambKeyDirectionalForceKN=jamb_force/1000,
             maximumLKeyDirectionalForceKN=l_force/1000,
+            maximumJambKeyRelativeShearMM=float(jamb_slip),
+            maximumLKeyRelativeShearMM=float(l_slip),
             jambKeyElasticRootStressMPa=float(key_stress(jamb_force,p.cap_key_width,p.cap_key_thickness,p.cap_key_depth,p.key_profile)),
             LKeyElasticRootStressMPa=float(key_stress(l_force,p.L_key_width,p.L_key_thickness,p.L_key_depth,p.key_profile)),
             activeContacts=int(sum(contact['active'])),
@@ -152,7 +175,7 @@ def solve(name):
 
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--candidate',required=True,choices=('baseline','square','short-key','joint-half','joint-zero','mesh-half'))
+    parser=argparse.ArgumentParser();parser.add_argument('--candidate',required=True,choices=CANDIDATES)
     args=parser.parse_args()
     result=solve(args.candidate)
     print('STR_PROBE='+json.dumps(result,separators=(',',':')),flush=True)
