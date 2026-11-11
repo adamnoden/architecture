@@ -28,6 +28,10 @@ def namespace(court_width=280.,court_wall=25.):
         c.update(W=c['I']/(h/2),Wminor=c['Iminor']/(b/2),lineG=c['A']*78.5/1e6)
         p['collectorSections']={'outer':outer,'court':c}
     exec(compile(source[:boundary],str(path),'exec'),p)
+    # The historical reserve is defined after its case batch. Read only the
+    # actual source mass-location block; never execute historical responses.
+    reserve=source[source.index('tubeG=sum('):source.index('\ndef ringMoment(')]
+    exec(compile(reserve,str(path),'exec'),p)
     return p,hashlib.sha256(source.encode()).hexdigest()
 
 

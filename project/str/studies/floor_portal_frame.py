@@ -99,7 +99,7 @@ class Frame:
         return record
 
     def beam(self, a, b, width, depth, name, E=33000., G=None, crack=.25,
-             normal=None, ra=(0.,0.,0.), rb=(0.,0.,0.), EA=None, shear=True):
+             normal=None, ra=(0.,0.,0.), rb=(0.,0.,0.), EA=None, shear=True, section=None):
         pa, pb = self.points[a//6]+ra, self.points[b//6]+rb
         delta = pb-pa; L = np.linalg.norm(delta); assert L > 1e-5, (name, pa, pb)
         x = delta/L
@@ -107,16 +107,15 @@ class Frame:
         y = n-x*np.dot(n,x); y /= np.linalg.norm(y); z = np.cross(x,y)
         R = np.array([x,y,z]); assert np.linalg.det(R) > .999999
         G = E/2.4 if G is None else G
-        local = beam_matrix(L, E*width*depth if EA is None else EA,
-                            crack*E*width*depth**3/12,
-                            crack*E*depth*width**3/12,
-                            crack*G*torsion(width,depth),
-                            G*width*depth*5/6 if shear else None)
+        area,iy,iz,jtor = section if section is not None else (width*depth,width*depth**3/12,depth*width**3/12,torsion(width,depth))
+        axial=E*area if EA is None else EA
+        local = beam_matrix(L,axial,crack*E*iy,crack*E*iz,crack*G*jtor,
+                            G*area*5/6 if shear else None)
         t = np.zeros((12,12)); rot = np.zeros((6,6)); rot[:3,:3]=rot[3:,3:]=R
         t[:6,:6]=rot@offset(ra); t[6:,6:]=rot@offset(rb)
         ids = np.r_[np.arange(a,a+6),np.arange(b,b+6)]
         self.add(ids,t.T@local@t)
-        e=dict(name=name,ids=ids,t=t,k=local,R=R,L=L,a=pa,b=pb,width=width,depth=depth)
+        e=dict(name=name,ids=ids,t=t,k=local,R=R,L=L,a=pa,b=pb,width=width,depth=depth,EA=axial,area=area)
         self.elements.append(e)
         return e
 
@@ -179,13 +178,14 @@ class Solve:
         return u[:,0] if one else u
 
 
-def membrane_triangle(points,E=1200.,nu=.15,thickness=200.):
+def membrane_triangle(points,E=1200.,nu=.15,thickness=200.,G=440.):
     xy=np.asarray(points); a=np.c_[np.ones(3),xy]
     area=abs(np.linalg.det(a))/2
     grad=np.linalg.inv(a)[1:]
     B=np.zeros((3,6))
     for j in range(3):B[:,2*j:2*j+2]=[[grad[0,j],0],[0,grad[1,j]],[grad[1,j],grad[0,j]]]
     D=E/(1-nu**2)*np.array([[1,nu,0],[nu,1,0],[0,0,(1-nu)/2]])
+    D[2,2]=G
     return B.T@D@B*thickness*area,area
 
 

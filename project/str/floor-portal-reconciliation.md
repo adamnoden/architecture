@@ -159,3 +159,110 @@ internally completed design, rather than replacing that design work.
 - [Concrete Centre EC2 detailing](https://www.concretecentre.com/Structural-design/Eurocode-2-concrete/Detailing.aspx): first-generation EC2 parallel-bar and anchorage method.
 - [JRC EC2 worked examples](https://eurocodes.jrc.ec.europa.eu/sites/default/files/2022-06/1110_WS_EC2.pdf): spacing, bond and concrete-inside-bend method; this is not a declaration of whole-building regulatory compliance.
 - [nVent LENTON UK catalogue](https://www.nvent.com/sites/default/files/acquiadam/assets/LENTON-CAT-CP7J-TaperThreadedRebarSystem-UKEN.pdf): real non-rotating position-coupler geometry for the forthcoming field-splice/assembly comparison. No product is procured or qualified by this citation.
+
+## Connected-house calculation checkpoint — 11 November, generation 2
+
+`floor_portal_house.py`, `floor_portal_loads.py` and
+`floor_portal_coupled.py` now assemble the actual ground beams and 52 head
+coordinates, finite floor plate and retained trimmers, continuous jambs and
+L piers, explicit capillary-break force paths and the extracted native roof.
+This is an **unselected calculation checkpoint**. It does not close
+STR-FLOOR-PORTAL or authorise the geometry for construction.
+
+The first connected assembly controls check all six rigid motions, exact
+relative link displacement, unilateral contact force recovery and global
+force/three-moment balance. The added Python CI job installs the two pinned
+calculation dependencies and runs the source roof-split control and the same
+connected calculation. Green repository health alone does not imply that the
+physical join, cage or force capacity has passed.
+
+The source membrane's 1200 MPa modulus and independent 440 MPa shear modulus
+remain confined to the actual 200 mm plate. Collector axial stiffness counts
+the stated H16 face bars and additional eight H12 chord bars; no nominal
+membrane modulus is applied through the full 750/650 mm upstand depth.
+Collector, trimmer, slab, L-pier, jamb and clear arch/spandrel mass use disjoint
+solid ownership. The 400 × 400 mm wet penetration reduces the old
+100.6602 m² floor area to 100.5002 m². The full 174.3483375 kN ceiling origin
+remains once. Removed gross portal masonry is replaced by the actual jambs,
+arch/spandrel union and retained below-sill infill, rather than importing the
+old portal's already included floor and ceiling tributaries.
+
+The roof calculation keeps the source 413.4868209166 kN adverse weather/steel
+budget, including its explicitly uninstalled 8.5 kN stock reserve. Current
+316L specials, lower trays and beds total 566.7869443 kg and are located within
+that budget; the old lead family is not added on top. The actual 220 × 120 × 20
+outer and 280 × 120 × 25 court rings are a separate mass origin. Current roof
+water dry and blocked-water point origins retain their actual roots and
+moments. This is a declared adverse budget and load-location comparison, not a
+new measured roof take-off or permission to credit removable roof weight
+against uplift.
+
+### Finite-detail findings carried forward
+
+The full-height 250 mm jamb trial clashes with several ground and upper room
+objects. The current comparison therefore keeps the original 180 mm jamb
+outside a local floor flare: core 222.5–402.5 changes to 207.5–457.5 over
+Z2770–3170, holds through Z3920 and returns by Z4320. The two H12 normal planes
+move from 260.5/364.5 to 250.5/414.5. Their 400 mm transitions have offsets
+−10/+50 mm; the larger transition's radius is 812.5 mm. The full-yield
+transverse force is approximately 12.2 kN per H12, requiring an actual
+confinement arrangement. The change adds 0.26404 m³ across sixteen jambs
+before other solids are unioned. Upper radiator/cabinet and ordinary 160 mm
+collector finish-face consequences remain unresolved.
+
+The source L-pier H20 positions clash with the ordinary 160 mm collector
+face bars. A separate **unselected** local 250 mm corner collector has been
+screened: 45 mm bar transitions over 200 mm at stations 1230–1430, outer H16
+turn radius 430 mm, inner radius 162 mm and a 120 mm diagonal concrete
+haunch. The finite geometry screen retained all twelve H20 and eight H12
+L bars, with 6.43 mm adverse residual after two 5 mm placement errors and
+the sampling bound; the inner tied turn has 35.775 mm nominal cover. This
+corner geometry is not yet in the coupled model and has not earned shear,
+confinement, whole cage or room acceptance. A 100 mm hoop / 150 mm slab-bar
+grid fails the parallel-spacing screen; a common 150 mm grid phased by
+75 mm is a comparator requiring actual shear capacity.
+
+At each 180 × 205 mm jamb foot, the bounded imperforate DPC comparator uses
+two 120 × 60 × 140 mm steel blocks, a 20 mm continuous web and four opposed
+blind M16 connections. Its net unbored stock is about 19.36 kg, before
+execution details. A lower anchor trial using two 120 × 70 × 25 mm plates
+at Z−480 to −455 fails the straight P24 starter surrogate: −11.267 mm
+clearance after two 5 mm errors. The threaded studs themselves retained
+12.82 mm in that control. The product-headed alternative is not a pass:
+Ancon TTH12 is Ø40 × 27 mm, and its published C32/40 minimum cannot be
+borrowed for the current C30 basis. Its TTA12 adaptor uses 24 mm M16
+engagement, not the opposed-block comparator's 45 mm. Actual bent starters,
+ground reinforcement, breakout/splitting and a practical assembly margin
+remain to resolve.
+
+At the roof, the 16 jambs stop at Z6515 below a 25 mm cap. A compatible
+weldable/position-coupler arrangement below the cap avoids nuts inside the
+20 mm box bottom. The four H12 force lines, cap/bottom-plate bending,
+compression contact and a finite cruciform key are separate model terms.
+The 621 mm development-zone contribution is an explicit conservative slip
+surrogate; it is not a measured joint stiffness. Coupler-plus-cap-only and
+that more compliant limit still require comparison. Published nVent
+EL12P13LN dimensions are OD25 and 124/159 mm closed/open length; the EL12C13N
+weldable half needs its specified weld preparation and cannot be credited
+from its small unwelded neck alone. Cover, final-pour access, weld strength,
+full anchor development and gap closure remain owning STR duties.
+
+Primary product references for these unselected controls:
+
+- [nVent LENTON UK mechanical splice catalogue](https://www.nvent.com/sites/default/files/acquiadam/assets/LENTON-CAT-CP7J-TaperThreadedRebarSystem-UKEN.pdf).
+- [Ancon UK/Ireland reinforcing-bar couplers catalogue](https://www.ancon.co.uk/downloads/81/Reinforcing%20Bar%20Couplers%20UK%20IRE%20Edition.pdf).
+
+No generic independent review referral substitutes for the remaining internal
+calculations. The immediate next work is the actual coupled demand envelope,
+located L-cap compliance, local corner comparison, joint and mesh sensitivity,
+complete reinforcement/anchorage and room/service replay on the same geometry.
+
+The first four-case reaction receipt is
+`studies/floor-portal-coupled-checkpoint.json`. Its no-favourable-dead-load
+positive-X wind/suction comparison reaches 112.404 kN head tension; that is a
+calculated demand, not a shaft-capacity or hold-down pass. The independent
+review has identified a remaining duplicated lower-core volume inside the
+new trimmer downstands, plus a 140 mm-only body/finish fraction used where
+source core widths vary. Those corrections are explicitly required before
+interpreting a final demand envelope. The recorded source identities, load
+resultants and all 52 head cards are replayed by the new CI job.
