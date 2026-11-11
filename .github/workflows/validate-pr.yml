@@ -54,6 +54,9 @@ jobs:
       - name: Reproduce connected assembly and all-head equilibrium controls
         run: python project/str/studies/floor_portal_coupled.py --check --output /tmp/floor-portal-coupled.json
 
+      - name: Exercise bounded 8 percent guide friction on signed quick domain
+        run: python project/str/studies/floor_portal_domain.py --candidate guided-t20 --guide-friction 0.08 --quick --output /tmp/floor-portal-friction-quick.json
+
 
 
   floor-portal-leading-domain:
@@ -85,6 +88,61 @@ jobs:
 
       - name: Screen live radial-guide hardware force path
         run: python project/str/studies/floor_portal_guide_hardware.py /tmp/floor-portal-leading-domain.json --output /tmp/floor-portal-leading-guide-hardware.json
+
+
+  floor-portal-friction-domain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: Checkout structural source
+        uses: actions/checkout@v5
+
+      - name: Setup calculation Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: project/str/studies/floor-portal-requirements.txt
+
+      - name: Install pinned calculation dependencies
+        run: python -m pip install --requirement project/str/studies/floor-portal-requirements.txt
+
+      - name: Solve all 579 cases with 8 percent guide-friction bound
+        run: python project/str/studies/floor_portal_domain.py --candidate guided-t20 --guide-friction 0.08 --output /tmp/floor-portal-friction-domain.json --matrix /tmp/floor-portal-friction-domain.npz
+
+      - name: Screen friction-domain square-corner sections
+        run: python project/str/studies/floor_portal_section_review.py /tmp/floor-portal-friction-domain.npz --output /tmp/floor-portal-friction-sections.json
+
+      - name: Screen friction-domain guide hardware
+        run: python project/str/studies/floor_portal_guide_hardware.py /tmp/floor-portal-friction-domain.json --output /tmp/floor-portal-friction-hardware.json
+
+  floor-portal-friction-movements:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: Checkout structural source
+        uses: actions/checkout@v5
+
+      - name: Setup calculation Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: project/str/studies/floor-portal-requirements.txt
+
+      - name: Install pinned calculation dependencies
+        run: python -m pip install --requirement project/str/studies/floor-portal-requirements.txt
+
+      - name: Solve six strain comparisons and all 104 head motions with 8 percent guide friction
+        run: python project/str/studies/floor_portal_movements.py --candidate guided-t20 --guide-friction 0.08 --heads --output /tmp/floor-portal-friction-movements.json
 
   floor-portal-leading-movements:
     runs-on: ubuntu-latest
