@@ -9,8 +9,8 @@
     "label": "push-20261111-root"
   },
   "claimedAt": "2026-11-11T08:33:57.246Z",
-  "heartbeatAt": "2026-11-11T08:42:41.691Z",
-  "expiresAt": "2026-11-11T09:27:41.691Z",
+  "heartbeatAt": "2026-11-11T09:04:08.550Z",
+  "expiresAt": "2026-11-11T09:49:08.550Z",
   "branch": "work/push-roof-g4-20261111",
   "predecessor": {
     "leaseId": "e3c97957-956b-46e8-ae67-346007b092b6",
@@ -36,8 +36,8 @@
   },
   "pr": 1478,
   "checkpoint": {
-    "evidence": "PR1478 head7efc579063dbd60dead1384dc6f3a52252abcb81 tree9913f7fd restores1472 plus1476; local control164,HAD59,integrity and exact receipts pass; independent parity review passes.",
-    "next": "Inspect exact-head CI then fresh canonical preflight; merge adverse result; release roof and dispatch STR-FLOOR-PORTAL.",
-    "blocker": "Full exact-head CI pending; no physical roof or structural pass."
+    "evidence": "PR1478 ready for review at7efc579063dbd60dead1384dc6f3a52252abcb81, exact tree9913f7fda942ab965b1efcb7ca7a88a3424baa87;164 control and59 HAD tests, integrity, receipt checks and independent physical/source parity passed. Exact-head CI42989137680 still running repository health.",
+    "next": "Require all exact-head CI checks, then fresh canonical merge-check and expected-head merge; verify main, release roof as handoff, reopen STR1103 and dispatch STR-FLOOR-PORTAL after coordinated inlet registration.",
+    "blocker": "Full CI pending; physical roof gate remains failed at all16 continuous floor/jamb intersections."
   }
 }
