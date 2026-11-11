@@ -9,8 +9,8 @@
     "label": "floor-portal-resume-20261111"
   },
   "claimedAt": "2026-11-11T13:06:46.946Z",
-  "heartbeatAt": "2026-11-11T13:06:46.946Z",
-  "expiresAt": "2026-11-11T13:51:46.946Z",
+  "heartbeatAt": "2026-11-11T13:19:53.746Z",
+  "expiresAt": "2026-11-11T14:04:53.746Z",
   "branch": "work/str-floor-portal-resume-20261111",
   "predecessor": {
     "leaseId": "f7d5b2b7-66ee-44c2-b644-8db75a918ed1",
@@ -31,5 +31,10 @@
       "evidence": "PR1480 d56162a3: exact finite cage and roof solid-clash receipt",
       "next": "Build coupled load and stiffness response; complete cap and52-head accounts"
     }
+  },
+  "pr": 1482,
+  "checkpoint": {
+    "evidence": "PR1482 65b79a7a: rejected transition preserved; frame, plate and enriched roof component controls pass",
+    "next": "Assemble source-bound floor, portals and ground; resolve straight widened jambs and all52 reactions"
   }
 }
