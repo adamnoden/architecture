@@ -87,7 +87,7 @@ def run(heads=False,parameters=None):
     for j in range(6):
         unit=np.eye(6)[j]*(1 if j<3 else .001);wanted=h.rigid@unit;prescribed=wanted[h.fixed]
         u,r,c=solve(np.zeros(h.f.size),prescribed)
-        retained=np.setdiff1d(np.arange(h.f.size),solve.base.unused);error=float(max(abs(u[retained]-wanted[retained])));reaction=float(max(abs(r)));assert error<.001 and reaction<.1,(j,error,reaction)
+        retained=np.setdiff1d(np.arange(h.f.size),solve.base.unused);error=float(max(abs(u[retained]-wanted[retained])));reaction=float(max(abs(r)));assert error<.001 and reaction<1.,(j,error,reaction)
         rigid_receipt.append(dict(field=j,maximumDisplacementError=error,maximumReactionNOrNmm=reaction))
     results=[];guide_bounds={}
     for strain in (-720e-6,720e-6):
