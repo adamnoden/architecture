@@ -51,9 +51,9 @@ class Case:
         for j in self.h.jambs:
             if inside(pt,j['rect'],1e-7):self.node(j['joint'],point,force,moment,tag);return
         for L in self.h.Ls:
-            if any(inside(pt,r,1e-7) for r in L['foot']):self.node(L['joint'],point,force,moment,tag);return
+            if any(inside(pt,r,1e-7) for r in L['foot']+L['haunches']):self.node(L['joint'],point,force,moment,tag);return
         for c in self.h.collectors:
-            if inside(pt,c['rect'],1e-7):
+            if any(inside(pt,r,1e-7) for r in c['rectangles']):
                 self.member([e for e in self.h.members['collector'] if e['name']==c['kind']+'-collector' and abs(local(c['face'],e['a'][:2])[1]-c['q'])<1e-5],point,force,moment,tag);return
         for tr in self.h.trimmers:
             if inside(pt,tr['rect'],1e-7):self.member([e for e in self.h.members['trimmer'] if e['name']=='trimmer-'+tr['name']],point,force,moment,tag);return
