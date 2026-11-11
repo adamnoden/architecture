@@ -51,6 +51,9 @@ jobs:
       - name: Check finite roof-guide travel and reinforcement clearance
         run: python project/str/studies/floor_portal_guide_fit.py
 
+      - name: Replay affected rooms, wardrobes and retained service axes
+        run: python project/str/studies/floor_portal_room_replay.py --output /tmp/floor-portal-room-replay.json
+
       - name: Reproduce connected assembly and all-head equilibrium controls
         run: python project/str/studies/floor_portal_coupled.py --check --output /tmp/floor-portal-coupled.json
 
