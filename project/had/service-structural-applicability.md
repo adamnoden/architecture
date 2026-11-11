@@ -43,13 +43,13 @@ This review found no new numerical disproof of the six-extract/cooker architectu
 
 `deriveCurrentHouse()` records seventeen JSON inputs. Its structural inputs are `reconciled-house-interface`, `current-house-arch-movement` and `house-corner-rewind`; it does **not** directly consume `current-house-floor-stops` or `current-house-membrane`. A floor-topology correction cannot be admitted merely because unchanged services tests still pass or those three input identities remain unchanged.
 
-The export already says `structurallyAdopted: false` and `qualifiedPhysical: false`. Its `architecturalServiceSelected: true` retains the bounded service choice. **`model.currentAdoptionBlockers = []` is not clearance of STR-FLOOR-PORTAL or evidence of coherent whole-house structural acceptance.** The canonical structural dependency and this applicability hold govern that interpretation.
+The export says `structurallyAdopted: false` and `qualifiedPhysical: false`. Its `architecturalServiceSelected: true` retains the bounded service choice. The inspected `97b2920` source had `model.currentAdoptionBlockers = []`; that was never clearance of STR-FLOOR-PORTAL. PR #1476 subsequently records the incoming-water route and upstream-isolation blocker explicitly. Neither that water correction nor unchanged static service geometry supplies the missing structural connection. The canonical structural dependency and this applicability hold remain in force.
 
 After the actual correction, reconcile the three consumed structural records with the chosen physical system, regenerate the current service schedule/drawings, and replay the affected current-house and OAS interface checks. Preserve the historical receipts at their original inputs. This note changes no numeric geometry, source selection, BCR/MRA scope or test framework.
 
-## Exact source identities
+## Historical inspected source identities
 
-SHA256 values identify the inspected bytes. The complete seventeen-input Git-blob map is retained in `current-house-services.json.sources`; it includes the room, plant, water and thermal inputs used by the compositor.
+SHA256 values identify the bytes inspected at `97b2920999d250d976702f39bf46cdd11760b716`; this table is retained as that historical observation. The complete seventeen-input Git-blob map is retained in `current-house-services.json.sources`; it includes the room, plant, water and thermal inputs used by the compositor.
 
 | Source location | SHA256 |
 |---|---|
@@ -67,3 +67,15 @@ SHA256 values identify the inspected bytes. The complete seventeen-input Git-blo
 | [current-house-membrane.py](../str/studies/current-house-membrane.py) | `1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e` |
 | [current-house-arch-movement.json](../str/studies/current-house-arch-movement.json) | `dd585adfcb76aa45f14b70f8c230a4a53f8a1cc956152ef777fee9b2628c8443` |
 | [house-corner-rewind.json](../str/studies/house-corner-rewind.json) | `0a927d781097f01693195bae56712204abd8d5c6d7335a56038d3ea3d26007a1` |
+
+## Joined current-source observation — 11 November
+
+The join of the published `f7942830` roof checkpoint and main `b0f3ffd5` retains PR #1476's two internal-water duty corrections and its inlet adoption blocker. It does not adopt a replacement inlet or alter the static service results recorded above. The water investigation guards the original physical boundary while normalising exactly the recorded roof-source identity changes.
+
+| Current source | SHA256 |
+|---|---|
+| `project/had/studies/current-house.mjs` | `d4aaa78821f1fea4da3412a3d780fe3f30b2f852e76bb29abcc744e0e41443dd` |
+| `project/had/studies/selected-water-duties.mjs` | `833347613d0c80d870b21632b069ee63a2f2be183428828d6d903a65561d5c00` |
+| `project/had/studies/current-house-services.json` | `fa820740d3c6b55917715945b158bc4ad1005ab80306fb3165b59c0136d31a84` |
+
+The historical fourteen-entry table is not overwritten. Its former empty blocker list and producer identity must not be read as the current source. After STR-FLOOR-PORTAL, replay the affected geometry, supports and movement against the adopted successor; these metadata reconciliations earn no structural pass.

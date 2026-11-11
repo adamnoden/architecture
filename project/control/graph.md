@@ -20,7 +20,6 @@ flowchart LR
   subgraph g_BCR["BCR"]
     direction TB
     n_BCR_CONVERGENCE["BCR-CONVERGENCE<br/>Substantive construction-resolution convergence<br/><b>BLOCKED</b>"]
-    n_BCR_BAY_INTERFACES["BCR-BAY-INTERFACES<br/>Test current front-study bay interfaces and occupied renewal actions<br/><b>READY</b>"]
     n_BCR_BAY_DESIGN["BCR-BAY-DESIGN<br/>Resolve the selected bay as a coordinated design study<br/><b>BLOCKED</b>"]
   end
   subgraph g_HRS["HRS"]
@@ -47,7 +46,6 @@ flowchart LR
   subgraph g_MRA["MRA"]
     direction TB
     n_MRA_01["MRA-01<br/>External water and ground-envelope assault<br/><b>BLOCKED</b>"]
-    n_MRA_INTERNAL_LEAKS["MRA-INTERNAL-LEAKS<br/>Trace selected internal-water failures, isolation and repair consequences<br/><b>READY</b>"]
     n_MRA_02["MRA-02<br/>Internal water and wet-zone assault<br/><b>BLOCKED</b>"]
     n_MRA_03["MRA-03<br/>Vapour, condensation and drying assault<br/><b>BLOCKED</b>"]
     n_MRA_04["MRA-04<br/>Whole-house moisture failure matrix and adversarial gate<br/><b>BLOCKED</b>"]
@@ -111,7 +109,6 @@ flowchart LR
   n_ROF_RWT_GATE --> n_RWT_08
   n_ROF_RWT_GATE --> n_MAT_COORDINATION
   n_TRIAD_GATE --> n_MRA_01
-  n_MRA_INTERNAL_LEAKS --> n_MRA_02
   n_TRIAD_GATE --> n_MRA_02
   n_TRIAD_GATE --> n_MRA_03
   n_MRA_01 --> n_MRA_04
@@ -124,7 +121,6 @@ flowchart LR
   n_EDA_RENEWED --> n_PUB_02_FINAL
   n_HRS_SYNTHESIS --> n_PLT_FINAL_PREP
   n_PLT_FINAL_PREP --> n_PLT_PRINT_REVIEW
-  n_BCR_BAY_INTERFACES --> n_BCR_BAY_DESIGN
   n_TRIAD_GATE --> n_BCR_BAY_DESIGN
   n_HRS_TECHNICAL --> n_ADE_MODEL
   n_ADE_MODEL --> n_ADE_DETAILS
@@ -179,7 +175,6 @@ flowchart LR
   class n_STR_FLOOR_PORTAL ready;
   class n_MAT_COORDINATION blocked;
   class n_MRA_01 blocked;
-  class n_MRA_INTERNAL_LEAKS ready;
   class n_MRA_02 blocked;
   class n_MRA_03 blocked;
   class n_MRA_04 blocked;
@@ -189,7 +184,6 @@ flowchart LR
   class n_PUB_02_FINAL blocked;
   class n_PLT_FINAL_PREP blocked;
   class n_PLT_PRINT_REVIEW blocked;
-  class n_BCR_BAY_INTERFACES ready;
   class n_BCR_BAY_DESIGN blocked;
   class n_ADE_MODEL blocked;
   class n_ADE_DETAILS blocked;
@@ -320,7 +314,7 @@ flowchart LR
     n_BCR_PROPORTIONALITY["BCR-PROPORTIONALITY<br/>Current-house conventional comparator and burden appraisal<br/><b>DONE</b>"]
     n_BCR_PREFLIGHT["BCR-PREFLIGHT<br/>Reconcile early feasibility findings into selection constraints<br/><b>DONE</b>"]
     n_BCR_BAY_BRIEF["BCR-BAY-BRIEF<br/>Select one consequential construction bay and its proof obligations<br/><b>DONE</b>"]
-    n_BCR_BAY_INTERFACES["BCR-BAY-INTERFACES<br/>Test current front-study bay interfaces and occupied renewal actions<br/><b>READY</b>"]
+    n_BCR_BAY_INTERFACES["BCR-BAY-INTERFACES<br/>Test current front-study bay interfaces and occupied renewal actions<br/><b>DONE</b>"]
     n_BCR_BAY_DESIGN["BCR-BAY-DESIGN<br/>Resolve the selected bay as a coordinated design study<br/><b>BLOCKED</b>"]
   end
   subgraph g_HRS["HRS"]
@@ -377,7 +371,7 @@ flowchart LR
     direction TB
     n_MRA_00["MRA-00<br/>Moisture constitution, inventory and threat model<br/><b>DONE</b>"]
     n_MRA_01["MRA-01<br/>External water and ground-envelope assault<br/><b>BLOCKED</b>"]
-    n_MRA_INTERNAL_LEAKS["MRA-INTERNAL-LEAKS<br/>Trace selected internal-water failures, isolation and repair consequences<br/><b>READY</b>"]
+    n_MRA_INTERNAL_LEAKS["MRA-INTERNAL-LEAKS<br/>Trace selected internal-water failures, isolation and repair consequences<br/><b>DONE</b>"]
     n_MRA_02["MRA-02<br/>Internal water and wet-zone assault<br/><b>BLOCKED</b>"]
     n_MRA_03["MRA-03<br/>Vapour, condensation and drying assault<br/><b>BLOCKED</b>"]
     n_MRA_04["MRA-04<br/>Whole-house moisture failure matrix and adversarial gate<br/><b>BLOCKED</b>"]
@@ -637,6 +631,7 @@ flowchart LR
   n_ROF_07 --> n_ROF_RWT_GATE
   n_RWT_07 --> n_ROF_RWT_GATE
   n_HAD_03 --> n_ROF_RWT_GATE
+  n_HAD_SERVICES_ADOPTION --> n_ROF_RWT_GATE
   n_OAS_03 --> n_ROF_RWT_GATE
   n_OAS_DETAIL --> n_ROF_RWT_GATE
   n_STR_RECONCILE --> n_ROF_RWT_GATE
@@ -895,7 +890,7 @@ flowchart LR
   class n_MAT_COORDINATION blocked;
   class n_MRA_00 done;
   class n_MRA_01 blocked;
-  class n_MRA_INTERNAL_LEAKS ready;
+  class n_MRA_INTERNAL_LEAKS done;
   class n_MRA_02 blocked;
   class n_MRA_03 blocked;
   class n_MRA_04 blocked;
@@ -914,7 +909,7 @@ flowchart LR
   class n_DEL_ISSUE_PROFILES done;
   class n_ADE_DELIVERY_AUDIT done;
   class n_BCR_BAY_BRIEF done;
-  class n_BCR_BAY_INTERFACES ready;
+  class n_BCR_BAY_INTERFACES done;
   class n_BCR_BAY_DESIGN blocked;
   class n_ADE_SECTION_VIEW done;
   class n_ADE_SECTION_PARITY done;

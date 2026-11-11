@@ -1,0 +1,516 @@
+{
+  "scope": "BCR-BAY-INTERFACES; SAP-C1 local comparison, not house or apparatus adoption",
+  "sourceGitBlobs": {
+    "project/had/studies/water-replan.json": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+    "project/mat/studies/study-coupled-window.json": "00184ad7c13d39b38a1ac95a82fa462a8d13eea7",
+    "project/mat/studies/study-coupled-window.py": "f2b7c67f565dcc1b79ad7818166bb733635b0386",
+    "project/str/studies/house-corner-rewind.json": "6471d89c213724ec02a26d797c85185beadb25b5",
+    "project/str/studies/reconciled-house-interface.json": "4d3080dc4540ce7218b86f1d27518fbeb1f8e85d",
+    "project/had/studies/current-house.mjs": "58bf1a6248af8268de70d838cce23f249ce30b91",
+    "project/had/studies/inlet-maintenance.mjs": "dee26cb502cfc34f2d3882551e2cfd60488d1bbb",
+    "project/ias/studies/study-door-reveal.json": "58afaada3083a21bf103fe3a658db31807a75e26",
+    "project/ias/studies/study-door-reveal.py": "2c94d9611156fa0e548b384c8431c9620a426a07"
+  },
+  "currentHouseInputBlobs": {
+    "project/had/studies/water-replan.json": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+    "project/mat/studies/whole-house-service-baseline.json": "049161ebac29b24e0acc7d8085302fca906fe9d2",
+    "project/mat/studies/service-material-offer.json": "e5686440fa6a3f68387576883b1e0c768e0596bb",
+    "project/mat/studies/tempered-kitchen-air.json": "b18044acaec99caf00eab9a542fff78e510857c9",
+    "project/mat/studies/local-extract-heat-and-store.json": "550709d0e0ca0acff81cb42e502640771f4ac2d0",
+    "project/had/studies/receiver-selection.json": "2def3f7221d55b180cd46392a227b8c56972d03f",
+    "project/mat/studies/whole-house-leakage-duty.json": "5b93cdd9ea1ee7d825fa4596a44caf06431afc49",
+    "project/mat/studies/loggia-soffit.json": "c9c914169547bd42b90cd69512ba1a28d97ca6fe",
+    "project/mat/studies/joined-cooker-system.json": "d04dd78ba3fd040c7abd1aecb94aa9a3ce95d5e0",
+    "project/ias/studies/shared-family-bathing.json": "f89302f9d87708b5314bd68a768c976efcd07b8d",
+    "project/ias/studies/household-water.json": "30c96e79dd3a35c96bb30e355b668c9a710a4060",
+    "project/ias/studies/fitted-wc-schedule.json": "5e20c73409b5406a2de9d7ee7e5853e9302189c8",
+    "project/ias/studies/utility-first-release.json": "be84a64623c8042a002af108a784b8668acd7542",
+    "project/ias/studies/utility-host-revised-route.json": "69e6b0aa5e1847f09c7ac3da3b98eec9bf1d5c0b",
+    "project/str/studies/reconciled-house-interface.json": "4d3080dc4540ce7218b86f1d27518fbeb1f8e85d",
+    "project/str/studies/current-house-arch-movement.json": "05db94a987c7bf45b885c6d02f701b31bcf91740",
+    "project/str/studies/house-corner-rewind.json": "6471d89c213724ec02a26d797c85185beadb25b5"
+  },
+  "composedRoomGeometrySha256": "7f99e1103e552f4068b06f659f26c09686629d107faa985ebd4201efd1dc5dc1",
+  "sourceReceipt": "Selected current-house.mjs is executed read-only; its historical water input is not substituted for the composed house.",
+  "inventory": {
+    "groundFurniture": 41,
+    "groundFixed": 3,
+    "wallRecords": 22,
+    "allCurrentGroundServiceSolidsIncluded": true,
+    "replacedHistoricalInventoryNames": [
+      "pantry-shelf-comparison",
+      "plant-primary-buffer-round-bounding600",
+      "service-emitter-kitchen-E"
+    ],
+    "additionalConservativeProjections": [
+      "Elevated services",
+      "Study installed inlet and complete renewal carrier"
+    ],
+    "groundEntranceVoidExcludedBecauseItIsFirstFloor": true
+  },
+  "basis": {
+    "opening": {
+      "level": "GROUND",
+      "side": "outer-south",
+      "id": "south-window-0",
+      "old": 1800,
+      "new": 2100,
+      "sill": 750,
+      "head": 2850
+    },
+    "roomFace": 429.5,
+    "dryFinish": 27,
+    "jambAxes": [
+      1497.5,
+      2702.5
+    ],
+    "jambAlongNormal": [
+      205,
+      180
+    ],
+    "groundFloorRC": {
+      "top": -180,
+      "bottom": -380
+    },
+    "firstFloorRC": {
+      "top": 3370,
+      "bottom": 3170
+    },
+    "groundAboveRC": 180,
+    "firstAboveRC": 80,
+    "firstBelowRCToCeiling": 70,
+    "trialFrameQ": [
+      220,
+      348
+    ],
+    "portalCoreQ": [
+      222.5,
+      402.5
+    ],
+    "ordinaryCoreQ": [
+      262.5,
+      402.5
+    ],
+    "frameDepthCoincidenceOrdinaryPortal": [
+      85.5,
+      125.5
+    ],
+    "portalGlassAndCavity": [
+      70,
+      50
+    ],
+    "roughOpeningMovementAndFaceDeparture": [
+      1.2914,
+      1.427
+    ],
+    "old970FrameAgainst946FinishedWidthInterferenceEach": 12,
+    "oldRectangular2835HeadAboveRawArchAt485": 258.6033439681223
+  },
+  "rejectedParkedState": {
+    "desk": [
+      655,
+      1300,
+      1600,
+      700
+    ],
+    "chair": [
+      2325,
+      1470,
+      900,
+      1000
+    ],
+    "SAPPlatform": [
+      1500,
+      465,
+      1200,
+      700
+    ],
+    "crossSectionY": 1600,
+    "unexpandedGaps": [
+      25.5,
+      70,
+      60
+    ],
+    "bodyDiameter": 600,
+    "expandedBlockedIntervals": [
+      [
+        447.5,
+        929.5
+      ],
+      [
+        355,
+        2555
+      ],
+      [
+        2025,
+        3525
+      ],
+      [
+        2985,
+        3285
+      ]
+    ],
+    "continuousCrossing": "impossible in this fixed parked state",
+    "limit": "Does not rule out every alternative staged protocol or an actual smaller chair."
+  },
+  "candidate": {
+    "chairPark": [
+      900,
+      2050,
+      1000,
+      900
+    ],
+    "deskPark": [
+      655,
+      1300,
+      1600,
+      700
+    ],
+    "platformRectangle": [
+      1350,
+      475,
+      1200,
+      700
+    ],
+    "chairApproach": {
+      "points": [
+        [
+          2275,
+          2800
+        ],
+        [
+          2300,
+          1850
+        ]
+      ],
+      "radius": 300,
+      "minimumClearance": 32.5,
+      "limitingObstacle": "wall:study-L-north:1",
+      "segment": 0
+    },
+    "chairTranslation": {
+      "start": [
+        900,
+        1400,
+        1000,
+        900
+      ],
+      "end": [
+        900,
+        2050,
+        1000,
+        900
+      ],
+      "exactSweptRectangle": [
+        900,
+        1400,
+        1000,
+        1550
+      ],
+      "minimumItemClearance": 100.0,
+      "itemLimit": "desk",
+      "body": {
+        "points": [
+          [
+            2300,
+            1850
+          ],
+          [
+            2300,
+            2500
+          ]
+        ],
+        "radius": 300,
+        "minimumClearance": 129.5419071522591,
+        "limitingObstacle": "wall:study-L-return:0",
+        "segment": 0
+      },
+      "bodyToMovingItem": 100.0,
+      "forearmSweep": [
+        1945,
+        1850,
+        355,
+        650
+      ],
+      "forearmRadius": 40,
+      "minimumForearmClearance": 389.5419071522591,
+      "forearmLimit": "wall:study-L-return:0",
+      "forearmToMovingItem": 5,
+      "prospectiveHandContactReach": 400
+    },
+    "deskApproach": {
+      "points": [
+        [
+          2300,
+          2500
+        ],
+        [
+          2300,
+          2200
+        ],
+        [
+          2600,
+          2200
+        ],
+        [
+          2600,
+          1150
+        ]
+      ],
+      "radius": 300,
+      "minimumClearance": 45.0,
+      "limitingObstacle": "desk",
+      "segment": 2
+    },
+    "rejectedStraightConnector": {
+      "points": [
+        [
+          2300,
+          2500
+        ],
+        [
+          2600,
+          950
+        ]
+      ],
+      "radius": 300,
+      "minimumClearance": -49.95000499900024,
+      "limitingObstacle": "study-inlet-carrier",
+      "segment": 0
+    },
+    "deskTranslation": {
+      "start": [
+        655,
+        600,
+        1600,
+        700
+      ],
+      "end": [
+        655,
+        1300,
+        1600,
+        700
+      ],
+      "exactSweptRectangle": [
+        655,
+        600,
+        1600,
+        1400
+      ],
+      "minimumItemClearance": 25.5,
+      "itemLimit": "service-emitter-study-W",
+      "body": {
+        "points": [
+          [
+            2600,
+            1150
+          ],
+          [
+            2600,
+            1850
+          ]
+        ],
+        "radius": 300,
+        "minimumClearance": 50.035712463742755,
+        "limitingObstacle": "study-inlet-carrier",
+        "segment": 0
+      },
+      "bodyToMovingItem": 45.0,
+      "forearmSweep": [
+        2300,
+        1150,
+        300,
+        700
+      ],
+      "forearmRadius": 40,
+      "minimumForearmClearance": 310.03571246374275,
+      "forearmLimit": "study-inlet-carrier",
+      "forearmToMovingItem": 5,
+      "prospectiveHandContactReach": 345
+    },
+    "platformApronRoute": {
+      "points": [
+        [
+          2600,
+          1850
+        ],
+        [
+          2917.5,
+          1850
+        ],
+        [
+          2917.5,
+          1225
+        ]
+      ],
+      "radius": 300,
+      "minimumClearance": 25.0,
+      "limitingObstacle": "study-inlet-carrier",
+      "segment": 1
+    },
+    "joinedDoorToApronRoute": {
+      "points": [
+        [
+          2275,
+          2800
+        ],
+        [
+          2300,
+          2350
+        ],
+        [
+          2600,
+          2200
+        ],
+        [
+          2600,
+          1850
+        ],
+        [
+          2917.5,
+          1850
+        ],
+        [
+          2917.5,
+          1225
+        ]
+      ],
+      "radius": 300,
+      "minimumClearance": 25.0,
+      "limitingObstacle": "study-inlet-carrier",
+      "segment": 4
+    },
+    "platformStaticClearance": 27.5,
+    "platformLimit": "outer-S",
+    "eastLane": 735,
+    "eastLaneBodySideReserve": 67.5,
+    "returnSequence": [
+      "Leave apparatus to east apron; keep bay supported and weather-secure.",
+      "Remove all apparatus by a separately qualified method before furniture restoration.",
+      "Reverse apron route, desk translation and the kinked connector.",
+      "Reverse chair translation and initial approach; original furniture is restored.",
+      "Only then reverse the existing source door close/open sequence."
+    ],
+    "reverseItemSweepsEqual": true,
+    "headDistanceBudgetsOnly": [
+      {
+        "prospectiveShoulder": [
+          1875,
+          800,
+          2500
+        ],
+        "moduleCentreX": 1897.0,
+        "roomSideGripFieldYZ": [
+          348,
+          2449,
+          2775
+        ],
+        "maximumCornerDistance": 568.8672955971366,
+        "bodyToRectangleBoundary": 25
+      },
+      {
+        "prospectiveShoulder": [
+          2225,
+          800,
+          2500
+        ],
+        "moduleCentreX": 2303.0,
+        "roomSideGripFieldYZ": [
+          348,
+          2449,
+          2775
+        ],
+        "maximumCornerDistance": 591.7381177514255,
+        "bodyToRectangleBoundary": 25
+      }
+    ],
+    "condition": "Entire actual apparatus, deployed entry/guards/feet and usable deck must fit and connect from the north-east apron; this rectangle is not a supplied kit."
+  },
+  "selectedInletJoin": {
+    "point": [
+      3045,
+      0,
+      2100
+    ],
+    "installedPlanBound": [
+      2845,
+      429.5,
+      400,
+      178.5
+    ],
+    "chargedCarrier": [
+      2845,
+      675,
+      400,
+      225
+    ],
+    "oldApron": [
+      2917.5,
+      815
+    ],
+    "collisionWitnessXYZ": [
+      3045,
+      590,
+      1950
+    ],
+    "collisionWith": "Installed 347 mm cartridge and 600 mm diameter, 2000 mm high standing body",
+    "newApron": [
+      2917.5,
+      1225
+    ],
+    "carrierClearance": 25,
+    "condition": "No simultaneous inlet extraction. Keep its installed boundary and carrier territory outside the bay apparatus."
+  },
+  "doorJoin": {
+    "currentCentredClosedProxy": [
+      1385,
+      3225.5,
+      830,
+      44
+    ],
+    "IASFacePivotClosedTrial": [
+      1385,
+      3247.5,
+      830,
+      44
+    ],
+    "conservativeClosedUnion": [
+      1385,
+      3225.5,
+      830,
+      66.0
+    ],
+    "IASTrialUsesSameBodyKnots": true,
+    "IASTrialGripOffsetsFromAxis": [
+      62.0,
+      -106.0
+    ],
+    "IASTrialContinuousBodyArmMargins": [
+      3.054397267687385,
+      2.020867814974899
+    ],
+    "limit": "Floor-space check begins at the common closed-body endpoint; door operation/adoption retains its owning evidence and unresolved complete doorset."
+  },
+  "retainedReleaseLimits": {
+    "headDraw": 250,
+    "headFarFaceBeyondLining": 40.5,
+    "headPocketAfterTwo2": 2,
+    "weatherLatticeAfterTwo2": [
+      7.0,
+      7.0
+    ],
+    "movingFrameSideTopBottom": [
+      21.0,
+      18.0
+    ],
+    "glassOnlyMovingMassKg": 24.12856
+  },
+  "unearned": [
+    "Actual furniture grasp, weight, cable release and moving force; the chair is a full source reservation.",
+    "Actual apparatus ingress, erection, working deck, gate/step/rail geometry, floor/finish point loads and extraction.",
+    "Supported head/sash release, two-handed tool/grip paths, lowering and transfer to a protected bench.",
+    "Whole frame/guard exchange and protected external access over the stepped front approach.",
+    "Exact sill/head/jamb air, water, insulation, materials, fixing/tolerance and structural movement compatibility.",
+    "Blind/curtain/lamp, room-projecting sill/handle and other unselected furnishing geometry, physical operation and construction acceptance."
+  ]
+}

@@ -31,14 +31,48 @@ both ROF-RWT-GATE and TRIAD-GATE. The owning STR handoff and shared contract
 withdraw SAP-C1's current coherent-structure claim. The dated STR study,
 selected service system and independent courtyard/drainage investigations
 retain their bounded completion records. Their affected structural
-applicability must be reconciled by the correction. The new BCR and MRA
-independent studies remain available; their final integration gates stay held
-by the actual structural and roof prerequisites.
+applicability must be reconciled by the correction. The BCR and MRA independent
+investigations were completed in PR #1476; their final integration gates stay
+held by the actual structural and roof prerequisites. The incoming-water
+route's newly recorded rejection and upstream isolation duty remain explicit.
 
 The [services applicability audit](../had/service-structural-applicability.md)
 identifies the exact aperture, support, movement and occupied-fit checks to
 repeat. It retains the independent service decisions and static measurements
 at their recorded geometry, including explicit adverse bypass/radiator controls.
+
+## Recovery of the interrupted main integration — 11 November
+
+The published `f7942830ae24ef1d308f01e71a4f87f306f37ab0` roof checkpoint is
+joined with main `b0f3ffd5363bbedb1c295ee1041c15cbfb5e5de5`, retaining both
+completed investigations from PR #1476. The three service holds are independent:
+floor/portal structural applicability; inlet, upstream isolation and contained
+drainage; and first wetting, residual release, overflow and drying. None is
+removed by this source reconciliation.
+
+The MRA source-identity repair is recovered from
+`fb7effbf26824164173439b054a16bfd0394132f`. It retains the original `a060138`
+observation, checks the full current service schedule, and normalises exactly
+three recorded house-input identities and two embedded receiver identities.
+Unlisted provenance or physical changes still fail. BCR's source receipt is
+rebound without changing its geometry or drawing; its historical support and
+movement assumptions explicitly await the structural correction.
+
+The roof gate now directly depends on HAD-SERVICES-ADOPTION because the
+high-level goods consume its selected weather faces. This prevents a later
+services reopening from leaving the roof erroneously eligible. The floor/portal
+graph audit remains a dated snapshot; current projections derive from the
+canonical node sources. This recovery adds no successor structural design and
+does not complete the roof gate.
+
+The restored join passes TypeScript, all 164 project-control tests, all 59 HAD
+tests, repository integrity and exact BCR/MRA/floor-portal receipt checks.
+Independent comparison retains every BCR geometry/numerical field and SVG byte,
+and every MRA physical/numerical field; only their declared source identities
+and reconciliation metadata change. The canonical local full-health command
+stops at the environment's denied `tsx` IPC socket after its control checks.
+The successor PR must therefore pass full exact-head CI and fresh canonical
+publication preflight before integration; no validation is waived.
 
 ## Additional conditional evidence
 
