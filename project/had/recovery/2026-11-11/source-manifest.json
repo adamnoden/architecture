@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "status": "RECOVERY_ONLY_NOT_INTEGRATED",
+  "recordedAt": "2026-11-11",
+  "publishedDesignHead": "ac7e4b61c1d9116e987e2f570c2684d3ef588311",
+  "privateOriginalSources": [
+    {
+      "original": "inlet-native/bridge-native-handoff.md",
+      "sha": "3b7ed90c533c09b8d5ed02d48d00050d42062bef",
+      "recoveredPath": "project/had/recovery/2026-11-11/bridge-native-handoff.md",
+      "byteIdentical": true
+    },
+    {
+      "original": "inlet-native/post-stiffness.py",
+      "sha": "e609286156d0e8e0313f57b5384249b25cdde332",
+      "recoveredPath": "project/had/recovery/2026-11-11/post-stiffness.py.txt",
+      "byteIdentical": true
+    },
+    {
+      "original": "inlet-native/bridge-native-motion.mjs",
+      "sha": "efc8a5a90649c485ea26203a4092e7510110226a",
+      "recoveredPath": "project/had/recovery/2026-11-11/bridge-native-motion.mjs.txt",
+      "byteIdentical": true
+    },
+    {
+      "original": "inlet-native/bridge-native.mjs",
+      "sha": "f096460578d9fcb22d5fb73e1894ce49abf8a7aa",
+      "recoveredPath": null,
+      "byteIdentical": null
+    },
+    {
+      "original": "inlet-review/bridge-support-shifted.mjs",
+      "sha": "a8a26cf7fa52c818bc82233154631abd008c475e",
+      "recoveredPath": null,
+      "byteIdentical": null
+    }
+  ],
+  "boundary": "The exact recovered files retain private imports and output behaviour. They are inert recovery text, not imported by current studies. Other listed SHA identities do not establish source availability or current integration. Published design assertions and selected-house geometry remain unchanged.",
+  "comments": {
+    "bridgeReconstruction": "https://github.com/adamnoden/architecture/pull/1484#issuecomment-6801428113",
+    "utilityCheckpoint": "https://github.com/adamnoden/architecture/pull/1484#issuecomment-6801454974",
+    "lowerTail": "https://github.com/adamnoden/architecture/pull/1484#issuecomment-6801465247"
+  }
+}
