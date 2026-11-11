@@ -17,7 +17,7 @@ from floor_portal_frame import offset
 
 class Case:
     def __init__(self,house,name):
-        self.h=house;self.name=name;self.f=np.zeros(house.f.size);self.origins=[];self.ends=defaultdict(lambda:np.zeros(12))
+        self.h=house;self.name=name;self.f=np.zeros(house.f.size);self.origins=[];self.ends=defaultdict(lambda:np.zeros(12));self.field_loads=defaultdict(list);self.native_eigen=defaultdict(lambda:np.zeros(12))
     def origin(self,tag,point,force,moment=(0.,0.,0.)):
         p=np.asarray(point);f=np.asarray(force);m=np.asarray(moment)
         self.origins.append((tag,p,f,m))
@@ -29,6 +29,11 @@ class Case:
     def beam(self,e,t,point,force,moment=(0.,0.,0.),tag=''):
         out=self.h.f.beam_load(self.f,e,t,force,moment,point)
         self.ends[e.get('load_key',id(e))]+=out;self.origin(tag,point,force,moment)
+        if 'load_key' in e:
+            from floor_portal_roof_fields import local_load
+            independent,load=local_load(e,t,force,moment,point)
+            assert np.max(abs(independent-out))<1e-6
+            self.field_loads[e['load_key']].append((float(t*e['L']),load))
     def member(self,elements,point,force,moment=(0.,0.,0.),tag=''):
         point=np.asarray(point)
         def distance(e):
@@ -81,6 +86,8 @@ class Case:
             out.f+=scale*case.f
             out.origins.extend((tag,p,scale*f,scale*m) for tag,p,f,m in case.origins)
             for k,v in case.ends.items():out.ends[k]+=scale*v
+            for k,loads in case.field_loads.items():out.field_loads[k].extend((x,scale*load) for x,load in loads)
+            for k,v in case.native_eigen.items():out.native_eigen[k]+=scale*v
         return out
 
 
@@ -322,8 +329,21 @@ def roof_load_type(h):
 
 
 def import_roof_load(h,load,name,scale=1.):
+    from floor_portal_roof_fields import elements,local_load
     case=Case(h,name);case.f[h.roof.mounted]=np.asarray(load.vector)[h.roof.keep]*scale
-    for row in load.placed:case.origin(row['tag'],row['source'],np.array([row['FxN'],row['FyN'],-row['downN']])*scale)
+    check=np.zeros_like(case.f);rings=[e for key,e in elements(h).items() if key[0]=='native ring']
+    for row in load.placed:
+        point=np.asarray(row['source']);force=np.array([row['FxN'],row['FyN'],-row['downN']])*scale;root=tuple(row['root'])
+        case.origin(row['tag'],point,force)
+        if root in h.roof.p['nodes']:
+            ids,t=h.roof.port(root,point);np.add.at(check,ids,t.T@np.r_[force,[0.,0.,0.]])
+            continue
+        candidates=[e for e in rings if np.linalg.norm(np.cross(np.r_[root,6600.]-e['a'],e['b']-e['a']))<1e-5 and np.dot(np.r_[root,6600.]-e['a'],np.r_[root,6600.]-e['b'])<1e-5]
+        assert len(candidates)==1,(root,len(candidates));e=candidates[0]
+        t=float(np.dot(np.r_[root,6600.]-e['a'],e['b']-e['a'])/e['L']**2)
+        local,physical=local_load(e,t,force,at=point);np.add.at(check,e['ids'],e['t'].T@local)
+        case.ends[e['load_key']]+=local;case.field_loads[e['load_key']].append((t*e['L'],physical))
+    assert np.max(abs(check-case.f))<1e-5,('Native source placement/local-field mismatch',name,np.max(abs(check-case.f)))
     case.totals();return case
 
 
