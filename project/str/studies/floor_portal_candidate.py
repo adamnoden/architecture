@@ -11,6 +11,7 @@ from floor_portal_house import Parameters
 
 
 SIX_L_KEYS=((200.,70.),(475.,70.),(725.,70.),(70.,200.),(70.,475.),(70.,725.))
+GUIDE_TRAVEL_RESERVE_MM=10.
 
 
 def leading_parameters():
@@ -81,5 +82,7 @@ def finalise_bounds(bounds,h):
         item=dict(row)
         item['maximumDirectionalForceKN']=item.pop('maximumDirectionalForceN')/1000
         item['elasticPlateRootScreenMPa']=root_stress_mpa(h,name,item['maximumDirectionalForceKN']*1000)
+        assert item['maximumReleasedTravelMM']<=GUIDE_TRAVEL_RESERVE_MM,(name,item['maximumReleasedTravelMM'],GUIDE_TRAVEL_RESERVE_MM)
+        item['declaredReleasedTravelReservePlusMinusMM']=GUIDE_TRAVEL_RESERVE_MM
         out[name]=item
     return out
