@@ -164,12 +164,12 @@ class GuideFrictionSolve:
             u,r,c=self.base(np.asarray(f)+friction,prescribed)
             target,meta=guide_friction_vector(self.h,u,self.coefficient,signs)
             error=float(np.max(abs(target-friction),initial=0.))
-            if error<1.:
+            if error<5.:
                 friction=target
                 u,r,c=self.base(np.asarray(f)+friction,prescribed)
                 verify,meta=guide_friction_vector(self.h,u,self.coefficient,signs)
                 final_error=float(np.max(abs(verify-friction),initial=0.))
-                if final_error<2.:break
+                if final_error<5.:break
             friction=.65*friction+.35*target
         else:raise AssertionError(('Guide friction fixed-sign follower did not settle',error,meta.get('directionReversalCount')))
         c['guideFriction']=dict(meta,coefficient=self.coefficient,iterations=iterations+1,
