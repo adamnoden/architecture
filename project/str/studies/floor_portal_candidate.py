@@ -16,7 +16,7 @@ SIX_L_KEYS=((200.,70.),(475.,70.),(725.,70.),(70.,200.),(70.,475.),(70.,725.))
 def leading_parameters():
     return Parameters(
         corner_width=250.,corner_haunch=120.,
-        cap_key_width=90.,cap_key_thickness=20.,cap_key_depth=60.,
+        cap_key_width=50.,cap_key_thickness=20.,cap_key_depth=60.,
         L_key_width=70.,L_key_thickness=20.,L_key_depth=60.,
         L_key_centres=SIX_L_KEYS,
         key_profile='triangular depth bearing',
