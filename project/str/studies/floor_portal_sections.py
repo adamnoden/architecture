@@ -81,14 +81,25 @@ def jamb_bars(z,centroid_q=312.5):
     return tuple((q+drift(move)-centroid_q,along,12.) for q,move in ((260.5,-10.),(364.5,50.)) for along in (-32.,32.))
 
 
-def floor_bars(kind='outer',width=160.):
+def s_offset(station,start,length,offset):
+    """Offset along two tangent circular arcs, including straight endpoints."""
+    if not offset:return 0.
+    t=float(np.clip(station-start,0.,length));r=(length**2+offset**2)/(4*abs(offset))
+    a=min(t,length-t);v=r-math.sqrt(max(0.,r*r-a*a))
+    return math.copysign(v if t<=length/2 else abs(offset)-v,offset)
+
+
+def floor_bars(kind='outer',width=160.,corner_station=None,ordinary_width=160.,corner_end=1430.):
     height,rows=(750.,3) if kind=='outer' else (650.,2);out=[]
+    steel_width=width
+    if kind=='outer' and corner_station is not None and width>ordinary_width:
+        steel_width-=2*s_offset(corner_station,corner_end-200.,200.,(width-ordinary_width)/2)
     for side in (-1.,1.):
         for row in range(rows):
             z=side*(height/2-61-75*row)
-            for q in (-width/2+51,width/2-51):out.append((q,z,16.))
+            for q in (-steel_width/2+51,steel_width/2-51):out.append((q,z,16.))
     for row in range(4):
-        for q in (-width/2+49,width/2-49):out.append((q,(row-1.5)*55,12.))
+        for q in (-steel_width/2+49,steel_width/2-49):out.append((q,(row-1.5)*55,12.))
     return tuple(out)
 
 
@@ -116,6 +127,10 @@ def controls():
     assert symmetry<.1
     x=utilisation(0.,4e6,3e6,180.,205.,bars,120);fine=utilisation(0.,4e6,3e6,180.,205.,bars,240)
     assert abs(x-fine)/fine<.005
-    return dict(blockPolygonMaximumAreaOrFirstMomentError=maximum,zeroAxialReflectionErrorNmm=symmetry,biaxial120=x,biaxial240=fine,steelOnlyTensionLimitKN=4*math.pi*12**2/4*FYD/1000)
+    assert floor_bars('outer',250.,1430.)==floor_bars('outer',160.)
+    assert floor_bars('outer',250.,1230.)==floor_bars('outer',250.)
+    for t in np.linspace(0,200,21):assert abs(s_offset(1230+t,1230,200,45)+s_offset(1430-t,1230,200,45)-45)<1e-10
+    return dict(blockPolygonMaximumAreaOrFirstMomentError=maximum,zeroAxialReflectionErrorNmm=symmetry,biaxial120=x,biaxial240=fine,steelOnlyTensionLimitKN=4*math.pi*12**2/4*FYD/1000,
+                squareCornerSteelTransition='Two tangent circular arcs R233.472222 mm;45 mm per bar plane over200 mm; exact old/new endpoints and reflection checked')
 
 if __name__=='__main__':print(json.dumps(controls(),indent=2))
