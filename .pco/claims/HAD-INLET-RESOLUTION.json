@@ -9,14 +9,14 @@
     "label": "inlet-resolution-20261111"
   },
   "claimedAt": "2026-11-11T08:41:03.413Z",
-  "heartbeatAt": "2026-11-11T09:27:26.688Z",
-  "expiresAt": "2026-11-11T10:12:26.688Z",
+  "heartbeatAt": "2026-11-11T09:32:57.706Z",
+  "expiresAt": "2026-11-11T10:17:57.706Z",
   "checkpoint": {
-    "evidence": "Registration #1479 exact merged-source head2263d49c2009fc013dfbdfa1bbc09f4e089a1c7f includes main3f4b6fb5;165 control tests pass; CI42992778063 running. Current utility and ordinary-plant entry counterexamples independently checked.",
-    "next": "Merge registration after exact-head CI and fresh preflight, then implement the bounded current-source inlet result.",
-    "blocker": "CI health pending; absent-main registration claim still deliberately fail-closes automatic dispatch."
+    "evidence": "Registration merged main003f61bacebd4cb3294280059b64f1bb5fc87f88 after exact-head CI and09:31:57 preflight; isolated implementation branch created from fresh main.",
+    "next": "Publish current-source inlet geometry, adverse controls, and complete bounded access/first-release result. Retain blockers until actual assembly earns adoption.",
+    "blocker": "Utility native head first breaks and tall cylinder bridge captured handling remain under independent review; no geometry adoption yet."
   },
-  "branch": "work/had-inlet-registration-20261111",
-  "note": "Explicit owner-directed bootstrap recorded before source mutation in issue1477. Unknown live node temporarily fail-closes automatic dispatch until registration merges; separate ROF lease unchanged.",
+  "branch": "work/had-inlet-resolution-20261111",
+  "note": "Registration #1479 merged at003f61ba. Continue same leased node on the substantive implementation branch; prior PR metadata identifies registration until the implementation PR is published.",
   "pr": 1479
 }
