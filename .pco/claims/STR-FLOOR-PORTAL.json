@@ -9,8 +9,8 @@
     "label": "issue-comment-6807640879"
   },
   "claimedAt": "2026-11-11T21:38:52.000Z",
-  "heartbeatAt": "2026-11-11T21:38:52.000Z",
-  "expiresAt": "2026-11-11T22:23:52.000Z",
+  "heartbeatAt": "2026-11-11T21:45:45.000Z",
+  "expiresAt": "2026-11-11T22:30:45.000Z",
   "branch": "work/mvb-chat-6807640879",
   "predecessor": {
     "leaseId": "e79941fb-4e0e-4c3a-8831-a0b182df35be",
@@ -31,5 +31,11 @@
       "evidence": "Exact c9e10a69 CI43046937078 passed; square250 corner four-case and free-head-rotation controls completed locally; no adoption.",
       "next": "Resolve native roof interior movement, actual signed contact demand and joint/corner sensitivity; checkpoint validated comparators."
     }
+  },
+  "pr": 1485,
+  "checkpoint": {
+    "evidence": "PR1485 head b8bd337c restores executable native roof-field/contact recovery, reconstructs square-corner/L-haunch geometry and binds it into stiffness, slab exclusion and physical mass/source replacement. A four-candidate CI sensitivity matrix is committed.",
+    "next": "Read exact-head CI/probe receipts; repair any source errors, reject or retain candidates from numerical evidence, then advance joint/key/hardware domains.",
+    "blocker": "Awaiting exact-head GitHub Actions execution for the reconstructed source; no candidate is adopted."
   }
 }
