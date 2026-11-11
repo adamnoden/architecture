@@ -54,8 +54,8 @@ jobs:
       - name: Reproduce connected assembly and all-head equilibrium controls
         run: python project/str/studies/floor_portal_coupled.py --check --output /tmp/floor-portal-coupled.json
 
-      - name: Exercise bounded 8 percent guide friction on signed quick domain
-        run: python project/str/studies/floor_portal_domain.py --candidate guided-t20 --guide-friction 0.08 --quick --output /tmp/floor-portal-friction-quick.json
+      - name: Exercise bounded 18 percent graphite-bronze guide friction on signed quick domain
+        run: python project/str/studies/floor_portal_domain.py --candidate guided-t20 --guide-friction 0.18 --quick --output /tmp/floor-portal-friction-quick.json
 
 
 
@@ -111,8 +111,8 @@ jobs:
       - name: Install pinned calculation dependencies
         run: python -m pip install --requirement project/str/studies/floor-portal-requirements.txt
 
-      - name: Solve all 579 cases with 8 percent guide-friction bound
-        run: python project/str/studies/floor_portal_domain.py --candidate guided-t20 --guide-friction 0.08 --output /tmp/floor-portal-friction-domain.json --matrix /tmp/floor-portal-friction-domain.npz
+      - name: Solve all 579 cases with 18 percent graphite-bronze guide-friction bound
+        run: python project/str/studies/floor_portal_domain.py --candidate guided-t20 --guide-friction 0.18 --output /tmp/floor-portal-friction-domain.json --matrix /tmp/floor-portal-friction-domain.npz
 
       - name: Screen friction-domain square-corner sections
         run: python project/str/studies/floor_portal_section_review.py /tmp/floor-portal-friction-domain.npz --output /tmp/floor-portal-friction-sections.json
@@ -141,8 +141,8 @@ jobs:
       - name: Install pinned calculation dependencies
         run: python -m pip install --requirement project/str/studies/floor-portal-requirements.txt
 
-      - name: Solve six strain comparisons and all 104 head motions with 8 percent guide friction
-        run: python project/str/studies/floor_portal_movements.py --candidate guided-t20 --guide-friction 0.08 --heads --output /tmp/floor-portal-friction-movements.json
+      - name: Solve six strain comparisons and all 104 head motions with 18 percent graphite-bronze guide friction
+        run: python project/str/studies/floor_portal_movements.py --candidate guided-t20 --guide-friction 0.18 --heads --output /tmp/floor-portal-friction-movements.json
 
   floor-portal-leading-movements:
     runs-on: ubuntu-latest
