@@ -8,10 +8,8 @@ import {inletEnvelopeWitness} from '../../had/studies/selected-water-duties.mjs'
 
 const root=new URL('../../../',import.meta.url);
 const read=path=>JSON.parse(readFileSync(new URL(path,root)));
-const gitBlob=path=>{
-  const b=readFileSync(new URL(path,root));
-  return createHash('sha1').update('blob '+b.length+'\0').update(b).digest('hex');
-};
+const gitBlobBytes=b=>createHash('sha1').update('blob '+b.length+'\0').update(b).digest('hex');
+const gitBlob=path=>gitBlobBytes(readFileSync(new URL(path,root)));
 const digest=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
 // Captured from the unchanged a060138 selected house before the correction,
 // not generated from two views of the corrected compositor.
@@ -21,22 +19,63 @@ const preFix={main:'a06013820dfdc2b5ee1918abf42abce8423eb0ad',
   weatherFacesSHA256:'1155d413b399a8ea93c4097f402e2089ded7131a68177b93a37d881216d7986f',
   selectedInterfacesSHA256:'aefbf9f05d1dd275b0aebd6393a3c7fe09b31c6220ee0303424aff46bbb9deaa',
   houseExceptDeclaredChangesSHA256:'a602a4d87257d73fefa378d84eba7c96cd458e68378fd5ee136e55a7b3a77f49'};
+// Independently replayed from the published f794 tree BEFORE applying the water
+// correction. Relative to the preserved a060 observation, only these three
+// input identities and two embedded receiver identities differ. Every physical
+// field, roof interface and numerical service result is unchanged.
+const roofJoin={commit:'f7942830ae24ef1d308f01e71a4f87f306f37ab0',
+  preWaterProducerSHA256:'6f983def825e3cd6b94e12410b8057fb902c62e28fe3365598a3d1ea69eef021',
+  preWaterFullHouseSHA256:'f9f7b2b4d81898b2232ad246cd208f2966ac66fa0c005139b121a76fac3c314c',
+  scheduleBlob:'248c8281369d16a8885506660f740c1f66462d9d',
+  houseExceptDeclaredChangesSHA256:'1db7717297d3e984954c70f41454aafbc6a8ee47c2bfae3eee4b31cd9009ac31',
+  houseInputs:{
+    'project/had/studies/receiver-selection.json':{
+      before:'5408aac3d43c95e3f5240f8510f91fb04d7a23cd',after:'2def3f7221d55b180cd46392a227b8c56972d03f'},
+    'project/ias/studies/shared-family-bathing.json':{
+      before:'08d6d466d515804a58d6cbd22a5f45188af7f56e',after:'f89302f9d87708b5314bd68a768c976efcd07b8d'},
+    'project/str/studies/reconciled-house-interface.json':{
+      before:'66143efe1bf357fe3b373777c93bdb25f861e11d',after:'4d3080dc4540ce7218b86f1d27518fbeb1f8e85d'}},
+  receiverInputs:{
+    'had/studies/court-intake-selection':{
+      before:'80a8481b4e5a508164eff51b596e5a954c152a30',after:'887a3df5b7a335b3eaafc7c8de4529a339428cbc'},
+    'rwt/studies/court-bypass-choice':{
+      before:'164cbc28358aed78335f59c6856e5ee0ab8fd274',after:'450d121b5c70d95073f1daadd1332c789751156d'}}};
 export function verifyPreFixBoundary(house){
   const copy=structuredClone(house);
   for(const s of [copy.model.architecturalServices,copy.model.servicesInterface])
     s.otherServiceDuties=s.otherServiceDuties.map(d=>['foul-kitchen','incoming-water'].includes(d.id)?{id:d.id,comparisonExcluded:true}:d);
   copy.model.currentAdoptionBlockers=['comparison-excluded'];
-  const observed={scheduleBlob:gitBlob('project/had/studies/current-house-services.json'),
+  const scheduleBytes=readFileSync(new URL('project/had/studies/current-house-services.json',root));
+  const schedule=JSON.parse(scheduleBytes);
+  const observed={scheduleBlob:gitBlobBytes(scheduleBytes),
     exteriorPortsSHA256:digest(house.model.exteriorPortGeometry),
     weatherFacesSHA256:digest(house.selectedServiceInterfaces.weatherFaces),
     selectedInterfacesSHA256:digest(house.selectedServiceInterfaces),houseExceptDeclaredChangesSHA256:digest(copy)};
-  for(const [key,value] of Object.entries(observed))assert.equal(value,preFix[key],
+  assert.equal(observed.scheduleBlob,roofJoin.scheduleBlob,'Joined service schedule identity changed');
+  // Normalize only the independently observed, exact old/new identity pairs.
+  // The rest of the schedule and complete model remain covered by the original
+  // preFix hashes; an unlisted identity change is not silently discarded.
+  for(const [path,{before,after}] of Object.entries(roofJoin.houseInputs)){
+    assert.equal(copy.inputs[path],after,'Expected joined house input identity: '+path);
+    assert.equal(schedule.sources[path],after,'Expected joined schedule input identity: '+path);
+    copy.inputs[path]=before;schedule.sources[path]=before;
+  }
+  for(const [path,{before,after}] of Object.entries(roofJoin.receiverInputs)){
+    assert.equal(copy.courtReceiver.inputs[path],after,'Expected joined receiver input identity: '+path);
+    copy.courtReceiver.inputs[path]=before;
+  }
+  const normalizedObserved={...observed,
+    scheduleBlob:gitBlobBytes(Buffer.from(JSON.stringify(schedule,null,2)+'\n')),
+    houseExceptDeclaredChangesSHA256:digest(copy)};
+  for(const [key,value] of Object.entries(normalizedObserved))assert.equal(value,preFix[key],
     'Current-source boundary changed; reassess the bounded MRA result: '+key);
-  return {preFix,observed,unchanged:true,
+  assert.equal(observed.houseExceptDeclaredChangesSHA256,roofJoin.houseExceptDeclaredChangesSHA256,
+    'Joined pre-water-correction house boundary changed');
+  return {preFix,sourceIdentityReconciliation:roofJoin,observed,normalizedObserved,unchanged:true,
     declaredChanges:['Both foul-kitchen duties: superseded downstream reservation corrected; upstream branch stays with IAS.',
       'Both incoming-water duties: rejected status, current witness and adoption duty added; path geometry retained.',
       'model.currentAdoptionBlockers: explicit incoming-water duty replaces the empty list.'],
-    scope:'Producer source and full current-model identities change. Only the enumerated comparison exclusions are allowed; neither a fresh whole-house fit nor an unchanged producer hash is claimed.'};
+    scope:'The original a060 observation remains exact after five named source-identity normalizations from the independently replayed f794 pre-water-correction house. Current and normalized schedules and complete unaffected models are separately guarded. Only the two declared water duties and their blocker are excluded from physical comparison; no other provenance or geometry is omitted. No whole-house structural or moisture acceptance is claimed.'};
 }
 export function retainedVolume({initialL=0,flowLmin,seconds,residualL=0,safeDrainLmin=0}) {
   for (const value of [initialL,flowLmin,seconds,residualL,safeDrainLmin])
