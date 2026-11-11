@@ -32,7 +32,7 @@ export const mraNodes = defineNodes([
     id: 'MRA-02',
     owners: ['MRA'],
     title: 'Internal water and wet-zone assault',
-    dependencies: ['MRA-00', 'MRA-INTERNAL-LEAKS', 'TRIAD-GATE'],
+    dependencies: ['MRA-00', 'MRA-INTERNAL-LEAKS', 'HAD-INLET-RESOLUTION', 'TRIAD-GATE'],
     lifecycle: 'planned',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []

@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 4 · **Active:** 0 · **Blocked:** 28 · **Held:** 2 · **Done:** 128 · **Cancelled:** 0
+**Structurally ready:** 5 · **Active:** 0 · **Blocked:** 28 · **Held:** 2 · **Done:** 128 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -21,6 +21,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
+| `HAD-INLET-RESOLUTION` | Resolve the selected incoming-water route and isolation station | HAD / MAT / IAS | — |
 | `STR-FLOOR-PORTAL` | Resolve the floor collector and portal load path before house selection | STR | ROF-RWT-GATE |
 | `DPL-COMMISSION` | Receive owner-nominated real plot and authorised assessment scope | DPL | DPL-SITE-ASSESSMENT |
 | `PHY-04` | Wall/ceiling movement-junction build and test | PHY | — |
@@ -38,7 +39,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Direct blockers |
 |---|---|---|
-| `TRIAD-GATE` | Shared selected-house integration gate | ROF-RWT-GATE, MAT-COORDINATION, STR-FLOOR-PORTAL |
+| `TRIAD-GATE` | Shared selected-house integration gate | HAD-INLET-RESOLUTION, ROF-RWT-GATE, MAT-COORDINATION, STR-FLOOR-PORTAL |
 | `BCR-CONVERGENCE` | Substantive construction-resolution convergence | TRIAD-GATE, MRA-04, HRS-TECHNICAL |
 | `HRS-SYNTHESIS` | Post-BCR final house resolution and synthesis | BCR-CONVERGENCE, MRA-05, DEL-CURRENT |
 | `HRS-TECHNICAL` | Current-house technical migration and computational applicability | TRIAD-GATE |
@@ -47,7 +48,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `RWT-08` | Rainwater formalisation and regression admission | ROF-RWT-GATE |
 | `MAT-COORDINATION` | Reconcile selected-house material compliance and explicit owner exceptions | ROF-RWT-GATE |
 | `MRA-01` | External water and ground-envelope assault | TRIAD-GATE |
-| `MRA-02` | Internal water and wet-zone assault | TRIAD-GATE |
+| `MRA-02` | Internal water and wet-zone assault | HAD-INLET-RESOLUTION, TRIAD-GATE |
 | `MRA-03` | Vapour, condensation and drying assault | TRIAD-GATE |
 | `MRA-04` | Whole-house moisture failure matrix and adversarial gate | MRA-01, MRA-02, MRA-03 |
 | `MRA-05` | Post-BCR moisture assurance closeout | BCR-CONVERGENCE |

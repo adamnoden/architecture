@@ -78,7 +78,7 @@ test('MRA starts in parallel but gates construction convergence and final synthe
   for (const id of ['MRA-01', 'MRA-03']) {
     assert.deepEqual(node(id).dependencies, ['MRA-00', 'TRIAD-GATE'])
   }
-  assert.deepEqual(node('MRA-02').dependencies, ['MRA-00', 'MRA-INTERNAL-LEAKS', 'TRIAD-GATE'])
+  assert.deepEqual(node('MRA-02').dependencies, ['MRA-00', 'MRA-INTERNAL-LEAKS', 'HAD-INLET-RESOLUTION', 'TRIAD-GATE'])
 
   assert.deepEqual(node('MRA-04').dependencies, ['MRA-01', 'MRA-02', 'MRA-03'])
   assert.equal(node('BCR-CONVERGENCE').dependencies.includes('MRA-04'), true)
@@ -103,6 +103,23 @@ test('bounded current-source studies can run before roof integration without rel
   for (const id of studies) fixture.find((candidate) => candidate.id === id)!.lifecycle = 'complete'
   for (const id of finalGates) assert.equal(state(id), 'blocked')
   assert.equal(state('TRIAD-GATE'), 'blocked')
+})
+
+test('inlet correction can proceed before roof integration and remains an input to whole-house acceptance', () => {
+  assert.deepEqual(node('HAD-INLET-RESOLUTION').dependencies, ['HAD-SERVICES-ADOPTION', 'MRA-INTERNAL-LEAKS'])
+  const fixture: ControlNode[] = controlNodes.map(candidate => ({
+    ...candidate,
+    lifecycle: ['HAD-INLET-RESOLUTION', 'ROF-RWT-GATE', 'TRIAD-GATE', 'MRA-02'].includes(candidate.id)
+      ? 'planned' : 'complete'
+  }))
+  const state = (id: string) => derivedState(fixture.find(candidate => candidate.id === id)!, fixture)
+  assert.equal(state('HAD-INLET-RESOLUTION'), 'ready')
+  fixture.find(candidate => candidate.id === 'ROF-RWT-GATE')!.lifecycle = 'complete'
+  assert.equal(state('TRIAD-GATE'), 'blocked')
+  assert.ok(directBlockers(fixture.find(candidate => candidate.id === 'MRA-02')!, fixture).includes('HAD-INLET-RESOLUTION'))
+  fixture.find(candidate => candidate.id === 'HAD-INLET-RESOLUTION')!.lifecycle = 'complete'
+  assert.equal(state('TRIAD-GATE'), 'ready')
+  assert.equal(state('MRA-02'), 'blocked')
 })
 
 test('held evidence research never leaks into the ready frontier', () => {
