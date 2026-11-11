@@ -28,6 +28,7 @@ def contact_controls():
 
 
 def roof_strain(h,strain,affine=False):
+    from floor_portal_roof_fields import elements
     c=Case(h,('roof reference-coordinate affine' if affine else 'roof actual axial member')+f' free strain{strain:g}')
     p=h.roof.p
     if affine:
@@ -43,6 +44,15 @@ def roof_strain(h,strain,affine=False):
             if kind=='leg':length=math.hypot(length,p['zhigh']-p['zheel'])
             force=k*length*strain
             for native,weight in terms:c.f[h.roof.mounted[h.roof.lookup[native]]]+=force*weight
+    # Local mechanical forces subtract the same eigenstrain load. Without
+    # this entry, an interior-field report would falsely count free expansion
+    # as mechanical stress even though the global load vector was correct.
+    for key,e in elements(h).items():
+        if affine:
+            free=np.zeros(h.f.size);free[h.roof.mounted]=field
+            c.native_eigen[key]+=e['k']@e['t']@free[e['ids']]
+        else:
+            c.native_eigen[key][[0,6]]+=np.array([-1.,1.])*e['EA']*strain
     # Equivalent eigenstrain forces are self-equilibrated at all three axes.
     residual=h.rigid.T@c.f;assert max(abs(residual[:3]))<.01 and max(abs(residual[3:]))<1.,residual
     return c
