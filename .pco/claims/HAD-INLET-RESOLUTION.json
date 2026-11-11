@@ -9,12 +9,12 @@
     "label": "inlet-resolution-resume-20261111"
   },
   "claimedAt": "2026-11-11T13:10:01.188Z",
-  "heartbeatAt": "2026-11-11T14:07:23.224Z",
-  "expiresAt": "2026-11-11T14:52:23.224Z",
+  "heartbeatAt": "2026-11-11T14:46:36.184Z",
+  "expiresAt": "2026-11-11T15:31:36.184Z",
   "checkpoint": {
-    "evidence": "Draft1483 checkpoint aeede1d1 publishes located I0/U0/P0 station, revised cold riser,7 focused passing comparisons and exact source tree00a6bce3. Earlier83ace checkpoint CI passed.",
-    "next": "Finish two-point carrier capture and first rest, actual local drains, reviewer bridge support and precise current-house/MRA adoption.",
-    "blocker": "No infrastructure blocker; selected house remains unchanged pending earned complete assembly."
+    "evidence": "Durable1483 head aeede1d1. Local finite station supports, native captive keys, two-worker doorway handoff and10L utility drains now compared; rejected WC/court detours retained. Parent is closing bridge first-catch geometry.",
+    "next": "Publish the bounded station/capture checkpoint, integrate parent native bridge, then earn current-house/MRA selection and exact consumer receipt.",
+    "blocker": "No administrative blocker; native assembly and source reconciliation remain active, so main selection/lifecycle is unchanged."
   },
   "branch": "work/had-inlet-resolution-g2-20261111",
   "predecessor": {
