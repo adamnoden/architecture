@@ -17,7 +17,10 @@ JAMB_GUIDE_WIDTH_MM=45.
 # Conservative H12-equivalent axial length: 621 development comparison +
 # 159.3 P13LN open envelope + 100 threaded stub + 40 C13N + 25 cap.
 JAMB_CAP_ANCHOR_EQUIVALENT_LENGTH_MM=945.3
-GUIDE_FRICTION_COMPARATOR=0.08
+GUIDE_FRICTION_PTFE_BENCHMARK=0.08
+# GGB-DB B/11 graphite-plugged cast bronze dry range is0.05..0.18.
+# Use the upper end so the structural design does not depend on a polymer liner.
+GUIDE_FRICTION_COMPARATOR=0.18
 
 
 def leading_parameters():
