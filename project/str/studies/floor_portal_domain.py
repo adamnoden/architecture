@@ -33,7 +33,7 @@ def run(parameters=None,full=True,matrix_path=None,guide_friction=0.):
     metadata=[dict(family=family,name=e['name'],a=e['a'].tolist(),b=e['b'].tolist(),basis=e['R'].tolist(),width=e['width'],depth=e['depth']) for family,e in members]
     heads=list(h.heads);hi=np.array([[h.heads[name]+j for j in range(6)] for name in heads]);scales=np.array([1e-3,1e-3,1e-3,1e-6,1e-6,1e-6])
     names=[];memberrows=[];headrows=[];jointrows=[];allloads=[];contactcounts=[];maximum_balance=np.zeros(6);worst_trans=(0.,None);minimum_head=(0.,None,None);guide_bounds={}
-    friction_bound=dict(coefficient=float(guide_friction),maximumPointFrictionN=0.,sumPointFrictionMagnitudesN=0.,maximumIterations=0,witness=None)
+    friction_bound=dict(coefficient=float(guide_friction),maximumPointFrictionN=0.,sumPointFrictionMagnitudesN=0.,maximumIterations=0,maximumFollowerResidualN=0.,maximumDirectionReversalCount=0,witness=None)
     bounds={family:dict(maxAbs=np.zeros(6),witness=[None]*6) for family in h.members}
     offsets=np.cumsum([0]+[len(es) for es in h.members.values()])
     def one(case):
@@ -43,6 +43,8 @@ def run(parameters=None,full=True,matrix_path=None,guide_friction=0.):
         if guide_friction:
             gf=c['guideFriction']
             friction_bound['maximumIterations']=max(friction_bound['maximumIterations'],gf['iterations'])
+            friction_bound['maximumFollowerResidualN']=max(friction_bound['maximumFollowerResidualN'],gf['followerResidualN'])
+            friction_bound['maximumDirectionReversalCount']=max(friction_bound['maximumDirectionReversalCount'],gf['directionReversalCount'])
             friction_bound['sumPointFrictionMagnitudesN']=max(friction_bound['sumPointFrictionMagnitudesN'],gf['sumPointFrictionMagnitudesN'])
             if gf['maximumPointFrictionN']>friction_bound['maximumPointFrictionN']:
                 friction_bound.update(maximumPointFrictionN=gf['maximumPointFrictionN'],witness=case.name)
