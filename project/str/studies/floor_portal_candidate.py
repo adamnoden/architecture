@@ -18,9 +18,9 @@ JAMB_GUIDE_WIDTH_MM=45.
 # 159.3 P13LN open envelope + 100 threaded stub + 40 C13N + 25 cap.
 JAMB_CAP_ANCHOR_EQUIVALENT_LENGTH_MM=945.3
 GUIDE_FRICTION_PTFE_BENCHMARK=0.08
-# GGB-DB B/11 graphite-plugged cast bronze dry range is0.05..0.18.
+# Current GGB-CBM graphite/bronze sliding-plate family gives dry f=0.10..0.20.
 # Use the upper end so the structural design does not depend on a polymer liner.
-GUIDE_FRICTION_COMPARATOR=0.18
+GUIDE_FRICTION_COMPARATOR=0.20
 
 
 def leading_parameters():
