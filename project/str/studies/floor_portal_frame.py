@@ -94,7 +94,7 @@ class Frame:
         t = np.c_[ta, -tb]
         k = np.diag(stiffness) if np.ndim(stiffness) == 1 else np.asarray(stiffness)
         self.add(ids, t.T@k@t)
-        record = dict(name=name, ids=ids, t=t, k=k)
+        record = dict(name=name, ids=ids, t=t, k=k, ports=(a,b))
         self.links.append(record)
         return record
 
