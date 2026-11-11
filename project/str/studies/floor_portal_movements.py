@@ -91,10 +91,12 @@ def run(heads=False,parameters=None,guide_friction=0.):
         u,r,c=rigid_solve(np.zeros(h.f.size),prescribed)
         retained=np.setdiff1d(np.arange(h.f.size),rigid_solve.base.unused);error=float(max(abs(u[retained]-wanted[retained])));reaction=float(max(abs(r)));assert error<.001 and reaction<1.,(j,error,reaction)
         rigid_receipt.append(dict(field=j,maximumDisplacementError=error,maximumReactionNOrNmm=reaction))
-    results=[];guide_bounds={};friction_bound=dict(coefficient=float(guide_friction),maximumPointFrictionN=0.,sumPointFrictionMagnitudesN=0.,maximumIterations=0,witness=None)
+    results=[];guide_bounds={};friction_bound=dict(coefficient=float(guide_friction),maximumPointFrictionN=0.,sumPointFrictionMagnitudesN=0.,maximumIterations=0,maximumFollowerResidualN=0.,maximumDirectionReversalCount=0,witness=None)
     def friction(case,c):
         if not guide_friction:return
         gf=c['guideFriction'];friction_bound['maximumIterations']=max(friction_bound['maximumIterations'],gf['iterations'])
+        friction_bound['maximumFollowerResidualN']=max(friction_bound['maximumFollowerResidualN'],gf['followerResidualN'])
+        friction_bound['maximumDirectionReversalCount']=max(friction_bound['maximumDirectionReversalCount'],gf['directionReversalCount'])
         friction_bound['sumPointFrictionMagnitudesN']=max(friction_bound['sumPointFrictionMagnitudesN'],gf['sumPointFrictionMagnitudesN'])
         if gf['maximumPointFrictionN']>friction_bound['maximumPointFrictionN']:
             friction_bound.update(maximumPointFrictionN=gf['maximumPointFrictionN'],witness=case)
