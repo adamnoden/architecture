@@ -116,6 +116,33 @@ remain prerequisites to adoption.
 
 ### Isolation and material boundary
 
+The located lobby comparison now separates three upward-stem cartridges.
+Main **I0** is at X11450, union Y3050/3500, made Z1440–1500 and crown1690;
+utility **U0** is at X11315, Y2732/3057, made Z1140–1200 and crown1390;
+plant **P0** is at X11315, Y3175/3500 with the same lower heights.
+Each branch has175 mm of straight crown for the55 mm comparator and two
+bounded55 mm adapters. The main has300 mm. A larger flanged valve is not
+silently substituted. The main's lower return uses explicit R50 bends within
+the same complete Ø74 reservation; other station/backbone bends retain R75.
+
+The incoming entry moves to **(12090,2800,600)**. The utility riser moves behind
+the station to **(11505,2882)**, then crosses back to X11315 above the work area.
+The earlier west riser met the turning spanner and is rejected. Complete
+297 ×71.5 ×12.8 mm wrench sectors, hands, arms and arrival bodies now clear
+the named station walls, other union/valve bodies and riser. The controlling
+tool reserve is30.60 mm at the U0 south joint; maximum declared reach is
+643.01 mm at the P0 north joint. Main servicing removes the branch cartridges
+before its nuts are worked. Independent catch/reaction hardware and the
+captured transfer to first rest are still being checked; these tool results
+alone do not adopt the station.
+
+Separate350 ×450 ×75 mm floor receivers require8 L net each; their external
+cuboid permits at most11.81 L. Use manually closed batches of at most5 L.
+The actual spouts, retained low-point inventory and support contacts still
+need the completed assembly comparison. The new bore's protected riser has
+200 mm plan separation from the current P17 cap; actual wall/bore/foundation
+and site/provider details remain explicit receiving duties.
+
 The water cut must be located upstream of the component under intervention.
 Closing a fixture stop cannot isolate its own upstream joint; replacing the
 main indoor stop requires an independent boundary cut. Mains closure and pump

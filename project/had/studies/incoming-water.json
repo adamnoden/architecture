@@ -7,9 +7,10 @@
     "project/had/studies/current-house.mjs": "58bf1a6248af8268de70d838cce23f249ce30b91",
     "project/had/studies/current-house-services.json": "248c8281369d16a8885506660f740c1f66462d9d",
     "project/had/studies/selected-water-duties.mjs": "1ea39eda8b8ba187c3ac0a7ccf4327322ea6f037",
-    "project/had/studies/incoming-water.mjs": "96858cb9e13b863861cc71120f0431b99fe62f4a",
+    "project/had/studies/incoming-water.mjs": "c064ad8a374c28fa6d619b27b2c60c22303035eb",
     "project/had/studies/incoming-water-geometry.mjs": "82d1ebbc8a5f150c72294a3a76fa943082c3c6d3",
     "project/had/studies/incoming-water-terminal.mjs": "451bfd612ad5cfa646a44f28abfc8b882b88b1df",
+    "project/had/studies/incoming-water-station.mjs": "82dfd1cff5ae15286d78a142b8f3e5bebc7e2d78",
     "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2",
     "project/mat/studies/whole-house-service-baseline.json": "049161ebac29b24e0acc7d8085302fca906fe9d2",
     "project/mat/studies/service-material-offer.json": "e5686440fa6a3f68387576883b1e0c768e0596bb",
@@ -110,13 +111,18 @@
     "vertices": {
       "cold": [
         [
-          11315,
-          2725,
+          11505,
+          2882,
           1000
         ],
         [
+          11505,
+          2882,
+          2725
+        ],
+        [
           11315,
-          2725,
+          2882,
           2725
         ],
         [
@@ -1318,6 +1324,1089 @@
       "method": "Before first nut release, close U0 and H0, prove stopped/zero-pressure flow and vent locally. Drain one isolated branch at a time through its capped, independently supported local drain into this removable floor receiver. Close the drain before emptying; retain the normal2L witness as a different duty.",
       "noCredit": "No unattended burst capture, automatic response, electrical safety certification or draining of the domestic vessel into10L."
     }
+  },
+  "station": {
+    "status": "REFERENCE_ASSEMBLY",
+    "geometry": {
+      "entry": [
+        12090,
+        2800,
+        600
+      ],
+      "tee": [
+        11315,
+        3175,
+        900
+      ],
+      "pipeR": 37,
+      "bendR": 75,
+      "cartridges": [
+        {
+          "id": "I0",
+          "x": 11450,
+          "ends": [
+            3050,
+            3500
+          ],
+          "bottom": 1440,
+          "crown": 1690,
+          "body": [
+            10875,
+            3175
+          ],
+          "shoulder": 1450,
+          "hand": [
+            11380,
+            3275,
+            1805
+          ],
+          "sectors": [
+            [
+              115,
+              175
+            ],
+            [
+              185,
+              245
+            ]
+          ]
+        },
+        {
+          "id": "U0",
+          "x": 11315,
+          "ends": [
+            2732,
+            3057
+          ],
+          "bottom": 1140,
+          "crown": 1390,
+          "body": [
+            10875,
+            3175
+          ],
+          "shoulder": 1450,
+          "hand": [
+            11315,
+            2954.5,
+            1505
+          ],
+          "sectors": [
+            [
+              120,
+              180
+            ],
+            [
+              180,
+              240
+            ]
+          ],
+          "toolBodies": [
+            [
+              10775,
+              3025
+            ],
+            [
+              10875,
+              3175
+            ]
+          ]
+        },
+        {
+          "id": "P0",
+          "x": 11315,
+          "ends": [
+            3175,
+            3500
+          ],
+          "bottom": 1140,
+          "crown": 1390,
+          "body": [
+            10875,
+            3175
+          ],
+          "shoulder": 1450,
+          "hand": [
+            11255,
+            3337.5,
+            1505
+          ],
+          "sectors": [
+            [
+              120,
+              180
+            ],
+            [
+              180,
+              240
+            ]
+          ],
+          "toolBodies": [
+            [
+              10875,
+              3175
+            ],
+            [
+              10545,
+              3325
+            ]
+          ]
+        }
+      ],
+      "fixedVertices": {
+        "entry": [
+          [
+            12090,
+            2800,
+            600
+          ],
+          [
+            11450,
+            2800,
+            600
+          ],
+          [
+            11450,
+            3050,
+            600
+          ],
+          [
+            11450,
+            3050,
+            1440
+          ]
+        ],
+        "mainOut": [
+          [
+            11450,
+            3500,
+            1440
+          ],
+          [
+            11450,
+            3500,
+            700
+          ],
+          [
+            11315,
+            3500,
+            700
+          ],
+          [
+            11315,
+            3175,
+            700
+          ],
+          [
+            11315,
+            3175,
+            900
+          ]
+        ],
+        "utilityIn": [
+          [
+            11315,
+            3175,
+            900
+          ],
+          [
+            11315,
+            3057,
+            900
+          ],
+          [
+            11315,
+            3057,
+            1140
+          ]
+        ],
+        "plantIn": [
+          [
+            11315,
+            3175,
+            900
+          ],
+          [
+            11315,
+            3175,
+            1140
+          ]
+        ],
+        "utilityOut": [
+          [
+            11315,
+            2732,
+            1140
+          ],
+          [
+            11315,
+            2732,
+            900
+          ],
+          [
+            11505,
+            2732,
+            900
+          ],
+          [
+            11505,
+            2882,
+            900
+          ],
+          [
+            11505,
+            2882,
+            1000
+          ]
+        ],
+        "plantOut": [
+          [
+            11315,
+            3500,
+            1140
+          ],
+          [
+            11315,
+            3500,
+            900
+          ],
+          [
+            11075,
+            3500,
+            900
+          ],
+          [
+            11075,
+            3970,
+            900
+          ],
+          [
+            11075,
+            3970,
+            1040
+          ]
+        ]
+      },
+      "pans": {
+        "south": [
+          11200,
+          2675,
+          0,
+          350,
+          450,
+          75
+        ],
+        "north": [
+          11200,
+          3125,
+          0,
+          350,
+          450,
+          75
+        ]
+      },
+      "ordinaryBody": [
+        [
+          8800,
+          3200
+        ],
+        [
+          10545,
+          3200
+        ],
+        [
+          10875,
+          3175
+        ]
+      ],
+      "utilityEntry": [
+        [
+          10545,
+          3200
+        ],
+        [
+          10775,
+          3000
+        ],
+        [
+          10775,
+          2300
+        ],
+        [
+          10925,
+          1725
+        ]
+      ],
+      "drains": [
+        {
+          "id": "D0",
+          "source": "B0–I0",
+          "tee": [
+            11450,
+            2925,
+            600
+          ],
+          "x": 11370,
+          "y": 2925,
+          "pan": "south"
+        },
+        {
+          "id": "D1",
+          "source": "I0–branches",
+          "tee": [
+            11315,
+            3300,
+            700
+          ],
+          "x": 11230,
+          "y": 3300,
+          "pan": "north"
+        },
+        {
+          "id": "DU",
+          "source": "U0 downstream",
+          "tee": [
+            11315,
+            2732,
+            1050
+          ],
+          "x": 11230,
+          "y": 2732,
+          "pan": "south"
+        },
+        {
+          "id": "DP",
+          "source": "P0 downstream",
+          "tee": [
+            11315,
+            3500,
+            1050
+          ],
+          "x": 11230,
+          "y": 3500,
+          "pan": "north"
+        }
+      ]
+    },
+    "finiteRoutes": {
+      "entry": {
+        "bends": [
+          {
+            "vertex": [
+              11450,
+              2800,
+              600
+            ],
+            "angleDeg": 90,
+            "tangent": 75
+          },
+          {
+            "vertex": [
+              11450,
+              3050,
+              600
+            ],
+            "angleDeg": 90,
+            "tangent": 75
+          }
+        ],
+        "hausdorffErrorMM": 0.00285577
+      },
+      "mainOut": {
+        "bends": [
+          {
+            "vertex": [
+              11450,
+              3500,
+              700
+            ],
+            "angleDeg": 90,
+            "tangent": 50
+          },
+          {
+            "vertex": [
+              11315,
+              3500,
+              700
+            ],
+            "angleDeg": 90,
+            "tangent": 50
+          },
+          {
+            "vertex": [
+              11315,
+              3175,
+              700
+            ],
+            "angleDeg": 90,
+            "tangent": 50
+          }
+        ],
+        "hausdorffErrorMM": 0.00190385
+      },
+      "utilityIn": {
+        "bends": [
+          {
+            "vertex": [
+              11315,
+              3057,
+              900
+            ],
+            "angleDeg": 90,
+            "tangent": 75
+          }
+        ],
+        "hausdorffErrorMM": 0.00285577
+      },
+      "plantIn": {
+        "bends": [],
+        "hausdorffErrorMM": 0
+      },
+      "utilityOut": {
+        "bends": [
+          {
+            "vertex": [
+              11315,
+              2732,
+              900
+            ],
+            "angleDeg": 90,
+            "tangent": 75
+          },
+          {
+            "vertex": [
+              11505,
+              2732,
+              900
+            ],
+            "angleDeg": 90,
+            "tangent": 75
+          },
+          {
+            "vertex": [
+              11505,
+              2882,
+              900
+            ],
+            "angleDeg": 90,
+            "tangent": 75
+          }
+        ],
+        "hausdorffErrorMM": 0.00285577
+      },
+      "plantOut": {
+        "bends": [
+          {
+            "vertex": [
+              11315,
+              3500,
+              900
+            ],
+            "angleDeg": 90,
+            "tangent": 75
+          },
+          {
+            "vertex": [
+              11075,
+              3500,
+              900
+            ],
+            "angleDeg": 90,
+            "tangent": 75
+          },
+          {
+            "vertex": [
+              11075,
+              3970,
+              900
+            ],
+            "angleDeg": 90,
+            "tangent": 75
+          }
+        ],
+        "hausdorffErrorMM": 0.00285577
+      },
+      "I0": {
+        "bends": [
+          {
+            "vertex": [
+              11450,
+              3050,
+              1690
+            ],
+            "angleDeg": 90,
+            "tangent": 75
+          },
+          {
+            "vertex": [
+              11450,
+              3500,
+              1690
+            ],
+            "angleDeg": 90,
+            "tangent": 75
+          }
+        ],
+        "hausdorffErrorMM": 0.00285577
+      },
+      "U0": {
+        "bends": [
+          {
+            "vertex": [
+              11315,
+              2732,
+              1390
+            ],
+            "angleDeg": 90,
+            "tangent": 75
+          },
+          {
+            "vertex": [
+              11315,
+              3057,
+              1390
+            ],
+            "angleDeg": 90,
+            "tangent": 75
+          }
+        ],
+        "hausdorffErrorMM": 0.00285577
+      },
+      "P0": {
+        "bends": [
+          {
+            "vertex": [
+              11315,
+              3175,
+              1390
+            ],
+            "angleDeg": 90,
+            "tangent": 75
+          },
+          {
+            "vertex": [
+              11315,
+              3500,
+              1390
+            ],
+            "angleDeg": 90,
+            "tangent": 75
+          }
+        ],
+        "hausdorffErrorMM": 0.00285577
+      }
+    },
+    "moduleContracts": [
+      {
+        "id": "I0",
+        "unionMadeZ": [
+          1440,
+          1500
+        ],
+        "crown": 1690,
+        "straightAxisMM": 300,
+        "valveFaceLength": 55,
+        "maxAdaptorsEach": 55,
+        "completeFittedModuleMM": 165,
+        "moduleSpareMM": 135,
+        "nutBackoffMM": 60,
+        "backoffToBendMM": 55,
+        "liftMM": 85,
+        "fullSeatSeparationAfterLiftMM": 25,
+        "maximumDryHandledKg": 8,
+        "release": "Both upward-facing captive nuts back completely clear while two independent catches carry the cartridge. Lift85, translate west with the worker keeping a declared body gap, and lower into a separate restrained receiving cradle. I0 replacement follows removal of U0 and P0, with B0 closed and proved."
+      },
+      {
+        "id": "U0",
+        "unionMadeZ": [
+          1140,
+          1200
+        ],
+        "crown": 1390,
+        "straightAxisMM": 175,
+        "valveFaceLength": 55,
+        "maxAdaptorsEach": 55,
+        "completeFittedModuleMM": 165,
+        "moduleSpareMM": 10,
+        "nutBackoffMM": 60,
+        "backoffToBendMM": 55,
+        "liftMM": 85,
+        "fullSeatSeparationAfterLiftMM": 25,
+        "maximumDryHandledKg": 8,
+        "release": "Both upward-facing captive nuts back completely clear while two independent catches carry the cartridge. Lift85, translate west with the worker keeping a declared body gap, and lower into a separate restrained receiving cradle. I0 replacement follows removal of U0 and P0, with B0 closed and proved."
+      },
+      {
+        "id": "P0",
+        "unionMadeZ": [
+          1140,
+          1200
+        ],
+        "crown": 1390,
+        "straightAxisMM": 175,
+        "valveFaceLength": 55,
+        "maxAdaptorsEach": 55,
+        "completeFittedModuleMM": 165,
+        "moduleSpareMM": 10,
+        "nutBackoffMM": 60,
+        "backoffToBendMM": 55,
+        "liftMM": 85,
+        "fullSeatSeparationAfterLiftMM": 25,
+        "maximumDryHandledKg": 8,
+        "release": "Both upward-facing captive nuts back completely clear while two independent catches carry the cartridge. Lift85, translate west with the worker keeping a declared body gap, and lower into a separate restrained receiving cradle. I0 replacement follows removal of U0 and P0, with B0 closed and proved."
+      }
+    ],
+    "controls": [
+      {
+        "id": "I0",
+        "body": [
+          10875,
+          3175
+        ],
+        "shoulder": [
+          10875,
+          3175,
+          1450
+        ],
+        "hand": [
+          11380,
+          3275,
+          1805
+        ],
+        "reachMM": 625.33990757,
+        "otherPipeGapMM": 225.74132038,
+        "otherValveGapMM": 164.43035765,
+        "riserGapMM": 335.40029098
+      },
+      {
+        "id": "U0",
+        "body": [
+          10875,
+          3175
+        ],
+        "shoulder": [
+          10875,
+          3175,
+          1450
+        ],
+        "hand": [
+          11315,
+          2954.5,
+          1505
+        ],
+        "reachMM": 495.22242477,
+        "otherPipeGapMM": 88.36113668,
+        "otherValveGapMM": 212.07927694,
+        "riserGapMM": 126.36236132
+      },
+      {
+        "id": "P0",
+        "body": [
+          10875,
+          3175
+        ],
+        "shoulder": [
+          10875,
+          3175,
+          1450
+        ],
+        "hand": [
+          11255,
+          3337.5,
+          1505
+        ],
+        "reachMM": 416.93074965,
+        "otherPipeGapMM": 176.8302587,
+        "otherValveGapMM": 176.49018453,
+        "riserGapMM": 442.59623748
+      }
+    ],
+    "tool": {
+      "length": 297,
+      "width": 71.5,
+      "thickness": 12.8,
+      "headR": 35.75,
+      "handR": 50,
+      "armR": 40,
+      "stepDeg": 0.25,
+      "penaltyMM": 0.64795348,
+      "checks": [
+        {
+          "id": "I0",
+          "end": 0,
+          "body": [
+            10875,
+            3175
+          ],
+          "shoulder": [
+            10875,
+            3175,
+            1450
+          ],
+          "sector": [
+            115,
+            175
+          ],
+          "toolGapLowerMM": 84.10204652,
+          "handGapLowerMM": 118.23501461,
+          "armGapLowerMM": 128.23501461,
+          "maxReachUpperMM": 474.37823488
+        },
+        {
+          "id": "I0",
+          "end": 1,
+          "body": [
+            10875,
+            3175
+          ],
+          "shoulder": [
+            10875,
+            3175,
+            1450
+          ],
+          "sector": [
+            185,
+            245
+          ],
+          "toolGapLowerMM": 48.60204652,
+          "handGapLowerMM": 60.23730211,
+          "armGapLowerMM": 70.23730211,
+          "maxReachUpperMM": 455.34677074
+        },
+        {
+          "id": "U0",
+          "end": 0,
+          "body": [
+            10775,
+            3025
+          ],
+          "shoulder": [
+            10775,
+            3025,
+            1050
+          ],
+          "sector": [
+            120,
+            180
+          ],
+          "toolGapLowerMM": 30.60204652,
+          "handGapLowerMM": 59.16097147,
+          "armGapLowerMM": 69.16097147,
+          "maxReachUpperMM": 417.96462782
+        },
+        {
+          "id": "U0",
+          "end": 1,
+          "body": [
+            10875,
+            3175
+          ],
+          "shoulder": [
+            10875,
+            3175,
+            1050
+          ],
+          "sector": [
+            180,
+            240
+          ],
+          "toolGapLowerMM": 44.60204652,
+          "handGapLowerMM": 65.02530239,
+          "armGapLowerMM": 75.02530239,
+          "maxReachUpperMM": 495.9806221
+        },
+        {
+          "id": "P0",
+          "end": 0,
+          "body": [
+            10875,
+            3175
+          ],
+          "shoulder": [
+            10875,
+            3175,
+            1050
+          ],
+          "sector": [
+            120,
+            180
+          ],
+          "toolGapLowerMM": 44.60204652,
+          "handGapLowerMM": 65.02530239,
+          "armGapLowerMM": 75.02530239,
+          "maxReachUpperMM": 413.84161268
+        },
+        {
+          "id": "P0",
+          "end": 1,
+          "body": [
+            10545,
+            3325
+          ],
+          "shoulder": [
+            10545,
+            3325,
+            1050
+          ],
+          "sector": [
+            180,
+            240
+          ],
+          "toolGapLowerMM": 48.60204652,
+          "handGapLowerMM": 34.35204652,
+          "armGapLowerMM": 44.35204652,
+          "maxReachUpperMM": 643.00350867
+        }
+      ]
+    },
+    "heatClearances": [
+      {
+        "id": "plantOut",
+        "heat": "plant-N",
+        "gapMM": 28.99714423
+      },
+      {
+        "id": "utilityOut",
+        "heat": "utility-E",
+        "gapMM": 213.00863785
+      },
+      {
+        "id": "U0",
+        "heat": "utility-E",
+        "gapMM": 245.60899619
+      },
+      {
+        "id": "entry",
+        "heat": "utility-E",
+        "gapMM": 282.1162066
+      },
+      {
+        "id": "P0",
+        "heat": "plant-N",
+        "gapMM": 288.99714423
+      },
+      {
+        "id": "mainOut",
+        "heat": "plant-N",
+        "gapMM": 300.27363795
+      }
+    ],
+    "ordinaryBodyMinimumMM": 73.4121906,
+    "bodyChecks": [
+      {
+        "i": 0,
+        "p": [
+          10875,
+          3175
+        ],
+        "gapMM": 25
+      },
+      {
+        "i": 1,
+        "p": [
+          10875,
+          3175
+        ],
+        "gapMM": 25
+      },
+      {
+        "i": 2,
+        "p": [
+          10875,
+          3175
+        ],
+        "gapMM": 25
+      },
+      {
+        "i": 3,
+        "p": [
+          10875,
+          3175
+        ],
+        "gapMM": 25
+      },
+      {
+        "i": 4,
+        "p": [
+          10875,
+          3175
+        ],
+        "gapMM": 25
+      },
+      {
+        "i": 5,
+        "p": [
+          10775,
+          3025
+        ],
+        "gapMM": 125
+      },
+      {
+        "i": 6,
+        "p": [
+          10875,
+          3175
+        ],
+        "gapMM": 25
+      },
+      {
+        "i": 7,
+        "p": [
+          10875,
+          3175
+        ],
+        "gapMM": 25
+      },
+      {
+        "i": 8,
+        "p": [
+          10545,
+          3325
+        ],
+        "gapMM": 124.05777908
+      }
+    ],
+    "mainPanToBodyMM": 25,
+    "drain": {
+      "definitions": [
+        {
+          "id": "D0",
+          "source": "B0–I0",
+          "tee": [
+            11450,
+            2925,
+            600
+          ],
+          "x": 11370,
+          "y": 2925,
+          "pan": "south"
+        },
+        {
+          "id": "D1",
+          "source": "I0–branches",
+          "tee": [
+            11315,
+            3300,
+            700
+          ],
+          "x": 11230,
+          "y": 3300,
+          "pan": "north"
+        },
+        {
+          "id": "DU",
+          "source": "U0 downstream",
+          "tee": [
+            11315,
+            2732,
+            1050
+          ],
+          "x": 11230,
+          "y": 2732,
+          "pan": "south"
+        },
+        {
+          "id": "DP",
+          "source": "P0 downstream",
+          "tee": [
+            11315,
+            3500,
+            1050
+          ],
+          "x": 11230,
+          "y": 3500,
+          "pan": "north"
+        }
+      ],
+      "requiredNetLitresEach": 8,
+      "externalCuboidUpperLitresEach": 11.8125,
+      "emptyPanTiltHeightMM": 456.20718977,
+      "pipeUndersideMM": 563,
+      "maximumBatchLitres": 5,
+      "fillFreeboardLitres": 3,
+      "method": "Each capped small branch has its own manually controlled drain and downward metallic spout atZ200 above its named receiver. Close/verify the upstream cut, vent and drain in≤5L batches, closing before emptying; an unknown site-pipe inventory is not assumed to fit one pan. Do not open a union under pressure.",
+      "plantCondition": "Empty and prove the domestic vessel/connected inventory through its dedicated admitted drain before cold-bridge or plant-stop intervention. B0/P0 closure alone is not a300L drain result; relief remains connected whenever charged.",
+      "scope": "Pans are removable controlled-maintenance receivers and visible drip witnesses. No unattended30L/min burst, automatic shutoff, floor waterproofing or safe electrical wetting is credited."
+    },
+    "entry": {
+      "point": [
+        12090,
+        2800,
+        600
+      ],
+      "formedBore": 100,
+      "completePipeOD": 74,
+      "radialBudget": 13,
+      "settingBudget": 2,
+      "rawUtilityWindowLigamentMM": 450,
+      "rawPlantDoorLigamentMM": 1050,
+      "protectedRiserRadius": 100,
+      "P17": {
+        "id": "P17",
+        "xy": [
+          11667.5,
+          3400
+        ],
+        "roles": [
+          "outer-E"
+        ],
+        "capXY": [
+          900,
+          600
+        ],
+        "capZ": [
+          -750,
+          -180
+        ],
+        "shaftDiameter": 400,
+        "siteResistance": null
+      },
+      "riserToCapPlanMM": 200,
+      "boundary": "B0 is independent owner-side isolation in the Boundary Service Lodge; provider location, frost, flood level, movement and lawful site route remain DPL/MAT conditions. This relocates the physical water entry, not a ventilation inlet."
+    },
+    "support": "All six fixed union ends use independent keyed collar/reaction supports from the solid east pier, not the radiator, sleeves, removable pans or pipe below another union. Nominal30×30×3 arms at25mm below each union bottom run to a retained wall rail; complete anchors and rail sections must satisfy the bounded force case and changed STR interface.",
+    "functionalCuts": [
+      {
+        "work": "Utility head cold branch",
+        "cuts": [
+          "U0"
+        ],
+        "residual": "Cold backbone and lower branch; drain in the utility10L receiver, never the2L witness alone."
+      },
+      {
+        "work": "Utility head hot branch",
+        "cuts": [
+          "H0"
+        ],
+        "residual": "Lower hot drop and captured head tails; store remains separated upstream."
+      },
+      {
+        "work": "Plant/cold bridge",
+        "cuts": [
+          "P0"
+        ],
+        "residual": "Connected vessel and safety system must first be made cold, empty and unpressurised through the dedicated store method."
+      },
+      {
+        "work": "U0 or P0 cartridge",
+        "cuts": [
+          "I0"
+        ],
+        "residual": "Close downstream terminal cuts, discharge local inventory and positively verify both faces. A failed I0 requiresB0."
+      },
+      {
+        "work": "I0 or any joint before I0",
+        "cuts": [
+          "B0"
+        ],
+        "residual": "Verify boundary closure, drain both sides in controlled batches and remove branch cartridges before I0 tools/capture."
+      },
+      {
+        "work": "Boundary B0 itself",
+        "cuts": [
+          "provider upstream isolation"
+        ],
+        "residual": "Undertaker/site-specific service method; the house I0 cannot isolate the boundary stop upstream."
+      }
+    ]
   },
   "bridge": {
     "status": "OBJECT_PATH_ONLY",

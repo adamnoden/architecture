@@ -88,3 +88,15 @@ test('development cannot silently adopt a route or release the existing house bl
   assert(house.model.currentAdoptionBlockers.some(x=>x.includes('Incoming-water REWIND')));
   assert.equal(readFileSync(new URL('incoming-water.json',import.meta.url),'utf8'),incomingWaterText(study));
 });
+
+test('located main and branch cuts include finite valve modules and full tool sectors',()=>{
+  const s=study.station;
+  for(const c of s.moduleContracts){assert(c.moduleSpareMM>=10);assert.equal(c.fullSeatSeparationAfterLiftMM,25);}
+  for(const c of s.controls){assert(c.reachMM<650);assert(c.otherPipeGapMM>25);assert(c.otherValveGapMM>25);assert(c.riserGapMM>25);}
+  for(const c of s.tool.checks){assert(c.toolGapLowerMM>25);assert(c.handGapLowerMM>25);assert(c.armGapLowerMM>25);assert(c.maxReachUpperMM<650);}
+  assert(s.bodyChecks.every(c=>c.gapMM>=25));assert(s.ordinaryBodyMinimumMM>25);
+  assert(s.heatClearances.every(c=>c.gapMM>25));
+  assert.equal(s.entry.riserToCapPlanMM,200);
+  assert(s.functionalCuts.some(c=>c.work==='I0 or any joint before I0'&&c.cuts[0]==='B0'));
+  assert.match(s.drain.scope,/unattended/);
+});
