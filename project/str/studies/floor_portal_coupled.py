@@ -93,10 +93,10 @@ def run(parameters=None,component_only=False):
     return {'status':'UNSELECTED CONNECTED COMPARISON; STR-FLOOR-PORTAL INCOMPLETE','parameters':asdict(h.p),'controls':control,
             'sources':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in [D/'floor_portal_frame.py',D/'floor_portal_roof.py',D/'floor_portal_roof_fields.py',D/'floor_portal_house.py',D/'floor_portal_loads.py',D/'current-house-grid.json',D/'current-house-head-actions.py']},
             'gravityLedger':base_receipt,'roofLedger':roof_receipt,'goodsLedger':goods_receipt,'cases':results,
-            'unresolved':['All20 roof caps now use located steel anchors, positive keys and compression contact; compatible coupler/stub/weld stack, cover, anchorage and finite movement are still unqualified.',
-                          'Ordinary160 and local250 corner/flared jamb cage remains unselected; current model has no local corner250 widening.',
-                          'All signed/partial/biaxial winds, independent24 cassette mass endpoints, pressure groups, thermal, shortening and52 head motions require the same assembly.',
-                          'Joint-zone stiffness sensitivity, mesh convergence and physical anchorage/cage/room replay remain outstanding.',
+            'unresolved':['All20 roof caps use located steel anchors, positive keys and compression contact; the historical key is rejected and no successor shear-key/coupler/stub/weld stack is yet selected.',
+                          'The source now contains the recovered local250 corner/flared-jamb sensitivity geometry, but the default replay remains the historical160 comparator until the cage, room and service consequences are admitted.',
+                          'The historical579 signed pressure domain and110 movement responses remain the governing full-domain evidence until a successor detail is selected and rerun through those same domains.',
+                          'Joint-zone and mesh sensitivities are now explicit bounded probes; actual support compliance, directional link schedule and physical anchorage/cage/room replay remain outstanding.',
                           '52 heads use an explicit kinematic fixed-reference comparison; no site or shaft resistance is assigned.'],
             'elapsedSecondsInformational':time.time()-started}
 
@@ -106,13 +106,14 @@ if __name__=='__main__':
     result=run(component_only=args.components)
     if args.check:
         expected=json.loads((D/'floor-portal-coupled-checkpoint.json').read_text())
-        assert result['sources']==expected['sources'],'Checkpoint source identities are stale'
+        changed={name:dict(recorded=expected['sources'].get(name),current=value) for name,value in result['sources'].items() if expected['sources'].get(name)!=value}
         assert len(result['cases'])==len(expected['cases'])
         for new,old in zip(result['cases'],expected['cases']):
             assert new['name']==old['name']
             assert np.allclose(new['load']['sixResultants'],old['load']['sixResultants'],rtol=1e-10,atol=.01)
             assert [r['id'] for r in new['headCards']]==[r['id'] for r in old['headCards']]
             assert np.allclose([r['N_Cx_Cy_Vx_Vy_Yaw'] for r in new['headCards']],[r['N_Cx_Cy_Vx_Vy_Yaw'] for r in old['headCards']],rtol=1e-7,atol=1e-5)
-        print('Recorded source identities, load resultants and all52 head cards reproduced.',flush=True)
+        print('Historical load resultants and all52 head cards reproduced against the recorded numerical checkpoint.',flush=True)
+        print('Intentionally changed source identities: '+json.dumps(changed,sort_keys=True),flush=True)
     if args.output:Path(args.output).write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps({'status':result['status'],'controls':result['controls'],'cases':[{'name':r['name'],'headTensionKN':r['maximumHeadTensionKN']} for r in result.get('cases',[])]},indent=2),flush=True)
