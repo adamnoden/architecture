@@ -17,7 +17,7 @@ from floor_portal_movements import roof_strain,superstructure_strain
 
 SIX_L_KEYS=((200.,70.),(475.,70.),(725.,70.),(70.,200.),(70.,475.),(70.,725.))
 RADIAL_GUIDES={'radial-guide-60':(10.,60.),'radial-guide-80':(8.,80.),'radial-guide-60-t12':(12.,60.),'radial-guide-60-t16':(16.,60.),'radial-guide-60-t20':(20.,60.)}
-CANDIDATES=('baseline','square','short-key','joint-half','joint-zero','mesh-half','flex-key-80','flex-key-100','flex-key-120',*RADIAL_GUIDES)
+CANDIDATES=('baseline','square','short-key','joint-half','joint-zero','mesh-half','flex-key-80','flex-key-100','flex-key-120',*RADIAL_GUIDES,'radial-guide-j50-t20')
 
 
 def parameters(name):
@@ -40,6 +40,11 @@ def parameters(name):
         common.update(
             cap_key_width=90.,cap_key_thickness=thickness,cap_key_depth=depth,
             L_key_width=70.,L_key_thickness=thickness,L_key_depth=depth,
+            L_key_centres=SIX_L_KEYS,key_profile='triangular depth bearing',key_direction_mode='radial-guide')
+    if name=='radial-guide-j50-t20':
+        common.update(
+            cap_key_width=50.,cap_key_thickness=20.,cap_key_depth=60.,
+            L_key_width=70.,L_key_thickness=20.,L_key_depth=60.,
             L_key_centres=SIX_L_KEYS,key_profile='triangular depth bearing',key_direction_mode='radial-guide')
     if name=='joint-half':common['joint_rigid_scale']=.5
     if name=='joint-zero':common['joint_rigid_scale']=0.
