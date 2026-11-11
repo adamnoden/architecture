@@ -2,21 +2,23 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "a1d2b551-9001-4728-873c-8f988d1b845e",
   "holder": {
     "kind": "chatgpt",
     "label": "inlet-resolution-20261111"
   },
   "claimedAt": "2026-11-11T08:41:03.413Z",
-  "heartbeatAt": "2026-11-11T09:53:52.000Z",
-  "expiresAt": "2026-11-11T10:38:52.000Z",
+  "heartbeatAt": "2026-11-11T10:00:42.000Z",
+  "expiresAt": "2026-11-11T10:00:42.000Z",
   "checkpoint": {
-    "evidence": "Draft PR #1481 head 76791e1be6827d73114091a63245767639e024a8 preserves current-source adverse controls and finite inlet geometry; 64/64 local HAD tests passed before executor became unavailable. Registration #1479 merged at 003f61bacebd4cb3294280059b64f1bb5fc87f88.",
-    "next": "Resume capable executor; reconcile latest bridge crew/support and front-access utility first breaks, then finish located isolation/receiving assembly and source-bound adoption only if earned. Re-run exact-head CI after correcting current PR binding.",
-    "blocker": "Managed executor unavailable since 09:52 UTC; canonical CLI cannot run. Draft CI stopped only at stale PR binding; no substantive health run. Geometry remains IN_PROGRESS_NOT_ADOPTED."
+    "evidence": "Registration #1479 merged main003f61bacebd4cb3294280059b64f1bb5fc87f88. Draft #1481 head76791e1be6827d73114091a63245767639e024a8 preserves current-source inlet computation and 64/64 prior local HAD tests; its 10:00 UTC body now preserves the complete bridge/crew/dock successor, support holds, utility head/first-break candidate and located isolation concept, explicitly unimplemented/unadopted.",
+    "next": "A successor with a capable executor must acquire a fresh generation, inspect the preserved branch and PR recovery data, reproduce corrected comparisons, resolve the actual release/support/isolation interfaces and then reconcile affected source consumers. Exact-head CI and fresh canonical publication preflight are mandatory before any merge.",
+    "blocker": "Managed executor unavailable; canonical CLI/preflight cannot run. CI42997600920 attempt2 passed current packet/lease binding and was still in repository health at10:00 UTC. Draft remains unmerged; selected-house blocker and planned lifecycle remain unchanged."
   },
   "branch": "work/had-inlet-resolution-20261111",
-  "note": "Owner-directed connector-only renewal under swarm-runbook Connector-only chat boundary after fresh main node/policy, exact runtime claim SHA, reliable UTC and branch/PR read. This is a provenance-bound CAS/readback fallback, not execution of the canonical CLI. Prior registration PR1479 remains preserved; implementation PR1481 is current. No merge without exact-head CI and capable-runner publication preflight.",
-  "pr": 1481
+  "note": "Owner-directed connector-only handoff release under the documented swarm-runbook degraded boundary, with fresh exact ownership, reliable UTC, CAS and remote readback. This is not a canonical CLI execution. All remote evidence branches are preserved; no new physical design or product/site admission is claimed.",
+  "pr": 1481,
+  "releasedAt": "2026-11-11T10:00:42.000Z",
+  "releaseReason": "handoff"
 }
