@@ -9,12 +9,14 @@
     "label": "inlet-resolution-20261111"
   },
   "claimedAt": "2026-11-11T08:41:03.413Z",
-  "heartbeatAt": "2026-11-11T08:41:03.413Z",
-  "expiresAt": "2026-11-11T09:26:03.413Z",
+  "heartbeatAt": "2026-11-11T08:45:45.418Z",
+  "expiresAt": "2026-11-11T09:30:45.418Z",
   "checkpoint": {
-    "evidence": "Issue #1477 records the owner-directed inlet correction and exceptional absent-node registration bootstrap. Main b0f3ffd5363bbedb1c295ee1041c15cbfb5e5de5 has the rejected 200 mm inlet intersection.",
-    "next": "Publish the minimal planned-node registration, verify exact-head CI and canonical publication preflight, then continue current-source inlet implementation after main recognises this node."
+    "evidence": "Registration PR1479 at901fd84b443f25f1cce62aba79d770f7d2216263;164 project-control tests pass; issue1477 records bootstrap.",
+    "next": "Observe exact-head CI; reconcile any new main; canonical publication preflight then merge planned-node registration before substantive implementation.",
+    "blocker": "Registration CI pending; unknown node temporarily fail-closes auto-dispatch."
   },
   "branch": "work/had-inlet-registration-20261111",
-  "note": "Explicit owner-directed bootstrap recorded before source mutation in issue1477. Unknown live node temporarily fail-closes automatic dispatch until registration merges; separate ROF lease unchanged."
+  "note": "Explicit owner-directed bootstrap recorded before source mutation in issue1477. Unknown live node temporarily fail-closes automatic dispatch until registration merges; separate ROF lease unchanged.",
+  "pr": 1479
 }
