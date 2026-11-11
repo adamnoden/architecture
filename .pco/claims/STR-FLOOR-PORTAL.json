@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 3,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "7959b505-3cd1-4cbf-ae99-a07deb1a0f40",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6807640879"
   },
   "claimedAt": "2026-11-11T21:38:52.000Z",
-  "heartbeatAt": "2026-11-11T21:45:45.000Z",
-  "expiresAt": "2026-11-11T22:30:45.000Z",
+  "heartbeatAt": "2026-11-11T22:26:44.000Z",
+  "expiresAt": "2026-11-11T22:26:44.000Z",
   "branch": "work/mvb-chat-6807640879",
   "predecessor": {
     "leaseId": "e79941fb-4e0e-4c3a-8831-a0b182df35be",
@@ -37,5 +37,7 @@
     "evidence": "PR1485 head b8bd337c restores executable native roof-field/contact recovery, reconstructs square-corner/L-haunch geometry and binds it into stiffness, slab exclusion and physical mass/source replacement. A four-candidate CI sensitivity matrix is committed.",
     "next": "Read exact-head CI/probe receipts; repair any source errors, reject or retain candidates from numerical evidence, then advance joint/key/hardware domains.",
     "blocker": "Awaiting exact-head GitHub Actions execution for the reconstructed source; no candidate is adopted."
-  }
+  },
+  "releasedAt": "2026-11-11T22:26:44.000Z",
+  "releaseReason": "handoff"
 }
