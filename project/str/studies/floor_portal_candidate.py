@@ -115,7 +115,7 @@ def guide_friction_vector(h,u,coefficient,signs=None):
     state. That prevents a static/stick transition becoming numerical Coulomb
     chatter while the force magnitude follows the current guide force.
     """
-    rhs=np.zeros(h.f.size);rows=[];maximum=0.;total=0.
+    rhs=np.zeros(h.f.size);rows=[];maximum=0.;total=0.;groups=defaultdict(lambda:np.zeros(2))
     for index,e in enumerate(h.cap_links):
         if not (e['name'].startswith('cap-key-') or e['name'].startswith('L-cap-key-')):continue
         relative=e['t']@u[e['ids']]
@@ -130,15 +130,22 @@ def guide_friction_vector(h,u,coefficient,signs=None):
         force=np.r_[force2,0.]
         for port_sign,(ids,t) in zip((1.,-1.),e['ports']):
             np.add.at(rhs,ids,t.T@np.r_[port_sign*force,[0.,0.,0.]])
-        magnitude=float(np.linalg.norm(force2));maximum=max(maximum,magnitude);total+=magnitude
+        magnitude=float(np.linalg.norm(force2));maximum=max(maximum,magnitude);total+=magnitude;groups[e['name']]+=force2
         rows.append(dict(index=index,name=e['name'],normalGuideForceN=normal_force,
+                         frictionVectorXYN=force2.tolist(),
                          releasedSlipMM=slip,initialSlidingSign=direction,
                          reversedRelativeToInitial=bool(slip*direction<0),
                          frictionForceN=magnitude))
     balance=h.rigid.T@rhs
     assert max(abs(balance[:3]),default=0.)<.01,balance
     assert max(abs(balance[3:]),default=0.)<1.,balance
+    grouped={name:float(np.linalg.norm(force)) for name,force in groups.items()}
+    jamb=[v for name,v in grouped.items() if name.startswith('cap-key-')]
+    lguide=[v for name,v in grouped.items() if name.startswith('L-cap-key-')]
     return rhs,dict(maximumPointFrictionN=maximum,sumPointFrictionMagnitudesN=total,
+                    maximumJambGroupFrictionN=max(jamb,default=0.),
+                    maximumLGroupFrictionN=max(lguide,default=0.),
+                    groupedFrictionResultantN=grouped,
                     directionReversalCount=sum(r['reversedRelativeToInitial'] for r in rows),
                     sixInternalResultantN_Nmm=balance.tolist(),points=rows)
 
