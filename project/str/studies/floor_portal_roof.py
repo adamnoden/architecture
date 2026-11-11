@@ -21,14 +21,14 @@ def outer_root(point):
     return tuple(round(v,7) for v in min(candidates,key=lambda q:math.dist(q,(x,y))))
 
 
-def L_cap_points():
+def L_cap_points(extra_centres=()):
     import json
     source=json.loads((D/'current-house-ground-ties.json').read_text())['outer']['primaryBarXY'];out=set()
     gp,_=np.polynomial.legendre.leggauss(2)
     points=list(source)
     for l,b,r,t in [(0.,0.,1000.,140.),(0.,140.,140.,1000.)]:
         points.extend(((l+r)/2+x*(r-l)/2,(b+t)/2+y*(t-b)/2) for x in gp for y in gp)
-    points.extend([(70.,70.),(900.,70.),(70.,900.)])
+    points.extend([(70.,70.),(900.,70.),(70.,900.),*extra_centres])
     for corner in [(332.5,332.5),(11667.5,332.5),(11667.5,11667.5),(332.5,11667.5)]:
         sg=np.array([1 if v==332.5 else -1 for v in corner]);origin=np.array(corner)-sg*70
         out.update(outer_root(origin+sg*np.array(q)) for q in points)
@@ -55,11 +55,11 @@ def namespace(court_width=280.,court_wall=25.):
     return p,hashlib.sha256(source.encode()).hexdigest()
 
 
-def enrich(p):
+def enrich(p,extra_L_keys=()):
     """Split, never attach new supports by a Hermite-only interpolation."""
     axes=[1497.5,2702.5,9297.5,10502.5]
     cap_points={p['pt'](face,p['A'],u) for face in range(4) for u in axes}
-    all_points=cap_points|L_cap_points()
+    all_points=cap_points|L_cap_points(extra_L_keys)
     rings=[]
     for a,b in p['rings']:
         axis=0 if a[1]==b[1] else 1
@@ -124,9 +124,9 @@ def extract(p):
 
 
 class Roof:
-    def __init__(self,court_width=280.,court_wall=25.,caps=True):
+    def __init__(self,court_width=280.,court_wall=25.,caps=True,extra_L_keys=()):
         self.p,self.source_hash=namespace(court_width,court_wall)
-        self.cap_points=enrich(self.p) if caps else set()
+        self.cap_points=enrich(self.p,extra_L_keys) if caps else set()
         self.k,self.keep,self.props=extract(self.p)
         self.lookup={int(old):i for i,old in enumerate(self.keep)}
         self.rigid=rigid(self.p)[self.keep]
