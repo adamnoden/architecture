@@ -72,6 +72,8 @@ bearings and mageba guided-sliding bearings:
 | radial-guide-80 | 70 x 8 x 80 | 552 MPa | 26 MPa | 93.36 kN | not recorded in first run |
 | radial-guide-60-t12 | 70 x 12 x 60 | 308 MPa | 32 MPa | 95.24 kN | 5.82 mm |
 | radial-guide-60-t16 | 70 x 16 x 60 | **214 MPa** | **28 MPa** | **96.20 kN** | **5.80 mm** |
+| radial-guide-60-t20 | 70 x 20 x 60 | **156 MPa** | **23 MPa** | **96.86 kN** | **5.79 mm** |
+| radial-guide-j50-t20 | L70 x 20 x 60; jamb50 x 20 x 60 | **156 MPa** | **23 MPa** | **96.84 kN** | **5.79 mm** |
 
 For the 16 mm comparator, positive-X active L-guide shear slip is only 0.113 mm.
 The released movement reaches about 5.8 mm in the +/-720 microstrain comparison;
@@ -92,6 +94,29 @@ from making the whole connected house artificially soft.
 - Run 43106873349: deep flexible-key comparisons.
 - Run 43107232034: first radial-guide comparisons.
 - Run 43107567715: radial-guide 12/16 mm sizing and released-travel recovery.
+- Run 43107989566: 20 mm stiffness bracket; positive-X L screen155.76 MPa,
+  active slip0.073 mm and released roof-strain travel5.79 mm.
+- Run 43108448968: first full579 demand-domain proof of the 20 mm guide;
+  worst L guide28.476 kN /244.080 MPa and square-corner section utilisation
+  0.689 jamb /0.433 outer collector.
+- Run 43109411302: final50 mm jamb-guide geometry. The finite swept pocket
+  reserves +/-10 mm travel plus2 mm running allowance at every edge. The old
+  90 mm jamb pocket misses the four retained H12 bars by -12.37 mm after two
+  independent5 mm setting budgets; the50 mm pocket clears by+7.63 mm. L-guide
+  primary-H20 clearance is41.60 mm and conservative intermediate-H12 station
+  clearance68.23 mm after the same setting budgets. The narrowed guide passed
+  all579 signed cases, all104 signed head motions and the six strain cases.
+
+The final50 mm jamb comparator's full579 extrema are:
+- worst jamb guide4.309 kN /51.714 MPa; maximum released jamb travel6.263 mm;
+- worst L guide28.473 kN /244.050 MPa; active shear slip0.114 mm;
+- maximum structural translation10.525 mm and maximum head tension159.444 kN;
+- square-corner exact section utilisation0.689 jamb /0.433 outer collector.
+
+Across the six strain cases and104 signed head motions, maximum released travel
+is5.793 mm and the worst L-guide elastic screen is121.443 MPa. The declared
++/-10 mm pocket reserve therefore remains live with more than4 mm numerical
+margin; no slot-end contact is credited.
 
 The connected historical four-case/all-52-head replay also passes on the recovered
 source when judged numerically; changed source hashes are reported explicitly
@@ -99,21 +124,19 @@ instead of being mistaken for a numerical regression.
 
 ## Required before selection
 
-The current leading comparator is the 60 mm deep, 16 mm L blade, subject to one
-final thickness bracket. It is **not selected** until all of the following are
-closed:
+The current leading **analysis comparator** is a 60 mm deep, 20 mm thick
+radial guide:70 mm wide at each of six clear L stations and50 mm wide at each
+jamb. The full load, movement and finite-plan gates above are closed. It is
+**not a fabricated-detail selection** until all of the following are closed:
 
-1. full 579-case signed pressure domain and 110 movement-domain replay on the same
-   guided geometry;
-2. released-direction travel envelope, slot/end-stop reserve and finite jamb/L
-   footprint checks;
-3. concrete side-bearing, splitting/confinement and local cap/plate/weld strength;
-4. guide material, corrosion pair, sliding/liner detail, debris protection,
-   inspection and replaceability;
-5. actual vertical coupler/stub/weld stack and lower DPC anchorage;
-6. finite bars/hoops and the square-corner cage, then occupied-room/service replay;
-7. support compliance rather than the fixed-reference comparison;
-8. hardware mass and displaced-RC accounting.
+1. receiver/cassette force path, concrete splitting/confinement and local
+   cap/plate/weld strength;
+2. guide material, corrosion pair, sliding/liner detail, debris protection,
+   inspection and replaceability, including a bounded friction replay;
+3. actual vertical coupler/stub/weld stack and lower DPC anchorage;
+4. finite bars/hoops and the square-corner cage, then occupied-room/service replay;
+5. support compliance rather than the fixed-reference comparison;
+6. hardware mass and displaced-RC accounting.
 
 No friction in the permitted direction, favourable roof dead load against uplift,
 or accidental contact with a slot end may be used to close another duty.
