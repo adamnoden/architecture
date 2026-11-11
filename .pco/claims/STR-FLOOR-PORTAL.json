@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "STR-FLOOR-PORTAL",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "f7d5b2b7-66ee-44c2-b644-8db75a918ed1",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "floor-portal-20261111"
+  },
+  "claimedAt": "2026-11-11T09:33:11.882Z",
+  "heartbeatAt": "2026-11-11T09:33:11.882Z",
+  "expiresAt": "2026-11-11T10:18:11.882Z",
+  "branch": "work/str-floor-portal-20261111"
+}
