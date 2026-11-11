@@ -18,7 +18,7 @@ from floor_portal_cap_stack import stack as cap_stack
 
 STEEL_DENSITY=7850.
 BRONZE_DENSITY=8800.
-CONCRETE_DENSITY=2400.
+CONCRETE_DENSITY=25000/9.81  # Same25 kN/m3 physical RC basis as the coupled mass ledger.
 FCK=30.
 FCD=.85*FCK/1.5
 REBAR_FYD=500/1.15
