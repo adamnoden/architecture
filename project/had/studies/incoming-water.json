@@ -1,0 +1,568 @@
+{
+  "packet": "HAD-INLET-RESOLUTION",
+  "status": "IN_PROGRESS_NOT_ADOPTED",
+  "baselineMain": "003f61bacebd4cb3294280059b64f1bb5fc87f88",
+  "selection": "HAD-SERVICES-02",
+  "sourceBlobs": {
+    "project/had/studies/current-house.mjs": "58bf1a6248af8268de70d838cce23f249ce30b91",
+    "project/had/studies/current-house-services.json": "248c8281369d16a8885506660f740c1f66462d9d",
+    "project/had/studies/selected-water-duties.mjs": "1ea39eda8b8ba187c3ac0a7ccf4327322ea6f037",
+    "project/had/studies/incoming-water.mjs": "481f197d1c1b2d35c174b286eb28ec51165353df",
+    "project/had/studies/incoming-water-geometry.mjs": "82d1ebbc8a5f150c72294a3a76fa943082c3c6d3",
+    "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2",
+    "project/mat/studies/whole-house-service-baseline.json": "049161ebac29b24e0acc7d8085302fca906fe9d2",
+    "project/mat/studies/service-material-offer.json": "e5686440fa6a3f68387576883b1e0c768e0596bb",
+    "project/mat/studies/plant-inlet-route.py": "97b86cb80f4a689a279b99543d04652866d0123e",
+    "project/mat/studies/east-water-plant.json": "a79242dbe0118d393d906a7d01df9061fb2cdb5b",
+    "project/ias/studies/utility-first-release.json": "be84a64623c8042a002af108a784b8668acd7542",
+    "project/ias/studies/utility-host-revised-route.json": "69e6b0aa5e1847f09c7ac3da3b98eec9bf1d5c0b",
+    "project/ias/studies/utility-bench-release.py": "e95efaf52faf7cdc157eaab2d8524fb86c04e616",
+    "project/ias/ias-03-utility-factory-head.md": "29fe6cedce70f447e5156c8e235c464b9a1befab"
+  },
+  "inputs": {
+    "project/had/studies/water-replan.json": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+    "project/mat/studies/whole-house-service-baseline.json": "049161ebac29b24e0acc7d8085302fca906fe9d2",
+    "project/mat/studies/service-material-offer.json": "e5686440fa6a3f68387576883b1e0c768e0596bb",
+    "project/mat/studies/tempered-kitchen-air.json": "b18044acaec99caf00eab9a542fff78e510857c9",
+    "project/mat/studies/local-extract-heat-and-store.json": "550709d0e0ca0acff81cb42e502640771f4ac2d0",
+    "project/had/studies/receiver-selection.json": "2def3f7221d55b180cd46392a227b8c56972d03f",
+    "project/mat/studies/whole-house-leakage-duty.json": "5b93cdd9ea1ee7d825fa4596a44caf06431afc49",
+    "project/mat/studies/loggia-soffit.json": "c9c914169547bd42b90cd69512ba1a28d97ca6fe",
+    "project/mat/studies/joined-cooker-system.json": "d04dd78ba3fd040c7abd1aecb94aa9a3ce95d5e0",
+    "project/ias/studies/shared-family-bathing.json": "f89302f9d87708b5314bd68a768c976efcd07b8d",
+    "project/ias/studies/household-water.json": "30c96e79dd3a35c96bb30e355b668c9a710a4060",
+    "project/ias/studies/fitted-wc-schedule.json": "5e20c73409b5406a2de9d7ee7e5853e9302189c8",
+    "project/ias/studies/utility-first-release.json": "be84a64623c8042a002af108a784b8668acd7542",
+    "project/ias/studies/utility-host-revised-route.json": "69e6b0aa5e1847f09c7ac3da3b98eec9bf1d5c0b",
+    "project/str/studies/reconciled-house-interface.json": "4d3080dc4540ce7218b86f1d27518fbeb1f8e85d",
+    "project/str/studies/current-house-arch-movement.json": "05db94a987c7bf45b885c6d02f701b31bcf91740",
+    "project/str/studies/house-corner-rewind.json": "6471d89c213724ec02a26d797c85185beadb25b5"
+  },
+  "unchangedSelectedGeometry": {
+    "fullCurrentHouseSHA256": "7e73e08b8f4759b0638a0da67258034c80c2098c8e4259c15038d1ec6ea9719b",
+    "exteriorPortsSHA256": "9d16691683c6255acad78736c3f6a77ac3c27d01e5f6d7ab908fab1e8fdffabb",
+    "weatherFacesSHA256": "1155d413b399a8ea93c4097f402e2089ded7131a68177b93a37d881216d7986f",
+    "scope": "This development checkpoint does not mutate the selected house or its compact schedule. The rejected inherited route remains selected only as an adverse witness."
+  },
+  "inheritedInlet": {
+    "radiator": "plant-N",
+    "box": {
+      "low": [
+        10980,
+        3797,
+        100
+      ],
+      "high": [
+        11530,
+        3997,
+        700
+      ]
+    },
+    "segments": [
+      {
+        "from": [
+          12000,
+          1000,
+          500
+        ],
+        "to": [
+          11200,
+          1000,
+          500
+        ],
+        "lengthInsideRequiredEnvelopeMM": 0
+      },
+      {
+        "from": [
+          11200,
+          1000,
+          500
+        ],
+        "to": [
+          11200,
+          4300,
+          500
+        ],
+        "lengthInsideRequiredEnvelopeMM": 200
+      },
+      {
+        "from": [
+          11200,
+          4300,
+          500
+        ],
+        "to": [
+          10400,
+          4300,
+          500
+        ],
+        "lengthInsideRequiredEnvelopeMM": 0
+      }
+    ],
+    "totalLengthInsideRequiredEnvelopeMM": 200,
+    "scope": "Intersection with the complete required radiator territory, not detailed solid metal or an installed collision."
+  },
+  "utility": {
+    "pipeR": 37,
+    "bendRadius": 75,
+    "chordErrorMM": 0.00285577,
+    "vertices": {
+      "cold": [
+        [
+          11315,
+          2725,
+          1000
+        ],
+        [
+          11315,
+          2725,
+          2725
+        ],
+        [
+          11315,
+          2323,
+          2725
+        ],
+        [
+          11505,
+          2199.2,
+          2725
+        ],
+        [
+          11505,
+          600,
+          2725
+        ],
+        [
+          10760,
+          600,
+          2725
+        ],
+        [
+          10760,
+          1250,
+          2725
+        ],
+        [
+          10760,
+          1250,
+          1000
+        ]
+      ],
+      "hot": [
+        [
+          10100,
+          3200,
+          2945
+        ],
+        [
+          10100,
+          600,
+          2945
+        ],
+        [
+          10860,
+          600,
+          2945
+        ],
+        [
+          10860,
+          1250,
+          2945
+        ],
+        [
+          10860,
+          1250,
+          1000
+        ]
+      ]
+    },
+    "gapsMM": {
+      "cold": {
+        "fanWithSupports": 28.17187438,
+        "completeHeatPair": 28.40096623,
+        "condensate": 173.77104164,
+        "fanPod": 56.00252042,
+        "fanWorker": 36.22615439,
+        "eastWall": 28.49714423,
+        "headNorth": 132.99714423,
+        "headWest": 207.99714423,
+        "washerPull": 137.6396362,
+        "PVwork": 75.99714423,
+        "electricalWork": 466.95051509
+      },
+      "hot": {
+        "fanWithSupports": 475.36704473,
+        "completeHeatPair": 529.42221153,
+        "condensate": 605.49714423,
+        "fanPod": 362.99714423,
+        "fanWorker": 521.03269128,
+        "eastWall": 673.49714423,
+        "headNorth": 32.99714423,
+        "headWest": 207.99714423,
+        "washerPull": 203.20538722,
+        "PVwork": 107.99714423,
+        "electricalWork": 107.99714423
+      }
+    },
+    "hotColdGapMM": 25.99428846,
+    "capBoxes": [
+      [
+        10723,
+        1213,
+        963,
+        74,
+        74,
+        1799
+      ],
+      [
+        10823,
+        1213,
+        963,
+        74,
+        74,
+        2019
+      ]
+    ],
+    "capSweeps": {
+      "frame": {
+        "gapMM": 58,
+        "leg": 2,
+        "member": "NS rail at x10975 / z850",
+        "cap": 0
+      },
+      "carrier": {
+        "gapMM": 113,
+        "leg": 0,
+        "member": "water fitting and cap domain",
+        "cap": 0
+      }
+    },
+    "rejected": {
+      "oldLowTail": [
+        11315,
+        2380,
+        1000
+      ],
+      "currentPlatform": [
+        10710,
+        1765,
+        650,
+        650
+      ],
+      "oldLowTailInsidePlatform": true,
+      "oldUpperBranch": [
+        11200,
+        1800,
+        2945
+      ],
+      "oldUpperBranchInsidePod": true,
+      "capAt950AxisToLiftedFrameMM": 8
+    },
+    "scope": "Finite nominal backbone routes and full pipe reservations. Replace the former cold/hot utility feeds; do not install parallel feeds. No fitting or support can exceed the declared envelope without repeating this screen.",
+    "holds": [
+      "New formed pier crossings require their own structural/fabric detail: cold X11315/Z2725, hot X10100/Z2945 at Y2550.",
+      "Critical cold-route gaps are only about28 mm against a25 mm comparison. Actual setting, jacket and support tolerances must fit the remaining reserve.",
+      "The cold endpoint moves40 mm west of the old fixed upper-water axis; both full caps and a new independently supported restraint are required.",
+      "The existing temporary restraint beam intentionally meets a pipe support interface. Its actual saddle/contact and changed load path are not a clearance pass.",
+      "No native head first-release, material, condensation or handling acceptance follows from this backbone screen."
+    ]
+  },
+  "terminal": {
+    "status": "NOT_ADOPTED",
+    "completeTerminalR": 25,
+    "bendRadius": 25,
+    "vertices": {
+      "coldWasher": [
+        [
+          10760,
+          1250,
+          1000
+        ],
+        [
+          10760,
+          1250,
+          950
+        ],
+        [
+          10800,
+          1250,
+          900
+        ],
+        [
+          10800,
+          1250,
+          750
+        ]
+      ],
+      "coldSink": [
+        [
+          10800,
+          1250,
+          900
+        ],
+        [
+          10800,
+          835,
+          900
+        ],
+        [
+          10800,
+          835,
+          500
+        ],
+        [
+          10800,
+          1050,
+          500
+        ],
+        [
+          11160,
+          1050,
+          500
+        ],
+        [
+          11160,
+          1050,
+          595
+        ]
+      ],
+      "hotSink": [
+        [
+          10860,
+          1250,
+          1000
+        ],
+        [
+          10860,
+          1250,
+          950
+        ],
+        [
+          10860,
+          750,
+          950
+        ],
+        [
+          10800,
+          750,
+          950
+        ],
+        [
+          10800,
+          750,
+          400
+        ],
+        [
+          10800,
+          1000,
+          400
+        ],
+        [
+          11340,
+          1000,
+          400
+        ],
+        [
+          11340,
+          1050,
+          400
+        ],
+        [
+          11340,
+          1050,
+          595
+        ]
+      ]
+    },
+    "gapsMM": {
+      "coldWasher": [
+        {
+          "obstacle": "valve reaction arm",
+          "gapMM": -10.00095192
+        },
+        {
+          "obstacle": "valve reaction arm return",
+          "gapMM": 51.48434078
+        },
+        {
+          "obstacle": "rackPost",
+          "gapMM": 74.24621428
+        },
+        {
+          "obstacle": "rearLink800",
+          "gapMM": 74.24621428
+        },
+        {
+          "obstacle": "washer",
+          "gapMM": 100.99904808
+        }
+      ],
+      "coldSink": [
+        {
+          "obstacle": "headLowerBound",
+          "gapMM": 29.99904808
+        },
+        {
+          "obstacle": "rearLink800",
+          "gapMM": 49.99904808
+        },
+        {
+          "obstacle": "rackPost",
+          "gapMM": 65.13782996
+        },
+        {
+          "obstacle": "lower pipe arm return",
+          "gapMM": 96.7570047
+        },
+        {
+          "obstacle": "middle pipe arm return",
+          "gapMM": 96.7570047
+        }
+      ],
+      "hotSink": [
+        {
+          "obstacle": "headLowerBound",
+          "gapMM": 29.99904808
+        },
+        {
+          "obstacle": "rearLink800",
+          "gapMM": 49.99904808
+        },
+        {
+          "obstacle": "rearLink300",
+          "gapMM": 54.99904808
+        },
+        {
+          "obstacle": "wholeFootWindow1",
+          "gapMM": 61.02230075
+        },
+        {
+          "obstacle": "wholeFootWindow0",
+          "gapMM": 61.02230075
+        }
+      ]
+    },
+    "hotColdWasherGapMM": 30.89218407,
+    "hotColdSinkGapMM": 28.10059291,
+    "wasteGapsMM": {
+      "coldWasher": 113.99020047,
+      "coldSink": 48.21835934,
+      "hotSink": 81.24309556
+    },
+    "materialScope": "This is an explicit exposed, removable apparatus-connection comparison below the insulated backbone. R25 is not a silently reduced R37 backbone. Native fitting, guard, touch-temperature, condensation and receiver duties remain unqualified.",
+    "adverse": [
+      "The washer stem meets the existing valve reaction arm at its authored support contact. Actual saddle/fitting shape is required; negative geometric distance is not a free collision exception.",
+      "Proposed under-bowl breaks are not yet proved reachable from the valve-bay worker. Their coordinates do not identify the actual native tap ports.",
+      "Rigid tails and their first breaks must be removable without extending the factory head outside its610 mm transport package or retained250 mm underhang. This has not been earned."
+    ]
+  },
+  "bridge": {
+    "status": "OBJECT_PATH_ONLY",
+    "westSeat": [
+      10195,
+      3970
+    ],
+    "eastSeat": [
+      11075,
+      3970
+    ],
+    "unionMadeZ": [
+      1040,
+      1100
+    ],
+    "nutBackoffReservation": 60,
+    "lift": 85,
+    "crown": 2150,
+    "installedRadius": 37,
+    "bendRadius": 75,
+    "centrelineLengthMM": 3035.61944902,
+    "currentCaseGapMM": 43.02717311,
+    "rejectedOldSeatGapMM": -34.90053651,
+    "rejectedOldLowBridgeOrdinaryBodyGapMM": -337,
+    "oldTiltRackNotApplicable": true,
+    "ordinaryBody": {
+      "radius": 300,
+      "path": [
+        [
+          8800,
+          3200
+        ],
+        [
+          10545,
+          3200
+        ],
+        [
+          10545,
+          3850
+        ],
+        [
+          10570,
+          3970
+        ],
+        [
+          10545,
+          4250
+        ]
+      ],
+      "headTopBound": 2000,
+      "pipeUndersideGapMM": 113,
+      "westLegGapMM": 30.1176574,
+      "eastPierGapMM": 35,
+      "scope": "Dogleg includes the retained18 mm baseboard with27 mm finish; it is not the colliding straightX10570 alternative."
+    },
+    "motion": {
+      "diagonal": [
+        120,
+        160
+      ],
+      "westCaseGapMM": 43,
+      "westMinimumAtFraction": 0.025,
+      "eastHeatGapMM": 41,
+      "eastMinimumAtFraction": 0.17,
+      "nextNorthY": 4575,
+      "nextNorthCaseGapMM": 68,
+      "finishedPanelUndersideZ": 2350,
+      "liftedCrownGapMM": 78
+    },
+    "firstRestTrial": {
+      "centre": [
+        10755,
+        4575
+      ],
+      "platform": [
+        1000,
+        400
+      ],
+      "deck": 100,
+      "caseAABBClearance": 45,
+      "bufferClearance": 277.5,
+      "status": "NOT_ACCEPTED: a prepositioned frame blocks the obvious handler stance; object clearances do not establish captured lowering."
+    },
+    "holds": [
+      "Retain native union disengagement/backoff, independent counter-holds and supported release; axes alone do not prove mating surfaces.",
+      "The complete cylinder-side socket, tail and stand must leave the eccentricR425 cart before the cylinder moves; the old retained-tail proof was for a595 mm case.",
+      "The independent T&P/manifold first-release duty remains. A cold union must never isolate safety relief from a charged vessel.",
+      "Ordinary head height is an explicit2000 mm comparison, not universal anthropometry. Handling equipment, actual mass, grips, forces and final receiver still need a complete arrangement."
+    ]
+  },
+  "adoption": {
+    "adopted": false,
+    "remaining": [
+      "A located main/branch isolation station with a complete retained-end and controlled-drain arrangement.",
+      "A complete current-cylinder bridge/tail/stand first-release, capture and receiving sequence preserving ordinary plant entry.",
+      "Accessible utility sink first breaks and actual head/tail separation, beyond a nominal backbone and tube path."
+    ],
+    "receivingGates": [
+      "TRIAD-GATE",
+      "MRA-02"
+    ],
+    "noCredit": [
+      "physical qualification",
+      "material exception",
+      "complete internal-water acceptance",
+      "safe unattended mains-leak containment",
+      "real-site frost/provider admission"
+    ]
+  }
+}
