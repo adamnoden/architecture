@@ -16,7 +16,7 @@ from floor_portal_movements import roof_strain,superstructure_strain
 
 
 SIX_L_KEYS=((200.,70.),(475.,70.),(725.,70.),(70.,200.),(70.,475.),(70.,725.))
-RADIAL_GUIDES={'radial-guide-60':(10.,60.),'radial-guide-80':(8.,80.),'radial-guide-60-t12':(12.,60.),'radial-guide-60-t16':(16.,60.)}
+RADIAL_GUIDES={'radial-guide-60':(10.,60.),'radial-guide-80':(8.,80.),'radial-guide-60-t12':(12.,60.),'radial-guide-60-t16':(16.,60.),'radial-guide-60-t20':(20.,60.)}
 CANDIDATES=('baseline','square','short-key','joint-half','joint-zero','mesh-half','flex-key-80','flex-key-100','flex-key-120',*RADIAL_GUIDES)
 
 
