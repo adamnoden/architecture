@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 3,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "0eb9d592-535d-4b8a-abd5-174d232b3f52",
   "holder": {
     "kind": "chatgpt",
     "label": "inlet-resolution-g3-20261111"
   },
   "claimedAt": "2026-11-11T16:05:57.354Z",
-  "heartbeatAt": "2026-11-11T16:07:03.374Z",
-  "expiresAt": "2026-11-11T17:37:03.374Z",
+  "heartbeatAt": "2026-11-11T16:39:56.000Z",
+  "expiresAt": "2026-11-11T16:39:56.000Z",
   "checkpoint": {
     "evidence": "New draft1484 preserves ac7e4b61c1d9116e987e2f570c2684d3ef588311, the verified station/capture/drain checkpoint. Predecessor1483 exact CI43047559905 succeeded and10 local focused tests pass.",
     "next": "Finish the utility bench renewal method and integrate the independently challenged whole-U native support and lower tail. Then select and reconcile actual current-house consumers.",
@@ -39,5 +39,7 @@
       "blocker": "Final sparse receiver retention, selected-house replay and whole-U native integration are still open; no completion claim."
     }
   },
-  "pr": 1484
+  "pr": 1484,
+  "releasedAt": "2026-11-11T16:39:56.000Z",
+  "releaseReason": "handoff"
 }
