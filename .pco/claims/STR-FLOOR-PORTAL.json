@@ -9,8 +9,8 @@
     "label": "floor-portal-resume-20261111"
   },
   "claimedAt": "2026-11-11T13:06:46.946Z",
-  "heartbeatAt": "2026-11-11T15:57:51.167Z",
-  "expiresAt": "2026-11-11T16:42:51.167Z",
+  "heartbeatAt": "2026-11-11T16:08:16.843Z",
+  "expiresAt": "2026-11-11T16:53:16.843Z",
   "branch": "work/str-floor-portal-resume-20261111",
   "predecessor": {
     "leaseId": "f7d5b2b7-66ee-44c2-b644-8db75a918ed1",
@@ -34,7 +34,7 @@
   },
   "pr": 1482,
   "checkpoint": {
-    "evidence": "Publishedc9e10a69 preserves579-case demand,104 head-motion and6 strain receipts; current local square250 corner comparator is running. No adoption or physical commitments.",
-    "next": "Complete finite corner/cage, roof/foot hardware, independent pressure and stiffness/support comparisons; keep source/room effects coordinated."
+    "evidence": "Exact c9e10a69 CI43046937078 passed; square250 corner four-case and free-head-rotation controls completed locally; no adoption.",
+    "next": "Resolve native roof interior movement, actual signed contact demand and joint/corner sensitivity; checkpoint validated comparators."
   }
 }
