@@ -9,12 +9,12 @@
     "label": "inlet-resolution-resume-20261111"
   },
   "claimedAt": "2026-11-11T13:10:01.188Z",
-  "heartbeatAt": "2026-11-11T13:23:57.942Z",
-  "expiresAt": "2026-11-11T14:08:57.942Z",
+  "heartbeatAt": "2026-11-11T13:31:51.467Z",
+  "expiresAt": "2026-11-11T14:16:51.467Z",
   "checkpoint": {
-    "evidence": "Recovered preserved draft1481/76791e1 unchanged; new generation2 worktree. Utility successor now computes front union and complete tool/hand/arm sweeps, H0 access,700-high head sweep and10L receiver territory; publication checkpoint follows.",
-    "next": "Publish new branch with utility result; finish located station and independent bridge support review; reconcile only earned selection.",
-    "blocker": "No current adoption yet. Full station and captured bridge/support result remain in development."
+    "evidence": "Published draft1483 head83ace7cf75c5f7377fc5641d8545d1dd3cd96995: exact blob/tree equality; six focused tests pass; utility first-break successor reproduced. Previous PR-binding mailbox request timed out without any connector mutation; fresh read reconciled current generation2.",
+    "next": "Complete station and whole-U support review; reconcile selected house and MRA; next meaningful commit retriggers exact-head CI.",
+    "blocker": "Current selected inlet remains rejected pending complete architectural result."
   },
   "branch": "work/had-inlet-resolution-g2-20261111",
   "predecessor": {
@@ -38,5 +38,6 @@
       "next": "A successor with a capable executor must acquire a fresh generation, inspect the preserved branch and PR recovery data, reproduce corrected comparisons, resolve the actual release/support/isolation interfaces and then reconcile affected source consumers. Exact-head CI and fresh canonical publication preflight are mandatory before any merge.",
       "blocker": "Managed executor unavailable; canonical CLI/preflight cannot run. CI42997600920 attempt2 passed current packet/lease binding and was still in repository health at10:00 UTC. Draft remains unmerged; selected-house blocker and planned lifecycle remain unchanged."
     }
-  }
+  },
+  "pr": 1483
 }
