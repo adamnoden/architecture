@@ -1,0 +1,694 @@
+{
+  "status": "UNSELECTED finite-detail comparison; STR-FLOOR-PORTAL remains incomplete.",
+  "units": "mm, N/mm2, kN, kNm",
+  "aggregateMM": 16.0,
+  "aggregateAuthority": "current-house-floor-closure.py rcEdgeAlternative.cage:16mm comparator",
+  "sourceControls": {
+    "retainedFloorIntersectionM3": 0.3444,
+    "retainedRoofSteelIntersectionPerJambM3": 0.000902,
+    "retainedRoofSteelIntersectionAll16M3": 0.014432,
+    "retainedRoofVoidHeightMM": 80,
+    "oldRequiredVerticalGuideClearHeightMM": 90,
+    "upperSpandrelToRoofSoffitGapMM": 0.0,
+    "negativeControl": "The old floor and roof free-movement propositions are physically incompatible with these solids."
+  },
+  "cages": {
+    "ordinaryOuter": {
+      "kind": "outer",
+      "height": 750.0,
+      "concreteQ": [
+        252.5,
+        412.5
+      ],
+      "bars": [
+        {
+          "q": 303.5,
+          "z": 3231.0,
+          "diameter": 16.0,
+          "role": "bottom"
+        },
+        {
+          "q": 361.5,
+          "z": 3231.0,
+          "diameter": 16.0,
+          "role": "bottom"
+        },
+        {
+          "q": 303.5,
+          "z": 3306.0,
+          "diameter": 16.0,
+          "role": "bottom"
+        },
+        {
+          "q": 361.5,
+          "z": 3306.0,
+          "diameter": 16.0,
+          "role": "bottom"
+        },
+        {
+          "q": 303.5,
+          "z": 3381.0,
+          "diameter": 16.0,
+          "role": "bottom"
+        },
+        {
+          "q": 361.5,
+          "z": 3381.0,
+          "diameter": 16.0,
+          "role": "bottom"
+        },
+        {
+          "q": 303.5,
+          "z": 3859.0,
+          "diameter": 16.0,
+          "role": "top"
+        },
+        {
+          "q": 361.5,
+          "z": 3859.0,
+          "diameter": 16.0,
+          "role": "top"
+        },
+        {
+          "q": 303.5,
+          "z": 3784.0,
+          "diameter": 16.0,
+          "role": "top"
+        },
+        {
+          "q": 361.5,
+          "z": 3784.0,
+          "diameter": 16.0,
+          "role": "top"
+        },
+        {
+          "q": 303.5,
+          "z": 3709.0,
+          "diameter": 16.0,
+          "role": "top"
+        },
+        {
+          "q": 361.5,
+          "z": 3709.0,
+          "diameter": 16.0,
+          "role": "top"
+        },
+        {
+          "q": 301.5,
+          "z": 3462.5,
+          "diameter": 12.0,
+          "role": "plan"
+        },
+        {
+          "q": 363.5,
+          "z": 3462.5,
+          "diameter": 12.0,
+          "role": "plan"
+        },
+        {
+          "q": 301.5,
+          "z": 3517.5,
+          "diameter": 12.0,
+          "role": "plan"
+        },
+        {
+          "q": 363.5,
+          "z": 3517.5,
+          "diameter": 12.0,
+          "role": "plan"
+        },
+        {
+          "q": 301.5,
+          "z": 3572.5,
+          "diameter": 12.0,
+          "role": "plan"
+        },
+        {
+          "q": 363.5,
+          "z": 3572.5,
+          "diameter": 12.0,
+          "role": "plan"
+        },
+        {
+          "q": 301.5,
+          "z": 3627.5,
+          "diameter": 12.0,
+          "role": "plan"
+        },
+        {
+          "q": 363.5,
+          "z": 3627.5,
+          "diameter": 12.0,
+          "role": "plan"
+        }
+      ],
+      "linksDiameter": 8.0,
+      "linksPitch": 100.0,
+      "parallelBars": {
+        "minimumAfterTwo5MM": 32.0,
+        "requiredFor16AggregateMM": 21.0,
+        "criticalBars": [
+          {
+            "q": 303.5,
+            "z": 3231.0,
+            "diameter": 16.0,
+            "role": "bottom"
+          },
+          {
+            "q": 361.5,
+            "z": 3231.0,
+            "diameter": 16.0,
+            "role": "bottom"
+          }
+        ]
+      },
+      "sectionScreen": {
+        "bAdverseMM": 150.0,
+        "dAdverseMM": 604.0,
+        "tensionAreaMM2": 1206.37157898,
+        "xOverD": 0.42568285,
+        "MRdKNm": 262.86051154,
+        "VRdKN": 337.80140308,
+        "linkVRdKN": 356.40412518,
+        "strutVRdKN": 337.80140308,
+        "scope": "Zero axial force; preliminary section screen only."
+      },
+      "slabAndStuds": {
+        "slabTransverseH12Z": [
+          3201.0,
+          3339.0
+        ],
+        "slabToLongitudinalBarClearAfterTwo5MM": 6.0,
+        "ordinaryStud": {
+          "diameterMM": 16,
+          "alongStationsMM": [
+            -50,
+            50
+          ],
+          "qMM": 332.5,
+          "minimumOrthogonalClearAfterTwo5MM": 3.0,
+          "source": "current-house-floor-closure.py ordinaryPositiveRodDetail",
+          "M24PassesThroughConcrete": false
+        },
+        "scope": "Two existing M16 studs and crossbars at14 ordinary stations. Eight corner assemblies are not inferred from this screen."
+      },
+      "placementPath": {
+        "alongMM": 23.0,
+        "qMM": 332.5,
+        "lowerBoundFreeDiameterMM": 28.0,
+        "aggregateDiameterMM": 16.0,
+        "aggregatePlus5MM": 21.0,
+        "sequence": "Top crossbar fitted after concrete placement; permanent stud feet and cage already present.",
+        "scope": "One connected vertical access path through the ordinary cage; does not certify compaction, link bends or the local jamb/corner cage."
+      }
+    },
+    "ordinaryCourt": {
+      "kind": "court",
+      "height": 650.0,
+      "concreteQ": [
+        252.5,
+        412.5
+      ],
+      "bars": [
+        {
+          "q": 303.5,
+          "z": 3231.0,
+          "diameter": 16.0,
+          "role": "bottom"
+        },
+        {
+          "q": 361.5,
+          "z": 3231.0,
+          "diameter": 16.0,
+          "role": "bottom"
+        },
+        {
+          "q": 303.5,
+          "z": 3306.0,
+          "diameter": 16.0,
+          "role": "bottom"
+        },
+        {
+          "q": 361.5,
+          "z": 3306.0,
+          "diameter": 16.0,
+          "role": "bottom"
+        },
+        {
+          "q": 303.5,
+          "z": 3759.0,
+          "diameter": 16.0,
+          "role": "top"
+        },
+        {
+          "q": 361.5,
+          "z": 3759.0,
+          "diameter": 16.0,
+          "role": "top"
+        },
+        {
+          "q": 303.5,
+          "z": 3684.0,
+          "diameter": 16.0,
+          "role": "top"
+        },
+        {
+          "q": 361.5,
+          "z": 3684.0,
+          "diameter": 16.0,
+          "role": "top"
+        },
+        {
+          "q": 301.5,
+          "z": 3412.5,
+          "diameter": 12.0,
+          "role": "plan"
+        },
+        {
+          "q": 363.5,
+          "z": 3412.5,
+          "diameter": 12.0,
+          "role": "plan"
+        },
+        {
+          "q": 301.5,
+          "z": 3467.5,
+          "diameter": 12.0,
+          "role": "plan"
+        },
+        {
+          "q": 363.5,
+          "z": 3467.5,
+          "diameter": 12.0,
+          "role": "plan"
+        },
+        {
+          "q": 301.5,
+          "z": 3522.5,
+          "diameter": 12.0,
+          "role": "plan"
+        },
+        {
+          "q": 363.5,
+          "z": 3522.5,
+          "diameter": 12.0,
+          "role": "plan"
+        },
+        {
+          "q": 301.5,
+          "z": 3577.5,
+          "diameter": 12.0,
+          "role": "plan"
+        },
+        {
+          "q": 363.5,
+          "z": 3577.5,
+          "diameter": 12.0,
+          "role": "plan"
+        }
+      ],
+      "linksDiameter": 8.0,
+      "linksPitch": 100.0,
+      "parallelBars": {
+        "minimumAfterTwo5MM": 32.0,
+        "requiredFor16AggregateMM": 21.0,
+        "criticalBars": [
+          {
+            "q": 303.5,
+            "z": 3231.0,
+            "diameter": 16.0,
+            "role": "bottom"
+          },
+          {
+            "q": 361.5,
+            "z": 3231.0,
+            "diameter": 16.0,
+            "role": "bottom"
+          }
+        ]
+      },
+      "sectionScreen": {
+        "bAdverseMM": 150.0,
+        "dAdverseMM": 541.5,
+        "tensionAreaMM2": 804.24771932,
+        "xOverD": 0.31654348,
+        "MRdKNm": 165.37315128,
+        "VRdKN": 302.84678769,
+        "linkVRdKN": 319.52455925,
+        "strutVRdKN": 302.84678769,
+        "scope": "Zero axial force; preliminary section screen only."
+      },
+      "slabAndStuds": {
+        "slabTransverseH12Z": [
+          3201.0,
+          3339.0
+        ],
+        "slabToLongitudinalBarClearAfterTwo5MM": 6.0,
+        "ordinaryStud": {
+          "diameterMM": 16,
+          "alongStationsMM": [
+            -50,
+            50
+          ],
+          "qMM": 332.5,
+          "minimumOrthogonalClearAfterTwo5MM": 3.0,
+          "source": "current-house-floor-closure.py ordinaryPositiveRodDetail",
+          "M24PassesThroughConcrete": false
+        },
+        "scope": "Two existing M16 studs and crossbars at14 ordinary stations. Eight corner assemblies are not inferred from this screen."
+      },
+      "placementPath": {
+        "alongMM": 23.0,
+        "qMM": 332.5,
+        "lowerBoundFreeDiameterMM": 28.0,
+        "aggregateDiameterMM": 16.0,
+        "aggregatePlus5MM": 21.0,
+        "sequence": "Top crossbar fitted after concrete placement; permanent stud feet and cage already present.",
+        "scope": "One connected vertical access path through the ordinary cage; does not certify compaction, link bends or the local jamb/corner cage."
+      }
+    },
+    "localPortal": {
+      "kind": "outer",
+      "height": 750.0,
+      "concreteQ": [
+        252.5,
+        472.5
+      ],
+      "bars": [
+        {
+          "q": 313.5,
+          "z": 3231.0,
+          "diameter": 16.0,
+          "role": "bottom"
+        },
+        {
+          "q": 419.5,
+          "z": 3231.0,
+          "diameter": 16.0,
+          "role": "bottom"
+        },
+        {
+          "q": 313.5,
+          "z": 3306.0,
+          "diameter": 16.0,
+          "role": "bottom"
+        },
+        {
+          "q": 419.5,
+          "z": 3306.0,
+          "diameter": 16.0,
+          "role": "bottom"
+        },
+        {
+          "q": 313.5,
+          "z": 3381.0,
+          "diameter": 16.0,
+          "role": "bottom"
+        },
+        {
+          "q": 419.5,
+          "z": 3381.0,
+          "diameter": 16.0,
+          "role": "bottom"
+        },
+        {
+          "q": 313.5,
+          "z": 3859.0,
+          "diameter": 16.0,
+          "role": "top"
+        },
+        {
+          "q": 419.5,
+          "z": 3859.0,
+          "diameter": 16.0,
+          "role": "top"
+        },
+        {
+          "q": 313.5,
+          "z": 3784.0,
+          "diameter": 16.0,
+          "role": "top"
+        },
+        {
+          "q": 419.5,
+          "z": 3784.0,
+          "diameter": 16.0,
+          "role": "top"
+        },
+        {
+          "q": 313.5,
+          "z": 3709.0,
+          "diameter": 16.0,
+          "role": "top"
+        },
+        {
+          "q": 419.5,
+          "z": 3709.0,
+          "diameter": 16.0,
+          "role": "top"
+        },
+        {
+          "q": 311.5,
+          "z": 3462.5,
+          "diameter": 12.0,
+          "role": "plan"
+        },
+        {
+          "q": 421.5,
+          "z": 3462.5,
+          "diameter": 12.0,
+          "role": "plan"
+        },
+        {
+          "q": 311.5,
+          "z": 3517.5,
+          "diameter": 12.0,
+          "role": "plan"
+        },
+        {
+          "q": 421.5,
+          "z": 3517.5,
+          "diameter": 12.0,
+          "role": "plan"
+        },
+        {
+          "q": 311.5,
+          "z": 3572.5,
+          "diameter": 12.0,
+          "role": "plan"
+        },
+        {
+          "q": 421.5,
+          "z": 3572.5,
+          "diameter": 12.0,
+          "role": "plan"
+        },
+        {
+          "q": 311.5,
+          "z": 3627.5,
+          "diameter": 12.0,
+          "role": "plan"
+        },
+        {
+          "q": 421.5,
+          "z": 3627.5,
+          "diameter": 12.0,
+          "role": "plan"
+        }
+      ],
+      "linksDiameter": 10.0,
+      "linksPitch": 50.0,
+      "parallelBars": {
+        "minimumAfterTwo5MM": 33.0,
+        "requiredFor16AggregateMM": 21.0,
+        "criticalBars": [
+          {
+            "q": 311.5,
+            "z": 3462.5,
+            "diameter": 12.0,
+            "role": "plan"
+          },
+          {
+            "q": 311.5,
+            "z": 3517.5,
+            "diameter": 12.0,
+            "role": "plan"
+          }
+        ]
+      },
+      "sectionScreen": {
+        "bAdverseMM": 210.0,
+        "dAdverseMM": 604.0,
+        "tensionAreaMM2": 1206.37157898,
+        "xOverD": 0.30405918,
+        "MRdKNm": 278.27284162,
+        "VRdKN": 472.92196431,
+        "linkVRdKN": 1113.76289119,
+        "strutVRdKN": 472.92196431,
+        "scope": "Zero axial force; preliminary section screen only."
+      },
+      "slabAndStuds": {
+        "slabTransverseH12Z": [
+          3201.0,
+          3339.0
+        ],
+        "slabToLongitudinalBarClearAfterTwo5MM": 6.0,
+        "ordinaryStud": {
+          "diameterMM": 16,
+          "alongStationsMM": [
+            -50,
+            50
+          ],
+          "qMM": 332.5,
+          "minimumOrthogonalClearAfterTwo5MM": -7.0,
+          "source": "current-house-floor-closure.py ordinaryPositiveRodDetail",
+          "M24PassesThroughConcrete": false
+        },
+        "scope": "Two existing M16 studs and crossbars at14 ordinary stations. Eight corner assemblies are not inferred from this screen."
+      },
+      "jambCrossings": {
+        "minimumOrthogonalMainBarClearAfterTwo5MM": 27.0,
+        "criticalBeamBar": {
+          "q": 313.5,
+          "z": 3231.0,
+          "diameter": 16.0,
+          "role": "bottom"
+        },
+        "criticalJambQ": 364.5,
+        "scope": "Physical main-bar crossing; links and assembly separately checked. The parallel-bar spacing rule is not re-labelled as a rule for every orthogonal crossing."
+      }
+    }
+  },
+  "pairedBay": {
+    "plateauAlongMM": [
+      1295,
+      2905
+    ],
+    "completeAlongMM": [
+      795,
+      3405
+    ],
+    "transitionAlongMM": 500,
+    "sourceJambAxesMM": [
+      1497.5,
+      2702.5
+    ],
+    "mirrorAboutMM": 6000,
+    "count": 8,
+    "minimumOrdinaryRodOutsideTransitionMM": 395,
+    "ordinaryCoreQ": [
+      252.5,
+      412.5
+    ],
+    "localCoreQ": [
+      252.5,
+      472.5
+    ],
+    "ordinaryFinishedFaceQ": 439.5,
+    "localFinishedFaceQ": 499.5,
+    "oldFinishedFaceQ": 429.5
+  },
+  "bends": [
+    {
+      "offsetMM": 10,
+      "spanMM": 500.0,
+      "centrelineRadiusMM": 6252.5,
+      "angleDegrees": 2.29152568,
+      "arcLengthMM": 500.13332267,
+      "barCount": 6,
+      "diameterMM": 16,
+      "fullYieldAxialKN": 524.50938216,
+      "maximumNormalResultantKN": 20.97198649,
+      "insideBendMandrelDiameterScreenMM": 307.61667196,
+      "providedInsideMandrelDiameterMM": 12489.0
+    },
+    {
+      "offsetMM": 58,
+      "spanMM": 500.0,
+      "centrelineRadiusMM": 1092.0862069,
+      "angleDegrees": 13.2334758,
+      "arcLengthMM": 504.4733315,
+      "barCount": 6,
+      "diameterMM": 16,
+      "fullYieldAxialKN": 524.50938216,
+      "maximumNormalResultantKN": 120.07050791,
+      "insideBendMandrelDiameterScreenMM": 307.61667196,
+      "providedInsideMandrelDiameterMM": 2168.17241379
+    },
+    {
+      "offsetMM": 10,
+      "spanMM": 500.0,
+      "centrelineRadiusMM": 6252.5,
+      "angleDegrees": 2.29152568,
+      "arcLengthMM": 500.13332267,
+      "barCount": 4,
+      "diameterMM": 12,
+      "fullYieldAxialKN": 196.69101831,
+      "maximumNormalResultantKN": 7.86449493,
+      "insideBendMandrelDiameterScreenMM": 203.1647423,
+      "providedInsideMandrelDiameterMM": 12493.0
+    },
+    {
+      "offsetMM": 58,
+      "spanMM": 500.0,
+      "centrelineRadiusMM": 1092.0862069,
+      "angleDegrees": 13.2334758,
+      "arcLengthMM": 504.4733315,
+      "barCount": 4,
+      "diameterMM": 12,
+      "fullYieldAxialKN": 196.69101831,
+      "maximumNormalResultantKN": 45.02644047,
+      "insideBendMandrelDiameterScreenMM": 203.1647423,
+      "providedInsideMandrelDiameterMM": 2172.17241379
+    }
+  ],
+  "simultaneousFullYieldTransverseBendDemandKN": 193.9334298,
+  "transitionConfinement": {
+    "halfTransitionLinkStationsMM": [
+      25.0,
+      75.0,
+      125.0,
+      175.0,
+      225.0
+    ],
+    "closedLinks": "H10 at50",
+    "transverseSteelYieldResistanceKN": 341.47746235,
+    "burstOnlyUtilisation": 0.56792454,
+    "combinedShearTorsionAndAnchorageAdmitted": false
+  },
+  "roofCapComparison": {
+    "jambTopZ": 6515,
+    "steelCapThicknessMM": 25,
+    "steelUndersideZ": 6540,
+    "upperSpandrelTopZ": 6515,
+    "nominalRoofGapAboveSpandrelMM": 25,
+    "normalRoofAxisToJambAxisOffsetMM": 20,
+    "sourceRCRemovedM3LowerControl": 0.086184,
+    "sourceCapSteelKgLowerControl": 115.866,
+    "restraintComparisons": [
+      "finite fixed cap, all six components",
+      "physically detailed sliding cap if the fixed comparison fails"
+    ],
+    "admitted": false
+  },
+  "limits": [
+    "No coupled house actions or52-head successor result yet.",
+    "Roof positive/negative connection, RC joint shear, bend bursting and finite cage links not admitted by these screens.",
+    "Eight collector corners, field coupler assembly, slab mesh near jamb bars and all service/furniture conflicts still require explicit replay.",
+    "Source-foot pins, lower masonry contact and roof receiving links must not be silently replaced by convenient stiffness."
+  ],
+  "sourcesSHA256": {
+    "project/str/studies/reconciled-house-interface.json": "ae17f6de977de58ae54f25edfc67c48c36f348cffc288e839f25a8b4143c16cf",
+    "project/str/studies/reconciled-corner-portals.py": "a0c158fbff68bc250e6ab64ab6251cc396abc7efb6ef3f398325629e678b92bd",
+    "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+    "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+    "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+    "project/str/studies/house-corner-rewind.json": "0a927d781097f01693195bae56712204abd8d5c6d7335a56038d3ea3d26007a1"
+  },
+  "references": [
+    "https://www.concretecentre.com/Structural-design/Eurocode-2-concrete/Detailing.aspx",
+    "https://eurocodes.jrc.ec.europa.eu/sites/default/files/2022-06/1110_WS_EC2.pdf",
+    "https://www.nvent.com/sites/default/files/acquiadam/assets/LENTON-CAT-CP7J-TaperThreadedRebarSystem-UKEN.pdf"
+  ],
+  "referenceScope": "EC2 first-generation detailing method, sourced16mm aggregate; product dimensions are comparison inputs, not purchase or certification authority."
+}
