@@ -12,6 +12,7 @@ import numpy as np
 from floor_portal_house import House,Parameters,ContactSolve
 from floor_portal_loads import Case,gravity,roof_gravity,roof_goods,wind
 from floor_portal_roof_fields import spandrel_clearance
+from floor_portal_movements import roof_strain,superstructure_strain
 
 
 SHORT_L_KEYS=((200.,70.),(475.,70.),(725.,70.),(70.,200.),(70.,475.),(70.,725.))
@@ -19,15 +20,17 @@ SHORT_L_KEYS=((200.,70.),(475.,70.),(725.,70.),(70.,200.),(70.,475.),(70.,725.))
 
 def parameters(name):
     common={}
-    if name in ('square','short-key','joint-half'):
+    if name in ('square','short-key','joint-half','joint-zero','mesh-half'):
         common.update(corner_width=250.,corner_haunch=120.)
-    if name in ('short-key','joint-half'):
+    if name in ('short-key','joint-half','joint-zero','mesh-half'):
         common.update(
             cap_key_width=90.,cap_key_thickness=12.,cap_key_depth=30.,
             L_key_width=70.,L_key_thickness=12.,L_key_depth=30.,
             L_key_centres=SHORT_L_KEYS,key_profile='triangular depth bearing')
     if name=='joint-half':common['joint_rigid_scale']=.5
-    if name not in ('baseline','square','short-key','joint-half'):
+    if name=='joint-zero':common['joint_rigid_scale']=0.
+    if name=='mesh-half':common['mesh']=700.
+    if name not in ('baseline','square','short-key','joint-half','joint-zero','mesh-half'):
         raise ValueError(name)
     return Parameters(**common)
 
@@ -43,7 +46,7 @@ def cases(h):
     return [
         Case.combination(h,'ULS simultaneous gravity and full blocked water',[(1.35,totalG),(1.5,totalQ)]),
         Case.combination(h,'positive X wind and roof suction without favourable G',[(1,pressure),(1,suction)]),
-    ],base
+    ],base,totalG
 
 
 def key_groups(h,u):
@@ -60,7 +63,7 @@ def key_stress(force_n,width,thickness,depth,profile):
 
 
 def solve(name):
-    p=parameters(name);h=House(p);loadcases,base=cases(h);solver=ContactSolve(h.k,h.fixed,h.contacts)
+    p=parameters(name);h=House(p);loadcases,base,Gref=cases(h);solver=ContactSolve(h.k,h.fixed,h.contacts)
     rows=[]
     for case in loadcases:
         u,reaction,contact=solver(case.f)
@@ -103,6 +106,35 @@ def solve(name):
             balanceMaximumForceN=float(np.max(abs(balance[:3]))),
             balanceMaximumMomentNmm=float(np.max(abs(balance[3:]))),
         ))
+    movement=[]
+    movement_specs=[]
+    for strain in (-720e-6,720e-6):
+        movement_specs.append((f'roof actual axial strain {strain:g}',roof_strain(h,strain,False)))
+        movement_specs.append((f'roof reference affine strain {strain:g}',roof_strain(h,strain,True)))
+    for strain in (-300e-6,300e-6):
+        movement_specs.append((f'superstructure net strain {strain:g}',superstructure_strain(h,strain)))
+    for label,eigen in movement_specs:
+        case=Case.combination(h,'G reference; '+label,[(1,Gref),(1,eigen)])
+        u,reaction,contact=solver(case.f)
+        groups=key_groups(h,u)
+        jamb=[v for k,v in groups.items() if k.startswith('cap-key-')]
+        lkeys=[v for k,v in groups.items() if k.startswith('L-cap-key-')]
+        jamb_force=max((float(np.max(abs(v[:2]))) for v in jamb),default=0.)
+        l_force=max((float(np.max(abs(v[:2]))) for v in lkeys),default=0.)
+        balance=h.rigid.T@(case.f+reaction)
+        movement.append(dict(
+            name=label,
+            maximumHeadTensionKN=max(0.,-min(float(reaction[node+2]/1000) for node in h.heads.values())),
+            maximumTranslationMM=max(float(np.max(abs(u[6*i:6*i+3]))) for i in range(len(h.f.points))),
+            maximumJambKeyDirectionalForceKN=jamb_force/1000,
+            maximumLKeyDirectionalForceKN=l_force/1000,
+            jambKeyElasticRootStressMPa=float(key_stress(jamb_force,p.cap_key_width,p.cap_key_thickness,p.cap_key_depth,p.key_profile)),
+            LKeyElasticRootStressMPa=float(key_stress(l_force,p.L_key_width,p.L_key_thickness,p.L_key_depth,p.key_profile)),
+            activeContacts=int(sum(contact['active'])),
+            balanceMaximumForceN=float(np.max(abs(balance[:3]))),
+            balanceMaximumMomentNmm=float(np.max(abs(balance[3:]))),
+        ))
+
     return dict(
         candidate=name,
         parameters={
@@ -114,12 +146,13 @@ def solve(name):
         },
         physicalRCVolumeM3=base['RC']['totalM3'],
         cases=rows,
+        movementCases=movement,
         status='SENSITIVITY ONLY; NO DESIGN ADOPTION',
     )
 
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--candidate',required=True,choices=('baseline','square','short-key','joint-half'))
+    parser=argparse.ArgumentParser();parser.add_argument('--candidate',required=True,choices=('baseline','square','short-key','joint-half','joint-zero','mesh-half'))
     args=parser.parse_args()
     result=solve(args.candidate)
     print('STR_PROBE='+json.dumps(result,separators=(',',':')),flush=True)
