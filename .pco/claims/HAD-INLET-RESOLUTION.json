@@ -9,12 +9,12 @@
     "label": "inlet-resolution-resume-20261111"
   },
   "claimedAt": "2026-11-11T13:10:01.188Z",
-  "heartbeatAt": "2026-11-11T13:31:51.467Z",
-  "expiresAt": "2026-11-11T14:16:51.467Z",
+  "heartbeatAt": "2026-11-11T13:49:18.722Z",
+  "expiresAt": "2026-11-11T14:34:18.722Z",
   "checkpoint": {
-    "evidence": "Published draft1483 head83ace7cf75c5f7377fc5641d8545d1dd3cd96995: exact blob/tree equality; six focused tests pass; utility first-break successor reproduced. Previous PR-binding mailbox request timed out without any connector mutation; fresh read reconciled current generation2.",
-    "next": "Complete station and whole-U support review; reconcile selected house and MRA; next meaningful commit retriggers exact-head CI.",
-    "blocker": "Current selected inlet remains rejected pending complete architectural result."
+    "evidence": "Draft1483 at83ace7cf contains accessible utility first breaks and H0 isolation; corrected whole-U20-phase reviewer calculation is now reproduced locally.",
+    "next": "Complete finite station tools, catches and drain geometry; integrate reviewed bridge support and current-source adoption.",
+    "blocker": "No administrative blocker; station and source-consumer reconciliation remain substantive design work."
   },
   "branch": "work/had-inlet-resolution-g2-20261111",
   "predecessor": {
