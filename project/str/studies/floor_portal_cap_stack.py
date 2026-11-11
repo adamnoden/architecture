@@ -77,13 +77,17 @@ def stack():
     area_bar=math.pi*BAR_DIAMETER**2/4
     stub_mass=area_bar*STUB_LENGTH*STEEL_DENSITY_KG_M3/1e9
     per_line_mass=C13_MASS_KG+P13_MASS_KG+stub_mass
+    p13_centroid=(p13_top+p13_bottom_open)/2
+    stub_centroid=(upper_stub_tip+lower_stub_tip)/2
+    c13_centroid=(c13_top+c13_bottom)/2
+    per_line_mass_centroid=(C13_MASS_KG*c13_centroid+stub_mass*stub_centroid+P13_MASS_KG*p13_centroid)/per_line_mass
 
     # Net additional concrete displacement above the pre-existing H12 bar
     # envelope. The full20/25 mm cylindrical envelopes are conservative.
-    net_extra_volume=(
-        math.pi*(C13_DIAMETER_MAX**2-BAR_DIAMETER**2)/4*C13_LENGTH+
-        math.pi*(P13_DIAMETER_MAX**2-BAR_DIAMETER**2)/4*P13_LENGTH_OPEN
-    )/1e9
+    c13_extra=math.pi*(C13_DIAMETER_MAX**2-BAR_DIAMETER**2)/4*C13_LENGTH/1e9
+    p13_extra=math.pi*(P13_DIAMETER_MAX**2-BAR_DIAMETER**2)/4*P13_LENGTH_OPEN/1e9
+    net_extra_volume=c13_extra+p13_extra
+    displacement_centroid=(c13_extra*c13_centroid+p13_extra*p13_centroid)/net_extra_volume
 
     # Four force lines per jamb, sixteen jambs.
     lines=4*16
@@ -122,12 +126,12 @@ def stack():
         lowerBarTipAdjustmentRangeMM=lower_bar_tip_closed-lower_bar_tip_open,
         conservativeH12EquivalentAxialLengthMM=equivalent,
         hardwareMass=dict(
-            perForceLineKg=per_line_mass,perJambKg=4*per_line_mass,
-            all16JambsKg=lines*per_line_mass,
+            perForceLineKg=per_line_mass,perForceLineCentroidZ=per_line_mass_centroid,
+            perJambKg=4*per_line_mass,all16JambsKg=lines*per_line_mass,
             excludesGuideReceiverTongueWeldAndProtection=True,
         ),
         netAdditionalConcreteDisplacement=dict(
-            perForceLineM3=net_extra_volume,
+            perForceLineM3=net_extra_volume,perForceLineCentroidZ=displacement_centroid,
             all16JambsM3=lines*net_extra_volume,
             note='Full cylindrical20/25 mm coupler envelopes minus the H12 bar volume; actual profiles are smaller.',
         ),
