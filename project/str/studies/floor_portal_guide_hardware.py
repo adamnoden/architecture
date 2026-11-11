@@ -9,6 +9,7 @@ from pathlib import Path
 import argparse,json,math
 
 from floor_portal_guide_fit import controls as fit_controls
+from floor_portal_cap_stack import stack as cap_stack
 from floor_portal_candidate import GUIDE_TRAVEL_RESERVE_MM
 
 S355_FY_MPA=355.0
@@ -50,7 +51,7 @@ def screen_family(name,row,width,thickness,depth):
 
 
 def run(receipt):
-    params=receipt['parameters'];bounds=receipt['guideBounds'];fit=fit_controls()
+    params=receipt['parameters'];bounds=receipt['guideBounds'];fit=fit_controls();stack=cap_stack()
     jamb_name,jamb_row=family_max(bounds,'cap-key-','maximumDirectionalForceKN')
     L_name,L_row=family_max(bounds,'L-cap-key-','maximumDirectionalForceKN')
     jamb=screen_family(jamb_name,jamb_row,params['cap_key_width'],params['cap_key_thickness'],params['cap_key_depth'])
@@ -61,7 +62,8 @@ def run(receipt):
     assert jamb['C30GrossBearingComparatorUtilisation']<1.,jamb
     assert L['C30GrossBearingComparatorUtilisation']<1.,L
     assert max(jamb['maximumReleasedTravelMM'],L['maximumReleasedTravelMM'])<=GUIDE_TRAVEL_RESERVE_MM
-    assert fit['selected50JambGuide']['minimumH12ClearAfterTwo5MMSettingMM']>=5.
+    assert fit['selected45JambGuideEL12C13NWeldableEnvelope']['minimumClearAfterTwo5MMSettingMM']>=5.
+    assert stack['positionCoupler']['verticalClearAfter5MMSettingMM']>=25.
     assert fit['LGuides']['minimumPrimaryH20ClearAfterTwo5MMSettingMM']>=25.
 
     return dict(
@@ -81,7 +83,7 @@ def run(receipt):
             slidingFrictionComparator=SLIDING_FRICTION_COMPARATOR,
         ),
         declaredReleasedTravelReservePlusMinusMM=GUIDE_TRAVEL_RESERVE_MM,
-        jamb=jamb,L=L,finiteFit=fit,
+        jamb=jamb,L=L,finiteFit=fit,capStack=stack,
         unresolved=[
             'receiver plate/cheek thickness and local bending',
             'concrete splitting, edge breakout and local confinement',
@@ -89,7 +91,7 @@ def run(receipt):
             'shop weld preparation, inspection class and parent-metal development',
             'sliding liner/material pair, wear, corrosion isolation and debris seal',
             '3 percent friction bound must be replayed through the connected assembly rather than treated as accepted',
-            'hardware mass and displaced concrete',
+            'guide receiver/tongue mass and displaced concrete beyond the now-quantified cap couplers',
         ],
     )
 
