@@ -11,6 +11,7 @@ import argparse,hashlib,json,time
 import numpy as np
 from floor_portal_house import House,Parameters,ContactSolve
 from floor_portal_loads import Case,gravity,roof_gravity,roof_goods,wind
+from floor_portal_candidate import named_parameters,update_bounds,finalise_bounds
 
 D=Path(__file__).resolve().parent
 
@@ -30,13 +31,14 @@ def run(parameters=None,full=True,matrix_path=None):
     members=[(family,e) for family,es in h.members.items() for e in es]
     metadata=[dict(family=family,name=e['name'],a=e['a'].tolist(),b=e['b'].tolist(),basis=e['R'].tolist(),width=e['width'],depth=e['depth']) for family,e in members]
     heads=list(h.heads);hi=np.array([[h.heads[name]+j for j in range(6)] for name in heads]);scales=np.array([1e-3,1e-3,1e-3,1e-6,1e-6,1e-6])
-    names=[];memberrows=[];headrows=[];jointrows=[];allloads=[];contactcounts=[];maximum_balance=np.zeros(6);worst_trans=(0.,None);minimum_head=(0.,None,None)
+    names=[];memberrows=[];headrows=[];jointrows=[];allloads=[];contactcounts=[];maximum_balance=np.zeros(6);worst_trans=(0.,None);minimum_head=(0.,None,None);guide_bounds={}
     bounds={family:dict(maxAbs=np.zeros(6),witness=[None]*6) for family in h.members}
     offsets=np.cumsum([0]+[len(es) for es in h.members.values()])
     def one(case):
         nonlocal worst_trans,minimum_head,maximum_balance
         u,r,c=solve(case.f);balance=h.rigid.T@(r+case.f)
         assert max(abs(balance[:3]))<.03 and max(abs(balance[3:]))<20.,(case.name,balance)
+        update_bounds(guide_bounds,h,u,len(names),case.name)
         maximum_balance=np.maximum(maximum_balance,abs(balance));values=member_actions(h,case,u)
         row=r[hi]*scales;cards=row[:,[2,4,3,0,1,5]]*np.array([1,-1,1,-1,-1,-1]);headrows.append(cards)
         index=len(names);names.append(case.name);contactcounts.append(int(sum(c['active'])));allloads.append(h.rigid.T@case.f)
@@ -81,11 +83,11 @@ def run(parameters=None,full=True,matrix_path=None):
         headcards.append(dict(id=name,components_N_Cx_Cy_Vx_Vy_Yaw=limits))
     if matrix_path:
         np.savez_compressed(matrix_path,actions=np.array(memberrows),headCards=hh,jointForces=jj,loads=np.array(allloads))
-        Path(str(matrix_path)+'.json').write_text(json.dumps(dict(cases=names,members=metadata,links=[e['name'] for e in h.cap_links+h.dpc_links],heads=heads),indent=2)+'\n')
+        Path(str(matrix_path)+'.json').write_text(json.dumps(dict(cases=names,members=metadata,links=[e['name'] for e in h.cap_links+h.dpc_links],heads=heads,parameters=asdict(h.p)),indent=2)+'\n')
     return dict(status='CORRELATED DEMAND DOMAIN ONLY; physical sections and joints remain unselected',parameters=asdict(h.p),controls=controls,
                 caseCount=len(names),caseNames=names,memberGeometry=metadata,memberBounds={k:dict(maxAbsLocal_N_Vy_Vz_T_My_Mz=v['maxAbs'].tolist(),witness=v['witness']) for k,v in bounds.items()},
                 all52HeadBounds=headcards,maximumBalanceResidual=maximum_balance.tolist(),minimumHeadN_KN_Id_Case=minimum_head,
-                maximumTranslationMM_Case=worst_trans,activeContactCounts=contactcounts,
+                maximumTranslationMM_Case=worst_trans,activeContactCounts=contactcounts,guideBounds=finalise_bounds(guide_bounds,h),
                 sourceHashes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in [D/'floor_portal_frame.py',D/'floor_portal_roof.py',D/'floor_portal_house.py',D/'floor_portal_loads.py',Path(__file__)]},
                 gravityLedger=ledger,roofLedger=roofledger,goodsLedger=goodsledger,
                 separateUnfinishedDomains=['24 independent cassette dry centroid groups and actual independent pressure faces','guard point/release states','roof thermal, RC shortening and all52 head movements','section/joint/soil acceptance, finite cage/assembly and occupied room interfaces'],elapsedSecondsInformational=time.time()-start)
@@ -128,7 +130,10 @@ def matrix_receipt(path):
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--quick',action='store_true');p.add_argument('--output',required=True);p.add_argument('--matrix');p.add_argument('--summary-matrix');args=p.parse_args()
-    out=matrix_receipt(args.summary_matrix) if args.summary_matrix else run(full=not args.quick,matrix_path=args.matrix)
+    p=argparse.ArgumentParser();p.add_argument('--quick',action='store_true');p.add_argument('--output',required=True);p.add_argument('--matrix');p.add_argument('--summary-matrix');p.add_argument('--candidate',choices=('guided-t20',));args=p.parse_args()
+    params=named_parameters(args.candidate) if args.candidate else None
+    out=matrix_receipt(args.summary_matrix) if args.summary_matrix else run(parameters=params,full=not args.quick,matrix_path=args.matrix)
     Path(args.output).write_text(json.dumps(out,indent=2)+'\n')
-    print(json.dumps({k:out[k] for k in ['caseCount','maximumBalanceResidual','maximumBalanceResidualN_Nmm','minimumHeadN_KN_Id_Case','maximumTranslationMM_Case','elapsedSecondsInformational'] if k in out},indent=2),flush=True)
+    summary={k:out[k] for k in ['caseCount','maximumBalanceResidual','maximumBalanceResidualN_Nmm','minimumHeadN_KN_Id_Case','maximumTranslationMM_Case','elapsedSecondsInformational'] if k in out}
+    if 'guideBounds' in out:summary['guideBounds']=out['guideBounds']
+    print(json.dumps(summary,indent=2),flush=True)
