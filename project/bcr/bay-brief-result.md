@@ -96,3 +96,8 @@ applicability check and publish its positive or adverse findings. Final
 BCR-BAY-DESIGN consumes the study and retains TRIAD-GATE. See the
 [owning programme](buildability-construction-resolution-programme.md#independent-current-source-interface-investigation)
 and [scope split](../pco/independent-studies-result.md).
+
+The [completed interface investigation](bay-interface-study.md) supplies the
+current-source applicability check, the rejected parked-state approach and a
+reversible preparation candidate. It retains the final bay gate and the separate
+apparatus, supported release and whole-frame renewal duties.

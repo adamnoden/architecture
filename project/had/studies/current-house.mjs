@@ -10,6 +10,7 @@ import {controlAndStorage} from './inhabited-service-faults.mjs';
 import {composeOccupiedHouse} from './inhabited-service-compose.mjs';
 import {selectServiceInterfaces} from './selected-service-interfaces.mjs';
 import {selectedServicePlate} from './selected-service-plate.mjs';
+import {reconcileSelectedWaterDuties} from './selected-water-duties.mjs';
 const project=new URL('../../',import.meta.url);
 export function deriveCurrentHouse(){
   const inputs={};
@@ -47,7 +48,8 @@ export function deriveCurrentHouse(){
     peakInwardLps:closure.proof.directLps[1],maximumSeatedInwardLps:closure.maxExtractLeakLpsEach,
     sixInletsEachReverseEquivalentMM2:reverseArea,
     scope:'Bound the actively supplied airflow even if both kitchen extracts stop. Forward weather/insect/acoustic area is tested independently from unpowered outward area.'};
-  house.fixtureJoin=fitHousehold(house.model,read('ias/studies/household-water'),read('ias/studies/fitted-wc-schedule'),
+  const householdWater=read('ias/studies/household-water');
+  house.fixtureJoin=fitHousehold(house.model,householdWater,read('ias/studies/fitted-wc-schedule'),
     read('ias/studies/utility-first-release'),read('ias/studies/utility-host-revised-route'));
   const structure=read('str/studies/reconciled-house-interface');
   const corner=read('str/studies/current-house-arch-movement');
@@ -58,7 +60,7 @@ export function deriveCurrentHouse(){
   house.structuralServiceReview.principalBed=structure.principalBed;
   house.structuralServiceReview.kitchen=structure.kitchen;
   selectServiceInterfaces(house,structure,corner,base,read('str/studies/house-corner-rewind'));
-  house.model.currentAdoptionBlockers=[];
+  house.model.currentAdoptionBlockers=reconcileSelectedWaterDuties(house.model,householdWater,base);
   return {...house,inputs};
 }
 // Compact, reproducible review projection of the selected furnished house.

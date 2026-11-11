@@ -24,9 +24,9 @@ export const mraNodes = defineNodes([
     owners: ['MRA'],
     title: 'Trace selected internal-water failures, isolation and repair consequences',
     dependencies: ['MRA-00', 'HAD-SERVICES-ADOPTION', 'IAS-03', 'MAT-INTERIORS'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: ['project/mra/internal-leak-study.md']
+    closeoutEvidence: ['project/mra/internal-leak-study.md', 'project/mra/studies/internal-leak-study.json']
   },
   {
     id: 'MRA-02',

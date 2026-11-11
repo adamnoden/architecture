@@ -1,8 +1,8 @@
 # MRA — Moisture Resilience Assurance
 
 **Issue:** [#959](https://github.com/adamnoden/architecture/issues/959)  
-**State:** MRA-00 complete at assurance-definition scope; domain assaults await TRIAD-GATE
-**Date:** 2026-10-29
+**State:** MRA-00 and the bounded internal-water investigation complete; final domain assaults await TRIAD-GATE
+**Date:** 2026-11-10 (internal-water result; constitution retained)
 
 ## Purpose
 
@@ -134,6 +134,18 @@ Apply the owner's [ground-water and rising-damp policy](../../docs/reference-hou
 For the substantial non-plastic damp barrier, attack bridges, joints, ground-level changes and movement, and examine the claimed benefit of extra thickness, courses or any justified backup. The owner clarified "triple redundancy" as overbuilding with the arrangement left to design judgement; no three-system test or numerical multiplier is mandatory. Preserve the existing single-failure and compound-case assurance rules. Carry findings into MRA-04's existing whole-house matrix, including structural interaction, detectability, intervention and drying. The owner's 1,000-year ambition is not a service-life result or zero-risk acceptance criterion that a desk review can certify. MRA-01 remains future assurance; this amendment records no passed assault or selected assembly.
 
 ### MRA-INTERNAL-LEAKS — selected internal-water investigation
+
+**Complete at bounded investigation scope.** The
+[current-source result](internal-leak-study.md) corrects the selected kitchen
+downstream metadata and restores a specific incoming-water adoption blocker.
+The retained inlet still occupies 200 mm of the current plant-N required
+territory; the lobby alternative remains unadopted. Reproducible occurrence,
+isolation/common-path and finite-witness comparisons establish adverse limits
+without awarding a physical moisture pass. The selected seventeen JSON inputs,
+roof-facing ports, weather faces and compact service schedule remain unchanged;
+producer and complete model identities change honestly. MRA-02 must consume
+the current REWIND and OBLIGATION rows, not interpret packet completion as
+internal-water acceptance.
 
 The owner's 10 November direction permits a bounded source-specific investigation
 before whole-house integration. Consume MRA-00, the merged selected-services

@@ -25,7 +25,7 @@ export const houseDeliveryNodes = defineNodes([
   {
     id: 'BCR-BAY-INTERFACES', owners: ['BCR'], title: 'Test current front-study bay interfaces and occupied renewal actions',
     dependencies: ['BCR-BAY-BRIEF', 'IAS-03', 'MAT-ENVELOPE', 'MAT-INTERIORS', 'HAD-SERVICES-ADOPTION'],
-    lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
+    lifecycle: 'complete', agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/bcr/bay-interface-study.md']
   },
   {

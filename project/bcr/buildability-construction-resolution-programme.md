@@ -166,4 +166,10 @@ BCR-BAY-DESIGN consumes it and **still requires TRIAD-GATE** for final coordinat
 bay design. The [registration result](../pco/independent-studies-result.md) owns
 the scope split; it grants no architectural acceptance.
 
+**Completed investigation:** the [front Study interface result](bay-interface-study.md)
+rejects the inherited parked-state approach and carries a reversible full-furniture
+preparation candidate, checked against the selected service house and its south
+inlet. It ends at the apparatus apron; actual kit entry, supported release and
+whole-frame renewal remain duties of the final bay design.
+
 Bay packets own separate results and design-study files. They do not concurrently mutate the whole-house BCR matrix or others' selected geometry. Integrate necessary source changes serially with the relevant owner. The current BCR-CONVERGENCE retains its existing graph prerequisites; no new bay/manual dependency is silently added.
