@@ -61,6 +61,7 @@ class Parameters:
     L_key_depth:float=60.
     L_key_centres:tuple=((70.,70.),(900.,70.),(70.,900.))
     key_profile:str='historical tip-compliance control'
+    key_direction_mode:str='cruciform'
     dpc_scale:float=1.
     dpc_anchor_length:float=1106.
     court_width:float=280.
@@ -600,9 +601,16 @@ class House:
                     pos=at+along(face)*x*width/2+inward(face)*y*depth/2
                     k=area*wx*wy/4/(self.p.cap_bearing_depth/33000+25/200000)*self.p.cap_scale
                     self.contact(self.roof.port(q,pos),self.f.port(j['top'],pos),k,f'cap-bearing-{face}-{j["u"]:g}')
-            # Distributed positive cruciform; actual depth pressure centroid
-            # and its work-conjugate bending compliance are explicit.
-            for direction,span in ((inward(face),along(face)),(along(face),inward(face))):
+            # The historical comparator is a two-axis cruciform. A radial
+            # guide comparator instead uses one blade whose long axis points
+            # to the house centre: it resists only the plan-tangential
+            # component and deliberately admits radial roof breathing.
+            if self.p.key_direction_mode=='radial-guide':
+                radial=np.r_[at[:2]-6000.,0.];radial/=np.linalg.norm(radial)
+                directions=((np.r_[-radial[1],radial[0],0.],radial),)
+            else:
+                directions=((inward(face),along(face)),(along(face),inward(face)))
+            for direction,span in directions:
                 stiffness,lever=key_terms(self.p.cap_key_width,self.p.cap_key_thickness,self.p.cap_key_depth)
                 for x,wx in zip(gauss,weights):
                     pos=at+span*x*self.p.cap_key_width/2+[0,0,-25.-lever]
@@ -623,12 +631,19 @@ class House:
                         pt=np.array([(l+r)/2+x*(r-l)/2,(b+t)/2+y*(t-b)/2]);q=outer_root(pt);at=[*pt,6540.];area=(r-l)*(t-b)*wx*wy/4
                         k=area/(self.p.cap_bearing_depth/33000+25/200000)*self.p.cap_scale
                         self.contact(self.roof.port(q,at),self.f.port(L['top'],at),k,'L-cap-bearing-'+str(L['corner']))
-            # Each key has its own actual ring root; changing its position
-            # splits the native ring before this relative connection is made.
+            # Each key has its own actual ring root. The radial-guide
+            # comparator uses a single plan-tangential blade at each station
+            # rather than a two-axis cruciform, so uniform affine roof growth
+            # is a released kinematic mode rather than a flexure demand.
             for index,centre in enumerate(self.p.L_key_centres):
                 pt=L['origin']+L['sg']*np.array(centre);q=outer_root(pt)
-                k,lever=key_terms(self.p.L_key_width,self.p.L_key_thickness,self.p.L_key_depth);at=[*pt,6515.-lever]
-                self.cap_links.append(self.f.link(self.roof.port(q,at),self.f.port(L['top'],at),[k,k,0,0,0,0],f'L-cap-key-{L["corner"]}-{index}'))
+                stiffness,lever=key_terms(self.p.L_key_width,self.p.L_key_thickness,self.p.L_key_depth);at=[*pt,6515.-lever]
+                if self.p.key_direction_mode=='radial-guide':
+                    radial=np.r_[pt-[6000.,6000.],0.];radial/=np.linalg.norm(radial);direction=np.r_[-radial[1],radial[0],0.]
+                    matrix=np.zeros((6,6));matrix[:3,:3]=np.outer(direction,direction)*stiffness
+                else:
+                    matrix=np.diag([stiffness,stiffness,0,0,0,0])
+                self.cap_links.append(self.f.link(self.roof.port(q,at),self.f.port(L['top'],at),matrix,f'L-cap-key-{L["corner"]}-{index}'))
 
     def controls(self):
         r=self.rigid@np.diag([1,1,1,.001,.001,.001]);res=self.k@r
