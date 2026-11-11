@@ -98,55 +98,79 @@ def finalise_bounds(bounds,h):
     return out
 
 
-def guide_friction_vector(h,u,coefficient):
-    """Equal/opposite Coulomb-bound guide forces in the released radial axis.
+def guide_sliding_signs(h,u,deadband=1e-7):
+    signs={}
+    for index,e in enumerate(h.cap_links):
+        if not (e['name'].startswith('cap-key-') or e['name'].startswith('L-cap-key-')):continue
+        relative=e['t']@u[e['ids']];values,vectors=np.linalg.eigh(e['k'][:2,:2])
+        radial=vectors[:,int(np.argmin(values))];slip=float(radial@relative[:2])
+        signs[index]=0. if abs(slip)<=deadband else math.copysign(1.,slip)
+    return signs
 
-    The bound is generated from each guide point's actual tangential reaction.
-    It never credits friction for strength; it challenges the house with the
-    force opposing the current released-direction movement.
+
+def guide_friction_vector(h,u,coefficient,signs=None):
+    """Equal/opposite guide-friction bound in a fixed released-axis direction.
+
+    The optional signs freeze physical sliding direction from the zero-friction
+    state. That prevents a static/stick transition becoming numerical Coulomb
+    chatter while the force magnitude follows the current guide force.
     """
     rhs=np.zeros(h.f.size);rows=[];maximum=0.;total=0.
-    for e in h.cap_links:
+    for index,e in enumerate(h.cap_links):
         if not (e['name'].startswith('cap-key-') or e['name'].startswith('L-cap-key-')):continue
         relative=e['t']@u[e['ids']]
         plan=e['k'][:2,:2];values,vectors=np.linalg.eigh(plan)
         active=int(np.argmax(values));released=int(np.argmin(values))
         normal_force=abs(float(vectors[:,active]@(e['k']@relative)[:2]))
         radial=vectors[:,released];slip=float(radial@relative[:2])
-        if normal_force<1e-9 or abs(slip)<1e-9:continue
-        force2=-coefficient*normal_force*math.copysign(1.,slip)*radial
+        direction=(signs or {}).get(index)
+        if direction is None:direction=0. if abs(slip)<1e-9 else math.copysign(1.,slip)
+        if normal_force<1e-9 or not direction:continue
+        force2=-coefficient*normal_force*direction*radial
         force=np.r_[force2,0.]
-        for sign,(ids,t) in zip((1.,-1.),e['ports']):
-            np.add.at(rhs,ids,t.T@np.r_[sign*force,[0.,0.,0.]])
+        for port_sign,(ids,t) in zip((1.,-1.),e['ports']):
+            np.add.at(rhs,ids,t.T@np.r_[port_sign*force,[0.,0.,0.]])
         magnitude=float(np.linalg.norm(force2));maximum=max(maximum,magnitude);total+=magnitude
-        rows.append(dict(name=e['name'],normalGuideForceN=normal_force,releasedSlipMM=slip,frictionForceN=magnitude))
+        rows.append(dict(index=index,name=e['name'],normalGuideForceN=normal_force,
+                         releasedSlipMM=slip,initialSlidingSign=direction,
+                         reversedRelativeToInitial=bool(slip*direction<0),
+                         frictionForceN=magnitude))
     balance=h.rigid.T@rhs
     assert max(abs(balance[:3]),default=0.)<.01,balance
     assert max(abs(balance[3:]),default=0.)<1.,balance
     return rhs,dict(maximumPointFrictionN=maximum,sumPointFrictionMagnitudesN=total,
+                    directionReversalCount=sum(r['reversedRelativeToInitial'] for r in rows),
                     sixInternalResultantN_Nmm=balance.tolist(),points=rows)
 
 
 class GuideFrictionSolve:
-    """Contact solve with a bounded, self-equilibrated guide-friction follower."""
+    """Contact solve with a bounded, self-equilibrated guide-friction follower.
+
+    Sliding direction is frozen from the zero-friction state. Magnitude then
+    follows the current tangential guide reaction. A final direction reversal
+    means the true Coulomb solution crosses into stick; it is reported rather
+    than allowed to chatter numerically.
+    """
 
     def __init__(self,h,coefficient=GUIDE_FRICTION_COMPARATOR):
         self.h=h;self.coefficient=float(coefficient);self.base=ContactSolve(h.k,h.fixed,h.contacts)
 
     def __call__(self,f,prescribed=None):
-        friction=np.zeros(self.h.f.size);meta={};iterations=0
-        for iterations in range(30):
+        u0,r0,c0=self.base(f,prescribed);signs=guide_sliding_signs(self.h,u0)
+        friction=np.zeros(self.h.f.size);meta={};final_error=float('inf')
+        for iterations in range(80):
             u,r,c=self.base(np.asarray(f)+friction,prescribed)
-            target,meta=guide_friction_vector(self.h,u,self.coefficient)
+            target,meta=guide_friction_vector(self.h,u,self.coefficient,signs)
             error=float(np.max(abs(target-friction),initial=0.))
             if error<.05:
                 friction=target
                 u,r,c=self.base(np.asarray(f)+friction,prescribed)
-                verify,meta=guide_friction_vector(self.h,u,self.coefficient)
+                verify,meta=guide_friction_vector(self.h,u,self.coefficient,signs)
                 final_error=float(np.max(abs(verify-friction),initial=0.))
                 if final_error<.1:break
-            friction=.5*friction+.5*target
-        else:raise AssertionError(('Guide friction follower did not settle',error))
+            friction=.65*friction+.35*target
+        else:raise AssertionError(('Guide friction fixed-sign follower did not settle',error,meta.get('directionReversalCount')))
         c['guideFriction']=dict(meta,coefficient=self.coefficient,iterations=iterations+1,
-                                followerResidualN=final_error)
+                                followerResidualN=final_error,
+                                initialSlidingPoints=sum(bool(v) for v in signs.values()))
         return u,r,c
