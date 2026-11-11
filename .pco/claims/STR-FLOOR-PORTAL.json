@@ -9,8 +9,8 @@
     "label": "floor-portal-resume-20261111"
   },
   "claimedAt": "2026-11-11T13:06:46.946Z",
-  "heartbeatAt": "2026-11-11T13:19:53.746Z",
-  "expiresAt": "2026-11-11T14:04:53.746Z",
+  "heartbeatAt": "2026-11-11T13:42:59.374Z",
+  "expiresAt": "2026-11-11T14:27:59.374Z",
   "branch": "work/str-floor-portal-resume-20261111",
   "predecessor": {
     "leaseId": "f7d5b2b7-66ee-44c2-b644-8db75a918ed1",
@@ -34,7 +34,7 @@
   },
   "pr": 1482,
   "checkpoint": {
-    "evidence": "PR1482 65b79a7a: rejected transition preserved; frame, plate and enriched roof component controls pass",
-    "next": "Assemble source-bound floor, portals and ground; resolve straight widened jambs and all52 reactions"
+    "evidence": "Published frame and split-roof controls at 65b79a7a; assembling actual ground, floor, jamb, DPC and roof links; independent review has identified local flare and corner cage alternatives plus room impacts.",
+    "next": "Correct mesh and contact assembly, preserve actual floor openings and lower stops, then recover coupled loads and all 52 reactions before selecting a reinforcement detail."
   }
 }
