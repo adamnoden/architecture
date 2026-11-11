@@ -1,22 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 1,
-  "state": "released",
-  "leaseId": "f7d5b2b7-66ee-44c2-b644-8db75a918ed1",
+  "generation": 2,
+  "state": "claimed",
+  "leaseId": "e79941fb-4e0e-4c3a-8831-a0b182df35be",
   "holder": {
     "kind": "chatgpt",
-    "label": "floor-portal-20261111"
+    "label": "floor-portal-resume-20261111"
   },
-  "claimedAt": "2026-11-11T09:33:11.882Z",
-  "heartbeatAt": "2026-11-11T09:59:07.000Z",
-  "expiresAt": "2026-11-11T09:59:07.000Z",
-  "branch": "work/str-floor-portal-20261111",
-  "pr": 1480,
-  "checkpoint": {
-    "evidence": "PR1480 d56162a3: exact finite cage and roof solid-clash receipt",
-    "next": "Build coupled load and stiffness response; complete cap and52-head accounts"
+  "claimedAt": "2026-11-11T13:06:46.946Z",
+  "heartbeatAt": "2026-11-11T13:06:46.946Z",
+  "expiresAt": "2026-11-11T13:51:46.946Z",
+  "branch": "work/str-floor-portal-resume-20261111",
+  "predecessor": {
+    "leaseId": "f7d5b2b7-66ee-44c2-b644-8db75a918ed1",
+    "generation": 1,
+    "branch": "work/str-floor-portal-20261111",
+    "pr": 1480,
+    "checkpoint": {
+      "evidence": "PR1480 d56162a3: exact finite cage and roof solid-clash receipt",
+      "next": "Build coupled load and stiffness response; complete cap and52-head accounts"
+    }
   },
-  "releasedAt": "2026-11-11T09:59:07.000Z",
-  "releaseReason": "handoff"
+  "recoverySource": {
+    "leaseId": "f7d5b2b7-66ee-44c2-b644-8db75a918ed1",
+    "generation": 1,
+    "branch": "work/str-floor-portal-20261111",
+    "pr": 1480,
+    "checkpoint": {
+      "evidence": "PR1480 d56162a3: exact finite cage and roof solid-clash receipt",
+      "next": "Build coupled load and stiffness response; complete cap and52-head accounts"
+    }
+  }
 }
