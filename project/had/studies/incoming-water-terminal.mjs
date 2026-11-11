@@ -1,7 +1,7 @@
 /** Located utility first breaks. Dimensions are a reference assembly contract,
  * not a declaration that an undimensioned catalogue tail already fits it. */
-import {finiteBends} from './incoming-water-geometry.mjs';
-import {pathSeparation,segmentBoxDistance,segmentBodyDistance} from './service-interface-geometry.mjs';
+import {finiteBends,exactSegmentBoxDistance as segmentBoxDistance} from './incoming-water-geometry.mjs';
+import {pathSeparation,segmentBodyDistance} from './service-interface-geometry.mjs';
 
 export const terminalVertices={
   coldWasher:[[10760,1250,1000],[10760,1250,950],[10800,1250,900],[10800,1250,750]],
@@ -19,6 +19,10 @@ export const utilityH0={id:'H0',axis:[10860,1250,1500],wheel:[10860,1345,1500],
 export const utilityReaction={rackLink:[10875,1100,535,30,65,40],crossRail:[10875,1100,535,460,30,40],
   coldArm:[11100,1130,550,20,105,20],hotArm:[11290,1130,550,20,105,20],
   coldKey:[11075,1235,562,70,80,15],hotKey:[11265,1235,562,70,80,15]};
+export const utilityDrains=[
+  {id:'cold',tee:[11110,1275,500],valve:[11110,1275,350],spout:[11110,1275,150]},
+  {id:'hot',tee:[11300,1275,400],valve:[11300,1275,250],spout:[11300,1275,150]}
+];
 const swept=(box,a,b)=>[...box.slice(0,3).map((v,i)=>v+Math.min(a[i],b[i])),...box.slice(3).map((v,i)=>v+Math.abs(b[i]-a[i]))];
 const boxesGap=(a,b)=>Math.hypot(...[0,1,2].map(i=>Math.max(a[i]-b[i]-b[i+3],b[i]-a[i]-a[i+3],0)));
 const routeBoxGap=(route,box,r)=>Math.min(...route.path.slice(1).map((b,i)=>segmentBoxDistance(route.path[i],b,box)))-r-route.hausdorffError;
@@ -77,6 +81,22 @@ export function utilityTerminalStudy(model,host){
     headSweeps.push({stage:i,id,gapMM:boxesGap(swept(head,moves[i-1],moves[i]),b)});
   const h0Shoulder=[10800,1725,1450],h0Grip=[10860,1375,1500];
   const receiver=[11045,925,0,400,400,75],receiverChecks=Object.entries(obstacles).map(([id,b])=>({id,gapMM:boxesGap(receiver,b)}));
+  const drainShoulder=[10950,1725,500];
+  const drains=utilityDrains.map(d=>{
+    const [x,y,z]=d.valve,box=[x-25,y-25,z-40,50,70,80],hand=[x,y+85,z];
+    const teeBox=[d.tee[0]-25,d.tee[1]-25,d.tee[2]-25,50,50,50];
+    const clearance=Object.entries({...obstacles,...utilityReaction}).map(([id,b])=>({id,
+      pipeMM:segmentBoxDistance(d.tee,d.spout,b)-15,bodyMM:boxesGap(box,b),teeMM:boxesGap(teeBox,b),
+      handMM:segmentBoxDistance(hand,hand,b)-40,armMM:segmentBoxDistance(drainShoulder,hand,b)-40}));
+    return {...d,body:box,teeBody:teeBox,hand,shoulder:drainShoulder,
+      reachMM:Math.hypot(...hand.map((v,i)=>v-drainShoulder[i])),clearance,
+      outletToReceiverLipMM:d.spout[2]-receiver[5],
+      teeScope:'The final elbow becomes an explicitly bounded three-port fitting. Its50mm box includes the feed turn and downward drain; no fictitious takeoff from a fillet vertex is assumed.'};
+  });
+  const insertion=swept(receiver,[0,525,0],[0,0,0]);
+  const insertionGap=Math.min(...Object.values(obstacles).map(b=>boxesGap(insertion,b)));
+  const h0Clearance=Object.entries(obstacles).map(([id,b])=>({id,handMM:segmentBoxDistance(h0Grip,h0Grip,b)-40,
+    armMM:segmentBoxDistance(h0Shoulder,h0Grip,b)-40}));
   const reactionClearances=Object.entries(utilityReaction).flatMap(([id,b])=>Object.entries(obstacles)
     .filter(([name])=>!(id==='rackLink'&&['rackPost','middle pipe arm return'].includes(name)))
     .map(([obstacle,box])=>({id,obstacle,gapMM:boxesGap(b,box)}))).sort((a,b)=>a.gapMM-b.gapMM);
@@ -98,6 +118,7 @@ export function utilityTerminalStudy(model,host){
       scope:'One rotating spanner and hand; positive independently fixed reaction keys replace an unproved simultaneous second handheld spanner. Actual hex fit, torque and captive-nut stroke remain matched-component qualifications.'},
     hotIsolation:{...utilityH0,shoulder:h0Shoulder,handCentre:h0Grip,handR:40,reachMM:Math.hypot(...h0Grip.map((v,i)=>v-h0Shoulder[i])),
       handToOwnPipeMM:h0Grip[1]-1250-37-40,
+      fixedObjectClearances:h0Clearance,
       scope:'H0 stops the hot lower branch independently of the cold U0 lobby cut. Replacing H0 itself requires upstream domestic-store isolation and controlled inventory discharge, not merely closing H0.'},
     head:{centre:[11235,1040],plan:[610,610],retainedBelowRim:350,aboveRim:350,completeHeight:700,
       inheritedUnderhang:250,raised:head,moves,minimumSweeps:headSweeps.sort((a,b)=>a.gapMM-b.gapMM).slice(0,8),
@@ -105,6 +126,8 @@ export function utilityTerminalStudy(model,host){
         scope:'The530 limit is transverse between two longitudinal rails, not a square throat. Keep cross-bracing below the350 lowest-part plane, with25 clear; locate actual upper lands and anti-tip capture before crew release.'},
       pickup:'Keep the existing four-legged frame on its seats. Capture the complete top independently against fall and pitch before the four head screws release. Head feet/fasteners/pickup remain IAS occurrence qualifications; this change provides reachable pipe breaks and a larger explicit moving package.'},
     controlledDrain:{receiver,requiredNetLitres:10,grossCuboidUpperLitres:12,minimumFixedGapMM:Math.min(...receiverChecks.map(v=>v.gapMM)),
+      drains,receiverInsertion:[receiver.map((v,i)=>i===1?v+525:v),receiver],receiverInsertionMinimumMM:insertionGap,
+      maximumControlledFlowLitresMinute:2,maximumBatchLitres:5,requiredFreeboardLitres:5,
       method:'Before first nut release, close U0 and H0, prove stopped/zero-pressure flow and vent locally. Drain one isolated branch at a time through its capped, independently supported local drain into this removable floor receiver. Close the drain before emptying; retain the normal2L witness as a different duty.',
       noCredit:'No unattended burst capture, automatic response, electrical safety certification or draining of the domestic vessel into10L.'}};
 }

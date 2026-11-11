@@ -5,6 +5,29 @@ const times=(a,s)=>a.map(v=>v*s);
 const dot=(a,b)=>a.reduce((sum,v,i)=>sum+v*b[i],0);
 const unit=a=>times(a,1/Math.hypot(...a));
 
+/** Exact piecewise-quadratic segment/AABB distance. Each coordinate changes
+ * active face only at a slab crossing; minimise every intervening quadratic.
+ * The tiny final allowance is numerical, not a sampling clearance. */
+export function exactSegmentBoxDistance(a,b,box){
+  const d=b.map((v,i)=>v-a[i]),cuts=[0,1];
+  for(let i=0;i<3;i++)if(d[i]!==0)for(const face of[box[i],box[i]+box[i+3]]){
+    const t=(face-a[i])/d[i];if(t>0&&t<1)cuts.push(t);
+  }
+  cuts.sort((x,y)=>x-y);
+  const squared=t=>a.reduce((n,v,i)=>{const p=v+d[i]*t,q=Math.max(box[i]-p,p-box[i]-box[i+3],0);return n+q*q;},0);
+  let best=Math.min(squared(0),squared(1));
+  for(let k=1;k<cuts.length;k++){
+    const lo=cuts[k-1],hi=cuts[k],mid=(lo+hi)/2;let A=0,B=0;
+    for(let i=0;i<3;i++){
+      const p=a[i]+d[i]*mid,bound=p<box[i]?box[i]:p>box[i]+box[i+3]?box[i]+box[i+3]:null;
+      if(bound!==null){A+=d[i]*d[i];B+=d[i]*(a[i]-bound);}
+    }
+    const t=A?Math.max(lo,Math.min(hi,-B/A)):mid;
+    best=Math.min(best,squared(t),squared(lo),squared(hi));
+  }
+  return Math.max(0,Math.sqrt(best)-1e-8);
+}
+
 export function finiteBends(vertices,radius=75,maxStepDeg=1){
   if(!Number.isFinite(radius)||radius<=0||!Number.isFinite(maxStepDeg)||maxStepDeg<=0||maxStepDeg>90)
     throw new Error('Bend radius and angular step must be positive finite bounds');

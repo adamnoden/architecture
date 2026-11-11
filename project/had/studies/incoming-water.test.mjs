@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {finiteBends} from './incoming-water-geometry.mjs';
+import {finiteBends,exactSegmentBoxDistance} from './incoming-water-geometry.mjs';
 import {deriveIncomingWaterStudy,incomingWaterText} from './incoming-water.mjs';
 import {deriveCurrentHouse} from './current-house.mjs';
 
@@ -45,7 +45,7 @@ test('the higher bridge preserves a bounded ordinary path and uses continuous mo
   assert.equal(study.bridge.crown,2150);
   assert.equal(study.bridge.ordinaryBody.pipeUndersideGapMM,113);
   assert(study.bridge.ordinaryBody.westLegGapMM>30);
-  assert(Math.abs(study.bridge.ordinaryBody.eastPierGapMM-35)<1e-8);
+  assert(Math.abs(study.bridge.ordinaryBody.eastPierGapMM-35)<2e-8);
   assert.equal(study.bridge.motion.finishedPanelUndersideZ,2350);
   assert.equal(study.bridge.motion.liftedCrownGapMM,78);
   assert(Math.abs(study.bridge.motion.westCaseGapMM-43)<1e-9);
@@ -65,15 +65,15 @@ test('front utility breaks include a reaction key, real tool thickness, hands an
     assert(c.otherUnionGapLowerMM>25);assert(c.maxReachUpperMM<650);
   }
   assert.equal(t.reactionSupport.verticalKeyToolGapMM,31.6);
-  assert(t.reactionSupport.minimumNonContact.every(x=>x.gapMM>=25));
+  assert(t.reactionSupport.minimumNonContact.every(x=>x.gapMM>=25-1e-6));
   assert(t.reactionSupport.preliminaryForceCase.combinedBendingStressNmm2<50);
   assert(t.reactionSupport.preliminaryForceCase.tipDeflectionMM<1);
   assert.equal(t.head.completeHeight,700);
   assert.equal(t.head.retainedBelowRim,350);
-  assert(t.head.minimumSweeps.every(x=>x.gapMM>=25));
+  assert(t.head.minimumSweeps.every(x=>x.gapMM>=25-1e-6));
   assert(t.hotIsolation.reachMM<400);
   assert.equal(t.hotIsolation.handToOwnPipeMM,48);
-  assert.equal(t.controlledDrain.minimumFixedGapMM,25);
+  assert(Math.abs(t.controlledDrain.minimumFixedGapMM-25)<1e-6);
   assert.equal(t.controlledDrain.grossCuboidUpperLitres,12);
   assert.equal(t.controlledDrain.requiredNetLitres,10);
   assert.match(t.controlledDrain.noCredit,/unattended burst/);
@@ -94,9 +94,39 @@ test('located main and branch cuts include finite valve modules and full tool se
   for(const c of s.moduleContracts){assert(c.moduleSpareMM>=10);assert.equal(c.fullSeatSeparationAfterLiftMM,25);}
   for(const c of s.controls){assert(c.reachMM<650);assert(c.otherPipeGapMM>25);assert(c.otherValveGapMM>25);assert(c.riserGapMM>25);}
   for(const c of s.tool.checks){assert(c.toolGapLowerMM>25);assert(c.handGapLowerMM>25);assert(c.armGapLowerMM>25);assert(c.maxReachUpperMM<650);}
-  assert(s.bodyChecks.every(c=>c.gapMM>=25));assert(s.ordinaryBodyMinimumMM>25);
+  assert(s.bodyChecks.every(c=>c.gapMM>=25-1e-6));assert(s.ordinaryBodyMinimumMM>25);
   assert(s.heatClearances.every(c=>c.gapMM>25));
   assert.equal(s.entry.riserToCapPlanMM,200);
   assert(s.functionalCuts.some(c=>c.work==='I0 or any joint before I0'&&c.cuts[0]==='B0'));
   assert.match(s.drain.scope,/unattended/);
+});
+
+
+test('segment/AABB distance handles crossings, degenerate points and long diagonals analytically',()=>{
+  const box=[0,0,0,10,10,10],tol=2e-8;
+  for(const[a,b,d]of[[[-5,5,5],[15,5,5],0],[[-5,15,5],[15,15,5],5],[[-3,-4,5],[-3,-4,5],5],[[20,20,20],[20,20,20],Math.sqrt(300)],[[-1e6,20,0],[1e6,20,0],10]])
+    assert(Math.abs(exactSegmentBoxDistance(a,b,box)-d)<tol);
+});
+
+test('station captured release clears retained supports and provides reachable positive first-rest capture',()=>{
+  const h=study.station.handling;
+  for(const r of h.results){
+    assert(r.bodyGapLowerMM>=25-1e-6);assert(r.objectRoomGapLowerMM>=25);
+    assert(r.movingBodyGapLowerMM>=25);assert(r.maximumGripReachMM<650);
+    assert(r.fixedSweep.every(x=>x.gapMM>=25));
+    for(const n of r.nativeControls.results){assert(n.loadedBareTubeGapLowerMM>=2);assert(n.otherObjectGapLowerMM>=25);assert(n.maximumReachMM<650);}
+    for(const n of r.nativeControls.keys){assert(n.minimumHandMM>=25);assert(n.minimumArmMM>=25);assert(n.reachMM<650);}
+    assert(r.firstRest.remoteMinimum.every(x=>x.gapMM>=25));
+    for(const n of r.firstRest.keyChecks){assert(n.minimumHandMM>=25);assert(n.minimumArmMM>=25);assert(n.reachMM<650);}
+    assert(r.firstRest.native.cheekBendingNmm2<100);assert(r.firstRest.native.cheekDeflectionMM<.1);
+  }
+  assert(h.handoff.minimumWithdrawalBodyMM>25);assert(h.handoff.minimumSubsequentCrewSeparationMM>=25);
+  assert(h.forceCase.vonMisesNmm2<100);assert(h.forceCase.carrier.netBendingStressNmm2<100);assert(h.forceCase.yoke.resultantBendingNmm2<100);
+  assert.match(h.receiver.staging,/does not authorise unbolting/);
+});
+
+test('controlled drains have reachable valves and distinguish sealed low pockets from empty pipes',()=>{
+  for(const d of study.station.drain.definitions){assert(d.minimumHandMM>=25);assert(d.minimumArmMM>=25);assert(d.reachMM<650);assert(d.airGapMM>=75);}
+  assert.match(study.station.drain.retainedLowPockets,/kept sealed/);
+  for(const d of study.utilitySuccessor.controlledDrain.drains){assert(d.clearance.every(c=>c.handMM>=25&&c.armMM>=25));assert(d.reachMM<650);}
 });

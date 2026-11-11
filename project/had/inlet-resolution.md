@@ -117,11 +117,11 @@ remain prerequisites to adoption.
 ### Isolation and material boundary
 
 The located lobby comparison now separates three upward-stem cartridges.
-Main **I0** is at X11450, union Y3050/3500, made Z1440–1500 and crown1690;
+Main **I0** is at X11450, union Y3075/3520, made Z1440–1500 and crown1690;
 utility **U0** is at X11315, Y2732/3057, made Z1140–1200 and crown1390;
 plant **P0** is at X11315, Y3175/3500 with the same lower heights.
 Each branch has175 mm of straight crown for the55 mm comparator and two
-bounded55 mm adapters. The main has300 mm. A larger flanged valve is not
+bounded55 mm adapters. The main has295 mm. A larger flanged valve is not
 silently substituted. The main's lower return uses explicit R50 bends within
 the same complete Ø74 reservation; other station/backbone bends retain R75.
 
@@ -130,16 +130,54 @@ the station to **(11505,2882)**, then crosses back to X11315 above the work area
 The earlier west riser met the turning spanner and is rejected. Complete
 297 ×71.5 ×12.8 mm wrench sectors, hands, arms and arrival bodies now clear
 the named station walls, other union/valve bodies and riser. The controlling
-tool reserve is30.60 mm at the U0 south joint; maximum declared reach is
+tool reserve is27.40 mm after the continuous angular bound; maximum declared reach is
 643.01 mm at the P0 north joint. Main servicing removes the branch cartridges
-before its nuts are worked. Independent catch/reaction hardware and the
-captured transfer to first rest are still being checked; these tool results
-alone do not adopt the station.
+before its nuts are worked. The main carrier rear handoff bar is45 mm higher than the branch bars; the
+lower version obstructed the wrench hand. The station comparison includes two
+independently supported metal
+elbow shoes, positive wall catches, complete carrier rails and a two-person
+handoff at the finished doorway. A low removable tool closes each captive
+half-shoe beside the stripped22 mm pressure tube. Its loaded native gap is
+2.708 mm after the stated tool deflection and0.5 mm setting allowance;
+remote hand/tool/arm spaces retain the separate25 mm comparison. The shoe
+radius and fasteners fit within the declared complete envelope. The branch
+valve/adaptor module retains5 mm at each tangent-trimmed shoe end.
+
+Both captive nuts release while the independent catches carry the cartridge.
+After witnessed transfer to rated grips, withdraw both positive catch keys,
+lift85 mm and move west. The complete moving carrier is tested against the
+retained pipes, valves, reaction keys and catch hardware. The old I0 reaction
+arm left only20.86 mm to P0; raising it15 mm and shifting its north approach
+25 mm closes that specific conflict. The arm-to-key load path is continuous.
+
+At module axis9400/3200 a second worker takes a separately inserted and
+positively pinned rear yoke. The first withdraws to8830/3830, clear of the WC,
+court and closed protected cross door; the second carries to the anchored
+400×650 mm receiver at X8000/Y2875. The complete receiver has sparse guides,
+metal bearing lands and two positive moment-restraint keys. Its key-actuation
+hands and arms are included. Each independent catch/grip carries the8 kg
+complete handled-module comparison with a factor2; every receiving capture
+also resists25 Nm pitch moment. The positive hard seats must close their
+initial2 mm insertion fit to≤0.1 mm play before either hand releases.
+
+This is one first-rest field. An occupied frame is never unbolted or replaced
+under load. Onward restrained bench transfer and an empty receiver must be
+verified before another cartridge follows; both branch cartridges leave
+before I0. Actual material, matched contact, gross mass, native installation,
+anchor/core and pressure performance remain allocated qualification duties.
+These bounded native and operational arrangements support an architectural
+selection; they do not supply an installed article rating.
 
 Separate350 ×450 ×75 mm floor receivers require8 L net each; their external
 cuboid permits at most11.81 L. Use manually closed batches of at most5 L.
-The actual spouts, retained low-point inventory and support contacts still
-need the completed assembly comparison. The new bore's protected riser has
+Four capped manually controlled drains now discharge through metallic spouts
+atZ200 into their named receivers. Their crouched control reaches, arms and
+station obstacles are included. DU/DP deliberately retain sealed low900 mm
+pockets; draining a high branch does not claim those pockets are empty. Full
+low-spool removal needs local capture after zero-pressure proof. Utility
+cold/hot branch drains end atZ150 over their separate10 L receiver, leaving
+75 mm to its lip. The whole vessel is emptied through its dedicated admitted
+drain before plant/bridge intervention; these pans cannot hold300 L. The new bore's protected riser has
 200 mm plan separation from the current P17 cap; actual wall/bore/foundation
 and site/provider details remain explicit receiving duties.
 

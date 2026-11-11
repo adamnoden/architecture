@@ -5,8 +5,8 @@ import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {deriveCurrentHouse,scheduleText} from './current-house.mjs';
 import {inletEnvelopeWitness} from './selected-water-duties.mjs';
-import {pathSeparation,segmentBoxDistance,segmentBodyDistance} from './service-interface-geometry.mjs';
-import {finiteBends} from './incoming-water-geometry.mjs';
+import {pathSeparation,segmentBodyDistance} from './service-interface-geometry.mjs';
+import {finiteBends,exactSegmentBoxDistance as segmentBoxDistance} from './incoming-water-geometry.mjs';
 import {utilityTerminalStudy} from './incoming-water-terminal.mjs';
 import {coldRiserVertices,stationStudy} from './incoming-water-station.mjs';
 
@@ -157,7 +157,7 @@ export function deriveIncomingWaterStudy(){
   const house=deriveCurrentHouse(),base=read('project/mat/studies/whole-house-service-baseline.json'),host=read('project/ias/studies/utility-host-revised-route.json');
   assert.equal(scheduleText(house),readFileSync(new URL('project/had/studies/current-house-services.json',root),'utf8'));
   const sourcePaths=['project/had/studies/current-house.mjs','project/had/studies/current-house-services.json','project/had/studies/selected-water-duties.mjs',
-    'project/had/studies/incoming-water.mjs','project/had/studies/incoming-water-geometry.mjs','project/had/studies/incoming-water-terminal.mjs','project/had/studies/incoming-water-station.mjs','project/had/studies/service-interface-geometry.mjs',
+    'project/had/studies/incoming-water.mjs','project/had/studies/incoming-water-geometry.mjs','project/had/studies/incoming-water-terminal.mjs','project/had/studies/incoming-water-station.mjs','project/had/studies/incoming-water-station-handling.mjs','project/had/studies/service-interface-geometry.mjs',
     'project/mat/studies/whole-house-service-baseline.json','project/mat/studies/service-material-offer.json','project/mat/studies/plant-inlet-route.py',
     'project/mat/studies/east-water-plant.json','project/ias/studies/utility-first-release.json','project/ias/studies/utility-host-revised-route.json',
     'project/ias/studies/utility-bench-release.py','project/ias/ias-03-utility-factory-head.md'];
