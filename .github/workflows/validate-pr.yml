@@ -45,6 +45,9 @@ jobs:
       - name: Check unilateral contact against independent direct solves
         run: python project/str/studies/floor_portal_movements.py --controls
 
+      - name: Check jamb cap coupler stack and product envelopes
+        run: python project/str/studies/floor_portal_cap_stack.py
+
       - name: Check finite roof-guide travel and reinforcement clearance
         run: python project/str/studies/floor_portal_guide_fit.py
 
@@ -113,7 +116,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        candidate: [baseline, square, radial-guide-60-t20, radial-guide-j50-t20]
+        candidate: [baseline, square, radial-guide-j50-t20, radial-guide-j45-stack]
     env:
       OPENBLAS_NUM_THREADS: '1'
       OMP_NUM_THREADS: '1'
