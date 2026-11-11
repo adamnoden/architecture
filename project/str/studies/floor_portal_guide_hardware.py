@@ -10,12 +10,12 @@ import argparse,json,math
 
 from floor_portal_guide_fit import controls as fit_controls
 from floor_portal_cap_stack import stack as cap_stack
-from floor_portal_candidate import GUIDE_TRAVEL_RESERVE_MM
+from floor_portal_candidate import GUIDE_TRAVEL_RESERVE_MM,GUIDE_FRICTION_COMPARATOR
 
 S355_FY_MPA=355.0
 CONCRETE_FCK_MPA=30.0
 CONCRETE_FCD_COMPARATOR_MPA=.85*CONCRETE_FCK_MPA/1.5
-SLIDING_FRICTION_COMPARATOR=0.03
+SLIDING_FRICTION_COMPARATOR=GUIDE_FRICTION_COMPARATOR
 
 
 def family_max(bounds,prefix,key):
@@ -46,7 +46,7 @@ def screen_family(name,row,width,thickness,depth):
         effectiveTriangularBearingAreaMM2=effective_bearing_area,
         grossConcreteSideBearingPressureMPa=pressure,
         C30GrossBearingComparatorUtilisation=pressure/CONCRETE_FCD_COMPARATOR_MPA,
-        radialFrictionForceAtMu003KN=SLIDING_FRICTION_COMPARATOR*force_kn,
+        radialFrictionForceAtBoundKN=SLIDING_FRICTION_COMPARATOR*force_kn,
     )
 
 
@@ -81,6 +81,7 @@ def run(receipt):
             concrete='C30 gross local bearing comparator only; no splitting/confinement acceptance.',
             concreteFcdComparatorMPa=CONCRETE_FCD_COMPARATOR_MPA,
             slidingFrictionComparator=SLIDING_FRICTION_COMPARATOR,
+            slidingFrictionBasis='EN 1337 PTFE-guide upper-bound comparator; material selection remains unresolved under MAT policy.',
         ),
         declaredReleasedTravelReservePlusMinusMM=GUIDE_TRAVEL_RESERVE_MM,
         jamb=jamb,L=L,finiteFit=fit,capStack=stack,
@@ -90,7 +91,7 @@ def run(receipt):
             'receiver anchorage or cast-in shear-transfer detail',
             'shop weld preparation, inspection class and parent-metal development',
             'sliding liner/material pair, wear, corrosion isolation and debris seal',
-            '3 percent friction bound must be replayed through the connected assembly rather than treated as accepted',
+            '8 percent guide-friction bound must pass the connected demand and movement replays; PTFE itself is not selected under the house material policy',
             'guide receiver/tongue mass and displaced concrete beyond the now-quantified cap couplers',
         ],
     )
