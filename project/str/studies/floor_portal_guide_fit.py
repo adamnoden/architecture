@@ -36,10 +36,10 @@ def footprint_corners(centre,long_axis,half_long,half_width):
     return [c+s*e*half_long+t*n*half_width for s in (-1,1) for t in (-1,1)]
 
 
-def jamb_clearance(h,width):
+def jamb_clearance(h,width,obstruction_diameter=12.):
     half_long=width/2+TRAVEL_RESERVE+RUNNING
     half_width=h.p.cap_key_thickness/2+RUNNING
-    bar_radius=12/2
+    bar_radius=obstruction_diameter/2
     minimum=float('inf');cap_margin=float('inf');witness=None
     for j in h.jambs:
         face,u=j['face'],j['u'];qcap,_=h.jamb_section(6515.)
@@ -54,9 +54,9 @@ def jamb_clearance(h,width):
             d=corner-centre
             margin=min(205/2-abs(float(d@along(face)[:2])),180/2-abs(float(d@inward(face)[:2])))
             cap_margin=min(cap_margin,margin)
-    return dict(bladeWidthMM=width,sweptPocketHalfLengthMM=half_long,
-                sweptPocketHalfWidthMM=half_width,
-                minimumH12ClearAfterTwo5MMSettingMM=minimum,
+    return dict(bladeWidthMM=width,obstructionDiameterMM=obstruction_diameter,
+                sweptPocketHalfLengthMM=half_long,sweptPocketHalfWidthMM=half_width,
+                minimumClearAfterTwo5MMSettingMM=minimum,
                 minimumGrossCapEdgeMarginMM=cap_margin,witness=witness)
 
 
@@ -101,12 +101,20 @@ def L_clearance(h):
 
 def controls():
     h=House(leading_parameters())
-    historical=jamb_clearance(h,90.)
-    selected=jamb_clearance(h,h.p.cap_key_width)
+    historical=jamb_clearance(h,90.,12.)
+    previous50=jamb_clearance(h,50.,12.)
+    selected_bar=jamb_clearance(h,h.p.cap_key_width,12.)
+    selected_weldable=jamb_clearance(h,h.p.cap_key_width,20.)
+    overlapping_position=jamb_clearance(h,h.p.cap_key_width,25.)
     L=L_clearance(h)
-    assert historical['minimumH12ClearAfterTwo5MMSettingMM']<0,historical
-    assert selected['minimumH12ClearAfterTwo5MMSettingMM']>=5.,selected
-    assert selected['minimumGrossCapEdgeMarginMM']>=25.,selected
+    assert historical['minimumClearAfterTwo5MMSettingMM']<0,historical
+    assert previous50['minimumClearAfterTwo5MMSettingMM']>=5.,previous50
+    assert selected_bar['minimumClearAfterTwo5MMSettingMM']>=5.,selected_bar
+    # EL12C13N is the only coupler envelope intentionally permitted to
+    # overlap the60 mm guide zone. The larger EL12P13LN must sit below it.
+    assert selected_weldable['minimumClearAfterTwo5MMSettingMM']>=5.,selected_weldable
+    assert overlapping_position['minimumClearAfterTwo5MMSettingMM']<5.,overlapping_position
+    assert selected_weldable['minimumGrossCapEdgeMarginMM']>=25.,selected_weldable
     assert L['minimumPrimaryH20ClearAfterTwo5MMSettingMM']>=25.,L
     assert L['minimumIntermediateH12StationClearAfterTwo5MMSettingMM']>=25.,L
     assert L['minimumGrossLArmEdgeMarginMM']>=10.,L
@@ -114,8 +122,12 @@ def controls():
                 releasedDirectionTravelReservePlusMinusMM=TRAVEL_RESERVE,
                 runningAllowanceEachPocketEdgeMM=RUNNING,
                 independentSteelSettingEachMM=SETTING_EACH,
-                historical90JambGuideControl=historical,
-                selected50JambGuide=selected,LGuides=L)
+                historical90JambGuideBareH12Control=historical,
+                previous50JambGuideBareH12=previous50,
+                selected45JambGuideBareH12=selected_bar,
+                selected45JambGuideEL12C13NWeldableEnvelope=selected_weldable,
+                forbiddenSamePlaneEL12P13LNEnvelope=overlapping_position,
+                LGuides=L)
 
 
 if __name__=='__main__':
