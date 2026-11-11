@@ -9,8 +9,8 @@
     "label": "floor-portal-resume-20261111"
   },
   "claimedAt": "2026-11-11T13:06:46.946Z",
-  "heartbeatAt": "2026-11-11T13:57:28.429Z",
-  "expiresAt": "2026-11-11T14:42:28.429Z",
+  "heartbeatAt": "2026-11-11T14:11:57.806Z",
+  "expiresAt": "2026-11-11T14:56:57.806Z",
   "branch": "work/str-floor-portal-resume-20261111",
   "predecessor": {
     "leaseId": "f7d5b2b7-66ee-44c2-b644-8db75a918ed1",
@@ -34,7 +34,7 @@
   },
   "pr": 1482,
   "checkpoint": {
-    "evidence": "65b79a7a CI passed. Local coupled assembly passes six rigid fields and a 1kN active-contact solve with all52 heads; local jamb flare and physical floor trimmers incorporated; single-owned RC and source-origin gravity ledger under verification.",
-    "next": "Validate actual gravity/wind/roof-water origins, recover connection and head demands, publish exact reproducible comparison; cage, DPC anchorage and room acceptance remain open."
+    "evidence": "Coupled assembly and physical gravity/roof-water origin controls pass locally; corrected collector steel-only EA and finite four-anchor jamb-cap model; full reaction batch running. Existing published65b79a7a CI green.",
+    "next": "Publish exact connected-house checkpoint with Python CI; complete L-cap compliance, finite corner/jamb cage, independent load domains and all52 head comparisons before selecting any design."
   }
 }
