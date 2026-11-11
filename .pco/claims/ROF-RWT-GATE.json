@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "ROF-RWT-GATE",
-  "generation": 3,
-  "state": "released",
-  "leaseId": "e3c97957-956b-46e8-ae67-346007b092b6",
+  "generation": 4,
+  "state": "claimed",
+  "leaseId": "a77d64ef-5e76-4e81-a1bd-e7294f10b905",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-20261110-root"
+    "label": "push-20261111-root"
   },
-  "claimedAt": "2026-11-10T21:02:13.030Z",
-  "heartbeatAt": "2026-11-11T00:16:40.000Z",
-  "expiresAt": "2026-11-11T00:16:40.000Z",
-  "branch": "work/swarm-roof-g3-20261110",
+  "claimedAt": "2026-11-11T08:33:57.246Z",
+  "heartbeatAt": "2026-11-11T08:33:57.246Z",
+  "expiresAt": "2026-11-11T09:18:57.246Z",
+  "branch": "work/push-roof-g4-20261111",
   "predecessor": {
-    "leaseId": "47083968-9abd-4627-90bb-040ec3eb4792",
-    "generation": 2,
-    "branch": "work/mvb-chat-6761668451",
-    "pr": 1470,
+    "leaseId": "e3c97957-956b-46e8-ae67-346007b092b6",
+    "generation": 3,
+    "branch": "work/swarm-roof-g3-20261110",
+    "pr": 1472,
     "checkpoint": {
-      "evidence": "Draft PR #1470 at683d1c23f377931b6b776f905ce843ff44a95bea. roof-water-recovery.md and comments6765285655/6765298508 preserve source states, final native observations and exact open failures.",
-      "next": "Recover final native files, close local rain-control/withdrawal proof, integrate green services1471, reconcile source identities and rerun CI/preflight.",
-      "blocker": "Execution environment unavailable. Local renewal and final structural source adoption remain unfinished."
+      "evidence": "Draft PR1472 f7942830ae24ef1d308f01e71a4f87f306f37ab0 passed CI42927109838. Handoff comment6782984047. MRA code/test/proof: fb7effbf26824164173439b054a16bfd0394132f on evidence/mra-source-join-20261111.",
+      "next": "Reacquire via dispatcher; reconstruct f794 plus main, apply MRA patch, regenerate receipts, run affected checks/full CI and fresh publication preflight. See PR1472 comment6782984047.",
+      "blocker": "Execution environment unavailable. Main b0f3/#1476 join stayed local/uncommitted; final MRA receipt checks and publication preflight unverified."
     }
   },
   "recoverySource": {
-    "leaseId": "47083968-9abd-4627-90bb-040ec3eb4792",
-    "generation": 2,
-    "branch": "work/mvb-chat-6761668451",
-    "pr": 1470,
+    "leaseId": "e3c97957-956b-46e8-ae67-346007b092b6",
+    "generation": 3,
+    "branch": "work/swarm-roof-g3-20261110",
+    "pr": 1472,
     "checkpoint": {
-      "evidence": "Draft PR #1470 at683d1c23f377931b6b776f905ce843ff44a95bea. roof-water-recovery.md and comments6765285655/6765298508 preserve source states, final native observations and exact open failures.",
-      "next": "Recover final native files, close local rain-control/withdrawal proof, integrate green services1471, reconcile source identities and rerun CI/preflight.",
-      "blocker": "Execution environment unavailable. Local renewal and final structural source adoption remain unfinished."
+      "evidence": "Draft PR1472 f7942830ae24ef1d308f01e71a4f87f306f37ab0 passed CI42927109838. Handoff comment6782984047. MRA code/test/proof: fb7effbf26824164173439b054a16bfd0394132f on evidence/mra-source-join-20261111.",
+      "next": "Reacquire via dispatcher; reconstruct f794 plus main, apply MRA patch, regenerate receipts, run affected checks/full CI and fresh publication preflight. See PR1472 comment6782984047.",
+      "blocker": "Execution environment unavailable. Main b0f3/#1476 join stayed local/uncommitted; final MRA receipt checks and publication preflight unverified."
     }
-  },
-  "pr": 1472,
-  "checkpoint": {
-    "evidence": "Draft PR1472 f7942830ae24ef1d308f01e71a4f87f306f37ab0 passed CI42927109838. Handoff comment6782984047. MRA code/test/proof: fb7effbf26824164173439b054a16bfd0394132f on evidence/mra-source-join-20261111.",
-    "next": "Reacquire via dispatcher; reconstruct f794 plus main, apply MRA patch, regenerate receipts, run affected checks/full CI and fresh publication preflight. See PR1472 comment6782984047.",
-    "blocker": "Execution environment unavailable. Main b0f3/#1476 join stayed local/uncommitted; final MRA receipt checks and publication preflight unverified."
-  },
-  "releasedAt": "2026-11-11T00:16:40.000Z",
-  "releaseReason": "handoff"
+  }
 }
