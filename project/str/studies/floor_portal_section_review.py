@@ -38,7 +38,9 @@ def run(path):
                 z=point[2];frac=max(0,min(1,(z-2770)/400,(4320-z)/400));width=180+70*frac;q=312.5+20*frac;height=205.
                 bars=jamb_bars(z,q);family='jamb'
             else:
-                values=np.c_[local[:,0],-local[:,5],local[:,4]];width=e['width'];height=e['depth'];family=e['name'];bars=floor_bars('outer' if height==750 else 'court',width)
+                values=np.c_[local[:,0],-local[:,5],local[:,4]];width=e['width'];height=e['depth'];family=e['name']
+                axis=int(abs(e['b'][0]-e['a'][0])<1e-6);station=min(point[axis],12000-point[axis])
+                bars=floor_bars('outer' if height==750 else 'court',width,corner_station=station)
             # Opposed5 mm placement deviations move each bar towards the
             # actual centroid. They are not an extra concrete strength credit.
             adverse=tuple((a-math.copysign(min(5.,abs(a)),a),b-math.copysign(min(5.,abs(b)),b),d) for a,b,d in bars)
