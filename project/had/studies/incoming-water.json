@@ -7,8 +7,9 @@
     "project/had/studies/current-house.mjs": "58bf1a6248af8268de70d838cce23f249ce30b91",
     "project/had/studies/current-house-services.json": "248c8281369d16a8885506660f740c1f66462d9d",
     "project/had/studies/selected-water-duties.mjs": "1ea39eda8b8ba187c3ac0a7ccf4327322ea6f037",
-    "project/had/studies/incoming-water.mjs": "481f197d1c1b2d35c174b286eb28ec51165353df",
+    "project/had/studies/incoming-water.mjs": "96858cb9e13b863861cc71120f0431b99fe62f4a",
     "project/had/studies/incoming-water-geometry.mjs": "82d1ebbc8a5f150c72294a3a76fa943082c3c6d3",
+    "project/had/studies/incoming-water-terminal.mjs": "451bfd612ad5cfa646a44f28abfc8b882b88b1df",
     "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2",
     "project/mat/studies/whole-house-service-baseline.json": "049161ebac29b24e0acc7d8085302fca906fe9d2",
     "project/mat/studies/service-material-offer.json": "e5686440fa6a3f68387576883b1e0c768e0596bb",
@@ -456,6 +457,867 @@
       "Proposed under-bowl breaks are not yet proved reachable from the valve-bay worker. Their coordinates do not identify the actual native tap ports.",
       "Rigid tails and their first breaks must be removable without extending the factory head outside its610 mm transport package or retained250 mm underhang. This has not been earned."
     ]
+  },
+  "utilitySuccessor": {
+    "status": "REFERENCE_ASSEMBLY",
+    "completeTerminalR": 25,
+    "bendRadius": 25,
+    "vertices": {
+      "coldWasher": [
+        [
+          10760,
+          1250,
+          1000
+        ],
+        [
+          10760,
+          1250,
+          950
+        ],
+        [
+          10800,
+          1250,
+          900
+        ],
+        [
+          10800,
+          1250,
+          750
+        ]
+      ],
+      "coldSink": [
+        [
+          10800,
+          1250,
+          900
+        ],
+        [
+          10800,
+          835,
+          900
+        ],
+        [
+          10800,
+          835,
+          500
+        ],
+        [
+          10800,
+          1050,
+          500
+        ],
+        [
+          11110,
+          1050,
+          500
+        ],
+        [
+          11110,
+          1275,
+          500
+        ],
+        [
+          11110,
+          1275,
+          595
+        ]
+      ],
+      "hotSink": [
+        [
+          10860,
+          1250,
+          1000
+        ],
+        [
+          10860,
+          1250,
+          950
+        ],
+        [
+          10860,
+          750,
+          950
+        ],
+        [
+          10800,
+          750,
+          950
+        ],
+        [
+          10800,
+          750,
+          400
+        ],
+        [
+          10800,
+          1000,
+          400
+        ],
+        [
+          11300,
+          1000,
+          400
+        ],
+        [
+          11300,
+          1275,
+          400
+        ],
+        [
+          11300,
+          1275,
+          595
+        ]
+      ]
+    },
+    "pipeClearances": {
+      "coldWasher": [
+        {
+          "obstacle": "valve reaction arm",
+          "gapMM": -10.00095192
+        },
+        {
+          "obstacle": "valve reaction arm return",
+          "gapMM": 51.48434078
+        },
+        {
+          "obstacle": "rackPost",
+          "gapMM": 74.24621428
+        },
+        {
+          "obstacle": "rearLink800",
+          "gapMM": 74.24621428
+        },
+        {
+          "obstacle": "washer",
+          "gapMM": 100.99904808
+        },
+        {
+          "obstacle": "wholeFootWindow1",
+          "gapMM": 104.99904808
+        },
+        {
+          "obstacle": "inheritedHeadBody",
+          "gapMM": 109.99904808
+        },
+        {
+          "obstacle": "NS rail at x10975 / z850",
+          "gapMM": 134.99904808
+        },
+        {
+          "obstacle": "leg 2",
+          "gapMM": 149.4266835
+        },
+        {
+          "obstacle": "middle pipe arm",
+          "gapMM": 165.5902336
+        },
+        {
+          "obstacle": "EW rail at y1350 / z850",
+          "gapMM": 169.54981266
+        },
+        {
+          "obstacle": "middle pipe arm return",
+          "gapMM": 179.81603956
+        },
+        {
+          "obstacle": "lower pipe arm",
+          "gapMM": 265.38671999
+        },
+        {
+          "obstacle": "lower pipe arm return",
+          "gapMM": 274.91570317
+        },
+        {
+          "obstacle": "wholeFootWindow0",
+          "gapMM": 348.36214213
+        },
+        {
+          "obstacle": "rearLink300",
+          "gapMM": 416.30393135
+        },
+        {
+          "obstacle": "leg 1",
+          "gapMM": 479.40463885
+        },
+        {
+          "obstacle": "EW rail at y750 / z850",
+          "gapMM": 490.60548714
+        },
+        {
+          "obstacle": "NS rail at x10975 / z135",
+          "gapMM": 595.96603593
+        },
+        {
+          "obstacle": "EW rail at y1350 / z135",
+          "gapMM": 605.7525657
+        },
+        {
+          "obstacle": "wholeFootWindow3",
+          "gapMM": 654.99904808
+        },
+        {
+          "obstacle": "leg 4",
+          "gapMM": 684.52353673
+        },
+        {
+          "obstacle": "NS rail at x11525 / z850",
+          "gapMM": 684.99904808
+        },
+        {
+          "obstacle": "rackFoot",
+          "gapMM": 717.51167423
+        },
+        {
+          "obstacle": "sole 2",
+          "gapMM": 739.17245772
+        },
+        {
+          "obstacle": "wholeFootWindow2",
+          "gapMM": 739.78660028
+        },
+        {
+          "obstacle": "eastWall",
+          "gapMM": 745.49904808
+        },
+        {
+          "obstacle": "EW rail at y750 / z135",
+          "gapMM": 766.10586767
+        },
+        {
+          "obstacle": "leg 3",
+          "gapMM": 827.89118663
+        },
+        {
+          "obstacle": "sole 1",
+          "gapMM": 873.86555652
+        },
+        {
+          "obstacle": "NS rail at x11525 / z135",
+          "gapMM": 904.56884105
+        },
+        {
+          "obstacle": "sole 4",
+          "gapMM": 1003.08513397
+        },
+        {
+          "obstacle": "sole 3",
+          "gapMM": 1106.7945243
+        }
+      ],
+      "coldSink": [
+        {
+          "obstacle": "inheritedHeadBody",
+          "gapMM": 29.99904808
+        },
+        {
+          "obstacle": "rearLink800",
+          "gapMM": 49.99904808
+        },
+        {
+          "obstacle": "wholeFootWindow1",
+          "gapMM": 64.99904808
+        },
+        {
+          "obstacle": "rackPost",
+          "gapMM": 65.13782996
+        },
+        {
+          "obstacle": "lower pipe arm return",
+          "gapMM": 96.7570047
+        },
+        {
+          "obstacle": "middle pipe arm return",
+          "gapMM": 96.7570047
+        },
+        {
+          "obstacle": "washer",
+          "gapMM": 100.99904808
+        },
+        {
+          "obstacle": "leg 2",
+          "gapMM": 102.47453592
+        },
+        {
+          "obstacle": "wholeFootWindow0",
+          "gapMM": 104.99904808
+        },
+        {
+          "obstacle": "valve reaction arm",
+          "gapMM": 114.99904808
+        },
+        {
+          "obstacle": "valve reaction arm return",
+          "gapMM": 133.82284982
+        },
+        {
+          "obstacle": "NS rail at x10975 / z850",
+          "gapMM": 134.99904808
+        },
+        {
+          "obstacle": "leg 1",
+          "gapMM": 143.07641122
+        },
+        {
+          "obstacle": "lower pipe arm",
+          "gapMM": 144.77831654
+        },
+        {
+          "obstacle": "middle pipe arm",
+          "gapMM": 144.77831654
+        },
+        {
+          "obstacle": "rearLink300",
+          "gapMM": 154.99904808
+        },
+        {
+          "obstacle": "EW rail at y750 / z850",
+          "gapMM": 163.47981633
+        },
+        {
+          "obstacle": "EW rail at y1350 / z850",
+          "gapMM": 171.84924493
+        },
+        {
+          "obstacle": "NS rail at x10975 / z135",
+          "gapMM": 324.99904808
+        },
+        {
+          "obstacle": "EW rail at y1350 / z135",
+          "gapMM": 334.51193978
+        },
+        {
+          "obstacle": "wholeFootWindow3",
+          "gapMM": 344.99904808
+        },
+        {
+          "obstacle": "leg 4",
+          "gapMM": 373.80978013
+        },
+        {
+          "obstacle": "EW rail at y750 / z135",
+          "gapMM": 376.94161378
+        },
+        {
+          "obstacle": "wholeFootWindow2",
+          "gapMM": 382.02918404
+        },
+        {
+          "obstacle": "eastWall",
+          "gapMM": 435.49904808
+        },
+        {
+          "obstacle": "NS rail at x11525 / z850",
+          "gapMM": 438.92253315
+        },
+        {
+          "obstacle": "rackFoot",
+          "gapMM": 467.54346232
+        },
+        {
+          "obstacle": "leg 3",
+          "gapMM": 469.06070214
+        },
+        {
+          "obstacle": "sole 2",
+          "gapMM": 488.18005874
+        },
+        {
+          "obstacle": "sole 1",
+          "gapMM": 500.1407642
+        },
+        {
+          "obstacle": "NS rail at x11525 / z135",
+          "gapMM": 506.50633871
+        },
+        {
+          "obstacle": "sole 4",
+          "gapMM": 612.30176241
+        },
+        {
+          "obstacle": "sole 3",
+          "gapMM": 673.66414526
+        }
+      ],
+      "hotSink": [
+        {
+          "obstacle": "inheritedHeadBody",
+          "gapMM": 29.99904808
+        },
+        {
+          "obstacle": "rearLink800",
+          "gapMM": 49.99904808
+        },
+        {
+          "obstacle": "rearLink300",
+          "gapMM": 54.99904808
+        },
+        {
+          "obstacle": "wholeFootWindow1",
+          "gapMM": 61.02230075
+        },
+        {
+          "obstacle": "wholeFootWindow0",
+          "gapMM": 61.02230075
+        },
+        {
+          "obstacle": "rackPost",
+          "gapMM": 76.11779016
+        },
+        {
+          "obstacle": "leg 1",
+          "gapMM": 99.27668148
+        },
+        {
+          "obstacle": "washer",
+          "gapMM": 100.99904808
+        },
+        {
+          "obstacle": "NS rail at x10975 / z850",
+          "gapMM": 103.06153283
+        },
+        {
+          "obstacle": "EW rail at y750 / z850",
+          "gapMM": 115.38128845
+        },
+        {
+          "obstacle": "leg 2",
+          "gapMM": 130.8046282
+        },
+        {
+          "obstacle": "lower pipe arm return",
+          "gapMM": 144.77831654
+        },
+        {
+          "obstacle": "EW rail at y1350 / z850",
+          "gapMM": 146.38071178
+        },
+        {
+          "obstacle": "wholeFootWindow3",
+          "gapMM": 154.99904808
+        },
+        {
+          "obstacle": "valve reaction arm",
+          "gapMM": 164.99904808
+        },
+        {
+          "obstacle": "valve reaction arm return",
+          "gapMM": 165.5902336
+        },
+        {
+          "obstacle": "leg 4",
+          "gapMM": 187.24890084
+        },
+        {
+          "obstacle": "wholeFootWindow2",
+          "gapMM": 190.1037835
+        },
+        {
+          "obstacle": "middle pipe arm return",
+          "gapMM": 191.38989816
+        },
+        {
+          "obstacle": "lower pipe arm",
+          "gapMM": 193.68832536
+        },
+        {
+          "obstacle": "NS rail at x10975 / z135",
+          "gapMM": 224.99904808
+        },
+        {
+          "obstacle": "middle pipe arm",
+          "gapMM": 231.56288029
+        },
+        {
+          "obstacle": "EW rail at y1350 / z135",
+          "gapMM": 237.83593639
+        },
+        {
+          "obstacle": "eastWall",
+          "gapMM": 245.49904808
+        },
+        {
+          "obstacle": "EW rail at y750 / z135",
+          "gapMM": 280.31188171
+        },
+        {
+          "obstacle": "NS rail at x11525 / z850",
+          "gapMM": 290.15773826
+        },
+        {
+          "obstacle": "leg 3",
+          "gapMM": 293.4011547
+        },
+        {
+          "obstacle": "NS rail at x11525 / z135",
+          "gapMM": 301.49560242
+        },
+        {
+          "obstacle": "rackFoot",
+          "gapMM": 377.61549086
+        },
+        {
+          "obstacle": "sole 1",
+          "gapMM": 398.41943928
+        },
+        {
+          "obstacle": "sole 4",
+          "gapMM": 425.86784776
+        },
+        {
+          "obstacle": "sole 2",
+          "gapMM": 479.26353674
+        },
+        {
+          "obstacle": "sole 3",
+          "gapMM": 481.57174918
+        }
+      ]
+    },
+    "hotColdWasherGapMM": 30.89218407,
+    "hotColdSinkGapMM": 28.10059291,
+    "wasteGapsMM": {
+      "coldWasher": 113.99020047,
+      "coldSink": 48.21835934,
+      "hotSink": 139.99904808
+    },
+    "breaks": [
+      {
+        "id": "cold",
+        "point": [
+          11110,
+          1275,
+          595
+        ],
+        "toolSector": [
+          35,
+          95
+        ]
+      },
+      {
+        "id": "hot",
+        "point": [
+          11300,
+          1275,
+          595
+        ],
+        "toolSector": [
+          75,
+          135
+        ]
+      }
+    ],
+    "unionMadeZ": [
+      565,
+      625
+    ],
+    "nutBackoffMM": 60,
+    "headLiftToFullClearance": 375,
+    "reactionSupport": {
+      "solids": {
+        "rackLink": [
+          10875,
+          1100,
+          535,
+          30,
+          65,
+          40
+        ],
+        "crossRail": [
+          10875,
+          1100,
+          535,
+          460,
+          30,
+          40
+        ],
+        "coldArm": [
+          11100,
+          1130,
+          550,
+          20,
+          105,
+          20
+        ],
+        "hotArm": [
+          11290,
+          1130,
+          550,
+          20,
+          105,
+          20
+        ],
+        "coldKey": [
+          11075,
+          1235,
+          562,
+          70,
+          80,
+          15
+        ],
+        "hotKey": [
+          11265,
+          1235,
+          562,
+          70,
+          80,
+          15
+        ]
+      },
+      "minimumNonContact": [
+        {
+          "id": "crossRail",
+          "obstacle": "middle pipe arm return",
+          "gapMM": 35
+        },
+        {
+          "id": "crossRail",
+          "obstacle": "rackPost",
+          "gapMM": 35
+        },
+        {
+          "id": "rackLink",
+          "obstacle": "wholeFootWindow1",
+          "gapMM": 43.01162634
+        },
+        {
+          "id": "rackLink",
+          "obstacle": "middle pipe arm",
+          "gapMM": 50
+        },
+        {
+          "id": "coldKey",
+          "obstacle": "wholeFootWindow1",
+          "gapMM": 55
+        }
+      ],
+      "contact": "Each open key bears on its own lower union hex. The central shaped opening is occupied by the matched union, not a solid plate through a pipe. Fit and rate both contact faces; no torque through the sink top or unsupported copper.",
+      "keyMaximumTop": 577,
+      "rotatingSpannerUnderside": 608.6,
+      "verticalKeyToolGapMM": 31.6,
+      "rackConnection": "The rackLink ends exactly atY1165 and meets the post and existing middle-arm return on their south face. They share a bolted/welded connection territory, not overlapping independent solids. The existing rack must receive the added force/torque.",
+      "preliminaryForceCase": {
+        "sectionMM": [
+          30,
+          40,
+          3
+        ],
+        "secondMomentMM4": 81392,
+        "sectionModulusMM3": 4069.6,
+        "modulusNmm2": 190000,
+        "minimumProofStressNmm2": 150,
+        "verticalForceN": 250,
+        "maximumTorqueNm": 50,
+        "maximumCantileverMM": 460,
+        "combinedBendingStressNmm2": 40.54452526,
+        "tipDeflectionMM": 0.52451381,
+        "basis": "Authored conservative250N vertical plus50Nm wrench comparison; steel properties are minimum design inputs, not an identified product certificate. Qualify actual torsion, welds, keyed contact and rack/anchor load path before this service method is issued."
+      },
+      "loadPath": "Union body → removable open reaction key → front cantilever → common cross rail → existing independent rear rack. Remove lower feed/reaction assembly before underframe retirement; upper caps and H0 remain."
+    },
+    "tool": {
+      "body": [
+        10925,
+        1725,
+        300
+      ],
+      "shoulder": [
+        10925,
+        1725,
+        800
+      ],
+      "toolLength": 297,
+      "headWidth": 71.5,
+      "thickness": 12.8,
+      "toolZ": 615,
+      "handR": 50,
+      "armR": 40,
+      "angularStepDeg": 0.25,
+      "angularPenaltyMM": 0.64795348,
+      "checks": [
+        {
+          "id": "cold",
+          "sector": [
+            35,
+            95
+          ],
+          "toolGapLowerMM": 27.95204652,
+          "handGapLowerMM": 60.36594826,
+          "armGapLowerMM": 70.36594826,
+          "otherUnionGapLowerMM": 47.58156942,
+          "maxReachUpperMM": 544.57684287
+        },
+        {
+          "id": "hot",
+          "sector": [
+            75,
+            135
+          ],
+          "toolGapLowerMM": 27.95204652,
+          "handGapLowerMM": 59.46708477,
+          "armGapLowerMM": 69.46708477,
+          "otherUnionGapLowerMM": 72.95233494,
+          "maxReachUpperMM": 515.44788446
+        }
+      ],
+      "scope": "One rotating spanner and hand; positive independently fixed reaction keys replace an unproved simultaneous second handheld spanner. Actual hex fit, torque and captive-nut stroke remain matched-component qualifications."
+    },
+    "hotIsolation": {
+      "id": "H0",
+      "axis": [
+        10860,
+        1250,
+        1500
+      ],
+      "wheel": [
+        10860,
+        1345,
+        1500
+      ],
+      "bodyBox": [
+        10823,
+        1213,
+        1417.5,
+        74,
+        147,
+        165
+      ],
+      "valveFaceLength": 55,
+      "maxAdaptorsEach": 55,
+      "wheelDiameter": 69,
+      "orientation": "Vertical pipe with horizontal stem facing north; independently supported below the working wheel.",
+      "shoulder": [
+        10800,
+        1725,
+        1450
+      ],
+      "handCentre": [
+        10860,
+        1375,
+        1500
+      ],
+      "handR": 40,
+      "reachMM": 358.60842154,
+      "handToOwnPipeMM": 48,
+      "scope": "H0 stops the hot lower branch independently of the cold U0 lobby cut. Replacing H0 itself requires upstream domestic-store isolation and controlled inventory discharge, not merely closing H0."
+    },
+    "head": {
+      "centre": [
+        11235,
+        1040
+      ],
+      "plan": [
+        610,
+        610
+      ],
+      "retainedBelowRim": 350,
+      "aboveRim": 350,
+      "completeHeight": 700,
+      "inheritedUnderhang": 250,
+      "raised": [
+        10930,
+        735,
+        925,
+        610,
+        610,
+        700
+      ],
+      "moves": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          760,
+          0
+        ],
+        [
+          -730,
+          760,
+          0
+        ],
+        [
+          -730,
+          760,
+          -575
+        ]
+      ],
+      "minimumSweeps": [
+        {
+          "stage": 1,
+          "id": "frame",
+          "gapMM": 25
+        },
+        {
+          "stage": 1,
+          "id": "eastWall",
+          "gapMM": 30.5
+        },
+        {
+          "stage": 2,
+          "id": "eastWall",
+          "gapMM": 30.5
+        },
+        {
+          "stage": 1,
+          "id": "H0",
+          "gapMM": 33
+        },
+        {
+          "stage": 1,
+          "id": "hotCap",
+          "gapMM": 33
+        },
+        {
+          "stage": 1,
+          "id": "rackPost",
+          "gapMM": 82.76472679
+        },
+        {
+          "stage": 3,
+          "id": "washer",
+          "gapMM": 95
+        },
+        {
+          "stage": 2,
+          "id": "washer",
+          "gapMM": 122.28654873
+        }
+      ],
+      "receiver": {
+        "plan": [
+          10170,
+          1465,
+          670,
+          670
+        ],
+        "rim": 700,
+        "lowestRetainedPart": 350,
+        "railWidth": 15,
+        "outerInset": 10,
+        "clearWidth": 550,
+        "maximumLowerBodyWidth": 530,
+        "scope": "The530 limit is transverse between two longitudinal rails, not a square throat. Keep cross-bracing below the350 lowest-part plane, with25 clear; locate actual upper lands and anti-tip capture before crew release."
+      },
+      "pickup": "Keep the existing four-legged frame on its seats. Capture the complete top independently against fall and pitch before the four head screws release. Head feet/fasteners/pickup remain IAS occurrence qualifications; this change provides reachable pipe breaks and a larger explicit moving package."
+    },
+    "controlledDrain": {
+      "receiver": [
+        11045,
+        925,
+        0,
+        400,
+        400,
+        75
+      ],
+      "requiredNetLitres": 10,
+      "grossCuboidUpperLitres": 12,
+      "minimumFixedGapMM": 25,
+      "method": "Before first nut release, close U0 and H0, prove stopped/zero-pressure flow and vent locally. Drain one isolated branch at a time through its capped, independently supported local drain into this removable floor receiver. Close the drain before emptying; retain the normal2L witness as a different duty.",
+      "noCredit": "No unattended burst capture, automatic response, electrical safety certification or draining of the domestic vessel into10L."
+    }
   },
   "bridge": {
     "status": "OBJECT_PATH_ONLY",

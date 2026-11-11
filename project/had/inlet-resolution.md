@@ -58,6 +58,50 @@ support, so the actual clamp/fitting interface must still be drawn. More
 fundamentally, reachable sink first breaks and the native head separation are
 not yet earned. The terminal alternative remains **NOT_ADOPTED**.
 
+The recovered successor now brings the cold/hot head breaks forward to
+**(11110,1275,595)** and **(11300,1275,595)**. These are designed service
+interfaces, not inferred native tap positions. Each matched union occupies
+Z565–625; a positive open reaction key on its lower body leaves the turning
+38 mm spanner at Z615. The 297 mm long, 71.5 mm wide, 12.8 mm thick tool,
+50 mm hand and 40 mm arm are included. The cold 35–95° and hot 75–135°
+sectors each retain 27.95 mm after the conservative angular bound, with
+maximum reaches 544.58/515.45 mm from a declared crouched shoulder.
+
+The reaction keys connect through a removable front frame to the existing
+independent rear service rack, not to the sink head. The proposed
+30 × 40 × 3 mm rail carries an authored 250 N vertical and 50 Nm wrench
+comparison with 40.54 N/mm² nominal bending and 0.525 mm cantilever
+deflection. Actual contact, torsion, welds and rack anchors remain the matched
+component/installation duty. The keys are shaped contacts around their own
+union, not unexplained solid interpenetrations.
+
+Hot branch stop **H0** sits on the vertical upper drop at
+(10860,1250,1500), stem facing north, before the lower removable apparatus
+connections. Its control is reachable from the utility front without passing
+an arm through the upper pipes. Cold isolation remains the separate lobby U0
+duty. H0 replacement itself needs upstream store isolation and controlled
+discharge; closing H0 cannot isolate its own upstream connection.
+
+The captured head now explicitly allows **350 mm below the rim**, giving a
+610 × 610 × 700 mm complete moving package. Lift its lowest part to925 before
+the existing760 north/730 west moves. Full head comparisons retain25 mm to
+the frame,30.5 mm to the east wall and33 mm to H0 and the hot upper cap.
+At the separate rim700 rest its lowest appendage is350 above the floor.
+The530 mm lower-body limit applies across the two longitudinal bearing rails;
+it is not a square throat. Place any receiver cross-bracing below325 and
+retain positive capture against pitching until the actual underside lands
+are supported. The original fastener/pickup qualifications remain with IAS.
+
+A separate **400 × 400 × 75 mm controlled-service receiver** fits beneath
+the head and all four full foot windows with25 mm clearance. Its12 L external
+cuboid is an upper bound; require10 L actual net capacity. It is distinct from
+the normal2 L leak witness. Drain one isolated branch at a time, verify zero
+pressure before first release and empty the receiver under control. No
+unattended burst or whole-cylinder draining claim follows. These successor
+calculations are in `utilitySuccessor`; the old terminal trial is retained as
+the adverse comparison. Overall inlet adoption still awaits the station and
+supported cylinder release.
+
 For the cylinder, a **2150 mm bridge crown** leaves 113 mm above a declared
 2000 mm standing head and 78 mm below the actual 2350 mm finished service
 panel after the 85 mm lift. A small dogleg keeps the original entry and work

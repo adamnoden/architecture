@@ -56,6 +56,29 @@ test('the higher bridge preserves a bounded ordinary path and uses continuous mo
   assert.match(study.bridge.firstRestTrial.status,/NOT_ACCEPTED/);
 });
 
+test('front utility breaks include a reaction key, real tool thickness, hands and the larger captured head',()=>{
+  const t=study.utilitySuccessor;
+  assert.deepEqual(t.breaks.map(b=>b.point),[[11110,1275,595],[11300,1275,595]]);
+  assert.equal(t.unionMadeZ[1],625);
+  for(const c of t.tool.checks){
+    assert(c.toolGapLowerMM>25);assert(c.handGapLowerMM>25);assert(c.armGapLowerMM>25);
+    assert(c.otherUnionGapLowerMM>25);assert(c.maxReachUpperMM<650);
+  }
+  assert.equal(t.reactionSupport.verticalKeyToolGapMM,31.6);
+  assert(t.reactionSupport.minimumNonContact.every(x=>x.gapMM>=25));
+  assert(t.reactionSupport.preliminaryForceCase.combinedBendingStressNmm2<50);
+  assert(t.reactionSupport.preliminaryForceCase.tipDeflectionMM<1);
+  assert.equal(t.head.completeHeight,700);
+  assert.equal(t.head.retainedBelowRim,350);
+  assert(t.head.minimumSweeps.every(x=>x.gapMM>=25));
+  assert(t.hotIsolation.reachMM<400);
+  assert.equal(t.hotIsolation.handToOwnPipeMM,48);
+  assert.equal(t.controlledDrain.minimumFixedGapMM,25);
+  assert.equal(t.controlledDrain.grossCuboidUpperLitres,12);
+  assert.equal(t.controlledDrain.requiredNetLitres,10);
+  assert.match(t.controlledDrain.noCredit,/unattended burst/);
+});
+
 test('development cannot silently adopt a route or release the existing house blocker',()=>{
   const house=deriveCurrentHouse();
   assert.equal(study.adoption.adopted,false);
