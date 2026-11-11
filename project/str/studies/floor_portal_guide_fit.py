@@ -10,13 +10,13 @@ import json,math
 import numpy as np
 
 from floor_portal_house import House,xy,along,inward
-from floor_portal_candidate import leading_parameters,SIX_L_KEYS
+from floor_portal_candidate import leading_parameters,SIX_L_KEYS,GUIDE_TRAVEL_RESERVE_MM
 
 D=Path(__file__).resolve().parent
 JAMB=json.loads((D/'reconciled-house-interface.json').read_text())['jambAndTies']
 GROUND=json.loads((D/'current-house-ground-ties.json').read_text())['outer']
 
-TRAVEL_RESERVE=10.0
+TRAVEL_RESERVE=GUIDE_TRAVEL_RESERVE_MM
 RUNNING=2.0
 SETTING_EACH=5.0
 COMBINED_SETTING=2*SETTING_EACH
