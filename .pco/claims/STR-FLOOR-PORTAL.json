@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 2,
-  "state": "released",
-  "leaseId": "e79941fb-4e0e-4c3a-8831-a0b182df35be",
+  "generation": 3,
+  "state": "claimed",
+  "leaseId": "7959b505-3cd1-4cbf-ae99-a07deb1a0f40",
   "holder": {
     "kind": "chatgpt",
-    "label": "floor-portal-resume-20261111"
+    "label": "issue-comment-6807640879"
   },
-  "claimedAt": "2026-11-11T13:06:46.946Z",
-  "heartbeatAt": "2026-11-11T16:31:25.000Z",
-  "expiresAt": "2026-11-11T16:31:25.000Z",
-  "branch": "work/str-floor-portal-resume-20261111",
+  "claimedAt": "2026-11-11T21:38:52.000Z",
+  "heartbeatAt": "2026-11-11T21:38:52.000Z",
+  "expiresAt": "2026-11-11T22:23:52.000Z",
+  "branch": "work/mvb-chat-6807640879",
   "predecessor": {
-    "leaseId": "f7d5b2b7-66ee-44c2-b644-8db75a918ed1",
-    "generation": 1,
-    "branch": "work/str-floor-portal-20261111",
-    "pr": 1480,
+    "leaseId": "e79941fb-4e0e-4c3a-8831-a0b182df35be",
+    "generation": 2,
+    "branch": "work/str-floor-portal-resume-20261111",
+    "pr": 1482,
     "checkpoint": {
-      "evidence": "PR1480 d56162a3: exact finite cage and roof solid-clash receipt",
-      "next": "Build coupled load and stiffness response; complete cap and52-head accounts"
+      "evidence": "Exact c9e10a69 CI43046937078 passed; square250 corner four-case and free-head-rotation controls completed locally; no adoption.",
+      "next": "Resolve native roof interior movement, actual signed contact demand and joint/corner sensitivity; checkpoint validated comparators."
     }
   },
   "recoverySource": {
-    "leaseId": "f7d5b2b7-66ee-44c2-b644-8db75a918ed1",
-    "generation": 1,
-    "branch": "work/str-floor-portal-20261111",
-    "pr": 1480,
+    "leaseId": "e79941fb-4e0e-4c3a-8831-a0b182df35be",
+    "generation": 2,
+    "branch": "work/str-floor-portal-resume-20261111",
+    "pr": 1482,
     "checkpoint": {
-      "evidence": "PR1480 d56162a3: exact finite cage and roof solid-clash receipt",
-      "next": "Build coupled load and stiffness response; complete cap and52-head accounts"
+      "evidence": "Exact c9e10a69 CI43046937078 passed; square250 corner four-case and free-head-rotation controls completed locally; no adoption.",
+      "next": "Resolve native roof interior movement, actual signed contact demand and joint/corner sensitivity; checkpoint validated comparators."
     }
-  },
-  "pr": 1482,
-  "checkpoint": {
-    "evidence": "Exact c9e10a69 CI43046937078 passed; square250 corner four-case and free-head-rotation controls completed locally; no adoption.",
-    "next": "Resolve native roof interior movement, actual signed contact demand and joint/corner sensitivity; checkpoint validated comparators."
-  },
-  "releasedAt": "2026-11-11T16:31:25.000Z",
-  "releaseReason": "handoff"
+  }
 }
