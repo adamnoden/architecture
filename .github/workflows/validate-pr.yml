@@ -80,6 +80,9 @@ jobs:
       - name: Screen actual square-corner end sections on the same cases
         run: python project/str/studies/floor_portal_section_review.py /tmp/floor-portal-leading-domain.npz --output /tmp/floor-portal-leading-section-review.json
 
+      - name: Screen live radial-guide hardware force path
+        run: python project/str/studies/floor_portal_guide_hardware.py /tmp/floor-portal-leading-domain.json --output /tmp/floor-portal-leading-guide-hardware.json
+
   floor-portal-leading-movements:
     runs-on: ubuntu-latest
     timeout-minutes: 45
