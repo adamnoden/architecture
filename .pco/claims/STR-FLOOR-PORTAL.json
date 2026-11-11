@@ -9,8 +9,8 @@
     "label": "floor-portal-resume-20261111"
   },
   "claimedAt": "2026-11-11T13:06:46.946Z",
-  "heartbeatAt": "2026-11-11T14:11:57.806Z",
-  "expiresAt": "2026-11-11T14:56:57.806Z",
+  "heartbeatAt": "2026-11-11T14:28:46.383Z",
+  "expiresAt": "2026-11-11T15:13:46.383Z",
   "branch": "work/str-floor-portal-resume-20261111",
   "predecessor": {
     "leaseId": "f7d5b2b7-66ee-44c2-b644-8db75a918ed1",
@@ -34,7 +34,7 @@
   },
   "pr": 1482,
   "checkpoint": {
-    "evidence": "Coupled assembly and physical gravity/roof-water origin controls pass locally; corrected collector steel-only EA and finite four-anchor jamb-cap model; full reaction batch running. Existing published65b79a7a CI green.",
-    "next": "Publish exact connected-house checkpoint with Python CI; complete L-cap compliance, finite corner/jamb cage, independent load domains and all52 head comparisons before selecting any design."
+    "evidence": "Published63bb01a9 includes four coupled cases, all52 head cards and Python CI. Independent source-cell mass correction now integrated; L-cap anchors/contact use original12H20 roots with real ring splits; checking extra split numerical conditioning.",
+    "next": "Verify corrected mass and L caps, then expand physical wind/thermal/shortening/head-movement domain, actual section forces and finite cage/anchorage/rooms. Remain draft/unselected."
   }
 }
