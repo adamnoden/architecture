@@ -55,7 +55,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        candidate: [baseline, square, short-key, joint-half, joint-zero, mesh-half, flex-key-80, flex-key-100, flex-key-120, radial-guide-60, radial-guide-80, radial-guide-60-t12, radial-guide-60-t16]
+        candidate: [baseline, square, radial-guide-60-t16, radial-guide-60-t20]
     env:
       OPENBLAS_NUM_THREADS: '1'
       OMP_NUM_THREADS: '1'
