@@ -16,7 +16,7 @@ flowchart LR
     direction TB
     n_HAD_INLET_RESOLUTION["HAD-INLET-RESOLUTION<br/>Resolve the selected incoming-water route and isolation station<br/><b>READY</b>"]
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
-    n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>READY</b>"]
+    n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>BLOCKED</b>"]
   end
   subgraph g_BCR["BCR"]
     direction TB
@@ -35,6 +35,10 @@ flowchart LR
   subgraph g_RWT["RWT"]
     direction TB
     n_RWT_08["RWT-08<br/>Rainwater formalisation and regression admission<br/><b>BLOCKED</b>"]
+  end
+  subgraph g_STR["STR"]
+    direction TB
+    n_STR_FLOOR_PORTAL["STR-FLOOR-PORTAL<br/>Resolve the floor collector and portal load path before house selection<br/><b>READY</b>"]
   end
   subgraph g_MAT["MAT"]
     direction TB
@@ -94,6 +98,7 @@ flowchart LR
   n_HAD_INLET_RESOLUTION --> n_TRIAD_GATE
   n_ROF_RWT_GATE --> n_TRIAD_GATE
   n_MAT_COORDINATION --> n_TRIAD_GATE
+  n_STR_FLOOR_PORTAL --> n_TRIAD_GATE
   n_TRIAD_GATE --> n_BCR_CONVERGENCE
   n_MRA_04 --> n_BCR_CONVERGENCE
   n_HRS_TECHNICAL --> n_BCR_CONVERGENCE
@@ -101,6 +106,7 @@ flowchart LR
   n_MRA_05 --> n_HRS_SYNTHESIS
   n_DEL_CURRENT --> n_HRS_SYNTHESIS
   n_TRIAD_GATE --> n_HRS_TECHNICAL
+  n_STR_FLOOR_PORTAL --> n_ROF_RWT_GATE
   n_ROF_RWT_GATE --> n_ROF_09
   n_ROF_RWT_GATE --> n_RWT_08
   n_ROF_RWT_GATE --> n_MAT_COORDINATION
@@ -140,6 +146,7 @@ flowchart LR
   style g_HRS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_ROF fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_RWT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_STR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_MAT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_MRA fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_PLT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
@@ -166,9 +173,10 @@ flowchart LR
   class n_BCR_CONVERGENCE blocked;
   class n_HRS_SYNTHESIS blocked;
   class n_HRS_TECHNICAL blocked;
-  class n_ROF_RWT_GATE ready;
+  class n_ROF_RWT_GATE blocked;
   class n_ROF_09 blocked;
   class n_RWT_08 blocked;
+  class n_STR_FLOOR_PORTAL ready;
   class n_MAT_COORDINATION blocked;
   class n_MRA_01 blocked;
   class n_MRA_02 blocked;
@@ -296,7 +304,7 @@ flowchart LR
     n_HAD_COURT_BYPASS["HAD-COURT-BYPASS<br/>Select the permanent courtyard receiver and its blocked-basket return<br/><b>DONE</b>"]
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
     n_RWT_SHED["RWT-SHED<br/>Develop free-shedding edges and planted ground-receiver comparisons<br/><b>DONE</b>"]
-    n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>READY</b>"]
+    n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>BLOCKED</b>"]
     n_STR_HOUSE["STR-HOUSE<br/>Coordinate whole-house structure with the inhabited plan and section<br/><b>DONE</b>"]
   end
   subgraph g_BCR["BCR"]
@@ -353,6 +361,7 @@ flowchart LR
     n_STR_SPANS["STR-SPANS<br/>Compare primary floor and roof systems with direct support<br/><b>DONE</b>"]
     n_STR_GROUND["STR-GROUND<br/>Compare tree-tolerant foundations, ground movement isolation and substructure interfaces<br/><b>DONE</b>"]
     n_STR_RECONCILE["STR-RECONCILE<br/>Reconcile structural interfaces and affected evidence for house selection<br/><b>DONE</b>"]
+    n_STR_FLOOR_PORTAL["STR-FLOOR-PORTAL<br/>Resolve the floor collector and portal load path before house selection<br/><b>READY</b>"]
   end
   subgraph g_MAT["MAT"]
     direction TB
@@ -552,6 +561,7 @@ flowchart LR
   n_BCR_PREFLIGHT --> n_TRIAD_GATE
   n_MAT_COORDINATION --> n_TRIAD_GATE
   n_STR_RECONCILE --> n_TRIAD_GATE
+  n_STR_FLOOR_PORTAL --> n_TRIAD_GATE
   n_BSR_ROOT --> n_BCR_SCAFFOLD
   n_BCR_SCAFFOLD --> n_BCR_CONVERGENCE
   n_TRIAD_GATE --> n_BCR_CONVERGENCE
@@ -629,9 +639,11 @@ flowchart LR
   n_ROF_07 --> n_ROF_RWT_GATE
   n_RWT_07 --> n_ROF_RWT_GATE
   n_HAD_03 --> n_ROF_RWT_GATE
+  n_HAD_SERVICES_ADOPTION --> n_ROF_RWT_GATE
   n_OAS_03 --> n_ROF_RWT_GATE
   n_OAS_DETAIL --> n_ROF_RWT_GATE
   n_STR_RECONCILE --> n_ROF_RWT_GATE
+  n_STR_FLOOR_PORTAL --> n_ROF_RWT_GATE
   n_ROF_RWT_GATE --> n_ROF_09
   n_ROF_RWT_GATE --> n_RWT_08
   n_HRS_BASELINE --> n_STR_00
@@ -644,6 +656,7 @@ flowchart LR
   n_HAD_WATER_REPLAN --> n_STR_HOUSE
   n_STR_HOUSE --> n_STR_RECONCILE
   n_STR_GROUND --> n_STR_RECONCILE
+  n_STR_RECONCILE --> n_STR_FLOOR_PORTAL
   n_HRS_BASELINE --> n_MAT_00
   n_MAT_00 --> n_MAT_AUDIT
   n_MAT_AUDIT --> n_MAT_ENVELOPE
@@ -869,7 +882,7 @@ flowchart LR
   class n_RWT_METALS done;
   class n_RWT_ROBUSTNESS done;
   class n_RWT_07 done;
-  class n_ROF_RWT_GATE ready;
+  class n_ROF_RWT_GATE blocked;
   class n_ROF_09 blocked;
   class n_RWT_08 blocked;
   class n_STR_00 done;
@@ -878,6 +891,7 @@ flowchart LR
   class n_STR_GROUND done;
   class n_STR_HOUSE done;
   class n_STR_RECONCILE done;
+  class n_STR_FLOOR_PORTAL ready;
   class n_MAT_00 done;
   class n_MAT_AUDIT done;
   class n_MAT_ENVELOPE done;

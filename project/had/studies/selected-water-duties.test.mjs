@@ -52,7 +52,19 @@ test('the current rejected inlet remains geometrically unchanged and cannot appe
 
 test('pre-fix main bytes and captured house identities constrain the correction to the declared metadata',()=>{
   assert.equal(scheduleText(house),readFileSync(new URL('project/had/studies/current-house-services.json',root),'utf8'));
-  assert.equal(verifyPreFixBoundary(house).unchanged,true);
+  const boundary=verifyPreFixBoundary(house);
+  assert.equal(boundary.unchanged,true);
+  assert.equal(boundary.normalizedObserved.scheduleBlob,boundary.preFix.scheduleBlob);
+  assert.equal(boundary.observed.scheduleBlob,boundary.sourceIdentityReconciliation.scheduleBlob);
+  const input=structuredClone(house);
+  input.inputs['project/had/studies/receiver-selection.json']='0'.repeat(40);
+  assert.throws(()=>verifyPreFixBoundary(input),/Expected joined house input identity/);
+  const receiver=structuredClone(house);
+  receiver.courtReceiver.inputs['rwt/studies/court-bypass-choice']='0'.repeat(40);
+  assert.throws(()=>verifyPreFixBoundary(receiver),/Expected joined receiver input identity/);
+  const unlisted=structuredClone(house);
+  unlisted.inputs['project/had/studies/water-replan.json']='0'.repeat(40);
+  assert.throws(()=>verifyPreFixBoundary(unlisted),/houseExceptDeclaredChangesSHA256/);
   const port=structuredClone(house);port.model.exteriorPortGeometry[0].p[0]+=1;
   assert.throws(()=>verifyPreFixBoundary(port),/exteriorPortsSHA256/);
   const unrelated=structuredClone(house);unrelated.model.groundFurniture['service-utility-washer'][0]+=1;

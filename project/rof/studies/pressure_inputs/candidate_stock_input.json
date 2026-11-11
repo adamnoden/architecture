@@ -1,0 +1,1197 @@
+{
+  "candidateSourceSHA256": "4eb505e4349b1af1eaa98c96b0aa7174a8b6e3c4210628a969cc10c8252e7eba",
+  "originalFullReceiptSHA256": "794a10be57dd9eed717d17ebe0641dc5c29959c9824527dbc70d62680686da96",
+  "sourceHashes": {
+    "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+    "project/mat/studies/ring-roof-family.json": "b8aa44fab2b13d329f4ccb6cda0210c1fe3aab1b13e8ec96a47e9e0271c07a81",
+    "project/rof/roof-water-recovery.md": "b10588ecc335e420c077c80e8d6e48b7f567dd5dd5e11a5be7706998bbb1908e"
+  },
+  "families": {
+    "primary": {
+      "definition": {
+        "width": 350,
+        "waterDepth": 170,
+        "bed": 6605.75,
+        "front": 6715,
+        "rear": 6795,
+        "inner": 4375,
+        "outer": 4725,
+        "railZ": 6880,
+        "railQ": 4235,
+        "rootQ": 3850,
+        "baseZ": 6668,
+        "dropQ": 4235,
+        "releaseQ": 4335,
+        "rail": {
+          "B": 80,
+          "H": 120,
+          "t": 2,
+          "A": 784,
+          "Iy": 1634325.3333333333,
+          "Iz": 876565.3333333334,
+          "J": 1728849.306122449,
+          "Wy": 27238.755555555555,
+          "Wz": 21914.133333333335,
+          "kgm": 6.272
+        },
+        "root": {
+          "B": 60,
+          "H": 120,
+          "t": 3,
+          "A": 1044,
+          "Iy": 1973052.0,
+          "Iz": 664092.0,
+          "J": 1533640.0344827587,
+          "Wy": 32884.2,
+          "Wz": 22136.4,
+          "kgm": 8.352
+        },
+        "drop": {
+          "B": 60,
+          "H": 60,
+          "t": 2,
+          "A": 464,
+          "Iy": 260458.66666666666,
+          "Iz": 260458.66666666666,
+          "J": 390224.0,
+          "Wy": 8681.955555555554,
+          "Wz": 8681.955555555554,
+          "kgm": 3.712
+        },
+        "arm": {
+          "B": 150,
+          "H": 25,
+          "t": 2,
+          "A": 684,
+          "Iy": 82637.0,
+          "Iz": 1585012.0,
+          "J": 271045.98830409354,
+          "Wy": 6610.96,
+          "Wz": 21133.493333333332,
+          "kgm": 5.472
+        },
+        "backingT": 1.2,
+        "backingPitch": 200,
+        "roots": [
+          5025,
+          6000,
+          6975
+        ],
+        "stations": [
+          4800,
+          5325,
+          5775,
+          6225,
+          6675,
+          7200
+        ],
+        "tributaries": [
+          325,
+          562.5,
+          562.5,
+          562.5,
+          562.5,
+          325
+        ],
+        "waterP": [
+          4696.794871794872,
+          5156.25,
+          5718.75,
+          6281.25,
+          6843.75,
+          7303.205128205128
+        ],
+        "waterQ": [
+          4518.589743589743,
+          4550,
+          4550,
+          4550,
+          4550,
+          4518.589743589743
+        ],
+        "breaks": [
+          [
+            4520,
+            5422.5
+          ],
+          [
+            5452.5,
+            6547.5
+          ],
+          [
+            6577.5,
+            7480
+          ]
+        ],
+        "faceLength": 2900,
+        "verticalWindHeight": 700,
+        "apronLow": 6680.75,
+        "apronHigh": 7290.188717651048,
+        "apronQ": 4590
+      },
+      "inventory": {
+        "items": [
+          {
+            "item": "copper wet body with both actual mitred walls",
+            "kgPerFace": 17.10222,
+            "kgm": 5.8973172413793105,
+            "loadRoute": "moving",
+            "geometry": {
+              "profileQZMM": [
+                [
+                  4375,
+                  190
+                ],
+                [
+                  4375,
+                  0
+                ],
+                [
+                  4725,
+                  0
+                ],
+                [
+                  4725,
+                  110
+                ]
+              ],
+              "thicknessMM": 1,
+              "areaPerFaceMM2": 1913000.0
+            }
+          },
+          {
+            "item": "copper rear25 hem",
+            "kgPerFace": 0.726375,
+            "kgm": 0.2504741379310345,
+            "loadRoute": "moving",
+            "geometry": {
+              "profileQZMM": [
+                [
+                  4375,
+                  0
+                ],
+                [
+                  4375,
+                  25
+                ]
+              ],
+              "thicknessMM": 1,
+              "areaPerFaceMM2": 81250.0
+            }
+          },
+          {
+            "item": "copper front25 hem",
+            "kgPerFace": 0.569925,
+            "kgm": 0.19652586206896552,
+            "loadRoute": "moving",
+            "geometry": {
+              "profileQZMM": [
+                [
+                  4725,
+                  0
+                ],
+                [
+                  4725,
+                  25
+                ]
+              ],
+              "thicknessMM": 1,
+              "areaPerFaceMM2": 63750.0
+            }
+          },
+          {
+            "item": "cap100 top and two20 folds",
+            "kgPerFace": 1.9599999999999997,
+            "kgm": 0.6758620689655171,
+            "loadRoute": "moving",
+            "geometry": {
+              "profileQZMM": [
+                [
+                  4700,
+                  0
+                ],
+                [
+                  4700,
+                  20
+                ],
+                [
+                  4800,
+                  20
+                ],
+                [
+                  4800,
+                  0
+                ]
+              ],
+              "thicknessMM": 0.7,
+              "areaPerFaceMM2": 350000.0
+            }
+          },
+          {
+            "item": "front spill215 drop after primary+30/front+10,50 crossing and40 hems",
+            "kgPerFace": 4.30192,
+            "kgm": 1.4834206896551725,
+            "loadRoute": "moving",
+            "geometry": {
+              "profileQZMM": [
+                [
+                  4730,
+                  215
+                ],
+                [
+                  4730,
+                  0
+                ],
+                [
+                  4780,
+                  0
+                ],
+                [
+                  4780,
+                  40
+                ]
+              ],
+              "thicknessMM": 0.7,
+              "areaPerFaceMM2": 768200.0
+            }
+          },
+          {
+            "item": "fixed primary apron,120 roof lap and courtward wet turn",
+            "kgPerFace": 9.213230691968322,
+            "kgm": 3.176976100678732,
+            "loadRoute": "fixed",
+            "geometry": {
+              "profileQZMM": [
+                [
+                  4416.243065555602,
+                  7340.902909059932
+                ],
+                [
+                  4525,
+                  7290.188717651048
+                ],
+                [
+                  4590,
+                  7259.878719870973
+                ],
+                [
+                  4590,
+                  6880
+                ]
+              ],
+              "thicknessMM": 0.7,
+              "areaPerFaceMM2": 1645219.7664229148
+            }
+          },
+          {
+            "item": "captured primary lower leaf320,190 stroke,120 minimum lap",
+            "kgPerFace": 5.042688,
+            "kgm": 1.738857931034483,
+            "loadRoute": "fixed",
+            "geometry": {
+              "profileQZMM": [
+                [
+                  4593,
+                  0
+                ],
+                [
+                  4593,
+                  320
+                ]
+              ],
+              "thicknessMM": 0.7,
+              "areaPerFaceMM2": 900480.0
+            }
+          },
+          {
+            "item": "fixed and moving primary apron40 hems each",
+            "kgPerFace": 1.26336,
+            "kgm": 0.43564137931034486,
+            "loadRoute": "fixed",
+            "geometry": {
+              "profileQZMM": [
+                [
+                  4590,
+                  0
+                ],
+                [
+                  4590,
+                  80
+                ]
+              ],
+              "thicknessMM": 0.7,
+              "areaPerFaceMM2": 225600.0
+            }
+          },
+          {
+            "item": "independent RHS20\u00d720\u00d71 apron ribs,at150 maximum with separate cassette ends",
+            "kgPerFace": 13.586830411895841,
+            "kgm": 4.685113935136497,
+            "loadRoute": "fixed",
+            "geometry": {
+              "count": 23,
+              "cassetteCounts": [
+                7,
+                9,
+                7
+              ],
+              "lengthM": 0.9715982846035356,
+              "sectionMM": [
+                20,
+                20,
+                1
+              ],
+              "maxPitchMM": 150
+            }
+          },
+          {
+            "item": "apron radial standoffs20\u00d720\u00d71.5 at each rib",
+            "kgPerFace": 7.250519999999999,
+            "kgm": 2.5001793103448273,
+            "loadRoute": "fixed",
+            "geometry": {
+              "count": 23,
+              "lengthM": 0.355,
+              "sectionMM": [
+                20,
+                20,
+                1.5
+              ]
+            }
+          },
+          {
+            "item": "independent backing with no composite credit",
+            "kgPerFace": 9.744,
+            "kgm": 3.36,
+            "loadRoute": "moving",
+            "geometry": {
+              "profileQZMM": [
+                [
+                  4375,
+                  0
+                ],
+                [
+                  4725,
+                  0
+                ]
+              ],
+              "thicknessMM": 1.2,
+              "areaPerFaceMM2": 1015000.0
+            }
+          },
+          {
+            "item": "moving longitudinal rail30\u00d725\u00d72",
+            "kgPerFace": 5.23872,
+            "kgm": 1.8064551724137932,
+            "loadRoute": "moving",
+            "geometry": {
+              "q": 4395
+            }
+          },
+          {
+            "item": "moving longitudinal rail30\u00d725\u00d72",
+            "kgPerFace": 4.22688,
+            "kgm": 1.457544827586207,
+            "loadRoute": "moving",
+            "geometry": {
+              "q": 4705
+            }
+          },
+          {
+            "item": "separate moving-pan backing ribs20\u00d725\u00d72; corner lengths bounded by fullwidth",
+            "kgPerFace": 11.020800000000001,
+            "kgm": 3.800275862068966,
+            "loadRoute": "moving",
+            "geometry": {
+              "count": 24,
+              "maxPitchMM": 200,
+              "lengthsMM": [
+                350,
+                350,
+                350,
+                350,
+                350,
+                350,
+                350,
+                350,
+                350,
+                350,
+                350,
+                350,
+                350,
+                350,
+                350,
+                350,
+                350,
+                350,
+                350,
+                350,
+                350,
+                350,
+                350,
+                350
+              ]
+            }
+          },
+          {
+            "item": "three root plates160\u00d7120\u00d78",
+            "kgPerFace": 3.6864,
+            "kgm": 1.2711724137931035,
+            "loadRoute": "fixed",
+            "geometry": {
+              "count": 3,
+              "sizeMM": [
+                160,
+                120,
+                8
+              ]
+            }
+          },
+          {
+            "item": "root and elbow gussets,12 triangular80\u00d780\u00d75",
+            "kgPerFace": 1.5359999999999998,
+            "kgm": 0.529655172413793,
+            "loadRoute": "fixed",
+            "geometry": {
+              "count": 12
+            }
+          },
+          {
+            "item": "two continuous guide flats20\u00d73",
+            "kgPerFace": 2.7072000000000003,
+            "kgm": 0.9335172413793105,
+            "loadRoute": "fixed",
+            "geometry": {
+              "lengthM": 5.64
+            }
+          },
+          {
+            "item": "two20 end-flange returns at every equivalent module",
+            "kgPerFace": 1.39464,
+            "kgm": 0.48091034482758627,
+            "loadRoute": "moving",
+            "geometry": {
+              "count": 12,
+              "developedMM": 650,
+              "flangeMM": 20
+            }
+          },
+          {
+            "item": "replaceable seam strips20\u00d70.7,each side of every module",
+            "kgPerFace": 0.8736,
+            "kgm": 0.30124137931034484,
+            "loadRoute": "moving",
+            "geometry": {
+              "count": 12
+            }
+          },
+          {
+            "item": "sixM12\u00d750 root bolts perroot,eachwithnut/twowashers",
+            "kgPerFace": 1.6919440930763123,
+            "kgm": 0.5834289976125215,
+            "loadRoute": "fixed",
+            "geometry": {
+              "count": 18
+            }
+          },
+          {
+            "item": "twoM10\u00d745 capture bolts perarm,eachwithnut/twowashers",
+            "kgPerFace": 0.7123488956484021,
+            "kgm": 0.24563755022358694,
+            "loadRoute": "moving",
+            "geometry": {
+              "count": 12
+            }
+          },
+          {
+            "item": "two captive socket plates60\u00d740\u00d76 perarm",
+            "kgPerFace": 1.3824,
+            "kgm": 0.47668965517241385,
+            "loadRoute": "fixed",
+            "geometry": {
+              "count": 12
+            }
+          },
+          {
+            "item": "twoM8\u00d735 pan locks perarm,eachwithnut/twowashers",
+            "kgPerFace": 0.34765519011279095,
+            "kgm": 0.11988110003889343,
+            "loadRoute": "moving",
+            "geometry": {
+              "count": 12
+            }
+          },
+          {
+            "item": "apron clips30\u00d760\u00d70.7 and tabs30\u00d730\u00d73",
+            "kgPerFace": 1.4572800000000001,
+            "kgm": 0.5025103448275863,
+            "loadRoute": "fixed",
+            "geometry": {
+              "count": 46
+            }
+          },
+          {
+            "item": "twoM6\u00d725 guide bolts perclip,eachwithnut/twowashers",
+            "kgPerFace": 1.1663041151959121,
+            "kgm": 0.40217383282617664,
+            "loadRoute": "fixed",
+            "geometry": {
+              "count": 92
+            }
+          },
+          {
+            "item": "3mm equal-leg fillet weld metal along declared carrier/root seams",
+            "kgPerFace": 0.5500799999999999,
+            "kgm": 0.18968275862068962,
+            "loadRoute": "fixed",
+            "geometry": {
+              "lengthM": 15.279999999999998,
+              "legMM": 3
+            }
+          },
+          {
+            "item": "captured80-stroke spill: two315-long Cguides40developed\u00d71.5 per module",
+            "kgPerFace": 1.8144,
+            "kgm": 0.6256551724137931,
+            "loadRoute": "moving",
+            "geometry": {
+              "count": 12,
+              "lengthMM": 315,
+              "developedMM": 40,
+              "thicknessMM": 1.5
+            }
+          },
+          {
+            "item": "twoM6\u00d725 spill locks per module",
+            "kgPerFace": 0.15212662372120594,
+            "kgm": 0.05245745645558826,
+            "loadRoute": "moving",
+            "geometry": {
+              "count": 12
+            }
+          },
+          {
+            "item": "four20\u00d720\u00d73 spill stops per module",
+            "kgPerFace": 0.2304,
+            "kgm": 0.07944827586206897,
+            "loadRoute": "moving",
+            "geometry": {
+              "count": 24
+            }
+          },
+          {
+            "item": "complete fixed root, rail, hanger and removable arm stock",
+            "kgPerFace": 55.654816000000004,
+            "kgm": 19.19131586206897,
+            "loadRoute": "frame"
+          }
+        ],
+        "totalKgM": 57.450022076420275,
+        "reserveAgainst50": -7.450022076420275,
+        "reserveAgainst55": -2.450022076420275,
+        "reserveAgainst60FaceAverage": 2.549977923579725,
+        "completeDimensionedComparisonStock": true,
+        "completeFabricationInventory": false,
+        "cassetteMassScreen": [
+          {
+            "root": 5025,
+            "tributaryLengthMM": 887.5,
+            "screenedMassKg": 52.10375376523679,
+            "native60BoundKg": 58.5,
+            "reserveKg": 6.396246234763211,
+            "qualification": "Root plates/bolts and exact corner/mitred stock need actual finite-piece cassette allocation; this is not a centroid receipt."
+          },
+          {
+            "root": 6000,
+            "tributaryLengthMM": 1125.0,
+            "screenedMassKg": 62.397556491145224,
+            "native60BoundKg": 67.5,
+            "reserveKg": 5.102443508854776,
+            "qualification": "Root plates/bolts and exact corner/mitred stock need actual finite-piece cassette allocation; this is not a centroid receipt."
+          },
+          {
+            "root": 6975,
+            "tributaryLengthMM": 887.5,
+            "screenedMassKg": 52.10375376523679,
+            "native60BoundKg": 58.5,
+            "reserveKg": 6.396246234763211,
+            "qualification": "Root plates/bolts and exact corner/mitred stock need actual finite-piece cassette allocation; this is not a centroid receipt."
+          }
+        ]
+      },
+      "cassettes": [
+        {
+          "root": 5025,
+          "frameDryKg": 18.149152
+        },
+        {
+          "root": 6000,
+          "frameDryKg": 19.356512000000002
+        },
+        {
+          "root": 6975,
+          "frameDryKg": 18.149152
+        }
+      ]
+    },
+    "lower": {
+      "definition": {
+        "width": 425,
+        "waterDepth": 190,
+        "bed": 6386.25,
+        "front": 6511.25,
+        "rear": 6511.25,
+        "inner": 4375,
+        "outer": 4800,
+        "railZ": 6730,
+        "railQ": 4235,
+        "rootQ": 3985,
+        "baseZ": 6668,
+        "dropQ": 4335,
+        "releaseQ": 4335,
+        "rail": {
+          "B": 80,
+          "H": 120,
+          "t": 2,
+          "A": 784,
+          "Iy": 1634325.3333333333,
+          "Iz": 876565.3333333334,
+          "J": 1728849.306122449,
+          "Wy": 27238.755555555555,
+          "Wz": 21914.133333333335,
+          "kgm": 6.272
+        },
+        "root": {
+          "B": 60,
+          "H": 120,
+          "t": 3,
+          "A": 1044,
+          "Iy": 1973052.0,
+          "Iz": 664092.0,
+          "J": 1533640.0344827587,
+          "Wy": 32884.2,
+          "Wz": 22136.4,
+          "kgm": 8.352
+        },
+        "drop": {
+          "B": 200,
+          "H": 20,
+          "t": 3,
+          "A": 1284,
+          "Iy": 88972.0,
+          "Iz": 4815052.0,
+          "J": 314461.71028037387,
+          "Wy": 8897.2,
+          "Wz": 48150.52,
+          "kgm": 10.272
+        },
+        "arm": {
+          "B": 150,
+          "H": 25,
+          "t": 2,
+          "A": 684,
+          "Iy": 82637.0,
+          "Iz": 1585012.0,
+          "J": 271045.98830409354,
+          "Wy": 6610.96,
+          "Wz": 21133.493333333332,
+          "kgm": 5.472
+        },
+        "backingT": 1.2,
+        "backingPitch": 150,
+        "roots": [
+          5041.6666667,
+          6000,
+          6958.3333333
+        ],
+        "stations": [
+          4600,
+          5100,
+          5550,
+          6000,
+          6450,
+          6900,
+          7400
+        ],
+        "tributaries": [
+          287.5,
+          450,
+          450,
+          450,
+          450,
+          450,
+          287.5
+        ],
+        "waterP": [
+          4705.072463768116,
+          5100,
+          5550,
+          6000,
+          6450,
+          6900,
+          7294.927536231884
+        ],
+        "waterQ": [
+          4535.144927536232,
+          4587.5,
+          4587.5,
+          4587.5,
+          4587.5,
+          4587.5,
+          4535.144927536232
+        ],
+        "breaks": [
+          [
+            4520,
+            5310
+          ],
+          [
+            5340,
+            6660
+          ],
+          [
+            6690,
+            7480
+          ]
+        ],
+        "faceLength": 2825,
+        "verticalWindHeight": 850,
+        "apronLow": 6421.25,
+        "apronHigh": 7107.33,
+        "apronQ": 4346
+      },
+      "inventory": {
+        "items": [
+          {
+            "item": "316L lower liner with both actual125 walls",
+            "kgPerFace": 10.6785,
+            "kgm": 3.78,
+            "loadRoute": "moving",
+            "geometry": {
+              "profileQZMM": [
+                [
+                  4375,
+                  125
+                ],
+                [
+                  4375,
+                  0
+                ],
+                [
+                  4800,
+                  0
+                ],
+                [
+                  4800,
+                  125
+                ]
+              ],
+              "thicknessMM": 0.7,
+              "areaPerFaceMM2": 1906875.0
+            }
+          },
+          {
+            "item": "lower rear15 hem",
+            "kgPerFace": 0.273,
+            "kgm": 0.09663716814159293,
+            "loadRoute": "moving",
+            "geometry": {
+              "profileQZMM": [
+                [
+                  4375,
+                  0
+                ],
+                [
+                  4375,
+                  15
+                ]
+              ],
+              "thicknessMM": 0.7,
+              "areaPerFaceMM2": 48750.0
+            }
+          },
+          {
+            "item": "lower front15 hem",
+            "kgPerFace": 0.2016,
+            "kgm": 0.07136283185840707,
+            "loadRoute": "moving",
+            "geometry": {
+              "profileQZMM": [
+                [
+                  4800,
+                  0
+                ],
+                [
+                  4800,
+                  15
+                ]
+              ],
+              "thicknessMM": 0.7,
+              "areaPerFaceMM2": 36000.0
+            }
+          },
+          {
+            "item": "secondary turn exact slope plus fixed downleg",
+            "kgPerFace": 15.150544739847378,
+            "kgm": 5.363024686671638,
+            "loadRoute": "fixed",
+            "geometry": {
+              "profileQZMM": [
+                [
+                  4545,
+                  7107.3288
+                ],
+                [
+                  4565,
+                  7085
+                ],
+                [
+                  4346,
+                  6990
+                ],
+                [
+                  4346,
+                  6421.25
+                ]
+              ],
+              "thicknessMM": 0.7,
+              "areaPerFaceMM2": 2705454.417829889
+            }
+          },
+          {
+            "item": "secondary downleg120 lap and40 hems",
+            "kgPerFace": 2.963968,
+            "kgm": 1.0491922123893804,
+            "loadRoute": "fixed",
+            "geometry": {
+              "profileQZMM": [
+                [
+                  4346,
+                  0
+                ],
+                [
+                  4346,
+                  160
+                ]
+              ],
+              "thicknessMM": 0.7,
+              "areaPerFaceMM2": 529280.0
+            }
+          },
+          {
+            "item": "rear shoe90,20 fold,60 retracting tongue",
+            "kgPerFace": 3.11192,
+            "kgm": 1.1015646017699114,
+            "loadRoute": "moving",
+            "geometry": {
+              "profileQZMM": [
+                [
+                  4310,
+                  20
+                ],
+                [
+                  4310,
+                  0
+                ],
+                [
+                  4400,
+                  0
+                ],
+                [
+                  4400,
+                  60
+                ]
+              ],
+              "thicknessMM": 0.7,
+              "areaPerFaceMM2": 555700.0
+            }
+          },
+          {
+            "item": "independent RHS20\u00d720\u00d71 apron ribs,at150 maximum with separate cassette ends",
+            "kgPerFace": 15.767589249315144,
+            "kgm": 5.581447521881467,
+            "loadRoute": "fixed",
+            "geometry": {
+              "count": 26,
+              "cassetteCounts": [
+                8,
+                10,
+                8
+              ],
+              "lengthM": 0.9974436519050572,
+              "sectionMM": [
+                20,
+                20,
+                1
+              ],
+              "maxPitchMM": 150
+            }
+          },
+          {
+            "item": "apron radial standoffs20\u00d720\u00d71.5 at each rib",
+            "kgPerFace": 7.61904,
+            "kgm": 2.697005309734513,
+            "loadRoute": "fixed",
+            "geometry": {
+              "count": 26,
+              "lengthM": 0.33,
+              "sectionMM": [
+                20,
+                20,
+                1.5
+              ]
+            }
+          },
+          {
+            "item": "independent backing with no composite credit",
+            "kgPerFace": 11.526,
+            "kgm": 4.08,
+            "loadRoute": "moving",
+            "geometry": {
+              "profileQZMM": [
+                [
+                  4375,
+                  0
+                ],
+                [
+                  4800,
+                  0
+                ]
+              ],
+              "thicknessMM": 1.2,
+              "areaPerFaceMM2": 1200625.0
+            }
+          },
+          {
+            "item": "moving longitudinal rail30\u00d725\u00d72",
+            "kgPerFace": 5.23872,
+            "kgm": 1.8544141592920351,
+            "loadRoute": "moving",
+            "geometry": {
+              "q": 4395
+            }
+          },
+          {
+            "item": "moving longitudinal rail30\u00d725\u00d72",
+            "kgPerFace": 3.9820800000000003,
+            "kgm": 1.4095858407079647,
+            "loadRoute": "moving",
+            "geometry": {
+              "q": 4780
+            }
+          },
+          {
+            "item": "separate moving-pan backing ribs20\u00d725\u00d72; corner lengths bounded by fullwidth",
+            "kgPerFace": 16.728,
+            "kgm": 5.92141592920354,
+            "loadRoute": "moving",
+            "geometry": {
+              "count": 30,
+              "maxPitchMM": 150,
+              "lengthsMM": [
+                425,
+                425,
+                425,
+                425,
+                425,
+                425,
+                425,
+                425,
+                425,
+                425,
+                425,
+                425,
+                425,
+                425,
+                425,
+                425,
+                425,
+                425,
+                425,
+                425,
+                425,
+                425,
+                425,
+                425,
+                425,
+                425,
+                425,
+                425,
+                425,
+                425
+              ]
+            }
+          },
+          {
+            "item": "three root plates160\u00d7120\u00d78",
+            "kgPerFace": 3.6864,
+            "kgm": 1.3049203539823007,
+            "loadRoute": "fixed",
+            "geometry": {
+              "count": 3,
+              "sizeMM": [
+                160,
+                120,
+                8
+              ]
+            }
+          },
+          {
+            "item": "root and elbow gussets,12 triangular80\u00d780\u00d75",
+            "kgPerFace": 1.5359999999999998,
+            "kgm": 0.543716814159292,
+            "loadRoute": "fixed",
+            "geometry": {
+              "count": 12
+            }
+          },
+          {
+            "item": "two continuous guide flats20\u00d73",
+            "kgPerFace": 3.1756800000000003,
+            "kgm": 1.1241345132743363,
+            "loadRoute": "fixed",
+            "geometry": {
+              "lengthM": 6.616
+            }
+          },
+          {
+            "item": "two20 end-flange returns at every equivalent module",
+            "kgPerFace": 1.0584,
+            "kgm": 0.37465486725663716,
+            "loadRoute": "moving",
+            "geometry": {
+              "count": 14,
+              "developedMM": 675,
+              "flangeMM": 20
+            }
+          },
+          {
+            "item": "replaceable seam strips20\u00d70.7,each side of every module",
+            "kgPerFace": 1.0584,
+            "kgm": 0.37465486725663716,
+            "loadRoute": "moving",
+            "geometry": {
+              "count": 14
+            }
+          },
+          {
+            "item": "sixM12\u00d750 root bolts perroot,eachwithnut/twowashers",
+            "kgPerFace": 1.6919440930763123,
+            "kgm": 0.5989182630358627,
+            "loadRoute": "fixed",
+            "geometry": {
+              "count": 18
+            }
+          },
+          {
+            "item": "twoM10\u00d745 capture bolts perarm,eachwithnut/twowashers",
+            "kgPerFace": 0.8310737115898024,
+            "kgm": 0.29418538463355837,
+            "loadRoute": "moving",
+            "geometry": {
+              "count": 14
+            }
+          },
+          {
+            "item": "two captive socket plates60\u00d740\u00d76 perarm",
+            "kgPerFace": 1.6128,
+            "kgm": 0.5709026548672566,
+            "loadRoute": "fixed",
+            "geometry": {
+              "count": 14
+            }
+          },
+          {
+            "item": "twoM8\u00d735 pan locks perarm,eachwithnut/twowashers",
+            "kgPerFace": 0.4055977217982561,
+            "kgm": 0.14357441479584285,
+            "loadRoute": "moving",
+            "geometry": {
+              "count": 14
+            }
+          },
+          {
+            "item": "apron clips30\u00d760\u00d70.7 and tabs30\u00d730\u00d73",
+            "kgPerFace": 1.6473600000000002,
+            "kgm": 0.5831362831858408,
+            "loadRoute": "fixed",
+            "geometry": {
+              "count": 52
+            }
+          },
+          {
+            "item": "twoM6\u00d725 guide bolts perclip,eachwithnut/twowashers",
+            "kgPerFace": 1.3184307389171182,
+            "kgm": 0.4667011465193338,
+            "loadRoute": "fixed",
+            "geometry": {
+              "count": 104
+            }
+          },
+          {
+            "item": "3mm equal-leg fillet weld metal along declared carrier/root seams",
+            "kgPerFace": 0.6292800000000001,
+            "kgm": 0.22275398230088497,
+            "loadRoute": "fixed",
+            "geometry": {
+              "lengthM": 17.48,
+              "legMM": 3
+            }
+          },
+          {
+            "item": "complete fixed root, rail, hanger and removable arm stock",
+            "kgPerFace": 72.139688,
+            "kgm": 25.536172743362833,
+            "loadRoute": "frame"
+          }
+        ],
+        "totalKgM": 65.14407655028107,
+        "reserveAgainst50": -15.14407655028107,
+        "reserveAgainst55": -10.14407655028107,
+        "reserveAgainst60FaceAverage": -5.144076550281071,
+        "completeDimensionedComparisonStock": true,
+        "completeFabricationInventory": false,
+        "cassetteMassScreen": [
+          {
+            "root": 5041.6666667,
+            "tributaryLengthMM": 737.5,
+            "screenedMassKg": 49.9525090576022,
+            "native60BoundKg": 57.5,
+            "reserveKg": 7.5474909423978005,
+            "qualification": "Root plates/bolts and exact corner/mitred stock need actual finite-piece cassette allocation; this is not a centroid receipt."
+          },
+          {
+            "root": 6000,
+            "tributaryLengthMM": 1350,
+            "screenedMassKg": 84.12699813933962,
+            "native60BoundKg": 81.0,
+            "reserveKg": -3.1269981393396193,
+            "qualification": "Root plates/bolts and exact corner/mitred stock need actual finite-piece cassette allocation; this is not a centroid receipt."
+          },
+          {
+            "root": 6958.3333333,
+            "tributaryLengthMM": 737.5,
+            "screenedMassKg": 49.9525090576022,
+            "native60BoundKg": 57.5,
+            "reserveKg": 7.5474909423978005,
+            "qualification": "Root plates/bolts and exact corner/mitred stock need actual finite-piece cassette allocation; this is not a centroid receipt."
+          }
+        ]
+      },
+      "cassettes": [
+        {
+          "root": 5041.6666667,
+          "frameDryKg": 20.741680000000002
+        },
+        {
+          "root": 6000,
+          "frameDryKg": 30.656328000000002
+        },
+        {
+          "root": 6958.3333333,
+          "frameDryKg": 20.741680000000002
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,361 @@
+{
+  "status": "UNSELECTED BODY/GUARD COMPARISON ONLY; NO RAIN-SAFE RENEWAL PASS",
+  "sourceSHA256": "f4450ade3e2b0a27916f23f619b2d0a4a2819d5f954fa8a3bab5b27e2bd1ad67",
+  "dimensionsMM": {
+    "bodyPlan": [
+      585,
+      585
+    ],
+    "bodyInitialLowerLeft": [
+      4310,
+      4310
+    ],
+    "firstDraw": [
+      955,
+      955
+    ],
+    "partSettingPerAxis": 5,
+    "postSettingPerAxis": 5,
+    "posts80Square": [
+      [
+        5570,
+        4860
+      ],
+      [
+        4860,
+        5570
+      ],
+      [
+        6270,
+        5560
+      ],
+      [
+        5560,
+        6270
+      ]
+    ],
+    "guardPlanes": [
+      4860,
+      5560
+    ],
+    "stageFloorZ": 5540,
+    "troughFloorZ": 6100,
+    "troughRimZ": 6250,
+    "raisedRestTopZ": 6300,
+    "partGateClosedZ": [
+      6250,
+      6640
+    ],
+    "partGateOpenBottomZ": 7140,
+    "gateStroke": 890,
+    "firstRest": [
+      5225,
+      5225,
+      650,
+      650
+    ],
+    "secondRest": [
+      6025,
+      5600,
+      650,
+      650
+    ],
+    "oldLanding": [
+      5000,
+      5500,
+      2000,
+      1400
+    ],
+    "newLanding": [
+      5000,
+      5500,
+      2000,
+      1550
+    ],
+    "addedLandingStrip": [
+      5000,
+      6900,
+      2000,
+      150
+    ],
+    "workerFirst": [
+      6500,
+      5900
+    ],
+    "workerSecond": [
+      6500,
+      6700
+    ]
+  },
+  "bodyEnvelope": {
+    "scope": "Complete pan/cap/carrier only after spill80 retraction; fixed socket stubs, aprons and hangers retained.",
+    "basis": "585 square bounds proposedq4310..4895 including20 end returns. The corners and joints still require an actual fabrication model.",
+    "maxPrimaryHeight": 261.14999999999964,
+    "maxLowerHeight": 180.64999999999964,
+    "lowestInstalledLowerCarrier": 6359.35,
+    "nominalTroughRimClearance": 109.35000000000036,
+    "restAboveTroughRim": 50,
+    "conditionalSettingLocalAndFrameBudget": 25,
+    "conditionalRestVerticalReserve": 25
+  },
+  "continuousLegs": [
+    {
+      "id": 0,
+      "start": [
+        4310,
+        4310
+      ],
+      "end": [
+        5265,
+        5265
+      ],
+      "continuousSweptPolygon": [
+        [
+          4305,
+          4305
+        ],
+        [
+          4900,
+          4305
+        ],
+        [
+          5855,
+          5260
+        ],
+        [
+          5855,
+          5855
+        ],
+        [
+          5260,
+          5855
+        ],
+        [
+          4305,
+          4900
+        ]
+      ],
+      "postClearanceMM": 17.67766952966369,
+      "fixedGuardClearanceMM": 45.96194077712559,
+      "workerClearanceMM": 341.56786186756915
+    },
+    {
+      "id": 1,
+      "start": [
+        5265,
+        5265
+      ],
+      "end": [
+        5620,
+        5265
+      ],
+      "continuousSweptPolygon": [
+        [
+          5260,
+          5260
+        ],
+        [
+          6210,
+          5260
+        ],
+        [
+          6210,
+          5855
+        ],
+        [
+          5260,
+          5855
+        ]
+      ],
+      "postClearanceMM": 15.0,
+      "fixedGuardClearanceMM": 55.0,
+      "workerClearanceMM": 588.3784192602819
+    },
+    {
+      "id": 2,
+      "start": [
+        5620,
+        5265
+      ],
+      "end": [
+        5620,
+        5635
+      ],
+      "continuousSweptPolygon": [
+        [
+          5615,
+          5260
+        ],
+        [
+          6210,
+          5260
+        ],
+        [
+          6210,
+          6225
+        ],
+        [
+          5615,
+          6225
+        ]
+      ],
+      "postClearanceMM": 10.0,
+      "fixedGuardClearanceMM": 41.23105625617661,
+      "workerClearanceMM": 251.5294241996554
+    },
+    {
+      "id": 3,
+      "start": [
+        5620,
+        5635
+      ],
+      "end": [
+        6065,
+        5635
+      ],
+      "continuousSweptPolygon": [
+        [
+          5615,
+          5630
+        ],
+        [
+          6655,
+          5630
+        ],
+        [
+          6655,
+          6225
+        ],
+        [
+          5615,
+          6225
+        ]
+      ],
+      "postClearanceMM": 10.0,
+      "fixedGuardClearanceMM": 25.0,
+      "workerClearanceMM": 170.0
+    }
+  ],
+  "firstRest": {
+    "padReserveMM": 15,
+    "innerClosedGateClearanceMM": 18.639610306789397,
+    "outerClosedGateClearanceMM": 39.85281374238582
+  },
+  "secondRest": {
+    "padReserveMM": 15,
+    "innerClosedGateClearanceMM": 845.95454429505
+  },
+  "workerTransfer": {
+    "start": [
+      6500,
+      5900
+    ],
+    "end": [
+      6500,
+      6700
+    ],
+    "radius": 300,
+    "firstRestClearanceMM": 340.0,
+    "landingNorthMarginMM": 40
+  },
+  "trough": {
+    "plan": "Union of body swept polygons expanded120, clipped roofward toq4325 at the two facade legs; fully sealed post/pipe penetrations required.",
+    "untrimmedPlanPieces": [
+      [
+        [
+          4190,
+          4190
+        ],
+        [
+          5015,
+          4190
+        ],
+        [
+          5970,
+          5145
+        ],
+        [
+          5970,
+          5970
+        ],
+        [
+          5145,
+          5970
+        ],
+        [
+          4190,
+          5015
+        ]
+      ],
+      [
+        [
+          5145,
+          5145
+        ],
+        [
+          6325,
+          5145
+        ],
+        [
+          6325,
+          5970
+        ],
+        [
+          5145,
+          5970
+        ]
+      ],
+      [
+        [
+          5500,
+          5145
+        ],
+        [
+          6325,
+          5145
+        ],
+        [
+          6325,
+          6340
+        ],
+        [
+          5500,
+          6340
+        ]
+      ],
+      [
+        [
+          5500,
+          5515
+        ],
+        [
+          6770,
+          5515
+        ],
+        [
+          6770,
+          6340
+        ],
+        [
+          5500,
+          6340
+        ]
+      ]
+    ],
+    "dutyLps": 3.60375,
+    "workerPlanMarginMM": 55.0,
+    "oldWorker6550NegativeControlMM": -95.0,
+    "qualification": "This geometry is NOT a hydraulic capacity or splash/wind capture proof. The rear bridge, collars and joints are unbuilt interfaces."
+  },
+  "reverse": "Exact reversal of the same translations has the same static swept envelopes. This does not prove reversible water-control changes or reconnectability.",
+  "unresolved": [
+    "Install and prove roof/secondary/upstream/head rain interception BEFORE80 spill or190 apron stroke, any seam opening or firsthead release.",
+    "Keep source normal spout350 lift, head/upper spool800 lift and8350 complete hoist envelope until a distinct inner physical assembly proves another value.",
+    "The old continuous trough crosses full-height descending gates and blocks5750 rests. New fixed lower guard/sill and upper gates are required.",
+    "The120 capture skirt overlaps the old worker6550 position. New worker6700 requires the explicit150 north landing extension; existing four gate posts are held.",
+    "Post collars, retained pipe collar, water outlet/backup, deployment, support/guard resistance, finite hoist and all permanent/temporary service intersections remain unproved.",
+    "Temporary supports carry the moving parts independently. Paired roof-to-ground motion and native plus local clearance still need the current complete wind join.",
+    "The whole L corner and independent cassette reaction allocation remain physically unresolved."
+  ],
+  "geometricTranslationOnlyPass": true
+}

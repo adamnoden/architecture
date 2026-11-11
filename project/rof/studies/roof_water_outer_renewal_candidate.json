@@ -1,0 +1,326 @@
+{
+  "status": "UNSELECTED; NO COMPLETE ORDINARY RENEWAL ROUTE ACCEPTED",
+  "startingDevelopmentCommit": "a9f7fddc18103ef36f99a5e0e8fd0d86e09b4986",
+  "flowLps": 3.313593,
+  "jointCandidate": {
+    "selected": false,
+    "copperSleeveKG": 0.619542,
+    "four20x40x2ClipsKG": 0.0512,
+    "fastenersAllowanceKG": 0.1,
+    "leadFreeSolderAllowanceKG": 0.1,
+    "totalKG": 0.870742,
+    "geometry": "Full770 mm developed profile;1 mm Cu;70 mm projected along width (10 seam+30 overlap each side),90 developed width including10 downward fold.",
+    "conditions": "Actual module/corner inventory, metal seal, fatigue, thermal restraint and repeated joint losses are unjoined. The70 mm sleeve does not create70 mm clear space."
+  },
+  "primaryStockTrials": [
+    {
+      "wallMM": 4,
+      "backingMM": 2,
+      "areaMM2": 1416,
+      "crossarmStressMPa": 29.836318912,
+      "crossarmDeflectionMM": 0.429962561,
+      "wholeFrameMM": 3.160777799,
+      "dryReleasedFrameMM": 2.158451613,
+      "wetReleasedFrameMM": 3.538748421,
+      "stockSavingKGPerM": 0.0,
+      "scheduledWith64JointsKGPerM": 50.299676003,
+      "framePlusNativeRollMM": 10.574983359,
+      "wetReleaseAnalogueMM": 23.767882593,
+      "dryReleaseMM": 19.141094036,
+      "lowerClearanceAt161DropMM": 11.786583768
+    },
+    {
+      "wallMM": 3,
+      "backingMM": 2,
+      "areaMM2": 1074,
+      "crossarmStressMPa": 36.232765207,
+      "crossarmDeflectionMM": 0.522139898,
+      "wholeFrameMM": 3.252955136,
+      "dryReleasedFrameMM": 2.243931129,
+      "wetReleasedFrameMM": 3.678890781,
+      "stockSavingKGPerM": 1.379858156,
+      "scheduledWith64JointsKGPerM": 48.919817847,
+      "framePlusNativeRollMM": 10.667160696,
+      "wetReleaseAnalogueMM": 23.908024954,
+      "dryReleaseMM": 19.226573553,
+      "lowerClearanceAt161DropMM": 11.646441407
+    },
+    {
+      "wallMM": 4,
+      "backingMM": 1.8,
+      "areaMM2": 1416,
+      "crossarmStressMPa": 29.836318912,
+      "crossarmDeflectionMM": 0.429962561,
+      "wholeFrameMM": 3.493067489,
+      "dryReleasedFrameMM": 2.361130959,
+      "wetReleasedFrameMM": 3.871038111,
+      "stockSavingKGPerM": 0.56,
+      "scheduledWith64JointsKGPerM": 49.739676003,
+      "framePlusNativeRollMM": 10.907273049,
+      "wetReleaseAnalogueMM": 24.100172283,
+      "dryReleaseMM": 19.343773382,
+      "lowerClearanceAt161DropMM": 11.454294078
+    },
+    {
+      "wallMM": 4,
+      "backingMM": 1.5,
+      "areaMM2": 1416,
+      "crossarmStressMPa": 29.836318912,
+      "crossarmDeflectionMM": 0.429962561,
+      "wholeFrameMM": 4.385712855,
+      "dryReleasedFrameMM": 2.905597986,
+      "wetReleasedFrameMM": 4.763683477,
+      "stockSavingKGPerM": 1.4,
+      "scheduledWith64JointsKGPerM": 48.899676003,
+      "framePlusNativeRollMM": 11.799918415,
+      "wetReleaseAnalogueMM": 24.99281765,
+      "dryReleaseMM": 19.888240409,
+      "lowerClearanceAt161DropMM": 10.561648711
+    }
+  ],
+  "retainedArmTrials": [
+    {
+      "centreMM": 6240,
+      "dropFrom6600MM": 360,
+      "topMM": 6340,
+      "bottomMM": 6140,
+      "armMassKG": 30.96792,
+      "wholeHeadMassKG": 71.528313089,
+      "armStressMPa": 66.759535172,
+      "wholeDeflectionMM": 5.513326639,
+      "lowerCarrierReserveAfter50Native6Local10SettingMM": -30.724995,
+      "5900Floor6025RimTrayReserveAfterSame66MM": 49
+    },
+    {
+      "centreMM": 6205,
+      "dropFrom6600MM": 395,
+      "topMM": 6305,
+      "bottomMM": 6105,
+      "armMassKG": 31.56264,
+      "wholeHeadMassKG": 72.123033089,
+      "armStressMPa": 66.98730183,
+      "wholeDeflectionMM": 5.724497044,
+      "lowerCarrierReserveAfter50Native6Local10SettingMM": 4.275005,
+      "5900Floor6025RimTrayReserveAfterSame66MM": 14
+    },
+    {
+      "centreMM": 6200,
+      "dropFrom6600MM": 400,
+      "topMM": 6300,
+      "bottomMM": 6100,
+      "armMassKG": 31.6476,
+      "wholeHeadMassKG": 72.207993089,
+      "armStressMPa": 67.019839924,
+      "wholeDeflectionMM": 5.754769994,
+      "lowerCarrierReserveAfter50Native6Local10SettingMM": 9.275005,
+      "5900Floor6025RimTrayReserveAfterSame66MM": 9
+    },
+    {
+      "centreMM": 6195,
+      "dropFrom6600MM": 405,
+      "topMM": 6295,
+      "bottomMM": 6095,
+      "armMassKG": 31.73256,
+      "wholeHeadMassKG": 72.292953089,
+      "armStressMPa": 67.052378018,
+      "wholeDeflectionMM": 5.785069381,
+      "lowerCarrierReserveAfter50Native6Local10SettingMM": 14.275005,
+      "5900Floor6025RimTrayReserveAfterSame66MM": 4
+    }
+  ],
+  "roundSideInlet": {
+    "formula": "Cd integral[0,min(H,D)] 2sqrt((D/2)^2-(z-D/2)^2) sqrt(2g(H-z)) dz",
+    "rows": [
+      {
+        "meaning": "30 water above bed",
+        "headAboveInvertMM": 10,
+        "waterAboveBedMM": 30,
+        "oneCd06Lps": 0.064330198,
+        "oneCd062Lps": 0.066474538,
+        "oneIdealCd1Lps": 0.107216997
+      },
+      {
+        "meaning": "30 above invert",
+        "headAboveInvertMM": 30,
+        "waterAboveBedMM": 50,
+        "oneCd06Lps": 0.54716428,
+        "oneCd062Lps": 0.565403089,
+        "oneIdealCd1Lps": 0.911940467
+      },
+      {
+        "meaning": "30 above centre",
+        "headAboveInvertMM": 80,
+        "waterAboveBedMM": 100,
+        "oneCd06Lps": 3.22306333,
+        "oneCd062Lps": 3.330498775,
+        "oneIdealCd1Lps": 5.371772217
+      }
+    ],
+    "requiredHeadCd06MM": 81.393580718,
+    "frontReserveAfter46MM": -17.393580718,
+    "scope": "Unprimed free inlet; full area at30 head is not valid. Downstream pipe priming is not inferred."
+  },
+  "fullPipeSensitivities": [
+    {
+      "lengthMM": 1000,
+      "boreMM": 100,
+      "DarcyF": 0.06,
+      "localK": 6,
+      "exitK": 1,
+      "requiredTotalHeadMM": 68.949822851
+    },
+    {
+      "lengthMM": 1500,
+      "boreMM": 100,
+      "DarcyF": 0.06,
+      "localK": 6,
+      "exitK": 1,
+      "requiredTotalHeadMM": 71.671526384
+    },
+    {
+      "lengthMM": 2000,
+      "boreMM": 100,
+      "DarcyF": 0.06,
+      "localK": 6,
+      "exitK": 1,
+      "requiredTotalHeadMM": 74.393229918
+    },
+    {
+      "lengthMM": 3000,
+      "boreMM": 100,
+      "DarcyF": 0.06,
+      "localK": 6,
+      "exitK": 1,
+      "requiredTotalHeadMM": 79.836636985
+    }
+  ],
+  "broadScupperInlets": [
+    {
+      "widthMM": 200,
+      "Cd": 0.6,
+      "invertMM": 20,
+      "headForFullFlowMM": 44.385363784,
+      "frontReserveAfter10Setting25Splash11MovementMM": 19.614636216
+    },
+    {
+      "widthMM": 250,
+      "Cd": 0.6,
+      "invertMM": 20,
+      "headForFullFlowMM": 38.250146986,
+      "frontReserveAfter10Setting25Splash11MovementMM": 25.749853014
+    }
+  ],
+  "narrowBootTrials": [
+    {
+      "clearAlongWidthMM": 40,
+      "grossWithTwo2WallsMM": 44,
+      "trial60SeamReserveAfter10SettingMM": 6,
+      "grantedWaterDepthAndHeadMM": 119,
+      "runMM": 500,
+      "K": 6,
+      "f": 0.06,
+      "requiredHeadMM": 183.714343727
+    },
+    {
+      "clearAlongWidthMM": 46,
+      "grossWithTwo2WallsMM": 50,
+      "trial60SeamReserveAfter10SettingMM": 0,
+      "grantedWaterDepthAndHeadMM": 119,
+      "runMM": 500,
+      "K": 6,
+      "f": 0.06,
+      "requiredHeadMM": 138.000925246
+    },
+    {
+      "clearAlongWidthMM": 50,
+      "grossWithTwo2WallsMM": 54,
+      "trial60SeamReserveAfter10SettingMM": -4,
+      "grantedWaterDepthAndHeadMM": 119,
+      "runMM": 500,
+      "K": 6,
+      "f": 0.06,
+      "requiredHeadMM": 116.391611471
+    }
+  ],
+  "conditional60SeamCounterexample": {
+    "hypotheticalSeamMM": 60,
+    "100Bore2WallODMM": 104,
+    "minimumTurnEnvelopeMM": 104,
+    "nominalMarginMM": -44,
+    "actualWallPointsRadialAlongZRelativeToBed": [
+      [
+        290,
+        103,
+        -1
+      ],
+      [
+        520,
+        103,
+        70
+      ]
+    ],
+    "walls": "Downward leg crosses the retained neighbour floor; outward leg crosses its front. No imaginary wall is placed across the open end.",
+    "authorityLimit": "The source60 gap belongs to the17.84 m long-arm expansion context. It is NOT an every-root wet-module seam."
+  },
+  "wholeApronTrials": {
+    "foldHalfMM": 12.85,
+    "first10OutTopToSlateNominalMM": -2.85,
+    "first40OutTopToSlateAfter10Setting6LocalMM": 11.15,
+    "lift120ToeOverFrontAfter50Native6Local10SettingMM": 19,
+    "toeOuterAfter400TotalOutMM": 672.85,
+    "lowerOuterMM": 670,
+    "conditions": "Real top clips/underlap, retained turn-down and complete captured rest are missing. Retained neighbour bed-level water cannot be assigned to a top lid."
+  },
+  "bodyRestTrials": [
+    {
+      "body": "primary",
+      "rootPitchHypothesisMM": 793.125,
+      "selectedModuleLengthKnown": false,
+      "existing600BayEdgeReserveAfter10MM": -106.5625
+    },
+    {
+      "body": "relief",
+      "rootPitchHypothesisMM": 799.6875,
+      "selectedModuleLengthKnown": false,
+      "existing600BayEdgeReserveAfter10MM": -109.84375
+    }
+  ],
+  "headLoadInterface": {
+    "sourceHeadSpoolCaptureBoundKG": 25,
+    "spoutKG": 4,
+    "catchLinerKG": 11,
+    "returnKG": 5,
+    "possibleCatchPostsRailsKG": 3,
+    "combinedBeforeBearingPlateOrArmKG": 48,
+    "splitBearingPlateKG": 4.027247639,
+    "condition": "Native paired-body states must include every absent head part. This receipt does not establish that a revised native family has passed."
+  },
+  "unproved": [
+    "Actual one-root module, corner, joint, centroid and complete carrier inventory.",
+    "Contained local rain interception before any release, including retained side-end flow and reverse order.",
+    "Ground rig/fixed apron relative motion; source dry-diversion release is not a wet-rig proof.",
+    "The6200 arm needs joined fork/shoulder/collar/6000-joint geometry and actual native added-wind motions within50 mm.",
+    "TheR625-start tray misses the lowerR125..625 footprint andR146 secondary toe; the low dry collar/outlets remain unjoined.",
+    "Full body rest/guard/ground-nest capacity and geometry;400 withdrawal is not complete landing."
+  ],
+  "validation": {
+    "owningFrameBaselineReproduced": true,
+    "inletQuadratureConverged": true,
+    "stockAndGeometryNegativeControlsRetained": true,
+    "wholeRouteAccepted": false
+  },
+  "sourceHashes": {
+    "project/rof/studies/roof_water_edges.py": "573eef52a75744c5247148c90999fa1a34b931fec04bf6e381e4c459fd9e8d29",
+    "project/rof/studies/roof_water_heads.py": "cd4c5be755649adda2611bd561841c26ec452d1d220886e029f82d4f01c2160f",
+    "project/rof/studies/roof_water_movement.json": "b32100891d49db07ccab698bda682d8a2e457216715ba264758d3e56e2bb30cc",
+    "project/mat/studies/ring-roof-family.json": "b8aa44fab2b13d329f4ccb6cda0210c1fe3aab1b13e8ec96a47e9e0271c07a81",
+    "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+    "project/rwt/studies/court-service-selection.json": "fc62adf66ab862f8dfbb10be0c72cf447e113b2280ff68dc286a9b511ad6d908",
+    "project/rwt/studies/selected-water-event.json": "179832f10e0b3c2cc3cde05d7b99878819c49b4e5ef451785c5a5c99a6e7e0d3",
+    "project/rwt/studies/over-roof-site-envelope.json": "0c6e6d9617091a8a069280fd9e884ea24d06d7e9def1b4f35e96beb46081b747",
+    "project/mat/studies/plant-threshold.json": "3cc494ddaf6bcdfebb8c1e9108d987f26196ac58fcf84ecd313659fa763cfa4b",
+    "project/had/studies/current-house-services.json": "fa820740d3c6b55917715945b158bc4ad1005ab80306fb3165b59c0136d31a84",
+    "project/str/studies/reconciled-house-interface.json": "ae17f6de977de58ae54f25edfc67c48c36f348cffc288e839f25a8b4143c16cf",
+    "project/rof/studies/roof_water_outer_renewal_candidate.py": "24edc7661c84fd5ee5bc2d1a93fbdf1b78335cab42d4ffb5f8e7d28972511837"
+  }
+}

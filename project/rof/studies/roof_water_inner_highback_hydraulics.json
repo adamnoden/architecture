@@ -1,0 +1,664 @@
+{
+  "status": "UNSELECTED PARAMETRIC HIGH-BACK COMPARISON; NO PHYSICAL JOIN OR ORDINARY RENEWAL ACCEPTED",
+  "catchment": {
+    "ridgeSquareSideMM": 7750,
+    "entireInwardAreaM2": 60.0625,
+    "rainLpsM2": 0.06,
+    "entireInwardDoseLps": 3.60375,
+    "previousCollectorDoseLps": 3.25815,
+    "includedFormerOpenSkyDoseLps": 0.3456,
+    "scope": "Bounds rain on heads, stowed leaves and other goods wholly inside the inward ridge footprint, even with all former sky rain directed to a collector. Does not determine actual remaining sky aperture or admit projections beyond that footprint."
+  },
+  "conditions": {
+    "halfClearWidth": true,
+    "ManningN": 0.02,
+    "hydraulicFall": 0.004,
+    "localK": 4,
+    "relativeHydraulicMovementMM": 25,
+    "settingMM": 10,
+    "splashMM": 25,
+    "movementBoundEarned": false,
+    "siteRainfallEstablished": false,
+    "componentRatingEstablished": false,
+    "fullTransportPathMM": 6500,
+    "longestEdgeNominalBedGrades": {
+      "primary": 0.0045,
+      "lower": 0.004423077
+    },
+    "normalProfileParameterisation": "The same bed/flow endpoint fractions are retained along each face. The1mm centreline interval gives a coarser fractional interval than6500mm and remains a conservative bound on this declared profile; actual corner and obstruction routing must earn that model."
+  },
+  "historicalArithmeticReproduced": true,
+  "proposed": [
+    {
+      "label": "proposed high back, full inward catchment",
+      "flowLps": 3.60375,
+      "movementMM": 25.0,
+      "primary": {
+        "minimum": {
+          "reserveMM": 5.079069763,
+          "pathIntervalMM": [
+            2900.0,
+            2901.0
+          ],
+          "flowLps": 1.638296483,
+          "bedMM": 6740.375,
+          "normalDepthMM": 34.74586429,
+          "K4HeadMM": 14.800065946
+        },
+        "oneArmLengthMM": 5800.0,
+        "crownBedMM": 6755.0,
+        "headBedMM": 6725.75,
+        "adverseCrownDoseLps": 0.86775,
+        "allNonWeatherRoofDoseAtCrownLps": 0.52215,
+        "referenceParameterLengthMM": 5800.0,
+        "referenceIntervalAtMostMM": 1.0,
+        "longestPhysicalIntervalAtMostMM": 1.120689655,
+        "method": "Earlier bed and later flow bound every1mm reference interval continuously; its corresponding longest physical interval is6500/5800mm. No sampled-only pass."
+      },
+      "lowerNormalDepthMM": 50.753982365,
+      "lowerK4HeadMM": 22.762092371,
+      "primaryLevelSpillHeadMM": 14.840951987,
+      "lowerGradedSpill": {
+        "headAboveLowestRimMM": 30.418197514,
+        "flowLps": 3.60375,
+        "clearIntervalEachPathMM": [
+          2400.0,
+          4800.0
+        ],
+        "distributedFactor": 1.0,
+        "linearCrestRiseMM": 28.75,
+        "pathLengthMM": 4800
+      },
+      "primaryTransport": {
+        "flowLps": 3.60375,
+        "clearWidthMM": 175,
+        "minimumFloodedDepthMM": 114.840951987,
+        "fullArmLengthMM": 6500,
+        "frictionHeadMM": 4.579853606,
+        "K4HeadMM": 6.55542169,
+        "totalHeadMM": 11.135275296,
+        "settingPlusMovementMM": 35.0,
+        "condition": "The declared setting/movement allowance must bound adverse bed-to-crest relative motion so this minimum flooded depth remains available."
+      },
+      "lowerTransport": {
+        "flowLps": 3.60375,
+        "clearWidthMM": 212.5,
+        "minimumFloodedDepthMM": 140.0,
+        "fullArmLengthMM": 6500,
+        "frictionHeadMM": 1.609660938,
+        "K4HeadMM": 2.991550641,
+        "totalHeadMM": 4.601211579,
+        "settingPlusMovementMM": 35.0,
+        "condition": "The declared setting/movement allowance must bound adverse bed-to-crest relative motion so this minimum flooded depth remains available."
+      },
+      "maximumStoredPrimaryMM": 190.226227283,
+      "maximumStoredLowerMM": 210.019409093,
+      "lowerUnknownCrestShapeComparison": {
+        "headAboveLowestRimMM": 38.099213904,
+        "maximumStoredDepthMM": 217.700425483,
+        "nativeWaterReserveMM": 2.299574517,
+        "rearAfterSplashReserveMM": 2.299574517,
+        "scope": "Place the entire4800mm surviving clear length at the maximum+28.75mm crest. This is a separate adverse bound, not an invented fabricated crest."
+      },
+      "nativeWaterBoundsMM": [
+        200.0,
+        220.0
+      ],
+      "marginsMM": {
+        "primaryNormalMM": 5.079069763,
+        "lowerNormalFullDoseMM": 6.483925264,
+        "primaryRearAfterSplashMM": 9.023772717,
+        "lowerRearAfterSplashMM": 9.980590907,
+        "primaryNativeWaterMM": 9.773772717,
+        "lowerNativeWaterMM": 9.980590907
+      },
+      "numericScreensPass": true,
+      "physicalAssemblyAccepted": false,
+      "geometry": {
+        "primaryVerticalShiftMM": 120.0,
+        "lowerVerticalShiftMM": 10.0,
+        "primaryBedsMM": [
+          6725.75,
+          6755.0
+        ],
+        "primaryFrontMM": 6855.0,
+        "primaryRearMM": 6950.0,
+        "primaryCapBottomTopMM": [
+          6980.0,
+          7000.0
+        ],
+        "lowerBedsMM": [
+          6396.25,
+          6425.0
+        ],
+        "lowerFrontDepthMM": 140.0,
+        "lowerRearDepthMM": 245.0,
+        "highestLowerRearMM": 6670.0,
+        "primaryLowestWetBedToHighestLowerRearMM": 55.75,
+        "scope": "Pure hydraulic geometry. Carrier depth, head-arm envelope, relative solid motion and support details must be subtracted independently."
+      }
+    },
+    {
+      "label": "proposed high back, full inward catchment",
+      "flowLps": 3.60375,
+      "movementMM": 25.0,
+      "primary": {
+        "minimum": {
+          "reserveMM": 5.079069763,
+          "pathIntervalMM": [
+            2900.0,
+            2901.0
+          ],
+          "flowLps": 1.638296483,
+          "bedMM": 6770.375,
+          "normalDepthMM": 34.74586429,
+          "K4HeadMM": 14.800065946
+        },
+        "oneArmLengthMM": 5800.0,
+        "crownBedMM": 6785.0,
+        "headBedMM": 6755.75,
+        "adverseCrownDoseLps": 0.86775,
+        "allNonWeatherRoofDoseAtCrownLps": 0.52215,
+        "referenceParameterLengthMM": 5800.0,
+        "referenceIntervalAtMostMM": 1.0,
+        "longestPhysicalIntervalAtMostMM": 1.120689655,
+        "method": "Earlier bed and later flow bound every1mm reference interval continuously; its corresponding longest physical interval is6500/5800mm. No sampled-only pass."
+      },
+      "lowerNormalDepthMM": 50.753982365,
+      "lowerK4HeadMM": 22.762092371,
+      "primaryLevelSpillHeadMM": 14.840951987,
+      "lowerGradedSpill": {
+        "headAboveLowestRimMM": 30.418197514,
+        "flowLps": 3.60375,
+        "clearIntervalEachPathMM": [
+          2400.0,
+          4800.0
+        ],
+        "distributedFactor": 1.0,
+        "linearCrestRiseMM": 28.75,
+        "pathLengthMM": 4800
+      },
+      "primaryTransport": {
+        "flowLps": 3.60375,
+        "clearWidthMM": 175,
+        "minimumFloodedDepthMM": 114.840951987,
+        "fullArmLengthMM": 6500,
+        "frictionHeadMM": 4.579853606,
+        "K4HeadMM": 6.55542169,
+        "totalHeadMM": 11.135275296,
+        "settingPlusMovementMM": 35.0,
+        "condition": "The declared setting/movement allowance must bound adverse bed-to-crest relative motion so this minimum flooded depth remains available."
+      },
+      "lowerTransport": {
+        "flowLps": 3.60375,
+        "clearWidthMM": 212.5,
+        "minimumFloodedDepthMM": 140.0,
+        "fullArmLengthMM": 6500,
+        "frictionHeadMM": 1.609660938,
+        "K4HeadMM": 2.991550641,
+        "totalHeadMM": 4.601211579,
+        "settingPlusMovementMM": 35.0,
+        "condition": "The declared setting/movement allowance must bound adverse bed-to-crest relative motion so this minimum flooded depth remains available."
+      },
+      "maximumStoredPrimaryMM": 190.226227283,
+      "maximumStoredLowerMM": 210.019409093,
+      "lowerUnknownCrestShapeComparison": {
+        "headAboveLowestRimMM": 38.099213904,
+        "maximumStoredDepthMM": 217.700425483,
+        "nativeWaterReserveMM": 2.299574517,
+        "rearAfterSplashReserveMM": 2.299574517,
+        "scope": "Place the entire4800mm surviving clear length at the maximum+28.75mm crest. This is a separate adverse bound, not an invented fabricated crest."
+      },
+      "nativeWaterBoundsMM": [
+        200.0,
+        220.0
+      ],
+      "marginsMM": {
+        "primaryNormalMM": 5.079069763,
+        "lowerNormalFullDoseMM": 6.483925264,
+        "primaryRearAfterSplashMM": 9.023772717,
+        "lowerRearAfterSplashMM": 9.980590907,
+        "primaryNativeWaterMM": 9.773772717,
+        "lowerNativeWaterMM": 9.980590907
+      },
+      "numericScreensPass": true,
+      "physicalAssemblyAccepted": false,
+      "geometry": {
+        "primaryVerticalShiftMM": 150.0,
+        "lowerVerticalShiftMM": 10.0,
+        "primaryBedsMM": [
+          6755.75,
+          6785.0
+        ],
+        "primaryFrontMM": 6885.0,
+        "primaryRearMM": 6980.0,
+        "primaryCapBottomTopMM": [
+          7010.0,
+          7030.0
+        ],
+        "lowerBedsMM": [
+          6396.25,
+          6425.0
+        ],
+        "lowerFrontDepthMM": 140.0,
+        "lowerRearDepthMM": 245.0,
+        "highestLowerRearMM": 6670.0,
+        "primaryLowestWetBedToHighestLowerRearMM": 85.75,
+        "scope": "Pure hydraulic geometry. Carrier depth, head-arm envelope, relative solid motion and support details must be subtracted independently."
+      }
+    },
+    {
+      "label": "proposed high back, full inward catchment",
+      "flowLps": 3.60375,
+      "movementMM": 25.0,
+      "primary": {
+        "minimum": {
+          "reserveMM": 5.079069763,
+          "pathIntervalMM": [
+            2900.0,
+            2901.0
+          ],
+          "flowLps": 1.638296483,
+          "bedMM": 6800.375,
+          "normalDepthMM": 34.74586429,
+          "K4HeadMM": 14.800065946
+        },
+        "oneArmLengthMM": 5800.0,
+        "crownBedMM": 6815.0,
+        "headBedMM": 6785.75,
+        "adverseCrownDoseLps": 0.86775,
+        "allNonWeatherRoofDoseAtCrownLps": 0.52215,
+        "referenceParameterLengthMM": 5800.0,
+        "referenceIntervalAtMostMM": 1.0,
+        "longestPhysicalIntervalAtMostMM": 1.120689655,
+        "method": "Earlier bed and later flow bound every1mm reference interval continuously; its corresponding longest physical interval is6500/5800mm. No sampled-only pass."
+      },
+      "lowerNormalDepthMM": 50.753982365,
+      "lowerK4HeadMM": 22.762092371,
+      "primaryLevelSpillHeadMM": 14.840951987,
+      "lowerGradedSpill": {
+        "headAboveLowestRimMM": 30.418197514,
+        "flowLps": 3.60375,
+        "clearIntervalEachPathMM": [
+          2400.0,
+          4800.0
+        ],
+        "distributedFactor": 1.0,
+        "linearCrestRiseMM": 28.75,
+        "pathLengthMM": 4800
+      },
+      "primaryTransport": {
+        "flowLps": 3.60375,
+        "clearWidthMM": 175,
+        "minimumFloodedDepthMM": 114.840951987,
+        "fullArmLengthMM": 6500,
+        "frictionHeadMM": 4.579853606,
+        "K4HeadMM": 6.55542169,
+        "totalHeadMM": 11.135275296,
+        "settingPlusMovementMM": 35.0,
+        "condition": "The declared setting/movement allowance must bound adverse bed-to-crest relative motion so this minimum flooded depth remains available."
+      },
+      "lowerTransport": {
+        "flowLps": 3.60375,
+        "clearWidthMM": 212.5,
+        "minimumFloodedDepthMM": 140.0,
+        "fullArmLengthMM": 6500,
+        "frictionHeadMM": 1.609660938,
+        "K4HeadMM": 2.991550641,
+        "totalHeadMM": 4.601211579,
+        "settingPlusMovementMM": 35.0,
+        "condition": "The declared setting/movement allowance must bound adverse bed-to-crest relative motion so this minimum flooded depth remains available."
+      },
+      "maximumStoredPrimaryMM": 190.226227283,
+      "maximumStoredLowerMM": 210.019409093,
+      "lowerUnknownCrestShapeComparison": {
+        "headAboveLowestRimMM": 38.099213904,
+        "maximumStoredDepthMM": 217.700425483,
+        "nativeWaterReserveMM": 2.299574517,
+        "rearAfterSplashReserveMM": 2.299574517,
+        "scope": "Place the entire4800mm surviving clear length at the maximum+28.75mm crest. This is a separate adverse bound, not an invented fabricated crest."
+      },
+      "nativeWaterBoundsMM": [
+        200.0,
+        220.0
+      ],
+      "marginsMM": {
+        "primaryNormalMM": 5.079069763,
+        "lowerNormalFullDoseMM": 6.483925264,
+        "primaryRearAfterSplashMM": 9.023772717,
+        "lowerRearAfterSplashMM": 9.980590907,
+        "primaryNativeWaterMM": 9.773772717,
+        "lowerNativeWaterMM": 9.980590907
+      },
+      "numericScreensPass": true,
+      "physicalAssemblyAccepted": false,
+      "geometry": {
+        "primaryVerticalShiftMM": 180.0,
+        "lowerVerticalShiftMM": 10.0,
+        "primaryBedsMM": [
+          6785.75,
+          6815.0
+        ],
+        "primaryFrontMM": 6915.0,
+        "primaryRearMM": 7010.0,
+        "primaryCapBottomTopMM": [
+          7040.0,
+          7060.0
+        ],
+        "lowerBedsMM": [
+          6396.25,
+          6425.0
+        ],
+        "lowerFrontDepthMM": 140.0,
+        "lowerRearDepthMM": 245.0,
+        "highestLowerRearMM": 6670.0,
+        "primaryLowestWetBedToHighestLowerRearMM": 115.75,
+        "scope": "Pure hydraulic geometry. Carrier depth, head-arm envelope, relative solid motion and support details must be subtracted independently."
+      }
+    },
+    {
+      "label": "proposed high back, full inward catchment",
+      "flowLps": 3.60375,
+      "movementMM": 25.0,
+      "primary": {
+        "minimum": {
+          "reserveMM": 5.079069763,
+          "pathIntervalMM": [
+            2900.0,
+            2901.0
+          ],
+          "flowLps": 1.638296483,
+          "bedMM": 6820.375,
+          "normalDepthMM": 34.74586429,
+          "K4HeadMM": 14.800065946
+        },
+        "oneArmLengthMM": 5800.0,
+        "crownBedMM": 6835.0,
+        "headBedMM": 6805.75,
+        "adverseCrownDoseLps": 0.86775,
+        "allNonWeatherRoofDoseAtCrownLps": 0.52215,
+        "referenceParameterLengthMM": 5800.0,
+        "referenceIntervalAtMostMM": 1.0,
+        "longestPhysicalIntervalAtMostMM": 1.120689655,
+        "method": "Earlier bed and later flow bound every1mm reference interval continuously; its corresponding longest physical interval is6500/5800mm. No sampled-only pass."
+      },
+      "lowerNormalDepthMM": 50.753982365,
+      "lowerK4HeadMM": 22.762092371,
+      "primaryLevelSpillHeadMM": 14.840951987,
+      "lowerGradedSpill": {
+        "headAboveLowestRimMM": 30.418197514,
+        "flowLps": 3.60375,
+        "clearIntervalEachPathMM": [
+          2400.0,
+          4800.0
+        ],
+        "distributedFactor": 1.0,
+        "linearCrestRiseMM": 28.75,
+        "pathLengthMM": 4800
+      },
+      "primaryTransport": {
+        "flowLps": 3.60375,
+        "clearWidthMM": 175,
+        "minimumFloodedDepthMM": 114.840951987,
+        "fullArmLengthMM": 6500,
+        "frictionHeadMM": 4.579853606,
+        "K4HeadMM": 6.55542169,
+        "totalHeadMM": 11.135275296,
+        "settingPlusMovementMM": 35.0,
+        "condition": "The declared setting/movement allowance must bound adverse bed-to-crest relative motion so this minimum flooded depth remains available."
+      },
+      "lowerTransport": {
+        "flowLps": 3.60375,
+        "clearWidthMM": 212.5,
+        "minimumFloodedDepthMM": 140.0,
+        "fullArmLengthMM": 6500,
+        "frictionHeadMM": 1.609660938,
+        "K4HeadMM": 2.991550641,
+        "totalHeadMM": 4.601211579,
+        "settingPlusMovementMM": 35.0,
+        "condition": "The declared setting/movement allowance must bound adverse bed-to-crest relative motion so this minimum flooded depth remains available."
+      },
+      "maximumStoredPrimaryMM": 190.226227283,
+      "maximumStoredLowerMM": 210.019409093,
+      "lowerUnknownCrestShapeComparison": {
+        "headAboveLowestRimMM": 38.099213904,
+        "maximumStoredDepthMM": 217.700425483,
+        "nativeWaterReserveMM": 2.299574517,
+        "rearAfterSplashReserveMM": 2.299574517,
+        "scope": "Place the entire4800mm surviving clear length at the maximum+28.75mm crest. This is a separate adverse bound, not an invented fabricated crest."
+      },
+      "nativeWaterBoundsMM": [
+        200.0,
+        220.0
+      ],
+      "marginsMM": {
+        "primaryNormalMM": 5.079069763,
+        "lowerNormalFullDoseMM": 6.483925264,
+        "primaryRearAfterSplashMM": 9.023772717,
+        "lowerRearAfterSplashMM": 9.980590907,
+        "primaryNativeWaterMM": 9.773772717,
+        "lowerNativeWaterMM": 9.980590907
+      },
+      "numericScreensPass": true,
+      "physicalAssemblyAccepted": false,
+      "geometry": {
+        "primaryVerticalShiftMM": 200.0,
+        "lowerVerticalShiftMM": 10.0,
+        "primaryBedsMM": [
+          6805.75,
+          6835.0
+        ],
+        "primaryFrontMM": 6935.0,
+        "primaryRearMM": 7030.0,
+        "primaryCapBottomTopMM": [
+          7060.0,
+          7080.0
+        ],
+        "lowerBedsMM": [
+          6396.25,
+          6425.0
+        ],
+        "lowerFrontDepthMM": 140.0,
+        "lowerRearDepthMM": 245.0,
+        "highestLowerRearMM": 6670.0,
+        "primaryLowestWetBedToHighestLowerRearMM": 135.75,
+        "scope": "Pure hydraulic geometry. Carrier depth, head-arm envelope, relative solid motion and support details must be subtracted independently."
+      }
+    }
+  ],
+  "failedControls": [
+    {
+      "label": "old walls under the new flow and movement domain",
+      "flowLps": 3.60375,
+      "movementMM": 25.0,
+      "primary": {
+        "minimum": {
+          "reserveMM": -14.920930237,
+          "pathIntervalMM": [
+            2900.0,
+            2901.0
+          ],
+          "flowLps": 1.638296483,
+          "bedMM": 6620.375,
+          "normalDepthMM": 34.74586429,
+          "K4HeadMM": 14.800065946
+        },
+        "oneArmLengthMM": 5800.0,
+        "crownBedMM": 6635.0,
+        "headBedMM": 6605.75,
+        "adverseCrownDoseLps": 0.86775,
+        "allNonWeatherRoofDoseAtCrownLps": 0.52215,
+        "referenceParameterLengthMM": 5800.0,
+        "referenceIntervalAtMostMM": 1.0,
+        "longestPhysicalIntervalAtMostMM": 1.120689655,
+        "method": "Earlier bed and later flow bound every1mm reference interval continuously; its corresponding longest physical interval is6500/5800mm. No sampled-only pass."
+      },
+      "lowerNormalDepthMM": 50.753982365,
+      "lowerK4HeadMM": 22.762092371,
+      "primaryLevelSpillHeadMM": 14.840951987,
+      "lowerGradedSpill": {
+        "headAboveLowestRimMM": 30.418197514,
+        "flowLps": 3.60375,
+        "clearIntervalEachPathMM": [
+          2400.0,
+          4800.0
+        ],
+        "distributedFactor": 1.0,
+        "linearCrestRiseMM": 28.75,
+        "pathLengthMM": 4800
+      },
+      "primaryTransport": {
+        "flowLps": 3.60375,
+        "clearWidthMM": 175,
+        "minimumFloodedDepthMM": 94.840951987,
+        "fullArmLengthMM": 6500,
+        "frictionHeadMM": 7.543769887,
+        "K4HeadMM": 9.611748363,
+        "totalHeadMM": 17.155518251,
+        "settingPlusMovementMM": 35.0,
+        "condition": "The declared setting/movement allowance must bound adverse bed-to-crest relative motion so this minimum flooded depth remains available."
+      },
+      "lowerTransport": {
+        "flowLps": 3.60375,
+        "clearWidthMM": 212.5,
+        "minimumFloodedDepthMM": 125.0,
+        "fullArmLengthMM": 6500,
+        "frictionHeadMM": 2.159741716,
+        "K4HeadMM": 3.752601124,
+        "totalHeadMM": 5.91234284,
+        "settingPlusMovementMM": 35.0,
+        "condition": "The declared setting/movement allowance must bound adverse bed-to-crest relative motion so this minimum flooded depth remains available."
+      },
+      "maximumStoredPrimaryMM": 176.246470237,
+      "maximumStoredLowerMM": 196.330540354,
+      "lowerUnknownCrestShapeComparison": {
+        "headAboveLowestRimMM": 38.099213904,
+        "maximumStoredDepthMM": 204.011556744,
+        "nativeWaterReserveMM": -14.011556744,
+        "rearAfterSplashReserveMM": -104.011556744,
+        "scope": "Place the entire4800mm surviving clear length at the maximum+28.75mm crest. This is a separate adverse bound, not an invented fabricated crest."
+      },
+      "nativeWaterBoundsMM": [
+        170.0,
+        190.0
+      ],
+      "marginsMM": {
+        "primaryNormalMM": -14.920930237,
+        "lowerNormalFullDoseMM": -8.516074736,
+        "primaryRearAfterSplashMM": -11.996470237,
+        "lowerRearAfterSplashMM": -96.330540354,
+        "primaryNativeWaterMM": -6.246470237,
+        "lowerNativeWaterMM": -6.330540354
+      },
+      "numericScreensPass": false,
+      "physicalAssemblyAccepted": false
+    },
+    {
+      "label": "raising rear walls alone does not restore normal-profile freeboard",
+      "flowLps": 3.60375,
+      "movementMM": 25.0,
+      "primary": {
+        "minimum": {
+          "reserveMM": -14.920930237,
+          "pathIntervalMM": [
+            2900.0,
+            2901.0
+          ],
+          "flowLps": 1.638296483,
+          "bedMM": 6620.375,
+          "normalDepthMM": 34.74586429,
+          "K4HeadMM": 14.800065946
+        },
+        "oneArmLengthMM": 5800.0,
+        "crownBedMM": 6635.0,
+        "headBedMM": 6605.75,
+        "adverseCrownDoseLps": 0.86775,
+        "allNonWeatherRoofDoseAtCrownLps": 0.52215,
+        "referenceParameterLengthMM": 5800.0,
+        "referenceIntervalAtMostMM": 1.0,
+        "longestPhysicalIntervalAtMostMM": 1.120689655,
+        "method": "Earlier bed and later flow bound every1mm reference interval continuously; its corresponding longest physical interval is6500/5800mm. No sampled-only pass."
+      },
+      "lowerNormalDepthMM": 50.753982365,
+      "lowerK4HeadMM": 22.762092371,
+      "primaryLevelSpillHeadMM": 14.840951987,
+      "lowerGradedSpill": {
+        "headAboveLowestRimMM": 30.418197514,
+        "flowLps": 3.60375,
+        "clearIntervalEachPathMM": [
+          2400.0,
+          4800.0
+        ],
+        "distributedFactor": 1.0,
+        "linearCrestRiseMM": 28.75,
+        "pathLengthMM": 4800
+      },
+      "primaryTransport": {
+        "flowLps": 3.60375,
+        "clearWidthMM": 175,
+        "minimumFloodedDepthMM": 94.840951987,
+        "fullArmLengthMM": 6500,
+        "frictionHeadMM": 7.543769887,
+        "K4HeadMM": 9.611748363,
+        "totalHeadMM": 17.155518251,
+        "settingPlusMovementMM": 35.0,
+        "condition": "The declared setting/movement allowance must bound adverse bed-to-crest relative motion so this minimum flooded depth remains available."
+      },
+      "lowerTransport": {
+        "flowLps": 3.60375,
+        "clearWidthMM": 212.5,
+        "minimumFloodedDepthMM": 125.0,
+        "fullArmLengthMM": 6500,
+        "frictionHeadMM": 2.159741716,
+        "K4HeadMM": 3.752601124,
+        "totalHeadMM": 5.91234284,
+        "settingPlusMovementMM": 35.0,
+        "condition": "The declared setting/movement allowance must bound adverse bed-to-crest relative motion so this minimum flooded depth remains available."
+      },
+      "maximumStoredPrimaryMM": 176.246470237,
+      "maximumStoredLowerMM": 196.330540354,
+      "lowerUnknownCrestShapeComparison": {
+        "headAboveLowestRimMM": 38.099213904,
+        "maximumStoredDepthMM": 204.011556744,
+        "nativeWaterReserveMM": 15.988443256,
+        "rearAfterSplashReserveMM": 15.988443256,
+        "scope": "Place the entire4800mm surviving clear length at the maximum+28.75mm crest. This is a separate adverse bound, not an invented fabricated crest."
+      },
+      "nativeWaterBoundsMM": [
+        200.0,
+        220.0
+      ],
+      "marginsMM": {
+        "primaryNormalMM": -14.920930237,
+        "lowerNormalFullDoseMM": -8.516074736,
+        "primaryRearAfterSplashMM": 23.003529763,
+        "lowerRearAfterSplashMM": 23.669459646,
+        "primaryNativeWaterMM": 23.753529763,
+        "lowerNativeWaterMM": 23.669459646
+      },
+      "numericScreensPass": false,
+      "physicalAssemblyAccepted": false
+    }
+  ],
+  "buriedStaticComparison": {
+    "proposedLevelMM": 7100.0,
+    "aboveHighestProposedPrimaryRearMM": 70.0,
+    "selectedHistoricalLevelMM": 6750.0,
+    "scope": "Proposed comparator only; no selected-route identity, seal rating or transient qualification is changed."
+  },
+  "unproved": [
+    "Actual nonuniform backwater, head entry/outlet ratings, jets, splash and obstructions.",
+    "The25mm hydraulic relative-motion allowance must be earned by the final member/carrier/apron geometry.",
+    "Lower rear containment and fixed secondary kick-over must remain clear of primary arms in every actual motion state.",
+    "Hinged-leaf normal/stowed pressure, new head supports, complete stock and operating sequence must be joined.",
+    "Native200/220 water is a new force and moment comparison, not inherited from170/190 results.",
+    "No first wet opening, temporary catch, whole-body departure or reverse water-control pass follows."
+  ],
+  "sourceHashes": {
+    "project/rof/studies/roof_water_inner_hydraulics.py": "49dc655d0e936cc08102c5688e35c1a14c19807396b418d69a9fb749f716dde7",
+    "project/rof/studies/roof_water_inner_hydraulics.json": "935e327beeb63086ea95f7e72edd44c161ba75d767481ea641af00bbb2ecf56f",
+    "project/mat/studies/ring-roof-family.json": "b8aa44fab2b13d329f4ccb6cda0210c1fe3aab1b13e8ec96a47e9e0271c07a81",
+    "project/rwt/studies/selected-water-event.json": "179832f10e0b3c2cc3cde05d7b99878819c49b4e5ef451785c5a5c99a6e7e0d3",
+    "project/rof/studies/roof_water_inner_highback_hydraulics.py": "d5b624a10bfd98ff1a462561f9feedf221600a0acba14fef648d48aef147b070"
+  }
+}

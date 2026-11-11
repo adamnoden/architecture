@@ -86,6 +86,16 @@ test('roof and selected-house admission each wait for structural reconciliation'
 })
 
 
+test('roof admission cannot outlive the selected services it consumes', () => {
+  const { nodes, get, completeBranch } = scenario()
+  const withheld = new Set(['HAD-SERVICES-ADOPTION'])
+  for (const dependency of get('ROF-RWT-GATE').dependencies) completeBranch(dependency, withheld)
+  assert.deepEqual(directBlockers(get('ROF-RWT-GATE'), nodes), ['HAD-SERVICES-ADOPTION'])
+  assert.equal(derivedState(get('ROF-RWT-GATE'), nodes), 'blocked')
+  completeBranch('HAD-SERVICES-ADOPTION')
+  assert.equal(derivedState(get('ROF-RWT-GATE'), nodes), 'ready')
+})
+
 test('Boundary Service Lodge study is claimable without blocking the inhabited-house selection', () => {
   const { nodes, get, completeBranch } = scenario()
   completeBranch('HAD-01E')

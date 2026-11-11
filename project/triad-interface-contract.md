@@ -64,9 +64,37 @@ STR-HOUSE coordinates proposed structure with HAD in the owning plan/section. ST
 
 **9 November house rewind.** The [completed STR-HOUSE disposition](str/whole-house-corner-rewind.md) rejects selection of the supplied opening/crown combination. HAD/STR should redraw the paired ground and upper corner bays, two continuous jambs, revised bed and fridge, and raised north crown together. OAS/IAS own changed window capture, guards and room operations. MAT/ROF/RWT own changed reveals, ridge/hip weather, ventilation and drainage. STR-RECONCILE must distinguish this proposed successor from the controlled house before passing the roof or TRIAD gates.
 
-**SAP-C1 structural handoff.** Use the [paired-jamb, raised-roof candidate](str/provisional-house-handoff.md) and its [source-bound interface schedule](str/studies/reconciled-house-interface.json) as the provisional structure for coordinated selection. RH-LAYOUT-REVISION-02 remains the controlled house. At both storeys move the sixteen corner openings to 2100/9900, retain the ordinary 429.5 inside face, Z0/3450 occupied levels, RC200 first floor at 3170–3370 and occupied ceilings at +3100 locally. Reserve independent positive normal ties at floor/roof and direct supports at both jamb feet. The provisional slate control requires field +7418.42/+8409.33 and continuous cap +8645.33. The thinner metal +8464.73 cap cannot house its full assembly. The signed frame and 52-head suction cards include the higher wind face and enlarged court overhang. The concentrated lead origin is routed separately at all 22 roof supports. Preserve the paired furniture and service states, independent roof/court water routes and the accessible threshold. BCR/OAS/BAY, EPR, PHY and HRS have the occurrence-specific replay and site boundaries in the handoff. No selection, water-resistance or plot approval follows from this internal structural decision.
+**10 November floor/portal correction.** SAP-C1's coherent structural handoff
+is withdrawn by the [located physical-interface review](str/floor-portal-interface-review.md).
+Its independent jamb motion has no physical route through the continuous floor
+collector. **STR-FLOOR-PORTAL** must reconcile the actual connection, coupled
+gravity/lateral system, reactions, movements and affected service/bay interfaces
+before ROF-RWT-GATE or TRIAD-GATE can pass. The historical STR completion is a
+dated study record; it no longer establishes a current coherent structure.
+The correction owns the choice between a joined floor/jamb and a real separated
+collector bypass. Neither is adopted here.
 
-This adds no second source-rewind mechanism or retrospective technical approval. Existing selection packets may continue on explicitly provisional assumptions; the final gates cannot bypass the structural handoff.
+**SAP-C1 retained comparison.** The [paired-jamb, raised-roof candidate](str/provisional-house-handoff.md)
+and its [source-bound interface schedule](str/studies/reconciled-house-interface.json)
+retain the geometry used by completed bounded studies. RH-LAYOUT-REVISION-02
+remains the controlled house. SAP-C1 moves the sixteen corner openings to
+2100/9900, retains the ordinary 429.5 inside face, Z0/3450 occupied levels,
+RC200 first floor at 3170–3370 and occupied ceilings at +3100 locally. Its
+normal-only floor/roof ties and direct jamb-foot support are model assumptions
+awaiting the correction above. The provisional slate control requires field
++7418.42/+8409.33 and continuous cap +8645.33. The thinner metal +8464.73 cap
+cannot house its full assembly. The signed frame and 52-head suction cards
+retain their higher wind face and enlarged court overhang as historical
+controls. The concentrated lead origin is routed separately at all 22 roof
+supports. Preserve the paired furniture and service states, independent
+roof/court water routes and accessible threshold unless the correction earns
+an explicit source change. BCR/OAS/BAY, EPR, PHY and HRS retain their
+occurrence-specific replay and site boundaries. No current structural,
+water-resistance, house-selection or plot approval follows from these studies.
+
+Existing independent studies may continue on source-bound provisional
+assumptions. Both final house gates require the structural correction through
+the existing source-rewind and evidence procedures.
 
 ## Candidate obligations
 

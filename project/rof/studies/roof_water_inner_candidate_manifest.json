@@ -1,0 +1,77 @@
+{
+  "status": "UNSELECTED CANDIDATE CHECKPOINT; no gate or construction acceptance",
+  "candidateSourceSHA256": "4eb505e4349b1af1eaa98c96b0aa7174a8b6e3c4210628a969cc10c8252e7eba",
+  "frozenInputs": {
+    "numericalSourceHashes": {
+      "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+      "project/mat/studies/ring-roof-family.json": "b8aa44fab2b13d329f4ccb6cda0210c1fe3aab1b13e8ec96a47e9e0271c07a81"
+    },
+    "historicalContextHashes": {
+      "project/rof/roof-water-recovery.md": "b10588ecc335e420c077c80e8d6e48b7f567dd5dd5e11a5be7706998bbb1908e"
+    },
+    "historicalContextQualification": "The frozen source reports this narrative hash for provenance. It is historical context, not a numerical dependency or a required live regeneration identity. Do not alter the frozen4eb source just to remove it."
+  },
+  "fullPrivateReceiptSHA256": "794a10be57dd9eed717d17ebe0641dc5c29959c9824527dbc70d62680686da96",
+  "files": [
+    {
+      "privateFile": "INNER-CANDIDATE-CHECKPOINT.md",
+      "target": "project/rof/roof-water-inner-candidate.md",
+      "sha256": "61bcb06d96b7f26349ca4732e09451c54733714fed429011040406f1769719d9",
+      "bytes": 12902
+    },
+    {
+      "privateFile": "roof_water_inner_candidate.py",
+      "target": "project/rof/studies/roof_water_inner_candidate.py",
+      "sha256": "4eb505e4349b1af1eaa98c96b0aa7174a8b6e3c4210628a969cc10c8252e7eba",
+      "bytes": 32751
+    },
+    {
+      "privateFile": "roof_water_inner_candidate_compact.json",
+      "target": "project/rof/studies/roof_water_inner_candidate_compact.json",
+      "sha256": "0610042db288954d2abe507966a9c34f521621bbd275c0842103d16bda74b51b",
+      "bytes": 1170839
+    },
+    {
+      "privateFile": "roof_water_inner_candidate_receipt.py",
+      "target": "project/rof/studies/roof_water_inner_candidate_receipt.py",
+      "sha256": "d674d006b58bd0ceee0d16914e0cf4a4992a8483ccce0008bbad5b1609f44580",
+      "bytes": 4245
+    },
+    {
+      "privateFile": "roof_water_inner_candidate_wind.json",
+      "target": "project/rof/studies/roof_water_inner_candidate_wind.json",
+      "sha256": "2d710cfdc405b2e8bebf4fdc3aa7f38edfeee044db528b5168aa19c65bc074aa",
+      "bytes": 778797
+    },
+    {
+      "privateFile": "roof_water_inner_candidate_wind.py",
+      "target": "project/rof/studies/roof_water_inner_candidate_wind.py",
+      "sha256": "033a199ee6e3fd9fb7c8fb3d68dbe317e11238c40c84c8a65570bdb233198ae4",
+      "bytes": 7366
+    },
+    {
+      "privateFile": "roof_water_inner_local_clearance.json",
+      "target": "project/rof/studies/roof_water_inner_local_clearance.json",
+      "sha256": "b4a3b1d8002c075619dd5c8a5d498dee421f94d431c91d81059cf09bef57e971",
+      "bytes": 21427
+    },
+    {
+      "privateFile": "roof_water_inner_local_clearance.py",
+      "target": "project/rof/studies/roof_water_inner_local_clearance.py",
+      "sha256": "f30ab77a1096b0f365c2c8baf4e4f29983cfda071253c5d1c395f404bb967571",
+      "bytes": 5658
+    },
+    {
+      "privateFile": "roof_water_inner_renewal_candidate.json",
+      "target": "project/rof/studies/roof_water_inner_renewal_candidate.json",
+      "sha256": "bdf649a236c1b758817e4ff66a1ee0be7fefbb3480207ded8c3f8f72741e192d",
+      "bytes": 7293
+    },
+    {
+      "privateFile": "roof_water_inner_renewal_candidate.py",
+      "target": "project/rof/studies/roof_water_inner_renewal_candidate.py",
+      "sha256": "f4450ade3e2b0a27916f23f619b2d0a4a2819d5f954fa8a3bab5b27e2bd1ad67",
+      "bytes": 7955
+    }
+  ]
+}

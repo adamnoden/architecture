@@ -106,7 +106,66 @@ For the book, map the earned findings to existing discussion of repose, permanen
 
 **Exit:** an inspectable, coherent provisional structural proposition and precise downstream obligations. Competent calculation/review, testing where necessary, real ground conditions and construction approval retain their existing owners. No final engineering acceptance is claimed by the five packets.
 
-**9 November result.** [SAP-C1 and its affected-evidence handoff](provisional-house-handoff.md) complete this provisional design packet. House selection, site and technical acceptance retain their existing gates.
+**9 November result; 10 November correction.** [SAP-C1 and its affected-evidence
+handoff](provisional-house-handoff.md) were recorded as completing this
+provisional design packet. The [floor/portal interface review](floor-portal-interface-review.md)
+withdraws the current coherent-structure claim: the required sliding jamb and
+continuous floor collector occupy the same solid region. The historical study
+and numerical controls remain evidence; the original exit above is unchanged.
+The targeted correction below is a new hard prerequisite of both final house
+gates. No current structural acceptance is inferred from the old complete marker.
+
+### STR-FLOOR-PORTAL — correct the floor and portal load path
+
+**Question:** can the actual floor collector, sixteen portal jambs, roof
+receivers and their gravity/lateral connections form one coherent provisional
+house without the unlocated independent sliding interface?
+
+The first comparison should join the floor and jambs monolithically. Compare it
+with a genuinely separated jamb and a located collector bypass; do not cut a
+nominal receiver pocket through continuous concrete and retain the old model.
+Keep the owner’s paired openings, occupied rooms and direct support preference
+in view. A bypass must charge its full section, eccentricity, reinforcement,
+movement space and projection into the room. A monolithic join must charge its
+actual transfer of floor and indirect roof gravity, all constrained motions and
+rotations, and the effect on the jambs, arch heads, feet and foundation system.
+
+Bind the correction to the current SAP-C1 sources and the adverse roof loading
+comparisons in [the ROF recovery](../rof/roof-water-recovery.md). Establish the
+native model’s real coupled degrees of freedom, stiffness/contact assumptions
+and complete force/moment ledger. Recalculate the affected roof/floor collectors,
+all eight portals and all 52 foundation reactions, with signed gravity, wind,
+uplift and guard cases and the relevant cracked-stiffness and movement bounds.
+Include thermal and shrinkage strains and differential support movement among
+the imposed-deformation inputs; a monolithic join cannot be judged on applied
+force cases alone.
+Replace overlapping old gravity origins; do not add a second copy of a floor,
+wall or jamb. A different normal spring alone does not represent a monolithic
+join. Locate the roof key, blade and full movement envelope outside the solid
+roof box, with the actual receiving web/diaphragm and force path.
+
+Reconcile the resulting floor/ceiling, wall and window section, occupied plan,
+service apertures/supports, court receiver and renewal interfaces. Retain
+unchanged source-bound results only after an applicability check. The selected
+service system and bounded courtyard/drainage studies are not globally erased
+by this outer-floor defect; their affected structural compatibility remains a
+hold until this correction supplies its result. BCR-BAY-INTERFACES and
+MRA-INTERNAL-LEAKS may continue their independent investigations without
+claiming a passed whole-house structure.
+
+**Exit:** a source-bound coherent provisional floor/portal/roof connection and
+coupled load/movement comparison, a reasoned choice or explicit redesign, and
+an affected-evidence disposition in `floor-portal-reconciliation.md` with its
+reproducible study receipt. An adverse comparison is useful but cannot unlock
+the final gates as a passed scheme. Product, reinforcement fabrication, site,
+competent engineering and physical acceptance retain their existing BCR/EPR/PHY/DEL
+routes. No new external prerequisite replaces useful internal design work.
+
+The registration is the owning correction exposed by ROF-RWT-GATE, not execution
+of the new structural packet. STR-FLOOR-PORTAL requires its own ordinary
+canonical lease after registration reaches main. Keeping the historical study
+record retains five bounded investigations whose independent choices remain
+usable. SAP-C1's current coherence claim is withdrawn.
 
 ## Dependency and change discipline
 

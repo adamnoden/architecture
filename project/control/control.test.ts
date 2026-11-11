@@ -91,10 +91,13 @@ test('bounded current-source studies can run before roof integration without rel
   const finalGates = ['BCR-BAY-DESIGN', 'MRA-02']
   const fixture: ControlNode[] = controlNodes.map((candidate) => ({
     ...candidate,
-    lifecycle: [...studies, ...finalGates, 'ROF-RWT-GATE', 'TRIAD-GATE'].includes(candidate.id)
+    lifecycle: [...studies, ...finalGates, 'STR-FLOOR-PORTAL', 'ROF-RWT-GATE', 'TRIAD-GATE'].includes(candidate.id)
       ? 'planned' : 'complete'
   }))
   const state = (id: string) => derivedState(fixture.find((candidate) => candidate.id === id)!, fixture)
+  assert.equal(state('STR-FLOOR-PORTAL'), 'ready')
+  assert.equal(state('ROF-RWT-GATE'), 'blocked')
+  assert.deepEqual(directBlockers(fixture.find((candidate) => candidate.id === 'ROF-RWT-GATE')!, fixture), ['STR-FLOOR-PORTAL'])
   for (const id of studies) assert.equal(state(id), 'ready')
   for (const id of finalGates) assert.equal(state(id), 'blocked')
   for (const id of studies) fixture.find((candidate) => candidate.id === id)!.lifecycle = 'complete'

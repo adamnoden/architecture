@@ -12,6 +12,11 @@ w=json.loads((D/'current-house-welded-network.json').read_text());heel=json.load
 fac=runpy.run_path(str(D/'structural-linear.py'))['factor']
 membrane=runpy.run_path(str(D/'current-house-membrane.py'))
 A,B,C,E=332.5,11667.5,3917.5,8082.5
+# Optional selected sections leave the archived comparison unchanged.
+collectorSections=globals().get('collectorSections',{})
+def collectorSection(a,b):
+    inner=all(C<=point[0]<=E and C<=point[1]<=E for point in (a,b))
+    return collectorSections.get('court' if inner else 'outer',w['sections']['collector'])
 def pt(face,normal,u):
     return [(u,normal),(12000-normal,u),(12000-u,12000-normal),(normal,12000-u)][face]
 DIA=101.6;t=4;As=math.pi*(DIA**2-(DIA-2*t)**2)/4;Is=math.pi*(DIA**4-(DIA-2*t)**4)/64
@@ -135,7 +140,8 @@ def build(active=True,high=False,springsAt=None,ringPlanEI=1.,ridgeStiff=1.):
             if high and kind=='radial':
                 for j in range(2):
                     f=170*(q[j]-p[j])/L;n.extend([(vDO(p,1+j),-f),(vDO(q,1+j),f)])
-            add(K,n,Es*a/L);props[kind,p,q]=(n,Es*a/L)
+            area=collectorSection(p,q)['A'] if kind=='ring' else a
+            add(K,n,Es*area/L);props[kind,p,q]=(n,Es*area/L)
             if kind!='ring':continue
             # Euler beam bending about vertical axis (real manufactured ring);
             # transverse unit line perpendicular to p-q.
@@ -143,7 +149,7 @@ def build(active=True,high=False,springsAt=None,ringPlanEI=1.,ridgeStiff=1.):
             a0=[(dof(p,0),-dy),(dof(p,1),dx)];a2=[(dof(q,0),-dy),(dof(q,1),dx)]
             ts=[a0,[(dof(p,2),1)],a2,[(dof(q,2),1)]]
             kb=[[12,6*L,-12,6*L],[6*L,4*L**2,-6*L,2*L**2],[-12,-6*L,12,-6*L],[6*L,2*L**2,-6*L,4*L**2]]
-            coef=Es*w['sections']['collector']['Iminor']/L**3*ringPlanEI
+            coef=Es*collectorSection(p,q)['Iminor']/L**3*ringPlanEI
             for m,ii in enumerate(ts):
                 for n,jj in enumerate(ts):
                     for i,fx in ii:
@@ -153,9 +159,9 @@ def build(active=True,high=False,springsAt=None,ringPlanEI=1.,ridgeStiff=1.):
         # as the separate final ring analysis. 40 kN/mm support is on the
         # scale of one S355 M24 shaft 3.23 m long, not infinite vertical fixity.
         for p in upperSupports:K[vDO(p,0)][vDO(p,0)]+=(springsAt or {}).get(p,40000)
-        box=w['sections']['collector'];b0,h0,tw=box['B'],box['H'],box['t']
-        tors=4*((b0-tw)*(h0-tw))**2/(2*(b0-tw+h0-tw)/tw)
         for p,q in rings:
+            box=collectorSection(p,q);b0,h0,tw=box['B'],box['H'],box['t']
+            tors=4*((b0-tw)*(h0-tw))**2/(2*(b0-tw+h0-tw)/tw)
             ax=0 if p[1]==q[1] else 1;sg=1 if q[ax]>p[ax] else -1;L=math.dist(p,q)
             tv=[(vDO(p,0),1),(vDO(p,1+ax),sg),(vDO(q,0),1),(vDO(q,1+ax),sg)]
             mat=[[12,6*L,-12,6*L],[6*L,4*L**2,-6*L,2*L**2],[-12,-6*L,12,-6*L],[6*L,2*L**2,-6*L,4*L**2]]
@@ -275,7 +281,7 @@ for p,q in braces:
 def ringMoment(u,p,q):
     L=math.dist(p,q);dx=(q[0]-p[0])/L;dy=(q[1]-p[1])/L
     v1=-dy*u[dof(p,0)]+dx*u[dof(p,1)];v2=-dy*u[dof(q,0)]+dx*u[dof(q,1)]
-    t1=u[dof(p,2)];t2=u[dof(q,2)];EI=Es*w['sections']['collector']['Iminor']
+    t1=u[dof(p,2)];t2=u[dof(q,2)];EI=Es*collectorSection(p,q)['Iminor']
     # Section moment at both ends in the same physical diagram sign.
     return [EI/L*(6*(v1-v2)/L+4*t1+2*t2)/1e6,-EI/L*(6*(v1-v2)/L+2*t1+4*t2)/1e6]
 def caseLoads(case):

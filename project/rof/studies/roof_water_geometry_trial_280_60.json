@@ -1,0 +1,3359 @@
+{
+  "designStatus": "New 350/425 wet geometry,160/190 water and explicit dry caps; original physical roots retained. No added independent inner horizontal face panels yet.",
+  "courtWidthMM": 280,
+  "sections": {
+    "outer": {
+      "A": 12000,
+      "B": 220,
+      "H": 120,
+      "I": 24000000.0,
+      "Iminor": 67600000.0,
+      "MR": 72.727272727,
+      "TR": 83.978220973,
+      "W": 400000.0,
+      "Wminor": 614545.454545455,
+      "lineG": 0.942,
+      "t": 20
+    },
+    "court": {
+      "A": 14400,
+      "B": 280,
+      "H": 120,
+      "I": 30080000.0,
+      "Iminor": 127360000.0,
+      "MR": 91.151515152,
+      "TR": 109.171687265,
+      "W": 501333.333333333,
+      "Wminor": 909714.285714286,
+      "lineG": 1.1304,
+      "t": 20
+    }
+  },
+  "nativeEndParity": 0.0,
+  "portalLocalFlexibilityParity": 0.0,
+  "frozen220SectionParity": null,
+  "portalSourceComparisonMaxDelta": {
+    "0.2": 0.106081119,
+    "0.35": 0.105855859
+  },
+  "portalSourceComparison": {
+    "0.2": {
+      "frozenBounds": {
+        "roofTieKN": [
+          -2.7155,
+          1.2084
+        ],
+        "floorTieKN": [
+          -7.6359,
+          0.5549
+        ],
+        "footVerticalKN": [
+          14.7676,
+          29.9867
+        ],
+        "tieTravelMM": [
+          -19.3612,
+          20.6105
+        ]
+      },
+      "recoveredBounds": {
+        "roofTieKN": [
+          -2.723685526,
+          1.204155413
+        ],
+        "floorTieKN": [
+          -7.606357114,
+          0.560596926
+        ],
+        "footVerticalKN": [
+          14.767598556,
+          29.986650808
+        ],
+        "tieTravelMM": [
+          -19.467281119,
+          20.580073031
+        ]
+      },
+      "unchangedSectionParityRequired": false
+    },
+    "0.35": {
+      "frozenBounds": {
+        "roofTieKN": [
+          -2.7516,
+          1.2269
+        ],
+        "floorTieKN": [
+          -7.6759,
+          0.7873
+        ],
+        "footVerticalKN": [
+          14.7676,
+          29.9867
+        ],
+        "tieTravelMM": [
+          -19.2695,
+          20.5842
+        ]
+      },
+      "recoveredBounds": {
+        "roofTieKN": [
+          -2.762731954,
+          1.219302479
+        ],
+        "floorTieKN": [
+          -7.631049463,
+          0.796869541
+        ],
+        "footVerticalKN": [
+          14.767598556,
+          29.986650812
+        ],
+        "tieTravelMM": [
+          -19.375355859,
+          20.558087002
+        ]
+      },
+      "unchangedSectionParityRequired": false
+    }
+  },
+  "extraVerticalAreaM2": 27.8321,
+  "extraVerticalWindKN": 62.622225,
+  "extraWindAreas": [
+    [
+      "primary outside old 200 overhang",
+      16.2816
+    ],
+    [
+      "lower outside primary",
+      7.914
+    ],
+    [
+      "fixed cap and primary within old 2950 sky",
+      2.9425
+    ],
+    [
+      "south normal",
+      0.185
+    ],
+    [
+      "south normal lower shadow deduction",
+      -0.0375
+    ],
+    [
+      "south normal wider high-level catch",
+      0.052
+    ],
+    [
+      "south relief",
+      0.1475
+    ],
+    [
+      "north normal",
+      0.185
+    ],
+    [
+      "north normal lower shadow deduction",
+      -0.0375
+    ],
+    [
+      "north normal wider high-level catch",
+      0.052
+    ],
+    [
+      "north relief",
+      0.1475
+    ]
+  ],
+  "wetGravityKN": 257.825591051,
+  "independentWaterTributaries": 186,
+  "independentWaterSuperpositionError": 0.0,
+  "waterEnvelopeMethod": "Each gutter tributary and each leader/head water load ranges independently from zero to its full bound. The component bounds need not occur simultaneously.",
+  "dryGravityKN": 99.317244161,
+  "courtModules": [
+    {
+      "name": "primary",
+      "centre": 4550.0,
+      "width": 350.0,
+      "waterDepth": 160.0,
+      "rootAxisZ": 6640.0,
+      "modules": [
+        {
+          "armStation": 4600.0,
+          "pRange": [
+            4550.0,
+            4875.0
+          ],
+          "waterEquivalentLengthMM": 325.0,
+          "waterCentroid": [
+            4518.58974359,
+            4696.794871795
+          ],
+          "waterAreaMM2": 113750.0,
+          "rootStation": 5025.0
+        },
+        {
+          "armStation": 5156.25,
+          "pRange": [
+            4875.0,
+            5437.5
+          ],
+          "waterEquivalentLengthMM": 562.5,
+          "waterCentroid": [
+            4550.0,
+            5156.25
+          ],
+          "waterAreaMM2": 196875.0,
+          "rootStation": 5025.0
+        },
+        {
+          "armStation": 5718.75,
+          "pRange": [
+            5437.5,
+            6000.0
+          ],
+          "waterEquivalentLengthMM": 562.5,
+          "waterCentroid": [
+            4550.0,
+            5718.75
+          ],
+          "waterAreaMM2": 196875.0,
+          "rootStation": 6000.0
+        },
+        {
+          "armStation": 6281.25,
+          "pRange": [
+            6000.0,
+            6562.5
+          ],
+          "waterEquivalentLengthMM": 562.5,
+          "waterCentroid": [
+            4550.0,
+            6281.25
+          ],
+          "waterAreaMM2": 196875.0,
+          "rootStation": 6000.0
+        },
+        {
+          "armStation": 6843.75,
+          "pRange": [
+            6562.5,
+            7125.0
+          ],
+          "waterEquivalentLengthMM": 562.5,
+          "waterCentroid": [
+            4550.0,
+            6843.75
+          ],
+          "waterAreaMM2": 196875.0,
+          "rootStation": 6975.0
+        },
+        {
+          "armStation": 7400.0,
+          "pRange": [
+            7125.0,
+            7450.0
+          ],
+          "waterEquivalentLengthMM": 325.0,
+          "waterCentroid": [
+            4518.58974359,
+            7303.205128205
+          ],
+          "waterAreaMM2": 113750.0,
+          "rootStation": 6975.0
+        }
+      ]
+    },
+    {
+      "name": "lower",
+      "centre": 4587.5,
+      "width": 425.0,
+      "waterDepth": 190.0,
+      "rootAxisZ": 6555.0,
+      "modules": [
+        {
+          "armStation": 4600.0,
+          "pRange": [
+            4587.5,
+            4875.0
+          ],
+          "waterEquivalentLengthMM": 287.5,
+          "waterCentroid": [
+            4535.144927536,
+            4705.072463768
+          ],
+          "waterAreaMM2": 122187.5,
+          "rootStation": 5041.666666667
+        },
+        {
+          "armStation": 5100.0,
+          "pRange": [
+            4875.0,
+            5325.0
+          ],
+          "waterEquivalentLengthMM": 450.0,
+          "waterCentroid": [
+            4587.5,
+            5100.0
+          ],
+          "waterAreaMM2": 191250.0,
+          "rootStation": 5041.666666667
+        },
+        {
+          "armStation": 5550.0,
+          "pRange": [
+            5325.0,
+            5775.0
+          ],
+          "waterEquivalentLengthMM": 450.0,
+          "waterCentroid": [
+            4587.5,
+            5550.0
+          ],
+          "waterAreaMM2": 191250.0,
+          "rootStation": 6000.0
+        },
+        {
+          "armStation": 6000.0,
+          "pRange": [
+            5775.0,
+            6225.0
+          ],
+          "waterEquivalentLengthMM": 450.0,
+          "waterCentroid": [
+            4587.5,
+            6000.0
+          ],
+          "waterAreaMM2": 191250.0,
+          "rootStation": 6000.0
+        },
+        {
+          "armStation": 6450.0,
+          "pRange": [
+            6225.0,
+            6675.0
+          ],
+          "waterEquivalentLengthMM": 450.0,
+          "waterCentroid": [
+            4587.5,
+            6450.0
+          ],
+          "waterAreaMM2": 191250.0,
+          "rootStation": 6000.0
+        },
+        {
+          "armStation": 6900.0,
+          "pRange": [
+            6675.0,
+            7125.0
+          ],
+          "waterEquivalentLengthMM": 450.0,
+          "waterCentroid": [
+            4587.5,
+            6900.0
+          ],
+          "waterAreaMM2": 191250.0,
+          "rootStation": 6958.333333333
+        },
+        {
+          "armStation": 7400.0,
+          "pRange": [
+            7125.0,
+            7412.5
+          ],
+          "waterEquivalentLengthMM": 287.5,
+          "waterCentroid": [
+            4535.144927536,
+            7294.927536232
+          ],
+          "waterAreaMM2": 122187.5,
+          "rootStation": 6958.333333333
+        }
+      ]
+    }
+  ],
+  "courtSupportCassettes": [
+    {
+      "circuit": "primary",
+      "rootStation": 5025.0,
+      "rootAxisZ": 6640.0,
+      "dryKg": 58.5,
+      "actualTributaryMM": 887.5,
+      "qCentroidRange": [
+        3777.5,
+        4800.0
+      ],
+      "pCentroidRange": [
+        4537.5,
+        5512.5
+      ]
+    },
+    {
+      "circuit": "primary",
+      "rootStation": 6000.0,
+      "rootAxisZ": 6640.0,
+      "dryKg": 67.5,
+      "actualTributaryMM": 1125.0,
+      "qCentroidRange": [
+        3777.5,
+        4800.0
+      ],
+      "pCentroidRange": [
+        5437.5,
+        6562.5
+      ]
+    },
+    {
+      "circuit": "primary",
+      "rootStation": 6975.0,
+      "rootAxisZ": 6640.0,
+      "dryKg": 58.5,
+      "actualTributaryMM": 887.5,
+      "qCentroidRange": [
+        3777.5,
+        4800.0
+      ],
+      "pCentroidRange": [
+        6487.5,
+        7462.5
+      ]
+    },
+    {
+      "circuit": "lower",
+      "rootStation": 5041.666666667,
+      "rootAxisZ": 6555.0,
+      "dryKg": 57.5,
+      "actualTributaryMM": 737.5,
+      "qCentroidRange": [
+        3777.5,
+        4800.0
+      ],
+      "pCentroidRange": [
+        4562.5,
+        5520.833333333
+      ]
+    },
+    {
+      "circuit": "lower",
+      "rootStation": 6000.0,
+      "rootAxisZ": 6555.0,
+      "dryKg": 81.0,
+      "actualTributaryMM": 1350.0,
+      "qCentroidRange": [
+        3777.5,
+        4800.0
+      ],
+      "pCentroidRange": [
+        5325.0,
+        6675.0
+      ]
+    },
+    {
+      "circuit": "lower",
+      "rootStation": 6958.333333333,
+      "rootAxisZ": 6555.0,
+      "dryKg": 57.5,
+      "actualTributaryMM": 737.5,
+      "qCentroidRange": [
+        3777.5,
+        4800.0
+      ],
+      "pCentroidRange": [
+        6479.166666667,
+        7437.5
+      ]
+    }
+  ],
+  "independentInnerDryBoundKN": 20.156607,
+  "leaderDryKgEach": 71.719996742,
+  "leaderWaterKgEach": 148.440252882,
+  "loadBounds": {
+    "outerDryKgPerM": [
+      50,
+      50
+    ],
+    "innerDryKgPerM": [
+      60.0,
+      60.0
+    ],
+    "outerBlockedWaterDepthMM": [
+      180,
+      175
+    ],
+    "innerBlockedWaterDepthMM": [
+      160,
+      190
+    ],
+    "outerWetWidthsMM": [
+      350,
+      545
+    ],
+    "innerWetWidthsMM": [
+      350,
+      425
+    ],
+    "innerCentrelineCoordinatesMM": [
+      4550,
+      4587.5
+    ],
+    "outerRootsPerCircuit": 64,
+    "innerRootSpacingMaxMM": 1200,
+    "leaderCount": 6,
+    "leaderIDMM": 150,
+    "leaderWallMM": 2,
+    "leaderMaxLengthM": 8.4,
+    "headDryKgEach": 75,
+    "headWaterKgEach": 40,
+    "normalCatchAlongWidthMM": 450,
+    "normalCatchRadialEnvelopeMM": [
+      1000,
+      1260
+    ],
+    "normalCatchIndependentCentroidYawKNm": 0.114,
+    "innerNormalWindApplicationZMM": 6860,
+    "otherLeaderWindApplicationZMM": 6600,
+    "leaderRoofWindAreaM2Each": 0.375,
+    "leaderComparedWindAreaM2Each": 2.1,
+    "leaderLowerSupportWindKNEach": 3.88125,
+    "leaderLowerSupportWindKNTotalPerAxis": 23.2875,
+    "leaderMaxClampTributaryWindKN": 0.675,
+    "goodsBodyElevationEnvelopeMM": [
+      6000.0,
+      7400.0
+    ]
+  },
+  "maximumSixComponentBalanceError": 1.5e-08,
+  "selectedSpecialsCharacteristicKN": 5.560179923,
+  "addedCourtCollectorGkKN": 3.138744,
+  "supportReactionRanges": [
+    {
+      "xy": [
+        332.5,
+        332.5
+      ],
+      "rangeKN": [
+        -53.266863469,
+        126.162668908
+      ],
+      "controllingCases": [
+        {
+          "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 55,
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 31,
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        332.5,
+        3800
+      ],
+      "rangeKN": [
+        -42.35038966,
+        87.586577766
+      ],
+      "controllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 84,
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.35|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 23,
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        332.5,
+        6000
+      ],
+      "rangeKN": [
+        -47.435436379,
+        103.098637559
+      ],
+      "controllingCases": [
+        {
+          "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 55,
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 81,
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "xy": [
+        332.5,
+        8200
+      ],
+      "rangeKN": [
+        -42.23004572,
+        87.144565613
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 26,
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.35|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 18,
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        332.5,
+        11667.5
+      ],
+      "rangeKN": [
+        -53.190511161,
+        126.092658685
+      ],
+      "controllingCases": [
+        {
+          "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 58,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 28,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        3917.5,
+        3917.5
+      ],
+      "rangeKN": [
+        -112.199197946,
+        201.931105772
+      ],
+      "controllingCases": [
+        {
+          "case": "0.2|partial water down|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 31,
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.2|partial water up|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 55,
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "xy": [
+        3917.5,
+        6000
+      ],
+      "rangeKN": [
+        -80.232860569,
+        149.609894559
+      ],
+      "controllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 6,
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 28,
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        3917.5,
+        8082.5
+      ],
+      "rangeKN": [
+        -113.565570876,
+        199.501561707
+      ],
+      "controllingCases": [
+        {
+          "case": "0.2|partial water down|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 28,
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.2|partial water up|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 58,
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "xy": [
+        4700,
+        332.5
+      ],
+      "rangeKN": [
+        -51.010234928,
+        117.756315525
+      ],
+      "controllingCases": [
+        {
+          "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 69,
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 59,
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        4700,
+        11667.5
+      ],
+      "rangeKN": [
+        -50.967413051,
+        117.754439411
+      ],
+      "controllingCases": [
+        {
+          "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 65,
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 57,
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        5925,
+        8082.5
+      ],
+      "rangeKN": [
+        -81.467664514,
+        147.708232374
+      ],
+      "controllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 3,
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 7,
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        6000,
+        3917.5
+      ],
+      "rangeKN": [
+        -79.763212052,
+        151.693906491
+      ],
+      "controllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 0,
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 10,
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        7300,
+        332.5
+      ],
+      "rangeKN": [
+        -51.977702806,
+        121.522971345
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 55,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 81,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        7300,
+        11667.5
+      ],
+      "rangeKN": [
+        -52.263440162,
+        124.956449571
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 58,
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.35|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 32,
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        8082.5,
+        3917.5
+      ],
+      "rangeKN": [
+        -112.790132809,
+        201.301559351
+      ],
+      "controllingCases": [
+        {
+          "case": "0.2|partial water down|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 10,
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.2|partial water up|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 76,
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "xy": [
+        8082.5,
+        6000
+      ],
+      "rangeKN": [
+        -80.239752621,
+        149.846753762
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 6,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.35|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 31,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        8082.5,
+        8082.5
+      ],
+      "rangeKN": [
+        -112.436777401,
+        199.613207956
+      ],
+      "controllingCases": [
+        {
+          "case": "0.2|partial water down|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 7,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.2|partial water up|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 79,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "xy": [
+        11667.5,
+        332.5
+      ],
+      "rangeKN": [
+        -54.689569495,
+        138.928750204
+      ],
+      "controllingCases": [
+        {
+          "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 76,
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 10,
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        11667.5,
+        3800
+      ],
+      "rangeKN": [
+        -46.435933252,
+        85.950198644
+      ],
+      "controllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 78,
+          "guard": [
+            2,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.35|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 35,
+          "guard": [
+            2,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        11667.5,
+        6000
+      ],
+      "rangeKN": [
+        -47.781820729,
+        105.061470928
+      ],
+      "controllingCases": [
+        {
+          "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 76,
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 59,
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "xy": [
+        11667.5,
+        8200
+      ],
+      "rangeKN": [
+        -45.542705474,
+        86.26173365
+      ],
+      "controllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 80,
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 44,
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        11667.5,
+        11667.5
+      ],
+      "rangeKN": [
+        -54.466090951,
+        135.606766119
+      ],
+      "controllingCases": [
+        {
+          "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 79,
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 7,
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    }
+  ],
+  "portalNormalTieRanges": [
+    {
+      "opening": [
+        "outer-south",
+        2100
+      ],
+      "level": "floor",
+      "xy": [
+        1497.5,
+        332.5
+      ],
+      "rangeKN": [
+        -7.672856609,
+        0.930923625
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 83,
+          "guard": [
+            0,
+            0
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 24,
+          "guard": [
+            0,
+            0
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-south",
+        2100
+      ],
+      "level": "floor",
+      "xy": [
+        2702.5,
+        332.5
+      ],
+      "rangeKN": [
+        -7.767840192,
+        0.916792282
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|partial water down|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 42,
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 38,
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-south",
+        2100
+      ],
+      "level": "roof",
+      "xy": [
+        1497.5,
+        332.5
+      ],
+      "rangeKN": [
+        -2.808504599,
+        1.215596388
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 22,
+          "guard": [
+            0,
+            0
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 37,
+          "guard": [
+            0,
+            0
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-south",
+        2100
+      ],
+      "level": "roof",
+      "xy": [
+        2702.5,
+        332.5
+      ],
+      "rangeKN": [
+        -2.839076995,
+        1.318159674
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 84,
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 23,
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-south",
+        9900
+      ],
+      "level": "floor",
+      "xy": [
+        10502.5,
+        332.5
+      ],
+      "rangeKN": [
+        -7.725463941,
+        0.982669463
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 90,
+          "guard": [
+            1,
+            0
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 17,
+          "guard": [
+            1,
+            0
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-south",
+        9900
+      ],
+      "level": "floor",
+      "xy": [
+        9297.5,
+        332.5
+      ],
+      "rangeKN": [
+        -7.840486938,
+        1.016409007
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|partial water down|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 28,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 58,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-south",
+        9900
+      ],
+      "level": "roof",
+      "xy": [
+        10502.5,
+        332.5
+      ],
+      "rangeKN": [
+        -2.792305603,
+        1.207684558
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 16,
+          "guard": [
+            1,
+            0
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 43,
+          "guard": [
+            1,
+            0
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-south",
+        9900
+      ],
+      "level": "roof",
+      "xy": [
+        9297.5,
+        332.5
+      ],
+      "rangeKN": [
+        -2.860685509,
+        1.336823141
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 71,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 36,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-east",
+        2100
+      ],
+      "level": "floor",
+      "xy": [
+        11667.5,
+        1497.5
+      ],
+      "rangeKN": [
+        -7.727076636,
+        0.97431741
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 80,
+          "guard": [
+            2,
+            0
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 9,
+          "guard": [
+            2,
+            0
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-east",
+        2100
+      ],
+      "level": "floor",
+      "xy": [
+        11667.5,
+        2702.5
+      ],
+      "rangeKN": [
+        -7.827790853,
+        0.952056134
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|partial water down|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 33,
+          "guard": [
+            2,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 55,
+          "guard": [
+            2,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-east",
+        2100
+      ],
+      "level": "roof",
+      "xy": [
+        11667.5,
+        1497.5
+      ],
+      "rangeKN": [
+        -2.823775179,
+        1.212512207
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 37,
+          "guard": [
+            2,
+            0
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 46,
+          "guard": [
+            2,
+            0
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-east",
+        2100
+      ],
+      "level": "roof",
+      "xy": [
+        11667.5,
+        2702.5
+      ],
+      "rangeKN": [
+        -2.785977569,
+        1.298847047
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 87,
+          "guard": [
+            2,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|partial water down|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 95,
+          "guard": [
+            2,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-east",
+        9900
+      ],
+      "level": "floor",
+      "xy": [
+        11667.5,
+        10502.5
+      ],
+      "rangeKN": [
+        -7.705522786,
+        0.976035319
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 78,
+          "guard": [
+            3,
+            0
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 11,
+          "guard": [
+            3,
+            0
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-east",
+        9900
+      ],
+      "level": "floor",
+      "xy": [
+        11667.5,
+        9297.5
+      ],
+      "rangeKN": [
+        -7.756693074,
+        0.916946129
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|partial water down|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 28,
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 58,
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-east",
+        9900
+      ],
+      "level": "roof",
+      "xy": [
+        11667.5,
+        10502.5
+      ],
+      "rangeKN": [
+        -2.81832845,
+        1.239064993
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 46,
+          "guard": [
+            3,
+            0
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 37,
+          "guard": [
+            3,
+            0
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-east",
+        9900
+      ],
+      "level": "roof",
+      "xy": [
+        11667.5,
+        9297.5
+      ],
+      "rangeKN": [
+        -2.77214305,
+        1.314443235
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 92,
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|partial water down|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 87,
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-north",
+        2100
+      ],
+      "level": "floor",
+      "xy": [
+        1497.5,
+        11667.5
+      ],
+      "rangeKN": [
+        -7.665947297,
+        0.937936701
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 93,
+          "guard": [
+            4,
+            0
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 14,
+          "guard": [
+            4,
+            0
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-north",
+        2100
+      ],
+      "level": "floor",
+      "xy": [
+        2702.5,
+        11667.5
+      ],
+      "rangeKN": [
+        -7.761897481,
+        0.909328841
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|partial water down|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 38,
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 69,
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-north",
+        2100
+      ],
+      "level": "roof",
+      "xy": [
+        1497.5,
+        11667.5
+      ],
+      "rangeKN": [
+        -2.809433698,
+        1.250167878
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 19,
+          "guard": [
+            4,
+            0
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 46,
+          "guard": [
+            4,
+            0
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-north",
+        2100
+      ],
+      "level": "roof",
+      "xy": [
+        2702.5,
+        11667.5
+      ],
+      "rangeKN": [
+        -2.839386262,
+        1.355246516
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 74,
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 39,
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-north",
+        9900
+      ],
+      "level": "floor",
+      "xy": [
+        10502.5,
+        11667.5
+      ],
+      "rangeKN": [
+        -7.757267043,
+        0.993454238
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 65,
+          "guard": [
+            5,
+            0
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 42,
+          "guard": [
+            5,
+            0
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-north",
+        9900
+      ],
+      "level": "floor",
+      "xy": [
+        9297.5,
+        11667.5
+      ],
+      "rangeKN": [
+        -7.87832681,
+        1.004690964
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|partial water down|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 24,
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 55,
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-north",
+        9900
+      ],
+      "level": "roof",
+      "xy": [
+        10502.5,
+        11667.5
+      ],
+      "rangeKN": [
+        -2.81201303,
+        1.194127917
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 46,
+          "guard": [
+            5,
+            0
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 19,
+          "guard": [
+            5,
+            0
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-north",
+        9900
+      ],
+      "level": "roof",
+      "xy": [
+        9297.5,
+        11667.5
+      ],
+      "rangeKN": [
+        -2.820863053,
+        1.291722946
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 66,
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 26,
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-west",
+        2100
+      ],
+      "level": "floor",
+      "xy": [
+        332.5,
+        1497.5
+      ],
+      "rangeKN": [
+        -7.710845764,
+        0.978503221
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 57,
+          "guard": [
+            6,
+            0
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 29,
+          "guard": [
+            6,
+            0
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-west",
+        2100
+      ],
+      "level": "floor",
+      "xy": [
+        332.5,
+        2702.5
+      ],
+      "rangeKN": [
+        -7.822650187,
+        0.978643427
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|partial water down|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 11,
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 79,
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-west",
+        2100
+      ],
+      "level": "roof",
+      "xy": [
+        332.5,
+        1497.5
+      ],
+      "rangeKN": [
+        -2.794684768,
+        1.202818067
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 25,
+          "guard": [
+            6,
+            0
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 16,
+          "guard": [
+            6,
+            0
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-west",
+        2100
+      ],
+      "level": "roof",
+      "xy": [
+        332.5,
+        2702.5
+      ],
+      "rangeKN": [
+        -2.781296604,
+        1.335504241
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 74,
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|partial water down|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 66,
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-west",
+        9900
+      ],
+      "level": "floor",
+      "xy": [
+        332.5,
+        10502.5
+      ],
+      "rangeKN": [
+        -7.721665323,
+        0.953148876
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 59,
+          "guard": [
+            7,
+            0
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 33,
+          "guard": [
+            7,
+            0
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-west",
+        9900
+      ],
+      "level": "floor",
+      "xy": [
+        332.5,
+        9297.5
+      ],
+      "rangeKN": [
+        -7.790663158,
+        0.951870295
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|partial water down|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 10,
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 76,
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-west",
+        9900
+      ],
+      "level": "roof",
+      "xy": [
+        332.5,
+        10502.5
+      ],
+      "rangeKN": [
+        -2.785902119,
+        1.19279172
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 16,
+          "guard": [
+            7,
+            0
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 25,
+          "guard": [
+            7,
+            0
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "opening": [
+        "outer-west",
+        9900
+      ],
+      "level": "roof",
+      "xy": [
+        332.5,
+        9297.5
+      ],
+      "rangeKN": [
+        -2.800732976,
+        1.313157569
+      ],
+      "controllingCases": [
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 62,
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.35|partial water down|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 74,
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    }
+  ],
+  "maximumPortalNormalTieKN": {
+    "floor": 7.87832681,
+    "roof": 2.860685509
+  },
+  "worstUpperTensionKN": 113.565570876,
+  "worstUpperCompressionKN": 201.931105772,
+  "existingM24ComparisonResistanceKN": 113.922727273,
+  "upperCompressionResistanceKN": null,
+  "upperCompressionDuty": "Qualify actual steel load introduction, finite contact and bedding, core material/section, spreading, splitting, eccentricity/slenderness and the downstream floor/foundation route. The stiffness spring and historical 200 kN collector screen supply no receiving resistance.",
+  "comparisonScreens": {
+    "outer": true,
+    "court": true,
+    "M24": true,
+    "floorTies": true,
+    "roofTies": true
+  },
+  "worst": {
+    "outer": {
+      "interaction": 0.869815534,
+      "windIndex": 37,
+      "programme": [
+        5,
+        3
+      ],
+      "guard": [
+        2,
+        0
+      ],
+      "guardSign": 1,
+      "actions": [
+        -7.002804844,
+        -4.782226908,
+        5.796496776,
+        -12.674694311,
+        -38.286917613,
+        11.224675678
+      ],
+      "boundedActions": {
+        "M_kNm": 43.035446276,
+        "T_kNm": 23.581731302,
+        "V_kN": 25.850687065,
+        "yaw_kNm": 18.696936864,
+        "N_kN": 55.975970266,
+        "planShear_kN": 13.188656987
+      },
+      "ring": "outer",
+      "segment": [
+        [
+          11667.5,
+          332.5
+        ],
+        [
+          11667.5,
+          752.5
+        ]
+      ],
+      "point": [
+        11667.5,
+        332.5
+      ],
+      "side": "right",
+      "case": "0.35|partial water down|specials=0.0|body=independent exposed-panel bounds"
+    },
+    "court": {
+      "interaction": 0.925430602,
+      "windIndex": 35,
+      "programme": [
+        5,
+        1
+      ],
+      "guard": [
+        1,
+        1
+      ],
+      "guardSign": 1,
+      "actions": [
+        0.616336278,
+        4.319269135,
+        1.242790059,
+        13.719996116,
+        7.258433776,
+        -16.977667998
+      ],
+      "boundedActions": {
+        "M_kNm": 60.339558798,
+        "T_kNm": 30.614379801,
+        "V_kN": 70.364068319,
+        "yaw_kNm": 16.461132104,
+        "N_kN": 25.246391827,
+        "planShear_kN": 21.91127491
+      },
+      "ring": "court",
+      "segment": [
+        [
+          7300,
+          3917.5
+        ],
+        [
+          7540,
+          3917.5
+        ]
+      ],
+      "point": [
+        7300.0,
+        3917.5
+      ],
+      "side": "right",
+      "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds"
+    }
+  },
+  "cases": {
+    "0.2|partial water down|specials=0.0|body=independent exposed-panel bounds": {
+      "outer": {
+        "interaction": 0.869441964,
+        "windIndex": 37,
+        "programme": [
+          5,
+          3
+        ],
+        "guard": [
+          2,
+          0
+        ],
+        "guardSign": 1,
+        "actions": [
+          -7.000215958,
+          -4.783162727,
+          5.795572729,
+          -12.632286992,
+          -38.285440782,
+          11.174484657
+        ],
+        "boundedActions": {
+          "M_kNm": 43.034437352,
+          "T_kNm": 23.582576249,
+          "V_kN": 25.850320462,
+          "yaw_kNm": 18.65547485,
+          "N_kN": 55.969583085,
+          "planShear_kN": 13.140441316
+        },
+        "ring": "outer",
+        "segment": [
+          [
+            11667.5,
+            332.5
+          ],
+          [
+            11667.5,
+            752.5
+          ]
+        ],
+        "point": [
+          11667.5,
+          332.5
+        ],
+        "side": "right"
+      },
+      "court": {
+        "interaction": 0.924791857,
+        "windIndex": 35,
+        "programme": [
+          5,
+          1
+        ],
+        "guard": [
+          1,
+          1
+        ],
+        "guardSign": 1,
+        "actions": [
+          0.551606616,
+          4.294919286,
+          1.215095751,
+          13.719940188,
+          7.3544139,
+          -16.97843123
+        ],
+        "boundedActions": {
+          "M_kNm": 60.274829137,
+          "T_kNm": 30.590029952,
+          "V_kN": 70.391762627,
+          "yaw_kNm": 16.461076176,
+          "N_kN": 25.342371951,
+          "planShear_kN": 21.912038142
+        },
+        "ring": "court",
+        "segment": [
+          [
+            7300,
+            3917.5
+          ],
+          [
+            7540,
+            3917.5
+          ]
+        ],
+        "point": [
+          7300.0,
+          3917.5
+        ],
+        "side": "right"
+      }
+    },
+    "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds": {
+      "outer": {
+        "interaction": 0.869323967,
+        "windIndex": 37,
+        "programme": [
+          5,
+          3
+        ],
+        "guard": [
+          2,
+          0
+        ],
+        "guardSign": 1,
+        "actions": [
+          -7.001661446,
+          -4.777395827,
+          5.788989583,
+          -12.634646632,
+          -38.001865156,
+          11.175113558
+        ],
+        "boundedActions": {
+          "M_kNm": 43.035882839,
+          "T_kNm": 23.57680935,
+          "V_kN": 25.843737316,
+          "yaw_kNm": 18.65783449,
+          "N_kN": 55.686007458,
+          "planShear_kN": 13.141070216
+        },
+        "ring": "outer",
+        "segment": [
+          [
+            11667.5,
+            332.5
+          ],
+          [
+            11667.5,
+            752.5
+          ]
+        ],
+        "point": [
+          11667.5,
+          332.5
+        ],
+        "side": "right"
+      },
+      "court": {
+        "interaction": 0.925430602,
+        "windIndex": 35,
+        "programme": [
+          5,
+          1
+        ],
+        "guard": [
+          1,
+          1
+        ],
+        "guardSign": 1,
+        "actions": [
+          0.616336278,
+          4.319269135,
+          1.242790059,
+          13.719996116,
+          7.258433776,
+          -16.977667998
+        ],
+        "boundedActions": {
+          "M_kNm": 60.339558798,
+          "T_kNm": 30.614379801,
+          "V_kN": 70.364068319,
+          "yaw_kNm": 16.461132104,
+          "N_kN": 25.246391827,
+          "planShear_kN": 21.91127491
+        },
+        "ring": "court",
+        "segment": [
+          [
+            7300,
+            3917.5
+          ],
+          [
+            7540,
+            3917.5
+          ]
+        ],
+        "point": [
+          7300.0,
+          3917.5
+        ],
+        "side": "right"
+      }
+    },
+    "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds": {
+      "outer": {
+        "interaction": 0.80368708,
+        "windIndex": 71,
+        "programme": [
+          3,
+          3
+        ],
+        "guard": [
+          6,
+          1
+        ],
+        "guardSign": 1,
+        "actions": [
+          2.807683291,
+          0.063728464,
+          -2.117927009,
+          -9.511405537,
+          11.290587688,
+          6.819793504
+        ],
+        "boundedActions": {
+          "M_kNm": 45.217571274,
+          "T_kNm": 15.118401025,
+          "V_kN": 47.737642828,
+          "yaw_kNm": 11.393726904,
+          "N_kN": 17.062925258,
+          "planShear_kN": 8.075726183
+        },
+        "ring": "outer",
+        "segment": [
+          [
+            11667.5,
+            4700
+          ],
+          [
+            11667.5,
+            6000
+          ]
+        ],
+        "point": [
+          11667.5,
+          4700.0
+        ],
+        "side": "right"
+      },
+      "court": {
+        "interaction": 0.920732034,
+        "windIndex": 35,
+        "programme": [
+          5,
+          1
+        ],
+        "guard": [
+          1,
+          1
+        ],
+        "guardSign": 1,
+        "actions": [
+          0.596289242,
+          3.389151919,
+          0.482877617,
+          13.694220549,
+          4.110566044,
+          -17.098331871
+        ],
+        "boundedActions": {
+          "M_kNm": 60.319511762,
+          "T_kNm": 29.684262585,
+          "V_kN": 71.123980761,
+          "yaw_kNm": 16.435356537,
+          "N_kN": 22.098524095,
+          "planShear_kN": 22.031938783
+        },
+        "ring": "court",
+        "segment": [
+          [
+            7300,
+            3917.5
+          ],
+          [
+            7540,
+            3917.5
+          ]
+        ],
+        "point": [
+          7300.0,
+          3917.5
+        ],
+        "side": "right"
+      }
+    },
+    "0.2|partial water up|specials=1.35|body=independent exposed-panel bounds": {
+      "outer": {
+        "interaction": 0.804449233,
+        "windIndex": 71,
+        "programme": [
+          3,
+          3
+        ],
+        "guard": [
+          6,
+          1
+        ],
+        "guardSign": 1,
+        "actions": [
+          2.853854716,
+          0.063777233,
+          -2.18305002,
+          -9.509637241,
+          11.57499241,
+          6.819778525
+        ],
+        "boundedActions": {
+          "M_kNm": 45.2637427,
+          "T_kNm": 15.118352257,
+          "V_kN": 47.802765839,
+          "yaw_kNm": 11.391958607,
+          "N_kN": 17.347329981,
+          "planShear_kN": 8.075711205
+        },
+        "ring": "outer",
+        "segment": [
+          [
+            11667.5,
+            4700
+          ],
+          [
+            11667.5,
+            6000
+          ]
+        ],
+        "point": [
+          11667.5,
+          4700.0
+        ],
+        "side": "right"
+      },
+      "court": {
+        "interaction": 0.921372021,
+        "windIndex": 35,
+        "programme": [
+          5,
+          1
+        ],
+        "guard": [
+          1,
+          1
+        ],
+        "guardSign": 1,
+        "actions": [
+          0.661018904,
+          3.413501768,
+          0.510571925,
+          13.694276477,
+          4.01458592,
+          -17.097568639
+        ],
+        "boundedActions": {
+          "M_kNm": 60.384241424,
+          "T_kNm": 29.708612434,
+          "V_kN": 71.096286453,
+          "yaw_kNm": 16.435412465,
+          "N_kN": 22.002543972,
+          "planShear_kN": 22.031175551
+        },
+        "ring": "court",
+        "segment": [
+          [
+            7300,
+            3917.5
+          ],
+          [
+            7540,
+            3917.5
+          ]
+        ],
+        "point": [
+          7300.0,
+          3917.5
+        ],
+        "side": "right"
+      }
+    },
+    "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds": {
+      "outer": {
+        "interaction": 0.637828439,
+        "windIndex": 30,
+        "programme": [
+          4,
+          3
+        ],
+        "guard": [
+          2,
+          0
+        ],
+        "guardSign": 1,
+        "actions": [
+          3.554650173,
+          1.510292035,
+          -2.694199404,
+          -11.469878341,
+          -43.047398316,
+          10.393788985
+        ],
+        "boundedActions": {
+          "M_kNm": 31.432314443,
+          "T_kNm": 15.404556362,
+          "V_kN": 13.197022838,
+          "yaw_kNm": 15.165315192,
+          "N_kN": 51.954299012,
+          "planShear_kN": 11.601971502
+        },
+        "ring": "outer",
+        "segment": [
+          [
+            11667.5,
+            332.5
+          ],
+          [
+            11667.5,
+            752.5
+          ]
+        ],
+        "point": [
+          11667.5,
+          332.5
+        ],
+        "side": "right"
+      },
+      "court": {
+        "interaction": 0.626329471,
+        "windIndex": 24,
+        "programme": [
+          3,
+          4
+        ],
+        "guard": [
+          5,
+          1
+        ],
+        "guardSign": 1,
+        "actions": [
+          -2.02097157,
+          3.947761516,
+          1.756599598,
+          27.261658963,
+          7.770094115,
+          -30.25273
+        ],
+        "boundedActions": {
+          "M_kNm": 30.7563211,
+          "T_kNm": 22.895125176,
+          "V_kN": 37.305770435,
+          "yaw_kNm": 28.879913514,
+          "N_kN": 14.600759865,
+          "planShear_kN": 32.14588753
+        },
+        "ring": "court",
+        "segment": [
+          [
+            3917.5,
+            8082.5
+          ],
+          [
+            4460,
+            8082.5
+          ]
+        ],
+        "point": [
+          3917.5,
+          8082.5
+        ],
+        "side": "right"
+      }
+    },
+    "0.35|partial water down|specials=0.0|body=independent exposed-panel bounds": {
+      "outer": {
+        "interaction": 0.869815534,
+        "windIndex": 37,
+        "programme": [
+          5,
+          3
+        ],
+        "guard": [
+          2,
+          0
+        ],
+        "guardSign": 1,
+        "actions": [
+          -7.002804844,
+          -4.782226908,
+          5.796496776,
+          -12.674694311,
+          -38.286917613,
+          11.224675678
+        ],
+        "boundedActions": {
+          "M_kNm": 43.035446276,
+          "T_kNm": 23.581731302,
+          "V_kN": 25.850687065,
+          "yaw_kNm": 18.696936864,
+          "N_kN": 55.975970266,
+          "planShear_kN": 13.188656987
+        },
+        "ring": "outer",
+        "segment": [
+          [
+            11667.5,
+            332.5
+          ],
+          [
+            11667.5,
+            752.5
+          ]
+        ],
+        "point": [
+          11667.5,
+          332.5
+        ],
+        "side": "right"
+      },
+      "court": {
+        "interaction": 0.924772035,
+        "windIndex": 35,
+        "programme": [
+          5,
+          1
+        ],
+        "guard": [
+          1,
+          1
+        ],
+        "guardSign": 1,
+        "actions": [
+          0.558686925,
+          4.289948124,
+          1.221629733,
+          13.722938097,
+          7.267693063,
+          -16.945696953
+        ],
+        "boundedActions": {
+          "M_kNm": 60.280738613,
+          "T_kNm": 30.58666719,
+          "V_kN": 70.385658529,
+          "yaw_kNm": 16.459949138,
+          "N_kN": 25.256515531,
+          "planShear_kN": 21.88697906
+        },
+        "ring": "court",
+        "segment": [
+          [
+            7300,
+            3917.5
+          ],
+          [
+            7540,
+            3917.5
+          ]
+        ],
+        "point": [
+          7300.0,
+          3917.5
+        ],
+        "side": "right"
+      }
+    },
+    "0.35|partial water down|specials=1.35|body=independent exposed-panel bounds": {
+      "outer": {
+        "interaction": 0.86969766,
+        "windIndex": 37,
+        "programme": [
+          5,
+          3
+        ],
+        "guard": [
+          2,
+          0
+        ],
+        "guardSign": 1,
+        "actions": [
+          -7.004250118,
+          -4.776459995,
+          5.789913549,
+          -12.677067062,
+          -38.003352625,
+          11.22532187
+        ],
+        "boundedActions": {
+          "M_kNm": 43.03689155,
+          "T_kNm": 23.575964389,
+          "V_kN": 25.844103838,
+          "yaw_kNm": 18.699309615,
+          "N_kN": 55.692405277,
+          "planShear_kN": 13.189303179
+        },
+        "ring": "outer",
+        "segment": [
+          [
+            11667.5,
+            332.5
+          ],
+          [
+            11667.5,
+            752.5
+          ]
+        ],
+        "point": [
+          11667.5,
+          332.5
+        ],
+        "side": "right"
+      },
+      "court": {
+        "interaction": 0.925410796,
+        "windIndex": 35,
+        "programme": [
+          5,
+          1
+        ],
+        "guard": [
+          1,
+          1
+        ],
+        "guardSign": 1,
+        "actions": [
+          0.623417102,
+          4.3142981,
+          1.249324647,
+          13.722992652,
+          7.171706259,
+          -16.94493453
+        ],
+        "boundedActions": {
+          "M_kNm": 60.34546879,
+          "T_kNm": 30.611017166,
+          "V_kN": 70.357963616,
+          "yaw_kNm": 16.460003693,
+          "N_kN": 25.160528727,
+          "planShear_kN": 21.886216636
+        },
+        "ring": "court",
+        "segment": [
+          [
+            7300,
+            3917.5
+          ],
+          [
+            7540,
+            3917.5
+          ]
+        ],
+        "point": [
+          7300.0,
+          3917.5
+        ],
+        "side": "right"
+      }
+    },
+    "0.35|partial water up|specials=0.0|body=independent exposed-panel bounds": {
+      "outer": {
+        "interaction": 0.803910895,
+        "windIndex": 71,
+        "programme": [
+          3,
+          3
+        ],
+        "guard": [
+          6,
+          1
+        ],
+        "guardSign": 1,
+        "actions": [
+          2.803686034,
+          0.065190909,
+          -2.114599558,
+          -9.551400405,
+          11.172498342,
+          6.836317914
+        ],
+        "boundedActions": {
+          "M_kNm": 45.213461959,
+          "T_kNm": 15.116880972,
+          "V_kN": 47.734315138,
+          "yaw_kNm": 11.433606733,
+          "N_kN": 16.949970892,
+          "planShear_kN": 8.092314487
+        },
+        "ring": "outer",
+        "segment": [
+          [
+            11667.5,
+            4700
+          ],
+          [
+            11667.5,
+            6000
+          ]
+        ],
+        "point": [
+          11667.5,
+          4700.0
+        ],
+        "side": "right"
+      },
+      "court": {
+        "interaction": 0.92071934,
+        "windIndex": 35,
+        "programme": [
+          5,
+          1
+        ],
+        "guard": [
+          1,
+          1
+        ],
+        "guardSign": 1,
+        "actions": [
+          0.603359599,
+          3.384500624,
+          0.489478522,
+          13.698076355,
+          4.023502034,
+          -17.067666324
+        ],
+        "boundedActions": {
+          "M_kNm": 60.325411287,
+          "T_kNm": 29.68121969,
+          "V_kN": 71.117809741,
+          "yaw_kNm": 16.435087396,
+          "N_kN": 22.012324502,
+          "planShear_kN": 22.00894843
+        },
+        "ring": "court",
+        "segment": [
+          [
+            7300,
+            3917.5
+          ],
+          [
+            7540,
+            3917.5
+          ]
+        ],
+        "point": [
+          7300.0,
+          3917.5
+        ],
+        "side": "right"
+      }
+    },
+    "0.35|partial water up|specials=1.35|body=independent exposed-panel bounds": {
+      "outer": {
+        "interaction": 0.804673082,
+        "windIndex": 71,
+        "programme": [
+          3,
+          3
+        ],
+        "guard": [
+          6,
+          1
+        ],
+        "guardSign": 1,
+        "actions": [
+          2.849857,
+          0.065239679,
+          -2.179722169,
+          -9.549635436,
+          11.456893204,
+          6.836302938
+        ],
+        "boundedActions": {
+          "M_kNm": 45.259632925,
+          "T_kNm": 15.116832203,
+          "V_kN": 47.799437749,
+          "yaw_kNm": 11.431841765,
+          "N_kN": 17.234365753,
+          "planShear_kN": 8.092299512
+        },
+        "ring": "outer",
+        "segment": [
+          [
+            11667.5,
+            4700
+          ],
+          [
+            11667.5,
+            6000
+          ]
+        ],
+        "point": [
+          11667.5,
+          4700.0
+        ],
+        "side": "right"
+      },
+      "court": {
+        "interaction": 0.921359344,
+        "windIndex": 35,
+        "programme": [
+          5,
+          1
+        ],
+        "guard": [
+          1,
+          1
+        ],
+        "guardSign": 1,
+        "actions": [
+          0.668089775,
+          3.4088506,
+          0.517173435,
+          13.698130909,
+          3.92751523,
+          -17.0669039
+        ],
+        "boundedActions": {
+          "M_kNm": 60.390141463,
+          "T_kNm": 29.705569666,
+          "V_kN": 71.090114827,
+          "yaw_kNm": 16.43514195,
+          "N_kN": 21.916337699,
+          "planShear_kN": 22.008186007
+        },
+        "ring": "court",
+        "segment": [
+          [
+            7300,
+            3917.5
+          ],
+          [
+            7540,
+            3917.5
+          ]
+        ],
+        "point": [
+          7300.0,
+          3917.5
+        ],
+        "side": "right"
+      }
+    },
+    "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds": {
+      "outer": {
+        "interaction": 0.637804253,
+        "windIndex": 30,
+        "programme": [
+          4,
+          3
+        ],
+        "guard": [
+          2,
+          0
+        ],
+        "guardSign": 1,
+        "actions": [
+          3.548056259,
+          1.511041491,
+          -2.691802479,
+          -11.478641925,
+          -43.006026969,
+          10.396726695
+        ],
+        "boundedActions": {
+          "M_kNm": 31.423398195,
+          "T_kNm": 15.404518531,
+          "V_kN": 13.193693962,
+          "yaw_kNm": 15.178162359,
+          "N_kN": 51.921961334,
+          "planShear_kN": 11.602986618
+        },
+        "ring": "outer",
+        "segment": [
+          [
+            11667.5,
+            332.5
+          ],
+          [
+            11667.5,
+            752.5
+          ]
+        ],
+        "point": [
+          11667.5,
+          332.5
+        ],
+        "side": "right"
+      },
+      "court": {
+        "interaction": 0.626205073,
+        "windIndex": 24,
+        "programme": [
+          3,
+          4
+        ],
+        "guard": [
+          5,
+          1
+        ],
+        "guardSign": 1,
+        "actions": [
+          -2.01605836,
+          3.946425388,
+          1.752991325,
+          27.252584929,
+          7.734828669,
+          -30.253588286
+        ],
+        "boundedActions": {
+          "M_kNm": 30.751100202,
+          "T_kNm": 22.893859564,
+          "V_kN": 37.3074082,
+          "yaw_kNm": 28.867197312,
+          "N_kN": 14.568247385,
+          "planShear_kN": 32.146799531
+        },
+        "ring": "court",
+        "segment": [
+          [
+            3917.5,
+            8082.5
+          ],
+          [
+            4460,
+            8082.5
+          ]
+        ],
+        "point": [
+          3917.5,
+          8082.5
+        ],
+        "side": "right"
+      }
+    }
+  },
+  "sourceHashes": {
+    "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+    "project/str/studies/current-house-ring-return.py": "e0e81c445ae210fc43f3335f1a6d8aac6faa7026af755fa4f1282eceeaa39cb6",
+    "project/str/studies/reconciled-corner-portals.py": "a0c158fbff68bc250e6ab64ab6251cc396abc7efb6ef3f398325629e678b92bd",
+    "project/str/studies/reconciled-slate-roof.py": "7f42a9c530092e077e5052f5e1f0c1872186790726cda31bb0a800902e031643",
+    "project/mat/studies/whole-envelope.json": "a7d959b109a55cbf7bd8538894bcbc942ce9de84b2b40259530f6794f6665e15",
+    "project/str/studies/reconciled-house-interface.json": "ae17f6de977de58ae54f25edfc67c48c36f348cffc288e839f25a8b4143c16cf",
+    "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+    "project/rof/studies/roof_water_geometry_trial.py": "7212e2883776773c0967b38feeb60cf7a2de71e6ce1ad7d433876e2e0a6361e5"
+  },
+  "limits": [
+    "Source independent heel intervals remain a bounded stress screen.",
+    "Horizontal bodies use a 1400 mm high independent projected-panel envelope, with every force centroid within its four endpoint extremes and zero-to-full pressure area.",
+    "Complete leader wind is compared at the roof. The lower 6.9 m facade/floor support load and connection schedule remains an explicit separate receipt.",
+    "Root connections, masonry restraint, fabrication and site/load qualification remain separate."
+  ]
+}

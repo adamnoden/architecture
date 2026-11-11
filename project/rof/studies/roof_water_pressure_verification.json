@@ -1,0 +1,19 @@
+{
+  "status": "PASS: exact stdlib --check on the frozen complete-export280x120x20 installed and enlargedfinite144 failure receipts",
+  "commands": [
+    "python -S project/rof/studies/roof_water_joined_pressure_trial.py --court-width=280 --inner-dry-kg-per-m=60 --check",
+    "python -S project/rof/studies/roof_water_joined_pressure_maintenance.py --scope finite --court-width 280 --inner-dry-kg-per-m 60 --check"
+  ],
+  "exitCodes": [
+    0,
+    0
+  ],
+  "sourceAndResultSHA256": {
+    "project/rof/studies/roof_water_joined_pressure_trial.py": "e442c83bc8dfb8bd91eb44f27fed25724db3e7fa74e0889b305dc35798b30d48",
+    "project/rof/studies/roof_water_joined_pressure_trial_280_60.json": "c7539f46b8a01f3841504bc7ced162f21e4a6a55e2c2dfc47b1e0c8d1799a52d",
+    "project/rof/studies/roof_water_joined_pressure_maintenance.py": "7175bc59448b3951715f3e82c3b2d7bd1668a279cc73ba55bba7efaaf33266d3",
+    "project/rof/studies/roof_water_joined_pressure_maintenance_280_60_finite.json": "7f9618dfd670f0ba306b4d24ae7380f4e3b1ecd8d1d78803bef92692ebd4072f"
+  },
+  "checkpointPatchSHA256": "ddd2432dad7981ed7b59383a6fd98b4320954c8d8c8dc397bbc17898c357df4a",
+  "qualification": "These verify reproducibility of retained failed numerical comparisons. Known missing real lap/baffle wind and unresolved force-return/receiver/physical stiffness claims remain."
+}

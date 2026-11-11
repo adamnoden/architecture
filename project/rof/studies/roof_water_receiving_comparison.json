@@ -1,0 +1,1535 @@
+{
+  "role": "Receiving action comparison at unchanged physical roof support stations; no receiving resistance is selected.",
+  "baselineCourtWidthMM": 220,
+  "joinedCourtWidthMM": 260,
+  "stationCount": 22,
+  "stations": [
+    {
+      "xy": [
+        332.5,
+        332.5
+      ],
+      "originalRangeKN": [
+        -47.749303251,
+        98.730954064
+      ],
+      "joinedRangeKN": [
+        -53.244381138,
+        125.957948789
+      ],
+      "compressionIncreaseKN": 27.226994725,
+      "tensionIncreaseKN": 5.495077887,
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 55,
+          "programme": [
+            1,
+            1
+          ],
+          "guard": [
+            2,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 31,
+          "programme": [
+            4,
+            4
+          ],
+          "guard": [
+            2,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "joinedControllingCases": [
+        {
+          "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 55,
+          "guard": [
+            2,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 31,
+          "guard": [
+            2,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        332.5,
+        3800
+      ],
+      "originalRangeKN": [
+        -40.160551187,
+        70.890009131
+      ],
+      "joinedRangeKN": [
+        -42.355145868,
+        87.538097045
+      ],
+      "compressionIncreaseKN": 16.648087914,
+      "tensionIncreaseKN": 2.194594681,
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 84,
+          "programme": [
+            5,
+            2
+          ],
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 23,
+          "programme": [
+            3,
+            3
+          ],
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "joinedControllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 84,
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.35|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 23,
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        332.5,
+        6000
+      ],
+      "originalRangeKN": [
+        -45.413785934,
+        90.108394208
+      ],
+      "joinedRangeKN": [
+        -47.399502214,
+        103.097126463
+      ],
+      "compressionIncreaseKN": 12.988732255,
+      "tensionIncreaseKN": 1.98571628,
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 59,
+          "programme": [
+            1,
+            5
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 81,
+          "programme": [
+            4,
+            6
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "joinedControllingCases": [
+        {
+          "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 55,
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 81,
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "xy": [
+        332.5,
+        8200
+      ],
+      "originalRangeKN": [
+        -40.194164133,
+        70.687432444
+      ],
+      "joinedRangeKN": [
+        -42.244658863,
+        87.09111416
+      ],
+      "compressionIncreaseKN": 16.403681716,
+      "tensionIncreaseKN": 2.05049473,
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 95,
+          "programme": [
+            6,
+            6
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 18,
+          "programme": [
+            2,
+            5
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "joinedControllingCases": [
+        {
+          "case": "0.35|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 26,
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.35|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 18,
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        332.5,
+        11667.5
+      ],
+      "originalRangeKN": [
+        -47.737310795,
+        98.727239926
+      ],
+      "joinedRangeKN": [
+        -53.162020326,
+        125.88323559
+      ],
+      "compressionIncreaseKN": 27.155995664,
+      "tensionIncreaseKN": 5.424709531,
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 58,
+          "programme": [
+            1,
+            4
+          ],
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 28,
+          "programme": [
+            4,
+            1
+          ],
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "joinedControllingCases": [
+        {
+          "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 58,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 28,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        3917.5,
+        3917.5
+      ],
+      "originalRangeKN": [
+        -105.940128545,
+        195.254262108
+      ],
+      "joinedRangeKN": [
+        -111.900883414,
+        201.47583939
+      ],
+      "compressionIncreaseKN": 6.221577282,
+      "tensionIncreaseKN": 5.960754869,
+      "originalControllingCases": [
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 31,
+          "programme": [
+            4,
+            4
+          ],
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 55,
+          "programme": [
+            1,
+            1
+          ],
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "joinedControllingCases": [
+        {
+          "case": "0.2|partial water down|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 31,
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.2|partial water up|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 55,
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "xy": [
+        3917.5,
+        6000
+      ],
+      "originalRangeKN": [
+        -74.414478505,
+        133.593356869
+      ],
+      "joinedRangeKN": [
+        -79.919984345,
+        146.913424786
+      ],
+      "compressionIncreaseKN": 13.320067917,
+      "tensionIncreaseKN": 5.50550584,
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 6,
+          "programme": [
+            1,
+            0
+          ],
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 31,
+          "programme": [
+            4,
+            4
+          ],
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "joinedControllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 6,
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 28,
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        3917.5,
+        8082.5
+      ],
+      "originalRangeKN": [
+        -106.894050731,
+        194.995722113
+      ],
+      "joinedRangeKN": [
+        -113.229984007,
+        199.086541276
+      ],
+      "compressionIncreaseKN": 4.090819163,
+      "tensionIncreaseKN": 6.335933276,
+      "originalControllingCases": [
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 28,
+          "programme": [
+            4,
+            1
+          ],
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 58,
+          "programme": [
+            1,
+            4
+          ],
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "joinedControllingCases": [
+        {
+          "case": "0.2|partial water down|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 28,
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.2|partial water up|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 58,
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "xy": [
+        4700,
+        332.5
+      ],
+      "originalRangeKN": [
+        -46.074572124,
+        96.837110899
+      ],
+      "joinedRangeKN": [
+        -50.986001008,
+        117.751367746
+      ],
+      "compressionIncreaseKN": 20.914256847,
+      "tensionIncreaseKN": 4.911428884,
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original stripped suction",
+          "windIndex": 69,
+          "programme": [
+            3,
+            1
+          ],
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 66,
+          "programme": [
+            2,
+            5
+          ],
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "joinedControllingCases": [
+        {
+          "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 69,
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 59,
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        4700,
+        11667.5
+      ],
+      "originalRangeKN": [
+        -46.07524877,
+        97.189040034
+      ],
+      "joinedRangeKN": [
+        -50.947528054,
+        117.742177447
+      ],
+      "compressionIncreaseKN": 20.553137413,
+      "tensionIncreaseKN": 4.872279284,
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original stripped suction",
+          "windIndex": 65,
+          "programme": [
+            2,
+            4
+          ],
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 23,
+          "programme": [
+            3,
+            3
+          ],
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "joinedControllingCases": [
+        {
+          "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 65,
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 9,
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        5925,
+        8082.5
+      ],
+      "originalRangeKN": [
+        -74.357454089,
+        133.826073621
+      ],
+      "joinedRangeKN": [
+        -81.186800802,
+        145.008443434
+      ],
+      "compressionIncreaseKN": 11.182369813,
+      "tensionIncreaseKN": 6.829346713,
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 3,
+          "programme": [
+            0,
+            4
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 7,
+          "programme": [
+            1,
+            1
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "joinedControllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 3,
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 7,
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        6000,
+        3917.5
+      ],
+      "originalRangeKN": [
+        -74.287089141,
+        133.671040523
+      ],
+      "joinedRangeKN": [
+        -79.459015368,
+        149.026304423
+      ],
+      "compressionIncreaseKN": 15.3552639,
+      "tensionIncreaseKN": 5.171926227,
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 0,
+          "programme": [
+            0,
+            1
+          ],
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 10,
+          "programme": [
+            1,
+            4
+          ],
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "joinedControllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 0,
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 10,
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        7300,
+        332.5
+      ],
+      "originalRangeKN": [
+        -46.057397403,
+        97.176829602
+      ],
+      "joinedRangeKN": [
+        -51.96524627,
+        121.509908181
+      ],
+      "compressionIncreaseKN": 24.333078579,
+      "tensionIncreaseKN": 5.907848867,
+      "originalControllingCases": [
+        {
+          "crack": 0.35,
+          "mode": "original stripped suction",
+          "windIndex": 83,
+          "programme": [
+            5,
+            1
+          ],
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 47,
+          "programme": [
+            6,
+            6
+          ],
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "joinedControllingCases": [
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 55,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 33,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        7300,
+        11667.5
+      ],
+      "originalRangeKN": [
+        -46.047982504,
+        96.835967781
+      ],
+      "joinedRangeKN": [
+        -52.243838589,
+        124.955839174
+      ],
+      "compressionIncreaseKN": 28.119871393,
+      "tensionIncreaseKN": 6.195856085,
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original stripped suction",
+          "windIndex": 93,
+          "programme": [
+            6,
+            4
+          ],
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 36,
+          "programme": [
+            5,
+            2
+          ],
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "joinedControllingCases": [
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 58,
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.35|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 32,
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        8082.5,
+        3917.5
+      ],
+      "originalRangeKN": [
+        -106.16065923,
+        195.332282218
+      ],
+      "joinedRangeKN": [
+        -112.525143453,
+        200.885382618
+      ],
+      "compressionIncreaseKN": 5.5531004,
+      "tensionIncreaseKN": 6.364484223,
+      "originalControllingCases": [
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 10,
+          "programme": [
+            1,
+            4
+          ],
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 76,
+          "programme": [
+            4,
+            1
+          ],
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "joinedControllingCases": [
+        {
+          "case": "0.2|partial water down|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 10,
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.2|partial water up|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 76,
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "xy": [
+        8082.5,
+        6000
+      ],
+      "originalRangeKN": [
+        -74.385803236,
+        133.687108653
+      ],
+      "joinedRangeKN": [
+        -79.874481753,
+        147.091000943
+      ],
+      "compressionIncreaseKN": 13.40389229,
+      "tensionIncreaseKN": 5.488678517,
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 27,
+          "programme": [
+            4,
+            0
+          ],
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 7,
+          "programme": [
+            1,
+            1
+          ],
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "joinedControllingCases": [
+        {
+          "case": "0.35|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 6,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.35|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 31,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        8082.5,
+        8082.5
+      ],
+      "originalRangeKN": [
+        -105.454314166,
+        195.775269571
+      ],
+      "joinedRangeKN": [
+        -112.152439049,
+        199.143152261
+      ],
+      "compressionIncreaseKN": 3.36788269,
+      "tensionIncreaseKN": 6.698124883,
+      "originalControllingCases": [
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 7,
+          "programme": [
+            1,
+            1
+          ],
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 79,
+          "programme": [
+            4,
+            4
+          ],
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "joinedControllingCases": [
+        {
+          "case": "0.2|partial water down|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 7,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.2|partial water up|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 79,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "xy": [
+        11667.5,
+        332.5
+      ],
+      "originalRangeKN": [
+        -47.711649425,
+        98.700184256
+      ],
+      "joinedRangeKN": [
+        -54.67612224,
+        138.731831625
+      ],
+      "compressionIncreaseKN": 40.031647369,
+      "tensionIncreaseKN": 6.964472815,
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 76,
+          "programme": [
+            4,
+            1
+          ],
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 10,
+          "programme": [
+            1,
+            4
+          ],
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "joinedControllingCases": [
+        {
+          "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 76,
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 10,
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        11667.5,
+        3800
+      ],
+      "originalRangeKN": [
+        -40.180423679,
+        70.689910431
+      ],
+      "joinedRangeKN": [
+        -46.415883527,
+        85.93163055
+      ],
+      "compressionIncreaseKN": 15.241720119,
+      "tensionIncreaseKN": 6.235459848,
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 71,
+          "programme": [
+            3,
+            3
+          ],
+          "guard": [
+            2,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 36,
+          "programme": [
+            5,
+            2
+          ],
+          "guard": [
+            2,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "joinedControllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 78,
+          "guard": [
+            2,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.35|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 35,
+          "guard": [
+            2,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        11667.5,
+        6000
+      ],
+      "originalRangeKN": [
+        -45.413359834,
+        90.110408235
+      ],
+      "joinedRangeKN": [
+        -47.746482772,
+        105.060030579
+      ],
+      "compressionIncreaseKN": 14.949622344,
+      "tensionIncreaseKN": 2.333122938,
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 77,
+          "programme": [
+            4,
+            2
+          ],
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 57,
+          "programme": [
+            1,
+            3
+          ],
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "joinedControllingCases": [
+        {
+          "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 76,
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 59,
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": -1
+        }
+      ]
+    },
+    {
+      "xy": [
+        11667.5,
+        8200
+      ],
+      "originalRangeKN": [
+        -40.154072613,
+        70.904663703
+      ],
+      "joinedRangeKN": [
+        -45.527585923,
+        86.220231294
+      ],
+      "compressionIncreaseKN": 15.315567591,
+      "tensionIncreaseKN": 5.37351331,
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 66,
+          "programme": [
+            2,
+            5
+          ],
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 47,
+          "programme": [
+            6,
+            6
+          ],
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "joinedControllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 80,
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 44,
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    },
+    {
+      "xy": [
+        11667.5,
+        11667.5
+      ],
+      "originalRangeKN": [
+        -47.724356274,
+        98.703549675
+      ],
+      "joinedRangeKN": [
+        -54.448259884,
+        135.407927677
+      ],
+      "compressionIncreaseKN": 36.704378002,
+      "tensionIncreaseKN": 6.72390361,
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 79,
+          "programme": [
+            4,
+            4
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 7,
+          "programme": [
+            1,
+            1
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "joinedControllingCases": [
+        {
+          "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 79,
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 7,
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": 1
+        }
+      ]
+    }
+  ],
+  "originalMaximumCompressionKN": 195.775269571,
+  "joinedMaximumCompressionKN": 201.47583939,
+  "largestCompressionIncrease": {
+    "xy": [
+      11667.5,
+      332.5
+    ],
+    "originalRangeKN": [
+      -47.711649425,
+      98.700184256
+    ],
+    "joinedRangeKN": [
+      -54.67612224,
+      138.731831625
+    ],
+    "compressionIncreaseKN": 40.031647369,
+    "tensionIncreaseKN": 6.964472815,
+    "originalControllingCases": [
+      {
+        "crack": 0.2,
+        "mode": "original gravity",
+        "windIndex": 76,
+        "programme": [
+          4,
+          1
+        ],
+        "guard": [
+          6,
+          1
+        ],
+        "guardSign": -1
+      },
+      {
+        "crack": 0.35,
+        "mode": "original gravity",
+        "windIndex": 10,
+        "programme": [
+          1,
+          4
+        ],
+        "guard": [
+          6,
+          1
+        ],
+        "guardSign": 1
+      }
+    ],
+    "joinedControllingCases": [
+      {
+        "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+        "windIndex": 76,
+        "guard": [
+          6,
+          1
+        ],
+        "guardSign": -1
+      },
+      {
+        "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+        "windIndex": 10,
+        "guard": [
+          6,
+          1
+        ],
+        "guardSign": 1
+      }
+    ]
+  },
+  "upperCompressionResistanceKN": null,
+  "receivingDuty": "Qualify actual steel load introduction, finite contact and bedding, core material/section, spreading, splitting, eccentricity/slenderness and the downstream floor/foundation route. The stiffness spring and historical 200 kN collector screen supply no receiving resistance.",
+  "sourceHashes": {
+    "project/rof/studies/roof_water_receiving_baseline.json": "8d9c3200f9cea459454884b5d569235286f2522cc7766eb999934f0001334c0d",
+    "project/rof/studies/roof_water_structure.json": "42b73bf8c804eb97b0e7f84b52c19e340dfbd2fcf9482c869850ce6dbf354b68",
+    "project/rof/studies/roof_water_receiving_comparison.py": "2e0c7eafc79da465a77bf9173b829f427ac0ad16fb7e52bd398ec94fb7054f98"
+  }
+}

@@ -1,0 +1,355 @@
+{
+  "status": "UNADMITTED 280x120x30 / 20 kN/mm COMPARISON; BOTH TIE SCREENS STILL FAIL",
+  "geometry": {
+    "courtWidthMM": 280,
+    "heightMM": 120,
+    "wallMM": 30,
+    "courtQMM": [
+      3777.5,
+      4057.5
+    ],
+    "courtZMM": [
+      6540,
+      6660
+    ],
+    "internalClearHeightMM": 60,
+    "nominal300HeelShoulderEachSideMM": 10,
+    "outerSectionUnchangedMM": [
+      220,
+      120,
+      20
+    ],
+    "sectionAreaMM2": 20400.0,
+    "characteristicLineWeightKNPerM": 1.6014,
+    "extraCharacteristicCourtWeightOver25MMKN": 3.7926489999999986,
+    "declaredCollectorStressBudgetMPa": 181.8181818181818,
+    "actual30To20SkinAnd16WebHeelTransitionQualified": false
+  },
+  "receivingSpring": {
+    "KNPerMM": 20,
+    "status": "Symmetric numerical hypothesis only; actual tension/compression/contact and series connection stiffness remain unqualified."
+  },
+  "outerInteraction": 0.941559318,
+  "courtInteraction": 0.944747253,
+  "maximumUpperTensionKN": 110.164780448,
+  "maximumUpperCompressionKN": 199.355576917,
+  "existingM24ComparisonResistanceKN": 113.922727273,
+  "maximumPortalNormalTieKN": {
+    "floor": 8.226605937,
+    "roof": 3.065680483
+  },
+  "screens": {
+    "outer": true,
+    "court": true,
+    "M24": true,
+    "floorTies": false,
+    "roofTies": false
+  },
+  "upperCompressionResistanceKN": null,
+  "all22ReceivingRows": "roof_water_wall30_receiving.json",
+  "unchangedInputFieldsComparedTo25MM": [
+    "installedOuterHeadMassGroups",
+    "addedInnerPressure",
+    "loadBounds",
+    "courtModules",
+    "courtSupportCassettes",
+    "independentWaterTributaries",
+    "retainedNativeVerticalWindKN",
+    "addedExplicitFloorWindGrossKN"
+  ],
+  "finiteRenewalContainment": {
+    "source": "roof_water_current_checkpoint.json",
+    "finiteStates": 144,
+    "independentInstalledMassIntervals": 134,
+    "proof": "All134 zero-mass endpoint force/moment/source/root identities exactly equal the previously verified25mm case; its explicit144 finite-choice decompositions therefore remain contained before solving the changed30mm structure.",
+    "weatherRoofRetained": true,
+    "singlePhysicalOperationRestrictionRetained": true,
+    "actualResidualCentroidAndNewHeadRouteQualified": false
+  },
+  "windDomain": {
+    "localInputSourceSHA256": "4eb505e4349b1af1eaa98c96b0aa7174a8b6e3c4210628a969cc10c8252e7eba",
+    "retainedNativeVerticalProjectionKN": 62.622225,
+    "addedExplicitFloorGrossKN": 19.940625,
+    "addedFloorSignGroups": 24,
+    "areaCancellationCredited": false,
+    "knownMissingPhysicalRows": [
+      "Primary120mm roof lap aboveZ7290.188718 to7340.902909; no shielding/load route earned.",
+      "Secondary baffle aboveZ7107.33 to7145; no shielding/load route earned."
+    ],
+    "missingLocalReturn": "Exported apron-rib/standoff pressure is included globally but has not yet been returned through the local main-frame/contact model."
+  },
+  "movementScope": {
+    "verticalQueries": 920,
+    "lateralQueries": 1112,
+    "newOuterRetainedHeadCorners": 12,
+    "newOuterRadialMM": [
+      -332.5,
+      1000,
+      1260
+    ],
+    "newOuterAlongOffsetsMM": [
+      -125,
+      125
+    ],
+    "nativeRootZMM": 6600,
+    "localFrameAxis6200IsSeparate": true,
+    "datum": "Absolute native fixed-base datum; facade co-motion is not credited."
+  },
+  "innerMovementMM": {
+    "primary": {
+      "absoluteVerticalMM": {
+        "range": [
+          -10.070710064,
+          16.999223297
+        ],
+        "minimumQuery": "inner face2 primary module2 p5437.5 q4725.0 absolute",
+        "maximumQuery": "inner face0 primary module5 p7625.0 q4725.0 absolute",
+        "minimumControl": {
+          "crack": 0.2,
+          "mode": "partial water up",
+          "specials": 0.0,
+          "windIndex": 54,
+          "guard": 9,
+          "sign": -1
+        },
+        "maximumControl": {
+          "crack": 0.35,
+          "mode": "partial water down",
+          "specials": 1.35,
+          "windIndex": 28,
+          "guard": 3,
+          "sign": 1
+        }
+      },
+      "widthDistortionMM": {
+        "range": [
+          -3.773749418,
+          4.672332867
+        ],
+        "minimumQuery": "inner face2 primary width q4725.0 minus q4375.0 root6000.0",
+        "maximumQuery": "inner face0 primary width q4725.0 minus q4375.0 root6000.0",
+        "minimumControl": {
+          "crack": 0.35,
+          "mode": "partial water up",
+          "specials": 1.35,
+          "windIndex": 6,
+          "guard": 11,
+          "sign": -1
+        },
+        "maximumControl": {
+          "crack": 0.35,
+          "mode": "partial water down",
+          "specials": 0.0,
+          "windIndex": 28,
+          "guard": 3,
+          "sign": 1
+        }
+      }
+    },
+    "lower": {
+      "absoluteVerticalMM": {
+        "range": [
+          -10.867163055,
+          17.851616977
+        ],
+        "minimumQuery": "inner face2 lower module2 p5325.0 q4800.0 absolute",
+        "maximumQuery": "inner face0 lower module6 p7625.0 q4800.0 absolute",
+        "minimumControl": {
+          "crack": 0.2,
+          "mode": "partial water up",
+          "specials": 0.0,
+          "windIndex": 54,
+          "guard": 9,
+          "sign": -1
+        },
+        "maximumControl": {
+          "crack": 0.35,
+          "mode": "partial water down",
+          "specials": 1.35,
+          "windIndex": 28,
+          "guard": 3,
+          "sign": 1
+        }
+      },
+      "widthDistortionMM": {
+        "range": [
+          -4.582410007,
+          5.673547053
+        ],
+        "minimumQuery": "inner face2 lower width q4800.0 minus q4375.0 root6000.0",
+        "maximumQuery": "inner face0 lower width q4800.0 minus q4375.0 root6000.0",
+        "minimumControl": {
+          "crack": 0.35,
+          "mode": "partial water up",
+          "specials": 1.35,
+          "windIndex": 6,
+          "guard": 11,
+          "sign": -1
+        },
+        "maximumControl": {
+          "crack": 0.35,
+          "mode": "partial water down",
+          "specials": 0.0,
+          "windIndex": 28,
+          "guard": 3,
+          "sign": 1
+        }
+      }
+    }
+  },
+  "outerRetainedHeadCornerVerticalMM": {
+    "north": {
+      "range": [
+        -30.945534425,
+        45.439335652
+      ],
+      "minimumQuery": "north normal retained-arm corner R1260.0 pOffset-125.0 absolute",
+      "maximumQuery": "north normal retained-arm corner R1260.0 pOffset-125.0 absolute",
+      "minimumControl": {
+        "crack": 0.2,
+        "mode": "partial water up",
+        "specials": 0.0,
+        "windIndex": 79,
+        "guard": 11,
+        "sign": -1
+      },
+      "maximumControl": {
+        "crack": 0.35,
+        "mode": "partial water down",
+        "specials": 1.35,
+        "windIndex": 90,
+        "guard": 11,
+        "sign": 1
+      }
+    },
+    "south": {
+      "range": [
+        -21.455062271,
+        32.450217591
+      ],
+      "minimumQuery": "south normal retained-arm corner R1260.0 pOffset-125.0 absolute",
+      "maximumQuery": "south normal retained-arm corner R1260.0 pOffset-125.0 absolute",
+      "minimumControl": {
+        "crack": 0.2,
+        "mode": "partial water up",
+        "specials": 0.0,
+        "windIndex": 76,
+        "guard": 3,
+        "sign": -1
+      },
+      "maximumControl": {
+        "crack": 0.2,
+        "mode": "partial water down",
+        "specials": 1.35,
+        "windIndex": 86,
+        "guard": 3,
+        "sign": 1
+      }
+    }
+  },
+  "pairedNativeAlongGapChangeMM": {
+    "25.0": {
+      "range": [
+        -0.332682263,
+        0.330806884
+      ],
+      "minimumQuery": "face2 adjacent arm gap primary7200 lower7400 pq4345.0 lq4325.0 pz6633.5 lz6579.25",
+      "maximumQuery": "face2 adjacent arm gap primary7200 lower7400 pq4345.0 lq4325.0 pz6579.25 lz6633.5",
+      "minimumControl": {
+        "crack": 0.2,
+        "mode": "partial water up",
+        "specials": 1.35,
+        "windIndex": 66,
+        "guard": 11,
+        "sign": 1
+      },
+      "maximumControl": {
+        "crack": 0.2,
+        "mode": "partial water up",
+        "specials": 1.35,
+        "windIndex": 71,
+        "guard": 1,
+        "sign": -1
+      }
+    },
+    "50.0": {
+      "range": [
+        -0.590290439,
+        0.635174807
+      ],
+      "minimumQuery": "face0 adjacent arm gap primary6675 lower6450 pq4325.0 lq4345.0 pz6579.25 lz6633.5",
+      "maximumQuery": "face3 adjacent arm gap primary6675 lower6450 pq4345.0 lq4325.0 pz6633.5 lz6579.25",
+      "minimumControl": {
+        "crack": 0.2,
+        "mode": "partial water up",
+        "specials": 1.35,
+        "windIndex": 80,
+        "guard": 3,
+        "sign": -1
+      },
+      "maximumControl": {
+        "crack": 0.2,
+        "mode": "partial water up",
+        "specials": 1.35,
+        "windIndex": 59,
+        "guard": 13,
+        "sign": 1
+      }
+    }
+  },
+  "lowerHangerAbsoluteNormalMM": {
+    "range": [
+      -35.418823117,
+      35.163027379
+    ],
+    "minimumQuery": "face1 lower root5041.666666666667 lower hanger p4500.0 z6372.25",
+    "maximumQuery": "face3 lower root6958.333333333334 lower hanger p7500.0 z6372.25",
+    "minimumControl": {
+      "crack": 0.2,
+      "mode": "partial water down",
+      "specials": 0.0,
+      "windIndex": 57,
+      "guard": 5,
+      "sign": -1
+    },
+    "maximumControl": {
+      "crack": 0.2,
+      "mode": "partial water up",
+      "specials": 1.35,
+      "windIndex": 57,
+      "guard": 13,
+      "sign": 1
+    }
+  },
+  "normalVirtualWorkError": 0.0,
+  "nativeInterfaceRecoveryError": 0.0,
+  "newInnerPlus10ZAndChangedApronGeometryIncluded": false,
+  "limitations": [
+    "This comparison uses frozen4eb physical geometry and pressure export; later+10Z/apron/contact proposals have not been replayed.",
+    "Missing roof-lap/baffle pressure and absent local apron-stock force return remain open; the windDomain lists them explicitly.",
+    "The complete head/leader source point is unchanged. A relocated inner head requires a new root/mass/wind contract.",
+    "No 8 kN floor-tie, 3 kN roof-tie, M24 or collector limit is raised. Passing a subset of screens is not structural qualification.",
+    "Collector heel/root introduction, real receiving assembly stiffness, corner attachment and downstream compression paths remain unresolved."
+  ],
+  "fullNumericalReplayCommandsFromRepositoryRoot": [
+    "python -S project/rof/studies/roof_water_wall30_trial.py --court-width=280 --court-wall-mm=30 --inner-dry-kg-per-m=60 --receiving-spring-kn-per-mm=20 --outer-head-dry-domain=independent --check",
+    "python -S project/rof/studies/roof_water_wall30_movement.py --court-width=280 --court-wall-mm=30 --inner-dry-kg-per-m=60 --receiving-spring-kn-per-mm=20 --outer-head-dry-domain=independent --check",
+    "python -S project/rof/studies/roof_water_wall30_lateral.py --court-width=280 --court-wall-mm=30 --inner-dry-kg-per-m=60 --receiving-spring-kn-per-mm=20 --outer-head-dry-domain=independent --check",
+    "python -S project/rof/studies/roof_water_wall30_receiving.py --check",
+    "python -S project/rof/studies/roof_water_wall30_checkpoint.py --check"
+  ],
+  "sourceHashes": {
+    "project/rof/studies/roof_water_wall30_trial.py": "22a6b29517cefc4c6b16b4c4ba7f73e07aa58513a02e67e0152faac7b52f9c13",
+    "project/rof/studies/roof_water_wall30_trial_280_30_60_20_independent.json": "388b78e1123ff0dc06b19a26f82c30b3d2db975aeba4c27603279beaa0089192",
+    "project/rof/studies/roof_water_wall30_movement.py": "90126fd4f878fe81047d632636d349b269c5c71ca7e56d1a4323b27a518ea822",
+    "project/rof/studies/roof_water_wall30_movement_280_30_60_20_independent.json": "9919bf7a9342fba7712a8a279f043693cb61075390c4cdb9252545bf535fa615",
+    "project/rof/studies/roof_water_wall30_lateral.py": "ed3957c5a4975eb4eedc38f0370b5be554118180f9abd8854ff66344a4dc0219",
+    "project/rof/studies/roof_water_wall30_lateral_280_30_60_20_independent.json": "429d7cbda77b967e341b34a45ed6af8a13d102d24a49d2d0f1bb162b480f5f58",
+    "project/rof/studies/roof_water_wall30_receiving.py": "608e1fbd12d767ede2a9c521fde9609d4b806fad1e58497899525e6dfebea54a",
+    "project/rof/studies/roof_water_wall30_receiving.json": "cb4fd5ee61ca7c2a21f21467ea5dc3f9fc8f7970f07842a8d57f3a13e82f4a5e",
+    "project/rof/studies/roof_water_current_checkpoint.py": "bc646cb46f912f308da14dec3907b02e5e81f5f20442ab936c604d1884eff030",
+    "project/rof/studies/roof_water_current_checkpoint.json": "f3a9304c9dbda1330bf0429d669195f2eb6150c72d6b4ef34c3f076653fb51ea",
+    "project/rof/studies/roof_water_current_trial_280_25_60_20_independent.json": "b68add723f473528a0b0b306c7635e5272cc42ad25d561ab4720422fbb281889",
+    "project/rof/studies/roof_water_wall30_checkpoint.py": "56e1299be4a829c567162b737aabed3c88dde3920fc6f7c8d95d6a9d75ae6ce4"
+  }
+}
