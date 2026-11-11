@@ -9,6 +9,46 @@ whether a conventional connected RC floor and real steel/RC roof seats can
 replace the geometrically impossible independent movement interfaces without
 losing the occupied house, service routes or a complete foundation account.
 
+## Recovery and rejected first detail — 11 November
+
+The first published detail receipt is retained as a **rejected whole-house
+candidate**, despite its useful local section and bar-clearance screens. Its
+500 mm far-west transition starts at Y8595 while the actual stair ends at
+Y8767.5. At that end the circular inner H16 path, H10 link and retained35 mm
+nominal cover require concrete to X428.210, intruding10.710 into the stair
+opening beginning at X417.5. At the narrow transition start, replacing H8 by
+H10 also reduces nominal cover to33 rather than35. Stronger H12/H14 hoops
+would reduce it further unless the concrete or bar path changes.
+
+Shortening the transition to300 increases the full-yield adverse bend force
+to316.843 kN per half with the original58 mm displacement. Three single
+closed H12 hoops offer295.037 kN and fail that screen. A61 mm displacement
+raises the burden to329.670 kN. Neither the shorter transition nor paired
+stronger hoops is selected; aggregate steel area cannot establish the finite
+joint's cover, bend radii, anchorage, shear/torsion combination or assembly.
+
+A simpler successor is now being compared: keep the straight160 mm collector
+and widen each jamb inward to240 mm, q222.5–462.5. Its continuous vertical
+bars can move to q260.5/424.5, avoiding the floor-bar bends. This costs60 mm
+room-side projection at each205 mm jamb and changes its normal centroid from
+312.5 to342.5. The180 mm arch remains eccentric by30; the existing floor and
+roof axes are10 outward of the new jamb centroid. These offsets, material
+unions and actual room/renewal consequences must enter the same calculation.
+This comparison is not source adoption or an issued reinforcement schedule.
+
+The restored execution has rebuilt the missing numerical helper from source;
+no unverified local prototype from the interrupted session is presumed to have
+passed. `floor_portal_frame.py` checks a cantilever against its closed-form
+solution and a dense reference solve, exact eccentric-load/work equivalence,
+actual relative-link force, plate rigid fields and three constant-curvature
+energy patches. `floor_portal_roof.py` removes the old condensed floor,
+fixed-base pier and22 absolute receiving springs from the unchanged native
+roof. It then splits actual ring elements at all16 cap stations. Condensing
+those new degrees of freedom recovers the original roof stiffness to3.1e-17
+relative entry error in the local run; all six rigid fields and the physical
+cap offsets are independently checked. This is numerical component evidence,
+not a completed coupled house or an RC joint acceptance.
+
 ## A second physical conflict at the roof
 
 The old continuous jamb reaches Z6600. At the same station the actual outer
@@ -37,7 +77,7 @@ fully restrained cap is the first simplicity control; moving hardware earns
 its place only if the restrained comparison fails. Free/sliding and locked
 states cannot be casually treated as an envelope for every intermediate state.
 
-## Finite collector cage comparison
+## Retained first collector comparison — rejected at the house interface
 
 [The reproducible detail screen](studies/floor_portal_detail.py) produces
 [the numerical receipt](studies/floor-portal-detail.json). This is an
