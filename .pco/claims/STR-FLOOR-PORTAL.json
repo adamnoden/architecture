@@ -9,8 +9,8 @@
     "label": "floor-portal-resume-20261111"
   },
   "claimedAt": "2026-11-11T13:06:46.946Z",
-  "heartbeatAt": "2026-11-11T14:57:08.230Z",
-  "expiresAt": "2026-11-11T15:42:08.230Z",
+  "heartbeatAt": "2026-11-11T15:13:33.697Z",
+  "expiresAt": "2026-11-11T15:58:33.697Z",
   "branch": "work/str-floor-portal-resume-20261111",
   "predecessor": {
     "leaseId": "f7d5b2b7-66ee-44c2-b644-8db75a918ed1",
@@ -34,7 +34,7 @@
   },
   "pr": 1482,
   "checkpoint": {
-    "evidence": "Corrected four-case physical receipt verified;579-case signed full/half biaxial domain running beyond450 cases with equilibrium. Exact clipped-rectangle biaxial controls pass. Room and hardware conflicts preserved explicitly.",
-    "next": "Publish corrected sources and full demand witness; evaluate correlated section/link forces, thermal and52 head compatibility, then physical local corner/room correction. Remain draft/unselected."
+    "evidence": "All579 coherent wind/gravity cases solved and matrices retained; signed52-head summary recovered after serializer correction. All104 independent1mm vertical head motions and6 strain cases completed. Correlated end-section helper now under independent review.",
+    "next": "Publish exact demand/movement checkpoint; resolve transverse reinforcement and finite corner/roof/foot/room geometry, then rerun corrected design with joint/mesh/stiffness comparisons. STR remains incomplete."
   }
 }
