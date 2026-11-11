@@ -143,7 +143,7 @@ def rc_origins(h,case):
                 tr=next(t for t in h.trimmers if 'trimmer-'+t['name']==name);axis=tr['axis']
                 es=[e for e in h.members['trimmer'] if e['name']==name]
             elif kind=='L':
-                axis=2;L=next(L for L in h.Ls if any(inside(centre,r,1e-6) for r in L['foot']))
+                axis=2;L=next(L for L in h.Ls if any(inside(centre,r,1e-6) for r in L['foot']+L['haunches']))
                 es=[e for e in h.members['L'] if np.linalg.norm((e['a']+e['b'])[:2]/2-L['centroid'])<1e-5]
             else:
                 axis=2;j=next(j for j in h.jambs if abs(local(j['face'],centre[:2])[0]-j['u'])<102.5+1e-7 and abs(local(j['face'],centre[:2])[1]-312.5)<180)
@@ -229,7 +229,9 @@ def gravity(h):
     replacements=[]
     for face in range(4):
         for centre in (2100.,9900.):replacements.append(rectangle(face,centre-705,centre+705,262.5,402.5)+[-180.,6540.])
-    for L in h.Ls:replacements.extend(r+[-180.,6540.] for r in L['foot'])
+    for L in h.Ls:
+        replacements.extend(r+[-180.,6540.] for r in L['foot'])
+        replacements.extend(r+[3170.,3920.] for r in L['haunches'])
     replacements.extend(box for name,box,kind in h.rc_boxes if kind in ('collector','trimmer','jamb'))
     def route_core(tag,point,force,receivers,upper):
         if upper:G.floor([*point[:2],3370.],force,tag=tag);return
