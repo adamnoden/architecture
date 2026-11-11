@@ -9,12 +9,12 @@
     "label": "inlet-resolution-resume-20261111"
   },
   "claimedAt": "2026-11-11T13:10:01.188Z",
-  "heartbeatAt": "2026-11-11T13:49:18.722Z",
-  "expiresAt": "2026-11-11T14:34:18.722Z",
+  "heartbeatAt": "2026-11-11T14:07:23.224Z",
+  "expiresAt": "2026-11-11T14:52:23.224Z",
   "checkpoint": {
-    "evidence": "Draft1483 at83ace7cf contains accessible utility first breaks and H0 isolation; corrected whole-U20-phase reviewer calculation is now reproduced locally.",
-    "next": "Complete finite station tools, catches and drain geometry; integrate reviewed bridge support and current-source adoption.",
-    "blocker": "No administrative blocker; station and source-consumer reconciliation remain substantive design work."
+    "evidence": "Draft1483 checkpoint aeede1d1 publishes located I0/U0/P0 station, revised cold riser,7 focused passing comparisons and exact source tree00a6bce3. Earlier83ace checkpoint CI passed.",
+    "next": "Finish two-point carrier capture and first rest, actual local drains, reviewer bridge support and precise current-house/MRA adoption.",
+    "blocker": "No infrastructure blocker; selected house remains unchanged pending earned complete assembly."
   },
   "branch": "work/had-inlet-resolution-g2-20261111",
   "predecessor": {
