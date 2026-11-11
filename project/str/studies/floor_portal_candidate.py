@@ -5,9 +5,10 @@ construction adoption. Its high tangential stiffness brackets guide forces while
 the radial release preserves the intended thermal kinematics.
 """
 from collections import defaultdict
+import math
 import numpy as np
 
-from floor_portal_house import Parameters
+from floor_portal_house import Parameters,ContactSolve
 
 
 SIX_L_KEYS=((200.,70.),(475.,70.),(725.,70.),(70.,200.),(70.,475.),(70.,725.))
@@ -16,6 +17,7 @@ JAMB_GUIDE_WIDTH_MM=45.
 # Conservative H12-equivalent axial length: 621 development comparison +
 # 159.3 P13LN open envelope + 100 threaded stub + 40 C13N + 25 cap.
 JAMB_CAP_ANCHOR_EQUIVALENT_LENGTH_MM=945.3
+GUIDE_FRICTION_COMPARATOR=0.08
 
 
 def leading_parameters():
@@ -91,3 +93,57 @@ def finalise_bounds(bounds,h):
         item['declaredReleasedTravelReservePlusMinusMM']=GUIDE_TRAVEL_RESERVE_MM
         out[name]=item
     return out
+
+
+def guide_friction_vector(h,u,coefficient):
+    """Equal/opposite Coulomb-bound guide forces in the released radial axis.
+
+    The bound is generated from each guide point's actual tangential reaction.
+    It never credits friction for strength; it challenges the house with the
+    force opposing the current released-direction movement.
+    """
+    rhs=np.zeros(h.f.size);rows=[];maximum=0.;total=0.
+    for e in h.cap_links:
+        if not (e['name'].startswith('cap-key-') or e['name'].startswith('L-cap-key-')):continue
+        relative=e['t']@u[e['ids']]
+        plan=e['k'][:2,:2];values,vectors=np.linalg.eigh(plan)
+        active=int(np.argmax(values));released=int(np.argmin(values))
+        normal_force=abs(float(vectors[:,active]@(e['k']@relative)[:2]))
+        radial=vectors[:,released];slip=float(radial@relative[:2])
+        if normal_force<1e-9 or abs(slip)<1e-9:continue
+        force2=-coefficient*normal_force*math.copysign(1.,slip)*radial
+        force=np.r_[force2,0.]
+        for sign,(ids,t) in zip((1.,-1.),e['ports']):
+            np.add.at(rhs,ids,t.T@np.r_[sign*force,[0.,0.,0.]])
+        magnitude=float(np.linalg.norm(force2));maximum=max(maximum,magnitude);total+=magnitude
+        rows.append(dict(name=e['name'],normalGuideForceN=normal_force,releasedSlipMM=slip,frictionForceN=magnitude))
+    balance=h.rigid.T@rhs
+    assert max(abs(balance[:3]),default=0.)<.01,balance
+    assert max(abs(balance[3:]),default=0.)<1.,balance
+    return rhs,dict(maximumPointFrictionN=maximum,sumPointFrictionMagnitudesN=total,
+                    sixInternalResultantN_Nmm=balance.tolist(),points=rows)
+
+
+class GuideFrictionSolve:
+    """Contact solve with a bounded, self-equilibrated guide-friction follower."""
+
+    def __init__(self,h,coefficient=GUIDE_FRICTION_COMPARATOR):
+        self.h=h;self.coefficient=float(coefficient);self.base=ContactSolve(h.k,h.fixed,h.contacts)
+
+    def __call__(self,f,prescribed=None):
+        friction=np.zeros(self.h.f.size);meta={};iterations=0
+        for iterations in range(30):
+            u,r,c=self.base(np.asarray(f)+friction,prescribed)
+            target,meta=guide_friction_vector(self.h,u,self.coefficient)
+            error=float(np.max(abs(target-friction),initial=0.))
+            if error<.05:
+                friction=target
+                u,r,c=self.base(np.asarray(f)+friction,prescribed)
+                verify,meta=guide_friction_vector(self.h,u,self.coefficient)
+                final_error=float(np.max(abs(verify-friction),initial=0.))
+                if final_error<.1:break
+            friction=.5*friction+.5*target
+        else:raise AssertionError(('Guide friction follower did not settle',error))
+        c['guideFriction']=dict(meta,coefficient=self.coefficient,iterations=iterations+1,
+                                followerResidualN=final_error)
+        return u,r,c
