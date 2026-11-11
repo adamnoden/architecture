@@ -11,6 +11,7 @@ import numpy as np
 
 from floor_portal_house import House,xy,along,inward
 from floor_portal_candidate import leading_parameters,SIX_L_KEYS,GUIDE_TRAVEL_RESERVE_MM
+from floor_portal_receiver import geometry as receiver_geometry
 
 D=Path(__file__).resolve().parent
 JAMB=json.loads((D/'reconciled-house-interface.json').read_text())['jambAndTies']
@@ -36,9 +37,9 @@ def footprint_corners(centre,long_axis,half_long,half_width):
     return [c+s*e*half_long+t*n*half_width for s in (-1,1) for t in (-1,1)]
 
 
-def jamb_clearance(h,width,obstruction_diameter=12.):
+def jamb_clearance(h,width,obstruction_diameter=12.,half_width=None):
     half_long=width/2+TRAVEL_RESERVE+RUNNING
-    half_width=h.p.cap_key_thickness/2+RUNNING
+    half_width=h.p.cap_key_thickness/2+RUNNING if half_width is None else float(half_width)
     bar_radius=obstruction_diameter/2
     minimum=float('inf');cap_margin=float('inf');witness=None
     for j in h.jambs:
@@ -60,9 +61,9 @@ def jamb_clearance(h,width,obstruction_diameter=12.):
                 minimumGrossCapEdgeMarginMM=cap_margin,witness=witness)
 
 
-def L_clearance(h):
+def L_clearance(h,half_width=None):
     half_long=h.p.L_key_width/2+TRAVEL_RESERVE+RUNNING
-    half_width=h.p.L_key_thickness/2+RUNNING
+    half_width=h.p.L_key_thickness/2+RUNNING if half_width is None else float(half_width)
     main=np.asarray(GROUND['primaryBarXY'],dtype=float)
     minimum_main=float('inf');minimum_h12=float('inf');minimum_edge=float('inf');witness=None
     for L in h.Ls:
@@ -106,7 +107,11 @@ def controls():
     selected_bar=jamb_clearance(h,h.p.cap_key_width,12.)
     selected_weldable=jamb_clearance(h,h.p.cap_key_width,20.)
     overlapping_position=jamb_clearance(h,h.p.cap_key_width,25.)
+    receiver=receiver_geometry()
+    jamb_receiver_h12=jamb_clearance(h,h.p.cap_key_width,12.,receiver['jamb']['outerReceiverWidthMM']/2)
+    jamb_receiver_c13=jamb_clearance(h,h.p.cap_key_width,20.,receiver['jamb']['outerReceiverWidthMM']/2)
     L=L_clearance(h)
+    L_receiver=L_clearance(h,receiver['L']['outerReceiverWidthMM']/2)
     assert historical['minimumClearAfterTwo5MMSettingMM']<0,historical
     assert previous50['minimumClearAfterTwo5MMSettingMM']>=5.,previous50
     assert selected_bar['minimumClearAfterTwo5MMSettingMM']>=5.,selected_bar
@@ -115,6 +120,10 @@ def controls():
     assert selected_weldable['minimumClearAfterTwo5MMSettingMM']>=5.,selected_weldable
     assert overlapping_position['minimumClearAfterTwo5MMSettingMM']<5.,overlapping_position
     assert selected_weldable['minimumGrossCapEdgeMarginMM']>=25.,selected_weldable
+    assert jamb_receiver_h12['minimumClearAfterTwo5MMSettingMM']>=5.,jamb_receiver_h12
+    assert jamb_receiver_c13['minimumClearAfterTwo5MMSettingMM']>=5.,jamb_receiver_c13
+    assert L_receiver['minimumPrimaryH20ClearAfterTwo5MMSettingMM']>=25.,L_receiver
+    assert L_receiver['minimumIntermediateH12StationClearAfterTwo5MMSettingMM']>=25.,L_receiver
     assert L['minimumPrimaryH20ClearAfterTwo5MMSettingMM']>=25.,L
     assert L['minimumIntermediateH12StationClearAfterTwo5MMSettingMM']>=25.,L
     assert L['minimumGrossLArmEdgeMarginMM']>=10.,L
@@ -127,7 +136,9 @@ def controls():
                 selected45JambGuideBareH12=selected_bar,
                 selected45JambGuideEL12C13NWeldableEnvelope=selected_weldable,
                 forbiddenSamePlaneEL12P13LNEnvelope=overlapping_position,
-                LGuides=L)
+                fullJambReceiverToH12=jamb_receiver_h12,
+                fullJambReceiverToEL12C13N=jamb_receiver_c13,
+                LGuides=L,fullLReceiver=L_receiver)
 
 
 if __name__=='__main__':
