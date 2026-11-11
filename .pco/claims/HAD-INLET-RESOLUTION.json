@@ -1,24 +1,42 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 1,
-  "state": "released",
-  "leaseId": "a1d2b551-9001-4728-873c-8f988d1b845e",
+  "generation": 2,
+  "state": "claimed",
+  "leaseId": "75412b37-29e6-4b6d-86f3-d5e6290cfef2",
   "holder": {
     "kind": "chatgpt",
-    "label": "inlet-resolution-20261111"
+    "label": "inlet-resolution-resume-20261111"
   },
-  "claimedAt": "2026-11-11T08:41:03.413Z",
-  "heartbeatAt": "2026-11-11T10:00:42.000Z",
-  "expiresAt": "2026-11-11T10:00:42.000Z",
+  "claimedAt": "2026-11-11T13:10:01.188Z",
+  "heartbeatAt": "2026-11-11T13:10:01.188Z",
+  "expiresAt": "2026-11-11T13:55:01.188Z",
   "checkpoint": {
-    "evidence": "Registration #1479 merged main003f61bacebd4cb3294280059b64f1bb5fc87f88. Draft #1481 head76791e1be6827d73114091a63245767639e024a8 preserves current-source inlet computation and 64/64 prior local HAD tests; its 10:00 UTC body now preserves the complete bridge/crew/dock successor, support holds, utility head/first-break candidate and located isolation concept, explicitly unimplemented/unadopted.",
-    "next": "A successor with a capable executor must acquire a fresh generation, inspect the preserved branch and PR recovery data, reproduce corrected comparisons, resolve the actual release/support/isolation interfaces and then reconcile affected source consumers. Exact-head CI and fresh canonical publication preflight are mandatory before any merge.",
-    "blocker": "Managed executor unavailable; canonical CLI/preflight cannot run. CI42997600920 attempt2 passed current packet/lease binding and was still in repository health at10:00 UTC. Draft remains unmerged; selected-house blocker and planned lifecycle remain unchanged."
+    "evidence": "Recovering preserved draft PR1481 head76791e1be6827d73114091a63245767639e024a8 and its complete handoff; historical exact-head CI passed10:07:34 UTC.",
+    "next": "Resolve complete station, utility first breaks and supported bridge at bounded pre-site architectural scope; reproduce and reconcile only earned design.",
+    "blocker": "No current adoption; inherited incoming-water route remains rejected."
   },
-  "branch": "work/had-inlet-resolution-20261111",
-  "note": "Owner-directed connector-only handoff release under the documented swarm-runbook degraded boundary, with fresh exact ownership, reliable UTC, CAS and remote readback. This is not a canonical CLI execution. All remote evidence branches are preserved; no new physical design or product/site admission is claimed.",
-  "pr": 1481,
-  "releasedAt": "2026-11-11T10:00:42.000Z",
-  "releaseReason": "handoff"
+  "branch": "work/had-inlet-resolution-g2-20261111",
+  "predecessor": {
+    "leaseId": "a1d2b551-9001-4728-873c-8f988d1b845e",
+    "generation": 1,
+    "branch": "work/had-inlet-resolution-20261111",
+    "pr": 1481,
+    "checkpoint": {
+      "evidence": "Registration #1479 merged main003f61bacebd4cb3294280059b64f1bb5fc87f88. Draft #1481 head76791e1be6827d73114091a63245767639e024a8 preserves current-source inlet computation and 64/64 prior local HAD tests; its 10:00 UTC body now preserves the complete bridge/crew/dock successor, support holds, utility head/first-break candidate and located isolation concept, explicitly unimplemented/unadopted.",
+      "next": "A successor with a capable executor must acquire a fresh generation, inspect the preserved branch and PR recovery data, reproduce corrected comparisons, resolve the actual release/support/isolation interfaces and then reconcile affected source consumers. Exact-head CI and fresh canonical publication preflight are mandatory before any merge.",
+      "blocker": "Managed executor unavailable; canonical CLI/preflight cannot run. CI42997600920 attempt2 passed current packet/lease binding and was still in repository health at10:00 UTC. Draft remains unmerged; selected-house blocker and planned lifecycle remain unchanged."
+    }
+  },
+  "recoverySource": {
+    "leaseId": "a1d2b551-9001-4728-873c-8f988d1b845e",
+    "generation": 1,
+    "branch": "work/had-inlet-resolution-20261111",
+    "pr": 1481,
+    "checkpoint": {
+      "evidence": "Registration #1479 merged main003f61bacebd4cb3294280059b64f1bb5fc87f88. Draft #1481 head76791e1be6827d73114091a63245767639e024a8 preserves current-source inlet computation and 64/64 prior local HAD tests; its 10:00 UTC body now preserves the complete bridge/crew/dock successor, support holds, utility head/first-break candidate and located isolation concept, explicitly unimplemented/unadopted.",
+      "next": "A successor with a capable executor must acquire a fresh generation, inspect the preserved branch and PR recovery data, reproduce corrected comparisons, resolve the actual release/support/isolation interfaces and then reconcile affected source consumers. Exact-head CI and fresh canonical publication preflight are mandatory before any merge.",
+      "blocker": "Managed executor unavailable; canonical CLI/preflight cannot run. CI42997600920 attempt2 passed current packet/lease binding and was still in repository health at10:00 UTC. Draft remains unmerged; selected-house blocker and planned lifecycle remain unchanged."
+    }
+  }
 }
