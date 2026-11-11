@@ -68,7 +68,7 @@ def stack():
     assert abs((lower_stub_tip-lower_bar_tip_open)-P13_BAR_GAP_OPEN)<1e-9
 
     vertical_clear=GUIDE_BOTTOM_Z-p13_top
-    assert c13_bottom<GUIDE_BOTTOM_Z<C13_TOP if False else True
+    assert GUIDE_BOTTOM_Z<c13_bottom<CAP_UNDERSIDE_Z,(GUIDE_BOTTOM_Z,c13_bottom,CAP_UNDERSIDE_Z)
     assert vertical_clear-SETTING_VERTICAL>=MIN_VERTICAL_SEPARATION,(vertical_clear,SETTING_VERTICAL)
 
     equivalent=(DEVELOPMENT_COMPARISON+P13_LENGTH_OPEN+STUB_LENGTH+C13_LENGTH+CAP_EQUIVALENT)
