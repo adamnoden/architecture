@@ -1,43 +1,42 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 2,
+  "generation": 3,
   "state": "claimed",
-  "leaseId": "75412b37-29e6-4b6d-86f3-d5e6290cfef2",
+  "leaseId": "0eb9d592-535d-4b8a-abd5-174d232b3f52",
   "holder": {
     "kind": "chatgpt",
-    "label": "inlet-resolution-resume-20261111"
+    "label": "inlet-resolution-g3-20261111"
   },
-  "claimedAt": "2026-11-11T13:10:01.188Z",
-  "heartbeatAt": "2026-11-11T15:00:23.217Z",
-  "expiresAt": "2026-11-11T15:45:23.217Z",
+  "claimedAt": "2026-11-11T16:05:57.354Z",
+  "heartbeatAt": "2026-11-11T16:05:57.354Z",
+  "expiresAt": "2026-11-11T17:35:57.354Z",
   "checkpoint": {
-    "evidence": "Station current-source removal, low captive shoe control and utility drain checks now pass locally; checkpoint aeede1d remains remote. Native placement loaded gap is 2.708 mm with explicit deflection and setting charge.",
-    "next": "Publish located station capture and drain checkpoint, then integrate reviewed bridge native design and reconcile selected-source consumers.",
-    "blocker": "Final sparse receiver retention, selected-house replay and whole-U native integration are still open; no completion claim."
+    "evidence": "Recovered remote1483 headac7e4b61c1d9116e987e2f570c2684d3ef588311; exact CI43047559905 succeeded and10 focused tests passed. No selected-house adoption yet.",
+    "next": "Finish lower cylinder and utility bench renewal, then apply selected-source reconciliation and immutable historical MRA replay.",
+    "blocker": "Old renewal d71369ed and acquisition4c8ba51c were not written; both reconciled against unchanged runtime15958319 and will never be serviced late."
   },
-  "branch": "work/had-inlet-resolution-g2-20261111",
+  "branch": "work/had-inlet-resolution-g3-20261111",
   "predecessor": {
-    "leaseId": "a1d2b551-9001-4728-873c-8f988d1b845e",
-    "generation": 1,
-    "branch": "work/had-inlet-resolution-20261111",
-    "pr": 1481,
+    "leaseId": "75412b37-29e6-4b6d-86f3-d5e6290cfef2",
+    "generation": 2,
+    "branch": "work/had-inlet-resolution-g2-20261111",
+    "pr": 1483,
     "checkpoint": {
-      "evidence": "Registration #1479 merged main003f61bacebd4cb3294280059b64f1bb5fc87f88. Draft #1481 head76791e1be6827d73114091a63245767639e024a8 preserves current-source inlet computation and 64/64 prior local HAD tests; its 10:00 UTC body now preserves the complete bridge/crew/dock successor, support holds, utility head/first-break candidate and located isolation concept, explicitly unimplemented/unadopted.",
-      "next": "A successor with a capable executor must acquire a fresh generation, inspect the preserved branch and PR recovery data, reproduce corrected comparisons, resolve the actual release/support/isolation interfaces and then reconcile affected source consumers. Exact-head CI and fresh canonical publication preflight are mandatory before any merge.",
-      "blocker": "Managed executor unavailable; canonical CLI/preflight cannot run. CI42997600920 attempt2 passed current packet/lease binding and was still in repository health at10:00 UTC. Draft remains unmerged; selected-house blocker and planned lifecycle remain unchanged."
+      "evidence": "Station current-source removal, low captive shoe control and utility drain checks now pass locally; checkpoint aeede1d remains remote. Native placement loaded gap is 2.708 mm with explicit deflection and setting charge.",
+      "next": "Publish located station capture and drain checkpoint, then integrate reviewed bridge native design and reconcile selected-source consumers.",
+      "blocker": "Final sparse receiver retention, selected-house replay and whole-U native integration are still open; no completion claim."
     }
   },
   "recoverySource": {
-    "leaseId": "a1d2b551-9001-4728-873c-8f988d1b845e",
-    "generation": 1,
-    "branch": "work/had-inlet-resolution-20261111",
-    "pr": 1481,
+    "leaseId": "75412b37-29e6-4b6d-86f3-d5e6290cfef2",
+    "generation": 2,
+    "branch": "work/had-inlet-resolution-g2-20261111",
+    "pr": 1483,
     "checkpoint": {
-      "evidence": "Registration #1479 merged main003f61bacebd4cb3294280059b64f1bb5fc87f88. Draft #1481 head76791e1be6827d73114091a63245767639e024a8 preserves current-source inlet computation and 64/64 prior local HAD tests; its 10:00 UTC body now preserves the complete bridge/crew/dock successor, support holds, utility head/first-break candidate and located isolation concept, explicitly unimplemented/unadopted.",
-      "next": "A successor with a capable executor must acquire a fresh generation, inspect the preserved branch and PR recovery data, reproduce corrected comparisons, resolve the actual release/support/isolation interfaces and then reconcile affected source consumers. Exact-head CI and fresh canonical publication preflight are mandatory before any merge.",
-      "blocker": "Managed executor unavailable; canonical CLI/preflight cannot run. CI42997600920 attempt2 passed current packet/lease binding and was still in repository health at10:00 UTC. Draft remains unmerged; selected-house blocker and planned lifecycle remain unchanged."
+      "evidence": "Station current-source removal, low captive shoe control and utility drain checks now pass locally; checkpoint aeede1d remains remote. Native placement loaded gap is 2.708 mm with explicit deflection and setting charge.",
+      "next": "Publish located station capture and drain checkpoint, then integrate reviewed bridge native design and reconcile selected-source consumers.",
+      "blocker": "Final sparse receiver retention, selected-house replay and whole-U native integration are still open; no completion claim."
     }
-  },
-  "pr": 1483
+  }
 }
