@@ -41,6 +41,10 @@ class Parameters:
     jamb_q:float=332.5
     local_flare:bool=True
     collector_width:float=160.
+    corner_width:float=160.
+    corner_end:float=1430.
+    corner_haunch:float=0.
+    joint_rigid_scale:float=1.
     crack:float=.25
     membrane_E:float=1200.
     masonry_E:float=3000.
@@ -168,8 +172,14 @@ class House:
                 q=lo if kind=='outer' else C
                 # pt(face,C,lo..hi) describes the four court faces too.
                 rect=rectangle(face,lo-p.collector_width/2,hi+p.collector_width/2,q-p.collector_width/2,q+p.collector_width/2)
-                self.collectors.append(dict(kind=kind,face=face,q=q,lo=lo,hi=hi,depth=depth,z=3170+depth/2,rect=rect,cuts={lo,hi}))
-                self.rc_boxes.append((f'{kind}-collector-{face}',rect+[3170.,3170.+depth],'collector'))
+                rectangles=[rect]
+                if kind=='outer' and p.corner_width>p.collector_width+1e-9:
+                    rectangles += [
+                        rectangle(face,A,p.corner_end,q-p.corner_width/2,q+p.corner_width/2),
+                        rectangle(face,12000-p.corner_end,B,q-p.corner_width/2,q+p.corner_width/2),
+                    ]
+                self.collectors.append(dict(kind=kind,face=face,q=q,lo=lo,hi=hi,depth=depth,z=3170+depth/2,rect=rect,rectangles=rectangles,cuts={lo,hi}))
+                for body in rectangles:self.rc_boxes.append((f'{kind}-collector-{face}',body+[3170.,3170.+depth],'collector'))
         for face in range(4):
             for centre in (2100.,9900.):
                 for u in (centre-602.5,centre+602.5):
@@ -197,15 +207,24 @@ class House:
                 pts=np.array([origin+sg*np.array([x,y]) for x in (l,r) for y in (b,t)])
                 rect=[*pts.min(axis=0),*pts.max(axis=0)];foot.append(rect)
                 self.rc_boxes.insert(0,(f'L-{corner}-{len(foot)}',rect+[-180.,6515.],'L'))
+            haunches=[]
+            if p.corner_haunch>1e-9:
+                start=np.array(corner)+sg*p.corner_width/2
+                finish=start+sg*p.corner_haunch
+                haunch=[*np.minimum(start,finish),*np.maximum(start,finish)]
+                haunches.append(haunch)
+                self.rc_boxes.insert(0,(f'L-{corner}-haunch',haunch+[3170.,3920.],'L'))
             vals,vec=np.linalg.eigh([[I,Ixy*sg[0]*sg[1]],[Ixy*sg[0]*sg[1],I]])
-            j=dict(corner=corner,centroid=centroid,foot=foot,area=area,I=vals,normal=[*vec[:,0],0.],origin=origin,sg=sg)
+            j=dict(corner=corner,centroid=centroid,foot=foot,haunches=haunches,area=area,I=vals,normal=[*vec[:,0],0.],origin=origin,sg=sg)
             j['joint']=self.node(('L-floor',corner),[*centroid,3545.]);self.Ls.append(j)
             # Two real ground beam lines receive the footprint; the centroid
             # reference is linked through actual cap/beam offsets below.
             for name in (('outer-W' if corner[0]==A else 'outer-E'),('outer-S' if corner[1]==A else 'outer-NW' if corner[0]==A else 'outer-NE')):
                 self.reserve_ground(name,corner)
         basecuts=[{A,B,C,E,A+80,B-80,C-80,C+80,E-80,E+80},{A,B,C,E,A+80,B-80,C-80,C+80,E-80,E+80}]
-        for r in self.holes+[j['rect'] for j in self.jambs]+[r for l in self.Ls for r in l['foot']]+[t['rect'] for t in self.trimmers]+[r for pt,r in self.trimmer_joints]:
+        collector_rects=[r for c in self.collectors for r in c['rectangles']]
+        L_solids=[r for l in self.Ls for r in l['foot']+l['haunches']]
+        for r in self.holes+[j['rect'] for j in self.jambs]+L_solids+collector_rects+[t['rect'] for t in self.trimmers]+[r for pt,r in self.trimmer_joints]:
             for axis in (0,1):basecuts[axis].update([r[axis],r[axis+2]])
         for wall in H['groundWalls']:
             a,b=np.array(wall['a'],float),np.array(wall['b'],float);axis=int(a[0]==b[0])
@@ -234,6 +253,8 @@ class House:
             col['cuts'].update(local(face,[u,col['q']] if global_axis==0 else [col['q'],u])[0] for u in [])
             col['cuts'].update(u if face<2 else 12000-u for u in self.cuts[global_axis] if col['lo']<=u<=col['hi'])
             if col['kind']=='outer':
+                if p.corner_width>p.collector_width+1e-9:
+                    col['cuts'].update((p.corner_end,12000-p.corner_end))
                 for centre in (2100.,9900.):
                     col['cuts'].update(centre+d for d in (-705.,-602.5,-500.,500.,602.5,705.))
                     ri=1000**2/(8*300)+150;radius=ri+107.5;angle=math.asin(500/radius)
@@ -384,12 +405,13 @@ class House:
             self.dpc(lower,upper,points,wfoot*205.,f'jamb-{face}-{u:g}-DPC',face=face)
             levels=[-40.,1250.,2350.,arch_z,3545.,4700.,5430.,5570.,5800.,3450+arch_z,6515.]
             if self.p.local_flare:levels+= [z for z in (2770.,2870.,2970.,3070.,4020.,4120.,4220.,4320.) if abs(z-arch_z)>107.5]
+            if self.p.joint_rigid_scale<1-1e-12:levels += [3170.,3920.]
             levels=sorted(levels)
             nodes={-40.:upper,3545.:j['joint']}
             for z in levels:
                 if z not in nodes:nodes[z]=self.node(('jamb',face,u,z),[*xy(face,self.jamb_section(z)[0],u),z])
             j['levels']=nodes;j['top']=nodes[6515.];j['foot']=foot;j['dpc']=(lower,upper)
-            half=lambda z:375. if z==3545. else 107.5 if z in (arch_z,3450+arch_z) else 70. if z==-40. else 0.
+            half=lambda z:375.*self.p.joint_rigid_scale if z==3545. else 107.5*self.p.joint_rigid_scale if z in (arch_z,3450+arch_z) else 70. if z==-40. else 0.
             for za,zb in pairwise(levels):
                 za_end,zb_end=za+half(za),zb-half(zb)
                 pa=np.array([*xy(face,self.jamb_section(za_end)[0],u),za_end]);pb=np.array([*xy(face,self.jamb_section(zb_end)[0],u),zb_end])
@@ -406,8 +428,9 @@ class House:
                 v=L['origin']+L['sg']*np.array([x,y])-plan;pts.append((v[0],v[1],math.pi*20**2/4))
             self.dpc(lower,upper,pts,L['area'],f'L-{corner}-DPC',foot_rects=L['foot'])
             top=self.node(('L-top',corner),[*plan,6515.]);L['top']=top;L['foot_node']=foot
-            self.members['L'].append(self.f.beam(upper,L['joint'],140,1000,'L-lower',normal=L['normal'],ra=[0,0,70],rb=[0,0,-375],section=sec,crack=self.p.crack))
-            self.members['L'].append(self.f.beam(L['joint'],top,140,1000,'L-upper',normal=L['normal'],ra=[0,0,375],section=sec,crack=self.p.crack))
+            cut=375*self.p.joint_rigid_scale
+            self.members['L'].append(self.f.beam(upper,L['joint'],140,1000,'L-lower',normal=L['normal'],ra=[0,0,70],rb=[0,0,-cut],section=sec,crack=self.p.crack))
+            self.members['L'].append(self.f.beam(L['joint'],top,140,1000,'L-upper',normal=L['normal'],ra=[0,0,cut],section=sec,crack=self.p.crack))
         for face in range(4):
             for centre in (2100.,9900.):
                 ends=sorted([j for j in self.jambs if j['face']==face and j['centre']==centre],key=lambda j:j['u'])
@@ -441,7 +464,7 @@ class House:
             for j in self.jambs:
                 if j['face']==face and abs(j['u']-u)<=102.5+1e-6:return j['joint'],point
             for L in self.Ls:
-                if any(inside(plan,r,1e-6) for r in L['foot']):return L['joint'],point
+                if any(inside(plan,r,1e-6) for r in L['foot']+L['haunches']):return L['joint'],point
         k=(kind,face,round(u,7));
         # Corner coordinates are shared by the two adjacent collector lines.
         n=self.node(('collector',key([*plan,col['z']])),[*plan,col['z']]);self.floor_beams[k]=n
@@ -456,7 +479,9 @@ class House:
                 # Replace the old8H12 chord and weak beam entirely. The slab
                 # does not occupy this strip, so its membrane is not duplicated.
                 ea=200000*area
-                e=self.f.beam(aa,bb,self.p.collector_width,c['depth'],c['kind']+'-collector',normal=inward(c['face']),ra=pa-self.f.points[aa//6],rb=pb-self.f.points[bb//6],EA=ea,crack=self.p.crack)
+                midpoint=(a+b)/2
+                width=self.p.corner_width if c['kind']=='outer' and (midpoint<self.p.corner_end or midpoint>12000-self.p.corner_end) else self.p.collector_width
+                e=self.f.beam(aa,bb,width,c['depth'],c['kind']+'-collector',normal=inward(c['face']),ra=pa-self.f.points[aa//6],rb=pb-self.f.points[bb//6],EA=ea,crack=self.p.crack)
                 self.members['collector'].append(e)
 
     def floor_port(self,point):
@@ -464,9 +489,9 @@ class House:
         for j in self.jambs:
             if inside(pt,j['rect'],1e-6):return self.f.port(j['joint'],at)
         for L in self.Ls:
-            if any(inside(pt,r,1e-6) for r in L['foot']):return self.f.port(L['joint'],at)
+            if any(inside(pt,r,1e-6) for r in L['foot']+L['haunches']):return self.f.port(L['joint'],at)
         for c in self.collectors:
-            if inside(pt,c['rect'],1e-6):
+            if any(inside(pt,r,1e-6) for r in c['rectangles']):
                 u,q=local(c['face'],pt);u=min(c['hi'],max(c['lo'],u))
                 n,p=self.collector_ref(c['face'],c['kind'],u);return self.f.port(n,at)
         for t in self.trimmers:
@@ -480,9 +505,9 @@ class House:
         for j in self.jambs:
             if inside(pt,j['rect'],1e-6):return j['joint']
         for L in self.Ls:
-            if any(inside(pt,r,1e-6) for r in L['foot']):return L['joint']
+            if any(inside(pt,r,1e-6) for r in L['foot']+L['haunches']):return L['joint']
         for c in self.collectors:
-            if inside(pt,c['rect'],1e-6):
+            if any(inside(pt,r,1e-6) for r in c['rectangles']):
                 v,q=local(c['face'],pt);return self.collector_ref(c['face'],c['kind'],min(c['hi'],max(c['lo'],v)))[0]
         for centre,rect in self.trimmer_joints:
             if inside(pt,rect,1e-6):return self.node(('trimmer',key(centre)),[*centre,3270.])
@@ -500,7 +525,7 @@ class House:
                 self.members['trimmer'].append(e)
 
     def build_floor(self):
-        solids=[j['rect'] for j in self.jambs]+[r for L in self.Ls for r in L['foot']]+[c['rect'] for c in self.collectors]+[t['rect'] for t in self.trimmers]
+        solids=[j['rect'] for j in self.jambs]+[r for L in self.Ls for r in L['foot']+L['haunches']]+[r for c in self.collectors for r in c['rectangles']]+[t['rect'] for t in self.trimmers]
         for a,b in pairwise(self.cuts[0]):
             for c,d in pairwise(self.cuts[1]):
                 centre=((a+b)/2,(c+d)/2)
