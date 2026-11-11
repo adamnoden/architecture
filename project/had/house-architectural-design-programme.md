@@ -135,6 +135,15 @@ HAD-SERVICES-ADOPTION consumes the [ten-family materials offer](../mat/whole-ser
 
 MAT-COORDINATION receives the selected service and material occurrences, including five head assemblies and the utility blind return. The owning result assigns the remaining loaded fault, complete constituent, product, handling, site and statutory evidence to its affected decision and resolution point. Approved owner material exceptions remain zero. Historical water, IAS, MAT and structural studies retain their original source hashes.
 
+### Resolve the incoming-water route and isolation station
+
+**HAD-INLET-RESOLUTION** consumes HAD-SERVICES-ADOPTION and MRA-INTERNAL-LEAKS.
+The [owning inlet scope](inlet-resolution.md) resolves the retained plant-N
+intersection and missing upstream isolation/drain arrangement against the
+selected cylinder, utility and occupied house. It can proceed before roof
+integration, but TRIAD-GATE and MRA-02 consume its result. No rejected inlet,
+historical bridge proof or unresolved first release may be silently adopted.
+
 ### Select the permanent receiver and blocked-water return
 
 The [permanent west receiver selection](receiver-selection.md) completes this internal choice. Its separate low N branch and high E outlet, exposed screen removal, occupied east platform and changed court floor are the current source for RWT-06. The older selections continue to own the rest of the house.

@@ -228,6 +228,19 @@ export const architectureNodes = defineNodes([
     closeoutEvidence: ['project/had/inhabited-services-selection.md', 'project/had/studies/current-house-services.json', 'project/had/studies/selected-service-interfaces.svg']
   },
 
+  // MRA's current-source study found the retained inlet crosses plant-N and
+  // lacks an adopted upstream isolation/drain arrangement. Resolve this local
+  // house interface independently of the roof, before whole-house acceptance.
+  {
+    id: 'HAD-INLET-RESOLUTION',
+    owners: ['HAD', 'MAT', 'IAS'],
+    title: 'Resolve the selected incoming-water route and isolation station',
+    dependencies: ['HAD-SERVICES-ADOPTION', 'MRA-INTERNAL-LEAKS'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: ['project/had/inlet-resolution.md', 'project/had/studies/incoming-water.json']
+  },
+
   // RWT-06 rejects the selected common north-mouth failure, not merely a fitting.
   // Registry-only bootstrap under the RWT-06 lease: no HAD geometry is adopted;
   // the successor can be acquired only after this identity exists on main.
@@ -290,7 +303,7 @@ export const architectureNodes = defineNodes([
     id: 'TRIAD-GATE',
     owners: ['IAS', 'OAS', 'HAD'],
     title: 'Shared selected-house integration gate',
-    dependencies: ['IAS-03', 'OAS-03', 'HAD-03', 'OAS-DETAIL', 'OAS-NORTH-EXPORT', 'ROF-RWT-GATE', 'BCR-PREFLIGHT', 'MAT-COORDINATION', 'STR-RECONCILE'],
+    dependencies: ['IAS-03', 'OAS-03', 'HAD-03', 'HAD-INLET-RESOLUTION', 'OAS-DETAIL', 'OAS-NORTH-EXPORT', 'ROF-RWT-GATE', 'BCR-PREFLIGHT', 'MAT-COORDINATION', 'STR-RECONCILE'],
     lifecycle: 'planned',
     aliases: ['IAS/OAS/HAD Wave 4'],
     agentDispatch: { mode: 'self-service' },

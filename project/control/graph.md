@@ -14,6 +14,7 @@ flowchart LR
   %% Generated from project/control. Do not hand-edit graph topology.
   subgraph g_SHARED["Shared integration gates"]
     direction TB
+    n_HAD_INLET_RESOLUTION["HAD-INLET-RESOLUTION<br/>Resolve the selected incoming-water route and isolation station<br/><b>READY</b>"]
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
     n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>READY</b>"]
   end
@@ -90,6 +91,7 @@ flowchart LR
     n_PHY_02["PHY-02<br/>Selective floor-access physical research<br/><b>HELD</b>"]
     n_PHY_04["PHY-04<br/>Wall/ceiling movement-junction build and test<br/><b>READY</b>"]
   end
+  n_HAD_INLET_RESOLUTION --> n_TRIAD_GATE
   n_ROF_RWT_GATE --> n_TRIAD_GATE
   n_MAT_COORDINATION --> n_TRIAD_GATE
   n_TRIAD_GATE --> n_BCR_CONVERGENCE
@@ -103,6 +105,7 @@ flowchart LR
   n_ROF_RWT_GATE --> n_RWT_08
   n_ROF_RWT_GATE --> n_MAT_COORDINATION
   n_TRIAD_GATE --> n_MRA_01
+  n_HAD_INLET_RESOLUTION --> n_MRA_02
   n_TRIAD_GATE --> n_MRA_02
   n_TRIAD_GATE --> n_MRA_03
   n_MRA_01 --> n_MRA_04
@@ -158,6 +161,7 @@ flowchart LR
   classDef claimGrace fill:#eee5d8,stroke:#957044,color:#634a2d,stroke-width:3px,stroke-dasharray:4 3;
   classDef activeUnclaimed fill:#dce9e8,stroke:#356966,color:#1f4542,stroke-width:3px,stroke-dasharray:4 3;
   classDef invalidClaim fill:#f1e0dc,stroke:#a45f54,color:#693d37,stroke-width:3px;
+  class n_HAD_INLET_RESOLUTION ready;
   class n_TRIAD_GATE blocked;
   class n_BCR_CONVERGENCE blocked;
   class n_HRS_SYNTHESIS blocked;
@@ -286,6 +290,7 @@ flowchart LR
     n_IAS_HAD_JUNCTION["IAS-HAD-JUNCTION<br/>Interior-system to architectural-expression reconciliation<br/><b>DONE</b>"]
     n_OAS_HAD_JUNCTION["OAS-HAD-JUNCTION<br/>Opening-assembly to facade/interior-expression reconciliation<br/><b>DONE</b>"]
     n_HAD_SERVICES_ADOPTION["HAD-SERVICES-ADOPTION<br/>Select and export one service system for the occupied house<br/><b>DONE</b>"]
+    n_HAD_INLET_RESOLUTION["HAD-INLET-RESOLUTION<br/>Resolve the selected incoming-water route and isolation station<br/><b>READY</b>"]
     n_HAD_WATER_REPLAN["HAD-WATER-REPLAN<br/>Recompose the selected court and roof with independent passive water exits<br/><b>DONE</b>"]
     n_HAD_COURT_INTAKE["HAD-COURT-INTAKE<br/>Join the east court intake, guarded access and live roof-corner renewal<br/><b>DONE</b>"]
     n_HAD_COURT_BYPASS["HAD-COURT-BYPASS<br/>Select the permanent courtyard receiver and its blocked-basket return<br/><b>DONE</b>"]
@@ -523,6 +528,8 @@ flowchart LR
   n_MAT_SERVICES --> n_HAD_SERVICES_ADOPTION
   n_HAD_WATER_REPLAN --> n_HAD_SERVICES_ADOPTION
   n_STR_RECONCILE --> n_HAD_SERVICES_ADOPTION
+  n_HAD_SERVICES_ADOPTION --> n_HAD_INLET_RESOLUTION
+  n_MRA_INTERNAL_LEAKS --> n_HAD_INLET_RESOLUTION
   n_HAD_03 --> n_HAD_WATER_REPLAN
   n_RWT_ROBUSTNESS --> n_HAD_WATER_REPLAN
   n_STR_MASONRY --> n_HAD_WATER_REPLAN
@@ -538,6 +545,7 @@ flowchart LR
   n_IAS_03 --> n_TRIAD_GATE
   n_OAS_03 --> n_TRIAD_GATE
   n_HAD_03 --> n_TRIAD_GATE
+  n_HAD_INLET_RESOLUTION --> n_TRIAD_GATE
   n_OAS_DETAIL --> n_TRIAD_GATE
   n_OAS_NORTH_EXPORT --> n_TRIAD_GATE
   n_ROF_RWT_GATE --> n_TRIAD_GATE
@@ -658,6 +666,7 @@ flowchart LR
   n_MAT_INTERIORS --> n_MRA_INTERNAL_LEAKS
   n_MRA_00 --> n_MRA_02
   n_MRA_INTERNAL_LEAKS --> n_MRA_02
+  n_HAD_INLET_RESOLUTION --> n_MRA_02
   n_TRIAD_GATE --> n_MRA_02
   n_MRA_00 --> n_MRA_03
   n_TRIAD_GATE --> n_MRA_03
@@ -822,6 +831,7 @@ flowchart LR
   class n_HAD_BOUNDARY done;
   class n_HAD_03 done;
   class n_HAD_SERVICES_ADOPTION done;
+  class n_HAD_INLET_RESOLUTION ready;
   class n_HAD_WATER_REPLAN done;
   class n_HAD_COURT_INTAKE done;
   class n_HAD_COURT_BYPASS done;
