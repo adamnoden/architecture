@@ -16,7 +16,7 @@ from floor_portal_movements import roof_strain,superstructure_strain
 
 
 SIX_L_KEYS=((200.,70.),(475.,70.),(725.,70.),(70.,200.),(70.,475.),(70.,725.))
-CANDIDATES=('baseline','square','short-key','joint-half','joint-zero','mesh-half','flex-key-80','flex-key-100','flex-key-120')
+CANDIDATES=('baseline','square','short-key','joint-half','joint-zero','mesh-half','flex-key-80','flex-key-100','flex-key-120','radial-guide-60','radial-guide-80')
 
 
 def parameters(name):
@@ -34,6 +34,12 @@ def parameters(name):
             cap_key_width=90.,cap_key_thickness=8.,cap_key_depth=depth,
             L_key_width=70.,L_key_thickness=8.,L_key_depth=depth,
             L_key_centres=SIX_L_KEYS,key_profile='triangular depth bearing')
+    if name.startswith('radial-guide-'):
+        depth=float(name.rsplit('-',1)[1]);thickness=10. if depth==60. else 8.
+        common.update(
+            cap_key_width=90.,cap_key_thickness=thickness,cap_key_depth=depth,
+            L_key_width=70.,L_key_thickness=thickness,L_key_depth=depth,
+            L_key_centres=SIX_L_KEYS,key_profile='triangular depth bearing',key_direction_mode='radial-guide')
     if name=='joint-half':common['joint_rigid_scale']=.5
     if name=='joint-zero':common['joint_rigid_scale']=0.
     if name=='mesh-half':common['mesh']=700.
@@ -162,7 +168,7 @@ def solve(name):
         candidate=name,
         parameters={
             'cornerWidthMM':p.corner_width,'cornerEndMM':p.corner_end,'cornerHaunchMM':p.corner_haunch,
-            'jointRigidScale':p.joint_rigid_scale,'keyProfile':p.key_profile,
+            'jointRigidScale':p.joint_rigid_scale,'keyProfile':p.key_profile,'keyDirectionMode':p.key_direction_mode,
             'jambKey':[p.cap_key_width,p.cap_key_thickness,p.cap_key_depth],
             'LKey':[p.L_key_width,p.L_key_thickness,p.L_key_depth],
             'LKeyCentres':[list(v) for v in p.L_key_centres],
