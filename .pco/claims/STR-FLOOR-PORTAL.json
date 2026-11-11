@@ -9,8 +9,8 @@
     "label": "floor-portal-resume-20261111"
   },
   "claimedAt": "2026-11-11T13:06:46.946Z",
-  "heartbeatAt": "2026-11-11T15:13:33.697Z",
-  "expiresAt": "2026-11-11T15:58:33.697Z",
+  "heartbeatAt": "2026-11-11T15:57:51.167Z",
+  "expiresAt": "2026-11-11T16:42:51.167Z",
   "branch": "work/str-floor-portal-resume-20261111",
   "predecessor": {
     "leaseId": "f7d5b2b7-66ee-44c2-b644-8db75a918ed1",
@@ -34,7 +34,7 @@
   },
   "pr": 1482,
   "checkpoint": {
-    "evidence": "All579 coherent wind/gravity cases solved and matrices retained; signed52-head summary recovered after serializer correction. All104 independent1mm vertical head motions and6 strain cases completed. Correlated end-section helper now under independent review.",
-    "next": "Publish exact demand/movement checkpoint; resolve transverse reinforcement and finite corner/roof/foot/room geometry, then rerun corrected design with joint/mesh/stiffness comparisons. STR remains incomplete."
+    "evidence": "Publishedc9e10a69 preserves579-case demand,104 head-motion and6 strain receipts; current local square250 corner comparator is running. No adoption or physical commitments.",
+    "next": "Complete finite corner/cage, roof/foot hardware, independent pressure and stiffness/support comparisons; keep source/room effects coordinated."
   }
 }
