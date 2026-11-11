@@ -11,7 +11,7 @@ import argparse,hashlib,json,time
 import numpy as np
 from floor_portal_house import House,Parameters,ContactSolve
 from floor_portal_loads import Case,gravity,roof_gravity,roof_goods,wind
-from floor_portal_candidate import named_parameters,update_bounds,finalise_bounds
+from floor_portal_candidate import named_parameters,update_bounds,finalise_bounds,GuideFrictionSolve
 
 D=Path(__file__).resolve().parent
 
@@ -20,24 +20,32 @@ def member_actions(h,case,u):
     return np.array([e['k']@e['t']@u[e['ids']]-case.ends.get(id(e),np.zeros(12)) for es in h.members.values() for e in es])
 
 
-def run(parameters=None,full=True,matrix_path=None):
+def run(parameters=None,full=True,matrix_path=None,guide_friction=0.):
     start=time.time();h=House(parameters);controls=h.controls();print('Domain physical assembly ready.',flush=True)
     G,Q,ledger=gravity(h);rg,rq,ru,roofledger=roof_gravity(h);dg,water,extra,massgroups,goodsledger=roof_goods(h)
     G=Case.combination(h,'adverse G budgets',[(1,G),(1,rg),(1,dg)])
     Q=Case.combination(h,'full use and blocked water',[(1,Q),(1,rq),(1,water)])
     U=Case.combination(h,'complete roof suction',[(1,ru),(-1,extra)])
     gravitycase=Case.combination(h,'1.35G+1.5Q',[(1.35,G),(1.5,Q)])
-    solve=ContactSolve(h.k,h.fixed,h.contacts);print('Domain contact compliance factored.',flush=True)
+    solve=GuideFrictionSolve(h,guide_friction) if guide_friction else ContactSolve(h.k,h.fixed,h.contacts)
+    print('Domain contact compliance factored'+(f'; guide friction={guide_friction:g}' if guide_friction else '')+'.',flush=True)
     members=[(family,e) for family,es in h.members.items() for e in es]
     metadata=[dict(family=family,name=e['name'],a=e['a'].tolist(),b=e['b'].tolist(),basis=e['R'].tolist(),width=e['width'],depth=e['depth']) for family,e in members]
     heads=list(h.heads);hi=np.array([[h.heads[name]+j for j in range(6)] for name in heads]);scales=np.array([1e-3,1e-3,1e-3,1e-6,1e-6,1e-6])
     names=[];memberrows=[];headrows=[];jointrows=[];allloads=[];contactcounts=[];maximum_balance=np.zeros(6);worst_trans=(0.,None);minimum_head=(0.,None,None);guide_bounds={}
+    friction_bound=dict(coefficient=float(guide_friction),maximumPointFrictionN=0.,sumPointFrictionMagnitudesN=0.,maximumIterations=0,witness=None)
     bounds={family:dict(maxAbs=np.zeros(6),witness=[None]*6) for family in h.members}
     offsets=np.cumsum([0]+[len(es) for es in h.members.values()])
     def one(case):
         nonlocal worst_trans,minimum_head,maximum_balance
         u,r,c=solve(case.f);balance=h.rigid.T@(r+case.f)
         assert max(abs(balance[:3]))<.03 and max(abs(balance[3:]))<20.,(case.name,balance)
+        if guide_friction:
+            gf=c['guideFriction']
+            friction_bound['maximumIterations']=max(friction_bound['maximumIterations'],gf['iterations'])
+            friction_bound['sumPointFrictionMagnitudesN']=max(friction_bound['sumPointFrictionMagnitudesN'],gf['sumPointFrictionMagnitudesN'])
+            if gf['maximumPointFrictionN']>friction_bound['maximumPointFrictionN']:
+                friction_bound.update(maximumPointFrictionN=gf['maximumPointFrictionN'],witness=case.name)
         update_bounds(guide_bounds,h,u,len(names),case.name)
         maximum_balance=np.maximum(maximum_balance,abs(balance));values=member_actions(h,case,u)
         row=r[hi]*scales;cards=row[:,[2,4,3,0,1,5]]*np.array([1,-1,1,-1,-1,-1]);headrows.append(cards)
@@ -83,11 +91,11 @@ def run(parameters=None,full=True,matrix_path=None):
         headcards.append(dict(id=name,components_N_Cx_Cy_Vx_Vy_Yaw=limits))
     if matrix_path:
         np.savez_compressed(matrix_path,actions=np.array(memberrows),headCards=hh,jointForces=jj,loads=np.array(allloads))
-        Path(str(matrix_path)+'.json').write_text(json.dumps(dict(cases=names,members=metadata,links=[e['name'] for e in h.cap_links+h.dpc_links],heads=heads,parameters=asdict(h.p)),indent=2)+'\n')
+        Path(str(matrix_path)+'.json').write_text(json.dumps(dict(cases=names,members=metadata,links=[e['name'] for e in h.cap_links+h.dpc_links],heads=heads,parameters=asdict(h.p),guideFrictionCoefficient=guide_friction),indent=2)+'\n')
     return dict(status='CORRELATED DEMAND DOMAIN ONLY; physical sections and joints remain unselected',parameters=asdict(h.p),controls=controls,
                 caseCount=len(names),caseNames=names,memberGeometry=metadata,memberBounds={k:dict(maxAbsLocal_N_Vy_Vz_T_My_Mz=v['maxAbs'].tolist(),witness=v['witness']) for k,v in bounds.items()},
                 all52HeadBounds=headcards,maximumBalanceResidual=maximum_balance.tolist(),minimumHeadN_KN_Id_Case=minimum_head,
-                maximumTranslationMM_Case=worst_trans,activeContactCounts=contactcounts,guideBounds=finalise_bounds(guide_bounds,h),
+                maximumTranslationMM_Case=worst_trans,activeContactCounts=contactcounts,guideBounds=finalise_bounds(guide_bounds,h),guideFriction=friction_bound,
                 sourceHashes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in [D/'floor_portal_frame.py',D/'floor_portal_roof.py',D/'floor_portal_house.py',D/'floor_portal_loads.py',Path(__file__)]},
                 gravityLedger=ledger,roofLedger=roofledger,goodsLedger=goodsledger,
                 separateUnfinishedDomains=['24 independent cassette dry centroid groups and actual independent pressure faces','guard point/release states','roof thermal, RC shortening and all52 head movements','section/joint/soil acceptance, finite cage/assembly and occupied room interfaces'],elapsedSecondsInformational=time.time()-start)
@@ -130,10 +138,11 @@ def matrix_receipt(path):
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--quick',action='store_true');p.add_argument('--output',required=True);p.add_argument('--matrix');p.add_argument('--summary-matrix');p.add_argument('--candidate',choices=('guided-t20',));args=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--quick',action='store_true');p.add_argument('--output',required=True);p.add_argument('--matrix');p.add_argument('--summary-matrix');p.add_argument('--candidate',choices=('guided-t20',));p.add_argument('--guide-friction',type=float,default=0.);args=p.parse_args()
     params=named_parameters(args.candidate) if args.candidate else None
-    out=matrix_receipt(args.summary_matrix) if args.summary_matrix else run(parameters=params,full=not args.quick,matrix_path=args.matrix)
+    out=matrix_receipt(args.summary_matrix) if args.summary_matrix else run(parameters=params,full=not args.quick,matrix_path=args.matrix,guide_friction=args.guide_friction)
     Path(args.output).write_text(json.dumps(out,indent=2)+'\n')
     summary={k:out[k] for k in ['caseCount','maximumBalanceResidual','maximumBalanceResidualN_Nmm','minimumHeadN_KN_Id_Case','maximumTranslationMM_Case','elapsedSecondsInformational'] if k in out}
     if 'guideBounds' in out:summary['guideBounds']=out['guideBounds']
+    if 'guideFriction' in out:summary['guideFriction']=out['guideFriction']
     print(json.dumps(summary,indent=2),flush=True)
