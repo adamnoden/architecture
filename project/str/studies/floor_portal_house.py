@@ -49,6 +49,14 @@ class Parameters:
     cap_anchor_length:float=805.
     L_cap_anchor_length:float=1320.
     cap_bearing_depth:float=180.
+    cap_key_width:float=90.
+    cap_key_thickness:float=10.
+    cap_key_depth:float=60.
+    L_key_width:float=90.
+    L_key_thickness:float=10.
+    L_key_depth:float=60.
+    L_key_centres:tuple=((70.,70.),(900.,70.),(70.,900.))
+    key_profile:str='historical tip-compliance control'
     dpc_scale:float=1.
     dpc_anchor_length:float=1106.
     court_width:float=280.
@@ -95,7 +103,7 @@ class House:
         self.ground_lines={};self.ground_cuts={};self.ground_nodes={};self.heads={}
         self.pads=[];self.upper_links=[];self.cap_links=[];self.dpc_links=[]
         self.rc_boxes=[];self.arch_strips=[];self.flare_solids=[]
-        self.roof=Roof(self.p.court_width,self.p.court_wall)
+        self.roof=Roof(self.p.court_width,self.p.court_wall,extra_L_keys=self.p.L_key_centres)
         self.prepare_geometry()
         self.build_ground()
         self.build_vertical()
@@ -113,7 +121,8 @@ class House:
 
     def contact(self,a,b,k,name,axis=2,sign=1.):
         ia,ta=a;ib,tb=b
-        self.contacts.append(dict(name=name,ids=np.r_[ia,ib],row=np.r_[ta[axis],-tb[axis]]*sign,stiffness=float(k)))
+        self.contacts.append(dict(name=name,ids=np.r_[ia,ib],row=np.r_[ta[axis],-tb[axis]]*sign,stiffness=float(k),
+                                  ports=(a,b),axis=axis,sign=sign))
 
     def prepare_geometry(self):
         p=self.p;f=self.f
@@ -525,6 +534,16 @@ class House:
             L['roofRoots']=[q for q in self.roof.p['nodes'] if any(inside(q,r,1e-7) for r in L['foot'])]
 
     def build_roof_links(self):
+        def key_terms(width,thickness,depth):
+            # Uniform pressure: resultant at h/2 and energy compliance h^3/20EI.
+            # Triangular pressure rising towards the tip: centroid2h/3 and
+            # integral (2/3-t+t^3/3)^2 dt=11/105, hence105EI/(11h^3).
+            # The old8EI/h^3 remains ONLY its named historical comparator.
+            if self.p.key_profile=='triangular depth bearing':factor,centre,area=105/11,2/3,.75
+            else:factor,centre,area=8.,.5,1.
+            steel=factor*200000*(width*thickness**3/12)/depth**3
+            concrete=33000*width*area
+            return 1/(1/steel+1/concrete)*self.p.cap_scale,depth*centre
         for q,floor in self.upper_links:
             kind='outer' if A in q or B in q else 'court';top=3920. if kind=='outer' else 3820.
             # Existing tension-only M24; source140x300 direct bearing remains
@@ -556,14 +575,12 @@ class House:
                     pos=at+along(face)*x*width/2+inward(face)*y*depth/2
                     k=area*wx*wy/4/(self.p.cap_bearing_depth/33000+25/200000)*self.p.cap_scale
                     self.contact(self.roof.port(q,pos),self.f.port(j['top'],pos),k,f'cap-bearing-{face}-{j["u"]:g}')
-            # Positive90x10 cruciform,60 deep. Distributed key force is applied
-            # at its real centroid30 below cap bottom; no friction credited.
+            # Distributed positive cruciform; actual depth pressure centroid
+            # and its work-conjugate bending compliance are explicit.
             for direction,span in ((inward(face),along(face)),(along(face),inward(face))):
-                steel=8*200000*(90*10**3/12)/60**3
-                concrete=33000*90*60/60
-                stiffness=1/(1/steel+1/concrete)*self.p.cap_scale
+                stiffness,lever=key_terms(self.p.cap_key_width,self.p.cap_key_thickness,self.p.cap_key_depth)
                 for x,wx in zip(gauss,weights):
-                    pos=at+span*x*45+[0,0,-55.]
+                    pos=at+span*x*self.p.cap_key_width/2+[0,0,-25.-lever]
                     k=np.zeros((6,6));k[:3,:3]=np.outer(direction,direction)*stiffness*wx/2
                     self.cap_links.append(self.f.link(self.roof.port(q,pos),self.f.port(j['top'],pos),k,f'cap-key-{face}-{j["u"]:g}'))
         for L in self.Ls:
@@ -581,11 +598,12 @@ class House:
                         pt=np.array([(l+r)/2+x*(r-l)/2,(b+t)/2+y*(t-b)/2]);q=outer_root(pt);at=[*pt,6540.];area=(r-l)*(t-b)*wx*wy/4
                         k=area/(self.p.cap_bearing_depth/33000+25/200000)*self.p.cap_scale
                         self.contact(self.roof.port(q,at),self.f.port(L['top'],at),k,'L-cap-bearing-'+str(L['corner']))
-            # Three located90x10x60 cruciform keys on the retained L topology.
-            for centre in ((70.,70.),(900.,70.),(70.,900.)):
-                pt=L['origin']+L['sg']*np.array(centre);q=outer_root(pt);at=[*pt,6485.]
-                k=1/(60**3/(8*200000*(90*10**3/12))+60/(33000*90*60))*self.p.cap_scale
-                self.cap_links.append(self.f.link(self.roof.port(q,at),self.f.port(L['top'],at),[k,k,0,0,0,0],'L-cap-key-'+str(L['corner'])))
+            # Each key has its own actual ring root; changing its position
+            # splits the native ring before this relative connection is made.
+            for index,centre in enumerate(self.p.L_key_centres):
+                pt=L['origin']+L['sg']*np.array(centre);q=outer_root(pt)
+                k,lever=key_terms(self.p.L_key_width,self.p.L_key_thickness,self.p.L_key_depth);at=[*pt,6515.-lever]
+                self.cap_links.append(self.f.link(self.roof.port(q,at),self.f.port(L['top'],at),[k,k,0,0,0,0],f'L-cap-key-{L["corner"]}-{index}'))
 
     def controls(self):
         r=self.rigid@np.diag([1,1,1,.001,.001,.001]);res=self.k@r
