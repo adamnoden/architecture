@@ -94,6 +94,7 @@ jobs:
 
 
   floor-portal-friction-domain:
+    needs: floor-portal
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
@@ -127,6 +128,7 @@ jobs:
         run: python project/str/studies/floor_portal_receiver.py /tmp/floor-portal-friction-domain.json --output /tmp/floor-portal-friction-receiver.json
 
   floor-portal-friction-movements:
+    needs: floor-portal
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
