@@ -2,12 +2,41 @@
 from pathlib import Path
 import argparse,hashlib,json,time
 from dataclasses import asdict
+from collections import defaultdict
 import numpy as np
 from floor_portal_house import House,Parameters,ContactSolve
 from floor_portal_loads import Case,gravity,roof_gravity,roof_goods,wind
-from floor_portal_frame import controls as frame_controls
+from floor_portal_frame import controls as frame_controls,offset
+from floor_portal_roof_fields import recover as roof_fields,controls as roof_field_controls,native_controls,spandrel_clearance
 
 D=Path(__file__).resolve().parent
+
+
+def contact_actions(h,u,contact):
+    """Actual signed two-port gaps and forces for the connected detail."""
+    groups=defaultdict(list)
+    for j,e in enumerate(h.contacts):
+        if e['name'].endswith('-lower-contact'):continue
+        gap=float(e['row']@u[e['ids']]);force=e['stiffness']*max(-gap,0.)
+        assert abs(force-contact['force'][j])<.03
+        positions=[]
+        for ids,t in e['ports']:
+            rigid=t@h.rigid[ids]
+            point=np.array([rigid[1,5],-rigid[0,5],rigid[0,4]])
+            assert np.max(abs(rigid-offset(point)))<1e-8
+            positions.append(point)
+        direction=np.eye(3)[e['axis']]*e['sign']
+        groups[e['name']].append((positions[0],positions[1],direction*force,gap,force))
+    result=[]
+    for name,rows in groups.items():
+        reference=np.mean([r[0] for r in rows],axis=0);force=sum((r[2] for r in rows),np.zeros(3))
+        moment=sum((np.cross(r[0]-reference,r[2]) for r in rows),np.zeros(3))
+        result.append(dict(name=name,positivePortReferenceXYZ=reference.tolist(),
+                           positivePortFx_Fy_Fz_Mx_My_Mz=np.r_[force,moment].tolist(),
+                           pointCount=len(rows),activePointCount=sum(r[4]>.03 for r in rows),
+                           signedGapRangeMM=[min(r[3] for r in rows),max(r[3] for r in rows)],
+                           maximumPointCompressionOrTieForceN=max(r[4] for r in rows)))
+    return result
 
 
 def recover(h,case,u,reaction,contact):
@@ -33,17 +62,19 @@ def recover(h,case,u,reaction,contact):
         foot.append({'face':face,'station':at,'barrierXYZ':barrier.tolist(),'reactionOnUpperColumnAtBarrier_N_Nmm':np.r_[force,moment].tolist(),'reactionOnColumnAtFoot_N_Nmm':np.r_[foot_e['R'].T@qf[:3],foot_e['R'].T@qf[3:]].tolist()})
     cap=[]
     for e in h.cap_links:
-        f=e['k']@e['t']@u[e['ids']]
-        cap.append({'name':e['name'],'forceAndMomentAtActualPoint':f.tolist()})
+        relative=e['t']@u[e['ids']];f=e['k']@relative
+        ids,t=e['ports'][0];rigid=t@h.rigid[ids];point=[rigid[1,5],-rigid[0,5],rigid[0,4]]
+        cap.append({'name':e['name'],'pointXYZ':point,'forceAndMomentAtActualPoint':f.tolist(),'relativeTranslationAndRotation':relative.tolist()})
     return {'name':case.name,'load':case.totals(),'balanceResidualN_Nmm':balance.tolist(),
             'activeContacts':int(sum(contact['active'])),'contactIterations':contact['iterations'],'contactConstitutiveErrorN':contact['errorN'],
             'maximumAbsoluteTranslationMM':float(max(np.max(abs(u[6*i:6*i+3])) for i in range(len(h.f.points)))),
-            'headCards':heads,'memberEndBounds':members,'jambBarrierAndFoot':foot,'capLinks':cap,
+            'headCards':heads,'memberEndBounds':members,'jambBarrierAndFoot':foot,'capLinks':cap,'detailContacts':contact_actions(h,u,contact),
+            'roofFields':roof_fields(h,case,u),'upperSpandrelGapComparison':spandrel_clearance(h,case,u),
             'maximumHeadTensionKN':max(0.,-min(row['N_Cx_Cy_Vx_Vy_Yaw'][0] for row in heads))}
 
 
 def run(parameters=None,component_only=False):
-    started=time.time();h=House(parameters);control={'frame':frame_controls(),'house':h.controls()}
+    started=time.time();h=House(parameters);control={'frame':frame_controls(),'house':h.controls(),'roofField':roof_field_controls(),'nativeRoofField':native_controls(h)}
     print('Coupled physical assembly controls passed.',flush=True)
     if component_only:
         f=np.zeros(h.f.size);h.f.point(f,h.jambs[0]['top'],[0,0,-1000]);solve=ContactSolve(h.k,h.fixed,h.contacts);u,r,c=solve(f)
@@ -60,7 +91,7 @@ def run(parameters=None,component_only=False):
     for case in cases:
         u,r,c=solve(case.f);results.append(recover(h,case,u,r,c));print('Solved: '+case.name,flush=True)
     return {'status':'UNSELECTED CONNECTED COMPARISON; STR-FLOOR-PORTAL INCOMPLETE','parameters':asdict(h.p),'controls':control,
-            'sources':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in [D/'floor_portal_frame.py',D/'floor_portal_roof.py',D/'floor_portal_house.py',D/'floor_portal_loads.py',D/'current-house-grid.json',D/'current-house-head-actions.py']},
+            'sources':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in [D/'floor_portal_frame.py',D/'floor_portal_roof.py',D/'floor_portal_roof_fields.py',D/'floor_portal_house.py',D/'floor_portal_loads.py',D/'current-house-grid.json',D/'current-house-head-actions.py']},
             'gravityLedger':base_receipt,'roofLedger':roof_receipt,'goodsLedger':goods_receipt,'cases':results,
             'unresolved':['All20 roof caps now use located steel anchors, positive keys and compression contact; compatible coupler/stub/weld stack, cover, anchorage and finite movement are still unqualified.',
                           'Ordinary160 and local250 corner/flared jamb cage remains unselected; current model has no local corner250 widening.',
