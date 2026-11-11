@@ -55,7 +55,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        candidate: [baseline, square, short-key, joint-half]
+        candidate: [baseline, square, short-key, joint-half, joint-zero, mesh-half]
     env:
       OPENBLAS_NUM_THREADS: '1'
       OMP_NUM_THREADS: '1'
