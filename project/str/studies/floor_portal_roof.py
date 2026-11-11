@@ -15,6 +15,26 @@ from floor_portal_frame import offset
 D=Path(__file__).resolve().parent
 
 
+def outer_root(point):
+    x,y=map(float,point);a,b=332.5,11667.5
+    candidates=[(min(b,max(a,x)),a),(b,min(b,max(a,y))),(min(b,max(a,x)),b),(a,min(b,max(a,y)))]
+    return tuple(round(v,7) for v in min(candidates,key=lambda q:math.dist(q,(x,y))))
+
+
+def L_cap_points():
+    import json
+    source=json.loads((D/'current-house-ground-ties.json').read_text())['outer']['primaryBarXY'];out=set()
+    gp,_=np.polynomial.legendre.leggauss(2)
+    points=list(source)
+    for l,b,r,t in [(0.,0.,1000.,140.),(0.,140.,140.,1000.)]:
+        points.extend(((l+r)/2+x*(r-l)/2,(b+t)/2+y*(t-b)/2) for x in gp for y in gp)
+    points.extend([(70.,70.),(900.,70.),(70.,900.)])
+    for corner in [(332.5,332.5),(11667.5,332.5),(11667.5,11667.5),(332.5,11667.5)]:
+        sg=np.array([1 if v==332.5 else -1 for v in corner]);origin=np.array(corner)-sg*70
+        out.update(outer_root(origin+sg*np.array(q)) for q in points)
+    return out
+
+
 def namespace(court_width=280.,court_wall=25.):
     path=D/'current-house-roof-bracing.py'
     source=path.read_text(); boundary=source.index('\nactual=state(')
@@ -39,14 +59,17 @@ def enrich(p):
     """Split, never attach new supports by a Hermite-only interpolation."""
     axes=[1497.5,2702.5,9297.5,10502.5]
     cap_points={p['pt'](face,p['A'],u) for face in range(4) for u in axes}
+    all_points=cap_points|L_cap_points()
     rings=[]
     for a,b in p['rings']:
         axis=0 if a[1]==b[1] else 1
-        middle=[q for q in cap_points if q[1-axis]==a[1-axis] and min(a[axis],b[axis])<q[axis]<max(a[axis],b[axis])]
+        middle=[q for q in all_points if q[1-axis]==a[1-axis] and min(a[axis],b[axis])<q[axis]<max(a[axis],b[axis])]
         points=sorted([a,*middle,b],key=lambda q:q[axis],reverse=b[axis]<a[axis])
         rings.extend(pairwise(points))
     p['rings']=rings
-    for face in range(4):p['sides'][face,'outer']=sorted(set(p['sides'][face,'outer'])|set(axes))
+    for face in range(4):
+        inverse=lambda q:[q[0],q[1],12000-q[0],12000-q[1]][face]
+        p['sides'][face,'outer']=sorted(set(p['sides'][face,'outer'])|{inverse(q) for q in all_points if p['pt'](face,p['A'],inverse(q))==q})
     p['nodes']=sorted({q for e in rings for q in e});p['ind']={q:i for i,q in enumerate(p['nodes'])}
     p['nr']=3*len(p['nodes']);p['size']=p['nr']+3
     p['spaceSize']=p['size']+4*len(p['crowns'])+3*len(p['nodes'])+2*len(p['ridgePairs'])+3*len(p['crowns'])+8
@@ -132,10 +155,17 @@ class Roof:
         reference=original.k[np.ix_(old,old)]
         error=np.max(abs(condensed-reference));relative=error/np.max(abs(reference))
         assert relative<1e-12
-        residual=self.k@self.rigid@np.diag([1,1,1,.001,.001,.001])
+        physical_rigid=self.rigid@np.diag([1,1,1,.001,.001,.001])
+        residual=self.k@physical_rigid
         rows=[]
         for j in range(6):rows.append(float(np.max(abs(residual[:,j]))))
-        assert max(rows)<1e-4
+        # Real L-bar roots leave27 mm ring pieces. Their large end-moment
+        # coefficients cancel under a rigid field. Bound this arithmetic at
+        # each row by its absolute multiplication scale, and also retain a
+        # small dimensional ceiling; do not hide a residual restraint.
+        roundoff=128*np.finfo(float).eps*(abs(self.k)@abs(physical_rigid))+1e-8
+        arithmetic_ratio=float(np.max(abs(residual)/roundoff))
+        assert arithmetic_ratio<1 and max(rows)<.01,(rows,arithmetic_ratio)
         # A cap at its actual normal/vertical offset has exactly the work of
         # that physical point for every rigid motion, including yaw.
         e=0.
@@ -148,9 +178,10 @@ class Roof:
         assert e<1e-10
         return dict(sourceSHA256=self.source_hash,originalDOFs=len(original.k),
                     enrichedDOFs=len(self.k),newCapStations=len(self.cap_points),
+                    LCapRootStations=len(L_cap_points()),
                     originalReceivingStations=len(self.p['upperSupports']),
                     condensedRelativeError=float(relative),condensedMaxEntryError=float(error),
-                    rigidResidualNOrNmm=rows,capOffsetRigidError=e)
+                    rigidResidualNOrNmm=rows,rigidArithmeticErrorRatio=arithmetic_ratio,capOffsetRigidError=e)
 
 
 if __name__=='__main__':

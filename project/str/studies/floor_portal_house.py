@@ -13,7 +13,7 @@ import numpy as np
 from scipy.linalg import solve as dense_solve
 from scipy.sparse import csc_matrix
 from floor_portal_frame import Frame,Solve,offset,membrane_triangle,plate_rectangle
-from floor_portal_roof import Roof
+from floor_portal_roof import Roof,outer_root
 
 D=Path(__file__).resolve().parent
 H=json.loads((D.parents[1]/'had/studies/water-replan.json').read_text())['model']
@@ -47,6 +47,7 @@ class Parameters:
     head_rotation:str='fixed'
     cap_scale:float=1.
     cap_anchor_length:float=805.
+    L_cap_anchor_length:float=1320.
     cap_bearing_depth:float=180.
     dpc_scale:float=1.
     dpc_anchor_length:float=1106.
@@ -566,12 +567,25 @@ class House:
                     k=np.zeros((6,6));k[:3,:3]=np.outer(direction,direction)*stiffness*wx/2
                     self.cap_links.append(self.f.link(self.roof.port(q,pos),self.f.port(j['top'],pos),k,f'cap-key-{face}-{j["u"]:g}'))
         for L in self.Ls:
-            roots=L['roofRoots'];assert roots
-            area=L['area']/len(roots)
-            for q in roots:
-                at=[*q,6540.];a=self.roof.port(q,at);b=self.f.port(L['top'],at)
-                k=np.diag([77000*area/25]*2+[200000*area/25]+[200000*area*140**2/12/25]*2+[77000*area*140**2/12/25])*self.p.cap_scale
-                self.cap_links.append(self.f.link(a,b,k,'L-roof-cap-'+str(L['corner'])))
+            source=json.loads((D/'current-house-ground-ties.json').read_text())['outer']['primaryBarXY']
+            for i,bar in enumerate(source):
+                pt=L['origin']+L['sg']*np.array(bar);q=outer_root(pt);at=[*pt,6540.]
+                distance=min(100.,max(1.,100.+(pt[0]-q[0])+(pt[1]-q[1])))
+                plate=sum(distance**2*(200-distance)**2/(3*200000*(100*t**3/12)*200) for t in (25.,20.))
+                k=1/(self.p.L_cap_anchor_length/(200000*math.pi*20**2/4)+plate)*self.p.cap_scale
+                self.cap_links.append(self.f.link(self.roof.port(q,at),self.f.port(L['top'],at),[0,0,k,0,0,0],f'L-cap-anchor-{L["corner"]}-{i}'))
+            gp,gw=np.polynomial.legendre.leggauss(2)
+            for l,b,r,t in L['foot']:
+                for x,wx in zip(gp,gw):
+                    for y,wy in zip(gp,gw):
+                        pt=np.array([(l+r)/2+x*(r-l)/2,(b+t)/2+y*(t-b)/2]);q=outer_root(pt);at=[*pt,6540.];area=(r-l)*(t-b)*wx*wy/4
+                        k=area/(self.p.cap_bearing_depth/33000+25/200000)*self.p.cap_scale
+                        self.contact(self.roof.port(q,at),self.f.port(L['top'],at),k,'L-cap-bearing-'+str(L['corner']))
+            # Three located90x10x60 cruciform keys on the retained L topology.
+            for centre in ((70.,70.),(900.,70.),(70.,900.)):
+                pt=L['origin']+L['sg']*np.array(centre);q=outer_root(pt);at=[*pt,6485.]
+                k=1/(60**3/(8*200000*(90*10**3/12))+60/(33000*90*60))*self.p.cap_scale
+                self.cap_links.append(self.f.link(self.roof.port(q,at),self.f.port(L['top'],at),[k,k,0,0,0,0],'L-cap-key-'+str(L['corner'])))
 
     def controls(self):
         r=self.rigid@np.diag([1,1,1,.001,.001,.001]);res=self.k@r

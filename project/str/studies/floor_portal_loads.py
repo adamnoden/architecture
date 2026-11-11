@@ -9,9 +9,9 @@ from contextlib import redirect_stdout
 from io import StringIO
 from itertools import pairwise
 from pathlib import Path
-import ast,json,math,runpy,sys
+import ast,inspect,json,math,runpy,sys
 import numpy as np
-from floor_portal_house import A,B,C,E,D,H,GRID,xy,inward,along,local,inside
+from floor_portal_house import A,B,C,E,D,H,GRID,xy,inward,along,local,inside,rectangle
 from floor_portal_frame import offset
 
 
@@ -28,7 +28,7 @@ class Case:
         self.port(self.h.f.port(node,point),point,force,moment,tag)
     def beam(self,e,t,point,force,moment=(0.,0.,0.),tag=''):
         out=self.h.f.beam_load(self.f,e,t,force,moment,point)
-        self.ends[id(e)]+=out;self.origin(tag,point,force,moment)
+        self.ends[e.get('load_key',id(e))]+=out;self.origin(tag,point,force,moment)
     def member(self,elements,point,force,moment=(0.,0.,0.),tag=''):
         point=np.asarray(point)
         def distance(e):
@@ -97,6 +97,27 @@ def subtract_box(a,b):
     return out
 
 
+def taper_quadrature(box,row):
+    """Exact volume/first-moment quadrature for a clipped linear core flare."""
+    corners=[local(row['face'],[x,y]) for x in (box[0],box[2]) for y in (box[1],box[3])]
+    ulo=max(min(p[0] for p in corners),row['u']-102.5);uhi=min(max(p[0] for p in corners),row['u']+102.5)
+    qlo,qhi=min(p[1] for p in corners),max(p[1] for p in corners);za,zb=max(box[4],row['za']),min(box[5],row['zb'])
+    if uhi<=ulo or zb<=za:return []
+    cuts={za,zb}
+    for a,b in zip(row['q0'],row['q1']):
+        if abs(a-b)<1e-10:continue
+        for q in (qlo,qhi):
+            z=row['za']+(q-a)/(b-a)*(row['zb']-row['za'])
+            if za<z<zb:cuts.add(z)
+    out=[]
+    for lo,hi in pairwise(sorted(cuts)):
+        for t in (-1/math.sqrt(3),1/math.sqrt(3)):
+            z=(lo+hi)/2+(hi-lo)*t/2;fraction=(z-row['za'])/(row['zb']-row['za']);edges=np.array(row['q0'])*(1-fraction)+np.array(row['q1'])*fraction
+            l,r=max(edges[0],qlo),min(edges[1],qhi)
+            if r>l:out.append(((r-l)*(uhi-ulo)*(hi-lo)/2/1e9,np.r_[xy(row['face'],(l+r)/2,(ulo+uhi)/2),z]))
+    return out
+
+
 def rc_origins(h,case):
     claimed=[];volumes=defaultdict(float);pieces=[]
     ordered=sorted(h.rc_boxes,key=lambda row:{'L':0,'jamb':1,'collector':2,'trimmer':3}[row[2]])
@@ -106,17 +127,32 @@ def rc_origins(h,case):
         claimed.append(box)
         for b in rows:
             volume=(b[2]-b[0])*(b[3]-b[1])*(b[5]-b[4])/1e9
-            p=np.array([(b[0]+b[2])/2,(b[1]+b[3])/2,(b[4]+b[5])/2]);force=[0,0,-25000*volume]
+            centre=np.array([(b[0]+b[2])/2,(b[1]+b[3])/2,(b[4]+b[5])/2])
             volumes[kind]+=volume;pieces.append((name,b,volume))
-            if kind in ('collector','trimmer'):case.floor(p,force,tag='RC '+kind+' disjoint solid')
+            if kind=='collector':
+                face=int(name.rsplit('-',1)[1]);axis=int(face in (1,3))
+                es=[e for e in h.members['collector'] if e['name']==name.split('-')[0]+'-collector' and abs(local(face,(e['a']+e['b'])[:2]/2)[1]-(A if name.startswith('outer') else C))<1e-6]
+            elif kind=='trimmer':
+                tr=next(t for t in h.trimmers if 'trimmer-'+t['name']==name);axis=tr['axis']
+                es=[e for e in h.members['trimmer'] if e['name']==name]
             elif kind=='L':
-                L=next(L for L in h.Ls if any(inside(p,r,1e-6) for r in L['foot']))
-                if 3170<=p[2]<=3920:case.node(L['joint'],p,force,tag='RC L disjoint solid')
-                else:case.member([e for e in h.members['L'] if np.linalg.norm((e['a']+e['b'])[:2]/2-L['centroid'])<1e-5],p,force,tag='RC L disjoint solid')
+                axis=2;L=next(L for L in h.Ls if any(inside(centre,r,1e-6) for r in L['foot']))
+                es=[e for e in h.members['L'] if np.linalg.norm((e['a']+e['b'])[:2]/2-L['centroid'])<1e-5]
             else:
-                j=next(j for j in h.jambs if abs(local(j['face'],p[:2])[0]-j['u'])<102.5+1e-7 and abs(local(j['face'],p[:2])[1]-312.5)<180)
-                if 3170<=p[2]<=3920:case.node(j['joint'],p,force,tag='RC jamb disjoint solid')
-                else:case.member([e for e in h.members['jamb'] if e['name']==f'jamb-{j["face"]}-{j["u"]:g}' or e['name']=='jamb-foot' and abs(local(j['face'],e['a'][:2])[0]-j['u'])<1e-5],p,force,tag='RC jamb disjoint solid')
+                axis=2;j=next(j for j in h.jambs if abs(local(j['face'],centre[:2])[0]-j['u'])<102.5+1e-7 and abs(local(j['face'],centre[:2])[1]-312.5)<180)
+                es=[e for e in h.members['jamb'] if e['name']==f'jamb-{j["face"]}-{j["u"]:g}' or e['name']=='jamb-foot' and abs(local(j['face'],e['a'][:2])[0]-j['u'])<1e-5]
+            lo,hi=(b[axis],b[axis+2]) if axis<2 else (b[4],b[5])
+            cuts=sorted({lo,hi,*[float(e[end][axis]) for e in es for end in ('a','b') if lo<e[end][axis]<hi],*[z for z in (3170.,3920.) if axis==2 and lo<z<hi]})
+            # Two Gauss origins per actual member segment integrate the cubic
+            # beam load field exactly. A single whole-box centroid preserves
+            # resultants but would concentrate long-member self-weight.
+            for left,right in pairwise(cuts):
+                for t in (-1/math.sqrt(3),1/math.sqrt(3)):
+                    p=centre.copy();p[axis]=(left+right)/2+(right-left)*t/2
+                    force=[0,0,-25000*volume*(right-left)/(hi-lo)/2]
+                    if kind in ('collector','trimmer'):case.floor(p,force,tag='RC '+kind+' disjoint solid')
+                    elif 3170<=p[2]<=3920:case.node((L if kind=='L' else j)['joint'],p,force,tag='RC '+kind+' disjoint solid')
+                    else:case.member(es,p,force,tag='RC '+kind+' disjoint solid')
     for row in h.flare_solids:
         for t,w in zip([.5-.5/math.sqrt(3),.5+.5/math.sqrt(3)],[.5,.5]):
             q0,q1=np.array(row['q0'])*(1-t)+np.array(row['q1'])*t;z=row['za']*(1-t)+row['zb']*t
@@ -143,9 +179,22 @@ def rc_origins(h,case):
 
 def source_origins():
     rows=[];args=sys.argv[:]
+    def observe(cat,kind,n,point,receivers):
+        metadata=None
+        if cat in ('ground core and finish budget','upper core and finish budget'):
+            # Immutable source cell before its old receiving-rule projection.
+            # The independent review reproduced every body+finish total.
+            g=inspect.currentframe().f_back.f_globals
+            cell=[g['xa'],g['ya'],g['xb'],g['yb']];axis,count,j=g['i'],g['n'],g['j'];lo=cell[axis];span=cell[axis+2]-lo
+            cell[axis]=lo+span*j/count;cell[axis+2]=lo+span*(j+1)/count
+            ar=(cell[2]-cell[0])*(cell[3]-cell[1])/1e6;body=ar*g['height']*g['rho'];finish=ar/g['gauge']*g['height']*.4
+            assert abs(body+finish-n)<1e-9
+            z0=3370. if cat.startswith('upper') else -180.
+            metadata=dict(owner=g['name'],gaugeMM=g['gauge']*1000,box=cell+[z0,z0+1000*g['height']],bodyKN=body,finishKN=finish)
+        rows.append((cat,kind,n,point,receivers,metadata))
     try:
         sys.argv=['raw-coupled-origins','--check']
-        with redirect_stdout(StringIO()):p=runpy.run_path(str(D/'current-house-head-actions.py'),init_globals={'originObserver':lambda c,k,n,p,rr:rows.append((c,k,n,p,rr))})
+        with redirect_stdout(StringIO()):p=runpy.run_path(str(D/'current-house-head-actions.py'),init_globals={'originObserver':observe})
     finally:sys.argv=args
     return rows,p
 
@@ -170,27 +219,36 @@ def gravity(h):
     G,Q=Case(h,'G characteristic adverse'),Case(h,'Q characteristic')
     geometry=rc_origins(h,G);floor=floor_fields(h,G,Q);rows,source=source_origins()
     source_totals=defaultdict(float);adjustments=defaultdict(float)
+    replacements=[]
+    for face in range(4):
+        for centre in (2100.,9900.):replacements.append(rectangle(face,centre-705,centre+705,262.5,402.5)+[-180.,6540.])
+    for L in h.Ls:replacements.extend(r+[-180.,6540.] for r in L['foot'])
+    replacements.extend(box for name,box,kind in h.rc_boxes if kind in ('collector','trimmer','jamb'))
+    def route_core(tag,point,force,receivers,upper):
+        if upper:G.floor([*point[:2],3370.],force,tag=tag);return
+        projected=sum(np.asarray(q)*w for name,q,w in receivers);delta=np.asarray(point[:2])-projected
+        for name,q,w in receivers:
+            if abs(w)>1e-12:G.ground(name,[*(np.asarray(q)+delta),-180.],np.asarray(force)*w,tag=tag)
     excluded={'roof','roof signed rows','steel wall-head ring','first-floor fields','first-floor bridge','first-floor residual RC and finish','upper frame downstands'}
-    for cat,kind,n,p,receivers in rows:
+    for cat,kind,n,p,receivers,metadata in rows:
         source_totals[cat+' / '+kind]+=n
         if cat in excluded or kind not in ('G','Q') or abs(n)<1e-12:continue
         case=G if kind=='G' else Q;force=np.array([0.,0.,-n*1000]);point=np.array([*p,-180.])
         if cat=='upper core and finish budget' or cat=='ground core and finish budget':
-            upper=cat.startswith('upper');height=3170. if upper else 3350.;fraction=1.
-            core_part=3.5/3.9 #140 mm source core at25 plus0.4 kN/m2 face allowance
-            portal=None
-            for face in range(4):
-                u,q=local(face,p)
-                if 262.5-1e-6<=q<=402.5+1e-6:
-                    for centre in (2100.,9900.):
-                        if centre-705<=u<=centre+705:portal=(face,centre,u)
-            if portal is not None or any(any(inside(p,r,1e-7) for r in L['foot']) for L in h.Ls):fraction=1-core_part
-            elif upper:
-                for col in h.collectors:
-                    if inside(p,col['rect']):fraction-=core_part*(min(6540,3170+col['depth'])-3370)/height;break
-            adjustments[cat+' removed RC-replaced body kN']+=n*(1-fraction);force*=fraction
-            if upper:
-                case.floor([*p,3370.],force,tag=cat+' retained non-RC allowance');continue
+            upper=cat.startswith('upper');remaining=[metadata['box']]
+            for box in replacements:remaining=[piece for old in remaining for piece in subtract_box(old,box)]
+            kept=0.
+            for box in remaining:
+                body=(box[2]-box[0])*(box[3]-box[1])*(box[5]-box[4])*25/1e9;kept+=body
+                point=[(box[0]+box[2])/2,(box[1]+box[3])/2,(box[4]+box[5])/2]
+                route_core(cat+' retained disjoint body',point,[0,0,-body*1000],receivers,upper)
+                for taper in h.flare_solids:
+                    for volume,point in taper_quadrature(box,taper):
+                        kept-=volume*25
+                        route_core(cat+' exact taper-overlap deduction',point,[0,0,volume*25000],receivers,upper)
+            route_core(cat+' unchanged face allowance',p,[0,0,-metadata['finishKN']*1000],receivers,upper)
+            adjustments[cat+' removed RC-replaced body kN']+=metadata['bodyKN']-kept
+            continue
         if cat=='independent ceiling envelope':
             # Retain the source physical span receivers. If an outer receiver
             # lies on a new portal, load its upper arch/jamb, not the floor twice.
@@ -229,12 +287,15 @@ def gravity(h):
                 physical_centre=centre if face<2 else 12000-centre
                 opening=min(choices,key=lambda o:abs({1800:2100,10200:9900}.get(o['centre'],o['centre'])-physical_centre))
                 sill=opening['sill']+(3450 if level=='FIRST' and opening['sill']<3000 else 0)
-                vol=1000*140*max(0,sill-bottom)/1e9;pt=[*xy(face,A,centre),(sill+bottom)/2]
-                if zfloor:G.floor(pt,[0,0,-25000*vol],tag='retained below-sill opaque infill')
-                else:
-                    ground='outer-'+['S','E','N','W'][face]
-                    if face==2:ground='outer-NW' if pt[0]<6000 else 'outer-NE'
-                    G.ground(ground,pt,[0,0,-25000*vol],tag='retained below-sill opaque infill')
+                pieces=[rectangle(face,centre-500,centre+500,262.5,402.5)+[bottom,sill]]
+                for name,box,kind in h.rc_boxes:pieces=[part for piece in pieces for part in subtract_box(piece,box)]
+                for box in pieces:
+                    vol=(box[2]-box[0])*(box[3]-box[1])*(box[5]-box[4])/1e9;pt=[(box[0]+box[2])/2,(box[1]+box[3])/2,(box[4]+box[5])/2]
+                    if zfloor:G.floor(pt,[0,0,-25000*vol],tag='retained below-sill opaque infill outside RC')
+                    else:
+                        ground='outer-'+['S','E','N','W'][face]
+                        if face==2:ground='outer-NW' if pt[0]<6000 else 'outer-NE'
+                        G.ground(ground,pt,[0,0,-25000*vol],tag='retained below-sill opaque infill outside RC')
     # The installed frame200 kg/unit and guard stock are real adverse mass
     # allowances separate from removed gross opening masonry.
     guard=json.loads((D/'current-house-window-receivers.json').read_text())['guard']['body']
@@ -291,7 +352,7 @@ def radial_point(h,case,inner,outer,x,L,down,tag):
     aa=np.r_[outer,p['zheel']];bb=np.r_[crown,p['zhigh']];delta=bb-aa;length=np.linalg.norm(delta);xx=delta/length
     yy=np.array([-xx[1],xx[0],0.]);yy/=np.linalg.norm(yy);zz=np.cross(xx,yy);R=np.array([xx,yy,zz]);rot=np.zeros((6,6));rot[:3,:3]=rot[3:,3:]=R
     ia,ta=h.roof.port(outer,aa);ib,tb=high_port(h,crown,True);tr=np.zeros((12,12));tr[:6,:6]=rot@ta;tr[6:,6:]=rot@tb
-    e=dict(ids=np.r_[ia,ib],a=aa,b=bb,L=length,R=R,t=tr)
+    e=dict(ids=np.r_[ia,ib],a=aa,b=bb,L=length,R=R,t=tr,load_key=('native outer rafter',tuple(outer),crown))
     case.beam(e,float(np.clip(2*(1-x/L),0,1)),point,force,tag=tag)
 
 
@@ -332,6 +393,18 @@ def roof_gravity(h):
         weight(peak,lead_parts['blanks']*scale/12,True,'current316L corner saddle blank')
         fraction=(mat['valleyLength']/2+100)/(mat['valleyLength']+250)*(4525-mid)/(C-mid);kg=(mat['lowerTraysKg']+mat['steelSupportBedsKg'])/4
         weight(tuple(xy(face,C,C)),kg*fraction,False,'current independent valley tray and bed');weight(peak,kg*(1-fraction),True,'current independent valley tray and bed')
+    # MAT's identified75 mm court overhang is outside the predecessor
+    #144.15m2 plan pressure field. Keep its own real centroid and ring lever.
+    Load,_=roof_load_type(h);strip=Load('additional75 mm court slate suction')
+    strip_area=0.
+    for q,wgt in ((4487.5-37.5*math.sqrt(.6),5/9),(4487.5,8/9),(4487.5+37.5*math.sqrt(.6),5/9)):
+        for face in range(4):
+            cuts=sorted({q,12000-q,*[x for x in p['sides'][face,'inner'] if q<x<12000-q]})
+            for lo,hi in pairwise(cuts):
+                area=(hi-lo)*37.5*wgt/1e6;strip_area+=area
+                strip.place('court',face,-q,(lo+hi)/2,down=-2250*area,tag='MAT additional75 mm court slate strip')
+    assert abs(strip_area-.9075)<1e-10
+    U=Case.combination(h,'roof source plus identified75 mm strip suction',[(1,U),(1,import_roof_load(h,strip,'court strip suction'))])
     before_ring=-G.totals()['sixResultants'][2]/1000
     assert abs(before_ring-w['globalOrigins']['G'])<1e-7,(before_ring,w['globalOrigins']['G'])
     Load,_=roof_load_type(h);ring=Load('actual wall-head ring stock')
@@ -341,7 +414,7 @@ def roof_gravity(h):
         ring.place('court' if inner else 'outer',face,-(C if inner else A),local(face,point)[0],down=math.dist(aa,bb)/1000*sec['lineG']*1000,tag='actual wall-head steel ring')
     ringcase=import_roof_load(h,ring,'ring G')
     G=Case.combination(h,'roof Gmax characteristic',[(1,G),(1,ringcase)])
-    return G,Q,U,{'sourceRoofGmaxKN':before_ring,'currentSpecialsKgWithinWeatherBudget':special_kg,'residualWeatherRateKNPerSlopeM2':residual_rate,'sourceNormalAreaM2':normal_area,'actualRingGkKN':-ringcase.totals()['sixResultants'][2]/1000,'uninstalledBraceReserveKN':sum(p['braceG'].values()),'minimumRoofMassCredit':0}
+    return G,Q,U,{'sourceRoofGmaxKN':before_ring,'currentSpecialsKgWithinWeatherBudget':special_kg,'residualWeatherRateKNPerSlopeM2':residual_rate,'sourceNormalAreaM2':normal_area,'extraCourtSlatePlanM2':strip_area,'extraCourtSlateSuctionKN':-2.25*strip_area,'actualRingGkKN':-ringcase.totals()['sixResultants'][2]/1000,'uninstalledBraceReserveKN':sum(p['braceG'].values()),'minimumRoofMassCredit':0}
 
 
 def roof_goods(h):
@@ -359,11 +432,13 @@ def roof_goods(h):
         for face in range(4):
             q=sum(row['qCentroidRange'])/2;station=sum(row['pCentroidRange'])/2
             inner.place('court',face,-q,station,down=row['dryKg']*9.81,z=row['rootAxisZ'],root_station=row['rootStation'],tag='inner '+row['circuit']+' dry allowance')
+            central=Load('inner dry centre to replace');central.place('court',face,-q,station,down=row['dryKg']*9.81,z=row['rootAxisZ'],root_station=row['rootStation'],tag='independent cassette centre')
+            centre_case=import_roof_load(h,central,'inner dry centre')
             extremes=[]
             for q in row['qCentroidRange']:
                 for station in row['pCentroidRange']:
                     ld=Load('inner cassette dry extreme');ld.place('court',face,-q,station,down=row['dryKg']*9.81,z=row['rootAxisZ'],root_station=row['rootStation'],tag='independent cassette dry endpoint')
-                    extremes.append(import_roof_load(h,ld,'inner dry endpoint'))
+                    extremes.append(Case.combination(h,'inner dry endpoint minus corresponding centre',[(1,import_roof_load(h,ld,'inner dry endpoint')),(-1,centre_case)]))
             uncertainty.append(extremes)
     dry=Case.combination(h,'all roof goods dry characteristic',[(1,dry),(1,import_roof_load(h,inner,'inner goods dry'))])
     return dry,water,extra,uncertainty,{'dryGkKN':-dry.totals()['sixResultants'][2]/1000,'blockedWaterQkKN':-water.totals()['sixResultants'][2]/1000,'additionalSkyAreaM2':ns['wind_area'],'independentInnerDryCentroidGroups':len(uncertainty),'source':'project/rof/studies/roof_water_current_trial.py load construction; no historical response added'}

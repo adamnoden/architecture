@@ -1,0 +1,288 @@
+{
+  "status": "ADVERSE END-SECTION SCREEN ONLY; no structural or cage adoption",
+  "controls": {
+    "blockPolygonMaximumAreaOrFirstMomentError": 5.820766091346741e-08,
+    "zeroAxialReflectionErrorNmm": 3.1315721571445465e-08,
+    "biaxial120": 0.40624307931634196,
+    "biaxial240": 0.40623471201087186,
+    "steelOnlyTensionLimitKN": 180.9557368467721
+  },
+  "cases": 579,
+  "testedEndGeometryGroups": 8,
+  "worst": {
+    "jamb": {
+      "exact240": 0.5594376054401963,
+      "exact120": 0.5594692528380237,
+      "caseIndex": 529,
+      "case": "1.35G+1.5Q; downward roof pressure; W(4, 4);court=True;goodsZ=7400",
+      "member": 726,
+      "end": 1,
+      "at": [
+        11667.5,
+        1497.5,
+        3170.0
+      ],
+      "N_Qnormal_Qother": [
+        8103.566589147381,
+        2213885.8185541327,
+        -7864952.695124711
+      ],
+      "width": 250,
+      "height": 205.0,
+      "adverseBars": [
+        [
+          -77.0,
+          -27.0,
+          12.0
+        ],
+        [
+          -77.0,
+          27.0,
+          12.0
+        ],
+        [
+          77.0,
+          -27.0,
+          12.0
+        ],
+        [
+          77.0,
+          27.0,
+          12.0
+        ]
+      ],
+      "bracketCandidateRatio": 0.564754038073683
+    },
+    "outer-collector": {
+      "exact240": 0.38025320623146835,
+      "exact120": 0.3802649391565904,
+      "caseIndex": 531,
+      "case": "zero favourable G; U; W(4, 5);court=True;goodsZ=7400",
+      "member": 1324,
+      "end": 1,
+      "at": [
+        10737.5,
+        332.5,
+        3545.0
+      ],
+      "N_Qnormal_Qother": [
+        8699.662921321695,
+        1707644.503967762,
+        125425542.48566858
+      ],
+      "width": 160.0,
+      "height": 750.0,
+      "adverseBars": [
+        [
+          -24.0,
+          -309.0,
+          16.0
+        ],
+        [
+          24.0,
+          -309.0,
+          16.0
+        ],
+        [
+          -24.0,
+          -234.0,
+          16.0
+        ],
+        [
+          24.0,
+          -234.0,
+          16.0
+        ],
+        [
+          -24.0,
+          -159.0,
+          16.0
+        ],
+        [
+          24.0,
+          -159.0,
+          16.0
+        ],
+        [
+          -24.0,
+          309.0,
+          16.0
+        ],
+        [
+          24.0,
+          309.0,
+          16.0
+        ],
+        [
+          -24.0,
+          234.0,
+          16.0
+        ],
+        [
+          24.0,
+          234.0,
+          16.0
+        ],
+        [
+          -24.0,
+          159.0,
+          16.0
+        ],
+        [
+          24.0,
+          159.0,
+          16.0
+        ],
+        [
+          -26.0,
+          -77.5,
+          12.0
+        ],
+        [
+          26.0,
+          -77.5,
+          12.0
+        ],
+        [
+          -26.0,
+          -22.5,
+          12.0
+        ],
+        [
+          26.0,
+          -22.5,
+          12.0
+        ],
+        [
+          -26.0,
+          22.5,
+          12.0
+        ],
+        [
+          26.0,
+          22.5,
+          12.0
+        ],
+        [
+          -26.0,
+          77.5,
+          12.0
+        ],
+        [
+          26.0,
+          77.5,
+          12.0
+        ]
+      ],
+      "bracketCandidateRatio": 0.38086461258599547
+    },
+    "court-collector": {
+      "exact240": 0.16217762193288116,
+      "exact120": 0.16217815298758373,
+      "caseIndex": 205,
+      "case": "1.35G+1.5Q; downward roof pressure; W(2, 6);court=False;goodsZ=7400",
+      "member": 1625,
+      "end": 0,
+      "at": [
+        5925.0,
+        8082.5,
+        3495.0
+      ],
+      "N_Qnormal_Qother": [
+        33838.26556636894,
+        155239.8919336535,
+        37925197.75014068
+      ],
+      "width": 160.0,
+      "height": 650.0,
+      "adverseBars": [
+        [
+          -24.0,
+          -259.0,
+          16.0
+        ],
+        [
+          24.0,
+          -259.0,
+          16.0
+        ],
+        [
+          -24.0,
+          -184.0,
+          16.0
+        ],
+        [
+          24.0,
+          -184.0,
+          16.0
+        ],
+        [
+          -24.0,
+          259.0,
+          16.0
+        ],
+        [
+          24.0,
+          259.0,
+          16.0
+        ],
+        [
+          -24.0,
+          184.0,
+          16.0
+        ],
+        [
+          24.0,
+          184.0,
+          16.0
+        ],
+        [
+          -26.0,
+          -77.5,
+          12.0
+        ],
+        [
+          26.0,
+          -77.5,
+          12.0
+        ],
+        [
+          -26.0,
+          -22.5,
+          12.0
+        ],
+        [
+          26.0,
+          -22.5,
+          12.0
+        ],
+        [
+          -26.0,
+          22.5,
+          12.0
+        ],
+        [
+          26.0,
+          22.5,
+          12.0
+        ],
+        [
+          -26.0,
+          77.5,
+          12.0
+        ],
+        [
+          26.0,
+          77.5,
+          12.0
+        ]
+      ],
+      "bracketCandidateRatio": 0.16250470610140544
+    }
+  },
+  "limits": [
+    "Exact same-N120/240-angle analysis is applied to12 candidates per geometry group. The bracket search is a screening procedure, not an exhaustive same-N certification.",
+    "Actual simultaneous end N and two moments are retained; unrelated case maxima are never combined.",
+    "Interior section extrema, global/local second order, torsion/shear, anchorage, joint confinement and assembly remain separate."
+  ]
+}

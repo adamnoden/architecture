@@ -266,3 +266,100 @@ new trimmer downstands, plus a 140 mm-only body/finish fraction used where
 source core widths vary. Those corrections are explicitly required before
 interpreting a final demand envelope. The recorded source identities, load
 resultants and all 52 head cards are replayed by the new CI job.
+
+
+### Corrected connected comparison after the first checkpoint
+
+The exact source-cell ledger now separates all2965 retained wall-body cells
+from their finish origins, using their actual100/140/215 mm core gauge.
+The replaced body is221.74150625 kN on the ground storey and285.38071250 kN
+upstairs. This includes the2.20550625 kN of actual downstand/core intersections
+and0.044 kN of tapered-jamb intersections. Retained pieces keep their own
+centroids and the finishes keep their original locations. The upper below-sill
+panel also excludes the actual550 mm collector overlap; that removes the
+previous15.4 kN duplicate. These are ownership corrections, not load exemptions.
+
+Each disjoint long RC solid now supplies two Gauss load origins on every real
+member segment. This preserves its cubic consistent-load field as well as its
+force and all three moments. The actual75 mm court slate strip adds0.9075 m²
+and2.041875 kN of suction outside the predecessor roof field. It is separate
+from the27.8321 m² of added rainwater-goods sky area.
+
+The four outer L roof joints now use their original twelveH20 force lines,
+located positive keys and finite compression contact. Splitting the real ring
+at all such stations reproduces the original roof after condensation with a
+1.292e-13 relative matrix difference. The27 mm shortest ring segment introduces
+small absolute cancellation residuals, so its rigid-body control also checks
+an explicit floating-point arithmetic bound. No residual support spring is
+used. The16 jamb caps retain their real20 mm offset. Both cap families still
+need the actual compatible weldable-half, short threaded stub, position
+coupler, long-bar and concrete closure. The present development-length series
+spring is a named conservative slip comparison, not a measured splice law.
+
+The revised four-case receipt conserves force and all three moments at all52
+heads. Its isolated+X wind/suction case, with zero favourable G, has a maximum
+head tension of113.3573 kN. This is an unselected demand, not shaft resistance.
+The new domain runner retains coherent case names, simultaneous member ends
+and six signed components for every head; full/half, signed biaxial winds and
+both body-height endpoints are evaluated with changing contact.
+
+The small biaxial section helper follows the existing L-section stress-block
+method and the [JRC2014 EC2 worked examples](https://eurocodes.jrc.ec.europa.eu/sites/default/files/2022-06/1110_WS_EC2.pdf).
+Its exact clipped-rectangle area/first moments agree with an independent
+polygon calculation; reflected sections and120/240-angle contours are checked.
+It reports same-N biaxial END-section comparisons. It does not infer bond,
+interior moment maxima, second-order stability, links or construction from a
+cross-section result. The ordinary160 collector still fails the original L
+bar crossing: the local250 corner and finite haunch remain an explicit next
+physical comparator, with their room footprint to reconcile.
+
+
+### Full coherent demand and compatibility checkpoint
+
+The [579-case register](studies/floor-portal-demand-checkpoint.json) includes
+three gravity controls and192 signed/partial/biaxial pressure programmes,
+each with zero-favourable-G suction, simultaneous factored gravity plus downward
+pressure, and simultaneous factored gravity plus suction. Every case recalculates
+unilateral contact. All52 correlated head cards and actual link/member witnesses
+are retained. The largest head tension in that stated domain is173.1282 kN at
+P04. Component extrema have distinct case witnesses and are never summed.
+The final summary was reconstructed directly from the saved solve matrices
+after repairing a NumPy-index JSON serialization error. An independent
+force/three-moment sum of those head cards has maximum residual0.2395 Nmm.
+
+The [end-section screening receipt](studies/floor-portal-section-ends.json)
+uses exact same-axial-force120/240-angle contours at the shortlisted correlated
+states. It reports0.55944 at a widened jamb end,0.38025 in the outer collector
+and0.16218 in the court collector after5 mm adverse bar shifts. These are
+shortlisted END checks, not continuous-section, second-order or cage admission.
+The collector's separate extreme shear is203.278 kN and torque5.708 kNm.
+A preliminary H8/150, cot(theta)=2 flow comparison reaches0.955 with7.7 mm
+challenged diameter,160 mm delivered pitch and inward hoop deviations; its
+longitudinal chord charge, weak-axis spacing and actual joint schedule remain
+unearned. A steel-area pass alone cannot select that detail.
+
+The [compatibility receipt](studies/floor-portal-movement-checkpoint.json)
+preserves six dimension-change cases and both signs of a1 mm vertical motion
+at every one of52 heads. The six common rigid-motion controls create no
+meaningful restraint. Roof free strain±720 microstrain is explicitly a
+comparison (equivalent to±60 K only if alpha=12 microstrain/K), not a site
+thermal range. Actual member-length and reference-affine forcing give the
+same recorded house/head/link response to numerical precision; the unsummarized
+ridge displacement still needs its physical finite-offset interpretation. Individual cap/key link forces
+reach28.48 kN. Superstructure±300 microstrain is a net dimensional-change
+comparison relative to the older grid, not a curing or bond prediction.
+
+The fixed-head reference is deliberately exposed by the movement controls:
+forcing P10 down1 mm while the other51 heads remain fully fixed produces
+1478.37 kN of head tension. This is a stiffness demand for that kinematic
+condition, not a predicted soil movement or an admissible pile load. The
+actual shaft/group rotational and translational compliance must be compared;
+the model is not allowed to turn this result into a fixed-head site acceptance.
+
+The room replay has also rejected an unqualified square-haunch adoption.
+The candidate keeps250 width through1430 before the160 shoulder and uses a
+120×120 corner block; its larger footprint reaches the principal-room radiator.
+The coordinated radiator/bed, rear-WC/stack and existing small floor-port
+relocations are separate explicit design candidates. The original ordinary160
+still adds10 mm at every affected finished face. No room or service route is
+claimed unchanged.

@@ -39,6 +39,12 @@ jobs:
       - name: Prove native roof split and work equivalence
         run: python project/str/studies/floor_portal_roof.py
 
+      - name: Check biaxial stress block and independent geometry controls
+        run: python project/str/studies/floor_portal_sections.py
+
+      - name: Check unilateral contact against independent direct solves
+        run: python project/str/studies/floor_portal_movements.py --controls
+
       - name: Reproduce connected assembly and all-head equilibrium controls
         run: python project/str/studies/floor_portal_coupled.py --check --output /tmp/floor-portal-coupled.json
 

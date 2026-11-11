@@ -62,7 +62,7 @@ def run(parameters=None,component_only=False):
     return {'status':'UNSELECTED CONNECTED COMPARISON; STR-FLOOR-PORTAL INCOMPLETE','parameters':asdict(h.p),'controls':control,
             'sources':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in [D/'floor_portal_frame.py',D/'floor_portal_roof.py',D/'floor_portal_house.py',D/'floor_portal_loads.py',D/'current-house-grid.json',D/'current-house-head-actions.py']},
             'gravityLedger':base_receipt,'roofLedger':roof_receipt,'goodsLedger':goods_receipt,'cases':results,
-            'unresolved':['Four L roof-cap compliances still use the provisional plate control; replace with located anchors and contact.',
+            'unresolved':['All20 roof caps now use located steel anchors, positive keys and compression contact; compatible coupler/stub/weld stack, cover, anchorage and finite movement are still unqualified.',
                           'Ordinary160 and local250 corner/flared jamb cage remains unselected; current model has no local corner250 widening.',
                           'All signed/partial/biaxial winds, independent24 cassette mass endpoints, pressure groups, thermal, shortening and52 head motions require the same assembly.',
                           'Joint-zone stiffness sensitivity, mesh convergence and physical anchorage/cage/room replay remain outstanding.',
