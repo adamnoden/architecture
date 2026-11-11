@@ -9,8 +9,8 @@
     "label": "push-20261111-root"
   },
   "claimedAt": "2026-11-11T08:33:57.246Z",
-  "heartbeatAt": "2026-11-11T08:33:57.246Z",
-  "expiresAt": "2026-11-11T09:18:57.246Z",
+  "heartbeatAt": "2026-11-11T08:42:41.691Z",
+  "expiresAt": "2026-11-11T09:27:41.691Z",
   "branch": "work/push-roof-g4-20261111",
   "predecessor": {
     "leaseId": "e3c97957-956b-46e8-ae67-346007b092b6",
@@ -33,5 +33,11 @@
       "next": "Reacquire via dispatcher; reconstruct f794 plus main, apply MRA patch, regenerate receipts, run affected checks/full CI and fresh publication preflight. See PR1472 comment6782984047.",
       "blocker": "Execution environment unavailable. Main b0f3/#1476 join stayed local/uncommitted; final MRA receipt checks and publication preflight unverified."
     }
+  },
+  "pr": 1478,
+  "checkpoint": {
+    "evidence": "PR1478 head7efc579063dbd60dead1384dc6f3a52252abcb81 tree9913f7fd restores1472 plus1476; local control164,HAD59,integrity and exact receipts pass; independent parity review passes.",
+    "next": "Inspect exact-head CI then fresh canonical preflight; merge adverse result; release roof and dispatch STR-FLOOR-PORTAL.",
+    "blocker": "Full exact-head CI pending; no physical roof or structural pass."
   }
 }
