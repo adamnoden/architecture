@@ -12,12 +12,17 @@ from floor_portal_house import Parameters
 
 SIX_L_KEYS=((200.,70.),(475.,70.),(725.,70.),(70.,200.),(70.,475.),(70.,725.))
 GUIDE_TRAVEL_RESERVE_MM=10.
+JAMB_GUIDE_WIDTH_MM=45.
+# Conservative H12-equivalent axial length: 621 development comparison +
+# 159.3 P13LN open envelope + 100 threaded stub + 40 C13N + 25 cap.
+JAMB_CAP_ANCHOR_EQUIVALENT_LENGTH_MM=945.3
 
 
 def leading_parameters():
     return Parameters(
         corner_width=250.,corner_haunch=120.,
-        cap_key_width=50.,cap_key_thickness=20.,cap_key_depth=60.,
+        cap_key_width=JAMB_GUIDE_WIDTH_MM,cap_key_thickness=20.,cap_key_depth=60.,
+        cap_anchor_length=JAMB_CAP_ANCHOR_EQUIVALENT_LENGTH_MM,
         L_key_width=70.,L_key_thickness=20.,L_key_depth=60.,
         L_key_centres=SIX_L_KEYS,
         key_profile='triangular depth bearing',
