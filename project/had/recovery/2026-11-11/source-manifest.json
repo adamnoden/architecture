@@ -25,8 +25,8 @@
     {
       "original": "inlet-native/bridge-native.mjs",
       "sha": "f096460578d9fcb22d5fb73e1894ce49abf8a7aa",
-      "recoveredPath": null,
-      "byteIdentical": null
+      "recoveredPath": "project/had/recovery/2026-11-11/bridge-native.mjs.txt",
+      "byteIdentical": true
     },
     {
       "original": "inlet-review/bridge-support-shifted.mjs",

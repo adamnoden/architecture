@@ -80,3 +80,6 @@ Exact elbow-shoe/driver/body solids; native carrier/reaction/positive catch; con
 
 No completion, accepted lower-tail method, selected-house mutation or physical admission is claimed.
 
+
+Reviewer confirmation: status is PURE_JS_PARTIAL_CHECK_ONLY. The source stock cylinder's2.45 bar value is not acceptance for a3.5 bar service condition. Preserve the actual pressure/material duty when selecting the bespoke face, seal, threads and cap; no pressure qualification is inferred from the geometric cap result.
+

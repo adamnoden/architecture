@@ -6,7 +6,7 @@ The last locally tested design head is `ac7e4b61c1d9116e987e2f570c2684d3ef588311
 
 ## Exact private source recovery
 
-[bridge-native-handoff.md](bridge-native-handoff.md), [post-stiffness.py.txt](post-stiffness.py.txt) and [bridge-native-motion.mjs.txt](bridge-native-motion.mjs.txt) are byte-identical to their pre-outage Git blob hashes. The executable sources are deliberately retained as text with their original private imports/output behaviour. They have not been adapted or integrated into repository studies. [source-manifest.json](source-manifest.json) distinguishes recovered files from source identities whose contents are still missing.
+[bridge-native-handoff.md](bridge-native-handoff.md), [bridge-native.mjs.txt](bridge-native.mjs.txt), [post-stiffness.py.txt](post-stiffness.py.txt) and [bridge-native-motion.mjs.txt](bridge-native-motion.mjs.txt) are byte-identical to their pre-outage Git blob hashes. The executable sources are deliberately retained as text with their original private imports/output behaviour. They have not been adapted or integrated into repository studies. [source-manifest.json](source-manifest.json) distinguishes recovered files from source identities whose contents are still missing.
 
 The exact handoff is authoritative over the separately posted reconstructed prose. It records private completed comparisons and their source identities, not a new CI run, source adoption or physical qualification.
 
