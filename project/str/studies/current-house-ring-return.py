@@ -2,7 +2,7 @@
 from pathlib import Path
 import json,math,runpy,sys
 D=Path(__file__).resolve().parent;factor=runpy.run_path(str(D/'structural-linear.py'))['factor']
-heel=json.loads((D/'current-house-welded-heel.json').read_text());net=json.loads((D/'current-house-welded-network.json').read_text());c=net['sections']['collector'];E=200000;G=77000.;a,b,t=c['B'],c['H'],c['t']
+heel=json.loads((D/'current-house-welded-heel.json').read_text());net=json.loads((D/'current-house-welded-network.json').read_text());baseCollector=net['sections']['collector'];c=baseCollector;E=200000;G=77000.;a,b,t=c['B'],c['H'],c['t']
 J=4*((a-t)*(b-t))**2/(2*(a-t+b-t)/t)
 anchors={tuple(r['xy']) for r in heel['ring']['stations']};H=json.loads((D.parents[1]/'had/studies/water-replan.json').read_text())['model'];results={}
 def mvec(m,x):return [sum(p*q for p,q in zip(row,x)) for row in m]
@@ -12,7 +12,8 @@ integral='--integral-plan' in sys.argv or spaceRoof
 braced='--plan-braced' in sys.argv or integral
 if braced:
  assert upperOnly
- planar=runpy.run_path(str(D/'current-house-roof-bracing.py'))
+ planar=globals().get('roofKernel')
+ if planar is None:planar=runpy.run_path(str(D/'current-house-roof-bracing.py'))
 localStations={}
 if upperOnly:
  anchors=set()
@@ -25,6 +26,9 @@ if upperOnly:
     localStations[name]=[lo,*us,hi]
     anchors.update(((u,d) if i==0 else (d,u)) for u in localStations[name])
 for which in ['outer','court']:
+    c=globals().get('collectorSections',{}).get(which,baseCollector)
+    a,b,t=c['B'],c['H'],c['t']
+    J=4*((a-t)*(b-t))**2/(2*(a-t+b-t)/t)
     lo,hi=(332.5,11667.5) if which=='outer' else (3917.5,8082.5)
     nodes=[];edges=[];stations=[]
     def N(p):
@@ -92,6 +96,10 @@ for which in ['outer','court']:
             if label=='ringG':Y=[y-g for y,g in zip(Y,selfG)]
             for p in [0,1]:
                 env(('V',ei,p),Y[2*p]/1000,low,high);env(('M',ei,p),Y[2*p+1]/1e6,low,high);env(('T',ei,p),Y[4+p]/1e6,low,high)
+    observer=globals().get('modelObserver')
+    if observer is not None:
+        observer(which,dict(nodes=nodes,edges=edges,local=local,bounds=bounds,
+                            free=free,fixed=fixed,K=K,solve=solve,cases=cases,section=c))
     windHeads=[];additional={};mh={};hna={};vh={};concurrent={}
     if braced:
         # One coherent directional state at a time; never sum 96 alternatives.
@@ -169,5 +177,6 @@ def norm(v):
  return round(v,9) if isinstance(v,float) else v
 target=D/('current-house-ring-space.json' if spaceRoof else 'current-house-ring-integral.json' if integral else 'current-house-ring-braced.json' if braced else 'current-house-ring-floor-stations.json' if upperOnly else 'current-house-ring-fullheight-control.json')
 txt=json.dumps(norm(out),indent=2)+'\n'
-if '--check' in sys.argv:assert target.read_text()==txt
-else:target.write_text(txt)
+if not globals().get('readOnly',False):
+    if '--check' in sys.argv:assert target.read_text()==txt
+    else:target.write_text(txt)

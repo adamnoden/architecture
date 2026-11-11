@@ -90,5 +90,20 @@ export const structureNodes = defineNodes([
       'project/str/studies/reconciled-corner-portals.json',
       'project/triad-interface-contract.md'
     ]
+  },
+  {
+    id: 'STR-FLOOR-PORTAL',
+    owners: ['STR'],
+    title: 'Resolve the floor collector and portal load path before house selection',
+    // The former handoff remains a dated study. Its current coherence claim is
+    // withdrawn; this correction must pass before either final house gate.
+    dependencies: ['STR-RECONCILE'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: [
+      'project/str/floor-portal-reconciliation.md',
+      'project/str/studies/floor-portal-reconciliation.json',
+      'project/triad-interface-contract.md'
+    ]
   }
 ])

@@ -1,0 +1,74 @@
+{
+  "status": "ADVERSE CONDITIONAL GEOMETRY CHECKPOINT; NO SELECTION OR ORDINARY-RENEWAL PASS",
+  "files": [
+    {
+      "path": "project/rof/studies/roof_water_inner_next_geometry.py",
+      "bytes": 19108,
+      "sha256": "d61feef43a2b252194eea46ec4e2879fdab548507fdde30a0bef129f084f530e"
+    },
+    {
+      "path": "project/rof/studies/roof_water_inner_next_geometry.json",
+      "bytes": 16812,
+      "sha256": "82ba96559fab03815dcfd307b8c93ca8206b108094988166b2f0db00c8cacfc3"
+    },
+    {
+      "path": "project/rof/roof-water-inner-next-geometry.md",
+      "bytes": 6187,
+      "sha256": "5f36e66aed5b0b06439ab8ff24a27d14195993322466454c641222008abcfb54"
+    }
+  ],
+  "regeneration": {
+    "runtime": "Python 3 standard library",
+    "command": "python project/rof/studies/roof_water_inner_next_geometry.py",
+    "check": "python project/rof/studies/roof_water_inner_next_geometry.py --check",
+    "numericalInputs": "Authored constants in the source only. No external file is read by calculate()."
+  },
+  "historicalContext": [
+    {
+      "path": "project/rof/studies/roof_water_inner_candidate.py",
+      "sha256": "4eb505e4349b1af1eaa98c96b0aa7174a8b6e3c4210628a969cc10c8252e7eba",
+      "role": "Frozen local source; negative-control geometry only, no inherited result.",
+      "liveRegenerationDependency": false
+    },
+    {
+      "path": "project/rof/studies/roof_water_inner_candidate_compact.json",
+      "sha256": "0610042db288954d2abe507966a9c34f521621bbd275c0842103d16bda74b51b",
+      "role": "Frozen local response/stock evidence; not regenerated or promoted.",
+      "liveRegenerationDependency": false
+    },
+    {
+      "path": "project/rof/studies/roof_water_inner_highback_hydraulics.py",
+      "sha256": "d5b624a10bfd98ff1a462561f9feedf221600a0acba14fef648d48aef147b070",
+      "role": "Separate parent hydraulic comparison; supplies chosen dimensional context, not read at runtime.",
+      "liveRegenerationDependency": false
+    },
+    {
+      "path": "project/rof/studies/roof_water_inner_highback_hydraulics.json",
+      "sha256": "db7e7bf96777f7fe4421aa909260e00cd656861f94ff9ed5849ed11ea73cd627",
+      "role": "Separate high-back hydraulic receipt; no capacity is calculated by this geometry source.",
+      "liveRegenerationDependency": false
+    },
+    {
+      "path": "project/rof/studies/roof_water_inner_leaf_hydraulic_screen.py",
+      "sha256": "5f1663e8cb6cb5fb5ff6f26558cf050bf8fcf531683105f4ef8bc6a6b0c6627d",
+      "role": "Separate services audit; historical numerical context.",
+      "liveRegenerationDependency": false
+    },
+    {
+      "path": "project/rof/studies/roof_water_inner_leaf_hydraulic_screen.json",
+      "sha256": "9f8bbef0f5a2326c5c23309da13affc39921b0b260412823464fc49a1dbb095f",
+      "role": "Historical leaf-audit constants quoted in the geometry receipt; not a live regeneration dependency.",
+      "liveRegenerationDependency": false
+    },
+    {
+      "path": "project/rof/studies/roof_water_inner_foot_connection.py",
+      "sha256": "86aeb33ee483f8c86e224878478e6c315a4269277472d0696bbeae1492ca60d4",
+      "role": "Separate root-connection screen; no new attachment selection.",
+      "liveRegenerationDependency": false
+    }
+  ],
+  "preservedFrozenSourceIdentity": "4eb505e4349b1af1eaa98c96b0aa7174a8b6e3c4210628a969cc10c8252e7eba",
+  "parentCheckoutAtPackaging": "97b2920999d250d976702f39bf46cdd11760b716",
+  "scope": "Finite coordinates and arithmetic falsifiers only. Prior frame/stock/wind/renewal results are not replayed or promoted. First floor diversion remains proposed and rejected at the current positions.",
+  "manifestHashScope": "This manifest does not list its own hash. The delivery patch hash is supplied separately."
+}

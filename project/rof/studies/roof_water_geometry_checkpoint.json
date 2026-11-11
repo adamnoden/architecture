@@ -1,0 +1,435 @@
+{
+  "status": "Unselected new-geometry checkpoint. Declared original house-wind comparison; extra independent inner panels pending.",
+  "recoveredPrerequisiteCommit": "840c2caae2e3e3273eae5a8c5cc7f80a84033788",
+  "preservedComparisons": "Original40/260 recovery and its220/240 rejection controls, original finite/independent maintenance and22-row union are unchanged. Private old-geometry280/60 comparison is also unchanged.",
+  "geometry": {
+    "courtSectionMM": [
+      280,
+      120,
+      20
+    ],
+    "outerSectionMM": [
+      220,
+      120,
+      20
+    ],
+    "primaryWetQMM": [
+      4375,
+      4725
+    ],
+    "lowerWetQMM": [
+      4375,
+      4800
+    ],
+    "blockedWaterDepthMM": [
+      160,
+      190
+    ],
+    "dryCapsKgPerFace": {
+      "primary": [
+        58.5,
+        67.5,
+        58.5
+      ],
+      "lower": [
+        57.5,
+        81.0,
+        57.5
+      ]
+    },
+    "rootAxes": "Original physical roots and old broader dry p rectangles retained explicitly. New water areas and corner centroids are recomputed.",
+    "cassettes": [
+      {
+        "circuit": "primary",
+        "rootStation": 5025.0,
+        "rootAxisZ": 6640.0,
+        "dryKg": 58.5,
+        "actualTributaryMM": 887.5,
+        "qCentroidRange": [
+          3777.5,
+          4800.0
+        ],
+        "pCentroidRange": [
+          4537.5,
+          5512.5
+        ]
+      },
+      {
+        "circuit": "primary",
+        "rootStation": 6000.0,
+        "rootAxisZ": 6640.0,
+        "dryKg": 67.5,
+        "actualTributaryMM": 1125.0,
+        "qCentroidRange": [
+          3777.5,
+          4800.0
+        ],
+        "pCentroidRange": [
+          5437.5,
+          6562.5
+        ]
+      },
+      {
+        "circuit": "primary",
+        "rootStation": 6975.0,
+        "rootAxisZ": 6640.0,
+        "dryKg": 58.5,
+        "actualTributaryMM": 887.5,
+        "qCentroidRange": [
+          3777.5,
+          4800.0
+        ],
+        "pCentroidRange": [
+          6487.5,
+          7462.5
+        ]
+      },
+      {
+        "circuit": "lower",
+        "rootStation": 5041.666666667,
+        "rootAxisZ": 6555.0,
+        "dryKg": 57.5,
+        "actualTributaryMM": 737.5,
+        "qCentroidRange": [
+          3777.5,
+          4800.0
+        ],
+        "pCentroidRange": [
+          4562.5,
+          5520.833333333
+        ]
+      },
+      {
+        "circuit": "lower",
+        "rootStation": 6000.0,
+        "rootAxisZ": 6555.0,
+        "dryKg": 81.0,
+        "actualTributaryMM": 1350.0,
+        "qCentroidRange": [
+          3777.5,
+          4800.0
+        ],
+        "pCentroidRange": [
+          5325.0,
+          6675.0
+        ]
+      },
+      {
+        "circuit": "lower",
+        "rootStation": 6958.333333333,
+        "rootAxisZ": 6555.0,
+        "dryKg": 57.5,
+        "actualTributaryMM": 737.5,
+        "qCentroidRange": [
+          3777.5,
+          4800.0
+        ],
+        "pCentroidRange": [
+          6479.166666667,
+          7437.5
+        ]
+      }
+    ]
+  },
+  "installed": {
+    "outerInteraction": 0.869815534,
+    "courtInteraction": 0.925430602,
+    "M24TensionKN": 113.565570876,
+    "M24RemainingKN": 0.35715639700001134,
+    "maximumPortalNormalTieKN": {
+      "floor": 7.87832681,
+      "roof": 2.860685509
+    },
+    "screens": {
+      "outer": true,
+      "court": true,
+      "M24": true,
+      "floorTies": true,
+      "roofTies": true
+    }
+  },
+  "finite144": {
+    "outerInteraction": 0.871653955,
+    "courtInteraction": 0.928835967,
+    "M24TensionKN": 113.673389111,
+    "M24RemainingKN": 0.249338162,
+    "maximumPortalNormalTieKN": {
+      "floor": 7.879787218,
+      "roof": 2.823101761
+    },
+    "screens": {
+      "outer": true,
+      "court": true,
+      "M24": true,
+      "floorTies": true,
+      "roofTies": true
+    },
+    "oneLocalOperationAtATime": true
+  },
+  "receivingUnion": {
+    "stationCount": 22,
+    "admittedMaximumCompressionKN": 202.126933903,
+    "admittedMaximumTensionKN": 113.673389111,
+    "M24RemainingKN": 0.249338162
+  },
+  "movement": {
+    "queryCount": 908,
+    "primaryWidthMM": [
+      -2.881080971,
+      4.014265469
+    ],
+    "lowerWidthMM": [
+      -3.498455464,
+      4.874465213
+    ],
+    "pairedMM": [
+      -4.296918941,
+      5.174317698
+    ]
+  },
+  "lateral": {
+    "queryCount": 472,
+    "hangerNormalMM": [
+      -26.558683017,
+      26.227428538
+    ],
+    "staticClearanceAfter25MMChallenge": 50,
+    "remainingBeforeLocalFlexAndOpposingFacadeMM": 23.441316983,
+    "datum": "Absolute native fixed-base datum. Facade deformation is not modelled or cancelled. Add local frame flex and any opposing facade motion to clearance.",
+    "virtualWorkError": 0.0,
+    "nativeInterfaceRecoveryError": 0.0
+  },
+  "validation": {
+    "stdlibGenerationExit": {
+      "structure": 0,
+      "finite": 0,
+      "movement": 0,
+      "lateral": 0,
+      "receiving": 0
+    },
+    "stdlibExactCheckExit": {
+      "structure": 0,
+      "finite": 0,
+      "movement": 0,
+      "lateral": 0,
+      "receiving": 0
+    },
+    "generationSeconds": {
+      "structure": 163.168,
+      "finite": 160.487,
+      "movement": 88.642,
+      "lateral": 79.615
+    },
+    "checkSeconds": {
+      "structure": 166.075,
+      "finite": 149.183,
+      "movement": 87.078,
+      "lateral": 74.347
+    },
+    "noPrivatePathsOrRuntimeSourceRewriting": true
+  },
+  "commands": [
+    "python -S project/rof/studies/roof_water_geometry_trial.py --court-width=280 --inner-dry-kg-per-m=60 --check",
+    "python -S project/rof/studies/roof_water_geometry_maintenance.py --court-width=280 --inner-dry-kg-per-m=60 --scope finite --check",
+    "python -S project/rof/studies/roof_water_geometry_movement.py --court-width=280 --inner-dry-kg-per-m=60 --check",
+    "python -S project/rof/studies/roof_water_geometry_lateral.py --court-width=280 --inner-dry-kg-per-m=60 --check",
+    "python -S project/rof/studies/roof_water_geometry_receiving.py --check"
+  ],
+  "nativeInputs": [
+    {
+      "path": "project/str/studies/structural-linear.py",
+      "sha256": "96e27fef3c808aa66822d0941a23fc551ea0139ee34a81960a6bc80441863d1f"
+    },
+    {
+      "path": "project/str/studies/current-house-roof-bracing.py",
+      "sha256": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1"
+    },
+    {
+      "path": "project/str/studies/current-house-membrane.py",
+      "sha256": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e"
+    },
+    {
+      "path": "project/str/studies/current-house-ring-return.py",
+      "sha256": "e0e81c445ae210fc43f3335f1a6d8aac6faa7026af755fa4f1282eceeaa39cb6"
+    },
+    {
+      "path": "project/str/studies/current-house-welded-network.json",
+      "sha256": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b"
+    },
+    {
+      "path": "project/str/studies/current-house-welded-heel.json",
+      "sha256": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e"
+    },
+    {
+      "path": "project/str/studies/current-house-ring-space.json",
+      "sha256": "28dd034381847b786a31a4f38ffe95d83b948f08bda5f9fe8a6337118584a574"
+    },
+    {
+      "path": "project/str/studies/reconciled-corner-portals.py",
+      "sha256": "a0c158fbff68bc250e6ab64ab6251cc396abc7efb6ef3f398325629e678b92bd"
+    },
+    {
+      "path": "project/str/studies/reconciled-corner-portals.json",
+      "sha256": "d0fa19a7f772094610bdc67adadfcdb352923c825869e617b66a9f55a4d0d848"
+    },
+    {
+      "path": "project/str/studies/arch-space-kernel.py",
+      "sha256": "ed07cf97bfa1d8359a97486a679d3220bbd81c14cccfabc8eed9a01717bd3a24"
+    },
+    {
+      "path": "project/str/studies/reconciled-slate-roof.py",
+      "sha256": "7f42a9c530092e077e5052f5e1f0c1872186790726cda31bb0a800902e031643"
+    },
+    {
+      "path": "project/str/studies/house-corner-rewind.json",
+      "sha256": "0a927d781097f01693195bae56712204abd8d5c6d7335a56038d3ea3d26007a1"
+    },
+    {
+      "path": "project/str/studies/current-house-window-receivers.json",
+      "sha256": "7968c876c4926fe5c266e4486aac04afd063ee55993bd95c2dfdff9522162294"
+    },
+    {
+      "path": "project/str/studies/current-house-guard-bracket.json",
+      "sha256": "8ced0fe445a04f7133cbe737c47ed3f34046f6994f3b33c257b93677b483dd8c"
+    },
+    {
+      "path": "project/str/studies/current-house-joined-foundation.json",
+      "sha256": "1b21b4215bc1d5b164f7d50c705617a2014d91e6fe00e0cc4f6b58a37586a648"
+    },
+    {
+      "path": "project/str/studies/open-loggia-support.json",
+      "sha256": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5"
+    },
+    {
+      "path": "project/str/studies/current-house-arch-jambs.py",
+      "sha256": "108e5bf4f246aa1629ffbb3f26b12fbf6a4a1e2543b4b2bda7c76bef2d149426"
+    },
+    {
+      "path": "project/str/studies/current-house-arch-jambs.json",
+      "sha256": "5398e4b04c1af76cf7fd8beab4d15950983b446487f310a5e6879b69ae1f1f2a"
+    },
+    {
+      "path": "project/str/studies/current-house-head-actions.py",
+      "sha256": "ca6b7f7f97aab3a7bbba605d2b0d2f2bc32c83ddb4e36f4c4eb2c9c604e1eb52"
+    },
+    {
+      "path": "project/str/studies/current-house-head-actions.json",
+      "sha256": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6"
+    },
+    {
+      "path": "project/str/studies/current-house-ground-ties.json",
+      "sha256": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6"
+    },
+    {
+      "path": "project/str/studies/current-house-grid.json",
+      "sha256": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294"
+    },
+    {
+      "path": "project/str/studies/current-house-roof-network.json",
+      "sha256": "557de43293e636fbe7e84e007d899d7fbcd4ca29d4af4e1eab0866501c1103a7"
+    },
+    {
+      "path": "project/str/studies/physical-slab-join.json",
+      "sha256": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c"
+    },
+    {
+      "path": "project/str/studies/current-house-lateral.json",
+      "sha256": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574"
+    },
+    {
+      "path": "project/str/studies/current-house-roof-connection.json",
+      "sha256": "9de2bb56a68d3a234cdf4fb8cdc657434340329bbfb93e4febeef464ac0ddfff"
+    },
+    {
+      "path": "project/str/studies/reconciled-house-interface.json",
+      "sha256": "ae17f6de977de58ae54f25edfc67c48c36f348cffc288e839f25a8b4143c16cf"
+    },
+    {
+      "path": "project/str/studies/current-house-floor-closure.json",
+      "sha256": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09"
+    },
+    {
+      "path": "project/had/studies/water-replan.json",
+      "sha256": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc"
+    },
+    {
+      "path": "project/oas/studies/north-export-occurrence.json",
+      "sha256": "0dc62373393811e3103800b9d8e3ed8bc0b2beb278503816695370122c434eb9"
+    },
+    {
+      "path": "project/mat/studies/whole-envelope.json",
+      "sha256": "a7d959b109a55cbf7bd8538894bcbc942ce9de84b2b40259530f6794f6665e15"
+    },
+    {
+      "path": "project/rof/studies/roof_water_structure.py",
+      "sha256": "b70d9141fc8394ca80e911ba3f2fa001ddc58d05a2943150f208629dcf36e9fa"
+    },
+    {
+      "path": "project/rof/studies/roof_water_receiving_baseline.py",
+      "sha256": "5ebdafb4861f10cc099986aa2e0af6cbae1e7fc9768fef366f02207b8fec54d9"
+    },
+    {
+      "path": "project/rof/studies/roof_water_receiving_baseline.json",
+      "sha256": "8d9c3200f9cea459454884b5d569235286f2522cc7766eb999934f0001334c0d"
+    }
+  ],
+  "files": [
+    {
+      "path": "project/rof/studies/roof_water_geometry_trial.py",
+      "sha256": "7212e2883776773c0967b38feeb60cf7a2de71e6ce1ad7d433876e2e0a6361e5",
+      "size": 65812
+    },
+    {
+      "path": "project/rof/studies/roof_water_geometry_trial_280_60.json",
+      "sha256": "e15de9db4d9b6d54c368190612c0d245719af3ce06d314b3cddac946163f456a",
+      "size": 71491
+    },
+    {
+      "path": "project/rof/studies/roof_water_geometry_maintenance.py",
+      "sha256": "fbc9981266461da20518745607db1f48e52e11ac379e49e91f5de1498a8bb18b",
+      "size": 18610
+    },
+    {
+      "path": "project/rof/studies/roof_water_geometry_maintenance_280_60_finite.json",
+      "sha256": "d6733e83d8a47ce7ed0589fd39c557dcde816ed519415e2e61797588afc6ced3",
+      "size": 231388
+    },
+    {
+      "path": "project/rof/studies/roof_water_geometry_movement.py",
+      "sha256": "03cebee77d226a8161c3efea193f39df8413174f873e5d6f4cce440eba860265",
+      "size": 18779
+    },
+    {
+      "path": "project/rof/studies/roof_water_geometry_movement_280_60.json",
+      "sha256": "0fe81312ba15c6f0cfc9a6c8957c6e6dfe2ab78138005ecd3d65e2b9b122f31b",
+      "size": 892944
+    },
+    {
+      "path": "project/rof/studies/roof_water_geometry_lateral.py",
+      "sha256": "d12a30b3d8852102bad1ee3d0924bf8cbfd3c1d1cb080bd06bad8a734fe9b5b7",
+      "size": 19042
+    },
+    {
+      "path": "project/rof/studies/roof_water_geometry_lateral_280_60.json",
+      "sha256": "c1bca936d5ad72d241866f6af3809f064d9c9f5ecd30d03588266cd10ac004b7",
+      "size": 470302
+    },
+    {
+      "path": "project/rof/studies/roof_water_geometry_receiving.py",
+      "sha256": "7f3bc31ff9de1990caa3c8477cd1d54e3b635b11eac8b9125cb65a61f4fc61cf",
+      "size": 6100
+    },
+    {
+      "path": "project/rof/studies/roof_water_geometry_receiving.json",
+      "sha256": "49bf6e2fe898de43ac1c65298a2b6735e07daa244b03168245f9f3473ef0cb72",
+      "size": 71692
+    }
+  ],
+  "unresolved": [
+    "Actual added inner pan/apron/frame wind resultants and their sign domains are not yet joined to the native comparison.",
+    "Full finite-piece inventory and permitted remaining-stock centroids must fit each cassette cap/rectangle.",
+    "Physical corner support allocation, local frame flexibility, ordinary captured renewal/weather continuity and temporary works remain under investigation.",
+    "Facade deformation has no independent receipt; no cancellation against root motion is credited.",
+    "Actual receiving load introduction, finite bearing/contact, core and downstream path resistance remain unqualified."
+  ]
+}

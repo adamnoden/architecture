@@ -12,7 +12,7 @@
     "project/rwt/studies/temporary-two-path-control.json": "fefae8d975c82b7d88c0eaf14e0de30f9f5008af",
     "project/str/studies/current-house-grid.json": "56aca6f99f5fa60b21d58c89115ac1ee824e3828",
     "project/mat/studies/ring-roof-family.json": "28afcd1cd63aa4d17cd8dfeb433dba1885b92478",
-    "project/str/studies/reconciled-house-interface.json": "66143efe1bf357fe3b373777c93bdb25f861e11d"
+    "project/str/studies/reconciled-house-interface.json": "4d3080dc4540ce7218b86f1d27518fbeb1f8e85d"
   },
   "priorHADIdentity": "Composed HAD consumer for this result; canonicalMain metadata records INTEGRATION BASELINE4fef04ad/HAD265ac194. Only conditional receiver/garden/maintenance refinements are integrated; separate construction comparisons and hydraulic/physical/site acceptance remain unadopted/unaccepted",
   "structuralCandidate": "SAP-C1",

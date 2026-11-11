@@ -2,7 +2,15 @@
 
 The [court-intake selection](../had/court-intake-selection.md) now prices the corner working deck, three reversible ground reactions, P33/P36 brackets and floor-level lateral ties. These are additional temporary and local court actions to incorporate in signed combinations; the domestic ground slab and provisional roof frames do not already qualify them.
 
-**Current candidate handoff.** [SAP-C1](provisional-house-handoff.md) supersedes the earlier single-corner-spring and low-crown arrangements below. It includes both storeys’ new jambs, 32 structural ties, 96 whole-house winds, the 52-head stripped uplift register and the affected inhabited/roof interfaces. Historical member and foundation envelopes retain their stated source.
+**10 November correction.** [SAP-C1's current coherent structural handoff](provisional-house-handoff.md)
+is withdrawn: the required independently moving jambs intersect the continuous
+floor collector. [STR-FLOOR-PORTAL](structural-architecture-programme.md#str-floor-portal--correct-the-floor-and-portal-load-path)
+must resolve the physical join and coupled load/movement system before either
+final house gate can pass. The dated SAP-C1 model supersedes the earlier
+single-corner-spring and low-crown controls only within its stated assumptions.
+Its new jambs, 32 scalar ties, 96 wind programmes and 52-head stripped uplift
+register remain reproducible comparisons, not an accepted joined structure.
+Historical member and foundation envelopes retain their stated source.
 
 
 **Current disposition.** STR-HOUSE closed on the [documented architectural rewind](whole-house-corner-rewind.md). The numerical controls below belong to their original geometries. The altered two-storey jambs and the raised north roof need a joined successor before structural adoption.

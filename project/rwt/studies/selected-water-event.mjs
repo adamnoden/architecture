@@ -20,7 +20,11 @@ export function readSelected(){
 export function readCurrentCourtIntake(){
  const path='project/had/studies/court-intake-selection.json', raw=fs.readFileSync(path);
  const blob=crypto.createHash('sha1').update('blob '+raw.length+'\0').update(raw).digest('hex');
- assert.equal(blob,'80a8481b4e5a508164eff51b596e5a954c152a30','HAD changed: reconcile the court feeder, service paths and local/site receiving conditions');
+ // ROF adds native load-response hooks; the current intake's only change is
+ // its reconciled structural source identity. The located water geometry,
+ // service paths and receiving conditions are byte-identical to the prior
+ // intake after omitting its source map. Historical readSelected stays pinned.
+ assert.equal(blob,'887a3df5b7a335b3eaafc7c8de4529a339428cbc','HAD changed: reconcile the court feeder, service paths and local/site receiving conditions');
  return {path,blob,model:JSON.parse(raw)};
 }
 const floor=y=>-30-(y-5750)*.04;
