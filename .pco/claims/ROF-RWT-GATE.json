@@ -9,8 +9,8 @@
     "label": "swarm-20261110-root"
   },
   "claimedAt": "2026-11-10T21:02:13.030Z",
-  "heartbeatAt": "2026-11-10T23:55:01.688Z",
-  "expiresAt": "2026-11-11T00:40:01.688Z",
+  "heartbeatAt": "2026-11-11T00:16:11.000Z",
+  "expiresAt": "2026-11-11T01:01:11.000Z",
   "branch": "work/swarm-roof-g3-20261110",
   "predecessor": {
     "leaseId": "47083968-9abd-4627-90bb-040ec3eb4792",
@@ -36,7 +36,8 @@
   },
   "pr": 1472,
   "checkpoint": {
-    "evidence": "PR #1472 ready for review at f7942830ae24ef1d308f01e71a4f87f306f37ab0 tree d2aa2efe3f136901216192be51d4979e1aeea26f; remote/local verified. Adverse gate, STR-FLOOR-PORTAL registration, source-bound floor/service reviews and conditional inner/outer evidence. Typecheck, 163 control tests and targeted receipt checks pass; exact-head CI 42927109838 running.",
-    "next": "Observe exact-head CI, perform fresh canonical preflight, merge the adverse result, release the roof lease and dispatch again. New structural correction requires its own ordinary lease; independent BCR/MRA work remains available."
+    "evidence": "Draft PR1472 f7942830ae24ef1d308f01e71a4f87f306f37ab0 passed CI42927109838. Handoff comment6782984047. MRA code/test/proof: fb7effbf26824164173439b054a16bfd0394132f on evidence/mra-source-join-20261111.",
+    "next": "Reacquire via dispatcher; reconstruct f794 plus main, apply MRA patch, regenerate receipts, run affected checks/full CI and fresh publication preflight. See PR1472 comment6782984047.",
+    "blocker": "Execution environment unavailable. Main b0f3/#1476 join stayed local/uncommitted; final MRA receipt checks and publication preflight unverified."
   }
 }
