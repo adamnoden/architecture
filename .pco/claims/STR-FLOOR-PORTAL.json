@@ -9,8 +9,8 @@
     "label": "issue-comment-6818945453"
   },
   "claimedAt": "2026-11-12T08:43:18.000Z",
-  "heartbeatAt": "2026-11-12T08:55:39.000Z",
-  "expiresAt": "2026-11-12T09:40:39.000Z",
+  "heartbeatAt": "2026-11-12T09:24:59.000Z",
+  "expiresAt": "2026-11-12T10:09:59.000Z",
   "branch": "work/mvb-chat-6818945453",
   "predecessor": {
     "leaseId": "7cdfe02e-33cb-4780-89a5-345a110fb8e4",
@@ -30,8 +30,8 @@
   },
   "pr": 1487,
   "checkpoint": {
-    "evidence": "PR1487 head c19b05c9 recovered #1486, rejects zero-clearance wardrobe sweeps via 4 adverse controls; bed3 source gap 5.5 mm; unselected 30 mm south relocation leaves 25 mm full-route clearance; current 45 mm guide/20% friction docs reconciled.",
-    "next": "Review exact-head CI and correct failures. Continue receiver, concrete confinement, cap cage and renewal tolerance proofs.",
-    "blocker": "STR-FLOOR-PORTAL remains incomplete; guide hardware and physical/handling tolerance remain unqualified."
+    "evidence": "Draft PR1487 head c19b05c9: 4 collision-negative controls, nominal bed3 5.5mm clearance, unselected south-30mm candidate 25mm whole route, guide hardware updated. Exact-head CI43186611992 main load/movement, repository and friction-motion passed; final friction-domain pending.",
+    "next": "Review last friction-domain CI; continue physical guide retention, receiver/confinement and IAS placement tolerances; no construction release.",
+    "blocker": "Structural packet incomplete; bearing, anchorage, fabrication and physical handling unqualified."
   }
 }
