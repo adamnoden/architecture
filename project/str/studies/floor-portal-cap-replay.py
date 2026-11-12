@@ -32,7 +32,29 @@ def parameters(variant):
     stations = tuple((x + 40., y + 20.) if x > y else (x + 20., y + 40.)
                      for x, y in SIX_L_KEYS)
     return replace(base, L_arm_width=180., L_outward_extension=40., L_key_centres=stations,
-                   L_cap_block_depth=300. if variant == 'cap300' else 0.)
+                   L_cap_block_depth=300. if variant.startswith('cap300') else 0.,
+                   L_projected_bearing_gap=5. if variant == 'cap300-relief5' else 0.)
+
+
+def check_contact_gap():
+    import numpy as np
+    from floor_portal_frame import Frame
+    from floor_portal_house import ContactSolve
+
+    frame = Frame()
+    lower = frame.node('fixed', [0, 0, 0])
+    upper = frame.node('sliding', [0, 0, 0])
+    frame.link(frame.port(upper), frame.port(lower), [10, 0, 0, 0, 0, 0], 'elastic reference')
+    contact = {'ids': np.r_[np.arange(6, 12), np.arange(6)],
+               'row': np.r_[[1, 0, 0, 0, 0, 0], [-1, 0, 0, 0, 0, 0]],
+               'stiffness': 90., 'initial_gap': 5.}
+    solve = ContactSolve(frame.matrix(), [*range(6), *range(7, 12)], [contact])
+    for load, expected in [(-40., (-4., 1., 0.)), (-60., (-5.1, -.1, 9.))]:
+        rhs = np.zeros(12)
+        rhs[upper] = load
+        movement, _, contact_state = solve(rhs)
+        actual = (movement[upper], contact_state['gap'][0], contact_state['force'][0])
+        assert np.allclose(actual, expected, atol=1e-10), actual
 
 
 def signed_screen(config):
@@ -93,8 +115,18 @@ def movement_screen(config):
     peaks = {'minimumHeadReactionKN': None, 'maximumLGuideForceKN': None,
              'maximumLReleasedTravelMM': None}
     max_balance = np.zeros(6)
+    projected = [index for index, contact in enumerate(house.contacts)
+                 if contact['name'].startswith('L-cap-projected-bearing-')]
+    minimum_gap = None
     for index, (name, case, given) in enumerate(cases):
-        movement, reactions, _ = solve(case.f, given)
+        movement, reactions, contact_state = solve(case.f, given)
+        if projected:
+            limiting = min(projected, key=lambda point: contact_state['gap'][point])
+            gap = float(contact_state['gap'][limiting])
+            if minimum_gap is None or gap < minimum_gap['gapMM']:
+                minimum_gap = {'gapMM': gap, 'case': name,
+                               'bearingForceN': float(contact_state['force'][limiting]),
+                               'contact': house.contacts[limiting]['name']}
         balance = abs(house.rigid.T @ (case.f + reactions))
         assert max(balance[:3]) < .01 and max(balance[3:]) < 10, (name, balance)
         max_balance = np.maximum(max_balance, balance)
@@ -115,13 +147,14 @@ def movement_screen(config):
             if peak is None or (value < peak['value'] if metric.startswith('minimum') else value > peak['value']):
                 peaks[metric] = {'value': float(value), 'case': name, 'location': location}
     return {'cases': len(cases), 'headCount': len(house.heads),
-            'maximumBalanceResidualNAndNmm': max_balance.tolist(), 'witnesses': peaks}
+            'maximumBalanceResidualNAndNmm': max_balance.tolist(), 'witnesses': peaks,
+            'minimumProjectedGap': minimum_gap}
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('worktree', type=Path)
-    parser.add_argument('variant', choices=('140', 'outward180', 'cap300'))
+    parser.add_argument('variant', choices=('140', 'outward180', 'cap300', 'cap300-relief5'))
     parser.add_argument('screen', choices=('signed', 'movement'))
     args = parser.parse_args()
     try:
@@ -129,6 +162,7 @@ def main():
     except ValueError as error:
         parser.error(str(error))
     with redirect_stdout(sys.stderr):
+        check_contact_gap()
         config = parameters(args.variant)
         result = signed_screen(config) if args.screen == 'signed' else movement_screen(config)
     print(json.dumps({

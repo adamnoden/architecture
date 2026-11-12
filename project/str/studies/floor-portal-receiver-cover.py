@@ -57,7 +57,7 @@ def segment_touches_box(start, end, half_sizes):
     return enter <= leave
 
 
-def web_to_l_boundary(centre, radial, arm, length, width):
+def web_to_l_boundary(centre, radial, arm, length, width, arm_length=ARM_LENGTH):
     normal = (-radial[1], radial[0])
     half_sizes = (length / 2, width / 2)
     cassette = tuple(
@@ -65,12 +65,12 @@ def web_to_l_boundary(centre, radial, arm, length, width):
         for a in (-half_sizes[0], half_sizes[0])
         for b in (-half_sizes[1], half_sizes[1])
     )
-    if not all(0 <= x <= ARM_LENGTH and 0 <= y <= ARM_LENGTH and min(x, y) <= arm
+    if not all(0 <= x <= arm_length and 0 <= y <= arm_length and min(x, y) <= arm
                for x, y in cassette):
         return 0.0
 
-    boundary = ((0, 0), (ARM_LENGTH, 0), (ARM_LENGTH, arm),
-                (arm, arm), (arm, ARM_LENGTH), (0, ARM_LENGTH))
+    boundary = ((0, 0), (arm_length, 0), (arm_length, arm),
+                (arm, arm), (arm, arm_length), (0, arm_length))
     boundary_in_box = [
         (dot(offset(p, centre), radial), dot(offset(p, centre), normal)) for p in boundary
     ]
@@ -84,26 +84,31 @@ def web_to_l_boundary(centre, radial, arm, length, width):
     return min(corner_gaps + boundary_vertex_gaps)
 
 
-def assess(arm, across, width, primary_bars):
+def assess(arm, across, width, primary_bars, outward=0.0):
     cover_checks, h20_checks, h12_checks = [], [], []
+    arm_length = ARM_LENGTH + outward
+    bars = [(x + outward, y + outward) for x, y in primary_bars]
     for corner, origin_x, origin_y, sx, sy in CORNER_ORIGINS:
-        for station in GUIDE_STATIONS:
+        origin_x -= sx * outward
+        origin_y -= sy * outward
+        for source_station in GUIDE_STATIONS:
+            station = source_station + outward
             for leg, centre in enumerate(((station, across), (across, station))):
                 delta = (centre[0] + sx * (origin_x - ROOF_CENTRE),
                          centre[1] + sy * (origin_y - ROOF_CENTRE))
                 distance = hypot(*delta)
                 radial = (delta[0] / distance, delta[1] / distance)
                 normal = (-radial[1], radial[0])
-                web = web_to_l_boundary(centre, radial, arm, CASSETTE_LENGTH, width)
+                web = web_to_l_boundary(centre, radial, arm, CASSETTE_LENGTH, width, arm_length)
                 cover_checks.append((web, corner, centre))
-                for bar in primary_bars:
+                for bar in bars:
                     relative = offset(bar, centre)
                     clear = hypot(max(abs(dot(relative, radial)) - CASSETTE_LENGTH / 2, 0.0),
                                   max(abs(dot(relative, normal)) - width / 2, 0.0))
                     h20_checks.append(clear - 10.0 - 2 * SETTING_EACH)
                 reach = (abs(radial[leg]) * CASSETTE_LENGTH + abs(normal[leg]) * width) / 2
                 for bar_station in (350.0, 600.0):
-                    h12_checks.append(abs(station - bar_station) - reach - 6.0 - 2 * SETTING_EACH)
+                    h12_checks.append(abs(source_station - bar_station) - reach - 6.0 - 2 * SETTING_EACH)
 
     web, corner, centre = min(cover_checks)
     budgeted = web - 2 * SETTING_EACH
@@ -135,7 +140,10 @@ def comparison():
     bare = assess(140.0, 70.0, TONGUE_THICKNESS, primary_bars)
     wider = assess(180.0, 90.0, CASSETTE_WIDTH, primary_bars)
     assert base['marginTo25MmScreenMm'] < 0 and bare['marginTo25MmScreenMm'] < 0
-    assert wider['marginTo25MmScreenMm'] > 0
+    outward = assess(180.0, 90.0, CASSETTE_WIDTH, primary_bars, outward=40.0)
+    assert wider['marginTo25MmScreenMm'] > 0 and outward['marginTo25MmScreenMm'] > 0
+    outward['armLengthMm'] = 1040.0
+    outward['worldEndStationsRetained'] = True
     return {
         'status': 'adverse comparison; widened alternative limited to plan',
         'referenceStudyCommit': '7a1b697431e9c1556f426068068b96356d3158ca',
@@ -145,6 +153,7 @@ def comparison():
         'base140MmArm': base,
         'bareTongueWidthLowerBound140MmArm': bare,
         'unselected180MmArm': wider,
+        'unselectedOutward180MmArm': outward,
     }
 
 

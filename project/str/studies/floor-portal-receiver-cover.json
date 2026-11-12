@@ -57,5 +57,24 @@
         725.0
       ]
     }
+  },
+  "unselectedOutward180MmArm": {
+    "armWidthMm": 180.0,
+    "cassetteWidthMm": 46.0,
+    "guideCount": 24,
+    "minGrossConcreteWebMm": 39.532274,
+    "minConcreteWebAfterSettingsMm": 29.532274,
+    "marginTo25MmScreenMm": 4.532274,
+    "minH20PlanGapAfterSettingsMm": 34.775146,
+    "minH12StationGapAfterSettingsMm": 60.197945,
+    "oneLimitingGuide": {
+      "corner": "NE",
+      "localCentreMm": [
+        90.0,
+        765.0
+      ]
+    },
+    "armLengthMm": 1040.0,
+    "worldEndStationsRetained": true
   }
 }

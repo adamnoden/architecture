@@ -1,0 +1,221 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {finiteBends,exactSegmentBoxDistance} from './incoming-water-geometry.mjs';
+import {deriveIncomingWaterStudy,incomingWaterText} from './incoming-water.mjs';
+import {deriveCurrentHouse} from './current-house.mjs';
+import {utilityFirstRestPreflight} from './utility-first-rest-preflight.mjs';
+import {deriveBridgeNative} from './incoming-water-bridge-native.mjs';
+import {bridgeNativeMotionResult} from './incoming-water-bridge-native-motion.mjs';
+import {lowerCapComparator,lowerCapPlanEnvelope} from './incoming-water-lower-cap.mjs';
+
+const study=deriveIncomingWaterStudy();
+test('finite bends represent a real quarter-circle and reject impossible tangent lengths',()=>{
+  const r=finiteBends([[0,0,0],[100,0,0],[100,100,0]],25);
+  assert.equal(r.bends[0].angleDeg,90);
+  assert(Math.abs(r.bends[0].tangent-25)<1e-10);
+  assert(r.path.every(p=>p.every(Number.isFinite)));
+  // The arc is centred at(75,25), tangent at(75,0) and(100,25).
+  for(const p of r.path.slice(1,-1))assert(Math.abs(Math.hypot(p[0]-75,p[1]-25)-25)<1e-10);
+  assert(r.hausdorffError<.001);
+  assert.throws(()=>finiteBends([[0,0,0],[10,0,0],[10,10,0]],25),/consume leg/);
+  assert.throws(()=>finiteBends([[0,0,0],[10,0,0],[0,0,0]],25),/reversal/);
+  assert.throws(()=>finiteBends([[0,0,0],[10,0,0],[10,10,0]],-1),/positive/);
+});
+
+test('current-source adverse controls defeat the inherited small-cylinder and utility proofs',()=>{
+  assert.equal(study.inheritedInlet.totalLengthInsideRequiredEnvelopeMM,200);
+  assert(study.bridge.rejectedOldSeatGapMM<-34);
+  assert.equal(study.bridge.rejectedOldLowBridgeOrdinaryBodyGapMM,-337);
+  assert.equal(study.utility.rejected.oldLowTailInsidePlatform,true);
+  assert.equal(study.utility.rejected.oldUpperBranchInsidePod,true);
+  assert.equal(study.utility.rejected.capAt950AxisToLiftedFrameMM,8);
+});
+
+test('full insulation and finite bends clear named utility bodies but do not earn terminal adoption',()=>{
+  assert.equal(study.utility.pipeR,37);
+  assert.equal(study.utility.bendRadius,75);
+  for(const row of Object.values(study.utility.gapsMM))for(const gap of Object.values(row))assert(gap>25);
+  assert(study.utility.hotColdGapMM>25);
+  assert(study.utility.gapsMM.cold.fanWithSupports<29,'Do not hide the narrow setting reserve');
+  assert.equal(study.utility.capSweeps.frame.gapMM,58);
+  assert.equal(study.utility.capSweeps.carrier.gapMM,113);
+  assert.equal(study.terminal.status,'NOT_ADOPTED');
+  assert(study.terminal.gapsMM.coldWasher.some(x=>x.gapMM<0&&x.obstacle==='valve reaction arm'));
+  assert(study.terminal.adverse.some(x=>x.includes('reachable')));
+});
+
+test('the higher bridge preserves a bounded ordinary path and uses continuous motion minima',()=>{
+  assert.equal(study.bridge.crown,2150);
+  assert.equal(study.bridge.ordinaryBody.pipeUndersideGapMM,113);
+  assert(study.bridge.ordinaryBody.westLegGapMM>30);
+  assert(Math.abs(study.bridge.ordinaryBody.eastPierGapMM-35)<2e-8);
+  assert.equal(study.bridge.motion.finishedPanelUndersideZ,2350);
+  assert.equal(study.bridge.motion.liftedCrownGapMM,78);
+  assert(Math.abs(study.bridge.motion.westCaseGapMM-43)<1e-9);
+  assert(Math.abs(study.bridge.motion.eastHeatGapMM-41)<1e-9);
+  assert.equal(study.bridge.motion.westMinimumAtFraction,.025);
+  assert.equal(study.bridge.motion.eastMinimumAtFraction,.17);
+  assert.equal(study.bridge.status,'OBJECT_PATH_ONLY');
+  assert.match(study.bridge.firstRestTrial.status,/NOT_ACCEPTED/);
+});
+
+test('front utility breaks include a reaction key, real tool thickness, hands and the larger captured head',()=>{
+  const t=study.utilitySuccessor;
+  assert.deepEqual(t.breaks.map(b=>b.point),[[11110,1275,595],[11300,1275,595]]);
+  assert.equal(t.unionMadeZ[1],625);
+  for(const c of t.tool.checks){
+    assert(c.toolGapLowerMM>25);assert(c.handGapLowerMM>25);assert(c.armGapLowerMM>25);
+    assert(c.otherUnionGapLowerMM>25);assert(c.maxReachUpperMM<650);
+  }
+  assert.equal(t.reactionSupport.verticalKeyToolGapMM,31.6);
+  assert(t.reactionSupport.minimumNonContact.every(x=>x.gapMM>=25-1e-6));
+  assert(t.reactionSupport.preliminaryForceCase.combinedBendingStressNmm2<50);
+  assert(t.reactionSupport.preliminaryForceCase.tipDeflectionMM<1);
+  assert.equal(t.head.completeHeight,700);
+  assert.equal(t.head.retainedBelowRim,350);
+  assert(t.head.minimumSweeps.every(x=>x.gapMM>=25-1e-6));
+  assert(t.hotIsolation.reachMM<400);
+  assert.equal(t.hotIsolation.handToOwnPipeMM,48);
+  assert(Math.abs(t.controlledDrain.minimumFixedGapMM-25)<1e-6);
+  assert.equal(t.controlledDrain.grossCuboidUpperLitres,12);
+  assert.equal(t.controlledDrain.requiredNetLitres,10);
+  assert.match(t.controlledDrain.noCredit,/unattended burst/);
+});
+
+test('development cannot silently adopt a route or release the existing house blocker',()=>{
+  const house=deriveCurrentHouse();
+  assert.equal(study.adoption.adopted,false);
+  assert.equal(study.status,'IN_PROGRESS_NOT_ADOPTED');
+  for(const s of[house.model.architecturalServices,house.model.servicesInterface])
+    assert.equal(s.otherServiceDuties.find(x=>x.id==='incoming-water').status,'REJECTED_RETAINED_ROUTE');
+  assert(house.model.currentAdoptionBlockers.some(x=>x.includes('Incoming-water REWIND')));
+  assert.equal(readFileSync(new URL('incoming-water.json',import.meta.url),'utf8'),incomingWaterText(study));
+});
+
+test('located main and branch cuts include finite valve modules and full tool sectors',()=>{
+  const s=study.station;
+  for(const c of s.moduleContracts){assert(c.moduleSpareMM>=10);assert.equal(c.fullSeatSeparationAfterLiftMM,25);}
+  for(const c of s.controls){assert(c.reachMM<650);assert(c.otherPipeGapMM>25);assert(c.otherValveGapMM>25);assert(c.riserGapMM>25);}
+  for(const c of s.tool.checks){assert(c.toolGapLowerMM>25);assert(c.handGapLowerMM>25);assert(c.armGapLowerMM>25);assert(c.maxReachUpperMM<650);}
+  assert(s.bodyChecks.every(c=>c.gapMM>=25-1e-6));assert(s.ordinaryBodyMinimumMM>25);
+  assert(s.heatClearances.every(c=>c.gapMM>25));
+  assert.equal(s.entry.riserToCapPlanMM,200);
+  assert(s.functionalCuts.some(c=>c.work==='I0 or any joint before I0'&&c.cuts[0]==='B0'));
+  assert.match(s.drain.scope,/unattended/);
+});
+
+
+test('segment/AABB distance handles crossings, degenerate points and long diagonals analytically',()=>{
+  const box=[0,0,0,10,10,10],tol=2e-8;
+  for(const[a,b,d]of[[[-5,5,5],[15,5,5],0],[[-5,15,5],[15,15,5],5],[[-3,-4,5],[-3,-4,5],5],[[20,20,20],[20,20,20],Math.sqrt(300)],[[-1e6,20,0],[1e6,20,0],10]])
+    assert(Math.abs(exactSegmentBoxDistance(a,b,box)-d)<tol);
+});
+
+test('station captured release clears retained supports and provides reachable positive first-rest capture',()=>{
+  const h=study.station.handling;
+  for(const r of h.results){
+    assert(r.bodyGapLowerMM>=25-1e-6);assert(r.objectRoomGapLowerMM>=25);
+    assert(r.movingBodyGapLowerMM>=25);assert(r.maximumGripReachMM<650);
+    assert(r.fixedSweep.every(x=>x.gapMM>=25));
+    for(const n of r.nativeControls.results){assert(n.loadedBareTubeGapLowerMM>=2);assert(n.otherObjectGapLowerMM>=25);assert(n.maximumReachMM<650);}
+    for(const n of r.nativeControls.keys){assert(n.minimumHandMM>=25);assert(n.minimumArmMM>=25);assert(n.reachMM<650);}
+    assert(r.firstRest.remoteMinimum.every(x=>x.gapMM>=25));
+    for(const n of r.firstRest.keyChecks){assert(n.minimumHandMM>=25);assert(n.minimumArmMM>=25);assert(n.reachMM<650);}
+    assert(r.firstRest.native.cheekBendingNmm2<100);assert(r.firstRest.native.cheekDeflectionMM<.1);
+  }
+  assert(h.handoff.minimumWithdrawalBodyMM>25);assert(h.handoff.minimumSubsequentCrewSeparationMM>=25);
+  assert(h.forceCase.vonMisesNmm2<100);assert(h.forceCase.carrier.netBendingStressNmm2<100);assert(h.forceCase.yoke.resultantBendingNmm2<100);
+  assert.match(h.receiver.staging,/does not authorise unbolting/);
+});
+
+test('controlled drains have reachable valves and distinguish sealed low pockets from empty pipes',()=>{
+  for(const d of study.station.drain.definitions){assert(d.minimumHandMM>=25);assert(d.minimumArmMM>=25);assert(d.reachMM<650);assert(d.airGapMM>=75);}
+  assert.match(study.station.drain.retainedLowPockets,/kept sealed/);
+  for(const d of study.utilitySuccessor.controlledDrain.drains){assert(d.clearance.every(c=>c.handMM>=25&&c.armMM>=25));assert(d.reachMM<650);}
+});
+
+test('unselected utility frame first rest closes Y1125 rack failure with finite Y1110/285 sweeps',()=>{
+  const c=utilityFirstRestPreflight();
+  assert.equal(c.status,'BOUNDED UTILITY FIRST-REST COMPARATOR; NOT SOURCE ADOPTION');
+  assert.equal(c.inputs.frameTravelNorthMM,285);
+  assert.equal(c.routes.coldSink[3][1],1110);
+  assert(c.frameStaticMinimum.gapMM>=25);
+  assert(c.framePipeMinimum.gapMM>=25);
+  assert(c.pipeRackMinimum.gapMM>=25);
+  assert.equal(c.frameStaticMinimum.obstacle,'eastWall');
+  assert(Math.abs(c.frameStaticMinimum.gapMM-25.5)<1e-7);
+  assert(c.framePipeMinimum.gapMM<30);
+  assert(c.rejectedEarlierY1125RackGapMM<15);
+  assert(c.crewBodyMinimum.gapMM>=25-1e-6); // exact segment/AABB solver subtracts a numerical 1e-8 mm
+  assert(c.crewHandArmMinimum.armGapLowerMM>=25);
+  assert(c.crewHandArmMinimum.handGapLowerMM>=25);
+  assert(c.maximumGripReachMM<650);
+  assert(c.footLanding.length===4&&c.footLanding.every(f=>f.patch>=0));
+  assert(c.pressureAt2kNFootMPa<.3);
+  assert(study.adoption.adopted===false,'No selected-house mutation from a standalone design comparator');
+});
+
+test('recovered upper bridge native tool, capture and receiving geometry remains source-bound and unselected',()=>{
+  const b=deriveBridgeNative();
+  assert.equal(b.status,'DEVELOPMENT_NOT_ADOPTED');
+  assert.equal(b.toolChecks.length,2);
+  for(const t of b.toolChecks){
+    assert(t.minimum.value>25,t.side+' remote tool bound');
+    assert(t.maxReach.value<600,t.side+' reach bound');
+  }
+  for(const c of b.controlChecks){
+    assert(c.minimum.value>=25,c.side+' '+c.id+' remote control bound');
+    assert(c.reach<600,c.side+' '+c.id+' reach');
+  }
+  assert.equal(b.receiver.status,'NATIVE_ENTRY_AND_ACCESS_COMPARISON');
+  assert.equal(b.receiver.entry.allPositive,true);
+  assert.equal(b.receiver.entry.guideMotionAllPositive,true);
+  assert(b.receiver.entry.rejectedRaised56GateSignedGap<0);
+  assert(b.receiver.entry.rejectedLowerFirstGateSignedGap<0);
+  assert(b.receiver.structuralComparison.remainingEastReserveAfterBothDeflectionsAnd1mmFabrication>0);
+  assert(b.receiver.rows.every(c=>c.minimum.value>25&&c.maxReach<600));
+  assert.equal(study.adoption.adopted,false,'Native comparator must not silently select the house');
+});
+
+test('twenty-state upper-bridge swept metal and pipes recover independent adverse motion evidence',()=>{
+  const m=bridgeNativeMotionResult;
+  assert.equal(m.status,'NOMINAL_CONTINUOUS_CAPTURE_SWEEP');
+  assert.equal(m.requiredMM,25);
+  assert.equal(m.states.length,20);
+  assert(m.pipeSamplesChecked>10000);
+  assert(m.partsMinimum.gap>=25,m.partsMinimum);
+  assert(m.pipeMinimum.gap>=25,m.pipeMinimum);
+  assert(m.retainedFailedOldCatchGap<0,m.retainedFailedOldCatchGap);
+  assert(m.motionAllowance.remainingMetal>=25,m.motionAllowance);
+  assert(m.nativeHeelToOwnArmDuringGuidedCapture.length>=2);
+  assert.equal(study.adoption.adopted,false);
+});
+
+test('lower cylinder cap tests exact eccentric cart envelope without adopting a rated fitting',()=>{
+  const r=lowerCapComparator();
+  assert.equal(r.status,'LOWER CAP GEOMETRY-ONLY; PRESSURE/RECEIVER/SEAL NOT QUALIFIED');
+  assert(Math.abs(r.originalRecoveredProjection.retainedR400ClearanceMM-4.59781746)<1e-5);
+  assert(r.originalRecoveredProjection.marginAfterTwo5MMSettingsMM<0);
+  assert(Math.abs(r.thinnerUnselectedComparison.marginAfterTwo5MMSettingsMM-4.49678589)<1e-5);
+  assert(r.rejectedLongerProjection.retainedR400ClearanceMM<0);
+  assert(r.maximumProjectionBeforeR400MM>29.6&&r.maximumProjectionBeforeR400MM<29.7);
+  assert(Math.abs(lowerCapPlanEnvelope(r.maximumProjectionAfterTwo5MMSettingsMM).marginAfterTwo5MMSettingsMM)<1e-8);
+  assert(Math.abs(r.maximumProjectionAfterTwo5MMSettingsMM-19.5433268)<1e-6);
+  for(const p of [r.driverParking.recovered25,r.driverParking.thinner15]){
+    assert(p.oldStopShaftSignedGapMM<0);
+    assert(p.proposedStopShaftSignedGapMM<p.requiredMM);
+    assert(p.inboardLeverHandGapMM<p.requiredMM);
+    assert(p.outboardLeverHandGapLowerMM>85);
+  }
+  assert.equal(r.driverParking.recovered25.proposedStopShaftCentrelineDistanceMM,15);
+  assert.equal(r.driverParking.thinner15.proposedStopShaftCentrelineDistanceMM,25);
+  assert.equal(r.driverParking.recovered25.shaftOnlyMinimumStopMM,297);
+  assert.equal(r.driverParking.thinner15.shaftOnlyMinimumStopMM,287);
+  assert(Math.abs(r.localCylinderEnvelope.thinner15ShaftGapMM-9.72461749)<1e-6);
+  assert(Math.abs(r.localCylinderEnvelope.cartSettingLimitShaftGapMM-14.24837694)<1e-6);
+  assert(r.localCylinderEnvelope.cartSettingLimitShaftGapMM<25);
+  assert.throws(()=>lowerCapPlanEnvelope(-1));
+  assert.throws(()=>lowerCapPlanEnvelope(Infinity));
+  assert.equal(study.adoption.adopted,false);
+});
