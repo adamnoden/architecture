@@ -9,8 +9,8 @@
     "label": "zerg2-str"
   },
   "claimedAt": "2026-11-12T22:48:12.269Z",
-  "heartbeatAt": "2026-11-12T22:48:12.269Z",
-  "expiresAt": "2026-11-12T23:33:12.269Z",
+  "heartbeatAt": "2026-11-12T23:07:28.750Z",
+  "expiresAt": "2026-11-12T23:52:28.750Z",
   "branch": "work/zerg2-str-seat",
   "predecessor": {
     "leaseId": "6bf2fd76-5332-4631-b742-0f4d606056df",
@@ -33,5 +33,10 @@
       "next": "After exact CI and preflight, integrate bounded replay. Rebuild tied cage/core seat and 70 mm glass return; independent H20 shift has incompatible >=10 mm hoop and <=3 mm parallel bar screen. Trial 15 mm gross gap before real plate flexure and setting.",
       "blocker": "Independent H8/H20 route and 5 mm gap do not pass the authored setting challenge; actual plate, anchorage, confinement and whole-surface clearance still open."
     }
+  },
+  "checkpoint": {
+    "evidence": "Remote 87ca71d5: 175 mm cap, 70 mm worst-setting glass reservation, staggered weldable couplers and positive rounded H8 finite geometry; fixed-plate rotation and Type C stack rejected",
+    "next": "Complete 579 signed, 110 movement, friction stress cases; reconcile results into PR and validate",
+    "blocker": "Fabrication access, finite roof-skin bearing, sliding pressure and material/seat closure held"
   }
 }
