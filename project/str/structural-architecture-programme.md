@@ -161,6 +161,10 @@ the final gates as a passed scheme. Product, reinforcement fabrication, site,
 competent engineering and physical acceptance retain their existing BCR/EPR/PHY/DEL
 routes. No new external prerequisite replaces useful internal design work.
 
+The [receiver side-web comparison](floor-portal-reconciliation.md) records
+a failed 140 mm L-pier detail and a 180 mm plan comparator for the next
+coordinated replay. Both final gates still depend on this packet.
+
 The registration is the owning correction exposed by ROF-RWT-GATE, not execution
 of the new structural packet. STR-FLOOR-PORTAL requires its own ordinary
 canonical lease after registration reaches main. Keeping the historical study
