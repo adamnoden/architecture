@@ -1,27 +1,21 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 6,
+  "generation": 7,
   "state": "claimed",
-  "leaseId": "6e96aa05-faa6-4bca-8cc5-9fa0c8387820",
+  "leaseId": "d5aecbd6-29b8-4b12-9d51-23a4a824441d",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6819896549"
+    "label": "issue-comment-6829754036"
   },
-  "claimedAt": "2026-11-12T09:29:56.000Z",
-  "heartbeatAt": "2026-11-12T09:29:56.000Z",
-  "expiresAt": "2026-11-12T10:14:56.000Z",
-  "branch": "work/mvb-chat-6819896549",
+  "claimedAt": "2026-11-12T16:41:37.000Z",
+  "heartbeatAt": "2026-11-12T16:41:37.000Z",
+  "expiresAt": "2026-11-12T17:26:37.000Z",
+  "branch": "work/mvb-chat-6829754036",
   "predecessor": {
-    "leaseId": "dd153ffa-ca18-4b19-b3bf-c278e09e9c58",
-    "generation": 5,
-    "branch": "work/mvb-chat-6818945453",
-    "pr": 1487,
-    "checkpoint": {
-      "evidence": "Draft PR1487 head c19b05c9: 4 collision-negative controls, nominal bed3 5.5mm clearance, unselected south-30mm candidate 25mm whole route, guide hardware updated. Exact-head CI43186611992 main load/movement, repository and friction-motion passed; final friction-domain pending.",
-      "next": "Review last friction-domain CI; continue physical guide retention, receiver/confinement and IAS placement tolerances; no construction release.",
-      "blocker": "Structural packet incomplete; bearing, anchorage, fabrication and physical handling unqualified."
-    }
+    "leaseId": "6e96aa05-faa6-4bca-8cc5-9fa0c8387820",
+    "generation": 6,
+    "branch": "work/mvb-chat-6819896549"
   },
   "recoverySource": {
     "leaseId": "dd153ffa-ca18-4b19-b3bf-c278e09e9c58",
