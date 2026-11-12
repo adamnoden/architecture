@@ -7,6 +7,7 @@ import {deriveCurrentHouse} from './current-house.mjs';
 import {utilityFirstRestPreflight} from './utility-first-rest-preflight.mjs';
 import {deriveBridgeNative} from './incoming-water-bridge-native.mjs';
 import {bridgeNativeMotionResult} from './incoming-water-bridge-native-motion.mjs';
+import {lowerCapComparator,lowerCapPlanEnvelope} from './incoming-water-lower-cap.mjs';
 
 const study=deriveIncomingWaterStudy();
 test('finite bends represent a real quarter-circle and reject impossible tangent lengths',()=>{
@@ -188,5 +189,18 @@ test('twenty-state upper-bridge swept metal and pipes recover independent advers
   assert(m.retainedFailedOldCatchGap<0,m.retainedFailedOldCatchGap);
   assert(m.motionAllowance.remainingMetal>=25,m.motionAllowance);
   assert(m.nativeHeelToOwnArmDuringGuidedCapture.length>=2);
+  assert.equal(study.adoption.adopted,false);
+});
+
+test('lower cylinder cap tests exact eccentric cart envelope without adopting a rated fitting',()=>{
+  const r=lowerCapComparator();
+  assert.equal(r.status,'LOWER CAP GEOMETRY-ONLY; PRESSURE/RECEIVER/SEAL NOT QUALIFIED');
+  assert(Math.abs(r.originalRecoveredProjection.retainedR400ClearanceMM-4.59781746)<1e-5);
+  assert(r.originalRecoveredProjection.marginAfterTwo5MMSettingsMM<0);
+  assert(Math.abs(r.thinnerUnselectedComparison.marginAfterTwo5MMSettingsMM-4.49678589)<1e-5);
+  assert(r.rejectedLongerProjection.retainedR400ClearanceMM<0);
+  assert(r.maximumProjectionBeforeR400MM>29.6&&r.maximumProjectionBeforeR400MM<29.7);
+  assert.throws(()=>lowerCapPlanEnvelope(-1));
+  assert.throws(()=>lowerCapPlanEnvelope(Infinity));
   assert.equal(study.adoption.adopted,false);
 });
