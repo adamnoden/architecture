@@ -44,8 +44,12 @@ jobs:
       - name: Render project-control projections for validation
         run: npm run status:update
 
-      - name: Check repository health
-        run: npm run check
+      # Catch presentation defects before the long canonical suite. This
+      # preview build does not replace or weaken npm run check below.
+      - name: Build and review homepage in browser
+        run: |
+          npm run docs:build
+          node scripts/validate-homepage.mjs
 
       - name: Retain built website for rendered review
         if: always() && hashFiles('.vitepress/dist/index.html') != ''
@@ -56,6 +60,18 @@ jobs:
           include-hidden-files: true
           if-no-files-found: error
           retention-days: 7
+
+      - name: Retain homepage browser evidence
+        if: always() && hashFiles('node_modules/.cache/ovids-house/homepage-proof/review.json') != ''
+        uses: actions/upload-artifact@v6
+        with:
+          name: homepage-browser-review
+          path: node_modules/.cache/ovids-house/homepage-proof
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Check repository health
+        run: npm run check
 
       - name: Validate project control
         run: npx tsx scripts/validate-project-control.ts

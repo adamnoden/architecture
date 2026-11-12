@@ -323,10 +323,11 @@
     padding-bottom: 4rem;
   }
 
-  .ovids-homepage .VPDoc .container,
-  .ovids-homepage .VPDoc .content,
+  .ovids-homepage .VPDoc:not(.has-sidebar) .container,
+  .ovids-homepage .VPDoc:not(.has-sidebar) .content,
   .ovids-homepage .VPDoc:not(.has-aside) .content-container {
     max-width: 1120px;
+    width: 100%;
   }
 
   .ovids-homepage .home-opening {
