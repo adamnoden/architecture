@@ -6,8 +6,8 @@ The selected house retains an incoming-water centreline at X11200/Z500 that
 passes through 200 mm of the plant-N required envelope. The
 [internal-leak study](../mra/internal-leak-study.md) correctly labels it rejected
 and requires an actual route, upstream isolation and contained drain before
-selected-house and internal-moisture acceptance. This packet supplies that
-missing house decision. [Owner-directed issue #1477](https://github.com/adamnoden/architecture/issues/1477)
+selected-house and internal-moisture acceptance. This packet develops the
+evidence needed for that decision. [Owner-directed issue #1477](https://github.com/adamnoden/architecture/issues/1477)
 
 ## Current-source findings
 
@@ -338,8 +338,8 @@ workstream-completion claim is made by this comparator.
 The source recovered on11 November as inert text is now restored as an
 importable [upper bridge native module](studies/incoming-water-bridge-native.mjs),
 with its import relative to the real main-house study directory. The
-recoverable original text remains untouched in
-[recovery/2026-11-11](recovery/2026-11-11/README.md). The executable wrapper
+recoverable original text remains in the [immutable predecessor archive](https://github.com/adamnoden/architecture/blob/a654e8ed200d2b9de057e7e4008cbd67655392d4/project/had/recovery/2026-11-11/README.md).
+The executable wrapper
 fail-closes if the selectedØ760 cylinder body, east plant door, western
 water socket or exterior finished-wall line changes; it does not substitute
 a historicalØ595 cylinder.
@@ -412,6 +412,7 @@ A30 mm projection is a retained **rejected case** (radius400.354 mm,
 0.354 mm outside the allowable retained-part envelope).
 The exact radius45 geometric limit for outward projection is
 **29.643 mm**, before any setting or real component qualification.
+Charging both 5 mm settings reduces that limit to **19.543 mm**.
 
 No 15 mm-rated flange, complete bolts/heads/gasket, temperature/pressure
 match, fitting torque, welded/bonded port or native tail capture has
@@ -419,3 +420,31 @@ been demonstrated. Neither the exact plan clearance nor the smaller
 candidate amount to adopting the lower-tail design. The full loaded
 cylinder, stand and exposed services must still be physically supported,
 removed and landed on a proved sequence.
+
+### Generation 7: lower-tail parking and cap tool
+
+The same executable comparator now checks the finite cap driver against the
+parked lower-tail flange. It takes the 45 mm face, four front bolt locations,
+240 mm shaft and 150 mm lever from the [recovered lower-tail
+contract](https://github.com/adamnoden/architecture/blob/a654e8ed200d2b9de057e7e4008cbd67655392d4/project/had/recovery/2026-11-11/lower-tail-handoff.md).
+At 60 mm travel the
+shaft centreline crosses the parked disc. At 280 mm the disc remains only
+8 mm from the R7 shaft capsule for the recovered 25 mm cap and 18 mm for the
+15 mm challenger. The 25 mm remote clearance screen therefore requires at
+least 297 or 287 mm travel respectively for the **shaft alone**.
+
+At a 10° inboard lever pose, the R50 hand has only 17.28 or 16.38 mm
+clearance to the parked disc respectively. The outboard lever orientation
+retains at least 87.28 mm to that disc over its full ±15° sector. Use the
+outboard orientation for the next comparison against the actual parked
+shoe, rail, carrier, operator and remote obstacles. A longer shaft-only
+parking distance gives no credit for clearing those parts or carrying the
+tail to positive first rest.
+
+The modelled Ø760 body also comes within 9.725 mm of the bolt-centred R7
+shaft at 15 mm projection. Even at the 19.543 mm setting limit the gap is
+only 14.248 mm. This proximity at the bolt plane is independent of parking
+stroke. If the 25 mm remote screen is required at this local interface,
+the full admissible cap projection range fails. The next detail must
+locate the actual shell, boss and socket, and justify their local working
+clearance.

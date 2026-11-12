@@ -67,4 +67,3 @@ export function finiteBends(vertices,radius=75,maxStepDeg=1){
     bends:bends.map(({vertex,theta,tangent})=>({vertex,angleDeg:theta*180/Math.PI,tangent})),
   };
 }
-

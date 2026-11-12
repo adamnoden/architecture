@@ -200,6 +200,21 @@ test('lower cylinder cap tests exact eccentric cart envelope without adopting a 
   assert(Math.abs(r.thinnerUnselectedComparison.marginAfterTwo5MMSettingsMM-4.49678589)<1e-5);
   assert(r.rejectedLongerProjection.retainedR400ClearanceMM<0);
   assert(r.maximumProjectionBeforeR400MM>29.6&&r.maximumProjectionBeforeR400MM<29.7);
+  assert(Math.abs(lowerCapPlanEnvelope(r.maximumProjectionAfterTwo5MMSettingsMM).marginAfterTwo5MMSettingsMM)<1e-8);
+  assert(Math.abs(r.maximumProjectionAfterTwo5MMSettingsMM-19.5433268)<1e-6);
+  for(const p of [r.driverParking.recovered25,r.driverParking.thinner15]){
+    assert(p.oldStopShaftSignedGapMM<0);
+    assert(p.proposedStopShaftSignedGapMM<p.requiredMM);
+    assert(p.inboardLeverHandGapMM<p.requiredMM);
+    assert(p.outboardLeverHandGapLowerMM>85);
+  }
+  assert.equal(r.driverParking.recovered25.proposedStopShaftCentrelineDistanceMM,15);
+  assert.equal(r.driverParking.thinner15.proposedStopShaftCentrelineDistanceMM,25);
+  assert.equal(r.driverParking.recovered25.shaftOnlyMinimumStopMM,297);
+  assert.equal(r.driverParking.thinner15.shaftOnlyMinimumStopMM,287);
+  assert(Math.abs(r.localCylinderEnvelope.thinner15ShaftGapMM-9.72461749)<1e-6);
+  assert(Math.abs(r.localCylinderEnvelope.cartSettingLimitShaftGapMM-14.24837694)<1e-6);
+  assert(r.localCylinderEnvelope.cartSettingLimitShaftGapMM<25);
   assert.throws(()=>lowerCapPlanEnvelope(-1));
   assert.throws(()=>lowerCapPlanEnvelope(Infinity));
   assert.equal(study.adoption.adopted,false);
