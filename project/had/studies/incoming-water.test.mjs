@@ -5,6 +5,7 @@ import {finiteBends,exactSegmentBoxDistance} from './incoming-water-geometry.mjs
 import {deriveIncomingWaterStudy,incomingWaterText} from './incoming-water.mjs';
 import {deriveCurrentHouse} from './current-house.mjs';
 import {utilityFirstRestPreflight} from './utility-first-rest-preflight.mjs';
+import {deriveBridgeNative} from './incoming-water-bridge-native.mjs';
 
 const study=deriveIncomingWaterStudy();
 test('finite bends represent a real quarter-circle and reject impossible tangent lengths',()=>{
@@ -151,4 +152,26 @@ test('unselected utility frame first rest closes Y1125 rack failure with finite 
   assert(c.footLanding.length===4&&c.footLanding.every(f=>f.patch>=0));
   assert(c.pressureAt2kNFootMPa<.3);
   assert(study.adoption.adopted===false,'No selected-house mutation from a standalone design comparator');
+});
+
+test('recovered upper bridge native tool, capture and receiving geometry remains source-bound and unselected',()=>{
+  const b=deriveBridgeNative();
+  assert.equal(b.status,'DEVELOPMENT_NOT_ADOPTED');
+  assert.equal(b.toolChecks.length,2);
+  for(const t of b.toolChecks){
+    assert(t.minimum.value>25,t.side+' remote tool bound');
+    assert(t.maxReach.value<600,t.side+' reach bound');
+  }
+  for(const c of b.controlChecks){
+    assert(c.minimum.value>=25,c.side+' '+c.id+' remote control bound');
+    assert(c.reach<600,c.side+' '+c.id+' reach');
+  }
+  assert.equal(b.receiver.status,'NATIVE_ENTRY_AND_ACCESS_COMPARISON');
+  assert.equal(b.receiver.entry.allPositive,true);
+  assert.equal(b.receiver.entry.guideMotionAllPositive,true);
+  assert(b.receiver.entry.rejectedRaised56GateSignedGap<0);
+  assert(b.receiver.entry.rejectedLowerFirstGateSignedGap<0);
+  assert(b.receiver.structuralComparison.remainingEastReserveAfterBothDeflectionsAnd1mmFabrication>0);
+  assert(b.receiver.rows.every(c=>c.minimum.value>25&&c.maxReach<600));
+  assert.equal(study.adoption.adopted,false,'Native comparator must not silently select the house');
 });
