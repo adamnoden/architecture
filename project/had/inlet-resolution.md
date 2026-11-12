@@ -284,3 +284,51 @@ finishing the roof alone cannot release TRIAD, and that MRA-02 still requires
 TRIAD after the inlet result. Applicable checks, exact-head CI and fresh
 canonical publication preflight are required before merge; the PR retains the
 executed evidence. No substantive inlet completion is claimed here.
+
+## Independent utility first-rest candidate — 12 November 2026
+
+The interrupted generation-3 **Y1110 / 285 mm** utility correction now has
+an executable current-source comparator:
+[utility-first-rest-preflight.mjs](studies/utility-first-rest-preflight.mjs).
+It imports the actual IAS utility frame blob and the current-house envelope;
+it intentionally does **not** mutate or regenerate the historical
+`incoming-water.json` or selected-house sources. The existing `Y1125`
+trial is retained as a rejecting control.
+
+The first bound preserves the four existing IAS frame feet and the temporary
+carry bar. Movement is 35 mm up, 285 mm north, then 35 mm down on
+flush bearing patches; no west translation is borrowed from the older frame
+route. The two complete lower sink branches move their horizontal crossing to
+Y1110 (R25 exposed-terminal envelope), without touching the selected upper
+cold/hot backbones. The checker uses exact segment/box distances for finite
+pipe bends, conservative swept AABBs for the axis-aligned moving members,
+full fixed cap/washer/emitter/reaction objects and continuous crew body
+path bounds. Two grip heights per worker get 100 arm/hand samples per stage
+with a half-step distance penalty. The new underside washer-stop key/reaction
+boxes are explicit remote obstacles except at their own intentionally
+mated tube/support contact.
+
+The independent source calculation found the following nominal design
+witnesses, to be confirmed by exact-head CI:
+
+- moving frame to finished east wall: **25.5 mm**, not the defunct wide
+  corridor implied by the abandoned west-translation method;
+- moving frame to Y1110 terminal branch: **29.999 mm** after the
+  R25 pipe envelope and finite-bend bound;
+- Y1110 branch to retained rack post: **29.999 mm** under the same bound;
+- retained Y1125 trial to rack post: approximately **15 mm**, which fails
+  the 25 mm remote nominal screen.
+
+The proposed four feet land directly over the specified65 ×110 mm recessed
+prepared patches. With 1 mm lost at each edge, each patch leaves 6804 mm²
+for the 2 kN/foot **comparison**, or0.294 MPa against the inherited0.3 MPa
+screen. There is no credit for loose raised pads under the workers.
+
+This is a *local first-rest candidate*, not an adopted factory-head removal
+method. It does not qualify the full frame mass/CG, four actual foot anchor
+paths, bolt/pin welds, physical crew handling, pressure components,
+all actual placement tolerances or IAS onward export/return. The new dry
+native washer-stop contract remains its own fabrication/pressure duty.
+The cylinder's whole-U bridge/tail and stand retirement, and the selected
+inlet/house/MRA replay, remain open. No material/house selection or
+workstream-completion claim is made by this comparator.
