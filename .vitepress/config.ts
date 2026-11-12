@@ -34,18 +34,6 @@ const crawlerPolicy = siteIndexable ? 'index, follow' : 'noindex, nofollow, noar
 const publicNav = mapNavigationLinks(filterPublicNavigation(nav))
 const publicSidebar = mapSidebarRoutes(filterPublicNavigation(sidebar))
 
-const siteNav = publicNav.map((item) => {
-  if (item.text !== 'Project' || !('items' in item) || !item.items) return item
-
-  return {
-    ...item,
-    items: [
-      ...item.items,
-      { text: 'Source repository', link: 'https://github.com/adamnoden/architecture' }
-    ]
-  }
-})
-
 // Mermaid stays authored as fenced Markdown; the wrapper only supplies VitePress rendering.
 export default withMermaid(
   defineConfig({
@@ -107,7 +95,7 @@ export default withMermaid(
       },
       sidebarMenuLabel: 'Contents',
       nav: [
-        ...siteNav,
+        ...publicNav,
         {
           text: 'PDF',
           items: [

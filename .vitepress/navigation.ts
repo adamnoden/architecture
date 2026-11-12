@@ -1,6 +1,7 @@
 import { readFileSync, readdirSync } from 'node:fs'
 import { join, relative, sep } from 'node:path'
 import type { DefaultTheme } from 'vitepress'
+import { siteRootSources } from '../project/public-surface.js'
 
 const page = (text: string, link: string): DefaultTheme.SidebarItem => ({ text, link })
 const group = (
@@ -485,6 +486,7 @@ const editorialSidebar: DefaultTheme.SidebarItem[] = [
 
 const projectSidebar: DefaultTheme.SidebarItem[] = [
   group('Project records', [
+    page('Repository guide', '/README'),
     page('Dependency graph', '/docs/project/dependency-graph'),
     page('Project status', '/STATUS'),
     page('Documentation structure', '/docs/'),
@@ -494,34 +496,38 @@ const projectSidebar: DefaultTheme.SidebarItem[] = [
 ]
 
 export const nav: DefaultTheme.NavItem[] = [
-  { text: 'Start reading', link: '/docs/reading-guide' },
+  { text: 'Read', link: '/docs/manuscript/preface' },
+  { text: 'The house', link: '/docs/reference-house/' },
   { text: 'Drawings', link: '/docs/drawings' },
   {
-    text: 'Architecture',
+    text: 'Explore',
     items: [
-      { text: 'Architectural argument', link: '/docs/manuscript/' },
-      { text: 'Pattern language', link: '/docs/patterns/' },
-      { text: 'Architectural grammar', link: '/docs/grammar/' },
-      { text: 'Reference House', link: '/docs/reference-house/' }
-    ]
-  },
-  {
-    text: 'Evidence & testing',
-    items: [
-      { text: 'Research', link: '/docs/research/' },
-      { text: 'Physical prototypes', link: '/docs/prototypes/' },
-      { text: 'Computational track', link: '/docs/computational/' }
-    ]
-  },
-  { text: 'Delivery', link: '/docs/delivery/' },
-  {
-    text: 'Project',
-    items: [
-      { text: 'Dependency graph', link: '/docs/project/dependency-graph' },
-      { text: 'Project status', link: '/STATUS' },
-      { text: 'Documentation structure', link: '/docs/' },
-      { text: 'Development records', link: '/docs/development/' },
-      { text: 'Editorial system', link: '/docs/editorial/' }
+      {
+        text: 'Architecture',
+        items: [
+          { text: 'Architectural argument', link: '/docs/manuscript/' },
+          { text: 'Pattern language', link: '/docs/patterns/' },
+          { text: 'Architectural grammar', link: '/docs/grammar/' }
+        ]
+      },
+      {
+        text: 'Research & practice',
+        items: [
+          { text: 'Research', link: '/docs/research/' },
+          { text: 'Physical prototypes', link: '/docs/prototypes/' },
+          { text: 'Computational track', link: '/docs/computational/' },
+          { text: 'Delivery', link: '/docs/delivery/' }
+        ]
+      },
+      {
+        text: 'Reference',
+        items: [
+          { text: 'Reading guide', link: '/docs/reading-guide' },
+          { text: 'Repository guide', link: '/README' },
+          { text: 'Dependency graph', link: '/docs/project/dependency-graph' },
+          { text: 'Source repository', link: 'https://github.com/adamnoden/architecture' }
+        ]
+      }
     ]
   }
 ]
@@ -539,6 +545,7 @@ export const sidebar = {
   '/docs/editorial/': editorialSidebar,
   '/docs/project/': projectSidebar,
   '/docs/reading-guide': startSidebar,
+  '/README': projectSidebar,
   '/STATUS': projectSidebar,
   '/docs/': projectSidebar,
   '/': startSidebar
@@ -565,7 +572,7 @@ function flattenLinks(items: DefaultTheme.SidebarItem[]): string[] {
 
 function sourceRoute(source: string): string {
   const normal = source.split(sep).join('/')
-  if (normal === 'README.md') return '/'
+  if (normal === 'index.md') return '/'
   if (normal.endsWith('/README.md')) return `/${normal.slice(0, -'README.md'.length)}`
   return `/${normal.slice(0, -'.md'.length)}`
 }
@@ -582,7 +589,7 @@ function excludedFromNavigation(source: string): boolean {
  */
 export function assertNavigationCoverage(): void {
   const root = process.cwd()
-  const sources = [join(root, 'README.md'), join(root, 'STATUS.md'), ...collectMarkdown(join(root, 'docs'))]
+  const sources = [...siteRootSources.map((source) => join(root, source)), ...collectMarkdown(join(root, 'docs'))]
   const publishedRoutes = sources
     .filter((source) => !excludedFromNavigation(source))
     .map((source) => sourceRoute(relative(root, source)))
