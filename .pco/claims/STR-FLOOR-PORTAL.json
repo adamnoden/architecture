@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 8,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "aa0f48fb-eb2c-4977-975e-3a5fd026a116",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6830099664"
   },
   "claimedAt": "2026-11-12T16:55:04.000Z",
-  "heartbeatAt": "2026-11-12T16:55:04.000Z",
-  "expiresAt": "2026-11-12T17:40:04.000Z",
+  "heartbeatAt": "2026-11-12T17:01:14.000Z",
+  "expiresAt": "2026-11-12T17:01:14.000Z",
   "branch": "work/mvb-chat-6830099664",
   "predecessor": {
     "leaseId": "d5aecbd6-29b8-4b12-9d51-23a4a824441d",
@@ -33,5 +33,7 @@
       "next": "Require exact-head PR1489 CI; retain unmet coupling, reinforcement cage, foundation/52-head and occupied-room consequences. Then hand off or earn bounded closure.",
       "blocker": "180mm L design is only an unselected plan study. No structural/roof/source adoption, fabrication, cover specification or physical qualification."
     }
-  }
+  },
+  "releasedAt": "2026-11-12T17:01:14.000Z",
+  "releaseReason": "handoff"
 }
