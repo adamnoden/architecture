@@ -1,39 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 5,
-  "state": "released",
-  "leaseId": "dd153ffa-ca18-4b19-b3bf-c278e09e9c58",
+  "generation": 6,
+  "state": "claimed",
+  "leaseId": "6e96aa05-faa6-4bca-8cc5-9fa0c8387820",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6818945453"
+    "label": "issue-comment-6819896549"
   },
-  "claimedAt": "2026-11-12T08:43:18.000Z",
-  "heartbeatAt": "2026-11-12T09:27:24.000Z",
-  "expiresAt": "2026-11-12T09:27:24.000Z",
-  "branch": "work/mvb-chat-6818945453",
+  "claimedAt": "2026-11-12T09:29:56.000Z",
+  "heartbeatAt": "2026-11-12T09:29:56.000Z",
+  "expiresAt": "2026-11-12T10:14:56.000Z",
+  "branch": "work/mvb-chat-6819896549",
   "predecessor": {
-    "leaseId": "7cdfe02e-33cb-4780-89a5-345a110fb8e4",
-    "generation": 4,
-    "branch": "work/mvb-chat-6808776165"
-  },
-  "recoverySource": {
-    "leaseId": "7959b505-3cd1-4cbf-ae99-a07deb1a0f40",
-    "generation": 3,
-    "branch": "work/mvb-chat-6807640879",
-    "pr": 1485,
+    "leaseId": "dd153ffa-ca18-4b19-b3bf-c278e09e9c58",
+    "generation": 5,
+    "branch": "work/mvb-chat-6818945453",
+    "pr": 1487,
     "checkpoint": {
-      "evidence": "PR1485 head b8bd337c restores executable native roof-field/contact recovery, reconstructs square-corner/L-haunch geometry and binds it into stiffness, slab exclusion and physical mass/source replacement. A four-candidate CI sensitivity matrix is committed.",
-      "next": "Read exact-head CI/probe receipts; repair any source errors, reject or retain candidates from numerical evidence, then advance joint/key/hardware domains.",
-      "blocker": "Awaiting exact-head GitHub Actions execution for the reconstructed source; no candidate is adopted."
+      "evidence": "Draft PR1487 head c19b05c9: 4 collision-negative controls, nominal bed3 5.5mm clearance, unselected south-30mm candidate 25mm whole route, guide hardware updated. Exact-head CI43186611992 main load/movement, repository and friction-motion passed; final friction-domain pending.",
+      "next": "Review last friction-domain CI; continue physical guide retention, receiver/confinement and IAS placement tolerances; no construction release.",
+      "blocker": "Structural packet incomplete; bearing, anchorage, fabrication and physical handling unqualified."
     }
   },
-  "pr": 1487,
-  "checkpoint": {
-    "evidence": "Draft PR1487 head c19b05c9: 4 collision-negative controls, nominal bed3 5.5mm clearance, unselected south-30mm candidate 25mm whole route, guide hardware updated. Exact-head CI43186611992 main load/movement, repository and friction-motion passed; final friction-domain pending.",
-    "next": "Review last friction-domain CI; continue physical guide retention, receiver/confinement and IAS placement tolerances; no construction release.",
-    "blocker": "Structural packet incomplete; bearing, anchorage, fabrication and physical handling unqualified."
-  },
-  "releasedAt": "2026-11-12T09:27:24.000Z",
-  "releaseReason": "handoff"
+  "recoverySource": {
+    "leaseId": "dd153ffa-ca18-4b19-b3bf-c278e09e9c58",
+    "generation": 5,
+    "branch": "work/mvb-chat-6818945453",
+    "pr": 1487,
+    "checkpoint": {
+      "evidence": "Draft PR1487 head c19b05c9: 4 collision-negative controls, nominal bed3 5.5mm clearance, unselected south-30mm candidate 25mm whole route, guide hardware updated. Exact-head CI43186611992 main load/movement, repository and friction-motion passed; final friction-domain pending.",
+      "next": "Review last friction-domain CI; continue physical guide retention, receiver/confinement and IAS placement tolerances; no construction release.",
+      "blocker": "Structural packet incomplete; bearing, anchorage, fabrication and physical handling unqualified."
+    }
+  }
 }
