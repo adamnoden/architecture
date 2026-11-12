@@ -1,0 +1,61 @@
+{
+  "status": "adverse comparison; widened alternative limited to plan",
+  "referenceStudyCommit": "7a1b697431e9c1556f426068068b96356d3158ca",
+  "cassettePlanLengthMm": 94.0,
+  "provisionalWebScreenMm": 25.0,
+  "independentSettingsMm": [
+    5.0,
+    5.0
+  ],
+  "base140MmArm": {
+    "armWidthMm": 140.0,
+    "cassetteWidthMm": 46.0,
+    "guideCount": 24,
+    "minGrossConcreteWebMm": 19.556506,
+    "minConcreteWebAfterSettingsMm": 9.556506,
+    "marginTo25MmScreenMm": -15.443494,
+    "minH20PlanGapAfterSettingsMm": 34.528949,
+    "minH12StationGapAfterSettingsMm": 60.164866,
+    "oneLimitingGuide": {
+      "corner": "NE",
+      "localCentreMm": [
+        70.0,
+        725.0
+      ]
+    }
+  },
+  "bareTongueWidthLowerBound140MmArm": {
+    "armWidthMm": 140.0,
+    "cassetteWidthMm": 20.0,
+    "guideCount": 24,
+    "minGrossConcreteWebMm": 28.168947,
+    "minConcreteWebAfterSettingsMm": 18.168947,
+    "marginTo25MmScreenMm": -6.831053,
+    "minH20PlanGapAfterSettingsMm": 43.002241,
+    "minH12StationGapAfterSettingsMm": 69.691331,
+    "oneLimitingGuide": {
+      "corner": "NE",
+      "localCentreMm": [
+        70.0,
+        725.0
+      ]
+    }
+  },
+  "unselected180MmArm": {
+    "armWidthMm": 180.0,
+    "cassetteWidthMm": 46.0,
+    "guideCount": 24,
+    "minGrossConcreteWebMm": 39.580989,
+    "minConcreteWebAfterSettingsMm": 29.580989,
+    "marginTo25MmScreenMm": 4.580989,
+    "minH20PlanGapAfterSettingsMm": 38.981216,
+    "minH12StationGapAfterSettingsMm": 60.131813,
+    "oneLimitingGuide": {
+      "corner": "NE",
+      "localCentreMm": [
+        90.0,
+        725.0
+      ]
+    }
+  }
+}
