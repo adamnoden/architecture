@@ -113,7 +113,14 @@ try {
   await page.waitForSelector('.VPNavScreen', { visible: true })
   await clickText('.VPNavScreen button', 'Explore')
   await page.waitForSelector('.VPNavScreen a[href="/architecture/project/repository"]', { visible: true })
-  await page.screenshot({ path: resolve(output, 'mobile-navigation.png'), fullPage: true })
+  await page.waitForFunction(() => {
+    const menu = document.querySelector('.VPNavScreen')
+    return menu && getComputedStyle(menu).opacity === '1' &&
+      !menu.getAnimations({ subtree: true }).some((animation) => animation.playState === 'running')
+  })
+  await page.screenshot({ path: resolve(output, 'mobile-navigation.png'), fullPage: false })
+  await clickText('.VPNavScreen a', 'Repository guide')
+  await expectPath('project/repository')
   await page.goto(base + 'reading-guide', { waitUntil: 'networkidle0' })
   assert.equal(await page.$$eval('.vp-doc a', (links) => links.find((a) => a.textContent === 'Project overview')?.getAttribute('href')), '/architecture/')
   await page.setJavaScriptEnabled(false)
