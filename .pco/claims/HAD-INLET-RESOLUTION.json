@@ -9,8 +9,8 @@
     "label": "issue-comment-6830119050"
   },
   "claimedAt": "2026-11-12T16:55:49.000Z",
-  "heartbeatAt": "2026-11-12T16:55:49.000Z",
-  "expiresAt": "2026-11-12T17:40:49.000Z",
+  "heartbeatAt": "2026-11-12T17:00:07.000Z",
+  "expiresAt": "2026-11-12T17:45:07.000Z",
   "branch": "work/mvb-chat-6830119050",
   "predecessor": {
     "leaseId": "d70daf17-1b41-4883-9059-cfc667bd0366",
@@ -27,5 +27,11 @@
       "next": "Review exact-head CI, repair failures. Execute upper-bridge motion/post-stiffness and qualify lower cylinder tail/stand; then reconcile selected house/MRA.",
       "blocker": "Selected source unchanged; native lower tail, anchors, physical fit, components and structural crossings remain unresolved."
     }
+  },
+  "pr": 1490,
+  "checkpoint": {
+    "evidence": "PR1490 head0e7082f8 recovers #1488. Fixed CI #43189142696 stale-cylinder guard by selecting composed 760mm house. Restored private 20-state native bridge motion as executable with streaming minima, and added 25mm/adverse fork motion tests. Source house remains unchanged.",
+    "next": "Review exact-head CI; resolve test failures. Then continue physical lower-tail/stand and braced post support, before any selected-house/MRA adoption.",
+    "blocker": "Upper bridge native study does not qualify pressure hardware, real crew, roof/structure, lower tail removal or whole-U landing; no house acceptance."
   }
 }
