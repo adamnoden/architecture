@@ -398,3 +398,23 @@ room/renewal effects remain duties of those owners. A fourth negative control
 now also rejects a wardrobe initially penetrating its mounting wall.
 The floor/portal joint, anchor, local concrete confinement and final roof hardware
 remain separate unfinished STR-FLOOR-PORTAL duties.
+
+## L radial-receiver cover challenge — 12 November 2026
+
+The source-bound complete receiver fit now records a **concrete side-cover
+conflict at all four L piers** independently of the successful H20/H12
+clearance and elastic hardware screens. Each 140 mm L arm receives a
+46 mm-wide full cassette. At the limiting angled 70 × 20 × 60 guide,
+the shortest gross edge web is **19.60 mm**, reducing to **9.60 mm** after
+two independently reserved5 mm steel-setting allowances. A provisional
+25 mm nominal cover comparator is therefore short by **15.40 mm**.
+This is a conservative screening challenge, not a statutory cover declaration
+or a demonstrated cracking/collapse result.
+
+The current `floor_portal_guide_fit.py` explicitly retains this adverse
+control; the 579-case and104-head numerical successes remain meaningful
+*for the provisional geometry* but do not certify local concrete anchorage,
+durability or constructability. Resolving the L arm/guide footprint and
+re-solving the coupled loads and occupied bays is required before this node
+can close or ROF-RWT-GATE can be released. No house baseline or material
+selection is changed by this failure record.
