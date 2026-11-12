@@ -359,3 +359,34 @@ room/floor anchors, wear or the installation crew's verified procedure.
 The lower tail/stand withdrawal and full whole-U move remain separate open
 requirements. Require exact-head CI for the restored source before crediting
 its executable controls.
+
+### Generation 6: selected-house source guard and native upper motion
+
+The first executable recovery used `water-replan.json` to guard the selected
+cylinder. That file is an upstream **historical 595 mm candidate**, although
+the same programme later composes the real selected 760 mm vessel. Exact-head
+CI #43189142696 correctly rejected the stale guard. The new code checks
+`deriveCurrentHouse().model` instead, including the full 760 mm cylinder,
+western cold seat, actual plant door and current house east envelope. It does
+not alter the old upstream evidence or weaken the guard.
+
+The previously private [20-state upper-bridge motion
+source](studies/incoming-water-bridge-native-motion.mjs) is also now
+executable and included in the HAD test suite. The moving carrier struts,
+shoulders, actuator/cleats and true heel boxes have explicit swept AABB/actual
+oriented-arm checks; carried crown/elbows/vertical metal are checked against
+the forks, posts, base, plate and both arms. The original <=2 mm movement
+sampling and <=0.5-degree arc comparison include separate motion/chord
+allowance deductions. The pre-existing, rejected old fork collision remains
+a negative control. To make the original calculation practical on CI, every
+pipe sample updates the governing global and per-obstacle minima rather
+than retaining millions of rows; geometric operations and witness
+comparisons are unchanged.
+
+This is **upper bridge motion only**. The signed removable-post stiffness
+source remains a private recovered comparator, and neither whole-U bridge
+support/receiving sequence nor the lower tail and stand retirement is
+proved by these changes. Pre-site geometry is not installation, pressure,
+actual physical mass/CG, material constituent or whole-house moisture
+acceptance. The present house inlet blocker remains until the owning
+selected-source overlay and receiving-gate replay are earned.
