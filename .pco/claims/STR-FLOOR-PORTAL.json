@@ -9,8 +9,8 @@
     "label": "issue-comment-6818945453"
   },
   "claimedAt": "2026-11-12T08:43:18.000Z",
-  "heartbeatAt": "2026-11-12T08:43:18.000Z",
-  "expiresAt": "2026-11-12T09:28:18.000Z",
+  "heartbeatAt": "2026-11-12T08:55:39.000Z",
+  "expiresAt": "2026-11-12T09:40:39.000Z",
   "branch": "work/mvb-chat-6818945453",
   "predecessor": {
     "leaseId": "7cdfe02e-33cb-4780-89a5-345a110fb8e4",
@@ -27,5 +27,11 @@
       "next": "Read exact-head CI/probe receipts; repair any source errors, reject or retain candidates from numerical evidence, then advance joint/key/hardware domains.",
       "blocker": "Awaiting exact-head GitHub Actions execution for the reconstructed source; no candidate is adopted."
     }
+  },
+  "pr": 1487,
+  "checkpoint": {
+    "evidence": "PR1487 head c19b05c9 recovered #1486, rejects zero-clearance wardrobe sweeps via 4 adverse controls; bed3 source gap 5.5 mm; unselected 30 mm south relocation leaves 25 mm full-route clearance; current 45 mm guide/20% friction docs reconciled.",
+    "next": "Review exact-head CI and correct failures. Continue receiver, concrete confinement, cap cage and renewal tolerance proofs.",
+    "blocker": "STR-FLOOR-PORTAL remains incomplete; guide hardware and physical/handling tolerance remain unqualified."
   }
 }
