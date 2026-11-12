@@ -9,8 +9,8 @@
     "label": "zerg-str"
   },
   "claimedAt": "2026-11-12T20:06:23.715Z",
-  "heartbeatAt": "2026-11-12T20:10:02.143Z",
-  "expiresAt": "2026-11-12T20:55:02.143Z",
+  "heartbeatAt": "2026-11-12T20:13:59.784Z",
+  "expiresAt": "2026-11-12T20:58:59.784Z",
   "predecessor": {
     "leaseId": "aa0f48fb-eb2c-4977-975e-3a5fd026a116",
     "generation": 8,
@@ -29,8 +29,9 @@
   },
   "branch": "work/zerg-str-guide-cover-20261112",
   "checkpoint": {
-    "evidence": "Pushed e98215d7, four-file adverse result. Full footprint reproduces 9.5565 mm net on 140 arm and 29.5810 mm on unselected 180 arm; 20 mm bare-width bound also fails at 18.1689 mm.",
-    "next": "Open and verify exact-head CI, then preflight and merge bounded result. Compare revised guide position/orientation before coupled widening replay.",
-    "blocker": "140 mm fails local provisional web screen; 180 mm comparison has no coupled load, movement or room approval."
-  }
+    "evidence": "PR1493 head e98215d7 verifies the 9.5565 mm 140-arm shortfall; 20 mm bare-width lower bound also fails at 18.1689 mm; 180 plan challenger has 29.5810 mm.",
+    "next": "Verify CI/preflight and merge bounded result. For successor, compare modified guide orientation with real travel, or build 180-to-140 bearing/DPC transition; replay roof/floor/52 heads and occupied bays.",
+    "blocker": "140 mm fails the provisional web screen. 180 mm remains unselected; full-height widening intrudes beyond source room finish and has no qualified cap, cage or DPC transition."
+  },
+  "pr": 1493
 }
