@@ -9,8 +9,8 @@
     "label": "zerg-str"
   },
   "claimedAt": "2026-11-12T20:27:18.041Z",
-  "heartbeatAt": "2026-11-12T20:33:27.449Z",
-  "expiresAt": "2026-11-12T21:18:27.449Z",
+  "heartbeatAt": "2026-11-12T20:46:03.768Z",
+  "expiresAt": "2026-11-12T21:31:03.768Z",
   "predecessor": {
     "leaseId": "ef8d7e73-2917-41b7-b89a-d43c2c33e96e",
     "generation": 9,
@@ -35,8 +35,9 @@
   },
   "branch": "work/zerg-str-cap-replay-20261112",
   "checkpoint": {
-    "evidence": "Pushed 5edd6e28 pinned #1489 source patch and replay runner. Full-height outward 579/110 comparison executed locally; cap-only four-case split bearing puts 100.74 kN on projected strip under gravity/blocked water.",
-    "next": "Complete exact-patch signed/movement comparison and record actual 180-to-140 shoulder demand and 70 mm glass-return question; review bounded integration after current main moves.",
-    "blocker": "Local rigid shoulder does not prove cap ring plate, concrete cage or enclosure. STR final gates stay blocked."
-  }
+    "evidence": "PR1494 head f08394ef, exact pinned replay. 5 mm gap keeps projected compression at zero across 579 signed and 110 movement cases; minimum modeled gaps 4.884 and 4.967 mm. Core peak compression 128.52 kN.",
+    "next": "Observe exact-head CI; fresh preflight then merge bounded result. Develop real 140 mm core seat, projection clearance at complete surfaces, anchorage/confinement, and 70 mm glass return.",
+    "blocker": "Local support, installed gap and cage still unproved. Packet and receiving gates stay open."
+  },
+  "pr": 1494
 }
