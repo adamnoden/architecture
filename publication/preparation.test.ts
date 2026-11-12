@@ -39,7 +39,11 @@ test('Working Edition references and excluded source records retain the canonica
       `${liveBaseUrl}${source.slice(0, -3)}?view=print#evidence`)
   }
   assert.equal(publicationSourceUrl('docs/prototypes/README.md', '', repoRoot, liveBaseUrl), `${liveBaseUrl}prototypes/`)
-  assert.equal(publicationSourceUrl('README.md', '#the-project', repoRoot, liveBaseUrl), `${liveBaseUrl}#the-project`)
+  assert.equal(publicationSourceUrl('index.md', '', repoRoot, liveBaseUrl), liveBaseUrl)
+  assert.equal(publicationSourceUrl('index.md', '#a-house-worth-keeping', repoRoot, liveBaseUrl),
+    `${liveBaseUrl}#a-house-worth-keeping`)
+  assert.equal(publicationSourceUrl('README.md', '#project-map', repoRoot, liveBaseUrl),
+    `${liveBaseUrl}project/repository#project-map`)
   assert.equal(publicationSourceUrl('project/control/README.md', '#sources', repoRoot, liveBaseUrl),
     'https://github.com/adamnoden/architecture/blob/main/project/control/README.md#sources')
 })
