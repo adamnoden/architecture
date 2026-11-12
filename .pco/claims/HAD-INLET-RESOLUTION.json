@@ -9,8 +9,8 @@
     "label": "issue-comment-6819239689"
   },
   "claimedAt": "2026-11-12T08:57:36.000Z",
-  "heartbeatAt": "2026-11-12T09:06:09.000Z",
-  "expiresAt": "2026-11-12T09:51:09.000Z",
+  "heartbeatAt": "2026-11-12T09:25:10.000Z",
+  "expiresAt": "2026-11-12T10:10:10.000Z",
   "branch": "work/mvb-chat-6819239689",
   "predecessor": {
     "leaseId": "0eb9d592-535d-4b8a-abd5-174d232b3f52",
@@ -36,8 +36,8 @@
   },
   "pr": 1488,
   "checkpoint": {
-    "evidence": "PR1488 head26444374 recovered draft1484. New executable IAS source-bound Y1110/285 utility frame sweeps: wall25.5mm, pipe/frame and rack ~30mm, previous Y1125 rack ~15mm rejected; crew and first-rest checks added to node tests.",
-    "next": "Review exact-head CI; correct failed geometry/handling bounds, then join native bridge/tail source and test source adoption only when earned.",
-    "blocker": "No selected-house inlet adoption; actual utility fixture, full cylinder tail/stand removal and external qualification remain open."
+    "evidence": "Draft PR1488 head a4014f13: current IAS-bound Y1110/285 utility first-rest sweep regression and rejected Y1125 rack, original native upper bridge/receiver executable with source guards. Exact-head CI43189142696 running. Lower cap cart-margin trade recorded in PR.",
+    "next": "Review exact-head CI, repair failures. Execute upper-bridge motion/post-stiffness and qualify lower cylinder tail/stand; then reconcile selected house/MRA.",
+    "blocker": "Selected source unchanged; native lower tail, anchors, physical fit, components and structural crossings remain unresolved."
   }
 }
