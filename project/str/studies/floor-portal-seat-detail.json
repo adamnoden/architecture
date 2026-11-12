@@ -608,7 +608,7 @@
     "sourceHashes": {
       "floor_portal_frame.py": "78d0e990c36f6dc1b68246dbf94a86248579abc94e0c38e2b2b591d318dde2c4",
       "floor_portal_roof.py": "7238b1c4b7f6e0cd7e082f7eccd197f1a12098c7800bf89472b7d6a7ead6cb79",
-      "floor_portal_house.py": "66a5ca1f608f358f04902822cb322b77610f7cc14cd21d60a0c0b9caebc10a19",
+      "floor_portal_house.py": "66ebf61cb097fd2dfcc13b1f637e399389711ff6ca42646372ff83ccabd0ba6f",
       "floor_portal_loads.py": "7e395d4aa2c4e22541ba8ca6e3cbb42c2a31bd7c537e1acfd137a0ab7c25ffa5",
       "floor_portal_domain.py": "45026d6e7394358340a60c59336a481ed523d225fb1e0d826a058238962a14eb"
     }
