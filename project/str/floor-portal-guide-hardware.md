@@ -110,3 +110,14 @@ redesign the complete cassette footprint *without reducing its required
 travel, active bearing or service access*. This is not just a stronger bolt or
 an extra note on a drawing. Actual cap, roof, floor, room/maintenance and
 52-head demand replays must consume whichever alternative is selected.
+
+A **local, unselected 180 mm L-arm challenger** keeps the 46 mm complete
+cassette and moves its six guide centres 20 mm across the leg. The exact
+six-edge *union boundary* of the L, rather than the two overlapping rectangles,
+then gives **39.62 mm** nominal external edge web, **29.62 mm after the two
+5 mm settings**, above the exploratory 25 mm comparator by **4.62 mm**.
+Existing H20/H12 centreline lanes also remain clear in the *local* plan
+comparison. This explicitly does **not** prove the redesigned pier has room,
+roof, stair or foundation clearance, structural capacity, suitable confinement,
+movement compatibility, or an actual assembled cassette. All those must be
+recomputed before changing the selected 140 mm source.
