@@ -9,8 +9,8 @@
     "label": "zerg2-had"
   },
   "claimedAt": "2026-11-12T23:31:09.148Z",
-  "heartbeatAt": "2026-11-12T23:39:59.110Z",
-  "expiresAt": "2026-11-13T00:24:59.110Z",
+  "heartbeatAt": "2026-11-12T23:49:05.067Z",
+  "expiresAt": "2026-11-13T00:34:05.067Z",
   "branch": "work/zerg2-had-stand-retirement-20261112",
   "predecessor": {
     "leaseId": "45785a05-071e-4b4c-aca4-36e7243d9805",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Pushed 4fb463c0: intact west stand high-lift/low-transit replay, crew envelope, reaction and dock sequence. Main baseline 20d35befc.",
-    "next": "Finish positive track restraint stiffness probe; sync from #1498 actual main and open full exact CI.",
-    "blocker": "Complete loaded first lift, compact captive track and anchored receiver still unqualified. Inlet remains planned."
+    "evidence": "Exact pushed 377a5d78dba9fa7ba6794154d10d1afc8cfb7796; 76 HAD tests, deterministic inlet and MRA checks; stand envelope, positive track and dry threshold comparison",
+    "next": "Graft after STR #1498 merge, open HAD PR, run exact full CI and preflight before merge",
+    "blocker": "STR integration order; positive first capture, dry crossing, crew and receiving restraint unqualified"
   }
 }
