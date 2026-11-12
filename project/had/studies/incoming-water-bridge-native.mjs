@@ -5,6 +5,7 @@
  * source blob; only its import and provenance were adapted to the main repo.
  */
 import {segmentDistance,segmentBoxDistance,segmentBodyDistance} from './service-interface-geometry.mjs';
+import {exactSegmentBoxDistance} from './incoming-water-geometry.mjs';
 import {writeFileSync} from 'node:fs';
 import {deriveCurrentHouse} from './current-house.mjs';
 import assert from 'node:assert/strict';
@@ -27,9 +28,16 @@ const boxes={
 };
 const cylinders={cylinder:{centre:[9830,4250],z:[0,1650],r:380},heat:{centre:[11225,3900],z:[100,2945],r:84},buffer:{centre:[10450,5325],z:[0,1975],r:300}};
 const braceAxes=[['westBrace',[9850,3700,20],[10140,3840,2044]],['southBrace',[10150,3645,20],[10140,3840,2044]]];
+function nativeCylinderDistance(a,b,{centre,z,r}){
+ if(a[2]>=z[0]&&a[2]<=z[1]&&b[2]>=z[0]&&b[2]<=z[1]){
+  const axis=[...centre,0];
+  return Math.max(0,segmentDistance([a[0],a[1],0],[b[0],b[1],0],axis,axis)-r);
+ }
+ return segmentBodyDistance(a,b,centre,z,r);
+}
 export const segmentGaps=(a,b,r,omit=[])=>[
- ...Object.entries(boxes).filter(([id])=>!omit.includes(id)&&!['westBrace','southBrace'].includes(id)).map(([id,q])=>({id,value:segmentBoxDistance(a,b,q)-r})),
- ...Object.entries(cylinders).map(([id,q])=>({id,value:segmentBodyDistance(a,b,q.centre,q.z,q.r)-r})),
+ ...Object.entries(boxes).filter(([id])=>!omit.includes(id)&&!['westBrace','southBrace'].includes(id)).map(([id,q])=>({id,value:exactSegmentBoxDistance(a,b,q)-r})),
+ ...Object.entries(cylinders).map(([id,q])=>({id,value:nativeCylinderDistance(a,b,q)-r})),
  ...braceAxes.map(([id,c,d])=>({id,value:segmentDistance(a,b,c,d)-Math.hypot(20,20)-r}))
 ];
 

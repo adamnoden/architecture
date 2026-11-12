@@ -488,3 +488,74 @@ Even an ideal solid 20 × 30 mm near post under the separate 265 N lower and
 Each exceeds the **1 mm** guide budget before connections or mounting. The
 independent frame needs a different load path with bracing, floor anchorage
 and a positive release detail before a supported renewal can be considered.
+
+### Generation 9: beam reactions and the occupied dock
+
+The [two-ended reaction and release study](studies/incoming-water-release-support.mjs)
+keeps the short-driver arrangement and develops the upper and lower bracing at
+both rail ends. The 260 mm stroke changes the near/far rail shares. The two
+separate horizontal demand bounds are 100 N and 6 Nm at the port height. The
+ideal near and far upper-guide elastic terms are 0.086 and 0.079 mm. The
+vertical balance and the residual three-axis base moments remain explicit
+loads on the crossheads and floor mounts.
+
+The four near brace toes sit **15–42 mm north** of the 600 mm plant-intermediate
+beam. The mirrored far toes sit **116–215 mm inside** its north edge. Moving
+the near toes 210 mm along the port axis brings them over the beam, but
+produces a **3.88 mm tool overlap** and a **16.28 mm brace overlap**. Preserve
+the near work geometry and compare a recessed transfer to the beam instead.
+The near toes reach 95–123 mm to the trial transfer line at Y3920. The 60 × 40
+solid-strip elastic check contributes up to 0.003 mm vertically. It excludes
+joint and substrate movement.
+
+The far and near toe spacings are both as low as 31 mm. Use one four-point
+structural receiver per end. At the actual RC top, Z−180, the trial groups
+have at least 80 mm of plan margin to their beam outline. Rigid equal-spring
+load distribution gives **774 N normal / 81 N shear** at the near group and
+**431 N normal / 24 N shear** at the far group, quoted as independent bounds.
+These are demand comparisons. The 15 mm finish, 65 mm accessible distribution
+layer and 100 mm glass layer lie above the RC. Reserve inspectable transfer
+recesses and blank flush covers, with blind cast-in sockets to be coordinated
+against the actual reinforcement, services and wetting path. Verify the
+positive load path, bearing, prying, installed movement and the dry or
+pressure boundary before committing either receiver. The
+[structural floor](../str/current-house-structural-reference.md) and
+[floor layer record](../mat/floor-pour-boundary.md) govern this interface.
+[Anchor interface reference](https://www.hilti.co.uk/media-canonical/ASSET_DOC_23126683_APC_RAW)
+
+The closed frame obstructs the inherited south arrival while deployed.
+Compare arrival through the cleared east opening with the independently
+supported plate and guarded dock in position. The spanning guides obstruct
+a straight north departure by **41.6 mm**. Passing the parked tail around the
+retained far end also meets the upright. The stronger candidate uses a
+separate positively captured carry yoke before withdrawing the two guides.
+The study sweeps the tail, bounded flange and grips toward a distinct exterior
+bearing land. The envelope, body, hands and arms each retain more than 25 mm
+in the detached trial. A zero bearing separation is intentional at landing.
+The hand's native distance to that land remains over 2 mm. Actual
+carrier-to-shoe keys, supported guide withdrawal, locked receiving keeper and
+frame handling remain the release gates.
+
+The [plant-threshold source](../mat/plant-threshold.md) moves the cylinder
+cart endpoint from **X12500 to X12580**, at Y4575. That changes the margin to
+the occupied whole-U receiver from **+35 to −45 mm**. Translating that
+receiver 70 mm east restores the cart margin but puts its east handler
+30 mm across the inner guard line. The north dogleg keeps about 26 mm in
+nominal plan and only 16 mm after two 5 mm settings. At its final X12580
+station the retained receiver needs Y4859.23 or greater with those settings,
+while the guard permits Y4840 or less. Clear the scaffold board, land and
+park the separate tail receiver south, then export the whole-U load and
+retire its receiver before the straight cylinder exchange. The south
+parking box compares inside the guarded dock and outside the cylinder cart
+reservation. An empty whole-U receiver can move 525 mm south in the dock
+plan, leaving at least 75 mm of lateral clearance to the cylinder cart. The 425 mm between the parked
+fixtures and the 225 mm between the whole-U receiver and south guard each
+fail a 600 mm body. The transfer therefore needs a positively supported
+detachable receiver and a north-side crew route before the cylinder arrives.
+Rolling restraint, actual deck capacity and onward handovers
+require their own evidence. This sequence leaves the inlet adoption and
+moisture replay open.
+
+Run `node project/had/studies/incoming-water-release-support.mjs` for the
+governing witnesses and `node --test project/had/studies/incoming-water.test.mjs`
+for the regression.
