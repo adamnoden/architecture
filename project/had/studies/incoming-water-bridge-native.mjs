@@ -5,7 +5,8 @@
  * source blob; only its import and provenance were adapted to the main repo.
  */
 import {segmentDistance,segmentBoxDistance,segmentBodyDistance} from './service-interface-geometry.mjs';
-import {readFileSync,writeFileSync} from 'node:fs';
+import {writeFileSync} from 'node:fs';
+import {deriveCurrentHouse} from './current-house.mjs';
 import assert from 'node:assert/strict';
 import {fileURLToPath} from 'node:url';
 const mix=(a,b,t)=>a.map((v,i)=>v+t*(b[i]-v));
@@ -394,7 +395,10 @@ export function receiverNative(){
 export function deriveBridgeNative(){
  // The recovered private calculation used authored 2026-11-11 dimensions.
  // Fail closed if its main-house geometry is no longer the same.
- const H=JSON.parse(readFileSync(new URL('water-replan.json',import.meta.url))).model;
+ // water-replan.json is an upstream historical geometry used to compose
+ // the house; its raw 595 mm cylinder is not the selected inhabited service.
+ // Bind the guard to the *composed* current selected house, not that input.
+ const H=deriveCurrentHouse().model;
  assert.deepEqual(H.architecturalServices.plant.cylinder.body,[9450,3870,760,760]);
  assert.deepEqual(H.architecturalServices.plant.cylinder.centre,[9830,4250]);
  assert.deepEqual(H.architecturalServices.plant.cylinder.westSeat,[10195,3970]);
