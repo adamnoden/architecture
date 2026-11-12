@@ -9,8 +9,8 @@
     "label": "zerg2-str"
   },
   "claimedAt": "2026-11-12T22:48:12.269Z",
-  "heartbeatAt": "2026-11-12T23:07:28.750Z",
-  "expiresAt": "2026-11-12T23:52:28.750Z",
+  "heartbeatAt": "2026-11-12T23:30:33.204Z",
+  "expiresAt": "2026-11-13T00:15:33.204Z",
   "branch": "work/zerg2-str-seat",
   "predecessor": {
     "leaseId": "6bf2fd76-5332-4631-b742-0f4d606056df",
@@ -35,8 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote 87ca71d5: 175 mm cap, 70 mm worst-setting glass reservation, staggered weldable couplers and positive rounded H8 finite geometry; fixed-plate rotation and Type C stack rejected",
-    "next": "Complete 579 signed, 110 movement, friction stress cases; reconcile results into PR and validate",
-    "blocker": "Fabrication access, finite roof-skin bearing, sliding pressure and material/seat closure held"
-  }
+    "evidence": "PR1498 exact head bceee825, 579 signed/110 movements passed, unchanged equilibrium criteria; minimum signed shelf gap 14.890 mm",
+    "next": "Exact-head CI run 43329367810 and fresh publication preflight; then integrate the bounded result",
+    "blocker": "Physical one-piece assembly and closed-link feed fail; 70/73 mm guides fail backing-pressure comparator; maintain selection hold"
+  },
+  "pr": 1498
 }
