@@ -9,8 +9,8 @@
     "label": "zerg-str"
   },
   "claimedAt": "2026-11-12T20:27:18.041Z",
-  "heartbeatAt": "2026-11-12T20:46:03.768Z",
-  "expiresAt": "2026-11-12T21:31:03.768Z",
+  "heartbeatAt": "2026-11-12T20:55:20.679Z",
+  "expiresAt": "2026-11-12T21:40:20.679Z",
   "predecessor": {
     "leaseId": "ef8d7e73-2917-41b7-b89a-d43c2c33e96e",
     "generation": 9,
@@ -35,9 +35,9 @@
   },
   "branch": "work/zerg-str-cap-replay-20261112",
   "checkpoint": {
-    "evidence": "PR1494 head f08394ef, exact pinned replay. 5 mm gap keeps projected compression at zero across 579 signed and 110 movement cases; minimum modeled gaps 4.884 and 4.967 mm. Core peak compression 128.52 kN.",
-    "next": "Observe exact-head CI; fresh preflight then merge bounded result. Develop real 140 mm core seat, projection clearance at complete surfaces, anchorage/confinement, and 70 mm glass return.",
-    "blocker": "Local support, installed gap and cage still unproved. Packet and receiving gates stay open."
+    "evidence": "PR1494 corrected head 622a14e7, run 43304759377. Pinned 579/110 relief comparison gives 4.884/4.967 mm modeled gap and no projected contact. The 29.24 kN metric is Cartesian; southeast peak-core case resultant is 34.505 kN.",
+    "next": "After exact CI and preflight, integrate bounded replay. Rebuild tied cage/core seat and 70 mm glass return; independent H20 shift has incompatible >=10 mm hoop and <=3 mm parallel bar screen. Trial 15 mm gross gap before real plate flexure and setting.",
+    "blocker": "Independent H8/H20 route and 5 mm gap do not pass the authored setting challenge; actual plate, anchorage, confinement and whole-surface clearance still open."
   },
   "pr": 1494
 }
