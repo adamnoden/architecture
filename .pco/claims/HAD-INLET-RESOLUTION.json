@@ -9,8 +9,8 @@
     "label": "zerg-had"
   },
   "claimedAt": "2026-11-12T20:45:13.335Z",
-  "heartbeatAt": "2026-11-12T20:45:13.335Z",
-  "expiresAt": "2026-11-12T21:30:13.335Z",
+  "heartbeatAt": "2026-11-12T20:51:30.437Z",
+  "expiresAt": "2026-11-12T21:36:30.437Z",
   "predecessor": {
     "leaseId": "05ecb6ba-28c1-40a4-a80c-61bf15302d27",
     "generation": 7,
@@ -32,5 +32,11 @@
       "next": "Promote source-bound short-driver and rail-interface controls; resolve matched native shell/socket and independent positive reaction/capture before supported tail and stand first rest, then selected-house and MRA replay.",
       "blocker": "Planned packet. Exact source route remains unresolved; simple end-supported rail family fails post or end clearance and installed anchorage remains unqualified."
     }
+  },
+  "branch": "work/zerg-had-native-capture-20261112",
+  "checkpoint": {
+    "evidence": "Durable branch exact head ada95c4f atop verified 5360dade. 74 HAD tests, deterministic inlet/replan and MRA pass. Source-bound short driver and two adverse rail-end witnesses implemented.",
+    "next": "Reconcile actual main after STR merge priority, open validation PR, require exact-head CI and fresh preflight. Then develop matched reaction path before any inlet selection.",
+    "blocker": "Open lower-tail capture and first rest. The measured evidence is comparative geometry only; one fixed guide interface still fails clearance."
   }
 }
