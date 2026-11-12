@@ -9,8 +9,8 @@
     "label": "zerg-had"
   },
   "claimedAt": "2026-11-12T20:06:52.571Z",
-  "heartbeatAt": "2026-11-12T20:13:15.744Z",
-  "expiresAt": "2026-11-12T20:58:15.744Z",
+  "heartbeatAt": "2026-11-12T20:27:15.003Z",
+  "expiresAt": "2026-11-12T21:12:15.003Z",
   "predecessor": {
     "leaseId": "238313fa-9157-474c-ba20-3834e638ce3d",
     "generation": 6,
@@ -36,8 +36,8 @@
   "branch": "work/zerg-had-inlet-20261112",
   "pr": 1492,
   "checkpoint": {
-    "evidence": "Draft PR #1492 head 3c7a8d57 repairs the lower-cap comparator CI ReferenceError; 73 HAD tests and replan reproduction passed locally.",
-    "next": "Publish locally tested parked-flange tool adverse case on current main; verify exact-head CI and canonical preflight before bounded integration.",
-    "blocker": "No adopted inlet: independent lower-tail capture, real first-rest receiver, stand retirement, pressure and selected-house/MRA joins remain open."
+    "evidence": "Draft #1492 exact head ae8192db on actual main bb43c3d2. Current HAD/MRA checks pass locally. Lower-cap setting limit and lower-tail driver adverse cases retained. Exact trial script in #1492 comment 6834996401.",
+    "next": "Verify exact-head CI 43300333092 then run canonical expected-head preflight and integrate bounded evidence. Develop matched native short-driver shell/socket, positive capture and complete lower-tail/stand first rest before selected-house and MRA replay.",
+    "blocker": "No inlet adopted. CI pending; local shell clearance and actual positive capture/receiving remain separate open design duties."
   }
 }
