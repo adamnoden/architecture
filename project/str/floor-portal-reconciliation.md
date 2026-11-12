@@ -418,3 +418,23 @@ durability or constructability. Resolving the L arm/guide footprint and
 re-solving the coupled loads and occupied bays is required before this node
 can close or ROF-RWT-GATE can be released. No house baseline or material
 selection is changed by this failure record.
+
+### 180 mm L-arm comparison — plan only
+
+The corrected [L union-boundary fit](studies/floor_portal_guide_fit.py) also
+screens a **hypothetical 180 mm-wide L arm**, translating each of the six
+guide locations 20 mm across its leg. An initial rectangular-edge calculation
+mistook the overlap seam of the L's two joined arms for an exterior face.
+The executable now uses the true six-edge polygon boundary and has a
+negative control at the overlapped corner.
+
+The challenger yields **39.62 mm** nominal minimum exterior web, or
+**29.62 mm** after two independent 5 mm settings: a local **4.62 mm**
+surplus to the provisional 25 mm cover comparator. The retained H20/H12
+plan bars also clear that shifted receiver in the *local* comparator.
+This is a path toward resolving the quantified defect, **not** a design
+selection or evidence of coupled-house compatibility. Widening the pier
+changes masonry/RC body, mass, permanent bar distribution, arch/collector
+and ring connections, room occupancy, construction and all 52 head
+reactions; rerun the 579-case/104-movement domains and detail the actual
+cover/confinement before STR-FLOOR-PORTAL can be completed.
