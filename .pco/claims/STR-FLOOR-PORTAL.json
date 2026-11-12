@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 9,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "ef8d7e73-2917-41b7-b89a-d43c2c33e96e",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-str"
   },
   "claimedAt": "2026-11-12T20:06:23.715Z",
-  "heartbeatAt": "2026-11-12T20:13:59.784Z",
-  "expiresAt": "2026-11-12T20:58:59.784Z",
+  "heartbeatAt": "2026-11-12T20:26:28.174Z",
+  "expiresAt": "2026-11-12T20:26:28.174Z",
   "predecessor": {
     "leaseId": "aa0f48fb-eb2c-4977-975e-3a5fd026a116",
     "generation": 8,
@@ -33,5 +33,7 @@
     "next": "Verify CI/preflight and merge bounded result. For successor, compare modified guide orientation with real travel, or build 180-to-140 bearing/DPC transition; replay roof/floor/52 heads and occupied bays.",
     "blocker": "140 mm fails the provisional web screen. 180 mm remains unselected; full-height widening intrudes beyond source room finish and has no qualified cap, cage or DPC transition."
   },
-  "pr": 1493
+  "pr": 1493,
+  "releasedAt": "2026-11-12T20:26:28.174Z",
+  "releaseReason": "handoff"
 }
