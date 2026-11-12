@@ -5,7 +5,8 @@
  * source blob; only its import and provenance were adapted to the main repo.
  */
 import {segmentDistance,segmentBoxDistance,segmentBodyDistance} from './service-interface-geometry.mjs';
-import {writeFileSync} from 'node:fs';
+import {readFileSync,writeFileSync} from 'node:fs';
+import assert from 'node:assert/strict';
 import {fileURLToPath} from 'node:url';
 const mix=(a,b,t)=>a.map((v,i)=>v+t*(b[i]-v));
 const distance=(a,b)=>Math.hypot(...a.map((v,i)=>v-b[i]));
@@ -391,6 +392,14 @@ export function receiverNative(){
 }
 
 export function deriveBridgeNative(){
+ // The recovered private calculation used authored 2026-11-11 dimensions.
+ // Fail closed if its main-house geometry is no longer the same.
+ const H=JSON.parse(readFileSync(new URL('water-replan.json',import.meta.url))).model;
+ assert.deepEqual(H.architecturalServices.plant.cylinder.body,[9450,3870,760,760]);
+ assert.deepEqual(H.architecturalServices.plant.cylinder.centre,[9830,4250]);
+ assert.deepEqual(H.architecturalServices.plant.cylinder.westSeat,[10195,3970]);
+ assert.deepEqual(H.plantReferenceDoor.fullyOpenEastLeaf,[9397,3534,762,44]);
+ assert.equal(H.shell-H.envelope,11570.5);
  controlRows=[];controls();
  return {status:'DEVELOPMENT_NOT_ADOPTED',units:'mm, N, kg',requiredRemoteClearance:25,bodyRadius:300,handRadius:50,armRadius:40,
   toolChecks:toolChecks(),nativeCarrier:nativeCarrier(),controlChecks:controlRows,positiveCapture:positiveCapture(),receiver:receiverNative(),
