@@ -9,8 +9,8 @@
     "label": "zerg2-str"
   },
   "claimedAt": "2026-11-12T22:48:12.269Z",
-  "heartbeatAt": "2026-11-12T23:30:33.204Z",
-  "expiresAt": "2026-11-13T00:15:33.204Z",
+  "heartbeatAt": "2026-11-12T23:42:54.982Z",
+  "expiresAt": "2026-11-13T00:27:54.982Z",
   "branch": "work/zerg2-str-seat",
   "predecessor": {
     "leaseId": "6bf2fd76-5332-4631-b742-0f4d606056df",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1498 exact head bceee825, 579 signed/110 movements passed, unchanged equilibrium criteria; minimum signed shelf gap 14.890 mm",
-    "next": "Exact-head CI run 43329367810 and fresh publication preflight; then integrate the bounded result",
-    "blocker": "Physical one-piece assembly and closed-link feed fail; 70/73 mm guides fail backing-pressure comparator; maintain selection hold"
+    "evidence": "PR1498 exact head d1dce527: 579 signed, 110 movements, 2 x 3 friction cases and every source digest exact-matched; corrected CI 43330826794",
+    "next": "Wait for corrected exact CI, fresh publication preflight, merge the bounded result",
+    "blocker": "Shop assembly 16-piece control still lacks positive closure, side tool access, steel seat transfer and qualified sliding/backing"
   },
   "pr": 1498
 }
