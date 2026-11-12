@@ -9,6 +9,7 @@ import {deriveBridgeNative} from './incoming-water-bridge-native.mjs';
 import {bridgeNativeMotionResult} from './incoming-water-bridge-native-motion.mjs';
 import {lowerCapComparator,lowerCapPlanEnvelope} from './incoming-water-lower-cap.mjs';
 import {deriveLowerTailComparison} from './incoming-water-lower-tail.mjs';
+import {deriveReleaseSupport} from './incoming-water-release-support.mjs';
 
 const study=deriveIncomingWaterStudy();
 test('finite bends represent a real quarter-circle and reject impossible tangent lengths',()=>{
@@ -246,4 +247,40 @@ test('short lower-cap driver clears four parked bolt approaches and retains adve
   assert(floor.carriage.gapMM>10);
   assert(floor.supportComparison.cantilever.every(c=>c.deflectionMM>floor.supportComparison.installedGuideBudgetMM));
   assert.equal(study.adoption.adopted,false);
+});
+
+test('the lower-tail release follows the beam and current dock, including rejected shared occupancy',()=>{
+  const result=deriveReleaseSupport(),{departure,near,far}=result;
+  assert(near.toes.every(toe=>toe.insideBeamMarginMM<0));
+  assert(far.toes.every(toe=>toe.insideBeamMarginMM>100));
+  assert(near.anchors.every(anchor=>anchor.inBeamPlanMarginMM>=80));
+  assert(far.anchors.every(anchor=>anchor.inBeamPlanMarginMM>=120));
+  assert(result.geometry.toolGap.gapMM>25);
+  assert(result.directToeTrial.geometry.toolGap.gapMM<0);
+  assert(result.directToeTrial.geometry.braceGap.gapMM<0);
+  assert(departure.ordinaryAccessWithFrame.gapMM<0);
+  assert(departure.externalAccessWithFrame.gapMM>25);
+  assert(departure.retainedRailControl.some(phase=>phase.partGap.gapMM<-40));
+  assert(departure.retainedEndBypassChallenger.some(phase=>phase.partGap.gapMM<-25));
+  assert(departure.detachedRailChallenger.every(phase=>
+    Math.min(phase.partGap.gapMM,phase.bodyToPackage.gapMM,phase.bodyGap.gapMM,phase.handOrArmGap.gapMM)>25));
+  assert(departure.receiver.ownHandToBearingAtRestMM>2);
+  assert(departure.receiver.pipeCentreToBearingSouthEdgeMM-20>25);
+  assert(departure.detachedRailChallenger.every(phase=>phase.maximumReachMM<600));
+  assert.equal(departure.receiver.nativeVerticalSeparationAtRestMM,0);
+  assert(departure.receiver.bearingLandProjection);
+  const dock=departure.dockComparison;
+  assert.equal(dock.cylinder.oldGapMM,35);
+  assert.equal(dock.cylinder.requiredGapMM,-45);
+  assert.equal(dock.wholeUShiftChallenger.eastHandlerToInsideGuardMM,-30);
+  assert(dock.retainedWholeUNorthDogleg.route.gapMM>25);
+  assert(dock.retainedWholeUNorthDogleg.afterSettingsMM<25);
+  assert(dock.retainedWholeUNorthDogleg.northEndpointMinimumY>dock.retainedWholeUNorthDogleg.northEndpointMaximumY);
+  assert(dock.tailRest.landingToRequiredCartMM<0);
+  assert(dock.tailRest.parkedToRequiredCartMM>200);
+  assert.equal(dock.emptyWholeUReceiverParking.lateralCartClearanceLowerMM,75);
+  assert(dock.emptyWholeUReceiverParking.parkedToRequiredCartMM>200);
+  assert(dock.emptyWholeUReceiverParking.bodyGapBetweenParkedReceiversMM<0);
+  assert(dock.emptyWholeUReceiverParking.bodyGapToSouthGuardMM<0);
+  assert.equal(result.status,'DEVELOPMENT_NOT_ADOPTED');
 });
