@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 6,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "238313fa-9157-474c-ba20-3834e638ce3d",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6830119050"
   },
   "claimedAt": "2026-11-12T16:55:49.000Z",
-  "heartbeatAt": "2026-11-12T17:12:20.000Z",
-  "expiresAt": "2026-11-12T17:57:20.000Z",
+  "heartbeatAt": "2026-11-12T17:13:24.000Z",
+  "expiresAt": "2026-11-12T17:13:24.000Z",
   "branch": "work/mvb-chat-6830119050",
   "predecessor": {
     "leaseId": "d70daf17-1b41-4883-9059-cfc667bd0366",
@@ -33,5 +33,7 @@
     "evidence": "Draft PR1490 exact head a654e8ed: selected 760mm bridge guard fixes historical 595mm CI failure, restored upper 20-state motion as streaming native check, source-bound utility Y1110/285 first rest and lower cap R400 challenge (25mm fails settings; 15mm geometric comparator).",
     "next": "Inspect exact-head CI43265569408; repair any test failure; qualify native lower tail/stand and signed braced support; then bind real selected-house and MRA consumers.",
     "blocker": "No adopted inlet; lower-tail, stand, pressure-rated flange, real receiver, physical handling, materials and precise structural crossings still unqualified."
-  }
+  },
+  "releasedAt": "2026-11-12T17:13:24.000Z",
+  "releaseReason": "handoff"
 }
