@@ -1,27 +1,21 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 5,
+  "generation": 6,
   "state": "claimed",
-  "leaseId": "d70daf17-1b41-4883-9059-cfc667bd0366",
+  "leaseId": "238313fa-9157-474c-ba20-3834e638ce3d",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6819916261"
+    "label": "issue-comment-6830119050"
   },
-  "claimedAt": "2026-11-12T09:31:01.000Z",
-  "heartbeatAt": "2026-11-12T09:31:01.000Z",
-  "expiresAt": "2026-11-12T10:16:01.000Z",
-  "branch": "work/mvb-chat-6819916261",
+  "claimedAt": "2026-11-12T16:55:49.000Z",
+  "heartbeatAt": "2026-11-12T16:55:49.000Z",
+  "expiresAt": "2026-11-12T17:40:49.000Z",
+  "branch": "work/mvb-chat-6830119050",
   "predecessor": {
-    "leaseId": "50fce0a9-2993-4d09-8487-f87de59f3d57",
-    "generation": 4,
-    "branch": "work/mvb-chat-6819239689",
-    "pr": 1488,
-    "checkpoint": {
-      "evidence": "Draft PR1488 head a4014f13: current IAS-bound Y1110/285 utility first-rest sweep regression and rejected Y1125 rack, original native upper bridge/receiver executable with source guards. Exact-head CI43189142696 running. Lower cap cart-margin trade recorded in PR.",
-      "next": "Review exact-head CI, repair failures. Execute upper-bridge motion/post-stiffness and qualify lower cylinder tail/stand; then reconcile selected house/MRA.",
-      "blocker": "Selected source unchanged; native lower tail, anchors, physical fit, components and structural crossings remain unresolved."
-    }
+    "leaseId": "d70daf17-1b41-4883-9059-cfc667bd0366",
+    "generation": 5,
+    "branch": "work/mvb-chat-6819916261"
   },
   "recoverySource": {
     "leaseId": "50fce0a9-2993-4d09-8487-f87de59f3d57",
