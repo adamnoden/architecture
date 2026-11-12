@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 9,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "45785a05-071e-4b4c-aca4-36e7243d9805",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg2-had"
   },
   "claimedAt": "2026-11-12T22:48:15.496Z",
-  "heartbeatAt": "2026-11-12T23:30:02.740Z",
-  "expiresAt": "2026-11-13T00:15:02.740Z",
+  "heartbeatAt": "2026-11-12T23:30:22.071Z",
+  "expiresAt": "2026-11-12T23:30:22.071Z",
   "branch": "work/zerg2-had-braced-release-20261112",
   "predecessor": {
     "leaseId": "ba81731e-58c6-48db-bf43-94b3a5a1d175",
@@ -39,5 +39,7 @@
     "evidence": "PR #1497 merged 20d35befc; exact head 04303bfc passed CI 43326921784 and canonical preflight. Main ancestry verified.",
     "next": "Detail positive lower-tail yoke and guide withdrawal, then finish captured stand retirement and actual whole-U export before X12580 cylinder docking.",
     "blocker": "Packet remains planned. Source-bound beam-anchor loads and detached handling candidate are verified. Positive capture, beam mounting, independent whole-U transport and loaded stand release remain open."
-  }
+  },
+  "releasedAt": "2026-11-12T23:30:22.071Z",
+  "releaseReason": "handoff"
 }
