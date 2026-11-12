@@ -9,8 +9,8 @@
     "label": "issue-comment-6819239689"
   },
   "claimedAt": "2026-11-12T08:57:36.000Z",
-  "heartbeatAt": "2026-11-12T08:57:36.000Z",
-  "expiresAt": "2026-11-12T09:42:36.000Z",
+  "heartbeatAt": "2026-11-12T09:06:09.000Z",
+  "expiresAt": "2026-11-12T09:51:09.000Z",
   "branch": "work/mvb-chat-6819239689",
   "predecessor": {
     "leaseId": "0eb9d592-535d-4b8a-abd5-174d232b3f52",
@@ -33,5 +33,11 @@
       "next": "Finish the utility bench renewal method and integrate the independently challenged whole-U native support and lower tail. Then select and reconcile actual current-house consumers.",
       "blocker": "Selected house is unchanged; current bridge native receiver and lower-tail proof are still development, and utility frame renewal cannot inherit the old small-spool method."
     }
+  },
+  "pr": 1488,
+  "checkpoint": {
+    "evidence": "PR1488 head26444374 recovered draft1484. New executable IAS source-bound Y1110/285 utility frame sweeps: wall25.5mm, pipe/frame and rack ~30mm, previous Y1125 rack ~15mm rejected; crew and first-rest checks added to node tests.",
+    "next": "Review exact-head CI; correct failed geometry/handling bounds, then join native bridge/tail source and test source adoption only when earned.",
+    "blocker": "No selected-house inlet adoption; actual utility fixture, full cylinder tail/stand removal and external qualification remain open."
   }
 }
