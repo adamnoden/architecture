@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 7,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "d5aecbd6-29b8-4b12-9d51-23a4a824441d",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6829754036"
   },
   "claimedAt": "2026-11-12T16:41:37.000Z",
-  "heartbeatAt": "2026-11-12T16:52:46.000Z",
-  "expiresAt": "2026-11-12T17:37:46.000Z",
+  "heartbeatAt": "2026-11-12T16:53:49.000Z",
+  "expiresAt": "2026-11-12T16:53:49.000Z",
   "branch": "work/mvb-chat-6829754036",
   "predecessor": {
     "leaseId": "6e96aa05-faa6-4bca-8cc5-9fa0c8387820",
@@ -33,5 +33,7 @@
     "evidence": "PR1489 head7a1b6974: recovered exact-success CI #1487; proved 140mm L with46mm cassette only9.60mm web after settings (25mm comparator fails by15.40). New 180mm arm local plan challenger with exact L-polygon boundary yields29.62mm after settings and retained bar corridors clear.",
     "next": "Require exact-head PR1489 CI; retain unmet coupling, reinforcement cage, foundation/52-head and occupied-room consequences. Then hand off or earn bounded closure.",
     "blocker": "180mm L design is only an unselected plan study. No structural/roof/source adoption, fabrication, cover specification or physical qualification."
-  }
+  },
+  "releasedAt": "2026-11-12T16:53:49.000Z",
+  "releaseReason": "handoff"
 }
