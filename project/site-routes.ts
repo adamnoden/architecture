@@ -17,7 +17,7 @@ function normaliseSource(source: string): string {
 export function rewriteSourceId(id: string): string {
   const source = normaliseSource(id)
 
-  if (source === 'README.md') return 'index.md'
+  if (source === 'README.md') return 'project/repository.md'
   if (source === 'STATUS.md') return 'project/status.md'
   if (source === 'docs/README.md') return 'project/documentation.md'
   if (source === 'docs/reading-guide.md') return 'reading-guide.md'
@@ -39,6 +39,10 @@ export function publicRoute(route: string): string {
   if (externalOrAnchor.test(route)) return route
 
   const [pathname, suffix] = splitSuffix(route)
+  if (pathname === '/index' || pathname === '/index.md' || pathname === '/index.html') return `/${suffix}`
+  if (pathname === '/README' || pathname === '/README.md' || pathname === '/README.html') {
+    return `/project/repository${suffix}`
+  }
   if (pathname === '/STATUS' || pathname === '/STATUS.md') return `/project/status${suffix}`
   if (pathname === '/docs' || pathname === '/docs/' || pathname === '/docs/README.md') {
     return `/project/documentation${suffix}`
@@ -52,6 +56,8 @@ export function publicRoute(route: string): string {
 
 function candidateSourceTargets(pathname: string, sourceFile: string): string[] {
   if (pathname.startsWith('/')) {
+    if (pathname === '/' || pathname === '/index' || pathname === '/index.md') return ['index.md']
+    if (pathname === '/README' || pathname === '/README.md') return ['README.md']
     if (pathname === '/STATUS' || pathname === '/STATUS.md') return ['STATUS.md']
     if (pathname === '/docs' || pathname === '/docs/' || pathname === '/docs/README.md') {
       return ['docs/README.md']
@@ -66,6 +72,7 @@ function candidateSourceTargets(pathname: string, sourceFile: string): string[] 
 
   const sourceDir = dirname(normaliseSource(sourceFile)).replace(/\\/g, '/')
   const target = posix.normalize(posix.join(sourceDir === '.' ? '' : sourceDir, pathname))
+  if (target === '.' || target === './') return ['index.md']
   if (target.endsWith('/')) return [`${target}README.md`]
   if (target.endsWith('.md')) return [target]
   return [`${target}.md`, `${target}/README.md`]

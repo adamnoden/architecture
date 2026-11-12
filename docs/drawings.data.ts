@@ -6,6 +6,7 @@ import { buildDrawingGallery } from '../scripts/drawing-gallery.js'
 // The same loader runs again when source files are added, changed or removed in dev.
 export default {
   watch: [
+    '../index.md',
     '../README.md',
     './**/*.md',
     './**/*.svg',

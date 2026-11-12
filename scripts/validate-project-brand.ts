@@ -18,6 +18,7 @@ function publicationSources(): Set<string> {
 }
 
 const guardedSources = new Set([
+  'index.md',
   'README.md',
   'STATUS.md',
   'docs/README.md',

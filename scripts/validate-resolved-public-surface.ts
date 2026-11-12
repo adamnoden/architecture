@@ -1,6 +1,6 @@
 import { existsSync, lstatSync, readFileSync, readdirSync } from 'node:fs'
 import { join, posix, relative, sep } from 'node:path'
-import { isPublicSource } from '../project/public-surface.js'
+import { isPublicSource, siteRootSources } from '../project/public-surface.js'
 
 const repoRoot = process.cwd()
 
@@ -47,7 +47,7 @@ function canonicalMarkdownTarget(source: string, rawHref: string): string | null
 
 function validateResolvedPublicSurface(): void {
   const failures: string[] = []
-  const files = [join(repoRoot, 'README.md'), ...collectMarkdown(join(repoRoot, 'docs'))]
+  const files = [...siteRootSources.map((source) => join(repoRoot, source)), ...collectMarkdown(join(repoRoot, 'docs'))]
     .map((path) => ({ path, source: sourcePath(path) }))
     .filter(({ source }) => isPublicSource(source))
 

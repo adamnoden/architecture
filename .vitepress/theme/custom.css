@@ -2,7 +2,7 @@
   --vp-layout-max-width: 1520px;
   --vp-sidebar-width: 320px;
 
-  /* House Kernel palette */
+  /* Project palette */
   --hk-c-canvas: #f7f6f2;
   --hk-c-raised: #efeee9;
   --hk-c-soft: #e9e7e1;
@@ -189,63 +189,164 @@
     left: 0;
     width: 1px;
     height: 24px;
-    background-color: var(--vp-c-divider);
+    background-color: var(--hk-c-divider);
     content: "";
   }
 }
 
-/*
- * The root is an editorial front door, not another documentation leaf.
- * It keeps the shared navigation and Markdown source while shedding the
- * documentation chrome and opening a wider canvas for the project map.
- */
-.house-kernel-landing-page .vp-doc h1 {
-  max-width: 22ch;
-  margin-bottom: 0.7em;
-  font-size: clamp(2.55rem, 4vw, 3.35rem);
+/* The public introduction is independent of the repository guide. */
+.ovids-homepage .home-opening {
+  display: grid;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.ovids-homepage .home-intro,
+.ovids-homepage .home-drawing {
+  min-width: 0;
+}
+
+.ovids-homepage .home-kicker {
+  margin: 0 0 1.25rem;
+  font-family: var(--vp-font-family-base);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--vp-c-text-2);
+}
+
+.ovids-homepage .vp-doc h1 {
+  margin: 0 0 1.75rem;
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: clamp(2.8rem, 4.9vw, 4.5rem);
+  font-weight: 400;
   line-height: 1.06;
   letter-spacing: -0.045em;
 }
 
-.house-kernel-landing-page .vp-doc > h1 + p {
-  max-width: 64ch;
-  margin-top: 0;
-  font-size: 1.22em;
-  line-height: 1.62;
+.ovids-homepage .home-intro > p:not(.home-kicker) {
+  max-width: 45ch;
+  font-size: 1.08rem;
+  line-height: 1.7;
 }
 
-.house-kernel-landing-page .vp-doc > h2 {
-  max-width: 72ch;
-  margin-top: 4.75rem;
-  padding-top: 1.15rem;
-  border-top: 1px solid var(--hk-c-divider);
-  font-size: 1.55rem;
-  letter-spacing: -0.02em;
+.ovids-homepage .home-actions p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.75rem 0 0;
 }
 
-.house-kernel-landing-page .vp-doc .mermaid {
-  margin: 2.25rem 0 2.75rem;
-  padding: 1.5rem 0;
-  overflow-x: auto;
-  border-top: 1px solid var(--hk-c-divider);
-  border-bottom: 1px solid var(--hk-c-divider);
+.ovids-homepage .home-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0.65rem 1.15rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 2px;
+  font-family: var(--vp-font-family-base);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--vp-c-text-1);
+  text-decoration: none;
 }
 
-.house-kernel-landing-page .vp-doc .mermaid svg {
+.ovids-homepage .home-actions a:hover {
+  border-color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+}
+
+.ovids-homepage .home-actions a:first-child {
+  border-color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-1);
+  color: var(--vp-c-bg);
+}
+
+.ovids-homepage .home-actions a:first-child:hover {
+  border-color: var(--vp-c-brand-2);
+  background: var(--vp-c-brand-2);
+}
+
+.ovids-homepage .vp-doc a:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 4px;
+}
+
+.ovids-homepage .home-drawing {
+  width: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.ovids-homepage .home-drawing img {
   display: block;
-  margin-inline: auto;
+  width: 100%;
+  height: auto;
+  background: #fff;
+}
+
+.ovids-homepage .home-drawing figcaption {
+  margin-top: 0.85rem;
+  font-family: var(--vp-font-family-base);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--vp-c-text-2);
+}
+
+.ovids-homepage .home-note {
+  margin-top: 3.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+.ovids-homepage .home-note h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 1.45rem;
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+}
+
+.ovids-homepage .home-utility {
+  margin-top: 2.5rem;
+  font-family: var(--vp-font-family-base);
+  font-size: 0.8rem;
 }
 
 @media (min-width: 960px) {
-  .house-kernel-landing-page .VPDoc {
+  .ovids-homepage .VPDoc {
     padding-top: 4rem;
-    padding-bottom: 7rem;
+    padding-bottom: 4rem;
   }
 
-  .house-kernel-landing-page .VPDoc .container,
-  .house-kernel-landing-page .VPDoc .content,
-  .house-kernel-landing-page .VPDoc:not(.has-aside) .content-container {
+  .ovids-homepage .VPDoc .container,
+  .ovids-homepage .VPDoc .content,
+  .ovids-homepage .VPDoc:not(.has-aside) .content-container {
     max-width: 1120px;
+  }
+
+  .ovids-homepage .home-opening {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: 3.5rem;
+  }
+
+  .ovids-homepage .home-note {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    column-gap: 3.5rem;
+  }
+
+  .ovids-homepage .home-note h2 {
+    grid-row: span 2;
+  }
+
+  .ovids-homepage .home-note p {
+    grid-column: 2;
+    margin-top: 0;
   }
 }
 
@@ -255,15 +356,11 @@
     line-height: 1.68;
   }
 
-  .house-kernel-landing-page .vp-doc h1 {
-    font-size: 2.35rem;
+  .ovids-homepage .home-intro > p:not(.home-kicker) {
+    font-size: 1rem;
   }
 
-  .house-kernel-landing-page .vp-doc > h1 + p {
-    font-size: 1.12em;
-  }
-
-  .house-kernel-landing-page .vp-doc > h2 {
-    margin-top: 3.5rem;
+  .ovids-homepage .home-note {
+    margin-top: 2.5rem;
   }
 }

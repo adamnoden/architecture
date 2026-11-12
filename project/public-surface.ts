@@ -1,3 +1,7 @@
+/** Root entry points shared by navigation and public-source validation. */
+export const siteRootSources = ['index.md', 'README.md', 'STATUS.md'] as const
+const siteRootSourceSet = new Set<string>(siteRootSources)
+
 export const publicSourceExcludeGlobs = [
   'STATUS.md',
   'compiler/**',
@@ -136,7 +140,7 @@ function globToRegExp(glob: string): RegExp {
 const publicSourceExcludeMatchers = publicSourceExcludeGlobs.map(globToRegExp)
 
 export function isSiteSourceCandidate(source: string): boolean {
-  return source === 'README.md' || source === 'STATUS.md' || source.startsWith('docs/')
+  return siteRootSourceSet.has(source) || source.startsWith('docs/')
 }
 
 export function isPublicSource(source: string): boolean {
@@ -148,12 +152,14 @@ export function isPublicSource(source: string): boolean {
 
 function sourceForNavigationLink(link: string): string | null {
   if (!link.startsWith('/') || link.startsWith('//')) return null
-  if (link === '/') return 'README.md'
-  if (link === '/STATUS' || link === '/STATUS.md') return 'STATUS.md'
-  if (link === '/docs' || link === '/docs/') return 'docs/README.md'
-  if (!link.startsWith('/docs/')) return null
+  const pathname = link.split(/[?#]/, 1)[0]
+  if (pathname === '/' || pathname === '/index.md') return 'index.md'
+  if (pathname === '/README' || pathname === '/README.md') return 'README.md'
+  if (pathname === '/STATUS' || pathname === '/STATUS.md') return 'STATUS.md'
+  if (pathname === '/docs' || pathname === '/docs/') return 'docs/README.md'
+  if (!pathname.startsWith('/docs/')) return null
 
-  const path = link.slice(1).split(/[?#]/, 1)[0]
+  const path = pathname.slice(1)
   if (path.endsWith('/')) return `${path}README.md`
   if (path.endsWith('.md')) return path
   return `${path}.md`

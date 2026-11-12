@@ -1,13 +1,15 @@
 ---
+title: Repository guide
 sidebar: false
 aside: false
 outline: false
 prev: false
 next: false
-pageClass: house-kernel-landing-page
 ---
 
 # Ovid’s House
+
+For the architectural introduction, visit the [homepage](index.md). This README maps the repository, its sources and contributor workflows.
 
 A house should seek **permanence without stasis**.
 
@@ -18,8 +20,6 @@ The practical purpose is to design and ultimately build the owner’s own home o
 The project does not argue that everything should be demountable, exposed or technically novel. Capacity for change must earn its spatial, material and financial cost. Conventional construction should win where it is the better architectural answer.
 
 The public architectural proposition begins in the [manuscript](docs/manuscript/) and its [governing principles](docs/manuscript/governing-principles.md). The [reading guide](docs/reading-guide.md) is the shortest route through the publication argument.
-
-The current project brief excludes flat roofs, including dormer and ancillary roofs. The [roof constraint](docs/reference-house/georgian-replan.md#roof-constraint) owns this project-specific choice.
 
 ## Project map
 
@@ -71,6 +71,7 @@ The diagram is an **authority and navigation map**, not a claim that every arrow
 
 | Kind | Canonical owner | Read it as |
 |---|---|---|
+| Public introduction | [`index.md`](index.md) | Website homepage and onward routes; not a second source of architectural doctrine |
 | Architectural proposition | [`docs/manuscript/`](docs/manuscript/) | Public architectural argument and governing principles |
 | Reusable design knowledge | [`docs/patterns/`](docs/patterns/) | Patterns, strategies, candidates and their stated evidence status |
 | Architectural language | [`docs/grammar/`](docs/grammar/) | Grammar framework and selectable grammar instances |
@@ -116,7 +117,7 @@ Start at the surface that owns the decision, then follow its explicit evidence/p
 | `.github/` | CI and repository automation |
 | `.vitepress/` | Website configuration and navigation; website structure does not redefine repository ownership or publication order |
 
-The detailed ownership model inside `docs/` is recorded in `docs/README.md`.
+The detailed ownership model inside `docs/` is recorded in `docs/README.md`. The public root is authored separately in `index.md`; this README remains the repository guide, also published at `/project/repository` on the website. Do not merge those two audiences back into a single page.
 
 ## Source and generated boundaries
 
