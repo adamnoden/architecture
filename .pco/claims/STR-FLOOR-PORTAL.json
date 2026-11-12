@@ -1,27 +1,20 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 8,
-  "state": "released",
-  "leaseId": "aa0f48fb-eb2c-4977-975e-3a5fd026a116",
+  "generation": 9,
+  "state": "claimed",
+  "leaseId": "ef8d7e73-2917-41b7-b89a-d43c2c33e96e",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6830099664"
+    "label": "zerg-str"
   },
-  "claimedAt": "2026-11-12T16:55:04.000Z",
-  "heartbeatAt": "2026-11-12T17:01:14.000Z",
-  "expiresAt": "2026-11-12T17:01:14.000Z",
-  "branch": "work/mvb-chat-6830099664",
+  "claimedAt": "2026-11-12T20:06:23.715Z",
+  "heartbeatAt": "2026-11-12T20:06:23.715Z",
+  "expiresAt": "2026-11-12T20:51:23.715Z",
   "predecessor": {
-    "leaseId": "d5aecbd6-29b8-4b12-9d51-23a4a824441d",
-    "generation": 7,
-    "branch": "work/mvb-chat-6829754036",
-    "pr": 1489,
-    "checkpoint": {
-      "evidence": "PR1489 head7a1b6974: recovered exact-success CI #1487; proved 140mm L with46mm cassette only9.60mm web after settings (25mm comparator fails by15.40). New 180mm arm local plan challenger with exact L-polygon boundary yields29.62mm after settings and retained bar corridors clear.",
-      "next": "Require exact-head PR1489 CI; retain unmet coupling, reinforcement cage, foundation/52-head and occupied-room consequences. Then hand off or earn bounded closure.",
-      "blocker": "180mm L design is only an unselected plan study. No structural/roof/source adoption, fabrication, cover specification or physical qualification."
-    }
+    "leaseId": "aa0f48fb-eb2c-4977-975e-3a5fd026a116",
+    "generation": 8,
+    "branch": "work/mvb-chat-6830099664"
   },
   "recoverySource": {
     "leaseId": "d5aecbd6-29b8-4b12-9d51-23a4a824441d",
@@ -33,7 +26,5 @@
       "next": "Require exact-head PR1489 CI; retain unmet coupling, reinforcement cage, foundation/52-head and occupied-room consequences. Then hand off or earn bounded closure.",
       "blocker": "180mm L design is only an unselected plan study. No structural/roof/source adoption, fabrication, cover specification or physical qualification."
     }
-  },
-  "releasedAt": "2026-11-12T17:01:14.000Z",
-  "releaseReason": "handoff"
+  }
 }
