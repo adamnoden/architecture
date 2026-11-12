@@ -9,8 +9,8 @@
     "label": "zerg2-had"
   },
   "claimedAt": "2026-11-12T22:48:15.496Z",
-  "heartbeatAt": "2026-11-12T22:48:15.496Z",
-  "expiresAt": "2026-11-12T23:33:15.496Z",
+  "heartbeatAt": "2026-11-12T23:09:11.003Z",
+  "expiresAt": "2026-11-12T23:54:11.003Z",
   "branch": "work/zerg2-had-braced-release-20261112",
   "predecessor": {
     "leaseId": "ba81731e-58c6-48db-bf43-94b3a5a1d175",
