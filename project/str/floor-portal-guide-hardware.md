@@ -20,7 +20,7 @@ is therefore not copied into a second stale table.
 - Jamb tongue comparator: **45** wide x 20 thick x 60 engaged depth in the generation-4 successor; the 50 mm geometry and numerical domain below are retained as earlier screening evidence.
 - Released-direction receiver travel: **+/-10 mm reserved**, with2 mm running
   allowance at every pocket edge.
-- No slot-end contact, guide friction or favourable vertical load is credited.
+- No slot-end contact or favourable vertical load is credited. A separate 20% dry-friction load/movement envelope is explicitly applied as an adverse forced-sliding comparator; it is not a verified stick/slip law.
 
 The 90 mm jamb tongue is physically rejected. The later 45 mm comparator accommodates the actual weldable-half/coupler stack, with its own finite receiver and cover controls; the figures in this paragraph are the historical 50 mm study. With the same +/-10 mm swept pocket,
 two independent5 mm steel-setting budgets and the retained four H12 bars, it has
@@ -83,3 +83,30 @@ and corrosion pair, dust/debris protection and replacement access. The current f
 
 Only after that should the same selected hardware be admitted to the final roof-cap
 cage and occupied-room/service replay. Receiver, tongue, sliding-plate and jamb-coupler masses and displaced concrete now enter the physical mass ledger as development comparisons, not manufactured take-offs. The corrected wardrobe swept-path replay eliminates an old tautological zero-gap pass but exposes a 5.5 mm bedroom-3 first-stage limit: IAS must still qualify the real handling and placement tolerances.
+
+## Discovered complete L-receiver cover conflict — 12 November
+
+The executable [full receiver fit](studies/floor_portal_guide_fit.py) now
+checks a failure that bare H20/H12 bar clearance and gross bearing checks cannot
+answer. The 140 mm-wide L-pier arms carry six radially guided receivers per L.
+Each complete metal cassette needs a **46 mm** transverse pocket, not just
+a 20 mm tongue. At the most exposed angled guide the *nominal* shortest
+concrete side web is **19.60 mm**. After the two separately declared 5 mm
+steel-placement allowances it is **9.60 mm**.
+
+Against a **25 mm exploratory nominal side-cover comparator**, this leaves
+a **15.40 mm adverse shortfall** after setting, before concrete splitting,
+local edge breakout, durability, fire, reinforcement-layer interference or
+the backing/cassette anchor force path is qualified. The 25 mm comparator is
+*not* an adopted structural cover specification; the eventual value could be
+more demanding. The existing H20/H12 clearance screens still pass at their
+own scope and do not cancel this failure. CI requires the adverse cover hold
+to remain explicit; no 140 mm L receiver is admitted by the earlier
+force/stiffness results.
+
+The architectural options are to change the L arm width/bar layout, rotate or
+relocate the radial guide with the resulting thermal force model repeated, or
+redesign the complete cassette footprint *without reducing its required
+travel, active bearing or service access*. This is not just a stronger bolt or
+an extra note on a drawing. Actual cap, roof, floor, room/maintenance and
+52-head demand replays must consume whichever alternative is selected.
