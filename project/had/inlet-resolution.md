@@ -548,7 +548,7 @@ park the separate tail receiver south, then export the whole-U load and
 retire its receiver before the straight cylinder exchange. The south
 parking box compares inside the guarded dock and outside the cylinder cart
 reservation. An empty whole-U receiver can move 525 mm south in the dock
-plan, leaving 75 mm to the cylinder cart. The 425 mm between the parked
+plan, leaving at least 75 mm of lateral clearance to the cylinder cart. The 425 mm between the parked
 fixtures and the 225 mm between the whole-U receiver and south guard each
 fail a 600 mm body. The transfer therefore needs a positively supported
 detachable receiver and a north-side crew route before the cylinder arrives.

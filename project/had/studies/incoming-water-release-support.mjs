@@ -230,6 +230,7 @@ function dockComparison(cylinder,wholeU,nativeReceiver){
       northEndpointMinimumY,northEndpointMaximumY},
     emptyWholeUReceiverParking:{from:wholeU.box,to:unloadedParkedU,shiftYMM:retiredShiftY,
       parkedToRequiredCartMM:boxDistance(requiredEndpoint,unloadedParkedU)-r,
+      lateralCartClearanceLowerMM:requiredEndpoint[1]-unloadedParkedU[1]-unloadedParkedU[4]-r,
       parkedInsideSouthGuardMM:unloadedParkedU[1]-south-guard,
       separationFromParkedTailReceiverMM:separationBetweenParkedReceivers,
       bodyGapBetweenParkedReceiversMM:separationBetweenParkedReceivers-600,

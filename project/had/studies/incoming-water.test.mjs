@@ -278,7 +278,8 @@ test('the lower-tail release follows the beam and current dock, including reject
   assert(dock.retainedWholeUNorthDogleg.northEndpointMinimumY>dock.retainedWholeUNorthDogleg.northEndpointMaximumY);
   assert(dock.tailRest.landingToRequiredCartMM<0);
   assert(dock.tailRest.parkedToRequiredCartMM>200);
-  assert.equal(dock.emptyWholeUReceiverParking.parkedToRequiredCartMM,75);
+  assert.equal(dock.emptyWholeUReceiverParking.lateralCartClearanceLowerMM,75);
+  assert(dock.emptyWholeUReceiverParking.parkedToRequiredCartMM>200);
   assert(dock.emptyWholeUReceiverParking.bodyGapBetweenParkedReceiversMM<0);
   assert(dock.emptyWholeUReceiverParking.bodyGapToSouthGuardMM<0);
   assert.equal(result.status,'DEVELOPMENT_NOT_ADOPTED');
