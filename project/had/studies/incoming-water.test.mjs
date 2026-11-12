@@ -6,6 +6,7 @@ import {deriveIncomingWaterStudy,incomingWaterText} from './incoming-water.mjs';
 import {deriveCurrentHouse} from './current-house.mjs';
 import {utilityFirstRestPreflight} from './utility-first-rest-preflight.mjs';
 import {deriveBridgeNative} from './incoming-water-bridge-native.mjs';
+import {bridgeNativeMotionResult} from './incoming-water-bridge-native-motion.mjs';
 
 const study=deriveIncomingWaterStudy();
 test('finite bends represent a real quarter-circle and reject impossible tangent lengths',()=>{
@@ -174,4 +175,18 @@ test('recovered upper bridge native tool, capture and receiving geometry remains
   assert(b.receiver.structuralComparison.remainingEastReserveAfterBothDeflectionsAnd1mmFabrication>0);
   assert(b.receiver.rows.every(c=>c.minimum.value>25&&c.maxReach<600));
   assert.equal(study.adoption.adopted,false,'Native comparator must not silently select the house');
+});
+
+test('twenty-state upper-bridge swept metal and pipes recover independent adverse motion evidence',()=>{
+  const m=bridgeNativeMotionResult;
+  assert.equal(m.status,'NOMINAL_CONTINUOUS_CAPTURE_SWEEP');
+  assert.equal(m.requiredMM,25);
+  assert.equal(m.states.length,20);
+  assert(m.pipeSamplesChecked>10000);
+  assert(m.partsMinimum.gap>=25,m.partsMinimum);
+  assert(m.pipeMinimum.gap>=25,m.pipeMinimum);
+  assert(m.retainedFailedOldCatchGap<0,m.retainedFailedOldCatchGap);
+  assert(m.motionAllowance.remainingMetal>=25,m.motionAllowance);
+  assert(m.nativeHeelToOwnArmDuringGuidedCapture.length>=2);
+  assert.equal(study.adoption.adopted,false);
 });
