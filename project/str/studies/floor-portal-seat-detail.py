@@ -56,12 +56,12 @@ def seat_guide_station(station):
     return {200.0: 200.0 + GUIDE_SHIFT, 725.0: 680.0}.get(station, station)
 
 
-def distance_to_cassette(point, centre, direction):
+def distance_to_cassette(point, centre, direction, extra_length=0.0):
     dx, dy = offset(point, centre)
     nx, ny = direction
     along = dx * nx + dy * ny
     across = -dx * ny + dy * nx
-    return hypot(max(0.0, abs(along) - FIT['CASSETTE_LENGTH'] / 2),
+    return hypot(max(0.0, abs(along) - (FIT['CASSETTE_LENGTH'] + extra_length) / 2),
                  max(0.0, abs(across) - FIT['CASSETTE_WIDTH'] / 2))
 
 
@@ -109,6 +109,10 @@ def hoop_screen(old, proposed, levels):
         ((inner - rounding, far - rounding), rounding, 0, 90),
         ((outer + rounding, far - rounding), rounding, 90, 180),
     )
+    def distance_to_loop(point):
+        return min(min(FIT['point_to_segment'](point, p, q) for p, q in segments),
+                   min(distance_to_arc(point, *arc) for arc in arcs))
+
     gap = float('inf')
     witness = None
     # The link and bar can each move 5 mm vertically. The sample enclosure
@@ -118,8 +122,7 @@ def hoop_screen(old, proposed, levels):
             slope = 1.5 * hypot(*offset(a, b)) / (BEND_TOP - BEND_BOTTOM)
             for dz in range(-10, 11):
                 point = bent_bar_at(a, b, level + dz)
-                distance = min(min(FIT['point_to_segment'](point, p, q) for p, q in segments),
-                               min(distance_to_arc(point, *arc) for arc in arcs))
+                distance = distance_to_loop(point)
                 bound = (distance - slope / 2) / sqrt(1 + slope**2) - BAR_DIAMETER / 2 - hoop_radius - 2 * SETTING
                 if bound < gap:
                     gap = bound
@@ -130,6 +133,8 @@ def hoop_screen(old, proposed, levels):
         'centrelineArcsFromCoreOriginMm': arcs,
         'minimumAfterIndependentCageSettingsMm': gap,
         'witness': witness,
+        'axialLoopFeedPastOldCoreH20MinimumGapMm': min(map(distance_to_loop, old)) - hoop_radius - BAR_DIAMETER / 2 - 2 * SETTING,
+        'axialLoopFeedPastPrethreadedWeldSleeveMinimumGapMm': min(map(distance_to_loop, proposed)) - hoop_radius - COUPLER_DIAMETER / 2 - WELD_TOE_RESERVE - 2 * SETTING,
         'upperHoopToCassetteAfterIndependentSettingsMm': 6449.0 - max(levels) - hoop_radius - 2 * SETTING,
         'minimumVerticalLinkGapWithIndependentSettingsMm': min(b - a for a, b in zip(levels, levels[1:])) - 2 * hoop_radius - 2 * SETTING,
         'maximumRelativeVerticalSettingAt21MmFlowScreenMm': min(b - a for a, b in zip(levels, levels[1:])) - 2 * hoop_radius - CLEAR_SCREEN,
@@ -191,6 +196,7 @@ def layout():
     bend_radius = rise**2 / (6 * largest_offset)
 
     conflicts, webs, unrecentred_webs = [], [], []
+    existing_h12, moved_h12, longer_h12_at_590, longer_h12_at_589, longer_webs, longer_conflicts = [], [], [], [], [], []
     for _, origin_x, origin_y, sx, sy in FIT['CORNER_ORIGINS']:
         for station in FIT['GUIDE_STATIONS']:
             along = seat_guide_station(station)
@@ -202,6 +208,14 @@ def layout():
                 local = tuple(coordinate + OUTWARD for coordinate in centre)
                 spans = CORE_WIDTH + OUTWARD, FIT['CASSETTE_LENGTH'], FIT['CASSETTE_WIDTH'], CORE_LENGTH + OUTWARD
                 webs.append(FIT['web_to_l_boundary'](local, direction, *spans) - 2 * SETTING)
+                long_spans = spans[0], spans[1] + 3.0, spans[2], spans[3]
+                longer_webs.append(FIT['web_to_l_boundary'](local, direction, *long_spans) - 2 * SETTING)
+                reach = abs(direction[leg]) * spans[1] / 2 + abs(direction[1 - leg]) * spans[2] / 2
+                long_reach = reach + 1.5 * abs(direction[leg])
+                existing_h12.extend(abs(along - bar) - reach - 6.0 - 2 * SETTING for bar in (350.0, 600.0))
+                moved_h12.extend(abs(along - bar) - reach - 6.0 - 2 * SETTING for bar in (350.0, 590.0))
+                longer_h12_at_590.extend(abs(along - bar) - long_reach - 6.0 - 2 * SETTING for bar in (350.0, 590.0))
+                longer_h12_at_589.extend(abs(along - bar) - long_reach - 6.0 - 2 * SETTING for bar in (350.0, 589.0))
                 old_centre = (along, 50.0) if leg == 0 else (50.0, along)
                 old_delta = (old_centre[0] + sx * (origin_x - 6000.0),
                              old_centre[1] + sy * (origin_y - 6000.0))
@@ -209,9 +223,12 @@ def layout():
                 old_local = tuple(coordinate + OUTWARD for coordinate in old_centre)
                 unrecentred_webs.append(FIT['web_to_l_boundary'](old_local, old_direction, *spans) - 2 * SETTING)
                 conflicts.extend(distance_to_cassette(point, centre, direction) for point in proposed)
+                longer_conflicts.extend(distance_to_cassette(point, centre, direction, 3.0) for point in proposed)
     coupler_to_guide = min(conflicts) - COUPLER_DIAMETER / 2 - 2 * SETTING
     assert bar_clear >= CLEAR_SCREEN and packing_gap >= CLEAR_SCREEN > unshifted_gap
     assert min(webs) >= COVER_SCREEN > min(unrecentred_webs)
+    assert min(moved_h12) >= COVER_SCREEN > min(existing_h12)
+    assert min(longer_h12_at_589) >= COVER_SCREEN > min(longer_h12_at_590)
     assert cover >= COVER_SCREEN and edge_margin > 0.0
     cap = json.loads((STUDIES / 'floor-portal-cap-replay.json').read_text())
     previous = cap['signed']['cap300-relief5']['capTransition']
@@ -234,7 +251,13 @@ def layout():
     assert hoop['minimumAfterIndependentCageSettingsMm'] > 0 < hoop['upperHoopToCassetteAfterIndependentSettingsMm']
     assert hoop['minimumVerticalLinkGapWithIndependentSettingsMm'] >= CLEAR_SCREEN
     assert lower_hoop_control['minimumAfterIndependentCageSettingsMm'] < 0
+    assert hoop['axialLoopFeedPastOldCoreH20MinimumGapMm'] < 0
+    assert hoop['axialLoopFeedPastPrethreadedWeldSleeveMinimumGapMm'] < 0
     return {
+        'sourceSHA256': {path.name: hashlib.sha256(path.read_bytes()).hexdigest() for path in (
+            SOURCE, STUDIES / 'current-house-welded-network.json',
+            STUDIES / 'floor-portal-receiver-cover.py', STUDIES / 'floor-portal-cap-replay.json',
+        )},
         'originalPositionsMm': old,
         'trialPositionsMm': proposed,
         'barBendLowerZmm': BEND_BOTTOM,
@@ -251,6 +274,15 @@ def layout():
         'minimumCxl20wSideCoverAfterSettingsMm': cover,
         'sideCoverScreenMm': COVER_SCREEN,
         'minimumCxl20wToCassettePlanGapAfterSettingsMm': coupler_to_guide,
+        'retained350And600H12StationGapAfterSettingsMm': min(existing_h12),
+        'trial350And590H12StationGapAfterSettingsMm': min(moved_h12),
+        'longerTonguePlanOnly': {
+            'tongueLengthMm': FIT['TONGUE_LENGTH'] + 3.0,
+            'cassetteWebAfterSettingsMm': min(longer_webs),
+            'couplerToCassetteGapAfterSettingsMm': min(longer_conflicts) - COUPLER_DIAMETER / 2 - 2 * SETTING,
+            'trial350And590H12StationGapAfterSettingsMm': min(longer_h12_at_590),
+            'trial350And589H12StationGapAfterSettingsMm': min(longer_h12_at_589),
+        },
         'steelSoffitZmm': CAP_Z + 25.0,
         'seatOuterInwardCoordinateMm': 262.5,
         'projectingHardwareMaximumZmm': CAP_Z + 25.0 - SEAT_GAP,
@@ -324,9 +356,9 @@ def friction_screen(config):
             'minimumShelfGapMm': float(min(contact['gap'][index] for index in shelf)),
             'maximumShelfCompressionN': float(max(contact['force'][index] for index in shelf)),
             'maximumResultantGuide': guide,
-            'resultantKn': resultant / 1000.0,
-            'simultaneousTangentKn': planar[guide] / 1000.0,
-            'simultaneousRadialKn': radial.get(guide, 0.0) / 1000.0,
+            'resultantKN': resultant / 1000.0,
+            'simultaneousTangentKN': planar[guide] / 1000.0,
+            'simultaneousRadialKN': radial.get(guide, 0.0) / 1000.0,
             'concretePressureComparatorMPa': concrete_comparator,
             'nominalTangentPressureMPa': planar[guide] / (guide_width * engaged_depth * contact_fraction),
             'engagementNeededAtPressureComparatorMm': planar[guide] / (guide_width * contact_fraction * concrete_comparator),

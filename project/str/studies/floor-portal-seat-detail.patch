@@ -12,9 +12,18 @@ index 8fc23bb514ed90d7d4bc510e3d44cfe5f7b62b67..b4a8766d26a81379d3009ac3f9226426
          positions=[]
          for ids,t in e['ports']:
 diff --git a/project/str/studies/floor_portal_domain.py b/project/str/studies/floor_portal_domain.py
-index 3235857dd992f59ddab78b78b0b4ae119bd65fbb..98e96d5f59a56aa4a9cd7c270fe8e90ffa009d43 100644
+index 3235857dd992f59ddab78b78b0b4ae119bd65fbb..0fa41eafa087536cfb68a42267d275ca115a9b36 100644
 --- a/project/str/studies/floor_portal_domain.py
 +++ b/project/str/studies/floor_portal_domain.py
+@@ -27,7 +27,7 @@ def run(parameters=None,full=True,matrix_path=None,guide_friction=0.):
+     Q=Case.combination(h,'full use and blocked water',[(1,Q),(1,rq),(1,water)])
+     U=Case.combination(h,'complete roof suction',[(1,ru),(-1,extra)])
+     gravitycase=Case.combination(h,'1.35G+1.5Q',[(1.35,G),(1.5,Q)])
+-    solve=GuideFrictionSolve(h,guide_friction) if guide_friction else ContactSolve(h.k,h.fixed,h.contacts)
++    solve=GuideFrictionSolve(h,guide_friction) if guide_friction else ContactSolve(h.k,h.fixed,h.contacts,extended_recovery=bool(h.p.L_trial_anchor_positions))
+     print('Domain contact compliance factored'+(f'; guide friction={guide_friction:g}' if guide_friction else '')+'.',flush=True)
+     members=[(family,e) for family,es in h.members.items() for e in es]
+     metadata=[dict(family=family,name=e['name'],a=e['a'].tolist(),b=e['b'].tolist(),basis=e['R'].tolist(),width=e['width'],depth=e['depth']) for family,e in members]
 @@ -36,6 +36,32 @@ def run(parameters=None,full=True,matrix_path=None,guide_friction=0.):
      friction_bound=dict(coefficient=float(guide_friction),maximumPointFrictionN=0.,sumPointFrictionMagnitudesN=0.,maximumIterations=0,maximumFollowerResidualN=0.,maximumDirectionReversalCount=0,witness=None)
      bounds={family:dict(maxAbs=np.zeros(6),witness=[None]*6) for family in h.members}
@@ -99,7 +108,7 @@ index 3235857dd992f59ddab78b78b0b4ae119bd65fbb..98e96d5f59a56aa4a9cd7c270fe8e90f
                  maximumTranslationMM_Case=worst_trans,activeContactCounts=contactcounts,guideBounds=finalise_bounds(guide_bounds,h),guideFriction=friction_bound,
                  sourceHashes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in [D/'floor_portal_frame.py',D/'floor_portal_roof.py',D/'floor_portal_house.py',D/'floor_portal_loads.py',Path(__file__)]},
 diff --git a/project/str/studies/floor_portal_house.py b/project/str/studies/floor_portal_house.py
-index 3ad35f1d2e700dcb5ddc2145e075601f8264ff89..dc28bed61fbb4c80da749376d3fc5db0302b0bd4 100644
+index 3ad35f1d2e700dcb5ddc2145e075601f8264ff89..943f4d8a10b668f3bd42ba4a19739b1a4f0b8dd7 100644
 --- a/project/str/studies/floor_portal_house.py
 +++ b/project/str/studies/floor_portal_house.py
 @@ -13,7 +13,7 @@ import numpy as np
@@ -130,13 +139,23 @@ index 3ad35f1d2e700dcb5ddc2145e075601f8264ff89..dc28bed61fbb4c80da749376d3fc5db0
      L_key_centres:tuple=((70.,70.),(900.,70.),(70.,900.))
      key_profile:str='historical tip-compliance control'
      key_direction_mode:str='cruciform'
-@@ -78,12 +83,14 @@ class ContactSolve:
+@@ -74,16 +79,23 @@ class ContactSolve:
+     Each U column is the force conjugate of an ACTUAL two-port displacement
+     difference. q>=0 pushes its positive port away from its negative port.
+     """
+-    def __init__(self,k,fixed,contacts):
++    def __init__(self,k,fixed,contacts,extended_recovery=False):
          self.base=Solve(k,fixed);self.k=k;self.contacts=contacts
          self.U=np.zeros((k.shape[0],len(contacts)))
          self.stiffness=np.array([r['stiffness'] for r in contacts])
 +        self.initial_gap=np.array([r.get('initial_gap',0.) for r in contacts])
 +        assert np.all(self.initial_gap>=0.)
          for j,r in enumerate(contacts):np.add.at(self.U[:,j],r['ids'],r['row'])
++        self.recovery=None
++        if extended_recovery:
++            from scipy.sparse import csc_matrix
++            assert np.finfo(np.longdouble).eps < np.finfo(float).eps
++            self.recovery=(self.base.k.astype(np.longdouble),csc_matrix(self.U,dtype=np.longdouble))
          self.X=self.base(self.U);self.C=self.U.T@self.X
          assert np.max(abs(self.C-self.C.T))<1e-8
  
@@ -146,7 +165,7 @@ index 3ad35f1d2e700dcb5ddc2145e075601f8264ff89..dc28bed61fbb4c80da749376d3fc5db0
          active=g0<0;q=np.zeros(len(active));iterations=0
          for iterations in range(60):
              q[:]=0;ii=np.flatnonzero(active)
-@@ -94,7 +101,7 @@ class ContactSolve:
+@@ -94,10 +106,14 @@ class ContactSolve:
              active=new
          else:raise AssertionError('Contact active set did not settle')
          u=u0+self.X@q
@@ -154,8 +173,16 @@ index 3ad35f1d2e700dcb5ddc2145e075601f8264ff89..dc28bed61fbb4c80da749376d3fc5db0
 +        actual=self.U.T@u+self.initial_gap
          error=np.max(abs(q-self.stiffness*np.maximum(-actual,0)),initial=0)
          assert error<.03,(error,iterations)
-         reaction=self.k@u-np.asarray(f)-self.U@q
-@@ -108,7 +115,7 @@ class House:
+-        reaction=self.k@u-np.asarray(f)-self.U@q
++        if self.recovery is None:
++            reaction=self.k@u-np.asarray(f)-self.U@q
++        else:
++            k,ports=self.recovery
++            reaction=np.asarray(k@u.astype(np.longdouble)-np.asarray(f,dtype=np.longdouble)-ports@q.astype(np.longdouble),dtype=float)
+         return u,reaction,dict(force=q,gap=actual,active=active,iterations=iterations+1,errorN=float(error))
+ 
+ 
+@@ -108,7 +124,7 @@ class House:
          self.ground_lines={};self.ground_cuts={};self.ground_nodes={};self.heads={}
          self.pads=[];self.upper_links=[];self.cap_links=[];self.dpc_links=[]
          self.rc_boxes=[];self.arch_strips=[];self.flare_solids=[]
@@ -164,7 +191,7 @@ index 3ad35f1d2e700dcb5ddc2145e075601f8264ff89..dc28bed61fbb4c80da749376d3fc5db0
          self.prepare_geometry()
          self.build_ground()
          self.build_vertical()
-@@ -124,10 +131,10 @@ class House:
+@@ -124,10 +140,10 @@ class House:
  
      def node(self,name,p):return self.f.node(name,key(p))
  
@@ -177,7 +204,7 @@ index 3ad35f1d2e700dcb5ddc2145e075601f8264ff89..dc28bed61fbb4c80da749376d3fc5db0
  
      def prepare_geometry(self):
          p=self.p;f=self.f
-@@ -195,19 +202,45 @@ class House:
+@@ -195,19 +211,45 @@ class House:
                          self.flare_solids.extend([dict(face=face,u=u,za=2770.,zb=3170.,q0=(222.5,402.5),q1=(p.jamb_q-p.jamb_width/2,p.jamb_q+p.jamb_width/2)),dict(face=face,u=u,za=3920.,zb=4320.,q0=(p.jamb_q-p.jamb_width/2,p.jamb_q+p.jamb_width/2),q1=(222.5,402.5))])
                      else:self.rc_boxes.insert(0,(f'jamb-{face}-{u:g}',rect+[-180.,6515.],'jamb'))
                      self.reserve_ground('outer-'+['S','E','N','W'][face] if face!=2 else ('outer-NW' if xy(face,p.jamb_q,u)[0]<6000 else 'outer-NE'),xy(face,p.jamb_q,u))
@@ -235,7 +262,7 @@ index 3ad35f1d2e700dcb5ddc2145e075601f8264ff89..dc28bed61fbb4c80da749376d3fc5db0
              haunches=[]
              if p.corner_haunch>1e-9:
                  start=np.array(corner)+sg*p.corner_width/2
-@@ -216,7 +249,11 @@ class House:
+@@ -216,7 +258,11 @@ class House:
                  haunches.append(haunch)
                  self.rc_boxes.insert(0,(f'L-{corner}-haunch',haunch+[3170.,3920.],'L'))
              vals,vec=np.linalg.eigh([[I,Ixy*sg[0]*sg[1]],[Ixy*sg[0]*sg[1],I]])
@@ -248,7 +275,7 @@ index 3ad35f1d2e700dcb5ddc2145e075601f8264ff89..dc28bed61fbb4c80da749376d3fc5db0
              j['joint']=self.node(('L-floor',corner),[*centroid,3545.]);self.Ls.append(j)
              # Two real ground beam lines receive the footprint; the centroid
              # reference is linked through actual cap/beam offsets below.
-@@ -422,16 +459,30 @@ class House:
+@@ -422,16 +468,30 @@ class House:
              corner=L['corner'];plan=L['centroid'];ground='outer-W' if corner[0]==A else 'outer-E'
              foot=self.ground_port(ground,corner,-180.)[0][0]
              lower=self.node(('L-dpc-lower',corner),[*plan,-40.]);upper=self.node(('L-dpc-upper',corner),[*plan,-40.])
@@ -286,7 +313,7 @@ index 3ad35f1d2e700dcb5ddc2145e075601f8264ff89..dc28bed61fbb4c80da749376d3fc5db0
          for face in range(4):
              for centre in (2100.,9900.):
                  ends=sorted([j for j in self.jambs if j['face']==face and j['centre']==centre],key=lambda j:j['u'])
-@@ -557,7 +608,7 @@ class House:
+@@ -557,7 +617,7 @@ class House:
          for point in self.roof.p['upperSupports']:
              self.upper_links.append((point,self.floor_port(point)))
          for L in self.Ls:
@@ -295,7 +322,7 @@ index 3ad35f1d2e700dcb5ddc2145e075601f8264ff89..dc28bed61fbb4c80da749376d3fc5db0
  
      def build_roof_links(self):
          def key_terms(width,thickness,depth):
-@@ -618,19 +669,21 @@ class House:
+@@ -618,19 +678,21 @@ class House:
                      self.cap_links.append(self.f.link(self.roof.port(q,pos),self.f.port(j['top'],pos),k,f'cap-key-{face}-{j["u"]:g}'))
          for L in self.Ls:
              source=json.loads((D/'current-house-ground-ties.json').read_text())['outer']['primaryBarXY']

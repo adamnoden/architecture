@@ -1,4 +1,10 @@
 {
+  "sourceSHA256": {
+    "current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+    "current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+    "floor-portal-receiver-cover.py": "b538cd5bd5fe33a71990047ad99b307496801a087b81200a8f0362643e36df79",
+    "floor-portal-cap-replay.json": "6a8df8838126e436b45f46f7ab469f2edad59b93f790b44e914f16f9e4c73bb0"
+  },
   "originalPositionsMm": [
     [
       43,
@@ -189,6 +195,15 @@
   "minimumCxl20wSideCoverAfterSettingsMm": 34.68986283848344,
   "sideCoverScreenMm": 25.0,
   "minimumCxl20wToCassettePlanGapAfterSettingsMm": 26.31325889133244,
+  "retained350And600H12StationGapAfterSettingsMm": 15.576366025482287,
+  "trial350And590H12StationGapAfterSettingsMm": 25.576366025482287,
+  "longerTonguePlanOnly": {
+    "tongueLengthMm": 73.0,
+    "cassetteWebAfterSettingsMm": 25.97643600268742,
+    "couplerToCassetteGapAfterSettingsMm": 25.13516337554959,
+    "trial350And590H12StationGapAfterSettingsMm": 24.579361504637454,
+    "trial350And589H12StationGapAfterSettingsMm": 25.579361504637454
+  },
   "steelSoffitZmm": 6540.0,
   "seatOuterInwardCoordinateMm": 262.5,
   "projectingHardwareMaximumZmm": 6525.0,
@@ -338,6 +353,8 @@
       "barIndex": 6,
       "relativeVerticalSettingMm": -10
     },
+    "axialLoopFeedPastOldCoreH20MinimumGapMm": -15.704699910719626,
+    "axialLoopFeedPastPrethreadedWeldSleeveMinimumGapMm": -10.310137161516558,
     "upperHoopToCassetteAfterIndependentSettingsMm": 2.0,
     "minimumVerticalLinkGapWithIndependentSettingsMm": 21.0,
     "maximumRelativeVerticalSettingAt21MmFlowScreenMm": 10.0
@@ -363,5 +380,40 @@
     "concentratedTipLoadStressMPa": 771.1218525731055,
     "elasticYieldComparatorMPa": 355.0,
     "requiredUniformStripWidthAtYieldComparatorMm": 217.2174232600297
+  },
+  "movement": {
+    "cases": 110,
+    "headCount": 52,
+    "maximumBalanceResidualNAndNmm": [
+      0.0002824738039635122,
+      0.0004858556785620749,
+      0.0003223488565708976,
+      3.253155017737299,
+      2.310494718607515,
+      1.733518293921577
+    ],
+    "witnesses": {
+      "minimumHeadReactionKN": {
+        "value": -1459.7169179457724,
+        "case": "P10 -1 mm",
+        "location": "P10"
+      },
+      "maximumLGuideCartesianComponentKN": {
+        "value": 14.256144298240484,
+        "case": "superstructure net free dimensional strain-0.0003",
+        "location": "L-cap-key-(11667.5, 11667.5)-2"
+      },
+      "maximumLReleasedTravelMM": {
+        "value": 5.753489963413861,
+        "case": "roof actual axial member free strain0.00072",
+        "location": "L-cap-key-(11667.5, 11667.5)-3"
+      }
+    },
+    "minimumProjectedGap": {
+      "gapMM": 14.969292459568901,
+      "case": "superstructure net free dimensional strain0.0003",
+      "bearingForceN": 0.0,
+      "contact": "L-cap-projected-bearing-(11667.5, 332.5)"
+    }
   }
 }
