@@ -473,3 +473,18 @@ shorter driver therefore earns a tool-access candidate while the reaction
 path, loaded latch, stand retirement and first rest remain open. The prior
 [native latch and support replay](https://github.com/adamnoden/architecture/pull/1492#issuecomment-6835327126)
 retains the associated torque, stiffness and mounting assumptions.
+
+An independent temporary floor frame puts the rails on the opposite side of
+the tail at local **t+68 mm**. With the near guide end at **n55 mm**, the
+260 mm trial gives **44.009 mm** from the moving tail to the frame and
+**29.000 mm** from the moving links. The closed carriage retains **10.031 mm**
+at its near end. At the existing work point the body retains **28.160 mm**
+and the four tool sectors retain at least **31.253 mm**. This case checks the
+work point and still needs a complete arrival and departure comparison.
+
+The bare-post reaction trial fails independently of those geometric results.
+Even an ideal solid 20 × 30 mm near post under the separate 265 N lower and
+165 N upper horizontal comparisons deflects **5.522 mm** and **7.862 mm**.
+Each exceeds the **1 mm** guide budget before connections or mounting. The
+independent frame needs a different load path with bracing, floor anchorage
+and a positive release detail before a supported renewal can be considered.

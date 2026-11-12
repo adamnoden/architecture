@@ -236,5 +236,14 @@ test('short lower-cap driver clears four parked bolt approaches and retains adve
   assert(Math.abs(r.railEndFailures.madeTailToNearPlateMM-13.61888207)<1e-6);
   assert(Math.abs(r.railEndFailures.shiftedLinkToWestPostMM-10.55838423)<1e-6);
   assert.equal(r.railEndFailures.shiftedStrokeMM,22);
+  const floor=r.independentFloorFrame;
+  assert.equal(floor.driver.arrivalMM,0);
+  assert(floor.driver.bolts.every(b=>b.minimum.gapMM>r.requiredRemoteMM&&b.reachMM<500));
+  assert(floor.driver.bodyArrival.gapMM>r.requiredRemoteMM);
+  assert(floor.staticMinimum.gapMM>30);
+  assert(floor.movingTail.gapMM>44);
+  assert(floor.movingLink.gapMM>28);
+  assert(floor.carriage.gapMM>10);
+  assert(floor.supportComparison.cantilever.every(c=>c.deflectionMM>floor.supportComparison.installedGuideBudgetMM));
   assert.equal(study.adoption.adopted,false);
 });
