@@ -160,7 +160,23 @@ def assembly_screen(old, proposed):
         - BAR_DIAMETER - 2 * SETTING
         for i, j in combinations(range(len(old)), 2)
     )
+    type_c_radius, locknut_trial_radius = 17.5, 21.0
+    lower_pair = min(hypot(*offset(a, b)) for a, b in combinations(old, 2))
+    lower_edge = min(l_edge(point, 0.0) for point in old)
+    locknut_against_bar = lower_pair - locknut_trial_radius - BAR_DIAMETER / 2 - 2 * SETTING
+    locked_side_cover = lower_edge - locknut_trial_radius - SETTING
     return {
+        'lowerCoreTypeCSpliceScreen': {
+            'cxl20TypeCBodyDiameterMm': 2 * type_c_radius,
+            'bodyWithSimultaneousNeighboursGapMm': lower_pair - 2 * type_c_radius - 2 * SETTING,
+            'staggeredBodyAgainstNeighbourBarGapMm': lower_pair - type_c_radius - BAR_DIAMETER / 2 - 2 * SETTING,
+            'staggeredBodyCoverAfterSettingMm': lower_edge - type_c_radius - SETTING,
+            'trialLocknutDiameterEnvelopeMm': 2 * locknut_trial_radius,
+            'staggeredLocknutAgainstNeighbourBarGapMm': locknut_against_bar,
+            'locknutCoverAfterSettingMm': locked_side_cover,
+            'coreCoverShortfallAtTrialLocknutMm': COVER_SCREEN - locked_side_cover,
+            'maximumLocknutDiameterAtCoverScreenMm': 2 * (lower_edge - SETTING - COVER_SCREEN),
+        },
         'rotationScreenZmm': BEND_BOTTOM,
         'fullTurnConflicts': [{'rotatingBar': i, 'installedBar': j, 'surfaceGapAfterSettingsMm': gap}
                               for (i, j), gap in edges.items()],
@@ -245,6 +261,9 @@ def layout():
     lower_hoop_control = hoop_screen(old, proposed, (6350.0, 6390.0, 6430.0))
     assembly = assembly_screen(old, proposed)
     assert assembly['reciprocalConflicts'] and assembly['sameAngleFullTurnMinimumGapMm'] < 0
+    lower_splice = assembly['lowerCoreTypeCSpliceScreen']
+    assert lower_splice['bodyWithSimultaneousNeighboursGapMm'] < lower_splice['staggeredBodyAgainstNeighbourBarGapMm'] < CLEAR_SCREEN
+    assert lower_splice['staggeredBodyCoverAfterSettingMm'] < COVER_SCREEN
     core_cover = min(l_edge(bent_bar_at(a, b, CAP_SHOULDER + 2 * SETTING), 0)
                      for a, b in zip(old, proposed)) - BAR_DIAMETER / 2 - SETTING
     assert core_cover >= COVER_SCREEN and coupler_to_guide >= COVER_SCREEN
@@ -348,7 +367,7 @@ def friction_screen(config):
         radial = friction['groupedFrictionResultantN']
         guide, resultant = max(((name, hypot(force, radial.get(name, 0.0)))
                                 for name, force in planar.items()), key=lambda item: item[1])
-        guide_width = FIT['TONGUE_LENGTH']
+        guide_width = config.L_key_width
         engaged_depth, contact_fraction = 60.0, 0.75
         concrete_comparator = 0.85 * 30.0 / 1.5
         results.append({
@@ -381,7 +400,7 @@ def checked_source(worktree):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('worktree', nargs='?', type=Path)
-    parser.add_argument('screen', nargs='?', choices=('signed', 'movement', 'friction'))
+    parser.add_argument('screen', nargs='?', choices=('signed', 'movement', 'friction', 'friction-longer'))
     args = parser.parse_args()
     result = layout()
     if bool(args.worktree) != bool(args.screen):
@@ -397,9 +416,15 @@ def main():
             config = replace(base, L_arm_width=CORE_WIDTH + OUTWARD, L_outward_extension=OUTWARD,
                              L_key_centres=stations, L_projected_bearing_gap=SEAT_GAP,
                              L_trial_anchor_positions=tuple(result['trialPositionsMm']))
+            if args.screen == 'signed':
+                import numpy as np
+                if np.finfo(np.longdouble).eps >= np.finfo(float).eps:
+                    parser.error('signed reaction recovery requires NumPy longdouble wider than float64')
             result['sourceCommit'] = REPLAY['SOURCE_COMMIT']
             result['replayPatchSHA256'] = hashlib.sha256(PATCH.read_bytes()).hexdigest()
-            screen = friction_screen if args.screen == 'friction' else REPLAY[args.screen + '_screen']
+            if args.screen == 'friction-longer':
+                config = replace(config, L_key_width=FIT['TONGUE_LENGTH'] + 3.0)
+            screen = friction_screen if args.screen.startswith('friction') else REPLAY[args.screen + '_screen']
             result['replay'] = screen(config)
     print(json.dumps(result, indent=2))
 
