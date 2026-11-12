@@ -382,7 +382,19 @@ On the source-bound upper-room geometry, the bedroom-2 and bedroom-3 paths
 survive the corrected geometry check. But the bedroom-3 north-wall first-stage
 clearance is only **5.5 mm**, leaving **0.5 mm** after the nominal 5 mm screen.
 This is not a two-sided setting/handling tolerance allowance or evidence of a
-physically executable release. The retained IAS/physical handling obligations
-remain live; neither wardrobe receives construction/renewal acceptance here.
+physically executable release. The retained IAS/physical handling obligations remain live; neither
+wardrobe receives construction/renewal acceptance here.
+
+A separate **unselected** room-layout comparator translates the bedroom-3
+wardrobe's parked position **30 mm south** and translates both first and final
+renewal waypoints with it, without moving walls or service sources. The
+source-bound sweep then clears the north wall by **35.5 mm** on the first stage.
+Its minimum independently checked whole-route gap is **25 mm**, leaving
+**15 mm** after two independent 5 mm setting allowances. There is no modeled
+furniture collision in that local comparator. This is a concrete route out of
+the narrow nominal gap, **not** an amendment to the adopted HAD/IAS furniture
+layout; anti-tip handling, mount/fixings, site tolerances and the full inhabited
+room/renewal effects remain duties of those owners. A fourth negative control
+now also rejects a wardrobe initially penetrating its mounting wall.
 The floor/portal joint, anchor, local concrete confinement and final roof hardware
 remain separate unfinished STR-FLOOR-PORTAL duties.
