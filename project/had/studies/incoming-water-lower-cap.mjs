@@ -75,7 +75,7 @@ export function lowerCapComparator(){
     originalRecoveredProjection:recovered25,
     thinnerUnselectedComparison:reduced15,
     rejectedLongerProjection:rejected30,
-    maximumProjectionBeforeR400MM,
+    maximumProjectionBeforeR400MM:maxProjectionBeforeR400MM,
     holds:[
       'The 45 mm disc radius must include all bolt heads and a matched boss, not a drawn circular outline alone.',
       'The reduced 15 mm projection is not a factory pressure-rated fitting or an available gasket/seal/torque stack.',
