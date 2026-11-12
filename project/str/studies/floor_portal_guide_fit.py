@@ -61,14 +61,19 @@ def jamb_clearance(h,width,obstruction_diameter=12.,half_width=None):
                 minimumGrossCapEdgeMarginMM=cap_margin,witness=witness)
 
 
-def L_clearance(h,half_width=None):
+def L_clearance(h,half_width=None,arm_width_mm=140.,stations=SIX_L_KEYS):
+    """Plan-only L-arm footprint comparator; the House model is not amended.
+
+    A widened-arm result does not prove its roof connection, force stiffness,
+    actual reinforcement relocation, increased mass or occupied rooms.
+    """
     half_long=h.p.L_key_width/2+TRAVEL_RESERVE+RUNNING
     half_width=h.p.L_key_thickness/2+RUNNING if half_width is None else float(half_width)
     main=np.asarray(GROUND['primaryBarXY'],dtype=float)
     minimum_main=float('inf');minimum_h12=float('inf');minimum_edge=float('inf');witness=None
     for L in h.Ls:
         sg=np.asarray(L['sg'],dtype=float)
-        for centre0 in SIX_L_KEYS:
+        for centre0 in stations:
             centre=np.asarray(centre0,dtype=float)
             point=L['origin']+sg*centre
             radial=point-np.array([6000.,6000.]);radial/=np.linalg.norm(radial)
@@ -80,20 +85,21 @@ def L_clearance(h,half_width=None):
             # Intermediate H12s are known at stations350/600 in each leg but
             # their across-leg lane is not credited. Treat them as if they
             # occupy the worst across coordinate and clear only by station.
-            leg_axis=0 if centre0[1]==70 else 1
+            leg_axis=0 if centre0[0]>centre0[1] else 1
             projected=abs(local_axis[leg_axis])*half_long+abs(normal[leg_axis])*half_width
             for station in (350.,600.):
                 minimum_h12=min(minimum_h12,abs(centre[leg_axis]-station)-projected-12/2-COMBINED_SETTING)
             for corner in footprint_corners(centre,local_axis,half_long,half_width):
                 x,y=corner
-                inside=(0<=x<=1000 and 0<=y<=140) or (0<=x<=140 and 0<=y<=1000)
+                inside=(0<=x<=1000 and 0<=y<=arm_width_mm) or (0<=x<=arm_width_mm and 0<=y<=1000)
                 assert inside,(L['corner'],centre0,corner)
-                if 0<=x<=1000 and 0<=y<=140:
-                    margins=[x,1000-x,y,140-y]
+                if 0<=x<=1000 and 0<=y<=arm_width_mm:
+                    margins=[x,1000-x,y,arm_width_mm-y]
                 else:
-                    margins=[x,140-x,y,1000-y]
+                    margins=[x,arm_width_mm-x,y,1000-y]
                 minimum_edge=min(minimum_edge,*margins)
-    return dict(bladeWidthMM=h.p.L_key_width,sweptPocketHalfLengthMM=half_long,
+    return dict(LArmWidthMM=arm_width_mm,guideCentres=[list(p) for p in stations],
+                bladeWidthMM=h.p.L_key_width,sweptPocketHalfLengthMM=half_long,
                 sweptPocketHalfWidthMM=half_width,
                 minimumPrimaryH20ClearAfterTwo5MMSettingMM=minimum_main,
                 minimumIntermediateH12StationClearAfterTwo5MMSettingMM=minimum_h12,
@@ -137,6 +143,34 @@ def controls():
     assert minimum_edge<cover_comparator,(minimum_edge,cover_comparator)
     assert edge_after_settings<cover_comparator,(edge_after_settings,cover_comparator)
     assert minimum_edge>19.5 and minimum_edge<19.7,minimum_edge
+    # Bounded alternative: widen the L arm from 140 to 180, moving all six
+    # guide centres 20 mm inwards across each arm, retaining H20/H12 centres
+    # for this local comparison only. No coupled structural re-solve or room
+    # change is inferred from a fit computation.
+    widened_centres=tuple(
+        (x,y+20.) if x>y else (x+20.,y) for x,y in SIX_L_KEYS
+    )
+    wider_plan=L_clearance(
+        h,receiver['L']['outerReceiverWidthMM']/2,
+        arm_width_mm=180.,stations=widened_centres,
+    )
+    wider_after_settings=wider_plan['minimumGrossLArmEdgeMarginMM']-COMBINED_SETTING
+    assert wider_after_settings>=cover_comparator,(wider_after_settings,cover_comparator)
+    assert wider_plan['minimumPrimaryH20ClearAfterTwo5MMSettingMM']>=25.,wider_plan
+    assert wider_plan['minimumIntermediateH12StationClearAfterTwo5MMSettingMM']>=25.,wider_plan
+    widened_comparison=dict(
+        status='PLAN-ONLY CHALLENGER; HOUSE/ROOF/FLOOR STIFFNESS UNREPLAYED',
+        changedLArmWidthMM=180.,
+        movedSixGuideCentresAcrossEachArmMM=20.,
+        sectionCoverAfterSteelSettingsMM=wider_after_settings,
+        sectionPasses25MMExploratoryComparator=True,
+        retainedBarPlanClearancesChecked=True,
+        necessaryNextProof='Rebuild actual L pier, ring/seat, member mass, foundation '
+                           '52-head reactions, physical H20/H12 anchorage and room '
+                           'interfaces; retest all 579 demand and head-motion states.',
+        sourceNotAdopted=True,
+        localGeometry=wider_plan,
+    )
     cover_hold=dict(
         status='ADVERSE: COMPLETE L RECEIVER EDGE COVER NOT EARNED',
         currentLArmWidthMM=140.,
@@ -164,7 +198,8 @@ def controls():
                 fullJambReceiverToH12=jamb_receiver_h12,
                 fullJambReceiverToEL12C13N=jamb_receiver_c13,
                 LGuides=L,fullLReceiver=L_receiver,
-                LReceiverEdgeCoverHold=cover_hold)
+                LReceiverEdgeCoverHold=cover_hold,
+                widened180LArmPlanChallenger=widened_comparison)
 
 
 if __name__=='__main__':
