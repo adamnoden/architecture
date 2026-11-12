@@ -9,8 +9,8 @@
     "label": "zerg-str"
   },
   "claimedAt": "2026-11-12T20:06:23.715Z",
-  "heartbeatAt": "2026-11-12T20:06:23.715Z",
-  "expiresAt": "2026-11-12T20:51:23.715Z",
+  "heartbeatAt": "2026-11-12T20:10:02.143Z",
+  "expiresAt": "2026-11-12T20:55:02.143Z",
   "predecessor": {
     "leaseId": "aa0f48fb-eb2c-4977-975e-3a5fd026a116",
     "generation": 8,
@@ -26,5 +26,11 @@
       "next": "Require exact-head PR1489 CI; retain unmet coupling, reinforcement cage, foundation/52-head and occupied-room consequences. Then hand off or earn bounded closure.",
       "blocker": "180mm L design is only an unselected plan study. No structural/roof/source adoption, fabrication, cover specification or physical qualification."
     }
+  },
+  "branch": "work/zerg-str-guide-cover-20261112",
+  "checkpoint": {
+    "evidence": "Pushed e98215d7, four-file adverse result. Full footprint reproduces 9.5565 mm net on 140 arm and 29.5810 mm on unselected 180 arm; 20 mm bare-width bound also fails at 18.1689 mm.",
+    "next": "Open and verify exact-head CI, then preflight and merge bounded result. Compare revised guide position/orientation before coupled widening replay.",
+    "blocker": "140 mm fails local provisional web screen; 180 mm comparison has no coupled load, movement or room approval."
   }
 }
