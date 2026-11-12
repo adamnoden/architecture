@@ -9,8 +9,8 @@
     "label": "zerg-had"
   },
   "claimedAt": "2026-11-12T20:06:52.571Z",
-  "heartbeatAt": "2026-11-12T20:08:08.902Z",
-  "expiresAt": "2026-11-12T20:53:08.902Z",
+  "heartbeatAt": "2026-11-12T20:13:15.744Z",
+  "expiresAt": "2026-11-12T20:58:15.744Z",
   "predecessor": {
     "leaseId": "238313fa-9157-474c-ba20-3834e638ce3d",
     "generation": 6,
@@ -33,5 +33,11 @@
       "blocker": "No adopted inlet; lower-tail, stand, pressure-rated flange, real receiver, physical handling, materials and precise structural crossings still unqualified."
     }
   },
-  "branch": "work/zerg-had-inlet-20261112"
+  "branch": "work/zerg-had-inlet-20261112",
+  "pr": 1492,
+  "checkpoint": {
+    "evidence": "Draft PR #1492 head 3c7a8d57 repairs the lower-cap comparator CI ReferenceError; 73 HAD tests and replan reproduction passed locally.",
+    "next": "Publish locally tested parked-flange tool adverse case on current main; verify exact-head CI and canonical preflight before bounded integration.",
+    "blocker": "No adopted inlet: independent lower-tail capture, real first-rest receiver, stand retirement, pressure and selected-house/MRA joins remain open."
+  }
 }
