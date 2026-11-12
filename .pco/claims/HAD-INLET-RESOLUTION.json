@@ -9,8 +9,8 @@
     "label": "zerg-had"
   },
   "claimedAt": "2026-11-12T20:45:13.335Z",
-  "heartbeatAt": "2026-11-12T21:12:42.512Z",
-  "expiresAt": "2026-11-12T21:57:42.512Z",
+  "heartbeatAt": "2026-11-12T21:35:37.977Z",
+  "expiresAt": "2026-11-12T22:20:37.977Z",
   "predecessor": {
     "leaseId": "05ecb6ba-28c1-40a4-a80c-61bf15302d27",
     "generation": 7,
@@ -35,9 +35,9 @@
   },
   "branch": "work/zerg-had-native-capture-20261112",
   "checkpoint": {
-    "evidence": "Draft #1495 exact head 80be8070 on actual main 40b43b66. All 74 HAD tests, deterministic inlet/replan and MRA pass; source-bound short driver, adverse rail ends and independent floor-frame deflection are executable.",
-    "next": "Wait for exact-head CI 43307748693, then canonical merge preflight. Resolve positive braced floor reaction, shell/socket and complete supported first rest before adoption.",
-    "blocker": "No selected inlet change. Nominal floor-frame geometry clears, but the simple post misses guide stiffness and actual floor anchorage/release remain unproved."
+    "evidence": "PR #1495 merged a058efe4; exact head 80be8070 passed full CI 43307748693 and canonical preflight. Main tree and ancestry verified. Signed bracing/anchor replay is #1495 comment 6836164612.",
+    "next": "Develop the actual two-plane near and far reaction, floor anchors, joint/guide tolerances and positive release. Then complete supported lower-tail and stand first rest before adopting the inlet or replaying MRA.",
+    "blocker": "Packet remains planned. Bare post fails guide displacement; ideal two-level bracing requires actual floor/rotational evidence. Shell/socket duty and complete renewal remain open."
   },
   "pr": 1495
 }
