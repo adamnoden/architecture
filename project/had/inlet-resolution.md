@@ -390,3 +390,32 @@ proved by these changes. Pre-site geometry is not installation, pressure,
 actual physical mass/CG, material constituent or whole-house moisture
 acceptance. The present house inlet blocker remains until the owning
 selected-source overlay and receiving-gate replay are earned.
+
+### Generation 6: lower-cap eccentric cart negative control
+
+A separately runnable
+[exact lower-cap plan envelope](studies/incoming-water-lower-cap.mjs)
+now binds to the **composed** selected760 mm cylinder, its western seat
+(10195,3970), and its actual425 mm transport-cart radius. The partial
+factory-flat-face comparator has an explicitly *unselected* port point
+(10131.50,4018.71), a45 mm complete flange disc, and an eccentric
+candidate cart centre(9847,4250). It evaluates the true worst
+disc/normal-projection radius analytically; no coarse angular mesh or
+cart-square approximation earns a false pass.
+
+The recovered25 mm projection reaches radius**395.402 mm**, leaving
+**4.598 mm** inside the400 mm retained-part limit but *failing* two
+independent5 mm placement allowances by**5.402 mm**. A shorter15 mm
+unselected challenger reaches**385.503 mm**, leaving**14.497 mm**
+inside the same radius (**4.497 mm** beyond the two settings).
+A30 mm projection is a retained **rejected case** (radius400.354 mm,
+0.354 mm outside the allowable retained-part envelope).
+The exact radius45 geometric limit for outward projection is
+**29.643 mm**, before any setting or real component qualification.
+
+No 15 mm-rated flange, complete bolts/heads/gasket, temperature/pressure
+match, fitting torque, welded/bonded port or native tail capture has
+been demonstrated. Neither the exact plan clearance nor the smaller
+candidate amount to adopting the lower-tail design. The full loaded
+cylinder, stand and exposed services must still be physically supported,
+removed and landed on a proved sequence.
