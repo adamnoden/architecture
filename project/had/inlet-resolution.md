@@ -448,3 +448,28 @@ stroke. If the 25 mm remote screen is required at this local interface,
 the full admissible cap projection range fails. The next detail must
 locate the actual shell, boss and socket, and justify their local working
 clearance.
+
+### Generation 8: shorter driver and rail-end witnesses
+
+The [lower-tail comparator](studies/incoming-water-lower-tail.mjs) reuses the
+composed-house guard, native obstacle geometry and lower-cap datum. A 100 mm
+shaft and 60 mm lever serve all four bolt positions after 260 mm of trial
+rail travel. The four ±15° tool sectors include the hand and arm, with a
+0.25° step and half-step motion allowance. The minimum remote gap is
+**37.252 mm** to the west post. Maximum reach is **465.066 mm** and the
+50 mm worker arrival retains **32.5 mm** with the parked parts in place.
+
+At the local bolt, the candidate internal bit and shaft shoulder retain
+**10.238 mm** and **11.716 mm** to the modelled vessel envelope. Both meet
+the authored 4 mm combined setting and 2 mm working allowance. A full cup
+reaching behind the head has **4.747 mm** and fails that comparison. The
+actual bolt head, drive, shell and torque still require a matched detail.
+
+Two rail-end witnesses prevent a capture claim. The made tail has only
+**13.619 mm** to the initial near end plate. The shifted guide and link
+arrangement has only **10.558 mm** to the west post after 22 mm of travel.
+Both gaps use the finite declared shapes at their adverse positions. The
+shorter driver therefore earns a tool-access candidate while the reaction
+path, loaded latch, stand retirement and first rest remain open. The prior
+[native latch and support replay](https://github.com/adamnoden/architecture/pull/1492#issuecomment-6835327126)
+retains the associated torque, stiffness and mounting assumptions.
