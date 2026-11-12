@@ -61,6 +61,30 @@ def jamb_clearance(h,width,obstruction_diameter=12.,half_width=None):
                 minimumGrossCapEdgeMarginMM=cap_margin,witness=witness)
 
 
+def point_segment_gap_2d(p,a,b):
+    """Euclidean distance from a finite point to a finite plan segment."""
+    p=np.asarray(p,dtype=float);a=np.asarray(a,dtype=float);b=np.asarray(b,dtype=float)
+    d=b-a;den=float(d@d)
+    t=0. if den==0 else max(0.,min(1.,float((p-a)@d)/den))
+    return float(np.linalg.norm(p-a-t*d))
+
+
+def L_union_edge_margin(p,arm_width_mm):
+    """Exact exposed boundary of two joined 1000 mm L arms, not both rectangles.
+
+    The re-entrant seams at x=w or y=w inside the 0..w square are *not*
+    external concrete faces. Treating a rectangle edge there as cover
+    invents a false failure on widened corner comparators.
+    """
+    x,y=map(float,p);w=float(arm_width_mm)
+    assert 0<w<1000
+    inside=(0<=x<=1000 and 0<=y<=w) or (0<=x<=w and 0<=y<=1000)
+    assert inside,(p,w)
+    boundary=((0.,0.),(1000.,0.),(1000.,w),(w,w),(w,1000.),(0.,1000.))
+    return min(point_segment_gap_2d(p,boundary[i],boundary[(i+1)%6])
+               for i in range(6))
+
+
 def L_clearance(h,half_width=None,arm_width_mm=140.,stations=SIX_L_KEYS):
     """Plan-only L-arm footprint comparator; the House model is not amended.
 
@@ -90,14 +114,7 @@ def L_clearance(h,half_width=None,arm_width_mm=140.,stations=SIX_L_KEYS):
             for station in (350.,600.):
                 minimum_h12=min(minimum_h12,abs(centre[leg_axis]-station)-projected-12/2-COMBINED_SETTING)
             for corner in footprint_corners(centre,local_axis,half_long,half_width):
-                x,y=corner
-                inside=(0<=x<=1000 and 0<=y<=arm_width_mm) or (0<=x<=arm_width_mm and 0<=y<=1000)
-                assert inside,(L['corner'],centre0,corner)
-                if 0<=x<=1000 and 0<=y<=arm_width_mm:
-                    margins=[x,1000-x,y,arm_width_mm-y]
-                else:
-                    margins=[x,arm_width_mm-x,y,1000-y]
-                minimum_edge=min(minimum_edge,*margins)
+                minimum_edge=min(minimum_edge,L_union_edge_margin(corner,arm_width_mm))
     return dict(LArmWidthMM=arm_width_mm,guideCentres=[list(p) for p in stations],
                 bladeWidthMM=h.p.L_key_width,sweptPocketHalfLengthMM=half_long,
                 sweptPocketHalfWidthMM=half_width,
@@ -108,6 +125,9 @@ def L_clearance(h,half_width=None,arm_width_mm=140.,stations=SIX_L_KEYS):
 
 def controls():
     h=House(leading_parameters())
+    # Boundary negative control: the seam of the horizontal and vertical
+    # rectangles is internal union material, not a false exposed face.
+    assert abs(L_union_edge_margin((100.,100.),180.)-100.)<1e-9
     historical=jamb_clearance(h,90.,12.)
     previous50=jamb_clearance(h,50.,12.)
     selected_bar=jamb_clearance(h,h.p.cap_key_width,12.)
