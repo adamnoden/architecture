@@ -9,8 +9,8 @@
     "label": "zerg-had"
   },
   "claimedAt": "2026-11-12T20:45:13.335Z",
-  "heartbeatAt": "2026-11-12T20:51:30.437Z",
-  "expiresAt": "2026-11-12T21:36:30.437Z",
+  "heartbeatAt": "2026-11-12T21:04:30.125Z",
+  "expiresAt": "2026-11-12T21:49:30.125Z",
   "predecessor": {
     "leaseId": "05ecb6ba-28c1-40a4-a80c-61bf15302d27",
     "generation": 7,
@@ -35,8 +35,8 @@
   },
   "branch": "work/zerg-had-native-capture-20261112",
   "checkpoint": {
-    "evidence": "Durable branch exact head ada95c4f atop verified 5360dade. 74 HAD tests, deterministic inlet/replan and MRA pass. Source-bound short driver and two adverse rail-end witnesses implemented.",
-    "next": "Reconcile actual main after STR merge priority, open validation PR, require exact-head CI and fresh preflight. Then develop matched reaction path before any inlet selection.",
-    "blocker": "Open lower-tail capture and first rest. The measured evidence is comparative geometry only; one fixed guide interface still fails clearance."
+    "evidence": "Remote exact head 1945311e includes shared short driver and independent floor frame. 74 HAD tests, deterministic inlet/replan, MRA and STR 622a14e preview merge pass. Current ready branch has recoverable ancestry.",
+    "next": "After actual STR main, attach validated combined tree and open exact-head CI. Then run canonical preflight and integrate bounded result.",
+    "blocker": "Guide end trials reject prior end frame; opposite floor-frame geometry clears declared envelopes but ideal posts exceed 1 mm deflection. Reaction, positive capture and complete first rest remain unearned."
   }
 }
