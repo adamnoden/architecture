@@ -14,6 +14,10 @@ H_PATH=ROOT/'project/had/studies/water-replan.json'
 IAS_PATH=ROOT/'project/ias/studies/selected-family-convergence.json'
 EXPECTED_H_BLOB='089f0dac2f2e89272dc2ea85a10c2208f2fd797d'
 EXPECTED_IAS_BLOB='7922be5910c40198563d5bd67f4cf306ea221dbd'
+# Nominal swept clearance only. A distinct handling, installation and setting
+# tolerance envelope must still be resolved by IAS before physical release.
+MIN_SWEEP_GAP_MM=5.0
+MIN_WALL_DISENGAGEMENT_MM=25.0
 
 
 def blob(path):
@@ -93,24 +97,71 @@ def wall_rects(walls):
 
 def path_receipt(name,start,size,path,obstacles,own_wall):
     assert tuple(path[0])==tuple(start),(name,start,path[0])
+    own_parts=[r for oid,r in obstacles if oid==own_wall]
+    assert own_parts,(name,'own mounting wall absent',own_wall)
     stages=[];current=list(start)
     for index,target in enumerate(path[1:]):
         gaps=sorted((moving_rect_path_gap(current,target,size,r),oid) for oid,r in obstacles)
         end=[*target,*size]
-        own=min((rect_gap(end,r) for oid,r in obstacles if oid==own_wall),default=math.inf)
+        own=min(rect_gap(end,r) for r in own_parts)
+        assert own>=MIN_WALL_DISENGAGEMENT_MM-1e-7,(name,index+1,'wall end release',own)
+
+        # The very first motion may start touching the wall the wardrobe was
+        # mounted on. Only that precise initial contact is exempt: the rest of
+        # the sweep and every other solid must have positive finite clearance.
         if index==0:
-            assert gaps[0][0]>=-1e-9
-            assert own>=25.-1e-9,(name,'wall release',own)
-            contact='Intentional initial mounted-face contact only; endpoint earns25 mm.'
-        else:
-            assert gaps[0][0]>=-1e-9,(name,index,gaps[0])
-            assert min((g for g,oid in gaps if oid==own_wall),default=math.inf)>=25.-1e-9,(name,index,gaps)
-            contact='No contact.'
-        stages.append(dict(index=index+1,fromXY=current,toXY=target,
-                           minimumObjectGapMM=gaps[0][0],governor=gaps[0][1],
-                           ownWallEndGapMM=own,contact=contact))
+            start_rect=[*current,*size]
+            touching=[r for r in own_parts if rect_gap(start_rect,r)<1e-7]
+            assert touching,(name,'claimed initial mounting contact absent')
+            first_clear=[current[j]+.01*(target[j]-current[j]) for j in range(2)]
+            assert all(moving_rect_path_gap(first_clear,target,size,r)>1e-7
+                       for r in touching),(name,'first motion does not disengage')
+        unobstructed=[(g,oid) for g,oid in gaps
+                      if not(index==0 and oid==own_wall)]
+        assert unobstructed,(name,'no independently checked obstacles')
+        collisions=[(oid,g) for g,oid in unobstructed
+                    if g<MIN_SWEEP_GAP_MM-1e-7]
+        assert not collisions,(name,index+1,'swept-path clearance failure',collisions)
+        minimum,governor=min(unobstructed)
+        stages.append(dict(
+            index=index+1,fromXY=current,toXY=target,
+            minimumObjectGapMM=gaps[0][0],
+            minimumUnencumberedSweepGapMM=minimum,
+            sweptClearanceGovernor=governor,
+            nominalClearanceRequirementMM=MIN_SWEEP_GAP_MM,
+            nominalSweepMarginMM=minimum-MIN_SWEEP_GAP_MM,
+            governor=gaps[0][1],ownWallEndGapMM=own,
+            contact=('Initial mounting wall contact only; released during first sweep.'
+                     if index==0 else 'No contact.'),
+        ))
         current=list(target)
     return dict(name=name,startXY=list(start),sizeWH=list(size),stages=stages,parkXY=current)
+
+
+def swept_path_negative_controls():
+    """A zero-valued distance must fail, not satisfy a tautological >=0 test."""
+    mount=[100.,0.,10.,100.]
+    other=[200.,0.,10.,100.]
+    good=path_receipt('positive-control',[90.,40.],[10.,10.],
+                      [[90.,40.],[65.,40.]],
+                      [('mount',mount),('other',other)],'mount')
+    assert good['stages'][0]['ownWallEndGapMM']==25.
+    assert good['stages'][0]['minimumUnencumberedSweepGapMM']>MIN_SWEEP_GAP_MM
+    bad_cases=(
+        ('other-object-intersection',
+         [[90.,40.],[65.,40.]],
+         [('mount',mount),('obstacle',[70.,0.,10.,100.])]),
+        ('second-stage-mount-reentry',
+         [[90.,40.],[65.,40.],[150.,40.]],
+         [('mount',mount),('other',other)]),
+        ('insufficient-nominal-clearance',
+         [[90.,40.],[65.,40.]],
+         [('mount',mount),('obstacle',[80.,0.,10.,100.])]),
+    )
+    for case,way,objects in bad_cases:
+        try:path_receipt(case,[90.,40.],[10.,10.],way,objects,'mount')
+        except AssertionError:continue
+        raise AssertionError(('swept-path negative control unexpectedly passed',case))
 
 
 def assert_clear(rect,obstacles,exclude=()):
@@ -119,6 +170,7 @@ def assert_clear(rect,obstacles,exclude=()):
 
 
 def run():
+    swept_path_negative_controls()
     assert blob(H_PATH)==EXPECTED_H_BLOB,(blob(H_PATH),EXPECTED_H_BLOB)
     assert blob(IAS_PATH)==EXPECTED_IAS_BLOB,(blob(IAS_PATH),EXPECTED_IAS_BLOB)
     H=json.loads(H_PATH.read_text())['model'];IAS=json.loads(IAS_PATH.read_text())
@@ -215,6 +267,16 @@ def run():
         structuralOverlay=overlay,
         stationaryChecks=stationary,
         wardrobeWallDisengagement=[bed2,bed3],
+        wardrobeSweptProof=dict(
+            nominalMinimumGapMM=min(s['minimumUnencumberedSweepGapMM']
+                                    for path in (bed2,bed3) for s in path['stages']),
+            nominalMinimumRequiredMM=MIN_SWEEP_GAP_MM,
+            independentNegativeControls=3,
+            physicalHandlingAndTwoSidedSettingToleranceAccepted=False,
+            interpretation='Positive nominal swept separation only. The smallest '
+                           'bedroom-3 clearance leaves little tolerance and requires '
+                           'a separate IAS handling/installation qualification.',
+        ),
         rearCurrentSource=dict(
             pass_=rear['pass'],trayReturnConflicts=rear['trayReturnConflicts'],
             selectedWardrobeTurnReserveMM=rear['selectedWardrobeTurn']['minimumReserve'],
@@ -230,6 +292,7 @@ def run():
         limits=[
             'Furniture mass, handling apparatus, grip, anti-tip release and human-force qualification remain IAS/physical duties.',
             'Family-WC symmetric maintenance carrier remains IAS-owned and is not converted into an STR pass.',
+            'The bedroom-3 path passes nominal clearance but its north-wall first-stage gap is only 5.5 mm, leaving just 0.5 mm after the 5 mm screen. It does not prove two-sided setting, handling or physical release tolerances.',
             'This replay proves only geometry affected by the floor/portal correction; it does not re-adopt the HAD/IAS house sources.',
         ],
     )
