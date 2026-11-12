@@ -27,3 +27,43 @@ python3 -B project/str/studies/floor-portal-receiver-cover.py | diff - project/s
 Compare the 180 mm plan with a revised guide location or orientation at 140 mm before choosing a pier geometry. Retain real guide travel and a positive load route in either option. Build the full receiver, bar, link, coupler and bearing detail and demonstrate its cover, splitting restraint and erection tolerances. If the 180 mm pier is pursued, carry the changed body, bar locations, stiffness and mass into the ring, floor collector, feet and foundation model. Re-run the signed 579-case demand and 104 individual-head movement comparisons with all 52 head reactions, plus the strain controls. Reconcile the widened geometry against the occupied rooms, finishes, roof and court receivers, service openings and renewal paths before offering it to either final gate.
 
 The predecessor's coupled results describe its 140 mm comparison. The numerical force and movement records are recoverable at the pinned head, with its [recorded CI run](https://github.com/adamnoden/architecture/actions/runs/43263256156). They do not transfer to the widened pier. The [interface review](floor-portal-interface-review.md) and [shared contract](../triad-interface-contract.md#structural-direction-and-selection-compatibility) continue to govern the withdrawn SAP-C1 structural handoff and the receiving gates.
+
+## Outward cap and core-only bearing comparison
+
+Moving the 40 mm enlargement outward keeps the inner concrete face at q402.5 and the ordinary room finish at q429.5. The outward L origin shifts 40 mm in both plan coordinates. The 1040 mm local legs preserve the world end stations, and the guide centres move 20 mm outward across their respective legs. The [24-guide plan receipt](studies/floor-portal-receiver-cover.json) gives 29.53 mm of concrete web after settings, with 34.78 mm minimum H20 clearance and 60.20 mm minimum H12 station clearance. These are local plan screens with the retained bar positions.
+
+The cap-only comparison confines the enlarged footprint to Z6215–6515. The 140 mm pier and damp-proof course footprint continue below it. The glass zone in the enlarged cap strip changes from 110 to 70 mm before local closure and fixings. The [ordinary wall section](../mat/ordinary-eave-joined.md#connected-section-and-actual-stops) supplies those starting dimensions. The 180-to-140 concrete step uses a rigid sectional connection for demand recovery. The contact quadrature splits at the actual 40 mm projection, so the projected strip and underlying core have separate vertical reactions.
+
+The core-only alternative uses an authored **5 mm initial vertical gap** over the projected strip and retains compression contact over the old 140 mm core. All six lateral guides per pier retain their prior force law and travel reservation. The installed question is whether the roof seat can stop at the core edge, keep the projected strip clear under load and setting, and retain the radial guide, closed glass return and inspection access. The 300 mm cap depth and 5 mm gap are comparison dimensions.
+
+### Coupled comparison
+
+| Signed demand case envelope | Peak head tension, kN | Peak L-end torsion, kNm | Peak collector-end torsion, kNm | Peak absolute L-guide Cartesian component, kN |
+| --- | ---: | ---: | ---: | ---: |
+| 140 mm full-height reference | 159.45 | 2.345 | 11.951 | 28.41 |
+| 180 mm full-height outward | 156.99 | 4.304 | 12.201 | 25.88 |
+| 300 mm outward cap, shelf bearing | 159.24 | 2.690 | 11.978 | 27.40 |
+| 300 mm outward cap, 5 mm shelf gap | 159.24 | 2.695 | 11.970 | 29.24 |
+
+All four models recover equilibrium at the 52 heads. Each column has its own case witness. The full-height outward comparison retains the old 140 mm damp-proof contact as a stiffness input. Its connection across the added footprint still requires a physical transition.
+
+The touching shelf attracts **135.59 kN** of vertical compression at the southeast cap, with **18.42 kNm** about the lower-section global X axis in that same case. The core-only seat leaves the projection unloaded in all 579 signed cases and 110 movement cases. Its minimum modeled contact-point gap is **4.884 mm** under signed loading and **4.967 mm** under imposed movements. Peak core compression moves from **71.80 to 128.52 kN**, the largest individual L-anchor tension remains **8.78 kN**, and the largest absolute Cartesian component of L-guide force rises from **27.40 to 29.24 kN**. The two cap models give the same 159.24 kN peak head tension. The P10 −1 mm fixed-head movement control gives **1459.92 kN** tension with the relieved seat. This is a kinematic model demand.
+
+In the case producing 128.52 kN of core compression, southeast guide 5 carries the simultaneous force vector (−22.814, −25.887, 0) kN, a **34.505 kN resultant** in that case. The predecessor plate-root screen uses the largest Cartesian component. A diagonal guide requires the actual tangential resultant for its plate and weld checks.
+
+Develop the **core-only seat** as the next finite detail. Draw the steel bearing and its end at q262.5, the gap over q222.5–262.5, and the supported 70 mm glass return. Establish the local plate pressure and closure across the entire projection, including setting and plate deformation. Detail the outward cassette anchorage and confinement into the 140 mm core for the simultaneous actions in the [coupled receipt](studies/floor-portal-cap-replay.json). Keep the room edge and lower damp-proof geometry in the replay. STR-FLOOR-PORTAL stays open until the actual joint and dependent interfaces are resolved.
+
+### Replay
+
+The [companion patch](studies/floor-portal-cap-replay.patch) applies to the exact pinned predecessor and records the changed footprint, mass, split contact and step forces. The [runner](studies/floor-portal-cap-replay.py) checks both the predecessor and the applied patch. It uses Python with NumPy 2.3.5 and SciPy 1.17.0.
+
+```sh
+git fetch origin refs/pull/1489/head
+replay_dir=$(mktemp -d)
+git worktree add --detach "$replay_dir" 7a1b697431e9c1556f426068068b96356d3158ca
+git -C "$replay_dir" apply "$(pwd)/project/str/studies/floor-portal-cap-replay.patch"
+OPENBLAS_NUM_THREADS=1 python3 -B project/str/studies/floor-portal-cap-replay.py "$replay_dir" cap300-relief5 signed
+OPENBLAS_NUM_THREADS=1 python3 -B project/str/studies/floor-portal-cap-replay.py "$replay_dir" cap300-relief5 movement
+```
+
+Use `140` for the base, `outward180` for the full-height outward comparator and `cap300` for the cap whose projection has initial vertical contact. The signed screen retains the 579 predecessor cases. The compatibility screen retains six free-strain comparisons and 104 individual unit head movements. Both use the inherited fixed-head and frictionless-guide comparisons.

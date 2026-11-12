@@ -1,0 +1,624 @@
+{
+  "status": "unselected coupled structural comparison",
+  "sourceCommit": "7a1b697431e9c1556f426068068b96356d3158ca",
+  "replayPatchSHA256": "7a54207460b955475e356697c5236259bfe5f63e4ac42f86cdcbeff4fc8130d7",
+  "signedSourceSHA256": {
+    "floor_portal_frame.py": "78d0e990c36f6dc1b68246dbf94a86248579abc94e0c38e2b2b591d318dde2c4",
+    "floor_portal_roof.py": "6e8ce0f8a01674120141a63f527865187af9da434f9477aa5a7c06b5b8b4edf9",
+    "floor_portal_house.py": "52c60e77d1f7c07a45cd9f7a147b40b9ec1b50bb2ec4454afd1a9e560003dc63",
+    "floor_portal_loads.py": "7e395d4aa2c4e22541ba8ca6e3cbb42c2a31bd7c537e1acfd137a0ab7c25ffa5",
+    "floor_portal_domain.py": "306c91f1df466411958809341b8d456f29920e27d9f5101d22440d32a695579a"
+  },
+  "signed": {
+    "140": {
+      "cases": 579,
+      "headCount": 52,
+      "maximumBalanceResidualNAndNmm": [
+        0.00035044312244281173,
+        0.0007444148484410107,
+        1.6894846339710057e-05,
+        4.866447062930092,
+        2.272063871845603,
+        5.3517095859242545
+      ],
+      "minimumHeadReaction": {
+        "valueKN": -159.4474965041146,
+        "head": "P12",
+        "case": "zero favourable G; U; W(4, 1);court=True;goodsZ=7400"
+      },
+      "memberTorsion": {
+        "L": {
+          "maximumAbsoluteTorsionKNm": 2.3445437244908187,
+          "case": "1.35G+1.5Q; downward roof pressure; W(4, 4);court=False;goodsZ=6000",
+          "simultaneousLocalActionNAndNmm": [
+            139840.63891348772,
+            1863.7797049081037,
+            -85579.83494382759,
+            2344543.7244908186,
+            196481622.17012262,
+            23658061.90714252
+          ],
+          "atMm": [
+            11436.3172043,
+            563.6827957,
+            3920.0
+          ]
+        },
+        "collector": {
+          "maximumAbsoluteTorsionKNm": 11.950585384090953,
+          "case": "1.35G+1.5Q; downward roof pressure; W(4, 1);court=True;goodsZ=7400",
+          "simultaneousLocalActionNAndNmm": [
+            -8322.425473569616,
+            -144.41670604795218,
+            38936.176578764585,
+            11950585.384090953,
+            70662486.24582516,
+            -63650.136175870895
+          ],
+          "atMm": [
+            1262.5,
+            11667.5,
+            3545.0
+          ]
+        }
+      },
+      "maximumLGuideCartesianComponentKN": 28.412059870370417,
+      "capTransition": null
+    },
+    "outward180": {
+      "cases": 579,
+      "headCount": 52,
+      "maximumBalanceResidualNAndNmm": [
+        0.00022114150851848535,
+        0.001334948236035416,
+        5.9494270317372866e-05,
+        8.805480626644567,
+        1.4008052363060415,
+        13.267968568978404
+      ],
+      "minimumHeadReaction": {
+        "valueKN": -156.98734961103312,
+        "head": "P12",
+        "case": "zero favourable G; U; W(4, 1);court=True;goodsZ=7400"
+      },
+      "memberTorsion": {
+        "L": {
+          "maximumAbsoluteTorsionKNm": 4.303999762783756,
+          "case": "1.35G+1.5Q; downward roof pressure; W(4, 4);court=False;goodsZ=6000",
+          "simultaneousLocalActionNAndNmm": [
+            151805.37262574479,
+            1856.7763200034774,
+            -86092.03140531079,
+            4303999.7627837565,
+            207655903.77768052,
+            25490529.03579375
+          ],
+          "atMm": [
+            11452.1315789,
+            547.8684211,
+            3920.0
+          ]
+        },
+        "collector": {
+          "maximumAbsoluteTorsionKNm": 12.201121672938946,
+          "case": "1.35G+1.5Q; downward roof pressure; W(4, 1);court=True;goodsZ=7400",
+          "simultaneousLocalActionNAndNmm": [
+            -10008.360795244269,
+            105.16129311174154,
+            44104.50793364395,
+            12201121.672938947,
+            74310274.9364272,
+            -186769.1855661869
+          ],
+          "atMm": [
+            1262.5,
+            11667.5,
+            3545.0
+          ]
+        }
+      },
+      "maximumLGuideCartesianComponentKN": 25.88450724215722,
+      "capTransition": null
+    },
+    "cap300": {
+      "cases": 579,
+      "headCount": 52,
+      "maximumBalanceResidualNAndNmm": [
+        0.0007572664130748308,
+        0.0013466414420690853,
+        6.526607648993377e-05,
+        8.757864375598729,
+        5.139224648941308,
+        13.21415178836196
+      ],
+      "minimumHeadReaction": {
+        "valueKN": -159.23883369953202,
+        "head": "P12",
+        "case": "zero favourable G; U; W(4, 1);court=True;goodsZ=7400"
+      },
+      "memberTorsion": {
+        "L": {
+          "maximumAbsoluteTorsionKNm": 2.6895298860212398,
+          "case": "zero favourable G; U; W(4, 4);court=False;goodsZ=6000",
+          "simultaneousLocalActionNAndNmm": [
+            -29233.973414552165,
+            -219.33974391614902,
+            -84252.10534706165,
+            2689529.8860212397,
+            188014873.3970945,
+            -2908086.493811995
+          ],
+          "atMm": [
+            11436.3172043,
+            563.6827957,
+            3920.0
+          ]
+        },
+        "collector": {
+          "maximumAbsoluteTorsionKNm": 11.97849582500392,
+          "case": "1.35G+1.5Q; downward roof pressure; W(4, 1);court=True;goodsZ=7400",
+          "simultaneousLocalActionNAndNmm": [
+            -8099.810015334282,
+            -105.40827824920416,
+            38740.349002220566,
+            11978495.82500392,
+            70946169.54262501,
+            -76362.47424960136
+          ],
+          "atMm": [
+            1262.5,
+            11667.5,
+            3545.0
+          ]
+        }
+      },
+      "maximumLGuideCartesianComponentKN": 27.40157411307073,
+      "capTransition": {
+        "peakProjectedBearing": {
+          "case": "1.35G+1.5Q; downward roof pressure; W(4, 1);court=False;goodsZ=6000",
+          "corner": "(11667.5, 332.5)",
+          "reference": [
+            11436.3172043,
+            563.6827957,
+            6215.0
+          ],
+          "globalActionNAndNmm": [
+            0.0,
+            0.0,
+            135590.1889869971,
+            -18419342.585718054,
+            -73033.0759509299,
+            0.0
+          ]
+        },
+        "minimumProjectedGap": {
+          "case": "1.35G+1.5Q; downward roof pressure; W(5, 4);court=True;goodsZ=6000",
+          "corner": "(11667.5, 332.5)",
+          "point": [
+            11557.722139978605,
+            230.9529946162075,
+            6540.0
+          ],
+          "signedGapMM": -0.024619453536795455,
+          "bearingForceN": 45889.457959198684
+        },
+        "peakCoreBearing": {
+          "case": "1.35G+1.5Q; downward roof pressure; W(5, 1);court=True;goodsZ=7400",
+          "corner": "(332.5, 332.5)",
+          "compressionN": 71798.64682683944
+        },
+        "peakLAnchorTension": {
+          "case": "zero favourable G; U; W(4, 1);court=True;goodsZ=6000",
+          "anchor": "L-cap-anchor-(11667.5, 11667.5)-11",
+          "tensionN": 8784.367533378347
+        },
+        "stepComponentWitnesses": [
+          {
+            "case": "1.35G+1.5Q; downward roof pressure; W(1, 1);court=True;goodsZ=6000",
+            "corner": "(11667.5, 332.5)",
+            "reference": [
+              11436.3172043,
+              563.6827957,
+              6215.0
+            ],
+            "globalActionNAndNmm": [
+              -60806.10857851825,
+              -59503.2539572606,
+              122298.69363119346,
+              -24033365.462572575,
+              -1588453.93358752,
+              -2573304.5602326435
+            ]
+          },
+          {
+            "case": "1.35G+1.5Q; downward roof pressure; W(4, 1);court=True;goodsZ=6000",
+            "corner": "(11667.5, 11667.5)",
+            "reference": [
+              11436.3172043,
+              11436.3172043,
+              6215.0
+            ],
+            "globalActionNAndNmm": [
+              59934.8132544226,
+              -61164.82794395731,
+              118042.83114484716,
+              11617586.58161476,
+              -14728870.995710468,
+              -1947143.0691156203
+            ]
+          },
+          {
+            "case": "1.35G+1.5Q; downward roof pressure; W(1, 4);court=False;goodsZ=7400",
+            "corner": "(11667.5, 332.5)",
+            "reference": [
+              11436.3172043,
+              563.6827957,
+              6215.0
+            ],
+            "globalActionNAndNmm": [
+              -2272.8367944493784,
+              4516.127804195861,
+              136187.43126707157,
+              -19177966.96881774,
+              -9869062.411293453,
+              -1046657.5348157391
+            ]
+          },
+          {
+            "case": "1.35G+1.5Q; downward roof pressure; W(1, 1);court=False;goodsZ=6000",
+            "corner": "(11667.5, 332.5)",
+            "reference": [
+              11436.3172043,
+              563.6827957,
+              6215.0
+            ],
+            "globalActionNAndNmm": [
+              -60772.76530239366,
+              -59500.70982350663,
+              122475.35078938243,
+              -24042603.806462806,
+              -1508444.9467697549,
+              -2601260.6712537217
+            ]
+          },
+          {
+            "case": "1.35G+1.5Q; downward roof pressure; W(1, 1);court=False;goodsZ=6000",
+            "corner": "(332.5, 11667.5)",
+            "reference": [
+              563.6827957,
+              11436.3172043,
+              6215.0
+            ],
+            "globalActionNAndNmm": [
+              -56442.273536925524,
+              -57216.05147278399,
+              109560.828823683,
+              4953122.369867246,
+              16566260.072436512,
+              1712907.1769875567
+            ]
+          },
+          {
+            "case": "zero favourable G; U; W(4, 4);court=False;goodsZ=6000",
+            "corner": "(11667.5, 332.5)",
+            "reference": [
+              11436.3172043,
+              563.6827957,
+              6215.0
+            ],
+            "globalActionNAndNmm": [
+              59730.33164045474,
+              59420.13839983329,
+              -29233.973414563417,
+              5478953.364681891,
+              -2078191.491785377,
+              2689529.886021111
+            ]
+          }
+        ],
+        "maximumStepComponentNAndNmm": [
+          60806.10857851825,
+          61164.82794395731,
+          136187.43126707157,
+          24042603.806462806,
+          16566260.072436512,
+          2689529.886021111
+        ],
+        "maximumLocalEquilibriumResidualNAndNmm": [
+          1.9844446796923876e-07,
+          2.83143890555948e-07,
+          9.677023626863956e-08,
+          3.978610038757324e-05,
+          2.7971342206001282e-05,
+          4.545319825410843e-06
+        ]
+      }
+    },
+    "cap300-relief5": {
+      "cases": 579,
+      "headCount": 52,
+      "maximumBalanceResidualNAndNmm": [
+        0.0007572664130748308,
+        0.0012590989317686763,
+        6.526607648993377e-05,
+        8.253642676398158,
+        5.139224648941308,
+        13.21415178836196
+      ],
+      "minimumHeadReaction": {
+        "valueKN": -159.23883369953202,
+        "head": "P12",
+        "case": "zero favourable G; U; W(4, 1);court=True;goodsZ=7400"
+      },
+      "memberTorsion": {
+        "L": {
+          "maximumAbsoluteTorsionKNm": 2.6954124986851293,
+          "case": "1.35G+1.5Q; downward roof pressure; W(4, 4);court=False;goodsZ=6000",
+          "simultaneousLocalActionNAndNmm": [
+            140615.04095146307,
+            1847.8913673836414,
+            -85283.2413995387,
+            2695412.4986851295,
+            195587573.29573953,
+            23964815.056061476
+          ],
+          "atMm": [
+            11436.3172043,
+            563.6827957,
+            3920.0
+          ]
+        },
+        "collector": {
+          "maximumAbsoluteTorsionKNm": 11.969819227012444,
+          "case": "1.35G+1.5Q; downward roof pressure; W(4, 1);court=True;goodsZ=7400",
+          "simultaneousLocalActionNAndNmm": [
+            -8023.2565741252765,
+            -199.5159743204713,
+            39225.28230129638,
+            11969819.227012444,
+            71054411.9131068,
+            -49183.13496232033
+          ],
+          "atMm": [
+            1262.5,
+            11667.5,
+            3545.0
+          ]
+        }
+      },
+      "maximumLGuideCartesianComponentKN": 29.235565410139948,
+      "capTransition": {
+        "peakProjectedBearing": {
+          "case": "adverse G budgets",
+          "corner": "(332.5, 332.5)",
+          "reference": [
+            563.6827957,
+            563.6827957,
+            6215.0
+          ],
+          "globalActionNAndNmm": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "minimumProjectedGap": {
+          "case": "1.35G+1.5Q; downward roof pressure; W(4, 6);court=True;goodsZ=7400",
+          "corner": "(11667.5, 332.5)",
+          "point": [
+            10957.277860021395,
+            230.9529946162075,
+            6540.0
+          ],
+          "signedGapMM": 4.884179855295503,
+          "bearingForceN": 0.0
+        },
+        "peakCoreBearing": {
+          "case": "1.35G+1.5Q; downward roof pressure; W(4, 4);court=False;goodsZ=6000",
+          "corner": "(11667.5, 332.5)",
+          "compressionN": 128520.30876218424
+        },
+        "peakLAnchorTension": {
+          "case": "zero favourable G; U; W(4, 1);court=True;goodsZ=6000",
+          "anchor": "L-cap-anchor-(11667.5, 11667.5)-11",
+          "tensionN": 8784.367533378347
+        },
+        "stepComponentWitnesses": [
+          {
+            "case": "1.35G+1.5Q; downward roof pressure; W(1, 1);court=True;goodsZ=6000",
+            "corner": "(11667.5, 332.5)",
+            "reference": [
+              11436.3172043,
+              563.6827957,
+              6215.0
+            ],
+            "globalActionNAndNmm": [
+              -61331.39147100995,
+              -58804.75945535752,
+              120912.04789833336,
+              -21955691.98795774,
+              -1055500.4201075397,
+              -2465295.1353633935
+            ]
+          },
+          {
+            "case": "1.35G+1.5Q; downward roof pressure; W(4, 1);court=True;goodsZ=6000",
+            "corner": "(11667.5, 11667.5)",
+            "reference": [
+              11436.3172043,
+              11436.3172043,
+              6215.0
+            ],
+            "globalActionNAndNmm": [
+              59998.30600135384,
+              -61892.927155089616,
+              115159.99342147967,
+              10395824.704387365,
+              -15386529.625462145,
+              -1953740.9147079403
+            ]
+          },
+          {
+            "case": "1.35G+1.5Q; downward roof pressure; W(1, 4);court=False;goodsZ=7400",
+            "corner": "(11667.5, 332.5)",
+            "reference": [
+              11436.3172043,
+              563.6827957,
+              6215.0
+            ],
+            "globalActionNAndNmm": [
+              -2441.760941208183,
+              5349.098836552447,
+              133909.61148777918,
+              -17469418.478888646,
+              -10201855.422257937,
+              -975464.5724920244
+            ]
+          },
+          {
+            "case": "1.35G+1.5Q; downward roof pressure; W(2, 1);court=False;goodsZ=6000",
+            "corner": "(11667.5, 332.5)",
+            "reference": [
+              11436.3172043,
+              563.6827957,
+              6215.0
+            ],
+            "globalActionNAndNmm": [
+              -40434.936766302766,
+              -39777.54416733991,
+              118055.73434486549,
+              -22696943.451607615,
+              -1857970.6443335905,
+              -782300.5931202127
+            ]
+          },
+          {
+            "case": "1.35G+1.5Q; downward roof pressure; W(1, 1);court=False;goodsZ=6000",
+            "corner": "(332.5, 11667.5)",
+            "reference": [
+              563.6827957,
+              11436.3172043,
+              6215.0
+            ],
+            "globalActionNAndNmm": [
+              -56330.52211837411,
+              -57574.74893396856,
+              109333.95376424324,
+              4254720.554308486,
+              15825821.339510772,
+              1702317.1987006844
+            ]
+          },
+          {
+            "case": "1.35G+1.5Q; downward roof pressure; W(4, 4);court=False;goodsZ=6000",
+            "corner": "(11667.5, 332.5)",
+            "reference": [
+              11436.3172043,
+              563.6827957,
+              6215.0
+            ],
+            "globalActionNAndNmm": [
+              58997.70179842238,
+              61611.01483196886,
+              120445.43345146466,
+              -13849703.58990081,
+              -14044109.470110312,
+              2695412.4986856123
+            ]
+          }
+        ],
+        "maximumStepComponentNAndNmm": [
+          61331.39147100995,
+          61892.927155089616,
+          133909.61148777918,
+          22696943.451607615,
+          15825821.339510772,
+          2695412.4986856123
+        ],
+        "maximumLocalEquilibriumResidualNAndNmm": [
+          1.917942427098751e-07,
+          2.425367711111903e-07,
+          9.722134564071894e-08,
+          3.754720091819763e-05,
+          3.010593354701996e-05,
+          4.992703907191753e-06
+        ]
+      }
+    }
+  },
+  "movement": {
+    "cap300": {
+      "cases": 110,
+      "headCount": 52,
+      "maximumBalanceResidualNAndNmm": [
+        0.00020620389841496944,
+        0.0006482996977865696,
+        0.00011357876792317256,
+        4.296250137500465,
+        1.3371730080107227,
+        4.737758330018778
+      ],
+      "witnesses": {
+        "minimumHeadReactionKN": {
+          "value": -1460.0085667054057,
+          "case": "P10 -1 mm",
+          "location": "P10"
+        },
+        "maximumLGuideCartesianComponentKN": {
+          "value": 14.753803332351527,
+          "case": "superstructure net free dimensional strain-0.0003",
+          "location": "L-cap-key-(11667.5, 11667.5)-2"
+        },
+        "maximumLReleasedTravelMM": {
+          "value": 5.764240773736206,
+          "case": "roof actual axial member free strain0.00072",
+          "location": "L-cap-key-(11667.5, 11667.5)-3"
+        }
+      },
+      "minimumProjectedGap": {
+        "gapMM": -0.008445698280598254,
+        "case": "superstructure net free dimensional strain0.0003",
+        "bearingForceN": 15742.368754811992,
+        "contact": "L-cap-projected-bearing-(11667.5, 332.5)"
+      }
+    },
+    "cap300-relief5": {
+      "cases": 110,
+      "headCount": 52,
+      "maximumBalanceResidualNAndNmm": [
+        0.0001928915735334158,
+        0.0005322606884874403,
+        0.00010972329982905649,
+        3.5109835183247924,
+        1.2814811472781003,
+        4.637511874939264
+      ],
+      "witnesses": {
+        "minimumHeadReactionKN": {
+          "value": -1459.9229967677593,
+          "case": "P10 -1 mm",
+          "location": "P10"
+        },
+        "maximumLGuideCartesianComponentKN": {
+          "value": 14.754261020487844,
+          "case": "superstructure net free dimensional strain-0.0003",
+          "location": "L-cap-key-(11667.5, 11667.5)-2"
+        },
+        "maximumLReleasedTravelMM": {
+          "value": 5.758287159986922,
+          "case": "roof actual axial member free strain0.00072",
+          "location": "L-cap-key-(11667.5, 11667.5)-3"
+        }
+      },
+      "minimumProjectedGap": {
+        "gapMM": 4.966941937070968,
+        "case": "superstructure net free dimensional strain0.0003",
+        "bearingForceN": 0.0,
+        "contact": "L-cap-projected-bearing-(11667.5, 332.5)"
+      }
+    }
+  }
+}
