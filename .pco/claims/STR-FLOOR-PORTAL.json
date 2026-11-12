@@ -1,39 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 7,
-  "state": "released",
-  "leaseId": "d5aecbd6-29b8-4b12-9d51-23a4a824441d",
+  "generation": 8,
+  "state": "claimed",
+  "leaseId": "aa0f48fb-eb2c-4977-975e-3a5fd026a116",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6829754036"
+    "label": "issue-comment-6830099664"
   },
-  "claimedAt": "2026-11-12T16:41:37.000Z",
-  "heartbeatAt": "2026-11-12T16:53:49.000Z",
-  "expiresAt": "2026-11-12T16:53:49.000Z",
-  "branch": "work/mvb-chat-6829754036",
+  "claimedAt": "2026-11-12T16:55:04.000Z",
+  "heartbeatAt": "2026-11-12T16:55:04.000Z",
+  "expiresAt": "2026-11-12T17:40:04.000Z",
+  "branch": "work/mvb-chat-6830099664",
   "predecessor": {
-    "leaseId": "6e96aa05-faa6-4bca-8cc5-9fa0c8387820",
-    "generation": 6,
-    "branch": "work/mvb-chat-6819896549"
-  },
-  "recoverySource": {
-    "leaseId": "dd153ffa-ca18-4b19-b3bf-c278e09e9c58",
-    "generation": 5,
-    "branch": "work/mvb-chat-6818945453",
-    "pr": 1487,
+    "leaseId": "d5aecbd6-29b8-4b12-9d51-23a4a824441d",
+    "generation": 7,
+    "branch": "work/mvb-chat-6829754036",
+    "pr": 1489,
     "checkpoint": {
-      "evidence": "Draft PR1487 head c19b05c9: 4 collision-negative controls, nominal bed3 5.5mm clearance, unselected south-30mm candidate 25mm whole route, guide hardware updated. Exact-head CI43186611992 main load/movement, repository and friction-motion passed; final friction-domain pending.",
-      "next": "Review last friction-domain CI; continue physical guide retention, receiver/confinement and IAS placement tolerances; no construction release.",
-      "blocker": "Structural packet incomplete; bearing, anchorage, fabrication and physical handling unqualified."
+      "evidence": "PR1489 head7a1b6974: recovered exact-success CI #1487; proved 140mm L with46mm cassette only9.60mm web after settings (25mm comparator fails by15.40). New 180mm arm local plan challenger with exact L-polygon boundary yields29.62mm after settings and retained bar corridors clear.",
+      "next": "Require exact-head PR1489 CI; retain unmet coupling, reinforcement cage, foundation/52-head and occupied-room consequences. Then hand off or earn bounded closure.",
+      "blocker": "180mm L design is only an unselected plan study. No structural/roof/source adoption, fabrication, cover specification or physical qualification."
     }
   },
-  "pr": 1489,
-  "checkpoint": {
-    "evidence": "PR1489 head7a1b6974: recovered exact-success CI #1487; proved 140mm L with46mm cassette only9.60mm web after settings (25mm comparator fails by15.40). New 180mm arm local plan challenger with exact L-polygon boundary yields29.62mm after settings and retained bar corridors clear.",
-    "next": "Require exact-head PR1489 CI; retain unmet coupling, reinforcement cage, foundation/52-head and occupied-room consequences. Then hand off or earn bounded closure.",
-    "blocker": "180mm L design is only an unselected plan study. No structural/roof/source adoption, fabrication, cover specification or physical qualification."
-  },
-  "releasedAt": "2026-11-12T16:53:49.000Z",
-  "releaseReason": "handoff"
+  "recoverySource": {
+    "leaseId": "d5aecbd6-29b8-4b12-9d51-23a4a824441d",
+    "generation": 7,
+    "branch": "work/mvb-chat-6829754036",
+    "pr": 1489,
+    "checkpoint": {
+      "evidence": "PR1489 head7a1b6974: recovered exact-success CI #1487; proved 140mm L with46mm cassette only9.60mm web after settings (25mm comparator fails by15.40). New 180mm arm local plan challenger with exact L-polygon boundary yields29.62mm after settings and retained bar corridors clear.",
+      "next": "Require exact-head PR1489 CI; retain unmet coupling, reinforcement cage, foundation/52-head and occupied-room consequences. Then hand off or earn bounded closure.",
+      "blocker": "180mm L design is only an unselected plan study. No structural/roof/source adoption, fabrication, cover specification or physical qualification."
+    }
+  }
 }
