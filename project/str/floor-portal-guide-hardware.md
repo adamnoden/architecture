@@ -8,7 +8,7 @@ remain separate duties. The roof-to-RC plan connection is a **radial guided
 receiver**: it resists plan-tangential movement and deliberately permits radial roof
 breathing.
 
-The live hardware screen is `floor_portal_guide_hardware.py`. It consumes the
+The live hardware screen is `floor_portal_guide_hardware.py`; the successor `floor_portal_receiver.py` also checks bimetallic slide/cheek gross bearing and a first confinement/retention comparator, while `floor_portal_cap_stack.py` locates the real jamb splice envelope. It consumes the
 same full579-case domain receipt used by the member/section checks; hardware demand
 is therefore not copied into a second stale table.
 
@@ -17,12 +17,12 @@ is therefore not copied into a second stale table.
 - L stations: six clear positions per L, local (200,70), (475,70), (725,70)
   and their swapped-leg coordinates.
 - L tongue comparator: 70 wide x 20 thick x 60 engaged depth.
-- Jamb tongue comparator: 50 wide x 20 thick x 60 engaged depth.
+- Jamb tongue comparator: **45** wide x 20 thick x 60 engaged depth in the generation-4 successor; the 50 mm geometry and numerical domain below are retained as earlier screening evidence.
 - Released-direction receiver travel: **+/-10 mm reserved**, with2 mm running
   allowance at every pocket edge.
 - No slot-end contact, guide friction or favourable vertical load is credited.
 
-The 90 mm jamb tongue is physically rejected. With the same +/-10 mm swept pocket,
+The 90 mm jamb tongue is physically rejected. The later 45 mm comparator accommodates the actual weldable-half/coupler stack, with its own finite receiver and cover controls; the figures in this paragraph are the historical 50 mm study. With the same +/-10 mm swept pocket,
 two independent5 mm steel-setting budgets and the retained four H12 bars, it has
 -12.37 mm clearance. The 50 mm tongue has +7.63 mm. The L pockets retain
 +41.60 mm to the primary H20 cage and +68.23 mm to the conservatively treated
@@ -79,10 +79,7 @@ References are topology precedents only, not product selections:
 
 The next finite hardware layer is receiver cheek/plate bending, positive anchorage,
 concrete splitting/confinement, root weld preparation/inspection, sliding material
-and corrosion pair, dust/debris protection and replacement access. The live screen
-also reports a3% sliding-friction force comparator; that force still has to be
-replayed through the connected assembly before friction is accepted.
+and corrosion pair, dust/debris protection and replacement access. The current friction comparator is **20%** at the upper stated dry GGB-CBM range. The coupled study deliberately treats fixed-sign overdrive as an adverse bound rather than a fully solved stick-slip law. Independent material constituents/films and practical corrosion/wear remain unqualified.
 
 Only after that should the same selected hardware be admitted to the final roof-cap
-cage and occupied-room/service replay. Hardware mass and displaced concrete must
-then enter the physical ledger.
+cage and occupied-room/service replay. Receiver, tongue, sliding-plate and jamb-coupler masses and displaced concrete now enter the physical mass ledger as development comparisons, not manufactured take-offs. The corrected wardrobe swept-path replay eliminates an old tautological zero-gap pass but exposes a 5.5 mm bedroom-3 first-stage limit: IAS must still qualify the real handling and placement tolerances.
