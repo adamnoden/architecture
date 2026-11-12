@@ -4,6 +4,7 @@ import {readFileSync} from 'node:fs';
 import {finiteBends,exactSegmentBoxDistance} from './incoming-water-geometry.mjs';
 import {deriveIncomingWaterStudy,incomingWaterText} from './incoming-water.mjs';
 import {deriveCurrentHouse} from './current-house.mjs';
+import {utilityFirstRestPreflight} from './utility-first-rest-preflight.mjs';
 
 const study=deriveIncomingWaterStudy();
 test('finite bends represent a real quarter-circle and reject impossible tangent lengths',()=>{
@@ -129,4 +130,25 @@ test('controlled drains have reachable valves and distinguish sealed low pockets
   for(const d of study.station.drain.definitions){assert(d.minimumHandMM>=25);assert(d.minimumArmMM>=25);assert(d.reachMM<650);assert(d.airGapMM>=75);}
   assert.match(study.station.drain.retainedLowPockets,/kept sealed/);
   for(const d of study.utilitySuccessor.controlledDrain.drains){assert(d.clearance.every(c=>c.handMM>=25&&c.armMM>=25));assert(d.reachMM<650);}
+});
+
+test('unselected utility frame first rest closes Y1125 rack failure with finite Y1110/285 sweeps',()=>{
+  const c=utilityFirstRestPreflight();
+  assert.equal(c.status,'BOUNDED UTILITY FIRST-REST COMPARATOR; NOT SOURCE ADOPTION');
+  assert.equal(c.inputs.frameTravelNorthMM,285);
+  assert.equal(c.routes.coldSink[3][1],1110);
+  assert(c.frameStaticMinimum.gapMM>=25);
+  assert(c.framePipeMinimum.gapMM>=25);
+  assert(c.pipeRackMinimum.gapMM>=25);
+  assert.equal(c.frameStaticMinimum.obstacle,'eastWall');
+  assert(Math.abs(c.frameStaticMinimum.gapMM-25.5)<1e-7);
+  assert(c.framePipeMinimum.gapMM<30);
+  assert(c.rejectedEarlierY1125RackGapMM<15);
+  assert(c.crewBodyMinimum.gapMM>=25);
+  assert(c.crewHandArmMinimum.armGapLowerMM>=25);
+  assert(c.crewHandArmMinimum.handGapLowerMM>=25);
+  assert(c.maximumGripReachMM<650);
+  assert(c.footLanding.length===4&&c.footLanding.every(f=>f.patch>=0));
+  assert(c.pressureAt2kNFootMPa<.3);
+  assert(study.adoption.adopted===false,'No selected-house mutation from a standalone design comparator');
 });
