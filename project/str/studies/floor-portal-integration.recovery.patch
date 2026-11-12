@@ -1,0 +1,259 @@
+RECOVERY PATCH LOG — STR-FLOOR-PORTAL, 2026-11-11.
+These are the logged post-checkpoint source changes, preserved without
+claiming a fresh byte-level read of the unavailable worktree. The preceding
+corner/haunch geometry and disjoint-union changes in house.py/loads.py are
+described in the companion handoff and are NOT fully reproduced here.
+Apply only in a new owned recovery branch after inspecting current source.
+
+=== EXECUTED FIELD/CONTACT INTEGRATION ===
+
+*** Begin Patch
+*** Update File: project/str/studies/floor_portal_house.py
+@@
+     def contact(self,a,b,k,name,axis=2,sign=1.):
+         ia,ta=a;ib,tb=b
+-        self.contacts.append(dict(name=name,ids=np.r_[ia,ib],row=np.r_[ta[axis],-tb[axis]]*sign,stiffness=float(k)))
++        self.contacts.append(dict(name=name,ids=np.r_[ia,ib],row=np.r_[ta[axis],-tb[axis]]*sign,stiffness=float(k),
++                                  ports=(a,b),axis=axis,sign=sign))
+*** Update File: project/str/studies/floor_portal_loads.py
+@@
+-        self.h=house;self.name=name;self.f=np.zeros(house.f.size);self.origins=[];self.ends=defaultdict(lambda:np.zeros(12))
++        self.h=house;self.name=name;self.f=np.zeros(house.f.size);self.origins=[];self.ends=defaultdict(lambda:np.zeros(12));self.field_loads=defaultdict(list);self.native_eigen=defaultdict(lambda:np.zeros(12))
+@@
+     def beam(self,e,t,point,force,moment=(0.,0.,0.),tag=''):
+         out=self.h.f.beam_load(self.f,e,t,force,moment,point)
+         self.ends[e.get('load_key',id(e))]+=out;self.origin(tag,point,force,moment)
++        if 'load_key' in e:
++            from floor_portal_roof_fields import local_load
++            independent,load=local_load(e,t,force,moment,point)
++            assert np.max(abs(independent-out))<1e-6
++            self.field_loads[e['load_key']].append((float(t*e['L']),load))
+@@
+             for k,v in case.ends.items():out.ends[k]+=scale*v
++            for k,loads in case.field_loads.items():out.field_loads[k].extend((x,scale*load) for x,load in loads)
++            for k,v in case.native_eigen.items():out.native_eigen[k]+=scale*v
+@@
+ def import_roof_load(h,load,name,scale=1.):
++    from floor_portal_roof_fields import elements,local_load
+     case=Case(h,name);case.f[h.roof.mounted]=np.asarray(load.vector)[h.roof.keep]*scale
+-    for row in load.placed:case.origin(row['tag'],row['source'],np.array([row['FxN'],row['FyN'],-row['downN']])*scale)
++    check=np.zeros_like(case.f);rings=[e for key,e in elements(h).items() if key[0]=='native ring']
++    for row in load.placed:
++        point=np.asarray(row['source']);force=np.array([row['FxN'],row['FyN'],-row['downN']])*scale;root=tuple(row['root'])
++        case.origin(row['tag'],point,force)
++        if root in h.roof.p['nodes']:
++            ids,t=h.roof.port(root,point);np.add.at(check,ids,t.T@np.r_[force,[0.,0.,0.]])
++            continue
++        candidates=[e for e in rings if np.linalg.norm(np.cross(np.r_[root,6600.]-e['a'],e['b']-e['a']))<1e-5 and np.dot(np.r_[root,6600.]-e['a'],np.r_[root,6600.]-e['b'])<1e-5]
++        assert len(candidates)==1,(root,len(candidates));e=candidates[0]
++        t=float(np.dot(np.r_[root,6600.]-e['a'],e['b']-e['a'])/e['L']**2)
++        local,physical=local_load(e,t,force,at=point);np.add.at(check,e['ids'],e['t'].T@local)
++        case.ends[e['load_key']]+=local;case.field_loads[e['load_key']].append((t*e['L'],physical))
++    assert np.max(abs(check-case.f))<1e-5,('Native source placement/local-field mismatch',name,np.max(abs(check-case.f)))
+     case.totals();return case
+*** Update File: project/str/studies/floor_portal_movements.py
+@@
+ def roof_strain(h,strain,affine=False):
++    from floor_portal_roof_fields import elements
+@@
+-    # Equivalent eigenstrain forces are self-equilibrated at all three axes.
++    # Local mechanical forces subtract the same eigenstrain load. Without
++    # this entry, an interior-field report would falsely count free expansion
++    # as mechanical stress even though the global load vector was correct.
++    for key,e in elements(h).items():
++        if affine:
++            free=np.zeros(h.f.size);free[h.roof.mounted]=field
++            c.native_eigen[key]+=e['k']@e['t']@free[e['ids']]
++        else:
++            c.native_eigen[key][[0,6]]+=np.array([-1.,1.])*e['EA']*strain
++    # Equivalent eigenstrain forces are self-equilibrated at all three axes.
+*** Update File: project/str/studies/floor_portal_coupled.py
+@@
+ from dataclasses import asdict
++from collections import defaultdict
+@@
+-from floor_portal_frame import controls as frame_controls
++from floor_portal_frame import controls as frame_controls,offset
++from floor_portal_roof_fields import recover as roof_fields,controls as roof_field_controls,native_controls,spandrel_clearance
+@@
+-def recover(h,case,u,reaction,contact):
++def contact_actions(h,u,contact):
++    """Actual signed two-port gaps and forces, grouped only by one detail.
++
++    A group of bearing quadrature points has a resultant at its geometric
++    centroid. Each point force is recovered from its own displacement gap;
++    the moment includes its actual lever. No friction or tensile bearing is
++    added by reporting a resultant. Ordinary wall contacts remain in the
++    global equilibrium/contact controls, but do not flood the detail receipt.
++    """
++    groups=defaultdict(list)
++    for j,e in enumerate(h.contacts):
++        if e['name'].endswith('-lower-contact'):continue
++        gap=float(e['row']@u[e['ids']]);force=e['stiffness']*max(-gap,0.)
++        assert abs(force-contact['force'][j])<.03
++        positions=[]
++        for ids,t in e['ports']:
++            rigid=t@h.rigid[ids]
++            point=np.array([rigid[1,5],-rigid[0,5],rigid[0,4]])
++            assert np.max(abs(rigid-offset(point)))<1e-8
++            positions.append(point)
++        direction=np.eye(3)[e['axis']]*e['sign']
++        groups[e['name']].append((positions[0],positions[1],direction*force,gap,force))
++    result=[]
++    for name,rows in groups.items():
++        reference=np.mean([r[0] for r in rows],axis=0);force=sum((r[2] for r in rows),np.zeros(3))
++        moment=sum((np.cross(r[0]-reference,r[2]) for r in rows),np.zeros(3))
++        result.append(dict(name=name,positivePortReferenceXYZ=reference.tolist(),
++                           positivePortFx_Fy_Fz_Mx_My_Mz=np.r_[force,moment].tolist(),
++                           pointCount=len(rows),activePointCount=sum(r[4]>.03 for r in rows),
++                           signedGapRangeMM=[min(r[3] for r in rows),max(r[3] for r in rows)],
++                           maximumPointCompressionOrTieForceN=max(r[4] for r in rows)))
++    return result
++
++
++def recover(h,case,u,reaction,contact):
+@@
+     cap=[]
+     for e in h.cap_links:
+-        f=e['k']@e['t']@u[e['ids']]
+-        cap.append({'name':e['name'],'forceAndMomentAtActualPoint':f.tolist()})
++        relative=e['t']@u[e['ids']];f=e['k']@relative
++        cap.append({'name':e['name'],'forceAndMomentAtActualPoint':f.tolist(),'relativeTranslationAndRotation':relative.tolist()})
+@@
+-            'headCards':heads,'memberEndBounds':members,'jambBarrierAndFoot':foot,'capLinks':cap,
++            'headCards':heads,'memberEndBounds':members,'jambBarrierAndFoot':foot,'capLinks':cap,'detailContacts':contact_actions(h,u,contact),
++            'roofFields':roof_fields(h,case,u),'upperSpandrelGapComparison':spandrel_clearance(h,case,u),
+@@
+-    started=time.time();h=House(parameters);control={'frame':frame_controls(),'house':h.controls()}
++    started=time.time();h=House(parameters);control={'frame':frame_controls(),'house':h.controls(),'roofField':roof_field_controls(),'nativeRoofField':native_controls(h)}
+@@
+-            'sources':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in [D/'floor_portal_frame.py',D/'floor_portal_roof.py',D/'floor_portal_house.py',D/'floor_portal_loads.py',D/'current-house-grid.json',D/'current-house-head-actions.py']},
++            'sources':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in [D/'floor_portal_frame.py',D/'floor_portal_roof.py',D/'floor_portal_roof_fields.py',D/'floor_portal_house.py',D/'floor_portal_loads.py',D/'current-house-grid.json',D/'current-house-head-actions.py']},
+*** End Patch
+
+=== EXECUTED S-TRANSITION SECTION-LEVER CONTROL ===
+
+*** Begin Patch
+*** Update File: project/str/studies/floor_portal_sections.py
+@@
+-def floor_bars(kind='outer',width=160.):
++def s_offset(station,start,length,offset):
++    """Offset along two tangent circular arcs, including straight endpoints."""
++    if not offset:return 0.
++    t=float(np.clip(station-start,0.,length));r=(length**2+offset**2)/(4*abs(offset))
++    a=min(t,length-t);v=r-math.sqrt(max(0.,r*r-a*a))
++    return math.copysign(v if t<=length/2 else abs(offset)-v,offset)
++
++
++def floor_bars(kind='outer',width=160.,corner_station=None,ordinary_width=160.,corner_end=1430.):
+     height,rows=(750.,3) if kind=='outer' else (650.,2);out=[]
++    # The square250 concrete shoulder remains wide to1430, but its bars
++    # already turn back over1230..1430. A wide concrete box does not earn a
++    # fictitious wide steel lever in that transition.
++    steel_width=width
++    if kind=='outer' and corner_station is not None and width>ordinary_width:
++        steel_width-=2*s_offset(corner_station,corner_end-200.,200.,(width-ordinary_width)/2)
+@@
+-            for q in (-width/2+51,width/2-51):out.append((q,z,16.))
++            for q in (-steel_width/2+51,steel_width/2-51):out.append((q,z,16.))
+@@
+-        for q in (-width/2+49,width/2-49):out.append((q,(row-1.5)*55,12.))
++        for q in (-steel_width/2+49,steel_width/2-49):out.append((q,(row-1.5)*55,12.))
+@@
+-    return dict(blockPolygonMaximumAreaOrFirstMomentError=maximum,zeroAxialReflectionErrorNmm=symmetry,biaxial120=x,biaxial240=fine,steelOnlyTensionLimitKN=4*math.pi*12**2/4*FYD/1000)
++    assert floor_bars('outer',250.,1430.)==floor_bars('outer',160.)
++    assert floor_bars('outer',250.,1230.)==floor_bars('outer',250.)
++    for t in np.linspace(0,200,21):assert abs(s_offset(1230+t,1230,200,45)+s_offset(1430-t,1230,200,45)-45)<1e-10
++    return dict(blockPolygonMaximumAreaOrFirstMomentError=maximum,zeroAxialReflectionErrorNmm=symmetry,biaxial120=x,biaxial240=fine,steelOnlyTensionLimitKN=4*math.pi*12**2/4*FYD/1000,
++                squareCornerSteelTransition='Two tangent circular arcs R233.472222 mm;45 mm per bar plane over200 mm; exact old/new endpoints and reflection checked')
+*** Update File: project/str/studies/floor_portal_section_review.py
+@@
+-                values=np.c_[local[:,0],-local[:,5],local[:,4]];width=e['width'];height=e['depth'];family=e['name'];bars=floor_bars('outer' if height==750 else 'court',width)
++                values=np.c_[local[:,0],-local[:,5],local[:,4]];width=e['width'];height=e['depth'];family=e['name']
++                axis=int(abs(e['b'][0]-e['a'][0])<1e-6);station=min(point[axis],12000-point[axis])
++                bars=floor_bars('outer' if height==750 else 'court',width,corner_station=station)
+*** End Patch
+
+=== LATEST SHORT-KEY EDITS: PARSED ONLY, NO NUMERICAL SOLVE ===
+
+*** Begin Patch
+*** Update File: project/str/studies/floor_portal_roof.py
+@@
+-def L_cap_points():
++def L_cap_points(extra_centres=()):
+@@
+-    points.extend([(70.,70.),(900.,70.),(70.,900.)])
++    points.extend([(70.,70.),(900.,70.),(70.,900.),*extra_centres])
+@@
+-def enrich(p):
++def enrich(p,extra_L_keys=()):
+@@
+-    all_points=cap_points|L_cap_points()
++    all_points=cap_points|L_cap_points(extra_L_keys)
+@@
+-    def __init__(self,court_width=280.,court_wall=25.,caps=True):
++    def __init__(self,court_width=280.,court_wall=25.,caps=True,extra_L_keys=()):
+@@
+-        self.cap_points=enrich(self.p) if caps else set()
++        self.cap_points=enrich(self.p,extra_L_keys) if caps else set()
+*** Update File: project/str/studies/floor_portal_frame.py
+@@
+-        record = dict(name=name, ids=ids, t=t, k=k)
++        record = dict(name=name, ids=ids, t=t, k=k, ports=(a,b))
+*** Update File: project/str/studies/floor_portal_house.py
+@@
+     cap_bearing_depth:float=180.
++    cap_key_width:float=90.
++    cap_key_thickness:float=10.
++    cap_key_depth:float=60.
++    L_key_width:float=90.
++    L_key_thickness:float=10.
++    L_key_depth:float=60.
++    L_key_centres:tuple=((70.,70.),(900.,70.),(70.,900.))
++    key_profile:str='historical tip-compliance control'
+@@
+-        self.roof=Roof(self.p.court_width,self.p.court_wall)
++        self.roof=Roof(self.p.court_width,self.p.court_wall,extra_L_keys=self.p.L_key_centres)
+@@
+     def build_roof_links(self):
++        def key_terms(width,thickness,depth):
++            # Uniform pressure: resultant at h/2 and energy compliance h^3/20EI.
++            # Triangular pressure rising towards the tip: centroid2h/3 and
++            # integral (2/3-t+t^3/3)^2 dt=11/105, hence105EI/(11h^3).
++            # The old8EI/h^3 remains ONLY its named historical comparator.
++            if self.p.key_profile=='triangular depth bearing':factor,centre,area=105/11,2/3,.75
++            else:factor,centre,area=8.,.5,1.
++            steel=factor*200000*(width*thickness**3/12)/depth**3
++            concrete=33000*width*area
++            return 1/(1/steel+1/concrete)*self.p.cap_scale,depth*centre
+@@
+-            # Positive90x10 cruciform,60 deep. Distributed key force is applied
+-            # at its real centroid30 below cap bottom; no friction credited.
++            # Distributed positive cruciform; actual depth pressure centroid
++            # and its work-conjugate bending compliance are explicit.
+             for direction,span in ((inward(face),along(face)),(along(face),inward(face))):
+-                steel=8*200000*(90*10**3/12)/60**3
+-                concrete=33000*90*60/60
+-                stiffness=1/(1/steel+1/concrete)*self.p.cap_scale
++                stiffness,lever=key_terms(self.p.cap_key_width,self.p.cap_key_thickness,self.p.cap_key_depth)
+                 for x,wx in zip(gauss,weights):
+-                    pos=at+span*x*45+[0,0,-55.]
++                    pos=at+span*x*self.p.cap_key_width/2+[0,0,-25.-lever]
+@@
+-            # Three located90x10x60 cruciform keys on the retained L topology.
+-            for centre in ((70.,70.),(900.,70.),(70.,900.)):
+-                pt=L['origin']+L['sg']*np.array(centre);q=outer_root(pt);at=[*pt,6485.]
+-                k=1/(60**3/(8*200000*(90*10**3/12))+60/(33000*90*60))*self.p.cap_scale
+-                self.cap_links.append(self.f.link(self.roof.port(q,at),self.f.port(L['top'],at),[k,k,0,0,0,0],'L-cap-key-'+str(L['corner'])))
++            # Each key has its own actual ring root; changing its position
++            # splits the native ring before this relative connection is made.
++            for index,centre in enumerate(self.p.L_key_centres):
++                pt=L['origin']+L['sg']*np.array(centre);q=outer_root(pt)
++                k,lever=key_terms(self.p.L_key_width,self.p.L_key_thickness,self.p.L_key_depth);at=[*pt,6515.-lever]
++                self.cap_links.append(self.f.link(self.roof.port(q,at),self.f.port(L['top'],at),[k,k,0,0,0,0],f'L-cap-key-{L["corner"]}-{index}'))
+*** Update File: project/str/studies/floor_portal_coupled.py
+@@
+-        cap.append({'name':e['name'],'forceAndMomentAtActualPoint':f.tolist(),'relativeTranslationAndRotation':relative.tolist()})
++        ids,t=e['ports'][0];rigid=t@h.rigid[ids];point=[rigid[1,5],-rigid[0,5],rigid[0,4]]
++        cap.append({'name':e['name'],'pointXYZ':point,'forceAndMomentAtActualPoint':f.tolist(),'relativeTranslationAndRotation':relative.tolist()})
+*** End Patch
