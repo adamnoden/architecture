@@ -9,8 +9,8 @@
     "label": "zerg2-had"
   },
   "claimedAt": "2026-11-12T22:48:15.496Z",
-  "heartbeatAt": "2026-11-12T23:09:11.003Z",
-  "expiresAt": "2026-11-12T23:54:11.003Z",
+  "heartbeatAt": "2026-11-12T23:13:04.936Z",
+  "expiresAt": "2026-11-12T23:58:04.936Z",
   "branch": "work/zerg2-had-braced-release-20261112",
   "predecessor": {
     "leaseId": "ba81731e-58c6-48db-bf43-94b3a5a1d175",
@@ -33,5 +33,11 @@
       "next": "Develop the actual two-plane near and far reaction, floor anchors, joint/guide tolerances and positive release. Then complete supported lower-tail and stand first rest before adopting the inlet or replaying MRA.",
       "blocker": "Packet remains planned. Bare post fails guide displacement; ideal two-level bracing requires actual floor/rotational evidence. Shell/socket duty and complete renewal remain open."
     }
+  },
+  "pr": 1497,
+  "checkpoint": {
+    "evidence": "PR #1497 exact head 04303bfc. 75 HAD tests, deterministic inlet/replan and unchanged-house MRA pass on the staged tree.",
+    "next": "Watch exact CI and reconcile against current main. Continue positive carry-yoke takeover and whole-U retirement.",
+    "blocker": "Selected inlet remains planned. The bounded detached package has a clear staged route, with carrier keys and physical mounting proof still open."
   }
 }
