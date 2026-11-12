@@ -591,9 +591,40 @@ A separate four-key first takeover distributes the doubled 90 kg vertical
 comparison to explicit positions. The executable results keep its ideal
 pin/lug checks distinct from product, mount and latch acceptance.
 
+At 80 mm gauge the retained carrier needs **3.04 kN compression** at one
+line and **1.27 kN hold-down** at the other under the authored combined
+challenge. Both compact guide envelopes pass the nominal object sweep.
+An additive screening ratio using basic static load and the smallest
+catalogue static moment at 10 mm eccentricity gives **1.085** for the
+58 × 32 × 16 mm MGN15H and **0.475** for the 73.8 × 60 × 16 mm MGW15H.
+The wide candidate exceeds unity when the authored comparison is multiplied
+by three. The model also prices **0.050 mm** ideal guide and **0.112 mm**
+ideal backing-rail differential movement. The [UK guide tables](https://hiwin.co.uk/wp-content/uploads/2017/06/Linear-Guideways.pdf)
+and [guide stiffness tables](https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf)
+provide component inputs. Establish actual combined duty, rail anchorage
+and positive X/Y changeover. The north turn and east route leave the
+plant-intermediate beam. The inboard finished floor sits **180 mm** above
+the structural concrete.
+
+The flush MAT plate bears on gravity ledges. It has no stated uplift
+connection. An independent 40 × 25 mm head per rail line spanning
+**558 mm** from X11682 to X12240 gives **102 MPa** maximum ideal bending
+stress and **1.50 mm** differential flex. The inboard footing lies 20 mm
+behind the X11722 dry face but occupies the removable floor cover plan.
+The outer footing is at least 90 mm clear of the collector and overlaps
+the proposed scaffold board plan. The required column envelope also
+intersects the moving shoe. With 10 mm clearance over the Z0 wet crossing,
+the head and guide block alone reach **Z51**, 13 mm above the current
+capture reservation. To fit at the same datum, the head underside would
+need to reach **Z−3**, through the wet crossing. Keep the plate's gravity
+role and carry the signed restraint through separately mounted dry steel.
+The next crossing trial needs a revised capture datum and coordinated
+cover/scaffold sequence before retaining the stand across the opening.
+
 The trial dock rest sits within the required cylinder cart reservation.
 The widened rest passes the ideal gravity-moment comparison. Fit a positive
-keeper before releasing the carrier, and verify the installed restraint. Export the captured stand, clear its receiver,
+keeper before releasing the carrier, and verify the installed restraint.
+Export the captured stand, clear its receiver,
 then move the cylinder to the MAT docking endpoint. The full carrier,
 releasable positive track, supported threshold, anchored receiving frame,
 retainer activation and as-built mass and centre of gravity remain

@@ -7,6 +7,7 @@ import {exactSegmentBoxDistance} from './incoming-water-geometry.mjs';
 import {segmentBodyDistance,segmentDistance} from './service-interface-geometry.mjs';
 
 const threshold=JSON.parse(readFileSync(new URL('../../mat/studies/plant-threshold.json',import.meta.url),'utf8'));
+const floorDoors=JSON.parse(readFileSync(new URL('../../mat/studies/three-door-floor.json',import.meta.url),'utf8'));
 const add=(a,b)=>a.map((v,i)=>v+b[i]);
 const sub=(a,b)=>a.map((v,i)=>v-b[i]);
 const scale=(a,k)=>a.map(v=>v*k);
@@ -152,7 +153,7 @@ export function deriveStandRetirement(){
       const moving=movingBoxes.map(p=>({to:p.id,gap:xyBodyToBox(carriedBox(p,shift))-relativeStep}));
       moving.push(...movingSegments.filter(([id])=>id!=='captured operator handle').map(row=>carriedSegment(row,shift)).map(([id,a,b,r])=>({to:id,gap:segmentDistance(body,[body[0],body[1],2000],a,b)-300-r-relativeStep})));
       const shoulder=add(body,[0,0,1380]),grip=add(handleGrip,shift);
-        const fixedPenalty=Math.max(norm(displacement),norm(bodyDisplacement))/(2*samples);
+      const fixedPenalty=Math.max(norm(displacement),norm(bodyDisplacement))/(2*samples);
       const arm=staticBoxes.map(p=>({to:p.id,gap:Math.min(exactSegmentBoxDistance(shoulder,grip,p.box)-40,
         exactSegmentBoxDistance(grip,grip,p.box)-50)-fixedPenalty}));
       for(const [id,c] of Object.entries(nativeCylinders))arm.push({to:id,gap:Math.min(segmentBodyDistance(shoulder,grip,c.centre,c.z,c.r)-40,segmentBodyDistance(grip,grip,c.centre,c.z,c.r)-50)-fixedPenalty});
@@ -174,6 +175,98 @@ export function deriveStandRetirement(){
   const expandedSupports=stability.expandedSupportPoints.map(([x,y],i)=>({id:'expanded rolling pad '+i,box:[x-7,y-7,0,14,14,60]}));
   const failedExpandedCradle=motion(phases.slice(0,2),[],expandedSupports);
   const failedOpenLeaf=motion(phases.slice(0,1),[{id:'parked internal leaf',box:[...door.fullyOpenEastLeaf.slice(0,2),0,...door.fullyOpenEastLeaf.slice(2),3100]}]);
+  const compactTrackPads=[
+    {id:'west captive X slider and mounting',box:[10095,3824,0,58,32,38]},
+    {id:'east captive X slider and mounting',box:[10175,3824,0,58,32,38]},
+    {id:'south captive Y slider and mounting',box:[10153,3755,0,32,58,38]},
+    {id:'north captive Y slider and mounting',box:[10153,3835,0,32,58,38]},
+  ];
+  const trackPadMotion=motion(phases,[],compactTrackPads);
+  const wideTrackPads=[
+    {id:'west wide captive X slider and mounting',box:[10087,3810,0,74,60,38]},
+    {id:'east wide captive X slider and mounting',box:[10167,3810,0,74,60,38]},
+    {id:'south wide captive Y slider and mounting',box:[10139,3747,0,60,74,38]},
+    {id:'north wide captive Y slider and mounting',box:[10139,3827,0,60,74,38]},
+  ];
+  const wideTrackPadMotion=motion(phases,[],wideTrackPads);
+  const receivingFloorGrid=JSON.parse(readFileSync(new URL('../../str/studies/current-house-grid.json',import.meta.url),'utf8'));
+  const receivingBeam=receivingFloorGrid.crossBeams['plant-intermediate'];
+  const supportLoads=stability.restrainedCarrierTrial;
+  const plateGauge=supportLoads.keySpacingMM,minimumRailHolesPitch=40,assumedMaximumUnsupportedRailSpan=80;
+  const guideRating={article:'HIWIN MGN15H',overall:[58,32,16],basicStaticN:9110,minimumStaticMomentNm:40.4};
+  const combinedOpposedLoadN=supportLoads.minimumOpposedTieForceN+supportLoads.verticalChallengeN/2;
+  const mountEccentricityMM=10;
+  const staticRatingUsage=combinedOpposedLoadN/guideRating.basicStaticN+
+    combinedOpposedLoadN*mountEccentricityMM/(1000*guideRating.minimumStaticMomentNm);
+  const railSection=[20,12],railI=railSection[0]*railSection[1]**3/12;
+  const railElasticPairMM=2*combinedOpposedLoadN*assumedMaximumUnsupportedRailSpan**3/(48*200000*railI);
+  const wideGuideRating={article:'HIWIN MGW15H',overall:[73.8,60,16],basicStaticN:13380,
+    minimumStaticMomentNm:122.6,radialZ0_NperMicrometre:122};
+  const wideStaticRatingUsage=combinedOpposedLoadN/wideGuideRating.basicStaticN+
+    combinedOpposedLoadN*mountEccentricityMM/(1000*wideGuideRating.minimumStaticMomentNm);
+  const wideRadialPairDisplacementMM=2*combinedOpposedLoadN/wideGuideRating.radialZ0_NperMicrometre/1000;
+  const plainTopPlateThickness=dock.section.plateThickness;
+  const thresholdSpanMM=dock.section.span,stripWidthMM=40;
+  const oneRailCompressionStressMPa=combinedOpposedLoadN*thresholdSpanMM/
+    (4*(stripWidthMM*plainTopPlateThickness**2/6));
+  const opposingHoldDownN=supportLoads.minimumOpposedTieForceN-supportLoads.verticalChallengeN/2;
+  const opposedMomentAtFullTrackGaugeNm=supportLoads.minimumOpposedTieForceN*plateGauge/1000;
+  const [,outerBearing]=dock.section.bearingX;
+  const [innerBeamWest,innerBeamEast]=dock.section.outerBeamX;
+  const panHeelX=floorDoors.eastOccupation.proposedPanDryHeelX;
+  const dryFaceX=panHeelX-45,dryInnerX=dryFaceX-40,dryOuterX=outerBearing[1]+90;
+  const dryBridgeSpanMM=dryOuterX-dryInnerX;
+  const dryBeamB=40,dryBeamH=25,dryBeamI=dryBeamB*dryBeamH**3/12;
+  const dryBridgeHeadStressMPa=combinedOpposedLoadN*dryBridgeSpanMM/(4*(dryBeamB*dryBeamH**2/6));
+  const dryBridgeElasticPairMM=(combinedOpposedLoadN+opposingHoldDownN)*dryBridgeSpanMM**3/(48*200000*dryBeamI);
+  const wetTop=dock.section.serviceTop,dryBridgeBottom=10;
+  const bridgeYs=[4500-plateGauge/2,4500+plateGauge/2];
+  const bridgeFootHalfWidth=20;
+  const bridgeSupportBoxes=[dryInnerX,dryOuterX].flatMap(x=>bridgeYs.map(y=>({
+    id:'independent dry threshold column',box:[x-bridgeFootHalfWidth,y-bridgeFootHalfWidth,0,
+      bridgeFootHalfWidth*2,bridgeFootHalfWidth*2,dryBridgeBottom],
+  })));
+  const fixedBridgeMotion=motion(phases.slice(-1),bridgeSupportBoxes);
+  const bottomRailAboveFinishedFloorMM=dryBridgeBottom+dryBeamH;
+  const movingCaptureBaselineMM=38;
+  const minimumRailBlockStackMM=bottomRailAboveFinishedFloorMM+wideGuideRating.overall[2];
+  const maximumBridgeBottomAtCurrentDatumMM=movingCaptureBaselineMM-dryBeamH-wideGuideRating.overall[2];
+  const [[scaffoldWest,scaffoldEast],[scaffoldSouth,scaffoldNorth]]=dock.dock.scaffoldBoardPlan;
+  const footprintIntersects=(x,west,east,south,north)=>x+bridgeFootHalfWidth>west&&
+    x-bridgeFootHalfWidth<east&&bridgeYs.some(y=>y+bridgeFootHalfWidth>south&&y-bridgeFootHalfWidth<north);
+  const outerSupportIntersectsScaffoldPlan=footprintIntersects(dryOuterX,scaffoldWest,scaffoldEast,scaffoldSouth,scaffoldNorth);
+  const [coverX,coverY,coverWidth,coverDepth]=floorDoors.eastOccupation.recessedCover;
+  const innerSupportIntersectsCoverPlan=footprintIntersects(dryInnerX,coverX,coverX+coverWidth,coverY,coverY+coverDepth);
+  const thresholdDockConnection={
+    existingFlushPlate:'Gravity-bearing shelf comparison. No positive uplift or horizontal key inferred.',
+    authoredRetainerGaugeMM:plateGauge,oneRailCompressionStressMPa,opposingHoldDownN,opposedMomentAtFullTrackGaugeNm,
+    independentDryBridge:{
+      dryInnerX,dryOuterX,dryBridgeSpanMM,sectionMM:[dryBeamB,dryBeamH],panHeelX,dryFaceX,
+      dryInnerInsetMM:Math.min(dryInnerX-innerBeamWest,innerBeamEast-dryInnerX),
+      innerFootToDryFaceMM:dryFaceX-dryInnerX-bridgeFootHalfWidth,
+      outerFootBeyondCollectorMM:dryOuterX-bridgeFootHalfWidth-dock.section.collectorX[1],
+      wetTopToBridgeBottomMM:dryBridgeBottom-wetTop,dryBridgeHeadStressMPa,dryBridgeElasticPairMM,
+      fixedBridgeMotion,minimumRailBlockStackMM,movingCaptureBaselineMM,maximumBridgeBottomAtCurrentDatumMM,
+      innerSupportIntersectsCoverPlan,outerSupportIntersectsScaffoldPlan,
+      resolution:'A revised positive bridge needs a compatible capture height, an independent dry mounting path, retained positive handovers and a clear scaffold and crew sequence.',
+    },
+    hold:'Bridge both rails through a removable positive section to the inner and independent outer dock supports. Resolve signed transfer and locked crossings without loading the collector, finish or weather joint.',
+  };
+  const railBeds={
+    xEntry:[[10080,3840],[10645,3840]],
+    yNorth:[[10545,3825],[10545,4530]],
+    eastExport:[[10535,4500],[12885,4500]],
+    rcTopZ:receivingBeam.z[1],levelsAboveRCMM:-receivingBeam.z[1],
+    railSupportPitchMM:minimumRailHolesPitch,maximumUnsupportedSpanMM:assumedMaximumUnsupportedRailSpan,
+  };
+  const railBedsRequiringSlab=Object.entries(railBeds).filter(([,v])=>Array.isArray(v)).map(([id,points])=>({
+    id,points,pointsBeyondBeam:points.filter(([x,y])=>x<receivingBeam.a[0]||x>receivingBeam.b[0]||
+      Math.abs(y-receivingBeam.a[1])>receivingBeam.width/2),
+  }));
+  const restraint={compactTrackPads,trackPadMotion,wideTrackPads,wideTrackPadMotion,guideRating,wideGuideRating,wideStaticRatingUsage,wideRadialPairDisplacementMM,combinedOpposedLoadN,mountEccentricityMM,
+    linearStaticRatingComparison:staticRatingUsage,railSection,railElasticPairMM,railBedsRequiringSlab,
+    plainTopPlateThickness,plateGauge,thresholdDockConnection,materialReferences:['https://hiwin.co.uk/wp-content/uploads/2017/06/Linear-Guideways.pdf','https://www.hiwin.com/wp-content/uploads/Linear_Guideway-E.pdf'],
+    qualification:'Linear static rating comparison is a screen, not manufacturer approval or a combined-duty capacity. Orthogonal tracks require positively parked overlap/changeover and retained pitch/roll through each corner.'};
   const thresholdSlice={
     y:[minY,maxY],highestZ:2163+60,openingY:[ys,yn],openingHeight:dock.opening.height,
     servicePlateY:dock.section.servicePlateWidthY,
@@ -191,7 +284,7 @@ export function deriveStandRetirement(){
   const cartTarget=dock.cargo.find(c=>c.item==='Cylinder');
   const cartConflict=Math.hypot(Math.max(firstRestFootprint[0]-cartTarget.requiredCentreX,cartTarget.requiredCentreX-firstRestFootprint[0]-firstRestFootprint[2],0),
    Math.max(firstRestFootprint[1]-cartTarget.centreY,cartTarget.centreY-firstRestFootprint[1]-firstRestFootprint[3],0))-house.architecturalServices.plant.cylinder.cartRadius;
-  return {status:'DEVELOPMENT_NOT_ADOPTED',motion:mainMotion,body:bodyResults,stability,thresholdSlice,
+  return {status:'DEVELOPMENT_NOT_ADOPTED',motion:mainMotion,restraint,body:bodyResults,stability,thresholdSlice,
     adverse:{shortLift:failedShortLift,expandedCradle:failedExpandedCradle,openLeaf:failedOpenLeaf},
     landing:{firstRestFootprint,terminalPlan,footprintSupports,landedCG,firstRestMarginMM,firstRestMomentReserveNm,firstRestIdealGravityScreenPasses,positiveKeeperRequired:true,cartConflictMM:cartConflict,requiresStandRemovedBeforeCylinder:true},
     holding:['Independent positive first lift, anchor-key release, guide/drive capture, mounting and full bearing are unqualified.',
