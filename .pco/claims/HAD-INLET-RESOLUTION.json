@@ -9,8 +9,8 @@
     "label": "zerg-had"
   },
   "claimedAt": "2026-11-12T20:06:52.571Z",
-  "heartbeatAt": "2026-11-12T20:27:15.003Z",
-  "expiresAt": "2026-11-12T21:12:15.003Z",
+  "heartbeatAt": "2026-11-12T20:43:02.048Z",
+  "expiresAt": "2026-11-12T21:28:02.048Z",
   "predecessor": {
     "leaseId": "238313fa-9157-474c-ba20-3834e638ce3d",
     "generation": 6,
@@ -36,8 +36,8 @@
   "branch": "work/zerg-had-inlet-20261112",
   "pr": 1492,
   "checkpoint": {
-    "evidence": "Draft #1492 exact head ae8192db on actual main bb43c3d2. Current HAD/MRA checks pass locally. Lower-cap setting limit and lower-tail driver adverse cases retained. Exact trial script in #1492 comment 6834996401.",
-    "next": "Verify exact-head CI 43300333092 then run canonical expected-head preflight and integrate bounded evidence. Develop matched native short-driver shell/socket, positive capture and complete lower-tail/stand first rest before selected-house and MRA replay.",
-    "blocker": "No inlet adopted. CI pending; local shell clearance and actual positive capture/receiving remain separate open design duties."
+    "evidence": "PR #1492 merged 5360dade; exact head ae8192db passed CI 43300333092 and preflight. Merged tree verified on main. Reproducible next-trial evidence is in #1492 comments 6834996401 and 6835327126.",
+    "next": "Promote source-bound short-driver and rail-interface controls; resolve matched native shell/socket and independent positive reaction/capture before supported tail and stand first rest, then selected-house and MRA replay.",
+    "blocker": "Planned packet. Exact source route remains unresolved; simple end-supported rail family fails post or end clearance and installed anchorage remains unqualified."
   }
 }
