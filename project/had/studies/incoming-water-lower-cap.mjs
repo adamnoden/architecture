@@ -89,8 +89,7 @@ function lowerCapDriverParking(projectionMM){
   };
 }
 
-export function lowerCapComparator(){
-  const H=deriveCurrentHouse().model;
+export function lowerCapComparator(H=deriveCurrentHouse().model){
   const cylinder=H.architecturalServices.plant.cylinder;
   assert.deepEqual(cylinder.centre,[9830,4250]);
   assert.deepEqual(cylinder.body,[9450,3870,760,760]);
@@ -119,6 +118,7 @@ export function lowerCapComparator(){
     proposedEccentricCartCentreXY:cartCentreXY,
     maximumRetainedPartRadiusMM,cartOverallRadiusMM,
     planDiscRadiusMM:lowerPortEnvelopeRadiusMM,
+    boltPattern:{tangentOffsetMM:boltTangentMM,heightOffsetMM:boltHeightMM},
     steelSettingEachMM,
     originalRecoveredProjection:recovered25,
     thinnerUnselectedComparison:reduced15,

@@ -8,6 +8,7 @@ import {utilityFirstRestPreflight} from './utility-first-rest-preflight.mjs';
 import {deriveBridgeNative} from './incoming-water-bridge-native.mjs';
 import {bridgeNativeMotionResult} from './incoming-water-bridge-native-motion.mjs';
 import {lowerCapComparator,lowerCapPlanEnvelope} from './incoming-water-lower-cap.mjs';
+import {deriveLowerTailComparison} from './incoming-water-lower-tail.mjs';
 
 const study=deriveIncomingWaterStudy();
 test('finite bends represent a real quarter-circle and reject impossible tangent lengths',()=>{
@@ -217,5 +218,32 @@ test('lower cylinder cap tests exact eccentric cart envelope without adopting a 
   assert(r.localCylinderEnvelope.cartSettingLimitShaftGapMM<25);
   assert.throws(()=>lowerCapPlanEnvelope(-1));
   assert.throws(()=>lowerCapPlanEnvelope(Infinity));
+  assert.equal(study.adoption.adopted,false);
+});
+
+test('short lower-cap driver clears four parked bolt approaches and retains adverse rail-end witnesses',()=>{
+  const r=deriveLowerTailComparison();
+  assert.equal(r.status,'DEVELOPMENT_NOT_ADOPTED');
+  assert.equal(r.shorterDriver.travelMM,260);
+  assert.equal(r.shorterDriver.bolts.length,4);
+  assert(r.shorterDriver.bolts.every(b=>b.minimum.gapMM>r.requiredRemoteMM&&b.reachMM<470));
+  assert.equal(r.shorterDriver.minimum.id,'westPost');
+  assert(Math.abs(r.shorterDriver.minimum.gapMM-37.25181454)<1e-6);
+  assert.equal(r.shorterDriver.bodyArrival.gapMM,32.5);
+  assert(r.localBolt.rejectedCupGapMM<r.localBolt.combinedSettingAndWorkingGapMM);
+  assert(r.localBolt.internalBitGapMM>r.localBolt.combinedSettingAndWorkingGapMM);
+  assert(r.localBolt.shaftShoulderGapMM>r.localBolt.combinedSettingAndWorkingGapMM);
+  assert(Math.abs(r.railEndFailures.madeTailToNearPlateMM-13.61888207)<1e-6);
+  assert(Math.abs(r.railEndFailures.shiftedLinkToWestPostMM-10.55838423)<1e-6);
+  assert.equal(r.railEndFailures.shiftedStrokeMM,22);
+  const floor=r.independentFloorFrame;
+  assert.equal(floor.driver.arrivalMM,0);
+  assert(floor.driver.bolts.every(b=>b.minimum.gapMM>r.requiredRemoteMM&&b.reachMM<500));
+  assert(floor.driver.bodyArrival.gapMM>r.requiredRemoteMM);
+  assert(floor.staticMinimum.gapMM>30);
+  assert(floor.movingTail.gapMM>44);
+  assert(floor.movingLink.gapMM>28);
+  assert(floor.carriage.gapMM>10);
+  assert(floor.supportComparison.cantilever.every(c=>c.deflectionMM>floor.supportComparison.installedGuideBudgetMM));
   assert.equal(study.adoption.adopted,false);
 });

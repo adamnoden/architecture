@@ -448,3 +448,43 @@ stroke. If the 25 mm remote screen is required at this local interface,
 the full admissible cap projection range fails. The next detail must
 locate the actual shell, boss and socket, and justify their local working
 clearance.
+
+### Generation 8: shorter driver and rail-end witnesses
+
+The [lower-tail comparator](studies/incoming-water-lower-tail.mjs) reuses the
+composed-house guard, native obstacle geometry and lower-cap datum. A 100 mm
+shaft and 60 mm lever serve all four bolt positions after 260 mm of trial
+rail travel. The four ±15° tool sectors include the hand and arm, with a
+0.25° step and half-step motion allowance. The minimum remote gap is
+**37.252 mm** to the west post. Maximum reach is **465.066 mm** and the
+50 mm worker arrival retains **32.5 mm** with the parked parts in place.
+
+At the local bolt, the candidate internal bit and shaft shoulder retain
+**10.238 mm** and **11.716 mm** to the modelled vessel envelope. Both meet
+the authored 4 mm combined setting and 2 mm working allowance. A full cup
+reaching behind the head has **4.747 mm** and fails that comparison. The
+actual bolt head, drive, shell and torque still require a matched detail.
+
+Two rail-end witnesses prevent a capture claim. The made tail has only
+**13.619 mm** to the initial near end plate. The shifted guide and link
+arrangement has only **10.558 mm** to the west post after 22 mm of travel.
+Both gaps use the finite declared shapes at their adverse positions. The
+shorter driver therefore earns a tool-access candidate while the reaction
+path, loaded latch, stand retirement and first rest remain open. The prior
+[native latch and support replay](https://github.com/adamnoden/architecture/pull/1492#issuecomment-6835327126)
+retains the associated torque, stiffness and mounting assumptions.
+
+An independent temporary floor frame puts the rails on the opposite side of
+the tail at local **t+68 mm**. With the near guide end at **n55 mm**, the
+260 mm trial gives **44.009 mm** from the moving tail to the frame and
+**29.000 mm** from the moving links. The closed carriage retains **10.031 mm**
+at its near end. At the existing work point the body retains **28.160 mm**
+and the four tool sectors retain at least **31.253 mm**. This case checks the
+work point and still needs a complete arrival and departure comparison.
+
+The bare-post reaction trial fails independently of those geometric results.
+Even an ideal solid 20 × 30 mm near post under the separate 265 N lower and
+165 N upper horizontal comparisons deflects **5.522 mm** and **7.862 mm**.
+Each exceeds the **1 mm** guide budget before connections or mounting. The
+independent frame needs a different load path with bracing, floor anchorage
+and a positive release detail before a supported renewal can be considered.

@@ -11,7 +11,7 @@ import assert from 'node:assert/strict';
 import {fileURLToPath} from 'node:url';
 const mix=(a,b,t)=>a.map((v,i)=>v+t*(b[i]-v));
 const distance=(a,b)=>Math.hypot(...a.map((v,i)=>v-b[i]));
-const boxGap=(a,b)=>Math.hypot(...[0,1,2].map(i=>Math.max(a[i]-b[i]-b[i+3],b[i]-a[i]-a[i+3],0)));
+export const boxGap=(a,b)=>Math.hypot(...[0,1,2].map(i=>Math.max(a[i]-b[i]-b[i+3],b[i]-a[i]-a[i+3],0)));
 const min=rows=>rows.reduce((a,b)=>a.value<b.value?a:b,{value:Infinity});
 const boxes={
  openPlantLeaf:[9397,3534,0,762,44,3100],
@@ -27,11 +27,41 @@ const boxes={
 };
 const cylinders={cylinder:{centre:[9830,4250],z:[0,1650],r:380},heat:{centre:[11225,3900],z:[100,2945],r:84},buffer:{centre:[10450,5325],z:[0,1975],r:300}};
 const braceAxes=[['westBrace',[9850,3700,20],[10140,3840,2044]],['southBrace',[10150,3645,20],[10140,3840,2044]]];
-const segmentGaps=(a,b,r,omit=[])=>[
+export const segmentGaps=(a,b,r,omit=[])=>[
  ...Object.entries(boxes).filter(([id])=>!omit.includes(id)&&!['westBrace','southBrace'].includes(id)).map(([id,q])=>({id,value:segmentBoxDistance(a,b,q)-r})),
  ...Object.entries(cylinders).map(([id,q])=>({id,value:segmentBodyDistance(a,b,q.centre,q.z,q.r)-r})),
  ...braceAxes.map(([id,c,d])=>({id,value:segmentDistance(a,b,c,d)-Math.hypot(20,20)-r}))
 ];
+
+export function uprightBodyGaps(centre, height, radius){
+ const point=[...centre,0];
+ return [
+  ...Object.entries(boxes).filter(([id,q])=>!['westBrace','southBrace'].includes(id)&&q[2]<height&&q[2]+q[5]>0)
+   .map(([id,q])=>({id,value:segmentBoxDistance(point,point,[q[0],q[1],0,q[3],q[4],1])-radius})),
+  ...Object.entries(cylinders).filter(([,q])=>q.z[0]<height&&q.z[1]>0)
+   .map(([id,q])=>({id,value:Math.hypot(q.centre[0]-centre[0],q.centre[1]-centre[1])-q.r-radius})),
+  ...braceAxes.map(([id,a,b])=>({id,value:segmentDistance(point,point,[a[0],a[1],0],[b[0],b[1],0])-Math.hypot(20,20)-radius})),
+ ];
+}
+
+export function nativeBoxGaps(box,world,local){
+ const corners=[0,box[3]].flatMap(dx=>[0,box[4]].map(dy=>world(box[0]+dx,box[1]+dy,box[2])));
+ const lo=[Math.min(...corners.map(p=>p[0])),Math.min(...corners.map(p=>p[1])),box[2]];
+ const hi=[Math.max(...corners.map(p=>p[0])),Math.max(...corners.map(p=>p[1])),box[2]+box[5]];
+ const planBox=[box[0],box[1],0,box[3],box[4],1];
+ const envelope=[...lo,...hi.map((v,i)=>v-lo[i])];
+ return [
+  ...Object.entries(boxes).filter(([id])=>!['westBrace','southBrace'].includes(id))
+   .map(([id,q])=>({id,value:boxGap(envelope,q)})),
+  ...Object.entries(cylinders).map(([id,q])=>{
+   const [x,y]=local([...q.centre,0]);
+   const planGap=Math.max(segmentBoxDistance([x,y,0],[x,y,0],planBox)-q.r,0);
+   const heightGap=Math.max(q.z[0]-hi[2],lo[2]-q.z[1],0);
+   return {id,value:Math.hypot(planGap,heightGap)};
+  }),
+  ...braceAxes.map(([id,a,b])=>({id,value:segmentBoxDistance(local(a),local(b),box)-Math.hypot(20,20)})),
+ ];
+}
 const workers={west:{body:[10545,3750],x:10195,sector:[-55,5],counterAngle:40},east:{body:[11215,4337],x:11075,sector:[55,115],counterAngle:140}};
 const deg=Math.PI/180;
 function toolFiniteGap(a,b,q){
@@ -392,18 +422,21 @@ export function receiverNative(){
   frameChange:'The1000x400 frame is110mm east of the earlier comparator; finalR425 cylinder cart has35mm to its west edge. Two handle grips extend2mm west of the frame at their native stations and are separately enumerated; actual cart and crew checks must include them.'};
 }
 
-export function deriveBridgeNative(){
+export function assertBridgeNativeHouse(H){
  // The recovered private calculation used authored 2026-11-11 dimensions.
  // Fail closed if its main-house geometry is no longer the same.
  // water-replan.json is an upstream historical geometry used to compose
  // the house; its raw 595 mm cylinder is not the selected inhabited service.
  // Bind the guard to the *composed* current selected house, not that input.
- const H=deriveCurrentHouse().model;
  assert.deepEqual(H.architecturalServices.plant.cylinder.body,[9450,3870,760,760]);
  assert.deepEqual(H.architecturalServices.plant.cylinder.centre,[9830,4250]);
  assert.deepEqual(H.architecturalServices.plant.cylinder.westSeat,[10195,3970]);
  assert.deepEqual(H.plantReferenceDoor.fullyOpenEastLeaf,[9397,3534,762,44]);
  assert.equal(H.shell-H.envelope,11570.5);
+}
+
+export function deriveBridgeNative(){
+ assertBridgeNativeHouse(deriveCurrentHouse().model);
  controlRows=[];controls();
  return {status:'DEVELOPMENT_NOT_ADOPTED',units:'mm, N, kg',requiredRemoteClearance:25,bodyRadius:300,handRadius:50,armRadius:40,
   toolChecks:toolChecks(),nativeCarrier:nativeCarrier(),controlChecks:controlRows,positiveCapture:positiveCapture(),receiver:receiverNative(),
