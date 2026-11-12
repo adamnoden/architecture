@@ -144,7 +144,7 @@ test('unselected utility frame first rest closes Y1125 rack failure with finite 
   assert(Math.abs(c.frameStaticMinimum.gapMM-25.5)<1e-7);
   assert(c.framePipeMinimum.gapMM<30);
   assert(c.rejectedEarlierY1125RackGapMM<15);
-  assert(c.crewBodyMinimum.gapMM>=25);
+  assert(c.crewBodyMinimum.gapMM>=25-1e-6); // exact segment/AABB solver subtracts a numerical 1e-8 mm
   assert(c.crewHandArmMinimum.armGapLowerMM>=25);
   assert(c.crewHandArmMinimum.handGapLowerMM>=25);
   assert(c.maximumGripReachMM<650);
