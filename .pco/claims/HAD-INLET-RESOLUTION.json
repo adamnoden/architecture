@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 9,
-  "state": "released",
-  "leaseId": "45785a05-071e-4b4c-aca4-36e7243d9805",
+  "generation": 10,
+  "state": "claimed",
+  "leaseId": "455ec204-459b-4640-871f-b5a832615093",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg2-had"
   },
-  "claimedAt": "2026-11-12T22:48:15.496Z",
-  "heartbeatAt": "2026-11-12T23:30:22.071Z",
-  "expiresAt": "2026-11-12T23:30:22.071Z",
-  "branch": "work/zerg2-had-braced-release-20261112",
+  "claimedAt": "2026-11-12T23:31:09.148Z",
+  "heartbeatAt": "2026-11-12T23:31:09.148Z",
+  "expiresAt": "2026-11-13T00:16:09.148Z",
+  "branch": "work/zerg2-had-stand-retirement-20261112",
   "predecessor": {
-    "leaseId": "ba81731e-58c6-48db-bf43-94b3a5a1d175",
-    "generation": 8,
-    "branch": "work/zerg-had-native-capture-20261112",
-    "pr": 1495,
+    "leaseId": "45785a05-071e-4b4c-aca4-36e7243d9805",
+    "generation": 9,
+    "branch": "work/zerg2-had-braced-release-20261112",
+    "pr": 1497,
     "checkpoint": {
-      "evidence": "PR #1495 merged a058efe4; exact head 80be8070 passed full CI 43307748693 and canonical preflight. Main tree and ancestry verified. Signed bracing/anchor replay is #1495 comment 6836164612.",
-      "next": "Develop the actual two-plane near and far reaction, floor anchors, joint/guide tolerances and positive release. Then complete supported lower-tail and stand first rest before adopting the inlet or replaying MRA.",
-      "blocker": "Packet remains planned. Bare post fails guide displacement; ideal two-level bracing requires actual floor/rotational evidence. Shell/socket duty and complete renewal remain open."
+      "evidence": "PR #1497 merged 20d35befc; exact head 04303bfc passed CI 43326921784 and canonical preflight. Main ancestry verified.",
+      "next": "Detail positive lower-tail yoke and guide withdrawal, then finish captured stand retirement and actual whole-U export before X12580 cylinder docking.",
+      "blocker": "Packet remains planned. Source-bound beam-anchor loads and detached handling candidate are verified. Positive capture, beam mounting, independent whole-U transport and loaded stand release remain open."
     }
   },
   "recoverySource": {
-    "leaseId": "ba81731e-58c6-48db-bf43-94b3a5a1d175",
-    "generation": 8,
-    "branch": "work/zerg-had-native-capture-20261112",
-    "pr": 1495,
+    "leaseId": "45785a05-071e-4b4c-aca4-36e7243d9805",
+    "generation": 9,
+    "branch": "work/zerg2-had-braced-release-20261112",
+    "pr": 1497,
     "checkpoint": {
-      "evidence": "PR #1495 merged a058efe4; exact head 80be8070 passed full CI 43307748693 and canonical preflight. Main tree and ancestry verified. Signed bracing/anchor replay is #1495 comment 6836164612.",
-      "next": "Develop the actual two-plane near and far reaction, floor anchors, joint/guide tolerances and positive release. Then complete supported lower-tail and stand first rest before adopting the inlet or replaying MRA.",
-      "blocker": "Packet remains planned. Bare post fails guide displacement; ideal two-level bracing requires actual floor/rotational evidence. Shell/socket duty and complete renewal remain open."
+      "evidence": "PR #1497 merged 20d35befc; exact head 04303bfc passed CI 43326921784 and canonical preflight. Main ancestry verified.",
+      "next": "Detail positive lower-tail yoke and guide withdrawal, then finish captured stand retirement and actual whole-U export before X12580 cylinder docking.",
+      "blocker": "Packet remains planned. Source-bound beam-anchor loads and detached handling candidate are verified. Positive capture, beam mounting, independent whole-U transport and loaded stand release remain open."
     }
-  },
-  "pr": 1497,
-  "checkpoint": {
-    "evidence": "PR #1497 merged 20d35befc; exact head 04303bfc passed CI 43326921784 and canonical preflight. Main ancestry verified.",
-    "next": "Detail positive lower-tail yoke and guide withdrawal, then finish captured stand retirement and actual whole-U export before X12580 cylinder docking.",
-    "blocker": "Packet remains planned. Source-bound beam-anchor loads and detached handling candidate are verified. Positive capture, beam mounting, independent whole-U transport and loaded stand release remain open."
-  },
-  "releasedAt": "2026-11-12T23:30:22.071Z",
-  "releaseReason": "handoff"
+  }
 }
