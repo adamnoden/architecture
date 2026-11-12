@@ -363,3 +363,26 @@ The coordinated radiator/bed, rear-WC/stack and existing small floor-port
 relocations are separate explicit design candidates. The original ordinary160
 still adds10 mm at every affected finished face. No room or service route is
 claimed unchanged.
+
+## Wardrobe swept-path proof correction — 12 November 2026
+
+The recovered room comparator originally asserted that swept path distances were
+nonnegative, although its distance function **cannot return a negative value**.
+Consequently a wardrobe colliding with a solid returned zero and met the supposed
+clearance test. That false-pass assertion is now removed.
+
+The executable room replay distinguishes the one permitted initial mounting-wall
+contact from every other swept obstacle. The first move must separate from that
+mounting wall; all other swept paths require a positive 5 mm **nominal** gap,
+and each step must leave at least 25 mm to its own released wall. Three explicit
+adverse controls must fail: crossing another fixture, re-entering the mounting
+wall, and commencing within the nominal clearance band.
+
+On the source-bound upper-room geometry, the bedroom-2 and bedroom-3 paths
+survive the corrected geometry check. But the bedroom-3 north-wall first-stage
+clearance is only **5.5 mm**, leaving **0.5 mm** after the nominal 5 mm screen.
+This is not a two-sided setting/handling tolerance allowance or evidence of a
+physically executable release. The retained IAS/physical handling obligations
+remain live; neither wardrobe receives construction/renewal acceptance here.
+The floor/portal joint, anchor, local concrete confinement and final roof hardware
+remain separate unfinished STR-FLOOR-PORTAL duties.
