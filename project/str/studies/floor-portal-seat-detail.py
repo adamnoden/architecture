@@ -3,11 +3,11 @@ import argparse
 from contextlib import redirect_stdout
 from dataclasses import replace
 from itertools import combinations
+import hashlib
 import json
-from math import hypot, sqrt
+from math import atan2, cos, degrees, hypot, radians, sin, sqrt
 from pathlib import Path
 from runpy import run_path
-import hashlib
 import subprocess
 import sys
 
@@ -28,17 +28,22 @@ WELD_TOE_RESERVE = 2.0
 SETTING = 5.0
 COVER_SCREEN = 25.0
 CLEAR_SCREEN = 21.0
-BEND_BOTTOM, BEND_TOP = 6215.0, 6450.0
+BEND_BOTTOM, BEND_TOP = 6140.0, 6450.0
+CAP_SHOULDER = 6215.0
 SEAT_GAP = 15.0
 GUIDE_SHIFT = 20.0
 
 
 def anchor_location(x, y):
     if x < 140 and y < 140:
-        return (29.0 if x < 70 else 102.0, 29.0 if y < 70 else 102.0)
+        if max(x, y) < 70:
+            return 29.0, 29.0
+        if min(x, y) >= 70:
+            return 98.5, 98.5
+        return (27.0, 116.0) if x < 70 else (116.0, 27.0)
     if x >= 850:
-        station = 830.0 if x == 850 else 908.0
-        return (station, 27.0) if y < 70 else (station + 39.0, 89.0)
+        station = 772.0 if x == 850 else 882.0
+        return (station, 27.0) if y < 70 else (station + 55.0, 76.0)
     transposed = anchor_location(y, x)
     return transposed[1], transposed[0]
 
@@ -48,7 +53,7 @@ def offset(a, b):
 
 
 def seat_guide_station(station):
-    return station + GUIDE_SHIFT if station == min(FIT['GUIDE_STATIONS']) else station
+    return {200.0: 200.0 + GUIDE_SHIFT, 725.0: 680.0}.get(station, station)
 
 
 def distance_to_cassette(point, centre, direction):
@@ -69,21 +74,114 @@ def l_edge(point, outward):
     return min(FIT['point_to_segment']((x, y), a, b) for a, b in FIT['edges'](boundary))
 
 
+def bent_bar_at(start, end, level):
+    t = min(1.0, max(0.0, (level - BEND_BOTTOM) / (BEND_TOP - BEND_BOTTOM)))
+    progress = t * t * (3 - 2 * t)
+    return tuple(a + progress * (b - a) for a, b in zip(start, end))
+
+
+def distance_to_arc(point, centre, radius, start, end):
+    delta = offset(point, centre)
+    theta = degrees(atan2(delta[1], delta[0])) % 360.0
+    if start <= theta <= end:
+        return abs(hypot(*delta) - radius)
+    return min(hypot(delta[0] - radius * cos(radians(angle)),
+                     delta[1] - radius * sin(radians(angle))) for angle in (start, end))
+
+
+def hoop_screen(old, proposed, levels):
+    hoop_radius, rounding = 4.0, 20.0
+    inset = COVER_SCREEN + SETTING + hoop_radius
+    outer, inner, far = inset - OUTWARD, CORE_WIDTH - inset, CORE_LENGTH - inset
+    segments = (
+        ((outer + rounding, outer), (far - rounding, outer)),
+        ((far, outer + rounding), (far, inner - rounding)),
+        ((far - rounding, inner), (CORE_WIDTH, inner)),
+        ((inner, CORE_WIDTH), (inner, far - rounding)),
+        ((inner - rounding, far), (outer + rounding, far)),
+        ((outer, far - rounding), (outer, outer + rounding)),
+    )
+    arcs = (
+        ((outer + rounding, outer + rounding), rounding, 180, 270),
+        ((far - rounding, outer + rounding), rounding, 270, 360),
+        ((far - rounding, inner - rounding), rounding, 0, 90),
+        ((CORE_WIDTH, CORE_WIDTH), inset, 180, 270),
+        ((inner - rounding, far - rounding), rounding, 0, 90),
+        ((outer + rounding, far - rounding), rounding, 90, 180),
+    )
+    gap = float('inf')
+    witness = None
+    # The link and bar can each move 5 mm vertically. The sample enclosure
+    # includes the whole band and one half-step of the Lipschitz bar travel.
+    for level in levels:
+        for index, (a, b) in enumerate(zip(old, proposed)):
+            slope = 1.5 * hypot(*offset(a, b)) / (BEND_TOP - BEND_BOTTOM)
+            for dz in range(-10, 11):
+                point = bent_bar_at(a, b, level + dz)
+                distance = min(min(FIT['point_to_segment'](point, p, q) for p, q in segments),
+                               min(distance_to_arc(point, *arc) for arc in arcs))
+                bound = (distance - slope / 2) / sqrt(1 + slope**2) - BAR_DIAMETER / 2 - hoop_radius - 2 * SETTING
+                if bound < gap:
+                    gap = bound
+                    witness = {'linkZmm': level, 'barIndex': index, 'relativeVerticalSettingMm': dz}
+    return {
+        'levelsMm': levels,
+        'centrelineSegmentsFromCoreOriginMm': segments,
+        'centrelineArcsFromCoreOriginMm': arcs,
+        'minimumAfterIndependentCageSettingsMm': gap,
+        'witness': witness,
+        'upperHoopToCassetteAfterIndependentSettingsMm': 6449.0 - max(levels) - hoop_radius - 2 * SETTING,
+        'minimumVerticalLinkGapWithIndependentSettingsMm': min(b - a for a, b in zip(levels, levels[1:])) - 2 * hoop_radius - 2 * SETTING,
+        'maximumRelativeVerticalSettingAt21MmFlowScreenMm': min(b - a for a, b in zip(levels, levels[1:])) - 2 * hoop_radius - CLEAR_SCREEN,
+    }
+
+
+def assembly_screen(old, proposed):
+    edges = {}
+    for i, (before, after) in enumerate(zip(old, proposed)):
+        radius = hypot(*offset(before, after))
+        for j, other in enumerate(old):
+            if i == j:
+                continue
+            # Same-height witness at the lower straight end, where the
+            # offset of the retained bar from its thread axis is largest.
+            clearance = abs(hypot(*offset(other, after)) - radius) - BAR_DIAMETER - 2 * SETTING
+            if clearance < 0:
+                edges[i, j] = clearance
+    cycles = [(i, j) for i, j in edges if i < j and (j, i) in edges]
+    synchronous_gap = min(
+        abs(hypot(*offset(proposed[i], proposed[j])) -
+            hypot(*offset(offset(old[i], old[j]), offset(proposed[i], proposed[j]))))
+        - BAR_DIAMETER - 2 * SETTING
+        for i, j in combinations(range(len(old)), 2)
+    )
+    return {
+        'rotationScreenZmm': BEND_BOTTOM,
+        'fullTurnConflicts': [{'rotatingBar': i, 'installedBar': j, 'surfaceGapAfterSettingsMm': gap}
+                              for (i, j), gap in edges.items()],
+        'reciprocalConflicts': cycles,
+        'sameAngleFullTurnMinimumGapMm': synchronous_gap,
+        'straightBelowWeldableSleeveMm': CAP_Z - COUPLER_HEIGHT - BEND_TOP,
+        'cxl20TypeCCouplerBodyMm': 48.0,
+        'straightShortfallForTypeCBodyBeforeLocknutMm': 48.0 - (CAP_Z - COUPLER_HEIGHT - BEND_TOP),
+    }
+
+
 def layout():
     old = tuple(map(tuple, json.loads(SOURCE.read_text())['outer']['primaryBarXY']))
     assert len(old) == 12 and len(set(old)) == 12
     proposed = tuple(anchor_location(*bar) for bar in old)
     rise = BEND_TOP - BEND_BOTTOM
     largest_offset = max(hypot(*offset(b, a)) for a, b in zip(old, proposed))
-    # Both bars use the same cubic easing along Z. Simultaneous cross sections
-    # therefore interpolate between the old and new pair vectors on a segment.
-    pair_segments = [(offset(old[i], old[j]), offset(proposed[i], proposed[j]))
-                     for i, j in combinations(range(len(old)), 2)]
-    synchronous = min(hypot(*a) if a == b else FIT['point_to_segment']((0, 0), a, b)
-                      for a, b in pair_segments)
-    max_slope = 1.5 * largest_offset / rise
-    bar_clear = synchronous / sqrt(1 + max_slope**2) - BAR_DIAMETER - 2 * SETTING
-    # Bound different-height pairs by the slope, then account for independent setting.
+    # Simultaneous cross sections interpolate between the two pair vectors.
+    # Either member can supply the Lipschitz bound for different-height pairs.
+    clearances = []
+    for i, j in combinations(range(len(old)), 2):
+        a, b = offset(old[i], old[j]), offset(proposed[i], proposed[j])
+        synchronous = hypot(*a) if a == b else FIT['point_to_segment']((0, 0), a, b)
+        slope = 1.5 * min(hypot(*offset(old[k], proposed[k])) for k in (i, j)) / rise
+        clearances.append(synchronous / sqrt(1 + slope**2) - BAR_DIAMETER - 2 * SETTING)
+    bar_clear = min(clearances)
     maximum_coupler_radius = COUPLER_DIAMETER / 2 + WELD_TOE_RESERVE
     spacings = [hypot(*offset(a, b)) for a, b in combinations(proposed, 2)]
     packing_gap = min(spacings) - 2 * maximum_coupler_radius - 2 * SETTING
@@ -116,7 +214,26 @@ def layout():
     assert min(webs) >= COVER_SCREEN > min(unrecentred_webs)
     assert cover >= COVER_SCREEN and edge_margin > 0.0
     cap = json.loads((STUDIES / 'floor-portal-cap-replay.json').read_text())
-    plain_gap = cap['signed']['cap300-relief5']['capTransition']['minimumProjectedGap']
+    previous = cap['signed']['cap300-relief5']['capTransition']
+    plain_gap = previous['minimumProjectedGap']
+    ring = json.loads((STUDIES / 'current-house-welded-network.json').read_text())['sections']['collector']
+    overhang = ring['B'] / 2 - (332.5 - 262.5)
+    load = previous['peakCoreBearing']['compressionN']
+    strip_width, elastic_yield_comparator = 100.0, 355.0
+    strip_modulus = strip_width * ring['t']**2 / 6
+    tip_load_stress = load * overhang / strip_modulus
+    assert tip_load_stress > elastic_yield_comparator
+    prior_approach = 5.0 - plain_gap['signedGapMM']
+    hoop = hoop_screen(old, proposed, (6355.0, 6394.0, 6433.0))
+    lower_hoop_control = hoop_screen(old, proposed, (6350.0, 6390.0, 6430.0))
+    assembly = assembly_screen(old, proposed)
+    assert assembly['reciprocalConflicts'] and assembly['sameAngleFullTurnMinimumGapMm'] < 0
+    core_cover = min(l_edge(bent_bar_at(a, b, CAP_SHOULDER + 2 * SETTING), 0)
+                     for a, b in zip(old, proposed)) - BAR_DIAMETER / 2 - SETTING
+    assert core_cover >= COVER_SCREEN and coupler_to_guide >= COVER_SCREEN
+    assert hoop['minimumAfterIndependentCageSettingsMm'] > 0 < hoop['upperHoopToCassetteAfterIndependentSettingsMm']
+    assert hoop['minimumVerticalLinkGapWithIndependentSettingsMm'] >= CLEAR_SCREEN
+    assert lower_hoop_control['minimumAfterIndependentCageSettingsMm'] < 0
     return {
         'originalPositionsMm': old,
         'trialPositionsMm': proposed,
@@ -128,6 +245,9 @@ def layout():
         'unshiftedCxl20wPairGapAfterSettingsMm': unshifted_gap,
         'minimumStaggeredCouplerWeldEnvelopeGapAfterSettingsMm': packing_gap,
         'minimumBearingPlateEdgeReserveMm': edge_margin,
+        'maximumRadialWeldToeAllowanceAtPackingScreenMm': (min(spacings) - COUPLER_DIAMETER - 2 * SETTING - CLEAR_SCREEN) / 2,
+        'fiveMmWeldToePlateEdgeReserveMm': edge_margin + WELD_TOE_RESERVE - 5.0,
+        'fixedPlateFullTurnScreen': assembly,
         'minimumCxl20wSideCoverAfterSettingsMm': cover,
         'sideCoverScreenMm': COVER_SCREEN,
         'minimumCxl20wToCassettePlanGapAfterSettingsMm': coupler_to_guide,
@@ -145,7 +265,20 @@ def layout():
         'couplerHeightMm': COUPLER_HEIGHT,
         'guideStationsMm': tuple(map(seat_guide_station, FIT['GUIDE_STATIONS'])),
         'authoredGapMm': SEAT_GAP,
+        'gapAfterTwoVerticalSettingsBeforePlateFlexAtPriorApproachMm': SEAT_GAP - 2 * SETTING - prior_approach,
+        'roundedH8LinkScreen': hoop,
+        'roundedH8LowerLinkFailureMm': lower_hoop_control['minimumAfterIndependentCageSettingsMm'],
+        'barSideCoverAtOldCoreShoulderAfterSettingsMm': core_cover,
         'fiveMmReplayMinimumProjectedGap': plain_gap,
+        'ringSkinConcentratedLoadAdverse': {
+            'previousCapCoreCompressionN': load,
+            'overhangMm': overhang,
+            'ringSkinThicknessMm': ring['t'],
+            'independentStripWidthMm': strip_width,
+            'concentratedTipLoadStressMPa': tip_load_stress,
+            'elasticYieldComparatorMPa': elastic_yield_comparator,
+            'requiredUniformStripWidthAtYieldComparatorMm': strip_width * tip_load_stress / elastic_yield_comparator,
+        },
     }
 
 

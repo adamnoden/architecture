@@ -1,0 +1,367 @@
+{
+  "originalPositionsMm": [
+    [
+      43,
+      43
+    ],
+    [
+      43,
+      97
+    ],
+    [
+      43,
+      850
+    ],
+    [
+      43,
+      950
+    ],
+    [
+      97,
+      43
+    ],
+    [
+      97,
+      97
+    ],
+    [
+      97,
+      850
+    ],
+    [
+      97,
+      950
+    ],
+    [
+      850,
+      43
+    ],
+    [
+      850,
+      97
+    ],
+    [
+      950,
+      43
+    ],
+    [
+      950,
+      97
+    ]
+  ],
+  "trialPositionsMm": [
+    [
+      29.0,
+      29.0
+    ],
+    [
+      27.0,
+      116.0
+    ],
+    [
+      27.0,
+      772.0
+    ],
+    [
+      27.0,
+      882.0
+    ],
+    [
+      116.0,
+      27.0
+    ],
+    [
+      98.5,
+      98.5
+    ],
+    [
+      76.0,
+      827.0
+    ],
+    [
+      76.0,
+      937.0
+    ],
+    [
+      772.0,
+      27.0
+    ],
+    [
+      827.0,
+      76.0
+    ],
+    [
+      882.0,
+      27.0
+    ],
+    [
+      937.0,
+      76.0
+    ]
+  ],
+  "barBendLowerZmm": 6140.0,
+  "barBendUpperZmm": 6450.0,
+  "minimumContinuousBarClearAfterSettingsMm": 23.17777056786297,
+  "minimumBendRadiusLowerBoundMm": 201.1534605377077,
+  "clearScreenMm": 21.0,
+  "unshiftedCxl20wPairGapAfterSettingsMm": 6.0,
+  "minimumStaggeredCouplerWeldEnvelopeGapAfterSettingsMm": 21.610461213064,
+  "minimumBearingPlateEdgeReserveMm": 1.0,
+  "maximumRadialWeldToeAllowanceAtPackingScreenMm": 2.3052306065319996,
+  "fiveMmWeldToePlateEdgeReserveMm": -2.0,
+  "fixedPlateFullTurnScreen": {
+    "rotationScreenZmm": 6140.0,
+    "fullTurnConflicts": [
+      {
+        "rotatingBar": 2,
+        "installedBar": 6,
+        "surfaceGapAfterSettingsMm": -4.819536896986307
+      },
+      {
+        "rotatingBar": 3,
+        "installedBar": 6,
+        "surfaceGapAfterSettingsMm": -22.88947116671649
+      },
+      {
+        "rotatingBar": 3,
+        "installedBar": 7,
+        "surfaceGapAfterSettingsMm": -2.2660135962451022
+      },
+      {
+        "rotatingBar": 6,
+        "installedBar": 2,
+        "surfaceGapAfterSettingsMm": -20.920452282557342
+      },
+      {
+        "rotatingBar": 7,
+        "installedBar": 3,
+        "surfaceGapAfterSettingsMm": -19.22988236852054
+      },
+      {
+        "rotatingBar": 8,
+        "installedBar": 9,
+        "surfaceGapAfterSettingsMm": -4.819536896986307
+      },
+      {
+        "rotatingBar": 9,
+        "installedBar": 8,
+        "surfaceGapAfterSettingsMm": -20.920452282557342
+      },
+      {
+        "rotatingBar": 10,
+        "installedBar": 9,
+        "surfaceGapAfterSettingsMm": -22.88947116671649
+      },
+      {
+        "rotatingBar": 10,
+        "installedBar": 11,
+        "surfaceGapAfterSettingsMm": -2.2660135962451022
+      },
+      {
+        "rotatingBar": 11,
+        "installedBar": 10,
+        "surfaceGapAfterSettingsMm": -19.22988236852054
+      }
+    ],
+    "reciprocalConflicts": [
+      [
+        2,
+        6
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        10,
+        11
+      ]
+    ],
+    "sameAngleFullTurnMinimumGapMm": -11.565417643124718,
+    "straightBelowWeldableSleeveMm": 17.0,
+    "cxl20TypeCCouplerBodyMm": 48.0,
+    "straightShortfallForTypeCBodyBeforeLocknutMm": 31.0
+  },
+  "minimumCxl20wSideCoverAfterSettingsMm": 34.68986283848344,
+  "sideCoverScreenMm": 25.0,
+  "minimumCxl20wToCassettePlanGapAfterSettingsMm": 26.31325889133244,
+  "steelSoffitZmm": 6540.0,
+  "seatOuterInwardCoordinateMm": 262.5,
+  "projectingHardwareMaximumZmm": 6525.0,
+  "capArmWidthMm": 175.0,
+  "guideAcrossOldCoreOriginMm": 52.5,
+  "minimumCassetteWebAfterSettingsMm": 27.097142023646967,
+  "unrecentredCassetteWebAfterSettingsMm": 24.594074557226698,
+  "nominalGlassWidthMm": 75.0,
+  "minimumGlassWidthAfterSingleOutwardCapSettingMm": 70.0,
+  "cavityGlassBoundaryInwardQmm": 152.5,
+  "nominalOuterConcreteFaceInwardQmm": 227.5,
+  "couplerHeightMm": 48.0,
+  "guideStationsMm": [
+    220.0,
+    475.0,
+    680.0
+  ],
+  "authoredGapMm": 15.0,
+  "gapAfterTwoVerticalSettingsBeforePlateFlexAtPriorApproachMm": 4.884179855295503,
+  "roundedH8LinkScreen": {
+    "levelsMm": [
+      6355.0,
+      6394.0,
+      6433.0
+    ],
+    "centrelineSegmentsFromCoreOriginMm": [
+      [
+        [
+          19.0,
+          -1.0
+        ],
+        [
+          946.0,
+          -1.0
+        ]
+      ],
+      [
+        [
+          966.0,
+          19.0
+        ],
+        [
+          966.0,
+          86.0
+        ]
+      ],
+      [
+        [
+          946.0,
+          106.0
+        ],
+        [
+          140.0,
+          106.0
+        ]
+      ],
+      [
+        [
+          106.0,
+          140.0
+        ],
+        [
+          106.0,
+          946.0
+        ]
+      ],
+      [
+        [
+          86.0,
+          966.0
+        ],
+        [
+          19.0,
+          966.0
+        ]
+      ],
+      [
+        [
+          -1.0,
+          946.0
+        ],
+        [
+          -1.0,
+          19.0
+        ]
+      ]
+    ],
+    "centrelineArcsFromCoreOriginMm": [
+      [
+        [
+          19.0,
+          19.0
+        ],
+        20.0,
+        180,
+        270
+      ],
+      [
+        [
+          946.0,
+          19.0
+        ],
+        20.0,
+        270,
+        360
+      ],
+      [
+        [
+          946.0,
+          86.0
+        ],
+        20.0,
+        0,
+        90
+      ],
+      [
+        [
+          140.0,
+          140.0
+        ],
+        34.0,
+        180,
+        270
+      ],
+      [
+        [
+          86.0,
+          946.0
+        ],
+        20.0,
+        0,
+        90
+      ],
+      [
+        [
+          19.0,
+          946.0
+        ],
+        20.0,
+        90,
+        180
+      ]
+    ],
+    "minimumAfterIndependentCageSettingsMm": 0.05742008723313319,
+    "witness": {
+      "linkZmm": 6355.0,
+      "barIndex": 6,
+      "relativeVerticalSettingMm": -10
+    },
+    "upperHoopToCassetteAfterIndependentSettingsMm": 2.0,
+    "minimumVerticalLinkGapWithIndependentSettingsMm": 21.0,
+    "maximumRelativeVerticalSettingAt21MmFlowScreenMm": 10.0
+  },
+  "roundedH8LowerLinkFailureMm": -0.3977471464994409,
+  "barSideCoverAtOldCoreShoulderAfterSettingsMm": 25.050921419220572,
+  "fiveMmReplayMinimumProjectedGap": {
+    "case": "1.35G+1.5Q; downward roof pressure; W(4, 6);court=True;goodsZ=7400",
+    "corner": "(11667.5, 332.5)",
+    "point": [
+      10957.277860021395,
+      230.9529946162075,
+      6540.0
+    ],
+    "signedGapMM": 4.884179855295503,
+    "bearingForceN": 0.0
+  },
+  "ringSkinConcentratedLoadAdverse": {
+    "previousCapCoreCompressionN": 128520.30876218424,
+    "overhangMm": 40.0,
+    "ringSkinThicknessMm": 20,
+    "independentStripWidthMm": 100.0,
+    "concentratedTipLoadStressMPa": 771.1218525731055,
+    "elasticYieldComparatorMPa": 355.0,
+    "requiredUniformStripWidthAtYieldComparatorMm": 217.2174232600297
+  }
+}
