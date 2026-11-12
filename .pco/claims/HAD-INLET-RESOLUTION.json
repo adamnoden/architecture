@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 8,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "ba81731e-58c6-48db-bf43-94b3a5a1d175",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-had"
   },
   "claimedAt": "2026-11-12T20:45:13.335Z",
-  "heartbeatAt": "2026-11-12T21:35:37.977Z",
-  "expiresAt": "2026-11-12T22:20:37.977Z",
+  "heartbeatAt": "2026-11-12T21:36:19.368Z",
+  "expiresAt": "2026-11-12T21:36:19.368Z",
   "predecessor": {
     "leaseId": "05ecb6ba-28c1-40a4-a80c-61bf15302d27",
     "generation": 7,
@@ -39,5 +39,7 @@
     "next": "Develop the actual two-plane near and far reaction, floor anchors, joint/guide tolerances and positive release. Then complete supported lower-tail and stand first rest before adopting the inlet or replaying MRA.",
     "blocker": "Packet remains planned. Bare post fails guide displacement; ideal two-level bracing requires actual floor/rotational evidence. Shell/socket duty and complete renewal remain open."
   },
-  "pr": 1495
+  "pr": 1495,
+  "releasedAt": "2026-11-12T21:36:19.368Z",
+  "releaseReason": "handoff"
 }
