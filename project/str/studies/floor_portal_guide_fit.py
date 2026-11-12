@@ -127,6 +127,31 @@ def controls():
     assert L['minimumPrimaryH20ClearAfterTwo5MMSettingMM']>=25.,L
     assert L['minimumIntermediateH12StationClearAfterTwo5MMSettingMM']>=25.,L
     assert L['minimumGrossLArmEdgeMarginMM']>=10.,L
+    # The selected 140 mm L arm leaves less gross concrete outside the
+    # *complete* 46 mm receiver than a deliberately modest 25 mm cover
+    # comparator, even before either independent 5 mm steel-setting allowance.
+    # No bar clearance or strength pass substitutes for the exterior cover.
+    minimum_edge=L_receiver['minimumGrossLArmEdgeMarginMM']
+    edge_after_settings=minimum_edge-COMBINED_SETTING
+    cover_comparator=25.
+    assert minimum_edge<cover_comparator,(minimum_edge,cover_comparator)
+    assert edge_after_settings<cover_comparator,(edge_after_settings,cover_comparator)
+    assert minimum_edge>19.5 and minimum_edge<19.7,minimum_edge
+    cover_hold=dict(
+        status='ADVERSE: COMPLETE L RECEIVER EDGE COVER NOT EARNED',
+        currentLArmWidthMM=140.,
+        receiverOuterSlotWidthMM=receiver['L']['outerReceiverWidthMM'],
+        nominalCoverComparatorMM=cover_comparator,
+        minimumGrossEdgeMarginBeforeSteelSettingsMM=minimum_edge,
+        independentSettingAllowancesMM=[SETTING_EACH,SETTING_EACH],
+        minimumEdgeMarginAfterBothSettingsMM=edge_after_settings,
+        shortfallToNominalCoverComparatorAfterSettingsMM=cover_comparator-edge_after_settings,
+        passes25MMGrossEdgeCoverWithSettings=False,
+        interpretation='The 25 mm cover is an adverse local comparator, not an approved '
+                       'statutory or product cover value. A coordinated L-arm, guide '
+                       'orientation or cassette redesign must prove real side cover, '
+                       'splitting, congestion and all load/room/roof consequences.',
+    )
     return dict(status='FINITE SWEPT-POCKET FIT ONLY; hardware and anchorage unqualified',
                 releasedDirectionTravelReservePlusMinusMM=TRAVEL_RESERVE,
                 runningAllowanceEachPocketEdgeMM=RUNNING,
@@ -138,7 +163,8 @@ def controls():
                 forbiddenSamePlaneEL12P13LNEnvelope=overlapping_position,
                 fullJambReceiverToH12=jamb_receiver_h12,
                 fullJambReceiverToEL12C13N=jamb_receiver_c13,
-                LGuides=L,fullLReceiver=L_receiver)
+                LGuides=L,fullLReceiver=L_receiver,
+                LReceiverEdgeCoverHold=cover_hold)
 
 
 if __name__=='__main__':
