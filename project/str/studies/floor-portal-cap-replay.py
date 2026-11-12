@@ -79,7 +79,7 @@ def signed_screen(config):
         'maximumBalanceResidualNAndNmm': result['maximumBalanceResidual'],
         'minimumHeadReaction': {'valueKN': reaction, 'head': head, 'case': cases[index]},
         'memberTorsion': members,
-        'maximumLGuideForceKN': max(
+        'maximumLGuideCartesianComponentKN': max(
             row['maximumDirectionalForceKN'] for name, row in result['guideBounds'].items()
             if name.startswith('L-cap-key-')
         ),
@@ -112,7 +112,7 @@ def movement_screen(config):
             given = np.array([amount if i == node + 2 else 0. for i in house.fixed])
             cases.append((f'{name} {amount:+g} mm', gravity_case, given))
 
-    peaks = {'minimumHeadReactionKN': None, 'maximumLGuideForceKN': None,
+    peaks = {'minimumHeadReactionKN': None, 'maximumLGuideCartesianComponentKN': None,
              'maximumLReleasedTravelMM': None}
     max_balance = np.zeros(6)
     projected = [index for index, contact in enumerate(house.contacts)
@@ -139,7 +139,7 @@ def movement_screen(config):
         travel_guide = max(l_guides, key=lambda key: l_guides[key]['maximumReleasedTravelMM'])
         values = (
             ('minimumHeadReactionKN', reactions[node + 2] / 1000., head),
-            ('maximumLGuideForceKN', l_guides[force_guide]['maximumDirectionalForceKN'], force_guide),
+            ('maximumLGuideCartesianComponentKN', l_guides[force_guide]['maximumDirectionalForceKN'], force_guide),
             ('maximumLReleasedTravelMM', l_guides[travel_guide]['maximumReleasedTravelMM'], travel_guide),
         )
         for metric, value, location in values:

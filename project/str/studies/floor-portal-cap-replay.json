@@ -62,7 +62,7 @@
           ]
         }
       },
-      "maximumLGuideForceKN": 28.412059870370417,
+      "maximumLGuideCartesianComponentKN": 28.412059870370417,
       "capTransition": null
     },
     "outward180": {
@@ -117,7 +117,7 @@
           ]
         }
       },
-      "maximumLGuideForceKN": 25.88450724215722,
+      "maximumLGuideCartesianComponentKN": 25.88450724215722,
       "capTransition": null
     },
     "cap300": {
@@ -172,7 +172,7 @@
           ]
         }
       },
-      "maximumLGuideForceKN": 27.40157411307073,
+      "maximumLGuideCartesianComponentKN": 27.40157411307073,
       "capTransition": {
         "peakProjectedBearing": {
           "case": "1.35G+1.5Q; downward roof pressure; W(4, 1);court=False;goodsZ=6000",
@@ -386,7 +386,7 @@
           ]
         }
       },
-      "maximumLGuideForceKN": 29.235565410139948,
+      "maximumLGuideCartesianComponentKN": 29.235565410139948,
       "capTransition": {
         "peakProjectedBearing": {
           "case": "adverse G budgets",
@@ -567,7 +567,7 @@
           "case": "P10 -1 mm",
           "location": "P10"
         },
-        "maximumLGuideForceKN": {
+        "maximumLGuideCartesianComponentKN": {
           "value": 14.753803332351527,
           "case": "superstructure net free dimensional strain-0.0003",
           "location": "L-cap-key-(11667.5, 11667.5)-2"
@@ -602,7 +602,7 @@
           "case": "P10 -1 mm",
           "location": "P10"
         },
-        "maximumLGuideForceKN": {
+        "maximumLGuideCartesianComponentKN": {
           "value": 14.754261020487844,
           "case": "superstructure net free dimensional strain-0.0003",
           "location": "L-cap-key-(11667.5, 11667.5)-2"

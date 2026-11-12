@@ -38,7 +38,7 @@ The core-only alternative uses an authored **5 mm initial vertical gap** over th
 
 ### Coupled comparison
 
-| Signed demand case envelope | Peak head tension, kN | Peak L-end torsion, kNm | Peak collector-end torsion, kNm | Peak L-guide force, kN |
+| Signed demand case envelope | Peak head tension, kN | Peak L-end torsion, kNm | Peak collector-end torsion, kNm | Peak absolute L-guide Cartesian component, kN |
 | --- | ---: | ---: | ---: | ---: |
 | 140 mm full-height reference | 159.45 | 2.345 | 11.951 | 28.41 |
 | 180 mm full-height outward | 156.99 | 4.304 | 12.201 | 25.88 |
@@ -47,7 +47,9 @@ The core-only alternative uses an authored **5 mm initial vertical gap** over th
 
 All four models recover equilibrium at the 52 heads. Each column has its own case witness. The full-height outward comparison retains the old 140 mm damp-proof contact as a stiffness input. Its connection across the added footprint still requires a physical transition.
 
-The touching shelf attracts **135.59 kN** of vertical compression at the southeast cap, with **18.42 kNm** about the lower-section global X axis in that same case. The core-only seat leaves the projection unloaded in all 579 signed cases and 110 movement cases. Its minimum modeled contact-point gap is **4.884 mm** under signed loading and **4.967 mm** under imposed movements. Peak core compression moves from **71.80 to 128.52 kN**, the largest individual L-anchor tension remains **8.78 kN**, and peak L-guide force rises from **27.40 to 29.24 kN**. The two cap models give the same 159.24 kN peak head tension. The P10 −1 mm fixed-head movement control gives **1459.92 kN** tension with the relieved seat. This is a kinematic model demand.
+The touching shelf attracts **135.59 kN** of vertical compression at the southeast cap, with **18.42 kNm** about the lower-section global X axis in that same case. The core-only seat leaves the projection unloaded in all 579 signed cases and 110 movement cases. Its minimum modeled contact-point gap is **4.884 mm** under signed loading and **4.967 mm** under imposed movements. Peak core compression moves from **71.80 to 128.52 kN**, the largest individual L-anchor tension remains **8.78 kN**, and the largest absolute Cartesian component of L-guide force rises from **27.40 to 29.24 kN**. The two cap models give the same 159.24 kN peak head tension. The P10 −1 mm fixed-head movement control gives **1459.92 kN** tension with the relieved seat. This is a kinematic model demand.
+
+In the case producing 128.52 kN of core compression, southeast guide 5 carries the simultaneous force vector (−22.814, −25.887, 0) kN, a **34.505 kN resultant** in that case. The predecessor plate-root screen uses the largest Cartesian component. A diagonal guide requires the actual tangential resultant for its plate and weld checks.
 
 Develop the **core-only seat** as the next finite detail. Draw the steel bearing and its end at q262.5, the gap over q222.5–262.5, and the supported 70 mm glass return. Establish the local plate pressure and closure across the entire projection, including setting and plate deformation. Detail the outward cassette anchorage and confinement into the 140 mm core for the simultaneous actions in the [coupled receipt](studies/floor-portal-cap-replay.json). Keep the room edge and lower damp-proof geometry in the replay. STR-FLOOR-PORTAL stays open until the actual joint and dependent interfaces are resolved.
 
