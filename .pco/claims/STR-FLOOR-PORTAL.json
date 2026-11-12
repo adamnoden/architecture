@@ -1,27 +1,21 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 4,
+  "generation": 5,
   "state": "claimed",
-  "leaseId": "7cdfe02e-33cb-4780-89a5-345a110fb8e4",
+  "leaseId": "dd153ffa-ca18-4b19-b3bf-c278e09e9c58",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6808776165"
+    "label": "issue-comment-6818945453"
   },
-  "claimedAt": "2026-11-11T22:38:48.000Z",
-  "heartbeatAt": "2026-11-11T22:38:48.000Z",
-  "expiresAt": "2026-11-11T23:23:48.000Z",
-  "branch": "work/mvb-chat-6808776165",
+  "claimedAt": "2026-11-12T08:43:18.000Z",
+  "heartbeatAt": "2026-11-12T08:43:18.000Z",
+  "expiresAt": "2026-11-12T09:28:18.000Z",
+  "branch": "work/mvb-chat-6818945453",
   "predecessor": {
-    "leaseId": "7959b505-3cd1-4cbf-ae99-a07deb1a0f40",
-    "generation": 3,
-    "branch": "work/mvb-chat-6807640879",
-    "pr": 1485,
-    "checkpoint": {
-      "evidence": "PR1485 head b8bd337c restores executable native roof-field/contact recovery, reconstructs square-corner/L-haunch geometry and binds it into stiffness, slab exclusion and physical mass/source replacement. A four-candidate CI sensitivity matrix is committed.",
-      "next": "Read exact-head CI/probe receipts; repair any source errors, reject or retain candidates from numerical evidence, then advance joint/key/hardware domains.",
-      "blocker": "Awaiting exact-head GitHub Actions execution for the reconstructed source; no candidate is adopted."
-    }
+    "leaseId": "7cdfe02e-33cb-4780-89a5-345a110fb8e4",
+    "generation": 4,
+    "branch": "work/mvb-chat-6808776165"
   },
   "recoverySource": {
     "leaseId": "7959b505-3cd1-4cbf-ae99-a07deb1a0f40",
