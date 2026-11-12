@@ -332,3 +332,30 @@ native washer-stop contract remains its own fabrication/pressure duty.
 The cylinder's whole-U bridge/tail and stand retirement, and the selected
 inlet/house/MRA replay, remain open. No material/house selection or
 workstream-completion claim is made by this comparator.
+
+### Native upper bridge restoration — generation 4
+
+The source recovered on11 November as inert text is now restored as an
+importable [upper bridge native module](studies/incoming-water-bridge-native.mjs),
+with its import relative to the real main-house study directory. The
+recoverable original text remains untouched in
+[recovery/2026-11-11](recovery/2026-11-11/README.md). The executable wrapper
+fail-closes if the selectedØ760 cylinder body, east plant door, western
+water socket or exterior finished-wall line changes; it does not substitute
+a historicalØ595 cylinder.
+
+The existing HAD test suite now executes the native spanner/hand/arm envelopes,
+two independently retained upper shoes, low positive capture and pinned
+receiver, including adverse controls for the original raised gate and the
+wrong gate-close order. It distinguishes intentionally mated native contacts
+from25 mm remote noncontact. Independent source-bound room and utility
+first-rest cases remain independent; the original20-state bridge-motion
+source and signed braced-support frame are still **inert recovery source**
+and have not been promoted to executed project receipts in this head.
+
+The native upper bridge remains **unselected**. This work does not qualify
+actual factory unions, pressure fittings, physical mass/CG, guide fabrication,
+room/floor anchors, wear or the installation crew's verified procedure.
+The lower tail/stand withdrawal and full whole-U move remain separate open
+requirements. Require exact-head CI for the restored source before crediting
+its executable controls.
