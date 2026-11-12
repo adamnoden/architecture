@@ -42,7 +42,7 @@ function stabilityComparison(axes){
   const designMassKG=90,lateralChallengeN=100,verticalChallengeN=designMassKG*9.81*2;
   const pinDiameterMM=8,steelG=77000,keyFitMM=.2,workingWidthMM=10;
   const pinDoubleShearAreaMM2=Math.PI*pinDiameterMM**2/2;
-  const firstTakeoverCG=[10150,3850,1270], dryLiftingForce=verticalChallengeN;
+  const firstTakeoverCG=[10150,3850],dryLiftingForce=verticalChallengeN;
   const liftingKeyXY=[[10090,3800],[10210,3800],[10210,3900],[10090,3900]];
   const liftingKeySupports=liftingKeyXY.map(([x,y])=>{
     const [cx,cy]=firstTakeoverCG;
@@ -55,6 +55,7 @@ function stabilityComparison(axes){
   const totalOverturningNm=(lateralChallengeN*handleHeightMM+verticalChallengeN*liftingCG*deckFallRatio)/1000;
   return {segments,massKG,centreOfMass,
     firstTakeoverTrial:{liftingKeySupports,centredVerticalNominalN:dryLiftingForce,liftingKeyWorstN,pinDiameterMM,
+      unbalancedByCentringNm:[centreOfMass[1]-firstTakeoverCG[1],centreOfMass[0]-firstTakeoverCG[0]].map(mm=>mm*dryLiftingForce/1000),
       simpleDoubleShearMPa:liftingKeyWorstN/pinDoubleShearAreaMM2,
       simpleLugBearingMPa:liftingKeyWorstN/(pinDiameterMM*workingWidthMM),
       idealShearSlipMM:liftingKeyWorstN*workingWidthMM/(steelG*pinDoubleShearAreaMM2),
@@ -185,14 +186,14 @@ export function deriveStandRetirement(){
   const landedCG=add(stability.centreOfMass,[2600,660,60]);
   const firstRestMarginMM=Math.min(...footprintSupports.map((p,i)=>edge(p,footprintSupports[(i+1)%footprintSupports.length],landedCG)));
   const firstRestMomentReserveNm=stability.restrainedCarrierTrial.designMassKG*9.81*(firstRestMarginMM-30)/1000;
-  const firstRestKeysStillRequired=firstRestMomentReserveNm<stability.restrainedCarrierTrial.overturningNm;
+  const firstRestIdealGravityScreenPasses=firstRestMomentReserveNm>=stability.restrainedCarrierTrial.overturningNm;
   const terminalPlan=[nativeBoxes.westBase[0]+2600, nativeBoxes.westBase[1]+660];
   const cartTarget=dock.cargo.find(c=>c.item==='Cylinder');
   const cartConflict=Math.hypot(Math.max(firstRestFootprint[0]-cartTarget.requiredCentreX,cartTarget.requiredCentreX-firstRestFootprint[0]-firstRestFootprint[2],0),
    Math.max(firstRestFootprint[1]-cartTarget.centreY,cartTarget.centreY-firstRestFootprint[1]-firstRestFootprint[3],0))-house.architecturalServices.plant.cylinder.cartRadius;
   return {status:'DEVELOPMENT_NOT_ADOPTED',motion:mainMotion,body:bodyResults,stability,thresholdSlice,
     adverse:{shortLift:failedShortLift,expandedCradle:failedExpandedCradle,openLeaf:failedOpenLeaf},
-    landing:{firstRestFootprint,terminalPlan,footprintSupports,landedCG,firstRestMarginMM,firstRestMomentReserveNm,firstRestKeysStillRequired,cartConflictMM:cartConflict,requiresStandRemovedBeforeCylinder:true},
+    landing:{firstRestFootprint,terminalPlan,footprintSupports,landedCG,firstRestMarginMM,firstRestMomentReserveNm,firstRestIdealGravityScreenPasses,positiveKeeperRequired:true,cartConflictMM:cartConflict,requiresStandRemovedBeforeCylinder:true},
     holding:['Independent positive first lift, anchor-key release, guide/drive capture, mounting and full bearing are unqualified.',
       'Hold the protected internal leaf closed during stand exchange and prove replacement ventilation/egress through the externally supported east portal.',
       'The physically restrained carrier and its actual low positive track connection must fit the sweep. A nominal object route cannot qualify an unloaded or free-rolling cradle.',

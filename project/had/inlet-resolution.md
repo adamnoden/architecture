@@ -592,8 +592,8 @@ comparison to explicit positions. The executable results keep its ideal
 pin/lug checks distinct from product, mount and latch acceptance.
 
 The trial dock rest sits within the required cylinder cart reservation.
-Its support envelope and stability comparison require positive keys even
-after the stand is lowered. Export the captured stand, clear its receiver,
+The widened rest passes the ideal gravity-moment comparison. Fit a positive
+keeper before releasing the carrier, and verify the installed restraint. Export the captured stand, clear its receiver,
 then move the cylinder to the MAT docking endpoint. The full carrier,
 releasable positive track, supported threshold, anchored receiving frame,
 retainer activation and as-built mass and centre of gravity remain

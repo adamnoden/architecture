@@ -299,7 +299,8 @@ test('the intact stand clears only the high-lift sequence and requires positive 
   assert(stand.stability.pointSupport.mostAdverseN<-90);
   assert(stand.stability.restrainedCarrierTrial.minimumOpposedTieForceN>2000);
   assert(stand.stability.firstTakeoverTrial.liftingKeySupports.every(key=>key.verticalForceN>0));
-  assert(stand.landing.firstRestKeysStillRequired);
+  assert(stand.landing.firstRestIdealGravityScreenPasses);
+  assert(stand.landing.positiveKeeperRequired);
   assert(stand.landing.cartConflictMM<0);
   assert.equal(stand.status,'DEVELOPMENT_NOT_ADOPTED');
 });
