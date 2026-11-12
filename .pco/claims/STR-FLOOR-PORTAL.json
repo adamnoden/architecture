@@ -9,8 +9,8 @@
     "label": "zerg-str"
   },
   "claimedAt": "2026-11-12T20:27:18.041Z",
-  "heartbeatAt": "2026-11-12T20:27:18.041Z",
-  "expiresAt": "2026-11-12T21:12:18.041Z",
+  "heartbeatAt": "2026-11-12T20:33:27.449Z",
+  "expiresAt": "2026-11-12T21:18:27.449Z",
   "predecessor": {
     "leaseId": "ef8d7e73-2917-41b7-b89a-d43c2c33e96e",
     "generation": 9,
@@ -32,5 +32,11 @@
       "next": "Verify CI/preflight and merge bounded result. For successor, compare modified guide orientation with real travel, or build 180-to-140 bearing/DPC transition; replay roof/floor/52 heads and occupied bays.",
       "blocker": "140 mm fails the provisional web screen. 180 mm remains unselected; full-height widening intrudes beyond source room finish and has no qualified cap, cage or DPC transition."
     }
+  },
+  "branch": "work/zerg-str-cap-replay-20261112",
+  "checkpoint": {
+    "evidence": "Pushed 5edd6e28 pinned #1489 source patch and replay runner. Full-height outward 579/110 comparison executed locally; cap-only four-case split bearing puts 100.74 kN on projected strip under gravity/blocked water.",
+    "next": "Complete exact-patch signed/movement comparison and record actual 180-to-140 shoulder demand and 70 mm glass-return question; review bounded integration after current main moves.",
+    "blocker": "Local rigid shoulder does not prove cap ring plate, concrete cage or enclosure. STR final gates stay blocked."
   }
 }
