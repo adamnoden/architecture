@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 5,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "dd153ffa-ca18-4b19-b3bf-c278e09e9c58",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6818945453"
   },
   "claimedAt": "2026-11-12T08:43:18.000Z",
-  "heartbeatAt": "2026-11-12T09:24:59.000Z",
-  "expiresAt": "2026-11-12T10:09:59.000Z",
+  "heartbeatAt": "2026-11-12T09:27:24.000Z",
+  "expiresAt": "2026-11-12T09:27:24.000Z",
   "branch": "work/mvb-chat-6818945453",
   "predecessor": {
     "leaseId": "7cdfe02e-33cb-4780-89a5-345a110fb8e4",
@@ -33,5 +33,7 @@
     "evidence": "Draft PR1487 head c19b05c9: 4 collision-negative controls, nominal bed3 5.5mm clearance, unselected south-30mm candidate 25mm whole route, guide hardware updated. Exact-head CI43186611992 main load/movement, repository and friction-motion passed; final friction-domain pending.",
     "next": "Review last friction-domain CI; continue physical guide retention, receiver/confinement and IAS placement tolerances; no construction release.",
     "blocker": "Structural packet incomplete; bearing, anchorage, fabrication and physical handling unqualified."
-  }
+  },
+  "releasedAt": "2026-11-12T09:27:24.000Z",
+  "releaseReason": "handoff"
 }
