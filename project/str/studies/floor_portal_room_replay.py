@@ -113,6 +113,7 @@ def path_receipt(name,start,size,path,obstacles,own_wall):
             start_rect=[*current,*size]
             touching=[r for r in own_parts if rect_gap(start_rect,r)<1e-7]
             assert touching,(name,'claimed initial mounting contact absent')
+            assert not any(overlap(start_rect,r) for r in touching),(name,'mounted wardrobe penetrates wall')
             first_clear=[current[j]+.01*(target[j]-current[j]) for j in range(2)]
             assert all(moving_rect_path_gap(first_clear,target,size,r)>1e-7
                        for r in touching),(name,'first motion does not disengage')
@@ -162,6 +163,12 @@ def swept_path_negative_controls():
         try:path_receipt(case,[90.,40.],[10.,10.],way,objects,'mount')
         except AssertionError:continue
         raise AssertionError(('swept-path negative control unexpectedly passed',case))
+    try:
+        path_receipt('initial-wall-penetration',[95.,40.],[10.,10.],
+                     [[95.,40.],[65.,40.]],
+                     [('mount',mount),('other',other)],'mount')
+    except AssertionError:pass
+    else:raise AssertionError('initial wall penetration accepted as contact')
 
 
 def assert_clear(rect,obstacles,exclude=()):
@@ -240,6 +247,35 @@ def run():
                       [[7297.,1047.5],[7322.,1047.5],[9180.,980.]],
                       common,'bed3-west')
 
+    # Candidate only: moving the *parked* bedroom-3 wardrobe 30 mm south
+    # preserves the west-wall release and increases the source north-wall
+    # first-stage gap from 5.5 to 35.5 mm. The occupied-house location is not
+    # changed: HAD/IAS must adopt any furniture adjustment and qualify all
+    # handling, anti-tip, services and physical setting tolerances separately.
+    south_shift=30.
+    bed3_south=[b3[0],b3[1]-south_shift,*b3[2:]]
+    for oid,r in common:
+        if oid!='bed3-west':
+            assert not overlap(bed3_south,r),('bed3 south alternative installed collision',oid)
+    bed3_alternative=path_receipt(
+        'bed3-wardrobe-south30-unselected',bed3_south[:2],bed3_south[2:],
+        [bed3_south[:2],[b3[0]+25.,b3[1]-south_shift],
+         [9180.,980.-south_shift]],common,'bed3-west')
+    candidate_min=min(st['minimumUnencumberedSweepGapMM']
+                      for st in bed3_alternative['stages'])
+    assert abs(bed3_alternative['stages'][0]['minimumUnencumberedSweepGapMM']-35.5)<1e-7
+    assert candidate_min>=25.
+    bed3_relocation_candidate=dict(
+        selected=False,parkedSouthAdjustmentMM=south_shift,
+        proposedStartXY=bed3_south[:2],northWallFirstStageGapMM=35.5,
+        minimumFullSweepUnencumberedGapMM=candidate_min,
+        twoIndependent5MMSettingAllowancesMM=10.,
+        nominalResidualAfterTwo5MMAllowancesMM=candidate_min-10.,
+        route=bed3_alternative,
+        acceptance='Current room source unchanged; HAD/IAS furniture approval '
+                   'and physical handling and setting trials are still required.',
+    )
+
     # The later HAD/IAS rear repair supersedes the private interruption handoff.
     rear=H['rearRenewalEmitterJoin']
     assert rear['pass'] is True and rear['trayReturnConflicts']==[]
@@ -267,11 +303,12 @@ def run():
         structuralOverlay=overlay,
         stationaryChecks=stationary,
         wardrobeWallDisengagement=[bed2,bed3],
+        unselectedWardrobeRelocationComparator=bed3_relocation_candidate,
         wardrobeSweptProof=dict(
             nominalMinimumGapMM=min(s['minimumUnencumberedSweepGapMM']
                                     for path in (bed2,bed3) for s in path['stages']),
             nominalMinimumRequiredMM=MIN_SWEEP_GAP_MM,
-            independentNegativeControls=3,
+            independentNegativeControls=4,
             physicalHandlingAndTwoSidedSettingToleranceAccepted=False,
             interpretation='Positive nominal swept separation only. The smallest '
                            'bedroom-3 clearance leaves little tolerance and requires '
@@ -292,7 +329,7 @@ def run():
         limits=[
             'Furniture mass, handling apparatus, grip, anti-tip release and human-force qualification remain IAS/physical duties.',
             'Family-WC symmetric maintenance carrier remains IAS-owned and is not converted into an STR pass.',
-            'The bedroom-3 path passes nominal clearance but its north-wall first-stage gap is only 5.5 mm, leaving just 0.5 mm after the 5 mm screen. It does not prove two-sided setting, handling or physical release tolerances.',
+            'The installed bedroom-3 path passes nominal clearance but its north-wall first-stage gap is only 5.5 mm, leaving just 0.5 mm after the 5 mm screen. A 30 mm south-shifted parked comparison improves the first-stage gap to 35.5 mm; it is unselected and does not prove handling or physical release.',
             'This replay proves only geometry affected by the floor/portal correction; it does not re-adopt the HAD/IAS house sources.',
         ],
     )
