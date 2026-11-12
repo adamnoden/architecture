@@ -9,8 +9,8 @@
     "label": "issue-comment-6830119050"
   },
   "claimedAt": "2026-11-12T16:55:49.000Z",
-  "heartbeatAt": "2026-11-12T17:00:07.000Z",
-  "expiresAt": "2026-11-12T17:45:07.000Z",
+  "heartbeatAt": "2026-11-12T17:12:20.000Z",
+  "expiresAt": "2026-11-12T17:57:20.000Z",
   "branch": "work/mvb-chat-6830119050",
   "predecessor": {
     "leaseId": "d70daf17-1b41-4883-9059-cfc667bd0366",
@@ -30,8 +30,8 @@
   },
   "pr": 1490,
   "checkpoint": {
-    "evidence": "PR1490 head0e7082f8 recovers #1488. Fixed CI #43189142696 stale-cylinder guard by selecting composed 760mm house. Restored private 20-state native bridge motion as executable with streaming minima, and added 25mm/adverse fork motion tests. Source house remains unchanged.",
-    "next": "Review exact-head CI; resolve test failures. Then continue physical lower-tail/stand and braced post support, before any selected-house/MRA adoption.",
-    "blocker": "Upper bridge native study does not qualify pressure hardware, real crew, roof/structure, lower tail removal or whole-U landing; no house acceptance."
+    "evidence": "Draft PR1490 exact head a654e8ed: selected 760mm bridge guard fixes historical 595mm CI failure, restored upper 20-state motion as streaming native check, source-bound utility Y1110/285 first rest and lower cap R400 challenge (25mm fails settings; 15mm geometric comparator).",
+    "next": "Inspect exact-head CI43265569408; repair any test failure; qualify native lower tail/stand and signed braced support; then bind real selected-house and MRA consumers.",
+    "blocker": "No adopted inlet; lower-tail, stand, pressure-rated flange, real receiver, physical handling, materials and precise structural crossings still unqualified."
   }
 }
