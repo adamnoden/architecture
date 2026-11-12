@@ -9,8 +9,8 @@
     "label": "zerg-had"
   },
   "claimedAt": "2026-11-12T20:45:13.335Z",
-  "heartbeatAt": "2026-11-12T21:04:30.125Z",
-  "expiresAt": "2026-11-12T21:49:30.125Z",
+  "heartbeatAt": "2026-11-12T21:12:42.512Z",
+  "expiresAt": "2026-11-12T21:57:42.512Z",
   "predecessor": {
     "leaseId": "05ecb6ba-28c1-40a4-a80c-61bf15302d27",
     "generation": 7,
@@ -35,8 +35,9 @@
   },
   "branch": "work/zerg-had-native-capture-20261112",
   "checkpoint": {
-    "evidence": "Remote exact head 1945311e includes shared short driver and independent floor frame. 74 HAD tests, deterministic inlet/replan, MRA and STR 622a14e preview merge pass. Current ready branch has recoverable ancestry.",
-    "next": "After actual STR main, attach validated combined tree and open exact-head CI. Then run canonical preflight and integrate bounded result.",
-    "blocker": "Guide end trials reject prior end frame; opposite floor-frame geometry clears declared envelopes but ideal posts exceed 1 mm deflection. Reaction, positive capture and complete first rest remain unearned."
-  }
+    "evidence": "Draft #1495 exact head 80be8070 on actual main 40b43b66. All 74 HAD tests, deterministic inlet/replan and MRA pass; source-bound short driver, adverse rail ends and independent floor-frame deflection are executable.",
+    "next": "Wait for exact-head CI 43307748693, then canonical merge preflight. Resolve positive braced floor reaction, shell/socket and complete supported first rest before adoption.",
+    "blocker": "No selected inlet change. Nominal floor-frame geometry clears, but the simple post misses guide stiffness and actual floor anchorage/release remain unproved."
+  },
+  "pr": 1495
 }
