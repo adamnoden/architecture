@@ -9,8 +9,8 @@
     "label": "recover-str"
   },
   "claimedAt": "2026-11-13T19:26:21.119Z",
-  "heartbeatAt": "2026-11-13T19:38:36.406Z",
-  "expiresAt": "2026-11-13T20:23:36.406Z",
+  "heartbeatAt": "2026-11-13T19:49:15.159Z",
+  "expiresAt": "2026-11-13T20:34:15.159Z",
   "branch": "work/zerg5-str-split-hoop",
   "predecessor": {
     "leaseId": "b13ce992-eee0-47a0-832f-cb1491c7946e",
@@ -28,8 +28,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "57a07205 split and four-piece hoop continuous bounds, cover and positional closure failures",
-    "next": "Rebase after #1502, open scoped comparative PR and verify exact CI",
-    "blocker": "Four-piece nominal insertion has marginal setting reserve. Positive closure and structural gates remain open."
-  }
+    "evidence": "PR #1503 exact d8e68f551db21d8e5cb9a918a5199e54acf8f5e9, merged main #1502 included, Python receipt and repository validation passed",
+    "next": "Watch exact CI, verify publication preflight, merge bounded study, release for mechanical confinement follow-up",
+    "blocker": "Tested closure routes fail the unchanged cover, setting or assembly screen"
+  },
+  "pr": 1503
 }
