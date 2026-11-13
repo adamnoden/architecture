@@ -1,43 +1,36 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 14,
-  "state": "released",
-  "leaseId": "9e747b70-eae0-4d47-a2dc-df8f13c2c7f6",
+  "generation": 15,
+  "state": "claimed",
+  "leaseId": "2da49805-052d-4199-983e-a20099cf5d25",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg6-had-threshold"
+    "label": "zerg6-had-side-trunnion"
   },
-  "claimedAt": "2026-11-13T22:55:34.522Z",
-  "heartbeatAt": "2026-11-13T23:22:42.381Z",
-  "expiresAt": "2026-11-13T23:22:42.381Z",
+  "claimedAt": "2026-11-13T23:23:35.653Z",
+  "heartbeatAt": "2026-11-13T23:23:35.653Z",
+  "expiresAt": "2026-11-14T00:08:35.653Z",
   "predecessor": {
-    "leaseId": "354ace11-48c1-4381-9df2-fc3cfc388365",
-    "generation": 13,
-    "branch": "work/zerg5-had-signed-threshold-followon",
+    "leaseId": "9e747b70-eae0-4d47-a2dc-df8f13c2c7f6",
+    "generation": 14,
+    "branch": "work/zerg6-had-threshold-recovery",
+    "pr": 1505,
     "checkpoint": {
-      "evidence": "Remote d6683764, exact tree 62f4a0e6, 76 HAD tests and deterministic MRA/inlet/water-replan passed; signed threshold and side pickup compared",
-      "next": "After STR merge, rebase against main, open full CI and verify exact publication",
-      "blocker": "Actual side lift, independently mounted dry supports and complete loaded transfer still open"
+      "evidence": "PR #1505 exact head 1e6a04e6, combined tree 77cb5553 independently verified",
+      "next": "Verify exact-head CI then immediately run fresh publication preflight and merge",
+      "blocker": "Actual side lift, braced dry supports and loaded handover remain unqualified"
     }
   },
   "recoverySource": {
-    "leaseId": "354ace11-48c1-4381-9df2-fc3cfc388365",
-    "generation": 13,
-    "branch": "work/zerg5-had-signed-threshold-followon",
+    "leaseId": "9e747b70-eae0-4d47-a2dc-df8f13c2c7f6",
+    "generation": 14,
+    "branch": "work/zerg6-had-threshold-recovery",
+    "pr": 1505,
     "checkpoint": {
-      "evidence": "Remote d6683764, exact tree 62f4a0e6, 76 HAD tests and deterministic MRA/inlet/water-replan passed; signed threshold and side pickup compared",
-      "next": "After STR merge, rebase against main, open full CI and verify exact publication",
-      "blocker": "Actual side lift, independently mounted dry supports and complete loaded transfer still open"
+      "evidence": "PR #1505 exact head 1e6a04e6, combined tree 77cb5553 independently verified",
+      "next": "Verify exact-head CI then immediately run fresh publication preflight and merge",
+      "blocker": "Actual side lift, braced dry supports and loaded handover remain unqualified"
     }
-  },
-  "branch": "work/zerg6-had-threshold-recovery",
-  "checkpoint": {
-    "evidence": "PR #1505 exact head 1e6a04e6, combined tree 77cb5553 independently verified",
-    "next": "Verify exact-head CI then immediately run fresh publication preflight and merge",
-    "blocker": "Actual side lift, braced dry supports and loaded handover remain unqualified"
-  },
-  "pr": 1505,
-  "releasedAt": "2026-11-13T23:22:42.381Z",
-  "releaseReason": "handoff"
+  }
 }
