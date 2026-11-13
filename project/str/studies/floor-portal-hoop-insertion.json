@@ -136,6 +136,30 @@
       "sampleHeightMm": 6345.0,
       "sameHeightClearanceUpperBoundMm": 26.99019513592785
     },
+    "pfeiferPH8Comparators": {
+      "80": {
+        "publishedOverallLengthMm": 80,
+        "additionalStraightEachEndBeyond48MmTrialMm": 16.0,
+        "idealizedOverallEnvelopeMovingPastBars": {
+          "clearanceLowerBoundMm": 0.10841525434986465,
+          "levelMm": 6433.0,
+          "bar": "H12-0-600-80",
+          "sampleHeightMm": 6435.0,
+          "sameHeightClearanceUpperBoundMm": 0.16609194718914466
+        }
+      },
+      "91": {
+        "publishedOverallLengthMm": 91,
+        "additionalStraightEachEndBeyond48MmTrialMm": 21.5,
+        "idealizedOverallEnvelopeMovingPastBars": {
+          "clearanceLowerBoundMm": -1.5982028901138499,
+          "levelMm": 6433.0,
+          "bar": "H12-0-600-80",
+          "sampleHeightMm": 6435.0,
+          "sameHeightClearanceUpperBoundMm": -1.5444884271143806
+        }
+      }
+    },
     "sleeveMovement": {
       "endSetbackEachMm": 6.0,
       "barTipToTipGapMm": 12.0,

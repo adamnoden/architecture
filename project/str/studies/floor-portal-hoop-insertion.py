@@ -184,6 +184,16 @@ def four_piece_trial(segments, arcs, levels, paths, sagitta, sleeve_radius):
         },
         'oneEndReturnAxial': moving_gap(end, (1, 0), levels, paths, sagitta),
         'seatedSleevesToFixedBars': moving_gap(sleeves, (0, 0), levels, paths, 0, sleeve_radius),
+        'pfeiferPH8Comparators': {
+            str(length): {
+                'publishedOverallLengthMm': length,
+                'additionalStraightEachEndBeyond48MmTrialMm': (length - 2 * sleeve_half_length) / 2,
+                'idealizedOverallEnvelopeMovingPastBars': moving_gap(
+                    [((station - length / 2, q), (station + length / 2, q)) for q in (cold_q, room_q)],
+                    (1, 0), levels, paths, 0, sleeve_radius),
+            }
+            for length in (80, 91)
+        },
         'sleeveMovement': {
             'endSetbackEachMm': setback,
             'barTipToTipGapMm': 2 * setback,
