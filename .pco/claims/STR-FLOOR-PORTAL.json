@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 11,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "60e7f838-4edb-4fbf-b1cd-90758c899003",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg2-str"
   },
   "claimedAt": "2026-11-12T22:48:12.269Z",
-  "heartbeatAt": "2026-11-13T00:01:36.539Z",
-  "expiresAt": "2026-11-13T00:46:36.539Z",
+  "heartbeatAt": "2026-11-13T00:02:07.324Z",
+  "expiresAt": "2026-11-13T00:02:07.324Z",
   "branch": "work/zerg2-str-seat",
   "predecessor": {
     "leaseId": "6bf2fd76-5332-4631-b742-0f4d606056df",
@@ -39,5 +39,7 @@
     "next": "Use the 16-piece comparator in PR1498 comment 6839232964 to design side-access capture, actual diaphragm transfer and closed cage; treat both backing-pressure failures",
     "blocker": "Assembly, actual bearing and qualified sliding behavior still unearned; STR packet remains planned"
   },
-  "pr": 1498
+  "pr": 1498,
+  "releasedAt": "2026-11-13T00:02:07.324Z",
+  "releaseReason": "handoff"
 }
