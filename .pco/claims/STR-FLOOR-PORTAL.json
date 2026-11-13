@@ -9,8 +9,8 @@
     "label": "recover-str"
   },
   "claimedAt": "2026-11-13T19:26:21.119Z",
-  "heartbeatAt": "2026-11-13T19:26:21.119Z",
-  "expiresAt": "2026-11-13T20:11:21.119Z",
+  "heartbeatAt": "2026-11-13T19:38:36.406Z",
+  "expiresAt": "2026-11-13T20:23:36.406Z",
   "branch": "work/zerg5-str-split-hoop",
   "predecessor": {
     "leaseId": "b13ce992-eee0-47a0-832f-cb1491c7946e",
@@ -26,5 +26,10 @@
       "evidence": "PR #1500 exact head fa94c9d5516f7bc3f39a5542265ab892679d464b, repository integrity and source-bound replay passed",
       "next": "Check exact CI and immediate preflight, merge, release to handoff"
     }
+  },
+  "checkpoint": {
+    "evidence": "57a07205 split and four-piece hoop continuous bounds, cover and positional closure failures",
+    "next": "Rebase after #1502, open scoped comparative PR and verify exact CI",
+    "blocker": "Four-piece nominal insertion has marginal setting reserve. Positive closure and structural gates remain open."
   }
 }
