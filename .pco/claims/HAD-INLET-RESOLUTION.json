@@ -9,8 +9,8 @@
     "label": "zerg2-had"
   },
   "claimedAt": "2026-11-12T23:31:09.148Z",
-  "heartbeatAt": "2026-11-13T00:02:18.305Z",
-  "expiresAt": "2026-11-13T00:47:18.305Z",
+  "heartbeatAt": "2026-11-13T00:21:41.598Z",
+  "expiresAt": "2026-11-13T01:06:41.598Z",
   "branch": "work/zerg2-had-stand-retirement-20261112",
   "predecessor": {
     "leaseId": "45785a05-071e-4b4c-aca4-36e7243d9805",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1499; exact head 78dfdbddcc05190ce0df2ff245d33f8cd02c3f60 on current main; 76 HAD tests, deterministic inlet and unchanged-house MRA pass",
-    "next": "Wait exact head CI, fresh merge preflight and merge #1499",
-    "blocker": "Actual positive first capture, dry crossing and dock keeper unqualified"
+    "evidence": "PR #1499 merged 940ff474; exact head 78dfdbdd CI 43333751389 green; canonical preflight and main ancestry/tree verified",
+    "next": "Reacquire HAD to advance paired lower-tail capture, support rail removal and two-person dock keeper",
+    "blocker": "Actual positive capture, anchor, track and supported threshold detail still open; packet planned"
   },
   "pr": 1499
 }
