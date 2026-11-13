@@ -52,13 +52,19 @@ export function compareStandSideHandoff({standTravel,movingBoxes,movingSegments,
   const frame=[...keeperCrowns,...crossPins,...trunnionMounts,...pitchTies,...pickupPins,attachment,...keeperSegments];
   const rails=railYs.map((y,i)=>['fixed side rail '+i,[xInterval[0],y,frameZ],[xInterval[1],y,frameZ],railRadius]);
   const portalHeadZ=2310,kneeRiseMM=240,kneeRunMM=170;
-  const legs=supportXs.flatMap(x=>railYs.map((y,i)=>['dry support '+x+'/'+i,[x,y,legRadius],[x,y,portalHeadZ],legRadius]));
+  const offsetLegY=railYs.map((y,i)=>y+(i===0?-96:96));
+  const railHangers=supportXs.flatMap(x=>railYs.map((y,i)=>['trial offset rail hanger ' +x+'/'+i,[x,offsetLegY[i],frameZ+21],[x,y,frameZ+21],10]));
+  const legs=supportXs.flatMap(x=>offsetLegY.map((y,i)=>['dry support '+x+'/'+i,[x,y,legRadius],[x,y,portalHeadZ],legRadius]));
   const longitudinalBraces=railYs.map((y,i)=>['trial longitudinal brace '+i,
-    [supportXs[0],y,frameZ-railRadius],[supportXs[1],y,legRadius],15]);
-  const crossHeads=supportXs.map(x=>['overhead transverse tie '+x,[x,railYs[0],portalHeadZ],[x,railYs[1],portalHeadZ],15]);
-  const kneeBraces=supportXs.flatMap(x=>railYs.map((y,i)=>['overhead knee '+x+'/'+i,
+    [supportXs[0],y,frameZ-railRadius-120],[supportXs[1],y,legRadius],15]);
+  const crossHeads=supportXs.map(x=>['overhead transverse tie '+x,[x,offsetLegY[0],portalHeadZ],[x,offsetLegY[1],portalHeadZ],15]);
+  const kneeBraces=supportXs.flatMap(x=>offsetLegY.map((y,i)=>['overhead knee '+x+'/'+i,
     [x,y,portalHeadZ-kneeRiseMM],[x,y+(i===0?kneeRunMM:-kneeRunMM),portalHeadZ],12]));
-  const fixed=[...rails,...legs,...longitudinalBraces,...crossHeads,...kneeBraces];
+  const braceStandoffs=supportXs.flatMap((x,i)=>railYs.map((y,j)=>{
+    const z=i===0?frameZ-railRadius-120:legRadius;
+    return ['longitudinal brace standoff '+i+'/'+j,[x,y,z],[x,offsetLegY[j],z],15];
+  }));
+  const fixed=[...railHangers,...rails,...legs,...longitudinalBraces,...braceStandoffs,...crossHeads,...kneeBraces];
   const throughAisleBrace=['adverse transverse diagonal',
     [supportXs[1],railYs[0],frameZ-railRadius],[supportXs[1],railYs[1],legRadius],15];
   const native=(segment,penalty)=>[
@@ -105,6 +111,23 @@ export function compareStandSideHandoff({standTravel,movingBoxes,movingSegments,
       }))));
   const frameToStand=least(frame.flatMap(item=>moving(translated(item,inboardShift),inboardShift,0,
     item[0].startsWith('north-face post pin')?['westPost']:[])));
+  const keeperJaws=pickupsX.flatMap((x,i)=>localSideY.flatMap((y,j)=>{
+    const side=j===0?1:-1;
+    const corners=[[y-19*side,localFrameZ-50],[y+46*side,localFrameZ-50],
+      [y+46*side,localFrameZ+54],[y,localFrameZ+59]];
+    return [-12,12].flatMap(dx=>corners.slice(1).map((end,k)=>['slotted C jaw '+i+'/'+j+'/'+dx+'/'+k,
+      [x+dx,...corners[k]],[x+dx,...end],7]));
+  }));
+  const jawToStand=least(keeperJaws.flatMap(item=>moving(translated(item,inboardShift),inboardShift,0)));
+  const jawToFixed=least(stations.flatMap(x=>keeperJaws.flatMap(item=>
+    [...native(translated(item,x),step/2),...[...legs,...longitudinalBraces,...braceStandoffs,...crossHeads,...kneeBraces].map(other=>({
+      part:item[0],to:other[0],gap:segmentGap(translated(item,x),other)-step/2}))])));
+  const jawToHangers=least(stations.flatMap(x=>keeperJaws.flatMap(item=>
+    railHangers.map(hanger=>({part:item[0],to:hanger[0],gap:segmentGap(translated(item,x),hanger)-step/2})))));
+  const jawToRail=least(stations.flatMap(x=>keeperJaws.flatMap(item=>
+    rails.map(rail=>({part:item[0],to:rail[0],gap:segmentGap(translated(item,x),rail)-step/2})))));
+  const keeperToHangers=least(stations.flatMap(x=>[...keeperSegments,...keeperCrowns].flatMap(item=>
+    railHangers.map(hanger=>({part:item[0],to:hanger[0],gap:segmentGap(translated(item,x),hanger)-step/2})))));
   const fixedToNative=least(fixed.flatMap(item=>native(item,0)));
   const fixedToStand=least(stations.flatMap(x=>fixed.flatMap(item=>moving(item,x,step/2))));
   const overheadToStand=least(stations.flatMap(x=>[...crossHeads,...kneeBraces].flatMap(item=>moving(item,x,step/2))));
@@ -154,6 +177,95 @@ export function compareStandSideHandoff({standTravel,movingBoxes,movingSegments,
   const workerClearance=least(workerChecks.map(({openAisle})=>openAisle));
   const transverseBraceWorkerClearance=least(workerChecks.map(({closedAisle})=>closedAisle));
   const transverseBraceStandClearance=least(stations.flatMap(x=>moving(throughAisleBrace,x,step/2)));
+  const reactions=sideReactions(stability,railYs,pickupsX,frameZ,approach);
+  const keeperForces=reactions.flatMap(({forcesN})=>forcesN);
+  const maximumUpliftN=-Math.min(...keeperForces);
+  const splitGateOpeningDegrees=80;
+  const splitGateRadiusMM=Math.hypot(64,37);
+  const splitKeeperTrials=keeperSegments.map(([id,[localX,localY]])=>{
+    const x=localX+keeperHalfLength+inboardShift+34;
+    const y=localY+approach[1],z=frameZ;
+    const side=y===railYs[0]?1:-1;
+    const hinge=[x,y+side*46,z-20];
+    const samples=32;
+    const arc=splitGateOpeningDegrees*Math.PI/180;
+    const samplePenalty=splitGateRadiusMM*arc/(2*samples);
+    const body=Array.from({length:samples+1},(_,i)=>{
+      const angle=arc*i/samples;
+      const horizontal=-64*Math.cos(angle)+37*Math.sin(angle);
+      const vertical=-64*Math.sin(angle)-37*Math.cos(angle);
+      return ['trial hinge gate',hinge,[x,hinge[1]+side*horizontal,hinge[2]+vertical],6];
+    });
+    const targetRail=rails[y===railYs[0]?0:1];
+    const otherSupports=fixed.filter(item=>item!==targetRail);
+    const closedGate=body[0];
+    const gateCentreY=(closedGate[1][1]+closedGate[2][1])/2;
+    const gateStop=['trial keeper gate stop', [x,gateCentreY,z-48],[x,gateCentreY,z-55],6];
+    const hingeLink=['trial hinge link',[x,y+side*46,z-20],[x-22,y+side*46,z-20],6];
+    const lockLink=['trial latch return',[x,gateCentreY,z-55],[x-22,gateCentreY,z-55],6];
+    const atOutboard=part=>[part[0],shiftX(part[1],endShift-inboardShift),shiftX(part[2],endShift-inboardShift),part[3]];
+    const outboardFixedSweep=least(body.map(atOutboard).flatMap(item=>[...native(item,samplePenalty),...moving(item,endShift,samplePenalty),
+      ...otherSupports.map(other=>({part:item[0],to:other[0],gap:segmentGap(item,other)-samplePenalty}))]));
+    const carriageSweep=least(stations.flatMap(shift=>[closedGate,gateStop,hingeLink,lockLink].map(part=>[part[0],shiftX(part[1],shift-inboardShift),shiftX(part[2],shift-inboardShift),part[3]])
+      .flatMap(item=>[...native(item,step/2),...moving(item,shift,0),
+        ...otherSupports.map(other=>({part:item[0],to:other[0],gap:segmentGap(item,other)-step/2}))])));
+
+    const rodStrokeMM=40;
+    const handleOffsetMM=id.startsWith('moving keeper 0')?500:310;
+    const linkageAt=(shift,stroke=0)=>{
+      const axisX=x+shift-inboardShift;
+      const points=[[axisX,y+side*46,z-20],[axisX,y+side*130,z-80],[axisX,y+side*130,1490],
+        [axisX+handleOffsetMM+stroke,y+side*130,1490]];
+      return points.slice(1).map((end,i)=>['remote keeper actuation rod '+i,points[i],end,8]);
+    };
+    const xHands=[inboardShift,endShift].map(shift=>{
+      const linkage=linkageAt(shift);
+      const target=linkage.at(-1)[2];
+      const nominalBody=[target[0]+90,4570,0];
+      const shoulder=[nominalBody[0],nominalBody[1],1380];
+      const strokeSamples=8;
+      const rodPositions=Array.from({length:strokeSamples+1},(_,i)=>shiftX(target,rodStrokeMM*i/strokeSamples));
+      const armAndHand=rodPositions.flatMap(grip=>[['keeper operator arm',shoulder,grip,40],['keeper operator hand',grip,grip,50]]);
+      const reaches=Math.max(...rodPositions.map(grip=>Math.hypot(...shoulder.map((v,i)=>v-grip[i]))));
+      const crewBodyR=300;
+      const bodyToStand=least(movingBoxes.map(item=>{
+        const box=carriedBox(item,shiftAt(shift));
+        const gap=planGap(nominalBody,[box[0],box[1],box[3],box[4]])-crewBodyR;
+        const vertical=Math.max(box[2]-2000,-box[2]-box[5],0);
+        return {part:'operator body',to:item.id,gap:vertical?Math.hypot(Math.max(0,gap),vertical):gap};
+      }).concat(movingSegments.filter(([id])=>id!=='captured operator handle').map(item=>{
+        const [to,a,b,r]=translated(item,shift);
+        return {part:'operator body',to,gap:segmentBodyDistance(a,b,nominalBody,[0,2000],crewBodyR)-r};
+      })));
+      const bodyToFabric=least([
+        ...staticBoxes.map(({id,box})=>{
+          const gap=planGap(nominalBody,[box[0],box[1],box[3],box[4]])-crewBodyR;
+          const vertical=Math.max(box[2]-2000,-box[2]-box[5],0);
+          return {part:'operator body',to:id,gap:vertical?Math.hypot(Math.max(0,gap),vertical):gap};
+        }),
+        ...fixed.map(([to,a,b,r])=>({part:'operator body',to,gap:segmentBodyDistance(a,b,nominalBody,[0,2000],crewBodyR)-r})),
+      ]);
+      const gripHalfStep=rodStrokeMM/(2*strokeSamples);
+      const gaps=armAndHand.flatMap(item=>[...native(item,gripHalfStep),...moving(item,shift,gripHalfStep),
+        ...fixed.map(other=>({part:item[0],to:other[0],gap:segmentGap(item,other)-gripHalfStep}))]);
+      return {reaches,rodStrokeMM,bodyToStand,bodyToFabric,gap:least(gaps),linkage:least(linkage.flatMap(item=>[...native(item,0),...moving(item,shift,0),...fixed.map(other=>({part:item[0],to:other[0],gap:segmentGap(item,other)}))]))};
+    });
+    const parkedClearance=least(xHands.flatMap(({bodyToStand,bodyToFabric,gap})=>[bodyToStand,bodyToFabric,gap]));
+    const actuatorSweep=least(stations.flatMap(shift=>linkageAt(shift,rodStrokeMM).flatMap(item=>[
+      ...native(item,step/2),...moving(item,shift,0),...otherSupports.map(other=>({
+        part:item[0],to:other[0],gap:segmentGap(item,other)-step/2})),
+    ])));
+    const latchPinDiameterMM=8,lugThicknessMM=5;
+    const leverToRailMM=Math.abs(hinge[1]-y);
+    const leverToLatchMM=Math.abs(hinge[1]-closedGate[2][1]);
+    const latchShearN=maximumUpliftN*leverToRailMM/leverToLatchMM;
+    const latchDoubleShearMPa=latchShearN/(Math.PI*latchPinDiameterMM**2/2);
+    const latchLugBearingMPa=latchShearN/(latchPinDiameterMM*lugThicknessMM);
+    const gateLinksClearance=least([hingeLink,lockLink].map(part=>({part:part[0],to:targetRail[0],gap:segmentGap(part,targetRail)})));
+    return {id,hinge,latchPinDiameterMM,latchShearN,latchDoubleShearMPa,latchLugBearingMPa,xHands,parkedClearance,actuatorSweep,gateLinksClearance,closedGateToJaw:least(keeperJaws.map(item=>({part:closedGate[0],to:item[0],gap:segmentGap(closedGate,translated(item,inboardShift))}))),outboardFixedSweep,carriageSweep,sweep:least(body.flatMap(item=>[...native(item,samplePenalty),...moving(item,inboardShift,samplePenalty),
+      ...otherSupports.map(other=>({part:item[0],to:other[0],gap:segmentGap(item,other)-samplePenalty}))])),
+      railSweep:least(body.map((part,i)=>({i,part:part[0],to:targetRail[0],gap:segmentGap(part,targetRail)-samplePenalty})))};
+  });
   const overlapAt=x=>pickupsX.map(pickup=>Math.max(0,
     Math.min(pickup+x+keeperHalfLength,xInterval[1])-Math.max(pickup+x-keeperHalfLength,xInterval[0])));
   const installedStandLeadingX=Math.max(...movingBoxes.map(({box})=>box[0]+box[3]))+inboardShift;
@@ -162,8 +274,6 @@ export function compareStandSideHandoff({standTravel,movingBoxes,movingSegments,
     standToPlateMM:dock.section.bearingX[0][0]-installedStandLeadingX},
   outboard:{xShift:endShift,keeperRailOverlapMM:overlapAt(endShift),
     standBeyondCollectorMM:installedStandTrailingX-dock.section.collectorX[1]}};
-  const reactions=sideReactions(stability,railYs,pickupsX,frameZ,approach);
-  const keeperForces=reactions.flatMap(({forcesN})=>forcesN);
   const legSpan=supportXs[1]-supportXs[0];
   const supportForces=[inboardShift,endShift].flatMap(x=>reactions.flatMap(({forcesN})=>railYs.flatMap((_,i)=>{
     const outboard=pickupsX.reduce((sum,pickup,j)=>sum+forcesN[2*j+i]*(pickup+x-supportXs[0])/legSpan,0);
@@ -173,21 +283,22 @@ export function compareStandSideHandoff({standTravel,movingBoxes,movingSegments,
   const trialTube={outerDiameterMM:railRadius*2,legOuterDiameterMM:legRadius*2,wallMM:5,steelE_MPa:200000};
   const tubeI=Math.PI*(trialTube.outerDiameterMM**4-(trialTube.outerDiameterMM-2*trialTube.wallMM)**4)/64;
   const singleWheelMidspanDeflectionMM=maxKeeperN*legSpan**3/(48*trialTube.steelE_MPa*tubeI);
+  const remainingGateRailClearanceMM=Math.min(...splitKeeperTrials.map(row=>row.railSweep.gap))-singleWheelMidspanDeflectionMM;
   const singleWheelMidspanStressMPa=maxKeeperN*legSpan*railRadius/(4*tubeI);
   const legI=Math.PI*(trialTube.legOuterDiameterMM**4-(trialTube.legOuterDiameterMM-2*trialTube.wallMM)**4)/64;
   const lateralChallengeN=stability.restrainedCarrierTrial.lateralChallengeN;
   const unsupportedLegHeightMM=frameZ-railRadius;
-  const diagonalLengthMM=Math.hypot(legSpan,unsupportedLegHeightMM-legRadius);
+  const diagonalLengthMM=Math.hypot(legSpan,unsupportedLegHeightMM-120-legRadius);
   const nominalBraceAxialN=lateralChallengeN*diagonalLengthMM/legSpan;
   const oneKneeAxialN=lateralChallengeN*Math.hypot(kneeRunMM,kneeRiseMM)/kneeRunMM;
   const inboardTransferRiseMM=-receivingGirder.z[1];
-  const transverseBaseCoupleN=lateralChallengeN*(frameZ+inboardTransferRiseMM)/(railYs[1]-railYs[0]);
+  const transverseBaseCoupleN=lateralChallengeN*(frameZ+inboardTransferRiseMM)/(offsetLegY[1]-offsetLegY[0]);
   const dockSurfaceZ=-(supportXs[1]-dock.dock.fallStartsX)/80;
-  const dockBaseCoupleN=lateralChallengeN*(frameZ-dockSurfaceZ)/(railYs[1]-railYs[0]);
+  const dockBaseCoupleN=lateralChallengeN*(frameZ-dockSurfaceZ)/(offsetLegY[1]-offsetLegY[0]);
   const fullAxisCantileverDeflectionMM=lateralChallengeN*unsupportedLegHeightMM**3/(3*trialTube.steelE_MPa*legI);
   const singleLegAxisChallengeMomentNm=lateralChallengeN*unsupportedLegHeightMM/1000;
-  return {xInterval,railYs,supportXs,frameZ,pickupsX,handovers,rigidFrameToRails,frameToNative,preEntryClearance,sideInstallation,verticalInstallation,frameToStand,fixedToNative,fixedToStand,
-    feet,overheadToStand,overheadToNative,workerClearance,workerReachMM,transverseBraceWorkerClearance,transverseBraceStandClearance,reactions,maxKeeperN,minKeeperN,maxSupportN:Math.max(...supportForces),minSupportN:Math.min(...supportForces),
-    trialTube,singleWheelMidspanDeflectionMM,singleWheelMidspanStressMPa,fullAxisCantileverDeflectionMM,singleLegAxisChallengeMomentNm,
-    nominalBraceAxialN,oneKneeAxialN,transverseBaseCoupleN,dockBaseCoupleN,inboardDryTopOverGirderMM:inboardTransferRiseMM,limit:'Geometric comparison after frame installation. Positive mounting at the stand and dry substrates, actual keepers, approach, bracing, anchor stress and occupied worker sequence require separate proof.'};
+  return {xInterval,railYs,supportXs,offsetLegY,frameZ,pickupsX,handovers,jawToStand,jawToFixed,jawToHangers,jawToRail,keeperToHangers,rigidFrameToRails,frameToNative,preEntryClearance,sideInstallation,verticalInstallation,frameToStand,fixedToNative,fixedToStand,
+    feet,overheadToStand,overheadToNative,workerClearance,workerReachMM,splitKeeperTrials,transverseBraceWorkerClearance,transverseBraceStandClearance,reactions,maxKeeperN,minKeeperN,maxSupportN:Math.max(...supportForces),minSupportN:Math.min(...supportForces),
+    trialTube,remainingGateRailClearanceMM,singleWheelMidspanDeflectionMM,singleWheelMidspanStressMPa,fullAxisCantileverDeflectionMM,singleLegAxisChallengeMomentNm,
+    nominalBraceAxialN,oneKneeAxialN,transverseBaseCoupleN,dockBaseCoupleN,inboardDryTopOverGirderMM:inboardTransferRiseMM,limit:'Geometric comparison after frame installation. Positive mounting at the stand and dry substrates, actual keeper contact, rail continuity, bracing, anchor stress and interlocked occupied sequence require separate proof.'};
 }

@@ -693,7 +693,7 @@ engagement surfaces. The lock, proof of load transfer and release sequence
 remain open.
 
 The finite keepers clear the fixed fabric by **38 mm**, and the nearest
-dry post clears a carried shoe by **37 mm**. The two north-face post
+dry frame clears a carried shoe by **50 mm**. The two north-face post
 pins clear the carried brace by **12.4 mm**. That is a tight attachment
 reservation. An operator following the captured handle through the
 crossing has 50.6 mm minimum clearance and 363 mm maximum reach in the
@@ -703,24 +703,47 @@ It does not cover a second worker or the keeper-lock actions at the stops.
 The inboard feet are 259.5 mm inside the outer-E girder footprint, with
 180 mm between girder top and the finished floor. The two outboard feet
 lie beyond that girder and need an independently supported dock. The
-nearest feet leave 77 mm to the recessed cover and 68.2 mm to the scaffold
+nearest feet leave 77 mm to the recessed cover and 136.6 mm to the scaffold
 board plan. The ideal signed comparison puts −176/+842 N at one keeper
 and −173/+1,276 N at a post. A 60 × 5 mm round rail in a single-wheel
 midspan check deflects 0.37 mm. A full 100 N axis challenge assigned to
 one unbraced leg gives 198 N·m at its foot and 4.92 mm of ideal top
 deflection. Two R15 longitudinal diagonals fit the occupied sweep and
-need 202 N axial under an ideal 100 N along-rail challenge on one frame.
+need 192 N axial under an ideal 100 N along-rail challenge on one frame.
 The same size diagonal across the aisle intersects the operator and
 west brace. Move the transverse ties to Z2310 at X11505 and X12620,
 outside the door head, and connect them through 170 × 240 mm knee
-braces. The overhead pieces retain 48.5 mm to the stand and 50.5 mm
+braces. The overhead pieces retain 65 mm to the stand and 50.5 mm
 to the fixed fabric. The full support frame retains 37.5 mm to the
 head. A one-knee 100 N transverse challenge requires 173 N axial.
-The same lateral challenge at rail height requires an ideal 283 N
-base couple to the inboard girder or 260 N to the sloping dock deck.
+The same lateral challenge at rail height requires an ideal 226 N
+base couple to the inboard girder or 208 N to the sloping dock deck.
 This traces a load path through the frame to its feet. Anchor substrates,
 fixture connections, local plate stiffness and the actual loaded capture
 remain unqualified.
+
+A keeper trial replaces the full body envelope with paired C jaws on
+a 24 mm longitudinal pitch. It moves each support leg 96 mm outboard,
+raises the hanger to Z2031 and lowers the longitudinal brace junction
+120 mm, with connections back to the legs. A full keeper envelope still
+intersects the hanger by 34 mm. The paired jaws retain **37.0 mm** to
+other fixed supports, **15.8 mm** to the mating hanger and **4.0 mm** to
+their own running rail. An 80° downward gate offset longitudinally
+from the jaws retains **37.5 mm** in closed travel and at least
+**40.9 mm** in parked swing against other hardware. Its minimum running
+rail clearance is 2.73 mm. Charging the single-wheel rail deflection
+reduces that to **2.36 mm**, before hanger flexibility, fit and setting.
+
+A Z1490 remote rod retains **38.6 mm** in carried translation and
+12.16 mm to its own rail. A 40 mm hand stroke from the forward crew
+lane needs at most **296.4 mm** reach, with **55.6 mm** minimum parked
+body clearance. The rod and latch geometry needs a proved motion
+relation and positive locking state. Ideal balance under 176 N uplift
+requires **127 N** at a trial 8 mm double-shear latch pin, giving
+1.26 MPa nominal pin shear and 3.16 MPa bearing in a single 5 mm lug.
+These demands leave actual rail contact, tolerance, local gate/lug
+capacity, independent anchor certification and a loaded interlock to
+be verified.
 
 The trial dock rest sits within the required cylinder cart reservation.
 The widened rest passes the ideal gravity-moment comparison. Fit a positive
