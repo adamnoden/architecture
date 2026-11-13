@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 11,
+  "generation": 12,
   "state": "claimed",
-  "leaseId": "6d88b30b-9c95-49a9-99e6-a78d8d68d256",
+  "leaseId": "4d164e65-4631-4f40-861c-869d6c5dddeb",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg2-had"
+    "label": "zerg5-had-recovery"
   },
-  "claimedAt": "2026-11-13T00:23:11.917Z",
-  "heartbeatAt": "2026-11-13T00:43:13.183Z",
-  "expiresAt": "2026-11-13T01:28:13.183Z",
-  "branch": "work/zerg2-had-tail-positive-transfer-20261113",
+  "claimedAt": "2026-11-13T19:26:10.281Z",
+  "heartbeatAt": "2026-11-13T19:26:10.281Z",
+  "expiresAt": "2026-11-13T20:11:10.281Z",
+  "branch": "work/zerg5-had-tail-recovery-20261113",
   "predecessor": {
-    "leaseId": "455ec204-459b-4640-871f-b5a832615093",
-    "generation": 10,
-    "branch": "work/zerg2-had-stand-retirement-20261112",
-    "pr": 1499,
+    "leaseId": "6d88b30b-9c95-49a9-99e6-a78d8d68d256",
+    "generation": 11,
+    "branch": "work/zerg2-had-tail-positive-transfer-20261113",
+    "pr": 1501,
     "checkpoint": {
-      "evidence": "PR #1499 merged 940ff474; exact head 78dfdbdd CI 43333751389 green; canonical preflight and main ancestry/tree verified",
-      "next": "Reacquire HAD to advance paired lower-tail capture, support rail removal and two-person dock keeper",
-      "blocker": "Actual positive capture, anchor, track and supported threshold detail still open; packet planned"
+      "evidence": "PR #1501; exact head 5df64df1b54d1f100a706c0c966ec082ab8514c3, exact 3917ed6a tree with 76 HAD, inlet/MRA and diff checks",
+      "next": "Wait exact full CI then fresh merge preflight, merge and verify",
+      "blocker": "Physical split shoes and pressure isolation, pinned fits, installed dry supports and separate stand crossing remain open"
     }
   },
   "recoverySource": {
-    "leaseId": "455ec204-459b-4640-871f-b5a832615093",
-    "generation": 10,
-    "branch": "work/zerg2-had-stand-retirement-20261112",
-    "pr": 1499,
+    "leaseId": "6d88b30b-9c95-49a9-99e6-a78d8d68d256",
+    "generation": 11,
+    "branch": "work/zerg2-had-tail-positive-transfer-20261113",
+    "pr": 1501,
     "checkpoint": {
-      "evidence": "PR #1499 merged 940ff474; exact head 78dfdbdd CI 43333751389 green; canonical preflight and main ancestry/tree verified",
-      "next": "Reacquire HAD to advance paired lower-tail capture, support rail removal and two-person dock keeper",
-      "blocker": "Actual positive capture, anchor, track and supported threshold detail still open; packet planned"
+      "evidence": "PR #1501; exact head 5df64df1b54d1f100a706c0c966ec082ab8514c3, exact 3917ed6a tree with 76 HAD, inlet/MRA and diff checks",
+      "next": "Wait exact full CI then fresh merge preflight, merge and verify",
+      "blocker": "Physical split shoes and pressure isolation, pinned fits, installed dry supports and separate stand crossing remain open"
     }
-  },
-  "checkpoint": {
-    "evidence": "PR #1501; exact head 5df64df1b54d1f100a706c0c966ec082ab8514c3, exact 3917ed6a tree with 76 HAD, inlet/MRA and diff checks",
-    "next": "Wait exact full CI then fresh merge preflight, merge and verify",
-    "blocker": "Physical split shoes and pressure isolation, pinned fits, installed dry supports and separate stand crossing remain open"
-  },
-  "pr": 1501
+  }
 }
