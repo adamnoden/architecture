@@ -196,6 +196,30 @@ def blind_pin_service(ring_room_face, pin_z, receiver_q):
     }
 
 
+def anchor_relocation(receipt, corner_offset, ring_room_face, service):
+    witness = receipt['signed']['capTransition']['peakLAnchorTension']
+    index = int(witness['anchor'].rsplit('-', 1)[1])
+    old_station, old_across = max(receipt['trialPositionsMm'][index]), min(receipt['trialPositionsMm'][index])
+    retained_core_q = receipt['seatOuterInwardCoordinateMm']
+    anchor_q = retained_core_q + old_across
+    old_station_from_corner = old_station - corner_offset
+    pack = service['nominalForkPackMm']
+    trial_fork_room_face = ring_room_face + service['projectedReceiverRoomwardMm']
+    eye_axis_q = trial_fork_room_face - pack / 2
+    separation = eye_axis_q - anchor_q
+    pin_load = witness['tensionN']
+    assert index == 11 and old_station_from_corner == 867.0
+    assert separation > 0
+    return {
+        'sourceAnchorTensionWitness': witness,
+        'anchorStationFromCornerMm': old_station_from_corner,
+        'oldAnchorAndTrialEyeQmm': [anchor_q, eye_axis_q],
+        'transverseOffsetMm': separation,
+        'grossSingleWitnessOffsetMomentNmm': pin_load * separation,
+        'addsPinToExistingAnchorLaw': False,
+    }
+
+
 def tool_and_envelope(ring, ring_room_face, pin_z, glass, retained_cavity, envelope):
     ceiling = envelope['occurrence']['ceiling']
     finish_q = envelope['occurrence']['ordinaryFinishQ']
@@ -311,6 +335,7 @@ def study():
     torsion = slot_and_cover(section, torque)
     bypass = fixed_bypass(section, ring_room_face, torque, torsion['intactClosedJmm4'])
     access = tool_and_envelope(section, ring_room_face, pin_z, glass, retained_cavity, envelope)
+    service = blind_pin_service(ring_room_face, pin_z, access['airReceiverCrossingQmm'])
     return {
         'status': 'comparison only; closed torsion, tool access and envelope installation remain unselected',
         'sourceSHA256': {p.name: hashlib.sha256(p.read_bytes()).hexdigest()
@@ -320,7 +345,9 @@ def study():
         'fixedBlindPocketBypass': bypass,
         'taperedPlanAndFixedEndSensitivity': transition_and_split(source, section, bypass, torsion),
         'access': access,
-        'blindPinService': blind_pin_service(ring_room_face, pin_z, access['airReceiverCrossingQmm']),
+        'blindPinService': service,
+        'anchorRelocation': anchor_relocation(receipt, ring_axis_q - receipt['seatOuterInwardCoordinateMm'],
+                                              ring_room_face, service),
     }
 
 

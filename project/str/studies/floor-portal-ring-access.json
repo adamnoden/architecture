@@ -272,5 +272,20 @@
     "radialZSpareInSleeveMm": 10.0,
     "axialSpareEachSideInSleeveMm": 32.0,
     "minimumLocalRemovablePanelWidthAtFlangedSleeveMm": 140.0
+  },
+  "anchorRelocation": {
+    "sourceAnchorTensionWitness": {
+      "case": "zero favourable G; U; W(4, 1);court=True;goodsZ=6000",
+      "anchor": "L-cap-anchor-(11667.5, 11667.5)-11",
+      "tensionN": 8584.889282479106
+    },
+    "anchorStationFromCornerMm": 867.0,
+    "oldAnchorAndTrialEyeQmm": [
+      338.5,
+      432.5
+    ],
+    "transverseOffsetMm": 94.0,
+    "grossSingleWitnessOffsetMomentNmm": 806979.5925530359,
+    "addsPinToExistingAnchorLaw": false
   }
 }
