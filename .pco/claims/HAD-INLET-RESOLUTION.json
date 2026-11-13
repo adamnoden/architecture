@@ -9,8 +9,8 @@
     "label": "zerg6-had-side-trunnion"
   },
   "claimedAt": "2026-11-13T23:23:35.653Z",
-  "heartbeatAt": "2026-11-13T23:23:35.653Z",
-  "expiresAt": "2026-11-14T00:08:35.653Z",
+  "heartbeatAt": "2026-11-13T23:24:33.233Z",
+  "expiresAt": "2026-11-14T00:09:33.233Z",
   "predecessor": {
     "leaseId": "9e747b70-eae0-4d47-a2dc-df8f13c2c7f6",
     "generation": 14,
@@ -32,5 +32,12 @@
       "next": "Verify exact-head CI then immediately run fresh publication preflight and merge",
       "blocker": "Actual side lift, braced dry supports and loaded handover remain unqualified"
     }
+  },
+  "branch": "work/zerg6-had-side-trunnion",
+  "pr": 1506,
+  "checkpoint": {
+    "evidence": "PR #1506 exact f0c9ee52 and combined tree 499404ad; 76 HAD, deterministic water-replan/MRA, whitespace pass",
+    "next": "Verify full exact-head CI then fresh publication preflight; next packet split slotted keeper",
+    "blocker": "Physical stand pins, anchor substrates, signed keeper/contact and actual handover remain open"
   }
 }
