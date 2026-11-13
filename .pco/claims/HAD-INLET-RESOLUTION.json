@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 15,
-  "state": "released",
-  "leaseId": "2da49805-052d-4199-983e-a20099cf5d25",
+  "generation": 16,
+  "state": "claimed",
+  "leaseId": "98c78542-4568-4637-8046-d0c53f638d70",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg6-had-side-trunnion"
+    "label": "zerg6-had-split-keeper"
   },
-  "claimedAt": "2026-11-13T23:23:35.653Z",
-  "heartbeatAt": "2026-11-13T23:40:27.283Z",
-  "expiresAt": "2026-11-13T23:40:27.283Z",
+  "claimedAt": "2026-11-13T23:41:15.640Z",
+  "heartbeatAt": "2026-11-13T23:41:15.640Z",
+  "expiresAt": "2026-11-14T00:26:15.640Z",
+  "branch": "work/zerg6-had-split-keeper",
   "predecessor": {
-    "leaseId": "9e747b70-eae0-4d47-a2dc-df8f13c2c7f6",
-    "generation": 14,
-    "branch": "work/zerg6-had-threshold-recovery",
-    "pr": 1505,
+    "leaseId": "2da49805-052d-4199-983e-a20099cf5d25",
+    "generation": 15,
+    "branch": "work/zerg6-had-side-trunnion",
+    "pr": 1506,
     "checkpoint": {
-      "evidence": "PR #1505 exact head 1e6a04e6, combined tree 77cb5553 independently verified",
-      "next": "Verify exact-head CI then immediately run fresh publication preflight and merge",
-      "blocker": "Actual side lift, braced dry supports and loaded handover remain unqualified"
+      "evidence": "PR #1506 exact f0c9ee52 and combined tree 499404ad; 76 HAD, deterministic water-replan/MRA, whitespace pass",
+      "next": "Verify full exact-head CI then fresh publication preflight; next packet split slotted keeper",
+      "blocker": "Physical stand pins, anchor substrates, signed keeper/contact and actual handover remain open"
     }
   },
   "recoverySource": {
-    "leaseId": "9e747b70-eae0-4d47-a2dc-df8f13c2c7f6",
-    "generation": 14,
-    "branch": "work/zerg6-had-threshold-recovery",
-    "pr": 1505,
+    "leaseId": "2da49805-052d-4199-983e-a20099cf5d25",
+    "generation": 15,
+    "branch": "work/zerg6-had-side-trunnion",
+    "pr": 1506,
     "checkpoint": {
-      "evidence": "PR #1505 exact head 1e6a04e6, combined tree 77cb5553 independently verified",
-      "next": "Verify exact-head CI then immediately run fresh publication preflight and merge",
-      "blocker": "Actual side lift, braced dry supports and loaded handover remain unqualified"
+      "evidence": "PR #1506 exact f0c9ee52 and combined tree 499404ad; 76 HAD, deterministic water-replan/MRA, whitespace pass",
+      "next": "Verify full exact-head CI then fresh publication preflight; next packet split slotted keeper",
+      "blocker": "Physical stand pins, anchor substrates, signed keeper/contact and actual handover remain open"
     }
-  },
-  "branch": "work/zerg6-had-side-trunnion",
-  "pr": 1506,
-  "checkpoint": {
-    "evidence": "PR #1506 exact f0c9ee52 and combined tree 499404ad; 76 HAD, deterministic water-replan/MRA, whitespace pass",
-    "next": "Verify full exact-head CI then fresh publication preflight; next packet split slotted keeper",
-    "blocker": "Physical stand pins, anchor substrates, signed keeper/contact and actual handover remain open"
-  },
-  "releasedAt": "2026-11-13T23:40:27.283Z",
-  "releaseReason": "handoff"
+  }
 }
