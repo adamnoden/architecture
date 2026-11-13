@@ -9,8 +9,8 @@
     "label": "zerg3-str"
   },
   "claimedAt": "2026-11-13T00:04:59.667Z",
-  "heartbeatAt": "2026-11-13T00:04:59.667Z",
-  "expiresAt": "2026-11-13T00:49:59.667Z",
+  "heartbeatAt": "2026-11-13T00:16:48.303Z",
+  "expiresAt": "2026-11-13T01:01:48.303Z",
   "branch": "work/zerg3-str-ring-access",
   "predecessor": {
     "leaseId": "60e7f838-4edb-4fbf-b1cd-90758c899003",
@@ -33,5 +33,10 @@
       "next": "Use the 16-piece comparator in PR1498 comment 6839232964 to design side-access capture, actual diaphragm transfer and closed cage; treat both backing-pressure failures",
       "blocker": "Assembly, actual bearing and qualified sliding behavior still unearned; STR packet remains planned"
     }
+  },
+  "checkpoint": {
+    "evidence": "Remote 4c6b664f6e4344e8ed451649546e55327c53b583, reproduced torsion and authored air receiver crossing",
+    "next": "Rebase by merging post-HAD main, exact CI and publication preflight",
+    "blocker": "HAD #1499 exact CI and merge ahead in integration queue"
   }
 }
