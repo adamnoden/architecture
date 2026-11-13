@@ -10,6 +10,7 @@ import {bridgeNativeMotionResult} from './incoming-water-bridge-native-motion.mj
 import {lowerCapComparator,lowerCapPlanEnvelope} from './incoming-water-lower-cap.mjs';
 import {deriveLowerTailComparison} from './incoming-water-lower-tail.mjs';
 import {deriveReleaseSupport} from './incoming-water-release-support.mjs';
+import {deriveStandRetirement} from './incoming-water-stand-retirement.mjs';
 
 const study=deriveIncomingWaterStudy();
 test('finite bends represent a real quarter-circle and reject impossible tangent lengths',()=>{
@@ -283,4 +284,39 @@ test('the lower-tail release follows the beam and current dock, including reject
   assert(dock.emptyWholeUReceiverParking.bodyGapBetweenParkedReceiversMM<0);
   assert(dock.emptyWholeUReceiverParking.bodyGapToSouthGuardMM<0);
   assert.equal(result.status,'DEVELOPMENT_NOT_ADOPTED');
+});
+
+test('the intact stand clears only the high-lift sequence and requires positive restraint before retirement',()=>{
+  const stand=deriveStandRetirement();
+  assert(stand.motion.every(phase=>phase.gap>30));
+  assert(stand.body.every(phase=>phase.gap>25&&phase.handOrArm.gap>25&&phase.maximumReachMM<600));
+  assert.equal(stand.thresholdSlice.highestZ,2223);
+  assert.equal(stand.thresholdSlice.minimumServicePlateLateralMarginMM,142.5);
+  assert(stand.adverse.shortLift.some(phase=>phase.gap<10));
+  assert(stand.adverse.openLeaf.some(phase=>phase.gap<25));
+  assert(stand.adverse.expandedCradle.some(phase=>phase.gap<25));
+  assert(stand.stability.massKG>70&&stand.stability.massKG<80);
+  assert(stand.stability.pointSupport.mostAdverseN<-90);
+  assert(stand.stability.restrainedCarrierTrial.minimumOpposedTieForceN>2000);
+  assert(stand.stability.firstTakeoverTrial.liftingKeySupports.every(key=>key.verticalForceN>0));
+  const restraint=stand.restraint;
+  assert(restraint.trackPadMotion.every(phase=>phase.gap>30));
+  assert(restraint.wideTrackPadMotion.every(phase=>phase.gap>30));
+  assert(restraint.linearStaticRatingComparison>1);
+  assert(restraint.wideStaticRatingUsage<1&&3*restraint.wideStaticRatingUsage>1);
+  assert.deepEqual(restraint.railBedsRequiringSlab.map(bed=>bed.pointsBeyondBeam.length),[0,1,2]);
+  const crossing=restraint.thresholdDockConnection;
+  assert(crossing.opposingHoldDownN>1270&&crossing.opposingHoldDownN<1271);
+  const bridge=crossing.independentDryBridge;
+  assert.equal(bridge.dryBridgeSpanMM,558);
+  assert.equal(bridge.innerFootToDryFaceMM,20);
+  assert.equal(bridge.outerFootBeyondCollectorMM,90);
+  assert(bridge.innerSupportIntersectsCoverPlan&&bridge.outerSupportIntersectsScaffoldPlan);
+  assert.equal(bridge.minimumRailBlockStackMM-bridge.movingCaptureBaselineMM,13);
+  assert(bridge.maximumBridgeBottomAtCurrentDatumMM<0);
+  assert(bridge.fixedBridgeMotion.some(phase=>phase.gap<0));
+  assert(stand.landing.firstRestIdealGravityScreenPasses);
+  assert(stand.landing.positiveKeeperRequired);
+  assert(stand.landing.cartConflictMM<0);
+  assert.equal(stand.status,'DEVELOPMENT_NOT_ADOPTED');
 });
