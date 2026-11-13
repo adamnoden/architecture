@@ -345,10 +345,21 @@ test('the intact stand clears only the high-lift sequence and requires positive 
   assert(side.minKeeperN<-175&&side.maxKeeperN>841);
   assert(side.minSupportN<-173&&side.maxSupportN>1275);
   assert(side.fullAxisCantileverDeflectionMM>4.9);
-  assert(side.nominalBraceAxialN>201&&side.nominalBraceAxialN<202);
+  assert(side.nominalBraceAxialN>192&&side.nominalBraceAxialN<193);
   assert(side.fixedToNative.gap>37.4&&side.overheadToNative.gap>50.4&&side.overheadToStand.gap>48.4);
-  assert(side.oneKneeAxialN>173&&side.transverseBaseCoupleN>282&&side.dockBaseCoupleN>260);
+  assert(side.oneKneeAxialN>173&&side.transverseBaseCoupleN>226&&side.dockBaseCoupleN>208);
   assert(side.transverseBraceWorkerClearance.gap<-19.9&&side.transverseBraceStandClearance.gap<-46);
+  assert.deepEqual(side.offsetLegY,[4089,5056]);
+  assert(side.keeperToHangers.gap<-33.9);
+  assert(side.jawToFixed.gap>37&&side.jawToHangers.gap>15.8);
+  assert.equal(side.jawToRail.gap,4);
+  assert(side.remainingGateRailClearanceMM>2.3&&side.remainingGateRailClearanceMM<2.4);
+  assert(side.splitKeeperTrials.every(keeper=>keeper.carriageSweep.gap>37.5&&keeper.actuatorSweep.gap>38.6));
+  assert(side.splitKeeperTrials.every(keeper=>keeper.sweep.gap>40.9&&keeper.outboardFixedSweep.gap>65.2));
+  assert(side.splitKeeperTrials.every(keeper=>keeper.latchShearN>126&&keeper.latchShearN<127));
+  assert(side.splitKeeperTrials.every(keeper=>keeper.parkedClearance.gap>55.5&&
+    keeper.xHands.every(station=>station.rodStrokeMM===40&&station.reaches<297&&station.linkage.gap>12)));
+
   assert.equal(stand.thresholdSlice.minimumServicePlateLateralMarginMM,142.5);
   assert(stand.adverse.shortLift.some(phase=>phase.gap<10));
   assert(stand.adverse.openLeaf.some(phase=>phase.gap<25));
