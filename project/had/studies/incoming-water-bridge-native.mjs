@@ -28,6 +28,9 @@ const boxes={
 };
 const cylinders={cylinder:{centre:[9830,4250],z:[0,1650],r:380},heat:{centre:[11225,3900],z:[100,2945],r:84},buffer:{centre:[10450,5325],z:[0,1975],r:300}};
 const braceAxes=[['westBrace',[9850,3700,20],[10140,3840,2044]],['southBrace',[10150,3645,20],[10140,3840,2044]]];
+export function bridgeRetirementGeometry(){
+ return structuredClone({boxes,cylinders,braceAxes});
+}
 function nativeCylinderDistance(a,b,{centre,z,r}){
  if(a[2]>=z[0]&&a[2]<=z[1]&&b[2]>=z[0]&&b[2]<=z[1]){
   const axis=[...centre,0];
