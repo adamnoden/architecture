@@ -1,0 +1,205 @@
+{
+  "sourceSha256": {
+    "floor-portal-seat-detail.py": "c56399ccfc15b9eb8bf0779e252244a128f71531944d67f7b8412044a843ac3f",
+    "floor-portal-seat-detail.json": "57331cf8738d2f5ce76e59a763c30317a6781873c80beeb408684b1611de1dfc"
+  },
+  "splitPointsMm": [
+    [
+      966.0,
+      43.0
+    ],
+    [
+      43.0,
+      966.0
+    ]
+  ],
+  "travelPerAxisMm": 120.0,
+  "heightSampleStepMm": 0.05,
+  "arcChordMaximumSagittaMm": 0.0012946158181754708,
+  "relativePlanSettingMm": 10.0,
+  "fixedBarClearances": {
+    "coldDiagonal": {
+      "clearanceLowerBoundMm": 2.1401703967884167,
+      "levelMm": 6433.0,
+      "bar": "H20-2",
+      "sampleHeightMm": 6443.0,
+      "sameHeightClearanceUpperBoundMm": 4.025400688121891
+    },
+    "roomDiagonal": {
+      "clearanceLowerBoundMm": 0.12692352511066218,
+      "levelMm": 6355.0,
+      "bar": "H20-6",
+      "sampleHeightMm": 6345.0,
+      "sameHeightClearanceUpperBoundMm": 0.4057120573273565
+    },
+    "coldSingleAxisControl": {
+      "clearanceLowerBoundMm": -24.009231918979836,
+      "levelMm": 6355.0,
+      "bar": "H20-10",
+      "sampleHeightMm": 6345.0,
+      "sameHeightClearanceUpperBoundMm": -23.998705384181825
+    },
+    "coldWithPreinstalled16MmSleeve": {
+      "clearanceLowerBoundMm": -7.815169794307508,
+      "levelMm": 6355.0,
+      "bar": "H20-3",
+      "sampleHeightMm": 6345.0,
+      "sameHeightClearanceUpperBoundMm": -6.6847810246251385
+    }
+  },
+  "maximumConcentricSpliceOutsideDiameterAtStraightEndsMm": 8.0,
+  "hypotheticalConcentricSleeve": {
+    "diameterMm": 16.0,
+    "lengthMm": 48.0,
+    "seatedFixedBarClearance": {
+      "clearanceLowerBoundMm": 1.2021717965366214,
+      "levelMm": 6355.0,
+      "bar": "H20-7",
+      "sampleHeightMm": 6345.0,
+      "sameHeightClearanceUpperBoundMm": 1.4129528619125828
+    },
+    "coverAfterSettingMm": 21.0,
+    "coverScreenMm": 25.0,
+    "inwardRelocationToRestoreCoverMm": 4.0,
+    "inwardRelocationSeatedFixedBarClearance": {
+      "clearanceLowerBoundMm": -2.192803301431379,
+      "levelMm": 6355.0,
+      "bar": "H20-7",
+      "sampleHeightMm": 6355.3,
+      "sameHeightClearanceUpperBoundMm": -2.0061798009166054
+    }
+  },
+  "midArmRelocatedSplit": {
+    "stationMm": 420.0,
+    "centrelineFromCoreOriginMm": 3.0,
+    "coverAfterSettingMm": 25.0,
+    "seatedSleeveToFixedBars": {
+      "clearanceLowerBoundMm": 36.30754513325841,
+      "levelMm": 6355.0,
+      "bar": "H12-0-350-42",
+      "sampleHeightMm": 6345.0,
+      "sameHeightClearanceUpperBoundMm": 36.30754513325841
+    },
+    "coldDiagonal": {
+      "clearanceLowerBoundMm": 3.8195878237062715,
+      "levelMm": 6433.0,
+      "bar": "H20-1",
+      "sampleHeightMm": 6443.0,
+      "sameHeightClearanceUpperBoundMm": 4.025400688121891
+    },
+    "roomDiagonal": {
+      "clearanceLowerBoundMm": -24.01019599658879,
+      "levelMm": 6355.0,
+      "bar": "H20-2",
+      "sampleHeightMm": 6345.0,
+      "sameHeightClearanceUpperBoundMm": -23.998705384181825
+    }
+  },
+  "fourPieceMidArmSplit": {
+    "stationMm": 420.0,
+    "centrelineAcrossCoreMm": [
+      3.0,
+      102.0
+    ],
+    "coverAfterSettingMm": 25.0,
+    "coldCornerDiagonal": {
+      "clearanceLowerBoundMm": 3.8195878237062715,
+      "levelMm": 6433.0,
+      "bar": "H20-1",
+      "sampleHeightMm": 6443.0,
+      "sameHeightClearanceUpperBoundMm": 4.025400688121891
+    },
+    "roomCornerDiagonal": {
+      "clearanceLowerBoundMm": 0.6902070216660334,
+      "levelMm": 6433.0,
+      "bar": "H20-5",
+      "sampleHeightMm": 6443.0,
+      "sameHeightClearanceUpperBoundMm": 0.6943534981504449
+    },
+    "bareBarEndSetbackEachMm": 6.0,
+    "barePieceSequenceBeforeRelativePieceSettingMm": {
+      "roomCornerAgainstSeatedColdCorner": 90.49741076836365,
+      "firstEndAgainstSeatedCorners": 3.4974107683636486,
+      "secondEndAgainstSeatedCornersAndFirstEnd": 3.4974107683636486
+    },
+    "oneEndReturnAxial": {
+      "clearanceLowerBoundMm": 0.12692352511066218,
+      "levelMm": 6355.0,
+      "bar": "H20-9",
+      "sampleHeightMm": 6345.0,
+      "sameHeightClearanceUpperBoundMm": 0.4057120573273565
+    },
+    "seatedSleevesToFixedBars": {
+      "clearanceLowerBoundMm": 26.99019513592785,
+      "levelMm": 6355.0,
+      "bar": "H12-0-350-80",
+      "sampleHeightMm": 6345.0,
+      "sameHeightClearanceUpperBoundMm": 26.99019513592785
+    },
+    "pfeiferPH8Comparators": {
+      "80": {
+        "publishedOverallLengthMm": 80,
+        "additionalStraightEachEndBeyond48MmTrialMm": 16.0,
+        "idealizedOverallEnvelopeMovingPastBars": {
+          "clearanceLowerBoundMm": 0.10841525434986465,
+          "levelMm": 6433.0,
+          "bar": "H12-0-600-80",
+          "sampleHeightMm": 6435.0,
+          "sameHeightClearanceUpperBoundMm": 0.16609194718914466
+        }
+      },
+      "91": {
+        "publishedOverallLengthMm": 91,
+        "additionalStraightEachEndBeyond48MmTrialMm": 21.5,
+        "idealizedOverallEnvelopeMovingPastBars": {
+          "clearanceLowerBoundMm": -1.5982028901138499,
+          "levelMm": 6433.0,
+          "bar": "H12-0-600-80",
+          "sampleHeightMm": 6435.0,
+          "sameHeightClearanceUpperBoundMm": -1.5444884271143806
+        }
+      }
+    },
+    "pfeiferPHRL8Comparator": {
+      "publishedOverallLengthMm": 117.0,
+      "publishedBodyDiameterMm": 16.5,
+      "publishedLocknutAcrossFlatsMm": 19.0,
+      "publishedThreadLengthsLeftRightMm": [
+        12,
+        24
+      ],
+      "publishedThreadPitchMm": 1.75,
+      "additionalStraightEachEndForCentredEnvelopeMm": 34.5,
+      "bodyCoverAfterSettingMm": 24.75,
+      "bestPossibleLocknutCoverAfterSettingMm": 23.5,
+      "minimumInwardShiftForLocknutCoverMm": 1.5
+    },
+    "sleeveMovement": {
+      "endSetbackEachMm": 6.0,
+      "barTipToTipGapMm": 12.0,
+      "nominalSeatOverlapEachEndMm": 18.0,
+      "overlapEachEndIfOwnBarAndSleeveEachShift5Mm": 8.0,
+      "ownBarAndSleeveRadialMisalignmentBudgetMm": 10.0,
+      "radialAnnulusBetween16MmEnvelopeAndH8Mm": 4.0,
+      "parkingToClosureAxialTravelMm": 30.0,
+      "minimumStraightParkingLengthFromEndTipMm": 48.0,
+      "providedStraightFromEndTipBeforeOutboardJogMm": 18.0,
+      "parkedSleeveAgainstOtherBarePiecesAndSleeveMm": -0.5025892316363514,
+      "parkedSleeveMovingPastFixedBars": {
+        "clearanceLowerBoundMm": -2.0526593582095494,
+        "levelMm": 6355.0,
+        "bar": "H12-0-600-80",
+        "sampleHeightMm": 6345.0,
+        "sameHeightClearanceUpperBoundMm": -2.0
+      },
+      "parkedAndSeatedSleeveEnvelopeToFixedBars": {
+        "clearanceLowerBoundMm": 26.99019513592785,
+        "levelMm": 6355.0,
+        "bar": "H12-0-350-80",
+        "sampleHeightMm": 6345.0,
+        "sameHeightClearanceUpperBoundMm": 26.99019513592785
+      },
+      "barePieceSequenceAfterIndependentRelativePlanSettingsMm": -6.502589231636351
+    }
+  }
+}
