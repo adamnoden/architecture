@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 15,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "dcc361c6-85a7-4fa1-8b71-3216cdc2061d",
   "holder": {
     "kind": "chatgpt",
     "label": "recover-str"
   },
   "claimedAt": "2026-11-13T22:56:18.753Z",
-  "heartbeatAt": "2026-11-13T22:57:22.202Z",
-  "expiresAt": "2026-11-13T23:42:22.202Z",
+  "heartbeatAt": "2026-11-13T22:59:09.059Z",
+  "expiresAt": "2026-11-13T22:59:09.059Z",
   "checkpoint": {
     "evidence": "PR #1504 adopts exact green d8e68f551db21d8e5cb9a918a5199e54acf8f5e9 from #1503, no tree change",
     "next": "Confirm generation 15 packet check and exact head, integrate, then release handoff"
@@ -38,5 +38,7 @@
       "blocker": "Tested closure routes fail the unchanged cover, setting or assembly screen"
     }
   },
-  "pr": 1504
+  "pr": 1504,
+  "releasedAt": "2026-11-13T22:59:09.059Z",
+  "releaseReason": "handoff"
 }
