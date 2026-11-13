@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 13,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "354ace11-48c1-4381-9df2-fc3cfc388365",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg5-had-threshold"
   },
   "claimedAt": "2026-11-13T19:49:18.571Z",
-  "heartbeatAt": "2026-11-13T19:50:12.307Z",
-  "expiresAt": "2026-11-13T20:35:12.307Z",
+  "heartbeatAt": "2026-11-13T20:08:46.000Z",
+  "expiresAt": "2026-11-13T20:08:46.000Z",
   "branch": "work/zerg5-had-signed-threshold-followon",
   "predecessor": {
     "leaseId": "4d164e65-4631-4f40-861c-869d6c5dddeb",
@@ -38,5 +38,7 @@
     "evidence": "Remote d6683764, exact tree 62f4a0e6, 76 HAD tests and deterministic MRA/inlet/water-replan passed; signed threshold and side pickup compared",
     "next": "After STR merge, rebase against main, open full CI and verify exact publication",
     "blocker": "Actual side lift, independently mounted dry supports and complete loaded transfer still open"
-  }
+  },
+  "releasedAt": "2026-11-13T20:08:46.000Z",
+  "releaseReason": "handoff"
 }
