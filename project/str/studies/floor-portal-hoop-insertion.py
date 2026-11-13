@@ -98,6 +98,32 @@ def moving_gap(chords, direction, levels, paths, sagitta, piece_radius=HOOP_RADI
     return best
 
 
+def mid_arm_trial(segments, arcs, levels, paths, sagitta, sleeve_radius):
+    station, centreline = 420.0, 3.0
+    left, right = station - 24.0, station + 24.0
+    split = (station, centreline)
+    cold_points = [segments[0][0], (left - 21, -1), (left, centreline), split]
+    room_points = [split, (right, centreline), (right + 21, -1), segments[0][1]]
+
+    def mirrored_chords(points):
+        chords = list(zip(points, points[1:]))
+        return chords + [tuple(point[::-1] for point in chord) for chord in chords]
+
+    cold = mirrored_chords(cold_points) + chord_segments(arcs[0])
+    room = mirrored_chords(room_points) + segments[1:5]
+    for arc in arcs[1:]:
+        room.extend(chord_segments(arc))
+    sleeves = [((left, centreline), (right, centreline)), ((centreline, left), (centreline, right))]
+    return {
+        'stationMm': station,
+        'centrelineFromCoreOriginMm': centreline,
+        'coverAfterSettingMm': centreline + SEAT['OUTWARD'] - sleeve_radius - SEAT['SETTING'],
+        'seatedSleeveToFixedBars': moving_gap(sleeves, (0, 0), levels, paths, 0, sleeve_radius),
+        'coldDiagonal': moving_gap(cold, (-1, -1), levels, paths, sagitta),
+        'roomDiagonal': moving_gap(room, (1, 1), levels, paths, sagitta),
+    }
+
+
 def compare():
     receipt = json.loads(RECEIPT.read_text())
     loop = receipt['roundedH8LinkScreen']
@@ -130,6 +156,15 @@ def compare():
     routes['coldWithPreinstalled16MmSleeve'] = moving_gap(
         sleeve_chords, (-1, -1), levels, paths, 0, sleeve_radius)
     splice_diameter = 2 * (SEAT['CORE_LENGTH'] - end_x - SEAT['COVER_SCREEN'] - SEAT['SETTING'])
+    inward = 4.0
+    relocated_end = tuple((x - inward, y) for x, y in sleeve)
+    relocated = [relocated_end, tuple(point[::-1] for point in relocated_end)]
+    inward_clearance = moving_gap(relocated, (0, 0), levels, paths, 0, sleeve_radius)
+    mid_arm = mid_arm_trial(segments, arcs, levels, paths, sagitta, sleeve_radius)
+    assert inward_clearance['sameHeightClearanceUpperBoundMm'] < 0
+    assert mid_arm['coverAfterSettingMm'] == SEAT['COVER_SCREEN']
+    assert mid_arm['coldDiagonal']['clearanceLowerBoundMm'] > 0
+    assert mid_arm['roomDiagonal']['sameHeightClearanceUpperBoundMm'] < 0
     assert routes['coldDiagonal']['clearanceLowerBoundMm'] > 0
     assert routes['roomDiagonal']['clearanceLowerBoundMm'] > 0
     assert routes['coldSingleAxisControl']['sameHeightClearanceUpperBoundMm'] < 0
@@ -150,7 +185,10 @@ def compare():
             'seatedFixedBarClearance': seated_sleeve,
             'coverAfterSettingMm': SEAT['CORE_LENGTH'] - end_x - sleeve_radius - SEAT['SETTING'],
             'coverScreenMm': SEAT['COVER_SCREEN'],
+            'inwardRelocationToRestoreCoverMm': inward,
+            'inwardRelocationSeatedFixedBarClearance': inward_clearance,
         },
+        'midArmRelocatedSplit': mid_arm,
     }
 
 
