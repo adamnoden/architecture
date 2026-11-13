@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 16,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "98c78542-4568-4637-8046-d0c53f638d70",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg6-had-split-keeper"
   },
   "claimedAt": "2026-11-13T23:41:15.640Z",
-  "heartbeatAt": "2026-11-13T23:42:17.906Z",
-  "expiresAt": "2026-11-14T00:27:17.906Z",
+  "heartbeatAt": "2026-11-13T23:58:15.964Z",
+  "expiresAt": "2026-11-13T23:58:15.964Z",
   "branch": "work/zerg6-had-split-keeper",
   "predecessor": {
     "leaseId": "2da49805-052d-4199-983e-a20099cf5d25",
@@ -39,5 +39,7 @@
     "evidence": "Draft PR #1507 exact 5bf02b53 and combined tree 17f3ee3f; 76 HAD, deterministic water-replan/MRA, whitespace pass",
     "next": "Mark ready after exact binding, verify full exact-head CI, fresh preflight, merge and release",
     "blocker": "Actual rated dock substrate, anchor and positive loaded interlock remain open"
-  }
+  },
+  "releasedAt": "2026-11-13T23:58:15.964Z",
+  "releaseReason": "handoff"
 }
