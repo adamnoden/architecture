@@ -9,8 +9,8 @@
     "label": "zerg2-had"
   },
   "claimedAt": "2026-11-13T00:23:11.917Z",
-  "heartbeatAt": "2026-11-13T00:37:53.847Z",
-  "expiresAt": "2026-11-13T01:22:53.847Z",
+  "heartbeatAt": "2026-11-13T00:43:13.183Z",
+  "expiresAt": "2026-11-13T01:28:13.183Z",
   "branch": "work/zerg2-had-tail-positive-transfer-20261113",
   "predecessor": {
     "leaseId": "455ec204-459b-4640-871f-b5a832615093",
@@ -35,8 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Exact remote b5f606aef37933747ebc638abcb24a5c43789b52; 76 HAD tests, inlet and MRA pass on candidate and matching combined STR preview",
-    "next": "After STR #1500 merge, verify graft tree 3917ed6a then launch HAD exact CI and preflight",
-    "blocker": "STR #1500 CI 43336530941 pending; physical source-native collar, locks, anchor and threshold remain development"
-  }
+    "evidence": "PR #1501; exact head 5df64df1b54d1f100a706c0c966ec082ab8514c3, exact 3917ed6a tree with 76 HAD, inlet/MRA and diff checks",
+    "next": "Wait exact full CI then fresh merge preflight, merge and verify",
+    "blocker": "Physical split shoes and pressure isolation, pinned fits, installed dry supports and separate stand crossing remain open"
+  },
+  "pr": 1501
 }
