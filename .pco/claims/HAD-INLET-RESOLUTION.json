@@ -9,8 +9,8 @@
     "label": "zerg2-had"
   },
   "claimedAt": "2026-11-13T00:23:11.917Z",
-  "heartbeatAt": "2026-11-13T00:23:11.917Z",
-  "expiresAt": "2026-11-13T01:08:11.917Z",
+  "heartbeatAt": "2026-11-13T00:24:43.055Z",
+  "expiresAt": "2026-11-13T01:09:43.055Z",
   "branch": "work/zerg2-had-tail-positive-transfer-20261113",
   "predecessor": {
     "leaseId": "455ec204-459b-4640-871f-b5a832615093",
@@ -33,5 +33,10 @@
       "next": "Reacquire HAD to advance paired lower-tail capture, support rail removal and two-person dock keeper",
       "blocker": "Actual positive capture, anchor, track and supported threshold detail still open; packet planned"
     }
+  },
+  "checkpoint": {
+    "evidence": "Exact remote b5f606aef37933747ebc638abcb24a5c43789b52; simultaneous mast/yoke, staged rail first rest and two-person dock keeper; HAD regression and inlet/MRA checks",
+    "next": "Validate current main tree, then graft STR #1500 and open exact CI before merging",
+    "blocker": "Physical collar/latch and rail rest/anchor qualification; coordinated STR integration order"
   }
 }
