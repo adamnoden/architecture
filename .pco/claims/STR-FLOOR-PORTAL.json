@@ -9,8 +9,8 @@
     "label": "zerg3-str"
   },
   "claimedAt": "2026-11-13T00:04:59.667Z",
-  "heartbeatAt": "2026-11-13T00:16:48.303Z",
-  "expiresAt": "2026-11-13T01:01:48.303Z",
+  "heartbeatAt": "2026-11-13T00:22:48.881Z",
+  "expiresAt": "2026-11-13T01:07:48.881Z",
   "branch": "work/zerg3-str-ring-access",
   "predecessor": {
     "leaseId": "60e7f838-4edb-4fbf-b1cd-90758c899003",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote 4c6b664f6e4344e8ed451649546e55327c53b583, reproduced torsion and authored air receiver crossing",
-    "next": "Rebase by merging post-HAD main, exact CI and publication preflight",
-    "blocker": "HAD #1499 exact CI and merge ahead in integration queue"
-  }
+    "evidence": "PR #1500 exact head fa94c9d5516f7bc3f39a5542265ab892679d464b, repository integrity and source-bound replay passed",
+    "next": "Check exact CI and immediate preflight, merge, release to handoff"
+  },
+  "pr": 1500
 }
