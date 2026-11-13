@@ -160,6 +160,20 @@
         }
       }
     },
+    "pfeiferPHRL8Comparator": {
+      "publishedOverallLengthMm": 117.0,
+      "publishedBodyDiameterMm": 16.5,
+      "publishedLocknutAcrossFlatsMm": 19.0,
+      "publishedThreadLengthsLeftRightMm": [
+        12,
+        24
+      ],
+      "publishedThreadPitchMm": 1.75,
+      "additionalStraightEachEndForCentredEnvelopeMm": 34.5,
+      "bodyCoverAfterSettingMm": 24.75,
+      "bestPossibleLocknutCoverAfterSettingMm": 23.5,
+      "minimumInwardShiftForLocknutCoverMm": 1.5
+    },
     "sleeveMovement": {
       "endSetbackEachMm": 6.0,
       "barTipToTipGapMm": 12.0,

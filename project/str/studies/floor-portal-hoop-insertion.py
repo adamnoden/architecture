@@ -170,6 +170,10 @@ def four_piece_trial(segments, arcs, levels, paths, sagitta, sleeve_radius):
         piece_clearance(mirrored(parked_sleeves), (0, 1), parked_sleeves, sagitta, sleeve_radius, sleeve_radius),
     )
     assert SEAT['CORE_WIDTH'] - room_q - sleeve_radius - SEAT['SETTING'] == SEAT['COVER_SCREEN']
+    # ETA-20/0259 A20, C7 and manufacturer's PH-RL-8/61 wrench size.
+    positional_length, positional_diameter, locknut_flats = 117.0, 16.5, 19.0
+    positional_body_cover = SEAT['COVER_SCREEN'] - (positional_diameter / 2 - sleeve_radius)
+    positional_nut_cover = SEAT['COVER_SCREEN'] - (locknut_flats / 2 - sleeve_radius)
     return {
         'stationMm': station,
         'centrelineAcrossCoreMm': [cold_q, room_q],
@@ -193,6 +197,17 @@ def four_piece_trial(segments, arcs, levels, paths, sagitta, sleeve_radius):
                     (1, 0), levels, paths, 0, sleeve_radius),
             }
             for length in (80, 91)
+        },
+        'pfeiferPHRL8Comparator': {
+            'publishedOverallLengthMm': positional_length,
+            'publishedBodyDiameterMm': positional_diameter,
+            'publishedLocknutAcrossFlatsMm': locknut_flats,
+            'publishedThreadLengthsLeftRightMm': [12, 24],
+            'publishedThreadPitchMm': 1.75,
+            'additionalStraightEachEndForCentredEnvelopeMm': positional_length / 2 - sleeve_half_length,
+            'bodyCoverAfterSettingMm': positional_body_cover,
+            'bestPossibleLocknutCoverAfterSettingMm': positional_nut_cover,
+            'minimumInwardShiftForLocknutCoverMm': SEAT['COVER_SCREEN'] - positional_nut_cover,
         },
         'sleeveMovement': {
             'endSetbackEachMm': setback,
