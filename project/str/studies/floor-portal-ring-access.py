@@ -7,7 +7,7 @@ from pathlib import Path
 STUDIES = Path(__file__).resolve().parent
 RING_SOURCE = STUDIES / 'current-house-welded-heel.json'
 SEAT_SOURCE = STUDIES / 'floor-portal-seat-detail.json'
-ENVELOPE_SOURCE = STUDIES.parents[1] / 'mat' / 'ordinary-eave-joined.md'
+ENVELOPE_SOURCE = STUDIES.parents[1] / 'mat' / 'studies' / 'ordinary-eave-joined.json'
 
 
 def closed_constant(area, compliance):
@@ -165,14 +165,14 @@ def transition_and_split(source, section, bypass, torsion):
     }
 
 
-def blind_pin_service(ring_room_face, pin_z):
+def blind_pin_service(ring_room_face, pin_z, receiver_q):
     clear_pocket_depth, clear_pocket_height = 32.0, 60.0
     central_eye, ear, face_gap = 10.0, 8.0, 2.0
     fork_pack = central_eye + 2 * (ear + face_gap)
     rear_seating_reserve = 5.0
     roomward_receiver_projection = 5.0
     required_reach = fork_pack + rear_seating_reserve
-    free_run = 550.0 - ring_room_face - roomward_receiver_projection
+    free_run = receiver_q - ring_room_face - roomward_receiver_projection
     trial_extract_run = fork_pack + 10.0
     aperture_radius, sleeve_height, sleeve_length = 28.0, 76.0, 120.0
     assert required_reach > clear_pocket_depth
@@ -186,7 +186,7 @@ def blind_pin_service(ring_room_face, pin_z):
         'remainingDepthForRetainerAndSettingBeyondTrialStackMm':
             clear_pocket_depth + roomward_receiver_projection - required_reach,
         'pinExtractRunWithinClearAirLidQmm': trial_extract_run,
-        'straightRunToQ550FromReceiverFaceMm': free_run,
+        'straightRunToAirReceiverFromForkFaceMm': free_run,
         'remainingRunAfterTrialExtractMm': free_run - trial_extract_run,
         'toolSweepZmm': [pin_z - aperture_radius, pin_z + aperture_radius],
         'radialZSpareInBlindPocketMm': clear_pocket_height / 2 - aperture_radius,
@@ -196,16 +196,29 @@ def blind_pin_service(ring_room_face, pin_z):
     }
 
 
-def tool_and_envelope(ring, ring_room_face, pin_z, glass, retained_cavity):
-    return_q, return_z = 550.0, 6640.0
-    finish_q, finish_z, removable_underside = 429.5, 6550.0, 6513.0
+def tool_and_envelope(ring, ring_room_face, pin_z, glass, retained_cavity, envelope):
+    ceiling = envelope['occurrence']['ceiling']
+    finish_q = envelope['occurrence']['ordinaryFinishQ']
+    finish_z, removable_underside = ceiling['finish'], ceiling['localUnderside']
+    polyline = envelope['sections']['clearBay']['warmAirPolylineQZ']
     socket_diameter, positive_setting = 46.0, 5.0
     access_length = 180.0
     aperture_height, cover_thickness, fastener_head = 45.0, 20.0, 12.0
     service_aperture_height, frame_overlap = 56.0, 24.0
     tool_radius = socket_diameter / 2 + positive_setting
-    membrane_pass_through = return_q > ring_room_face and return_q < ring_room_face + access_length
-    assert membrane_pass_through and pin_z + tool_radius < return_z
+    tool_run = [ring_room_face, ring_room_face + access_length]
+    tool_z = [pin_z - tool_radius, pin_z + tool_radius]
+    vertical_crossings = []
+    for (q1, z1), (q2, z2) in zip(polyline, polyline[1:]):
+        if q1 == q2 and tool_run[0] <= q1 <= tool_run[1]:
+            lower, upper = sorted((z1, z2))
+            if min(upper, tool_z[1]) >= max(lower, tool_z[0]):
+                vertical_crossings.append((q1, upper))
+    assert vertical_crossings == [(489.5, 6640)]
+    return_q, return_z = vertical_crossings[0]
+    assert all(not (z1 == z2 and tool_z[0] <= z1 <= tool_z[1]
+                    and min(max(q1, q2), tool_run[1]) >= max(min(q1, q2), tool_run[0]))
+               for (q1, z1), (q2, z2) in zip(polyline, polyline[1:]))
     direct_aperture_margin = aperture_height - 2 * tool_radius
     underside_rise = pin_z - finish_z
     # Orthogonal elbow upper bound: a 32 mm radius plus the tool envelope.
@@ -223,7 +236,7 @@ def tool_and_envelope(ring, ring_room_face, pin_z, glass, retained_cavity):
     lifted_return_top = 6650.0
     flange_land = 10.0
     flange_z = [return_port_z[0] - flange_land, return_port_z[1] + flange_land]
-    ordinary_ceiling_band = [finish_z, 6620.0]
+    ordinary_ceiling_band = [finish_z, ceiling['top']]
     ceiling_intersection = [max(flange_z[0], ordinary_ceiling_band[0]),
                             min(flange_z[1], ordinary_ceiling_band[1])]
     assert lifted_return_top >= flange_z[1] and ceiling_intersection[1] > ceiling_intersection[0]
@@ -246,7 +259,7 @@ def tool_and_envelope(ring, ring_room_face, pin_z, glass, retained_cavity):
         'frontAirSleeveFlangeTopShortfallMm': flange_land - return_port_land,
         'liftedReturnWithSeparateAirLid': {
             'topZmm': lifted_return_top,
-            'deltaAboveAuthoredQ550TurnMm': lifted_return_top - return_z,
+            'deltaAboveAuthoredAirReceiverTopMm': lifted_return_top - return_z,
             'airLidFlangeZmm': flange_z,
             'topFlangeLandMm': lifted_return_top - return_port_z[1],
             'ordinaryCeilingElevationOverlapMm': ceiling_intersection,
@@ -259,12 +272,12 @@ def tool_and_envelope(ring, ring_room_face, pin_z, glass, retained_cavity):
         'trialBackingFramePocketWidthMm': aperture_inner_frame_width,
         'assumedToolRunMm': access_length,
         'roomSideToolAxisZmm': pin_z,
-        'roomSideToolRunQmm': [ring_room_face, ring_room_face + access_length],
-        'intersectsPinnedQ550AirReturn': membrane_pass_through,
-        'airReturnCrossingZmm': [pin_z - tool_radius, pin_z + tool_radius],
+        'roomSideToolRunQmm': tool_run,
+        'airReceiverCrossingQmm': return_q,
+        'airReturnCrossingZmm': tool_z,
         'airReturnTopZmm': return_z,
         'coverAndHeadsOccupiedQmm': [ring_room_face, ring_room_face + cover_thickness + fastener_head],
-        'clearBetweenProtrudingFastenersAndQ550Mm': return_q - ring_room_face - cover_thickness - fastener_head,
+        'clearBetweenProtrudingFastenersAndAirReceiverMm': return_q - ring_room_face - cover_thickness - fastener_head,
         'ceilingFinishToPinAxisMm': underside_rise,
         'localUndersideDropReservationMm': underside_room,
         'trialElbowAndToolRiseMm': elbow_rise,
@@ -285,18 +298,19 @@ def study():
     torques = [row['localMomentsEachArm'] for row in segments]
     assert torques and min(torques) == max(torques) == 10
     receipt = json.loads(SEAT_SOURCE.read_text())
-    envelope = ENVELOPE_SOURCE.read_text()
-    assert all(fragment in envelope for fragment in ('q550', 'z6640', 'z6513', 'q429.5', 'C-O70'))
+    envelope = json.loads(ENVELOPE_SOURCE.read_text())
+    assert envelope['occurrence']['face'] == 'outer-north'
     ring_axis_q = min(min(station['xy']) for station in source['stations'])
     pin_z = sum(source['z']) / 2
     ring_room_face = ring_axis_q + section['B'] / 2
     glass = receipt['minimumGlassWidthAfterSingleOutwardCapSettingMm']
     retained_cavity = 50.0
-    assert '50 drained cavity' in envelope and 'top6620/finish6550' in envelope
+    assert 'Ordinary50 drained' in envelope['cold']['cavity']
     assert glass == 70.0 and ring_axis_q == 332.5 and pin_z == 6600.0
     torque = max(torques) * 1e6
     torsion = slot_and_cover(section, torque)
     bypass = fixed_bypass(section, ring_room_face, torque, torsion['intactClosedJmm4'])
+    access = tool_and_envelope(section, ring_room_face, pin_z, glass, retained_cavity, envelope)
     return {
         'status': 'comparison only; closed torsion, tool access and envelope installation remain unselected',
         'sourceSHA256': {p.name: hashlib.sha256(p.read_bytes()).hexdigest()
@@ -305,8 +319,8 @@ def study():
         'torsion': torsion,
         'fixedBlindPocketBypass': bypass,
         'taperedPlanAndFixedEndSensitivity': transition_and_split(source, section, bypass, torsion),
-        'access': tool_and_envelope(section, ring_room_face, pin_z, glass, retained_cavity),
-        'blindPinService': blind_pin_service(ring_room_face, pin_z),
+        'access': access,
+        'blindPinService': blind_pin_service(ring_room_face, pin_z, access['airReceiverCrossingQmm']),
     }
 
 

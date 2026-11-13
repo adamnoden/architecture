@@ -3,7 +3,7 @@
   "sourceSHA256": {
     "current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
     "floor-portal-seat-detail.json": "57331cf8738d2f5ce76e59a763c30317a6781873c80beeb408684b1611de1dfc",
-    "ordinary-eave-joined.md": "849fc338ad38929e42970ed58fa658b9117aa75c12e3391892a3a94c4ce1d146"
+    "ordinary-eave-joined.json": "33bc25fb6251d20f9e744bae95f030e4f48fdbececce1452ac32124fac7f2c5f"
   },
   "torqueScope": "10 kNm authored welded-heel outer end-arm action, separate from the floor collector torsion",
   "torsion": {
@@ -201,7 +201,7 @@
     "frontAirSleeveFlangeTopShortfallMm": 8.0,
     "liftedReturnWithSeparateAirLid": {
       "topZmm": 6650.0,
-      "deltaAboveAuthoredQ550TurnMm": 10.0,
+      "deltaAboveAuthoredAirReceiverTopMm": 10.0,
       "airLidFlangeZmm": [
         6552.0,
         6648.0
@@ -209,7 +209,7 @@
       "topFlangeLandMm": 12.0,
       "ordinaryCeilingElevationOverlapMm": [
         6552.0,
-        6620.0
+        6620
       ],
       "ordinaryCeilingElevationOverlapHeightMm": 68.0
     },
@@ -231,19 +231,19 @@
       442.5,
       622.5
     ],
-    "intersectsPinnedQ550AirReturn": true,
+    "airReceiverCrossingQmm": 489.5,
     "airReturnCrossingZmm": [
       6572.0,
       6628.0
     ],
-    "airReturnTopZmm": 6640.0,
+    "airReturnTopZmm": 6640,
     "coverAndHeadsOccupiedQmm": [
       442.5,
       474.5
     ],
-    "clearBetweenProtrudingFastenersAndQ550Mm": 75.5,
+    "clearBetweenProtrudingFastenersAndAirReceiverMm": 15.0,
     "ceilingFinishToPinAxisMm": 50.0,
-    "localUndersideDropReservationMm": 37.0,
+    "localUndersideDropReservationMm": 37,
     "trialElbowAndToolRiseMm": 60.0,
     "coldCavityAndGlass": {
       "minimumRetainedGlassMm": 70.0,
@@ -262,8 +262,8 @@
     "projectedReceiverRoomwardMm": 5.0,
     "remainingDepthForRetainerAndSettingBeyondTrialStackMm": 2.0,
     "pinExtractRunWithinClearAirLidQmm": 40.0,
-    "straightRunToQ550FromReceiverFaceMm": 102.5,
-    "remainingRunAfterTrialExtractMm": 62.5,
+    "straightRunToAirReceiverFromForkFaceMm": 42.0,
+    "remainingRunAfterTrialExtractMm": 2.0,
     "toolSweepZmm": [
       6572.0,
       6628.0
