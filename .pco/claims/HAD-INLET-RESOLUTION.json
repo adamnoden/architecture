@@ -9,8 +9,8 @@
     "label": "zerg6-had-threshold"
   },
   "claimedAt": "2026-11-13T22:55:34.522Z",
-  "heartbeatAt": "2026-11-13T22:56:29.517Z",
-  "expiresAt": "2026-11-13T23:41:29.517Z",
+  "heartbeatAt": "2026-11-13T23:00:04.964Z",
+  "expiresAt": "2026-11-13T23:45:04.964Z",
   "predecessor": {
     "leaseId": "354ace11-48c1-4381-9df2-fc3cfc388365",
     "generation": 13,
@@ -33,8 +33,9 @@
   },
   "branch": "work/zerg6-had-threshold-recovery",
   "checkpoint": {
-    "evidence": "Exact signed threshold candidate d6683764 tree 62f4a0e6 recovered on new durable branch; side trunnion scratch evidence at #1502 comment 6863627384",
-    "next": "After STR #1503 recovery merges, revalidate combined main and open exact-head CI",
+    "evidence": "PR #1505 exact head 1e6a04e6, combined tree 77cb5553 independently verified",
+    "next": "Verify exact-head CI then immediately run fresh publication preflight and merge",
     "blocker": "Actual side lift, braced dry supports and loaded handover remain unqualified"
-  }
+  },
+  "pr": 1505
 }
