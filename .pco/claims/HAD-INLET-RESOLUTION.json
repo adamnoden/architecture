@@ -9,8 +9,8 @@
     "label": "zerg5-had-recovery"
   },
   "claimedAt": "2026-11-13T19:26:10.281Z",
-  "heartbeatAt": "2026-11-13T19:26:10.281Z",
-  "expiresAt": "2026-11-13T20:11:10.281Z",
+  "heartbeatAt": "2026-11-13T19:27:31.906Z",
+  "expiresAt": "2026-11-13T20:12:31.906Z",
   "branch": "work/zerg5-had-tail-recovery-20261113",
   "predecessor": {
     "leaseId": "6d88b30b-9c95-49a9-99e6-a78d8d68d256",
@@ -33,5 +33,11 @@
       "next": "Wait exact full CI then fresh merge preflight, merge and verify",
       "blocker": "Physical split shoes and pressure isolation, pinned fits, installed dry supports and separate stand crossing remain open"
     }
+  },
+  "pr": 1502,
+  "checkpoint": {
+    "evidence": "PR #1502 recovers the unchanged 5df64df1 candidate tree from #1501 after g11 expiry; full CI requested under fresh g12 lease",
+    "next": "Verify PR 1502 exact-head CI then canonical preflight, merge, release",
+    "blocker": "Installed physical split shoe, pinned fits, dry dock supports and stand crossing remain open"
   }
 }
