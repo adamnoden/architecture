@@ -672,6 +672,56 @@ positive guides onto a gravity cradle also fails the 80 mm gauge: the estimated-
 case alone needs **421.7 mm** of gauge to keep both supports in compression.
 The zero-downward-contact case retains a signed couple.
 
+A side-trunnion trial crosses at Z2010 on two dry rails at Y4185 and
+Y4960. Two carried cross pins 190 mm apart restrain pitch as well as roll.
+Their stepped ends terminate above the rail rather than crossing its
+section. A trial keeper crown meets each end with 15 mm conservative
+running clearance between the rigid link and its own rail.
+The four keepers have 90 mm nominal rail overlap at both stops. At the
+inboard stop the stand stops 155 mm before the plate. At the
+outboard stop the last carried shoe has cleared the collector by 260 mm.
+These are parked overlap positions for a floor-to-side and side-to-dock
+handover. Carrying the full moving keepers into this station from the
+eastbound travel start leaves only **27.3 mm** to the buffer. Fitting
+the keepers from the side at the stop also fails the 35 mm clearance
+and setting budget. The south keeper intersects the wall envelope and
+the north keeper retains 15.5 mm to the reveal. An 80 mm vertical
+installation motion has 40.5 mm minimum clearance to surrounding fabric
+and carried stand parts. Use that as the next geometric trial for split
+keepers. The motion comparison excludes their intended rail and pin
+engagement surfaces. The lock, proof of load transfer and release sequence
+remain open.
+
+The finite keepers clear the fixed fabric by **38 mm**, and the nearest
+dry post clears a carried shoe by **37 mm**. The two north-face post
+pins clear the carried brace by **12.4 mm**. That is a tight attachment
+reservation. An operator following the captured handle through the
+crossing has 50.6 mm minimum clearance and 363 mm maximum reach in the
+nominal lane. This replay covers translation after frame installation.
+It does not cover a second worker or the keeper-lock actions at the stops.
+
+The inboard feet are 259.5 mm inside the outer-E girder footprint, with
+180 mm between girder top and the finished floor. The two outboard feet
+lie beyond that girder and need an independently supported dock. The
+nearest feet leave 77 mm to the recessed cover and 68.2 mm to the scaffold
+board plan. The ideal signed comparison puts −176/+842 N at one keeper
+and −173/+1,276 N at a post. A 60 × 5 mm round rail in a single-wheel
+midspan check deflects 0.37 mm. A full 100 N axis challenge assigned to
+one unbraced leg gives 198 N·m at its foot and 4.92 mm of ideal top
+deflection. Two R15 longitudinal diagonals fit the occupied sweep and
+need 202 N axial under an ideal 100 N along-rail challenge on one frame.
+The same size diagonal across the aisle intersects the operator and
+west brace. Move the transverse ties to Z2310 at X11505 and X12620,
+outside the door head, and connect them through 170 × 240 mm knee
+braces. The overhead pieces retain 48.5 mm to the stand and 50.5 mm
+to the fixed fabric. The full support frame retains 37.5 mm to the
+head. A one-knee 100 N transverse challenge requires 173 N axial.
+The same lateral challenge at rail height requires an ideal 283 N
+base couple to the inboard girder or 260 N to the sloping dock deck.
+This traces a load path through the frame to its feet. Anchor substrates,
+fixture connections, local plate stiffness and the actual loaded capture
+remain unqualified.
+
 The trial dock rest sits within the required cylinder cart reservation.
 The widened rest passes the ideal gravity-moment comparison. Fit a positive
 keeper before releasing the carrier, and verify the installed restraint.

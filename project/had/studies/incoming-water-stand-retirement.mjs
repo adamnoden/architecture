@@ -5,6 +5,7 @@ import {deriveCurrentHouse} from './current-house.mjs';
 import {assertBridgeNativeHouse,bridgeRetirementGeometry} from './incoming-water-bridge-native.mjs';
 import {exactSegmentBoxDistance} from './incoming-water-geometry.mjs';
 import {segmentBodyDistance,segmentDistance} from './service-interface-geometry.mjs';
+import {compareStandSideHandoff} from './incoming-water-stand-side-handoff.mjs';
 
 const threshold=JSON.parse(readFileSync(new URL('../../mat/studies/plant-threshold.json',import.meta.url),'utf8'));
 const floorDoors=JSON.parse(readFileSync(new URL('../../mat/studies/three-door-floor.json',import.meta.url),'utf8'));
@@ -375,6 +376,9 @@ export function deriveStandRetirement(){
     minimumServicePlateLateralMarginMM:Math.min(minY-dock.section.servicePlateWidthY[0],dock.section.servicePlateWidthY[1]-maxY),
   };
   const suspendedHandoff=suspendedHandoffComparison(signedReactions,thresholdSlice,dryBridgeSpanMM);
+  const sideHandoff=compareStandSideHandoff({standTravel:phases.at(-1),movingBoxes,movingSegments,staticBoxes,
+    staticCylinders:nativeCylinders,carriedBox,carriedSegment,stability,dock,floorDoors,
+    receivingGirder:receivingFloorGrid.girders['outer-E']});
   const firstRestFootprint=[12490,4240,590,570];
   const footprintSupports=[
     [12530,4270],[13040,4270],[13040,4765],[12530,4765],
@@ -387,7 +391,7 @@ export function deriveStandRetirement(){
   const cartTarget=dock.cargo.find(c=>c.item==='Cylinder');
   const cartConflict=Math.hypot(Math.max(firstRestFootprint[0]-cartTarget.requiredCentreX,cartTarget.requiredCentreX-firstRestFootprint[0]-firstRestFootprint[2],0),
    Math.max(firstRestFootprint[1]-cartTarget.centreY,cartTarget.centreY-firstRestFootprint[1]-firstRestFootprint[3],0))-house.architecturalServices.plant.cylinder.cartRadius;
-  return {status:'DEVELOPMENT_NOT_ADOPTED',motion:mainMotion,restraint,body:bodyResults,stability,thresholdSlice,suspendedHandoff,
+  return {status:'DEVELOPMENT_NOT_ADOPTED',motion:mainMotion,restraint,body:bodyResults,stability,thresholdSlice,suspendedHandoff,sideHandoff,
     adverse:{shortLift:failedShortLift,expandedCradle:failedExpandedCradle,openLeaf:failedOpenLeaf},
     landing:{firstRestFootprint,terminalPlan,footprintSupports,landedCG,firstRestMarginMM,firstRestMomentReserveNm,firstRestIdealGravityScreenPasses,positiveKeeperRequired:true,cartConflictMM:cartConflict,requiresStandRemovedBeforeCylinder:true},
     holding:['Independent positive first lift, anchor-key release, guide/drive capture, mounting and full bearing are unqualified.',
