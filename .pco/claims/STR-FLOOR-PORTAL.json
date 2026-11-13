@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 11,
-  "state": "released",
-  "leaseId": "60e7f838-4edb-4fbf-b1cd-90758c899003",
+  "generation": 12,
+  "state": "claimed",
+  "leaseId": "d4049d5a-a551-4ebe-9289-0f80370a6001",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg2-str"
+    "label": "zerg3-str"
   },
-  "claimedAt": "2026-11-12T22:48:12.269Z",
-  "heartbeatAt": "2026-11-13T00:02:07.324Z",
-  "expiresAt": "2026-11-13T00:02:07.324Z",
-  "branch": "work/zerg2-str-seat",
+  "claimedAt": "2026-11-13T00:04:59.667Z",
+  "heartbeatAt": "2026-11-13T00:04:59.667Z",
+  "expiresAt": "2026-11-13T00:49:59.667Z",
+  "branch": "work/zerg3-str-ring-access",
   "predecessor": {
-    "leaseId": "6bf2fd76-5332-4631-b742-0f4d606056df",
-    "generation": 10,
-    "branch": "work/zerg-str-cap-replay-20261112",
-    "pr": 1494,
+    "leaseId": "60e7f838-4edb-4fbf-b1cd-90758c899003",
+    "generation": 11,
+    "branch": "work/zerg2-str-seat",
+    "pr": 1498,
     "checkpoint": {
-      "evidence": "PR1494 corrected head 622a14e7, run 43304759377. Pinned 579/110 relief comparison gives 4.884/4.967 mm modeled gap and no projected contact. The 29.24 kN metric is Cartesian; southeast peak-core case resultant is 34.505 kN.",
-      "next": "After exact CI and preflight, integrate bounded replay. Rebuild tied cage/core seat and 70 mm glass return; independent H20 shift has incompatible >=10 mm hoop and <=3 mm parallel bar screen. Trial 15 mm gross gap before real plate flexure and setting.",
-      "blocker": "Independent H8/H20 route and 5 mm gap do not pass the authored setting challenge; actual plate, anchorage, confinement and whole-surface clearance still open."
+      "evidence": "PR1498 merged 09c6f288 after exact d1dce527 CI 43330826794; 579 signed, 110 movements and two three-case friction replays exact",
+      "next": "Use the 16-piece comparator in PR1498 comment 6839232964 to design side-access capture, actual diaphragm transfer and closed cage; treat both backing-pressure failures",
+      "blocker": "Assembly, actual bearing and qualified sliding behavior still unearned; STR packet remains planned"
     }
   },
   "recoverySource": {
-    "leaseId": "6bf2fd76-5332-4631-b742-0f4d606056df",
-    "generation": 10,
-    "branch": "work/zerg-str-cap-replay-20261112",
-    "pr": 1494,
+    "leaseId": "60e7f838-4edb-4fbf-b1cd-90758c899003",
+    "generation": 11,
+    "branch": "work/zerg2-str-seat",
+    "pr": 1498,
     "checkpoint": {
-      "evidence": "PR1494 corrected head 622a14e7, run 43304759377. Pinned 579/110 relief comparison gives 4.884/4.967 mm modeled gap and no projected contact. The 29.24 kN metric is Cartesian; southeast peak-core case resultant is 34.505 kN.",
-      "next": "After exact CI and preflight, integrate bounded replay. Rebuild tied cage/core seat and 70 mm glass return; independent H20 shift has incompatible >=10 mm hoop and <=3 mm parallel bar screen. Trial 15 mm gross gap before real plate flexure and setting.",
-      "blocker": "Independent H8/H20 route and 5 mm gap do not pass the authored setting challenge; actual plate, anchorage, confinement and whole-surface clearance still open."
+      "evidence": "PR1498 merged 09c6f288 after exact d1dce527 CI 43330826794; 579 signed, 110 movements and two three-case friction replays exact",
+      "next": "Use the 16-piece comparator in PR1498 comment 6839232964 to design side-access capture, actual diaphragm transfer and closed cage; treat both backing-pressure failures",
+      "blocker": "Assembly, actual bearing and qualified sliding behavior still unearned; STR packet remains planned"
     }
-  },
-  "checkpoint": {
-    "evidence": "PR1498 merged 09c6f288 after exact d1dce527 CI 43330826794; 579 signed, 110 movements and two three-case friction replays exact",
-    "next": "Use the 16-piece comparator in PR1498 comment 6839232964 to design side-access capture, actual diaphragm transfer and closed cage; treat both backing-pressure failures",
-    "blocker": "Assembly, actual bearing and qualified sliding behavior still unearned; STR packet remains planned"
-  },
-  "pr": 1498,
-  "releasedAt": "2026-11-13T00:02:07.324Z",
-  "releaseReason": "handoff"
+  }
 }
