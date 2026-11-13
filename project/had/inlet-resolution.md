@@ -606,6 +606,19 @@ and positive X/Y changeover. The north turn and east route leave the
 plant-intermediate beam. The inboard finished floor sits **180 mm** above
 the structural concrete.
 
+The downward and uplift checks require different load cases. Apply the
+100 N disturbance in both directions at the authored 1380 mm handle
+height. Recompute the signed 1:80 slope contribution at each assumed
+vertical action. At 80 mm rail gauge the 2g design-mass comparison governs
+compression at **3.04 kN**. Half and full gravity at the 73.49 kg modelled
+mass require **1.63 kN** and **1.54 kN** hold-down respectively. The
+zero-downward-contact comparison requires **1.725 kN** hold-down and
+changes the loaded rail when the disturbance reverses. Retain both load
+signs through the shoe, rail, bridge and dry anchors. The zero-contact
+comparison tests a support transition under an authored disturbance.
+Installed actions and resistance still require the actual handling and
+support design.
+
 The flush MAT plate bears on gravity ledges. It has no stated uplift
 connection. An independent 40 × 25 mm head per rail line spanning
 **558 mm** from X11682 to X12240 gives **102 MPa** maximum ideal bending
@@ -620,6 +633,44 @@ need to reach **Z−3**, through the wet crossing. Keep the plate's gravity
 role and carry the signed restraint through separately mounted dry steel.
 The next crossing trial needs a revised capture datum and coordinated
 cover/scaffold sequence before retaining the stand across the opening.
+
+A +90 mm transport comparison moves the dry posts to Y4135 and Y4850.
+Two 40 × 35 mm solid longitudinal heads retain the 558 mm dry span.
+An ideal 80 × 35 × 4 mm transverse head bridges 715 mm between the posts
+at each end. The correlated signed cases put **−193 N to +1.142 kN**
+into the individual post reactions and give **36.95 MPa** maximum
+transverse bending stress. Separate elastic differential bounds are
+0.545 mm longitudinally and 0.016 mm transversely. These ideal beam
+checks give no credit to the weld, local distortion, concrete support
+or an installed anchorage.
+
+Stacking the transverse head raises the assembly to Z96. A co-planar
+welded frame holds the guide top to Z61. This puts the guide through the
+full 5 mm thickness of the proposed continuous deck at Z50–55 and
+leaves only 16 mm to the Z85 moving-link envelope with 8 mm radius.
+A continuous walking deck and this carrier geometry cannot coexist.
+The independent route needs fixed workers on either side, a positively
+retained remote drive and a proven handover between the orthogonal
+rails. Moving the steel under the deck needs a fresh wet-pan and
+support comparison.
+
+A separately lifted handoff would take the load off the crossing rails
+before they pass through the threshold. The travelling stand occupies
+Z2223 beneath the Z2300 opening head. The 77 mm gross gap leaves **42 mm**
+for above-stand lifting hardware after 25 mm clearance and 10 mm relative
+setting. An 80 mm over-top assembly misses by 38 mm. The authored centred
+vertical handoff challenge is **1.766 kN**; a lower, side-supported pickup
+would need an independent dry span, a positive overlap and separate
+pitch and roll restraint. The portal's two jambs leave lateral hardware
+budgets of 120 mm south and 365 mm north at the authored clearances.
+A 60 mm side pickup fits that aperture comparison. A 35 mm lower tine
+under the travelling stand base at Z60 fails the same clearance and
+setting comparison by 10 mm before interference with the existing shoes.
+A sideways pickup into an independently supported positive receiver
+therefore remains a distinct design question. Simply unloading the
+positive guides onto a gravity cradle also fails the 80 mm gauge: the estimated-mass static
+case alone needs **421.7 mm** of gauge to keep both supports in compression.
+The zero-downward-contact case retains a signed couple.
 
 The trial dock rest sits within the required cylinder cart reservation.
 The widened rest passes the ideal gravity-moment comparison. Fit a positive

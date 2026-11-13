@@ -15,6 +15,106 @@ const norm=a=>Math.hypot(...a);
 const min=xs=>xs.reduce((a,b)=>a.gap<=b.gap?a:b);
 const edge=([x,y],[a,b],[px,py])=>((a-x)*(py-y)-(b-y)*(px-x))/Math.hypot(a-x,b-y);
 
+function signedThresholdReactions(trial,estimatedMassKG,centreOfMassZ){
+  const {verticalChallengeN,lateralChallengeN,handleHeightMM,keySpacingMM,deckFallRatio}=trial;
+  const states=[
+    ['zero downward contact',0],
+    ['estimated stand at half gravity',estimatedMassKG*9.81/2],
+    ['estimated stand at static gravity',estimatedMassKG*9.81],
+    ['design mass at static gravity',verticalChallengeN/2],
+    ['design mass at twice gravity',verticalChallengeN],
+  ];
+  const cases=states.flatMap(([state,verticalN])=>[-1,1].map(direction=>{
+    const horizontalN=direction*lateralChallengeN;
+    const slopeHorizontalN=verticalN*deckFallRatio;
+    const momentNMM=horizontalN*handleHeightMM+slopeHorizontalN*centreOfMassZ;
+    const reactionsN=[verticalN/2-momentNMM/keySpacingMM,verticalN/2+momentNMM/keySpacingMM];
+    assert(Math.abs(reactionsN[0]+reactionsN[1]-verticalN)<1e-9);
+    assert(Math.abs((reactionsN[1]-reactionsN[0])*keySpacingMM/2-momentNMM)<1e-8);
+    return {state,verticalN,horizontalN,slopeHorizontalN,momentNMM,reactionsN};
+  }));
+  const maximumCompressionN=Math.max(...cases.flatMap(row=>row.reactionsN));
+  const maximumHoldDownN=-Math.min(...cases.flatMap(row=>row.reactionsN));
+  return {cases,maximumCompressionN,maximumHoldDownN};
+}
+
+function coplanarCrossingComparison(signed,innerX,outerX,wideGuideHeightMM,plateGaugeMM){
+  const heightAboveFloorMM=90;
+  const postsY=[4135,4850];
+  const railYs=[4500-plateGaugeMM/2,4500+plateGaugeMM/2];
+  const [postSouth,postNorth]=postsY;
+  const crossSpan=postNorth-postSouth;
+  const railSpan=outerX-innerX;
+  const steelE=200000;
+  const [railWidth,railDepth]=[40,35];
+  const [headWidth,headDepth,headWall]=[80,35,4];
+  const railI=railWidth*railDepth**3/12;
+  const headI=(headWidth*headDepth**3-(headWidth-2*headWall)*(headDepth-2*headWall)**3)/12;
+  const headDeflection=(position,loadPosition,force)=>{
+    const x=Math.min(position,loadPosition)-postSouth;
+    const a=Math.max(position,loadPosition)-postSouth;
+    const b=crossSpan-a;
+    return force*b*x*(crossSpan**2-b**2-x**2)/(6*steelE*headI*crossSpan);
+  };
+  const stations=[0,railSpan/2,railSpan];
+  const reactions=signed.cases.flatMap(({state,horizontalN,reactionsN})=>stations.map(railStationMM=>{
+    const endReactions=reactionsN.map(force=>[force*(1-railStationMM/railSpan),force*railStationMM/railSpan]);
+    const ends=[0,1].map(end=>{
+      const loads=endReactions.map(pair=>pair[end]);
+      const north=loads.reduce((sum,force,index)=>sum+force*(railYs[index]-postSouth)/crossSpan,0);
+      const south=loads.reduce((a,b)=>a+b,0)-north;
+      const moments=railYs.map(y=>south*(y-postSouth)-
+        loads.reduce((sum,force,index)=>sum+force*Math.max(0,y-railYs[index]),0));
+      const deflections=railYs.map(y=>loads.reduce((sum,force,index)=>sum+headDeflection(y,railYs[index],force),0));
+      return {supports:[south,north],moments,deflections};
+    });
+    return {state,horizontalN,railStationMM,ends};
+  }));
+  const allEnds=reactions.flatMap(row=>row.ends);
+  const allSupports=allEnds.flatMap(end=>end.supports);
+  const crossheadMaximumSupportN=Math.max(...allSupports);
+  const crossheadMinimumSupportN=Math.min(...allSupports);
+  const crossheadStressMPa=Math.max(...allEnds.flatMap(end=>end.moments.map(Math.abs)))*headDepth/(2*headI);
+  const crossheadMaximumDifferentialMM=Math.max(...allEnds.map(end=>Math.abs(end.deflections[0]-end.deflections[1])));
+  const railElasticDifferentialMM=Math.max(...signed.cases.map(row=>Math.abs(row.reactionsN[1]-row.reactionsN[0])))*
+    railSpan**3/(48*steelE*railI);
+  const coplanarStackZ=10+railDepth+wideGuideHeightMM;
+  const movingLinkCentreZ=85,movingLinkRadiusMM=8;
+  const movingLinkBottomZ=movingLinkCentreZ-movingLinkRadiusMM;
+  const clearanceAboveGuideMM=movingLinkBottomZ-coplanarStackZ;
+  const deckTopZ=55,deckThicknessMM=5,guideBottomZ=coplanarStackZ-wideGuideHeightMM;
+  const continuousDeckOverlapsGuideMM=Math.max(0,Math.min(deckTopZ,coplanarStackZ)-
+    Math.max(deckTopZ-deckThicknessMM,guideBottomZ));
+  return {heightAboveFloorMM,postsY,railYs,crossSpan,railSpan,coplanarStackZ,
+    stackedStackZ:coplanarStackZ+headDepth,railElasticDifferentialMM,
+    crossheadMaximumSupportN,crossheadMinimumSupportN,crossheadStressMPa,crossheadMaximumDifferentialMM,
+    movingLinkCentreZ,movingLinkRadiusMM,clearanceAboveGuideMM,
+    continuousDeckOverlapsGuideMM,reactions,
+    limit:'Ideal vertical equilibrium at two longitudinal ends and two lateral posts. The model omits actual rail-head weld, receiver anchorage, local plate bending and the loaded positive handover.'};
+}
+
+function suspendedHandoffComparison(signed,thresholdSlice,spanMM){
+  const clearHeadroomMM=thresholdSlice.openingHeight-thresholdSlice.highestZ;
+  const approachClearanceMM=25;
+  const relativeSettingMM=10;
+  const availableStackMM=clearHeadroomMM-approachClearanceMM-relativeSettingMM;
+  const trialOverTopStackMM=80;
+  const staticCase=signed.cases.find(row=>row.state==='estimated stand at static gravity'&&row.horizontalN>0);
+  const staticGravityOnlyGaugeMM=2*Math.abs(staticCase.momentNMM)/staticCase.verticalN;
+  const centredHandoffVerticalN=Math.max(...signed.cases.map(row=>row.verticalN));
+  const lateralBudgetEachSideMM=thresholdSlice.y.map((edge,index)=>
+    Math.abs(edge-thresholdSlice.openingY[index])-approachClearanceMM-relativeSettingMM);
+  const sidePickupWidthMM=60;
+  const sidePickupRemainingMM=lateralBudgetEachSideMM.map(budget=>budget-sidePickupWidthMM);
+  const [baseShoeDepthMM,travelZMM,sideTineDepthMM]=[60,60,35];
+  const underBaseClearanceMM=travelZMM-sideTineDepthMM-approachClearanceMM-relativeSettingMM;
+  return {clearHeadroomMM,approachClearanceMM,relativeSettingMM,availableStackMM,trialOverTopStackMM,
+    overTopShortfallMM:trialOverTopStackMM-availableStackMM,staticGravityOnlyGaugeMM,
+    centredHandoffVerticalN,drySupportSpanMM:spanMM,lateralBudgetEachSideMM,sidePickupWidthMM,
+    sidePickupRemainingMM,baseShoeDepthMM,sideTineDepthMM,underBaseClearanceMM,
+    limit:'A positively captured side-supported handoff may bypass the floor rails. Independently support the pickup and preserve capture, pitch and roll during overlap through the opening.'};
+}
+
 function stabilityComparison(axes){
   const braceLength=id=>{
     const [,a,b]=axes.find(row=>row[0]===id);
@@ -211,6 +311,7 @@ export function deriveStandRetirement(){
     (4*(stripWidthMM*plainTopPlateThickness**2/6));
   const opposingHoldDownN=supportLoads.minimumOpposedTieForceN-supportLoads.verticalChallengeN/2;
   const opposedMomentAtFullTrackGaugeNm=supportLoads.minimumOpposedTieForceN*plateGauge/1000;
+  const signedReactions=signedThresholdReactions(supportLoads,stability.massKG,stability.centreOfMass[2]+lift);
   const [,outerBearing]=dock.section.bearingX;
   const [innerBeamWest,innerBeamEast]=dock.section.outerBeamX;
   const panHeelX=floorDoors.eastOccupation.proposedPanDryHeelX;
@@ -239,7 +340,8 @@ export function deriveStandRetirement(){
   const innerSupportIntersectsCoverPlan=footprintIntersects(dryInnerX,coverX,coverX+coverWidth,coverY,coverY+coverDepth);
   const thresholdDockConnection={
     existingFlushPlate:'Gravity-bearing shelf comparison. No positive uplift or horizontal key inferred.',
-    authoredRetainerGaugeMM:plateGauge,oneRailCompressionStressMPa,opposingHoldDownN,opposedMomentAtFullTrackGaugeNm,
+    authoredRetainerGaugeMM:plateGauge,oneRailCompressionStressMPa,opposingHoldDownN,opposedMomentAtFullTrackGaugeNm,signedReactions,
+    coplanarCrossing:coplanarCrossingComparison(signedReactions,dryInnerX,dryOuterX,wideGuideRating.overall[2],plateGauge),
     independentDryBridge:{
       dryInnerX,dryOuterX,dryBridgeSpanMM,sectionMM:[dryBeamB,dryBeamH],panHeelX,dryFaceX,
       dryInnerInsetMM:Math.min(dryInnerX-innerBeamWest,innerBeamEast-dryInnerX),
@@ -272,6 +374,7 @@ export function deriveStandRetirement(){
     servicePlateY:dock.section.servicePlateWidthY,
     minimumServicePlateLateralMarginMM:Math.min(minY-dock.section.servicePlateWidthY[0],dock.section.servicePlateWidthY[1]-maxY),
   };
+  const suspendedHandoff=suspendedHandoffComparison(signedReactions,thresholdSlice,dryBridgeSpanMM);
   const firstRestFootprint=[12490,4240,590,570];
   const footprintSupports=[
     [12530,4270],[13040,4270],[13040,4765],[12530,4765],
@@ -284,7 +387,7 @@ export function deriveStandRetirement(){
   const cartTarget=dock.cargo.find(c=>c.item==='Cylinder');
   const cartConflict=Math.hypot(Math.max(firstRestFootprint[0]-cartTarget.requiredCentreX,cartTarget.requiredCentreX-firstRestFootprint[0]-firstRestFootprint[2],0),
    Math.max(firstRestFootprint[1]-cartTarget.centreY,cartTarget.centreY-firstRestFootprint[1]-firstRestFootprint[3],0))-house.architecturalServices.plant.cylinder.cartRadius;
-  return {status:'DEVELOPMENT_NOT_ADOPTED',motion:mainMotion,restraint,body:bodyResults,stability,thresholdSlice,
+  return {status:'DEVELOPMENT_NOT_ADOPTED',motion:mainMotion,restraint,body:bodyResults,stability,thresholdSlice,suspendedHandoff,
     adverse:{shortLift:failedShortLift,expandedCradle:failedExpandedCradle,openLeaf:failedOpenLeaf},
     landing:{firstRestFootprint,terminalPlan,footprintSupports,landedCG,firstRestMarginMM,firstRestMomentReserveNm,firstRestIdealGravityScreenPasses,positiveKeeperRequired:true,cartConflictMM:cartConflict,requiresStandRemovedBeforeCylinder:true},
     holding:['Independent positive first lift, anchor-key release, guide/drive capture, mounting and full bearing are unqualified.',
