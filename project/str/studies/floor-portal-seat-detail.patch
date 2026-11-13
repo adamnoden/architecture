@@ -1,0 +1,446 @@
+diff --git a/project/str/studies/floor_portal_coupled.py b/project/str/studies/floor_portal_coupled.py
+index 8fc23bb514ed90d7d4bc510e3d44cfe5f7b62b67..b4a8766d26a81379d3009ac3f92264264e132eb8 100644
+--- a/project/str/studies/floor_portal_coupled.py
++++ b/project/str/studies/floor_portal_coupled.py
+@@ -17,7 +17,7 @@ def contact_actions(h,u,contact):
+     groups=defaultdict(list)
+     for j,e in enumerate(h.contacts):
+         if e['name'].endswith('-lower-contact'):continue
+-        gap=float(e['row']@u[e['ids']]);force=e['stiffness']*max(-gap,0.)
++        gap=float(e['row']@u[e['ids']])+e.get('initial_gap',0.);force=e['stiffness']*max(-gap,0.)
+         assert abs(force-contact['force'][j])<.03
+         positions=[]
+         for ids,t in e['ports']:
+diff --git a/project/str/studies/floor_portal_domain.py b/project/str/studies/floor_portal_domain.py
+index 3235857dd992f59ddab78b78b0b4ae119bd65fbb..0fa41eafa087536cfb68a42267d275ca115a9b36 100644
+--- a/project/str/studies/floor_portal_domain.py
++++ b/project/str/studies/floor_portal_domain.py
+@@ -27,7 +27,7 @@ def run(parameters=None,full=True,matrix_path=None,guide_friction=0.):
+     Q=Case.combination(h,'full use and blocked water',[(1,Q),(1,rq),(1,water)])
+     U=Case.combination(h,'complete roof suction',[(1,ru),(-1,extra)])
+     gravitycase=Case.combination(h,'1.35G+1.5Q',[(1.35,G),(1.5,Q)])
+-    solve=GuideFrictionSolve(h,guide_friction) if guide_friction else ContactSolve(h.k,h.fixed,h.contacts)
++    solve=GuideFrictionSolve(h,guide_friction) if guide_friction else ContactSolve(h.k,h.fixed,h.contacts,extended_recovery=bool(h.p.L_trial_anchor_positions))
+     print('Domain contact compliance factored'+(f'; guide friction={guide_friction:g}' if guide_friction else '')+'.',flush=True)
+     members=[(family,e) for family,es in h.members.items() for e in es]
+     metadata=[dict(family=family,name=e['name'],a=e['a'].tolist(),b=e['b'].tolist(),basis=e['R'].tolist(),width=e['width'],depth=e['depth']) for family,e in members]
+@@ -36,6 +36,32 @@ def run(parameters=None,full=True,matrix_path=None,guide_friction=0.):
+     friction_bound=dict(coefficient=float(guide_friction),maximumPointFrictionN=0.,sumPointFrictionMagnitudesN=0.,maximumIterations=0,maximumFollowerResidualN=0.,maximumDirectionReversalCount=0,witness=None)
+     bounds={family:dict(maxAbs=np.zeros(6),witness=[None]*6) for family in h.members}
+     offsets=np.cumsum([0]+[len(es) for es in h.members.values()])
++    cap_steps={}
++    for corner in h.Ls:
++        members_at_corner=corner['section_members']
++        if members_at_corner[-1]['name']!='L-cap-block':continue
++        low,cap=members_at_corner[-2:]
++        low_index=next(i for i,(_,e) in enumerate(members) if e is low)
++        cap_index=next(i for i,(_,e) in enumerate(members) if e is cap)
++        label=str(corner['corner'])
++        reference=h.f.points[cap['ids'][0]//6]
++        projected=[];core=[]
++        for index,contact in enumerate(h.contacts):
++            if contact['name']=='L-cap-bearing-'+label:core.append(index)
++            if contact['name']!='L-cap-projected-bearing-'+label:continue
++            ids,t=contact['ports'][0];rigid=t@h.rigid[ids]
++            point=np.array([rigid[1,5],-rigid[0,5],rigid[0,4]])
++            projected.append((index,point))
++        assert len(projected)==len(core)==8
++        cap_steps[label]=(low_index,cap_index,reference,projected,core)
++    l_anchors=[e for e in h.cap_links if e['name'].startswith('L-cap-anchor-')]
++    cap_witness=dict(peakProjectedBearing=None,minimumProjectedGap=None,peakCoreBearing=None,
++                     peakLAnchorTension=None,stepComponentWitnesses=[None]*6,
++                     maximumStepComponent=np.zeros(6),maximumLocalEquilibriumResidual=np.zeros(6))
++    def step_action(element,local,end,reference):
++        force=element['R'].T@local[:3]
++        moment=element['R'].T@local[3:]+np.cross(element[end]-reference,force)
++        return np.r_[force,moment]
+     def one(case):
+         nonlocal worst_trans,minimum_head,maximum_balance
+         u,r,c=solve(case.f);balance=h.rigid.T@(r+case.f)
+@@ -50,6 +76,37 @@ def run(parameters=None,full=True,matrix_path=None,guide_friction=0.):
+                 friction_bound.update(maximumPointFrictionN=gf['maximumPointFrictionN'],witness=case.name)
+         update_bounds(guide_bounds,h,u,len(names),case.name)
+         maximum_balance=np.maximum(maximum_balance,abs(balance));values=member_actions(h,case,u)
++        for label,(low,cap,reference,projected,core) in cap_steps.items():
++            cap_action=step_action(members[cap][1],values[cap,:6],'a',reference)
++            low_action=step_action(members[low][1],values[low,6:],'b',reference)
++            local_balance=abs(cap_action+low_action)
++            assert max(local_balance[:3])<.03 and max(local_balance[3:])<20.,(case.name,label,local_balance)
++            cap_witness['maximumLocalEquilibriumResidual']=np.maximum(cap_witness['maximumLocalEquilibriumResidual'],local_balance)
++            projected_action=np.zeros(6)
++            for contact,point in projected:
++                force=np.array([0.,0.,c['force'][contact]])
++                projected_action+=np.r_[force,np.cross(point-reference,force)]
++                old_gap=cap_witness['minimumProjectedGap']
++                if old_gap is None or c['gap'][contact]<old_gap['signedGapMM']:
++                    cap_witness['minimumProjectedGap']=dict(case=case.name,corner=label,point=point.tolist(),
++                        signedGapMM=float(c['gap'][contact]),bearingForceN=float(c['force'][contact]))
++            old_core=cap_witness['peakCoreBearing']
++            core_force=float(sum(c['force'][contact] for contact in core))
++            if old_core is None or core_force>old_core['compressionN']:
++                cap_witness['peakCoreBearing']=dict(case=case.name,corner=label,compressionN=core_force)
++            old=cap_witness['peakProjectedBearing']
++            if old is None or projected_action[2]>old['globalActionNAndNmm'][2]:
++                cap_witness['peakProjectedBearing']=dict(case=case.name,corner=label,
++                    reference=reference.tolist(),globalActionNAndNmm=projected_action.tolist())
++            for component in np.flatnonzero(abs(cap_action)>cap_witness['maximumStepComponent']):
++                cap_witness['maximumStepComponent'][component]=abs(cap_action[component])
++                cap_witness['stepComponentWitnesses'][component]=dict(case=case.name,corner=label,
++                    reference=reference.tolist(),globalActionNAndNmm=cap_action.tolist())
++        if cap_steps:
++            tension,anchor=max((float((e['k']@e['t']@u[e['ids']])[2]),e['name']) for e in l_anchors)
++            previous=cap_witness['peakLAnchorTension']
++            if previous is None or tension>previous['tensionN']:
++                cap_witness['peakLAnchorTension']=dict(case=case.name,anchor=anchor,tensionN=tension)
+         row=r[hi]*scales;cards=row[:,[2,4,3,0,1,5]]*np.array([1,-1,1,-1,-1,-1]);headrows.append(cards)
+         index=len(names);names.append(case.name);contactcounts.append(int(sum(c['active'])));allloads.append(h.rigid.T@case.f)
+         if matrix_path:memberrows.append(values)
+@@ -96,6 +153,11 @@ def run(parameters=None,full=True,matrix_path=None,guide_friction=0.):
+         Path(str(matrix_path)+'.json').write_text(json.dumps(dict(cases=names,members=metadata,links=[e['name'] for e in h.cap_links+h.dpc_links],heads=heads,parameters=asdict(h.p),guideFrictionCoefficient=guide_friction),indent=2)+'\n')
+     return dict(status='CORRELATED DEMAND DOMAIN ONLY; physical sections and joints remain unselected',parameters=asdict(h.p),controls=controls,
+                 caseCount=len(names),caseNames=names,memberGeometry=metadata,memberBounds={k:dict(maxAbsLocal_N_Vy_Vz_T_My_Mz=v['maxAbs'].tolist(),witness=v['witness']) for k,v in bounds.items()},
++                capTransition=dict(peakProjectedBearing=cap_witness['peakProjectedBearing'],minimumProjectedGap=cap_witness['minimumProjectedGap'],
++                    peakCoreBearing=cap_witness['peakCoreBearing'],peakLAnchorTension=cap_witness['peakLAnchorTension'],
++                    stepComponentWitnesses=cap_witness['stepComponentWitnesses'],
++                    maximumStepComponentNAndNmm=cap_witness['maximumStepComponent'].tolist(),
++                    maximumLocalEquilibriumResidualNAndNmm=cap_witness['maximumLocalEquilibriumResidual'].tolist()) if cap_steps else None,
+                 all52HeadBounds=headcards,maximumBalanceResidual=maximum_balance.tolist(),minimumHeadN_KN_Id_Case=minimum_head,
+                 maximumTranslationMM_Case=worst_trans,activeContactCounts=contactcounts,guideBounds=finalise_bounds(guide_bounds,h),guideFriction=friction_bound,
+                 sourceHashes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in [D/'floor_portal_frame.py',D/'floor_portal_roof.py',D/'floor_portal_house.py',D/'floor_portal_loads.py',Path(__file__)]},
+diff --git a/project/str/studies/floor_portal_house.py b/project/str/studies/floor_portal_house.py
+index 3ad35f1d2e700dcb5ddc2145e075601f8264ff89..943f4d8a10b668f3bd42ba4a19739b1a4f0b8dd7 100644
+--- a/project/str/studies/floor_portal_house.py
++++ b/project/str/studies/floor_portal_house.py
+@@ -13,7 +13,7 @@ import numpy as np
+ from scipy.linalg import solve as dense_solve
+ from scipy.sparse import csc_matrix
+ from floor_portal_frame import Frame,Solve,offset,membrane_triangle,plate_rectangle
+-from floor_portal_roof import Roof,outer_root
++from floor_portal_roof import Roof,outer_root,L_contact_rects
+ 
+ D=Path(__file__).resolve().parent
+ H=json.loads((D.parents[1]/'had/studies/water-replan.json').read_text())['model']
+@@ -52,6 +52,7 @@ class Parameters:
+     cap_scale:float=1.
+     cap_anchor_length:float=805.
+     L_cap_anchor_length:float=1320.
++    L_trial_anchor_positions:tuple=()
+     cap_bearing_depth:float=180.
+     cap_key_width:float=90.
+     cap_key_thickness:float=10.
+@@ -59,6 +60,10 @@ class Parameters:
+     L_key_width:float=90.
+     L_key_thickness:float=10.
+     L_key_depth:float=60.
++    L_arm_width:float=140.
++    L_outward_extension:float=0.
++    L_cap_block_depth:float=0.
++    L_projected_bearing_gap:float=0.
+     L_key_centres:tuple=((70.,70.),(900.,70.),(70.,900.))
+     key_profile:str='historical tip-compliance control'
+     key_direction_mode:str='cruciform'
+@@ -74,16 +79,23 @@ class ContactSolve:
+     Each U column is the force conjugate of an ACTUAL two-port displacement
+     difference. q>=0 pushes its positive port away from its negative port.
+     """
+-    def __init__(self,k,fixed,contacts):
++    def __init__(self,k,fixed,contacts,extended_recovery=False):
+         self.base=Solve(k,fixed);self.k=k;self.contacts=contacts
+         self.U=np.zeros((k.shape[0],len(contacts)))
+         self.stiffness=np.array([r['stiffness'] for r in contacts])
++        self.initial_gap=np.array([r.get('initial_gap',0.) for r in contacts])
++        assert np.all(self.initial_gap>=0.)
+         for j,r in enumerate(contacts):np.add.at(self.U[:,j],r['ids'],r['row'])
++        self.recovery=None
++        if extended_recovery:
++            from scipy.sparse import csc_matrix
++            assert np.finfo(np.longdouble).eps < np.finfo(float).eps
++            self.recovery=(self.base.k.astype(np.longdouble),csc_matrix(self.U,dtype=np.longdouble))
+         self.X=self.base(self.U);self.C=self.U.T@self.X
+         assert np.max(abs(self.C-self.C.T))<1e-8
+ 
+     def __call__(self,f,prescribed=None):
+-        u0=self.base(f,prescribed);g0=self.U.T@u0
++        u0=self.base(f,prescribed);g0=self.U.T@u0+self.initial_gap
+         active=g0<0;q=np.zeros(len(active));iterations=0
+         for iterations in range(60):
+             q[:]=0;ii=np.flatnonzero(active)
+@@ -94,10 +106,14 @@ class ContactSolve:
+             active=new
+         else:raise AssertionError('Contact active set did not settle')
+         u=u0+self.X@q
+-        actual=self.U.T@u
++        actual=self.U.T@u+self.initial_gap
+         error=np.max(abs(q-self.stiffness*np.maximum(-actual,0)),initial=0)
+         assert error<.03,(error,iterations)
+-        reaction=self.k@u-np.asarray(f)-self.U@q
++        if self.recovery is None:
++            reaction=self.k@u-np.asarray(f)-self.U@q
++        else:
++            k,ports=self.recovery
++            reaction=np.asarray(k@u.astype(np.longdouble)-np.asarray(f,dtype=np.longdouble)-ports@q.astype(np.longdouble),dtype=float)
+         return u,reaction,dict(force=q,gap=actual,active=active,iterations=iterations+1,errorN=float(error))
+ 
+ 
+@@ -108,7 +124,7 @@ class House:
+         self.ground_lines={};self.ground_cuts={};self.ground_nodes={};self.heads={}
+         self.pads=[];self.upper_links=[];self.cap_links=[];self.dpc_links=[]
+         self.rc_boxes=[];self.arch_strips=[];self.flare_solids=[]
+-        self.roof=Roof(self.p.court_width,self.p.court_wall,extra_L_keys=self.p.L_key_centres)
++        self.roof=Roof(self.p.court_width,self.p.court_wall,extra_L_keys=self.p.L_key_centres,L_arm_width=self.p.L_arm_width,L_outward_extension=self.p.L_outward_extension,split_projection=self.p.L_cap_block_depth>0., extra_L_anchors=self.p.L_trial_anchor_positions)
+         self.prepare_geometry()
+         self.build_ground()
+         self.build_vertical()
+@@ -124,10 +140,10 @@ class House:
+ 
+     def node(self,name,p):return self.f.node(name,key(p))
+ 
+-    def contact(self,a,b,k,name,axis=2,sign=1.):
++    def contact(self,a,b,k,name,axis=2,sign=1.,initial_gap=0.):
+         ia,ta=a;ib,tb=b
+         self.contacts.append(dict(name=name,ids=np.r_[ia,ib],row=np.r_[ta[axis],-tb[axis]]*sign,stiffness=float(k),
+-                                  ports=(a,b),axis=axis,sign=sign))
++                                  ports=(a,b),axis=axis,sign=sign,initial_gap=initial_gap))
+ 
+     def prepare_geometry(self):
+         p=self.p;f=self.f
+@@ -195,19 +211,45 @@ class House:
+                         self.flare_solids.extend([dict(face=face,u=u,za=2770.,zb=3170.,q0=(222.5,402.5),q1=(p.jamb_q-p.jamb_width/2,p.jamb_q+p.jamb_width/2)),dict(face=face,u=u,za=3920.,zb=4320.,q0=(p.jamb_q-p.jamb_width/2,p.jamb_q+p.jamb_width/2),q1=(222.5,402.5))])
+                     else:self.rc_boxes.insert(0,(f'jamb-{face}-{u:g}',rect+[-180.,6515.],'jamb'))
+                     self.reserve_ground('outer-'+['S','E','N','W'][face] if face!=2 else ('outer-NW' if xy(face,p.jamb_q,u)[0]<6000 else 'outer-NE'),xy(face,p.jamb_q,u))
+-        # Actual1000x140 L footprints, preserving source bar/DPC locations.
+-        rects=[(0.,0.,1000.,140.),(0.,140.,140.,1000.)]
+-        area=sum((b-a)*(d-c) for a,c,b,d in rects)
+-        cc=sum((b-a)*(d-c)*(a+b)/2 for a,c,b,d in rects)/area
+-        I=sum((d-c)*(b-a)**3/12+(b-a)*(d-c)*((a+b)/2-cc)**2 for a,c,b,d in rects)
+-        Ixy=sum((b-a)*(d-c)*((a+b)/2-cc)*((c+d)/2-cc) for a,c,b,d in rects)
+-        for corner in [(A,A),(B,A),(B,B),(A,B)]:
+-            sg=np.array([1 if v==A else -1 for v in corner]);origin=np.array(corner)-sg*70
+-            centroid=origin+sg*cc;foot=[]
+-            for l,b,r,t in rects:
++        # Preserve the historical L/DPC below a finite widened cap where requested.
++        def l_shape(width,length):
++            rects=[(0.,0.,length,width),(0.,width,width,length)]
++            area=sum((b-a)*(d-c) for a,c,b,d in rects)
++            cc=sum((b-a)*(d-c)*(a+b)/2 for a,c,b,d in rects)/area
++            I=sum((d-c)*(b-a)**3/12+(b-a)*(d-c)*((a+b)/2-cc)**2 for a,c,b,d in rects)
++            Ixy=sum((d-c)*(b-a)*((a+b)/2-cc)*((c+d)/2-cc) for a,c,b,d in rects)
++            return rects,area,cc,I,Ixy
++        cap_width=p.L_arm_width
++        cap_length=1000.+p.L_outward_extension
++        cap_rects,cap_area,cap_cc,cap_I,cap_Ixy=l_shape(cap_width,cap_length)
++        local_cap=p.L_cap_block_depth>0.
++        assert not local_cap or 216.<=p.L_cap_block_depth<2000.
++        assert not p.L_projected_bearing_gap or local_cap
++        cap_start=6515.-p.L_cap_block_depth
++        width,length=(140.,1000.) if local_cap else (cap_width,cap_length)
++        rects,area,cc,I,Ixy=l_shape(width,length)
++        def global_rects(source,origin,sg):
++            result=[]
++            for l,b,r,t in source:
+                 pts=np.array([origin+sg*np.array([x,y]) for x in (l,r) for y in (b,t)])
+-                rect=[*pts.min(axis=0),*pts.max(axis=0)];foot.append(rect)
+-                self.rc_boxes.insert(0,(f'L-{corner}-{len(foot)}',rect+[-180.,6515.],'L'))
++                result.append([*pts.min(axis=0),*pts.max(axis=0)])
++            return result
++        for corner in [(A,A),(B,A),(B,B),(A,B)]:
++            sg=np.array([1 if v==A else -1 for v in corner]);bar_origin=np.array(corner)-sg*70
++            origin=bar_origin-sg*p.L_outward_extension
++            body_origin=bar_origin if local_cap else origin
++            centroid=body_origin+sg*cc
++            cap_centroid=origin+sg*cap_cc
++            foot=global_rects(rects,body_origin,sg)
++            cap_foot=global_rects(cap_rects,origin,sg) if local_cap else foot
++            raw_contacts=L_contact_rects(cap_width,p.L_outward_extension,local_cap)
++            cap_bearings=[(r,projected) for r,(_,projected) in zip(
++                global_rects([rect for rect,_ in raw_contacts],origin,sg),raw_contacts)]
++            for i,rect in enumerate(foot):
++                self.rc_boxes.insert(0,(f'L-{corner}-{i}',rect+[-180.,cap_start],'L'))
++            if local_cap:
++                for i,rect in enumerate(cap_foot):
++                    self.rc_boxes.insert(0,(f'L-{corner}-cap-{i}',rect+[cap_start,6515.],'L'))
+             haunches=[]
+             if p.corner_haunch>1e-9:
+                 start=np.array(corner)+sg*p.corner_width/2
+@@ -216,7 +258,11 @@ class House:
+                 haunches.append(haunch)
+                 self.rc_boxes.insert(0,(f'L-{corner}-haunch',haunch+[3170.,3920.],'L'))
+             vals,vec=np.linalg.eigh([[I,Ixy*sg[0]*sg[1]],[Ixy*sg[0]*sg[1],I]])
+-            j=dict(corner=corner,centroid=centroid,foot=foot,haunches=haunches,area=area,I=vals,normal=[*vec[:,0],0.],origin=origin,sg=sg)
++            cap_vals,_=np.linalg.eigh([[cap_I,cap_Ixy*sg[0]*sg[1]],[cap_Ixy*sg[0]*sg[1],cap_I]])
++            j=dict(corner=corner,centroid=centroid,foot=foot,haunches=haunches,area=area,I=vals,normal=[*vec[:,0],0.],
++                   origin=origin,bar_origin=bar_origin,sg=sg,width=width,length=length,
++                   cap_foot=cap_foot,cap_centroid=cap_centroid,cap_width=cap_width,cap_length=cap_length,
++                   cap_area=cap_area,cap_I=cap_vals,cap_start=cap_start,cap_bearings=cap_bearings,section_members=[])
+             j['joint']=self.node(('L-floor',corner),[*centroid,3545.]);self.Ls.append(j)
+             # Two real ground beam lines receive the footprint; the centroid
+             # reference is linked through actual cap/beam offsets below.
+@@ -422,16 +468,30 @@ class House:
+             corner=L['corner'];plan=L['centroid'];ground='outer-W' if corner[0]==A else 'outer-E'
+             foot=self.ground_port(ground,corner,-180.)[0][0]
+             lower=self.node(('L-dpc-lower',corner),[*plan,-40.]);upper=self.node(('L-dpc-upper',corner),[*plan,-40.])
+-            sec=(L['area'],L['I'][1],L['I'][0],2*(1000-70)*140**3/3)
+-            self.members['L'].append(self.f.beam(foot,lower,140,1000,'L-foot',normal=L['normal'],ra=np.array([*plan,-180.])-self.f.points[foot//6],rb=[0,0,-70],section=sec,crack=self.p.crack))
++            width,length=L["width"],L["length"]
++            sec=(L['area'],L['I'][1],L['I'][0],2*(length-width/2)*width**3/3)
++            L['section_members'].append(self.f.beam(foot,lower,width,length,'L-foot',normal=L['normal'],ra=np.array([*plan,-180.])-self.f.points[foot//6],rb=[0,0,-70],section=sec,crack=self.p.crack))
+             source=json.loads((D/'current-house-ground-ties.json').read_text())['outer']['primaryBarXY'];pts=[]
+             for x,y in source:
+-                v=L['origin']+L['sg']*np.array([x,y])-plan;pts.append((v[0],v[1],math.pi*20**2/4))
+-            self.dpc(lower,upper,pts,L['area'],f'L-{corner}-DPC',foot_rects=L['foot'])
+-            top=self.node(('L-top',corner),[*plan,6515.]);L['top']=top;L['foot_node']=foot
++                v=L['bar_origin']+L['sg']*np.array([x,y])-plan;pts.append((v[0],v[1],math.pi*20**2/4))
++            base_rects=[]
++            for l,b,r,t in ((0.,0.,1000.,140.),(0.,140.,140.,1000.)):
++                corners=np.array([L['bar_origin']+L['sg']*np.array([x,y]) for x in (l,r) for y in (b,t)])
++                base_rects.append([*corners.min(axis=0),*corners.max(axis=0)])
++            self.dpc(lower,upper,pts,L['area'],f'L-{corner}-DPC',foot_rects=base_rects)
++            top=self.node(('L-top',corner),[*L['cap_centroid'],6515.]);L['top']=top;L['foot_node']=foot
+             cut=375*self.p.joint_rigid_scale
+-            self.members['L'].append(self.f.beam(upper,L['joint'],140,1000,'L-lower',normal=L['normal'],ra=[0,0,70],rb=[0,0,-cut],section=sec,crack=self.p.crack))
+-            self.members['L'].append(self.f.beam(L['joint'],top,140,1000,'L-upper',normal=L['normal'],ra=[0,0,cut],section=sec,crack=self.p.crack))
++            L['section_members'].append(self.f.beam(upper,L['joint'],width,length,'L-lower',normal=L['normal'],ra=[0,0,70],rb=[0,0,-cut],section=sec,crack=self.p.crack))
++            if self.p.L_cap_block_depth>0.:
++                transition=self.node(('L-cap-step',corner),[*plan,L['cap_start']])
++                L['section_members'].append(self.f.beam(L['joint'],transition,width,length,'L-upper',normal=L['normal'],ra=[0,0,cut],section=sec,crack=self.p.crack))
++                cap_w,cap_l=L['cap_width'],L['cap_length']
++                cap_sec=(L['cap_area'],L['cap_I'][1],L['cap_I'][0],2*(cap_l-cap_w/2)*cap_w**3/3)
++                step=L['cap_centroid']-plan
++                L['section_members'].append(self.f.beam(transition,top,cap_w,cap_l,'L-cap-block',normal=L['normal'],ra=[*step,0.],section=cap_sec,crack=self.p.crack))
++            else:
++                L['section_members'].append(self.f.beam(L['joint'],top,width,length,'L-upper',normal=L['normal'],ra=[0,0,cut],section=sec,crack=self.p.crack))
++            self.members['L'].extend(L['section_members'])
+         for face in range(4):
+             for centre in (2100.,9900.):
+                 ends=sorted([j for j in self.jambs if j['face']==face and j['centre']==centre],key=lambda j:j['u'])
+@@ -557,7 +617,7 @@ class House:
+         for point in self.roof.p['upperSupports']:
+             self.upper_links.append((point,self.floor_port(point)))
+         for L in self.Ls:
+-            L['roofRoots']=[q for q in self.roof.p['nodes'] if any(inside(q,r,1e-7) for r in L['foot'])]
++            L['roofRoots']=[q for q in self.roof.p['nodes'] if any(inside(q,r,1e-7) for r in L['cap_foot'])]
+ 
+     def build_roof_links(self):
+         def key_terms(width,thickness,depth):
+@@ -618,19 +678,21 @@ class House:
+                     self.cap_links.append(self.f.link(self.roof.port(q,pos),self.f.port(j['top'],pos),k,f'cap-key-{face}-{j["u"]:g}'))
+         for L in self.Ls:
+             source=json.loads((D/'current-house-ground-ties.json').read_text())['outer']['primaryBarXY']
+-            for i,bar in enumerate(source):
+-                pt=L['origin']+L['sg']*np.array(bar);q=outer_root(pt);at=[*pt,6540.]
++            for i,bar in enumerate(self.p.L_trial_anchor_positions or source):
++                pt=L['bar_origin']+L['sg']*np.array(bar);q=outer_root(pt);at=[*pt,6540.]
+                 distance=min(100.,max(1.,100.+(pt[0]-q[0])+(pt[1]-q[1])))
+                 plate=sum(distance**2*(200-distance)**2/(3*200000*(100*t**3/12)*200) for t in (25.,20.))
+                 k=1/(self.p.L_cap_anchor_length/(200000*math.pi*20**2/4)+plate)*self.p.cap_scale
+                 self.cap_links.append(self.f.link(self.roof.port(q,at),self.f.port(L['top'],at),[0,0,k,0,0,0],f'L-cap-anchor-{L["corner"]}-{i}'))
+             gp,gw=np.polynomial.legendre.leggauss(2)
+-            for l,b,r,t in L['foot']:
++            for (l,b,r,t),projected in L['cap_bearings']:
++                tag='L-cap-projected-bearing-' if projected else 'L-cap-bearing-'
+                 for x,wx in zip(gp,gw):
+                     for y,wy in zip(gp,gw):
+                         pt=np.array([(l+r)/2+x*(r-l)/2,(b+t)/2+y*(t-b)/2]);q=outer_root(pt);at=[*pt,6540.];area=(r-l)*(t-b)*wx*wy/4
+                         k=area/(self.p.cap_bearing_depth/33000+25/200000)*self.p.cap_scale
+-                        self.contact(self.roof.port(q,at),self.f.port(L['top'],at),k,'L-cap-bearing-'+str(L['corner']))
++                        gap=self.p.L_projected_bearing_gap if projected else 0.
++                        self.contact(self.roof.port(q,at),self.f.port(L['top'],at),k,tag+str(L['corner']),initial_gap=gap)
+             # Each key has its own actual ring root. The radial-guide
+             # comparator uses a single plan-tangential blade at each station
+             # rather than a two-axis cruciform, so uniform affine roof growth
+diff --git a/project/str/studies/floor_portal_loads.py b/project/str/studies/floor_portal_loads.py
+index 0469499bb07545b9a7561b0488f2875027fe3fdd..aa9e6bda22f8b2b0c51f98f9f72a76185cff9ab4 100644
+--- a/project/str/studies/floor_portal_loads.py
++++ b/project/str/studies/floor_portal_loads.py
+@@ -143,8 +143,8 @@ def rc_origins(h,case):
+                 tr=next(t for t in h.trimmers if 'trimmer-'+t['name']==name);axis=tr['axis']
+                 es=[e for e in h.members['trimmer'] if e['name']==name]
+             elif kind=='L':
+-                axis=2;L=next(L for L in h.Ls if any(inside(centre,r,1e-6) for r in L['foot']+L['haunches']))
+-                es=[e for e in h.members['L'] if np.linalg.norm((e['a']+e['b'])[:2]/2-L['centroid'])<1e-5]
++                axis=2;L=next(L for L in h.Ls if name.startswith(f"L-{L['corner']}-"))
++                es=L['section_members']
+             else:
+                 axis=2;j=next(j for j in h.jambs if abs(local(j['face'],centre[:2])[0]-j['u'])<102.5+1e-7 and abs(local(j['face'],centre[:2])[1]-312.5)<180)
+                 es=[e for e in h.members['jamb'] if e['name']==f'jamb-{j["face"]}-{j["u"]:g}' or e['name']=='jamb-foot' and abs(local(j['face'],e['a'][:2])[0]-j['u'])<1e-5]
+@@ -279,7 +279,11 @@ def gravity(h):
+     for face in range(4):
+         for centre in (2100.,9900.):replacements.append(rectangle(face,centre-705,centre+705,262.5,402.5)+[-180.,6540.])
+     for L in h.Ls:
+-        replacements.extend(r+[-180.,6540.] for r in L['foot'])
++        if h.p.L_cap_block_depth>0.:
++            replacements.extend(r+[-180.,L['cap_start']] for r in L['foot'])
++            replacements.extend(r+[L['cap_start'],6540.] for r in L['cap_foot'])
++        else:
++            replacements.extend(r+[-180.,6540.] for r in L['foot'])
+         replacements.extend(r+[3170.,3920.] for r in L['haunches'])
+     replacements.extend(box for name,box,kind in h.rc_boxes if kind in ('collector','trimmer','jamb'))
+     def route_core(tag,point,force,receivers,upper):
+diff --git a/project/str/studies/floor_portal_roof.py b/project/str/studies/floor_portal_roof.py
+index 6d3fe56e828c78326208780eb5a0b51ebce2ac20..1667b836542afbc6d963ecaced5e35a7d7b13bee 100644
+--- a/project/str/studies/floor_portal_roof.py
++++ b/project/str/studies/floor_portal_roof.py
+@@ -21,17 +21,31 @@ def outer_root(point):
+     return tuple(round(v,7) for v in min(candidates,key=lambda q:math.dist(q,(x,y))))
+ 
+ 
+-def L_cap_points(extra_centres=()):
++def L_contact_rects(arm_width,outer_extension,split_projection=False):
++    length=1000.+outer_extension
++    if not split_projection:
++        return [((0.,0.,length,arm_width),False),((0.,arm_width,arm_width,length),False)]
++    e,w=outer_extension,arm_width
++    assert e>0. and w-e==140.
++    return [
++        ((e,e,length,w),False),((e,w,w,length),False),
++        ((0.,0.,length,e),True),((0.,e,e,length),True),
++    ]
++
++
++def L_cap_points(extra_centres=(),arm_width=140.,outer_extension=0.,split_projection=False,extra_anchors=()):
+     import json
+     source=json.loads((D/'current-house-ground-ties.json').read_text())['outer']['primaryBarXY'];out=set()
+     gp,_=np.polynomial.legendre.leggauss(2)
+-    points=list(source)
+-    for l,b,r,t in [(0.,0.,1000.,140.),(0.,140.,140.,1000.)]:
++    points=[]
++    for (l,b,r,t),_ in L_contact_rects(arm_width,outer_extension,split_projection):
+         points.extend(((l+r)/2+x*(r-l)/2,(b+t)/2+y*(t-b)/2) for x in gp for y in gp)
+-    points.extend([(70.,70.),(900.,70.),(70.,900.),*extra_centres])
++    points.extend(extra_centres)
+     for corner in [(332.5,332.5),(11667.5,332.5),(11667.5,11667.5),(332.5,11667.5)]:
+-        sg=np.array([1 if v==332.5 else -1 for v in corner]);origin=np.array(corner)-sg*70
++        sg=np.array([1 if v==332.5 else -1 for v in corner]);bar_origin=np.array(corner)-sg*70
++        origin=bar_origin-sg*outer_extension
+         out.update(outer_root(origin+sg*np.array(q)) for q in points)
++        out.update(outer_root(bar_origin+sg*np.array(q)) for q in [*(extra_anchors or source),(70.,70.),(900.,70.),(70.,900.)])
+     return out
+ 
+ 
+@@ -55,11 +69,12 @@ def namespace(court_width=280.,court_wall=25.):
+     return p,hashlib.sha256(source.encode()).hexdigest()
+ 
+ 
+-def enrich(p,extra_L_keys=()):
++def enrich(p,extra_L_keys=(),L_arm_width=140.,L_outward_extension=0.,split_projection=False,extra_L_anchors=()):
+     """Split, never attach new supports by a Hermite-only interpolation."""
+     axes=[1497.5,2702.5,9297.5,10502.5]
+     cap_points={p['pt'](face,p['A'],u) for face in range(4) for u in axes}
+-    all_points=cap_points|L_cap_points(extra_L_keys)
++    all_points=cap_points|L_cap_points(extra_L_keys,L_arm_width,L_outward_extension,split_projection,extra_L_anchors)
++    if not extra_L_anchors:all_points|=L_cap_points()
+     rings=[]
+     for a,b in p['rings']:
+         axis=0 if a[1]==b[1] else 1
+@@ -124,9 +139,9 @@ def extract(p):
+ 
+ 
+ class Roof:
+-    def __init__(self,court_width=280.,court_wall=25.,caps=True,extra_L_keys=()):
++    def __init__(self,court_width=280.,court_wall=25.,caps=True,extra_L_keys=(),L_arm_width=140.,L_outward_extension=0.,split_projection=False,extra_L_anchors=()):
+         self.p,self.source_hash=namespace(court_width,court_wall)
+-        self.cap_points=enrich(self.p,extra_L_keys) if caps else set()
++        self.cap_points=enrich(self.p,extra_L_keys,L_arm_width,L_outward_extension,split_projection,extra_L_anchors) if caps else set()
+         self.k,self.keep,self.props=extract(self.p)
+         self.lookup={int(old):i for i,old in enumerate(self.keep)}
+         self.rigid=rigid(self.p)[self.keep]
