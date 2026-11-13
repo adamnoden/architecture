@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 10,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "455ec204-459b-4640-871f-b5a832615093",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg2-had"
   },
   "claimedAt": "2026-11-12T23:31:09.148Z",
-  "heartbeatAt": "2026-11-13T00:21:41.598Z",
-  "expiresAt": "2026-11-13T01:06:41.598Z",
+  "heartbeatAt": "2026-11-13T00:22:20.319Z",
+  "expiresAt": "2026-11-13T00:22:20.319Z",
   "branch": "work/zerg2-had-stand-retirement-20261112",
   "predecessor": {
     "leaseId": "45785a05-071e-4b4c-aca4-36e7243d9805",
@@ -39,5 +39,7 @@
     "next": "Reacquire HAD to advance paired lower-tail capture, support rail removal and two-person dock keeper",
     "blocker": "Actual positive capture, anchor, track and supported threshold detail still open; packet planned"
   },
-  "pr": 1499
+  "pr": 1499,
+  "releasedAt": "2026-11-13T00:22:20.319Z",
+  "releaseReason": "handoff"
 }
