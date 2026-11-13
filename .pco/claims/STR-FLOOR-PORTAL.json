@@ -1,26 +1,21 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 13,
+  "generation": 14,
   "state": "claimed",
-  "leaseId": "b13ce992-eee0-47a0-832f-cb1491c7946e",
+  "leaseId": "513ea2be-cbe4-4505-9ad5-6dc51b689d8e",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg4-str"
+    "label": "recover-str"
   },
-  "claimedAt": "2026-11-13T00:46:17.657Z",
-  "heartbeatAt": "2026-11-13T00:46:17.657Z",
-  "expiresAt": "2026-11-13T01:31:17.657Z",
-  "branch": "work/zerg4-str-cage",
+  "claimedAt": "2026-11-13T19:26:21.119Z",
+  "heartbeatAt": "2026-11-13T19:26:21.119Z",
+  "expiresAt": "2026-11-13T20:11:21.119Z",
+  "branch": "work/zerg5-str-split-hoop",
   "predecessor": {
-    "leaseId": "d4049d5a-a551-4ebe-9289-0f80370a6001",
-    "generation": 12,
-    "branch": "work/zerg3-str-ring-access",
-    "pr": 1500,
-    "checkpoint": {
-      "evidence": "PR #1500 exact head fa94c9d5516f7bc3f39a5542265ab892679d464b, repository integrity and source-bound replay passed",
-      "next": "Check exact CI and immediate preflight, merge, release to handoff"
-    }
+    "leaseId": "b13ce992-eee0-47a0-832f-cb1491c7946e",
+    "generation": 13,
+    "branch": "work/zerg4-str-cage"
   },
   "recoverySource": {
     "leaseId": "d4049d5a-a551-4ebe-9289-0f80370a6001",
