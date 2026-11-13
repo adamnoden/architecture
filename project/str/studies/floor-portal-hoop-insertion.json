@@ -1,0 +1,64 @@
+{
+  "sourceSha256": {
+    "floor-portal-seat-detail.py": "c56399ccfc15b9eb8bf0779e252244a128f71531944d67f7b8412044a843ac3f",
+    "floor-portal-seat-detail.json": "57331cf8738d2f5ce76e59a763c30317a6781873c80beeb408684b1611de1dfc"
+  },
+  "splitPointsMm": [
+    [
+      966.0,
+      43.0
+    ],
+    [
+      43.0,
+      966.0
+    ]
+  ],
+  "travelPerAxisMm": 120.0,
+  "heightSampleStepMm": 0.05,
+  "arcChordMaximumSagittaMm": 0.0012946158181754708,
+  "relativePlanSettingMm": 10.0,
+  "fixedBarClearances": {
+    "coldDiagonal": {
+      "clearanceLowerBoundMm": 2.1401703967884167,
+      "levelMm": 6433.0,
+      "bar": "H20-2",
+      "sampleHeightMm": 6443.0,
+      "sameHeightClearanceUpperBoundMm": 4.025400688121891
+    },
+    "roomDiagonal": {
+      "clearanceLowerBoundMm": 0.12692352511066218,
+      "levelMm": 6355.0,
+      "bar": "H20-6",
+      "sampleHeightMm": 6345.0,
+      "sameHeightClearanceUpperBoundMm": 0.4057120573273565
+    },
+    "coldSingleAxisControl": {
+      "clearanceLowerBoundMm": -24.009231918979836,
+      "levelMm": 6355.0,
+      "bar": "H20-10",
+      "sampleHeightMm": 6345.0,
+      "sameHeightClearanceUpperBoundMm": -23.998705384181825
+    },
+    "coldWithPreinstalled16MmSleeve": {
+      "clearanceLowerBoundMm": -7.815169794307508,
+      "levelMm": 6355.0,
+      "bar": "H20-3",
+      "sampleHeightMm": 6345.0,
+      "sameHeightClearanceUpperBoundMm": -6.6847810246251385
+    }
+  },
+  "maximumConcentricSpliceOutsideDiameterAtStraightEndsMm": 8.0,
+  "hypotheticalConcentricSleeve": {
+    "diameterMm": 16.0,
+    "lengthMm": 48.0,
+    "seatedFixedBarClearance": {
+      "clearanceLowerBoundMm": 1.2021717965366214,
+      "levelMm": 6355.0,
+      "bar": "H20-7",
+      "sampleHeightMm": 6345.0,
+      "sameHeightClearanceUpperBoundMm": 1.4129528619125828
+    },
+    "coverAfterSettingMm": 21.0,
+    "coverScreenMm": 25.0
+  }
+}
