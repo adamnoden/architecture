@@ -94,5 +94,74 @@
       "sampleHeightMm": 6345.0,
       "sameHeightClearanceUpperBoundMm": -23.998705384181825
     }
+  },
+  "fourPieceMidArmSplit": {
+    "stationMm": 420.0,
+    "centrelineAcrossCoreMm": [
+      3.0,
+      102.0
+    ],
+    "coverAfterSettingMm": 25.0,
+    "coldCornerDiagonal": {
+      "clearanceLowerBoundMm": 3.8195878237062715,
+      "levelMm": 6433.0,
+      "bar": "H20-1",
+      "sampleHeightMm": 6443.0,
+      "sameHeightClearanceUpperBoundMm": 4.025400688121891
+    },
+    "roomCornerDiagonal": {
+      "clearanceLowerBoundMm": 0.6902070216660334,
+      "levelMm": 6433.0,
+      "bar": "H20-5",
+      "sampleHeightMm": 6443.0,
+      "sameHeightClearanceUpperBoundMm": 0.6943534981504449
+    },
+    "bareBarEndSetbackEachMm": 6.0,
+    "barePieceSequenceBeforeRelativePieceSettingMm": {
+      "roomCornerAgainstSeatedColdCorner": 90.49741076836365,
+      "firstEndAgainstSeatedCorners": 3.4974107683636486,
+      "secondEndAgainstSeatedCornersAndFirstEnd": 3.4974107683636486
+    },
+    "oneEndReturnAxial": {
+      "clearanceLowerBoundMm": 0.12692352511066218,
+      "levelMm": 6355.0,
+      "bar": "H20-9",
+      "sampleHeightMm": 6345.0,
+      "sameHeightClearanceUpperBoundMm": 0.4057120573273565
+    },
+    "seatedSleevesToFixedBars": {
+      "clearanceLowerBoundMm": 26.99019513592785,
+      "levelMm": 6355.0,
+      "bar": "H12-0-350-80",
+      "sampleHeightMm": 6345.0,
+      "sameHeightClearanceUpperBoundMm": 26.99019513592785
+    },
+    "sleeveMovement": {
+      "endSetbackEachMm": 6.0,
+      "barTipToTipGapMm": 12.0,
+      "nominalSeatOverlapEachEndMm": 18.0,
+      "overlapEachEndIfOwnBarAndSleeveEachShift5Mm": 8.0,
+      "ownBarAndSleeveRadialMisalignmentBudgetMm": 10.0,
+      "radialAnnulusBetween16MmEnvelopeAndH8Mm": 4.0,
+      "parkingToClosureAxialTravelMm": 30.0,
+      "minimumStraightParkingLengthFromEndTipMm": 48.0,
+      "providedStraightFromEndTipBeforeOutboardJogMm": 18.0,
+      "parkedSleeveAgainstOtherBarePiecesAndSleeveMm": -0.5025892316363514,
+      "parkedSleeveMovingPastFixedBars": {
+        "clearanceLowerBoundMm": -2.0526593582095494,
+        "levelMm": 6355.0,
+        "bar": "H12-0-600-80",
+        "sampleHeightMm": 6345.0,
+        "sameHeightClearanceUpperBoundMm": -2.0
+      },
+      "parkedAndSeatedSleeveEnvelopeToFixedBars": {
+        "clearanceLowerBoundMm": 26.99019513592785,
+        "levelMm": 6355.0,
+        "bar": "H12-0-350-80",
+        "sampleHeightMm": 6345.0,
+        "sameHeightClearanceUpperBoundMm": 26.99019513592785
+      },
+      "barePieceSequenceAfterIndependentRelativePlanSettingsMm": -6.502589231636351
+    }
   }
 }

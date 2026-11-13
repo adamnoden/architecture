@@ -124,6 +124,85 @@ def mid_arm_trial(segments, arcs, levels, paths, sagitta, sleeve_radius):
     }
 
 
+def piece_clearance(moving, direction, fixed, sagitta, moving_radius=HOOP_RADIUS, fixed_radius=HOOP_RADIUS):
+    sample_step = 1.0
+    points = np.concatenate([
+        np.linspace(a, b, ceil(hypot(a[0] - b[0], a[1] - b[1]) / sample_step) + 1)
+        for a, b in fixed
+    ])
+    shift = tuple(TRAVEL * x for x in direction)
+    distance = min(swept_chord_distances(chunk, moving, shift).min()
+                   for chunk in np.array_split(points, ceil(len(points) / 500)))
+    return float(distance - sample_step / 2 - 2 * sagitta - moving_radius - fixed_radius)
+
+
+def four_piece_trial(segments, arcs, levels, paths, sagitta, sleeve_radius):
+    station, sleeve_half_length, transition = 420.0, 24.0, 21.0
+    left, right = station - sleeve_half_length, station + sleeve_half_length
+    cold_q, room_q, setback = 3.0, 102.0, 6.0
+
+    def leg(points):
+        return list(zip(points, points[1:]))
+
+    def mirrored(chords):
+        return [tuple(point[::-1] for point in chord) for chord in chords]
+
+    cold_leg = leg([segments[0][0], (left - transition, -1), (left, cold_q), (station - setback, cold_q)])
+    room_leg = leg([segments[2][1], (left - transition, 106), (left, room_q), (station - setback, room_q)])
+    end_cold = leg([(station + setback, cold_q), (right, cold_q), (right + transition, -1), segments[0][1]])
+    end_room = leg([(station + setback, room_q), (right, room_q), (right + transition, 106), segments[2][0]])
+    end = end_cold + [segments[1]] + end_room + chord_segments(arcs[1]) + chord_segments(arcs[2])
+    cold_corner = cold_leg + mirrored(cold_leg) + chord_segments(arcs[0])
+    room_corner = room_leg + mirrored(room_leg) + chord_segments(arcs[3])
+    corners = cold_corner + room_corner
+    sleeves = [((left, q), (right, q)) for q in (cold_q, room_q)]
+    parked_sleeves = [tuple((x + sleeve_half_length + setback, q) for x, q in sleeve)
+                      for sleeve in sleeves]
+    sliding_sleeve_clearance = moving_gap(
+        sleeves + parked_sleeves, (0, 0), levels, paths, 0, sleeve_radius)
+    parked_insertion_clearance = moving_gap(parked_sleeves, (1, 0), levels, paths, 0, sleeve_radius)
+    end_after_corners = piece_clearance(end, (1, 0), corners, sagitta)
+    second_end = piece_clearance(mirrored(end), (0, 1), corners + end, sagitta)
+    parked_against_other_pieces = min(
+        piece_clearance(parked_sleeves, (1, 0), corners, sagitta, sleeve_radius),
+        piece_clearance(mirrored(parked_sleeves), (0, 1), corners + end, sagitta, sleeve_radius),
+        piece_clearance(mirrored(end), (0, 1), parked_sleeves, sagitta, HOOP_RADIUS, sleeve_radius),
+        piece_clearance(mirrored(parked_sleeves), (0, 1), parked_sleeves, sagitta, sleeve_radius, sleeve_radius),
+    )
+    assert SEAT['CORE_WIDTH'] - room_q - sleeve_radius - SEAT['SETTING'] == SEAT['COVER_SCREEN']
+    return {
+        'stationMm': station,
+        'centrelineAcrossCoreMm': [cold_q, room_q],
+        'coverAfterSettingMm': SEAT['COVER_SCREEN'],
+        'coldCornerDiagonal': moving_gap(cold_corner, (-1, -1), levels, paths, sagitta),
+        'roomCornerDiagonal': moving_gap(room_corner, (1, 1), levels, paths, sagitta),
+        'bareBarEndSetbackEachMm': setback,
+        'barePieceSequenceBeforeRelativePieceSettingMm': {
+            'roomCornerAgainstSeatedColdCorner': piece_clearance(room_corner, (1, 1), cold_corner, sagitta),
+            'firstEndAgainstSeatedCorners': end_after_corners,
+            'secondEndAgainstSeatedCornersAndFirstEnd': second_end,
+        },
+        'oneEndReturnAxial': moving_gap(end, (1, 0), levels, paths, sagitta),
+        'seatedSleevesToFixedBars': moving_gap(sleeves, (0, 0), levels, paths, 0, sleeve_radius),
+        'sleeveMovement': {
+            'endSetbackEachMm': setback,
+            'barTipToTipGapMm': 2 * setback,
+            'nominalSeatOverlapEachEndMm': sleeve_half_length - setback,
+            'overlapEachEndIfOwnBarAndSleeveEachShift5Mm': sleeve_half_length - setback - RELATIVE_PLAN_SETTING,
+            'ownBarAndSleeveRadialMisalignmentBudgetMm': RELATIVE_PLAN_SETTING,
+            'radialAnnulusBetween16MmEnvelopeAndH8Mm': sleeve_radius - HOOP_RADIUS,
+            'parkingToClosureAxialTravelMm': sleeve_half_length + setback,
+            'minimumStraightParkingLengthFromEndTipMm': 2 * sleeve_half_length,
+            'providedStraightFromEndTipBeforeOutboardJogMm': right - station - setback,
+            'parkedSleeveAgainstOtherBarePiecesAndSleeveMm': parked_against_other_pieces,
+            'parkedSleeveMovingPastFixedBars': parked_insertion_clearance,
+            'parkedAndSeatedSleeveEnvelopeToFixedBars': sliding_sleeve_clearance,
+            'barePieceSequenceAfterIndependentRelativePlanSettingsMm':
+                min(end_after_corners, second_end) - RELATIVE_PLAN_SETTING,
+        },
+    }
+
+
 def compare():
     receipt = json.loads(RECEIPT.read_text())
     loop = receipt['roundedH8LinkScreen']
@@ -161,6 +240,16 @@ def compare():
     relocated = [relocated_end, tuple(point[::-1] for point in relocated_end)]
     inward_clearance = moving_gap(relocated, (0, 0), levels, paths, 0, sleeve_radius)
     mid_arm = mid_arm_trial(segments, arcs, levels, paths, sagitta, sleeve_radius)
+    four_piece = four_piece_trial(segments, arcs, levels, paths, sagitta, sleeve_radius)
+    assert all(four_piece[key]['clearanceLowerBoundMm'] > 0 for key in (
+        'coldCornerDiagonal', 'roomCornerDiagonal', 'oneEndReturnAxial',
+        'seatedSleevesToFixedBars'))
+    assert min(four_piece['barePieceSequenceBeforeRelativePieceSettingMm'].values()) > 0
+    closure = four_piece['sleeveMovement']
+    assert closure['providedStraightFromEndTipBeforeOutboardJogMm'] < closure['minimumStraightParkingLengthFromEndTipMm']
+    assert closure['barePieceSequenceAfterIndependentRelativePlanSettingsMm'] < 0
+    assert closure['parkedSleeveMovingPastFixedBars']['sameHeightClearanceUpperBoundMm'] < 0
+    assert closure['ownBarAndSleeveRadialMisalignmentBudgetMm'] > closure['radialAnnulusBetween16MmEnvelopeAndH8Mm']
     assert inward_clearance['sameHeightClearanceUpperBoundMm'] < 0
     assert mid_arm['coverAfterSettingMm'] == SEAT['COVER_SCREEN']
     assert mid_arm['coldDiagonal']['clearanceLowerBoundMm'] > 0
@@ -189,6 +278,7 @@ def compare():
             'inwardRelocationSeatedFixedBarClearance': inward_clearance,
         },
         'midArmRelocatedSplit': mid_arm,
+        'fourPieceMidArmSplit': four_piece,
     }
 
 
