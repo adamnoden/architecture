@@ -1,44 +1,34 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 13,
-  "state": "released",
-  "leaseId": "354ace11-48c1-4381-9df2-fc3cfc388365",
+  "generation": 14,
+  "state": "claimed",
+  "leaseId": "9e747b70-eae0-4d47-a2dc-df8f13c2c7f6",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg5-had-threshold"
+    "label": "zerg6-had-threshold"
   },
-  "claimedAt": "2026-11-13T19:49:18.571Z",
-  "heartbeatAt": "2026-11-13T20:08:46.000Z",
-  "expiresAt": "2026-11-13T20:08:46.000Z",
-  "branch": "work/zerg5-had-signed-threshold-followon",
+  "claimedAt": "2026-11-13T22:55:34.522Z",
+  "heartbeatAt": "2026-11-13T22:55:34.522Z",
+  "expiresAt": "2026-11-13T23:40:34.522Z",
   "predecessor": {
-    "leaseId": "4d164e65-4631-4f40-861c-869d6c5dddeb",
-    "generation": 12,
-    "branch": "work/zerg5-had-tail-recovery-20261113",
-    "pr": 1502,
+    "leaseId": "354ace11-48c1-4381-9df2-fc3cfc388365",
+    "generation": 13,
+    "branch": "work/zerg5-had-signed-threshold-followon",
     "checkpoint": {
-      "evidence": "PR #1502 recovers the unchanged 5df64df1 candidate tree from #1501 after g11 expiry; full CI requested under fresh g12 lease",
-      "next": "Verify PR 1502 exact-head CI then canonical preflight, merge, release",
-      "blocker": "Installed physical split shoe, pinned fits, dry dock supports and stand crossing remain open"
+      "evidence": "Remote d6683764, exact tree 62f4a0e6, 76 HAD tests and deterministic MRA/inlet/water-replan passed; signed threshold and side pickup compared",
+      "next": "After STR merge, rebase against main, open full CI and verify exact publication",
+      "blocker": "Actual side lift, independently mounted dry supports and complete loaded transfer still open"
     }
   },
   "recoverySource": {
-    "leaseId": "4d164e65-4631-4f40-861c-869d6c5dddeb",
-    "generation": 12,
-    "branch": "work/zerg5-had-tail-recovery-20261113",
-    "pr": 1502,
+    "leaseId": "354ace11-48c1-4381-9df2-fc3cfc388365",
+    "generation": 13,
+    "branch": "work/zerg5-had-signed-threshold-followon",
     "checkpoint": {
-      "evidence": "PR #1502 recovers the unchanged 5df64df1 candidate tree from #1501 after g11 expiry; full CI requested under fresh g12 lease",
-      "next": "Verify PR 1502 exact-head CI then canonical preflight, merge, release",
-      "blocker": "Installed physical split shoe, pinned fits, dry dock supports and stand crossing remain open"
+      "evidence": "Remote d6683764, exact tree 62f4a0e6, 76 HAD tests and deterministic MRA/inlet/water-replan passed; signed threshold and side pickup compared",
+      "next": "After STR merge, rebase against main, open full CI and verify exact publication",
+      "blocker": "Actual side lift, independently mounted dry supports and complete loaded transfer still open"
     }
-  },
-  "checkpoint": {
-    "evidence": "Remote d6683764, exact tree 62f4a0e6, 76 HAD tests and deterministic MRA/inlet/water-replan passed; signed threshold and side pickup compared",
-    "next": "After STR merge, rebase against main, open full CI and verify exact publication",
-    "blocker": "Actual side lift, independently mounted dry supports and complete loaded transfer still open"
-  },
-  "releasedAt": "2026-11-13T20:08:46.000Z",
-  "releaseReason": "handoff"
+  }
 }
