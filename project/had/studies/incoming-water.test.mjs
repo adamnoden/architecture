@@ -270,6 +270,30 @@ test('the lower-tail release follows the beam and current dock, including reject
   assert(departure.detachedRailChallenger.every(phase=>phase.maximumReachMM<600));
   assert.equal(departure.receiver.nativeVerticalSeparationAtRestMM,0);
   assert(departure.receiver.bearingLandProjection);
+  const capture=departure.temporaryCapture;
+  assert(capture.firstCaptureClearance.gapMM>31);
+  assert(capture.yokeToMast.gapMM>31&&capture.yokeToUnremovedGuides.gapMM>=30);
+  assert(capture.lowPickupClearance.gapMM<0);
+  assert(capture.shortestAnchorFootToBeamEdgeMM>140);
+  assert(capture.anchorRowDemandN>1200);
+  assert(departure.railExtraction.every(({normalNear,towardsYoke,releasedShortBar})=>
+    normalNear.gapMM<0&&towardsYoke.gapMM<0&&releasedShortBar.staged.liftFirst.gapMM>10&&
+    releasedShortBar.staged.slideSecond.gapMM>10));
+  assert(departure.railExtraction.every(rail=>rail.releasedShortBar.firstLift250MM.gapMM<0));
+  assert(departure.railExtraction.every(({releasedShortBar:{staged:{rest}}})=>
+    rest.lowerThird.gapMM>100&&rest.landGapAtRestMM===0&&rest.minimumLateralBearingOverhangMM===3));
+  const keeper=departure.receiver.positiveDockKeeperTrial;
+  assert.equal(keeper.reactions.verticalLeverArmMM,180);
+  assert(keeper.reactions.upperReactionN>300&&keeper.reactions.lowerReactionN<-200);
+  assert(keeper.reactions.baseRowCoupleN>1100);
+  assert(keeper.approachResult.gapMM>5&&keeper.settlingResult.gapMM>5);
+  assert.equal(keeper.pinTravelMM,51);
+  assert(keeper.northActuationTrial.gap.gapMM>35&&keeper.northActuationTrial.reachMM<450);
+  assert(keeper.southActuationTrial.secondBodyGap.gapMM>54);
+  assert(keeper.southActuationTrial.secondOperatorToFirstMM>224);
+  assert(keeper.southActuationTrial.secondOperatorToDockGuardMM>=95);
+  assert(keeper.southActuationTrial.gap.gapMM>75&&keeper.southActuationTrial.reachMM<460);
+  assert(departure.longerKeeperKeyControl.gapMM<1);
   const dock=departure.dockComparison;
   assert.equal(dock.cylinder.oldGapMM,35);
   assert.equal(dock.cylinder.requiredGapMM,-45);

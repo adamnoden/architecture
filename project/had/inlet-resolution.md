@@ -633,3 +633,46 @@ conditions for a loaded exchange. The inlet and its moisture replay stay open.
 Run `node project/had/studies/incoming-water-stand-retirement.mjs` to
 reproduce the route, handling controls, support reactions and landing
 conflict.
+
+### Two-level lower-tail capture
+
+The [release and support study](studies/incoming-water-release-support.mjs)
+compares an independent capture mast on the unoccupied south side of the
+parked lower tail. Four trial anchors sit at least **140.68 mm** inside
+the plant-intermediate beam outline. Pickups at Z610 and Z790 preserve
+**31.24 mm** to the simultaneously engaged portable yoke outside their
+own contact. The lower pickup at the transport grip elevation overlaps
+its envelope. The offset portable yoke spine retains **30 mm** to the
+installed guides and moves out with the load.
+The 118 N vertical and 100 N lateral handling challenges demand an
+ideal **1.21 kN** anchor-row couple through the 180 mm floor build-up.
+The capture shoes, mast joints, cast-in sockets and operator's handover
+remain physical qualification duties.
+
+Neither full-length guide has a direct free withdrawal in the tested
+directions. The 20 mm square short-cartridge comparison moves up **40 mm**,
+then **170 mm** away from the tail. Its governing **11 mm** is a controlled
+metal-to-metal clearance at the retained frame. A single 250 mm upward
+movement fails at the other rail or upper grip. The staged route lowers
+the unloaded cartridge another **20 mm** onto two separate rest lands.
+The 20 mm bar has only **3 mm** lateral bearing overhang at each side.
+Add positive retention before disconnecting the handling tool. Develop the
+opening end mount, service actuator, installed rail rest and operator sequence.
+
+Two 55 mm projecting yoke keys preserve the detached package route. An
+85 mm control approaches within **0.50 mm** of the far upright. On the
+dock, lower the keys into two open clevises at Z560 and Z740 before
+driving the captive pins. The executable seating comparison preserves
+**5.50 mm** at the local jaws. Keep the carrier worker on both grips.
+A second worker enters on the clear dock from the east, on the south side
+of the receiver. That operator's full 51 mm pin stroke gives **76.81 mm**
+hand and arm clearance and **453 mm** reach. The worker path retains
+**55 mm** to the occupied whole-U receiver, **95 mm** to the guard and
+**225 mm** between body envelopes.
+The same lateral challenge places **+306/−206 N**
+on the opposed keeper pair. The adverse combined pin demand is **327 N**.
+The outside receiver anchor row must transfer **1.17 kN** across its
+95 mm trial gauge. Maintain positive capture until both pins lock.
+Verify the fork and key ligaments, actual latch drive, fit,
+spine and foot connections and their dry supported dock load path before
+releasing either hand or moving the landed receiver.
