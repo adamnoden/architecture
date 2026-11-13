@@ -1,0 +1,165 @@
+{
+  "status": "comparison only; closed torsion, tool access and envelope installation remain unselected",
+  "sourceSHA256": {
+    "current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+    "floor-portal-seat-detail.json": "57331cf8738d2f5ce76e59a763c30317a6781873c80beeb408684b1611de1dfc",
+    "ordinary-eave-joined.md": "849fc338ad38929e42970ed58fa658b9117aa75c12e3391892a3a94c4ce1d146"
+  },
+  "torqueScope": "10 kNm authored welded-heel outer end-arm action, separate from the floor collector torsion",
+  "torsion": {
+    "torqueProbeNmm": 10000000.0,
+    "sectionAreaAtMedianLineMm2": 20000,
+    "intactClosedJmm4": 53333333.333333336,
+    "freeWarpingOpenJmm4": 1450666.6666666667,
+    "openRatioToIntact": 0.0272,
+    "intact100mmTwistDeg": 0.013951894361951862,
+    "freeWarpingOpen100mmTwistDeg": 0.5129372927188185,
+    "twoSeamOneMmSlipTwistSensitivityDeg": 0.2864788975654116,
+    "apertureMm": [
+      100.0,
+      56.0
+    ],
+    "coverPlanMm": [
+      148.0,
+      104.0
+    ],
+    "openingSidewallInnerLigamentMm": 12.0,
+    "maxPerSeamSlipAtTenPercentIntactTwistMm": 0.00487012987012987,
+    "oneSeamFortyMmPitchNPerMmSecantAtSlipTarget": 2053333.3333333335,
+    "nominalBoltPitchAndShankMm": [
+      40.0,
+      12.0
+    ],
+    "reclosedPerfectShearTransferComparisons": [
+      {
+        "coverThicknessMm": 12.0,
+        "fullyEngagedJmm4": 50209205.0209205,
+        "ratioToIntact": 0.9414225941422594,
+        "coverGrossShearMPa": 20.833333333333332,
+        "oneFastenerPerPitchDemandN": 10000.0,
+        "oneFastenerGrossShankShearMPa": 88.41941282883074,
+        "nominalCoverBearingMPa": 69.44444444444444
+      },
+      {
+        "coverThicknessMm": 20.0,
+        "fullyEngagedJmm4": 53333333.333333336,
+        "ratioToIntact": 1.0,
+        "coverGrossShearMPa": 12.5,
+        "oneFastenerPerPitchDemandN": 10000.0,
+        "oneFastenerGrossShankShearMPa": 88.41941282883074,
+        "nominalCoverBearingMPa": 41.666666666666664
+      }
+    ]
+  },
+  "fixedBlindPocketBypass": {
+    "clearBlindPocketFromRoomFaceMm": 32.0,
+    "screenedWebs": [
+      {
+        "permanentWebThicknessMm": 12.0,
+        "remainingClosedCellMedianWidthMm": 172.0,
+        "permanentWebMedianQmm": 404.5,
+        "closedJmm4": 38756331.87772926,
+        "ratioToIntact": 0.7266812227074236,
+        "permanentWebGrossShearMPa": 24.224806201550386
+      },
+      {
+        "permanentWebThicknessMm": 20.0,
+        "remainingClosedCellMedianWidthMm": 168.0,
+        "permanentWebMedianQmm": 400.5,
+        "closedJmm4": 42125373.13432836,
+        "ratioToIntact": 0.7898507462686567,
+        "permanentWebGrossShearMPa": 14.880952380952381
+      },
+      {
+        "permanentWebThicknessMm": 30.0,
+        "remainingClosedCellMedianWidthMm": 163.0,
+        "permanentWebMedianQmm": 395.5,
+        "closedJmm4": 43143166.44113667,
+        "ratioToIntact": 0.8089343707713126,
+        "permanentWebGrossShearMPa": 10.224948875255624
+      },
+      {
+        "permanentWebThicknessMm": 40.0,
+        "remainingClosedCellMedianWidthMm": 158.0,
+        "permanentWebMedianQmm": 390.5,
+        "closedJmm4": 42856652.36051502,
+        "ratioToIntact": 0.8035622317596566,
+        "permanentWebGrossShearMPa": 7.9113924050632916
+      }
+    ],
+    "modelsAxialTransitionOrConnectionForces": false
+  },
+  "access": {
+    "qRoomFaceMm": 442.5,
+    "qFinishMm": 429.5,
+    "toolDiameterAndIndependentRadialSettingMm": [
+      46.0,
+      5.0
+    ],
+    "direct45mmApertureMarginMm": -11.0,
+    "minimumToolPassHeightMm": 56.0,
+    "minimumClearWebLigamentAtToolPassMm": 12.0,
+    "trialBackingFrameOuterVerticalOverlapMm": 24.0,
+    "requiredCoverHeightForTwoStraightFastenerRowsMm": 118.4,
+    "steelRingOuterHeightMm": 120,
+    "nominalCoverHeightSpareMm": 1.5999999999999943,
+    "frontAirSleeveClearLengthAndHeightMm": [
+      120.0,
+      76.0
+    ],
+    "frontAirSleeveFlangeTopLandMm": 2.0,
+    "frontAirSleeveIllustrativeRequiredFlangeLandMm": 10.0,
+    "frontAirSleeveFlangeTopShortfallMm": 8.0,
+    "liftedReturnWithSeparateAirLid": {
+      "topZmm": 6650.0,
+      "deltaAboveAuthoredQ550TurnMm": 10.0,
+      "airLidFlangeZmm": [
+        6552.0,
+        6648.0
+      ],
+      "topFlangeLandMm": 12.0,
+      "ordinaryCeilingElevationOverlapMm": [
+        6552.0,
+        6620.0
+      ],
+      "ordinaryCeilingElevationOverlapHeightMm": 68.0
+    },
+    "trialFastenerHoleAndEdgeComparatorMm": [
+      13.0,
+      15.6
+    ],
+    "trialFastenerRowShortfallAtInternalLigamentMm": 3.5999999999999996,
+    "trialFastenerRowShortfallAtTwoCoverEdgesMm": 7.199999999999999,
+    "trialBackingFrameSocketPocketAndFlangesQmm": [
+      32.0,
+      4.0,
+      4.0
+    ],
+    "trialBackingFramePocketWidthMm": 40.0,
+    "assumedToolRunMm": 180.0,
+    "roomSideToolAxisZmm": 6600.0,
+    "roomSideToolRunQmm": [
+      442.5,
+      622.5
+    ],
+    "intersectsPinnedQ550AirReturn": true,
+    "airReturnCrossingZmm": [
+      6572.0,
+      6628.0
+    ],
+    "airReturnTopZmm": 6640.0,
+    "coverAndHeadsOccupiedQmm": [
+      442.5,
+      474.5
+    ],
+    "clearBetweenProtrudingFastenersAndQ550Mm": 75.5,
+    "ceilingFinishToPinAxisMm": 50.0,
+    "localUndersideDropReservationMm": 37.0,
+    "trialElbowAndToolRiseMm": 60.0,
+    "coldCavityAndGlass": {
+      "minimumRetainedGlassMm": 70.0,
+      "remainingIf5mmFastenerOccupiesColdGlassMm": 65.0,
+      "retainedDrainedCavityMm": 50.0
+    }
+  }
+}
