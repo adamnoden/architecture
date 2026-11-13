@@ -9,11 +9,11 @@
     "label": "recover-str"
   },
   "claimedAt": "2026-11-13T22:56:18.753Z",
-  "heartbeatAt": "2026-11-13T22:56:18.753Z",
-  "expiresAt": "2026-11-13T23:41:18.753Z",
+  "heartbeatAt": "2026-11-13T22:57:22.202Z",
+  "expiresAt": "2026-11-13T23:42:22.202Z",
   "checkpoint": {
-    "evidence": "Recovering preserved PR #1503 exact d8e68f551db21d8e5cb9a918a5199e54acf8f5e9 with green CI 43495713230",
-    "next": "Create same-head successor PR, validate generation and preflight, then integrate"
+    "evidence": "PR #1504 adopts exact green d8e68f551db21d8e5cb9a918a5199e54acf8f5e9 from #1503, no tree change",
+    "next": "Confirm generation 15 packet check and exact head, integrate, then release handoff"
   },
   "branch": "work/zerg6-str-split-hoop-recovery",
   "predecessor": {
@@ -37,5 +37,6 @@
       "next": "Watch exact CI, verify publication preflight, merge bounded study, release for mechanical confinement follow-up",
       "blocker": "Tested closure routes fail the unchanged cover, setting or assembly screen"
     }
-  }
+  },
+  "pr": 1504
 }
