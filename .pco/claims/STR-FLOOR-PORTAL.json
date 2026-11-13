@@ -9,8 +9,8 @@
     "label": "zerg2-str"
   },
   "claimedAt": "2026-11-12T22:48:12.269Z",
-  "heartbeatAt": "2026-11-12T23:42:54.982Z",
-  "expiresAt": "2026-11-13T00:27:54.982Z",
+  "heartbeatAt": "2026-11-13T00:01:36.539Z",
+  "expiresAt": "2026-11-13T00:46:36.539Z",
   "branch": "work/zerg2-str-seat",
   "predecessor": {
     "leaseId": "6bf2fd76-5332-4631-b742-0f4d606056df",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1498 exact head d1dce527: 579 signed, 110 movements, 2 x 3 friction cases and every source digest exact-matched; corrected CI 43330826794",
-    "next": "Wait for corrected exact CI, fresh publication preflight, merge the bounded result",
-    "blocker": "Shop assembly 16-piece control still lacks positive closure, side tool access, steel seat transfer and qualified sliding/backing"
+    "evidence": "PR1498 merged 09c6f288 after exact d1dce527 CI 43330826794; 579 signed, 110 movements and two three-case friction replays exact",
+    "next": "Use the 16-piece comparator in PR1498 comment 6839232964 to design side-access capture, actual diaphragm transfer and closed cage; treat both backing-pressure failures",
+    "blocker": "Assembly, actual bearing and qualified sliding behavior still unearned; STR packet remains planned"
   },
   "pr": 1498
 }
