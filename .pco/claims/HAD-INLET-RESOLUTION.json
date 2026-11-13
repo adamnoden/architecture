@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 10,
-  "state": "released",
-  "leaseId": "455ec204-459b-4640-871f-b5a832615093",
+  "generation": 11,
+  "state": "claimed",
+  "leaseId": "6d88b30b-9c95-49a9-99e6-a78d8d68d256",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg2-had"
   },
-  "claimedAt": "2026-11-12T23:31:09.148Z",
-  "heartbeatAt": "2026-11-13T00:22:20.319Z",
-  "expiresAt": "2026-11-13T00:22:20.319Z",
-  "branch": "work/zerg2-had-stand-retirement-20261112",
+  "claimedAt": "2026-11-13T00:23:11.917Z",
+  "heartbeatAt": "2026-11-13T00:23:11.917Z",
+  "expiresAt": "2026-11-13T01:08:11.917Z",
+  "branch": "work/zerg2-had-tail-positive-transfer-20261113",
   "predecessor": {
-    "leaseId": "45785a05-071e-4b4c-aca4-36e7243d9805",
-    "generation": 9,
-    "branch": "work/zerg2-had-braced-release-20261112",
-    "pr": 1497,
+    "leaseId": "455ec204-459b-4640-871f-b5a832615093",
+    "generation": 10,
+    "branch": "work/zerg2-had-stand-retirement-20261112",
+    "pr": 1499,
     "checkpoint": {
-      "evidence": "PR #1497 merged 20d35befc; exact head 04303bfc passed CI 43326921784 and canonical preflight. Main ancestry verified.",
-      "next": "Detail positive lower-tail yoke and guide withdrawal, then finish captured stand retirement and actual whole-U export before X12580 cylinder docking.",
-      "blocker": "Packet remains planned. Source-bound beam-anchor loads and detached handling candidate are verified. Positive capture, beam mounting, independent whole-U transport and loaded stand release remain open."
+      "evidence": "PR #1499 merged 940ff474; exact head 78dfdbdd CI 43333751389 green; canonical preflight and main ancestry/tree verified",
+      "next": "Reacquire HAD to advance paired lower-tail capture, support rail removal and two-person dock keeper",
+      "blocker": "Actual positive capture, anchor, track and supported threshold detail still open; packet planned"
     }
   },
   "recoverySource": {
-    "leaseId": "45785a05-071e-4b4c-aca4-36e7243d9805",
-    "generation": 9,
-    "branch": "work/zerg2-had-braced-release-20261112",
-    "pr": 1497,
+    "leaseId": "455ec204-459b-4640-871f-b5a832615093",
+    "generation": 10,
+    "branch": "work/zerg2-had-stand-retirement-20261112",
+    "pr": 1499,
     "checkpoint": {
-      "evidence": "PR #1497 merged 20d35befc; exact head 04303bfc passed CI 43326921784 and canonical preflight. Main ancestry verified.",
-      "next": "Detail positive lower-tail yoke and guide withdrawal, then finish captured stand retirement and actual whole-U export before X12580 cylinder docking.",
-      "blocker": "Packet remains planned. Source-bound beam-anchor loads and detached handling candidate are verified. Positive capture, beam mounting, independent whole-U transport and loaded stand release remain open."
+      "evidence": "PR #1499 merged 940ff474; exact head 78dfdbdd CI 43333751389 green; canonical preflight and main ancestry/tree verified",
+      "next": "Reacquire HAD to advance paired lower-tail capture, support rail removal and two-person dock keeper",
+      "blocker": "Actual positive capture, anchor, track and supported threshold detail still open; packet planned"
     }
-  },
-  "checkpoint": {
-    "evidence": "PR #1499 merged 940ff474; exact head 78dfdbdd CI 43333751389 green; canonical preflight and main ancestry/tree verified",
-    "next": "Reacquire HAD to advance paired lower-tail capture, support rail removal and two-person dock keeper",
-    "blocker": "Actual positive capture, anchor, track and supported threshold detail still open; packet planned"
-  },
-  "pr": 1499,
-  "releasedAt": "2026-11-13T00:22:20.319Z",
-  "releaseReason": "handoff"
+  }
 }
