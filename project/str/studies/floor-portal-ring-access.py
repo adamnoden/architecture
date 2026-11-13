@@ -1,7 +1,7 @@
 """Local torsion, tool and dry-envelope comparisons for a ring access aperture."""
 import hashlib
 import json
-from math import degrees, pi
+from math import atan, degrees, pi
 from pathlib import Path
 
 STUDIES = Path(__file__).resolve().parent
@@ -93,6 +93,106 @@ def fixed_bypass(section, ring_room_face, torque, intact):
         'clearBlindPocketFromRoomFaceMm': clear_tool_pocket,
         'screenedWebs': results,
         'modelsAxialTransitionOrConnectionForces': False,
+    }
+
+
+def transition_and_split(source, section, bypass, torsion):
+    pocket_length = torsion['apertureMm'][0]
+    selected = max(bypass['screenedWebs'], key=lambda row: row['ratioToIntact'])
+    median_width = section['B'] - section['t']
+    median_height = section['H'] - section['t']
+    wall = section['t']
+    thickness = selected['permanentWebThicknessMm']
+    shift = median_width - selected['remainingClosedCellMedianWidthMm']
+    taper_length, cassette_half = 128.0, 150.0
+    intact, pocket = torsion['intactClosedJmm4'], selected['closedJmm4']
+
+    def taper_compliance(intervals):
+        inverse_j = 0.0
+        for i in range(intervals):
+            x = (i + 0.5) / intervals
+            width = median_width - shift * x
+            taper_wall = wall + (thickness - wall) * x
+            perimeter_compliance = (2 * width + median_height) / wall + median_height / taper_wall
+            inverse_j += 1 / closed_constant(width * median_height, perimeter_compliance)
+        return taper_length * inverse_j / intervals
+
+    taper = taper_compliance(512)
+    assert abs(taper / taper_compliance(256) - 1) < 1e-6
+    total_length = pocket_length + 2 * taper_length
+    extra_equivalent_intact_length = intact * (pocket_length / pocket + 2 * taper) - total_length
+    assert extra_equivalent_intact_length > 0
+    rows = {}
+    torque = torsion['torqueProbeNmm']
+    for face, entry in source['faces'].items():
+        if not face.startswith('outer-'):
+            continue
+        first, last = entry['segments'][0], entry['segments'][-1]
+        rows[face] = [row['end'] - row['start'] for row in (first, last)]
+    # Each direction remains fixed remotely in this compatibility comparison.
+    pairs = [
+        ('SW', rows['outer-south'][0], rows['outer-west'][0]),
+        ('SE', rows['outer-south'][1], rows['outer-east'][0]),
+        ('NE', rows['outer-north'][1], rows['outer-east'][1]),
+        ('NW', rows['outer-north'][0], rows['outer-west'][1]),
+    ]
+    splits = []
+    for corner, arm_a, arm_b in pairs:
+        for modified, straight in ((arm_a, arm_b), (arm_b, arm_a)):
+            original_fraction = straight / (modified + straight)
+            modified_fraction = straight / (modified + straight + extra_equivalent_intact_length)
+            splits.append({
+                'corner': corner,
+                'modifiedAndStraightArmLengthsMm': [modified, straight],
+                'remainingModifiedArmRotationalStiffnessRatio': modified / (modified + extra_equivalent_intact_length),
+                'additionalOtherArmTorqueAt10kNm': torque * (original_fraction - modified_fraction) / 1e6,
+            })
+    return {
+        'trialPermanentWebThicknessMm': thickness,
+        'medianWebShiftMm': shift,
+        'eachTransitionLengthMm': taper_length,
+        'transitionPlanAngleDeg': degrees(atan(shift / taper_length)),
+        'totalAxialExtentMm': total_length,
+        'cornerCassetteHalfExtentMm': cassette_half,
+        'nearestPocketAxisFromCornerForNoCassetteOverlapMm': cassette_half + taper_length + pocket_length / 2,
+        'extraEquivalentIntactTorsionLengthMm': extra_equivalent_intact_length,
+        'grossFlowUnmodifiedAndPocketAt10kNmNPerMm': [
+            torque / (2 * median_width * median_height),
+            torque / (2 * selected['remainingClosedCellMedianWidthMm'] * median_height),
+        ],
+        'twoFixedEndSensitivity': splits,
+        'maximumAdditionalOtherArmTorqueAt10kNm': max(row['additionalOtherArmTorqueAt10kNm'] for row in splits),
+    }
+
+
+def blind_pin_service(ring_room_face, pin_z):
+    clear_pocket_depth, clear_pocket_height = 32.0, 60.0
+    central_eye, ear, face_gap = 10.0, 8.0, 2.0
+    fork_pack = central_eye + 2 * (ear + face_gap)
+    rear_seating_reserve = 5.0
+    roomward_receiver_projection = 5.0
+    required_reach = fork_pack + rear_seating_reserve
+    free_run = 550.0 - ring_room_face - roomward_receiver_projection
+    trial_extract_run = fork_pack + 10.0
+    aperture_radius, sleeve_height, sleeve_length = 28.0, 76.0, 120.0
+    assert required_reach > clear_pocket_depth
+    assert required_reach <= clear_pocket_depth + roomward_receiver_projection
+    assert trial_extract_run < free_run
+    return {
+        'trialQOrientedForkEarEyeAndSideGapsMm': [ear, central_eye, face_gap],
+        'nominalForkPackMm': fork_pack,
+        'pocketDepthWithoutProjectionShortfallMm': required_reach - clear_pocket_depth,
+        'projectedReceiverRoomwardMm': roomward_receiver_projection,
+        'remainingDepthForRetainerAndSettingBeyondTrialStackMm':
+            clear_pocket_depth + roomward_receiver_projection - required_reach,
+        'pinExtractRunWithinClearAirLidQmm': trial_extract_run,
+        'straightRunToQ550FromReceiverFaceMm': free_run,
+        'remainingRunAfterTrialExtractMm': free_run - trial_extract_run,
+        'toolSweepZmm': [pin_z - aperture_radius, pin_z + aperture_radius],
+        'radialZSpareInBlindPocketMm': clear_pocket_height / 2 - aperture_radius,
+        'radialZSpareInSleeveMm': sleeve_height / 2 - aperture_radius,
+        'axialSpareEachSideInSleeveMm': sleeve_length / 2 - aperture_radius,
+        'minimumLocalRemovablePanelWidthAtFlangedSleeveMm': sleeve_length + 20,
     }
 
 
@@ -196,14 +296,17 @@ def study():
     assert glass == 70.0 and ring_axis_q == 332.5 and pin_z == 6600.0
     torque = max(torques) * 1e6
     torsion = slot_and_cover(section, torque)
+    bypass = fixed_bypass(section, ring_room_face, torque, torsion['intactClosedJmm4'])
     return {
         'status': 'comparison only; closed torsion, tool access and envelope installation remain unselected',
         'sourceSHA256': {p.name: hashlib.sha256(p.read_bytes()).hexdigest()
                          for p in (RING_SOURCE, SEAT_SOURCE, ENVELOPE_SOURCE)},
         'torqueScope': '10 kNm authored welded-heel outer end-arm action, separate from the floor collector torsion',
         'torsion': torsion,
-        'fixedBlindPocketBypass': fixed_bypass(section, ring_room_face, torque, torsion['intactClosedJmm4']),
+        'fixedBlindPocketBypass': bypass,
+        'taperedPlanAndFixedEndSensitivity': transition_and_split(source, section, bypass, torsion),
         'access': tool_and_envelope(section, ring_room_face, pin_z, glass, retained_cavity),
+        'blindPinService': blind_pin_service(ring_room_face, pin_z),
     }
 
 

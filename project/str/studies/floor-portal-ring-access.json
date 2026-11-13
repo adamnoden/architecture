@@ -89,6 +89,95 @@
     ],
     "modelsAxialTransitionOrConnectionForces": false
   },
+  "taperedPlanAndFixedEndSensitivity": {
+    "trialPermanentWebThicknessMm": 30.0,
+    "medianWebShiftMm": 37.0,
+    "eachTransitionLengthMm": 128.0,
+    "transitionPlanAngleDeg": 16.122598777717197,
+    "totalAxialExtentMm": 356.0,
+    "cornerCassetteHalfExtentMm": 150.0,
+    "nearestPocketAxisFromCornerForNoCassetteOverlapMm": 328.0,
+    "extraEquivalentIntactTorsionLengthMm": 50.56290471609714,
+    "grossFlowUnmodifiedAndPocketAt10kNmNPerMm": [
+      250.0,
+      306.7484662576687
+    ],
+    "twoFixedEndSensitivity": [
+      {
+        "corner": "SW",
+        "modifiedAndStraightArmLengthsMm": [
+          2267.5,
+          3467.5
+        ],
+        "remainingModifiedArmRotationalStiffnessRatio": 0.9781874320091887,
+        "additionalOtherArmTorqueAt10kNm": 0.05284080713336304
+      },
+      {
+        "corner": "SW",
+        "modifiedAndStraightArmLengthsMm": [
+          3467.5,
+          2267.5
+        ],
+        "remainingModifiedArmRotationalStiffnessRatio": 0.9856276291568534,
+        "additionalOtherArmTorqueAt10kNm": 0.03455415434027442
+      },
+      {
+        "corner": "SE",
+        "modifiedAndStraightArmLengthsMm": [
+          2267.5,
+          3267.5
+        ],
+        "remainingModifiedArmRotationalStiffnessRatio": 0.9781874320091887,
+        "additionalOtherArmTorqueAt10kNm": 0.05343958034109808
+      },
+      {
+        "corner": "SE",
+        "modifiedAndStraightArmLengthsMm": [
+          3267.5,
+          2267.5
+        ],
+        "remainingModifiedArmRotationalStiffnessRatio": 0.9847613182244886,
+        "additionalOtherArmTorqueAt10kNm": 0.03708469729868158
+      },
+      {
+        "corner": "NE",
+        "modifiedAndStraightArmLengthsMm": [
+          2267.5,
+          3467.5
+        ],
+        "remainingModifiedArmRotationalStiffnessRatio": 0.9781874320091887,
+        "additionalOtherArmTorqueAt10kNm": 0.05284080713336304
+      },
+      {
+        "corner": "NE",
+        "modifiedAndStraightArmLengthsMm": [
+          3467.5,
+          2267.5
+        ],
+        "remainingModifiedArmRotationalStiffnessRatio": 0.9856276291568534,
+        "additionalOtherArmTorqueAt10kNm": 0.03455415434027442
+      },
+      {
+        "corner": "NW",
+        "modifiedAndStraightArmLengthsMm": [
+          2267.5,
+          3467.5
+        ],
+        "remainingModifiedArmRotationalStiffnessRatio": 0.9781874320091887,
+        "additionalOtherArmTorqueAt10kNm": 0.05284080713336304
+      },
+      {
+        "corner": "NW",
+        "modifiedAndStraightArmLengthsMm": [
+          3467.5,
+          2267.5
+        ],
+        "remainingModifiedArmRotationalStiffnessRatio": 0.9856276291568534,
+        "additionalOtherArmTorqueAt10kNm": 0.03455415434027442
+      }
+    ],
+    "maximumAdditionalOtherArmTorqueAt10kNm": 0.05343958034109808
+  },
   "access": {
     "qRoomFaceMm": 442.5,
     "qFinishMm": 429.5,
@@ -161,5 +250,27 @@
       "remainingIf5mmFastenerOccupiesColdGlassMm": 65.0,
       "retainedDrainedCavityMm": 50.0
     }
+  },
+  "blindPinService": {
+    "trialQOrientedForkEarEyeAndSideGapsMm": [
+      8.0,
+      10.0,
+      2.0
+    ],
+    "nominalForkPackMm": 30.0,
+    "pocketDepthWithoutProjectionShortfallMm": 3.0,
+    "projectedReceiverRoomwardMm": 5.0,
+    "remainingDepthForRetainerAndSettingBeyondTrialStackMm": 2.0,
+    "pinExtractRunWithinClearAirLidQmm": 40.0,
+    "straightRunToQ550FromReceiverFaceMm": 102.5,
+    "remainingRunAfterTrialExtractMm": 62.5,
+    "toolSweepZmm": [
+      6572.0,
+      6628.0
+    ],
+    "radialZSpareInBlindPocketMm": 2.0,
+    "radialZSpareInSleeveMm": 10.0,
+    "axialSpareEachSideInSleeveMm": 32.0,
+    "minimumLocalRemovablePanelWidthAtFlangedSleeveMm": 140.0
   }
 }
