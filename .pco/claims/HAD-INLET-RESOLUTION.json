@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 14,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "9e747b70-eae0-4d47-a2dc-df8f13c2c7f6",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg6-had-threshold"
   },
   "claimedAt": "2026-11-13T22:55:34.522Z",
-  "heartbeatAt": "2026-11-13T23:00:04.964Z",
-  "expiresAt": "2026-11-13T23:45:04.964Z",
+  "heartbeatAt": "2026-11-13T23:22:42.381Z",
+  "expiresAt": "2026-11-13T23:22:42.381Z",
   "predecessor": {
     "leaseId": "354ace11-48c1-4381-9df2-fc3cfc388365",
     "generation": 13,
@@ -37,5 +37,7 @@
     "next": "Verify exact-head CI then immediately run fresh publication preflight and merge",
     "blocker": "Actual side lift, braced dry supports and loaded handover remain unqualified"
   },
-  "pr": 1505
+  "pr": 1505,
+  "releasedAt": "2026-11-13T23:22:42.381Z",
+  "releaseReason": "handoff"
 }
