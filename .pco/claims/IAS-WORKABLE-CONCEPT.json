@@ -9,11 +9,11 @@
     "label": "zerg10-ias-detailed"
   },
   "claimedAt": "2026-11-14T18:20:40.065Z",
-  "heartbeatAt": "2026-11-14T18:24:48.313Z",
-  "expiresAt": "2026-11-14T19:54:48.313Z",
+  "heartbeatAt": "2026-11-14T18:29:20.265Z",
+  "expiresAt": "2026-11-14T19:59:20.265Z",
   "checkpoint": {
-    "evidence": "Durable branch work/zerg10-ias-workable-release, exact df4da88d. Dimensioned A4 sheet, reproducible seam and loaded-handling receipt, local regeneration and integrity green.",
-    "next": "After structural solver merges, reconcile fresh main, open dedicated PR and require exact-head CI/preflight."
+    "evidence": "Durable branch work/zerg10-ias-workable-release, exact bce9b527. Dimensioned A4 retention and independent guided bridge drawing, reproducible seam/loaded-handling receipt and integrity pass.",
+    "next": "After structural solver #1522 merges, reconcile live main, open dedicated PR and require exact-head CI/preflight."
   },
   "branch": "work/zerg10-ias-workable-release",
   "predecessor": {
