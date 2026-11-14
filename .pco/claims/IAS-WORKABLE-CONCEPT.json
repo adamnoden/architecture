@@ -9,11 +9,11 @@
     "label": "zerg10-ias-spread"
   },
   "claimedAt": "2026-11-14T18:53:11.530Z",
-  "heartbeatAt": "2026-11-14T18:53:11.530Z",
-  "expiresAt": "2026-11-14T20:23:11.530Z",
+  "heartbeatAt": "2026-11-14T19:05:13.509Z",
+  "expiresAt": "2026-11-14T20:35:13.509Z",
   "checkpoint": {
-    "evidence": "Merged #1523 provides Study load and bridge; #1521 initial package",
-    "next": "Compare furnished dry and wet room appearance and actual-size representative junctions."
+    "evidence": "PR #1524 exact f7e26348; 79 focused checks and all three studies pass, ten SVGs rendered; A4 confirmed.",
+    "next": "Wait for exact validation then canonical merge-check, merge, verify and release."
   },
   "branch": "work/zerg10-ias-room-assemblies",
   "predecessor": {
@@ -35,5 +35,6 @@
       "evidence": "PR #1523 exact ad33bbc2 onto solver main 4306c722. Both dimensioned plates and deterministic receipt, CI 43627500797.",
       "next": "On fresh exact green, canonical merge-check and expected-head merge, verify tree, and release IAS scope handoff."
     }
-  }
+  },
+  "pr": 1524
 }
