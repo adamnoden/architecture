@@ -204,6 +204,82 @@ constituents and the cap ambiguity are unresolved. Neither a partial bill of
 materials nor industrial water service establishes the owner's material policy.
 [BSA6T technical information](https://content.spiraxsarco.com/-/media/spiraxsarco/international/documents/en/ti/bsat_bsa-ti-p137-18-en.ashx?rev=6f4d23327ff843fab9521857b6a0178f)
 
+#### First wetting at the lobby inlet
+
+Wetting trace starts at the actual new I0/U0/P0 cartridge axes and at the
+inside sleeve face, not at the point where a sump would be convenient.
+The six union locations project **50–75 mm** inside their assigned lobby
+receiver edges. All four controlled spouts project into their receivers,
+with **30 mm** minimum nominal plan reserve. These are downward point
+projections before water follows insulation, clips, pipes or structure.
+They do not support a burst-capture assertion. A closed pan can retain
+maintenance batches only while the operator positively verifies its
+upstream cut, attends the spout and closes before emptying. Keep the
+separate leak path as an independent design problem.
+
+By contrast, the entry meets the inside east face at **X11570.5**, already
+**20.5 mm east of the pan lip**. In a straight-down witness, wetting starts
+at the wall toe or floor joint even with both pans empty. Keep B0 on the
+owner side ahead of the entry and I0, accessible from the dry exterior.
+An I0 closure cannot cut a pressurised joint ahead of I0. A leaking I0
+body or either I0 union therefore requires B0. U0/P0 body or union
+failure requires I0 on the forward path and verification of the return
+or stored downstream inventory. A failed B0 or an upstream joint needs
+the provider’s separate upstream action. Keep the independent plant
+relief connected while the vessel is charged. D2 behind the visible
+tundish receives the safety-device discharge, not an arbitrary lobby or
+plant floor leak. [Approved Document G, 3.54–3.57](https://assets.publishing.service.gov.uk/media/66f6c6ce3b919067bb4828cc/ADG_with_2024_amendments.pdf)
+
+A full or defeated witness provides no additional capacity. With an empty
+8 L net receiver and full capture only, the inherited MRA **6/15/30 L/min**
+flow comparisons reach its edge at **80/32/16 seconds** from first capture.
+After one 5 L controlled batch the same arithmetic gives **30/12/6 seconds**.
+Neither timing is a declaration or response interval. Splash, a blocked
+witness or bypass can wet the room before any water becomes visible there.
+A torn inlet can remain supplied while a person is absent. An unknown
+residual, no protective sump, and a shared blocked drain cannot supply
+a guaranteed outfall. An unverified jet direction is recorded as unknown.
+
+In plan the two pans touch along their shared edge; the nearest solid
+room-side toes are **20.5 mm** at the east wall and **28 mm** toward the
+respective utility and plant walls. The upper arch and utility access
+remain separate openings. From the centre of the western pan edge,
+the straight projection to the east face of the protected-hall door
+is **1803 mm**. The actual open effective passage is **742.5 mm** and
+its floor is not a demonstrated water barrier. The existing occupied
+body station leaves only **25 mm** to that west pan edge. No broader
+stand, emergency tray, or passive cross-floor channel gets that space
+free. A spill could affect access to the utility electrical station from
+its lobby side or the plant controls, depending on its direction and floor
+levels. Do not credit either route as dry, the closed door as a dam,
+or the currently dry operator path as a fault-time escape check.
+
+An inspectable sleeve drip flashing with **25 mm** trial plan overlap and
+5 mm setting on each of pan and flashing must project at least **55.5 mm**
+inward from the finished wall. The 35 and 50 mm projections leave 4.5 and
+19.5 mm effective overlap. The 60 mm comparison reaches X11510.5 and
+retains **29.5 mm** overlap. At the 100 mm bore's plan edges there is 75 mm
+nominal south reserve and 275 mm north within the receiver's Y extent.
+This only positions a drip edge. It has no end return, drip angle, jet
+hood, independent support, safe outflow or blocked-lip proof. Keep its
+fixing and first motion independent of the bore seal and pressure pipe.
+
+**Pre-site design action:** develop the local sleeve drip detail and earn a continuous
+visible mineral-floor toe and a competent, passive disposal route that
+keeps the protected opening and utility electrical territory out of the
+spill field. Compare a very local joined receiver with a genuinely dry
+upstream supply-isolation arrangement. Do not extend the existing floor
+pan into the protected passage. Show first wetting outside the collar,
+blocked witness, first safe approach to B0 and the independent destination
+before crediting the liner. Trace wetting under the floor finish and behind
+wall toes, document dismantling and drying access, and separately test the
+pressure repairs. Repeat this check after those details and actual fall
+and thresholds exist. This advances the MRA INT-01 design input and
+retains the rejected old route and current inlet adoption blocker.
+
+Run `node project/had/studies/incoming-water-first-wetting.mjs` to reproduce
+the case matrix.
+
 ### Checkpoint boundary and reproduction
 
 This checkpoint preserves the selected model, compact service schedule,
