@@ -18,6 +18,15 @@ flowchart LR
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
     n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>BLOCKED</b>"]
   end
+  subgraph g_IAS["IAS"]
+    direction TB
+    n_IAS_WORKABLE_CONCEPT["IAS-WORKABLE-CONCEPT<br/>Compare and illustrate workable interior assemblies in the current house<br/><b>READY</b>"]
+    n_IAS_WORKABLE_DETAILS["IAS-WORKABLE-DETAILS<br/>Detail the approved workable interior family and adjoining opening interfaces<br/><b>BLOCKED</b>"]
+  end
+  subgraph g_HAD["HAD"]
+    direction TB
+    n_HAD_OWNER_DESIGN_REVIEW["HAD-OWNER-DESIGN-REVIEW<br/>Receive the owner’s decision on the coordinated architectural design<br/><b>BLOCKED</b>"]
+  end
   subgraph g_BCR["BCR"]
     direction TB
     n_BCR_CONVERGENCE["BCR-CONVERGENCE<br/>Substantive construction-resolution convergence<br/><b>BLOCKED</b>"]
@@ -56,6 +65,7 @@ flowchart LR
     direction TB
     n_PLT_FINAL_FREEZE["PLT-FINAL-FREEZE<br/>Final resolved-house plate integration and freeze<br/><b>BLOCKED</b>"]
     n_PLT_FINAL_PREP["PLT-FINAL-PREP<br/>Prepare coherent final current-house digital and print proof set<br/><b>BLOCKED</b>"]
+    n_PLT_OWNER_FINAL_DESIGN_ACCEPTANCE["PLT-OWNER-FINAL-DESIGN-ACCEPTANCE<br/>Receive the owner’s acceptance of the assembled book and final design drawings<br/><b>BLOCKED</b>"]
     n_PLT_PRINT_REVIEW["PLT-PRINT-REVIEW<br/>Receive and disposition actual-size BOOK and WALL print verdicts<br/><b>BLOCKED</b>"]
   end
   subgraph g_EDA["EDA"]
@@ -95,13 +105,18 @@ flowchart LR
     n_PHY_02["PHY-02<br/>Selective floor-access physical research<br/><b>HELD</b>"]
     n_PHY_04["PHY-04<br/>Wall/ceiling movement-junction build and test<br/><b>READY</b>"]
   end
+  n_TRIAD_GATE --> n_HAD_OWNER_DESIGN_REVIEW
+  n_HAD_OWNER_DESIGN_REVIEW --> n_IAS_WORKABLE_DETAILS
   n_HAD_INLET_RESOLUTION --> n_TRIAD_GATE
   n_ROF_RWT_GATE --> n_TRIAD_GATE
   n_MAT_COORDINATION --> n_TRIAD_GATE
   n_STR_FLOOR_PORTAL --> n_TRIAD_GATE
+  n_IAS_WORKABLE_CONCEPT --> n_TRIAD_GATE
   n_TRIAD_GATE --> n_BCR_CONVERGENCE
   n_MRA_04 --> n_BCR_CONVERGENCE
   n_HRS_TECHNICAL --> n_BCR_CONVERGENCE
+  n_HAD_OWNER_DESIGN_REVIEW --> n_BCR_CONVERGENCE
+  n_IAS_WORKABLE_DETAILS --> n_BCR_CONVERGENCE
   n_BCR_CONVERGENCE --> n_HRS_SYNTHESIS
   n_MRA_05 --> n_HRS_SYNTHESIS
   n_DEL_CURRENT --> n_HRS_SYNTHESIS
@@ -120,11 +135,14 @@ flowchart LR
   n_BCR_CONVERGENCE --> n_MRA_05
   n_PLT_FINAL_PREP --> n_PLT_FINAL_FREEZE
   n_PLT_PRINT_REVIEW --> n_PLT_FINAL_FREEZE
+  n_PLT_OWNER_FINAL_DESIGN_ACCEPTANCE --> n_PLT_FINAL_FREEZE
   n_PLT_FINAL_FREEZE --> n_EDA_RENEWED
   n_EDA_RENEWED --> n_PUB_02_FINAL
   n_HRS_SYNTHESIS --> n_PLT_FINAL_PREP
+  n_PLT_FINAL_PREP --> n_PLT_OWNER_FINAL_DESIGN_ACCEPTANCE
   n_PLT_FINAL_PREP --> n_PLT_PRINT_REVIEW
   n_TRIAD_GATE --> n_BCR_BAY_DESIGN
+  n_IAS_WORKABLE_DETAILS --> n_BCR_BAY_DESIGN
   n_HRS_TECHNICAL --> n_ADE_MODEL
   n_ADE_MODEL --> n_ADE_DETAILS
   n_BCR_BAY_DESIGN --> n_ADE_DETAILS
@@ -142,6 +160,8 @@ flowchart LR
 
   linkStyle default stroke:#aab1a9,stroke-width:1.5px;
   style g_SHARED fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_IAS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_HAD fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_BCR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_HRS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_ROF fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
@@ -169,6 +189,9 @@ flowchart LR
   classDef activeUnclaimed fill:#dce9e8,stroke:#356966,color:#1f4542,stroke-width:3px,stroke-dasharray:4 3;
   classDef invalidClaim fill:#f1e0dc,stroke:#a45f54,color:#693d37,stroke-width:3px;
   class n_HAD_INLET_RESOLUTION ready;
+  class n_IAS_WORKABLE_CONCEPT ready;
+  class n_HAD_OWNER_DESIGN_REVIEW blocked;
+  class n_IAS_WORKABLE_DETAILS blocked;
   class n_TRIAD_GATE blocked;
   class n_BCR_CONVERGENCE blocked;
   class n_HRS_SYNTHESIS blocked;
@@ -187,6 +210,7 @@ flowchart LR
   class n_EDA_RENEWED blocked;
   class n_PUB_02_FINAL blocked;
   class n_PLT_FINAL_PREP blocked;
+  class n_PLT_OWNER_FINAL_DESIGN_ACCEPTANCE blocked;
   class n_PLT_PRINT_REVIEW blocked;
   class n_BCR_BAY_DESIGN blocked;
   class n_ADE_MODEL blocked;
@@ -231,6 +255,7 @@ flowchart LR
   end
   subgraph g_PCO["PCO"]
     direction TB
+    n_PCO_WORKABLE_INTERIORS["PCO-WORKABLE-INTERIORS<br/>Register workable interior design and personal owner approval gates<br/><b>DONE</b>"]
     n_PCO_INDEPENDENT_STUDIES["PCO-INDEPENDENT-STUDIES<br/>Separate bounded bay and internal-water studies from final house integration<br/><b>DONE</b>"]
     n_PCO_GIT_DEADLINE["PCO-GIT-DEADLINE<br/>Bound configurable Git command deadlines across canonical lease operations<br/><b>DONE</b>"]
     n_PCO_REVIEW_POLICY["PCO-REVIEW-POLICY<br/>Separate internal development from external assurance and remove unnecessary review waits<br/><b>DONE</b>"]
@@ -271,6 +296,8 @@ flowchart LR
     n_IAS_02S["IAS-02S<br/>Interior services and access family<br/><b>DONE</b>"]
     n_IAS_02W["IAS-02W<br/>Wet-room and kitchen interior-system variants<br/><b>DONE</b>"]
     n_IAS_03["IAS-03<br/>Selected interior family, drawings and disassembly set<br/><b>DONE</b>"]
+    n_IAS_WORKABLE_CONCEPT["IAS-WORKABLE-CONCEPT<br/>Compare and illustrate workable interior assemblies in the current house<br/><b>READY</b>"]
+    n_IAS_WORKABLE_DETAILS["IAS-WORKABLE-DETAILS<br/>Detail the approved workable interior family and adjoining opening interfaces<br/><b>BLOCKED</b>"]
   end
   subgraph g_OAS["OAS"]
     direction TB
@@ -290,6 +317,7 @@ flowchart LR
     n_HAD_02M["HAD-02M<br/>Material and finish synthesis<br/><b>DONE</b>"]
     n_HAD_BOUNDARY["HAD-BOUNDARY<br/>Compare the Boundary Service Lodge and accessible external service raceway<br/><b>DONE</b>"]
     n_HAD_03["HAD-03<br/>Architectural design convergence and visual synthesis<br/><b>DONE</b>"]
+    n_HAD_OWNER_DESIGN_REVIEW["HAD-OWNER-DESIGN-REVIEW<br/>Receive the owner’s decision on the coordinated architectural design<br/><b>BLOCKED</b>"]
   end
   subgraph g_SHARED["Shared integration gates"]
     direction TB
@@ -387,6 +415,7 @@ flowchart LR
     n_PLT_CURRENT_REVIEW["PLT-CURRENT-REVIEW<br/>Current-house digital plate capability and review handoff<br/><b>DONE</b>"]
     n_PLT_FINAL_FREEZE["PLT-FINAL-FREEZE<br/>Final resolved-house plate integration and freeze<br/><b>BLOCKED</b>"]
     n_PLT_FINAL_PREP["PLT-FINAL-PREP<br/>Prepare coherent final current-house digital and print proof set<br/><b>BLOCKED</b>"]
+    n_PLT_OWNER_FINAL_DESIGN_ACCEPTANCE["PLT-OWNER-FINAL-DESIGN-ACCEPTANCE<br/>Receive the owner’s acceptance of the assembled book and final design drawings<br/><b>BLOCKED</b>"]
     n_PLT_PRINT_REVIEW["PLT-PRINT-REVIEW<br/>Receive and disposition actual-size BOOK and WALL print verdicts<br/><b>BLOCKED</b>"]
   end
   subgraph g_EDA["EDA"]
@@ -456,6 +485,7 @@ flowchart LR
   n_CCR_PLAN --> n_CCR_IDENTITY
   n_CCR_STAIR --> n_CCR_IDENTITY
   n_CCR_DRAINAGE --> n_CCR_IDENTITY
+  n_PCO_REVIEW_POLICY --> n_PCO_WORKABLE_INTERIORS
   n_PCO_REVIEW_POLICY --> n_PCO_INDEPENDENT_STUDIES
   n_PCO_SNAPSHOT --> n_PCO_GIT_DEADLINE
   n_PCO_HOUSE_PLAN --> n_PCO_REVIEW_POLICY
@@ -551,6 +581,10 @@ flowchart LR
   n_OAS_03 --> n_OAS_NORTH_EXPORT
   n_OAS_DETAIL --> n_OAS_NORTH_EXPORT
   n_HAD_03 --> n_OAS_NORTH_EXPORT
+  n_IAS_03 --> n_IAS_WORKABLE_CONCEPT
+  n_HAD_02M --> n_IAS_WORKABLE_CONCEPT
+  n_TRIAD_GATE --> n_HAD_OWNER_DESIGN_REVIEW
+  n_HAD_OWNER_DESIGN_REVIEW --> n_IAS_WORKABLE_DETAILS
   n_IAS_03 --> n_TRIAD_GATE
   n_OAS_03 --> n_TRIAD_GATE
   n_HAD_03 --> n_TRIAD_GATE
@@ -562,6 +596,7 @@ flowchart LR
   n_MAT_COORDINATION --> n_TRIAD_GATE
   n_STR_RECONCILE --> n_TRIAD_GATE
   n_STR_FLOOR_PORTAL --> n_TRIAD_GATE
+  n_IAS_WORKABLE_CONCEPT --> n_TRIAD_GATE
   n_BSR_ROOT --> n_BCR_SCAFFOLD
   n_BCR_SCAFFOLD --> n_BCR_CONVERGENCE
   n_TRIAD_GATE --> n_BCR_CONVERGENCE
@@ -570,6 +605,8 @@ flowchart LR
   n_HRS_TECHNICAL --> n_BCR_CONVERGENCE
   n_EPR_REFRESH --> n_BCR_CONVERGENCE
   n_PHY_APPLICABILITY --> n_BCR_CONVERGENCE
+  n_HAD_OWNER_DESIGN_REVIEW --> n_BCR_CONVERGENCE
+  n_IAS_WORKABLE_DETAILS --> n_BCR_CONVERGENCE
   n_BCR_CONVERGENCE --> n_HRS_SYNTHESIS
   n_MRA_05 --> n_HRS_SYNTHESIS
   n_PCO_APPLICABILITY --> n_HRS_SYNTHESIS
@@ -690,6 +727,7 @@ flowchart LR
   n_BSR_ROOT --> n_PLT_CURRENT_REVIEW
   n_PLT_FINAL_PREP --> n_PLT_FINAL_FREEZE
   n_PLT_PRINT_REVIEW --> n_PLT_FINAL_FREEZE
+  n_PLT_OWNER_FINAL_DESIGN_ACCEPTANCE --> n_PLT_FINAL_FREEZE
   n_PLT_FINAL_FREEZE --> n_EDA_RENEWED
   n_EDA_ADAPTER --> n_EDA_RENEWED
   n_BSR_ROOT --> n_PUB_02_PREP
@@ -697,6 +735,7 @@ flowchart LR
   n_EDA_RENEWED --> n_PUB_02_FINAL
   n_HRS_SYNTHESIS --> n_PLT_FINAL_PREP
   n_PLT_CURRENT_REVIEW --> n_PLT_FINAL_PREP
+  n_PLT_FINAL_PREP --> n_PLT_OWNER_FINAL_DESIGN_ACCEPTANCE
   n_PLT_FINAL_PREP --> n_PLT_PRINT_REVIEW
   n_EDA_ARGUMENT --> n_EDA_NARRATIVE
   n_EDA_ADAPTER --> n_EDA_NARRATIVE
@@ -711,6 +750,7 @@ flowchart LR
   n_BCR_BAY_BRIEF --> n_BCR_BAY_DESIGN
   n_BCR_BAY_INTERFACES --> n_BCR_BAY_DESIGN
   n_TRIAD_GATE --> n_BCR_BAY_DESIGN
+  n_IAS_WORKABLE_DETAILS --> n_BCR_BAY_DESIGN
   n_ADE_DELIVERY_AUDIT --> n_ADE_SECTION_VIEW
   n_ADE_SECTION_VIEW --> n_ADE_SECTION_PARITY
   n_PLT_CURRENT_REVIEW --> n_ADE_SECTION_PARITY
@@ -794,6 +834,7 @@ flowchart LR
   class n_CCR_STAIR done;
   class n_CCR_DRAINAGE done;
   class n_CCR_IDENTITY done;
+  class n_PCO_WORKABLE_INTERIORS done;
   class n_PCO_INDEPENDENT_STUDIES done;
   class n_PCO_GIT_DEADLINE done;
   class n_PCO_REVIEW_POLICY done;
@@ -850,6 +891,9 @@ flowchart LR
   class n_HAD_COURT_BYPASS done;
   class n_OAS_DETAIL done;
   class n_OAS_NORTH_EXPORT done;
+  class n_IAS_WORKABLE_CONCEPT ready;
+  class n_HAD_OWNER_DESIGN_REVIEW blocked;
+  class n_IAS_WORKABLE_DETAILS blocked;
   class n_TRIAD_GATE blocked;
   class n_BCR_SCAFFOLD done;
   class n_BCR_CONVERGENCE blocked;
@@ -912,6 +956,7 @@ flowchart LR
   class n_PUB_02_FINAL blocked;
   class n_EDA_ADAPTER done;
   class n_PLT_FINAL_PREP blocked;
+  class n_PLT_OWNER_FINAL_DESIGN_ACCEPTANCE blocked;
   class n_PLT_PRINT_REVIEW blocked;
   class n_EDA_ARGUMENT done;
   class n_EDA_NARRATIVE done;
