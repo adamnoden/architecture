@@ -9,8 +9,8 @@
     "label": "zerg12-elevated-drip"
   },
   "claimedAt": "2026-11-14T22:35:17.725Z",
-  "heartbeatAt": "2026-11-14T22:35:17.725Z",
-  "expiresAt": "2026-11-15T00:05:17.725Z",
+  "heartbeatAt": "2026-11-14T22:37:06.891Z",
+  "expiresAt": "2026-11-15T00:07:06.891Z",
   "branch": "work/zerg12-had-elevated-drip",
   "predecessor": {
     "leaseId": "3890dbd9-d3d3-4dac-a372-c6416f295e29",
@@ -31,5 +31,10 @@
       "evidence": "Corrected exact combined #1529 9664e887 / tree 59ee5971, HAD blobs unchanged, 89/89 and lobby SVG deterministic",
       "next": "Verify exact hosted CI and preflight, merge and release task lease"
     }
+  },
+  "pr": 1530,
+  "checkpoint": {
+    "evidence": "Exact #1530 head 83e00a68 / tree 9f88cfda, four focused tests and byte receipt on current main 4738d558",
+    "next": "Observe full exact CI and fresh preflight; merge and release"
   }
 }
