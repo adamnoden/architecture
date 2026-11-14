@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 20,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "39a88714-a32d-4c1c-a5c6-bcbf88862d02",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg10-had"
   },
   "claimedAt": "2026-11-14T16:36:38.987Z",
-  "heartbeatAt": "2026-11-14T17:49:18.287Z",
-  "expiresAt": "2026-11-14T18:34:18.287Z",
+  "heartbeatAt": "2026-11-14T17:54:03.664Z",
+  "expiresAt": "2026-11-14T17:54:03.664Z",
   "branch": "work/zerg10-had-no-lift",
   "predecessor": {
     "leaseId": "44c6edb4-d63c-4c9e-8e4d-ffc71bc0bfca",
@@ -39,5 +39,7 @@
     "next": "Wait current-base exact CI 43621222111, fresh publication preflight, expected-head merge, verify main and release.",
     "blocker": "Canonical repository-health step still in progress at 17:49Z, no failures observed."
   },
-  "pr": 1520
+  "pr": 1520,
+  "releasedAt": "2026-11-14T17:54:03.664Z",
+  "releaseReason": "handoff"
 }
