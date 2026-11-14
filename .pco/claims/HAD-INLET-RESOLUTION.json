@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 23,
-  "state": "released",
-  "leaseId": "3890dbd9-d3d3-4dac-a372-c6416f295e29",
+  "generation": 24,
+  "state": "claimed",
+  "leaseId": "4f32b8b5-3783-4b0b-9aae-04ba7e46af54",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg12-section"
+    "label": "zerg12-elevated-drip"
   },
-  "claimedAt": "2026-11-14T21:51:37.206Z",
-  "heartbeatAt": "2026-11-14T22:34:42.082Z",
-  "expiresAt": "2026-11-14T22:34:42.082Z",
-  "branch": "work/zerg12-heel-section",
+  "claimedAt": "2026-11-14T22:35:17.725Z",
+  "heartbeatAt": "2026-11-14T22:35:17.725Z",
+  "expiresAt": "2026-11-15T00:05:17.725Z",
+  "branch": "work/zerg12-had-elevated-drip",
   "predecessor": {
-    "leaseId": "1e3dcaa6-06cc-4193-b4a4-2f0e9446de29",
-    "generation": 22,
-    "branch": "work/zerg11-had-first-wetting",
-    "pr": 1527,
+    "leaseId": "3890dbd9-d3d3-4dac-a372-c6416f295e29",
+    "generation": 23,
+    "branch": "work/zerg12-heel-section",
+    "pr": 1529,
     "checkpoint": {
-      "evidence": "PR #1527 exact 393fe1e tree ed62a97; source-bound first-wetting, isolation and drip-lap comparison; focused tests pass.",
-      "next": "Wait exact full hosted CI, fresh preflight, expected-head merge and release."
+      "evidence": "Corrected exact combined #1529 9664e887 / tree 59ee5971, HAD blobs unchanged, 89/89 and lobby SVG deterministic",
+      "next": "Verify exact hosted CI and preflight, merge and release task lease"
     }
   },
   "recoverySource": {
-    "leaseId": "1e3dcaa6-06cc-4193-b4a4-2f0e9446de29",
-    "generation": 22,
-    "branch": "work/zerg11-had-first-wetting",
-    "pr": 1527,
+    "leaseId": "3890dbd9-d3d3-4dac-a372-c6416f295e29",
+    "generation": 23,
+    "branch": "work/zerg12-heel-section",
+    "pr": 1529,
     "checkpoint": {
-      "evidence": "PR #1527 exact 393fe1e tree ed62a97; source-bound first-wetting, isolation and drip-lap comparison; focused tests pass.",
-      "next": "Wait exact full hosted CI, fresh preflight, expected-head merge and release."
+      "evidence": "Corrected exact combined #1529 9664e887 / tree 59ee5971, HAD blobs unchanged, 89/89 and lobby SVG deterministic",
+      "next": "Verify exact hosted CI and preflight, merge and release task lease"
     }
-  },
-  "checkpoint": {
-    "evidence": "Corrected exact combined #1529 9664e887 / tree 59ee5971, HAD blobs unchanged, 89/89 and lobby SVG deterministic",
-    "next": "Verify exact hosted CI and preflight, merge and release task lease"
-  },
-  "pr": 1529,
-  "releasedAt": "2026-11-14T22:34:42.082Z",
-  "releaseReason": "handoff"
+  }
 }
