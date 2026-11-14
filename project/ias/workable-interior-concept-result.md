@@ -1,6 +1,6 @@
 # Workable interiors on the current house
 
-**Development comparison for the owner's architectural review.** The existing house geometry and its protected, wet and structural boundaries remain the reference while the owner compares these alternatives. This first issue makes several decisions visible, with the Study as the worked example. Dimensions are millimetres unless stated.
+**Development comparison for the owner's architectural review.** The existing house geometry and its protected, wet and structural boundaries remain the reference while the owner compares these alternatives. The Study is the worked release example, with comparative occupied rooms and explicit exclusions elsewhere. Dimensions are millimetres unless stated.
 
 ![Ground and first-floor trial zones on the furnished house](studies/workable-house-plans.svg)
 
@@ -39,7 +39,7 @@ Give the owner the choice between the full-height panel rhythm and the calmer mi
 
 ![Restrained and panel-dominant alternatives on the same furnished Study elevation](studies/workable-study-elevation.svg)
 
-A panelled appearance can carry across the living room and bedrooms with the same colour and joint family and local changes in width, fixings and material. At the family and dining transition put seams where the trolleys, dining chairs and table maintenance can genuinely work. The dining side needs the mineral and splash control already assigned to the kitchen. In bedroom fields keep the radiator removal path, wardrobe park and treated window perimeter independent. The current palette explores timber wall panels and quiet solid timber finish, a mineral option where the room earns it, and satin-finished metal for visible access. It does not preselect a coating or release any concealed constituent. Polish the wall composition and quantify these other-room scenarios before selection.
+A panelled appearance can carry across the living room and bedrooms with the same colour and joint family and local changes in width, fixings and material. At the family and dining transition put seams where the trolleys, dining chairs and table maintenance can genuinely work. The dining side needs the mineral and splash control already assigned to the kitchen. In bedroom fields keep the radiator removal path, wardrobe park and treated window perimeter independent. The current palette explores timber wall panels and quiet solid timber finish, a mineral option where the room earns it, and satin-finished metal for visible access. It does not preselect a coating or release any concealed constituent. The comparative rooms below give the owner an actual palette and panel rhythm to compare before selection.
 
 ## Separate the service piece from the standing surface
 
@@ -94,8 +94,71 @@ Charge the full factored moving load (147.4 N including 1 kg of handling hardwar
 
 Run `node project/ias/studies/workable-study-release.mjs --check` to reproduce the receipt and scaled A4 SVG. At actual-size output the 100 mm and 200 mm reference bars print at 50 mm and 40 mm respectively.
 
-## Reproduction and next design material
+## Occupied room comparisons
 
-Run `node project/ias/studies/workable-study-floor.mjs --check`. The generator consumes the selected HAD service model and records its controlling geometry blob, never edits the house model, and renders the alternatives side by side. It checks exact source presence, the matching Study opening, panel-field geometry and the level arithmetic. Relative trim section proportions and elevation furniture heights are illustrative.
+![Paired family-room cutaways with occupants and the same openings](studies/workable-family-axon.svg)
 
-The full early review package still needs whole-handler and first-rest clearances in the furnished dry rooms and at one wet transition, inhabited views of non-Study variants and the restrained Study alternative, dimensioned threshold, window reveal, ceiling and stair/landing sections, and equivalent 1:5 and 1:2 coordination at the other representative assemblies. The Study bridge comparison still requires a matched capture, supported feet and demonstrated equipment installation and transfer, plus matched finishes. This first issue keeps those remaining drawings explicit and retains the one-page owner shortlist. The owner evidence and final approval stay in their separate manual gates.
+![Paired Bedroom 2 cutaways with occupants and the same furniture positions](studies/workable-bedroom-axon.svg)
+
+| Room | Paired elevations | Floor placement and use |
+| --- | --- | --- |
+| Study | [Quiet and panelled](studies/workable-study-elevation.svg) | Preserve the existing door and the loaded handling clearance. Keep the south work bay on ordinary trim while comparing the guided transfer. |
+| Family room | [Quiet and panelled](studies/workable-family-elevation.svg) | Compare panelling across the room. Keep F0 with the furnished layout shown below unless a different release can work around the sofas, radiators and tables. |
+| Kitchen and dining | [Quiet and panelled](studies/workable-dining-elevation.svg) | Confine F1 to an identified dining strip. Keep mineral splash treatment and conventional flooring at the fixed wet cook line. |
+| Bedroom 2 | [Quiet and panelled](studies/workable-bedroom-elevation.svg) | Compare F1 beside the bed. Wardrobe, emitter and their separate service task stay in place. |
+| Family bathroom | [Washable mineral and removable front](studies/workable-wet-elevation.svg) | Keep the existing wet floor and containment. Independent bath front or selected washable mineral panel may express the shared finish rhythm. |
+
+The opening heads, sill heights and width come from the selected house. Furniture footprints are source-bound. Display furniture heights, light and upper-room crop heights illustrate the comparison. Keep actual daylight, panelling composition and stops tied to the final room sections.
+
+The 400 mm pitch, controlled 400 mm travel to an adjoining whole receiving tile and R300 handler sweep admit these comparisons in plan. The handler envelope clears the tile and receiving strip by 35 mm. The provisional dining cutoff at Y10500 leaves 470.5 mm to the north wet/cook furniture; it is a study boundary and will need a selected threshold and splash continuity.
+
+| Furnished option | Clear 400 mm lift, rest and moving stance arrangements | One source-coordinate example |
+| --- | ---: | --- |
+| Family room | 0 | Keep the conventional control with the shown fixed room furnishings and this release method. |
+| Dining dry strip | 10 | Move tile X10100–10500/Y9300–9700 east. The adjacent stance starts at (10300, 10035); its swept box is X10000–11000/Y9735–10335. |
+| Bedroom 2 | 42 | Move tile X2100–2500/Y900–1300 north. The adjacent stance starts at (2835, 1100); its swept box is X2535–3135/Y800–1800. |
+| Wet threshold | Excluded | Keep permanent independently sealed wet structure. Use the separately located bath front for genuine access. |
+
+Counts are directed arrangements, with separate sides and directions. Outside the cleared rows keep F0 until a better candidate is demonstrated. In the two passing rooms the source placement, first-rest tile and rectangular handler envelope can coexist in plan. Technical detailing of an owner-selected candidate still needs entry and exit, door motion, actual hand height, loading, fixture approach, restrained first rest and positive lift details. A loaded handling trial in the Study must go first.
+
+## Scaled floor, opening, ceiling and service boundaries
+
+![Actual-scale Study reveal and wet termination](studies/workable-measured-sections.svg)
+
+![Actual-scale upper landing, dry wall head and air terminal capture](studies/workable-extra-junctions.svg)
+
+The 1:2 Study reveal preserves the existing 27 mm finished face and shows the adverse extra 18 mm of face crossing it. Leave the room-side trim independent whichever OAS window family the owner prefers. At the ground room head, the existing Z3100 ceiling includes the 15 mm lining beneath the 55 mm reserved for services. The trial wall face stops 5 mm short below it and releases only from the room side. Its 18 mm finish, 7 mm point capture and 2 mm fit allowance share the 27 mm finished face territory. Keep the permanent continuity behind it. At the upper arrival retain the 172.5 mm rise and 300 mm going, keeping the closure and independent fixed edge when a finish is lifted. In the wet section keep the 200 mm structure and reserved 80 mm build-up. The drawn mineral and seal territory identifies the boundary to coordinate before selected detail.
+
+The enlarged metal cover uses a 4 mm formed trial plate with its own removable face, retained flange and trial bedding. A visual comparator with 12 clear slots of 240 × 6 mm gives **17,280 mm² gross** before any screen, cover movement, edge losses or blockage. That is only 1.152 times the 15,000 mm² inward equivalent area required for the complete installed assembly. Even 15% geometrical occlusion, before aerodynamic effects, leaves 14,688 mm². Keep the selected terminal until an assembled comparison proves both required directions and acoustic duty. The exterior MAT walking grate and a metal fixture-access lid each have separate use, support and load requirements. An opaque lid need not pass air but needs independent walking and closure checks if located underfoot.
+
+## Replaceable parts and indicative build burden
+
+![Exploded dry-finish and cover kit, permanent structure to closure](studies/workable-exploded-kit.svg)
+
+![Room finish assembly comparison and six controlled replacement steps](studies/workable-assembly-kit.svg)
+
+| Scope | Relative cost and complexity drivers | Exchange and renewal boundary |
+| --- | --- | --- |
+| F0 continuous | Lowest fixing count and least setting labour across a clear field. Local patch may cost more than exchanging one sound comparable module. | Select a patch method and retain matching stock. Keep existing discrete technical access. |
+| F1 zoned | More cutting and more individual captive joints. A repetitive 400 mm square field has 6.25 full grid positions/m² before cuts. Edges, thresholds, supports and tools drive installed cost. | Reuse the retained substrate and capture if sound, replace a single finish and recheck level and closure. |
+| F2 deeper service | Highest coordination burden. An extra 20 mm at one uncompensated tread changes the adjoining rise from 172.5 to 192.5 mm in that comparison. Frame, clearances, downstream rooms and fire/acoustic measures are affected. | Only reconsider for a real service and a reworked floor section. |
+| W0 direct mineral | Few parts. Local matched skilled finish repair may be conspicuous and takes drying time. | Renew the local surface while keeping the support and independent lining. |
+| W1 panelling dominant | Repeated carpentry with extra corner/reveal pieces and point fixing. A qualified retained mineral lining may push total depth to 54 mm. | Keep matching faces, release at a planned edge and avoid adhesives that join wear layer to protected fabric. |
+| W2/S1 local service | More fittings at the first and last segment. Confirm product clearances for glands, bends, compartments, hatches and isolation inside only 27 mm gross behind the face. | Separate replaceable face, independently supported selected containment and terminations; do not open a protected crossing. |
+| G1 visible metal | Fabricated screened or solid covers with support and closure checks for their particular duty. Cost varies with section, span, cutouts, cleanability and corrosion exposure. | Maintain captive, removable parts and accessible seat. Preserve drainage, insulation, seals and other permanent duties. |
+
+No supplier pricing or actual fabrication quantities are established. The relative burden compares design labour, likely hardware, setting and service consequences against the retained conventional comparators. The parts register must include actual mineral finish, timber and metal selection, fasteners, separate movement/acoustic bedding, gasketing, sealing, containment and coating constituents. Choose a limited replaceable part library with compatible spare faces and recorded capture at handoff. Qualified fire/acoustic, movement, dry floor point-load/rocking and traffic tests remain after owner preference. No provisional pad, seal, coating or membrane creates a material exception.
+
+For the owner discussion, carry F1 forward in the Study, a named dining strip and a Bedroom 2 bay as removable **finish**. Keep F0 where furniture stops the trial, and along wet and protected transitions. Compare panel-dominant W1 with the retained mineral control, S1 only at an independently bounded dry span and G1 for an actual inlet, fixture-access or exterior need. No procurement or regulation decision derives from this comparison.
+
+## Reproduction and handoff
+
+Run these checks from the repository root.
+
+```sh
+node project/ias/studies/workable-study-floor.mjs --check
+node project/ias/studies/workable-study-release.mjs --check
+node project/ias/studies/workable-room-assemblies.mjs --check
+```
+
+The checks reproduce the plans, SVG plates and corresponding JSON from the selected house. The room assembly receipt records the floor and release inputs, clearance-screen examples, both-direction grille requirement and installed-depth assumptions. Print the dimensional plates at actual A4 size and confirm the graphic bars. This closes the early alternative design package. The Study bridge and all nominated materials still need sample qualification. Formal approval, selection, working detail, the separate book manufacturing verdict and final design acceptance retain their existing dependencies.

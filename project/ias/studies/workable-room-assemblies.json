@@ -1,0 +1,561 @@
+{
+  "scope": "Source-bound pre-site concept alternatives for owner review.",
+  "source": {
+    "id": "HAD-SERVICES-02",
+    "geometry": "ff387bfb8119310c7fccbd54848d8982bd2feba8541b297b0583bd8640f1352e",
+    "floorSHA256": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593",
+    "releaseSHA256": "c902cc720c22b53340b1b70e219d332b1625b211711137d16ec40be6d357067c"
+  },
+  "places": [
+    {
+      "title": "Family room",
+      "level": "GROUND",
+      "wall": "outer-north",
+      "interval": [
+        429.5,
+        4280.5
+      ],
+      "normal": 11570.5,
+      "windows": [
+        {
+          "id": "north-window-0",
+          "centre": 2100,
+          "width": 1000,
+          "sill": 750,
+          "spring": 2550,
+          "head": 2850
+        },
+        {
+          "id": "north-window-1",
+          "centre": 3700,
+          "width": 700,
+          "sill": 850,
+          "spring": 2550,
+          "head": 2850
+        }
+      ],
+      "items": [
+        {
+          "id": "reading-sofa1900x850",
+          "type": "sofa",
+          "height": 790,
+          "box": [
+            800,
+            9000,
+            850,
+            1900
+          ]
+        },
+        {
+          "id": "family-sofa1900x750",
+          "type": "sofa",
+          "height": 790,
+          "box": [
+            2337.5,
+            9800,
+            1900,
+            750
+          ]
+        },
+        {
+          "id": "service-emitter-living-N2",
+          "type": "radiator",
+          "height": 600,
+          "box": [
+            3102.5,
+            11370.5,
+            950,
+            200
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Kitchen and dining",
+      "level": "GROUND",
+      "wall": "outer-north",
+      "interval": [
+        7719.5,
+        11570.5
+      ],
+      "normal": 11570.5,
+      "windows": [
+        {
+          "id": "north-window-3",
+          "centre": 8300,
+          "width": 700,
+          "sill": 1050,
+          "spring": 2550,
+          "head": 2850
+        },
+        {
+          "id": "north-window-4",
+          "centre": 9900,
+          "width": 1000,
+          "sill": 1050,
+          "spring": 2550,
+          "head": 2850
+        }
+      ],
+      "items": [
+        {
+          "id": "dining-table1200x800",
+          "type": "table",
+          "height": 735,
+          "box": [
+            8500,
+            9100,
+            800,
+            1200
+          ]
+        },
+        {
+          "id": "dining-chair-east-south",
+          "type": "chair",
+          "height": 865,
+          "box": [
+            9300,
+            9150,
+            500,
+            500
+          ]
+        },
+        {
+          "id": "dining-chair-west-north",
+          "type": "chair",
+          "height": 865,
+          "box": [
+            8000,
+            9750,
+            500,
+            500
+          ]
+        },
+        {
+          "id": "north-sink-station",
+          "type": "wet worktop",
+          "height": 925,
+          "box": [
+            8700,
+            10970.5,
+            900,
+            600
+          ]
+        },
+        {
+          "id": "north-cooking-station",
+          "type": "worktop",
+          "height": 925,
+          "box": [
+            10750,
+            10970.5,
+            600,
+            600
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Bedroom 2",
+      "level": "FIRST",
+      "wall": "outer-south",
+      "interval": [
+        429.5,
+        4703
+      ],
+      "normal": 429.5,
+      "windows": [
+        {
+          "id": "south-window-0",
+          "centre": 2100,
+          "width": 1000,
+          "sill": 750,
+          "spring": 2550,
+          "head": 2850
+        },
+        {
+          "id": "south-window-1",
+          "centre": 3900,
+          "width": 1000,
+          "sill": 850,
+          "spring": 2550,
+          "head": 2850
+        }
+      ],
+      "items": [
+        {
+          "id": "bed2",
+          "type": "bed",
+          "height": 580,
+          "box": [
+            1100,
+            1065.5,
+            950,
+            2055
+          ]
+        },
+        {
+          "id": "bed2-wardrobe",
+          "type": "wardrobe",
+          "height": 2000,
+          "box": [
+            4043,
+            1067.5,
+            660,
+            900
+          ]
+        },
+        {
+          "id": "service-emitter-bed2-S",
+          "type": "radiator",
+          "height": 655,
+          "box": [
+            3425,
+            429.5,
+            1050,
+            200
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Family bathroom",
+      "level": "FIRST",
+      "wall": "outer-east",
+      "interval": [
+        3800,
+        6400
+      ],
+      "normal": 11570.5,
+      "windows": [
+        {
+          "id": "east-window-1",
+          "centre": 4600,
+          "width": 1000,
+          "sill": 850,
+          "spring": 2550,
+          "head": 2850
+        }
+      ],
+      "items": [
+        {
+          "id": "family-bath1700",
+          "type": "bath",
+          "height": 560,
+          "box": [
+            9460,
+            3800,
+            1700,
+            700
+          ]
+        },
+        {
+          "id": "family-basin",
+          "type": "basin",
+          "height": 840,
+          "box": [
+            11277.5,
+            5205,
+            290,
+            470
+          ]
+        },
+        {
+          "id": "family-WC",
+          "type": "WC",
+          "height": 740,
+          "box": [
+            10813.357725457383,
+            5705,
+            640,
+            340
+          ]
+        },
+        {
+          "id": "service-emitter-family-E",
+          "type": "radiator",
+          "height": 710,
+          "box": [
+            11367.5,
+            4525,
+            200,
+            650
+          ]
+        }
+      ]
+    }
+  ],
+  "groundedInterfaces": {
+    "wet": {
+      "familyBath": [
+        9460,
+        3800,
+        1700,
+        700
+      ],
+      "port": [
+        11012,
+        4366,
+        110
+      ],
+      "frontPanel": {
+        "frontY": 4500,
+        "clearX": [
+          10625,
+          11125
+        ],
+        "clearZLocal": [
+          0,
+          500
+        ],
+        "requiredAccess": "Firstunion/trapcleanout/wasteandfull52overflowreleasefromFRONTorTOP, neverblindrearreach. Panelisnotarequiredfoot/supportremovedforaccess."
+      },
+      "retainedHatch": [
+        10787,
+        4151,
+        450,
+        450
+      ]
+    },
+    "stair": {
+      "plan": [
+        417.5,
+        4432.5,
+        2400,
+        4335
+      ],
+      "going": 300,
+      "rise": 172.5,
+      "landingYZ": [
+        7132.5,
+        1725
+      ],
+      "firstUpperNoseYZ": [
+        7132.5,
+        1897.5
+      ],
+      "upperArrivalYZ": [
+        4432.5,
+        3450
+      ],
+      "betweenRails": 1004
+    },
+    "wallFinishMM": 27,
+    "tile": {
+      "pitch": 400,
+      "gap": 3,
+      "skin": 18,
+      "beddingTerritory": 2,
+      "nominalDensity": 700
+    },
+    "seamCases": [
+      {
+        "name": "Opposing ±0.5 mm accumulated setting and 0.5 mm growth per edge",
+        "residual": 1
+      },
+      {
+        "name": "Opposing ±0.5 mm accumulated setting and 1.0 mm growth per edge",
+        "residual": 0
+      },
+      {
+        "name": "Opposing ±0.75 mm accumulated setting and 1.0 mm growth per edge",
+        "residual": -0.5
+      }
+    ],
+    "westGallery": [
+      1015,
+      979,
+      952,
+      925
+    ],
+    "studyDoorBodyMargin": 1.9348531434153386
+  },
+  "families": [
+    [
+      "F0 continuous fields",
+      0,
+      "Local damage generally sacrifices and reinstates a finish patch."
+    ],
+    [
+      "F1 dry 400 mm",
+      400,
+      "Finish and bedding of 18+2 requires no level change."
+    ],
+    [
+      "F2 deeper services",
+      20,
+      "An additional 20 mm at a stair landing changes the adjoining 172.5 mm rise."
+    ],
+    [
+      "W1 dominant wall",
+      27,
+      "18 face +7 capture +2 fit replaces the 27 mm face territory only where the complete substrate earns it."
+    ],
+    [
+      "W2/S1 accessible strip",
+      45,
+      "150 high, 45 projection. 18 face leaves 27 gross enclosure/build-up."
+    ],
+    [
+      "G1 visible cover",
+      0,
+      "Show where a genuine inspection, air or water duty earns metalwork. Keep live contents independently supported."
+    ]
+  ],
+  "grate": {
+    "duty": "Room-side screen for one independent HAD inlet",
+    "slotLength": 240,
+    "slotWidth": 6,
+    "slots": 12,
+    "referenceInwardEquivalentArea": 15000,
+    "referenceOutwardEquivalentArea": 5000,
+    "grossOpenArea": 17280,
+    "areaScreenRatio": 1.152
+  },
+  "finishCeiling": 3100,
+  "handling": [
+    {
+      "name": "Family room",
+      "allowedBands": [
+        [
+          429.5,
+          8949.5,
+          4280.5,
+          11570.5
+        ]
+      ],
+      "handlerRadius": 300,
+      "movingStripGap": 35,
+      "passingPlanComparisons": 0,
+      "example": null,
+      "exclusions": [
+        "approach and exit",
+        "hands and reach",
+        "loaded motion",
+        "retainers and temporary rests",
+        "door swing"
+      ]
+    },
+    {
+      "name": "Kitchen / dining",
+      "allowedBands": [
+        [
+          7719.5,
+          8424.5,
+          11570.5,
+          10500
+        ]
+      ],
+      "handlerRadius": 300,
+      "movingStripGap": 35,
+      "passingPlanComparisons": 10,
+      "example": {
+        "lift": [
+          10100,
+          9300,
+          10500,
+          9700
+        ],
+        "rest": [
+          10500,
+          9300,
+          10900,
+          9700
+        ],
+        "footStart": [
+          10300,
+          10035
+        ],
+        "footEnd": [
+          10700,
+          10035
+        ],
+        "handler": [
+          10000,
+          9735,
+          11000,
+          10335
+        ]
+      },
+      "exclusions": [
+        "approach and exit",
+        "hands and reach",
+        "loaded motion",
+        "retainers and temporary rests",
+        "door swing"
+      ]
+    },
+    {
+      "name": "Bedroom 2",
+      "allowedBands": [
+        [
+          429.5,
+          429.5,
+          4703,
+          2553
+        ],
+        [
+          429.5,
+          2553,
+          2720.5,
+          3150.5
+        ]
+      ],
+      "handlerRadius": 300,
+      "movingStripGap": 35,
+      "passingPlanComparisons": 42,
+      "example": {
+        "lift": [
+          2100,
+          900,
+          2500,
+          1300
+        ],
+        "rest": [
+          2100,
+          1300,
+          2500,
+          1700
+        ],
+        "footStart": [
+          2835,
+          1100
+        ],
+        "footEnd": [
+          2835,
+          1500
+        ],
+        "handler": [
+          2535,
+          800,
+          3135,
+          1800
+        ]
+      },
+      "exclusions": [
+        "approach and exit",
+        "hands and reach",
+        "loaded motion",
+        "retainers and temporary rests",
+        "door swing"
+      ]
+    }
+  ],
+  "bathTransition": {
+    "comparison": "Keep mineral flooring and actual tray / seal. No dry panel exchange across the wet transition.",
+    "reason": "No source-defined service demand earns a removable wet field or disturbance to its waterproof perimeter."
+  },
+  "workSequence": [
+    "Isolate and clear a closed work bay",
+    "Confirm substrate stays supported",
+    "Release independent capture",
+    "Lift, control load and place on protected first rest",
+    "Replace piece and remove all equipment",
+    "Recheck closure and return room to use"
+  ],
+  "ownerDecisionLimits": [
+    "Use original nosing datums, protected guards and permanently supported door thresholds.",
+    "Select owner palette, seam rhythm, wet perimeter and where maintenance should remain visible.",
+    "Confirm complete fittings, repeated load and finish movement in a sample; no product rating or purchase authority."
+  ]
+}

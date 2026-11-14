@@ -124,9 +124,25 @@ test('inlet correction can proceed before roof integration and remains an input 
 
 test('workable interior concept runs early and owner decisions gate details and freeze', () => {
   const concept = node('IAS-WORKABLE-CONCEPT')
-  assert.equal(derivedState(concept, controlNodes), 'ready')
+  const triad = node('TRIAD-GATE')
   assert.equal(concept.agentDispatch?.mode, 'self-service')
-  assert.ok(node('TRIAD-GATE').dependencies.includes(concept.id))
+  assert.ok(triad.dependencies.includes(concept.id))
+
+  // Exercise readiness and unlock order independently of ongoing project progress.
+  const fixture = controlNodes.map((candidate): ControlNode => {
+    if (candidate.id === concept.id || candidate.id === triad.id) {
+      return { ...candidate, lifecycle: 'planned' }
+    }
+    if (concept.dependencies.includes(candidate.id) || triad.dependencies.includes(candidate.id)) {
+      return { ...candidate, lifecycle: 'complete' }
+    }
+    return candidate
+  })
+  const candidate = fixture.find((entry) => entry.id === concept.id)!
+  const gate = fixture.find((entry) => entry.id === triad.id)!
+  assert.equal(derivedState(candidate, fixture), 'ready')
+  assert.deepEqual(directBlockers(gate, fixture), [concept.id])
+  assert.ok(unlocksOnCompletion(concept.id, fixture).some((entry) => entry.id === triad.id))
 
   const firstApproval = node('HAD-OWNER-DESIGN-REVIEW')
   assert.deepEqual(firstApproval.dependencies, ['TRIAD-GATE'])

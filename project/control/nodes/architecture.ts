@@ -303,7 +303,7 @@ export const architectureNodes = defineNodes([
     owners: ['IAS'],
     title: 'Compare and illustrate workable interior assemblies in the current house',
     dependencies: ['IAS-03', 'HAD-02M'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/ias/workable-interior-concept-result.md'],
   },
