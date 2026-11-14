@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 16,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "ab20eb01-1896-41fa-883b-a70b8ff29c75",
   "holder": {
     "kind": "chatgpt",
     "label": "recover-str"
   },
   "claimedAt": "2026-11-14T00:08:00.653Z",
-  "heartbeatAt": "2026-11-14T00:50:17.477Z",
-  "expiresAt": "2026-11-14T01:35:17.477Z",
+  "heartbeatAt": "2026-11-14T00:53:59.857Z",
+  "expiresAt": "2026-11-14T00:53:59.857Z",
   "branch": "work/zerg7-str-continuous-cage",
   "predecessor": {
     "leaseId": "dcc361c6-85a7-4fa1-8b71-3216cdc2061d",
@@ -37,5 +37,7 @@
     "next": "Wait for exact CI, publication preflight, merge and release",
     "blocker": "The study is bounded; actual coupon-to-seat, tool corridor and lower bar continuity are still open"
   },
-  "pr": 1509
+  "pr": 1509,
+  "releasedAt": "2026-11-14T00:53:59.857Z",
+  "releaseReason": "handoff"
 }
