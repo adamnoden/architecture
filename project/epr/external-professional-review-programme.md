@@ -35,6 +35,8 @@ Use the existing processing chain:
 
 ## Book / house-resolution interface
 
+**Owner publication direction, 14 November 2026:** `EPR-RH11` and `EPR-BAY-REVIEW` are separate future evidence-acquisition gates, **not prerequisites for HRS/PLT/EDA or the private book's `PUB-02-FINAL`**. Completion of the already recorded 33-question internal desk review and further source-bound Astra adversarial passes may support honest pre-site publication without a commissioned reviewer. Record contradictions, unresolved physical interfaces and the absence of external approval; narrow, reject or clearly label any proposition that has not earned a definitive claim. Do not write new review dependencies into the publication DAG simply because these EPR records remain incomplete. Specific adopted structural, fire, services, product and site claims still need their appropriate evidence before being relied upon for physical construction or claimed as externally validated.
+
 External responses are not a blanket prerequisite for internal design or BCR/HRS investigation. A retained specialist hold must identify the precise decision it prevents; routing a question does not resolve it. The internal review below may complete with adverse or conditional findings while external review remains unreceived.
 
 `IAS`, `OAS` and `HAD` will introduce selected assembly/design families that may sharpen, supersede or add professional-review questions. Their authorisation is not evidence, and issue-ready RH-11 material must not be treated as automatically applicable to later changed details.
