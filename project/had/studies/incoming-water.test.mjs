@@ -12,6 +12,8 @@ import {deriveLowerTailComparison} from './incoming-water-lower-tail.mjs';
 import {deriveReleaseSupport} from './incoming-water-release-support.mjs';
 import {deriveStandRetirement} from './incoming-water-stand-retirement.mjs';
 import {compareDryDockSupport} from './incoming-water-dock-support.mjs';
+import {compareLiftSill} from './incoming-water-lift-sill.mjs';
+import {compareGoodsTransfer} from './incoming-water-goods-transfer.mjs';
 
 const study=deriveIncomingWaterStudy();
 test('finite bends represent a real quarter-circle and reject impossible tangent lengths',()=>{
@@ -432,4 +434,66 @@ test('the intact stand clears only the high-lift sequence and requires positive 
   assert(stand.landing.positiveKeeperRequired);
   assert(stand.landing.cartConflictMM<0);
   assert.equal(stand.status,'DEVELOPMENT_NOT_ADOPTED');
+});
+
+test('opposite lift doors preserve the short rise and the sill transfer requires verified overlap',()=>{
+  const result=compareLiftSill();
+  assert.equal(result.status,'DEVELOPMENT_NOT_ADOPTED');
+  assert.deepEqual(result.clearY,[3450,5050]);
+  assert.equal(result.minimumCabinWorkingDepthMM,1300);
+  assert.deepEqual(result.travelByLowerLanding,[
+    {kind:'flush pit',travelMM:1774,frontOnlyShortfallMM:826,throughReserveMM:1324},
+    {kind:'raised ramp',travelMM:1704,frontOnlyShortfallMM:896,throughReserveMM:1254},
+  ]);
+  assert.equal(result.gateSwingMarginMM,25);
+  assert.deepEqual(result.lowerLanding,{clearY:[3450,5050],clearWidthMM:1600,levelRunMM:825});
+  assert.equal(result.lowerRampEastX,17845);
+  assert(result.axleEquivalentMassKG>584&&result.axleEquivalentMassKG<585);
+  const strip=result.strip;
+  assert.equal(strip.minimumPlateLengthMM,120);
+  assert.equal(strip.effectiveSpanMM,75);
+  assert(strip.stressMPa>67&&strip.stressMPa<68&&strip.deflectionMM<0.027);
+  assert(strip.unbridgedGapLipForceN>888&&strip.unbridged5MMStepForceN>1130);
+  assert(strip.retainingForceN>842&&strip.retainingForceN<844);
+  assert(strip.supportCases[1].dockN===strip.supportCases[1].carN);
+  const permissions=Object.fromEntries(result.challenges.map(({name,permissions})=>[name,permissions]));
+  assert(permissions['both captures confirmed outbound'].releaseDockCapture);
+  assert(permissions['both captures confirmed return'].releaseCarCapture);
+  assert(permissions['cargo clear, car capture verified'].retractBridge);
+  assert(permissions['cargo clear, dock capture verified on return'].retractBridge);
+  assert(permissions['travel after bridge stowed and gate locked'].travel);
+  assert(!permissions['level lost after load clears'].retractBridge);
+  for(const name of ['car capture absent','dock capture absent','level lost','bridge keeper fails',
+    'unknown bridge state cannot imply stowed','unknown gate cannot imply locked','sending restraint still attached',
+    'landing restraint state unknown','unknown landing restraint cannot imply released'])
+    assert(Object.values(permissions[name]).every(value=>!value));
+});
+
+test('goods-only lift can reserve aligned cargo but fails ordinary closed-gate draw',()=>{
+  const q=compareGoodsTransfer();
+  assert.equal(q.status,'DEVELOPMENT_NOT_ADOPTED');
+  assert.deepEqual(q.requiredY,[4125,5050]);
+  assert.deepEqual(q.guardSweeps.map(row=>row.totalLateralReserveMM),[15,0,-5]);
+  assert.deepEqual(q.commonCompactDoorCentres,[4600,4575]);
+  assert.equal(q.occupied[2].compactTandemReserveMM,55);
+  assert.equal(q.occupied[2].outdoorTandemReserveMM,-445);
+  assert.deepEqual(q.gradeCases.map(row=>[row.strokeMM,row.strokeReserveMM,row.minimumRampEndX]),[
+    [1414,386,23580],[1594,206,19980],[1774,26,16380],
+  ]);
+  assert(q.loadDuty.drawForceN>871&&q.loadDuty.lowerRampRecoveryForceN>957);
+  assert(q.crewReference.remainingStraightPendantMM>1443&&q.crewReference.trialHandleReserveMM<0);
+  assert.deepEqual(q.loadDuty.lineSlotsAtY,[4575,4600]);
+  assert.equal(q.outboundRedirect.lineAndConnectorBudgetMM,20);
+  assert.equal(q.outboundRedirect.minimumOutsideRedirectHeightMM,6585);
+  assert(q.outboundRedirect.aboveGateLineN>2*q.loadDuty.poweredAnchorN);
+  assert(q.rigidChain.dryIndoorOnly);
+  assert.equal(q.upperPusher.necessaryUpperStrokeMM,450);
+  assert.equal(q.upperPusher.fullUpperStrokeMM,1725);
+  assert.deepEqual(q.upperPusher.reversiblePushPull.map(row=>row.fullUpperStrokeReserveMM),[-225,275]);
+  assert(q.upperPusher.reversiblePushPull[1].bellowsUpperForceReserveN>28);
+  assert(q.upperPusher.reversiblePushPull[1].bellowsLowerForceReserveN<-57);
+
+  assert.deepEqual(q.movingStates.filter(row=>row.canMoveCar).map(row=>row.name),['mobile']);
+  assert(q.movingStates.find(row=>row.name==='lower receiving overlap').canReleaseCar);
+  assert(!q.movingStates.find(row=>row.name==='failed lower catch').canReleaseCar);
 });
