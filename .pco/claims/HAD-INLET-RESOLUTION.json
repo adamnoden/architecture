@@ -9,8 +9,8 @@
     "label": "zerg10-had"
   },
   "claimedAt": "2026-11-14T16:36:38.987Z",
-  "heartbeatAt": "2026-11-14T16:46:25.190Z",
-  "expiresAt": "2026-11-14T17:31:25.190Z",
+  "heartbeatAt": "2026-11-14T16:58:18.330Z",
+  "expiresAt": "2026-11-14T17:43:18.330Z",
   "branch": "work/zerg10-had-no-lift",
   "predecessor": {
     "leaseId": "44c6edb4-d63c-4c9e-8e4d-ffc71bc0bfca",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Durable branch 532b95743fbded1ab097800fd8f7b530bf91cabc tree c32c61b9; temporary gantry, retained upper guard and independent dock extension comparison.",
-    "next": "Reconcile with live main after registration and STR merge, run exact CI, merge and release.",
-    "blocker": "Await integration sequence. Actual cylinder/carrier lift dimensions and surveyed dry ground remain open."
+    "evidence": "Durable exact branch 13294577b183cd4438cf863e260dcc450ddab3bc tree 0fb0068f; temporary gantry and DPL 5.90 m/5.845 m/same-level field comparison; all 80 HAD, generator and MRA checks passed.",
+    "next": "Reconcile after registration and structural result; run exact CI, merge and release.",
+    "blocker": "Current integration order; surveyed dry ground and final carrier still open."
   }
 }
