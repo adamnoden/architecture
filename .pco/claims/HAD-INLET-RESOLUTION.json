@@ -9,8 +9,8 @@
     "label": "zerg8-had-lift-sill"
   },
   "claimedAt": "2026-11-14T09:41:17.313Z",
-  "heartbeatAt": "2026-11-14T09:41:17.313Z",
-  "expiresAt": "2026-11-14T10:26:17.313Z",
+  "heartbeatAt": "2026-11-14T09:46:46.334Z",
+  "expiresAt": "2026-11-14T10:31:46.334Z",
   "branch": "work/zerg8-had-lift-sill",
   "predecessor": {
     "leaseId": "562490e4-c15c-40e6-aab7-8c1e52270a07",
@@ -33,5 +33,11 @@
       "next": "Verify new exact-head CI and canonical publication preflight, merge and release",
       "blocker": "Actual guarded rated receiving platform, substrate, anchors and loaded handoff remain unqualified"
     }
+  },
+  "pr": 1510,
+  "checkpoint": {
+    "evidence": "Draft PR #1510 exact 410aad04, tree 19a77097, flush pit versus ramp and positive sill design model",
+    "next": "Mark ready after exact binding, verify full CI and publication preflight, merge, release",
+    "blocker": "Actual wheel, sill, matched lift controls and anchored surveyed access remain unqualified"
   }
 }
