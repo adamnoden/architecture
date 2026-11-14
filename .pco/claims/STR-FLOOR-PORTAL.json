@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 21,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "22cdeecf-903b-4d79-944a-6885401ee57f",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg11-portal"
   },
   "claimedAt": "2026-11-14T20:48:41.459Z",
-  "heartbeatAt": "2026-11-14T21:09:51.644Z",
-  "expiresAt": "2026-11-14T22:29:51.644Z",
+  "heartbeatAt": "2026-11-14T21:22:12.951Z",
+  "expiresAt": "2026-11-14T21:22:12.951Z",
   "branch": "work/zerg11-portal-inlet",
   "predecessor": {
     "leaseId": "59107682-39e2-477e-8cf5-752b3ca952d3",
@@ -38,5 +38,7 @@
     "evidence": "Shared PR #1526 exact 98ff47f2 and STR source 02436b37",
     "next": "Wait for exact-head CI, then fresh independent STR merge preflight"
   },
-  "pr": 1526
+  "pr": 1526,
+  "releasedAt": "2026-11-14T21:22:12.951Z",
+  "releaseReason": "handoff"
 }
