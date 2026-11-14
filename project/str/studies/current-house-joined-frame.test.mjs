@@ -13,6 +13,10 @@ test('The guide backing receipt reproduces pressure and cage bounds', () => {
   const source = fileURLToPath(new URL('./floor-portal-guide-backing.py', import.meta.url));
   execFileSync('python3', ['-B', source, '--check']);
 });
+test('The depth-rocking guide receipt reproduces contact and placement bounds', () => {
+  const source = fileURLToPath(new URL('./floor-portal-guide-rocker.py', import.meta.url));
+  execFileSync('python3', ['-B', source, '--check']);
+});
 test('Each of the 52 signed-head states returns its actual source force and two first moments', () => {
   assert.equal(new Set(j.heads.map(h=>h.xy.join(','))).size,52);
   for (const [name, source] of Object.entries(j.named_source_totals)) {
