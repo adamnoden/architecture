@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 18,
-  "state": "released",
-  "leaseId": "44eaf328-5bfb-4c01-88cf-e1eda540ea11",
+  "generation": 19,
+  "state": "claimed",
+  "leaseId": "44c6edb4-d63c-4c9e-8e4d-ffc71bc0bfca",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg8-had-lift-sill"
+    "label": "zerg9-had-weather"
   },
-  "claimedAt": "2026-11-14T09:41:17.313Z",
-  "heartbeatAt": "2026-11-14T10:36:14.511Z",
-  "expiresAt": "2026-11-14T10:36:14.511Z",
-  "branch": "work/zerg8-had-lift-sill",
+  "claimedAt": "2026-11-14T10:38:21.987Z",
+  "heartbeatAt": "2026-11-14T10:38:21.987Z",
+  "expiresAt": "2026-11-14T11:23:21.987Z",
+  "branch": "work/zerg9-had-weather",
   "predecessor": {
-    "leaseId": "562490e4-c15c-40e6-aab7-8c1e52270a07",
-    "generation": 17,
-    "branch": "work/zerg7-had-external-dock",
-    "pr": 1508,
+    "leaseId": "44eaf328-5bfb-4c01-88cf-e1eda540ea11",
+    "generation": 18,
+    "branch": "work/zerg8-had-lift-sill",
+    "pr": 1510,
     "checkpoint": {
-      "evidence": "PR #1508 exact 9943184a, tree 65913c55, packed width 1500 and aligned width 1600 source-bound",
-      "next": "Verify new exact-head CI and canonical publication preflight, merge and release",
-      "blocker": "Actual guarded rated receiving platform, substrate, anchors and loaded handoff remain unqualified"
+      "evidence": "PR #1510 combined exact 3d7842d1 and tree d4304783 on STR main bad94a02; 78 HAD, deterministic MRA/water-replan, whitespace pass",
+      "next": "Verify full combined exact-head CI, fresh publication preflight, merge and release",
+      "blocker": "Actual lift/point-duty, landed positive guide and capture, rated anchors and surveyed access remain unqualified"
     }
   },
   "recoverySource": {
-    "leaseId": "562490e4-c15c-40e6-aab7-8c1e52270a07",
-    "generation": 17,
-    "branch": "work/zerg7-had-external-dock",
-    "pr": 1508,
+    "leaseId": "44eaf328-5bfb-4c01-88cf-e1eda540ea11",
+    "generation": 18,
+    "branch": "work/zerg8-had-lift-sill",
+    "pr": 1510,
     "checkpoint": {
-      "evidence": "PR #1508 exact 9943184a, tree 65913c55, packed width 1500 and aligned width 1600 source-bound",
-      "next": "Verify new exact-head CI and canonical publication preflight, merge and release",
-      "blocker": "Actual guarded rated receiving platform, substrate, anchors and loaded handoff remain unqualified"
+      "evidence": "PR #1510 combined exact 3d7842d1 and tree d4304783 on STR main bad94a02; 78 HAD, deterministic MRA/water-replan, whitespace pass",
+      "next": "Verify full combined exact-head CI, fresh publication preflight, merge and release",
+      "blocker": "Actual lift/point-duty, landed positive guide and capture, rated anchors and surveyed access remain unqualified"
     }
-  },
-  "pr": 1510,
-  "checkpoint": {
-    "evidence": "PR #1510 combined exact 3d7842d1 and tree d4304783 on STR main bad94a02; 78 HAD, deterministic MRA/water-replan, whitespace pass",
-    "next": "Verify full combined exact-head CI, fresh publication preflight, merge and release",
-    "blocker": "Actual lift/point-duty, landed positive guide and capture, rated anchors and surveyed access remain unqualified"
-  },
-  "releasedAt": "2026-11-14T10:36:14.511Z",
-  "releaseReason": "handoff"
+  }
 }
