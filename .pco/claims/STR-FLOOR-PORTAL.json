@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 19,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "4bad899e-a64c-4a2c-800e-8fe0102114f9",
   "holder": {
     "kind": "chatgpt",
     "label": "recover-str"
   },
   "claimedAt": "2026-11-14T11:08:49.010Z",
-  "heartbeatAt": "2026-11-14T11:22:49.996Z",
-  "expiresAt": "2026-11-14T12:07:49.996Z",
+  "heartbeatAt": "2026-11-14T11:38:41.164Z",
+  "expiresAt": "2026-11-14T11:38:41.164Z",
   "branch": "work/zerg8-str-guide-backing",
   "predecessor": {
     "leaseId": "47f1a7a8-9682-4305-8f11-4e1e79b2c5ac",
@@ -39,5 +39,7 @@
     "next": "Verify exact hosted CI, current-main preflight and expected-head merge, then release",
     "blocker": "Plate, backing and anchored radial confinement still require physical geometry and a new guide law"
   },
-  "pr": 1514
+  "pr": 1514,
+  "releasedAt": "2026-11-14T11:38:41.164Z",
+  "releaseReason": "handoff"
 }
