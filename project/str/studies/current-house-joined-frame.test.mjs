@@ -5,6 +5,10 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 const read = name => JSON.parse(readFileSync(new URL(name, import.meta.url), 'utf8'));
 const j = read('current-house-joined-foundation.json');
+test('The direct roof seat receipt reproduces its load and access comparisons', () => {
+  const source = fileURLToPath(new URL('./floor-portal-direct-seat.py', import.meta.url));
+  execFileSync('python3', ['-B', source, '--check']);
+});
 test('Each of the 52 signed-head states returns its actual source force and two first moments', () => {
   assert.equal(new Set(j.heads.map(h=>h.xy.join(','))).size,52);
   for (const [name, source] of Object.entries(j.named_source_totals)) {
