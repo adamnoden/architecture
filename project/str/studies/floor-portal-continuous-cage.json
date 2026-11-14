@@ -1,0 +1,81 @@
+{
+  "sourceSha256": {
+    "floor-portal-hoop-insertion.py": "3def48889cc26d679d5a827d21f98f744b6eb54be73fe4abfcb3c672a5fd866f",
+    "floor-portal-seat-detail.py": "c56399ccfc15b9eb8bf0779e252244a128f71531944d67f7b8412044a843ac3f",
+    "floor-portal-seat-detail.json": "57331cf8738d2f5ce76e59a763c30317a6781873c80beeb408684b1611de1dfc"
+  },
+  "inputs": {
+    "strokeMm": 420.0,
+    "trackingPivotZmm": 6355.0,
+    "sampleStepMm": 1.0,
+    "sharedRelativePlanAndHeightErrorMm": [
+      5.0,
+      5.0
+    ],
+    "insertionOrderZeroBasedH20": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "hoopLevelsMm": [
+      6355.0,
+      6394.0,
+      6433.0
+    ],
+    "fittingTopAtStartZmmBeforeToolAndLiftingMm": 6935.0,
+    "leadingEndAtSeatingMustReachAtOrBelowZmm": 5930.0,
+    "maximumPlanTranslationMm": 61.774106374311394,
+    "relativeDatumAllocationPerPiecePlanAndHeightMm": [
+      2.5,
+      2.5
+    ],
+    "seatedFittingTopBelowRoofSoffitMm": 25.0
+  },
+  "hoopFeedByRelativePlanAndHeightErrorMm": {
+    "5": {
+      "trackedClearanceLowerBoundMm": 4.261354452456331,
+      "trackedLimitingH20": 2,
+      "straightClearanceWitnessUpperBoundMm": -10.703750761847441
+    },
+    "10": {
+      "trackedClearanceLowerBoundMm": -1.0724376114310061,
+      "trackedLimitingH20": 2,
+      "straightClearanceWitnessUpperBoundMm": -15.703750761847441
+    }
+  },
+  "installedVerticalBarScreens": {
+    "H20PairLowerBoundMm": 11.775102677920884,
+    "H20Pair": [
+      7,
+      3
+    ],
+    "trialH12LowerBoundMm": 102.49339996564169,
+    "trialH12Pair": [
+      2,
+      "H12-1-600-42"
+    ]
+  },
+  "independentTopFittingEnvelope": {
+    "fittingEnvelopeDiameterMm": 42.0,
+    "fittingLengthMm": 48.0,
+    "seatedFittingBottomZmm": 6467.0,
+    "minimumVerticalGapAboveHighestHoopDuringFeedMm": 25.0,
+    "adjacentMovingAndInstalledFittingsLowerBoundMm": 18.261733055443898,
+    "limitingFittingPair": [
+      10,
+      9
+    ],
+    "movingShaftAgainstInstalledFittingLowerBoundMm": 21.236175974763952,
+    "maxSeatedRoundToolRadiusBeforeOtherFittingMm": 47.610461213064
+  },
+  "retainedSignedModelPeakSingleAnchorTensionKN": 8.584889282479105
+}
