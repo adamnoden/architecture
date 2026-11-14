@@ -9,8 +9,8 @@
     "label": "recover-str"
   },
   "claimedAt": "2026-11-14T00:08:00.653Z",
-  "heartbeatAt": "2026-11-14T00:36:44.928Z",
-  "expiresAt": "2026-11-14T01:21:44.928Z",
+  "heartbeatAt": "2026-11-14T00:50:17.477Z",
+  "expiresAt": "2026-11-14T01:35:17.477Z",
   "branch": "work/zerg7-str-continuous-cage",
   "predecessor": {
     "leaseId": "dcc361c6-85a7-4fa1-8b71-3216cdc2061d",
@@ -33,9 +33,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1509 exact 67494514990dba24edb04401e467c2f99497f74a incorporates HAD #1508; deterministic receipt and independent replay passed",
-    "next": "Watch exact CI, publication preflight, merge and release",
-    "blocker": "Bounded cage feed passes; actual coupon-to-seat and lower bar continuity are still open"
+    "evidence": "PR #1509 exact 67494514990dba24edb04401e467c2f99497f74a, independent replay matched; exact hosted run 43535319756 passed declaration and homepage",
+    "next": "Wait for exact CI, publication preflight, merge and release",
+    "blocker": "The study is bounded; actual coupon-to-seat, tool corridor and lower bar continuity are still open"
   },
   "pr": 1509
 }
