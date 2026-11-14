@@ -1,42 +1,39 @@
 {
   "schemaVersion": 1,
   "node": "IAS-WORKABLE-CONCEPT",
-  "generation": 2,
-  "state": "released",
-  "leaseId": "808403b7-7ef2-4b1c-96c6-99c330134a27",
+  "generation": 3,
+  "state": "claimed",
+  "leaseId": "fe42fc5d-135b-476a-8dcb-48731d862313",
   "holder": {
     "kind": "codex",
-    "label": "zerg10-ias-detailed"
+    "label": "zerg10-ias-spread"
   },
-  "claimedAt": "2026-11-14T18:20:40.065Z",
-  "heartbeatAt": "2026-11-14T18:52:05.520Z",
-  "expiresAt": "2026-11-14T18:52:05.520Z",
+  "claimedAt": "2026-11-14T18:53:11.530Z",
+  "heartbeatAt": "2026-11-14T18:53:11.530Z",
+  "expiresAt": "2026-11-14T20:23:11.530Z",
   "checkpoint": {
-    "evidence": "PR #1523 exact ad33bbc2 onto solver main 4306c722. Both dimensioned plates and deterministic receipt, CI 43627500797.",
-    "next": "On fresh exact green, canonical merge-check and expected-head merge, verify tree, and release IAS scope handoff."
+    "evidence": "Merged #1523 provides Study load and bridge; #1521 initial package",
+    "next": "Compare furnished dry and wet room appearance and actual-size representative junctions."
   },
-  "branch": "work/zerg10-ias-workable-release",
+  "branch": "work/zerg10-ias-room-assemblies",
   "predecessor": {
-    "leaseId": "f8115807-1954-4f27-b56c-9ca0d87c928b",
-    "generation": 1,
-    "branch": "work/zerg10-ias-workable-concept",
-    "pr": 1521,
+    "leaseId": "808403b7-7ef2-4b1c-96c6-99c330134a27",
+    "generation": 2,
+    "branch": "work/zerg10-ias-workable-release",
+    "pr": 1523,
     "checkpoint": {
-      "evidence": "PR #1521 current main 69108b20 exact head b6e2e4e2 and nine plates, receipt/repo integrity pass. CI 43623600690.",
-      "next": "On exact green, fresh canonical merge-check then expected-head merge and release for next concept tranche"
+      "evidence": "PR #1523 exact ad33bbc2 onto solver main 4306c722. Both dimensioned plates and deterministic receipt, CI 43627500797.",
+      "next": "On fresh exact green, canonical merge-check and expected-head merge, verify tree, and release IAS scope handoff."
     }
   },
   "recoverySource": {
-    "leaseId": "f8115807-1954-4f27-b56c-9ca0d87c928b",
-    "generation": 1,
-    "branch": "work/zerg10-ias-workable-concept",
-    "pr": 1521,
+    "leaseId": "808403b7-7ef2-4b1c-96c6-99c330134a27",
+    "generation": 2,
+    "branch": "work/zerg10-ias-workable-release",
+    "pr": 1523,
     "checkpoint": {
-      "evidence": "PR #1521 current main 69108b20 exact head b6e2e4e2 and nine plates, receipt/repo integrity pass. CI 43623600690.",
-      "next": "On exact green, fresh canonical merge-check then expected-head merge and release for next concept tranche"
+      "evidence": "PR #1523 exact ad33bbc2 onto solver main 4306c722. Both dimensioned plates and deterministic receipt, CI 43627500797.",
+      "next": "On fresh exact green, canonical merge-check and expected-head merge, verify tree, and release IAS scope handoff."
     }
-  },
-  "pr": 1523,
-  "releasedAt": "2026-11-14T18:52:05.520Z",
-  "releaseReason": "handoff"
+  }
 }
