@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 23,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "3890dbd9-d3d3-4dac-a372-c6416f295e29",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg12-section"
   },
   "claimedAt": "2026-11-14T21:51:37.206Z",
-  "heartbeatAt": "2026-11-14T22:21:08.967Z",
-  "expiresAt": "2026-11-14T23:51:08.967Z",
+  "heartbeatAt": "2026-11-14T22:34:42.082Z",
+  "expiresAt": "2026-11-14T22:34:42.082Z",
   "branch": "work/zerg12-heel-section",
   "predecessor": {
     "leaseId": "1e3dcaa6-06cc-4193-b4a4-2f0e9446de29",
@@ -36,5 +36,7 @@
     "evidence": "Corrected exact combined #1529 9664e887 / tree 59ee5971, HAD blobs unchanged, 89/89 and lobby SVG deterministic",
     "next": "Verify exact hosted CI and preflight, merge and release task lease"
   },
-  "pr": 1529
+  "pr": 1529,
+  "releasedAt": "2026-11-14T22:34:42.082Z",
+  "releaseReason": "handoff"
 }
