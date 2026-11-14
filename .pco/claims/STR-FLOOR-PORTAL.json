@@ -9,8 +9,8 @@
     "label": "recover-str"
   },
   "claimedAt": "2026-11-14T11:08:49.010Z",
-  "heartbeatAt": "2026-11-14T11:19:11.826Z",
-  "expiresAt": "2026-11-14T12:04:11.826Z",
+  "heartbeatAt": "2026-11-14T11:22:49.996Z",
+  "expiresAt": "2026-11-14T12:07:49.996Z",
   "branch": "work/zerg8-str-guide-backing",
   "predecessor": {
     "leaseId": "47f1a7a8-9682-4305-8f11-4e1e79b2c5ac",
@@ -35,8 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Frozen exact remote fbd6bd355a5af70276589e1197a0e077ae07055a; structural tests 9 passed and pinned travel replay matched",
-    "next": "Wait for #1513 main, then publish exact combined head and run full validation",
-    "blocker": "Backing cannot meet the pressure target under inherited loading without local force transfer redesign"
-  }
+    "evidence": "PR #1514 exact 7b394150ce44c54dea50a3491e6e880d74c4d2af includes HAD #1513; pinned travel replay and nine structural tests passed",
+    "next": "Verify exact hosted CI, current-main preflight and expected-head merge, then release",
+    "blocker": "Plate, backing and anchored radial confinement still require physical geometry and a new guide law"
+  },
+  "pr": 1514
 }
