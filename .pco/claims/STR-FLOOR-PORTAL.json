@@ -9,8 +9,8 @@
     "label": "recover-str"
   },
   "claimedAt": "2026-11-14T00:08:00.653Z",
-  "heartbeatAt": "2026-11-14T00:20:51.100Z",
-  "expiresAt": "2026-11-14T01:05:51.100Z",
+  "heartbeatAt": "2026-11-14T00:36:44.928Z",
+  "expiresAt": "2026-11-14T01:21:44.928Z",
   "branch": "work/zerg7-str-continuous-cage",
   "predecessor": {
     "leaseId": "dcc361c6-85a7-4fa1-8b71-3216cdc2061d",
@@ -33,8 +33,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Exact remote 1698093d41f750a350f535b367790ca01a040852, deterministic continuous-cage receipt and repository/readme checks passed",
-    "next": "Incorporate #1508 current main, open and validate the STR study, merge and release",
-    "blocker": "Bounded jig feed passes; coupon-to-seat and lower bar continuity need finite connection details"
-  }
+    "evidence": "PR #1509 exact 67494514990dba24edb04401e467c2f99497f74a incorporates HAD #1508; deterministic receipt and independent replay passed",
+    "next": "Watch exact CI, publication preflight, merge and release",
+    "blocker": "Bounded cage feed passes; actual coupon-to-seat and lower bar continuity are still open"
+  },
+  "pr": 1509
 }
