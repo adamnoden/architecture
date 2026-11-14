@@ -9,8 +9,8 @@
     "label": "recover-str"
   },
   "claimedAt": "2026-11-14T10:13:40.043Z",
-  "heartbeatAt": "2026-11-14T10:36:47.602Z",
-  "expiresAt": "2026-11-14T11:21:47.602Z",
+  "heartbeatAt": "2026-11-14T10:51:38.772Z",
+  "expiresAt": "2026-11-14T11:36:38.772Z",
   "branch": "work/zerg8-str-direct-seat",
   "predecessor": {
     "leaseId": "baf8146c-682b-4fc4-8476-0e524198ea3f",
@@ -36,8 +36,8 @@
   },
   "pr": 1512,
   "checkpoint": {
-    "evidence": "PR #1512 current-base head e74f4501adf35f21642c47203a6e8c8e455c8d99 includes HAD #1510; four STR source blobs unchanged and deterministic receipt passed",
-    "next": "Await exact hosted CI, then current-main preflight, merge, verify and release",
-    "blocker": "Direct-force route improves pin load but tool bridge, backing, core bearing and unloaded service restraint remain open"
+    "evidence": "PR #1512 exact current-base e74f4501adf35f21642c47203a6e8c8e455c8d99; focused structural suite and receipt passed; hosted 43586096935 passed lease and homepage",
+    "next": "Await exact full CI, current-main preflight and merge, then release",
+    "blocker": "Tool bridge, backing, bearing and unloaded service restraint are separate unresolved design duties"
   }
 }
