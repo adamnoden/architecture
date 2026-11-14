@@ -475,7 +475,7 @@ test('outdoor lift keeps emergency access and roof runoff outside the exchange d
   assert.equal(q.status,'DEVELOPMENT_NOT_ADOPTED');
   assert.deepEqual(q.service.upperFaceX,[13530,14230]);
   assert.equal(q.service.nominalParkToAccessMM,125);
-  assert.equal(q.service.gateSweepOverlapMM,700);
+  assert.equal(q.service.gateSweepPlanOverlapMM,700);
   assert.equal(q.service.shaftFlapClearZ,2424);
   assert.deepEqual(q.service.shaftTopZ,[2724,2924]);
   assert.deepEqual(q.service.assemblyCeilingZ,[3124,3424]);
@@ -483,6 +483,12 @@ test('outdoor lift keeps emergency access and roof runoff outside the exchange d
   assert.equal(q.service.sideFacingCabinetOccupiedWidthMM,910);
   assert.deepEqual(q.awningY,[3265,5235]);
   assert.equal(q.roofOverhangToDockSouthMM,135);
+  assert.deepEqual(q.gradeCabinet.cabinetX,[14620,15380]);
+  assert.deepEqual(q.gradeCabinet.cabinetAccessY,[5610,6310]);
+  assert.equal(q.gradeCabinet.shaftNorthGapMM,165);
+  assert.equal(q.gradeCabinet.bypassWidthMM,750);
+  assert.equal(q.gradeCabinet.cabinetApproachGapToCoverMM,375);
+  assert.deepEqual(q.gradeCabinet.bypassEastTurnX,[17870,18620]);
   assert(q.totalRunoffLS>0.545&&q.totalRunoffLS<0.546);
   assert.equal(q.iceOrDebrisCases[0].flowToSeparateOverflowLS,0.1182);
   assert(q.drainageCases[0].remainingToToeMM>2.89);

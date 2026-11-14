@@ -878,9 +878,10 @@ The [Lödige planning guide](https://www.lodige.co.uk/fileadmin/Downloads/doc-li
 locates the drive inspection and emergency release hatch over the upper
 door and calls for 700 mm clear depth. Keep X13530–14230 free at the
 upper face. The parked W9 leaves 125 mm before that reservation, but
-the plan sweep of the two leaves overlaps its full depth. Preserve a
-separate access and rescue sequence with verified gate positions,
-stable elevated working support and a protected retreat. The cited
+the two leaves have a plan projection across its full depth. The
+hatch is above the leaves. Verify interference at actual elevations and
+prove which gate position permits release and retreat. The rescue
+platform and its position remain design work. The cited
 door-flap clearance reference is Z+2424 on the trial Z−26 landing.
 Confirm the actual hatch and flap openings and handling swept height.
 Keep braces, gutters and weather screens clear of both.
@@ -889,7 +890,8 @@ The 2300 mm clear door gives Z+2724–2924 for the trial shaft top under
 the guide's two headroom allowances. A fixed roof spanning over the
 shaft needs an underside at Z+3124–3424 for the bounding assembly
 combinations, before separate roof framing. Alternatively leave the
-over-shaft area clear for installation and removal. A low fixed awning
+over-shaft area clear for installation and removal. Reserve the guide's
+site lifting hooks and prove their support and access independently. A low fixed awning
 can project only outside the confirmed assembly prism and still needs
 a proved service opening. The 760 × 760 × 210 mm ESCORTA cabinet needs
 700 × 760 mm clear in front. The aligned doorway leaves only 50 mm
@@ -900,6 +902,16 @@ protected cabinet position. The manufacturer allows a nearby wall
 within 10 m; verify its access, cable route, conditions and enclosure.
 The guide lists IP54 without a frequency converter and IP44 with one.
 Obtain the matched outdoor specification and rescue instructions.
+
+A north-facing remote cabinet on its own grade support spans
+X14620–15380 and Y5400–5610, 165 mm outside the trial shaft roof edge.
+Reserve Y5610–6310 for the cabinet face. A trial 750 mm side approach
+from the lower arrival occupies Y5610–6360, 375 mm beyond the roof
+edge, with a turn strip beginning 25 mm beyond the lower ramp toe
+at X17870. This reserves space to X18620 before confirming the
+approach from the ramp. It avoids the moving gate and upper cargo
+park in plan. Verify terrain, actual continuous crew access, support,
+protection and cabinet and cable clearances before adopting it.
 
 A 1970 mm wide roof, the 1790 mm shaft, a 1000 mm upper awning and
 a lower cover to the pitless ramp toe screen 9.09 m² of horizontal
@@ -915,7 +927,8 @@ collector raises the modeled level from 2.89 mm below the pan toe to
 4.09 mm above it. The same hydraulic screen reaches the toe with only
 0.837 m² extra effective catchment. This charges additional runoff
 without a shelter credit and preserves the existing MAT wet-face
-challenge. Give the roof its own runoff route. Provide a visible
+challenge. Give the roof its own runoff route, including around the grade cabinet
+and its approach. Provide a visible
 gravity overflow away from both landings, the pit, and the house
 threshold when a roof outlet blocks or freezes. The trial upper,
 shaft and lower roof areas each contribute 0.118, 0.212 and 0.216 L/s
