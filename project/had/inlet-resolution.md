@@ -872,6 +872,58 @@ permission. The [executable comparison](studies/incoming-water-lift-sill.mjs)
 tests these design requirements as a model. The actual gates, position sensing, positive restraint and
 loaded handover still require physical evidence.
 
+#### Outdoor drive access and separate roof drainage
+
+The [Lödige planning guide](https://www.lodige.co.uk/fileadmin/Downloads/doc-lift-e/Sherpa-Escorta/Planning-guide-Sherpa-Escorta-20210329-LUK_01.pdf)
+locates the drive inspection and emergency release hatch over the upper
+door and calls for 700 mm clear depth. Keep X13530–14230 free at the
+upper face. The parked W9 leaves 125 mm before that reservation, but
+the plan sweep of the two leaves overlaps its full depth. Preserve a
+separate access and rescue sequence with verified gate positions,
+stable elevated working support and a protected retreat. The cited
+door-flap clearance reference is Z+2424 on the trial Z−26 landing.
+Confirm the actual hatch and flap openings and handling swept height.
+Keep braces, gutters and weather screens clear of both.
+
+The 2300 mm clear door gives Z+2724–2924 for the trial shaft top under
+the guide's two headroom allowances. A fixed roof spanning over the
+shaft needs an underside at Z+3124–3424 for the bounding assembly
+combinations, before separate roof framing. Alternatively leave the
+over-shaft area clear for installation and removal. A low fixed awning
+can project only outside the confirmed assembly prism and still needs
+a proved service opening. The 760 × 760 × 210 mm ESCORTA cabinet needs
+700 × 760 mm clear in front. The aligned doorway leaves only 50 mm
+and 300 mm within the dock on its sides. It cannot take a 760 mm
+front-facing cabinet beside the opening. Rotating it introduces a
+910 mm cabinet and working depth across its face. Reserve a separate
+protected cabinet position. The manufacturer allows a nearby wall
+within 10 m; verify its access, cable route, conditions and enclosure.
+The guide lists IP54 without a frequency converter and IP44 with one.
+Obtain the matched outdoor specification and rescue instructions.
+
+A 1970 mm wide roof, the 1790 mm shaft, a 1000 mm upper awning and
+a lower cover to the pitless ramp toe screen 9.09 m² of horizontal
+catchment, or 0.545 L/s at the MAT test rate of 216 mm/h. The centred
+upper awning projects 135 mm south of the existing dock. Keep supporting
+legs out of the dock, shaft and moving gates, with independent support
+and site ground verified. A gutter or downpipe needs clear service access
+from a protected standing area and should remain outside both gate and
+crew fields. No roof area or support arrangement is selected.
+
+Adding just the upper awning's 0.118 L/s to the existing blocked-primary
+collector raises the modeled level from 2.89 mm below the pan toe to
+4.09 mm above it. The same hydraulic screen reaches the toe with only
+0.837 m² extra effective catchment. This charges additional runoff
+without a shelter credit and preserves the existing MAT wet-face
+challenge. Give the roof its own runoff route. Provide a visible
+gravity overflow away from both landings, the pit, and the house
+threshold when a roof outlet blocks or freezes. The trial upper,
+shaft and lower roof areas each contribute 0.118, 0.212 and 0.216 L/s
+in that check. Keep rain, meltwater and shedding ice out of the
+emergency standing area and the lower wheel path. Confirm actual
+receiver levels, drainage and frost conditions. [Reproduce the
+access and runoff comparisons](studies/incoming-water-lift-weather.mjs).
+
 #### Goods-only receiving lift
 
 A wider tandem arrangement does not automatically preserve the occupied

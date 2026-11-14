@@ -13,6 +13,7 @@ import {deriveReleaseSupport} from './incoming-water-release-support.mjs';
 import {deriveStandRetirement} from './incoming-water-stand-retirement.mjs';
 import {compareDryDockSupport} from './incoming-water-dock-support.mjs';
 import {compareLiftSill} from './incoming-water-lift-sill.mjs';
+import {compareLiftWeather} from './incoming-water-lift-weather.mjs';
 import {compareGoodsTransfer} from './incoming-water-goods-transfer.mjs';
 
 const study=deriveIncomingWaterStudy();
@@ -467,6 +468,27 @@ test('opposite lift doors preserve the short rise and the sill transfer requires
     'unknown bridge state cannot imply stowed','unknown gate cannot imply locked','sending restraint still attached',
     'landing restraint state unknown','unknown landing restraint cannot imply released'])
     assert(Object.values(permissions[name]).every(value=>!value));
+});
+
+test('outdoor lift keeps emergency access and roof runoff outside the exchange duties',()=>{
+  const q=compareLiftWeather();
+  assert.equal(q.status,'DEVELOPMENT_NOT_ADOPTED');
+  assert.deepEqual(q.service.upperFaceX,[13530,14230]);
+  assert.equal(q.service.nominalParkToAccessMM,125);
+  assert.equal(q.service.gateSweepOverlapMM,700);
+  assert.equal(q.service.shaftFlapClearZ,2424);
+  assert.deepEqual(q.service.shaftTopZ,[2724,2924]);
+  assert.deepEqual(q.service.assemblyCeilingZ,[3124,3424]);
+  assert.deepEqual(q.service.frontFacingCabinetFlanksMM,[50,300]);
+  assert.equal(q.service.sideFacingCabinetOccupiedWidthMM,910);
+  assert.deepEqual(q.awningY,[3265,5235]);
+  assert.equal(q.roofOverhangToDockSouthMM,135);
+  assert(q.totalRunoffLS>0.545&&q.totalRunoffLS<0.546);
+  assert.equal(q.iceOrDebrisCases[0].flowToSeparateOverflowLS,0.1182);
+  assert(q.drainageCases[0].remainingToToeMM>2.89);
+  assert(q.drainageCases[1].remainingToToeMM<-4.09);
+  assert(q.drainageCases[2].remainingToToeMM<-34.90);
+  assert(q.extraAreaAtToeM2>0.836&&q.extraAreaAtToeM2<0.837);
 });
 
 test('goods-only lift can reserve aligned cargo but fails ordinary closed-gate draw',()=>{
