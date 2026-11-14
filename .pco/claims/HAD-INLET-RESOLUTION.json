@@ -9,9 +9,9 @@
     "label": "zerg12-section"
   },
   "claimedAt": "2026-11-14T21:51:37.206Z",
-  "heartbeatAt": "2026-11-14T21:51:37.206Z",
-  "expiresAt": "2026-11-14T23:21:37.206Z",
-  "branch": "work/zerg12-had-lobby-drain",
+  "heartbeatAt": "2026-11-14T22:15:08.700Z",
+  "expiresAt": "2026-11-14T23:45:08.700Z",
+  "branch": "work/zerg12-heel-section",
   "predecessor": {
     "leaseId": "1e3dcaa6-06cc-4193-b4a4-2f0e9446de29",
     "generation": 22,
@@ -31,5 +31,9 @@
       "evidence": "PR #1527 exact 393fe1e tree ed62a97; source-bound first-wetting, isolation and drip-lap comparison; focused tests pass.",
       "next": "Wait exact full hosted CI, fresh preflight, expected-head merge and release."
     }
+  },
+  "checkpoint": {
+    "evidence": "Frozen HAD e5b1a197, full 89 HAD and exact lobby SVG, combined expected 494ffd57",
+    "next": "Bind shared PR after opening and verify exact combined CI"
   }
 }
