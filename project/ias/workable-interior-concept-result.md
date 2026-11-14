@@ -72,8 +72,22 @@ At the stair arrival keep the source 172.5 mm rise and 300 mm going. A raised 20
 
 These are proposed choices for the first visual review. They preserve the controlled current house, prior comparators and the later technical/product evidence that each selected family would require.
 
+## Dimensioned Study floor retention and release
+
+![Dimensioned 1:2 finish retention and 1:5 local Study transfer](studies/workable-study-release.svg)
+
+At the 400 mm pitch a 3 mm joint leaves a 397 mm square tile. The 18 mm timber trial leaves 2 mm for bedding within the selected 20 mm finish territory. A further 3 mm acoustic layer would overrun it by its full depth. A trial 13 mm socket envelope leaves 5 mm timber below it, before accounting for a pilot, splitting, repeated lifting or load transfer. Keep the flush 38 mm setback retainer distinct from the temporary 20 mm setback handling pickups. The drawing dimensions the interface. It is insufficient to specify or fabricate a threaded fitting.
+
+With two opposed 0.5 mm setting allowances and 0.5 mm edge growth on each tile, the joint retains 1 mm. At 1 mm growth per edge it closes on that same setting allowance. At 0.75 mm adverse setting per edge it overlaps by 0.5 mm. These are geometrical sensitivities. Actual finish moisture movement, fastener slots, pad compression, lipping, wear and binding must be measured. A 3 mm seam is a trial, with no claim that it stays clear through the year.
+
+For the handle trial, two 0.10 kg fittings make the actively supported package **2.19 kg timber** or **9.02 kg stone/steel** before larger tooling. A 1.5 handling factor gives **16.1 / 66.4 N** each under equal sharing, or **32.2 / 132.7 N** on one surviving pickup. The two near-edge pickups leave a pitch moment of **5.74 / 23.69 N·m** about their common axis. Use a positively arrested cradle or a rigid spread engaging a second pickup row **357 mm** away. The forward row lies about 781 mm from the trial shoulder in plan. It cannot be installed by leaning through the same posture and keeping all other assumptions. Prove a different setup and controlled first rest before claiming that one person can lift the tile.
+
+The low shoulder comparison gives 593 mm maximum reach to near-edge grips at initial release and 558 mm during transfer. The earlier Study door task's 555 mm is a useful scale reference for hand travel but carries no lifting force and gives no pass here. Use a short-height guided first pickup or explicitly model a closer/alternate stance and hand placement. The measured mock-up must establish retention and stable grip, finish edge behaviour and restoration, including jammed timber, a dropped fastener and loss of one pickup. Keep the underlying support and any protected boundary permanent at every state.
+
+Run `node project/ias/studies/workable-study-release.mjs --check` to reproduce the receipt and scaled A4 SVG. At actual-size output the 100 mm and 200 mm reference bars print at 50 mm and 40 mm respectively.
+
 ## Reproduction and next design material
 
 Run `node project/ias/studies/workable-study-floor.mjs --check`. The generator consumes the selected HAD service model and records its controlling geometry blob, never edits the house model, and renders the alternatives side by side. It checks exact source presence, the matching Study opening, panel-field geometry and the level arithmetic. Relative trim section proportions and elevation furniture heights are illustrative.
 
-The full early review package still needs whole-handler and first-rest clearances in the furnished dry rooms and at one wet transition, inhabited views of non-Study variants and the restrained Study alternative, dimensioned threshold, window reveal, ceiling and stair/landing sections, and representative 1:5 and 1:2 retention and renewal details with complete setup and test allowances. This first issue keeps those remaining drawings explicit and retains the one-page owner shortlist. The owner evidence and final approval stay in their separate manual gates.
+The full early review package still needs whole-handler and first-rest clearances in the furnished dry rooms and at one wet transition, inhabited views of non-Study variants and the restrained Study alternative, dimensioned threshold, window reveal, ceiling and stair/landing sections, and equivalent 1:5 and 1:2 coordination at the other representative assemblies. The Study sheet still requires a resolved loaded pickup and matched finishes. This first issue keeps those remaining drawings explicit and retains the one-page owner shortlist. The owner evidence and final approval stay in their separate manual gates.

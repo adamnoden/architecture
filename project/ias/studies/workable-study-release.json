@@ -1,0 +1,104 @@
+{
+  "status": "Partial geometric and handling-load comparison for a pre-site concept.",
+  "sourceSHA256": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593",
+  "panel": {
+    "pitch": 400,
+    "gap": 3,
+    "skin": 18,
+    "beddingTerritory": 2,
+    "nominalDensity": 700
+  },
+  "lift": {
+    "behindEdge": 20,
+    "offsetsFromCentre": [
+      -55,
+      55
+    ],
+    "gripHeight": 80,
+    "nominalHandHalfEnvelope": [
+      36,
+      24,
+      24
+    ],
+    "assumedShoulderZ": 480,
+    "trialToolLength": 115,
+    "toolKeepClearOverHead": 150,
+    "oneFittingMassKG": 0.1,
+    "handlingFactor": 1.5
+  },
+  "captured": {
+    "retentionAxisSetback": 38,
+    "countersinkTerritory": 3,
+    "embeddedSocketTerritory": 13,
+    "bottomReserve": 5,
+    "resilientLayerTrial": 3
+  },
+  "rest": {
+    "pad": 3,
+    "fullTileSupportRequired": true
+  },
+  "handledBodySide": 397,
+  "trailGripX": 3721.5,
+  "gripY": [
+    645,
+    755
+  ],
+  "packageMass": [
+    {
+      "finish": "18 mm timber",
+      "faceMassKG": 1.9858734,
+      "handlingMassKG": 2.1858734,
+      "sharedLoadEachN": 16.0825635405,
+      "oneFittingFaultN": 32.165127081,
+      "oneEdgeOverturningNm": 5.7414751839585
+    },
+    {
+      "finish": "12 mm stone + 3 mm steel",
+      "faceMassKG": 8.81822355,
+      "handlingMassKG": 9.01822355,
+      "sharedLoadEachN": 66.351579769125,
+      "oneFittingFaultN": 132.70315953825,
+      "oneEdgeOverturningNm": 23.687513977577623
+    }
+  ],
+  "maximumHorizontalReach": 438.2490730167036,
+  "modeledReachByState": {
+    "initialDetach": 593.348337825261,
+    "carry": 557.7519610005867,
+    "rest": 591.330068574227
+  },
+  "seamCases": [
+    {
+      "name": "Opposing ±0.5 mm accumulated setting and 0.5 mm growth per edge",
+      "residual": 1
+    },
+    {
+      "name": "Opposing ±0.5 mm accumulated setting and 1.0 mm growth per edge",
+      "residual": 0
+    },
+    {
+      "name": "Opposing ±0.75 mm accumulated setting and 1.0 mm growth per edge",
+      "residual": -0.5
+    }
+  ],
+  "rigidSpread": {
+    "frontPickupFromTrailingEdge": 377,
+    "restrainedPitchingRequiresBothRows": true,
+    "rowSeparation": 357,
+    "developedReachToForwardRowMM": 781.2088389156896,
+    "staticRowSharePerSideN": [
+      16.0825635405,
+      66.351579769125
+    ],
+    "threeMillimetreResilientLayerOverrun": 3
+  },
+  "adverse": {
+    "uncoveredStructuralOpeningUnderPiece": 0,
+    "recessDepthDuringExchangedState": 20,
+    "remainingMaterialBelowFasteningPilotBeforeFactoring": 5,
+    "freeFinishDepth": 0,
+    "gripPlanGapToBody": 85.5,
+    "fullTransferNeedsProtectedRoom": true
+  },
+  "hold": "The two grips are on one edge. The loaded piece requires a restrained upper pickup spread or guided cradle before lift and transfer can be adopted. Trial mass, hand envelopes, scale and deflections do not establish human forces, material behaviour, screw/insert capacity, support performance, water or fire admission."
+}
