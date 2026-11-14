@@ -802,10 +802,13 @@ rail post is 439 mm off the nearest foundation line. Do not use the
 single-tube result as whole-platform stiffness.
 
 At X14230 the independent guarded receiving lift must match **Z−26**
-and the **1774 mm** comparison rise from grade. Allow a clear working
-deck of at least **1300 × 1500 mm** across the compared cargo and
-south crew envelopes, with actual gate, tread, stop and restraint
-outside those allowances. The 1:80 fall produces about 29 N gravity
+and the **1774 mm** comparison rise from grade. The packed cargo and
+crew envelopes require **1300 × 1500 mm** clear, including two 25 mm
+side allowances. Keeping the existing Y3775 crew centre and the
+northmost Y5025 cargo edge through a straight transfer instead needs
+**1300 × 1600 mm** clear, from Y3450 to Y5050. A narrower lift would
+need a separate repositioning and restraint proof. Keep the actual
+gate, tread, stop and restraint outside the clear working area. The 1:80 fall produces about 29 N gravity
 drive for the coarse 234 kg mass. A 15 mm square step at the same
 point load would need about **2.13 kN** ideal axle force. Require
 a positively held, level-adjusted and retained transition instead of

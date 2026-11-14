@@ -317,7 +317,10 @@ test('the intact stand clears only the high-lift sequence and requires positive 
   assert.equal(dock.status,'DEVELOPMENT_NOT_ADOPTED');
   assert.equal(dock.gradeRiseMM,1774);
   assert.equal(dock.receivingLiftAtLevelMM,-26);
-  assert.equal(dock.largestLiftClearWidthMM,1500);
+  assert.equal(dock.packedLiftClearWidthMM,1500);
+  assert.equal(dock.alignedLiftClearWidthMM,1600);
+  assert.deepEqual(dock.alignedLiftClearY,[3450,5050]);
+  assert.deepEqual(dock.receiverInterface.straightThroughClearPlanMM,[1300,1600]);
   assert.equal(dock.largestLiftClearLengthMM,1300);
   assert(dock.cargoCases.every(({scaffoldIntersects})=>scaffoldIntersects));
   assert(dock.crewByCargo.every(row=>row.wheelToCrewMinimumMM>=75&&row.secondSideCrewAvailableMM<0));

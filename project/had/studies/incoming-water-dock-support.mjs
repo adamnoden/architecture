@@ -48,9 +48,14 @@ export function compareDryDockSupport(stand){
   const deckEndTransferX=east-25;
   const receivingLiftAtLevelMM=dock.outerEdgeZ;
   const liftInterface=cargoCases.map(({item,rectangle:[,,length,width]})=>({item,length,width,
-    minimumOccupiedClearWidthMM:width+2*crewRadiusMM+2*25,
+    packedOccupiedClearWidthMM:width+2*crewRadiusMM+2*25,
     minimumClearLengthMM:length+2*25}));
-  const largestLiftClearWidthMM=Math.max(...liftInterface.map(row=>row.minimumOccupiedClearWidthMM));
+  const packedLiftClearWidthMM=Math.max(...liftInterface.map(row=>row.packedOccupiedClearWidthMM));
+  const alignedLiftClearY=[
+    Math.min(operatorY-crewRadiusMM,...cargo.map(row=>row.fullY[0]))-25,
+    Math.max(operatorY+crewRadiusMM,...cargo.map(row=>row.fullY[1]))+25,
+  ];
+  const alignedLiftClearWidthMM=alignedLiftClearY[1]-alignedLiftClearY[0];
   const largestLiftClearLengthMM=Math.max(...liftInterface.map(row=>row.minimumClearLengthMM));
   const crewByCargo=cargoCases.map(({item,rectangle})=>({item,
     wheelToCrewMinimumMM:rectangle[1]-operatorY-crewRadiusMM,
@@ -104,7 +109,8 @@ export function compareDryDockSupport(stand){
   const hypothetical15MMStepN=plateComparison.squareStepForceFractionOfWheelReaction*wheelN;
   const [outsideBearingStart,outsideBearingEnd]=section.bearingX[1];
   const receiverInterface={outsideBearingX:[outsideBearingStart,outsideBearingEnd],
-    deckEndX:east,minimumClearPlanMM:[largestLiftClearLengthMM,largestLiftClearWidthMM],raisedDeckZ:receivingLiftAtLevelMM,
+    deckEndX:east,packedMinimumPlanMM:[largestLiftClearLengthMM,packedLiftClearWidthMM],
+    straightThroughClearPlanMM:[largestLiftClearLengthMM,alignedLiftClearWidthMM],alignedLiftClearY,raisedDeckZ:receivingLiftAtLevelMM,
     loadCasesN:{wheeledOnly:wheelN,occupiedWheel:wheelN+operatorMassKG*9.81},
     hold:'The coarse single-wheel comparison and one 100 kg operator are sizing cases. Select the actual guarded platform, restraints, point and distributed loads, travel and handover interlocks before use.'};
   const cargoControl={gradeHoldN,hypothetical15MMStepN,
@@ -129,7 +135,7 @@ export function compareDryDockSupport(stand){
   assert(ledgeProjection.every(x=>x<feet[0].xy[0]-padHalf));
   const edgeSpanMM=x0-shelfX;
   const gradeRiseMM=dock.outerTransferRise;
-  return {operatorMassKG,operatorY,deckEndTransferX,receivingLiftAtLevelMM,liftInterface,largestLiftClearWidthMM,
+  return {operatorMassKG,operatorY,deckEndTransferX,receivingLiftAtLevelMM,liftInterface,packedLiftClearWidthMM,alignedLiftClearY,alignedLiftClearWidthMM,
     largestLiftClearLengthMM,receiverInterface,crewByCargo,standRestToScaffoldMM,standRestToCargoMM,cargoControl,
     rigidFloorContrast,ballastFootDemandN,preloadedCompressionN,status:'DEVELOPMENT_NOT_ADOPTED',feet,shelfX,edgeSpanMM,cargoCases,cases,complete,
     wheels:extrema(cases.filter(row=>row.item!=='captured stand')),
