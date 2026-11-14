@@ -823,9 +823,10 @@ in place.
 
 The [Lödige ESCORTA planning guide](https://www.lodige.co.uk/fileadmin/Downloads/doc-lift-e/Sherpa-Escorta/Planning-guide-Sherpa-Escorta-20210329-LUK_01.pdf)
 provides a comparison for a trained attendant with opposite entries.
-A 2300 mm clear door on the 1774 mm rise fails its front-only travel
-criterion by 826 mm. Opposite entries meet the stated 450 mm minimum
-travel. Retain the 1600 mm aligned clear width. A 1650 mm cabin depth
+A 2300 mm clear door on the 1774 mm flush-pit stroke fails the
+front-only travel criterion by 826 mm. With a 70 mm raised lower
+ramp, stroke falls to 1704 mm and the shortfall grows to 896 mm.
+Opposite entries meet the stated 450 mm minimum travel in both cases. Retain the 1600 mm aligned clear width. A 1650 mm cabin depth
 keeps 1300 mm after reserving the guide’s 175 mm allowance at each
 end. That is a conservative two-end allowance. Confirm the available
 paired stop option and its actual dimensions. The guide allowances give a 1970 × 1790 mm shaft. A 70 mm pit

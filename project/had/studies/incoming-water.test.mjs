@@ -440,8 +440,10 @@ test('opposite lift doors preserve the short rise and the sill transfer requires
   assert.equal(result.status,'DEVELOPMENT_NOT_ADOPTED');
   assert.deepEqual(result.clearY,[3450,5050]);
   assert.equal(result.minimumCabinWorkingDepthMM,1300);
-  assert.equal(result.frontOnlyTravelShortfallMM,826);
-  assert.equal(result.throughTravelReserveMM,1324);
+  assert.deepEqual(result.travelByLowerLanding,[
+    {kind:'flush pit',travelMM:1774,frontOnlyShortfallMM:826,throughReserveMM:1324},
+    {kind:'raised ramp',travelMM:1704,frontOnlyShortfallMM:896,throughReserveMM:1254},
+  ]);
   assert.equal(result.gateSwingMarginMM,25);
   assert.deepEqual(result.lowerLanding,{clearY:[3450,5050],clearWidthMM:1600,levelRunMM:825});
   assert.equal(result.lowerRampEastX,17845);

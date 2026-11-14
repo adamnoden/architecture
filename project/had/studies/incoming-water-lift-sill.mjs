@@ -67,7 +67,13 @@ export function compareLiftSill(){
   const lowerLevelLandingRunMM=gateSweepReachMM+25;
   const lowerLanding={clearY,clearWidthMM,levelRunMM:lowerLevelLandingRunMM};
   const lowerRampEastX=shaftEastX+lowerLevelLandingRunMM+lodigePlanning.stockRampRunMM;
-  const frontOnlyTravelShortfallMM=clearDoorHeightMM+lodigePlanning.frontOnlyExtraTravelMM-dock.outerTransferRise;
+  const travelByLowerLanding=[
+    ['flush pit',dock.outerTransferRise],
+    ['raised ramp',dock.outerTransferRise-lodigePlanning.lowerPitOrRampMM],
+  ].map(([kind,travelMM])=>({kind,travelMM,
+    frontOnlyShortfallMM:clearDoorHeightMM+lodigePlanning.frontOnlyExtraTravelMM-travelMM,
+    throughReserveMM:travelMM-lodigePlanning.throughMinTravelMM,
+  }));
   const approachGravityN=plateComparison.coarseMassKg*9.81*lodigePlanning.lowerPitOrRampMM/
     Math.hypot(lodigePlanning.stockRampRunMM,lodigePlanning.lowerPitOrRampMM);
   const axleEquivalentMassKG=wheelN/(9.81*lodigePlanning.edgeLoadFraction);
@@ -100,7 +106,7 @@ export function compareLiftSill(){
     !(p.releaseDockCapture&&p.releaseCarCapture)));
   return {status:'DEVELOPMENT_NOT_ADOPTED',lodigePlanning,clearY,operatorLaneY,minimumCabinWorkingDepthMM,
     shaftWidthMM,shaftDepthMM,shaftEastX,gateSweepWestX,gateSwingMarginMM,lowerLevelLandingRunMM,lowerRampEastX,
-    frontOnlyTravelShortfallMM,throughTravelReserveMM:dock.outerTransferRise-lodigePlanning.throughMinTravelMM,
+    travelByLowerLanding,
     approachGravityN,axleEquivalentMassKG,strip,challenges};
 }
 
