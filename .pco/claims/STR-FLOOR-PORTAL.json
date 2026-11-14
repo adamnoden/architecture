@@ -9,8 +9,8 @@
     "label": "recover-str"
   },
   "claimedAt": "2026-11-14T11:08:49.010Z",
-  "heartbeatAt": "2026-11-14T11:08:49.010Z",
-  "expiresAt": "2026-11-14T11:53:49.010Z",
+  "heartbeatAt": "2026-11-14T11:19:11.826Z",
+  "expiresAt": "2026-11-14T12:04:11.826Z",
   "branch": "work/zerg8-str-guide-backing",
   "predecessor": {
     "leaseId": "47f1a7a8-9682-4305-8f11-4e1e79b2c5ac",
@@ -33,5 +33,10 @@
       "next": "Await exact full CI, current-main preflight and merge, then release",
       "blocker": "Tool bridge, backing, bearing and unloaded service restraint are separate unresolved design duties"
     }
+  },
+  "checkpoint": {
+    "evidence": "Frozen exact remote fbd6bd355a5af70276589e1197a0e077ae07055a; structural tests 9 passed and pinned travel replay matched",
+    "next": "Wait for #1513 main, then publish exact combined head and run full validation",
+    "blocker": "Backing cannot meet the pressure target under inherited loading without local force transfer redesign"
   }
 }
