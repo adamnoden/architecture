@@ -1,0 +1,217 @@
+{
+  "sourceSha256": {
+    "floor-portal-continuous-cage.json": "abc1682862eaafa898b7426f2dc241dd4512e64974ca380e898e19cfa66fc372",
+    "floor-portal-ring-access.json": "7020bb2d0c6e8c38f409487122b152e7ea7544ed4f0534c663dd40410ee3af14",
+    "floor-portal-seat-detail.json": "57331cf8738d2f5ce76e59a763c30317a6781873c80beeb408684b1611de1dfc",
+    "current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+    "ordinary-eave-joined.json": "33bc25fb6251d20f9e744bae95f030e4f48fdbececce1452ac32124fac7f2c5f",
+    "floor-portal-captive-seat.py": "7b09c285cb430fd471df1a5a81731ca9115e882d0656b0416923aba58bd9ed86"
+  },
+  "sourceAnchorWitness": {
+    "case": "zero favourable G; U; W(4, 1);court=True;goodsZ=6000",
+    "anchor": "L-cap-anchor-(11667.5, 11667.5)-11",
+    "tensionN": 8584.889282479106
+  },
+  "directPath": {
+    "anchorQmm": 338.5,
+    "fittingExtentQmm": [
+      317.5,
+      359.5
+    ],
+    "clearTunnelQmm": [
+      312.5,
+      364.5
+    ],
+    "clearRingInteriorZmm": [
+      6560,
+      6640
+    ],
+    "pinAxisZmm": 6600.0,
+    "directPinVerticalReactionKN": 8.584889282479105,
+    "directPin": {
+      "midspanMomentNmm": 36485.779450536196,
+      "elasticBendingStressMPa": 90.73268987677395,
+      "meanShearPerPlaneMPa": 21.348868206299755,
+      "elasticEquivalentStressScreenMPa": 97.97828092666613,
+      "eyeAverageBearingMPa": 53.65555801549441,
+      "eachEarAverageBearingMPa": 33.534723759684006
+    },
+    "localSectionTorqueAtInheritedAnchorLineKNm": 0.05150933569487463,
+    "trialBridgeWidthDepthSpanMm": [
+      40.0,
+      20.0,
+      72.0
+    ],
+    "bridgeGrossElasticBendingMPa": 57.94800265673396,
+    "bridgeElasticMidspanDeflectionMm": 0.012516768573854536,
+    "verticalReactionEachWebKN": 4.292444641239553
+  },
+  "torsionAndBearing": {
+    "existingTorsionConstantMm4": 53333333.333333336,
+    "separateCells": [
+      {
+        "permanentWebMm": 12.0,
+        "cellMedianWidthsMm": [
+          74.0,
+          62.0
+        ],
+        "torsionConstantMm4": 18436302.580029193,
+        "cellTorquesKNm": [
+          5.730341091561569,
+          4.26965890843843
+        ],
+        "cellShearFlowsNPerMm": [
+          387.1852088892952,
+          344.32733132567984
+        ],
+        "innerWebShearStressMPa": [
+          32.26543407410794,
+          28.693944277139988
+        ]
+      },
+      {
+        "permanentWebMm": 20.0,
+        "cellMedianWidthsMm": [
+          70.0,
+          58.0
+        ],
+        "torsionConstantMm4": 20045867.460908413,
+        "cellTorquesKNm": [
+          5.751515511708071,
+          4.248484488291929
+        ],
+        "cellShearFlowsNPerMm": [
+          410.82253655057644,
+          366.24866278378704
+        ],
+        "innerWebShearStressMPa": [
+          20.54112682752882,
+          18.312433139189352
+        ]
+      },
+      {
+        "permanentWebMm": 30.0,
+        "cellMedianWidthsMm": [
+          65.0,
+          53.0
+        ],
+        "torsionConstantMm4": 19634823.21914233,
+        "cellTorquesKNm": [
+          5.802577542872301,
+          4.197422457127698
+        ],
+        "cellShearFlowsNPerMm": [
+          446.35211868248473,
+          395.98325067242433
+        ],
+        "innerWebShearStressMPa": [
+          14.878403956082824,
+          13.19944168908081
+        ]
+      },
+      {
+        "permanentWebMm": 40.0,
+        "cellMedianWidthsMm": [
+          60.0,
+          48.0
+        ],
+        "torsionConstantMm4": 18159349.593495935,
+        "cellTorquesKNm": [
+          5.873925501432664,
+          4.126074498567335
+        ],
+        "cellShearFlowsNPerMm": [
+          489.49379178605534,
+          429.7994269340974
+        ],
+        "innerWebShearStressMPa": [
+          12.237344794651383,
+          10.744985673352435
+        ]
+      }
+    ],
+    "selectedTorsionFraction": 0.37586001489203275,
+    "minimumAccessLengthAdditionalEquivalentIntactMm": 136.16632988628712,
+    "coreWidthAndNominalResidualToeWidthsMm": [
+      140.0,
+      50.0,
+      38.0
+    ],
+    "residualToeWidthsAfterTwoFiveMmSettingsMm": [
+      40.0,
+      28.0
+    ],
+    "minimumRemovedCoreBearingAreaMm2": 4264.0,
+    "grossNetStripAveragePressureMultiplier": 1.5909090909090908
+  },
+  "access": {
+    "forkBodyAndPullRunwayMm": [
+      30.0,
+      36.0,
+      42.0
+    ],
+    "localTunnelStationRangeMm": [
+      917.0,
+      999.0
+    ],
+    "requiredMinimumTunnelLengthMm": 82.0,
+    "oppositeDrawReachAndAdjacentForkEndMm": [
+      875.0,
+      897.0
+    ],
+    "endDrawFromCornerBlockedByCassetteAtDistanceMm": 150.0,
+    "localRangeFromCornerMm": [
+      847.0,
+      929.0
+    ],
+    "nextHeelCentreFromCornerMm": 2267.5,
+    "remainingVerticalSpaceBetweenCapAndSoffitMm": 25.0,
+    "underSoffitToolDiameterIncludingSettingMm": 56.0,
+    "underSoffitStraightToolShortfallMm": 31.0,
+    "toolRadiusExcessOverClearTunnelHalfWidthMm": 2.0,
+    "widenedEndMouthTrial": {
+      "clearTunnelQmm": [
+        310.5,
+        366.5
+      ],
+      "mouthCentreAndEndStationMm": [
+        1038.0,
+        1066.0
+      ],
+      "idealToolHeadStrokeAlongStationMm": 101.0,
+      "minimumTunnelLengthThroughEndMouthMm": 149.0,
+      "sphereNominalClearanceToCoreEndMm": 10.0,
+      "sphereClearanceToCoreEndAfterIndependentCoreSettingMm": 5.0,
+      "sphereClearanceToUpperAndLowerInteriorFacesAtDrawMm": [
+        12.0,
+        12.0
+      ],
+      "bridgeSoffitIfLocatedDirectlyUnderUpperSkinZmm": 6620.0,
+      "toolHeadOverlapWithUnrelievedBridgeMm": 8.0,
+      "loweredPinAxisAtBridgeTangentZmm": 6592.0,
+      "loweredHousingClearanceAboveInteriorFloorMm": 18.0,
+      "loweredFullHeadClearanceAboveInteriorFloorMm": 4.0,
+      "remainingToeWidthsAfterSettingsMm": [
+        38.0,
+        26.0
+      ],
+      "minimumRemovedCoreBearingAreaMm2": 4648.0,
+      "grossNetStripAveragePressureMultiplier": 1.6666666666666667,
+      "torsionFraction": 0.35719780219780217,
+      "cellMedianWidthsMm": [
+        68.0,
+        56.0
+      ],
+      "cellShearFlowsNPerMm": [
+        424.9346254422396,
+        376.8650976772804
+      ],
+      "minimumAdditionalEquivalentIntactLengthMm": 268.1358252576527,
+      "coreEndAndLocalToolTunnelEndBeforeSettingMm": [
+        1000.0,
+        1066.0
+      ],
+      "onlySweepsAnIdealizedToolHead": true
+    }
+  }
+}
