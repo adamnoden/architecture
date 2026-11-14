@@ -50,7 +50,7 @@ The canonical execution DAG is [project control](control/graph.md). This table e
 | Final synthesis | MRA-05 checks post-BCR moisture consequences; HRS-SYNTHESIS reconciles the final house, technical applicability, Part VI and PLT handoffs. |
 | Publication | Final PLT integration/freeze → renewed EDA → PUB-02 final content/manufacture gate. Content-independent object preparation may continue separately. |
 
-Targeted PHY / EPR / DEL obligations are admitted only where the selected design, MRA or BCR earns a concrete evidence need. Self-service preparation and evidence processing remain distinct from manual competent reviews, physical tests and external commitments.
+Targeted PHY / EPR / DEL obligations are admitted only where the selected design, MRA or BCR earns a concrete evidence need. Self-service preparation and evidence processing remain distinct from manual competent reviews, physical tests and external commitments. **For the pre-site book, neither `EPR-RH11` nor `EPR-BAY-REVIEW` is a hard dependency of HRS, PLT, EDA or PUB-02.** Preserve these later professional-evidence routes, but where a proposed publication claim exceeds internal proof, qualify, narrow, reject or remove the claim instead of introducing an indiscriminate review gate. Actual book/plate output inspection, source coherence and the owner print/manufacture decisions remain applicable.
 
 ## Project-control overlay
 
