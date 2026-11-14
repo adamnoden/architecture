@@ -106,3 +106,14 @@ jobs:
             --files=compiler.cf \
             --files=compiler.ch \
             --files=compiler.h1
+
+      - name: Fingerprint validated publication PDFs
+        run: node scripts/publication-review-manifest.mjs "$RUNNER_TEMP/publication-review-manifest.json"
+
+      - name: Retain publication review manifest
+        uses: actions/upload-artifact@v6
+        with:
+          name: publication-review-manifest
+          path: ${{ runner.temp }}/publication-review-manifest.json
+          if-no-files-found: error
+          retention-days: 7

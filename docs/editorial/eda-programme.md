@@ -364,6 +364,8 @@ Use fresh reviewer contexts or deliberately segregated evidence packets so criti
 
 An unperformed test may remain a clearly identified proposal where the admitted research-publication scope permits it; it may not be narrated as a passed demonstration. A material source contradiction or missing required result returns to the owning workstream. Qualification cannot substitute for resolution, and EDA must not create new physical or professional proof work merely to make the book appear complete.
 
+The [PR validation workflow](../../.github/workflows/validate-pr.yml) retains a short-lived `publication-review-manifest` for its checked Working Edition and Primer. It records the PR head, base and actual render checkout, plus each PDF’s SHA-256, byte length, checked page count and paper format. Match a review copy to its fingerprint, or record the identity of the separately verified rendering actually inspected. The PR artifact carries only the manifest.
+
 Closeout records the exact reviewed source/object identities, findings and dispositions, final typeset inspection and remaining admitted limits. A later material change to accepted geometry, scale, placement, fold interaction or graphic hierarchy reopens the affected PLT proof before manufacture. Earlier EDA evidence is not rewritten, and the manual PUB-02 final gate remains intact.
 
 
