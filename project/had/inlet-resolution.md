@@ -872,6 +872,103 @@ permission. The [executable comparison](studies/incoming-water-lift-sill.mjs)
 tests these design requirements as a model. The actual gates, position sensing, positive restraint and
 loaded handover still require physical evidence.
 
+#### Goods-only receiving lift
+
+A wider tandem arrangement does not automatically preserve the occupied
+route. The [Aritco 1000 × 1980 AC drawing](https://www.aritco.com/wp-content/uploads/2023/12/1000x1980-AC.pdf)
+gives 900 mm clear opposite doors. The platform figures include the safety
+list. A 600 mm attendant and the W9 require 1925 mm length after charging
+25 mm at each end and between them. The 1980 mm platform leaves 55 mm
+before controls, safety list and real handling. The documented
+[1100 × 1480 outdoor variant](https://gartec.com/wp-content/uploads/2025/12/Artico-PublicLift-Access-Brochure-2025.pdf)
+falls short by 445 mm. An 850 mm cylinder envelope consumes all 900 mm
+after two 25 mm allowances. The two cylinder alignments therefore need
+different door centre lines or separate repositioning. The Aritco
+long-deck drawing, outdoor equipment and concentrated wheel duty
+need a matched offer.
+
+Use the [EdmoLift TBD 2000](https://www.edmolift.com/en/lift-tables-and-lifting-solutions/lift-tables-vertical-double-o-triple-scissors/tbd-2000)
+as a cargo-only reference with no crew on the moving car. The stock
+1500 × 1000 mm table, article 611320, has 1800 mm nominal stroke and
+360 mm closed height. Continue the cargo lines to a centred park at
+X14980. The W9 leaves 125 mm each end before gates, which leaves 100 mm
+after a 25 mm local reserve. The unchanged cargo lines need a 925 mm
+clear opening from Y4125 to Y5050. Two 30 mm guard intrusions leave a
+15 mm total reserve. Two 40 mm intrusions fail by 5 mm. Bind actual
+gate and edge occupancy with the [manufacturer drawing](https://www.edmolift.com/custom/images/products/TBD_2000/TBD_2000_2022-05-27_1054.pdf).
+
+A 360 mm recess gives the 1774 mm flush-grade stroke with 26 mm
+nominal reserve. With 180 mm recess, the lower deck sits 180 mm
+above trial grade and needs 3600 mm run at the illustrative 1:20
+approach. A surface-mounted unit sits 360 mm above grade and needs
+7200 mm. Starting with the 650 mm level worker station beyond the
+lower gate, those three comparators end at X16380, X19980 and
+X23580 respectively, before bottom arrival space. Assess drainage,
+maintenance access, protection below the car, construction and
+substrate for the actual choice. The 2000 kg nominal model rating
+does not give an admissible concentrated wheel load. The source's
+[general load cases](https://www.edmolift.com/custom/files/17BF7264A0AFFA9A54F843794D3B5B94.pdf)
+describe distributed patterns, and the 3.443 kN point load and actual
+edge load require an equipment-specific check.
+
+Keep one operator on each fixed landing. A line on the common lift
+centre is 812.5 mm across the existing south crew lane. A 620 mm TU8
+lever length cannot by itself establish an operable stance. The
+[Tractel Minifor TR30](https://www.tractel.com/PIM/Technical%20Data%20Sheets/LH/minifor/TR/TR10-30-Radio%20-%20Reeler/FT_T3730_TR10TR30_ENROULEUR_ENFR_IND00.pdf)
+offers a powered draw comparator. Its
+[series literature](https://www.tractel.com/PIM/TBN_products/Price-list-pdf/Prijslijst_TBN_ENG_jul_2021.pdf)
+lists multidirectional pulling and a 2.5 m pendant lead. The straight
+plan from the trial upper and lower drives to their fixed stances
+needs up to 1.06 m. This leaves 1.44 m before routing and vertical
+allowances. A remote draw needs actual hardware, visibility, operating
+speed/overrun and a fail-hold return. A fixed upper drive cannot pull
+an outbound car towards itself from behind. The outbound lead needs a
+qualified forward redirect or a positively engaged pusher, with its
+reaction carried into the landed car and independent restraint. Keep
+a distinct unloading line at the lower landing. Do not take either
+reaction through an ordinary gate or temporary sheet. An 80 mm internal
+redirect reservation on the W9 park leaves only **20 mm** for the
+connector after setting. A direct exterior line over a 1100 mm closed
+far gate, from a 150 mm low eye and with a trial redirect 700 mm beyond
+the gate, would require a 6585 mm redirect height. That line would
+produce **6.80 kN uplift** and need **6.85 kN tension** for the modeled
+horizontal draw. Reject that arrangement and carry forward a low
+captured pusher or a rated positive redirect through a purpose-designed
+guard interface.
+
+A fixed rear push/pull head has 450 mm minimum extension at the upper
+sill, but reaching from the protected pre-stage to the fully parked
+cargo needs **1725 mm** total stroke. The
+[Tsubaki catalogue](https://tt-net.tsubakimoto.co.jp/lib/catalog/C_SAD_ZCA_EN/book/data/all_page.pdf)
+lists the ZCA45N150 at 1500 mm/2 kN, so it misses the travel by 225 mm.
+The ZCA45N200 gives 2000 mm stroke and 1.2 kN open or 0.9 kN with
+bellows. The latter leaves 29 N against the upper operating comparison
+and falls short by 57 N on the lower ramp. These margins give no credit
+for friction, impact or duty. The
+[manufacturer's manual](https://tt-net.tsubakimoto.co.jp/lib/manual/M_ZCA_EN/book/data/all_page.pdf)
+requires a dry, non-condensing indoor environment even for the stocked
+family. Reject an exposed unit and do not treat bellows as outdoor
+approval. A protected or separately rated drive still needs the
+manufacturer's linear guide in the travel direction. Preserve
+positive support across the locked transfer and withdraw the guide
+from the shaft before travel. Actual guide continuity, restraint under
+power loss, motor, guards, anchorage and enclosure remain to qualify.
+
+Separate the draw sensitivity, **0.871 kN** across the dock sill or
+**0.957 kN** with the 1:20 lower recovery challenge, from the actual
+rated anchorage. The TR30 catalogue comparator is 300 kg, giving
+2.94 kN line action and up to 5.89 kN at an ideal reversal. Align
+the load eyes with Y4575 or Y4600 as required. A shared centred line
+gives 10.9 N·m yaw at the modeled upper draw. Before releasing a
+landing capture, prove the landed overlap and the car capture. Before
+travel, park and retain the cargo, disconnect lines, stow and lock
+the bridge, close and lock gates and release the landing lock.
+Unknown capture or a line across a closed gate blocks travel.
+The [executable comparison](studies/incoming-water-goods-transfer.mjs)
+screens the geometry, operating forces and transfer states. Actual
+outbound traction, anchors, cargo eyes, guard, car control and site
+access remain unqualified.
+
 ### Two-level lower-tail capture
 
 The [release and support study](studies/incoming-water-release-support.mjs)

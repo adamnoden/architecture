@@ -13,6 +13,7 @@ import {deriveReleaseSupport} from './incoming-water-release-support.mjs';
 import {deriveStandRetirement} from './incoming-water-stand-retirement.mjs';
 import {compareDryDockSupport} from './incoming-water-dock-support.mjs';
 import {compareLiftSill} from './incoming-water-lift-sill.mjs';
+import {compareGoodsTransfer} from './incoming-water-goods-transfer.mjs';
 
 const study=deriveIncomingWaterStudy();
 test('finite bends represent a real quarter-circle and reject impossible tangent lengths',()=>{
@@ -466,4 +467,33 @@ test('opposite lift doors preserve the short rise and the sill transfer requires
     'unknown bridge state cannot imply stowed','unknown gate cannot imply locked','sending restraint still attached',
     'landing restraint state unknown','unknown landing restraint cannot imply released'])
     assert(Object.values(permissions[name]).every(value=>!value));
+});
+
+test('goods-only lift can reserve aligned cargo but fails ordinary closed-gate draw',()=>{
+  const q=compareGoodsTransfer();
+  assert.equal(q.status,'DEVELOPMENT_NOT_ADOPTED');
+  assert.deepEqual(q.requiredY,[4125,5050]);
+  assert.deepEqual(q.guardSweeps.map(row=>row.totalLateralReserveMM),[15,0,-5]);
+  assert.deepEqual(q.commonCompactDoorCentres,[4600,4575]);
+  assert.equal(q.occupied[2].compactTandemReserveMM,55);
+  assert.equal(q.occupied[2].outdoorTandemReserveMM,-445);
+  assert.deepEqual(q.gradeCases.map(row=>[row.strokeMM,row.strokeReserveMM,row.minimumRampEndX]),[
+    [1414,386,23580],[1594,206,19980],[1774,26,16380],
+  ]);
+  assert(q.loadDuty.drawForceN>871&&q.loadDuty.lowerRampRecoveryForceN>957);
+  assert(q.crewReference.remainingStraightPendantMM>1443&&q.crewReference.trialHandleReserveMM<0);
+  assert.deepEqual(q.loadDuty.lineSlotsAtY,[4575,4600]);
+  assert.equal(q.outboundRedirect.lineAndConnectorBudgetMM,20);
+  assert.equal(q.outboundRedirect.minimumOutsideRedirectHeightMM,6585);
+  assert(q.outboundRedirect.aboveGateLineN>2*q.loadDuty.poweredAnchorN);
+  assert(q.rigidChain.dryIndoorOnly);
+  assert.equal(q.upperPusher.necessaryUpperStrokeMM,450);
+  assert.equal(q.upperPusher.fullUpperStrokeMM,1725);
+  assert.deepEqual(q.upperPusher.reversiblePushPull.map(row=>row.fullUpperStrokeReserveMM),[-225,275]);
+  assert(q.upperPusher.reversiblePushPull[1].bellowsUpperForceReserveN>28);
+  assert(q.upperPusher.reversiblePushPull[1].bellowsLowerForceReserveN<-57);
+
+  assert.deepEqual(q.movingStates.filter(row=>row.canMoveCar).map(row=>row.name),['mobile']);
+  assert(q.movingStates.find(row=>row.name==='lower receiving overlap').canReleaseCar);
+  assert(!q.movingStates.find(row=>row.name==='failed lower catch').canReleaseCar);
 });
