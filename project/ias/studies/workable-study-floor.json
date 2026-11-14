@@ -1,0 +1,543 @@
+{
+  "status": "PRE-SITE ILLUSTRATED CONCEPT. No assembly selected or qualified.",
+  "source": {
+    "id": "HAD-SERVICES-02",
+    "model": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+    "retainedJunctionSHA256": {
+      "project/ias/studies/three-bathing-sections.json": "1da8b7a4b9d5920c21616cc4ea0cab8b3ed638ce1fd05169a3a01ff8902e93f0",
+      "project/ias/studies/stair-rail-renewal.json": "907951612a2106f16db6943416c0376e0619e678524d26b556aa125fac4a670d"
+    },
+    "compositorSHA256": "d4aaa78821f1fea4da3412a3d780fe3f30b2f852e76bb29abcc744e0e41443dd",
+    "relevantGeometrySHA256": "ff387bfb8119310c7fccbd54848d8982bd2feba8541b297b0583bd8640f1352e"
+  },
+  "study": {
+    "bands": [
+      [
+        429.5,
+        429.5,
+        4703,
+        1103
+      ],
+      [
+        429.5,
+        1103,
+        3303,
+        2553
+      ],
+      [
+        429.5,
+        2553,
+        2720.5,
+        3150.5
+      ]
+    ],
+    "finishedAreaM2": 8.41364975,
+    "occupied": [
+      [
+        "study-desk",
+        [
+          655,
+          600,
+          2255,
+          1300
+        ]
+      ],
+      [
+        "study-chair",
+        [
+          900,
+          1400,
+          1900,
+          2300
+        ]
+      ],
+      [
+        "service-emitter-study-W",
+        [
+          429.5,
+          1250,
+          629.5,
+          2400
+        ]
+      ]
+    ],
+    "door": {
+      "rough": [
+        1350,
+        2250
+      ],
+      "hinge": [
+        1385,
+        3247.5
+      ],
+      "axis": 3247.5,
+      "frameDepth": 230,
+      "operatingBodyLowerBoundMM": 1.9348531434153386
+    },
+    "windows": [
+      {
+        "id": "south-window-0",
+        "wall": "outer-south",
+        "centre": 2100,
+        "width": 1000,
+        "sill": 750,
+        "spring": 2550,
+        "head": 2850
+      },
+      {
+        "id": "south-window-1",
+        "wall": "outer-south",
+        "centre": 3900,
+        "width": 1000,
+        "sill": 750,
+        "spring": 2550,
+        "head": 2850
+      },
+      {
+        "id": "west-window-0",
+        "wall": "outer-west",
+        "centre": 2100,
+        "width": 1000,
+        "sill": 850,
+        "spring": 2550,
+        "head": 2850
+      }
+    ]
+  },
+  "assemblies": {
+    "groundDepthAboveRC": 180,
+    "upperDepthAboveRC": 80,
+    "upperRC": 200,
+    "upperDepthBelowRC": 70,
+    "upperUndersideServiceMM": 55,
+    "upperCeilingMM": 15,
+    "finishTradeoffs": [
+      {
+        "name": "Original direct mineral face",
+        "depthMM": 27,
+        "projectionBeyondBaselineMM": 0
+      },
+      {
+        "name": "18 mm timber + 7 mm point capture + 2 mm fit, replacing mineral finish",
+        "depthMM": 27,
+        "projectionBeyondBaselineMM": 0
+      },
+      {
+        "name": "Same timber + 7 mm point capture + 2 mm fit, retaining full plaster behind",
+        "depthMM": 54,
+        "projectionBeyondBaselineMM": 27
+      }
+    ],
+    "skirting": {
+      "heightMM": 150,
+      "existingProjectionMM": 18,
+      "serviceProjectionMM": 45,
+      "coverMM": 18,
+      "grossBehindCoverMM": 27,
+      "boundary": "Concept only; independently supported cable and accessory assemblies. 27 mm includes supports, tolerances and clearances."
+    }
+  },
+  "release": {
+    "lift": [
+      3700,
+      500,
+      4100,
+      900
+    ],
+    "firstRest": [
+      4100,
+      500,
+      4500,
+      900
+    ],
+    "assumedVerticalLiftMM": 55,
+    "workerRadiusMM": 300,
+    "stanceStart": [
+      3300,
+      765
+    ],
+    "stanceEnd": [
+      3700,
+      765
+    ],
+    "doorwayReachEvidence": "Prior Study close/reopen reaches 555.20 mm in a different task. This comparison makes no grip, load or reach admission.",
+    "clearanceToFinishedWallsMM": 35.5,
+    "workerToTrailingTileEdgeMM": 100,
+    "trialReachToNearEdgeMidpointMM": 405.2468383590426,
+    "movingTileBodyGapMM": 100
+  },
+  "branchProbe": {
+    "wet": {
+      "familyBath": [
+        9460,
+        3800,
+        1700,
+        700
+      ],
+      "port": [
+        11012,
+        4366,
+        110
+      ],
+      "frontPanel": {
+        "frontY": 4500,
+        "clearX": [
+          10625,
+          11125
+        ],
+        "clearZLocal": [
+          0,
+          500
+        ],
+        "requiredAccess": "Firstunion/trapcleanout/wasteandfull52overflowreleasefromFRONTorTOP, neverblindrearreach. Panelisnotarequiredfoot/supportremovedforaccess."
+      },
+      "retainedHatch": [
+        10787,
+        4151,
+        450,
+        450
+      ]
+    },
+    "stair": {
+      "plan": [
+        417.5,
+        4432.5,
+        2400,
+        4335
+      ],
+      "going": 300,
+      "rise": 172.5,
+      "landingYZ": [
+        7132.5,
+        1725
+      ],
+      "firstUpperNoseYZ": [
+        7132.5,
+        1897.5
+      ],
+      "upperArrivalYZ": [
+        4432.5,
+        3450
+      ],
+      "betweenRails": 1004
+    }
+  },
+  "additionalFurnishedComparisons": [
+    {
+      "name": "Family room",
+      "bands": [
+        [
+          429.5,
+          8949.5,
+          4280.5,
+          11570.5
+        ]
+      ],
+      "fixed": [
+        [
+          "rear-stack",
+          [
+            429.5,
+            10800,
+            729.5,
+            11550
+          ]
+        ],
+        [
+          "reading-sofa1900x850",
+          [
+            800,
+            9000,
+            1650,
+            10900
+          ]
+        ],
+        [
+          "reading-side-table300",
+          [
+            800,
+            10925,
+            1100,
+            11225
+          ]
+        ],
+        [
+          "family-sofa1900x750",
+          [
+            2337.5,
+            9800,
+            4237.5,
+            10550
+          ]
+        ],
+        [
+          "family-side-table300",
+          [
+            3900,
+            9450,
+            4200,
+            9750
+          ]
+        ],
+        [
+          "service-emitter-living-W",
+          [
+            429.5,
+            9800,
+            629.5,
+            10750
+          ]
+        ],
+        [
+          "service-emitter-living-N2",
+          [
+            3102.5,
+            11370.5,
+            4052.5,
+            11570.5
+          ]
+        ]
+      ],
+      "moduleSummary": {
+        "areaM2": 10.093471,
+        "complete": 45,
+        "clearInPlan": 15
+      }
+    },
+    {
+      "name": "Kitchen / dining",
+      "bands": [
+        [
+          7719.5,
+          8424.5,
+          11570.5,
+          11570.5
+        ]
+      ],
+      "fixed": [
+        [
+          "dining-table1200x800",
+          [
+            8500,
+            9100,
+            9300,
+            10300
+          ]
+        ],
+        [
+          "dining-chair-west-south",
+          [
+            8000,
+            9150,
+            8500,
+            9650
+          ]
+        ],
+        [
+          "dining-chair-west-north",
+          [
+            8000,
+            9750,
+            8500,
+            10250
+          ]
+        ],
+        [
+          "dining-chair-east-south",
+          [
+            9300,
+            9150,
+            9800,
+            9650
+          ]
+        ],
+        [
+          "dining-chair-east-north",
+          [
+            9300,
+            9750,
+            9800,
+            10250
+          ]
+        ],
+        [
+          "north-sink-station",
+          [
+            8700,
+            10970.5,
+            9600,
+            11570.5
+          ]
+        ],
+        [
+          "north-cooking-station",
+          [
+            10750,
+            10970.5,
+            11350,
+            11570.5
+          ]
+        ],
+        [
+          "cold-storage",
+          [
+            10920.5,
+            8725,
+            11570.5,
+            9375
+          ]
+        ],
+        [
+          "service-kitchen-feed-column",
+          [
+            11425,
+            11188,
+            11570,
+            11412
+          ]
+        ],
+        [
+          "low-food-larder",
+          [
+            9650,
+            11370.5,
+            10650,
+            11570.5
+          ]
+        ],
+        [
+          "service-emitter-kitchen-W",
+          [
+            7719.5,
+            10195,
+            7919.5,
+            11545
+          ]
+        ]
+      ],
+      "moduleSummary": {
+        "areaM2": 12.115246,
+        "complete": 56,
+        "clearInPlan": 28
+      }
+    },
+    {
+      "name": "Bedroom 2",
+      "bands": [
+        [
+          429.5,
+          429.5,
+          4703,
+          2553
+        ],
+        [
+          429.5,
+          2553,
+          2720.5,
+          3150.5
+        ]
+      ],
+      "fixed": [
+        [
+          "bed2",
+          [
+            1100,
+            1065.5,
+            2050,
+            3120.5
+          ]
+        ],
+        [
+          "bed2-wardrobe",
+          [
+            4043,
+            1067.5,
+            4703,
+            1967.5
+          ]
+        ],
+        [
+          "service-emitter-bed2-S",
+          [
+            3425,
+            429.5,
+            4475,
+            629.5
+          ]
+        ]
+      ],
+      "moduleSummary": {
+        "areaM2": 10.44364975,
+        "complete": 55,
+        "clearInPlan": 31
+      }
+    }
+  ],
+  "moduleStudy": {
+    "origin": [
+      500,
+      500
+    ],
+    "materials": [
+      {
+        "name": "20 mm oak wear surface only",
+        "massPerSquareMetre": 14
+      },
+      {
+        "name": "15 mm stone wear surface only",
+        "massPerSquareMetre": 40.5
+      },
+      {
+        "name": "12 mm stone + 3 mm steel skin only",
+        "massPerSquareMetre": 55.95
+      }
+    ],
+    "options": [
+      {
+        "pitch": 300,
+        "whole": 78,
+        "unobstructed": 44,
+        "perimeterCutCells": 48,
+        "massKG": [
+          1.26,
+          3.65,
+          5.04
+        ]
+      },
+      {
+        "pitch": 400,
+        "whole": 43,
+        "unobstructed": 21,
+        "perimeterCutCells": 36,
+        "massKG": [
+          2.24,
+          6.48,
+          8.95
+        ]
+      },
+      {
+        "pitch": 450,
+        "whole": 31,
+        "unobstructed": 14,
+        "perimeterCutCells": 32,
+        "massKG": [
+          2.83,
+          8.2,
+          11.33
+        ]
+      },
+      {
+        "pitch": 600,
+        "whole": 18,
+        "unobstructed": 8,
+        "perimeterCutCells": 26,
+        "massKG": [
+          5.04,
+          14.58,
+          20.14
+        ]
+      }
+    ],
+    "errorBoundary": "Plan overlap only. The Study door, grip/release, extra working zone, ramps, fasteners and cut-piece geometry are not checked for lifting. Stop modular fields at independent threshold. Mass excludes edge retention, grips, frame and bedding."
+  }
+}
