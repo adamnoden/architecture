@@ -9,8 +9,8 @@
     "label": "zerg9-had-weather"
   },
   "claimedAt": "2026-11-14T10:38:21.987Z",
-  "heartbeatAt": "2026-11-14T10:43:27.551Z",
-  "expiresAt": "2026-11-14T11:28:27.551Z",
+  "heartbeatAt": "2026-11-14T10:49:01.985Z",
+  "expiresAt": "2026-11-14T11:34:01.985Z",
   "branch": "work/zerg9-had-weather",
   "predecessor": {
     "leaseId": "44eaf328-5bfb-4c01-88cf-e1eda540ea11",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote head 50457d6e2a1a41db41b280f4a2c5d8e3a7393fdb tree b29d612ff2c58bd03769644ff73bca0ce0b242eb. All 79 HAD tests, deterministic water replan, MRA and whitespace passed.",
-    "next": "Reconcile with STR #1512 merged main, then open PR, bind live lease and validate exact head.",
+    "evidence": "Remote head ce1a41bbcd534752025d18712f8ea4137a02db5f tree 8e02cf962bc045c720694883c48040ca15093851. All 79 HAD tests, deterministic water replan, MRA and whitespace passed. Confirmed STR #1512 files disjoint and trial merge tree 7c560f25.",
+    "next": "Reconcile with actual STR #1512 merged main, then open PR, bind live lease and validate exact head.",
     "blocker": "STR first to avoid stale-base hosted validation."
   }
 }
