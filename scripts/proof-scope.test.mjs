@@ -1,7 +1,11 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import {selectProofScope} from './proof-scope.mjs'
-import {readFileSync,readdirSync} from 'node:fs'
+import {mkdtempSync,mkdirSync,readFileSync,readdirSync,rmSync,writeFileSync} from 'node:fs'
+import {tmpdir} from 'node:os'
+import {join} from 'node:path'
+import {createHash} from 'node:crypto'
+import {publicationReviewManifest} from './publication-review-manifest.mjs'
 import {spawnSync} from 'node:child_process'
 const pkg=scripts=>JSON.stringify({name:'test',scripts,devDependencies:{tsx:'1'}})
 const before=pkg({'test':'tests','control:brief':'old'})
@@ -50,4 +54,30 @@ test('PLT retains all 48 PDF builds, explicit opt-in and full manual replay',()=
  const manual=spawnSync(process.execPath,['scripts/proof-scope.mjs'],{encoding:'utf8',env:{...process.env,GITHUB_EVENT_NAME:'workflow_dispatch',SCOPE_COMPILER_REVIEW:'true',GITHUB_OUTPUT:'',GITHUB_STEP_SUMMARY:''}})
  assert.equal(manual.status,0,manual.stderr)
  assert.equal(JSON.parse(manual.stdout).run,true)
+})
+
+
+test('publication review fingerprints the checked editions and uploads only the manifest after rendered checks', t => {
+ const root=mkdtempSync(join(tmpdir(),'publication-review-test-'))
+ t.after(()=>rmSync(root,{recursive:true,force:true}))
+ mkdirSync(join(root,'publication/dist'),{recursive:true})
+ const pageSize={format:'A4',widthMm:210,heightMm:297,orientation:'portrait'}
+ const workingEdition={file:'publication/dist/ovids-house.pdf',pages:24,pageSize}
+ const primer={file:'publication/dist/ovids-house-primer.pdf',pages:8,pageSize}
+ writeFileSync(join(root,'publication/metadata.json'),JSON.stringify({schemaVersion:1,workingEdition,primer}))
+ const body='%PDF-1.7\nworking fixture'
+ writeFileSync(join(root,workingEdition.file),body)
+ writeFileSync(join(root,primer.file),'%PDF-1.7\nprimer fixture')
+ const source={head:'head',base:'base',checkout:'checkout'}
+ const manifest=publicationReviewManifest(root,source)
+ assert.deepEqual(manifest.source,source)
+ assert.deepEqual(manifest.objects[0],{edition:'workingEdition',...workingEdition,bytes:Buffer.byteLength(body),sha256:createHash('sha256').update(body).digest('hex')})
+ assert.equal(manifest.objects[1].pages,8)
+ writeFileSync(join(root,primer.file),'wrong file')
+ assert.throws(()=>publicationReviewManifest(root,source),/Invalid rendered PDF/)
+ const workflow=readFileSync('.github/workflows/validate-pr.yml','utf8')
+ const retained=workflow.slice(workflow.indexOf('- name: Fingerprint validated publication PDFs'))
+ assert.ok(workflow.indexOf('- name: Prove rendered nomenclature regressions')<workflow.indexOf(retained))
+ assert.match(retained,/path: \$\{\{ runner\.temp \}\}\/publication-review-manifest\.json/)
+ assert.doesNotMatch(retained,/publication\/dist|\.pdf(?:\s|$)/i)
 })
