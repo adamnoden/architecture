@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 22,
-  "state": "released",
-  "leaseId": "1e3dcaa6-06cc-4193-b4a4-2f0e9446de29",
+  "generation": 23,
+  "state": "claimed",
+  "leaseId": "3890dbd9-d3d3-4dac-a372-c6416f295e29",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg11-water-wetting"
+    "label": "zerg12-section"
   },
-  "claimedAt": "2026-11-14T21:22:40.956Z",
-  "heartbeatAt": "2026-11-14T21:48:21.676Z",
-  "expiresAt": "2026-11-14T21:48:21.676Z",
-  "branch": "work/zerg11-had-first-wetting",
+  "claimedAt": "2026-11-14T21:51:37.206Z",
+  "heartbeatAt": "2026-11-14T21:51:37.206Z",
+  "expiresAt": "2026-11-14T23:21:37.206Z",
+  "branch": "work/zerg12-had-lobby-drain",
   "predecessor": {
-    "leaseId": "3e0c9ecd-d6c8-4f36-a7a7-3b6af31ef01a",
-    "generation": 21,
-    "branch": "work/zerg11-portal-inlet",
-    "pr": 1526,
+    "leaseId": "1e3dcaa6-06cc-4193-b4a4-2f0e9446de29",
+    "generation": 22,
+    "branch": "work/zerg11-had-first-wetting",
+    "pr": 1527,
     "checkpoint": {
-      "evidence": "Shared PR #1526 exact head 98ff47f25c38daf5ddd5d9414b0f060ad2b0df56, staging HAD exact 4444c681; 83 HAD, deterministic replan, unchanged house MRA.",
-      "next": "Wait exact full hosted CI, fresh HAD and STR preflights on current main, expected-head merge and lease release."
+      "evidence": "PR #1527 exact 393fe1e tree ed62a97; source-bound first-wetting, isolation and drip-lap comparison; focused tests pass.",
+      "next": "Wait exact full hosted CI, fresh preflight, expected-head merge and release."
     }
   },
   "recoverySource": {
-    "leaseId": "3e0c9ecd-d6c8-4f36-a7a7-3b6af31ef01a",
-    "generation": 21,
-    "branch": "work/zerg11-portal-inlet",
-    "pr": 1526,
+    "leaseId": "1e3dcaa6-06cc-4193-b4a4-2f0e9446de29",
+    "generation": 22,
+    "branch": "work/zerg11-had-first-wetting",
+    "pr": 1527,
     "checkpoint": {
-      "evidence": "Shared PR #1526 exact head 98ff47f25c38daf5ddd5d9414b0f060ad2b0df56, staging HAD exact 4444c681; 83 HAD, deterministic replan, unchanged house MRA.",
-      "next": "Wait exact full hosted CI, fresh HAD and STR preflights on current main, expected-head merge and lease release."
+      "evidence": "PR #1527 exact 393fe1e tree ed62a97; source-bound first-wetting, isolation and drip-lap comparison; focused tests pass.",
+      "next": "Wait exact full hosted CI, fresh preflight, expected-head merge and release."
     }
-  },
-  "pr": 1527,
-  "checkpoint": {
-    "evidence": "PR #1527 exact 393fe1e tree ed62a97; source-bound first-wetting, isolation and drip-lap comparison; focused tests pass.",
-    "next": "Wait exact full hosted CI, fresh preflight, expected-head merge and release."
-  },
-  "releasedAt": "2026-11-14T21:48:21.676Z",
-  "releaseReason": "handoff"
+  }
 }
