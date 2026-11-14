@@ -41,7 +41,7 @@ The owner's design brief now includes a much more **workable, accessible interio
 
 **Two actual owner acceptance events are required in the intended successor sequence:** (1) a visual **whole-house and interior-system design review after TRIAD**, before BCR/HRS final convergence, to decide mechanical/architectural family choices; (2) a **final rendered book/drawings design acceptance after PLT-FINAL-PREP**, before PLT-FINAL-FREEZE, separate from the existing physical print verdict. A negative verdict reopens the owning source and re-runs its affected checks; neither silence nor an agent-declared complete state is acceptance. The design package must contain adequate room/elevation views and 1:5/1:2 floor/wall/skirting/grate/window-interface details, not simply narrative or diagrams of future work.
 
-The exact proposed canonical nodes/dependencies are in [owner direction #1516](https://github.com/adamnoden/architecture/issues/1516). **They are not registered/enforced by this prose amendment**, and must be integrated through normal MVB bootstrap/lease/CI/preflight. Do not insert unrelated professional/accreditation gates on the book path. Existing system source, technical, moisture, print and manual manufacture controls retain their scope.
+The [registered owner review sequence](ias/workable-interior-design-plan.md) is binding. The [first design pack assembly map](had/owner-design-pack-preparation.md) identifies the drawings to bring together after TRIAD. Existing system, technical, moisture, print and manufacture controls retain their scope.
 
 ## Dependency and acceptance sequence
 

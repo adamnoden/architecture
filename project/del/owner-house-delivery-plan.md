@@ -6,7 +6,7 @@
 
 The owner expects to **review and approve** the architectural whole-house proposal and the selected interior mechanisms, not simply accept an unattended agent's `complete` state. The [workable-interior design plan](../ias/workable-interior-design-plan.md) now requires worked proposals for modular/liftable floor fields, extensive wall panelling, metal grates, accessible skirting and window/door assemblies. First approval is requested after coordinated `TRIAD-GATE` and before final architectural convergence; a second owner review is requested on the actual PLT final design/book pack before the design freeze. Neither approval implies a professional engineering sign-off or permission to manufacture.
 
-These two **manual** graph gates, and the IAS self-service drawing/detail successors, await lease-safe registration under [#1516](https://github.com/adamnoden/architecture/issues/1516). Existing `DEL-BRIEF`, the one-bay ADE demonstration and future site-specific `DEL-COMMISSION-PLAN` are not reclassified as approval events. Capture any owner's variant selections and rejected options on the exact design/drawing revision, and route change consequences to their owning streams rather than hiding them in an updated PDF.
+The [canonical graph](../control/graph.md) includes both **manual** owner gates and the IAS concept and detail packets. Existing `DEL-BRIEF`, the one-bay ADE demonstration and future site-specific `DEL-COMMISSION-PLAN` are not reclassified as approval events. Capture any owner's variant selections and rejected options on the exact design/drawing revision, and route change consequences to their owning streams rather than hiding them in an updated PDF.
 
 ## Route and stopping points
 
