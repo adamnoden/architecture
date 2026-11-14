@@ -9,11 +9,11 @@
     "label": "zerg10-ias-concept"
   },
   "claimedAt": "2026-11-14T17:05:00.345Z",
-  "heartbeatAt": "2026-11-14T17:07:17.162Z",
-  "expiresAt": "2026-11-14T18:37:17.162Z",
+  "heartbeatAt": "2026-11-14T17:54:53.043Z",
+  "expiresAt": "2026-11-14T19:24:53.043Z",
   "checkpoint": {
-    "evidence": "PR #1521 exact b8fe55b0591892734408e3286567c8ed03ef1381 tree 6f5bd142 after local rendering, receipt and repository checks",
-    "next": "Observe exact hosted CI, merge-check, publish to main, release to next concept tranche"
+    "evidence": "PR #1521 current main 69108b20 exact head b6e2e4e2 and nine plates, receipt/repo integrity pass. CI 43623600690.",
+    "next": "On exact green, fresh canonical merge-check then expected-head merge and release for next concept tranche"
   },
   "branch": "work/zerg10-ias-workable-concept",
   "pr": 1521
