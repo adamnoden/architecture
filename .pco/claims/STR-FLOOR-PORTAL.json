@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 22,
-  "state": "released",
-  "leaseId": "d0e13c8b-fa7a-4b53-b4b3-a5e85bbf4354",
+  "generation": 23,
+  "state": "claimed",
+  "leaseId": "b4fa7f3c-a4c6-40a7-8b14-200c2f93fe83",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg12-heel"
+    "label": "zerg13-heel-local-insert"
   },
-  "claimedAt": "2026-11-14T21:51:40.067Z",
-  "heartbeatAt": "2026-11-14T22:34:34.455Z",
-  "expiresAt": "2026-11-14T22:34:34.455Z",
-  "branch": "work/zerg12-heel-section",
+  "claimedAt": "2026-11-14T23:49:27.269Z",
+  "heartbeatAt": "2026-11-14T23:49:27.269Z",
+  "expiresAt": "2026-11-15T01:19:27.269Z",
+  "branch": "work/zerg13-str-insert",
   "predecessor": {
-    "leaseId": "22cdeecf-903b-4d79-944a-6885401ee57f",
-    "generation": 21,
-    "branch": "work/zerg11-portal-inlet",
-    "pr": 1526,
+    "leaseId": "d0e13c8b-fa7a-4b53-b4b3-a5e85bbf4354",
+    "generation": 22,
+    "branch": "work/zerg12-heel-section",
+    "pr": 1529,
     "checkpoint": {
-      "evidence": "Shared PR #1526 exact 98ff47f2 and STR source 02436b37",
-      "next": "Wait for exact-head CI, then fresh independent STR merge preflight"
+      "evidence": "PR #1529 corrected exact 9664e887b57b72dd0e3a540f8fa2c16be3eb3bb0 CI 43647598614; 12 STR focused tests pass",
+      "next": "Verify exact hosted CI, canonical publication preflight for both leases and release after expected-head merge"
     }
   },
   "recoverySource": {
-    "leaseId": "22cdeecf-903b-4d79-944a-6885401ee57f",
-    "generation": 21,
-    "branch": "work/zerg11-portal-inlet",
-    "pr": 1526,
+    "leaseId": "d0e13c8b-fa7a-4b53-b4b3-a5e85bbf4354",
+    "generation": 22,
+    "branch": "work/zerg12-heel-section",
+    "pr": 1529,
     "checkpoint": {
-      "evidence": "Shared PR #1526 exact 98ff47f2 and STR source 02436b37",
-      "next": "Wait for exact-head CI, then fresh independent STR merge preflight"
+      "evidence": "PR #1529 corrected exact 9664e887b57b72dd0e3a540f8fa2c16be3eb3bb0 CI 43647598614; 12 STR focused tests pass",
+      "next": "Verify exact hosted CI, canonical publication preflight for both leases and release after expected-head merge"
     }
-  },
-  "checkpoint": {
-    "evidence": "PR #1529 corrected exact 9664e887b57b72dd0e3a540f8fa2c16be3eb3bb0 CI 43647598614; 12 STR focused tests pass",
-    "next": "Verify exact hosted CI, canonical publication preflight for both leases and release after expected-head merge"
-  },
-  "pr": 1529,
-  "releasedAt": "2026-11-14T22:34:34.455Z",
-  "releaseReason": "handoff"
+  }
 }
