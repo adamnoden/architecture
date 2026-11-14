@@ -9,11 +9,11 @@
     "label": "zerg10-ias-detailed"
   },
   "claimedAt": "2026-11-14T18:20:40.065Z",
-  "heartbeatAt": "2026-11-14T18:29:20.265Z",
-  "expiresAt": "2026-11-14T19:59:20.265Z",
+  "heartbeatAt": "2026-11-14T18:36:41.027Z",
+  "expiresAt": "2026-11-14T20:06:41.027Z",
   "checkpoint": {
-    "evidence": "Durable branch work/zerg10-ias-workable-release, exact bce9b527. Dimensioned A4 retention and independent guided bridge drawing, reproducible seam/loaded-handling receipt and integrity pass.",
-    "next": "After structural solver #1522 merges, reconcile live main, open dedicated PR and require exact-head CI/preflight."
+    "evidence": "PR #1523 exact ad33bbc2 onto solver main 4306c722. Both dimensioned plates and deterministic receipt, CI 43627500797.",
+    "next": "On fresh exact green, canonical merge-check and expected-head merge, verify tree, and release IAS scope handoff."
   },
   "branch": "work/zerg10-ias-workable-release",
   "predecessor": {
@@ -35,5 +35,6 @@
       "evidence": "PR #1521 current main 69108b20 exact head b6e2e4e2 and nine plates, receipt/repo integrity pass. CI 43623600690.",
       "next": "On exact green, fresh canonical merge-check then expected-head merge and release for next concept tranche"
     }
-  }
+  },
+  "pr": 1523
 }
