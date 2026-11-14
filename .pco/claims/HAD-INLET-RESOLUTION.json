@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 19,
-  "state": "released",
-  "leaseId": "44c6edb4-d63c-4c9e-8e4d-ffc71bc0bfca",
+  "generation": 20,
+  "state": "claimed",
+  "leaseId": "39a88714-a32d-4c1c-a5c6-bcbf88862d02",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg9-had-weather"
+    "label": "zerg10-had"
   },
-  "claimedAt": "2026-11-14T10:38:21.987Z",
-  "heartbeatAt": "2026-11-14T11:22:02.589Z",
-  "expiresAt": "2026-11-14T11:22:02.589Z",
-  "branch": "work/zerg9-had-weather",
+  "claimedAt": "2026-11-14T16:36:38.987Z",
+  "heartbeatAt": "2026-11-14T16:36:38.987Z",
+  "expiresAt": "2026-11-14T17:21:38.987Z",
+  "branch": "work/zerg10-had-no-lift",
   "predecessor": {
-    "leaseId": "44eaf328-5bfb-4c01-88cf-e1eda540ea11",
-    "generation": 18,
-    "branch": "work/zerg8-had-lift-sill",
-    "pr": 1510,
+    "leaseId": "44c6edb4-d63c-4c9e-8e4d-ffc71bc0bfca",
+    "generation": 19,
+    "branch": "work/zerg9-had-weather",
+    "pr": 1513,
     "checkpoint": {
-      "evidence": "PR #1510 combined exact 3d7842d1 and tree d4304783 on STR main bad94a02; 78 HAD, deterministic MRA/water-replan, whitespace pass",
-      "next": "Verify full combined exact-head CI, fresh publication preflight, merge and release",
-      "blocker": "Actual lift/point-duty, landed positive guide and capture, rated anchors and surveyed access remain unqualified"
+      "evidence": "PR #1513 corrected exact 34eca04e84e616b6a30dafeeb0e6d3925ac8b154 tree 9b51d13fa02f44bc1038b270abe3c9e1072c81e0 on b4b9c0dc. Refined RWT spill negative control and separated south-facing site comparison. Correction regression passed.",
+      "next": "Wait new full exact CI, fresh preflight, merge expected head and release.",
+      "blocker": "Actual site and product qualifications open; previous head CI superseded."
     }
   },
   "recoverySource": {
-    "leaseId": "44eaf328-5bfb-4c01-88cf-e1eda540ea11",
-    "generation": 18,
-    "branch": "work/zerg8-had-lift-sill",
-    "pr": 1510,
+    "leaseId": "44c6edb4-d63c-4c9e-8e4d-ffc71bc0bfca",
+    "generation": 19,
+    "branch": "work/zerg9-had-weather",
+    "pr": 1513,
     "checkpoint": {
-      "evidence": "PR #1510 combined exact 3d7842d1 and tree d4304783 on STR main bad94a02; 78 HAD, deterministic MRA/water-replan, whitespace pass",
-      "next": "Verify full combined exact-head CI, fresh publication preflight, merge and release",
-      "blocker": "Actual lift/point-duty, landed positive guide and capture, rated anchors and surveyed access remain unqualified"
+      "evidence": "PR #1513 corrected exact 34eca04e84e616b6a30dafeeb0e6d3925ac8b154 tree 9b51d13fa02f44bc1038b270abe3c9e1072c81e0 on b4b9c0dc. Refined RWT spill negative control and separated south-facing site comparison. Correction regression passed.",
+      "next": "Wait new full exact CI, fresh preflight, merge expected head and release.",
+      "blocker": "Actual site and product qualifications open; previous head CI superseded."
     }
-  },
-  "checkpoint": {
-    "evidence": "PR #1513 corrected exact 34eca04e84e616b6a30dafeeb0e6d3925ac8b154 tree 9b51d13fa02f44bc1038b270abe3c9e1072c81e0 on b4b9c0dc. Refined RWT spill negative control and separated south-facing site comparison. Correction regression passed.",
-    "next": "Wait new full exact CI, fresh preflight, merge expected head and release.",
-    "blocker": "Actual site and product qualifications open; previous head CI superseded."
-  },
-  "pr": 1513,
-  "releasedAt": "2026-11-14T11:22:02.589Z",
-  "releaseReason": "handoff"
+  }
 }
