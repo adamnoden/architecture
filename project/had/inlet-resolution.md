@@ -908,6 +908,75 @@ transport assembly, ground layout, temporary work method or equipment
 set. The [site assessment brief](../dpl/owner-site-brief.md#current-house-findings-that-a-plot-must-not-conceal)
 compares the two east field reservations and the same-level alternative. [Reproduce the envelope and reaction comparison](studies/incoming-water-temporary-gantry.mjs).
 
+#### Site decision envelope for the lobby route
+
+Carry the Y2800/Z600 entry, independent B0 and the I0/U0/P0 lobby
+cartridges, H0 utility hot stop, controlled local receivers and raised
+cold bridge as the coordinated reference to detail. Keep the old
+X11200/Z500 route excluded. A plot can remove the need for an outdoor
+lift. It cannot change which internal valve cuts which segment, or
+prove a compatible cylinder carrier. The external route, entered grade,
+foundation detail and handling equipment remain conditional. Preserve
+this candidate separately from the selected house and MRA duty exports
+until a cutover receipt proves the altered native interfaces.
+
+Use the [applicability comparison](studies/incoming-water-site-applicability.mjs)
+with a trial input JSON or use no input to list unknowns. X/Y/Z remain in
+house drawing axes and millimetres. `landingGradeMM` means actual grade at
+the lower set-down or at the same-level arrival. `entryGradeMM` means
+actual grade at the protected inlet riser. Measure both rather than
+importing one earthwork level across the east field. `siteWaterMM` is
+the independently assessed local controlling water level for the landing.
+Supply the required dry freeboard for that site, the relevant wet or
+obstructed exclusion boxes and their required plan setback. Separate the east and north roof outfalls.
+An empty exclusion list is not survey evidence. DPL must verify the
+continuous route and footing/assembly territory beyond these local boxes.
+
+| Option | Screening boundary at the retained dock edge Z−26 |
+| --- | --- |
+| Retained level landing and bridge | First choice if site and independent bearing can provide the existing 5 mm relative-level trial, with verified transition, loaded rolling and positive retention. A revised ramp or bridge would require its own profile. |
+| Temporary gantry comparison | Drop cannot exceed **1850 mm** for the 3000 mm nominal standard hook travel over the retained guard before extra reach at set-down. The headroom bound for a **2011 mm** carrier is **1888 mm**. With a **2300 mm** carrier the headroom bound drops to **1599 mm**. At the **1774 mm** reference drop the two bounds allow **2125 mm** gross carrier height and **350 kg** modeled mass. Use actual assembled dimensions and qualified pickup, including loaded restraint. |
+| Fixed through-car flush or ramp trial | The planning stroke asks for at least **450 mm** drop at a flush lower landing, or **520 mm** with the 70 mm raised ramp. Both cases screen the current weather/service cabinet and fully dry local route. The ramp toe at **X17845** is not the full reservation. The retained cabinet and approach extend to **X18630**. These figures combine current provisional dimensions, not a selected lift. |
+
+The bounds expose gaps: at a shallow unbridged drop with no viable gantry
+or retained level transition, the fixed lift can be too short in stroke
+before width, fabrication or placement enter. Conversely, at a deep plot
+the stock gantry can fail hook travel even when the actual load is short
+enough to clear the guard. Check each failure before proposing a change
+of lift. The first fully evidenced trial is returned even when a higher
+priority option still lacks evidence. Resolve that alternative before
+selecting a permanent lift. When a source cap, geometry or qualified
+allowance changes, run the comparison with the actual input and repeat the affected interference
+and equipment checks. A geometry pass alone remains a trial. All mode
+results distinguish conflicting evidence from missing evidence.
+
+At the inlet itself, preserve the Ø100 formed port and Ø74 complete
+pipe, with 13 mm radial difference before support, seal and movement.
+Using the older **900 mm soil cover** solely as a comparison, local grade
+**−1800 mm** puts the top of buried pipe at **−2700** and the newer Y2800
+entry centre **3300 mm** above it. This is **400 mm less rise** than the
+prior Y3150/Z1000 alternative under identical cover and grade. The newer
+Ø200 riser envelope clears P17 by **200 mm in plan**, with the cap's near
+edge **300 mm** from the riser axis along the controlling Y direction.
+A 150 mm excavation radius outside the duct body consumes 150 mm of
+that 200 mm clearance. Plan reserve does not determine safe excavation,
+wind/seismic or frost performance. DPL must show the actual levels,
+provider upstream isolation, soil cover, route and water boundary before
+accepting a plot. STR owns structural admission of the formed wall and
+local ground interface. MAT owns supports, frost protection, full
+pressure-boundary constituents and seal replacement around movement.
+
+Keep B0 upstream of I0 and keep a provider-controlled cut upstream of
+B0. Use the supported I0 isolation sequence when withdrawing U0/P0,
+and B0 when the fault or service lies at I0 or upstream of it. Start
+with the authored 8 L net lobby pans and 5 L controlled batches only
+after verifying isolation, then restore supports and seals and test.
+HAD/MAT/IAS still owe the actual vessel/carrier and indoor first release
+interface. MRA needs the installed first-wetting paths, repair receipt,
+and remaining uncontrolled water duties before inlet adoption. An
+indoor route reference and a plot screening envelope do not close those
+duties or replace the existing node exit.
+
 #### Through-car receiving lift and removable sill
 
 The [Lödige ESCORTA planning guide](https://www.lodige.co.uk/fileadmin/Downloads/doc-lift-e/Sherpa-Escorta/Planning-guide-Sherpa-Escorta-20210329-LUK_01.pdf)
