@@ -30,7 +30,7 @@ export const houseDeliveryNodes = defineNodes([
   },
   {
     id: 'BCR-BAY-DESIGN', owners: ['BCR'], title: 'Resolve the selected bay as a coordinated design study',
-    dependencies: ['BCR-BAY-BRIEF', 'BCR-BAY-INTERFACES', 'TRIAD-GATE'], lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
+    dependencies: ['BCR-BAY-BRIEF', 'BCR-BAY-INTERFACES', 'TRIAD-GATE', 'IAS-WORKABLE-DETAILS'], lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/bcr/bay-design-result.md']
   },
   // Owner-directed ADE section-view uplift, 31 Oct 2026 (#1187).

@@ -14,7 +14,7 @@ export const publicationNodes = defineNodes([
     id: 'PLT-FINAL-FREEZE',
     owners: ['PLT'],
     title: 'Final resolved-house plate integration and freeze',
-    dependencies: ['PLT-FINAL-PREP', 'PLT-PRINT-REVIEW'],
+    dependencies: ['PLT-FINAL-PREP', 'PLT-PRINT-REVIEW', 'PLT-OWNER-FINAL-DESIGN-ACCEPTANCE'],
     lifecycle: 'planned',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/plt/final-freeze-result.md'],
@@ -66,6 +66,15 @@ export const publicationNodes = defineNodes([
     lifecycle: 'planned',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/plt/final-preparation-result.md']
+  },
+  {
+    id: 'PLT-OWNER-FINAL-DESIGN-ACCEPTANCE',
+    owners: ['PLT'],
+    title: 'Receive the owner’s acceptance of the assembled book and final design drawings',
+    dependencies: ['PLT-FINAL-PREP'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'manual', reason: 'The owner personally reviews the rendered book, final drawings and changes since the first approval.' },
+    closeoutEvidence: ['project/plt/owner-final-design-acceptance.md'],
   },
   {
     id: 'PLT-PRINT-REVIEW',

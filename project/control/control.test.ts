@@ -122,6 +122,30 @@ test('inlet correction can proceed before roof integration and remains an input 
   assert.equal(state('MRA-02'), 'blocked')
 })
 
+test('workable interior concept runs early and owner decisions gate details and freeze', () => {
+  const concept = node('IAS-WORKABLE-CONCEPT')
+  assert.equal(derivedState(concept, controlNodes), 'ready')
+  assert.equal(concept.agentDispatch?.mode, 'self-service')
+  assert.ok(node('TRIAD-GATE').dependencies.includes(concept.id))
+
+  const firstApproval = node('HAD-OWNER-DESIGN-REVIEW')
+  assert.deepEqual(firstApproval.dependencies, ['TRIAD-GATE'])
+  assert.equal(firstApproval.agentDispatch?.mode, 'manual')
+  const details = node('IAS-WORKABLE-DETAILS')
+  assert.deepEqual(details.dependencies, [firstApproval.id])
+  assert.equal(details.agentDispatch?.mode, 'self-service')
+  assert.ok(node('BCR-BAY-DESIGN').dependencies.includes(details.id))
+  assert.ok(node('BCR-CONVERGENCE').dependencies.includes(firstApproval.id))
+  assert.ok(node('BCR-CONVERGENCE').dependencies.includes(details.id))
+
+  const finalApproval = node('PLT-OWNER-FINAL-DESIGN-ACCEPTANCE')
+  assert.deepEqual(finalApproval.dependencies, ['PLT-FINAL-PREP'])
+  assert.equal(finalApproval.agentDispatch?.mode, 'manual')
+  assert.deepEqual(node('PLT-FINAL-FREEZE').dependencies, [
+    'PLT-FINAL-PREP', 'PLT-PRINT-REVIEW', finalApproval.id
+  ])
+})
+
 test('held evidence research never leaks into the ready frontier', () => {
   const groups = nodesByDerivedState(controlNodes)
   assert.deepEqual(
