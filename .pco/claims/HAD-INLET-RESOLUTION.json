@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 19,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "44c6edb4-d63c-4c9e-8e4d-ffc71bc0bfca",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg9-had-weather"
   },
   "claimedAt": "2026-11-14T10:38:21.987Z",
-  "heartbeatAt": "2026-11-14T11:00:24.251Z",
-  "expiresAt": "2026-11-14T11:45:24.251Z",
+  "heartbeatAt": "2026-11-14T11:22:02.589Z",
+  "expiresAt": "2026-11-14T11:22:02.589Z",
   "branch": "work/zerg9-had-weather",
   "predecessor": {
     "leaseId": "44eaf328-5bfb-4c01-88cf-e1eda540ea11",
@@ -39,5 +39,7 @@
     "next": "Wait new full exact CI, fresh preflight, merge expected head and release.",
     "blocker": "Actual site and product qualifications open; previous head CI superseded."
   },
-  "pr": 1513
+  "pr": 1513,
+  "releasedAt": "2026-11-14T11:22:02.589Z",
+  "releaseReason": "handoff"
 }
