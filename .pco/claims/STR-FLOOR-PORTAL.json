@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 18,
-  "state": "released",
-  "leaseId": "47f1a7a8-9682-4305-8f11-4e1e79b2c5ac",
+  "generation": 19,
+  "state": "claimed",
+  "leaseId": "4bad899e-a64c-4a2c-800e-8fe0102114f9",
   "holder": {
     "kind": "chatgpt",
     "label": "recover-str"
   },
-  "claimedAt": "2026-11-14T10:13:40.043Z",
-  "heartbeatAt": "2026-11-14T10:55:01.859Z",
-  "expiresAt": "2026-11-14T10:55:01.859Z",
-  "branch": "work/zerg8-str-direct-seat",
+  "claimedAt": "2026-11-14T11:08:49.010Z",
+  "heartbeatAt": "2026-11-14T11:08:49.010Z",
+  "expiresAt": "2026-11-14T11:53:49.010Z",
+  "branch": "work/zerg8-str-guide-backing",
   "predecessor": {
-    "leaseId": "baf8146c-682b-4fc4-8476-0e524198ea3f",
-    "generation": 17,
-    "branch": "work/zerg8-str-captive-seat",
-    "pr": 1511,
+    "leaseId": "47f1a7a8-9682-4305-8f11-4e1e79b2c5ac",
+    "generation": 18,
+    "branch": "work/zerg8-str-direct-seat",
+    "pr": 1512,
     "checkpoint": {
-      "evidence": "PR #1511 exact 81432904df3653fbccefabb1e018f7cbfb201e51; local npm run test:str and 13 hosted auxiliary proofs passed",
-      "next": "Await required exact CI, verify main and lease, merge, release",
-      "blocker": "Actual web, cross-arm and unloaded service restraint need a replacement joint"
+      "evidence": "PR #1512 exact current-base e74f4501adf35f21642c47203a6e8c8e455c8d99; focused structural suite and receipt passed; hosted 43586096935 passed lease and homepage",
+      "next": "Await exact full CI, current-main preflight and merge, then release",
+      "blocker": "Tool bridge, backing, bearing and unloaded service restraint are separate unresolved design duties"
     }
   },
   "recoverySource": {
-    "leaseId": "baf8146c-682b-4fc4-8476-0e524198ea3f",
-    "generation": 17,
-    "branch": "work/zerg8-str-captive-seat",
-    "pr": 1511,
+    "leaseId": "47f1a7a8-9682-4305-8f11-4e1e79b2c5ac",
+    "generation": 18,
+    "branch": "work/zerg8-str-direct-seat",
+    "pr": 1512,
     "checkpoint": {
-      "evidence": "PR #1511 exact 81432904df3653fbccefabb1e018f7cbfb201e51; local npm run test:str and 13 hosted auxiliary proofs passed",
-      "next": "Await required exact CI, verify main and lease, merge, release",
-      "blocker": "Actual web, cross-arm and unloaded service restraint need a replacement joint"
+      "evidence": "PR #1512 exact current-base e74f4501adf35f21642c47203a6e8c8e455c8d99; focused structural suite and receipt passed; hosted 43586096935 passed lease and homepage",
+      "next": "Await exact full CI, current-main preflight and merge, then release",
+      "blocker": "Tool bridge, backing, bearing and unloaded service restraint are separate unresolved design duties"
     }
-  },
-  "pr": 1512,
-  "checkpoint": {
-    "evidence": "PR #1512 exact current-base e74f4501adf35f21642c47203a6e8c8e455c8d99; focused structural suite and receipt passed; hosted 43586096935 passed lease and homepage",
-    "next": "Await exact full CI, current-main preflight and merge, then release",
-    "blocker": "Tool bridge, backing, bearing and unloaded service restraint are separate unresolved design duties"
-  },
-  "releasedAt": "2026-11-14T10:55:01.859Z",
-  "releaseReason": "handoff"
+  }
 }
