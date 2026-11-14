@@ -1,0 +1,164 @@
+{
+  "status": "SEPARATE_DRIP_DEVELOPMENT_ONLY",
+  "selection": "HAD-SERVICES-02",
+  "box": {
+    "x": [
+      11485,
+      11570.5
+    ],
+    "y": [
+      2705,
+      2895
+    ],
+    "bottomZ": 100,
+    "rimZ": 145,
+    "hoodUpperZ": 550,
+    "clearInletWidthMM": 160
+  },
+  "ventedPlenum": {
+    "x": [
+      11485,
+      11570.5
+    ],
+    "y": [
+      2895,
+      3055
+    ],
+    "undersideZ": 90
+  },
+  "entryZ": 600,
+  "ffl": 0,
+  "reception": {
+    "lipProjectionMM": 50,
+    "dripEdgeX": 11520.5,
+    "dripLapMM": 25.5,
+    "dripSideMM": 35,
+    "lowerHoodToPipeAfterSettingMM": 3,
+    "connectionToSupplyCarriesLoad": false,
+    "pressureJetCaptureCredited": false
+  },
+  "pan": {
+    "panZ": 0,
+    "panRim": 75,
+    "panY": 2675,
+    "panDepth": 450,
+    "panEndX": 11550,
+    "planOverlapMM": 65,
+    "verticalReserveAfterSettingMM": 15,
+    "plenumVerticalReserveAfterSettingMM": 5,
+    "shortPanDrawMM": 75,
+    "ordinaryPanClearanceMM": 25,
+    "stagingStanceX": 10800,
+    "spouts": [
+      {
+        "id": "D0",
+        "xyz": [
+          11370,
+          2925,
+          200
+        ],
+        "nearestBoxPlanGapMM": 100,
+        "rimToSpoutVerticalMM": 55,
+        "panRimClearanceUnchangedMM": 125
+      },
+      {
+        "id": "D1",
+        "xyz": [
+          11230,
+          3300,
+          200
+        ],
+        "nearestBoxPlanGapMM": 332.41540277189324,
+        "rimToSpoutVerticalMM": 55,
+        "panRimClearanceUnchangedMM": 125
+      },
+      {
+        "id": "DU",
+        "xyz": [
+          11230,
+          2732,
+          200
+        ],
+        "nearestBoxPlanGapMM": 240,
+        "rimToSpoutVerticalMM": 55,
+        "panRimClearanceUnchangedMM": 125
+      },
+      {
+        "id": "DP",
+        "xyz": [
+          11230,
+          3400,
+          200
+        ],
+        "nearestBoxPlanGapMM": 408.0441152620633,
+        "rimToSpoutVerticalMM": 55,
+        "panRimClearanceUnchangedMM": 125
+      }
+    ],
+    "actualRemovalClearanceProved": false
+  },
+  "independentOutlet": {
+    "outletX": 12217.5,
+    "drainY": 2975,
+    "lateralDiversionMM": 175,
+    "lateralDiversionFallMM": 3.5,
+    "sleeveSeparationAfterSettingMM": 15,
+    "formedDiameterMM": 100,
+    "clearBoreMM": 80,
+    "invertZ": 90,
+    "endInvertZ": 77.06,
+    "fallRatio": 50,
+    "receiverRunMM": 1500,
+    "receivingMaximumZ": 22.060000000000002,
+    "terminalX": 13717.5,
+    "gantryDown": [
+      15075,
+      16425,
+      2325,
+      3275
+    ],
+    "oldTerminalInsideGantry": true,
+    "selectedWetCorridorSouthY": 6100,
+    "gantryWestClearMM": 1357.5,
+    "formedBottomAtEndZ": 67.06,
+    "clearAboveFFLAfterSettingMM": 62.06,
+    "throatHeadMM": 25,
+    "lipFreeboardAfterHeadMM": 20,
+    "clearClogCases": [
+      {
+        "remainingFraction": 1,
+        "throatWidthMM": 160,
+        "idealInletLmin": 64.69621318129833,
+        "idealControllingLmin": 64.69621318129833
+      },
+      {
+        "remainingFraction": 0.5,
+        "throatWidthMM": 80,
+        "idealInletLmin": 32.34810659064917,
+        "idealControllingLmin": 32.34810659064917
+      },
+      {
+        "remainingFraction": 0.25,
+        "throatWidthMM": 40,
+        "idealInletLmin": 16.174053295324583,
+        "idealControllingLmin": 16.174053295324583
+      },
+      {
+        "remainingFraction": 0,
+        "throatWidthMM": 0,
+        "idealInletLmin": 0,
+        "idealControllingLmin": 0
+      }
+    ],
+    "siteReceivingWaterZ": null,
+    "roofPlantThresholdD2Credit": false
+  },
+  "fixedAxisAnnulus": {
+    "fixedAxisSleeveRunMM": 519.5,
+    "radialCorridorMM": 11,
+    "requiredFallMM": 10.39,
+    "linerAndSettingAllowanceAtWallExitMM": 0.6099999999999994,
+    "linerAndSettingAllowanceAtSupportExitMM": -1.9399999999999995,
+    "idealBareCorridorLmin": 8.071539877304403
+  }
+}
