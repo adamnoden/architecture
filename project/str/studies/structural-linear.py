@@ -9,9 +9,11 @@ def factor(A):
             b=m[i][c]/m[c][c];m[i][c]=b
             if b:
                 for j in range(c+1,n):m[i][j]-=b*m[c][j]
+    lower = [[(j,value) for j,value in enumerate(row[:i]) if value] for i,row in enumerate(m)]
+    upper = [[(j,value) for j,value in enumerate(row[i+1:],i+1) if value] for i,row in enumerate(m)]
     def solve(rhs):
         x=[rhs[i] for i in perm]
-        for i in range(n):x[i]-=sum(m[i][j]*x[j] for j in range(i))
-        for i in reversed(range(n)):x[i]=(x[i]-sum(m[i][j]*x[j] for j in range(i+1,n)))/m[i][i]
+        for i in range(n):x[i]-=sum(value*x[j] for j,value in lower[i])
+        for i in reversed(range(n)):x[i]=(x[i]-sum(value*x[j] for j,value in upper[i]))/m[i][i]
         return x
     return solve
