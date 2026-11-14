@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 20,
-  "state": "released",
-  "leaseId": "59107682-39e2-477e-8cf5-752b3ca952d3",
+  "generation": 21,
+  "state": "claimed",
+  "leaseId": "22cdeecf-903b-4d79-944a-6885401ee57f",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg10-str"
+    "label": "zerg11-portal"
   },
-  "claimedAt": "2026-11-14T16:36:17.757Z",
-  "heartbeatAt": "2026-11-14T17:27:31.807Z",
-  "expiresAt": "2026-11-14T17:27:31.807Z",
-  "branch": "work/zerg10-str-center",
+  "claimedAt": "2026-11-14T20:48:41.459Z",
+  "heartbeatAt": "2026-11-14T20:48:41.459Z",
+  "expiresAt": "2026-11-14T22:03:41.459Z",
+  "branch": "work/zerg11-str-direct-guide",
   "predecessor": {
-    "leaseId": "4bad899e-a64c-4a2c-800e-8fe0102114f9",
-    "generation": 19,
-    "branch": "work/zerg8-str-guide-backing",
-    "pr": 1514,
+    "leaseId": "59107682-39e2-477e-8cf5-752b3ca952d3",
+    "generation": 20,
+    "branch": "work/zerg10-str-center",
+    "pr": 1519,
     "checkpoint": {
-      "evidence": "PR #1514 exact 7b394150ce44c54dea50a3491e6e880d74c4d2af includes HAD #1513; pinned travel replay and nine structural tests passed",
-      "next": "Verify exact hosted CI, current-main preflight and expected-head merge, then release",
-      "blocker": "Plate, backing and anchored radial confinement still require physical geometry and a new guide law"
+      "evidence": "PR #1519 exact 1c1fa20c on live d86b5894; independent exact tree 6248fedb and ten focus tests",
+      "next": "Verify exact-head full CI, then current-main preflight and expected-head merge",
+      "blocker": "Rocker torque and split restraint require developed hardware; packet remains planned"
     }
   },
   "recoverySource": {
-    "leaseId": "4bad899e-a64c-4a2c-800e-8fe0102114f9",
-    "generation": 19,
-    "branch": "work/zerg8-str-guide-backing",
-    "pr": 1514,
+    "leaseId": "59107682-39e2-477e-8cf5-752b3ca952d3",
+    "generation": 20,
+    "branch": "work/zerg10-str-center",
+    "pr": 1519,
     "checkpoint": {
-      "evidence": "PR #1514 exact 7b394150ce44c54dea50a3491e6e880d74c4d2af includes HAD #1513; pinned travel replay and nine structural tests passed",
-      "next": "Verify exact hosted CI, current-main preflight and expected-head merge, then release",
-      "blocker": "Plate, backing and anchored radial confinement still require physical geometry and a new guide law"
+      "evidence": "PR #1519 exact 1c1fa20c on live d86b5894; independent exact tree 6248fedb and ten focus tests",
+      "next": "Verify exact-head full CI, then current-main preflight and expected-head merge",
+      "blocker": "Rocker torque and split restraint require developed hardware; packet remains planned"
     }
-  },
-  "checkpoint": {
-    "evidence": "PR #1519 exact 1c1fa20c on live d86b5894; independent exact tree 6248fedb and ten focus tests",
-    "next": "Verify exact-head full CI, then current-main preflight and expected-head merge",
-    "blocker": "Rocker torque and split restraint require developed hardware; packet remains planned"
-  },
-  "pr": 1519,
-  "releasedAt": "2026-11-14T17:27:31.807Z",
-  "releaseReason": "handoff"
+  }
 }
