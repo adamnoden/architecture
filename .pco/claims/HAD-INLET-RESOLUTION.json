@@ -9,8 +9,8 @@
     "label": "zerg10-had"
   },
   "claimedAt": "2026-11-14T16:36:38.987Z",
-  "heartbeatAt": "2026-11-14T16:36:38.987Z",
-  "expiresAt": "2026-11-14T17:21:38.987Z",
+  "heartbeatAt": "2026-11-14T16:46:25.190Z",
+  "expiresAt": "2026-11-14T17:31:25.190Z",
   "branch": "work/zerg10-had-no-lift",
   "predecessor": {
     "leaseId": "44c6edb4-d63c-4c9e-8e4d-ffc71bc0bfca",
@@ -33,5 +33,10 @@
       "next": "Wait new full exact CI, fresh preflight, merge expected head and release.",
       "blocker": "Actual site and product qualifications open; previous head CI superseded."
     }
+  },
+  "checkpoint": {
+    "evidence": "Durable branch 532b95743fbded1ab097800fd8f7b530bf91cabc tree c32c61b9; temporary gantry, retained upper guard and independent dock extension comparison.",
+    "next": "Reconcile with live main after registration and STR merge, run exact CI, merge and release.",
+    "blocker": "Await integration sequence. Actual cylinder/carrier lift dimensions and surveyed dry ground remain open."
   }
 }
