@@ -18,14 +18,13 @@ flowchart LR
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
     n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>BLOCKED</b>"]
   end
-  subgraph g_IAS["IAS"]
-    direction TB
-    n_IAS_WORKABLE_CONCEPT["IAS-WORKABLE-CONCEPT<br/>Compare and illustrate workable interior assemblies in the current house<br/><b>READY</b>"]
-    n_IAS_WORKABLE_DETAILS["IAS-WORKABLE-DETAILS<br/>Detail the approved workable interior family and adjoining opening interfaces<br/><b>BLOCKED</b>"]
-  end
   subgraph g_HAD["HAD"]
     direction TB
     n_HAD_OWNER_DESIGN_REVIEW["HAD-OWNER-DESIGN-REVIEW<br/>Receive the owner’s decision on the coordinated architectural design<br/><b>BLOCKED</b>"]
+  end
+  subgraph g_IAS["IAS"]
+    direction TB
+    n_IAS_WORKABLE_DETAILS["IAS-WORKABLE-DETAILS<br/>Detail the approved workable interior family and adjoining opening interfaces<br/><b>BLOCKED</b>"]
   end
   subgraph g_BCR["BCR"]
     direction TB
@@ -111,7 +110,6 @@ flowchart LR
   n_ROF_RWT_GATE --> n_TRIAD_GATE
   n_MAT_COORDINATION --> n_TRIAD_GATE
   n_STR_FLOOR_PORTAL --> n_TRIAD_GATE
-  n_IAS_WORKABLE_CONCEPT --> n_TRIAD_GATE
   n_TRIAD_GATE --> n_BCR_CONVERGENCE
   n_MRA_04 --> n_BCR_CONVERGENCE
   n_HRS_TECHNICAL --> n_BCR_CONVERGENCE
@@ -160,8 +158,8 @@ flowchart LR
 
   linkStyle default stroke:#aab1a9,stroke-width:1.5px;
   style g_SHARED fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
-  style g_IAS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_HAD fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_IAS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_BCR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_HRS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_ROF fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
@@ -189,7 +187,6 @@ flowchart LR
   classDef activeUnclaimed fill:#dce9e8,stroke:#356966,color:#1f4542,stroke-width:3px,stroke-dasharray:4 3;
   classDef invalidClaim fill:#f1e0dc,stroke:#a45f54,color:#693d37,stroke-width:3px;
   class n_HAD_INLET_RESOLUTION ready;
-  class n_IAS_WORKABLE_CONCEPT ready;
   class n_HAD_OWNER_DESIGN_REVIEW blocked;
   class n_IAS_WORKABLE_DETAILS blocked;
   class n_TRIAD_GATE blocked;
@@ -296,7 +293,7 @@ flowchart LR
     n_IAS_02S["IAS-02S<br/>Interior services and access family<br/><b>DONE</b>"]
     n_IAS_02W["IAS-02W<br/>Wet-room and kitchen interior-system variants<br/><b>DONE</b>"]
     n_IAS_03["IAS-03<br/>Selected interior family, drawings and disassembly set<br/><b>DONE</b>"]
-    n_IAS_WORKABLE_CONCEPT["IAS-WORKABLE-CONCEPT<br/>Compare and illustrate workable interior assemblies in the current house<br/><b>READY</b>"]
+    n_IAS_WORKABLE_CONCEPT["IAS-WORKABLE-CONCEPT<br/>Compare and illustrate workable interior assemblies in the current house<br/><b>DONE</b>"]
     n_IAS_WORKABLE_DETAILS["IAS-WORKABLE-DETAILS<br/>Detail the approved workable interior family and adjoining opening interfaces<br/><b>BLOCKED</b>"]
   end
   subgraph g_OAS["OAS"]
@@ -891,7 +888,7 @@ flowchart LR
   class n_HAD_COURT_BYPASS done;
   class n_OAS_DETAIL done;
   class n_OAS_NORTH_EXPORT done;
-  class n_IAS_WORKABLE_CONCEPT ready;
+  class n_IAS_WORKABLE_CONCEPT done;
   class n_HAD_OWNER_DESIGN_REVIEW blocked;
   class n_IAS_WORKABLE_DETAILS blocked;
   class n_TRIAD_GATE blocked;
