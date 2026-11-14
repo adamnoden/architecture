@@ -9,8 +9,8 @@
     "label": "recover-str"
   },
   "claimedAt": "2026-11-14T00:08:00.653Z",
-  "heartbeatAt": "2026-11-14T00:08:00.653Z",
-  "expiresAt": "2026-11-14T00:53:00.653Z",
+  "heartbeatAt": "2026-11-14T00:20:51.100Z",
+  "expiresAt": "2026-11-14T01:05:51.100Z",
   "branch": "work/zerg7-str-continuous-cage",
   "predecessor": {
     "leaseId": "dcc361c6-85a7-4fa1-8b71-3216cdc2061d",
@@ -31,5 +31,10 @@
       "evidence": "PR #1504 adopts exact green d8e68f551db21d8e5cb9a918a5199e54acf8f5e9 from #1503, no tree change",
       "next": "Confirm generation 15 packet check and exact head, integrate, then release handoff"
     }
+  },
+  "checkpoint": {
+    "evidence": "Exact remote 1698093d41f750a350f535b367790ca01a040852, deterministic continuous-cage receipt and repository/readme checks passed",
+    "next": "Incorporate #1508 current main, open and validate the STR study, merge and release",
+    "blocker": "Bounded jig feed passes; coupon-to-seat and lower bar continuity need finite connection details"
   }
 }
