@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 20,
-  "state": "released",
-  "leaseId": "39a88714-a32d-4c1c-a5c6-bcbf88862d02",
+  "generation": 21,
+  "state": "claimed",
+  "leaseId": "3e0c9ecd-d6c8-4f36-a7a7-3b6af31ef01a",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg10-had"
+    "label": "zerg11-water"
   },
-  "claimedAt": "2026-11-14T16:36:38.987Z",
-  "heartbeatAt": "2026-11-14T17:54:03.664Z",
-  "expiresAt": "2026-11-14T17:54:03.664Z",
-  "branch": "work/zerg10-had-no-lift",
+  "claimedAt": "2026-11-14T20:48:48.064Z",
+  "heartbeatAt": "2026-11-14T20:48:48.064Z",
+  "expiresAt": "2026-11-14T22:18:48.064Z",
+  "branch": "work/zerg11-had-site-variables",
   "predecessor": {
-    "leaseId": "44c6edb4-d63c-4c9e-8e4d-ffc71bc0bfca",
-    "generation": 19,
-    "branch": "work/zerg9-had-weather",
-    "pr": 1513,
+    "leaseId": "39a88714-a32d-4c1c-a5c6-bcbf88862d02",
+    "generation": 20,
+    "branch": "work/zerg10-had-no-lift",
+    "pr": 1520,
     "checkpoint": {
-      "evidence": "PR #1513 corrected exact 34eca04e84e616b6a30dafeeb0e6d3925ac8b154 tree 9b51d13fa02f44bc1038b270abe3c9e1072c81e0 on b4b9c0dc. Refined RWT spill negative control and separated south-facing site comparison. Correction regression passed.",
-      "next": "Wait new full exact CI, fresh preflight, merge expected head and release.",
-      "blocker": "Actual site and product qualifications open; previous head CI superseded."
+      "evidence": "#1520 exact 61a08920e4e2c380e057ed4acb72cb30131abd86 tree 4d05d73c on ac6e7329, 80 local HAD tests plus deterministic generator and MRA passed. Hosted first ten steps passed.",
+      "next": "Wait current-base exact CI 43621222111, fresh publication preflight, expected-head merge, verify main and release.",
+      "blocker": "Canonical repository-health step still in progress at 17:49Z, no failures observed."
     }
   },
   "recoverySource": {
-    "leaseId": "44c6edb4-d63c-4c9e-8e4d-ffc71bc0bfca",
-    "generation": 19,
-    "branch": "work/zerg9-had-weather",
-    "pr": 1513,
+    "leaseId": "39a88714-a32d-4c1c-a5c6-bcbf88862d02",
+    "generation": 20,
+    "branch": "work/zerg10-had-no-lift",
+    "pr": 1520,
     "checkpoint": {
-      "evidence": "PR #1513 corrected exact 34eca04e84e616b6a30dafeeb0e6d3925ac8b154 tree 9b51d13fa02f44bc1038b270abe3c9e1072c81e0 on b4b9c0dc. Refined RWT spill negative control and separated south-facing site comparison. Correction regression passed.",
-      "next": "Wait new full exact CI, fresh preflight, merge expected head and release.",
-      "blocker": "Actual site and product qualifications open; previous head CI superseded."
+      "evidence": "#1520 exact 61a08920e4e2c380e057ed4acb72cb30131abd86 tree 4d05d73c on ac6e7329, 80 local HAD tests plus deterministic generator and MRA passed. Hosted first ten steps passed.",
+      "next": "Wait current-base exact CI 43621222111, fresh publication preflight, expected-head merge, verify main and release.",
+      "blocker": "Canonical repository-health step still in progress at 17:49Z, no failures observed."
     }
-  },
-  "checkpoint": {
-    "evidence": "#1520 exact 61a08920e4e2c380e057ed4acb72cb30131abd86 tree 4d05d73c on ac6e7329, 80 local HAD tests plus deterministic generator and MRA passed. Hosted first ten steps passed.",
-    "next": "Wait current-base exact CI 43621222111, fresh publication preflight, expected-head merge, verify main and release.",
-    "blocker": "Canonical repository-health step still in progress at 17:49Z, no failures observed."
-  },
-  "pr": 1520,
-  "releasedAt": "2026-11-14T17:54:03.664Z",
-  "releaseReason": "handoff"
+  }
 }
