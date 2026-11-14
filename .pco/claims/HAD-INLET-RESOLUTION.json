@@ -9,8 +9,8 @@
     "label": "zerg11-water-wetting"
   },
   "claimedAt": "2026-11-14T21:22:40.956Z",
-  "heartbeatAt": "2026-11-14T21:22:40.956Z",
-  "expiresAt": "2026-11-14T22:52:40.956Z",
+  "heartbeatAt": "2026-11-14T21:25:03.140Z",
+  "expiresAt": "2026-11-14T22:55:03.140Z",
   "branch": "work/zerg11-had-first-wetting",
   "predecessor": {
     "leaseId": "3e0c9ecd-d6c8-4f36-a7a7-3b6af31ef01a",
@@ -31,5 +31,10 @@
       "evidence": "Shared PR #1526 exact head 98ff47f25c38daf5ddd5d9414b0f060ad2b0df56, staging HAD exact 4444c681; 83 HAD, deterministic replan, unchanged house MRA.",
       "next": "Wait exact full hosted CI, fresh HAD and STR preflights on current main, expected-head merge and lease release."
     }
+  },
+  "pr": 1527,
+  "checkpoint": {
+    "evidence": "PR #1527 exact 393fe1e tree ed62a97; source-bound first-wetting, isolation and drip-lap comparison; focused tests pass.",
+    "next": "Wait exact full hosted CI, fresh preflight, expected-head merge and release."
   }
 }
