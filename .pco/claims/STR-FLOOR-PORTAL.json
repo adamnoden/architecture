@@ -9,8 +9,8 @@
     "label": "zerg10-str"
   },
   "claimedAt": "2026-11-14T16:36:17.757Z",
-  "heartbeatAt": "2026-11-14T16:36:17.757Z",
-  "expiresAt": "2026-11-14T17:21:17.757Z",
+  "heartbeatAt": "2026-11-14T16:42:40.254Z",
+  "expiresAt": "2026-11-14T17:27:40.254Z",
   "branch": "work/zerg10-str-center",
   "predecessor": {
     "leaseId": "4bad899e-a64c-4a2c-800e-8fe0102114f9",
@@ -33,5 +33,10 @@
       "next": "Verify exact hosted CI, current-main preflight and expected-head merge, then release",
       "blocker": "Plate, backing and anchored radial confinement still require physical geometry and a new guide law"
     }
+  },
+  "checkpoint": {
+    "evidence": "Exact remote ec9e74e8 tree 675fdd0a: proof of centred depth rocker and bound on guide contact/placement",
+    "next": "Reconcile ordered main, run exact workflow and canonical preflight, then merge or preserve",
+    "blocker": "Contact torque allowance 44 Nm and 98 mm envelope do not demonstrate embedded splitting, hardware and coupler fit"
   }
 }
