@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 17,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "baf8146c-682b-4fc4-8476-0e524198ea3f",
   "holder": {
     "kind": "chatgpt",
     "label": "recover-str"
   },
   "claimedAt": "2026-11-14T09:40:57.014Z",
-  "heartbeatAt": "2026-11-14T10:05:25.202Z",
-  "expiresAt": "2026-11-14T10:50:25.202Z",
+  "heartbeatAt": "2026-11-14T10:12:22.197Z",
+  "expiresAt": "2026-11-14T10:12:22.197Z",
   "branch": "work/zerg8-str-captive-seat",
   "predecessor": {
     "leaseId": "ab20eb01-1896-41fa-883b-a70b8ff29c75",
@@ -39,5 +39,7 @@
     "evidence": "PR #1511 exact 81432904df3653fbccefabb1e018f7cbfb201e51; local npm run test:str and 13 hosted auxiliary proofs passed",
     "next": "Await required exact CI, verify main and lease, merge, release",
     "blocker": "Actual web, cross-arm and unloaded service restraint need a replacement joint"
-  }
+  },
+  "releasedAt": "2026-11-14T10:12:22.197Z",
+  "releaseReason": "handoff"
 }
