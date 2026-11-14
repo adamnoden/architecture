@@ -9,8 +9,8 @@
     "label": "zerg11-water"
   },
   "claimedAt": "2026-11-14T20:48:48.064Z",
-  "heartbeatAt": "2026-11-14T20:48:48.064Z",
-  "expiresAt": "2026-11-14T22:18:48.064Z",
+  "heartbeatAt": "2026-11-14T20:56:38.546Z",
+  "expiresAt": "2026-11-14T22:26:38.546Z",
   "branch": "work/zerg11-had-site-variables",
   "predecessor": {
     "leaseId": "39a88714-a32d-4c1c-a5c6-bcbf88862d02",
@@ -33,5 +33,9 @@
       "next": "Wait current-base exact CI 43621222111, fresh publication preflight, expected-head merge, verify main and release.",
       "blocker": "Canonical repository-health step still in progress at 17:49Z, no failures observed."
     }
+  },
+  "checkpoint": {
+    "evidence": "Staged remote head 4444c6818d37e70817b1b3b264e54a0b63fd9adc tree b841ece12f48573c3f4887571007650aa1db3940, independent site/grade/carrier screen; HAD 83 + deterministic generator passed.",
+    "next": "Coordinate joint STR+HAD PR, rebind canonical branch, run exact CI and preflight before merge."
   }
 }
