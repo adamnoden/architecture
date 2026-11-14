@@ -905,7 +905,8 @@ matching, lifting capture, dry arrival and actual crew recovery into
 DPL; do not make the permanent lift a pre-site prerequisite. This is a
 preferred conditional development path with no adopted cylinder
 transport assembly, ground layout, temporary work method or equipment
-set. [Reproduce the envelope and reaction comparison](studies/incoming-water-temporary-gantry.mjs).
+set. The [site assessment brief](../dpl/owner-site-brief.md#current-house-findings-that-a-plot-must-not-conceal)
+compares the two east field reservations and the same-level alternative. [Reproduce the envelope and reaction comparison](studies/incoming-water-temporary-gantry.mjs).
 
 #### Through-car receiving lift and removable sill
 

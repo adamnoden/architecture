@@ -540,6 +540,10 @@ test('temporary goods gantry reserves an independent extension and retains a ful
   assert.deepEqual(q.extensionPlan,[14230,16425,3400,5350]);
   assert.equal(q.frameAndPadSetbackMM,28.5);
   assert.equal(q.envelope.framePadToWetMM,375);
+  assert.equal(q.envelope.grossBeamAndPadToWetMM,140);
+  assert.deepEqual(q.fieldFromWallMM,{
+    temporaryThroughGradeRetreat:5900,throughCarToRampToe:5845,sameLevelToEndOfExistingDock:2230,
+  });
   assert.equal(q.envelope.framePadToEaveMM,358.5);
   assert.deepEqual(q.gradeRest,[15075,16425,2325,3275]);
   assert(q.coveredCargoSweep.every(c=>c.clearLowerDockEdgeMM>=125));

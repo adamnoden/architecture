@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
+import {compareLiftSill} from './incoming-water-lift-sill.mjs';
 
 const source=path=>JSON.parse(readFileSync(new URL(path,import.meta.url),'utf8'));
 const threshold=source('../../mat/studies/plant-threshold.json');
@@ -20,6 +21,7 @@ const hoist={
 
 export function compareTemporaryGantry(){
   const {dock,opening,cargo,plateComparison,carrierHeight}=threshold;
+  const comparisonLift=compareLiftSill();
   const [,dockEnd,south,north]=dock.plan;
   const padSideMM=250,padRadiusMM=padSideMM/2;
   const liftX=15750,lowerY=2800;
@@ -100,8 +102,15 @@ export function compareTemporaryGantry(){
   const operatorCases=xCases.map(x=>reactions(x,operatorY,operatorLoadN));
   const wheelAndCrew=wheelCases.flatMap(w=>operatorCases.map(c=>w.map((n,i)=>n+c[i]))).flat();
   const wheelReactions=wheelCases.flat();
+  const eastWallX=12000;
+  const fieldFromWallMM={
+    temporaryThroughGradeRetreat:gradeRetreat[1]-eastWallX,
+    throughCarToRampToe:comparisonLift.lowerRampEastX-eastWallX,
+    sameLevelToEndOfExistingDock:dockEnd-eastWallX,
+  };
+  const gradeRaisedToDeckMM=dock.outerTransferRise;
   return {status:'DEVELOPMENT_NOT_ADOPTED',gantry,hoist,directDockCase,extensionPlan,liftX,gantryFrameY,beamOperatingY,grossBeamY,lowerY,
-    coveredCargoSweep,gradeRest,gradeRetreat,conservativelyPaddedFrameX,frameAndPadSetbackMM,
+    coveredCargoSweep,gradeRest,gradeRetreat,conservativelyPaddedFrameX,frameAndPadSetbackMM,fieldFromWallMM,gradeRaisedToDeckMM,
     envelope:{knownWetTerritorySouthY,padOuterSouthY,padOuterNorthY,framePadToWetMM:knownWetTerritorySouthY-padOuterNorthY,grossBeamAndPadToWetMM,
       extensionToWetMM:knownWetTerritorySouthY-extensionPlan[3],framePadToEaveMM:conservativelyPaddedFrameX[0]-eave.x[1],
       northPadToExtensionMM:gantryFrameY[1]-padRadiusMM-north,highestAssemblyZ:dock.outsideGrade+gantry.beamTopMaxMM,
