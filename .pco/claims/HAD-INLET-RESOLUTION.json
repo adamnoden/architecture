@@ -9,8 +9,8 @@
     "label": "zerg10-had"
   },
   "claimedAt": "2026-11-14T16:36:38.987Z",
-  "heartbeatAt": "2026-11-14T17:05:45.239Z",
-  "expiresAt": "2026-11-14T17:50:45.239Z",
+  "heartbeatAt": "2026-11-14T17:16:47.623Z",
+  "expiresAt": "2026-11-14T18:01:47.623Z",
   "branch": "work/zerg10-had-no-lift",
   "predecessor": {
     "leaseId": "44c6edb4-d63c-4c9e-8e4d-ffc71bc0bfca",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "#1520 exact 4257871d2fa2b6084471850dc631a40a996ea0dd tree c02bea84 on current registration d86b5894; temporary transfer and DPL handoff; 80 tests + MRA.",
-    "next": "Wait exact CI 43619167092, coordinate live main and publication preflight; expected-head merge and release.",
-    "blocker": "CI pending. Actual handling set and surveyed dry plot support required after this comparison."
+    "evidence": "#1520 exact 4257871d2fa2b6084471850dc631a40a996ea0dd tree c02bea84 on current registration d86b5894; exact 80 HAD tests, generator and MRA passed. Initial ten hosted steps passed.",
+    "next": "Wait exact CI 43619167092, fresh publication preflight, expected-head merge; verify main and release.",
+    "blocker": "Canonical hosted repository-health check remains in progress."
   },
   "pr": 1520
 }
