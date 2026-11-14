@@ -9,8 +9,8 @@
     "label": "zerg11-portal"
   },
   "claimedAt": "2026-11-14T20:48:41.459Z",
-  "heartbeatAt": "2026-11-14T20:48:41.459Z",
-  "expiresAt": "2026-11-14T22:03:41.459Z",
+  "heartbeatAt": "2026-11-14T20:58:17.580Z",
+  "expiresAt": "2026-11-14T22:13:17.580Z",
   "branch": "work/zerg11-str-direct-guide",
   "predecessor": {
     "leaseId": "59107682-39e2-477e-8cf5-752b3ca952d3",
@@ -33,5 +33,9 @@
       "next": "Verify exact-head full CI, then current-main preflight and expected-head merge",
       "blocker": "Rocker torque and split restraint require developed hardware; packet remains planned"
     }
+  },
+  "checkpoint": {
+    "evidence": "02436b3736ef2bc3fad1b892c9e0d8aef9480236 permanent aligned seat; 11 focused tests green",
+    "next": "Rebind to combined STR and HAD branch after authoritative base and merge exact CI"
   }
 }
