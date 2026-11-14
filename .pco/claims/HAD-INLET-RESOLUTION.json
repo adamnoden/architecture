@@ -9,8 +9,8 @@
     "label": "zerg9-had-weather"
   },
   "claimedAt": "2026-11-14T10:38:21.987Z",
-  "heartbeatAt": "2026-11-14T10:38:21.987Z",
-  "expiresAt": "2026-11-14T11:23:21.987Z",
+  "heartbeatAt": "2026-11-14T10:43:27.551Z",
+  "expiresAt": "2026-11-14T11:28:27.551Z",
   "branch": "work/zerg9-had-weather",
   "predecessor": {
     "leaseId": "44eaf328-5bfb-4c01-88cf-e1eda540ea11",
@@ -33,5 +33,10 @@
       "next": "Verify full combined exact-head CI, fresh publication preflight, merge and release",
       "blocker": "Actual lift/point-duty, landed positive guide and capture, rated anchors and surveyed access remain unqualified"
     }
+  },
+  "checkpoint": {
+    "evidence": "Remote head 50457d6e2a1a41db41b280f4a2c5d8e3a7393fdb tree b29d612ff2c58bd03769644ff73bca0ce0b242eb. All 79 HAD tests, deterministic water replan, MRA and whitespace passed.",
+    "next": "Reconcile with STR #1512 merged main, then open PR, bind live lease and validate exact head.",
+    "blocker": "STR first to avoid stale-base hosted validation."
   }
 }
