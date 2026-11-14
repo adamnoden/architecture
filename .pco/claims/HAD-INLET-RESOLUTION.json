@@ -9,8 +9,8 @@
     "label": "zerg10-had"
   },
   "claimedAt": "2026-11-14T16:36:38.987Z",
-  "heartbeatAt": "2026-11-14T17:28:09.014Z",
-  "expiresAt": "2026-11-14T18:13:09.014Z",
+  "heartbeatAt": "2026-11-14T17:49:18.287Z",
+  "expiresAt": "2026-11-14T18:34:18.287Z",
   "branch": "work/zerg10-had-no-lift",
   "predecessor": {
     "leaseId": "44c6edb4-d63c-4c9e-8e4d-ffc71bc0bfca",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "#1520 exact 61a08920e4e2c380e057ed4acb72cb30131abd86 tree 4d05d73c on ac6e7329. Four frozen HAD/DPL blobs verified unchanged.",
-    "next": "Wait exact CI 43621222111, fresh publication preflight, expected-head merge, verify main and release.",
-    "blocker": "New exact hosted validation queued after structural merge."
+    "evidence": "#1520 exact 61a08920e4e2c380e057ed4acb72cb30131abd86 tree 4d05d73c on ac6e7329, 80 local HAD tests plus deterministic generator and MRA passed. Hosted first ten steps passed.",
+    "next": "Wait current-base exact CI 43621222111, fresh publication preflight, expected-head merge, verify main and release.",
+    "blocker": "Canonical repository-health step still in progress at 17:49Z, no failures observed."
   },
   "pr": 1520
 }
