@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 24,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "4f32b8b5-3783-4b0b-9aae-04ba7e46af54",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg12-elevated-drip"
   },
   "claimedAt": "2026-11-14T22:35:17.725Z",
-  "heartbeatAt": "2026-11-14T22:37:06.891Z",
-  "expiresAt": "2026-11-15T00:07:06.891Z",
+  "heartbeatAt": "2026-11-14T22:58:09.028Z",
+  "expiresAt": "2026-11-14T22:58:09.028Z",
   "branch": "work/zerg12-had-elevated-drip",
   "predecessor": {
     "leaseId": "3890dbd9-d3d3-4dac-a372-c6416f295e29",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Exact #1530 head 83e00a68 / tree 9f88cfda, four focused tests and byte receipt on current main 4738d558",
     "next": "Observe full exact CI and fresh preflight; merge and release"
-  }
+  },
+  "releasedAt": "2026-11-14T22:58:09.028Z",
+  "releaseReason": "handoff"
 }
