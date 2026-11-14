@@ -9,11 +9,12 @@
     "label": "zerg10-ias-concept"
   },
   "claimedAt": "2026-11-14T17:05:00.345Z",
-  "heartbeatAt": "2026-11-14T17:05:00.345Z",
-  "expiresAt": "2026-11-14T18:35:00.345Z",
+  "heartbeatAt": "2026-11-14T17:07:17.162Z",
+  "expiresAt": "2026-11-14T18:37:17.162Z",
   "checkpoint": {
-    "evidence": "Owner rebrief #1516 and merged registry #1518",
-    "next": "Publish first furnished concept plates with exact tree and full CI"
+    "evidence": "PR #1521 exact b8fe55b0591892734408e3286567c8ed03ef1381 tree 6f5bd142 after local rendering, receipt and repository checks",
+    "next": "Observe exact hosted CI, merge-check, publish to main, release to next concept tranche"
   },
-  "branch": "work/zerg10-ias-workable-concept"
+  "branch": "work/zerg10-ias-workable-concept",
+  "pr": 1521
 }
