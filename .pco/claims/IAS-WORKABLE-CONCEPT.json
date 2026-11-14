@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-WORKABLE-CONCEPT",
   "generation": 3,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "fe42fc5d-135b-476a-8dcb-48731d862313",
   "holder": {
     "kind": "codex",
     "label": "zerg10-ias-spread"
   },
   "claimedAt": "2026-11-14T18:53:11.530Z",
-  "heartbeatAt": "2026-11-14T19:05:13.509Z",
-  "expiresAt": "2026-11-14T20:35:13.509Z",
+  "heartbeatAt": "2026-11-14T19:19:22.784Z",
+  "expiresAt": "2026-11-14T19:19:22.784Z",
   "checkpoint": {
     "evidence": "PR #1524 exact f7e26348; 79 focused checks and all three studies pass, ten SVGs rendered; A4 confirmed.",
     "next": "Wait for exact validation then canonical merge-check, merge, verify and release."
@@ -36,5 +36,7 @@
       "next": "On fresh exact green, canonical merge-check and expected-head merge, verify tree, and release IAS scope handoff."
     }
   },
-  "pr": 1524
+  "pr": 1524,
+  "releasedAt": "2026-11-14T19:19:22.784Z",
+  "releaseReason": "completed"
 }
