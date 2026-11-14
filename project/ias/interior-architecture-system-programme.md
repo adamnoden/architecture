@@ -8,6 +8,16 @@
 
 **Current selected family.** [Interior selection, six exit decisions and disassembly set](ias-03-selection-closeout.md). IAS-03 completes at pre-site design scope. The shared house gate retains adoption, and the broader programme stays open.
 
+## Owner-directed workable-fabric successor — 14 November 2026
+
+The owner now requests a **fully workable interior proposition**, including easy-to-lift modular floor tiles/panels, purposeful metal grates, designed removable service skirting and potentially nearly **all interior walls panelled**. See the [controlling design and approval plan](workable-interior-design-plan.md) and [PCO registration decision #1516](https://github.com/adamnoden/architecture/issues/1516).
+
+The previously completed `IAS-03` selection is valid for its **earlier bounded scope**, but its continuous floors/direct-plaster preference is **not an owner-approved final exclusion**. Preserve the existing technical evidence and cost/complexity controls. Do not silently adopt a universal panel cavity, destroy the 350 mm floor budget or relabel a mechanically unsupported tile as a finished assembly.
+
+Proposed delivery order (not yet in the canonical graph): `IAS-WORKABLE-CONCEPT` produces detailed *visual alternatives* now; `TRIAD-GATE` coordinates them with STR/HAD/OAS/MAT/water; a manual `HAD-OWNER-DESIGN-REVIEW` obtains actual owner approval; `IAS-WORKABLE-DETAILS` develops the chosen floor/wall/skirting/grate family into representative dimensioned sections, enlarged fixings, room grids/elevations, kit of parts and use/repair sequences before BCR/ADE technical-bay integration. A further manual PLT final owner acceptance checks the actual final book/drawings. None of these proposed IDs is dispatchable before #1516 is correctly registered under MVB.
+
+**Acceptance must be visual and concrete**: show a real panelled study, family/dining room, bedroom and wet-service transition; actual floor-module layout; visible grates, skirting, window/door interface, joints and ordinary room furniture. An essay about reversibility or a single isolated diagram is inadequate.
+
 ## Question and scope
 
 What bounded interior assembly family best realises the Reference House proposition that faster-changing domestic layers should attach, carry services, be maintained and be replaced without routinely consuming slower permanent fabric?

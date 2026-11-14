@@ -35,6 +35,14 @@ BSR has integrated this topology into the manuscript, navigation and mechanical 
 | `BCR` | Buildability & Construction Resolution | #944 | early feasibility/comparison; final convergence gated | five physical studies, conventional comparison, shared resolution matrix and reconciled technical closure |
 | `HRS` | House Resolution & Synthesis | #945 | early identity/applicability repair; technical migration and final synthesis gated | one current-house authority chain and resolved design handoff to PLT and Part VI |
 
+## Owner approval and workable interiors — 14 November 2026
+
+The owner's design brief now includes a much more **workable, accessible interior**: liftable floor panels/tiles, metal grates, removable infrastructural skirting and a genuine near-total wall-panelling option. This reopens the earlier IAS/HAD *pre-site preference* for continuous finishes. The [IAS workable-interior plan](ias/workable-interior-design-plan.md) defines concrete drawings, alternate families, safety/space challenges, source ownership and owner-visible decisions. Historic selections stay inspectable; do not use them as unqualified final design or assume the proposed modular approach has spare section depth.
+
+**Two actual owner acceptance events are required in the intended successor sequence:** (1) a visual **whole-house and interior-system design review after TRIAD**, before BCR/HRS final convergence, to decide mechanical/architectural family choices; (2) a **final rendered book/drawings design acceptance after PLT-FINAL-PREP**, before PLT-FINAL-FREEZE, separate from the existing physical print verdict. A negative verdict reopens the owning source and re-runs its affected checks; neither silence nor an agent-declared complete state is acceptance. The design package must contain adequate room/elevation views and 1:5/1:2 floor/wall/skirting/grate/window-interface details, not simply narrative or diagrams of future work.
+
+The exact proposed canonical nodes/dependencies are in [owner direction #1516](https://github.com/adamnoden/architecture/issues/1516). **They are not registered/enforced by this prose amendment**, and must be integrated through normal MVB bootstrap/lease/CI/preflight. Do not insert unrelated professional/accreditation gates on the book path. Existing system source, technical, moisture, print and manual manufacture controls retain their scope.
+
 ## Dependency and acceptance sequence
 
 The canonical execution DAG is [project control](control/graph.md). This table explains the architectural purpose of its gates; it is not a second live scheduler.

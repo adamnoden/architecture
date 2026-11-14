@@ -11,6 +11,12 @@ What remains between the coordinated architectural design and a house that a com
 
 BCR owns construction-resolution coordination and evidence routing. It does not replace ROF/RWT architectural system selection, MRA whole-house moisture assurance, EPR professional judgement, PHY physical proof, DEL responsibility/stage control, statutory approval or real-site deployment.
 
+## Workable interiors and owner-design release — 14 November 2026
+
+A new owner direction reopens the **architectural preference** for continuous floors and direct plaster. Before substantive final convergence, reconcile the [IAS workable-interior scheme](../ias/workable-interior-design-plan.md), its personal visual design acceptance and its *actual representative physical details*. Assess liftable floor tiles against the allocated structural/finish depth, floor loads, fire/acoustics, movement, dust/cleaning and wet edges; assess wall-panel backing/attachments, skirting circuit/access segregation, metal grates' walking/ventilation/drainage roles and OAS windows/doors as joined interfaces. A superficial panelling render is not a technically coordinated home, but rejected mechanical details may prompt a more restrained or simpler owner-approved result.
+
+The proposed PCO registration [#1516](https://github.com/adamnoden/architecture/issues/1516) adds `HAD-OWNER-DESIGN-REVIEW` and `IAS-WORKABLE-DETAILS` before `BCR-CONVERGENCE`, and the interior details before `BCR-BAY-DESIGN`. **These edges do not yet exist** in the canonical graph; do not report them as already blocking/unblocking dispatch. The owner may accept architectural design choices for the book while actual specialist/site/product proof remains bounded separately.
+
 ## Early and final scope
 
 The accepted 12 × 12 m house is the working architectural basis. Early BCR work tests its physical relationships against current candidate systems; it does not reopen the brief, select architecture or wait for finished IAS/HAD/ROF/RWT outputs. Findings return to the existing design owners before integration. Final convergence rechecks the adopted result rather than treating a successful early study as permanent assurance.

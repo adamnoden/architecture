@@ -7,6 +7,12 @@ At the east court window Y6850 the [adopted court service source](../had/court-i
 **Tracking:** [#942 — OAS opening assembly system](https://github.com/adamnoden/architecture/issues/942)  
 **Programme map:** [`../book-resolution-programme.md`](../book-resolution-programme.md)
 
+## Owner-visible opening assembly choice — 14 November 2026
+
+The owner expects to see and approve how renewable window/door openings are **actually assembled**. Retain the selected E0 conventional renewable frame as an evidence-backed default, but provide an intelligible **comparative candidate for a locally retained cassette/subframe** where it may genuinely improve repeated replacement and enclosure continuity. Include a 1:5 full jamb/head/sill and window-to-panelled-wall/skirting/floor interface set, and enlarged retention/first-release/repair details. Show the materials, support, flashed wet line, air/thermal continuity, fixings, room-visible trims and the cost/depth/installation/renewal penalty of the additional carrier. Do not pretend the previously rejected house-wide E2 cassette is selected.
+
+The [owner's workable-interior brief](../ias/workable-interior-design-plan.md) requests a joined house visual review after TRIAD and owner choice before detailed convergence. The actual choice, if it affects OAS E0 geometry/performance, must return to OAS via an explicit selected-source rewind, not silently convert an IAS panelling diagram into a certified external-window assembly. Its manual review gate awaits canonical registration under [#1516](https://github.com/adamnoden/architecture/issues/1516).
+
 ## Question and scope
 
 How should the Reference House separate enduring architectural openings from renewable frames, seals, hardware and doors/windows while maintaining weather, thermal, air, acoustic, security and movement obligations?

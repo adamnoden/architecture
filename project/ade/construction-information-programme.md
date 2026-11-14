@@ -2,6 +2,12 @@
 
 **Tracking:** [#1008](https://github.com/adamnoden/architecture/issues/1008). This is a bounded successor to completed internal representation work [#812](https://github.com/adamnoden/architecture/issues/812); its original closeout remains historical and valid at that scope. Governing purpose: [owner-house charter](../owner-house-charter.md). Delivery route: [DEL plan](../del/owner-house-delivery-plan.md).
 
+## Workable-interior drawing obligation — 14 November 2026
+
+The owner expects to **inspect actual designed and dimensioned physical interfaces**, not merely a schematic promise of cassette windows or accessible floors. The pre-site [IAS workable-interior plan](../ias/workable-interior-design-plan.md) requires source-owned room-specific modular floor grids, wall panel elevations, removable skirting and metal grates, shown in representative **1:5 assemblies and enlarged 1:2/1:1 joints**, plus section/plan/axonometric connections to window/door reveals. ADE must consume the **owner-selected** versions when developing the front window/wall/floor technical bay and its schedules. Its selected-bay outputs must not silently retain IAS-03's earlier continuous-plaster/floor default after the owner chooses otherwise.
+
+ADE's existing one-bay scope remains a **construction-information demonstration**, not an implied complete set of whole-house fabrication sheets. HRS/PLT should nevertheless include the coherent representative interior kit in the Reference House and book. Actual product/shop drawings, supplied finishes, complete engineering calculations, site/cost and construction issue remain under the later DEL commission route. The necessary self-service and manual gates are proposed for canonical registration in [#1516](https://github.com/adamnoden/architecture/issues/1516); they are not yet graph prerequisites.
+
 ## Scope
 
 Make one current-house construction bay's information dependable across drawings, schedules, specifications and evidence before generalising to a whole-house issue system. Existing orthogonal geometry and authored-section capabilities are the starting point. Do not claim a full 3D solid model, arbitrary CAD, integrated engineering solver, BoQ or exchange pipeline merely because drawings can be produced.

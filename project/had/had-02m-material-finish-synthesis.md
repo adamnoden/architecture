@@ -1,5 +1,9 @@
 # HAD-02M — material, finish, fitting and lighting synthesis
 
+## Owner-direction applicability update — 14 November 2026
+
+This completed `HAD-02M` result is **historical evidence of the earlier provisional interior preference**, not personal owner approval of mostly direct-plaster walls, continuous floor fields or the rejection of all-over panelling. The owner has now expressly requested serious design of a **workable modular floor, extensive visible wall panelling, metal grates and releasable skirting**. The original material family remains a valid **restraint/conventional comparator**, but its finish exclusions are not final authority for TRIAD/HRS/book. Develop the new [IAS workable-interior alternatives](../ias/workable-interior-design-plan.md), show them in real furnished rooms, test structural/space/material/physical constraints and obtain actual owner decision. Do not retroactively claim this node investigated or approved the successor. Registration is tracked in [#1516](https://github.com/adamnoden/architecture/issues/1516).
+
 ## Result and authority
 
 Select the E-A / P-A / S-A material family below at **architectural intent**

@@ -31,6 +31,14 @@ The [owner-house lodge/raceway brief](boundary-service-lodge-and-raceway-brief.m
 
 The [pre-site lodge/raceway comparison](boundary-service-lodge-options-result.md) compares three built forms and a connected route with frost and flooded-outlet counterexamples. It recommends separate small front-access cells with a separate protected water route and conventional burial as the benchmark. The bounded comparison is complete; actual site, operator-approved equipment/roof/entry, material admission, movement, lifting and maintenance acceptance remain explicitly unearned. No house or site installation is adopted.
 
+## Owner's architectural design approval — 14 November 2026
+
+The owner has explicitly asked to **see and approve architectural and component choices before they are final**. This includes full or near-full interior wall panelling, removable modular floor fields, metal grates, skirting, and renewable window/door interfaces. The previous quiet-plaster and continuous-floor material board remains a recorded option, not owner acceptance of that aesthetic or service philosophy. See [IAS's workable-fabric plan](../ias/workable-interior-design-plan.md) and [registration #1516](https://github.com/adamnoden/architecture/issues/1516).
+
+**First owner gate (proposed `HAD-OWNER-DESIGN-REVIEW`, manual after `TRIAD-GATE`):** the assembled, source-consistent house must be presented as one readable drawing/visual pack, **before** the definitive BCR/HRS/PLT freeze. Include inhabited plans/sections/elevations, exterior/court/roof, door/window frames/cassette comparison, floor/wall panels, grates, skirting, wet/ordinary transitions, material samples or credible visual specifications, and an explicit options/decision table. Show at least one extensive-panelling and one restrained comparison using actual rooms, not placeholders. The response must be the owner's attributable accept/revise/reject decision on the exact presented version; record changes and re-review materially changed options. A passing triad/CI is not the owner's preference approval.
+
+The **second owner gate** belongs to PLT after its final prepared full-book/current-drawing set, before final freeze, and must show the actual rendered artefacts and revisions since the first accepted design. It remains separate from a physical print-legibility verdict or a supplier/fabrication authorisation. These gates and their graph edges are **requested but not yet registered** by this prose update; #1516 owns their lease-safe implementation.
+
 ## Packet topology
 
 The original linear HAD-00…06 outline is superseded by the topology below,

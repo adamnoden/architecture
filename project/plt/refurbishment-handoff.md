@@ -6,6 +6,12 @@
 
 This record makes the existing current-source, integration and physical-review obligations executable as bounded packets. It does not add new proof requirements, repair drawings or record a physical verdict. The [current-source record](../../docs/publication/architectural-plate-current-source-and-rollout.md) and [candidate admission/handoff](../../docs/publication/architectural-plate-candidate-admission-and-handoff.md) retain the candidate facts, role dispositions and source limitations. Historical DRW/PLT release and specimen identities remain unchanged.
 
+## Owner's final design acceptance — proposed 14 November 2026
+
+The owner requires a **design verdict**, distinct from the existing physical BOOK/WALL **print-quality** verdict. After `PLT-FINAL-PREP`, prepare the actual current-house drawing set, representative interior-kit details and assembled rendered Working Edition for personal review. Show floor/wall panels, metal grates, skirting, window/door frame/junctions and room images at intelligible scale; attach a versioned **delta** from the earlier owner-accepted `HAD-OWNER-DESIGN-REVIEW` pack. The owner may accept, request changes or reject the final design. Silence and previous technical packet completion are not approval.
+
+Requested manual packet `PLT-OWNER-FINAL-DESIGN-ACCEPTANCE` must precede `PLT-FINAL-FREEZE`; return substantive architecture changes to IAS/HAD/OAS/STR/BCR/HRS rather than cosmetically altering drawings. The full scope and proposed PCO edges are recorded in [#1516](https://github.com/adamnoden/architecture/issues/1516) and the [workable-interior plan](../ias/workable-interior-design-plan.md). **This paragraph does not yet register or enforce the packet**; canonical graph registration needs its own validated integration. The existing `PLT-PRINT-REVIEW` and `PUB-02-FINAL` manual gates remain separate.
+
 ## Packet sequence
 
 | Node | Dispatch | Dependencies | Bounded result |
