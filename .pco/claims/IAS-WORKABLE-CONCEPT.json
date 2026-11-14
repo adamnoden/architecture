@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-WORKABLE-CONCEPT",
   "generation": 2,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "808403b7-7ef2-4b1c-96c6-99c330134a27",
   "holder": {
     "kind": "codex",
     "label": "zerg10-ias-detailed"
   },
   "claimedAt": "2026-11-14T18:20:40.065Z",
-  "heartbeatAt": "2026-11-14T18:36:41.027Z",
-  "expiresAt": "2026-11-14T20:06:41.027Z",
+  "heartbeatAt": "2026-11-14T18:52:05.520Z",
+  "expiresAt": "2026-11-14T18:52:05.520Z",
   "checkpoint": {
     "evidence": "PR #1523 exact ad33bbc2 onto solver main 4306c722. Both dimensioned plates and deterministic receipt, CI 43627500797.",
     "next": "On fresh exact green, canonical merge-check and expected-head merge, verify tree, and release IAS scope handoff."
@@ -36,5 +36,7 @@
       "next": "On exact green, fresh canonical merge-check then expected-head merge and release for next concept tranche"
     }
   },
-  "pr": 1523
+  "pr": 1523,
+  "releasedAt": "2026-11-14T18:52:05.520Z",
+  "releaseReason": "handoff"
 }
