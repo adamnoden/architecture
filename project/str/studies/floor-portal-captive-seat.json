@@ -1,0 +1,160 @@
+{
+  "sourceSha256": {
+    "floor-portal-seat-detail.json": "57331cf8738d2f5ce76e59a763c30317a6781873c80beeb408684b1611de1dfc",
+    "floor-portal-ring-access.json": "7020bb2d0c6e8c38f409487122b152e7ea7544ed4f0534c663dd40410ee3af14",
+    "current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+    "floor-portal-seat-detail.patch": "78364371ac9796cbb47fbad395898acc7b4a8a62c55b5b6033ae476ff14309f5"
+  },
+  "signedAnchorWitness": {
+    "case": "zero favourable G; U; W(4, 1);court=True;goodsZ=6000",
+    "anchor": "L-cap-anchor-(11667.5, 11667.5)-11",
+    "tensionN": 8584.889282479106
+  },
+  "geometry": {
+    "anchorPinPadAndWebQmm": [
+      338.5,
+      460.5,
+      442.5
+    ],
+    "pinPadAndSoffitZmm": [
+      6565.0,
+      6625.0,
+      6540.0
+    ],
+    "offsetAndLeverMm": [
+      122.0,
+      60.0
+    ],
+    "pinDiameterAndForkEarEyeGapMm": [
+      16.0,
+      8.0,
+      10.0,
+      2.0
+    ]
+  },
+  "equilibrium": {
+    "offsetMomentKNm": 1.0473564924624508,
+    "padCompressionAndHorizontalPinKN": 17.455941541040847,
+    "pinResultantKN": 19.452768930840158,
+    "netTransverseForceN": 0.0,
+    "pin": {
+      "midspanMomentNmm": 82674.26795607066,
+      "elasticBendingStressMPa": 205.5940376830083,
+      "meanShearPerPlaneMPa": 48.37506769011961,
+      "elasticEquivalentStressScreenMPa": 222.0120488912104,
+      "eyeAverageBearingMPa": 121.57980581775098,
+      "eachEarAverageBearingMPa": 75.98737863609436,
+      "samePinUnderVerticalOnlyStressScreenMPa": 97.97828092666613
+    },
+    "shorter40MmLeverPinResultantKN": 27.555354977425978
+  },
+  "slipAndArm": {
+    "upliftLostMotionPerPadGapMm": 2.033333333333333,
+    "padGapToFirstOrderAnchorLostMotionMm": {
+      "0.0": 0.0,
+      "0.5": 1.0166666666666666,
+      "1.0": 2.033333333333333,
+      "5.0": 10.166666666666666
+    },
+    "H20ModelEffectiveLengthMm": 1320.0,
+    "barOnlyElasticExtensionAtSignedWitnessMm": 0.18035523860682032,
+    "maxPadGapToEqualThatExtensionMm": 0.08869929767548541,
+    "nominalAndAfterSettingArmDepthMm": [
+      25.0,
+      15.0
+    ],
+    "grossYieldOnlyMinimumWidthAtAfterSettingDepthMm": 78.6746661004658,
+    "armComparisons": [
+      {
+        "widthAndDepthMm": [
+          42.0,
+          15.0
+        ],
+        "grossElasticBendingStressMPa": 664.9882491825085,
+        "cantileverDisplacementMm": 2.199485577962768,
+        "barAndArmOnlyAxialStiffnessKNPerMm": 3.6073376096027125,
+        "stiffnessFractionOfBarOnly": 0.0757845807799837
+      },
+      {
+        "widthAndDepthMm": [
+          42.0,
+          25.0
+        ],
+        "grossElasticBendingStressMPa": 239.39576970570306,
+        "cantileverDisplacementMm": 0.4750888848399579,
+        "barAndArmOnlyAxialStiffnessKNPerMm": 13.097820203702222,
+        "stiffnessFractionOfBarOnly": 0.2751649334475498
+      },
+      {
+        "widthAndDepthMm": [
+          55.0,
+          25.0
+        ],
+        "grossElasticBendingStressMPa": 182.81131504799143,
+        "cantileverDisplacementMm": 0.3627951484232406,
+        "barAndArmOnlyAxialStiffnessKNPerMm": 15.805731685880158,
+        "stiffnessFractionOfBarOnly": 0.33205396316294716
+      },
+      {
+        "widthAndDepthMm": [
+          42.0,
+          35.0
+        ],
+        "grossElasticBendingStressMPa": 122.14069882944034,
+        "cantileverDisplacementMm": 0.17313734870260855,
+        "barAndArmOnlyAxialStiffnessKNPerMm": 24.28591034347304,
+        "stiffnessFractionOfBarOnly": 0.5102093935818428
+      }
+    ]
+  },
+  "webIntroduction": {
+    "trialPadWidthHeightAndAreaMm": [
+      40.0,
+      20.0,
+      800.0
+    ],
+    "averagePadPressureMPa": 21.819926926301058,
+    "pinLineToRoomWebMedianMm": 28.0,
+    "localPinVerticalMomentAtRoomWebMedianKNm": 0.24037689990941496,
+    "equivalentSkinCoupleForLocalPinEccentricityKN": 2.4037689990941495,
+    "ringCellCentreQmm": 332.5,
+    "signedPinVerticalAndPadCoupleMomentsAtCellCentreKNm": [
+      1.0988658281573256,
+      -1.0473564924624508
+    ],
+    "signedNetMomentAtCellCentreKNm": 0.05150933569487463,
+    "signedNetMomentAtRoomWebMedianKNm": -0.806979592553036,
+    "separate10KNmRingShearFlowNPerMm": 250.0
+  },
+  "stationAxisService": {
+    "housingQAndZExtentMm": [
+      [
+        446.5,
+        474.5
+      ],
+      [
+        6551.0,
+        6579.0
+      ]
+    ],
+    "radialHousingReserveToAirReturnAfterSettingsMm": 5.0,
+    "nominalPadTopGapToUpperSkinMm": 5.0,
+    "forkPinAndPullRunwayMm": [
+      30.0,
+      36.0,
+      42.0
+    ],
+    "minimumStraightServiceLengthWithSettingsMm": 82.0,
+    "governingStationAndNearestSourceAnchorMm": [
+      937.0,
+      882.0
+    ],
+    "bareGapIfBothNeighbourForksUseSameLineMm": 25.0,
+    "withdrawalOverlapIfDirectedTowardNeighbourMm": 17.0,
+    "oppositeDirectionRequiredClearStationRangeMm": [
+      952.0,
+      1004.0
+    ],
+    "oppositeDirectionSpillPastCoreEndMm": 4.0
+  }
+}
