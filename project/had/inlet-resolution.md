@@ -819,6 +819,58 @@ stiffness, ground and anchors still need qualified source evidence.
 It leaves the existing threshold, wet drainage and physical inlet hold
 in place.
 
+#### Through-car receiving lift and removable sill
+
+The [Lödige ESCORTA planning guide](https://www.lodige.co.uk/fileadmin/Downloads/doc-lift-e/Sherpa-Escorta/Planning-guide-Sherpa-Escorta-20210329-LUK_01.pdf)
+provides a comparison for a trained attendant with opposite entries.
+A 2300 mm clear door on the 1774 mm rise fails its front-only travel
+criterion by 826 mm. Opposite entries meet the stated 450 mm minimum
+travel. Retain the 1600 mm aligned clear width. A 1650 mm cabin depth
+keeps 1300 mm after reserving the guide’s 175 mm allowance at each
+end. That is a conservative two-end allowance. Confirm the available
+paired stop option and its actual dimensions. The guide allowances give a 1970 × 1790 mm shaft. A 70 mm pit
+would retain the trial ground datum. The guide's pitless 70 mm rise
+over a 1000 mm ramp gives 160 N gravity drive on the coarse 234 kg
+carrier. Provide positive holding at that slope.
+
+The 1600 mm aligned opening has nominal hinges at Y3450 and Y5050.
+Two 800 mm leaves swinging west from X14230 reach X13430 in their
+longitudinal projection. The W9 parked nose at X13405 gives a 25 mm
+conservative plan separation before hinge, leaf thickness and setting. Keep the load outside the swing
+while the leaves open. The lower approach comparator reserves 825 mm
+for leaf reach and clearance before the 1000 mm ramp. Retain the same
+1600 mm clear width from Y3450 to Y5050 through the lower landing. The
+ramp ends at X17845 before the bottom arrival space. The outside shaft, canopy, base and
+wind fixings, and actual door sweep and protected retreat still need
+a matched drawing and site. The planning guide's 60% axle/edge limit
+would require 585 kg nominal payload for the 3.443 kN wheel challenge
+even before a specific concentrated contact check.
+
+A 40 mm free sill gap is a trial sensitivity independent of the
+manufacturer drawing. Allowing 10 mm setting makes it 50 mm. A 200 mm
+wheel drops 3.18 mm across that gap in the level comparison, with
+0.889 kN ideal axle force to climb the far lip. A separate 5 mm square
+step needs 1.132 kN. A retained bridge with 25 mm bearing each side
+has a 75 mm span between bearing centres. A 40 × 12 mm effective strip
+under the 3.443 kN challenge gives 67.2 MPa ideal stress and 0.026 mm
+deflection using the full 12 mm section across that span. A reduced
+taper section or local bearing may govern. At midspan each seat takes
+1.72 kN. A 120 mm tapered run
+with 5 mm relative level and a residual 2 mm lip needs about 0.143 kN
+and 0.699 kN separately. Charging both gives a 0.843 kN retaining-force
+comparison. The actual wheel, end taper, bearing and hold-down, lift
+sill allowance and differential settlement remain physical tests.
+
+Only release the sending capture once the receiving capture, level,
+landing lock, open gate and locked bridge are confirmed. Apply the
+reverse order on return. Confirm the level and load clear before retracting the bridge. Travel needs the load captured on the car, dock capture released,
+bridge stowed and locked, gate closed and locked, and landing
+restraint released.
+Treat an unknown bridge, gate or landing restraint state as a failed
+permission. The [executable comparison](studies/incoming-water-lift-sill.mjs)
+tests these design requirements as a model. The actual gates, position sensing, positive restraint and
+loaded handover still require physical evidence.
+
 ### Two-level lower-tail capture
 
 The [release and support study](studies/incoming-water-release-support.mjs)
