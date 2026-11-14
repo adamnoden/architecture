@@ -11,6 +11,7 @@ import {lowerCapComparator,lowerCapPlanEnvelope} from './incoming-water-lower-ca
 import {deriveLowerTailComparison} from './incoming-water-lower-tail.mjs';
 import {deriveReleaseSupport} from './incoming-water-release-support.mjs';
 import {deriveStandRetirement} from './incoming-water-stand-retirement.mjs';
+import {compareDryDockSupport} from './incoming-water-dock-support.mjs';
 
 const study=deriveIncomingWaterStudy();
 test('finite bends represent a real quarter-circle and reject impossible tangent lengths',()=>{
@@ -312,6 +313,31 @@ test('the lower-tail release follows the beam and current dock, including reject
 
 test('the intact stand clears only the high-lift sequence and requires positive restraint before retirement',()=>{
   const stand=deriveStandRetirement();
+  const dock=compareDryDockSupport(stand);
+  assert.equal(dock.status,'DEVELOPMENT_NOT_ADOPTED');
+  assert.equal(dock.gradeRiseMM,1774);
+  assert.equal(dock.receivingLiftAtLevelMM,-26);
+  assert.equal(dock.packedLiftClearWidthMM,1500);
+  assert.equal(dock.alignedLiftClearWidthMM,1600);
+  assert.deepEqual(dock.alignedLiftClearY,[3450,5050]);
+  assert.deepEqual(dock.receiverInterface.straightThroughClearPlanMM,[1300,1600]);
+  assert.equal(dock.largestLiftClearLengthMM,1300);
+  assert(dock.cargoCases.every(({scaffoldIntersects})=>scaffoldIntersects));
+  assert(dock.crewByCargo.every(row=>row.wheelToCrewMinimumMM>=75&&row.secondSideCrewAvailableMM<0));
+  assert(dock.standRestToCargoMM.every(row=>row.gapMM===0));
+  assert.deepEqual(dock.feet[0].xy,[12400,3650]);
+  assert.equal(Math.min(...dock.feet.map(foot=>foot.collectorGapMM)),145);
+  assert.equal(Math.min(...dock.feet.map(foot=>foot.capGapMM)),157.5);
+  assert.equal(Math.min(...dock.feet.map(foot=>foot.ductGapMM)),275);
+  assert.equal(Math.min(...dock.feet.map(foot=>foot.scaffoldGapMM)),60);
+  assert(dock.complete.min.force<-514&&dock.complete.max.force>3863);
+  assert(dock.stand.min.force<-267&&dock.stand.max.force>1289);
+  assert(dock.equalFootBallastKG>209&&dock.equalFootBallastKG<210);
+  assert(dock.preloadedFootPressureKPa>70&&dock.preloadedFootPressureKPa<71);
+  assert(dock.rigidFloorContrast.shelfMomentNMM>895000);
+  assert(dock.rigidFloorContrast.idealRemainingGateClearanceMM>2);
+  assert(dock.cargoControl.gradeHoldN>28&&dock.cargoControl.hypothetical15MMStepN>2133);
+
   assert(stand.motion.every(phase=>phase.gap>30));
   assert(stand.body.every(phase=>phase.gap>25&&phase.handOrArm.gap>25&&phase.maximumReachMM<600));
   assert.equal(stand.thresholdSlice.highestZ,2223);
