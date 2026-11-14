@@ -92,6 +92,95 @@
     ],
     "threeMillimetreResilientLayerOverrun": 3
   },
+  "bridge": {
+    "fixedRailCentreY": [
+      475,
+      925
+    ],
+    "footX": [
+      3450,
+      4550
+    ],
+    "footXYHalf": [
+      35,
+      35
+    ],
+    "trolleyPathX": [
+      3900,
+      4300
+    ],
+    "spanMM": 1100,
+    "railRHSMM": [
+      40,
+      20,
+      3
+    ],
+    "undersideZ": 210,
+    "crossbeamCentreZ": 250,
+    "clearLiftAndHardwareZ": 175,
+    "handlingBlockMassKG": 1,
+    "conservativeHorizontalPullN": 100,
+    "trackMisalignmentMM": 5,
+    "plusVerticalInstallationAllowanceMM": 10,
+    "totalMovingForceN": 147.41815953825,
+    "railBound": {
+      "testedRailSpan": 1100,
+      "railInertia": 18892,
+      "loadBendingStress": 21.45881530437156,
+      "nominalDeflection": 1.0818819382620661,
+      "note": "Whole moving force on one ideal simple span. Ignores rail self-mass, local wheel/contact, splice, foot and cross-beam checks."
+    },
+    "positiveClearance": {
+      "southFootToWall": 10.5,
+      "northFootToWall": 143,
+      "farFootToWall": 118,
+      "southFootToTile": -10,
+      "northFootToTile": -10,
+      "guaranteedTaskHeight": 23.918118061737935,
+      "trackSpacing": 450,
+      "trolleyAtThen": [
+        {
+          "x": 3900,
+          "foreAftReactionsN": [
+            87.11073063623864,
+            60.30742890201136
+          ]
+        },
+        {
+          "x": 4300,
+          "foreAftReactionsN": [
+            33.50412716778409,
+            113.9140323704659
+          ]
+        }
+      ],
+      "maximumOneSideVerticalN": 75.34705931955
+    },
+    "shoeCrossesTileLateralBand": true
+  },
+  "revised": {
+    "railCentresY": [
+      470,
+      940
+    ],
+    "footHalfY": 15,
+    "spanMM": 1100,
+    "southWallReserveMM": 25.5,
+    "southTileReserveMM": 15,
+    "northTileReserveMM": 25,
+    "northWallReserveMM": 148,
+    "southSkirtingClearanceMM": 7.5,
+    "southSkirtingAfter5SettingMM": 2.5,
+    "southRailToTileMM": 10,
+    "overSkirtingHeightMM": 60,
+    "farFeetToFirstRestMM": 15,
+    "crossRailUpliftConservativeN": 53.191489361702125,
+    "loadedMomentAboutNearestFootNmm": 36854.5398845625,
+    "outboardTippingMomentNmm": 25000,
+    "minimumIdealVerticalRestraintBeyondSymmetricHalfN": 0,
+    "worstSetupFreeFootCoupleN": 53.191489361702125,
+    "unladenTemporaryTiesRequired": true
+  },
   "adverse": {
     "uncoveredStructuralOpeningUnderPiece": 0,
     "recessDepthDuringExchangedState": 20,

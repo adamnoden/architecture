@@ -62,6 +62,76 @@ rigidSpread.developedReachToForwardRowMM = Math.hypot(
   centerY-release.stanceStart[1]);
 rigidSpread.staticRowSharePerSideN = packageMass.map(item=>item.sharedLoadEachN);
 rigidSpread.threeMillimetreResilientLayerOverrun = captured.resilientLayerTrial;
+const bridge = {
+  fixedRailCentreY: [475,925], footX: [3450,4550], footXYHalf: [35,35],
+  trolleyPathX: [3900,4300], spanMM:1100, railRHSMM:[40,20,3], undersideZ:210,
+  crossbeamCentreZ:250, clearLiftAndHardwareZ:175, handlingBlockMassKG:1,
+  conservativeHorizontalPullN:100, trackMisalignmentMM:5, plusVerticalInstallationAllowanceMM:10
+};
+const [westFoot,eastFoot]=bridge.footX;
+const [southRail,northRail]=bridge.fixedRailCentreY;
+const [footHalfX,footHalfY]=bridge.footXYHalf;
+const [width,height,wall]=bridge.railRHSMM;
+const railInertia = (width*height**3-(width-2*wall)*(height-2*wall)**3)/12;
+const worstPackage=packageMass.at(-1).handlingMassKG+bridge.handlingBlockMassKG;
+const wholeMovingForce=worstPackage*g*lift.handlingFactor;
+const maxWheelForce=wholeMovingForce;
+const testedRailSpan=eastFoot-westFoot;
+const railE=200000;
+const loadBendingStress = (maxWheelForce*testedRailSpan/4)*(height/2)/railInertia;
+const nominalDeflection = maxWheelForce*testedRailSpan**3/(48*railE*railInertia);
+const offCentreY=bridge.trackMisalignmentMM;
+const railSpacing=northRail-southRail;
+const trolleyAtThen = bridge.trolleyPathX.map(x => ({
+  x,
+  foreAftReactionsN:[wholeMovingForce*(eastFoot-x)/testedRailSpan,
+    wholeMovingForce*(x-westFoot)/testedRailSpan]
+}));
+bridge.totalMovingForceN=wholeMovingForce;
+bridge.railBound={testedRailSpan,railInertia,loadBendingStress,nominalDeflection,
+  note:'Whole moving force on one ideal simple span. Ignores rail self-mass, local wheel/contact, splice, foot and cross-beam checks.'};
+bridge.positiveClearance={
+  southFootToWall: southRail-footHalfY-429.5,
+  northFootToWall: 1103-(northRail+footHalfY),
+  farFootToWall:4703-(eastFoot+footHalfX),
+  southFootToTile:release.lift[1]-(southRail+footHalfY),
+  northFootToTile:northRail-footHalfY-release.lift[3],
+  guaranteedTaskHeight:bridge.undersideZ-bridge.clearLiftAndHardwareZ-bridge.plusVerticalInstallationAllowanceMM-nominalDeflection,
+  trackSpacing:railSpacing,
+  trolleyAtThen,
+  maximumOneSideVerticalN:wholeMovingForce*(.5+offCentreY/railSpacing)
+};
+bridge.shoeCrossesTileLateralBand=bridge.positiveClearance.southFootToTile<0||bridge.positiveClearance.northFootToTile<0;
+assert.equal(bridge.shoeCrossesTileLateralBand,true);
+const revised = {
+  railCentresY:[470,940],footHalfY:15,spanMM:testedRailSpan,
+  southWallReserveMM:470-15-429.5,
+  southTileReserveMM:release.lift[1]-(470+15),
+  northTileReserveMM:940-15-release.lift[3],
+  northWallReserveMM:1103-(940+15)
+};
+revised.southSkirtingClearanceMM=revised.southWallReserveMM-18;
+revised.southSkirtingAfter5SettingMM=revised.southSkirtingClearanceMM-5;
+revised.southRailToTileMM=release.lift[1]-(revised.railCentresY[0]+width/2);
+revised.overSkirtingHeightMM=bridge.undersideZ-150;
+const endOfTravel=release.firstRest[2];
+revised.farFeetToFirstRestMM=eastFoot-footHalfX-endOfTravel;
+const pullOverturn = bridge.conservativeHorizontalPullN * bridge.crossbeamCentreZ;
+const crossRailUpliftConservativeN = pullOverturn/(revised.railCentresY[1]-revised.railCentresY[0]);
+const loadedMomentAboutNearestFootNmm =
+  wholeMovingForce*(eastFoot-bridge.trolleyPathX.at(-1));
+Object.assign(revised,{crossRailUpliftConservativeN,loadedMomentAboutNearestFootNmm,
+  outboardTippingMomentNmm:pullOverturn,
+  minimumIdealVerticalRestraintBeyondSymmetricHalfN:Math.max(0,crossRailUpliftConservativeN-wholeMovingForce/2),
+  worstSetupFreeFootCoupleN:crossRailUpliftConservativeN,
+  unladenTemporaryTiesRequired:true
+});
+assert(revised.southSkirtingAfter5SettingMM>0&&revised.southTileReserveMM>0&&revised.northTileReserveMM>0);
+assert(revised.southRailToTileMM>0&&revised.farFeetToFirstRestMM>0);
+assert(loadedMomentAboutNearestFootNmm>pullOverturn);
+const nearestRhsToLoadGap = bridge.fixedRailCentreY[1]-release.lift[3]-bridge.railRHSMM[0]/2;
+assert(nearestRhsToLoadGap>0);
+assert(bridge.positiveClearance.guaranteedTaskHeight>0);
 const adverse = {
   uncoveredStructuralOpeningUnderPiece: 0,
   recessDepthDuringExchangedState: panel.skin+panel.beddingTerritory,
@@ -81,7 +151,7 @@ const receipt = {
   sourceSHA256:createHash('sha256').update(bytes).digest('hex'),
   panel,lift,captured,rest,
   handledBodySide:side,trailGripX:trailingGripX,gripY,
-  packageMass,maximumHorizontalReach,modeledReachByState,seamCases,rigidSpread,adverse,
+  packageMass,maximumHorizontalReach,modeledReachByState,seamCases,rigidSpread,bridge,revised,adverse,
   hold:'The two grips are on one edge. The loaded piece requires a restrained upper pickup spread or guided cradle before lift and transfer can be adopted. Trial mass, hand envelopes, scale and deflections do not establish human forces, material behaviour, screw/insert capacity, support performance, water or fire admission.'
 };
 
@@ -129,9 +199,49 @@ function drawSheet(){
   ].join('');
 }
 
+function drawBridge(){
+  const sx=x=>16+(x-3350)*.13, sy=y=>139-(y-425)*.13;
+  const plot=(x,y,w,h,fill,stroke='#675949',corner=0)=>
+    '<rect x="'+sx(x)+'" y="'+sy(y+h)+'" width="'+w*.13+'" height="'+h*.13+'" rx="'+corner+'" fill="'+fill+'" stroke="'+stroke+'" stroke-width=".35"/>';
+  const line=(x,y,z,t)=>'<path d="M'+sx(x)+' '+sy(y)+' L'+sx(z)+' '+sy(t)+'" stroke="#463e34" stroke-width=".45"/>';
+  const a=(x,y,s,cls='body')=>'<text x="'+x+'" y="'+y+'" class="'+cls+'">'+s+'</text>';
+  const module=box=>plot(box[0],box[1],box[2]-box[0],box[3]-box[1],'#d4bea0');
+  const facts=[
+    ['147.4 N','Factored load with 1 kg lifting hardware.'],
+    ['21.46 MPa / 1.08 mm','Ideal single rail stress and deflection.'],
+    ['23.92 mm','Available after setting and ideal rail bend.'],
+    ['53.19 N','Ideal restraint from the 100 N snag comparator.']
+  ];
+  return [
+    '<svg xmlns="http://www.w3.org/2000/svg" width="297mm" height="210mm" viewBox="0 0 297 210" role="img" aria-labelledby="title desc">',
+    '<title id="title">Study lift bridge, retained bay and fixed first rest</title><desc id="desc">Plan comparison of a portable four-post guide, fixed rails and the verified transfer box, with calculations and critical clearances.</desc>',
+    '<style>.title{font:7px Georgia;fill:#362c25}.head{font:4px Georgia;fill:#362c25}.body{font:3.3px Arial;fill:#443830}.small{font:2.7px Arial;fill:#443830}</style>',
+    '<rect width="297" height="210" fill="#f8f4eb"/>',
+    a(12,14,'A guided lift for the Study tile','title'),a(12,22,'Trial plan and load-path comparison · millimetres · fittings and restraint remain open'),
+    a(12,37,'Foot positions and guided travel','head'),
+    plot(3350,429.5,1353,673.5,'#ede4d6'),
+    module(release.lift),module(release.firstRest),
+    ...revised.railCentresY.map(y=>plot(westFoot,y-20,eastFoot-westFoot,40,'#8c9691')),
+    ...bridge.footX.flatMap(x=>revised.railCentresY.map(y=>plot(x-35,y-15,70,30,'#5b605d'))),
+    ...bridge.trolleyPathX.map(x=>plot(x-12,450,24,500,'none','#5c4838')),
+    line(3900,700,4300,700),line(4260,677,4300,700),line(4260,723,4300,700),
+    a(83,90,'First lift'),a(137,90,'First rest'),
+    a(12,148,'X3450 and X4550 feet straddle both travel states.'),
+    a(12,155,'Y470 and Y940 shoes leave 15 / 25 to moving tile edges.'),
+    a(12,162,'South shoe clears the 18 mm skirting by 7.5 nominal.'),
+    a(204,37,'Trial load screen','head'),
+    ...facts.flatMap(([value,label],i)=>[a(204,51+21*i,value,'head'),a(204,58+21*i,label,'small')]),
+    a(12,173,'Close the room. Fit and positively restrain both rail frames before any extraction. Travelling cradle handles pitch and first rest.'),
+    a(12,181,'Show actual feet and under-rail clearances, wheel capture, operation sequence and parked assembly before qualifying the concept.'),
+    a(12,199,'An ideal rail screen compares options. It does not rate fabricated equipment or certify a handling method.','small'),
+    '</svg>\n'
+  ].join('');
+}
+
 for(const [name,content] of [
   ['workable-study-release.json',JSON.stringify(receipt,null,2)+'\n'],
-  ['workable-study-release.svg',drawSheet()]
+  ['workable-study-release.svg',drawSheet()],
+  ['workable-study-lift-bridge.svg',drawBridge()]
 ]){
   const target = new URL(name,import.meta.url);
   if(process.argv.includes('--check')) assert.equal(readFileSync(target,'utf8'),content,name+' drift');
