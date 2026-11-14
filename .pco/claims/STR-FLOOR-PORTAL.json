@@ -9,9 +9,9 @@
     "label": "zerg11-portal"
   },
   "claimedAt": "2026-11-14T20:48:41.459Z",
-  "heartbeatAt": "2026-11-14T20:58:17.580Z",
-  "expiresAt": "2026-11-14T22:13:17.580Z",
-  "branch": "work/zerg11-str-direct-guide",
+  "heartbeatAt": "2026-11-14T21:08:25.609Z",
+  "expiresAt": "2026-11-14T22:28:25.609Z",
+  "branch": "work/zerg11-portal-inlet",
   "predecessor": {
     "leaseId": "59107682-39e2-477e-8cf5-752b3ca952d3",
     "generation": 20,
@@ -35,7 +35,7 @@
     }
   },
   "checkpoint": {
-    "evidence": "02436b3736ef2bc3fad1b892c9e0d8aef9480236 permanent aligned seat; 11 focused tests green",
-    "next": "Rebind to combined STR and HAD branch after authoritative base and merge exact CI"
+    "evidence": "STR 02436b37 permanent aligned seat and batch tree 2400e0d6",
+    "next": "Bind shared PR; independently verify exact CI and publication preflight"
   }
 }
