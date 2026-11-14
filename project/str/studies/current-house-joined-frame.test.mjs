@@ -9,6 +9,10 @@ test('The direct roof seat receipt reproduces its load and access comparisons', 
   const source = fileURLToPath(new URL('./floor-portal-direct-seat.py', import.meta.url));
   execFileSync('python3', ['-B', source, '--check']);
 });
+test('The permanent roof seat receipt reproduces fit, transfer and guide limits', () => {
+  const source = fileURLToPath(new URL('./floor-portal-permanent-seat.py', import.meta.url));
+  execFileSync('python3', ['-B', source, '--check']);
+});
 test('The guide backing receipt reproduces pressure and cage bounds', () => {
   const source = fileURLToPath(new URL('./floor-portal-guide-backing.py', import.meta.url));
   execFileSync('python3', ['-B', source, '--check']);
