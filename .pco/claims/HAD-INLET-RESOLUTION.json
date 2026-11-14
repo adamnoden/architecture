@@ -9,8 +9,8 @@
     "label": "zerg9-had-weather"
   },
   "claimedAt": "2026-11-14T10:38:21.987Z",
-  "heartbeatAt": "2026-11-14T10:55:40.961Z",
-  "expiresAt": "2026-11-14T11:40:40.961Z",
+  "heartbeatAt": "2026-11-14T11:00:24.251Z",
+  "expiresAt": "2026-11-14T11:45:24.251Z",
   "branch": "work/zerg9-had-weather",
   "predecessor": {
     "leaseId": "44eaf328-5bfb-4c01-88cf-e1eda540ea11",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1513 exact 7327b15a9c7e43f9e6843077e804e6d6e6844562 tree 7c560f2589eae1a760b5c689c022dd5234709289 on b4b9c0dc. All 79 HAD tests, deterministic water replan, MRA and whitespace passed.",
-    "next": "Wait full exact-hosted CI, run fresh merge preflight and merge using expected head, then release.",
-    "blocker": "Physical rescue, weather, receiving site and matched lift open."
+    "evidence": "PR #1513 corrected exact 34eca04e84e616b6a30dafeeb0e6d3925ac8b154 tree 9b51d13fa02f44bc1038b270abe3c9e1072c81e0 on b4b9c0dc. Refined RWT spill negative control and separated south-facing site comparison. Correction regression passed.",
+    "next": "Wait new full exact CI, fresh preflight, merge expected head and release.",
+    "blocker": "Actual site and product qualifications open; previous head CI superseded."
   },
   "pr": 1513
 }
