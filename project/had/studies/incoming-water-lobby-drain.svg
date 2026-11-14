@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1110 545" role="img" aria-labelledby="title desc">
+<title id="title">East inlet gravity section at Y2800</title>
+<desc id="desc">Comparison of an east-draining recessed floor sump and a raised sleeve drip tray with independent outlets. The low outlet crosses the wall-base break comparison. Neither route is adopted.</desc>
+<rect width="1110" height="545" fill="#f7f4ed"/>
+<g font-family="sans-serif" font-size="15" fill="#202821">
+<text x="32" y="40" font-size="27" font-weight="bold">East inlet gravity section at Y2800</text>
+<text x="32" y="65" >Dimensions in mm. Horizontal and vertical graphics use different scales.</text>
+<rect x="82" y="378.8" width="143.55" height="71.99999999999994" fill="#a9aca4"/>
+<rect x="225.55" y="378.8" width="594" height="161.99999999999994" fill="#a9aca4"/>
+<rect x="82" y="342.8" width="376.53000000000003" height="36" fill="#d9ded0"/>
+<rect x="82" y="319.4" width="376.53000000000003" height="23.400000000000034" fill="#e8e2d1"/>
+<rect x="458.53000000000003" y="324.8" width="342.86999999999995" height="54" fill="#debfa7"/>
+<rect x="458.53000000000003" y="83.60000000000002" width="342.86999999999995" height="241.2" fill="#e4d9c9"/>
+<line x1="458.53000000000003" y1="98" x2="801.4" y2="98" stroke="#196e78" stroke-width="7"/>
+<line x1="458.53000000000003" y1="116" x2="418.93" y2="119.6" stroke="#196e78" stroke-width="3"/>
+<line x1="418.93" y1="119.6" x2="418.93" y2="299.6" stroke="#196e78" stroke-width="1"/>
+<rect x="418.93" y="276.2" width="39.60000000000002" height="23.400000000000034" fill="#9fcac5"/>
+<line x1="82" y1="314" x2="409.03000000000003" y2="316.56725" stroke="#5a6658" stroke-width="3"/>
+<rect x="409.03000000000003" y="330.2" width="49.5" height="25.19999999999999" fill="#d9b3a6"/>
+<line x1="458.53000000000003" y1="301.4" x2="885.5500000000001" y2="306.0584" stroke="#196e78" stroke-width="3"/>
+<line x1="458.53000000000003" y1="350" x2="885.5500000000001" y2="354.65840000000003" stroke="#a74732" stroke-width="3"/>
+<line x1="458.53000000000003" y1="83.60000000000002" x2="458.53000000000003" y2="378.8" stroke="#847a6c" stroke-width="1"/>
+<line x1="801.4" y1="83.60000000000002" x2="801.4" y2="378.8" stroke="#847a6c" stroke-width="1"/>
+<text x="92" y="155" >Protected threshold X9397 lies 1603 west of the bay crest.</text>
+<text x="92" y="178" >The flush crossing has no water-stop credit.</text>
+<text x="484" y="90" fill="#196e78">Service sleeve Z600</text>
+<text x="510" y="114" >East wall and base comparison</text>
+<text x="92" y="277" >1:80 inlet bay fall</text>
+<text x="92" y="348" >Finish and distribution</text>
+<text x="92" y="369" >100 mm glass zone</text>
+<text x="92" y="402" >Concrete slab</text>
+<text x="425" y="467" >Outer-E beam</text>
+<text x="811" y="241" fill="#196e78" font-weight="bold">Raised tray and weep</text>
+<text x="811" y="263" >Z35 → Z22.06 invert at support exit</text>
+<text x="811" y="285" >Above wall-base comparison</text>
+<text x="811" y="348" fill="#a74732" font-weight="bold">Low floor scupper</text>
+<text x="811" y="370" >Z−100 → Z−112.94 invert</text>
+<text x="811" y="392" >Crosses mineral-base comparison</text>
+<text x="765" y="465" >Both need separate surveyed receiving routes.</text>
+<text x="765" y="488" >No credit to roof, plant threshold or D2.</text>
+</g>
+</svg>

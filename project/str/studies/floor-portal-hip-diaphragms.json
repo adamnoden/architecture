@@ -1,0 +1,177 @@
+{
+  "status": "No admitted hip detail; aligned seats and guide remain separate",
+  "sourcesSha256": {
+    "current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+    "current-house-welded-heel.py": "a2eb0aa3e1b031e0a88a0979b333c500c56dedc64ddeca42764a984e63df6418",
+    "floor-portal-permanent-seat.json": "17f56050baf042551dd6c6af681d67c144cd36822306639500600fe5a2b3a0e0"
+  },
+  "fittingEnvelope": {
+    "socketAndSettingRadiusMm": 36.0,
+    "trialAdditionalWebReserveMm": 2
+  },
+  "originalWebs": [
+    [
+      0,
+      -80
+    ],
+    [
+      0,
+      80
+    ],
+    [
+      1,
+      -70
+    ],
+    [
+      1,
+      70
+    ]
+  ],
+  "originalClashes": [
+    {
+      "anchor": 0,
+      "diagonalPlanMm": [
+        -57.982756057296896,
+        0.0
+      ],
+      "overlapWithEachWebMm": [
+        21.982756057296896,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "anchor": 1,
+      "diagonalPlanMm": [
+        2.1213203435596424,
+        62.932503525602726
+      ],
+      "overlapWithEachWebMm": [
+        0,
+        0,
+        0,
+        36.932503525602726
+      ]
+    },
+    {
+      "anchor": 4,
+      "diagonalPlanMm": [
+        2.1213203435596424,
+        -62.932503525602726
+      ],
+      "overlapWithEachWebMm": [
+        0,
+        0,
+        36.932503525602726,
+        0
+      ]
+    },
+    {
+      "anchor": 5,
+      "diagonalPlanMm": [
+        40.30508652763321,
+        0.0
+      ],
+      "overlapWithEachWebMm": [
+        0,
+        4.3050865276332075,
+        0,
+        0
+      ]
+    }
+  ],
+  "unchangedWebsWithRelocatedBars": {
+    "squareContainmentMaximumAbsUSumAbsVMm": 161.22034611053286,
+    "shortestCenteredWebHalfSpanMm": 115.0,
+    "oldLSeatPlateMinimumEdgeReserveMm": 26,
+    "outerSectorMaximumEdgeReservesMm": [
+      -17.68124086713189,
+      0.994949366116666,
+      14.845671067449295
+    ],
+    "remainingCentralWidthAndHeightMm": [
+      72.0,
+      52.0
+    ],
+    "minimumSocketCentrePitchMm": 67.0,
+    "centralMinimumAlongUSeparationMm": 42.24926034855522,
+    "centralMaximumCentresUpperBound": 2
+  },
+  "translatedWebs": {
+    "stations": [
+      {
+        "axis": 0,
+        "original": -80,
+        "moved": -104,
+        "reserveMm": 2.0172439427031037
+      },
+      {
+        "axis": 0,
+        "original": 80,
+        "moved": 87,
+        "reserveMm": 2.6949134723667925
+      },
+      {
+        "axis": 1,
+        "original": -70,
+        "moved": -109,
+        "reserveMm": 2.0674964743972737
+      },
+      {
+        "axis": 1,
+        "original": 70,
+        "moved": 109,
+        "reserveMm": 2.0674964743972737
+      }
+    ],
+    "maximumShoeTransferOffsetMm": 39,
+    "retainedLidStressMPa": 624.5005571999999,
+    "trialLidStressLimitMPa": 181.8181818181818,
+    "minimumUniformThicknessMm": 37.0661736066727,
+    "roundedUniformThicknessMm": 38,
+    "originalGrossRoofGapMm": 24.75801,
+    "retainedRoofGapMm": 12,
+    "minimumThickeningInsideCellMm": 5.241990000000001,
+    "interiorIfAllThickeningInsideCellMm": 62,
+    "fullLidAdditionalWeightKN": 0.12717,
+    "fullLidNodeWeightBeforeWebChangesKN": 1.02155,
+    "originalNodeWeightLimitKN": 1
+  },
+  "fixedWebBottomReliefs": {
+    "webDepthMm": 80,
+    "rows": [
+      {
+        "axis": 0,
+        "stationMm": -80,
+        "lowerWeldInterruptedMm": 66.31792735756306,
+        "remainingDoubleWeldMm": 253.68207264243694,
+        "idealAverageWeldStressMPa": 84.16221996929717
+      },
+      {
+        "axis": 0,
+        "stationMm": 80,
+        "lowerWeldInterruptedMm": 34.14278605967486,
+        "remainingDoubleWeldMm": 285.85721394032515,
+        "idealAverageWeldStressMPa": 74.68919921837994
+      },
+      {
+        "axis": 1,
+        "stationMm": -70,
+        "lowerWeldInterruptedMm": 72.0,
+        "remainingDoubleWeldMm": 248.0,
+        "idealAverageWeldStressMPa": 86.09050967741936
+      },
+      {
+        "axis": 1,
+        "stationMm": 70,
+        "lowerWeldInterruptedMm": 72.0,
+        "remainingDoubleWeldMm": 248.0,
+        "idealAverageWeldStressMPa": 86.09050967741936
+      }
+    ],
+    "lowerJointMustBeRebuilt": true,
+    "cutHeightCannotBeSelectedWithoutCollarWeldAndToolDepth": true,
+    "averageWeldStressScreenMPa": 100
+  }
+}

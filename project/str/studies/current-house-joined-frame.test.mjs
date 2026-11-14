@@ -13,6 +13,16 @@ test('The permanent roof seat receipt reproduces fit, transfer and guide limits'
   const source = fileURLToPath(new URL('./floor-portal-permanent-seat.py', import.meta.url));
   execFileSync('python3', ['-B', source, '--check']);
 });
+test('Hip diaphragm comparisons preserve all four fit clashes and the ring closure limits', () => {
+  const source = fileURLToPath(new URL('./floor-portal-hip-diaphragms.py', import.meta.url));
+  execFileSync('python3', ['-B', source, '--check']);
+  const result = read('floor-portal-hip-diaphragms.json');
+  assert.equal(result.originalClashes.length, 4);
+  assert.equal(result.unchangedWebsWithRelocatedBars.centralMaximumCentresUpperBound, 2);
+  assert.ok(result.translatedWebs.stations.every(row => row.reserveMm >= 2));
+  assert.ok(result.translatedWebs.fullLidNodeWeightBeforeWebChangesKN > result.translatedWebs.originalNodeWeightLimitKN);
+  assert.ok(result.fixedWebBottomReliefs.rows.every(row => row.lowerWeldInterruptedMm > 0));
+});
 test('The guide backing receipt reproduces pressure and cage bounds', () => {
   const source = fileURLToPath(new URL('./floor-portal-guide-backing.py', import.meta.url));
   execFileSync('python3', ['-B', source, '--check']);
