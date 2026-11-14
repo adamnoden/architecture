@@ -11,6 +11,10 @@ const housePath = 'project/had/studies/current-house.mjs';
 const { deriveCurrentHouse } = await import(new URL(housePath, sourceRoot));
 const house = deriveCurrentHouse();
 const model = house.model;
+const bathingPath='project/ias/studies/three-bathing-sections.json';
+const stairPath='project/ias/studies/stair-rail-renewal.json';
+const nativeBathing=JSON.parse(readFileSync(new URL(bathingPath,sourceRoot)));
+const nativeStair=JSON.parse(readFileSync(new URL(stairPath,sourceRoot)));
 const wall = id => {
   const result = model.groundWalls.find(item => item.id === id);
   assert(result, 'Missing selected Study wall: ' + id);
@@ -139,10 +143,19 @@ release.workerToTrailingTileEdgeMM=release.lift[0]-startX-release.workerRadiusMM
 release.trialReachToNearEdgeMidpointMM=Math.hypot(release.lift[0]-startX,(release.lift[1]+release.lift[3])/2-startY);
 release.movingTileBodyGapMM=release.firstRest[0]-endX-release.workerRadiusMM;
 
+const branchProbe={
+  wet:{familyBath:model.upperFurniture['family-bath1700'],
+    port:nativeBathing.family.fixture.newFloorPort,frontPanel:nativeBathing.family.fixture.upperFirstRelease.frontPanel,
+    retainedHatch:nativeBathing.family.hatches.find(hatch=>hatch.clear[2]===450).clear},
+  stair:{plan:model.stair,going:nativeStair.stair.going,rise:nativeStair.stair.rise,
+    landingYZ:nativeStair.stair.landingYZ,firstUpperNoseYZ:nativeStair.stair.firstUpperNoseYZ,
+    upperArrivalYZ:nativeStair.stair.upperArrivalYZ,betweenRails:nativeStair.stair.betweenRails}
+};
 const receipt = {
   status:'PRE-SITE ILLUSTRATED CONCEPT. No assembly selected or qualified.',
   source:{
     id:house.id, model:house.inputs['project/had/studies/water-replan.json'],
+    retainedJunctionSHA256:Object.fromEntries([bathingPath,stairPath].map(path=>[path,createHash('sha256').update(readFileSync(new URL(path,sourceRoot))).digest('hex')])),
     compositorSHA256:createHash('sha256').update(readFileSync(new URL(housePath,sourceRoot))).digest('hex'),
     relevantGeometrySHA256:createHash('sha256').update(JSON.stringify({walls:model.groundWalls, upperWalls:model.upperWalls,
       furniture:model.groundFurniture, upperFurniture:model.upperFurniture, openings:model.archOpeningRegister, sections:model.sections})).digest('hex')
@@ -152,7 +165,7 @@ const receipt = {
   assemblies:{groundDepthAboveRC:0-ground.top,upperDepthAboveRC:firstFFL-floor.top,upperRC:floor.top-floor.bottom,
     upperDepthBelowRC:floor.bottom-ceilingZ,upperUndersideServiceMM:55,upperCeilingMM:15,finishTradeoffs,
     skirting:{heightMM:150,existingProjectionMM:18,serviceProjectionMM:45,coverMM:18,grossBehindCoverMM:27,boundary:'Concept only; independently supported cable and accessory assemblies. 27 mm includes supports, tolerances and clearances.'}},
-  release,
+  release,branchProbe,
   additionalFurnishedComparisons:linkedRooms.map(({name,bands,fixed,moduleSummary})=>({name,bands,fixed,moduleSummary})),
   moduleStudy:{origin:sameGridOrigin,materials,options,errorBoundary:'Plan overlap only. The Study door, grip/release, extra working zone, ramps, fasteners and cut-piece geometry are not checked for lifting. Stop modular fields at independent threshold. Mass excludes edge retention, grips, frame and bedding.'}
 };
@@ -528,6 +541,53 @@ function renderRetentionDetail() {
   ].join('');
 }
 
+function renderFixedJunctions() {
+  const q=(x,y,w,h,fill)=>'<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" fill="'+fill+'" stroke="#6b5b4a"/>';
+  const t=(x,y,value,cls='body')=>'<text x="'+x+'" y="'+y+'" class="'+cls+'">'+value+'</text>';
+  const wet=branchProbe.wet,stair=branchProbe.stair;
+  const heights=[0,stair.rise,stair.rise*2,stair.rise*3];
+  const z0=397; const px=58,pz=z=>z0-z*.32;
+  const steps=heights.map((z,i)=>q(px+64*i,pz(z),64,z0-pz(z)+27,'#a4a59a')).join('');
+  const trim=(x,y,w,h)=>q(x,y,w,h,'#9b795b');
+  return [
+    '<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="580" viewBox="0 0 1500 580" role="img" aria-labelledby="title desc">',
+    '<title id="title">Three places to stop the removable finish</title><desc id="desc">A stair arrival, a family-bath front and a Study window reveal keep independently supported permanent duties.</desc>',
+    '<style>.title{font:36px Georgia;fill:#332c27}.head{font:24px Georgia;fill:#332c27}.body{font:17px Arial;fill:#584636}.small{font:14px Arial;fill:#584636}</style>',
+    '<rect width="1500" height="580" fill="#f6f1e7"/>',
+    t(52,55,'Stop the removable finish at the working boundary','title'),
+    t(52,86,'Representative sections · exact retained dimensions are named; relative graphic scales differ.'),
+    t(52,146,'Upper stair arrival','head'),
+    t(539,146,'Family bath front','head'),
+    t(1014,146,'Study window reveal','head'),
+    steps,
+    q(314,pz(heights.at(-1))+8,142,z0-pz(heights.at(-1))+19,'#a4a59a'),
+    q(314,pz(heights.at(-1)),54,8,'#a4a59a'),
+    trim(373,pz(heights.at(-1)),83,8),
+    q(368,pz(heights.at(-1)),5,8,'#7e7061'),
+    t(52,461,stair.rise+' rise, '+stair.going+' going, '+stair.betweenRails+' between rails.','small'),
+    t(52,493,'Keep the original finished nosing and slab.','small'),
+    t(52,522,'Make the transition piece captive and flush.','small'),
+    q(539,359,360,53,'#a4a59a'),
+    q(539,353,360,6,'#b69772'),
+    '<path d="M553 353h348v-42" stroke="#4c7682" stroke-width="4" fill="none"/>',
+    '<path d="M555 220h271l-26 73h-220Z" stroke="#665d53" stroke-width="3" fill="#d8d7bd"/>',
+    trim(817,224,17,122), q(605,291,14,62,'#817c70'),q(748,291,14,62,'#817c70'),
+    q(761,358,26,54,'#dde0c8'),q(742,406,64,6,'#65796d'),
+    t(539,461,'Ø'+wet.port[2]+' formed port at '+wet.port[0]+' / '+wet.port[1]+'.','small'),
+    t(539,493,(wet.frontPanel.clearX[1]-wet.frontPanel.clearX[0])+'-wide front panel, '+wet.retainedHatch[2]+' lower hatch.','small'),
+    t(539,522,'Keep the floor seal and independent bath feet.','small'),
+    q(1014,251,145,171,'#a4a59a'),q(1159,254,36,168,'#dac4a4'),
+    q(1014,227,190,24,'#797c72'),q(1037,192,53,35,'#aa8763'),
+    q(1060,165,7,28,'#87a8ab'),q(1073,165,7,28,'#87a8ab'),
+    q(1159,251,45,5,'#445e5c'), q(1195,297,18,125,'#8e7356'),
+    '<path d="M1215 312h47l-7-7m7 7-7 7" stroke="#5d5145" stroke-width="2" fill="none"/>',
+    t(1014,461,'Demount the room-side cover from its own anchors.','small'),
+    t(1014,493,'Keep the window support and sealing planes fixed.','small'),
+    t(1014,522,'Rehearse cassette and conventional frame courses.','small'),
+    '</svg>\n'
+  ].join('');
+}
+
 const outputs = [
   ['workable-study-floor.json',JSON.stringify(receipt,null,2)+'\n'],
   ['workable-study-floor.svg',renderStudy()],
@@ -537,7 +597,8 @@ const outputs = [
   ['workable-access-detail.svg',renderAccessDetail()],
   ['workable-furnished-fields.svg',renderLinkedRooms()],
   ['workable-study-room.svg',renderStudyRoom()],
-  ['workable-retention-detail.svg',renderRetentionDetail()]
+  ['workable-retention-detail.svg',renderRetentionDetail()],
+  ['workable-fixed-junctions.svg',renderFixedJunctions()]
 ];
 for (const [name,content] of outputs) {
   const target=new URL('./'+name,import.meta.url);

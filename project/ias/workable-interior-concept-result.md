@@ -48,6 +48,10 @@ A panelled appearance can carry across the living room and bedrooms with the sam
 ![Provisional floor capture and service skirting section](studies/workable-retention-detail.svg)
 
 Use an end-first, normal-to-wall service skirting release. Independent mechanical captures, screws or short end caps must leave their fixing points accessible, and the cable and all live terminations remain independently enclosed and supported. A raised skirting or lid is a real working detail with switch, external bracket, isolation and closure checks. The drawing uses a localized bench/clear-floor first-rest reference. In occupied use isolate the duty, remove adjacent objects, close the work area, lift one piece onto a protected clear surface, replace it, then test locking and any disturbed service seals. Run a failed retainer/tile case in the development mock-up. Leave no unsupported crossing or shared circulation interruption during work.
+![Source-located stair, family bath and window-reveal boundaries](studies/workable-fixed-junctions.svg)
+
+At the stair arrival keep the source 172.5 mm rise and 300 mm going. A raised 20 mm finish applied to the landing without compensating support would alter the adjoining rise by 20 mm. Meet the original finish level with independent edge capture carried out of the opening operation, rather than lifting a tile under a guard or exposed edge. At the family bath, keep the service piece on the front at Y4500, where the source gives X10625–11125 and 500 mm clear height. The located Ø110 hole and 450 square lower panel remain distinct, independently supported service and wet/fire interfaces. The Study room-side casing may move without owing the installed window the air, weather and support duties. Sections depict the stop relationships and retained datums, as an enlarged schematic rather than an installation detail.
+
 ## Whole-house exceptions and fixed boundaries
 
 | Occurrence | Design comparison and limit |

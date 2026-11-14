@@ -3,6 +3,10 @@
   "source": {
     "id": "HAD-SERVICES-02",
     "model": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+    "retainedJunctionSHA256": {
+      "project/ias/studies/three-bathing-sections.json": "1da8b7a4b9d5920c21616cc4ea0cab8b3ed638ce1fd05169a3a01ff8902e93f0",
+      "project/ias/studies/stair-rail-renewal.json": "907951612a2106f16db6943416c0376e0619e678524d26b556aa125fac4a670d"
+    },
     "compositorSHA256": "d4aaa78821f1fea4da3412a3d780fe3f30b2f852e76bb29abcc744e0e41443dd",
     "relevantGeometrySHA256": "ff387bfb8119310c7fccbd54848d8982bd2feba8541b297b0583bd8640f1352e"
   },
@@ -161,6 +165,62 @@
     "workerToTrailingTileEdgeMM": 100,
     "trialReachToNearEdgeMidpointMM": 405.2468383590426,
     "movingTileBodyGapMM": 100
+  },
+  "branchProbe": {
+    "wet": {
+      "familyBath": [
+        9460,
+        3800,
+        1700,
+        700
+      ],
+      "port": [
+        11012,
+        4366,
+        110
+      ],
+      "frontPanel": {
+        "frontY": 4500,
+        "clearX": [
+          10625,
+          11125
+        ],
+        "clearZLocal": [
+          0,
+          500
+        ],
+        "requiredAccess": "Firstunion/trapcleanout/wasteandfull52overflowreleasefromFRONTorTOP, neverblindrearreach. Panelisnotarequiredfoot/supportremovedforaccess."
+      },
+      "retainedHatch": [
+        10787,
+        4151,
+        450,
+        450
+      ]
+    },
+    "stair": {
+      "plan": [
+        417.5,
+        4432.5,
+        2400,
+        4335
+      ],
+      "going": 300,
+      "rise": 172.5,
+      "landingYZ": [
+        7132.5,
+        1725
+      ],
+      "firstUpperNoseYZ": [
+        7132.5,
+        1897.5
+      ],
+      "upperArrivalYZ": [
+        4432.5,
+        3450
+      ],
+      "betweenRails": 1004
+    }
   },
   "additionalFurnishedComparisons": [
     {
