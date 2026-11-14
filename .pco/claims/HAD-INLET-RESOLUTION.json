@@ -9,8 +9,8 @@
     "label": "zerg8-had-lift-sill"
   },
   "claimedAt": "2026-11-14T09:41:17.313Z",
-  "heartbeatAt": "2026-11-14T09:48:39.879Z",
-  "expiresAt": "2026-11-14T10:33:39.879Z",
+  "heartbeatAt": "2026-11-14T10:13:07.361Z",
+  "expiresAt": "2026-11-14T10:58:07.361Z",
   "branch": "work/zerg8-had-lift-sill",
   "predecessor": {
     "leaseId": "562490e4-c15c-40e6-aab7-8c1e52270a07",
@@ -36,8 +36,8 @@
   },
   "pr": 1510,
   "checkpoint": {
-    "evidence": "PR #1510 corrected exact eccec2ff, tree f6d98785; 77 HAD, MRA and deterministic checks pass; CI run 43582255670",
-    "next": "Verify full exact-head CI and publication preflight, merge, release",
-    "blocker": "Actual wheel, sill, matched lift controls and anchored surveyed access remain unqualified"
+    "evidence": "PR #1510 combined exact 3d7842d1 and tree d4304783 on STR main bad94a02; 78 HAD, deterministic MRA/water-replan, whitespace pass",
+    "next": "Verify full combined exact-head CI, fresh publication preflight, merge and release",
+    "blocker": "Actual lift/point-duty, landed positive guide and capture, rated anchors and surveyed access remain unqualified"
   }
 }
