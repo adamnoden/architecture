@@ -9,8 +9,8 @@
     "label": "zerg9-had-weather"
   },
   "claimedAt": "2026-11-14T10:38:21.987Z",
-  "heartbeatAt": "2026-11-14T10:49:01.985Z",
-  "expiresAt": "2026-11-14T11:34:01.985Z",
+  "heartbeatAt": "2026-11-14T10:55:40.961Z",
+  "expiresAt": "2026-11-14T11:40:40.961Z",
   "branch": "work/zerg9-had-weather",
   "predecessor": {
     "leaseId": "44eaf328-5bfb-4c01-88cf-e1eda540ea11",
@@ -35,8 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote head ce1a41bbcd534752025d18712f8ea4137a02db5f tree 8e02cf962bc045c720694883c48040ca15093851. All 79 HAD tests, deterministic water replan, MRA and whitespace passed. Confirmed STR #1512 files disjoint and trial merge tree 7c560f25.",
-    "next": "Reconcile with actual STR #1512 merged main, then open PR, bind live lease and validate exact head.",
-    "blocker": "STR first to avoid stale-base hosted validation."
-  }
+    "evidence": "PR #1513 exact 7327b15a9c7e43f9e6843077e804e6d6e6844562 tree 7c560f2589eae1a760b5c689c022dd5234709289 on b4b9c0dc. All 79 HAD tests, deterministic water replan, MRA and whitespace passed.",
+    "next": "Wait full exact-hosted CI, run fresh merge preflight and merge using expected head, then release.",
+    "blocker": "Physical rescue, weather, receiving site and matched lift open."
+  },
+  "pr": 1513
 }
