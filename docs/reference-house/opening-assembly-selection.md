@@ -3,7 +3,7 @@
 
 ## Pending owner-facing renewal-system review — 14 November 2026
 
-The E0/I0 selection below remains the completed, **pre-owner-choice architectural default**. The owner expects to see a full window frame and opening-junction design, including a candid comparison with a retained local cassette/subframe where it would improve practical replacement, *before* approving a final design pack. The [IAS workable-interior plan](../../project/ias/workable-interior-design-plan.md) and [owner review registration #1516](https://github.com/adamnoden/architecture/issues/1516) require visual, dimensioned floor/wall/skirting-to-window sections and explicit first-release and weather-reinstatement sequences. This does not select the rejected universal E2 cassette, reopen accepted performance claims or imply construction authority; any changed OAS geometry must be handled by the source owner and TRIAD/BCR/HRS.
+The E0/I0 selection below remains the completed, **pre-owner-choice architectural default**. The owner expects to see a full window frame and opening-junction design, including a candid comparison with a retained local cassette/subframe where it would improve practical replacement, *before* approving a final design pack. The owner-directed workable-interior study and personal design review require visual, dimensioned floor/wall/skirting-to-window sections and explicit first-release and weather-reinstatement sequences. This does not select the rejected universal E2 cassette, reopen accepted performance claims or imply construction authority; any changed OAS geometry must be handled by the source owner and TRIAD/BCR/HRS.
 
 ## Selection and exact claim boundary
 
