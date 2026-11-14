@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 17,
-  "state": "released",
-  "leaseId": "baf8146c-682b-4fc4-8476-0e524198ea3f",
+  "generation": 18,
+  "state": "claimed",
+  "leaseId": "47f1a7a8-9682-4305-8f11-4e1e79b2c5ac",
   "holder": {
     "kind": "chatgpt",
     "label": "recover-str"
   },
-  "claimedAt": "2026-11-14T09:40:57.014Z",
-  "heartbeatAt": "2026-11-14T10:12:22.197Z",
-  "expiresAt": "2026-11-14T10:12:22.197Z",
-  "branch": "work/zerg8-str-captive-seat",
+  "claimedAt": "2026-11-14T10:13:40.043Z",
+  "heartbeatAt": "2026-11-14T10:13:40.043Z",
+  "expiresAt": "2026-11-14T10:58:40.043Z",
+  "branch": "work/zerg8-str-direct-seat",
   "predecessor": {
-    "leaseId": "ab20eb01-1896-41fa-883b-a70b8ff29c75",
-    "generation": 16,
-    "branch": "work/zerg7-str-continuous-cage",
-    "pr": 1509,
+    "leaseId": "baf8146c-682b-4fc4-8476-0e524198ea3f",
+    "generation": 17,
+    "branch": "work/zerg8-str-captive-seat",
+    "pr": 1511,
     "checkpoint": {
-      "evidence": "PR #1509 exact 67494514990dba24edb04401e467c2f99497f74a, independent replay matched; exact hosted run 43535319756 passed declaration and homepage",
-      "next": "Wait for exact CI, publication preflight, merge and release",
-      "blocker": "The study is bounded; actual coupon-to-seat, tool corridor and lower bar continuity are still open"
+      "evidence": "PR #1511 exact 81432904df3653fbccefabb1e018f7cbfb201e51; local npm run test:str and 13 hosted auxiliary proofs passed",
+      "next": "Await required exact CI, verify main and lease, merge, release",
+      "blocker": "Actual web, cross-arm and unloaded service restraint need a replacement joint"
     }
   },
   "recoverySource": {
-    "leaseId": "ab20eb01-1896-41fa-883b-a70b8ff29c75",
-    "generation": 16,
-    "branch": "work/zerg7-str-continuous-cage",
-    "pr": 1509,
+    "leaseId": "baf8146c-682b-4fc4-8476-0e524198ea3f",
+    "generation": 17,
+    "branch": "work/zerg8-str-captive-seat",
+    "pr": 1511,
     "checkpoint": {
-      "evidence": "PR #1509 exact 67494514990dba24edb04401e467c2f99497f74a, independent replay matched; exact hosted run 43535319756 passed declaration and homepage",
-      "next": "Wait for exact CI, publication preflight, merge and release",
-      "blocker": "The study is bounded; actual coupon-to-seat, tool corridor and lower bar continuity are still open"
+      "evidence": "PR #1511 exact 81432904df3653fbccefabb1e018f7cbfb201e51; local npm run test:str and 13 hosted auxiliary proofs passed",
+      "next": "Await required exact CI, verify main and lease, merge, release",
+      "blocker": "Actual web, cross-arm and unloaded service restraint need a replacement joint"
     }
-  },
-  "pr": 1511,
-  "checkpoint": {
-    "evidence": "PR #1511 exact 81432904df3653fbccefabb1e018f7cbfb201e51; local npm run test:str and 13 hosted auxiliary proofs passed",
-    "next": "Await required exact CI, verify main and lease, merge, release",
-    "blocker": "Actual web, cross-arm and unloaded service restraint need a replacement joint"
-  },
-  "releasedAt": "2026-11-14T10:12:22.197Z",
-  "releaseReason": "handoff"
+  }
 }
