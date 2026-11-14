@@ -15,11 +15,12 @@ FIT = BACKING_STUDY['FIT']
 SEAT = BACKING_STUDY['SEAT']
 
 
-def width_screen(width, thickness):
-    webs = []
+def placement_screen(width_for_station, thickness, couplers):
+    webs, coupler_gaps = [], []
     for _, ox, oy, sx, sy in FIT['CORNER_ORIGINS']:
         for station in FIT['GUIDE_STATIONS']:
             along = SEAT['seat_guide_station'](station)
+            width = width_for_station(along)
             for centre in ((along, SEAT['GUIDE_ACROSS_CORE']), (SEAT['GUIDE_ACROSS_CORE'], along)):
                 delta = (centre[0] + sx * (ox - 6000), centre[1] + sy * (oy - 6000))
                 radial = tuple(value / hypot(*delta) for value in delta)
@@ -28,7 +29,13 @@ def width_screen(width, thickness):
                 web = FIT['web_to_l_boundary'](local_centre, radial, SEAT['CORE_WIDTH'] + outward,
                                               width, thickness, SEAT['CORE_LENGTH'] + outward)
                 webs.append(web - 2 * SEAT['SETTING'])
-    return min(webs)
+                normal = (-radial[1], radial[0])
+                for coupler in couplers:
+                    delta = FIT['offset'](coupler, centre)
+                    u, v = FIT['dot'](delta, radial), FIT['dot'](delta, normal)
+                    gap = hypot(max(0, abs(u) - width / 2), max(0, abs(v) - thickness / 2))
+                    coupler_gaps.append(gap - SEAT['COUPLER_DIAMETER'] / 2 - 2 * SEAT['SETTING'])
+    return {'concreteWebAfterSettingsMm': min(webs), 'couplerGapAfterSettingsMm': min(coupler_gaps)}
 
 
 def compare():
@@ -42,16 +49,21 @@ def compare():
     backing_width = FIT['CASSETTE_LENGTH']
     centred_minimum_width = (force + sqrt(force**2 + 24 * adverse_travel * force * depth * cap)) / (
         2 * depth * cap)
+    couplers = seat['trialPositionsMm']
     widths = [
-        {'widthMm': width, 'thicknessMm': thickness, 'concreteWebAfterSettingsMm': width_screen(width, thickness),
+        {'widthMm': width, 'thicknessMm': thickness,
+         **placement_screen(lambda _: width, thickness, couplers),
          'centredPeakAtAdverseTravelMPa': force / (width * depth) * (1 + 6 * adverse_travel / width)}
         for width, thickness in ((backing_width, FIT['CASSETTE_WIDTH']), (96, 46), (98, 46), (100, 46),
                                  (98, 48), (98, 50), (98, 54))
     ]
-    minimum_extended_coupler_gap = seat['minimumCxl20wToCassettePlanGapAfterSettingsMm'] - (
-        98 - backing_width) / 2
-    minimum_extended_h12_gap = previous['cage']['backingCassetteToBentBars']['H12']['lowerBoundMm'] - (
-        98 - backing_width) / 2
+    width_by_station = {220: 96.0, 475: 98.0, 680: 98.0}
+    mixed = placement_screen(width_by_station.__getitem__, FIT['CASSETTE_WIDTH'], couplers)
+    assert abs(widths[0]['couplerGapAfterSettingsMm'] -
+               seat['minimumCxl20wToCassettePlanGapAfterSettingsMm']) < 1e-9
+    cage = BACKING_STUDY['cage_screen'](seat, width_by_station)
+    assert mixed['couplerGapAfterSettingsMm'] >= SEAT['COVER_SCREEN'] > widths[2]['couplerGapAfterSettingsMm']
+    assert cage['backingCassetteToBentBars']['H12']['lowerBoundMm'] >= SEAT['COVER_SCREEN']
     shoe_width = FIT['TONGUE_LENGTH']
     pad_arm = 17.0
     pad_height = 12.0
@@ -84,7 +96,7 @@ def compare():
                          'minimumShoeRotationDegrees': degrees(atan(slope)), 'rimSweepEachSideMm': depth / 2 * slope})
 
     rows = []
-    for width in (94.0, 98.0, 100.0):
+    for width in (94.0, 96.0, 98.0, 100.0):
         for travel in (previous['simultaneousGoverningRadialTravelMm'], nominal_travel, adverse_travel):
             average = force / (width * depth)
             depth_margin = (cap / average - 1 - 6 * travel / width) * depth / 6
@@ -106,9 +118,10 @@ def compare():
         'widthScreenAcrossAllGuides': widths,
         'minimumPerfectlyCentredBackingWidthMmAtAdverseTravel': centred_minimum_width,
         'pressureAndMomentReserve': rows,
-        '98MmReceiverConservativeGapBoundsMm': {
-            'H12': minimum_extended_h12_gap,
-            'coupler': minimum_extended_coupler_gap,
+        'mixedWidthReceiver': {
+            'widthByStationMm': width_by_station,
+            **mixed,
+            'barClearanceAfterSettings': cage['backingCassetteToBentBars'],
         },
         'depthRocker': {
             'padCentresFromMidDepthMm': list(pad_faces),

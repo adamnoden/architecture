@@ -1,6 +1,6 @@
 {
   "sourceSha256": {
-    "floor-portal-guide-backing.py": "973d8df492edede0c7ae18b316c4048bf4b307bb4c6853f11d2dd2c5cdf984dd",
+    "floor-portal-guide-backing.py": "a040d986886407c66f2678c3135b919a859b53aa3479338c99de109ecfd4e264",
     "floor-portal-guide-backing.json": "f362526d388371290db4ba5dc819f8cf5896a87a06f5a4e727fb664c3c1a1348",
     "floor-portal-seat-detail.json": "57331cf8738d2f5ce76e59a763c30317a6781873c80beeb408684b1611de1dfc"
   },
@@ -28,42 +28,49 @@
       "widthMm": 94.0,
       "thicknessMm": 46.0,
       "concreteWebAfterSettingsMm": 27.097142023646967,
+      "couplerGapAfterSettingsMm": 26.31325889133244,
       "centredPeakAtAdverseTravelMPa": 17.2491474775565
     },
     {
       "widthMm": 96,
       "thicknessMm": 46,
       "concreteWebAfterSettingsMm": 26.350004676340603,
+      "couplerGapAfterSettingsMm": 25.526105174721764,
       "centredPeakAtAdverseTravelMPa": 16.737171651948806
     },
     {
       "widthMm": 98,
       "thicknessMm": 46,
       "concreteWebAfterSettingsMm": 25.60286732903424,
+      "couplerGapAfterSettingsMm": 24.746029452137876,
       "centredPeakAtAdverseTravelMPa": 16.252194999690875
     },
     {
       "widthMm": 100,
       "thicknessMm": 46,
       "concreteWebAfterSettingsMm": 24.855729981727876,
+      "couplerGapAfterSettingsMm": 23.973344412216647,
       "centredPeakAtAdverseTravelMPa": 15.79223876097021
     },
     {
       "widthMm": 98,
       "thicknessMm": 48,
       "concreteWebAfterSettingsMm": 24.938197648471025,
+      "couplerGapAfterSettingsMm": 24.121505136794177,
       "centredPeakAtAdverseTravelMPa": 16.252194999690875
     },
     {
       "widthMm": 98,
       "thicknessMm": 50,
       "concreteWebAfterSettingsMm": 24.273527967907796,
+      "couplerGapAfterSettingsMm": 23.508598668473603,
       "centredPeakAtAdverseTravelMPa": 16.252194999690875
     },
     {
       "widthMm": 98,
       "thicknessMm": 54,
       "concreteWebAfterSettingsMm": 22.944188606781353,
+      "couplerGapAfterSettingsMm": 22.319296433053168,
       "centredPeakAtAdverseTravelMPa": 16.252194999690875
     }
   ],
@@ -95,6 +102,33 @@
       "maxPivotFrictionMomentNM": 0.0,
       "equivalentPadForceImbalanceFraction": 0.0,
       "maxPivotFrictionCoefficientAt15MmRadius": 0.0
+    },
+    {
+      "widthMm": 96.0,
+      "travelMm": 2.9736936964546743,
+      "idealCentredPeakMPa": 11.341641723895034,
+      "availableDepthEccentricityMm": 5.916248688308534,
+      "maxPivotFrictionMomentNM": 325.92143670364607,
+      "equivalentPadForceImbalanceFraction": 0.34801462872403144,
+      "maxPivotFrictionCoefficientAt15MmRadius": 0.39441657922056894
+    },
+    {
+      "widthMm": 96.0,
+      "travelMm": 10.0,
+      "idealCentredPeakMPa": 15.541659391095322,
+      "availableDepthEccentricityMm": 1.5248072485927056,
+      "maxPivotFrictionMomentNM": 84.00041907290954,
+      "equivalentPadForceImbalanceFraction": 0.08969454403486503,
+      "maxPivotFrictionCoefficientAt15MmRadius": 0.10165381657284704
+    },
+    {
+      "widthMm": 96.0,
+      "travelMm": 12.0,
+      "idealCentredPeakMPa": 16.737171651948806,
+      "availableDepthEccentricityMm": 0.27480724859270556,
+      "maxPivotFrictionMomentNM": 15.138912847748726,
+      "equivalentPadForceImbalanceFraction": 0.01616513227015915,
+      "maxPivotFrictionCoefficientAt15MmRadius": 0.018320483239513706
     },
     {
       "widthMm": 98.0,
@@ -151,9 +185,32 @@
       "maxPivotFrictionCoefficientAt15MmRadius": 0.08769494781893794
     }
   ],
-  "98MmReceiverConservativeGapBoundsMm": {
-    "H12": 24.359357134516372,
-    "coupler": 24.31325889133244
+  "mixedWidthReceiver": {
+    "widthByStationMm": {
+      "220": 96.0,
+      "475": 98.0,
+      "680": 98.0
+    },
+    "concreteWebAfterSettingsMm": 25.60286732903424,
+    "couplerGapAfterSettingsMm": 25.526105174721764,
+    "barClearanceAfterSettings": {
+      "H20": {
+        "lowerBoundMm": 34.27430591319358,
+        "bar": "H20-4",
+        "corner": "SW",
+        "axis": 0,
+        "stationMm": 220,
+        "sampleHeightMm": 6450.0
+      },
+      "H12": {
+        "lowerBoundMm": 25.42610280710573,
+        "bar": "H12-0-600-42",
+        "corner": "SW",
+        "axis": 0,
+        "stationMm": 680,
+        "sampleHeightMm": 6439.0
+      }
+    }
   },
   "depthRocker": {
     "padCentresFromMidDepthMm": [
