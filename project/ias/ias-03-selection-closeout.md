@@ -1,5 +1,8 @@
 # IAS-03 — selected interior family, working access and reinstatement
 
+**14 November 2026 owner rebrief (not part of the completed historical selection):** the owner now wants to see and approve a substantially more **workable interior**, including modular liftable floor tiles, metal grates, removable service skirting and extensive wall panelling. This earlier continuous-floor/fixed-mineral family is the **conventional control**, not a final approved exclusion of those approaches. The [successor design plan](workable-interior-design-plan.md) and [owner approval registration #1516](https://github.com/adamnoden/architecture/issues/1516) require new illustrated design alternatives, source-bound joins and real owner decisions. The 18-role occurrence ledger and physical/adverse results below retain their original scope. Do not silently change their historical conclusion, pre-approve a system or infer floor/finish capacity.
+
+
 **Select the fixed mineral background, continuous floors and local mechanically released service pieces for the three-bathing house at pre-site design scope.** The [four fitted WCs](studies/fitted-wc-schedule.json), [basins and connected sinks](ias-03-household-water.md), [costed shaft support and replacement](ias-03-family-shaft-support.md) and [occupied fixture replay](studies/occupied-fixture-replay.json) complete the selected-family drawing and disassembly set. Retain the private flush rear shower, original 1700 mm family bath and separate principal shower. The [shared bath option](ias-03-shared-family-bathing.md) would remove a private shower and introduce a 580 mm step. It remains a separate household decision.
 
 | Exit | Selected and checked on the house | Evidence due before its stated use |
