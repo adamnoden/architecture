@@ -1,44 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 21,
-  "state": "released",
-  "leaseId": "22cdeecf-903b-4d79-944a-6885401ee57f",
+  "generation": 22,
+  "state": "claimed",
+  "leaseId": "d0e13c8b-fa7a-4b53-b4b3-a5e85bbf4354",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg11-portal"
+    "label": "zerg12-heel"
   },
-  "claimedAt": "2026-11-14T20:48:41.459Z",
-  "heartbeatAt": "2026-11-14T21:22:12.951Z",
-  "expiresAt": "2026-11-14T21:22:12.951Z",
-  "branch": "work/zerg11-portal-inlet",
+  "claimedAt": "2026-11-14T21:51:40.067Z",
+  "heartbeatAt": "2026-11-14T21:51:40.067Z",
+  "expiresAt": "2026-11-14T23:51:40.067Z",
+  "branch": "work/zerg12-str-heel",
   "predecessor": {
-    "leaseId": "59107682-39e2-477e-8cf5-752b3ca952d3",
-    "generation": 20,
-    "branch": "work/zerg10-str-center",
-    "pr": 1519,
+    "leaseId": "22cdeecf-903b-4d79-944a-6885401ee57f",
+    "generation": 21,
+    "branch": "work/zerg11-portal-inlet",
+    "pr": 1526,
     "checkpoint": {
-      "evidence": "PR #1519 exact 1c1fa20c on live d86b5894; independent exact tree 6248fedb and ten focus tests",
-      "next": "Verify exact-head full CI, then current-main preflight and expected-head merge",
-      "blocker": "Rocker torque and split restraint require developed hardware; packet remains planned"
+      "evidence": "Shared PR #1526 exact 98ff47f2 and STR source 02436b37",
+      "next": "Wait for exact-head CI, then fresh independent STR merge preflight"
     }
   },
   "recoverySource": {
-    "leaseId": "59107682-39e2-477e-8cf5-752b3ca952d3",
-    "generation": 20,
-    "branch": "work/zerg10-str-center",
-    "pr": 1519,
+    "leaseId": "22cdeecf-903b-4d79-944a-6885401ee57f",
+    "generation": 21,
+    "branch": "work/zerg11-portal-inlet",
+    "pr": 1526,
     "checkpoint": {
-      "evidence": "PR #1519 exact 1c1fa20c on live d86b5894; independent exact tree 6248fedb and ten focus tests",
-      "next": "Verify exact-head full CI, then current-main preflight and expected-head merge",
-      "blocker": "Rocker torque and split restraint require developed hardware; packet remains planned"
+      "evidence": "Shared PR #1526 exact 98ff47f2 and STR source 02436b37",
+      "next": "Wait for exact-head CI, then fresh independent STR merge preflight"
     }
-  },
-  "checkpoint": {
-    "evidence": "Shared PR #1526 exact 98ff47f2 and STR source 02436b37",
-    "next": "Wait for exact-head CI, then fresh independent STR merge preflight"
-  },
-  "pr": 1526,
-  "releasedAt": "2026-11-14T21:22:12.951Z",
-  "releaseReason": "handoff"
+  }
 }
