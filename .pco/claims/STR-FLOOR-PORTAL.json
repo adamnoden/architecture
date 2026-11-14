@@ -9,8 +9,8 @@
     "label": "zerg12-heel"
   },
   "claimedAt": "2026-11-14T21:51:40.067Z",
-  "heartbeatAt": "2026-11-14T22:16:49.421Z",
-  "expiresAt": "2026-11-15T00:16:49.421Z",
+  "heartbeatAt": "2026-11-14T22:21:05.341Z",
+  "expiresAt": "2026-11-15T00:21:05.341Z",
   "branch": "work/zerg12-heel-section",
   "predecessor": {
     "leaseId": "22cdeecf-903b-4d79-944a-6885401ee57f",
@@ -33,7 +33,7 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1529 combined exact head d7ff9b0f3314007e9e26f93f10eac1b811f9afd7; 12 STR focused tests pass",
+    "evidence": "PR #1529 corrected exact 9664e887b57b72dd0e3a540f8fa2c16be3eb3bb0 CI 43647598614; 12 STR focused tests pass",
     "next": "Verify exact hosted CI, canonical publication preflight for both leases and release after expected-head merge"
   },
   "pr": 1529
