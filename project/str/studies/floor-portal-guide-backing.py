@@ -164,7 +164,7 @@ def cheek_wing_stress(backing_width, tongue_width, depth, cheek, radial, pressur
     return max(results)
 
 
-def cage_screen(receipt):
+def cage_screen(receipt, lengths_by_station=None):
     # The box limits are the inherited cap top and lowest cassette component.
     # Independent vertical setting expands that box. Plan setting is deducted.
     z0, z1 = 6449.0, SEAT['CAP_Z']
@@ -190,6 +190,7 @@ def cage_screen(receipt):
     for corner, ox, oy, sx, sy in FIT['CORNER_ORIGINS']:
         for axis in (0, 1):
             for station in (220, 475, 680):
+                length = (lengths_by_station or {}).get(station, FIT['CASSETTE_LENGTH'])
                 centre = (station, SEAT['GUIDE_ACROSS_CORE'])
                 if axis == 1:
                     centre = centre[::-1]
@@ -206,7 +207,7 @@ def cage_screen(receipt):
                         z = first + (last - first) * i / n
                         delta = FIT['offset'](path(z), centre)
                         u, v = FIT['dot'](delta, radial), FIT['dot'](delta, tangent)
-                        du = max(0, abs(u) - FIT['CASSETTE_LENGTH'] / 2)
+                        du = max(0, abs(u) - length / 2)
                         dv = max(0, abs(v) - FIT['CASSETTE_WIDTH'] / 2)
                         dz = max(0, low - z, z - high)
                         clearance = hypot(du, dv, dz) - radius - error - hypot(slope, 1) * pitch / 2
@@ -216,7 +217,7 @@ def cage_screen(receipt):
                         if (corner == 'NE' and axis == 0 and station == 680 and
                                 name.startswith('H12-0-') and z == 6485):
                             run = abs(v) - FIT['CASSETTE_WIDTH'] / 2
-                            radial_reserve = FIT['CASSETTE_LENGTH'] / 2 + run / 2 - abs(u)
+                            radial_reserve = length / 2 + run / 2 - abs(u)
                             local_h12.append({'bar': name, 'radialAndTangentialCoordinateMm': [u, v],
                                               'runFromCassetteFaceMm': run,
                                               'centrelineReserveInsideTwoToOneSpreadMm': radial_reserve})

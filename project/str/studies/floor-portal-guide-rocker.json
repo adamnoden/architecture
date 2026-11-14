@@ -1,0 +1,257 @@
+{
+  "sourceSha256": {
+    "floor-portal-guide-backing.py": "a040d986886407c66f2678c3135b919a859b53aa3479338c99de109ecfd4e264",
+    "floor-portal-guide-backing.json": "f362526d388371290db4ba5dc819f8cf5896a87a06f5a4e727fb664c3c1a1348",
+    "floor-portal-seat-detail.json": "57331cf8738d2f5ce76e59a763c30317a6781873c80beeb408684b1611de1dfc"
+  },
+  "retainedTangentWitness": {
+    "programme": [
+      1,
+      4
+    ],
+    "court": true,
+    "goodsZmm": 7400,
+    "uplift": false,
+    "minimumShelfGapMm": 14.918914251288658,
+    "maximumShelfCompressionN": 0.0,
+    "maximumResultantGuide": "L-cap-key-(11667.5, 11667.5)-2",
+    "resultantKN": 56.180186236397766,
+    "simultaneousTangentKN": 55.08920498012865,
+    "simultaneousRadialKN": 11.01784099602573,
+    "concretePressureComparatorMPa": 17.0,
+    "nominalTangentPressureMPa": 17.488636501628143,
+    "engagementNeededAtPressureComparatorMm": 61.724599417511094,
+    "directionReversalCount": 12
+  },
+  "widthScreenAcrossAllGuides": [
+    {
+      "widthMm": 94.0,
+      "thicknessMm": 46.0,
+      "concreteWebAfterSettingsMm": 27.097142023646967,
+      "couplerGapAfterSettingsMm": 26.31325889133244,
+      "centredPeakAtAdverseTravelMPa": 17.2491474775565
+    },
+    {
+      "widthMm": 96,
+      "thicknessMm": 46,
+      "concreteWebAfterSettingsMm": 26.350004676340603,
+      "couplerGapAfterSettingsMm": 25.526105174721764,
+      "centredPeakAtAdverseTravelMPa": 16.737171651948806
+    },
+    {
+      "widthMm": 98,
+      "thicknessMm": 46,
+      "concreteWebAfterSettingsMm": 25.60286732903424,
+      "couplerGapAfterSettingsMm": 24.746029452137876,
+      "centredPeakAtAdverseTravelMPa": 16.252194999690875
+    },
+    {
+      "widthMm": 100,
+      "thicknessMm": 46,
+      "concreteWebAfterSettingsMm": 24.855729981727876,
+      "couplerGapAfterSettingsMm": 23.973344412216647,
+      "centredPeakAtAdverseTravelMPa": 15.79223876097021
+    },
+    {
+      "widthMm": 98,
+      "thicknessMm": 48,
+      "concreteWebAfterSettingsMm": 24.938197648471025,
+      "couplerGapAfterSettingsMm": 24.121505136794177,
+      "centredPeakAtAdverseTravelMPa": 16.252194999690875
+    },
+    {
+      "widthMm": 98,
+      "thicknessMm": 50,
+      "concreteWebAfterSettingsMm": 24.273527967907796,
+      "couplerGapAfterSettingsMm": 23.508598668473603,
+      "centredPeakAtAdverseTravelMPa": 16.252194999690875
+    },
+    {
+      "widthMm": 98,
+      "thicknessMm": 54,
+      "concreteWebAfterSettingsMm": 22.944188606781353,
+      "couplerGapAfterSettingsMm": 22.319296433053168,
+      "centredPeakAtAdverseTravelMPa": 16.252194999690875
+    }
+  ],
+  "minimumPerfectlyCentredBackingWidthMmAtAdverseTravel": 94.95959627058377,
+  "pressureAndMomentReserve": [
+    {
+      "widthMm": 94.0,
+      "travelMm": 2.9736936964546743,
+      "idealCentredPeakMPa": 11.6215780098173,
+      "availableDepthEccentricityMm": 5.506396404807872,
+      "maxPivotFrictionMomentNM": 303.3430002463043,
+      "equivalentPadForceImbalanceFraction": 0.3239056708710513,
+      "maxPivotFrictionCoefficientAt15MmRadius": 0.36709309365385817
+    },
+    {
+      "widthMm": 94.0,
+      "travelMm": 10.0,
+      "idealCentredPeakMPa": 16.00222115387772,
+      "availableDepthEccentricityMm": 1.0215200408427694,
+      "maxPivotFrictionMomentNM": 56.274726921296704,
+      "equivalentPadForceImbalanceFraction": 0.06008941416722173,
+      "maxPivotFrictionCoefficientAt15MmRadius": 0.06810133605618462
+    },
+    {
+      "widthMm": 94.0,
+      "travelMm": 12.0,
+      "idealCentredPeakMPa": 17.2491474775565,
+      "availableDepthEccentricityMm": -0.2550757038380813,
+      "maxPivotFrictionMomentNM": 0.0,
+      "equivalentPadForceImbalanceFraction": 0.0,
+      "maxPivotFrictionCoefficientAt15MmRadius": 0.0
+    },
+    {
+      "widthMm": 96.0,
+      "travelMm": 2.9736936964546743,
+      "idealCentredPeakMPa": 11.341641723895034,
+      "availableDepthEccentricityMm": 5.916248688308534,
+      "maxPivotFrictionMomentNM": 325.92143670364607,
+      "equivalentPadForceImbalanceFraction": 0.34801462872403144,
+      "maxPivotFrictionCoefficientAt15MmRadius": 0.39441657922056894
+    },
+    {
+      "widthMm": 96.0,
+      "travelMm": 10.0,
+      "idealCentredPeakMPa": 15.541659391095322,
+      "availableDepthEccentricityMm": 1.5248072485927056,
+      "maxPivotFrictionMomentNM": 84.00041907290954,
+      "equivalentPadForceImbalanceFraction": 0.08969454403486503,
+      "maxPivotFrictionCoefficientAt15MmRadius": 0.10165381657284704
+    },
+    {
+      "widthMm": 96.0,
+      "travelMm": 12.0,
+      "idealCentredPeakMPa": 16.737171651948806,
+      "availableDepthEccentricityMm": 0.27480724859270556,
+      "maxPivotFrictionMomentNM": 15.138912847748726,
+      "equivalentPadForceImbalanceFraction": 0.01616513227015915,
+      "maxPivotFrictionCoefficientAt15MmRadius": 0.018320483239513706
+    },
+    {
+      "widthMm": 98.0,
+      "travelMm": 2.9736936964546743,
+      "idealCentredPeakMPa": 11.07464358185002,
+      "availableDepthEccentricityMm": 6.324486939190624,
+      "maxPivotFrictionMomentNM": 348.41095738721873,
+      "equivalentPadForceImbalanceFraction": 0.3720286434818014,
+      "maxPivotFrictionCoefficientAt15MmRadius": 0.42163246261270826
+    },
+    {
+      "widthMm": 98.0,
+      "travelMm": 10.0,
+      "idealCentredPeakMPa": 15.104981235006814,
+      "availableDepthEccentricityMm": 2.022666753346547,
+      "maxPivotFrictionMomentNM": 111.42710338159924,
+      "equivalentPadForceImbalanceFraction": 0.11898039725567923,
+      "maxPivotFrictionCoefficientAt15MmRadius": 0.13484445022310315
+    },
+    {
+      "widthMm": 98.0,
+      "travelMm": 12.0,
+      "idealCentredPeakMPa": 16.252194999690875,
+      "availableDepthEccentricityMm": 0.7981769574281795,
+      "maxPivotFrictionMomentNM": 43.9709340181764,
+      "equivalentPadForceImbalanceFraction": 0.04695158573106938,
+      "maxPivotFrictionCoefficientAt15MmRadius": 0.053211797161878634
+    },
+    {
+      "widthMm": 100.0,
+      "travelMm": 2.9736936964546743,
+      "idealCentredPeakMPa": 10.819718379275855,
+      "availableDepthEccentricityMm": 6.731207999411264,
+      "maxPivotFrictionMomentNM": 370.8168972434488,
+      "equivalentPadForceImbalanceFraction": 0.39595341173007437,
+      "maxPivotFrictionCoefficientAt15MmRadius": 0.44874719996075096
+    },
+    {
+      "widthMm": 100.0,
+      "travelMm": 10.0,
+      "idealCentredPeakMPa": 14.690454661367639,
+      "availableDepthEccentricityMm": 2.515424217284069,
+      "maxPivotFrictionMomentNM": 138.57272031794173,
+      "equivalentPadForceImbalanceFraction": 0.14796613042847465,
+      "maxPivotFrictionCoefficientAt15MmRadius": 0.16769494781893793
+    },
+    {
+      "widthMm": 100.0,
+      "travelMm": 12.0,
+      "idealCentredPeakMPa": 15.79223876097021,
+      "availableDepthEccentricityMm": 1.315424217284069,
+      "maxPivotFrictionMomentNM": 72.46567434178736,
+      "equivalentPadForceImbalanceFraction": 0.077377895134357,
+      "maxPivotFrictionCoefficientAt15MmRadius": 0.08769494781893794
+    }
+  ],
+  "mixedWidthReceiver": {
+    "widthByStationMm": {
+      "220": 96.0,
+      "475": 98.0,
+      "680": 98.0
+    },
+    "concreteWebAfterSettingsMm": 25.60286732903424,
+    "couplerGapAfterSettingsMm": 25.526105174721764,
+    "barClearanceAfterSettings": {
+      "H20": {
+        "lowerBoundMm": 34.27430591319358,
+        "bar": "H20-4",
+        "corner": "SW",
+        "axis": 0,
+        "stationMm": 220,
+        "sampleHeightMm": 6450.0
+      },
+      "H12": {
+        "lowerBoundMm": 25.42610280710573,
+        "bar": "H12-0-600-42",
+        "corner": "SW",
+        "axis": 0,
+        "stationMm": 680,
+        "sampleHeightMm": 6439.0
+      }
+    }
+  },
+  "depthRocker": {
+    "padCentresFromMidDepthMm": [
+      -17.0,
+      17.0
+    ],
+    "padFaceWidthAndHeightMm": [
+      70.0,
+      12.0
+    ],
+    "meanPadPressureMPaWithEqualForce": 32.79119344055277,
+    "meanPadPressureMPaIfOnePadCarriesAll": 65.58238688110553,
+    "uncorrectedOnePadMomentNM": 936.516484662187,
+    "bladeMovementAndAdverseFaceMismatch": [
+      {
+        "differentialFaceSettingMm": 0,
+        "bladePadDeflectionDifferenceMm": 0.11040860413820996,
+        "minimumShoeRotationDegrees": 0.18605661186512315,
+        "rimSweepEachSideMm": 0.0974193565925382
+      },
+      {
+        "differentialFaceSettingMm": 0.2,
+        "bladePadDeflectionDifferenceMm": 0.11040860413820996,
+        "minimumShoeRotationDegrees": 0.5230767303620651,
+        "rimSweepEachSideMm": 0.2738899448278323
+      },
+      {
+        "differentialFaceSettingMm": 0.5,
+        "bladePadDeflectionDifferenceMm": 0.11040860413820996,
+        "minimumShoeRotationDegrees": 1.0285317637032185,
+        "rimSweepEachSideMm": 0.5385958271807736
+      }
+    ],
+    "lineContactTrialRadiusAndEffectiveLengthMm": [
+      15.0,
+      65.0
+    ],
+    "steelOnSteelRigidLineContactHalfWidthMm": 0.38379380396811286,
+    "elasticLineContactPeakMPa": 1405.838109773307,
+    "nominalPerSideDepthMm": 13.0,
+    "maxVerticalContainmentBelowCapWithinInheritedBoxMm": 66.0
+  },
+  "independentMovementWitnessMm": 5.753489963413861
+}
