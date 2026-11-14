@@ -2,7 +2,7 @@
 
 from hashlib import sha256
 import json
-from math import ceil, floor, sqrt
+from math import ceil, floor, hypot, sqrt
 from pathlib import Path
 import sys
 
@@ -117,6 +117,35 @@ def retained_web_packing(radius, pitch, minimum_web_half_span):
     }
 
 
+def point_to_segment(point, start, end):
+    du, dv = end[0] - start[0], end[1] - start[1]
+    fraction = ((point[0] - start[0]) * du + (point[1] - start[1]) * dv) / (du**2 + dv**2)
+    fraction = min(1, max(0, fraction))
+    return hypot(point[0] - start[0] - du * fraction, point[1] - start[1] - dv * fraction)
+
+
+def outboard_return(station, anchors, radius, additional_force):
+    sign = 1 if station > 0 else -1
+    centre_u, centre_v = max((point for _, point in anchors), key=lambda point: sign * point[1])
+    trial_allowance = 8
+    left, right = centre_u - radius - trial_allowance, centre_u + radius + trial_allowance
+    outside = sign * ceil(abs(centre_v) + radius + trial_allowance)
+    points = [(left, station), (left, outside), (right, outside), (right, station)]
+    socket_clearance = min(point_to_segment(point, start, end) - radius
+                           for _, point in anchors for start, end in zip(points, points[1:]))
+    edge_clearance = CASSETTE_HALF_SIDE - max(abs(u) + abs(v) for u, v in points) / sqrt(2)
+    crossing_web_clearance = 80 - max(abs(left), abs(right)) - WEB / 2
+    assert min(socket_clearance, edge_clearance, crossing_web_clearance) >= trial_allowance
+    return {
+        'polylineInDiagonalPlanMm': points,
+        'minimumCentrelineReserveToAnyReservedSocketMm': socket_clearance,
+        'minimumCentrelineReserveToCassetteEdgeMm': edge_clearance,
+        'minimumCentrelineReserveToOtherWebMm': crossing_web_clearance,
+        'sideOffsetMm': abs(outside - station),
+        'eccentricMomentAtAdditionalForceOnlyKNm': additional_force * abs(outside - station) / 1e6,
+    }
+
+
 def compare():
     heel, seat = map(lambda name: json.loads(read(name)), (HEEL, SEAT))
     hip = heel['node']['hip']
@@ -151,15 +180,29 @@ def compare():
     original_mass = heel['nodeGkN']
     full_plate_extra_kn = 300**2 * (full_thickness - LID) / 1e9 * 78.5
     path_weld_stress = hip['internalWebWeldStress']
+    weld_throat = 8
+    weld_screen = 100
+    lane_force = path_weld_stress * 2 * TRANSFER_LENGTH * weld_throat
     relief = []
     for axis, station in source_stations:
         lost = interrupted_length(axis, station, anchors, radius)
-        # Keep the upper seam, charge all disk-chord interruption to the
-        # lower one. The optimistic average demands are not local strengths.
-        remaining = 2 * TRANSFER_LENGTH - lost
-        relief.append(dict(axis=axis, stationMm=station, lowerWeldInterruptedMm=lost,
-                           remainingDoubleWeldMm=remaining,
-                           idealAverageWeldStressMPa=path_weld_stress * 2 * TRANSFER_LENGTH / remaining))
+        lower_length = TRANSFER_LENGTH - lost
+        # Both faces at the lower interface are an optimistic access screen.
+        # The upper interface is in series and cannot share the lower force.
+        lower_stress = lane_force / (2 * lower_length * weld_throat)
+        additional_force = max(0, lane_force - 2 * lower_length * weld_throat * weld_screen)
+        row = dict(axis=axis, stationMm=station, lowerWeldInterruptedMm=lost,
+                   remainingLowerLengthPerFaceMm=lower_length,
+                   optimisticBothFaceLowerStressMPa=lower_stress,
+                   oneFaceLowerStressMPa=2 * lower_stress,
+                   equivalentTwoFaceThroatAtExistingLengthMm=lane_force / (2 * lower_length * weld_screen),
+                   additionalEffectiveLowerLengthPerFaceAt8MmMm=additional_force /
+                   (2 * weld_throat * weld_screen),
+                   additionalLowerForceAt8MmKN=additional_force / 1000)
+        if axis == 1:
+            row['outboardReturnPlanOnly'] = outboard_return(station, anchors, radius, additional_force)
+        relief.append(row)
+    assert max(row['optimisticBothFaceLowerStressMPa'] for row in relief) > weld_screen
     assert shifted_20 > comparison_limit
     assert inward_minimum > 0 and original_mass + full_plate_extra_kn > heel['nodeGMaximum']
     return {
@@ -184,10 +227,10 @@ def compare():
             'originalNodeWeightLimitKN': heel['nodeGMaximum'],
         },
         'fixedWebBottomReliefs': {
-            'webDepthMm': space, 'rows': relief,
+            'webDepthMm': space, 'solidWebLaneForceKN': lane_force / 1000, 'rows': relief,
             'lowerJointMustBeRebuilt': True,
             'cutHeightCannotBeSelectedWithoutCollarWeldAndToolDepth': True,
-            'averageWeldStressScreenMPa': 100,
+            'averageWeldStressScreenMPa': weld_screen,
         },
     }
 

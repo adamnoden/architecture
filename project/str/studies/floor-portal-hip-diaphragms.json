@@ -140,34 +140,101 @@
   },
   "fixedWebBottomReliefs": {
     "webDepthMm": 80,
+    "solidWebLaneForceKN": 170.8035712,
     "rows": [
       {
         "axis": 0,
         "stationMm": -80,
         "lowerWeldInterruptedMm": 66.31792735756306,
-        "remainingDoubleWeldMm": 253.68207264243694,
-        "idealAverageWeldStressMPa": 84.16221996929717
+        "remainingLowerLengthPerFaceMm": 93.68207264243694,
+        "optimisticBothFaceLowerStressMPa": 113.9516120735809,
+        "oneFaceLowerStressMPa": 227.9032241471618,
+        "equivalentTwoFaceThroatAtExistingLengthMm": 9.116128965886473,
+        "additionalEffectiveLowerLengthPerFaceAt8MmMm": 13.070159357563062,
+        "additionalLowerForceAt8MmKN": 20.912254972100897
       },
       {
         "axis": 0,
         "stationMm": 80,
         "lowerWeldInterruptedMm": 34.14278605967486,
-        "remainingDoubleWeldMm": 285.85721394032515,
-        "idealAverageWeldStressMPa": 74.68919921837994
+        "remainingLowerLengthPerFaceMm": 125.85721394032514,
+        "optimisticBothFaceLowerStressMPa": 84.82011372873413,
+        "oneFaceLowerStressMPa": 169.64022745746826,
+        "equivalentTwoFaceThroatAtExistingLengthMm": 6.78560909829873,
+        "additionalEffectiveLowerLengthPerFaceAt8MmMm": 0.0,
+        "additionalLowerForceAt8MmKN": 0.0
       },
       {
         "axis": 1,
         "stationMm": -70,
         "lowerWeldInterruptedMm": 72.0,
-        "remainingDoubleWeldMm": 248.0,
-        "idealAverageWeldStressMPa": 86.09050967741936
+        "remainingLowerLengthPerFaceMm": 88.0,
+        "optimisticBothFaceLowerStressMPa": 121.30935454545455,
+        "oneFaceLowerStressMPa": 242.6187090909091,
+        "equivalentTwoFaceThroatAtExistingLengthMm": 9.704748363636364,
+        "additionalEffectiveLowerLengthPerFaceAt8MmMm": 18.752232000000003,
+        "additionalLowerForceAt8MmKN": 30.003571200000007,
+        "outboardReturnPlanOnly": {
+          "polylineInDiagonalPlanMm": [
+            [
+              -41.878679656440355,
+              -70
+            ],
+            [
+              -41.878679656440355,
+              -107
+            ],
+            [
+              46.121320343559645,
+              -107
+            ],
+            [
+              46.121320343559645,
+              -70
+            ]
+          ],
+          "minimumCentrelineReserveToAnyReservedSocketMm": 8.067496474397274,
+          "minimumCentrelineReserveToCassetteEdgeMm": 41.726876040831314,
+          "minimumCentrelineReserveToOtherWebMm": 25.878679656440355,
+          "sideOffsetMm": 37,
+          "eccentricMomentAtAdditionalForceOnlyKNm": 1.1101321344000004
+        }
       },
       {
         "axis": 1,
         "stationMm": 70,
         "lowerWeldInterruptedMm": 72.0,
-        "remainingDoubleWeldMm": 248.0,
-        "idealAverageWeldStressMPa": 86.09050967741936
+        "remainingLowerLengthPerFaceMm": 88.0,
+        "optimisticBothFaceLowerStressMPa": 121.30935454545455,
+        "oneFaceLowerStressMPa": 242.6187090909091,
+        "equivalentTwoFaceThroatAtExistingLengthMm": 9.704748363636364,
+        "additionalEffectiveLowerLengthPerFaceAt8MmMm": 18.752232000000003,
+        "additionalLowerForceAt8MmKN": 30.003571200000007,
+        "outboardReturnPlanOnly": {
+          "polylineInDiagonalPlanMm": [
+            [
+              -41.878679656440355,
+              70
+            ],
+            [
+              -41.878679656440355,
+              107
+            ],
+            [
+              46.121320343559645,
+              107
+            ],
+            [
+              46.121320343559645,
+              70
+            ]
+          ],
+          "minimumCentrelineReserveToAnyReservedSocketMm": 8.067496474397274,
+          "minimumCentrelineReserveToCassetteEdgeMm": 41.726876040831314,
+          "minimumCentrelineReserveToOtherWebMm": 25.878679656440355,
+          "sideOffsetMm": 37,
+          "eccentricMomentAtAdditionalForceOnlyKNm": 1.1101321344000004
+        }
       }
     ],
     "lowerJointMustBeRebuilt": true,

@@ -22,6 +22,9 @@ test('Hip diaphragm comparisons preserve all four fit clashes and the ring closu
   assert.ok(result.translatedWebs.stations.every(row => row.reserveMm >= 2));
   assert.ok(result.translatedWebs.fullLidNodeWeightBeforeWebChangesKN > result.translatedWebs.originalNodeWeightLimitKN);
   assert.ok(result.fixedWebBottomReliefs.rows.every(row => row.lowerWeldInterruptedMm > 0));
+  assert.equal(result.fixedWebBottomReliefs.rows.filter(row => row.optimisticBothFaceLowerStressMPa > 100).length, 3);
+  assert.ok(result.fixedWebBottomReliefs.rows.filter(row => row.outboardReturnPlanOnly)
+    .every(row => row.outboardReturnPlanOnly.minimumCentrelineReserveToAnyReservedSocketMm >= 8));
 });
 test('The guide backing receipt reproduces pressure and cage bounds', () => {
   const source = fileURLToPath(new URL('./floor-portal-guide-backing.py', import.meta.url));
