@@ -758,6 +758,64 @@ Run `node project/had/studies/incoming-water-stand-retirement.mjs` to
 reproduce the route, handling controls, support reactions and landing
 conflict.
 
+### Independent receiving dock
+
+Keep the [MAT threshold's](../mat/plant-threshold.md) outer 20 mm plate
+seat on independently supported steel at X12130–12150. The four-foot
+dock comparison spans X12400–14050 and Y3650–5100. Its 250 mm pad
+envelopes leave at least **145 mm** to the collector, **157.5 mm** to
+the P17 cap, **275 mm** to the protected inlet, **250 mm** to the foul
+stack and **60 mm** to the scaffold board. These are plan distances
+to source footprints, with no excavation or soil reserve inferred.
+
+The scaffold board still intersects all three parked cargo envelopes.
+Remove or re-site that scaffold bay with its replacement edge protection
+before opening the exchange route. The first-rest stand also overlaps
+all three cargo parking envelopes. Transfer it to independent capture,
+remove it and its rest from the dock, then admit the cylinder or W9.
+The nominal south crew lane puts one 600 mm person envelope at Y3775,
+leaving **75 mm** raw lateral clearance to the controlling cylinder.
+The north strip cannot accommodate a second parallel crew envelope.
+Prove the actual crew task, retreat path and protected gate sequence
+before the exchange.
+
+Charge the MAT **3.443 kN** one-wheel challenge to the outer shelf
+and the full cargo footprint corners through the deck end. With a
+100 kg comparison operator in the south lane, the ideal foot model
+reaches **3.864 kN compression**. The separate shelf-wheel case with
+no favourable operator weight gives **0.514 kN uplift**. Stand-only
+signed travel gives **−0.267 to +1.289 kN** under the specified
+disturbance. The 260 mm shelf cantilever sees **0.895 kN·m** under
+the full point load. With 250 mm square pads the peak nominal pressure
+is 61.8 kPa before platform self-weight. Equal 0.514 kN preloading at
+each foot would correspond to about 210 kg total dead weight and raise
+that pressure to 70.1 kPa. This is a hold-down sensitivity. Use
+positive anchorage or verify the full stability and bearing of a
+different load distribution.
+
+A single ideal 100 × 50 × 5 mm tube spanning 1650 mm deflects
+0.93 mm under the wheel comparator. The same tube at the stand-post
+load deflects 0.34 mm. Combined with the earlier rail comparison,
+the remaining modeled split-gate clearance is only **2.01 mm**.
+The full deck needs transverse load distribution and the south stand
+rail post is 439 mm off the nearest foundation line. Do not use the
+single-tube result as whole-platform stiffness.
+
+At X14230 the independent guarded receiving lift must match **Z−26**
+and the **1774 mm** comparison rise from grade. Allow a clear working
+deck of at least **1300 × 1500 mm** across the compared cargo and
+south crew envelopes, with actual gate, tread, stop and restraint
+outside those allowances. The 1:80 fall produces about 29 N gravity
+drive for the coarse 234 kg mass. A 15 mm square step at the same
+point load would need about **2.13 kN** ideal axle force. Require
+a positively held, level-adjusted and retained transition instead of
+using that step as a stop. The actual cargo, lift, platform geometry,
+stiffness, ground and anchors still need qualified source evidence.
+
+[Reproduce the signed dock comparison](studies/incoming-water-dock-support.mjs).
+It leaves the existing threshold, wet drainage and physical inlet hold
+in place.
+
 ### Two-level lower-tail capture
 
 The [release and support study](studies/incoming-water-release-support.mjs)
