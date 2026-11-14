@@ -15,7 +15,7 @@ BCR owns construction-resolution coordination and evidence routing. It does not 
 
 A new owner direction reopens the **architectural preference** for continuous floors and direct plaster. Before substantive final convergence, reconcile the [IAS workable-interior scheme](../ias/workable-interior-design-plan.md), its personal visual design acceptance and its *actual representative physical details*. Assess liftable floor tiles against the allocated structural/finish depth, floor loads, fire/acoustics, movement, dust/cleaning and wet edges; assess wall-panel backing/attachments, skirting circuit/access segregation, metal grates' walking/ventilation/drainage roles and OAS windows/doors as joined interfaces. A superficial panelling render is not a technically coordinated home, but rejected mechanical details may prompt a more restrained or simpler owner-approved result.
 
-The proposed PCO registration [#1516](https://github.com/adamnoden/architecture/issues/1516) adds `HAD-OWNER-DESIGN-REVIEW` and `IAS-WORKABLE-DETAILS` before `BCR-CONVERGENCE`, and the interior details before `BCR-BAY-DESIGN`. **These edges do not yet exist** in the canonical graph; do not report them as already blocking/unblocking dispatch. The owner may accept architectural design choices for the book while actual specialist/site/product proof remains bounded separately.
+The [canonical graph](../control/graph.md) requires `HAD-OWNER-DESIGN-REVIEW` and `IAS-WORKABLE-DETAILS` before `BCR-CONVERGENCE`, and the interior details before `BCR-BAY-DESIGN`. The owner may accept architectural design choices for the book while actual specialist/site/product proof remains bounded separately.
 
 ## Early and final scope
 
