@@ -353,6 +353,15 @@ In addition to the successor trigger's corpus, recurrence, adversarial-read and 
 - represent the comparison, complexity and integration findings supplied by the house-resolution owners honestly, without inventing evidence or repeating their technical review;
 - confirm that EDA-ADAPTER's ownership correction survives in the enlarged final corpus.
 
+**Astra-led cold artifact review for EDA-RENEWED (owner direction, 14 November 2026).** Treat the final generated Working Edition, Primer, drawing sequence and their actual rendered pages as the test object; a design review based solely on Markdown, isolated plates, screenshots of a prior draft or a summary is insufficient. Run separated internal adversarial passes with different starting information, including:
+
+- **Architectural critic:** inspect the entire reader journey, the lived house in plan/section/elevation, conventional alternatives, practical interventions and whether the claimed contribution is actually visible to a reader.
+- **Technical falsifier:** challenge material structural, water, fire, services, access and buildability claims using primary evidence, independent arithmetic or replay, adverse ordinary cases and exact source identities. Report unsupported assertions, not just style.
+- **Graphic and editorial critic:** inspect assembled spreads, figures, captions, scale, provenance, page transitions, typography and claim-to-image fidelity at the intended reading size; identify material failures in the delivered artifact.
+- **Reconciliation pass:** compare conflicting verdicts with the governing sources, record precise objections and affected pages/drawings, repair the owning source or downgrade/remove claims, then repeat only the affected rendered checks.
+
+Use fresh reviewer contexts or deliberately segregated evidence packets so critics do not simply ratify the producing agent's judgement. Their independence is **methodological separation inside an AI-led review**, not independent accredited assurance. Publish the bounded findings and unresolved obligations without inventing a positive result. A future professional review remains useful for the commissioned house, but `EPR-RH11`/`EPR-BAY-REVIEW` completion is not a prerequisite for this book. The actual owner print acceptance and final manufacture authorisation remain distinct manual publication steps.
+
 An unperformed test may remain a clearly identified proposal where the admitted research-publication scope permits it; it may not be narrated as a passed demonstration. A material source contradiction or missing required result returns to the owning workstream. Qualification cannot substitute for resolution, and EDA must not create new physical or professional proof work merely to make the book appear complete.
 
 Closeout records the exact reviewed source/object identities, findings and dispositions, final typeset inspection and remaining admitted limits. A later material change to accepted geometry, scale, placement, fold interaction or graphic hierarchy reopens the affected PLT proof before manufacture. Earlier EDA evidence is not rewritten, and the manual PUB-02 final gate remains intact.
