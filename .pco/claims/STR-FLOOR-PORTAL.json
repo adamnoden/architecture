@@ -9,9 +9,9 @@
     "label": "zerg12-heel"
   },
   "claimedAt": "2026-11-14T21:51:40.067Z",
-  "heartbeatAt": "2026-11-14T21:51:40.067Z",
-  "expiresAt": "2026-11-14T23:51:40.067Z",
-  "branch": "work/zerg12-str-heel",
+  "heartbeatAt": "2026-11-14T22:15:03.851Z",
+  "expiresAt": "2026-11-15T00:15:03.851Z",
+  "branch": "work/zerg12-heel-section",
   "predecessor": {
     "leaseId": "22cdeecf-903b-4d79-944a-6885401ee57f",
     "generation": 21,
@@ -31,5 +31,9 @@
       "evidence": "Shared PR #1526 exact 98ff47f2 and STR source 02436b37",
       "next": "Wait for exact-head CI, then fresh independent STR merge preflight"
     }
+  },
+  "checkpoint": {
+    "evidence": "Local STR exact 45e9840cb466695ff6af7548446d7a7c9b4b3ac0; all 12 focused tests pass",
+    "next": "Verify combined HAD and STR tree, exact CI, two canonical preflights and release after merge"
   }
 }
