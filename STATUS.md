@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 5 · **Active:** 0 · **Blocked:** 28 · **Held:** 2 · **Done:** 128 · **Cancelled:** 0
+**Structurally ready:** 6 · **Active:** 0 · **Blocked:** 31 · **Held:** 2 · **Done:** 129 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -22,6 +22,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
 | `HAD-INLET-RESOLUTION` | Resolve the selected incoming-water route and isolation station | HAD / MAT / IAS | — |
+| `IAS-WORKABLE-CONCEPT` | Compare and illustrate workable interior assemblies in the current house | IAS | — |
 | `STR-FLOOR-PORTAL` | Resolve the floor collector and portal load path before house selection | STR | ROF-RWT-GATE |
 | `DPL-COMMISSION` | Receive owner-nominated real plot and authorised assessment scope | DPL | DPL-SITE-ASSESSMENT |
 | `PHY-04` | Wall/ceiling movement-junction build and test | PHY | — |
@@ -39,8 +40,10 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Direct blockers |
 |---|---|---|
-| `TRIAD-GATE` | Shared selected-house integration gate | HAD-INLET-RESOLUTION, ROF-RWT-GATE, MAT-COORDINATION, STR-FLOOR-PORTAL |
-| `BCR-CONVERGENCE` | Substantive construction-resolution convergence | TRIAD-GATE, MRA-04, HRS-TECHNICAL |
+| `HAD-OWNER-DESIGN-REVIEW` | Receive the owner’s decision on the coordinated architectural design | TRIAD-GATE |
+| `IAS-WORKABLE-DETAILS` | Detail the approved workable interior family and adjoining opening interfaces | HAD-OWNER-DESIGN-REVIEW |
+| `TRIAD-GATE` | Shared selected-house integration gate | HAD-INLET-RESOLUTION, ROF-RWT-GATE, MAT-COORDINATION, STR-FLOOR-PORTAL, IAS-WORKABLE-CONCEPT |
+| `BCR-CONVERGENCE` | Substantive construction-resolution convergence | TRIAD-GATE, MRA-04, HRS-TECHNICAL, HAD-OWNER-DESIGN-REVIEW, IAS-WORKABLE-DETAILS |
 | `HRS-SYNTHESIS` | Post-BCR final house resolution and synthesis | BCR-CONVERGENCE, MRA-05, DEL-CURRENT |
 | `HRS-TECHNICAL` | Current-house technical migration and computational applicability | TRIAD-GATE |
 | `ROF-RWT-GATE` | Reference House roof and rainwater reconciliation gate | STR-FLOOR-PORTAL |
@@ -52,12 +55,13 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `MRA-03` | Vapour, condensation and drying assault | TRIAD-GATE |
 | `MRA-04` | Whole-house moisture failure matrix and adversarial gate | MRA-01, MRA-02, MRA-03 |
 | `MRA-05` | Post-BCR moisture assurance closeout | BCR-CONVERGENCE |
-| `PLT-FINAL-FREEZE` | Final resolved-house plate integration and freeze | PLT-FINAL-PREP, PLT-PRINT-REVIEW |
+| `PLT-FINAL-FREEZE` | Final resolved-house plate integration and freeze | PLT-FINAL-PREP, PLT-PRINT-REVIEW, PLT-OWNER-FINAL-DESIGN-ACCEPTANCE |
 | `EDA-RENEWED` | Renewed editorial-doctrine assurance over enlarged final source | PLT-FINAL-FREEZE |
 | `PUB-02-FINAL` | Final private-object content, drawing and manufacture gate | EDA-RENEWED |
 | `PLT-FINAL-PREP` | Prepare coherent final current-house digital and print proof set | HRS-SYNTHESIS |
+| `PLT-OWNER-FINAL-DESIGN-ACCEPTANCE` | Receive the owner’s acceptance of the assembled book and final design drawings | PLT-FINAL-PREP |
 | `PLT-PRINT-REVIEW` | Receive and disposition actual-size BOOK and WALL print verdicts | PLT-FINAL-PREP |
-| `BCR-BAY-DESIGN` | Resolve the selected bay as a coordinated design study | TRIAD-GATE |
+| `BCR-BAY-DESIGN` | Resolve the selected bay as a coordinated design study | TRIAD-GATE, IAS-WORKABLE-DETAILS |
 | `ADE-MODEL` | Connect current design identities to construction-information outputs | HRS-TECHNICAL |
 | `ADE-DETAILS` | Produce source-bound technical bay drawings and details | ADE-MODEL, BCR-BAY-DESIGN |
 | `ADE-SCHEDULES` | Produce linked bay schedules specifications and quantities | ADE-MODEL, BCR-BAY-DESIGN |
@@ -70,7 +74,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 ### Structural critical path
 
-`STR-FLOOR-PORTAL` → `ROF-RWT-GATE` → `MAT-COORDINATION` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-PREP` → `PLT-PRINT-REVIEW` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
+`STR-FLOOR-PORTAL` → `ROF-RWT-GATE` → `MAT-COORDINATION` → `TRIAD-GATE` → `HAD-OWNER-DESIGN-REVIEW` → `IAS-WORKABLE-DETAILS` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-PREP` → `PLT-OWNER-FINAL-DESIGN-ACCEPTANCE` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
 
 This path is structural by node count. It is not a wall-clock estimate; weighted scheduling is withheld unless every remaining node on the model has an explicit planning estimate.
 <!-- project-control:end -->

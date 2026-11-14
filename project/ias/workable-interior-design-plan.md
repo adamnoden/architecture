@@ -2,7 +2,7 @@
 
 **Authority:** owner direction, 14 November 2026; registration action [#1516](https://github.com/adamnoden/architecture/issues/1516).  
 **Scope:** the accepted 12 × 12 m pre-site Reference House, its book and representative assembly drawings; not a construction release.  
-**Status:** **new design direction / unselected alternatives**. Canonical PCO successor and manual-approval nodes are proposed in #1516 but **not registered by this documentation-only change**. Current status and dispatch remain governed by `project/control/nodes/`.
+**Status:** **new design direction / unselected alternatives**. The registered [architecture](../control/nodes/architecture.ts) and [publication](../control/nodes/publication.ts) nodes govern readiness, dispatch and closure.
 
 ## Architectural decision
 
@@ -44,7 +44,7 @@ The design may combine families by room and exposure. Nearly universal **visible
 
 ## Minimum visible design package
 
-**Early alternative package** (target `IAS-WORKABLE-CONCEPT`, self-service once registered):
+**Early alternative package** (`IAS-WORKABLE-CONCEPT`, self-service):
 
 1. A current-house floor-field diagram over actual ground and first-floor rooms showing where each module family could go, panel grid origin, room/door/threshold transitions, radiator and service locations.
 2. Representative **floor-to-wall/skirting**, **wall-to-ceiling**, **door-reveal/arch**, **window-frame/trim**, **wet-room**, **stair/landing** and **metal-grate** sections. Architectural 1:5 details and at least one enlarged 1:2 retention/release detail per consequential family; explicit provisional dimensions and current-source ties.
@@ -64,4 +64,4 @@ The design may combine families by room and exposure. Nearly universal **visible
 - A **failed study can close** by rejecting a variant with legible evidence and offering a simpler alternative, but cannot call the owner's desire implemented if no convincing workable family survives. Escalate an architectural rebrief; do not force a system through fire, moisture, acoustic or access constraints to preserve the initial hope.
 - Owner approval accepts **aesthetic, spatial and preference decisions**, not physical or regulatory adequacy. Specialist/physical evidence remains an explicit later route. Neither EPR professional sign-off nor a real site becomes a default prerequisite for publishing an honestly bounded design-research book.
 - The completed IAS-03 and HAD-02M records remain dated study results; new selected authority belongs to the registered successor(s), `TRIAD-GATE` and ultimately HRS, never to an ad hoc hand-edited history.
-- **Implementation status:** issue [#1516](https://github.com/adamnoden/architecture/issues/1516) describes precise proposed PCO nodes and hard edges. Until they are registered by a lease-safe runner and reconciled into generated graphs, they are **not live dispatcher tasks or enforced manual gates**.
+- [#1516](https://github.com/adamnoden/architecture/issues/1516) records the owner's direction and registration scope. The canonical graph makes the concept a prerequisite of TRIAD, the approved details a prerequisite of BCR convergence and bay design, and the final owner decision a prerequisite of plate freeze.
