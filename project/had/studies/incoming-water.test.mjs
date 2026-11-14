@@ -13,6 +13,7 @@ import {deriveReleaseSupport} from './incoming-water-release-support.mjs';
 import {deriveStandRetirement} from './incoming-water-stand-retirement.mjs';
 import {compareDryDockSupport} from './incoming-water-dock-support.mjs';
 import {compareLiftSill} from './incoming-water-lift-sill.mjs';
+import {compareTemporaryGantry} from './incoming-water-temporary-gantry.mjs';
 import {compareLiftWeather} from './incoming-water-lift-weather.mjs';
 import {compareGoodsTransfer} from './incoming-water-goods-transfer.mjs';
 
@@ -531,4 +532,24 @@ test('goods-only lift can reserve aligned cargo but fails ordinary closed-gate d
   assert.deepEqual(q.movingStates.filter(row=>row.canMoveCar).map(row=>row.name),['mobile']);
   assert(q.movingStates.find(row=>row.name==='lower receiving overlap').canReleaseCar);
   assert(!q.movingStates.find(row=>row.name==='failed lower catch').canReleaseCar);
+});
+
+test('temporary goods gantry reserves an independent extension and retains a full-height adverse control',()=>{
+  const q=compareTemporaryGantry();
+  assert.equal(q.status,'DEVELOPMENT_NOT_ADOPTED');
+  assert.deepEqual(q.extensionPlan,[14230,16425,3400,5350]);
+  assert.equal(q.frameAndPadSetbackMM,28.5);
+  assert.equal(q.envelope.framePadToWetMM,375);
+  assert.equal(q.envelope.grossBeamAndPadToWetMM,140);
+  assert.deepEqual(q.fieldFromWallMM,{
+    temporaryThroughGradeRetreat:5900,throughCarToRampToe:5845,sameLevelToEndOfExistingDock:2230,
+  });
+  assert.equal(q.envelope.framePadToEaveMM,358.5);
+  assert.deepEqual(q.gradeRest,[15075,16425,2325,3275]);
+  assert(q.coveredCargoSweep.every(c=>c.clearLowerDockEdgeMM>=125));
+  assert.deepEqual(q.vertical.heightCases.map(c=>c.maximumEyeReserveMM),[-175,114,380]);
+  assert.equal(q.vertical.standardHookTravelReserveMM,76);
+  assert(q.loading.wheelAndCrewSupportMaxN>5400);
+  assert(q.loading.wheelAndCrewSupportMinN< -460);
+  assert(q.loading.upperWheelN>q.loading.sourceUpperWheelN);
 });
