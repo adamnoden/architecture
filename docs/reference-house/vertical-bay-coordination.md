@@ -4,6 +4,10 @@ This page coordinates the current wall, floor, ceiling and service assumptions a
 
 Its purpose is to keep distinct systems distinct: structure, weathering, thermal control, airtightness, services, occupied finishes, movement, fire and acoustics must meet at the same physical junction without one layer quietly inheriting duties it cannot credibly perform.
 
+## Owner-direction applicability — 14 November 2026
+
+The following direct-mineral-wall and ordinary continuous-floor defaults record a **former bounded reference comparison**, not an immutable choice for the owner's finished interior. The owner now wants an extensive architectural trial of modular/liftable floor panels, metal grates, removable service skirting and even near-universal panelled walls. The [new study/approval contract](../../project/ias/workable-interior-design-plan.md) must revisit this vertical bay *on the actual house*, paying for its 350 mm floor and other fully assigned budgets and keeping structure/fire/acoustics/weather/water boundaries independent of lifted finishes. **No modular floor, extra layer or panel cavity is selected by this amendment.** Existing technical cautions and ordinary-building controls below remain valid until replaced by demonstrated source-bound geometry and a recorded owner choice.
+
 ## Current baseline
 
 ### External wall
