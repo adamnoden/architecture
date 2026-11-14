@@ -9,8 +9,8 @@
     "label": "zerg11-water"
   },
   "claimedAt": "2026-11-14T20:48:48.064Z",
-  "heartbeatAt": "2026-11-14T21:08:26.393Z",
-  "expiresAt": "2026-11-14T22:38:26.393Z",
+  "heartbeatAt": "2026-11-14T21:09:41.301Z",
+  "expiresAt": "2026-11-14T22:39:41.301Z",
   "branch": "work/zerg11-portal-inlet",
   "predecessor": {
     "leaseId": "39a88714-a32d-4c1c-a5c6-bcbf88862d02",
@@ -35,7 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Staged HAD exact 4444c6818d37e70817b1b3b264e54a0b63fd9adc tree b841ece12f48573c3f4887571007650aa1db3940, 83 HAD + deterministic generator and unchanged MRA replay passed.",
-    "next": "Bind combined STR/HAD PR then verify exact hosted CI, fresh canonical publication preflight and merge."
-  }
+    "evidence": "Shared PR #1526 exact head 98ff47f25c38daf5ddd5d9414b0f060ad2b0df56, staging HAD exact 4444c681; 83 HAD, deterministic replan, unchanged house MRA.",
+    "next": "Wait exact full hosted CI, fresh HAD and STR preflights on current main, expected-head merge and lease release."
+  },
+  "pr": 1526
 }
