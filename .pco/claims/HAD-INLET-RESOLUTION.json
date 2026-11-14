@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 22,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "1e3dcaa6-06cc-4193-b4a4-2f0e9446de29",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg11-water-wetting"
   },
   "claimedAt": "2026-11-14T21:22:40.956Z",
-  "heartbeatAt": "2026-11-14T21:25:03.140Z",
-  "expiresAt": "2026-11-14T22:55:03.140Z",
+  "heartbeatAt": "2026-11-14T21:48:21.676Z",
+  "expiresAt": "2026-11-14T21:48:21.676Z",
   "branch": "work/zerg11-had-first-wetting",
   "predecessor": {
     "leaseId": "3e0c9ecd-d6c8-4f36-a7a7-3b6af31ef01a",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "PR #1527 exact 393fe1e tree ed62a97; source-bound first-wetting, isolation and drip-lap comparison; focused tests pass.",
     "next": "Wait exact full hosted CI, fresh preflight, expected-head merge and release."
-  }
+  },
+  "releasedAt": "2026-11-14T21:48:21.676Z",
+  "releaseReason": "handoff"
 }
