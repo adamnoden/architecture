@@ -9,8 +9,8 @@
     "label": "recover-str"
   },
   "claimedAt": "2026-11-14T09:40:57.014Z",
-  "heartbeatAt": "2026-11-14T09:48:03.966Z",
-  "expiresAt": "2026-11-14T10:33:03.966Z",
+  "heartbeatAt": "2026-11-14T10:05:25.202Z",
+  "expiresAt": "2026-11-14T10:50:25.202Z",
   "branch": "work/zerg8-str-captive-seat",
   "predecessor": {
     "leaseId": "ab20eb01-1896-41fa-883b-a70b8ff29c75",
@@ -36,8 +36,8 @@
   },
   "pr": 1511,
   "checkpoint": {
-    "evidence": "PR #1511 exact 81432904df3653fbccefabb1e018f7cbfb201e51, generated receipt and repository validation passed",
-    "next": "Verify exact CI and current main, run preflight, merge and release",
-    "blocker": "Pin forces close statically; actual web, cross-arm and service gates remain open"
+    "evidence": "PR #1511 exact 81432904df3653fbccefabb1e018f7cbfb201e51; local npm run test:str and 13 hosted auxiliary proofs passed",
+    "next": "Await required exact CI, verify main and lease, merge, release",
+    "blocker": "Actual web, cross-arm and unloaded service restraint need a replacement joint"
   }
 }
