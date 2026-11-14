@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 16,
-  "state": "released",
-  "leaseId": "ab20eb01-1896-41fa-883b-a70b8ff29c75",
+  "generation": 17,
+  "state": "claimed",
+  "leaseId": "baf8146c-682b-4fc4-8476-0e524198ea3f",
   "holder": {
     "kind": "chatgpt",
     "label": "recover-str"
   },
-  "claimedAt": "2026-11-14T00:08:00.653Z",
-  "heartbeatAt": "2026-11-14T00:53:59.857Z",
-  "expiresAt": "2026-11-14T00:53:59.857Z",
-  "branch": "work/zerg7-str-continuous-cage",
+  "claimedAt": "2026-11-14T09:40:57.014Z",
+  "heartbeatAt": "2026-11-14T09:40:57.014Z",
+  "expiresAt": "2026-11-14T10:25:57.014Z",
+  "branch": "work/zerg8-str-captive-seat",
   "predecessor": {
-    "leaseId": "dcc361c6-85a7-4fa1-8b71-3216cdc2061d",
-    "generation": 15,
-    "branch": "work/zerg6-str-split-hoop-recovery",
-    "pr": 1504,
+    "leaseId": "ab20eb01-1896-41fa-883b-a70b8ff29c75",
+    "generation": 16,
+    "branch": "work/zerg7-str-continuous-cage",
+    "pr": 1509,
     "checkpoint": {
-      "evidence": "PR #1504 adopts exact green d8e68f551db21d8e5cb9a918a5199e54acf8f5e9 from #1503, no tree change",
-      "next": "Confirm generation 15 packet check and exact head, integrate, then release handoff"
+      "evidence": "PR #1509 exact 67494514990dba24edb04401e467c2f99497f74a, independent replay matched; exact hosted run 43535319756 passed declaration and homepage",
+      "next": "Wait for exact CI, publication preflight, merge and release",
+      "blocker": "The study is bounded; actual coupon-to-seat, tool corridor and lower bar continuity are still open"
     }
   },
   "recoverySource": {
-    "leaseId": "dcc361c6-85a7-4fa1-8b71-3216cdc2061d",
-    "generation": 15,
-    "branch": "work/zerg6-str-split-hoop-recovery",
-    "pr": 1504,
+    "leaseId": "ab20eb01-1896-41fa-883b-a70b8ff29c75",
+    "generation": 16,
+    "branch": "work/zerg7-str-continuous-cage",
+    "pr": 1509,
     "checkpoint": {
-      "evidence": "PR #1504 adopts exact green d8e68f551db21d8e5cb9a918a5199e54acf8f5e9 from #1503, no tree change",
-      "next": "Confirm generation 15 packet check and exact head, integrate, then release handoff"
+      "evidence": "PR #1509 exact 67494514990dba24edb04401e467c2f99497f74a, independent replay matched; exact hosted run 43535319756 passed declaration and homepage",
+      "next": "Wait for exact CI, publication preflight, merge and release",
+      "blocker": "The study is bounded; actual coupon-to-seat, tool corridor and lower bar continuity are still open"
     }
-  },
-  "checkpoint": {
-    "evidence": "PR #1509 exact 67494514990dba24edb04401e467c2f99497f74a, independent replay matched; exact hosted run 43535319756 passed declaration and homepage",
-    "next": "Wait for exact CI, publication preflight, merge and release",
-    "blocker": "The study is bounded; actual coupon-to-seat, tool corridor and lower bar continuity are still open"
-  },
-  "pr": 1509,
-  "releasedAt": "2026-11-14T00:53:59.857Z",
-  "releaseReason": "handoff"
+  }
 }
