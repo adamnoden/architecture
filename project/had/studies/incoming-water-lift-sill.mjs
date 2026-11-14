@@ -105,7 +105,7 @@ export function compareLiftSill(){
   assert(challenges.every(({permissions:p})=>(!p.travel||!p.releaseDockCapture)&&
     !(p.releaseDockCapture&&p.releaseCarCapture)));
   return {status:'DEVELOPMENT_NOT_ADOPTED',lodigePlanning,clearY,operatorLaneY,minimumCabinWorkingDepthMM,
-    shaftWidthMM,shaftDepthMM,shaftEastX,gateSweepWestX,gateSwingMarginMM,lowerLevelLandingRunMM,lowerRampEastX,
+    shaftWidthMM,shaftDepthMM,shaftEastX,gateSweepWestX,gateSwingMarginMM,lowerLanding,lowerRampEastX,
     travelByLowerLanding,
     approachGravityN,axleEquivalentMassKG,strip,challenges};
 }
