@@ -1,44 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 15,
-  "state": "released",
-  "leaseId": "dcc361c6-85a7-4fa1-8b71-3216cdc2061d",
+  "generation": 16,
+  "state": "claimed",
+  "leaseId": "ab20eb01-1896-41fa-883b-a70b8ff29c75",
   "holder": {
     "kind": "chatgpt",
     "label": "recover-str"
   },
-  "claimedAt": "2026-11-13T22:56:18.753Z",
-  "heartbeatAt": "2026-11-13T22:59:09.059Z",
-  "expiresAt": "2026-11-13T22:59:09.059Z",
-  "checkpoint": {
-    "evidence": "PR #1504 adopts exact green d8e68f551db21d8e5cb9a918a5199e54acf8f5e9 from #1503, no tree change",
-    "next": "Confirm generation 15 packet check and exact head, integrate, then release handoff"
-  },
-  "branch": "work/zerg6-str-split-hoop-recovery",
+  "claimedAt": "2026-11-14T00:08:00.653Z",
+  "heartbeatAt": "2026-11-14T00:08:00.653Z",
+  "expiresAt": "2026-11-14T00:53:00.653Z",
+  "branch": "work/zerg7-str-continuous-cage",
   "predecessor": {
-    "leaseId": "513ea2be-cbe4-4505-9ad5-6dc51b689d8e",
-    "generation": 14,
-    "branch": "work/zerg5-str-split-hoop",
-    "pr": 1503,
+    "leaseId": "dcc361c6-85a7-4fa1-8b71-3216cdc2061d",
+    "generation": 15,
+    "branch": "work/zerg6-str-split-hoop-recovery",
+    "pr": 1504,
     "checkpoint": {
-      "evidence": "PR #1503 exact d8e68f551db21d8e5cb9a918a5199e54acf8f5e9, merged main #1502 included, Python receipt and repository validation passed",
-      "next": "Watch exact CI, verify publication preflight, merge bounded study, release for mechanical confinement follow-up",
-      "blocker": "Tested closure routes fail the unchanged cover, setting or assembly screen"
+      "evidence": "PR #1504 adopts exact green d8e68f551db21d8e5cb9a918a5199e54acf8f5e9 from #1503, no tree change",
+      "next": "Confirm generation 15 packet check and exact head, integrate, then release handoff"
     }
   },
   "recoverySource": {
-    "leaseId": "513ea2be-cbe4-4505-9ad5-6dc51b689d8e",
-    "generation": 14,
-    "branch": "work/zerg5-str-split-hoop",
-    "pr": 1503,
+    "leaseId": "dcc361c6-85a7-4fa1-8b71-3216cdc2061d",
+    "generation": 15,
+    "branch": "work/zerg6-str-split-hoop-recovery",
+    "pr": 1504,
     "checkpoint": {
-      "evidence": "PR #1503 exact d8e68f551db21d8e5cb9a918a5199e54acf8f5e9, merged main #1502 included, Python receipt and repository validation passed",
-      "next": "Watch exact CI, verify publication preflight, merge bounded study, release for mechanical confinement follow-up",
-      "blocker": "Tested closure routes fail the unchanged cover, setting or assembly screen"
+      "evidence": "PR #1504 adopts exact green d8e68f551db21d8e5cb9a918a5199e54acf8f5e9 from #1503, no tree change",
+      "next": "Confirm generation 15 packet check and exact head, integrate, then release handoff"
     }
-  },
-  "pr": 1504,
-  "releasedAt": "2026-11-13T22:59:09.059Z",
-  "releaseReason": "handoff"
+  }
 }
