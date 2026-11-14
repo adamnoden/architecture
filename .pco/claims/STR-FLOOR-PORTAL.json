@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 20,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "59107682-39e2-477e-8cf5-752b3ca952d3",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg10-str"
   },
   "claimedAt": "2026-11-14T16:36:17.757Z",
-  "heartbeatAt": "2026-11-14T17:05:39.106Z",
-  "expiresAt": "2026-11-14T17:50:39.106Z",
+  "heartbeatAt": "2026-11-14T17:27:31.807Z",
+  "expiresAt": "2026-11-14T17:27:31.807Z",
   "branch": "work/zerg10-str-center",
   "predecessor": {
     "leaseId": "4bad899e-a64c-4a2c-800e-8fe0102114f9",
@@ -39,5 +39,7 @@
     "next": "Verify exact-head full CI, then current-main preflight and expected-head merge",
     "blocker": "Rocker torque and split restraint require developed hardware; packet remains planned"
   },
-  "pr": 1519
+  "pr": 1519,
+  "releasedAt": "2026-11-14T17:27:31.807Z",
+  "releaseReason": "handoff"
 }
