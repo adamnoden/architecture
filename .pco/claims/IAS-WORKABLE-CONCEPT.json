@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "IAS-WORKABLE-CONCEPT",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "f8115807-1954-4f27-b56c-9ca0d87c928b",
   "holder": {
     "kind": "codex",
     "label": "zerg10-ias-concept"
   },
   "claimedAt": "2026-11-14T17:05:00.345Z",
-  "heartbeatAt": "2026-11-14T17:54:53.043Z",
-  "expiresAt": "2026-11-14T19:24:53.043Z",
+  "heartbeatAt": "2026-11-14T18:19:11.296Z",
+  "expiresAt": "2026-11-14T18:19:11.296Z",
   "checkpoint": {
     "evidence": "PR #1521 current main 69108b20 exact head b6e2e4e2 and nine plates, receipt/repo integrity pass. CI 43623600690.",
     "next": "On exact green, fresh canonical merge-check then expected-head merge and release for next concept tranche"
   },
   "branch": "work/zerg10-ias-workable-concept",
-  "pr": 1521
+  "pr": 1521,
+  "releasedAt": "2026-11-14T18:19:11.296Z",
+  "releaseReason": "handoff"
 }
