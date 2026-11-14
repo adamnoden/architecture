@@ -1,0 +1,191 @@
+{
+  "sourceSha256": {
+    "floor-portal-seat-detail.py": "c56399ccfc15b9eb8bf0779e252244a128f71531944d67f7b8412044a843ac3f",
+    "floor-portal-seat-detail.json": "57331cf8738d2f5ce76e59a763c30317a6781873c80beeb408684b1611de1dfc",
+    "floor-portal-receiver-cover.py": "b538cd5bd5fe33a71990047ad99b307496801a087b81200a8f0362643e36df79",
+    "floor-portal-hoop-insertion.py": "3def48889cc26d679d5a827d21f98f744b6eb54be73fe4abfcb3c672a5fd866f",
+    "floor-portal-seat-detail.patch": "78364371ac9796cbb47fbad395898acc7b4a8a62c55b5b6033ae476ff14309f5"
+  },
+  "retainedTangentWitness": {
+    "programme": [
+      1,
+      4
+    ],
+    "court": true,
+    "goodsZmm": 7400,
+    "uplift": false,
+    "minimumShelfGapMm": 14.918914251288658,
+    "maximumShelfCompressionN": 0.0,
+    "maximumResultantGuide": "L-cap-key-(11667.5, 11667.5)-2",
+    "resultantKN": 56.180186236397766,
+    "simultaneousTangentKN": 55.08920498012865,
+    "simultaneousRadialKN": 11.01784099602573,
+    "concretePressureComparatorMPa": 17.0,
+    "nominalTangentPressureMPa": 17.488636501628143,
+    "engagementNeededAtPressureComparatorMm": 61.724599417511094,
+    "directionReversalCount": 12
+  },
+  "simultaneousGoverningRadialTravelMm": 2.9736936964546743,
+  "assumptions": {
+    "backingWidthDepthCheekMm": [
+      94.0,
+      60.0,
+      6.0
+    ],
+    "inheritedDepthEccentricityMm": 9.999999999999998,
+    "pressureComparatorMPa": 17.0
+  },
+  "momentNeededToRecenterInheritedDepthResultantKNm": 0.5508920498012865,
+  "compressionOnlyComparisons": [
+    {
+      "radialEccentricityMm": 0.0,
+      "compressionOnlyContact": {
+        "peakPressureMPa": 19.53517907096802,
+        "engagedAreaFraction": 0.9999999999999947,
+        "pressureCoefficients": [
+          9.767589535483802,
+          8.85994441318057e-15,
+          0.32558631784946007
+        ]
+      },
+      "maximumDepthEccentricityAt17MPaMm": 12.763077290320817,
+      "pressureCappedStaticBalancePossible": true,
+      "idealRecenteredDepthPeakMPa": 9.767589535483802,
+      "sixMmCheekWingElasticStressMPa": 234.42214885161582
+    },
+    {
+      "radialEccentricityMm": 2.9736936964546743,
+      "compressionOnlyContact": {
+        "peakPressureMPa": 21.457613391852902,
+        "engagedAreaFraction": 0.9742381490331434,
+        "pressureCoefficients": [
+          9.750792565977658,
+          0.0402415076326779,
+          0.32718233223797955
+        ]
+      },
+      "maximumDepthEccentricityAt17MPaMm": 12.556073766938061,
+      "pressureCappedStaticBalancePossible": true,
+      "idealRecenteredDepthPeakMPa": 11.6215780098173,
+      "sixMmCheekWingElasticStressMPa": 333.9960364811539
+    },
+    {
+      "radialEccentricityMm": 5.753489963413861,
+      "compressionOnlyContact": {
+        "peakPressureMPa": 23.403157006066525,
+        "engagedAreaFraction": 0.9460719291204873,
+        "pressureCoefficients": [
+          9.695465672194626,
+          0.07969182772560998,
+          0.33207251435894103
+        ]
+      },
+      "maximumDepthEccentricityAt17MPaMm": 11.988173129607086,
+      "pressureCappedStaticBalancePossible": true,
+      "idealRecenteredDepthPeakMPa": 13.354678579685014,
+      "sixMmCheekWingElasticStressMPa": 430.3273589895803
+    },
+    {
+      "radialEccentricityMm": 10.0,
+      "compressionOnlyContact": {
+        "peakPressureMPa": 26.753294323663127,
+        "engagedAreaFraction": 0.8941241463416815,
+        "pressureCoefficients": [
+          9.493501995938395,
+          0.1451682036921514,
+          0.34789622513978724
+        ]
+      },
+      "maximumDepthEccentricityAt17MPaMm": 10.42216429217576,
+      "pressureCappedStaticBalancePossible": true,
+      "idealRecenteredDepthPeakMPa": 16.00222115387772,
+      "sixMmCheekWingElasticStressMPa": 571.6060168149592
+    },
+    {
+      "radialEccentricityMm": 12.0,
+      "compressionOnlyContact": {
+        "peakPressureMPa": 28.538940030935674,
+        "engagedAreaFraction": 0.8654664759788091,
+        "pressureCoefficients": [
+          9.324038663786048,
+          0.17918096598509914,
+          0.3597798655283323
+        ]
+      },
+      "maximumDepthEccentricityAt17MPaMm": 9.39209705422765,
+      "pressureCappedStaticBalancePossible": false,
+      "idealRecenteredDepthPeakMPa": 17.2491474775565,
+      "sixMmCheekWingElasticStressMPa": 630.2100938984232
+    }
+  ],
+  "largestRadialEccentricityForAny17MPaPressureFieldAtInheritedDepthMm": 10.864353302038865,
+  "noSpreadAtRetained75PercentFaceAreaMPa": 17.488636501628143,
+  "noConcreteBackContactCanBalanceTangentForce": false,
+  "separateTangentAndRadialLoadIntroductionKN": [
+    55.08920498012865,
+    11.01784099602573
+  ],
+  "illustrativeTwoToOneSplittingTiePerNodeKN": 13.772301245032162,
+  "illustrativeH12AxialYieldComparatorKN": 49.1727545779272,
+  "cage": {
+    "backingCassetteToBentBars": {
+      "H20": {
+        "lowerBoundMm": 35.061459629804254,
+        "bar": "H20-4",
+        "corner": "SW",
+        "axis": 0,
+        "stationMm": 220,
+        "sampleHeightMm": 6450.0
+      },
+      "H12": {
+        "lowerBoundMm": 26.359357134516372,
+        "bar": "H12-0-600-42",
+        "corner": "SW",
+        "axis": 0,
+        "stationMm": 680,
+        "sampleHeightMm": 6439.0
+      }
+    },
+    "highestH8ToBackingBottomAfterIndependentSettingsMm": 2.0,
+    "governingGuideSameArmH12AtBackingDepth": [
+      {
+        "bar": "H12-0-350-42",
+        "radialAndTangentialCoordinateMm": [
+          227.18593673258005,
+          -239.57629296518502
+        ],
+        "runFromCassetteFaceMm": 216.57629296518502,
+        "centrelineReserveInsideTwoToOneSpreadMm": -71.89779024998754
+      },
+      {
+        "bar": "H12-0-350-80",
+        "radialAndTangentialCoordinateMm": [
+          198.79471753493834,
+          -264.8337408265875
+        ],
+        "runFromCassetteFaceMm": 241.83374082658747,
+        "centrelineReserveInsideTwoToOneSpreadMm": -30.877847121644606
+      },
+      {
+        "bar": "H12-0-600-42",
+        "radialAndTangentialCoordinateMm": [
+          67.66521339740676,
+          -60.263329611658584
+        ],
+        "runFromCassetteFaceMm": 37.263329611658584,
+        "centrelineReserveInsideTwoToOneSpreadMm": -2.033548591577471
+      },
+      {
+        "bar": "H12-0-600-80",
+        "radialAndTangentialCoordinateMm": [
+          39.27399419976507,
+          -85.52077747306102
+        ],
+        "runFromCassetteFaceMm": 62.52077747306102,
+        "centrelineReserveInsideTwoToOneSpreadMm": 38.98639453676543
+      }
+    ],
+    "straightH8LegProjectionOntoGoverningRadialAxis": 0.664669680563222,
+    "oneStraightH8LegProjectedYieldComparatorKN": 14.526061812322034
+  }
+}
