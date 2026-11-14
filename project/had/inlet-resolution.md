@@ -819,6 +819,94 @@ stiffness, ground and anchors still need qualified source evidence.
 It leaves the existing threshold, wet drainage and physical inlet hold
 in place.
 
+#### Removable goods gantry and retained guard
+
+Keep the weather rail, threshold crossing and independent upper dock on
+the common architectural side of the exchange. Beyond them, prefer
+developing a goods-only temporary transfer on a plot that can accommodate
+it. This avoids maintaining an outdoor passenger-capable appliance merely
+for infrequent plant renewal. The same cylinder and W9 still need their
+interior first-release, cart, positive restraint and lowered transfer.
+If the dry landing cannot accept the temporary footprint, compare a
+smaller fixed through-car lift or redesign the plant. A shorter upper
+dock by itself does not resolve the 1774 mm trial step.
+
+A centred transverse grade-standing gantry over the unchanged dock
+would put the west extreme of the padded frame envelope at X12063.5
+even with the load axis as far east as X13555. That leaves only
+63.5 mm from the house wall and places the frame beside the collector,
+foundation, inlet and scaffold. Do not infer actual bearings or usable
+assembly room there. The trial instead places the beam at X15750,
+with a separate 2195 mm upper extension ending at X16425.
+Keep the dry dish and removable threshold plate on their existing
+independent bearings and keep a guarded platform seam at X14230/Z−26.
+The extension has its own four supported pad axes at X14400/X16250
+and Y3650/Y5100, without loading the threshold, gantry or buried inlet.
+Allow the upper route to receive the equipment before suspending it.
+
+The tall REID PORTAGANTRY PGAS01000TC1 comparator with 4570 mm beam
+provides a 3650 mm published maximum operating span and 5829 mm maximum
+lifting-eye height. Compare a Y1725–5375 clear span, Y4575/4600 pickup
+and Y2800 grade set-down. The 2733 mm frame width plus the trial
+125 mm pad extension at each end starts at X14258.5, only 28.5 mm
+east of the original dock. The trial north pad comes to Y5725,
+375 mm south of the mapped RWT wet corridor. Allowing a full 125 mm pad
+projection beyond the assumed centred beam end leaves just 140 mm to
+that wet territory. The nominal Y1950/Y5600 frame support axes are
+a site and gravity study input. Confirm that the actual frame and
+trolley stops permit these axes, the clear span and the separate
+125 mm nominal gap between the northern pad and the upper deck. The grade set-down
+reservation is X15075–16425/Y2325–3275. It leaves 125 mm horizontal
+order-of-fit beyond the south guard after the declared 50 mm cargo
+allowance. Keep the rest and onward ground access dry, and verify
+actual product frame, caster, brake, tool, build-up and transport
+envelopes. The existing roof-gutter plan ends at X13900, 358.5 mm west
+of the padded frame, but clear footprint gives no permission to rig
+under active roof/scaffold work. [REID guide, pp. 4–7 and 25–27](https://uk.reidlifting.com/s/PORTA-GANTRY-500-3000-OM-EN-Global-V8-Lo-Res.pdf)
+
+The rigid plant/carrier, not a person or platform, crosses over the
+1100 mm guard with 50 mm lift clearance. A 350 mm upper rig allowance,
+350 mm Yale 0.5/1 hook head, 30 mm beam deflection allowance and 50 mm
+vertical setting leave **2125 mm above the upper deck for the complete
+carrier**. The existing W9 cart bound of 2011 mm leaves 114 mm. The 2300 mm
+door envelope fails by 175 mm. The old 1745 mm bare cylinder study is
+neither the Ø760 selected handling assembly nor proof of its final
+height. Secure the complete item and qualify the actual lifting frame,
+strap/pickup positions, swing restraint and loaded centre of gravity.
+An ordinary cart deck or the vessel's insulated jacket is not a lifting
+attachment. The minimum grade stroke 2924 mm leaves only 76 mm within
+the catalogue 3000 mm nominal hoist travel before height variations
+and actual grade rest. Confirm a suited chain length and ground-side
+control. [Yale catalogue, VSIII 0.5/1](https://www.cmco.com/globalassets/catalogs--documents/emea/en/chapters-no5/02_cmco_no5_2024_04_wup_en-hoisting-equipment.pdf)
+
+A 350 kg total suspended mass comparison with a 1.25 study factor gives
+437.5 kg equivalent hook demand. Leave 25 kg above the hook for the
+hoist and travel hardware in the frame model. The W9/fixture/cart
+234.05 kg input leaves 115.95 kg of the nominal 350 kg for remaining
+scoped items. The cylinder and transfer fixture must be weighed.
+Family ratings require the actual combination, brakes, vertical hoist
+line, compatible geared/controlled trolley, level pads and withdrawal
+of all crew from the suspended route. The cross-span gravity model
+gives 4.46 kN on the north frame at pickup, or 71.4 kPa if transiently
+on one 250 mm square pad. It does not predict local caster sharing,
+bearing, load swing or wind. The separate extension's 5.15 kN adverse
+single-wheel screen plus the 100 kg operator gives **5.44 kN compression
+and 0.47 kN uplift** in its ideal support comparison, before permanent
+deck self-weight, rolling impact and actual grillage stiffness. Give
+the extension and threshold positive independent support and resolve
+actual site fit, dry floor, scaffold retirement and flood separation.
+
+Lower and remove cargo only after everyone is outside the path. Keep
+upper crew protection, lower set-down and retreat access independent
+of the route and gantry stands. No permanent lift shaft, roofing,
+machine access or lift controls follow from this route. Scope both
+options as plot tests, and carry the smallest footprint that satisfies
+matching, lifting capture, dry arrival and actual crew recovery into
+DPL; do not make the permanent lift a pre-site prerequisite. This is a
+preferred conditional development path with no adopted cylinder
+transport assembly, ground layout, temporary work method or equipment
+set. [Reproduce the envelope and reaction comparison](studies/incoming-water-temporary-gantry.mjs).
+
 #### Through-car receiving lift and removable sill
 
 The [Lödige ESCORTA planning guide](https://www.lodige.co.uk/fileadmin/Downloads/doc-lift-e/Sherpa-Escorta/Planning-guide-Sherpa-Escorta-20210329-LUK_01.pdf)
