@@ -903,15 +903,27 @@ within 10 m; verify its access, cable route, conditions and enclosure.
 The guide lists IP54 without a frequency converter and IP44 with one.
 Obtain the matched outdoor specification and rescue instructions.
 
-A north-facing remote cabinet on its own grade support spans
-X14620–15380 and Y5400–5610, 165 mm outside the trial shaft roof edge.
-Reserve Y5610–6310 for the cabinet face. A trial 750 mm side approach
-from the lower arrival occupies Y5610–6360, 375 mm beyond the roof
-edge, with a turn strip beginning 25 mm beyond the lower ramp toe
-at X17870. This reserves space to X18620 before confirming the
-approach from the ramp. It avoids the moving gate and upper cargo
-park in plan. Verify terrain, actual continuous crew access, support,
-protection and cabinet and cable clearances before adopting it.
+Reject the first north-facing cabinet position at X14620–15380.
+Its grade approach occupies Y5610–6360. It overlaps the full
+[selected east spill reservation](../rwt/studies/selected-receiving-interface.json)
+by 1500 × 260 mm and the narrower
+[RWT fault lane and lined apron](../rwt/rwt-06-east-ground-outfall.md)
+by 2900 × 235 mm through X17400. The narrower ordinary lane stays
+outside that approach. Beyond X17400 the same approach intersects
+the full armoured receiving corridor at Y6100–7700. The trial lower
+grade Z−1800 is 200 mm below the declared maximum water at the
+channel mouths. Keep the protected approach physically separate.
+
+As a plan comparison, put a south-facing cabinet past the lower
+ramp toe at X17870–18630/Y5850–6060. Its 700 mm service strip runs
+south to Y5150. A 750 mm turning strip begins 25 mm beyond the
+ramp toe. The cabinet body stays 40 mm south of the mapped armoured
+corridor and the service strip is on the dry side. Treat those
+distances as plan reservations before fencing, foundations, flooding,
+splash and construction allowance. Verify the common-datum arrival,
+protection of the onward water route, actual dry access, power
+isolation and cable routing. Reject this location if its enclosure
+or protected space needs the reserved wet territory.
 
 A 1970 mm wide roof, the 1790 mm shaft, a 1000 mm upper awning and
 a lower cover to the pitless ramp toe screen 9.09 m² of horizontal

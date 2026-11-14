@@ -1,9 +1,11 @@
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
+import {eastGround} from '../../rwt/studies/east-ground-outfall.mjs';
 import {compareLiftSill} from './incoming-water-lift-sill.mjs';
 
 const threshold=JSON.parse(readFileSync(new URL('../../mat/studies/plant-threshold.json',import.meta.url),'utf8'));
+const receiving=JSON.parse(readFileSync(new URL('../../rwt/studies/selected-receiving-interface.json',import.meta.url),'utf8'));
 const guide={
   pages:'7, 11–12, 18–19',
   accessDepthMM:700,doorFlapAboveDoorMM:150,
@@ -36,19 +38,38 @@ export function compareLiftWeather(){
   // Plan catchments only. Centre the trial awnings on the clear opening
   // and use the full shaft width. Their supporting geometry is unselected.
   const awningY=[(southY+northY-lift.shaftWidthMM)/2,(southY+northY+lift.shaftWidthMM)/2];
-  // Reserve a lower-grade north cabinet and bypass outside the shaft.
-  // The trial panel faces north. A screened width is not a surveyed route.
-  const cabinetCentreX=15000,cabinetBackY=5400;
-  const cabinetX=[cabinetCentreX-guide.cabinetMM.width/2,cabinetCentreX+guide.cabinetMM.width/2];
-  const cabinetFrontY=cabinetBackY+guide.cabinetMM.depth;
-  const cabinetAccessY=[cabinetFrontY,cabinetFrontY+guide.accessDepthMM];
-  const bypassY=[cabinetFrontY,cabinetAccessY[1]+50];
+  const {wet}=eastGround();
+  const [spillStartX,spillStartY,spillWidth,spillDepth]=receiving.east.blockedOutletSpill.requiredContinuation;
+  const apronEndX=17400; // RWT east ground outfall site reservation.
+  const northCabinetX=[14620,15380];
+  const northRouteY=[5610,6360];
+  const overlapMM=(first,second)=>Math.max(0,Math.min(first[1],second[1])-Math.max(first[0],second[0]));
+  const northRoute={
+    rejectedCabinetX:northCabinetX,
+    reservedSpillX:[spillStartX,spillStartX+spillWidth],reservedSpillY:[spillStartY,spillStartY+spillDepth],
+    reserveOverlapMM:[spillWidth,overlapMM(northRouteY,[spillStartY,spillStartY+spillDepth])],
+    faultApronX:[wet.end,apronEndX],faultLaneY:wet.high,ordinaryLaneY:wet.low,
+    faultLaneOverlapMM:[apronEndX-wet.start,overlapMM(northRouteY,wet.high)],
+    ordinaryLaneOverlapMM:overlapMM(northRouteY,wet.low),
+    onwardCorridorStartX:apronEndX,onwardCorridorY:[spillStartY,spillStartY+spillDepth],
+    lowerGradeBelowSpillFarWaterMM:wet.tail-dock.outsideGrade,
+  };
+
+  // Turn the grade cabinet south to keep its face and approaching crew
+  // between the shaft and the RWT receiving reservation.
+  const cabinetX=[lift.lowerRampEastX+25,lift.lowerRampEastX+25+guide.cabinetMM.width];
+  const cabinetFrontY=5850;
+  const cabinetAccessY=[cabinetFrontY-guide.accessDepthMM,cabinetFrontY];
+  const bypassY=[cabinetAccessY[0]-25,cabinetAccessY[1]+25];
+  const bypassWidthMM=bypassY[1]-bypassY[0];
+  const eastTurnX=lift.lowerRampEastX+25;
   const gradeCabinet={
-    cabinetX,cabinetY:[cabinetBackY,cabinetFrontY],cabinetAccessY,
-    shaftNorthGapMM:cabinetBackY-awningY[1],
-    bypassY,bypassWidthMM:bypassY[1]-bypassY[0],
-    bypassEastTurnX:[lift.lowerRampEastX+25,lift.lowerRampEastX+25+bypassY[1]-bypassY[0]],
-    cabinetApproachGapToCoverMM:bypassY[0]-awningY[1],
+    cabinetX,cabinetY:[cabinetFrontY,cabinetFrontY+guide.cabinetMM.depth],cabinetAccessY,
+    bypassX:cabinetX,bypassY,bypassWidthMM,
+    bypassEastTurnX:[eastTurnX,eastTurnX+bypassWidthMM],
+    cabinetPastCoverMM:cabinetX[0]-lift.lowerRampEastX,
+    bypassToOnwardCorridorMM:spillStartY-bypassY[1],
+    cabinetToOnwardCorridorMM:spillStartY-(cabinetFrontY+guide.cabinetMM.depth),
   };
   const upperAwningRunMM=1000;
   const catchments=[
@@ -100,7 +121,7 @@ export function compareLiftWeather(){
   // Added direct or diverted runoff, with no credit for effective shelter
   // under driven rain or during reconfiguration.
   const upperAwningCollectorFractionAtToe=extraAreaAtToeM2/catchments[0].areaM2;
-  return {gradeCabinet,status:'DEVELOPMENT_NOT_ADOPTED',source:{url:lift.lodigePlanning.url,...guide},service,awningY,
+  return {northRoute,gradeCabinet,status:'DEVELOPMENT_NOT_ADOPTED',source:{url:lift.lodigePlanning.url,...guide},service,awningY,
     roofOverhangToDockSouthMM:dockSouthY-awningY[0],roofReserveToDockNorthMM:dockNorthY-awningY[1],
     catchments,totalAreaM2,totalRunoffLS,iceOrDebrisCases,drainageCases,extraAreaAtToeM2,upperAwningCollectorFractionAtToe,
     hold:'Keep the upper hatch and cabinet independently accessible. Grade, outlets, ice, overflow, support and exact shaft/door/controls need matched physical evidence.'};
