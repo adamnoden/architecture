@@ -9,8 +9,8 @@
     "label": "zerg7-had-external-dock"
   },
   "claimedAt": "2026-11-14T00:05:45.854Z",
-  "heartbeatAt": "2026-11-14T00:10:36.287Z",
-  "expiresAt": "2026-11-14T00:55:36.287Z",
+  "heartbeatAt": "2026-11-14T00:15:14.130Z",
+  "expiresAt": "2026-11-14T01:00:14.130Z",
   "branch": "work/zerg7-had-external-dock",
   "predecessor": {
     "leaseId": "98c78542-4568-4637-8046-d0c53f638d70",
@@ -36,8 +36,8 @@
   },
   "pr": 1508,
   "checkpoint": {
-    "evidence": "Draft PR #1508 exact 71031f87, tree 4ef380d5, checked signed receiving dock geometry/load cases",
-    "next": "Mark ready after exact binding, verify full CI and publication preflight, merge, release",
+    "evidence": "PR #1508 exact 9943184a, tree 65913c55, packed width 1500 and aligned width 1600 source-bound",
+    "next": "Verify new exact-head CI and canonical publication preflight, merge and release",
     "blocker": "Actual guarded rated receiving platform, substrate, anchors and loaded handoff remain unqualified"
   }
 }
