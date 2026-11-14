@@ -2,6 +2,13 @@ import { defineNodes } from '../types.js'
 
 export const pcoNodes = defineNodes([
   {
+    id: 'PCO-WORKABLE-INTERIORS', owners: ['PCO'],
+    title: 'Register workable interior design and personal owner approval gates',
+    dependencies: ['PCO-REVIEW-POLICY'], lifecycle: 'complete',
+    agentDispatch: { mode: 'manual', reason: 'Owner-directed registry-only bootstrap recorded in #1516.' },
+    closeoutEvidence: ['project/ias/workable-interior-design-plan.md'],
+  },
+  {
     id: 'PCO-INDEPENDENT-STUDIES', owners: ['PCO'],
     title: 'Separate bounded bay and internal-water studies from final house integration',
     dependencies: ['PCO-REVIEW-POLICY'], lifecycle: 'complete',
