@@ -1,0 +1,244 @@
+{
+  "status": "No admitted hip detail; aligned seats and guide remain separate",
+  "sourcesSha256": {
+    "current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+    "current-house-welded-heel.py": "a2eb0aa3e1b031e0a88a0979b333c500c56dedc64ddeca42764a984e63df6418",
+    "floor-portal-permanent-seat.json": "17f56050baf042551dd6c6af681d67c144cd36822306639500600fe5a2b3a0e0"
+  },
+  "fittingEnvelope": {
+    "socketAndSettingRadiusMm": 36.0,
+    "trialAdditionalWebReserveMm": 2
+  },
+  "originalWebs": [
+    [
+      0,
+      -80
+    ],
+    [
+      0,
+      80
+    ],
+    [
+      1,
+      -70
+    ],
+    [
+      1,
+      70
+    ]
+  ],
+  "originalClashes": [
+    {
+      "anchor": 0,
+      "diagonalPlanMm": [
+        -57.982756057296896,
+        0.0
+      ],
+      "overlapWithEachWebMm": [
+        21.982756057296896,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "anchor": 1,
+      "diagonalPlanMm": [
+        2.1213203435596424,
+        62.932503525602726
+      ],
+      "overlapWithEachWebMm": [
+        0,
+        0,
+        0,
+        36.932503525602726
+      ]
+    },
+    {
+      "anchor": 4,
+      "diagonalPlanMm": [
+        2.1213203435596424,
+        -62.932503525602726
+      ],
+      "overlapWithEachWebMm": [
+        0,
+        0,
+        36.932503525602726,
+        0
+      ]
+    },
+    {
+      "anchor": 5,
+      "diagonalPlanMm": [
+        40.30508652763321,
+        0.0
+      ],
+      "overlapWithEachWebMm": [
+        0,
+        4.3050865276332075,
+        0,
+        0
+      ]
+    }
+  ],
+  "unchangedWebsWithRelocatedBars": {
+    "squareContainmentMaximumAbsUSumAbsVMm": 161.22034611053286,
+    "shortestCenteredWebHalfSpanMm": 115.0,
+    "oldLSeatPlateMinimumEdgeReserveMm": 26,
+    "outerSectorMaximumEdgeReservesMm": [
+      -17.68124086713189,
+      0.994949366116666,
+      14.845671067449295
+    ],
+    "remainingCentralWidthAndHeightMm": [
+      72.0,
+      52.0
+    ],
+    "minimumSocketCentrePitchMm": 67.0,
+    "centralMinimumAlongUSeparationMm": 42.24926034855522,
+    "centralMaximumCentresUpperBound": 2
+  },
+  "translatedWebs": {
+    "stations": [
+      {
+        "axis": 0,
+        "original": -80,
+        "moved": -104,
+        "reserveMm": 2.0172439427031037
+      },
+      {
+        "axis": 0,
+        "original": 80,
+        "moved": 87,
+        "reserveMm": 2.6949134723667925
+      },
+      {
+        "axis": 1,
+        "original": -70,
+        "moved": -109,
+        "reserveMm": 2.0674964743972737
+      },
+      {
+        "axis": 1,
+        "original": 70,
+        "moved": 109,
+        "reserveMm": 2.0674964743972737
+      }
+    ],
+    "maximumShoeTransferOffsetMm": 39,
+    "retainedLidStressMPa": 624.5005571999999,
+    "trialLidStressLimitMPa": 181.8181818181818,
+    "minimumUniformThicknessMm": 37.0661736066727,
+    "roundedUniformThicknessMm": 38,
+    "originalGrossRoofGapMm": 24.75801,
+    "retainedRoofGapMm": 12,
+    "minimumThickeningInsideCellMm": 5.241990000000001,
+    "interiorIfAllThickeningInsideCellMm": 62,
+    "fullLidAdditionalWeightKN": 0.12717,
+    "fullLidNodeWeightBeforeWebChangesKN": 1.02155,
+    "originalNodeWeightLimitKN": 1
+  },
+  "fixedWebBottomReliefs": {
+    "webDepthMm": 80,
+    "solidWebLaneForceKN": 170.8035712,
+    "rows": [
+      {
+        "axis": 0,
+        "stationMm": -80,
+        "lowerWeldInterruptedMm": 66.31792735756306,
+        "remainingLowerLengthPerFaceMm": 93.68207264243694,
+        "optimisticBothFaceLowerStressMPa": 113.9516120735809,
+        "oneFaceLowerStressMPa": 227.9032241471618,
+        "equivalentTwoFaceThroatAtExistingLengthMm": 9.116128965886473,
+        "additionalEffectiveLowerLengthPerFaceAt8MmMm": 13.070159357563062,
+        "additionalLowerForceAt8MmKN": 20.912254972100897
+      },
+      {
+        "axis": 0,
+        "stationMm": 80,
+        "lowerWeldInterruptedMm": 34.14278605967486,
+        "remainingLowerLengthPerFaceMm": 125.85721394032514,
+        "optimisticBothFaceLowerStressMPa": 84.82011372873413,
+        "oneFaceLowerStressMPa": 169.64022745746826,
+        "equivalentTwoFaceThroatAtExistingLengthMm": 6.78560909829873,
+        "additionalEffectiveLowerLengthPerFaceAt8MmMm": 0.0,
+        "additionalLowerForceAt8MmKN": 0.0
+      },
+      {
+        "axis": 1,
+        "stationMm": -70,
+        "lowerWeldInterruptedMm": 72.0,
+        "remainingLowerLengthPerFaceMm": 88.0,
+        "optimisticBothFaceLowerStressMPa": 121.30935454545455,
+        "oneFaceLowerStressMPa": 242.6187090909091,
+        "equivalentTwoFaceThroatAtExistingLengthMm": 9.704748363636364,
+        "additionalEffectiveLowerLengthPerFaceAt8MmMm": 18.752232000000003,
+        "additionalLowerForceAt8MmKN": 30.003571200000007,
+        "outboardReturnPlanOnly": {
+          "polylineInDiagonalPlanMm": [
+            [
+              -41.878679656440355,
+              -70
+            ],
+            [
+              -41.878679656440355,
+              -107
+            ],
+            [
+              46.121320343559645,
+              -107
+            ],
+            [
+              46.121320343559645,
+              -70
+            ]
+          ],
+          "minimumCentrelineReserveToAnyReservedSocketMm": 8.067496474397274,
+          "minimumCentrelineReserveToCassetteEdgeMm": 41.726876040831314,
+          "minimumCentrelineReserveToOtherWebMm": 25.878679656440355,
+          "sideOffsetMm": 37,
+          "eccentricMomentAtAdditionalForceOnlyKNm": 1.1101321344000004
+        }
+      },
+      {
+        "axis": 1,
+        "stationMm": 70,
+        "lowerWeldInterruptedMm": 72.0,
+        "remainingLowerLengthPerFaceMm": 88.0,
+        "optimisticBothFaceLowerStressMPa": 121.30935454545455,
+        "oneFaceLowerStressMPa": 242.6187090909091,
+        "equivalentTwoFaceThroatAtExistingLengthMm": 9.704748363636364,
+        "additionalEffectiveLowerLengthPerFaceAt8MmMm": 18.752232000000003,
+        "additionalLowerForceAt8MmKN": 30.003571200000007,
+        "outboardReturnPlanOnly": {
+          "polylineInDiagonalPlanMm": [
+            [
+              -41.878679656440355,
+              70
+            ],
+            [
+              -41.878679656440355,
+              107
+            ],
+            [
+              46.121320343559645,
+              107
+            ],
+            [
+              46.121320343559645,
+              70
+            ]
+          ],
+          "minimumCentrelineReserveToAnyReservedSocketMm": 8.067496474397274,
+          "minimumCentrelineReserveToCassetteEdgeMm": 41.726876040831314,
+          "minimumCentrelineReserveToOtherWebMm": 25.878679656440355,
+          "sideOffsetMm": 37,
+          "eccentricMomentAtAdditionalForceOnlyKNm": 1.1101321344000004
+        }
+      }
+    ],
+    "lowerJointMustBeRebuilt": true,
+    "cutHeightCannotBeSelectedWithoutCollarWeldAndToolDepth": true,
+    "averageWeldStressScreenMPa": 100
+  }
+}
