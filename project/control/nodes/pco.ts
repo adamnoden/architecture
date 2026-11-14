@@ -2,6 +2,13 @@ import { defineNodes } from '../types.js'
 
 export const pcoNodes = defineNodes([
   {
+    id: 'PCO-LOCAL-OPENING', owners: ['PCO'],
+    title: 'Register the source-bound local opening comparison for owner review',
+    dependencies: ['PCO-WORKABLE-INTERIORS'], lifecycle: 'complete',
+    agentDispatch: { mode: 'manual', reason: 'Owner-directed exceptional registration recorded in #1531.' },
+    closeoutEvidence: ['project/oas/study-subframe-comparison.md'],
+  },
+  {
     id: 'PCO-WORKABLE-INTERIORS', owners: ['PCO'],
     title: 'Register workable interior design and personal owner approval gates',
     dependencies: ['PCO-REVIEW-POLICY'], lifecycle: 'complete',

@@ -145,7 +145,10 @@ test('workable interior concept runs early and owner decisions gate details and 
   assert.ok(unlocksOnCompletion(concept.id, fixture).some((entry) => entry.id === triad.id))
 
   const firstApproval = node('HAD-OWNER-DESIGN-REVIEW')
-  assert.deepEqual(firstApproval.dependencies, ['TRIAD-GATE'])
+  assert.deepEqual(firstApproval.dependencies, ['TRIAD-GATE', 'OAS-STUDY-SUBFRAME'])
+  const subframe = node('OAS-STUDY-SUBFRAME')
+  assert.deepEqual(subframe.dependencies, ['OAS-DETAIL', 'BCR-BAY-INTERFACES', 'IAS-WORKABLE-CONCEPT'])
+  assert.ok(!triad.dependencies.includes(subframe.id))
   assert.equal(firstApproval.agentDispatch?.mode, 'manual')
   const details = node('IAS-WORKABLE-DETAILS')
   assert.deepEqual(details.dependencies, [firstApproval.id])
