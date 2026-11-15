@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 30,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "4c12c737-48cf-433f-add0-f9769eb701e2",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg16-str-cap"
   },
   "claimedAt": "2026-11-15T16:39:49.480Z",
-  "heartbeatAt": "2026-11-15T16:42:26.277Z",
-  "expiresAt": "2026-11-15T17:27:26.277Z",
+  "heartbeatAt": "2026-11-15T16:54:23.290Z",
+  "expiresAt": "2026-11-15T16:54:23.290Z",
   "branch": "work/zerg16-cap-cabinet",
   "predecessor": {
     "leaseId": "fb2309a9-dc37-41d7-865c-b4f3acca79ad",
@@ -39,5 +39,7 @@
     "evidence": "PR #1545 exact 22607e34f0d30f8220967674a34f64b4c4fbb2d4; retained north cap layers and four head routes",
     "next": "Observe exact-head CI then merge while owned",
     "blocker": "Cap development, roof shoe and signed whole-house model remain open"
-  }
+  },
+  "releasedAt": "2026-11-15T16:54:23.290Z",
+  "releaseReason": "handoff"
 }
