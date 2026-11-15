@@ -9,12 +9,12 @@
     "label": "zerg16-ade-model"
   },
   "claimedAt": "2026-11-15T18:02:55.143Z",
-  "heartbeatAt": "2026-11-15T18:05:24.932Z",
-  "expiresAt": "2026-11-15T19:05:24.932Z",
+  "heartbeatAt": "2026-11-15T18:21:54.269Z",
+  "expiresAt": "2026-11-15T19:21:54.269Z",
   "branch": "work/zerg16-ade-current-compile",
   "pr": 1549,
   "checkpoint": {
-    "evidence": "PR #1549 exact 9a1a4f47a05607815711cb185532742c74a21f63; 374 Reference House tests, 79 drawing/publication checks and deterministic Study inspection passed locally.",
-    "next": "Verify all triggered exact-head CI. Run both canonical publication preflights and integrate."
+    "evidence": "PR #1549 exact 9fa28b2efd8b492f0b009e2f6f8c7df64a9399fb; specialist checkout now includes its pinned evidence commit; targeted architecture/drawing checks reviewed.",
+    "next": "Complete exact hosted repository and specialist proof, run both fresh canonical merge checks, then release."
   }
 }
