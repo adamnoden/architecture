@@ -9,8 +9,8 @@
     "label": "zerg14-inlet-fixed-station"
   },
   "claimedAt": "2026-11-15T09:47:45.306Z",
-  "heartbeatAt": "2026-11-15T09:52:03.235Z",
-  "expiresAt": "2026-11-15T10:37:03.235Z",
+  "heartbeatAt": "2026-11-15T10:02:18.318Z",
+  "expiresAt": "2026-11-15T10:47:18.318Z",
   "branch": "work/zerg14-replay-fixed-station",
   "predecessor": {
     "leaseId": "608ec002-a8ad-468b-a54f-00d2f0863675",
@@ -34,7 +34,7 @@
   },
   "pr": 1536,
   "checkpoint": {
-    "evidence": "PR #1536 exact 8748f652654641df59060964d298c1b601514d56 with joined stop, sleeve, and plant elevation and 101 HAD checks",
-    "next": "Check exact hosted Validate PR and publication preflight, then merge and release"
+    "evidence": "PR #1536 exact final 3f5e7007efde9858904c8d14f235ac9c90a22378 tree 29a95e68 with fixed station and simultaneous lower-outlet blocked daylight case; 102 HAD checks",
+    "next": "Observe hosted Validate PR for final head, run fresh preflight, merge with the exact head and release"
   }
 }
