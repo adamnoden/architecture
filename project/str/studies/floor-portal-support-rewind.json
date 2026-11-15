@@ -1,0 +1,215 @@
+{
+  "disposition": "Retire nested heel and collar topology. Rewind support arrangement. No assembled successor.",
+  "sourceSHA256": {
+    "current-house-ring-space.json": "28dd034381847b786a31a4f38ffe95d83b948f08bda5f9fe8a6337118584a574",
+    "current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+    "floor-portal-heel-return.json": "c4f25a5a95c1df13920087b9497a6fe7765a9f206c85efff58b6b732d5248e44",
+    "floor-portal-hip-diaphragms.json": "7a5635c9478defebdff2ce67d18dd67ab41742acc751746f7fe5898e6672407b",
+    "floor-portal-receiver-cover.json": "60b407bd8e70067d354fb830501e8defc819a3607ea9b850d5db71fd59094c31",
+    "reconciled-house-interface.json": "ae17f6de977de58ae54f25edfc67c48c36f348cffc288e839f25a8b4143c16cf",
+    "roof_water_receiving_union.json": "edfb8e3f7db02b9fbfc94166112cf167078fb0c80db7306972fd0e157ee1b358"
+  },
+  "rejectedHeelControls": {
+    "socketClashesPerHip": 4,
+    "maxCompatibleCentresInRetainedWebPacking": 2,
+    "minimumAdditionalTransverseMomentReserveKNm": 0.07171657865453787
+  },
+  "farJambArticulation": {
+    "guideXYmm": [
+      [
+        2702.5,
+        312.5
+      ],
+      [
+        11687.5,
+        2702.5
+      ],
+      [
+        9297.5,
+        11687.5
+      ],
+      [
+        312.5,
+        9297.5
+      ]
+    ],
+    "guideTangents": [
+      [
+        0.8651136964403782,
+        -0.5015758090570808
+      ],
+      [
+        0.5015758090570808,
+        0.8651136964403782
+      ],
+      [
+        -0.8651136964403782,
+        0.5015758090570808
+      ],
+      [
+        -0.5015758090570808,
+        -0.8651136964403782
+      ]
+    ],
+    "radiusMm": 6574.280378870375,
+    "normalizedThreeGuideAbsoluteDeterminants": [
+      1.9999999999999998,
+      1.9999999999999998,
+      2.0,
+      1.9999999999999998
+    ],
+    "uniformRadialGrowthTangentialResidualMmPerUnitStrain": 0.0,
+    "maxTangentialMismatchMmForOneMmPerMUniformXOnlyStrain": 2.8527124140121467,
+    "minimumNecessaryPeakGuideKNForOneKNResultantFxFy": [
+      0.365847544734022,
+      0.365847544734022
+    ],
+    "peakEqualSpringGuideKNForOneKNResultantFxFy": [
+      0.4325568482201891,
+      0.4325568482201891
+    ],
+    "equalSpringGuideKNPerKNmForPureYaw": 0.03802697566770893,
+    "maximumSingleOutGuideKNForOneKNResultantFxOrFy": 0.8651136964403783,
+    "historicalFullFaceHorizontalRoofTributary": {
+      "sourceCommit": "7a1b697431e9c1556f426068068b96356d3158ca",
+      "file": "project/str/studies/floor_portal_loads.py",
+      "sourceSHA256": "d36374c650180c4176f5014127a2b907c1d454ebd533b6e572ebe21676e73990",
+      "pressureKPa": 2.25,
+      "faceWidthAndNetOrdinaryUpperFacadeWidthM": [
+        12.4,
+        9.58
+      ],
+      "sameFaceRoofAndUpperFacadeRoofTributaryKN": 91.87595096839216,
+      "minimumGuideForceKNAtThisScale": 33.61259108188966,
+      "equalSpringGuideForceKNAtThisScale": 39.741571778120345,
+      "singleOutGuideForceKNAtThisScale": 79.48314355624069
+    }
+  },
+  "inheritedEmbeddedGuidePlacement": {
+    "capDepthAndWidthMm": [
+      180.0,
+      205.0
+    ],
+    "cassettePlanLengthAndWidthMm": [
+      94.0,
+      46.0
+    ],
+    "coverScreenMm": 25.0,
+    "relativeSettingMm": 10.0,
+    "centredNominalWebAfterSettingMm": 27.803412658989366,
+    "testedCentreBoundsAboutCapCentreMm": [
+      25.097166176927274,
+      3.6992457719003795
+    ],
+    "gridStepMm": 0.25,
+    "bestGridStationAndDepthOffsetsMm": [
+      0.0,
+      0.0
+    ],
+    "bestGridCassetteToH12AxisMm": 14.036338104726248,
+    "maximumBetweenSampleVariationMm": 0.17818707402945178,
+    "absoluteUpperBoundOfCassetteToH12SurfaceAfterSettingsMm": -1.7854748212443,
+    "shorterHistoricalJambTongueEnvelopeControl": {
+      "cassettePlanLengthAndWidthMm": [
+        69.0,
+        46.0
+      ],
+      "centredNominalWebAfterSettingMm": 38.6173338644941,
+      "centredH12GapAfterSettingMm": 10.536338104726248
+    }
+  },
+  "upliftRelocationTransfers": {
+    "oldCoupledRoofOnlyCornerTensionWitness": {
+      "xy": [
+        332.5,
+        332.5
+      ],
+      "range": [
+        -47.240081741,
+        95.612816999
+      ]
+    },
+    "retainedCornerBearingXYmm": [
+      [
+        332.5,
+        332.5
+      ],
+      [
+        11667.5,
+        332.5
+      ],
+      [
+        332.5,
+        11667.5
+      ],
+      [
+        11667.5,
+        11667.5
+      ]
+    ],
+    "outerRingAtNearJambHoldXYmm": [
+      [
+        1497.5,
+        332.5
+      ],
+      [
+        10502.5,
+        332.5
+      ],
+      [
+        11667.5,
+        1497.5
+      ],
+      [
+        11667.5,
+        10502.5
+      ],
+      [
+        10502.5,
+        11667.5
+      ],
+      [
+        1497.5,
+        11667.5
+      ],
+      [
+        332.5,
+        10502.5
+      ],
+      [
+        332.5,
+        1497.5
+      ]
+    ],
+    "distanceAlongEachAdjacentFaceToNearSupportMm": 1165.0,
+    "localTransferEqualSplitArmBendingKNm": 27.5173476141325,
+    "localTransferEqualSplitResultantMomentKNm": 38.91540619644111,
+    "localTransferSingleArmBendingKNm": 55.034695228265,
+    "loadedRoofWaterComparison": {
+      "xyMm": [
+        11667.5,
+        332.5
+      ],
+      "oldInstalledTensionKN": 54.67612224,
+      "case": {
+        "source": "installed",
+        "case": {
+          "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 76,
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": -1
+        }
+      },
+      "equalSplitArmBendingKNm": 31.8488412048,
+      "singleArmBendingKNm": 63.6976824096
+    }
+  },
+  "limits": [
+    "The plan uses rigid motion and ideal bilateral one-axis guides. Rank evaluates kinematics only.",
+    "The cap placement bound concerns the inherited rectangular cassette and four existing H12 force lines, before loops, tools or positive retention.",
+    "Uplift uses separate local statics comparators with historical roof and roof-water reactions. It does not give frame capacity or predict the rewound joint demands."
+  ]
+}

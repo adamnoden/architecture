@@ -1,13 +1,13 @@
 {
   "packet": "HAD-INLET-RESOLUTION",
-  "status": "IN_PROGRESS_NOT_ADOPTED",
+  "status": "REWIND_NOT_ADOPTED",
   "baselineMain": "003f61bacebd4cb3294280059b64f1bb5fc87f88",
   "selection": "HAD-SERVICES-02",
   "sourceBlobs": {
     "project/had/studies/current-house.mjs": "58bf1a6248af8268de70d838cce23f249ce30b91",
     "project/had/studies/current-house-services.json": "248c8281369d16a8885506660f740c1f66462d9d",
-    "project/had/studies/selected-water-duties.mjs": "1ea39eda8b8ba187c3ac0a7ccf4327322ea6f037",
-    "project/had/studies/incoming-water.mjs": "a7f716318a65ab01c4b3ee1926ec13564243fbcb",
+    "project/had/studies/selected-water-duties.mjs": "332755d589080661042af6491d0f23d7947829bf",
+    "project/had/studies/incoming-water.mjs": "90af438144296ff78349939bfb95d5bdb9769a44",
     "project/had/studies/incoming-water-geometry.mjs": "ed658b7df0edf5d8e6d1826d32730a14b00199c7",
     "project/had/studies/incoming-water-terminal.mjs": "101038a3ed267ec9ca1e11e58e38100411239d6e",
     "project/had/studies/incoming-water-station.mjs": "30fc6ac41ae4c3ccb69e99ad34b317ab69d17f12",
@@ -42,10 +42,10 @@
     "project/str/studies/house-corner-rewind.json": "6471d89c213724ec02a26d797c85185beadb25b5"
   },
   "unchangedSelectedGeometry": {
-    "fullCurrentHouseSHA256": "7e73e08b8f4759b0638a0da67258034c80c2098c8e4259c15038d1ec6ea9719b",
+    "fullCurrentHouseSHA256": "b125f32a1e75a9c2f5137bf6f560a6fce1509c49d4f8c02684fde556a9940fe2",
     "exteriorPortsSHA256": "9d16691683c6255acad78736c3f6a77ac3c27d01e5f6d7ab908fab1e8fdffabb",
     "weatherFacesSHA256": "1155d413b399a8ea93c4097f402e2089ded7131a68177b93a37d881216d7986f",
-    "scope": "This development checkpoint does not mutate the selected house or its compact schedule. The rejected inherited route remains selected only as an adverse witness."
+    "scope": "The joined rewrite updates selected inlet duty metadata only. The rejected inherited path remains an adverse witness; the compact service schedule, ports and weather faces are unaffected."
   },
   "inheritedInlet": {
     "radiator": "plant-N",
@@ -7311,9 +7311,10 @@
   },
   "adoption": {
     "adopted": false,
+    "rewindSource": "project/had/inlet-resolution.md#replacement-architecture-to-draw",
     "remaining": [
-      "A located main/branch isolation station with a complete retained-end and controlled-drain arrangement.",
-      "A complete current-cylinder bridge/tail/stand first-release, capture and receiving sequence preserving ordinary plant entry.",
+      "A fixed wet cabinet with I0, a joint-free wall spool, accessible upstream isolation, independently supported fixed branches and bounded fault discharge.",
+      "A short supported plant terminal release with the fixed distribution outside the cart and body sweeps, and independent vessel D2 and cargo transfer.",
       "Accessible utility sink first breaks and actual head/tail separation, beyond a nominal backbone and tube path."
     ],
     "receivingGates": [

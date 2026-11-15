@@ -151,6 +151,12 @@ intersection and missing upstream isolation/drain arrangement against the
 selected cylinder, utility and occupied house. It can proceed before roof
 integration, but TRIAD-GATE and MRA-02 consume its result. No rejected inlet,
 historical bridge proof or unresolved first release may be silently adopted.
+The [15 November disposition](inlet-resolution.md#architectural-disposition)
+rejects the open lobby and both exterior cuts. Redraw a fixed wet cabinet, its
+straight wall entry and independently drained fault routes, and replace the
+projecting plant bridge with a supported local terminal release. Test the
+partition/equipment alternative if they cannot fit the existing east service
+field. Keep this packet ready for that joined redesign.
 
 ### Select the permanent receiver and blocked-water return
 

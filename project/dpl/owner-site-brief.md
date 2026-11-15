@@ -76,6 +76,15 @@ Levels are relative to the study’s ground finished floor. The extents locate t
 
 **Plant delivery and removal on the east field.** First test whether surveyed high-side service access can meet the raised exchange dock at its outer datum without placing the house or separate roof receivers downstream of uncontrolled water. A same-level exchange can avoid the exterior vertical transfer. It still needs a weathered separation, a routed plot arrival, safe wheel grade and staffed set-down. With the current **1774 mm trial step**, compare the goods-only temporary gantry and crew-retreat field to **X17900** (5.90 m from the east wall) with the through-car fixed-lift trial to **X17845** (5.845 m to the ramp toe). Those points represent different uses. The first excludes onward transport/assembly access, and the second excludes grade arrival, controls, servicing and retreat. Overlay each full section and footprint against verified ground levels, foundations, the separate RWT receivers and actual equipment before claiming fit. [HAD exchange and vertical-transfer comparisons](../had/inlet-resolution.md#removable-goods-gantry-and-retained-guard) · [Drop, equipment, drainage and independent inlet-entry screen](../had/inlet-resolution.md#site-decision-envelope-for-the-lobby-route)
 
+**Potable inlet and the independent relief receptor.** The [current inlet
+rewind](../had/inlet-resolution.md#architectural-disposition) excludes both east
+cabinet layouts from the site overlay. They encroach on the D2 safety receptor
+reservation, including its independent inspection and hot-discharge territory.
+The lowered cabinet is not a plot option. Test separate confirmed utility and
+burial/frost access, the fixed indoor station's own fault routes and the plant
+handling field after the house redraw is issued. Keep the D2 receiver and its
+lawful heat-safe destination independent of the potable and roof routes.
+
 **Candidate foul-route change.** The later [Bedroom 4 allocation study](../had/had-03-bedroom4-allocation.md) proposes a rear-west stack and a separate below-ground foul route. It remains unadopted and does not replace the current service-side reservation or establish an adopted foul-water handoff. If adopted, a real-site assessment must add its exact outlet/inspection, level, ground-crossing and renewal territory; it cannot assume that a usable east-side connection also serves the west-side proposal. Its possible effects on garden and maintenance space belong in the comparison.
 
 **Proportionality.** [BCR-PROPORTIONALITY](../bcr/bcr-proportionality-result.md) compares conventional controls with technical alternatives without invented prices or life savings. Constrained ground, permanent access apparatus, pumping or dependence on specialist renewal can make a superficially fitting plot a poor match for the owner's resources and maintenance appetite. Those consequences warrant explicit comparison and a cost/owner decision, not a numerical pass obtained by adding speculative future technology.

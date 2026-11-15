@@ -39,7 +39,10 @@ test('the current rejected inlet remains geometrically unchanged and cannot appe
     assert.deepEqual(d.path,original);
     assert.equal(d.status,'REJECTED_RETAINED_ROUTE');
     assert.equal(d.currentWitness.totalLengthInsideRequiredEnvelopeMM,200);
-    assert.match(d.adoptionRequirement,/lobby alternative remains unadopted/);
+    assert.match(d.adoptionRequirement,/fixed wet cabinet/);
+    assert.equal(d.rewindSource,'project/had/inlet-resolution.md#replacement-architecture-to-draw');
+    assert.deepEqual(d.rejectedAlternatives.map(alternative=>alternative.id),
+      ['open-lobby-station','high-exterior-cut','grade-exterior-cut']);
   }
   assert.equal(house.model.currentAdoptionBlockers.length,1);
   assert.match(house.model.currentAdoptionBlockers[0],/200 mm.*plant-N/);

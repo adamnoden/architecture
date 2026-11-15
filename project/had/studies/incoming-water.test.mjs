@@ -4,6 +4,7 @@ import {readFileSync} from 'node:fs';
 import {finiteBends,exactSegmentBoxDistance} from './incoming-water-geometry.mjs';
 import {deriveIncomingWaterStudy,incomingWaterText} from './incoming-water.mjs';
 import {deriveCurrentHouse} from './current-house.mjs';
+import {deriveInletRewind} from './inlet-rewind.mjs';
 import {utilityFirstRestPreflight} from './utility-first-rest-preflight.mjs';
 import {deriveBridgeNative} from './incoming-water-bridge-native.mjs';
 import {bridgeNativeMotionResult} from './incoming-water-bridge-native-motion.mjs';
@@ -94,11 +95,25 @@ test('front utility breaks include a reaction key, real tool thickness, hands an
 test('development cannot silently adopt a route or release the existing house blocker',()=>{
   const house=deriveCurrentHouse();
   assert.equal(study.adoption.adopted,false);
-  assert.equal(study.status,'IN_PROGRESS_NOT_ADOPTED');
+  assert.equal(study.status,'REWIND_NOT_ADOPTED');
   for(const s of[house.model.architecturalServices,house.model.servicesInterface])
     assert.equal(s.otherServiceDuties.find(x=>x.id==='incoming-water').status,'REJECTED_RETAINED_ROUTE');
   assert(house.model.currentAdoptionBlockers.some(x=>x.includes('Incoming-water REWIND')));
   assert.equal(readFileSync(new URL('incoming-water.json',import.meta.url),'utf8'),incomingWaterText(study));
+});
+
+test('the exterior cabinets cover independent D2 and the indoor redraw remains a spatial reservation',()=>{
+  const {exterior,trialInterior,plant,status}=deriveInletRewind();
+  assert.equal(status,'REWIND_NOT_ADOPTED');
+  assert.deepEqual(exterior.overlap,[300,200]);
+  assert.deepEqual(exterior.supportCentresOverGrate,[[12225,2525]]);
+  assert(exterior.crossing[2]>exterior.gradeTrayZ && exterior.crossing[2]<exterior.gradeHeadZ);
+  assert.equal(exterior.gradeToD2OutfallMM,50);
+  assert.equal(trialInterior.boreRadialAfterSettingMM,11);
+  assert(trialInterior.previousBendCrosswiseMM>trialInterior.boreID);
+  assert.equal(plant.fixedLowDropOverlapMM,182);
+  assert(plant.topOfFixedCrossingRequiredMM>plant.earlierPanelZ);
+  assert.equal(plant.alternativeFixedRoute.clearanceTo2125CarrierMM,98);
 });
 
 test('located main and branch cuts include finite valve modules and full tool sectors',()=>{

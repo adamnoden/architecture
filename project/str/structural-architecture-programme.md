@@ -161,9 +161,13 @@ the final gates as a passed scheme. Product, reinforcement fabrication, site,
 competent engineering and physical acceptance retain their existing BCR/EPR/PHY/DEL
 routes. No new external prerequisite replaces useful internal design work.
 
-The [receiver side-web comparison](floor-portal-reconciliation.md) records
-a failed 140 mm L-pier detail and a 180 mm plan comparator for the next
-coordinated replay. Both final gates still depend on this packet.
+The [outer roof support rewind](floor-portal-reconciliation.md#outer-roof-support-rewind)
+retires the shared hip heel, through-collars and radial corner cassette. Start
+the next drawing with direct corner bearing, separate near-jamb hold-downs and
+dedicated far-jamb guidance outside the inherited cage. Resolve stability of
+the released wall heads and the finite collector transfers before the joined
+replay. The dated cap, groove and collar comparisons remain adverse controls.
+Both final gates still depend on the verified successor.
 
 The registration is the owning correction exposed by ROF-RWT-GATE, not execution
 of the new structural packet. STR-FLOOR-PORTAL requires its own ordinary
