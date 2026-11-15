@@ -34,7 +34,27 @@ function toolGap(a,b,box){
   return Math.hypot(Math.max(plan,0),vertical);
 }
 
-export function utilityTerminalStudy(model,host){
+export function utilityHeadObstacles(model) {
+  const fixed={frame:[10935,740,0,600,600,900],washer:[10076,800,0,598,600,848],
+    rackPost:[10875,1165,0,20,20,850],rackFoot:[10835,1100,0,70,100,10],
+    eastWall:[model.shell-model.envelope,0,0,300,2500,3500],H0:utilityH0.bodyBox,
+    coldCap:[10723,1213,963,74,74,1799],hotCap:[10823,1213,963,74,74,2019]};
+  const radiator=model.architecturalServices.emitters.find(e=>e.id==='utility-E');
+  fixed.radiator=[...radiator.completePlanWithValvesAndBrackets.slice(0,2),radiator.bottomLocal,
+    ...radiator.completePlanWithValvesAndBrackets.slice(2),radiator.topLocal-radiator.bottomLocal];
+  return fixed;
+}
+
+export function utilityHeadSweeps(head,moves,fixed) {
+  return moves.slice(1).map((move,index)=>{
+    const box=swept(head,moves[index],move);
+    return {stage:index+1,box,obstacles:Object.entries(fixed).map(([id,obstacle])=>({id,gapMM:boxesGap(box,obstacle)}))};
+  });
+}
+
+export function utilityTerminalStudy(model,host,{
+  headBodyBottom=650,toolZ=615,drainShoulder=[10950,1725,500],receiver=[11045,925,0,400,400,75],
+}={}){
   const r=25,routes=Object.fromEntries(Object.entries(terminalVertices).map(([id,v])=>[id,finiteBends(v,25)]));
   const obstacles={};
   for(const[id,b]of Object.entries(host.geometry.frame))if(id!=='temporary carry bar')obstacles[id]=b;
@@ -44,14 +64,14 @@ export function utilityTerminalStudy(model,host){
   }
   Object.assign(obstacles,{rackPost:[10875,1165,0,20,20,850],rackFoot:[10835,1100,0,70,100,10],
     rearLink300:[10875,700,300,20,485,20],rearLink800:[10875,700,800,20,485,20],
-    washer:[10076,800,0,598,600,848],inheritedHeadBody:[10935,740,650,600,600,600],
+    washer:[10076,800,0,598,600,848],inheritedHeadBody:[10935,740,headBodyBottom,600,600,1250-headBodyBottom],
     eastWall:[model.shell-model.envelope,0,0,300,2500,3500]});
   for(const[i,[x,y,w,d]]of host.floorAndWall.seatPlan.entries())obstacles['wholeFootWindow'+i]=[x,y,0,w,d,900];
   const pipeClearances=Object.fromEntries(Object.entries(routes).map(([id,route])=>[id,
     Object.entries(obstacles).map(([obstacle,b])=>({obstacle,gapMM:routeBoxGap(route,b,r)})).sort((a,b)=>a.gapMM-b.gapMM)]));
   const waste=[[11270,940,610],[10760,940,597.25],[10760,1275,588.875],[10875,1275,586]];
   const pair=(a,b)=>pathSeparation(routes[a].path,routes[b].path)-50-routes[a].hausdorffError-routes[b].hausdorffError;
-  const shoulder=[10925,1725,800],toolZ=615,toolLength=297,step=.25;
+  const shoulder=[10925,1725,800],toolLength=297,step=.25;
   const angularPenalty=toolLength*step*Math.PI/360;
   const toolChecks=utilityBreaks.map(({id,point,toolSector})=>{
     let tool=Infinity,hand=Infinity,arm=Infinity,reach=0,otherPipe=Infinity;
@@ -69,19 +89,10 @@ export function utilityTerminalStudy(model,host){
     return {id,sector:toolSector,toolGapLowerMM:tool-angularPenalty,handGapLowerMM:hand-angularPenalty,
       armGapLowerMM:arm-angularPenalty,otherUnionGapLowerMM:otherPipe-angularPenalty,maxReachUpperMM:reach+angularPenalty};
   });
-  const fixed={frame:[10935,740,0,600,600,900],washer:obstacles.washer,rackPost:obstacles.rackPost,
-    rackFoot:obstacles.rackFoot,eastWall:obstacles.eastWall,H0:utilityH0.bodyBox,
-    coldCap:[10723,1213,963,74,74,1799],hotCap:[10823,1213,963,74,74,2019]};
-  const radiator=model.architecturalServices.emitters.find(e=>e.id==='utility-E');
-  fixed.radiator=[...radiator.completePlanWithValvesAndBrackets.slice(0,2),radiator.bottomLocal,
-    ...radiator.completePlanWithValvesAndBrackets.slice(2),radiator.topLocal-radiator.bottomLocal];
   const head=[10930,735,925,610,610,700],moves=[[0,0,0],[0,760,0],[-730,760,0],[-730,760,-575]];
-  const headSweeps=[];
-  for(let i=1;i<moves.length;i++)for(const[id,b]of Object.entries(fixed))
-    headSweeps.push({stage:i,id,gapMM:boxesGap(swept(head,moves[i-1],moves[i]),b)});
+  const headSweeps=utilityHeadSweeps(head,moves,utilityHeadObstacles(model));
   const h0Shoulder=[10800,1725,1450],h0Grip=[10860,1375,1500];
-  const receiver=[11045,925,0,400,400,75],receiverChecks=Object.entries(obstacles).map(([id,b])=>({id,gapMM:boxesGap(receiver,b)}));
-  const drainShoulder=[10950,1725,500];
+  const receiverChecks=Object.entries(obstacles).map(([id,b])=>({id,gapMM:boxesGap(receiver,b)}));
   const drains=utilityDrains.map(d=>{
     const [x,y,z]=d.valve,box=[x-25,y-25,z-40,50,70,80],hand=[x,y+85,z];
     const teeBox=[d.tee[0]-25,d.tee[1]-25,d.tee[2]-25,50,50,50];
@@ -106,7 +117,7 @@ export function utilityTerminalStudy(model,host){
     wasteGapsMM:Object.fromEntries(Object.entries(routes).map(([id,route])=>[id,pathSeparation(route.path,waste)-50-route.hausdorffError])),
     breaks:utilityBreaks,unionMadeZ:[565,625],nutBackoffMM:60,headLiftToFullClearance:375,
     reactionSupport:{solids:utilityReaction,minimumNonContact:reactionClearances.slice(0,5),contact:'Each open key bears on its own lower union hex. The central shaped opening is occupied by the matched union, not a solid plate through a pipe. Fit and rate both contact faces; no torque through the sink top or unsupported copper.',
-      keyMaximumTop:577,rotatingSpannerUnderside:608.6,verticalKeyToolGapMM:31.6,
+      keyMaximumTop:577,rotatingSpannerUnderside:toolZ-6.4,verticalKeyToolGapMM:Number((toolZ-6.4-577).toFixed(1)),
       rackConnection:'The rackLink ends exactly atY1165 and meets the post and existing middle-arm return on their south face. They share a bolted/welded connection territory, not overlapping independent solids. The existing rack must receive the added force/torque.',
       preliminaryForceCase:{sectionMM:[30,40,3],secondMomentMM4:reactionI,sectionModulusMM3:reactionW,
         modulusNmm2:190000,minimumProofStressNmm2:150,verticalForceN:250,maximumTorqueNm:50,maximumCantileverMM:460,
@@ -121,11 +132,11 @@ export function utilityTerminalStudy(model,host){
       fixedObjectClearances:h0Clearance,
       scope:'H0 stops the hot lower branch independently of the cold U0 lobby cut. Replacing H0 itself requires upstream domestic-store isolation and controlled inventory discharge, not merely closing H0.'},
     head:{centre:[11235,1040],plan:[610,610],retainedBelowRim:350,aboveRim:350,completeHeight:700,
-      inheritedUnderhang:250,raised:head,moves,minimumSweeps:headSweeps.sort((a,b)=>a.gapMM-b.gapMM).slice(0,8),
+      inheritedUnderhang:250,raised:head,moves,minimumSweeps:headSweeps.flatMap(({stage,obstacles})=>obstacles.map(o=>({stage,...o}))).sort((a,b)=>a.gapMM-b.gapMM).slice(0,8),
       receiver:{plan:[10170,1465,670,670],rim:700,lowestRetainedPart:350,railWidth:15,outerInset:10,clearWidth:550,maximumLowerBodyWidth:530,
         scope:'The530 limit is transverse between two longitudinal rails, not a square throat. Keep cross-bracing below the350 lowest-part plane, with25 clear; locate actual upper lands and anti-tip capture before crew release.'},
       pickup:'Keep the existing four-legged frame on its seats. Capture the complete top independently against fall and pitch before the four head screws release. Head feet/fasteners/pickup remain IAS occurrence qualifications; this change provides reachable pipe breaks and a larger explicit moving package.'},
-    controlledDrain:{receiver,requiredNetLitres:10,grossCuboidUpperLitres:12,minimumFixedGapMM:Math.min(...receiverChecks.map(v=>v.gapMM)),
+    controlledDrain:{receiver,requiredNetLitres:10,grossCuboidUpperLitres:receiver.slice(3).reduce((a,b)=>a*b,1)/1e6,minimumFixedGapMM:Math.min(...receiverChecks.map(v=>v.gapMM)),
       drains,receiverInsertion:[receiver.map((v,i)=>i===1?v+525:v),receiver],receiverInsertionMinimumMM:insertionGap,
       maximumControlledFlowLitresMinute:2,maximumBatchLitres:5,requiredFreeboardLitres:5,
       method:'Before first nut release, close U0 and H0, prove stopped/zero-pressure flow and vent locally. Drain one isolated branch at a time through its capped, independently supported local drain into this removable floor receiver. Close the drain before emptying; retain the normal2L witness as a different duty.',
