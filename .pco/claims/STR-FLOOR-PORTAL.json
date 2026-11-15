@@ -9,9 +9,9 @@
     "label": "zerg15b-str"
   },
   "claimedAt": "2026-11-15T16:11:56.172Z",
-  "heartbeatAt": "2026-11-15T16:11:56.172Z",
-  "expiresAt": "2026-11-15T16:56:56.172Z",
-  "branch": "work/zerg15b-north-cage",
+  "heartbeatAt": "2026-11-15T16:22:16.889Z",
+  "expiresAt": "2026-11-15T17:07:16.889Z",
+  "branch": "work/zerg16-cage-plant",
   "predecessor": {
     "leaseId": "b75d2504-51cc-4eda-9455-199fdfc6fbed",
     "generation": 28,
