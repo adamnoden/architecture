@@ -52,7 +52,7 @@ export const houseDeliveryNodes = defineNodes([
   },
   {
     id: 'ADE-MODEL', owners: ['ADE'], title: 'Connect current design identities to construction-information outputs',
-    dependencies: ['ADE-DELIVERY-AUDIT', 'CCR-CURRENT-SOURCE'], lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
+    dependencies: ['ADE-DELIVERY-AUDIT', 'CCR-CURRENT-SOURCE'], lifecycle: 'complete', agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/ade/model-integration-result.md']
   },
   {

@@ -22,7 +22,7 @@ flowchart LR
     n_CCR_STRUCTURE_INTEGRATION["CCR-STRUCTURE-INTEGRATION<br/>Integrate active structural computations through current-source parameters and methods<br/><b>BLOCKED</b>"]
     n_CCR_SERVICES_INTEGRATION["CCR-SERVICES-INTEGRATION<br/>Integrate active service and water computations through current-source contracts<br/><b>BLOCKED</b>"]
     n_CCR_ASSEMBLY_INTEGRATION["CCR-ASSEMBLY-INTEGRATION<br/>Integrate editable floor wall skirting grate and opening assembly families<br/><b>BLOCKED</b>"]
-    n_CCR_EDIT_CONTRACT["CCR-EDIT-CONTRACT<br/>Prove serialisable semantic edits reversal and revision-bound compiler responses<br/><b>BLOCKED</b>"]
+    n_CCR_EDIT_CONTRACT["CCR-EDIT-CONTRACT<br/>Prove serialisable semantic edits reversal and revision-bound compiler responses<br/><b>READY</b>"]
     n_CCR_CURRENT_RELEASE["CCR-CURRENT-RELEASE<br/>Eliminate historical fallback and split current models from all active final outputs<br/><b>BLOCKED</b>"]
     n_HAD_INLET_RESOLUTION["HAD-INLET-RESOLUTION<br/>Resolve the selected incoming-water route and isolation station<br/><b>READY</b>"]
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
@@ -31,7 +31,6 @@ flowchart LR
   subgraph g_ADE["ADE"]
     direction TB
     n_ADE_BROWSER_EDITOR["ADE-BROWSER-EDITOR<br/>Demonstrate browser floor-plan editing through the shared headless compiler<br/><b>BLOCKED</b>"]
-    n_ADE_MODEL["ADE-MODEL<br/>Connect current design identities to construction-information outputs<br/><b>READY</b>"]
     n_ADE_DETAILS["ADE-DETAILS<br/>Produce source-bound technical bay drawings and details<br/><b>BLOCKED</b>"]
     n_ADE_SCHEDULES["ADE-SCHEDULES<br/>Produce linked bay schedules specifications and quantities<br/><b>BLOCKED</b>"]
     n_ADE_EVIDENCE["ADE-EVIDENCE<br/>Bind bay calculations and external evidence to controlling inputs<br/><b>BLOCKED</b>"]
@@ -118,8 +117,6 @@ flowchart LR
   n_CCR_CURRENT_COMPILE --> n_CCR_STRUCTURE_INTEGRATION
   n_CCR_CURRENT_COMPILE --> n_CCR_SERVICES_INTEGRATION
   n_CCR_CURRENT_COMPILE --> n_CCR_ASSEMBLY_INTEGRATION
-  n_ADE_MODEL --> n_CCR_ASSEMBLY_INTEGRATION
-  n_ADE_MODEL --> n_CCR_EDIT_CONTRACT
   n_CCR_STRUCTURE_INTEGRATION --> n_CCR_CHANGE_PROOF
   n_CCR_SERVICES_INTEGRATION --> n_CCR_CHANGE_PROOF
   n_CCR_ASSEMBLY_INTEGRATION --> n_CCR_CHANGE_PROOF
@@ -168,14 +165,11 @@ flowchart LR
   n_PLT_FINAL_PREP --> n_PLT_PRINT_REVIEW
   n_TRIAD_GATE --> n_BCR_BAY_DESIGN
   n_IAS_WORKABLE_DETAILS --> n_BCR_BAY_DESIGN
-  n_ADE_MODEL --> n_ADE_DETAILS
   n_BCR_BAY_DESIGN --> n_ADE_DETAILS
   n_HRS_TECHNICAL --> n_ADE_DETAILS
-  n_ADE_MODEL --> n_ADE_SCHEDULES
   n_BCR_BAY_DESIGN --> n_ADE_SCHEDULES
   n_HRS_TECHNICAL --> n_ADE_SCHEDULES
   n_BCR_BAY_DESIGN --> n_ADE_EVIDENCE
-  n_ADE_MODEL --> n_ADE_EVIDENCE
   n_HRS_TECHNICAL --> n_ADE_EVIDENCE
   n_ADE_DETAILS --> n_DEL_BAY_PACK
   n_ADE_SCHEDULES --> n_DEL_BAY_PACK
@@ -221,7 +215,7 @@ flowchart LR
   class n_CCR_STRUCTURE_INTEGRATION blocked;
   class n_CCR_SERVICES_INTEGRATION blocked;
   class n_CCR_ASSEMBLY_INTEGRATION blocked;
-  class n_CCR_EDIT_CONTRACT blocked;
+  class n_CCR_EDIT_CONTRACT ready;
   class n_CCR_CHANGE_PROOF blocked;
   class n_CCR_CURRENT_RELEASE blocked;
   class n_ADE_BROWSER_EDITOR blocked;
@@ -249,7 +243,6 @@ flowchart LR
   class n_PLT_OWNER_FINAL_DESIGN_ACCEPTANCE blocked;
   class n_PLT_PRINT_REVIEW blocked;
   class n_BCR_BAY_DESIGN blocked;
-  class n_ADE_MODEL ready;
   class n_ADE_DETAILS blocked;
   class n_ADE_SCHEDULES blocked;
   class n_ADE_EVIDENCE blocked;
@@ -330,7 +323,7 @@ flowchart LR
     n_CCR_STRUCTURE_INTEGRATION["CCR-STRUCTURE-INTEGRATION<br/>Integrate active structural computations through current-source parameters and methods<br/><b>BLOCKED</b>"]
     n_CCR_SERVICES_INTEGRATION["CCR-SERVICES-INTEGRATION<br/>Integrate active service and water computations through current-source contracts<br/><b>BLOCKED</b>"]
     n_CCR_ASSEMBLY_INTEGRATION["CCR-ASSEMBLY-INTEGRATION<br/>Integrate editable floor wall skirting grate and opening assembly families<br/><b>BLOCKED</b>"]
-    n_CCR_EDIT_CONTRACT["CCR-EDIT-CONTRACT<br/>Prove serialisable semantic edits reversal and revision-bound compiler responses<br/><b>BLOCKED</b>"]
+    n_CCR_EDIT_CONTRACT["CCR-EDIT-CONTRACT<br/>Prove serialisable semantic edits reversal and revision-bound compiler responses<br/><b>READY</b>"]
     n_CCR_CURRENT_RELEASE["CCR-CURRENT-RELEASE<br/>Eliminate historical fallback and split current models from all active final outputs<br/><b>BLOCKED</b>"]
     n_TRIAD_IFACE_FREEZE["TRIAD-IFACE-FREEZE<br/>Shared IAS/OAS/HAD interface freeze<br/><b>DONE</b>"]
     n_IAS_OAS_JUNCTION["IAS-OAS-JUNCTION<br/>Interior-system to opening-assembly junction reconciliation<br/><b>DONE</b>"]
@@ -352,7 +345,7 @@ flowchart LR
     n_ADE_DELIVERY_AUDIT["ADE-DELIVERY-AUDIT<br/>Map construction-information needs to existing capabilities<br/><b>DONE</b>"]
     n_ADE_SECTION_VIEW["ADE-SECTION-VIEW<br/>Prove source-owned orthographic cut, context and occlusion semantics<br/><b>DONE</b>"]
     n_ADE_SECTION_PARITY["ADE-SECTION-PARITY<br/>Migrate principal and service sections to source-bound visible geometry and cross-view parity<br/><b>DONE</b>"]
-    n_ADE_MODEL["ADE-MODEL<br/>Connect current design identities to construction-information outputs<br/><b>READY</b>"]
+    n_ADE_MODEL["ADE-MODEL<br/>Connect current design identities to construction-information outputs<br/><b>DONE</b>"]
     n_ADE_DETAILS["ADE-DETAILS<br/>Produce source-bound technical bay drawings and details<br/><b>BLOCKED</b>"]
     n_ADE_SCHEDULES["ADE-SCHEDULES<br/>Produce linked bay schedules specifications and quantities<br/><b>BLOCKED</b>"]
     n_ADE_EVIDENCE["ADE-EVIDENCE<br/>Bind bay calculations and external evidence to controlling inputs<br/><b>BLOCKED</b>"]
@@ -919,7 +912,7 @@ flowchart LR
   class n_CCR_STRUCTURE_INTEGRATION blocked;
   class n_CCR_SERVICES_INTEGRATION blocked;
   class n_CCR_ASSEMBLY_INTEGRATION blocked;
-  class n_CCR_EDIT_CONTRACT blocked;
+  class n_CCR_EDIT_CONTRACT ready;
   class n_CCR_CHANGE_PROOF blocked;
   class n_CCR_CURRENT_RELEASE blocked;
   class n_ADE_BROWSER_EDITOR blocked;
@@ -1059,7 +1052,7 @@ flowchart LR
   class n_BCR_BAY_DESIGN blocked;
   class n_ADE_SECTION_VIEW done;
   class n_ADE_SECTION_PARITY done;
-  class n_ADE_MODEL ready;
+  class n_ADE_MODEL done;
   class n_ADE_DETAILS blocked;
   class n_ADE_SCHEDULES blocked;
   class n_ADE_EVIDENCE blocked;

@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 7 · **Active:** 0 · **Blocked:** 37 · **Held:** 2 · **Done:** 134 · **Cancelled:** 0
+**Structurally ready:** 7 · **Active:** 0 · **Blocked:** 36 · **Held:** 2 · **Done:** 135 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -21,10 +21,10 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
-| `CCR-CURRENT-COMPILE` | Implement the explicit current-house compile path without historical fallback | CCR | CCR-STRUCTURE-INTEGRATION, CCR-SERVICES-INTEGRATION |
+| `CCR-CURRENT-COMPILE` | Implement the explicit current-house compile path without historical fallback | CCR | CCR-STRUCTURE-INTEGRATION, CCR-SERVICES-INTEGRATION, CCR-ASSEMBLY-INTEGRATION |
+| `CCR-EDIT-CONTRACT` | Prove serialisable semantic edits reversal and revision-bound compiler responses | CCR / ADE | — |
 | `HAD-INLET-RESOLUTION` | Resolve the selected incoming-water route and isolation station | HAD / MAT / IAS | — |
 | `STR-FLOOR-PORTAL` | Resolve the floor collector and portal load path before house selection | STR | ROF-RWT-GATE |
-| `ADE-MODEL` | Connect current design identities to construction-information outputs | ADE | CCR-EDIT-CONTRACT |
 | `DPL-COMMISSION` | Receive owner-nominated real plot and authorised assessment scope | DPL | DPL-SITE-ASSESSMENT |
 | `PHY-04` | Wall/ceiling movement-junction build and test | PHY | — |
 | `EPR-RH11` | Obtain and process competent Reference House reviews | EPR | — |
@@ -43,8 +43,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 |---|---|---|
 | `CCR-STRUCTURE-INTEGRATION` | Integrate active structural computations through current-source parameters and methods | CCR-CURRENT-COMPILE |
 | `CCR-SERVICES-INTEGRATION` | Integrate active service and water computations through current-source contracts | CCR-CURRENT-COMPILE |
-| `CCR-ASSEMBLY-INTEGRATION` | Integrate editable floor wall skirting grate and opening assembly families | CCR-CURRENT-COMPILE, ADE-MODEL |
-| `CCR-EDIT-CONTRACT` | Prove serialisable semantic edits reversal and revision-bound compiler responses | ADE-MODEL |
+| `CCR-ASSEMBLY-INTEGRATION` | Integrate editable floor wall skirting grate and opening assembly families | CCR-CURRENT-COMPILE |
 | `CCR-CHANGE-PROOF` | Prove end-to-end change propagation and selective evidence invalidation | CCR-STRUCTURE-INTEGRATION, CCR-SERVICES-INTEGRATION, CCR-ASSEMBLY-INTEGRATION, CCR-EDIT-CONTRACT |
 | `CCR-CURRENT-RELEASE` | Eliminate historical fallback and split current models from all active final outputs | CCR-CHANGE-PROOF, HRS-SYNTHESIS, ADE-DETAILS, ADE-SCHEDULES, ADE-EVIDENCE |
 | `ADE-BROWSER-EDITOR` | Demonstrate browser floor-plan editing through the shared headless compiler | CCR-CHANGE-PROOF |
@@ -70,9 +69,9 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `PLT-OWNER-FINAL-DESIGN-ACCEPTANCE` | Receive the owner’s acceptance of the assembled book and final design drawings | PLT-FINAL-PREP |
 | `PLT-PRINT-REVIEW` | Receive and disposition actual-size BOOK and WALL print verdicts | PLT-FINAL-PREP |
 | `BCR-BAY-DESIGN` | Resolve the selected bay as a coordinated design study | TRIAD-GATE, IAS-WORKABLE-DETAILS |
-| `ADE-DETAILS` | Produce source-bound technical bay drawings and details | ADE-MODEL, BCR-BAY-DESIGN, HRS-TECHNICAL |
-| `ADE-SCHEDULES` | Produce linked bay schedules specifications and quantities | ADE-MODEL, BCR-BAY-DESIGN, HRS-TECHNICAL |
-| `ADE-EVIDENCE` | Bind bay calculations and external evidence to controlling inputs | BCR-BAY-DESIGN, ADE-MODEL, HRS-TECHNICAL |
+| `ADE-DETAILS` | Produce source-bound technical bay drawings and details | BCR-BAY-DESIGN, HRS-TECHNICAL |
+| `ADE-SCHEDULES` | Produce linked bay schedules specifications and quantities | BCR-BAY-DESIGN, HRS-TECHNICAL |
+| `ADE-EVIDENCE` | Bind bay calculations and external evidence to controlling inputs | BCR-BAY-DESIGN, HRS-TECHNICAL |
 | `DEL-BAY-PACK` | Assemble one coherent construction-bay review issue | ADE-DETAILS, ADE-SCHEDULES, ADE-EVIDENCE |
 | `EPR-BAY-REVIEW` | Obtain and disposition actual designer and contractor bay feedback | DEL-BAY-PACK |
 | `DPL-SITE-ASSESSMENT` | Assess actual site applicability and explicit adaptation choices | DPL-COMMISSION |

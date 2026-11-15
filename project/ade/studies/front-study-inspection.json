@@ -1,0 +1,75 @@
+{
+  "schema": "ade-opening-inspection/1",
+  "purpose": "nominal-model-inspection",
+  "source": {
+    "kind": "georgian-layout-revision",
+    "id": "RH-LAYOUT-REVISION-02",
+    "state": "accepted-basis",
+    "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e"
+  },
+  "units": "mm",
+  "datum": "south-west-at-ground-floor",
+  "cutout": {
+    "kind": "opening-cutout",
+    "id": "BAY-FRONT-STUDY-01/opening/GROUND/south-window-0::OPENING-CUT::GROUND/south-window-0",
+    "openingId": "GROUND/south-window-0",
+    "hostWallId": "GROUND/outer-south",
+    "rect": {
+      "x0": 1300,
+      "y0": 0,
+      "x1": 2300,
+      "y1": 417.5
+    },
+    "sourceIds": [
+      "GROUND/outer-south",
+      "GROUND/south-window-0",
+      "RH-LAYOUT-REVISION-02",
+      "assembly/RH-ADE-ENVELOPE"
+    ]
+  },
+  "row": {
+    "id": "BAY-FRONT-STUDY-01/opening/GROUND/south-window-0",
+    "level": "GROUND",
+    "openingId": "GROUND/south-window-0",
+    "hostWallId": "GROUND/outer-south",
+    "kind": "window",
+    "cutoutId": "BAY-FRONT-STUDY-01/opening/GROUND/south-window-0::OPENING-CUT::GROUND/south-window-0",
+    "levelElevationMm": 0,
+    "widthMm": 1000,
+    "axisIntervalMm": [
+      1300,
+      2300
+    ],
+    "hostAssembly": {
+      "id": "assembly/RH-ADE-ENVELOPE",
+      "depthMm": 417.5,
+      "state": "nominal-reservation"
+    },
+    "unresolved": {
+      "verticalExtent": {
+        "state": "unresolved",
+        "reason": "The snapshot supplies a plan aperture. The section source controls sill and head."
+      },
+      "installedComponents": {
+        "state": "unresolved",
+        "reason": "IAS/OAS control selected interfaces, buildup, products and renewal. These depths are reservations."
+      },
+      "quantities": {
+        "state": "unresolved",
+        "reason": "Installed assembly and component counts require controlled specification inputs."
+      }
+    }
+  },
+  "technicalBayApplicability": {
+    "state": "withheld",
+    "reason": "The composed SAP-C1 investigation uses a different aperture position, wall and structural backing. Technical inspection requires its own admitted source.",
+    "reference": "project/bcr/bay-interface-study.md"
+  },
+  "references": {
+    "bay": "project/bcr/bay-brief-result.md",
+    "apertureBasis": "compiler/reference-house/georgian/layout-revision.ts",
+    "verticalExtent": "compiler/reference-house/georgian/layout-family.ts",
+    "installedComponents": "project/oas/study-subframe-comparison.md",
+    "coordinatedFitAndQuantities": "project/bcr/bay-interface-study.md"
+  }
+}

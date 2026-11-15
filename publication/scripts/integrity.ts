@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { applyAdapter } from '../adapters.js'
+import { applyAdapter, createAdapterContext } from '../adapters.js'
 import { applyPublicationFigures } from '../figures.js'
 import { primerPublicationEntries, publicationEntries } from '../publication.js'
 
@@ -29,10 +29,7 @@ const failures: string[] = []
 
 for (const entry of [...publicationEntries, ...primerPublicationEntries]) {
   const raw = readFileSync(sourcePath(entry.source), 'utf8')
-  const adapted = applyAdapter(entry.adapter, raw, {
-    repoRoot,
-    workSourceRoot: repoRoot
-  })
+  const adapted = applyAdapter(entry.adapter, raw, createAdapterContext(entry.adapter, { repoRoot, workSourceRoot: repoRoot }))
   const composed = entry.kind === 'primer' ? adapted : applyPublicationFigures(entry.id, adapted)
   const prose = stripMarkdownDestinations(composed)
 
