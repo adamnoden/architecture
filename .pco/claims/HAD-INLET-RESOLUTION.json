@@ -9,9 +9,9 @@
     "label": "zerg15-had"
   },
   "claimedAt": "2026-11-15T13:11:17.741Z",
-  "heartbeatAt": "2026-11-15T13:11:17.741Z",
-  "expiresAt": "2026-11-15T13:56:17.741Z",
-  "branch": "work/zerg15-inlet-integrated",
+  "heartbeatAt": "2026-11-15T13:21:40.566Z",
+  "expiresAt": "2026-11-15T14:06:40.566Z",
+  "branch": "work/zerg15-north-inlet",
   "predecessor": {
     "leaseId": "67a85cbe-fcae-4b02-9c95-2e82d5926eca",
     "generation": 28,
@@ -31,5 +31,9 @@
       "evidence": "PR #1536 exact final 3f5e7007efde9858904c8d14f235ac9c90a22378 tree 29a95e68 with fixed station and simultaneous lower-outlet blocked daylight case; 102 HAD checks",
       "next": "Observe hosted Validate PR for final head, run fresh preflight, merge with the exact head and release"
     }
+  },
+  "checkpoint": {
+    "evidence": "Locally committed joined framed bay and former full-depth adverse sleeve at dd128c47. Coordinated shared publication pending.",
+    "next": "Verify shared PR exact head and attach the PR; preserve installed valve and wall holds."
   }
 }
