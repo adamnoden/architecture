@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 24,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "e6131163-ee09-4935-b852-80b9659cb0f0",
   "holder": {
     "kind": "chatgpt",
     "label": "Zerg-Rush-STR"
   },
   "claimedAt": "2026-11-15T09:20:25.800Z",
-  "heartbeatAt": "2026-11-15T09:32:00.476Z",
-  "expiresAt": "2026-11-15T10:17:00.476Z",
+  "heartbeatAt": "2026-11-15T09:47:10.747Z",
+  "expiresAt": "2026-11-15T09:47:10.747Z",
   "branch": "work/zerg14-simplify-portal-inlet",
   "predecessor": {
     "leaseId": "b4fa7f3c-a4c6-40a7-8b14-200c2f93fe83",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "PR #1535 exact 47413c55; local STR 33cacde5 support rewind, predecessor heel and hip receipts reproduce; plan inspected",
     "next": "Verify exact hosted checks, pass dual publication preflight, integrate by expected head, release both leases"
-  }
+  },
+  "releasedAt": "2026-11-15T09:47:10.747Z",
+  "releaseReason": "handoff"
 }
