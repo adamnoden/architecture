@@ -1,6 +1,6 @@
 # North wall head and offset hold-down
 
-**Carry the local first-floor transfer into detailed design.** The same straight sleeve through the existing north pier cannot clear the arch bore. Turning the tie at the floor preserves the upper wall face and leaves the existing garden arch and its horizontal tie intact. The short transfer needs a local reinforced projection and a positive couple. The raised roof stays at the +100 mm comparison datum. [Fixed wall head and raised roof](floor-portal-fixed-wall-head.md)
+**Prefer the [paired garden tie and straight hold-down redesign](floor-portal-twin-garden-tie.md).** This page records the local first-floor transfer, the fallback if that redesign cannot earn its arch hardware and widened lower pier. The straight sleeve through the unchanged north pier cannot clear the arch bore. Turning the tie at the floor preserves the upper wall face and the centred arch tie, at the cost of a positive eccentric collector. The raised roof stays at the +100 mm comparison datum. [Fixed wall head and raised roof](floor-portal-fixed-wall-head.md)
 
 ![North section at the west loggia return, comparing the direct, short offset and inclined tie routes](studies/floor-portal-north-transfer.svg)
 

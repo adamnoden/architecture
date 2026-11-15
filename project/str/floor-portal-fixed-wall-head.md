@@ -34,3 +34,5 @@ Generate the receipt and section from the same source set.
 python3 -B project/str/studies/floor-portal-fixed-wall-head.py project/str/studies | diff - project/str/studies/floor-portal-fixed-wall-head.json
 python3 -B project/str/studies/floor-portal-fixed-wall-head.py project/str/studies --svg | diff - project/str/studies/floor-portal-fixed-wall-head.svg
 ```
+
+The [preferred garden tie and straight hold-down development](floor-portal-twin-garden-tie.md) retains the independent +100 mm roof datum and existing compression seat. It moves only the positive retaining line 37.5 mm in X at each return and carries the joined reinforcement, arch and cap implications.

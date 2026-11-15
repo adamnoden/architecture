@@ -53,9 +53,12 @@ export function utilityHeadSweeps(head,moves,fixed) {
 }
 
 export function utilityTerminalStudy(model,host,{
-  headBodyBottom=650,toolZ=615,drainShoulder=[10950,1725,500],receiver=[11045,925,0,400,400,75],
+  headBodyBottom=650,headBodyX=10935,toolZ=615,drainShoulder=[10950,1725,500],receiver=[11045,925,0,400,400,75],
+  hotVertices=terminalVertices.hotSink,hotDrainTee=utilityDrains[1].tee,hotIsolation=utilityH0,
+  hotShoulder=[10800,1725,1450],rearLowerLinkZ=300,
 }={}){
-  const r=25,routes=Object.fromEntries(Object.entries(terminalVertices).map(([id,v])=>[id,finiteBends(v,25)]));
+  const vertices={...terminalVertices,hotSink:hotVertices};
+  const r=25,routes=Object.fromEntries(Object.entries(vertices).map(([id,v])=>[id,finiteBends(v,25)]));
   const obstacles={};
   for(const[id,b]of Object.entries(host.geometry.frame))if(id!=='temporary carry bar')obstacles[id]=b;
   for(const[id,b]of Object.entries(host.geometry.carrier))if(!['water fitting and cap domain','compact carrier post'].includes(id)){
@@ -63,8 +66,8 @@ export function utilityTerminalStudy(model,host,{
     obstacles[id+' return']=[10875,1165,b[2],20,70,b[5]];
   }
   Object.assign(obstacles,{rackPost:[10875,1165,0,20,20,850],rackFoot:[10835,1100,0,70,100,10],
-    rearLink300:[10875,700,300,20,485,20],rearLink800:[10875,700,800,20,485,20],
-    washer:[10076,800,0,598,600,848],inheritedHeadBody:[10935,740,headBodyBottom,600,600,1250-headBodyBottom],
+    rearLink300:[10875,700,rearLowerLinkZ,20,485,20],rearLink800:[10875,700,800,20,485,20],
+    washer:[10076,800,0,598,600,848],inheritedHeadBody:[headBodyX,740,headBodyBottom,600,600,1250-headBodyBottom],
     eastWall:[model.shell-model.envelope,0,0,300,2500,3500]});
   for(const[i,[x,y,w,d]]of host.floorAndWall.seatPlan.entries())obstacles['wholeFootWindow'+i]=[x,y,0,w,d,900];
   const pipeClearances=Object.fromEntries(Object.entries(routes).map(([id,route])=>[id,
@@ -91,9 +94,10 @@ export function utilityTerminalStudy(model,host,{
   });
   const head=[10930,735,925,610,610,700],moves=[[0,0,0],[0,760,0],[-730,760,0],[-730,760,-575]];
   const headSweeps=utilityHeadSweeps(head,moves,utilityHeadObstacles(model));
-  const h0Shoulder=[10800,1725,1450],h0Grip=[10860,1375,1500];
+  const h0Shoulder=hotShoulder,h0Grip=[hotIsolation.axis[0],hotIsolation.axis[1]+125,1500];
   const receiverChecks=Object.entries(obstacles).map(([id,b])=>({id,gapMM:boxesGap(receiver,b)}));
-  const drains=utilityDrains.map(d=>{
+  const drains=utilityDrains.map(original=>{
+    const d=original.id==='hot'?{...original,tee:hotDrainTee}:original;
     const [x,y,z]=d.valve,box=[x-25,y-25,z-40,50,70,80],hand=[x,y+85,z];
     const teeBox=[d.tee[0]-25,d.tee[1]-25,d.tee[2]-25,50,50,50];
     const clearance=Object.entries({...obstacles,...utilityReaction}).map(([id,b])=>({id,
@@ -112,7 +116,7 @@ export function utilityTerminalStudy(model,host,{
     .filter(([name])=>!(id==='rackLink'&&['rackPost','middle pipe arm return'].includes(name)))
     .map(([obstacle,box])=>({id,obstacle,gapMM:boxesGap(b,box)}))).sort((a,b)=>a.gapMM-b.gapMM);
   const reactionI=(30*40**3-24*34**3)/12,reactionW=reactionI/20;
-  return {status:'REFERENCE_ASSEMBLY',completeTerminalR:r,bendRadius:25,vertices:terminalVertices,
+  return {status:'REFERENCE_ASSEMBLY',completeTerminalR:r,bendRadius:25,vertices,
     pipeClearances,hotColdWasherGapMM:pair('hotSink','coldWasher'),hotColdSinkGapMM:pair('hotSink','coldSink'),
     wasteGapsMM:Object.fromEntries(Object.entries(routes).map(([id,route])=>[id,pathSeparation(route.path,waste)-50-route.hausdorffError])),
     breaks:utilityBreaks,unionMadeZ:[565,625],nutBackoffMM:60,headLiftToFullClearance:375,
@@ -127,8 +131,8 @@ export function utilityTerminalStudy(model,host,{
     tool:{body:[10925,1725,300],shoulder,toolLength,headWidth:71.5,thickness:12.8,toolZ,handR:50,armR:40,
       angularStepDeg:step,angularPenaltyMM:angularPenalty,checks:toolChecks,
       scope:'One rotating spanner and hand; positive independently fixed reaction keys replace an unproved simultaneous second handheld spanner. Actual hex fit, torque and captive-nut stroke remain matched-component qualifications.'},
-    hotIsolation:{...utilityH0,shoulder:h0Shoulder,handCentre:h0Grip,handR:40,reachMM:Math.hypot(...h0Grip.map((v,i)=>v-h0Shoulder[i])),
-      handToOwnPipeMM:h0Grip[1]-1250-37-40,
+    hotIsolation:{...hotIsolation,shoulder:h0Shoulder,handCentre:h0Grip,handR:40,reachMM:Math.hypot(...h0Grip.map((v,i)=>v-h0Shoulder[i])),
+      handToOwnPipeMM:h0Grip[1]-hotIsolation.axis[1]-37-40,
       fixedObjectClearances:h0Clearance,
       scope:'H0 stops the hot lower branch independently of the cold U0 lobby cut. Replacing H0 itself requires upstream domestic-store isolation and controlled inventory discharge, not merely closing H0.'},
     head:{centre:[11235,1040],plan:[610,610],retainedBelowRim:350,aboveRim:350,completeHeight:700,
