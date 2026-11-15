@@ -2,6 +2,8 @@
 
 **15 November 2026 · fixed indoor cabinet retained for joined detail with a direct daylight spill.** The [fixed station](inlet-fixed-station.md) supplies the pressure route and three supported valve axes. This detail changes the lower wet boundary and the planned valve and drain access. It preserves the earlier rejection of both exterior I0 stations over D2. [East-west section](studies/inlet-cabinet-fault.svg) · [Geometry and fault receipt](studies/inlet-cabinet-fault.json)
 
+The [framed bay and fitted-wheel takeoff](inlet-framed-bay.md) supersedes the separate low-hole setout, west stance and outdoor terminal plan below. The retained hydraulic sensitivities still require equivalent throat conditions.
+
 ## Put the dry boundary above the last passive outlet
 
 Use a permanent pitched metal pan, floor highest point **Z105**, with continuous welded returns to the closed splash and control boundary. Reserve **X11210–11545/Y2710–3525** behind the independently supported front. The dry sill rises to **Z395**. First wetting from the inside spool face, I0, the common tee and branch joints remains within the closed wetted enclosure by design intent. Pressure spray can reach its full height. Use separate captured 6 mm front splash leaves with a stiff supporting grid and a tested stop/control penetration at each actual axis. Keep every return continuous over the opening, along the rear supply face and around supports. A drip pan or the removable controlled drain drawer cannot perform this duty.

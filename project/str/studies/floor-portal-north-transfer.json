@@ -1,0 +1,285 @@
+{
+  "scope": "Located northern support controls. The three load components are separate comparisons.",
+  "offsetTransferComparison": {
+    "coordinateWitness": {
+      "roofBandCentreYmm": 11667.5,
+      "roofBandBaseZmm": 6540,
+      "floorLinkDatumZmm": 3370,
+      "groundReturnYmm": 11530,
+      "ordinaryFinishedWallYmm": 11570.5
+    },
+    "historicStrippedNorthPadReferenceUpliftKN": 33.207486,
+    "shortTransfer": {
+      "floorEccentricMomentKNmAtReference": 4.566029325000001,
+      "forcePairKNAt130MmCoupleArm": 35.1233025,
+      "minimumYBodyMmForTwo32ODTerminationsWith25CoverAnd5Setting": 229.5,
+      "minimumBodyYmm": [
+        11484,
+        11713.5
+      ],
+      "roomwardFinishingExtentMmIncluding15Lining": 101.5,
+      "floorCoupleBarTrial": {
+        "minimumSlipFreeCoupleArmMm": 130.0,
+        "trialLongitudinalBarsPerFace": 2,
+        "trialBarDiameterMm": 12.0,
+        "trialLinkDiameterMm": 8.0,
+        "barCoverScreenMm": 25.0,
+        "coverSettingMm": 5.0,
+        "retainedAggregateClearanceComparisonMm": 21.0,
+        "centreLevelsZmm": [
+          3196.0,
+          3326.0
+        ],
+        "minimumBodyBottomTopZmm": [
+          3152.0,
+          3370
+        ],
+        "minimumDepthMm": 218.0,
+        "centreFromFaceWithLinkCoverAndSettingMm": 44.0,
+        "headroomLossIfTopRemainsAtSlabTopMm": 18.0,
+        "barXOffsetsFromBothNorthAxesMm": [
+          -53.0,
+          53.0
+        ],
+        "minimumLocalWidthXmmBeforeSleeveHead": 194.0,
+        "extraWidthEachSideOver140HostCoreMm": 27.0,
+        "currentSlabDepthControl": {
+          "depthMm": 200,
+          "maximumCoupleArmMm": 112.0,
+          "forcePairKN": 40.76811897321429,
+          "requiredStraightBondLengthAtReferenceMm": 257.4780815533944
+        },
+        "poorBondStressTrialMPa": 2.1,
+        "requiredStraightBondLengthBeyondOuterLoadLineAtReferenceMm": 221.8272702613859,
+        "availableStraightLengthFromOuterLoadLineToCoverPlaneMm": 16.0,
+        "straightBarsTerminateBeforeDevelopingOuterNode": true,
+        "scope": "Equilibrium screen. Clearance omits terminal heads, transverse bars and links at the bend. Available length is generously measured from the force line."
+      }
+    },
+    "inclinedTie": {
+      "verticalRunMm": 3170,
+      "lateralShiftMm": 137.5,
+      "normalForceAtEachEndKNPerKNUplift": 0.04337539432176656,
+      "opposingNormalForceAtEachEndAtReferenceKN": 1.4403877996845427,
+      "axialTieKNAtReference": 33.238710014885896,
+      "globalHorizontalCoupleKNmAtReference": 4.566029325000001,
+      "roomwardEnvelopeBeyondFinishMm": 66.5,
+      "localRemovableCoverDepthTrialMm": 70.0,
+      "roomwardFinishedEnvelopeMmIncluding15Lining": 81.5,
+      "deficitWithin70CoverMm": 11.5,
+      "maximumTieInclinationDegrees": 2.483670197130569,
+      "centreEntersStructuralCoverExclusionAboveFloorMm": 2616.690909090909
+    },
+    "roofHardwareGrossZoneUnderRaisedHipMm": 124.75801,
+    "roofHardwareNetAfterSettingsMm": 114.75801,
+    "roofHardware70mmEnvelopeMm": 70.0,
+    "scope": "Offset retention and room envelope comparison. The vertical-only girder reactions omit torsion redistribution. The historic reference action is a sizing sensitivity; do not combine it with the roof downward or facade result.",
+    "candidateMoistureCrossing": {
+      "gridTopZmm": -180,
+      "olderOpenLoggiaMineralBandZmm": [
+        -180,
+        -30
+      ],
+      "candidateSleevePlanOriginsXYmm": [
+        [
+          4377.5,
+          11530
+        ],
+        [
+          7622.5,
+          11530
+        ]
+      ],
+      "scope": "Historical geometric crossing only. Resolve the actual warm/cold layout and complete capillary, air and thermal continuity with positive structural connectors."
+    }
+  },
+  "sourcesSHA256": {
+    "project/had/studies/open-north-loggia.json": "542781c6bb1d277b20492e8433cea498e98eaea5db2e737a5ec7e9655f9d18fd",
+    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+    "project/str/studies/reconciled-house-interface.json": "ae17f6de977de58ae54f25edfc67c48c36f348cffc288e839f25a8b4143c16cf",
+    "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+    "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+    "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+    "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+    "project/str/studies/floor-portal-fixed-wall-head.json": "376d553d690b2b8b972f755141de338c8554ba288d83f8fe0dd0d4c0612a827f"
+  },
+  "northSupportAxesXmm": [
+    4377.5,
+    7622.5
+  ],
+  "downwardRoofSeatAxesXmm": [
+    4700,
+    7300
+  ],
+  "eachSourceUniformDownwardSeatKN": 30.291315487907045,
+  "isolatedBandUniformDoubleSeatPlusWeight": {
+    "simpleSpanMm": 3245.0,
+    "roofSeatOffsetIntoBayMm": 322.5,
+    "momentKNm": 11.442828343912522,
+    "reactionEachPierKN": 32.35464873790705,
+    "originalLowerPierCentreOffsetAlongWallMm": 36.25,
+    "correspondingLocalMomentEachPierKNm": 1.1728560167491304
+  },
+  "independentOutOfPlaneFacadeHeadShare": {
+    "eachSourceFacadeHeadShareKN": 8.939024999999999,
+    "isolatedCantileverLeverageToCollectorTopMm": 2680,
+    "momentIfNoPerpendicularReturnKNm": 23.956586999999995
+  },
+  "straightSleeveGeometricControl": {
+    "upperCoreYmm": [
+      11597.5,
+      11737.5
+    ],
+    "lowerGardenPierYmm": [
+      11560,
+      11775
+    ],
+    "lowerBoreAxisYAndZmm": [
+      11667.5,
+      2200
+    ],
+    "lowerBoreODmm": 40,
+    "trialSleeveODmm": 32,
+    "upperSleeveCoverScreenMm": 25,
+    "relativeSettingsMm": [
+      5,
+      10
+    ],
+    "noSetting": {
+      "upperCentreIntervalYmm": [
+        11638.5,
+        11696.5
+      ],
+      "lowerBoreClearIntervalsYmm": [
+        [
+          11601.0,
+          11631.5
+        ],
+        [
+          11703.5,
+          11734.0
+        ]
+      ],
+      "maxOffsetAtUpperCoreMm": 29.0,
+      "minOffsetToClearBoreMm": 36.0,
+      "straightRouteDeficitMm": 7.0
+    },
+    "includingSetting": {
+      "upperCentreIntervalYmm": [
+        11643.5,
+        11691.5
+      ],
+      "lowerBoreClearIntervalsYmm": [
+        [
+          11606.0,
+          11621.5
+        ],
+        [
+          11713.5,
+          11729.0
+        ]
+      ],
+      "maxOffsetAtUpperCoreMm": 24.0,
+      "minOffsetToClearBoreMm": 46.0,
+      "straightRouteDeficitMm": 22.0
+    },
+    "minimumOneSideCoreWideningMm": 22.0,
+    "insideFinishThicknessRemainingIfWidenedByMinimumMm": 5.0,
+    "atMinimumWideningAdverseBoreClearPositionXYInLowerPierMm": [
+      70.0,
+      61.5
+    ],
+    "lowerH12SurfaceClearAfterSettingsMm": 6.3046994505896095,
+    "lowerStraightH8LinkClearAfterSettingsMm": 2.5
+  },
+  "candidateFloorCollectorToPerpendicularReturn": {
+    "planOffsetFromUpperBoreLineMm": 137.5,
+    "eccentricMomentOnTransferKNmPerKN": 0.1375,
+    "returns": [
+      {
+        "returnSleeveCandidateXYmm": [
+          4377.5,
+          11530
+        ],
+        "receiverGirder": "loggia-W",
+        "nearestEndHead": "P25",
+        "girderAxisAndHeadLongitudeMm": [
+          4500,
+          11667.5
+        ],
+        "leverComponentsToHeadMm": [
+          122.5,
+          137.5
+        ],
+        "resultantLeverToHeadMm": 184.15346860702897,
+        "directProuteThroughFootUnverified": true,
+        "nearestRawUpperWindowXMarginMm": 327.5,
+        "simpleLongitudinalLeverOnly": {
+          "spanMm": 1792.5,
+          "otherHead": "P29",
+          "reactionFractionOtherHead": 0.0767085076708508,
+          "reactionFractionNearestHead": 0.9232914923291492,
+          "localGirderMomentKNmPerKN": 0.126952580195258,
+          "transverseGirderTorsionKNmPerKN": 0.1225
+        },
+        "footTransfer": {
+          "nominalBareSleeveToShaftEdgeMarginMm": -0.15346860702896947,
+          "bareSleeveToCapEdgesMarginXYmm": [
+            161.5,
+            146.5
+          ],
+          "grossCapPlanXYmm": [
+            600,
+            600
+          ],
+          "shaftDiameterMm": 400,
+          "momentAboutXKNmAtReferenceUplift": 4.566029325000001,
+          "momentAboutYKNmAtReferenceUplift": 4.067917035000001,
+          "straightShaftCageEntryFits": false
+        }
+      },
+      {
+        "returnSleeveCandidateXYmm": [
+          7622.5,
+          11530
+        ],
+        "receiverGirder": "loggia-E",
+        "nearestEndHead": "P26",
+        "girderAxisAndHeadLongitudeMm": [
+          7500,
+          11667.5
+        ],
+        "leverComponentsToHeadMm": [
+          122.5,
+          137.5
+        ],
+        "resultantLeverToHeadMm": 184.15346860702897,
+        "directProuteThroughFootUnverified": true,
+        "nearestRawUpperWindowXMarginMm": 327.5,
+        "simpleLongitudinalLeverOnly": {
+          "spanMm": 1792.5,
+          "otherHead": "P31",
+          "reactionFractionOtherHead": 0.0767085076708508,
+          "reactionFractionNearestHead": 0.9232914923291492,
+          "localGirderMomentKNmPerKN": 0.126952580195258,
+          "transverseGirderTorsionKNmPerKN": 0.1225
+        },
+        "footTransfer": {
+          "nominalBareSleeveToShaftEdgeMarginMm": -0.15346860702896947,
+          "bareSleeveToCapEdgesMarginXYmm": [
+            161.5,
+            146.5
+          ],
+          "grossCapPlanXYmm": [
+            600,
+            600
+          ],
+          "shaftDiameterMm": 400,
+          "momentAboutXKNmAtReferenceUplift": 4.566029325000001,
+          "momentAboutYKNmAtReferenceUplift": 4.067917035000001,
+          "straightShaftCageEntryFits": false
+        }
+      }
+    ]
+  }
+}
