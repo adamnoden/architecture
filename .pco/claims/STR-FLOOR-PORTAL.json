@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 27,
-  "state": "released",
-  "leaseId": "484c33ce-4b2d-4dff-801d-cc901835a9bf",
+  "generation": 28,
+  "state": "claimed",
+  "leaseId": "b75d2504-51cc-4eda-9455-199fdfc6fbed",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg15-str-followon"
+    "label": "zerg15-str-arch"
   },
-  "claimedAt": "2026-11-15T13:39:34.792Z",
-  "heartbeatAt": "2026-11-15T13:58:21.345Z",
-  "expiresAt": "2026-11-15T13:58:21.345Z",
-  "branch": "work/zerg15-joints-utility",
+  "claimedAt": "2026-11-15T13:58:50.503Z",
+  "heartbeatAt": "2026-11-15T13:58:50.503Z",
+  "expiresAt": "2026-11-15T14:43:50.503Z",
+  "branch": "work/zerg15-arch-head-clearance",
   "predecessor": {
-    "leaseId": "83ad3cf9-3ec7-42a2-bd44-de4134072fa4",
-    "generation": 26,
-    "branch": "work/zerg15-north-inlet",
-    "pr": 1537,
+    "leaseId": "484c33ce-4b2d-4dff-801d-cc901835a9bf",
+    "generation": 27,
+    "branch": "work/zerg15-joints-utility",
+    "pr": 1538,
     "checkpoint": {
-      "evidence": "PR 1537 exact b735be47311b64c68ba77d50b02bb138ef29139e (north hold-down section and floor transfer)",
-      "next": "Wait for exact-head CI, run fresh preflight, merge, and release"
+      "evidence": "PR #1538 exact 8d39f225b2d02698a33051d905a58cb1604c0826; captive north collector and signed head triangle",
+      "next": "Inspect exact-head CI and merge while owned",
+      "blocker": "Roof/floor/foot detailed joining and the current 52-head coupled replay remain open"
     }
   },
   "recoverySource": {
-    "leaseId": "83ad3cf9-3ec7-42a2-bd44-de4134072fa4",
-    "generation": 26,
-    "branch": "work/zerg15-north-inlet",
-    "pr": 1537,
+    "leaseId": "484c33ce-4b2d-4dff-801d-cc901835a9bf",
+    "generation": 27,
+    "branch": "work/zerg15-joints-utility",
+    "pr": 1538,
     "checkpoint": {
-      "evidence": "PR 1537 exact b735be47311b64c68ba77d50b02bb138ef29139e (north hold-down section and floor transfer)",
-      "next": "Wait for exact-head CI, run fresh preflight, merge, and release"
+      "evidence": "PR #1538 exact 8d39f225b2d02698a33051d905a58cb1604c0826; captive north collector and signed head triangle",
+      "next": "Inspect exact-head CI and merge while owned",
+      "blocker": "Roof/floor/foot detailed joining and the current 52-head coupled replay remain open"
     }
-  },
-  "pr": 1538,
-  "checkpoint": {
-    "evidence": "PR #1538 exact 8d39f225b2d02698a33051d905a58cb1604c0826; captive north collector and signed head triangle",
-    "next": "Inspect exact-head CI and merge while owned",
-    "blocker": "Roof/floor/foot detailed joining and the current 52-head coupled replay remain open"
-  },
-  "releasedAt": "2026-11-15T13:58:21.345Z",
-  "releaseReason": "handoff"
+  }
 }
