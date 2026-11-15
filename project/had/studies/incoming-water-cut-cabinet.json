@@ -1,0 +1,354 @@
+{
+  "status": "REFERENCE_COMPARISON_NOT_ADOPTION",
+  "selection": "HAD-SERVICES-02",
+  "retained": {
+    "B0": "Owner-side remote cut precedes the external I0, including its inlet union",
+    "I0": "Separate immediately outside-wall house cut, subject to dry access and supplier",
+    "providerCut": "Independent provider-authorised upstream cut for B0 failure",
+    "D0": "Relocate isolated upstream drain and both-face proving outside",
+    "D1": "Keep existing tee and prove the new lower pocket drains through a separate inlet-side controlled cut",
+    "U0P0": "Both cartridges remain indoors with four pressure unions and branch isolation",
+    "D2": "Dedicated vessel safety discharge, excluded from cabinet drainage"
+  },
+  "cabinet": {
+    "plan": [
+      12125,
+      12650,
+      2450,
+      3350
+    ],
+    "accessField": [
+      12650,
+      13650,
+      2450,
+      3350
+    ],
+    "trialWorkingLevel": -490,
+    "trialGrade": -1800,
+    "workerPlatformRiseAtTrialGradeMM": 1310,
+    "stance": [
+      12975,
+      2800
+    ],
+    "actualDryApproachProved": false,
+    "reachMM": 555.0225220655465,
+    "hand": [
+      12420,
+      2800,
+      965
+    ],
+    "trialOpenFace": [
+      2490,
+      3310
+    ],
+    "openings": [
+      {
+        "y": 2577.5,
+        "toolLateralGapMM": 62.73730211605478,
+        "farthestHandReachMM": 590.3606391626697
+      },
+      {
+        "y": 3022.5,
+        "toolLateralGapMM": 212.67863377011514,
+        "farthestHandReachMM": 590.3606391626682
+      }
+    ],
+    "firstRest": {
+      "x": 13000,
+      "y": 2800,
+      "eastwardThrowMM": 650,
+      "liftMM": 85,
+      "packageTopAfterLiftMM": 972,
+      "assumedClearHeadMM": 1050,
+      "maximumDryHandledKg": 8,
+      "operatorCentreX": 13325,
+      "remainingPlatformRunMM": 25,
+      "operatorAndCaptureProved": false
+    },
+    "cabinetToDockMM": 50,
+    "approachToDockMM": 50,
+    "stanceToFaceAfterBodyMM": 25,
+    "pressureJetCaptureProved": false,
+    "supportBaseToDripZ": 60,
+    "padCorners": [
+      [
+        12225,
+        2525
+      ],
+      [
+        12225,
+        3275
+      ],
+      [
+        12575,
+        2525
+      ],
+      [
+        12575,
+        3275
+      ]
+    ],
+    "padRadiusMM": 50,
+    "smallestPadToP17MM": 57.5,
+    "smallestPadToDripAxisYMM": 250,
+    "sharedUnderfloorDischargeCredited": false
+  },
+  "supply": {
+    "upstreamVertices": [
+      [
+        12250,
+        2800,
+        -150
+      ],
+      [
+        12250,
+        2800,
+        400
+      ],
+      [
+        12350,
+        2577.5,
+        400
+      ],
+      [
+        12350,
+        2577.5,
+        600
+      ]
+    ],
+    "exteriorVertices": [
+      [
+        12350,
+        3022.5,
+        600
+      ],
+      [
+        12200,
+        3022.5,
+        600
+      ],
+      [
+        12200,
+        2800,
+        600
+      ],
+      [
+        12090,
+        2800,
+        600
+      ]
+    ],
+    "interiorVertices": [
+      [
+        12090,
+        2800,
+        600
+      ],
+      [
+        11440,
+        2800,
+        600
+      ],
+      [
+        11440,
+        3520,
+        700
+      ],
+      [
+        11315,
+        3520,
+        700
+      ],
+      [
+        11315,
+        3175,
+        700
+      ],
+      [
+        11315,
+        3175,
+        900
+      ]
+    ],
+    "cartridgeAxisX": 12350,
+    "trialEnds": [
+      2577.5,
+      3022.5
+    ],
+    "bends": [
+      {
+        "vertex": [
+          12250,
+          2800,
+          400
+        ],
+        "angleDeg": 90,
+        "tangent": 74.99999999999999
+      },
+      {
+        "vertex": [
+          12350,
+          2577.5,
+          400
+        ],
+        "angleDeg": 90,
+        "tangent": 74.99999999999999
+      },
+      {
+        "vertex": [
+          12200,
+          3022.5,
+          600
+        ],
+        "angleDeg": 90,
+        "tangent": 74.99999999999999
+      },
+      {
+        "vertex": [
+          12200,
+          2800,
+          600
+        ],
+        "angleDeg": 90,
+        "tangent": 74.99999999999999
+      },
+      {
+        "vertex": [
+          11440,
+          2800,
+          600
+        ],
+        "angleDeg": 90,
+        "tangent": 59.99999999999999
+      },
+      {
+        "vertex": [
+          11440,
+          3520,
+          700
+        ],
+        "angleDeg": 90,
+        "tangent": 59.99999999999999
+      },
+      {
+        "vertex": [
+          11315,
+          3520,
+          700
+        ],
+        "angleDeg": 90,
+        "tangent": 59.99999999999999
+      },
+      {
+        "vertex": [
+          11315,
+          3175,
+          700
+        ],
+        "angleDeg": 90,
+        "tangent": 59.99999999999999
+      }
+    ],
+    "ordinaryJacketOD": 74,
+    "sleeveRadialClearanceAfterSettingMM": 11,
+    "indoorBendRadiusMM": 60,
+    "nominal90BendCrosswiseEnvelopeMM": 134,
+    "alignedPreformedBendAcrossBoreShortfallMM": 34,
+    "straightInsideSleeveBeforeBendMM": 70.5,
+    "interiorUnionsBefore": 6,
+    "relocatedI0Unions": 2,
+    "retainedU0P0Unions": 4,
+    "firstRepairableIndoorConnectionIfFieldBendUnavailable": 1,
+    "upstreamExposedRouteLengthMM": 929.5554877236573,
+    "interiorRouteLengthMM": 1943.8976073452052,
+    "exteriorRouteLengthMM": 418.1164584560963,
+    "routeWalls": {
+      "eastBeyondSleeveTurn": 34.54485977008733,
+      "south": 115.99771538385028,
+      "north": 45.99771538385028
+    },
+    "wallClearanceAfterTwoSettingsMM": {
+      "eastBeyondSleeveTurn": 24.544859770087328,
+      "south": 105.99771538385028,
+      "north": 35.99771538385028
+    },
+    "branchClearance": [
+      {
+        "name": "utilityIn",
+        "gapMM": -74.00514038633688,
+        "sharedTee": true
+      },
+      {
+        "name": "plantIn",
+        "gapMM": -74.00228461614972,
+        "sharedTee": true
+      },
+      {
+        "name": "utilityOut",
+        "gapMM": 225.99485961366312,
+        "sharedTee": false
+      },
+      {
+        "name": "plantOut",
+        "gapMM": 137.90698366321382,
+        "sharedTee": false
+      }
+    ],
+    "heatClearance": [
+      {
+        "name": "utility-E",
+        "gapMM": 279.942430285773
+      },
+      {
+        "name": "plant-N",
+        "gapMM": 283.8636097589229
+      }
+    ],
+    "clearanceToColdRiserMM": 219.16146631488635,
+    "d1TeeOnStraightAfterBends": true,
+    "routeInstallationAndWithdrawalProved": false
+  },
+  "response": {
+    "clearTray": {
+      "widthMM": 820,
+      "depthMM": 440,
+      "usefulDepthMM": 80
+    },
+    "trayGrossLitres": 28.864,
+    "trialNetLitres": 24,
+    "reserveLitres": 6,
+    "throatWidthM": 0.16,
+    "headM": 0.025,
+    "byFlow": [
+      {
+        "flowLmin": 6,
+        "cutTimeBeforeReserveS": 180,
+        "blockedSecondsToRim": 240,
+        "clearControllingLmin": 69.47541953813595,
+        "halfClearControllingLmin": 34.737709769067976,
+        "oneIndependentHalfClearThroatMeetsTrial": true
+      },
+      {
+        "flowLmin": 15,
+        "cutTimeBeforeReserveS": 72,
+        "blockedSecondsToRim": 96,
+        "clearControllingLmin": 69.47541953813595,
+        "halfClearControllingLmin": 34.737709769067976,
+        "oneIndependentHalfClearThroatMeetsTrial": true
+      },
+      {
+        "flowLmin": 30,
+        "cutTimeBeforeReserveS": 36,
+        "blockedSecondsToRim": 48,
+        "clearControllingLmin": 69.47541953813595,
+        "halfClearControllingLmin": 34.737709769067976,
+        "oneIndependentHalfClearThroatMeetsTrial": true
+      }
+    ],
+    "sourceFlowMaximumEstablished": false,
+    "storageAfterClosureKnown": false,
+    "automatedCutCredited": false,
+    "outletIndependenceProved": false,
+    "controlledDripAndBurstHaveDistinctDuties": true
+  }
+}
