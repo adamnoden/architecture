@@ -9,9 +9,9 @@
     "label": "zerg15-str"
   },
   "claimedAt": "2026-11-15T13:11:21.649Z",
-  "heartbeatAt": "2026-11-15T13:11:21.649Z",
-  "expiresAt": "2026-11-15T13:56:21.649Z",
-  "branch": "work/zerg15-north-support",
+  "heartbeatAt": "2026-11-15T13:18:25.360Z",
+  "expiresAt": "2026-11-15T14:03:25.360Z",
+  "branch": "work/zerg15-north-inlet",
   "predecessor": {
     "leaseId": "c30ccff9-55b1-4d1b-a915-7aa2c258f92c",
     "generation": 25,
@@ -31,5 +31,9 @@
       "evidence": "PR #1536 exact 3f5e7007 tree 29a95e68 includes fixed wall head +60/+100/+120 datum drawing and replay; deterministic receipt and section verified",
       "next": "Verify exact hosted checks, preflight both packet leases, integrate by expected head, release"
     }
+  },
+  "checkpoint": {
+    "evidence": "Local STR commit 81a73ed6, dimensioned north collector transfer, deterministic SVG/JSON",
+    "next": "Integrate with inlet; validate and run fresh merge preflight"
   }
 }
