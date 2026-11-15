@@ -7,20 +7,16 @@ from pathlib import Path
 import math,json,runpy,sys,hashlib
 from itertools import pairwise
 from collections import defaultdict
-from contextlib import nullcontext, redirect_stdout
-from io import StringIO
 D=Path(__file__).resolve().parent
 def read(n):return json.loads((D/n).read_text())
 def collect(lst):
     return lambda c,k,n,p,rr:lst.append((c,k,n,p,rr))
 olds=[];mins=[]
-args=sys.argv[:]
-with redirect_stdout(StringIO()) if '--current-case' in args else nullcontext():
-    sys.argv=['joined-source','--check']
-    old=runpy.run_path(str(D/'current-house-head-actions.py'),init_globals={'originObserver':collect(olds)})
-    edge=runpy.run_path(str(D/'current-house-floor-closure.py'),init_globals={'retainedObserver':lambda c,r,f:mins.append((c,dict(r),f))})
-    sys.argv=args
-    plane=runpy.run_path(str(D/'current-house-roof-bracing.py'))
+args=sys.argv[:];sys.argv=['joined-source','--check']
+old=runpy.run_path(str(D/'current-house-head-actions.py'),init_globals={'originObserver':collect(olds)})
+edge=runpy.run_path(str(D/'current-house-floor-closure.py'),init_globals={'retainedObserver':lambda c,r,f:mins.append((c,dict(r),f))})
+sys.argv=args
+plane=runpy.run_path(str(D/'current-house-roof-bracing.py'))
 plane['bracedAlternate']=plane['actual'];plane['actual']=plane['space']
 rings=read('current-house-ring-space.json')['rings'];w=read('current-house-welded-network.json');h=old['h'];gd=old['gd'];heads=old['heads'];W=edge['walls'];caps=edge['caps'];loPads=edge['allLower']
 A,B,C,E=332.5,11667.5,3917.5,8082.5
@@ -327,7 +323,7 @@ for key,vals in bounds.items():
         for j,coef in enumerate([x,y]):
             ll,hh=boundmax(coef*vals[0][0],coef*vals[0][1]);headB[h][j+1][0]+=ll;headB[h][j+1][1]+=hh
 for key,rr in windPile.items():sumInterval(headB[key],rr)
-if __name__=='__main__' and '--current-case' not in sys.argv:
+if __name__=='__main__':
     print('new held sites',[(p,shifted[p],[round(x,1) for x in bounds[p][0]]) for p in shifted]);print('independent head',min(v[0][0] for v in headB.values()),max(v[0][1] for v in headB.values()),'eight lower corners',[(p,[round(x,1) for x in bounds[p][0]]) for p in sorted(caps)])
     yy=realState({'G':1.35,'Q':1.5});print('static',yy[3],min(q[0] for q in yy[0].values()),max(q[0] for q in yy[0].values()))
     cases=[realState({'U':1,'retainedMin':1},i) for i in range(len(plane['actual']))];print('uplift',min(n[0] for g,*_ in cases for n in g.values()),max(n[0] for g,*_ in cases for n in g.values()),'support',min(p[0] for _,pp,*_ in cases for p in pp.values()))
@@ -393,41 +389,7 @@ def report():
             lo,hi=headB[k][j];actual=ext[k][j];assert lo<=actual[0]+.02 and hi>=actual[1]-.02,(k,j,[lo,hi],actual)
         hh.append({'id':k,'xy':xy(k),'roles':heads[k]['roles'],'named_N_Cx_Cy':{id:rounded(z[0][k]) for id,z in named.items()},'separateComponentBounds_N_Cx_Cy':[rounded(ab) for ab in headB[k]],'coherentExtreme_N_Cx_Cy_Vx_Vy':[[round(l,4),round(h,4),a,b] for l,h,a,b in ext[k]]})
     return {'sources':{str(f.relative_to(D.parents[2])):hashlib.sha256(f.read_bytes()).hexdigest() for f in [D.parents[1]/'had/studies/water-replan.json',D/'current-house-ring-space.json',D/'current-house-welded-network.json',D/'current-house-grid.json',D/'current-house-head-actions.json',D/'current-house-floor-closure.json',D/'current-house-membrane.py']},'admitted':False,'status':'Proposed fixed-base 52-shaft load paths; no geotechnical, section, floor-edge or capillary joint acceptance.','units':'kN, kNm, mm. N positive down; Cx=N*deltaX and Cy=N*deltaY are first-moment residuals in x and y (not textbook Mx/My order). Vx/Vy horizontal kN. Positive yaw counterclockwise.','origins':[{ 'family':c,'case':k,'N_Xmoment_Ymoment':rounded(v)} for (c,k),v in sorted(orig.items()) if k not in ['R','S']],'named_source_totals':{id:rounded(val[3]) for id,val in named.items()},'coherentSignedStates':summaries,'approach':'Horizontal CHS omitted: two finite welded rings with the existing twelve twin-rail radial ties carry roof plan shear. The original 8.5 kN interface/bracing allowance remains an adverse distributed G budget, without favourable mass credit. 96 simultaneous full/partial, signed and biaxial wind patterns each repeated for three gravity/suction states. Ring eccentricities, elevated facade/roof projections applied at the actual ridge purlin, 24 inclined primary legs and their 260 mm eccentric connection to the ring included. Lower passive pads release in tension; each adjacent floor strip routes residual to the two captive corners. Ground-floor plinth wind tributary and L-corner spring shears are distributed to three reference shafts with conserved yaw. First-floor cracked membrane/roof joint/soil stiffness, roof pin/purlin and local floor/arch joints and head/soil capacity remain design questions. Independent component extrema are not one simultaneous house load.','courtTies':[{'oldCorner':p,'newHold':t,'passiveBalance':s,'head':h,'threePointCoefficient':splitStop(p)[0][1],'signedRange':rounded(bounds[t][0])} for p,(t,s,h) in shifts.items()],'outerTies':[{'point':p,'signedRange':rounded(cornerRaw[p])} for p in sorted(plane['corners'])],'heads':hh,'courtSWGroundElbow':'Two actual 600x450 beam returns share the corner compression by equal tip displacement on their real backspans; old first-wall-only control gave P39 -23.0332 kN in gravity. This redistribution demands reinforcement around the real SW node and compatible shaft/soil stiffness. No pile count changed.','localOptionalBay':'Separate unadopted reference in current-house-service-bay.json. Do not add the entire wet sled load to the bay floor. Apply its declared P36/P37 loads only if adopting that control, including moments and hydrostatic action.'}
-def current_case(request):
-    if not isinstance(request,dict) or set(request) != {'schema', 'windIndex', 'combination'} or request['schema'] != 'str-head-case/1':
-        raise ValueError('Expected exact str-head-case/1 fields')
-    wi=request['windIndex']
-    if type(wi) is not int or not 0 <= wi < len(plane['actual']):
-        raise ValueError('Choose a named wind pattern from the retained model')
-    combination=request['combination']
-    if not isinstance(combination,dict):
-        raise ValueError('Explicit signed load combination required')
-    if set(combination)=={'id','gravityFactor','imposedFactor'} and combination['id']=='GQ+wind':
-        factor_pairs=[('G',combination['gravityFactor'],1.35),('Q',combination['imposedFactor'],1.5)]
-    elif set(combination)=={'id','suctionFactor'} and combination['id'] in ('stripped suction+wind','retained suction+wind'):
-        factor_pairs=[('U',combination['suctionFactor'],1.)]
-        if combination['id']=='retained suction+wind':
-            factor_pairs.append(('retainedMin',1.,1.))
-    else:
-        raise ValueError('Unsupported load combination for the fixed-base comparison')
-    if any(type(f) not in (int,float) or not math.isfinite(f) or not 0<=f<=maximum for _,f,maximum in factor_pairs):
-        raise ValueError('Load factor outside the existing source envelope')
-    ground,pads,released,vertical=realState(dict((k,f) for k,f,_ in factor_pairs),wi)
-    horizontal_heads,horizontal_totals=horizontal(wi)
-    return {'schema':'str-head-case-result/1','windIndex':wi,'windProgramme':plane['actual'][wi][0],
-            'combination':combination,'admitted':False,
-            'headComponentOrder':['N','Cx','Cy','Vx','Vy'],
-            'heads':[{'id':h,'xy':xy(h),'actions':[*ground[h],*horizontal_heads[h]]} for h in sorted(heads)],
-            'releasedPassivePads':[{'xy':p,'signedBeforeRelease':n} for p,n in sorted(released)],
-            'verticalEquilibrium':vertical,'horizontalEquilibrium':horizontal_totals}
-
-if __name__=='__main__' and '--current-case' in sys.argv:
-    try:
-        result=current_case(json.load(sys.stdin))
-    except ValueError as error:
-        raise SystemExit(str(error)) from None
-    print(json.dumps(result,allow_nan=False))
-elif __name__=='__main__':
+if __name__=='__main__':
     out=Path(__file__).with_suffix('.json');s=json.dumps(report(),indent=2,sort_keys=True)+'\n'
     if '--check' in sys.argv:assert out.read_text()==s
     else:out.write_text(s)

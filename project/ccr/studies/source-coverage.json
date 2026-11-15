@@ -152,7 +152,8 @@
         "project/str/studies/current-house-floor-stops.py",
         "project/str/studies/current-house-wall-transfers.py",
         "project/str/studies/floor-portal-north-cap-layer.py",
-        "project/str/studies/floor-portal-north-cage.py"
+        "project/str/studies/floor-portal-north-cage.py",
+        "project/str/studies/current-house-structural-case.py"
       ],
       "inputReceipts": [
         "project/had/studies/water-replan.json",
@@ -525,7 +526,7 @@
     "project/str/studies/current-house-head-actions.json": "0d5c8c0d67378b0acd1a7680053e3b0783045c7c",
     "project/str/studies/current-house-head-actions.py": "aef7fa4cad6e89fc09c47e55e071ad52da22b522",
     "project/str/studies/current-house-joined-foundation.json": "ffc3ccb68655eead7c7f56a8dd3179d7d8d6f7bc",
-    "project/str/studies/current-house-joined-foundation.py": "f9a2b53b12b638cd5f6fc6fcac489f4ccbf41450",
+    "project/str/studies/current-house-joined-foundation.py": "2dbd7d33959639f68bca70caf512165c54b88c37",
     "project/str/studies/current-house-lateral.json": "a3a4ae8393c14e04e874de02beebf901a4b87227",
     "project/str/studies/current-house-lateral.py": "afd974189c5dad52b21e4432131d56d9df623a43",
     "project/str/studies/current-house-membrane.py": "6d6b5cd9280dcceebd7d1896e11f5e260c9cc793",
@@ -608,6 +609,7 @@
     "project/str/studies/current-house-membrane-reactions.json": "e1c995b916b9ddd47fd323309868bcd1127b2f0b",
     "project/str/studies/current-house-wall-transfers.json": "e0f07982d5c14a464599eb5ac98952dcdcdaf892",
     "project/str/studies/floor-portal-north-cap-layer.json": "dab58749281eb22c46354098a183a6937339cfda",
-    "project/str/studies/floor-portal-north-cage.json": "2b58f32dfcb90a44785d9217284f39b3ecbb7241"
+    "project/str/studies/floor-portal-north-cage.json": "2b58f32dfcb90a44785d9217284f39b3ecbb7241",
+    "project/str/studies/current-house-structural-case.py": "11c58e750573330b47a4b124a6aa9ff28dc8e5f1"
   }
 }

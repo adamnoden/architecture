@@ -107,6 +107,7 @@ export function runStructuralBridge(resolved: CurrentDesignResolution, trialAxes
 }
 
 const foundationMethodPath = 'project/str/studies/current-house-joined-foundation.py'
+const headCaseMethodPath = 'project/str/studies/current-house-structural-case.py'
 const foundationReceiptPath = 'project/str/studies/current-house-joined-foundation.json'
 
 function bindStructuralActions(resolved: CurrentDesignResolution) {
@@ -239,8 +240,12 @@ export function runStructuralCase(resolved: CurrentDesignResolution, value: unkn
   const axes: [number, number] = [joint.supportAxesYMm[0], joint.supportAxesYMm[1]]
   const bridge = runStructuralBridge(resolved, axes)
   if (bridge.status === 'unavailable') return bridge
+  const method = readSource(headCaseMethodPath)
+  if (binding.structure.identities[headCaseMethodPath] !== method.blob) {
+    throw new Error('The signed load case runner differs from its current binding')
+  }
   const foundation: NativeHeadCase = JSON.parse(execFileSync('python3', [
-    '-B', fileURLToPath(new URL(foundationMethodPath, repositoryRoot)), '--current-case',
+    '-B', fileURLToPath(new URL(headCaseMethodPath, repositoryRoot)),
   ], {
     input: JSON.stringify({ schema: 'str-head-case/1', windIndex: input.windIndex, combination: input.combination }),
     encoding: 'utf8',
@@ -250,7 +255,8 @@ export function runStructuralCase(resolved: CurrentDesignResolution, value: unkn
     status: 'computed-comparison' as const,
     source: binding.source,
     foundation: {
-      method: { path: foundationMethodPath, blob: binding.method.blob, inputs: binding.inputs },
+      method: { path: headCaseMethodPath, blob: method.blob,
+        solver: { path: foundationMethodPath, blob: binding.method.blob }, inputs: binding.inputs },
       native: foundation,
     },
     joint: {
