@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "ADE-BROWSER-EDITOR",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "26302d48-f336-4b76-8f81-04a395291437",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "zerg16-ade-browser-editor"
+  },
+  "claimedAt": "2026-11-15T20:46:04.252Z",
+  "heartbeatAt": "2026-11-15T20:46:04.252Z",
+  "expiresAt": "2026-11-15T21:46:04.252Z",
+  "branch": "work/zerg16-ade-browser-editor"
+}
