@@ -9,9 +9,9 @@
     "label": "zerg14-inlet-resolution"
   },
   "claimedAt": "2026-11-15T09:20:31.096Z",
-  "heartbeatAt": "2026-11-15T09:20:31.096Z",
-  "expiresAt": "2026-11-15T10:05:31.096Z",
-  "branch": "work/zerg14-inlet-resolution",
+  "heartbeatAt": "2026-11-15T09:29:03.184Z",
+  "expiresAt": "2026-11-15T10:14:03.184Z",
+  "branch": "work/zerg14-simplify-portal-inlet",
   "predecessor": {
     "leaseId": "f54a5d05-d4eb-434f-a47b-485169d0e133",
     "generation": 26,
@@ -31,5 +31,9 @@
       "evidence": "PR #1534 exact 9ecc5761 tree 429a899b on c6fefe51; focused checks and deterministic drawing",
       "next": "Observe exact hosted CI and fresh publication preflight, merge then release"
     }
+  },
+  "checkpoint": {
+    "evidence": "Local HAD commit 83b044a1, regenerated MRA and inlet receipts",
+    "next": "Combine with STR on exact remote head and require hosted Validate PR before preflight"
   }
 }
