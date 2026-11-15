@@ -88,6 +88,15 @@ branch and cylinder first release. IAS/STR must join the affected working and
 penetration interfaces. This is substantive design/adoption work before MRA-02
 and selected-house integration, not a generic referral for later certification.
 
+The [15 November HAD disposition](../had/inlet-resolution.md#architectural-disposition)
+now rejects the open lobby and both external cabinet layouts for this house.
+The selected duty records and current MRA receipt point to the fixed wet
+cabinet redraw. Protect the independent D2 receptor from inlet supports and
+fault water. The replacement proof must include sleeve first wetting, an
+upstream fed leak, downstream return and stored inventory, both blocked or
+high destinations, dry escape, inspection and repair. The source correction
+and the original bounded witness tests remain valid.
+
 ## What remains earned, and what the inventory actually contains
 
 The current sanitary arrangement is **four WCs, four basins, three bathing

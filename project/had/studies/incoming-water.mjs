@@ -161,15 +161,15 @@ export function deriveIncomingWaterStudy(){
     'project/mat/studies/whole-house-service-baseline.json','project/mat/studies/service-material-offer.json','project/mat/studies/plant-inlet-route.py',
     'project/mat/studies/east-water-plant.json','project/ias/studies/utility-first-release.json','project/ias/studies/utility-host-revised-route.json',
     'project/ias/studies/utility-bench-release.py','project/ias/ias-03-utility-factory-head.md'];
-  return {packet:'HAD-INLET-RESOLUTION',status:'IN_PROGRESS_NOT_ADOPTED',baselineMain:'003f61bacebd4cb3294280059b64f1bb5fc87f88',selection:house.id,
+  return {packet:'HAD-INLET-RESOLUTION',status:'REWIND_NOT_ADOPTED',baselineMain:'003f61bacebd4cb3294280059b64f1bb5fc87f88',selection:house.id,
     sourceBlobs:Object.fromEntries(sourcePaths.map(p=>[p,blob(p)])),inputs:house.inputs,
     unchangedSelectedGeometry:{fullCurrentHouseSHA256:digest(house),exteriorPortsSHA256:digest(house.model.exteriorPortGeometry),weatherFacesSHA256:digest(house.selectedServiceInterfaces.weatherFaces),
-      scope:'This development checkpoint does not mutate the selected house or its compact schedule. The rejected inherited route remains selected only as an adverse witness.'},
+      scope:'The joined rewrite updates selected inlet duty metadata only. The rejected inherited path remains an adverse witness; the compact service schedule, ports and weather faces are unaffected.'},
     inheritedInlet:inletEnvelopeWitness(house.model),utility:utilityComparison(house.model,base,host),terminal:terminalComparison(host),
     utilitySuccessor:utilityTerminalStudy(house.model,host),station:stationStudy(house.model,base,read('project/str/studies/current-house-grid.json')),
     bridge:bridgeComparison(house.model,base),
-    adoption:{adopted:false,remaining:['A located main/branch isolation station with a complete retained-end and controlled-drain arrangement.',
-      'A complete current-cylinder bridge/tail/stand first-release, capture and receiving sequence preserving ordinary plant entry.',
+    adoption:{adopted:false,rewindSource:house.model.architecturalServices.otherServiceDuties.find(duty=>duty.id==='incoming-water').rewindSource,remaining:['A fixed wet cabinet with I0, a joint-free wall spool, accessible upstream isolation, independently supported fixed branches and bounded fault discharge.',
+      'A short supported plant terminal release with the fixed distribution outside the cart and body sweeps, and independent vessel D2 and cargo transfer.',
       'Accessible utility sink first breaks and actual head/tail separation, beyond a nominal backbone and tube path.'],
       receivingGates:['TRIAD-GATE','MRA-02'],noCredit:['physical qualification','material exception','complete internal-water acceptance','safe unattended mains-leak containment','real-site frost/provider admission']}};
 }

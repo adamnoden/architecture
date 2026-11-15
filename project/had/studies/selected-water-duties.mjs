@@ -46,7 +46,8 @@ export function reconcileSelectedWaterDuties(model,water,base){
   assert(inlet.totalLengthInsideRequiredEnvelopeMM>0,
     'Inherited inlet conflict changed; reassess its selected-route and isolation status');
   const inheritedInlet=base.interfaces.architecturalServices.otherServiceDuties.find(d=>d.id==='incoming-water');
-  const requirement='Adopt a coordinated incoming-water route clear of plant-N and the actual wall cores, with a located accessible upstream isolator and contained drain. The lobby alternative remains unadopted; preserve site/frost, independent support, utility branch and cylinder-release duties.';
+  const requirement='Redraw the east lobby and plant around a fixed wet cabinet with accessible interior whole-house isolation, a joint-free replaceable wall spool, independent fault discharge, and fixed branches with a short supported plant terminal release.';
+  const rewindSource='project/had/inlet-resolution.md#replacement-architecture-to-draw';
   for(const s of [model.architecturalServices,model.servicesInterface]){
     assert.equal(s.otherServiceDuties.filter(d=>d.id==='foul-kitchen').length,1);
     assert.equal(s.otherServiceDuties.filter(d=>d.id==='incoming-water').length,1);
@@ -62,7 +63,12 @@ export function reconcileSelectedWaterDuties(model,water,base){
         status:'REJECTED_RETAINED_ROUTE',
         decision:'Retained solely to expose the rejected incoming-water route; it is not a resolved selected inlet or isolation arrangement.',
         rejectionSource:'project/mat/services-water-joints.md#damaged-tube-at-the-east-plant-station',
-        alternativeSource:'project/mat/plant-inlet-route.md',
+        rewindSource,
+        rejectedAlternatives:[
+          {id:'open-lobby-station',reason:'The sleeve first wetting falls beyond the pan and the open station has no joined pressure-fault and dry-retreat boundary.'},
+          {id:'high-exterior-cut',reason:'Cabinet footprint overlies the independent D2 receptor; the raised stance and indoor branch faults remain unresolved.'},
+          {id:'grade-exterior-cut',reason:'The cabinet and its support obstruct the independent D2 grate and guarded discharge envelope.'}
+        ],
         currentWitness:structuredClone(inlet),adoptionRequirement:requirement};
       return d;
     });

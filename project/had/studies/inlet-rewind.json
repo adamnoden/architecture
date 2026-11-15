@@ -1,0 +1,160 @@
+{
+  "status": "REWIND_NOT_ADOPTED",
+  "selection": "HAD-SERVICES-02",
+  "sources": {
+    "project/had/studies/incoming-water.json": "2cc79b04cecca5f9113269ebae2900f39f2ac15b",
+    "project/had/studies/incoming-water-cut-cabinet.json": "c40d4fc12ef691e161eb874aff799fa60e261557",
+    "project/had/studies/incoming-water-grade-cabinet.json": "14492ffffe05d5c8672824cc0cf5b4dc8e63788d",
+    "project/had/studies/incoming-water-first-wetting.mjs": "03bba5ebd6e868a249bd46894f58d9081c9c44c2",
+    "project/mat/cylinder-safety-route.md": "4f39a33bbdd75aa95c2e77763555d7c76d970ec4",
+    "project/mat/studies/plant-threshold.json": "58c0c78aa8985d4299c8d8b8750e55c98a129de2"
+  },
+  "inherited": {
+    "radiator": {
+      "low": [
+        10980,
+        3797,
+        100
+      ],
+      "high": [
+        11530,
+        3997,
+        700
+      ]
+    },
+    "centrelineInsideMM": 200,
+    "eastGapMM": 40.5,
+    "pipeOD": 74
+  },
+  "exterior": {
+    "cabinet": [
+      12125,
+      12650,
+      2450,
+      3350
+    ],
+    "dock": [
+      12130,
+      14230,
+      3400,
+      5350
+    ],
+    "trialGrade": -1800,
+    "highWorkRise": 1310,
+    "gradeTrayZ": -1060,
+    "gradeHeadZ": -260,
+    "d2Outfall": [
+      12350,
+      2500,
+      -1850
+    ],
+    "grate": [
+      12200,
+      12500,
+      2350,
+      2650
+    ],
+    "overlap": [
+      300,
+      200
+    ],
+    "overlapMM2": 60000,
+    "supportCentresOverGrate": [
+      [
+        12225,
+        2525
+      ]
+    ],
+    "d2Run": [
+      [
+        10035,
+        4800,
+        -900
+      ],
+      [
+        12450,
+        4800,
+        -930.1875
+      ],
+      [
+        12450,
+        2600,
+        -957.6875
+      ],
+      [
+        12350,
+        2500,
+        -1850
+      ]
+    ],
+    "crossing": [
+      12450,
+      2800,
+      -955.1875
+    ],
+    "gradeToD2OutfallMM": 50
+  },
+  "trialInterior": {
+    "cupboard": [
+      11185,
+      11570.5,
+      2697,
+      3553
+    ],
+    "wall": [
+      11570.5,
+      12090
+    ],
+    "y": 2800,
+    "z": 600,
+    "grossMM": [
+      385.5,
+      856
+    ],
+    "nearestBodyCentreX": 10545,
+    "frontToBodyMM": 340,
+    "pipeOD": 74,
+    "boreID": 100,
+    "boreRadialAfterSettingMM": 11,
+    "previousBendCrosswiseMM": 134
+  },
+  "plant": {
+    "path": [
+      [
+        9847,
+        4250
+      ],
+      [
+        10500,
+        4250
+      ],
+      [
+        10500,
+        4575
+      ],
+      [
+        12500,
+        4575
+      ]
+    ],
+    "cartR": 425,
+    "seat": [
+      10195,
+      3970
+    ],
+    "seatToFirstAxisMM": 280,
+    "fixedLowDropOverlapMM": 182,
+    "southGapMM": 28,
+    "goodsTop": 2300,
+    "earlierPanelZ": 2350,
+    "topOfFixedCrossingRequiredMM": 2399,
+    "alternativeFixedRoute": {
+      "x": 10245,
+      "pipeAxisZ": 2260,
+      "finishPanelClearanceMM": 53,
+      "clearanceTo2125CarrierMM": 98,
+      "clearanceToStandingPersonMM": 223,
+      "openLeafSideGapAfterSettingsMM": 39
+    }
+  }
+}
