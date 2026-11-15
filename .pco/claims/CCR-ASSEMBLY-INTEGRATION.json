@@ -2,20 +2,22 @@
   "schemaVersion": 1,
   "node": "CCR-ASSEMBLY-INTEGRATION",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "36d16fe3-4348-4335-a71f-91606cc11f2a",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg16-executable-interface-checks"
   },
   "claimedAt": "2026-11-15T19:09:44.461Z",
-  "heartbeatAt": "2026-11-15T19:12:48.293Z",
-  "expiresAt": "2026-11-15T20:12:48.293Z",
+  "heartbeatAt": "2026-11-15T19:30:49.613Z",
+  "expiresAt": "2026-11-15T19:30:49.613Z",
   "branch": "work/zerg16-east-south-inlet",
   "pr": 1551,
   "checkpoint": {
     "evidence": "Exact 1e3f5f8d39c7dd03afad332629a93952867d3fff; current south inlet and native structural, hydraulic, Study projection checks passed locally.",
     "next": "Wait for all triggered exact GitHub workflows, then run the four fresh merge checks and integrate conditional evidence.",
     "blocker": "The named current interface comparison is implemented. Remaining domain cases keep lifecycle open."
-  }
+  },
+  "releasedAt": "2026-11-15T19:30:49.613Z",
+  "releaseReason": "handoff"
 }
