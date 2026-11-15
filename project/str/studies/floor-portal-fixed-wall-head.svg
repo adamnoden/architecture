@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 585" role="img" aria-labelledby="title">
+<title id="title">Independent wall head and raised roof section</title>
+<rect width="850" height="585" fill="white"/>
+<g fill="#182429" font-family="sans-serif" stroke-width="1.4">
+<text x="35" y="34" font-size="23" font-weight="bold">Independent wall head and raised roof</text>
+<text x="52" y="67" font-size="17" font-weight="bold">Add a band below the existing roof</text>
+<text x="469" y="67" font-size="17" font-weight="bold">Keep the band zone and raise roof 100 mm</text>
+<rect x="86.62" y="334.40" width="171.00" height="180.60" fill="#f1e5d5" stroke="#977641"/>
+<rect x="86.62" y="212.60" width="209.00" height="100.80" fill="#d1e2e5" stroke="#176773"/>
+<path d="M 51.00 191.80 H 310.35" stroke="#182429" />
+<text x="51.95" y="184.24" font-size="13">Lowest bare hip steel</text>
+<text x="89.00" y="447.80" font-size="13">Upper arch at crown</text>
+<text x="89.00" y="237.80" font-size="13">220 × 120 moving roof ring</text>
+<text x="293.25" y="528.44" font-size="13">Room →</text>
+<text x="51.00" y="528.44" font-size="13">Cold</text>
+<path d="M 51.00 334.40 H 310.35" stroke="#977641" stroke-dasharray="3 4"/>
+<text x="298.00" y="336.92" font-size="13">Z6515</text>
+<text x="298.00" y="305.00" font-size="13">Z6540</text>
+<text x="298.00" y="215.12" font-size="13">Z6660</text>
+<rect x="124.62" y="313.40" width="133.00" height="21.00" fill="#d28467" stroke="#a34624"/>
+<text x="51.00" y="351.20" font-size="13">25 mm additional-band limit</text>
+<text x="236.25" y="184.24" font-size="13">Z6684.76</text>
+<rect x="504.62" y="334.40" width="171.00" height="180.60" fill="#f1e5d5" stroke="#977641"/>
+<rect x="504.62" y="212.60" width="209.00" height="100.80" fill="#d1e2e5" stroke="#176773"/>
+<path d="M 469.00 107.80 H 728.35" stroke="#182429" />
+<text x="469.95" y="100.24" font-size="13">Lowest bare hip steel</text>
+<text x="507.00" y="447.80" font-size="13">Upper arch at crown</text>
+<text x="507.00" y="237.80" font-size="13">220 × 120 fixed band</text>
+<text x="711.25" y="528.44" font-size="13">Room →</text>
+<text x="469.00" y="528.44" font-size="13">Cold</text>
+<path d="M 469.00 334.40 H 728.35" stroke="#977641" stroke-dasharray="3 4"/>
+<text x="716.00" y="336.92" font-size="13">Z6515</text>
+<text x="716.00" y="305.00" font-size="13">Z6540</text>
+<text x="716.00" y="215.12" font-size="13">Z6660</text>
+<path d="M 469.00 191.80 H 728.35" stroke="#96a4a8" stroke-dasharray="4 4"/>
+<rect x="535.50" y="153.80" width="143.45" height="58.80" fill="none" stroke="#a34624" stroke-dasharray="5 4"/>
+<text x="540.25" y="168.92" font-size="13">70 mm seat zone</text>
+<text x="540.25" y="204.20" font-size="13">Hardware envelope only</text>
+<text x="654.25" y="100.24" font-size="13">Z6784.76</text>
+<text x="36" y="570" font-size="13">Dimensions in mm. Crown station of the upper portal. Geometry comparison only.</text>
+</g>
+</svg>

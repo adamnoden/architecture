@@ -5,6 +5,8 @@ import {finiteBends,exactSegmentBoxDistance} from './incoming-water-geometry.mjs
 import {deriveIncomingWaterStudy,incomingWaterText} from './incoming-water.mjs';
 import {deriveCurrentHouse} from './current-house.mjs';
 import {deriveInletRewind} from './inlet-rewind.mjs';
+import {deriveFixedStation} from './inlet-fixed-station.mjs';
+import {deriveCabinetFault} from './inlet-cabinet-fault.mjs';
 import {utilityFirstRestPreflight} from './utility-first-rest-preflight.mjs';
 import {deriveBridgeNative} from './incoming-water-bridge-native.mjs';
 import {bridgeNativeMotionResult} from './incoming-water-bridge-native-motion.mjs';
@@ -114,6 +116,34 @@ test('the exterior cabinets cover independent D2 and the indoor redraw remains a
   assert.equal(plant.fixedLowDropOverlapMM,182);
   assert(plant.topOfFixedCrossingRequiredMM>plant.earlierPanelZ);
   assert.equal(plant.alternativeFixedRoute.clearanceTo2125CarrierMM,98);
+});
+
+test('fixed stop redraw keeps circuits separate and the wall spool and plant drop leave on their own supports',()=>{
+  const result=deriveFixedStation();
+  assert.equal(result.status,'CONDITIONAL_PRE_SITE_FIXED_STATION');
+  assert.deepEqual(Object.keys(result.rows),['I0','U0','P0']);
+  assert(Object.values(result.rows).every(row=>row.zones.every(z=>z.planGapAfterSettingsMM>25)));
+  assert.equal(result.spoolRenewal.strokeInwardMM,619.5);
+  assert.equal(result.spoolRenewal.nominalBodyAxisClearanceMM,60.5);
+  assert.equal(result.controlledDrain.passiveFaultCredit,false);
+  assert(result.controlledDrain.headerResidualTubeOnlyUpperL>.11);
+  assert.equal(result.separations.fixedDropWouldOverlapCartMM,162);
+  assert(result.removal.dropMotionToPlainCaseAfterSettingsMM>25);
+  assert.equal(result.removal.completeDryLoadAndMotionProved,false);
+});
+
+test('the daylight outlet sits below the dry sill and the raised receiver leaves without occupying that fault volume',()=>{
+  const {wetBoundary,service}=deriveCabinetFault();
+  const governing=wetBoundary.gravityCases.find(row=>row.flowLmin===60);
+  assert(wetBoundary.crestClearances.every(clearance=>clearance.geometricLigamentAfterSettingMM>50));
+  assert(governing.drySillReserveAfterSettingsAndSplashMM>20);
+  assert(governing.allRoutesBlockedTimeToSillUpperSeconds<80);
+  assert.equal(wetBoundary.outside.ratingKnown,false);
+  assert.equal(service.withdrawalStrokeMM,272);
+  assert.equal(service.bodyGapToTrayMM,35);
+  assert.equal(service.routeBetweenPierFinishedFacesAfterSettingsMM,28);
+  assert(service.maintenanceReceiver.receiverZ[0]>wetBoundary.drySillZ);
+  assert.equal(service.maintenanceReceiver.receiverHasFaultCredit,false);
 });
 
 test('located main and branch cuts include finite valve modules and full tool sectors',()=>{

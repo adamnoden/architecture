@@ -1,0 +1,180 @@
+{
+  "status": "RETAIN_FIXED_CABINET_FOR_JOINED_DETAIL",
+  "selection": "HAD-SERVICES-02",
+  "wetBoundary": {
+    "pan": [
+      11210,
+      11545,
+      2710,
+      3525
+    ],
+    "floorZ": 105,
+    "drySillZ": 395,
+    "opening": [
+      3040,
+      3260,
+      315,
+      425
+    ],
+    "wallLength": 519.5,
+    "settingMM": 10,
+    "splashMM": 20,
+    "crestClearances": [
+      {
+        "id": "ordinary",
+        "insideInvert": 100.39,
+        "axis": [
+          2975,
+          140.39
+        ],
+        "nominalGeometricLigamentMM": 136.31600065480154,
+        "geometricLigamentAfterSettingMM": 126.31600065480154
+      },
+      {
+        "id": "blocked-primary relief",
+        "insideInvert": 160.39,
+        "axis": [
+          3200,
+          200.39
+        ],
+        "nominalGeometricLigamentMM": 64.61000000000001,
+        "geometricLigamentAfterSettingMM": 54.610000000000014
+      }
+    ],
+    "permanentTrayGrossCapacityUpperLitres": 79.17725,
+    "gravityCases": [
+      {
+        "flowLmin": 6,
+        "wholeHeadMM": 3.9501924822378096,
+        "halfClearHeadMM": 6.270539701781171,
+        "maximumModeledWaterZ": 321.27053970178116,
+        "drySillReserveAfterSettingsAndSplashMM": 43.729460298218825,
+        "allRoutesBlockedTimeToSillUpperSeconds": 791.7725
+      },
+      {
+        "flowLmin": 15,
+        "wholeHeadMM": 7.276316765128274,
+        "halfClearHeadMM": 11.550432887418468,
+        "maximumModeledWaterZ": 326.5504328874185,
+        "drySillReserveAfterSettingsAndSplashMM": 38.44956711258153,
+        "allRoutesBlockedTimeToSillUpperSeconds": 316.709
+      },
+      {
+        "flowLmin": 30,
+        "wholeHeadMM": 11.550432887418468,
+        "halfClearHeadMM": 18.335169316176163,
+        "maximumModeledWaterZ": 333.3351693161762,
+        "drySillReserveAfterSettingsAndSplashMM": 31.664830683823837,
+        "allRoutesBlockedTimeToSillUpperSeconds": 158.3545
+      },
+      {
+        "flowLmin": 60,
+        "wholeHeadMM": 18.335169316176163,
+        "halfClearHeadMM": 29.105267060513093,
+        "maximumModeledWaterZ": 344.1052670605131,
+        "drySillReserveAfterSettingsAndSplashMM": 20.894732939486907,
+        "allRoutesBlockedTimeToSillUpperSeconds": 79.17725
+      }
+    ],
+    "outside": {
+      "terminalX": 13815,
+      "firstExitZ": 270.11,
+      "maximumReceivingZ": 245.11,
+      "toDockBeforeSettingsMM": 140,
+      "toD2GrateBeforeSettingsMM": 390,
+      "separatePassiveContinuationRequired": true,
+      "ratingKnown": false
+    },
+    "wetFace": "Continuous sealed metal upstand and mechanically retained front splash leaf. Raised drawer above flood level is a removable maintenance piece with no fault credit. Independently wet all leaf joints, controls and upper support penetrations under the actual source-fed pressure case.",
+    "bothPipeOutletsBlocked": "The independent broad open daylight route is available only with free reception. Keep its cleaned throat/outside outlet physically separate from both small pipes. Walkway and outside approach are never permitted receiving areas.",
+    "allOutletsBlocked": "No configuration here contains a source-fed failure indefinitely. When the direct spill edge or receiving land is also blocked or saturated, reject the plot or redraw a truly external wet bay with a broad safe exterior spill. No response time, pump, safety-discharge or roof-water path is credited."
+  },
+  "pressureScreen": {
+    "gridMM": 100,
+    "steelThicknessMM": 6,
+    "bandWidthMM": 22,
+    "elasticModulusMPa": 200000,
+    "forceMultiplier": 1.5,
+    "pressureSensitivityPa": 600000,
+    "idealNormalJetStoppingForceN": 456.1592533012379,
+    "panelForceN": 684.2388799518569,
+    "centreStripBendingMPa": 129.59069696057895,
+    "centreStripDeflectionMM": 0.17998707911191525,
+    "scope": "Simple strip bending comparator for a normally stopped ideal jet, not a measured flow, adopted supply pressure or whole-panel, latch, seam or spray rating."
+  },
+  "service": {
+    "restX": 11113,
+    "trayNoseX": 11040,
+    "sourceX": 11385,
+    "workingBodyX": 10705,
+    "maxModuleR": 37,
+    "withdrawalStrokeMM": 272,
+    "moduleGapPastFaceMM": 35,
+    "bodyGapToTrayMM": 35,
+    "trayGapToOrdinaryBodyMM": 195,
+    "rows": [
+      {
+        "id": "I0",
+        "y": 2800,
+        "z": 875,
+        "body": [
+          10705,
+          2985,
+          1050
+        ],
+        "maxReachToWithdrawnAxisMM": 480.95114,
+        "controlledRemoval": "Fulfil the matched flat face contract. Fit and pin loaded runner to independent retained rail. Isolate, prove zero pressure on both ends and physically support before loosening. Lock the first rest before transferring the valve to a carried cradle."
+      },
+      {
+        "id": "U0",
+        "y": 3110,
+        "z": 1392.5,
+        "body": [
+          10705,
+          3110,
+          1450
+        ],
+        "maxReachToWithdrawnAxisMM": 412.03186,
+        "controlledRemoval": "Fulfil the matched flat face contract. Fit and pin loaded runner to independent retained rail. Isolate, prove zero pressure on both ends and physically support before loosening. Lock the first rest before transferring the valve to a carried cradle."
+      },
+      {
+        "id": "P0",
+        "y": 3370,
+        "z": 1392.5,
+        "body": [
+          10705,
+          3250,
+          1450
+        ],
+        "maxReachToWithdrawnAxisMM": 429.15061,
+        "controlledRemoval": "Fulfil the matched flat face contract. Fit and pin loaded runner to independent retained rail. Isolate, prove zero pressure on both ends and physically support before loosening. Lock the first rest before transferring the valve to a carried cradle."
+      }
+    ],
+    "maintenanceReceiver": {
+      "maintenanceSpoutY": [
+        2900,
+        2960,
+        3110,
+        3370
+      ],
+      "spoutZ": 565,
+      "receiverZ": [
+        420,
+        500
+      ],
+      "receiverBounds": [
+        11200,
+        11555,
+        2750,
+        3450
+      ],
+      "netLitres": 12,
+      "maximumBatchLitres": 5,
+      "airGapMM": 65,
+      "dischargeSupportIndependent": true,
+      "receiverHasFaultCredit": false
+    },
+    "routeBetweenPierFinishedFacesAfterSettingsMM": 28,
+    "routeStatus": "The west return follows the existing body route. The added stance branches clear both finished transverse pier faces and retreat is separate from rack work after lockout. Treat the feed-side opening and goods handling as scheduled work, never simultaneously rack parts across dry retreat. Actual cover guides, runner bearings, contact tolerances and loads remain qualification."
+  }
+}

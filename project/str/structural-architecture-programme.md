@@ -162,12 +162,16 @@ competent engineering and physical acceptance retain their existing BCR/EPR/PHY/
 routes. No new external prerequisite replaces useful internal design work.
 
 The [outer roof support rewind](floor-portal-reconciliation.md#outer-roof-support-rewind)
-retires the shared hip heel, through-collars and radial corner cassette. Start
-the next drawing with direct corner bearing, separate near-jamb hold-downs and
-dedicated far-jamb guidance outside the inherited cage. Resolve stability of
-the released wall heads and the finite collector transfers before the joined
-replay. The dated cap, groove and collar comparisons remain adverse controls.
-Both final gates still depend on the verified successor.
+retires the shared hip heel, through-collars and radial corner cassette. The
+[separated support replay](floor-portal-separate-support-replay.md) also rejects
+the four-point room-side guide retrofit. Redraw independently braced wall heads
+supporting tied roof frames or segments with deliberate fixed restraints and a
+defined movement route. The [fixed wall-head comparison](floor-portal-fixed-wall-head.md)
+reserves the existing band footprint and starts the next drawn comparison with
+a 100 mm raised roof datum. Connect every actual receiving wall head, vertical
+seat and lateral route before the joined replay. The earlier joints and guide
+layout remain adverse controls. Both final gates still depend on a verified
+successor.
 
 The registration is the owning correction exposed by ROF-RWT-GATE, not execution
 of the new structural packet. STR-FLOOR-PORTAL requires its own ordinary

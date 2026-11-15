@@ -28,6 +28,8 @@ Use separately buried potable supply and an accessible upstream owner cut **B0**
 
 If the cabinet, pressure fault routes and plant terminal cannot coexist in the retained east field, the next design move is to replan the **lobby/east plant partition and equipment positions together**. Compare the retained 12 m envelope with a separately weathered east service bay that prices the extra footprint, roof, doors, support and access. Any departure from the accepted house envelope goes to the owner through the existing review. Factory discharge, cylinder and buffer withdrawal, ordinary protected movement and site water all stay in the comparison. Do not commission another refinement of the rejected transfer mechanisms as an inlet result.
 
+The [fixed station and plant release comparison](inlet-fixed-station.md) locates the three stops, upper supply paths, inward spool renewal, separately contained drains and removable cylinder connection. Use that layout for the next joined detail. The documented pressure, handling and receiving holds still control adoption.
+
 ## Evidence boundary and graph disposition
 
 - **Pre-site design before this packet can close:** HAD/MAT/IAS draw the same continuous pressure path, fixed cabinet, both ways to remove each confined part, bounded first wetting and gravity/blocked states, plant load transfer and utility renewals. STR coordinates the actual formed aperture, slab/pier, supports and movement reservations at concept level. Publish a reconciled current-house source and MAT/IAS/MRA receipts or an explicit evidenced house-scope alternative if this redesign fails. A site survey cannot cure the shown conflicts.
