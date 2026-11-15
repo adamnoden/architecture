@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 35,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "750073e3-0b7b-4560-b89c-bcd813a24f24",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg16-east-south-inlet"
   },
   "claimedAt": "2026-11-15T18:52:24.414Z",
-  "heartbeatAt": "2026-11-15T19:12:18.508Z",
-  "expiresAt": "2026-11-15T20:12:18.508Z",
+  "heartbeatAt": "2026-11-15T19:30:16.187Z",
+  "expiresAt": "2026-11-15T19:30:16.187Z",
   "branch": "work/zerg16-east-south-inlet",
   "predecessor": {
     "leaseId": "029c6927-8353-4130-b4bc-c1ea75d7e0c8",
@@ -37,5 +37,7 @@
     "evidence": "Exact 1e3f5f8d39c7dd03afad332629a93952867d3fff; current south inlet and native structural, hydraulic, Study projection checks passed locally.",
     "next": "Wait for all triggered exact GitHub workflows, then run the four fresh merge checks and integrate conditional evidence.",
     "blocker": "South pressure end boxes, abnormal receivers, thermal/motion supports and selected service duty remain excluded."
-  }
+  },
+  "releasedAt": "2026-11-15T19:30:16.187Z",
+  "releaseReason": "handoff"
 }
