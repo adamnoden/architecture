@@ -152,6 +152,6 @@ if __name__ == '__main__':
         comparison = {'signed': signed, 'signed-quick': lambda: signed(False), 'movement': movement}[args.mode]()
     if args.check:
         receipt = json.loads(Path(__file__).with_suffix('.json').read_text())
-        assert comparison == receipt[args.mode]
+        assert json.loads(json.dumps(comparison)) == receipt[args.mode]
     else:
         print(json.dumps(comparison, indent=2))
