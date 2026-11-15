@@ -9,13 +9,13 @@
     "label": "zerg16-ade-browser-editor"
   },
   "claimedAt": "2026-11-15T20:46:04.252Z",
-  "heartbeatAt": "2026-11-15T20:48:20.341Z",
-  "expiresAt": "2026-11-15T21:48:20.341Z",
+  "heartbeatAt": "2026-11-15T20:51:15.396Z",
+  "expiresAt": "2026-11-15T21:51:15.396Z",
   "branch": "work/zerg16-ade-browser-editor",
   "pr": 1554,
   "checkpoint": {
-    "evidence": "Three local Chromium scenarios, six headless tests, typecheck, repo and control checks green. Exact head d24de39ba2ee3a121f1cfbc9c27e32bad86ac014",
-    "next": "Verify exact hosted browser and full CI, then run fresh canonical merge preflight",
-    "blocker": "Exact hosted validation pending"
+    "evidence": "Initial browser proof green. Shared selector wired after exact control test failure; local selector and workflow checks green. Corrected head a6ac0d6882fb7de4e2ddff51dddd01bc4f60ee3e",
+    "next": "Recheck all triggered workflows including native browser and run fresh merge preflight",
+    "blocker": "Corrected exact CI running"
   }
 }
