@@ -46,9 +46,13 @@ test('current source and reusable model foundation do not wait for house converg
     }
   }
   assert.ok(ancestors('ADE-MODEL').has('CCR-CURRENT-SOURCE'))
-  const successors = codificationNodes.filter(entry => entry.id !== 'PCO-EXECUTABLE-DESIGN')
-  assert.deepEqual(successors.filter(entry => derivedState(entry, nodes) === 'ready').map(entry => entry.id), ['CCR-CURRENT-SOURCE'])
-  const sourceComplete: ControlNode[] = nodes.map(entry => entry.id === 'CCR-CURRENT-SOURCE' ? {...entry, lifecycle: 'complete'} : entry)
+  const successorIds = new Set<string>(codificationNodes.filter(entry => entry.id !== 'PCO-EXECUTABLE-DESIGN').map(entry => entry.id))
+  const registered: ControlNode[] = nodes.map(entry => successorIds.has(entry.id) || entry.id === 'ADE-MODEL'
+    ? {...entry, lifecycle: 'planned'} : entry)
+  assert.deepEqual(registered.filter(entry => successorIds.has(entry.id) && derivedState(entry, registered) === 'ready')
+    .map(entry => entry.id), ['CCR-CURRENT-SOURCE'])
+  const sourceComplete: ControlNode[] = registered.map(entry => entry.id === 'CCR-CURRENT-SOURCE'
+    ? {...entry, lifecycle: 'complete'} : entry)
   for (const id of ['CCR-CURRENT-COMPILE', 'ADE-MODEL']) {
     assert.equal(derivedState(sourceComplete.find(entry => entry.id === id)!, sourceComplete), 'ready', id)
   }

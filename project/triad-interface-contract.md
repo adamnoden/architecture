@@ -76,6 +76,8 @@ collector bypass. Neither is adopted here.
 
 **15 November north collector development.** The [straight north hold-down and paired arch ties](str/floor-portal-twin-garden-tie.md) develop separate uplift and arch-thrust paths. The [local collector cage](str/floor-portal-north-cage.md) compares a 200 × 750 mm section at the sleeve with short bent-bar returns and shared jig setting. Keep the existing floor and arch levels. Coordinate the room finish, insulation, window sill return and slab/bar force development at the widened shoulders. The [split cap mat and linked starter routes](str/floor-portal-north-cap-layer.md) retain the four north head axes and bound the catalogue splice bodies. The [slotted north roof shoe and separate dry ferrule](str/floor-portal-north-roof-shoe.md) preserve separate compression and normal restraint. Reconcile the full joint, far-head cages, tool and closure interfaces with signed actions and movements across all 52 heads before admission to the roof and TRIAD gates.
 
+The [north corner diaphragm collar](str/floor-portal-north-collar.md) brings the top-mesh bars straight across the receiving plane on both northern L piers. Carry the 120 mm roomward extension and Z3415 concrete top into the floor, northwest cabinet base and service-depth drawings. Develop restraint around the H16 bends and the transfer into the original L piers before admitting that joint into the coupled replay.
+
 **SAP-C1 retained comparison.** The [paired-jamb, raised-roof candidate](str/provisional-house-handoff.md)
 and its [source-bound interface schedule](str/studies/reconciled-house-interface.json)
 retain the geometry used by completed bounded studies. RH-LAYOUT-REVISION-02
