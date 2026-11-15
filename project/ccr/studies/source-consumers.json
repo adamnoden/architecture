@@ -51,6 +51,7 @@
       "decision": "project/ias/workable-interior-concept-result.md",
       "entries": [
         "project/ias/studies/conventional-first-rest.mjs",
+        "project/ias/studies/workable-floor-tiles.mjs",
         "project/ias/studies/workable-room-assemblies.mjs",
         "project/ias/studies/workable-study-floor.mjs",
         "project/ias/studies/workable-study-release.mjs"

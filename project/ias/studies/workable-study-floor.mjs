@@ -1,3 +1,4 @@
+import { tileField as deriveTileField } from './workable-floor-tiles.mjs';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -44,24 +45,8 @@ const intersection = ([x0,y0,x1,y1], [a0,b0,a1,b1]) =>
 const area = ([x0,y0,x1,y1]) => Math.max(0,x1-x0)*Math.max(0,y1-y0);
 const sameGridOrigin = [500,500];
 
-function tileField(pitch, [originX,originY], roomBands=bands, roomItems=occupied) {
-  const cells = [];
-  const bounds = [
-    Math.min(...roomBands.map(b=>b[0])),Math.min(...roomBands.map(b=>b[1])),
-    Math.max(...roomBands.map(b=>b[2])),Math.max(...roomBands.map(b=>b[3]))
-  ];
-  for(let x=originX+Math.floor((bounds[0]-originX)/pitch)*pitch; x<bounds[2]; x+=pitch){
-    for(let y=originY+Math.floor((bounds[1]-originY)/pitch)*pitch; y<bounds[3]; y+=pitch){
-      const box=[x,y,x+pitch,y+pitch];
-      const clipped=roomBands.map(band=>intersection(box,band)).filter(part=>area(part)>0);
-      const coverage=clipped.reduce((sum,part)=>sum+area(part),0);
-      if(!coverage)continue;
-      const full=coverage===pitch**2;
-      const fixedObstructions=roomItems.filter(([,item])=>area(intersection(box,item))>0).map(([id])=>id);
-      cells.push({box,clipped,full,fixedObstructions});
-    }
-  }
-  return cells;
+function tileField(pitch, origin, roomBands=bands, roomItems=occupied) {
+  return deriveTileField(pitch, origin, roomBands, roomItems);
 }
 
 // These authored densities are trial values for mass comparison only.

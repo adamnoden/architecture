@@ -38,6 +38,8 @@ The [east plant release route](plant-release-route.md) replaces the earlier gene
 
 The [protected lower daylight spill](inlet-protected-daylight.md) updates the selected framed bay with a new crest, lined aperture and separate receiving cells. Its measured geometry and explicit flow limits control the next closed-cover detail.
 
+The [south utility entry](south-utility-inlet.md) is the preferred architectural alternative for the next joined detail. Move the incoming split to the Boundary Service Lodge and bring two independently isolated, straight through-wall feeds to the utility and plant. The south-wall reservations avoid the stability wing and the D2, dock and roof renewal lanes. Retain the fixed indoor reference while the south end boxes, failure discharge, frost and structural support are qualified.
+
 ## Evidence boundary and graph disposition
 
 - **Pre-site design before this packet can close:** HAD/MAT/IAS draw the same continuous pressure path, fixed cabinet, both ways to remove each confined part, bounded first wetting and gravity/blocked states, plant load transfer and utility renewals. STR coordinates the actual formed aperture, slab/pier, supports and movement reservations at concept level. Publish a reconciled current-house source and MAT/IAS/MRA receipts or an explicit evidenced house-scope alternative if this redesign fails. A site survey cannot cure the shown conflicts.

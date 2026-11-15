@@ -1,0 +1,310 @@
+{
+  "disposition": "South utility entry is the preferred alternative to draw. Retain the current indoor reference pending a joined pressure and structural pass.",
+  "sources": {
+    "project/had/studies/current-house.mjs": "58bf1a6248af8268de70d838cce23f249ce30b91",
+    "project/had/studies/incoming-water-geometry.mjs": "ed658b7df0edf5d8e6d1826d32730a14b00199c7",
+    "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2",
+    "project/str/studies/current-house-lateral.json": "a3a4ae8393c14e04e874de02beebf901a4b87227",
+    "project/rof/studies/roof_water_edges.py": "e381233093301614ca06c58cb851bc476f6db852",
+    "project/had/studies/inlet-rewind.json": "df1d23f44eb905c0b18e7a089afb571945e3884d",
+    "project/had/studies/incoming-water.json": "1aa08121cdc10dc1ccbe2ae40bf54f8cee54d205",
+    "project/had/studies/inlet-fixed-station.json": "69e0be05955a9f8fa3494f6a8c5e686dd8bc2e16",
+    "project/had/studies/utility-dry-bowl-release.json": "7f1e60c8dbbb93a4a50ed7bb7db13e426ef25603",
+    "project/had/studies/boundary-service-lodge.json": "edccc843f1829bf583e517095442ad9fe481da53"
+  },
+  "walls": {
+    "southWindow": [
+      9400,
+      10400
+    ],
+    "eastWindow": [
+      1600,
+      2600
+    ],
+    "cornerStartX": 10737.5,
+    "cornerEndY": 1262.5,
+    "cornerVerticalZ": [
+      -180,
+      6940
+    ],
+    "cornerPiles": [
+      [
+        11667.5,
+        332.5
+      ],
+      [
+        10807.5,
+        332.5
+      ],
+      [
+        11667.5,
+        1192.5
+      ]
+    ],
+    "bores": [
+      [
+        10500,
+        -90,
+        450
+      ],
+      [
+        10645,
+        -90,
+        650
+      ]
+    ],
+    "innerFaceY": 429.5,
+    "sleeveFall": 10.39,
+    "clearance": {
+      "wingToWindowBay": 337.5,
+      "utilityBoreToWindow": 35,
+      "plantBoreToRCWing": 27.5,
+      "plantBoreToSouthernRoofRenewalLane": 240,
+      "trialHousingToRoofRenewalLane": 140,
+      "pressureBorePair": 127.03,
+      "alternateEastBay": [
+        1262.5,
+        1600
+      ],
+      "east600CutsStabilityLeg": true
+    }
+  },
+  "exterior": {
+    "roofNormalX": 11150,
+    "roofReliefX": 11750,
+    "westernRoofWorkEdge": 10950,
+    "housingTrialX": [
+      10350,
+      10800
+    ],
+    "hotD2Grate": [
+      12200,
+      12500,
+      2350,
+      2650
+    ],
+    "plantDock": [
+      12130,
+      14230,
+      3400,
+      5350
+    ],
+    "courtEastReceiverY": [
+      6100,
+      7700
+    ],
+    "lodgeLengthComparison": 12000
+  },
+  "nominalPressure": {
+    "product": "Lawton plain copper coil EN 1057, R220, Ø22 × 1.2, 25 m, vendor MOP 53.1 bar to 65 °C for the tube alone",
+    "source": "https://lawtontubes.co.uk/product/copper-plain-coil/",
+    "branchArchitecture": "The protected gatehouse splits and labels two separately isolated branches. Leave both plain pipe ends accessible, support any finished sleeve independently, and open covers or withdraw each straight spool axially."
+  },
+  "continuation": {
+    "utility": [
+      [
+        10500,
+        -90,
+        468
+      ],
+      [
+        10500,
+        429.5,
+        478.39
+      ],
+      [
+        10500,
+        545,
+        478.39
+      ],
+      [
+        10500,
+        545,
+        2725
+      ],
+      [
+        10760,
+        545,
+        2725
+      ],
+      [
+        10760,
+        1250,
+        2725
+      ],
+      [
+        10760,
+        1250,
+        1000
+      ]
+    ],
+    "plant": [
+      [
+        10645,
+        -90,
+        668
+      ],
+      [
+        10645,
+        429.5,
+        678.39
+      ],
+      [
+        10645,
+        545,
+        678.39
+      ],
+      [
+        10645,
+        545,
+        2610
+      ],
+      [
+        11505,
+        545,
+        2610
+      ],
+      [
+        11505,
+        820,
+        2610
+      ],
+      [
+        11505,
+        1180,
+        2725
+      ],
+      [
+        11505,
+        2199.2,
+        2725
+      ],
+      [
+        11315,
+        2323,
+        2725
+      ],
+      [
+        11315,
+        2940,
+        2725
+      ],
+      [
+        11385,
+        3050,
+        2725
+      ],
+      [
+        11385,
+        3370,
+        2725
+      ],
+      [
+        11385,
+        3370,
+        2260
+      ],
+      [
+        10245,
+        3370,
+        2260
+      ],
+      [
+        10245,
+        3797,
+        2260
+      ],
+      [
+        10222.5,
+        3842.9,
+        2260
+      ]
+    ],
+    "utilityFixtures": {
+      "bowlTransfer": 167,
+      "washerInstalled": 127.64,
+      "electrical": 456.95,
+      "inverter": 66,
+      "fanRaw": 530.24
+    },
+    "plantFixtures": {
+      "bowlTransfer": 351.3,
+      "washerInstalled": 208,
+      "electrical": 571,
+      "inverter": 108,
+      "fanRaw": 28.17
+    },
+    "coldPairAfterSetting": 31.23,
+    "utilityToHotAfterSetting": 15.99,
+    "plantToHotAfterSetting": 255.48,
+    "inheritedRawHeatGap": 28.4,
+    "toleranceMMFrom25AtExistingUtilityCrossing": 3.17
+  },
+  "hydro": {
+    "raisedBareCarrier": [
+      {
+        "carrierOD": 22,
+        "sleeveClearDiameter": 100,
+        "carrierRaise": 18,
+        "dryBelowCarrier": 5,
+        "topClearanceMM": 21,
+        "maxTrialWaterDepthMM": 52,
+        "centredHalfWidthLmin": 35.36,
+        "cleanLmin": 202.89,
+        "halfWidthLmin": 72.78
+      },
+      {
+        "carrierOD": 28,
+        "sleeveClearDiameter": 100,
+        "carrierRaise": 18,
+        "dryBelowCarrier": 5,
+        "topClearanceMM": 18,
+        "maxTrialWaterDepthMM": 49,
+        "centredHalfWidthLmin": 29.91,
+        "cleanLmin": 183.5,
+        "halfWidthLmin": 66.19
+      }
+    ],
+    "sleeveConstructionMM": {
+      "clearDiameter": 100,
+      "metalWall": 2,
+      "surroundingFitRadial": 3,
+      "formedDiameter": 110
+    },
+    "bareThermalComparisonMM": 579.6,
+    "basis": "Uniform gravity flow. Each branch independently charged with the 60 L/min inherited comparison, not a proven supply maximum. No entry or backed-up tail credit.",
+    "circular100WaterDepthBelow74With5Reserve": 8,
+    "circular100CleanLmin": 4.95,
+    "circular150CleanLminAt30": 98.08,
+    "circular150HalfWidthLminAt30": 38.61,
+    "circular150HalfWidthLminAt33": 46.38,
+    "circular150BoreBoundaryMinMMAtCurrentCentres": 7.5,
+    "supplyComparatorLmin": 60,
+    "noDischargeRejection": true
+  },
+  "fixedResistanceComparison": {
+    "comparatorDemandLmin": 50,
+    "comparatorResidualBar": 1.5,
+    "assumedLowDynamicBar": 5,
+    "productScope": "Megaflo Eco Plus published comparator only; selected plant and house demand are unverified.",
+    "source": "https://www.heatraesadia.com/-/media/themes/heatrae/literature/installation-manuals/megaflo-eco-plus-400_500_570_7032406_issue_02.pdf",
+    "resistanceComparisons": [
+      {
+        "faultStaticBar": 6,
+        "minimumResistanceBarPerSquaredLmin": 0.0016666666666666668,
+        "minimumDynamicBarAtComparatorDemand": 5.67,
+        "minimumDynamicBarAtComparatorPlus6": 6.73,
+        "atTrialDynamicHead": false
+      },
+      {
+        "faultStaticBar": 9,
+        "minimumResistanceBarPerSquaredLmin": 0.0025,
+        "minimumDynamicBarAtComparatorDemand": 7.75,
+        "minimumDynamicBarAtComparatorPlus6": 9.34,
+        "atTrialDynamicHead": false
+      }
+    ],
+    "status": "No credit at the compared dynamic head; all line, elevation and connection losses excluded."
+  },
+  "completed": false
+}

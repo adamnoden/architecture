@@ -62,6 +62,14 @@ export function prepareCurrentDesignCompile(input: unknown) {
   return {
     source,
     plans: () => compileResolvedPlans(resolved, source),
+    structuralBridge: async (trialAxes?: readonly [number, number]) => {
+      const { runStructuralBridge } = await import('./structural.js')
+      return runStructuralBridge(resolved, trialAxes)
+    },
+    structuralActions: async () => {
+      const { runStructuralActions } = await import('./structural.js')
+      return runStructuralActions(resolved)
+    },
     occupiedServices: async () => {
       const { runOccupiedServiceSchedule } = await import('./occupied-services.js')
       return runOccupiedServiceSchedule(resolved)
@@ -69,6 +77,21 @@ export function prepareCurrentDesignCompile(input: unknown) {
     selectedWaterEvent: async () => {
       const { runSelectedWaterEvent } = await import('./selected-water-event.js')
       return runSelectedWaterEvent(resolved)
+    },
+    readCourtIntakeCase: async () => {
+      const { readCourtIntakeCase } = await import('./court-intake.js')
+      return readCourtIntakeCase(resolved)
+    },
+    courtIntake: async (input: unknown) => {
+      const { runCourtIntakeCase } = await import('./court-intake.js')
+      return runCourtIntakeCase(resolved, input)
+    },
+    studyAssembly: async (options: unknown = {}) => {
+      const [{ compileResolvedStudyAssembly }, { drawStudyFloorPlan, drawStudyFloorSection }] = await Promise.all([
+        import('./assemblies/study-floor.js'), import('./assemblies/study-floor-views.js'),
+      ])
+      const assembly = compileResolvedStudyAssembly(resolved, options)
+      return { source, assembly, plan: drawStudyFloorPlan(assembly), section: drawStudyFloorSection(assembly) }
     },
   }
 }
