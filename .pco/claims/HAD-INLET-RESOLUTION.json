@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 29,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "06d37a9b-6592-4eb6-acf2-99328a7000b7",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg15-had"
   },
   "claimedAt": "2026-11-15T13:11:17.741Z",
-  "heartbeatAt": "2026-11-15T13:23:00.621Z",
-  "expiresAt": "2026-11-15T14:08:00.621Z",
+  "heartbeatAt": "2026-11-15T13:38:48.411Z",
+  "expiresAt": "2026-11-15T13:38:48.411Z",
   "branch": "work/zerg15-north-inlet",
   "predecessor": {
     "leaseId": "67a85cbe-fcae-4b02-9c95-2e82d5926eca",
@@ -36,5 +36,7 @@
     "evidence": "PR #1537 exact b735be47311b64c68ba77d50b02bb138ef29139e includes framed bay, separate routes and fitted-wheel draw; 103 HAD checks.",
     "next": "Review exact hosted validation and verify the current head before merge; isolate complete utility/plant evidence."
   },
-  "pr": 1537
+  "pr": 1537,
+  "releasedAt": "2026-11-15T13:38:48.411Z",
+  "releaseReason": "handoff"
 }
