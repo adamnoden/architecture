@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 26,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "f54a5d05-d4eb-434f-a47b-485169d0e133",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg13-had-grade"
   },
   "claimedAt": "2026-11-15T00:29:20.999Z",
-  "heartbeatAt": "2026-11-15T00:30:53.025Z",
-  "expiresAt": "2026-11-15T02:00:53.025Z",
+  "heartbeatAt": "2026-11-15T00:51:21.587Z",
+  "expiresAt": "2026-11-15T00:51:21.587Z",
   "branch": "work/zerg13-had-grade-cabinet",
   "predecessor": {
     "leaseId": "64a3aad1-db83-497a-b6b4-655b2c13f8c3",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "PR #1534 exact 9ecc5761 tree 429a899b on c6fefe51; focused checks and deterministic drawing",
     "next": "Observe exact hosted CI and fresh publication preflight, merge then release"
-  }
+  },
+  "releasedAt": "2026-11-15T00:51:21.587Z",
+  "releaseReason": "handoff"
 }
