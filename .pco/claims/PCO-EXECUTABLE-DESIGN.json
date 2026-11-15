@@ -2,16 +2,20 @@
   "schemaVersion": 1,
   "node": "PCO-EXECUTABLE-DESIGN",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "1411e939-7f21-40d1-9ce3-c156fac0af87",
   "holder": { "kind": "chatgpt", "label": "owner-executable-design-policy" },
   "claimedAt": "2026-11-15T14:53:59.643Z",
-  "heartbeatAt": "2026-11-15T14:53:59.643Z",
-  "expiresAt": "2026-11-15T16:23:59.643Z",
+  "heartbeatAt": "2026-11-15T15:05:35.000Z",
+  "expiresAt": "2026-11-15T15:05:35.000Z",
   "branch": "work/executable-design-policy-20261115",
+  "pr": 1543,
   "checkpoint": {
-    "evidence": "Owner direction and exceptional registration bootstrap recorded in issue #1542; base c82a11ed2ae03486a0825112cb503ff9d30ada71",
-    "next": "Publish instruction, canonical packet and dependency-test changes; require exact CI and canonical publication preflight before merge"
+    "evidence": "PR #1543 head b47275e76f51779be7791d0ad8aa6c6bb6adf5b3, tree 3e2c22f4db26fc7b0af42ccf704fb889b13f1580; five new graph tests; local syntax and exact instruction/programme blob identity checks passed. Hosted run 43727738596 passed packet declaration and graph projection; full CI still pending at handoff.",
+    "next": "Inspect exact CI, reconcile current main, reacquire through the documented registration bootstrap with a fresh generation and declaration, then perform canonical publication preflight on a capable runner before merge.",
+    "blocker": "This connector-only environment cannot run the full checkout or fresh canonical control:merge-check; no merge or runtime compiler implementation is claimed."
   },
-  "note": "Registration-only bootstrap exception under the connector-only runbook, recorded before claim creation. Unknown node intentionally makes automatic dispatch fail closed until registration or release. No other lease is changed."
+  "note": "Owner-directed registration bootstrap recorded in #1542. Released promptly so the not-yet-main node does not keep generic dispatch fail-closed. Other leases unchanged.",
+  "releasedAt": "2026-11-15T15:05:35.000Z",
+  "releaseReason": "handoff"
 }
