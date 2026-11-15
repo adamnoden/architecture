@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "CCR-EDIT-CONTRACT",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "38708fc8-7e16-4e5a-8821-47224285f643",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg16-edit-contract"
   },
   "claimedAt": "2026-11-15T18:40:35.128Z",
-  "heartbeatAt": "2026-11-15T18:54:00.488Z",
-  "expiresAt": "2026-11-15T19:54:00.488Z",
+  "heartbeatAt": "2026-11-15T19:08:40.000Z",
+  "expiresAt": "2026-11-15T19:08:40.000Z",
   "branch": "work/zerg16-edit-current-services",
   "pr": 1550,
   "checkpoint": {
     "evidence": "Exact corrected 5c56e0e4c38851c0f08e4b589a9af81817f673b6; local repository suite passes including unchanged MRA producer receipt, local domain and headless tests passed",
     "next": "Verify both triggered hosted workflows on the corrected head and both fresh lease merge checks before integration."
-  }
+  },
+  "releasedAt": "2026-11-15T19:08:40.000Z",
+  "releaseReason": "completed"
 }
