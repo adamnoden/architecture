@@ -1,42 +1,39 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 33,
-  "state": "released",
-  "leaseId": "ee19a198-ca68-469d-aed4-1b82aa3f7bac",
+  "generation": 34,
+  "state": "claimed",
+  "leaseId": "029c6927-8353-4130-b4bc-c1ea75d7e0c8",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg16-had"
   },
-  "claimedAt": "2026-11-15T16:40:58.518Z",
-  "heartbeatAt": "2026-11-15T16:54:29.167Z",
-  "expiresAt": "2026-11-15T16:54:29.167Z",
+  "claimedAt": "2026-11-15T16:55:07.526Z",
+  "heartbeatAt": "2026-11-15T16:55:07.526Z",
+  "expiresAt": "2026-11-15T17:55:07.526Z",
   "checkpoint": {
-    "evidence": "PR #1545 exact 22607e34f0d30f8220967674a34f64b4c4fbb2d4; lined lower passage, three receivers, covered pressure comparison and HAD 107.",
-    "next": "Verify hosted checks and merged ancestry; preserve unresolved cover support/provider/site and complete utility pickup proof."
+    "evidence": "Cabinet #1545 on main 4b631af5; locally verified dry bowl 789602fc with 108 HAD checks.",
+    "next": "Publish the straight loaded utility comparison and run exact validation; keep native wet kit, supported physical capture and site evidence open."
   },
-  "branch": "work/zerg16-cap-cabinet",
+  "branch": "work/zerg16-shoe-utility",
   "predecessor": {
-    "leaseId": "05c7139c-0edb-4a05-95b4-f60b92d04b70",
-    "generation": 32,
-    "branch": "work/zerg16-cage-plant",
-    "pr": 1544,
+    "leaseId": "ee19a198-ca68-469d-aed4-1b82aa3f7bac",
+    "generation": 33,
+    "branch": "work/zerg16-cap-cabinet",
+    "pr": 1545,
     "checkpoint": {
-      "evidence": "PR #1544 exact bab9fb11737706d183b75a524a4caad212f54df7 for 830 cylinder and 750 buffer, 106 HAD checks and distinct lower G3.",
-      "next": "Verify exact hosted validation and ancestry; finish independent cabinet lower daylight and positive receiving comparison."
+      "evidence": "PR #1545 exact 22607e34f0d30f8220967674a34f64b4c4fbb2d4; lined lower passage, three receivers, covered pressure comparison and HAD 107.",
+      "next": "Verify hosted checks and merged ancestry; preserve unresolved cover support/provider/site and complete utility pickup proof."
     }
   },
   "recoverySource": {
-    "leaseId": "05c7139c-0edb-4a05-95b4-f60b92d04b70",
-    "generation": 32,
-    "branch": "work/zerg16-cage-plant",
-    "pr": 1544,
+    "leaseId": "ee19a198-ca68-469d-aed4-1b82aa3f7bac",
+    "generation": 33,
+    "branch": "work/zerg16-cap-cabinet",
+    "pr": 1545,
     "checkpoint": {
-      "evidence": "PR #1544 exact bab9fb11737706d183b75a524a4caad212f54df7 for 830 cylinder and 750 buffer, 106 HAD checks and distinct lower G3.",
-      "next": "Verify exact hosted validation and ancestry; finish independent cabinet lower daylight and positive receiving comparison."
+      "evidence": "PR #1545 exact 22607e34f0d30f8220967674a34f64b4c4fbb2d4; lined lower passage, three receivers, covered pressure comparison and HAD 107.",
+      "next": "Verify hosted checks and merged ancestry; preserve unresolved cover support/provider/site and complete utility pickup proof."
     }
-  },
-  "pr": 1545,
-  "releasedAt": "2026-11-15T16:54:29.167Z",
-  "releaseReason": "handoff"
+  }
 }
