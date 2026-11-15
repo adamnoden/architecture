@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 31,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "6eaaad56-89e8-4a40-bf76-190d2ef79a84",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg15-had"
   },
   "claimedAt": "2026-11-15T13:58:03.330Z",
-  "heartbeatAt": "2026-11-15T14:00:06.480Z",
-  "expiresAt": "2026-11-15T14:45:06.480Z",
+  "heartbeatAt": "2026-11-15T14:20:54.259Z",
+  "expiresAt": "2026-11-15T14:20:54.259Z",
   "checkpoint": {
     "evidence": "PR #1540 exact 7fb51a3936f6709566ec7328c2333e5f8bf82bc9 tree 847228e9 with widened 620 mm geometry, hot route and obstruction regressions; 105 local HAD checks.",
     "next": "Verify exact hosted CI and merge, then transfer actual captured fixture, valve and pressure requirements without changing graph state."
@@ -36,5 +36,7 @@
       "next": "Verify exact hosted checks and branch ancestry at merge; the fitted product/capture, plant transfer, pressure and material evidence remain required."
     }
   },
-  "pr": 1540
+  "pr": 1540,
+  "releasedAt": "2026-11-15T14:20:54.259Z",
+  "releaseReason": "handoff"
 }
