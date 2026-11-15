@@ -1,22 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "CCR-CURRENT-COMPILE",
-  "generation": 1,
-  "state": "released",
-  "leaseId": "be3c2144-e0cb-4943-8764-26e321d32b73",
+  "generation": 2,
+  "state": "claimed",
+  "leaseId": "a1faedad-fc97-4dba-8985-1e55488ec2e5",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg16-current-compile"
+    "label": "zerg16-unified-current-compile"
   },
-  "claimedAt": "2026-11-15T18:03:28.181Z",
-  "heartbeatAt": "2026-11-15T18:39:55.132Z",
-  "expiresAt": "2026-11-15T18:39:55.132Z",
-  "branch": "work/zerg16-ade-current-compile",
-  "pr": 1549,
-  "checkpoint": {
-    "evidence": "PR #1549 exact 9fa28b2efd8b492f0b009e2f6f8c7df64a9399fb; specialist checkout now includes its pinned evidence commit; targeted architecture/drawing checks reviewed.",
-    "next": "Complete exact hosted repository and specialist proof, run both fresh canonical merge checks, then release."
+  "claimedAt": "2026-11-15T18:41:00.626Z",
+  "heartbeatAt": "2026-11-15T18:41:00.626Z",
+  "expiresAt": "2026-11-15T19:41:00.626Z",
+  "branch": "work/zerg16-edit-current-services",
+  "predecessor": {
+    "leaseId": "be3c2144-e0cb-4943-8764-26e321d32b73",
+    "generation": 1,
+    "branch": "work/zerg16-ade-current-compile",
+    "pr": 1549,
+    "checkpoint": {
+      "evidence": "PR #1549 exact 9fa28b2efd8b492f0b009e2f6f8c7df64a9399fb; specialist checkout now includes its pinned evidence commit; targeted architecture/drawing checks reviewed.",
+      "next": "Complete exact hosted repository and specialist proof, run both fresh canonical merge checks, then release."
+    }
   },
-  "releasedAt": "2026-11-15T18:39:55.132Z",
-  "releaseReason": "handoff"
+  "recoverySource": {
+    "leaseId": "be3c2144-e0cb-4943-8764-26e321d32b73",
+    "generation": 1,
+    "branch": "work/zerg16-ade-current-compile",
+    "pr": 1549,
+    "checkpoint": {
+      "evidence": "PR #1549 exact 9fa28b2efd8b492f0b009e2f6f8c7df64a9399fb; specialist checkout now includes its pinned evidence commit; targeted architecture/drawing checks reviewed.",
+      "next": "Complete exact hosted repository and specialist proof, run both fresh canonical merge checks, then release."
+    }
+  }
 }
