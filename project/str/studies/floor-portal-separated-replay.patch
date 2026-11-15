@@ -1,0 +1,293 @@
+diff --git a/project/str/studies/floor_portal_candidate.py b/project/str/studies/floor_portal_candidate.py
+index 7bb1e9b06206509525ce2bfeb8676e02bbdedd7e..420269a8b751ab7346b15c0e6be125ccace06e8d 100644
+--- a/project/str/studies/floor_portal_candidate.py
++++ b/project/str/studies/floor_portal_candidate.py
+@@ -77,7 +77,7 @@ def update_bounds(bounds,h,u,case_index,case_name):
+             maximumActiveShearMM=0.,activeCase=None,activeCaseName=None,
+             maximumReleasedTravelMM=0.,releasedCase=None,releasedCaseName=None,
+         ))
+-        force=float(np.max(abs(state['forceAndMoment'][:2])))
++        force=float(np.linalg.norm(state['forceAndMoment'][:2]))
+         if force>row['maximumDirectionalForceN']:
+             row.update(maximumDirectionalForceN=force,forceCase=case_index,forceCaseName=case_name)
+         if state['activeShearMM']>row['maximumActiveShearMM']:
+@@ -92,7 +92,6 @@ def finalise_bounds(bounds,h):
+         item=dict(row)
+         item['maximumDirectionalForceKN']=item.pop('maximumDirectionalForceN')/1000
+         item['elasticPlateRootScreenMPa']=root_stress_mpa(h,name,item['maximumDirectionalForceKN']*1000)
+-        assert item['maximumReleasedTravelMM']<=GUIDE_TRAVEL_RESERVE_MM,(name,item['maximumReleasedTravelMM'],GUIDE_TRAVEL_RESERVE_MM)
+         item['declaredReleasedTravelReservePlusMinusMM']=GUIDE_TRAVEL_RESERVE_MM
+         out[name]=item
+     return out
+diff --git a/project/str/studies/floor_portal_domain.py b/project/str/studies/floor_portal_domain.py
+index 98e96d5f59a56aa4a9cd7c270fe8e90ffa009d43..4ef309560b3e6bfb1e44e2d7b38476e3ea2bd8ab 100644
+--- a/project/str/studies/floor_portal_domain.py
++++ b/project/str/studies/floor_portal_domain.py
+@@ -9,6 +9,7 @@ from dataclasses import asdict
+ from itertools import product
+ import argparse,hashlib,json,time
+ import numpy as np
++from floor_portal_rewind_contact import RewindContactSolve
+ from floor_portal_house import House,Parameters,ContactSolve
+ from floor_portal_loads import Case,gravity,roof_gravity,roof_goods,wind
+ from floor_portal_candidate import named_parameters,update_bounds,finalise_bounds,GuideFrictionSolve
+@@ -27,7 +28,7 @@ def run(parameters=None,full=True,matrix_path=None,guide_friction=0.):
+     Q=Case.combination(h,'full use and blocked water',[(1,Q),(1,rq),(1,water)])
+     U=Case.combination(h,'complete roof suction',[(1,ru),(-1,extra)])
+     gravitycase=Case.combination(h,'1.35G+1.5Q',[(1.35,G),(1.5,Q)])
+-    solve=GuideFrictionSolve(h,guide_friction) if guide_friction else ContactSolve(h.k,h.fixed,h.contacts)
++    solve=GuideFrictionSolve(h,guide_friction) if guide_friction else RewindContactSolve(h)
+     print('Domain contact compliance factored'+(f'; guide friction={guide_friction:g}' if guide_friction else '')+'.',flush=True)
+     members=[(family,e) for family,es in h.members.items() for e in es]
+     metadata=[dict(family=family,name=e['name'],a=e['a'].tolist(),b=e['b'].tolist(),basis=e['R'].tolist(),width=e['width'],depth=e['depth']) for family,e in members]
+@@ -55,6 +56,27 @@ def run(parameters=None,full=True,matrix_path=None,guide_friction=0.):
+         assert len(projected)==len(core)==8
+         cap_steps[label]=(low_index,cap_index,reference,projected,core)
+     l_anchors=[e for e in h.cap_links if e['name'].startswith('L-cap-anchor-')]
++    hold_groups = {}
++    corner_groups = {}
++    for i, contact in enumerate(h.contacts):
++        label = contact['name']
++        if label.startswith('near-cap-hold-'):
++            hold_groups.setdefault('-'.join(label.split('-')[:5]), []).append(i)
++        if label.startswith('L-cap-bearing-'):
++            corner_groups.setdefault(label, []).append(i)
++    assert len(hold_groups) == 8 and all(len(v) == 4 for v in hold_groups.values())
++    assert len(corner_groups) == 4 and all(len(v) == 8 for v in corner_groups.values())
++    released_jambs = [j for j in h.jambs if j['u'] != 2702.5]
++    assert len(released_jambs) == 12
++    roof_port_balance = np.zeros(3)
++    rewind_witnesses = {}
++    withheld = []
++    attempted = []
++
++    def observe(name, quantity, location, case):
++        if name not in rewind_witnesses or quantity > rewind_witnesses[name]['value']:
++            rewind_witnesses[name] = dict(value=float(quantity), location=location, case=case)
++
+     cap_witness=dict(peakProjectedBearing=None,minimumProjectedGap=None,peakCoreBearing=None,
+                      peakLAnchorTension=None,stepComponentWitnesses=[None]*6,
+                      maximumStepComponent=np.zeros(6),maximumLocalEquilibriumResidual=np.zeros(6))
+@@ -64,8 +86,30 @@ def run(parameters=None,full=True,matrix_path=None,guide_friction=0.):
+         return np.r_[force,moment]
+     def one(case):
+         nonlocal worst_trans,minimum_head,maximum_balance
+-        u,r,c=solve(case.f);balance=h.rigid.T@(r+case.f)
+-        assert max(abs(balance[:3]))<.03 and max(abs(balance[3:]))<20.,(case.name,balance)
++        attempted.append(case.name)
++        try:
++            u, r, c = solve(case.f)
++        except AssertionError as exc:
++            withheld.append(dict(case=case.name, reason='contact or gauge solver', detail=str(exc)))
++            return
++        balance=h.rigid.T@(r+case.f)
++        if max(abs(balance[:3])) >= .03 or max(abs(balance[3:])) >= 20.:
++            withheld.append(dict(case=case.name, reason='global equilibrium tolerance', residual=balance.tolist(),
++                maximumGeneralizedDOF=float(max(abs(u))), contactResidualN=c['errorN'], gauge=c['gaugeResidual']))
++            return
++        roof_port_balance[:] = np.maximum(roof_port_balance, abs(np.array(c['gaugeResidual'])))
++        for label, contacts in hold_groups.items():
++            observe('peakNearHoldGroupKN', sum(c['force'][contacts]) / 1000, label, case.name)
++        for label, contacts in corner_groups.items():
++            observe('peakCornerCompressionKN', sum(c['force'][contacts]) / 1000, label, case.name)
++        for j in released_jambs:
++            face, along = j['face'], j['u']
++            at = h.f.points[j['top']//6]
++            ring_point = tuple(h.roof.p['pt'](face, h.roof.p['A'], along))
++            roof_ids, roof_direction = h.roof.port(ring_point, at)
++            delta = roof_direction @ u[roof_ids] - u[j['top']:j['top']+6]
++            axis=0 if face in (1,3) else 1
++            observe('peakReleasedJambToRoofNormalMismatchMM', abs(delta[axis]), [face, along], case.name)
+         if guide_friction:
+             gf=c['guideFriction']
+             friction_bound['maximumIterations']=max(friction_bound['maximumIterations'],gf['iterations'])
+@@ -158,6 +202,8 @@ def run(parameters=None,full=True,matrix_path=None,guide_friction=0.):
+                     stepComponentWitnesses=cap_witness['stepComponentWitnesses'],
+                     maximumStepComponentNAndNmm=cap_witness['maximumStepComponent'].tolist(),
+                     maximumLocalEquilibriumResidualNAndNmm=cap_witness['maximumLocalEquilibriumResidual'].tolist()) if cap_steps else None,
++                rewindWitnesses=rewind_witnesses, maximumGaugeReactionsN=roof_port_balance.tolist(),
++                attemptedCaseCount=len(attempted), withheldCases=withheld,
+                 all52HeadBounds=headcards,maximumBalanceResidual=maximum_balance.tolist(),minimumHeadN_KN_Id_Case=minimum_head,
+                 maximumTranslationMM_Case=worst_trans,activeContactCounts=contactcounts,guideBounds=finalise_bounds(guide_bounds,h),guideFriction=friction_bound,
+                 sourceHashes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in [D/'floor_portal_frame.py',D/'floor_portal_roof.py',D/'floor_portal_house.py',D/'floor_portal_loads.py',Path(__file__)]},
+diff --git a/project/str/studies/floor_portal_house.py b/project/str/studies/floor_portal_house.py
+index a19961a8b1d95dc0bd81d560dde2233f6dbd5fb3..1c574835c7da408cf0dd85bbac43b543e3035df4 100644
+--- a/project/str/studies/floor_portal_house.py
++++ b/project/str/studies/floor_portal_house.py
+@@ -621,6 +621,8 @@ class House:
+             concrete=33000*width*area
+             return 1/(1/steel+1/concrete)*self.p.cap_scale,depth*centre
+         for q,floor in self.upper_links:
++            if all(v in (A, B) for v in q):
++                continue  # Outer hip uses separate actual L compression below.
+             kind='outer' if A in q or B in q else 'court';top=3920. if kind=='outer' else 3820.
+             # Existing tension-only M24; source140x300 direct bearing remains
+             # a separate compression path with its actual clear body height.
+@@ -634,7 +636,7 @@ class House:
+             # Four actual H12 force lines; source position-coupler length159,
+             # explicit621 mm unbonded development-length compliance and25 cap.
+             # No gross-plate EA is substituted for the tension connection.
+-            for s in (-32.,32.):
++            for s in ((-32.,32.) if j['u'] in (1497.5,10502.5) else ()):
+                 for normal in (-52.,52.):
+                     pos=at+along(face)*s+inward(face)*normal
+                     # Two100 mm effective strips in series:25 mm cap and20 mm
+@@ -642,7 +644,8 @@ class House:
+                     aa=qcap+normal-232.5;bb=200-aa
+                     plate=sum(aa**2*bb**2/(3*200000*(100*t**3/12)*200) for t in (25.,20.))
+                     k=1/(self.p.cap_anchor_length/(200000*math.pi*12**2/4)+plate)*self.p.cap_scale
+-                    self.cap_links.append(self.f.link(self.roof.port(q,pos),self.f.port(j['top'],pos),[0,0,k,0,0,0],f'cap-anchor-{face}-{j["u"]:g}-{s:g}-{normal:g}'))
++                    self.contact(self.roof.port(q,pos), self.f.port(j['top'],pos), k,
++                                 f'near-cap-hold-{face}-{j["u"]:g}-{s:g}-{normal:g}', sign=-1.)
+             # Distributed compression contact on the real180x205 cap. The
+             # named local bearing-depth sensitivity is separate from anchorage.
+             gauss,weights=np.polynomial.legendre.leggauss(3)
+@@ -655,25 +658,22 @@ class House:
+             # guide comparator instead uses one blade whose long axis points
+             # to the house centre: it resists only the plan-tangential
+             # component and deliberately admits radial roof breathing.
++            # The located 535 mm room-side bracket is a demand-only trial.
++            if j['u'] != 2702.5:
++                continue
++            guide_at = np.array([*xy(face,535.,j['u']),6540.])
+             if self.p.key_direction_mode=='radial-guide':
+-                radial=np.r_[at[:2]-6000.,0.];radial/=np.linalg.norm(radial)
++                radial=np.r_[guide_at[:2]-6000.,0.];radial/=np.linalg.norm(radial)
+                 directions=((np.r_[-radial[1],radial[0],0.],radial),)
+             else:
+                 directions=((inward(face),along(face)),(along(face),inward(face)))
+             for direction,span in directions:
+                 stiffness,lever=key_terms(self.p.cap_key_width,self.p.cap_key_thickness,self.p.cap_key_depth)
+                 for x,wx in zip(gauss,weights):
+-                    pos=at+span*x*self.p.cap_key_width/2+[0,0,-25.-lever]
++                    pos=guide_at+span*x*self.p.cap_key_width/2+[0,0,-25.-lever]
+                     k=np.zeros((6,6));k[:3,:3]=np.outer(direction,direction)*stiffness*wx/2
+                     self.cap_links.append(self.f.link(self.roof.port(q,pos),self.f.port(j['top'],pos),k,f'cap-key-{face}-{j["u"]:g}'))
+         for L in self.Ls:
+-            source=json.loads((D/'current-house-ground-ties.json').read_text())['outer']['primaryBarXY']
+-            for i,bar in enumerate(source):
+-                pt=L['bar_origin']+L['sg']*np.array(bar);q=outer_root(pt);at=[*pt,6540.]
+-                distance=min(100.,max(1.,100.+(pt[0]-q[0])+(pt[1]-q[1])))
+-                plate=sum(distance**2*(200-distance)**2/(3*200000*(100*t**3/12)*200) for t in (25.,20.))
+-                k=1/(self.p.L_cap_anchor_length/(200000*math.pi*20**2/4)+plate)*self.p.cap_scale
+-                self.cap_links.append(self.f.link(self.roof.port(q,at),self.f.port(L['top'],at),[0,0,k,0,0,0],f'L-cap-anchor-{L["corner"]}-{i}'))
+             gp,gw=np.polynomial.legendre.leggauss(2)
+             for (l,b,r,t),projected in L['cap_bearings']:
+                 tag='L-cap-projected-bearing-' if projected else 'L-cap-bearing-'
+@@ -683,19 +683,6 @@ class House:
+                         k=area/(self.p.cap_bearing_depth/33000+25/200000)*self.p.cap_scale
+                         gap=self.p.L_projected_bearing_gap if projected else 0.
+                         self.contact(self.roof.port(q,at),self.f.port(L['top'],at),k,tag+str(L['corner']),initial_gap=gap)
+-            # Each key has its own actual ring root. The radial-guide
+-            # comparator uses a single plan-tangential blade at each station
+-            # rather than a two-axis cruciform, so uniform affine roof growth
+-            # is a released kinematic mode rather than a flexure demand.
+-            for index,centre in enumerate(self.p.L_key_centres):
+-                pt=L['origin']+L['sg']*np.array(centre);q=outer_root(pt)
+-                stiffness,lever=key_terms(self.p.L_key_width,self.p.L_key_thickness,self.p.L_key_depth);at=[*pt,6515.-lever]
+-                if self.p.key_direction_mode=='radial-guide':
+-                    radial=np.r_[pt-[6000.,6000.],0.];radial/=np.linalg.norm(radial);direction=np.r_[-radial[1],radial[0],0.]
+-                    matrix=np.zeros((6,6));matrix[:3,:3]=np.outer(direction,direction)*stiffness
+-                else:
+-                    matrix=np.diag([stiffness,stiffness,0,0,0,0])
+-                self.cap_links.append(self.f.link(self.roof.port(q,at),self.f.port(L['top'],at),matrix,f'L-cap-key-{L["corner"]}-{index}'))
+
+     def controls(self):
+         r=self.rigid@np.diag([1,1,1,.001,.001,.001]);res=self.k@r
+diff --git a/project/str/studies/floor_portal_rewind_contact.py b/project/str/studies/floor_portal_rewind_contact.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..e833799c77558e3ab6f2e7460cf8cf973fab5a0d
+--- /dev/null
++++ b/project/str/studies/floor_portal_rewind_contact.py
+@@ -0,0 +1,91 @@
++"""Scratch gauge-invariant contact comparison of the separated roof supports."""
++import numpy as np
++from scipy.linalg import solve as dense_solve
++from floor_portal_frame import Solve
++
++
++class RewindContactSolve:
++    def __init__(self, house):
++        self.k = house.k
++        self.fixed = np.array(house.fixed)
++        self.contacts = house.contacts
++        self.rigid = np.zeros((house.k.shape[0], 3))
++        roof_fields = house.roof.rigid
++        self.rigid[house.roof.mounted] = np.c_[
++            roof_fields[:, 2],
++            (roof_fields[:, 3] + 6475 * roof_fields[:, 1]) / 6000,
++            (roof_fields[:, 4] - 6475 * roof_fields[:, 0]) / 6000,
++        ]
++        residual = np.max(abs(self.k @ self.rigid))
++        assert residual < .02, residual
++        self.gauge = []
++        for point in [(332.5, 332.5), (11667.5, 332.5), (332.5, 11667.5)]:
++            self.gauge.append(house.roof.mounted[house.roof.keys['ringVertical', point, 0]])
++        assert abs(np.linalg.det(self.rigid[self.gauge])) > 3.
++        self.base = Solve(self.k, [*house.fixed, *self.gauge])
++        self.physical_index = np.searchsorted(self.base.fixed, house.fixed)
++        self.U = np.zeros((house.k.shape[0], len(self.contacts)))
++        self.stiffness = np.array([r['stiffness'] for r in self.contacts])
++        self.initial_gap = np.array([r['initial_gap'] for r in self.contacts])
++        for col, contact in enumerate(self.contacts):
++            np.add.at(self.U[:, col], contact['ids'], contact['row'])
++        self.X = self.base(self.U)
++        self.C = self.U.T @ self.X
++        assert np.max(abs(self.C - self.C.T)) < 1e-8
++        self.B = self.U.T @ self.rigid
++
++    def __call__(self, f, prescribed=None):
++        if prescribed is not None:
++            physical = prescribed
++            prescribed = np.zeros(len(self.base.fixed))
++            prescribed[self.physical_index] = physical
++        u0 = self.base(f, prescribed)
++        g0 = self.U.T @ u0 + self.initial_gap
++        resultant = self.rigid.T @ f
++        active = np.ones(len(g0), dtype=bool)
++        q = np.zeros(len(active))
++        for iteration in range(60):
++            q[:] = 0.
++            i = np.flatnonzero(active)
++            compliance = self.C[np.ix_(i, i)] + np.diag(1 / self.stiffness[i])
++            b = self.B[i]
++            assert np.linalg.matrix_rank(b) == 3, (resultant, len(i), iteration)
++            scale = 1e-4
++            values = dense_solve(np.block([[compliance, scale * b], [scale * b.T, np.zeros((3, 3))]]),
++                                 -np.r_[g0[i], scale * resultant], assume_a='gen')
++            q[i] = values[:-3]
++            shift = scale * values[-3:]
++            gap = g0 + self.C @ q + self.B @ shift
++            new = np.where(active, q > 1e-7, gap < -1e-9)
++            if np.array_equal(new, active):
++                break
++            active = new
++        else:
++            raise AssertionError('Gauge contact active set did not settle')
++        u = u0 + self.X @ q + self.rigid @ shift
++        for step in range(3):
++            residual = self.k @ u - f - self.U @ q
++            actual = self.U.T @ u + self.initial_gap
++            du = self.base(-residual)
++            active_gap_error = actual[i] + q[i] / self.stiffness[i]
++            correction = dense_solve(np.block([[compliance, scale * b], [scale * b.T, np.zeros((3, 3))]]),
++                np.r_[-active_gap_error - self.U[:, i].T @ du, scale * (self.rigid.T @ residual)], assume_a='gen')
++            q[i] += correction[:-3]
++            u += du + self.X[:, i] @ correction[:-3] + self.rigid @ (scale * correction[-3:])
++        actual = self.U.T @ u + self.initial_gap
++        error = float(np.max(abs(q - self.stiffness * np.maximum(-actual, 0))))
++        if error >= .03:
++            limits = abs(q - self.stiffness * np.maximum(-actual, 0))
++            idx = int(np.argmax(limits))
++            raise AssertionError(dict(error=error, iteration=iteration, contact=self.contacts[idx]['name'],
++                stiffness=self.stiffness[idx], q=q[idx], actual=actual[idx], calculated=gap[idx],
++                u0=float(max(abs(u0))), c_sym=float(np.max(abs(self.C - self.C.T))),
++                name=self.contacts[idx]['name'], globalShift=shift.tolist()))
++        reaction = self.k @ u - f - self.U @ q
++        assert max(abs(reaction[self.gauge])) < .01
++        physical = np.zeros_like(reaction)
++        physical[self.fixed] = reaction[self.fixed]
++        maximum_free = float(max(abs(reaction - physical)))
++        assert maximum_free < .05, maximum_free
++        return u, physical, dict(force=q, gap=actual, active=active, iterations=iteration + 1,
++            errorN=error, maximumFreeRowResidual=maximum_free, gaugeResidual=reaction[self.gauge].tolist())

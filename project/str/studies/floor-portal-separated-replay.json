@@ -1,0 +1,165 @@
+{
+  "signed-quick": {
+    "attemptedCases": 21,
+    "acceptedCases": 15,
+    "withheldCountsByReason": {
+      "global equilibrium tolerance": 6
+    },
+    "firstWithheldCase": {
+      "case": "1.35G+1.5Q; downward roof pressure; W(0, 1);court=False;goodsZ=7400",
+      "reason": "global equilibrium tolerance",
+      "residual": [
+        0.0,
+        0.005,
+        -0.0,
+        -32.8307,
+        0.0496,
+        40.6533
+      ],
+      "maximumGeneralizedDOF": 83.8423,
+      "contactResidualN": 0.0,
+      "gauge": [
+        0.0,
+        -0.0,
+        0.0
+      ]
+    },
+    "withheldCaseNames": [
+      "1.35G+1.5Q; downward roof pressure; W(0, 1);court=False;goodsZ=7400",
+      "zero favourable G; U; W(0, 4);court=False;goodsZ=7400",
+      "zero favourable G; U; W(1, 1);court=False;goodsZ=7400",
+      "1.35G+1.5Q; roof suction; W(1, 1);court=False;goodsZ=7400",
+      "zero favourable G; U; W(4, 4);court=False;goodsZ=7400",
+      "1.35G+1.5Q; downward roof pressure; W(4, 4);court=False;goodsZ=7400"
+    ],
+    "maximumAcceptedGlobalResidualNAndNmm": [
+      0.00258,
+      0.00095,
+      2e-05,
+      6.31607,
+      16.97879,
+      17.32192
+    ],
+    "maximumAcceptedVirtualGaugeResidualN": [
+      0.0,
+      1e-06,
+      1e-06
+    ],
+    "peakAcceptedMinimumHeadReactionKN": [
+      -112.4897,
+      "P27",
+      "zero favourable G; U; W(1, 0);court=False;goodsZ=7400"
+    ],
+    "acceptedGuidePeaks": {
+      "cap-key-0-2702.5": {
+        "forceKN": 56.8027,
+        "forceCase": "1.35G+1.5Q; roof suction; W(4, 0);court=False;goodsZ=7400",
+        "releasedTravelMm": 139.0599,
+        "travelCase": "1.35G+1.5Q; roof suction; W(4, 4);court=False;goodsZ=7400",
+        "rootScreenMPa": 757.369
+      },
+      "cap-key-1-2702.5": {
+        "forceKN": 90.9907,
+        "forceCase": "1.35G+1.5Q; downward roof pressure; W(1, 1);court=False;goodsZ=7400",
+        "releasedTravelMm": 100.0616,
+        "travelCase": "zero favourable G; U; W(0, 1);court=False;goodsZ=7400",
+        "rootScreenMPa": 1213.209
+      },
+      "cap-key-2-2702.5": {
+        "forceKN": 55.7128,
+        "forceCase": "1.35G+1.5Q; downward roof pressure; W(1, 0);court=False;goodsZ=7400",
+        "releasedTravelMm": 129.4951,
+        "travelCase": "1.35G+1.5Q; downward roof pressure; W(1, 1);court=False;goodsZ=7400",
+        "rootScreenMPa": 742.838
+      },
+      "cap-key-3-2702.5": {
+        "forceKN": 82.5374,
+        "forceCase": "1.35G+1.5Q; roof suction; W(4, 4);court=False;goodsZ=7400",
+        "releasedTravelMm": 95.7387,
+        "travelCase": "zero favourable G; U; W(0, 1);court=False;goodsZ=7400",
+        "rootScreenMPa": 1100.498
+      }
+    },
+    "acceptedOtherPeaks": {
+      "peakNearHoldGroupKN": {
+        "value": 174.0775,
+        "location": "near-cap-hold-1-1497.5",
+        "case": "1.35G+1.5Q; roof suction; W(4, 4);court=False;goodsZ=7400"
+      },
+      "peakCornerCompressionKN": {
+        "value": 127.1075,
+        "location": "L-cap-bearing-(11667.5, 332.5)",
+        "case": "1.35G+1.5Q; downward roof pressure; W(0, 4);court=False;goodsZ=7400"
+      },
+      "peakReleasedJambToRoofNormalMismatchMM": {
+        "value": 98.0838,
+        "location": [
+          0,
+          1497.5
+        ],
+        "case": "1.35G+1.5Q; roof suction; W(4, 4);court=False;goodsZ=7400"
+      }
+    }
+  },
+  "movement": {
+    "cases": 110,
+    "maximumGlobalResidualNAndNmm": [
+      6e-05,
+      0.0001,
+      4e-05,
+      0.69196,
+      0.39234,
+      1.42616
+    ],
+    "maximumVirtualGaugeResidualN": [
+      2e-06,
+      1e-06,
+      2e-06
+    ],
+    "peaks": {
+      "headTensionKN": [
+        1455.7387,
+        "P10",
+        "P10 -1 mm"
+      ],
+      "cornerTopPlanDisplacementMm": [
+        2.2996,
+        [
+          11667.5,
+          11667.5
+        ],
+        "P10 +1 mm"
+      ]
+    },
+    "guidePeaks": {
+      "cap-key-0-2702.5": {
+        "forceKN": 0.369,
+        "forceCase": "P17 +1 mm",
+        "releasedTravelMm": 4.8695,
+        "travelCase": "roof actual axial member free strain-0.00072",
+        "rootScreenMPa": 4.92
+      },
+      "cap-key-1-2702.5": {
+        "forceKN": 0.3691,
+        "forceCase": "P17 +1 mm",
+        "releasedTravelMm": 4.9976,
+        "travelCase": "roof actual axial member free strain-0.00072",
+        "rootScreenMPa": 4.921
+      },
+      "cap-key-2-2702.5": {
+        "forceKN": 0.369,
+        "forceCase": "P17 +1 mm",
+        "releasedTravelMm": 4.8256,
+        "travelCase": "roof actual axial member free strain0.00072",
+        "rootScreenMPa": 4.92
+      },
+      "cap-key-3-2702.5": {
+        "forceKN": 0.3691,
+        "forceCase": "P17 +1 mm",
+        "releasedTravelMm": 4.7896,
+        "travelCase": "roof reference-coordinate affine free strain-0.00072",
+        "rootScreenMPa": 4.921
+      }
+    }
+  }
+}
