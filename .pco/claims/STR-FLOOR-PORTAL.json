@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 23,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "b4fa7f3c-a4c6-40a7-8b14-200c2f93fe83",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg13-heel-local-insert"
   },
   "claimedAt": "2026-11-14T23:49:27.269Z",
-  "heartbeatAt": "2026-11-15T00:13:18.305Z",
-  "expiresAt": "2026-11-15T01:43:18.305Z",
+  "heartbeatAt": "2026-11-15T00:28:31.682Z",
+  "expiresAt": "2026-11-15T00:28:31.682Z",
   "branch": "work/zerg13-portal-inlet",
   "predecessor": {
     "leaseId": "d0e13c8b-fa7a-4b53-b4b3-a5e85bbf4354",
@@ -36,5 +36,7 @@
     "evidence": "PR #1533 exact c4e9fa79, combined tree c2f440f5 and local STR exact 8aaf4ce5 focused and full STR tests passed.",
     "next": "Await all exact hosted checks, pass dual publication preflight, merge with expected head and release both leases."
   },
-  "pr": 1533
+  "pr": 1533,
+  "releasedAt": "2026-11-15T00:28:31.682Z",
+  "releaseReason": "handoff"
 }
