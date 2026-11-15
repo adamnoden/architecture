@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 28,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "b75d2504-51cc-4eda-9455-199fdfc6fbed",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg15-str-arch"
   },
   "claimedAt": "2026-11-15T13:58:50.503Z",
-  "heartbeatAt": "2026-11-15T14:00:13.283Z",
-  "expiresAt": "2026-11-15T14:45:13.283Z",
+  "heartbeatAt": "2026-11-15T14:20:48.481Z",
+  "expiresAt": "2026-11-15T14:20:48.481Z",
   "branch": "work/zerg15-arch-head-clearance",
   "predecessor": {
     "leaseId": "484c33ce-4b2d-4dff-801d-cc901835a9bf",
@@ -39,5 +39,7 @@
     "evidence": "PR #1540 exact 7fb51a3936f6709566ec7328c2333e5f8bf82bc9; straight north hold-down, paired garden ties and shallow cap fit",
     "next": "Observe exact-head CI and merge while owned",
     "blocker": "Current floor cage redesign, retaining shoe, cap development and 52-head coupled assembly remain open"
-  }
+  },
+  "releasedAt": "2026-11-15T14:20:48.481Z",
+  "releaseReason": "handoff"
 }
