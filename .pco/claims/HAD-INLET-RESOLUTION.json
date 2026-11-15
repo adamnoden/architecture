@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 25,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "64a3aad1-db83-497a-b6b4-655b2c13f8c3",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg13-had-cabinet"
   },
   "claimedAt": "2026-11-14T23:49:46.729Z",
-  "heartbeatAt": "2026-11-15T00:13:22.305Z",
-  "expiresAt": "2026-11-15T01:43:22.305Z",
+  "heartbeatAt": "2026-11-15T00:28:26.515Z",
+  "expiresAt": "2026-11-15T00:28:26.515Z",
   "branch": "work/zerg13-portal-inlet",
   "predecessor": {
     "leaseId": "4f32b8b5-3783-4b0b-9aae-04ba7e46af54",
@@ -36,5 +36,7 @@
     "evidence": "PR #1533 exact c4e9fa79 local combined tree c2f440f5; 96 HAD, MRA and deterministic receipts",
     "next": "Wait for full exact CI, joint fresh preflights and expected-head merge"
   },
-  "pr": 1533
+  "pr": 1533,
+  "releasedAt": "2026-11-15T00:28:26.515Z",
+  "releaseReason": "handoff"
 }
