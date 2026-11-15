@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="570" viewBox="0 0 1060 570" role="img" aria-labelledby="title desc">
+<title id="title">Cabinet wet boundary and independent daylight spill</title>
+<desc id="desc">East-west projection of retained dry sill, raised maintenance drawer, independent daylight water path and planned captured first rest.</desc>
+<style>text{fill:#223d39;font-family:sans-serif;font-size:16px}.title{font-size:28px;font-weight:bold}.water{fill:#2a5172}.small{font-size:13px}</style>
+<rect width="1060" height="570" fill="#f5f2e8"/>
+<text x="30" y="45" class="title">A permanent wet enclosure with a separate daylight spill</text>
+<text x="30" y="73" class="">Independent lower pipe outlets are shown dashed. House coordinates in millimetres.</text>
+<rect x="329.6590909090909" y="243.84615384615387" width="118.06818181818181" height="157.69230769230768" fill="#e1dccc" stroke="#627473"/>
+<rect x="329.6590909090909" y="128.46153846153848" width="118.06818181818181" height="73.07692307692307" fill="#e1dccc" stroke="#627473"/>
+<rect x="242.04545454545453" y="236.79416564762454" width="87.61363636363635" height="87.8212189677601" fill="#d5e5e9" stroke="#627473"/>
+<line x1="242.04545454545453" y1="324.61538461538464" x2="242.04545454545453" y2="213.0769230769231" stroke="#384943" stroke-width="3"/>
+<rect x="245.45454545454544" y="172.6923076923077" width="80.68181818181819" height="30.769230769230774" fill="#9ec6be" stroke="#627473"/>
+<line x1="329.6590909090909" y1="243.84615384615387" x2="839.7727272727273" y2="261.11153846153843" stroke="#245c78" stroke-width="3"/>
+<line x1="209.0909090909091" y1="176.53846153846155" x2="287.5" y2="176.53846153846155" stroke="#a45d3f" stroke-width="3"/>
+<line x1="242.04545454545453" y1="326.53846153846155" x2="504.5454545454545" y2="330.38461538461536" stroke="#658a9c" stroke-dasharray="6 5" stroke-width="2"/>
+<line x1="242.04545454545453" y1="303.46153846153845" x2="504.5454545454545" y2="307.3076923076923" stroke="#658a9c" stroke-dasharray="6 5" stroke-width="2"/>
+<text x="30" y="405" class="">Z395 continuous dry sill</text>
+<text x="30" y="430" class="">Z420–500 removable service drawer</text>
+<text x="30" y="455" class="">X11113 captured first rest after 272 mm draw</text>
+<text x="590" y="405" class="water">Z315 daylight crest at Y3040–3260</text>
+<text x="590" y="430" class="water">Z270.11 open lip above independent receiver</text>
+<text x="590" y="455" class="water">Z333.34 at 30 L/min, half-clear ideal throat</text>
+<path d="M30 487 H1030" stroke="#bfb9a7"/>
+<text x="30" y="523" class="small">Pre-site section. Actual pressure capture, support, outlet independence and installation details remain open.</text>
+</svg>

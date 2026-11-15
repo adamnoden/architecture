@@ -166,9 +166,12 @@ retires the shared hip heel, through-collars and radial corner cassette. The
 [separated support replay](floor-portal-separate-support-replay.md) also rejects
 the four-point room-side guide retrofit. Redraw independently braced wall heads
 supporting tied roof frames or segments with deliberate fixed restraints and a
-defined movement route. Resolve each released wall head and finite collector
-transfer before the joined replay. The earlier joints and guide layout remain
-adverse controls. Both final gates still depend on a verified successor.
+defined movement route. The [fixed wall-head comparison](floor-portal-fixed-wall-head.md)
+reserves the existing band footprint and starts the next drawn comparison with
+a 100 mm raised roof datum. Connect every actual receiving wall head, vertical
+seat and lateral route before the joined replay. The earlier joints and guide
+layout remain adverse controls. Both final gates still depend on a verified
+successor.
 
 The registration is the owning correction exposed by ROF-RWT-GATE, not execution
 of the new structural packet. STR-FLOOR-PORTAL requires its own ordinary
