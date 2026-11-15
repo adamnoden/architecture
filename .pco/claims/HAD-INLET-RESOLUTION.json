@@ -1,42 +1,39 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 30,
-  "state": "released",
-  "leaseId": "82bb343b-8be1-476d-9ad9-a4170ca64c72",
+  "generation": 31,
+  "state": "claimed",
+  "leaseId": "6eaaad56-89e8-4a40-bf76-190d2ef79a84",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg15-had"
   },
-  "claimedAt": "2026-11-15T13:39:30.395Z",
-  "heartbeatAt": "2026-11-15T13:57:29.440Z",
-  "expiresAt": "2026-11-15T13:57:29.440Z",
+  "claimedAt": "2026-11-15T13:58:03.330Z",
+  "heartbeatAt": "2026-11-15T13:58:03.330Z",
+  "expiresAt": "2026-11-15T14:43:03.330Z",
   "checkpoint": {
-    "evidence": "PR #1538 exact head 8d39f225b2d02698a33051d905a58cb1604c0826, tree 89063818; relieved complete utility transport geometry and release candidate with 104 HAD checks.",
-    "next": "Verify exact hosted checks and branch ancestry at merge; the fitted product/capture, plant transfer, pressure and material evidence remain required."
+    "evidence": "Verified utility cutover #1538 at c7263b4a; local 620 measured design 2d790e9f with 105 HAD checks.",
+    "next": "Publish and exact-head validate the combined utility width and north arch head proposal; carry fitted capture, pressure and site evidence boundaries."
   },
-  "branch": "work/zerg15-joints-utility",
+  "branch": "work/zerg15-arch-head-clearance",
   "predecessor": {
-    "leaseId": "06d37a9b-6592-4eb6-acf2-99328a7000b7",
-    "generation": 29,
-    "branch": "work/zerg15-north-inlet",
-    "pr": 1537,
+    "leaseId": "82bb343b-8be1-476d-9ad9-a4170ca64c72",
+    "generation": 30,
+    "branch": "work/zerg15-joints-utility",
+    "pr": 1538,
     "checkpoint": {
-      "evidence": "PR #1537 exact b735be47311b64c68ba77d50b02bb138ef29139e includes framed bay, separate routes and fitted-wheel draw; 103 HAD checks.",
-      "next": "Review exact hosted validation and verify the current head before merge; isolate complete utility/plant evidence."
+      "evidence": "PR #1538 exact head 8d39f225b2d02698a33051d905a58cb1604c0826, tree 89063818; relieved complete utility transport geometry and release candidate with 104 HAD checks.",
+      "next": "Verify exact hosted checks and branch ancestry at merge; the fitted product/capture, plant transfer, pressure and material evidence remain required."
     }
   },
   "recoverySource": {
-    "leaseId": "06d37a9b-6592-4eb6-acf2-99328a7000b7",
-    "generation": 29,
-    "branch": "work/zerg15-north-inlet",
-    "pr": 1537,
+    "leaseId": "82bb343b-8be1-476d-9ad9-a4170ca64c72",
+    "generation": 30,
+    "branch": "work/zerg15-joints-utility",
+    "pr": 1538,
     "checkpoint": {
-      "evidence": "PR #1537 exact b735be47311b64c68ba77d50b02bb138ef29139e includes framed bay, separate routes and fitted-wheel draw; 103 HAD checks.",
-      "next": "Review exact hosted validation and verify the current head before merge; isolate complete utility/plant evidence."
+      "evidence": "PR #1538 exact head 8d39f225b2d02698a33051d905a58cb1604c0826, tree 89063818; relieved complete utility transport geometry and release candidate with 104 HAD checks.",
+      "next": "Verify exact hosted checks and branch ancestry at merge; the fitted product/capture, plant transfer, pressure and material evidence remain required."
     }
-  },
-  "pr": 1538,
-  "releasedAt": "2026-11-15T13:57:29.440Z",
-  "releaseReason": "handoff"
+  }
 }
