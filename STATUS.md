@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 5 · **Active:** 0 · **Blocked:** 31 · **Held:** 2 · **Done:** 132 · **Cancelled:** 0
+**Structurally ready:** 6 · **Active:** 0 · **Blocked:** 39 · **Held:** 2 · **Done:** 133 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -21,6 +21,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
+| `CCR-CURRENT-SOURCE` | Implement one versioned current-design snapshot and inventory active consumers | CCR / HRS | CCR-CURRENT-COMPILE, ADE-MODEL |
 | `HAD-INLET-RESOLUTION` | Resolve the selected incoming-water route and isolation station | HAD / MAT / IAS | — |
 | `STR-FLOOR-PORTAL` | Resolve the floor collector and portal load path before house selection | STR | ROF-RWT-GATE |
 | `DPL-COMMISSION` | Receive owner-nominated real plot and authorised assessment scope | DPL | DPL-SITE-ASSESSMENT |
@@ -39,6 +40,14 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Direct blockers |
 |---|---|---|
+| `CCR-CURRENT-COMPILE` | Implement the explicit current-house compile path without historical fallback | CCR-CURRENT-SOURCE |
+| `CCR-STRUCTURE-INTEGRATION` | Integrate active structural computations through current-source parameters and methods | CCR-CURRENT-COMPILE |
+| `CCR-SERVICES-INTEGRATION` | Integrate active service and water computations through current-source contracts | CCR-CURRENT-COMPILE |
+| `CCR-ASSEMBLY-INTEGRATION` | Integrate editable floor wall skirting grate and opening assembly families | CCR-CURRENT-COMPILE, ADE-MODEL |
+| `CCR-EDIT-CONTRACT` | Prove serialisable semantic edits reversal and revision-bound compiler responses | CCR-CURRENT-SOURCE, ADE-MODEL |
+| `CCR-CHANGE-PROOF` | Prove end-to-end change propagation and selective evidence invalidation | CCR-STRUCTURE-INTEGRATION, CCR-SERVICES-INTEGRATION, CCR-ASSEMBLY-INTEGRATION, CCR-EDIT-CONTRACT |
+| `CCR-CURRENT-RELEASE` | Eliminate historical fallback and split current models from all active final outputs | CCR-CHANGE-PROOF, HRS-SYNTHESIS, ADE-DETAILS, ADE-SCHEDULES, ADE-EVIDENCE |
+| `ADE-BROWSER-EDITOR` | Demonstrate browser floor-plan editing through the shared headless compiler | CCR-CHANGE-PROOF |
 | `HAD-OWNER-DESIGN-REVIEW` | Receive the owner’s decision on the coordinated architectural design | TRIAD-GATE |
 | `IAS-WORKABLE-DETAILS` | Detail the approved workable interior family and adjoining opening interfaces | HAD-OWNER-DESIGN-REVIEW |
 | `TRIAD-GATE` | Shared selected-house integration gate | HAD-INLET-RESOLUTION, ROF-RWT-GATE, MAT-COORDINATION, STR-FLOOR-PORTAL |
@@ -57,14 +66,14 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `PLT-FINAL-FREEZE` | Final resolved-house plate integration and freeze | PLT-FINAL-PREP, PLT-PRINT-REVIEW, PLT-OWNER-FINAL-DESIGN-ACCEPTANCE |
 | `EDA-RENEWED` | Renewed editorial-doctrine assurance over enlarged final source | PLT-FINAL-FREEZE |
 | `PUB-02-FINAL` | Final private-object content, drawing and manufacture gate | EDA-RENEWED |
-| `PLT-FINAL-PREP` | Prepare coherent final current-house digital and print proof set | HRS-SYNTHESIS |
+| `PLT-FINAL-PREP` | Prepare coherent final current-house digital and print proof set | HRS-SYNTHESIS, CCR-CURRENT-RELEASE |
 | `PLT-OWNER-FINAL-DESIGN-ACCEPTANCE` | Receive the owner’s acceptance of the assembled book and final design drawings | PLT-FINAL-PREP |
 | `PLT-PRINT-REVIEW` | Receive and disposition actual-size BOOK and WALL print verdicts | PLT-FINAL-PREP |
 | `BCR-BAY-DESIGN` | Resolve the selected bay as a coordinated design study | TRIAD-GATE, IAS-WORKABLE-DETAILS |
-| `ADE-MODEL` | Connect current design identities to construction-information outputs | HRS-TECHNICAL |
-| `ADE-DETAILS` | Produce source-bound technical bay drawings and details | ADE-MODEL, BCR-BAY-DESIGN |
-| `ADE-SCHEDULES` | Produce linked bay schedules specifications and quantities | ADE-MODEL, BCR-BAY-DESIGN |
-| `ADE-EVIDENCE` | Bind bay calculations and external evidence to controlling inputs | BCR-BAY-DESIGN |
+| `ADE-MODEL` | Connect current design identities to construction-information outputs | CCR-CURRENT-SOURCE |
+| `ADE-DETAILS` | Produce source-bound technical bay drawings and details | ADE-MODEL, BCR-BAY-DESIGN, HRS-TECHNICAL |
+| `ADE-SCHEDULES` | Produce linked bay schedules specifications and quantities | ADE-MODEL, BCR-BAY-DESIGN, HRS-TECHNICAL |
+| `ADE-EVIDENCE` | Bind bay calculations and external evidence to controlling inputs | BCR-BAY-DESIGN, ADE-MODEL, HRS-TECHNICAL |
 | `DEL-BAY-PACK` | Assemble one coherent construction-bay review issue | ADE-DETAILS, ADE-SCHEDULES, ADE-EVIDENCE |
 | `EPR-BAY-REVIEW` | Obtain and disposition actual designer and contractor bay feedback | DEL-BAY-PACK |
 | `DPL-SITE-ASSESSMENT` | Assess actual site applicability and explicit adaptation choices | DPL-COMMISSION |
@@ -73,7 +82,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 ### Structural critical path
 
-`STR-FLOOR-PORTAL` → `ROF-RWT-GATE` → `MAT-COORDINATION` → `TRIAD-GATE` → `HAD-OWNER-DESIGN-REVIEW` → `IAS-WORKABLE-DETAILS` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-PREP` → `PLT-OWNER-FINAL-DESIGN-ACCEPTANCE` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
+`STR-FLOOR-PORTAL` → `ROF-RWT-GATE` → `MAT-COORDINATION` → `TRIAD-GATE` → `HAD-OWNER-DESIGN-REVIEW` → `IAS-WORKABLE-DETAILS` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `CCR-CURRENT-RELEASE` → `PLT-FINAL-PREP` → `PLT-OWNER-FINAL-DESIGN-ACCEPTANCE` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
 
 This path is structural by node count. It is not a wall-clock estimate; weighted scheduling is withheld unless every remaining node on the model has an explicit planning estimate.
 <!-- project-control:end -->

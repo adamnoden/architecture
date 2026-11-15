@@ -52,22 +52,22 @@ export const houseDeliveryNodes = defineNodes([
   },
   {
     id: 'ADE-MODEL', owners: ['ADE'], title: 'Connect current design identities to construction-information outputs',
-    dependencies: ['ADE-DELIVERY-AUDIT', 'HRS-TECHNICAL'], lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
+    dependencies: ['ADE-DELIVERY-AUDIT', 'CCR-CURRENT-SOURCE'], lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/ade/model-integration-result.md']
   },
   {
     id: 'ADE-DETAILS', owners: ['ADE'], title: 'Produce source-bound technical bay drawings and details',
-    dependencies: ['ADE-MODEL', 'BCR-BAY-DESIGN'], lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
+    dependencies: ['ADE-MODEL', 'BCR-BAY-DESIGN', 'HRS-TECHNICAL'], lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/ade/detail-output-result.md']
   },
   {
     id: 'ADE-SCHEDULES', owners: ['ADE'], title: 'Produce linked bay schedules specifications and quantities',
-    dependencies: ['ADE-MODEL', 'BCR-BAY-DESIGN'], lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
+    dependencies: ['ADE-MODEL', 'BCR-BAY-DESIGN', 'HRS-TECHNICAL'], lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/ade/schedule-output-result.md']
   },
   {
     id: 'ADE-EVIDENCE', owners: ['ADE'], title: 'Bind bay calculations and external evidence to controlling inputs',
-    dependencies: ['ADE-DELIVERY-AUDIT', 'BCR-BAY-DESIGN', 'CCR-IDENTITY', 'PCO-APPLICABILITY'], lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
+    dependencies: ['ADE-DELIVERY-AUDIT', 'BCR-BAY-DESIGN', 'CCR-IDENTITY', 'PCO-APPLICABILITY', 'ADE-MODEL', 'HRS-TECHNICAL'], lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/ade/evidence-integration-result.md']
   },
   {

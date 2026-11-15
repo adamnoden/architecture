@@ -14,9 +14,28 @@ flowchart LR
   %% Generated from project/control. Do not hand-edit graph topology.
   subgraph g_SHARED["Shared integration gates"]
     direction TB
+    n_CCR_CURRENT_SOURCE["CCR-CURRENT-SOURCE<br/>Implement one versioned current-design snapshot and inventory active consumers<br/><b>READY</b>"]
+    n_CCR_STRUCTURE_INTEGRATION["CCR-STRUCTURE-INTEGRATION<br/>Integrate active structural computations through current-source parameters and methods<br/><b>BLOCKED</b>"]
+    n_CCR_SERVICES_INTEGRATION["CCR-SERVICES-INTEGRATION<br/>Integrate active service and water computations through current-source contracts<br/><b>BLOCKED</b>"]
+    n_CCR_ASSEMBLY_INTEGRATION["CCR-ASSEMBLY-INTEGRATION<br/>Integrate editable floor wall skirting grate and opening assembly families<br/><b>BLOCKED</b>"]
+    n_CCR_EDIT_CONTRACT["CCR-EDIT-CONTRACT<br/>Prove serialisable semantic edits reversal and revision-bound compiler responses<br/><b>BLOCKED</b>"]
+    n_CCR_CURRENT_RELEASE["CCR-CURRENT-RELEASE<br/>Eliminate historical fallback and split current models from all active final outputs<br/><b>BLOCKED</b>"]
     n_HAD_INLET_RESOLUTION["HAD-INLET-RESOLUTION<br/>Resolve the selected incoming-water route and isolation station<br/><b>READY</b>"]
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
     n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>BLOCKED</b>"]
+  end
+  subgraph g_CCR["CCR"]
+    direction TB
+    n_CCR_CURRENT_COMPILE["CCR-CURRENT-COMPILE<br/>Implement the explicit current-house compile path without historical fallback<br/><b>BLOCKED</b>"]
+    n_CCR_CHANGE_PROOF["CCR-CHANGE-PROOF<br/>Prove end-to-end change propagation and selective evidence invalidation<br/><b>BLOCKED</b>"]
+  end
+  subgraph g_ADE["ADE"]
+    direction TB
+    n_ADE_BROWSER_EDITOR["ADE-BROWSER-EDITOR<br/>Demonstrate browser floor-plan editing through the shared headless compiler<br/><b>BLOCKED</b>"]
+    n_ADE_MODEL["ADE-MODEL<br/>Connect current design identities to construction-information outputs<br/><b>BLOCKED</b>"]
+    n_ADE_DETAILS["ADE-DETAILS<br/>Produce source-bound technical bay drawings and details<br/><b>BLOCKED</b>"]
+    n_ADE_SCHEDULES["ADE-SCHEDULES<br/>Produce linked bay schedules specifications and quantities<br/><b>BLOCKED</b>"]
+    n_ADE_EVIDENCE["ADE-EVIDENCE<br/>Bind bay calculations and external evidence to controlling inputs<br/><b>BLOCKED</b>"]
   end
   subgraph g_HAD["HAD"]
     direction TB
@@ -75,13 +94,6 @@ flowchart LR
     direction TB
     n_PUB_02_FINAL["PUB-02-FINAL<br/>Final private-object content, drawing and manufacture gate<br/><b>BLOCKED</b>"]
   end
-  subgraph g_ADE["ADE"]
-    direction TB
-    n_ADE_MODEL["ADE-MODEL<br/>Connect current design identities to construction-information outputs<br/><b>BLOCKED</b>"]
-    n_ADE_DETAILS["ADE-DETAILS<br/>Produce source-bound technical bay drawings and details<br/><b>BLOCKED</b>"]
-    n_ADE_SCHEDULES["ADE-SCHEDULES<br/>Produce linked bay schedules specifications and quantities<br/><b>BLOCKED</b>"]
-    n_ADE_EVIDENCE["ADE-EVIDENCE<br/>Bind bay calculations and external evidence to controlling inputs<br/><b>BLOCKED</b>"]
-  end
   subgraph g_DEL["DEL"]
     direction TB
     n_DEL_BAY_PACK["DEL-BAY-PACK<br/>Assemble one coherent construction-bay review issue<br/><b>BLOCKED</b>"]
@@ -104,6 +116,23 @@ flowchart LR
     n_PHY_02["PHY-02<br/>Selective floor-access physical research<br/><b>HELD</b>"]
     n_PHY_04["PHY-04<br/>Wall/ceiling movement-junction build and test<br/><b>READY</b>"]
   end
+  n_CCR_CURRENT_SOURCE --> n_CCR_CURRENT_COMPILE
+  n_CCR_CURRENT_COMPILE --> n_CCR_STRUCTURE_INTEGRATION
+  n_CCR_CURRENT_COMPILE --> n_CCR_SERVICES_INTEGRATION
+  n_CCR_CURRENT_COMPILE --> n_CCR_ASSEMBLY_INTEGRATION
+  n_ADE_MODEL --> n_CCR_ASSEMBLY_INTEGRATION
+  n_CCR_CURRENT_SOURCE --> n_CCR_EDIT_CONTRACT
+  n_ADE_MODEL --> n_CCR_EDIT_CONTRACT
+  n_CCR_STRUCTURE_INTEGRATION --> n_CCR_CHANGE_PROOF
+  n_CCR_SERVICES_INTEGRATION --> n_CCR_CHANGE_PROOF
+  n_CCR_ASSEMBLY_INTEGRATION --> n_CCR_CHANGE_PROOF
+  n_CCR_EDIT_CONTRACT --> n_CCR_CHANGE_PROOF
+  n_CCR_CHANGE_PROOF --> n_CCR_CURRENT_RELEASE
+  n_HRS_SYNTHESIS --> n_CCR_CURRENT_RELEASE
+  n_ADE_DETAILS --> n_CCR_CURRENT_RELEASE
+  n_ADE_SCHEDULES --> n_CCR_CURRENT_RELEASE
+  n_ADE_EVIDENCE --> n_CCR_CURRENT_RELEASE
+  n_CCR_CHANGE_PROOF --> n_ADE_BROWSER_EDITOR
   n_TRIAD_GATE --> n_HAD_OWNER_DESIGN_REVIEW
   n_HAD_OWNER_DESIGN_REVIEW --> n_IAS_WORKABLE_DETAILS
   n_HAD_INLET_RESOLUTION --> n_TRIAD_GATE
@@ -137,16 +166,21 @@ flowchart LR
   n_PLT_FINAL_FREEZE --> n_EDA_RENEWED
   n_EDA_RENEWED --> n_PUB_02_FINAL
   n_HRS_SYNTHESIS --> n_PLT_FINAL_PREP
+  n_CCR_CURRENT_RELEASE --> n_PLT_FINAL_PREP
   n_PLT_FINAL_PREP --> n_PLT_OWNER_FINAL_DESIGN_ACCEPTANCE
   n_PLT_FINAL_PREP --> n_PLT_PRINT_REVIEW
   n_TRIAD_GATE --> n_BCR_BAY_DESIGN
   n_IAS_WORKABLE_DETAILS --> n_BCR_BAY_DESIGN
-  n_HRS_TECHNICAL --> n_ADE_MODEL
+  n_CCR_CURRENT_SOURCE --> n_ADE_MODEL
   n_ADE_MODEL --> n_ADE_DETAILS
   n_BCR_BAY_DESIGN --> n_ADE_DETAILS
+  n_HRS_TECHNICAL --> n_ADE_DETAILS
   n_ADE_MODEL --> n_ADE_SCHEDULES
   n_BCR_BAY_DESIGN --> n_ADE_SCHEDULES
+  n_HRS_TECHNICAL --> n_ADE_SCHEDULES
   n_BCR_BAY_DESIGN --> n_ADE_EVIDENCE
+  n_ADE_MODEL --> n_ADE_EVIDENCE
+  n_HRS_TECHNICAL --> n_ADE_EVIDENCE
   n_ADE_DETAILS --> n_DEL_BAY_PACK
   n_ADE_SCHEDULES --> n_DEL_BAY_PACK
   n_ADE_EVIDENCE --> n_DEL_BAY_PACK
@@ -158,6 +192,8 @@ flowchart LR
 
   linkStyle default stroke:#aab1a9,stroke-width:1.5px;
   style g_SHARED fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_CCR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_ADE fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_HAD fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_IAS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_BCR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
@@ -170,7 +206,6 @@ flowchart LR
   style g_PLT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_EDA fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_PUB fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
-  style g_ADE fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_DEL fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_EPR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_DPL fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
@@ -186,6 +221,15 @@ flowchart LR
   classDef claimGrace fill:#eee5d8,stroke:#957044,color:#634a2d,stroke-width:3px,stroke-dasharray:4 3;
   classDef activeUnclaimed fill:#dce9e8,stroke:#356966,color:#1f4542,stroke-width:3px,stroke-dasharray:4 3;
   classDef invalidClaim fill:#f1e0dc,stroke:#a45f54,color:#693d37,stroke-width:3px;
+  class n_CCR_CURRENT_SOURCE ready;
+  class n_CCR_CURRENT_COMPILE blocked;
+  class n_CCR_STRUCTURE_INTEGRATION blocked;
+  class n_CCR_SERVICES_INTEGRATION blocked;
+  class n_CCR_ASSEMBLY_INTEGRATION blocked;
+  class n_CCR_EDIT_CONTRACT blocked;
+  class n_CCR_CHANGE_PROOF blocked;
+  class n_CCR_CURRENT_RELEASE blocked;
+  class n_ADE_BROWSER_EDITOR blocked;
   class n_HAD_INLET_RESOLUTION ready;
   class n_HAD_OWNER_DESIGN_REVIEW blocked;
   class n_IAS_WORKABLE_DETAILS blocked;
@@ -249,9 +293,12 @@ flowchart LR
     n_CCR_STAIR["CCR-STAIR<br/>Repair stair datum arithmetic and discrete topology<br/><b>DONE</b>"]
     n_CCR_DRAINAGE["CCR-DRAINAGE<br/>Repair drainage declaration validity and source consistency<br/><b>DONE</b>"]
     n_CCR_IDENTITY["CCR-IDENTITY<br/>Adjudicate identity guarantees and integrate correctness repairs<br/><b>DONE</b>"]
+    n_CCR_CURRENT_COMPILE["CCR-CURRENT-COMPILE<br/>Implement the explicit current-house compile path without historical fallback<br/><b>BLOCKED</b>"]
+    n_CCR_CHANGE_PROOF["CCR-CHANGE-PROOF<br/>Prove end-to-end change propagation and selective evidence invalidation<br/><b>BLOCKED</b>"]
   end
   subgraph g_PCO["PCO"]
     direction TB
+    n_PCO_EXECUTABLE_DESIGN["PCO-EXECUTABLE-DESIGN<br/>Require executable design, early current-house integration and an editor-ready model contract<br/><b>DONE</b>"]
     n_PCO_LOCAL_OPENING["PCO-LOCAL-OPENING<br/>Register the source-bound local opening comparison for owner review<br/><b>DONE</b>"]
     n_PCO_WORKABLE_INTERIORS["PCO-WORKABLE-INTERIORS<br/>Register workable interior design and personal owner approval gates<br/><b>DONE</b>"]
     n_PCO_INDEPENDENT_STUDIES["PCO-INDEPENDENT-STUDIES<br/>Separate bounded bay and internal-water studies from final house integration<br/><b>DONE</b>"]
@@ -281,6 +328,39 @@ flowchart LR
     n_PCO_DISPATCH["PCO-DISPATCH<br/>Self-service agent dispatcher and race-safe claim-next policy<br/><b>DONE</b>"]
     n_PCO_APPLICABILITY["PCO-APPLICABILITY<br/>Bind maturity applicability to assessed design sources<br/><b>DONE</b>"]
     n_PCO_SWARM["PCO-SWARM<br/>Swarm continuation, startup transport and evidence-based run reporting<br/><b>DONE</b>"]
+  end
+  subgraph g_SHARED["Shared integration gates"]
+    direction TB
+    n_CCR_CURRENT_SOURCE["CCR-CURRENT-SOURCE<br/>Implement one versioned current-design snapshot and inventory active consumers<br/><b>READY</b>"]
+    n_CCR_STRUCTURE_INTEGRATION["CCR-STRUCTURE-INTEGRATION<br/>Integrate active structural computations through current-source parameters and methods<br/><b>BLOCKED</b>"]
+    n_CCR_SERVICES_INTEGRATION["CCR-SERVICES-INTEGRATION<br/>Integrate active service and water computations through current-source contracts<br/><b>BLOCKED</b>"]
+    n_CCR_ASSEMBLY_INTEGRATION["CCR-ASSEMBLY-INTEGRATION<br/>Integrate editable floor wall skirting grate and opening assembly families<br/><b>BLOCKED</b>"]
+    n_CCR_EDIT_CONTRACT["CCR-EDIT-CONTRACT<br/>Prove serialisable semantic edits reversal and revision-bound compiler responses<br/><b>BLOCKED</b>"]
+    n_CCR_CURRENT_RELEASE["CCR-CURRENT-RELEASE<br/>Eliminate historical fallback and split current models from all active final outputs<br/><b>BLOCKED</b>"]
+    n_TRIAD_IFACE_FREEZE["TRIAD-IFACE-FREEZE<br/>Shared IAS/OAS/HAD interface freeze<br/><b>DONE</b>"]
+    n_IAS_OAS_JUNCTION["IAS-OAS-JUNCTION<br/>Interior-system to opening-assembly junction reconciliation<br/><b>DONE</b>"]
+    n_IAS_HAD_JUNCTION["IAS-HAD-JUNCTION<br/>Interior-system to architectural-expression reconciliation<br/><b>DONE</b>"]
+    n_OAS_HAD_JUNCTION["OAS-HAD-JUNCTION<br/>Opening-assembly to facade/interior-expression reconciliation<br/><b>DONE</b>"]
+    n_HAD_SERVICES_ADOPTION["HAD-SERVICES-ADOPTION<br/>Select and export one service system for the occupied house<br/><b>DONE</b>"]
+    n_HAD_INLET_RESOLUTION["HAD-INLET-RESOLUTION<br/>Resolve the selected incoming-water route and isolation station<br/><b>READY</b>"]
+    n_HAD_WATER_REPLAN["HAD-WATER-REPLAN<br/>Recompose the selected court and roof with independent passive water exits<br/><b>DONE</b>"]
+    n_HAD_COURT_INTAKE["HAD-COURT-INTAKE<br/>Join the east court intake, guarded access and live roof-corner renewal<br/><b>DONE</b>"]
+    n_HAD_COURT_BYPASS["HAD-COURT-BYPASS<br/>Select the permanent courtyard receiver and its blocked-basket return<br/><b>DONE</b>"]
+    n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
+    n_RWT_SHED["RWT-SHED<br/>Develop free-shedding edges and planted ground-receiver comparisons<br/><b>DONE</b>"]
+    n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>BLOCKED</b>"]
+    n_STR_HOUSE["STR-HOUSE<br/>Coordinate whole-house structure with the inhabited plan and section<br/><b>DONE</b>"]
+  end
+  subgraph g_ADE["ADE"]
+    direction TB
+    n_ADE_BROWSER_EDITOR["ADE-BROWSER-EDITOR<br/>Demonstrate browser floor-plan editing through the shared headless compiler<br/><b>BLOCKED</b>"]
+    n_ADE_DELIVERY_AUDIT["ADE-DELIVERY-AUDIT<br/>Map construction-information needs to existing capabilities<br/><b>DONE</b>"]
+    n_ADE_SECTION_VIEW["ADE-SECTION-VIEW<br/>Prove source-owned orthographic cut, context and occlusion semantics<br/><b>DONE</b>"]
+    n_ADE_SECTION_PARITY["ADE-SECTION-PARITY<br/>Migrate principal and service sections to source-bound visible geometry and cross-view parity<br/><b>DONE</b>"]
+    n_ADE_MODEL["ADE-MODEL<br/>Connect current design identities to construction-information outputs<br/><b>BLOCKED</b>"]
+    n_ADE_DETAILS["ADE-DETAILS<br/>Produce source-bound technical bay drawings and details<br/><b>BLOCKED</b>"]
+    n_ADE_SCHEDULES["ADE-SCHEDULES<br/>Produce linked bay schedules specifications and quantities<br/><b>BLOCKED</b>"]
+    n_ADE_EVIDENCE["ADE-EVIDENCE<br/>Bind bay calculations and external evidence to controlling inputs<br/><b>BLOCKED</b>"]
   end
   subgraph g_BSR["BSR"]
     direction TB
@@ -317,22 +397,6 @@ flowchart LR
     n_HAD_BOUNDARY["HAD-BOUNDARY<br/>Compare the Boundary Service Lodge and accessible external service raceway<br/><b>DONE</b>"]
     n_HAD_03["HAD-03<br/>Architectural design convergence and visual synthesis<br/><b>DONE</b>"]
     n_HAD_OWNER_DESIGN_REVIEW["HAD-OWNER-DESIGN-REVIEW<br/>Receive the owner’s decision on the coordinated architectural design<br/><b>BLOCKED</b>"]
-  end
-  subgraph g_SHARED["Shared integration gates"]
-    direction TB
-    n_TRIAD_IFACE_FREEZE["TRIAD-IFACE-FREEZE<br/>Shared IAS/OAS/HAD interface freeze<br/><b>DONE</b>"]
-    n_IAS_OAS_JUNCTION["IAS-OAS-JUNCTION<br/>Interior-system to opening-assembly junction reconciliation<br/><b>DONE</b>"]
-    n_IAS_HAD_JUNCTION["IAS-HAD-JUNCTION<br/>Interior-system to architectural-expression reconciliation<br/><b>DONE</b>"]
-    n_OAS_HAD_JUNCTION["OAS-HAD-JUNCTION<br/>Opening-assembly to facade/interior-expression reconciliation<br/><b>DONE</b>"]
-    n_HAD_SERVICES_ADOPTION["HAD-SERVICES-ADOPTION<br/>Select and export one service system for the occupied house<br/><b>DONE</b>"]
-    n_HAD_INLET_RESOLUTION["HAD-INLET-RESOLUTION<br/>Resolve the selected incoming-water route and isolation station<br/><b>READY</b>"]
-    n_HAD_WATER_REPLAN["HAD-WATER-REPLAN<br/>Recompose the selected court and roof with independent passive water exits<br/><b>DONE</b>"]
-    n_HAD_COURT_INTAKE["HAD-COURT-INTAKE<br/>Join the east court intake, guarded access and live roof-corner renewal<br/><b>DONE</b>"]
-    n_HAD_COURT_BYPASS["HAD-COURT-BYPASS<br/>Select the permanent courtyard receiver and its blocked-basket return<br/><b>DONE</b>"]
-    n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
-    n_RWT_SHED["RWT-SHED<br/>Develop free-shedding edges and planted ground-receiver comparisons<br/><b>DONE</b>"]
-    n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>BLOCKED</b>"]
-    n_STR_HOUSE["STR-HOUSE<br/>Coordinate whole-house structure with the inhabited plan and section<br/><b>DONE</b>"]
   end
   subgraph g_BCR["BCR"]
     direction TB
@@ -438,16 +502,6 @@ flowchart LR
     n_DEL_00["DEL-00<br/>Delivery responsibility and evidence baseline<br/><b>DONE</b>"]
     n_DEL_CURRENT["DEL-CURRENT<br/>Reconcile selected-house delivery and reinstatement requirements<br/><b>BLOCKED</b>"]
   end
-  subgraph g_ADE["ADE"]
-    direction TB
-    n_ADE_DELIVERY_AUDIT["ADE-DELIVERY-AUDIT<br/>Map construction-information needs to existing capabilities<br/><b>DONE</b>"]
-    n_ADE_SECTION_VIEW["ADE-SECTION-VIEW<br/>Prove source-owned orthographic cut, context and occlusion semantics<br/><b>DONE</b>"]
-    n_ADE_SECTION_PARITY["ADE-SECTION-PARITY<br/>Migrate principal and service sections to source-bound visible geometry and cross-view parity<br/><b>DONE</b>"]
-    n_ADE_MODEL["ADE-MODEL<br/>Connect current design identities to construction-information outputs<br/><b>BLOCKED</b>"]
-    n_ADE_DETAILS["ADE-DETAILS<br/>Produce source-bound technical bay drawings and details<br/><b>BLOCKED</b>"]
-    n_ADE_SCHEDULES["ADE-SCHEDULES<br/>Produce linked bay schedules specifications and quantities<br/><b>BLOCKED</b>"]
-    n_ADE_EVIDENCE["ADE-EVIDENCE<br/>Bind bay calculations and external evidence to controlling inputs<br/><b>BLOCKED</b>"]
-  end
   subgraph g_EPR["EPR"]
     direction TB
     n_EPR_BAY_REVIEW["EPR-BAY-REVIEW<br/>Obtain and disposition actual designer and contractor bay feedback<br/><b>BLOCKED</b>"]
@@ -484,6 +538,27 @@ flowchart LR
   n_CCR_PLAN --> n_CCR_IDENTITY
   n_CCR_STAIR --> n_CCR_IDENTITY
   n_CCR_DRAINAGE --> n_CCR_IDENTITY
+  n_PCO_REVIEW_POLICY --> n_PCO_EXECUTABLE_DESIGN
+  n_PCO_EXECUTABLE_DESIGN --> n_CCR_CURRENT_SOURCE
+  n_HRS_BASELINE --> n_CCR_CURRENT_SOURCE
+  n_CCR_IDENTITY --> n_CCR_CURRENT_SOURCE
+  n_CCR_CURRENT_SOURCE --> n_CCR_CURRENT_COMPILE
+  n_CCR_CURRENT_COMPILE --> n_CCR_STRUCTURE_INTEGRATION
+  n_CCR_CURRENT_COMPILE --> n_CCR_SERVICES_INTEGRATION
+  n_CCR_CURRENT_COMPILE --> n_CCR_ASSEMBLY_INTEGRATION
+  n_ADE_MODEL --> n_CCR_ASSEMBLY_INTEGRATION
+  n_CCR_CURRENT_SOURCE --> n_CCR_EDIT_CONTRACT
+  n_ADE_MODEL --> n_CCR_EDIT_CONTRACT
+  n_CCR_STRUCTURE_INTEGRATION --> n_CCR_CHANGE_PROOF
+  n_CCR_SERVICES_INTEGRATION --> n_CCR_CHANGE_PROOF
+  n_CCR_ASSEMBLY_INTEGRATION --> n_CCR_CHANGE_PROOF
+  n_CCR_EDIT_CONTRACT --> n_CCR_CHANGE_PROOF
+  n_CCR_CHANGE_PROOF --> n_CCR_CURRENT_RELEASE
+  n_HRS_SYNTHESIS --> n_CCR_CURRENT_RELEASE
+  n_ADE_DETAILS --> n_CCR_CURRENT_RELEASE
+  n_ADE_SCHEDULES --> n_CCR_CURRENT_RELEASE
+  n_ADE_EVIDENCE --> n_CCR_CURRENT_RELEASE
+  n_CCR_CHANGE_PROOF --> n_ADE_BROWSER_EDITOR
   n_PCO_WORKABLE_INTERIORS --> n_PCO_LOCAL_OPENING
   n_PCO_REVIEW_POLICY --> n_PCO_WORKABLE_INTERIORS
   n_PCO_REVIEW_POLICY --> n_PCO_INDEPENDENT_STUDIES
@@ -739,6 +814,7 @@ flowchart LR
   n_EDA_RENEWED --> n_PUB_02_FINAL
   n_HRS_SYNTHESIS --> n_PLT_FINAL_PREP
   n_PLT_CURRENT_REVIEW --> n_PLT_FINAL_PREP
+  n_CCR_CURRENT_RELEASE --> n_PLT_FINAL_PREP
   n_PLT_FINAL_PREP --> n_PLT_OWNER_FINAL_DESIGN_ACCEPTANCE
   n_PLT_FINAL_PREP --> n_PLT_PRINT_REVIEW
   n_EDA_ARGUMENT --> n_EDA_NARRATIVE
@@ -759,15 +835,19 @@ flowchart LR
   n_ADE_SECTION_VIEW --> n_ADE_SECTION_PARITY
   n_PLT_CURRENT_REVIEW --> n_ADE_SECTION_PARITY
   n_ADE_DELIVERY_AUDIT --> n_ADE_MODEL
-  n_HRS_TECHNICAL --> n_ADE_MODEL
+  n_CCR_CURRENT_SOURCE --> n_ADE_MODEL
   n_ADE_MODEL --> n_ADE_DETAILS
   n_BCR_BAY_DESIGN --> n_ADE_DETAILS
+  n_HRS_TECHNICAL --> n_ADE_DETAILS
   n_ADE_MODEL --> n_ADE_SCHEDULES
   n_BCR_BAY_DESIGN --> n_ADE_SCHEDULES
+  n_HRS_TECHNICAL --> n_ADE_SCHEDULES
   n_ADE_DELIVERY_AUDIT --> n_ADE_EVIDENCE
   n_BCR_BAY_DESIGN --> n_ADE_EVIDENCE
   n_CCR_IDENTITY --> n_ADE_EVIDENCE
   n_PCO_APPLICABILITY --> n_ADE_EVIDENCE
+  n_ADE_MODEL --> n_ADE_EVIDENCE
+  n_HRS_TECHNICAL --> n_ADE_EVIDENCE
   n_ADE_DETAILS --> n_DEL_BAY_PACK
   n_ADE_SCHEDULES --> n_DEL_BAY_PACK
   n_ADE_EVIDENCE --> n_DEL_BAY_PACK
@@ -797,11 +877,12 @@ flowchart LR
   style g_ACO fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_CCR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_PCO fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_SHARED fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_ADE fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_BSR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_IAS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_OAS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_HAD fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
-  style g_SHARED fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_BCR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_HRS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_ROF fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
@@ -813,7 +894,6 @@ flowchart LR
   style g_EDA fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_PUB fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_DEL fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
-  style g_ADE fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_EPR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_DPL fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_PHY fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
@@ -838,6 +918,16 @@ flowchart LR
   class n_CCR_STAIR done;
   class n_CCR_DRAINAGE done;
   class n_CCR_IDENTITY done;
+  class n_PCO_EXECUTABLE_DESIGN done;
+  class n_CCR_CURRENT_SOURCE ready;
+  class n_CCR_CURRENT_COMPILE blocked;
+  class n_CCR_STRUCTURE_INTEGRATION blocked;
+  class n_CCR_SERVICES_INTEGRATION blocked;
+  class n_CCR_ASSEMBLY_INTEGRATION blocked;
+  class n_CCR_EDIT_CONTRACT blocked;
+  class n_CCR_CHANGE_PROOF blocked;
+  class n_CCR_CURRENT_RELEASE blocked;
+  class n_ADE_BROWSER_EDITOR blocked;
   class n_PCO_LOCAL_OPENING done;
   class n_PCO_WORKABLE_INTERIORS done;
   class n_PCO_INDEPENDENT_STUDIES done;
