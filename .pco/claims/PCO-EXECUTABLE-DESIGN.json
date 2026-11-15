@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "PCO-EXECUTABLE-DESIGN",
   "generation": 2,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "ef6b84b5-9eec-4b02-9b55-285490fed994",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg16-executable-design-registration"
   },
   "claimedAt": "2026-11-15T17:19:36.820Z",
-  "heartbeatAt": "2026-11-15T17:19:36.820Z",
-  "expiresAt": "2026-11-15T18:04:36.820Z",
+  "heartbeatAt": "2026-11-15T17:38:16.009Z",
+  "expiresAt": "2026-11-15T17:38:16.009Z",
   "checkpoint": {
     "evidence": "Reconciled registration candidate 5075dc8a86033321a8d9ba5ed8830f2c482acce9; previous #1543 and #1541 retained.",
     "next": "Publish the new branch, validate exact head, then use canonical publication preflight and release.",
@@ -39,5 +39,7 @@
       "next": "Inspect exact CI, reconcile current main, reacquire through the documented registration bootstrap with a fresh generation and declaration, then perform canonical publication preflight on a capable runner before merge.",
       "blocker": "This connector-only environment cannot run the full checkout or fresh canonical control:merge-check; no merge or runtime compiler implementation is claimed."
     }
-  }
+  },
+  "releasedAt": "2026-11-15T17:38:16.009Z",
+  "releaseReason": "completed"
 }
