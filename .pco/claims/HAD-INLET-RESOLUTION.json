@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 25,
-  "state": "released",
-  "leaseId": "64a3aad1-db83-497a-b6b4-655b2c13f8c3",
+  "generation": 26,
+  "state": "claimed",
+  "leaseId": "f54a5d05-d4eb-434f-a47b-485169d0e133",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg13-had-cabinet"
+    "label": "zerg13-had-grade"
   },
-  "claimedAt": "2026-11-14T23:49:46.729Z",
-  "heartbeatAt": "2026-11-15T00:28:26.515Z",
-  "expiresAt": "2026-11-15T00:28:26.515Z",
-  "branch": "work/zerg13-portal-inlet",
+  "claimedAt": "2026-11-15T00:29:20.999Z",
+  "heartbeatAt": "2026-11-15T00:29:20.999Z",
+  "expiresAt": "2026-11-15T02:09:20.999Z",
+  "branch": "work/zerg13-had-grade-cabinet",
   "predecessor": {
-    "leaseId": "4f32b8b5-3783-4b0b-9aae-04ba7e46af54",
-    "generation": 24,
-    "branch": "work/zerg12-had-elevated-drip",
-    "pr": 1530,
+    "leaseId": "64a3aad1-db83-497a-b6b4-655b2c13f8c3",
+    "generation": 25,
+    "branch": "work/zerg13-portal-inlet",
+    "pr": 1533,
     "checkpoint": {
-      "evidence": "Exact #1530 head 83e00a68 / tree 9f88cfda, four focused tests and byte receipt on current main 4738d558",
-      "next": "Observe full exact CI and fresh preflight; merge and release"
+      "evidence": "PR #1533 exact c4e9fa79 local combined tree c2f440f5; 96 HAD, MRA and deterministic receipts",
+      "next": "Wait for full exact CI, joint fresh preflights and expected-head merge"
     }
   },
   "recoverySource": {
-    "leaseId": "4f32b8b5-3783-4b0b-9aae-04ba7e46af54",
-    "generation": 24,
-    "branch": "work/zerg12-had-elevated-drip",
-    "pr": 1530,
+    "leaseId": "64a3aad1-db83-497a-b6b4-655b2c13f8c3",
+    "generation": 25,
+    "branch": "work/zerg13-portal-inlet",
+    "pr": 1533,
     "checkpoint": {
-      "evidence": "Exact #1530 head 83e00a68 / tree 9f88cfda, four focused tests and byte receipt on current main 4738d558",
-      "next": "Observe full exact CI and fresh preflight; merge and release"
+      "evidence": "PR #1533 exact c4e9fa79 local combined tree c2f440f5; 96 HAD, MRA and deterministic receipts",
+      "next": "Wait for full exact CI, joint fresh preflights and expected-head merge"
     }
-  },
-  "checkpoint": {
-    "evidence": "PR #1533 exact c4e9fa79 local combined tree c2f440f5; 96 HAD, MRA and deterministic receipts",
-    "next": "Wait for full exact CI, joint fresh preflights and expected-head merge"
-  },
-  "pr": 1533,
-  "releasedAt": "2026-11-15T00:28:26.515Z",
-  "releaseReason": "handoff"
+  }
 }
