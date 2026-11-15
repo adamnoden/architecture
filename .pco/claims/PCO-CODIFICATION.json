@@ -6,12 +6,14 @@
   "leaseId": "3af96117-7cfc-4f84-8c55-fb5c9fe2177e",
   "holder": { "kind": "chatgpt", "label": "owner-executable-design-editor-contract" },
   "claimedAt": "2026-11-15T13:55:43.372Z",
-  "heartbeatAt": "2026-11-15T13:55:43.372Z",
+  "heartbeatAt": "2026-11-15T14:16:02.000Z",
   "expiresAt": "2026-11-15T15:35:43.372Z",
   "branch": "work/executable-design-editor-contract-20261115",
+  "pr": 1541,
   "checkpoint": {
-    "evidence": "Owner-directed exceptional registration and scope recorded in issue #1539; baseline main 18f73afa4a5836e38c4ae62d4f8d97f83431b2ac.",
-    "next": "Publish instructions, current-model/editor contracts, executable migration packets and graph regression tests; require exact CI and canonical preflight."
+    "evidence": "PR #1541 exact 17abe428b35e82da8e6222033cf0c72f14ab7886 reconciles main c7263b4a. Corrected public navigation by moving the operational contract internal with a genuine redirect. Exact CI run 43723007777 is executing.",
+    "next": "Inspect exact-head validation and canonical runner publication preflight; reconcile any later main changes, merge expected head, verify and release.",
+    "blocker": "Instructions and executable plan only; eight successor migration packets remain unimplemented."
   },
-  "note": "Explicitly directed PCO bootstrap. New node is not on main until registration merges; automatic dispatch may fail closed meanwhile. Existing STR/HAD leases are untouched. Planning completion is not compiler implementation."
+  "note": "Explicitly directed PCO bootstrap recorded in #1539. New node is not on main until registration merges; automatic dispatch may fail closed meanwhile. Existing STR/HAD leases are untouched. Planning completion is not compiler implementation."
 }
