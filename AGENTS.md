@@ -119,6 +119,18 @@ Where authoritative evidence is missing, prefer an explicit unsupported/unknown 
 
 Machine/proof artefacts, semantic inspection outputs and publication graphics have different jobs and different authority. Do not collapse them.
 
+### Executable design and change propagation
+
+Treat a design intended to evolve as data consumed by reusable, headless computation, not as a collection of fixed examples. Keep authored inputs, derived relationships, evidence and presentation distinct. Each fact has one owning source; use stable object references and explicit units. Do not copy design coordinates into renderers or silently read a historical fixture when a caller supplies a current design.
+
+Build useful parameterisation **during** investigation. Pure geometry and calculation functions take explicit inputs; filesystem, CLI, browser and external-solver integration belong at adapters. Existing proven methods, including versioned external/Python methods, should be reused rather than rewritten merely to put everything in one language. A browser authoring client must edit the same serialisable design contract consumed by the headless compiler, never a parallel UI-only house model.
+
+Each admitted computational capability needs a relevant input-mutation test, an invalid/unsupported-input case and an independent expected-value or contrast check. Proving unchanged baseline bytes alone is insufficient. Test propagation through the affected views, quantities, diagnostics and evidence dependencies, not merely a helper returning a different number. Changes must recalculate what is supported, invalidate dependent evidence, or identify the unsupported relationship; they must not retain a stale green result. An invalid candidate can remain inspectable with diagnostics but cannot become an approved design by compilation.
+
+Exploratory scripts and fixed historical fixtures are permitted. Before an exploratory result becomes an active selected-house dependency, integrate its useful relationships through the shared input/output contract or register a specific migration prerequisite before adoption. Name remaining manually synchronised facts, consumers and discharge tests in the owning packet; do not defer them indefinitely to a final integration sweep. Already-known migration debt stays visible while independent work proceeds. Do not erase historical evidence or create a universal modelling framework to satisfy this rule.
+
+Substantial design/code PRs must state their computational change contract: authoritative inputs, derived consumers, recomputation or invalidation behaviour, mutation/adverse tests and any bounded migration debt (or a justified not-applicable disposition). Closeout requires these claims to be demonstrated at the actual changed boundary. The [executable-design programme](project/ade/executable-design-programme.md) owns the current migration and editor delivery sequence; it does not replace architectural decisions or owner approvals.
+
 ## 6. Work in bounded questions
 
 Substantial work should answer a bounded question, gate or packet. Make clear:
@@ -262,6 +274,8 @@ Before calling substantial work complete, ask:
 - Did I add unearned machinery or fill an unknown with a plausible guess?
 - Did I validate the actual representation boundary affected?
 - Did I reconcile dependent outputs and leave durable reasoning?
+- Does a relevant input change propagate or fail explicitly, without an implicit historical fallback?
+- Have I integrated reusable relationships and named any remaining computational debt before adoption?
 - Could another agent reconstruct this decision from the repository alone?
 - Did I run the workstream closeout/hygiene pass and proactively report any residue?
 - Is the project now simpler, truer or better evidenced rather than merely more elaborate?

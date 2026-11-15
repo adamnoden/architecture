@@ -52,7 +52,7 @@ export const houseDeliveryNodes = defineNodes([
   },
   {
     id: 'ADE-MODEL', owners: ['ADE'], title: 'Connect current design identities to construction-information outputs',
-    dependencies: ['ADE-DELIVERY-AUDIT', 'HRS-TECHNICAL'], lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
+    dependencies: ['ADE-DELIVERY-AUDIT', 'HRS-TECHNICAL', 'ADE-EDIT-REGRESSION'], lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/ade/model-integration-result.md']
   },
   {
@@ -67,7 +67,7 @@ export const houseDeliveryNodes = defineNodes([
   },
   {
     id: 'ADE-EVIDENCE', owners: ['ADE'], title: 'Bind bay calculations and external evidence to controlling inputs',
-    dependencies: ['ADE-DELIVERY-AUDIT', 'BCR-BAY-DESIGN', 'CCR-IDENTITY', 'PCO-APPLICABILITY'], lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
+    dependencies: ['ADE-DELIVERY-AUDIT', 'BCR-BAY-DESIGN', 'CCR-IDENTITY', 'PCO-APPLICABILITY', 'ADE-CHANGE-PROPAGATION'], lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/ade/evidence-integration-result.md']
   },
   {

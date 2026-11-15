@@ -62,7 +62,7 @@ export const publicationNodes = defineNodes([
     id: 'PLT-FINAL-PREP',
     owners: ['PLT'],
     title: 'Prepare coherent final current-house digital and print proof set',
-    dependencies: ['HRS-SYNTHESIS', 'PLT-CURRENT-REVIEW'],
+    dependencies: ['HRS-SYNTHESIS', 'PLT-CURRENT-REVIEW', 'ADE-EDIT-REGRESSION'],
     lifecycle: 'planned',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/plt/final-preparation-result.md']

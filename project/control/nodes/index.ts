@@ -1,5 +1,6 @@
 import type { ControlNode } from '../types.js'
 import { houseDeliveryNodes } from './house-delivery.js'
+import { executableDesignNodes } from './executable-design.js'
 import { ccrNodes } from './ccr.js'
 import { acoNodes } from './aco.js'
 import { architectureNodes } from './architecture.js'
@@ -22,6 +23,7 @@ export const controlNodes = [
   ...acoNodes,
   ...ccrNodes,
   ...pcoNodes,
+  ...executableDesignNodes,
   ...architectureNodes,
   ...roofWaterNodes,
   ...structureNodes,
