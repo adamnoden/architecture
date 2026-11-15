@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "CCR-CURRENT-SOURCE",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "9ecd56e8-4e78-4c9c-9c29-1fb1a1ce230a",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "zerg16-current-source"
+  },
+  "claimedAt": "2026-11-15T17:39:08.455Z",
+  "heartbeatAt": "2026-11-15T17:39:08.455Z",
+  "expiresAt": "2026-11-15T18:39:08.455Z",
+  "branch": "work/zerg16-north-collar"
+}
