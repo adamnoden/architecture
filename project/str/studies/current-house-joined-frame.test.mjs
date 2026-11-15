@@ -26,6 +26,15 @@ test('Hip diaphragm comparisons preserve all four fit clashes and the ring closu
   assert.ok(result.fixedWebBottomReliefs.rows.filter(row => row.outboardReturnPlanOnly)
     .every(row => row.outboardReturnPlanOnly.minimumCentrelineReserveToAnyReservedSocketMm >= 8));
 });
+test('Finite heel lower groups distinguish eccentric return from centred groove', () => {
+  const source = fileURLToPath(new URL('./floor-portal-heel-return.py', import.meta.url));
+  execFileSync('python3', ['-B', source, '--check']);
+  const result = read('floor-portal-heel-return.json');
+  assert.ok(result.mirrorAtOtherControllingWeb.every(row => row.passingTrialCount === 0));
+  assert.equal(result.extendedCentredGrooveComparator.length, 4);
+  assert.ok(result.extendedCentredGrooveComparator.every(row => row.elasticPeakAtGroupEndsMPa < 100));
+  assert.ok(Math.min(...result.extendedCentredGrooveComparator.map(row => row.equivalentTransverseForceLineErrorMm)) < 0.5);
+});
 test('The guide backing receipt reproduces pressure and cage bounds', () => {
   const source = fileURLToPath(new URL('./floor-portal-guide-backing.py', import.meta.url));
   execFileSync('python3', ['-B', source, '--check']);
