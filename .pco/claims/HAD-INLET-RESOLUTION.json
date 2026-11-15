@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 26,
-  "state": "released",
-  "leaseId": "f54a5d05-d4eb-434f-a47b-485169d0e133",
+  "generation": 27,
+  "state": "claimed",
+  "leaseId": "608ec002-a8ad-468b-a54f-00d2f0863675",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg13-had-grade"
+    "label": "zerg14-inlet-resolution"
   },
-  "claimedAt": "2026-11-15T00:29:20.999Z",
-  "heartbeatAt": "2026-11-15T00:51:21.587Z",
-  "expiresAt": "2026-11-15T00:51:21.587Z",
-  "branch": "work/zerg13-had-grade-cabinet",
+  "claimedAt": "2026-11-15T09:20:31.096Z",
+  "heartbeatAt": "2026-11-15T09:20:31.096Z",
+  "expiresAt": "2026-11-15T10:05:31.096Z",
+  "branch": "work/zerg14-inlet-resolution",
   "predecessor": {
-    "leaseId": "64a3aad1-db83-497a-b6b4-655b2c13f8c3",
-    "generation": 25,
-    "branch": "work/zerg13-portal-inlet",
-    "pr": 1533,
+    "leaseId": "f54a5d05-d4eb-434f-a47b-485169d0e133",
+    "generation": 26,
+    "branch": "work/zerg13-had-grade-cabinet",
+    "pr": 1534,
     "checkpoint": {
-      "evidence": "PR #1533 exact c4e9fa79 local combined tree c2f440f5; 96 HAD, MRA and deterministic receipts",
-      "next": "Wait for full exact CI, joint fresh preflights and expected-head merge"
+      "evidence": "PR #1534 exact 9ecc5761 tree 429a899b on c6fefe51; focused checks and deterministic drawing",
+      "next": "Observe exact hosted CI and fresh publication preflight, merge then release"
     }
   },
   "recoverySource": {
-    "leaseId": "64a3aad1-db83-497a-b6b4-655b2c13f8c3",
-    "generation": 25,
-    "branch": "work/zerg13-portal-inlet",
-    "pr": 1533,
+    "leaseId": "f54a5d05-d4eb-434f-a47b-485169d0e133",
+    "generation": 26,
+    "branch": "work/zerg13-had-grade-cabinet",
+    "pr": 1534,
     "checkpoint": {
-      "evidence": "PR #1533 exact c4e9fa79 local combined tree c2f440f5; 96 HAD, MRA and deterministic receipts",
-      "next": "Wait for full exact CI, joint fresh preflights and expected-head merge"
+      "evidence": "PR #1534 exact 9ecc5761 tree 429a899b on c6fefe51; focused checks and deterministic drawing",
+      "next": "Observe exact hosted CI and fresh publication preflight, merge then release"
     }
-  },
-  "pr": 1534,
-  "checkpoint": {
-    "evidence": "PR #1534 exact 9ecc5761 tree 429a899b on c6fefe51; focused checks and deterministic drawing",
-    "next": "Observe exact hosted CI and fresh publication preflight, merge then release"
-  },
-  "releasedAt": "2026-11-15T00:51:21.587Z",
-  "releaseReason": "handoff"
+  }
 }
