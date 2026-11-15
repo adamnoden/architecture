@@ -9,8 +9,8 @@
     "label": "Zerg-Rush-STR"
   },
   "claimedAt": "2026-11-15T09:47:52.357Z",
-  "heartbeatAt": "2026-11-15T09:47:52.357Z",
-  "expiresAt": "2026-11-15T10:32:52.357Z",
+  "heartbeatAt": "2026-11-15T09:51:36.506Z",
+  "expiresAt": "2026-11-15T10:36:36.506Z",
   "branch": "work/zerg14-replay-fixed-station",
   "predecessor": {
     "leaseId": "e6131163-ee09-4935-b852-80b9659cb0f0",
@@ -31,5 +31,10 @@
       "evidence": "PR #1535 exact 47413c55; local STR 33cacde5 support rewind, predecessor heel and hip receipts reproduce; plan inspected",
       "next": "Verify exact hosted checks, pass dual publication preflight, integrate by expected head, release both leases"
     }
+  },
+  "pr": 1536,
+  "checkpoint": {
+    "evidence": "PR #1536 exact 8748f652; 15 of 21 signed cases and 110 movement cases reproduce on authored patched source; sequential replay patch verified",
+    "next": "Verify exact hosted checks, pass publication preflight, merge with expected head and release lease"
   }
 }
