@@ -9,13 +9,13 @@
     "label": "zerg16-had"
   },
   "claimedAt": "2026-11-15T16:11:45.773Z",
-  "heartbeatAt": "2026-11-15T16:11:45.773Z",
-  "expiresAt": "2026-11-15T17:11:45.773Z",
+  "heartbeatAt": "2026-11-15T16:21:53.102Z",
+  "expiresAt": "2026-11-15T17:21:53.102Z",
   "checkpoint": {
-    "evidence": "Framed bay and widened utility comparisons on main c82a11ed; packet remains READY.",
-    "next": "Join actual plant load envelopes, pressure cuts and independent handling before advancing cutover."
+    "evidence": "Plant release staged at 0c60ea081c92616fd99fd870ba0ef2d3847a209a; exact geometry and integrity checks passed.",
+    "next": "Publish and validate shared cage and plant route; then join protected lower daylight inlet fault exit on separate work."
   },
-  "branch": "work/zerg16-plant-release",
+  "branch": "work/zerg16-cage-plant",
   "predecessor": {
     "leaseId": "6eaaad56-89e8-4a40-bf76-190d2ef79a84",
     "generation": 31,
