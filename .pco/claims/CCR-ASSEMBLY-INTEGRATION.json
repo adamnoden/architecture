@@ -9,7 +9,13 @@
     "label": "zerg16-executable-interface-checks"
   },
   "claimedAt": "2026-11-15T19:09:44.461Z",
-  "heartbeatAt": "2026-11-15T19:09:44.461Z",
-  "expiresAt": "2026-11-15T20:09:44.461Z",
-  "branch": "work/zerg16-east-south-inlet"
+  "heartbeatAt": "2026-11-15T19:12:48.293Z",
+  "expiresAt": "2026-11-15T20:12:48.293Z",
+  "branch": "work/zerg16-east-south-inlet",
+  "pr": 1551,
+  "checkpoint": {
+    "evidence": "Exact 1e3f5f8d39c7dd03afad332629a93952867d3fff; current south inlet and native structural, hydraulic, Study projection checks passed locally.",
+    "next": "Wait for all triggered exact GitHub workflows, then run the four fresh merge checks and integrate conditional evidence.",
+    "blocker": "The named current interface comparison is implemented. Remaining domain cases keep lifecycle open."
+  }
 }
