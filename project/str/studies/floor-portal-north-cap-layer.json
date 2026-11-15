@@ -1,0 +1,461 @@
+{
+  "sourceHashes": {
+    "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+    "project/str/studies/floor-portal-twin-garden-tie.json": "914c51cd394d41033d5e4f6f3392165e636ef0c68aa75a5ce2dd94c5411b899c"
+  },
+  "grid": {
+    "P24": {
+      "id": "P24",
+      "xy": [
+        2902.5,
+        11667.5
+      ],
+      "roles": [
+        "outer-NW",
+        "wet"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    "P25": {
+      "id": "P25",
+      "xy": [
+        4500,
+        11667.5
+      ],
+      "roles": [
+        "outer-NW",
+        "loggia-W"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    "P26": {
+      "id": "P26",
+      "xy": [
+        7500,
+        11667.5
+      ],
+      "roles": [
+        "outer-NE",
+        "loggia-E"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    "P27": {
+      "id": "P27",
+      "xy": [
+        9300,
+        11667.5
+      ],
+      "roles": [
+        "outer-NE"
+      ],
+      "capXY": [
+        900,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    }
+  },
+  "translatedHistoricalP25Ymm": -32.5,
+  "representation": "Current grid, older west flare shape as a translated comparator, geometric mirror at the actual P26, independently posed actual far end candidates, no selected current foundation.",
+  "capLayerComparison": {
+    "oldContinuousTopH20ToNewSleeveReject": {
+      "clearAfterTwo5MmSettingsMm": -36.0,
+      "items": [
+        "old centre H20",
+        "straight sleeve"
+      ]
+    },
+    "EWTopCentreReplacement2H16OffsetsMm": [
+      -90,
+      90
+    ],
+    "EWTopCentreAndTwoSideBarZmm": [
+      -238,
+      -236
+    ],
+    "EWTopSideH20YOffsetsMm": [
+      -150,
+      150
+    ],
+    "NSTop3H20XOffsetsAtWestMm": [
+      -16,
+      50,
+      116
+    ],
+    "NSTopZmm": -256,
+    "upperIntentionalTiedContacts": 12,
+    "upperSteelNearOldFlareMinimum": {
+      "clearAfterTwo5MmSettingsMm": 26.04503658255026,
+      "items": [
+        "W/E top H20 -150",
+        "P25 P8"
+      ]
+    },
+    "upperSteelNearSleeveMinimum": {
+      "clearAfterTwo5MmSettingsMm": 56.0,
+      "items": [
+        "W/E top H16 -90",
+        "straight sleeve"
+      ]
+    },
+    "minVerticalOnlyShallowPlateToEWTopSteelAfter10SettingMm": 44,
+    "bottomEWH20OffsetsMm": [
+      -245,
+      -194,
+      0,
+      194,
+      245
+    ],
+    "bottomNSH20OffsetsMm": [
+      -245,
+      -194,
+      194,
+      245
+    ],
+    "bottomZByDirectionMm": [
+      -572,
+      -552
+    ],
+    "bottomIntentionalTiedContacts": 20,
+    "oldCentreNSToStarterNegativeControl": {
+      "clearAfterTwo5MmSettingsMm": 12.468923642720053,
+      "items": [
+        "old centred N/S bottom H20",
+        "P25 P6"
+      ]
+    },
+    "bottomNearOldFlareMinimum": {
+      "clearAfterTwo5MmSettingsMm": 21.816441103570472,
+      "items": [
+        "N/S bottom H20 -194",
+        "P25 P1"
+      ]
+    },
+    "bottomParallelClearAfterTwo5MmSettingsMm": 21.0,
+    "fourH20TransverseSteelOnlyKN": 546.3639397547466,
+    "olderSeparateBottomTieDemandKN": 385.1351351351351
+  },
+  "WestP25P24": {
+    "sameAxialBarTailsUntrimmedReject": {
+      "clearAfterTwo5MmSettingsMm": -32.08864141898028,
+      "items": [
+        "P25 P1",
+        "P24 H22 4"
+      ]
+    },
+    "replacementCommonAxialLines": [
+      {
+        "yMm": 11537.232985915907,
+        "zMm": -332.0,
+        "nearAndFarBarTangentXMm": [
+          4155.0416360365225,
+          3247.4583639634775
+        ],
+        "connectorCentreXMm": 3766.25,
+        "shorterStraightToBendMm": 388.7916360365225,
+        "sameAxisBarIDs": [
+          "P25 P2",
+          "P24 H22 3"
+        ]
+      },
+      {
+        "yMm": 11613.54163603652,
+        "zMm": -332.0,
+        "nearAndFarBarTangentXMm": [
+          4078.7329859159086,
+          3323.767014084091
+        ],
+        "connectorCentreXMm": 3636.25,
+        "shorterStraightToBendMm": 312.482985915909,
+        "sameAxisBarIDs": [
+          "P25 P1",
+          "P24 H22 4"
+        ]
+      },
+      {
+        "yMm": 11721.45836396348,
+        "zMm": -282.0,
+        "nearAndFarBarTangentXMm": [
+          4339.267014084092,
+          3323.767014084091
+        ],
+        "connectorCentreXMm": 3896.5170140840914,
+        "shorterStraightToBendMm": 442.75000000000045,
+        "sameAxisBarIDs": [
+          "P25 P5",
+          "P24 H22 5"
+        ]
+      },
+      {
+        "yMm": 11797.767014084093,
+        "zMm": -332.0,
+        "nearAndFarBarTangentXMm": [
+          4262.9583639634775,
+          3247.4583639634775
+        ],
+        "connectorCentreXMm": 3690.2083639634775,
+        "shorterStraightToBendMm": 442.75,
+        "sameAxisBarIDs": [
+          "P25 P6",
+          "P24 H22 6"
+        ]
+      }
+    ],
+    "genericConnectorReservationDiameterLengthMm": [
+      48,
+      100
+    ],
+    "nearestConnectorToOtherRepresentedBarOrConnector": {
+      "clearAfterTwo5MmSettingsMm": 23.99396369995823,
+      "items": [
+        "connector envelope P25 P2",
+        "connector envelope P25 P1"
+      ]
+    },
+    "nearestStarterToStarterOutsidePairedAbutments": {
+      "clearAfterTwo5MmSettingsMm": 35.6461743180576,
+      "items": [
+        "P25 P7",
+        "P25 P6"
+      ]
+    },
+    "runningTopRailsInboardOffsetsMm": [
+      -150,
+      -90,
+      90,
+      150
+    ],
+    "runningTopRailsAtConnectorOffsetsMm": [
+      -180,
+      -110,
+      110,
+      180
+    ],
+    "topRailsCurveBeginXMm": 4280,
+    "runningRailClearances": {
+      "connector": {
+        "clearAfterTwo5MmSettingsMm": 29.21721201603887,
+        "items": [
+          "connector envelope P25 P5",
+          "P25 running H16 +90"
+        ]
+      },
+      "starters": {
+        "clearAfterTwo5MmSettingsMm": 26.011529516956344,
+        "items": [
+          "P25 P8",
+          "P25 running H20 -150"
+        ]
+      },
+      "betweenParallelRails": {
+        "clearAfterTwo5MmSettingsMm": 31.055288914401793,
+        "items": [
+          "P25 running H20 -150",
+          "P25 running H16 -90"
+        ]
+      }
+    },
+    "upperConnectorAtLegacyClosedH8TopLeg": {
+      "coincidentXLegacyH8AxisZmm": -224,
+      "clearanceWith48MmConnectorAfterSettingsMm": 20,
+      "maximumDiameterAt21MmClearMm": 46,
+      "remedyFor48mmEnvelope": "Set both nearest hoops at least 62 mm from the connector centre in X and verify the resulting 124 mm local bay, or select a positively assessed narrower product."
+    },
+    "limitation": "Generic swept positions. The linked H22 product/assembly, end cover, force redistribution and full new mats in both far caps remain unqualified."
+  },
+  "EastP26P27": {
+    "sameAxialBarTailsUntrimmedReject": {
+      "clearAfterTwo5MmSettingsMm": -32.08864141898028,
+      "items": [
+        "P26 P1",
+        "P27 H22 1"
+      ]
+    },
+    "replacementCommonAxialLines": [
+      {
+        "yMm": 11537.232985915907,
+        "zMm": -332.0,
+        "nearAndFarBarTangentXMm": [
+          7844.9583639634775,
+          8955.041636036523
+        ],
+        "connectorCentreXMm": 8465.0,
+        "shorterStraightToBendMm": 490.0416360365234,
+        "sameAxisBarIDs": [
+          "P26 P2",
+          "P27 H22 2"
+        ]
+      },
+      {
+        "yMm": 11613.54163603652,
+        "zMm": -332.0,
+        "nearAndFarBarTangentXMm": [
+          7921.267014084091,
+          8878.732985915909
+        ],
+        "connectorCentreXMm": 8335.0,
+        "shorterStraightToBendMm": 413.732985915909,
+        "sameAxisBarIDs": [
+          "P26 P1",
+          "P27 H22 1"
+        ]
+      },
+      {
+        "yMm": 11721.45836396348,
+        "zMm": -282.0,
+        "nearAndFarBarTangentXMm": [
+          7660.732985915908,
+          8878.732985915909
+        ],
+        "connectorCentreXMm": 8334.732985915909,
+        "shorterStraightToBendMm": 544.0,
+        "sameAxisBarIDs": [
+          "P26 P5",
+          "P27 H22 8"
+        ]
+      },
+      {
+        "yMm": 11797.767014084093,
+        "zMm": -332.0,
+        "nearAndFarBarTangentXMm": [
+          7737.0416360365225,
+          8955.041636036523
+        ],
+        "connectorCentreXMm": 8281.041636036523,
+        "shorterStraightToBendMm": 544.0000000000009,
+        "sameAxisBarIDs": [
+          "P26 P6",
+          "P27 H22 7"
+        ]
+      }
+    ],
+    "genericConnectorReservationDiameterLengthMm": [
+      48,
+      100
+    ],
+    "nearestConnectorToOtherRepresentedBarOrConnector": {
+      "clearAfterTwo5MmSettingsMm": 23.99396369995823,
+      "items": [
+        "connector envelope P26 P2",
+        "connector envelope P26 P1"
+      ]
+    },
+    "nearestStarterToStarterOutsidePairedAbutments": {
+      "clearAfterTwo5MmSettingsMm": 35.6461743180576,
+      "items": [
+        "P26 P7",
+        "P26 P6"
+      ]
+    },
+    "runningTopRailsInboardOffsetsMm": [
+      -150,
+      -90,
+      90,
+      150
+    ],
+    "runningTopRailsAtConnectorOffsetsMm": [
+      -180,
+      -110,
+      110,
+      180
+    ],
+    "topRailsCurveBeginXMm": 7720,
+    "runningRailClearances": {
+      "connector": {
+        "clearAfterTwo5MmSettingsMm": 29.21721201603887,
+        "items": [
+          "connector envelope P26 P5",
+          "P26 running H16 +90"
+        ]
+      },
+      "starters": {
+        "clearAfterTwo5MmSettingsMm": 26.011529516956344,
+        "items": [
+          "P26 P8",
+          "P26 running H20 -150"
+        ]
+      },
+      "betweenParallelRails": {
+        "clearAfterTwo5MmSettingsMm": 31.055288914401793,
+        "items": [
+          "P26 running H20 -150",
+          "P26 running H16 -90"
+        ]
+      }
+    },
+    "upperConnectorAtLegacyClosedH8TopLeg": {
+      "coincidentXLegacyH8AxisZmm": -224,
+      "clearanceWith48MmConnectorAfterSettingsMm": 20,
+      "maximumDiameterAt21MmClearMm": 46,
+      "remedyFor48mmEnvelope": "Set both nearest hoops at least 62 mm from the connector centre in X and verify the resulting 124 mm local bay, or select a positively assessed narrower product."
+    },
+    "limitation": "Generic swept positions. The linked H22 product/assembly, end cover, force redistribution and full new mats in both far caps remain unqualified."
+  },
+  "signedVerticalOnlyWitness": {
+    "oldForceKN": 33.207486,
+    "twoSignsSameMagnitude": [
+      {
+        "heads": [
+          "P25",
+          "P24"
+        ],
+        "inheritedVerticalActionsKN": [
+          29.881540610328642,
+          3.3259453896713618
+        ],
+        "upperPlateToBottomEWMatLeverMm": 272.0,
+        "resultingIdealHorizontalChordKN": 17.577376829605083,
+        "bondIfOnlyTheTwoH16EquallyCarryTheWitnessMm": 83.25971455418443
+      },
+      {
+        "heads": [
+          "P26",
+          "P27"
+        ],
+        "inheritedVerticalActionsKN": [
+          30.25570946666667,
+          2.9517765333333337
+        ],
+        "upperPlateToBottomEWMatLeverMm": 272.0,
+        "resultingIdealHorizontalChordKN": 17.797476156862746,
+        "bondIfOnlyTheTwoH16EquallyCarryTheWitnessMm": 84.3022709799064
+      }
+    ],
+    "fullYieldPoorBondH16Mm": 828.1573498964804,
+    "scope": "Ideal couple compares only existing stripped vertical uplift/reversal. It does not combine shear, torsion, lateral pressures, all-house forces, cap stress or pile resistance."
+  }
+}

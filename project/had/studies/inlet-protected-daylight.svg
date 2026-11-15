@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 710" role="img" aria-labelledby="title description">
+<title id="title">A lower protected daylight spill and independent receiving cells</title>
+<desc id="description">Section through the wet cabinet shows the dry sill, lower outlet, new daylight crest, weather hood and water level for the adverse 60 litres per minute sensitivity.</desc>
+<style>text{font:16px sans-serif;fill:#2b433d}.title{font:bold 29px sans-serif}.head{font:bold 19px sans-serif}</style>
+<rect width="1080" height="710" fill="#fbf7eb"/>
+<text x="35" y="48" class="title">Lower and protect the last passive spill</text>
+<text x="35" y="77">Section in house coordinates · Bodies shown at separate draining levels</text>
+<rect x="233.7225" y="87.80000000000001" width="153.25249999999997" height="232.8" fill="#dfd1b7"/>
+<rect x="233.7225" y="128.60000000000002" width="153.25249999999997" height="52.79999999999998" fill="#f4f3e7"/>
+<polyline points="120,272.6 120,131 127.375,131" fill="none" stroke="#334b45" stroke-width="5"/>
+<polyline points="121.475,149.71675040000002 227.38,149.71675040000002" fill="none" stroke="#578394" stroke-width="3"/>
+<polyline points="233.7225,181.4 386.97499999999997,186.3872 895.8499999999999,202.9472" fill="none" stroke="#376b77" stroke-width="5"/>
+<polyline points="823.5749999999999,144.3872 928.3,144.3872 928.3,159.7472" fill="none" stroke="#65796c" stroke-width="4"/>
+<polyline points="897.3249999999999,202.9472 902.3399999999999,214.9472" fill="none" stroke="#64969f" stroke-width="2"/>
+<polyline points="866.3499999999999,301.3472 866.3499999999999,214.9472 1013.8499999999999,214.9472 1013.8499999999999,243.7472" fill="none" stroke="#334b45" stroke-width="2"/>
+<text x="43" y="112">Dry sill Z395</text>
+<text x="18" y="155">Z356.01</text>
+<text x="292" y="179">Z290 protected entrance</text>
+<text x="566" y="143">Vented 1:50 chute</text>
+<text x="832" y="110">High weather hood</text>
+<text x="845" y="182">Mouth Z245.11</text>
+<text x="845" y="252">Free reception to Z220.11</text>
+<text x="35" y="392">216 mm clear inside the liner. In the adverse case only 108 mm remains and the full crest rises 32 mm.</text>
+<text x="35" y="423">Both lower pipes blocked · 60 L/min · 8.99 mm indoor reserve at the lower coefficient.</text>
+<line x1="35" y1="447" x2="1040" y2="447" stroke="#9caa9e"/>
+<text x="41" y="477" class="head">Keep three unshared landing and overflow cells</text>
+<rect x="42" y="490" width="321" height="112" fill="#d8e8e1" stroke="#59706a"/>
+    <text x="54" y="518">Ordinary</text>
+    <text x="54" y="547">Y2750–2870 · max receiving Z22.06</text>
+    <text x="54" y="575">Independent overflow Z-37.94</text><rect x="380" y="490" width="321" height="112" fill="#cedde6" stroke="#59706a"/>
+    <text x="392" y="518">Raised pipe relief</text>
+    <text x="392" y="547">Y2905–3025 · max receiving Z95.48</text>
+    <text x="392" y="575">Independent overflow Z35.48</text><rect x="718" y="490" width="321" height="112" fill="#d4e1ef" stroke="#59706a"/>
+    <text x="730" y="518">Daylight</text>
+    <text x="730" y="547">Y3060–3320 · max receiving Z220.11</text>
+    <text x="730" y="575">Independent overflow Z160.11</text>
+<text x="42" y="649">A common flood or solid obstruction is adverse. Actual supply, attachments and lawful outfalls still need verification.</text>
+</svg>

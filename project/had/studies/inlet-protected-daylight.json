@@ -1,0 +1,646 @@
+{
+  "disposition": "PREFER_PROTECTED_LOWER_DAYLIGHT_WITHIN_DECLARED_GRAVITY_ENVELOPE",
+  "aperture": {
+    "coordinates": [
+      3080,
+      3300,
+      290,
+      400
+    ],
+    "insideClearWidthMM": 216,
+    "metalSide": 2,
+    "metalFloor": 3,
+    "settingMM": 10,
+    "protectedTerminalCapLowestZ": 335.11,
+    "underCapClearHeightMM": 90,
+    "terminalX": 13815,
+    "terminalZ": 245.11,
+    "terminalReceivingMax": 220.11,
+    "pipeSeparationAfterLinerAndSettingsMM": 26.6,
+    "sideReservesAfterSettingMM": [
+      35,
+      25
+    ],
+    "topology": "Independent high removable hood, continuous vented lower path and three separate exposed air gaps. No shared crossbar, grille or moulding in the lower 90 mm of the daylight channel."
+  },
+  "hydraulic": {
+    "sillZ": 395,
+    "splashMM": 20,
+    "waterLimitZ": 365,
+    "cases": [
+      {
+        "id": "clear",
+        "flowLmin": 30,
+        "cd": 0.62,
+        "bottomClearWidthMM": 216,
+        "raisedLipMM": 0,
+        "headMM": 11.69259,
+        "waterZ": 301.69259,
+        "reserveMM": 63.30741
+      },
+      {
+        "id": "side blockage leaves half of bottom continuous",
+        "flowLmin": 30,
+        "cd": 0.62,
+        "bottomClearWidthMM": 108,
+        "raisedLipMM": 0,
+        "headMM": 18.56084,
+        "waterZ": 308.56084,
+        "reserveMM": 56.43916
+      },
+      {
+        "id": "full-width raised 32 mm lip",
+        "flowLmin": 30,
+        "cd": 0.62,
+        "bottomClearWidthMM": 216,
+        "raisedLipMM": 32,
+        "headMM": 11.69259,
+        "waterZ": 333.69259,
+        "reserveMM": 31.30741
+      },
+      {
+        "id": "half-width and raised 32 mm lip",
+        "flowLmin": 30,
+        "cd": 0.62,
+        "bottomClearWidthMM": 108,
+        "raisedLipMM": 32,
+        "headMM": 18.56084,
+        "waterZ": 340.56084,
+        "reserveMM": 24.43916
+      },
+      {
+        "id": "clear",
+        "flowLmin": 30,
+        "cd": 0.5,
+        "bottomClearWidthMM": 216,
+        "raisedLipMM": 0,
+        "headMM": 13.49559,
+        "waterZ": 303.49559,
+        "reserveMM": 61.50441
+      },
+      {
+        "id": "side blockage leaves half of bottom continuous",
+        "flowLmin": 30,
+        "cd": 0.5,
+        "bottomClearWidthMM": 108,
+        "raisedLipMM": 0,
+        "headMM": 21.42292,
+        "waterZ": 311.42292,
+        "reserveMM": 53.57708
+      },
+      {
+        "id": "full-width raised 32 mm lip",
+        "flowLmin": 30,
+        "cd": 0.5,
+        "bottomClearWidthMM": 216,
+        "raisedLipMM": 32,
+        "headMM": 13.49559,
+        "waterZ": 335.49559,
+        "reserveMM": 29.50441
+      },
+      {
+        "id": "half-width and raised 32 mm lip",
+        "flowLmin": 30,
+        "cd": 0.5,
+        "bottomClearWidthMM": 108,
+        "raisedLipMM": 32,
+        "headMM": 21.42292,
+        "waterZ": 343.42292,
+        "reserveMM": 21.57708
+      },
+      {
+        "id": "clear",
+        "flowLmin": 60,
+        "cd": 0.62,
+        "bottomClearWidthMM": 216,
+        "raisedLipMM": 0,
+        "headMM": 18.56084,
+        "waterZ": 308.56084,
+        "reserveMM": 56.43916
+      },
+      {
+        "id": "side blockage leaves half of bottom continuous",
+        "flowLmin": 60,
+        "cd": 0.62,
+        "bottomClearWidthMM": 108,
+        "raisedLipMM": 0,
+        "headMM": 29.46349,
+        "waterZ": 319.46349,
+        "reserveMM": 45.53651
+      },
+      {
+        "id": "full-width raised 32 mm lip",
+        "flowLmin": 60,
+        "cd": 0.62,
+        "bottomClearWidthMM": 216,
+        "raisedLipMM": 32,
+        "headMM": 18.56084,
+        "waterZ": 340.56084,
+        "reserveMM": 24.43916
+      },
+      {
+        "id": "half-width and raised 32 mm lip",
+        "flowLmin": 60,
+        "cd": 0.62,
+        "bottomClearWidthMM": 108,
+        "raisedLipMM": 32,
+        "headMM": 29.46349,
+        "waterZ": 351.46349,
+        "reserveMM": 13.53651
+      },
+      {
+        "id": "clear",
+        "flowLmin": 60,
+        "cd": 0.5,
+        "bottomClearWidthMM": 216,
+        "raisedLipMM": 0,
+        "headMM": 21.42292,
+        "waterZ": 311.42292,
+        "reserveMM": 53.57708
+      },
+      {
+        "id": "side blockage leaves half of bottom continuous",
+        "flowLmin": 60,
+        "cd": 0.5,
+        "bottomClearWidthMM": 108,
+        "raisedLipMM": 0,
+        "headMM": 34.00677,
+        "waterZ": 324.00677,
+        "reserveMM": 40.99323
+      },
+      {
+        "id": "full-width raised 32 mm lip",
+        "flowLmin": 60,
+        "cd": 0.5,
+        "bottomClearWidthMM": 216,
+        "raisedLipMM": 32,
+        "headMM": 21.42292,
+        "waterZ": 343.42292,
+        "reserveMM": 21.57708
+      },
+      {
+        "id": "half-width and raised 32 mm lip",
+        "flowLmin": 60,
+        "cd": 0.5,
+        "bottomClearWidthMM": 108,
+        "raisedLipMM": 32,
+        "headMM": 34.00677,
+        "waterZ": 356.00677,
+        "reserveMM": 8.99323
+      },
+      {
+        "id": "clear",
+        "flowLmin": 90,
+        "cd": 0.62,
+        "bottomClearWidthMM": 216,
+        "raisedLipMM": 0,
+        "headMM": 24.32158,
+        "waterZ": 314.32158,
+        "reserveMM": 50.67842
+      },
+      {
+        "id": "side blockage leaves half of bottom continuous",
+        "flowLmin": 90,
+        "cd": 0.62,
+        "bottomClearWidthMM": 108,
+        "raisedLipMM": 0,
+        "headMM": 38.6081,
+        "waterZ": 328.6081,
+        "reserveMM": 36.3919
+      },
+      {
+        "id": "full-width raised 32 mm lip",
+        "flowLmin": 90,
+        "cd": 0.62,
+        "bottomClearWidthMM": 216,
+        "raisedLipMM": 32,
+        "headMM": 24.32158,
+        "waterZ": 346.32158,
+        "reserveMM": 18.67842
+      },
+      {
+        "id": "half-width and raised 32 mm lip",
+        "flowLmin": 90,
+        "cd": 0.62,
+        "bottomClearWidthMM": 108,
+        "raisedLipMM": 32,
+        "headMM": 38.6081,
+        "waterZ": 360.6081,
+        "reserveMM": 4.3919
+      },
+      {
+        "id": "clear",
+        "flowLmin": 90,
+        "cd": 0.5,
+        "bottomClearWidthMM": 216,
+        "raisedLipMM": 0,
+        "headMM": 28.07197,
+        "waterZ": 318.07197,
+        "reserveMM": 46.92803
+      },
+      {
+        "id": "side blockage leaves half of bottom continuous",
+        "flowLmin": 90,
+        "cd": 0.5,
+        "bottomClearWidthMM": 108,
+        "raisedLipMM": 0,
+        "headMM": 44.56147,
+        "waterZ": 334.56147,
+        "reserveMM": 30.43853
+      },
+      {
+        "id": "full-width raised 32 mm lip",
+        "flowLmin": 90,
+        "cd": 0.5,
+        "bottomClearWidthMM": 216,
+        "raisedLipMM": 32,
+        "headMM": 28.07197,
+        "waterZ": 350.07197,
+        "reserveMM": 14.92803
+      },
+      {
+        "id": "half-width and raised 32 mm lip",
+        "flowLmin": 90,
+        "cd": 0.5,
+        "bottomClearWidthMM": 108,
+        "raisedLipMM": 32,
+        "headMM": 44.56147,
+        "waterZ": 366.56147,
+        "reserveMM": -1.56147
+      },
+      {
+        "id": "clear",
+        "flowLmin": 120,
+        "cd": 0.62,
+        "bottomClearWidthMM": 216,
+        "raisedLipMM": 0,
+        "headMM": 29.46349,
+        "waterZ": 319.46349,
+        "reserveMM": 45.53651
+      },
+      {
+        "id": "side blockage leaves half of bottom continuous",
+        "flowLmin": 120,
+        "cd": 0.62,
+        "bottomClearWidthMM": 108,
+        "raisedLipMM": 0,
+        "headMM": 46.77038,
+        "waterZ": 336.77038,
+        "reserveMM": 28.22962
+      },
+      {
+        "id": "full-width raised 32 mm lip",
+        "flowLmin": 120,
+        "cd": 0.62,
+        "bottomClearWidthMM": 216,
+        "raisedLipMM": 32,
+        "headMM": 29.46349,
+        "waterZ": 351.46349,
+        "reserveMM": 13.53651
+      },
+      {
+        "id": "half-width and raised 32 mm lip",
+        "flowLmin": 120,
+        "cd": 0.62,
+        "bottomClearWidthMM": 108,
+        "raisedLipMM": 32,
+        "headMM": 46.77038,
+        "waterZ": 368.77038,
+        "reserveMM": -3.77038
+      },
+      {
+        "id": "clear",
+        "flowLmin": 120,
+        "cd": 0.5,
+        "bottomClearWidthMM": 216,
+        "raisedLipMM": 0,
+        "headMM": 34.00677,
+        "waterZ": 324.00677,
+        "reserveMM": 40.99323
+      },
+      {
+        "id": "side blockage leaves half of bottom continuous",
+        "flowLmin": 120,
+        "cd": 0.5,
+        "bottomClearWidthMM": 108,
+        "raisedLipMM": 0,
+        "headMM": 53.98238,
+        "waterZ": 343.98238,
+        "reserveMM": 21.01762
+      },
+      {
+        "id": "full-width raised 32 mm lip",
+        "flowLmin": 120,
+        "cd": 0.5,
+        "bottomClearWidthMM": 216,
+        "raisedLipMM": 32,
+        "headMM": 34.00677,
+        "waterZ": 356.00677,
+        "reserveMM": 8.99323
+      },
+      {
+        "id": "half-width and raised 32 mm lip",
+        "flowLmin": 120,
+        "cd": 0.5,
+        "bottomClearWidthMM": 108,
+        "raisedLipMM": 32,
+        "headMM": 53.98238,
+        "waterZ": 375.98238,
+        "reserveMM": -10.98238
+      }
+    ],
+    "adverse60Lmin": {
+      "id": "half-width and raised 32 mm lip",
+      "flowLmin": 60,
+      "cd": 0.5,
+      "bottomClearWidthMM": 108,
+      "raisedLipMM": 32,
+      "headMM": 34.00677,
+      "waterZ": 356.00677,
+      "reserveMM": 8.99323
+    },
+    "channel": {
+      "slopeDenominator": 50,
+      "roughnessSensitivity": 0.02,
+      "flowLmin": 60,
+      "channelWidthMM": 108,
+      "normalDepthMM": 21.27986,
+      "criticalDepthMM": 20.59813
+    },
+    "originalDamOpenAreaPercent": 70.90909,
+    "originalFullWidthDamReserveMM": -0.33517,
+    "trialLimitingFlowLmin": 85.31118,
+    "preSiteRequiredVerifiedSourceMaximumLmin": 60,
+    "verifiedProviderFlowLmin": null,
+    "blockageCases": {
+      "allOutletsBlocked": {
+        "accepted": false,
+        "grossTrayVolumeUpperL": 86.55863,
+        "secondsToDrySillAt60LminUpper": 86.55863
+      },
+      "commonFloodAtZ230": {
+        "floodZ": 230,
+        "receiverLimitsExceeded": [
+          true,
+          true,
+          true
+        ],
+        "accepted": false
+      }
+    },
+    "gravitySensitivityOnly": "Neither coefficient is a verified coefficient for this short slot and long chute. Allow separately for transitions and tailwater. All confined channels, throat fouling and common backing remain tested physical cases.",
+    "sharedObstruction": "Reject the location or replan a safely exterior wet bay when a surveyed independent free outfall cannot be sustained. No finite tray storage, D2, roof routes, alarms or intervention credited for continuing supply."
+  },
+  "receiving": {
+    "cells": [
+      {
+        "id": "ordinary",
+        "x": 13717.5,
+        "mouthZ": 54.9233,
+        "maxZ": 22.06,
+        "lane": [
+          2750,
+          2870
+        ],
+        "outgoingClearWidthMM": 80,
+        "insidePlan": [
+          13617.5,
+          14117.5,
+          2750,
+          2870
+        ],
+        "lowestFloorZ": -157.94,
+        "eastOverflowX": 14117.5,
+        "eastOverflowCrestZ": -37.94,
+        "modeledWaterZ": 13.59885,
+        "surchargeReserveMM": 8.46115,
+        "freeDropAtMaximumWaterMM": 32.8633,
+        "outsideReceiverAdmitted": false
+      },
+      {
+        "id": "blocked-primary relief",
+        "x": 13450,
+        "mouthZ": 120.4804,
+        "maxZ": 95.4804,
+        "lane": [
+          2905,
+          3025
+        ],
+        "outgoingClearWidthMM": 80,
+        "insidePlan": [
+          13350,
+          13850,
+          2905,
+          3025
+        ],
+        "lowestFloorZ": -84.5196,
+        "eastOverflowX": 13850,
+        "eastOverflowCrestZ": 35.4804,
+        "modeledWaterZ": 87.01925,
+        "surchargeReserveMM": 8.46115,
+        "freeDropAtMaximumWaterMM": 25,
+        "outsideReceiverAdmitted": false
+      },
+      {
+        "id": "daylight",
+        "x": 13815,
+        "mouthZ": 245.11,
+        "maxZ": 220.11,
+        "lane": [
+          3060,
+          3320
+        ],
+        "outgoingClearWidthMM": 160,
+        "insidePlan": [
+          13715,
+          14215,
+          3060,
+          3320
+        ],
+        "lowestFloorZ": 40.11,
+        "eastOverflowX": 14215,
+        "eastOverflowCrestZ": 160.11,
+        "modeledWaterZ": 196.27784,
+        "surchargeReserveMM": 23.83216,
+        "freeDropAtMaximumWaterMM": 25,
+        "outsideReceiverAdmitted": false
+      }
+    ],
+    "cellSeparationsAfterSettingsMM": [
+      25,
+      25
+    ],
+    "siteAdmitted": false
+  },
+  "closedCover": {
+    "pressureFrontX": [
+      11185,
+      11210
+    ],
+    "permanentDrySillZ": 395,
+    "continuousWetUpstandsY": [
+      2710,
+      3525
+    ],
+    "wetLidZ": 2000,
+    "pressurePlateTrialThicknessMM": 8,
+    "maximumUnsupportedRibSpacingMM": 100,
+    "declaredMinimumProofStressMPa": 200,
+    "declaredMaterialFactor": 1.1,
+    "pressureCases": [
+      {
+        "bar": 3,
+        "idealHoleFlowsLmin": [
+          {
+            "diameterMM": 3,
+            "flowLmin": 10.38865
+          },
+          {
+            "diameterMM": 6,
+            "flowLmin": 41.55461
+          },
+          {
+            "diameterMM": 8,
+            "flowLmin": 73.87487
+          },
+          {
+            "diameterMM": 22,
+            "flowLmin": 558.67871
+          }
+        ],
+        "oldPlate": {
+          "bar": 3,
+          "thicknessMM": 6,
+          "forceN": 342.11944,
+          "stripStressMPa": 64.79535
+        },
+        "preferredPlate": {
+          "bar": 3,
+          "thicknessMM": 8,
+          "forceN": 342.11944,
+          "stripStressMPa": 36.44738
+        }
+      },
+      {
+        "bar": 6,
+        "idealHoleFlowsLmin": [
+          {
+            "diameterMM": 3,
+            "flowLmin": 14.69177
+          },
+          {
+            "diameterMM": 6,
+            "flowLmin": 58.7671
+          },
+          {
+            "diameterMM": 8,
+            "flowLmin": 104.47484
+          },
+          {
+            "diameterMM": 22,
+            "flowLmin": 790.091
+          }
+        ],
+        "oldPlate": {
+          "bar": 6,
+          "thicknessMM": 6,
+          "forceN": 684.23888,
+          "stripStressMPa": 129.5907
+        },
+        "preferredPlate": {
+          "bar": 6,
+          "thicknessMM": 8,
+          "forceN": 684.23888,
+          "stripStressMPa": 72.89477
+        }
+      },
+      {
+        "bar": 9,
+        "idealHoleFlowsLmin": [
+          {
+            "diameterMM": 3,
+            "flowLmin": 17.99368
+          },
+          {
+            "diameterMM": 6,
+            "flowLmin": 71.9747
+          },
+          {
+            "diameterMM": 8,
+            "flowLmin": 127.95503
+          },
+          {
+            "diameterMM": 22,
+            "flowLmin": 967.6599
+          }
+        ],
+        "oldPlate": {
+          "bar": 9,
+          "thicknessMM": 6,
+          "forceN": 1026.35832,
+          "stripStressMPa": 194.38605
+        },
+        "preferredPlate": {
+          "bar": 9,
+          "thicknessMM": 8,
+          "forceN": 1026.35832,
+          "stripStressMPa": 109.34215
+        }
+      }
+    ],
+    "operatingGlands": [
+      {
+        "throughX": 11185,
+        "axisY": 2800,
+        "axisZ": 875,
+        "fixedDryGripX": 11145
+      },
+      {
+        "throughX": 11185,
+        "axisY": 3110,
+        "axisZ": 1392.5,
+        "fixedDryGripX": 11145
+      },
+      {
+        "throughX": 11185,
+        "axisY": 3370,
+        "axisZ": 1392.5,
+        "fixedDryGripX": 11145
+      }
+    ],
+    "roofJackets": [
+      {
+        "id": "U0",
+        "centre": [
+          11505,
+          2882,
+          2000
+        ],
+        "maximumFixedCurbRadiusMM": 50,
+        "completeJacketRadiusMM": 37,
+        "eastCurbReserveAfterSettingsMM": 5.5
+      },
+      {
+        "id": "P0",
+        "centre": [
+          11385,
+          3370,
+          2000
+        ],
+        "maximumFixedCurbRadiusMM": 50,
+        "completeJacketRadiusMM": 37,
+        "eastCurbReserveAfterSettingsMM": 125.5
+      }
+    ],
+    "sideJacket": {
+      "id": "spool",
+      "centre": [
+        11570.5,
+        2800,
+        600
+      ]
+    },
+    "closure": "Weld lower pan turns continuously into a retained backing frame. Keep panel overlaps, paired drained drive glands and two fixed roof flashings inside the wet-side return. Keep all hinges, ribs and fasteners out of the removable valve, controlled drawer and service handoff. Isolate the shared cabinet at B0 and isolate and verify all downstream faces before opening any pressure splash cover.",
+    "noProof": "Wet liquid/solid transport, seam reflection, spray at fasteners, panel loads and actual supports require exact pieces and tested jets. The strip is a local impact sensitivity, not static pressure-boundary rating."
+  }
+}

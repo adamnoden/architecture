@@ -36,6 +36,8 @@ The [captured utility head reservation](utility-cutover-lift.md) replaces the 61
 
 The [east plant release route](plant-release-route.md) replaces the earlier generic Ø850/2125 mm carrier condition with separate complete Ø830 cylinder and Ø750 buffer profiles and a preferred near-level dry arrival, while keeping the independent lower D2 route.
 
+The [protected lower daylight spill](inlet-protected-daylight.md) updates the selected framed bay with a new crest, lined aperture and separate receiving cells. Its measured geometry and explicit flow limits control the next closed-cover detail.
+
 ## Evidence boundary and graph disposition
 
 - **Pre-site design before this packet can close:** HAD/MAT/IAS draw the same continuous pressure path, fixed cabinet, both ways to remove each confined part, bounded first wetting and gravity/blocked states, plant load transfer and utility renewals. STR coordinates the actual formed aperture, slab/pier, supports and movement reservations at concept level. Publish a reconciled current-house source and MAT/IAS/MRA receipts or an explicit evidenced house-scope alternative if this redesign fails. A site survey cannot cure the shown conflicts.
