@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "CCR-STRUCTURE-INTEGRATION",
   "generation": 2,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "b5b40bf3-2686-4cea-81d7-e76966c09a04",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg16-current-domain-delivery"
   },
   "claimedAt": "2026-11-15T19:34:52.696Z",
-  "heartbeatAt": "2026-11-15T19:53:21.157Z",
-  "expiresAt": "2026-11-15T20:53:21.157Z",
+  "heartbeatAt": "2026-11-15T20:15:42.000Z",
+  "expiresAt": "2026-11-15T20:15:42.000Z",
   "branch": "work/zerg16-current-domain-closures",
   "predecessor": {
     "leaseId": "dad5bd79-b59b-4631-92fb-dd546ad6b4ce",
@@ -39,5 +39,7 @@
     "evidence": "Corrected 160b492fca659ce0b7139e619f40a2db137937c3; original foundation producer exact copy, regenerated no native evidence, arch and foundation native checks plus versioned load assertions pass locally.",
     "next": "Wait for all corrected exact workflows, run four canonical merge checks and integrate.",
     "blocker": "Complete only on verified exact integration."
-  }
+  },
+  "releasedAt": "2026-11-15T20:15:42.000Z",
+  "releaseReason": "completed"
 }
