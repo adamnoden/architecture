@@ -34,6 +34,8 @@ The [preferred framed east-wall bay](inlet-framed-bay.md) replaces the three sep
 
 The [captured utility head reservation](utility-cutover-lift.md) replaces the 610 mm transport package with a 600 mm complete envelope and records the failed tool and drain paths that still prevent the pre-release cutover.
 
+The [east plant release route](plant-release-route.md) replaces the earlier generic Ø850/2125 mm carrier condition with separate complete Ø830 cylinder and Ø750 buffer profiles and a preferred near-level dry arrival, while keeping the independent lower D2 route.
+
 ## Evidence boundary and graph disposition
 
 - **Pre-site design before this packet can close:** HAD/MAT/IAS draw the same continuous pressure path, fixed cabinet, both ways to remove each confined part, bounded first wetting and gravity/blocked states, plant load transfer and utility renewals. STR coordinates the actual formed aperture, slab/pier, supports and movement reservations at concept level. Publish a reconciled current-house source and MAT/IAS/MRA receipts or an explicit evidenced house-scope alternative if this redesign fails. A site survey cannot cure the shown conflicts.

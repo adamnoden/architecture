@@ -1,5 +1,9 @@
 # Floor and portal reconciliation
 
+## North hold-down and principal collector cage
+
+The [paired garden tie detail](floor-portal-twin-garden-tie.md) places the north hold-down on a straight vertical line outside the voussoirs. The [current principal cage](floor-portal-north-cage.md) replaces the first-floor 180 mm clearance trial with a locally widened, shaped 200 mm main body on the existing vertical floor datums. It clears the sleeve against the 21 mm placing comparator with a common fixture. The single 108 mm bay carries a separate shear comparison. The actual slab end and lateral chord development, thermal finish, roof retainer, current west and east cap anchorage, service interfaces and signed 52-head replay remain open. These joins supply the structural packet closeout.
+
 **15 November disposition. Retire the nested hip heel and collar and redraw the outer roof support.** Remove the combined hold-down and lateral guide assembly from the four L-pier heads. Take direct compression, uplift and horizontal restraint to distinct locations. Start with the support arrangement below. STR-FLOOR-PORTAL remains open for the joined successor and holds both final house gates.
 
 The [subsequent separated support replay](floor-portal-separate-support-replay.md) rejects the four-point room-side guide retrofit developed from the comparison below. Rewind to independently braced wall heads supporting tied roof frames or segments with deliberate fixed restraints and a defined movement route. The four-guide setout is now a rejected comparison.
