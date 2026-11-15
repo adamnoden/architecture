@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "node": "PCO-CODIFICATION",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "3af96117-7cfc-4f84-8c55-fb5c9fe2177e",
+  "holder": { "kind": "chatgpt", "label": "owner-executable-design-editor-contract" },
+  "claimedAt": "2026-11-15T13:55:43.372Z",
+  "heartbeatAt": "2026-11-15T13:55:43.372Z",
+  "expiresAt": "2026-11-15T15:35:43.372Z",
+  "branch": "work/executable-design-editor-contract-20261115",
+  "checkpoint": {
+    "evidence": "Owner-directed exceptional registration and scope recorded in issue #1539; baseline main 18f73afa4a5836e38c4ae62d4f8d97f83431b2ac.",
+    "next": "Publish instructions, current-model/editor contracts, executable migration packets and graph regression tests; require exact CI and canonical preflight."
+  },
+  "note": "Explicitly directed PCO bootstrap. New node is not on main until registration merges; automatic dispatch may fail closed meanwhile. Existing STR/HAD leases are untouched. Planning completion is not compiler implementation."
+}
