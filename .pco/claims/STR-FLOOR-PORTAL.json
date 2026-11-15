@@ -9,8 +9,8 @@
     "label": "zerg16-str-collar"
   },
   "claimedAt": "2026-11-15T17:18:20.638Z",
-  "heartbeatAt": "2026-11-15T17:18:20.638Z",
-  "expiresAt": "2026-11-15T18:03:20.638Z",
+  "heartbeatAt": "2026-11-15T17:41:01.453Z",
+  "expiresAt": "2026-11-15T18:26:01.453Z",
   "branch": "work/zerg16-north-collar",
   "predecessor": {
     "leaseId": "43f21113-68a7-4bc0-b457-36e5f06f238c",
@@ -33,5 +33,11 @@
       "next": "Observe exact-head CI and integrate while lease live",
       "blocker": "Develop northern diaphragm corner and slab crossing, qualified cap and actual signed whole house replay"
     }
+  },
+  "pr": 1548,
+  "checkpoint": {
+    "evidence": "PR #1548 exact 312ac939da24511708e3dcb86cc48db96b8eb6a8; concealed north L collar, developed straight crossing and stepped cover",
+    "next": "Observe exact-head CI then integrate while lease live",
+    "blocker": "Design lateral bend confinement and complete joined wall, roof, foundation and service replay"
   }
 }
