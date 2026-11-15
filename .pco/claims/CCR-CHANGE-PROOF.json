@@ -9,7 +9,13 @@
     "label": "zerg16-current-change-proof"
   },
   "claimedAt": "2026-11-15T20:19:44.097Z",
-  "heartbeatAt": "2026-11-15T20:19:44.097Z",
-  "expiresAt": "2026-11-15T21:19:44.097Z",
-  "branch": "work/zerg16-current-change-proof"
+  "heartbeatAt": "2026-11-15T20:21:58.311Z",
+  "expiresAt": "2026-11-15T21:21:58.311Z",
+  "branch": "work/zerg16-current-change-proof",
+  "pr": 1553,
+  "checkpoint": {
+    "evidence": "Local focused change proof, typecheck, native MAT reference replay, repository and control passed; exact head 72801736dc1dc0520a43ec264505fb28d8c55ac3",
+    "next": "Wait for all exact hosted workflows and run a fresh merge preflight",
+    "blocker": "Exact hosted validation pending"
+  }
 }
