@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 6 · **Active:** 0 · **Blocked:** 31 · **Held:** 2 · **Done:** 141 · **Cancelled:** 0
+**Structurally ready:** 5 · **Active:** 0 · **Blocked:** 31 · **Held:** 2 · **Done:** 142 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -21,7 +21,6 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
-| `ADE-BROWSER-EDITOR` | Demonstrate browser floor-plan editing through the shared headless compiler | ADE | — |
 | `HAD-INLET-RESOLUTION` | Resolve the selected incoming-water route and isolation station | HAD / MAT / IAS | — |
 | `STR-FLOOR-PORTAL` | Resolve the floor collector and portal load path before house selection | STR | ROF-RWT-GATE |
 | `DPL-COMMISSION` | Receive owner-nominated real plot and authorised assessment scope | DPL | DPL-SITE-ASSESSMENT |

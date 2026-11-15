@@ -6,6 +6,7 @@ import {
   applyDesignEdit, beginDesignEdit, editBase, inspectDraftGeometry, loadDesignDraft,
   replayDesignEdit, saveDesignDraft, type EditConsumer, type EditOperation, type EditorState,
 } from './current-design/edit.js'
+import { createFreeStandingPartitionSpecimen } from './current-design/editor-specimen.js'
 import { readGeorgianDesignSnapshot } from './current-design/georgian-source.js'
 import { analysisTicket, currentAnalysisOutput, runRevisionAnalysis } from './current-design/revision-analysis.js'
 
@@ -66,22 +67,7 @@ test('a portable batch moves and resizes the same hosted opening across the actu
 })
 
 test('a non-square design translates a free-standing wall and its hosted door without replacing their identities', () => {
-  const source = readGeorgianDesignSnapshot()
-  const start = beginDesignEdit({
-    ...source,
-    envelope: { widthMm: 8600, depthMm: 10200, court: { x: 2200, y: 4400, width: 2800, depth: 2350 } },
-    storeys: {
-      GROUND: { elevationMm: 0, rooms: [],
-        partitions: [
-          { id: wallReference.hostWallId, from: [2600, 900], to: [2600, 3000] },
-          { id: 'GROUND/limit', from: [3400, 900], to: [3400, 3000] },
-        ],
-        openings: [{ id: wallReference.openingId, hostWallId: wallReference.hostWallId, kind: 'door', centreMm: 1800, widthMm: 825,
-          operation: { leaves: 1, hinge: 'low', swing: 'left' } }],
-      },
-      FIRST: { elevationMm: 2980, rooms: [], partitions: [], openings: [] },
-    },
-  }, 'session-wall', 'SPECIMEN-MOVABLE-WALL')
+  const start = beginDesignEdit(createFreeStandingPartitionSpecimen(readGeorgianDesignSnapshot()), 'session-wall', 'SPECIMEN-MOVABLE-WALL')
   const wallAt = (coordinateMm: number) => ({ kind: 'move-wall', level: 'GROUND', wallId: wallReference.hostWallId, coordinateMm }) as const
   const outcome = applied(applyDesignEdit(start, transaction(start, wallAt(2800)), []))
   const before = inspectHostedOpening(start.design, wallReference)

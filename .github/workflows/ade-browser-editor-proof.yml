@@ -1,0 +1,51 @@
+name: Prove ADE browser editor
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'project/ade/browser-editor/**'
+      - 'project/ade/browser-editor-result.md'
+      - 'compiler/reference-house/current-design/**'
+      - 'compiler/publication-drawing-v2/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/ade-browser-editor-proof.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ade-browser-editor-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Set up Chromium proof
+        run: |
+          python3 -m venv "$RUNNER_TEMP/ade-browser-proof"
+          "$RUNNER_TEMP/ade-browser-proof/bin/python" -m pip install playwright==1.62.0
+          "$RUNNER_TEMP/ade-browser-proof/bin/python" -m playwright install --with-deps --only-shell chromium
+      - name: Build and exercise editor
+        run: |
+          mkdir -p "$RUNNER_TEMP/ade-browser-review"
+          node node_modules/vite/bin/vite.js build --config project/ade/browser-editor/vite.config.ts --outDir "$RUNNER_TEMP/ade-editor-dist"
+          "$RUNNER_TEMP/ade-browser-proof/bin/python" project/ade/browser-editor/browser_test.py --dist "$RUNNER_TEMP/ade-editor-dist" --screenshot "$RUNNER_TEMP/ade-browser-review/editor.png"
+      - name: Retain browser evidence
+        uses: actions/upload-artifact@v6
+        with:
+          name: ade-browser-editor-review
+          path: ${{ runner.temp }}/ade-browser-review
+          if-no-files-found: error
+          retention-days: 7

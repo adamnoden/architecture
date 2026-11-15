@@ -1,0 +1,32 @@
+:root { color: #253832; background: #f0ede5; font-family: "Instrument Sans", system-ui, sans-serif; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { width: min(1280px, 100%); margin: auto; padding: 30px clamp(14px, 4vw, 52px); }
+h1 { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 500; letter-spacing: -.05em; margin: 0; }
+p { line-height: 1.5; margin: .75rem 0; }
+header { padding: 4px 0 14px; }
+header p, #scope { color: #485c52; }
+.toolbar, .drawing-bar, .actions { display: flex; align-items: end; flex-wrap: wrap; gap: .5rem; }
+.toolbar, .drawing-bar { justify-content: space-between; }
+.toolbar { border-block: 1px solid #b9b9ac; padding: 12px 0; }
+.workspace { display: grid; grid-template-columns: minmax(215px, 280px) minmax(0, 1fr); gap: 18px; margin-top: 18px; }
+aside, .drawing { padding: 14px; background: #faf8f0; border: 1px solid #cac7b9; }
+form { display: grid; gap: 12px; margin-top: 18px; }
+label { display: grid; gap: .25rem; font-size: .9rem; font-weight: 650; }
+select, input, button { min-height: 39px; padding: .4rem .6rem; border: 1px solid #839188; border-radius: 3px; color: inherit; background: #fffefa; font: inherit; }
+select, input { width: 100%; min-width: 0; }
+button { cursor: pointer; }
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid #05664d; outline-offset: 2px; }
+button:disabled { opacity: .48; cursor: default; }
+.primary { background: #253832; color: #fffefa; }
+.adjust button { flex: 1; font-size: .8rem; }
+.plans { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+figure { min-width: 0; margin: 0; border-top: 1px solid #cac7b9; }
+figcaption { padding-block: 7px; }
+img { display: block; width: 100%; aspect-ratio: 1; object-fit: contain; background: #fff; }
+img:not([src]) { visibility: hidden; }
+#diagnostic { color: #8b3528; }
+#analysis, #affected, #stale, #storage { font-size: .9rem; }
+#stale:empty, #diagnostic:empty { display: none; }
+@media (max-width: 760px) { .workspace { grid-template-columns: 1fr; } }
+@media (max-width: 440px) { .plans { grid-template-columns: 1fr; } }
