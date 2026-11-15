@@ -1,0 +1,272 @@
+{
+  "status": "PREFERRED_UTILITY_HEAD_HANDLING_RESERVATION",
+  "inletEndpoints": {
+    "cold": [
+      10760,
+      1250,
+      1000
+    ],
+    "hot": [
+      10860,
+      1250,
+      1000
+    ],
+    "coincidenceMM": 0
+  },
+  "oldLift": {
+    "head": [
+      10930,
+      735,
+      925,
+      610,
+      610,
+      700
+    ],
+    "minimumMM": 15,
+    "xWidthShortfallMM": 6.5
+  },
+  "fittedLift": {
+    "head": [
+      10935,
+      735,
+      935,
+      600,
+      610,
+      700
+    ],
+    "moves": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        760,
+        0
+      ],
+      [
+        -730,
+        760,
+        0
+      ],
+      [
+        -730,
+        760,
+        -585
+      ]
+    ],
+    "details": [
+      {
+        "stage": 1,
+        "box": [
+          10935,
+          735,
+          935,
+          600,
+          1370,
+          700
+        ],
+        "namedObstacles": {
+          "frame": 25,
+          "washer": 265.11816,
+          "rackPost": 83.94147,
+          "rackFoot": 915.48636,
+          "eastWall": 25.5,
+          "H0": 28,
+          "coldCap": 128,
+          "hotCap": 28,
+          "radiator": 225
+        },
+        "backbone": {
+          "cold": 127.99714,
+          "hot": 27.99714
+        },
+        "minimumMM": 25
+      },
+      {
+        "stage": 2,
+        "box": [
+          10205,
+          1495,
+          935,
+          1330,
+          610,
+          700
+        ],
+        "namedObstacles": {
+          "frame": 148.90249,
+          "washer": 118.8177,
+          "rackPost": 311.44206,
+          "rackFoot": 960.90164,
+          "eastWall": 25.5,
+          "H0": 125,
+          "coldCap": 198,
+          "hotCap": 198,
+          "radiator": 225
+        },
+        "backbone": {
+          "cold": 197.99714,
+          "hot": 197.99714
+        },
+        "minimumMM": 25.5
+      },
+      {
+        "stage": 3,
+        "box": [
+          10205,
+          1495,
+          350,
+          600,
+          610,
+          1285
+        ],
+        "namedObstacles": {
+          "frame": 192.29928,
+          "washer": 85,
+          "rackPost": 307.80497,
+          "rackFoot": 441.13745,
+          "eastWall": 755.5,
+          "H0": 126.19471,
+          "coldCap": 198,
+          "hotCap": 198.77739,
+          "radiator": 555.5
+        },
+        "backbone": {
+          "cold": 197.99714,
+          "hot": 204.09473
+        },
+        "minimumMM": 85
+      }
+    ],
+    "landing": [
+      10505,
+      1800,
+      350
+    ],
+    "eastWallX": 11570.5,
+    "hotBoundaryEastX": 10897,
+    "availableWidthMM": 603.5,
+    "receiver": [
+      10170,
+      1465,
+      670,
+      670
+    ],
+    "supportClearance": [
+      35,
+      35,
+      30,
+      30
+    ],
+    "maximumLoadedWidthAtSelectedXMM": 600.5,
+    "widerFallback": {
+      "packageWidthMM": 610,
+      "southwestX": 10925,
+      "maximumHotBoundaryX": 10890,
+      "minimumHotBoundaryShiftWestMM": 7,
+      "wallGapAfterSettingMM": 25.5,
+      "disposition": "Redraw and re-sweep the complete hot control and backbone if the fitted package cannot fit."
+    }
+  },
+  "cutover": {
+    "unionPoints": [
+      [
+        11110,
+        1275,
+        595
+      ],
+      [
+        11300,
+        1275,
+        595
+      ]
+    ],
+    "breakOperations": [
+      {
+        "id": "cold",
+        "minimumToolAfterSettingMM": 17.95205
+      },
+      {
+        "id": "hot",
+        "minimumToolAfterSettingMM": 17.95205
+      }
+    ],
+    "lowWork": [
+      {
+        "id": "cold",
+        "minimumArmAfterSettingMM": 16.36915
+      },
+      {
+        "id": "hot",
+        "minimumArmAfterSettingMM": 50
+      }
+    ],
+    "releaseCandidate": {
+      "headBodyBottom": 670,
+      "toolZ": 620,
+      "drainShoulder": [
+        11025,
+        1725,
+        500
+      ],
+      "receiver": [
+        11055,
+        925,
+        0,
+        390,
+        400,
+        75
+      ],
+      "proposedTools": [
+        {
+          "id": "cold",
+          "toolMM": 25.95205,
+          "handMM": 55.96717,
+          "armMM": 65.96717,
+          "otherUnionMM": 37.58157,
+          "reachMM": 542.89664
+        },
+        {
+          "id": "hot",
+          "toolMM": 25.95205,
+          "handMM": 49.46708,
+          "armMM": 59.46708,
+          "otherUnionMM": 62.95233,
+          "reachMM": 513.67229
+        }
+      ],
+      "proposedDrains": [
+        {
+          "id": "cold",
+          "controllingObstacle": "wholeFootWindow1",
+          "armMM": 28.58224,
+          "reachMM": 403.67066
+        },
+        {
+          "id": "hot",
+          "controllingObstacle": "EW rail at y1350 / z135",
+          "armMM": 50,
+          "reachMM": 520.91266
+        }
+      ],
+      "receiverAfterSettingMM": 25,
+      "grossReceiverUpperLitres": 11.7,
+      "installedHeadZ": [
+        550,
+        1250
+      ],
+      "initialVerticalTravelMM": 385,
+      "scope": "Relieve the bowl/skirt obstruction only, keeping rim, retained tails and overall fitted transport envelope. Prove the actual shell relief, nut engagement, operator and receiver handling, net receiver volume and initial vertical sweep before adoption."
+    },
+    "capture": {
+      "productSource": "https://www.acornthorn.co.uk/basins-bowls-catering-sinks/freestanding-catering-sinks/catering-sink-single-bowl",
+      "assemblySource": "https://www.acornthorn.co.uk/imagprod/downloads/CS860%20Self%20Assembly%20Sink%20Instructions.pdf",
+      "requiredActualMovingWidthMM": 600,
+      "completeMovingDepthMM": 610,
+      "completeMovingHeightMM": 700,
+      "method": "Support with independent above-head drive and three or more positively restrained load contacts within the entire plan width. With zero pressure and independent wet ends closed, capture at least three non-collinear supported contacts before the four fixing screws leave. Verify actual load, contact capacity, mass centre, support path, anti-tip restraint and sustained tension over every stage. Lower to independent two-rail rest while retaining capture. Do not grip outside the width during the north transit."
+    },
+    "hold": "Before pre-site cutover verify the relieved shell and nut engagement, occupied receiver operation and initial vertical sweep. Source water fittings, complete chamber, loaded release and as-built site evidence are separate later qualifications."
+  }
+}

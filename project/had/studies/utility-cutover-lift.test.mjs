@@ -1,0 +1,33 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import test from 'node:test';
+import {deriveUtilityCutoverLift} from './utility-cutover-lift.mjs';
+
+test('utility cutover rejects the old load width and preserves the independent release holds',()=>{
+  const result=deriveUtilityCutoverLift();
+  const {oldLift,fittedLift,cutover}=result;
+  assert.equal(oldLift.minimumMM,15);
+  assert.equal(oldLift.xWidthShortfallMM,6.5);
+  assert.deepEqual(result.inletEndpoints,{cold:[10760,1250,1000],hot:[10860,1250,1000],coincidenceMM:0});
+  assert.equal(fittedLift.availableWidthMM,603.5);
+  assert.equal(fittedLift.widerFallback.maximumHotBoundaryX,10890);
+  assert.equal(fittedLift.widerFallback.minimumHotBoundaryShiftWestMM,7);
+  assert.equal(fittedLift.widerFallback.wallGapAfterSettingMM,25.5);
+  assert.deepEqual(fittedLift.head,[10935,735,935,600,610,700]);
+  assert.deepEqual(fittedLift.landing,[10505,1800,350]);
+  assert.deepEqual(fittedLift.supportClearance,[35,35,30,30]);
+  assert(fittedLift.details.every(stage=>Math.min(stage.minimumMM,stage.backbone.cold,stage.backbone.hot)>=25));
+  assert(cutover.breakOperations.every(row=>row.minimumToolAfterSettingMM<25));
+  assert(cutover.lowWork.find(row=>row.id==='cold').minimumArmAfterSettingMM<25);
+  const {releaseCandidate}=cutover;
+  assert.equal(releaseCandidate.headBodyBottom,670);
+  assert.equal(releaseCandidate.toolZ,620);
+  assert.equal(releaseCandidate.initialVerticalTravelMM,385);
+  assert.deepEqual(releaseCandidate.installedHeadZ,[550,1250]);
+  assert(releaseCandidate.proposedTools.every(row=>row.toolMM>=25));
+  assert.equal(releaseCandidate.proposedDrains[0].armMM,28.58224);
+  assert.equal(releaseCandidate.receiverAfterSettingMM,25);
+  assert.match(cutover.hold,/before pre-site cutover.*loaded release.*as-built site evidence/i);
+  const saved=readFileSync(new URL('./utility-cutover-lift.json',import.meta.url),'utf8');
+  assert.equal(saved,JSON.stringify(result,null,2)+'\n');
+});
