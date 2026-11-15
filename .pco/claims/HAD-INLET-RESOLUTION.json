@@ -1,42 +1,39 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 29,
-  "state": "released",
-  "leaseId": "06d37a9b-6592-4eb6-acf2-99328a7000b7",
+  "generation": 30,
+  "state": "claimed",
+  "leaseId": "82bb343b-8be1-476d-9ad9-a4170ca64c72",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg15-had"
   },
-  "claimedAt": "2026-11-15T13:11:17.741Z",
-  "heartbeatAt": "2026-11-15T13:38:48.411Z",
-  "expiresAt": "2026-11-15T13:38:48.411Z",
-  "branch": "work/zerg15-north-inlet",
+  "claimedAt": "2026-11-15T13:39:30.395Z",
+  "heartbeatAt": "2026-11-15T13:39:30.395Z",
+  "expiresAt": "2026-11-15T14:24:30.395Z",
+  "checkpoint": {
+    "evidence": "Verified framed-bay merge #1537 at 18f73afa; locally verified utility transport and release commits 58612c66 and d4800853, 104 HAD checks.",
+    "next": "Publish and exact-head validate the combined utility/captive-joint follow-on; retain fitted capture, plant transfer, pressure and material evidence boundaries."
+  },
+  "branch": "work/zerg15-joints-utility",
   "predecessor": {
-    "leaseId": "67a85cbe-fcae-4b02-9c95-2e82d5926eca",
-    "generation": 28,
-    "branch": "work/zerg14-replay-fixed-station",
-    "pr": 1536,
+    "leaseId": "06d37a9b-6592-4eb6-acf2-99328a7000b7",
+    "generation": 29,
+    "branch": "work/zerg15-north-inlet",
+    "pr": 1537,
     "checkpoint": {
-      "evidence": "PR #1536 exact final 3f5e7007efde9858904c8d14f235ac9c90a22378 tree 29a95e68 with fixed station and simultaneous lower-outlet blocked daylight case; 102 HAD checks",
-      "next": "Observe hosted Validate PR for final head, run fresh preflight, merge with the exact head and release"
+      "evidence": "PR #1537 exact b735be47311b64c68ba77d50b02bb138ef29139e includes framed bay, separate routes and fitted-wheel draw; 103 HAD checks.",
+      "next": "Review exact hosted validation and verify the current head before merge; isolate complete utility/plant evidence."
     }
   },
   "recoverySource": {
-    "leaseId": "67a85cbe-fcae-4b02-9c95-2e82d5926eca",
-    "generation": 28,
-    "branch": "work/zerg14-replay-fixed-station",
-    "pr": 1536,
+    "leaseId": "06d37a9b-6592-4eb6-acf2-99328a7000b7",
+    "generation": 29,
+    "branch": "work/zerg15-north-inlet",
+    "pr": 1537,
     "checkpoint": {
-      "evidence": "PR #1536 exact final 3f5e7007efde9858904c8d14f235ac9c90a22378 tree 29a95e68 with fixed station and simultaneous lower-outlet blocked daylight case; 102 HAD checks",
-      "next": "Observe hosted Validate PR for final head, run fresh preflight, merge with the exact head and release"
+      "evidence": "PR #1537 exact b735be47311b64c68ba77d50b02bb138ef29139e includes framed bay, separate routes and fitted-wheel draw; 103 HAD checks.",
+      "next": "Review exact hosted validation and verify the current head before merge; isolate complete utility/plant evidence."
     }
-  },
-  "checkpoint": {
-    "evidence": "PR #1537 exact b735be47311b64c68ba77d50b02bb138ef29139e includes framed bay, separate routes and fitted-wheel draw; 103 HAD checks.",
-    "next": "Review exact hosted validation and verify the current head before merge; isolate complete utility/plant evidence."
-  },
-  "pr": 1537,
-  "releasedAt": "2026-11-15T13:38:48.411Z",
-  "releaseReason": "handoff"
+  }
 }
