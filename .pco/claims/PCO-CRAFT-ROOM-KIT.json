@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "node": "PCO-CRAFT-ROOM-KIT",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "234f0e8a-5ce7-4ae4-a30e-16459ea9c09b",
+  "holder": { "kind": "chatgpt", "label": "owner-crafted-room-kit-brief" },
+  "claimedAt": "2026-11-15T21:26:17.435Z",
+  "heartbeatAt": "2026-11-15T21:26:17.435Z",
+  "expiresAt": "2026-11-15T22:56:17.435Z",
+  "branch": "work/crafted-room-kit-direction-20261115",
+  "checkpoint": {
+    "evidence": "Owner direction and exceptional registration bootstrap recorded in issue #1555; original charter, plan and architecture source blobs verified locally; current base d1e67a8f138be652877cb6bdeecdbddf8c16f1b1",
+    "next": "Publish five-file brief, charter, plan, canonical nodes and graph tests; require exact CI and fresh canonical publication preflight before merge"
+  },
+  "note": "Registration-only owner-directed bootstrap, recorded before create-if-absent claim. Unknown-on-main node can temporarily make generic dispatch fail closed. Release promptly at handoff; no other worker claim is modified."
+}
