@@ -1,0 +1,189 @@
+{
+  "status": "GRADE_WORKING_MODEL_NOT_ADOPTION",
+  "selection": "HAD-SERVICES-02",
+  "access": {
+    "trialWorkingFloor": -1800,
+    "dropMM": 1310,
+    "localFace": [
+      12650,
+      13650,
+      2250,
+      3350
+    ],
+    "stance": [
+      12975,
+      2590
+    ],
+    "dryEscapeStartX": 13650,
+    "gripReachMM": 556.1924127494009,
+    "spannerSectors": [
+      611.4714098968094,
+      588.0420360766097
+    ],
+    "firstRest": {
+      "x": 13000,
+      "y": 2800,
+      "eastwardThrowMM": 610,
+      "liftMM": 85,
+      "packageTopAfterLiftMM": -338,
+      "assumedClearHeadMM": -260,
+      "maximumDryHandledKg": 8,
+      "operatorCentreX": 13325,
+      "remainingPlatformRunMM": 25,
+      "operatorAndCaptureProved": false
+    },
+    "drySideGapToRaisedDripMM": 25,
+    "oldSouthFaceBodyDeficitMM": 160,
+    "deckArrivalReachAfterSettingMM": 30,
+    "protectionFromOutsideFloodAndDripNotVerified": true
+  },
+  "supply": {
+    "shiftedFeed": [
+      [
+        12250,
+        2800,
+        -1475
+      ],
+      [
+        12250,
+        2800,
+        -925
+      ],
+      [
+        12390,
+        2577.5,
+        -925
+      ],
+      [
+        12390,
+        2577.5,
+        -710
+      ]
+    ],
+    "deliveryVertices": [
+      [
+        12390,
+        3022.5,
+        -710
+      ],
+      [
+        12250,
+        3022.5,
+        -710
+      ],
+      [
+        12250,
+        2800,
+        -710
+      ],
+      [
+        12250,
+        2800,
+        600
+      ],
+      [
+        12090,
+        2800,
+        600
+      ]
+    ],
+    "bends": [
+      {
+        "vertex": [
+          12250,
+          2800,
+          -925
+        ],
+        "angleDeg": 90,
+        "tangent": 74.99999999999999
+      },
+      {
+        "vertex": [
+          12390,
+          2577.5,
+          -925
+        ],
+        "angleDeg": 90,
+        "tangent": 74.99999999999999
+      },
+      {
+        "vertex": [
+          12250,
+          3022.5,
+          -710
+        ],
+        "angleDeg": 90,
+        "tangent": 74.99999999999999
+      },
+      {
+        "vertex": [
+          12250,
+          2800,
+          -710
+        ],
+        "angleDeg": 90,
+        "tangent": 74.99999999999999
+      },
+      {
+        "vertex": [
+          12250,
+          2800,
+          600
+        ],
+        "angleDeg": 90,
+        "tangent": 74.99999999999999
+      }
+    ],
+    "workingUnionZ": -710,
+    "towerX": 12250,
+    "cartridgeX": 12390,
+    "towerWestToBeamMM": 32.5,
+    "protectedTowerToDripAfterSettingMM": 15,
+    "isolatedPipeGapMM": 169.22235255842682,
+    "actualDuctGapBeforeSettingsMM": 43.22235255842682,
+    "actualDuctGapAfterSettingsMM": 33.22235255842682,
+    "protectedLowFeedToBeamMM": 183.99758436031684,
+    "protectedPostCutToBeamMM": 32.49714421981284,
+    "separatelyRenewableProtectedRiseProved": false,
+    "retainedWallPassage": [
+      12090,
+      2800,
+      600
+    ]
+  },
+  "fault": {
+    "trayBottomZ": -1060,
+    "trayTopZ": -980,
+    "paths": [
+      {
+        "x": 12300,
+        "startY": 2450,
+        "endY": 950,
+        "runMM": 1500,
+        "crestZ": -1055,
+        "widthMM": 160,
+        "maximumTrialTailwaterZ": -1160,
+        "toDryFieldAfterSettingMM": 260
+      },
+      {
+        "x": 12500,
+        "startY": 2450,
+        "endY": 950,
+        "runMM": 1500,
+        "crestZ": -1035,
+        "widthMM": 160,
+        "maximumTrialTailwaterZ": -1140,
+        "toDryFieldAfterSettingMM": 60
+      }
+    ],
+    "assumedActualTailwaterZ": null,
+    "bothPathsBlockedTimeToReserveS": 36,
+    "blockedPrimaryHalfSecondaryHeadMM": 22.671837681144435,
+    "blockedPrimaryWaterZ": -1012.3281623188556,
+    "trappedLitresAtThatHead": 17.199999035356914,
+    "illustrativeResidualReserveLitres": 6.800000964643086,
+    "independentReceivingAreasProved": false,
+    "jetCaptureProved": false,
+    "dryWorkPathSeparationMM": 150
+  }
+}
