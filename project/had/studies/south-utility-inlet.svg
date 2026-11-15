@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="610" viewBox="0 0 1120 610" role="img" aria-labelledby="title desc">
+<title id="title">Two supply sleeves south of the utility</title>
+<desc id="desc">South elevation and upper-route plan for the bounded alternative. Both existing and proposed water paths are pre-site development.</desc>
+<style>text{font:16px sans-serif;fill:#202524}.head{font:700 29px sans-serif}.sub{font:700 20px sans-serif}.small{font:14px sans-serif}</style>
+<rect width="1120" height="610" fill="#faf9f5"/>
+<text class="head" x="54" y="61">South utility entry</text>
+<text x="54" y="92">Two separately isolated branches. A through-wall leak still needs its own pressure and drainage detail.</text>
+<text class="sub" x="54" y="144">South elevation · mm</text>
+<text class="sub" x="655" y="144">Interior routing · projected plan</text>
+<rect x="107" y="206" width="210" height="136.5" fill="#cce3e5"/>
+<rect x="317" y="206" width="70.875" height="294" fill="#e0d8cb"/>
+<rect x="387.875" y="206" width="206.32500000000005" height="294" fill="#b8c3bf"/>
+<line x1="107" y1="500" x2="594.2" y2="500" stroke="#253431" stroke-width="2"/>
+<circle cx="338" cy="405.5" r="11.549999999999999" fill="#147f76" stroke="#182325" stroke-width="2"/><circle cx="368.45" cy="363.5" r="11.549999999999999" fill="#b27334" stroke="#182325" stroke-width="2"/>
+<text x="114" y="217">Utility window</text><text x="402" y="217">SE stability wing</text>
+<text x="220" y="465">X10500 / Z450</text><text x="339" y="305">X10645 / Z650</text>
+<path d="M401 313 L368.45 350.5" fill="none" stroke="#7c5b45"/>
+<path d="M333 451 L338 418.5" fill="none" stroke="#286f67"/>
+<text class="small" x="147" y="539">X10400 window edge</text><text class="small" x="352" y="539">X10737.5 concrete wing</text>
+<line x1="680" y1="460" x2="965" y2="460" stroke="#253431" stroke-width="2"/>
+<line x1="680" y1="281.5" x2="965" y2="281.5" stroke="#b6aaa0" stroke-dasharray="7 6"/>
+<polyline points="755,466.3 755,429.935 755,421.85 755,421.85 794,421.85 794,372.5 794,372.5" fill="none" stroke="#147f76" stroke-width="4" stroke-linejoin="round"/><polyline points="776.75,466.3 776.75,429.935 776.75,421.85 776.75,421.85 905.75,421.85 905.75,402.6 905.75,377.4 905.75,306.05600000000004 877.25,297.39 877.25,254.2 887.75,246.49999999999997 887.75,224.09999999999997 887.75,224.09999999999997 716.75,224.09999999999997 716.75,194.20999999999998 713.375,190.99699999999996" fill="none" stroke="#b27334" stroke-width="4" stroke-linejoin="round"/>
+<text x="700" y="425">Utility</text><text x="845" y="448">Plant</text>
+<text x="697" y="263">Utility partition</text><text x="813" y="183">Plant high crossing</text>
+<text class="small" x="656" y="505">Routes separate vertically at the south wall.</text>
+<text class="small" x="656" y="529">Orange reuses the existing narrow fan crossing.</text>
+<text class="small" x="54" y="579">South normal roof outlet renewal lane begins at X10950, beyond the pressure housing.</text>
+</svg>

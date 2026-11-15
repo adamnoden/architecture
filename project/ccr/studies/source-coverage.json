@@ -93,12 +93,17 @@
       ],
       "authoredInputs": [],
       "receipts": [
-        "project/had/studies/current-house-services.json"
+        "project/had/studies/current-house-services.json",
+        "project/ias/studies/workable-study-floor.json",
+        "project/ias/studies/workable-study-release.json"
       ],
       "consumers": [
         "project/mra/studies/internal-leak-study.mjs",
         "project/had/studies/incoming-water.mjs",
-        "project/rwt/studies/outer-network.py"
+        "project/rwt/studies/outer-network.py",
+        "project/ias/studies/workable-study-floor.mjs",
+        "project/ias/studies/workable-study-release.mjs",
+        "project/ias/studies/workable-floor-tiles.mjs"
       ],
       "producerChecks": [
         "node --test project/had/studies/current-house.test.mjs"
@@ -123,7 +128,8 @@
         "project/str/studies/current-house-roof-bracing.py",
         "project/str/studies/current-house-lateral.py",
         "project/str/studies/open-loggia-support.py",
-        "project/ias/studies/wc-service-stations.py"
+        "project/ias/studies/wc-service-stations.py",
+        "project/str/studies/current-house-bridge.py"
       ],
       "inputReceipts": [
         "project/had/studies/water-replan.json",
@@ -149,7 +155,8 @@
       "receipts": [
         "project/str/studies/current-house-grid.json",
         "project/str/studies/reconciled-house-interface.json",
-        "project/str/studies/current-house-joined-foundation.json"
+        "project/str/studies/current-house-joined-foundation.json",
+        "project/str/studies/current-house-bridge.json"
       ],
       "consumers": [
         "project/had/studies/current-house.mjs",
@@ -414,6 +421,13 @@
     "project/str/studies/p32-court-hold.json": "e4895257d44765754dc449a8b0c4e6c59ccd80dd",
     "project/str/studies/reconciled-corner-portals.json": "0fe6b9c2007cf5ea39b584cc2a2ac0568a0116be",
     "project/str/studies/reconciled-house-interface.json": "4d3080dc4540ce7218b86f1d27518fbeb1f8e85d",
-    "project/str/studies/reconciled-house-interface.py": "c4f0b0777a061c3b9dfc09ca3fa7895d99fd3b9c"
+    "project/str/studies/reconciled-house-interface.py": "c4f0b0777a061c3b9dfc09ca3fa7895d99fd3b9c",
+    "project/str/studies/current-house-bridge.py": "7562197dc35a2753c9e593a8e38199b148de7207",
+    "project/str/studies/current-house-bridge.json": "aceadbc891a23f0dd5c4b2c49b0422881b44bd55",
+    "project/ias/studies/workable-study-floor.json": "4cc89e12782021fa6de7752d3313d3487b22f872",
+    "project/ias/studies/workable-study-release.json": "6b890c098e2e025b0db29bb2568a5fc256b64b8d",
+    "project/ias/studies/workable-study-floor.mjs": "6ca98a3ee06f371eebe5d1bd76649284f3437ac4",
+    "project/ias/studies/workable-study-release.mjs": "c35969d287854cfec00e249226f8da0a0caf2f4e",
+    "project/ias/studies/workable-floor-tiles.mjs": "af462e054441fdf8bb40fccbd6021bbe0f0726d0"
   }
 }
