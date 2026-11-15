@@ -1,42 +1,39 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 32,
-  "state": "released",
-  "leaseId": "05c7139c-0edb-4a05-95b4-f60b92d04b70",
+  "generation": 33,
+  "state": "claimed",
+  "leaseId": "ee19a198-ca68-469d-aed4-1b82aa3f7bac",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg16-had"
   },
-  "claimedAt": "2026-11-15T16:11:45.773Z",
-  "heartbeatAt": "2026-11-15T16:40:14.078Z",
-  "expiresAt": "2026-11-15T16:40:14.078Z",
+  "claimedAt": "2026-11-15T16:40:58.518Z",
+  "heartbeatAt": "2026-11-15T16:40:58.518Z",
+  "expiresAt": "2026-11-15T17:40:58.518Z",
   "checkpoint": {
-    "evidence": "PR #1544 exact bab9fb11737706d183b75a524a4caad212f54df7 for 830 cylinder and 750 buffer, 106 HAD checks and distinct lower G3.",
-    "next": "Verify exact hosted validation and ancestry; finish independent cabinet lower daylight and positive receiving comparison."
+    "evidence": "Plant threshold and release merged #1544 at 1aaa6bbb; protected daylight exact 73f88291 passed 107 HAD checks.",
+    "next": "Publish and exact-validate cabinet with the cap successor; independently compare actual positive utility dry-bowl lift."
   },
-  "branch": "work/zerg16-cage-plant",
+  "branch": "work/zerg16-cap-cabinet",
   "predecessor": {
-    "leaseId": "6eaaad56-89e8-4a40-bf76-190d2ef79a84",
-    "generation": 31,
-    "branch": "work/zerg15-arch-head-clearance",
-    "pr": 1540,
+    "leaseId": "05c7139c-0edb-4a05-95b4-f60b92d04b70",
+    "generation": 32,
+    "branch": "work/zerg16-cage-plant",
+    "pr": 1544,
     "checkpoint": {
-      "evidence": "PR #1540 exact 7fb51a3936f6709566ec7328c2333e5f8bf82bc9 tree 847228e9 with widened 620 mm geometry, hot route and obstruction regressions; 105 local HAD checks.",
-      "next": "Verify exact hosted CI and merge, then transfer actual captured fixture, valve and pressure requirements without changing graph state."
+      "evidence": "PR #1544 exact bab9fb11737706d183b75a524a4caad212f54df7 for 830 cylinder and 750 buffer, 106 HAD checks and distinct lower G3.",
+      "next": "Verify exact hosted validation and ancestry; finish independent cabinet lower daylight and positive receiving comparison."
     }
   },
   "recoverySource": {
-    "leaseId": "6eaaad56-89e8-4a40-bf76-190d2ef79a84",
-    "generation": 31,
-    "branch": "work/zerg15-arch-head-clearance",
-    "pr": 1540,
+    "leaseId": "05c7139c-0edb-4a05-95b4-f60b92d04b70",
+    "generation": 32,
+    "branch": "work/zerg16-cage-plant",
+    "pr": 1544,
     "checkpoint": {
-      "evidence": "PR #1540 exact 7fb51a3936f6709566ec7328c2333e5f8bf82bc9 tree 847228e9 with widened 620 mm geometry, hot route and obstruction regressions; 105 local HAD checks.",
-      "next": "Verify exact hosted CI and merge, then transfer actual captured fixture, valve and pressure requirements without changing graph state."
+      "evidence": "PR #1544 exact bab9fb11737706d183b75a524a4caad212f54df7 for 830 cylinder and 750 buffer, 106 HAD checks and distinct lower G3.",
+      "next": "Verify exact hosted validation and ancestry; finish independent cabinet lower daylight and positive receiving comparison."
     }
-  },
-  "pr": 1544,
-  "releasedAt": "2026-11-15T16:40:14.078Z",
-  "releaseReason": "handoff"
+  }
 }
