@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 27,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "484c33ce-4b2d-4dff-801d-cc901835a9bf",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg15-str-followon"
   },
   "claimedAt": "2026-11-15T13:39:34.792Z",
-  "heartbeatAt": "2026-11-15T13:40:54.986Z",
-  "expiresAt": "2026-11-15T14:25:54.986Z",
+  "heartbeatAt": "2026-11-15T13:58:21.345Z",
+  "expiresAt": "2026-11-15T13:58:21.345Z",
   "branch": "work/zerg15-joints-utility",
   "predecessor": {
     "leaseId": "83ad3cf9-3ec7-42a2-bd44-de4134072fa4",
@@ -37,5 +37,7 @@
     "evidence": "PR #1538 exact 8d39f225b2d02698a33051d905a58cb1604c0826; captive north collector and signed head triangle",
     "next": "Inspect exact-head CI and merge while owned",
     "blocker": "Roof/floor/foot detailed joining and the current 52-head coupled replay remain open"
-  }
+  },
+  "releasedAt": "2026-11-15T13:58:21.345Z",
+  "releaseReason": "handoff"
 }
