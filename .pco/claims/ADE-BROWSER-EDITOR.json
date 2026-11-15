@@ -2,20 +2,22 @@
   "schemaVersion": 1,
   "node": "ADE-BROWSER-EDITOR",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "26302d48-f336-4b76-8f81-04a395291437",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg16-ade-browser-editor"
   },
   "claimedAt": "2026-11-15T20:46:04.252Z",
-  "heartbeatAt": "2026-11-15T20:51:15.396Z",
-  "expiresAt": "2026-11-15T21:51:15.396Z",
+  "heartbeatAt": "2026-11-15T21:16:32.851Z",
+  "expiresAt": "2026-11-15T21:16:32.851Z",
   "branch": "work/zerg16-ade-browser-editor",
   "pr": 1554,
   "checkpoint": {
     "evidence": "Initial browser proof green. Shared selector wired after exact control test failure; local selector and workflow checks green. Corrected head a6ac0d6882fb7de4e2ddff51dddd01bc4f60ee3e",
     "next": "Recheck all triggered workflows including native browser and run fresh merge preflight",
     "blocker": "Corrected exact CI running"
-  }
+  },
+  "releasedAt": "2026-11-15T21:16:32.851Z",
+  "releaseReason": "completed"
 }
