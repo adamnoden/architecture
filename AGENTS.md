@@ -57,6 +57,7 @@ Follow changing facts at their source:
 - `project/authority.ts` — machine-readable claim ceiling;
 - `docs/editorial/editorial-doctrine.md` — public-facing editorial standard;
 - `docs/computational/README.md` and `compiler/README.md` — computational role and proof boundaries;
+- `docs/computational/executable-design-contract.md` — required source, computation, change-propagation and editor-facing contracts;
 - `package.json` — current commands and repository health entry points.
 
 For a particular workstream, also read its latest applicable gate/result and its owning README or programme control.
@@ -119,6 +120,20 @@ Where authoritative evidence is missing, prefer an explicit unsupported/unknown 
 
 Machine/proof artefacts, semantic inspection outputs and publication graphics have different jobs and different authority. Do not collapse them.
 
+### Codify as engineering proceeds
+
+The [executable design and editor contract](docs/computational/executable-design-contract.md) is mandatory for substantial work that creates or changes architectural parameters, computations or dependent outputs. Expected editing and consistent downstream regeneration are concrete engineering needs, not speculative generalisation. Do not use restraint, a bounded packet or pending final selection as a reason to defer straightforward source integration indefinitely.
+
+Separate authoritative design inputs, derived relationships, evidence/applicability and presentation. Keep units, datums, supported domains and stable object IDs explicit. Authored coordinates are legitimate inputs; unexplained copies of them in algorithms, drawings and schedules are not. Prefer explicit input/output functions with thin I/O adapters over filesystem-bound scripts and mutable global house state. Reuse existing primitives and specialist solvers; no universal engine or language rewrite is implied.
+
+A study driver may remain local during genuine exploration. Before its result becomes an accepted or recurring active design dependency, integrate its inputs, reusable method and consumers into the shared current-model path. Preserve rejected trials as labelled evidence, not competing current authorities. Record any justified external/manual dependency with its affected claim, owner and resolution trigger. An existing computable result may not be relabelled unsupported simply to avoid migration.
+
+Every substantial computational/design packet must identify its parameters, methods, downstream consumers and change tests. Demonstrate a relevant input perturbation and an adverse/out-of-domain case: supported relationships recompute, dependent evidence invalidates, and missing references or unsupported changes produce explicit diagnostics. Golden outputs and byte hashes alone prove neither composability nor propagation. Explain non-applicability for purely editorial/historical/evidence-collection work rather than manufacturing an algorithm.
+
+The CLI, future browser editor and batch tools must consume the same versioned serialisable design document and compiler contract. Keep UI pixels, DOM/React state and file loading out of semantic authority. Edits use stable IDs, explicit revisions and validated atomic operations; results retain revision identity so stale asynchronous work cannot overwrite a newer design. Heavy analysis may run outside the browser. Do not begin a speculative front-end build merely to satisfy this boundary.
+
+Current consumers must not silently fall back to a historical fixture, mix candidate revisions or use stale generated receipts as current inputs. Retain historical fixtures and results behind explicit labelled paths. Final current-house release requires an audited, tested current-source route for every active consumer, with genuine unsupported evidence clearly distinguished from unimplemented integration.
+
 ## 6. Work in bounded questions
 
 Substantial work should answer a bounded question, gate or packet. Make clear:
@@ -168,7 +183,7 @@ Public-facing material is not an execution log. Do not leak packet names, branch
 
 Follow `docs/editorial/editorial-doctrine.md`. Never improve prose by making the underlying claim cleaner, stronger or more universal than the evidence permits.
 
-Website navigation, repository ownership and publication order are different structures. Changing one must not silently redefine the others.
+Website navigation, repository ownership and publication order are different structures. Changing one must not silently redefine them.
 
 ## 9. Git, merge safety and parallel work
 
@@ -261,6 +276,8 @@ Before calling substantial work complete, ask:
 - Did a generated output become an accidental source of truth?
 - Did I add unearned machinery or fill an unknown with a plausible guess?
 - Did I validate the actual representation boundary affected?
+- Did I prove the relevant parameter change, downstream regeneration/invalidation and missing-reference behaviour rather than only repeat a fixed example?
+- Did I integrate active reusable mechanics and expose remaining manual synchronisation under the executable-design contract?
 - Did I reconcile dependent outputs and leave durable reasoning?
 - Could another agent reconstruct this decision from the repository alone?
 - Did I run the workstream closeout/hygiene pass and proactively report any residue?

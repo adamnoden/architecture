@@ -1,0 +1,99 @@
+import assert from 'node:assert/strict'
+import test from 'node:test'
+import { readFileSync } from 'node:fs'
+import { controlNodes } from './nodes/index.js'
+import { codificationNodes } from './nodes/codification.js'
+import { derivedState } from './derive.js'
+import type { ControlNode } from './types.js'
+
+const nodes: readonly ControlNode[] = controlNodes
+const byId = new Map(nodes.map(node => [node.id, node]))
+function node(id: string): ControlNode {
+  const value = byId.get(id)
+  assert.ok(value, `Missing node ${id}`)
+  return value
+}
+function ancestors(id: string, result = new Set<string>()): Set<string> {
+  for (const dependency of node(id).dependencies) {
+    if (result.has(dependency)) continue
+    result.add(dependency)
+    ancestors(dependency, result)
+  }
+  return result
+}
+
+test('codification registration has unique known nodes and introduces no cycle', () => {
+  assert.equal(byId.size, nodes.length)
+  const finished = new Set<string>()
+  const visiting = new Set<string>()
+  function visit(id: string): void {
+    if (finished.has(id)) return
+    assert.equal(visiting.has(id), false, `Cycle through ${id}`)
+    visiting.add(id)
+    for (const dependency of node(id).dependencies) visit(dependency)
+    visiting.delete(id)
+    finished.add(id)
+  }
+  for (const entry of nodes) visit(entry.id)
+  assert.equal(finished.size, nodes.length)
+})
+
+test('current source and reusable model foundation do not wait for house convergence', () => {
+  for (const id of ['CCR-CURRENT-SOURCE', 'CCR-CURRENT-COMPILE', 'ADE-MODEL', 'CCR-EDIT-CONTRACT']) {
+    const upstream = ancestors(id)
+    for (const late of ['TRIAD-GATE', 'HRS-TECHNICAL', 'HRS-SYNTHESIS', 'BCR-CONVERGENCE']) {
+      assert.equal(upstream.has(late), false, `${id} must not wait for ${late}`)
+    }
+  }
+  assert.ok(ancestors('ADE-MODEL').has('CCR-CURRENT-SOURCE'))
+  const pending = new Set(codificationNodes.filter(entry => entry.id !== 'PCO-CODIFICATION').map(entry => entry.id as string))
+  const fixture: ControlNode[] = nodes.map(entry => ({...entry, lifecycle: pending.has(entry.id) || entry.id === 'ADE-MODEL' ? 'planned' : 'complete'}))
+  assert.equal(derivedState(fixture.find(entry => entry.id === 'CCR-CURRENT-SOURCE')!, fixture), 'ready')
+  assert.equal(derivedState(fixture.find(entry => entry.id === 'CCR-CURRENT-COMPILE')!, fixture), 'blocked')
+})
+
+test('final technical bay retains technical applicability despite the earlier model foundation', () => {
+  for (const id of ['ADE-DETAILS', 'ADE-SCHEDULES', 'ADE-EVIDENCE']) {
+    assert.ok(ancestors(id).has('HRS-TECHNICAL'), id)
+    assert.ok(ancestors(id).has('ADE-MODEL'), id)
+  }
+})
+
+test('final publication cannot bypass the migrated current model or edit/change proof', () => {
+  const upstream = ancestors('PLT-FINAL-PREP')
+  for (const required of ['CCR-CURRENT-SOURCE', 'CCR-CURRENT-COMPILE', 'CCR-STRUCTURE-INTEGRATION', 'CCR-SERVICES-INTEGRATION', 'CCR-ASSEMBLY-INTEGRATION', 'CCR-EDIT-CONTRACT', 'CCR-CHANGE-PROOF', 'CCR-CURRENT-RELEASE', 'HRS-SYNTHESIS', 'ADE-DETAILS', 'ADE-SCHEDULES', 'ADE-EVIDENCE']) {
+    assert.ok(upstream.has(required), `Publication missing ${required}`)
+  }
+  const fixture: ControlNode[] = nodes.map(entry => ({...entry, lifecycle: ['CCR-CURRENT-RELEASE', 'PLT-FINAL-PREP'].includes(entry.id) ? 'planned' : 'complete'}))
+  assert.equal(derivedState(fixture.find(entry => entry.id === 'PLT-FINAL-PREP')!, fixture), 'blocked')
+})
+
+test('physical investigation and real-site assessment are not blocked by a software rewrite', () => {
+  const newIds = new Set(codificationNodes.map(entry => entry.id as string))
+  for (const id of ['STR-FLOOR-PORTAL', 'HAD-INLET-RESOLUTION', 'DPL-SITE-ASSESSMENT']) {
+    assert.deepEqual([...ancestors(id)].filter(upstream => newIds.has(upstream)), [], id)
+  }
+})
+
+test('owner approvals stay manual and no blanket external book review is introduced', () => {
+  for (const id of ['HAD-OWNER-DESIGN-REVIEW', 'PLT-OWNER-FINAL-DESIGN-ACCEPTANCE', 'PLT-PRINT-REVIEW', 'PUB-02-FINAL']) {
+    assert.equal(node(id).agentDispatch?.mode, 'manual', id)
+  }
+  const release = ancestors('CCR-CURRENT-RELEASE')
+  for (const id of ['EPR-RH11', 'EPR-BAY-REVIEW', 'DPL-COMMISSION', 'PHY-04']) {
+    assert.equal(release.has(id), false, id)
+  }
+  for (const entry of codificationNodes.filter(entry => entry.id !== 'PCO-CODIFICATION')) {
+    assert.equal(entry.agentDispatch.mode, 'self-service', entry.id)
+  }
+})
+
+test('the instruction and implementation contract are discoverable and do not claim migration complete', () => {
+  const agents = readFileSync(new URL('../../AGENTS.md', import.meta.url), 'utf8')
+  const programme = readFileSync(new URL('../ccr/current-house-integration-programme.md', import.meta.url), 'utf8')
+  assert.ok(agents.includes('executable-design-contract.md'))
+  for (const entry of codificationNodes.filter(entry => entry.id !== 'PCO-CODIFICATION')) {
+    assert.ok(programme.includes(entry.id), `Missing implementation contract ${entry.id}`)
+    assert.ok(entry.closeoutEvidence.length > 0)
+  }
+})
