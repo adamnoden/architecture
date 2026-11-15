@@ -2,15 +2,17 @@
   "schemaVersion": 1,
   "node": "PCO-LOCAL-OPENING",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "375aa1d3-440c-4123-ba37-415a5a4d8b37",
   "holder": {
     "kind": "codex",
     "label": "zerg13-oas-window"
   },
   "claimedAt": "2026-11-14T23:55:30.917Z",
-  "heartbeatAt": "2026-11-14T23:55:30.917Z",
-  "expiresAt": "2026-11-15T01:55:30.917Z",
+  "heartbeatAt": "2026-11-15T00:12:03.008Z",
+  "expiresAt": "2026-11-15T00:12:03.008Z",
   "branch": "work/zerg13-oas-study-subframe",
-  "note": "Exceptional registration #1531; narrow source-bound owner review preparation."
+  "note": "Exceptional registration #1531; narrow source-bound owner review preparation.",
+  "releasedAt": "2026-11-15T00:12:03.008Z",
+  "releaseReason": "completed"
 }
