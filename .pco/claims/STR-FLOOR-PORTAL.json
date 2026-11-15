@@ -9,8 +9,8 @@
     "label": "zerg15b-str"
   },
   "claimedAt": "2026-11-15T16:11:56.172Z",
-  "heartbeatAt": "2026-11-15T16:22:16.889Z",
-  "expiresAt": "2026-11-15T17:07:16.889Z",
+  "heartbeatAt": "2026-11-15T16:25:02.360Z",
+  "expiresAt": "2026-11-15T17:10:02.360Z",
   "branch": "work/zerg16-cage-plant",
   "predecessor": {
     "leaseId": "b75d2504-51cc-4eda-9455-199fdfc6fbed",
@@ -33,5 +33,11 @@
       "next": "Observe exact-head CI and merge while owned",
       "blocker": "Current floor cage redesign, retaining shoe, cap development and 52-head coupled assembly remain open"
     }
+  },
+  "pr": 1544,
+  "checkpoint": {
+    "evidence": "PR #1544 exact bab9fb11737706d183b75a524a4caad212f54df7; principal north floor cage and sleeve",
+    "next": "Observe exact-head CI then publish while lease live",
+    "blocker": "Develop slab chord, roof retainer, current cap and signed 52-head assembly"
   }
 }
