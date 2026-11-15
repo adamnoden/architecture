@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 34,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "029c6927-8353-4130-b4bc-c1ea75d7e0c8",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg16-had"
   },
   "claimedAt": "2026-11-15T16:55:07.526Z",
-  "heartbeatAt": "2026-11-15T16:56:25.615Z",
-  "expiresAt": "2026-11-15T17:56:25.615Z",
+  "heartbeatAt": "2026-11-15T17:17:32.152Z",
+  "expiresAt": "2026-11-15T17:17:32.152Z",
   "checkpoint": {
     "evidence": "PR #1546 exact dc1092ba54eaa49671e8cc500a39ad2bc449f526, source-bound 385 mm initial, straight regulated working comparison, 108 HAD checks.",
     "next": "Verify exact hosted execution and merged ancestry; audit physical I0 product release and closed operating exclusions."
@@ -36,5 +36,7 @@
       "next": "Verify hosted checks and merged ancestry; preserve unresolved cover support/provider/site and complete utility pickup proof."
     }
   },
-  "pr": 1546
+  "pr": 1546,
+  "releasedAt": "2026-11-15T17:17:32.152Z",
+  "releaseReason": "handoff"
 }
