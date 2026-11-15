@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 33,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "ee19a198-ca68-469d-aed4-1b82aa3f7bac",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg16-had"
   },
   "claimedAt": "2026-11-15T16:40:58.518Z",
-  "heartbeatAt": "2026-11-15T16:42:55.559Z",
-  "expiresAt": "2026-11-15T17:42:55.559Z",
+  "heartbeatAt": "2026-11-15T16:54:29.167Z",
+  "expiresAt": "2026-11-15T16:54:29.167Z",
   "checkpoint": {
     "evidence": "PR #1545 exact 22607e34f0d30f8220967674a34f64b4c4fbb2d4; lined lower passage, three receivers, covered pressure comparison and HAD 107.",
     "next": "Verify hosted checks and merged ancestry; preserve unresolved cover support/provider/site and complete utility pickup proof."
@@ -36,5 +36,7 @@
       "next": "Verify exact hosted validation and ancestry; finish independent cabinet lower daylight and positive receiving comparison."
     }
   },
-  "pr": 1545
+  "pr": 1545,
+  "releasedAt": "2026-11-15T16:54:29.167Z",
+  "releaseReason": "handoff"
 }
