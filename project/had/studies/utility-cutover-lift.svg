@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 610" role="img" aria-labelledby="title desc">
+<title id="title">Route the captured utility head inside a fitted 600 millimetre envelope</title>
+<desc id="desc">Plan of first lift, north transit and west transit around the hot control, cold cap and east wall, with an independent landing.</desc>
+<style>text{font:16px sans-serif;fill:#293d3b}.title{font:bold 28px sans-serif}</style>
+<rect width="1000" height="610" fill="#f8f4e9"/>
+<text x="35" y="48" class="title">Leave the frame and fixed plumbing in place</text>
+<text x="35" y="76">House plan in millimetres · Complete captured head envelope</text>
+<rect x="780.3149999999999" y="62" width="43" height="403" fill="#d8c7a5" stroke="#31434a"/>
+<rect x="458.89" y="280.4" width="31.82" height="38.22" fill="#c78764" stroke="#31434a"/>
+<rect x="415.89" y="299.38" width="31.82" height="19.240000000000002" fill="#789eb5" stroke="#31434a"/>
+<rect x="178.1" y="78.89999999999998" width="288.1" height="174.20000000000002" fill="#d9e8e0" stroke="#31434a"/>
+<rect x="507.05" y="284.29999999999995" width="258" height="158.6" fill="#e6ceb5" stroke="#31434a"/>
+<rect x="507.05" y="86.69999999999999" width="258" height="158.6" fill="#d6d7e9" stroke="#31434a"/>
+<line x1="636.05" y1="363.6" x2="636.05" y2="166" stroke="#3f7166" stroke-width="3"/>
+<line x1="636.05" y1="166" x2="322.15" y2="166" stroke="#3f7166" stroke-width="3"/>
+<text x="35" y="504">Fixed passage permits 603.5 mm after settings. The former 610 mm package exceeds that by 6.5 mm.</text>
+<text x="35" y="532">Lift to Z935 · draw 760 north, 730 west, lower 585 · 25 mm minimum after settings.</text>
+<text x="35" y="560">Stage 1 keeps 28.00 mm to the hot backbone and 25.5 mm to the wall after settings.</text>
+<text x="850" y="100">North ↑</text>
+<text x="202" y="125">Independent rest</text>
+<text x="510" y="117">North transfer</text>
+<text x="515" y="421">Raised start</text>
+<text x="300" y="270">Cold end cap</text>
+<text x="383" y="357">Hot control</text>
+<path d="M395 274l25 27M445 345l16-25" fill="none" stroke="#31434a"/>
+<text x="850" y="395">East wall</text>
+<line x1="35" x2="960" y1="577" y2="577" stroke="#a2aaa3"/>
+<text x="35" y="599">The actual supplier head, capture, fastener access and appliance loads require verification.</text>
+</svg>

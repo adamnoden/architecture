@@ -32,6 +32,8 @@ The [fixed station and plant release comparison](inlet-fixed-station.md) locates
 
 The [preferred framed east-wall bay](inlet-framed-bay.md) replaces the three separate low structural holes, divides the exterior receivers and moves the planned stance to fit the actual handwheel reservation. Carry its opening, dry controls and first-rest geometry into the joined detail.
 
+The [captured utility head reservation](utility-cutover-lift.md) replaces the 610 mm transport package with a 600 mm complete envelope and records the failed tool and drain paths that still prevent the pre-release cutover.
+
 ## Evidence boundary and graph disposition
 
 - **Pre-site design before this packet can close:** HAD/MAT/IAS draw the same continuous pressure path, fixed cabinet, both ways to remove each confined part, bounded first wetting and gravity/blocked states, plant load transfer and utility renewals. STR coordinates the actual formed aperture, slab/pier, supports and movement reservations at concept level. Publish a reconciled current-house source and MAT/IAS/MRA receipts or an explicit evidenced house-scope alternative if this redesign fails. A site survey cannot cure the shown conflicts.
