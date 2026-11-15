@@ -1,45 +1,36 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 32,
-  "state": "released",
-  "leaseId": "6cdfcd1e-09a8-4e00-8027-d937c22dfb7b",
+  "generation": 33,
+  "state": "claimed",
+  "leaseId": "44522ec3-4c1a-4682-9e4c-6552d43f40cb",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg16-str-collar"
+    "label": "zerg16-alternative-structure-review"
   },
-  "claimedAt": "2026-11-15T17:18:20.638Z",
-  "heartbeatAt": "2026-11-15T18:01:46.904Z",
-  "expiresAt": "2026-11-15T18:01:46.904Z",
-  "branch": "work/zerg16-north-collar",
+  "claimedAt": "2026-11-15T20:31:26.504Z",
+  "heartbeatAt": "2026-11-15T20:31:26.504Z",
+  "expiresAt": "2026-11-15T21:01:26.504Z",
   "predecessor": {
-    "leaseId": "43f21113-68a7-4bc0-b457-36e5f06f238c",
-    "generation": 31,
-    "branch": "work/zerg16-shoe-utility",
-    "pr": 1546,
+    "leaseId": "6cdfcd1e-09a8-4e00-8027-d937c22dfb7b",
+    "generation": 32,
+    "branch": "work/zerg16-north-collar",
+    "pr": 1548,
     "checkpoint": {
-      "evidence": "PR #1546 exact dc1092ba54eaa49671e8cc500a39ad2bc449f526; north roof pin, sole and band ferrules",
-      "next": "Observe exact-head CI and integrate while lease live",
-      "blocker": "Develop northern diaphragm corner and slab crossing, qualified cap and actual signed whole house replay"
+      "evidence": "PR #1548 exact 312ac939da24511708e3dcb86cc48db96b8eb6a8; concealed north L collar, developed straight crossing and stepped cover",
+      "next": "Observe exact-head CI then integrate while lease live",
+      "blocker": "Design lateral bend confinement and complete joined wall, roof, foundation and service replay"
     }
   },
   "recoverySource": {
-    "leaseId": "43f21113-68a7-4bc0-b457-36e5f06f238c",
-    "generation": 31,
-    "branch": "work/zerg16-shoe-utility",
-    "pr": 1546,
+    "leaseId": "6cdfcd1e-09a8-4e00-8027-d937c22dfb7b",
+    "generation": 32,
+    "branch": "work/zerg16-north-collar",
+    "pr": 1548,
     "checkpoint": {
-      "evidence": "PR #1546 exact dc1092ba54eaa49671e8cc500a39ad2bc449f526; north roof pin, sole and band ferrules",
-      "next": "Observe exact-head CI and integrate while lease live",
-      "blocker": "Develop northern diaphragm corner and slab crossing, qualified cap and actual signed whole house replay"
+      "evidence": "PR #1548 exact 312ac939da24511708e3dcb86cc48db96b8eb6a8; concealed north L collar, developed straight crossing and stepped cover",
+      "next": "Observe exact-head CI then integrate while lease live",
+      "blocker": "Design lateral bend confinement and complete joined wall, roof, foundation and service replay"
     }
-  },
-  "pr": 1548,
-  "checkpoint": {
-    "evidence": "PR #1548 exact 312ac939da24511708e3dcb86cc48db96b8eb6a8; concealed north L collar, developed straight crossing and stepped cover",
-    "next": "Observe exact-head CI then integrate while lease live",
-    "blocker": "Design lateral bend confinement and complete joined wall, roof, foundation and service replay"
-  },
-  "releasedAt": "2026-11-15T18:01:46.904Z",
-  "releaseReason": "handoff"
+  }
 }
