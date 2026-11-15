@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "CCR-CURRENT-COMPILE",
   "generation": 2,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "a1faedad-fc97-4dba-8985-1e55488ec2e5",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg16-unified-current-compile"
   },
   "claimedAt": "2026-11-15T18:41:00.626Z",
-  "heartbeatAt": "2026-11-15T18:53:41.603Z",
-  "expiresAt": "2026-11-15T19:53:41.603Z",
+  "heartbeatAt": "2026-11-15T19:08:38.000Z",
+  "expiresAt": "2026-11-15T19:08:38.000Z",
   "branch": "work/zerg16-edit-current-services",
   "predecessor": {
     "leaseId": "be3c2144-e0cb-4943-8764-26e321d32b73",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Exact corrected 5c56e0e4c38851c0f08e4b589a9af81817f673b6; local repository suite passes including unchanged MRA producer receipt, local domain and headless tests passed",
     "next": "Verify both triggered hosted workflows on the corrected head and both fresh lease merge checks before integration."
-  }
+  },
+  "releasedAt": "2026-11-15T19:08:38.000Z",
+  "releaseReason": "completed"
 }
