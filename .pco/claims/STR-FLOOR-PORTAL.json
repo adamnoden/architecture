@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 23,
-  "state": "released",
-  "leaseId": "b4fa7f3c-a4c6-40a7-8b14-200c2f93fe83",
+  "generation": 24,
+  "state": "claimed",
+  "leaseId": "e6131163-ee09-4935-b852-80b9659cb0f0",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg13-heel-local-insert"
+    "label": "Zerg-Rush-STR"
   },
-  "claimedAt": "2026-11-14T23:49:27.269Z",
-  "heartbeatAt": "2026-11-15T00:28:31.682Z",
-  "expiresAt": "2026-11-15T00:28:31.682Z",
-  "branch": "work/zerg13-portal-inlet",
+  "claimedAt": "2026-11-15T09:20:25.800Z",
+  "heartbeatAt": "2026-11-15T09:20:25.800Z",
+  "expiresAt": "2026-11-15T10:05:25.800Z",
+  "branch": "work/zerg14-str-portal-rewind",
   "predecessor": {
-    "leaseId": "d0e13c8b-fa7a-4b53-b4b3-a5e85bbf4354",
-    "generation": 22,
-    "branch": "work/zerg12-heel-section",
-    "pr": 1529,
+    "leaseId": "b4fa7f3c-a4c6-40a7-8b14-200c2f93fe83",
+    "generation": 23,
+    "branch": "work/zerg13-portal-inlet",
+    "pr": 1533,
     "checkpoint": {
-      "evidence": "PR #1529 corrected exact 9664e887b57b72dd0e3a540f8fa2c16be3eb3bb0 CI 43647598614; 12 STR focused tests pass",
-      "next": "Verify exact hosted CI, canonical publication preflight for both leases and release after expected-head merge"
+      "evidence": "PR #1533 exact c4e9fa79, combined tree c2f440f5 and local STR exact 8aaf4ce5 focused and full STR tests passed.",
+      "next": "Await all exact hosted checks, pass dual publication preflight, merge with expected head and release both leases."
     }
   },
   "recoverySource": {
-    "leaseId": "d0e13c8b-fa7a-4b53-b4b3-a5e85bbf4354",
-    "generation": 22,
-    "branch": "work/zerg12-heel-section",
-    "pr": 1529,
+    "leaseId": "b4fa7f3c-a4c6-40a7-8b14-200c2f93fe83",
+    "generation": 23,
+    "branch": "work/zerg13-portal-inlet",
+    "pr": 1533,
     "checkpoint": {
-      "evidence": "PR #1529 corrected exact 9664e887b57b72dd0e3a540f8fa2c16be3eb3bb0 CI 43647598614; 12 STR focused tests pass",
-      "next": "Verify exact hosted CI, canonical publication preflight for both leases and release after expected-head merge"
+      "evidence": "PR #1533 exact c4e9fa79, combined tree c2f440f5 and local STR exact 8aaf4ce5 focused and full STR tests passed.",
+      "next": "Await all exact hosted checks, pass dual publication preflight, merge with expected head and release both leases."
     }
-  },
-  "checkpoint": {
-    "evidence": "PR #1533 exact c4e9fa79, combined tree c2f440f5 and local STR exact 8aaf4ce5 focused and full STR tests passed.",
-    "next": "Await all exact hosted checks, pass dual publication preflight, merge with expected head and release both leases."
-  },
-  "pr": 1533,
-  "releasedAt": "2026-11-15T00:28:31.682Z",
-  "releaseReason": "handoff"
+  }
 }
