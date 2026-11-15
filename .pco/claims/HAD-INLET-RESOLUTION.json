@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 37,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "1a14346b-2b69-46fd-bf53-714ef14c809e",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg16-alternative-inlet-review"
   },
   "claimedAt": "2026-11-15T20:31:52.936Z",
-  "heartbeatAt": "2026-11-15T20:34:38.034Z",
-  "expiresAt": "2026-11-15T21:04:38.034Z",
+  "heartbeatAt": "2026-11-15T20:34:59.578Z",
+  "expiresAt": "2026-11-15T20:34:59.578Z",
   "predecessor": {
     "leaseId": "1ac5de66-fd34-4615-8971-816252ad8ae3",
     "generation": 36,
@@ -37,5 +37,7 @@
     "evidence": "https://github.com/adamnoden/architecture/issues/1477#issuecomment-6900935416",
     "next": "Close independently pressure-contained south end boxes and two passive receiving paths against matched normal duty and credible fault envelope; keep atmospheric break fallback conditional.",
     "blocker": "Actual fault exposure, end boxes and adverse receiving/frost path unverified; pressure-decoupled booster screen has no robust resistance range."
-  }
+  },
+  "releasedAt": "2026-11-15T20:34:59.578Z",
+  "releaseReason": "handoff"
 }
