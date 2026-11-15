@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "CCR-ASSEMBLY-INTEGRATION",
   "generation": 2,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "3d838760-3968-4821-8c69-ed51e246d2b3",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg16-current-domain-delivery"
   },
   "claimedAt": "2026-11-15T19:34:09.222Z",
-  "heartbeatAt": "2026-11-15T19:52:41.066Z",
-  "expiresAt": "2026-11-15T20:52:41.066Z",
+  "heartbeatAt": "2026-11-15T20:15:39.000Z",
+  "expiresAt": "2026-11-15T20:15:39.000Z",
   "branch": "work/zerg16-current-domain-closures",
   "predecessor": {
     "leaseId": "36d16fe3-4348-4335-a71f-91606cc11f2a",
@@ -39,5 +39,7 @@
     "evidence": "Corrected 160b492fca659ce0b7139e619f40a2db137937c3; original foundation producer exact copy, regenerated no native evidence, arch and foundation native checks plus versioned load assertions pass locally.",
     "next": "Wait for all corrected exact workflows, run four canonical merge checks and integrate.",
     "blocker": "Complete only on verified exact integration."
-  }
+  },
+  "releasedAt": "2026-11-15T20:15:39.000Z",
+  "releaseReason": "completed"
 }
