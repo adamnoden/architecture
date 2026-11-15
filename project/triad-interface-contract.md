@@ -74,6 +74,8 @@ dated study record; it no longer establishes a current coherent structure.
 The correction owns the choice between a joined floor/jamb and a real separated
 collector bypass. Neither is adopted here.
 
+**15 November north collector development.** The [straight north hold-down and paired arch ties](str/floor-portal-twin-garden-tie.md) develop separate uplift and arch-thrust paths. The [local collector cage](str/floor-portal-north-cage.md) compares a 200 × 750 mm section at the sleeve with short bent-bar returns and shared jig setting. Keep the existing floor and arch levels. Coordinate the room finish, insulation, window sill return and slab/bar force development at the widened shoulders. The raised roof shoe, current pile-cap cages and signed replay across all 52 heads still govern admission to the roof and TRIAD gates.
+
 **SAP-C1 retained comparison.** The [paired-jamb, raised-roof candidate](str/provisional-house-handoff.md)
 and its [source-bound interface schedule](str/studies/reconciled-house-interface.json)
 retain the geometry used by completed bounded studies. RH-LAYOUT-REVISION-02
@@ -146,6 +148,8 @@ still needs selected equipment and carrying geometry. Entrance void/bridge,
 guarding, stair headroom and fire/structure remain unresolved. A candidate may
 bound or reject an arrangement; it cannot publish these as solved through
 furniture symbols, attractive panelling or a nominal walking-grid result.
+
+**East plant release.** The [separate cylinder and buffer routes](had/plant-release-route.md) bound the complete carrier widths at 830 and 750 mm respectively, with a dry level arrival at the east dock preferred. Keep the local protections and the independent lower G3 discharge in the receiving section. The actual retained equipment, lifting restraints and dry access, the [inlet cabinet and independent drain paths](had/inlet-framed-bay.md), and the utility changeover still require joined evidence before TRIAD can accept the incoming-water arrangement.
 
 ## Change protocol
 

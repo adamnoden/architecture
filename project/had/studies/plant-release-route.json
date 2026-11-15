@@ -1,0 +1,290 @@
+{
+  "disposition": "PREFERRED_EAST_ONLY_RELEASE_AND_NEAR_LEVEL_RECEIVING_RESERVATION",
+  "offsets": {
+    "settingMM": 10,
+    "requiredAfterSettingMM": 25,
+    "requiredRawMM": 35
+  },
+  "planGeometry": {
+    "plant": [
+      9397,
+      3797,
+      11570.5,
+      5780.5
+    ],
+    "door": [
+      11570.5,
+      4100,
+      12130,
+      5100
+    ],
+    "plate": [
+      12030,
+      4112.5,
+      12130,
+      5062.5
+    ],
+    "dock": [
+      12130,
+      3400,
+      14230,
+      5350
+    ],
+    "riser": [
+      9400,
+      4700,
+      550,
+      700
+    ],
+    "controls": [
+      10895.5,
+      5480.5,
+      650,
+      300
+    ],
+    "emitter": [
+      10980,
+      3797,
+      550,
+      200
+    ]
+  },
+  "oldCase": {
+    "fixedThroatMM": 903,
+    "maximumCompleteWidthMM": 833,
+    "oldDiameterMM": 850,
+    "oldCorridorDeficitMM": 17,
+    "oldOffsetGapsMM": {
+      "westWall": 15,
+      "southWall": 18,
+      "northWall": 770.5,
+      "eastSouth": 40,
+      "eastNorth": 90,
+      "riser": 15,
+      "hydraulicControls": 470.5,
+      "emitter": 107.59
+    },
+    "oldBufferDirectTurnExpansionMM": -72.27
+  },
+  "cylinder": {
+    "centrePath": [
+      [
+        9848,
+        4248
+      ],
+      [
+        10515,
+        4248
+      ],
+      [
+        10515,
+        4560
+      ],
+      [
+        11050,
+        4560
+      ],
+      [
+        11400,
+        4575
+      ],
+      [
+        12590,
+        4575
+      ]
+    ],
+    "completeRadiusMM": 415,
+    "maximumTransportHeightMM": 1830,
+    "plan": {
+      "westWall": 26,
+      "southWall": 26,
+      "northWall": 780.5,
+      "eastSouth": 50,
+      "eastNorth": 100,
+      "riser": 27,
+      "hydraulicControls": 480.5,
+      "emitter": 103.42,
+      "retainedBuffer": 42.76,
+      "liveD2Drop": 51.66,
+      "fixedP0": 383
+    },
+    "offsetFromVesselCentreMM": [
+      18,
+      -2
+    ],
+    "bodyToCarrierLineMM": 16.89,
+    "maximumRetainedReliefBodyRadiusMM": 37,
+    "reliefToCarrierLineMM": 22.79,
+    "catalogueComparator": {
+      "pressureBar": 2.45,
+      "dryKG": 118,
+      "installedSelected": false
+    }
+  },
+  "buffer": {
+    "centrePath": [
+      [
+        10450,
+        5325
+      ],
+      [
+        11100,
+        4575
+      ],
+      [
+        12590,
+        4575
+      ]
+    ],
+    "completeRadiusMM": 375,
+    "article": "UK Cylinders FCBVS0300",
+    "manufacturerBodyMM": [
+      545,
+      1975
+    ],
+    "listedDryAndFullKG": [
+      45,
+      335
+    ],
+    "maximumTransportHeightMM": 2265,
+    "maximumAdditionalHeightWith100DeckMM": 190,
+    "maximumAdditionalHeightWith100DeckAtReferenceGantryMM": 50,
+    "plan": {
+      "westWall": 668,
+      "southWall": 393,
+      "northWall": 70.5,
+      "eastSouth": 90,
+      "eastNorth": 140,
+      "riser": 115,
+      "hydraulicControls": 53.5,
+      "emitter": 193,
+      "retainedCylinder": 407.58,
+      "liveD2Drop": 212.45,
+      "liveExpansionEnvelope": 29.41,
+      "retainedD1": 212.45,
+      "fixedP0": 310.1
+    },
+    "retainedExpansionCentre": [
+      10120,
+      4760
+    ],
+    "retainedExpansionMaximumRadiusMM": 205
+  },
+  "docking": {
+    "firstRest": [
+      12590,
+      4575
+    ],
+    "dockMoves": [
+      {
+        "id": "cylinder",
+        "centredY": 4575,
+        "sillPlanMarginMM": 37.5,
+        "toCollectorAtFirstRestMM": 35,
+        "dockSouthGuardWorkWidthMM": 700
+      },
+      {
+        "id": "buffer",
+        "centredY": 4575,
+        "sillPlanMarginMM": 77.5,
+        "toCollectorAtFirstRestMM": 75,
+        "dockSouthGuardWorkWidthMM": 740
+      }
+    ],
+    "gradeCases": [
+      {
+        "id": "dock-level",
+        "grade": -26,
+        "heightCases": [
+          {
+            "load": "cylinder complete reservation",
+            "height": 1830,
+            "doorAfterSettingMM": 460,
+            "doorReserveSurplusMM": 435,
+            "gantryHeightSurplusMM": 2069,
+            "gantryHookTravelSurplusMM": 1850,
+            "levelBridgeAdjustmentSurplusMM": 5
+          },
+          {
+            "load": "buffer maximum doorway package",
+            "height": 2265,
+            "doorAfterSettingMM": 25,
+            "doorReserveSurplusMM": 0,
+            "gantryHeightSurplusMM": 1634,
+            "gantryHookTravelSurplusMM": 1850,
+            "levelBridgeAdjustmentSurplusMM": 5
+          },
+          {
+            "load": "buffer former full retained height plus deck",
+            "height": 2275,
+            "doorAfterSettingMM": 15,
+            "doorReserveSurplusMM": -10,
+            "gantryHeightSurplusMM": 1624,
+            "gantryHookTravelSurplusMM": 1850,
+            "levelBridgeAdjustmentSurplusMM": 5
+          },
+          {
+            "load": "buffer manufacturer body plus 100 deck",
+            "height": 2075,
+            "doorAfterSettingMM": 215,
+            "doorReserveSurplusMM": 190,
+            "gantryHeightSurplusMM": 1824,
+            "gantryHookTravelSurplusMM": 1850,
+            "levelBridgeAdjustmentSurplusMM": 5
+          }
+        ]
+      },
+      {
+        "id": "reference low grade",
+        "grade": -1800,
+        "heightCases": [
+          {
+            "load": "cylinder complete reservation",
+            "height": 1830,
+            "doorAfterSettingMM": 460,
+            "doorReserveSurplusMM": 435,
+            "gantryHeightSurplusMM": 295,
+            "gantryHookTravelSurplusMM": 76,
+            "levelBridgeAdjustmentSurplusMM": -1769
+          },
+          {
+            "load": "buffer maximum doorway package",
+            "height": 2265,
+            "doorAfterSettingMM": 25,
+            "doorReserveSurplusMM": 0,
+            "gantryHeightSurplusMM": -140,
+            "gantryHookTravelSurplusMM": 76,
+            "levelBridgeAdjustmentSurplusMM": -1769
+          },
+          {
+            "load": "buffer former full retained height plus deck",
+            "height": 2275,
+            "doorAfterSettingMM": 15,
+            "doorReserveSurplusMM": -10,
+            "gantryHeightSurplusMM": -150,
+            "gantryHookTravelSurplusMM": 76,
+            "levelBridgeAdjustmentSurplusMM": -1769
+          },
+          {
+            "load": "buffer manufacturer body plus 100 deck",
+            "height": 2075,
+            "doorAfterSettingMM": 215,
+            "doorReserveSurplusMM": 190,
+            "gantryHeightSurplusMM": 50,
+            "gantryHookTravelSurplusMM": 76,
+            "levelBridgeAdjustmentSurplusMM": -1769
+          }
+        ]
+      }
+    ],
+    "declaredThresholdWheelComparisonN": 3442.93,
+    "conservativeTotalDryLoadedMassComparisonKG": 234.05,
+    "loadedHandoffQualified": false
+  },
+  "requires": [
+    "Whole dry fitted carrier, retained hardware and load restraints must meet each radius/height. Actual hold-down, door leaf parking, dry operator path and relative-level bearing remain required.",
+    "Keep cylinder protection live during buffer replacement. Drain each independent circuit to zero pressure before working its cold, hot, primary and return connections.",
+    "The cylinder may cross only after draining cold and removing the independently captured cold drop, short terminal, D1 connections and expansion stand. Keep fixed D2 and its open gravity relief route clear.",
+    "Close actual product and support geometry, components and receiving-site evidence before adopting either arrangement."
+  ]
+}

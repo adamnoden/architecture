@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 740" role="img" aria-labelledby="title details">
+<title id="title">Separate cylinder and buffer routes to the east dock</title>
+<desc id="details">Plan of the 830 mm cylinder carrier and 750 mm buffer carrier, sharing the east crossing and clear of the retained southern D2 system.</desc>
+<style>text{font:16px sans-serif;fill:#273e3a}.title{font:bold 30px sans-serif}.note{font:14px sans-serif}</style>
+<rect width="1080" height="740" fill="#fbf7ed"/>
+<text x="35" y="45" class="title">Turn the plant loads towards the east</text>
+<text x="35" y="74">Plan in house coordinates · Separate service states and complete carrier profiles</text>
+<rect x="73.83495145631068" y="127.76699029126218" width="422.03883495145624" height="385.1456310679611" fill="#eadfcb" stroke="#3d5250"/>
+<rect x="495.87378640776694" y="259.90291262135923" width="108.64077669902917" height="194.17475728155335" fill="#e8dec4" stroke="#3d5250"/>
+<rect x="604.5145631067961" y="211.35922330097088" width="407.7669902912621" height="378.6407766990291" fill="#dce9df" stroke="#3d5250"/>
+<rect x="74.41747572815534" y="201.65048543689323" width="106.79611650485437" height="135.92233009708735" fill="#c5cfda" stroke="#3d5250"/>
+<rect x="364.8058252427184" y="127.76699029126218" width="126.2135922330097" height="58.252427184466" fill="#abbcc3" stroke="#3d5250"/>
+<rect x="381.2135922330097" y="474.07766990291265" width="106.79611650485435" height="38.83495145631065" fill="#aac1c2" stroke="#3d5250"/>
+<rect x="585.0970873786407" y="267.18446601941747" width="19.41747572815541" height="184.4660194174757" fill="#dbb8a0" stroke="#3d5250"/>
+<circle cx="214.22330097087377" cy="325.9223300970874" r="39.80582524271844" fill="#cbdad6" stroke="#47655e"/>
+<circle cx="161.40776699029124" cy="425.3398058252427" r="80.58252427184466" fill="none" stroke="#a34c3d" stroke-dasharray="7 5" stroke-width="2"/>
+<circle cx="278.30097087378635" cy="216.21359223300976" r="72.81553398058252" fill="none" stroke="#2a6c61" stroke-dasharray="7 5" stroke-width="2"/>
+<polyline points="161.40776699029124,425.3398058252427 290.92233009708735,425.3398058252427 290.92233009708735,364.7572815533981 394.8058252427184,364.7572815533981 462.7669902912621,361.84466019417476 693.8349514563106,361.84466019417476" fill="none" stroke="#a34c3d" stroke-width="4"/>
+<polyline points="278.30097087378635,216.21359223300976 404.5145631067961,361.84466019417476 693.8349514563106,361.84466019417476" fill="none" stroke="#2a6c61" stroke-width="4"/>
+<circle cx="693.8349514563106" cy="361.84466019417476" r="7" fill="#345a4a"/>
+<text x="87" y="245">Riser</text>
+<text x="179" y="330">Expansion</text>
+<text x="119" y="465">Ø830 cylinder</text>
+<text x="232" y="196">Ø750 buffer</text>
+<text x="369" y="150">Hydraulic controls</text>
+<text x="389" y="543">Retained emitter</text>
+<text x="564" y="320">East threshold</text>
+<text x="637" y="345">Common first rest</text>
+<text x="784" y="538">Protected dock</text>
+<text x="672" y="620">D2 below and south</text>
+<path d="M55 605v10m0-5H249.17475728155338m0-5v10" fill="none" stroke="#3d5250"/>
+<text x="256" y="615">1 m</text>
+<line x1="35" x2="1040" y1="648" y2="648" stroke="#86928c"/>
+<text x="35" y="675">The 903 mm throat caps complete width at 833 mm after both 35 mm reserves.</text>
+<text x="35" y="705">The 2265 mm doorway package fits a near-level handoff but exceeds the reference low gantry by 140 mm.</text>
+</svg>
