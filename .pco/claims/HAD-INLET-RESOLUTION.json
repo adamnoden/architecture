@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 35,
-  "state": "released",
-  "leaseId": "750073e3-0b7b-4560-b89c-bcd813a24f24",
+  "generation": 36,
+  "state": "claimed",
+  "leaseId": "1ac5de66-fd34-4615-8971-816252ad8ae3",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg16-east-south-inlet"
+    "label": "zerg16-current-domain-delivery"
   },
-  "claimedAt": "2026-11-15T18:52:24.414Z",
-  "heartbeatAt": "2026-11-15T19:30:16.187Z",
-  "expiresAt": "2026-11-15T19:30:16.187Z",
-  "branch": "work/zerg16-east-south-inlet",
+  "claimedAt": "2026-11-15T19:33:46.971Z",
+  "heartbeatAt": "2026-11-15T19:33:46.971Z",
+  "expiresAt": "2026-11-15T20:33:46.971Z",
+  "branch": "work/zerg16-current-domain-closures",
   "predecessor": {
-    "leaseId": "029c6927-8353-4130-b4bc-c1ea75d7e0c8",
-    "generation": 34,
-    "branch": "work/zerg16-shoe-utility",
-    "pr": 1546,
+    "leaseId": "750073e3-0b7b-4560-b89c-bcd813a24f24",
+    "generation": 35,
+    "branch": "work/zerg16-east-south-inlet",
+    "pr": 1551,
     "checkpoint": {
-      "evidence": "PR #1546 exact dc1092ba54eaa49671e8cc500a39ad2bc449f526, source-bound 385 mm initial, straight regulated working comparison, 108 HAD checks.",
-      "next": "Verify exact hosted execution and merged ancestry; audit physical I0 product release and closed operating exclusions."
+      "evidence": "Exact 1e3f5f8d39c7dd03afad332629a93952867d3fff; current south inlet and native structural, hydraulic, Study projection checks passed locally.",
+      "next": "Wait for all triggered exact GitHub workflows, then run the four fresh merge checks and integrate conditional evidence.",
+      "blocker": "South pressure end boxes, abnormal receivers, thermal/motion supports and selected service duty remain excluded."
     }
   },
   "recoverySource": {
-    "leaseId": "029c6927-8353-4130-b4bc-c1ea75d7e0c8",
-    "generation": 34,
-    "branch": "work/zerg16-shoe-utility",
-    "pr": 1546,
+    "leaseId": "750073e3-0b7b-4560-b89c-bcd813a24f24",
+    "generation": 35,
+    "branch": "work/zerg16-east-south-inlet",
+    "pr": 1551,
     "checkpoint": {
-      "evidence": "PR #1546 exact dc1092ba54eaa49671e8cc500a39ad2bc449f526, source-bound 385 mm initial, straight regulated working comparison, 108 HAD checks.",
-      "next": "Verify exact hosted execution and merged ancestry; audit physical I0 product release and closed operating exclusions."
+      "evidence": "Exact 1e3f5f8d39c7dd03afad332629a93952867d3fff; current south inlet and native structural, hydraulic, Study projection checks passed locally.",
+      "next": "Wait for all triggered exact GitHub workflows, then run the four fresh merge checks and integrate conditional evidence.",
+      "blocker": "South pressure end boxes, abnormal receivers, thermal/motion supports and selected service duty remain excluded."
     }
-  },
-  "pr": 1551,
-  "checkpoint": {
-    "evidence": "Exact 1e3f5f8d39c7dd03afad332629a93952867d3fff; current south inlet and native structural, hydraulic, Study projection checks passed locally.",
-    "next": "Wait for all triggered exact GitHub workflows, then run the four fresh merge checks and integrate conditional evidence.",
-    "blocker": "South pressure end boxes, abnormal receivers, thermal/motion supports and selected service duty remain excluded."
-  },
-  "releasedAt": "2026-11-15T19:30:16.187Z",
-  "releaseReason": "handoff"
+  }
 }
