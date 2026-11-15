@@ -253,6 +253,50 @@
         "P25 P6"
       ]
     },
+    "catalogueSilhouetteComparisons": {
+      "Leviat TTP22": {
+        "circumscribingDiameterAndMaximumOpenLengthMm": [
+          42,
+          245
+        ],
+        "minimumToOtherStarterOrConnector": {
+          "clearAfterTwo5MmSettingsMm": 24.308650120612583,
+          "items": [
+            "connector envelope P25 P2",
+            "connector envelope P25 P1"
+          ]
+        },
+        "minimumToTopRails": {
+          "clearAfterTwo5MmSettingsMm": 32.21721201603887,
+          "items": [
+            "connector envelope P25 P5",
+            "P25 running H16 +90"
+          ]
+        },
+        "minimumToCoincidentLegacyH8TopLegMm": 23.0
+      },
+      "nVent EL22P13LN": {
+        "circumscribingDiameterAndMaximumOpenLengthMm": [
+          40,
+          273
+        ],
+        "minimumToOtherStarterOrConnector": {
+          "clearAfterTwo5MmSettingsMm": 26.308650120612583,
+          "items": [
+            "connector envelope P25 P2",
+            "connector envelope P25 P1"
+          ]
+        },
+        "minimumToTopRails": {
+          "clearAfterTwo5MmSettingsMm": 33.21721201603887,
+          "items": [
+            "connector envelope P25 P5",
+            "P25 running H16 +90"
+          ]
+        },
+        "minimumToCoincidentLegacyH8TopLegMm": 24.0
+      }
+    },
     "runningTopRailsInboardOffsetsMm": [
       -150,
       -90,
@@ -380,6 +424,50 @@
         "P26 P7",
         "P26 P6"
       ]
+    },
+    "catalogueSilhouetteComparisons": {
+      "Leviat TTP22": {
+        "circumscribingDiameterAndMaximumOpenLengthMm": [
+          42,
+          245
+        ],
+        "minimumToOtherStarterOrConnector": {
+          "clearAfterTwo5MmSettingsMm": 24.308650120612583,
+          "items": [
+            "connector envelope P26 P2",
+            "connector envelope P26 P1"
+          ]
+        },
+        "minimumToTopRails": {
+          "clearAfterTwo5MmSettingsMm": 32.21721201603887,
+          "items": [
+            "connector envelope P26 P5",
+            "P26 running H16 +90"
+          ]
+        },
+        "minimumToCoincidentLegacyH8TopLegMm": 23.0
+      },
+      "nVent EL22P13LN": {
+        "circumscribingDiameterAndMaximumOpenLengthMm": [
+          40,
+          273
+        ],
+        "minimumToOtherStarterOrConnector": {
+          "clearAfterTwo5MmSettingsMm": 26.308650120612583,
+          "items": [
+            "connector envelope P26 P2",
+            "connector envelope P26 P1"
+          ]
+        },
+        "minimumToTopRails": {
+          "clearAfterTwo5MmSettingsMm": 33.21721201603887,
+          "items": [
+            "connector envelope P26 P5",
+            "P26 running H16 +90"
+          ]
+        },
+        "minimumToCoincidentLegacyH8TopLegMm": 24.0
+      }
     },
     "runningTopRailsInboardOffsetsMm": [
       -150,
