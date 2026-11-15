@@ -10,7 +10,8 @@
     "project/had/studies/incoming-water.json": "1aa08121cdc10dc1ccbe2ae40bf54f8cee54d205",
     "project/had/studies/inlet-fixed-station.json": "69e0be05955a9f8fa3494f6a8c5e686dd8bc2e16",
     "project/had/studies/utility-dry-bowl-release.json": "7f1e60c8dbbb93a4a50ed7bb7db13e426ef25603",
-    "project/had/studies/boundary-service-lodge.json": "edccc843f1829bf583e517095442ad9fe481da53"
+    "project/had/studies/boundary-service-lodge.json": "edccc843f1829bf583e517095442ad9fe481da53",
+    "project/had/studies/utility-wide-capture.json": "999fe25948911c6325590186db1e94f884d44ae2"
   },
   "walls": {
     "southWindow": [
@@ -235,8 +236,9 @@
       "fanRaw": 28.17
     },
     "coldPairAfterSetting": 31.23,
-    "utilityToHotAfterSetting": 15.99,
+    "utilityToHotAfterSetting": 40.19,
     "plantToHotAfterSetting": 255.48,
+    "olderHotBackboneUtilityAfterSetting": 15.99,
     "inheritedRawHeatGap": 28.4,
     "toleranceMMFrom25AtExistingUtilityCrossing": 3.17
   },

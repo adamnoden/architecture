@@ -1,17 +1,9 @@
 // Millimetres, litres/second, house coordinates. All new works are trial dimensions.
-import { existsSync, readFileSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 
 const read = path => JSON.parse(readFileSync(new URL(path, import.meta.url)));
-const { east, north } = read('selected-receiving-interface.json');
-const { renewal } = read('../../had/studies/water-replan.json');
-const fork = read('fork-outlet-joint.json');
-const side = read('forked-side-outlet.json');
 const dockSource = '../../mat/studies/plant-threshold.json';
-// Frozen MAT comparison #1430, ab0f9b57. Read the current MAT geometry when present.
-const dock = existsSync(new URL(dockSource, import.meta.url))
-  ? read(dockSource).dock.plan : [12130, 14230, 3400, 5350];
-
 export function lane(flow, b, bed, endBed, tail, length) {
   const g = 9.81;
   const yc = 1000 * Math.cbrt((flow / b) ** 2 / g);
@@ -26,14 +18,17 @@ export function lane(flow, b, bed, endBed, tail, length) {
   return { b, yc, endDepth, tailEnergy, control, reachLoss, requiredHead: control + reachLoss };
 }
 
-export function eastGround() {
+export function eastGroundReceiving({ east, north }, assignedFlowsLps, tail) {
   const [x, y, width, height] = east.receiverBounds;
   const spill = east.blockedOutletSpill;
+  if (!Number.isFinite(tail) || tail > spill.farEndMaximumWater) {
+    throw new Error('East receiving level exceeds the bound or is not finite');
+  }
   const [start, south, length, span] = spill.requiredContinuation;
   const end = start + length, bed = east.bedMaximum, endBed = bed - length / 20;
-  const crest = spill.edge[0][2], tail = spill.farEndMaximumWater;
+  const crest = spill.edge[0][2];
   const high = [south + 25, south + 1125], low = [south + 1175, south + span - 25];
-  const flows = fork.grades.map(({ flowLps }) => {
+  const flows = assignedFlowsLps.map(flowLps => {
     const scenarios = [1, 0.5].map(fraction =>
       lane(flowLps, (low[1] - low[0]) * fraction, bed, endBed, tail, length));
     const bypass = lane(flowLps, (high[1] - high[0]) / 2, bed, endBed, tail, length);
@@ -44,6 +39,19 @@ export function eastGround() {
       faultReserve: spill.maximumFaultedReceiverWater - faultWater,
       downstreamSeparation: crest - 5 - bypass.requiredHead };
   });
+  return { basin: [x,y,width,height], start, end, bed, endBed, crest, tail, high, low,
+    rim: -1175, staticResidual: tail - bed, upstreamLip: east.terminal.farLip, flows,
+    northExit: north.blockedOutletSpill.requiredContinuation };
+}
+
+function runEastGround(dock) {
+  const receiving = read('selected-receiving-interface.json');
+  const { east } = receiving;
+  const { renewal } = read('../../had/studies/water-replan.json');
+  const fork = read('fork-outlet-joint.json');
+  const side = read('forked-side-outlet.json');
+  const wet = eastGroundReceiving(receiving, fork.grades.map(({ flowLps }) => flowLps),
+    east.blockedOutletSpill.farEndMaximumWater);
   const { handling } = renewal.joint;
   const station = east.maintenance.supportRelease.operator;
   const radius = renewal.operatorAccess.radius, southEdge = renewal.northOperatorStrip[1];
@@ -60,9 +68,7 @@ export function eastGround() {
     const [px, py] = path.at(-1);
     return Math.min(px - west, eastEdge - px, py - southEdgeDock, northEdgeDock - py);
   });
-  return { wet: { basin: [x,y,width,height], start, end, bed, endBed, crest, tail, high, low,
-    rim: -1175, staticResidual: tail - bed, upstreamLip: east.terminal.farLip, flows,
-    northExit: north.blockedOutletSpill.requiredContinuation },
+  return { wet,
     crew: { station, radius, southEdge, northEdge, centreY, plateEdge, newRackOffset,
       originalPlateReserve: plateEdge - centreY - radius,
       clearReserveEach: (northEdge - southEdge) / 2 - radius,
@@ -75,6 +81,16 @@ export function eastGround() {
     alternative: { dock, basin: side.basin, overlapM2: overlap / 1e6, tipDepths,
       parkedClearX: side.parkedBox[0] - eastEdge },
     qualifiedFirstHarm: null, siteAccepted: false, installedAccepted: false };
+}
+
+/** Current ordinary and maintenance geometry requires the actual MAT dock receipt. */
+export function eastGround() {
+  return runEastGround(read(dockSource).dock.plan);
+}
+
+/** Replay the frozen #1430 comparator without upgrading its historical dock. */
+export function historicalEastGround() {
+  return runEastGround([12130, 14230, 3400, 5350]);
 }
 
 if (process.argv[1] && pathToFileURL(process.argv[1]).href === import.meta.url)

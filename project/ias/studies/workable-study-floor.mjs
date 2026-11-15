@@ -1,3 +1,4 @@
+import { studyWallPanel } from './workable-lining-dimensions.mjs';
 import { tileField as deriveTileField } from './workable-floor-tiles.mjs';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
@@ -70,10 +71,11 @@ assert.equal(firstFFL-floor.top,80);
 assert.equal(floor.bottom-ceilingZ,70);
 assert.equal(0-ground.top,180);
 assert.equal(faces.total,27);
+const panelDepth = studyWallPanel.faceMm + studyWallPanel.captureMm + studyWallPanel.fitMm;
 const finishTradeoffs = [
-  {name:'Original direct mineral face',depthMM:27,projectionBeyondBaselineMM:0},
-  {name:'18 mm timber + 7 mm point capture + 2 mm fit, replacing mineral finish',depthMM:27,projectionBeyondBaselineMM:0},
-  {name:'Same timber + 7 mm point capture + 2 mm fit, retaining full plaster behind',depthMM:54,projectionBeyondBaselineMM:27}
+  {name:'Original direct mineral face',depthMM:faces.total,projectionBeyondBaselineMM:0},
+  {name:'18 mm timber + 7 mm point capture + 2 mm fit, replacing mineral finish',depthMM:panelDepth,projectionBeyondBaselineMM:panelDepth-faces.total},
+  {name:'Same timber + 7 mm point capture + 2 mm fit, retaining full plaster behind',depthMM:panelDepth+faces.total,projectionBeyondBaselineMM:panelDepth}
 ];
 const firstWall = id => {
   const result = model.upperWalls.find(item => item.id === id);
@@ -318,8 +320,8 @@ function renderOccupiedWall() {
     const face=panels?'#b89269':'#dfd4bb';
     const lines=[];
     if(panels){
-      for(let x=outer+420;x<bands[0][2];x+=420)lines.push('<path d="M'+px(x)+' '+pz(160)+'V'+pz(3000)+'" class="panel"/>');
-      for(const z of [150,700,2260,3000])lines.push('<path d="M'+x0+' '+pz(z)+'H'+px(bands[0][2])+'" class="panel"/>');
+      for(let x=outer+studyWallPanel.pitchMm;x<bands[0][2];x+=studyWallPanel.pitchMm)lines.push('<path d="M'+px(x)+' '+pz(160)+'V'+pz(3000)+'" class="panel"/>');
+      for(const z of studyWallPanel.rowDatumsMm)lines.push('<path d="M'+x0+' '+pz(z)+'H'+px(bands[0][2])+'" class="panel"/>');
     }
     const arch=({centre,width,sill,spring,head})=>{
       const left=centre-width/2,right=centre+width/2,r=width**2/(8*(head-spring))+(head-spring)/2;

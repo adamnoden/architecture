@@ -25,21 +25,21 @@ export const codificationNodes = defineNodes([
   {
     id: 'CCR-STRUCTURE-INTEGRATION', owners: ['CCR', 'STR'],
     title: 'Integrate active structural computations through current-source parameters and methods',
-    dependencies: ['CCR-CURRENT-COMPILE'], lifecycle: 'planned',
+    dependencies: ['CCR-CURRENT-COMPILE'], lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/ccr/structure-integration-result.md']
   },
   {
     id: 'CCR-SERVICES-INTEGRATION', owners: ['CCR', 'HAD', 'RWT'],
     title: 'Integrate active service and water computations through current-source contracts',
-    dependencies: ['CCR-CURRENT-COMPILE'], lifecycle: 'planned',
+    dependencies: ['CCR-CURRENT-COMPILE'], lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/ccr/services-integration-result.md']
   },
   {
     id: 'CCR-ASSEMBLY-INTEGRATION', owners: ['CCR', 'IAS', 'OAS'],
     title: 'Integrate editable floor wall skirting grate and opening assembly families',
-    dependencies: ['CCR-CURRENT-COMPILE', 'ADE-MODEL'], lifecycle: 'planned',
+    dependencies: ['CCR-CURRENT-COMPILE', 'ADE-MODEL'], lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/ccr/assembly-integration-result.md']
   },

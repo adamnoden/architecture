@@ -3,7 +3,7 @@ import type { AdeArchitecturalPlan, AdeDistanceAuthority, AdeProvenance } from '
 import { sha256SemanticFingerprint } from '../../core/identity.js'
 import { mm } from '../../units.js'
 import { readGeorgianDesignSnapshot } from '../current-design/georgian-source.js'
-import { resolveCurrentDesign } from '../current-design/resolve.js'
+import { resolveCurrentDesign, type CurrentDesignResolution } from '../current-design/resolve.js'
 import { lookupDesignWall, type StoreyId, type StoreyObjectId } from '../current-design/snapshot.js'
 
 interface OpeningReference {
@@ -13,7 +13,7 @@ interface OpeningReference {
   readonly openingId: StoreyObjectId
 }
 
-const frontStudy = {
+export const frontStudyOpening = {
   bayId: 'BAY-FRONT-STUDY-01',
   level: 'GROUND',
   hostWallId: 'GROUND/outer-south',
@@ -27,7 +27,10 @@ function known(distance: AdeDistanceAuthority) {
 }
 
 export function inspectHostedOpening(input: unknown, ref: OpeningReference) {
-  const { design, disciplineBindings } = resolveCurrentDesign(input)
+  return inspectResolvedHostedOpening(resolveCurrentDesign(input), ref)
+}
+
+export function inspectResolvedHostedOpening({ design, disciplineBindings }: CurrentDesignResolution, ref: OpeningReference) {
   const level = design.storeys[ref.level]
   const opening = level?.openings.find(occurrence => occurrence.id === ref.openingId)
   if (!opening) throw new TypeError(`Missing opening ${ref.openingId} on ${ref.level}`)
@@ -84,7 +87,7 @@ export function inspectHostedOpening(input: unknown, ref: OpeningReference) {
 }
 
 export function inspectGeorgianFrontStudyBay() {
-  const inspection = inspectHostedOpening(readGeorgianDesignSnapshot(), frontStudy)
+  const inspection = inspectHostedOpening(readGeorgianDesignSnapshot(), frontStudyOpening)
   return {
     ...inspection,
     technicalBayApplicability: {

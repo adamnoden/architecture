@@ -52,6 +52,7 @@
       "entries": [
         "project/ias/studies/conventional-first-rest.mjs",
         "project/ias/studies/workable-floor-tiles.mjs",
+        "project/ias/studies/workable-lining-dimensions.mjs",
         "project/ias/studies/workable-room-assemblies.mjs",
         "project/ias/studies/workable-study-floor.mjs",
         "project/ias/studies/workable-study-release.mjs"
@@ -129,7 +130,8 @@
       "state": "current-conditional-consumer",
       "decision": "project/oas/study-subframe-comparison.md",
       "entries": [
-        "project/oas/studies/study-subframe.mjs"
+        "project/oas/studies/study-subframe.mjs",
+        "project/oas/studies/study-dry-seam.mjs"
       ],
       "boundary": "Retained Study carrier contender and conventional control. Owner decision and final bay work remain separate."
     },

@@ -1,3 +1,4 @@
+import { grossSlotArea, roomSideGrillePlateMm } from './workable-lining-dimensions.mjs';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -56,7 +57,7 @@ const usefulGate=[
 ];
 const grate = { duty: 'Room-side screen for one independent HAD inlet', slotLength: 240, slotWidth: 6,
   slots: 12, referenceInwardEquivalentArea: 15000, referenceOutwardEquivalentArea: 5000 };
-grate.grossOpenArea = grate.slotLength * grate.slotWidth * grate.slots;
+grate.grossOpenArea = grossSlotArea(grate.slotLength, grate.slotWidth, grate.slots);
 grate.areaScreenRatio = grate.grossOpenArea / grate.referenceInwardEquivalentArea;
 assert.equal(grate.grossOpenArea,17280);
 // Screen plan obstruction and wall clearance before assessing hand loads and temporary supports.
@@ -250,7 +251,7 @@ function extendedSections(){
     rect(edgeX+4,topZ,14,2,colors.steel),rect(edgeX+21,topZ,21,2,colors.steel),
     rect(edgeX+4,topZ+8,38,2,colors.oak),line(edgeX+30,topZ-3,edgeX+30,topZ-16),
     line(edgeX+27,topZ-13,edgeX+30,topZ-16),line(edgeX+33,topZ-13,edgeX+30,topZ-16),
-    text(216,63,'Captured cover lifts clear','small'),text(271,70,'4 plate','small'),line(269,71,267,76),
+    text(216,63,'Captured cover lifts clear','small'),text(271,70,roomSideGrillePlateMm+' plate','small'),line(269,71,267,76),
     text(242,103,'Independent flange','small'),text(242,109,'and trial bedding','small'),
     ...bar(213,134,30,'60 mm at 1:2'),
     ...note(213,152,'A face, flange and support are separable.','Face geometry does not rate the terminal.','Fixing, fingers, clogging, sound and flow remain.','No walking duty at an offset wall terminal.')

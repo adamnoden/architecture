@@ -26,6 +26,10 @@ interface SelectedWaterSource extends SourceIdentity {
   }
 }
 
+export function readCurrentCourtIntake(): SourceIdentity & {
+  readonly model: { readonly incoming: { readonly duty: number; readonly longBackup: number } }
+}
+
 export function readSelected(): SelectedWaterSource
 export function build(source: SelectedWaterSource): unknown
 

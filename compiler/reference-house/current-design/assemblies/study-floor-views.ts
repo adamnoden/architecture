@@ -62,6 +62,9 @@ export function drawStudyFloorSection(assembly: Assembly): DrawingSceneV2 {
       box(section.skirting.id, 0, section.ffl, projectionMm, heightMm, 'faint'),
       ...(serviceCoverMm ? [box('service-cover', projectionMm - serviceCoverMm, section.ffl, serviceCoverMm, heightMm, 'context')] : []),
       box('one-complete-wearing-face', section.tileSouthSetbackMm, -section.wearFaceMm, schedule.clearTileSideMm, section.wearFaceMm, 'context'),
+      ...(section.wearingFace === 'stone-steel'
+        ? [line('stone-steel-layer', section.tileSouthSetbackMm, -12, tileEnd, -12)]
+        : []),
       box('bedding-territory', section.tileSouthSetbackMm, -section.wearFaceMm - section.beddingTerritoryMm,
         schedule.clearTileSideMm, section.beddingTerritoryMm, 'faint'),
       ...(release.code === 'SOUTH_BRIDGE_SHOE'
@@ -69,7 +72,9 @@ export function drawStudyFloorSection(assembly: Assembly): DrawingSceneV2 {
         : []),
       text('skirting-dimension', 29, 23, `${heightMm} high × ${projectionMm} projection`),
       text('wear-dimension', 31, 65, `${section.wearFaceMm} wearing face + ${section.beddingTerritoryMm} bedding territory`),
-      text('reserved-zone', 33, 78, 'Finish support and perimeter piece unresolved'),
+      text('reserved-zone', 33, 78, section.finishSupportDepthUnresolvedMm
+        ? `${section.finishSupportDepthUnresolvedMm} mm support depth unassigned`
+        : 'Finish support and perimeter piece unresolved'),
       text('rc-datum', 16, 93, `Ground RC top Z${section.rcTop}`),
       text('shoe-status', 16, 110, release.code === 'SOUTH_BRIDGE_SHOE'
         ? `Fixed bridge shoe clearance after setting: ${release.shoeClearanceMm} mm`

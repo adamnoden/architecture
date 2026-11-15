@@ -64,7 +64,8 @@ const plantMain = [...throughWall(bores[1]), [10645, 545, 2610],
   [11385, 3370, 2725], ...plant.paths.plant.slice(1)];
 const u = finiteBends(utility);
 const p = finiteBends(plantMain);
-const hot = finiteBends(inlet.utility.vertices.hot);
+const hot = finiteBends(local('utility-wide-capture').hot.backbone);
+const olderHot = finiteBends(inlet.utility.vertices.hot);
 const gap = (a, b) => pathSeparation(a.path, b.path) - 2 * pipeRadius - a.hausdorffError - b.hausdorffError;
 const box = (route, solid) => Math.min(...route.path.slice(1)
   .map((end, i) => exactSegmentBoxDistance(route.path[i], end, solid))) - pipeRadius - route.hausdorffError;
@@ -159,6 +160,7 @@ const result = {
   },
   continuation:{utility, plant:plantMain, utilityFixtures:fixturesGaps(u), plantFixtures:fixturesGaps(p),
     coldPairAfterSetting:round(gap(u,p)-setting), utilityToHotAfterSetting:round(gap(u,hot)-setting), plantToHotAfterSetting:round(gap(p,hot)-setting),
+    olderHotBackboneUtilityAfterSetting:round(gap(u,olderHot)-setting),
     inheritedRawHeatGap:round(inlet.utility.gapsMM.cold.completeHeatPair),
     toleranceMMFrom25AtExistingUtilityCrossing:round(Math.min(fanGap(p),inlet.utility.gapsMM.cold.completeHeatPair,inlet.utility.gapsMM.cold.eastWall)-25),
   },

@@ -70,6 +70,22 @@ export function prepareCurrentDesignCompile(input: unknown) {
       const { runStructuralActions } = await import('./structural.js')
       return runStructuralActions(resolved)
     },
+    readStructuralCase: async () => {
+      const { readStructuralCase } = await import('./structural.js')
+      return readStructuralCase(resolved)
+    },
+    structuralCase: async (input: unknown) => {
+      const { runStructuralCase } = await import('./structural.js')
+      return runStructuralCase(resolved, input)
+    },
+    readStructuralInterfaces: async () => {
+      const { readStructuralInterfaces } = await import('./structural-interfaces.js')
+      return readStructuralInterfaces(resolved)
+    },
+    structuralInterfaces: async (input: unknown) => {
+      const { runStructuralInterfaces } = await import('./structural-interfaces.js')
+      return runStructuralInterfaces(resolved, input)
+    },
     occupiedServices: async () => {
       const { runOccupiedServiceSchedule } = await import('./occupied-services.js')
       return runOccupiedServiceSchedule(resolved)
@@ -85,6 +101,44 @@ export function prepareCurrentDesignCompile(input: unknown) {
     courtIntake: async (input: unknown) => {
       const { runCourtIntakeCase } = await import('./court-intake.js')
       return runCourtIntakeCase(resolved, input)
+    },
+    readEastGroundReceivingCase: async () => {
+      const { readEastGroundReceivingCase } = await import('./east-ground-receiving.js')
+      return readEastGroundReceivingCase(resolved)
+    },
+    eastGroundReceiving: async (input: unknown) => {
+      const { runEastGroundReceivingCase } = await import('./east-ground-receiving.js')
+      return runEastGroundReceivingCase(resolved, input)
+    },
+    readOccupiedCondensateCase: async () => {
+      const { readOccupiedCondensateCase } = await import('./occupied-condensate.js')
+      return readOccupiedCondensateCase(resolved)
+    },
+    occupiedCondensate: async (input: unknown) => {
+      const { runOccupiedCondensateCase } = await import('./occupied-condensate.js')
+      return runOccupiedCondensateCase(resolved, input)
+    },
+    readInletRouteCases: async () => {
+      const { readInletRouteCases } = await import('./inlet-route.js')
+      return readInletRouteCases(resolved)
+    },
+    inletRoute: async (input: unknown) => {
+      const { runInletRouteCase } = await import('./inlet-route.js')
+      return runInletRouteCase(resolved, input)
+    },
+    renewableOpenings: async (widthCase?: unknown) => {
+      const [{ compileRenewableOpenings }, { drawStudyJambScreen }] = await Promise.all([
+        import('./assemblies/renewable-openings.js'), import('./assemblies/renewable-opening-views.js'),
+      ])
+      const result = compileRenewableOpenings(resolved, widthCase)
+      return { ...result, window: { ...result.window, jambSvg: drawStudyJambScreen(result.window) } }
+    },
+    studyLinings: async (options: unknown = {}) => {
+      const [{ compileResolvedStudyLinings }, { drawStudyLiningComparison, drawStudyPanellingElevation }] = await Promise.all([
+        import('./assemblies/study-linings.js'), import('./assemblies/study-linings-views.js'),
+      ])
+      const linings = compileResolvedStudyLinings(resolved, options)
+      return { source, linings, detail: drawStudyLiningComparison(linings), elevation: drawStudyPanellingElevation(linings) }
     },
     studyAssembly: async (options: unknown = {}) => {
       const [{ compileResolvedStudyAssembly }, { drawStudyFloorPlan, drawStudyFloorSection }] = await Promise.all([

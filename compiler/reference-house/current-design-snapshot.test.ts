@@ -139,7 +139,7 @@ test('a candidate and falsely attributed Georgian geometry cannot satisfy applic
   assert.throws(() => requireGeorgianDesignBasis(wrong), /differs from the current Georgian layout inputs/)
 })
 
-test('the exact named house receives four separately scoped source bindings', () => {
+test('the exact named house receives separately scoped source bindings', () => {
   const current = readCurrentDesignResolution()
   assert.equal(current.schema, 'current-design-resolution/1')
   assert.deepEqual(current.disciplineBindings.map(binding => [binding.id, binding.state]), [
@@ -147,6 +147,8 @@ test('the exact named house receives four separately scoped source bindings', ()
     ['had-occupied-services', 'selected-reference'],
     ['str-conditional-interface', 'candidate-interface'],
     ['rwt-conditional-receiving', 'selected-reference'],
+    ['had-inlet-indoor-reference', 'candidate-interface'],
+    ['had-inlet-south-development', 'candidate-interface'],
   ])
   for (const binding of current.disciplineBindings) {
     assert.equal(binding.applicability.sourceId, current.design.source.id)

@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 8 · **Active:** 0 · **Blocked:** 33 · **Held:** 2 · **Done:** 137 · **Cancelled:** 0
+**Structurally ready:** 6 · **Active:** 0 · **Blocked:** 32 · **Held:** 2 · **Done:** 140 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -21,9 +21,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
-| `CCR-STRUCTURE-INTEGRATION` | Integrate active structural computations through current-source parameters and methods | CCR / STR | — |
-| `CCR-SERVICES-INTEGRATION` | Integrate active service and water computations through current-source contracts | CCR / HAD / RWT | — |
-| `CCR-ASSEMBLY-INTEGRATION` | Integrate editable floor wall skirting grate and opening assembly families | CCR / IAS / OAS | — |
+| `CCR-CHANGE-PROOF` | Prove end-to-end change propagation and selective evidence invalidation | CCR | ADE-BROWSER-EDITOR |
 | `HAD-INLET-RESOLUTION` | Resolve the selected incoming-water route and isolation station | HAD / MAT / IAS | — |
 | `STR-FLOOR-PORTAL` | Resolve the floor collector and portal load path before house selection | STR | ROF-RWT-GATE |
 | `DPL-COMMISSION` | Receive owner-nominated real plot and authorised assessment scope | DPL | DPL-SITE-ASSESSMENT |
@@ -42,7 +40,6 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Direct blockers |
 |---|---|---|
-| `CCR-CHANGE-PROOF` | Prove end-to-end change propagation and selective evidence invalidation | CCR-STRUCTURE-INTEGRATION, CCR-SERVICES-INTEGRATION, CCR-ASSEMBLY-INTEGRATION |
 | `CCR-CURRENT-RELEASE` | Eliminate historical fallback and split current models from all active final outputs | CCR-CHANGE-PROOF, HRS-SYNTHESIS, ADE-DETAILS, ADE-SCHEDULES, ADE-EVIDENCE |
 | `ADE-BROWSER-EDITOR` | Demonstrate browser floor-plan editing through the shared headless compiler | CCR-CHANGE-PROOF |
 | `HAD-OWNER-DESIGN-REVIEW` | Receive the owner’s decision on the coordinated architectural design | TRIAD-GATE |
