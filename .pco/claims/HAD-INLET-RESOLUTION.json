@@ -9,11 +9,11 @@
     "label": "zerg16-had"
   },
   "claimedAt": "2026-11-15T16:11:45.773Z",
-  "heartbeatAt": "2026-11-15T16:21:53.102Z",
-  "expiresAt": "2026-11-15T17:21:53.102Z",
+  "heartbeatAt": "2026-11-15T16:25:44.897Z",
+  "expiresAt": "2026-11-15T17:25:44.897Z",
   "checkpoint": {
-    "evidence": "Plant release staged at 0c60ea081c92616fd99fd870ba0ef2d3847a209a; exact geometry and integrity checks passed.",
-    "next": "Publish and validate shared cage and plant route; then join protected lower daylight inlet fault exit on separate work."
+    "evidence": "PR #1544 exact bab9fb11737706d183b75a524a4caad212f54df7 for 830 cylinder and 750 buffer, 106 HAD checks and distinct lower G3.",
+    "next": "Verify exact hosted validation and ancestry; finish independent cabinet lower daylight and positive receiving comparison."
   },
   "branch": "work/zerg16-cage-plant",
   "predecessor": {
@@ -35,5 +35,6 @@
       "evidence": "PR #1540 exact 7fb51a3936f6709566ec7328c2333e5f8bf82bc9 tree 847228e9 with widened 620 mm geometry, hot route and obstruction regressions; 105 local HAD checks.",
       "next": "Verify exact hosted CI and merge, then transfer actual captured fixture, valve and pressure requirements without changing graph state."
     }
-  }
+  },
+  "pr": 1544
 }
