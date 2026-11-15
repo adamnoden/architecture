@@ -30,6 +30,8 @@ If the cabinet, pressure fault routes and plant terminal cannot coexist in the r
 
 The [fixed station and plant release comparison](inlet-fixed-station.md) locates the three stops, upper supply paths, inward spool renewal, separately contained drains and removable cylinder connection. Use that layout for the next joined detail. The documented pressure, handling and receiving holds still control adoption.
 
+The [preferred framed east-wall bay](inlet-framed-bay.md) replaces the three separate low structural holes, divides the exterior receivers and moves the planned stance to fit the actual handwheel reservation. Carry its opening, dry controls and first-rest geometry into the joined detail.
+
 ## Evidence boundary and graph disposition
 
 - **Pre-site design before this packet can close:** HAD/MAT/IAS draw the same continuous pressure path, fixed cabinet, both ways to remove each confined part, bounded first wetting and gravity/blocked states, plant load transfer and utility renewals. STR coordinates the actual formed aperture, slab/pier, supports and movement reservations at concept level. Publish a reconciled current-house source and MAT/IAS/MRA receipts or an explicit evidenced house-scope alternative if this redesign fails. A site survey cannot cure the shown conflicts.

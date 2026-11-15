@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 848" role="img" aria-labelledby="title desc">
+<title id="title">Framed inlet drainage bay and retained valve draw</title>
+<desc id="desc">East facade elevation with separate pressure bore, separated drainage passages, paired jambs and a deep head. Plan comparison of wheel and worker spacing beneath.</desc>
+<style>text{font:16px sans-serif;fill:#243833}.title{font:bold 28px sans-serif}.minor{font:14px sans-serif}</style>
+<rect width="1120" height="848" fill="#f8f5ec"/>
+<text x="37" y="48" class="title">One bearing frame around three independent drains</text>
+<text x="37" y="77">East elevation using house coordinates in millimetres</text>
+<rect x="330.4" y="195.05" width="120" height="199.95" fill="#c9bca0" stroke="#344945"/>
+<rect x="690.4" y="195.05" width="120" height="199.95" fill="#c9bca0" stroke="#344945"/>
+<rect x="330.4" y="130.55" width="480" height="64.5" fill="#c9bca0" stroke="#344945"/>
+<rect x="450.40000000000003" y="195.05" width="240" height="180.6" fill="#edf1e8" stroke="#344945"/>
+<ellipse cx="514.4000000000001" cy="334.6323" rx="40" ry="21.5" fill="#8ebac9" stroke="#344945"/><ellipse cx="618.4000000000001" cy="308.83230000000003" rx="40" ry="21.5" fill="#8ebac9" stroke="#344945"/>
+<rect x="486.40000000000003" y="212.25" width="176" height="47.3" fill="#8ebac9" stroke="#344945"/>
+<ellipse cx="262.4" cy="137" rx="40" ry="21.5" fill="#c28869" stroke="#344945"/>
+<line x1="110" y1="395" x2="835" y2="395" stroke="#344945"/>
+<text x="850" y="140">Z600 pressure inlet</text>
+<text x="850" y="175">Z465–615 head reservation</text>
+<text x="850" y="240">Y3080–3300 daylight opening</text>
+<text x="850" y="323">Y3115 / Y3245 lower sleeves</text>
+<text x="37" y="425">Raw frame Y3035–3335 / Z45–465. Both 150 mm jambs continue to the ground beam.</text>
+<line x1="37" x2="1080" y1="449" y2="449" stroke="#a1a89c"/>
+<text x="37" y="482" class="title">Draw the fitted wheel from the west</text>
+<text x="37" y="515">X11013 wheel edge at locked first rest · X10670 operator axis · 33 mm after setting</text>
+<line x1="37" x2="1080" y1="548" y2="548" stroke="#a1a89c"/>
+<text x="37" y="585" class="title">Separate paths across the exterior approach</text>
+<text x="37" y="620">Dock south edge</text>
+<line x1="270" x2="975" y1="640" y2="640" stroke="#938362" stroke-dasharray="5 4"/>
+<text x="37" y="790">D2 grate north edge</text>
+<line x1="270" x2="975" y1="790" y2="790" stroke="#938362" stroke-dasharray="5 4"/>
+<rect x="270" y="660" width="586.5" height="44" fill="#e0eee9" stroke="#344945"/>
+<rect x="856.5" y="656" width="42.5" height="52" fill="#afcdc3" stroke="#344945"/>
+<polyline points="270,697 443.4,697 547.1,758 823.35,758" stroke="#397e94" stroke-width="8" fill="none"/><rect x="823.35" y="746" width="42.5" height="24" fill="#8ebac9" stroke="#344945"/><polyline points="270,671 502.9,671 598.1,727 732.4000000000001,727" stroke="#486996" stroke-width="8" fill="none"/><rect x="732.4000000000001" y="715" width="42.5" height="24" fill="#8ebac9" stroke="#344945"/>
+<text x="920" y="680">Daylight spill</text>
+<text x="920" y="733">Pipe relief</text>
+<text x="920" y="760">Ordinary drain</text>
+<text x="37" y="824" class="minor">Pre-site reservations. Provide separate protected receptors, supports and receiving routes.</text>
+</svg>
