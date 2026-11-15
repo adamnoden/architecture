@@ -92,7 +92,14 @@ export function auditSourceCoverage(read: FileReader = readSource) {
         const current = observed.get(path)
         return current ? [[path, current.gitBlob]] : []
       }))
-      return { id: family.id, state: family.state, authority: family.authority, identities, digest: sha256(Buffer.from(JSON.stringify(identities))) }
+      const inputReceiptIdentities = Object.fromEntries(family.inputReceipts.flatMap(path => {
+        const current = observed.get(path)
+        return current ? [[path, current.gitBlob] as const] : []
+      }))
+      return {
+        id: family.id, state: family.state, authority: family.authority,
+        identities, inputReceiptIdentities, digest: sha256(Buffer.from(JSON.stringify(identities))),
+      }
     }),
     findings,
   }

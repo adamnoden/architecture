@@ -1,10 +1,11 @@
 import assert from 'node:assert/strict'
 import { spawnSync } from 'node:child_process'
+import { readFileSync } from 'node:fs'
 import test from 'node:test'
 import { sha256SemanticFingerprint } from '../core/identity.js'
 import { createReferenceHouseSource } from './fixture.js'
 import { createLayoutFamilyScene, layoutFamilySource } from './georgian/layout-family.js'
-import { compileCurrentDesign } from './current-design/compile.js'
+import { compileCurrentDesign, compileCurrentDesignBundle } from './current-design/compile.js'
 import { readGeorgianDesignSnapshot } from './current-design/georgian-source.js'
 
 const cli = (args: string[], input?: string) => spawnSync(process.execPath,
@@ -102,5 +103,65 @@ test('the CLI reads the explicitly named source and refuses missing, malformed o
     assert.equal(rejected.status, 1)
     assert.equal(rejected.stdout, '')
     assert.ok(rejected.stderr.trim())
+  }
+})
+
+test('the active bundle command returns both plan scenes and the native results from one source', async () => {
+  const design = readGeorgianDesignSnapshot()
+  const input = JSON.stringify(design)
+  const command = cli(['--bundle', '-'], input)
+  assert.equal(command.status, 0, command.stderr)
+  const bundle = await compileCurrentDesignBundle(JSON.parse(input))
+  assert.equal(command.stdout, JSON.stringify(bundle) + '\n')
+  assert.equal(bundle.schema, 'current-design-bundle/1')
+  assert.equal(bundle.source.planDigest, sha256SemanticFingerprint(design))
+  assert.deepEqual(bundle.plans.source, bundle.source)
+  for (const level of ['GROUND', 'FIRST'] as const) {
+    assert.deepEqual(bundle.plans.plans[level], createLayoutFamilyScene(level, 100))
+  }
+  assert.deepEqual(bundle.plans.diagnostics[0].objects, [
+    { kind: 'storey', id: 'GROUND' }, { kind: 'storey', id: 'FIRST' },
+  ])
+
+  assert.equal(bundle.occupiedServices.status, 'compiled')
+  assert.equal(bundle.selectedWaterEvent.status, 'compiled')
+  const checks = [
+    [bundle.occupiedServices, bundle.occupiedServices.schedule, 'HAD-OCCUPIED-SERVICE-SCHEDULE',
+      'had/studies/current-house-services.json', 'had-occupied-services'],
+    [bundle.selectedWaterEvent, bundle.selectedWaterEvent.event, 'RWT-06-SELECTED-WATER-EVENT',
+      'rwt/studies/selected-water-event.json', 'rwt-conditional-receiving'],
+  ] as const
+  for (const [domain, payload, method, path, bindingId] of checks) {
+    assert.equal(domain.method.id, method)
+    const binding = bundle.plans.disciplineBindings.find(value => value.id === bindingId)
+    assert.ok(binding)
+    assert.equal(domain.method.gitBlob, binding.identities[domain.method.sourcePath])
+    assert.match(domain.method.gitBlob, /^[0-9a-f]{40}$/)
+    assert.equal(domain.applicability.state, 'selected-reference')
+    assert.equal(domain.source.planDigest, bundle.source.planDigest)
+    assert.equal(payload, readFileSync(new URL(`../../project/${path}`, import.meta.url), 'utf8'))
+  }
+})
+
+test('the same bundle command links unsupported discipline outputs to an edited candidate', async () => {
+  const design = JSON.parse(JSON.stringify(readGeorgianDesignSnapshot()))
+  design.source = { kind: 'contrast-specimen', id: 'SPECIMEN-BUNDLE', state: 'candidate' }
+  const before = await compileCurrentDesignBundle(design)
+  design.storeys.GROUND.openings[0].widthMm -= 100
+  const after = await compileCurrentDesignBundle(design)
+  assert.equal(after.plans.status, 'CANDIDATE_NOMINAL_PLAN_ONLY')
+  assert.notEqual(after.source.planDigest, before.source.planDigest)
+  assert.notDeepEqual(after.plans.plans.GROUND, before.plans.plans.GROUND)
+  assert.deepEqual(after.plans.plans.FIRST, before.plans.plans.FIRST)
+  for (const [name, domain] of [
+    ['occupied-services', after.occupiedServices], ['selected-water-event', after.selectedWaterEvent],
+  ] as const) {
+    assert.equal(domain.status, 'unavailable')
+    assert.deepEqual(domain.diagnostics[0], {
+      code: 'DOMAIN_REQUIRES_ACCEPTED_SOURCE',
+      domain: name,
+      message: 'This candidate does not carry an applicable selected discipline binding.',
+      objects: [{ kind: 'design', id: 'SPECIMEN-BUNDLE' }],
+    })
   }
 })

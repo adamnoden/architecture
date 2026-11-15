@@ -32,3 +32,5 @@ export function resolveCurrentDesign(input: unknown) {
 export function readCurrentDesignResolution() {
   return resolveCurrentDesign(readGeorgianDesignSnapshot())
 }
+
+export type CurrentDesignResolution = ReturnType<typeof resolveCurrentDesign>
