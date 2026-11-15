@@ -1,0 +1,145 @@
+{
+  "roots": [
+    "project/bcr/studies",
+    "project/ias/studies",
+    "project/oas/studies"
+  ],
+  "families": [
+    {
+      "id": "bcr-georgian-feasibility",
+      "state": "current-bounded-consumer",
+      "decision": "project/bcr/buildability-construction-resolution-programme.md",
+      "entries": [
+        "project/bcr/studies/occupation-geometry.ts",
+        "project/bcr/studies/proportionality-budgets.ts",
+        "project/bcr/studies/services-feasibility.ts",
+        "project/bcr/studies/structure-geometry.ts",
+        "project/bcr/studies/water-path-study.ts",
+        "project/bcr/studies/wet-feasibility.ts"
+      ],
+      "boundary": "Accepted Georgian reservations and scoped construction obligations. Selected technical convergence still waits for the named house gates."
+    },
+    {
+      "id": "bcr-selected-bay-interface",
+      "state": "current-conditional-consumer",
+      "decision": "project/bcr/bay-interface-study.md",
+      "entries": [
+        "project/bcr/studies/bay-interface-study.py"
+      ],
+      "boundary": "Front Study joined source compatibility. Selected bay design and independent practitioner review lie on separate gates."
+    },
+    {
+      "id": "ias-selected-coordination",
+      "state": "current-bounded-consumer",
+      "decision": "project/ias/interior-architecture-system-programme.md",
+      "entries": [
+        "project/ias/studies/current-occurrence-ledger.mjs",
+        "project/ias/studies/fitted-wc-stations.py",
+        "project/ias/studies/household-water.mjs",
+        "project/ias/studies/selected-family-convergence.mjs",
+        "project/ias/studies/shared-family-bathing.py",
+        "project/ias/studies/utility-first-release.mjs",
+        "project/ias/studies/utility-host-revised-route.py",
+        "project/ias/studies/utility-service-host.py",
+        "project/ias/studies/wc-service-stations.py"
+      ],
+      "boundary": "Retain each selected schedule or source-bound coordination interface at its own scope. Installed build-ups and equipment still require their governing acceptance."
+    },
+    {
+      "id": "ias-workable-interiors",
+      "state": "current-conditional-consumer",
+      "decision": "project/ias/workable-interior-concept-result.md",
+      "entries": [
+        "project/ias/studies/conventional-first-rest.mjs",
+        "project/ias/studies/workable-room-assemblies.mjs",
+        "project/ias/studies/workable-study-floor.mjs",
+        "project/ias/studies/workable-study-release.mjs"
+      ],
+      "boundary": "Current alternatives and the conventional benchmark. The owner selects the family before workable detail."
+    },
+    {
+      "id": "ias-comparison-and-proof-support",
+      "state": "bounded-study-or-rendering",
+      "decision": "project/ias/interior-architecture-system-programme.md",
+      "entries": [
+        "project/ias/studies/b-plan-riser-closure.mjs",
+        "project/ias/studies/bedroom4-connected-assembly.ts",
+        "project/ias/studies/bedroom4-wet-section.ts",
+        "project/ias/studies/family-bath-entrance-void.py",
+        "project/ias/studies/family-bath-exchange.py",
+        "project/ias/studies/family-bath-outlet.py",
+        "project/ias/studies/family_bath_davit.py",
+        "project/ias/studies/family_bath_exchange_figure.py",
+        "project/ias/studies/family_bath_permanent_drop.py",
+        "project/ias/studies/family_bath_void_plan.py",
+        "project/ias/studies/family_shaft_keys.py",
+        "project/ias/studies/furnishing-carry-control.py",
+        "project/ias/studies/pecolift-direct-turn-control.py",
+        "project/ias/studies/pecolift-ifc-envelope-audit.py",
+        "project/ias/studies/pecolift-static-reference.py",
+        "project/ias/studies/podium-room-event.py",
+        "project/ias/studies/principal-shower-entry.py",
+        "project/ias/studies/rear-release-figure.mjs",
+        "project/ias/studies/rear-release-reach.mjs",
+        "project/ias/studies/rear-tray-first.py",
+        "project/ias/studies/rear_shower_side_service.py",
+        "project/ias/studies/saniform_long_exchange.py",
+        "project/ias/studies/shared-family-bathing-figure.py",
+        "project/ias/studies/sink-cabinet.ts",
+        "project/ias/studies/sink-renewal.ts",
+        "project/ias/studies/stair-rail-renewal.py",
+        "project/ias/studies/study-door-reveal.py",
+        "project/ias/studies/three-bathing-sections.py",
+        "project/ias/studies/three_bathing_figure.py",
+        "project/ias/studies/upper-wc-release.py",
+        "project/ias/studies/upper_wc_release_figure.py",
+        "project/ias/studies/utility-bench-release.py",
+        "project/ias/studies/utility-sink-cutover.py",
+        "project/ias/studies/wet-item-export.mjs"
+      ],
+      "boundary": "Per-study controls, presentation and proposed removal comparisons. Exact input and separately owned geometry remain useful without proving an approved component or occupied task."
+    },
+    {
+      "id": "ias-regression",
+      "state": "verification-only",
+      "decision": "project/ias/interior-architecture-system-programme.md",
+      "entries": [
+        "project/ias/studies/utility-first-release.test.mjs"
+      ],
+      "boundary": "Regression evidence is scoped by supplied receipt or specimen."
+    },
+    {
+      "id": "oas-north-export",
+      "state": "current-rejection-witness",
+      "decision": "project/oas/north-export-occurrence-result.md",
+      "entries": [
+        "project/oas/studies/north-export-access.mjs",
+        "project/oas/studies/north-export-exterior.mjs",
+        "project/oas/studies/north-export-frame-access.mjs",
+        "project/oas/studies/north-export-occurrence.mjs",
+        "project/oas/studies/north-export-renewal-sheet.mjs",
+        "project/oas/studies/north-export-stay-fold.mjs",
+        "project/oas/studies/north-export-stay-range.mjs"
+      ],
+      "boundary": "Actual FIRST outer-north occurrence and retained failed/excluded variants. Reproducibility does not re-adopt the rejected whole export."
+    },
+    {
+      "id": "oas-study-subframe",
+      "state": "current-conditional-consumer",
+      "decision": "project/oas/study-subframe-comparison.md",
+      "entries": [
+        "project/oas/studies/study-subframe.mjs"
+      ],
+      "boundary": "Retained Study carrier contender and conventional control. Owner decision and final bay work remain separate."
+    },
+    {
+      "id": "oas-regression",
+      "state": "verification-only",
+      "decision": "project/oas/opening-assembly-system-programme.md",
+      "entries": [
+        "project/oas/studies/north-export-stay-range.test.mjs"
+      ],
+      "boundary": "Regression evidence only."
+    }
+  ]
+}

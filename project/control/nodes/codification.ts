@@ -11,7 +11,7 @@ export const codificationNodes = defineNodes([
   {
     id: 'CCR-CURRENT-SOURCE', owners: ['CCR', 'HRS'],
     title: 'Implement one versioned current-design snapshot and inventory active consumers',
-    dependencies: ['PCO-EXECUTABLE-DESIGN', 'HRS-BASELINE', 'CCR-IDENTITY'], lifecycle: 'planned',
+    dependencies: ['PCO-EXECUTABLE-DESIGN', 'HRS-BASELINE', 'CCR-IDENTITY'], lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/ccr/current-source-result.md']
   },

@@ -1,0 +1,419 @@
+{
+  "inspectedMain": "c82a11ed2ae03486a0825112cb503ff9d30ada71",
+  "sourceSelection": "Named pre-site current overlay entry roots and their direct provenance; no transitive graph closure or design admission.",
+  "families": [
+    {
+      "id": "had-selected-water",
+      "state": "selected-reference",
+      "authority": "Selected architectural development and conditional reserves. Ground, moisture, structural and capacity admission remain open.",
+      "decisions": [
+        "project/had/water-replan-result.md"
+      ],
+      "authorRoots": [
+        "project/had/studies/open-north-loggia.mjs",
+        "project/had/studies/water-replan.mjs",
+        "project/had/studies/south-court-threshold.mjs",
+        "project/had/studies/garden-failure-bypass.mjs",
+        "project/had/studies/court-east-window.mjs",
+        "project/had/studies/north-intake.mjs",
+        "project/had/studies/north-protective-return.mjs",
+        "project/had/studies/maintenance-rain.mjs",
+        "compiler/reference-house/georgian/layout-revision.ts",
+        "project/str/studies/house-plan.py"
+      ],
+      "inputReceipts": [
+        "project/had/studies/open-north-loggia.json",
+        "project/mat/studies/east-water-plant.json",
+        "project/mat/studies/whole-house-service-baseline.json",
+        "project/mat/studies/upper-access-renewal.json",
+        "project/mat/studies/loggia-envelope-section.json",
+        "project/str/studies/ground-interfaces.json",
+        "project/rwt/studies/open-loggia-event.json",
+        "project/str/studies/house-plan.json",
+        "project/ias/studies/selected-family-convergence.json"
+      ],
+      "authoredInputs": [
+        "project/rwt/studies/selected-receiving-interface.json"
+      ],
+      "receipts": [
+        "project/had/studies/water-replan.json"
+      ],
+      "consumers": [
+        "project/had/studies/current-house.mjs",
+        "project/str/studies/current-house-grid.py",
+        "project/str/studies/reconciled-house-interface.py",
+        "project/rwt/studies/selected-water-event.mjs",
+        "project/rwt/studies/east-ground-outfall.mjs"
+      ],
+      "producerChecks": [
+        "node --import tsx project/had/studies/open-north-loggia.mjs --check",
+        "node project/had/studies/water-replan.mjs --check"
+      ],
+      "historicalInputs": [
+        "project/had/studies/fixtures/services-9476-prose-successor.json"
+      ]
+    },
+    {
+      "id": "had-occupied-services",
+      "state": "selected-reference",
+      "authority": "Selected occupied coordination and explicit blocked incoming water. Supplier products and physical or structural adoption remain open.",
+      "decisions": [
+        "project/had/inhabited-services-selection.md"
+      ],
+      "authorRoots": [
+        "project/had/studies/current-house.mjs",
+        "project/had/studies/fitted-house-services.mjs",
+        "project/had/studies/service-apertures.mjs",
+        "project/had/studies/cooker-fault.mjs",
+        "project/had/studies/inhabited-service-rooms.mjs",
+        "project/had/studies/inhabited-service-faults.mjs",
+        "project/had/studies/inhabited-service-compose.mjs",
+        "project/had/studies/selected-service-interfaces.mjs",
+        "project/had/studies/selected-water-duties.mjs",
+        "project/mat/studies/whole-house-service-baseline.py"
+      ],
+      "inputReceipts": [
+        "project/had/studies/receiver-selection.json",
+        "project/had/studies/water-replan.json",
+        "project/ias/studies/fitted-wc-schedule.json",
+        "project/ias/studies/household-water.json",
+        "project/ias/studies/shared-family-bathing.json",
+        "project/ias/studies/utility-first-release.json",
+        "project/ias/studies/utility-host-revised-route.json",
+        "project/mat/studies/joined-cooker-system.json",
+        "project/mat/studies/local-extract-heat-and-store.json",
+        "project/mat/studies/loggia-soffit.json",
+        "project/mat/studies/service-material-offer.json",
+        "project/mat/studies/tempered-kitchen-air.json",
+        "project/mat/studies/whole-house-leakage-duty.json",
+        "project/mat/studies/whole-house-service-baseline.json",
+        "project/str/studies/current-house-arch-movement.json",
+        "project/str/studies/house-corner-rewind.json",
+        "project/str/studies/reconciled-house-interface.json"
+      ],
+      "authoredInputs": [],
+      "receipts": [
+        "project/had/studies/current-house-services.json"
+      ],
+      "consumers": [
+        "project/mra/studies/internal-leak-study.mjs",
+        "project/had/studies/incoming-water.mjs",
+        "project/rwt/studies/outer-network.py"
+      ],
+      "producerChecks": [
+        "node --test project/had/studies/current-house.test.mjs"
+      ]
+    },
+    {
+      "id": "str-conditional-interface",
+      "state": "candidate-interface",
+      "authority": "Consumed STR grid, conditional load/reference geometry and selected-service interfaces. Consumed candidate evidence carries its limitations.",
+      "decisions": [
+        "project/had/service-structural-applicability.md",
+        "project/str/structural-architecture-programme.md"
+      ],
+      "authorRoots": [
+        "project/str/studies/current-house-grid.py",
+        "project/str/studies/reconciled-house-interface.py",
+        "project/str/studies/current-house-joined-foundation.py",
+        "project/str/studies/ground-interfaces.py",
+        "project/str/studies/current-house-membrane.py",
+        "project/str/studies/current-house-head-actions.py",
+        "project/str/studies/current-house-floor-closure.py",
+        "project/str/studies/current-house-roof-bracing.py",
+        "project/str/studies/current-house-lateral.py",
+        "project/str/studies/open-loggia-support.py",
+        "project/ias/studies/wc-service-stations.py"
+      ],
+      "inputReceipts": [
+        "project/had/studies/water-replan.json",
+        "project/ias/studies/bedroom4-wet-section.json",
+        "project/mat/studies/raised-roof-edge.json",
+        "project/mat/studies/study-coupled-window.json",
+        "project/oas/studies/north-export-occurrence.json",
+        "project/str/studies/current-house-floor-closure.json",
+        "project/str/studies/current-house-grid.json",
+        "project/str/studies/current-house-guard-bracket.json",
+        "project/str/studies/current-house-head-actions.json",
+        "project/str/studies/current-house-lateral.json",
+        "project/str/studies/current-house-ring-space.json",
+        "project/str/studies/current-house-roof-route.json",
+        "project/str/studies/current-house-welded-network.json",
+        "project/str/studies/current-house-window-renewal.json",
+        "project/str/studies/house-corner-rewind.json",
+        "project/str/studies/open-loggia-support.json",
+        "project/str/studies/p32-court-hold.json",
+        "project/str/studies/reconciled-corner-portals.json"
+      ],
+      "authoredInputs": [],
+      "receipts": [
+        "project/str/studies/current-house-grid.json",
+        "project/str/studies/reconciled-house-interface.json",
+        "project/str/studies/current-house-joined-foundation.json"
+      ],
+      "consumers": [
+        "project/had/studies/current-house.mjs",
+        "project/had/studies/court-intake-selection.mjs",
+        "project/had/studies/receiver-selection.mjs",
+        "project/rwt/studies/court-bypass-choice.mjs"
+      ],
+      "producerChecks": [
+        "python3 -B project/str/studies/current-house-grid.py --check",
+        "python3 -B project/str/studies/reconciled-house-interface.py --check",
+        "python3 -B project/str/studies/current-house-joined-foundation.py --check"
+      ]
+    },
+    {
+      "id": "rwt-conditional-receiving",
+      "state": "selected-reference",
+      "authority": "RWT authors the JSON receiving requirements. Generated event and service receipts are conditional scope only. The authored startingHouseBlob is historical provenance.",
+      "decisions": [
+        "project/rwt/rwt-06-finite-exit-map.md",
+        "project/rwt/rwt-06-permanent-receiver-service.md"
+      ],
+      "authorRoots": [
+        "project/rwt/studies/open-loggia-event.mjs",
+        "project/rwt/studies/selected-water-event.mjs",
+        "project/rwt/studies/court-service-selection.mjs",
+        "project/rwt/studies/east-ground-outfall.mjs",
+        "project/rwt/studies/court-bypass-choice.mjs"
+      ],
+      "inputReceipts": [
+        "project/had/studies/water-replan.json",
+        "project/had/studies/receiver-selection.json",
+        "project/had/studies/court-intake-selection.json",
+        "project/rwt/studies/joined-service-routes.json",
+        "project/rwt/studies/fork-outlet-joint.json",
+        "project/rwt/studies/forked-side-outlet.json",
+        "project/mat/studies/plant-threshold.json",
+        "project/mat/studies/loggia-envelope-section.json",
+        "project/mat/studies/ring-roof-family.json"
+      ],
+      "authoredInputs": [
+        "project/rwt/studies/selected-receiving-interface.json"
+      ],
+      "receipts": [
+        "project/rwt/studies/selected-water-event.json",
+        "project/rwt/studies/court-service-selection.json",
+        "project/rwt/studies/open-loggia-event.json"
+      ],
+      "consumers": [
+        "project/had/studies/water-replan.mjs",
+        "project/had/studies/receiver-selection.mjs",
+        "project/rwt/studies/outer-network.py"
+      ],
+      "producerChecks": [
+        "node project/rwt/studies/open-loggia-event.mjs --check",
+        "node project/rwt/studies/selected-water-event.mjs --check",
+        "node project/rwt/studies/court-service-selection.mjs --check"
+      ]
+    }
+  ],
+  "receiptEdges": [
+    {
+      "receipt": "project/had/studies/water-replan.json",
+      "location": [
+        "sources",
+        "had"
+      ],
+      "format": "path-and-blob",
+      "algorithm": "gitBlob",
+      "source": "project/had/studies/open-north-loggia.json"
+    },
+    {
+      "receipt": "project/had/studies/water-replan.json",
+      "location": [
+        "sources",
+        "services"
+      ],
+      "format": "path-and-blob",
+      "algorithm": "gitBlob",
+      "source": "project/mat/studies/whole-house-service-baseline.json"
+    },
+    {
+      "receipt": "project/had/studies/water-replan.json",
+      "location": [
+        "renewal",
+        "receivingInterface",
+        "source"
+      ],
+      "format": "path-and-blob",
+      "algorithm": "gitBlob",
+      "source": "project/rwt/studies/selected-receiving-interface.json"
+    },
+    {
+      "receipt": "project/had/studies/water-replan.json",
+      "location": [
+        "hydraulicProbe",
+        "catchment",
+        "source"
+      ],
+      "format": "path-and-blob",
+      "algorithm": "gitBlob",
+      "source": "project/rwt/studies/open-loggia-event.json"
+    },
+    {
+      "receipt": "project/had/studies/current-house-services.json",
+      "location": [
+        "sources"
+      ],
+      "format": "map",
+      "algorithm": "gitBlob"
+    },
+    {
+      "receipt": "project/str/studies/current-house-grid.json",
+      "location": [
+        "sources"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/str/studies/reconciled-house-interface.json",
+      "location": [
+        "sourceGitBlobs"
+      ],
+      "format": "map",
+      "algorithm": "gitBlob"
+    },
+    {
+      "receipt": "project/str/studies/current-house-joined-foundation.json",
+      "location": [
+        "sources"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/rwt/studies/open-loggia-event.json",
+      "location": [
+        "inputs",
+        "house"
+      ],
+      "format": "path-and-blob",
+      "algorithm": "gitBlob",
+      "source": "project/had/studies/open-north-loggia.json"
+    },
+    {
+      "receipt": "project/rwt/studies/open-loggia-event.json",
+      "location": [
+        "inputs",
+        "envelope"
+      ],
+      "format": "path-and-blob",
+      "algorithm": "gitBlob",
+      "source": "project/mat/studies/loggia-envelope-section.json"
+    },
+    {
+      "receipt": "project/rwt/studies/selected-water-event.json",
+      "location": [
+        "source"
+      ],
+      "format": "path-and-blob",
+      "algorithm": "gitBlob",
+      "source": "project/had/studies/water-replan.json"
+    }
+  ],
+  "gitBlobs": {
+    "compiler/reference-house/georgian/layout-revision.ts": "af955c7da2e2469fd24598f98db6fc942a119ed3",
+    "project/had/inhabited-services-selection.md": "53369e05426c7383f049d16e54b7e91d27179a22",
+    "project/had/service-structural-applicability.md": "91e87bafe1f19403e8ec4846b44ff6437190a713",
+    "project/had/studies/cooker-fault.mjs": "8eaf819eac101f22e306d62376c6836ac67beb49",
+    "project/had/studies/court-east-window.mjs": "876ee826eaf61b88ebf5e7c4596fba0da07cc1f6",
+    "project/had/studies/court-intake-selection.json": "887a3df5b7a335b3eaafc7c8de4529a339428cbc",
+    "project/had/studies/court-intake-selection.mjs": "4f8eda047d3c354166b1961f16fbd1227dd07138",
+    "project/had/studies/current-house-services.json": "248c8281369d16a8885506660f740c1f66462d9d",
+    "project/had/studies/current-house.mjs": "58bf1a6248af8268de70d838cce23f249ce30b91",
+    "project/had/studies/fitted-house-services.mjs": "a22e08e94dc1d8fc2ae84b5fed5a71eaf97e3dd5",
+    "project/had/studies/fixtures/services-9476-prose-successor.json": "2d8f7243fb87d350763f2bca3d103b89b9d14b7d",
+    "project/had/studies/garden-failure-bypass.mjs": "e7c2ea8c8a7ad3730a7113e45488f3163a6f52d9",
+    "project/had/studies/incoming-water.mjs": "90af438144296ff78349939bfb95d5bdb9769a44",
+    "project/had/studies/inhabited-service-compose.mjs": "632421d4b4b4dcdc028590694e877d290d768485",
+    "project/had/studies/inhabited-service-faults.mjs": "0499f4a2e648838dad54578412fc04bfe60ff31e",
+    "project/had/studies/inhabited-service-rooms.mjs": "07035847ee3475cbfd22a1f67bbf1fa435b1986c",
+    "project/had/studies/maintenance-rain.mjs": "806b216dc0994ff2035f70be658a01116d9ae5a7",
+    "project/had/studies/north-intake.mjs": "539705304d41d8510d615dd69aaacad4cb25c8d3",
+    "project/had/studies/north-protective-return.mjs": "3a9ef1ab2babd302786cf2aad0dac7fe7eb9e1b0",
+    "project/had/studies/open-north-loggia.json": "25faad2c4d40df2b7da7212f73808843a88d2f52",
+    "project/had/studies/open-north-loggia.mjs": "88b2589aef8c5bc4816e08b911eafa845909f43b",
+    "project/had/studies/receiver-selection.json": "2def3f7221d55b180cd46392a227b8c56972d03f",
+    "project/had/studies/receiver-selection.mjs": "141b3dbc780ea0661c483278a090e0e6ec40023e",
+    "project/had/studies/selected-service-interfaces.mjs": "712065e8dfefc0c2d357e232ca17bbed5a376ea2",
+    "project/had/studies/selected-water-duties.mjs": "332755d589080661042af6491d0f23d7947829bf",
+    "project/had/studies/service-apertures.mjs": "ecfe9aed698346a8a260ac6f0f35981717dd08c0",
+    "project/had/studies/south-court-threshold.mjs": "d1067300b8513d5d98a76897e5bba87bbc7286c4",
+    "project/had/studies/water-replan.json": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+    "project/had/studies/water-replan.mjs": "5525676d6cc2bb167eccd35249afaa6928142011",
+    "project/had/water-replan-result.md": "fff4ce4ddef614e4f5912ffc1f7fe072319091ef",
+    "project/ias/studies/bedroom4-wet-section.json": "2b9ca6642cf7baf330bbe36039241609355e892c",
+    "project/ias/studies/fitted-wc-schedule.json": "5e20c73409b5406a2de9d7ee7e5853e9302189c8",
+    "project/ias/studies/household-water.json": "30c96e79dd3a35c96bb30e355b668c9a710a4060",
+    "project/ias/studies/selected-family-convergence.json": "7922be5910c40198563d5bd67f4cf306ea221dbd",
+    "project/ias/studies/shared-family-bathing.json": "f89302f9d87708b5314bd68a768c976efcd07b8d",
+    "project/ias/studies/utility-first-release.json": "be84a64623c8042a002af108a784b8668acd7542",
+    "project/ias/studies/utility-host-revised-route.json": "69e6b0aa5e1847f09c7ac3da3b98eec9bf1d5c0b",
+    "project/ias/studies/wc-service-stations.py": "00d4023a9422fa93fccd8f8140034f8a677ec537",
+    "project/mat/studies/east-water-plant.json": "a79242dbe0118d393d906a7d01df9061fb2cdb5b",
+    "project/mat/studies/joined-cooker-system.json": "d04dd78ba3fd040c7abd1aecb94aa9a3ce95d5e0",
+    "project/mat/studies/local-extract-heat-and-store.json": "550709d0e0ca0acff81cb42e502640771f4ac2d0",
+    "project/mat/studies/loggia-envelope-section.json": "0ec54ba2420b9337ce81b1867eef4c83d661e69b",
+    "project/mat/studies/loggia-soffit.json": "c9c914169547bd42b90cd69512ba1a28d97ca6fe",
+    "project/mat/studies/plant-threshold.json": "58c0c78aa8985d4299c8d8b8750e55c98a129de2",
+    "project/mat/studies/raised-roof-edge.json": "8406cb6c76245ea63c5935f8a3915a4a55f03942",
+    "project/mat/studies/ring-roof-family.json": "28afcd1cd63aa4d17cd8dfeb433dba1885b92478",
+    "project/mat/studies/service-material-offer.json": "e5686440fa6a3f68387576883b1e0c768e0596bb",
+    "project/mat/studies/study-coupled-window.json": "00184ad7c13d39b38a1ac95a82fa462a8d13eea7",
+    "project/mat/studies/tempered-kitchen-air.json": "b18044acaec99caf00eab9a542fff78e510857c9",
+    "project/mat/studies/upper-access-renewal.json": "213e122e6c9244d82178feee836cf04ed27fef0d",
+    "project/mat/studies/whole-house-leakage-duty.json": "5b93cdd9ea1ee7d825fa4596a44caf06431afc49",
+    "project/mat/studies/whole-house-service-baseline.json": "049161ebac29b24e0acc7d8085302fca906fe9d2",
+    "project/mat/studies/whole-house-service-baseline.py": "e1c4e1a645ee707622c9bcc7a064fcd430715a63",
+    "project/mra/studies/internal-leak-study.mjs": "bc28da57d3868b6532b981722808ed01783cb147",
+    "project/oas/studies/north-export-occurrence.json": "5a0860a715688f8ef4eda3184fd8fe8bc26774b6",
+    "project/rwt/rwt-06-finite-exit-map.md": "86f2166ab4db6f9f4d1a227f4d1293b4aea4a534",
+    "project/rwt/rwt-06-permanent-receiver-service.md": "48a9577c4a702752b15f84eb5143342ed2defaf2",
+    "project/rwt/studies/court-bypass-choice.mjs": "128032d7b5def6db35dd54905a272a595185de25",
+    "project/rwt/studies/court-service-selection.json": "96aa5b061c0fd38138ccb38dded3749355213b94",
+    "project/rwt/studies/court-service-selection.mjs": "810ad4b14d9d5a4f8a44b929cb9c67e4726e423d",
+    "project/rwt/studies/east-ground-outfall.mjs": "0c381415970c57f533a4975ca167cab521936fdf",
+    "project/rwt/studies/fork-outlet-joint.json": "da0e6d87b51a70c67990460461b06cded24bfb2e",
+    "project/rwt/studies/forked-side-outlet.json": "64351c5d25a1d5a8d3621c851fd47123ccfe0017",
+    "project/rwt/studies/joined-service-routes.json": "1f7f1ee43934355b5598acb55adb5a3357fc2df9",
+    "project/rwt/studies/open-loggia-event.json": "f096160f98e175c7d5f3ec117a9ae41da2162b30",
+    "project/rwt/studies/open-loggia-event.mjs": "a2cc9673908c88ae6c84be2cae61b08c9f8453e2",
+    "project/rwt/studies/outer-network.py": "39fbdd10eb8a8e463cee5c28b4210e132503ad04",
+    "project/rwt/studies/selected-receiving-interface.json": "847eecc74b95fc189dab3f45e02f54cdb41c6d29",
+    "project/rwt/studies/selected-water-event.json": "b5f8b7c6460c8d5838ccd5bc3107c2656081cf35",
+    "project/rwt/studies/selected-water-event.mjs": "a50f0c66142bcf1cf823775f3a7868b972baf48d",
+    "project/str/structural-architecture-programme.md": "5a289be91e6a847b2a5ff28276060c34308f2bf1",
+    "project/str/studies/current-house-arch-movement.json": "05db94a987c7bf45b885c6d02f701b31bcf91740",
+    "project/str/studies/current-house-floor-closure.json": "402cec2347ab9bf4efd624e269918096a1e70f97",
+    "project/str/studies/current-house-floor-closure.py": "98efe8a379a709399a9d89689495a40dfa18d443",
+    "project/str/studies/current-house-grid.json": "56aca6f99f5fa60b21d58c89115ac1ee824e3828",
+    "project/str/studies/current-house-grid.py": "abb96e665bdc4d1b900d73125acb3bde68ca0b0b",
+    "project/str/studies/current-house-guard-bracket.json": "1a771395a3d326e93a94f01e1f020499ebbee981",
+    "project/str/studies/current-house-head-actions.json": "0d5c8c0d67378b0acd1a7680053e3b0783045c7c",
+    "project/str/studies/current-house-head-actions.py": "aef7fa4cad6e89fc09c47e55e071ad52da22b522",
+    "project/str/studies/current-house-joined-foundation.json": "ffc3ccb68655eead7c7f56a8dd3179d7d8d6f7bc",
+    "project/str/studies/current-house-joined-foundation.py": "2dbd7d33959639f68bca70caf512165c54b88c37",
+    "project/str/studies/current-house-lateral.json": "a3a4ae8393c14e04e874de02beebf901a4b87227",
+    "project/str/studies/current-house-lateral.py": "afd974189c5dad52b21e4432131d56d9df623a43",
+    "project/str/studies/current-house-membrane.py": "6d6b5cd9280dcceebd7d1896e11f5e260c9cc793",
+    "project/str/studies/current-house-ring-space.json": "b71119e0d4e9dd91c5ee7cad02076dd806c7ec67",
+    "project/str/studies/current-house-roof-bracing.py": "1fa8729ed65a62767ce12e0da81dae11e288513d",
+    "project/str/studies/current-house-roof-route.json": "c61d588392724f831b7ad72c9474eab2ce3a733f",
+    "project/str/studies/current-house-welded-network.json": "9a072fe11db7ee8f09e2fe048f7b7a3ae5d2195b",
+    "project/str/studies/current-house-window-renewal.json": "9e190c8683dbd4ff2f341589fd1676abd31f090b",
+    "project/str/studies/ground-interfaces.json": "4110aab34d263fbc9f8ae44f8006aed85b797406",
+    "project/str/studies/ground-interfaces.py": "2957a4403a0bd798b7e592d464f1f0f7660d0d6f",
+    "project/str/studies/house-corner-rewind.json": "6471d89c213724ec02a26d797c85185beadb25b5",
+    "project/str/studies/house-plan.json": "d722ada30df5729852043f0010433a890e399999",
+    "project/str/studies/house-plan.py": "5c1d6bfb5bb2382e909d481846f172f23044ed94",
+    "project/str/studies/open-loggia-support.json": "20dec4384d09a0d02075fdd34a247e775532763b",
+    "project/str/studies/open-loggia-support.py": "15a83176f8b1ad894d20eada0251d31fc1e0e025",
+    "project/str/studies/p32-court-hold.json": "e4895257d44765754dc449a8b0c4e6c59ccd80dd",
+    "project/str/studies/reconciled-corner-portals.json": "0fe6b9c2007cf5ea39b584cc2a2ac0568a0116be",
+    "project/str/studies/reconciled-house-interface.json": "4d3080dc4540ce7218b86f1d27518fbeb1f8e85d",
+    "project/str/studies/reconciled-house-interface.py": "c4f0b0777a061c3b9dfc09ca3fa7895d99fd3b9c"
+  }
+}
