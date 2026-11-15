@@ -9,8 +9,8 @@
     "label": "zerg13-had-grade"
   },
   "claimedAt": "2026-11-15T00:29:20.999Z",
-  "heartbeatAt": "2026-11-15T00:29:20.999Z",
-  "expiresAt": "2026-11-15T02:09:20.999Z",
+  "heartbeatAt": "2026-11-15T00:30:53.025Z",
+  "expiresAt": "2026-11-15T02:00:53.025Z",
   "branch": "work/zerg13-had-grade-cabinet",
   "predecessor": {
     "leaseId": "64a3aad1-db83-497a-b6b4-655b2c13f8c3",
@@ -31,5 +31,10 @@
       "evidence": "PR #1533 exact c4e9fa79 local combined tree c2f440f5; 96 HAD, MRA and deterministic receipts",
       "next": "Wait for full exact CI, joint fresh preflights and expected-head merge"
     }
+  },
+  "pr": 1534,
+  "checkpoint": {
+    "evidence": "PR #1534 exact 9ecc5761 tree 429a899b on c6fefe51; focused checks and deterministic drawing",
+    "next": "Observe exact hosted CI and fresh publication preflight, merge then release"
   }
 }
