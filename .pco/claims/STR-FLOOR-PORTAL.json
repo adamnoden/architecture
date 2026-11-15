@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 29,
-  "state": "released",
-  "leaseId": "fb2309a9-dc37-41d7-865c-b4f3acca79ad",
+  "generation": 30,
+  "state": "claimed",
+  "leaseId": "4c12c737-48cf-433f-add0-f9769eb701e2",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg15b-str"
+    "label": "zerg16-str-cap"
   },
-  "claimedAt": "2026-11-15T16:11:56.172Z",
-  "heartbeatAt": "2026-11-15T16:39:16.290Z",
-  "expiresAt": "2026-11-15T16:39:16.290Z",
-  "branch": "work/zerg16-cage-plant",
+  "claimedAt": "2026-11-15T16:39:49.480Z",
+  "heartbeatAt": "2026-11-15T16:39:49.480Z",
+  "expiresAt": "2026-11-15T17:24:49.480Z",
+  "branch": "work/zerg16-cap-cabinet",
   "predecessor": {
-    "leaseId": "b75d2504-51cc-4eda-9455-199fdfc6fbed",
-    "generation": 28,
-    "branch": "work/zerg15-arch-head-clearance",
-    "pr": 1540,
+    "leaseId": "fb2309a9-dc37-41d7-865c-b4f3acca79ad",
+    "generation": 29,
+    "branch": "work/zerg16-cage-plant",
+    "pr": 1544,
     "checkpoint": {
-      "evidence": "PR #1540 exact 7fb51a3936f6709566ec7328c2333e5f8bf82bc9; straight north hold-down, paired garden ties and shallow cap fit",
-      "next": "Observe exact-head CI and merge while owned",
-      "blocker": "Current floor cage redesign, retaining shoe, cap development and 52-head coupled assembly remain open"
+      "evidence": "PR #1544 exact bab9fb11737706d183b75a524a4caad212f54df7; principal north floor cage and sleeve",
+      "next": "Observe exact-head CI then publish while lease live",
+      "blocker": "Develop slab chord, roof retainer, current cap and signed 52-head assembly"
     }
   },
   "recoverySource": {
-    "leaseId": "b75d2504-51cc-4eda-9455-199fdfc6fbed",
-    "generation": 28,
-    "branch": "work/zerg15-arch-head-clearance",
-    "pr": 1540,
+    "leaseId": "fb2309a9-dc37-41d7-865c-b4f3acca79ad",
+    "generation": 29,
+    "branch": "work/zerg16-cage-plant",
+    "pr": 1544,
     "checkpoint": {
-      "evidence": "PR #1540 exact 7fb51a3936f6709566ec7328c2333e5f8bf82bc9; straight north hold-down, paired garden ties and shallow cap fit",
-      "next": "Observe exact-head CI and merge while owned",
-      "blocker": "Current floor cage redesign, retaining shoe, cap development and 52-head coupled assembly remain open"
+      "evidence": "PR #1544 exact bab9fb11737706d183b75a524a4caad212f54df7; principal north floor cage and sleeve",
+      "next": "Observe exact-head CI then publish while lease live",
+      "blocker": "Develop slab chord, roof retainer, current cap and signed 52-head assembly"
     }
-  },
-  "pr": 1544,
-  "checkpoint": {
-    "evidence": "PR #1544 exact bab9fb11737706d183b75a524a4caad212f54df7; principal north floor cage and sleeve",
-    "next": "Observe exact-head CI then publish while lease live",
-    "blocker": "Develop slab chord, roof retainer, current cap and signed 52-head assembly"
-  },
-  "releasedAt": "2026-11-15T16:39:16.290Z",
-  "releaseReason": "handoff"
+  }
 }
