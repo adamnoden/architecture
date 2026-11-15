@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 26,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "83ad3cf9-3ec7-42a2-bd44-de4134072fa4",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg15-str"
   },
   "claimedAt": "2026-11-15T13:11:21.649Z",
-  "heartbeatAt": "2026-11-15T13:23:03.555Z",
-  "expiresAt": "2026-11-15T14:08:03.555Z",
+  "heartbeatAt": "2026-11-15T13:38:59.206Z",
+  "expiresAt": "2026-11-15T13:38:59.206Z",
   "branch": "work/zerg15-north-inlet",
   "predecessor": {
     "leaseId": "c30ccff9-55b1-4d1b-a915-7aa2c258f92c",
@@ -36,5 +36,7 @@
     "evidence": "PR 1537 exact b735be47311b64c68ba77d50b02bb138ef29139e (north hold-down section and floor transfer)",
     "next": "Wait for exact-head CI, run fresh preflight, merge, and release"
   },
-  "pr": 1537
+  "pr": 1537,
+  "releasedAt": "2026-11-15T13:38:59.206Z",
+  "releaseReason": "handoff"
 }
