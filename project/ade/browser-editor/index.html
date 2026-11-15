@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ovid’s House | Candidate plan editor</title>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Candidate plan editor</h1>
+      <p>Schematic plans. Installed assemblies, structure and services require their own checks.</p>
+    </header>
+    <div class="toolbar">
+      <label>Starting document <select id="basis"><option value="current">Current Georgian plan</option><option value="partitionStudy">Free-standing partition study</option></select></label>
+      <div class="actions">
+        <button id="new-draft" type="button">New draft</button>
+        <button id="save" type="button">Save draft</button>
+        <button id="reload" type="button">Load saved draft</button>
+        <button id="export" type="button">Export JSON</button>
+        <button id="import" type="button">Import JSON</button>
+        <input id="draft-file" type="file" accept=".json,application/json" hidden>
+      </div>
+    </div>
+    <div class="workspace">
+      <aside>
+        <div class="actions">
+          <button id="undo" type="button">Undo</button>
+          <button id="redo" type="button">Redo</button>
+        </div>
+        <form id="edit">
+          <label>Change <select id="kind"><option value="opening">Opening width</option><option value="partition">Partition position</option><option value="assembly">Assembly depth</option></select></label>
+          <label>Object <select id="object"></select></label>
+          <label><span id="value-label">Width (mm)</span> <input id="value" type="number" step="any" required></label>
+          <div class="actions adjust">
+            <button type="button" id="decrease">Decrease 10 mm</button>
+            <button type="button" id="increase">Increase 10 mm</button>
+          </div>
+          <button type="submit" class="primary">Apply value</button>
+        </form>
+        <p id="scope"></p>
+        <p id="clearance"></p>
+        <p id="diagnostic" role="alert"></p>
+      </aside>
+      <section class="drawing" aria-label="Plan comparison">
+        <div class="drawing-bar">
+          <label>Storey <select id="storey"><option value="GROUND">Ground</option><option value="FIRST">First</option></select></label>
+          <button id="pin" type="button">Use current as comparison</button>
+        </div>
+        <p id="affected" aria-live="polite"></p>
+        <p id="analysis" role="status"></p>
+        <p id="stale" role="status"></p>
+        <div class="plans">
+          <figure><figcaption id="current-caption">Current draft</figcaption><img id="current-plan" alt="Current draft plan"></figure>
+          <figure><figcaption id="comparison-caption">Comparison</figcaption><img id="comparison-plan" alt="Comparison plan"></figure>
+        </div>
+      </section>
+    </div>
+    <p id="storage" role="status"></p>
+  </main>
+  <script type="module" src="./editor.ts"></script>
+</body>
+</html>

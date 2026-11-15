@@ -67,7 +67,7 @@ export const codificationNodes = defineNodes([
   {
     id: 'ADE-BROWSER-EDITOR', owners: ['ADE'],
     title: 'Demonstrate browser floor-plan editing through the shared headless compiler',
-    dependencies: ['CCR-CHANGE-PROOF'], lifecycle: 'planned',
+    dependencies: ['CCR-CHANGE-PROOF'], lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/ade/browser-editor-result.md']
   }
