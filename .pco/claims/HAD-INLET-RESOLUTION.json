@@ -9,8 +9,8 @@
     "label": "zerg16-alternative-inlet-review"
   },
   "claimedAt": "2026-11-15T20:31:52.936Z",
-  "heartbeatAt": "2026-11-15T20:31:52.936Z",
-  "expiresAt": "2026-11-15T21:01:52.936Z",
+  "heartbeatAt": "2026-11-15T20:34:38.034Z",
+  "expiresAt": "2026-11-15T21:04:38.034Z",
   "predecessor": {
     "leaseId": "1ac5de66-fd34-4615-8971-816252ad8ae3",
     "generation": 36,
@@ -32,5 +32,10 @@
       "next": "Wait for all corrected exact workflows, run four canonical merge checks and integrate.",
       "blocker": "Pressure end boxes, independent receiving, frost and actual terminal support remain open."
     }
+  },
+  "checkpoint": {
+    "evidence": "https://github.com/adamnoden/architecture/issues/1477#issuecomment-6900935416",
+    "next": "Close independently pressure-contained south end boxes and two passive receiving paths against matched normal duty and credible fault envelope; keep atmospheric break fallback conditional.",
+    "blocker": "Actual fault exposure, end boxes and adverse receiving/frost path unverified; pressure-decoupled booster screen has no robust resistance range."
   }
 }
