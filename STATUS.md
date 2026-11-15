@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 6 · **Active:** 0 · **Blocked:** 32 · **Held:** 2 · **Done:** 140 · **Cancelled:** 0
+**Structurally ready:** 6 · **Active:** 0 · **Blocked:** 31 · **Held:** 2 · **Done:** 141 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -21,7 +21,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
-| `CCR-CHANGE-PROOF` | Prove end-to-end change propagation and selective evidence invalidation | CCR | ADE-BROWSER-EDITOR |
+| `ADE-BROWSER-EDITOR` | Demonstrate browser floor-plan editing through the shared headless compiler | ADE | — |
 | `HAD-INLET-RESOLUTION` | Resolve the selected incoming-water route and isolation station | HAD / MAT / IAS | — |
 | `STR-FLOOR-PORTAL` | Resolve the floor collector and portal load path before house selection | STR | ROF-RWT-GATE |
 | `DPL-COMMISSION` | Receive owner-nominated real plot and authorised assessment scope | DPL | DPL-SITE-ASSESSMENT |
@@ -40,8 +40,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Direct blockers |
 |---|---|---|
-| `CCR-CURRENT-RELEASE` | Eliminate historical fallback and split current models from all active final outputs | CCR-CHANGE-PROOF, HRS-SYNTHESIS, ADE-DETAILS, ADE-SCHEDULES, ADE-EVIDENCE |
-| `ADE-BROWSER-EDITOR` | Demonstrate browser floor-plan editing through the shared headless compiler | CCR-CHANGE-PROOF |
+| `CCR-CURRENT-RELEASE` | Eliminate historical fallback and split current models from all active final outputs | HRS-SYNTHESIS, ADE-DETAILS, ADE-SCHEDULES, ADE-EVIDENCE |
 | `HAD-OWNER-DESIGN-REVIEW` | Receive the owner’s decision on the coordinated architectural design | TRIAD-GATE |
 | `IAS-WORKABLE-DETAILS` | Detail the approved workable interior family and adjoining opening interfaces | HAD-OWNER-DESIGN-REVIEW |
 | `TRIAD-GATE` | Shared selected-house integration gate | HAD-INLET-RESOLUTION, ROF-RWT-GATE, MAT-COORDINATION, STR-FLOOR-PORTAL |

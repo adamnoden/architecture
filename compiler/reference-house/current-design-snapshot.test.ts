@@ -147,6 +147,7 @@ test('the exact named house receives separately scoped source bindings', () => {
     ['had-occupied-services', 'selected-reference'],
     ['str-conditional-interface', 'candidate-interface'],
     ['rwt-conditional-receiving', 'selected-reference'],
+    ['mat-roof-pitch-reference', 'candidate-interface'],
     ['had-inlet-indoor-reference', 'candidate-interface'],
     ['had-inlet-south-development', 'candidate-interface'],
   ])

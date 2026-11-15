@@ -5,6 +5,7 @@ import { frontStudyOpening, inspectResolvedHostedOpening } from '../../construct
 import type { CurrentDesignResolution } from '../resolve.js'
 
 const windowPath = 'project/oas/studies/study-subframe.json'
+const windowMethod = 'project/oas/studies/study-dry-seam.mjs'
 const doorPath = 'project/had/studies/water-replan.json'
 const doorDrawingPath = 'project/had/studies/south-court-threshold.svg'
 const references = {
@@ -60,6 +61,8 @@ export function compileRenewableOpenings(resolved: CurrentDesignResolution, rece
     throw new TypeError('Renewable openings require exact accepted occupied-house and HAD selected-water bindings')
   }
 
+  const methodHash = sha(read(windowMethod))
+  if (methodHash !== '353dcc5b867a7a4e720268a85b534ed3ee84e08c2c330dbbe09795385a8c8d3c') throw new TypeError('The OAS Study dry-seam method changed')
   const windowBytes = read(windowPath)
   const windowHash = sha(windowBytes)
   // The OAS comparison is a candidate receipt, separate from the selected HAD binding.
@@ -113,7 +116,7 @@ export function compileRenewableOpenings(resolved: CurrentDesignResolution, rece
   return {
     schema: 'renewable-opening-trial/1', state: 'candidate', units: 'mm', source: nominal.source,
     window: {
-      receipt: { path: windowPath, sha256: windowHash, method: 'project/oas/studies/study-dry-seam.mjs' },
+      receipt: { path: windowPath, sha256: windowHash, method: windowMethod, methodSha256: methodHash },
       opening: { id: nominal.row.openingId, hostId: nominal.row.hostWallId, nominalCentreMm: bay.basis.opening.old,
         occupiedCentreMm: occurrence.centre, nativeWidthMm: occurrence.width, widthMm },
       fixedFrameWidthMm: e0.frameWidth, schedule,

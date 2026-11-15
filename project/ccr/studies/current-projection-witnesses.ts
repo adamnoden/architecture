@@ -24,7 +24,10 @@ const { receiving } = await compile.readEastGroundReceivingCase()
 const lowered = await compile.eastGroundReceiving({ ...receiving, farEndWaterLevelMm: receiving.farEndWaterLevelMm - 20 })
 const { condensate } = await compile.readOccupiedCondensateCase()
 const loweredCondensate = await compile.occupiedCondensate({ ...condensate, portLevelMm: 2675 })
+const { roof } = await compile.readRoofPitchCase()
+const raisedRoof = await compile.roofPitch({ ...roof, pitchDeg: 27 })
 const witnesses = [
+  ['roof-pitch-27deg-field-section.svg', raisedRoof.drawing],
   ['ground-wc-condensate-25mm-lowering.svg', loweredCondensate.drawing],
   ['east-ground-receiving-20mm-lower.svg', lowered.drawing],
   ['inlet-plant-25mm-raise.svg', raised.drawing],
