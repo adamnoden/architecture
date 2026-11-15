@@ -9,12 +9,12 @@
     "label": "zerg16-edit-contract"
   },
   "claimedAt": "2026-11-15T18:40:35.128Z",
-  "heartbeatAt": "2026-11-15T18:46:22.072Z",
-  "expiresAt": "2026-11-15T19:46:22.072Z",
+  "heartbeatAt": "2026-11-15T18:54:00.488Z",
+  "expiresAt": "2026-11-15T19:54:00.488Z",
   "branch": "work/zerg16-edit-current-services",
   "pr": 1550,
   "checkpoint": {
-    "evidence": "Exact head 117a8739079fdbdf00b339da5f23268b328a2509; local Reference House, HAD, RWT and targeted tests passed",
-    "next": "Run exact-head CI and both canonical merge checks before integration."
+    "evidence": "Exact corrected 5c56e0e4c38851c0f08e4b589a9af81817f673b6; local repository suite passes including unchanged MRA producer receipt, local domain and headless tests passed",
+    "next": "Verify both triggered hosted workflows on the corrected head and both fresh lease merge checks before integration."
   }
 }
