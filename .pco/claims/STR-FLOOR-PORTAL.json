@@ -9,8 +9,8 @@
     "label": "zerg16-alternative-structure-review"
   },
   "claimedAt": "2026-11-15T20:31:26.504Z",
-  "heartbeatAt": "2026-11-15T20:31:26.504Z",
-  "expiresAt": "2026-11-15T21:01:26.504Z",
+  "heartbeatAt": "2026-11-15T20:33:55.765Z",
+  "expiresAt": "2026-11-15T21:03:55.765Z",
   "predecessor": {
     "leaseId": "6cdfcd1e-09a8-4e00-8027-d937c22dfb7b",
     "generation": 32,
@@ -32,5 +32,10 @@
       "next": "Observe exact-head CI then integrate while lease live",
       "blocker": "Design lateral bend confinement and complete joined wall, roof, foundation and service replay"
     }
+  },
+  "checkpoint": {
+    "evidence": "https://github.com/adamnoden/architecture/issues/1103#issuecomment-6900935628",
+    "next": "Only advance a positive developed tie outside the current fan with actual confinement, or a centred protected steel load-spreading shoe with retained moisture plane and demonstrated coupled stiffness.",
+    "blocker": "Concrete tie/links do not jointly clear; south-only receivers are over capacity; alternate steel base exceeds the existing anchor stress basis and protected shoe envelope."
   }
 }
