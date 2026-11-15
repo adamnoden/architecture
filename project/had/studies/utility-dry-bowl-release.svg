@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 725" role="img" aria-labelledby="title desc">
+<title id="title">Lift the dry bowl onto an independently supported first rest</title>
+<desc id="desc">Section looking east with a straight lift beam, dry bowl in three transfer states, and an elevated rim stand over a retained radiator.</desc>
+<style>text{font:16px sans-serif;fill:#273f38}.title{font:bold 28px sans-serif}.heading{font:bold 19px sans-serif}</style>
+<rect width="1100" height="725" fill="#fbf8ed"/>
+<text x="35" y="45" class="title">Renew the bowl without moving the deck</text>
+<text x="35" y="73">North–south projection · Dimensions in millimetres to house datum</text>
+<rect x="117.8075" y="100.51999999999998" width="779.0475" height="30.480000000000018" fill="#98aea8" stroke="#516660"/>
+<rect x="241.2" y="381" width="225.22500000000002" height="12" fill="#ddd1b8" stroke="#516660"/>
+<rect x="266.225" y="381" width="173.25" height="44" fill="#abcbcc" stroke="#516660"/>
+<rect x="266.225" y="304" width="173.25" height="44" fill="#c3ddde" stroke="#516660"/>
+<rect x="543.425" y="304" width="173.2500000000001" height="44" fill="#b3d4d3" stroke="#516660"/>
+<rect x="543.425" y="361" width="173.2500000000001" height="44" fill="#a7c7bd" stroke="#516660"/>
+<rect x="524.175" y="361" width="211.7500000000001" height="4.600000000000023" fill="#bdb493" stroke="#516660"/>
+<rect x="531.875" y="545" width="196.35000000000002" height="16" fill="#cfc1a8" stroke="#516660"/>
+<rect x="636.98" y="421" width="250.25" height="120" fill="#dedad0" stroke="#516660"/>
+<path d="M352.85 297V277H630.0500000000001V298" fill="none" stroke="#41665b" stroke-width="3"/>
+<circle cx="352.85" cy="163" r="8" fill="#314c40"/>
+<line x1="352.85" x2="352.85" y1="163" y2="263" stroke="#314c40" stroke-width="3"/>
+<text x="260" y="93">One straight rail · Z2150 underside</text>
+<text x="137" y="323">385 vertical</text>
+<text x="455" y="268">720 north</text>
+<text x="749" y="311">285 down</text>
+<text x="131" y="407">Fixed deck</text>
+<text x="733" y="390">First rest Z1000</text>
+<text x="747" y="486">Existing radiator</text>
+<text x="758" y="563">Ballast before landing</text>
+<line x1="35" x2="1065" y1="590" y2="590" stroke="#a6aaa1"/>
+<text x="35" y="622">440 mm dry shell clears the frame. The stock 500 mm internal bowl exceeds the 450 mm loaded-lift width.</text>
+<text x="35" y="654">Full fixture: 532 × 541 × 467. Transfer and lowering clear by 54.5 / 51.5 mm.</text>
+<text x="35" y="684">Actual attachments, independent supports, wet parts and loaded tests remain required.</text>
+</svg>

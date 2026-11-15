@@ -1,0 +1,227 @@
+{
+  "sourceSHA256": {
+    "project/str/studies/floor-portal-fixed-wall-head.json": "376d553d690b2b8b972f755141de338c8554ba288d83f8fe0dd0d4c0612a827f",
+    "project/str/studies/floor-portal-north-transfer.json": "32c028800665a2bc6f792aa0f56c108918f831d7e254b9f42b2dac228b5887f4",
+    "project/str/studies/floor-portal-twin-garden-tie.json": "914c51cd394d41033d5e4f6f3392165e636ef0c68aa75a5ce2dd94c5411b899c",
+    "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+    "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b"
+  },
+  "axisAndIndependentLoadPaths": {
+    "roofSeatXYmm": [
+      [
+        4700,
+        11667.5
+      ],
+      [
+        7300,
+        11667.5
+      ]
+    ],
+    "fixedOrdinarySeatXmm": 4700,
+    "movingOrdinarySeatXmm": 7300,
+    "oldStrippedUpliftWitnessKN": 33.207486,
+    "oldSeparateGravityEachSeatKN": 30.291315487907045,
+    "oldSeparateFacadeNormalWitnessPerReturnKN": 8.939024999999999,
+    "explicitLoadsSeparate": true,
+    "route": "Movable roof tongue and slot into fixed pin and box; separate compression-only sliding sole below; Y guide pads on their own fixed axles, separately developed into the box. The fixed band joins the shifted separate wall rods."
+  },
+  "movementAndEnvelope": {
+    "sameSectorThermalStrain": 0.00072,
+    "movingOrdinarySeatFreeXmm": 1.872,
+    "largestOnThatFaceWithChosenFixedPointXmm": 5.0166,
+    "hypotheticalOrthogonalSeamRelativeMm": 6.64839813789758,
+    "ordinaryMovingSlotXandZFreeDimensionsMm": [
+      60.0,
+      34.0
+    ],
+    "pinDiameterMm": 28.0,
+    "relaxedXHalfStrokeAtZeroVerticalOffsetMm": 16.0,
+    "XHalfStrokeAtFullVerticalEccentricityMm": 13.0,
+    "ZHalfClearanceMm": 3.0,
+    "setpointXAndEndRunningAllowanceMm": [
+      3.0,
+      1.0
+    ],
+    "worstOnFaceResidualXAtFullVerticalEccentricityMm": 3.9833999999999996,
+    "historical35MmEachWayNeedsAtLeast98MmSlotBeforeLigaments": 98.0,
+    "hardwareLowestAndHighestZmm": [
+      6660,
+      6730
+    ],
+    "additionalRoofDatumMm": 100,
+    "netAvailabilityAtGoverningBareHipMm": 114.75801,
+    "residualBeyondHardwareAfterSettingsMm": 44.75801
+  },
+  "compressionOnly": {
+    "fixedAndMovingPadsXYmm": [
+      [
+        110.0,
+        44.0
+      ],
+      [
+        90.0,
+        42.0
+      ]
+    ],
+    "contactAtDeclaredXMovementMm2": 3780.0,
+    "oldGravityMeanPressureMPa": 8.013575525901334,
+    "knownSeparateContact": true,
+    "scope": "Compress the central sole alone. Pad material, creep/wear, action coupling, true flatness, rotation and axial friction need rating in the actual assembly."
+  },
+  "independentNormal": {
+    "stationsEachSideFromShoeXMm": [
+      -70,
+      70
+    ],
+    "guideTargetsRelativeToBandCentreYMm": [
+      -52,
+      52
+    ],
+    "reservedFaceEachXByZmm": [
+      24,
+      20
+    ],
+    "scope": "Side guides carry reversible Y without crediting the uplift-pin cheeks. Develop attachment, travel, actual normal action and friction into the same band."
+  },
+  "pinAndTongueUnderSeparateOldUplift": {
+    "pinZmm": 6706,
+    "pinFullLengthMm": 96.0,
+    "cheekCentreYOffsetsMm": [
+      -30.0,
+      30.0
+    ],
+    "cheekAndTongueThicknessMm": [
+      12.0,
+      20.0
+    ],
+    "outsideOfCheekNominalYmm": 72.0,
+    "lowerUpperClearLigamentsMm": [
+      8.0,
+      7.0
+    ],
+    "pinIdealAverageDoubleShearMPa": 26.964977268137307,
+    "pinFiniteLoadingElasticBendingMPa": 192.60698048669502,
+    "pinGrossCombinedVonMisesComparisonMPa": 198.18874571835707,
+    "pinPointLoadUpperDeflectionMm": 0.024763754634003647,
+    "slottedWebProjectedPinBearingMPa": 59.29908214285715,
+    "eachCheekProjectedPinBearingMPa": 49.41590178571429,
+    "meanTwoLowerLigamentShearMPa": 103.77339375000001,
+    "conditionalS355ProofComparatorMPa": 322.7272727272727,
+    "scope": "Requires a real graded plain pin and bearing qualification, milled shape, edge condition, stiffened base, retention, friction and the separate X fixed-seat forces."
+  },
+  "movingRoofHeaderComparison": {
+    "actualOrdinaryTwinRailYAxesRelativeToSeatMm": [
+      -116.0,
+      116.0
+    ],
+    "raisedOrdinaryRailUndersideZmm": 6810,
+    "movingCrossHeaderGrossRHSWidthDepthWallAndLengthMm": [
+      100.0,
+      50.0,
+      6.0,
+      292.0
+    ],
+    "headerZmm": [
+      6760.0,
+      6810
+    ],
+    "twoMovingSHSWidthDepthWallAndLengthMm": [
+      40,
+      40,
+      5,
+      30.0
+    ],
+    "postSpacingAlongShoeXmm": 48.0,
+    "postFootprintReserveWithinHeaderWidthMm": 6.0,
+    "centralOldUpliftGrossHeaderStressMPa": 75.32138854822361,
+    "oneSideUnseatedOldUpliftGrossHeaderStressMPa": 150.64277709644722,
+    "oldUpliftHeaderCentralPointDeflectionMm": 0.0675683069536598,
+    "eachPostAtHalfOldGravityStressMPa": 21.636653919933604,
+    "partialMovingAddedDeadKNScreen": 0.051188596839146255,
+    "residualToAuthoredOneKNHeelBudgetBeforeDetailedPartsKN": 0.05443140316085379
+  },
+  "fixedBoxLoadSpread": {
+    "offsetFromRoofSeatXMm": [
+      -24.0,
+      24.0
+    ],
+    "eachShopWeldedPlateXYZMm": [
+      12,
+      180.0,
+      80.0
+    ],
+    "effectiveThroatPerWebMm": 5.0,
+    "effective80MmSkinStripUpliftMPa": 74.7168435,
+    "effective80MmSkinStripUpliftPointDeflectionMm": 0.007172816976000001,
+    "eachWebMeanWeldShearIfBalancedMPa": 18.448603333333335,
+    "twoLongitudinalSidewallsGrossDirectShearMPa": 10.377339375000002
+  },
+  "throughBandFerrules": {
+    "positiveRodAxesXYmm": [
+      [
+        4340.0,
+        11667.5
+      ],
+      [
+        7660.0,
+        11667.5
+      ]
+    ],
+    "tubeOuterAndInnerDiametersMm": [
+      40.0,
+      32.0
+    ],
+    "fixedBoxZmm": [
+      6540,
+      6660
+    ],
+    "bearingWasherODThicknessAndHoleMm": [
+      60,
+      15,
+      33
+    ],
+    "topNutAndThreadProjectionIf19Plus6Mm": 40,
+    "rodThreadStressAtOldWitnessMPa": 94.0721983002833,
+    "meanWasherOnBandNetContactMPa": 21.14054217821965,
+    "meanOneFullCircular5MmEffectiveWeldShearMPa": 52.85135544554912,
+    "grossBandStrongAxisWWithoutFerruleCutMm3": 400000.0,
+    "netBandStrongAxisWWithUncreditedFerruleMetalMm3": 332444.44444444444,
+    "roofSeatToFerruleXmm": 360.0,
+    "localIsolatedAnchorMomentAtOldUpliftKNm": 11.954694960000001,
+    "grossNetSectionBendingFromThatMomentMPa": 35.959978155080215,
+    "existingBandSteelProofComparatorMPa": 181.8181818181818,
+    "assembly": "Put the ferrule through both 20 mm skins. Locate it against the positive X-shifted wall rod. Use an independent top bearing washer and retained nut. The top plate and closed cell require actual continuity, weld and splitting checks."
+  },
+  "operatorRoute": {
+    "pinOperatingYDatumQAndZmm": [
+      332.5,
+      6706
+    ],
+    "pinAssembledQEnvelopeMm": [
+      284.5,
+      380.5
+    ],
+    "minimumInwardDrawAllowing2MmAtFarEndMm": 86.0,
+    "inwardTipAfterClearDrawQmm": 466.5,
+    "beyondOrdinaryFinishedFaceAtFullDrawMm": 37.0,
+    "separateInternalRetainerToolDatum": "Gedore 6134010, 17 mm AF socket 24 mm OD \u00d7 39.5 mm. 1/2 inch extension stays on extraction axis. Fastener torque and positive captive keeper are to be qualified.",
+    "receiverSocketGeometryWith10MmDiametralSettingMm": 34,
+    "ferruleTopNutTool": "Gedore 3300501, 36 mm AF, \u00d850 mm \u00d7 58 mm.",
+    "ferruleSocketWhenEngagedZLimitsMm": [
+      6675,
+      6733
+    ],
+    "ferruleSocketTopLifted25MmZmm": 6758,
+    "netZReserveAfter25MmSocketLiftBeforeDriveMm": 16.758009999999558,
+    "movingPinDiameterWith10MmDiametralSettingMm": 38.0,
+    "clearRoomSideAccessSlotXandZmm": [
+      68,
+      58
+    ],
+    "unobstructedCandidatePassageStartQAndEndQmm": [
+      429.5,
+      500
+    ],
+    "scope": "Provide a removable enclosure independent of the wall and fire return. Check the seated operator reach, unloaded withdrawal and rated hatch in the built-up assembly."
+  }
+}

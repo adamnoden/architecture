@@ -153,7 +153,6 @@ def shared_approach(near,far,inward,bars):
     far_paths = physical_far_roots(far,-inward,ends)
     rejected = nearest(upper,far_paths)
     cutoff_trial = []
-    connectors = []
     near_edited = []
     far_edited = list(far_paths)
     for i,a in enumerate(sorted(upper,key=lambda x:x[2][-1][0][1])):
@@ -171,8 +170,6 @@ def shared_approach(near,far,inward,bars):
             return (item[0],item[1],item[2][:-1]+[(item[2][-1][0],p)],item[3])
         near_edited.append(cut(a))
         far_edited[far_edited.index(f)] = cut(f)
-        connectors.append(path('connector envelope '+a[0],48,
-                               [(cursor-50,y,z),(cursor+50,y,z)]))
         cutoff_trial.append({
             'yMm':y,'zMm':z,'nearAndFarBarTangentXMm':[ax,bx],
             'connectorCentreXMm':cursor,'shorterStraightToBendMm':reach,
@@ -180,14 +177,33 @@ def shared_approach(near,far,inward,bars):
         })
     retained_near = [b for b in bars if b not in upper]
     whole = retained_near+near_edited+far_edited
-    # The two parent bar ends intentionally occupy their own connector.
-    checks = []
-    for cx,row in zip(connectors,cutoff_trial):
-        checks.extend(gauge(cx,p) for p in whole if p[0] not in row['sameAxisBarIDs'])
-    checks.extend(gauge(a,b) for a,b in combinations(connectors,2))
-    clearance = as_report(min(checks,key=lambda v:v['afterTwo5mmSetoutsLowerMm']))
     mount = outer_running_rails(near,far,inward)
-    coupler_to_rails = nearest(connectors,mount)
+
+    def connector_fit(diameter, length):
+        connectors = []
+        for row in cutoff_trial:
+            centre = row['connectorCentreXMm']
+            y, z = row['yMm'], row['zMm']
+            connectors.append(path('connector envelope '+row['sameAxisBarIDs'][0], diameter,
+                                   [(centre-length/2,y,z),(centre+length/2,y,z)]))
+        # The two parent bar ends intentionally occupy their own connector.
+        checks = [gauge(connector, bar) for connector, row in zip(connectors, cutoff_trial)
+                  for bar in whole if bar[0] not in row['sameAxisBarIDs']]
+        checks.extend(gauge(a,b) for a,b in combinations(connectors,2))
+        return as_report(min(checks,key=lambda v:v['afterTwo5mmSetoutsLowerMm'])), nearest(connectors,mount)
+
+    clearance, coupler_to_rails = connector_fit(48, 100)
+    catalogue = {}
+    for article, diameter, length in [('Leviat TTP22', 42, 245), ('nVent EL22P13LN', 40, 273)]:
+        structure, rails = connector_fit(diameter, length)
+        remaining = 58-diameter/2-4-10
+        assert min(structure['clearAfterTwo5MmSettingsMm'], rails['clearAfterTwo5MmSettingsMm'], remaining)>=min_clear
+        catalogue[article] = {
+            'circumscribingDiameterAndMaximumOpenLengthMm': [diameter, length],
+            'minimumToOtherStarterOrConnector': structure,
+            'minimumToTopRails': rails,
+            'minimumToCoincidentLegacyH8TopLegMm': remaining,
+        }
     starters_to_rails = nearest(whole,mount)
     rail_parallel = as_report(min((gauge(a,b) for a,b in combinations(mount,2)),
                                   key=lambda v:v['afterTwo5mmSetoutsLowerMm']))
@@ -208,6 +224,7 @@ def shared_approach(near,far,inward,bars):
         'genericConnectorReservationDiameterLengthMm':[48,100],
         'nearestConnectorToOtherRepresentedBarOrConnector':clearance,
         'nearestStarterToStarterOutsidePairedAbutments':all_reinforcement,
+        'catalogueSilhouetteComparisons':catalogue,
         'runningTopRailsInboardOffsetsMm':[-150,-90,90,150],
         'runningTopRailsAtConnectorOffsetsMm':[-180,-110,110,180],
         'topRailsCurveBeginXMm':heads[near]['xy'][0]+inward*220,

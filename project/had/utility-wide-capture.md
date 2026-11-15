@@ -2,6 +2,8 @@
 
 **HAD-INLET-RESOLUTION · prefer this transport reservation for the next joined detail.** It gives a 600 mm bench top 10 mm of outboard hardware allocation on each side, based on the [fitted 600 mm comparison](utility-cutover-lift.md). This alternative moves the sink/frame and the complete hot riser, using a lower hot terminal and preserving the cold branch. [Dimensioned plan](studies/utility-wide-capture.svg) · [Source and exact swept checks](studies/utility-wide-capture.mjs) · [Dimensioned receipt](studies/utility-wide-capture.json) · [Native factory bench and seats](../ias/ias-03-utility-factory-head.md)
 
+The [split dry-bowl lift](utility-dry-bowl-release.md) exposes the initial stock-frame interference and gives the preferred simpler straight renewal route. The larger whole-head comparison below retains its role as a conditional alternative.
+
 ## Set the hardware and hot services together
 
 Move the seated 600 mm bare top and frame 10 mm west to **X10925–11525/Y740–1340**. All four 40 mm sole comparisons retain their native seats with 15 mm minimum raw plan margin. Keep the rim at Z900. Allow the complete captured head, including lateral attachment, tap and retained waste, within **620 × 610 × 700 mm**. At the raised start its southwest bottom corner is **X10915/Y735/Z935**. Move **760 mm north**, **720 mm west**, then lower **585 mm**. The continuous post-setting minima are **25 / 25.5 / 30 mm**. Keep the same first-rest centre X10505/Y1800, with a 690 × 670 mm clear plan reservation and the established two support rails. Keep the complete fitted contacts and first-rest anti-tip capture inside the declared plan. The initial **385 mm** vertical lift still needs an assembled clearance and support check.
