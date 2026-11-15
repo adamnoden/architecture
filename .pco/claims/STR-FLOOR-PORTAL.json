@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 30,
-  "state": "released",
-  "leaseId": "4c12c737-48cf-433f-add0-f9769eb701e2",
+  "generation": 31,
+  "state": "claimed",
+  "leaseId": "43f21113-68a7-4bc0-b457-36e5f06f238c",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg16-str-cap"
+    "label": "zerg16-str-shoe"
   },
-  "claimedAt": "2026-11-15T16:39:49.480Z",
-  "heartbeatAt": "2026-11-15T16:54:23.290Z",
-  "expiresAt": "2026-11-15T16:54:23.290Z",
-  "branch": "work/zerg16-cap-cabinet",
+  "claimedAt": "2026-11-15T16:55:16.102Z",
+  "heartbeatAt": "2026-11-15T16:55:16.102Z",
+  "expiresAt": "2026-11-15T17:40:16.102Z",
+  "branch": "work/zerg16-shoe-utility",
   "predecessor": {
-    "leaseId": "fb2309a9-dc37-41d7-865c-b4f3acca79ad",
-    "generation": 29,
-    "branch": "work/zerg16-cage-plant",
-    "pr": 1544,
+    "leaseId": "4c12c737-48cf-433f-add0-f9769eb701e2",
+    "generation": 30,
+    "branch": "work/zerg16-cap-cabinet",
+    "pr": 1545,
     "checkpoint": {
-      "evidence": "PR #1544 exact bab9fb11737706d183b75a524a4caad212f54df7; principal north floor cage and sleeve",
-      "next": "Observe exact-head CI then publish while lease live",
-      "blocker": "Develop slab chord, roof retainer, current cap and signed 52-head assembly"
+      "evidence": "PR #1545 exact 22607e34f0d30f8220967674a34f64b4c4fbb2d4; retained north cap layers and four head routes",
+      "next": "Observe exact-head CI then merge while owned",
+      "blocker": "Cap development, roof shoe and signed whole-house model remain open"
     }
   },
   "recoverySource": {
-    "leaseId": "fb2309a9-dc37-41d7-865c-b4f3acca79ad",
-    "generation": 29,
-    "branch": "work/zerg16-cage-plant",
-    "pr": 1544,
+    "leaseId": "4c12c737-48cf-433f-add0-f9769eb701e2",
+    "generation": 30,
+    "branch": "work/zerg16-cap-cabinet",
+    "pr": 1545,
     "checkpoint": {
-      "evidence": "PR #1544 exact bab9fb11737706d183b75a524a4caad212f54df7; principal north floor cage and sleeve",
-      "next": "Observe exact-head CI then publish while lease live",
-      "blocker": "Develop slab chord, roof retainer, current cap and signed 52-head assembly"
+      "evidence": "PR #1545 exact 22607e34f0d30f8220967674a34f64b4c4fbb2d4; retained north cap layers and four head routes",
+      "next": "Observe exact-head CI then merge while owned",
+      "blocker": "Cap development, roof shoe and signed whole-house model remain open"
     }
-  },
-  "pr": 1545,
-  "checkpoint": {
-    "evidence": "PR #1545 exact 22607e34f0d30f8220967674a34f64b4c4fbb2d4; retained north cap layers and four head routes",
-    "next": "Observe exact-head CI then merge while owned",
-    "blocker": "Cap development, roof shoe and signed whole-house model remain open"
-  },
-  "releasedAt": "2026-11-15T16:54:23.290Z",
-  "releaseReason": "handoff"
+  }
 }
