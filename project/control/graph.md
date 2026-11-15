@@ -252,6 +252,7 @@ flowchart LR
   end
   subgraph g_PCO["PCO"]
     direction TB
+    n_PCO_LOCAL_OPENING["PCO-LOCAL-OPENING<br/>Register the source-bound local opening comparison for owner review<br/><b>DONE</b>"]
     n_PCO_WORKABLE_INTERIORS["PCO-WORKABLE-INTERIORS<br/>Register workable interior design and personal owner approval gates<br/><b>DONE</b>"]
     n_PCO_INDEPENDENT_STUDIES["PCO-INDEPENDENT-STUDIES<br/>Separate bounded bay and internal-water studies from final house integration<br/><b>DONE</b>"]
     n_PCO_GIT_DEADLINE["PCO-GIT-DEADLINE<br/>Bound configurable Git command deadlines across canonical lease operations<br/><b>DONE</b>"]
@@ -304,6 +305,7 @@ flowchart LR
     n_OAS_03["OAS-03<br/>Selected opening family and replacement/reinstatement set<br/><b>DONE</b>"]
     n_OAS_DETAIL["OAS-DETAIL<br/>Representative dimensioned opening interfaces<br/><b>DONE</b>"]
     n_OAS_NORTH_EXPORT["OAS-NORTH-EXPORT<br/>FIRST north-window-0 assembly, upper guard and supported removal<br/><b>DONE</b>"]
+    n_OAS_STUDY_SUBFRAME["OAS-STUDY-SUBFRAME<br/>Compare conventional renewal and a retained carrier at the front Study<br/><b>DONE</b>"]
   end
   subgraph g_HAD["HAD"]
     direction TB
@@ -482,6 +484,7 @@ flowchart LR
   n_CCR_PLAN --> n_CCR_IDENTITY
   n_CCR_STAIR --> n_CCR_IDENTITY
   n_CCR_DRAINAGE --> n_CCR_IDENTITY
+  n_PCO_WORKABLE_INTERIORS --> n_PCO_LOCAL_OPENING
   n_PCO_REVIEW_POLICY --> n_PCO_WORKABLE_INTERIORS
   n_PCO_REVIEW_POLICY --> n_PCO_INDEPENDENT_STUDIES
   n_PCO_SNAPSHOT --> n_PCO_GIT_DEADLINE
@@ -580,7 +583,11 @@ flowchart LR
   n_HAD_03 --> n_OAS_NORTH_EXPORT
   n_IAS_03 --> n_IAS_WORKABLE_CONCEPT
   n_HAD_02M --> n_IAS_WORKABLE_CONCEPT
+  n_OAS_DETAIL --> n_OAS_STUDY_SUBFRAME
+  n_BCR_BAY_INTERFACES --> n_OAS_STUDY_SUBFRAME
+  n_IAS_WORKABLE_CONCEPT --> n_OAS_STUDY_SUBFRAME
   n_TRIAD_GATE --> n_HAD_OWNER_DESIGN_REVIEW
+  n_OAS_STUDY_SUBFRAME --> n_HAD_OWNER_DESIGN_REVIEW
   n_HAD_OWNER_DESIGN_REVIEW --> n_IAS_WORKABLE_DETAILS
   n_IAS_03 --> n_TRIAD_GATE
   n_OAS_03 --> n_TRIAD_GATE
@@ -831,6 +838,7 @@ flowchart LR
   class n_CCR_STAIR done;
   class n_CCR_DRAINAGE done;
   class n_CCR_IDENTITY done;
+  class n_PCO_LOCAL_OPENING done;
   class n_PCO_WORKABLE_INTERIORS done;
   class n_PCO_INDEPENDENT_STUDIES done;
   class n_PCO_GIT_DEADLINE done;
@@ -889,6 +897,7 @@ flowchart LR
   class n_OAS_DETAIL done;
   class n_OAS_NORTH_EXPORT done;
   class n_IAS_WORKABLE_CONCEPT done;
+  class n_OAS_STUDY_SUBFRAME done;
   class n_HAD_OWNER_DESIGN_REVIEW blocked;
   class n_IAS_WORKABLE_DETAILS blocked;
   class n_TRIAD_GATE blocked;

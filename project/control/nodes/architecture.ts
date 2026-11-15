@@ -308,10 +308,17 @@ export const architectureNodes = defineNodes([
     closeoutEvidence: ['project/ias/workable-interior-concept-result.md'],
   },
   {
+    id: 'OAS-STUDY-SUBFRAME', owners: ['OAS'],
+    title: 'Compare conventional renewal and a retained carrier at the front Study',
+    dependencies: ['OAS-DETAIL', 'BCR-BAY-INTERFACES', 'IAS-WORKABLE-CONCEPT'],
+    lifecycle: 'complete', agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: ['project/oas/study-subframe-comparison.md', 'project/oas/studies/study-subframe.json'],
+  },
+  {
     id: 'HAD-OWNER-DESIGN-REVIEW',
     owners: ['HAD'],
     title: 'Receive the owner’s decision on the coordinated architectural design',
-    dependencies: ['TRIAD-GATE'],
+    dependencies: ['TRIAD-GATE', 'OAS-STUDY-SUBFRAME'],
     lifecycle: 'planned',
     agentDispatch: { mode: 'manual', reason: 'The owner personally reviews the coordinated visual proposal and records an explicit design disposition.' },
     closeoutEvidence: ['project/had/owner-design-review-result.md'],
