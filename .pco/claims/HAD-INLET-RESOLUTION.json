@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 27,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "608ec002-a8ad-468b-a54f-00d2f0863675",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg14-inlet-resolution"
   },
   "claimedAt": "2026-11-15T09:20:31.096Z",
-  "heartbeatAt": "2026-11-15T09:32:09.476Z",
-  "expiresAt": "2026-11-15T10:17:09.476Z",
+  "heartbeatAt": "2026-11-15T09:46:54.719Z",
+  "expiresAt": "2026-11-15T09:46:54.719Z",
   "branch": "work/zerg14-simplify-portal-inlet",
   "predecessor": {
     "leaseId": "f54a5d05-d4eb-434f-a47b-485169d0e133",
@@ -36,5 +36,7 @@
     "evidence": "PR #1535 exact remote head 47413c55e65e8b63e53bad2d2e0bfb690c90c9cc, focused HAD/MRA results and rendered plan/section",
     "next": "Observe hosted Validate PR for the exact head, run fresh preflight with STR, then merge and release"
   },
-  "pr": 1535
+  "pr": 1535,
+  "releasedAt": "2026-11-15T09:46:54.719Z",
+  "releaseReason": "handoff"
 }
