@@ -2,6 +2,8 @@
 
 **15 November 2026 · preferred pre-site reservation.** Retain the fixed indoor cabinet and independently supported plant connection. Replace the three separately formed low pier holes with one designed wall opening and individually removable drainage inserts. Draw the retained west-facing valve handwheel into a locked first rest, with the attendant 35 mm further west. [Dimensioned east elevation](studies/inlet-framed-bay.svg) · [Coordinate and operation receipt](studies/inlet-framed-bay.json)
 
+The [lower protected daylight design](inlet-protected-daylight.md) supersedes the higher daylight coordinates and ideal blockage comparison below. Keep the same formed opening, independent lower pipe routes and fixed valve draw.
+
 ## Frame the wall around the drainage inserts
 
 The [previous low-hole comparison](inlet-cabinet-fault.md) leaves 54.61 mm after settings between the shallowest formed drain and the daylight aperture. Separate holes ask that short masonry ligament, the intervening bed joints and the outer weather leaf to transfer load around the group. Resolve the group as **one 300 × 420 mm opening**, Y3035–3335/Z45–465, with paired load-bearing jambs outside it. Leave **150 mm** at each side and **150 mm** for each head at Z465–615 in section. The full support territory in plan is Y2885–3485. A 150 mm reservation is a setout input. STR sizes the actual assembly under the outer wall reactions.
