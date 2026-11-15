@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="775" viewBox="0 0 1280 775" role="img" aria-label="West north garden arch tie and straight uplift sleeve plan and section">
+<defs><pattern id="brick" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 8L8 0" stroke="#c49b89" stroke-width="1"/></pattern></defs>
+<rect width="1280" height="775" fill="#fffdf8"/>
+<g font-family="DejaVu Sans, Arial, sans-serif" fill="#22323a">
+<text x="48" y="53" font-size="25" fill="#22323a">GARDEN ARCH / SEPARATE HORIZONTAL THRUST AND VERTICAL HOLD-DOWN</text>
+<text x="48" y="81" font-size="16" fill="#22323a">West shown • east mirrors in X • comparison geometry and separate historical actions</text>
+<path d="M48.00 104.00 L1232.00 104.00" fill="none" stroke="#8e9a99" stroke-width="2"/>
+<text x="48" y="139" font-size="19" fill="#22323a">A   PLAN THROUGH TIE Z2200</text>
+<text x="670" y="139" font-size="19" fill="#22323a">B   SECTION THROUGH Y11667.5</text>
+<rect x="228.20" y="252.12" width="307.50" height="282.90" fill="#f4eee3" stroke="#857766" stroke-width="1.7"/>
+<rect x="274.32" y="261.35" width="261.38" height="264.45" fill="none" stroke="#9c978a" stroke-width="1.7" stroke-dasharray="5 4"/>
+<rect x="272.48" y="297.02" width="201.72" height="193.11" fill="none" stroke="#76553e" stroke-width="1.7"/>
+<circle cx="284.78" cy="477.83" r="7.38" fill="#76553e"/>
+<circle cx="284.78" cy="309.32" r="7.38" fill="#76553e"/>
+<circle cx="461.90" cy="477.83" r="7.38" fill="#76553e"/>
+<circle cx="461.90" cy="309.32" r="7.38" fill="#76553e"/>
+<rect x="228.20" y="429.86" width="307.50" height="19.68" fill="#f5f4ee" stroke="#245c7b" stroke-width="1.7"/>
+<path d="M123.65 439.70 L591.05 439.70" fill="none" stroke="#245c7b" stroke-width="4"/>
+<rect x="228.20" y="337.61" width="307.50" height="19.68" fill="#f5f4ee" stroke="#245c7b" stroke-width="1.7"/>
+<path d="M123.65 347.45 L591.05 347.45" fill="none" stroke="#245c7b" stroke-width="4"/>
+<circle cx="314.30" cy="393.57" r="19.68" fill="#c8d8db" stroke="#245c7b" stroke-width="2"/>
+<path d="M142.10 464.92 L142.10 322.24" fill="none" stroke="#245c7b" stroke-width="8"/>
+<path d="M142.10 393.57 L228.20 393.57" fill="none" stroke="#245c7b" stroke-width="5"/>
+<circle cx="142.10" cy="393.57" r="7" fill="#fffdf8" stroke="#245c7b" stroke-width="2"/>
+<rect x="92.90" y="291.49" width="135.30" height="204.18" fill="none" stroke="#245c7b" stroke-width="1.7" stroke-dasharray="5 4"/>
+<path d="M351.55 252.12 L351.55 535.02" fill="none" stroke="#9c4536" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="55" y="180" font-size="17" fill="#22323a">West room</text>
+<text x="455" y="180" font-size="17" fill="#22323a">Opening →</text>
+<text x="56" y="555" font-size="17" fill="#22323a">A1  West receiver stays outside the reinforced bearing pier.</text>
+<text x="56" y="584" font-size="17" fill="#22323a">A2  Twin Y11630 / 11705 slots flank the Ø32 vertical sleeve.</text>
+<text x="56" y="613" font-size="17" fill="#22323a">A3  Shift the H8 face leg. Retain 4 mm sleeve/link gap after setting.</text>
+<text x="56" y="642" font-size="17" fill="#22323a">A4  Access envelope extends 120.5 mm past the normal room face.</text>
+<polygon points="829.87,455.00 838.66,452.95 847.46,450.92 856.25,448.92 865.04,446.93 873.83,444.97 882.63,443.02 891.42,441.10 900.21,439.20 909.00,437.32 917.80,435.45 926.59,433.61 935.38,431.79 944.17,429.98 952.97,428.20 961.76,426.43 970.55,424.68 979.34,422.95 988.14,421.23 996.93,419.53 1005.72,417.86 1014.51,416.19 1023.31,414.55 1032.10,412.92 1040.89,411.31 1049.68,409.71 1058.48,408.13 1067.27,406.57 1076.06,405.02 1084.85,403.49 1093.65,401.97 1102.44,400.47 1111.23,398.99 1120.02,397.51 1128.82,396.06 1137.61,394.62 1146.40,393.19 1146.40,454.60 1141.60,455.50 1136.80,456.40 1132.00,457.31 1127.20,458.23 1122.40,459.15 1117.60,460.08 1112.80,461.01 1108.00,461.95 1103.20,462.90 1098.40,463.85 1093.60,464.80 1088.80,465.77 1084.00,466.74 1079.20,467.71 1074.40,468.69 1069.60,469.68 1064.80,470.67 1060.00,471.67 1055.20,472.68 1050.40,473.69 1045.60,474.71 1040.80,475.74 1036.00,476.77 1031.20,477.81 1026.40,478.85 1021.60,479.90 1016.80,480.96 1012.00,482.03 1007.20,483.10 1002.40,484.18 997.60,485.26 992.80,486.36 988.00,487.46 983.20,488.56 978.40,489.68 973.60,490.80" fill="url(#brick)" stroke="#9c4536" stroke-width="1.8"/>
+<rect x="733.60" y="490.80" width="240.00" height="30.16" fill="#f4eee3" stroke="#857766" stroke-width="1.7"/>
+<rect x="714.40" y="230.96" width="432.00" height="46.40" fill="#e5e0d4" stroke="#857766" stroke-width="1.7"/>
+<path d="M800.80 189.20 L800.80 520.96" fill="none" stroke="#245c7b" stroke-width="6"/>
+<path d="M836.80 191.52 L836.80 270.40" fill="none" stroke="#9c4536" stroke-width="2" stroke-dasharray="5 4"/>
+<path d="M733.60 502.40 L1036.00 502.40" fill="none" stroke="#245c7b" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="984" y="232" font-size="17" fill="#22323a">Existing floor body</text>
+<text x="901" y="416" font-size="17" fill="#9c4536">Untouched brick ring</text>
+<text x="880" y="478" font-size="16" fill="#245c7b">Paired tie plane</text>
+<text x="670" y="555" font-size="17" fill="#22323a">B1  Exact sector edge X4370.282. No drilling into voussoirs.</text>
+<text x="670" y="584" font-size="17" fill="#22323a">B2  New sleeve X4340 keeps 4.28 mm beyond relative setting.</text>
+<text x="670" y="613" font-size="17" fill="#22323a">B3  Shift uplift at the roof 37.5 mm along the band.</text>
+<text x="670" y="642" font-size="17" fill="#22323a">B4  Shallow cap termination at same Y as P25/P24 and P26/P27.</text>
+<path d="M48.00 684.00 L1232.00 684.00" fill="none" stroke="#8e9a99" stroke-width="2"/>
+<text x="48" y="719" font-size="15" fill="#22323a">Blue: positive steel path      Brown: concrete and cage      Red: masonry and former uplift axis</text>
+</g></svg>

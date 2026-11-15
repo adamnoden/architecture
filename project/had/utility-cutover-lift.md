@@ -12,6 +12,8 @@ The fixed cabinet's high cold tail and the separate hot backbone coincide exactl
 | Pre-release cutover | Redesign before adoption. Both Z595 union wrench paths retain **17.95 mm** after setting. The cold receiver operation leaves **16.37 mm** for the arm. Both need 25 mm. The relieved head and revised stance below retain both break centres and drain spouts. |
 | Wider fallback | If the fitted pickup cannot stay within 600 mm, a **610 mm** package starting at **X10925** would keep 25.5 mm after setting to the wall. Draw the complete H0/cap and the entire hot backbone beside the first transit west of **X10890**, at least **7 mm** west of their current limit. Rejoin and re-sweep all affected fittings, cold separation, frame, stand, tools and controls before accepting that reconfiguration. This is a width requirement for a fallback, pending a worked full layout. |
 
+The [620 mm capture alternative](utility-wide-capture.md) allows external pickup hardware within a larger measured package. It needs a rebuilt hot riser and tail and a small rack-link move.
+
 ## Retain the working pipes and relieve the head
 
 For the next joined model, keep both break centres and drain spouts. Set the underside of the bowl/skirt within the wrench sectors at or above **Z670** and place the actual rotating nut engagement at **Z620**. The reaction keys remain at Z577. Both original wrench sectors then keep **25.95 mm** after setting, with at least 37.58 mm to the other union. This is a local relief under the Z900 rim. The retained tails still determine the Z550 bottom of the stored package and its Z1250 top stays fixed. The complete transport envelope remains 600 × 610 × 700 mm, with **385 mm** initial vertical travel to the raised start.
