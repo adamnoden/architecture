@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "CCR-CURRENT-SOURCE",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "9ecd56e8-4e78-4c9c-9c29-1fb1a1ce230a",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg16-current-source"
   },
   "claimedAt": "2026-11-15T17:39:08.455Z",
-  "heartbeatAt": "2026-11-15T17:42:15.920Z",
-  "expiresAt": "2026-11-15T18:42:15.920Z",
+  "heartbeatAt": "2026-11-15T18:01:59.000Z",
+  "expiresAt": "2026-11-15T18:01:59.000Z",
   "branch": "work/zerg16-north-collar",
   "pr": 1548,
   "checkpoint": {
     "evidence": "PR #1548 exact 312ac939da24511708e3dcb86cc48db96b8eb6a8; 21 focused checks, local repository suite and graph validation passed.",
     "next": "Wait for full hosted validation, run both publication preflights, then merge."
-  }
+  },
+  "releasedAt": "2026-11-15T18:01:59.000Z",
+  "releaseReason": "completed"
 }
