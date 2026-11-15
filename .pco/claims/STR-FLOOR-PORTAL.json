@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 25,
-  "state": "released",
-  "leaseId": "c30ccff9-55b1-4d1b-a915-7aa2c258f92c",
+  "generation": 26,
+  "state": "claimed",
+  "leaseId": "83ad3cf9-3ec7-42a2-bd44-de4134072fa4",
   "holder": {
     "kind": "chatgpt",
-    "label": "Zerg-Rush-STR"
+    "label": "zerg15-str"
   },
-  "claimedAt": "2026-11-15T09:47:52.357Z",
-  "heartbeatAt": "2026-11-15T10:19:26.455Z",
-  "expiresAt": "2026-11-15T10:19:26.455Z",
-  "branch": "work/zerg14-replay-fixed-station",
+  "claimedAt": "2026-11-15T13:11:21.649Z",
+  "heartbeatAt": "2026-11-15T13:11:21.649Z",
+  "expiresAt": "2026-11-15T13:56:21.649Z",
+  "branch": "work/zerg15-north-support",
   "predecessor": {
-    "leaseId": "e6131163-ee09-4935-b852-80b9659cb0f0",
-    "generation": 24,
-    "branch": "work/zerg14-simplify-portal-inlet",
-    "pr": 1535,
+    "leaseId": "c30ccff9-55b1-4d1b-a915-7aa2c258f92c",
+    "generation": 25,
+    "branch": "work/zerg14-replay-fixed-station",
+    "pr": 1536,
     "checkpoint": {
-      "evidence": "PR #1535 exact 47413c55; local STR 33cacde5 support rewind, predecessor heel and hip receipts reproduce; plan inspected",
-      "next": "Verify exact hosted checks, pass dual publication preflight, integrate by expected head, release both leases"
+      "evidence": "PR #1536 exact 3f5e7007 tree 29a95e68 includes fixed wall head +60/+100/+120 datum drawing and replay; deterministic receipt and section verified",
+      "next": "Verify exact hosted checks, preflight both packet leases, integrate by expected head, release"
     }
   },
   "recoverySource": {
-    "leaseId": "e6131163-ee09-4935-b852-80b9659cb0f0",
-    "generation": 24,
-    "branch": "work/zerg14-simplify-portal-inlet",
-    "pr": 1535,
+    "leaseId": "c30ccff9-55b1-4d1b-a915-7aa2c258f92c",
+    "generation": 25,
+    "branch": "work/zerg14-replay-fixed-station",
+    "pr": 1536,
     "checkpoint": {
-      "evidence": "PR #1535 exact 47413c55; local STR 33cacde5 support rewind, predecessor heel and hip receipts reproduce; plan inspected",
-      "next": "Verify exact hosted checks, pass dual publication preflight, integrate by expected head, release both leases"
+      "evidence": "PR #1536 exact 3f5e7007 tree 29a95e68 includes fixed wall head +60/+100/+120 datum drawing and replay; deterministic receipt and section verified",
+      "next": "Verify exact hosted checks, preflight both packet leases, integrate by expected head, release"
     }
-  },
-  "pr": 1536,
-  "checkpoint": {
-    "evidence": "PR #1536 exact 3f5e7007 tree 29a95e68 includes fixed wall head +60/+100/+120 datum drawing and replay; deterministic receipt and section verified",
-    "next": "Verify exact hosted checks, preflight both packet leases, integrate by expected head, release"
-  },
-  "releasedAt": "2026-11-15T10:19:26.455Z",
-  "releaseReason": "handoff"
+  }
 }
