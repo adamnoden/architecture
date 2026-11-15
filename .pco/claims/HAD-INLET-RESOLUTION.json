@@ -9,11 +9,11 @@
     "label": "zerg16-had"
   },
   "claimedAt": "2026-11-15T16:55:07.526Z",
-  "heartbeatAt": "2026-11-15T16:55:07.526Z",
-  "expiresAt": "2026-11-15T17:55:07.526Z",
+  "heartbeatAt": "2026-11-15T16:56:25.615Z",
+  "expiresAt": "2026-11-15T17:56:25.615Z",
   "checkpoint": {
-    "evidence": "Cabinet #1545 on main 4b631af5; locally verified dry bowl 789602fc with 108 HAD checks.",
-    "next": "Publish the straight loaded utility comparison and run exact validation; keep native wet kit, supported physical capture and site evidence open."
+    "evidence": "PR #1546 exact dc1092ba54eaa49671e8cc500a39ad2bc449f526, source-bound 385 mm initial, straight regulated working comparison, 108 HAD checks.",
+    "next": "Verify exact hosted execution and merged ancestry; audit physical I0 product release and closed operating exclusions."
   },
   "branch": "work/zerg16-shoe-utility",
   "predecessor": {
@@ -35,5 +35,6 @@
       "evidence": "PR #1545 exact 22607e34f0d30f8220967674a34f64b4c4fbb2d4; lined lower passage, three receivers, covered pressure comparison and HAD 107.",
       "next": "Verify hosted checks and merged ancestry; preserve unresolved cover support/provider/site and complete utility pickup proof."
     }
-  }
+  },
+  "pr": 1546
 }
