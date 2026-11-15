@@ -299,6 +299,24 @@ export const architectureNodes = defineNodes([
   },
 
   {
+    id: 'PCO-CRAFT-ROOM-KIT',
+    owners: ['PCO'],
+    title: 'Register the beauty-first gravity-led crafted room kit brief',
+    dependencies: ['PCO-WORKABLE-INTERIORS'],
+    lifecycle: 'complete',
+    agentDispatch: { mode: 'manual', reason: 'Owner-directed brief and graph registration recorded in #1555.' },
+    closeoutEvidence: ['project/ias/crafted-room-kit-brief.md'],
+  },
+  {
+    id: 'IAS-CRAFT-ROOM-KIT',
+    owners: ['IAS', 'HAD'],
+    title: 'Design a beautiful gravity-led prefabricated room kit with serviceable timber and tile surfaces',
+    dependencies: ['PCO-CRAFT-ROOM-KIT', 'IAS-WORKABLE-CONCEPT', 'CCR-ASSEMBLY-INTEGRATION'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: ['project/ias/crafted-room-kit-result.md'],
+  },
+  {
     id: 'IAS-WORKABLE-CONCEPT',
     owners: ['IAS'],
     title: 'Compare and illustrate workable interior assemblies in the current house',
@@ -338,7 +356,7 @@ export const architectureNodes = defineNodes([
     id: 'TRIAD-GATE',
     owners: ['IAS', 'OAS', 'HAD'],
     title: 'Shared selected-house integration gate',
-    dependencies: ['IAS-03', 'OAS-03', 'HAD-03', 'HAD-INLET-RESOLUTION', 'OAS-DETAIL', 'OAS-NORTH-EXPORT', 'ROF-RWT-GATE', 'BCR-PREFLIGHT', 'MAT-COORDINATION', 'STR-RECONCILE', 'STR-FLOOR-PORTAL', 'IAS-WORKABLE-CONCEPT'],
+    dependencies: ['IAS-03', 'OAS-03', 'HAD-03', 'HAD-INLET-RESOLUTION', 'OAS-DETAIL', 'OAS-NORTH-EXPORT', 'ROF-RWT-GATE', 'BCR-PREFLIGHT', 'MAT-COORDINATION', 'STR-RECONCILE', 'STR-FLOOR-PORTAL', 'IAS-WORKABLE-CONCEPT', 'IAS-CRAFT-ROOM-KIT'],
     lifecycle: 'planned',
     aliases: ['IAS/OAS/HAD Wave 4'],
     agentDispatch: { mode: 'self-service' },

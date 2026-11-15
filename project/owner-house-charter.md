@@ -79,6 +79,12 @@ The owner has now directed a serious **whole-interior design rebrief**: explore 
 
 The owner must explicitly **accept, request revisions or reject** (1) the joined architectural/interior scheme after the shared house integration gate, and (2) the actual final rendered drawing/book design before freeze. Every review package must show the proposed details and inhabited rooms, including comparable alternatives, accessible panel/fixing/renewal sequences, consequences and exact source identities. An automated agent's approval or silence is not the owner's aesthetic choice. Retain separate competent/physical/statutory proof obligations only for the claims and later building stages they actually affect; they are not default book prerequisites. The [IAS design and drawing brief](ias/workable-interior-design-plan.md) and [canonical graph](control/graph.md) govern the implemented review sequence.
 
+## Crafted Room Kit — critical original inspiration, 15 November 2026
+
+A complete, beautiful, workshop-crafted room that can be assembled and later opened without destructive finishing is a **central project outcome**, not an optional service-access feature. The owner wants timber/tile floor modules and timber-panelled/tiled wall variants, gravity-led support, minimal mechanisms, near-invisible frames and purposeful brass interfaces. The architecture must aim to equal or surpass the finest Georgian/Victorian and current fixed interiors on appearance alone; the owner judges that comparison. Standardise hidden interfaces, not the visible room's character. Services and protective boundaries remain independently supported and maintainable.
+
+The [Crafted Room Kit brief](ias/crafted-room-kit-brief.md) owns the precedent-first design, whole-room composition, ordinary-tool removal, shared-compiler change proofs and existing owner-gate acceptance. Approximately one-hour installation into a declared prepared room is an ambition to test, with workshop work, preparation and commissioning reported separately, not an achieved performance claim. Earlier removable-interior studies are useful evidence but do not discharge this stronger brief. Do not trade it away for technical convenience or close it with only attractive renders. This direction is recorded in [#1555](https://github.com/adamnoden/architecture/issues/1555).
+
 ## Working limits
 
 - Establish the brief and cost questions early. No budget, household detail, completion date or procurement decision may be invented from this objective.

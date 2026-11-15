@@ -4,6 +4,12 @@
 **Scope:** the accepted 12 × 12 m pre-site Reference House, its book and representative assembly drawings; not a construction release.  
 **Status:** **new design direction / unselected alternatives**. The registered [architecture](../control/nodes/architecture.ts) and [publication](../control/nodes/publication.ts) nodes govern readiness, dispatch and closure.
 
+## Critical refinement — Crafted Room Kit, 15 November 2026
+
+The [Crafted Room Kit brief](crafted-room-kit-brief.md) records a central original inspiration: exceptionally beautiful workshop-made rooms, with hung wall panels, seated timber/tile floor modules, minimal mechanisms, concealed supports, deliberate brass interfaces and independently supported services. It governs beauty, simplicity, precedents and the defined one-hour prepared-room assembly ambition; this earlier programme remains its coordination and approval framework. The target is not an access system with decoration added afterwards.
+
+`IAS-CRAFT-ROOM-KIT` develops and tests this refinement before `TRIAD-GATE`, using the existing current compiler. The completed `IAS-WORKABLE-CONCEPT` remains earlier evidence, not approval of its lifting apparatus or module choices. `IAS-WORKABLE-DETAILS` retains the post-owner-selection detail work and must satisfy the new brief. Both owner gates must include the actual room composition and its appearance-only comparison with the best fixed-construction references. A rendered concept or digital installation sequence cannot establish physical performance or achieved assembly time. Canonical registration and delivery are tracked in [#1555](https://github.com/adamnoden/architecture/issues/1555).
+
 ## Architectural decision
 
 Develop a house whose **interior finishes can be deliberately opened, worked on and reinstated**, without making ordinary life feel like a plant room. The owner specifically wants to explore:
