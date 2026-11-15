@@ -9,8 +9,8 @@
     "label": "zerg16-current-domain-delivery"
   },
   "claimedAt": "2026-11-15T19:33:46.971Z",
-  "heartbeatAt": "2026-11-15T19:33:46.971Z",
-  "expiresAt": "2026-11-15T20:33:46.971Z",
+  "heartbeatAt": "2026-11-15T19:44:03.625Z",
+  "expiresAt": "2026-11-15T20:44:03.625Z",
   "branch": "work/zerg16-current-domain-closures",
   "predecessor": {
     "leaseId": "750073e3-0b7b-4560-b89c-bcd813a24f24",
@@ -33,5 +33,11 @@
       "next": "Wait for all triggered exact GitHub workflows, then run the four fresh merge checks and integrate conditional evidence.",
       "blocker": "South pressure end boxes, abnormal receivers, thermal/motion supports and selected service duty remain excluded."
     }
+  },
+  "pr": 1552,
+  "checkpoint": {
+    "evidence": "Exact head 4e872949dbe13f74bc1d8493f2a3cc9d8b7be0fc; three domain closeout contracts, updated HAD hot source, static type/repo/control checks and native domain checks.",
+    "next": "Confirm exact hosted validation, four canonical checks, integration and release.",
+    "blocker": "Retain inlet packet open for joined pressure assembly, independent outlet receiving, frost/support and actual plant/utility interfaces."
   }
 }
