@@ -9,8 +9,8 @@
     "label": "zerg16-current-domain-delivery"
   },
   "claimedAt": "2026-11-15T19:34:09.222Z",
-  "heartbeatAt": "2026-11-15T19:34:09.222Z",
-  "expiresAt": "2026-11-15T20:34:09.222Z",
+  "heartbeatAt": "2026-11-15T19:44:19.692Z",
+  "expiresAt": "2026-11-15T20:44:19.692Z",
   "branch": "work/zerg16-current-domain-closures",
   "predecessor": {
     "leaseId": "36d16fe3-4348-4335-a71f-91606cc11f2a",
@@ -33,5 +33,11 @@
       "next": "Wait for all triggered exact GitHub workflows, then run the four fresh merge checks and integrate conditional evidence.",
       "blocker": "The named current interface comparison is implemented. Remaining domain cases keep lifecycle open."
     }
+  },
+  "pr": 1552,
+  "checkpoint": {
+    "evidence": "Exact head 4e872949dbe13f74bc1d8493f2a3cc9d8b7be0fc; three domain closeout contracts, updated HAD hot source, static type/repo/control checks and native domain checks.",
+    "next": "Confirm exact hosted validation, four canonical checks, integration and release.",
+    "blocker": "Await exact combined CI and canonical merge checks."
   }
 }
