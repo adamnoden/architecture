@@ -1,12 +1,6 @@
 # Occupied house services and the first store movement
 
-HAD-SERVICES-02 selects the furnished local-extract service architecture on the source-bound SAP-C1 geometry. Six independent room extracts, separate cooker exhaust and tempered supply, a separated heating primary and a pressure-rated mineral-clad domestic store form one current occupied reference. The `deriveCurrentHouse()` compositor calculates the selection from seventeen recorded inputs. Read the current service schedule with the explicit document command below. The earlier water, materials and structural studies retain their pinned historical sources. The native `node project/had/studies/current-house.mjs --write` replay also regenerates the three companion drawings. [Selected service schedule](studies/current-house-services.json) · [Executable current house](studies/current-house.mjs)
-
-```sh
-node --import tsx scripts/compile-current-design.ts --read-georgian-source |
-  node --import tsx scripts/compile-current-design.ts --occupied-services -
-```
-
+HAD-SERVICES-02 selects the furnished local-extract service architecture on the source-bound SAP-C1 geometry. Six independent room extracts, separate cooker exhaust and tempered supply, a separated heating primary and a pressure-rated mineral-clad domestic store form one current occupied reference. The default `deriveCurrentHouse()` compositor exports that selection from seventeen recorded inputs. The earlier water, materials and structural studies retain their pinned historical sources. Run `node project/had/studies/current-house.mjs --write` to reproduce the schedule and three drawings. [Selected service schedule](studies/current-house-services.json) · [Executable current house](studies/current-house.mjs)
 
 **10 November structural applicability hold.** The selected service choices and
 their historical completion remain bounded results. SAP-C1's current coherent
