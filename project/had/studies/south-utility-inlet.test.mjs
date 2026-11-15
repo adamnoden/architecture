@@ -20,6 +20,8 @@ test('the split inlet remains clear of the southern stability leg and inherited 
     assert.equal(path[1][2], bores[index][2] + 18 + sleeveFall);
   }
   assert.ok(result.continuation.coldPairAfterSetting >= 25);
+  assert.equal(result.continuation.utilityToHotAfterSetting, 40.19);
+  assert.equal(result.continuation.olderHotBackboneUtilityAfterSetting, 15.99);
   assert.equal(result.continuation.toleranceMMFrom25AtExistingUtilityCrossing, 3.17);
   assert.equal(result.completed, false);
 });

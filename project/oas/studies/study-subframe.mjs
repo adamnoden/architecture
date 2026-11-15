@@ -2,6 +2,7 @@ import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
 import { readFileSync, writeFileSync } from 'node:fs'
 import { deriveCurrentHouse } from '../../had/studies/current-house.mjs'
+import { studyDrySeam } from './study-dry-seam.mjs'
 
 const here = new URL('./', import.meta.url)
 const read = name => readFileSync(new URL(name, here))
@@ -27,8 +28,7 @@ const archRise = head - spring
 const radius = ((width / 2) ** 2 + archRise ** 2) / (2 * archRise)
 const centreZ = head - radius
 const archZ = (halfWidth, normalInset) => centreZ + Math.sqrt((radius - normalInset) ** 2 - halfWidth ** 2)
-const unilateralSetting = 2
-const oppositeSetting = 2
+const combinedSetting = 2 + 2
 const fitting = lining + assemblyJoint
 const frameWidth = width - 2 * fitting
 const e0 = { roomFace, lining, joint: assemblyJoint, normalInset: fitting, frameWidth, frameAxis: axis }
@@ -36,17 +36,14 @@ const variants = [
   { id: 'Tight carrier', plate: 3, structureFit: 4, openDryRelease: 5, nominalWetCassette: false },
   { id: 'Separated carrier', plate: 4, structureFit: 5, openDryRelease: 8, nominalWetCassette: false },
 ].map(profile => {
-  const nested = profile.plate + profile.structureFit + profile.openDryRelease
-  const additionalInset = nested + unilateralSetting + oppositeSetting - assemblyJoint
-  const inset = fitting + additionalInset
-  const remainingFrameWidth = width - 2 * inset
-  const nominalDryReleaseAfterSettings = profile.openDryRelease - unilateralSetting - oppositeSetting
+  const { nested, additionalInset, inset, remainingFrameWidth, nominalDryReleaseAfterSettings,
+    retainedFrameClearanceEachJamb } = studyDrySeam(width, lining, assemblyJoint, combinedSetting, profile, frameWidth)
   return {
     ...profile, nested, additionalInset, remainingFrameWidth, nominalDryReleaseAfterSettings,
     crownZ: head - inset,
     shoulderZ: archZ(remainingFrameWidth / 2, inset),
     outerSashWidthIfProfilesUnchanged: window.section.movingWidth - 2 * additionalInset,
-    existingFrameWholeInwardPassAtEachJamb: -additionalInset,
+    existingFrameWholeInwardPassAtEachJamb: retainedFrameClearanceEachJamb,
     unchangedExistingFrameRoomFaceShiftIfLiningCharged: additionalInset,
   }
 })

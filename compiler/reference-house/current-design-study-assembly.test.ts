@@ -76,3 +76,19 @@ test('unsupported pitches, unknown parameters, unbound geometry and stale native
   assert.throws(() => compileStudyAssembly(source, {}, path => path.endsWith('workable-study-floor.json')
     ? Buffer.concat([read(path), Buffer.from('\n')]) : read(path)), /receipts disagree/)
 })
+
+test('a stone and steel finish changes the physical section and mass over the same furnished fields', () => {
+  const oak = compileStudyAssembly(source)
+  const heavy = compileStudyAssembly(source, { wearingFace: 'stone-steel' })
+  assert.equal(heavy.section.wearFaceMm, 15)
+  assert.equal(heavy.section.finishSupportDepthUnresolvedMm, 3)
+  assert.ok(Math.abs(heavy.schedule.completeTileWearFaceMassKg - 8.81822355) < 1e-9)
+  assert.equal(heavy.handling.state, 'withheld')
+  assert.equal(heavy.schedule.wholeTiles, oak.schedule.wholeTiles)
+  assert.deepEqual(oak.furnishedComparisons.map(field => [field.id, field.complete, field.clearWhole]), [
+    ['GROUND/G-FAMILY', 45, 15], ['GROUND/G-KITCHEN', 56, 28], ['FIRST/U-BED2', 55, 31],
+  ])
+  assert.ok(heavy.furnishedComparisons.every((field, index) => field.completeWearFaceMassKg > oak.furnishedComparisons[index].completeWearFaceMassKg))
+  assert.ok(drawStudyFloorSection(heavy).primitives.some(item => item.id === 'stone-steel-layer'))
+  assert.ok(!drawStudyFloorSection(oak).primitives.some(item => item.id === 'stone-steel-layer'))
+})

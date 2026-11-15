@@ -16,6 +16,8 @@ interface BridgeComparison {
     readonly line: { readonly id: string }
     readonly minimumPassingDepthAtBothCovers: number | null
     readonly capacityComparison: readonly {
+      readonly depth: number
+      readonly cover: number
       readonly M: number
       readonly T: number
       readonly deflectionIncluding400microstrain: number
@@ -105,9 +107,10 @@ export function runStructuralBridge(resolved: CurrentDesignResolution, trialAxes
 }
 
 const foundationMethodPath = 'project/str/studies/current-house-joined-foundation.py'
+const headCaseMethodPath = 'project/str/studies/current-house-structural-case.py'
 const foundationReceiptPath = 'project/str/studies/current-house-joined-foundation.json'
 
-export function runStructuralActions(resolved: CurrentDesignResolution) {
+function bindStructuralActions(resolved: CurrentDesignResolution) {
   const { design, disciplineBindings } = resolved
   const source = { id: design.source.id, planDigest: sha256SemanticFingerprint(design) }
   const occurrence = { kind: 'structural-system', id: 'STR-52-HEAD-JOINED-FOUNDATION' } as const
@@ -139,6 +142,13 @@ export function runStructuralActions(resolved: CurrentDesignResolution) {
     }
     return [path, measured.blob]
   }))
+  return { status: 'bound' as const, source, occurrence, structure, method, receipt, native, inputs }
+}
+
+export function runStructuralActions(resolved: CurrentDesignResolution) {
+  const binding = bindStructuralActions(resolved)
+  if (binding.status === 'unavailable') return binding
+  const { source, occurrence, method, receipt, native, inputs } = binding
   execFileSync('python3', ['-B', fileURLToPath(new URL(foundationMethodPath, repositoryRoot)), '--check'], {
     stdio: ['ignore', 'pipe', 'pipe'],
   })
@@ -152,6 +162,118 @@ export function runStructuralActions(resolved: CurrentDesignResolution) {
     diagnostics: [{
       code: 'HEAD_ACTIONS_SCREEN_ONLY' as const, occurrence,
       message: 'Fixed-base signed actions only. Soil, section, proposed collar confinement and connection stiffness remain open.',
+    }],
+  }
+}
+
+interface NativeHeadCase {
+  readonly schema: 'str-head-case-result/1'
+  readonly windIndex: number
+  readonly windProgramme: readonly number[]
+  readonly combination: unknown
+  readonly admitted: false
+  readonly headComponentOrder: readonly ['N', 'Cx', 'Cy', 'Vx', 'Vy']
+  readonly heads: readonly {
+    readonly id: string
+    readonly xy: readonly [number, number]
+    readonly actions: readonly [number, number, number, number, number]
+  }[]
+  readonly releasedPassivePads: readonly {
+    readonly xy: readonly [number, number]
+    readonly signedBeforeRelease: number
+  }[]
+  readonly verticalEquilibrium: readonly [number, number, number]
+  readonly horizontalEquilibrium: readonly [number, number, number]
+}
+
+function exactFields(value: unknown, keys: readonly string[], label: string): Record<string, unknown> {
+  if (value === null || typeof value !== 'object' || Array.isArray(value) ||
+    Object.keys(value).length !== keys.length || keys.some(key => !Object.hasOwn(value, key))) {
+    throw new Error(`Invalid ${label} fields`)
+  }
+  return value as Record<string, unknown>
+}
+
+export function readStructuralCase(resolved: CurrentDesignResolution) {
+  const binding = bindStructuralActions(resolved)
+  if (binding.status === 'unavailable') return binding
+  return {
+    schema: 'str-structural-case-request/1' as const,
+    design: resolved.design,
+    case: {
+      schema: 'str-structural-case/1' as const,
+      planDigest: binding.source.planDigest,
+      bindingDigest: binding.structure.digest,
+      windIndex: 8,
+      combination: { id: 'stripped suction+wind' as const, suctionFactor: 1 },
+      joint: {
+        id: 'gallery-east-water-weather/short-bridge' as const,
+        supportAxesYMm: readSource(sourcePath).parse().bridge.supportAxesY as [number, number],
+        sectionDepthMm: 250,
+        materials: { concrete: 'C30', reinforcingSteel: 'S500' },
+      },
+    },
+  }
+}
+
+export function runStructuralCase(resolved: CurrentDesignResolution, value: unknown) {
+  const binding = bindStructuralActions(resolved)
+  if (binding.status === 'unavailable') return binding
+  const input = exactFields(value, [
+    'schema', 'planDigest', 'bindingDigest', 'windIndex', 'combination', 'joint',
+  ], 'structural case')
+  if (input.schema !== 'str-structural-case/1' || input.planDigest !== binding.source.planDigest ||
+    input.bindingDigest !== binding.structure.digest) {
+    throw new Error('Stale or unsupported structural case source binding')
+  }
+  const joint = exactFields(input.joint, ['id', 'supportAxesYMm', 'sectionDepthMm', 'materials'], 'structural joint')
+  const materials = exactFields(joint.materials, ['concrete', 'reinforcingSteel'], 'structural joint materials')
+  if (joint.id !== 'gallery-east-water-weather/short-bridge' ||
+    materials.concrete !== 'C30' || materials.reinforcingSteel !== 'S500') {
+    throw new Error('This joint or material change requires a new authored structural method')
+  }
+  if (!Array.isArray(joint.supportAxesYMm) || joint.supportAxesYMm.length !== 2 ||
+    !joint.supportAxesYMm.every(Number.isFinite) ||
+    typeof joint.sectionDepthMm !== 'number' || ![200, 250, 300, 350, 450].includes(joint.sectionDepthMm)) {
+    throw new Error('Choose a retained bridge section depth and two valid support coordinates')
+  }
+  const axes: [number, number] = [joint.supportAxesYMm[0], joint.supportAxesYMm[1]]
+  const bridge = runStructuralBridge(resolved, axes)
+  if (bridge.status === 'unavailable') return bridge
+  const method = readSource(headCaseMethodPath)
+  if (binding.structure.identities[headCaseMethodPath] !== method.blob) {
+    throw new Error('The signed load case runner differs from its current binding')
+  }
+  const foundation: NativeHeadCase = JSON.parse(execFileSync('python3', [
+    '-B', fileURLToPath(new URL(headCaseMethodPath, repositoryRoot)),
+  ], {
+    input: JSON.stringify({ schema: 'str-head-case/1', windIndex: input.windIndex, combination: input.combination }),
+    encoding: 'utf8',
+  }))
+  return {
+    schema: 'str-structural-case-result/1' as const,
+    status: 'computed-comparison' as const,
+    source: binding.source,
+    foundation: {
+      method: { path: headCaseMethodPath, blob: method.blob,
+        solver: { path: foundationMethodPath, blob: binding.method.blob }, inputs: binding.inputs },
+      native: foundation,
+    },
+    joint: {
+      occurrence: bridge.occurrence,
+      method: bridge.method,
+      materials,
+      axesYMm: axes,
+      clearSpanMm: bridge.native.comparison.assumptions.actualClearSpanM * 1000,
+      members: bridge.native.comparison.members.map(member => ({
+        line: member.line,
+        compareAtBothCovers: member.capacityComparison.filter(row => row.depth === joint.sectionDepthMm),
+      })),
+      installedAcceptance: false as const,
+    },
+    diagnostics: [{
+      code: 'FIXED_BASE_AND_LOCAL_BRIDGE_ONLY' as const,
+      message: 'Foundation reactions use unchanged geometry and signed actions. The local bridge trial does not move the foundation or supply coupled actions. Portal, collar, arch, stiffness, material and physical structural acceptance remain open.',
     }],
   }
 }

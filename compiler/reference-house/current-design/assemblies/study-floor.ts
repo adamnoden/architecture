@@ -21,7 +21,17 @@ interface FloorReceipt {
       readonly heightMM: number; readonly existingProjectionMM: number; readonly serviceProjectionMM: number; readonly coverMM: number
     }
   }
-  readonly moduleStudy: { readonly origin: FloorPoint; readonly options: readonly { readonly pitch: number }[] }
+  readonly moduleStudy: {
+    readonly origin: FloorPoint
+    readonly options: readonly { readonly pitch: number }[]
+    readonly materials: readonly { readonly name: string; readonly massPerSquareMetre: number }[]
+  }
+  readonly additionalFurnishedComparisons: readonly {
+    readonly name: string
+    readonly bands: readonly FloorRect[]
+    readonly fixed: readonly FloorObstacle[]
+    readonly moduleSummary: { readonly areaM2: number; readonly complete: number; readonly clearInPlan: number }
+  }[]
   readonly release: { readonly lift: FloorRect }
 }
 
@@ -34,14 +44,15 @@ interface ReleaseReceipt {
   }
 }
 
-interface StudyConfiguration { readonly pitchMm?: number; readonly skirting?: 'ordinary' | 'service' }
+interface StudyConfiguration { readonly pitchMm?: number; readonly skirting?: 'ordinary' | 'service'; readonly wearingFace?: 'oak' | 'stone-steel' }
 
 function configuration(input: unknown): StudyConfiguration {
   if (!input || typeof input !== 'object' || Object.getPrototypeOf(input) !== Object.prototype) throw new TypeError('Expected a Study configuration')
   const config = input as StudyConfiguration
-  if (Object.keys(input).some(key => key !== 'pitchMm' && key !== 'skirting')
+  if (Object.keys(input).some(key => key !== 'pitchMm' && key !== 'skirting' && key !== 'wearingFace')
     || (config.pitchMm !== undefined && (!Number.isFinite(config.pitchMm) || config.pitchMm <= 0))
-    || (config.skirting !== undefined && config.skirting !== 'ordinary' && config.skirting !== 'service')) {
+    || (config.skirting !== undefined && config.skirting !== 'ordinary' && config.skirting !== 'service')
+    || (config.wearingFace !== undefined && config.wearingFace !== 'oak' && config.wearingFace !== 'stone-steel')) {
     throw new TypeError('Unsupported Study configuration')
   }
   return config
@@ -100,13 +111,45 @@ export function compileResolvedStudyAssembly(resolved: CurrentDesignResolution, 
   }
 
   const sideMm = pitchMm - release.panel.gap
-  const fullTileMassKg = sideMm ** 2 * release.panel.skin * release.panel.nominalDensity / 1e9
+  const wearingFace = config.wearingFace ?? 'oak'
+  const stoneSteel = floor.moduleStudy.materials.find(material => material.name === '12 mm stone + 3 mm steel skin only')
+  if (!stoneSteel || !Number.isFinite(stoneSteel.massPerSquareMetre) || stoneSteel.massPerSquareMetre <= 0) {
+    throw new TypeError('The native stone/steel wearing-face mass is unavailable')
+  }
+  const wearFaceMm = wearingFace === 'oak' ? release.panel.skin : 15
+  const surfaceMassKgPerM2 = wearingFace === 'oak' ? release.panel.skin * release.panel.nominalDensity / 1000 : stoneSteel.massPerSquareMetre
+  const fullTileMassKg = sideMm ** 2 * surfaceMassKgPerM2 / 1e6
+  const finishSupportDepthUnresolvedMm = release.panel.skin - wearFaceMm
   const [ox, oy] = floor.moduleStudy.origin
   const occurrences = tileField(pitchMm, floor.moduleStudy.origin, floor.study.bands, floor.study.occupied).map(cell => ({
     id: `${studyId}/floor/cell/${(cell.box[0] - ox) / pitchMm}/${(cell.box[1] - oy) / pitchMm}`,
     ...cell, wearFaceMassKg: cell.full ? fullTileMassKg : null,
   }))
   const complete = occurrences.filter(cell => cell.full)
+  const peer = new Map([
+    ['Family room', 'GROUND/G-FAMILY'],
+    ['Kitchen / dining', 'GROUND/G-KITCHEN'],
+    ['Bedroom 2', 'FIRST/U-BED2'],
+  ] as const)
+  const roomIds = new Set(Object.values(resolved.design.storeys).flatMap(storey => storey.rooms.map(room => room.id)))
+  const furnishedComparisons = floor.additionalFurnishedComparisons.map(field => {
+    const id = [...peer].find(([label]) => label === field.name)?.[1]
+    if (!id || !roomIds.has(id) || !field.bands.length || !field.bands.every(finiteRect) || !field.fixed.every(([, box]) => finiteRect(box))) {
+      throw new TypeError('Unbound furnished interior field ' + field.name)
+    }
+    const cells = tileField(pitchMm, floor.moduleStudy.origin, field.bands, field.fixed)
+    const whole = cells.filter(cell => cell.full)
+    const clearWhole = whole.filter(cell => !cell.fixedObstructions.length).length
+    if (pitchMm === release.panel.pitch && (whole.length !== field.moduleSummary.complete || clearWhole !== field.moduleSummary.clearInPlan)) {
+      throw new TypeError('The native furnished floor count is stale at ' + field.name)
+    }
+    return {
+      id, label: field.name, finishedAreaM2: field.moduleSummary.areaM2,
+      complete: whole.length, clearWhole, clipped: cells.length - whole.length,
+      completeWearFaceMassKg: whole.length * fullTileMassKg,
+      status: 'furnished-plan-comparison-only',
+    } as const
+  })
   const skirting = floor.assemblies.skirting
   const profile = config.skirting ?? 'ordinary'
   const projectionMm = profile === 'ordinary' ? skirting.existingProjectionMM : skirting.serviceProjectionMM
@@ -115,6 +158,7 @@ export function compileResolvedStudyAssembly(resolved: CurrentDesignResolution, 
   return {
     schema: 'ias-study-assembly-trial/1', state: 'candidate', units: 'mm', source,
     grid: { pitchMm, origin: floor.moduleStudy.origin, occupied: floor.study.occupied, bands: floor.study.bands, occurrences },
+    furnishedComparisons,
     schedule: {
       wholeTiles: complete.length, wholeTilesClearOfShownFurniture: complete.filter(tile => !tile.fixedObstructions.length).length,
       clippedCells: occurrences.length - complete.length, finishedAreaM2: floor.study.finishedAreaM2,
@@ -123,7 +167,7 @@ export function compileResolvedStudyAssembly(resolved: CurrentDesignResolution, 
     },
     section: {
       status: 'nominal-comparison', datum: 'Study ground finished floor', ffl: 0, rcTop: -floor.assemblies.groundDepthAboveRC,
-      wearFaceMm: release.panel.skin, beddingTerritoryMm: release.panel.beddingTerritory, jointMm: release.panel.gap,
+      wearingFace, wearFaceMm, finishSupportDepthUnresolvedMm, beddingTerritoryMm: release.panel.beddingTerritory, jointMm: release.panel.gap,
       tileSouthSetbackMm: floor.release.lift[1] - floor.study.bands[0][1] + release.panel.gap / 2,
       skirting: {
         id: `${studyId}/skirting/south-release-edge`, profile, projectionMm, heightMm: skirting.heightMM,
@@ -134,6 +178,9 @@ export function compileResolvedStudyAssembly(resolved: CurrentDesignResolution, 
       ? { state: 'unresolved', code: 'FIXED_BRIDGE_PITCH', referencePitchMm: release.panel.pitch } as const
       : { state: shoeClearanceMm < 0 ? 'conflict' : 'geometry-only', code: 'SOUTH_BRIDGE_SHOE', shoeClearanceMm, settingMm,
         shoeExtentMm: [release.revised.southWallReserveMM, release.revised.southWallReserveMM + 2 * release.revised.footHalfY] } as const,
+    handling: wearingFace === 'oak' && pitchMm === release.panel.pitch
+      ? { state: 'retained-reference-comparison' } as const
+      : { state: 'withheld', code: 'WEARING_FACE_OR_PITCH_CHANGED' } as const,
     withheld: ['perimeter piece fabrication and mass', 'tool/body and loaded handling', 'fixed captures and actual support',
       'cable support and clearances', 'floor durability, fire, acoustics and moisture'],
   } as const

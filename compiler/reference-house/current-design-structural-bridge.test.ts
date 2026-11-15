@@ -74,3 +74,120 @@ test('the signed foundation projection reruns the actual 52-head comparison with
   assert.equal(candidate.status, 'unavailable')
   assert.equal(candidate.diagnostics[0].code, 'HEAD_ACTIONS_REQUIRE_CURRENT_STR')
 })
+
+test('explicit signed load request recomputes shaft actions and checks the separate bridge joint', async () => {
+  const design = readGeorgianDesignSnapshot()
+  const compile = prepareCurrentDesignCompile(design)
+  const request = await compile.readStructuralCase()
+  assert.ok('case' in request)
+  assert.equal(request.schema, 'str-structural-case-request/1')
+  const baseline = await compile.structuralCase(request.case)
+  const alteredRequest = {
+    ...request,
+    case: {
+      ...request.case,
+      combination: { id: 'stripped suction+wind', suctionFactor: 0.75 },
+      joint: { ...request.case.joint, supportAxesYMm: [6100, 7730], sectionDepthMm: 200 },
+    },
+  }
+  const altered = JSON.parse(execFileSync(process.execPath, [
+    '--import', 'tsx', 'scripts/compile-current-design.ts', '--structural-case', '-',
+  ], { input: JSON.stringify(alteredRequest), encoding: 'utf8' })) as typeof baseline
+  assert.equal(baseline.status, 'computed-comparison')
+  assert.equal(altered.status, 'computed-comparison')
+  assert.equal(altered.foundation.native.heads.length, 52)
+  const { heads, verticalEquilibrium, horizontalEquilibrium } = altered.foundation.native
+  const sums = heads.reduce((sum, { xy: [x, y], actions: [n, cx, cy, vx, vy] }) => [
+    sum[0] + n, sum[1] + n * x / 1000 + cx, sum[2] + n * y / 1000 + cy,
+    sum[3] + vx, sum[4] + vy, sum[5] + (x * vy - y * vx) / 1000,
+  ], [0, 0, 0, 0, 0, 0])
+  assert.ok(sums.every((sum, i) => Math.abs(sum - [...verticalEquilibrium, ...horizontalEquilibrium][i]) < 0.005))
+  assert.deepEqual(horizontalEquilibrium, baseline.foundation.native.horizontalEquilibrium)
+  const oldTotals = baseline.foundation.native.verticalEquilibrium
+  const oldSourceReceipt = JSON.parse(readFileSync(new URL('../../project/str/studies/current-house-joined-foundation.json', import.meta.url), 'utf8'))
+  const retained = oldSourceReceipt.coherentSignedStates[request.case.windIndex].conservedStates['stripped suction+wind']
+  assert.deepEqual(oldTotals.map(value => Number(value.toFixed(4))), retained.N_Xmoment_Ymoment)
+  const suctionTotal = oldSourceReceipt.named_source_totals['uniform roof suction only'][0]
+  assert.ok(Math.abs(verticalEquilibrium[0] - oldTotals[0] + 0.25 * suctionTotal) < 0.005)
+  assert.ok(heads.some((head, i) => Math.abs(head.actions[0] - baseline.foundation.native.heads[i].actions[0]) > 1))
+  assert.equal(altered.foundation.native.admitted, false)
+  assert.equal(baseline.joint.clearSpanMm, 1000)
+  assert.ok(Math.abs(altered.joint.clearSpanMm - 1030) < 1e-9)
+  assert.ok(altered.joint.members.every(member => member.compareAtBothCovers.length === 2 &&
+    member.compareAtBothCovers.every(row => row.depth === 200 && !row.pass)))
+  assert.equal(altered.joint.installedAcceptance, false)
+})
+
+test('the versioned structural case rejects unbound design, material and unsupported combinations', async () => {
+  const design = readGeorgianDesignSnapshot()
+  const compile = prepareCurrentDesignCompile(design)
+  const request = await compile.readStructuralCase()
+  assert.ok('case' in request)
+  assert.equal(request.schema, 'str-structural-case-request/1')
+  await assert.rejects(compile.structuralCase({ ...request.case, planDigest: 'edited plan' }), /source binding/)
+  await assert.rejects(compile.structuralCase({
+    ...request.case, joint: { ...request.case.joint, materials: { concrete: 'C35', reinforcingSteel: 'S500' } },
+  }), /material change/)
+  await assert.rejects(compile.structuralCase({
+    ...request.case, combination: { id: 'stripped suction+wind', suctionFactor: 1.01 },
+  }), /outside the existing source envelope/)
+  const edited = prepareCurrentDesignCompile({
+    ...design,
+    source: { kind: 'contrast-specimen', id: 'SPECIMEN-STRUCTURE-EDIT', state: 'candidate' },
+    envelope: { ...design.envelope, widthMm: design.envelope.widthMm + 30 },
+  })
+  assert.equal((await edited.structuralCase(request.case)).status, 'unavailable')
+})
+
+test('current structural interface replay runs the actual floor, roof, wall and opening kernels', async () => {
+  const design = readGeorgianDesignSnapshot()
+  const compile = prepareCurrentDesignCompile(design)
+  const request = await compile.readStructuralInterfaces()
+  assert.ok('replay' in request)
+  const result = JSON.parse(execFileSync(process.execPath, [
+    '--import', 'tsx', 'scripts/compile-current-design.ts', '--structural-interfaces', '-',
+  ], { input: JSON.stringify(request), encoding: 'utf8' })) as Awaited<ReturnType<typeof compile.structuralInterfaces>>
+  assert.equal(result.status, 'recomputed-comparisons')
+  assert.deepEqual(result.source, compile.source)
+  const [floor, roof, arch] = result.interfaces
+  assert.equal(floor.geometry.id, 'north-floor-collar')
+  assert.deepEqual(floor.geometry.slabAndCollarZMm, [3170, 3370, 3415])
+  assert.equal(floor.geometry.minimumWindowReserveMm, 107.5)
+  assert.equal(roof.geometry.id, 'north-roof-shoe')
+  assert.deepEqual(roof.geometry.slotXZMm, [60, 34])
+  assert.deepEqual(roof.geometry.rodAxesXYMm, [[4340, 11667.5], [7660, 11667.5]])
+  assert.equal(arch.geometry.id, 'outward-arch-widths')
+  assert.deepEqual(arch.geometry.controls.map(control => control.widthMm), [160, 180])
+  assert.ok(arch.geometry.controls.every(control => control.memberRecoveries > 0 && control.largestAdverseRatio > 1))
+  assert.deepEqual(result.interfaces.map(row => row.geometry.id), [
+    'north-floor-collar', 'north-roof-shoe', 'outward-arch-widths', 'roof-action-route', 'roof-stiffness',
+    'floor-membrane', 'floor-stops', 'wall-load-transfers', 'north-cap-layer', 'north-floor-cage',
+  ])
+  assert.ok(result.interfaces.every(row => !row.installedAcceptance && row.method.blob && row.receipt.blob
+    && Object.keys(row.inputs).length >= 1))
+})
+
+test('edited snapshots, stale bindings and unsupported interface IDs withhold native receipts', async () => {
+  const design = readGeorgianDesignSnapshot()
+  const compile = prepareCurrentDesignCompile(design)
+  const request = await compile.readStructuralInterfaces()
+  assert.ok('replay' in request)
+  const invalidRequests = [
+    { ...request.replay, bindingDigest: 'stale' },
+    { ...request.replay, interfaces: ['north-floor-collar', 'unsupported'] },
+    { ...request.replay, interfaces: ['north-floor-collar', 'north-floor-collar'] },
+  ]
+  for (const invalid of invalidRequests) {
+    const result = await compile.structuralInterfaces(invalid)
+    assert.equal(result.status, 'unavailable')
+    assert.equal('interfaces' in result, false)
+  }
+  const edited = prepareCurrentDesignCompile({
+    ...design,
+    source: { kind: 'contrast-specimen', id: 'SPECIMEN-STRUCTURE-EDIT', state: 'candidate' },
+    envelope: { ...design.envelope, widthMm: design.envelope.widthMm + 30 },
+  })
+  const result = await edited.structuralInterfaces(request.replay)
+  assert.equal(result.status, 'unavailable')
+  assert.equal('interfaces' in result, false)
+})
