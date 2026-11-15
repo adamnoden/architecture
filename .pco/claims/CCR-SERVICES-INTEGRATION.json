@@ -1,23 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "CCR-SERVICES-INTEGRATION",
-  "generation": 1,
-  "state": "released",
-  "leaseId": "5249fa69-83be-4323-b1e6-d3aa28bde13d",
+  "generation": 2,
+  "state": "claimed",
+  "leaseId": "6a9e23f4-a65b-43b9-b2d8-19ac282bec06",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg16-executable-interface-checks"
+    "label": "zerg16-current-domain-delivery"
   },
-  "claimedAt": "2026-11-15T19:10:05.890Z",
-  "heartbeatAt": "2026-11-15T19:31:05.610Z",
-  "expiresAt": "2026-11-15T19:31:05.610Z",
-  "branch": "work/zerg16-east-south-inlet",
-  "pr": 1551,
-  "checkpoint": {
-    "evidence": "Exact 1e3f5f8d39c7dd03afad332629a93952867d3fff; current south inlet and native structural, hydraulic, Study projection checks passed locally.",
-    "next": "Wait for all triggered exact GitHub workflows, then run the four fresh merge checks and integrate conditional evidence.",
-    "blocker": "The named current interface comparison is implemented. Remaining domain cases keep lifecycle open."
+  "claimedAt": "2026-11-15T19:34:31.562Z",
+  "heartbeatAt": "2026-11-15T19:34:31.562Z",
+  "expiresAt": "2026-11-15T20:34:31.562Z",
+  "branch": "work/zerg16-current-domain-closures",
+  "predecessor": {
+    "leaseId": "5249fa69-83be-4323-b1e6-d3aa28bde13d",
+    "generation": 1,
+    "branch": "work/zerg16-east-south-inlet",
+    "pr": 1551,
+    "checkpoint": {
+      "evidence": "Exact 1e3f5f8d39c7dd03afad332629a93952867d3fff; current south inlet and native structural, hydraulic, Study projection checks passed locally.",
+      "next": "Wait for all triggered exact GitHub workflows, then run the four fresh merge checks and integrate conditional evidence.",
+      "blocker": "The named current interface comparison is implemented. Remaining domain cases keep lifecycle open."
+    }
   },
-  "releasedAt": "2026-11-15T19:31:05.610Z",
-  "releaseReason": "handoff"
+  "recoverySource": {
+    "leaseId": "5249fa69-83be-4323-b1e6-d3aa28bde13d",
+    "generation": 1,
+    "branch": "work/zerg16-east-south-inlet",
+    "pr": 1551,
+    "checkpoint": {
+      "evidence": "Exact 1e3f5f8d39c7dd03afad332629a93952867d3fff; current south inlet and native structural, hydraulic, Study projection checks passed locally.",
+      "next": "Wait for all triggered exact GitHub workflows, then run the four fresh merge checks and integrate conditional evidence.",
+      "blocker": "The named current interface comparison is implemented. Remaining domain cases keep lifecycle open."
+    }
+  }
 }
