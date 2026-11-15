@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "CCR-EDIT-CONTRACT",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "38708fc8-7e16-4e5a-8821-47224285f643",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "zerg16-edit-contract"
+  },
+  "claimedAt": "2026-11-15T18:40:35.128Z",
+  "heartbeatAt": "2026-11-15T18:40:35.128Z",
+  "expiresAt": "2026-11-15T19:40:35.128Z",
+  "branch": "work/zerg16-edit-current-services"
+}
