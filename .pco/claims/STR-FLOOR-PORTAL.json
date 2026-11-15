@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 33,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "44522ec3-4c1a-4682-9e4c-6552d43f40cb",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg16-alternative-structure-review"
   },
   "claimedAt": "2026-11-15T20:31:26.504Z",
-  "heartbeatAt": "2026-11-15T20:33:55.765Z",
-  "expiresAt": "2026-11-15T21:03:55.765Z",
+  "heartbeatAt": "2026-11-15T20:34:16.384Z",
+  "expiresAt": "2026-11-15T20:34:16.384Z",
   "predecessor": {
     "leaseId": "6cdfcd1e-09a8-4e00-8027-d937c22dfb7b",
     "generation": 32,
@@ -37,5 +37,7 @@
     "evidence": "https://github.com/adamnoden/architecture/issues/1103#issuecomment-6900935628",
     "next": "Only advance a positive developed tie outside the current fan with actual confinement, or a centred protected steel load-spreading shoe with retained moisture plane and demonstrated coupled stiffness.",
     "blocker": "Concrete tie/links do not jointly clear; south-only receivers are over capacity; alternate steel base exceeds the existing anchor stress basis and protected shoe envelope."
-  }
+  },
+  "releasedAt": "2026-11-15T20:34:16.384Z",
+  "releaseReason": "handoff"
 }
