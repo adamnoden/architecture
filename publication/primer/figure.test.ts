@@ -27,7 +27,7 @@ function points(primitive: DrawingPrimitiveV2): readonly PaperPoint[] {
 test('Primer retains current architectural geometry, annotation and evidence metadata', () => {
   const source = createLayoutFamilyScene('GROUND', 100)
   const before = structuredClone(source)
-  const primer = createPrimerGroundPlanScene()
+  const primer = createPrimerGroundPlanScene(source)
   const sourceAnchor = source.primitives.find((primitive) => primitive.id === 'width-dimension-line')!
   const primerAnchor = primer.primitives.find((primitive) => primitive.id === 'width-dimension-line')!
   assert.ok(sourceAnchor.kind === 'line' && primerAnchor.kind === 'line')
@@ -43,7 +43,7 @@ test('Primer retains current architectural geometry, annotation and evidence met
 })
 
 test('the actual-size scene keeps the top dimension and complete replacement door inside the canvas', () => {
-  const scene = createPrimerGroundPlanScene()
+  const scene = createPrimerGroundPlanScene(createLayoutFamilyScene('GROUND', 100))
   assert.equal(scene.scaleDenominator, 100)
   assert.equal(scene.widthMm, 158)
   assert.equal(scene.heightMm, 180)
@@ -74,8 +74,9 @@ test('the actual-size scene keeps the top dimension and complete replacement doo
 })
 
 test('the rendered Primer drawing retains physical units, source identity and the shared tokens', () => {
-  const svg = renderPrimerGroundPlanSvg()
-  assert.equal(svg, renderPrimerGroundPlanSvg())
+  const source = createLayoutFamilyScene('GROUND', 100)
+  const svg = renderPrimerGroundPlanSvg(source)
+  assert.equal(svg, renderPrimerGroundPlanSvg(source))
   const root = svg.split('\n', 1)[0]
   assert.match(root, /width="158mm" height="180mm" viewBox="0 0 158 180"/)
   assert.ok(root.includes(`data-source-id="${layoutFamilySource.id}"`))

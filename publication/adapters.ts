@@ -1,12 +1,22 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { join, resolve } from 'node:path'
 import { canonicalPatternOrder, publicationEntries, type PublicationAdapter } from './publication.js'
-import { layoutRevision } from '../compiler/reference-house/georgian/layout-revision.js'
+import { compileCurrentDesign } from '../compiler/reference-house/current-design/compile.js'
+import { readGeorgianDesignSnapshot } from '../compiler/reference-house/current-design/georgian-source.js'
 import { renderPrimerGroundPlanSvg } from './primer/figure.js'
 
 export interface AdapterContext {
   repoRoot: string
   workSourceRoot: string
+  currentDesign?: unknown
+}
+
+export function createAdapterContext(
+  adapter: PublicationAdapter | undefined,
+  context: Omit<AdapterContext, 'currentDesign'>
+): AdapterContext {
+  if (adapter !== 'primer-reference-house') return context
+  return { ...context, currentDesign: readGeorgianDesignSnapshot() }
 }
 
 interface PatternMetadata {
@@ -495,25 +505,30 @@ function adaptPrimerReferenceHouse(markdown: string, context: AdapterContext): s
   const charter = readWork(context, 'project/owner-house-charter.md')
   const roofRow = markdownSection(basis, 'Sources to use').split('\n').find((line) => line.startsWith('| Roof prohibition |'))
   if (!roofRow) throw new Error('Primer current-house roof requirement is missing from its owning basis.')
-  if (layoutRevision.court.width !== layoutRevision.court.depth) throw new Error('Primer courtyard description requires review: current court is no longer square.')
-  if (layoutRevision.court.x !== (layoutRevision.shell - layoutRevision.court.width) / 2 ||
-      layoutRevision.court.y !== (layoutRevision.shell - layoutRevision.court.depth) / 2) {
-    throw new Error('Primer courtyard description requires review: current court is no longer centred.')
+  const compiled = compileCurrentDesign(context.currentDesign)
+  if (compiled.status !== 'NOMINAL_PLAN_ONLY') {
+    throw new Error(`Primer requires an applicable current plan: ${compiled.diagnostics[0].message}`)
+  }
+  const { widthMm, depthMm, court } = compiled.nominalDimensions
+  if (widthMm !== depthMm) throw new Error('Primer footprint description requires review: the footprint is not square.')
+  if (court.width !== court.depth) throw new Error('Primer courtyard description requires review: the court is not square.')
+  if (court.x !== (widthMm - court.width) / 2 || court.y !== (depthMm - court.depth) / 2) {
+    throw new Error('Primer courtyard description requires review: the court is not centred.')
   }
 
   return composePrimer(context, 'publication/primer/reference-house.md', {
     'scope': sourceSentences(markdown.slice(opening.length, authorityStart), [
       'The Reference House is', 'It forces doctrine', 'It is not proof'
     ], 'Primer Reference House scope'),
-    'shell': String(layoutRevision.shell / 1000),
-    'court': String(layoutRevision.court.width / 1000),
+    'shell': String(widthMm / 1000),
+    'court': String(court.width / 1000),
     'arrangement': sourceSentences(facts, ['The front has five bays', 'Four bedrooms'], 'Primer current-house arrangement'),
     'material-direction': sourceSentences(charter, ['The owner requires the strongest practicable avoidance'], 'Primer material direction'),
     'structural-direction': sourceSentences(charter, ['The owner prefers solid internal masonry', 'Explore non-timber primary'], 'Primer structural direction'),
     'water-direction': sourceSentences(charter, ['The owner requires dryness by position and geometry'], 'Primer water direction'),
     'roof-direction': `${roofRow.split('|')[3].trim()}.`,
     'technical-limit': sourceSentences(facts, ['Actual structural, thermal'], 'Primer technical limit'),
-    'ground-plan': renderPrimerGroundPlanSvg()
+    'ground-plan': renderPrimerGroundPlanSvg(compiled.plans.GROUND)
   })
 }
 

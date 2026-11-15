@@ -136,6 +136,17 @@ function envelopeHosts(level: StoreyId, [width, depth]: Point, c: Rectangle) {
   return hosts
 }
 
+/** Locate one admitted host on its authored reference line. */
+export function lookupDesignWall(design: DesignSnapshot, level: StoreyId, id: StoreyObjectId) {
+  const { widthMm, depthMm, court } = design.envelope
+  const face = envelopeHosts(level, [widthMm, depthMm], court).get(id)
+  if (face) return { from: face[0], to: face[1], reference: 'right-face', assemblyId: design.assemblyRefs.envelope } as const
+
+  const partition = design.storeys[level].partitions.find(wall => wall.id === id)
+  if (!partition) throw new TypeError(`Missing wall ${id} on ${level}`)
+  return { from: partition.from, to: partition.to, reference: 'centreline', assemblyId: design.assemblyRefs.partition } as const
+}
+
 function validateStorey(value: unknown, level: StoreyId, bounds: Point, court: Rectangle): number {
   const storey = record(value, ['elevationMm', 'rooms', 'partitions', 'openings'], level)
   const elevation = finite(storey.elevationMm, `${level}.elevationMm`)

@@ -13,7 +13,7 @@ import {
 import { dirname, posix, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { projectIdentity } from '../../project/identity.js'
-import { applyAdapter, dependenciesForAdapter } from '../adapters.js'
+import { applyAdapter, createAdapterContext, dependenciesForAdapter } from '../adapters.js'
 import { applyPublicationFigures } from '../figures.js'
 import {
   primerPublicationEntries,
@@ -159,7 +159,7 @@ const included = new Set(entries.map((entry) => entry.source))
 for (const entry of entries) {
   const preparedPath = workPath(entry.source)
   let markdown = readFileSync(preparedPath, 'utf8')
-  markdown = applyAdapter(entry.adapter, markdown, { repoRoot, workSourceRoot })
+  markdown = applyAdapter(entry.adapter, markdown, createAdapterContext(entry.adapter, { repoRoot, workSourceRoot }))
   markdown = stripPreparedFrontmatter(entry.source, markdown)
   if (fullMode) markdown = applyPublicationFigures(entry.id, markdown)
   markdown = normalizePreparedHeading(entry, markdown)

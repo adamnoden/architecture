@@ -4,7 +4,7 @@ import { copyFileSync, cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync,
 import { tmpdir } from 'node:os'
 import { dirname, join, resolve } from 'node:path'
 import { test } from 'node:test'
-import { applyAdapter, dependenciesForAdapter } from './adapters.js'
+import { applyAdapter, createAdapterContext, dependenciesForAdapter } from './adapters.js'
 import { primerPublicationEntries, publicationEntries } from './publication.js'
 
 const repoRoot = resolve(import.meta.dirname, '..')
@@ -28,9 +28,8 @@ function fixture(run: (root: string) => void): void {
 
 function render(id: string, root: string): string {
   const entry = primerPublicationEntries.find((entry) => entry.id === id)!
-  return applyAdapter(entry.adapter, readFileSync(join(existsSync(join(root, entry.source)) ? root : repoRoot, entry.source), 'utf8'), {
-    repoRoot, workSourceRoot: root
-  })
+  const context = createAdapterContext(entry.adapter, { repoRoot, workSourceRoot: root })
+  return applyAdapter(entry.adapter, readFileSync(join(existsSync(join(root, entry.source)) ? root : repoRoot, entry.source), 'utf8'), context)
 }
 
 test('authored Primer framing changes both emitted text and declared source identity', () => {
@@ -135,5 +134,25 @@ test('missing, duplicated or unknown composition slots fail rather than drop aut
       writeFileSync(path, changed)
       assert.throws(() => render('primer-principles', root), /expected one|unknown Primer/)
     }
+  })
+})
+
+test('Primer uses one explicit compiled document and fails before emitting a stale plan or dimension', () => {
+  fixture(root => {
+    const entry = primerPublicationEntries.find(({ id }) => id === 'primer-reference-house')!
+    const markdown = readFileSync(join(root, entry.source), 'utf8')
+    const roots = { repoRoot, workSourceRoot: root }
+    const context = createAdapterContext(entry.adapter, roots)
+    assert.equal(applyAdapter(entry.adapter, markdown, context), render('primer-reference-house', root))
+    assert.throws(() => applyAdapter(entry.adapter, markdown, roots), /expected a JSON object/)
+
+    const stale = JSON.parse(JSON.stringify(context.currentDesign))
+    stale.envelope.court.width -= 50
+    assert.throws(() => applyAdapter(entry.adapter, markdown, { ...context, currentDesign: stale }),
+      /differs from the current Georgian layout inputs/)
+
+    stale.source = { kind: 'contrast-specimen', id: 'SPECIMEN-PRIMER-WIDER-COURT', state: 'candidate' }
+    assert.throws(() => applyAdapter(entry.adapter, markdown, { ...context, currentDesign: stale }),
+      /Primer requires an applicable current plan/)
   })
 })

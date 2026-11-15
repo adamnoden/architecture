@@ -1,21 +1,35 @@
-import type {AdeArchitecturalPlan,AdeOpening,AdeWallRun,AdeModelPoint} from '../../architectural-drawing/model.js'
+import type {AdeArchitecturalPlan,AdeOpening,AdeWallRun,AdeModelPoint,AdeProvenance,AdeWallAssembly} from '../../architectural-drawing/model.js'
 import {assertValidArchitecturalPlan} from '../../architectural-drawing/validate.js'
 import {referenceHouseAdeEnvelope} from '../ade-plan.js'
 import {mm} from '../../units.js'
-import {design as defaultDesign,openings,type Level,type Box} from './source.js'
+import {design as defaultDesign,openings,type Level,type Box,type Wall,type Opening} from './source.js'
 export const provenance={authority:'provisional' as const,precision:'approximate' as const,sourceIds:['compiler/reference-house/georgian/source.ts','docs/reference-house/georgian-replan.md',defaultDesign.id]}
-export const createGeorgianPlan=(level:Level,input:{design?:Pick<typeof defaultDesign,'id'|'court'|'partitions'|'rooms'|'furniture'|'wetFit'|'services'>;openings?:ReturnType<typeof openings>;provenance?:typeof provenance}={}):AdeArchitecturalPlan=>{
- const design=input.design??defaultDesign,sourceOpenings=input.openings??openings(level),provenance=input.provenance??{authority:'provisional' as const,precision:'approximate' as const,sourceIds:['compiler/reference-house/georgian/source.ts','docs/reference-house/georgian-replan.md',design.id]}
- const p:AdeArchitecturalPlan={id:`RH-GEORGIAN-${level}`,sourceId:design.id,nodes:[],wallAssemblies:[referenceHouseAdeEnvelope(),{kind:'wall-assembly',id:'RH-PART-DRY-01',thickness:{kind:'approximate',value:mm(125)},provenance}],walls:[],openings:[],partitionDatums:[],spaces:[],adjacencies:[],dimensions:[],labels:[],fittings:[]}
+interface OrthogonalPlanInput {
+ readonly id: string
+ readonly sourceId: string
+ readonly widthMm: number
+ readonly depthMm: number
+ readonly court: Box
+ readonly partitions: readonly Wall[]
+ readonly openings: readonly Opening[]
+ readonly envelopeAssembly: AdeWallAssembly
+ readonly partitionAssembly: AdeWallAssembly
+ readonly provenance: AdeProvenance
+}
+
+/** Shared model-space wall and aperture construction for nominal orthogonal plans. */
+export function createOrthogonalPlanModel(level: Level, input: OrthogonalPlanInput): AdeArchitecturalPlan {
+ const {id,sourceId,widthMm,depthMm,court,partitions,openings:sourceOpenings,envelopeAssembly,partitionAssembly,provenance}=input
+ const p:AdeArchitecturalPlan={id,sourceId,nodes:[],wallAssemblies:[envelopeAssembly,partitionAssembly],walls:[],openings:[],partitionDatums:[],spaces:[],adjacencies:[],dimensions:[],labels:[],fittings:[]}
  const nodes=new Map<string,AdeArchitecturalPlan['nodes'][number]>()
  const node=(a:readonly number[])=>{const id=`${level}-${a[0]}-${a[1]}`;if(!nodes.has(id))nodes.set(id,{kind:'node',id,point:{x:mm(a[0]),y:mm(a[1])},provenance});return id}
- const cx=design.court.x,cy=design.court.y,cxx=cx+design.court.width,cyy=cy+design.court.depth
- const envelope=[{id:'outer-south',a:[0,0],b:[12000,0]},{id:'outer-east',a:[12000,0],b:[12000,12000]},{id:'outer-north',a:[12000,12000],b:[0,12000]},{id:'outer-west',a:[0,12000],b:[0,0]},{id:'court-south',a:[cxx,cy],b:[cx,cy]},{id:'court-west',a:[cx,cy],b:[cx,cyy]},{id:'court-north',a:[cx,cyy],b:[cxx,cyy]},{id:'court-east',a:[cxx,cyy],b:[cxx,cy]}]
- for(const w of envelope)(p.walls as AdeWallRun[]).push({kind:'wall',id:w.id,fromNodeId:node(w.a),toNodeId:node(w.b),reference:'right-face',assemblyStartFace:'right-face',assemblyId:'RH-ADE-ENVELOPE',provenance})
- for(const w of design.partitions[level])(p.walls as AdeWallRun[]).push({kind:'wall',id:w.id,fromNodeId:node(w.a),toNodeId:node(w.b),reference:'centreline',assemblyId:'RH-PART-DRY-01',provenance:{...provenance,sourceIds:[...provenance.sourceIds,w.id]}})
- const ends=p.walls.filter(w=>w.assemblyId==='RH-PART-DRY-01').flatMap(w=>[nodes.get(w.fromNodeId)!.point,nodes.get(w.toNodeId)!.point])
+ const cx=court.x,cy=court.y,cxx=cx+court.width,cyy=cy+court.depth
+ const envelope=[{id:'outer-south',a:[0,0],b:[widthMm,0]},{id:'outer-east',a:[widthMm,0],b:[widthMm,depthMm]},{id:'outer-north',a:[widthMm,depthMm],b:[0,depthMm]},{id:'outer-west',a:[0,depthMm],b:[0,0]},{id:'court-south',a:[cxx,cy],b:[cx,cy]},{id:'court-west',a:[cx,cy],b:[cx,cyy]},{id:'court-north',a:[cx,cyy],b:[cxx,cyy]},{id:'court-east',a:[cxx,cyy],b:[cxx,cy]}]
+ for(const w of envelope)(p.walls as AdeWallRun[]).push({kind:'wall',id:w.id,fromNodeId:node(w.a),toNodeId:node(w.b),reference:'right-face',...(envelopeAssembly.layers?.length?{assemblyStartFace:'right-face' as const}:{}),assemblyId:envelopeAssembly.id,provenance})
+ for(const w of partitions)(p.walls as AdeWallRun[]).push({kind:'wall',id:w.id,fromNodeId:node(w.a),toNodeId:node(w.b),reference:'centreline',assemblyId:partitionAssembly.id,provenance:{...provenance,sourceIds:[...provenance.sourceIds,w.id]}})
+ const ends=p.walls.filter(w=>w.assemblyId===partitionAssembly.id).flatMap(w=>[nodes.get(w.fromNodeId)!.point,nodes.get(w.toNodeId)!.point])
  p.walls=p.walls.flatMap((w):AdeWallRun[]=>{
-  if(w.assemblyId!=='RH-PART-DRY-01')return [w]
+  if(w.assemblyId!==partitionAssembly.id)return [w]
   const a=nodes.get(w.fromNodeId)!.point,b=nodes.get(w.toNodeId)!.point,h=a.y===b.y
   const on=(q:AdeModelPoint)=>h?q.y===a.y&&q.x>Math.min(a.x,b.x)&&q.x<Math.max(a.x,b.x):q.x===a.x&&q.y>Math.min(a.y,b.y)&&q.y<Math.max(a.y,b.y)
   const cuts=[...new Map(ends.filter(on).map(q=>[`${q.x},${q.y}`,q])).values()]
@@ -31,6 +45,16 @@ export const createGeorgianPlan=(level:Level,input:{design?:Pick<typeof defaultD
   return {kind:'opening',id:o.id,hostWallId:host.id,role:o.kind,centreOffset:{kind:'approximate',value:mm((o.centre-from)*Math.sign(to-from))},width:{kind:'approximate',value:mm(o.width)},symbol:o.kind==='window'?{kind:'window'}:{kind:'door',leaves:o.leaves??1,swingSide:o.swing??'left',...(o.leaves===2?{}:{hingeEnd:o.hinge??'low'})},provenance:{...provenance,sourceIds:[...provenance.sourceIds,o.id]}}
  })
  if(level==='ATTIC')p.walls=p.walls.filter(w=>w.id.startsWith('court-'))
+ return p
+}
+
+export const createGeorgianPlan=(level:Level,input:{design?:Pick<typeof defaultDesign,'id'|'court'|'partitions'|'rooms'|'furniture'|'wetFit'|'services'>;openings?:ReturnType<typeof openings>;provenance?:typeof provenance}={}):AdeArchitecturalPlan=>{
+ const design=input.design??defaultDesign,sourceOpenings=input.openings??openings(level),provenance=input.provenance??{authority:'provisional' as const,precision:'approximate' as const,sourceIds:['compiler/reference-house/georgian/source.ts','docs/reference-house/georgian-replan.md',design.id]}
+ const p=createOrthogonalPlanModel(level,{
+  id:`RH-GEORGIAN-${level}`,sourceId:design.id,widthMm:12000,depthMm:12000,court:design.court,
+  partitions:design.partitions[level],openings:sourceOpenings,envelopeAssembly:referenceHouseAdeEnvelope(),
+  partitionAssembly:{kind:'wall-assembly',id:'RH-PART-DRY-01',thickness:{kind:'approximate',value:mm(125)},provenance},provenance
+ })
  for(const r of design.rooms[level]){(p.spaces as Array<AdeArchitecturalPlan['spaces'][number]>).push({kind:'space',id:r.id,label:r.label,provenance});(p.labels as Array<AdeArchitecturalPlan['labels'][number]>).push({kind:'label',id:r.id+'-label',targetId:r.id,text:r.label,anchor:{x:mm(r.at[0]),y:mm(r.at[1])},role:'space',provenance})}
  (p.labels as Array<AdeArchitecturalPlan['labels'][number]>).push({kind:'label',id:'court-label',text:'Courtyard',anchor:{x:mm(6000),y:mm(6150)},role:'space',provenance},{kind:'label',id:'court-size',text:`${design.court.width} × ${design.court.depth}`,anchor:{x:mm(6000),y:mm(5600)},role:'annotation',provenance})
  p.dimensions=[{kind:'dimension',id:'width',a:{x:mm(0),y:mm(12000)},b:{x:mm(12000),y:mm(12000)},provenance},{kind:'dimension',id:'depth',a:{x:mm(0),y:mm(0)},b:{x:mm(0),y:mm(12000)},provenance}]
