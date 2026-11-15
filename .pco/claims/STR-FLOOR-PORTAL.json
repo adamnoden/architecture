@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 28,
-  "state": "released",
-  "leaseId": "b75d2504-51cc-4eda-9455-199fdfc6fbed",
+  "generation": 29,
+  "state": "claimed",
+  "leaseId": "fb2309a9-dc37-41d7-865c-b4f3acca79ad",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg15-str-arch"
+    "label": "zerg15b-str"
   },
-  "claimedAt": "2026-11-15T13:58:50.503Z",
-  "heartbeatAt": "2026-11-15T14:20:48.481Z",
-  "expiresAt": "2026-11-15T14:20:48.481Z",
-  "branch": "work/zerg15-arch-head-clearance",
+  "claimedAt": "2026-11-15T16:11:56.172Z",
+  "heartbeatAt": "2026-11-15T16:11:56.172Z",
+  "expiresAt": "2026-11-15T16:56:56.172Z",
+  "branch": "work/zerg15b-north-cage",
   "predecessor": {
-    "leaseId": "484c33ce-4b2d-4dff-801d-cc901835a9bf",
-    "generation": 27,
-    "branch": "work/zerg15-joints-utility",
-    "pr": 1538,
+    "leaseId": "b75d2504-51cc-4eda-9455-199fdfc6fbed",
+    "generation": 28,
+    "branch": "work/zerg15-arch-head-clearance",
+    "pr": 1540,
     "checkpoint": {
-      "evidence": "PR #1538 exact 8d39f225b2d02698a33051d905a58cb1604c0826; captive north collector and signed head triangle",
-      "next": "Inspect exact-head CI and merge while owned",
-      "blocker": "Roof/floor/foot detailed joining and the current 52-head coupled replay remain open"
+      "evidence": "PR #1540 exact 7fb51a3936f6709566ec7328c2333e5f8bf82bc9; straight north hold-down, paired garden ties and shallow cap fit",
+      "next": "Observe exact-head CI and merge while owned",
+      "blocker": "Current floor cage redesign, retaining shoe, cap development and 52-head coupled assembly remain open"
     }
   },
   "recoverySource": {
-    "leaseId": "484c33ce-4b2d-4dff-801d-cc901835a9bf",
-    "generation": 27,
-    "branch": "work/zerg15-joints-utility",
-    "pr": 1538,
+    "leaseId": "b75d2504-51cc-4eda-9455-199fdfc6fbed",
+    "generation": 28,
+    "branch": "work/zerg15-arch-head-clearance",
+    "pr": 1540,
     "checkpoint": {
-      "evidence": "PR #1538 exact 8d39f225b2d02698a33051d905a58cb1604c0826; captive north collector and signed head triangle",
-      "next": "Inspect exact-head CI and merge while owned",
-      "blocker": "Roof/floor/foot detailed joining and the current 52-head coupled replay remain open"
+      "evidence": "PR #1540 exact 7fb51a3936f6709566ec7328c2333e5f8bf82bc9; straight north hold-down, paired garden ties and shallow cap fit",
+      "next": "Observe exact-head CI and merge while owned",
+      "blocker": "Current floor cage redesign, retaining shoe, cap development and 52-head coupled assembly remain open"
     }
-  },
-  "pr": 1540,
-  "checkpoint": {
-    "evidence": "PR #1540 exact 7fb51a3936f6709566ec7328c2333e5f8bf82bc9; straight north hold-down, paired garden ties and shallow cap fit",
-    "next": "Observe exact-head CI and merge while owned",
-    "blocker": "Current floor cage redesign, retaining shoe, cap development and 52-head coupled assembly remain open"
-  },
-  "releasedAt": "2026-11-15T14:20:48.481Z",
-  "releaseReason": "handoff"
+  }
 }
