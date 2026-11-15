@@ -9,8 +9,8 @@
     "label": "zerg13-had-cabinet"
   },
   "claimedAt": "2026-11-14T23:49:46.729Z",
-  "heartbeatAt": "2026-11-15T00:11:59.188Z",
-  "expiresAt": "2026-11-15T01:41:59.188Z",
+  "heartbeatAt": "2026-11-15T00:13:22.305Z",
+  "expiresAt": "2026-11-15T01:43:22.305Z",
   "branch": "work/zerg13-portal-inlet",
   "predecessor": {
     "leaseId": "4f32b8b5-3783-4b0b-9aae-04ba7e46af54",
@@ -33,7 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Integrated tree c2f440f5, HAD exact a8c96e53 passes 96 HAD, MRA and deterministic receipts",
-    "next": "Open common PR, validate exact hosted CI, preflight both leases"
-  }
+    "evidence": "PR #1533 exact c4e9fa79 local combined tree c2f440f5; 96 HAD, MRA and deterministic receipts",
+    "next": "Wait for full exact CI, joint fresh preflights and expected-head merge"
+  },
+  "pr": 1533
 }
