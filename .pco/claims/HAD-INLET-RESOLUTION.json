@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 27,
-  "state": "released",
-  "leaseId": "608ec002-a8ad-468b-a54f-00d2f0863675",
+  "generation": 28,
+  "state": "claimed",
+  "leaseId": "67a85cbe-fcae-4b02-9c95-2e82d5926eca",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg14-inlet-resolution"
+    "label": "zerg14-inlet-fixed-station"
   },
-  "claimedAt": "2026-11-15T09:20:31.096Z",
-  "heartbeatAt": "2026-11-15T09:46:54.719Z",
-  "expiresAt": "2026-11-15T09:46:54.719Z",
-  "branch": "work/zerg14-simplify-portal-inlet",
+  "claimedAt": "2026-11-15T09:47:45.306Z",
+  "heartbeatAt": "2026-11-15T09:47:45.306Z",
+  "expiresAt": "2026-11-15T10:32:45.306Z",
+  "branch": "work/zerg14-replay-fixed-station",
   "predecessor": {
-    "leaseId": "f54a5d05-d4eb-434f-a47b-485169d0e133",
-    "generation": 26,
-    "branch": "work/zerg13-had-grade-cabinet",
-    "pr": 1534,
+    "leaseId": "608ec002-a8ad-468b-a54f-00d2f0863675",
+    "generation": 27,
+    "branch": "work/zerg14-simplify-portal-inlet",
+    "pr": 1535,
     "checkpoint": {
-      "evidence": "PR #1534 exact 9ecc5761 tree 429a899b on c6fefe51; focused checks and deterministic drawing",
-      "next": "Observe exact hosted CI and fresh publication preflight, merge then release"
+      "evidence": "PR #1535 exact remote head 47413c55e65e8b63e53bad2d2e0bfb690c90c9cc, focused HAD/MRA results and rendered plan/section",
+      "next": "Observe hosted Validate PR for the exact head, run fresh preflight with STR, then merge and release"
     }
   },
   "recoverySource": {
-    "leaseId": "f54a5d05-d4eb-434f-a47b-485169d0e133",
-    "generation": 26,
-    "branch": "work/zerg13-had-grade-cabinet",
-    "pr": 1534,
+    "leaseId": "608ec002-a8ad-468b-a54f-00d2f0863675",
+    "generation": 27,
+    "branch": "work/zerg14-simplify-portal-inlet",
+    "pr": 1535,
     "checkpoint": {
-      "evidence": "PR #1534 exact 9ecc5761 tree 429a899b on c6fefe51; focused checks and deterministic drawing",
-      "next": "Observe exact hosted CI and fresh publication preflight, merge then release"
+      "evidence": "PR #1535 exact remote head 47413c55e65e8b63e53bad2d2e0bfb690c90c9cc, focused HAD/MRA results and rendered plan/section",
+      "next": "Observe hosted Validate PR for the exact head, run fresh preflight with STR, then merge and release"
     }
-  },
-  "checkpoint": {
-    "evidence": "PR #1535 exact remote head 47413c55e65e8b63e53bad2d2e0bfb690c90c9cc, focused HAD/MRA results and rendered plan/section",
-    "next": "Observe hosted Validate PR for the exact head, run fresh preflight with STR, then merge and release"
-  },
-  "pr": 1535,
-  "releasedAt": "2026-11-15T09:46:54.719Z",
-  "releaseReason": "handoff"
+  }
 }
