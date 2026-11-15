@@ -1,6 +1,7 @@
 import type { ControlNode } from '../types.js'
 import { houseDeliveryNodes } from './house-delivery.js'
 import { ccrNodes } from './ccr.js'
+import { codificationNodes } from './codification.js'
 import { acoNodes } from './aco.js'
 import { architectureNodes } from './architecture.js'
 import { evidenceNodes } from './evidence.js'
@@ -21,6 +22,7 @@ import { softwareNodes } from './software.js'
 export const controlNodes = [
   ...acoNodes,
   ...ccrNodes,
+  ...codificationNodes,
   ...pcoNodes,
   ...architectureNodes,
   ...roofWaterNodes,
