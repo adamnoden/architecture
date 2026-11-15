@@ -12,10 +12,6 @@ Completed/cancelled history is omitted here so the current dependency frontier r
 %%{init: {"theme":"base","themeVariables":{"background":"#f7f6f2","primaryColor":"#f0eee9","primaryBorderColor":"#c9c6bd","primaryTextColor":"#20221f","clusterBkg":"#f8f7f4","clusterBorder":"#ccc9c1","lineColor":"#9eaaa1","fontFamily":"ui-sans-serif, system-ui, sans-serif","fontSize":"15px"},"flowchart":{"htmlLabels":true,"useMaxWidth":false,"nodeSpacing":42,"rankSpacing":68,"curve":"basis"}}}%%
 flowchart LR
   %% Generated from project/control. Do not hand-edit graph topology.
-  subgraph g_CCR["CCR"]
-    direction TB
-    n_CCR_CHANGE_PROOF["CCR-CHANGE-PROOF<br/>Prove end-to-end change propagation and selective evidence invalidation<br/><b>READY</b>"]
-  end
   subgraph g_SHARED["Shared integration gates"]
     direction TB
     n_CCR_CURRENT_RELEASE["CCR-CURRENT-RELEASE<br/>Eliminate historical fallback and split current models from all active final outputs<br/><b>BLOCKED</b>"]
@@ -25,7 +21,7 @@ flowchart LR
   end
   subgraph g_ADE["ADE"]
     direction TB
-    n_ADE_BROWSER_EDITOR["ADE-BROWSER-EDITOR<br/>Demonstrate browser floor-plan editing through the shared headless compiler<br/><b>BLOCKED</b>"]
+    n_ADE_BROWSER_EDITOR["ADE-BROWSER-EDITOR<br/>Demonstrate browser floor-plan editing through the shared headless compiler<br/><b>READY</b>"]
     n_ADE_DETAILS["ADE-DETAILS<br/>Produce source-bound technical bay drawings and details<br/><b>BLOCKED</b>"]
     n_ADE_SCHEDULES["ADE-SCHEDULES<br/>Produce linked bay schedules specifications and quantities<br/><b>BLOCKED</b>"]
     n_ADE_EVIDENCE["ADE-EVIDENCE<br/>Bind bay calculations and external evidence to controlling inputs<br/><b>BLOCKED</b>"]
@@ -109,12 +105,10 @@ flowchart LR
     n_PHY_02["PHY-02<br/>Selective floor-access physical research<br/><b>HELD</b>"]
     n_PHY_04["PHY-04<br/>Wall/ceiling movement-junction build and test<br/><b>READY</b>"]
   end
-  n_CCR_CHANGE_PROOF --> n_CCR_CURRENT_RELEASE
   n_HRS_SYNTHESIS --> n_CCR_CURRENT_RELEASE
   n_ADE_DETAILS --> n_CCR_CURRENT_RELEASE
   n_ADE_SCHEDULES --> n_CCR_CURRENT_RELEASE
   n_ADE_EVIDENCE --> n_CCR_CURRENT_RELEASE
-  n_CCR_CHANGE_PROOF --> n_ADE_BROWSER_EDITOR
   n_TRIAD_GATE --> n_HAD_OWNER_DESIGN_REVIEW
   n_HAD_OWNER_DESIGN_REVIEW --> n_IAS_WORKABLE_DETAILS
   n_HAD_INLET_RESOLUTION --> n_TRIAD_GATE
@@ -169,7 +163,6 @@ flowchart LR
   n_BCR_CONVERGENCE --> n_DEL_CURRENT
 
   linkStyle default stroke:#aab1a9,stroke-width:1.5px;
-  style g_CCR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_SHARED fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_ADE fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_HAD fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
@@ -199,9 +192,8 @@ flowchart LR
   classDef claimGrace fill:#eee5d8,stroke:#957044,color:#634a2d,stroke-width:3px,stroke-dasharray:4 3;
   classDef activeUnclaimed fill:#dce9e8,stroke:#356966,color:#1f4542,stroke-width:3px,stroke-dasharray:4 3;
   classDef invalidClaim fill:#f1e0dc,stroke:#a45f54,color:#693d37,stroke-width:3px;
-  class n_CCR_CHANGE_PROOF ready;
   class n_CCR_CURRENT_RELEASE blocked;
-  class n_ADE_BROWSER_EDITOR blocked;
+  class n_ADE_BROWSER_EDITOR ready;
   class n_HAD_INLET_RESOLUTION ready;
   class n_HAD_OWNER_DESIGN_REVIEW blocked;
   class n_IAS_WORKABLE_DETAILS blocked;
@@ -265,7 +257,7 @@ flowchart LR
     n_CCR_DRAINAGE["CCR-DRAINAGE<br/>Repair drainage declaration validity and source consistency<br/><b>DONE</b>"]
     n_CCR_IDENTITY["CCR-IDENTITY<br/>Adjudicate identity guarantees and integrate correctness repairs<br/><b>DONE</b>"]
     n_CCR_CURRENT_COMPILE["CCR-CURRENT-COMPILE<br/>Implement the explicit current-house compile path without historical fallback<br/><b>DONE</b>"]
-    n_CCR_CHANGE_PROOF["CCR-CHANGE-PROOF<br/>Prove end-to-end change propagation and selective evidence invalidation<br/><b>READY</b>"]
+    n_CCR_CHANGE_PROOF["CCR-CHANGE-PROOF<br/>Prove end-to-end change propagation and selective evidence invalidation<br/><b>DONE</b>"]
   end
   subgraph g_PCO["PCO"]
     direction TB
@@ -324,7 +316,7 @@ flowchart LR
   end
   subgraph g_ADE["ADE"]
     direction TB
-    n_ADE_BROWSER_EDITOR["ADE-BROWSER-EDITOR<br/>Demonstrate browser floor-plan editing through the shared headless compiler<br/><b>BLOCKED</b>"]
+    n_ADE_BROWSER_EDITOR["ADE-BROWSER-EDITOR<br/>Demonstrate browser floor-plan editing through the shared headless compiler<br/><b>READY</b>"]
     n_ADE_DELIVERY_AUDIT["ADE-DELIVERY-AUDIT<br/>Map construction-information needs to existing capabilities<br/><b>DONE</b>"]
     n_ADE_SECTION_VIEW["ADE-SECTION-VIEW<br/>Prove source-owned orthographic cut, context and occlusion semantics<br/><b>DONE</b>"]
     n_ADE_SECTION_PARITY["ADE-SECTION-PARITY<br/>Migrate principal and service sections to source-bound visible geometry and cross-view parity<br/><b>DONE</b>"]
@@ -896,9 +888,9 @@ flowchart LR
   class n_CCR_SERVICES_INTEGRATION done;
   class n_CCR_ASSEMBLY_INTEGRATION done;
   class n_CCR_EDIT_CONTRACT done;
-  class n_CCR_CHANGE_PROOF ready;
+  class n_CCR_CHANGE_PROOF done;
   class n_CCR_CURRENT_RELEASE blocked;
-  class n_ADE_BROWSER_EDITOR blocked;
+  class n_ADE_BROWSER_EDITOR ready;
   class n_PCO_LOCAL_OPENING done;
   class n_PCO_WORKABLE_INTERIORS done;
   class n_PCO_INDEPENDENT_STUDIES done;

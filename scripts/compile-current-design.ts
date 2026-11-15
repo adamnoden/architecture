@@ -10,6 +10,10 @@ type TrialMode = {
   readonly run: (compile: Compile, value: unknown) => Promise<unknown>
 }
 const trialModes: Readonly<Record<string, TrialMode>> = {
+  '--roof-pitch': {
+    schema: 'mat-roof-pitch-request/1', key: 'roof', name: 'roof pitch',
+    run: (compile, value) => compile.roofPitch(value),
+  },
   '--court-intake': {
     schema: 'rwt-court-intake-request/1', key: 'intake', name: 'court intake',
     run: (compile, value) => compile.courtIntake(value),
@@ -49,7 +53,7 @@ const args = process.argv.slice(2)
 const modes = [
   '--occupied-services', '--selected-water-event', '--structural-bridge', '--structural-actions',
   '--bundle', '--study-assembly', '--study-linings', '--renewable-openings',
-  '--read-court-intake', '--read-inlet-route', '--read-east-ground-receiving',
+  '--read-roof-pitch', '--read-court-intake', '--read-inlet-route', '--read-east-ground-receiving',
   '--read-occupied-condensate', '--read-structural-case', '--read-structural-interfaces', ...Object.keys(trialModes),
 ]
 const mode = modes.includes(args[0]) ? args.shift() : undefined
@@ -76,7 +80,8 @@ try {
       process.stdout.write(JSON.stringify(await compileCurrentDesignBundle(input)) + '\n')
     } else {
       const compile = prepareCurrentDesignCompile(input)
-      if (mode === '--read-court-intake') process.stdout.write(JSON.stringify(await compile.readCourtIntakeCase(), null, 2) + '\n')
+      if (mode === '--read-roof-pitch') process.stdout.write(JSON.stringify(await compile.readRoofPitchCase(), null, 2) + '\n')
+      else if (mode === '--read-court-intake') process.stdout.write(JSON.stringify(await compile.readCourtIntakeCase(), null, 2) + '\n')
       else if (mode === '--read-east-ground-receiving') process.stdout.write(JSON.stringify(await compile.readEastGroundReceivingCase(), null, 2) + '\n')
       else if (mode === '--read-inlet-route') process.stdout.write(JSON.stringify(await compile.readInletRouteCases(), null, 2) + '\n')
       else if (mode === '--read-occupied-condensate') process.stdout.write(JSON.stringify(await compile.readOccupiedCondensateCase(), null, 2) + '\n')

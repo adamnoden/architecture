@@ -260,6 +260,34 @@
       ]
     },
     {
+      "id": "mat-roof-pitch-reference",
+      "state": "candidate-interface",
+      "authority": "Nominal fixed-footprint pitch and slate stock comparison. Roof support, covering approval and roof-water applicability require a joined successor.",
+      "decisions": [
+        "project/mat/ring-roof-family.md"
+      ],
+      "authorRoots": [
+        "project/mat/studies/ring-roof-pitch-case.py",
+        "project/mat/studies/ring-roof-family.py",
+        "project/mat/studies/ring_roof_family_figure.py"
+      ],
+      "inputReceipts": [
+        "project/had/studies/water-replan.json",
+        "project/mat/studies/ring-roof-family.json"
+      ],
+      "authoredInputs": [
+        "project/mat/studies/ring-roof-family-sources.json",
+        "project/design-constraints.ts"
+      ],
+      "receipts": [],
+      "consumers": [
+        "compiler/reference-house/current-design/roof-pitch.ts"
+      ],
+      "producerChecks": [
+        "python3 -B project/mat/studies/ring-roof-family.py --check"
+      ]
+    },
+    {
       "id": "had-inlet-indoor-reference",
       "state": "candidate-interface",
       "authority": "Current indoor cabinet reference. Route comparisons grant no installed, pressure, material or wet-state acceptance.",
@@ -492,6 +520,11 @@
     "project/mat/studies/plant-threshold.json": "58c0c78aa8985d4299c8d8b8750e55c98a129de2",
     "project/mat/studies/raised-roof-edge.json": "8406cb6c76245ea63c5935f8a3915a4a55f03942",
     "project/mat/studies/ring-roof-family.json": "28afcd1cd63aa4d17cd8dfeb433dba1885b92478",
+    "project/mat/studies/ring-roof-pitch-case.py": "6062712677b7e483a7744c0af534cecfc7248d29",
+    "project/mat/studies/ring-roof-family.py": "1f126dbd6f7b6c28d9e3db59620f60968675b928",
+    "project/mat/studies/ring_roof_family_figure.py": "6a45cc507d9f17f3fed416e95d95d0c32c1e329f",
+    "project/mat/studies/ring-roof-family-sources.json": "47873ca0a4d383bdef0e16d507935e4e4990a627",
+    "project/mat/ring-roof-family.md": "627e776e0e4d17a9aa08085e6495b0ed9860d4fb",
     "project/mat/studies/service-material-offer.json": "e5686440fa6a3f68387576883b1e0c768e0596bb",
     "project/mat/studies/study-coupled-window.json": "00184ad7c13d39b38a1ac95a82fa462a8d13eea7",
     "project/mat/studies/tempered-kitchen-air.json": "b18044acaec99caf00eab9a542fff78e510857c9",
@@ -610,6 +643,7 @@
     "project/str/studies/current-house-wall-transfers.json": "e0f07982d5c14a464599eb5ac98952dcdcdaf892",
     "project/str/studies/floor-portal-north-cap-layer.json": "dab58749281eb22c46354098a183a6937339cfda",
     "project/str/studies/floor-portal-north-cage.json": "2b58f32dfcb90a44785d9217284f39b3ecbb7241",
-    "project/str/studies/current-house-structural-case.py": "11c58e750573330b47a4b124a6aa9ff28dc8e5f1"
+    "project/str/studies/current-house-structural-case.py": "11c58e750573330b47a4b124a6aa9ff28dc8e5f1",
+    "project/design-constraints.ts": "0c76e5372a2537bbc6f3c6c29f07ab0efa297129"
   }
 }

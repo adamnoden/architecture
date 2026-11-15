@@ -94,6 +94,14 @@ export function prepareCurrentDesignCompile(input: unknown) {
       const { runSelectedWaterEvent } = await import('./selected-water-event.js')
       return runSelectedWaterEvent(resolved)
     },
+    readRoofPitchCase: async () => {
+      const { readRoofPitchCase } = await import('./roof-pitch.js')
+      return readRoofPitchCase(resolved)
+    },
+    roofPitch: async (input: unknown) => {
+      const { runRoofPitchCase } = await import('./roof-pitch.js')
+      return runRoofPitchCase(resolved, input)
+    },
     readCourtIntakeCase: async () => {
       const { readCourtIntakeCase } = await import('./court-intake.js')
       return readCourtIntakeCase(resolved)

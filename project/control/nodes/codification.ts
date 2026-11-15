@@ -53,7 +53,7 @@ export const codificationNodes = defineNodes([
   {
     id: 'CCR-CHANGE-PROOF', owners: ['CCR'],
     title: 'Prove end-to-end change propagation and selective evidence invalidation',
-    dependencies: ['CCR-STRUCTURE-INTEGRATION', 'CCR-SERVICES-INTEGRATION', 'CCR-ASSEMBLY-INTEGRATION', 'CCR-EDIT-CONTRACT'], lifecycle: 'planned',
+    dependencies: ['CCR-STRUCTURE-INTEGRATION', 'CCR-SERVICES-INTEGRATION', 'CCR-ASSEMBLY-INTEGRATION', 'CCR-EDIT-CONTRACT'], lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/ccr/change-propagation-result.md']
   },
