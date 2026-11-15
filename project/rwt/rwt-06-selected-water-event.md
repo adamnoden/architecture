@@ -10,6 +10,14 @@ The current source identity refresh changes only utility working prose and its S
 
 [Calculation](studies/selected-water-event.mjs) · [regressions](studies/selected-water-event.test.mjs) · [complete values/state ledger](studies/selected-water-event.json) · [source-derived plan/section](studies/selected-water-event.svg).
 
+Read the bounded event ledger through the explicit current-design compile. The command verifies the HAD and RWT inputs, then runs the same selected-event calculation. The native `--check` command below also checks the companion drawing.
+
+```sh
+node --import tsx scripts/compile-current-design.ts --read-georgian-source |
+  node --import tsx scripts/compile-current-design.ts --selected-water-event -
+```
+
+
 **Handoff update:** the [graded-transfer proposal](rwt-06-graded-transfer-proposal.md#confirmed-defects-at-the-handoff) has accepted operator/staff, fast-plan curvature and canopy slot/lap defects. It remains unadopted; passing calculation/reproduction checks do not resolve them.
 
 ## Decision

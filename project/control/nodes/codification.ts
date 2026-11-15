@@ -18,7 +18,7 @@ export const codificationNodes = defineNodes([
   {
     id: 'CCR-CURRENT-COMPILE', owners: ['CCR'],
     title: 'Implement the explicit current-house compile path without historical fallback',
-    dependencies: ['CCR-CURRENT-SOURCE'], lifecycle: 'planned',
+    dependencies: ['CCR-CURRENT-SOURCE'], lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/ccr/current-compile-result.md']
   },
@@ -46,7 +46,7 @@ export const codificationNodes = defineNodes([
   {
     id: 'CCR-EDIT-CONTRACT', owners: ['CCR', 'ADE'],
     title: 'Prove serialisable semantic edits reversal and revision-bound compiler responses',
-    dependencies: ['CCR-CURRENT-SOURCE', 'ADE-MODEL'], lifecycle: 'planned',
+    dependencies: ['CCR-CURRENT-SOURCE', 'ADE-MODEL'], lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/ccr/editor-contract-result.md']
   },
