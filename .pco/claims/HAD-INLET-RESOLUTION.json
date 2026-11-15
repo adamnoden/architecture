@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 36,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "1ac5de66-fd34-4615-8971-816252ad8ae3",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg16-current-domain-delivery"
   },
   "claimedAt": "2026-11-15T19:33:46.971Z",
-  "heartbeatAt": "2026-11-15T19:52:20.310Z",
-  "expiresAt": "2026-11-15T20:52:20.310Z",
+  "heartbeatAt": "2026-11-15T20:15:23.314Z",
+  "expiresAt": "2026-11-15T20:15:23.314Z",
   "branch": "work/zerg16-current-domain-closures",
   "predecessor": {
     "leaseId": "750073e3-0b7b-4560-b89c-bcd813a24f24",
@@ -39,5 +39,7 @@
     "evidence": "Corrected 160b492fca659ce0b7139e619f40a2db137937c3; original foundation producer exact copy, regenerated no native evidence, arch and foundation native checks plus versioned load assertions pass locally.",
     "next": "Wait for all corrected exact workflows, run four canonical merge checks and integrate.",
     "blocker": "Pressure end boxes, independent receiving, frost and actual terminal support remain open."
-  }
+  },
+  "releasedAt": "2026-11-15T20:15:23.314Z",
+  "releaseReason": "handoff"
 }
