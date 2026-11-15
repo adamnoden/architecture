@@ -9,8 +9,8 @@
     "label": "zerg16-unified-current-compile"
   },
   "claimedAt": "2026-11-15T18:41:00.626Z",
-  "heartbeatAt": "2026-11-15T18:41:00.626Z",
-  "expiresAt": "2026-11-15T19:41:00.626Z",
+  "heartbeatAt": "2026-11-15T18:46:06.194Z",
+  "expiresAt": "2026-11-15T19:46:06.194Z",
   "branch": "work/zerg16-edit-current-services",
   "predecessor": {
     "leaseId": "be3c2144-e0cb-4943-8764-26e321d32b73",
@@ -31,5 +31,10 @@
       "evidence": "PR #1549 exact 9fa28b2efd8b492f0b009e2f6f8c7df64a9399fb; specialist checkout now includes its pinned evidence commit; targeted architecture/drawing checks reviewed.",
       "next": "Complete exact hosted repository and specialist proof, run both fresh canonical merge checks, then release."
     }
+  },
+  "pr": 1550,
+  "checkpoint": {
+    "evidence": "Exact head 117a8739079fdbdf00b339da5f23268b328a2509; local Reference House, HAD, RWT and targeted tests passed",
+    "next": "Run exact-head CI and both canonical merge checks before integration."
   }
 }
