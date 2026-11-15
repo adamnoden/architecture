@@ -9,8 +9,8 @@
     "label": "zerg15-str"
   },
   "claimedAt": "2026-11-15T13:11:21.649Z",
-  "heartbeatAt": "2026-11-15T13:18:25.360Z",
-  "expiresAt": "2026-11-15T14:03:25.360Z",
+  "heartbeatAt": "2026-11-15T13:23:03.555Z",
+  "expiresAt": "2026-11-15T14:08:03.555Z",
   "branch": "work/zerg15-north-inlet",
   "predecessor": {
     "leaseId": "c30ccff9-55b1-4d1b-a915-7aa2c258f92c",
@@ -33,7 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Local STR commit 81a73ed6, dimensioned north collector transfer, deterministic SVG/JSON",
-    "next": "Integrate with inlet; validate and run fresh merge preflight"
-  }
+    "evidence": "PR 1537 exact b735be47311b64c68ba77d50b02bb138ef29139e (north hold-down section and floor transfer)",
+    "next": "Wait for exact-head CI, run fresh preflight, merge, and release"
+  },
+  "pr": 1537
 }
