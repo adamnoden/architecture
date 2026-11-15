@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "CCR-SERVICES-INTEGRATION",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "5249fa69-83be-4323-b1e6-d3aa28bde13d",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "zerg16-executable-interface-checks"
+  },
+  "claimedAt": "2026-11-15T19:10:05.890Z",
+  "heartbeatAt": "2026-11-15T19:10:05.890Z",
+  "expiresAt": "2026-11-15T20:10:05.890Z",
+  "branch": "work/zerg16-east-south-inlet"
+}
