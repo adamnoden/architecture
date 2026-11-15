@@ -9,8 +9,8 @@
     "label": "zerg13-heel-local-insert"
   },
   "claimedAt": "2026-11-14T23:49:27.269Z",
-  "heartbeatAt": "2026-11-15T00:11:55.090Z",
-  "expiresAt": "2026-11-15T01:41:55.090Z",
+  "heartbeatAt": "2026-11-15T00:13:18.305Z",
+  "expiresAt": "2026-11-15T01:43:18.305Z",
   "branch": "work/zerg13-portal-inlet",
   "predecessor": {
     "leaseId": "d0e13c8b-fa7a-4b53-b4b3-a5e85bbf4354",
@@ -33,7 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "STR exact local 8aaf4ce5 with all focused and full STR tests. Anticipated combined tree c2f440f5 on current 1be7bf9f.",
-    "next": "Verify the combined exact head, hosted CI and fresh dual publication preflight before expected-head merge."
-  }
+    "evidence": "PR #1533 exact c4e9fa79, combined tree c2f440f5 and local STR exact 8aaf4ce5 focused and full STR tests passed.",
+    "next": "Await all exact hosted checks, pass dual publication preflight, merge with expected head and release both leases."
+  },
+  "pr": 1533
 }
