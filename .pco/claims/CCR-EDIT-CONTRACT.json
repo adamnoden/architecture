@@ -9,7 +9,12 @@
     "label": "zerg16-edit-contract"
   },
   "claimedAt": "2026-11-15T18:40:35.128Z",
-  "heartbeatAt": "2026-11-15T18:40:35.128Z",
-  "expiresAt": "2026-11-15T19:40:35.128Z",
-  "branch": "work/zerg16-edit-current-services"
+  "heartbeatAt": "2026-11-15T18:46:22.072Z",
+  "expiresAt": "2026-11-15T19:46:22.072Z",
+  "branch": "work/zerg16-edit-current-services",
+  "pr": 1550,
+  "checkpoint": {
+    "evidence": "Exact head 117a8739079fdbdf00b339da5f23268b328a2509; local Reference House, HAD, RWT and targeted tests passed",
+    "next": "Run exact-head CI and both canonical merge checks before integration."
+  }
 }
