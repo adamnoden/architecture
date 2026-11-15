@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 31,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "43f21113-68a7-4bc0-b457-36e5f06f238c",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg16-str-shoe"
   },
   "claimedAt": "2026-11-15T16:55:16.102Z",
-  "heartbeatAt": "2026-11-15T16:56:17.365Z",
-  "expiresAt": "2026-11-15T17:41:17.365Z",
+  "heartbeatAt": "2026-11-15T17:17:28.619Z",
+  "expiresAt": "2026-11-15T17:17:28.619Z",
   "branch": "work/zerg16-shoe-utility",
   "predecessor": {
     "leaseId": "4c12c737-48cf-433f-add0-f9769eb701e2",
@@ -39,5 +39,7 @@
     "evidence": "PR #1546 exact dc1092ba54eaa49671e8cc500a39ad2bc449f526; north roof pin, sole and band ferrules",
     "next": "Observe exact-head CI and integrate while lease live",
     "blocker": "Develop northern diaphragm corner and slab crossing, qualified cap and actual signed whole house replay"
-  }
+  },
+  "releasedAt": "2026-11-15T17:17:28.619Z",
+  "releaseReason": "handoff"
 }
