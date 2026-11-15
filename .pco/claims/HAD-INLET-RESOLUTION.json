@@ -9,8 +9,8 @@
     "label": "zerg14-inlet-fixed-station"
   },
   "claimedAt": "2026-11-15T09:47:45.306Z",
-  "heartbeatAt": "2026-11-15T09:47:45.306Z",
-  "expiresAt": "2026-11-15T10:32:45.306Z",
+  "heartbeatAt": "2026-11-15T09:52:03.235Z",
+  "expiresAt": "2026-11-15T10:37:03.235Z",
   "branch": "work/zerg14-replay-fixed-station",
   "predecessor": {
     "leaseId": "608ec002-a8ad-468b-a54f-00d2f0863675",
@@ -31,5 +31,10 @@
       "evidence": "PR #1535 exact remote head 47413c55e65e8b63e53bad2d2e0bfb690c90c9cc, focused HAD/MRA results and rendered plan/section",
       "next": "Observe hosted Validate PR for the exact head, run fresh preflight with STR, then merge and release"
     }
+  },
+  "pr": 1536,
+  "checkpoint": {
+    "evidence": "PR #1536 exact 8748f652654641df59060964d298c1b601514d56 with joined stop, sleeve, and plant elevation and 101 HAD checks",
+    "next": "Check exact hosted Validate PR and publication preflight, then merge and release"
   }
 }
