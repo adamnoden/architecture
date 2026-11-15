@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 31,
-  "state": "released",
-  "leaseId": "43f21113-68a7-4bc0-b457-36e5f06f238c",
+  "generation": 32,
+  "state": "claimed",
+  "leaseId": "6cdfcd1e-09a8-4e00-8027-d937c22dfb7b",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg16-str-shoe"
+    "label": "zerg16-str-collar"
   },
-  "claimedAt": "2026-11-15T16:55:16.102Z",
-  "heartbeatAt": "2026-11-15T17:17:28.619Z",
-  "expiresAt": "2026-11-15T17:17:28.619Z",
-  "branch": "work/zerg16-shoe-utility",
+  "claimedAt": "2026-11-15T17:18:20.638Z",
+  "heartbeatAt": "2026-11-15T17:18:20.638Z",
+  "expiresAt": "2026-11-15T18:03:20.638Z",
+  "branch": "work/zerg16-north-collar",
   "predecessor": {
-    "leaseId": "4c12c737-48cf-433f-add0-f9769eb701e2",
-    "generation": 30,
-    "branch": "work/zerg16-cap-cabinet",
-    "pr": 1545,
+    "leaseId": "43f21113-68a7-4bc0-b457-36e5f06f238c",
+    "generation": 31,
+    "branch": "work/zerg16-shoe-utility",
+    "pr": 1546,
     "checkpoint": {
-      "evidence": "PR #1545 exact 22607e34f0d30f8220967674a34f64b4c4fbb2d4; retained north cap layers and four head routes",
-      "next": "Observe exact-head CI then merge while owned",
-      "blocker": "Cap development, roof shoe and signed whole-house model remain open"
+      "evidence": "PR #1546 exact dc1092ba54eaa49671e8cc500a39ad2bc449f526; north roof pin, sole and band ferrules",
+      "next": "Observe exact-head CI and integrate while lease live",
+      "blocker": "Develop northern diaphragm corner and slab crossing, qualified cap and actual signed whole house replay"
     }
   },
   "recoverySource": {
-    "leaseId": "4c12c737-48cf-433f-add0-f9769eb701e2",
-    "generation": 30,
-    "branch": "work/zerg16-cap-cabinet",
-    "pr": 1545,
+    "leaseId": "43f21113-68a7-4bc0-b457-36e5f06f238c",
+    "generation": 31,
+    "branch": "work/zerg16-shoe-utility",
+    "pr": 1546,
     "checkpoint": {
-      "evidence": "PR #1545 exact 22607e34f0d30f8220967674a34f64b4c4fbb2d4; retained north cap layers and four head routes",
-      "next": "Observe exact-head CI then merge while owned",
-      "blocker": "Cap development, roof shoe and signed whole-house model remain open"
+      "evidence": "PR #1546 exact dc1092ba54eaa49671e8cc500a39ad2bc449f526; north roof pin, sole and band ferrules",
+      "next": "Observe exact-head CI and integrate while lease live",
+      "blocker": "Develop northern diaphragm corner and slab crossing, qualified cap and actual signed whole house replay"
     }
-  },
-  "pr": 1546,
-  "checkpoint": {
-    "evidence": "PR #1546 exact dc1092ba54eaa49671e8cc500a39ad2bc449f526; north roof pin, sole and band ferrules",
-    "next": "Observe exact-head CI and integrate while lease live",
-    "blocker": "Develop northern diaphragm corner and slab crossing, qualified cap and actual signed whole house replay"
-  },
-  "releasedAt": "2026-11-15T17:17:28.619Z",
-  "releaseReason": "handoff"
+  }
 }
