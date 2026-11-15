@@ -9,8 +9,8 @@
     "label": "zerg16-current-domain-delivery"
   },
   "claimedAt": "2026-11-15T19:34:52.696Z",
-  "heartbeatAt": "2026-11-15T19:44:51.611Z",
-  "expiresAt": "2026-11-15T20:44:51.611Z",
+  "heartbeatAt": "2026-11-15T19:53:21.157Z",
+  "expiresAt": "2026-11-15T20:53:21.157Z",
   "branch": "work/zerg16-current-domain-closures",
   "predecessor": {
     "leaseId": "dad5bd79-b59b-4631-92fb-dd546ad6b4ce",
@@ -36,8 +36,8 @@
   },
   "pr": 1552,
   "checkpoint": {
-    "evidence": "Exact head 4e872949dbe13f74bc1d8493f2a3cc9d8b7be0fc; three domain closeout contracts, updated HAD hot source, static type/repo/control checks and native domain checks.",
-    "next": "Confirm exact hosted validation, four canonical checks, integration and release.",
-    "blocker": "Await exact combined CI and canonical merge checks."
+    "evidence": "Corrected 160b492fca659ce0b7139e619f40a2db137937c3; original foundation producer exact copy, regenerated no native evidence, arch and foundation native checks plus versioned load assertions pass locally.",
+    "next": "Wait for all corrected exact workflows, run four canonical merge checks and integrate.",
+    "blocker": "Complete only on verified exact integration."
   }
 }
