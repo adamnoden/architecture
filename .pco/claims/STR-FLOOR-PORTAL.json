@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 25,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "c30ccff9-55b1-4d1b-a915-7aa2c258f92c",
   "holder": {
     "kind": "chatgpt",
     "label": "Zerg-Rush-STR"
   },
   "claimedAt": "2026-11-15T09:47:52.357Z",
-  "heartbeatAt": "2026-11-15T10:02:22.766Z",
-  "expiresAt": "2026-11-15T10:47:22.766Z",
+  "heartbeatAt": "2026-11-15T10:19:26.455Z",
+  "expiresAt": "2026-11-15T10:19:26.455Z",
   "branch": "work/zerg14-replay-fixed-station",
   "predecessor": {
     "leaseId": "e6131163-ee09-4935-b852-80b9659cb0f0",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "PR #1536 exact 3f5e7007 tree 29a95e68 includes fixed wall head +60/+100/+120 datum drawing and replay; deterministic receipt and section verified",
     "next": "Verify exact hosted checks, preflight both packet leases, integrate by expected head, release"
-  }
+  },
+  "releasedAt": "2026-11-15T10:19:26.455Z",
+  "releaseReason": "handoff"
 }
