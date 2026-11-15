@@ -27,7 +27,7 @@ test('full health remains unconditional and every package-triggered proof uses t
  assert.match(validate,/run: npm run check/)
  assert.doesNotMatch(validate,/proof-scope.yml/)
  const proofs=readdirSync('.github/workflows').filter(p=>readFileSync('.github/workflows/'+p,'utf8').includes("'package.json'"))
- assert.equal(proofs.length,13)
+ assert.equal(proofs.length,14)
  for(const proof of proofs){const s=readFileSync('.github/workflows/'+proof,'utf8');assert.match(s,/uses: .\/.github\/workflows\/proof-scope.yml/);assert.match(s,/needs.scope.outputs.run != 'false'/)}
 })
 

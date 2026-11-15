@@ -8,6 +8,10 @@ on:
       - 'project/ade/browser-editor-result.md'
       - 'compiler/reference-house/current-design/**'
       - 'compiler/publication-drawing-v2/**'
+      - 'scripts/proof-scope.mjs'
+      - 'scripts/proof-scope.test.mjs'
+      - '.github/workflows/proof-scope.yml'
+      - '.nvmrc'
       - 'package.json'
       - 'package-lock.json'
       - '.github/workflows/ade-browser-editor-proof.yml'
@@ -21,14 +25,18 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  scope:
+    uses: ./.github/workflows/proof-scope.yml
   proof:
+    needs: scope
+    if: needs.scope.outputs.run != 'false'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version-file: .nvmrc
           cache: npm
       - name: Install locked dependencies
         run: npm ci --no-audit --no-fund
