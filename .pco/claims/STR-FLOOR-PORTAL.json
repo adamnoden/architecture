@@ -9,8 +9,8 @@
     "label": "zerg17-north-collector"
   },
   "claimedAt": "2026-11-16T12:07:03.027Z",
-  "heartbeatAt": "2026-11-16T12:43:34.832Z",
-  "expiresAt": "2026-11-16T13:43:34.832Z",
+  "heartbeatAt": "2026-11-16T13:07:52.563Z",
+  "expiresAt": "2026-11-16T14:07:52.563Z",
   "branch": "work/zerg17-south-relief",
   "predecessor": {
     "leaseId": "44522ec3-4c1a-4682-9e4c-6552d43f40cb",
@@ -33,8 +33,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1558 corrected exact b65de6689d8c28957d4f5b128a1029db731577ef. G1 hold, revised under-sill and west-wall replays pass local checks.",
-    "next": "Require all exact hosted checks and fresh canonical preflight. Retain design holds."
+    "evidence": "Merged #1558 bb83ac6ce7f3990fe3daa7cd9ea1c32cb74b61ff; https://github.com/adamnoden/architecture/issues/1103#issuecomment-6917036283",
+    "next": "Design an outboard toe cage with adequate cover, closed links, fixed DPC splice development and a positive gravity seat. Independently close west gravity fit.",
+    "blocker": "Current port-free straight cage still gives 20 mm against 25 cover and 140 against 100 link pitch."
   },
   "pr": 1558
 }
