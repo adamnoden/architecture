@@ -51,7 +51,10 @@ export function drawStudyLiningComparison(model: Linings): DrawingSceneV2 {
   }
 }
 
-export function drawStudyPanellingElevation(model: Linings): DrawingSceneV2 {
+export function drawStudyPanellingElevation(model: {
+  readonly source: Pick<Linings['source'], 'occupiedHouse'>
+  readonly wall: Pick<Linings['wall'], 'southField'>
+}): DrawingSceneV2 {
   const field = model.wall.southField
   const scaleDenominator = 25
   const projection = createSectionPaperProjection({

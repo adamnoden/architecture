@@ -40,6 +40,8 @@ The [protected lower daylight spill](inlet-protected-daylight.md) updates the se
 
 The [south utility entry](south-utility-inlet.md) is the preferred architectural alternative for the next joined detail. Move the incoming split to the Boundary Service Lodge and bring two independently isolated, straight through-wall feeds to the utility and plant. The south-wall reservations avoid the stability wing and the D2, dock and roof renewal lanes. Retain the fixed indoor reference while the south end boxes, failure discharge, frost and structural support are qualified.
 
+The [four-bore successor comparison](south-inlet-relief.md) opens a separate lower emergency relief for each south branch. Its Ø150 upper sleeve can return a bounded rupture to the indoor wet box with the normal exterior mouth blocked. Prefer this arrangement for the next joined detail. The pressure enclosure, formed masonry, thermal continuity and independent receivers are still due.
+
 ## Evidence boundary and graph disposition
 
 - **Pre-site design before this packet can close:** HAD/MAT/IAS draw the same continuous pressure path, fixed cabinet, both ways to remove each confined part, bounded first wetting and gravity/blocked states, plant load transfer and utility renewals. STR coordinates the actual formed aperture, slab/pier, supports and movement reservations at concept level. Publish a reconciled current-house source and MAT/IAS/MRA receipts or an explicit evidenced house-scope alternative if this redesign fails. A site survey cannot cure the shown conflicts.

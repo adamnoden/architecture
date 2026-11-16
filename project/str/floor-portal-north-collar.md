@@ -28,6 +28,8 @@ Use **μ = 0.6** as a declared separate sensitivity and give the interface concr
 
 A narrower 80 mm roomward addition leaves the proposed plane 15 mm inside the turn and incurs **14.48 kN** additional vertical action at the same interface witness. The unchanged 140 mm body incurs about **111.7 kN**. Reject both at the straight-interface assumptions. A depth reduced to 195 mm on the same soffit brings the upper bar below the 25 mm cover target. The selected outer collar plane lies 25 mm before the bend, allowing straight crossing even with setting. The bend's internal reactions still enter the monolithic collar and old L and need confinement and a positive load path. Keep the actual H16 meshing transition, bar test fit, load redistribution and completed signed 52-head and service-interface replay open.
 
+The [straight lower receiver comparison](floor-portal-straight-receiver.md) rejects a conventional straight cage in the existing 200 mm slab. It locates the separate thicker deck requirement and the retained northwest WC port as the governing architectural reopen conditions.
+
 ```sh
 python3 -B project/str/studies/floor-portal-north-collar.py . | diff - project/str/studies/floor-portal-north-collar.json
 python3 -B project/str/studies/floor-portal-north-collar.py . --svg | diff - project/str/studies/floor-portal-north-collar.svg

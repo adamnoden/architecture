@@ -5,6 +5,13 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 const read = name => JSON.parse(readFileSync(new URL(name, import.meta.url), 'utf8'));
 const j = read('current-house-joined-foundation.json');
+test('A straight north receiver needs new depth and a positive bypass around the retained port', () => {
+  const source = fileURLToPath(new URL('./floor-portal-straight-receiver.py', import.meta.url));
+  execFileSync('python3', ['-B', source, '.', '--check']);
+  const result = read('floor-portal-straight-receiver.json');
+  assert.equal(result.stacks.trialH28TouchingSharedSetting.minimumDepthMm, 220);
+  assert.equal(result.stacks.trialH32TouchingIndependentSetting.minimumDepthMm, 234);
+});
 test('The direct roof seat receipt reproduces its load and access comparisons', () => {
   const source = fileURLToPath(new URL('./floor-portal-direct-seat.py', import.meta.url));
   execFileSync('python3', ['-B', source, '--check']);

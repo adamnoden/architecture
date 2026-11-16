@@ -148,6 +148,13 @@ export function prepareCurrentDesignCompile(input: unknown) {
       const linings = compileResolvedStudyLinings(resolved, options)
       return { source, linings, detail: drawStudyLiningComparison(linings), elevation: drawStudyPanellingElevation(linings) }
     },
+    studyRoomKit: async (input: unknown) => {
+      const [{ compileStudyRoomKit, drawStudyRoomKitPlan }, { drawStudyPanellingElevation }] = await Promise.all([
+        import('./assemblies/study-room-kit.js'), import('./assemblies/study-linings-views.js'),
+      ])
+      const kit = compileStudyRoomKit(resolved, input)
+      return { source, kit, plan: drawStudyRoomKitPlan(kit), wallElevation: drawStudyPanellingElevation(kit) }
+    },
     studyAssembly: async (options: unknown = {}) => {
       const [{ compileResolvedStudyAssembly }, { drawStudyFloorPlan, drawStudyFloorSection }] = await Promise.all([
         import('./assemblies/study-floor.js'), import('./assemblies/study-floor-views.js'),

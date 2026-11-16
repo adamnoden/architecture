@@ -1,0 +1,221 @@
+{
+  "NEwitness": {
+    "largestUniformNormalForceKN": 23.236695145806635,
+    "largestUniformTributaryMm": 126.0,
+    "localVmm": [
+      82,
+      167,
+      231,
+      337,
+      443,
+      589,
+      694,
+      830
+    ],
+    "placingToPrimaryAfter10Mm": 22,
+    "placingToSecondaryComparisonAfter10Mm": 25,
+    "remainingNormalResistanceKN": 0.5137453153322014,
+    "sourcePrimaryBarVmm": [
+      -27,
+      27,
+      780,
+      880
+    ]
+  },
+  "NWwitness": {
+    "provisionalH28Chord": {
+      "axesLocalMm": [
+        127.5,
+        193.5,
+        259.5
+      ],
+      "centrelineRadiiMm": [
+        602.5,
+        536.5,
+        470.5
+      ],
+      "nearestPortCentreToBarCentreMm": 13.613624626767432,
+      "portToBarClearAfter5Mm": -85.38637537323257,
+      "requiredCoverToFormedPortMm": 25,
+      "turnCentreLocalUVmm": [
+        730,
+        730
+      ]
+    },
+    "setting10": {
+      "barCentreExcludedVmm": [
+        367.0,
+        613.0
+      ],
+      "leastUniformTributaryMm": 146.5,
+      "normalForcePerBarKN": 27.01726856238629,
+      "receivingUMmIfStemEndRetained": 220.9483238419668,
+      "requiredBondMm": 255.9483238419668,
+      "shortageMm": 30.94832384196681
+    },
+    "setting5": {
+      "barCentreExcludedVmm": [
+        372.0,
+        608.0
+      ],
+      "leastUniformTributaryMm": 139.0,
+      "normalForcePerBarKN": 25.634131946564462,
+      "receivingUMmIfStemEndRetained": 207.8451673312859,
+      "requiredBondMm": 242.8451673312859,
+      "shortageMm": 17.845167331285893
+    }
+  },
+  "bond": {
+    "eachDevelopedNormalKN": 23.750440461138837,
+    "eightEqualShareRequiredProjectedEmbedmentMm": 187.81190998642614,
+    "eightShearResistanceKN": 114.00211421346641,
+    "fourRequiredProjectedEmbedmentMm": 375.6238199728523,
+    "fourShearResistanceKN": 57.00105710673321,
+    "minimumRoomwardAffectedUMmAtEqualEight": 377.81190998642614
+  },
+  "existingGeometry": {
+    "FFLAndFinishBottomZMm": [
+      3450,
+      3435
+    ],
+    "NWrearWCportLocalUVdiameterMm": [
+      235.0,
+      490.0,
+      160
+    ],
+    "effectiveReceivingDepthMm": 225.0,
+    "receivingUMm": 190.0,
+    "slabZMm": [
+      3170,
+      3370
+    ],
+    "straightEndUMm": -35.0
+  },
+  "independentGravityComparator": [
+    {
+      "field": "NW-W",
+      "oldSectionMRKNmPerM": 48.30675136962778,
+      "oldSimpleShearKNPerM": 16.865624999999998,
+      "oldSimplySupportedMKNmPerM": 10.836164062499998,
+      "pressureOnTrial100mmDirectSeatMPa": 0.16865624999999998,
+      "wingReactionKN": 14.504437499999998
+    },
+    {
+      "field": "NE",
+      "oldSectionMRKNmPerM": 48.30675136962778,
+      "oldSimpleShearKNPerM": 22.16484375,
+      "oldSimplySupportedMKNmPerM": 18.71543994140625,
+      "pressureOnTrial100mmDirectSeatMPa": 0.2216484375,
+      "wingReactionKN": 19.061765625
+    }
+  ],
+  "materialAndLoadBasis": {
+    "assumedConcrete": "C30/37",
+    "assumedSteel": "S500",
+    "concreteShearCreditKN": 0,
+    "frictionSensitivity": 0.6,
+    "historicalDiaphragmKN": 95.15979916854145,
+    "limits": "Earlier isolated actions only. Other grades, lubricated or opening joints, cast/placement tolerances, full yield and the coupled 52-head replay are outside this screen.",
+    "poorBondMPa": 2.1
+  },
+  "sourceHashes": {
+    "project/mat/studies/loggia-soffit.json": "b02717a9ad5431259f9f0f1850ab7f596cf612bc13f04fbd9bdfc7b5f893fc29",
+    "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+    "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+    "project/str/studies/floor-portal-north-collar.json": "e996f409d47a6d81aa7624d683e86d92e7e5bc5ac5c828dcc7df39552e929c87",
+    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5"
+  },
+  "stacks": {
+    "retainedH20SeparatedIndependentSetting": {
+      "H16InterlayerClearAfterSettingMm": 72.0,
+      "axesZMm": [
+        3206,
+        3218,
+        3263,
+        3312.0,
+        3361.0,
+        3406.0,
+        3418.0
+      ],
+      "chordDiameterMm": 20,
+      "intentionalChordContacts": false,
+      "minimumDepthMm": 284.0,
+      "reserveBelowFinishMm": -19.0,
+      "settingMm": 10,
+      "topZMm": 3454.0
+    },
+    "retainedH20SeparatedSharedSetting": {
+      "H16InterlayerClearAfterSettingMm": 67.0,
+      "axesZMm": [
+        3206,
+        3218,
+        3258,
+        3302.0,
+        3346.0,
+        3386.0,
+        3398.0
+      ],
+      "chordDiameterMm": 20,
+      "intentionalChordContacts": false,
+      "minimumDepthMm": 264.0,
+      "reserveBelowFinishMm": 1.0,
+      "settingMm": 5,
+      "topZMm": 3434.0
+    },
+    "retainedH20TouchingRejected": {
+      "H16InterlayerClearAfterSettingMm": 15.0,
+      "axesZMm": [
+        3206,
+        3218,
+        3258,
+        3276.0,
+        3294.0,
+        3334.0,
+        3346.0
+      ],
+      "chordDiameterMm": 20,
+      "intentionalChordContacts": true,
+      "minimumDepthMm": 212.0,
+      "reserveBelowFinishMm": 53.0,
+      "settingMm": 5,
+      "topZMm": 3382.0
+    },
+    "trialH28TouchingSharedSetting": {
+      "H16InterlayerClearAfterSettingMm": 23.0,
+      "axesZMm": [
+        3206,
+        3218,
+        3258,
+        3280.0,
+        3302.0,
+        3342.0,
+        3354.0
+      ],
+      "chordDiameterMm": 28,
+      "intentionalChordContacts": true,
+      "minimumDepthMm": 220.0,
+      "reserveBelowFinishMm": 45.0,
+      "settingMm": 5,
+      "topZMm": 3390.0
+    },
+    "trialH32TouchingIndependentSetting": {
+      "H16InterlayerClearAfterSettingMm": 22.0,
+      "axesZMm": [
+        3206,
+        3218,
+        3263,
+        3287.0,
+        3311.0,
+        3356.0,
+        3368.0
+      ],
+      "chordDiameterMm": 32,
+      "intentionalChordContacts": true,
+      "minimumDepthMm": 234.0,
+      "reserveBelowFinishMm": 31.0,
+      "settingMm": 10,
+      "topZMm": 3404.0
+    }
+  },
+  "status": "Reject the straight connection in the current 200 mm body. Retain a thicker and longer receiver only for architectural redesign."
+}

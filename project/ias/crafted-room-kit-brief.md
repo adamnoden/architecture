@@ -58,6 +58,8 @@ The concept packet must demonstrate at least **a module-size edit and an opening
 
 ## 7. Delivery, approval and completion
 
+The [first occupied Study comparison](crafted-room-kit-study.md) records the furnished views, scaled release junctions and executable set-out.
+
 `PCO-CRAFT-ROOM-KIT` records only this owner-direction/graph registration. Its evidence is this brief, the charter/plan links, typed dependency and regression tests. It is not a design result or an owner approval.
 
 `IAS-CRAFT-ROOM-KIT` is one bounded IAS/HAD successor to the completed earlier concept, using the existing assembly integration. It begins independently of the unresolved structural/inlet/TRIAD work. Deliver:

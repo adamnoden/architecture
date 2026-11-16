@@ -103,10 +103,16 @@ function outsideReserve(face: FaceBox, reserved: FaceBox): readonly FaceBox[] {
 
 function southPanelField(floor: FloorReceipt, pitchMm: number) {
   const [x0, , x1] = floor.study.bands[0]
-  const rows = studyWallPanel.rowDatumsMm
   const windows = floor.study.windows.filter(item => item.wall === 'outer-south').map(window => ({
     id: window.id, box: [window.centre - window.width / 2, window.sill, window.centre + window.width / 2, window.head] as FaceBox,
   }))
+  return layStudySouthPanelStock(x0, x1, pitchMm, windows)
+}
+
+export function layStudySouthPanelStock(
+  x0: number, x1: number, pitchMm: number, windows: readonly { readonly id: string; readonly box: FaceBox }[],
+) {
+  const rows = studyWallPanel.rowDatumsMm
   const columns = Math.ceil((x1 - x0) / pitchMm)
   const pieces = Array.from({ length: columns }, (_, column) => {
     const x = x0 + column * pitchMm
