@@ -51,3 +51,7 @@ test('Independent lower relief keeps a vented reverse path with the normal outle
   assert.equal(reverse.jacketEnvelopeTrials.at(-1).ventedCrownRetained, false);
   assert.ok(result.branches.every(branch => branch.outlet.freeDropReserveAfterSettingsMM > 10));
 });
+
+test('The under-sill successor reproduces its occupied bypass and taper limits', () => {
+  execFileSync(process.execPath, [fileURLToPath(read('south-inlet-under-sill.mjs')), '--check']);
+});

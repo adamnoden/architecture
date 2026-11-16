@@ -1,0 +1,170 @@
+{
+  "archControls": [
+    {
+      "arcProjectionInActualSector": true,
+      "arch": "west-window-3",
+      "archOuterRadiusMm": 781.6666666666666,
+      "clearToOuterRingAfter10Mm": -44.97645257831516,
+      "clearToOuterRingBareMM": -34.97645257831516,
+      "showerWallAxisZMm": 2723.125,
+      "wallYMm": 9500
+    },
+    {
+      "arcProjectionInActualSector": true,
+      "arch": "west-window-3",
+      "archOuterRadiusMm": 781.6666666666666,
+      "clearToOuterRingAfter10Mm": 41.18971731592762,
+      "clearToOuterRingBareMM": 51.18971731592762,
+      "showerWallAxisZMm": 2723.0,
+      "wallYMm": 9400
+    }
+  ],
+  "chase": {
+    "comparison": "DN100 Ensign Agilium AP000 3 m / 110 OD above-ground body; use no coupling inside the 150-wide straight run. EC002 actual 170\u00d7137 coupling needs constituent, rotation and end-cover access. Exterior material, fire and installation unadmitted.",
+    "existingUpperLowBoxMM": [
+      429.5,
+      9937.5,
+      150,
+      862.5
+    ],
+    "extensionSouthMM": 537.5,
+    "straightBodyGrossWidthReserveMm": 40,
+    "straightTubeNominalODMm": 110
+  },
+  "geometry": {
+    "continuousPierSouthYMm": 10737.5,
+    "existingGroundWallExitUsedAsNew": false,
+    "nearestRawWestOpeningToSleeveEdgeMm": 220.0,
+    "oldAboveGroundWestExitAxisZMm": 185.8125,
+    "oldWallExitYMm": 11177.5,
+    "outerStackXyMm": [
+      -300,
+      9400
+    ],
+    "rejectDirectUpperCopyOfExistingExit": "At retained Y the upper sleeve cuts through the continuous west RC L.",
+    "sleeveDiameterMm": 160,
+    "sleeveToContinuousPierAfter10Mm": 1247.5,
+    "westWallExitYMm": 9400
+  },
+  "retainedWC": {
+    "currentPortDisposition": "Delete from new design only after adoption and a recast coordinated cage. A real formed opening must be assessed; no infill strength credit.",
+    "currentlyFormedPortXYAndDiameterMm": [
+      567.5,
+      11177.5,
+      160
+    ],
+    "panBoxMM": [
+      729.5,
+      11000,
+      560,
+      355
+    ],
+    "spigotXYAndLocalZMm": [
+      864.5,
+      11177.5,
+      185
+    ]
+  },
+  "routing": {
+    "existingShowerTrapAndFirstBranchMM": [
+      [
+        2122.5,
+        9452.5,
+        2777.375
+      ],
+      [
+        1750,
+        9452.5,
+        2768.0625
+      ]
+    ],
+    "gradient": "1:40",
+    "independentLowerShower": {
+      "endAxisZMm": 2723.0,
+      "fallMM": 45.0625,
+      "planMM": [
+        [
+          1750,
+          9452.5
+        ],
+        [
+          1750,
+          9400
+        ],
+        [
+          0,
+          9400
+        ]
+      ],
+      "squarePlanLengthMM": 1802.5
+    },
+    "lowerAxisAtExteriorStackZMm": 2715.5,
+    "newShowerAxisAboveOldStackJunctionMm": 27.625,
+    "upperAxisAtExteriorStackZMm": 3560.575,
+    "upperWC": {
+      "endAxisZMm": 3568.075,
+      "fallMM": 66.925,
+      "planMM": [
+        [
+          899.5,
+          11177.5
+        ],
+        [
+          510,
+          11177.5
+        ],
+        [
+          510,
+          9400
+        ],
+        [
+          0,
+          9400
+        ]
+      ],
+      "squarePlanLengthMM": 2677.0
+    },
+    "upperWallSleeveUndersideAboveFFLMm": 38.07499999999982,
+    "wallSleeveScope": "Form two separate permanent sleeves between openings; restore inner air/wet and outer drained boundaries. No drilling the current L or reliance on a cavity pipe."
+  },
+  "sourceHashes": {
+    "project/had/studies/open-north-loggia.json": "542781c6bb1d277b20492e8433cea498e98eaea5db2e737a5ec7e9655f9d18fd",
+    "project/ias/studies/fitted-wc-schedule.json": "f9bcd96c5e631c5acaf44610ca9171f8de35168880e8ad56e191b10fe38f9957",
+    "project/mat/studies/loggia-soffit.json": "b02717a9ad5431259f9f0f1850ab7f596cf612bc13f04fbd9bdfc7b5f893fc29",
+    "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+    "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574"
+  },
+  "status": "Geometric challenger. Retain fixture and shower trap. No route, wall support, finished assembly, product material or site adoption.",
+  "terminal": {
+    "control": "AD H 900 mm above any opening within 3 m. Recheck actual operable openings, outlets, eave, gutter, roof vent support and maintenance. Keep WC/shower branch junctions independently accessible, site outfall invert, backwater and cleanout unproved.",
+    "minVentZFromKnownOpeningHeadsMm": 7200,
+    "nearExternalOpenings": [
+      {
+        "floor": "GROUND",
+        "headZMm": 2850,
+        "opening": "west-window-2",
+        "planDistanceMm": 1529.7058540778355
+      },
+      {
+        "floor": "GROUND",
+        "headZMm": 2850,
+        "opening": "west-window-3",
+        "planDistanceMm": 424.26406871192853
+      },
+      {
+        "floor": "FIRST",
+        "headZMm": 6300,
+        "opening": "west-window-2",
+        "planDistanceMm": 1529.7058540778355
+      },
+      {
+        "floor": "FIRST",
+        "headZMm": 6300,
+        "opening": "west-window-3",
+        "planDistanceMm": 424.26406871192853
+      }
+    ],
+    "nominalRoofEaveDatumMm": 7100,
+    "straightPipeClearToNominalOuterOverhangAfter10Mm": 35.0
+  }
+}
