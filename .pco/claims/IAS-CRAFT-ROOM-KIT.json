@@ -2,20 +2,22 @@
   "schemaVersion": 1,
   "node": "IAS-CRAFT-ROOM-KIT",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "33638226-351f-475a-9998-6344ef7a8b9c",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg17-crafted-study"
   },
   "claimedAt": "2026-11-16T12:27:30.535Z",
-  "heartbeatAt": "2026-11-16T13:09:19.312Z",
-  "expiresAt": "2026-11-16T14:09:19.312Z",
+  "heartbeatAt": "2026-11-16T13:09:40.854Z",
+  "expiresAt": "2026-11-16T13:09:40.854Z",
   "branch": "work/zerg17-south-relief",
   "pr": 1558,
   "checkpoint": {
     "evidence": "Merged #1558 bb83ac6ce7f3990fe3daa7cd9ea1c32cb74b61ff; https://github.com/adamnoden/architecture/issues/1555#issuecomment-6917036778",
     "next": "Develop the fixed emitter plinth, exact 20 mm supported board and release geometry, protective backing and wet edge before choosing the room-kit assembly.",
     "blocker": "The compiled layouts and concept views do not establish whole-room loaded renewal or continuous backing."
-  }
+  },
+  "releasedAt": "2026-11-16T13:09:40.854Z",
+  "releaseReason": "handoff"
 }
