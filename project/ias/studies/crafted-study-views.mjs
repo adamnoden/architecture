@@ -1,4 +1,5 @@
 import { readFileSync, writeFileSync } from 'node:fs';
+import { drawStudyRoomKitPlan } from '../../../compiler/reference-house/current-design/assemblies/study-room-kit.js';
 import { prepareCurrentDesignCompile } from '../../../compiler/reference-house/current-design/compile.js';
 import { readGeorgianDesignSnapshot } from '../../../compiler/reference-house/current-design/georgian-source.js';
 import { renderDrawingSceneV2Svg } from '../../../compiler/publication-drawing-v2/svg.js';
@@ -108,7 +109,9 @@ function view(mode) {
     shape([p(cx1+185,cy1+110,454),p(cx2-185,cy1+110,454),p(cx2-185,cy2-155,454),p(cx1+185,cy2-155,454)], '#737b5a','#544b37',2),
     shape([p(cx1+185,cy2-155,500),p(cx2-185,cy2-155,500),p(cx2-185,cy2-155,887),p(cx1+185,cy2-155,887)], '#6e7654','#444734',1.4),
   ].join('');
-  return solidFloor+trayFloor+wall+furniture;
+  const plinth = (ceramic ? stone : oak).kit.floor.emitterPlinth;
+  const fixedBorder = !solid && plinth.state !== 'withheld' ? floor(plinth.face, ceramic ? '#a8a49a' : '#8a6647') : '';
+  return solidFloor+trayFloor+fixedBorder+wall+furniture;
 }
 
 const svg = (width, height, title, description, content) => `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title desc"><title id="title">${title}</title><desc id="desc">${description}</desc><style>.heading{font:34px Georgia;fill:#352b23}.name{font:22px Georgia;fill:#352b23}.note{font:15px Arial;fill:#514b3f}</style><rect width="${width}" height="${height}" fill="#f1ecdf"/>${content}</svg>\n`;
@@ -198,11 +201,67 @@ const junctions = `<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height=
 </svg>
 `;
 
+const floorDetail = oak.kit.floor.handling;
+if (floorDetail.state === 'withheld') throw new Error('Missing emitter-edge floor detail');
+const key = floorDetail.keyedFace;
+const floorKeys = `<svg xmlns="http://www.w3.org/2000/svg" width="297mm" height="210mm" viewBox="0 0 297 210" role="img" aria-labelledby="title desc">
+<title id="title">Study room-kit floor pickup at 1:1</title>
+<desc id="desc">Two flush lifting ferrules within the current 20 mm wearing finish, a fixed emitter border and recessed top caps.</desc>
+<style>
+.title{font:8px Georgia;fill:#302a24}.head{font:5.3px Georgia;fill:#302a24}.note{font:3.8px Arial;fill:#40382e}.dim{font:3.8px Arial;fill:#40382e}.rule{stroke:#6e6253;stroke-width:.35;fill:none}.wood{fill:#b08962;stroke:#5d4935;stroke-width:.35}.stone{fill:#ded9cc;stroke:#756d5b;stroke-width:.35}.steel{fill:#6f8286;stroke:#38464a;stroke-width:.36}.brass{fill:#b79a60;stroke:#695733;stroke-width:.36}.bed{fill:#998e7c;stroke:#686455;stroke-width:.35}
+</style>
+<rect width="297" height="210" fill="#f8f4eb"/>
+<text x="13" y="17" class="title">The Study · floor grip and fixed border</text>
+<text x="13" y="26" class="note">Candidate geometry. Print at actual A4 size. Dimensions in millimetres.</text>
+<path class="rule" d="M13 32H284 M13 104H284 M13 171H284"/>
+<text x="13" y="43" class="head">Flush oak ferrule · 1:1</text>
+<text x="152" y="43" class="head">Tile tray ferrule · 1:1</text>
+<rect x="18" y="58" width="90" height="18" class="wood"/>
+<rect x="18" y="76" width="90" height="2" class="bed"/>
+<rect x="18" y="78" width="90" height="6" class="stone"/>
+<rect x="58" y="58" width="20" height="3" class="steel"/>
+<rect x="62" y="61" width="12" height="13" class="steel"/>
+<rect x="56" y="74" width="24" height="2" class="steel"/>
+<rect x="65" y="58.5" width="6" height="14.5" fill="#f8f4eb" stroke="#38464a" stroke-width=".35"/>
+<rect x="65" y="58" width="6" height="2" class="brass"/>
+<rect x="158" y="58" width="90" height="12" class="stone"/>
+<rect x="158" y="70" width="90" height="3" class="steel"/>
+<rect x="158" y="73" width="90" height="3" fill="none" stroke="#6e6253" stroke-width=".35" stroke-dasharray="1 1"/>
+<rect x="158" y="76" width="90" height="2" class="bed"/>
+<rect x="158" y="78" width="90" height="6" class="stone"/>
+<rect x="194" y="58" width="24" height="12" class="steel"/>
+<rect x="200" y="70" width="12" height="3" class="steel"/>
+<rect x="203" y="58.5" width="6" height="13.5" fill="#f8f4eb" stroke="#38464a" stroke-width=".35"/>
+<rect x="203" y="58" width="6" height="2" class="brass"/>
+<path class="rule" d="M108 58H118 M108 78H118 M116 58V78 M248 58H258 M248 78H258 M256 58V78"/>
+<text x="119" y="69" class="dim">20</text><text x="260" y="69" class="dim">20</text>
+<text x="18" y="92" class="note">18 oak + 2 bedding. Recess Ø24 flange flush.</text>
+<text x="158" y="92" class="note">12 stone + 3 steel + 3 open + 2 bedding.</text>
+<text x="18" y="98" class="note">Ø20 shoulder on metal. Cap threads into bore.</text>
+<text x="158" y="98" class="note">Join ferrule to tray. Cap threads into bore.</text>
+<text x="13" y="118" class="head">Fixed plinth and moving finish · 1:1</text>
+<rect x="18" y="130" width="62" height="18" class="wood"/>
+<rect x="18" y="148" width="62" height="2" class="bed"/>
+<rect x="83" y="130" width="64" height="18" class="stone"/>
+<rect x="83" y="148" width="64" height="2" class="bed"/>
+<rect x="18" y="150" width="129" height="9" class="stone"/>
+<path class="rule" d="M80 129V125H93 M81.5 130V147 M147 139H155 M147 154H155"/>
+<text x="96" y="126" class="dim">3 dry seam</text>
+<text x="158" y="140" class="note">Fixed plinth bears on the deck.</text>
+<text x="158" y="147" class="note">Emitter stays on its independent wall carrier.</text>
+<text x="158" y="155" class="note">Keep the permanent deck continuous.</text>
+<text x="13" y="183" class="note">Key centres ${key.centresMm} apart · minimum effective M6 engagement ${key.femaleEngagementTrialMm} · one-key trial demand ${key.keyProofDemandN} N.</text>
+<text x="13" y="192" class="note">Measure assembled engagement, bonded or captive seat, loaded pull-out, wear and rocking on the actual finishes.</text>
+</svg>
+`;
+
 const drawings = [
   ['crafted-study-comparison.svg', comparison],
   ['crafted-study-tile.svg', tile],
   ['crafted-study-junctions.svg', junctions],
+  ['crafted-study-floor-keys.svg', floorKeys],
   ['crafted-study-plan.svg', renderDrawingSceneV2Svg(oak.plan)],
+  ['crafted-study-emitter-edge.svg', renderDrawingSceneV2Svg(drawStudyRoomKitPlan(oak.kit, true))],
   ['crafted-study-south-stock.svg', renderDrawingSceneV2Svg(oak.wallElevation)],
   ['crafted-study-kit-schedule.json', JSON.stringify({
     oak: oak.kit,
@@ -210,6 +269,7 @@ const drawings = [
       source: stone.kit.source,
       request: stone.kit.request,
       caseDigest: stone.kit.caseDigest,
+      handling: stone.kit.floor.handling,
       floorDepth: [stone.kit.floor.wearingFaceMm, stone.kit.floor.beddingMm, stone.kit.floor.depthUnassignedWithinFinishMm],
       wearFaceKgById: Object.fromEntries(stone.kit.floor.parts.map(part => [part.id, part.wearFaceKg])),
     },

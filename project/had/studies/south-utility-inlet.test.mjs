@@ -55,3 +55,14 @@ test('Independent lower relief keeps a vented reverse path with the normal outle
 test('The under-sill successor reproduces its occupied bypass and taper limits', () => {
   execFileSync(process.execPath, [fileURLToPath(read('south-inlet-under-sill.mjs')), '--check']);
 });
+
+test('Separate under-sill wet boxes retain both fault paths during one branch withdrawal', () => {
+  execFileSync(process.execPath, [fileURLToPath(read('south-inlet-wet-box.mjs')), '--check']);
+  const result = JSON.parse(readFileSync(read('south-inlet-wet-box.json'), 'utf8'));
+  assert.equal(result.formedOpenings, 6);
+  assert.equal(result.branches[0].access.originalFixedFrontRailAfterSettingMM, -20);
+  assert.ok(result.branches.every(({case: box, access, vent}) => box.lowerReliefCrownVentDrownedMM > 39
+    && access.openedFrontWithoutTaperOrWithdrawingAttachmentAfterSettingMM > 40
+    && vent.rawSillAfterSettingMM >= 25 && !access.qualifiedReleaseAndFirstRest));
+  assert.equal(result.adjoiningConstructionAndInstalledFaultEvidenceQualified, false);
+});
