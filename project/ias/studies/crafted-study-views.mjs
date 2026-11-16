@@ -82,10 +82,18 @@ function view(mode) {
       const bars = [...verticalBars, ...[1350, 1950].map(z => line(f(a, z), f(b, z), '#637470', 1.4))].join('');
       return jambs+bars+line(f(a-28,sill-14),f(b+28,sill-14),'#6c563d',2.4);
     }).join('');
+    const [grilleLeft, grilleBottom, grilleRight, grilleTop] = oak.kit.grilleKeepOut.box;
+    const grille = axis === 'south'
+      ? piece(grilleLeft,grilleRight,grilleBottom,grilleTop,'#655d4c','#a08049')
+        + Array.from({ length: 7 }, (_, i) => {
+          const z = grilleBottom + 31 + i * (grilleTop - grilleBottom - 62) / 6;
+          return line(f(grilleLeft + 24,z),f(grilleRight - 24,z),'#b7a484',1.05);
+        }).join('')
+      : '';
     return piece(start,end,0,ceiling,solid?cream:panel,'#594a3a')+(solid?piece(start,end,150,910,panel,'#75563e'):'')
       +panelFrames+piece(start,end,0,145,'#775737','#553b29')
       +piece(start,end,895,922,'#997044','#6e5235')+piece(start,end,2970,3100,cream,'#947650')
-      +line(f(start,2992),f(end,2992),'#997853',2)+line(f(start,3039),f(end,3039),'#c0aa86',1)+arches;
+      +line(f(start,2992),f(end,2992),'#997853',2)+line(f(start,3039),f(end,3039),'#c0aa86',1)+arches+grille;
   }).join('');
   const [dx1,dy1,dx2,dy2] = study.occupied.find(([id])=>id==='study-desk')[1];
   const [cx1,cy1,cx2,cy2] = study.occupied.find(([id])=>id==='study-chair')[1];

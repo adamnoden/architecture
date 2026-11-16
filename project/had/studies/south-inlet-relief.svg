@@ -8,6 +8,8 @@
 <text class="sub" x="44" y="138">At the outside wall face · X/Z</text>
 <text class="sub" x="525" y="138">Section through both outlet axes · Y/Z</text>
 <rect x="88" y="177" width="202.5" height="372" fill="#e5ded1"/>
+<rect x="88" y="177" width="123" height="372" fill="#bf7967" opacity=".48"/>
+<text x="85" y="168">Provisional jamb</text>
 <line x1="290.5" y1="177" x2="290.5" y2="550" stroke="#263e3c" stroke-width="3"/>
 <ellipse cx="160" cy="325" rx="48" ry="40" fill="#436b88" stroke="#243334" stroke-width="2"/><ellipse cx="148" cy="455" rx="33" ry="27.5" fill="#13867a" stroke="#243334" stroke-width="2"/>
 <path d="M208 325 H306" stroke="#436b88"/>
@@ -30,5 +32,5 @@
 <path d="M1065.965 318.35415 H1125 M1065.965 338.72810000000004 H1125" stroke="#b06828" stroke-dasharray="7 5"/>
 <text x="541" y="465.33965">plant receiver</text>
 <text x="820" y="310.35415">plant dry seal datum</text>
-<text x="44" y="570">Blue Ø160 formed pressure sleeves · green Ø110 formed reliefs · each channel falls 1:12 to its own free lip.</text>
+<text x="44" y="570">Blue Ø160 formed pressure sleeves · green Ø110 formed reliefs · each channel falls 1:12 to its own free lip. All four overlap the shaded jamb.</text>
 </svg>

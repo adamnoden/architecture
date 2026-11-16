@@ -21,13 +21,17 @@
 <rect x="80.2" y="109" width="16.8" height="2" class="line-secondary" data-entity="SOUTH/W1/4/1/0"/>
 <rect x="80.2" y="19" width="16.8" height="6" class="line-secondary" data-entity="SOUTH/W1/4/2/0"/>
 <rect x="97" y="111" width="16.8" height="22" class="line-secondary" data-entity="SOUTH/W1/5/0/0"/>
-<rect x="99.82" y="48.6" width="13.98" height="62.4" class="line-secondary" data-entity="SOUTH/W1/5/1/0"/>
-<rect x="97" y="109" width="2.82" height="2" class="line-secondary" data-entity="SOUTH/W1/5/1/1"/>
-<rect x="99.82" y="19" width="13.98" height="29.6" class="line-secondary" data-entity="SOUTH/W1/5/2/0"/>
-<rect x="97" y="19" width="2.82" height="6" class="line-secondary" data-entity="SOUTH/W1/5/2/1"/>
+<rect x="99.82" y="48.6" width="9.72" height="62.4" class="line-secondary" data-entity="SOUTH/W1/5/1/0"/>
+<rect x="109.54" y="63.08" width="4.26" height="47.92" class="line-secondary" data-entity="SOUTH/W1/5/1/1"/>
+<rect x="97" y="109" width="2.82" height="2" class="line-secondary" data-entity="SOUTH/W1/5/1/2"/>
+<rect x="99.82" y="19" width="9.72" height="29.6" class="line-secondary" data-entity="SOUTH/W1/5/2/0"/>
+<rect x="109.54" y="19" width="4.26" height="27.92" class="line-secondary" data-entity="SOUTH/W1/5/2/1"/>
+<rect x="97" y="19" width="2.82" height="6" class="line-secondary" data-entity="SOUTH/W1/5/2/2"/>
 <rect x="113.8" y="111" width="16.8" height="22" class="line-secondary" data-entity="SOUTH/W1/6/0/0"/>
-<rect x="113.8" y="48.6" width="16.8" height="62.4" class="line-secondary" data-entity="SOUTH/W1/6/1/0"/>
-<rect x="113.8" y="19" width="16.8" height="29.6" class="line-secondary" data-entity="SOUTH/W1/6/2/0"/>
+<rect x="125.7" y="48.6" width="4.9" height="62.4" class="line-secondary" data-entity="SOUTH/W1/6/1/0"/>
+<rect x="113.8" y="63.08" width="11.9" height="47.92" class="line-secondary" data-entity="SOUTH/W1/6/1/1"/>
+<rect x="125.7" y="19" width="4.9" height="29.6" class="line-secondary" data-entity="SOUTH/W1/6/2/0"/>
+<rect x="113.8" y="19" width="11.9" height="27.92" class="line-secondary" data-entity="SOUTH/W1/6/2/1"/>
 <rect x="130.6" y="111" width="16.8" height="22" class="line-secondary" data-entity="SOUTH/W1/7/0/0"/>
 <rect x="130.6" y="48.6" width="1.22" height="62.4" class="line-secondary" data-entity="SOUTH/W1/7/1/0"/>
 <rect x="131.82" y="109" width="15.58" height="2" class="line-secondary" data-entity="SOUTH/W1/7/1/1"/>
@@ -48,5 +52,7 @@
 <text x="64.82" y="67" class="text-note" text-anchor="start" data-entity="GROUND/south-window-0/reserve">Window reserve</text>
 <rect x="131.82" y="25" width="40" height="84" class="line-profile" data-entity="GROUND/south-window-1"/>
 <text x="136.82" y="67" class="text-note" text-anchor="start" data-entity="GROUND/south-window-1/reserve">Window reserve</text>
-<text x="13" y="147" class="text-note" text-anchor="start" data-entity="panel-pitch">420 mm pitch · 41 stock zones · 7.98 m²</text>
+<rect x="109.54" y="46.92" width="16.16" height="16.16" class="line-profile" data-entity="GROUND/G-STUDY/G1/room-side-grille/trial-clearance"/>
+<text x="109.54" y="67.08" class="text-note" text-anchor="start" data-entity="GROUND/G-STUDY/G1/room-side-grille/trial-clearance/label">G1 trim reserve</text>
+<text x="13" y="147" class="text-note" text-anchor="start" data-entity="panel-pitch">420 mm pitch · 45 stock zones · 7.82 m²</text>
 </svg>

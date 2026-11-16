@@ -3846,12 +3846,21 @@
             "box": [
               2600,
               700,
-              2949.5,
+              2843,
               2260
             ]
           },
           {
             "id": "SOUTH/W1/5/1/1",
+            "box": [
+              2843,
+              700,
+              2949.5,
+              1898
+            ]
+          },
+          {
+            "id": "SOUTH/W1/5/1/2",
             "box": [
               2529.5,
               700,
@@ -3864,12 +3873,21 @@
             "box": [
               2600,
               2260,
-              2949.5,
+              2843,
               3000
             ]
           },
           {
             "id": "SOUTH/W1/5/2/1",
+            "box": [
+              2843,
+              2302,
+              2949.5,
+              3000
+            ]
+          },
+          {
+            "id": "SOUTH/W1/5/2/2",
             "box": [
               2529.5,
               2850,
@@ -3889,18 +3907,36 @@
           {
             "id": "SOUTH/W1/6/1/0",
             "box": [
-              2949.5,
+              3247,
               700,
               3369.5,
               2260
             ]
           },
           {
-            "id": "SOUTH/W1/6/2/0",
+            "id": "SOUTH/W1/6/1/1",
             "box": [
               2949.5,
+              700,
+              3247,
+              1898
+            ]
+          },
+          {
+            "id": "SOUTH/W1/6/2/0",
+            "box": [
+              3247,
               2260,
               3369.5,
+              3000
+            ]
+          },
+          {
+            "id": "SOUTH/W1/6/2/1",
+            "box": [
+              2949.5,
+              2302,
+              3247,
               3000
             ]
           },
@@ -4052,8 +4088,8 @@
         "columns": 11,
         "widthMm": 4273.5,
         "startXMm": 429.5,
-        "pieceCount": 41,
-        "faceAreaM2": 7.979475,
+        "pieceCount": 45,
+        "faceAreaM2": 7.816259,
         "scope": "Nominal rectangular stock zones. Full arch rectangles are reserved before final reveal and capture."
       },
       "layerSchedule": [
@@ -4112,6 +4148,16 @@
         "installedAreaSoundAndWeather": "unresolved",
         "existingFlangeAndRelease": "unresolved"
       }
+    },
+    "grilleKeepOut": {
+      "id": "GROUND/G-STUDY/G1/room-side-grille/trial-clearance",
+      "box": [
+        2843,
+        1898,
+        3247,
+        2302
+      ],
+      "trialTrimMm": 25
     }
   },
   "stone": {

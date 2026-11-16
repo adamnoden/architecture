@@ -1,5 +1,5 @@
 {
-  "disposition": "Develop separately formed low reliefs. Retain the indoor cabinet reference until source, jet, structure, maintenance and independent outlets pass.",
+  "disposition": "Develop independently drained low relief. Reject the drawn coordinates as a clear masonry opening under the active jamb comparison. Retain the indoor cabinet reference.",
   "sources": {
     "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2",
     "project/had/studies/incoming-water-geometry.mjs": "ed658b7df0edf5d8e6d1826d32730a14b00199c7",
@@ -8,7 +8,8 @@
     "project/had/studies/utility-dry-bowl-release.json": "7f1e60c8dbbb93a4a50ed7bb7db13e426ef25603",
     "project/str/studies/current-house-joined-foundation.json": "ffc3ccb68655eead7c7f56a8dd3179d7d8d6f7bc",
     "project/had/studies/utility-wide-capture.json": "999fe25948911c6325590186db1e94f884d44ae2",
-    "project/had/studies/inlet-protected-daylight.json": "4d801f04763c81fd2f5495a8633689838943dae2"
+    "project/had/studies/inlet-protected-daylight.json": "4d801f04763c81fd2f5495a8633689838943dae2",
+    "project/str/studies/floor-portal-interface-review.json": "ad8aac21e936f0199b331c3bd886c8bb41f30ee3"
   },
   "pressureOnly": [
     {
@@ -161,6 +162,65 @@
     "occupiedTrayToolsAndMatchedSupportsStillRequired": true
   },
   "geometry": {
+    "provisionalJamb": {
+      "basis": "SAP-C1",
+      "candidateAdopted": false,
+      "opening": "south-window-4",
+      "alongWallBandX": [
+        10400,
+        10605
+      ],
+      "intoWallBandQ": [
+        222.5,
+        402.5
+      ],
+      "bores": [
+        {
+          "id": "utility-pressure",
+          "alongWallBoreIntervalX": [
+            10440,
+            10600
+          ],
+          "nominalJambOverlapMM": 160
+        },
+        {
+          "id": "utility-relief",
+          "alongWallBoreIntervalX": [
+            10445,
+            10555
+          ],
+          "nominalJambOverlapMM": 110
+        },
+        {
+          "id": "plant-pressure",
+          "alongWallBoreIntervalX": [
+            10537.5,
+            10697.5
+          ],
+          "nominalJambOverlapMM": 67.5
+        },
+        {
+          "id": "plant-relief",
+          "alongWallBoreIntervalX": [
+            10590,
+            10700
+          ],
+          "nominalJambOverlapMM": 15
+        }
+      ]
+    },
+    "indoorBoxMouthClearanceMM": [
+      {
+        "id": "utility",
+        "clearSideMM": 35,
+        "outsideBoxMM": 40
+      },
+      {
+        "id": "plant",
+        "clearSideMM": 27.5,
+        "outsideBoxMM": 47.5
+      }
+    ],
     "lowerFormedDiameterMM": 110,
     "upperFormedDiameterMM": 160,
     "borePairs": [

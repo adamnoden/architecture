@@ -54,6 +54,12 @@ test('a real hosted current-design position edit moves the local reserve and wit
   assert.deepEqual(moved.kit.floor, baseline.kit.floor)
   assert.deepEqual(moved.kit.door, baseline.kit.door)
   assert.deepEqual(moved.kit.grille, baseline.kit.grille)
+  assert.deepEqual(moved.kit.grilleKeepOut, baseline.kit.grilleKeepOut)
+  const [left, bottom, right, top] = baseline.kit.grilleKeepOut.box
+  for (const trial of [baseline, moved]) {
+    assert.ok(trial.kit.wall.southField.pieces.every(({ box: [x0, z0, x1, z1] }) =>
+      x1 <= left || right <= x0 || z1 <= bottom || top <= z0))
+  }
   assert.notDeepEqual(moved.kit.wall.southField.pieces, baseline.kit.wall.southField.pieces)
   assert.notEqual(renderDrawingSceneV2Svg(moved.wallElevation), renderDrawingSceneV2Svg(baseline.wallElevation))
   assert.ok(Math.abs(moved.kit.wall.southField.faceAreaM2 - baseline.kit.wall.southField.faceAreaM2) < 1e-8)
@@ -66,6 +72,7 @@ test('a real hosted current-design position edit moves the local reserve and wit
 test('room kit refuses malformed and out-of-scope geometry and can be replayed through the CLI', async () => {
   await assert.rejects(current.studyRoomKit({ ...initial, opening: { ...opening, id: 'GROUND/unknown' } }), /UNKNOWN_STUDY_ROOM_KIT_HOSTED_OPENING/)
   await assert.rejects(current.studyRoomKit({ ...initial, opening: { ...opening, hostId: 'GROUND/outer-west' } }), /UNKNOWN_STUDY_ROOM_KIT_HOSTED_OPENING/)
+  await assert.rejects(current.studyRoomKit({ ...initial, opening: { ...opening, occupiedCentreMm: 2400 } }), /STUDY_ROOM_KIT_OPENING_INTERSECTS_G1_RESERVE/)
   await assert.rejects(current.studyRoomKit({ ...initial, opening: { ...opening, occupiedCentreMm: 3600 } }), /STUDY_ROOM_KIT_(MOVE_REJECTED|OCCUPIED_OPENING_OUTSIDE_AVAILABLE_HOST)/)
   await assert.rejects(current.studyRoomKit({ ...initial, opening: { ...opening, occupiedCentreMm: Infinity } }), /INVALID_STUDY_ROOM_KIT_OPENING/)
   await assert.rejects(current.studyRoomKit({ ...initial, pitchMm: 374 }), /outside the native IAS comparison/)

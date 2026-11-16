@@ -115,10 +115,20 @@ function openingSetout(resolved: CurrentDesignResolution, config: Case) {
     || fixedControls.some(other => intersects(box, other.box))) {
     throw new RangeError('STUDY_ROOM_KIT_OCCUPIED_OPENING_OUTSIDE_AVAILABLE_HOST')
   }
+  const inlet = linings.grille.actualRetainedInlet
+  const [grilleX, , grilleZ] = inlet.stationDatumMm
+  const trialTrimMm = 25
+  const radius = Math.max(inlet.completeOD, inlet.retainedReceiverID) / 2 + trialTrimMm
+  const grilleKeepOut = {
+    id: linings.grille.id + '/trial-clearance',
+    box: [grilleX - radius, grilleZ - radius, grilleX + radius, grilleZ + radius] as Box,
+    trialTrimMm,
+  }
+  if (intersects(box, grilleKeepOut.box)) throw new RangeError('STUDY_ROOM_KIT_OPENING_INTERSECTS_G1_RESERVE')
   const wall = {
     ...linings.wall,
     southField: layStudySouthPanelStock(southField.startXMm, southField.startXMm + southField.widthMm, southField.pitchMm,
-      reserves.map(window => window.id === current.id ? { id: window.id, box } : window)),
+      reserves.map(window => window.id === current.id ? { id: window.id, box } : window), [grilleKeepOut.box]),
   }
   const opening = {
     id: current.id, hostId: current.hostId, box, occupiedCentreMm: centre, relation,
@@ -131,7 +141,7 @@ function openingSetout(resolved: CurrentDesignResolution, config: Case) {
       ? { state: 'native-comparison-only', receipt: window.receipt } as const
       : { state: 'stale', code: 'MOVED_STUDY_OPENING_FIXED_DETAILS' } as const,
   } as const
-  return { opening, wall, grille: linings.grille } as const
+  return { opening, wall, grille: linings.grille, grilleKeepOut } as const
 }
 
 function releaseScreen(assembly: FloorAssembly, parts: ReturnType<typeof partSetout>) {
@@ -170,7 +180,7 @@ export function compileStudyRoomKit(resolved: CurrentDesignResolution, input: un
   const request = caseInput(input)
   const assembly = compileResolvedStudyAssembly(resolved, { pitchMm: request.pitchMm, wearingFace: request.wearingFace })
   const parts = partSetout(assembly)
-  const { opening, wall, grille } = openingSetout(resolved, request)
+  const { opening, wall, grille, grilleKeepOut } = openingSetout(resolved, request)
   const release = releaseScreen(assembly, parts)
   const { house } = readBoundOccupiedServices(resolved)
   const [doorMin, doorMax] = house.model.studyDoorOperation.rough
@@ -187,7 +197,7 @@ export function compileStudyRoomKit(resolved: CurrentDesignResolution, input: un
       coverageMm2: parts.reduce((total, { box: [x0, y0, x1, y1] }) => total + (x1 - x0) * (y1 - y0), 0),
       heldEvidence: ['permanent deck, bedding and product tests', 'finished-room installation and handling'],
     },
-    opening, door, wall, grille,
+    opening, door, wall, grille, grilleKeepOut,
   } as const
 }
 

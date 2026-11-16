@@ -42,6 +42,9 @@ test('Independent lower relief keeps a vented reverse path with the normal outle
   execFileSync(process.execPath, [fileURLToPath(read('south-inlet-relief.mjs')), '--check']);
   const result = JSON.parse(readFileSync(read('south-inlet-relief.json'), 'utf8'));
   assert.equal(result.adopted, false);
+  assert.deepEqual(result.geometry.provisionalJamb.alongWallBandX, [10400, 10605]);
+  assert.deepEqual(result.geometry.provisionalJamb.bores.map(bore => bore.nominalJambOverlapMM), [160, 110, 67.5, 15]);
+  assert.deepEqual(result.geometry.indoorBoxMouthClearanceMM.map(row => row.outsideBoxMM), [40, 47.5]);
   const reverse = result.throughWallRupture;
   assert.equal(reverse.existingClearanceOnly.ventedCrownRetained, false);
   assert.ok(reverse.preferredWideBore.reserveToAirLimitMM > 10);

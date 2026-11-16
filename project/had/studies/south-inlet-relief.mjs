@@ -24,6 +24,7 @@ const bowl = read('project/had/studies/utility-dry-bowl-release.json');
 const foundation = read('project/str/studies/current-house-joined-foundation.json');
 const actualHot = read('project/had/studies/utility-wide-capture.json').hot;
 const oldCabinet = read('project/had/studies/inlet-protected-daylight.json');
+const structural = read('project/str/studies/floor-portal-interface-review.json');
 const round = n => Number(n.toFixed(4));
 const grade = 1 / 12;
 const formed = south.hydro.sleeveConstructionMM.formedDiameter;
@@ -241,7 +242,34 @@ const jet = {
   scope: 'Factored local impact comparison. No static 9 bar containment of the complete chamber or outlet rating.',
 };
 
+const utilityJambs = structural.geometry.occurrences.filter(row => row.face === 'outer-south' && row.opening === 'south-window-4' && row.jambAxisPmm > south.walls.southWindow[1]);
+assert(utilityJambs.length > 0);
+const jambBand = utilityJambs[0].jambPmm;
+for (const occurrence of utilityJambs) assert.deepEqual(occurrence.jambPmm, jambBand);
+const provisionalJamb = {
+  basis: structural.authority.candidate,
+  candidateAdopted: structural.authority.adopted,
+  opening: utilityJambs[0].opening,
+  alongWallBandX: jambBand,
+  intoWallBandQ: structural.geometry.jambQmm,
+  bores: bores.map(({ id, outer, radius }) => {
+    const interval = [outer[0] - radius, outer[0] + radius];
+    const overlap = Math.max(0, Math.min(interval[1], jambBand[1]) - Math.max(interval[0], jambBand[0]));
+    return { id, alongWallBoreIntervalX: interval, nominalJambOverlapMM: round(overlap) };
+  }),
+};
+assert(provisionalJamb.bores.every(bore => bore.nominalJambOverlapMM > 0));
+
+const indoorBoxMouthClearanceMM = branches.map(branch => {
+  const x = branch.pressureInner[0];
+  const radius = throughWallRupture.preferredWideBore.cleanBoreMM / 2;
+  return { id: branch.id, clearSideMM: Math.min(x - branch.box.x[0], branch.box.x[1] - x),
+    outsideBoxMM: Math.max(0, radius - Math.min(x - branch.box.x[0], branch.box.x[1] - x)) };
+});
+assert(indoorBoxMouthClearanceMM.every(row => row.outsideBoxMM > 0));
+
 const geometry = {
+  provisionalJamb, indoorBoxMouthClearanceMM,
   lowerFormedDiameterMM: formed, upperFormedDiameterMM: upperFormed, borePairs,
   upperToWindowAfterSettingMM: branches[0].pressureOuter[0] - upperFormed/2 - south.walls.southWindow[1] - setting,
   upperToRCWingAfterSettingMM: south.walls.cornerStartX - branches[1].pressureOuter[0] - upperFormed/2 - setting,
@@ -263,7 +291,7 @@ const hydraulics = {
   submergedReceiverAccepted: false, unsurveyedCommonSiteFloodAccepted: false,
 };
 const result = {
-  disposition: 'Develop separately formed low reliefs. Retain the indoor cabinet reference until source, jet, structure, maintenance and independent outlets pass.',
+  disposition: 'Develop independently drained low relief. Reject the drawn coordinates as a clear masonry opening under the active jamb comparison. Retain the indoor cabinet reference.',
   sources, pressureOnly, throughWallRupture, pressureContinuation, geometry, branches, hydraulics, jet, dryTask,
   retainedCabinetSourceWaterLimitZ: oldCabinet.hydraulic.waterLimitZ,
   adopted: false,
@@ -292,6 +320,8 @@ function draw() {
 <text class="sub" x="44" y="138">At the outside wall face · X/Z</text>
 <text class="sub" x="525" y="138">Section through both outlet axes · Y/Z</text>
 <rect x="${x(south.walls.southWindow[1])}" y="177" width="${x(south.walls.cornerStartX)-x(south.walls.southWindow[1])}" height="372" fill="#e5ded1"/>
+<rect x="${x(jambBand[0])}" y="177" width="${x(jambBand[1])-x(jambBand[0])}" height="372" fill="#bf7967" opacity=".48"/>
+<text x="85" y="168">Provisional jamb</text>
 <line x1="${x(south.walls.cornerStartX)}" y1="177" x2="${x(south.walls.cornerStartX)}" y2="550" stroke="#263e3c" stroke-width="3"/>
 ${branches.map((b,i)=>`${bore(b.pressureOuter,'#436b88',upperFormed)}${bore(b.reliefOuter,'#13867a',formed)}
 <path d="M${x(b.pressureOuter[0])+upperFormed*.30} ${z(b.pressureOuter[2])} H306" stroke="#436b88"/>
@@ -309,7 +339,7 @@ ${branches.map((b,i)=>{
 ${label(541, z(b.outlet.ratedReceiverWaterZ)-11, b.id + ' receiver')}
 ${label(820, dry-8, b.id + ' dry seal datum')}`;
 }).join('\n')}
-<text x="44" y="570">Blue Ø160 formed pressure sleeves · green Ø110 formed reliefs · each channel falls 1:12 to its own free lip.</text>
+<text x="44" y="570">Blue Ø160 formed pressure sleeves · green Ø110 formed reliefs · each channel falls 1:12 to its own free lip. All four overlap the shaded jamb.</text>
 </svg>\n`;
 }
 if (process.argv[1] === fileURLToPath(import.meta.url)) {

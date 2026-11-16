@@ -54,6 +54,7 @@ export function drawStudyLiningComparison(model: Linings): DrawingSceneV2 {
 export function drawStudyPanellingElevation(model: {
   readonly source: Pick<Linings['source'], 'occupiedHouse'>
   readonly wall: Pick<Linings['wall'], 'southField'>
+  readonly grilleKeepOut?: { readonly id: string; readonly box: readonly [number, number, number, number] }
 }): DrawingSceneV2 {
   const field = model.wall.southField
   const scaleDenominator = 25
@@ -80,6 +81,13 @@ export function drawStudyPanellingElevation(model: {
         { kind: 'text' as const, id: window.id + '/reserve', x: projection.point(window.box[0], 1800).x + 5,
           y: projection.point(window.box[0], 1800).y, role: 'note' as const, value: 'Window reserve' },
       ]),
+      ...(model.grilleKeepOut ? [
+        drawnBox(model.grilleKeepOut.id, model.grilleKeepOut.box, 'profile'),
+        { kind: 'text' as const, id: model.grilleKeepOut.id + '/label',
+          x: projection.point(model.grilleKeepOut.box[0], model.grilleKeepOut.box[1]).x,
+          y: projection.point(model.grilleKeepOut.box[0], model.grilleKeepOut.box[1]).y + 4,
+          role: 'note' as const, value: 'G1 trim reserve' },
+      ] : []),
       { kind: 'text', id: 'panel-pitch', x: 13, y: 147, role: 'note',
         value: `${field.pitchMm} mm pitch · ${field.pieceCount} stock zones · ${field.faceAreaM2.toFixed(2)} m²` },
     ],
