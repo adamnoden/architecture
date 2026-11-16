@@ -9,13 +9,12 @@
     "label": "zerg17-crafted-study"
   },
   "claimedAt": "2026-11-16T12:27:30.535Z",
-  "heartbeatAt": "2026-11-16T12:32:59.221Z",
-  "expiresAt": "2026-11-16T13:32:59.221Z",
+  "heartbeatAt": "2026-11-16T12:44:15.240Z",
+  "expiresAt": "2026-11-16T13:44:15.240Z",
   "branch": "work/zerg17-south-relief",
   "pr": 1558,
   "checkpoint": {
-    "evidence": "PR #1558 exact 3e85727d2b5de290f5e33b919872308fd9c67544; local focused, native, repository and graph validation passed.",
-    "next": "Require exact hosted CI and fresh publication checks. Release as evidence-dependent handoff after merge.",
-    "blocker": "Physical interface remains open. Hosted validation pending."
+    "evidence": "PR #1558 corrected exact b65de6689d8c28957d4f5b128a1029db731577ef. G1 hold, revised under-sill and west-wall replays pass local checks.",
+    "next": "Require all exact hosted checks and fresh canonical preflight. Retain design holds."
   }
 }
