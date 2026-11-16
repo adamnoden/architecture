@@ -9,8 +9,8 @@
     "label": "Zerg Rush monolithic and sub-sill follow-up"
   },
   "claimedAt": "2026-11-16T20:55:28.240Z",
-  "heartbeatAt": "2026-11-16T20:55:28.240Z",
-  "expiresAt": "2026-11-16T22:25:28.240Z",
+  "heartbeatAt": "2026-11-16T20:57:36.015Z",
+  "expiresAt": "2026-11-16T22:27:36.015Z",
   "branch": "work/zerg18-mono-sill-study",
   "predecessor": {
     "leaseId": "6321f458-87d3-4677-8667-15bc06758438",
@@ -33,5 +33,11 @@
       "next": "Develop the recessed bearing land and positive two-ended anchorage or build the monolithic comparator.",
       "blocker": "Full-tip short-anchor capacity is below demand; recessed trial still needs anchorage, cage and 52-head replay."
     }
+  },
+  "pr": 1560,
+  "checkpoint": {
+    "evidence": "PR #1560 2b2c139746346020f1e86dee2d6970aa1d15e3c7; source-bound replays, typecheck, 38 focused controls and rendered drawings",
+    "next": "Compare X670/Y9400 rear stack and prove the widened DPC splice and signed 52-head response.",
+    "blocker": "Two diagonal collector layers still intersect the old NW port. Old dry rise and straight tall west stack hit roof members or both trays."
   }
 }
