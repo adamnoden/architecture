@@ -9,11 +9,11 @@
     "label": "zerg17-craft-room-kit-registration"
   },
   "claimedAt": "2026-11-16T12:08:02.015Z",
-  "heartbeatAt": "2026-11-16T12:08:02.015Z",
-  "expiresAt": "2026-11-16T13:08:02.015Z",
+  "heartbeatAt": "2026-11-16T12:09:37.494Z",
+  "expiresAt": "2026-11-16T13:09:37.494Z",
   "checkpoint": {
-    "evidence": "Exact #1556 head 54660b3466a61385d4da919f068eeab394c0d5fb passed historical full CI. Recovery recorded at #1555 comment 6915963421.",
-    "next": "Run a fresh exact-head suite and canonical preflight. Registration only."
+    "evidence": "PR #1557 exact d3f16b6069b8f05545cd85479f9e0cd032f774da, five graph tests and canonical graph validation passed locally.",
+    "next": "Exact hosted validation then canonical publication preflight."
   },
   "branch": "work/zerg17-craft-room-kit-registration",
   "note": "Owner-directed registration recovery #1555, recorded before CAS. Released generation-1 source branch is preserved.",
@@ -38,5 +38,6 @@
       "next": "Inspect exact CI, reconcile current main, reacquire the owner-directed registration scope with a new generation/declaration under #1555, run fresh canonical publication preflight and merge expected head. Keep #1555 open for actual IAS-CRAFT-ROOM-KIT design delivery.",
       "blocker": "Connector-only session cannot run canonical publication preflight; no full suite or merge claimed."
     }
-  }
+  },
+  "pr": 1557
 }
