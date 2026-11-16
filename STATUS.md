@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 5 · **Active:** 0 · **Blocked:** 31 · **Held:** 2 · **Done:** 142 · **Cancelled:** 0
+**Structurally ready:** 6 · **Active:** 0 · **Blocked:** 31 · **Held:** 2 · **Done:** 143 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -22,6 +22,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
 | `HAD-INLET-RESOLUTION` | Resolve the selected incoming-water route and isolation station | HAD / MAT / IAS | — |
+| `IAS-CRAFT-ROOM-KIT` | Design a beautiful gravity-led prefabricated room kit with serviceable timber and tile surfaces | IAS / HAD | — |
 | `STR-FLOOR-PORTAL` | Resolve the floor collector and portal load path before house selection | STR | ROF-RWT-GATE |
 | `DPL-COMMISSION` | Receive owner-nominated real plot and authorised assessment scope | DPL | DPL-SITE-ASSESSMENT |
 | `PHY-04` | Wall/ceiling movement-junction build and test | PHY | — |
@@ -42,7 +43,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `CCR-CURRENT-RELEASE` | Eliminate historical fallback and split current models from all active final outputs | HRS-SYNTHESIS, ADE-DETAILS, ADE-SCHEDULES, ADE-EVIDENCE |
 | `HAD-OWNER-DESIGN-REVIEW` | Receive the owner’s decision on the coordinated architectural design | TRIAD-GATE |
 | `IAS-WORKABLE-DETAILS` | Detail the approved workable interior family and adjoining opening interfaces | HAD-OWNER-DESIGN-REVIEW |
-| `TRIAD-GATE` | Shared selected-house integration gate | HAD-INLET-RESOLUTION, ROF-RWT-GATE, MAT-COORDINATION, STR-FLOOR-PORTAL |
+| `TRIAD-GATE` | Shared selected-house integration gate | HAD-INLET-RESOLUTION, ROF-RWT-GATE, MAT-COORDINATION, STR-FLOOR-PORTAL, IAS-CRAFT-ROOM-KIT |
 | `BCR-CONVERGENCE` | Substantive construction-resolution convergence | TRIAD-GATE, MRA-04, HRS-TECHNICAL, HAD-OWNER-DESIGN-REVIEW, IAS-WORKABLE-DETAILS |
 | `HRS-SYNTHESIS` | Post-BCR final house resolution and synthesis | BCR-CONVERGENCE, MRA-05, DEL-CURRENT |
 | `HRS-TECHNICAL` | Current-house technical migration and computational applicability | TRIAD-GATE |
