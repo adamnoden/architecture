@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 35,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "6321f458-87d3-4677-8667-15bc06758438",
   "holder": {
     "kind": "chatgpt",
     "label": "Zerg Rush controlled interface redesign"
   },
   "claimedAt": "2026-11-16T20:18:44.465Z",
-  "heartbeatAt": "2026-11-16T20:28:58.602Z",
-  "expiresAt": "2026-11-16T21:58:58.602Z",
+  "heartbeatAt": "2026-11-16T20:54:19.179Z",
+  "expiresAt": "2026-11-16T20:54:19.179Z",
   "branch": "work/zerg18-resolve-interfaces",
   "predecessor": {
     "leaseId": "2a9dbb3c-4564-49cf-8003-826cafa1cd1c",
@@ -39,5 +39,7 @@
     "evidence": "PR #1559 702e00299deabe8c60dae75757053c7e3a72d7b7; local typecheck, receipts and focused tests",
     "next": "Develop the recessed bearing land and positive two-ended anchorage or build the monolithic comparator.",
     "blocker": "Full-tip short-anchor capacity is below demand; recessed trial still needs anchorage, cage and 52-head replay."
-  }
+  },
+  "releasedAt": "2026-11-16T20:54:19.179Z",
+  "releaseReason": "handoff"
 }
