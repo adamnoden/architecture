@@ -9,8 +9,8 @@
     "label": "Zerg Rush monolithic and sub-sill follow-up"
   },
   "claimedAt": "2026-11-16T20:55:51.205Z",
-  "heartbeatAt": "2026-11-16T20:55:51.205Z",
-  "expiresAt": "2026-11-16T22:25:51.205Z",
+  "heartbeatAt": "2026-11-16T20:57:51.039Z",
+  "expiresAt": "2026-11-16T22:27:51.039Z",
   "branch": "work/zerg18-mono-sill-study",
   "predecessor": {
     "leaseId": "de0f7163-ffeb-44bf-88aa-f504afd488b1",
@@ -33,5 +33,11 @@
       "next": "Draw a supported sill cassette with separate hydraulic cells and rated dry releases; replay fault routes.",
       "blocker": "Six-opening structural support, full wet hydro proof and loaded draw remain open."
     }
+  },
+  "pr": 1560,
+  "checkpoint": {
+    "evidence": "PR #1560 2b2c139746346020f1e86dee2d6970aa1d15e3c7; source-bound replays, typecheck, 38 focused controls and rendered drawings",
+    "next": "Check the retained sill/jamb thrust and real independent frame, then run rated pressure, loaded handling and fault paths.",
+    "blocker": "Narrow opening fits. A 16 mm stile is a local wind/gravity comparator with no credit for arch restraint."
   }
 }
