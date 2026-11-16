@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 680" role="img" aria-labelledby="title desc">
+<title id="title">North first-floor straight receiver depth and WC port</title>
+<desc id="desc">The current 200 millimetre slab is too shallow. A 220 millimetre stack fits below the existing floor finish but needs a longer local footprint and deflects around the existing WC port.</desc>
+<rect width="1120" height="680" fill="#f8f8f4"/>
+<g font-family="sans-serif" fill="#182c30" font-size="17">
+<text x="36" y="43" font-size="26">North floor receiver • conventional straight bar check</text>
+<text x="36" y="72" font-size="17">Unadopted redesign. Dimensions in mm. Existing soffit, finish and wall datum retained.</text>
+<text x="48" y="108" font-size="19">Separated H20 control</text>
+<rect x="48" y="166.0" width="180" height="264.0" fill="#dae6e4" stroke="#698687"/>
+<path d="M38.0,230.0 L253.0,230.0" stroke="#a55236"/>
+<path d="M38.0,165.0 L253.0,165.0" stroke="#829093"/>
+<text x="259" y="234" font-size="14">existing slab top Z3370</text>
+<text x="259" y="169" font-size="14">finish underside Z3435</text>
+<text x="259" y="434" font-size="14">soffit Z3170</text>
+<circle cx="96" cy="394" r="6.0" fill="#346978"/>
+<text x="123" y="398" font-size="13">H12  Z3206</text>
+<circle cx="96" cy="382" r="6.0" fill="#346978"/>
+<text x="123" y="386" font-size="13">H12  Z3218</text>
+<circle cx="96" cy="342" r="8.0" fill="#346978"/>
+<text x="123" y="346" font-size="13">H16  Z3258</text>
+<circle cx="96" cy="298.0" r="10.0" fill="#a55236"/>
+<text x="123" y="302.0" font-size="13">H20  Z3302</text>
+<circle cx="96" cy="254.0" r="8.0" fill="#346978"/>
+<text x="123" y="258.0" font-size="13">H16  Z3346</text>
+<circle cx="96" cy="214.0" r="6.0" fill="#346978"/>
+<text x="123" y="218.0" font-size="13">H12  Z3386</text>
+<circle cx="96" cy="202.0" r="6.0" fill="#346978"/>
+<text x="123" y="206.0" font-size="13">H12  Z3398</text>
+<text x="48" y="464" font-size="15">264 minimum depth, 64 above ordinary top</text>
+<text x="572" y="108" font-size="19">Touching H28 trial, one common jig</text>
+<rect x="572" y="210.0" width="180" height="220.0" fill="#dae6e4" stroke="#698687"/>
+<path d="M562.0,230.0 L777.0,230.0" stroke="#a55236"/>
+<path d="M562.0,165.0 L777.0,165.0" stroke="#829093"/>
+<text x="783" y="234" font-size="14">existing slab top Z3370</text>
+<text x="783" y="169" font-size="14">finish underside Z3435</text>
+<text x="783" y="434" font-size="14">soffit Z3170</text>
+<circle cx="620" cy="394" r="6.0" fill="#346978"/>
+<text x="647" y="398" font-size="13">H12  Z3206</text>
+<circle cx="620" cy="382" r="6.0" fill="#346978"/>
+<text x="647" y="386" font-size="13">H12  Z3218</text>
+<circle cx="620" cy="342" r="8.0" fill="#346978"/>
+<text x="647" y="346" font-size="13">H16  Z3258</text>
+<circle cx="620" cy="320.0" r="14.0" fill="#a55236"/>
+<text x="647" y="324.0" font-size="13">H28  Z3280</text>
+<circle cx="620" cy="298.0" r="8.0" fill="#346978"/>
+<text x="647" y="302.0" font-size="13">H16  Z3302</text>
+<circle cx="620" cy="258.0" r="6.0" fill="#346978"/>
+<text x="647" y="262.0" font-size="13">H12  Z3342</text>
+<circle cx="620" cy="246.0" r="6.0" fill="#346978"/>
+<text x="647" y="250.0" font-size="13">H12  Z3354</text>
+<text x="572" y="464" font-size="15">220 minimum depth, 20 above ordinary top</text>
+<text x="48" y="525" font-size="19">NW WC port plan • U235 / V490, Ø160</text>
+<path d="M48.0,580.0 L779.0,580.0" stroke="#829093"/>
+<rect x="364.2" y="568" width="200.6" height="24" fill="#e3bb9f"/>
+<circle cx="464.5" cy="580" r="4" fill="#a55236"/>
+<text x="328.2" y="616" font-size="14">V372</text>
+<text x="569.8" y="616" font-size="14">V608</text>
+<text x="48" y="648" font-size="15">Minimum 139 tributary at port. Existing projected embedment is 225; at least 243 is required in this sensitivity.</text>
+</g></svg>

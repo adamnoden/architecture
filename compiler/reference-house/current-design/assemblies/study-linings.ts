@@ -103,16 +103,24 @@ function outsideReserve(face: FaceBox, reserved: FaceBox): readonly FaceBox[] {
 
 function southPanelField(floor: FloorReceipt, pitchMm: number) {
   const [x0, , x1] = floor.study.bands[0]
-  const rows = studyWallPanel.rowDatumsMm
   const windows = floor.study.windows.filter(item => item.wall === 'outer-south').map(window => ({
     id: window.id, box: [window.centre - window.width / 2, window.sill, window.centre + window.width / 2, window.head] as FaceBox,
   }))
+  return layStudySouthPanelStock(x0, x1, pitchMm, windows)
+}
+
+export function layStudySouthPanelStock(
+  x0: number, x1: number, pitchMm: number, windows: readonly { readonly id: string; readonly box: FaceBox }[],
+  serviceReserves: readonly FaceBox[] = [],
+) {
+  const rows = studyWallPanel.rowDatumsMm
+  const apertures = [...windows.map(window => window.box), ...serviceReserves]
   const columns = Math.ceil((x1 - x0) / pitchMm)
   const pieces = Array.from({ length: columns }, (_, column) => {
     const x = x0 + column * pitchMm
     return rows.slice(1).flatMap((head, index) => {
       const face: FaceBox = [x, rows[index], Math.min(x + pitchMm, x1), head]
-      return windows.reduce<readonly FaceBox[]>((parts, window) => parts.flatMap(part => outsideReserve(part, window.box)), [face])
+      return apertures.reduce<readonly FaceBox[]>((parts, aperture) => parts.flatMap(part => outsideReserve(part, aperture)), [face])
         .map((box, part) => ({ id: `SOUTH/W1/${column}/${index}/${part}`, box }))
     })
   }).flat()

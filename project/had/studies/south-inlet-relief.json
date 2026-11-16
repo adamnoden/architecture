@@ -1,0 +1,449 @@
+{
+  "disposition": "Develop independently drained low relief. Reject the drawn coordinates as a clear masonry opening under the active jamb comparison. Retain the indoor cabinet reference.",
+  "sources": {
+    "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2",
+    "project/had/studies/incoming-water-geometry.mjs": "ed658b7df0edf5d8e6d1826d32730a14b00199c7",
+    "project/had/studies/south-utility-inlet.json": "60c7979e8e1036946473e07f2530525cc7b46bce",
+    "project/had/studies/current-house-services.json": "248c8281369d16a8885506660f740c1f66462d9d",
+    "project/had/studies/utility-dry-bowl-release.json": "7f1e60c8dbbb93a4a50ed7bb7db13e426ef25603",
+    "project/str/studies/current-house-joined-foundation.json": "ffc3ccb68655eead7c7f56a8dd3179d7d8d6f7bc",
+    "project/had/studies/utility-wide-capture.json": "999fe25948911c6325590186db1e94f884d44ae2",
+    "project/had/studies/inlet-protected-daylight.json": "4d801f04763c81fd2f5495a8633689838943dae2",
+    "project/str/studies/floor-portal-interface-review.json": "ad8aac21e936f0199b331c3bd886c8bb41f30ee3"
+  },
+  "pressureOnly": [
+    {
+      "carrierOD": 22,
+      "dryDepthMM": 52,
+      "minimumManningSlope": 0.0306,
+      "criticalDepthMM": 55.7445,
+      "failsDryCarrierAtAnySlope": true,
+      "criticalDepthWith10MMDeposit": 59.6932
+    },
+    {
+      "carrierOD": 28,
+      "dryDepthMM": 49,
+      "minimumManningSlope": 0.037,
+      "criticalDepthMM": 55.7445,
+      "failsDryCarrierAtAnySlope": true,
+      "criticalDepthWith10MMDeposit": 59.6932
+    }
+  ],
+  "throughWallRupture": {
+    "existingClearanceOnly": {
+      "cleanBoreMM": 100,
+      "carrierEnvelopeODMM": 28,
+      "bedObstructionMM": 0,
+      "exteriorMouthBlocked": true,
+      "reverseRiseMM": 10.39,
+      "depthAtInboardLipMM": 54.5749,
+      "minHeadBeforeLossMM": 88.8672,
+      "estimatedWallFrictionMM": 14.1614,
+      "entranceLossK": 1,
+      "chargedHeadMM": 126.9309,
+      "reserveToAirLimitMM": -41.9309,
+      "ventedCrownRetained": false
+    },
+    "existingCreditedBerm": {
+      "cleanBoreMM": 100,
+      "carrierEnvelopeODMM": 28,
+      "bedObstructionMM": 32,
+      "exteriorMouthBlocked": true,
+      "reverseRiseMM": 10.39,
+      "depthAtInboardLipMM": 78.5749,
+      "minHeadBeforeLossMM": 119.4217,
+      "estimatedWallFrictionMM": 23.2986,
+      "entranceLossK": 1,
+      "chargedHeadMM": 173.177,
+      "reserveToAirLimitMM": -88.177,
+      "ventedCrownRetained": false
+    },
+    "wideIntermediateBore": {
+      "cleanBoreMM": 140,
+      "carrierEnvelopeODMM": 28,
+      "bedObstructionMM": 32,
+      "exteriorMouthBlocked": true,
+      "reverseRiseMM": 10.39,
+      "depthAtInboardLipMM": 69.9981,
+      "minHeadBeforeLossMM": 98.4076,
+      "estimatedWallFrictionMM": 8.4946,
+      "entranceLossK": 1,
+      "chargedHeadMM": 124.9216,
+      "reserveToAirLimitMM": 0.0784,
+      "ventedCrownRetained": true
+    },
+    "preferredWideBore": {
+      "cleanBoreMM": 150,
+      "carrierEnvelopeODMM": 28,
+      "bedObstructionMM": 32,
+      "exteriorMouthBlocked": true,
+      "reverseRiseMM": 10.39,
+      "depthAtInboardLipMM": 68.8618,
+      "minHeadBeforeLossMM": 96.4998,
+      "estimatedWallFrictionMM": 7.9746,
+      "entranceLossK": 1,
+      "chargedHeadMM": 121.7225,
+      "reserveToAirLimitMM": 13.2775,
+      "ventedCrownRetained": true
+    },
+    "jacketEnvelopeTrials": [
+      {
+        "cleanBoreMM": 150,
+        "carrierEnvelopeODMM": 40,
+        "bedObstructionMM": 32,
+        "exteriorMouthBlocked": true,
+        "reverseRiseMM": 10.39,
+        "depthAtInboardLipMM": 68.8618,
+        "minHeadBeforeLossMM": 96.4998,
+        "estimatedWallFrictionMM": 7.9746,
+        "entranceLossK": 1,
+        "chargedHeadMM": 121.7225,
+        "reserveToAirLimitMM": 13.2775,
+        "ventedCrownRetained": true
+      },
+      {
+        "cleanBoreMM": 150,
+        "carrierEnvelopeODMM": 50,
+        "bedObstructionMM": 32,
+        "exteriorMouthBlocked": true,
+        "reverseRiseMM": 10.39,
+        "depthAtInboardLipMM": 68.2796,
+        "minHeadBeforeLossMM": 96.5245,
+        "estimatedWallFrictionMM": 8.6357,
+        "entranceLossK": 1,
+        "chargedHeadMM": 123.0151,
+        "reserveToAirLimitMM": 11.9849,
+        "ventedCrownRetained": true
+      },
+      {
+        "cleanBoreMM": 150,
+        "carrierEnvelopeODMM": 60,
+        "bedObstructionMM": 32,
+        "exteriorMouthBlocked": true,
+        "reverseRiseMM": 10.39,
+        "depthAtInboardLipMM": 66.9028,
+        "minHeadBeforeLossMM": 97.3149,
+        "estimatedWallFrictionMM": 10.9871,
+        "entranceLossK": 1,
+        "chargedHeadMM": 128.3241,
+        "reserveToAirLimitMM": 6.6759,
+        "ventedCrownRetained": true
+      },
+      {
+        "cleanBoreMM": 150,
+        "carrierEnvelopeODMM": 74,
+        "bedObstructionMM": 32,
+        "exteriorMouthBlocked": true,
+        "reverseRiseMM": 10.39,
+        "depthAtInboardLipMM": 66.8147,
+        "minHeadBeforeLossMM": 100.2462,
+        "estimatedWallFrictionMM": 14.7134,
+        "entranceLossK": 1,
+        "chargedHeadMM": 138.001,
+        "reserveToAirLimitMM": -3.001,
+        "ventedCrownRetained": false
+      }
+    ]
+  },
+  "pressureContinuation": {
+    "riserYMm": [
+      625,
+      545
+    ],
+    "coldPairAfterSettingMM": 42.1143,
+    "toRevisedHotAfterSettingsMM": [
+      40.1917,
+      255.4792
+    ],
+    "toCapturedBowlAfterSettingsMM": [
+      166.9971,
+      374.2957
+    ],
+    "occupiedTrayToolsAndMatchedSupportsStillRequired": true
+  },
+  "geometry": {
+    "provisionalJamb": {
+      "basis": "SAP-C1",
+      "candidateAdopted": false,
+      "opening": "south-window-4",
+      "alongWallBandX": [
+        10400,
+        10605
+      ],
+      "intoWallBandQ": [
+        222.5,
+        402.5
+      ],
+      "bores": [
+        {
+          "id": "utility-pressure",
+          "alongWallBoreIntervalX": [
+            10440,
+            10600
+          ],
+          "nominalJambOverlapMM": 160
+        },
+        {
+          "id": "utility-relief",
+          "alongWallBoreIntervalX": [
+            10445,
+            10555
+          ],
+          "nominalJambOverlapMM": 110
+        },
+        {
+          "id": "plant-pressure",
+          "alongWallBoreIntervalX": [
+            10537.5,
+            10697.5
+          ],
+          "nominalJambOverlapMM": 67.5
+        },
+        {
+          "id": "plant-relief",
+          "alongWallBoreIntervalX": [
+            10590,
+            10700
+          ],
+          "nominalJambOverlapMM": 15
+        }
+      ]
+    },
+    "indoorBoxMouthClearanceMM": [
+      {
+        "id": "utility",
+        "clearSideMM": 35,
+        "outsideBoxMM": 40
+      },
+      {
+        "id": "plant",
+        "clearSideMM": 27.5,
+        "outsideBoxMM": 47.5
+      }
+    ],
+    "lowerFormedDiameterMM": 110,
+    "upperFormedDiameterMM": 160,
+    "borePairs": [
+      {
+        "first": "utility-pressure",
+        "second": "utility-relief",
+        "clearanceAfterSettingMM": 82.9321
+      },
+      {
+        "first": "utility-pressure",
+        "second": "plant-pressure",
+        "clearanceAfterSettingMM": 52.4641
+      },
+      {
+        "first": "utility-pressure",
+        "second": "plant-relief",
+        "clearanceAfterSettingMM": 33.2485
+      },
+      {
+        "first": "utility-relief",
+        "second": "plant-pressure",
+        "clearanceAfterSettingMM": 297.8841
+      },
+      {
+        "first": "utility-relief",
+        "second": "plant-relief",
+        "clearanceAfterSettingMM": 55.9433
+      },
+      {
+        "first": "plant-pressure",
+        "second": "plant-relief",
+        "clearanceAfterSettingMM": 183.1871
+      }
+    ],
+    "upperToWindowAfterSettingMM": 30,
+    "upperToRCWingAfterSettingMM": 30,
+    "reliefLeftEdgeToWindowAfterSettingMM": 35,
+    "reliefRightEdgeToRCWingAfterSettingMM": 27.5,
+    "newLowBoreMinimumZ": 135,
+    "roofLaneToReliefReceiverAfterSettingMM": 175,
+    "separateReliefReceiverAfterSettingMM": 25,
+    "cornerHeadCentres": [
+      {
+        "id": "P04",
+        "xy": [
+          11667.5,
+          332.5
+        ]
+      },
+      {
+        "id": "P05",
+        "xy": [
+          10807.5,
+          332.5
+        ]
+      }
+    ]
+  },
+  "branches": [
+    {
+      "id": "utility",
+      "pressureOuter": [
+        10520,
+        -90,
+        450
+      ],
+      "pressureInner": [
+        10520,
+        429.5,
+        460.39
+      ],
+      "reliefOuter": [
+        10500,
+        -90,
+        190
+      ],
+      "reliefInner": [
+        10500,
+        429.5,
+        233.29166666666666
+      ],
+      "wallFallMM": 43.2917,
+      "innerInvertZ": 183.2917,
+      "dryJointAndVentThresholdZ": 363.2917,
+      "maximumStaticBoxWaterZ": 333.2917,
+      "ratedWaterZ": 322.5438,
+      "box": {
+        "x": [
+          10385,
+          10555
+        ],
+        "y": [
+          429.5,
+          665
+        ]
+      },
+      "outlet": {
+        "x": [
+          10370,
+          10550
+        ],
+        "terminalY": -650,
+        "terminalInvertZ": 93.3333,
+        "receiverY": [
+          -1300,
+          -650
+        ],
+        "clearWidthMM": 180,
+        "adverseBottomOpenWidthMM": 90,
+        "overflowCrestZ": -35,
+        "raisedCrestSensitivityMM": 32,
+        "overflowHeadMM": 50.3207,
+        "ratedReceiverWaterZ": 47.3207,
+        "maximumReceiverWaterZ": 68.3333,
+        "freeDropReserveAfterSettingsMM": 11.0126
+      }
+    },
+    {
+      "id": "plant",
+      "pressureOuter": [
+        10617.5,
+        -90,
+        650
+      ],
+      "pressureInner": [
+        10617.5,
+        429.5,
+        660.39
+      ],
+      "reliefOuter": [
+        10645,
+        -90,
+        290
+      ],
+      "reliefInner": [
+        10645,
+        429.5,
+        333.2916666666667
+      ],
+      "wallFallMM": 43.2917,
+      "innerInvertZ": 283.2917,
+      "dryJointAndVentThresholdZ": 463.2917,
+      "maximumStaticBoxWaterZ": 433.2917,
+      "ratedWaterZ": 422.5438,
+      "box": {
+        "x": [
+          10590,
+          10760
+        ],
+        "y": [
+          429.5,
+          665
+        ]
+      },
+      "outlet": {
+        "x": [
+          10585,
+          10765
+        ],
+        "terminalY": -650,
+        "terminalInvertZ": 193.3333,
+        "receiverY": [
+          -1300,
+          -650
+        ],
+        "clearWidthMM": 180,
+        "adverseBottomOpenWidthMM": 90,
+        "overflowCrestZ": 65,
+        "raisedCrestSensitivityMM": 32,
+        "overflowHeadMM": 50.3207,
+        "ratedReceiverWaterZ": 147.3207,
+        "maximumReceiverWaterZ": 168.3333,
+        "freeDropReserveAfterSettingsMM": 11.0126
+      }
+    }
+  ],
+  "hydraulics": {
+    "challengeLminPerBranch": 90,
+    "halfWidthBlocked": true,
+    "downstreamBermMM": 32,
+    "spareAirMM": 15,
+    "normalDepthMM": 60.1284,
+    "criticalDepthMM": 76.3917,
+    "headWithK1MM": 126.68,
+    "designEntranceCoefficientCeiling": 1.5,
+    "headWithK1p5MM": 139.2521,
+    "staticHeadLimitMM": 150,
+    "remainingStaticHeadMM": 10.7479,
+    "headLimitK": 1.9275,
+    "criticalLimitAt85mmLmin": 122.4004,
+    "ordinarySleeveAvailableCredit": false,
+    "allOutletsBlockedAccepted": false,
+    "submergedReceiverAccepted": false,
+    "unsurveyedCommonSiteFloodAccepted": false
+  },
+  "jet": {
+    "boundingHeadBar": 9,
+    "grossPortDiameterMM": 28,
+    "fullIdealStoppedNormalForceN": 1108.3539,
+    "reflectedWithFactor1p5N": 3325.0617,
+    "reflectedStripSpanMM": 60,
+    "plateThicknessMM": 8,
+    "stripBendingMPa": 166.9953,
+    "stripPunchingMPa": 4.725,
+    "supportPairReactionEachKN": 1.6625,
+    "lowerMarginWithQualified90LminImpactN": 63.6396,
+    "scope": "Factored local impact comparison. No static 9 bar containment of the complete chamber or outlet rating."
+  },
+  "dryTask": {
+    "washerNormalY": 800,
+    "washerFirstRestY": 1500,
+    "completeStance": [
+      10575,
+      1050
+    ],
+    "standingBodyRadiusMM": 300,
+    "dryRestGapAfterSettingMM": 140,
+    "blockedByInstalledWasher": true,
+    "nearestReservedSeatY": 700,
+    "boxToSeatAfterSettingMM": 25,
+    "bowlSweepX": 10974,
+    "separateElectricalIsolationRequired": true
+  },
+  "retainedCabinetSourceWaterLimitZ": 365,
+  "adopted": false
+}

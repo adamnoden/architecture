@@ -10,6 +10,10 @@ type TrialMode = {
   readonly run: (compile: Compile, value: unknown) => Promise<unknown>
 }
 const trialModes: Readonly<Record<string, TrialMode>> = {
+  '--study-room-kit': {
+    schema: 'ias-study-room-kit-request/1', key: 'kit', name: 'Study room kit',
+    run: (compile, value) => compile.studyRoomKit(value),
+  },
   '--roof-pitch': {
     schema: 'mat-roof-pitch-request/1', key: 'roof', name: 'roof pitch',
     run: (compile, value) => compile.roofPitch(value),

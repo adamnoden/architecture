@@ -60,6 +60,15 @@
       "boundary": "Current alternatives and the conventional benchmark. The owner selects the family before workable detail."
     },
     {
+      "id": "ias-crafted-room-kit",
+      "state": "current-conditional-consumer",
+      "decision": "project/ias/crafted-room-kit-study.md",
+      "entries": [
+        "project/ias/studies/crafted-study-views.mjs"
+      ],
+      "boundary": "Read the admitted current-design room kit and draw the matched Study. The owner, loaded release and retained protective boundary stay open."
+    },
+    {
       "id": "ias-comparison-and-proof-support",
       "state": "bounded-study-or-rendering",
       "decision": "project/ias/interior-architecture-system-programme.md",

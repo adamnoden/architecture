@@ -11,6 +11,8 @@ test('each BCR, IAS and OAS study entry has one owning scope and its literal ref
       ['compiler/reference-house/georgian/layout-revision.ts']],
     ['ias-workable-interiors', 'project/ias/studies/workable-room-assemblies.mjs',
       ['project/had/studies/current-house.mjs']],
+    ['ias-crafted-room-kit', 'project/ias/studies/crafted-study-views.mjs',
+      ['compiler/reference-house/current-design/compile.ts', 'project/ias/studies/workable-study-floor.json']],
     ['oas-study-subframe', 'project/oas/studies/study-subframe.mjs',
       ['project/bcr/studies/bay-interface-study.json', 'project/had/studies/current-house.mjs']],
   ]

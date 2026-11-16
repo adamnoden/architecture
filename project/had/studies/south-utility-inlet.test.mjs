@@ -37,3 +37,21 @@ test('the enlarged and jacketed comparisons cannot inherit the bounded sleeve di
   assert.deepEqual(fixedResistanceComparison.resistanceComparisons.map(row => row.minimumDynamicBarAtComparatorDemand), [5.67, 7.75]);
   assert.ok(fixedResistanceComparison.resistanceComparisons.every(row => !row.atTrialDynamicHead));
 });
+
+test('Independent lower relief keeps a vented reverse path with the normal outlet obstructed', () => {
+  execFileSync(process.execPath, [fileURLToPath(read('south-inlet-relief.mjs')), '--check']);
+  const result = JSON.parse(readFileSync(read('south-inlet-relief.json'), 'utf8'));
+  assert.equal(result.adopted, false);
+  assert.deepEqual(result.geometry.provisionalJamb.alongWallBandX, [10400, 10605]);
+  assert.deepEqual(result.geometry.provisionalJamb.bores.map(bore => bore.nominalJambOverlapMM), [160, 110, 67.5, 15]);
+  assert.deepEqual(result.geometry.indoorBoxMouthClearanceMM.map(row => row.outsideBoxMM), [40, 47.5]);
+  const reverse = result.throughWallRupture;
+  assert.equal(reverse.existingClearanceOnly.ventedCrownRetained, false);
+  assert.ok(reverse.preferredWideBore.reserveToAirLimitMM > 10);
+  assert.equal(reverse.jacketEnvelopeTrials.at(-1).ventedCrownRetained, false);
+  assert.ok(result.branches.every(branch => branch.outlet.freeDropReserveAfterSettingsMM > 10));
+});
+
+test('The under-sill successor reproduces its occupied bypass and taper limits', () => {
+  execFileSync(process.execPath, [fileURLToPath(read('south-inlet-under-sill.mjs')), '--check']);
+});
