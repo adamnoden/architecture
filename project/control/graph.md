@@ -16,6 +16,7 @@ flowchart LR
     direction TB
     n_CCR_CURRENT_RELEASE["CCR-CURRENT-RELEASE<br/>Eliminate historical fallback and split current models from all active final outputs<br/><b>BLOCKED</b>"]
     n_HAD_INLET_RESOLUTION["HAD-INLET-RESOLUTION<br/>Resolve the selected incoming-water route and isolation station<br/><b>READY</b>"]
+    n_IAS_CRAFT_ROOM_KIT["IAS-CRAFT-ROOM-KIT<br/>Design a beautiful gravity-led prefabricated room kit with serviceable timber and tile surfaces<br/><b>READY</b>"]
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
     n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>BLOCKED</b>"]
   end
@@ -114,6 +115,7 @@ flowchart LR
   n_ROF_RWT_GATE --> n_TRIAD_GATE
   n_MAT_COORDINATION --> n_TRIAD_GATE
   n_STR_FLOOR_PORTAL --> n_TRIAD_GATE
+  n_IAS_CRAFT_ROOM_KIT --> n_TRIAD_GATE
   n_TRIAD_GATE --> n_BCR_CONVERGENCE
   n_MRA_04 --> n_BCR_CONVERGENCE
   n_HRS_TECHNICAL --> n_BCR_CONVERGENCE
@@ -193,6 +195,7 @@ flowchart LR
   classDef invalidClaim fill:#f1e0dc,stroke:#a45f54,color:#693d37,stroke-width:3px;
   class n_CCR_CURRENT_RELEASE blocked;
   class n_HAD_INLET_RESOLUTION ready;
+  class n_IAS_CRAFT_ROOM_KIT ready;
   class n_HAD_OWNER_DESIGN_REVIEW blocked;
   class n_IAS_WORKABLE_DETAILS blocked;
   class n_TRIAD_GATE blocked;
@@ -289,6 +292,7 @@ flowchart LR
     n_PCO_DISPATCH["PCO-DISPATCH<br/>Self-service agent dispatcher and race-safe claim-next policy<br/><b>DONE</b>"]
     n_PCO_APPLICABILITY["PCO-APPLICABILITY<br/>Bind maturity applicability to assessed design sources<br/><b>DONE</b>"]
     n_PCO_SWARM["PCO-SWARM<br/>Swarm continuation, startup transport and evidence-based run reporting<br/><b>DONE</b>"]
+    n_PCO_CRAFT_ROOM_KIT["PCO-CRAFT-ROOM-KIT<br/>Register the beauty-first gravity-led crafted room kit brief<br/><b>DONE</b>"]
   end
   subgraph g_SHARED["Shared integration gates"]
     direction TB
@@ -307,6 +311,7 @@ flowchart LR
     n_HAD_WATER_REPLAN["HAD-WATER-REPLAN<br/>Recompose the selected court and roof with independent passive water exits<br/><b>DONE</b>"]
     n_HAD_COURT_INTAKE["HAD-COURT-INTAKE<br/>Join the east court intake, guarded access and live roof-corner renewal<br/><b>DONE</b>"]
     n_HAD_COURT_BYPASS["HAD-COURT-BYPASS<br/>Select the permanent courtyard receiver and its blocked-basket return<br/><b>DONE</b>"]
+    n_IAS_CRAFT_ROOM_KIT["IAS-CRAFT-ROOM-KIT<br/>Design a beautiful gravity-led prefabricated room kit with serviceable timber and tile surfaces<br/><b>READY</b>"]
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
     n_RWT_SHED["RWT-SHED<br/>Develop free-shedding edges and planted ground-receiver comparisons<br/><b>DONE</b>"]
     n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>BLOCKED</b>"]
@@ -617,6 +622,10 @@ flowchart LR
   n_OAS_03 --> n_OAS_NORTH_EXPORT
   n_OAS_DETAIL --> n_OAS_NORTH_EXPORT
   n_HAD_03 --> n_OAS_NORTH_EXPORT
+  n_PCO_WORKABLE_INTERIORS --> n_PCO_CRAFT_ROOM_KIT
+  n_PCO_CRAFT_ROOM_KIT --> n_IAS_CRAFT_ROOM_KIT
+  n_IAS_WORKABLE_CONCEPT --> n_IAS_CRAFT_ROOM_KIT
+  n_CCR_ASSEMBLY_INTEGRATION --> n_IAS_CRAFT_ROOM_KIT
   n_IAS_03 --> n_IAS_WORKABLE_CONCEPT
   n_HAD_02M --> n_IAS_WORKABLE_CONCEPT
   n_OAS_DETAIL --> n_OAS_STUDY_SUBFRAME
@@ -637,6 +646,7 @@ flowchart LR
   n_STR_RECONCILE --> n_TRIAD_GATE
   n_STR_FLOOR_PORTAL --> n_TRIAD_GATE
   n_IAS_WORKABLE_CONCEPT --> n_TRIAD_GATE
+  n_IAS_CRAFT_ROOM_KIT --> n_TRIAD_GATE
   n_BSR_ROOT --> n_BCR_SCAFFOLD
   n_BCR_SCAFFOLD --> n_BCR_CONVERGENCE
   n_TRIAD_GATE --> n_BCR_CONVERGENCE
@@ -947,6 +957,8 @@ flowchart LR
   class n_HAD_COURT_BYPASS done;
   class n_OAS_DETAIL done;
   class n_OAS_NORTH_EXPORT done;
+  class n_PCO_CRAFT_ROOM_KIT done;
+  class n_IAS_CRAFT_ROOM_KIT ready;
   class n_IAS_WORKABLE_CONCEPT done;
   class n_OAS_STUDY_SUBFRAME done;
   class n_HAD_OWNER_DESIGN_REVIEW blocked;
