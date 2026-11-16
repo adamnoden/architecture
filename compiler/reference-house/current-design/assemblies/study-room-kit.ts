@@ -15,6 +15,7 @@ type Case = {
   readonly units: 'mm'
   readonly pitchMm: number
   readonly wearingFace: 'oak' | 'stone-steel'
+  readonly finishDepthMm?: 15 | 20
   readonly opening?: { readonly id: string; readonly hostId: string; readonly occupiedCentreMm: number }
 }
 
@@ -27,20 +28,22 @@ function record(input: unknown): input is Record<string, unknown> {
 }
 
 function caseInput(input: unknown): Case {
-  if (!record(input) || Object.keys(input).some(key => !['schema', 'units', 'pitchMm', 'wearingFace', 'opening'].includes(key))
+  if (!record(input) || Object.keys(input).some(key => !['schema', 'units', 'pitchMm', 'wearingFace', 'finishDepthMm', 'opening'].includes(key))
     || input.schema !== 'ias-study-room-kit-case/1' || input.units !== 'mm'
     || typeof input.pitchMm !== 'number' || !Number.isFinite(input.pitchMm)
+    || (input.finishDepthMm !== undefined && input.finishDepthMm !== 15 && input.finishDepthMm !== 20)
     || (input.wearingFace !== 'oak' && input.wearingFace !== 'stone-steel')) {
     throw new TypeError('INVALID_STUDY_ROOM_KIT_CASE')
   }
-  const wearingFace = input.wearingFace
-  if (input.opening === undefined) return { schema: input.schema, units: input.units, pitchMm: input.pitchMm, wearingFace }
+  const common: Case = { schema: input.schema, units: input.units, pitchMm: input.pitchMm, wearingFace: input.wearingFace,
+    ...(input.finishDepthMm === undefined ? {} : { finishDepthMm: input.finishDepthMm }) } as const
+  if (input.opening === undefined) return common
   const opening = input.opening
   if (!record(opening) || Object.keys(opening).length !== 3 || typeof opening.id !== 'string'
     || typeof opening.hostId !== 'string' || typeof opening.occupiedCentreMm !== 'number' || !Number.isFinite(opening.occupiedCentreMm)) {
     throw new TypeError('INVALID_STUDY_ROOM_KIT_OPENING')
   }
-  return { schema: input.schema, units: input.units, pitchMm: input.pitchMm, wearingFace,
+  return { ...common,
     opening: { id: opening.id, hostId: opening.hostId, occupiedCentreMm: opening.occupiedCentreMm } }
 }
 
@@ -232,7 +235,7 @@ function handlingScreen(assembly: FloorAssembly, layout: ReturnType<typeof partS
       unexposedPartIds: coveredInBothStages.map(part => part.id) },
     emitterEdgeRelease: { pickupId: pickup.id, firstRestId: rest.id, workerSweep, panelSweep,
       firstRestBoard, padCentres, padWidthMm, reachMm, edgeReleaseClear,
-      restBoardTopMm: 12, pickupLiftMm: 38, worstRestPadN, restPadDemandMPa: worstRestPadN / padWidthMm ** 2 },
+      restBoardTopMm: 12, pickupLiftMm: 12 + 6 + assembly.section.finishDepthMm, worstRestPadN, restPadDemandMPa: worstRestPadN / padWidthMm ** 2 },
     held: ['loaded grip and breakaway', 'furniture carrying cycle', 'qualified continuous deck and bedding',
       'ferrule pull-out and repeated fits', 'seating, acoustic, slip, movement and material performance'],
   } as const
@@ -333,9 +336,27 @@ function releaseScreen(assembly: FloorAssembly, parts: ReturnType<typeof partSet
   } as const
 }
 
+function studyGroundSupport(assembly: FloorAssembly) {
+  const cellularGlassMm = 100
+  const minimumFloatingCourseMm = 65
+  const separatorComparisonMm = 0.3
+  const { rcTop, finishDepthMm, beddingTerritoryMm, wearFaceMm } = assembly.section
+  const glassTopMm = rcTop + cellularGlassMm
+  const deckTopMm = -(wearFaceMm + beddingTerritoryMm)
+  const fullFinishDeckTopMm = -finishDepthMm
+  const actualCourseBeforeLevelToleranceMm = deckTopMm - glassTopMm - separatorComparisonMm
+  return {
+    glassTopMm, cellularGlassMm, fullFinishDeckTopMm, deckTopIfDepthUnresolvedMovesToDeckMm: deckTopMm,
+    minimumFloatingCourseMm, separatorComparisonMm, actualCourseBeforeLevelToleranceMm,
+    marginToMinimumBeforeLevelToleranceMm: actualCourseBeforeLevelToleranceMm - minimumFloatingCourseMm,
+    disposition: 'withheld',
+    held: 'Named bedding, separator, ordinary-course tolerance, above-glass support, uniform bearing and dry-to-wet edge.',
+  } as const
+}
+
 export function compileStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
   const request = caseInput(input)
-  const assembly = compileResolvedStudyAssembly(resolved, { pitchMm: request.pitchMm, wearingFace: request.wearingFace })
+  const assembly = compileResolvedStudyAssembly(resolved, { pitchMm: request.pitchMm, wearingFace: request.wearingFace, finishDepthMm: request.finishDepthMm })
   const floorLayout = partSetout(assembly)
   const { parts, emitterPlinth } = floorLayout
   const { opening, wall, grille, grilleKeepOut } = openingSetout(resolved, request)
@@ -352,6 +373,7 @@ export function compileStudyRoomKit(resolved: CurrentDesignResolution, input: un
     floor: {
       parts, emitterPlinth, jointMm: assembly.section.jointMm, wearingFaceMm: assembly.section.wearFaceMm, beddingMm: assembly.section.beddingTerritoryMm,
       depthUnassignedWithinFinishMm: assembly.section.finishSupportDepthUnresolvedMm, handling,
+      groundSupport: studyGroundSupport(assembly),
       borderParts: parts.filter(part => part.role === 'border').length, release,
       coverageMm2: parts.reduce((total, part) => total + area(part.box), emitterPlinth.state === 'withheld' ? 0 : emitterPlinth.areaMm2),
       heldEvidence: ['permanent deck, bedding and product tests', 'finished-room installation and handling'],

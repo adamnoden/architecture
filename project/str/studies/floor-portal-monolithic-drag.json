@@ -1,0 +1,484 @@
+{
+  "geometry": {
+    "NWOriginalRearCabinetPlanMm": [
+      429.5,
+      10800,
+      300,
+      750
+    ],
+    "northNearestRawOpeningReserveAtOldToeMm": 37.5,
+    "permanentWallRoomwardIncreaseMm": 100,
+    "receivingUMm": 170,
+    "soffitAndOrdinarySlabTopZMm": [
+      3170,
+      3370
+    ],
+    "unchangedExteriorGlassCavityBrickMm": [
+      110.0,
+      50.0,
+      102.5
+    ],
+    "wallUAndLegVLimitsMm": [
+      [
+        -70,
+        170
+      ],
+      [
+        -70,
+        930
+      ]
+    ]
+  },
+  "gravity": {
+    "directBearingURangeMm": [
+      -30,
+      70
+    ],
+    "records": [
+      {
+        "U190ToU20IndependentTieKN": 16.733055772898066,
+        "field": "NW-W",
+        "mean100WideSeatMPa": 0.16865624999999998,
+        "wingReactionKN": 14.504437499999998
+      },
+      {
+        "U190ToU20IndependentTieKN": 21.990620962242502,
+        "field": "NE",
+        "mean100WideSeatMPa": 0.2216484375,
+        "wingReactionKN": 19.061765625
+      }
+    ]
+  },
+  "groundAlternative": {
+    "insidePlanGapToSmallestCapAfter5Mm": 125,
+    "outsidePlanGapToSmallestCapAfter5Mm": 225,
+    "retainedNorthCornerAndToeCapIDs": [
+      "P07",
+      "P08",
+      "P09",
+      "P10",
+      "P11",
+      "P12"
+    ],
+    "scope": "Plan-only alternative with actual continuous widened body onto a redesigned imperforate DPC plate and cap. Existing shallow node, anchors and soil capacities are not transferred."
+  },
+  "lateralClosure": {
+    "meanOnAdverseCommonWallFaceMPa": 0.3640752850003644,
+    "minimumAreaAtDeclaredCrackedStrutMM2": 5636.961088784051,
+    "momentAboutUnchangedGroundAxisU0KNm": 16.17716585865205,
+    "momentAboutWidenedMidPlaneKNm": 11.419175900224975,
+    "normalCompressionReturnKN": 50.59736273292564,
+    "ownerHistoricalForceKN": 95.15979916854145,
+    "scope": "No friction credit. Normal return balances at the same V centroid. Mean pressure only. The resulting torque, transition into the 140 stem and real L-ground stability splice are unproved."
+  },
+  "retainedNWPort": {
+    "admitted": false,
+    "axisUVAndDiameterMm": [
+      235.0,
+      490.0,
+      160
+    ],
+    "levels": [
+      {
+        "direction": 1,
+        "levelZMm": 3260,
+        "minimumClearToFormedEdgeAfter5Mm": -81.03191599237486
+      },
+      {
+        "direction": -1,
+        "levelZMm": 3308,
+        "minimumClearToFormedEdgeAfter5Mm": -80.09297286680305
+      }
+    ]
+  },
+  "sourceSHA256": {
+    "project/had/studies/open-north-loggia.json": "542781c6bb1d277b20492e8433cea498e98eaea5db2e737a5ec7e9655f9d18fd",
+    "project/mat/studies/loggia-soffit.json": "b02717a9ad5431259f9f0f1850ab7f596cf612bc13f04fbd9bdfc7b5f893fc29",
+    "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+    "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+    "project/str/studies/floor-portal-north-collar.json": "e996f409d47a6d81aa7624d683e86d92e7e5bc5ac5c828dcc7df39552e929c87",
+    "project/str/studies/floor-portal-straight-receiver.json": "c8e3c7a56f2d12cd8959886e0e83c5d28056151c85d237424f3562258374a1b5",
+    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5"
+  },
+  "stack": {
+    "alongOneSignClearIndependent10Mm": 17.886099404160866,
+    "alongOneSignClearShared5Mm": 22.886099404160866,
+    "axesInSectionZMm": [
+      3206,
+      3218,
+      3260,
+      3284,
+      3308,
+      3350,
+      3362
+    ],
+    "barDiametersMm": [
+      12,
+      12,
+      20,
+      28,
+      20,
+      12,
+      12
+    ],
+    "commonJig": "Two opposed groups on each arm. Same level swaps signs on adjoining wings; each plane deliberately touches the intervening H28 at crossings. 5 mm total relative setting is binding.",
+    "localSlabTopZMm": 3398,
+    "reserveToActualFinishUndersideMm": 37,
+    "samePlaneWingPairClearShared5Mm": 33.84502723889042,
+    "slabDepthMm": 228,
+    "unrelatedDragPlanesClearShared5Mm": 23,
+    "uprightScreenClearShared5Mm": {
+      "primaryH20": 25.56803176478971,
+      "secondaryH12": 29.256543499717758
+    },
+    "wallLongitudinalTrial": {
+      "governingGapAndAxes": [
+        44.57962017433566,
+        -1,
+        3260,
+        26,
+        3251,
+        12
+      ],
+      "minimumUnrelatedGapMm": 44.57962017433566,
+      "oneCourseReplacementAreaMM2": 201.06192982974676,
+      "priorSeparateH12AndH10AreaMM2": 191.63715186897738,
+      "railAxesUMmZMmDiameterMm": [
+        [
+          -28,
+          3211,
+          12
+        ],
+        [
+          -28,
+          3251,
+          12
+        ],
+        [
+          -28,
+          3335,
+          12
+        ],
+        [
+          26,
+          3211,
+          12
+        ],
+        [
+          26,
+          3251,
+          12
+        ],
+        [
+          26,
+          3335,
+          12
+        ],
+        [
+          -30,
+          3293,
+          16
+        ],
+        [
+          24,
+          3293,
+          16
+        ],
+        [
+          -27,
+          3143,
+          10
+        ],
+        [
+          -27,
+          3443,
+          10
+        ],
+        [
+          27,
+          3143,
+          10
+        ],
+        [
+          27,
+          3443,
+          10
+        ]
+      ]
+    }
+  },
+  "status": "Geometric and static monolithic redesign screen. Coupled wall, corner cage and splice loads unadmitted.",
+  "straightDrag": {
+    "anglesDeg": [
+      -62,
+      62
+    ],
+    "barCentresAtReceivingPlaneVMm": [
+      338,
+      440,
+      542,
+      644,
+      746
+    ],
+    "basicPoorBondOnlySafetyRatio": 1.030606987196698,
+    "coverToActualToeEndAfter5mm": 25.65099953827117,
+    "derivedTensionPerBarKN": 21.55502771357476,
+    "diagonalRootsUMm": 90.95911469693942,
+    "lowerPathsLocalXYZMm": [
+      [
+        [
+          90.95911469693942,
+          189.34571516613008,
+          3260
+        ],
+        [
+          249.04088530306058,
+          486.65428483386995,
+          3260
+        ]
+      ],
+      [
+        [
+          90.95911469693942,
+          291.34571516613005,
+          3260
+        ],
+        [
+          249.04088530306058,
+          588.65428483387,
+          3260
+        ]
+      ],
+      [
+        [
+          90.95911469693942,
+          393.34571516613005,
+          3260
+        ],
+        [
+          249.04088530306058,
+          690.65428483387,
+          3260
+        ]
+      ],
+      [
+        [
+          90.95911469693942,
+          495.34571516613005,
+          3260
+        ],
+        [
+          249.04088530306058,
+          792.65428483387,
+          3260
+        ]
+      ],
+      [
+        [
+          90.95911469693942,
+          597.34571516613,
+          3260
+        ],
+        [
+          249.04088530306058,
+          894.65428483387,
+          3260
+        ]
+      ],
+      [
+        [
+          486.65428483386995,
+          90.95911469693942,
+          3260
+        ],
+        [
+          189.34571516613008,
+          249.04088530306058,
+          3260
+        ]
+      ],
+      [
+        [
+          588.65428483387,
+          90.95911469693942,
+          3260
+        ],
+        [
+          291.34571516613005,
+          249.04088530306058,
+          3260
+        ]
+      ],
+      [
+        [
+          690.65428483387,
+          90.95911469693942,
+          3260
+        ],
+        [
+          393.34571516613005,
+          249.04088530306058,
+          3260
+        ]
+      ],
+      [
+        [
+          792.65428483387,
+          90.95911469693942,
+          3260
+        ],
+        [
+          495.34571516613005,
+          249.04088530306058,
+          3260
+        ]
+      ],
+      [
+        [
+          894.65428483387,
+          90.95911469693942,
+          3260
+        ],
+        [
+          597.34571516613,
+          249.04088530306058,
+          3260
+        ]
+      ]
+    ],
+    "modelledLengthEachSideMm": 168.36139090943894,
+    "projectionEachSideUAndVMm": [
+      79.04088530306058,
+      148.65428483386992
+    ],
+    "requiredBondLengthEachSideMm": 163.36139090943894,
+    "roomwardAffectedUAtMinimumMm": 249.04088530306058,
+    "steel": "S500 H20; C30/37 and declared 2.1MPa poor-bond",
+    "stripExtentsVMm": [
+      189.34571516613008,
+      894.65428483387
+    ],
+    "upperPathsLocalXYZMm": [
+      [
+        [
+          90.95911469693942,
+          486.65428483386995,
+          3308
+        ],
+        [
+          249.04088530306058,
+          189.34571516613008,
+          3308
+        ]
+      ],
+      [
+        [
+          90.95911469693942,
+          588.65428483387,
+          3308
+        ],
+        [
+          249.04088530306058,
+          291.34571516613005,
+          3308
+        ]
+      ],
+      [
+        [
+          90.95911469693942,
+          690.65428483387,
+          3308
+        ],
+        [
+          249.04088530306058,
+          393.34571516613005,
+          3308
+        ]
+      ],
+      [
+        [
+          90.95911469693942,
+          792.65428483387,
+          3308
+        ],
+        [
+          249.04088530306058,
+          495.34571516613005,
+          3308
+        ]
+      ],
+      [
+        [
+          90.95911469693942,
+          894.65428483387,
+          3308
+        ],
+        [
+          249.04088530306058,
+          597.34571516613,
+          3308
+        ]
+      ],
+      [
+        [
+          189.34571516613008,
+          90.95911469693942,
+          3308
+        ],
+        [
+          486.65428483386995,
+          249.04088530306058,
+          3308
+        ]
+      ],
+      [
+        [
+          291.34571516613005,
+          90.95911469693942,
+          3308
+        ],
+        [
+          588.65428483387,
+          249.04088530306058,
+          3308
+        ]
+      ],
+      [
+        [
+          393.34571516613005,
+          90.95911469693942,
+          3308
+        ],
+        [
+          690.65428483387,
+          249.04088530306058,
+          3308
+        ]
+      ],
+      [
+        [
+          495.34571516613005,
+          90.95911469693942,
+          3308
+        ],
+        [
+          792.65428483387,
+          249.04088530306058,
+          3308
+        ]
+      ],
+      [
+        [
+          597.34571516613,
+          90.95911469693942,
+          3308
+        ],
+        [
+          894.65428483387,
+          249.04088530306058,
+          3308
+        ]
+      ]
+    ]
+  }
+}

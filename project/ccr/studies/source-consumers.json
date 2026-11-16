@@ -64,7 +64,8 @@
       "state": "current-conditional-consumer",
       "decision": "project/ias/crafted-room-kit-study.md",
       "entries": [
-        "project/ias/studies/crafted-study-views.mjs"
+        "project/ias/studies/crafted-study-views.mjs",
+        "project/ias/studies/crafted-study-wall-transition.mjs"
       ],
       "boundary": "Read the admitted current-design room kit and draw the matched Study. The owner, loaded release and retained protective boundary stay open."
     },

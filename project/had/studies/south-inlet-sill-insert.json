@@ -1,0 +1,374 @@
+{
+  "disposition": "Prefer the framed sill insert as a geometric development of independent chambers. Retain the indoor inlet reference.",
+  "sources": {
+    "project/had/studies/south-inlet-under-sill.json": "27a94bfe0f4a62bfcbe02e6e8ac0002c6e4a894f",
+    "project/had/studies/south-inlet-wet-box.json": "a1acebe3c08d9bfcc07984bb858c46d7cb9d7d95",
+    "project/str/studies/house-corner-rewind.json": "6471d89c213724ec02a26d797c85185beadb25b5",
+    "project/str/studies/floor-portal-interface-review.json": "ad8aac21e936f0199b331c3bd886c8bb41f30ee3",
+    "project/str/studies/current-house-grid.json": "56aca6f99f5fa60b21d58c89115ac1ee824e3828",
+    "project/str/studies/current-house-joined-foundation.json": "ffc3ccb68655eead7c7f56a8dd3179d7d8d6f7bc",
+    "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2"
+  },
+  "jambAndSill": {
+    "clearX": [
+      9400,
+      10400
+    ],
+    "rawSillZ": 750,
+    "jambs": [
+      [
+        9195,
+        9400
+      ],
+      [
+        10400,
+        10605
+      ]
+    ]
+  },
+  "opening": {
+    "x": [
+      9950,
+      10380
+    ],
+    "z": [
+      110,
+      700
+    ]
+  },
+  "frame": {
+    "x": [
+      9400,
+      10400
+    ],
+    "z": [
+      80,
+      750
+    ],
+    "innerHeaderZ": [
+      700,
+      750
+    ],
+    "westSillSupportX": [
+      9400,
+      9450
+    ],
+    "retainedWestInfillX": [
+      9450,
+      9950
+    ],
+    "eastSideX": [
+      10380,
+      10400
+    ],
+    "bearingAxesX": [
+      9425,
+      10390
+    ]
+  },
+  "bores": [
+    {
+      "id": "utility-pressure",
+      "axis": [
+        [
+          10080,
+          -90,
+          450
+        ],
+        [
+          10080,
+          429.5,
+          460.39
+        ]
+      ],
+      "formedReserveODMM": 160,
+      "apertureAfter10": {
+        "westMM": 40,
+        "eastMM": 210,
+        "baseMM": 250,
+        "headerMM": 149.61
+      }
+    },
+    {
+      "id": "utility-relief",
+      "axis": [
+        [
+          10080,
+          -90,
+          190
+        ],
+        [
+          10080,
+          429.5,
+          233.29166666666666
+        ]
+      ],
+      "formedReserveODMM": 110,
+      "apertureAfter10": {
+        "westMM": 65,
+        "eastMM": 235,
+        "baseMM": 15,
+        "headerMM": 401.7083
+      }
+    },
+    {
+      "id": "plant-pressure",
+      "axis": [
+        [
+          10285,
+          -90,
+          570
+        ],
+        [
+          10285,
+          429.5,
+          580.39
+        ]
+      ],
+      "formedReserveODMM": 160,
+      "apertureAfter10": {
+        "westMM": 245,
+        "eastMM": 5,
+        "baseMM": 370,
+        "headerMM": 29.61
+      }
+    },
+    {
+      "id": "plant-relief",
+      "axis": [
+        [
+          10285,
+          -90,
+          290
+        ],
+        [
+          10285,
+          429.5,
+          333.2916666666667
+        ]
+      ],
+      "formedReserveODMM": 110,
+      "apertureAfter10": {
+        "westMM": 270,
+        "eastMM": 30,
+        "baseMM": 115,
+        "headerMM": 301.7083
+      }
+    }
+  ],
+  "vents": [
+    {
+      "axis": [
+        [
+          10115,
+          -90,
+          635
+        ],
+        [
+          10115,
+          429.5,
+          645.39
+        ]
+      ],
+      "outerDiameterMM": 32,
+      "clearMM": 26,
+      "apertureAfter5": {
+        "westMM": 144,
+        "eastMM": 244,
+        "baseMM": 504,
+        "headerMM": 33.61
+      },
+      "mainBoreReserveAfter5MM": 80.9981,
+      "highEndCapToCellSideGrossMM": 34,
+      "belowSeparateWeatherHousingCapGrossMM": 64
+    },
+    {
+      "axis": [
+        [
+          10348,
+          -90,
+          660
+        ],
+        [
+          10348,
+          429.5,
+          670.39
+        ]
+      ],
+      "outerDiameterMM": 30,
+      "clearMM": 26,
+      "apertureAfter5": {
+        "westMM": 378,
+        "eastMM": 12,
+        "baseMM": 530,
+        "headerMM": 9.61
+      },
+      "mainBoreReserveAfter5MM": 9.8443,
+      "highEndCapToCellSideGrossMM": 7,
+      "belowSeparateWeatherHousingCapGrossMM": 40
+    }
+  ],
+  "loads": {
+    "screenOnly": true,
+    "benchmark": "Apply the total authored vertical allowance and all window pressure as separate coincident centred points on one simple sill member.",
+    "grossWindowAreaM2": 2.013736079062664,
+    "authoredVerticalPointKN": 3,
+    "windowWindPa": 2250,
+    "windowNormalPointKN": 4.5309,
+    "clearSpanMM": 1000,
+    "idealSillRhsMM": [
+      100,
+      50,
+      5
+    ],
+    "steelElasticMPa": 200000,
+    "secondMomentsMM4": [
+      561666.6667,
+      1736666.6667
+    ],
+    "combinedElasticCornerStressMPa": 65.9949,
+    "correspondingVerticalAndHorizontalDeflectionsMM": [
+      0.5564,
+      0.2718
+    ],
+    "eachSupportVerticalAndNormalKN": [
+      1.5,
+      2.2655
+    ],
+    "eastStile": {
+      "alongWallWidthMM": 16,
+      "wallNormalDepthMM": 100,
+      "idealWallMM": 3,
+      "heightMM": 620,
+      "afterTwo2MMSettingsFrameWidthReserveMM": 0,
+      "screen": "Ideal sharp-corner normal cantilever under the same point actions; stock, local buckling, plate and connections unqualified.",
+      "combinedAxialAndNormalStressMPa": 111.8037,
+      "normalTopDisplacementMM": 1.4035,
+      "elasticWeakAxisEulerPointKN": 33.7631,
+      "baseMomentKNm": 1.4046,
+      "trialBaseMomentLeverMM": 60,
+      "idealBaseCoupleKN": 23.4097,
+      "admitted": false
+    },
+    "outerSUncut": {
+      "y": [
+        -17.5,
+        682.5
+      ],
+      "z": [
+        -630,
+        -180
+      ],
+      "loadBalanceSpan": [
+        {
+          "id": "P23",
+          "x": 9300,
+          "historicalMaxGravityKN": 225.8221
+        },
+        {
+          "id": "P05",
+          "x": 10807.5,
+          "historicalMaxGravityKN": 79.7566
+        }
+      ],
+      "addedSimpleBalanceVerticalKN": [
+        1.791,
+        1.209
+      ]
+    },
+    "anchorJambStilePlinthAndMasonryQualified": false
+  },
+  "handlingAndVentHoodReservations": {
+    "utilityCellWestFaceToNarrowCutMM": 45,
+    "utilityCarrierWestAfter5ToNarrowCutMM": 88,
+    "utilityReceiverWestToNarrowCutMM": 30,
+    "exteriorHoodReservableX": [
+      [
+        10090,
+        10140
+      ],
+      [
+        10320,
+        10370
+      ]
+    ],
+    "exteriorHoodSeparationAfter10MM": 170,
+    "wholeToolAndVentHoodsQualified": false
+  },
+  "combinedWallOpeningCount": 1,
+  "projectedOpenedAreaM2": {
+    "narrowInsert": 0.2537,
+    "fullSpanInsert": 0.5487,
+    "sixMasonryHoles": 0.0608
+  },
+  "retainedInsideCellBoundaries": [
+    {
+      "id": "utility",
+      "wetBoxX": [
+        9995,
+        10165
+      ],
+      "retainedTroughLipZ": 363.2917,
+      "receiverX": [
+        9980,
+        10160
+      ]
+    },
+    {
+      "id": "plant",
+      "wetBoxX": [
+        10200,
+        10370
+      ],
+      "retainedTroughLipZ": 463.2917,
+      "receiverX": [
+        10200,
+        10380
+      ]
+    }
+  ],
+  "rejected": {
+    "unchangedPlantVentWithNewHeader": {
+      "axis": [
+        [
+          10345,
+          -90,
+          688
+        ],
+        [
+          10345,
+          429.5,
+          698.39
+        ]
+      ],
+      "outerDiameterMM": 32,
+      "clearMM": 26,
+      "apertureAfter5": {
+        "westMM": 374,
+        "eastMM": 14,
+        "baseMM": 557,
+        "headerMM": -19.39
+      },
+      "mainBoreReserveAfter5MM": 31.3572,
+      "highEndCapToCellSideGrossMM": 9,
+      "belowSeparateWeatherHousingCapGrossMM": 11
+    },
+    "earlierEastStile": {
+      "westMM": 245,
+      "eastMM": 0,
+      "baseMM": 370,
+      "headerMM": 29.61
+    },
+    "widerEastStile": {
+      "westMM": 245,
+      "eastMM": -5,
+      "baseMM": 370,
+      "headerMM": 29.61
+    },
+    "deeperUnchangedProfile": {
+      "headZ": 600,
+      "plantTopMM": -70.39
+    }
+  },
+  "throughLoadArchRestraintAndWholeBarrierVerified": false
+}

@@ -65,6 +65,28 @@ test('Study kit lays out actual stable parts and discrete border widths in the f
   assert.equal(tile.kit.floor.depthUnassignedWithinFinishMm, 3)
 })
 
+test('A 15 mm finish preserves the ground datum but the floating support allowance is still short', async () => {
+  const [standard, oak, stone] = await Promise.all([
+    current.studyRoomKit(initial),
+    current.studyRoomKit({ ...initial, finishDepthMm: 15 }),
+    current.studyRoomKit({ ...initial, finishDepthMm: 15, wearingFace: 'stone-steel' }),
+  ])
+  assert.equal(oak.kit.floor.wearingFaceMm, 13)
+  assert.equal(stone.kit.floor.wearingFaceMm, 13)
+  assert.equal(stone.kit.floor.parts[0].grip?.endMarginMm, oak.kit.floor.parts[0].grip?.endMarginMm)
+  assert.deepEqual(oak.kit.floor.parts.map(p => p.face), standard.kit.floor.parts.map(p => p.face))
+  assert.equal(oak.kit.floor.groundSupport.glassTopMm, -80)
+  assert.equal(oak.kit.floor.groundSupport.cellularGlassMm, 100)
+  assert.ok(Math.abs(standard.kit.floor.groundSupport.marginToMinimumBeforeLevelToleranceMm + 5.3) < 1e-9)
+  assert.ok(Math.abs(oak.kit.floor.groundSupport.marginToMinimumBeforeLevelToleranceMm + 0.3) < 1e-9)
+  assert.deepEqual(oak.kit.floor.groundSupport, stone.kit.floor.groundSupport)
+  assert.equal(oak.kit.floor.groundSupport.disposition, 'withheld')
+  assert.equal(oak.kit.floor.handling.state, 'geometry-and-demand-screen')
+  assert.equal(oak.kit.floor.handling.emitterEdgeRelease.pickupLiftMm, 33)
+  assert.notEqual(oak.kit.caseDigest, standard.kit.caseDigest)
+  await assert.rejects(current.studyRoomKit({ ...initial, finishDepthMm: 16 }), /INVALID_STUDY_ROOM_KIT_CASE/)
+})
+
 test('a real hosted current-design position edit moves the local reserve and withholds its fixed evidence', async () => {
   const baseline = await current.studyRoomKit(initial)
   const moved = await current.studyRoomKit({ ...initial, opening })
@@ -108,6 +130,9 @@ test('room kit refuses malformed and out-of-scope geometry and can be replayed t
 
 test('the furnished comparison, technical drawings and part schedule match the current kit', () => {
   execFileSync(process.execPath, ['--import', 'tsx', 'project/ias/studies/crafted-study-views.mjs', '--check'], {
+    cwd: new URL('../../', import.meta.url),
+  })
+  execFileSync(process.execPath, ['project/ias/studies/crafted-study-wall-transition.mjs', '--check'], {
     cwd: new URL('../../', import.meta.url),
   })
 })

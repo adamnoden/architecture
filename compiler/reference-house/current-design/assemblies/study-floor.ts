@@ -44,14 +44,15 @@ interface ReleaseReceipt {
   }
 }
 
-interface StudyConfiguration { readonly pitchMm?: number; readonly skirting?: 'ordinary' | 'service'; readonly wearingFace?: 'oak' | 'stone-steel' }
+interface StudyConfiguration { readonly pitchMm?: number; readonly skirting?: 'ordinary' | 'service'; readonly wearingFace?: 'oak' | 'stone-steel'; readonly finishDepthMm?: 15 | 20 }
 
 function configuration(input: unknown): StudyConfiguration {
   if (!input || typeof input !== 'object' || Object.getPrototypeOf(input) !== Object.prototype) throw new TypeError('Expected a Study configuration')
   const config = input as StudyConfiguration
-  if (Object.keys(input).some(key => key !== 'pitchMm' && key !== 'skirting' && key !== 'wearingFace')
+  if (Object.keys(input).some(key => key !== 'pitchMm' && key !== 'skirting' && key !== 'wearingFace' && key !== 'finishDepthMm')
     || (config.pitchMm !== undefined && (!Number.isFinite(config.pitchMm) || config.pitchMm <= 0))
     || (config.skirting !== undefined && config.skirting !== 'ordinary' && config.skirting !== 'service')
+    || (config.finishDepthMm !== undefined && config.finishDepthMm !== 15 && config.finishDepthMm !== 20)
     || (config.wearingFace !== undefined && config.wearingFace !== 'oak' && config.wearingFace !== 'stone-steel')) {
     throw new TypeError('Unsupported Study configuration')
   }
@@ -116,10 +117,14 @@ export function compileResolvedStudyAssembly(resolved: CurrentDesignResolution, 
   if (!stoneSteel || !Number.isFinite(stoneSteel.massPerSquareMetre) || stoneSteel.massPerSquareMetre <= 0) {
     throw new TypeError('The native stone/steel wearing-face mass is unavailable')
   }
-  const wearFaceMm = wearingFace === 'oak' ? release.panel.skin : 15
-  const surfaceMassKgPerM2 = wearingFace === 'oak' ? release.panel.skin * release.panel.nominalDensity / 1000 : stoneSteel.massPerSquareMetre
+  const finishDepthMm = config.finishDepthMm ?? release.panel.skin + release.panel.beddingTerritory
+  const wearFaceMm = wearingFace === 'oak' ? finishDepthMm - release.panel.beddingTerritory : finishDepthMm === 15 ? 13 : 15
+  const stoneSpecificGravity = 2.7
+  const surfaceMassKgPerM2 = wearingFace === 'oak'
+    ? wearFaceMm * release.panel.nominalDensity / 1000
+    : stoneSteel.massPerSquareMetre - (15 - wearFaceMm) * stoneSpecificGravity
   const fullTileMassKg = sideMm ** 2 * surfaceMassKgPerM2 / 1e6
-  const finishSupportDepthUnresolvedMm = release.panel.skin - wearFaceMm
+  const finishSupportDepthUnresolvedMm = finishDepthMm - release.panel.beddingTerritory - wearFaceMm
   const [ox, oy] = floor.moduleStudy.origin
   const occurrences = tileField(pitchMm, floor.moduleStudy.origin, floor.study.bands, floor.study.occupied).map(cell => ({
     id: `${studyId}/floor/cell/${(cell.box[0] - ox) / pitchMm}/${(cell.box[1] - oy) / pitchMm}`,
@@ -167,7 +172,7 @@ export function compileResolvedStudyAssembly(resolved: CurrentDesignResolution, 
     },
     section: {
       status: 'nominal-comparison', datum: 'Study ground finished floor', ffl: 0, rcTop: -floor.assemblies.groundDepthAboveRC,
-      wearingFace, wearFaceMm, finishSupportDepthUnresolvedMm, beddingTerritoryMm: release.panel.beddingTerritory, jointMm: release.panel.gap,
+      wearingFace, wearFaceMm, finishDepthMm, finishSupportDepthUnresolvedMm, beddingTerritoryMm: release.panel.beddingTerritory, jointMm: release.panel.gap,
       tileSouthSetbackMm: floor.release.lift[1] - floor.study.bands[0][1] + release.panel.gap / 2,
       skirting: {
         id: `${studyId}/skirting/south-release-edge`, profile, projectionMm, heightMm: skirting.heightMM,
@@ -176,9 +181,11 @@ export function compileResolvedStudyAssembly(resolved: CurrentDesignResolution, 
     },
     release: pitchMm !== release.panel.pitch
       ? { state: 'unresolved', code: 'FIXED_BRIDGE_PITCH', referencePitchMm: release.panel.pitch } as const
+      : finishDepthMm !== release.panel.skin + release.panel.beddingTerritory
+      ? { state: 'unresolved', code: 'FIXED_BRIDGE_FINISH_DEPTH', referenceFinishDepthMm: release.panel.skin + release.panel.beddingTerritory } as const
       : { state: shoeClearanceMm < 0 ? 'conflict' : 'geometry-only', code: 'SOUTH_BRIDGE_SHOE', shoeClearanceMm, settingMm,
         shoeExtentMm: [release.revised.southWallReserveMM, release.revised.southWallReserveMM + 2 * release.revised.footHalfY] } as const,
-    handling: wearingFace === 'oak' && pitchMm === release.panel.pitch
+    handling: wearingFace === 'oak' && pitchMm === release.panel.pitch && finishDepthMm === release.panel.skin + release.panel.beddingTerritory
       ? { state: 'retained-reference-comparison' } as const
       : { state: 'withheld', code: 'WEARING_FACE_OR_PITCH_CHANGED' } as const,
     withheld: ['perimeter piece fabrication and mass', 'tool/body and loaded handling', 'fixed captures and actual support',
