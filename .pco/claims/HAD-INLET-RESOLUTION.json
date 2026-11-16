@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 38,
-  "state": "released",
-  "leaseId": "83de450b-a167-4f81-bf82-096ece488859",
+  "generation": 39,
+  "state": "claimed",
+  "leaseId": "de0f7163-ffeb-44bf-88aa-f504afd488b1",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg17-south-relief"
+    "label": "Zerg Rush controlled interface redesign"
   },
-  "claimedAt": "2026-11-16T12:06:41.330Z",
-  "heartbeatAt": "2026-11-16T13:08:57.570Z",
-  "expiresAt": "2026-11-16T13:08:57.570Z",
-  "branch": "work/zerg17-south-relief",
+  "claimedAt": "2026-11-16T20:19:10.394Z",
+  "heartbeatAt": "2026-11-16T20:19:10.394Z",
+  "expiresAt": "2026-11-16T21:49:10.394Z",
+  "branch": "work/zerg18-resolve-interfaces",
   "predecessor": {
-    "leaseId": "1a14346b-2b69-46fd-bf53-714ef14c809e",
-    "generation": 37,
+    "leaseId": "83de450b-a167-4f81-bf82-096ece488859",
+    "generation": 38,
+    "branch": "work/zerg17-south-relief",
+    "pr": 1558,
     "checkpoint": {
-      "evidence": "https://github.com/adamnoden/architecture/issues/1477#issuecomment-6900935416",
-      "next": "Close independently pressure-contained south end boxes and two passive receiving paths against matched normal duty and credible fault envelope; keep atmospheric break fallback conditional.",
-      "blocker": "Actual fault exposure, end boxes and adverse receiving/frost path unverified; pressure-decoupled booster screen has no robust resistance range."
+      "evidence": "Merged #1558 bb83ac6ce7f3990fe3daa7cd9ea1c32cb74b61ff; https://github.com/adamnoden/architecture/issues/1477#issuecomment-6917037157",
+      "next": "Test the removable front/taper and split collar, independent high vents, actual masonry and pressure seam with retained window and passive outfalls.",
+      "blocker": "Fixed taper obstructs full spool removal and lower mouth cannot vent at the adverse water level."
     }
   },
   "recoverySource": {
-    "leaseId": "1ac5de66-fd34-4615-8971-816252ad8ae3",
-    "generation": 36,
-    "branch": "work/zerg16-current-domain-closures",
-    "pr": 1552,
+    "leaseId": "83de450b-a167-4f81-bf82-096ece488859",
+    "generation": 38,
+    "branch": "work/zerg17-south-relief",
+    "pr": 1558,
     "checkpoint": {
-      "evidence": "Corrected 160b492fca659ce0b7139e619f40a2db137937c3; original foundation producer exact copy, regenerated no native evidence, arch and foundation native checks plus versioned load assertions pass locally.",
-      "next": "Wait for all corrected exact workflows, run four canonical merge checks and integrate.",
-      "blocker": "Pressure end boxes, independent receiving, frost and actual terminal support remain open."
+      "evidence": "Merged #1558 bb83ac6ce7f3990fe3daa7cd9ea1c32cb74b61ff; https://github.com/adamnoden/architecture/issues/1477#issuecomment-6917037157",
+      "next": "Test the removable front/taper and split collar, independent high vents, actual masonry and pressure seam with retained window and passive outfalls.",
+      "blocker": "Fixed taper obstructs full spool removal and lower mouth cannot vent at the adverse water level."
     }
-  },
-  "pr": 1558,
-  "checkpoint": {
-    "evidence": "Merged #1558 bb83ac6ce7f3990fe3daa7cd9ea1c32cb74b61ff; https://github.com/adamnoden/architecture/issues/1477#issuecomment-6917037157",
-    "next": "Test the removable front/taper and split collar, independent high vents, actual masonry and pressure seam with retained window and passive outfalls.",
-    "blocker": "Fixed taper obstructs full spool removal and lower mouth cannot vent at the adverse water level."
-  },
-  "releasedAt": "2026-11-16T13:08:57.570Z",
-  "releaseReason": "handoff"
+  }
 }
