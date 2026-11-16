@@ -1,0 +1,241 @@
+{
+  "geometry": {
+    "NEPrincipalNorthEmitterXYWidthDepthMm": [
+      9625,
+      11370.5,
+      1150,
+      200
+    ],
+    "NWRearCabinetXYWidthDepthMm": [
+      429.5,
+      10800,
+      300,
+      750
+    ],
+    "backedArmULimitsMm": [
+      -70,
+      110.0
+    ],
+    "keyBoxesXYXYMm": {
+      "NE east": [
+        11452.5,
+        11027.5,
+        11557.5,
+        11267.5
+      ],
+      "NE north": [
+        11027.5,
+        11452.5,
+        11267.5,
+        11557.5
+      ],
+      "NW north": [
+        732.5,
+        11452.5,
+        972.5,
+        11557.5
+      ],
+      "NW west": [
+        442.5,
+        11027.5,
+        547.5,
+        11267.5
+      ]
+    },
+    "keyULimitsMm": [
+      110.0,
+      215.0
+    ],
+    "keyVLimitsMm": [
+      400,
+      640
+    ],
+    "keyZLimitsMm": [
+      3170,
+      3370
+    ],
+    "normalRestraintGroupVMm": [
+      441,
+      599
+    ],
+    "normalRestraintTwoLevelsZMm": [
+      3240,
+      3300
+    ],
+    "ordinaryInsulationCavityAndBrickMm": [
+      110.0,
+      50.0,
+      102.5
+    ],
+    "rawWindowPlanReserveAtExistingWingEndMm": 107.5,
+    "shiftOfRoomFinishIfAppliedAlongWallMm": 40.0
+  },
+  "gravity": [
+    {
+      "adverseReceivedAtUMm": 190.0,
+      "field": "NW-W",
+      "horizontalSeatURangeMm": [
+        -30.0,
+        70.0
+      ],
+      "independentTieSensitivityKN": 16.733055772898066,
+      "seatMeanPressureMPa": 0.16865624999999998,
+      "sourceMKNmPerM": 10.836164062499998,
+      "sourceMRKNmPerM": 48.30675136962778,
+      "wingVerticalKN": 14.504437499999998
+    },
+    {
+      "adverseReceivedAtUMm": 190.0,
+      "field": "NE",
+      "horizontalSeatURangeMm": [
+        -30.0,
+        70.0
+      ],
+      "independentTieSensitivityKN": 21.990620962242502,
+      "seatMeanPressureMPa": 0.2216484375,
+      "sourceMKNmPerM": 18.71543994140625,
+      "sourceMRKNmPerM": 48.30675136962778,
+      "wingVerticalKN": 19.061765625
+    }
+  ],
+  "lateral": {
+    "crackedStrutPressureComparatorMPa": 8.976,
+    "isolatedHistoricalForceKN": 95.15979916854145,
+    "maxResultantUUnderPressureCapMm": 172.80146700419778,
+    "proposed105Projection": {
+      "adverseEffectiveFaceMM2": 13537.5,
+      "meanPressureMPa": 7.029348045690966,
+      "meanWithinAuthoredCrackedStrut": true,
+      "projectionMm": 105.0
+    },
+    "recessedBearingLand": {
+      "activeFace": {
+        "adverseEffectiveFaceMM2": 11400.0,
+        "meanPressureMPa": 8.347350804258022,
+        "meanWithinAuthoredCrackedStrut": true,
+        "projectionMm": 90.0
+      },
+      "admitted": false,
+      "adverseAnchorPairDemandKN": 61.082303520347565,
+      "bearingEndUMm": 200.0,
+      "eachSideRecessMm": 15.0,
+      "marginBelowIdealConeKN": 4.0569417930577885,
+      "recessAfterPairedSettingsMm": 5.0,
+      "recessedEndUMm": 215.0,
+      "tipContactCeilingKNm": 8.56438192516873,
+      "tipContactCeilingWithEdgeSettingKNm": 9.040180921011439
+    },
+    "rootMeanShearMPa": 1.9824958160112804,
+    "tensionComparison": {
+      "KSN16SManualGuaranteedFullSpacingMm": 186.0,
+      "availableRawVerticalPairSpacingMm": 60,
+      "eachOfTwoH16TensionKN": 33.75600984019207,
+      "idealConeMarginToTipKN": -2.3727743669787884,
+      "idealConeMinimumVSeparationBefore10Mm": 163.39107575814347,
+      "idealCrackedHeadPairConeBeforeSplittingKN": 65.13924531340535,
+      "normalPairLeverAfter10Mm": 148.0,
+      "normalPairTensionAtTipKN": 67.51201968038414,
+      "oldProjectedPoorBondAvailableMm": 145.0,
+      "requiredStraightH16BondMm": 319.7878467336445,
+      "rootMomentAtTipKNm": 9.991778912696853,
+      "rootMomentForBoundedPressureKNm": 5.976174987609243,
+      "scope": "The ideal axial breakout screen omits confinement, actual design resistance, load sharing and support stiffness. Proprietary slab-box lateral shear is outside the published method.",
+      "shortHeadTrialEmbedmentMM": 124,
+      "tensionUnderUniformCapMomentKN": 40.379560727089476,
+      "twoBarSteelYieldKN": 174.83646072151893
+    },
+    "unchanged80ProjectionControl": {
+      "adverseEffectiveFaceMM2": 9975.0,
+      "meanPressureMPa": 9.539829490580598,
+      "meanWithinAuthoredCrackedStrut": false,
+      "projectionMm": 80
+    }
+  },
+  "sourceHashes": {
+    "project/had/studies/open-north-loggia.json": "542781c6bb1d277b20492e8433cea498e98eaea5db2e737a5ec7e9655f9d18fd",
+    "project/mat/studies/loggia-soffit.json": "b02717a9ad5431259f9f0f1850ab7f596cf612bc13f04fbd9bdfc7b5f893fc29",
+    "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+    "project/str/studies/floor-portal-north-collar.json": "e996f409d47a6d81aa7624d683e86d92e7e5bc5ac5c828dcc7df39552e929c87",
+    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5"
+  },
+  "status": "Keep independent wall-core gravity bearing as development. Reject the unqualified roomward tooth as structural selection.",
+  "toe": {
+    "H10OutsideCoverAfter5Mm": [
+      33.0,
+      43.0
+    ],
+    "H8OutsideCoverAfter5Mm": [
+      35.0,
+      45.0
+    ],
+    "doglegRAndAngleMmDeg": [
+      300.0,
+      10
+    ],
+    "exactLowerPrimaryLocalXYMm": [
+      [
+        -27,
+        -27
+      ],
+      [
+        -27,
+        27
+      ],
+      [
+        -27,
+        780
+      ],
+      [
+        -27,
+        880
+      ],
+      [
+        27,
+        -27
+      ],
+      [
+        27,
+        27
+      ],
+      [
+        27,
+        780
+      ],
+      [
+        27,
+        880
+      ],
+      [
+        780,
+        -27
+      ],
+      [
+        780,
+        27
+      ],
+      [
+        880,
+        -27
+      ],
+      [
+        880,
+        27
+      ]
+    ],
+    "fullyYieldedBendTurnForcePerH20KN": 23.809377489930853,
+    "oldAndMovedPairUMm": [
+      [
+        -27,
+        27
+      ],
+      [
+        -12.0,
+        42.0
+      ]
+    ],
+    "trialStartEndZMm": [
+      2850,
+      2987.5624254098198
+    ]
+  }
+}

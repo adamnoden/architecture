@@ -82,22 +82,35 @@
           "box": [
             429.5,
             429.5,
-            500,
+            800,
             500
           ],
           "face": [
             431,
             431,
-            498.5,
+            798.5,
             498.5
           ],
           "sizeMm": [
-            67.5,
+            367.5,
             67.5
           ],
           "role": "border",
-          "wearFaceKg": 0.05740875,
-          "occupied": []
+          "wearFaceKg": 0.31255875,
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                564.75,
+                464.75
+              ],
+              [
+                664.75,
+                464.75
+              ]
+            ],
+            "endMarginMm": 133.75
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/429.5/500",
@@ -120,7 +133,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.2525985,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                464.75,
+                600
+              ],
+              [
+                464.75,
+                700
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/429.5/800",
@@ -143,7 +169,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.12629925,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                464.75,
+                825.75
+              ],
+              [
+                464.75,
+                925.75
+              ]
+            ],
+            "endMarginMm": 24.25
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/429.5/951.5",
@@ -166,30 +205,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.12629925,
-          "occupied": []
-        },
-        {
-          "id": "GROUND/G-STUDY/room-kit/floor/500/429.5",
-          "band": 0,
-          "box": [
-            500,
-            429.5,
-            800,
-            500
-          ],
-          "face": [
-            501.5,
-            431,
-            798.5,
-            498.5
-          ],
-          "sizeMm": [
-            297,
-            67.5
-          ],
-          "role": "border",
-          "wearFaceKg": 0.2525985,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                464.75,
+                977.25
+              ],
+              [
+                464.75,
+                1077.25
+              ]
+            ],
+            "endMarginMm": 24.25
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/500/500",
@@ -214,7 +243,20 @@
           "wearFaceKg": 1.1114334,
           "occupied": [
             "study-desk"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                650,
+                600
+              ],
+              [
+                650,
+                700
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/500/800",
@@ -239,7 +281,20 @@
           "wearFaceKg": 0.5557167,
           "occupied": [
             "study-desk"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                600,
+                875.75
+              ],
+              [
+                700,
+                875.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/500/951.5",
@@ -264,7 +319,20 @@
           "wearFaceKg": 0.5557167,
           "occupied": [
             "study-desk"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                600,
+                1027.25
+              ],
+              [
+                700,
+                1027.25
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/800/429.5",
@@ -287,7 +355,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.2525985,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                900,
+                464.75
+              ],
+              [
+                1000,
+                464.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/800/500",
@@ -312,7 +393,20 @@
           "wearFaceKg": 1.1114334,
           "occupied": [
             "study-desk"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                950,
+                600
+              ],
+              [
+                950,
+                700
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/800/800",
@@ -337,7 +431,20 @@
           "wearFaceKg": 0.5557167,
           "occupied": [
             "study-desk"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                900,
+                875.75
+              ],
+              [
+                1000,
+                875.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/800/951.5",
@@ -362,7 +469,20 @@
           "wearFaceKg": 0.5557167,
           "occupied": [
             "study-desk"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                900,
+                1027.25
+              ],
+              [
+                1000,
+                1027.25
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1100/429.5",
@@ -385,7 +505,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.2525985,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                1200,
+                464.75
+              ],
+              [
+                1300,
+                464.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1100/500",
@@ -410,7 +543,20 @@
           "wearFaceKg": 1.1114334,
           "occupied": [
             "study-desk"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                1250,
+                600
+              ],
+              [
+                1250,
+                700
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1100/800",
@@ -435,7 +581,20 @@
           "wearFaceKg": 0.5557167,
           "occupied": [
             "study-desk"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                1200,
+                875.75
+              ],
+              [
+                1300,
+                875.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1100/951.5",
@@ -460,7 +619,20 @@
           "wearFaceKg": 0.5557167,
           "occupied": [
             "study-desk"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                1200,
+                1027.25
+              ],
+              [
+                1300,
+                1027.25
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1400/429.5",
@@ -483,7 +655,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.2525985,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                1500,
+                464.75
+              ],
+              [
+                1600,
+                464.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1400/500",
@@ -508,7 +693,20 @@
           "wearFaceKg": 1.1114334,
           "occupied": [
             "study-desk"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                1550,
+                600
+              ],
+              [
+                1550,
+                700
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1400/800",
@@ -533,7 +731,20 @@
           "wearFaceKg": 0.5557167,
           "occupied": [
             "study-desk"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                1500,
+                875.75
+              ],
+              [
+                1600,
+                875.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1400/951.5",
@@ -558,7 +769,20 @@
           "wearFaceKg": 0.5557167,
           "occupied": [
             "study-desk"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                1500,
+                1027.25
+              ],
+              [
+                1600,
+                1027.25
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1700/429.5",
@@ -581,7 +805,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.2525985,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                1800,
+                464.75
+              ],
+              [
+                1900,
+                464.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1700/500",
@@ -606,7 +843,20 @@
           "wearFaceKg": 1.1114334,
           "occupied": [
             "study-desk"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                1850,
+                600
+              ],
+              [
+                1850,
+                700
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1700/800",
@@ -631,7 +881,20 @@
           "wearFaceKg": 0.5557167,
           "occupied": [
             "study-desk"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                1800,
+                875.75
+              ],
+              [
+                1900,
+                875.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1700/951.5",
@@ -656,7 +919,20 @@
           "wearFaceKg": 0.5557167,
           "occupied": [
             "study-desk"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                1800,
+                1027.25
+              ],
+              [
+                1900,
+                1027.25
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2000/429.5",
@@ -679,7 +955,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.2525985,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2100,
+                464.75
+              ],
+              [
+                2200,
+                464.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2000/500",
@@ -704,7 +993,20 @@
           "wearFaceKg": 1.1114334,
           "occupied": [
             "study-desk"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                2150,
+                600
+              ],
+              [
+                2150,
+                700
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2000/800",
@@ -729,7 +1031,20 @@
           "wearFaceKg": 0.5557167,
           "occupied": [
             "study-desk"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                2100,
+                875.75
+              ],
+              [
+                2200,
+                875.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2000/951.5",
@@ -754,7 +1069,20 @@
           "wearFaceKg": 0.5557167,
           "occupied": [
             "study-desk"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                2100,
+                1027.25
+              ],
+              [
+                2200,
+                1027.25
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2300/429.5",
@@ -777,7 +1105,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.2525985,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2400,
+                464.75
+              ],
+              [
+                2500,
+                464.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2300/500",
@@ -800,7 +1141,20 @@
           ],
           "role": "field",
           "wearFaceKg": 1.1114334,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2450,
+                600
+              ],
+              [
+                2450,
+                700
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2300/800",
@@ -823,7 +1177,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.5557167,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2400,
+                875.75
+              ],
+              [
+                2500,
+                875.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2300/951.5",
@@ -846,7 +1213,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.5557167,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2400,
+                1027.25
+              ],
+              [
+                2500,
+                1027.25
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2600/429.5",
@@ -869,7 +1249,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.2525985,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2700,
+                464.75
+              ],
+              [
+                2800,
+                464.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2600/500",
@@ -892,7 +1285,20 @@
           ],
           "role": "field",
           "wearFaceKg": 1.1114334,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2750,
+                600
+              ],
+              [
+                2750,
+                700
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2600/800",
@@ -915,7 +1321,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.5557167,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2700,
+                875.75
+              ],
+              [
+                2800,
+                875.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2600/951.5",
@@ -938,7 +1357,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.5557167,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2700,
+                1027.25
+              ],
+              [
+                2800,
+                1027.25
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2900/429.5",
@@ -961,7 +1393,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.2525985,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                3000,
+                464.75
+              ],
+              [
+                3100,
+                464.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2900/500",
@@ -984,7 +1429,20 @@
           ],
           "role": "field",
           "wearFaceKg": 1.1114334,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                3050,
+                600
+              ],
+              [
+                3050,
+                700
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2900/800",
@@ -1007,7 +1465,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.5557167,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                3000,
+                875.75
+              ],
+              [
+                3100,
+                875.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2900/951.5",
@@ -1030,7 +1501,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.5557167,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                3000,
+                1027.25
+              ],
+              [
+                3100,
+                1027.25
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/3200/429.5",
@@ -1053,7 +1537,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.2525985,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                3300,
+                464.75
+              ],
+              [
+                3400,
+                464.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/3200/500",
@@ -1076,7 +1573,20 @@
           ],
           "role": "field",
           "wearFaceKg": 1.1114334,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                3350,
+                600
+              ],
+              [
+                3350,
+                700
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/3200/800",
@@ -1099,7 +1609,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.5557167,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                3300,
+                875.75
+              ],
+              [
+                3400,
+                875.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/3200/951.5",
@@ -1122,7 +1645,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.5557167,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                3300,
+                1027.25
+              ],
+              [
+                3400,
+                1027.25
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/3500/429.5",
@@ -1145,7 +1681,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.2525985,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                3600,
+                464.75
+              ],
+              [
+                3700,
+                464.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/3500/500",
@@ -1168,7 +1717,20 @@
           ],
           "role": "field",
           "wearFaceKg": 1.1114334,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                3650,
+                600
+              ],
+              [
+                3650,
+                700
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/3500/800",
@@ -1191,7 +1753,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.5557167,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                3600,
+                875.75
+              ],
+              [
+                3700,
+                875.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/3500/951.5",
@@ -1214,7 +1789,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.5557167,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                3600,
+                1027.25
+              ],
+              [
+                3700,
+                1027.25
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/3800/429.5",
@@ -1237,7 +1825,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.2525985,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                3900,
+                464.75
+              ],
+              [
+                4000,
+                464.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/3800/500",
@@ -1260,7 +1861,20 @@
           ],
           "role": "field",
           "wearFaceKg": 1.1114334,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                3950,
+                600
+              ],
+              [
+                3950,
+                700
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/3800/800",
@@ -1283,7 +1897,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.5557167,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                3900,
+                875.75
+              ],
+              [
+                4000,
+                875.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/3800/951.5",
@@ -1306,7 +1933,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.5557167,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                3900,
+                1027.25
+              ],
+              [
+                4000,
+                1027.25
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/4100/429.5",
@@ -1329,7 +1969,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.2525985,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                4200,
+                464.75
+              ],
+              [
+                4300,
+                464.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/4100/500",
@@ -1352,7 +2005,20 @@
           ],
           "role": "field",
           "wearFaceKg": 1.1114334,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                4250,
+                600
+              ],
+              [
+                4250,
+                700
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/4100/800",
@@ -1375,7 +2041,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.5557167,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                4200,
+                875.75
+              ],
+              [
+                4300,
+                875.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/4100/951.5",
@@ -1398,7 +2077,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.5557167,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                4200,
+                1027.25
+              ],
+              [
+                4300,
+                1027.25
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/4400/429.5",
@@ -1421,7 +2113,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.12629925,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                4425.75,
+                464.75
+              ],
+              [
+                4525.75,
+                464.75
+              ]
+            ],
+            "endMarginMm": 24.25
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/4400/500",
@@ -1444,7 +2149,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.5557167,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                4475.75,
+                600
+              ],
+              [
+                4475.75,
+                700
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/4400/800",
@@ -1467,7 +2185,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.27785835,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                4475.75,
+                825.75
+              ],
+              [
+                4475.75,
+                925.75
+              ]
+            ],
+            "endMarginMm": 24.25
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/4400/951.5",
@@ -1490,7 +2221,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.27785835,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                4475.75,
+                977.25
+              ],
+              [
+                4475.75,
+                1077.25
+              ]
+            ],
+            "endMarginMm": 24.25
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/4551.5/429.5",
@@ -1513,7 +2257,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.12629925,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                4577.25,
+                464.75
+              ],
+              [
+                4677.25,
+                464.75
+              ]
+            ],
+            "endMarginMm": 24.25
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/4551.5/500",
@@ -1536,7 +2293,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.5557167,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                4627.25,
+                600
+              ],
+              [
+                4627.25,
+                700
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/4551.5/800",
@@ -1559,7 +2329,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.27785835,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                4627.25,
+                825.75
+              ],
+              [
+                4627.25,
+                925.75
+              ]
+            ],
+            "endMarginMm": 24.25
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/4551.5/951.5",
@@ -1582,258 +2365,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.27785835,
-          "occupied": []
-        },
-        {
-          "id": "GROUND/G-STUDY/room-kit/floor/429.5/1103",
-          "band": 1,
-          "box": [
-            429.5,
-            1103,
-            500,
-            1400
-          ],
-          "face": [
-            431,
-            1104.5,
-            498.5,
-            1398.5
-          ],
-          "sizeMm": [
-            67.5,
-            294
-          ],
-          "role": "border",
-          "wearFaceKg": 0.250047,
-          "occupied": [
-            "service-emitter-study-W"
-          ]
-        },
-        {
-          "id": "GROUND/G-STUDY/room-kit/floor/429.5/1400",
-          "band": 1,
-          "box": [
-            429.5,
-            1400,
-            500,
-            1700
-          ],
-          "face": [
-            431,
-            1401.5,
-            498.5,
-            1698.5
-          ],
-          "sizeMm": [
-            67.5,
-            297
-          ],
-          "role": "border",
-          "wearFaceKg": 0.2525985,
-          "occupied": [
-            "service-emitter-study-W"
-          ]
-        },
-        {
-          "id": "GROUND/G-STUDY/room-kit/floor/429.5/1700",
-          "band": 1,
-          "box": [
-            429.5,
-            1700,
-            500,
-            2000
-          ],
-          "face": [
-            431,
-            1701.5,
-            498.5,
-            1998.5
-          ],
-          "sizeMm": [
-            67.5,
-            297
-          ],
-          "role": "border",
-          "wearFaceKg": 0.2525985,
-          "occupied": [
-            "service-emitter-study-W"
-          ]
-        },
-        {
-          "id": "GROUND/G-STUDY/room-kit/floor/429.5/2000",
-          "band": 1,
-          "box": [
-            429.5,
-            2000,
-            500,
-            2300
-          ],
-          "face": [
-            431,
-            2001.5,
-            498.5,
-            2298.5
-          ],
-          "sizeMm": [
-            67.5,
-            297
-          ],
-          "role": "border",
-          "wearFaceKg": 0.2525985,
-          "occupied": [
-            "service-emitter-study-W"
-          ]
-        },
-        {
-          "id": "GROUND/G-STUDY/room-kit/floor/429.5/2300",
-          "band": 1,
-          "box": [
-            429.5,
-            2300,
-            500,
-            2553
-          ],
-          "face": [
-            431,
-            2301.5,
-            498.5,
-            2551.5
-          ],
-          "sizeMm": [
-            67.5,
-            250
-          ],
-          "role": "border",
-          "wearFaceKg": 0.21262499999999998,
-          "occupied": [
-            "service-emitter-study-W"
-          ]
-        },
-        {
-          "id": "GROUND/G-STUDY/room-kit/floor/500/1103",
-          "band": 1,
-          "box": [
-            500,
-            1103,
-            800,
-            1400
-          ],
-          "face": [
-            501.5,
-            1104.5,
-            798.5,
-            1398.5
-          ],
-          "sizeMm": [
-            297,
-            294
-          ],
-          "role": "border",
-          "wearFaceKg": 1.1002068,
-          "occupied": [
-            "study-desk",
-            "service-emitter-study-W"
-          ]
-        },
-        {
-          "id": "GROUND/G-STUDY/room-kit/floor/500/1400",
-          "band": 1,
-          "box": [
-            500,
-            1400,
-            800,
-            1700
-          ],
-          "face": [
-            501.5,
-            1401.5,
-            798.5,
-            1698.5
-          ],
-          "sizeMm": [
-            297,
-            297
-          ],
-          "role": "field",
-          "wearFaceKg": 1.1114334,
-          "occupied": [
-            "service-emitter-study-W"
-          ]
-        },
-        {
-          "id": "GROUND/G-STUDY/room-kit/floor/500/1700",
-          "band": 1,
-          "box": [
-            500,
-            1700,
-            800,
-            2000
-          ],
-          "face": [
-            501.5,
-            1701.5,
-            798.5,
-            1998.5
-          ],
-          "sizeMm": [
-            297,
-            297
-          ],
-          "role": "field",
-          "wearFaceKg": 1.1114334,
-          "occupied": [
-            "service-emitter-study-W"
-          ]
-        },
-        {
-          "id": "GROUND/G-STUDY/room-kit/floor/500/2000",
-          "band": 1,
-          "box": [
-            500,
-            2000,
-            800,
-            2300
-          ],
-          "face": [
-            501.5,
-            2001.5,
-            798.5,
-            2298.5
-          ],
-          "sizeMm": [
-            297,
-            297
-          ],
-          "role": "field",
-          "wearFaceKg": 1.1114334,
-          "occupied": [
-            "service-emitter-study-W"
-          ]
-        },
-        {
-          "id": "GROUND/G-STUDY/room-kit/floor/500/2300",
-          "band": 1,
-          "box": [
-            500,
-            2300,
-            800,
-            2553
-          ],
-          "face": [
-            501.5,
-            2301.5,
-            798.5,
-            2551.5
-          ],
-          "sizeMm": [
-            297,
-            250
-          ],
-          "role": "border",
-          "wearFaceKg": 0.93555,
-          "occupied": [
-            "service-emitter-study-W"
-          ]
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                4627.25,
+                977.25
+              ],
+              [
+                4627.25,
+                1077.25
+              ]
+            ],
+            "endMarginMm": 24.25
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/800/1103",
@@ -1858,7 +2403,20 @@
           "wearFaceKg": 1.1002068,
           "occupied": [
             "study-desk"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                900,
+                1251.5
+              ],
+              [
+                1000,
+                1251.5
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/800/1400",
@@ -1883,7 +2441,20 @@
           "wearFaceKg": 1.1114334,
           "occupied": [
             "study-chair"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                950,
+                1500
+              ],
+              [
+                950,
+                1600
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/800/1700",
@@ -1908,7 +2479,20 @@
           "wearFaceKg": 1.1114334,
           "occupied": [
             "study-chair"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                950,
+                1800
+              ],
+              [
+                950,
+                1900
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/800/2000",
@@ -1933,7 +2517,20 @@
           "wearFaceKg": 1.1114334,
           "occupied": [
             "study-chair"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                950,
+                2100
+              ],
+              [
+                950,
+                2200
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/800/2300",
@@ -1956,7 +2553,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.93555,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                900,
+                2426.5
+              ],
+              [
+                1000,
+                2426.5
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1100/1103",
@@ -1981,7 +2591,20 @@
           "wearFaceKg": 1.1002068,
           "occupied": [
             "study-desk"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                1200,
+                1251.5
+              ],
+              [
+                1300,
+                1251.5
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1100/1400",
@@ -2006,7 +2629,20 @@
           "wearFaceKg": 1.1114334,
           "occupied": [
             "study-chair"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                1250,
+                1500
+              ],
+              [
+                1250,
+                1600
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1100/1700",
@@ -2031,7 +2667,20 @@
           "wearFaceKg": 1.1114334,
           "occupied": [
             "study-chair"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                1250,
+                1800
+              ],
+              [
+                1250,
+                1900
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1100/2000",
@@ -2056,7 +2705,20 @@
           "wearFaceKg": 1.1114334,
           "occupied": [
             "study-chair"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                1250,
+                2100
+              ],
+              [
+                1250,
+                2200
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1100/2300",
@@ -2079,7 +2741,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.93555,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                1200,
+                2426.5
+              ],
+              [
+                1300,
+                2426.5
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1400/1103",
@@ -2104,7 +2779,20 @@
           "wearFaceKg": 1.1002068,
           "occupied": [
             "study-desk"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                1500,
+                1251.5
+              ],
+              [
+                1600,
+                1251.5
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1400/1400",
@@ -2129,7 +2817,20 @@
           "wearFaceKg": 1.1114334,
           "occupied": [
             "study-chair"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                1550,
+                1500
+              ],
+              [
+                1550,
+                1600
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1400/1700",
@@ -2154,7 +2855,20 @@
           "wearFaceKg": 1.1114334,
           "occupied": [
             "study-chair"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                1550,
+                1800
+              ],
+              [
+                1550,
+                1900
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1400/2000",
@@ -2179,7 +2893,20 @@
           "wearFaceKg": 1.1114334,
           "occupied": [
             "study-chair"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                1550,
+                2100
+              ],
+              [
+                1550,
+                2200
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1400/2300",
@@ -2202,7 +2929,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.93555,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                1500,
+                2426.5
+              ],
+              [
+                1600,
+                2426.5
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1700/1103",
@@ -2227,7 +2967,20 @@
           "wearFaceKg": 1.1002068,
           "occupied": [
             "study-desk"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                1800,
+                1251.5
+              ],
+              [
+                1900,
+                1251.5
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1700/1400",
@@ -2252,7 +3005,20 @@
           "wearFaceKg": 1.1114334,
           "occupied": [
             "study-chair"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                1850,
+                1500
+              ],
+              [
+                1850,
+                1600
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1700/1700",
@@ -2277,7 +3043,20 @@
           "wearFaceKg": 1.1114334,
           "occupied": [
             "study-chair"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                1850,
+                1800
+              ],
+              [
+                1850,
+                1900
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1700/2000",
@@ -2302,7 +3081,20 @@
           "wearFaceKg": 1.1114334,
           "occupied": [
             "study-chair"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                1850,
+                2100
+              ],
+              [
+                1850,
+                2200
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1700/2300",
@@ -2325,7 +3117,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.93555,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                1800,
+                2426.5
+              ],
+              [
+                1900,
+                2426.5
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2000/1103",
@@ -2350,7 +3155,20 @@
           "wearFaceKg": 1.1002068,
           "occupied": [
             "study-desk"
-          ]
+          ],
+          "grip": {
+            "centres": [
+              [
+                2100,
+                1251.5
+              ],
+              [
+                2200,
+                1251.5
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2000/1400",
@@ -2373,7 +3191,20 @@
           ],
           "role": "field",
           "wearFaceKg": 1.1114334,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2150,
+                1500
+              ],
+              [
+                2150,
+                1600
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2000/1700",
@@ -2396,7 +3227,20 @@
           ],
           "role": "field",
           "wearFaceKg": 1.1114334,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2150,
+                1800
+              ],
+              [
+                2150,
+                1900
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2000/2000",
@@ -2419,7 +3263,20 @@
           ],
           "role": "field",
           "wearFaceKg": 1.1114334,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2150,
+                2100
+              ],
+              [
+                2150,
+                2200
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2000/2300",
@@ -2442,7 +3299,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.93555,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2100,
+                2426.5
+              ],
+              [
+                2200,
+                2426.5
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2300/1103",
@@ -2465,7 +3335,20 @@
           ],
           "role": "border",
           "wearFaceKg": 1.1002068,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2400,
+                1251.5
+              ],
+              [
+                2500,
+                1251.5
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2300/1400",
@@ -2488,7 +3371,20 @@
           ],
           "role": "field",
           "wearFaceKg": 1.1114334,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2450,
+                1500
+              ],
+              [
+                2450,
+                1600
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2300/1700",
@@ -2511,7 +3407,20 @@
           ],
           "role": "field",
           "wearFaceKg": 1.1114334,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2450,
+                1800
+              ],
+              [
+                2450,
+                1900
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2300/2000",
@@ -2534,7 +3443,20 @@
           ],
           "role": "field",
           "wearFaceKg": 1.1114334,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2450,
+                2100
+              ],
+              [
+                2450,
+                2200
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2300/2300",
@@ -2557,7 +3479,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.93555,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2400,
+                2426.5
+              ],
+              [
+                2500,
+                2426.5
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2600/1103",
@@ -2580,7 +3515,20 @@
           ],
           "role": "border",
           "wearFaceKg": 1.1002068,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2700,
+                1251.5
+              ],
+              [
+                2800,
+                1251.5
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2600/1400",
@@ -2603,7 +3551,20 @@
           ],
           "role": "field",
           "wearFaceKg": 1.1114334,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2750,
+                1500
+              ],
+              [
+                2750,
+                1600
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2600/1700",
@@ -2626,7 +3587,20 @@
           ],
           "role": "field",
           "wearFaceKg": 1.1114334,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2750,
+                1800
+              ],
+              [
+                2750,
+                1900
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2600/2000",
@@ -2649,7 +3623,20 @@
           ],
           "role": "field",
           "wearFaceKg": 1.1114334,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2750,
+                2100
+              ],
+              [
+                2750,
+                2200
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2600/2300",
@@ -2672,7 +3659,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.93555,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2700,
+                2426.5
+              ],
+              [
+                2800,
+                2426.5
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2900/1103",
@@ -2695,7 +3695,20 @@
           ],
           "role": "border",
           "wearFaceKg": 1.1002068,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                3000,
+                1251.5
+              ],
+              [
+                3100,
+                1251.5
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2900/1400",
@@ -2718,7 +3731,20 @@
           ],
           "role": "field",
           "wearFaceKg": 1.1114334,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                3050,
+                1500
+              ],
+              [
+                3050,
+                1600
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2900/1700",
@@ -2741,7 +3767,20 @@
           ],
           "role": "field",
           "wearFaceKg": 1.1114334,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                3050,
+                1800
+              ],
+              [
+                3050,
+                1900
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2900/2000",
@@ -2764,7 +3803,20 @@
           ],
           "role": "field",
           "wearFaceKg": 1.1114334,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                3050,
+                2100
+              ],
+              [
+                3050,
+                2200
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2900/2300",
@@ -2787,7 +3839,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.93555,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                3000,
+                2426.5
+              ],
+              [
+                3100,
+                2426.5
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/3200/1103",
@@ -2810,7 +3875,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.37044,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                3251.5,
+                1201.5
+              ],
+              [
+                3251.5,
+                1301.5
+              ]
+            ],
+            "endMarginMm": 97
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/3200/1400",
@@ -2833,7 +3911,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.37422,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                3251.5,
+                1500
+              ],
+              [
+                3251.5,
+                1600
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/3200/1700",
@@ -2856,7 +3947,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.37422,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                3251.5,
+                1800
+              ],
+              [
+                3251.5,
+                1900
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/3200/2000",
@@ -2879,7 +3983,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.37422,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                3251.5,
+                2100
+              ],
+              [
+                3251.5,
+                2200
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/3200/2300",
@@ -2902,7 +4019,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.315,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                3251.5,
+                2376.5
+              ],
+              [
+                3251.5,
+                2476.5
+              ]
+            ],
+            "endMarginMm": 75
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/429.5/2553",
@@ -2925,7 +4055,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.14501025,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                464.75,
+                2589.75
+              ],
+              [
+                464.75,
+                2689.75
+              ]
+            ],
+            "endMarginMm": 35.25
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/429.5/2726.5",
@@ -2948,7 +4091,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.14501025,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                464.75,
+                2763.25
+              ],
+              [
+                464.75,
+                2863.25
+              ]
+            ],
+            "endMarginMm": 35.25
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/429.5/2900",
@@ -2971,7 +4127,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.21049874999999998,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                464.75,
+                2975.25
+              ],
+              [
+                464.75,
+                3075.25
+              ]
+            ],
+            "endMarginMm": 73.75
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/500/2553",
@@ -2994,7 +4163,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.6380451,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                600,
+                2639.75
+              ],
+              [
+                700,
+                2639.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/500/2726.5",
@@ -3017,7 +4199,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.6380451,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                600,
+                2813.25
+              ],
+              [
+                700,
+                2813.25
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/500/2900",
@@ -3040,7 +4235,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.9261944999999999,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                600,
+                3025.25
+              ],
+              [
+                700,
+                3025.25
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/800/2553",
@@ -3063,7 +4271,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.6380451,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                900,
+                2639.75
+              ],
+              [
+                1000,
+                2639.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/800/2726.5",
@@ -3086,7 +4307,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.6380451,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                900,
+                2813.25
+              ],
+              [
+                1000,
+                2813.25
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/800/2900",
@@ -3109,7 +4343,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.9261944999999999,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                900,
+                3025.25
+              ],
+              [
+                1000,
+                3025.25
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1100/2553",
@@ -3132,7 +4379,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.6380451,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                1200,
+                2639.75
+              ],
+              [
+                1300,
+                2639.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1100/2726.5",
@@ -3155,7 +4415,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.6380451,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                1200,
+                2813.25
+              ],
+              [
+                1300,
+                2813.25
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1100/2900",
@@ -3178,7 +4451,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.9261944999999999,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                1200,
+                3025.25
+              ],
+              [
+                1300,
+                3025.25
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1400/2553",
@@ -3201,7 +4487,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.6380451,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                1500,
+                2639.75
+              ],
+              [
+                1600,
+                2639.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1400/2726.5",
@@ -3224,7 +4523,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.6380451,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                1500,
+                2813.25
+              ],
+              [
+                1600,
+                2813.25
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1400/2900",
@@ -3247,7 +4559,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.9261944999999999,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                1500,
+                3025.25
+              ],
+              [
+                1600,
+                3025.25
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1700/2553",
@@ -3270,7 +4595,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.6380451,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                1800,
+                2639.75
+              ],
+              [
+                1900,
+                2639.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1700/2726.5",
@@ -3293,7 +4631,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.6380451,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                1800,
+                2813.25
+              ],
+              [
+                1900,
+                2813.25
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/1700/2900",
@@ -3316,7 +4667,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.9261944999999999,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                1800,
+                3025.25
+              ],
+              [
+                1900,
+                3025.25
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2000/2553",
@@ -3339,7 +4703,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.6380451,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2100,
+                2639.75
+              ],
+              [
+                2200,
+                2639.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2000/2726.5",
@@ -3362,7 +4739,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.6380451,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2100,
+                2813.25
+              ],
+              [
+                2200,
+                2813.25
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2000/2900",
@@ -3385,7 +4775,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.9261944999999999,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2100,
+                3025.25
+              ],
+              [
+                2200,
+                3025.25
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2300/2553",
@@ -3408,7 +4811,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.6380451,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2400,
+                2639.75
+              ],
+              [
+                2500,
+                2639.75
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2300/2726.5",
@@ -3431,7 +4847,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.6380451,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2400,
+                2813.25
+              ],
+              [
+                2500,
+                2813.25
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2300/2900",
@@ -3454,7 +4883,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.9261944999999999,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2400,
+                3025.25
+              ],
+              [
+                2500,
+                3025.25
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2600/2553",
@@ -3477,7 +4919,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.25242525,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2660.25,
+                2589.75
+              ],
+              [
+                2660.25,
+                2689.75
+              ]
+            ],
+            "endMarginMm": 35.25
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2600/2726.5",
@@ -3500,7 +4955,20 @@
           ],
           "role": "border",
           "wearFaceKg": 0.25242525,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2660.25,
+                2763.25
+              ],
+              [
+                2660.25,
+                2863.25
+              ]
+            ],
+            "endMarginMm": 35.25
+          }
         },
         {
           "id": "GROUND/G-STUDY/room-kit/floor/2600/2900",
@@ -3523,14 +4991,471 @@
           ],
           "role": "border",
           "wearFaceKg": 0.36642375,
-          "occupied": []
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                2660.25,
+                2975.25
+              ],
+              [
+                2660.25,
+                3075.25
+              ]
+            ],
+            "endMarginMm": 73.75
+          }
+        },
+        {
+          "id": "GROUND/G-STUDY/room-kit/floor/429.5/1103",
+          "band": 1,
+          "box": [
+            429.5,
+            1103,
+            500,
+            1246
+          ],
+          "face": [
+            431,
+            1104.5,
+            498.5,
+            1244.5
+          ],
+          "sizeMm": [
+            67.5,
+            140
+          ],
+          "role": "border",
+          "wearFaceKg": 0.11907,
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                464.75,
+                1124.5
+              ],
+              [
+                464.75,
+                1224.5
+              ]
+            ],
+            "endMarginMm": 20
+          }
+        },
+        {
+          "id": "GROUND/G-STUDY/room-kit/floor/429.5/2405",
+          "band": 1,
+          "box": [
+            429.5,
+            2405,
+            500,
+            2553
+          ],
+          "face": [
+            431,
+            2406.5,
+            498.5,
+            2551.5
+          ],
+          "sizeMm": [
+            67.5,
+            145
+          ],
+          "role": "border",
+          "wearFaceKg": 0.1233225,
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                464.75,
+                2429
+              ],
+              [
+                464.75,
+                2529
+              ]
+            ],
+            "endMarginMm": 22.5
+          }
+        },
+        {
+          "id": "GROUND/G-STUDY/room-kit/floor/500/1103",
+          "band": 1,
+          "box": [
+            500,
+            1103,
+            800,
+            1246
+          ],
+          "face": [
+            501.5,
+            1104.5,
+            798.5,
+            1244.5
+          ],
+          "sizeMm": [
+            297,
+            140
+          ],
+          "role": "border",
+          "wearFaceKg": 0.523908,
+          "occupied": [
+            "study-desk"
+          ],
+          "grip": {
+            "centres": [
+              [
+                600,
+                1174.5
+              ],
+              [
+                700,
+                1174.5
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
+        },
+        {
+          "id": "GROUND/G-STUDY/room-kit/floor/500/2405",
+          "band": 1,
+          "box": [
+            500,
+            2405,
+            800,
+            2553
+          ],
+          "face": [
+            501.5,
+            2406.5,
+            798.5,
+            2551.5
+          ],
+          "sizeMm": [
+            297,
+            145
+          ],
+          "role": "border",
+          "wearFaceKg": 0.542619,
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                600,
+                2479
+              ],
+              [
+                700,
+                2479
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
+        },
+        {
+          "id": "GROUND/G-STUDY/room-kit/floor/634.5/1246",
+          "band": 1,
+          "box": [
+            634.5,
+            1246,
+            800,
+            1400
+          ],
+          "face": [
+            636,
+            1247.5,
+            798.5,
+            1398.5
+          ],
+          "sizeMm": [
+            162.5,
+            151
+          ],
+          "role": "border",
+          "wearFaceKg": 0.3091725,
+          "occupied": [
+            "study-desk"
+          ],
+          "grip": {
+            "centres": [
+              [
+                667.25,
+                1323
+              ],
+              [
+                767.25,
+                1323
+              ]
+            ],
+            "endMarginMm": 31.25
+          }
+        },
+        {
+          "id": "GROUND/G-STUDY/room-kit/floor/634.5/1400",
+          "band": 1,
+          "box": [
+            634.5,
+            1400,
+            800,
+            1700
+          ],
+          "face": [
+            636,
+            1401.5,
+            798.5,
+            1698.5
+          ],
+          "sizeMm": [
+            162.5,
+            297
+          ],
+          "role": "border",
+          "wearFaceKg": 0.6081075,
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                717.25,
+                1500
+              ],
+              [
+                717.25,
+                1600
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
+        },
+        {
+          "id": "GROUND/G-STUDY/room-kit/floor/634.5/1700",
+          "band": 1,
+          "box": [
+            634.5,
+            1700,
+            800,
+            2000
+          ],
+          "face": [
+            636,
+            1701.5,
+            798.5,
+            1998.5
+          ],
+          "sizeMm": [
+            162.5,
+            297
+          ],
+          "role": "border",
+          "wearFaceKg": 0.6081075,
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                717.25,
+                1800
+              ],
+              [
+                717.25,
+                1900
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
+        },
+        {
+          "id": "GROUND/G-STUDY/room-kit/floor/634.5/2000",
+          "band": 1,
+          "box": [
+            634.5,
+            2000,
+            800,
+            2300
+          ],
+          "face": [
+            636,
+            2001.5,
+            798.5,
+            2298.5
+          ],
+          "sizeMm": [
+            162.5,
+            297
+          ],
+          "role": "border",
+          "wearFaceKg": 0.6081075,
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                717.25,
+                2100
+              ],
+              [
+                717.25,
+                2200
+              ]
+            ],
+            "endMarginMm": 98.5
+          }
+        },
+        {
+          "id": "GROUND/G-STUDY/room-kit/floor/634.5/2300",
+          "band": 1,
+          "box": [
+            634.5,
+            2300,
+            800,
+            2405
+          ],
+          "face": [
+            636,
+            2301.5,
+            798.5,
+            2403.5
+          ],
+          "sizeMm": [
+            162.5,
+            102
+          ],
+          "role": "border",
+          "wearFaceKg": 0.208845,
+          "occupied": [],
+          "grip": {
+            "centres": [
+              [
+                667.25,
+                2352.5
+              ],
+              [
+                767.25,
+                2352.5
+              ]
+            ],
+            "endMarginMm": 31.25
+          }
         }
       ],
+      "emitterPlinth": {
+        "state": "geometry-screen-only",
+        "id": "GROUND/G-STUDY/room-kit/floor/emitter-plinth",
+        "emitterId": "service-emitter-study-W",
+        "box": [
+          429.5,
+          1246,
+          634.5,
+          2405
+        ],
+        "face": [
+          429.5,
+          1247.5,
+          633,
+          2403.5
+        ],
+        "areaMm2": 237595,
+        "setbacks": {
+          "south": 4,
+          "east": 5,
+          "north": 5
+        },
+        "smallestAdjacentFaceGapMm": 5.5,
+        "support": "independent bearing to continuous deck; no radiator support on removable finishes"
+      },
       "jointMm": 3,
       "wearingFaceMm": 18,
       "beddingMm": 2,
       "depthUnassignedWithinFinishMm": 0,
-      "borderParts": 106,
+      "handling": {
+        "state": "geometry-and-demand-screen",
+        "keyedFace": {
+          "centresMm": 100,
+          "minimumLongitudinalEndMm": 20,
+          "closestWallAxisMm": 25.75,
+          "nominalToolRadiusMm": 18,
+          "toolRadiusLimitMm": 20.75,
+          "femaleEngagementTrialMm": 12,
+          "flangeDiameterMm": 24,
+          "minimumEndLigamentMm": 8,
+          "maxFaceMassKg": 1.1114334,
+          "packageBoundKg": 6,
+          "releaseForceN": 30,
+          "characteristicDemandN": 147.72,
+          "keyProofDemandN": 150,
+          "timberFlangeDemandMPa": 0.44209706414415373,
+          "trayJointDemandMPaAt1MmThroat": 3.9788735772973833
+        },
+        "parking": {
+          "parkedChair": [
+            2325,
+            1470,
+            3225,
+            2470
+          ],
+          "parkedDesk": [
+            655,
+            1400,
+            2255,
+            2100
+          ],
+          "deskShiftMm": 800,
+          "furnitureCovered": 37,
+          "unexposedPartIds": []
+        },
+        "emitterEdgeRelease": {
+          "pickupId": "GROUND/G-STUDY/room-kit/floor/634.5/2000",
+          "firstRestId": "GROUND/G-STUDY/room-kit/floor/634.5/1700",
+          "workerSweep": [
+            835,
+            1550,
+            1435,
+            2450
+          ],
+          "panelSweep": [
+            634.5,
+            1700,
+            800,
+            2300
+          ],
+          "firstRestBoard": [
+            635,
+            1685,
+            800,
+            2015
+          ],
+          "padCentres": [
+            [
+              670,
+              1775
+            ],
+            [
+              765,
+              1775
+            ],
+            [
+              670,
+              1925
+            ],
+            [
+              765,
+              1925
+            ]
+          ],
+          "padWidthMm": 25,
+          "reachMm": 457.6189053131437,
+          "edgeReleaseClear": true,
+          "restBoardTopMm": 12,
+          "pickupLiftMm": 38,
+          "worstRestPadN": 117.72,
+          "restPadDemandMPa": 0.188352
+        },
+        "held": [
+          "loaded grip and breakaway",
+          "furniture carrying cycle",
+          "qualified continuous deck and bedding",
+          "ferrule pull-out and repeated fits",
+          "seating, acoustic, slip, movement and material performance"
+        ]
+      },
+      "borderParts": 107,
       "release": {
         "state": "geometry-screen-only",
         "code": "DIRECT_LIFT_OCCUPIED_PLAN",
@@ -4183,17 +6108,107 @@
       "wearingFace": "stone-steel"
     },
     "caseDigest": "f428ab66d9d1daf43b434e5624b7620c8504cfb12290a06a6d027c6bbe802878",
+    "handling": {
+      "state": "geometry-and-demand-screen",
+      "keyedFace": {
+        "centresMm": 100,
+        "minimumLongitudinalEndMm": 20,
+        "closestWallAxisMm": 25.75,
+        "nominalToolRadiusMm": 18,
+        "toolRadiusLimitMm": 20.75,
+        "femaleEngagementTrialMm": 12,
+        "flangeDiameterMm": 24,
+        "minimumEndLigamentMm": 8,
+        "maxFaceMassKg": 4.93529355,
+        "packageBoundKg": 6,
+        "releaseForceN": 30,
+        "characteristicDemandN": 147.72,
+        "keyProofDemandN": 150,
+        "timberFlangeDemandMPa": 0.44209706414415373,
+        "trayJointDemandMPaAt1MmThroat": 3.9788735772973833
+      },
+      "parking": {
+        "parkedChair": [
+          2325,
+          1470,
+          3225,
+          2470
+        ],
+        "parkedDesk": [
+          655,
+          1400,
+          2255,
+          2100
+        ],
+        "deskShiftMm": 800,
+        "furnitureCovered": 37,
+        "unexposedPartIds": []
+      },
+      "emitterEdgeRelease": {
+        "pickupId": "GROUND/G-STUDY/room-kit/floor/634.5/2000",
+        "firstRestId": "GROUND/G-STUDY/room-kit/floor/634.5/1700",
+        "workerSweep": [
+          835,
+          1550,
+          1435,
+          2450
+        ],
+        "panelSweep": [
+          634.5,
+          1700,
+          800,
+          2300
+        ],
+        "firstRestBoard": [
+          635,
+          1685,
+          800,
+          2015
+        ],
+        "padCentres": [
+          [
+            670,
+            1775
+          ],
+          [
+            765,
+            1775
+          ],
+          [
+            670,
+            1925
+          ],
+          [
+            765,
+            1925
+          ]
+        ],
+        "padWidthMm": 25,
+        "reachMm": 457.6189053131437,
+        "edgeReleaseClear": true,
+        "restBoardTopMm": 12,
+        "pickupLiftMm": 38,
+        "worstRestPadN": 117.72,
+        "restPadDemandMPa": 0.188352
+      },
+      "held": [
+        "loaded grip and breakaway",
+        "furniture carrying cycle",
+        "qualified continuous deck and bedding",
+        "ferrule pull-out and repeated fits",
+        "seating, acoustic, slip, movement and material performance"
+      ]
+    },
     "floorDepth": [
       15,
       2,
       3
     ],
     "wearFaceKgById": {
-      "GROUND/G-STUDY/room-kit/floor/429.5/429.5": 0.2549221875,
+      "GROUND/G-STUDY/room-kit/floor/429.5/429.5": 1.3879096874999999,
       "GROUND/G-STUDY/room-kit/floor/429.5/500": 1.1216576249999999,
       "GROUND/G-STUDY/room-kit/floor/429.5/800": 0.5608288124999999,
       "GROUND/G-STUDY/room-kit/floor/429.5/951.5": 0.5608288124999999,
-      "GROUND/G-STUDY/room-kit/floor/500/429.5": 1.1216576249999999,
       "GROUND/G-STUDY/room-kit/floor/500/500": 4.93529355,
       "GROUND/G-STUDY/room-kit/floor/500/800": 2.467646775,
       "GROUND/G-STUDY/room-kit/floor/500/951.5": 2.467646775,
@@ -4253,16 +6268,6 @@
       "GROUND/G-STUDY/room-kit/floor/4551.5/500": 2.467646775,
       "GROUND/G-STUDY/room-kit/floor/4551.5/800": 1.2338233875,
       "GROUND/G-STUDY/room-kit/floor/4551.5/951.5": 1.2338233875,
-      "GROUND/G-STUDY/room-kit/floor/429.5/1103": 1.11032775,
-      "GROUND/G-STUDY/room-kit/floor/429.5/1400": 1.1216576249999999,
-      "GROUND/G-STUDY/room-kit/floor/429.5/1700": 1.1216576249999999,
-      "GROUND/G-STUDY/room-kit/floor/429.5/2000": 1.1216576249999999,
-      "GROUND/G-STUDY/room-kit/floor/429.5/2300": 0.9441562499999999,
-      "GROUND/G-STUDY/room-kit/floor/500/1103": 4.8854421,
-      "GROUND/G-STUDY/room-kit/floor/500/1400": 4.93529355,
-      "GROUND/G-STUDY/room-kit/floor/500/1700": 4.93529355,
-      "GROUND/G-STUDY/room-kit/floor/500/2000": 4.93529355,
-      "GROUND/G-STUDY/room-kit/floor/500/2300": 4.1542875,
       "GROUND/G-STUDY/room-kit/floor/800/1103": 4.8854421,
       "GROUND/G-STUDY/room-kit/floor/800/1400": 4.93529355,
       "GROUND/G-STUDY/room-kit/floor/800/1700": 4.93529355,
@@ -4334,7 +6339,16 @@
       "GROUND/G-STUDY/room-kit/floor/2300/2900": 4.1127446249999995,
       "GROUND/G-STUDY/room-kit/floor/2600/2553": 1.1208883125,
       "GROUND/G-STUDY/room-kit/floor/2600/2726.5": 1.1208883125,
-      "GROUND/G-STUDY/room-kit/floor/2600/2900": 1.6270959375
+      "GROUND/G-STUDY/room-kit/floor/2600/2900": 1.6270959375,
+      "GROUND/G-STUDY/room-kit/floor/429.5/1103": 0.5287275,
+      "GROUND/G-STUDY/room-kit/floor/429.5/2405": 0.547610625,
+      "GROUND/G-STUDY/room-kit/floor/500/1103": 2.3264009999999997,
+      "GROUND/G-STUDY/room-kit/floor/500/2405": 2.40948675,
+      "GROUND/G-STUDY/room-kit/floor/634.5/1246": 1.372873125,
+      "GROUND/G-STUDY/room-kit/floor/634.5/1400": 2.7002868749999998,
+      "GROUND/G-STUDY/room-kit/floor/634.5/1700": 2.7002868749999998,
+      "GROUND/G-STUDY/room-kit/floor/634.5/2000": 2.7002868749999998,
+      "GROUND/G-STUDY/room-kit/floor/634.5/2300": 0.92737125
     }
   }
 }

@@ -2,11 +2,10 @@
 <title id="title">Study room-kit layout</title>
 <desc id="desc">Candidate finish field, fabricated borders, rough openings and shown furniture.</desc>
 <style>.line-cut{stroke:#000000;stroke-width:0.5;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.line-profile{stroke:#000000;stroke-width:0.35;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.line-primary{stroke:#000000;stroke-width:0.25;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.line-secondary{stroke:#000000;stroke-width:0.18;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.text-label{font-family:Arial, Helvetica, sans-serif;font-size:2.646px;font-weight:400;fill:#000000}.text-note{font-family:Arial, Helvetica, sans-serif;font-size:2.293px;font-weight:400;fill:#000000}.text-marker{font-family:Arial, Helvetica, sans-serif;font-size:2.293px;font-weight:700;fill:#000000}.dash-overhead{stroke-dasharray:3 1.5}.dash-datum{stroke-dasharray:6 1.5 1 1.5}.dash-provisional{stroke-dasharray:1 1}.fill-paper{fill:#ffffff;stroke:none}.fill-ink{fill:#000000;stroke:none}.fill-context{fill:#666666;stroke:none}.fill-faint{fill:#a6a6a6;stroke:none}</style>
-<rect x="12.06" y="120.08" width="2.7" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/429.5" data-band="0" data-role="border"/>
+<rect x="12.06" y="120.08" width="14.7" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/429.5" data-band="0" data-role="border"/>
 <rect x="12.06" y="108.08" width="2.7" height="11.88" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/500" data-band="0" data-role="border"/>
 <rect x="12.06" y="102.02" width="2.7" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/800" data-band="0" data-role="border"/>
 <rect x="12.06" y="95.96" width="2.7" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/951.5" data-band="0" data-role="border"/>
-<rect x="14.88" y="120.08" width="11.88" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/500/429.5" data-band="0" data-role="border"/>
 <rect x="14.88" y="108.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/500/500" data-band="0" data-role="field"/>
 <rect x="14.88" y="102.02" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/500/800" data-band="0" data-role="border"/>
 <rect x="14.88" y="95.96" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/500/951.5" data-band="0" data-role="border"/>
@@ -66,16 +65,6 @@
 <rect x="176.94" y="108.08" width="5.94" height="11.88" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/4551.5/500" data-band="0" data-role="border"/>
 <rect x="176.94" y="102.02" width="5.94" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/4551.5/800" data-band="0" data-role="border"/>
 <rect x="176.94" y="95.96" width="5.94" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/4551.5/951.5" data-band="0" data-role="border"/>
-<rect x="12.06" y="84.08" width="2.7" height="11.76" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/1103" data-band="1" data-role="border"/>
-<rect x="12.06" y="72.08" width="2.7" height="11.88" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/1400" data-band="1" data-role="border"/>
-<rect x="12.06" y="60.08" width="2.7" height="11.88" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/1700" data-band="1" data-role="border"/>
-<rect x="12.06" y="48.08" width="2.7" height="11.88" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/2000" data-band="1" data-role="border"/>
-<rect x="12.06" y="37.96" width="2.7" height="10" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/2300" data-band="1" data-role="border"/>
-<rect x="14.88" y="84.08" width="11.88" height="11.76" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/500/1103" data-band="1" data-role="border"/>
-<rect x="14.88" y="72.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/500/1400" data-band="1" data-role="field"/>
-<rect x="14.88" y="60.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/500/1700" data-band="1" data-role="field"/>
-<rect x="14.88" y="48.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/500/2000" data-band="1" data-role="field"/>
-<rect x="14.88" y="37.96" width="11.88" height="10" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/500/2300" data-band="1" data-role="border"/>
 <rect x="26.88" y="84.08" width="11.88" height="11.76" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/800/1103" data-band="1" data-role="border"/>
 <rect x="26.88" y="72.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/800/1400" data-band="1" data-role="field"/>
 <rect x="26.88" y="60.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/800/1700" data-band="1" data-role="field"/>
@@ -148,6 +137,16 @@
 <rect x="98.88" y="31.02" width="4.7" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2600/2553" data-band="2" data-role="border"/>
 <rect x="98.88" y="24.08" width="4.7" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2600/2726.5" data-band="2" data-role="border"/>
 <rect x="98.88" y="14.06" width="4.7" height="9.9" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2600/2900" data-band="2" data-role="border"/>
+<rect x="12.06" y="90.24" width="2.7" height="5.6" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/1103" data-band="1" data-role="border"/>
+<rect x="12.06" y="37.96" width="2.7" height="5.8" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/2405" data-band="1" data-role="border"/>
+<rect x="14.88" y="90.24" width="11.88" height="5.6" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/500/1103" data-band="1" data-role="border"/>
+<rect x="14.88" y="37.96" width="11.88" height="5.8" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/500/2405" data-band="1" data-role="border"/>
+<rect x="20.26" y="84.08" width="6.5" height="6.04" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/634.5/1246" data-band="1" data-role="border"/>
+<rect x="20.26" y="72.08" width="6.5" height="11.88" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/634.5/1400" data-band="1" data-role="border"/>
+<rect x="20.26" y="60.08" width="6.5" height="11.88" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/634.5/1700" data-band="1" data-role="border"/>
+<rect x="20.26" y="48.08" width="6.5" height="11.88" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/634.5/2000" data-band="1" data-role="border"/>
+<rect x="20.26" y="43.88" width="6.5" height="4.08" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/634.5/2300" data-band="1" data-role="border"/>
+<rect x="12" y="43.88" width="8.14" height="46.24" class="line-primary fill-context" data-entity="GROUND/G-STUDY/room-kit/floor/emitter-plinth" data-role="fixed emitter plinth"/>
 <rect x="21.02" y="88.02" width="64" height="28" class="line-profile fill-context" data-entity="occupied:study-desk"/>
 <rect x="30.82" y="48.02" width="40" height="36" class="line-profile fill-context" data-entity="occupied:study-chair"/>
 <rect x="12" y="44.02" width="8" height="46" class="line-profile fill-context" data-entity="occupied:service-emitter-study-W"/>
@@ -156,5 +155,5 @@
 <line x1="48.82" y1="10.12" x2="84.82" y2="10.12" class="line-profile" data-entity="HAD/protectedRoute/STUDY"/>
 <rect x="146.82" y="108.02" width="24" height="12" class="line-primary dash-provisional" data-entity="trial-panel-sweep"/>
 <rect x="121.42" y="97.37" width="36" height="24" class="line-secondary dash-provisional" data-entity="trial-worker-sweep"/>
-<text x="12" y="132.84" class="text-note" text-anchor="start" data-entity="pitch">300 mm pitch · 146 parts · 106 border parts</text>
+<text x="12" y="132.84" class="text-note" text-anchor="start" data-entity="pitch">300 mm pitch · 144 parts · 107 border parts</text>
 </svg>

@@ -16,6 +16,10 @@ test('A west-wall gravity route can remove the slab port while holding the WC po
   const source = fileURLToPath(new URL('../../mat/studies/rear-wc-west-gravity.py', import.meta.url));
   execFileSync('python3', ['-B', source, '.', '--check']);
 });
+test('The separated north gravity seat and floor tooth reproduce their action and anchorage bounds', () => {
+  const source = fileURLToPath(new URL('./floor-portal-bearing-toe.py', import.meta.url));
+  execFileSync('python3', ['-B', source, '.', '--check']);
+});
 test('The direct roof seat receipt reproduces its load and access comparisons', () => {
   const source = fileURLToPath(new URL('./floor-portal-direct-seat.py', import.meta.url));
   execFileSync('python3', ['-B', source, '--check']);
