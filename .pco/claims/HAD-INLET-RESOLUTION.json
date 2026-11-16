@@ -9,8 +9,8 @@
     "label": "Zerg Rush controlled interface redesign"
   },
   "claimedAt": "2026-11-16T20:19:10.394Z",
-  "heartbeatAt": "2026-11-16T20:19:10.394Z",
-  "expiresAt": "2026-11-16T21:49:10.394Z",
+  "heartbeatAt": "2026-11-16T20:29:17.714Z",
+  "expiresAt": "2026-11-16T21:59:17.714Z",
   "branch": "work/zerg18-resolve-interfaces",
   "predecessor": {
     "leaseId": "83de450b-a167-4f81-bf82-096ece488859",
@@ -33,5 +33,11 @@
       "next": "Test the removable front/taper and split collar, independent high vents, actual masonry and pressure seam with retained window and passive outfalls.",
       "blocker": "Fixed taper obstructs full spool removal and lower mouth cannot vent at the adverse water level."
     }
+  },
+  "pr": 1559,
+  "checkpoint": {
+    "evidence": "PR #1559 702e00299deabe8c60dae75757053c7e3a72d7b7; local typecheck, receipts and focused tests",
+    "next": "Draw a supported sill cassette with separate hydraulic cells and rated dry releases; replay fault routes.",
+    "blocker": "Six-opening structural support, full wet hydro proof and loaded draw remain open."
   }
 }
