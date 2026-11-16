@@ -9,8 +9,8 @@
     "label": "zerg17-south-relief"
   },
   "claimedAt": "2026-11-16T12:06:41.330Z",
-  "heartbeatAt": "2026-11-16T12:43:52.567Z",
-  "expiresAt": "2026-11-16T13:43:52.567Z",
+  "heartbeatAt": "2026-11-16T13:08:36.402Z",
+  "expiresAt": "2026-11-16T14:08:36.402Z",
   "branch": "work/zerg17-south-relief",
   "predecessor": {
     "leaseId": "1a14346b-2b69-46fd-bf53-714ef14c809e",
@@ -34,7 +34,8 @@
   },
   "pr": 1558,
   "checkpoint": {
-    "evidence": "PR #1558 corrected exact b65de6689d8c28957d4f5b128a1029db731577ef. G1 hold, revised under-sill and west-wall replays pass local checks.",
-    "next": "Require all exact hosted checks and fresh canonical preflight. Retain design holds."
+    "evidence": "Merged #1558 bb83ac6ce7f3990fe3daa7cd9ea1c32cb74b61ff; https://github.com/adamnoden/architecture/issues/1477#issuecomment-6917037157",
+    "next": "Test the removable front/taper and split collar, independent high vents, actual masonry and pressure seam with retained window and passive outfalls.",
+    "blocker": "Fixed taper obstructs full spool removal and lower mouth cannot vent at the adverse water level."
   }
 }
