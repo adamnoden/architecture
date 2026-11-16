@@ -9,8 +9,8 @@
     "label": "zerg17-north-collector"
   },
   "claimedAt": "2026-11-16T12:07:03.027Z",
-  "heartbeatAt": "2026-11-16T12:27:51.703Z",
-  "expiresAt": "2026-11-16T13:27:51.703Z",
+  "heartbeatAt": "2026-11-16T12:32:18.838Z",
+  "expiresAt": "2026-11-16T13:32:18.838Z",
   "branch": "work/zerg17-south-relief",
   "predecessor": {
     "leaseId": "44522ec3-4c1a-4682-9e4c-6552d43f40cb",
@@ -33,7 +33,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Source-bound straight receiver requires 220/234 mm depth and a developed bypass around the retained NW port.",
-    "next": "Validate and publish the coordinated STR/HAD/IAS assessment. Hold physical disposition."
-  }
+    "evidence": "PR #1558 exact 3e85727d2b5de290f5e33b919872308fd9c67544; local focused, native, repository and graph validation passed.",
+    "next": "Require exact hosted CI and fresh publication checks. Release as evidence-dependent handoff after merge.",
+    "blocker": "Physical interface remains open. Hosted validation pending."
+  },
+  "pr": 1558
 }
