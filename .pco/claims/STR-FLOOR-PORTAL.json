@@ -1,25 +1,24 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 33,
-  "state": "released",
-  "leaseId": "44522ec3-4c1a-4682-9e4c-6552d43f40cb",
+  "generation": 34,
+  "state": "claimed",
+  "leaseId": "2a9dbb3c-4564-49cf-8003-826cafa1cd1c",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg16-alternative-structure-review"
+    "label": "zerg17-north-collector"
   },
-  "claimedAt": "2026-11-15T20:31:26.504Z",
-  "heartbeatAt": "2026-11-15T20:34:16.384Z",
-  "expiresAt": "2026-11-15T20:34:16.384Z",
+  "claimedAt": "2026-11-16T12:07:03.027Z",
+  "heartbeatAt": "2026-11-16T12:07:03.027Z",
+  "expiresAt": "2026-11-16T13:07:03.027Z",
+  "branch": "work/zerg17-north-collector",
   "predecessor": {
-    "leaseId": "6cdfcd1e-09a8-4e00-8027-d937c22dfb7b",
-    "generation": 32,
-    "branch": "work/zerg16-north-collar",
-    "pr": 1548,
+    "leaseId": "44522ec3-4c1a-4682-9e4c-6552d43f40cb",
+    "generation": 33,
     "checkpoint": {
-      "evidence": "PR #1548 exact 312ac939da24511708e3dcb86cc48db96b8eb6a8; concealed north L collar, developed straight crossing and stepped cover",
-      "next": "Observe exact-head CI then integrate while lease live",
-      "blocker": "Design lateral bend confinement and complete joined wall, roof, foundation and service replay"
+      "evidence": "https://github.com/adamnoden/architecture/issues/1103#issuecomment-6900935628",
+      "next": "Only advance a positive developed tie outside the current fan with actual confinement, or a centred protected steel load-spreading shoe with retained moisture plane and demonstrated coupled stiffness.",
+      "blocker": "Concrete tie/links do not jointly clear; south-only receivers are over capacity; alternate steel base exceeds the existing anchor stress basis and protected shoe envelope."
     }
   },
   "recoverySource": {
@@ -32,12 +31,5 @@
       "next": "Observe exact-head CI then integrate while lease live",
       "blocker": "Design lateral bend confinement and complete joined wall, roof, foundation and service replay"
     }
-  },
-  "checkpoint": {
-    "evidence": "https://github.com/adamnoden/architecture/issues/1103#issuecomment-6900935628",
-    "next": "Only advance a positive developed tie outside the current fan with actual confinement, or a centred protected steel load-spreading shoe with retained moisture plane and demonstrated coupled stiffness.",
-    "blocker": "Concrete tie/links do not jointly clear; south-only receivers are over capacity; alternate steel base exceeds the existing anchor stress basis and protected shoe envelope."
-  },
-  "releasedAt": "2026-11-15T20:34:16.384Z",
-  "releaseReason": "handoff"
+  }
 }
