@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 38,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "83de450b-a167-4f81-bf82-096ece488859",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg17-south-relief"
   },
   "claimedAt": "2026-11-16T12:06:41.330Z",
-  "heartbeatAt": "2026-11-16T13:08:36.402Z",
-  "expiresAt": "2026-11-16T14:08:36.402Z",
+  "heartbeatAt": "2026-11-16T13:08:57.570Z",
+  "expiresAt": "2026-11-16T13:08:57.570Z",
   "branch": "work/zerg17-south-relief",
   "predecessor": {
     "leaseId": "1a14346b-2b69-46fd-bf53-714ef14c809e",
@@ -37,5 +37,7 @@
     "evidence": "Merged #1558 bb83ac6ce7f3990fe3daa7cd9ea1c32cb74b61ff; https://github.com/adamnoden/architecture/issues/1477#issuecomment-6917037157",
     "next": "Test the removable front/taper and split collar, independent high vents, actual masonry and pressure seam with retained window and passive outfalls.",
     "blocker": "Fixed taper obstructs full spool removal and lower mouth cannot vent at the adverse water level."
-  }
+  },
+  "releasedAt": "2026-11-16T13:08:57.570Z",
+  "releaseReason": "handoff"
 }
