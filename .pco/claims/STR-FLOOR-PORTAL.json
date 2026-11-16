@@ -9,8 +9,8 @@
     "label": "zerg17-north-collector"
   },
   "claimedAt": "2026-11-16T12:07:03.027Z",
-  "heartbeatAt": "2026-11-16T12:32:18.838Z",
-  "expiresAt": "2026-11-16T13:32:18.838Z",
+  "heartbeatAt": "2026-11-16T12:43:34.832Z",
+  "expiresAt": "2026-11-16T13:43:34.832Z",
   "branch": "work/zerg17-south-relief",
   "predecessor": {
     "leaseId": "44522ec3-4c1a-4682-9e4c-6552d43f40cb",
@@ -33,9 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1558 exact 3e85727d2b5de290f5e33b919872308fd9c67544; local focused, native, repository and graph validation passed.",
-    "next": "Require exact hosted CI and fresh publication checks. Release as evidence-dependent handoff after merge.",
-    "blocker": "Physical interface remains open. Hosted validation pending."
+    "evidence": "PR #1558 corrected exact b65de6689d8c28957d4f5b128a1029db731577ef. G1 hold, revised under-sill and west-wall replays pass local checks.",
+    "next": "Require all exact hosted checks and fresh canonical preflight. Retain design holds."
   },
   "pr": 1558
 }
