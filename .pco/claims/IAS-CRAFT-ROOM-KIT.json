@@ -9,12 +9,13 @@
     "label": "zerg17-crafted-study"
   },
   "claimedAt": "2026-11-16T12:27:30.535Z",
-  "heartbeatAt": "2026-11-16T12:44:15.240Z",
-  "expiresAt": "2026-11-16T13:44:15.240Z",
+  "heartbeatAt": "2026-11-16T13:09:19.312Z",
+  "expiresAt": "2026-11-16T14:09:19.312Z",
   "branch": "work/zerg17-south-relief",
   "pr": 1558,
   "checkpoint": {
-    "evidence": "PR #1558 corrected exact b65de6689d8c28957d4f5b128a1029db731577ef. G1 hold, revised under-sill and west-wall replays pass local checks.",
-    "next": "Require all exact hosted checks and fresh canonical preflight. Retain design holds."
+    "evidence": "Merged #1558 bb83ac6ce7f3990fe3daa7cd9ea1c32cb74b61ff; https://github.com/adamnoden/architecture/issues/1555#issuecomment-6917036778",
+    "next": "Develop the fixed emitter plinth, exact 20 mm supported board and release geometry, protective backing and wet edge before choosing the room-kit assembly.",
+    "blocker": "The compiled layouts and concept views do not establish whole-room loaded renewal or continuous backing."
   }
 }
