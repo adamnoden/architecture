@@ -9,8 +9,8 @@
     "label": "zerg17-south-relief"
   },
   "claimedAt": "2026-11-16T12:06:41.330Z",
-  "heartbeatAt": "2026-11-16T12:06:41.330Z",
-  "expiresAt": "2026-11-16T13:06:41.330Z",
+  "heartbeatAt": "2026-11-16T12:32:37.299Z",
+  "expiresAt": "2026-11-16T13:32:37.299Z",
   "branch": "work/zerg17-south-relief",
   "predecessor": {
     "leaseId": "1a14346b-2b69-46fd-bf53-714ef14c809e",
@@ -31,5 +31,11 @@
       "next": "Wait for all corrected exact workflows, run four canonical merge checks and integrate.",
       "blocker": "Pressure end boxes, independent receiving, frost and actual terminal support remain open."
     }
+  },
+  "pr": 1558,
+  "checkpoint": {
+    "evidence": "PR #1558 exact 3e85727d2b5de290f5e33b919872308fd9c67544; local focused, native, repository and graph validation passed.",
+    "next": "Require exact hosted CI and fresh publication checks. Release as evidence-dependent handoff after merge.",
+    "blocker": "Physical interface remains open. Hosted validation pending."
   }
 }
