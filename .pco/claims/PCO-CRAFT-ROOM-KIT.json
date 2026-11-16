@@ -1,21 +1,42 @@
 {
   "schemaVersion": 1,
   "node": "PCO-CRAFT-ROOM-KIT",
-  "generation": 1,
-  "state": "released",
-  "leaseId": "234f0e8a-5ce7-4ae4-a30e-16459ea9c09b",
-  "holder": { "kind": "chatgpt", "label": "owner-crafted-room-kit-brief" },
-  "claimedAt": "2026-11-15T21:26:17.435Z",
-  "heartbeatAt": "2026-11-15T21:33:40.099Z",
-  "expiresAt": "2026-11-15T21:33:40.099Z",
-  "branch": "work/crafted-room-kit-direction-20261115",
-  "pr": 1556,
-  "checkpoint": {
-    "evidence": "PR #1556 exact head 54660b3466a61385d4da919f068eeab394c0d5fb, tree ce5612c0ce685334162297da2c93299b23aa3ac0 on d1e67a8f. Original source and changed blob identities match local files. TypeScript syntax and source checks passed. Hosted run 43764245091 passed packet/lease validation and graph projection; full repository validation is pending.",
-    "next": "Inspect exact CI, reconcile current main, reacquire the owner-directed registration scope with a new generation/declaration under #1555, run fresh canonical publication preflight and merge expected head. Keep #1555 open for actual IAS-CRAFT-ROOM-KIT design delivery.",
-    "blocker": "Connector-only session cannot run canonical publication preflight; no full suite or merge claimed."
+  "generation": 2,
+  "state": "claimed",
+  "leaseId": "6b4dba85-36f9-48cb-b40a-7a9192975bd8",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "zerg17-craft-room-kit-registration"
   },
-  "note": "Registration-only owner-directed bootstrap recorded in #1555. Released promptly so an absent-on-main node does not leave generic dispatch blocked. No other worker claim was modified.",
-  "releasedAt": "2026-11-15T21:33:40.099Z",
-  "releaseReason": "handoff"
+  "claimedAt": "2026-11-16T12:08:02.015Z",
+  "heartbeatAt": "2026-11-16T12:08:02.015Z",
+  "expiresAt": "2026-11-16T13:08:02.015Z",
+  "checkpoint": {
+    "evidence": "Exact #1556 head 54660b3466a61385d4da919f068eeab394c0d5fb passed historical full CI. Recovery recorded at #1555 comment 6915963421.",
+    "next": "Run a fresh exact-head suite and canonical preflight. Registration only."
+  },
+  "branch": "work/zerg17-craft-room-kit-registration",
+  "note": "Owner-directed registration recovery #1555, recorded before CAS. Released generation-1 source branch is preserved.",
+  "predecessor": {
+    "leaseId": "234f0e8a-5ce7-4ae4-a30e-16459ea9c09b",
+    "generation": 1,
+    "branch": "work/crafted-room-kit-direction-20261115",
+    "pr": 1556,
+    "checkpoint": {
+      "evidence": "PR #1556 exact head 54660b3466a61385d4da919f068eeab394c0d5fb, tree ce5612c0ce685334162297da2c93299b23aa3ac0 on d1e67a8f. Original source and changed blob identities match local files. TypeScript syntax and source checks passed. Hosted run 43764245091 passed packet/lease validation and graph projection; full repository validation is pending.",
+      "next": "Inspect exact CI, reconcile current main, reacquire the owner-directed registration scope with a new generation/declaration under #1555, run fresh canonical publication preflight and merge expected head. Keep #1555 open for actual IAS-CRAFT-ROOM-KIT design delivery.",
+      "blocker": "Connector-only session cannot run canonical publication preflight; no full suite or merge claimed."
+    }
+  },
+  "recoverySource": {
+    "leaseId": "234f0e8a-5ce7-4ae4-a30e-16459ea9c09b",
+    "generation": 1,
+    "branch": "work/crafted-room-kit-direction-20261115",
+    "pr": 1556,
+    "checkpoint": {
+      "evidence": "PR #1556 exact head 54660b3466a61385d4da919f068eeab394c0d5fb, tree ce5612c0ce685334162297da2c93299b23aa3ac0 on d1e67a8f. Original source and changed blob identities match local files. TypeScript syntax and source checks passed. Hosted run 43764245091 passed packet/lease validation and graph projection; full repository validation is pending.",
+      "next": "Inspect exact CI, reconcile current main, reacquire the owner-directed registration scope with a new generation/declaration under #1555, run fresh canonical publication preflight and merge expected head. Keep #1555 open for actual IAS-CRAFT-ROOM-KIT design delivery.",
+      "blocker": "Connector-only session cannot run canonical publication preflight; no full suite or merge claimed."
+    }
+  }
 }
