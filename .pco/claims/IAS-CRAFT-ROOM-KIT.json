@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "IAS-CRAFT-ROOM-KIT",
-  "generation": 2,
-  "state": "released",
-  "leaseId": "c17ed254-3572-48f7-bb2e-e35853476431",
+  "generation": 3,
+  "state": "claimed",
+  "leaseId": "0b268f4a-0459-44bf-a69b-df1c5e2fd1d9",
   "holder": {
     "kind": "chatgpt",
-    "label": "Zerg Rush controlled interface redesign"
+    "label": "Zerg Rush monolithic and sub-sill follow-up"
   },
-  "claimedAt": "2026-11-16T20:19:36.901Z",
-  "heartbeatAt": "2026-11-16T20:54:51.406Z",
-  "expiresAt": "2026-11-16T20:54:51.406Z",
-  "branch": "work/zerg18-resolve-interfaces",
+  "claimedAt": "2026-11-16T20:56:15.313Z",
+  "heartbeatAt": "2026-11-16T20:56:15.313Z",
+  "expiresAt": "2026-11-16T22:26:15.313Z",
+  "branch": "work/zerg18-mono-sill-study",
   "predecessor": {
-    "leaseId": "33638226-351f-475a-9998-6344ef7a8b9c",
-    "generation": 1,
-    "branch": "work/zerg17-south-relief",
-    "pr": 1558,
+    "leaseId": "c17ed254-3572-48f7-bb2e-e35853476431",
+    "generation": 2,
+    "branch": "work/zerg18-resolve-interfaces",
+    "pr": 1559,
     "checkpoint": {
-      "evidence": "Merged #1558 bb83ac6ce7f3990fe3daa7cd9ea1c32cb74b61ff; https://github.com/adamnoden/architecture/issues/1555#issuecomment-6917036778",
-      "next": "Develop the fixed emitter plinth, exact 20 mm supported board and release geometry, protective backing and wet edge before choosing the room-kit assembly.",
-      "blocker": "The compiled layouts and concept views do not establish whole-room loaded renewal or continuous backing."
+      "evidence": "PR #1559 702e00299deabe8c60dae75757053c7e3a72d7b7; local typecheck, receipts and focused tests",
+      "next": "Connect the supported finish and flush thin face to protected reveals; prove loaded release and wet edge.",
+      "blocker": "Actual backing, loaded hand clearance and dry/wet transition remain unqualified."
     }
   },
   "recoverySource": {
-    "leaseId": "33638226-351f-475a-9998-6344ef7a8b9c",
-    "generation": 1,
-    "branch": "work/zerg17-south-relief",
-    "pr": 1558,
+    "leaseId": "c17ed254-3572-48f7-bb2e-e35853476431",
+    "generation": 2,
+    "branch": "work/zerg18-resolve-interfaces",
+    "pr": 1559,
     "checkpoint": {
-      "evidence": "Merged #1558 bb83ac6ce7f3990fe3daa7cd9ea1c32cb74b61ff; https://github.com/adamnoden/architecture/issues/1555#issuecomment-6917036778",
-      "next": "Develop the fixed emitter plinth, exact 20 mm supported board and release geometry, protective backing and wet edge before choosing the room-kit assembly.",
-      "blocker": "The compiled layouts and concept views do not establish whole-room loaded renewal or continuous backing."
+      "evidence": "PR #1559 702e00299deabe8c60dae75757053c7e3a72d7b7; local typecheck, receipts and focused tests",
+      "next": "Connect the supported finish and flush thin face to protected reveals; prove loaded release and wet edge.",
+      "blocker": "Actual backing, loaded hand clearance and dry/wet transition remain unqualified."
     }
-  },
-  "pr": 1559,
-  "checkpoint": {
-    "evidence": "PR #1559 702e00299deabe8c60dae75757053c7e3a72d7b7; local typecheck, receipts and focused tests",
-    "next": "Connect the supported finish and flush thin face to protected reveals; prove loaded release and wet edge.",
-    "blocker": "Actual backing, loaded hand clearance and dry/wet transition remain unqualified."
-  },
-  "releasedAt": "2026-11-16T20:54:51.406Z",
-  "releaseReason": "handoff"
+  }
 }
