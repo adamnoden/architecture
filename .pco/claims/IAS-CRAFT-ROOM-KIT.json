@@ -9,8 +9,8 @@
     "label": "Zerg Rush controlled interface redesign"
   },
   "claimedAt": "2026-11-16T20:19:36.901Z",
-  "heartbeatAt": "2026-11-16T20:19:36.901Z",
-  "expiresAt": "2026-11-16T21:49:36.901Z",
+  "heartbeatAt": "2026-11-16T20:29:37.302Z",
+  "expiresAt": "2026-11-16T21:59:37.302Z",
   "branch": "work/zerg18-resolve-interfaces",
   "predecessor": {
     "leaseId": "33638226-351f-475a-9998-6344ef7a8b9c",
@@ -33,5 +33,11 @@
       "next": "Develop the fixed emitter plinth, exact 20 mm supported board and release geometry, protective backing and wet edge before choosing the room-kit assembly.",
       "blocker": "The compiled layouts and concept views do not establish whole-room loaded renewal or continuous backing."
     }
+  },
+  "pr": 1559,
+  "checkpoint": {
+    "evidence": "PR #1559 702e00299deabe8c60dae75757053c7e3a72d7b7; local typecheck, receipts and focused tests",
+    "next": "Connect the supported finish and flush thin face to protected reveals; prove loaded release and wet edge.",
+    "blocker": "Actual backing, loaded hand clearance and dry/wet transition remain unqualified."
   }
 }
