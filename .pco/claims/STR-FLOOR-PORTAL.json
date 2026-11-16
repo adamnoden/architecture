@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 34,
-  "state": "released",
-  "leaseId": "2a9dbb3c-4564-49cf-8003-826cafa1cd1c",
+  "generation": 35,
+  "state": "claimed",
+  "leaseId": "6321f458-87d3-4677-8667-15bc06758438",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg17-north-collector"
+    "label": "Zerg Rush controlled interface redesign"
   },
-  "claimedAt": "2026-11-16T12:07:03.027Z",
-  "heartbeatAt": "2026-11-16T13:08:15.582Z",
-  "expiresAt": "2026-11-16T13:08:15.582Z",
-  "branch": "work/zerg17-south-relief",
+  "claimedAt": "2026-11-16T20:18:44.465Z",
+  "heartbeatAt": "2026-11-16T20:18:44.465Z",
+  "expiresAt": "2026-11-16T21:48:44.465Z",
+  "branch": "work/zerg18-resolve-interfaces",
   "predecessor": {
-    "leaseId": "44522ec3-4c1a-4682-9e4c-6552d43f40cb",
-    "generation": 33,
+    "leaseId": "2a9dbb3c-4564-49cf-8003-826cafa1cd1c",
+    "generation": 34,
+    "branch": "work/zerg17-south-relief",
+    "pr": 1558,
     "checkpoint": {
-      "evidence": "https://github.com/adamnoden/architecture/issues/1103#issuecomment-6900935628",
-      "next": "Only advance a positive developed tie outside the current fan with actual confinement, or a centred protected steel load-spreading shoe with retained moisture plane and demonstrated coupled stiffness.",
-      "blocker": "Concrete tie/links do not jointly clear; south-only receivers are over capacity; alternate steel base exceeds the existing anchor stress basis and protected shoe envelope."
+      "evidence": "Merged #1558 bb83ac6ce7f3990fe3daa7cd9ea1c32cb74b61ff; https://github.com/adamnoden/architecture/issues/1103#issuecomment-6917036283",
+      "next": "Design an outboard toe cage with adequate cover, closed links, fixed DPC splice development and a positive gravity seat. Independently close west gravity fit.",
+      "blocker": "Current port-free straight cage still gives 20 mm against 25 cover and 140 against 100 link pitch."
     }
   },
   "recoverySource": {
-    "leaseId": "6cdfcd1e-09a8-4e00-8027-d937c22dfb7b",
-    "generation": 32,
-    "branch": "work/zerg16-north-collar",
-    "pr": 1548,
+    "leaseId": "2a9dbb3c-4564-49cf-8003-826cafa1cd1c",
+    "generation": 34,
+    "branch": "work/zerg17-south-relief",
+    "pr": 1558,
     "checkpoint": {
-      "evidence": "PR #1548 exact 312ac939da24511708e3dcb86cc48db96b8eb6a8; concealed north L collar, developed straight crossing and stepped cover",
-      "next": "Observe exact-head CI then integrate while lease live",
-      "blocker": "Design lateral bend confinement and complete joined wall, roof, foundation and service replay"
+      "evidence": "Merged #1558 bb83ac6ce7f3990fe3daa7cd9ea1c32cb74b61ff; https://github.com/adamnoden/architecture/issues/1103#issuecomment-6917036283",
+      "next": "Design an outboard toe cage with adequate cover, closed links, fixed DPC splice development and a positive gravity seat. Independently close west gravity fit.",
+      "blocker": "Current port-free straight cage still gives 20 mm against 25 cover and 140 against 100 link pitch."
     }
-  },
-  "checkpoint": {
-    "evidence": "Merged #1558 bb83ac6ce7f3990fe3daa7cd9ea1c32cb74b61ff; https://github.com/adamnoden/architecture/issues/1103#issuecomment-6917036283",
-    "next": "Design an outboard toe cage with adequate cover, closed links, fixed DPC splice development and a positive gravity seat. Independently close west gravity fit.",
-    "blocker": "Current port-free straight cage still gives 20 mm against 25 cover and 140 against 100 link pitch."
-  },
-  "pr": 1558,
-  "releasedAt": "2026-11-16T13:08:15.582Z",
-  "releaseReason": "handoff"
+  }
 }
