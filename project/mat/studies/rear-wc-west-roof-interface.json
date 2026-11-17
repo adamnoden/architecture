@@ -674,23 +674,261 @@
       "roofFlashingEnvelopeDiameterMm": 300,
       "nearOpeningHeads": [
         [
-          "west-window-2",
-          2850
-        ],
-        [
-          "west-window-3",
-          2850
-        ],
-        [
-          "west-window-2",
+          "FIRST/west-window-3",
           6300
         ],
         [
-          "west-window-3",
+          "GROUND/west-window-3",
+          2850
+        ],
+        [
+          "rear-bath-exhaust",
+          6130.0
+        ],
+        [
+          "rear-bath-condensate",
+          5980.0
+        ],
+        [
+          "FIRST/west-window-2",
           6300
+        ],
+        [
+          "GROUND/west-window-2",
+          2850
+        ],
+        [
+          "FIRST/north-window-0",
+          6300
+        ],
+        [
+          "GROUND/north-window-0",
+          2850
         ]
       ],
       "terminalAboveOpeningAllowanceMm": 800,
+      "terminalApplicability": {
+        "modelledOpenings": {
+          "scope": "Modelled fa\u00e7ade and courtyard opening envelopes and complete service weather faces",
+          "guidance": "England Approved Document H (2015), paragraph 1.31 and Diagram 6",
+          "guidanceUrl": "https://assets.publishing.service.gov.uk/media/5a80cf9ded915d74e33fc8ae/BR_PDF_AD_H_2015.pdf",
+          "state": "passes",
+          "horizontalCutoffMm": 3000,
+          "minimumHeightAboveOpeningMm": 900,
+          "terminalPlanRadiusAllowanceMm": 95,
+          "inventoryCount": 70,
+          "nearby": [
+            {
+              "id": "FIRST/west-window-3",
+              "kind": "window",
+              "wall": "outer-west",
+              "xyBoundsMm": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  9400.0,
+                  10400.0
+                ]
+              ],
+              "topZMm": 6300,
+              "axisDistanceMm": 834.7005451058482,
+              "comparisonDistanceMm": 739.7005451058482,
+              "heightReserveMm": 800
+            },
+            {
+              "id": "GROUND/west-window-3",
+              "kind": "window",
+              "wall": "outer-west",
+              "xyBoundsMm": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  9400.0,
+                  10400.0
+                ]
+              ],
+              "topZMm": 2850,
+              "axisDistanceMm": 834.7005451058482,
+              "comparisonDistanceMm": 739.7005451058482,
+              "heightReserveMm": 4250
+            },
+            {
+              "id": "rear-bath-exhaust",
+              "kind": "service-weather-face",
+              "wall": "outer-west",
+              "xyBoundsMm": [
+                [
+                  -100,
+                  0
+                ],
+                [
+                  9720.0,
+                  10080.0
+                ]
+              ],
+              "topZMm": 6130.0,
+              "axisDistanceMm": 998.761733347849,
+              "comparisonDistanceMm": 903.761733347849,
+              "heightReserveMm": 970.0
+            },
+            {
+              "id": "rear-bath-condensate",
+              "kind": "service-weather-face",
+              "wall": "outer-west",
+              "xyBoundsMm": [
+                [
+                  -100,
+                  0
+                ],
+                [
+                  10115.0,
+                  10175.0
+                ]
+              ],
+              "topZMm": 5980.0,
+              "axisDistanceMm": 1285.0097275896396,
+              "comparisonDistanceMm": 1190.0097275896396,
+              "heightReserveMm": 1120.0
+            },
+            {
+              "id": "FIRST/west-window-2",
+              "kind": "window",
+              "wall": "outer-west",
+              "xyBoundsMm": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  6900.0,
+                  7900.0
+                ]
+              ],
+              "topZMm": 6300,
+              "axisDistanceMm": 1420.1144320089138,
+              "comparisonDistanceMm": 1325.1144320089138,
+              "heightReserveMm": 800
+            },
+            {
+              "id": "GROUND/west-window-2",
+              "kind": "window",
+              "wall": "outer-west",
+              "xyBoundsMm": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  6900.0,
+                  7900.0
+                ]
+              ],
+              "topZMm": 2850,
+              "axisDistanceMm": 1420.1144320089138,
+              "comparisonDistanceMm": 1325.1144320089138,
+              "heightReserveMm": 4250
+            },
+            {
+              "id": "FIRST/north-window-0",
+              "kind": "window",
+              "wall": "outer-north",
+              "xyBoundsMm": [
+                [
+                  1600.0,
+                  2600.0
+                ],
+                [
+                  12000,
+                  12000
+                ]
+              ],
+              "topZMm": 6300,
+              "axisDistanceMm": 3024.6859341095233,
+              "comparisonDistanceMm": 2929.6859341095233,
+              "heightReserveMm": 800
+            },
+            {
+              "id": "GROUND/north-window-0",
+              "kind": "window",
+              "wall": "outer-north",
+              "xyBoundsMm": [
+                [
+                  1600.0,
+                  2600.0
+                ],
+                [
+                  12000,
+                  12000
+                ]
+              ],
+              "topZMm": 2850,
+              "axisDistanceMm": 3024.6859341095233,
+              "comparisonDistanceMm": 2929.6859341095233,
+              "heightReserveMm": 4250
+            }
+          ],
+          "governingKnownOpening": {
+            "id": "FIRST/west-window-3",
+            "kind": "window",
+            "wall": "outer-west",
+            "xyBoundsMm": [
+              [
+                0,
+                0
+              ],
+              [
+                9400.0,
+                10400.0
+              ]
+            ],
+            "topZMm": 6300,
+            "axisDistanceMm": 834.7005451058482,
+            "comparisonDistanceMm": 739.7005451058482,
+            "heightReserveMm": 800
+          },
+          "nearbyOpeningsWithoutHeight": [],
+          "nearestModelledAirIntake": {
+            "id": "living-supply",
+            "kind": "air-intake",
+            "wall": "outer-north",
+            "xyBoundsMm": [
+              [
+                2890.0,
+                3290.0
+              ],
+              [
+                12000,
+                12100
+              ]
+            ],
+            "topZMm": 2300.0,
+            "axisDistanceMm": 3597.4053149457595,
+            "comparisonDistanceMm": 3502.4053149457595
+          }
+        },
+        "roofBoundary": {
+          "state": "unresolved",
+          "maximumNominalRoofCoverAtFlashingZMm": 7728.855270793374,
+          "terminalRiseAboveNominalRoofCoverMm": 271.1447292066259,
+          "remaining": "Nearby roof ventilation connections, downdraught, flashing drainage and independent weather closure"
+        },
+        "siteOpenings": {
+          "state": "unresolved",
+          "remaining": "Survey neighbouring and site-specific openings and intakes"
+        },
+        "terminalCover": {
+          "state": "unresolved",
+          "remaining": "Select the actual outlet envelope, clear vent bore and fixed nonrestrictive perforated cover"
+        },
+        "otherBuildingVentilation": {
+          "state": "unresolved",
+          "remaining": "Locate any connected underfloor and other ventilation mouths not in the current weather-face inventory"
+        }
+      },
       "minimumDryRisePerChordMm": 0.11872746973858739,
       "minimumGeometricReserveMm": 25,
       "hostAndRenewalUnresolved": [

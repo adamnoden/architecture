@@ -1,0 +1,42 @@
+{
+  "schema": "had-south-inlet-sill-native-wind/1",
+  "method": "reconciled-corner-portals.py::Portal.pressure",
+  "sources": {
+    "project/str/studies/reconciled-corner-portals.py": "5ed97fdd2f7f1a8ca5dd0a741623d472f9d8178f",
+    "project/str/studies/reconciled-corner-portals.json": "0fe6b9c2007cf5ea39b584cc2a2ac0568a0116be",
+    "project/str/studies/house-corner-rewind.json": "6471d89c213724ec02a26d797c85185beadb25b5"
+  },
+  "windowId": "GROUND/south-window-4",
+  "pressureKPa": 2.25,
+  "portalAxesXMm": [
+    9297.5,
+    10502.5
+  ],
+  "grossProjectedBay": {
+    "x": [
+      9195.0,
+      10605.0
+    ],
+    "z": [
+      -180.0,
+      3370.0
+    ]
+  },
+  "resultants": {
+    "window": {
+      "forceKN": 4.530906177890994,
+      "firstMomentXKNm": 44.85597116112085,
+      "firstMomentZKNm": 7.968069106184439
+    },
+    "combinedOpaque": {
+      "forceKN": 6.731468822109004,
+      "firstMomentXKNm": 66.64154133887915,
+      "firstMomentZKNm": 9.995419018815562
+    },
+    "gross": {
+      "forceKN": 11.262375,
+      "firstMomentXKNm": 111.4975125,
+      "firstMomentZKNm": 17.963488125
+    }
+  }
+}

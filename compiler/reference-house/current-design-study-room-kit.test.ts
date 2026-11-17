@@ -1,8 +1,11 @@
 import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
+import { readFileSync } from 'node:fs'
 import test from 'node:test'
 import { renderDrawingSceneV2Svg } from '../publication-drawing-v2/svg.js'
 import { compileRenewableOpenings } from './current-design/assemblies/renewable-openings.js'
+import { compileResolvedStudyAssembly } from './current-design/assemblies/study-floor.js'
+import { compileStudyGroundSupport } from './current-design/assemblies/study-ground-support.js'
 import { compileStudyWallTransition } from './current-design/assemblies/study-wall-transition.js'
 import { drawStudyWallTransition } from './current-design/assemblies/study-wall-transition-views.js'
 import { prepareCurrentDesignCompile } from './current-design/compile.js'
@@ -81,6 +84,8 @@ test('A 15 mm finish preserves the ground datum but the floating support allowan
   assert.equal(stone.kit.floor.wearingFaceMm, 13)
   assert.equal(stone.kit.floor.parts[0].grip?.endMarginMm, oak.kit.floor.parts[0].grip?.endMarginMm)
   assert.deepEqual(oak.kit.floor.parts.map(p => p.face), standard.kit.floor.parts.map(p => p.face))
+  assert.equal(standard.kit.floor.groundSupport.state, 'geometry-comparison')
+  assert.equal(oak.kit.floor.groundSupport.state, 'geometry-comparison')
   assert.equal(oak.kit.floor.groundSupport.glassTopMm, -80)
   assert.equal(oak.kit.floor.groundSupport.cellularGlassMm, 100)
   assert.ok(Math.abs(standard.kit.floor.groundSupport.marginToMinimumBeforeLevelToleranceMm + 5.3) < 1e-9)
@@ -91,6 +96,51 @@ test('A 15 mm finish preserves the ground datum but the floating support allowan
   assert.equal(oak.kit.floor.handling.emitterEdgeRelease.pickupLiftMm, 33)
   assert.notEqual(oak.kit.caseDigest, standard.kit.caseDigest)
   await assert.rejects(current.studyRoomKit({ ...initial, finishDepthMm: 16 }), /INVALID_STUDY_ROOM_KIT_CASE/)
+})
+
+test('Study ground support carries the actual MAT stack and charges a deck level loss only to that comparison', async () => {
+  const request = { ...initial, finishDepthMm: 15 }
+  const baseline = await current.studyRoomKit(request)
+  const changed = await current.studyRoomKit({ ...request, groundDeckLevelLossMm: 1 })
+  const native = baseline.kit.floor.groundSupport
+  const trial = changed.kit.floor.groundSupport
+  assert.equal(native.state, 'geometry-comparison')
+  assert.equal(trial.state, 'geometry-comparison')
+  assert.deepEqual([native.fflMm, native.matDeckTopMm, native.glassTopMm, native.rcTopMm, native.rcSoffitMm], [0, -15, -80, -180, -380])
+  assert.equal(native.matDistributionMm, 65)
+  assert.equal(native.source.comparison.path, 'project/mat/studies/floor-pour-boundary.results.json')
+  assert.deepEqual(trial.source, native.source)
+  assert.equal(native.actualCourseBeforeLevelToleranceMm, 64.7)
+  assert.equal(trial.actualCourseBeforeLevelToleranceMm, 64.7)
+  assert.equal(trial.courseAfterDeckLevelLossMm, 63.7)
+  assert.equal(native.maximumFinishAndBeddingMm, 14.7)
+  assert.equal(trial.maximumFinishAndBeddingMm, 13.7)
+  assert.equal(trial.diagnostics[0].code, 'IAS_STUDY_GROUND_COURSE_BELOW_COMPARATOR')
+  assert.deepEqual(changed.kit.floor.parts, baseline.kit.floor.parts)
+  assert.deepEqual(changed.kit.wall, baseline.kit.wall)
+  assert.equal(changed.wallTransition.source.transitionCaseDigest, baseline.wallTransition.source.transitionCaseDigest)
+  await assert.rejects(current.studyRoomKit({ ...request, groundDeckLevelLossMm: -1 }), /INVALID_STUDY_ROOM_KIT_CASE/)
+})
+
+test('the Study support stage withholds missing MAT evidence, altered bytes or an incompatible local datum', () => {
+  const resolved = resolveCurrentDesign(design)
+  const { section } = compileResolvedStudyAssembly(resolved, { finishDepthMm: 15 })
+  const receipt = 'project/mat/studies/floor-pour-boundary.results.json'
+  const read = (path: string) => readFileSync(new URL(`../../${path}`, import.meta.url))
+  const missing = compileStudyGroundSupport(resolved, section, 0, path => {
+    if (path === receipt) throw new Error('missing file')
+    return read(path)
+  })
+  const stale = compileStudyGroundSupport(resolved, section, 0, path => path === receipt ? Buffer.from('{}') : read(path))
+  const incompatible = compileStudyGroundSupport(resolved, { ...section, rcTop: section.rcTop - 1 }, 0)
+  for (const [result, code] of [
+    [missing, 'IAS_STUDY_GROUND_SOURCE_UNAVAILABLE'], [stale, 'IAS_STUDY_GROUND_SOURCE_STALE'],
+    [incompatible, 'IAS_STUDY_GROUND_DATUM_MISMATCH'],
+  ] as const) {
+    assert.equal(result.state, 'source-withheld')
+    assert.deepEqual(result.diagnostics, [{ code, path: receipt, objectIds: ['GROUND/G-STUDY/floor'] }])
+    assert.ok(!('marginAfterDeckLevelLossMm' in result))
+  }
 })
 
 test('a real hosted current-design position edit moves the local reserve and withholds its fixed evidence', async () => {

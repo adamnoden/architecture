@@ -113,3 +113,110 @@ test('original main bar axes clear the collector and align with the legacy blind
   assert.deepEqual(aligned.comparison.gravity, reference.comparison.gravity)
   assert.match(aligned.drawingSvg, /0 mm maximum H20 axis offset/)
 })
+
+test('an explicit north yaw probe replays both signs and leaves global actions unchanged across all 52 heads', async () => {
+  const compile = prepareCurrentDesignCompile(readGeorgianDesignSnapshot())
+  const request = await compile.readNorthCollectorCase()
+  assert.ok('collector' in request)
+  const ordinary = await compile.northCollectorCase(request.collector)
+  assert.equal(ordinary.status, 'computed-comparison')
+  assert.equal(Object.hasOwn(ordinary, 'yawProbe'), false)
+
+  const windIndex = 8
+  const [zero, forward, reverse] = await Promise.all((['zero', 'nw-positive', 'ne-positive'] as const).map(sense =>
+    compile.northCollectorCase({ ...request.collector, yawProbe: { windIndex, sense } })))
+  assert.ok(zero.status === 'computed-comparison' && zero.yawProbe
+    && forward.status === 'computed-comparison' && forward.yawProbe
+    && reverse.status === 'computed-comparison' && reverse.yawProbe)
+  const probes = [zero.yawProbe, forward.yawProbe, reverse.yawProbe]
+  const near = (actual: number, expected: number) => assert.ok(Math.abs(actual - expected) < 1e-8, `${actual} differs from ${expected}`)
+  for (const probe of probes) {
+    assert.equal(probe.heads.length, 52)
+    assert.equal(new Set(probe.heads.map(head => head.id)).size, 52)
+    assert.equal(probe.admitted, false)
+    assert.equal(probe.method.solver.path, 'project/str/studies/current-house-joined-foundation.py')
+    assert.ok(probe.method.inputs['project/str/studies/current-house-ring-floor-stations.json'])
+    assert.deepEqual(probe.groups.map(group => [group.id, group.headIds]), [
+      ['NW', ['P07', 'P08', 'P09']], ['NE', ['P10', 'P11', 'P12']],
+    ])
+    probe.deltaHorizontalEquilibrium.forEach(value => near(value, 0))
+    for (const group of probe.groups) {
+      near(group.deltaHorizontalEquilibrium[0], 0)
+      near(group.deltaHorizontalEquilibrium[1], 0)
+      near(group.deltaHorizontalEquilibrium[2], group.appliedYawKNm)
+    }
+  }
+  assert.deepEqual(forward.comparison, ordinary.comparison)
+  assert.deepEqual(forward.drawingSvg, ordinary.drawingSvg)
+  assert.notEqual(forward.source.caseDigest, reverse.source.caseDigest)
+  const yaw = ordinary.comparison.lateralClosure.momentAboutUnchangedGroundAxisU0KNm
+  near(forward.yawProbe.groups[0].appliedYawKNm, yaw)
+  near(forward.yawProbe.groups[1].appliedYawKNm, -yaw)
+  near(reverse.yawProbe.groups[0].appliedYawKNm, -yaw)
+  near(reverse.yawProbe.groups[1].appliedYawKNm, yaw)
+  const affected = forward.yawProbe.heads.filter(head => head.deltaHorizontalKN.some(value => Math.abs(value) > 1e-8))
+  assert.deepEqual(affected.map(head => head.id), ['P07', 'P08', 'P09', 'P10', 'P11', 'P12'])
+  near(affected[1].deltaHorizontalKN[1], 9.405328988)
+  for (const [index, head] of zero.yawProbe.heads.entries()) {
+    assert.deepEqual(head.beforeHorizontalKN, head.probedHorizontalKN)
+    assert.deepEqual(head.beforeHorizontalKN, forward.yawProbe.heads[index].beforeHorizontalKN)
+    forward.yawProbe.heads[index].deltaHorizontalKN.forEach((value, axis) =>
+      near(value, -reverse.yawProbe!.heads[index].deltaHorizontalKN[axis]))
+  }
+
+  const reduced = await compile.northCollectorCase({
+    ...request.collector, dragDemandFactor: 0.5, yawProbe: { windIndex, sense: 'nw-positive' },
+  })
+  assert.ok(reduced.status === 'computed-comparison' && reduced.yawProbe)
+  near(reduced.yawProbe.yawMagnitudeKNm, yaw/2)
+  near(reduced.yawProbe.heads.find(head => head.id === 'P08')!.deltaHorizontalKN[1], 9.405328988/2)
+  assert.deepEqual(reduced.yawProbe.baselineHorizontalEquilibrium, forward.yawProbe.baselineHorizontalEquilibrium)
+})
+
+test('a yaw probe rejects unbound wind patterns, missing sense and supplied base shear', async () => {
+  const compile = prepareCurrentDesignCompile(readGeorgianDesignSnapshot())
+  const request = await compile.readNorthCollectorCase()
+  assert.ok('collector' in request)
+  await assert.rejects(compile.northCollectorCase({ ...request.collector, yawProbe: { windIndex: 96, sense: 'zero' } }),
+    /named wind pattern/)
+  await assert.rejects(compile.northCollectorCase({ ...request.collector, yawProbe: { windIndex: 8 } }), /yaw/)
+  await assert.rejects(compile.northCollectorCase({
+    ...request.collector, yawProbe: { windIndex: 8, sense: 'nw-positive', baseShearKN: 95.16 },
+  }), /yaw/)
+})
+
+test('the widened splice provides backed reversible key pairs and exposes both web-cut wrenches', async () => {
+  const compile = prepareCurrentDesignCompile(readGeorgianDesignSnapshot())
+  const request = await compile.readNorthCollectorCase()
+  assert.ok('collector' in request)
+  const result = await compile.northCollectorCase({ ...request.collector, remoteMainBarShiftMm: 0 })
+  assert.equal(result.status, 'computed-comparison')
+  const keyPath = result.comparison.groundSplice.isolatedKeyLoadPath
+  assert.equal(keyPath.status, 'balanced-compression-only-comparison')
+  assert.deepEqual(keyPath.legacyControl, {
+    widthMm: 140, status: 'backing-unavailable', unsupportedFaces: ['y-toe-side', 'x-toe-side'],
+  })
+  assert.equal(keyPath.widenedWidthMm, 240)
+  assert.deepEqual(keyPath.widenedUnsupportedFaces, [])
+  const [positive, negative] = keyPath.runs
+  assert.deepEqual(positive.upper.contacts.map(contact => contact.id), ['x-toe-end', 'y-toe-side'])
+  assert.deepEqual(positive.lower.contacts.map(contact => contact.id), ['x-toe-side', 'y-toe-end'])
+  assert.deepEqual(negative.upper.contacts.map(contact => contact.id), positive.lower.contacts.map(contact => contact.id))
+  const yaw = result.comparison.lateralClosure.momentAboutUnchangedGroundAxisU0KNm
+  for (const run of keyPath.runs) {
+    assert.ok(run.externalNetWrench.every(component => Math.abs(component) < 1e-8))
+    assert.ok(Math.abs(run.upper.wrench[5] - run.upperYawSign*yaw) < 1e-8)
+    assert.ok(Math.abs(run.lower.wrench[5] + run.upperYawSign*yaw) < 1e-8)
+    assert.deepEqual(run.upper.contacts.map(contact => contact.bearingAreaMm2).sort((a, b) => a-b), [8400, 12000])
+    assert.equal(run.webCutDemands.length, 4)
+  }
+  const rootCut = positive.webCutDemands.find(cut => cut.arm === 'x' && cut.section === 'root')!
+  const toeCut = positive.webCutDemands.find(cut => cut.arm === 'x' && cut.section === 'toe')!
+  assert.deepEqual(rootCut.originXYZMm, [240, 120, -40])
+  assert.deepEqual(toeCut.originXYZMm, [800, 120, -40])
+  assert.ok(Math.abs(rootCut.toeSideExternalWrench[5] + 11.889242378045482) < 1e-8)
+  assert.ok(Math.abs(toeCut.toeSideExternalWrench[5] + 0.9745280637742199) < 1e-8)
+  assert.notEqual(rootCut.toeSideExternalWrench[3], 0)
+  assert.notEqual(rootCut.toeSideExternalWrench[4], 0)
+  assert.equal(result.evidence.installedAcceptance, false)
+})

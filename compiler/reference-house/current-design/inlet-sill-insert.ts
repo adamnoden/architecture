@@ -7,6 +7,7 @@ import {
 import { sha256SemanticFingerprint } from '../../core/identity.js'
 import { createSectionPaperProjection } from '../../publication-drawing/projection.js'
 import type { DrawingSceneV2 } from '../../publication-drawing-v2/model.js'
+import { replaceSillWindPatch, type SillNativeWind } from './inlet-sill-wind.js'
 import type { CurrentDesignResolution } from './resolve.js'
 
 const methodPaths = [
@@ -14,6 +15,13 @@ const methodPaths = [
   'project/had/studies/service-interface-geometry.mjs',
 ] as const
 const receiptPath = 'project/had/studies/south-inlet-sill-insert.json'
+const windReceiptPath = 'project/had/studies/south-inlet-sill-wind-source.json'
+const windRunnerPath = 'project/had/studies/south-inlet-sill-wind-source.py'
+const windInputPaths = [
+  'project/str/studies/reconciled-corner-portals.py',
+  'project/str/studies/reconciled-corner-portals.json',
+  southInletSillInsertInputPaths.rewind,
+] as const
 type Calculation = ReturnType<typeof deriveSouthInletSillInsert>
 type InsertCase = SillInsertGeometry & {
   readonly schema: 'had-inlet-sill-insert-case/1'
@@ -28,7 +36,8 @@ type Diagnostic = { readonly code: IssueCode; readonly objectId: string; readonl
 function readReference(resolved: CurrentDesignResolution) {
   const binding = resolved.disciplineBindings.find(item => item.id === 'had-inlet-south-sill-insert')
   if (!binding) throw new Error('South inlet sill insert requires the applicable HAD and STR source binding')
-  const paths = [...Object.values(southInletSillInsertInputPaths), ...methodPaths, receiptPath]
+  const paths = [...new Set([...Object.values(southInletSillInsertInputPaths), ...methodPaths, receiptPath,
+    windReceiptPath, windRunnerPath, ...windInputPaths])]
   const observed = new Map(paths.map(path => {
     const bytes = readFileSync(new URL('../../../' + path, import.meta.url))
     const gitBlob = createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')
@@ -60,7 +69,17 @@ function readReference(resolved: CurrentDesignResolution) {
     entries: methodPaths.map(path => ({ path, gitBlob: observed.get(path)!.gitBlob })),
     sources: Object.fromEntries([...observed].map(([path, file]) => [path, file.gitBlob])),
   }
-  return { inputs, input, host, method, nativeReceipt: JSON.parse(observed.get(receiptPath)!.bytes.toString('utf8')) }
+  const wind = JSON.parse(observed.get(windReceiptPath)!.bytes.toString('utf8')) as SillNativeWind
+  if (wind.schema !== 'had-south-inlet-sill-native-wind/1' || wind.windowId !== host.id ||
+      windInputPaths.some(path => wind.sources[path] !== observed.get(path)?.gitBlob)) {
+    throw new Error('The native ground wind projection does not match its source occurrence')
+  }
+  const windMethod = {
+    id: 'HAD-SOUTH-SILL-WIND-REPLACEMENT/1', nativeMethod: wind.method,
+    sourceReceipt: windReceiptPath, producer: windRunnerPath,
+    sources: Object.fromEntries([windReceiptPath, windRunnerPath, ...windInputPaths].map(path => [path, observed.get(path)!.gitBlob])),
+  }
+  return { inputs, input, host, method, wind, windMethod, nativeReceipt: JSON.parse(observed.get(receiptPath)!.bytes.toString('utf8')) }
 }
 
 export function readInletSillInsertCase(resolved: CurrentDesignResolution) {
@@ -113,7 +132,8 @@ function screen(calc: Calculation): Diagnostic[] {
   return diagnostics
 }
 
-function elevation(calc: Calculation, host: ReturnType<typeof readReference>['host'], caseDigest: string): DrawingSceneV2 {
+function elevation(calc: Calculation, host: ReturnType<typeof readReference>['host'], caseDigest: string,
+  wind: ReturnType<typeof replaceSillWindPatch>): DrawingSceneV2 {
   const scaleDenominator = 10
   const west = Math.min(calc.jambAndSill.jambs[0][0], host.acceptedClearXMm[0])
   const east = Math.max(calc.jambAndSill.jambs[1][1], host.acceptedClearXMm[1])
@@ -130,6 +150,12 @@ function elevation(calc: Calculation, host: ReturnType<typeof readReference>['ho
   rect('candidate-window-sill', host.candidateClearXMm, [host.rawSillZMm, top], 'profile')
   for (const [index, jamb] of calc.jambAndSill.jambs.entries()) rect(`candidate-jamb-${index}`, jamb, [0, top], 'secondary')
   rect('candidate-insert-aperture', calc.opening.x, calc.opening.z, 'cut')
+  const { centreXMm, centreZMm, forceKN } = wind.removedPatch
+  const centre = project.point(centreXMm, centreZMm)
+  primitives.push({ kind: 'line', id: 'insert-wind-resultant', role: 'primary',
+    a: { x: centre.x - 2, y: centre.y }, b: { x: centre.x + 2, y: centre.y },
+    metadata: { caseDigest, centreXMm, centreZMm, forceKN },
+  })
   for (const cell of calc.retainedInsideCellBoundaries) {
     const [left, right] = cell.wetBoxX
     primitives.push({
@@ -168,6 +194,9 @@ export function runInletSillInsertCase(resolved: CurrentDesignResolution, input:
       throw new Error('The current sill insert calculation differs from its bound native result')
     }
   }
+  const { jambs, rawSillZ } = calc.jambAndSill
+  const wind = replaceSillWindPatch(reference.wind, calc.opening, calc.frame.bearingAxesX, rawSillZ,
+    [jambs[0][0], jambs[1][1]])
   const failures = screen(calc)
   const diagnostics: Diagnostic[] = [
     ...failures,
@@ -181,7 +210,8 @@ export function runInletSillInsertCase(resolved: CurrentDesignResolution, input:
     status: failures.length ? 'blocked-screened-clearance' as const : 'within-conditional-screen' as const,
     source: { planDigest: trial.planDigest, bindingDigest: trial.bindingDigest, caseDigest, nativeReplay },
     host: reference.host, method: reference.method, calculation: calc, diagnostics,
-    drawing: elevation(calc, reference.host, caseDigest),
+    windPressure: { method: reference.windMethod, ...wind },
+    drawing: elevation(calc, reference.host, caseDigest, wind),
     evidence: nativeReplay ? 'bound-comparison-only' as const : 'withheld-for-edited-insert' as const,
   }
 }

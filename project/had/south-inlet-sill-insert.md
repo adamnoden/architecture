@@ -35,3 +35,11 @@ node --import tsx scripts/compile-current-design.ts --inlet-sill-insert sill-ins
 ```
 
 The case supports bounded changes to the east edge, header underside and plant pressure axis. Reducing the east edge from X10380 to X10370 buys 10 mm for the stile but changes the formed plant-sleeve reserve from 5 mm to −5 mm. Moving that sleeve 10 mm west restores the 5 mm aperture reserve and loses the independent cell's mouth packing. It falls from 5 mm to −5 mm against the unchanged wet cell. Neither edit preserves all interfaces. A Z600 header underside also cuts across the sleeve by 70.39 mm after setting. The load and vent calculations and scaled elevation use the same trial coordinates.
+
+## Account for the existing ground-bay wind
+
+The conditional STR portal already applies the full ground bay, including the window and the opaque sill, spandrel and jamb field. The compiler extracts those native actions and removes the insert's rectangular area from the opaque field once. It puts the same pressure patch back on the trial frame line and retains the original window action once. The total stays at **11.262375 kN** normal to the wall under the native **2.25 kPa** case. Both first moments in world coordinates are conserved as the insert dimensions change. [Native projected fields](studies/south-inlet-sill-wind-source.json)
+
+The X9950–10380/Z110–700 patch gives **0.570825 kN** at X10165/Z405. The true portal axes at X9297.5 and X10502.5 would receive **0.159878 / 0.410947 kN** for that isolated patch. The trial frame axes at X9425 and X10390 give **0.133094 / 0.437731 kN**. Subtracting the patch equally from the two portal axes before putting it back at X10165 would leave **0.151269 kNm** of unbalanced X first moment. The compiler checks the assembled force and both first moments from the replacement forces.
+
+These are equivalent normal force transfers for the recorded case. They leave stiffness, reverse restraint, attachment, masonry and the actual sub-sill contribution to arch and jamb restraint open. The inherited window action and the separate local wind comparison must not be added together.

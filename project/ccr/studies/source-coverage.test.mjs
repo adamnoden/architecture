@@ -46,6 +46,8 @@ test('changed discipline receipts invalidate both the affected candidate and its
       'project/had/studies/south-inlet-sill-insert.json'],
     ['had-inlet-south-fault-envelope', 'project/had/studies/south-inlet-relief.json',
       'project/had/studies/south-inlet-under-sill.json'],
+    ['had-inlet-south-sill-insert', 'project/str/studies/reconciled-corner-portals.json',
+      'project/had/studies/south-inlet-sill-wind-source.json'],
   ]
   const baseline = auditSourceCoverage()
   for (const [id, input, receipt] of cases) {

@@ -89,6 +89,366 @@
       "uncoveredByLegacyMetalMm2": 162000.0,
       "widenedBodyMm2": 422400.0
     },
+    "isolatedKeyLoadPath": {
+      "coordinateBasis": "Local legacy DPC outer heel at [0,0]. Positive x/y extend into the two L legs, positive z is up.",
+      "legacyControl": {
+        "status": "backing-unavailable",
+        "unsupportedFaces": [
+          "y-toe-side",
+          "x-toe-side"
+        ],
+        "widthMm": 140
+      },
+      "runs": [
+        {
+          "externalNetWrench": [
+            0.0,
+            0.0,
+            0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "lower": {
+            "contacts": [
+              {
+                "bearingAreaMm2": 12000,
+                "centreXYZMm": [
+                  900.0,
+                  140,
+                  -80.0
+                ],
+                "forceKN": [
+                  0,
+                  -19.490561275484396,
+                  0
+                ],
+                "id": "x-toe-side",
+                "meanBearingDemandMPa": 1.6242134396236998
+              },
+              {
+                "bearingAreaMm2": 8400,
+                "centreXYZMm": [
+                  70.0,
+                  800,
+                  -80.0
+                ],
+                "forceKN": [
+                  0,
+                  19.490561275484396,
+                  0
+                ],
+                "id": "y-toe-end",
+                "meanBearingDemandMPa": 2.3203049137481426
+              }
+            ],
+            "wrench": [
+              0,
+              0.0,
+              0,
+              0.0,
+              0.0,
+              -16.17716585865205
+            ]
+          },
+          "upper": {
+            "contacts": [
+              {
+                "bearingAreaMm2": 8400,
+                "centreXYZMm": [
+                  800,
+                  70.0,
+                  0.0
+                ],
+                "forceKN": [
+                  19.490561275484396,
+                  0,
+                  0
+                ],
+                "id": "x-toe-end",
+                "meanBearingDemandMPa": 2.3203049137481426
+              },
+              {
+                "bearingAreaMm2": 12000,
+                "centreXYZMm": [
+                  140,
+                  900.0,
+                  0.0
+                ],
+                "forceKN": [
+                  -19.490561275484396,
+                  0,
+                  0
+                ],
+                "id": "y-toe-side",
+                "meanBearingDemandMPa": 1.6242134396236998
+              }
+            ],
+            "wrench": [
+              0.0,
+              0,
+              0,
+              0.0,
+              0.0,
+              16.17716585865205
+            ]
+          },
+          "upperYawSign": 1,
+          "webCutDemands": [
+            {
+              "arm": "x",
+              "originXYZMm": [
+                240.0,
+                120.0,
+                -40.0
+              ],
+              "section": "root",
+              "toeSideExternalWrench": [
+                19.490561275484396,
+                -19.490561275484396,
+                0,
+                -0.7796224510193759,
+                0.7796224510193759,
+                -11.889242378045482
+              ]
+            },
+            {
+              "arm": "x",
+              "originXYZMm": [
+                800,
+                120.0,
+                -40.0
+              ],
+              "section": "toe",
+              "toeSideExternalWrench": [
+                19.490561275484396,
+                -19.490561275484396,
+                0,
+                -0.7796224510193759,
+                0.7796224510193759,
+                -0.9745280637742199
+              ]
+            },
+            {
+              "arm": "y",
+              "originXYZMm": [
+                120.0,
+                240.0,
+                -40.0
+              ],
+              "section": "root",
+              "toeSideExternalWrench": [
+                -19.490561275484396,
+                19.490561275484396,
+                0,
+                0.7796224510193759,
+                -0.7796224510193759,
+                11.889242378045482
+              ]
+            },
+            {
+              "arm": "y",
+              "originXYZMm": [
+                120.0,
+                800,
+                -40.0
+              ],
+              "section": "toe",
+              "toeSideExternalWrench": [
+                -19.490561275484396,
+                19.490561275484396,
+                0,
+                0.7796224510193759,
+                -0.7796224510193759,
+                0.9745280637742199
+              ]
+            }
+          ]
+        },
+        {
+          "externalNetWrench": [
+            0.0,
+            0.0,
+            0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "lower": {
+            "contacts": [
+              {
+                "bearingAreaMm2": 8400,
+                "centreXYZMm": [
+                  800,
+                  70.0,
+                  -80.0
+                ],
+                "forceKN": [
+                  19.490561275484396,
+                  0,
+                  0
+                ],
+                "id": "x-toe-end",
+                "meanBearingDemandMPa": 2.3203049137481426
+              },
+              {
+                "bearingAreaMm2": 12000,
+                "centreXYZMm": [
+                  140,
+                  900.0,
+                  -80.0
+                ],
+                "forceKN": [
+                  -19.490561275484396,
+                  0,
+                  0
+                ],
+                "id": "y-toe-side",
+                "meanBearingDemandMPa": 1.6242134396236998
+              }
+            ],
+            "wrench": [
+              0.0,
+              0,
+              0,
+              0.0,
+              0.0,
+              16.17716585865205
+            ]
+          },
+          "upper": {
+            "contacts": [
+              {
+                "bearingAreaMm2": 12000,
+                "centreXYZMm": [
+                  900.0,
+                  140,
+                  0.0
+                ],
+                "forceKN": [
+                  0,
+                  -19.490561275484396,
+                  0
+                ],
+                "id": "x-toe-side",
+                "meanBearingDemandMPa": 1.6242134396236998
+              },
+              {
+                "bearingAreaMm2": 8400,
+                "centreXYZMm": [
+                  70.0,
+                  800,
+                  0.0
+                ],
+                "forceKN": [
+                  0,
+                  19.490561275484396,
+                  0
+                ],
+                "id": "y-toe-end",
+                "meanBearingDemandMPa": 2.3203049137481426
+              }
+            ],
+            "wrench": [
+              0,
+              0.0,
+              0,
+              0.0,
+              0.0,
+              -16.17716585865205
+            ]
+          },
+          "upperYawSign": -1,
+          "webCutDemands": [
+            {
+              "arm": "x",
+              "originXYZMm": [
+                240.0,
+                120.0,
+                -40.0
+              ],
+              "section": "root",
+              "toeSideExternalWrench": [
+                19.490561275484396,
+                -19.490561275484396,
+                0,
+                0.7796224510193759,
+                -0.7796224510193759,
+                -11.889242378045482
+              ]
+            },
+            {
+              "arm": "x",
+              "originXYZMm": [
+                800,
+                120.0,
+                -40.0
+              ],
+              "section": "toe",
+              "toeSideExternalWrench": [
+                19.490561275484396,
+                -19.490561275484396,
+                0,
+                0.7796224510193759,
+                -0.7796224510193759,
+                -0.9745280637742199
+              ]
+            },
+            {
+              "arm": "y",
+              "originXYZMm": [
+                120.0,
+                240.0,
+                -40.0
+              ],
+              "section": "root",
+              "toeSideExternalWrench": [
+                -19.490561275484396,
+                19.490561275484396,
+                0,
+                -0.7796224510193759,
+                0.7796224510193759,
+                11.889242378045482
+              ]
+            },
+            {
+              "arm": "y",
+              "originXYZMm": [
+                120.0,
+                800,
+                -40.0
+              ],
+              "section": "toe",
+              "toeSideExternalWrench": [
+                -19.490561275484396,
+                19.490561275484396,
+                0,
+                -0.7796224510193759,
+                0.7796224510193759,
+                0.9745280637742199
+              ]
+            }
+          ]
+        }
+      ],
+      "scope": "Isolated equal and opposite yaw only. Web cut wrenches are external demands on the toe side. No strength, stiffness or concurrent splice actions are admitted.",
+      "status": "balanced-compression-only-comparison",
+      "widenedUnsupportedFaces": [],
+      "widenedWidthMm": 240.0,
+      "wrenchOrder": [
+        "Fx_kN",
+        "Fy_kN",
+        "Fz_kN",
+        "Mx_kNm",
+        "My_kNm",
+        "Mz_kNm"
+      ],
+      "wrenchOriginXYZMm": [
+        0,
+        0,
+        -40.0
+      ]
+    },
     "isolatedPositiveKeyCouple": {
       "forceIfOneCoupleTakesWholeYawKN": [
         19.490561275484396,

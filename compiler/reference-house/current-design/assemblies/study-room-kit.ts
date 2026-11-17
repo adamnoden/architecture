@@ -6,6 +6,7 @@ import { readBoundOccupiedServices } from '../occupied-services.js'
 import type { CurrentDesignResolution } from '../resolve.js'
 import { compileRenewableOpenings } from './renewable-openings.js'
 import { compileResolvedStudyAssembly } from './study-floor.js'
+import { compileStudyGroundSupport } from './study-ground-support.js'
 import { compileResolvedStudyLinings, layStudySouthPanelStock } from './study-linings.js'
 import { compileStudyWallTransition } from './study-wall-transition.js'
 
@@ -21,6 +22,7 @@ type Case = {
   readonly pitchMm: number
   readonly wearingFace: 'oak' | 'stone-steel'
   readonly finishDepthMm?: 15 | 20
+  readonly groundDeckLevelLossMm?: number
   readonly opening?: OpeningCase
 }
 
@@ -33,15 +35,18 @@ function record(input: unknown): input is Record<string, unknown> {
 }
 
 function caseInput(input: unknown): Case {
-  if (!record(input) || Object.keys(input).some(key => !['schema', 'units', 'pitchMm', 'wearingFace', 'finishDepthMm', 'opening'].includes(key))
+  if (!record(input) || Object.keys(input).some(key => !['schema', 'units', 'pitchMm', 'wearingFace', 'finishDepthMm', 'groundDeckLevelLossMm', 'opening'].includes(key))
     || input.schema !== 'ias-study-room-kit-case/1' || input.units !== 'mm'
     || typeof input.pitchMm !== 'number' || !Number.isFinite(input.pitchMm)
     || (input.finishDepthMm !== undefined && input.finishDepthMm !== 15 && input.finishDepthMm !== 20)
+    || (input.groundDeckLevelLossMm !== undefined && (typeof input.groundDeckLevelLossMm !== 'number'
+      || !Number.isFinite(input.groundDeckLevelLossMm) || input.groundDeckLevelLossMm < 0))
     || (input.wearingFace !== 'oak' && input.wearingFace !== 'stone-steel')) {
     throw new TypeError('INVALID_STUDY_ROOM_KIT_CASE')
   }
   const common: Case = { schema: input.schema, units: input.units, pitchMm: input.pitchMm, wearingFace: input.wearingFace,
-    ...(input.finishDepthMm === undefined ? {} : { finishDepthMm: input.finishDepthMm }) } as const
+    ...(input.finishDepthMm === undefined ? {} : { finishDepthMm: input.finishDepthMm }),
+    ...(input.groundDeckLevelLossMm === undefined ? {} : { groundDeckLevelLossMm: input.groundDeckLevelLossMm }) } as const
   if (input.opening === undefined) return common
   const opening = input.opening
   const finite = (value: unknown): value is number => typeof value === 'number' && Number.isFinite(value) && !Object.is(value, -0)
@@ -355,24 +360,6 @@ function releaseScreen(assembly: FloorAssembly, parts: ReturnType<typeof partSet
   } as const
 }
 
-function studyGroundSupport(assembly: FloorAssembly) {
-  const cellularGlassMm = 100
-  const minimumFloatingCourseMm = 65
-  const separatorComparisonMm = 0.3
-  const { rcTop, finishDepthMm, beddingTerritoryMm, wearFaceMm } = assembly.section
-  const glassTopMm = rcTop + cellularGlassMm
-  const deckTopMm = -(wearFaceMm + beddingTerritoryMm)
-  const fullFinishDeckTopMm = -finishDepthMm
-  const actualCourseBeforeLevelToleranceMm = deckTopMm - glassTopMm - separatorComparisonMm
-  return {
-    glassTopMm, cellularGlassMm, fullFinishDeckTopMm, deckTopIfDepthUnresolvedMovesToDeckMm: deckTopMm,
-    minimumFloatingCourseMm, separatorComparisonMm, actualCourseBeforeLevelToleranceMm,
-    marginToMinimumBeforeLevelToleranceMm: actualCourseBeforeLevelToleranceMm - minimumFloatingCourseMm,
-    disposition: 'withheld',
-    held: 'Named bedding, separator, ordinary-course tolerance, above-glass support, uniform bearing and dry-to-wet edge.',
-  } as const
-}
-
 function deriveStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
   const request = caseInput(input)
   const assembly = compileResolvedStudyAssembly(resolved, { pitchMm: request.pitchMm, wearingFace: request.wearingFace, finishDepthMm: request.finishDepthMm })
@@ -392,7 +379,7 @@ function deriveStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
     floor: {
       parts, emitterPlinth, jointMm: assembly.section.jointMm, wearingFaceMm: assembly.section.wearFaceMm, beddingMm: assembly.section.beddingTerritoryMm,
       depthUnassignedWithinFinishMm: assembly.section.finishSupportDepthUnresolvedMm, handling,
-      groundSupport: studyGroundSupport(assembly),
+      groundSupport: compileStudyGroundSupport(resolved, assembly.section, request.groundDeckLevelLossMm ?? 0),
       borderParts: parts.filter(part => part.role === 'border').length, release,
       coverageMm2: parts.reduce((total, part) => total + area(part.box), emitterPlinth.state === 'withheld' ? 0 : emitterPlinth.areaMm2),
       heldEvidence: ['permanent deck, bedding and product tests', 'finished-room installation and handling'],
