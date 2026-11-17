@@ -184,3 +184,39 @@ test('a yaw probe rejects unbound wind patterns, missing sense and supplied base
     ...request.collector, yawProbe: { windIndex: 8, sense: 'nw-positive', baseShearKN: 95.16 },
   }), /yaw/)
 })
+
+test('the widened splice provides backed reversible key pairs and exposes both web-cut wrenches', async () => {
+  const compile = prepareCurrentDesignCompile(readGeorgianDesignSnapshot())
+  const request = await compile.readNorthCollectorCase()
+  assert.ok('collector' in request)
+  const result = await compile.northCollectorCase({ ...request.collector, remoteMainBarShiftMm: 0 })
+  assert.equal(result.status, 'computed-comparison')
+  const keyPath = result.comparison.groundSplice.isolatedKeyLoadPath
+  assert.equal(keyPath.status, 'balanced-compression-only-comparison')
+  assert.deepEqual(keyPath.legacyControl, {
+    widthMm: 140, status: 'backing-unavailable', unsupportedFaces: ['y-toe-side', 'x-toe-side'],
+  })
+  assert.equal(keyPath.widenedWidthMm, 240)
+  assert.deepEqual(keyPath.widenedUnsupportedFaces, [])
+  const [positive, negative] = keyPath.runs
+  assert.deepEqual(positive.upper.contacts.map(contact => contact.id), ['x-toe-end', 'y-toe-side'])
+  assert.deepEqual(positive.lower.contacts.map(contact => contact.id), ['x-toe-side', 'y-toe-end'])
+  assert.deepEqual(negative.upper.contacts.map(contact => contact.id), positive.lower.contacts.map(contact => contact.id))
+  const yaw = result.comparison.lateralClosure.momentAboutUnchangedGroundAxisU0KNm
+  for (const run of keyPath.runs) {
+    assert.ok(run.externalNetWrench.every(component => Math.abs(component) < 1e-8))
+    assert.ok(Math.abs(run.upper.wrench[5] - run.upperYawSign*yaw) < 1e-8)
+    assert.ok(Math.abs(run.lower.wrench[5] + run.upperYawSign*yaw) < 1e-8)
+    assert.deepEqual(run.upper.contacts.map(contact => contact.bearingAreaMm2).sort((a, b) => a-b), [8400, 12000])
+    assert.equal(run.webCutDemands.length, 4)
+  }
+  const rootCut = positive.webCutDemands.find(cut => cut.arm === 'x' && cut.section === 'root')!
+  const toeCut = positive.webCutDemands.find(cut => cut.arm === 'x' && cut.section === 'toe')!
+  assert.deepEqual(rootCut.originXYZMm, [240, 120, -40])
+  assert.deepEqual(toeCut.originXYZMm, [800, 120, -40])
+  assert.ok(Math.abs(rootCut.toeSideExternalWrench[5] + 11.889242378045482) < 1e-8)
+  assert.ok(Math.abs(toeCut.toeSideExternalWrench[5] + 0.9745280637742199) < 1e-8)
+  assert.notEqual(rootCut.toeSideExternalWrench[3], 0)
+  assert.notEqual(rootCut.toeSideExternalWrench[4], 0)
+  assert.equal(result.evidence.installedAcceptance, false)
+})

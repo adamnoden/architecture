@@ -132,6 +132,100 @@ def rectangle_area(rectangles, support=()):
     return area
 
 
+def load_wrench(contacts, origin):
+    rows = []
+    for contact in contacts:
+        x, y, z = (value-origin[i] for i, value in enumerate(contact['centreXYZMm']))
+        fx, fy, fz = contact['forceKN']
+        rows.append((fx, fy, fz, (y*fz-z*fy)/1000, (z*fx-x*fz)/1000, (x*fy-y*fx)/1000))
+    return [sum(column) for column in zip(*rows)]
+
+
+def key_load_path(blocks, width, end, plate, moment):
+    toe_x = next(block for block in blocks if block[0] > 0 and block[1] == 0)
+    toe_y = next(block for block in blocks if block[1] > 0 and block[0] == 0)
+    old_width = toe_x[3]
+    assert old_width == toe_y[2]
+    web_bottom, web_top = plate['connectingContinuousWebZ']
+    block_bottom, block_top = plate['thickBlockZ']
+    web_mid = (web_bottom+web_top)/2
+    levels = {'upper':(web_top, block_top), 'lower':(block_bottom, web_bottom)}
+
+    def patch(label, block, axis, sign):
+        x, y, dx, dy = block
+        lows, highs = (x,y), (x+dx,y+dy)
+        transverse = 1-axis
+        coordinate = lows[axis] if sign > 0 else highs[axis]
+        centre = [(lo+hi)/2 for lo,hi in zip(lows,highs)]
+        centre[axis] = coordinate
+        backing = [*lows,*highs]
+        backing[axis] = coordinate-1 if sign > 0 else coordinate
+        backing[axis+2] = coordinate if sign > 0 else coordinate+1
+        return label, centre, axis, sign, highs[transverse]-lows[transverse], backing
+
+    groups = {
+        'positive': [patch('x-toe-end', toe_x, 0, 1), patch('y-toe-side', toe_y, 0, -1)],
+        'negative': [patch('x-toe-side', toe_x, 1, -1), patch('y-toe-end', toe_y, 1, 1)],
+    }
+    patches = [face for group in groups.values() for face in group]
+
+    def unavailable_faces(body_width):
+        footprint = [(0,0,body_width,end),(0,0,end,body_width)]
+        return [label for label, _, _, _, _, backing in patches if rectangle_area([backing], footprint) > 0]
+
+    unsupported = unavailable_faces(width)
+    if unsupported:
+        return {'status':'backing-unavailable', 'unsupportedFaces':unsupported, 'runs':[]}
+    old_unsupported = unavailable_faces(old_width)
+    assert old_unsupported == ['y-toe-side', 'x-toe-side']
+
+    def face_path(side, direction):
+        z0, z1 = levels[side]
+        pair = groups[direction]
+        axis = pair[0][2]
+        lever = abs(pair[0][1][1-axis]-pair[1][1][1-axis])
+        force = moment*1000/lever
+        records = []
+        for label, centre, axis, sign, span, _ in pair:
+            forces = [0,0,0]
+            forces[axis] = sign*force
+            area = span*(z1-z0)
+            records.append({'id':label, 'centreXYZMm':[*centre,(z0+z1)/2], 'forceKN':forces,
+                            'bearingAreaMm2':area, 'meanBearingDemandMPa':force*1000/area})
+        wrench = load_wrench(records, (0,0,web_mid))
+        target = moment if direction == 'positive' else -moment
+        assert max(map(abs, wrench[:5])) < 1e-8 and abs(wrench[5]-target) < 1e-8
+        return {'contacts':records,'wrench':wrench}
+
+    runs = []
+    for sign, top_direction, bottom_direction in ((1,'positive','negative'),(-1,'negative','positive')):
+        upper, lower = face_path('upper', top_direction), face_path('lower', bottom_direction)
+        contacts = upper['contacts']+lower['contacts']
+        external = load_wrench(contacts, (0,0,web_mid))
+        assert max(map(abs, external)) < 1e-8
+        cuts = []
+        for axis, toe in enumerate((toe_x,toe_y)):
+            toe_contacts = [contact for contact in contacts if contact['id'][0] == 'xy'[axis]]
+            for location, station in (('root',width),('toe',toe[axis])):
+                origin = [width/2,width/2,web_mid]
+                origin[axis] = station
+                cuts.append({'arm':'xy'[axis], 'section':location, 'originXYZMm':origin,
+                             'toeSideExternalWrench':load_wrench(toe_contacts, origin)})
+        runs.append({'upperYawSign':sign, 'upper':upper, 'lower':lower, 'externalNetWrench':external,
+                     'webCutDemands':cuts})
+    return {
+        'status':'balanced-compression-only-comparison',
+        'coordinateBasis':'Local legacy DPC outer heel at [0,0]. Positive x/y extend into the two L legs, positive z is up.',
+        'wrenchOrder':['Fx_kN','Fy_kN','Fz_kN','Mx_kNm','My_kNm','Mz_kNm'],
+        'wrenchOriginXYZMm':[0,0,web_mid],
+        'legacyControl': {'widthMm':old_width, 'status':'backing-unavailable', 'unsupportedFaces':old_unsupported},
+        'widenedWidthMm':width,
+        'widenedUnsupportedFaces':unsupported,
+        'runs':runs,
+        'scope':'Isolated equal and opposite yaw only. Web cut wrenches are external demands on the toe side. No strength, stiffness or concurrent splice actions are admitted.',
+    }
+
+
 def ground_splice(outer, grid, axes, shift, moment):
     dpc = outer['DPC']
     blocks = dpc['threeThickBlocksPlanLocal']
@@ -212,6 +306,7 @@ def ground_splice(outer, grid, axes, shift, moment):
         'receivingPlan': receiving,
         'isolatedPositiveKeyCouple': {'historicalYawAboutU0KNm': moment, 'leverArmsMm': key_arms,
                                      'forceIfOneCoupleTakesWholeYawKN': [moment*1000/arm for arm in key_arms]},
+        'isolatedKeyLoadPath': key_load_path(blocks, RECEIVER_U+old_half, end+old_half, dpc, moment),
         'scope': 'Geometry and isolated force demand only. Bearing spread, confinement, keys, bore strength, welds, moisture perimeter and coupled signed responses remain open.',
     }
 

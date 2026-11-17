@@ -14,6 +14,18 @@ const geometryPath = studies + 'court_tie_starter_paths.py'
 const id = 'STR-NORTH-FLOOR-COLLECTOR'
 
 type Point = readonly [number, number]
+type Vector3 = readonly [number, number, number]
+type Wrench = readonly [number, number, number, number, number, number]
+type KeyFace = {
+  readonly contacts: readonly {
+    readonly id: string
+    readonly centreXYZMm: Vector3
+    readonly forceKN: Vector3
+    readonly bearingAreaMm2: number
+    readonly meanBearingDemandMPa: number
+  }[]
+  readonly wrench: Wrench
+}
 
 interface NorthCollectorCase {
   readonly schema: 'str-north-collector-case/1'
@@ -79,6 +91,28 @@ interface CollectorComparison {
       readonly uncoveredByLegacyMetalMm2: number
       readonly uncoveredByExtendedWebMm2: number
       readonly extendedWebOverhangMm2: number
+    }
+    readonly isolatedKeyLoadPath: {
+      readonly status: string
+      readonly legacyControl: {
+        readonly widthMm: number
+        readonly status: 'backing-unavailable'
+        readonly unsupportedFaces: readonly string[]
+      }
+      readonly widenedWidthMm: number
+      readonly widenedUnsupportedFaces: readonly string[]
+      readonly runs: readonly {
+        readonly upperYawSign: 1 | -1
+        readonly upper: KeyFace
+        readonly lower: KeyFace
+        readonly externalNetWrench: Wrench
+        readonly webCutDemands: readonly {
+          readonly arm: 'x' | 'y'
+          readonly section: 'root' | 'toe'
+          readonly originXYZMm: Vector3
+          readonly toeSideExternalWrench: Wrench
+        }[]
+      }[]
     }
     readonly receivingPlan: readonly {
       readonly heads: readonly string[]
