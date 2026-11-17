@@ -9,8 +9,8 @@
     "label": "total-integration-2026-11-17"
   },
   "claimedAt": "2026-11-17T08:56:51.796Z",
-  "heartbeatAt": "2026-11-17T08:56:51.796Z",
-  "expiresAt": "2026-11-17T09:41:51.796Z",
+  "heartbeatAt": "2026-11-17T09:07:56.568Z",
+  "expiresAt": "2026-11-17T09:52:56.568Z",
   "branch": "work/total-integration-2026-11-17",
   "predecessor": {
     "leaseId": "b2a9c387-1411-4e08-a2d3-f0f41427d0bf",
@@ -33,5 +33,11 @@
       "next": "Compare X670/Y9400 rear stack and prove the widened DPC splice and signed 52-head response.",
       "blocker": "Two diagonal collector layers still intersect the old NW port. Old dry rise and straight tall west stack hit roof members or both trays."
     }
+  },
+  "pr": 1561,
+  "checkpoint": {
+    "evidence": "PR #1561 at 6d2005f0c98fc5b64772a960222153126496e08c. Focused compiler and native study checks passed. Exact-head hosted validation running.",
+    "next": "Check an external wet line with an independently routed high-level dry return.",
+    "blocker": "The retained rear cabinet cannot accept the port through the proposed collector at retested demands."
   }
 }
