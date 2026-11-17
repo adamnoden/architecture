@@ -75,7 +75,7 @@ async function runTrial(input: unknown, trial: TrialMode) {
 
 const args = process.argv.slice(2)
 const modes = [
-  '--occupied-services', '--selected-water-event', '--structural-bridge', '--structural-actions',
+  '--occupied-services', '--occupied-service-drawings', '--selected-water-event', '--structural-bridge', '--structural-actions',
   '--bundle', '--study-assembly', '--study-linings', '--renewable-openings',
   '--read-roof-pitch', '--read-court-intake', '--read-inlet-route', '--read-east-ground-receiving',
   '--read-occupied-condensate', '--read-structural-case', '--read-structural-interfaces',
@@ -117,6 +117,7 @@ try {
       else if (mode === '--read-inlet-sill-insert') process.stdout.write(JSON.stringify(await compile.readInletSillInsertCase(), null, 2) + '\n')
       else if (mode === '--read-inlet-fault') process.stdout.write(JSON.stringify(await compile.readInletFaultCase(), null, 2) + '\n')
       else if (mode === '--occupied-services') process.stdout.write((await compile.occupiedServices()).schedule)
+      else if (mode === '--occupied-service-drawings') process.stdout.write(JSON.stringify(await compile.occupiedServiceDrawings()) + '\n')
       else if (mode === '--selected-water-event') process.stdout.write((await compile.selectedWaterEvent()).event)
       else if (mode === '--structural-bridge') process.stdout.write(JSON.stringify(await compile.structuralBridge()) + '\n')
       else if (mode === '--structural-actions') process.stdout.write(JSON.stringify(await compile.structuralActions()) + '\n')

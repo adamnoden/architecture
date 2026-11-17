@@ -73,7 +73,10 @@
         "project/mat/studies/whole-house-service-baseline.py",
         "project/had/studies/occupied-condensate-port.mjs",
         "project/had/studies/service-head-maintenance.mjs",
-        "project/had/studies/service-interface-geometry.mjs"
+        "project/had/studies/service-interface-geometry.mjs",
+        "project/had/studies/current-house-service-outputs.mjs",
+        "project/had/studies/occupied-service-plate.mjs",
+        "project/had/studies/selected-service-plate.mjs"
       ],
       "inputReceipts": [
         "project/had/studies/receiver-selection.json",
@@ -112,7 +115,8 @@
         "project/ias/studies/workable-lining-dimensions.mjs"
       ],
       "producerChecks": [
-        "node --test project/had/studies/current-house.test.mjs"
+        "node --test project/had/studies/current-house.test.mjs",
+        "node project/had/studies/current-house-service-outputs.mjs --check"
       ]
     },
     {
@@ -642,7 +646,7 @@
   ],
   "gitBlobs": {
     "compiler/reference-house/georgian/layout-revision.ts": "af955c7da2e2469fd24598f98db6fc942a119ed3",
-    "project/had/inhabited-services-selection.md": "53369e05426c7383f049d16e54b7e91d27179a22",
+    "project/had/inhabited-services-selection.md": "4ff15ebce20dccee4205a9cea70b7b1ab533db30",
     "project/had/service-structural-applicability.md": "91e87bafe1f19403e8ec4846b44ff6437190a713",
     "project/had/studies/cooker-fault.mjs": "8eaf819eac101f22e306d62376c6836ac67beb49",
     "project/had/studies/court-east-window.mjs": "876ee826eaf61b88ebf5e7c4596fba0da07cc1f6",
@@ -699,7 +703,7 @@
     "project/mat/studies/whole-house-leakage-duty.json": "5b93cdd9ea1ee7d825fa4596a44caf06431afc49",
     "project/mat/studies/whole-house-service-baseline.json": "049161ebac29b24e0acc7d8085302fca906fe9d2",
     "project/mat/studies/whole-house-service-baseline.py": "e1c4e1a645ee707622c9bcc7a064fcd430715a63",
-    "project/mra/studies/internal-leak-study.mjs": "bc28da57d3868b6532b981722808ed01783cb147",
+    "project/mra/studies/internal-leak-study.mjs": "835b4c10b3f1184db98e1ce0f973682372abf579",
     "project/oas/studies/north-export-occurrence.json": "5a0860a715688f8ef4eda3184fd8fe8bc26774b6",
     "project/rwt/rwt-06-finite-exit-map.md": "86f2166ab4db6f9f4d1a227f4d1293b4aea4a534",
     "project/rwt/rwt-06-permanent-receiver-service.md": "48a9577c4a702752b15f84eb5143342ed2defaf2",
@@ -810,11 +814,11 @@
     "project/str/studies/current-house-wall-transfers.json": "e0f07982d5c14a464599eb5ac98952dcdcdaf892",
     "project/str/studies/floor-portal-north-cap-layer.json": "dab58749281eb22c46354098a183a6937339cfda",
     "project/str/studies/floor-portal-north-cage.json": "2b58f32dfcb90a44785d9217284f39b3ecbb7241",
-    "project/str/studies/current-house-structural-case.py": "e6e4fbd4f4b2e380f8ae1506b876a53796063650",
+    "project/str/studies/current-house-structural-case.py": "de1494f041a2b3cab62b34982bc045b09466454f",
     "project/design-constraints.ts": "0c76e5372a2537bbc6f3c6c29f07ab0efa297129",
-    "project/str/studies/floor-portal-monolithic-drag.py": "62f96e52ccad10f6034a81ea3fba4c7a684c8281",
-    "project/str/studies/floor-portal-monolithic-drag.json": "24b7a554b6a9de9dfebbcc2e6a441d3baca31616",
-    "project/str/floor-portal-monolithic-drag.md": "055270b532dd73c78e78694a5fb511b41ce44d1e",
+    "project/str/studies/floor-portal-monolithic-drag.py": "55df2044d7ad72fbb7406b42564b1175a86b9fd1",
+    "project/str/studies/floor-portal-monolithic-drag.json": "9a8cf79026419f3b9f05cee4b573b6dd1f3a04e6",
+    "project/str/floor-portal-monolithic-drag.md": "04516d9fb2e72e769ca69e023bbe048bb0050e65",
     "project/str/studies/current-house-ground-ties.json": "80c5ede6bcbe0b0bb3a19032feddd8403fbf19b1",
     "project/had/studies/south-inlet-sill-insert.mjs": "5b8102418d8ea33bd6a03fe2dd7cde41efe943ff",
     "project/had/studies/south-inlet-sill-insert-kernel.mjs": "3df75b2cb2fa492c6b3e5b2a04a113f481007880",
@@ -823,7 +827,7 @@
     "project/had/studies/south-inlet-under-sill.json": "7d60da325cd76bb9d7924bc4bb64f1b93b51b644",
     "project/had/studies/south-inlet-wet-box.json": "0ccc6a7b1584145b5e77c7b89e9e2b8ce8b7d665",
     "project/str/studies/floor-portal-interface-review.json": "ad8aac21e936f0199b331c3bd886c8bb41f30ee3",
-    "compiler/reference-house/current-design/north-collector.ts": "7dd68b55e5f722216e33de02d66d371f60816963",
+    "compiler/reference-house/current-design/north-collector.ts": "a4a57bb0c200241b21492e488f964a60132e8ffb",
     "compiler/reference-house/current-design/inlet-sill-insert.ts": "08d96ab51ecbd883df0dd56573327a2e0e4d63b4",
     "project/had/south-inlet-relief.md": "9bde59b3cc55bc4fb7156402e50337b9f27fc3a5",
     "project/had/studies/south-inlet-relief.mjs": "2648332efff491577ce285dc315e9e38006ecbbc",
@@ -844,10 +848,13 @@
     "project/str/studies/physical-slab-join.json": "79b28df58f00fcf6e31a97cd376efe15a6c2566f",
     "project/str/studies/current-house-roof-connection.json": "b7499d25908e41be0903c24183aa3a5e487a61a0",
     "project/str/studies/current-house-floor-closure.svg": "92af682f05bf44a6a0af8237385e2d1345d7c9ca",
-    "compiler/reference-house/current-design/structural.ts": "fd1dd073efa167ef8ea046631821700189034727",
+    "compiler/reference-house/current-design/structural.ts": "b42981c5fc790f2755fd8ec717708ee10898ba25",
     "project/had/studies/south-inlet-sill-wind-source.py": "4ceae4c90ff02d4457b9690959638e3ff90fa521",
     "project/had/studies/south-inlet-sill-wind-source.json": "5bf4cb356f72054abfe706011ea8507b1332c305",
     "compiler/reference-house/current-design/inlet-sill-wind.ts": "45fd3e5f0c80f8bf6b06af8aed1687f5220aee7b",
-    "project/str/studies/reconciled-corner-portals.py": "5ed97fdd2f7f1a8ca5dd0a741623d472f9d8178f"
+    "project/str/studies/reconciled-corner-portals.py": "5ed97fdd2f7f1a8ca5dd0a741623d472f9d8178f",
+    "project/had/studies/current-house-service-outputs.mjs": "ed9b9796099e5b8736d11a1d90bb93a566bfe12d",
+    "project/had/studies/occupied-service-plate.mjs": "1d5b59e2945bcc58234d7ee96d41ec3473aa1ec2",
+    "project/had/studies/selected-service-plate.mjs": "732c5d440d2963a6092a0bf2bfdd8df8e198a54b"
   }
 }

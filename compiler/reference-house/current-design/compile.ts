@@ -106,6 +106,10 @@ export function prepareCurrentDesignCompile(input: unknown) {
       const { runOccupiedServiceSchedule } = await import('./occupied-services.js')
       return runOccupiedServiceSchedule(resolved)
     },
+    occupiedServiceDrawings: async () => {
+      const { runOccupiedServiceDrawings } = await import('./occupied-services.js')
+      return runOccupiedServiceDrawings(resolved)
+    },
     selectedWaterEvent: async () => {
       const { runSelectedWaterEvent } = await import('./selected-water-event.js')
       return runSelectedWaterEvent(resolved)

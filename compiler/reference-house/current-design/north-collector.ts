@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { sha256SemanticFingerprint } from '../../core/identity.js'
 import type { CurrentDesignResolution } from './resolve.js'
-import { runStructuralNorthYawProbe, type NorthYawProbe } from './structural.js'
+import { runStructuralNorthDeadLoad, runStructuralNorthYawProbe, type NorthCornerDeadLoad, type NorthYawProbe } from './structural.js'
 
 const repository = new URL('../../../', import.meta.url)
 const studies = 'project/str/studies/'
@@ -36,6 +36,7 @@ interface NorthCollectorCase {
   readonly dragDemandFactor: number
   readonly remoteMainBarShiftMm?: number
   readonly yawProbe?: NorthYawProbe
+  readonly deadLoadReplay?: { readonly windIndex: number }
 }
 
 interface CollectorComparison {
@@ -122,6 +123,20 @@ interface CollectorComparison {
       readonly verticalGapToWebUndersideMm: number
       readonly verticalGapToBlockUndersideMm: number
     }[]
+    readonly nominalDeadLoadDelta: {
+      readonly additionalFootprintMm2: number
+      readonly centroidUVMm: Point
+      readonly concreteUnitWeightKNPerM3: number
+      readonly geometryWithinRetainedReceivingProjection: boolean
+      readonly admitted: false
+      readonly corners: readonly (NorthCornerDeadLoad & {
+        readonly verticalExtentZMm: Point
+        readonly additionalConcreteM3: number
+        readonly additionalConcreteKN: number
+        readonly additionalWebKg: number
+        readonly additionalWebKN: number
+      })[]
+    }
   }
 }
 
@@ -185,7 +200,7 @@ export function readNorthCollectorCase(resolved: CurrentDesignResolution) {
 
 function admitCase(value: unknown, binding: NonNullable<ReturnType<typeof bindingFor>>): NorthCollectorCase {
   const fields = ['schema', 'planDigest', 'bindingDigest', 'collectorId', 'portAxisXYMm', 'dragDemandFactor']
-  const optional = ['remoteMainBarShiftMm', 'yawProbe']
+  const optional = ['remoteMainBarShiftMm', 'yawProbe', 'deadLoadReplay']
   if (!value || typeof value !== 'object' || Array.isArray(value)
       || fields.some(field => !Object.hasOwn(value, field))
       || Object.keys(value).some(field => !optional.includes(field) && !fields.includes(field))) {
@@ -211,6 +226,13 @@ function admitCase(value: unknown, binding: NonNullable<ReturnType<typeof bindin
         || !Number.isSafeInteger(probe.windIndex) || probe.windIndex < 0
         || !['zero', 'nw-positive', 'ne-positive'].includes(probe.sense)) {
       throw new Error('Choose a named wind index and zero, nw-positive or ne-positive yaw')
+    }
+  }
+  if (Object.hasOwn(trial, 'deadLoadReplay')) {
+    const replay = trial.deadLoadReplay
+    if (!replay || typeof replay !== 'object' || Array.isArray(replay) || Object.keys(replay).length !== 1
+        || !Object.hasOwn(replay, 'windIndex') || !Number.isSafeInteger(replay.windIndex) || replay.windIndex < 0) {
+      throw new Error('Choose a named wind index for the north dead load replay')
     }
   }
   return trial
@@ -244,6 +266,13 @@ export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: 
   const yawProbe = trial.yawProbe
     ? runStructuralNorthYawProbe(resolved, trial.yawProbe, comparison.lateralClosure.momentAboutUnchangedGroundAxisU0KNm)
     : undefined
+  const deadLoad = comparison.groundSplice.nominalDeadLoadDelta
+  if (trial.deadLoadReplay && !deadLoad.geometryWithinRetainedReceivingProjection) {
+    throw new Error('The widened north load leaves the retained receiving projection')
+  }
+  const deadLoadReplay = trial.deadLoadReplay
+    ? runStructuralNorthDeadLoad(resolved, trial.deadLoadReplay.windIndex, deadLoad.corners)
+    : undefined
   return {
     schema: 'str-north-collector-result/1' as const,
     status: 'computed-comparison' as const,
@@ -253,6 +282,7 @@ export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: 
     comparison,
     drawingSvg,
     ...(yawProbe ? { yawProbe } : {}),
+    ...(deadLoadReplay ? { deadLoadReplay } : {}),
     evidence: {
       state: isReference ? 'historical-demand-comparison' : 'trial-only',
       installedAcceptance: false as const,

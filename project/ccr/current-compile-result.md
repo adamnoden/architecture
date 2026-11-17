@@ -1,5 +1,7 @@
 # Compile one explicit current design
 
+The [current integration frontier](current-house-integration-programme.md#current-integration-frontier) records the later domain cutovers and remaining active consumers.
+
 The current entry point admits a saved `current-design/1` document through the named source resolver and emits a `current-design-compile/1` result. It reuses the existing Georgian layout-family method for the ground and first floor plan scenes at 1:100. The method still owns its nominal drawing limits. The result carries the supplied plan digest, method identity, both scenes, the nominal envelope/court dimensions and verified discipline applicability bindings.
 
 The accepted Georgian drawing method still closes over its native layout family. The compile boundary compares the complete supplied nominal document with the owning source before invoking that method. A one-window edit under the accepted source ID fails. An admitted candidate uses the shared orthogonal plan model and ADE scene compiler with its own envelope, court, nominal wall depths, partitions and hosted openings. It produces independent schematic ground and first floor proof scenes, without the Georgian fittings, annotation or discipline bindings.

@@ -150,6 +150,10 @@ function bindStructuralActions(resolved: CurrentDesignResolution) {
       readonly wind: number
       readonly programme: readonly number[]
       readonly Vx_Vy_yaw: readonly [number, number, number]
+      readonly conservedStates: Readonly<Record<string, {
+        readonly N_Xmoment_Ymoment: readonly [number, number, number]
+        readonly releasedLowerPadCount: number
+      }>>
     }[]
   } = receipt.parse()
   const inputs = Object.fromEntries(Object.entries(native.sources).map(([path, expected]) => {
@@ -203,26 +207,40 @@ interface NativeNorthYawProbe extends NorthYawProbe {
   readonly deltaHorizontalEquilibrium: HorizontalEquilibrium
 }
 
-export function runStructuralNorthYawProbe(resolved: CurrentDesignResolution, probe: NorthYawProbe, yawMagnitudeKNm: number) {
+function bindNorthHeadReplay(resolved: CurrentDesignResolution, windIndex: number) {
   const binding = bindStructuralActions(resolved)
-  if (binding.status === 'unavailable') throw new Error('The isolated north yaw probe requires the current signed foundation')
+  if (binding.status === 'unavailable') throw new Error('The north head comparison requires the current signed foundation')
   const { structure, inputs, native: baseline } = binding
-  const wind = baseline.coherentSignedStates.find(state => state.wind === probe.windIndex)
+  const wind = baseline.coherentSignedStates.find(state => state.wind === windIndex)
   if (!wind) throw new Error('Choose a named wind pattern from the retained model')
   const method = boundHeadCaseMethod(structure.identities)
   const supplementalInputs = Object.fromEntries(foundationReplayPaths.map(path => {
     const input = readSource(path)
-    if (structure.identities[path] !== input.blob) throw new Error(`The north yaw probe source differs from its current binding at ${path}`)
+    if (structure.identities[path] !== input.blob) throw new Error(`The north head comparison source differs from its current binding at ${path}`)
     return [path, input.blob]
   }))
-  const native: NativeNorthYawProbe = JSON.parse(execFileSync('python3', [
+  const sortedHeads = baseline.heads.map(({ id, xy }) => ({ id, xy })).sort((a, b) => a.id.localeCompare(b.id))
+  return {
+    wind, sortedHeads,
+    method: { path: headCaseMethodPath, blob: method.blob,
+      solver: { path: foundationMethodPath, blob: binding.method.blob },
+      receipt: { path: foundationReceiptPath, blob: binding.receipt.blob }, inputs: { ...inputs, ...supplementalInputs } },
+  }
+}
+
+function runNorthHeadReplay(value: unknown) {
+  return JSON.parse(execFileSync('python3', [
     '-B', fileURLToPath(new URL(headCaseMethodPath, repositoryRoot)),
   ], {
-    input: JSON.stringify({ schema: 'str-head-north-yaw-probe/1', ...probe, yawMagnitudeKNm }),
+    input: JSON.stringify(value),
     encoding: 'utf8',
     stdio: ['pipe', 'pipe', 'pipe'],
   }))
-  const sortedHeads = baseline.heads.map(({ id, xy }) => ({ id, xy })).sort((a, b) => a.id.localeCompare(b.id))
+}
+
+export function runStructuralNorthYawProbe(resolved: CurrentDesignResolution, probe: NorthYawProbe, yawMagnitudeKNm: number) {
+  const { wind, sortedHeads, method } = bindNorthHeadReplay(resolved, probe.windIndex)
+  const native: NativeNorthYawProbe = runNorthHeadReplay({ schema: 'str-head-north-yaw-probe/1', ...probe, yawMagnitudeKNm })
   if (native.schema !== 'str-head-north-yaw-probe-result/1' || native.windIndex !== probe.windIndex
       || native.sense !== probe.sense || native.yawMagnitudeKNm !== yawMagnitudeKNm || native.admitted !== false
       || sha256SemanticFingerprint(native.windProgramme) !== sha256SemanticFingerprint(wind.programme)
@@ -233,10 +251,66 @@ export function runStructuralNorthYawProbe(resolved: CurrentDesignResolution, pr
   }
   return {
     ...native,
-    method: { path: headCaseMethodPath, blob: method.blob,
-      solver: { path: foundationMethodPath, blob: binding.method.blob },
-      receipt: { path: foundationReceiptPath, blob: binding.receipt.blob }, inputs: { ...inputs, ...supplementalInputs } },
+    method,
     scope: 'Equal and opposite imposed horizontal yaw increments only. No extra base shear, vertical action, new stiffness or DPC capacity is inferred.',
+  }
+}
+
+export interface NorthCornerDeadLoad {
+  readonly cornerHeadId: string
+  readonly centroidXYMm: HorizontalVector
+  readonly characteristicKN: number
+}
+
+type VerticalAction = readonly [number, number, number]
+interface NativeNorthDeadLoad {
+  readonly schema: 'str-head-north-dead-load-result/1'
+  readonly windIndex: number
+  readonly windProgramme: readonly number[]
+  readonly admitted: false
+  readonly horizontalEquilibrium: HorizontalEquilibrium
+  readonly states: readonly {
+    readonly id: 'GQ+wind' | 'stripped suction+wind' | 'retained suction+wind'
+    readonly additionalGravityFactor: number
+    readonly baselineVerticalEquilibrium: VerticalAction
+    readonly candidateVerticalEquilibrium: VerticalAction
+    readonly deltaVerticalEquilibrium: VerticalAction
+    readonly releasedPassivePadCount: number
+    readonly heads: readonly {
+      readonly id: string
+      readonly xy: HorizontalVector
+      readonly baselineVertical: VerticalAction
+      readonly candidateVertical: VerticalAction
+      readonly deltaVertical: VerticalAction
+    }[]
+  }[]
+}
+
+export function runStructuralNorthDeadLoad(resolved: CurrentDesignResolution, windIndex: number, corners: readonly NorthCornerDeadLoad[]) {
+  const { wind, sortedHeads, method } = bindNorthHeadReplay(resolved, windIndex)
+  const increments = corners.map(({ cornerHeadId, centroidXYMm, characteristicKN }) => ({ cornerHeadId, centroidXYMm, characteristicKN }))
+  const native: NativeNorthDeadLoad = runNorthHeadReplay({ schema: 'str-head-north-dead-load/1', windIndex, increments })
+  const withinReceiptRounding = (a: readonly number[], b: readonly number[]) =>
+    a.length === b.length && a.every((value, index) => Math.abs(value - b[index]) <= 0.000051)
+  const states = Object.keys(wind.conservedStates).sort()
+  if (native.schema !== 'str-head-north-dead-load-result/1' || native.windIndex !== windIndex || native.admitted !== false
+      || sha256SemanticFingerprint(native.windProgramme) !== sha256SemanticFingerprint(wind.programme)
+      || !withinReceiptRounding(native.horizontalEquilibrium, wind.Vx_Vy_yaw)
+      || sha256SemanticFingerprint(native.states.map(state => state.id).sort()) !== sha256SemanticFingerprint(states)) {
+    throw new Error('The north dead load result differs from its source-bound fixed-base foundation')
+  }
+  for (const state of native.states) {
+    const baseline = wind.conservedStates[state.id]
+    if (sha256SemanticFingerprint(state.heads.map(({ id, xy }) => ({ id, xy }))) !== sha256SemanticFingerprint(sortedHeads)
+        || !withinReceiptRounding(state.baselineVerticalEquilibrium, baseline.N_Xmoment_Ymoment)
+        || state.releasedPassivePadCount !== baseline.releasedLowerPadCount
+        || (state.id !== 'GQ+wind' && state.deltaVerticalEquilibrium.some(value => Math.abs(value) > 1e-8))) {
+      throw new Error(`The north dead load case differs from its retained signed baseline at ${state.id}`)
+    }
+  }
+  return {
+    ...native, method,
+    scope: 'Source-supported added gross permanent load on the retained fixed statical receiving paths. DPC capacity, changed stiffness and physical acceptance remain open.',
   }
 }
 
