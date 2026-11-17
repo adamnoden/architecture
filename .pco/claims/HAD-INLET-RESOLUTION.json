@@ -9,9 +9,9 @@
     "label": "total-integration-had-2026-11-17"
   },
   "claimedAt": "2026-11-17T08:57:28.915Z",
-  "heartbeatAt": "2026-11-17T09:58:29.093Z",
-  "expiresAt": "2026-11-17T10:43:29.093Z",
-  "branch": "work/total-integration-joint-actions-2026-11-17",
+  "heartbeatAt": "2026-11-17T10:14:38.461Z",
+  "expiresAt": "2026-11-17T10:59:38.461Z",
+  "branch": "work/total-integration-splice-dead-load-2026-11-17",
   "predecessor": {
     "leaseId": "fede185e-dbb7-4ae7-b693-a2b65b7445c3",
     "generation": 40,
@@ -34,10 +34,10 @@
       "blocker": "Narrow opening fits. A 16 mm stile is a local wind/gravity comparator with no credit for arch restraint."
     }
   },
-  "pr": 1563,
+  "pr": 1564,
   "checkpoint": {
-    "evidence": "PR #1563 at 2e09a681da369faa6830bae2b3b25c02a315dc67. Focused compiler, native receipt, typecheck and repository validation passed. Replayed MAT floor-pour source.",
-    "next": "Finish exact-head hosted validation and run fresh publication preflight on all three node identities.",
-    "blocker": "Engineering acceptance still requires a coupled splice/load model, installed inlet evidence and qualified Study support."
+    "evidence": "PR #1564 at cab0bd3c886b605e9303293441a752c33f646058. 463 compiler tests and native outputs pass, including byte parity for all three SVGs and current MRA source.",
+    "next": "Finish exact-head hosted validation, merge after fresh publication preflight and reconcile leases and the project frontier.",
+    "blocker": "The coupled design still needs a buildable splice, independently safe inlet intervention and qualified dry floor support."
   }
 }
