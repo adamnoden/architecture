@@ -9,8 +9,8 @@
     "label": "ovid-study-room-kit"
   },
   "claimedAt": "2026-11-17T23:01:17.702Z",
-  "heartbeatAt": "2026-11-17T23:10:16.538Z",
-  "expiresAt": "2026-11-17T23:55:16.538Z",
+  "heartbeatAt": "2026-11-17T23:23:28.114Z",
+  "expiresAt": "2026-11-18T00:08:28.114Z",
   "branch": "work/study-room-kit-integration-2026-11-17",
   "predecessor": {
     "leaseId": "ae8d08f5-d3e1-43a2-b775-90245a38223f",
@@ -36,7 +36,7 @@
   },
   "pr": 1568,
   "checkpoint": {
-    "evidence": "PR #1568 source-bound Study furniture access",
-    "next": "Verify hosted CI, merge and test full-access furniture motion"
+    "evidence": "PR #1568 exact head 25310a91 contains complete phase geometry and adverse controls",
+    "next": "Verify exact-head CI and merge; next qualify loaded floor handling and continuous support"
   }
 }
