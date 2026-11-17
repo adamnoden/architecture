@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "IAS-CRAFT-ROOM-KIT",
-  "generation": 3,
-  "state": "released",
-  "leaseId": "0b268f4a-0459-44bf-a69b-df1c5e2fd1d9",
+  "generation": 4,
+  "state": "claimed",
+  "leaseId": "ae8d08f5-d3e1-43a2-b775-90245a38223f",
   "holder": {
-    "kind": "chatgpt",
-    "label": "Zerg Rush monolithic and sub-sill follow-up"
+    "kind": "codex",
+    "label": "total-integration-ias-2026-11-17"
   },
-  "claimedAt": "2026-11-16T20:56:15.313Z",
-  "heartbeatAt": "2026-11-16T21:19:17.111Z",
-  "expiresAt": "2026-11-16T21:19:17.111Z",
-  "branch": "work/zerg18-mono-sill-study",
+  "claimedAt": "2026-11-17T08:57:57.967Z",
+  "heartbeatAt": "2026-11-17T08:57:57.967Z",
+  "expiresAt": "2026-11-17T09:42:57.967Z",
+  "branch": "work/total-integration-2026-11-17",
   "predecessor": {
-    "leaseId": "c17ed254-3572-48f7-bb2e-e35853476431",
-    "generation": 2,
-    "branch": "work/zerg18-resolve-interfaces",
-    "pr": 1559,
+    "leaseId": "0b268f4a-0459-44bf-a69b-df1c5e2fd1d9",
+    "generation": 3,
+    "branch": "work/zerg18-mono-sill-study",
+    "pr": 1560,
     "checkpoint": {
-      "evidence": "PR #1559 702e00299deabe8c60dae75757053c7e3a72d7b7; local typecheck, receipts and focused tests",
-      "next": "Connect the supported finish and flush thin face to protected reveals; prove loaded release and wet edge.",
-      "blocker": "Actual backing, loaded hand clearance and dry/wet transition remain unqualified."
+      "evidence": "PR #1560 2b2c139746346020f1e86dee2d6970aa1d15e3c7; source-bound replays, typecheck, 38 focused controls and rendered drawings",
+      "next": "Choose a qualified continuous support course and coupled dry-wall / protected-edge operation.",
+      "blocker": "15 mm option leaves 64.7 mm before levelling, and the 27 mm dry field needs anchor and air-lap proof."
     }
   },
   "recoverySource": {
-    "leaseId": "c17ed254-3572-48f7-bb2e-e35853476431",
-    "generation": 2,
-    "branch": "work/zerg18-resolve-interfaces",
-    "pr": 1559,
+    "leaseId": "0b268f4a-0459-44bf-a69b-df1c5e2fd1d9",
+    "generation": 3,
+    "branch": "work/zerg18-mono-sill-study",
+    "pr": 1560,
     "checkpoint": {
-      "evidence": "PR #1559 702e00299deabe8c60dae75757053c7e3a72d7b7; local typecheck, receipts and focused tests",
-      "next": "Connect the supported finish and flush thin face to protected reveals; prove loaded release and wet edge.",
-      "blocker": "Actual backing, loaded hand clearance and dry/wet transition remain unqualified."
+      "evidence": "PR #1560 2b2c139746346020f1e86dee2d6970aa1d15e3c7; source-bound replays, typecheck, 38 focused controls and rendered drawings",
+      "next": "Choose a qualified continuous support course and coupled dry-wall / protected-edge operation.",
+      "blocker": "15 mm option leaves 64.7 mm before levelling, and the 27 mm dry field needs anchor and air-lap proof."
     }
-  },
-  "pr": 1560,
-  "checkpoint": {
-    "evidence": "PR #1560 2b2c139746346020f1e86dee2d6970aa1d15e3c7; source-bound replays, typecheck, 38 focused controls and rendered drawings",
-    "next": "Choose a qualified continuous support course and coupled dry-wall / protected-edge operation.",
-    "blocker": "15 mm option leaves 64.7 mm before levelling, and the 27 mm dry field needs anchor and air-lap proof."
-  },
-  "releasedAt": "2026-11-16T21:19:17.111Z",
-  "releaseReason": "handoff"
+  }
 }
