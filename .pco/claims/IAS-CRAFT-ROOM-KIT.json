@@ -9,9 +9,9 @@
     "label": "total-integration-ias-2026-11-17"
   },
   "claimedAt": "2026-11-17T08:57:57.967Z",
-  "heartbeatAt": "2026-11-17T10:14:37.936Z",
-  "expiresAt": "2026-11-17T10:59:37.936Z",
-  "branch": "work/total-integration-splice-dead-load-2026-11-17",
+  "heartbeatAt": "2026-11-17T10:40:41.778Z",
+  "expiresAt": "2026-11-17T11:25:41.778Z",
+  "branch": "work/total-integration-study-front-elevation-2026-11-17",
   "predecessor": {
     "leaseId": "0b268f4a-0459-44bf-a69b-df1c5e2fd1d9",
     "generation": 3,
@@ -34,10 +34,10 @@
       "blocker": "15 mm option leaves 64.7 mm before levelling, and the 27 mm dry field needs anchor and air-lap proof."
     }
   },
-  "pr": 1564,
+  "pr": 1565,
   "checkpoint": {
-    "evidence": "PR #1564 at cab0bd3c886b605e9303293441a752c33f646058. 463 compiler tests and native outputs pass, including byte parity for all three SVGs and current MRA source.",
-    "next": "Finish exact-head hosted validation, merge after fresh publication preflight and reconcile leases and the project frontier.",
-    "blocker": "The coupled design still needs a buildable splice, independently safe inlet intervention and qualified dry floor support."
+    "evidence": "PR #1565 at 62ae88ad511de68f766e4bc8071d05e5e4f09b8f. 464 compiler and 25 focused checks, native byte parity and rendered Study comparison are green.",
+    "next": "Finish exact-head hosted validation and run fresh IAS publication preflight.",
+    "blocker": "Installed support, fastening and loaded room-kit release remain open."
   }
 }
