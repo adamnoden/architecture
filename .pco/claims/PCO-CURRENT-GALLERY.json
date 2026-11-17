@@ -9,8 +9,14 @@
     "label": "ovid-current-gallery-registration"
   },
   "claimedAt": "2026-11-17T23:25:57.027Z",
-  "heartbeatAt": "2026-11-17T23:25:57.027Z",
-  "expiresAt": "2026-11-18T00:10:57.027Z",
+  "heartbeatAt": "2026-11-17T23:29:32.528Z",
+  "expiresAt": "2026-11-18T00:14:32.528Z",
   "branch": "work/register-current-gallery-2026-11-17",
-  "note": "Owner-directed registry-only bootstrap recorded in issue #1570. Unknown live registration ID temporarily pauses automatic dispatch until merged."
+  "note": "Owner-directed registry-only bootstrap recorded in issue #1570. Unknown live registration ID temporarily pauses automatic dispatch until merged.",
+  "pr": 1571,
+  "checkpoint": {
+    "evidence": "Registration-only PR #1571 at exact head 5bc6d517dcf0894c1318ae76960fda526ac55beb; nine graph tests, typecheck and project-control validation passed.",
+    "next": "Verify exact-head hosted validation and fresh canonical publication preflight, then merge. Claim CCR-CURRENT-GALLERY normally after projections and bootstrap reconciliation.",
+    "blocker": "Full-history hosted validation is running."
+  }
 }
