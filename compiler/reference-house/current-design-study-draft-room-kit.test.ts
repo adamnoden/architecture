@@ -2,6 +2,8 @@ import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
 import test from 'node:test'
 import { frontStudyOpening, inspectHostedOpening } from './construction-bay/opening-inspection.js'
+import { createLayoutFamilyScene } from './georgian/layout-family.js'
+import { renderDrawingSceneV2Svg } from '../publication-drawing-v2/svg.js'
 import { studyDraftRoomKitMethod } from './current-design/assemblies/study-draft-room-kit.js'
 import { prepareCurrentDesignCompile } from './current-design/compile.js'
 import { applyDesignEdit, beginDesignEdit, editBase, loadDesignDraft, saveDesignDraft, type EditOperation, type EditorState } from './current-design/edit.js'
@@ -46,6 +48,11 @@ test('a saved Study position edit drives nominal geometry, occupied kit and the 
   assert.deepEqual(result.opening, { id: openingId, hostId: hostWallId, nominalCentreMm: 1820, occupiedCentreMm: 2120,
     widthMm: 1000, nominalToOccupiedOffsetMm: 300 })
   assert.deepEqual([projection.kit.opening.box[0], projection.kit.opening.box[2]], expected)
+  const facade = result.nominalFrontElevation
+  assert.equal(facade.state, 'nominal-comparison')
+  assert.deepEqual([facade.opening.leftMm, facade.opening.rightMm], axisIntervalMm)
+  assert.equal(facade.scene.sourceId, result.source.draft.id)
+  assert.equal(facade.source.accepted.planDigest, compiler.source.planDigest)
   assert.equal(projection.kit.opening.evidence.state, 'stale')
   assert.deepEqual(projection.wallTransition.field.moduleXZMm, [2695, 1280, 3145, 1730])
   assert.equal(projection.wallTransition.field.retainedHalfHeadInwardDrawMm, null)
@@ -64,11 +71,38 @@ test('the browser width operation changes the actual occupied aperture and can b
   assert.deepEqual(projection.kit.opening.box, [1545, 750, 2655, 2850])
   assert.deepEqual(projection.kit.opening.evidence, { state: 'stale', code: 'RESIZED_STUDY_OPENING_FIXED_DETAILS' })
   assert.deepEqual(projection.wallTransition.field.moduleXZMm, [2730, 1280, 3180, 1730])
-  const cli = JSON.parse(execFileSync(process.execPath, ['--import', 'tsx', 'scripts/compile-current-design.ts', '--study-draft-room-kit', '-'], {
+  const facade = result.nominalFrontElevation
+  assert.equal(facade.state, 'nominal-comparison')
+  assert.deepEqual(facade.opening, { id: openingId, hostId: hostWallId, outlineId: 'GROUND-south-window-0-outline',
+    centreMm: 1800, widthMm: 1110, leftMm: 1245, rightMm: 2355, sillMm: 750, headMm: 2850 })
+  const outline = facade.scene.primitives.find(item => item.id === facade.opening.outlineId)
+  assert.equal(outline?.kind, 'path')
+  const vertices = outline.rings[0]
+  assert.deepEqual(vertices.map(point => [Math.round((point.x - 12.5) * 100), Math.round(12000 - (point.y - 18) * 100)]),
+    [[1245, 750], [2355, 750], [2355, 2850], [1245, 2850]])
+  const native = createLayoutFamilyScene('FRONT', 100)
+  const unrelated = (scene: typeof native) => scene.primitives.filter(item => item.metadata?.opening !== 'GROUND-south-window-0')
+  assert.deepEqual(unrelated(facade.scene), unrelated(native))
+  const cli = execFileSync(process.execPath, ['--import', 'tsx', 'scripts/compile-current-design.ts', '--study-draft-room-kit', '-'], {
     cwd: new URL('../../', import.meta.url),
     input: JSON.stringify({ schema: 'ias-study-draft-request/1', design: accepted, draftCase }), encoding: 'utf8',
-  }))
-  assert.deepEqual(cli, result)
+  })
+  assert.equal(cli, JSON.stringify(result) + '\n')
+})
+
+test('the unedited Study draft reproduces the native front elevation and rejects unsupported frame proportions locally', async () => {
+  const native = await compiler.studyDraftRoomKit(request(begin()))
+  assert.equal(native.status, 'CANDIDATE_COMPARISON')
+  assert.equal(native.nominalFrontElevation.state, 'nominal-comparison')
+  assert.equal(renderDrawingSceneV2Svg(native.nominalFrontElevation.scene), renderDrawingSceneV2Svg(createLayoutFamilyScene('FRONT', 100)))
+  const narrow = apply(begin(), { kind: 'resize-opening', ...reference, widthMm: 100 })
+  const trial = await compiler.studyDraftRoomKit(request(narrow))
+  assert.equal(trial.status, 'CANDIDATE_COMPARISON')
+  assert.equal(trial.projection.kit.opening.evidence.state, 'stale')
+  assert.equal(trial.nominalFrontElevation.state, 'withheld')
+  assert.deepEqual(trial.nominalFrontElevation.diagnostics, [
+    { code: 'IAS_STUDY_DRAFT_ELEVATION_WIDTH_OUTSIDE_FRAME_PROFILE', objectIds: [openingId, hostWallId] },
+  ])
 })
 
 test('document-wide comparison withholds changed unrelated inputs and stale or inapplicable bases', async () => {
@@ -87,6 +121,7 @@ test('document-wide comparison withholds changed unrelated inputs and stale or i
     assert.equal(result.status, 'WITHHELD')
     assert.equal(result.diagnostics[0].code, code)
     assert.ok(!('projection' in result))
+    assert.ok(!('nominalFrontElevation' in result))
   }
   const candidateAsBasis = prepareCurrentDesignCompile(begin().design)
   const unavailable = await candidateAsBasis.studyDraftRoomKit(request(begin()))

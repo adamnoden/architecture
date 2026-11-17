@@ -35,7 +35,11 @@ const context=(view:string,scale:100|50|25)=>{
 }
 
 export function createLayoutElevation(view:ElevationView,scale:100|50):DrawingSceneV2{
- const {scene,p,line,text,box,finish}=context(view,scale),model=elevationSource(view)
+ return renderLayoutElevation(elevationSource(view),scale)
+}
+
+export function renderLayoutElevation(model:ReturnType<typeof elevationSource>,scale:100|50):DrawingSceneV2{
+ const {view}=model,{scene,p,line,text,finish}=context(view,scale)
  const top=design.roof.eaves
  line('base',model.min,0,model.max,0,'profile');line('left-edge',model.min,0,model.min,top,'profile');line('right-edge',model.max,0,model.max,top,'profile')
  if(model.court)line('court-eaves',model.min,top,model.max,top,'primary')
