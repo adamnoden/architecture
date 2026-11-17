@@ -9,8 +9,8 @@
     "label": "total-integration-2026-11-17"
   },
   "claimedAt": "2026-11-17T08:56:51.796Z",
-  "heartbeatAt": "2026-11-17T09:07:56.568Z",
-  "expiresAt": "2026-11-17T09:52:56.568Z",
+  "heartbeatAt": "2026-11-17T09:27:40.200Z",
+  "expiresAt": "2026-11-17T10:12:40.200Z",
   "branch": "work/total-integration-2026-11-17",
   "predecessor": {
     "leaseId": "b2a9c387-1411-4e08-a2d3-f0f41427d0bf",
@@ -36,8 +36,8 @@
   },
   "pr": 1561,
   "checkpoint": {
-    "evidence": "PR #1561 at 6d2005f0c98fc5b64772a960222153126496e08c. Focused compiler and native study checks passed. Exact-head hosted validation running.",
-    "next": "Check an external wet line with an independently routed high-level dry return.",
-    "blocker": "The retained rear cabinet cannot accept the port through the proposed collector at retested demands."
+    "evidence": "Ready PR #1561 at 6d2005f0c98fc5b64772a960222153126496e08c. Additional locally tested source is preserved at work/total-integration-followup-2026-11-17 commit 850b248372ac573ec37e0bdcc500dd237a361eac.",
+    "next": "Finish exact-head CI and publication preflight for #1561. Then reconcile the follow-up branch against verified main and validate it separately.",
+    "blocker": "Engineering acceptance still requires joined structural, installed service and physical boundary evidence."
   }
 }
