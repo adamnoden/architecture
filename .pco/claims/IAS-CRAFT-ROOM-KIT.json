@@ -9,8 +9,8 @@
     "label": "ovid-study-room-kit"
   },
   "claimedAt": "2026-11-17T23:01:17.702Z",
-  "heartbeatAt": "2026-11-17T23:23:28.114Z",
-  "expiresAt": "2026-11-18T00:08:28.114Z",
+  "heartbeatAt": "2026-11-17T23:40:37.746Z",
+  "expiresAt": "2026-11-18T00:25:37.746Z",
   "branch": "work/study-room-kit-integration-2026-11-17",
   "predecessor": {
     "leaseId": "ae8d08f5-d3e1-43a2-b775-90245a38223f",
@@ -36,7 +36,7 @@
   },
   "pr": 1568,
   "checkpoint": {
-    "evidence": "PR #1568 exact head 25310a91 contains complete phase geometry and adverse controls",
-    "next": "Verify exact-head CI and merge; next qualify loaded floor handling and continuous support"
+    "evidence": "PR #1568 head 7112990e; local repository health, 462 Reference House tests and both specialised hosted proofs pass",
+    "next": "Wait for Validate pull request, reconcile if main advances and merge exact head. Next: loaded floor renewal and qualified continuous support"
   }
 }
