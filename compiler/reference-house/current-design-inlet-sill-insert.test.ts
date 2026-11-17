@@ -91,3 +91,46 @@ test('stale source, wrong occurrence and unsupported dimensions cannot reuse the
   })
   await assert.rejects(candidate.inletSillInsert(insert), /applicable HAD and STR source binding/)
 })
+
+test('the opening patch replaces one part of the native opaque wind field and preserves both world first moments', async () => {
+  const { insert } = await compile.readInletSillInsertCase()
+  const result = await compile.inletSillInsert(insert)
+  const wind = result.windPressure
+  const zero = { forceKN: 0, firstMomentXKNm: 0, firstMomentZKNm: 0 }
+  assert.equal(wind.pressureKPa, 2.25)
+  assert.equal(wind.method.nativeMethod, 'reconciled-corner-portals.py::Portal.pressure')
+  assert.deepEqual(wind.supports.portalAxesXMm, [9297.5, 10502.5])
+  assert.deepEqual(wind.supports.frameAxesXMm, [9425, 10390])
+  assert.deepEqual(wind.originalFields.gross, {
+    forceKN: 11.262375, firstMomentXKNm: 111.4975125, firstMomentZKNm: 17.963488125,
+  })
+  assert.deepEqual(wind.replacementFields.window, wind.originalFields.window)
+  assert.equal(wind.removedPatch.forceKN, .570825)
+  assert.equal(wind.removedPatch.centreXMm, 10165)
+  assert.equal(wind.removedPatch.centreZMm, 405)
+  const roundedForces = (rows: readonly { forceKN: number }[]) => rows.map(row => Number(row.forceKN.toFixed(6)))
+  assert.deepEqual(roundedForces(wind.supports.samePatchAtPortalAxesComparison), [.159878, .410947])
+  assert.deepEqual(roundedForces(wind.supports.independentlySupportedPatch), [.133094, .437731])
+  assert.deepEqual(wind.conservation.residual, zero)
+  assert.deepEqual(wind.conservation.recovered, wind.originalFields.gross)
+  assert.equal(wind.adverseControls.addPatchWithoutRemoval.forceKN, .570825)
+  assert.deepEqual(wind.adverseControls.subtractEqualSplitThenAddTruePatch,
+    { forceKN: 0, firstMomentXKNm: .151268625, firstMomentZKNm: 0 })
+  assert.equal(wind.restraintOrStrengthVerified, false)
+
+  const narrowed = await compile.inletSillInsert({ ...insert, eastEdgeMm: 10370 })
+  const deepened = await compile.inletSillInsert({ ...insert, headZMm: 600 })
+  assert.equal(narrowed.windPressure.removedPatch.forceKN, .55755)
+  assert.equal(narrowed.windPressure.removedPatch.centreXMm, 10160)
+  assert.equal(deepened.windPressure.removedPatch.forceKN, .474075)
+  assert.equal(deepened.windPressure.removedPatch.centreZMm, 355)
+  for (const trial of [narrowed, deepened]) {
+    assert.deepEqual(trial.windPressure.originalFields, wind.originalFields)
+    assert.deepEqual(trial.windPressure.conservation.residual, zero)
+    const marker = trial.drawing.primitives.find(primitive => primitive.id === 'insert-wind-resultant')
+    assert.equal(marker?.metadata?.forceKN, trial.windPressure.removedPatch.forceKN)
+  }
+
+  const sleeveOnly = await compile.inletSillInsert({ ...insert, plantPressureAxisXMm: 10275 })
+  assert.deepEqual(sleeveOnly.windPressure, wind)
+})

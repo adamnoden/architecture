@@ -4,6 +4,7 @@ import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { sha256SemanticFingerprint } from '../../core/identity.js'
 import type { CurrentDesignResolution } from './resolve.js'
+import { runStructuralNorthYawProbe, type NorthYawProbe } from './structural.js'
 
 const repository = new URL('../../../', import.meta.url)
 const studies = 'project/str/studies/'
@@ -22,6 +23,7 @@ interface NorthCollectorCase {
   readonly portAxisXYMm: Point
   readonly dragDemandFactor: number
   readonly remoteMainBarShiftMm?: number
+  readonly yawProbe?: NorthYawProbe
 }
 
 interface CollectorComparison {
@@ -149,9 +151,10 @@ export function readNorthCollectorCase(resolved: CurrentDesignResolution) {
 
 function admitCase(value: unknown, binding: NonNullable<ReturnType<typeof bindingFor>>): NorthCollectorCase {
   const fields = ['schema', 'planDigest', 'bindingDigest', 'collectorId', 'portAxisXYMm', 'dragDemandFactor']
+  const optional = ['remoteMainBarShiftMm', 'yawProbe']
   if (!value || typeof value !== 'object' || Array.isArray(value)
       || fields.some(field => !Object.hasOwn(value, field))
-      || Object.keys(value).some(field => field !== 'remoteMainBarShiftMm' && !fields.includes(field))) {
+      || Object.keys(value).some(field => !optional.includes(field) && !fields.includes(field))) {
     throw new Error('Expected an explicit versioned north collector case')
   }
   const trial = value as NorthCollectorCase
@@ -166,6 +169,15 @@ function admitCase(value: unknown, binding: NonNullable<ReturnType<typeof bindin
   const shift = trial.remoteMainBarShiftMm
   if (Object.hasOwn(trial, 'remoteMainBarShiftMm') && (typeof shift !== 'number' || !Number.isFinite(shift) || shift < 0 || shift > 20)) {
     throw new Error('Remote main bar shift must be between zero and 20 mm')
+  }
+  if (Object.hasOwn(trial, 'yawProbe')) {
+    const probe = trial.yawProbe
+    if (!probe || typeof probe !== 'object' || Array.isArray(probe) || Object.keys(probe).length !== 2
+        || !Object.hasOwn(probe, 'windIndex') || !Object.hasOwn(probe, 'sense')
+        || !Number.isSafeInteger(probe.windIndex) || probe.windIndex < 0
+        || !['zero', 'nw-positive', 'ne-positive'].includes(probe.sense)) {
+      throw new Error('Choose a named wind index and zero, nw-positive or ne-positive yaw')
+    }
   }
   return trial
 }
@@ -195,6 +207,9 @@ export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: 
       || (isReference && sha256SemanticFingerprint(comparison) !== sha256SemanticFingerprint(reference))) {
     throw new Error('The recomputed north collector does not match its source-bound case')
   }
+  const yawProbe = trial.yawProbe
+    ? runStructuralNorthYawProbe(resolved, trial.yawProbe, comparison.lateralClosure.momentAboutUnchangedGroundAxisU0KNm)
+    : undefined
   return {
     schema: 'str-north-collector-result/1' as const,
     status: 'computed-comparison' as const,
@@ -203,6 +218,7 @@ export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: 
     method: { id, path: methodPath, blob: method.blob, receipt: { path: receiptPath, blob: receipt.blob }, inputs },
     comparison,
     drawingSvg,
+    ...(yawProbe ? { yawProbe } : {}),
     evidence: {
       state: isReference ? 'historical-demand-comparison' : 'trial-only',
       installedAcceptance: false as const,

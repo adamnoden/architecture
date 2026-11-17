@@ -5456,14 +5456,55 @@
         ]
       },
       "groundSupport": {
+        "state": "geometry-comparison",
+        "method": "IAS-STUDY-GROUND-SUPPORT-1",
+        "source": {
+          "bindingDigest": "128af7cf2f3ef1f9ed121e2d42a8bd2028650fdd92f01e1da2b689d8d4adf024",
+          "had": {
+            "path": "project/had/studies/water-replan.json",
+            "gitBlob": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d"
+          },
+          "mat": {
+            "path": "project/mat/studies/loggia-envelope-section.json",
+            "gitBlob": "0ec54ba2420b9337ce81b1867eef4c83d661e69b"
+          },
+          "comparison": {
+            "path": "project/mat/studies/floor-pour-boundary.results.json",
+            "gitBlob": "5fba79b85589e03cc53fe224420ae5340b65c8b5"
+          }
+        },
+        "fflMm": 0,
+        "rcTopMm": -180,
+        "rcSoffitMm": -380,
+        "rcDepthMm": 200,
+        "matDeckTopMm": -15,
+        "matFinishMm": 15,
+        "matDistributionMm": 65,
         "glassTopMm": -80,
         "cellularGlassMm": 100,
         "fullFinishDeckTopMm": -20,
         "deckTopIfDepthUnresolvedMovesToDeckMm": -20,
         "minimumFloatingCourseMm": 65,
+        "floatingCourseComparator": {
+          "source": "https://www.concrete.org.uk/fingertips/screeds-general/",
+          "scope": "Lightly loaded conventional floating sand/cement screed with insulation firm enough for compaction."
+        },
         "separatorComparisonMm": 0.3,
         "actualCourseBeforeLevelToleranceMm": 59.7,
         "marginToMinimumBeforeLevelToleranceMm": -5.299999999999997,
+        "deckLevelLossMm": 0,
+        "courseAfterDeckLevelLossMm": 59.7,
+        "marginAfterDeckLevelLossMm": -5.299999999999997,
+        "requiredDeckTopBeforeLevelLossMm": -14.7,
+        "maximumFinishAndBeddingMm": 14.7,
+        "diagnostics": [
+          {
+            "code": "IAS_STUDY_GROUND_COURSE_BELOW_COMPARATOR",
+            "objectIds": [
+              "GROUND/G-STUDY/floor"
+            ]
+          }
+        ],
         "disposition": "withheld",
         "held": "Named bedding, separator, ordinary-course tolerance, above-glass support, uniform bearing and dry-to-wet edge."
       },
@@ -6109,14 +6150,55 @@
       "caseDigest": "1ad844d061f38a62f5c1a00f578f5e9af483f5c494a1bcbd75f739602b63730b",
       "wearingFaceMm": 13,
       "groundSupport": {
+        "state": "geometry-comparison",
+        "method": "IAS-STUDY-GROUND-SUPPORT-1",
+        "source": {
+          "bindingDigest": "128af7cf2f3ef1f9ed121e2d42a8bd2028650fdd92f01e1da2b689d8d4adf024",
+          "had": {
+            "path": "project/had/studies/water-replan.json",
+            "gitBlob": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d"
+          },
+          "mat": {
+            "path": "project/mat/studies/loggia-envelope-section.json",
+            "gitBlob": "0ec54ba2420b9337ce81b1867eef4c83d661e69b"
+          },
+          "comparison": {
+            "path": "project/mat/studies/floor-pour-boundary.results.json",
+            "gitBlob": "5fba79b85589e03cc53fe224420ae5340b65c8b5"
+          }
+        },
+        "fflMm": 0,
+        "rcTopMm": -180,
+        "rcSoffitMm": -380,
+        "rcDepthMm": 200,
+        "matDeckTopMm": -15,
+        "matFinishMm": 15,
+        "matDistributionMm": 65,
         "glassTopMm": -80,
         "cellularGlassMm": 100,
         "fullFinishDeckTopMm": -15,
         "deckTopIfDepthUnresolvedMovesToDeckMm": -15,
         "minimumFloatingCourseMm": 65,
+        "floatingCourseComparator": {
+          "source": "https://www.concrete.org.uk/fingertips/screeds-general/",
+          "scope": "Lightly loaded conventional floating sand/cement screed with insulation firm enough for compaction."
+        },
         "separatorComparisonMm": 0.3,
         "actualCourseBeforeLevelToleranceMm": 64.7,
         "marginToMinimumBeforeLevelToleranceMm": -0.29999999999999716,
+        "deckLevelLossMm": 0,
+        "courseAfterDeckLevelLossMm": 64.7,
+        "marginAfterDeckLevelLossMm": -0.29999999999999716,
+        "requiredDeckTopBeforeLevelLossMm": -14.7,
+        "maximumFinishAndBeddingMm": 14.7,
+        "diagnostics": [
+          {
+            "code": "IAS_STUDY_GROUND_COURSE_BELOW_COMPARATOR",
+            "objectIds": [
+              "GROUND/G-STUDY/floor"
+            ]
+          }
+        ],
         "disposition": "withheld",
         "held": "Named bedding, separator, ordinary-course tolerance, above-glass support, uniform bearing and dry-to-wet edge."
       },
@@ -6133,14 +6215,55 @@
       "caseDigest": "b1aa88375ec15010102e2731b8e249e3f21f2b7a8a439fa998583237d3056017",
       "wearingFaceMm": 13,
       "groundSupport": {
+        "state": "geometry-comparison",
+        "method": "IAS-STUDY-GROUND-SUPPORT-1",
+        "source": {
+          "bindingDigest": "128af7cf2f3ef1f9ed121e2d42a8bd2028650fdd92f01e1da2b689d8d4adf024",
+          "had": {
+            "path": "project/had/studies/water-replan.json",
+            "gitBlob": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d"
+          },
+          "mat": {
+            "path": "project/mat/studies/loggia-envelope-section.json",
+            "gitBlob": "0ec54ba2420b9337ce81b1867eef4c83d661e69b"
+          },
+          "comparison": {
+            "path": "project/mat/studies/floor-pour-boundary.results.json",
+            "gitBlob": "5fba79b85589e03cc53fe224420ae5340b65c8b5"
+          }
+        },
+        "fflMm": 0,
+        "rcTopMm": -180,
+        "rcSoffitMm": -380,
+        "rcDepthMm": 200,
+        "matDeckTopMm": -15,
+        "matFinishMm": 15,
+        "matDistributionMm": 65,
         "glassTopMm": -80,
         "cellularGlassMm": 100,
         "fullFinishDeckTopMm": -15,
         "deckTopIfDepthUnresolvedMovesToDeckMm": -15,
         "minimumFloatingCourseMm": 65,
+        "floatingCourseComparator": {
+          "source": "https://www.concrete.org.uk/fingertips/screeds-general/",
+          "scope": "Lightly loaded conventional floating sand/cement screed with insulation firm enough for compaction."
+        },
         "separatorComparisonMm": 0.3,
         "actualCourseBeforeLevelToleranceMm": 64.7,
         "marginToMinimumBeforeLevelToleranceMm": -0.29999999999999716,
+        "deckLevelLossMm": 0,
+        "courseAfterDeckLevelLossMm": 64.7,
+        "marginAfterDeckLevelLossMm": -0.29999999999999716,
+        "requiredDeckTopBeforeLevelLossMm": -14.7,
+        "maximumFinishAndBeddingMm": 14.7,
+        "diagnostics": [
+          {
+            "code": "IAS_STUDY_GROUND_COURSE_BELOW_COMPARATOR",
+            "objectIds": [
+              "GROUND/G-STUDY/floor"
+            ]
+          }
+        ],
         "disposition": "withheld",
         "held": "Named bedding, separator, ordinary-course tolerance, above-glass support, uniform bearing and dry-to-wet edge."
       },

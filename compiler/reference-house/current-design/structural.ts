@@ -109,6 +109,20 @@ export function runStructuralBridge(resolved: CurrentDesignResolution, trialAxes
 const foundationMethodPath = 'project/str/studies/current-house-joined-foundation.py'
 const headCaseMethodPath = 'project/str/studies/current-house-structural-case.py'
 const foundationReceiptPath = 'project/str/studies/current-house-joined-foundation.json'
+const foundationReplayPaths = [
+  'current-house-floor-closure.py',
+  'current-house-head-actions.py',
+  'current-house-roof-bracing.py',
+  'structural-linear.py',
+  'current-house-floor-closure.svg',
+  'current-house-ring-floor-stations.json',
+  'current-house-roof-network.json',
+  'current-house-roof-connection.json',
+  'physical-slab-join.json',
+  'current-house-lateral.json',
+  'current-house-welded-heel.json',
+  'open-loggia-support.json',
+].map(file => 'project/str/studies/' + file)
 
 function bindStructuralActions(resolved: CurrentDesignResolution) {
   const { design, disciplineBindings } = resolved
@@ -132,7 +146,11 @@ function bindStructuralActions(resolved: CurrentDesignResolution) {
     readonly admitted: false
     readonly status: string
     readonly heads: readonly { readonly id: string; readonly xy: [number, number] }[]
-    readonly coherentSignedStates: readonly { readonly wind: number }[]
+    readonly coherentSignedStates: readonly {
+      readonly wind: number
+      readonly programme: readonly number[]
+      readonly Vx_Vy_yaw: readonly [number, number, number]
+    }[]
   } = receipt.parse()
   const inputs = Object.fromEntries(Object.entries(native.sources).map(([path, expected]) => {
     if (!(path in structure.identities)) throw new Error(`The source ${path} has no structural binding`)
@@ -143,6 +161,83 @@ function bindStructuralActions(resolved: CurrentDesignResolution) {
     return [path, measured.blob]
   }))
   return { status: 'bound' as const, source, occurrence, structure, method, receipt, native, inputs }
+}
+
+function boundHeadCaseMethod(identities: Readonly<Record<string, string>>) {
+  const method = readSource(headCaseMethodPath)
+  if (identities[headCaseMethodPath] !== method.blob) {
+    throw new Error('The signed load case runner differs from its current binding')
+  }
+  return method
+}
+
+export type NorthYawProbe = {
+  readonly windIndex: number
+  readonly sense: 'zero' | 'nw-positive' | 'ne-positive'
+}
+
+type HorizontalVector = readonly [number, number]
+type HorizontalEquilibrium = readonly [number, number, number]
+interface NativeNorthYawProbe extends NorthYawProbe {
+  readonly schema: 'str-head-north-yaw-probe-result/1'
+  readonly windProgramme: readonly number[]
+  readonly yawMagnitudeKNm: number
+  readonly admitted: false
+  readonly heads: readonly {
+    readonly id: string
+    readonly xy: HorizontalVector
+    readonly beforeHorizontalKN: HorizontalVector
+    readonly probedHorizontalKN: HorizontalVector
+    readonly deltaHorizontalKN: HorizontalVector
+  }[]
+  readonly groups: readonly {
+    readonly id: 'NW' | 'NE'
+    readonly cornerXYmm: HorizontalVector
+    readonly headIds: readonly string[]
+    readonly appliedYawKNm: number
+    readonly deltaHorizontalEquilibrium: HorizontalEquilibrium
+  }[]
+  readonly horizontalEquilibriumOrder: readonly ['Fx_kN', 'Fy_kN', 'Mz_kNm']
+  readonly baselineHorizontalEquilibrium: HorizontalEquilibrium
+  readonly probedHorizontalEquilibrium: HorizontalEquilibrium
+  readonly deltaHorizontalEquilibrium: HorizontalEquilibrium
+}
+
+export function runStructuralNorthYawProbe(resolved: CurrentDesignResolution, probe: NorthYawProbe, yawMagnitudeKNm: number) {
+  const binding = bindStructuralActions(resolved)
+  if (binding.status === 'unavailable') throw new Error('The isolated north yaw probe requires the current signed foundation')
+  const { structure, inputs, native: baseline } = binding
+  const wind = baseline.coherentSignedStates.find(state => state.wind === probe.windIndex)
+  if (!wind) throw new Error('Choose a named wind pattern from the retained model')
+  const method = boundHeadCaseMethod(structure.identities)
+  const supplementalInputs = Object.fromEntries(foundationReplayPaths.map(path => {
+    const input = readSource(path)
+    if (structure.identities[path] !== input.blob) throw new Error(`The north yaw probe source differs from its current binding at ${path}`)
+    return [path, input.blob]
+  }))
+  const native: NativeNorthYawProbe = JSON.parse(execFileSync('python3', [
+    '-B', fileURLToPath(new URL(headCaseMethodPath, repositoryRoot)),
+  ], {
+    input: JSON.stringify({ schema: 'str-head-north-yaw-probe/1', ...probe, yawMagnitudeKNm }),
+    encoding: 'utf8',
+    stdio: ['pipe', 'pipe', 'pipe'],
+  }))
+  const sortedHeads = baseline.heads.map(({ id, xy }) => ({ id, xy })).sort((a, b) => a.id.localeCompare(b.id))
+  if (native.schema !== 'str-head-north-yaw-probe-result/1' || native.windIndex !== probe.windIndex
+      || native.sense !== probe.sense || native.yawMagnitudeKNm !== yawMagnitudeKNm || native.admitted !== false
+      || sha256SemanticFingerprint(native.windProgramme) !== sha256SemanticFingerprint(wind.programme)
+      || sha256SemanticFingerprint(native.heads.map(({ id, xy }) => ({ id, xy }))) !== sha256SemanticFingerprint(sortedHeads)
+      || native.baselineHorizontalEquilibrium.some((value, index) => Math.abs(value - wind.Vx_Vy_yaw[index]) > 0.000051)
+      || native.deltaHorizontalEquilibrium.some(value => Math.abs(value) >= 1e-8)) {
+    throw new Error('The isolated north yaw result differs from its source-bound fixed-base foundation')
+  }
+  return {
+    ...native,
+    method: { path: headCaseMethodPath, blob: method.blob,
+      solver: { path: foundationMethodPath, blob: binding.method.blob },
+      receipt: { path: foundationReceiptPath, blob: binding.receipt.blob }, inputs: { ...inputs, ...supplementalInputs } },
+    scope: 'Equal and opposite imposed horizontal yaw increments only. No extra base shear, vertical action, new stiffness or DPC capacity is inferred.',
+  }
 }
 
 export function runStructuralActions(resolved: CurrentDesignResolution) {
@@ -240,10 +335,7 @@ export function runStructuralCase(resolved: CurrentDesignResolution, value: unkn
   const axes: [number, number] = [joint.supportAxesYMm[0], joint.supportAxesYMm[1]]
   const bridge = runStructuralBridge(resolved, axes)
   if (bridge.status === 'unavailable') return bridge
-  const method = readSource(headCaseMethodPath)
-  if (binding.structure.identities[headCaseMethodPath] !== method.blob) {
-    throw new Error('The signed load case runner differs from its current binding')
-  }
+  const method = boundHeadCaseMethod(binding.structure.identities)
   const foundation: NativeHeadCase = JSON.parse(execFileSync('python3', [
     '-B', fileURLToPath(new URL(headCaseMethodPath, repositoryRoot)),
   ], {

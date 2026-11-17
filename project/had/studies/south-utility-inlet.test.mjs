@@ -70,3 +70,7 @@ test('Separate under-sill wet boxes retain both fault paths during one branch wi
 test('The sub-sill insert keeps a benchmark support path and exposes all geometric adverse cases', () => {
   execFileSync(process.execPath, [fileURLToPath(read('south-inlet-sill-insert.mjs')), '--check']);
 });
+
+test('The sill wind source projects the actual STR ground fields and both world moments', () => {
+  execFileSync('python3', ['-B', fileURLToPath(read('south-inlet-sill-wind-source.py')), '--check']);
+});
