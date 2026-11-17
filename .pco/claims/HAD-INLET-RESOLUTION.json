@@ -9,8 +9,8 @@
     "label": "total-integration-had-2026-11-17"
   },
   "claimedAt": "2026-11-17T08:57:28.915Z",
-  "heartbeatAt": "2026-11-17T09:08:11.402Z",
-  "expiresAt": "2026-11-17T09:53:11.402Z",
+  "heartbeatAt": "2026-11-17T09:27:54.228Z",
+  "expiresAt": "2026-11-17T10:12:54.228Z",
   "branch": "work/total-integration-2026-11-17",
   "predecessor": {
     "leaseId": "fede185e-dbb7-4ae7-b693-a2b65b7445c3",
@@ -36,8 +36,8 @@
   },
   "pr": 1561,
   "checkpoint": {
-    "evidence": "PR #1561 at 6d2005f0c98fc5b64772a960222153126496e08c. Focused compiler and native study checks passed. Exact-head hosted validation running.",
-    "next": "Replay blocked-upper-mouth faults against actual wet-box, independent relief, vent and receiver levels.",
-    "blocker": "The narrowed fit cannot be recovered by shifting only the sleeve. Installed pressure and retained frame restraint remain open."
+    "evidence": "Ready PR #1561 at 6d2005f0c98fc5b64772a960222153126496e08c. Additional locally tested source is preserved at work/total-integration-followup-2026-11-17 commit 850b248372ac573ec37e0bdcc500dd237a361eac.",
+    "next": "Finish exact-head CI and publication preflight for #1561. Then reconcile the follow-up branch against verified main and validate it separately.",
+    "blocker": "Engineering acceptance still requires joined structural, installed service and physical boundary evidence."
   }
 }
