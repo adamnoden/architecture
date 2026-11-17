@@ -220,3 +220,47 @@ test('the widened splice provides backed reversible key pairs and exposes both w
   assert.notEqual(rootCut.toeSideExternalWrench[4], 0)
   assert.equal(result.evidence.installedAcceptance, false)
 })
+
+test('added wall and web mass replays over the real north heads in adverse gravity only', async () => {
+  const compile = prepareCurrentDesignCompile(readGeorgianDesignSnapshot())
+  const request = await compile.readNorthCollectorCase()
+  assert.ok('collector' in request)
+  const reference = await compile.northCollectorCase(request.collector)
+  assert.equal(reference.status, 'computed-comparison')
+  assert.equal(Object.hasOwn(reference, 'deadLoadReplay'), false)
+  const result = await compile.northCollectorCase({ ...request.collector, deadLoadReplay: { windIndex: 58 } })
+  assert.ok(result.status === 'computed-comparison' && result.deadLoadReplay)
+  const nominal = result.comparison.groundSplice.nominalDeadLoadDelta
+  const near = (actual: number, expected: number) => assert.ok(Math.abs(actual - expected) < 1e-8, `${actual} differs from ${expected}`)
+  assert.deepEqual(result.comparison, reference.comparison)
+  assert.equal(nominal.admitted, false)
+  assert.equal(result.deadLoadReplay.admitted, false)
+  assert.equal(nominal.additionalFootprintMm2, 162000)
+  assert.equal(nominal.geometryWithinRetainedReceivingProjection, true)
+  assert.equal(nominal.corners.length, 2)
+  for (const corner of nominal.corners) {
+    assert.deepEqual(corner.verticalExtentZMm, [-180, 3170])
+    near(corner.additionalConcreteM3, 0.53946)
+    near(corner.additionalWebKg, 25.92)
+    near(corner.characteristicKN, 13.7407752)
+  }
+  const [gravity, stripped, retained] = result.deadLoadReplay.states
+  assert.deepEqual(result.deadLoadReplay.states.map(state => state.id), ['GQ+wind', 'stripped suction+wind', 'retained suction+wind'])
+  assert.equal(result.deadLoadReplay.states.every(state => state.heads.length === 52), true)
+  assert.equal(gravity.additionalGravityFactor, 1.35)
+  const expected = [37.10009304, 222.60055824, 420.9291821538]
+  gravity.deltaVerticalEquilibrium.forEach((component, index) => near(component, expected[index]))
+  const affected = gravity.heads.filter(head => head.deltaVertical.some(component => Math.abs(component) > 1e-8))
+  assert.deepEqual(affected.map(head => head.id), ['P07', 'P08', 'P09', 'P10', 'P11', 'P12'])
+  near(affected[0].deltaVertical[0], 4.670798391627907)
+  near(affected[5].baselineVertical[0], 659.6914368816067)
+  near(affected[5].candidateVertical[0], 666.6310609457928)
+  for (const control of [stripped, retained]) {
+    assert.equal(control.additionalGravityFactor, 0)
+    assert.deepEqual(control.candidateVerticalEquilibrium, control.baselineVerticalEquilibrium)
+    assert.ok(control.heads.every(head => head.deltaVertical.every(component => component === 0)))
+  }
+  await assert.rejects(compile.northCollectorCase({
+    ...request.collector, deadLoadReplay: { windIndex: 58, additionalGravityFactor: 1 },
+  }), /north dead load/)
+})

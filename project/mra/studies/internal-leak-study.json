@@ -23,11 +23,12 @@
   },
   "sources": {
     "project/had/studies/current-house.mjs": "58bf1a6248af8268de70d838cce23f249ce30b91",
+    "project/had/studies/current-house-service-outputs.mjs": "ed9b9796099e5b8736d11a1d90bb93a566bfe12d",
     "project/had/studies/selected-water-duties.mjs": "332755d589080661042af6491d0f23d7947829bf",
     "project/had/studies/inhabited-service-compose.mjs": "632421d4b4b4dcdc028590694e877d290d768485",
     "project/had/studies/fitted-house-services.mjs": "a22e08e94dc1d8fc2ae84b5fed5a71eaf97e3dd5",
     "project/had/studies/selected-service-interfaces.mjs": "712065e8dfefc0c2d357e232ca17bbed5a376ea2",
-    "project/had/inhabited-services-selection.md": "53369e05426c7383f049d16e54b7e91d27179a22",
+    "project/had/inhabited-services-selection.md": "4ff15ebce20dccee4205a9cea70b7b1ab533db30",
     "project/ias/ias-03-household-water.md": "98d4e7dede324b738f0400ad6206961c7b4a57ad",
     "project/ias/ias-03-guest-rear-wc-takeoffs.md": "474ad1fca1ef0adc7c3d5d4ff4b363c65fc9ca73",
     "project/ias/ias-03-upper-wc-release.md": "8a6207c0362da97beeb217e47a2871c0f9a80d46",
@@ -37,7 +38,7 @@
     "project/mat/interiors-whole-house-assembly-schedule.md": "fbee773fba1c46cd7c403e08dfc99de7f3154649",
     "project/mat/interiors-b-wetroom-assembly.md": "bd3fca8006fd8d4d63256fb2809645904cbc5850",
     "project/mra/mra-00-moisture-constitution-threat-model.md": "40129a2e1149142769d34dfc10709ca73968c682",
-    "project/mra/studies/internal-leak-study.mjs": "bc28da57d3868b6532b981722808ed01783cb147"
+    "project/mra/studies/internal-leak-study.mjs": "835b4c10b3f1184db98e1ce0f973682372abf579"
   },
   "sourceCorrection": {
     "preFix": {

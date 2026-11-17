@@ -20,7 +20,8 @@ The starting selected service authority is **HAD-SERVICES-02**, merged in
 [PR #1473](https://github.com/adamnoden/architecture/pull/1473) at main
 `a06013820dfdc2b5ee1918abf42abce8423eb0ad`. This packet begins after the independent
 study registration at main `e19ce0d94cf7186eee517027873f14b43cb4f786`. Its executable
-consumes `deriveCurrentHouse()`, all seventeen recorded JSON input identities,
+uses the same guarded HAD compositor as the [occupied-service drawings](../had/inhabited-services-selection.md)
+and verifies all seventeen recorded JSON input identities before consuming
 the actual fitted-water and utility occurrences, current plant geometry, and
 the owning IAS/MAT moisture and renewal requirements. It records the additional
 producer and evidence blobs. The old service baseline supplies retained

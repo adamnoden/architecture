@@ -13,7 +13,7 @@
       "currentPlanBasis": "RH-LAYOUT-REVISION-02",
       "occupiedHouse": "HAD-SERVICES-02",
       "roomId": "GROUND/G-STUDY",
-      "bindingDigest": "c727c60c0bbaf9c710a97aebef3e1b53f8aba1a0f76de1e3e565860c4c28d6e9",
+      "bindingDigest": "acf0c617f37c02da8ba08f558466f102ec1dc9cfe8a75fa198e1c8a4cdf4b8e2",
       "floor": {
         "path": "project/ias/studies/workable-study-floor.json",
         "sha256": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593"
@@ -24,7 +24,7 @@
       },
       "furnishedGeometrySha256": "ff387bfb8119310c7fccbd54848d8982bd2feba8541b297b0583bd8640f1352e"
     },
-    "caseDigest": "3ff8259a6167409fb347832b848b99c8625ae9415aacebe1810312690dd3c1dd",
+    "caseDigest": "2407a2684ea72bdebdc7656dde2f48e48ad19f7ea96e03737b80c6d9db9da582",
     "bands": [
       [
         429.5,
@@ -5576,7 +5576,7 @@
         "planBasis": "RH-LAYOUT-REVISION-02",
         "occupiedHouse": "HAD-SERVICES-02",
         "roomId": "GROUND/G-STUDY",
-        "bindingDigest": "c727c60c0bbaf9c710a97aebef3e1b53f8aba1a0f76de1e3e565860c4c28d6e9",
+        "bindingDigest": "acf0c617f37c02da8ba08f558466f102ec1dc9cfe8a75fa198e1c8a4cdf4b8e2",
         "identities": {
           "project/ias/studies/workable-study-floor.json": "4cc89e12782021fa6de7752d3313d3487b22f872",
           "project/ias/studies/workable-study-release.json": "6b890c098e2e025b0db29bb2568a5fc256b64b8d",
@@ -6147,7 +6147,7 @@
         "wearingFace": "oak",
         "finishDepthMm": 15
       },
-      "caseDigest": "1ad844d061f38a62f5c1a00f578f5e9af483f5c494a1bcbd75f739602b63730b",
+      "caseDigest": "717fdab454419ce62d6122766ab24325a26fc7e6e92abaa68cfb7b6bc0951e7a",
       "wearingFaceMm": 13,
       "groundSupport": {
         "state": "geometry-comparison",
@@ -6212,7 +6212,7 @@
         "wearingFace": "stone-steel",
         "finishDepthMm": 15
       },
-      "caseDigest": "b1aa88375ec15010102e2731b8e249e3f21f2b7a8a439fa998583237d3056017",
+      "caseDigest": "22fdf0c2ae99b38475130934b2da36c71ff9d42f297b9631811f4c52b273f07c",
       "wearingFaceMm": 13,
       "groundSupport": {
         "state": "geometry-comparison",
@@ -6275,7 +6275,7 @@
       "currentPlanBasis": "RH-LAYOUT-REVISION-02",
       "occupiedHouse": "HAD-SERVICES-02",
       "roomId": "GROUND/G-STUDY",
-      "bindingDigest": "c727c60c0bbaf9c710a97aebef3e1b53f8aba1a0f76de1e3e565860c4c28d6e9",
+      "bindingDigest": "acf0c617f37c02da8ba08f558466f102ec1dc9cfe8a75fa198e1c8a4cdf4b8e2",
       "floor": {
         "path": "project/ias/studies/workable-study-floor.json",
         "sha256": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593"
@@ -6292,7 +6292,7 @@
       "pitchMm": 300,
       "wearingFace": "stone-steel"
     },
-    "caseDigest": "f428ab66d9d1daf43b434e5624b7620c8504cfb12290a06a6d027c6bbe802878",
+    "caseDigest": "ea3e6864ec21b7f65e6c4ab984cfd0cf9781f8b12d1aefac4271a4b66181ec6c",
     "handling": {
       "state": "geometry-and-demand-screen",
       "keyedFace": {

@@ -3,7 +3,8 @@ import assert from 'node:assert/strict';
 import {readFileSync,writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
-import {deriveCurrentHouse,scheduleText} from '../../had/studies/current-house.mjs';
+import {scheduleText} from '../../had/studies/current-house.mjs';
+import {deriveBoundOccupiedServiceHouse,readNativeOccupiedServiceBinding} from '../../had/studies/current-house-service-outputs.mjs';
 import {inletEnvelopeWitness} from '../../had/studies/selected-water-duties.mjs';
 
 const root=new URL('../../../',import.meta.url);
@@ -86,7 +87,7 @@ export function pathIsOpen(path,closed) {
   return path.every(edge=>!closed.includes(edge));
 }
 export function deriveInternalLeakStudy() {
-  const house=deriveCurrentHouse(),s=house.model.architecturalServices;
+  const house=deriveBoundOccupiedServiceHouse(readNativeOccupiedServiceBinding()),s=house.model.architecturalServices;
   assert.equal(scheduleText(house),readFileSync(new URL('project/had/studies/current-house-services.json',root),'utf8'));
   const base=read('project/mat/studies/whole-house-service-baseline.json');
   const water=read('project/ias/studies/household-water.json');
@@ -130,7 +131,8 @@ export function deriveInternalLeakStudy() {
   const commonWaste={paths:wastePaths,commonBlock:'common-trap',bowlPasses:pathIsOpen(wastePaths.bowl,['common-trap']),overflowPasses:pathIsOpen(wastePaths.overflow,['common-trap']),
     scope:'Selected basin overflow requires the working shared downstream path; two entries are not two independent drains.'};
   const sources=Object.fromEntries([
-    'project/had/studies/current-house.mjs','project/had/studies/selected-water-duties.mjs',
+    'project/had/studies/current-house.mjs','project/had/studies/current-house-service-outputs.mjs',
+    'project/had/studies/selected-water-duties.mjs',
     'project/had/studies/inhabited-service-compose.mjs','project/had/studies/fitted-house-services.mjs',
     'project/had/studies/selected-service-interfaces.mjs','project/had/inhabited-services-selection.md',
     'project/ias/ias-03-household-water.md','project/ias/ias-03-guest-rear-wc-takeoffs.md',

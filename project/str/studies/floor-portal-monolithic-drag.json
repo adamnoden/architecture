@@ -611,6 +611,51 @@
       "comparisonBudgetMm": 1,
       "maximumAxisOffsetMm": 15.0
     },
+    "nominalDeadLoadDelta": {
+      "additionalFootprintMm2": 162000.0,
+      "admitted": false,
+      "centroidUVMm": [
+        321.7283950617284,
+        321.7283950617284
+      ],
+      "concreteUnitWeightKNPerM3": 25,
+      "corners": [
+        {
+          "additionalConcreteKN": 13.486500000000001,
+          "additionalConcreteM3": 0.53946,
+          "additionalWebKN": 0.2542752000000001,
+          "additionalWebKg": 25.92000000000001,
+          "centroidXYMm": [
+            654.2283950617284,
+            11345.771604938273
+          ],
+          "characteristicKN": 13.740775200000002,
+          "cornerHeadId": "P07",
+          "verticalExtentZMm": [
+            -180,
+            3170
+          ]
+        },
+        {
+          "additionalConcreteKN": 13.486500000000001,
+          "additionalConcreteM3": 0.53946,
+          "additionalWebKN": 0.2542752000000001,
+          "additionalWebKg": 25.92000000000001,
+          "centroidXYMm": [
+            11345.771604938273,
+            11345.771604938273
+          ],
+          "characteristicKN": 13.740775200000002,
+          "cornerHeadId": "P10",
+          "verticalExtentZMm": [
+            -180,
+            3170
+          ]
+        }
+      ],
+      "geometryWithinRetainedReceivingProjection": true,
+      "scope": "Gross candidate concrete below the first-floor soffit, with added web stock replacing concrete in its 20 mm band. No stock, reinforcement or geometry is selected."
+    },
     "receivingPlan": [
       {
         "girders": [

@@ -28,6 +28,7 @@ FORM_SETTING = 5
 COVER = 25
 PLACING = 21
 POOR_BOND_MPA = 2.1
+CONCRETE_BUDGET_KN_PER_M3 = 25
 ANGLE = radians(62)
 
 
@@ -115,7 +116,7 @@ def main_bar_axes(outer, shift):
     return axes
 
 
-def rectangle_area(rectangles, support=()):
+def rectangle_cells(rectangles, support=()):
     all_rectangles = [*rectangles, *support]
     cuts_x = sorted({coordinate for left, _, right, _ in all_rectangles for coordinate in (left, right)})
     cuts_y = sorted({coordinate for _, bottom, _, top in all_rectangles for coordinate in (bottom, top)})
@@ -123,13 +124,15 @@ def rectangle_area(rectangles, support=()):
     def contains(rects, x, y):
         return any(left < x < right and bottom < y < top for left, bottom, right, top in rects)
 
-    area = 0
     for x0, x1 in zip(cuts_x, cuts_x[1:]):
         for y0, y1 in zip(cuts_y, cuts_y[1:]):
             x, y = (x0+x1)/2, (y0+y1)/2
             if contains(rectangles, x, y) and not contains(support, x, y):
-                area += (x1-x0)*(y1-y0)
-    return area
+                yield (x1-x0)*(y1-y0), x, y
+
+
+def rectangle_area(rectangles, support=()):
+    return sum(area for area, _, _ in rectangle_cells(rectangles, support))
 
 
 def load_wrench(contacts, origin):
@@ -226,7 +229,7 @@ def key_load_path(blocks, width, end, plate, moment):
     }
 
 
-def ground_splice(outer, grid, axes, shift, moment):
+def ground_splice(outer, grid, axes, shift, moment, soffit):
     dpc = outer['DPC']
     blocks = dpc['threeThickBlocksPlanLocal']
     size = next((width, height) for x, y, width, height in blocks if (x, y) == (0, 0))
@@ -244,8 +247,15 @@ def ground_splice(outer, grid, axes, shift, moment):
     old_area = rectangle_area(old)
     wide_area = rectangle_area(widened)
     uncovered = rectangle_area(widened, old)
+    additional_cells = list(rectangle_cells(widened, old))
+    centroid_uv = [sum(area*cell[axis] for area,*cell in additional_cells)/uncovered for axis in (0,1)]
     head_by_id = {head['id']:head for head in grid['heads']}
+    block_height = dpc['thickBlockZ'][1]-dpc['thickBlockZ'][0]
+    web_thickness = dpc['connectingContinuousWebZ'][1]-dpc['connectingContinuousWebZ'][0]
+    retained_stock_density = dpc['solid140ControlKgPerPier']/(old_area*block_height)
+    extra_stock = uncovered*web_thickness*retained_stock_density
     receiving = []
+    mass = []
     for ids, names, x_sign in (
         (('P07', 'P08', 'P09'), ('outer-W', 'outer-NW'), 1),
         (('P10', 'P11', 'P12'), ('outer-E', 'outer-NE'), -1),
@@ -273,15 +283,19 @@ def ground_splice(outer, grid, axes, shift, moment):
         if len(receiving_levels) != 1:
             raise ValueError('The north girder/cap projection needs a common receiving level')
         level = receiving_levels.pop()
+        assert level <= dpc['connectingContinuousWebZ'][0] < dpc['connectingContinuousWebZ'][1] <= soffit
+        concrete_volume = uncovered*(soffit-level-web_thickness)/1e9
+        concrete_weight = concrete_volume*CONCRETE_BUDGET_KN_PER_M3
+        web_weight = extra_stock*.00981
+        mass.append({'cornerHeadId':ids[0], 'centroidXYMm':[x+x_sign*centroid_uv[0],y-centroid_uv[1]],
+                     'verticalExtentZMm':[level,soffit], 'additionalConcreteM3':concrete_volume,
+                     'additionalConcreteKN':concrete_weight, 'additionalWebKg':extra_stock,
+                     'additionalWebKN':web_weight, 'characteristicKN':concrete_weight+web_weight})
         receiving.append({'heads': ids, 'girders': names, 'receivingLevelZMm': level,
                           'uncoveredWithSettingMm2': rectangle_area(expanded, seat),
                           'verticalGapToWebUndersideMm': dpc['connectingContinuousWebZ'][0]-level,
                           'verticalGapToBlockUndersideMm': dpc['thickBlockZ'][0]-level})
 
-    block_height = dpc['thickBlockZ'][1]-dpc['thickBlockZ'][0]
-    web_thickness = dpc['connectingContinuousWebZ'][1]-dpc['connectingContinuousWebZ'][0]
-    retained_stock_density = dpc['solid140ControlKgPerPier']/(old_area*block_height)
-    extra_stock = uncovered*web_thickness*retained_stock_density
     corner_centroid = (old_half, old_half)
     key_arms = sorted(hypot(x+width/2-corner_centroid[0], y+height/2-corner_centroid[1])
                       for x,y,width,height in blocks if (x,y) != (0,0))
@@ -304,6 +318,13 @@ def ground_splice(outer, grid, axes, shift, moment):
                         'extraUnboredStockKgPerCorner': extra_stock,
                         'totalUnboredStockKgPerCorner': dpc['netUnboredStockKgPerPier']+extra_stock},
         'receivingPlan': receiving,
+        'nominalDeadLoadDelta': {
+            'additionalFootprintMm2':uncovered, 'centroidUVMm':centroid_uv,
+            'concreteUnitWeightKNPerM3':CONCRETE_BUDGET_KN_PER_M3,
+            'geometryWithinRetainedReceivingProjection':all(row['uncoveredWithSettingMm2'] == 0 for row in receiving),
+            'corners':mass, 'admitted':False,
+            'scope':'Gross candidate concrete below the first-floor soffit, with added web stock replacing concrete in its 20 mm band. No stock, reinforcement or geometry is selected.',
+        },
         'isolatedPositiveKeyCouple': {'historicalYawAboutU0KNm': moment, 'leverArmsMm': key_arms,
                                      'forceIfOneCoupleTakesWholeYawKN': [moment*1000/arm for arm in key_arms]},
         'isolatedKeyLoadPath': key_load_path(blocks, RECEIVER_U+old_half, end+old_half, dpc, moment),
@@ -440,7 +461,7 @@ def compare_collector(source_data, source_hashes, request=None):
                           'gapToWidenedWallUMm':port_u-port_radius-RECEIVER_U, 'admitted':False},
         'rearCabinetPortTerritory':port_clearance(cabinet_centre_bounds, lower_paths+upper_paths, port_radius),
         'gravity':{'directBearingURangeMm':[-30,70], 'records':[gravity(n) for n in ('NW-W','NE')]},
-        'groundSplice': ground_splice(ground['outer'], grid, axes, shift, yaw_at_ground),
+        'groundSplice': ground_splice(ground['outer'], grid, axes, shift, yaw_at_ground, soffit),
         'groundAlternative':{'retainedNorthCornerAndToeCapIDs':[h['id'] for h in north_heads],
                              'insidePlanGapToSmallestCapAfter5Mm':cap_min_half_width-RECEIVER_U-FORM_SETTING,
                              'outsidePlanGapToSmallestCapAfter5Mm':cap_min_half_width-70-FORM_SETTING,
