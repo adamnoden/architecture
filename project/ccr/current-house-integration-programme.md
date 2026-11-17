@@ -103,6 +103,8 @@ The accepted Georgian document supplies the common nominal house identity. Its d
 | Specialist development studies | Several HAD, IAS and OAS drivers still call the raw native compositor for their declared comparisons. Their native inputs and results carry the scopes recorded in the source inventories. | Move adopted current consumers to the bound entry point and preserve historical and adverse study reproduction under their original input identities. |
 | Historical outputs and final publication | `outputs:*` and their manifest/dataplate assessment retain the RH-C fixture. The published figure register identifies historical plates at their placements. The east-ground current compile already has its own explicit case. | Keep history reproducible. For each final current publication consumer, require the selected current-source route or an explicitly historical claim, then rerun the release audit with the final bay evidence. |
 
+At 25°, the nominal Georgian front elevation places its eaves at Z6800 mm and ridge at Z7790.9 mm. The MAT slate comparison places the wall weather line at Z7418.4 mm, field ridge at Z8409.3 mm and capped crown at Z8645.3 mm. The roof and rainwater gate must reconcile the weather and support levels, overhang and courtyard geometry before those views share a vertical source. See the [nominal elevation method](../../compiler/reference-house/georgian/layout-family.ts) and [MAT roof comparison](../mat/ring-roof-family.md).
+
 Use the same versioned request for CLI or server-side analysis. For example, from the repository root, the first command emits the current design document, the second emits the source-bound candidate request, and the third replays that request.
 
 ```sh
