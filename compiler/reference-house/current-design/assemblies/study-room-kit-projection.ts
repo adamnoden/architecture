@@ -7,6 +7,8 @@ export function compileStudyRoomKitProjection(resolved: CurrentDesignResolution,
   const { kit, wallTransition } = compileStudyRoomKit(resolved, input)
   return {
     kit, wallTransition, wallTransitionSvg: drawStudyWallTransition(wallTransition),
-    plan: drawStudyRoomKitPlan(kit), wallElevation: drawStudyPanellingElevation(kit),
+    plan: drawStudyRoomKitPlan(kit),
+    furnitureAccessPlan: kit.floor.handling.state === 'withheld' ? null : drawStudyRoomKitPlan(kit, 'furniture-access'),
+    wallElevation: drawStudyPanellingElevation(kit),
   }
 }

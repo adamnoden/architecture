@@ -74,6 +74,37 @@ test('Study kit lays out actual stable parts and discrete border widths in the f
   assert.equal(tile.kit.floor.depthUnassignedWithinFinishMm, 3)
 })
 
+test('Study floor access identifies the parts the reversible BCR furniture path leaves covered', async () => {
+  const [baseline, repitch, moved] = await Promise.all([
+    current.studyRoomKit(initial), current.studyRoomKit({ ...initial, pitchMm: 450 }),
+    current.studyRoomKit({ ...initial, opening }),
+  ])
+  const { handling } = baseline.kit.floor
+  assert.ok(handling.state !== 'withheld')
+  const { parking } = handling
+  assert.equal(parking.candidateState, 'static-only')
+  assert.equal(parking.deskShiftMm, 800)
+  assert.equal(parking.deskTravelBeyondBcrMm, 100)
+  assert.equal(parking.extendedDeskOverlapWithBcrChairMm, 50)
+  const { retainedBcrCase: bcr } = parking
+  assert.equal(bcr.receipt.path, 'project/bcr/studies/bay-interface-study.json')
+  assert.equal(bcr.deskShiftMm, 700)
+  assert.deepEqual(bcr.unexposedPartIds.map(id => id.split('/').slice(-2).join('/')), [
+    '800/1103', '800/2000', '1100/1103', '1100/2000', '1400/1103', '1400/2000',
+    '1700/1103', '1700/2000', '2000/1103', '634.5/1246',
+  ])
+  assert.deepEqual(parking.turnedChairAtBcrDeskShiftUnexposedPartIds,
+    bcr.unexposedPartIds.filter(id => !id.endsWith('/2000')))
+  assert.ok(baseline.furnitureAccessPlan)
+  const highlighted = (result: typeof baseline) =>
+    result.furnitureAccessPlan?.primitives.flatMap(item =>
+      item.kind === 'rect' && item.fill === 'context' && item.metadata?.coveredInBothBcrStages
+        ? [item.id] : [])
+  assert.deepEqual(highlighted(baseline), bcr.unexposedPartIds)
+  assert.deepEqual(highlighted(moved), bcr.unexposedPartIds)
+  assert.equal(repitch.furnitureAccessPlan, null)
+})
+
 test('A 15 mm finish preserves the ground datum but the floating support allowance is still short', async () => {
   const [standard, oak, stone] = await Promise.all([
     current.studyRoomKit(initial),

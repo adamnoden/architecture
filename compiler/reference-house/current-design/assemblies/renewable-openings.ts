@@ -32,6 +32,17 @@ interface WindowReceipt {
   }
 }
 
+type PlanRectangle = readonly [number, number, number, number]
+
+interface BayReceipt {
+  readonly basis: { readonly opening: { readonly id: string; readonly old: number; readonly new: number } }
+  readonly rejectedParkedState: { readonly chair: PlanRectangle }
+  readonly candidate: {
+    readonly chairTranslation: { readonly start: PlanRectangle; readonly end: PlanRectangle }
+    readonly deskTranslation: { readonly start: PlanRectangle; readonly end: PlanRectangle }
+  }
+}
+
 interface DoorReceipt {
   readonly model: {
     readonly southCourtWeatherDoor: { readonly rough: readonly [number, number]; readonly clearBeyondOpenTip: number }
@@ -74,8 +85,9 @@ export function compileRenewableOpenings(resolved: CurrentDesignResolution, rece
     throw new TypeError('The OAS Study comparison receipt changed')
   }
   const window = JSON.parse(windowBytes.toString('utf8')) as WindowReceipt
+  const bayBytes = read(references.bay)
   for (const [key, path] of Object.entries(references) as [keyof typeof references, string][]) {
-    const bytes = read(path)
+    const bytes = key === 'bay' ? bayBytes : read(path)
     if (sha(bytes) !== window.sourceSha256[key] || (key === 'room' && gitBlob(bytes) !== occupiedBinding.identities[path])) {
       throw new TypeError(`OAS Study comparison provenance disagrees at ${path}`)
     }
@@ -93,7 +105,7 @@ export function compileRenewableOpenings(resolved: CurrentDesignResolution, rece
   }
   const door = JSON.parse(doorBytes.toString('utf8')) as DoorReceipt
   const nominal = inspectResolvedHostedOpening(resolved, frontStudyOpening)
-  const bay = JSON.parse(read(references.bay).toString('utf8')) as { basis: { opening: { id: string; old: number; new: number } } }
+  const bay = JSON.parse(bayBytes.toString('utf8')) as BayReceipt
   const occurrence = window.occurrence
   if (`${occurrence.level}/${occurrence.id}` !== nominal.row.openingId
     || `${occurrence.level}/${occurrence.host}` !== nominal.row.hostWallId
@@ -102,6 +114,7 @@ export function compileRenewableOpenings(resolved: CurrentDesignResolution, rece
     throw new TypeError('The BCR Study shift does not connect the exact nominal and occupied openings')
   }
 
+  const shiftEndpoints = ({ start, end }: BayReceipt['candidate']['chairTranslation']) => ({ start, end })
   const widthMm = widthFor(received, occurrence.width)
   const sameWidth = widthMm === occurrence.width
   const { e0 } = window
@@ -125,6 +138,12 @@ export function compileRenewableOpenings(resolved: CurrentDesignResolution, rece
       wallDatum,
       opening: { id: nominal.row.openingId, hostId: nominal.row.hostWallId, nominalCentreMm: bay.basis.opening.old,
         occupiedCentreMm: occurrence.centre, nativeWidthMm: occurrence.width, widthMm },
+      furnitureAccess: {
+        receipt: { path: references.bay, sha256: window.sourceSha256.bay },
+        turnedChairReservation: bay.rejectedParkedState.chair,
+        chairTranslation: shiftEndpoints(bay.candidate.chairTranslation),
+        deskTranslation: shiftEndpoints(bay.candidate.deskTranslation),
+      },
       fixedFrameWidthMm: e0.frameWidth, schedule,
       release: sameWidth
         ? { state: 'native-half-head-only', inwardStrokeMm: release.headDraw, pocketReserveMm: release.headPocketAfterTwo2 } as const

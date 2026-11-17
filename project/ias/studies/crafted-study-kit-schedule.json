@@ -5398,7 +5398,50 @@
           ],
           "deskShiftMm": 800,
           "furnitureCovered": 37,
-          "unexposedPartIds": []
+          "unexposedPartIds": [],
+          "candidateState": "static-only",
+          "retainedBcrCase": {
+            "receipt": {
+              "path": "project/bcr/studies/bay-interface-study.json",
+              "sha256": "d1fb2d528c82df414451701aafbdbb29e01be01453ad848213c87344cb822c8f"
+            },
+            "deskShiftMm": 700,
+            "parkedDesk": [
+              655,
+              1300,
+              2255,
+              2000
+            ],
+            "parkedChair": [
+              900,
+              2050,
+              1900,
+              2950
+            ],
+            "unexposedPartIds": [
+              "GROUND/G-STUDY/room-kit/floor/800/1103",
+              "GROUND/G-STUDY/room-kit/floor/800/2000",
+              "GROUND/G-STUDY/room-kit/floor/1100/1103",
+              "GROUND/G-STUDY/room-kit/floor/1100/2000",
+              "GROUND/G-STUDY/room-kit/floor/1400/1103",
+              "GROUND/G-STUDY/room-kit/floor/1400/2000",
+              "GROUND/G-STUDY/room-kit/floor/1700/1103",
+              "GROUND/G-STUDY/room-kit/floor/1700/2000",
+              "GROUND/G-STUDY/room-kit/floor/2000/1103",
+              "GROUND/G-STUDY/room-kit/floor/634.5/1246"
+            ],
+            "geometryScope": "BCR reversible furniture swept reservations"
+          },
+          "turnedChairAtBcrDeskShiftUnexposedPartIds": [
+            "GROUND/G-STUDY/room-kit/floor/800/1103",
+            "GROUND/G-STUDY/room-kit/floor/1100/1103",
+            "GROUND/G-STUDY/room-kit/floor/1400/1103",
+            "GROUND/G-STUDY/room-kit/floor/1700/1103",
+            "GROUND/G-STUDY/room-kit/floor/2000/1103",
+            "GROUND/G-STUDY/room-kit/floor/634.5/1246"
+          ],
+          "deskTravelBeyondBcrMm": 100,
+          "extendedDeskOverlapWithBcrChairMm": 50
         },
         "emitterEdgeRelease": {
           "pickupId": "GROUND/G-STUDY/room-kit/floor/634.5/2000",
@@ -5449,7 +5492,7 @@
         },
         "held": [
           "loaded grip and breakaway",
-          "furniture carrying cycle",
+          "continuous motion for the full-access furniture arrangement",
           "qualified continuous deck and bedding",
           "ferrule pull-out and repeated fits",
           "seating, acoustic, slip, movement and material performance"
@@ -6327,7 +6370,50 @@
         ],
         "deskShiftMm": 800,
         "furnitureCovered": 37,
-        "unexposedPartIds": []
+        "unexposedPartIds": [],
+        "candidateState": "static-only",
+        "retainedBcrCase": {
+          "receipt": {
+            "path": "project/bcr/studies/bay-interface-study.json",
+            "sha256": "d1fb2d528c82df414451701aafbdbb29e01be01453ad848213c87344cb822c8f"
+          },
+          "deskShiftMm": 700,
+          "parkedDesk": [
+            655,
+            1300,
+            2255,
+            2000
+          ],
+          "parkedChair": [
+            900,
+            2050,
+            1900,
+            2950
+          ],
+          "unexposedPartIds": [
+            "GROUND/G-STUDY/room-kit/floor/800/1103",
+            "GROUND/G-STUDY/room-kit/floor/800/2000",
+            "GROUND/G-STUDY/room-kit/floor/1100/1103",
+            "GROUND/G-STUDY/room-kit/floor/1100/2000",
+            "GROUND/G-STUDY/room-kit/floor/1400/1103",
+            "GROUND/G-STUDY/room-kit/floor/1400/2000",
+            "GROUND/G-STUDY/room-kit/floor/1700/1103",
+            "GROUND/G-STUDY/room-kit/floor/1700/2000",
+            "GROUND/G-STUDY/room-kit/floor/2000/1103",
+            "GROUND/G-STUDY/room-kit/floor/634.5/1246"
+          ],
+          "geometryScope": "BCR reversible furniture swept reservations"
+        },
+        "turnedChairAtBcrDeskShiftUnexposedPartIds": [
+          "GROUND/G-STUDY/room-kit/floor/800/1103",
+          "GROUND/G-STUDY/room-kit/floor/1100/1103",
+          "GROUND/G-STUDY/room-kit/floor/1400/1103",
+          "GROUND/G-STUDY/room-kit/floor/1700/1103",
+          "GROUND/G-STUDY/room-kit/floor/2000/1103",
+          "GROUND/G-STUDY/room-kit/floor/634.5/1246"
+        ],
+        "deskTravelBeyondBcrMm": 100,
+        "extendedDeskOverlapWithBcrChairMm": 50
       },
       "emitterEdgeRelease": {
         "pickupId": "GROUND/G-STUDY/room-kit/floor/634.5/2000",
@@ -6378,7 +6464,7 @@
       },
       "held": [
         "loaded grip and breakaway",
-        "furniture carrying cycle",
+        "continuous motion for the full-access furniture arrangement",
         "qualified continuous deck and bedding",
         "ferrule pull-out and repeated fits",
         "seating, acoustic, slip, movement and material performance"
