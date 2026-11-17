@@ -14,6 +14,10 @@ const trialModes: Readonly<Record<string, TrialMode>> = {
     schema: 'ias-study-room-kit-request/1', key: 'kit', name: 'Study room kit',
     run: (compile, value) => compile.studyRoomKit(value),
   },
+  '--study-draft-room-kit': {
+    schema: 'ias-study-draft-request/1', key: 'draftCase', name: 'Study draft room kit',
+    run: (compile, value) => compile.studyDraftRoomKit(value),
+  },
   '--roof-pitch': {
     schema: 'mat-roof-pitch-request/1', key: 'roof', name: 'roof pitch',
     run: (compile, value) => compile.roofPitch(value),
@@ -34,6 +38,10 @@ const trialModes: Readonly<Record<string, TrialMode>> = {
     schema: 'str-north-collector-request/1', key: 'collector', name: 'north collector',
     run: (compile, value) => compile.northCollectorCase(value),
   },
+  '--rear-foul-vent': {
+    schema: 'mat-rear-foul-vent-request/1', key: 'vent', name: 'rear foul vent',
+    run: (compile, value) => compile.rearFoulVent(value),
+  },
   '--east-ground-receiving': {
     schema: 'rwt-east-ground-receiving-request/1', key: 'receiving', name: 'east ground receiving',
     run: (compile, value) => compile.eastGroundReceiving(value),
@@ -45,6 +53,10 @@ const trialModes: Readonly<Record<string, TrialMode>> = {
   '--inlet-sill-insert': {
     schema: 'had-inlet-sill-insert-request/1', key: 'insert', name: 'inlet sill insert',
     run: (compile, value) => compile.inletSillInsert(value),
+  },
+  '--inlet-fault': {
+    schema: 'had-inlet-fault-request/1', key: 'fault', name: 'inlet fault envelope',
+    run: (compile, value) => compile.inletFault(value),
   },
   '--occupied-condensate': {
     schema: 'had-condensate-request/1', key: 'condensate', name: 'occupied condensate',
@@ -67,7 +79,7 @@ const modes = [
   '--bundle', '--study-assembly', '--study-linings', '--renewable-openings',
   '--read-roof-pitch', '--read-court-intake', '--read-inlet-route', '--read-east-ground-receiving',
   '--read-occupied-condensate', '--read-structural-case', '--read-structural-interfaces',
-  '--read-north-collector', '--read-inlet-sill-insert', ...Object.keys(trialModes),
+  '--read-north-collector', '--read-rear-foul-vent', '--read-inlet-sill-insert', '--read-inlet-fault', ...Object.keys(trialModes),
 ]
 const mode = modes.includes(args[0]) ? args.shift() : undefined
 const [argument, ...extra] = args
@@ -101,7 +113,9 @@ try {
       else if (mode === '--read-structural-case') process.stdout.write(JSON.stringify(await compile.readStructuralCase(), null, 2) + '\n')
       else if (mode === '--read-structural-interfaces') process.stdout.write(JSON.stringify(await compile.readStructuralInterfaces(), null, 2) + '\n')
       else if (mode === '--read-north-collector') process.stdout.write(JSON.stringify(await compile.readNorthCollectorCase(), null, 2) + '\n')
+      else if (mode === '--read-rear-foul-vent') process.stdout.write(JSON.stringify(await compile.readRearFoulVentCase(), null, 2) + '\n')
       else if (mode === '--read-inlet-sill-insert') process.stdout.write(JSON.stringify(await compile.readInletSillInsertCase(), null, 2) + '\n')
+      else if (mode === '--read-inlet-fault') process.stdout.write(JSON.stringify(await compile.readInletFaultCase(), null, 2) + '\n')
       else if (mode === '--occupied-services') process.stdout.write((await compile.occupiedServices()).schedule)
       else if (mode === '--selected-water-event') process.stdout.write((await compile.selectedWaterEvent()).event)
       else if (mode === '--structural-bridge') process.stdout.write(JSON.stringify(await compile.structuralBridge()) + '\n')

@@ -71,4 +71,5 @@
 <text x="14" y="234" class="note">The existing cabinet has no clear port position. Resolve an independent route or redesign the cage.</text>
 <text x="14" y="244" class="note">Prove the widened body, full chord, round ties and imperforate DPC splice as one force path.</text>
 <text x="14" y="254" class="note">This section screens geometry and isolated loads. Ground, roof and whole-house checks remain open.</text>
+<text x="14" y="263" class="note">Ground splice: 15 mm maximum H20 axis offset; 162000 mm² outside the legacy plate.</text>
 <text x="14" y="280" class="note">Plan coordinates U/V and levels Z are in millimetres.</text></svg>

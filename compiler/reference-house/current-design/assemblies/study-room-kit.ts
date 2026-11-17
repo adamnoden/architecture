@@ -1,7 +1,7 @@
 import { sha256SemanticFingerprint } from '../../../core/identity.js'
 import { createPlanPaperProjection } from '../../../publication-drawing/projection.js'
 import type { DrawingSceneV2 } from '../../../publication-drawing-v2/model.js'
-import { applyDesignEdit, beginDesignEdit, editBase } from '../edit.js'
+import { applyDesignEdit, beginDesignEdit, editBase, type EditOperation } from '../edit.js'
 import { readBoundOccupiedServices } from '../occupied-services.js'
 import type { CurrentDesignResolution } from '../resolve.js'
 import { compileRenewableOpenings } from './renewable-openings.js'
@@ -11,13 +11,17 @@ import { compileStudyWallTransition } from './study-wall-transition.js'
 
 type FloorAssembly = ReturnType<typeof compileResolvedStudyAssembly>
 type Box = readonly [number, number, number, number]
+type OpeningCase = { readonly id: string; readonly hostId: string; readonly widthMm?: number } & (
+  { readonly occupiedCentreMm: number; readonly nominalCentreMm?: never }
+  | { readonly nominalCentreMm: number; readonly occupiedCentreMm?: never }
+)
 type Case = {
   readonly schema: 'ias-study-room-kit-case/1'
   readonly units: 'mm'
   readonly pitchMm: number
   readonly wearingFace: 'oak' | 'stone-steel'
   readonly finishDepthMm?: 15 | 20
-  readonly opening?: { readonly id: string; readonly hostId: string; readonly occupiedCentreMm: number }
+  readonly opening?: OpeningCase
 }
 
 const minimumBorderMm = 60
@@ -40,12 +44,17 @@ function caseInput(input: unknown): Case {
     ...(input.finishDepthMm === undefined ? {} : { finishDepthMm: input.finishDepthMm }) } as const
   if (input.opening === undefined) return common
   const opening = input.opening
-  if (!record(opening) || Object.keys(opening).length !== 3 || typeof opening.id !== 'string'
-    || typeof opening.hostId !== 'string' || typeof opening.occupiedCentreMm !== 'number' || !Number.isFinite(opening.occupiedCentreMm)) {
+  const finite = (value: unknown): value is number => typeof value === 'number' && Number.isFinite(value) && !Object.is(value, -0)
+  if (!record(opening) || Object.keys(opening).some(key => !['id', 'hostId', 'occupiedCentreMm', 'nominalCentreMm', 'widthMm'].includes(key))
+    || typeof opening.id !== 'string' || typeof opening.hostId !== 'string'
+    || Object.hasOwn(opening, 'occupiedCentreMm') === Object.hasOwn(opening, 'nominalCentreMm')
+    || (Object.hasOwn(opening, 'widthMm') && (!finite(opening.widthMm) || opening.widthMm <= 0))) {
     throw new TypeError('INVALID_STUDY_ROOM_KIT_OPENING')
   }
-  return { ...common,
-    opening: { id: opening.id, hostId: opening.hostId, occupiedCentreMm: opening.occupiedCentreMm } }
+  const reference = { id: opening.id, hostId: opening.hostId, ...(finite(opening.widthMm) ? { widthMm: opening.widthMm } : {}) }
+  if (finite(opening.occupiedCentreMm)) return { ...common, opening: { ...reference, occupiedCentreMm: opening.occupiedCentreMm } }
+  if (finite(opening.nominalCentreMm)) return { ...common, opening: { ...reference, nominalCentreMm: opening.nominalCentreMm } }
+  throw new TypeError('INVALID_STUDY_ROOM_KIT_OPENING')
 }
 
 function setout(from: number, to: number, origin: number, pitch: number) {
@@ -245,9 +254,12 @@ function handlingScreen(assembly: FloorAssembly, layout: ReturnType<typeof partS
 function openingSetout(resolved: CurrentDesignResolution, config: Case) {
   const { window, door } = compileRenewableOpenings(resolved)
   const current = window.opening
-  const requestedCentre = config.opening?.occupiedCentreMm ?? current.occupiedCentreMm
-  const shift = requestedCentre - current.occupiedCentreMm
   const nominalToOccupiedOffsetMm = current.occupiedCentreMm - current.nominalCentreMm
+  const requestedCentre = config.opening?.nominalCentreMm !== undefined
+    ? config.opening.nominalCentreMm + nominalToOccupiedOffsetMm : config.opening?.occupiedCentreMm ?? current.occupiedCentreMm
+  const requestedWidth = config.opening?.widthMm ?? current.nativeWidthMm
+  const moved = requestedCentre !== current.occupiedCentreMm
+  const resized = requestedWidth !== current.nativeWidthMm
   const linings = compileResolvedStudyLinings(resolved)
   const southField = linings.wall.southField
   const reserves = southField.windows.map(item => ({ ...item, id: `GROUND/${item.id}` }))
@@ -257,21 +269,27 @@ function openingSetout(resolved: CurrentDesignResolution, config: Case) {
     throw new RangeError('UNKNOWN_STUDY_ROOM_KIT_HOSTED_OPENING')
   }
   const [x0, z0, x1, z1] = source.box
+  if (x1 - x0 !== current.nativeWidthMm || (x0 + x1) / 2 !== current.occupiedCentreMm) {
+    throw new Error('The OAS and IAS Study opening reservations disagree')
+  }
   const fixedControls = reserves.filter(item => item.id !== current.id)
   let centre = current.occupiedCentreMm
-  const relation = shift === 0 ? 'native' : 'changed-candidate'
-  if (shift !== 0) {
+  let width = current.nativeWidthMm
+  const relation = moved || resized ? 'changed-candidate' : 'native'
+  if (moved || resized) {
     const draft = beginDesignEdit(resolved.design, 'ias-study-room-kit', 'SPECIMEN-IAS-STUDY-ROOM-KIT')
-    const moved = applyDesignEdit(draft, { schema: 'current-design-edit/1', units: 'mm', base: editBase(draft),
-      operations: [{ kind: 'move-opening', level: 'GROUND', openingId: current.id, hostWallId: current.hostId,
-        centreMm: requestedCentre - nominalToOccupiedOffsetMm }] }, [])
-    if (moved.status === 'rejected') throw new RangeError(`STUDY_ROOM_KIT_MOVE_REJECTED: ${moved.diagnostic.code}`)
-    const editedOpening = moved.state.design.storeys.GROUND.openings.find(item => item.id === current.id)
+    const reference = { level: 'GROUND', openingId: current.id, hostWallId: current.hostId } as const
+    const operations: EditOperation[] = []
+    if (moved) operations.push({ ...reference, kind: 'move-opening', centreMm: requestedCentre - nominalToOccupiedOffsetMm })
+    if (resized) operations.push({ ...reference, kind: 'resize-opening', widthMm: requestedWidth })
+    const edited = applyDesignEdit(draft, { schema: 'current-design-edit/1', units: 'mm', base: editBase(draft), operations }, [])
+    if (edited.status === 'rejected') throw new RangeError(`STUDY_ROOM_KIT_MOVE_REJECTED: ${edited.diagnostic.code}`)
+    const editedOpening = edited.state.design.storeys.GROUND.openings.find(item => item.id === current.id)
     if (!editedOpening) throw new Error('MISSING_EDITED_STUDY_ROOM_KIT_OPENING')
     centre = editedOpening.centreMm + nominalToOccupiedOffsetMm
+    width = editedOpening.widthMm
   }
-  const offset = centre - current.occupiedCentreMm
-  const box: Box = [x0 + offset, z0, x1 + offset, z1]
+  const box: Box = [centre - width / 2, z0, centre + width / 2, z1]
   if (box[0] < southField.startXMm || box[2] > southField.startXMm + southField.widthMm
     || fixedControls.some(other => intersects(box, other.box))) {
     throw new RangeError('STUDY_ROOM_KIT_OCCUPIED_OPENING_OUTSIDE_AVAILABLE_HOST')
@@ -296,11 +314,11 @@ function openingSetout(resolved: CurrentDesignResolution, config: Case) {
     nominalToOccupiedOffsetMm,
     liningSource: linings.source,
     fixedControls, independentDoorControl: door.id,
-    release: relation === 'native' ? window.release.state : 'withheld-for-position-change',
+    release: relation === 'native' ? window.release.state : resized ? 'withheld-for-width-change' : 'withheld-for-position-change',
     dependencies: ['fixed-frame', 'dry-seam', 'jamb-release', 'local-panelling-reveal'],
     evidence: relation === 'native'
       ? { state: 'native-comparison-only', receipt: window.receipt } as const
-      : { state: 'stale', code: 'MOVED_STUDY_OPENING_FIXED_DETAILS' } as const,
+      : { state: 'stale', code: resized ? 'RESIZED_STUDY_OPENING_FIXED_DETAILS' : 'MOVED_STUDY_OPENING_FIXED_DETAILS' } as const,
   } as const
   return { opening, wall, grille: linings.grille, grilleKeepOut, nativeWindow: window } as const
 }

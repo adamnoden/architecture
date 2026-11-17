@@ -67,6 +67,225 @@
     ],
     "scope": "Plan-only alternative with actual continuous widened body onto a redesigned imperforate DPC plate and cap. Existing shallow node, anchors and soil capacities are not transferred."
   },
+  "groundSplice": {
+    "extendedWeb": {
+      "extraUnboredStockKgPerCorner": 25.92000000000001,
+      "retainedBlindBlockUncutCoreMm": 26,
+      "retainedBlindBlockUncutCoreZMm": [
+        -53,
+        -27
+      ],
+      "thicknessMm": 20,
+      "totalUnboredStockKgPerCorner": 140.16000000000005,
+      "zMm": [
+        -50,
+        -30
+      ]
+    },
+    "footprint": {
+      "extendedWebOverhangMm2": 0,
+      "legacyMetalMm2": 260400.0,
+      "uncoveredByExtendedWebMm2": 0,
+      "uncoveredByLegacyMetalMm2": 162000.0,
+      "widenedBodyMm2": 422400.0
+    },
+    "isolatedPositiveKeyCouple": {
+      "forceIfOneCoupleTakesWholeYawKN": [
+        19.490561275484396,
+        19.490561275484396
+      ],
+      "historicalYawAboutU0KNm": 16.17716585865205,
+      "leverArmsMm": [
+        830.0,
+        830.0
+      ]
+    },
+    "knownMainBarAxes": [
+      {
+        "axisOffsetMm": 0.0,
+        "id": "H20-43-43",
+        "legacyBlindBoreXYMm": [
+          -27.0,
+          -27.0
+        ],
+        "upperBarXYMm": [
+          -27.0,
+          -27.0
+        ]
+      },
+      {
+        "axisOffsetMm": 0.0,
+        "id": "H20-43-97",
+        "legacyBlindBoreXYMm": [
+          -27.0,
+          27.0
+        ],
+        "upperBarXYMm": [
+          -27.0,
+          27.0
+        ]
+      },
+      {
+        "axisOffsetMm": 15.0,
+        "id": "H20-43-850",
+        "legacyBlindBoreXYMm": [
+          -27.0,
+          780.0
+        ],
+        "upperBarXYMm": [
+          -12.0,
+          780.0
+        ]
+      },
+      {
+        "axisOffsetMm": 15.0,
+        "id": "H20-43-950",
+        "legacyBlindBoreXYMm": [
+          -27.0,
+          880.0
+        ],
+        "upperBarXYMm": [
+          -12.0,
+          880.0
+        ]
+      },
+      {
+        "axisOffsetMm": 0.0,
+        "id": "H20-97-43",
+        "legacyBlindBoreXYMm": [
+          27.0,
+          -27.0
+        ],
+        "upperBarXYMm": [
+          27.0,
+          -27.0
+        ]
+      },
+      {
+        "axisOffsetMm": 0.0,
+        "id": "H20-97-97",
+        "legacyBlindBoreXYMm": [
+          27.0,
+          27.0
+        ],
+        "upperBarXYMm": [
+          27.0,
+          27.0
+        ]
+      },
+      {
+        "axisOffsetMm": 15.0,
+        "id": "H20-97-850",
+        "legacyBlindBoreXYMm": [
+          27.0,
+          780.0
+        ],
+        "upperBarXYMm": [
+          42.0,
+          780.0
+        ]
+      },
+      {
+        "axisOffsetMm": 15.0,
+        "id": "H20-97-950",
+        "legacyBlindBoreXYMm": [
+          27.0,
+          880.0
+        ],
+        "upperBarXYMm": [
+          42.0,
+          880.0
+        ]
+      },
+      {
+        "axisOffsetMm": 15.0,
+        "id": "H20-850-43",
+        "legacyBlindBoreXYMm": [
+          780.0,
+          -27.0
+        ],
+        "upperBarXYMm": [
+          780.0,
+          -12.0
+        ]
+      },
+      {
+        "axisOffsetMm": 15.0,
+        "id": "H20-850-97",
+        "legacyBlindBoreXYMm": [
+          780.0,
+          27.0
+        ],
+        "upperBarXYMm": [
+          780.0,
+          42.0
+        ]
+      },
+      {
+        "axisOffsetMm": 15.0,
+        "id": "H20-950-43",
+        "legacyBlindBoreXYMm": [
+          880.0,
+          -27.0
+        ],
+        "upperBarXYMm": [
+          880.0,
+          -12.0
+        ]
+      },
+      {
+        "axisOffsetMm": 15.0,
+        "id": "H20-950-97",
+        "legacyBlindBoreXYMm": [
+          880.0,
+          27.0
+        ],
+        "upperBarXYMm": [
+          880.0,
+          42.0
+        ]
+      }
+    ],
+    "legacyBoreAlignment": {
+      "axesOutsideBudgetCount": 8,
+      "comparisonBudgetMm": 1,
+      "maximumAxisOffsetMm": 15.0
+    },
+    "receivingPlan": [
+      {
+        "girders": [
+          "outer-W",
+          "outer-NW"
+        ],
+        "heads": [
+          "P07",
+          "P08",
+          "P09"
+        ],
+        "receivingLevelZMm": -180,
+        "uncoveredWithSettingMm2": 0,
+        "verticalGapToBlockUndersideMm": 70,
+        "verticalGapToWebUndersideMm": 130
+      },
+      {
+        "girders": [
+          "outer-E",
+          "outer-NE"
+        ],
+        "heads": [
+          "P10",
+          "P11",
+          "P12"
+        ],
+        "receivingLevelZMm": -180,
+        "uncoveredWithSettingMm2": 0,
+        "verticalGapToBlockUndersideMm": 70,
+        "verticalGapToWebUndersideMm": 130
+      }
+    ],
+    "remoteMainBarShiftMm": 15,
+    "scope": "Geometry and isolated force demand only. Bearing spread, confinement, keys, bore strength, welds, moisture perimeter and coupled signed responses remain open."
+  },
   "lateralClosure": {
     "comparisonForceKN": 95.15979916854145,
     "dragDemandFactor": 1,
@@ -157,6 +376,8 @@
     ],
     "commonJig": "Two opposed groups on each arm. Same level swaps signs on adjoining wings; each plane deliberately touches the intervening H28 at crossings. 5 mm total relative setting is binding.",
     "localSlabTopZMm": 3398.0,
+    "primaryPlacingComparisonMet": true,
+    "primaryPlacingComparisonMm": 21,
     "reserveToActualFinishUndersideMm": 37.0,
     "samePlaneWingPairClearShared5Mm": 33.84502723889042,
     "slabDepthMm": 228.0,

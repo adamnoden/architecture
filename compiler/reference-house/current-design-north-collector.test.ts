@@ -69,6 +69,8 @@ test('stale, outside-cabinet and unbound north collector cases fail closed', asy
   assert.ok('collector' in request)
   await assert.rejects(compile.northCollectorCase({ ...request.collector, bindingDigest: 'stale' }), /binding/)
   await assert.rejects(compile.northCollectorCase({ ...request.collector, dragDemandFactor: 1.1 }), /demand factor/)
+  await assert.rejects(compile.northCollectorCase({ ...request.collector, remoteMainBarShiftMm: -1 }), /main bar shift/)
+  await assert.rejects(compile.northCollectorCase({ ...request.collector, remoteMainBarShiftMm: 21 }), /main bar shift/)
   await assert.rejects(compile.northCollectorCase({ ...request.collector, portAxisXYMm: [660, 10927] }), /inside the source rear cabinet/)
   const edited = prepareCurrentDesignCompile({
     ...design,
@@ -76,4 +78,38 @@ test('stale, outside-cabinet and unbound north collector cases fail closed', asy
     envelope: { ...design.envelope, widthMm: design.envelope.widthMm + 20 },
   })
   assert.equal((await edited.northCollectorCase(request.collector)).status, 'unavailable')
+})
+
+test('original main bar axes clear the collector and align with the legacy blind bores', async () => {
+  const compile = prepareCurrentDesignCompile(readGeorgianDesignSnapshot())
+  const request = await compile.readNorthCollectorCase()
+  assert.ok('collector' in request)
+  const [reference, explicitReference, aligned, adverse] = await Promise.all([
+    compile.northCollectorCase(request.collector),
+    compile.northCollectorCase({ ...request.collector, remoteMainBarShiftMm: 15 }),
+    compile.northCollectorCase({ ...request.collector, remoteMainBarShiftMm: 0 }),
+    compile.northCollectorCase({ ...request.collector, remoteMainBarShiftMm: 20 }),
+  ])
+  assert.ok(reference.status === 'computed-comparison' && explicitReference.status === 'computed-comparison'
+    && aligned.status === 'computed-comparison' && adverse.status === 'computed-comparison')
+  assert.deepEqual(reference, explicitReference)
+  assert.equal(reference.comparison.groundSplice.legacyBoreAlignment.axesOutsideBudgetCount, 8)
+  assert.equal(reference.comparison.groundSplice.knownMainBarAxes.length, 12)
+  assert.deepEqual(reference.comparison.groundSplice.knownMainBarAxes.map(row => row.id), aligned.comparison.groundSplice.knownMainBarAxes.map(row => row.id))
+  assert.ok(aligned.comparison.groundSplice.knownMainBarAxes.every(row => row.axisOffsetMm === 0))
+  assert.deepEqual(aligned.comparison.groundSplice.footprint, {
+    legacyMetalMm2: 260400, widenedBodyMm2: 422400, uncoveredByLegacyMetalMm2: 162000,
+    uncoveredByExtendedWebMm2: 0, extendedWebOverhangMm2: 0,
+  })
+  assert.deepEqual(aligned.comparison.groundSplice.receivingPlan.map(corner =>
+    [corner.receivingLevelZMm, corner.uncoveredWithSettingMm2, corner.verticalGapToWebUndersideMm, corner.verticalGapToBlockUndersideMm]), [
+    [-180, 0, 130, 70], [-180, 0, 130, 70],
+  ])
+  assert.ok(aligned.comparison.stack.uprightScreenClearShared5Mm.primaryH20 > 40)
+  assert.equal(aligned.comparison.stack.primaryPlacingComparisonMet, true)
+  assert.ok(adverse.comparison.stack.uprightScreenClearShared5Mm.primaryH20 < 21)
+  assert.equal(adverse.comparison.stack.primaryPlacingComparisonMet, false)
+  assert.deepEqual(aligned.comparison.rearCabinetPortTerritory, reference.comparison.rearCabinetPortTerritory)
+  assert.deepEqual(aligned.comparison.gravity, reference.comparison.gravity)
+  assert.match(aligned.drawingSvg, /0 mm maximum H20 axis offset/)
 })

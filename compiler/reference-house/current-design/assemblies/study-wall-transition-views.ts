@@ -75,7 +75,7 @@ export function drawStudyWallTransition({ status, field, fitUm, source }: Return
 <text x="891" y="538" class="small quiet">X${field.rails.hardLandXMm[0]} anchor witness</text>
 <text x="637" y="578" class="body">Keep the full mineral return and window seals fixed.</text>
 <text x="637" y="602" class="body">Test the lap after movement and repeated panel removal.</text>
-<text x="637" y="629" class="small quiet">${field.retainedHalfHeadInwardDrawMm === null ? 'Window position changed. Recheck the adjoining head withdrawal.' : 'Anchors and decorative trim stay out of the window renewal route.'}</text>
+<text x="637" y="629" class="small quiet">${field.retainedHalfHeadInwardDrawMm === null ? 'Window geometry changed. Recheck the adjoining head withdrawal.' : 'Anchors and decorative trim stay out of the window renewal route.'}</text>
 <text x="637" y="651" class="small quiet">The dashed air line to the jamb needs a verified bond and seal.</text>
 <path d="M${projectX(leftJamb)} 667V683M${projectX(rightJamb)} 667V683M${projectX(leftStop)} 675H${projectX(rightStop)}" class="rule"/>
 <path d="${stops}" stroke="#b99a60" stroke-width="5"/>

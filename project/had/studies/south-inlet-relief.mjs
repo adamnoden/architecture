@@ -18,6 +18,8 @@ async function load(path) {
 }
 const { segmentDistance, pathSeparation } = await load('project/had/studies/service-interface-geometry.mjs');
 const { finiteBends, exactSegmentBoxDistance } = await load('project/had/studies/incoming-water-geometry.mjs');
+const { criticalHalfRoundFlow, solveHalfRoundRelief, reliefEntranceHeadMm, reverseSleeveFlow, receiverWeirHeadMm, southInletReliefComparison } =
+  await load('project/had/studies/south-inlet-relief-hydraulics.mjs');
 const south = read('project/had/studies/south-utility-inlet.json');
 const utility = read('project/had/studies/current-house-services.json').utility;
 const bowl = read('project/had/studies/utility-dry-bowl-release.json');
@@ -30,58 +32,21 @@ const grade = 1 / 12;
 const formed = south.hydro.sleeveConstructionMM.formedDiameter;
 const diameter = south.hydro.sleeveConstructionMM.clearDiameter / 1000;
 const insideY = south.walls.innerFaceY;
-const setting = 10;
-const g = 9.81;
+const {settingMm:setting,roughness,splashMm:splash,carrierRiseM,receiverWeirCoefficient} = southInletReliefComparison;
 const designFlow = 90 / 60000;
 const berm = 0.032;
-const roughness = 0.015; // Same trial roughness as the south sleeve source.
 const spareAirMM = 15;
 
-function halfSection(y, raised) {
-  const radius = diameter / 2;
-  const angle = depth => 2 * Math.acos(1 - depth / radius);
-  const fullArea = depth => radius ** 2 * (angle(depth) - Math.sin(angle(depth))) / 2;
-  const width = depth => Math.sqrt(depth * (diameter - depth));
-  return {
-    area: (fullArea(y) - fullArea(raised)) / 2,
-    top: width(y),
-    perimeter: radius * (angle(y) - angle(raised)) / 2 + (y - raised) + width(raised),
-  };
-}
-
-function minimumDepth(test, raised) {
-  let lower = raised;
-  let upper = diameter * .9999;
-  for (let step = 0; step < 60; step++) {
-    const guess = (lower + upper) / 2;
-    if (test(guess)) upper = guess;
-    else lower = guess;
-  }
-  return (lower + upper) / 2;
-}
-
-function criticalFlow(depth, raised) {
-  const { area, top } = halfSection(depth, raised);
-  return Math.sqrt(g * area ** 3 / top);
-}
-
-function normalFlow(depth, raised, slope) {
-  const { area, perimeter } = halfSection(depth, raised);
-  return area * (area / perimeter) ** (2 / 3) * Math.sqrt(slope) / roughness;
-}
-
-function hydraulicState(flow, raised) {
-  const critical = minimumDepth(depth => criticalFlow(depth, raised) >= flow, raised);
-  const normal = minimumDepth(depth => normalFlow(depth, raised, grade) >= flow, raised);
-  const velocityHead = (flow / halfSection(critical, raised).area) ** 2 / (2 * g);
-  return { critical, normal, velocityHead };
+function hydraulicState(flowM3s, bedM) {
+  const state = solveHalfRoundRelief({flowM3s,diameterM:diameter,bedM,slope:grade,roughness});
+  assert(state, 'Native south relief case must have subcrown depth solutions');
+  return state;
 }
 
 const ratedCase = hydraulicState(designFlow, berm);
 const staticAllowance = 180;
-const splash = 20;
 const allowableBoxHead = staticAllowance - splash - setting;
-const requiredHead = (state, loss) => 1000 * (state.critical + (1 + loss) * state.velocityHead);
+const requiredHead = reliefEntranceHeadMm;
 const retainK = 1.5;
 const limitingK = (allowableBoxHead / 1000 - ratedCase.critical) / ratedCase.velocityHead - 1;
 const pressureOnly = south.hydro.raisedBareCarrier.map(c => {
@@ -94,49 +59,12 @@ const pressureOnly = south.hydro.raisedBareCarrier.map(c => {
   };
 });
 
-function submergedCircle(d, y) {
-  const depth = Math.min(d, Math.max(0, y));
-  const radius = d / 2;
-  const angle = 2 * Math.acos(1 - depth / radius);
-  return { depth, area: radius ** 2 * (angle - Math.sin(angle)) / 2,
-    perimeter: radius * angle, width: 2 * Math.sqrt(depth * (d - depth)) };
-}
-
-function reverseAnnulus(d, raised, carrierD = .028) {
-  const lowerCarrier = d / 2 + .018 - carrierD / 2;
-  const lowerBerm = submergedCircle(d, raised);
-  function section(y) {
-    const ring = submergedCircle(d, y);
-    const carrier = submergedCircle(carrierD, y - lowerCarrier);
-    return { area: (ring.area - lowerBerm.area - carrier.area) / 2, width: (ring.width - carrier.width) / 2,
-      perimeter: (ring.perimeter - lowerBerm.perimeter + lowerBerm.width + carrier.perimeter) / 2 +
-        y - raised - carrier.depth };
-  }
-  let low = raised;
-  let high = d * .9999;
-  for (let step = 0; step < 60; step++) {
-    const guess = (low + high) / 2;
-    const { area, width } = section(guess);
-    if (g * area ** 3 / width < designFlow ** 2) low = guess;
-    else high = guess;
-  }
-  const depth = (low + high) / 2;
-  const { area, perimeter } = section(depth);
-  const velocityHead = (designFlow / area) ** 2 / (2 * g);
-  const length = (insideY - south.walls.bores[0][1]) / 1000;
-  const rise = length / 50;
-  const friction = length * (designFlow * roughness / (area * (area / perimeter) ** (2/3))) ** 2;
-  const minimumHead = depth + velocityHead + rise;
-  const designHead = minimumHead + velocityHead + friction;
-  const limit = d - spareAirMM / 1000;
-  return {
-    cleanBoreMM:d*1000, carrierEnvelopeODMM:carrierD*1000, bedObstructionMM:raised*1000,
-    exteriorMouthBlocked: true, reverseRiseMM:round(rise*1000),
-    depthAtInboardLipMM:round(depth*1000), minHeadBeforeLossMM:round(minimumHead*1000),
-    estimatedWallFrictionMM:round(friction*1000), entranceLossK:1,
-    chargedHeadMM:round(designHead*1000), reserveToAirLimitMM:round((limit-designHead)*1000),
-    ventedCrownRetained:designHead <= limit,
-  };
+function reverseAnnulus(diameterM, bedM, carrierM = .028) {
+  const lengthM = (insideY - south.walls.bores[0][1]) / 1000;
+  const state = reverseSleeveFlow({flowM3s:designFlow,diameterM,bedM,carrierM,carrierRiseM,
+    lengthM,riseM:lengthM/50,roughness,entranceLossK:1,spareAirMM});
+  assert(state, 'Native reverse sleeve case must have subcrown critical depth');
+  return state;
 }
 
 const throughWallRupture = {
@@ -163,7 +91,7 @@ const branches = ['utility', 'plant'].map((id, i) => {
   const innerInvert = reliefInner[2] - diameter * 500;
   const lipY = -650;
   const lipZ = reliefOuter[2] - diameter * 500 - (reliefOuter[1] - lipY) * grade;
-  const flowHead = 1000 * (designFlow / ((2 / 3) * .50 * .09 * Math.sqrt(2 * g))) ** (2 / 3);
+  const flowHead = receiverWeirHeadMm({flowM3s:designFlow,widthM:.09,coefficient:receiverWeirCoefficient});
   const receiverCrest = [-35, 65][i];
   const receiverWater = receiverCrest + 32 + flowHead;
   return {
@@ -286,7 +214,7 @@ const hydraulics = {
   headWithK1MM: round(requiredHead(ratedCase,1)), designEntranceCoefficientCeiling: retainK,
   headWithK1p5MM: round(requiredHead(ratedCase,retainK)),
   staticHeadLimitMM: allowableBoxHead, remainingStaticHeadMM: round(allowableBoxHead - requiredHead(ratedCase,retainK)),
-  headLimitK: round(limitingK), criticalLimitAt85mmLmin: round(criticalFlow(diameter - spareAirMM/1000,berm)*60000),
+  headLimitK: round(limitingK), criticalLimitAt85mmLmin: round(criticalHalfRoundFlow(diameter,diameter - spareAirMM/1000,berm)*60000),
   ordinarySleeveAvailableCredit: false, allOutletsBlockedAccepted: false,
   submergedReceiverAccepted: false, unsurveyedCommonSiteFloodAccepted: false,
 };
