@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "node": "PCO-CURRENT-GALLERY",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "90413277-38f7-4e04-bf6b-11ff7b933a0b",
+  "holder": {
+    "kind": "codex",
+    "label": "ovid-current-gallery-registration"
+  },
+  "claimedAt": "2026-11-17T23:25:57.027Z",
+  "heartbeatAt": "2026-11-17T23:25:57.027Z",
+  "expiresAt": "2026-11-18T00:10:57.027Z",
+  "branch": "work/register-current-gallery-2026-11-17",
+  "note": "Owner-directed registry-only bootstrap recorded in issue #1570. Unknown live registration ID temporarily pauses automatic dispatch until merged."
+}
