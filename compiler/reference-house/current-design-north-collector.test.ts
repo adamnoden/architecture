@@ -185,6 +185,51 @@ test('a yaw probe rejects unbound wind patterns, missing sense and supplied base
   }), /yaw/)
 })
 
+test('same-wind collector inputs compile concurrent signed actions without granting suction credit', async () => {
+  const compile = prepareCurrentDesignCompile(readGeorgianDesignSnapshot())
+  const request = await compile.readNorthCollectorCase()
+  assert.ok('collector' in request)
+  const [forward, reverse, independent] = await Promise.all(([['nw-positive', 58], ['ne-positive', 58], ['nw-positive', 8]] as const)
+    .map(([sense, windIndex]) => compile.northCollectorCase({
+      ...request.collector, yawProbe: { windIndex, sense }, deadLoadReplay: { windIndex: 58 },
+    })))
+  assert.ok(forward.status === 'computed-comparison' && forward.yawProbe && forward.deadLoadReplay && forward.fixedBaseActions
+    && reverse.status === 'computed-comparison' && reverse.fixedBaseActions && independent.status === 'computed-comparison')
+  assert.ok(independent.yawProbe && independent.deadLoadReplay)
+  assert.equal(independent.fixedBaseActions, undefined)
+  const { fixedBaseActions: actions, yawProbe, deadLoadReplay } = forward
+  const oppositeStates = reverse.fixedBaseActions.states
+  assert.equal(actions.windIndex, 58)
+  assert.equal(actions.admitted, false)
+  assert.deepEqual(actions.componentOrder, ['N_kN', 'Cx_kNm', 'Cy_kNm', 'Vx_kN', 'Vy_kN'])
+  assert.deepEqual(actions.states.map(state => [state.id, state.additionalGravityFactor]), [
+    ['GQ+wind', 1.35], ['stripped suction+wind', 0], ['retained suction+wind', 0],
+  ])
+  for (const [stateIndex, state] of actions.states.entries()) {
+    const gravity = deadLoadReplay.states[stateIndex]
+    const opposite = oppositeStates[stateIndex]
+    assert.equal(state.heads.length, 52)
+    assert.equal(new Set(state.heads.map(head => head.id)).size, 52)
+    assert.equal(state.releasedPassivePadCount, gravity.releasedPassivePadCount)
+    assert.deepEqual(state.verticalEquilibrium, gravity.candidateVerticalEquilibrium)
+    assert.deepEqual(state.horizontalEquilibrium, yawProbe.probedHorizontalEquilibrium)
+    for (const [index, head] of state.heads.entries()) {
+      const vertical = gravity.heads[index]
+      const horizontal = yawProbe.heads[index]
+      assert.deepEqual([head.id, head.xy], [vertical.id, vertical.xy])
+      assert.deepEqual(head.candidate, [...vertical.candidateVertical, ...horizontal.probedHorizontalKN])
+      assert.deepEqual(head.baseline, [...vertical.baselineVertical, ...horizontal.beforeHorizontalKN])
+      assert.deepEqual(head.delta.slice(0, 3), opposite.heads[index].delta.slice(0, 3))
+      if (state.additionalGravityFactor === 0) assert.deepEqual(head.delta.slice(0, 3), [0, 0, 0])
+      assert.ok(head.delta.slice(3).every((value, axis) => Math.abs(value + opposite.heads[index].delta[axis + 3]) < 1e-8))
+    }
+    assert.ok(state.heads.some(head => head.delta.slice(3).some(value => Math.abs(value) > 1)))
+  }
+  const p12 = actions.states[0].heads.find(head => head.id === 'P12')!
+  assert.ok(Math.abs(p12.candidate[0] - 666.63) < 0.01)
+  assert.ok(p12.delta.slice(3).some(value => Math.abs(value) > 1))
+})
+
 test('the widened splice provides backed reversible key pairs and exposes both web-cut wrenches', async () => {
   const compile = prepareCurrentDesignCompile(readGeorgianDesignSnapshot())
   const request = await compile.readNorthCollectorCase()
@@ -219,6 +264,22 @@ test('the widened splice provides backed reversible key pairs and exposes both w
   assert.notEqual(rootCut.toeSideExternalWrench[3], 0)
   assert.notEqual(rootCut.toeSideExternalWrench[4], 0)
   assert.equal(result.evidence.installedAcceptance, false)
+  assert.deepEqual(result.grossRootWeb.section, {
+    widthMm: 240, thicknessMm: 20, areaMm2: 4800,
+    widthSectionModulusMm3: 192000, thicknessSectionModulusMm3: 16000,
+  })
+  assert.equal(result.grossRootWeb.admitted, false)
+  assert.deepEqual(result.grossRootWeb.cuts.map(cut => [cut.upperYawSign, cut.arm]), [[1, 'x'], [1, 'y'], [-1, 'x'], [-1, 'y']])
+  const [xRoot] = result.grossRootWeb.cuts
+  assert.ok(Math.abs(xRoot.normalStressMPa.maximum - 114.70) < 0.02)
+  assert.ok(Math.abs(xRoot.normalStressMPa.minimum + 106.58) < 0.02)
+  assert.ok(xRoot.shearResultantKN > 19)
+  assert.equal(xRoot.torsionKNm, rootCut.toeSideExternalWrench[3])
+  const reduced = await compile.northCollectorCase({ ...request.collector, dragDemandFactor: 0.5 })
+  assert.equal(reduced.status, 'computed-comparison')
+  for (const [index, cut] of result.grossRootWeb.cuts.entries()) {
+    assert.ok(Math.abs(reduced.grossRootWeb.cuts[index].normalStressMPa.maximum - cut.normalStressMPa.maximum / 2) < 1e-8)
+  }
 })
 
 test('added wall and web mass replays over the real north heads in adverse gravity only', async () => {
