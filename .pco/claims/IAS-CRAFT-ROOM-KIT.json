@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "IAS-CRAFT-ROOM-KIT",
-  "generation": 4,
-  "state": "released",
-  "leaseId": "ae8d08f5-d3e1-43a2-b775-90245a38223f",
+  "generation": 5,
+  "state": "claimed",
+  "leaseId": "1c4221de-640e-4c87-8b54-48e11d047837",
   "holder": {
     "kind": "codex",
-    "label": "total-integration-ias-2026-11-17"
+    "label": "ovid-study-room-kit"
   },
-  "claimedAt": "2026-11-17T08:57:57.967Z",
-  "heartbeatAt": "2026-11-17T10:55:44.772Z",
-  "expiresAt": "2026-11-17T10:55:44.772Z",
-  "branch": "work/total-integration-study-front-elevation-2026-11-17",
+  "claimedAt": "2026-11-17T23:01:17.702Z",
+  "heartbeatAt": "2026-11-17T23:01:17.702Z",
+  "expiresAt": "2026-11-17T23:46:17.702Z",
+  "branch": "work/study-room-kit-integration-2026-11-17",
   "predecessor": {
-    "leaseId": "0b268f4a-0459-44bf-a69b-df1c5e2fd1d9",
-    "generation": 3,
-    "branch": "work/zerg18-mono-sill-study",
-    "pr": 1560,
+    "leaseId": "ae8d08f5-d3e1-43a2-b775-90245a38223f",
+    "generation": 4,
+    "branch": "work/total-integration-study-front-elevation-2026-11-17",
+    "pr": 1565,
     "checkpoint": {
-      "evidence": "PR #1560 2b2c139746346020f1e86dee2d6970aa1d15e3c7; source-bound replays, typecheck, 38 focused controls and rendered drawings",
-      "next": "Choose a qualified continuous support course and coupled dry-wall / protected-edge operation.",
-      "blocker": "15 mm option leaves 64.7 mm before levelling, and the 27 mm dry field needs anchor and air-lap proof."
+      "evidence": "Merged PRs #1561–#1565 through main 4175485d34d134d518438b42c548f6db0e210433. All six #1565 hosted checks passed. The saved Study case regenerates the room kit, wall drawing and nominal front elevation.",
+      "next": "Resolve the floor-course shortfall with a qualified support or a coordinated STR/MAT datum change. Test the continuous dry field, ferrule and loaded panel withdrawal through the emitter, door and wet edge.",
+      "blocker": "The comparison leaves 64.7 mm at nominal stack and 63.7 mm at 1 mm level loss. Bearing, separator, fixing and protective wet-edge evidence remain open."
     }
   },
   "recoverySource": {
-    "leaseId": "0b268f4a-0459-44bf-a69b-df1c5e2fd1d9",
-    "generation": 3,
-    "branch": "work/zerg18-mono-sill-study",
-    "pr": 1560,
+    "leaseId": "ae8d08f5-d3e1-43a2-b775-90245a38223f",
+    "generation": 4,
+    "branch": "work/total-integration-study-front-elevation-2026-11-17",
+    "pr": 1565,
     "checkpoint": {
-      "evidence": "PR #1560 2b2c139746346020f1e86dee2d6970aa1d15e3c7; source-bound replays, typecheck, 38 focused controls and rendered drawings",
-      "next": "Choose a qualified continuous support course and coupled dry-wall / protected-edge operation.",
-      "blocker": "15 mm option leaves 64.7 mm before levelling, and the 27 mm dry field needs anchor and air-lap proof."
+      "evidence": "Merged PRs #1561–#1565 through main 4175485d34d134d518438b42c548f6db0e210433. All six #1565 hosted checks passed. The saved Study case regenerates the room kit, wall drawing and nominal front elevation.",
+      "next": "Resolve the floor-course shortfall with a qualified support or a coordinated STR/MAT datum change. Test the continuous dry field, ferrule and loaded panel withdrawal through the emitter, door and wet edge.",
+      "blocker": "The comparison leaves 64.7 mm at nominal stack and 63.7 mm at 1 mm level loss. Bearing, separator, fixing and protective wet-edge evidence remain open."
     }
-  },
-  "pr": 1565,
-  "checkpoint": {
-    "evidence": "Merged PRs #1561–#1565 through main 4175485d34d134d518438b42c548f6db0e210433. All six #1565 hosted checks passed. The saved Study case regenerates the room kit, wall drawing and nominal front elevation.",
-    "next": "Resolve the floor-course shortfall with a qualified support or a coordinated STR/MAT datum change. Test the continuous dry field, ferrule and loaded panel withdrawal through the emitter, door and wet edge.",
-    "blocker": "The comparison leaves 64.7 mm at nominal stack and 63.7 mm at 1 mm level loss. Bearing, separator, fixing and protective wet-edge evidence remain open."
-  },
-  "releasedAt": "2026-11-17T10:55:44.772Z",
-  "releaseReason": "handoff"
+  }
 }
