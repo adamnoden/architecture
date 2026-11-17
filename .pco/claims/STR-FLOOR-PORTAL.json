@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 37,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "20c1309c-7ef1-40dd-8d07-97a790f27619",
   "holder": {
     "kind": "codex",
     "label": "total-integration-2026-11-17"
   },
   "claimedAt": "2026-11-17T08:56:51.796Z",
-  "heartbeatAt": "2026-11-17T10:41:41.627Z",
-  "expiresAt": "2026-11-17T11:26:41.627Z",
+  "heartbeatAt": "2026-11-17T10:42:14.128Z",
+  "expiresAt": "2026-11-17T10:42:14.128Z",
   "branch": "work/total-integration-splice-dead-load-2026-11-17",
   "predecessor": {
     "leaseId": "b2a9c387-1411-4e08-a2d3-f0f41427d0bf",
@@ -39,5 +39,7 @@
     "evidence": "Merged PRs #1561–#1564 through main 27dac4e974bef538a222e8c4cb514e827acf08d1. Current collector, reversible key cut demands, 52-head yaw and added-gravity cases, and rear-vent comparisons are executable.",
     "next": "Define the actual continuous DPC web-to-block seam, key confinement, weld effective throat, bedding contact and signed engagement. Then run a coupled 52-head, roof and rainwater replay on that geometry.",
     "blocker": "The isolated references do not determine the joined splice capacity or constitutive stiffness, and the vent's roof, site and installation boundaries remain open."
-  }
+  },
+  "releasedAt": "2026-11-17T10:42:14.128Z",
+  "releaseReason": "handoff"
 }
