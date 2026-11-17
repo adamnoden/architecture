@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 41,
-  "state": "released",
-  "leaseId": "0ddabf6c-f6bb-4124-8614-3bf3b1a6c543",
+  "generation": 42,
+  "state": "claimed",
+  "leaseId": "d86e1875-c445-4e78-a6a6-83b4ee5f9044",
   "holder": {
     "kind": "codex",
-    "label": "total-integration-had-2026-11-17"
+    "label": "ovid-inlet-removal"
   },
-  "claimedAt": "2026-11-17T08:57:28.915Z",
-  "heartbeatAt": "2026-11-17T10:42:15.335Z",
-  "expiresAt": "2026-11-17T10:42:15.335Z",
-  "branch": "work/total-integration-splice-dead-load-2026-11-17",
+  "claimedAt": "2026-11-17T22:59:48.025Z",
+  "heartbeatAt": "2026-11-17T22:59:48.025Z",
+  "expiresAt": "2026-11-17T23:44:48.025Z",
+  "branch": "work/inlet-removal-2026-11-17",
   "predecessor": {
-    "leaseId": "fede185e-dbb7-4ae7-b693-a2b65b7445c3",
-    "generation": 40,
-    "branch": "work/zerg18-mono-sill-study",
-    "pr": 1560,
+    "leaseId": "0ddabf6c-f6bb-4124-8614-3bf3b1a6c543",
+    "generation": 41,
+    "branch": "work/total-integration-splice-dead-load-2026-11-17",
+    "pr": 1564,
     "checkpoint": {
-      "evidence": "PR #1560 2b2c139746346020f1e86dee2d6970aa1d15e3c7; source-bound replays, typecheck, 38 focused controls and rendered drawings",
-      "next": "Check the retained sill/jamb thrust and real independent frame, then run rated pressure, loaded handling and fault paths.",
-      "blocker": "Narrow opening fits. A 16 mm stile is a local wind/gravity comparator with no credit for arch restraint."
+      "evidence": "Merged PRs #1561–#1564 through main 27dac4e974bef538a222e8c4cb514e827acf08d1. Current sill wind and blocked-mouth cases, guarded occupied outputs and MRA lineage are executable.",
+      "next": "Develop the separately supported upper disconnect and capture at Z900, then dry-fit the actual branch and sample before pressure/wet-state verification with its sibling sealed.",
+      "blocker": "The retained plant envelope does not admit the R75 lift-off comparison. Actual restraint, withdrawal, capture and rated assembled performance remain unproved."
     }
   },
   "recoverySource": {
-    "leaseId": "fede185e-dbb7-4ae7-b693-a2b65b7445c3",
-    "generation": 40,
-    "branch": "work/zerg18-mono-sill-study",
-    "pr": 1560,
+    "leaseId": "0ddabf6c-f6bb-4124-8614-3bf3b1a6c543",
+    "generation": 41,
+    "branch": "work/total-integration-splice-dead-load-2026-11-17",
+    "pr": 1564,
     "checkpoint": {
-      "evidence": "PR #1560 2b2c139746346020f1e86dee2d6970aa1d15e3c7; source-bound replays, typecheck, 38 focused controls and rendered drawings",
-      "next": "Check the retained sill/jamb thrust and real independent frame, then run rated pressure, loaded handling and fault paths.",
-      "blocker": "Narrow opening fits. A 16 mm stile is a local wind/gravity comparator with no credit for arch restraint."
+      "evidence": "Merged PRs #1561–#1564 through main 27dac4e974bef538a222e8c4cb514e827acf08d1. Current sill wind and blocked-mouth cases, guarded occupied outputs and MRA lineage are executable.",
+      "next": "Develop the separately supported upper disconnect and capture at Z900, then dry-fit the actual branch and sample before pressure/wet-state verification with its sibling sealed.",
+      "blocker": "The retained plant envelope does not admit the R75 lift-off comparison. Actual restraint, withdrawal, capture and rated assembled performance remain unproved."
     }
-  },
-  "pr": 1564,
-  "checkpoint": {
-    "evidence": "Merged PRs #1561–#1564 through main 27dac4e974bef538a222e8c4cb514e827acf08d1. Current sill wind and blocked-mouth cases, guarded occupied outputs and MRA lineage are executable.",
-    "next": "Develop the separately supported upper disconnect and capture at Z900, then dry-fit the actual branch and sample before pressure/wet-state verification with its sibling sealed.",
-    "blocker": "The retained plant envelope does not admit the R75 lift-off comparison. Actual restraint, withdrawal, capture and rated assembled performance remain unproved."
-  },
-  "releasedAt": "2026-11-17T10:42:15.335Z",
-  "releaseReason": "handoff"
+  }
 }
