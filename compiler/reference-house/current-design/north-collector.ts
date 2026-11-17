@@ -3,6 +3,8 @@ import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { sha256SemanticFingerprint } from '../../core/identity.js'
+import type { DrawingScene } from '../../publication-drawing/model.js'
+import { createPlanPaperProjection } from '../../publication-drawing/projection.js'
 import type { CurrentDesignResolution } from './resolve.js'
 import { runStructuralNorthDeadLoad, runStructuralNorthYawProbe, type NorthCornerDeadLoad, type NorthYawProbe } from './structural.js'
 
@@ -35,12 +37,17 @@ interface NorthCollectorCase {
   readonly portAxisXYMm: Point
   readonly dragDemandFactor: number
   readonly remoteMainBarShiftMm?: number
+  readonly chordBendRadiusMm?: number
   readonly yawProbe?: NorthYawProbe
   readonly deadLoadReplay?: { readonly windIndex: number }
 }
 
 interface CollectorComparison {
   readonly sourceSHA256: Readonly<Record<string, string>>
+  readonly geometry: {
+    readonly wallUAndLegVLimitsMm: readonly [Point, Point]
+    readonly receivingUMm: number
+  }
   readonly retainedNWPort: {
     readonly referenceAxisXYmm: Point
     readonly axisXYmm: Point
@@ -49,7 +56,11 @@ interface CollectorComparison {
     readonly levels: readonly { readonly levelZMm: number; readonly minimumClearToFormedEdgeAfter5Mm: number }[]
     readonly admitted: false
   }
-  readonly straightDrag: { readonly requiredBondLengthEachSideMm: number }
+  readonly straightDrag: {
+    readonly requiredBondLengthEachSideMm: number
+    readonly lowerPathsLocalXYZMm: readonly (readonly [Vector3, Vector3])[]
+    readonly upperPathsLocalXYZMm: readonly (readonly [Vector3, Vector3])[]
+  }
   readonly lateralClosure: {
     readonly ownerHistoricalForceKN: number
     readonly comparisonForceKN: number
@@ -69,6 +80,8 @@ interface CollectorComparison {
     readonly records: readonly { readonly field: string; readonly wingReactionKN: number }[]
   }
   readonly stack: {
+    readonly axesInSectionZMm: readonly number[]
+    readonly barDiametersMm: readonly number[]
     readonly uprightScreenClearShared5Mm: { readonly primaryH20: number; readonly secondaryH12: number }
     readonly primaryPlacingComparisonMm: number
     readonly primaryPlacingComparisonMet: boolean
@@ -201,7 +214,7 @@ export function readNorthCollectorCase(resolved: CurrentDesignResolution) {
 
 function admitCase(value: unknown, binding: NonNullable<ReturnType<typeof bindingFor>>): NorthCollectorCase {
   const fields = ['schema', 'planDigest', 'bindingDigest', 'collectorId', 'portAxisXYMm', 'dragDemandFactor']
-  const optional = ['remoteMainBarShiftMm', 'yawProbe', 'deadLoadReplay']
+  const optional = ['remoteMainBarShiftMm', 'chordBendRadiusMm', 'yawProbe', 'deadLoadReplay']
   if (!value || typeof value !== 'object' || Array.isArray(value)
       || fields.some(field => !Object.hasOwn(value, field))
       || Object.keys(value).some(field => !optional.includes(field) && !fields.includes(field))) {
@@ -219,6 +232,10 @@ function admitCase(value: unknown, binding: NonNullable<ReturnType<typeof bindin
   const shift = trial.remoteMainBarShiftMm
   if (Object.hasOwn(trial, 'remoteMainBarShiftMm') && (typeof shift !== 'number' || !Number.isFinite(shift) || shift < 0 || shift > 20)) {
     throw new Error('Remote main bar shift must be between zero and 20 mm')
+  }
+  if (Object.hasOwn(trial, 'chordBendRadiusMm')
+      && (typeof trial.chordBendRadiusMm !== 'number' || !Number.isFinite(trial.chordBendRadiusMm) || trial.chordBendRadiusMm <= 0)) {
+    throw new Error('Use a finite positive chord bend radius in mm')
   }
   if (Object.hasOwn(trial, 'yawProbe')) {
     const probe = trial.yawProbe
@@ -313,6 +330,115 @@ function grossRootWebDemands({ extendedWeb, isolatedKeyLoadPath }: CollectorComp
   }
 }
 
+function compareChordTurn(comparison: CollectorComparison, radiusMm: number) {
+  const axis = comparison.geometry.receivingUMm
+  const toe = comparison.geometry.wallUAndLegVLimitsMm[1][1]
+  const tangent = axis + radiusMm
+  if (tangent > toe) throw new Error('The chord bend radius leaves the local collector legs')
+  const centre = [tangent, tangent] as const
+  const [,, lower, chordZMm, upper] = comparison.stack.axesInSectionZMm
+  const [,, lowerDiameter, diameterMm, upperDiameter] = comparison.stack.barDiametersMm
+  const tailStart = [axis, toe] as const
+  const tailEnd = [toe, axis] as const
+  const arcStart = [axis, tangent] as const
+  const arcEnd = [tangent, axis] as const
+
+  function intersection([a, b]: readonly [Vector3, Vector3]) {
+    const du = b[0] - a[0]
+    const dv = b[1] - a[1]
+    const atU = (axis - a[0]) / du
+    const v = a[1] + atU * dv
+    if (atU >= 0 && atU <= 1 && v >= tangent && v <= toe) return 'u-tail'
+    const atV = (axis - a[1]) / dv
+    const u = a[0] + atV * du
+    if (atV >= 0 && atV <= 1 && u >= tangent && u <= toe) return 'v-tail'
+    const x = a[0] - centre[0]
+    const y = a[1] - centre[1]
+    const lengthSquared = du ** 2 + dv ** 2
+    const projection = x * du + y * dv
+    const discriminant = projection ** 2 - lengthSquared * (x ** 2 + y ** 2 - radiusMm ** 2)
+    if (discriminant < 0) return null
+    const root = Math.sqrt(discriminant)
+    return [(-projection - root) / lengthSquared, (-projection + root) / lengthSquared]
+      .some(t => t >= 0 && t <= 1 && x + t * du <= 0 && y + t * dv <= 0) ? 'bend' : null
+  }
+
+  const [portU, portV, portDiameter] = comparison.retainedNWPort.axisUVAndDiameterMm
+  const radial = Math.hypot(portU - tangent, portV - tangent)
+  const arcDistance = portU <= tangent && portV <= tangent
+    ? Math.abs(radial - radiusMm)
+    : Math.min(Math.hypot(portU - arcStart[0], portV - arcStart[1]), Math.hypot(portU - arcEnd[0], portV - arcEnd[1]))
+  const clampToTail = (coordinate: number) => Math.max(tangent, Math.min(toe, coordinate))
+  const portGapMm = Math.min(arcDistance, Math.hypot(portU - axis, portV - clampToTail(portV)),
+    Math.hypot(portV - axis, portU - clampToTail(portU))) - (portDiameter + diameterMm) / 2
+  const layers = [
+    { side: 'lower', zMm: lower, dragDiameterMm: lowerDiameter, paths: comparison.straightDrag.lowerPathsLocalXYZMm },
+    { side: 'upper', zMm: upper, dragDiameterMm: upperDiameter, paths: comparison.straightDrag.upperPathsLocalXYZMm },
+  ] as const
+  return {
+    schema: 'str-north-collector-chord-turn/1' as const,
+    admitted: false as const,
+    geometry: { chordZMm, diameterMm, radiusMm, arcCentreUVmm: centre, arcStartUVmm: arcStart, arcEndUVmm: arcEnd,
+      tailStartUVmm: tailStart, tailEndUVmm: tailEnd },
+    layers: layers.map(({ side, zMm, dragDiameterMm, paths }) => ({
+      side, zMm, verticalSurfaceGapAtCrossingMm: Math.abs(zMm - chordZMm) - (dragDiameterMm + diameterMm) / 2,
+      crossings: paths.map(intersection),
+    })),
+    nwPort: { portGapMm, overlap: portGapMm < 0 },
+    scope: 'Local centreline fit and bare clearance only. Bend bearing, cover, the full ring and adjoining chord development require separate geometry and checks.',
+  }
+}
+
+function drawChordTurn(comparison: CollectorComparison, turn: ReturnType<typeof compareChordTurn>): DrawingScene {
+  const { arcCentreUVmm: [tangent], arcStartUVmm: arcStart, arcEndUVmm: arcEnd,
+    tailStartUVmm: tailStart, tailEndUVmm: tailEnd, radiusMm, chordZMm } = turn.geometry
+  const [axis, toe] = tailStart
+  const [portU, portV, portDiameter] = comparison.retainedNWPort.axisUVAndDiameterMm
+  const { portGapMm } = turn.nwPort
+  const [heel] = comparison.geometry.wallUAndLegVLimitsMm[1]
+  const scaleDenominator = 10
+  const plan = createPlanPaperProjection({
+    scaleDenominator, modelBounds: { x: heel, y: -toe, width: toe - heel, height: toe - heel },
+    paperOrigin: { x: 12, y: 20 },
+  })
+  const paper = ([u, v]: Point) => plan.point(u, -v)
+  const primitives: DrawingScene['primitives'] = []
+  const trace = (id: string, points: readonly Point[], role: 'cut' | 'primary' | 'secondary', provisional = false) => {
+    for (let i = 1; i < points.length; i++) {
+      primitives.push({ id: `${id}-${i}`, kind: 'line', a: paper(points[i - 1]), b: paper(points[i]), role,
+        ...(provisional ? { dash: 'provisional' as const } : {}) })
+    }
+  }
+  trace('receiving-axes', [[axis, toe], [axis, axis], [toe, axis]], 'secondary', true)
+  const { lowerPathsLocalXYZMm, upperPathsLocalXYZMm } = comparison.straightDrag
+  lowerPathsLocalXYZMm.forEach(([a, b], i) => trace(`drag-lower-${i}`, [[a[0], a[1]], [b[0], b[1]]], 'primary'))
+  upperPathsLocalXYZMm.forEach(([a, b], i) => trace(`drag-upper-${i}`, [[a[0], a[1]], [b[0], b[1]]], 'secondary', true))
+  const bend = Array.from({ length: 35 }, (_, i): Point => {
+    const angle = (i + 1) * Math.PI / 72
+    return [tangent - radiusMm * Math.cos(angle), tangent - radiusMm * Math.sin(angle)]
+  })
+  trace('h28', [tailStart, arcStart, ...bend, arcEnd, tailEnd], 'cut')
+  const portRing = Array.from({ length: 48 }, (_, i): Point => {
+    const angle = i * Math.PI / 24
+    return [portU + portDiameter / 2 * Math.cos(angle), portV + portDiameter / 2 * Math.sin(angle)]
+  })
+  trace('floor-port', [...portRing, portRing[0]], 'primary', true)
+  const size = plan.length(toe - heel)
+  return {
+    viewId: 'STR-NORTH-COLLECTOR-CHORD-TURN', sourceId: id, title: 'North collector chord turn',
+    description: 'Local NW plan with upper and lower H20 bands, H28 chord centreline and formed floor port.',
+    scaleDenominator, widthMm: size + 24, heightMm: size + 47,
+    primitives: [
+      { kind: 'text', id: 'title', x: 12, y: 10, role: 'label', value: 'NW collector · local H28 turn' },
+      ...primitives,
+      { kind: 'text', id: 'bend-radius', x: 12, y: size + 32, role: 'note',
+        value: `Bend R${radiusMm.toFixed(1)} mm · nominal Z${chordZMm} mm` },
+      { kind: 'text', id: 'port-gap', x: 12, y: size + 38, role: 'note',
+        value: `Bare gap at NW port ${portGapMm.toFixed(1)} mm` },
+    ],
+  }
+}
+
 export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: unknown) {
   const binding = bindingFor(resolved)
   if (!binding) return unavailable()
@@ -351,6 +477,7 @@ export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: 
   const fixedBaseActions = yawProbe && deadLoadReplay && yawProbe.windIndex === deadLoadReplay.windIndex
     ? combineFixedBaseActions(yawProbe, deadLoadReplay)
     : undefined
+  const chordTurn = trial.chordBendRadiusMm === undefined ? undefined : compareChordTurn(comparison, trial.chordBendRadiusMm)
   return {
     schema: 'str-north-collector-result/1' as const,
     status: 'computed-comparison' as const,
@@ -363,6 +490,7 @@ export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: 
     ...(yawProbe ? { yawProbe } : {}),
     ...(deadLoadReplay ? { deadLoadReplay } : {}),
     ...(fixedBaseActions ? { fixedBaseActions } : {}),
+    ...(chordTurn ? { chordTurn: { ...chordTurn, drawing: drawChordTurn(comparison, chordTurn) } } : {}),
     evidence: {
       state: isReference ? 'historical-demand-comparison' : 'trial-only',
       installedAcceptance: false as const,
