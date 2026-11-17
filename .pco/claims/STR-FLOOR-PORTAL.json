@@ -9,8 +9,8 @@
     "label": "total-integration-2026-11-17"
   },
   "claimedAt": "2026-11-17T08:56:51.796Z",
-  "heartbeatAt": "2026-11-17T10:14:37.889Z",
-  "expiresAt": "2026-11-17T10:59:37.889Z",
+  "heartbeatAt": "2026-11-17T10:41:41.627Z",
+  "expiresAt": "2026-11-17T11:26:41.627Z",
   "branch": "work/total-integration-splice-dead-load-2026-11-17",
   "predecessor": {
     "leaseId": "b2a9c387-1411-4e08-a2d3-f0f41427d0bf",
@@ -36,8 +36,8 @@
   },
   "pr": 1564,
   "checkpoint": {
-    "evidence": "PR #1564 at cab0bd3c886b605e9303293441a752c33f646058. 463 compiler tests and native outputs pass, including byte parity for all three SVGs and current MRA source.",
-    "next": "Finish exact-head hosted validation, merge after fresh publication preflight and reconcile leases and the project frontier.",
-    "blocker": "The coupled design still needs a buildable splice, independently safe inlet intervention and qualified dry floor support."
+    "evidence": "Merged PRs #1561–#1564 through main 27dac4e974bef538a222e8c4cb514e827acf08d1. Current collector, reversible key cut demands, 52-head yaw and added-gravity cases, and rear-vent comparisons are executable.",
+    "next": "Define the actual continuous DPC web-to-block seam, key confinement, weld effective throat, bedding contact and signed engagement. Then run a coupled 52-head, roof and rainwater replay on that geometry.",
+    "blocker": "The isolated references do not determine the joined splice capacity or constitutive stiffness, and the vent's roof, site and installation boundaries remain open."
   }
 }
