@@ -2,6 +2,7 @@ import { sha256SemanticFingerprint, stableJsonStringify } from '../../../core/id
 import { frontStudyOpening } from '../../construction-bay/opening-inspection.js'
 import { admitSavedDesignDraft } from '../edit.js'
 import type { CurrentDesignResolution } from '../resolve.js'
+import { compileStudyFrontElevation } from './study-front-elevation.js'
 import { compileStudyRoomKitProjection } from './study-room-kit-projection.js'
 
 const { level, hostWallId, openingId } = frontStudyOpening
@@ -69,6 +70,7 @@ export function compileStudyDraftRoomKit(resolved: CurrentDesignResolution, inpu
       schema: studyDraftRoomKitMethod, status: 'CANDIDATE_COMPARISON' as const, source,
       opening: { ...openingCase, occupiedCentreMm: occupied.occupiedCentreMm,
         nominalToOccupiedOffsetMm: occupied.nominalToOccupiedOffsetMm },
+      nominalFrontElevation: compileStudyFrontElevation(source, nativeOpening, changedOpening),
       projection,
     }
   } catch (error) {
