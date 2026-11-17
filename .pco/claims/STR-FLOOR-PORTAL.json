@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 37,
-  "state": "released",
-  "leaseId": "20c1309c-7ef1-40dd-8d07-97a790f27619",
+  "generation": 38,
+  "state": "claimed",
+  "leaseId": "22f8af96-a0db-49bc-90d4-cd08e44fef13",
   "holder": {
     "kind": "codex",
-    "label": "total-integration-2026-11-17"
+    "label": "ovid-structural-continuity"
   },
-  "claimedAt": "2026-11-17T08:56:51.796Z",
-  "heartbeatAt": "2026-11-17T10:42:14.128Z",
-  "expiresAt": "2026-11-17T10:42:14.128Z",
-  "branch": "work/total-integration-splice-dead-load-2026-11-17",
+  "claimedAt": "2026-11-17T22:58:46.069Z",
+  "heartbeatAt": "2026-11-17T22:58:46.069Z",
+  "expiresAt": "2026-11-17T23:43:46.069Z",
+  "branch": "work/collector-connection-qualification-2026-11-17",
   "predecessor": {
-    "leaseId": "b2a9c387-1411-4e08-a2d3-f0f41427d0bf",
-    "generation": 36,
-    "branch": "work/zerg18-mono-sill-study",
-    "pr": 1560,
+    "leaseId": "20c1309c-7ef1-40dd-8d07-97a790f27619",
+    "generation": 37,
+    "branch": "work/total-integration-splice-dead-load-2026-11-17",
+    "pr": 1564,
     "checkpoint": {
-      "evidence": "PR #1560 2b2c139746346020f1e86dee2d6970aa1d15e3c7; source-bound replays, typecheck, 38 focused controls and rendered drawings",
-      "next": "Compare X670/Y9400 rear stack and prove the widened DPC splice and signed 52-head response.",
-      "blocker": "Two diagonal collector layers still intersect the old NW port. Old dry rise and straight tall west stack hit roof members or both trays."
+      "evidence": "Merged PRs #1561–#1564 through main 27dac4e974bef538a222e8c4cb514e827acf08d1. Current collector, reversible key cut demands, 52-head yaw and added-gravity cases, and rear-vent comparisons are executable.",
+      "next": "Define the actual continuous DPC web-to-block seam, key confinement, weld effective throat, bedding contact and signed engagement. Then run a coupled 52-head, roof and rainwater replay on that geometry.",
+      "blocker": "The isolated references do not determine the joined splice capacity or constitutive stiffness, and the vent's roof, site and installation boundaries remain open."
     }
   },
   "recoverySource": {
-    "leaseId": "b2a9c387-1411-4e08-a2d3-f0f41427d0bf",
-    "generation": 36,
-    "branch": "work/zerg18-mono-sill-study",
-    "pr": 1560,
+    "leaseId": "20c1309c-7ef1-40dd-8d07-97a790f27619",
+    "generation": 37,
+    "branch": "work/total-integration-splice-dead-load-2026-11-17",
+    "pr": 1564,
     "checkpoint": {
-      "evidence": "PR #1560 2b2c139746346020f1e86dee2d6970aa1d15e3c7; source-bound replays, typecheck, 38 focused controls and rendered drawings",
-      "next": "Compare X670/Y9400 rear stack and prove the widened DPC splice and signed 52-head response.",
-      "blocker": "Two diagonal collector layers still intersect the old NW port. Old dry rise and straight tall west stack hit roof members or both trays."
+      "evidence": "Merged PRs #1561–#1564 through main 27dac4e974bef538a222e8c4cb514e827acf08d1. Current collector, reversible key cut demands, 52-head yaw and added-gravity cases, and rear-vent comparisons are executable.",
+      "next": "Define the actual continuous DPC web-to-block seam, key confinement, weld effective throat, bedding contact and signed engagement. Then run a coupled 52-head, roof and rainwater replay on that geometry.",
+      "blocker": "The isolated references do not determine the joined splice capacity or constitutive stiffness, and the vent's roof, site and installation boundaries remain open."
     }
-  },
-  "pr": 1564,
-  "checkpoint": {
-    "evidence": "Merged PRs #1561–#1564 through main 27dac4e974bef538a222e8c4cb514e827acf08d1. Current collector, reversible key cut demands, 52-head yaw and added-gravity cases, and rear-vent comparisons are executable.",
-    "next": "Define the actual continuous DPC web-to-block seam, key confinement, weld effective throat, bedding contact and signed engagement. Then run a coupled 52-head, roof and rainwater replay on that geometry.",
-    "blocker": "The isolated references do not determine the joined splice capacity or constitutive stiffness, and the vent's roof, site and installation boundaries remain open."
-  },
-  "releasedAt": "2026-11-17T10:42:14.128Z",
-  "releaseReason": "handoff"
+  }
 }
