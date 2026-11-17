@@ -9,9 +9,9 @@
     "label": "ovid-inlet-removal"
   },
   "claimedAt": "2026-11-17T22:59:48.025Z",
-  "heartbeatAt": "2026-11-17T23:34:20.712Z",
-  "expiresAt": "2026-11-18T00:19:20.712Z",
-  "branch": "work/inlet-removal-2026-11-17",
+  "heartbeatAt": "2026-11-17T23:45:49.321Z",
+  "expiresAt": "2026-11-18T00:30:49.321Z",
+  "branch": "work/study-room-kit-integration-2026-11-17",
   "predecessor": {
     "leaseId": "0ddabf6c-f6bb-4124-8614-3bf3b1a6c543",
     "generation": 41,
@@ -34,10 +34,10 @@
       "blocker": "The retained plant envelope does not admit the R75 lift-off comparison. Actual restraint, withdrawal, capture and rated assembled performance remain unproved."
     }
   },
-  "pr": 1567,
+  "pr": 1568,
   "checkpoint": {
-    "evidence": "PR #1567 at a296c33f36c7147b30eae00961d8b47b479e4061 includes a source-bound continuous carrier draw and the closed-roof rejection. Native HAD, focused compiler and TypeScript checks pass.",
-    "next": "Reconcile the branch with verified main after IAS #1568 and revalidate before merge. Continue with a branch-specific removable roof strip, the matched Z900 disconnect and an independently guided captured draw and first rest.",
-    "blocker": "The existing split collar allows only 2 mm of the 620 mm draw. Physical cover, guide, upper companion and pressure qualification remain open."
+    "evidence": "HAD carrier draw and bound native IAS washer reserved in joint STR/IAS/HAD integration tree 2ba2fc999ca3c037fef0a234c1e87b7617641258. Earlier standalone #1567 remains traceable; active publication is through #1568.",
+    "next": "Validate the joint PR at its exact head and merge with all three live lease preflights. Develop the independently retained roof strip, rated Z900 disconnect and positively supported first rest.",
+    "blocker": "The existing collar permits only 2 mm on the 620 mm straight draw. Actual independent wet closure, supported draw and installed pressure evidence remain open."
   }
 }
