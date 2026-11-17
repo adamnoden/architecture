@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 40,
-  "state": "released",
-  "leaseId": "fede185e-dbb7-4ae7-b693-a2b65b7445c3",
+  "generation": 41,
+  "state": "claimed",
+  "leaseId": "0ddabf6c-f6bb-4124-8614-3bf3b1a6c543",
   "holder": {
-    "kind": "chatgpt",
-    "label": "Zerg Rush monolithic and sub-sill follow-up"
+    "kind": "codex",
+    "label": "total-integration-had-2026-11-17"
   },
-  "claimedAt": "2026-11-16T20:55:51.205Z",
-  "heartbeatAt": "2026-11-16T21:19:04.236Z",
-  "expiresAt": "2026-11-16T21:19:04.236Z",
-  "branch": "work/zerg18-mono-sill-study",
+  "claimedAt": "2026-11-17T08:57:28.915Z",
+  "heartbeatAt": "2026-11-17T08:57:28.915Z",
+  "expiresAt": "2026-11-17T09:42:28.915Z",
+  "branch": "work/total-integration-2026-11-17",
   "predecessor": {
-    "leaseId": "de0f7163-ffeb-44bf-88aa-f504afd488b1",
-    "generation": 39,
-    "branch": "work/zerg18-resolve-interfaces",
-    "pr": 1559,
+    "leaseId": "fede185e-dbb7-4ae7-b693-a2b65b7445c3",
+    "generation": 40,
+    "branch": "work/zerg18-mono-sill-study",
+    "pr": 1560,
     "checkpoint": {
-      "evidence": "PR #1559 702e00299deabe8c60dae75757053c7e3a72d7b7; local typecheck, receipts and focused tests",
-      "next": "Draw a supported sill cassette with separate hydraulic cells and rated dry releases; replay fault routes.",
-      "blocker": "Six-opening structural support, full wet hydro proof and loaded draw remain open."
+      "evidence": "PR #1560 2b2c139746346020f1e86dee2d6970aa1d15e3c7; source-bound replays, typecheck, 38 focused controls and rendered drawings",
+      "next": "Check the retained sill/jamb thrust and real independent frame, then run rated pressure, loaded handling and fault paths.",
+      "blocker": "Narrow opening fits. A 16 mm stile is a local wind/gravity comparator with no credit for arch restraint."
     }
   },
   "recoverySource": {
-    "leaseId": "de0f7163-ffeb-44bf-88aa-f504afd488b1",
-    "generation": 39,
-    "branch": "work/zerg18-resolve-interfaces",
-    "pr": 1559,
+    "leaseId": "fede185e-dbb7-4ae7-b693-a2b65b7445c3",
+    "generation": 40,
+    "branch": "work/zerg18-mono-sill-study",
+    "pr": 1560,
     "checkpoint": {
-      "evidence": "PR #1559 702e00299deabe8c60dae75757053c7e3a72d7b7; local typecheck, receipts and focused tests",
-      "next": "Draw a supported sill cassette with separate hydraulic cells and rated dry releases; replay fault routes.",
-      "blocker": "Six-opening structural support, full wet hydro proof and loaded draw remain open."
+      "evidence": "PR #1560 2b2c139746346020f1e86dee2d6970aa1d15e3c7; source-bound replays, typecheck, 38 focused controls and rendered drawings",
+      "next": "Check the retained sill/jamb thrust and real independent frame, then run rated pressure, loaded handling and fault paths.",
+      "blocker": "Narrow opening fits. A 16 mm stile is a local wind/gravity comparator with no credit for arch restraint."
     }
-  },
-  "pr": 1560,
-  "checkpoint": {
-    "evidence": "PR #1560 2b2c139746346020f1e86dee2d6970aa1d15e3c7; source-bound replays, typecheck, 38 focused controls and rendered drawings",
-    "next": "Check the retained sill/jamb thrust and real independent frame, then run rated pressure, loaded handling and fault paths.",
-    "blocker": "Narrow opening fits. A 16 mm stile is a local wind/gravity comparator with no credit for arch restraint."
-  },
-  "releasedAt": "2026-11-16T21:19:04.236Z",
-  "releaseReason": "handoff"
+  }
 }
