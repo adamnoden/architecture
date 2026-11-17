@@ -9,8 +9,8 @@
     "label": "ovid-study-room-kit"
   },
   "claimedAt": "2026-11-17T23:01:17.702Z",
-  "heartbeatAt": "2026-11-17T23:40:37.746Z",
-  "expiresAt": "2026-11-18T00:25:37.746Z",
+  "heartbeatAt": "2026-11-17T23:54:25.879Z",
+  "expiresAt": "2026-11-18T00:39:25.879Z",
   "branch": "work/study-room-kit-integration-2026-11-17",
   "predecessor": {
     "leaseId": "ae8d08f5-d3e1-43a2-b775-90245a38223f",
@@ -36,7 +36,7 @@
   },
   "pr": 1568,
   "checkpoint": {
-    "evidence": "PR #1568 head 7112990e; local repository health, 462 Reference House tests and both specialised hosted proofs pass",
-    "next": "Wait for Validate pull request, reconcile if main advances and merge exact head. Next: loaded floor renewal and qualified continuous support"
+    "evidence": "Joint PR #1568 at 38c39aac; 19 Study tests and BCR reproduction verified on the combined tree",
+    "next": "Verify hosted joint proof and merge; then continue from the first-rest coverage screen and qualify the substrate and loaded release"
   }
 }
