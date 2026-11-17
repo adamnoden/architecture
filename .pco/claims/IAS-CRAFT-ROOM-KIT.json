@@ -9,8 +9,8 @@
     "label": "total-integration-ias-2026-11-17"
   },
   "claimedAt": "2026-11-17T08:57:57.967Z",
-  "heartbeatAt": "2026-11-17T10:40:41.778Z",
-  "expiresAt": "2026-11-17T11:25:41.778Z",
+  "heartbeatAt": "2026-11-17T10:55:27.561Z",
+  "expiresAt": "2026-11-17T11:40:27.561Z",
   "branch": "work/total-integration-study-front-elevation-2026-11-17",
   "predecessor": {
     "leaseId": "0b268f4a-0459-44bf-a69b-df1c5e2fd1d9",
@@ -36,8 +36,8 @@
   },
   "pr": 1565,
   "checkpoint": {
-    "evidence": "PR #1565 at 62ae88ad511de68f766e4bc8071d05e5e4f09b8f. 464 compiler and 25 focused checks, native byte parity and rendered Study comparison are green.",
-    "next": "Finish exact-head hosted validation and run fresh IAS publication preflight.",
-    "blocker": "Installed support, fastening and loaded room-kit release remain open."
+    "evidence": "Merged PRs #1561–#1565 through main 4175485d34d134d518438b42c548f6db0e210433. All six #1565 hosted checks passed. The saved Study case regenerates the room kit, wall drawing and nominal front elevation.",
+    "next": "Resolve the floor-course shortfall with a qualified support or a coordinated STR/MAT datum change. Test the continuous dry field, ferrule and loaded panel withdrawal through the emitter, door and wet edge.",
+    "blocker": "The comparison leaves 64.7 mm at nominal stack and 63.7 mm at 1 mm level loss. Bearing, separator, fixing and protective wet-edge evidence remain open."
   }
 }
