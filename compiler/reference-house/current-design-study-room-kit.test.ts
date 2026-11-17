@@ -5,6 +5,7 @@ import test from 'node:test'
 import { renderDrawingSceneV2Svg } from '../publication-drawing-v2/svg.js'
 import { compileRenewableOpenings } from './current-design/assemblies/renewable-openings.js'
 import { compileResolvedStudyAssembly } from './current-design/assemblies/study-floor.js'
+import { compileStudyFurnitureMotion } from './current-design/assemblies/study-furniture-motion.js'
 import { compileStudyGroundSupport } from './current-design/assemblies/study-ground-support.js'
 import { compileStudyWallTransition } from './current-design/assemblies/study-wall-transition.js'
 import { drawStudyWallTransition } from './current-design/assemblies/study-wall-transition-views.js'
@@ -103,6 +104,42 @@ test('Study floor access identifies the parts the reversible BCR furniture path 
   assert.deepEqual(highlighted(baseline), bcr.unexposedPartIds)
   assert.deepEqual(highlighted(moved), bcr.unexposedPartIds)
   assert.equal(repitch.furnitureAccessPlan, null)
+})
+
+test('the full Study furniture sequence clears the fixed occupied bay and rejects a missed chair alignment', async () => {
+  const [baseline, repitch] = await Promise.all([
+    current.studyRoomKit(initial), current.studyRoomKit({ ...initial, pitchMm: 450 }),
+  ])
+  const motion = baseline.kit.floor.furnitureMotion
+  assert.ok(motion)
+  assert.equal(motion.state, 'geometry-screen-only')
+  assert.equal(motion.physicalAcceptance, false)
+  assert.equal(motion.reverseUsesSameSweeps, true)
+  assert.deepEqual(motion.conflictingPhaseIds, [])
+  assert.equal(motion.phases.length, 12)
+  const turn = motion.phases.find(phase => phase.type === 'rotation')
+  assert.equal(turn?.type, 'rotation')
+  if (turn?.type !== 'rotation') throw new Error('Missing chair turn')
+  assert.deepEqual(turn.centreXYMm, [2250, 2020])
+  assert.ok(Math.abs(turn.bodyToItemMm - 25.318797646314465) < 1e-9)
+  assert.equal(turn.maximumProspectiveReachMm, 548)
+  const desk = motion.phases.find(phase => phase.id === 'pull-desk-north')
+  assert.equal(desk?.type, 'translation')
+  if (desk?.type !== 'translation') throw new Error('Missing desk shift')
+  assert.equal(desk.minimumItemClearanceMm, 25.5)
+  assert.deepEqual(desk.worker.points, [[1455, 1645], [1455, 2445]])
+  assert.deepEqual(desk.endXYWHMm, [655, 1400, 1600, 700])
+  assert.ok(baseline.furnitureMotionPlan?.primitives.some(item => item.id === 'turn-chair'))
+  assert.equal(repitch.kit.floor.furnitureMotion, null)
+  assert.equal(repitch.furnitureMotionPlan, null)
+
+  const { bayReceiptSha256, turnReceiptSha256 } = motion.basis
+  const adverse = compileStudyFurnitureMotion(bayReceiptSha256, turnReceiptSha256,
+    motion.candidate.deskParkXYXYMm, [2325, 1520, 3225, 2520])
+  assert.equal(adverse.state, 'geometry-conflict')
+  assert.ok(adverse.conflictingPhaseIds.includes('park-turned-chair-east'))
+  assert.throws(() => compileStudyFurnitureMotion('0'.repeat(64), turnReceiptSha256,
+    motion.candidate.deskParkXYXYMm, motion.candidate.chairParkXYXYMm), /source-bound bay receipt/)
 })
 
 test('A 15 mm finish preserves the ground datum but the floating support allowance is still short', async () => {

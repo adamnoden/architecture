@@ -93,6 +93,7 @@ interface CollectorComparison {
       readonly uncoveredByExtendedWebMm2: number
       readonly extendedWebOverhangMm2: number
     }
+    readonly extendedWeb: { readonly thicknessMm: number }
     readonly isolatedKeyLoadPath: {
       readonly status: string
       readonly legacyControl: {
@@ -238,6 +239,80 @@ function admitCase(value: unknown, binding: NonNullable<ReturnType<typeof bindin
   return trial
 }
 
+function combineFixedBaseActions(
+  yaw: ReturnType<typeof runStructuralNorthYawProbe>,
+  gravity: ReturnType<typeof runStructuralNorthDeadLoad>,
+) {
+  if (yaw.windIndex !== gravity.windIndex
+      || sha256SemanticFingerprint(yaw.windProgramme) !== sha256SemanticFingerprint(gravity.windProgramme)) {
+    throw new Error('The north collector replays must share a retained wind state')
+  }
+  return {
+    schema: 'str-north-collector-fixed-base-actions/1' as const,
+    windIndex: yaw.windIndex,
+    windProgramme: yaw.windProgramme,
+    yawSense: yaw.sense,
+    admitted: false as const,
+    componentOrder: ['N_kN', 'Cx_kNm', 'Cy_kNm', 'Vx_kN', 'Vy_kN'] as const,
+    method: yaw.method,
+    states: gravity.states.map(state => {
+      if (state.heads.length !== yaw.heads.length) throw new Error('North collector head sets differ')
+      return {
+        id: state.id,
+        additionalGravityFactor: state.additionalGravityFactor,
+        releasedPassivePadCount: state.releasedPassivePadCount,
+        verticalEquilibrium: state.candidateVerticalEquilibrium,
+        horizontalEquilibrium: yaw.probedHorizontalEquilibrium,
+        heads: state.heads.map((head, index) => {
+          const horizontal = yaw.heads[index]
+          if (head.id !== horizontal.id || head.xy.some((value, axis) => value !== horizontal.xy[axis])) {
+            throw new Error(`North collector action coordinates differ at ${head.id}`)
+          }
+          return {
+            id: head.id,
+            xy: head.xy,
+            baseline: [...head.baselineVertical, ...horizontal.beforeHorizontalKN] as const,
+            candidate: [...head.candidateVertical, ...horizontal.probedHorizontalKN] as const,
+            delta: [...head.deltaVertical, ...horizontal.deltaHorizontalKN] as const,
+          }
+        }),
+      }
+    }),
+    scope: 'Independent vertical and horizontal responses placed in one fixed-base load case. Changes in contact, stiffness and load sharing require an assembled model.',
+  }
+}
+
+function grossRootWebDemands({ extendedWeb, isolatedKeyLoadPath }: CollectorComparison['groundSplice']) {
+  const { widenedWidthMm: widthMm, runs } = isolatedKeyLoadPath
+  const { thicknessMm } = extendedWeb
+  const areaMm2 = widthMm * thicknessMm
+  const widthSectionModulusMm3 = thicknessMm * widthMm ** 2 / 6
+  const thicknessSectionModulusMm3 = widthMm * thicknessMm ** 2 / 6
+  return {
+    schema: 'str-north-collector-gross-root-web/1' as const,
+    section: { widthMm, thicknessMm, areaMm2, widthSectionModulusMm3, thicknessSectionModulusMm3 },
+    cuts: runs.flatMap(run => run.webCutDemands.filter(cut => cut.section === 'root').map(cut => {
+      const [fx, fy, fz, mx, my, mz] = cut.toeSideExternalWrench
+      const alongX = cut.arm === 'x'
+      const directMPa = 1000 * (alongX ? fx : fy) / areaMm2
+      const atPositiveWidthEdgeMPa = 1e6 * (alongX ? -mz : mz) / widthSectionModulusMm3
+      const atTopEdgeMPa = 1e6 * (alongX ? my : -mx) / thicknessSectionModulusMm3
+      const extremeBendingMPa = Math.abs(atPositiveWidthEdgeMPa) + Math.abs(atTopEdgeMPa)
+      return {
+        upperYawSign: run.upperYawSign, arm: cut.arm, originXYZMm: cut.originXYZMm,
+        normalStressMPa: {
+          direct: directMPa, bendingAtPositiveWidthEdge: atPositiveWidthEdgeMPa, bendingAtTopEdge: atTopEdgeMPa,
+          minimum: directMPa - extremeBendingMPa, maximum: directMPa + extremeBendingMPa,
+        },
+        shearResultantKN: Math.hypot(alongX ? fy : fx, fz),
+        torsionKNm: alongX ? mx : my,
+      }
+    })),
+    admitted: false as const,
+    scope: 'Nominal elastic normal stress on the gross solid rectangular root cuts under isolated key yaw. Effective section, combined shear and torsion, toe weld, bedding and stiffness require separate checks.',
+  }
+}
+
 export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: unknown) {
   const binding = bindingFor(resolved)
   if (!binding) return unavailable()
@@ -273,6 +348,9 @@ export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: 
   const deadLoadReplay = trial.deadLoadReplay
     ? runStructuralNorthDeadLoad(resolved, trial.deadLoadReplay.windIndex, deadLoad.corners)
     : undefined
+  const fixedBaseActions = yawProbe && deadLoadReplay && yawProbe.windIndex === deadLoadReplay.windIndex
+    ? combineFixedBaseActions(yawProbe, deadLoadReplay)
+    : undefined
   return {
     schema: 'str-north-collector-result/1' as const,
     status: 'computed-comparison' as const,
@@ -280,9 +358,11 @@ export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: 
       caseDigest: sha256SemanticFingerprint({ ...trial, remoteMainBarShiftMm }) },
     method: { id, path: methodPath, blob: method.blob, receipt: { path: receiptPath, blob: receipt.blob }, inputs },
     comparison,
+    grossRootWeb: grossRootWebDemands(comparison.groundSplice),
     drawingSvg,
     ...(yawProbe ? { yawProbe } : {}),
     ...(deadLoadReplay ? { deadLoadReplay } : {}),
+    ...(fixedBaseActions ? { fixedBaseActions } : {}),
     evidence: {
       state: isReference ? 'historical-demand-comparison' : 'trial-only',
       installedAcceptance: false as const,

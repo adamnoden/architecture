@@ -1,10 +1,11 @@
 import { sha256SemanticFingerprint } from '../../../core/identity.js'
 import { createPlanPaperProjection } from '../../../publication-drawing/projection.js'
-import type { DrawingSceneV2 } from '../../../publication-drawing-v2/model.js'
+import type { DrawingPrimitiveV2, DrawingSceneV2 } from '../../../publication-drawing-v2/model.js'
 import { applyDesignEdit, beginDesignEdit, editBase, type EditOperation } from '../edit.js'
 import { readBoundOccupiedServices } from '../occupied-services.js'
 import type { CurrentDesignResolution } from '../resolve.js'
 import { compileRenewableOpenings } from './renewable-openings.js'
+import { compileStudyFurnitureMotion } from './study-furniture-motion.js'
 import { compileResolvedStudyAssembly } from './study-floor.js'
 import { compileStudyGroundSupport } from './study-ground-support.js'
 import { compileResolvedStudyLinings, layStudySouthPanelStock } from './study-linings.js'
@@ -272,7 +273,7 @@ function handlingScreen(assembly: FloorAssembly, layout: ReturnType<typeof partS
     emitterEdgeRelease: { pickupId: pickup.id, firstRestId: rest.id, workerSweep, panelSweep,
       firstRestBoard, padCentres, padWidthMm, reachMm, edgeReleaseClear,
       restBoardTopMm: 12, pickupLiftMm: 12 + 6 + assembly.section.finishDepthMm, worstRestPadN, restPadDemandMPa: worstRestPadN / padWidthMm ** 2 },
-    held: ['loaded grip and breakaway', 'continuous motion for the full-access furniture arrangement', 'qualified continuous deck and bedding',
+    held: ['loaded grip and breakaway', 'loaded full-access furniture motion', 'qualified continuous deck and bedding',
       'ferrule pull-out and repeated fits', 'seating, acoustic, slip, movement and material performance'],
   } as const
 }
@@ -389,6 +390,10 @@ function deriveStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
   const { opening, wall, grille, grilleKeepOut, nativeWindow } = openingSetout(resolved, request)
   const release = releaseScreen(assembly, parts)
   const handling = handlingScreen(assembly, floorLayout, nativeWindow.furnitureAccess)
+  const movement = nativeWindow.furnitureAccess
+  const furnitureMotion = handling.state === 'withheld' ? null : compileStudyFurnitureMotion(
+    movement.receipt.sha256, movement.turnReceiptSha256, handling.parking.parkedDesk, handling.parking.parkedChair,
+  )
   const { house } = readBoundOccupiedServices(resolved)
   const [doorMin, doorMax] = house.model.studyDoorOperation.rough
   const [, doorAxis] = house.model.studyDoorOperation.hinge
@@ -399,7 +404,7 @@ function deriveStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
     bands: assembly.grid.bands, occupied: assembly.grid.occupied,
     floor: {
       parts, emitterPlinth, jointMm: assembly.section.jointMm, wearingFaceMm: assembly.section.wearFaceMm, beddingMm: assembly.section.beddingTerritoryMm,
-      depthUnassignedWithinFinishMm: assembly.section.finishSupportDepthUnresolvedMm, handling,
+      depthUnassignedWithinFinishMm: assembly.section.finishSupportDepthUnresolvedMm, handling, furnitureMotion,
       groundSupport: compileStudyGroundSupport(resolved, assembly.section, request.groundDeckLevelLossMm ?? 0),
       borderParts: parts.filter(part => part.role === 'border').length, release,
       coverageMm2: parts.reduce((total, part) => total + area(part.box), emitterPlinth.state === 'withheld' ? 0 : emitterPlinth.areaMm2),
@@ -417,7 +422,7 @@ export function compileStudyRoomKit(resolved: CurrentDesignResolution, input: un
   return { kit, wallTransition: compileStudyWallTransition(kit, nativeWindow) }
 }
 
-export function drawStudyRoomKitPlan(kit: StudyRoomKit, view: 'layout' | 'emitter-edge' | 'furniture-access' = 'layout'): DrawingSceneV2 {
+export function drawStudyRoomKitPlan(kit: StudyRoomKit, view: 'layout' | 'emitter-edge' | 'furniture-access' | 'furniture-motion' = 'layout'): DrawingSceneV2 {
   const [x, y] = kit.bands[0]
   const width = Math.max(...kit.bands.map(band => band[2])) - x
   const height = Math.max(...kit.bands.map(band => band[3])) - y
@@ -427,15 +432,34 @@ export function drawStudyRoomKitPlan(kit: StudyRoomKit, view: 'layout' | 'emitte
     const [x0, y0, x1, y1] = box
     return projection.rect({ x: x0, y: y0, width: x1 - x0, height: y1 - y0 })
   }
-  const { release, handling } = kit.floor
+  const { release, handling, furnitureMotion } = kit.floor
   const useParking = view === 'emitter-edge' && handling.state !== 'withheld'
   const bcrParking = view === 'furniture-access' && handling.state !== 'withheld' ? handling.parking.retainedBcrCase : null
+  const motion = view === 'furniture-motion' ? furnitureMotion : null
+  const showFurniture = Boolean(bcrParking || motion)
   const blockedPartIds = new Set(bcrParking?.unexposedPartIds)
+  const parked = motion ? { parkedDesk: motion.candidate.deskParkXYXYMm, parkedChair: motion.candidate.chairParkXYXYMm } : bcrParking
+  const centre = ([left, bottom, width, height]: Box) => projection.point(left + width / 2, bottom + height / 2)
+  const phases = motion?.phases.flatMap<DrawingPrimitiveV2>(phase => {
+    if (phase.type === 'approach') return []
+    if (phase.type === 'rotation') {
+      const [centreX, centreY] = phase.centreXYMm
+      const sides = 64
+      const radius = phase.radiusMm / Math.cos(Math.PI / sides)
+      const ring = Array.from({ length: sides }, (_, index) => {
+        const angle = 2 * Math.PI * index / sides
+        return projection.point(centreX + radius * Math.cos(angle), centreY + radius * Math.sin(angle))
+      })
+      return [{ kind: 'path', id: phase.id, rings: [ring], stroke: 'secondary', dash: 'provisional' }]
+    }
+    return [{ kind: 'line' as const, id: phase.id, role: 'primary' as const, a: centre(phase.startXYWHMm), b: centre(phase.endXYWHMm) }]
+  }) ?? []
   return {
-    viewId: bcrParking ? 'ias-study-room-kit-furniture-access' : useParking ? 'ias-study-room-kit-emitter-edge' : 'ias-study-room-kit-plan',
+    viewId: motion ? 'ias-study-room-kit-furniture-motion' : bcrParking ? 'ias-study-room-kit-furniture-access' : useParking ? 'ias-study-room-kit-emitter-edge' : 'ias-study-room-kit-plan',
     sourceId: kit.source.occupiedHouse, scaleDenominator,
-    title: bcrParking ? 'Study floor access with the BCR furniture route' : useParking ? 'Study emitter-edge renewal and chair parking' : 'Study room-kit layout',
-    description: bcrParking ? 'Dashed original furniture, parked furniture outlines and floor parts that remain covered in both stages.'
+    title: motion ? 'Study staged furniture motion' : bcrParking ? 'Study floor access with the BCR furniture route' : useParking ? 'Study emitter-edge renewal and chair parking' : 'Study room-kit layout',
+    description: motion ? 'Original and parked furniture, straight centreline movements and the whole turning reservation.'
+      : bcrParking ? 'Dashed original furniture, parked furniture outlines and floor parts that remain covered in both stages.'
       : useParking ? 'Candidate emitter-edge pickup and first rest with the chair in its service parking position.'
       : 'Candidate finish field, fabricated borders, rough openings and shown furniture.',
     widthMm: projection.length(width) + 24, heightMm: projection.length(height) + 34,
@@ -451,20 +475,21 @@ export function drawStudyRoomKitPlan(kit: StudyRoomKit, view: 'layout' | 'emitte
       }]),
       ...kit.occupied.map(([id, box]) => ({
         kind: 'rect' as const, id: `occupied:${id}`, ...rect(useParking && id === 'study-chair' ? handling.parking.parkedChair : box),
-        stroke: 'profile' as const, fill: bcrParking && id !== 'service-emitter-study-W' ? 'none' as const : 'context' as const,
-        ...(bcrParking && id !== 'service-emitter-study-W' ? { dash: 'provisional' as const } : {}),
+        stroke: 'profile' as const, fill: showFurniture && id !== 'service-emitter-study-W' ? 'none' as const : 'context' as const,
+        ...(showFurniture && id !== 'service-emitter-study-W' ? { dash: 'provisional' as const } : {}),
       })),
-      ...(bcrParking ? [
-        { kind: 'rect' as const, id: 'parked:study-desk', ...rect(bcrParking.parkedDesk), stroke: 'profile' as const, fill: 'none' as const },
-        { kind: 'rect' as const, id: 'parked:study-chair', ...rect(bcrParking.parkedChair), stroke: 'profile' as const, fill: 'none' as const },
+      ...(parked ? [
+        { kind: 'rect' as const, id: 'parked:study-desk', ...rect(parked.parkedDesk), stroke: 'profile' as const, fill: 'none' as const },
+        { kind: 'rect' as const, id: 'parked:study-chair', ...rect(parked.parkedChair), stroke: 'profile' as const, fill: 'none' as const },
       ] : []),
+      ...phases,
       ...[kit.opening, ...kit.opening.fixedControls].map(opening => ({
         kind: 'line' as const, id: opening.id, role: 'profile' as const,
         a: projection.point(opening.box[0], y), b: projection.point(opening.box[2], y),
       })),
       { kind: 'line', id: kit.door.id, role: 'profile', a: projection.point(kit.door.rough[0], kit.door.axis),
         b: projection.point(kit.door.rough[1], kit.door.axis) },
-      ...(!bcrParking && !useParking && release.state !== 'withheld' ? [
+      ...(!showFurniture && !useParking && release.state !== 'withheld' ? [
         { kind: 'rect' as const, id: 'trial-panel-sweep', stroke: 'primary' as const,
           dash: 'provisional' as const, fill: 'none' as const, ...rect(release.panelSweep) },
         { kind: 'rect' as const, id: 'trial-worker-sweep', stroke: 'secondary' as const,
@@ -477,7 +502,8 @@ export function drawStudyRoomKitPlan(kit: StudyRoomKit, view: 'layout' | 'emitte
           dash: 'provisional' as const, fill: 'none' as const, ...rect(handling.emitterEdgeRelease.workerSweep) },
       ]),
       { kind: 'text', id: 'pitch', x: 12, y: projection.length(height) + 24, role: 'note',
-        value: bcrParking ? `${blockedPartIds.size} parts covered in both BCR stages · ${bcrParking.deskShiftMm} mm desk shift`
+        value: motion ? 'Dashed: starting positions and turning reservation · solid: translation and parking'
+          : bcrParking ? `${blockedPartIds.size} parts covered in both BCR stages · ${bcrParking.deskShiftMm} mm desk shift`
           : useParking ? 'Chair parked · 300 mm lift-out transfer south of pickup'
           : `${kit.request.pitchMm} mm pitch · ${kit.floor.parts.length} parts · ${kit.floor.borderParts} border parts` },
     ],

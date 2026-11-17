@@ -140,6 +140,7 @@ export function compileRenewableOpenings(resolved: CurrentDesignResolution, rece
         occupiedCentreMm: occurrence.centre, nativeWidthMm: occurrence.width, widthMm },
       furnitureAccess: {
         receipt: { path: references.bay, sha256: window.sourceSha256.bay },
+        turnReceiptSha256: window.sourceSha256.window,
         turnedChairReservation: bay.rejectedParkedState.chair,
         chairTranslation: shiftEndpoints(bay.candidate.chairTranslation),
         deskTranslation: shiftEndpoints(bay.candidate.deskTranslation),

@@ -5492,11 +5492,610 @@
         },
         "held": [
           "loaded grip and breakaway",
-          "continuous motion for the full-access furniture arrangement",
+          "loaded full-access furniture motion",
           "qualified continuous deck and bedding",
           "ferrule pull-out and repeated fits",
           "seating, acoustic, slip, movement and material performance"
         ]
+      },
+      "furnitureMotion": {
+        "schema": "ias-study-furniture-native-result/1",
+        "state": "geometry-screen-only",
+        "basis": {
+          "bayReceiptSha256": "d1fb2d528c82df414451701aafbdbb29e01be01453ad848213c87344cb822c8f",
+          "bayInputs": {
+            "project/had/studies/water-replan.json": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+            "project/mat/studies/study-coupled-window.json": "00184ad7c13d39b38a1ac95a82fa462a8d13eea7",
+            "project/mat/studies/study-coupled-window.py": "f2b7c67f565dcc1b79ad7818166bb733635b0386",
+            "project/str/studies/house-corner-rewind.json": "6471d89c213724ec02a26d797c85185beadb25b5",
+            "project/str/studies/reconciled-house-interface.json": "4d3080dc4540ce7218b86f1d27518fbeb1f8e85d",
+            "project/had/studies/current-house.mjs": "58bf1a6248af8268de70d838cce23f249ce30b91",
+            "project/had/studies/inlet-maintenance.mjs": "dee26cb502cfc34f2d3882551e2cfd60488d1bbb",
+            "project/ias/studies/study-door-reveal.json": "58afaada3083a21bf103fe3a658db31807a75e26",
+            "project/ias/studies/study-door-reveal.py": "2c94d9611156fa0e548b384c8431c9620a426a07"
+          },
+          "occupiedHouseInputs": {
+            "project/had/studies/water-replan.json": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+            "project/mat/studies/whole-house-service-baseline.json": "049161ebac29b24e0acc7d8085302fca906fe9d2",
+            "project/mat/studies/service-material-offer.json": "e5686440fa6a3f68387576883b1e0c768e0596bb",
+            "project/mat/studies/tempered-kitchen-air.json": "b18044acaec99caf00eab9a542fff78e510857c9",
+            "project/mat/studies/local-extract-heat-and-store.json": "550709d0e0ca0acff81cb42e502640771f4ac2d0",
+            "project/had/studies/receiver-selection.json": "2def3f7221d55b180cd46392a227b8c56972d03f",
+            "project/mat/studies/whole-house-leakage-duty.json": "5b93cdd9ea1ee7d825fa4596a44caf06431afc49",
+            "project/mat/studies/loggia-soffit.json": "c9c914169547bd42b90cd69512ba1a28d97ca6fe",
+            "project/mat/studies/joined-cooker-system.json": "d04dd78ba3fd040c7abd1aecb94aa9a3ce95d5e0",
+            "project/ias/studies/shared-family-bathing.json": "f89302f9d87708b5314bd68a768c976efcd07b8d",
+            "project/ias/studies/household-water.json": "30c96e79dd3a35c96bb30e355b668c9a710a4060",
+            "project/ias/studies/fitted-wc-schedule.json": "5e20c73409b5406a2de9d7ee7e5853e9302189c8",
+            "project/ias/studies/utility-first-release.json": "be84a64623c8042a002af108a784b8668acd7542",
+            "project/ias/studies/utility-host-revised-route.json": "69e6b0aa5e1847f09c7ac3da3b98eec9bf1d5c0b",
+            "project/str/studies/reconciled-house-interface.json": "4d3080dc4540ce7218b86f1d27518fbeb1f8e85d",
+            "project/str/studies/current-house-arch-movement.json": "05db94a987c7bf45b885c6d02f701b31bcf91740",
+            "project/str/studies/house-corner-rewind.json": "6471d89c213724ec02a26d797c85185beadb25b5"
+          },
+          "turnReceiptPath": "project/mat/studies/study-coupled-window.json",
+          "turnReceiptSha256": "3ebdd8711d96647bccf9a303fd133de148b0e8120fb46aa7957641cc5511071a",
+          "closedDoorPoseXYMm": [
+            2275,
+            2800
+          ]
+        },
+        "candidate": {
+          "deskParkXYXYMm": [
+            655,
+            1400,
+            2255,
+            2100
+          ],
+          "chairParkXYXYMm": [
+            2325,
+            1470,
+            3225,
+            2470
+          ]
+        },
+        "comparisonClearanceMm": 25,
+        "phases": [
+          {
+            "type": "approach",
+            "id": "enter-chair-field",
+            "worker": {
+              "points": [
+                [
+                  2275,
+                  2800
+                ],
+                [
+                  1400,
+                  2645
+                ]
+              ],
+              "radius": 300,
+              "minimumClearance": 32.5,
+              "limitingObstacle": "wall:study-L-north:1",
+              "segment": 0
+            }
+          },
+          {
+            "type": "translation",
+            "id": "shift-chair-east",
+            "item": "study-chair",
+            "startXYWHMm": [
+              900,
+              1400,
+              1000,
+              900
+            ],
+            "endXYWHMm": [
+              1750,
+              1400,
+              1000,
+              900
+            ],
+            "itemSweepXYWHMm": [
+              900,
+              1400,
+              1850,
+              900
+            ],
+            "minimumItemClearanceMm": 100,
+            "itemObstacle": "study-desk",
+            "worker": {
+              "points": [
+                [
+                  1400,
+                  2645
+                ],
+                [
+                  2250,
+                  2645
+                ]
+              ],
+              "radius": 300,
+              "minimumClearance": 152.5276234662366,
+              "limitingObstacle": "wall:study-L-return:0",
+              "segment": 0
+            },
+            "bodyToItemMm": 45,
+            "maximumProspectiveReachMm": 345,
+            "forearmSweepXYWHMm": [
+              1400,
+              2345,
+              850,
+              300
+            ],
+            "forearmClearanceMm": 412.5276234662366,
+            "forearmObstacle": "wall:study-L-return:0",
+            "hand": {
+              "points": [
+                [
+                  1400,
+                  2345
+                ],
+                [
+                  2250,
+                  2345
+                ]
+              ],
+              "radius": 45,
+              "minimumClearance": 500.69336627816904,
+              "limitingObstacle": "wall:study-L-return:0",
+              "segment": 0
+            },
+            "forearmToItemMm": 5
+          },
+          {
+            "type": "approach",
+            "id": "move-to-west-flank",
+            "worker": {
+              "points": [
+                [
+                  2250,
+                  2645
+                ],
+                [
+                  1405,
+                  2645
+                ],
+                [
+                  1405,
+                  1850
+                ]
+              ],
+              "radius": 300,
+              "minimumClearance": 45,
+              "limitingObstacle": "study-chair",
+              "segment": 0
+            }
+          },
+          {
+            "type": "translation",
+            "id": "shift-chair-north",
+            "item": "study-chair",
+            "startXYWHMm": [
+              1750,
+              1400,
+              1000,
+              900
+            ],
+            "endXYWHMm": [
+              1750,
+              1570,
+              1000,
+              900
+            ],
+            "itemSweepXYWHMm": [
+              1750,
+              1400,
+              1000,
+              1070
+            ],
+            "minimumItemClearanceMm": 93.70832406995656,
+            "itemObstacle": "wall:study-cloak-north:0",
+            "worker": {
+              "points": [
+                [
+                  1405,
+                  1850
+                ],
+                [
+                  1405,
+                  2020
+                ]
+              ],
+              "radius": 300,
+              "minimumClearance": 250,
+              "limitingObstacle": "study-desk",
+              "segment": 0
+            },
+            "bodyToItemMm": 45,
+            "maximumProspectiveReachMm": 345,
+            "forearmSweepXYWHMm": [
+              1405,
+              1850,
+              300,
+              170
+            ],
+            "forearmClearanceMm": 510,
+            "forearmObstacle": "study-desk",
+            "hand": {
+              "points": [
+                [
+                  1705,
+                  1850
+                ],
+                [
+                  1705,
+                  2020
+                ]
+              ],
+              "radius": 45,
+              "minimumClearance": 505,
+              "limitingObstacle": "study-desk",
+              "segment": 0
+            },
+            "forearmToItemMm": 5
+          },
+          {
+            "type": "approach",
+            "id": "step-back-for-turn",
+            "worker": {
+              "points": [
+                [
+                  1405,
+                  2020
+                ],
+                [
+                  1252,
+                  2020
+                ]
+              ],
+              "radius": 300,
+              "minimumClearance": 45,
+              "limitingObstacle": "study-chair",
+              "segment": 0
+            }
+          },
+          {
+            "type": "rotation",
+            "id": "turn-chair",
+            "item": "study-chair",
+            "centreXYMm": [
+              2250,
+              2020
+            ],
+            "radiusMm": 672.6812023536855,
+            "angleDeg": 90,
+            "startXYWHMm": [
+              1750,
+              1570,
+              1000,
+              900
+            ],
+            "endXYWHMm": [
+              1800,
+              1520,
+              900,
+              1000
+            ],
+            "worker": {
+              "points": [
+                [
+                  1252,
+                  2020
+                ],
+                [
+                  1252,
+                  2020
+                ]
+              ],
+              "radius": 300,
+              "minimumClearance": 322.5,
+              "limitingObstacle": "service-emitter-study-W",
+              "segment": 0
+            },
+            "minimumItemClearanceMm": 47.318797646314465,
+            "itemObstacle": "study-desk",
+            "bodyToItemMm": 25.318797646314465,
+            "maximumProspectiveReachMm": 548,
+            "handCorridor": {
+              "points": [
+                [
+                  1252,
+                  2020
+                ],
+                [
+                  1800,
+                  2020
+                ]
+              ],
+              "radius": 45,
+              "minimumClearance": 577.5,
+              "limitingObstacle": "service-emitter-study-W",
+              "segment": 0
+            }
+          },
+          {
+            "type": "approach",
+            "id": "return-to-west-flank",
+            "worker": {
+              "points": [
+                [
+                  1252,
+                  2020
+                ],
+                [
+                  1455,
+                  2020
+                ]
+              ],
+              "radius": 300,
+              "minimumClearance": 45,
+              "limitingObstacle": "study-chair",
+              "segment": 0
+            }
+          },
+          {
+            "type": "translation",
+            "id": "align-turned-chair-south",
+            "item": "study-chair",
+            "startXYWHMm": [
+              1800,
+              1520,
+              900,
+              1000
+            ],
+            "endXYWHMm": [
+              1800,
+              1470,
+              900,
+              1000
+            ],
+            "itemSweepXYWHMm": [
+              1800,
+              1470,
+              900,
+              1050
+            ],
+            "minimumItemClearanceMm": 118.45357740482133,
+            "itemObstacle": "wall:study-cloak-north:0",
+            "worker": {
+              "points": [
+                [
+                  1455,
+                  2020
+                ],
+                [
+                  1455,
+                  1970
+                ]
+              ],
+              "radius": 300,
+              "minimumClearance": 370,
+              "limitingObstacle": "study-desk",
+              "segment": 0
+            },
+            "bodyToItemMm": 45,
+            "maximumProspectiveReachMm": 345,
+            "forearmSweepXYWHMm": [
+              1455,
+              1970,
+              300,
+              50
+            ],
+            "forearmClearanceMm": 630,
+            "forearmObstacle": "study-desk",
+            "hand": {
+              "points": [
+                [
+                  1755,
+                  2020
+                ],
+                [
+                  1755,
+                  1970
+                ]
+              ],
+              "radius": 45,
+              "minimumClearance": 625,
+              "limitingObstacle": "study-desk",
+              "segment": 0
+            },
+            "forearmToItemMm": 5
+          },
+          {
+            "type": "translation",
+            "id": "park-turned-chair-east",
+            "item": "study-chair",
+            "startXYWHMm": [
+              1800,
+              1470,
+              900,
+              1000
+            ],
+            "endXYWHMm": [
+              2325,
+              1470,
+              900,
+              1000
+            ],
+            "itemSweepXYWHMm": [
+              1800,
+              1470,
+              1425,
+              1000
+            ],
+            "minimumItemClearanceMm": 60,
+            "itemObstacle": "wall:cloak-west:0",
+            "worker": {
+              "points": [
+                [
+                  1455,
+                  1970
+                ],
+                [
+                  1980,
+                  1970
+                ]
+              ],
+              "radius": 300,
+              "minimumClearance": 370,
+              "limitingObstacle": "study-desk",
+              "segment": 0
+            },
+            "bodyToItemMm": 45,
+            "maximumProspectiveReachMm": 345,
+            "forearmSweepXYWHMm": [
+              1455,
+              1970,
+              825,
+              0
+            ],
+            "forearmClearanceMm": 630,
+            "forearmObstacle": "study-desk",
+            "hand": {
+              "points": [
+                [
+                  1755,
+                  1970
+                ],
+                [
+                  2280,
+                  1970
+                ]
+              ],
+              "radius": 45,
+              "minimumClearance": 625,
+              "limitingObstacle": "study-desk",
+              "segment": 0
+            },
+            "forearmToItemMm": 5
+          },
+          {
+            "type": "approach",
+            "id": "approach-desk-north-face",
+            "worker": {
+              "points": [
+                [
+                  1980,
+                  1970
+                ],
+                [
+                  1455,
+                  1645
+                ]
+              ],
+              "radius": 300,
+              "minimumClearance": 45,
+              "limitingObstacle": "study-chair",
+              "segment": 0
+            }
+          },
+          {
+            "type": "translation",
+            "id": "pull-desk-north",
+            "item": "study-desk",
+            "startXYWHMm": [
+              655,
+              600,
+              1600,
+              700
+            ],
+            "endXYWHMm": [
+              655,
+              1400,
+              1600,
+              700
+            ],
+            "itemSweepXYWHMm": [
+              655,
+              600,
+              1600,
+              1500
+            ],
+            "minimumItemClearanceMm": 25.5,
+            "itemObstacle": "service-emitter-study-W",
+            "worker": {
+              "points": [
+                [
+                  1455,
+                  1645
+                ],
+                [
+                  1455,
+                  2445
+                ]
+              ],
+              "radius": 300,
+              "minimumClearance": 392.1388950203565,
+              "limitingObstacle": "study-frame:0",
+              "segment": 0
+            },
+            "bodyToItemMm": 45,
+            "maximumProspectiveReachMm": 345,
+            "forearmSweepXYWHMm": [
+              1455,
+              1345,
+              0,
+              1100
+            ],
+            "forearmClearanceMm": 652.1388950203565,
+            "forearmObstacle": "study-frame:0",
+            "hand": {
+              "points": [
+                [
+                  1455,
+                  1345
+                ],
+                [
+                  1455,
+                  2145
+                ]
+              ],
+              "radius": 45,
+              "minimumClearance": 780.5,
+              "limitingObstacle": "service-emitter-study-W",
+              "segment": 0
+            },
+            "forearmToItemMm": 5
+          },
+          {
+            "type": "approach",
+            "id": "return-to-closed-door",
+            "worker": {
+              "points": [
+                [
+                  1455,
+                  2445
+                ],
+                [
+                  1455,
+                  2800
+                ],
+                [
+                  2275,
+                  2800
+                ]
+              ],
+              "radius": 300,
+              "minimumClearance": 32.5,
+              "limitingObstacle": "study-frame:1",
+              "segment": 1
+            }
+          }
+        ],
+        "conflictingPhaseIds": [],
+        "reverseUsesSameSweeps": true,
+        "physicalAcceptance": false,
+        "held": [
+          "Actual furniture gripping, mass, wheels or sliding supports, and moving forces",
+          "A restrained turn and repeatable compliant operation after setting",
+          "Maintained door operation and handling of floor parts from a supported deck"
+        ],
+        "source": {
+          "project/ias/studies/study-furniture-motion.py": "ded87a912a3d5187c7310dbc8dc9589ec5a5a225a38ef754f8c656588a13e36d",
+          "project/bcr/studies/bay-interface-study.py": "7fea8b8b1b8e66a6f52ae8a6124eda84f8759a9c42c3ae31644296679f4e3e7c"
+        }
       },
       "groundSupport": {
         "state": "geometry-comparison",
@@ -6464,7 +7063,7 @@
       },
       "held": [
         "loaded grip and breakaway",
-        "continuous motion for the full-access furniture arrangement",
+        "loaded full-access furniture motion",
         "qualified continuous deck and bedding",
         "ferrule pull-out and repeated fits",
         "seating, acoustic, slip, movement and material performance"

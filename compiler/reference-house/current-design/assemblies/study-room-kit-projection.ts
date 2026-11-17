@@ -9,6 +9,7 @@ export function compileStudyRoomKitProjection(resolved: CurrentDesignResolution,
     kit, wallTransition, wallTransitionSvg: drawStudyWallTransition(wallTransition),
     plan: drawStudyRoomKitPlan(kit),
     furnitureAccessPlan: kit.floor.handling.state === 'withheld' ? null : drawStudyRoomKitPlan(kit, 'furniture-access'),
+    furnitureMotionPlan: kit.floor.furnitureMotion?.state === 'geometry-screen-only' ? drawStudyRoomKitPlan(kit, 'furniture-motion') : null,
     wallElevation: drawStudyPanellingElevation(kit),
   }
 }
