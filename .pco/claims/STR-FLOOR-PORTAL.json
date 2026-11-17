@@ -9,8 +9,8 @@
     "label": "ovid-structural-continuity"
   },
   "claimedAt": "2026-11-17T22:58:46.069Z",
-  "heartbeatAt": "2026-11-17T22:58:46.069Z",
-  "expiresAt": "2026-11-17T23:43:46.069Z",
+  "heartbeatAt": "2026-11-17T23:05:41.727Z",
+  "expiresAt": "2026-11-17T23:50:41.727Z",
   "branch": "work/collector-connection-qualification-2026-11-17",
   "predecessor": {
     "leaseId": "20c1309c-7ef1-40dd-8d07-97a790f27619",
@@ -33,5 +33,10 @@
       "next": "Define the actual continuous DPC web-to-block seam, key confinement, weld effective throat, bedding contact and signed engagement. Then run a coupled 52-head, roof and rainwater replay on that geometry.",
       "blocker": "The isolated references do not determine the joined splice capacity or constitutive stiffness, and the vent's roof, site and installation boundaries remain open."
     }
+  },
+  "checkpoint": {
+    "evidence": "PR #1566 at 21e4e4aaf6ecb1cb034f860f2ddc017a05d3c166; nine collector tests, source coverage, projection witnesses and typecheck passed",
+    "next": "Verify exact-head hosted checks and merge; continue with splice fabrication and bedding",
+    "blocker": "Hosted validation in progress"
   }
 }
