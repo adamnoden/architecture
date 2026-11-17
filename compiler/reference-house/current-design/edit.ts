@@ -90,13 +90,16 @@ export function saveDesignDraft(state: EditorState) {
 }
 
 export function loadDesignDraft(json: string, sessionId: string) {
-  const saved = JSON.parse(json)
+  return newSession(admitSavedDesignDraft(JSON.parse(json)), sessionId)
+}
+
+export function admitSavedDesignDraft(saved: unknown) {
   if (!isRecord(saved, ['schema', 'design']) || saved.schema !== 'current-design-draft/1') {
     throw new TypeError('Unknown saved draft format')
   }
   const design = admitDesignSnapshot(saved.design)
   if (design.source.state !== 'candidate') throw new TypeError('Saved drafts require candidate scope')
-  return newSession(design, sessionId)
+  return design
 }
 
 export function editBase({ sessionId, revision }: EditBase): EditBase {

@@ -24,7 +24,7 @@ export function deriveSouthInletSillInsert(input: SillInsertInputs, trial: SillI
   readonly opening: Aperture
   readonly frame: Aperture & { readonly innerHeaderZ: Range; readonly eastSideX: Range; readonly bearingAxesX: Range }
   readonly bores: readonly { readonly id: string; readonly axis: Axis; readonly formedReserveODMM: number; readonly apertureAfter10: Clearance }[]
-  readonly vents: readonly { readonly axis: Axis; readonly outerDiameterMM: number; readonly apertureAfter5: Clearance;
+  readonly vents: readonly { readonly axis: Axis; readonly outerDiameterMM: number; readonly clearMM: number; readonly apertureAfter5: Clearance;
     readonly mainBoreReserveAfter5MM: number; readonly freeCoreAboveWetStageGrossMM: number }[]
   readonly loads: {
     readonly idealSillRhsMM: readonly [number, number, number]

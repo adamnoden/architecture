@@ -22,6 +22,8 @@ STATIONS_V = (338, 440, 542, 644, 746)
 EDGE_V = (-70, 930)
 RECEIVER_U = 170
 BAR_DIAMETER = 20
+REFERENCE_MAIN_BAR_SHIFT = 15
+MAXIMUM_MAIN_BAR_SHIFT = 20
 FORM_SETTING = 5
 COVER = 25
 PLACING = 21
@@ -78,7 +80,8 @@ def finite_number(value):
 
 
 def native_request(value, retained_port, cabinet):
-    if not isinstance(value, dict) or set(value) != {'schema', 'portAxisXYMm', 'dragDemandFactor'}:
+    required = {'schema', 'portAxisXYMm', 'dragDemandFactor'}
+    if not isinstance(value, dict) or not required <= set(value) <= required | {'remoteMainBarShiftMm'}:
         raise ValueError('Expected an explicit versioned north collector case')
     if value['schema'] != 'str-north-collector-native-case/1':
         raise ValueError('Unknown north collector case schema')
@@ -91,7 +94,126 @@ def native_request(value, retained_port, cabinet):
     radius = retained_port[2]/2
     if not (x+radius <= axis[0] <= x+width-radius and y+radius <= axis[1] <= y+depth-radius):
         raise ValueError('The formed port must fit entirely inside the source rear cabinet in this comparison')
-    return axis, factor
+    shift = value.get('remoteMainBarShiftMm', REFERENCE_MAIN_BAR_SHIFT)
+    if not finite_number(shift) or not 0 <= shift <= MAXIMUM_MAIN_BAR_SHIFT:
+        raise ValueError('Remote main bar shift must be between zero and 20 mm')
+    return axis, factor, shift
+
+
+def main_bar_axes(outer, shift):
+    dpc = outer['DPC']
+    corner_block = next(block for block in dpc['threeThickBlocksPlanLocal'] if block[:2] == [0, 0])
+    offset = corner_block[2]/2
+    toe_blocks = [block for block in dpc['threeThickBlocksPlanLocal'] if block is not corner_block]
+    toe_start = min(max(block[:2]) for block in toe_blocks)
+    axes = []
+    for x, y in outer['primaryBarXY']:
+        legacy = (x-offset, y-offset)
+        upper = (legacy[0] + (shift if y >= toe_start else 0), legacy[1] + (shift if x >= toe_start else 0))
+        axes.append({'id': f'H20-{x:g}-{y:g}', 'legacyBlindBoreXYMm': legacy, 'upperBarXYMm': upper,
+                     'axisOffsetMm': hypot(upper[0]-legacy[0], upper[1]-legacy[1])})
+    return axes
+
+
+def rectangle_area(rectangles, support=()):
+    all_rectangles = [*rectangles, *support]
+    cuts_x = sorted({coordinate for left, _, right, _ in all_rectangles for coordinate in (left, right)})
+    cuts_y = sorted({coordinate for _, bottom, _, top in all_rectangles for coordinate in (bottom, top)})
+
+    def contains(rects, x, y):
+        return any(left < x < right and bottom < y < top for left, bottom, right, top in rects)
+
+    area = 0
+    for x0, x1 in zip(cuts_x, cuts_x[1:]):
+        for y0, y1 in zip(cuts_y, cuts_y[1:]):
+            x, y = (x0+x1)/2, (y0+y1)/2
+            if contains(rectangles, x, y) and not contains(support, x, y):
+                area += (x1-x0)*(y1-y0)
+    return area
+
+
+def ground_splice(outer, grid, axes, shift, moment):
+    dpc = outer['DPC']
+    blocks = dpc['threeThickBlocksPlanLocal']
+    size = next((width, height) for x, y, width, height in blocks if (x, y) == (0, 0))
+    old_half = size[0]/2
+    assert size[0] == size[1]
+    end = max(x+width for x, _, width, _ in blocks)-old_half
+    assert end == max(y+height for _, y, _, height in blocks)-old_half == EDGE_V[1]
+
+    def body(inside):
+        return [(-old_half, -old_half, inside, end), (-old_half, -old_half, end, inside)]
+
+    old, widened = body(old_half), body(RECEIVER_U)
+    extension = [(old_half, -old_half, RECEIVER_U, end), (-old_half, old_half, end, RECEIVER_U)]
+    extended_plate = old + extension
+    old_area = rectangle_area(old)
+    wide_area = rectangle_area(widened)
+    uncovered = rectangle_area(widened, old)
+    head_by_id = {head['id']:head for head in grid['heads']}
+    receiving = []
+    for ids, names, x_sign in (
+        (('P07', 'P08', 'P09'), ('outer-W', 'outer-NW'), 1),
+        (('P10', 'P11', 'P12'), ('outer-E', 'outer-NE'), -1),
+    ):
+        x, y = head_by_id[ids[0]]['xy']
+        expanded = []
+        for u0, v0, u1, v1 in widened:
+            x0, x1 = sorted((x+x_sign*u0, x+x_sign*u1))
+            expanded.append((x0-FORM_SETTING, y-v1-FORM_SETTING, x1+FORM_SETTING, y-v0+FORM_SETTING))
+        seat = []
+        receiving_levels = set()
+        for name in names:
+            girder = grid['girders'][name]
+            low, high = girder['extent']
+            centre, half = girder['datum'], girder['width']/2
+            seat.append((low, centre-half, high, centre+half) if girder['axis'] == 'x' else
+                        (centre-half, low, centre+half, high))
+            receiving_levels.add(girder['z'][1])
+        for id in ids:
+            head = head_by_id[id]
+            cx, cy = head['xy']
+            half_x, half_y = (dimension/2 for dimension in head['capXY'])
+            seat.append((cx-half_x, cy-half_y, cx+half_x, cy+half_y))
+            receiving_levels.add(head['capZ'][1])
+        if len(receiving_levels) != 1:
+            raise ValueError('The north girder/cap projection needs a common receiving level')
+        level = receiving_levels.pop()
+        receiving.append({'heads': ids, 'girders': names, 'receivingLevelZMm': level,
+                          'uncoveredWithSettingMm2': rectangle_area(expanded, seat),
+                          'verticalGapToWebUndersideMm': dpc['connectingContinuousWebZ'][0]-level,
+                          'verticalGapToBlockUndersideMm': dpc['thickBlockZ'][0]-level})
+
+    block_height = dpc['thickBlockZ'][1]-dpc['thickBlockZ'][0]
+    web_thickness = dpc['connectingContinuousWebZ'][1]-dpc['connectingContinuousWebZ'][0]
+    retained_stock_density = dpc['solid140ControlKgPerPier']/(old_area*block_height)
+    extra_stock = uncovered*web_thickness*retained_stock_density
+    corner_centroid = (old_half, old_half)
+    key_arms = sorted(hypot(x+width/2-corner_centroid[0], y+height/2-corner_centroid[1])
+                      for x,y,width,height in blocks if (x,y) != (0,0))
+    lower_uncut = dpc['thickBlockZ'][0]+dpc['blindDrillDepthMax']
+    upper_uncut = dpc['thickBlockZ'][1]-dpc['blindDrillDepthMax']
+    assert lower_uncut <= dpc['connectingContinuousWebZ'][0] < dpc['connectingContinuousWebZ'][1] <= upper_uncut
+    return {
+        'remoteMainBarShiftMm': shift,
+        'knownMainBarAxes': axes,
+        'legacyBoreAlignment': {'comparisonBudgetMm': 1,
+                                'axesOutsideBudgetCount': sum(row['axisOffsetMm'] > 1 for row in axes),
+                                'maximumAxisOffsetMm': max(row['axisOffsetMm'] for row in axes)},
+        'footprint': {'legacyMetalMm2': old_area, 'widenedBodyMm2': wide_area,
+                      'uncoveredByLegacyMetalMm2': uncovered,
+                      'uncoveredByExtendedWebMm2': rectangle_area(widened, extended_plate),
+                      'extendedWebOverhangMm2': rectangle_area(extended_plate, widened)},
+        'extendedWeb': {'thicknessMm': web_thickness, 'zMm': dpc['connectingContinuousWebZ'],
+                        'retainedBlindBlockUncutCoreMm': dpc['remainingUncutCore'],
+                        'retainedBlindBlockUncutCoreZMm': [lower_uncut, upper_uncut],
+                        'extraUnboredStockKgPerCorner': extra_stock,
+                        'totalUnboredStockKgPerCorner': dpc['netUnboredStockKgPerPier']+extra_stock},
+        'receivingPlan': receiving,
+        'isolatedPositiveKeyCouple': {'historicalYawAboutU0KNm': moment, 'leverArmsMm': key_arms,
+                                     'forceIfOneCoupleTakesWholeYawKN': [moment*1000/arm for arm in key_arms]},
+        'scope': 'Geometry and isolated force demand only. Bearing spread, confinement, keys, bore strength, welds, moisture perimeter and coupled signed responses remain open.',
+    }
 
 
 def compare_collector(source_data, source_hashes, request=None):
@@ -99,7 +221,8 @@ def compare_collector(source_data, source_hashes, request=None):
     retained_port = services['rewinds']['rearSource27']['retainedFloorPort']
     port_diameter = retained_port[2]
     cabinet = house['upperFurniture']['rear-cabinet']
-    port_axis_xy, factor = native_request(request, retained_port, cabinet) if request is not None else (retained_port[:2], 1)
+    port_axis_xy, factor, shift = (native_request(request, retained_port, cabinet) if request is not None
+                                   else (retained_port[:2], 1, REFERENCE_MAIN_BAR_SHIFT))
     corner_x, corner_y = next(head['xy'] for head in grid['heads'] if head['id'] == 'P07')
     port_u, port_v = port_axis_xy[0]-corner_x, corner_y-port_axis_xy[1]
 
@@ -123,23 +246,20 @@ def compare_collector(source_data, source_hashes, request=None):
         return [((a[1], a[0], a[2]), (b[1], b[0], b[2])) for a, b in lines] if swap else lines
 
     def vertical(points):
-        both_wings = set(points) | {(v,u) for u,v in points}
-        return [((u,v,3000),(u,v,3600)) for u,v in sorted(both_wings)]
+        return [((u,v,3000),(u,v,3600)) for u,v in points]
 
     lower_z, upper_z = AXES_Z[2], AXES_Z[4]
     west_paths = drag(1, z=lower_z)+drag(-1, z=upper_z)
     lower_paths = drag(1, z=lower_z)+drag(-1, True, lower_z)
     upper_paths = drag(-1, z=upper_z)+drag(1, True, upper_z)
-    primary = [
-        (u-70+(15 if v>800 else 0), v-70)
-        for u,v in ground['outer']['primaryBarXY'] if u<140
-    ]
+    axes = main_bar_axes(ground['outer'], shift)
+    primary = [row['upperBarXYMm'] for row in axes]
     secondary = [(u,v) for u in (-12,42) for v in (280,530)]
     own_clear = min(b-a for a,b in zip(STATIONS_V, STATIONS_V[1:]))*cos(ANGLE)-BAR_DIAMETER-FORM_SETTING
     mixed = minimum_gap(drag(1), drag(-1, True), BAR_DIAMETER)
     upright = {
         'primaryH20': minimum_gap(west_paths, vertical(primary), 20),
-        'secondaryH12': minimum_gap(west_paths, vertical(secondary), 16),
+        'secondaryH12': minimum_gap(west_paths, vertical(secondary+[(v,u) for u,v in secondary]), 16),
     }
     stack_top = AXES_Z[-1]+DIAMETERS[-1]/2+COVER+FORM_SETTING
 
@@ -180,6 +300,7 @@ def compare_collector(source_data, source_hashes, request=None):
         row['nearestRawPlanReserveMm'] + row['wingAxisSpanMm'][1]-row['wingAxisSpanMm'][0]-EDGE_V[1]
         for row in collar['cornerCandidate']['allNearestApertures'].values()
     )
+    yaw_at_ground = force*RECEIVER_U/1000
     return {
         'status':'Geometric and static monolithic redesign screen. Coupled wall, corner cage and splice loads unadmitted.',
         'sourceSHA256':source_hashes,
@@ -205,6 +326,8 @@ def compare_collector(source_data, source_hashes, request=None):
                  'samePlaneWingPairClearShared5Mm':mixed, 'alongOneSignClearShared5Mm':own_clear,
                  'alongOneSignClearIndependent10Mm':own_clear-FORM_SETTING,
                  'uprightScreenClearShared5Mm':upright,
+                 'primaryPlacingComparisonMm':PLACING,
+                 'primaryPlacingComparisonMet':upright['primaryH20'] >= PLACING,
                  'commonJig':'Two opposed groups on each arm. Same level swaps signs on adjoining wings; each plane deliberately touches the intervening H28 at crossings. 5 mm total relative setting is binding.',
                  'wallLongitudinalTrial':{'governingGapAndAxes':rail_witness, 'minimumUnrelatedGapMm':rail_witness[0],
                                           'oneCourseReplacementAreaMM2':pi*8**2,
@@ -215,13 +338,14 @@ def compare_collector(source_data, source_hashes, request=None):
                           'minimumAreaAtDeclaredCrackedStrutMM2':return_compression*1000/cracked_strut_mpa,
                           'meanOnAdverseCommonWallFaceMPa':return_compression*1000/(850*(stack_top-soffit-10)*.75),
                           'momentAboutWidenedMidPlaneKNm':force*(RECEIVER_U+70)/2000,
-                          'momentAboutUnchangedGroundAxisU0KNm':force*RECEIVER_U/1000,
+                          'momentAboutUnchangedGroundAxisU0KNm':yaw_at_ground,
                           'scope':'No friction credit. Normal return balances at the same V centroid. Mean pressure only. The positive torque transfer and real L-ground stability splice are unproved.'},
         'retainedNWPort':{'referenceAxisXYmm':retained_port[:2], 'axisXYmm':port_axis_xy,
                           'axisUVAndDiameterMm':[port_u, port_v, port_diameter], 'levels':port_clearances,
                           'gapToWidenedWallUMm':port_u-port_radius-RECEIVER_U, 'admitted':False},
         'rearCabinetPortTerritory':port_clearance(cabinet_centre_bounds, lower_paths+upper_paths, port_radius),
         'gravity':{'directBearingURangeMm':[-30,70], 'records':[gravity(n) for n in ('NW-W','NE')]},
+        'groundSplice': ground_splice(ground['outer'], grid, axes, shift, yaw_at_ground),
         'groundAlternative':{'retainedNorthCornerAndToeCapIDs':[h['id'] for h in north_heads],
                              'insidePlanGapToSmallestCapAfter5Mm':cap_min_half_width-RECEIVER_U-FORM_SETTING,
                              'outsidePlanGapToSmallestCapAfter5Mm':cap_min_half_width-70-FORM_SETTING,
@@ -296,6 +420,10 @@ def diagram(result):
         label(14,234,'Any proposed port needs an independent service and cover check.')
     label(14,244,'Prove the widened body, full chord, round ties and imperforate DPC splice as one force path.')
     label(14,254,'This section screens geometry and isolated loads. Ground, roof and whole-house checks remain open.')
+    splice = result['groundSplice']
+    maximum_offset = splice['legacyBoreAlignment']['maximumAxisOffsetMm']
+    uncovered = splice['footprint']['uncoveredByLegacyMetalMm2']
+    label(14,263,f'Ground splice: {maximum_offset:g} mm maximum H20 axis offset; {uncovered:g} mm² outside the legacy plate.')
     label(14,280,'Plan coordinates U/V and levels Z are in millimetres.')
     return ('<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" role="img" aria-labelledby="title">\n'
             '<title id="title">Opposed straight collector reinforcement and retained port</title>\n'
@@ -326,6 +454,18 @@ def main(root, flags):
     assert result['straightDrag']['coverToActualToeEndAfter5mm'] >= COVER
     assert all(level['minimumClearToFormedEdgeAfter5Mm'] < 0 for level in result['retainedNWPort']['levels'])
     assert result['rearCabinetPortTerritory']['state'] == 'overlap-throughout-territory'
+    reference_splice = result['groundSplice']
+    assert len(reference_splice['knownMainBarAxes']) == 12
+    assert reference_splice['legacyBoreAlignment']['axesOutsideBudgetCount'] == 8
+    assert reference_splice['footprint']['uncoveredByLegacyMetalMm2'] > 0
+    assert reference_splice['footprint']['uncoveredByExtendedWebMm2'] == 0
+    assert all(not corner['uncoveredWithSettingMm2'] for corner in reference_splice['receivingPlan'])
+    trial = {'schema':'str-north-collector-native-case/1',
+             'portAxisXYMm':result['retainedNWPort']['referenceAxisXYmm'], 'dragDemandFactor':1}
+    aligned = compare_collector(source_data, source_hashes, {**trial, 'remoteMainBarShiftMm':0})
+    adverse = compare_collector(source_data, source_hashes, {**trial, 'remoteMainBarShiftMm':MAXIMUM_MAIN_BAR_SHIFT})
+    assert aligned['groundSplice']['legacyBoreAlignment']['axesOutsideBudgetCount'] == 0
+    assert aligned['stack']['primaryPlacingComparisonMet'] and not adverse['stack']['primaryPlacingComparisonMet']
     target = Path(__file__).with_suffix('.json')
     for output, data in [(target, dumps(result, indent=2, sort_keys=True)+'\n'), (target.with_suffix('.svg'), diagram(result))]:
         if flags == ['--check']:
