@@ -9,8 +9,8 @@
     "label": "total-integration-had-2026-11-17"
   },
   "claimedAt": "2026-11-17T08:57:28.915Z",
-  "heartbeatAt": "2026-11-17T09:31:22.702Z",
-  "expiresAt": "2026-11-17T10:16:22.702Z",
+  "heartbeatAt": "2026-11-17T09:44:54.133Z",
+  "expiresAt": "2026-11-17T10:29:54.133Z",
   "branch": "work/total-integration-followup-2026-11-17",
   "predecessor": {
     "leaseId": "fede185e-dbb7-4ae7-b693-a2b65b7445c3",
@@ -36,8 +36,8 @@
   },
   "pr": 1562,
   "checkpoint": {
-    "evidence": "Follow-up PR #1562 at 95853f9fcf977971257d2b1f973878b633dc4be9; 453 local compiler and source-audit tests green after repository tree verification.",
-    "next": "Inspect exact-head hosted checks, then rerun publication preflight and merge into main.",
-    "blocker": "Physical acceptance and full engineering convergence remain open."
+    "evidence": "Ready PR #1562 at 95853f9fcf977971257d2b1f973878b633dc4be9. Locally tested yaw, sill wind and Study floor support source saved on work/total-integration-joint-actions-2026-11-17 at bb343e7aaba66634ed1705d41ac600a94395d795.",
+    "next": "Finish exact-head hosted validation for #1562 and verify its merge, then submit the third comparison branch against current main.",
+    "blocker": "Coupled signed structural response, installed inlet evidence and qualified Study support remain open."
   }
 }
