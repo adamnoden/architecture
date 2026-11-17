@@ -198,10 +198,13 @@ test('same-wind collector inputs compile concurrent signed actions without grant
   assert.ok(independent.yawProbe && independent.deadLoadReplay)
   assert.equal(independent.fixedBaseActions, undefined)
   const { fixedBaseActions: actions, yawProbe, deadLoadReplay } = forward
+  assert.deepEqual(deadLoadReplay, independent.deadLoadReplay)
   const oppositeStates = reverse.fixedBaseActions.states
   assert.equal(actions.windIndex, 58)
   assert.equal(actions.admitted, false)
   assert.deepEqual(actions.componentOrder, ['N_kN', 'Cx_kNm', 'Cy_kNm', 'Vx_kN', 'Vy_kN'])
+  assert.deepEqual(actions.verticalEquilibriumOrder, ['N_kN', 'X_first_moment_kNm', 'Y_first_moment_kNm'])
+  assert.deepEqual(actions.horizontalEquilibriumOrder, ['Fx_kN', 'Fy_kN', 'Mz_kNm'])
   assert.deepEqual(actions.states.map(state => [state.id, state.additionalGravityFactor]), [
     ['GQ+wind', 1.35], ['stripped suction+wind', 0], ['retained suction+wind', 0],
   ])
