@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 41,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "0ddabf6c-f6bb-4124-8614-3bf3b1a6c543",
   "holder": {
     "kind": "codex",
     "label": "total-integration-had-2026-11-17"
   },
   "claimedAt": "2026-11-17T08:57:28.915Z",
-  "heartbeatAt": "2026-11-17T10:41:56.160Z",
-  "expiresAt": "2026-11-17T11:26:56.160Z",
+  "heartbeatAt": "2026-11-17T10:42:15.335Z",
+  "expiresAt": "2026-11-17T10:42:15.335Z",
   "branch": "work/total-integration-splice-dead-load-2026-11-17",
   "predecessor": {
     "leaseId": "fede185e-dbb7-4ae7-b693-a2b65b7445c3",
@@ -39,5 +39,7 @@
     "evidence": "Merged PRs #1561–#1564 through main 27dac4e974bef538a222e8c4cb514e827acf08d1. Current sill wind and blocked-mouth cases, guarded occupied outputs and MRA lineage are executable.",
     "next": "Develop the separately supported upper disconnect and capture at Z900, then dry-fit the actual branch and sample before pressure/wet-state verification with its sibling sealed.",
     "blocker": "The retained plant envelope does not admit the R75 lift-off comparison. Actual restraint, withdrawal, capture and rated assembled performance remain unproved."
-  }
+  },
+  "releasedAt": "2026-11-17T10:42:15.335Z",
+  "releaseReason": "handoff"
 }
