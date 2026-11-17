@@ -34,6 +34,10 @@ DESIGN_RESERVE_MM = 25
 DRY_ENVELOPE_RADIUS_MM = 95
 FLASHING_RADIUS_MM = 150
 BEND_RADIUS_MM = 110
+AD_H_OPENING_DISTANCE_MM = 3000
+AD_H_OPENING_HEIGHT_MM = 900
+AD_H_TERMINAL_GUIDANCE = 'England Approved Document H (2015), paragraph 1.31 and Diagram 6'
+AD_H_GUIDANCE_URL = 'https://assets.publishing.service.gov.uk/media/5a80cf9ded915d74e33fc8ae/BR_PDF_AD_H_2015.pdf'
 
 
 def study(root):
@@ -246,6 +250,89 @@ def accept_case(case):
     return values
 
 
+def terminal_opening_envelopes(house, weather_faces):
+    shell = house['shell']
+    cx, cy, width, depth = house['court']
+    faces = {
+        'outer-west': (0, 0), 'outer-east': (0, shell), 'outer-south': (1, 0), 'outer-north': (1, shell),
+        'court-west': (0, cx), 'court-east': (0, cx+width), 'court-south': (1, cy), 'court-north': (1, cy+depth),
+    }
+    floors = {'GROUND': house['sections']['groundFFL'], 'FIRST': house['sections']['firstFFL']}
+
+    def bounds(axis, across, along):
+        return (across, along) if axis == 0 else (along, across)
+
+    envelopes = []
+    for storey, rows in house['openings'].items():
+        for row in rows:
+            if row['wall'] not in faces:
+                raise ValueError(f"Unrecognised opening face for {storey}/{row['id']}")
+            axis, normal = faces[row['wall']]
+            half = row['width']/2
+            top = floors.get(storey)
+            head = row.get('head')
+            envelopes.append({
+                'id': f"{storey}/{row['id']}", 'kind': row['kind'], 'wall': row['wall'],
+                'xyBoundsMm': bounds(axis, (normal, normal), (row['centre']-half, row['centre']+half)),
+                'topZMm': None if top is None or head is None else top+head,
+            })
+
+    for row in weather_faces:
+        axis, _ = faces[row['wall']]
+        x, y, z = row['point']
+        normal, along = (x, y) if axis == 0 else (y, x)
+        west_or_south_projection = ('outer-west', 'outer-south', 'court-east', 'court-north')
+        direction = -1 if row['wall'] in west_or_south_projection else 1
+        outside = normal+direction*row['outerProjectionMaximumMM']
+        half = row['width']/2
+        intake = row['id'].endswith('-supply') or row['id'] == 'cooker-makeup'
+        envelopes.append({
+            'id': row['id'], 'kind': 'air-intake' if intake else 'service-weather-face', 'wall': row['wall'],
+            'xyBoundsMm': bounds(axis, tuple(sorted((normal, outside))), (along-half, along+half)),
+            'topZMm': None if z is None else z+half,
+        })
+    return envelopes
+
+
+def terminal_opening_check(terminal, envelopes, plan_radius_mm):
+    x, y, z = terminal
+    nearby = []
+    intakes = []
+    for opening in envelopes:
+        (west, east), (south, north) = opening['xyBoundsMm']
+        distance = hypot(max(west-x, x-east, 0), max(south-y, y-north, 0))
+        compare_distance = max(0, distance-plan_radius_mm)
+        row = {
+            **opening, 'axisDistanceMm': distance,
+            'comparisonDistanceMm': compare_distance,
+        }
+        if opening['kind'] == 'air-intake':
+            intakes.append(row)
+        if compare_distance < AD_H_OPENING_DISTANCE_MM:
+            top = opening['topZMm']
+            nearby.append({**row, 'heightReserveMm': None if top is None else z-top-AD_H_OPENING_HEIGHT_MM})
+
+    known = [row for row in nearby if row['heightReserveMm'] is not None]
+    governing = min(known, key=lambda row: (row['heightReserveMm'], row['comparisonDistanceMm'], row['id']), default=None)
+    missing = sorted(row['id'] for row in nearby if row['heightReserveMm'] is None)
+    if governing is not None and governing['heightReserveMm'] < 0:
+        state = 'fails'
+    elif missing:
+        state = 'unresolved'
+    else:
+        state = 'passes'
+    return {
+        'scope': 'Modelled façade and courtyard opening envelopes and complete service weather faces',
+        'guidance': AD_H_TERMINAL_GUIDANCE, 'guidanceUrl': AD_H_GUIDANCE_URL,
+        'state': state,
+        'horizontalCutoffMm': AD_H_OPENING_DISTANCE_MM, 'minimumHeightAboveOpeningMm': AD_H_OPENING_HEIGHT_MM,
+        'terminalPlanRadiusAllowanceMm': plan_radius_mm, 'inventoryCount': len(envelopes),
+        'nearby': sorted(nearby, key=lambda row: (row['comparisonDistanceMm'], row['id'])),
+        'governingKnownOpening': governing, 'nearbyOpeningsWithoutHeight': missing,
+        'nearestModelledAirIntake': min(intakes, key=lambda row: (row['comparisonDistanceMm'], row['id']), default=None),
+    }
+
+
 def dry_return(case, occupied, data):
     x, y, start, terminal = accept_case(case)
     sources, structure, segment_distance, digest = data
@@ -253,6 +340,32 @@ def dry_return(case, occupied, data):
     trial_tray = sources[RENEWAL_SOURCE]['lowTrayCoverageCounterexample']
     selected = sources[HAD_SCHEDULE]['selectedServiceInterfaces']
     house = occupied['model']
+    terminal_openings = terminal_opening_check(
+        (x, y, terminal), terminal_opening_envelopes(house, selected['weatherFaces']), DRY_ENVELOPE_RADIUS_MM,
+    )
+    roof_pitch = house['roofDevelopment']['pitch']
+    nominal_cover = heel['height']['eave']+(x+FLASHING_RADIUS_MM)*tan(radians(roof_pitch))
+    terminal_applicability = {
+        'modelledOpenings': terminal_openings,
+        'roofBoundary': {
+            'state': 'unresolved',
+            'maximumNominalRoofCoverAtFlashingZMm': nominal_cover,
+            'terminalRiseAboveNominalRoofCoverMm': terminal-nominal_cover,
+            'remaining': 'Nearby roof ventilation connections, downdraught, flashing drainage and independent weather closure',
+        },
+        'siteOpenings': {
+            'state': 'unresolved',
+            'remaining': 'Survey neighbouring and site-specific openings and intakes',
+        },
+        'terminalCover': {
+            'state': 'unresolved',
+            'remaining': 'Select the actual outlet envelope, clear vent bore and fixed nonrestrictive perforated cover',
+        },
+        'otherBuildingVentilation': {
+            'state': 'unresolved',
+            'remaining': 'Locate any connected underfloor and other ventilation mouths not in the current weather-face inventory',
+        },
+    }
     fan = next(row for row in house['servicesInterface']['extract'] if row['id'] == 'rear-bath')
     head = next(row for row in selected['heads'] if row['room'] == 'rearBath')
     radiator = next(row for row in selected['radiatorMaintenance'] if row['id'] == 'rear-W')
@@ -280,6 +393,7 @@ def dry_return(case, occupied, data):
             'case': case, 'state': 'geometric-failure', 'installedAcceptance': False, 'wet': wet,
             'sourceSHA256': digest, 'remainingStraightBetweenBendsMm': straight_tangent,
             'failedChecks': ['BEND_TANGENT_LENGTH'], 'clearanceMm': {},
+            'terminalApplicability': terminal_applicability,
         }
 
     segments = tuple(pairwise(rounded))
@@ -333,8 +447,6 @@ def dry_return(case, occupied, data):
     radial_profile = max(max(edge for rail in row['railBoundsY'] for edge in rail) for row in heel['node'].values())
     brace_gap = planar_gap((x, y), structure['braces'], FLASHING_RADIUS_MM+structure['DIA']/2)
     radial_gap = planar_gap((x, y), structure['radials'], FLASHING_RADIUS_MM+radial_profile)
-    roof_pitch = house['roofDevelopment']['pitch']
-    nominal_cover = heel['height']['eave']+(x+FLASHING_RADIUS_MM)*tan(radians(roof_pitch))
     bend_from_oblique = unit(corners[1], corners[2])
     bend_to_room = unit(corners[2], corners[3])
     wall_turn_dot = max(-1, min(1, sum(a*b for a,b in zip(bend_from_oblique, bend_to_room))))
@@ -386,19 +498,11 @@ def dry_return(case, occupied, data):
         'westPurlinsCompleteFlashingPlan': purlin_gap, 'roofRadialRailsPlan': radial_gap, 'roofBraceTubesPlan': brace_gap,
         'flashingToTerminalOverSlopedCover': terminal-nominal_cover,
     }
-    near_heads = []
-    for storey, rows in house['openings'].items():
-        for row in rows:
-            if not row.get('head') or row['wall'] not in ('outer-west','outer-north','outer-east','outer-south'):
-                continue
-            on_x = row['wall'] in ('outer-south', 'outer-north')
-            normal = shell if row['wall'] in ('outer-east','outer-north') else 0
-            if hypot((y if on_x else x)-normal,
-                     interval_distance(x if on_x else y,(row['centre']-row['width']/2,row['centre']+row['width']/2))) <= 3000:
-                near_heads.append((row['id'], row['head']+(floor_z if storey=='FIRST' else 0)))
-    terminal_opening_reserve = terminal-max(z for _,z in near_heads)-900
+    near_heads = [(row['id'], row['topZMm']) for row in terminal_openings['nearby'] if row['topZMm'] is not None]
+    governing_opening = terminal_openings['governingKnownOpening']
+    terminal_opening_reserve = governing_opening['heightReserveMm'] if governing_opening is not None else None
     failed = [name for name,value in clearance.items() if value < DESIGN_RESERVE_MM]
-    if terminal_opening_reserve < 0:
+    if terminal_openings['state'] == 'fails':
         failed.append('NEARBY_OPENING_HEIGHT')
     if approach_gravity < 0:
         failed.append('DRY_RETURN_CONDENSATE_BACKFALL')
@@ -414,6 +518,7 @@ def dry_return(case, occupied, data):
         'insideWallFaceToFirstBendTangentMm': wall_to_inside_tangent,
         'completeDryEnvelopeDiameterMm': 2*DRY_ENVELOPE_RADIUS_MM, 'roofFlashingEnvelopeDiameterMm': 2*FLASHING_RADIUS_MM,
         'nearOpeningHeads': near_heads, 'terminalAboveOpeningAllowanceMm': terminal_opening_reserve,
+        'terminalApplicability': terminal_applicability,
         'minimumDryRisePerChordMm': approach_gravity, 'minimumGeometricReserveMm': DESIGN_RESERVE_MM,
         'hostAndRenewalUnresolved': [
             'Drain hydraulic and ventilation performance, site host levels, surcharge and positive pressure relief',

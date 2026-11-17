@@ -20,6 +20,20 @@ test('the current compiler recomputes the low oblique dry return and its indepen
   assert.deepEqual(result.comparison, receipt.lowObliqueReturn)
   assert.equal(result.comparison.state, 'bounded-dry-return-comparison')
   assert.equal(result.comparison.installedAcceptance, false)
+  const { modelledOpenings, roofBoundary, siteOpenings, terminalCover, otherBuildingVentilation } =
+    result.comparison.terminalApplicability
+  assert.equal(modelledOpenings.state, 'passes')
+  assert.equal(modelledOpenings.inventoryCount, 70)
+  assert.equal(modelledOpenings.governingKnownOpening?.id, 'FIRST/west-window-3')
+  assert.equal(modelledOpenings.governingKnownOpening?.heightReserveMm, 800)
+  assert.equal(modelledOpenings.nearestModelledAirIntake?.id, 'living-supply')
+  assert.ok((modelledOpenings.nearestModelledAirIntake?.comparisonDistanceMm ?? 0) > 3500)
+  const northWindow = modelledOpenings.nearby.find(row => row.id === 'FIRST/north-window-0')
+  assert.ok(northWindow)
+  assert.ok(northWindow.axisDistanceMm > 3000 && northWindow.comparisonDistanceMm < 3000)
+  for (const unresolved of [roofBoundary, siteOpenings, terminalCover, otherBuildingVentilation]) {
+    assert.equal(unresolved.state, 'unresolved')
+  }
   assert.ok(result.comparison.clearanceMm.westWindowRawPlan >= 25)
   assert.ok(result.comparison.clearanceMm.rearRadiatorAndCarrier >= 25)
   assert.equal(result.comparison.clearanceMm.westPurlinsCompleteFlashingPlan, 30)
@@ -73,4 +87,45 @@ test('a supported dry offset recomputes clearances, while missing tangent, stale
     envelope: { ...design.envelope, widthMm: design.envelope.widthMm + 10 },
   })
   assert.equal((await candidate.rearFoulVent(request.vent)).status, 'unavailable')
+})
+
+test('finite intake faces apply the horizontal edge and fail with insufficient height', () => {
+  const cases = JSON.parse(execFileSync('python3', ['-B', '-c', `
+from json import dumps
+from runpy import run_path
+m = run_path('project/mat/studies/rear-wc-west-roof-interface.py')
+house = {
+    'shell':12000, 'court':[4250,4250,3500,3500],
+    'sections':{'groundFFL':0,'firstFFL':3450},
+    'openings':{'GROUND':[{'id':'headless-test','kind':'door','wall':'outer-west','width':100,'centre':1200}]}
+}
+def case(along, architecture):
+    intake = [{'id':'test-supply','wall':'outer-west','point':[0,along,7050],
+               'width':200,'outerProjectionMaximumMM':100}]
+    openings = m['terminal_opening_envelopes'](architecture, intake)
+    return m['terminal_opening_check']([0,0,8000], openings, 95)
+empty = {**house,'openings':{}}
+court_face = [{'id':'court-supply','wall':'court-east','point':[7750,5000,7000],
+               'width':200,'outerProjectionMaximumMM':100}]
+court = m['terminal_opening_check']([4750,5000,8000],
+                                    m['terminal_opening_envelopes'](empty,court_face),0)
+print(dumps({
+    'inside':case(3194, empty), 'edge':case(3195, empty),
+    'outsideWithMissingHeight':case(3196, house), 'court':court,
+}))
+`], { encoding: 'utf8' }))
+  assert.equal(cases.inside.state, 'fails')
+  assert.equal(cases.inside.governingKnownOpening.kind, 'air-intake')
+  assert.equal(cases.inside.governingKnownOpening.axisDistanceMm, 3094)
+  assert.equal(cases.inside.governingKnownOpening.comparisonDistanceMm, 2999)
+  assert.equal(cases.inside.governingKnownOpening.heightReserveMm, -50)
+  assert.equal(cases.edge.state, 'passes')
+  assert.deepEqual(cases.edge.nearby, [])
+  assert.equal(cases.edge.nearestModelledAirIntake.comparisonDistanceMm, 3000)
+  assert.equal(cases.outsideWithMissingHeight.state, 'unresolved')
+  assert.deepEqual(cases.outsideWithMissingHeight.nearbyOpeningsWithoutHeight, ['GROUND/headless-test'])
+  assert.equal(cases.outsideWithMissingHeight.governingKnownOpening, null)
+  assert.equal(cases.outsideWithMissingHeight.nearestModelledAirIntake.comparisonDistanceMm, 3001)
+  assert.equal(cases.court.nearby[0].axisDistanceMm, 2900)
+  assert.equal(cases.court.nearby[0].heightReserveMm, 0)
 })

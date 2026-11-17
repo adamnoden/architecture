@@ -29,6 +29,49 @@ interface VentCase extends VentParameters {
   readonly routeId: typeof id
 }
 
+interface ModelledOpening {
+  readonly id: string
+  readonly kind: string
+  readonly wall: string
+  readonly xyBoundsMm: readonly [Point, Point]
+  readonly topZMm: number | null
+  readonly axisDistanceMm: number
+  readonly comparisonDistanceMm: number
+}
+
+interface NearbyOpening extends ModelledOpening {
+  readonly heightReserveMm: number | null
+}
+
+interface UnresolvedTerminalDuty {
+  readonly state: 'unresolved'
+  readonly remaining: string
+}
+
+interface VentTerminalApplicability {
+  readonly modelledOpenings: {
+    readonly scope: string
+    readonly guidance: string
+    readonly guidanceUrl: string
+    readonly state: 'passes' | 'fails' | 'unresolved'
+    readonly horizontalCutoffMm: number
+    readonly minimumHeightAboveOpeningMm: number
+    readonly terminalPlanRadiusAllowanceMm: number
+    readonly inventoryCount: number
+    readonly nearby: readonly NearbyOpening[]
+    readonly governingKnownOpening: NearbyOpening | null
+    readonly nearbyOpeningsWithoutHeight: readonly string[]
+    readonly nearestModelledAirIntake: ModelledOpening | null
+  }
+  readonly roofBoundary: UnresolvedTerminalDuty & {
+    readonly maximumNominalRoofCoverAtFlashingZMm: number
+    readonly terminalRiseAboveNominalRoofCoverMm: number
+  }
+  readonly siteOpenings: UnresolvedTerminalDuty
+  readonly terminalCover: UnresolvedTerminalDuty
+  readonly otherBuildingVentilation: UnresolvedTerminalDuty
+}
+
 interface VentComparison {
   readonly case: VentParameters
   readonly state: 'bounded-dry-return-comparison' | 'geometric-failure'
@@ -42,6 +85,7 @@ interface VentComparison {
   }
   readonly clearanceMm: Readonly<Record<string, number>>
   readonly failedChecks: readonly string[]
+  readonly terminalApplicability: VentTerminalApplicability
   readonly cornersXYZmm?: readonly SpatialPoint[]
   readonly roundedCentrelineXYZmm?: readonly SpatialPoint[]
   readonly formedWallCentreXYZmm?: SpatialPoint
