@@ -9,8 +9,8 @@
     "label": "total-integration-ias-2026-11-17"
   },
   "claimedAt": "2026-11-17T08:57:57.967Z",
-  "heartbeatAt": "2026-11-17T08:57:57.967Z",
-  "expiresAt": "2026-11-17T09:42:57.967Z",
+  "heartbeatAt": "2026-11-17T09:08:26.278Z",
+  "expiresAt": "2026-11-17T09:53:26.278Z",
   "branch": "work/total-integration-2026-11-17",
   "predecessor": {
     "leaseId": "0b268f4a-0459-44bf-a69b-df1c5e2fd1d9",
@@ -33,5 +33,11 @@
       "next": "Choose a qualified continuous support course and coupled dry-wall / protected-edge operation.",
       "blocker": "15 mm option leaves 64.7 mm before levelling, and the 27 mm dry field needs anchor and air-lap proof."
     }
+  },
+  "pr": 1561,
+  "checkpoint": {
+    "evidence": "PR #1561 at 6d2005f0c98fc5b64772a960222153126496e08c. Focused compiler and native study checks passed. Exact-head hosted validation running.",
+    "next": "Admit a single-opening saved editor revision into the scoped Study wall comparison.",
+    "blocker": "Dry support, loaded release and protective boundary still need physical evidence."
   }
 }
