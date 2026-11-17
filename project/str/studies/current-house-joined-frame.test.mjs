@@ -15,9 +15,15 @@ test('A straight north receiver needs new depth and a positive bypass around the
 test('A west-wall gravity route can remove the slab port while holding the WC position', () => {
   const source = fileURLToPath(new URL('../../mat/studies/rear-wc-west-gravity.py', import.meta.url));
   execFileSync('python3', ['-B', source, '.', '--check']);
+  const roofInterface = fileURLToPath(new URL('../../mat/studies/rear-wc-west-roof-interface.py', import.meta.url));
+  execFileSync('python3', ['-B', roofInterface, '.', '--check']);
 });
 test('The separated north gravity seat and floor tooth reproduce their action and anchorage bounds', () => {
   const source = fileURLToPath(new URL('./floor-portal-bearing-toe.py', import.meta.url));
+  execFileSync('python3', ['-B', source, '.', '--check']);
+});
+test('The diagonal collector preserves its section only with one jig and fails at the retained port', () => {
+  const source = fileURLToPath(new URL('./floor-portal-monolithic-drag.py', import.meta.url));
   execFileSync('python3', ['-B', source, '.', '--check']);
 });
 test('The direct roof seat receipt reproduces its load and access comparisons', () => {

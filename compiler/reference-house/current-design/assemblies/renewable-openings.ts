@@ -25,7 +25,11 @@ interface WindowReceipt {
   readonly occurrence: { readonly level: string; readonly host: string; readonly id: string; readonly centre: number; readonly width: number }
   readonly e0: { readonly frameWidth: number; readonly lining: number; readonly joint: number }
   readonly e2: readonly (StudyDryProfile & { readonly id: string; readonly nominalDryReleaseAfterSettings: number })[]
-  readonly retainedControls: { readonly release: { readonly headDraw: number; readonly headPocketAfterTwo2: number } }
+  readonly retainedControls: {
+    readonly portalCore: readonly [number, number]
+    readonly existingCeiling: number
+    readonly release: { readonly headDraw: number; readonly headPocketAfterTwo2: number }
+  }
 }
 
 interface DoorReceipt {
@@ -110,6 +114,7 @@ export function compileRenewableOpenings(resolved: CurrentDesignResolution, rece
     } as const
   })
   const release = window.retainedControls.release
+  const wallDatum = { coreFaceYMm: window.retainedControls.portalCore[1], ceilingZMm: window.retainedControls.existingCeiling }
   const weather = door.model.southCourtWeatherDoor
   const threshold = door.model.southCourtThresholdReference
   const { leafTask, panTask, geometryProof, temporaryWeatherLine } = threshold.maintainedState
@@ -117,6 +122,7 @@ export function compileRenewableOpenings(resolved: CurrentDesignResolution, rece
     schema: 'renewable-opening-trial/1', state: 'candidate', units: 'mm', source: nominal.source,
     window: {
       receipt: { path: windowPath, sha256: windowHash, method: windowMethod, methodSha256: methodHash },
+      wallDatum,
       opening: { id: nominal.row.openingId, hostId: nominal.row.hostWallId, nominalCentreMm: bay.basis.opening.old,
         occupiedCentreMm: occurrence.centre, nativeWidthMm: occurrence.width, widthMm },
       fixedFrameWidthMm: e0.frameWidth, schedule,

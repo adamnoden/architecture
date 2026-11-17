@@ -86,6 +86,14 @@ export function prepareCurrentDesignCompile(input: unknown) {
       const { runStructuralInterfaces } = await import('./structural-interfaces.js')
       return runStructuralInterfaces(resolved, input)
     },
+    readNorthCollectorCase: async () => {
+      const { readNorthCollectorCase } = await import('./north-collector.js')
+      return readNorthCollectorCase(resolved)
+    },
+    northCollectorCase: async (input: unknown) => {
+      const { runNorthCollectorCase } = await import('./north-collector.js')
+      return runNorthCollectorCase(resolved, input)
+    },
     occupiedServices: async () => {
       const { runOccupiedServiceSchedule } = await import('./occupied-services.js')
       return runOccupiedServiceSchedule(resolved)
@@ -134,6 +142,14 @@ export function prepareCurrentDesignCompile(input: unknown) {
       const { runInletRouteCase } = await import('./inlet-route.js')
       return runInletRouteCase(resolved, input)
     },
+    readInletSillInsertCase: async () => {
+      const { readInletSillInsertCase } = await import('./inlet-sill-insert.js')
+      return readInletSillInsertCase(resolved)
+    },
+    inletSillInsert: async (input: unknown) => {
+      const { runInletSillInsertCase } = await import('./inlet-sill-insert.js')
+      return runInletSillInsertCase(resolved, input)
+    },
     renewableOpenings: async (widthCase?: unknown) => {
       const [{ compileRenewableOpenings }, { drawStudyJambScreen }] = await Promise.all([
         import('./assemblies/renewable-openings.js'), import('./assemblies/renewable-opening-views.js'),
@@ -149,11 +165,15 @@ export function prepareCurrentDesignCompile(input: unknown) {
       return { source, linings, detail: drawStudyLiningComparison(linings), elevation: drawStudyPanellingElevation(linings) }
     },
     studyRoomKit: async (input: unknown) => {
-      const [{ compileStudyRoomKit, drawStudyRoomKitPlan }, { drawStudyPanellingElevation }] = await Promise.all([
+      const [{ compileStudyRoomKit, drawStudyRoomKitPlan }, { drawStudyPanellingElevation }, { drawStudyWallTransition }] = await Promise.all([
         import('./assemblies/study-room-kit.js'), import('./assemblies/study-linings-views.js'),
+        import('./assemblies/study-wall-transition-views.js'),
       ])
-      const kit = compileStudyRoomKit(resolved, input)
-      return { source, kit, plan: drawStudyRoomKitPlan(kit), wallElevation: drawStudyPanellingElevation(kit) }
+      const { kit, wallTransition } = compileStudyRoomKit(resolved, input)
+      return {
+        source, kit, wallTransition, wallTransitionSvg: drawStudyWallTransition(wallTransition),
+        plan: drawStudyRoomKitPlan(kit), wallElevation: drawStudyPanellingElevation(kit),
+      }
     },
     studyAssembly: async (options: unknown = {}) => {
       const [{ compileResolvedStudyAssembly }, { drawStudyFloorPlan, drawStudyFloorSection }] = await Promise.all([

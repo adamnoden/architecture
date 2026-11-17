@@ -5455,6 +5455,18 @@
           "seating, acoustic, slip, movement and material performance"
         ]
       },
+      "groundSupport": {
+        "glassTopMm": -80,
+        "cellularGlassMm": 100,
+        "fullFinishDeckTopMm": -20,
+        "deckTopIfDepthUnresolvedMovesToDeckMm": -20,
+        "minimumFloatingCourseMm": 65,
+        "separatorComparisonMm": 0.3,
+        "actualCourseBeforeLevelToleranceMm": 59.7,
+        "marginToMinimumBeforeLevelToleranceMm": -5.299999999999997,
+        "disposition": "withheld",
+        "held": "Named bedding, separator, ordinary-course tolerance, above-glass support, uniform bearing and dry-to-wet edge."
+      },
       "borderParts": 107,
       "release": {
         "state": "geometry-screen-only",
@@ -6085,6 +6097,56 @@
       "trialTrimMm": 25
     }
   },
+  "thinGroundComparison": [
+    {
+      "request": {
+        "schema": "ias-study-room-kit-case/1",
+        "units": "mm",
+        "pitchMm": 300,
+        "wearingFace": "oak",
+        "finishDepthMm": 15
+      },
+      "caseDigest": "1ad844d061f38a62f5c1a00f578f5e9af483f5c494a1bcbd75f739602b63730b",
+      "wearingFaceMm": 13,
+      "groundSupport": {
+        "glassTopMm": -80,
+        "cellularGlassMm": 100,
+        "fullFinishDeckTopMm": -15,
+        "deckTopIfDepthUnresolvedMovesToDeckMm": -15,
+        "minimumFloatingCourseMm": 65,
+        "separatorComparisonMm": 0.3,
+        "actualCourseBeforeLevelToleranceMm": 64.7,
+        "marginToMinimumBeforeLevelToleranceMm": -0.29999999999999716,
+        "disposition": "withheld",
+        "held": "Named bedding, separator, ordinary-course tolerance, above-glass support, uniform bearing and dry-to-wet edge."
+      },
+      "maxWearingPackageKgBeforeAccessories": 0.8027019
+    },
+    {
+      "request": {
+        "schema": "ias-study-room-kit-case/1",
+        "units": "mm",
+        "pitchMm": 300,
+        "wearingFace": "stone-steel",
+        "finishDepthMm": 15
+      },
+      "caseDigest": "b1aa88375ec15010102e2731b8e249e3f21f2b7a8a439fa998583237d3056017",
+      "wearingFaceMm": 13,
+      "groundSupport": {
+        "glassTopMm": -80,
+        "cellularGlassMm": 100,
+        "fullFinishDeckTopMm": -15,
+        "deckTopIfDepthUnresolvedMovesToDeckMm": -15,
+        "minimumFloatingCourseMm": 65,
+        "separatorComparisonMm": 0.3,
+        "actualCourseBeforeLevelToleranceMm": 64.7,
+        "marginToMinimumBeforeLevelToleranceMm": -0.29999999999999716,
+        "disposition": "withheld",
+        "held": "Named bedding, separator, ordinary-course tolerance, above-glass support, uniform bearing and dry-to-wet edge."
+      },
+      "maxWearingPackageKgBeforeAccessories": 4.45896495
+    }
+  ],
   "stone": {
     "source": {
       "currentPlanBasis": "RH-LAYOUT-REVISION-02",

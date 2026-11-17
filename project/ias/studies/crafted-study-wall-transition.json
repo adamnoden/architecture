@@ -1,0 +1,137 @@
+{
+  "schema": "ias-crafted-study-wall-transition/1",
+  "status": "DEVELOPMENT_COMPARISON",
+  "inputs": {
+    "project/oas/studies/study-subframe.json": "4aea83e5cb2451b65acd8818e06cba6010128b84e755ae199c7d2193e92410e6",
+    "project/ias/studies/study-door-reveal.json": "5defb570d91832c5d862226fd93c46aa0026124a02b74bae0d5fe9f60a5f20b9"
+  },
+  "source": {
+    "kitCaseDigest": "3ff8259a6167409fb347832b848b99c8625ae9415aacebe1810312690dd3c1dd",
+    "binding": "c727c60c0bbaf9c710a97aebef3e1b53f8aba1a0f76de1e3e565860c4c28d6e9",
+    "transitionCaseDigest": "5032acb6f87933d26e8d647afb049086a0d49c6b3f97f326a3979a2e54606718",
+    "wallId": "GROUND/G-STUDY/W1",
+    "openingId": "GROUND/south-window-0",
+    "hostId": "GROUND/outer-south",
+    "fixedOpeningId": "GROUND/south-window-1",
+    "grilleId": "GROUND/G-STUDY/G1/room-side-grille/trial-clearance",
+    "doorId": "HAD/protectedRoute/STUDY"
+  },
+  "field": {
+    "moduleXZMm": [
+      2675,
+      1280,
+      3125,
+      1730
+    ],
+    "rails": {
+      "zMm": 1700,
+      "hardLandXMm": [
+        2700,
+        3100
+      ]
+    },
+    "jambStopsXMm": [
+      [
+        2600,
+        2650
+      ],
+      [
+        3350,
+        3400
+      ]
+    ],
+    "fixedLapXMm": [
+      2620,
+      2650
+    ],
+    "grilleXZMm": [
+      2843,
+      1898,
+      3247,
+      2302
+    ],
+    "unchangedRoomFaceYMm": 429.5,
+    "coreFaceYMm": 402.5,
+    "verticalReleaseMm": 10,
+    "minimumVerticalReserveToG1Mm": 158,
+    "translatedUp200MmIntersectsG1": true,
+    "ceilingZMm": 3100,
+    "cornicePocketMm": 30,
+    "cornicePocketAfterSettingMm": 25,
+    "retainedHalfHeadInwardDrawMm": 250,
+    "retainedHalfHeadPocketReserveMm": 2,
+    "doorFinishYMm": 3150.5,
+    "doorHistoricBodyMarginMm": 1.9348531434153386,
+    "retainedSkirtingEndPiecesXMm": [
+      [
+        1225,
+        1345
+      ],
+      [
+        2255,
+        2375
+      ]
+    ],
+    "retainedSkirtingFirstDrawMm": 22
+  },
+  "fitUm": {
+    "fixed": {
+      "metalAirPlane": 500,
+      "gaugedFixedPlaneCorrection": 500,
+      "maximumMineralBoard": 6500
+    },
+    "moving": {
+      "matedCleat": 6350,
+      "fitting": 2000,
+      "maximumCassette": 10500
+    },
+    "stackUm": 26350,
+    "datumUm": 27000,
+    "allowanceBeforeDryPackUm": 650,
+    "stepUm": 100,
+    "measurementAndSetUm": 150,
+    "maximumHardPackUm": 1500,
+    "maximumStack": {
+      "admitted": true,
+      "packUm": 500,
+      "faceUm": 26850,
+      "possibleFaceUm": [
+        26700,
+        27000
+      ]
+    },
+    "minimumBoardStack": {
+      "admitted": true,
+      "packUm": 1500,
+      "faceUm": 26850,
+      "possibleFaceUm": [
+        26700,
+        27000
+      ]
+    },
+    "uncorrectableSubstrate": {
+      "admitted": false,
+      "reason": "fixed-plane-gauge-exceeded"
+    },
+    "inadequateStackForPack": {
+      "admitted": false,
+      "reason": "dry-pack-outside-tested-range"
+    },
+    "proudStack": {
+      "admitted": false,
+      "reason": "dry-pack-outside-tested-range"
+    }
+  },
+  "mechanics": {
+    "panelKg": 10,
+    "downwardN": 98.10000000000001,
+    "equalTwoLandN": 49.050000000000004,
+    "oneLandLossRedistributionN": 98.10000000000001,
+    "momentNmAtMaximumOffset": 2.6487000000000003,
+    "gaugeRequiredAtBothRailsAndAcrossFace": true,
+    "anchorsBehindWallSideRail": true,
+    "boardOrAirPlaneReceivesRailLoad": false
+  },
+  "diagnostics": [],
+  "hold": "Dimensional and load-destination screen only. Actual substrate, anchor and stop, sealed penetration and lap, head/foot joins, air/leakage testing, product constituents and complete dry wall performance remain open. Wet returns and skirting control stay independent."
+}

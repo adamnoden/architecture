@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1150 680" width="1150" height="680" aria-labelledby="title">
+<title id="title">South utility sill and independently vented inlet cells</title>
+<style>text{font:17px sans-serif;fill:#172d39} .title{font:700 28px sans-serif}</style>
+<rect width="1150" height="680" fill="#fffdf6"/>
+<text class="title" x="44" y="40">South utility sill and independently vented inlet cells</text>
+<text x="44" y="72">Projection onto the inside wall. Dimensions and levels in mm.</text>
+<rect x="110.7" y="75" width="135.3" height="480" fill="#cebfa8" stroke="#cebfa8"/>
+<rect x="906" y="75" width="135.3" height="480" fill="#cebfa8" stroke="#cebfa8"/>
+<rect x="246" y="75" width="660" height="30" fill="#d9eef2" stroke="#d9eef2"/>
+<rect x="246" y="105" width="660" height="402" fill="#204756" stroke="#204756"/>
+<rect x="609" y="135" width="283.8" height="354" fill="#fffdf6" stroke="#fffdf6"/>
+<rect x="279" y="135" width="330" height="354" fill="#d9c9ae" stroke="#d9c9ae"/>
+<rect x="638.7" y="144" width="112.2" height="333" fill="#dbeef1" stroke="#dbeef1"/><rect x="774" y="144" width="112.2" height="333" fill="#e1e9d2" stroke="#e1e9d2"/>
+<ellipse cx="694.8000000000001" cy="278.766" rx="52.800000000000004" ry="48" fill="#2e6e84" stroke="#fff"/><ellipse cx="694.8000000000001" cy="415.025" rx="36.300000000000004" ry="33" fill="#517750" stroke="#fff"/><ellipse cx="830.1" cy="206.76600000000002" rx="52.800000000000004" ry="48" fill="#2e6e84" stroke="#fff"/><ellipse cx="830.1" cy="355.025" rx="36.300000000000004" ry="33" fill="#517750" stroke="#fff"/>
+<ellipse cx="717.9" cy="167.76600000000002" rx="10.56" ry="9.6" fill="#ce7541" stroke="#fff"/><ellipse cx="871.6800000000001" cy="152.76600000000002" rx="9.9" ry="9" fill="#ce7541" stroke="#fff"/>
+<rect x="110.7" y="555" width="930.6" height="15" fill="#b7bfc1" stroke="#b7bfc1"/>
+<text x="78" y="530">West jamb</text>
+<text x="940" y="530">East jamb</text>
+<text x="62" y="585">Existing foundation beam below Z−180 stays uncut.</text>
+<text x="100" y="632">Window sill Z750</text>
+<text x="365" y="632">Sill member Z700–750</text>
+<text x="724" y="632">Clear insert X9950–10380</text>
+<text x="320" y="328">Retained infill</text>
+<text x="545" y="480">Contained wet cells</text>
+</svg>

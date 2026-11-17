@@ -1,0 +1,114 @@
+{
+  "disposition": "Reject the straight tall stack. Retain the rear floor port in source pending coordinated redesign.",
+  "sourceSHA256": {
+    "project/mat/studies/rear-wc-west-gravity.json": "ae8ac6c5983636b3aad27df4718ecaeedb9d797318d7017149d5dfc66c663ebd",
+    "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+    "project/rof/studies/outer_66_checkpoint/outer-66-pieces.json": "db90a5429c27a3244e617b444a09972d5aa7fb2b1151d601562c007d9efca8d8",
+    "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+    "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+    "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5"
+  },
+  "existingStackXYmm": [
+    -300,
+    9400
+  ],
+  "screenedBareVentZmm": 7200,
+  "westGoods": {
+    "primary": {
+      "piece": "primary-west-13",
+      "pieceYmm": [
+        9177.5,
+        9960.625
+      ],
+      "installedRadialMM": [
+        170.0,
+        520.0
+      ],
+      "bedZmm": 6841.554466361,
+      "lipZmm": [
+        6971.554466361,
+        7071.554466361
+      ],
+      "stackOverlapMM": 110.0,
+      "clearanceAfter400OutAndSettingMM": 195.0,
+      "northShiftBeforePassingMastMM": 352.5,
+      "southShiftBeforePassingMastMM": 690.625,
+      "northShiftBeyondPickupCentred1200BayMM": 144.0625
+    },
+    "lower": {
+      "piece": "lower-west-13",
+      "pieceYmm": [
+        9203.75,
+        9993.4375
+      ],
+      "installedRadialMM": [
+        125.0,
+        670.0
+      ],
+      "bedZmm": 6478.0,
+      "lipZmm": [
+        6603.0
+      ],
+      "stackOverlapMM": 110.0,
+      "clearanceAfter400OutAndSettingMM": 45.0,
+      "northShiftBeforePassingMastMM": 326.25,
+      "southShiftBeforePassingMastMM": 723.4375,
+      "northShiftBeyondPickupCentred1200BayMM": 121.09375
+    }
+  },
+  "bareVentMinimumRadiusForInstalledGoodsMM": 735.0,
+  "standOffVent": {
+    "trialMastRadiusMM": 1220,
+    "completeSupportReserveDiameterMM": 190,
+    "escapeRadialMM": [
+      1400,
+      2600
+    ],
+    "mastClearOfEscapeAfterSettingMM": 75,
+    "bodyCentreRadiusAndYmm": [
+      1050,
+      9825
+    ],
+    "bodyClearOfMastAfterSettingMM": 52.73900860643283,
+    "bodyClearOfEscapeAfterSettingMM": 40,
+    "scope": "Plan and initial withdrawal only. The lower 400 mm movement is a sensitivity. Full pan transfer, wet pickup, support, tool and escape states remain unproved."
+  },
+  "unalteredDryRiser": {
+    "roofReservationXYZmm": [
+      567.5,
+      11177.5,
+      7800
+    ],
+    "idealBareOutsideDiameterMM": 75,
+    "nearestHipAxisDistanceMM": 180.3122292025696,
+    "hipOuterRailFaceFromAxisMM": 146,
+    "bareVentInterferenceWithHipRailMM": 3.187770797430403,
+    "firstInteriorWestPurlinXAndNorthCentrelineEndYmm": [
+      500,
+      11500
+    ],
+    "purlinMinimumHalfWidthInPlanMM": 40.0,
+    "minimumBareVentInterferenceWithPurlinMM": 10.0,
+    "possibleDryTakeoffAtWCBranchAxisZmm": 3626.7,
+    "WCVerticalAbovePriorHostAxisMM": 5930.0,
+    "showerStackConnectionAbovePriorHostAxisMM": 5195.5,
+    "scope": "The WC takeoff would connect to the external stack through the wet WC branch. It does not provide separate open stack ventilation during flush or surcharge. A roof offset and an independently established air path are distinct obligations."
+  },
+  "independentFoul": {
+    "previousConditionalHostXYZmm": [
+      -450,
+      11177.5,
+      -2480
+    ],
+    "trialGradeZmm": -1800,
+    "trialCoverMM": 600,
+    "maximumUpstreamAxisZmm": -2480,
+    "minimumDirectPlanLengthMM": 1783.8178858840945,
+    "minimumDropAt1In40MM": 44.59544714710236,
+    "maximumHostAxisZmmWithSameCover": -2524.5954471471023,
+    "upstreamCoverMMIfPreviousHostLevelHeld": 555.4045528528977,
+    "minimumPipeEnvelopeToWestGirderPlanMM": 202.5,
+    "scope": "Direct run is a plan lower bound. Confirm actual grade, fitted branches, excavation, separate vent, inspection and lawful receiving."
+  }
+}

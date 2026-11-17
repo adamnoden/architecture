@@ -9,9 +9,11 @@ const location = file => new URL(file, import.meta.url);
 const { study } = JSON.parse(readFileSync(location('workable-study-floor.json')));
 const compiler = prepareCurrentDesignCompile(readGeorgianDesignSnapshot());
 const common = { schema: 'ias-study-room-kit-case/1', units: 'mm', pitchMm: 300 };
-const [oak, stone] = await Promise.all([
+const [oak, stone, thinOak, thinStone] = await Promise.all([
   compiler.studyRoomKit({ ...common, wearingFace: 'oak' }),
   compiler.studyRoomKit({ ...common, wearingFace: 'stone-steel' }),
+  compiler.studyRoomKit({ ...common, wearingFace: 'oak', finishDepthMm: 15 }),
+  compiler.studyRoomKit({ ...common, wearingFace: 'stone-steel', finishDepthMm: 15 }),
 ]);
 if (JSON.stringify(oak.kit.bands) !== JSON.stringify(study.bands)
     || JSON.stringify(oak.kit.occupied) !== JSON.stringify(study.occupied)) {
@@ -265,6 +267,10 @@ const drawings = [
   ['crafted-study-south-stock.svg', renderDrawingSceneV2Svg(oak.wallElevation)],
   ['crafted-study-kit-schedule.json', JSON.stringify({
     oak: oak.kit,
+    thinGroundComparison: [thinOak.kit, thinStone.kit].map(({request, caseDigest, floor}) => ({
+      request, caseDigest, wearingFaceMm: floor.wearingFaceMm, groundSupport: floor.groundSupport,
+      maxWearingPackageKgBeforeAccessories: Math.max(...floor.parts.map(part => part.wearFaceKg)),
+    })),
     stone: {
       source: stone.kit.source,
       request: stone.kit.request,

@@ -66,3 +66,7 @@ test('Separate under-sill wet boxes retain both fault paths during one branch wi
     && vent.rawSillAfterSettingMM >= 25 && !access.qualifiedReleaseAndFirstRest));
   assert.equal(result.adjoiningConstructionAndInstalledFaultEvidenceQualified, false);
 });
+
+test('The sub-sill insert keeps a benchmark support path and exposes all geometric adverse cases', () => {
+  execFileSync(process.execPath, [fileURLToPath(read('south-inlet-sill-insert.mjs')), '--check']);
+});

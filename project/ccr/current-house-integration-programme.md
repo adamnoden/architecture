@@ -89,6 +89,26 @@ In the PR and closeout, name the changed authoritative inputs and methods, live 
 
 Preserve historical results at their original scope, stable solver behaviour and source-authority boundaries. Migration is incremental through tested adapters; a rename or directory move is not completion. Use separate files for parallel adapters and integrate shared contracts serially under canonical leases. Existing issue #1008 remains the ADE delivery discussion; #1539 and #1542 track the owner direction. The typed graph owns execution.
 
+## Current integration frontier
+
+The accepted Georgian document supplies the common nominal house identity. Its discipline bindings attach only to that exact document. The specialist cases below use this basis and carry their own conditional geometry. In particular, the southern Utility window has a separate structural rewind and the Study has an occupied opening offset. Releasing either into a selected layout requires reconciling those choices with the authored house.
+
+| Consumer | Current route | Next migration |
+| --- | --- | --- |
+| North collector and north-west service port | `--read-north-collector` / `--north-collector`. The current structural binding supplies the finite-bar comparison inputs, and the Python method regenerates the clearance assessment and drawing. | Join the detailed collector and alternate service route to the wall/chord splice, roof drainage and signed 52-head analysis before structural selection. |
+| South Utility inlet sill insert | `--read-inlet-sill-insert` / `--inlet-sill-insert`. The shared kernel uses the stable Utility opening and the verified candidate rewind. The area, packing and intervention checks remain conditional. | Replay the retained support and neighbour interfaces and bind installed pressure, vent, wetting and handling evidence to the resulting case. |
+| Crafted Study transition | `--study-room-kit`. The wall transition and section consume the same in-memory room kit as the plan and schedule driver. | Apply an admissible saved editor revision to the technical case and bind the dry field's support, fixing and protective-layer evidence. |
+| Current Georgian non-plan views and occupied service drawings | Native sections, roof and exterior still use the Georgian layout family. HAD's assembled service schedule has a current compile route while its native drawing drivers and MRA consumer retain separate paths. | Route current views and service drawing consumers to the same admitted case. Verify vertical datums, unchanged views and explicit diagnostics for edited conditions outside the method. |
+| Historical outputs and final publication | `outputs:*` and their manifest/dataplate assessment retain the RH-C fixture. The published figure register identifies historical plates at their placements. The east-ground current compile already has its own explicit case. | Keep history reproducible. For each final current publication consumer, require the selected current-source route or an explicitly historical claim, then rerun the release audit with the final bay evidence. |
+
+Use the same versioned request for CLI or server-side analysis. For example, from the repository root, the first command emits the current design document, the second emits the source-bound candidate request, and the third replays that request.
+
+```sh
+node --import tsx scripts/compile-current-design.ts --read-georgian-source |
+  node --import tsx scripts/compile-current-design.ts --read-north-collector - |
+  node --import tsx scripts/compile-current-design.ts --north-collector -
+```
+
 ## What completion does and does not mean
 
 The implemented result will be a coherent, editable and change-aware model for the supported Reference House and its declared variant families. It does not promise an arbitrary-building generator, automatic architectural judgement, complete physical validation, a shipped browser UI, real-time execution of every analysis or construction permission. Those limits do not excuse leaving current model data fragmented.

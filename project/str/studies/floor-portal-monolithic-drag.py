@@ -1,0 +1,338 @@
+"""Compare the north L collector against the live port and the full rear cabinet."""
+from hashlib import sha256
+from json import dumps, loads
+from math import ceil, cos, hypot, isfinite, pi, radians, sin, tan
+from pathlib import Path
+from sys import argv, stdin
+
+from court_tie_starter_paths import segment_distance
+
+SOURCES = (
+    'project/str/studies/floor-portal-north-collar.json',
+    'project/str/studies/current-house-ground-ties.json',
+    'project/str/studies/open-loggia-support.json',
+    'project/had/studies/open-north-loggia.json',
+    'project/mat/studies/loggia-soffit.json',
+    'project/str/studies/current-house-grid.json',
+    'project/mat/studies/whole-house-service-baseline.json',
+)
+AXES_Z = (3206, 3218, 3260, 3284, 3308, 3350, 3362)
+DIAMETERS = (12, 12, 20, 28, 20, 12, 12)
+STATIONS_V = (338, 440, 542, 644, 746)
+EDGE_V = (-70, 930)
+RECEIVER_U = 170
+BAR_DIAMETER = 20
+FORM_SETTING = 5
+COVER = 25
+PLACING = 21
+POOR_BOND_MPA = 2.1
+ANGLE = radians(62)
+
+
+def minimum_gap(left, right, combined_radii):
+    return min(segment_distance(*p, *q) for p in left for q in right) - combined_radii - FORM_SETTING
+
+
+def port_clearance(bounds, paths, port_radius):
+    low_u, high_u, low_v, high_v = bounds
+    if low_u > high_u or low_v > high_v:
+        return {'state': 'no-port-territory', 'centreBoundsUVmm': bounds}
+
+    axes = []
+    for (au,av,_), (bu,bv,_) in paths:
+        du, dv = bu-au, bv-av
+        axes.append((au, av, du, dv, 1/(du*du+dv*dv)))
+
+    def clearance(u, v):
+        distances = []
+        for au, av, du, dv, inverse_squared_length in axes:
+            t = max(0, min(1, ((u-au)*du+(v-av)*dv)*inverse_squared_length))
+            distances.append(hypot(u-au-t*du, v-av-t*dv))
+        return min(distances) - port_radius - BAR_DIAMETER/2 - FORM_SETTING
+
+    count_u, count_v = max(1, ceil(high_u-low_u)), max(1, ceil(high_v-low_v))
+    step_u, step_v = (high_u-low_u)/count_u, (high_v-low_v)/count_v
+    sample_clearance, u, v = max(
+        (clearance(u, v), u, v)
+        for u in (low_u+i*step_u for i in range(count_u+1))
+        for v in (low_v+j*step_v for j in range(count_v+1))
+    )
+    interpolation_allowance = hypot(step_u, step_v)/2
+    upper_bound = sample_clearance + interpolation_allowance
+    if upper_bound < 0:
+        state = 'overlap-throughout-territory'
+    elif upper_bound < COVER:
+        state = 'cover-shortfall-throughout-territory'
+    else:
+        state = 'cannot-exclude-cover-by-this-bound'
+    return {
+        'state': state, 'centreBoundsUVmm': bounds, 'barCount': len(axes),
+        'bestSampleUVmm': [u, v], 'bestSampleGapMm': sample_clearance,
+        'distanceToNearestSampleBoundMm': interpolation_allowance,
+        'continuousUpperBoundGapMm': upper_bound, 'requiredCoverMm': COVER,
+    }
+
+
+def finite_number(value):
+    return type(value) in (int, float) and isfinite(value)
+
+
+def native_request(value, retained_port, cabinet):
+    if not isinstance(value, dict) or set(value) != {'schema', 'portAxisXYMm', 'dragDemandFactor'}:
+        raise ValueError('Expected an explicit versioned north collector case')
+    if value['schema'] != 'str-north-collector-native-case/1':
+        raise ValueError('Unknown north collector case schema')
+    axis, factor = value['portAxisXYMm'], value['dragDemandFactor']
+    if not finite_number(factor) or not 0 < factor <= 1:
+        raise ValueError('Demand factor must be greater than zero and at most the retained historical demand')
+    if not isinstance(axis, list) or len(axis) != 2 or not all(map(finite_number, axis)):
+        raise ValueError('Port axis requires two finite XY coordinates in millimetres')
+    x, y, width, depth = cabinet
+    radius = retained_port[2]/2
+    if not (x+radius <= axis[0] <= x+width-radius and y+radius <= axis[1] <= y+depth-radius):
+        raise ValueError('The formed port must fit entirely inside the source rear cabinet in this comparison')
+    return axis, factor
+
+
+def compare_collector(source_data, source_hashes, request=None):
+    collar, ground, floor, house, section, grid, services = source_data
+    retained_port = services['rewinds']['rearSource27']['retainedFloorPort']
+    port_diameter = retained_port[2]
+    cabinet = house['upperFurniture']['rear-cabinet']
+    port_axis_xy, factor = native_request(request, retained_port, cabinet) if request is not None else (retained_port[:2], 1)
+    corner_x, corner_y = next(head['xy'] for head in grid['heads'] if head['id'] == 'P07')
+    port_u, port_v = port_axis_xy[0]-corner_x, corner_y-port_axis_xy[1]
+
+    soffit, regular_top = section['section']['slabZ']
+    finish = collar['cornerCandidate']['FFLAndFinishUndersideZmm'][1]
+    reference_force = collar['old_new_chord'][1]
+    force = reference_force*factor
+    tension_per_bar = force/(len(STATIONS_V)*sin(ANGLE))
+    required_bond = tension_per_bar*1000/(pi*BAR_DIAMETER*POOR_BOND_MPA)
+    modelled_bond = required_bond+5
+    bond_ratio = modelled_bond/required_bond if required_bond else None
+    du, dv = modelled_bond*cos(ANGLE), modelled_bond*sin(ANGLE)
+    return_compression = force/tan(ANGLE)
+    cracked_strut_mpa = .6*(1-30/250)*17
+
+    def drag(sign, swap=False, z=0):
+        lines = [
+            ((RECEIVER_U-du, v-sign*dv, z), (RECEIVER_U+du, v+sign*dv, z))
+            for v in STATIONS_V
+        ]
+        return [((a[1], a[0], a[2]), (b[1], b[0], b[2])) for a, b in lines] if swap else lines
+
+    def vertical(points):
+        both_wings = set(points) | {(v,u) for u,v in points}
+        return [((u,v,3000),(u,v,3600)) for u,v in sorted(both_wings)]
+
+    lower_z, upper_z = AXES_Z[2], AXES_Z[4]
+    west_paths = drag(1, z=lower_z)+drag(-1, z=upper_z)
+    lower_paths = drag(1, z=lower_z)+drag(-1, True, lower_z)
+    upper_paths = drag(-1, z=upper_z)+drag(1, True, upper_z)
+    primary = [
+        (u-70+(15 if v>800 else 0), v-70)
+        for u,v in ground['outer']['primaryBarXY'] if u<140
+    ]
+    secondary = [(u,v) for u in (-12,42) for v in (280,530)]
+    own_clear = min(b-a for a,b in zip(STATIONS_V, STATIONS_V[1:]))*cos(ANGLE)-BAR_DIAMETER-FORM_SETTING
+    mixed = minimum_gap(drag(1), drag(-1, True), BAR_DIAMETER)
+    upright = {
+        'primaryH20': minimum_gap(west_paths, vertical(primary), 20),
+        'secondaryH12': minimum_gap(west_paths, vertical(secondary), 16),
+    }
+    stack_top = AXES_Z[-1]+DIAMETERS[-1]/2+COVER+FORM_SETTING
+
+    port_radius = port_diameter/2
+    port_axis = [((port_u, port_v, soffit), (port_u, port_v, regular_top))]
+    port_clearances = [{
+        'levelZMm': z, 'direction': sign,
+        'minimumClearToFormedEdgeAfter5Mm': minimum_gap(paths, port_axis, BAR_DIAMETER/2+port_radius),
+    } for sign,z,paths in ((1,lower_z,lower_paths), (-1,upper_z,upper_paths))]
+    x,y,width,depth = cabinet
+    cabinet_centre_bounds = [
+        max(RECEIVER_U, x-corner_x)+port_radius, x+width-corner_x-port_radius,
+        corner_y-(y+depth)+port_radius, corner_y-y-port_radius,
+    ]
+
+    def gravity(name):
+        row = next(r for r in floor['floor_fields'] if r['id']==name)
+        amount = row['action']['V']*.86
+        return {'field':name, 'wingReactionKN':amount, 'mean100WideSeatMPa':amount*1000/(100*860),
+                'U190ToU20IndependentTieKN':amount*170/row['section']['z']}
+
+    rails = [
+        (u,z,d)
+        for u,zs,d in [
+            (-28,[3211,3251,3335],12), (26,[3211,3251,3335],12),
+            (-30,[3293],16), (24,[3293],16),
+            (-27,[3143,3443],10), (27,[3143,3443],10),
+        ]
+        for z in zs
+    ]
+    rail_witness = min(
+        (minimum_gap(drag(sign, z=z), [((u,EDGE_V[0],z0),(u,EDGE_V[1],z0))], (BAR_DIAMETER+d)/2), sign,z,u,z0,d)
+        for sign in (1,-1) for z in (lower_z,upper_z) for u,z0,d in rails
+    )
+    north_heads = [h for h in grid['heads'] if h['id'] in ('P07','P08','P09','P10','P11','P12')]
+    cap_min_half_width = min(min(h['capXY']) for h in north_heads)/2
+    nearest_raw_opening = min(
+        row['nearestRawPlanReserveMm'] + row['wingAxisSpanMm'][1]-row['wingAxisSpanMm'][0]-EDGE_V[1]
+        for row in collar['cornerCandidate']['allNearestApertures'].values()
+    )
+    return {
+        'status':'Geometric and static monolithic redesign screen. Coupled wall, corner cage and splice loads unadmitted.',
+        'sourceSHA256':source_hashes,
+        'geometry':{'wallUAndLegVLimitsMm':[[-70,RECEIVER_U], EDGE_V], 'receivingUMm':RECEIVER_U,
+                    'northNearestRawOpeningReserveAtOldToeMm':nearest_raw_opening,
+                    'permanentWallRoomwardIncreaseMm':RECEIVER_U-70,
+                    'unchangedExteriorGlassCavityBrickMm':collar['cornerCandidate']['unchangedExteriorGlassCavityAndBrickMm'],
+                    'NWCornerOriginXYmm':[corner_x,corner_y], 'NWOriginalRearCabinetPlanMm':cabinet,
+                    'soffitAndOrdinarySlabTopZMm':[soffit,regular_top], 'finishUndersideZMm':finish},
+        'straightDrag':{'steel':'S500 H20; C30/37 and declared 2.1MPa poor-bond', 'anglesDeg':[-62,62],
+                        'barCentresAtReceivingPlaneVMm':STATIONS_V, 'derivedTensionPerBarKN':tension_per_bar,
+                        'requiredBondLengthEachSideMm':required_bond, 'modelledLengthEachSideMm':modelled_bond,
+                        'projectionEachSideUAndVMm':[du,dv], 'diagonalRootsUMm':RECEIVER_U-du,
+                        'stripExtentsVMm':[STATIONS_V[0]-dv, STATIONS_V[-1]+dv],
+                        'lowerPathsLocalXYZMm':lower_paths, 'upperPathsLocalXYZMm':upper_paths,
+                        'coverToActualToeEndAfter5mm':EDGE_V[1]-STATIONS_V[-1]-dv-FORM_SETTING-BAR_DIAMETER/2*cos(ANGLE),
+                        'roomwardAffectedUAtMinimumMm':RECEIVER_U+du,
+                        'basicPoorBondOnlySafetyRatio':bond_ratio if bond_ratio is not None and isfinite(bond_ratio) else None},
+        'stack':{'axesInSectionZMm':AXES_Z, 'barDiametersMm':DIAMETERS,
+                 'localSlabTopZMm':stack_top, 'slabDepthMm':stack_top-soffit,
+                 'reserveToActualFinishUndersideMm':finish-stack_top,
+                 'unrelatedDragPlanesClearShared5Mm':upper_z-lower_z-BAR_DIAMETER-FORM_SETTING,
+                 'samePlaneWingPairClearShared5Mm':mixed, 'alongOneSignClearShared5Mm':own_clear,
+                 'alongOneSignClearIndependent10Mm':own_clear-FORM_SETTING,
+                 'uprightScreenClearShared5Mm':upright,
+                 'commonJig':'Two opposed groups on each arm. Same level swaps signs on adjoining wings; each plane deliberately touches the intervening H28 at crossings. 5 mm total relative setting is binding.',
+                 'wallLongitudinalTrial':{'governingGapAndAxes':rail_witness, 'minimumUnrelatedGapMm':rail_witness[0],
+                                          'oneCourseReplacementAreaMM2':pi*8**2,
+                                          'priorSeparateH12AndH10AreaMM2':pi*(6**2+5**2),
+                                          'railAxesUMmZMmDiameterMm':rails}},
+        'lateralClosure':{'ownerHistoricalForceKN':reference_force, 'comparisonForceKN':force, 'dragDemandFactor':factor,
+                          'normalCompressionReturnKN':return_compression,
+                          'minimumAreaAtDeclaredCrackedStrutMM2':return_compression*1000/cracked_strut_mpa,
+                          'meanOnAdverseCommonWallFaceMPa':return_compression*1000/(850*(stack_top-soffit-10)*.75),
+                          'momentAboutWidenedMidPlaneKNm':force*(RECEIVER_U+70)/2000,
+                          'momentAboutUnchangedGroundAxisU0KNm':force*RECEIVER_U/1000,
+                          'scope':'No friction credit. Normal return balances at the same V centroid. Mean pressure only. The positive torque transfer and real L-ground stability splice are unproved.'},
+        'retainedNWPort':{'referenceAxisXYmm':retained_port[:2], 'axisXYmm':port_axis_xy,
+                          'axisUVAndDiameterMm':[port_u, port_v, port_diameter], 'levels':port_clearances,
+                          'gapToWidenedWallUMm':port_u-port_radius-RECEIVER_U, 'admitted':False},
+        'rearCabinetPortTerritory':port_clearance(cabinet_centre_bounds, lower_paths+upper_paths, port_radius),
+        'gravity':{'directBearingURangeMm':[-30,70], 'records':[gravity(n) for n in ('NW-W','NE')]},
+        'groundAlternative':{'retainedNorthCornerAndToeCapIDs':[h['id'] for h in north_heads],
+                             'insidePlanGapToSmallestCapAfter5Mm':cap_min_half_width-RECEIVER_U-FORM_SETTING,
+                             'outsidePlanGapToSmallestCapAfter5Mm':cap_min_half_width-70-FORM_SETTING,
+                             'scope':'Plan-only alternative with actual continuous widened body onto a redesigned imperforate DPC plate and cap. Existing shallow node, anchors and soil capacities are not transferred.'},
+    }
+
+
+def diagram(result):
+    soffit = result['geometry']['soffitAndOrdinarySlabTopZMm'][0]
+    finish = result['geometry']['finishUndersideZMm']
+    stack_top = result['stack']['localSlabTopZMm']
+    heights = result['stack']['axesInSectionZMm']
+    port_u, port_v, port_diameter = result['retainedNWPort']['axisUVAndDiameterMm']
+    ink = []
+    def line(x1,y1,x2,y2,role):
+        ink.append(f'<path d="M{x1:g} {y1:g}L{x2:g} {y2:g}" class="{role}"/>')
+    def box(x,y,w,h,role):
+        ink.append(f'<rect x="{x:g}" y="{y:g}" width="{w:g}" height="{h:g}" class="{role}"/>')
+    def circle(x,y,r,role):
+        ink.append(f'<circle cx="{x:g}" cy="{y:g}" r="{r:g}" class="{role}"/>')
+    def label(x,y,words,role='note'):
+        ink.append(f'<text x="{x:g}" y="{y:g}" class="{role}">{words}</text>')
+
+    box(0,0,420,297,'paper')
+    label(14,20,'North collector · opposed straight steel','title')
+    port_label = 'retained port' if result['retainedNWPort']['axisXYmm'] == result['retainedNWPort']['referenceAxisXYmm'] else 'trial port'
+    label(14,30,f'Northwest comparison · {port_label} shown in red · print at actual A3 size.')
+    line(14,37,406,37,'rule')
+    for x, sign, heading in [(17,1,'Lower group at Z3260 · 1:10'),(148,-1,'Upper group at Z3308 · 1:10')]:
+        y=58
+        def plan(u,v):
+            return x+(u+70)/10,y+(v+70)/10
+        label(x,47,heading,'head')
+        box(x,y,100,24,'concrete')
+        box(x,y+24,24,76,'concrete')
+        line(*plan(170,170),*plan(170,930),'face')
+        line(*plan(170,170),*plan(930,170),'face')
+        for a,b in result['straightDrag']['lowerPathsLocalXYZMm' if sign == 1 else 'upperPathsLocalXYZMm']:
+            line(*plan(*a[:2]),*plan(*b[:2]),'steelPlan')
+        circle(*plan(port_u,port_v),port_diameter/20,'port')
+        mark=result['retainedNWPort']['levels'][0 if sign==1 else 1]['minimumClearToFormedEdgeAfter5Mm']
+        label(x,170,f'Formed Ø{port_diameter} port signed gap: {mark:.2f} mm')
+        label(x,178,'Both wing directions shown. Positive axes into the room.')
+        line(x,184,x+50,184,'rule')
+        label(x,190,'500 mm')
+    line(270,42,270,208,'rule')
+    label(285,47,'Local floor section · 1:5','head')
+    base,datum=288,139
+    def sx(u):
+        return base+(u+70)/5
+    def sz(z):
+        return datum-(z-soffit)/5
+    box(sx(-70),sz(stack_top),(170+70)/5,(stack_top-soffit)/5,'concrete')
+    box(sx(-70),sz(soffit),(170+70)/5,25,'concrete')
+    box(sx(170),sz(stack_top),32,(stack_top-soffit)/5,'slab')
+    line(sx(170),sz(stack_top),sx(170),sz(soffit),'face')
+    line(sx(-30),sz(soffit),sx(70),sz(soffit),'seat')
+    for z,d in zip(heights,[12,12,20,28,20,12,12]):
+        circle(sx(196),sz(z),d/10,'steelSection')
+    line(sx(25),sz(finish),sx(265),sz(finish),'rule')
+    label(373,sz(finish)+1,'Z3435 finish underside')
+    label(373,sz(stack_top)+1,'Z3398 local slab top')
+    label(373,sz(soffit)+1,'Z3170 soffit')
+    label(287,174,'100 mm gravity seat centred over the old core.')
+    label(287,182,'Dash marks the roomward wall face at U170.')
+    label(287,190,'Lower and upper diagonal bars bear against H28 chord.')
+    line(14,206,406,206,'rule')
+    label(14,223,'Release conditions','head')
+    if result['rearCabinetPortTerritory']['state'] == 'overlap-throughout-territory':
+        label(14,234,'The existing cabinet has no clear port position. Resolve an independent route or redesign the cage.')
+    else:
+        label(14,234,'Any proposed port needs an independent service and cover check.')
+    label(14,244,'Prove the widened body, full chord, round ties and imperforate DPC splice as one force path.')
+    label(14,254,'This section screens geometry and isolated loads. Ground, roof and whole-house checks remain open.')
+    label(14,280,'Plan coordinates U/V and levels Z are in millimetres.')
+    return ('<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" role="img" aria-labelledby="title">\n'
+            '<title id="title">Opposed straight collector reinforcement and retained port</title>\n'
+            '<style>.paper{fill:#f8f4eb}.rule,.face,.steelPlan,.seat{fill:none;stroke:#5b554c;stroke-width:.4}'
+            '.face{stroke-dasharray:1 1}.concrete,.slab{fill:#dcd8cf;stroke:#777166;stroke-width:.3}.slab{fill:#e9e4db}'
+            '.steelPlan{stroke:#244658;stroke-width:2;stroke-linecap:round}.steelSection,.seat{fill:#244658;stroke:#244658;stroke-width:.65}'
+            '.port{fill:#a94d42;fill-opacity:.20;stroke:#a94d42;stroke-width:.7}.title{font:8px Georgia;fill:#302a24}'
+            '.head{font:4.8px Georgia;fill:#302a24}.note{font:3.5px Arial;fill:#514639}</style>\n'
+            +'\n'.join(ink)+'</svg>\n')
+
+
+def main(root, flags):
+    source_bytes = [(root / file).read_bytes() for file in SOURCES]
+    source_data = list(map(loads, source_bytes))
+    source_hashes = {path:sha256(raw).hexdigest() for path, raw in zip(SOURCES, source_bytes)}
+    if flags == ['--current-request']:
+        result = compare_collector(source_data, source_hashes, loads(stdin.read()))
+        print(dumps({'schema':'str-north-collector-native-result/1', 'comparison':result, 'drawingSvg':diagram(result)}, allow_nan=False))
+        return
+    if flags not in ([], ['--check']):
+        raise ValueError('Choose --check or --current-request')
+    result = compare_collector(source_data, source_hashes)
+    stack = result['stack']
+    assert min(stack['alongOneSignClearShared5Mm'], stack['samePlaneWingPairClearShared5Mm'],
+               *stack['uprightScreenClearShared5Mm'].values()) >= PLACING
+    assert stack['alongOneSignClearIndependent10Mm'] < PLACING
+    assert stack['wallLongitudinalTrial']['minimumUnrelatedGapMm'] >= PLACING
+    assert result['straightDrag']['coverToActualToeEndAfter5mm'] >= COVER
+    assert all(level['minimumClearToFormedEdgeAfter5Mm'] < 0 for level in result['retainedNWPort']['levels'])
+    assert result['rearCabinetPortTerritory']['state'] == 'overlap-throughout-territory'
+    target = Path(__file__).with_suffix('.json')
+    for output, data in [(target, dumps(result, indent=2, sort_keys=True)+'\n'), (target.with_suffix('.svg'), diagram(result))]:
+        if flags == ['--check']:
+            assert output.read_text() == data, output
+        else:
+            output.write_text(data)
+
+
+if __name__ == '__main__':
+    main(Path(argv[1]), argv[2:])
