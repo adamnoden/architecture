@@ -9,8 +9,8 @@
     "label": "ovid-inlet-removal"
   },
   "claimedAt": "2026-11-17T22:59:48.025Z",
-  "heartbeatAt": "2026-11-17T22:59:48.025Z",
-  "expiresAt": "2026-11-17T23:44:48.025Z",
+  "heartbeatAt": "2026-11-17T23:08:37.322Z",
+  "expiresAt": "2026-11-17T23:53:37.322Z",
   "branch": "work/inlet-removal-2026-11-17",
   "predecessor": {
     "leaseId": "0ddabf6c-f6bb-4124-8614-3bf3b1a6c543",
@@ -33,5 +33,11 @@
       "next": "Develop the separately supported upper disconnect and capture at Z900, then dry-fit the actual branch and sample before pressure/wet-state verification with its sibling sealed.",
       "blocker": "The retained plant envelope does not admit the R75 lift-off comparison. Actual restraint, withdrawal, capture and rated assembled performance remain unproved."
     }
+  },
+  "pr": 1567,
+  "checkpoint": {
+    "evidence": "PR #1567 has the current design removal screen, known split-collar blocking condition and continuously checked straight carrier paths in commit 34482cdb4ad598fde6be670c8b8390d155c3126d.",
+    "next": "Verify exact-head hosted CI and merge after the structural lane. Detail the independently openable roof strip and rated Z900 disconnect, then verify restrained draw and first rest before wet qualification.",
+    "blocker": "The 620 mm draw has no release through the original collar alone. Independent cover, guide, upper companion and installed wet evidence remain open."
   }
 }
