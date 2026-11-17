@@ -9,9 +9,9 @@
     "label": "ovid-structural-continuity"
   },
   "claimedAt": "2026-11-17T22:58:46.069Z",
-  "heartbeatAt": "2026-11-17T23:41:36.231Z",
-  "expiresAt": "2026-11-18T01:11:36.231Z",
-  "branch": "work/north-fixed-base-replay-2026-11-17",
+  "heartbeatAt": "2026-11-17T23:45:58.486Z",
+  "expiresAt": "2026-11-18T01:15:58.486Z",
+  "branch": "work/study-room-kit-integration-2026-11-17",
   "predecessor": {
     "leaseId": "20c1309c-7ef1-40dd-8d07-97a790f27619",
     "generation": 37,
@@ -35,7 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Merged PR #1569 at f418f3e48eb1ded3784a88b625be2afe034c827c; local H28 drawing and clearance method verified",
-    "next": "Publish same-wind native model reuse and verify exact hosted checks"
-  }
+    "evidence": "PR #1572 at ed7660897855c880ccc08c2bb467543037ba5df6; eighteen focused structural tests and typecheck passed; merged structural plan PR #1569",
+    "next": "Validate the joint STR, IAS and HAD integration head in PR #1568 and merge after exact lease verification"
+  },
+  "pr": 1568
 }
