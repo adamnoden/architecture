@@ -9,9 +9,9 @@
     "label": "total-integration-had-2026-11-17"
   },
   "claimedAt": "2026-11-17T08:57:28.915Z",
-  "heartbeatAt": "2026-11-17T09:27:54.228Z",
-  "expiresAt": "2026-11-17T10:12:54.228Z",
-  "branch": "work/total-integration-2026-11-17",
+  "heartbeatAt": "2026-11-17T09:31:22.702Z",
+  "expiresAt": "2026-11-17T10:16:22.702Z",
+  "branch": "work/total-integration-followup-2026-11-17",
   "predecessor": {
     "leaseId": "fede185e-dbb7-4ae7-b693-a2b65b7445c3",
     "generation": 40,
@@ -34,10 +34,10 @@
       "blocker": "Narrow opening fits. A 16 mm stile is a local wind/gravity comparator with no credit for arch restraint."
     }
   },
-  "pr": 1561,
+  "pr": 1562,
   "checkpoint": {
-    "evidence": "Ready PR #1561 at 6d2005f0c98fc5b64772a960222153126496e08c. Additional locally tested source is preserved at work/total-integration-followup-2026-11-17 commit 850b248372ac573ec37e0bdcc500dd237a361eac.",
-    "next": "Finish exact-head CI and publication preflight for #1561. Then reconcile the follow-up branch against verified main and validate it separately.",
-    "blocker": "Engineering acceptance still requires joined structural, installed service and physical boundary evidence."
+    "evidence": "Follow-up PR #1562 at 95853f9fcf977971257d2b1f973878b633dc4be9; 453 local compiler and source-audit tests green after repository tree verification.",
+    "next": "Inspect exact-head hosted checks, then rerun publication preflight and merge into main.",
+    "blocker": "Physical acceptance and full engineering convergence remain open."
   }
 }
