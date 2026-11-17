@@ -9,8 +9,8 @@
     "label": "total-integration-ias-2026-11-17"
   },
   "claimedAt": "2026-11-17T08:57:57.967Z",
-  "heartbeatAt": "2026-11-17T09:08:26.278Z",
-  "expiresAt": "2026-11-17T09:53:26.278Z",
+  "heartbeatAt": "2026-11-17T09:28:09.597Z",
+  "expiresAt": "2026-11-17T10:13:09.597Z",
   "branch": "work/total-integration-2026-11-17",
   "predecessor": {
     "leaseId": "0b268f4a-0459-44bf-a69b-df1c5e2fd1d9",
@@ -36,8 +36,8 @@
   },
   "pr": 1561,
   "checkpoint": {
-    "evidence": "PR #1561 at 6d2005f0c98fc5b64772a960222153126496e08c. Focused compiler and native study checks passed. Exact-head hosted validation running.",
-    "next": "Admit a single-opening saved editor revision into the scoped Study wall comparison.",
-    "blocker": "Dry support, loaded release and protective boundary still need physical evidence."
+    "evidence": "Ready PR #1561 at 6d2005f0c98fc5b64772a960222153126496e08c. Additional locally tested source is preserved at work/total-integration-followup-2026-11-17 commit 850b248372ac573ec37e0bdcc500dd237a361eac.",
+    "next": "Finish exact-head CI and publication preflight for #1561. Then reconcile the follow-up branch against verified main and validate it separately.",
+    "blocker": "Engineering acceptance still requires joined structural, installed service and physical boundary evidence."
   }
 }
