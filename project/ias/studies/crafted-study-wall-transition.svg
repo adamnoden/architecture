@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
 <title id="title">Study thin lining and retained mineral return</title>
-<metadata>Current IAS room case: 3ff8259a6167409fb347832b848b99c8625ae9415aacebe1810312690dd3c1dd; source binding: c727c60c0bbaf9c710a97aebef3e1b53f8aba1a0f76de1e3e565860c4c28d6e9</metadata>
+<metadata>Current IAS room case: 3ff8259a6167409fb347832b848b99c8625ae9415aacebe1810312690dd3c1dd; source binding: c727c60c0bbaf9c710a97aebef3e1b53f8aba1a0f76de1e3e565860c4c28d6e9; transition: 5032acb6f87933d26e8d647afb049086a0d49c6b3f97f326a3979a2e54606718</metadata>
 <desc id="desc">Dimensioned trial sections of a structural rail anchored to the wall core, a sealed air-control penetration, and a fixed lap into the retained lime window return.</desc>
 <defs>
   <pattern id="core" width="14" height="14" patternUnits="userSpaceOnUse"><rect width="14" height="14" fill="#e2ded1"/><path d="M0 14L14 0M-4 4L4 -4M10 18L18 10" fill="none" stroke="#c6bcaa" stroke-width="1"/></pattern>
@@ -69,6 +69,11 @@
 <text x="637" y="602" class="body">Test the lap after movement and repeated panel removal.</text>
 <text x="637" y="629" class="small quiet">Anchors and decorative trim stay out of the window renewal route.</text>
 <text x="637" y="651" class="small quiet">The dashed air line to the jamb needs a verified bond and seal.</text>
+<path d="M662 667V683M1110 667V683M690 675H1082" class="rule"/>
+<path d="M662 675H690M1082 675H1110" stroke="#b99a60" stroke-width="5"/>
+<path id="study-wall-module-set-out" d="M704 675H956" stroke="#b77950" stroke-width="5"/>
+<circle cx="718" cy="675" r="3" fill="#394953"/><circle cx="942" cy="675" r="3" fill="#394953"/>
+<text x="637" y="699" class="small quiet">Pier set-out between raw jambs. Dark dots mark the two hard lands.</text>
 <path d="M43 710H1157" class="rule"/>
 <text x="43" y="741" class="small">Separate adjacent wall and ceiling support from the removable fillet. Keep the plaster finish at the protected-door pinch.</text>
 <text x="43" y="766" class="small quiet">Conditional geometry. Anchor capacity, air leakage, concealed constituents and complete installed performance remain open.</text>

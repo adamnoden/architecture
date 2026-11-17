@@ -7,6 +7,7 @@ import type { CurrentDesignResolution } from '../resolve.js'
 import { compileRenewableOpenings } from './renewable-openings.js'
 import { compileResolvedStudyAssembly } from './study-floor.js'
 import { compileResolvedStudyLinings, layStudySouthPanelStock } from './study-linings.js'
+import { compileStudyWallTransition } from './study-wall-transition.js'
 
 type FloorAssembly = ReturnType<typeof compileResolvedStudyAssembly>
 type Box = readonly [number, number, number, number]
@@ -301,7 +302,7 @@ function openingSetout(resolved: CurrentDesignResolution, config: Case) {
       ? { state: 'native-comparison-only', receipt: window.receipt } as const
       : { state: 'stale', code: 'MOVED_STUDY_OPENING_FIXED_DETAILS' } as const,
   } as const
-  return { opening, wall, grille: linings.grille, grilleKeepOut } as const
+  return { opening, wall, grille: linings.grille, grilleKeepOut, nativeWindow: window } as const
 }
 
 function releaseScreen(assembly: FloorAssembly, parts: ReturnType<typeof partSetout>['parts']) {
@@ -354,19 +355,19 @@ function studyGroundSupport(assembly: FloorAssembly) {
   } as const
 }
 
-export function compileStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
+function deriveStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
   const request = caseInput(input)
   const assembly = compileResolvedStudyAssembly(resolved, { pitchMm: request.pitchMm, wearingFace: request.wearingFace, finishDepthMm: request.finishDepthMm })
   const floorLayout = partSetout(assembly)
   const { parts, emitterPlinth } = floorLayout
-  const { opening, wall, grille, grilleKeepOut } = openingSetout(resolved, request)
+  const { opening, wall, grille, grilleKeepOut, nativeWindow } = openingSetout(resolved, request)
   const release = releaseScreen(assembly, parts)
   const handling = handlingScreen(assembly, floorLayout)
   const { house } = readBoundOccupiedServices(resolved)
   const [doorMin, doorMax] = house.model.studyDoorOperation.rough
   const [, doorAxis] = house.model.studyDoorOperation.hinge
   const door = { id: 'HAD/protectedRoute/STUDY', rough: [doorMin, doorMax], axis: doorAxis } as const
-  return {
+  const kit = {
     schema: 'ias-study-room-kit/1', state: 'candidate', units: 'mm', request,
     source: assembly.source, caseDigest: sha256SemanticFingerprint({ request, source: assembly.source, opening }),
     bands: assembly.grid.bands, occupied: assembly.grid.occupied,
@@ -380,9 +381,17 @@ export function compileStudyRoomKit(resolved: CurrentDesignResolution, input: un
     },
     opening, door, wall, grille, grilleKeepOut,
   } as const
+  return { kit, nativeWindow }
 }
 
-export function drawStudyRoomKitPlan(kit: ReturnType<typeof compileStudyRoomKit>, parkChair = false): DrawingSceneV2 {
+export type StudyRoomKit = ReturnType<typeof deriveStudyRoomKit>['kit']
+
+export function compileStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
+  const { kit, nativeWindow } = deriveStudyRoomKit(resolved, input)
+  return { kit, wallTransition: compileStudyWallTransition(kit, nativeWindow) }
+}
+
+export function drawStudyRoomKitPlan(kit: StudyRoomKit, parkChair = false): DrawingSceneV2 {
   const [x, y] = kit.bands[0]
   const width = Math.max(...kit.bands.map(band => band[2])) - x
   const height = Math.max(...kit.bands.map(band => band[3])) - y

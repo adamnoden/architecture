@@ -23,3 +23,15 @@ Keep a drained external mineral-faced rain screen and outward sill drip ahead of
 Independently attach each continuously joined sleeve-to-trough liner to its own mechanical supports, and keep shock and sleeve bursting forces off the weather backing, common frame, sash and other liner. Keep patch panels, metal liners and pressure carrier removable as separate items. Neither the window sill nor the outside breather carries fault water. The outlet/hood challenges include the other live branch, blocked external mouth, and a dry backing/wall outside the liner. Preserve outward sash renewal and its separate physical first rest. Opening area, weather, frost, six-service set-out and hydraulic independence remain development criteria. No owner selection, masonry admission or installed fault result is claimed.
 
 Reproduce the geometry, stiffness comparison and adverse frame/vent perturbations with `node project/had/studies/south-inlet-sill-insert.mjs --check`.
+
+## Current compiler comparison
+
+The accepted plan places `GROUND/south-window-4` at X10200. This detail uses the conditional STR rewind to X9900. The compiler resolves the original opening by stable ID, checks its host and width against the STR source and draws both spans at the trial sill datum. The result preserves the candidate identity and the outstanding structural and installation checks.
+
+```sh
+node --import tsx scripts/compile-current-design.ts --read-georgian-source |
+  node --import tsx scripts/compile-current-design.ts --read-inlet-sill-insert - > sill-insert.json
+node --import tsx scripts/compile-current-design.ts --inlet-sill-insert sill-insert.json
+```
+
+The case supports bounded changes to the east edge, header underside and plant pressure axis. Reducing the east edge from X10380 to X10370 buys 10 mm for the stile but changes the formed plant-sleeve reserve from 5 mm to −5 mm. Moving that sleeve 10 mm west restores the 5 mm aperture reserve and loses the independent cell's mouth packing. It falls from 5 mm to −5 mm against the unchanged wet cell. Neither edit preserves all interfaces. A Z600 header underside also cuts across the sleeve by 70.39 mm after setting. The load and vent calculations and scaled elevation use the same trial coordinates.

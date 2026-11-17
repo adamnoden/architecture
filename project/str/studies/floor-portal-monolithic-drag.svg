@@ -3,7 +3,7 @@
 <style>.paper{fill:#f8f4eb}.rule,.face,.steelPlan,.seat{fill:none;stroke:#5b554c;stroke-width:.4}.face{stroke-dasharray:1 1}.concrete,.slab{fill:#dcd8cf;stroke:#777166;stroke-width:.3}.slab{fill:#e9e4db}.steelPlan{stroke:#244658;stroke-width:2;stroke-linecap:round}.steelSection,.seat{fill:#244658;stroke:#244658;stroke-width:.65}.port{fill:#a94d42;fill-opacity:.20;stroke:#a94d42;stroke-width:.7}.title{font:8px Georgia;fill:#302a24}.head{font:4.8px Georgia;fill:#302a24}.note{font:3.5px Arial;fill:#514639}</style>
 <rect x="0" y="0" width="420" height="297" class="paper"/>
 <text x="14" y="20" class="title">North collector · opposed straight steel</text>
-<text x="14" y="30" class="note">Northwest trial · existing port retained in red · print at actual A3 size.</text>
+<text x="14" y="30" class="note">Northwest comparison · retained port shown in red · print at actual A3 size.</text>
 <path d="M14 37L406 37" class="rule"/>
 <text x="17" y="47" class="head">Lower group at Z3260 · 1:10</text>
 <rect x="17" y="58" width="100" height="24" class="concrete"/>
@@ -21,7 +21,7 @@
 <path d="M103.265 74.0959L73.5346 89.9041" class="steelPlan"/>
 <path d="M113.465 74.0959L83.7346 89.9041" class="steelPlan"/>
 <circle cx="47.5" cy="114" r="8" class="port"/>
-<text x="17" y="170" class="note">Formed Ø160 port clash: 81.03 mm with setting</text>
+<text x="17" y="170" class="note">Formed Ø160 port signed gap: -81.03 mm</text>
 <text x="17" y="178" class="note">Both wing directions shown. Positive axes into the room.</text>
 <path d="M17 184L67 184" class="rule"/>
 <text x="17" y="190" class="note">500 mm</text>
@@ -41,7 +41,7 @@
 <path d="M204.535 74.0959L234.265 89.9041" class="steelPlan"/>
 <path d="M214.735 74.0959L244.465 89.9041" class="steelPlan"/>
 <circle cx="178.5" cy="114" r="8" class="port"/>
-<text x="148" y="170" class="note">Formed Ø160 port clash: 80.09 mm with setting</text>
+<text x="148" y="170" class="note">Formed Ø160 port signed gap: -80.09 mm</text>
 <text x="148" y="178" class="note">Both wing directions shown. Positive axes into the room.</text>
 <path d="M148 184L198 184" class="rule"/>
 <text x="148" y="190" class="note">500 mm</text>
@@ -68,7 +68,7 @@
 <text x="287" y="190" class="note">Lower and upper diagonal bars bear against H28 chord.</text>
 <path d="M14 206L406 206" class="rule"/>
 <text x="14" y="223" class="head">Release conditions</text>
-<text x="14" y="234" class="note">Retire the northwest port through an independent foul route before making this cage.</text>
+<text x="14" y="234" class="note">The existing cabinet has no clear port position. Resolve an independent route or redesign the cage.</text>
 <text x="14" y="244" class="note">Prove the widened body, full chord, round ties and imperforate DPC splice as one force path.</text>
 <text x="14" y="254" class="note">This section screens geometry and isolated loads. Ground, roof and whole-house checks remain open.</text>
 <text x="14" y="280" class="note">Plan coordinates U/V and levels Z are in millimetres.</text></svg>

@@ -2,8 +2,12 @@ import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
 import test from 'node:test'
 import { renderDrawingSceneV2Svg } from '../publication-drawing-v2/svg.js'
+import { compileRenewableOpenings } from './current-design/assemblies/renewable-openings.js'
+import { compileStudyWallTransition } from './current-design/assemblies/study-wall-transition.js'
+import { drawStudyWallTransition } from './current-design/assemblies/study-wall-transition-views.js'
 import { prepareCurrentDesignCompile } from './current-design/compile.js'
 import { readGeorgianDesignSnapshot } from './current-design/georgian-source.js'
+import { resolveCurrentDesign } from './current-design/resolve.js'
 
 const design = readGeorgianDesignSnapshot()
 const current = prepareCurrentDesignCompile(design)
@@ -23,6 +27,8 @@ test('Study kit lays out actual stable parts and discrete border widths in the f
   assert.equal(kit.floor.coverageMm2, repitch.kit.floor.coverageMm2)
   assert.deepEqual(kit.occupied, repitch.kit.occupied)
   assert.deepEqual(kit.opening, repitch.kit.opening)
+  assert.equal(baseline.wallTransition.source.transitionCaseDigest, repitch.wallTransition.source.transitionCaseDigest)
+  assert.deepEqual(baseline.wallTransition.field, repitch.wallTransition.field)
   assert.equal(kit.floor.jointMm, 3)
   assert.equal(new Set(kit.floor.parts.map(part => part.id)).size, kit.floor.parts.length)
   assert.ok(kit.floor.parts.every(part => part.sizeMm.every(size => size >= 67.5 && size <= 367.5)))
@@ -132,7 +138,62 @@ test('the furnished comparison, technical drawings and part schedule match the c
   execFileSync(process.execPath, ['--import', 'tsx', 'project/ias/studies/crafted-study-views.mjs', '--check'], {
     cwd: new URL('../../', import.meta.url),
   })
-  execFileSync(process.execPath, ['project/ias/studies/crafted-study-wall-transition.mjs', '--check'], {
+  execFileSync(process.execPath, ['--import', 'tsx', 'project/ias/studies/crafted-study-wall-transition.mjs', '--check'], {
     cwd: new URL('../../', import.meta.url),
+  })
+})
+
+test('Study wall transition follows the occupied jamb and keeps independent controls', async () => {
+  const baseline = await current.studyRoomKit(initial)
+  const moved = await current.studyRoomKit({ ...initial, opening })
+  const { wallTransition: native } = baseline
+  const { wallTransition: trial } = moved
+  assert.equal(native.status, 'DEVELOPMENT_COMPARISON')
+  assert.equal(trial.status, 'DEVELOPMENT_COMPARISON')
+  assert.equal(native.source.kitCaseDigest, baseline.kit.caseDigest)
+  assert.equal(trial.source.kitCaseDigest, moved.kit.caseDigest)
+  assert.deepEqual(native.field.moduleXZMm, [2675, 1280, 3125, 1730])
+  assert.deepEqual(trial.field.moduleXZMm, [2695, 1280, 3145, 1730])
+  assert.deepEqual(trial.field.rails.hardLandXMm, [2720, 3120])
+  assert.deepEqual(trial.field.fixedLapXMm, [2640, 2670])
+  assert.deepEqual(trial.field.jambStopsXMm[1], native.field.jambStopsXMm[1])
+  assert.deepEqual(trial.field.grilleXZMm, native.field.grilleXZMm)
+  assert.equal(trial.field.doorFinishYMm, native.field.doorFinishYMm)
+  assert.equal(trial.field.minimumVerticalReserveToG1Mm, 158)
+  assert.equal(trial.field.translatedUp200MmIntersectsG1, true)
+  assert.deepEqual(trial.fitUm, native.fitUm)
+  assert.deepEqual(native.fitUm.maximumStack, { admitted: true, packUm: 500, faceUm: 26850, possibleFaceUm: [26700, 27000] })
+  assert.equal(native.fitUm.proudStack.admitted, false)
+  assert.equal(native.fitUm.uncorrectableSubstrate.admitted, false)
+  assert.equal(native.fitUm.inadequateStackForPack.admitted, false)
+  assert.equal(native.field.retainedHalfHeadInwardDrawMm, 250)
+  assert.equal(trial.field.retainedHalfHeadInwardDrawMm, null)
+  assert.equal(trial.field.retainedHalfHeadPocketReserveMm, null)
+  assert.deepEqual(trial.diagnostics, [{ code: 'IAS_STUDY_WALL_WINDOW_WITHDRAWAL_STALE', objectIds: [opening.id] }])
+  assert.match(baseline.wallTransitionSvg!, /id="study-wall-module-set-out" d="M704 675H956"/)
+  assert.match(moved.wallTransitionSvg!, /id="study-wall-module-set-out" d="M715\.2 675H967\.2"/)
+  assert.notEqual(trial.source.transitionCaseDigest, native.source.transitionCaseDigest)
+  const window = compileRenewableOpenings(resolveCurrentDesign(design)).window
+  const stale = compileStudyWallTransition(baseline.kit, window, () => Buffer.from('{}'))
+  assert.equal(stale.status, 'REFERENCE_WITHHELD')
+  assert.deepEqual(stale.diagnostics, [{ code: 'IAS_STUDY_WALL_DOOR_REVEAL_STALE', objectIds: [baseline.kit.door.id] }])
+  assert.equal(stale.field.retainedSkirtingFirstDrawMm, null)
+  assert.equal(drawStudyWallTransition(stale), null)
+  const missing = compileStudyWallTransition(baseline.kit, window, () => { throw new Error('missing file') })
+  assert.equal(missing.diagnostics[0].code, 'IAS_STUDY_WALL_DOOR_REVEAL_UNAVAILABLE')
+})
+
+test('a permissible window move can exhaust the independent lining pier and reject its sheet', async () => {
+  const { kit, wallTransition, wallTransitionSvg } = await current.studyRoomKit({
+    ...initial, opening: { ...opening, occupiedCentreMm: 2330 },
+  })
+  assert.equal(kit.opening.box[2], 2830)
+  assert.equal(wallTransition.field.moduleXZMm[2], 3355)
+  assert.equal(wallTransition.field.jambStopsXMm[1][0], 3350)
+  assert.equal(wallTransition.status, 'GEOMETRY_REJECTED')
+  assert.equal(wallTransitionSvg, null)
+  assert.deepEqual(wallTransition.diagnostics[0], {
+    code: 'IAS_STUDY_WALL_MODULE_INTERSECTS_JAMB_STOP',
+    objectIds: [kit.wall.id, kit.opening.id, wallTransition.source.fixedOpeningId],
   })
 })

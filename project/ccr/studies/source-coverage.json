@@ -121,7 +121,8 @@
       "authority": "Consumed STR grid, conditional load/reference geometry and selected-service interfaces. Consumed candidate evidence carries its limitations.",
       "decisions": [
         "project/had/service-structural-applicability.md",
-        "project/str/structural-architecture-programme.md"
+        "project/str/structural-architecture-programme.md",
+        "project/str/floor-portal-monolithic-drag.md"
       ],
       "authorRoots": [
         "project/str/studies/current-house-grid.py",
@@ -153,7 +154,8 @@
         "project/str/studies/current-house-wall-transfers.py",
         "project/str/studies/floor-portal-north-cap-layer.py",
         "project/str/studies/floor-portal-north-cage.py",
-        "project/str/studies/current-house-structural-case.py"
+        "project/str/studies/current-house-structural-case.py",
+        "project/str/studies/floor-portal-monolithic-drag.py"
       ],
       "inputReceipts": [
         "project/had/studies/water-replan.json",
@@ -183,7 +185,9 @@
         "project/str/studies/current-house-welded-heel.json",
         "project/str/studies/current-house-arch-detail.json",
         "project/str/studies/current-house-window-receivers.json",
-        "project/str/studies/current-house-arch-jambs.json"
+        "project/str/studies/current-house-arch-jambs.json",
+        "project/mat/studies/whole-house-service-baseline.json",
+        "project/str/studies/current-house-ground-ties.json"
       ],
       "authoredInputs": [],
       "receipts": [
@@ -200,18 +204,21 @@
         "project/str/studies/current-house-floor-stops.json",
         "project/str/studies/current-house-wall-transfers.json",
         "project/str/studies/floor-portal-north-cap-layer.json",
-        "project/str/studies/floor-portal-north-cage.json"
+        "project/str/studies/floor-portal-north-cage.json",
+        "project/str/studies/floor-portal-monolithic-drag.json"
       ],
       "consumers": [
         "project/had/studies/current-house.mjs",
         "project/had/studies/court-intake-selection.mjs",
         "project/had/studies/receiver-selection.mjs",
-        "project/rwt/studies/court-bypass-choice.mjs"
+        "project/rwt/studies/court-bypass-choice.mjs",
+        "compiler/reference-house/current-design/north-collector.ts"
       ],
       "producerChecks": [
         "python3 -B project/str/studies/current-house-grid.py --check",
         "python3 -B project/str/studies/reconciled-house-interface.py --check",
-        "python3 -B project/str/studies/current-house-joined-foundation.py --check"
+        "python3 -B project/str/studies/current-house-joined-foundation.py --check",
+        "python3 -B project/str/studies/floor-portal-monolithic-drag.py . --check"
       ]
     },
     {
@@ -358,6 +365,37 @@
       "producerChecks": [
         "node project/had/studies/south-utility-inlet.mjs --check"
       ]
+    },
+    {
+      "id": "had-inlet-south-sill-insert",
+      "state": "candidate-interface",
+      "authority": "Conditional southern inlet insert beneath the explicitly rewound Utility window. Installed hydraulic, structural, material and handling evidence remains open.",
+      "decisions": [
+        "project/had/south-inlet-sill-insert.md"
+      ],
+      "authorRoots": [
+        "project/had/studies/south-inlet-sill-insert.mjs",
+        "project/had/studies/south-inlet-sill-insert-kernel.mjs",
+        "project/had/studies/service-interface-geometry.mjs"
+      ],
+      "inputReceipts": [
+        "project/had/studies/south-inlet-under-sill.json",
+        "project/had/studies/south-inlet-wet-box.json",
+        "project/str/studies/house-corner-rewind.json",
+        "project/str/studies/floor-portal-interface-review.json",
+        "project/str/studies/current-house-grid.json",
+        "project/str/studies/current-house-joined-foundation.json"
+      ],
+      "authoredInputs": [],
+      "receipts": [
+        "project/had/studies/south-inlet-sill-insert.json"
+      ],
+      "consumers": [
+        "compiler/reference-house/current-design/inlet-sill-insert.ts"
+      ],
+      "producerChecks": [
+        "node project/had/studies/south-inlet-sill-insert.mjs --check"
+      ]
     }
   ],
   "receiptEdges": [
@@ -466,6 +504,22 @@
     },
     {
       "receipt": "project/had/studies/south-utility-inlet.json",
+      "location": [
+        "sources"
+      ],
+      "format": "map",
+      "algorithm": "gitBlob"
+    },
+    {
+      "receipt": "project/str/studies/floor-portal-monolithic-drag.json",
+      "location": [
+        "sourceSHA256"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/had/studies/south-inlet-sill-insert.json",
       "location": [
         "sources"
       ],
@@ -644,6 +698,19 @@
     "project/str/studies/floor-portal-north-cap-layer.json": "dab58749281eb22c46354098a183a6937339cfda",
     "project/str/studies/floor-portal-north-cage.json": "2b58f32dfcb90a44785d9217284f39b3ecbb7241",
     "project/str/studies/current-house-structural-case.py": "11c58e750573330b47a4b124a6aa9ff28dc8e5f1",
-    "project/design-constraints.ts": "0c76e5372a2537bbc6f3c6c29f07ab0efa297129"
+    "project/design-constraints.ts": "0c76e5372a2537bbc6f3c6c29f07ab0efa297129",
+    "project/str/studies/floor-portal-monolithic-drag.py": "a6909055c1f8d8f8197184e322fe1f966e66b17d",
+    "project/str/studies/floor-portal-monolithic-drag.json": "7a10069acc6cae1bae6f36e28eeb36a6709530c2",
+    "project/str/floor-portal-monolithic-drag.md": "291862f3465deca5846fc7ff6e3e0cb5a7b0bfda",
+    "project/str/studies/current-house-ground-ties.json": "80c5ede6bcbe0b0bb3a19032feddd8403fbf19b1",
+    "project/had/studies/south-inlet-sill-insert.mjs": "5b8102418d8ea33bd6a03fe2dd7cde41efe943ff",
+    "project/had/studies/south-inlet-sill-insert-kernel.mjs": "3df75b2cb2fa492c6b3e5b2a04a113f481007880",
+    "project/had/studies/south-inlet-sill-insert.json": "5731f632ac2a2c08b78d10772b5a6076751d3d33",
+    "project/had/south-inlet-sill-insert.md": "4b2eaa18214e264cb19aa008c5fd63d4d773defd",
+    "project/had/studies/south-inlet-under-sill.json": "27a94bfe0f4a62bfcbe02e6e8ac0002c6e4a894f",
+    "project/had/studies/south-inlet-wet-box.json": "a1acebe3c08d9bfcc07984bb858c46d7cb9d7d95",
+    "project/str/studies/floor-portal-interface-review.json": "ad8aac21e936f0199b331c3bd886c8bb41f30ee3",
+    "compiler/reference-house/current-design/north-collector.ts": "df5518337f960cb6bd62ebbeae3f3083e820fe39",
+    "compiler/reference-house/current-design/inlet-sill-insert.ts": "cf6543fd10487ad30c46f28da7cea3976c0db522"
   }
 }

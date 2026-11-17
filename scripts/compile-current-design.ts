@@ -30,6 +30,10 @@ const trialModes: Readonly<Record<string, TrialMode>> = {
     schema: 'str-interface-request/1', key: 'replay', name: 'structural interfaces',
     run: (compile, value) => compile.structuralInterfaces(value),
   },
+  '--north-collector': {
+    schema: 'str-north-collector-request/1', key: 'collector', name: 'north collector',
+    run: (compile, value) => compile.northCollectorCase(value),
+  },
   '--east-ground-receiving': {
     schema: 'rwt-east-ground-receiving-request/1', key: 'receiving', name: 'east ground receiving',
     run: (compile, value) => compile.eastGroundReceiving(value),
@@ -37,6 +41,10 @@ const trialModes: Readonly<Record<string, TrialMode>> = {
   '--inlet-route': {
     schema: 'had-inlet-route-request/1', key: 'inlet', name: 'inlet route',
     run: (compile, value) => compile.inletRoute(value),
+  },
+  '--inlet-sill-insert': {
+    schema: 'had-inlet-sill-insert-request/1', key: 'insert', name: 'inlet sill insert',
+    run: (compile, value) => compile.inletSillInsert(value),
   },
   '--occupied-condensate': {
     schema: 'had-condensate-request/1', key: 'condensate', name: 'occupied condensate',
@@ -58,7 +66,8 @@ const modes = [
   '--occupied-services', '--selected-water-event', '--structural-bridge', '--structural-actions',
   '--bundle', '--study-assembly', '--study-linings', '--renewable-openings',
   '--read-roof-pitch', '--read-court-intake', '--read-inlet-route', '--read-east-ground-receiving',
-  '--read-occupied-condensate', '--read-structural-case', '--read-structural-interfaces', ...Object.keys(trialModes),
+  '--read-occupied-condensate', '--read-structural-case', '--read-structural-interfaces',
+  '--read-north-collector', '--read-inlet-sill-insert', ...Object.keys(trialModes),
 ]
 const mode = modes.includes(args[0]) ? args.shift() : undefined
 const [argument, ...extra] = args
@@ -91,6 +100,8 @@ try {
       else if (mode === '--read-occupied-condensate') process.stdout.write(JSON.stringify(await compile.readOccupiedCondensateCase(), null, 2) + '\n')
       else if (mode === '--read-structural-case') process.stdout.write(JSON.stringify(await compile.readStructuralCase(), null, 2) + '\n')
       else if (mode === '--read-structural-interfaces') process.stdout.write(JSON.stringify(await compile.readStructuralInterfaces(), null, 2) + '\n')
+      else if (mode === '--read-north-collector') process.stdout.write(JSON.stringify(await compile.readNorthCollectorCase(), null, 2) + '\n')
+      else if (mode === '--read-inlet-sill-insert') process.stdout.write(JSON.stringify(await compile.readInletSillInsertCase(), null, 2) + '\n')
       else if (mode === '--occupied-services') process.stdout.write((await compile.occupiedServices()).schedule)
       else if (mode === '--selected-water-event') process.stdout.write((await compile.selectedWaterEvent()).event)
       else if (mode === '--structural-bridge') process.stdout.write(JSON.stringify(await compile.structuralBridge()) + '\n')

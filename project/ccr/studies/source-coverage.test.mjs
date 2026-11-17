@@ -37,3 +37,21 @@ test('the live MAT dock requirement remains unknown if the legacy helper could u
   const audit = auditSourceCoverage(path => path === currentMatDock ? undefined : read(path))
   assert.deepEqual(audit.findings, [{ kind: 'unknown-file', path: currentMatDock }])
 })
+
+test('changed discipline receipts invalidate both the affected candidate and its replayed result', () => {
+  const cases = [
+    ['str-conditional-interface', 'project/str/studies/current-house-ground-ties.json',
+      'project/str/studies/floor-portal-monolithic-drag.json'],
+    ['had-inlet-south-sill-insert', 'project/had/studies/south-inlet-under-sill.json',
+      'project/had/studies/south-inlet-sill-insert.json'],
+  ]
+  const baseline = auditSourceCoverage()
+  for (const [id, input, receipt] of cases) {
+    const changed = auditSourceCoverage(path => path === input ? Buffer.concat([read(path), Buffer.from('\n')]) : read(path))
+    assert.ok(changed.findings.some(finding => finding.kind === 'source-contradiction' &&
+      finding.source === input && finding.receipt === receipt))
+    const digest = (audit, family) => audit.bindings.find(binding => binding.id === family).digest
+    assert.notEqual(digest(changed, id), digest(baseline, id))
+    assert.equal(digest(changed, 'had-inlet-indoor-reference'), digest(baseline, 'had-inlet-indoor-reference'))
+  }
+})

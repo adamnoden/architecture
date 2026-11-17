@@ -2,13 +2,19 @@
   "schema": "ias-crafted-study-wall-transition/1",
   "status": "DEVELOPMENT_COMPARISON",
   "inputs": {
-    "project/ias/studies/crafted-study-kit-schedule.json": "092d8594aa9d261c870739842e5f6d1669d1d29e19b784fea1ffa1bacc4c74db",
     "project/oas/studies/study-subframe.json": "4aea83e5cb2451b65acd8818e06cba6010128b84e755ae199c7d2193e92410e6",
     "project/ias/studies/study-door-reveal.json": "5defb570d91832c5d862226fd93c46aa0026124a02b74bae0d5fe9f60a5f20b9"
   },
   "source": {
     "kitCaseDigest": "3ff8259a6167409fb347832b848b99c8625ae9415aacebe1810312690dd3c1dd",
-    "binding": "c727c60c0bbaf9c710a97aebef3e1b53f8aba1a0f76de1e3e565860c4c28d6e9"
+    "binding": "c727c60c0bbaf9c710a97aebef3e1b53f8aba1a0f76de1e3e565860c4c28d6e9",
+    "transitionCaseDigest": "5032acb6f87933d26e8d647afb049086a0d49c6b3f97f326a3979a2e54606718",
+    "wallId": "GROUND/G-STUDY/W1",
+    "openingId": "GROUND/south-window-0",
+    "hostId": "GROUND/outer-south",
+    "fixedOpeningId": "GROUND/south-window-1",
+    "grilleId": "GROUND/G-STUDY/G1/room-side-grille/trial-clearance",
+    "doorId": "HAD/protectedRoute/STUDY"
   },
   "field": {
     "moduleXZMm": [
@@ -126,5 +132,6 @@
     "anchorsBehindWallSideRail": true,
     "boardOrAirPlaneReceivesRailLoad": false
   },
+  "diagnostics": [],
   "hold": "Dimensional and load-destination screen only. Actual substrate, anchor and stop, sealed penetration and lap, head/foot joins, air/leakage testing, product constituents and complete dry wall performance remain open. Wet returns and skirting control stay independent."
 }

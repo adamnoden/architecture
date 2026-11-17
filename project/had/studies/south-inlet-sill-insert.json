@@ -1,13 +1,14 @@
 {
   "disposition": "Prefer the framed sill insert as a geometric development of independent chambers. Retain the indoor inlet reference.",
   "sources": {
+    "project/had/studies/south-inlet-sill-insert-kernel.mjs": "3df75b2cb2fa492c6b3e5b2a04a113f481007880",
+    "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2",
     "project/had/studies/south-inlet-under-sill.json": "27a94bfe0f4a62bfcbe02e6e8ac0002c6e4a894f",
     "project/had/studies/south-inlet-wet-box.json": "a1acebe3c08d9bfcc07984bb858c46d7cb9d7d95",
     "project/str/studies/house-corner-rewind.json": "6471d89c213724ec02a26d797c85185beadb25b5",
     "project/str/studies/floor-portal-interface-review.json": "ad8aac21e936f0199b331c3bd886c8bb41f30ee3",
     "project/str/studies/current-house-grid.json": "56aca6f99f5fa60b21d58c89115ac1ee824e3828",
-    "project/str/studies/current-house-joined-foundation.json": "ffc3ccb68655eead7c7f56a8dd3179d7d8d6f7bc",
-    "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2"
+    "project/str/studies/current-house-joined-foundation.json": "ffc3ccb68655eead7c7f56a8dd3179d7d8d6f7bc"
   },
   "jambAndSill": {
     "clearX": [
@@ -180,7 +181,8 @@
       },
       "mainBoreReserveAfter5MM": 80.9981,
       "highEndCapToCellSideGrossMM": 34,
-      "belowSeparateWeatherHousingCapGrossMM": 64
+      "belowSeparateWeatherHousingCapGrossMM": 64,
+      "freeCoreAboveWetStageGrossMM": 299.4562
     },
     {
       "axis": [
@@ -205,7 +207,8 @@
       },
       "mainBoreReserveAfter5MM": 9.8443,
       "highEndCapToCellSideGrossMM": 7,
-      "belowSeparateWeatherHousingCapGrossMM": 40
+      "belowSeparateWeatherHousingCapGrossMM": 40,
+      "freeCoreAboveWetStageGrossMM": 224.4562
     }
   ],
   "loads": {
@@ -295,6 +298,7 @@
     "exteriorHoodSeparationAfter10MM": 170,
     "wholeToolAndVentHoodsQualified": false
   },
+  "plantWetCellPackingAfterSettingMm": 5,
   "combinedWallOpeningCount": 1,
   "projectedOpenedAreaM2": {
     "narrowInsert": 0.2537,
@@ -351,7 +355,8 @@
       },
       "mainBoreReserveAfter5MM": 31.3572,
       "highEndCapToCellSideGrossMM": 9,
-      "belowSeparateWeatherHousingCapGrossMM": 11
+      "belowSeparateWeatherHousingCapGrossMM": 11,
+      "freeCoreAboveWetStageGrossMM": 252.4562
     },
     "earlierEastStile": {
       "westMM": 245,

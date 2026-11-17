@@ -18,7 +18,7 @@ test('the nominal front Study produces a cutout and schedule row from the exact 
   assert.equal(inspection.source.state, 'accepted-basis')
   assert.deepEqual(inspection.sourceBindings.map(binding => binding.id).sort(), [
     'had-selected-water', 'had-occupied-services', 'str-conditional-interface', 'rwt-conditional-receiving',
-    'had-inlet-indoor-reference', 'had-inlet-south-development', 'mat-roof-pitch-reference',
+    'had-inlet-indoor-reference', 'had-inlet-south-development', 'had-inlet-south-sill-insert', 'mat-roof-pitch-reference',
   ].sort())
   assert.equal(inspection.row.hostWallId, ground.hostWallId)
   assert.equal(inspection.row.openingId, ground.openingId)

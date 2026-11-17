@@ -1,11 +1,16 @@
 {
   "geometry": {
+    "NWCornerOriginXYmm": [
+      332.5,
+      11667.5
+    ],
     "NWOriginalRearCabinetPlanMm": [
       429.5,
       10800,
       300,
       750
     ],
+    "finishUndersideZMm": 3435,
     "northNearestRawOpeningReserveAtOldToeMm": 37.5,
     "permanentWallRoomwardIncreaseMm": 100,
     "receivingUMm": 170,
@@ -50,8 +55,8 @@
     ]
   },
   "groundAlternative": {
-    "insidePlanGapToSmallestCapAfter5Mm": 125,
-    "outsidePlanGapToSmallestCapAfter5Mm": 225,
+    "insidePlanGapToSmallestCapAfter5Mm": 125.0,
+    "outsidePlanGapToSmallestCapAfter5Mm": 225.0,
     "retainedNorthCornerAndToeCapIDs": [
       "P07",
       "P08",
@@ -63,13 +68,33 @@
     "scope": "Plan-only alternative with actual continuous widened body onto a redesigned imperforate DPC plate and cap. Existing shallow node, anchors and soil capacities are not transferred."
   },
   "lateralClosure": {
+    "comparisonForceKN": 95.15979916854145,
+    "dragDemandFactor": 1,
     "meanOnAdverseCommonWallFaceMPa": 0.3640752850003644,
     "minimumAreaAtDeclaredCrackedStrutMM2": 5636.961088784051,
     "momentAboutUnchangedGroundAxisU0KNm": 16.17716585865205,
     "momentAboutWidenedMidPlaneKNm": 11.419175900224975,
     "normalCompressionReturnKN": 50.59736273292564,
     "ownerHistoricalForceKN": 95.15979916854145,
-    "scope": "No friction credit. Normal return balances at the same V centroid. Mean pressure only. The resulting torque, transition into the 140 stem and real L-ground stability splice are unproved."
+    "scope": "No friction credit. Normal return balances at the same V centroid. Mean pressure only. The positive torque transfer and real L-ground stability splice are unproved."
+  },
+  "rearCabinetPortTerritory": {
+    "barCount": 20,
+    "bestSampleGapMm": -10.72048534302813,
+    "bestSampleUVmm": [
+      317.0,
+      740.5
+    ],
+    "centreBoundsUVmm": [
+      250.0,
+      317.0,
+      197.5,
+      787.5
+    ],
+    "continuousUpperBoundGapMm": -10.013378561841582,
+    "distanceToNearestSampleBoundMm": 0.7071067811865476,
+    "requiredCoverMm": 25,
+    "state": "overlap-throughout-territory"
   },
   "retainedNWPort": {
     "admitted": false,
@@ -78,6 +103,11 @@
       490.0,
       160
     ],
+    "axisXYmm": [
+      567.5,
+      11177.5
+    ],
+    "gapToWidenedWallUMm": -15.0,
     "levels": [
       {
         "direction": 1,
@@ -89,15 +119,19 @@
         "levelZMm": 3308,
         "minimumClearToFormedEdgeAfter5Mm": -80.09297286680305
       }
+    ],
+    "referenceAxisXYmm": [
+      567.5,
+      11177.5
     ]
   },
   "sourceSHA256": {
     "project/had/studies/open-north-loggia.json": "542781c6bb1d277b20492e8433cea498e98eaea5db2e737a5ec7e9655f9d18fd",
     "project/mat/studies/loggia-soffit.json": "b02717a9ad5431259f9f0f1850ab7f596cf612bc13f04fbd9bdfc7b5f893fc29",
+    "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
     "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
     "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
     "project/str/studies/floor-portal-north-collar.json": "e996f409d47a6d81aa7624d683e86d92e7e5bc5ac5c828dcc7df39552e929c87",
-    "project/str/studies/floor-portal-straight-receiver.json": "c8e3c7a56f2d12cd8959886e0e83c5d28056151c85d237424f3562258374a1b5",
     "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5"
   },
   "stack": {
@@ -122,10 +156,10 @@
       12
     ],
     "commonJig": "Two opposed groups on each arm. Same level swaps signs on adjoining wings; each plane deliberately touches the intervening H28 at crossings. 5 mm total relative setting is binding.",
-    "localSlabTopZMm": 3398,
-    "reserveToActualFinishUndersideMm": 37,
+    "localSlabTopZMm": 3398.0,
+    "reserveToActualFinishUndersideMm": 37.0,
     "samePlaneWingPairClearShared5Mm": 33.84502723889042,
-    "slabDepthMm": 228,
+    "slabDepthMm": 228.0,
     "unrelatedDragPlanesClearShared5Mm": 23,
     "uprightScreenClearShared5Mm": {
       "primaryH20": 25.56803176478971,

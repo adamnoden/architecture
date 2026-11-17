@@ -1,6 +1,6 @@
 # A gauged thin lining in the Study dry field
 
-Develop a small trial on the south pier. Keep the existing mineral plaster at the protected Study door, L-return and both window reveals. The [section](studies/crafted-study-wall-transition.svg) and [receipt](studies/crafted-study-wall-transition.json) bind the native furnished Study, G1 enclosure, OAS window section and IAS door comparison. No whole-wall, wet-enclosure or installed material selection follows.
+Develop a small trial on the south pier. Keep the existing mineral plaster at the protected Study door, L-return and both window reveals. The current-design room-kit compiler produces the [section](studies/crafted-study-wall-transition.svg) and [receipt](studies/crafted-study-wall-transition.json) from the same fitted Study geometry. The result binds the G1 enclosure, OAS window section and IAS door comparison. The existing materials and installation holds still apply.
 
 ## Keep the air plane independent of the rail
 
@@ -19,5 +19,8 @@ This is an ordinary dry-wall trial. Retain fixed wet-side lining, waterproofing,
 Run from the repository root.
 
 ```sh
-node project/ias/studies/crafted-study-wall-transition.mjs --check
+node --import tsx project/ias/studies/crafted-study-wall-transition.mjs --check
+node --import tsx --test compiler/reference-house/current-design-study-room-kit.test.ts
 ```
+
+The `--study-room-kit` compiler response includes the transition result and its SVG. Move the occupied window centre from X2100 to X2120 and the panel, rail lands and lap all shift 20 mm. The second jamb, G1 and protected door retain their positions. The old half-head draw and reserve become unavailable until the edited opening is checked. At X2330 the rough opening still clears G1, but the trial panel enters the retained second-jamb strip by 5 mm. The compiler reports the conflicting objects and omits the invalid section. Missing or changed door evidence withholds the transition section while the independent room plan and floor kit still compile.
