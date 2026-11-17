@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 36,
-  "state": "released",
-  "leaseId": "b2a9c387-1411-4e08-a2d3-f0f41427d0bf",
+  "generation": 37,
+  "state": "claimed",
+  "leaseId": "20c1309c-7ef1-40dd-8d07-97a790f27619",
   "holder": {
-    "kind": "chatgpt",
-    "label": "Zerg Rush monolithic and sub-sill follow-up"
+    "kind": "codex",
+    "label": "total-integration-2026-11-17"
   },
-  "claimedAt": "2026-11-16T20:55:28.240Z",
-  "heartbeatAt": "2026-11-16T21:18:47.078Z",
-  "expiresAt": "2026-11-16T21:18:47.078Z",
-  "branch": "work/zerg18-mono-sill-study",
+  "claimedAt": "2026-11-17T08:56:51.796Z",
+  "heartbeatAt": "2026-11-17T08:56:51.796Z",
+  "expiresAt": "2026-11-17T09:41:51.796Z",
+  "branch": "work/total-integration-2026-11-17",
   "predecessor": {
-    "leaseId": "6321f458-87d3-4677-8667-15bc06758438",
-    "generation": 35,
-    "branch": "work/zerg18-resolve-interfaces",
-    "pr": 1559,
+    "leaseId": "b2a9c387-1411-4e08-a2d3-f0f41427d0bf",
+    "generation": 36,
+    "branch": "work/zerg18-mono-sill-study",
+    "pr": 1560,
     "checkpoint": {
-      "evidence": "PR #1559 702e00299deabe8c60dae75757053c7e3a72d7b7; local typecheck, receipts and focused tests",
-      "next": "Develop the recessed bearing land and positive two-ended anchorage or build the monolithic comparator.",
-      "blocker": "Full-tip short-anchor capacity is below demand; recessed trial still needs anchorage, cage and 52-head replay."
+      "evidence": "PR #1560 2b2c139746346020f1e86dee2d6970aa1d15e3c7; source-bound replays, typecheck, 38 focused controls and rendered drawings",
+      "next": "Compare X670/Y9400 rear stack and prove the widened DPC splice and signed 52-head response.",
+      "blocker": "Two diagonal collector layers still intersect the old NW port. Old dry rise and straight tall west stack hit roof members or both trays."
     }
   },
   "recoverySource": {
-    "leaseId": "6321f458-87d3-4677-8667-15bc06758438",
-    "generation": 35,
-    "branch": "work/zerg18-resolve-interfaces",
-    "pr": 1559,
+    "leaseId": "b2a9c387-1411-4e08-a2d3-f0f41427d0bf",
+    "generation": 36,
+    "branch": "work/zerg18-mono-sill-study",
+    "pr": 1560,
     "checkpoint": {
-      "evidence": "PR #1559 702e00299deabe8c60dae75757053c7e3a72d7b7; local typecheck, receipts and focused tests",
-      "next": "Develop the recessed bearing land and positive two-ended anchorage or build the monolithic comparator.",
-      "blocker": "Full-tip short-anchor capacity is below demand; recessed trial still needs anchorage, cage and 52-head replay."
+      "evidence": "PR #1560 2b2c139746346020f1e86dee2d6970aa1d15e3c7; source-bound replays, typecheck, 38 focused controls and rendered drawings",
+      "next": "Compare X670/Y9400 rear stack and prove the widened DPC splice and signed 52-head response.",
+      "blocker": "Two diagonal collector layers still intersect the old NW port. Old dry rise and straight tall west stack hit roof members or both trays."
     }
-  },
-  "pr": 1560,
-  "checkpoint": {
-    "evidence": "PR #1560 2b2c139746346020f1e86dee2d6970aa1d15e3c7; source-bound replays, typecheck, 38 focused controls and rendered drawings",
-    "next": "Compare X670/Y9400 rear stack and prove the widened DPC splice and signed 52-head response.",
-    "blocker": "Two diagonal collector layers still intersect the old NW port. Old dry rise and straight tall west stack hit roof members or both trays."
-  },
-  "releasedAt": "2026-11-16T21:18:47.078Z",
-  "releaseReason": "handoff"
+  }
 }
