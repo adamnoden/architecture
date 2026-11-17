@@ -30,5 +30,9 @@ export function runOccupiedServiceSchedule(resolved: CurrentDesignResolution) {
 
 export function runOccupiedServiceDrawings(resolved: CurrentDesignResolution) {
   const { house, binding } = readBoundOccupiedServices(resolved)
-  return { ...serviceProof(binding, 'HAD-OCCUPIED-SERVICE-DRAWINGS'), ...drawBoundOccupiedServiceHouse(house, binding) }
+  return {
+    schema: 'had-occupied-service-drawings/1' as const,
+    ...serviceProof(binding, 'HAD-OCCUPIED-SERVICE-DRAWINGS'),
+    ...drawBoundOccupiedServiceHouse(house, binding),
+  }
 }

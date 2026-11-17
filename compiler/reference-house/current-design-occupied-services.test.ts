@@ -59,6 +59,7 @@ test('the current drawing compiler and native checked producer reproduce all occ
   const compile = prepareCurrentDesignCompile(design)
   const result = await compile.occupiedServiceDrawings()
   const schedule = await compile.occupiedServices()
+  assert.equal(result.schema, 'had-occupied-service-drawings/1')
   assert.deepEqual(result.source, schedule.source)
   assert.equal(result.bindingDigest, schedule.bindingDigest)
   assert.deepEqual(Object.keys(result.drawings), ['current-house-services.svg', 'store-exchange.svg', 'selected-service-interfaces.svg'])
