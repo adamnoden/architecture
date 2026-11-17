@@ -463,6 +463,32 @@
         "node project/had/studies/south-inlet-relief.mjs --check",
         "node project/had/studies/south-inlet-wet-box.mjs --check"
       ]
+    },
+    {
+      "id": "had-inlet-south-removal",
+      "state": "candidate-interface",
+      "authority": "Straight removal draw for one conditional sill carrier and its modeled obstacles. Independent roof closure, rated disconnect and captured first rest remain unresolved.",
+      "decisions": [
+        "project/had/south-inlet-wet-box.md"
+      ],
+      "authorRoots": [
+        "project/had/studies/incoming-water-geometry.mjs",
+        "project/had/studies/south-inlet-wet-box.mjs"
+      ],
+      "inputReceipts": [
+        "project/had/studies/south-inlet-under-sill.json",
+        "project/had/studies/south-inlet-wet-box.json",
+        "project/had/studies/south-inlet-relief.json",
+        "project/had/studies/current-house-services.json"
+      ],
+      "authoredInputs": [],
+      "receipts": [],
+      "consumers": [
+        "compiler/reference-house/current-design/inlet-removal.ts"
+      ],
+      "producerChecks": [
+        "node project/had/studies/south-inlet-wet-box.mjs --check"
+      ]
     }
   ],
   "receiptEdges": [
@@ -855,6 +881,9 @@
     "project/str/studies/reconciled-corner-portals.py": "5ed97fdd2f7f1a8ca5dd0a741623d472f9d8178f",
     "project/had/studies/current-house-service-outputs.mjs": "ed9b9796099e5b8736d11a1d90bb93a566bfe12d",
     "project/had/studies/occupied-service-plate.mjs": "1d5b59e2945bcc58234d7ee96d41ec3473aa1ec2",
-    "project/had/studies/selected-service-plate.mjs": "732c5d440d2963a6092a0bf2bfdd8df8e198a54b"
+    "project/had/studies/selected-service-plate.mjs": "732c5d440d2963a6092a0bf2bfdd8df8e198a54b",
+    "project/had/south-inlet-wet-box.md": "3ea838f743b8279945c696dc90a8f0c83892ff28",
+    "project/had/studies/south-inlet-wet-box.mjs": "2b6ae4e01c29823c6d91e78cd4657b4fe373a618",
+    "compiler/reference-house/current-design/inlet-removal.ts": "ef17ae03a6b09444ac574a69c28da70a8ddfbf2e"
   }
 }
