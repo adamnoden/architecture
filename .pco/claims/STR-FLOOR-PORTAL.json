@@ -9,9 +9,9 @@
     "label": "ovid-structural-continuity"
   },
   "claimedAt": "2026-11-17T22:58:46.069Z",
-  "heartbeatAt": "2026-11-17T23:05:41.727Z",
-  "expiresAt": "2026-11-17T23:50:41.727Z",
-  "branch": "work/collector-connection-qualification-2026-11-17",
+  "heartbeatAt": "2026-11-17T23:21:50.504Z",
+  "expiresAt": "2026-11-18T00:51:50.504Z",
+  "branch": "work/north-chord-turn-2026-11-17",
   "predecessor": {
     "leaseId": "20c1309c-7ef1-40dd-8d07-97a790f27619",
     "generation": 37,
@@ -35,8 +35,7 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1566 at 21e4e4aaf6ecb1cb034f860f2ddc017a05d3c166; nine collector tests, source coverage, projection witnesses and typecheck passed",
-    "next": "Verify exact-head hosted checks and merge; continue with splice fabrication and bedding",
-    "blocker": "Hosted validation in progress"
+    "evidence": "Merged PR #1566 at c05a339983f898fcee0b56704975d0349a431854; source-bound signed actions and gross web demands",
+    "next": "Publish the verified local H28 chord geometry, drawings and port sweep on the declared next branch"
   }
 }
