@@ -9,8 +9,8 @@
     "label": "ovid-study-room-kit"
   },
   "claimedAt": "2026-11-17T23:01:17.702Z",
-  "heartbeatAt": "2026-11-18T00:41:33.035Z",
-  "expiresAt": "2026-11-18T01:41:33.035Z",
+  "heartbeatAt": "2026-11-18T01:07:33.244Z",
+  "expiresAt": "2026-11-18T01:52:33.244Z",
   "branch": "work/current-gallery-compiler-2026-11-18",
   "predecessor": {
     "leaseId": "ae8d08f5-d3e1-43a2-b775-90245a38223f",
@@ -36,7 +36,7 @@
   },
   "pr": 1573,
   "checkpoint": {
-    "evidence": "PR #1573 exact head e8a44908 includes the verified 118-of-144 Study whole-face first-rest screen",
-    "next": "Verify combined hosted proof and exact-head preflight; then measure the fixed G1 support envelope and qualify deck and loaded handling"
+    "evidence": "Merged PR #1573 at 5bf81189 verifies 118 of 144 straight first rests and 6 mm underside reserve",
+    "next": "Bind actual minimum Z of installed G1 receiver and carrier and the low worker envelope. Qualify continuous deck and loaded release. The thin stack has 64.7 mm versus the retained 65 mm comparator before level loss."
   }
 }
