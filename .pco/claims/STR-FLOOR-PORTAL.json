@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 39,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "716fb931-d672-45ff-8c49-ea1a08bea348",
   "holder": {
     "kind": "codex",
     "label": "rush-west-foul"
   },
   "claimedAt": "2026-11-18T07:48:13.711Z",
-  "heartbeatAt": "2026-11-18T08:58:23.086Z",
-  "expiresAt": "2026-11-18T09:43:23.086Z",
+  "heartbeatAt": "2026-11-18T08:58:53.103Z",
+  "expiresAt": "2026-11-18T08:58:53.103Z",
   "branch": "work/rush-fit-clearances-2026-11-18",
   "predecessor": {
     "leaseId": "22f8af96-a0db-49bc-90d4-cd08e44fef13",
@@ -39,5 +39,7 @@
     "evidence": "Merged #1574 b4db7d7a and #1575 da46dc52. West receiving compares the full supplied grade profile and its governing station.",
     "next": "Bind an actual west receiving profile and the outlet fittings, then check their joined route and the dimensioned coupled DPC splice.",
     "blocker": "Surveyed grade, confirmed host, fitting geometry and coupled splice stiffness remain open."
-  }
+  },
+  "releasedAt": "2026-11-18T08:58:53.103Z",
+  "releaseReason": "handoff"
 }
