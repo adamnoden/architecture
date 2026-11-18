@@ -263,7 +263,9 @@ const drawings = [
   ['crafted-study-junctions.svg', junctions],
   ['crafted-study-floor-keys.svg', floorKeys],
   ['crafted-study-plan.svg', renderDrawingSceneV2Svg(oak.plan)],
-  ['crafted-study-emitter-edge.svg', renderDrawingSceneV2Svg(drawStudyRoomKitPlan(oak.kit, true))],
+  ['crafted-study-emitter-edge.svg', renderDrawingSceneV2Svg(drawStudyRoomKitPlan(oak.kit, 'emitter-edge'))],
+  ['crafted-study-furniture-access.svg', renderDrawingSceneV2Svg(oak.furnitureAccessPlan)],
+  ['crafted-study-furniture-motion.svg', renderDrawingSceneV2Svg(oak.furnitureMotionPlan)],
   ['crafted-study-south-stock.svg', renderDrawingSceneV2Svg(oak.wallElevation)],
   ['crafted-study-kit-schedule.json', JSON.stringify({
     oak: oak.kit,

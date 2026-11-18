@@ -198,10 +198,13 @@ test('same-wind collector inputs compile concurrent signed actions without grant
   assert.ok(independent.yawProbe && independent.deadLoadReplay)
   assert.equal(independent.fixedBaseActions, undefined)
   const { fixedBaseActions: actions, yawProbe, deadLoadReplay } = forward
+  assert.deepEqual(deadLoadReplay, independent.deadLoadReplay)
   const oppositeStates = reverse.fixedBaseActions.states
   assert.equal(actions.windIndex, 58)
   assert.equal(actions.admitted, false)
   assert.deepEqual(actions.componentOrder, ['N_kN', 'Cx_kNm', 'Cy_kNm', 'Vx_kN', 'Vy_kN'])
+  assert.deepEqual(actions.verticalEquilibriumOrder, ['N_kN', 'X_first_moment_kNm', 'Y_first_moment_kNm'])
+  assert.deepEqual(actions.horizontalEquilibriumOrder, ['Fx_kN', 'Fy_kN', 'Mz_kNm'])
   assert.deepEqual(actions.states.map(state => [state.id, state.additionalGravityFactor]), [
     ['GQ+wind', 1.35], ['stripped suction+wind', 0], ['retained suction+wind', 0],
   ])
@@ -280,6 +283,42 @@ test('the widened splice provides backed reversible key pairs and exposes both w
   for (const [index, cut] of result.grossRootWeb.cuts.entries()) {
     assert.ok(Math.abs(reduced.grossRootWeb.cuts[index].normalStressMPa.maximum - cut.normalStressMPa.maximum / 2) < 1e-8)
   }
+})
+
+test('the local H28 turn resolves finite drag crossings and port overlap from the saved north case', async () => {
+  const compile = prepareCurrentDesignCompile(readGeorgianDesignSnapshot())
+  const request = await compile.readNorthCollectorCase()
+  assert.ok('collector' in request)
+  const [compact, broad, moved] = await Promise.all([
+    compile.northCollectorCase({ ...request.collector, chordBendRadiusMm: 140 }),
+    compile.northCollectorCase({ ...request.collector, chordBendRadiusMm: 500 }),
+    compile.northCollectorCase({ ...request.collector, chordBendRadiusMm: 140, portAxisXYMm: [649.5, 10927] }),
+  ])
+  assert.ok(compact.status === 'computed-comparison' && compact.chordTurn
+    && broad.status === 'computed-comparison' && broad.chordTurn && moved.status === 'computed-comparison' && moved.chordTurn)
+  assert.equal(compact.chordTurn.admitted, false)
+  assert.deepEqual(compact.chordTurn.geometry, {
+    chordZMm: 3284, diameterMm: 28, radiusMm: 140, arcCentreUVmm: [310, 310],
+    arcStartUVmm: [170, 310], arcEndUVmm: [310, 170], tailStartUVmm: [170, 930], tailEndUVmm: [930, 170],
+  })
+  for (const layer of compact.chordTurn.layers) {
+    assert.equal(layer.verticalSurfaceGapAtCrossingMm, 0)
+    assert.deepEqual(layer.crossings, [...Array(5).fill('u-tail'), ...Array(5).fill('v-tail')])
+  }
+  assert.ok(broad.chordTurn.layers.some(layer => layer.crossings.includes('bend')))
+  assert.ok(broad.chordTurn.layers.some(layer => layer.crossings.includes(null)))
+  assert.deepEqual(compact.chordTurn.nwPort, { overlap: true, portGapMm: -29 })
+  assert.deepEqual(moved.chordTurn.nwPort, { overlap: false, portGapMm: 53 })
+  assert.ok(moved.comparison.retainedNWPort.levels.some(layer => layer.minimumClearToFormedEdgeAfter5Mm < 0))
+  assert.deepEqual(compact.chordTurn.layers, moved.chordTurn.layers)
+  assert.deepEqual(compact.comparison.gravity, broad.comparison.gravity)
+  const drawingPath = (result: typeof compact.chordTurn, prefix: string) =>
+    result.drawing.primitives.filter(primitive => primitive.id.startsWith(prefix))
+  assert.notDeepEqual(drawingPath(compact.chordTurn, 'h28-'), drawingPath(broad.chordTurn, 'h28-'))
+  assert.deepEqual(drawingPath(compact.chordTurn, 'h28-'), drawingPath(moved.chordTurn, 'h28-'))
+  assert.notDeepEqual(drawingPath(compact.chordTurn, 'floor-port-'), drawingPath(moved.chordTurn, 'floor-port-'))
+  await assert.rejects(compile.northCollectorCase({ ...request.collector, chordBendRadiusMm: 0 }), /positive chord bend radius/)
+  await assert.rejects(compile.northCollectorCase({ ...request.collector, chordBendRadiusMm: 761 }), /leaves the local collector legs/)
 })
 
 test('added wall and web mass replays over the real north heads in adverse gravity only', async () => {

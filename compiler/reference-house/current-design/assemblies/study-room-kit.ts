@@ -1,10 +1,11 @@
 import { sha256SemanticFingerprint } from '../../../core/identity.js'
 import { createPlanPaperProjection } from '../../../publication-drawing/projection.js'
-import type { DrawingSceneV2 } from '../../../publication-drawing-v2/model.js'
+import type { DrawingPrimitiveV2, DrawingSceneV2 } from '../../../publication-drawing-v2/model.js'
 import { applyDesignEdit, beginDesignEdit, editBase, type EditOperation } from '../edit.js'
 import { readBoundOccupiedServices } from '../occupied-services.js'
 import type { CurrentDesignResolution } from '../resolve.js'
 import { compileRenewableOpenings } from './renewable-openings.js'
+import { compileStudyFurnitureMotion } from './study-furniture-motion.js'
 import { compileResolvedStudyAssembly } from './study-floor.js'
 import { compileStudyGroundSupport } from './study-ground-support.js'
 import { compileResolvedStudyLinings, layStudySouthPanelStock } from './study-linings.js'
@@ -12,6 +13,7 @@ import { compileStudyWallTransition } from './study-wall-transition.js'
 
 type FloorAssembly = ReturnType<typeof compileResolvedStudyAssembly>
 type Box = readonly [number, number, number, number]
+type BcrFurnitureAccess = ReturnType<typeof compileRenewableOpenings>['window']['furnitureAccess']
 type OpeningCase = { readonly id: string; readonly hostId: string; readonly widthMm?: number } & (
   { readonly occupiedCentreMm: number; readonly nominalCentreMm?: never }
   | { readonly nominalCentreMm: number; readonly occupiedCentreMm?: never }
@@ -177,23 +179,32 @@ function partSetout(assembly: FloorAssembly) {
   }
 }
 
-function handlingScreen(assembly: FloorAssembly, layout: ReturnType<typeof partSetout>) {
+function handlingScreen(assembly: FloorAssembly, layout: ReturnType<typeof partSetout>, access: BcrFurnitureAccess) {
   const { parts, emitterPlinth } = layout
   if (emitterPlinth.state === 'withheld') return { state: 'withheld', code: emitterPlinth.code } as const
   const occupied = new Map(assembly.grid.occupied)
   const desk = occupied.get('study-desk')
   const chair = occupied.get('study-chair')
   if (!desk || !chair) return { state: 'withheld', code: 'MISSING_BOUND_STUDY_FURNITURE' } as const
-  const parkedChairOrigin = [2325, 1470]
-  const parkedChair: Box = [parkedChairOrigin[0], parkedChairOrigin[1],
-    parkedChairOrigin[0] + chair[3] - chair[1], parkedChairOrigin[1] + chair[2] - chair[0]]
-  const deskShiftMm = 800
+  const toBox = ([x, y, width, depth]: Box): Box => [x, y, x + width, y + depth]
+  if (!sameBox(desk, toBox(access.deskTranslation.start)) || !sameBox(chair, toBox(access.chairTranslation.start))) {
+    return { state: 'withheld', code: 'TRIAL_BCR_FURNITURE_MISMATCH' } as const
+  }
+  const parkedChair = toBox(access.turnedChairReservation)
+  const deskParts = parts.filter(part => intersects(part.box, desk))
+  const deskShiftMm = Math.max(0, ...deskParts.map(part => part.box[3] - desk[1]))
   const parkedDesk: Box = [desk[0], desk[1] + deskShiftMm, desk[2], desk[3] + deskShiftMm]
   const furnitureCovered = parts.filter(part => intersects(part.box, desk) || intersects(part.box, chair))
+  const unexposedParts = (first: readonly Box[], second: readonly Box[]) =>
+    furnitureCovered.filter(({ box }) =>
+      first.some(obstacle => intersects(box, obstacle)) && second.some(obstacle => intersects(box, obstacle)))
   const stageOne = [desk, parkedChair]
-  const stageTwo = [parkedDesk, parkedChair]
-  const coveredInBothStages = furnitureCovered.filter(({ box }) =>
-    stageOne.some(obstacle => intersects(box, obstacle)) && stageTwo.some(obstacle => intersects(box, obstacle)))
+  const coveredInBothStages = unexposedParts(stageOne, [parkedDesk, parkedChair])
+  const bcrDesk = toBox(access.deskTranslation.end)
+  const bcrChair = toBox(access.chairTranslation.end)
+  const bcrDeskShiftMm = bcrDesk[1] - desk[1]
+  const bcrUnexposed = unexposedParts([desk, bcrChair], [bcrDesk, bcrChair])
+  const turnedChairAtBcrDeskShift = unexposedParts(stageOne, [bcrDesk, parkedChair])
   const inBand = (box: Box) => assembly.grid.bands.some(([a0, b0, a1, b1]) =>
     box[0] >= a0 && box[1] >= b0 && box[2] <= a1 && box[3] <= b1)
   if (![parkedChair, parkedDesk].every(inBand) || intersects(parkedDesk, parkedChair)
@@ -247,11 +258,22 @@ function handlingScreen(assembly: FloorAssembly, layout: ReturnType<typeof partS
       timberFlangeDemandMPa: keyProofDemandN / (Math.PI * (12 ** 2 - 6 ** 2)),
       trayJointDemandMPaAt1MmThroat: keyProofDemandN / (Math.PI * 12) },
     parking: { parkedChair, parkedDesk, deskShiftMm, furnitureCovered: furnitureCovered.length,
-      unexposedPartIds: coveredInBothStages.map(part => part.id) },
+      unexposedPartIds: coveredInBothStages.map(part => part.id),
+      candidateState: 'static-only',
+      retainedBcrCase: {
+        receipt: access.receipt, deskShiftMm: bcrDeskShiftMm, parkedDesk: bcrDesk, parkedChair: bcrChair,
+        unexposedPartIds: bcrUnexposed.map(part => part.id),
+        geometryScope: 'BCR reversible furniture swept reservations',
+      },
+      turnedChairAtBcrDeskShiftUnexposedPartIds: turnedChairAtBcrDeskShift.map(part => part.id),
+      deskTravelBeyondBcrMm: Math.max(0, deskShiftMm - bcrDeskShiftMm),
+      extendedDeskOverlapWithBcrChairMm: intersects(parkedDesk, bcrChair)
+        ? Math.min(parkedDesk[3], bcrChair[3]) - Math.max(parkedDesk[1], bcrChair[1]) : 0,
+    },
     emitterEdgeRelease: { pickupId: pickup.id, firstRestId: rest.id, workerSweep, panelSweep,
       firstRestBoard, padCentres, padWidthMm, reachMm, edgeReleaseClear,
       restBoardTopMm: 12, pickupLiftMm: 12 + 6 + assembly.section.finishDepthMm, worstRestPadN, restPadDemandMPa: worstRestPadN / padWidthMm ** 2 },
-    held: ['loaded grip and breakaway', 'furniture carrying cycle', 'qualified continuous deck and bedding',
+    held: ['loaded grip and breakaway', 'loaded full-access furniture motion', 'qualified continuous deck and bedding',
       'ferrule pull-out and repeated fits', 'seating, acoustic, slip, movement and material performance'],
   } as const
 }
@@ -367,7 +389,11 @@ function deriveStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
   const { parts, emitterPlinth } = floorLayout
   const { opening, wall, grille, grilleKeepOut, nativeWindow } = openingSetout(resolved, request)
   const release = releaseScreen(assembly, parts)
-  const handling = handlingScreen(assembly, floorLayout)
+  const handling = handlingScreen(assembly, floorLayout, nativeWindow.furnitureAccess)
+  const movement = nativeWindow.furnitureAccess
+  const furnitureMotion = handling.state === 'withheld' ? null : compileStudyFurnitureMotion(
+    movement.receipt.sha256, movement.turnReceiptSha256, handling.parking.parkedDesk, handling.parking.parkedChair,
+  )
   const { house } = readBoundOccupiedServices(resolved)
   const [doorMin, doorMax] = house.model.studyDoorOperation.rough
   const [, doorAxis] = house.model.studyDoorOperation.hinge
@@ -378,7 +404,7 @@ function deriveStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
     bands: assembly.grid.bands, occupied: assembly.grid.occupied,
     floor: {
       parts, emitterPlinth, jointMm: assembly.section.jointMm, wearingFaceMm: assembly.section.wearFaceMm, beddingMm: assembly.section.beddingTerritoryMm,
-      depthUnassignedWithinFinishMm: assembly.section.finishSupportDepthUnresolvedMm, handling,
+      depthUnassignedWithinFinishMm: assembly.section.finishSupportDepthUnresolvedMm, handling, furnitureMotion,
       groundSupport: compileStudyGroundSupport(resolved, assembly.section, request.groundDeckLevelLossMm ?? 0),
       borderParts: parts.filter(part => part.role === 'border').length, release,
       coverageMm2: parts.reduce((total, part) => total + area(part.box), emitterPlinth.state === 'withheld' ? 0 : emitterPlinth.areaMm2),
@@ -396,7 +422,7 @@ export function compileStudyRoomKit(resolved: CurrentDesignResolution, input: un
   return { kit, wallTransition: compileStudyWallTransition(kit, nativeWindow) }
 }
 
-export function drawStudyRoomKitPlan(kit: StudyRoomKit, parkChair = false): DrawingSceneV2 {
+export function drawStudyRoomKitPlan(kit: StudyRoomKit, view: 'layout' | 'emitter-edge' | 'furniture-access' | 'furniture-motion' = 'layout'): DrawingSceneV2 {
   const [x, y] = kit.bands[0]
   const width = Math.max(...kit.bands.map(band => band[2])) - x
   const height = Math.max(...kit.bands.map(band => band[3])) - y
@@ -406,33 +432,64 @@ export function drawStudyRoomKitPlan(kit: StudyRoomKit, parkChair = false): Draw
     const [x0, y0, x1, y1] = box
     return projection.rect({ x: x0, y: y0, width: x1 - x0, height: y1 - y0 })
   }
-  const { release, handling } = kit.floor
-  const useParking = parkChair && handling.state !== 'withheld'
+  const { release, handling, furnitureMotion } = kit.floor
+  const useParking = view === 'emitter-edge' && handling.state !== 'withheld'
+  const bcrParking = view === 'furniture-access' && handling.state !== 'withheld' ? handling.parking.retainedBcrCase : null
+  const motion = view === 'furniture-motion' ? furnitureMotion : null
+  const showFurniture = Boolean(bcrParking || motion)
+  const blockedPartIds = new Set(bcrParking?.unexposedPartIds)
+  const parked = motion ? { parkedDesk: motion.candidate.deskParkXYXYMm, parkedChair: motion.candidate.chairParkXYXYMm } : bcrParking
+  const centre = ([left, bottom, width, height]: Box) => projection.point(left + width / 2, bottom + height / 2)
+  const phases = motion?.phases.flatMap<DrawingPrimitiveV2>(phase => {
+    if (phase.type === 'approach') return []
+    if (phase.type === 'rotation') {
+      const [centreX, centreY] = phase.centreXYMm
+      const sides = 64
+      const radius = phase.radiusMm / Math.cos(Math.PI / sides)
+      const ring = Array.from({ length: sides }, (_, index) => {
+        const angle = 2 * Math.PI * index / sides
+        return projection.point(centreX + radius * Math.cos(angle), centreY + radius * Math.sin(angle))
+      })
+      return [{ kind: 'path', id: phase.id, rings: [ring], stroke: 'secondary', dash: 'provisional' }]
+    }
+    return [{ kind: 'line' as const, id: phase.id, role: 'primary' as const, a: centre(phase.startXYWHMm), b: centre(phase.endXYWHMm) }]
+  }) ?? []
   return {
-    viewId: useParking ? 'ias-study-room-kit-emitter-edge' : 'ias-study-room-kit-plan', sourceId: kit.source.occupiedHouse, scaleDenominator,
-    title: useParking ? 'Study emitter-edge renewal and chair parking' : 'Study room-kit layout',
-    description: useParking ? 'Candidate emitter-edge pickup and first rest with the chair in its service parking position.'
+    viewId: motion ? 'ias-study-room-kit-furniture-motion' : bcrParking ? 'ias-study-room-kit-furniture-access' : useParking ? 'ias-study-room-kit-emitter-edge' : 'ias-study-room-kit-plan',
+    sourceId: kit.source.occupiedHouse, scaleDenominator,
+    title: motion ? 'Study staged furniture motion' : bcrParking ? 'Study floor access with the BCR furniture route' : useParking ? 'Study emitter-edge renewal and chair parking' : 'Study room-kit layout',
+    description: motion ? 'Original and parked furniture, straight centreline movements and the whole turning reservation.'
+      : bcrParking ? 'Dashed original furniture, parked furniture outlines and floor parts that remain covered in both stages.'
+      : useParking ? 'Candidate emitter-edge pickup and first rest with the chair in its service parking position.'
       : 'Candidate finish field, fabricated borders, rough openings and shown furniture.',
     widthMm: projection.length(width) + 24, heightMm: projection.length(height) + 34,
     primitives: [
       ...kit.floor.parts.map(part => ({
         kind: 'rect' as const, id: part.id, ...rect(part.face), stroke: 'secondary' as const,
-        fill: 'none' as const, dash: part.role === 'border' ? 'datum' as const : 'none' as const,
-        metadata: { role: part.role, band: part.band },
+        fill: blockedPartIds.has(part.id) ? 'context' as const : 'none' as const, dash: part.role === 'border' ? 'datum' as const : 'none' as const,
+        metadata: { role: part.role, band: part.band, ...(blockedPartIds.has(part.id) ? { coveredInBothBcrStages: true } : {}) },
       })),
       ...(kit.floor.emitterPlinth.state === 'withheld' ? [] : [{
         kind: 'rect' as const, id: kit.floor.emitterPlinth.id, ...rect(kit.floor.emitterPlinth.face),
         stroke: 'primary' as const, fill: 'context' as const, metadata: { role: 'fixed emitter plinth' },
       }]),
-      ...kit.occupied.map(([id, box]) => ({ kind: 'rect' as const, id: `occupied:${id}`, ...rect(useParking && id === 'study-chair' ? handling.parking.parkedChair : box),
-        stroke: 'profile' as const, fill: 'context' as const })),
+      ...kit.occupied.map(([id, box]) => ({
+        kind: 'rect' as const, id: `occupied:${id}`, ...rect(useParking && id === 'study-chair' ? handling.parking.parkedChair : box),
+        stroke: 'profile' as const, fill: showFurniture && id !== 'service-emitter-study-W' ? 'none' as const : 'context' as const,
+        ...(showFurniture && id !== 'service-emitter-study-W' ? { dash: 'provisional' as const } : {}),
+      })),
+      ...(parked ? [
+        { kind: 'rect' as const, id: 'parked:study-desk', ...rect(parked.parkedDesk), stroke: 'profile' as const, fill: 'none' as const },
+        { kind: 'rect' as const, id: 'parked:study-chair', ...rect(parked.parkedChair), stroke: 'profile' as const, fill: 'none' as const },
+      ] : []),
+      ...phases,
       ...[kit.opening, ...kit.opening.fixedControls].map(opening => ({
         kind: 'line' as const, id: opening.id, role: 'profile' as const,
         a: projection.point(opening.box[0], y), b: projection.point(opening.box[2], y),
       })),
       { kind: 'line', id: kit.door.id, role: 'profile', a: projection.point(kit.door.rough[0], kit.door.axis),
         b: projection.point(kit.door.rough[1], kit.door.axis) },
-      ...(!useParking && release.state !== 'withheld' ? [
+      ...(!showFurniture && !useParking && release.state !== 'withheld' ? [
         { kind: 'rect' as const, id: 'trial-panel-sweep', stroke: 'primary' as const,
           dash: 'provisional' as const, fill: 'none' as const, ...rect(release.panelSweep) },
         { kind: 'rect' as const, id: 'trial-worker-sweep', stroke: 'secondary' as const,
@@ -445,7 +502,9 @@ export function drawStudyRoomKitPlan(kit: StudyRoomKit, parkChair = false): Draw
           dash: 'provisional' as const, fill: 'none' as const, ...rect(handling.emitterEdgeRelease.workerSweep) },
       ]),
       { kind: 'text', id: 'pitch', x: 12, y: projection.length(height) + 24, role: 'note',
-        value: useParking ? 'Chair parked · 300 mm lift-out transfer south of pickup'
+        value: motion ? 'Dashed: starting positions and turning reservation · solid: translation and parking'
+          : bcrParking ? `${blockedPartIds.size} parts covered in both BCR stages · ${bcrParking.deskShiftMm} mm desk shift`
+          : useParking ? 'Chair parked · 300 mm lift-out transfer south of pickup'
           : `${kit.request.pitchMm} mm pitch · ${kit.floor.parts.length} parts · ${kit.floor.borderParts} border parts` },
     ],
   }

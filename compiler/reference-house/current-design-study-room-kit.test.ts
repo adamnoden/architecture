@@ -5,6 +5,7 @@ import test from 'node:test'
 import { renderDrawingSceneV2Svg } from '../publication-drawing-v2/svg.js'
 import { compileRenewableOpenings } from './current-design/assemblies/renewable-openings.js'
 import { compileResolvedStudyAssembly } from './current-design/assemblies/study-floor.js'
+import { compileStudyFurnitureMotion } from './current-design/assemblies/study-furniture-motion.js'
 import { compileStudyGroundSupport } from './current-design/assemblies/study-ground-support.js'
 import { compileStudyWallTransition } from './current-design/assemblies/study-wall-transition.js'
 import { drawStudyWallTransition } from './current-design/assemblies/study-wall-transition-views.js'
@@ -72,6 +73,73 @@ test('Study kit lays out actual stable parts and discrete border widths in the f
   assert.ok(Math.abs(pick(kit)!.wearFaceKg - 1.1114334) < 1e-8)
   assert.ok(Math.abs(pick(tile.kit)!.wearFaceKg - 4.93529355) < 1e-8)
   assert.equal(tile.kit.floor.depthUnassignedWithinFinishMm, 3)
+})
+
+test('Study floor access identifies the parts the reversible BCR furniture path leaves covered', async () => {
+  const [baseline, repitch, moved] = await Promise.all([
+    current.studyRoomKit(initial), current.studyRoomKit({ ...initial, pitchMm: 450 }),
+    current.studyRoomKit({ ...initial, opening }),
+  ])
+  const { handling } = baseline.kit.floor
+  assert.ok(handling.state !== 'withheld')
+  const { parking } = handling
+  assert.equal(parking.candidateState, 'static-only')
+  assert.equal(parking.deskShiftMm, 800)
+  assert.equal(parking.deskTravelBeyondBcrMm, 100)
+  assert.equal(parking.extendedDeskOverlapWithBcrChairMm, 50)
+  const { retainedBcrCase: bcr } = parking
+  assert.equal(bcr.receipt.path, 'project/bcr/studies/bay-interface-study.json')
+  assert.equal(bcr.deskShiftMm, 700)
+  assert.deepEqual(bcr.unexposedPartIds.map(id => id.split('/').slice(-2).join('/')), [
+    '800/1103', '800/2000', '1100/1103', '1100/2000', '1400/1103', '1400/2000',
+    '1700/1103', '1700/2000', '2000/1103', '634.5/1246',
+  ])
+  assert.deepEqual(parking.turnedChairAtBcrDeskShiftUnexposedPartIds,
+    bcr.unexposedPartIds.filter(id => !id.endsWith('/2000')))
+  assert.ok(baseline.furnitureAccessPlan)
+  const highlighted = (result: typeof baseline) =>
+    result.furnitureAccessPlan?.primitives.flatMap(item =>
+      item.kind === 'rect' && item.fill === 'context' && item.metadata?.coveredInBothBcrStages
+        ? [item.id] : [])
+  assert.deepEqual(highlighted(baseline), bcr.unexposedPartIds)
+  assert.deepEqual(highlighted(moved), bcr.unexposedPartIds)
+  assert.equal(repitch.furnitureAccessPlan, null)
+})
+
+test('the full Study furniture sequence clears the fixed occupied bay and rejects a missed chair alignment', async () => {
+  const [baseline, repitch] = await Promise.all([
+    current.studyRoomKit(initial), current.studyRoomKit({ ...initial, pitchMm: 450 }),
+  ])
+  const motion = baseline.kit.floor.furnitureMotion
+  assert.ok(motion)
+  assert.equal(motion.state, 'geometry-screen-only')
+  assert.equal(motion.physicalAcceptance, false)
+  assert.equal(motion.reverseUsesSameSweeps, true)
+  assert.deepEqual(motion.conflictingPhaseIds, [])
+  assert.equal(motion.phases.length, 12)
+  const turn = motion.phases.find(phase => phase.type === 'rotation')
+  assert.equal(turn?.type, 'rotation')
+  if (turn?.type !== 'rotation') throw new Error('Missing chair turn')
+  assert.deepEqual(turn.centreXYMm, [2250, 2020])
+  assert.ok(Math.abs(turn.bodyToItemMm - 25.318797646314465) < 1e-9)
+  assert.equal(turn.maximumProspectiveReachMm, 548)
+  const desk = motion.phases.find(phase => phase.id === 'pull-desk-north')
+  assert.equal(desk?.type, 'translation')
+  if (desk?.type !== 'translation') throw new Error('Missing desk shift')
+  assert.equal(desk.minimumItemClearanceMm, 25.5)
+  assert.deepEqual(desk.worker.points, [[1455, 1645], [1455, 2445]])
+  assert.deepEqual(desk.endXYWHMm, [655, 1400, 1600, 700])
+  assert.ok(baseline.furnitureMotionPlan?.primitives.some(item => item.id === 'turn-chair'))
+  assert.equal(repitch.kit.floor.furnitureMotion, null)
+  assert.equal(repitch.furnitureMotionPlan, null)
+
+  const { bayReceiptSha256, turnReceiptSha256 } = motion.basis
+  const adverse = compileStudyFurnitureMotion(bayReceiptSha256, turnReceiptSha256,
+    motion.candidate.deskParkXYXYMm, [2325, 1520, 3225, 2520])
+  assert.equal(adverse.state, 'geometry-conflict')
+  assert.ok(adverse.conflictingPhaseIds.includes('park-turned-chair-east'))
+  assert.throws(() => compileStudyFurnitureMotion('0'.repeat(64), turnReceiptSha256,
+    motion.candidate.deskParkXYXYMm, motion.candidate.chairParkXYXYMm), /source-bound bay receipt/)
 })
 
 test('A 15 mm finish preserves the ground datum but the floating support allowance is still short', async () => {

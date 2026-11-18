@@ -31,3 +31,16 @@ The shorter utility front trial at X10034/Y625 with the riser at Y560 leaves 4 m
 The unresolved cutover requirements are a supported six-opening infill and sill, rated carrier and retrievable dry connections, freeze and motion protection, the joined vented wet assembly under independent 90 L/min challenges, and the verified source and separate external tailwaters. An assembly with its vents or reliefs shut does not pass. The dry access, baffle and receiver coordinates are development evidence.
 
 Reproduce with `node project/had/studies/south-inlet-wet-box.mjs --check`.
+
+## Check the whole straight draw in the current compiler
+
+The local split collar gives the Ø74 riser only 2 mm of +Y travel after the 5 mm fit allowance if the remaining roof stays closed. A continuous branch-specific opening must follow the vertical riser to the released front. The ideal strip is 84 mm wide and extends to Y665. It needs 127 mm of roof length over the Utility box and 162 mm over Plant with the 620 mm draw. The lower trough and sibling closure stay in place. A clear-strip comparison means the strip is open for the motion, with its eventual independent cover, vent, retention and weather details still to qualify.
+
+The compiler checks the full translation of the released carrier against the washer and retained trough, and screens the bare tube inside the sloping sleeve. The existing washer placements use the dimensional envelope from the [IAS first-release comparator](../ias/ias-03-utility-first-release.md). It evaluates one branch at a time, with separate preparation checks for isolation, connection disengagement, wet front and target removal, sibling closure and temporary room and electrical exclusion. These fields declare a test scenario. The ideal path still needs actual assembled union/tool clearances, a positively retained guide and independent first rest, and qualification of the wet closure before cutover.
+
+```sh
+node --import tsx scripts/compile-current-design.ts --read-georgian-source |
+  node --import tsx scripts/compile-current-design.ts --read-inlet-removal - > removal-cases.json
+node -p 'JSON.stringify(require("./removal-cases.json")[0])' |
+  node --import tsx scripts/compile-current-design.ts --inlet-removal -
+```
