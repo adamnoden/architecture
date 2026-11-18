@@ -9,12 +9,12 @@
     "label": "rush-study-board-20261118"
   },
   "claimedAt": "2026-11-18T13:02:29.999Z",
-  "heartbeatAt": "2026-11-18T13:02:29.999Z",
-  "expiresAt": "2026-11-18T13:47:29.999Z",
+  "heartbeatAt": "2026-11-18T13:16:00.557Z",
+  "expiresAt": "2026-11-18T14:01:00.557Z",
   "checkpoint": {
-    "evidence": "Merged #1577 at 2ebdc701ae88ea818d64b22fc9497159e8afa979; 117/119 Study planar fits. New branch audits exact board floor-band containment and closed approach cut.",
-    "next": "Validate exact third-wave branch and hosted checks, then merge and release.",
-    "blocker": "Installed G1 module/support undersides, fixed trim and loaded deck and board remain to be verified."
+    "evidence": "PR #1578 exact head 5aa3476b19324a2300d2bfb0b3df3e020b2762b9. Study reports 117/119 planar fits, 115 board placements wholly inside floor bands, and current G1 approach obstruction; 19 focused Study tests passed.",
+    "next": "After exact-head repository health and canonical merge, bind independent installed inlet and carrier underside envelopes, phase-specific worker height, and released east and cloak trim geometry before replaying access and board insertion.",
+    "blocker": "Hosted repository health pending. Installed module, grille, fasteners and support envelopes, trim removal, and loaded board/deck handling need evidence."
   },
   "branch": "work/rush-installation-bounds-2026-11-18",
   "predecessor": {
@@ -38,5 +38,6 @@
       "next": "Confirm repository-health CI and fresh canonical preflight on exact head, merge #1577, then verify source-bound floor-band and approach diagnostics separately.",
       "blocker": "Hosted repository-health job pending. Board fixed obstruction, G1 underside and loaded board/deck acceptance remain outside the planar comparison."
     }
-  }
+  },
+  "pr": 1578
 }
