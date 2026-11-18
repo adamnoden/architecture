@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 44,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "229ffcde-aa94-498e-af37-4679e76c38b3",
   "holder": {
     "kind": "codex",
     "label": "rush-utility-relief"
   },
   "claimedAt": "2026-11-18T12:10:38.327Z",
-  "heartbeatAt": "2026-11-18T13:16:22.466Z",
-  "expiresAt": "2026-11-18T14:01:22.466Z",
+  "heartbeatAt": "2026-11-18T13:27:06.523Z",
+  "expiresAt": "2026-11-18T13:27:06.523Z",
   "branch": "work/rush-installation-bounds-2026-11-18",
   "predecessor": {
     "leaseId": "d89fd90f-7e08-40a7-9bdf-189bf725ecca",
@@ -36,5 +36,7 @@
     "evidence": "PR #1578 exact head 5aa3476b19324a2300d2bfb0b3df3e020b2762b9. Packet preflight, browser and drawing passed; repository health running. HAD geometry measures bare lid gravity and governing eccentric vertical load only.",
     "next": "Bind rated collar and removable filler with seal and vent details. Physically challenge each isolated closure at 90 L/min with its upper mouth blocked. Measure assembled lid mass and handling loads; detail and test anchored guides and positive capture through transfer and first rest."
   },
-  "pr": 1578
+  "pr": 1578,
+  "releasedAt": "2026-11-18T13:27:06.523Z",
+  "releaseReason": "handoff"
 }
