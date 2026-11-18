@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 38,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "22f8af96-a0db-49bc-90d4-cd08e44fef13",
   "holder": {
     "kind": "codex",
     "label": "ovid-structural-continuity"
   },
   "claimedAt": "2026-11-17T22:58:46.069Z",
-  "heartbeatAt": "2026-11-18T01:07:43.583Z",
-  "expiresAt": "2026-11-18T01:52:43.583Z",
+  "heartbeatAt": "2026-11-18T01:08:43.419Z",
+  "expiresAt": "2026-11-18T01:08:43.419Z",
   "branch": "work/current-gallery-compiler-2026-11-18",
   "predecessor": {
     "leaseId": "20c1309c-7ef1-40dd-8d07-97a790f27619",
@@ -39,5 +39,7 @@
     "next": "Bind a viable independent west foul route or revise the collector topology, then solve the coupled splice with actual receiver, weld, bedding and contact geometry.",
     "blocker": "Full-demand cabinet relocation fails. Joined DPC stiffness and physical acceptance require a dimensioned load path."
   },
-  "pr": 1573
+  "pr": 1573,
+  "releasedAt": "2026-11-18T01:08:43.419Z",
+  "releaseReason": "handoff"
 }
