@@ -9,9 +9,9 @@
     "label": "rush-dpc-splice"
   },
   "claimedAt": "2026-11-18T12:10:17.078Z",
-  "heartbeatAt": "2026-11-18T12:57:08.414Z",
-  "expiresAt": "2026-11-18T13:42:08.414Z",
-  "branch": "work/rush-contact-geometry-2026-11-18",
+  "heartbeatAt": "2026-11-18T13:01:43.194Z",
+  "expiresAt": "2026-11-18T13:46:43.194Z",
+  "branch": "work/rush-installation-bounds-2026-11-18",
   "predecessor": {
     "leaseId": "716fb931-d672-45ff-8c49-ea1a08bea348",
     "generation": 39,
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1577 exact 270a8597; 480 Reference House tests and hosted browser and drawing proofs passed",
-    "next": "Observe hosted repository health and publication checks before merge",
-    "blocker": "Repository validation still running; no reported failure"
+    "evidence": "Merged #1577 at 2ebdc701; placement tolerance exact combined tree tested",
+    "next": "Compare shaft and cage fit purpose with field-qualified movement and reaction evidence after merging hosted proof",
+    "blocker": "Existing NW port and assembled DPC stiffness remain unresolved"
   }
 }
