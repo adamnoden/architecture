@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-CRAFT-ROOM-KIT",
   "generation": 6,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "e392ca22-6026-4cc3-9630-5f4013ff26df",
   "holder": {
     "kind": "codex",
     "label": "ovid-study-rush"
   },
   "claimedAt": "2026-11-18T07:48:24.146Z",
-  "heartbeatAt": "2026-11-18T08:52:26.594Z",
-  "expiresAt": "2026-11-18T09:37:26.594Z",
+  "heartbeatAt": "2026-11-18T08:53:03.934Z",
+  "expiresAt": "2026-11-18T08:53:03.934Z",
   "branch": "work/rush-fit-clearances-2026-11-18",
   "predecessor": {
     "leaseId": "1c4221de-640e-4c87-8b54-48e11d047837",
@@ -37,5 +37,7 @@
     "next": "Dimension the complete installed G1 carrier and trim underside and loaded worker envelope. Establish board placement, stiffness and pad bearing, loaded transfer, key engagement and a qualified continuous floor deck.",
     "blocker": "No recorded installed G1 minimum height, qualified board/deck model or physical loaded handling evidence."
   },
-  "pr": 1575
+  "pr": 1575,
+  "releasedAt": "2026-11-18T08:53:03.934Z",
+  "releaseReason": "handoff"
 }
