@@ -58,9 +58,17 @@ export const codificationNodes = defineNodes([
     closeoutEvidence: ['project/ccr/change-propagation-result.md']
   },
   {
+    id: 'CCR-CURRENT-GALLERY', owners: ['CCR', 'PLT'],
+    title: 'Route public floor plans and occupied service drawings through the current compiler',
+    dependencies: ['PCO-CURRENT-GALLERY', 'CCR-CURRENT-COMPILE', 'CCR-SERVICES-INTEGRATION', 'PLT-CURRENT-REVIEW'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: ['project/ccr/current-gallery-result.md']
+  },
+  {
     id: 'CCR-CURRENT-RELEASE', owners: ['CCR', 'HRS', 'ADE'],
     title: 'Eliminate historical fallback and split current models from all active final outputs',
-    dependencies: ['CCR-CHANGE-PROOF', 'HRS-SYNTHESIS', 'ADE-DETAILS', 'ADE-SCHEDULES', 'ADE-EVIDENCE'], lifecycle: 'planned',
+    dependencies: ['CCR-CHANGE-PROOF', 'CCR-CURRENT-GALLERY', 'HRS-SYNTHESIS', 'ADE-DETAILS', 'ADE-SCHEDULES', 'ADE-EVIDENCE'], lifecycle: 'planned',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/ccr/current-release-result.md']
   },

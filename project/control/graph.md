@@ -14,6 +14,7 @@ flowchart LR
   %% Generated from project/control. Do not hand-edit graph topology.
   subgraph g_SHARED["Shared integration gates"]
     direction TB
+    n_CCR_CURRENT_GALLERY["CCR-CURRENT-GALLERY<br/>Route public floor plans and occupied service drawings through the current compiler<br/><b>READY</b>"]
     n_CCR_CURRENT_RELEASE["CCR-CURRENT-RELEASE<br/>Eliminate historical fallback and split current models from all active final outputs<br/><b>BLOCKED</b>"]
     n_HAD_INLET_RESOLUTION["HAD-INLET-RESOLUTION<br/>Resolve the selected incoming-water route and isolation station<br/><b>READY</b>"]
     n_IAS_CRAFT_ROOM_KIT["IAS-CRAFT-ROOM-KIT<br/>Design a beautiful gravity-led prefabricated room kit with serviceable timber and tile surfaces<br/><b>READY</b>"]
@@ -105,6 +106,7 @@ flowchart LR
     n_PHY_02["PHY-02<br/>Selective floor-access physical research<br/><b>HELD</b>"]
     n_PHY_04["PHY-04<br/>Wall/ceiling movement-junction build and test<br/><b>READY</b>"]
   end
+  n_CCR_CURRENT_GALLERY --> n_CCR_CURRENT_RELEASE
   n_HRS_SYNTHESIS --> n_CCR_CURRENT_RELEASE
   n_ADE_DETAILS --> n_CCR_CURRENT_RELEASE
   n_ADE_SCHEDULES --> n_CCR_CURRENT_RELEASE
@@ -193,6 +195,7 @@ flowchart LR
   classDef claimGrace fill:#eee5d8,stroke:#957044,color:#634a2d,stroke-width:3px,stroke-dasharray:4 3;
   classDef activeUnclaimed fill:#dce9e8,stroke:#356966,color:#1f4542,stroke-width:3px,stroke-dasharray:4 3;
   classDef invalidClaim fill:#f1e0dc,stroke:#a45f54,color:#693d37,stroke-width:3px;
+  class n_CCR_CURRENT_GALLERY ready;
   class n_CCR_CURRENT_RELEASE blocked;
   class n_HAD_INLET_RESOLUTION ready;
   class n_IAS_CRAFT_ROOM_KIT ready;
@@ -263,6 +266,7 @@ flowchart LR
   subgraph g_PCO["PCO"]
     direction TB
     n_PCO_EXECUTABLE_DESIGN["PCO-EXECUTABLE-DESIGN<br/>Require executable design, early current-house integration and an editor-ready model contract<br/><b>DONE</b>"]
+    n_PCO_CURRENT_GALLERY["PCO-CURRENT-GALLERY<br/>Register the current compiler cutover for the public drawing gallery<br/><b>DONE</b>"]
     n_PCO_LOCAL_OPENING["PCO-LOCAL-OPENING<br/>Register the source-bound local opening comparison for owner review<br/><b>DONE</b>"]
     n_PCO_WORKABLE_INTERIORS["PCO-WORKABLE-INTERIORS<br/>Register workable interior design and personal owner approval gates<br/><b>DONE</b>"]
     n_PCO_INDEPENDENT_STUDIES["PCO-INDEPENDENT-STUDIES<br/>Separate bounded bay and internal-water studies from final house integration<br/><b>DONE</b>"]
@@ -301,6 +305,7 @@ flowchart LR
     n_CCR_SERVICES_INTEGRATION["CCR-SERVICES-INTEGRATION<br/>Integrate active service and water computations through current-source contracts<br/><b>DONE</b>"]
     n_CCR_ASSEMBLY_INTEGRATION["CCR-ASSEMBLY-INTEGRATION<br/>Integrate editable floor wall skirting grate and opening assembly families<br/><b>DONE</b>"]
     n_CCR_EDIT_CONTRACT["CCR-EDIT-CONTRACT<br/>Prove serialisable semantic edits reversal and revision-bound compiler responses<br/><b>DONE</b>"]
+    n_CCR_CURRENT_GALLERY["CCR-CURRENT-GALLERY<br/>Route public floor plans and occupied service drawings through the current compiler<br/><b>READY</b>"]
     n_CCR_CURRENT_RELEASE["CCR-CURRENT-RELEASE<br/>Eliminate historical fallback and split current models from all active final outputs<br/><b>BLOCKED</b>"]
     n_TRIAD_IFACE_FREEZE["TRIAD-IFACE-FREEZE<br/>Shared IAS/OAS/HAD interface freeze<br/><b>DONE</b>"]
     n_IAS_OAS_JUNCTION["IAS-OAS-JUNCTION<br/>Interior-system to opening-assembly junction reconciliation<br/><b>DONE</b>"]
@@ -519,12 +524,18 @@ flowchart LR
   n_CCR_SERVICES_INTEGRATION --> n_CCR_CHANGE_PROOF
   n_CCR_ASSEMBLY_INTEGRATION --> n_CCR_CHANGE_PROOF
   n_CCR_EDIT_CONTRACT --> n_CCR_CHANGE_PROOF
+  n_PCO_CURRENT_GALLERY --> n_CCR_CURRENT_GALLERY
+  n_CCR_CURRENT_COMPILE --> n_CCR_CURRENT_GALLERY
+  n_CCR_SERVICES_INTEGRATION --> n_CCR_CURRENT_GALLERY
+  n_PLT_CURRENT_REVIEW --> n_CCR_CURRENT_GALLERY
   n_CCR_CHANGE_PROOF --> n_CCR_CURRENT_RELEASE
+  n_CCR_CURRENT_GALLERY --> n_CCR_CURRENT_RELEASE
   n_HRS_SYNTHESIS --> n_CCR_CURRENT_RELEASE
   n_ADE_DETAILS --> n_CCR_CURRENT_RELEASE
   n_ADE_SCHEDULES --> n_CCR_CURRENT_RELEASE
   n_ADE_EVIDENCE --> n_CCR_CURRENT_RELEASE
   n_CCR_CHANGE_PROOF --> n_ADE_BROWSER_EDITOR
+  n_PCO_EXECUTABLE_DESIGN --> n_PCO_CURRENT_GALLERY
   n_PCO_WORKABLE_INTERIORS --> n_PCO_LOCAL_OPENING
   n_PCO_REVIEW_POLICY --> n_PCO_WORKABLE_INTERIORS
   n_PCO_REVIEW_POLICY --> n_PCO_INDEPENDENT_STUDIES
@@ -897,8 +908,10 @@ flowchart LR
   class n_CCR_ASSEMBLY_INTEGRATION done;
   class n_CCR_EDIT_CONTRACT done;
   class n_CCR_CHANGE_PROOF done;
+  class n_CCR_CURRENT_GALLERY ready;
   class n_CCR_CURRENT_RELEASE blocked;
   class n_ADE_BROWSER_EDITOR done;
+  class n_PCO_CURRENT_GALLERY done;
   class n_PCO_LOCAL_OPENING done;
   class n_PCO_WORKABLE_INTERIORS done;
   class n_PCO_INDEPENDENT_STUDIES done;

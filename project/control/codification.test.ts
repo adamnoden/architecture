@@ -65,9 +65,24 @@ test('final technical bay retains technical applicability despite the earlier mo
   }
 })
 
+test('the early gallery cutover is available before final selection and has a separate registration record', () => {
+  const gallery = node('CCR-CURRENT-GALLERY')
+  assert.equal(gallery.agentDispatch?.mode, 'self-service')
+  assert.equal(node('PCO-CURRENT-GALLERY').lifecycle, 'complete')
+  const upstream = ancestors(gallery.id)
+  for (const required of ['PCO-CURRENT-GALLERY', 'CCR-CURRENT-COMPILE', 'CCR-SERVICES-INTEGRATION', 'PLT-CURRENT-REVIEW']) {
+    assert.ok(upstream.has(required), required)
+  }
+  for (const late of ['TRIAD-GATE', 'HRS-SYNTHESIS', 'CCR-CURRENT-RELEASE', 'PLT-FINAL-PREP']) {
+    assert.equal(upstream.has(late), false, late)
+  }
+  const fixture = nodes.map(entry => entry.id === gallery.id ? { ...entry, lifecycle: 'planned' as const } : entry)
+  assert.equal(derivedState(fixture.find(entry => entry.id === gallery.id)!, fixture), 'ready')
+})
+
 test('final publication cannot bypass the migrated current model or edit/change proof', () => {
   const upstream = ancestors('PLT-FINAL-PREP')
-  for (const required of ['CCR-CURRENT-SOURCE', 'CCR-CURRENT-COMPILE', 'CCR-STRUCTURE-INTEGRATION', 'CCR-SERVICES-INTEGRATION', 'CCR-ASSEMBLY-INTEGRATION', 'CCR-EDIT-CONTRACT', 'CCR-CHANGE-PROOF', 'CCR-CURRENT-RELEASE', 'HRS-SYNTHESIS', 'ADE-DETAILS', 'ADE-SCHEDULES', 'ADE-EVIDENCE']) {
+  for (const required of ['CCR-CURRENT-SOURCE', 'CCR-CURRENT-COMPILE', 'CCR-STRUCTURE-INTEGRATION', 'CCR-SERVICES-INTEGRATION', 'CCR-ASSEMBLY-INTEGRATION', 'CCR-EDIT-CONTRACT', 'CCR-CHANGE-PROOF', 'CCR-CURRENT-GALLERY', 'CCR-CURRENT-RELEASE', 'HRS-SYNTHESIS', 'ADE-DETAILS', 'ADE-SCHEDULES', 'ADE-EVIDENCE']) {
     assert.ok(upstream.has(required), `Publication missing ${required}`)
   }
   const fixture: ControlNode[] = nodes.map(entry => ({...entry, lifecycle: ['CCR-CURRENT-RELEASE', 'PLT-FINAL-PREP'].includes(entry.id) ? 'planned' : 'complete'}))

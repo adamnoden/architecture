@@ -65,6 +65,12 @@ Use the real current entry point and the integrated domains, not fixture-only he
 
 Audit manually synchronised facts and active consumers. Every outstanding computational gap has an explicit owner and rejection/implementation route; repeated active outputs cannot be treated as historical simply to pass. Wire the suite into the canonical repository health entry point. Output `project/ccr/change-propagation-result.md`.
 
+### CCR-CURRENT-GALLERY — early current consumer cutover
+
+Use one admitted current design in the public gallery for the two nominal floor plans and three source-bound occupied-service drawings. Preserve view identities, content-addressed links and historical artwork. Label the occupied-service evidence as conditional and the two standalone Georgian service overlays as reservation studies. Prove the production loader, exact compiler bytes, rejection of stale or candidate inputs and unaffected historical links. Keep roof and section reconciliation with the owning disciplines.
+
+Issue [#1570](https://github.com/adamnoden/architecture/issues/1570) records the registry-only `PCO-CURRENT-GALLERY` bootstrap. The separate self-service packet owns implementation and `project/ccr/current-gallery-result.md`. The final release still requires selected-house and technical-bay evidence.
+
 ### CCR-CURRENT-RELEASE — final elimination of the split
 
 After HRS-SYNTHESIS and the actual ADE detail/schedule/evidence outputs, repeat the consumer audit against the final selected source, not the earlier candidate. Verify every active CLI/publication/drawing/schedule/engineering consumer is routed to the same declared current snapshot and relevant supported checks. Migrate or retire stale active paths; retain deliberately labelled historic artifacts only as history. Prove source changes cannot silently reuse their claims.

@@ -2,6 +2,13 @@ import { defineNodes } from '../types.js'
 
 export const pcoNodes = defineNodes([
   {
+    id: 'PCO-CURRENT-GALLERY', owners: ['PCO'],
+    title: 'Register the current compiler cutover for the public drawing gallery',
+    dependencies: ['PCO-EXECUTABLE-DESIGN'], lifecycle: 'complete',
+    agentDispatch: { mode: 'manual', reason: 'Owner-directed registry-only bootstrap recorded in #1570.' },
+    closeoutEvidence: ['project/ccr/current-house-integration-programme.md'],
+  },
+  {
     id: 'PCO-LOCAL-OPENING', owners: ['PCO'],
     title: 'Register the source-bound local opening comparison for owner review',
     dependencies: ['PCO-WORKABLE-INTERIORS'], lifecycle: 'complete',
