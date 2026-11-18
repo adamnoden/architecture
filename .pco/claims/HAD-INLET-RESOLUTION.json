@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 43,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "d89fd90f-7e08-40a7-9bdf-189bf725ecca",
   "holder": {
     "kind": "chatgpt",
     "label": "rush-inlet-seal"
   },
   "claimedAt": "2026-11-18T07:48:18.176Z",
-  "heartbeatAt": "2026-11-18T08:52:35.086Z",
-  "expiresAt": "2026-11-18T09:37:35.086Z",
+  "heartbeatAt": "2026-11-18T08:52:54.178Z",
+  "expiresAt": "2026-11-18T08:52:54.178Z",
   "branch": "work/rush-fit-clearances-2026-11-18",
   "predecessor": {
     "leaseId": "d86e1875-c445-4e78-a6a6-83b4ee5f9044",
@@ -38,5 +38,7 @@
     "evidence": "Verified #1574 b4db7d7a and #1575 da46dc523eacc79765d5b72ec443e958e972981c on main. Exact HAD source matches and 13 post-merge tests passed. Ø92 Utility collar and 4 mm radial seal-land trial misses concentric lap by 1.598 mm.",
     "next": "Bind rated collar, split filler and seal package or recover taper width. Prove installed fit, filler withdrawal, vent continuity, guide anchorage and positive capture under isolated wet/loaded tests."
   },
-  "pr": 1575
+  "pr": 1575,
+  "releasedAt": "2026-11-18T08:52:54.178Z",
+  "releaseReason": "handoff"
 }
