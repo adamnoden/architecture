@@ -9,8 +9,8 @@
     "label": "ovid-study-room-kit"
   },
   "claimedAt": "2026-11-17T23:01:17.702Z",
-  "heartbeatAt": "2026-11-17T23:54:25.879Z",
-  "expiresAt": "2026-11-18T00:39:25.879Z",
+  "heartbeatAt": "2026-11-18T00:13:34.931Z",
+  "expiresAt": "2026-11-18T00:58:34.931Z",
   "branch": "work/study-room-kit-integration-2026-11-17",
   "predecessor": {
     "leaseId": "ae8d08f5-d3e1-43a2-b775-90245a38223f",
@@ -36,7 +36,7 @@
   },
   "pr": 1568,
   "checkpoint": {
-    "evidence": "Joint PR #1568 at 38c39aac; 19 Study tests and BCR reproduction verified on the combined tree",
-    "next": "Verify hosted joint proof and merge; then continue from the first-rest coverage screen and qualify the substrate and loaded release"
+    "evidence": "Merged PR #1568 at 3e8e6a8b verifies Study furniture access geometry",
+    "next": "Finish local floor first-rest evidence; run joint follow-on tests and publish through coordinated head"
   }
 }
