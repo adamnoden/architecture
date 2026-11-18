@@ -321,6 +321,47 @@ test('the local H28 turn resolves finite drag crossings and port overlap from th
   await assert.rejects(compile.northCollectorCase({ ...request.collector, chordBendRadiusMm: 761 }), /leaves the local collector legs/)
 })
 
+test('continuous port territory cannot fit the retained cage even with independently repositioned stations', async () => {
+  const compile = prepareCurrentDesignCompile(readGeorgianDesignSnapshot())
+  const request = await compile.readNorthCollectorCase()
+  assert.ok('collector' in request)
+  const [reference, moved, reduced] = await Promise.all([
+    compile.northCollectorCase(request.collector),
+    compile.northCollectorCase({ ...request.collector, portAxisXYMm: [649.5, 10927] }),
+    compile.northCollectorCase({ ...request.collector, dragDemandFactor: 0.5 }),
+  ])
+  assert.ok(reference.status === 'computed-comparison' && moved.status === 'computed-comparison' && reduced.status === 'computed-comparison')
+  assert.equal(reference.stationCapacity.state, 'required-station-count-excluded')
+  assert.equal(reference.stationCapacity.requiredStationsPerGroup, 5)
+  assert.deepEqual(reference.stationCapacity.groups.map(group => group.profiles.map(profile => profile.maximumStations)),
+    [[4, 4], [7, 7], [5, 3], [7, 7]])
+  for (const group of reference.stationCapacity.groups) {
+    assert.ok(Math.abs(group.minimumStationPitchMm - 97.9825055) < 1e-7)
+    for (const profile of group.profiles) {
+      assert.equal(profile.maximumStations, profile.exampleStationCentresMm.length)
+      for (const [index, station] of profile.exampleStationCentresMm.entries()) {
+        assert.ok(profile.availableStationIntervalsMm.some(([low, high]) => station >= low && station <= high))
+        if (index) assert.ok(station - profile.exampleStationCentresMm[index - 1] >= group.minimumStationPitchMm - 1e-9)
+      }
+    }
+  }
+  assert.ok(moved.stationCapacity.groups.every(group => group.profiles[1].maximumStations >= 5))
+  assert.equal(moved.stationCapacity.state, 'required-shared-plane-gap-excluded')
+  assert.ok(Math.abs(moved.stationCapacity.sharedPlanes[0].gapUpperBoundAfterSettingMm + 16.6494467) < 1e-7)
+  assert.equal(moved.stationCapacity.sharedPlanes[0].requiredGapMm, 21)
+  assert.deepEqual(moved.cabinetStationCapacity, reference.cabinetStationCapacity)
+  const certificate = reference.cabinetStationCapacity
+  assert.equal(certificate.admitted, false)
+  assert.equal(certificate.state, 'excluded-throughout-territory')
+  assert.deepEqual(certificate.centreBoundsUVmm, [250, 317, 197.5, 787.5])
+  assert.equal(certificate.unresolvedWitnessBoxUVmm, null)
+  assert.equal(certificate.cellsChecked, 2 * Object.values(certificate.resolvedCells).reduce((sum, count) => sum + count, 0) - 1)
+  assert.equal(reduced.stationCapacity.state, 'placing-ranges-remain')
+  assert.equal(reduced.cabinetStationCapacity.state, 'unresolved-cell')
+  assert.ok(reduced.cabinetStationCapacity.unresolvedWitnessBoxUVmm)
+  assert.deepEqual(reference.comparison.gravity, reduced.comparison.gravity)
+})
+
 test('added wall and web mass replays over the real north heads in adverse gravity only', async () => {
   const compile = prepareCurrentDesignCompile(readGeorgianDesignSnapshot())
   const request = await compile.readNorthCollectorCase()

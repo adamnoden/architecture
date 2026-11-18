@@ -161,6 +161,43 @@ interface NativeResult {
   readonly schema: 'str-north-collector-native-result/1'
   readonly comparison: CollectorComparison
   readonly drawingSvg: string
+  readonly stationCapacity: {
+    readonly schema: 'str-north-collector-station-capacity/1'
+    readonly state: 'required-station-count-excluded' | 'required-shared-plane-gap-excluded' | 'placing-ranges-remain'
+    readonly requiredStationsPerGroup: number
+    readonly admitted: false
+    readonly groups: readonly {
+      readonly band: 'lower' | 'upper'
+      readonly leg: 'west' | 'north'
+      readonly stationAxis: 'U' | 'V'
+      readonly endCoverStationIntervalMm: Point
+      readonly minimumStationPitchMm: number
+      readonly profiles: readonly {
+        readonly portCoverMm: number
+        readonly openForbiddenStationIntervalMm: Point | null
+        readonly availableStationIntervalsMm: readonly Point[]
+        readonly maximumStations: number
+        readonly exampleStationCentresMm: readonly number[]
+      }[]
+    }[]
+    readonly sharedPlanes: readonly {
+      readonly band: 'lower' | 'upper'
+      readonly westFirstStationIntervalMm: Point
+      readonly northFirstStationIntervalMm: Point
+      readonly requiredGapMm: number
+      readonly gapUpperBoundAfterSettingMm: number
+    }[]
+  }
+  readonly cabinetStationCapacity: {
+    readonly schema: 'str-north-collector-cabinet-station-capacity/1'
+    readonly state: 'no-port-territory' | 'excluded-throughout-territory' | 'unresolved-cell'
+    readonly centreBoundsUVmm: readonly [number, number, number, number]
+    readonly cellsChecked: number
+    readonly resolvedCells: Readonly<Record<'required-station-count-excluded' | 'required-shared-plane-gap-excluded', number>>
+    readonly minimumSubdivisionSideMm: number
+    readonly unresolvedWitnessBoxUVmm: readonly [number, number, number, number] | null
+    readonly admitted: false
+  }
 }
 
 const bindingFor = (resolved: CurrentDesignResolution) =>
@@ -458,11 +495,13 @@ export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: 
     stdio: ['pipe', 'pipe', 'pipe'],
     input: JSON.stringify({ schema: 'str-north-collector-native-case/1', portAxisXYMm, dragDemandFactor, remoteMainBarShiftMm }),
   }))
-  const { comparison, drawingSvg } = native
+  const { comparison, drawingSvg, stationCapacity, cabinetStationCapacity } = native
   const isReference = dragDemandFactor === 1
     && remoteMainBarShiftMm === reference.groundSplice.remoteMainBarShiftMm
     && portAxisXYMm.every((coordinate, index) => coordinate === reference.retainedNWPort.referenceAxisXYmm[index])
   if (native.schema !== 'str-north-collector-native-result/1'
+      || stationCapacity.schema !== 'str-north-collector-station-capacity/1' || stationCapacity.admitted !== false
+      || cabinetStationCapacity.schema !== 'str-north-collector-cabinet-station-capacity/1' || cabinetStationCapacity.admitted !== false
       || comparison.lateralClosure.dragDemandFactor !== dragDemandFactor
       || comparison.groundSplice.remoteMainBarShiftMm !== remoteMainBarShiftMm
       || portAxisXYMm.some((coordinate, index) => coordinate !== comparison.retainedNWPort.axisXYmm[index])
@@ -493,6 +532,8 @@ export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: 
     method: { id, path: methodPath, blob: method.blob, receipt: { path: receiptPath, blob: receipt.blob }, inputs },
     comparison,
     grossRootWeb: grossRootWebDemands(comparison.groundSplice),
+    stationCapacity,
+    cabinetStationCapacity,
     drawingSvg,
     ...(yawProbe ? { yawProbe } : {}),
     ...(deadLoadReplay ? { deadLoadReplay } : {}),

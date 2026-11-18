@@ -1,7 +1,8 @@
 """Compare the north L collector against the live port and the full rear cabinet."""
 from hashlib import sha256
+from itertools import product
 from json import dumps, loads
-from math import ceil, cos, hypot, isfinite, pi, radians, sin, tan
+from math import ceil, cos, floor, hypot, isfinite, pi, radians, sin, sqrt, tan
 from pathlib import Path
 from sys import argv, stdin
 
@@ -30,6 +31,7 @@ PLACING = 21
 POOR_BOND_MPA = 2.1
 CONCRETE_BUDGET_KN_PER_M3 = 25
 ANGLE = radians(62)
+BOUND_ROUNDING_MM = 1e-8
 
 
 def minimum_gap(left, right, combined_radii):
@@ -551,13 +553,141 @@ def diagram(result):
             +'\n'.join(ink)+'</svg>\n')
 
 
+def capsule_slice_at_u(a, b, u, radius):
+    du, dv = b[0]-a[0], b[1]-a[1]
+    length = hypot(du, dv)
+    values = []
+    for x, y in (a, b):
+        if abs(u-x) <= radius:
+            half = sqrt(max(0, radius**2-(u-x)**2))
+            values.extend((y-half, y+half))
+    for sign in (-1, 1):
+        offset_u = sign*radius*dv/length
+        fraction = (u-a[0]-offset_u)/du
+        if 0 <= fraction <= 1:
+            values.append(a[1]+fraction*dv-sign*radius*du/length)
+    return (min(values), max(values)) if values else None
+
+
+def packing_witness(intervals, pitch):
+    selected = []
+    for low, high in intervals:
+        start = max(low, selected[-1]+pitch) if selected else low
+        if start <= high+BOUND_ROUNDING_MM:
+            selected.extend(start+i*pitch for i in range(1+floor((high-start+BOUND_ROUNDING_MM)/pitch)))
+    return selected
+
+
+def station_capacity(result, port=None, relaxed_port_clearance_mm=0):
+    drag = result['straightDrag']
+    required = len(drag['barCentresAtReceivingPlaneVMm'])
+    first_station = drag['barCentresAtReceivingPlaneVMm'][0]
+    port_u, port_v, port_diameter = result['retainedNWPort']['axisUVAndDiameterMm'] if port is None else port
+    heel, toe = result['geometry']['wallUAndLegVLimitsMm'][1]
+    bar_radius = BAR_DIAMETER/2
+
+    def group(path, band, swapped):
+        normal_index, station_index = (1, 0) if swapped else (0, 1)
+        a, b = [(p[normal_index], p[station_index]-first_station) for p in path]
+        du, dv = b[0]-a[0], b[1]-a[1]
+        normal_cosine = abs(du)/hypot(du, dv)
+        face_pad = COVER+FORM_SETTING+bar_radius*normal_cosine
+        low, high = heel+face_pad-min(a[1],b[1]), toe-face_pad-max(a[1],b[1])
+        pitch = (BAR_DIAMETER+FORM_SETTING+PLACING)/normal_cosine
+        normal, station = (port_v, port_u) if swapped else (port_u, port_v)
+        profiles = []
+        for port_cover in (0, COVER):
+            radius = port_diameter/2+bar_radius+FORM_SETTING+port_cover-relaxed_port_clearance_mm-BOUND_ROUNDING_MM
+            cut = capsule_slice_at_u(a, b, normal, radius) if radius > 0 else None
+            blocked = [station-cut[1], station-cut[0]] if cut else None
+            intervals = [] if low > high else [[low,high]]
+            if blocked and blocked[0] < blocked[1] and intervals:
+                intervals = [[low,min(high,blocked[0])], [max(low,blocked[1]),high]]
+                intervals = [[lo,hi] for lo,hi in intervals if lo <= hi]
+            selected = packing_witness(intervals, pitch)
+            profiles.append({'portCoverMm':port_cover, 'openForbiddenStationIntervalMm':blocked,
+                             'availableStationIntervalsMm':intervals, 'maximumStations':len(selected),
+                             'exampleStationCentresMm':selected})
+        return {'band':band,'leg':'north' if swapped else 'west','stationAxis':'U' if swapped else 'V',
+                'endCoverStationIntervalMm':[low,high],'minimumStationPitchMm':pitch,'profiles':profiles}
+
+    groups = [group(drag[band+'PathsLocalXYZMm'][required if swapped else 0], band, swapped)
+              for band in ('lower','upper') for swapped in (False,True)]
+    def first_station_interval(row):
+        covered = row['profiles'][-1]
+        if covered['maximumStations'] < required:
+            return None
+        mirrored = [[-hi,-lo] for lo,hi in reversed(covered['availableStationIntervalsMm'])]
+        latest = -packing_witness(mirrored, row['minimumStationPitchMm'])[required-1]
+        return [covered['exampleStationCentresMm'][0], latest]
+
+    shared_planes = []
+    for west, north in zip(groups[::2], groups[1::2]):
+        west_interval, north_interval = first_station_interval(west), first_station_interval(north)
+        if west_interval is None or north_interval is None:
+            continue
+        paths = drag[west['band']+'PathsLocalXYZMm']
+        def clear_gap(west_station, north_station):
+            west_path = [(u,v+west_station-first_station,z) for u,v,z in paths[0]]
+            north_path = [(u+north_station-first_station,v,z) for u,v,z in paths[required]]
+            return minimum_gap([west_path], [north_path], BAR_DIAMETER)
+
+        shared_planes.append({'band':west['band'], 'westFirstStationIntervalMm':west_interval,
+                              'northFirstStationIntervalMm':north_interval, 'requiredGapMm':PLACING,
+                              'gapUpperBoundAfterSettingMm':max(clear_gap(w,n) for w,n in product(west_interval,north_interval))})
+
+    if any(row['profiles'][-1]['maximumStations'] < required for row in groups):
+        state = 'required-station-count-excluded'
+    elif any(row['gapUpperBoundAfterSettingMm']+BOUND_ROUNDING_MM < PLACING for row in shared_planes):
+        state = 'required-shared-plane-gap-excluded'
+    else:
+        state = 'placing-ranges-remain'
+    return {'schema':'str-north-collector-station-capacity/1', 'requiredStationsPerGroup':required,
+            'state':state, 'groups':groups, 'sharedPlanes':shared_planes, 'admitted':False,
+            'scope':'Independent station packing and upper bounds for the first pair in each shared plane. The remaining pairs, other steel and force distribution can further limit placement.'}
+
+
+def cabinet_station_capacity(result):
+    bounds = result['rearCabinetPortTerritory']['centreBoundsUVmm']
+    centre_diameter = result['retainedNWPort']['axisUVAndDiameterMm'][2]
+    min_cell_mm = 1
+    cells = [bounds]
+    counts = {'required-station-count-excluded':0, 'required-shared-plane-gap-excluded':0}
+    unresolved = None
+    checked = 0
+    state = 'excluded-throughout-territory'
+    while cells:
+        u0,u1,v0,v1 = box = cells.pop()
+        width, depth = u1-u0, v1-v0
+        if width < 0 or depth < 0:
+            state = 'no-port-territory'
+            break
+        u,v = (u0+u1)/2, (v0+v1)/2
+        checked += 1
+        row = station_capacity(result, (u,v,centre_diameter), hypot(width,depth)/2)
+        if row['state'] in counts:
+            counts[row['state']] += 1
+        elif max(width,depth) <= min_cell_mm:
+            state, unresolved = 'unresolved-cell', box
+            break
+        elif width >= depth:
+            cells.extend(([u,u1,v0,v1], [u0,u,v0,v1]))
+        else:
+            cells.extend(([u0,u1,v,v1], [u0,u1,v0,v]))
+    return {'schema':'str-north-collector-cabinet-station-capacity/1',
+            'state':state, 'centreBoundsUVmm':bounds, 'cellsChecked':checked, 'resolvedCells':counts,
+            'minimumSubdivisionSideMm':min_cell_mm, 'unresolvedWitnessBoxUVmm':unresolved, 'admitted':False}
+
+
 def main(root, flags):
     source_bytes = [(root / file).read_bytes() for file in SOURCES]
     source_data = list(map(loads, source_bytes))
     source_hashes = {path:sha256(raw).hexdigest() for path, raw in zip(SOURCES, source_bytes)}
     if flags == ['--current-request']:
         result = compare_collector(source_data, source_hashes, loads(stdin.read()))
-        print(dumps({'schema':'str-north-collector-native-result/1', 'comparison':result, 'drawingSvg':diagram(result)}, allow_nan=False))
+        print(dumps({'schema':'str-north-collector-native-result/1', 'comparison':result, 'drawingSvg':diagram(result),
+                     'stationCapacity':station_capacity(result),
+                     'cabinetStationCapacity':cabinet_station_capacity(result)}, allow_nan=False))
         return
     if flags not in ([], ['--check']):
         raise ValueError('Choose --check or --current-request')

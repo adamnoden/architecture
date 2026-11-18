@@ -142,6 +142,43 @@ test('the full Study furniture sequence clears the fixed occupied bay and reject
     motion.candidate.deskParkXYXYMm, motion.candidate.chairParkXYXYMm), /source-bound bay receipt/)
 })
 
+test('the Study kit locates whole-face first rests and withholds unknown G1 crossing heights', async () => {
+  const { kit } = await current.studyRoomKit(initial)
+  const results = kit.floor.furnitureMotion?.firstRest
+  assert.ok(results)
+  assert.equal(results.physicalAcceptance, false)
+  assert.equal(results.partCount, 144)
+  assert.equal(results.witnessCount, 118)
+  assert.deepEqual(results.transferVertical, {
+    initialLiftMm: 38, travelTopMm: 38, travelUndersideMm: 18, firstRestBoardTopMm: 12, undersideReserveMm: 6,
+  })
+  assert.deepEqual(results.parts.map(part => part.partId), kit.floor.parts.map(part => part.id))
+  const rest = new Map(kit.floor.parts.map(part => [part.id, part]))
+  for (const result of results.parts) {
+    if (result.state !== 'direct-geometry-witness') continue
+    const { witness } = result
+    const [start, end] = witness.worker.points
+    assert.ok(witness.worker.minimumClearance >= 5 - 1e-8)
+    assert.ok(witness.reachMm <= 600 + 1e-8)
+    assert.ok(witness.shiftXYMm.every((shift, axis) => Math.abs(end[axis] - start[axis] - shift) < 1e-8))
+    const source = rest.get(result.partId)!
+    const receiving = rest.get(witness.restPartId)!
+    assert.notEqual(source.id, receiving.id)
+    for (const axis of [0, 1]) {
+      assert.ok(source.face[axis] + witness.shiftXYMm[axis] >= receiving.face[axis] - 1e-8)
+      assert.ok(source.face[axis + 2] + witness.shiftXYMm[axis] <= receiving.face[axis + 2] + 1e-8)
+    }
+  }
+  const at = (suffix: string) => results.parts.find(part => part.partId.endsWith(`/${suffix}`))
+  assert.equal(at('429.5/429.5')?.state, 'no-adjacent-whole-face-rest')
+  assert.equal(at('3800/500')?.state, 'worker-stance-or-reach-unsupported')
+  const g1 = at('2900/500')
+  assert.ok(g1?.state === 'panel-sweep-unsupported')
+  assert.deepEqual(g1.encounteredPlanProjectionIds, ['study-inlet-carrier', 'study-inlet-installed'])
+  assert.equal(results.g1Projection.installedCarrierMinimumZMm, null)
+  assert.deepEqual(results.g1Projection.releasedPackageZMm, [1933.58, 2282.08])
+})
+
 test('A 15 mm finish preserves the ground datum but the floating support allowance is still short', async () => {
   const [standard, oak, stone] = await Promise.all([
     current.studyRoomKit(initial),
@@ -162,6 +199,8 @@ test('A 15 mm finish preserves the ground datum but the floating support allowan
   assert.equal(oak.kit.floor.groundSupport.disposition, 'withheld')
   assert.equal(oak.kit.floor.handling.state, 'geometry-and-demand-screen')
   assert.equal(oak.kit.floor.handling.emitterEdgeRelease.pickupLiftMm, 33)
+  assert.equal(oak.kit.floor.furnitureMotion?.firstRest?.transferVertical.travelTopMm, 33)
+  assert.equal(stone.kit.floor.furnitureMotion?.firstRest?.transferVertical.undersideReserveMm, 6)
   assert.notEqual(oak.kit.caseDigest, standard.kit.caseDigest)
   await assert.rejects(current.studyRoomKit({ ...initial, finishDepthMm: 16 }), /INVALID_STUDY_ROOM_KIT_CASE/)
 })

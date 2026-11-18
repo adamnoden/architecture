@@ -207,11 +207,14 @@ export function runInletRemovalCase(resolved: CurrentDesignResolution, input: un
     sweptGap([exteriorRelease, wallPoint], obstacle, trial.drawMm, bareRadiusMm))
   const calculation = {
     drawMm: trial.drawMm,
+    wetBox: { sideLimitsXMm: sideLimitsX, frontYMm: frontY },
+    washerEnvelopeMm: box,
+    settingsMm: { fabrication: fabricationSettingMm, access: clearanceSettingMm },
     exteriorTipPastInsideFaceMm: round(exteriorRelease[1] + trial.drawMm - innerY),
     washerGapAfterSettingMm: round(combinedGap(box) - clearanceSettingMm),
     troughGapAfterSettingMm: round(combinedGap(lipBox) - fabricationSettingMm),
     sleeveRadialReserveAfterSettingMm: sleeveReserve(branch, trial.drawMm, reference.sleeve.cleanBoreMM / 2),
-    roofStrip: { xMm: [x - requiredHalfSlotMm, x + requiredHalfSlotMm], yMm: slot, zMm: cell.case.roofZ,
+    roofStrip: { xMm: [x - requiredHalfSlotMm, x + requiredHalfSlotMm] as const, yMm: slot, zMm: cell.case.roofZ,
       widthMm: 2 * requiredHalfSlotMm, lengthMm: round(slot[1] - slot[0]), splitCollarTravelMm: collarTravelMm },
     dryBreak: { xMm: x, yMm: startY, zMm: cut[2], fixedCompanionRetreatMm: null, guideAndFirstRestQualified: false },
   }

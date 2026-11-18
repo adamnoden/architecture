@@ -62,6 +62,10 @@ const trialModes: Readonly<Record<string, TrialMode>> = {
     schema: 'had-inlet-removal-request/1', key: 'removal', name: 'inlet removal',
     run: (compile, value) => compile.inletRemoval(value),
   },
+  '--inlet-cover': {
+    schema: 'had-inlet-cover-request/1', key: 'cover', name: 'inlet cover',
+    run: (compile, value) => compile.inletCover(value),
+  },
   '--occupied-condensate': {
     schema: 'had-condensate-request/1', key: 'condensate', name: 'occupied condensate',
     run: (compile, value) => compile.occupiedCondensate(value),
@@ -83,7 +87,7 @@ const modes = [
   '--bundle', '--study-assembly', '--study-linings', '--renewable-openings',
   '--read-roof-pitch', '--read-court-intake', '--read-inlet-route', '--read-east-ground-receiving',
   '--read-occupied-condensate', '--read-structural-case', '--read-structural-interfaces',
-  '--read-north-collector', '--read-rear-foul-vent', '--read-inlet-sill-insert', '--read-inlet-fault', '--read-inlet-removal', ...Object.keys(trialModes),
+  '--read-north-collector', '--read-rear-foul-vent', '--read-inlet-sill-insert', '--read-inlet-fault', '--read-inlet-removal', '--read-inlet-cover', ...Object.keys(trialModes),
 ]
 const mode = modes.includes(args[0]) ? args.shift() : undefined
 const [argument, ...extra] = args
@@ -121,6 +125,7 @@ try {
       else if (mode === '--read-inlet-sill-insert') process.stdout.write(JSON.stringify(await compile.readInletSillInsertCase(), null, 2) + '\n')
       else if (mode === '--read-inlet-fault') process.stdout.write(JSON.stringify(await compile.readInletFaultCase(), null, 2) + '\n')
       else if (mode === '--read-inlet-removal') process.stdout.write(JSON.stringify(await compile.readInletRemovalCases(), null, 2) + '\n')
+      else if (mode === '--read-inlet-cover') process.stdout.write(JSON.stringify(await compile.readInletCoverCases(), null, 2) + '\n')
       else if (mode === '--occupied-services') process.stdout.write((await compile.occupiedServices()).schedule)
       else if (mode === '--occupied-service-drawings') process.stdout.write(JSON.stringify(await compile.occupiedServiceDrawings()) + '\n')
       else if (mode === '--selected-water-event') process.stdout.write((await compile.selectedWaterEvent()).event)
