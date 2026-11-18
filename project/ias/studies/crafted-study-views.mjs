@@ -260,7 +260,8 @@ const floorKeys = `<svg xmlns="http://www.w3.org/2000/svg" width="297mm" height=
 
 const boardTrial = squareBoard.kit.floor.firstRestBoardTrial;
 if (boardTrial?.state !== 'placement-comparison-only') throw new Error('Study square-board comparison unavailable');
-const { placements: boardPlacements, ...boardLimits } = boardTrial;
+const { placements: boardPlacements, floorBandContainment, ...boardLimits } = boardTrial;
+const { placements: containedBoards, ...floorBandComparison } = floorBandContainment;
 
 const drawings = [
   ['crafted-study-comparison.svg', comparison],
@@ -278,6 +279,7 @@ const drawings = [
       request: squareBoard.kit.request,
       caseDigest: squareBoard.kit.caseDigest,
       ...boardLimits,
+      floorBandContainment: floorBandComparison,
       placementCount: boardPlacements.length,
       alternatePlacements: boardPlacements.filter(row => row.alternateWitness),
       extendedPlacements: boardPlacements.filter(row => row.extendedWitness),

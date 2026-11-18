@@ -686,6 +686,7 @@ def main(root, flags):
     if flags == ['--current-request']:
         result = compare_collector(source_data, source_hashes, loads(stdin.read()))
         print(dumps({'schema':'str-north-collector-native-result/1', 'comparison':result, 'drawingSvg':diagram(result),
+                     'placementReferences':{'relativeSettingMm':FORM_SETTING, 'concreteCoverMm':COVER},
                      'stationCapacity':station_capacity(result),
                      'cabinetStationCapacity':cabinet_station_capacity(result)}, allow_nan=False))
         return

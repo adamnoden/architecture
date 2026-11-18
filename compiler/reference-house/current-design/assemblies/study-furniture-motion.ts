@@ -71,6 +71,12 @@ interface FurnitureMotion {
     readonly partCount: number
     readonly witnessCount: number
     readonly extendedTransfer?: { readonly maximumTravelMm: number; readonly interveningPartCount: 1 }
+    readonly closedApproachCuts?: readonly {
+      readonly cutXMm: number
+      readonly roomYMm: Point
+      readonly settingEnvelopeRadiusMm: number
+      readonly blockingIntervals: readonly { readonly obstacleId: string; readonly excludedYMm: Point }[]
+    }[]
     readonly transferVertical: {
       readonly initialLiftMm: number; readonly travelTopMm: number
       readonly travelUndersideMm: number; readonly firstRestBoardTopMm: number; readonly undersideReserveMm: number

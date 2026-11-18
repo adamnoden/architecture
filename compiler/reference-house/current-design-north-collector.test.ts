@@ -332,6 +332,31 @@ test('the isolated key trial separates each signed pair’s take-up from elastic
   await assert.rejects(compile.northCollectorCase({ ...request.collector, keyContactTrial: { ...keyContactTrial, lower: {} } }), /all four retained key contacts/)
 })
 
+test('registered cage tolerance, retained steel and formwork have independent placement limits', async () => {
+  const compile = prepareCurrentDesignCompile(readGeorgianDesignSnapshot())
+  const request = await compile.readNorthCollectorCase()
+  assert.ok('collector' in request)
+  const placementToleranceMm = { withinDragCage: 5, toRetainedSteel: 5, toFormwork: 5 }
+  const [registered, overrun] = await Promise.all([
+    compile.northCollectorCase({ ...request.collector, remoteMainBarShiftMm: 0, placementToleranceMm }),
+    compile.northCollectorCase({ ...request.collector, remoteMainBarShiftMm: 20,
+      placementToleranceMm: { withinDragCage: 8, toRetainedSteel: 5, toFormwork: 6 } }),
+  ])
+  assert.ok(registered.status === 'computed-comparison' && registered.placementTolerance
+    && overrun.status === 'computed-comparison' && overrun.placementTolerance)
+  const result = registered.placementTolerance
+  assert.equal(result.admitted, false)
+  const parallel = result.rows.find(row => row.interfaceId === 'parallel-same-sign')!
+  assert.ok(Math.abs(parallel.maximumRelativeSettingMm - 6.886) < 0.001)
+  const toe = result.rows.find(row => row.interfaceId === 'concrete-toe')!
+  assert.ok(Math.abs(toe.maximumRelativeSettingMm - 5.651) < 0.001)
+  assert.deepEqual(result.exceededInterfaces, ['nw-formed-port-Z3260', 'nw-formed-port-Z3308'])
+  assert.deepEqual(overrun.placementTolerance.exceededInterfaces, ['parallel-same-sign', 'separate-drag-levels',
+    'wall-primary-h20', 'concrete-toe', 'nw-formed-port-Z3260', 'nw-formed-port-Z3308'])
+  await assert.rejects(compile.northCollectorCase({ ...request.collector,
+    placementToleranceMm: { ...placementToleranceMm, toFormwork: -1 } }), /nonnegative placement tolerances/)
+})
+
 test('the local H28 turn resolves finite drag crossings and port overlap from the saved north case', async () => {
   const compile = prepareCurrentDesignCompile(readGeorgianDesignSnapshot())
   const request = await compile.readNorthCollectorCase()

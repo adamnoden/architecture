@@ -247,3 +247,63 @@ test('the held-heel taper reports the simultaneous three-interface reserve inter
   await assert.rejects(compile.inletCover({ ...cover, closure: { ...closure,
     minimumTaperReservesMm: { filler: -1, baffle: 5, purge: 5 } } }), /separate finite non-negative/)
 })
+
+test('the bare rounded lid centroid screens against the actual first-rest support polygon', async () => {
+  const [{ cover }, { cover: plant }] = await compile.readInletCoverCases()
+  const closure = { profile: 'rounded-taper' as const, notchLapMm: 9, collarSealLandMm: 4,
+    collarOutsideDiameterMm: 92, wallReturnDepthMm: 10, fillerAndCollarClear: true, taperDetached: true,
+    taperToeReliefMm: 4 }
+  const baseline = await compile.inletCover({ ...cover, closure })
+  const gravity = baseline.roundedRelease?.gravity
+  assert.equal(gravity?.status, 'centre-inside-support')
+  assert.equal(gravity?.lidAreaMm2, 7371.1396)
+  assert.equal(gravity?.minimumSignedSupportEdgeMarginMm, 12.9871)
+  assert.deepEqual(gravity?.centreOfMassMm?.map(value => Number(value.toFixed(4))), [9984.5871, 746.7528])
+  assert.equal(gravity?.supportPolygonMm.length, 5)
+  assert.ok(baseline.drawing.primitives.some(item => item.id === 'first-rest-lid-centre-x'))
+  assert.equal(baseline.drawing.primitives.filter(item => item.id.startsWith('first-rest-support-polygon-')).length, 5)
+  assert.equal(baseline.roundedRelease?.captureQualified, false)
+
+  const widerRelief = await compile.inletCover({ ...cover, closure: { ...closure, taperToeReliefMm: 20 } })
+  assert.equal(widerRelief.roundedRelease?.gravity?.minimumSignedSupportEdgeMarginMm, 13.4035)
+  assert.equal(widerRelief.roundedRelease?.receiver?.contact[0].fullWidthContactMm, 46.4506)
+  const translated = await compile.inletCover({ ...cover, closure, sideTravelMm: cover.sideTravelMm - 10 })
+  assert.equal(translated.roundedRelease?.gravity?.minimumSignedSupportEdgeMarginMm, 12.9871)
+  assert.ok(gravity?.centreOfMassMm && translated.roundedRelease?.gravity?.centreOfMassMm)
+  assert.equal(gravity.centreOfMassMm[0] - translated.roundedRelease.gravity.centreOfMassMm[0], 10)
+
+  const lostWest = await compile.inletCover({ ...cover, closure, cheekMm: 100 })
+  assert.equal(lostWest.roundedRelease?.receiver?.contact[0].fullWidthContactMm, 0)
+  assert.equal(lostWest.roundedRelease?.gravity?.status, 'centre-outside-support')
+  assert.equal(lostWest.roundedRelease?.gravity?.minimumSignedSupportEdgeMarginMm, -24.2545)
+  assert.ok(lostWest.roundedRelease?.diagnostics.includes('ROUNDED_LID_LACKS_POSITIVE_GRAVITY_RESERVE'))
+  const lostBoth = await compile.inletCover({ ...cover, closure, receiverRailWidthMm: 12 })
+  assert.equal(lostBoth.roundedRelease?.gravity?.status, 'no-full-width-support')
+  assert.equal(lostBoth.roundedRelease?.gravity?.minimumSignedSupportEdgeMarginMm, null)
+  assert.equal((await compile.inletCover(plant)).roundedRelease, null)
+})
+
+test('a downward point load at the west front can govern despite positive bare-lid stability', async () => {
+  const [{ cover }] = await compile.readInletCoverCases()
+  const closure = { profile: 'rounded-taper' as const, notchLapMm: 9, collarSealLandMm: 4,
+    collarOutsideDiameterMm: 92, wallReturnDepthMm: 10, fillerAndCollarClear: true, taperDetached: true,
+    taperToeReliefMm: 4 }
+  const short = await compile.inletCover({ ...cover, closure })
+  const limit = short.roundedRelease?.gravity?.eccentricVerticalPointLoad
+  assert.equal(limit?.status, 'finite-support-edge-limit')
+  if (limit?.status !== 'finite-support-edge-limit') throw new Error('Expected a finite limit')
+  assert.equal(limit.pointLoadToBareLidWeightAtEdge, 0.2762)
+  assert.deepEqual(limit.governingVertexMm.map(value => Number(value.toFixed(4))), [9950.4089, 797])
+  assert.deepEqual(limit.governingSupportEdgeMm.map(point => point.map(value => Number(value.toFixed(4)))),
+    [[10019, 797], [9915, 699.0599]])
+  assert.equal(short.roundedRelease?.captureQualified, false)
+
+  const wider = await compile.inletCover({ ...cover, closure: { ...closure, taperToeReliefMm: 20 } })
+  const widerLimit = wider.roundedRelease?.gravity?.eccentricVerticalPointLoad
+  assert.equal(widerLimit?.status, 'finite-support-edge-limit')
+  if (widerLimit?.status !== 'finite-support-edge-limit') throw new Error('Expected a finite limit')
+  assert.equal(widerLimit.pointLoadToBareLidWeightAtEdge, 0.2582)
+  assert.equal(wider.roundedRelease?.gravity?.minimumSignedSupportEdgeMarginMm, 13.4035)
+  const unsupported = await compile.inletCover({ ...cover, closure, cheekMm: 100 })
+  assert.equal(unsupported.roundedRelease?.gravity?.eccentricVerticalPointLoad, null)
+})

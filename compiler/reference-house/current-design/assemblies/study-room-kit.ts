@@ -301,11 +301,28 @@ type BoardFitLimit = {
   }[]
 }
 
+function boardOriginsInsideBands(bands: readonly Box[], width: number, depth: number) {
+  const origins: Box[] = []
+  for (const [index, first] of bands.entries()) {
+    let west = first[0]
+    let east = first[2]
+    for (const [offset, band] of bands.slice(index).entries()) {
+      if (offset && bands[index + offset - 1][3] !== band[1]) break
+      west = Math.max(west, band[0])
+      east = Math.min(east, band[2])
+      if (east - west < width) break
+      if (band[3] - first[1] >= depth) origins.push([west, first[1], east - width, band[3] - depth])
+    }
+  }
+  return origins
+}
+
 function compareFirstRestBoard(
   parts: ReturnType<typeof partSetout>['parts'],
   handling: ReturnType<typeof handlingScreen>,
   firstRest: NonNullable<ReturnType<typeof compileStudyFurnitureMotion>['firstRest']> | null | undefined,
   trialSize: Pair | undefined,
+  floorBands: readonly Box[],
 ) {
   if (!firstRest || handling.state === 'withheld') return { retained: null, trial: null }
   const { firstRestBoard, padCentres, padWidthMm, worstRestPadN, restPadDemandMPa } = handling.emitterEdgeRelease
@@ -321,7 +338,7 @@ function compareFirstRestBoard(
   } as const
   const held = ['Board placement and clearance to occupant, adjacent finishes and fixed obstructions',
     'Stable board and panel under load, breakaway and grip exchange', 'Qualified deck, finish and bedding under local pad demand'] as const
-  const fit = (boardSizeMm: Pair, tryOtherReceivers = false) => {
+  const fit = (boardSizeMm: Pair, tryOtherReceivers = false, containInBands = false) => {
     const [width, depth] = boardSizeMm
     const offsets = centredPads.map(([x, y]) => [x + width / 2, y + depth / 2] as const)
     const orientations = [
@@ -331,6 +348,7 @@ function compareFirstRestBoard(
       ...orientation,
       minPad: boardAxes.map(axis => Math.min(...orientation.offsets.map(point => point[axis])) - padHalf),
       maxPad: boardAxes.map(axis => Math.max(...orientation.offsets.map(point => point[axis])) + padHalf),
+      bandOrigins: containInBands ? boardOriginsInsideBands(floorBands, orientation.dimensions[0], orientation.dimensions[1]) : null,
     }))
     const place = (partId: string, { restPartId, shiftXYMm }: FirstRestWitness) => {
       const moving = faceByPartId.get(partId)!
@@ -338,7 +356,7 @@ function compareFirstRestBoard(
       const movingFaceSizeMm = boxSize(moving)
       const receivingFaceSizeMm = boxSize(receiving)
       const orientationLimits = []
-      for (const { turnDeg, dimensions, offsets: rotatedOffsets, minPad, maxPad } of orientations) {
+      for (const { turnDeg, dimensions, offsets: rotatedOffsets, minPad, maxPad, bandOrigins } of orientations) {
         const lower = boardAxes.map(axis => Math.max(
           moving[axis + 2] + shiftXYMm[axis] - dimensions[axis], receiving[axis] - minPad[axis],
         ))
@@ -354,7 +372,14 @@ function compareFirstRestBoard(
           })
           continue
         }
-        const [x, y] = boardAxes.map(axis => (lower[axis] + upper[axis]) / 2)
+        const originRange = bandOrigins
+          ? bandOrigins.map(bounds => ({
+            lower: boardAxes.map(axis => Math.max(lower[axis], bounds[axis])),
+            upper: boardAxes.map(axis => Math.min(upper[axis], bounds[axis + 2])),
+          })).find(range => boardAxes.every(axis => range.lower[axis] <= range.upper[axis]))
+          : { lower, upper }
+        if (!originRange) continue
+        const [x, y] = boardAxes.map(axis => (originRange.lower[axis] + originRange.upper[axis]) / 2)
         return {
           placement: {
             partId, restPartId, turnDeg,
@@ -365,7 +390,11 @@ function compareFirstRestBoard(
       }
       return { limit: { partId, restPartId, movingFaceSizeMm, receivingFaceSizeMm, orientationLimits } }
     }
-    const outsideFit: (BoardFitLimit & { alternateLimits?: BoardFitLimit[]; extendedLimits?: BoardFitLimit[] })[] = []
+    const outsideFit: (BoardFitLimit & {
+      alternateLimits?: BoardFitLimit[]
+      extendedLimits?: BoardFitLimit[]
+      isolatingApproachCutXMm?: number[]
+    })[] = []
     type Placement = NonNullable<ReturnType<typeof place>['placement']> & {
       alternateWitness?: FirstRestWitness
       extendedWitness?: ExtendedFirstRestWitness
@@ -386,8 +415,13 @@ function compareFirstRestBoard(
         if (candidate.placement) return [{ ...candidate.placement, extendedWitness: extended }]
         extendedLimits.push(candidate.limit)
       }
+      const pickupWestMm = faceByPartId.get(result.partId)![0]
+      const isolatingApproachCutXMm = tryOtherReceivers
+        ? firstRest.closedApproachCuts?.filter(cut => cut.cutXMm < pickupWestMm).map(cut => cut.cutXMm)
+        : undefined
       outsideFit.push({
         ...preferred.limit,
+        ...(isolatingApproachCutXMm?.length ? { isolatingApproachCutXMm } : {}),
         ...(alternateLimits.length ? { alternateLimits } : {}),
         ...(extendedLimits.length ? { extendedLimits } : {}),
       })
@@ -405,8 +439,31 @@ function compareFirstRestBoard(
   if (boardAxes.some(axis => trialSize[axis] < padPatternSizeMm[axis])) {
     return { retained, trial: { ...trialGeometry, state: 'withheld', code: 'STUDY_BOARD_CANNOT_CONTAIN_PAD_PATTERN' } as const }
   }
+  const planar = fit(trialSize, true)
+  const contained = fit(trialSize, true, true)
+  const planarByPartId = new Map(planar.placements.map(row => [row.partId, row]))
+  const containedIds = new Set(contained.placements.map(row => row.partId))
+  const floorBandContainment = {
+    state: 'floor-band-comparison-only',
+    planarPlacementCount: planar.placements.length,
+    selectedBoxInsideCount: planar.placements.filter(({ boardXYXYMm: box }) =>
+      boardOriginsInsideBands(floorBands, ...boxSize(box)).some(origin =>
+        boardAxes.every(axis => origin[axis] <= box[axis] && box[axis] <= origin[axis + 2]),
+      )).length,
+    sameReceiverPossibleCount: contained.placements.filter(row => planarByPartId.get(row.partId)?.restPartId === row.restPartId).length,
+    containedPlacementCount: contained.placements.length,
+    outsidePartIds: planar.placements.filter(row => !containedIds.has(row.partId)).map(row => row.partId),
+    reassignedReceivers: contained.placements.flatMap(row => {
+      const planarReceiverId = planarByPartId.get(row.partId)?.restPartId
+      return planarReceiverId && planarReceiverId !== row.restPartId
+        ? [{ partId: row.partId, planarReceiverId, floorBandReceiverId: row.restPartId }]
+        : []
+    }),
+    placements: contained.placements,
+  } as const
   return { retained, trial: {
-    ...comparison, ...trialGeometry, extendedTransfer: firstRest.extendedTransfer, ...fit(trialSize, true), held,
+    ...comparison, ...trialGeometry, extendedTransfer: firstRest.extendedTransfer,
+    closedApproachCuts: firstRest.closedApproachCuts, ...planar, floorBandContainment, held,
   } }
 }
 
@@ -535,7 +592,7 @@ function deriveStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
   const furnitureMotion = handling.state === 'withheld' ? null : compileStudyFurnitureMotion(
     movement.receipt.sha256, movement.turnReceiptSha256, handling.parking.parkedDesk, handling.parking.parkedChair, firstRest,
   )
-  const board = compareFirstRestBoard(parts, handling, furnitureMotion?.firstRest, request.firstRestBoardSizeMm)
+  const board = compareFirstRestBoard(parts, handling, furnitureMotion?.firstRest, request.firstRestBoardSizeMm, assembly.grid.bands)
   const { house } = readBoundOccupiedServices(resolved)
   const [doorMin, doorMax] = house.model.studyDoorOperation.rough
   const [, doorAxis] = house.model.studyDoorOperation.hinge
