@@ -1,45 +1,42 @@
 {
   "schemaVersion": 1,
   "node": "IAS-CRAFT-ROOM-KIT",
-  "generation": 7,
-  "state": "released",
-  "leaseId": "618f0178-26ca-46ef-9213-52cb834867ea",
+  "generation": 8,
+  "state": "claimed",
+  "leaseId": "76e13051-1e0b-4b78-b4bd-760bff232354",
   "holder": {
     "kind": "codex",
     "label": "rush-study-board-20261118"
   },
-  "claimedAt": "2026-11-18T12:11:00.066Z",
-  "heartbeatAt": "2026-11-18T13:01:34.844Z",
-  "expiresAt": "2026-11-18T13:01:34.844Z",
-  "branch": "work/rush-contact-geometry-2026-11-18",
+  "claimedAt": "2026-11-18T13:02:29.999Z",
+  "heartbeatAt": "2026-11-18T13:02:29.999Z",
+  "expiresAt": "2026-11-18T13:47:29.999Z",
+  "checkpoint": {
+    "evidence": "Merged #1577 at 2ebdc701ae88ea818d64b22fc9497159e8afa979; 117/119 Study planar fits. New branch audits exact board floor-band containment and closed approach cut.",
+    "next": "Validate exact third-wave branch and hosted checks, then merge and release.",
+    "blocker": "Installed G1 module/support undersides, fixed trim and loaded deck and board remain to be verified."
+  },
+  "branch": "work/rush-installation-bounds-2026-11-18",
   "predecessor": {
-    "leaseId": "e392ca22-6026-4cc3-9630-5f4013ff26df",
-    "generation": 6,
-    "branch": "work/rush-fit-clearances-2026-11-18",
-    "pr": 1575,
+    "leaseId": "618f0178-26ca-46ef-9213-52cb834867ea",
+    "generation": 7,
+    "branch": "work/rush-contact-geometry-2026-11-18",
+    "pr": 1577,
     "checkpoint": {
-      "evidence": "Merged #1574 and #1575 through da46dc523eacc79765d5b72ec443e958e972981c. Exact Study source matches main. 119 of 144 geometric transfers. The retained emitter board fits 38 of those routes, 24 with a quarter-turn.",
-      "next": "Dimension the complete installed G1 carrier and trim underside and loaded worker envelope. Establish board placement, stiffness and pad bearing, loaded transfer, key engagement and a qualified continuous floor deck.",
-      "blocker": "No recorded installed G1 minimum height, qualified board/deck model or physical loaded handling evidence."
+      "evidence": "PR #1577 exact head 270a8597607125d2102aa82310348f40fb27724c. Study 117/119 face-and-pad fits including eight alternate adjacent and two bounded extended transfers; all 19 focused Study tests passed.",
+      "next": "Confirm repository-health CI and fresh canonical preflight on exact head, merge #1577, then verify source-bound floor-band and approach diagnostics separately.",
+      "blocker": "Hosted repository-health job pending. Board fixed obstruction, G1 underside and loaded board/deck acceptance remain outside the planar comparison."
     }
   },
   "recoverySource": {
-    "leaseId": "e392ca22-6026-4cc3-9630-5f4013ff26df",
-    "generation": 6,
-    "branch": "work/rush-fit-clearances-2026-11-18",
-    "pr": 1575,
+    "leaseId": "618f0178-26ca-46ef-9213-52cb834867ea",
+    "generation": 7,
+    "branch": "work/rush-contact-geometry-2026-11-18",
+    "pr": 1577,
     "checkpoint": {
-      "evidence": "Merged #1574 and #1575 through da46dc523eacc79765d5b72ec443e958e972981c. Exact Study source matches main. 119 of 144 geometric transfers. The retained emitter board fits 38 of those routes, 24 with a quarter-turn.",
-      "next": "Dimension the complete installed G1 carrier and trim underside and loaded worker envelope. Establish board placement, stiffness and pad bearing, loaded transfer, key engagement and a qualified continuous floor deck.",
-      "blocker": "No recorded installed G1 minimum height, qualified board/deck model or physical loaded handling evidence."
+      "evidence": "PR #1577 exact head 270a8597607125d2102aa82310348f40fb27724c. Study 117/119 face-and-pad fits including eight alternate adjacent and two bounded extended transfers; all 19 focused Study tests passed.",
+      "next": "Confirm repository-health CI and fresh canonical preflight on exact head, merge #1577, then verify source-bound floor-band and approach diagnostics separately.",
+      "blocker": "Hosted repository-health job pending. Board fixed obstruction, G1 underside and loaded board/deck acceptance remain outside the planar comparison."
     }
-  },
-  "checkpoint": {
-    "evidence": "PR #1577 exact head 270a8597607125d2102aa82310348f40fb27724c. Study 117/119 face-and-pad fits including eight alternate adjacent and two bounded extended transfers; all 19 focused Study tests passed.",
-    "next": "Confirm repository-health CI and fresh canonical preflight on exact head, merge #1577, then verify source-bound floor-band and approach diagnostics separately.",
-    "blocker": "Hosted repository-health job pending. Board fixed obstruction, G1 underside and loaded board/deck acceptance remain outside the planar comparison."
-  },
-  "pr": 1577,
-  "releasedAt": "2026-11-18T13:01:34.844Z",
-  "releaseReason": "handoff"
+  }
 }
