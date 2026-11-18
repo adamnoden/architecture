@@ -9,9 +9,9 @@
     "label": "rush-front-receiver"
   },
   "claimedAt": "2026-11-18T23:20:04.017Z",
-  "heartbeatAt": "2026-11-18T23:33:38.737Z",
-  "expiresAt": "2026-11-19T00:18:38.737Z",
-  "branch": "work/rush-night-integration-2026-11-18",
+  "heartbeatAt": "2026-11-18T23:53:46.346Z",
+  "expiresAt": "2026-11-19T00:38:46.346Z",
+  "branch": "work/rush-inlet-dependencies-2026-11-18",
   "predecessor": {
     "leaseId": "229ffcde-aa94-498e-af37-4679e76c38b3",
     "generation": 44,
@@ -33,8 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1579 exact head 9023fac17d50c04f29fbed061894e4a272535c9d. Transverse front receiver integrates with saved engineering document and actual contact hull; focused inlet/source tests and typecheck passed.",
-    "next": "Verify exact-head hosted checks and merge. Detail receiver section and anchored attachment, assembled lid mass and hand loads, guided transfer and positive capture; qualify rated collar and split filler seals with independent blocked-upper-mouth 90 L/min challenge.",
-    "blocker": "Geometric gravity and eccentric-load fit does not qualify anchors, retention, wet closure or loaded handover."
+    "evidence": "PR #1579 exact head 9023fac17d50c04f29fbed061894e4a272535c9d merged at 8ae3b30adfe95f95d84d96da7787b3b3e1d1aaf7 with hosted workflows and preflights passed. Second inlet dependency slice passed 495 Reference House tests and 11 new dependency/source checks locally.",
+    "next": "Verify second slice hosted checks and merge. Retain explicit selected insert/removal dependency provenance before receiver attachment and wet/capture proof.",
+    "blocker": "Physical receiver attachment, guided positive capture and joined wet seals remain unqualified."
   }
 }
