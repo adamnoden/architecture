@@ -9,8 +9,8 @@
     "label": "ovid-study-rush"
   },
   "claimedAt": "2026-11-18T07:48:24.146Z",
-  "heartbeatAt": "2026-11-18T08:24:15.300Z",
-  "expiresAt": "2026-11-18T09:54:15.300Z",
+  "heartbeatAt": "2026-11-18T08:52:26.594Z",
+  "expiresAt": "2026-11-18T09:37:26.594Z",
   "branch": "work/rush-fit-clearances-2026-11-18",
   "predecessor": {
     "leaseId": "1c4221de-640e-4c87-8b54-48e11d047837",
@@ -33,8 +33,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Merged #1574 at b4db7d7a and confirmed 119 Study first-rest geometry witnesses. Joint follow-on #1575 at 0d6018f65f25a9f1afa3814689c225e815be0e28 checks the retained first-rest board; 38 of 119 placements fit, 24 with a quarter-turn.",
-    "next": "Verify exact #1575 hosted proof, merge and release with fixed G1 support, loaded handling and deck evidence open."
+    "evidence": "Merged #1574 and #1575 through da46dc523eacc79765d5b72ec443e958e972981c. Exact Study source matches main. 119 of 144 geometric transfers. The retained emitter board fits 38 of those routes, 24 with a quarter-turn.",
+    "next": "Dimension the complete installed G1 carrier and trim underside and loaded worker envelope. Establish board placement, stiffness and pad bearing, loaded transfer, key engagement and a qualified continuous floor deck.",
+    "blocker": "No recorded installed G1 minimum height, qualified board/deck model or physical loaded handling evidence."
   },
   "pr": 1575
 }
