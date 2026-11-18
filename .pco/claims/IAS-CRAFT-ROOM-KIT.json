@@ -9,9 +9,9 @@
     "label": "rush-study-board-20261118"
   },
   "claimedAt": "2026-11-18T12:11:00.066Z",
-  "heartbeatAt": "2026-11-18T12:11:00.066Z",
-  "expiresAt": "2026-11-18T12:56:00.066Z",
-  "branch": "work/rush-study-board-2026-11-18",
+  "heartbeatAt": "2026-11-18T12:14:21.457Z",
+  "expiresAt": "2026-11-18T12:59:21.457Z",
+  "branch": "work/rush-dpc-splice-2026-11-18",
   "predecessor": {
     "leaseId": "e392ca22-6026-4cc3-9630-5f4013ff26df",
     "generation": 6,
@@ -33,5 +33,10 @@
       "next": "Dimension the complete installed G1 carrier and trim underside and loaded worker envelope. Establish board placement, stiffness and pad bearing, loaded transfer, key engagement and a qualified continuous floor deck.",
       "blocker": "No recorded installed G1 minimum height, qualified board/deck model or physical loaded handling evidence."
     }
+  },
+  "checkpoint": {
+    "evidence": "Study square-board trial compiles 107 of 119 recorded first-rest geometries; 12 fixed pad-footprint deficits measured. Tests and generator verification in progress.",
+    "next": "Integrate with the DPC branch after dedicated Study tests; verify exact-head CI and live ownership before merge.",
+    "blocker": "Loaded board/deck acceptance and unknown installed G1 underside remain outside this geometry comparison."
   }
 }
