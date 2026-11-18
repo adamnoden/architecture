@@ -9,9 +9,9 @@
     "label": "rush-utility-relief"
   },
   "claimedAt": "2026-11-18T12:10:38.327Z",
-  "heartbeatAt": "2026-11-18T12:14:26.960Z",
-  "expiresAt": "2026-11-18T12:59:26.960Z",
-  "branch": "work/rush-dpc-splice-2026-11-18",
+  "heartbeatAt": "2026-11-18T12:33:18.644Z",
+  "expiresAt": "2026-11-18T13:18:18.644Z",
+  "branch": "work/rush-contact-geometry-2026-11-18",
   "predecessor": {
     "leaseId": "d89fd90f-7e08-40a7-9bdf-189bf725ecca",
     "generation": 43,
