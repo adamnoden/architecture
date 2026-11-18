@@ -9,9 +9,9 @@
     "label": "ovid-study-rush"
   },
   "claimedAt": "2026-11-18T07:48:24.146Z",
-  "heartbeatAt": "2026-11-18T08:01:09.757Z",
-  "expiresAt": "2026-11-18T09:31:09.757Z",
-  "branch": "work/rush-west-foul-2026-11-18",
+  "heartbeatAt": "2026-11-18T08:24:15.300Z",
+  "expiresAt": "2026-11-18T09:54:15.300Z",
+  "branch": "work/rush-fit-clearances-2026-11-18",
   "predecessor": {
     "leaseId": "1c4221de-640e-4c87-8b54-48e11d047837",
     "generation": 5,
@@ -33,8 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Joint PR #1574 at 99c06a0d76ce8b5192889f00a1e8232fa008028c includes IAS effdcf16 and 119 of 144 Study first-rest witnesses. Strong exact joint predecessor Study receipt and 12 tests passed.",
-    "next": "Verify exact joint hosted proof, then merge and release IAS to the remaining G1 and installed support evidence."
+    "evidence": "Merged #1574 at b4db7d7a and confirmed 119 Study first-rest geometry witnesses. Joint follow-on #1575 at 0d6018f65f25a9f1afa3814689c225e815be0e28 checks the retained first-rest board; 38 of 119 placements fit, 24 with a quarter-turn.",
+    "next": "Verify exact #1575 hosted proof, merge and release with fixed G1 support, loaded handling and deck evidence open."
   },
-  "pr": 1574
+  "pr": 1575
 }
