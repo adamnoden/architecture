@@ -9,7 +9,13 @@
     "label": "ovid-current-gallery"
   },
   "claimedAt": "2026-11-18T00:34:52.439Z",
-  "heartbeatAt": "2026-11-18T00:34:52.439Z",
-  "expiresAt": "2026-11-18T01:19:52.439Z",
-  "branch": "work/current-gallery-compiler-2026-11-18"
+  "heartbeatAt": "2026-11-18T00:41:49.655Z",
+  "expiresAt": "2026-11-18T01:26:49.655Z",
+  "branch": "work/current-gallery-compiler-2026-11-18",
+  "pr": 1573,
+  "checkpoint": {
+    "evidence": "PR #1573 exact e8a4490861b1959d58932f7befc55adb24b57d29 includes the completed gallery cutover and its generated graph. Gallery 30 targeted tests plus typecheck, project-control validation, VitePress and five original asset URLs verified on local gallery commit 687e7273.",
+    "next": "Verify exact joint head CI and its lease preflight. Inspect the terminal node, projection and issue after root merges.",
+    "blocker": "Exact-head hosted validation is underway."
+  }
 }
