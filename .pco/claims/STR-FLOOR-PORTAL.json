@@ -9,9 +9,9 @@
     "label": "rush-dpc-splice"
   },
   "claimedAt": "2026-11-18T12:10:17.078Z",
-  "heartbeatAt": "2026-11-18T12:25:37.841Z",
-  "expiresAt": "2026-11-18T13:10:37.841Z",
-  "branch": "work/rush-dpc-splice-2026-11-18",
+  "heartbeatAt": "2026-11-18T12:32:54.035Z",
+  "expiresAt": "2026-11-18T13:17:54.035Z",
+  "branch": "work/rush-contact-geometry-2026-11-18",
   "predecessor": {
     "leaseId": "716fb931-d672-45ff-8c49-ea1a08bea348",
     "generation": 39,
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1576 exact head 9222cc6e; isolated toe transfer passed",
-    "next": "Observe hosted checks, then merge and compare isolated key movement",
-    "blocker": "Contact stiffness and coupled assembled actions require evidence"
+    "evidence": "Merged #1576 cbc001aa; key contact case and joint follow-on pass locally",
+    "next": "Verify exact headed follow-on CI and observe contact response",
+    "blocker": "Section detailing, coupled movement and assembled proof remain open"
   }
 }
