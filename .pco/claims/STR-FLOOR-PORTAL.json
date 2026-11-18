@@ -9,8 +9,8 @@
     "label": "rush-night-structure"
   },
   "claimedAt": "2026-11-18T23:19:20.165Z",
-  "heartbeatAt": "2026-11-18T23:19:20.165Z",
-  "expiresAt": "2026-11-19T00:04:20.165Z",
+  "heartbeatAt": "2026-11-18T23:33:36.416Z",
+  "expiresAt": "2026-11-19T00:18:36.416Z",
   "branch": "work/rush-night-integration-2026-11-18",
   "predecessor": {
     "leaseId": "63619a6c-6728-4b79-8459-af6bb401f51a",
@@ -33,5 +33,10 @@
       "next": "Merge upon verified hosted validation, then obtain installed DPC rotation and simultaneous load evidence at the resolved foul interface",
       "blocker": "Existing northwest port intersects cage even at zero setting; coupled joint stiffness and route survey remain unresolved"
     }
+  },
+  "checkpoint": {
+    "evidence": "PR #1579 head 9023fac17d50c04f29fbed061894e4a272535c9d; saved engineering-document CLI, source binding and selective propagation tests passed",
+    "next": "Observe exact submitted head repository and publication CI, then merge and reconcile source documents",
+    "blocker": "Conditional stage settings do not adopt physical geometry or resolve coupled DPC and foul-route interfaces"
   }
 }
