@@ -9,8 +9,8 @@
     "label": "rush-dpc-splice"
   },
   "claimedAt": "2026-11-18T12:10:17.078Z",
-  "heartbeatAt": "2026-11-18T12:32:54.035Z",
-  "expiresAt": "2026-11-18T13:17:54.035Z",
+  "heartbeatAt": "2026-11-18T12:57:08.414Z",
+  "expiresAt": "2026-11-18T13:42:08.414Z",
   "branch": "work/rush-contact-geometry-2026-11-18",
   "predecessor": {
     "leaseId": "716fb931-d672-45ff-8c49-ea1a08bea348",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Merged #1576 cbc001aa; key contact case and joint follow-on pass locally",
-    "next": "Verify exact headed follow-on CI and observe contact response",
-    "blocker": "Section detailing, coupled movement and assembled proof remain open"
+    "evidence": "PR #1577 exact 270a8597; 480 Reference House tests and hosted browser and drawing proofs passed",
+    "next": "Observe hosted repository health and publication checks before merge",
+    "blocker": "Repository validation still running; no reported failure"
   }
 }
