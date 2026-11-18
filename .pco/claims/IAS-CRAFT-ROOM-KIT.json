@@ -9,9 +9,9 @@
     "label": "ovid-study-rush"
   },
   "claimedAt": "2026-11-18T07:48:24.146Z",
-  "heartbeatAt": "2026-11-18T07:48:24.146Z",
-  "expiresAt": "2026-11-18T09:18:24.146Z",
-  "branch": "work/study-g1-first-rest-2026-11-18",
+  "heartbeatAt": "2026-11-18T07:55:12.644Z",
+  "expiresAt": "2026-11-18T09:25:12.644Z",
+  "branch": "work/rush-west-foul-2026-11-18",
   "predecessor": {
     "leaseId": "1c4221de-640e-4c87-8b54-48e11d047837",
     "generation": 5,
@@ -31,5 +31,9 @@
       "evidence": "Merged PR #1573 at 5bf81189 verifies 118 of 144 straight first rests and 6 mm underside reserve",
       "next": "Bind actual minimum Z of installed G1 receiver and carrier and the low worker envelope. Qualify continuous deck and loaded release. The thin stack has 64.7 mm versus the retained 65 mm comparator before level loss."
     }
+  },
+  "checkpoint": {
+    "evidence": "IAS effdcf1600d986441ce5e58bae7f630a424759d9 admits the Study offset first-rest transfer and reports 119 of 144 matching witnesses. Receipt replay, 12 focused tests and TypeScript passed.",
+    "next": "Publish the exact combined STR, HAD and IAS tree, verify CI and merge preflight, then reconcile remaining physical limits."
   }
 }
