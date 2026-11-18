@@ -9,8 +9,8 @@
     "label": "rush-front-receiver"
   },
   "claimedAt": "2026-11-18T23:20:04.017Z",
-  "heartbeatAt": "2026-11-18T23:20:04.017Z",
-  "expiresAt": "2026-11-19T00:05:04.017Z",
+  "heartbeatAt": "2026-11-18T23:33:38.737Z",
+  "expiresAt": "2026-11-19T00:18:38.737Z",
   "branch": "work/rush-night-integration-2026-11-18",
   "predecessor": {
     "leaseId": "229ffcde-aa94-498e-af37-4679e76c38b3",
@@ -31,5 +31,10 @@
       "evidence": "PR #1578 exact head 5aa3476b19324a2300d2bfb0b3df3e020b2762b9. Packet preflight, browser and drawing passed; repository health running. HAD geometry measures bare lid gravity and governing eccentric vertical load only.",
       "next": "Bind rated collar and removable filler with seal and vent details. Physically challenge each isolated closure at 90 L/min with its upper mouth blocked. Measure assembled lid mass and handling loads; detail and test anchored guides and positive capture through transfer and first rest."
     }
+  },
+  "checkpoint": {
+    "evidence": "PR #1579 exact head 9023fac17d50c04f29fbed061894e4a272535c9d. Transverse front receiver integrates with saved engineering document and actual contact hull; focused inlet/source tests and typecheck passed.",
+    "next": "Verify exact-head hosted checks and merge. Detail receiver section and anchored attachment, assembled lid mass and hand loads, guided transfer and positive capture; qualify rated collar and split filler seals with independent blocked-upper-mouth 90 L/min challenge.",
+    "blocker": "Geometric gravity and eccentric-load fit does not qualify anchors, retention, wet closure or loaded handover."
   }
 }
