@@ -9,9 +9,9 @@
     "label": "rush-utility-relief"
   },
   "claimedAt": "2026-11-18T12:10:38.327Z",
-  "heartbeatAt": "2026-11-18T12:57:39.031Z",
-  "expiresAt": "2026-11-18T13:42:39.031Z",
-  "branch": "work/rush-contact-geometry-2026-11-18",
+  "heartbeatAt": "2026-11-18T13:02:12.624Z",
+  "expiresAt": "2026-11-18T13:47:12.624Z",
+  "branch": "work/rush-installation-bounds-2026-11-18",
   "predecessor": {
     "leaseId": "d89fd90f-7e08-40a7-9bdf-189bf725ecca",
     "generation": 43,
@@ -33,7 +33,7 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1577 exact head 270a8597 carries shaped receiver contact and simultaneous taper reserve changes. Browser and drawing checks green; repository health running. Focused HAD tests and TypeScript passed.",
-    "next": "Verify exact head and all hosted checks, merge #1577, then rebind to the third integration branch for bare lid and eccentric vertical load geometry. Wet sealing, guides, anchorage and capture remain unqualified."
+    "evidence": "PR #1577 merged at 2ebdc701ae88ea818d64b22fc9497159e8afa979 after exact-head CI green. Merged HAD cover, regression and design note match PR head. Third-slice isolated head 61b82d47 passed all 481 Reference House tests.",
+    "next": "Verify and merge third-wave integration of gravity support polygon and governing eccentric downward point-load vertex and edge. Then release with wet sealing, actual assembly mass and guides, anchorage and capture still unqualified."
   }
 }
