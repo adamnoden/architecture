@@ -9,9 +9,9 @@
     "label": "ovid-structural-continuity"
   },
   "claimedAt": "2026-11-17T22:58:46.069Z",
-  "heartbeatAt": "2026-11-17T23:45:58.486Z",
-  "expiresAt": "2026-11-18T01:15:58.486Z",
-  "branch": "work/study-room-kit-integration-2026-11-17",
+  "heartbeatAt": "2026-11-18T00:41:46.354Z",
+  "expiresAt": "2026-11-18T02:11:46.354Z",
+  "branch": "work/current-gallery-compiler-2026-11-18",
   "predecessor": {
     "leaseId": "20c1309c-7ef1-40dd-8d07-97a790f27619",
     "generation": 37,
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1572 at ed7660897855c880ccc08c2bb467543037ba5df6; eighteen focused structural tests and typecheck passed; merged structural plan PR #1569",
-    "next": "Validate the joint STR, IAS and HAD integration head in PR #1568 and merge after exact lease verification"
+    "evidence": "PR #1573 e8a4490861b1959d58932f7befc55adb24b57d29; full-cabinet cage exclusion; 471 engineering tests; combined type, gallery and source checks",
+    "next": "Verify all exact-head workflows and all four publication preflights, then merge and reconcile"
   },
-  "pr": 1568
+  "pr": 1573
 }
