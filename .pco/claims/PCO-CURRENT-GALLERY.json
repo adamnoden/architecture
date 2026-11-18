@@ -9,14 +9,14 @@
     "label": "ovid-current-gallery-registration"
   },
   "claimedAt": "2026-11-17T23:25:57.027Z",
-  "heartbeatAt": "2026-11-17T23:50:47.601Z",
-  "expiresAt": "2026-11-18T00:35:47.601Z",
+  "heartbeatAt": "2026-11-18T00:13:14.202Z",
+  "expiresAt": "2026-11-18T00:58:14.202Z",
   "branch": "work/register-current-gallery-2026-11-17",
   "note": "Owner-directed registry-only bootstrap recorded in issue #1570. Unknown live registration ID temporarily pauses automatic dispatch until merged.",
   "pr": 1571,
   "checkpoint": {
-    "evidence": "Registration-only PR #1571 exact 5bc6d517dcf0894c1318ae76960fda526ac55beb; full hosted validation 44199709113 succeeded, 181 project-control tests and VitePress passed locally.",
-    "next": "After the joint engineering PR merges, reconcile latest main once, confirm the new exact-head CI and run canonical publication preflight.",
-    "blocker": "The successful original registration head precedes the current main engineering advance."
+    "evidence": "PR #1571 exact 582aeef60f2282336090bf6733c12eeffc29765c reconciles engineering main 3e8e6a8b8c4ca39383b14f45103dff25917c2ec8; local and remote merge tree 9335751b6872bb566422a880feed49efd15fc4f2 match. Prior registry suite was hosted green.",
+    "next": "Validate the refreshed head, run fresh canonical publication preflight and merge. Verify registry projection and then claim CCR-CURRENT-GALLERY normally.",
+    "blocker": "Hosted validation on the refreshed head is underway."
   }
 }
