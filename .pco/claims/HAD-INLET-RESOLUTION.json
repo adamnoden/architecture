@@ -9,9 +9,9 @@
     "label": "rush-inlet-seal"
   },
   "claimedAt": "2026-11-18T07:48:18.176Z",
-  "heartbeatAt": "2026-11-18T07:48:18.176Z",
-  "expiresAt": "2026-11-18T08:33:18.176Z",
-  "branch": "work/rush-inlet-seal-2026-11-18",
+  "heartbeatAt": "2026-11-18T07:59:10.325Z",
+  "expiresAt": "2026-11-18T08:44:10.325Z",
+  "branch": "work/rush-west-foul-2026-11-18",
   "predecessor": {
     "leaseId": "d86e1875-c445-4e78-a6a6-83b4ee5f9044",
     "generation": 42,
@@ -33,5 +33,9 @@
       "next": "Detail the independently retained filler and seals for the rear-open U-notch and preserve each vent/weather return. Dimension the rated Z900 disconnect and its pilot/tool retreat, anchor a dry guide and prove continuous positive support through an offset first-rest handover. Then dry-fit the actual assemblies and challenge wet/pressure closure with the sibling sealed.",
       "blocker": "The installed washer removes 7 mm Utility and 42 mm Plant from required cover axial travel. The restrained state admits geometric cover rest only; material seals, anchorage, supported motion, actual latches and product compatibility remain open."
     }
+  },
+  "checkpoint": {
+    "evidence": "Local bdc0965a12c5ad354d1a4b99867971c150542873, 12 tests and typecheck pass. Closure fit checks Utility taper and Plant vent/collar.",
+    "next": "Verify combined exact tree, publish joint PR, confirm CI and preflight before merge."
   }
 }
