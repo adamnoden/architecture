@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 42,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "d86e1875-c445-4e78-a6a6-83b4ee5f9044",
   "holder": {
     "kind": "codex",
     "label": "ovid-inlet-removal"
   },
   "claimedAt": "2026-11-17T22:59:48.025Z",
-  "heartbeatAt": "2026-11-18T01:07:50.506Z",
-  "expiresAt": "2026-11-18T01:52:50.506Z",
+  "heartbeatAt": "2026-11-18T01:08:26.546Z",
+  "expiresAt": "2026-11-18T01:08:26.546Z",
   "branch": "work/current-gallery-compiler-2026-11-18",
   "predecessor": {
     "leaseId": "0ddabf6c-f6bb-4124-8614-3bf3b1a6c543",
@@ -39,5 +39,7 @@
     "evidence": "PR #1573 merged at 5bf811890511d82481d8eb60048a84a18da427e5. The current compiler independently screens the U-notched cover, washer dependency and offset first rest for both inlet branches. Main 37694c24 retains the exact cover source and regression fixtures; all six main removal and cover tests passed.",
     "next": "Detail the independently retained filler and seals for the rear-open U-notch and preserve each vent/weather return. Dimension the rated Z900 disconnect and its pilot/tool retreat, anchor a dry guide and prove continuous positive support through an offset first-rest handover. Then dry-fit the actual assemblies and challenge wet/pressure closure with the sibling sealed.",
     "blocker": "The installed washer removes 7 mm Utility and 42 mm Plant from required cover axial travel. The restrained state admits geometric cover rest only; material seals, anchorage, supported motion, actual latches and product compatibility remain open."
-  }
+  },
+  "releasedAt": "2026-11-18T01:08:26.546Z",
+  "releaseReason": "handoff"
 }
