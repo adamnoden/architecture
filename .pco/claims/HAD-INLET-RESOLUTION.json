@@ -9,9 +9,9 @@
     "label": "rush-inlet-seal"
   },
   "claimedAt": "2026-11-18T07:48:18.176Z",
-  "heartbeatAt": "2026-11-18T08:01:36.420Z",
-  "expiresAt": "2026-11-18T08:46:36.420Z",
-  "branch": "work/rush-west-foul-2026-11-18",
+  "heartbeatAt": "2026-11-18T08:24:16.708Z",
+  "expiresAt": "2026-11-18T09:54:16.708Z",
+  "branch": "work/rush-fit-clearances-2026-11-18",
   "predecessor": {
     "leaseId": "d86e1875-c445-4e78-a6a6-83b4ee5f9044",
     "generation": 42,
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Joint PR #1574 exact head 99c06a0d76ce8b5192889f00a1e8232fa008028c. HAD closure case dimensions and adverse geometry independently verified.",
-    "next": "Check exact hosted CI and release after the verified joint merge."
+    "evidence": "Joint PR #1575 at exact head 0d6018f65f25a9f1afa3814689c225e815be0e28. Private source commit 2d1e95cd passed 17 focused tests and typecheck.",
+    "next": "Verify exact hosted CI and release after the verified joint merge."
   },
-  "pr": 1574
+  "pr": 1575
 }
