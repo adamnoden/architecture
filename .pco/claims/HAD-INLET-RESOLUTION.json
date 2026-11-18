@@ -9,8 +9,8 @@
     "label": "rush-inlet-seal"
   },
   "claimedAt": "2026-11-18T07:48:18.176Z",
-  "heartbeatAt": "2026-11-18T07:59:10.325Z",
-  "expiresAt": "2026-11-18T08:44:10.325Z",
+  "heartbeatAt": "2026-11-18T08:01:36.420Z",
+  "expiresAt": "2026-11-18T08:46:36.420Z",
   "branch": "work/rush-west-foul-2026-11-18",
   "predecessor": {
     "leaseId": "d86e1875-c445-4e78-a6a6-83b4ee5f9044",
@@ -35,7 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Local bdc0965a12c5ad354d1a4b99867971c150542873, 12 tests and typecheck pass. Closure fit checks Utility taper and Plant vent/collar.",
-    "next": "Verify combined exact tree, publish joint PR, confirm CI and preflight before merge."
-  }
+    "evidence": "Joint PR #1574 exact head 99c06a0d76ce8b5192889f00a1e8232fa008028c. HAD closure case dimensions and adverse geometry independently verified.",
+    "next": "Check exact hosted CI and release after the verified joint merge."
+  },
+  "pr": 1574
 }
