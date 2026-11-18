@@ -9,8 +9,8 @@
     "label": "rush-utility-relief"
   },
   "claimedAt": "2026-11-18T12:10:38.327Z",
-  "heartbeatAt": "2026-11-18T13:02:12.624Z",
-  "expiresAt": "2026-11-18T13:47:12.624Z",
+  "heartbeatAt": "2026-11-18T13:16:22.466Z",
+  "expiresAt": "2026-11-18T14:01:22.466Z",
   "branch": "work/rush-installation-bounds-2026-11-18",
   "predecessor": {
     "leaseId": "d89fd90f-7e08-40a7-9bdf-189bf725ecca",
@@ -33,7 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1577 merged at 2ebdc701ae88ea818d64b22fc9497159e8afa979 after exact-head CI green. Merged HAD cover, regression and design note match PR head. Third-slice isolated head 61b82d47 passed all 481 Reference House tests.",
-    "next": "Verify and merge third-wave integration of gravity support polygon and governing eccentric downward point-load vertex and edge. Then release with wet sealing, actual assembly mass and guides, anchorage and capture still unqualified."
-  }
+    "evidence": "PR #1578 exact head 5aa3476b19324a2300d2bfb0b3df3e020b2762b9. Packet preflight, browser and drawing passed; repository health running. HAD geometry measures bare lid gravity and governing eccentric vertical load only.",
+    "next": "Bind rated collar and removable filler with seal and vent details. Physically challenge each isolated closure at 90 L/min with its upper mouth blocked. Measure assembled lid mass and handling loads; detail and test anchored guides and positive capture through transfer and first rest."
+  },
+  "pr": 1578
 }
