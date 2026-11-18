@@ -30,6 +30,10 @@ type Case = {
   readonly opening?: OpeningCase
 }
 
+export function readStudyRoomKitReferenceCase(): Case {
+  return { schema: 'ias-study-room-kit-case/1', units: 'mm', pitchMm: 300, wearingFace: 'oak' }
+}
+
 const minimumBorderMm = 60
 const pickupBox: Box = [3800, 500, 4100, 800]
 const firstRestBox: Box = [4100, 500, 4400, 800]
@@ -338,7 +342,8 @@ function compareFirstRestBoard(
   } as const
   const held = ['Board placement and clearance to occupant, adjacent finishes and fixed obstructions',
     'Stable board and panel under load, breakaway and grip exchange', 'Qualified deck, finish and bedding under local pad demand'] as const
-  const fit = (boardSizeMm: Pair, tryOtherReceivers = false, containInBands = false) => {
+  const fit = (boardSizeMm: Pair, tryOtherReceivers = false, containInBands = false,
+    obstructionMode?: 'installed' | 'local-wall-trim-released') => {
     const [width, depth] = boardSizeMm
     const offsets = centredPads.map(([x, y]) => [x + width / 2, y + depth / 2] as const)
     const orientations = [
@@ -350,7 +355,7 @@ function compareFirstRestBoard(
       maxPad: boardAxes.map(axis => Math.max(...orientation.offsets.map(point => point[axis])) + padHalf),
       bandOrigins: containInBands ? boardOriginsInsideBands(floorBands, orientation.dimensions[0], orientation.dimensions[1]) : null,
     }))
-    const place = (partId: string, { restPartId, shiftXYMm }: FirstRestWitness) => {
+    const place = (partId: string, { restPartId, shiftXYMm, stage }: FirstRestWitness) => {
       const moving = faceByPartId.get(partId)!
       const receiving = faceByPartId.get(restPartId)!
       const movingFaceSizeMm = boxSize(moving)
@@ -372,14 +377,28 @@ function compareFirstRestBoard(
           })
           continue
         }
-        const originRange = bandOrigins
+        const originRanges = bandOrigins
           ? bandOrigins.map(bounds => ({
             lower: boardAxes.map(axis => Math.max(lower[axis], bounds[axis])),
             upper: boardAxes.map(axis => Math.min(upper[axis], bounds[axis + 2])),
-          })).find(range => boardAxes.every(axis => range.lower[axis] <= range.upper[axis]))
-          : { lower, upper }
-        if (!originRange) continue
-        const [x, y] = boardAxes.map(axis => (originRange.lower[axis] + originRange.upper[axis]) / 2)
+          })).filter(range => boardAxes.every(axis => range.lower[axis] <= range.upper[axis]))
+          : [{ lower, upper }]
+        const stageObstructions = firstRest.boardPlanObstructions?.find(item => item.stage === stage)?.obstacles
+        if (obstructionMode && !stageObstructions) continue
+        const obstacles = obstructionMode ? Object.values(stageObstructions!).map(item =>
+          obstructionMode === 'local-wall-trim-released' ? item.withoutWallTrimXYXYMm ?? item.boxXYXYMm : item.boxXYXYMm,
+        ) : []
+        const origins = originRanges.flatMap(range => {
+          const coordinates = boardAxes.map(axis => [...new Set([
+            (range.lower[axis] + range.upper[axis]) / 2, range.lower[axis], range.upper[axis],
+            ...obstacles.flatMap(box => [box[axis] - dimensions[axis], box[axis + 2]])
+              .filter(value => range.lower[axis] <= value && value <= range.upper[axis]),
+          ])])
+          return coordinates[0].flatMap(x => coordinates[1].map(y => [x, y] as const))
+        })
+        const origin = origins.find(([x, y]) => !obstacles.some(box => intersects([x, y, x + dimensions[0], y + dimensions[1]], box)))
+        if (!origin) continue
+        const [x, y] = origin
         return {
           placement: {
             partId, restPartId, turnDeg,
@@ -461,9 +480,52 @@ function compareFirstRestBoard(
     }),
     placements: contained.placements,
   } as const
+  const catalogueBoards = [
+    { id: 'retained-narrow', sizeMm: retainedSize },
+    { id: 'trial', sizeMm: trialSize },
+  ] as const
+  const catalogueFit = (mode?: 'installed' | 'local-wall-trim-released') => {
+    const selected = new Set<string>()
+    const placements = catalogueBoards.flatMap(board => fit(board.sizeMm, true, true, mode).placements.flatMap(row => {
+      if (selected.has(row.partId)) return []
+      selected.add(row.partId)
+      const preferred = firstRest.parts.find(item => item.partId === row.partId)
+      if (preferred?.state !== 'direct-geometry-witness') throw new Error('Missing native Study board witness')
+      const witness = row.extendedWitness ?? row.alternateWitness ?? preferred.witness
+      const obstacles = firstRest.boardPlanObstructions?.find(item => item.stage === witness.stage)?.obstacles
+      const trimReleases = Object.entries(obstacles ?? {}).flatMap(([id, item]) =>
+        item.withoutWallTrimXYXYMm && intersects(row.boardXYXYMm, item.boxXYXYMm)
+          && !intersects(row.boardXYXYMm, item.withoutWallTrimXYXYMm) ? [id] : [],
+      )
+      return [{ ...row, boardId: board.id, stage: witness.stage, shiftXYMm: witness.shiftXYMm, trimReleases }]
+    }))
+    return {
+      placementCount: placements.length,
+      boardUseCounts: catalogueBoards.map(board => ({ boardId: board.id, count: placements.filter(row => row.boardId === board.id).length })),
+      outsidePartIds: firstRest.parts.filter(row => row.state === 'direct-geometry-witness' && !selected.has(row.partId)).map(row => row.partId),
+      placements,
+    }
+  }
+  const installedPlanObstructions = catalogueFit('installed')
+  const trimReleased = catalogueFit('local-wall-trim-released')
+  const keptByPartId = new Map(installedPlanObstructions.placements.map(row => [row.partId, row]))
+  const preferredPlacements = trimReleased.placements.map(row => keptByPartId.get(row.partId) ?? row)
+  const boardCatalogue = {
+    state: 'geometric-handling-kit-comparison-only', physicalAcceptance: false, boards: catalogueBoards,
+    padWidthMm, padPatternSizeMm,
+    floorBands: catalogueFit(),
+    installedPlanObstructions,
+    localWallTrimReleased: {
+      ...trimReleased, placements: preferredPlacements,
+      boardUseCounts: catalogueBoards.map(board => ({ boardId: board.id,
+        count: preferredPlacements.filter(row => row.boardId === board.id).length })),
+    },
+    held: ['Independent removal of named local trim', 'Board insertion and grip exchange',
+      'Complete installed service heights and worker approach', 'Board strength, loaded stability and seating'],
+  } as const
   return { retained, trial: {
     ...comparison, ...trialGeometry, extendedTransfer: firstRest.extendedTransfer,
-    closedApproachCuts: firstRest.closedApproachCuts, ...planar, floorBandContainment, held,
+    closedApproachCuts: firstRest.closedApproachCuts, ...planar, floorBandContainment, boardCatalogue, held,
   } }
 }
 

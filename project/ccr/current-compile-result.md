@@ -74,3 +74,17 @@ node --import tsx scripts/compile-current-design.ts --read-georgian-source |
 ```
 
 The route emits the native `selected-water-event.json` ledger byte for byte. It verifies both the actual composed HAD and authored RWT receiving bindings before calling the owner’s calculation. An absent or stale design, missing authority, or a candidate yields no event. The ledger retains its adverse scenarios and conditional claim limits. The native drawing, other hydraulic consumers and final network remain separately scoped.
+
+## Save and compile the coordinated engineering cases
+
+The `current-engineering-document/1` document stores the admitted design, source and method bindings, and the explicit parameters for the north collector, rear foul route, inlet covers and Study room kit. The current compiler derives each request from that document and runs the existing specialist methods. The resulting bundle includes the nominal plans, occupied-service schedule, water event, engineering results and a deterministic manifest of their identities.
+
+```sh
+node --import tsx scripts/compile-current-design.ts --read-georgian-source |
+  node --import tsx scripts/compile-current-design.ts --read-engineering - > engineering.json
+node --import tsx scripts/compile-current-design.ts --bundle engineering.json > engineering-results.json
+```
+
+Save parameter changes in the document’s named stages and compile that exact file again. Reopening it after its pinned source or method changes rejects the stale document. Generate a new bound document explicitly when reviewing a changed source. The constituent case readers and independent commands remain available through the same compiler.
+
+The stage parameters describe conditional comparisons. Their drawings and calculations retain the adoption, physical evidence and supported-domain limits of each method. Changing a trial port, taper or room-kit parameter recalculates its engineering stage. Selection of those alternatives into the nominal house and compatibility with every other stage still require their owning architectural decisions.

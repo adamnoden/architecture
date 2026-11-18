@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync } from 'node:fs';
-import { drawStudyRoomKitPlan } from '../../../compiler/reference-house/current-design/assemblies/study-room-kit.js';
+import { drawStudyRoomKitPlan, readStudyRoomKitReferenceCase } from '../../../compiler/reference-house/current-design/assemblies/study-room-kit.js';
 import { prepareCurrentDesignCompile } from '../../../compiler/reference-house/current-design/compile.js';
 import { readGeorgianDesignSnapshot } from '../../../compiler/reference-house/current-design/georgian-source.js';
 import { renderDrawingSceneV2Svg } from '../../../compiler/publication-drawing-v2/svg.js';
@@ -8,7 +8,7 @@ const check = process.argv.includes('--check');
 const location = file => new URL(file, import.meta.url);
 const { study } = JSON.parse(readFileSync(location('workable-study-floor.json')));
 const compiler = prepareCurrentDesignCompile(readGeorgianDesignSnapshot());
-const common = { schema: 'ias-study-room-kit-case/1', units: 'mm', pitchMm: 300 };
+const common = readStudyRoomKitReferenceCase();
 const [oak, stone, thinOak, thinStone, squareBoard] = await Promise.all([
   compiler.studyRoomKit({ ...common, wearingFace: 'oak' }),
   compiler.studyRoomKit({ ...common, wearingFace: 'stone-steel' }),
@@ -260,8 +260,15 @@ const floorKeys = `<svg xmlns="http://www.w3.org/2000/svg" width="297mm" height=
 
 const boardTrial = squareBoard.kit.floor.firstRestBoardTrial;
 if (boardTrial?.state !== 'placement-comparison-only') throw new Error('Study square-board comparison unavailable');
-const { placements: boardPlacements, floorBandContainment, ...boardLimits } = boardTrial;
+const { placements: boardPlacements, floorBandContainment, boardCatalogue, ...boardLimits } = boardTrial;
 const { placements: containedBoards, ...floorBandComparison } = floorBandContainment;
+const catalogueSummary = Object.fromEntries(['floorBands', 'installedPlanObstructions', 'localWallTrimReleased'].map(key => {
+  const { placements, ...counts } = boardCatalogue[key];
+  return [key, counts];
+}));
+const boardSelections = boardCatalogue.localWallTrimReleased.placements.map(({ partId, restPartId, boardId,
+  stage, shiftXYMm, turnDeg, boardXYXYMm, trimReleases }) => ({ partId, restPartId, boardId,
+  stage, shiftXYMm, turnDeg, boardXYXYMm, trimReleases }));
 
 const drawings = [
   ['crafted-study-comparison.svg', comparison],
@@ -280,6 +287,11 @@ const drawings = [
       caseDigest: squareBoard.kit.caseDigest,
       ...boardLimits,
       floorBandContainment: floorBandComparison,
+      boardCatalogue: {
+        state: boardCatalogue.state, physicalAcceptance: false, boards: boardCatalogue.boards,
+        padWidthMm: boardCatalogue.padWidthMm, padPatternSizeMm: boardCatalogue.padPatternSizeMm,
+        ...catalogueSummary, localTrimReleasedSelections: boardSelections, held: boardCatalogue.held,
+      },
       placementCount: boardPlacements.length,
       alternatePlacements: boardPlacements.filter(row => row.alternateWitness),
       extendedPlacements: boardPlacements.filter(row => row.extendedWitness),

@@ -307,3 +307,55 @@ test('a downward point load at the west front can govern despite positive bare-l
   const unsupported = await compile.inletCover({ ...cover, closure, cheekMm: 100 })
   assert.equal(unsupported.roundedRelease?.gravity?.eccentricVerticalPointLoad, null)
 })
+
+test('an independent transverse front receiver supports the shaped solid bridge and enlarges the real bearing hull', async () => {
+  const [{ cover }, { cover: plant }] = await compile.readInletCoverCases()
+  const closure = { profile: 'rounded-taper' as const, notchLapMm: 9, collarSealLandMm: 4,
+    collarOutsideDiameterMm: 92, wallReturnDepthMm: 10, fillerAndCollarClear: true, taperDetached: true,
+    taperToeReliefMm: 20 }
+  const baseline = await compile.inletCover({ ...cover, closure })
+  const trial = { ...cover, closure: { ...closure, frontReceiver: { widthMm: 8, edgeInsetMm: 5 } } }
+  const supported = await compile.inletCover(trial)
+  const receiver = supported.roundedRelease?.frontReceiver
+  assert.equal(receiver?.status, 'within-plan-contact-screen')
+  assert.ok(receiver?.contact)
+  assert.deepEqual(receiver.contact.y, [784, 792])
+  assert.ok(Math.abs(receiver.contact.x[0] - 9937.717662537945) < 1e-8)
+  assert.equal(receiver.contact.x[1], 10028)
+  assert.equal(receiver.clearance.notchAfterSettingMm, 25)
+  assert.equal(receiver.clearance.carrierAfterSettingMm, 5)
+  assert.equal(receiver.anchoredSupportAndCaptureQualified, false)
+  assert.deepEqual(supported.roundedRelease?.receiver, baseline.roundedRelease?.receiver)
+  assert.deepEqual(supported.roundedRelease?.gravity?.centreOfMassMm, baseline.roundedRelease?.gravity?.centreOfMassMm)
+  assert.equal(supported.roundedRelease?.gravity?.minimumSignedSupportEdgeMarginMm, 46.2737)
+  const limit = supported.roundedRelease?.gravity?.eccentricVerticalPointLoad
+  assert.equal(limit?.status, 'finite-support-edge-limit')
+  if (limit?.status !== 'finite-support-edge-limit') throw new Error('Expected a bounded eccentric load')
+  assert.equal(limit.pointLoadToBareLidWeightAtEdge, 8.3216)
+  assert.ok(supported.drawing.primitives.some(item => item.id === 'front-receiver-0'))
+  assert.equal(supported.roundedRelease?.captureQualified, false)
+  const exported = cli('--inlet-cover', { schema: 'had-inlet-cover-request/1', design, cover: trial })
+  assert.equal(exported.status, 0, exported.stderr)
+  assert.deepEqual(JSON.parse(exported.stdout), JSON.parse(JSON.stringify(supported)))
+
+  const inset = await compile.inletCover({ ...trial, closure: { ...trial.closure, frontReceiver: { widthMm: 8, edgeInsetMm: 15 } } })
+  const insetLimit = inset.roundedRelease?.gravity?.eccentricVerticalPointLoad
+  assert.ok(insetLimit?.status === 'finite-support-edge-limit')
+  assert.equal(insetLimit.pointLoadToBareLidWeightAtEdge, 2.7546)
+  const translated = await compile.inletCover({ ...trial, sideTravelMm: cover.sideTravelMm - 10 })
+  assert.equal(translated.roundedRelease?.gravity?.minimumSignedSupportEdgeMarginMm, 46.2737)
+  const notch = await compile.inletCover({ ...trial, closure: { ...trial.closure, frontReceiver: { widthMm: 40, edgeInsetMm: 5 } } })
+  assert.ok(notch.roundedRelease?.diagnostics.includes('FRONT_RECEIVER_ENTERS_NOTCH'))
+  assert.equal(notch.roundedRelease?.frontReceiver?.contact, null)
+  assert.deepEqual(notch.roundedRelease?.gravity, baseline.roundedRelease?.gravity)
+  const tooClose = await compile.inletCover({ ...trial, closure: { ...trial.closure, frontReceiver: { widthMm: 8, edgeInsetMm: 3 } } })
+  assert.ok(tooClose.roundedRelease?.diagnostics.includes('FRONT_RECEIVER_EDGE_RESERVE_SHORT'))
+  const carrier = await compile.inletCover({ ...trial, sideTravelMm: -100 })
+  assert.ok(carrier.roundedRelease?.diagnostics.includes('FRONT_RECEIVER_ENTERS_CARRIER_CORRIDOR'))
+  assert.equal(carrier.roundedRelease?.frontReceiver?.contact, null)
+  const outside = await compile.inletCover({ ...trial, sideTravelMm: -600 })
+  assert.ok(outside.roundedRelease?.diagnostics.includes('FRONT_RECEIVER_EXCEEDS_ROOM'))
+  await assert.rejects(compile.inletCover({ ...trial, closure: { ...trial.closure,
+    frontReceiver: { widthMm: 0, edgeInsetMm: 5 } } }), /front receiver width and edge inset/)
+  await assert.rejects(compile.inletCover({ ...plant, closure: trial.closure }), /rounded Utility taper/)
+})

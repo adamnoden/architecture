@@ -11153,7 +11153,7 @@
           "Maintained door operation and handling of floor parts from a supported deck"
         ],
         "source": {
-          "project/ias/studies/study-furniture-motion.py": "7364fec29c77930608c58b7497c851b5f15d1d3833dc6d6e4e0496196ff78a62",
+          "project/ias/studies/study-furniture-motion.py": "e4d5c5b78d3b17a4b8bd43d7942de7e9e9ab713490932626b8a7aafe8235de71",
           "project/bcr/studies/bay-interface-study.py": "7fea8b8b1b8e66a6f52ae8a6124eda84f8759a9c42c3ae31644296679f4e3e7c"
         }
       },
@@ -13307,6 +13307,2214 @@
           "planarReceiverId": "GROUND/G-STUDY/room-kit/floor/4551.5/500",
           "floorBandReceiverId": "GROUND/G-STUDY/room-kit/floor/4100/500"
         }
+      ]
+    },
+    "boardCatalogue": {
+      "state": "geometric-handling-kit-comparison-only",
+      "physicalAcceptance": false,
+      "boards": [
+        {
+          "id": "retained-narrow",
+          "sizeMm": [
+            165,
+            330
+          ]
+        },
+        {
+          "id": "trial",
+          "sizeMm": [
+            300,
+            300
+          ]
+        }
+      ],
+      "padWidthMm": 25,
+      "padPatternSizeMm": [
+        120,
+        175
+      ],
+      "floorBands": {
+        "placementCount": 117,
+        "boardUseCounts": [
+          {
+            "boardId": "retained-narrow",
+            "count": 46
+          },
+          {
+            "boardId": "trial",
+            "count": 71
+          }
+        ],
+        "outsidePartIds": [
+          "GROUND/G-STUDY/room-kit/floor/4400/429.5",
+          "GROUND/G-STUDY/room-kit/floor/4551.5/429.5"
+        ]
+      },
+      "installedPlanObstructions": {
+        "placementCount": 111,
+        "boardUseCounts": [
+          {
+            "boardId": "retained-narrow",
+            "count": 44
+          },
+          {
+            "boardId": "trial",
+            "count": 67
+          }
+        ],
+        "outsidePartIds": [
+          "GROUND/G-STUDY/room-kit/floor/4400/429.5",
+          "GROUND/G-STUDY/room-kit/floor/4400/951.5",
+          "GROUND/G-STUDY/room-kit/floor/4551.5/429.5",
+          "GROUND/G-STUDY/room-kit/floor/4551.5/951.5",
+          "GROUND/G-STUDY/room-kit/floor/429.5/2900",
+          "GROUND/G-STUDY/room-kit/floor/500/2900",
+          "GROUND/G-STUDY/room-kit/floor/800/2900",
+          "GROUND/G-STUDY/room-kit/floor/2600/2900"
+        ]
+      },
+      "localWallTrimReleased": {
+        "placementCount": 117,
+        "boardUseCounts": [
+          {
+            "boardId": "retained-narrow",
+            "count": 46
+          },
+          {
+            "boardId": "trial",
+            "count": 71
+          }
+        ],
+        "outsidePartIds": [
+          "GROUND/G-STUDY/room-kit/floor/4400/429.5",
+          "GROUND/G-STUDY/room-kit/floor/4551.5/429.5"
+        ]
+      },
+      "localTrimReleasedSelections": [
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/429.5/500",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/500/500",
+          "boardId": "retained-narrow",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            185.25,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            567.5,
+            485,
+            732.5,
+            815
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/429.5/800",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/500/800",
+          "boardId": "retained-narrow",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            185.25,
+            0
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            487.75,
+            793.25,
+            817.75,
+            958.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/429.5/951.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/500/951.5",
+          "boardId": "retained-narrow",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            185.25,
+            0
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            487.75,
+            937.25,
+            817.75,
+            1102.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/500/800",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/500/951.5",
+          "boardId": "retained-narrow",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            0,
+            151.5
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            485,
+            937.25,
+            815,
+            1102.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/500/951.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/500/800",
+          "boardId": "retained-narrow",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            0,
+            -151.5
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            485,
+            793.25,
+            815,
+            958.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/800/429.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/800/500",
+          "boardId": "retained-narrow",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            0,
+            185.25
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            785,
+            567.5,
+            1115,
+            732.5
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/800/800",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/800/951.5",
+          "boardId": "retained-narrow",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            0,
+            151.5
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            785,
+            937.25,
+            1115,
+            1102.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/800/951.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/800/800",
+          "boardId": "retained-narrow",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            0,
+            -151.5
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            785,
+            793.25,
+            1115,
+            958.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1100/429.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1100/500",
+          "boardId": "retained-narrow",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            0,
+            185.25
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            1085,
+            567.5,
+            1415,
+            732.5
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1100/800",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1100/951.5",
+          "boardId": "retained-narrow",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            0,
+            151.5
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            1085,
+            937.25,
+            1415,
+            1102.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1100/951.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1100/800",
+          "boardId": "retained-narrow",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            0,
+            -151.5
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            1085,
+            793.25,
+            1415,
+            958.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1400/429.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/500",
+          "boardId": "retained-narrow",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            0,
+            185.25
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            1385,
+            567.5,
+            1715,
+            732.5
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1400/800",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/951.5",
+          "boardId": "retained-narrow",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            0,
+            151.5
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            1385,
+            937.25,
+            1715,
+            1102.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1400/951.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/800",
+          "boardId": "retained-narrow",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            0,
+            -151.5
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            1385,
+            793.25,
+            1715,
+            958.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1700/429.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1700/500",
+          "boardId": "retained-narrow",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            0,
+            185.25
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            1685,
+            567.5,
+            2015,
+            732.5
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1700/800",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1700/951.5",
+          "boardId": "retained-narrow",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            0,
+            151.5
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            1685,
+            937.25,
+            2015,
+            1102.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1700/951.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1700/800",
+          "boardId": "retained-narrow",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            0,
+            -151.5
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            1685,
+            793.25,
+            2015,
+            958.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2000/429.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/500",
+          "boardId": "retained-narrow",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            0,
+            185.25
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            1985,
+            567.5,
+            2315,
+            732.5
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2000/800",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/951.5",
+          "boardId": "retained-narrow",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            0,
+            151.5
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            1985,
+            937.25,
+            2315,
+            1102.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2000/951.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/800",
+          "boardId": "retained-narrow",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            0,
+            -151.5
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            1985,
+            793.25,
+            2315,
+            958.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2300/429.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2300/500",
+          "boardId": "retained-narrow",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            0,
+            185.25
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            2285,
+            567.5,
+            2615,
+            732.5
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2300/800",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2300/951.5",
+          "boardId": "retained-narrow",
+          "stage": "occupied",
+          "shiftXYMm": [
+            0,
+            151.5
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            2285,
+            937.25,
+            2615,
+            1102.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2300/951.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2300/1103",
+          "boardId": "retained-narrow",
+          "stage": "occupied",
+          "shiftXYMm": [
+            0,
+            224.25
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            2285,
+            1169,
+            2615,
+            1334
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2600/951.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2600/1103",
+          "boardId": "retained-narrow",
+          "stage": "occupied",
+          "shiftXYMm": [
+            0,
+            224.25
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            2585,
+            1169,
+            2915,
+            1334
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2900/951.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/1103",
+          "boardId": "retained-narrow",
+          "stage": "occupied",
+          "shiftXYMm": [
+            0,
+            224.25
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            2885,
+            1169,
+            3215,
+            1334
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/3200/951.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/951.5",
+          "boardId": "retained-narrow",
+          "stage": "occupied",
+          "shiftXYMm": [
+            -300,
+            0
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            2885,
+            937.25,
+            3215,
+            1102.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/4400/500",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/4100/500",
+          "boardId": "retained-narrow",
+          "stage": "occupied",
+          "shiftXYMm": [
+            -225.75,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            4167.5,
+            485,
+            4332.5,
+            815
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/4400/800",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/4100/800",
+          "boardId": "retained-narrow",
+          "stage": "occupied",
+          "shiftXYMm": [
+            -225.75,
+            0
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            4085,
+            793.25,
+            4415,
+            958.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/4400/951.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/4100/951.5",
+          "boardId": "retained-narrow",
+          "stage": "occupied",
+          "shiftXYMm": [
+            -225.75,
+            0
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            4085,
+            937.25,
+            4415,
+            1102.25
+          ],
+          "trimReleases": [
+            "wall:cloak-south:0"
+          ]
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/4551.5/500",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/4400/500",
+          "boardId": "retained-narrow",
+          "stage": "occupied",
+          "shiftXYMm": [
+            -151.5,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            4393.25,
+            485,
+            4558.25,
+            815
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/4551.5/800",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/4100/800",
+          "boardId": "retained-narrow",
+          "stage": "occupied",
+          "shiftXYMm": [
+            -377.25,
+            0
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            4085,
+            793.25,
+            4415,
+            958.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/4551.5/951.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/4100/951.5",
+          "boardId": "retained-narrow",
+          "stage": "occupied",
+          "shiftXYMm": [
+            -377.25,
+            0
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            4085,
+            937.25,
+            4415,
+            1102.25
+          ],
+          "trimReleases": [
+            "wall:cloak-south:0"
+          ]
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/3200/1103",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/1103",
+          "boardId": "retained-narrow",
+          "stage": "occupied",
+          "shiftXYMm": [
+            -201.5,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            2967.5,
+            1086.5,
+            3132.5,
+            1416.5
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/3200/1400",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/1400",
+          "boardId": "retained-narrow",
+          "stage": "occupied",
+          "shiftXYMm": [
+            -201.5,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            2967.5,
+            1385,
+            3132.5,
+            1715
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/3200/1700",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/1700",
+          "boardId": "retained-narrow",
+          "stage": "occupied",
+          "shiftXYMm": [
+            -201.5,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            2967.5,
+            1685,
+            3132.5,
+            2015
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/3200/2000",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/2000",
+          "boardId": "retained-narrow",
+          "stage": "occupied",
+          "shiftXYMm": [
+            -201.5,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            2967.5,
+            1985,
+            3132.5,
+            2315
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2600/2553",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2600/2000",
+          "boardId": "retained-narrow",
+          "stage": "occupied",
+          "shiftXYMm": [
+            0,
+            -489.75
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            2590.25,
+            1985,
+            2755.25,
+            2315
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/429.5/1103",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/800/1103",
+          "boardId": "retained-narrow",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            485.25,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            867.5,
+            1065.75,
+            1032.5,
+            1395.75
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/429.5/2405",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/500/2405",
+          "boardId": "retained-narrow",
+          "stage": "occupied",
+          "shiftXYMm": [
+            185.25,
+            0
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            487.75,
+            2406.5,
+            817.75,
+            2571.5
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/500/1103",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/500/951.5",
+          "boardId": "retained-narrow",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            0,
+            -147.25
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            485,
+            935.125,
+            815,
+            1100.125
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/500/2405",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/800/2300",
+          "boardId": "retained-narrow",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            300,
+            0
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            785,
+            2387.25,
+            1115,
+            2552.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/634.5/1246",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/800/1103",
+          "boardId": "retained-narrow",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            232.75,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            867.5,
+            1068.5,
+            1032.5,
+            1398.5
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/634.5/1400",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/800/1400",
+          "boardId": "retained-narrow",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            232.75,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            867.5,
+            1385,
+            1032.5,
+            1715
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/634.5/1700",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/800/1700",
+          "boardId": "retained-narrow",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            232.75,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            867.5,
+            1685,
+            1032.5,
+            2015
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/634.5/2000",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/800/2000",
+          "boardId": "retained-narrow",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            232.75,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            867.5,
+            1985,
+            1032.5,
+            2315
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/634.5/2300",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/500/2405",
+          "boardId": "retained-narrow",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            0,
+            126.5
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            507.25,
+            2409,
+            837.25,
+            2574
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/500/500",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/800/500",
+          "boardId": "trial",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            800,
+            500,
+            1100,
+            800
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/800/500",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/500/500",
+          "boardId": "trial",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            -300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            500,
+            500,
+            800,
+            800
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1100/500",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/800/500",
+          "boardId": "trial",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            -300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            800,
+            500,
+            1100,
+            800
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1400/500",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1100/500",
+          "boardId": "trial",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            -300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            1100,
+            500,
+            1400,
+            800
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1700/500",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/500",
+          "boardId": "trial",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            -300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            1400,
+            500,
+            1700,
+            800
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2000/500",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1700/500",
+          "boardId": "trial",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            -300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            1700,
+            500,
+            2000,
+            800
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2300/500",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/500",
+          "boardId": "trial",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            -300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            2000,
+            500,
+            2300,
+            800
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/800/1103",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1100/1103",
+          "boardId": "trial",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            1100,
+            1098.5,
+            1400,
+            1398.5
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/800/1400",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/800/1700",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            0,
+            300
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            800,
+            1700,
+            1100,
+            2000
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/800/1700",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/800/2000",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            0,
+            300
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            800,
+            2000,
+            1100,
+            2300
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/800/2000",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1100/2000",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            1100,
+            2000,
+            1400,
+            2300
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/800/2300",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/800/2000",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            0,
+            -276.5
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            800,
+            2000,
+            1100,
+            2300
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1100/1103",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/800/1103",
+          "boardId": "trial",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            -300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            800,
+            1098.5,
+            1100,
+            1398.5
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1100/1400",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/800/1400",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            -300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            800,
+            1400,
+            1100,
+            1700
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1100/1700",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/800/1700",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            -300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            800,
+            1700,
+            1100,
+            2000
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1100/2000",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/800/2000",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            -300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            800,
+            2000,
+            1100,
+            2300
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1100/2300",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/2300",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            1400,
+            2252.25,
+            1700,
+            2552.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1400/1103",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1100/1103",
+          "boardId": "trial",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            -300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            1100,
+            1098.5,
+            1400,
+            1398.5
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1400/1400",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/1700",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            0,
+            300
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            1400,
+            1700,
+            1700,
+            2000
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1400/1700",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/2000",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            0,
+            300
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            1400,
+            2000,
+            1700,
+            2300
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1400/2000",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1700/2000",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            1700,
+            2000,
+            2000,
+            2300
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1400/2300",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1100/2300",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            -300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            1100,
+            2252.25,
+            1400,
+            2552.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1700/1103",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/1103",
+          "boardId": "trial",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            -300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            1400,
+            1098.5,
+            1700,
+            1398.5
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1700/1400",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/1400",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            -300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            1400,
+            1400,
+            1700,
+            1700
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1700/1700",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/1700",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            -300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            1400,
+            1700,
+            1700,
+            2000
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1700/2000",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/2000",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            -300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            1400,
+            2000,
+            1700,
+            2300
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1700/2300",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/2300",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            -300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            1400,
+            2252.25,
+            1700,
+            2552.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2000/1103",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1700/1103",
+          "boardId": "trial",
+          "stage": "desk-and-chair-parked",
+          "shiftXYMm": [
+            -300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            1700,
+            1098.5,
+            2000,
+            1398.5
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2000/1400",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/1700",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            0,
+            300
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            2000,
+            1700,
+            2300,
+            2000
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2000/1700",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/1400",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            0,
+            -300
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            2000,
+            1400,
+            2300,
+            1700
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2000/2000",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1700/2000",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            -300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            1700,
+            2000,
+            2000,
+            2300
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2000/2300",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/2000",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            0,
+            -276.5
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            2000,
+            2000,
+            2300,
+            2300
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2300/1103",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2300/1400",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            0,
+            298.5
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            2300,
+            1400,
+            2600,
+            1700
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2300/1400",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/1400",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            -300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            2000,
+            1400,
+            2300,
+            1700
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2300/1700",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/1700",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            -300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            2000,
+            1700,
+            2300,
+            2000
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2300/2000",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/2000",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            -300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            2000,
+            2000,
+            2300,
+            2300
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2300/2300",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2300/2000",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            0,
+            -276.5
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            2300,
+            2000,
+            2600,
+            2300
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2600/1103",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2300/1103",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            -300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            2300,
+            1101.5,
+            2600,
+            1401.5
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2600/1400",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2600/1700",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            0,
+            300
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            2600,
+            1700,
+            2900,
+            2000
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2600/1700",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2600/2000",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            0,
+            300
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            2600,
+            2000,
+            2900,
+            2300
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2600/2000",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2600/1700",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            0,
+            -300
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            2600,
+            1700,
+            2900,
+            2000
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2600/2300",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2300/2300",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            -300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            2300,
+            2252.25,
+            2600,
+            2552.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2900/1103",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/1400",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            0,
+            298.5
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            2900,
+            1400,
+            3200,
+            1700
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2900/1400",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/1700",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            0,
+            300
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            2900,
+            1700,
+            3200,
+            2000
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2900/1700",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/1400",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            0,
+            -300
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            2900,
+            1400,
+            3200,
+            1700
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2900/2000",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/1700",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            0,
+            -300
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            2900,
+            1700,
+            3200,
+            2000
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2900/2300",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/2000",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            0,
+            -276.5
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            2900,
+            2000,
+            3200,
+            2300
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/3200/2300",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2600/2300",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            -501.5,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            2511.5,
+            2252.25,
+            2811.5,
+            2552.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/429.5/2553",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/500/2553",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            185.25,
+            0
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            500,
+            2489.75,
+            800,
+            2789.75
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/429.5/2726.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/500/2726.5",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            185.25,
+            0
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            500,
+            2663.25,
+            800,
+            2963.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/429.5/2900",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/500/2900",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            185.25,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            509,
+            2849.75,
+            809,
+            3149.75
+          ],
+          "trimReleases": [
+            "wall:study-L-north:0"
+          ]
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/500/2553",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/800/2553",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            300,
+            0
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            800,
+            2489.75,
+            1100,
+            2789.75
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/500/2726.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/500/2553",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            0,
+            -173.5
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            500,
+            2489.75,
+            800,
+            2789.75
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/500/2900",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/800/2900",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            800,
+            2849.75,
+            1100,
+            3149.75
+          ],
+          "trimReleases": [
+            "wall:study-L-north:0"
+          ]
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/800/2553",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/800/2726.5",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            0,
+            173.5
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            800,
+            2663.25,
+            1100,
+            2963.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/800/2726.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/800/2553",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            0,
+            -173.5
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            800,
+            2489.75,
+            1100,
+            2789.75
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/800/2900",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/500/2900",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            -300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            500,
+            2849.75,
+            800,
+            3149.75
+          ],
+          "trimReleases": [
+            "wall:study-L-north:0"
+          ]
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1100/2553",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1100/2726.5",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            0,
+            173.5
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            1100,
+            2663.25,
+            1400,
+            2963.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1100/2726.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1100/2553",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            0,
+            -173.5
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            1100,
+            2489.75,
+            1400,
+            2789.75
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1400/2553",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/2726.5",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            0,
+            173.5
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            1400,
+            2663.25,
+            1700,
+            2963.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1400/2726.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/2553",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            0,
+            -173.5
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            1400,
+            2489.75,
+            1700,
+            2789.75
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1400/2900",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1700/2900",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            1700,
+            2849.75,
+            2000,
+            3149.75
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1700/2553",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1700/2726.5",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            0,
+            173.5
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            1700,
+            2663.25,
+            2000,
+            2963.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1700/2726.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1700/2553",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            0,
+            -173.5
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            1700,
+            2489.75,
+            2000,
+            2789.75
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/1700/2900",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/2900",
+          "boardId": "trial",
+          "stage": "chair-parked",
+          "shiftXYMm": [
+            -300,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            1400,
+            2849.75,
+            1700,
+            3149.75
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2000/2553",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/2726.5",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            0,
+            173.5
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            2000,
+            2663.25,
+            2300,
+            2963.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2000/2726.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/2900",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            0,
+            212
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            2000,
+            2831,
+            2300,
+            3131
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2300/2553",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2300/2300",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            0,
+            -213.25
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            2300,
+            2246,
+            2600,
+            2546
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2300/2726.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2300/2553",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            0,
+            -173.5
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            2300,
+            2489.75,
+            2600,
+            2789.75
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2600/2726.5",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2300/2726.5",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            -210.25,
+            0
+          ],
+          "turnDeg": 90,
+          "boardXYXYMm": [
+            2300,
+            2663.25,
+            2600,
+            2963.25
+          ],
+          "trimReleases": []
+        },
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/2600/2900",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2300/2900",
+          "boardId": "trial",
+          "stage": "occupied",
+          "shiftXYMm": [
+            -210.25,
+            0
+          ],
+          "turnDeg": 0,
+          "boardXYXYMm": [
+            2300,
+            2849.75,
+            2600,
+            3149.75
+          ],
+          "trimReleases": [
+            "wall:study-L-north:1"
+          ]
+        }
+      ],
+      "held": [
+        "Independent removal of named local trim",
+        "Board insertion and grip exchange",
+        "Complete installed service heights and worker approach",
+        "Board strength, loaded stability and seating"
       ]
     },
     "placementCount": 117,
