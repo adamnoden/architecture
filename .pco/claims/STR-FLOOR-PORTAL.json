@@ -9,8 +9,8 @@
     "label": "rush-west-foul"
   },
   "claimedAt": "2026-11-18T07:48:13.711Z",
-  "heartbeatAt": "2026-11-18T07:48:13.711Z",
-  "expiresAt": "2026-11-18T08:33:13.711Z",
+  "heartbeatAt": "2026-11-18T08:03:25.395Z",
+  "expiresAt": "2026-11-18T08:48:25.395Z",
   "branch": "work/rush-west-foul-2026-11-18",
   "predecessor": {
     "leaseId": "22f8af96-a0db-49bc-90d4-cd08e44fef13",
@@ -33,5 +33,10 @@
       "next": "Bind a viable independent west foul route or revise the collector topology, then solve the coupled splice with actual receiver, weld, bedding and contact geometry.",
       "blocker": "Full-demand cabinet relocation fails. Joined DPC stiffness and physical acceptance require a dimensioned load path."
     }
+  },
+  "pr": 1574,
+  "checkpoint": {
+    "evidence": "PR #1574 at 99c06a0d76ce8b5192889f00a1e8232fa008028c; 29 exact-tree focused tests and typecheck",
+    "next": "Merge after exact-head CI and three preflights"
   }
 }
