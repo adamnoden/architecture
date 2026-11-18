@@ -9,9 +9,9 @@
     "label": "rush-study-board-20261118"
   },
   "claimedAt": "2026-11-18T12:11:00.066Z",
-  "heartbeatAt": "2026-11-18T12:14:21.457Z",
-  "expiresAt": "2026-11-18T12:59:21.457Z",
-  "branch": "work/rush-dpc-splice-2026-11-18",
+  "heartbeatAt": "2026-11-18T12:33:05.675Z",
+  "expiresAt": "2026-11-18T13:18:05.675Z",
+  "branch": "work/rush-contact-geometry-2026-11-18",
   "predecessor": {
     "leaseId": "e392ca22-6026-4cc3-9630-5f4013ff26df",
     "generation": 6,
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Study square-board trial compiles 107 of 119 recorded first-rest geometries; 12 fixed pad-footprint deficits measured. Tests and generator verification in progress.",
-    "next": "Integrate with the DPC branch after dedicated Study tests; verify exact-head CI and live ownership before merge.",
-    "blocker": "Loaded board/deck acceptance and unknown installed G1 underside remain outside this geometry comparison."
+    "evidence": "Merged #1576 at cbc001aa; 107 of 119 preferred Study face/pad fits. Tested follow-on recovers eight adjacent and two bounded extended fits.",
+    "next": "Verify exact branch/CI and publish 117 of 119 planar fits with geometric limits only.",
+    "blocker": "Loaded board/deck acceptance and installed G1 carrier minimum height remain unsupported."
   }
 }
