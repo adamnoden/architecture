@@ -9,8 +9,8 @@
     "label": "rush-west-foul"
   },
   "claimedAt": "2026-11-18T07:48:13.711Z",
-  "heartbeatAt": "2026-11-18T08:24:19.285Z",
-  "expiresAt": "2026-11-18T09:54:19.285Z",
+  "heartbeatAt": "2026-11-18T08:58:23.086Z",
+  "expiresAt": "2026-11-18T09:43:23.086Z",
   "branch": "work/rush-fit-clearances-2026-11-18",
   "predecessor": {
     "leaseId": "22f8af96-a0db-49bc-90d4-cd08e44fef13",
@@ -36,7 +36,8 @@
   },
   "pr": 1575,
   "checkpoint": {
-    "evidence": "PR #1575 at 0d6018f65f25a9f1afa3814689c225e815be0e28; 475 exact-tree Reference House tests and source-account checks passed",
-    "next": "Verify exact-head CI and all three lease preflights, merge and hand off the surveyed profile and coupled splice"
+    "evidence": "Merged #1574 b4db7d7a and #1575 da46dc52. West receiving compares the full supplied grade profile and its governing station.",
+    "next": "Bind an actual west receiving profile and the outlet fittings, then check their joined route and the dimensioned coupled DPC splice.",
+    "blocker": "Surveyed grade, confirmed host, fitting geometry and coupled splice stiffness remain open."
   }
 }
