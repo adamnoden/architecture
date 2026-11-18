@@ -68,6 +68,41 @@ test('the two rejected dry alternatives preserve the wet stack and both branch d
   }
 })
 
+test('the west buried run checks both cover endpoints and the full direct plan envelope', async () => {
+  const compile = prepareCurrentDesignCompile(design)
+  const request = await compile.readRearFoulVentCase()
+  assert.ok('vent' in request)
+  const baseline = await compile.rearFoulVent(request.vent)
+  assert.equal(baseline.status, 'computed-comparison')
+  assert.deepEqual(baseline.buriedReceiving.failedChecks, ['MINIMUM_CROWN_COVER'])
+  assert.ok(Math.abs(baseline.buriedReceiving.stackCoverMm - 555.4046) < 0.01)
+  assert.ok(Math.abs(baseline.buriedReceiving.maximumHostAxisZMm + 2524.5954) < 0.01)
+  const trial = {
+    ...request.vent,
+    buriedReceiving: { hostAxisXYZMm: [-450, 11177.5, -2530] as const, stackGradeZMm: -1800, hostGradeZMm: -1800 },
+  }
+  const deeper = await compile.rearFoulVent(trial)
+  assert.equal(deeper.status, 'computed-comparison')
+  assert.equal(deeper.buriedReceiving.state, 'bounded-direct-run-comparison')
+  assert.equal(deeper.buriedReceiving.installedAcceptance, false)
+  assert.deepEqual(deeper.comparison, baseline.comparison)
+  assert.notEqual(deeper.source.caseDigest, baseline.source.caseDigest)
+  const lowGrade = await compile.rearFoulVent({ ...trial, buriedReceiving: { ...trial.buriedReceiving, hostGradeZMm: -1880 } })
+  assert.equal(lowGrade.status, 'computed-comparison')
+  assert.ok(lowGrade.buriedReceiving.stackCoverMm > 600)
+  assert.equal(lowGrade.buriedReceiving.hostCoverMm, 570)
+  assert.deepEqual(lowGrade.buriedReceiving.failedChecks, ['MINIMUM_CROWN_COVER'])
+  const inward = await compile.rearFoulVent({
+    ...trial, buriedReceiving: { ...trial.buriedReceiving, hostAxisXYZMm: [-90, 11177.5, -2600] },
+  })
+  assert.equal(inward.status, 'computed-comparison')
+  assert.deepEqual(inward.buriedReceiving.failedChecks, ['WEST_GIRDER_PLAN_CLEARANCE'])
+  assert.equal(inward.buriedReceiving.westGirderClearanceMm, -7.5)
+  await assert.rejects(compile.rearFoulVent({
+    ...trial, buriedReceiving: { ...trial.buriedReceiving, hostAxisXYZMm: [-300, 9400, -2600] },
+  }), /nonzero/)
+})
+
 test('a supported dry offset recomputes clearances, while missing tangent, stale and unbound cases fail closed', async () => {
   const compile = prepareCurrentDesignCompile(design)
   const request = await compile.readRearFoulVentCase()
