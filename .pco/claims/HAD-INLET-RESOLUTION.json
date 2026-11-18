@@ -1,44 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 43,
-  "state": "released",
-  "leaseId": "d89fd90f-7e08-40a7-9bdf-189bf725ecca",
+  "generation": 44,
+  "state": "claimed",
+  "leaseId": "229ffcde-aa94-498e-af37-4679e76c38b3",
   "holder": {
-    "kind": "chatgpt",
-    "label": "rush-inlet-seal"
+    "kind": "codex",
+    "label": "rush-utility-relief"
   },
-  "claimedAt": "2026-11-18T07:48:18.176Z",
-  "heartbeatAt": "2026-11-18T08:52:54.178Z",
-  "expiresAt": "2026-11-18T08:52:54.178Z",
-  "branch": "work/rush-fit-clearances-2026-11-18",
+  "claimedAt": "2026-11-18T12:10:38.327Z",
+  "heartbeatAt": "2026-11-18T12:10:38.327Z",
+  "expiresAt": "2026-11-18T12:55:38.327Z",
+  "branch": "work/rush-utility-relief-2026-11-18",
   "predecessor": {
-    "leaseId": "d86e1875-c445-4e78-a6a6-83b4ee5f9044",
-    "generation": 42,
-    "branch": "work/current-gallery-compiler-2026-11-18",
-    "pr": 1573,
+    "leaseId": "d89fd90f-7e08-40a7-9bdf-189bf725ecca",
+    "generation": 43,
+    "branch": "work/rush-fit-clearances-2026-11-18",
+    "pr": 1575,
     "checkpoint": {
-      "evidence": "PR #1573 merged at 5bf811890511d82481d8eb60048a84a18da427e5. The current compiler independently screens the U-notched cover, washer dependency and offset first rest for both inlet branches. Main 37694c24 retains the exact cover source and regression fixtures; all six main removal and cover tests passed.",
-      "next": "Detail the independently retained filler and seals for the rear-open U-notch and preserve each vent/weather return. Dimension the rated Z900 disconnect and its pilot/tool retreat, anchor a dry guide and prove continuous positive support through an offset first-rest handover. Then dry-fit the actual assemblies and challenge wet/pressure closure with the sibling sealed.",
-      "blocker": "The installed washer removes 7 mm Utility and 42 mm Plant from required cover axial travel. The restrained state admits geometric cover rest only; material seals, anchorage, supported motion, actual latches and product compatibility remain open."
+      "evidence": "Verified #1574 b4db7d7a and #1575 da46dc523eacc79765d5b72ec443e958e972981c on main. Exact HAD source matches and 13 post-merge tests passed. Ø92 Utility collar and 4 mm radial seal-land trial misses concentric lap by 1.598 mm.",
+      "next": "Bind rated collar, split filler and seal package or recover taper width. Prove installed fit, filler withdrawal, vent continuity, guide anchorage and positive capture under isolated wet/loaded tests."
     }
   },
   "recoverySource": {
-    "leaseId": "d86e1875-c445-4e78-a6a6-83b4ee5f9044",
-    "generation": 42,
-    "branch": "work/current-gallery-compiler-2026-11-18",
-    "pr": 1573,
+    "leaseId": "d89fd90f-7e08-40a7-9bdf-189bf725ecca",
+    "generation": 43,
+    "branch": "work/rush-fit-clearances-2026-11-18",
+    "pr": 1575,
     "checkpoint": {
-      "evidence": "PR #1573 merged at 5bf811890511d82481d8eb60048a84a18da427e5. The current compiler independently screens the U-notched cover, washer dependency and offset first rest for both inlet branches. Main 37694c24 retains the exact cover source and regression fixtures; all six main removal and cover tests passed.",
-      "next": "Detail the independently retained filler and seals for the rear-open U-notch and preserve each vent/weather return. Dimension the rated Z900 disconnect and its pilot/tool retreat, anchor a dry guide and prove continuous positive support through an offset first-rest handover. Then dry-fit the actual assemblies and challenge wet/pressure closure with the sibling sealed.",
-      "blocker": "The installed washer removes 7 mm Utility and 42 mm Plant from required cover axial travel. The restrained state admits geometric cover rest only; material seals, anchorage, supported motion, actual latches and product compatibility remain open."
+      "evidence": "Verified #1574 b4db7d7a and #1575 da46dc523eacc79765d5b72ec443e958e972981c on main. Exact HAD source matches and 13 post-merge tests passed. Ø92 Utility collar and 4 mm radial seal-land trial misses concentric lap by 1.598 mm.",
+      "next": "Bind rated collar, split filler and seal package or recover taper width. Prove installed fit, filler withdrawal, vent continuity, guide anchorage and positive capture under isolated wet/loaded tests."
     }
-  },
-  "checkpoint": {
-    "evidence": "Verified #1574 b4db7d7a and #1575 da46dc523eacc79765d5b72ec443e958e972981c on main. Exact HAD source matches and 13 post-merge tests passed. Ø92 Utility collar and 4 mm radial seal-land trial misses concentric lap by 1.598 mm.",
-    "next": "Bind rated collar, split filler and seal package or recover taper width. Prove installed fit, filler withdrawal, vent continuity, guide anchorage and positive capture under isolated wet/loaded tests."
-  },
-  "pr": 1575,
-  "releasedAt": "2026-11-18T08:52:54.178Z",
-  "releaseReason": "handoff"
+  }
 }
