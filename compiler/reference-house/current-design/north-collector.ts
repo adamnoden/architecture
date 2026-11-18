@@ -41,6 +41,7 @@ interface NorthCollectorCase {
   readonly dragDemandFactor: number
   readonly remoteMainBarShiftMm?: number
   readonly chordBendRadiusMm?: number
+  readonly toeTransferIntervalMm?: Point
   readonly yawProbe?: NorthYawProbe
   readonly deadLoadReplay?: { readonly windIndex: number }
 }
@@ -254,7 +255,7 @@ export function readNorthCollectorCase(resolved: CurrentDesignResolution) {
 
 function admitCase(value: unknown, binding: NonNullable<ReturnType<typeof bindingFor>>): NorthCollectorCase {
   const fields = ['schema', 'planDigest', 'bindingDigest', 'collectorId', 'portAxisXYMm', 'dragDemandFactor']
-  const optional = ['remoteMainBarShiftMm', 'chordBendRadiusMm', 'yawProbe', 'deadLoadReplay']
+  const optional = ['remoteMainBarShiftMm', 'chordBendRadiusMm', 'toeTransferIntervalMm', 'yawProbe', 'deadLoadReplay']
   if (!value || typeof value !== 'object' || Array.isArray(value)
       || fields.some(field => !Object.hasOwn(value, field))
       || Object.keys(value).some(field => !optional.includes(field) && !fields.includes(field))) {
@@ -276,6 +277,11 @@ function admitCase(value: unknown, binding: NonNullable<ReturnType<typeof bindin
   if (Object.hasOwn(trial, 'chordBendRadiusMm')
       && (typeof trial.chordBendRadiusMm !== 'number' || !Number.isFinite(trial.chordBendRadiusMm) || trial.chordBendRadiusMm <= 0)) {
     throw new Error('Use a finite positive chord bend radius in mm')
+  }
+  const toeInterval = trial.toeTransferIntervalMm
+  if (Object.hasOwn(trial, 'toeTransferIntervalMm') && (!Array.isArray(toeInterval) || toeInterval.length !== 2
+      || !toeInterval.every(Number.isFinite) || toeInterval[0] < 0 || toeInterval[0] >= toeInterval[1])) {
+    throw new Error('Use an increasing toe transfer interval in millimetres from the outboard edge')
   }
   if (Object.hasOwn(trial, 'yawProbe')) {
     const probe = trial.yawProbe
@@ -341,34 +347,63 @@ function combineFixedBaseActions(
   }
 }
 
+function rectangularWebSection(widthMm: number, thicknessMm: number) {
+  return {
+    widthMm, thicknessMm, areaMm2: widthMm * thicknessMm,
+    widthSectionModulusMm3: thicknessMm * widthMm ** 2 / 6,
+    thicknessSectionModulusMm3: widthMm * thicknessMm ** 2 / 6,
+  }
+}
+
+function rectangularWebDemand(arm: 'x' | 'y', [fx, fy, fz, mx, my, mz]: Wrench, section: ReturnType<typeof rectangularWebSection>) {
+  const alongX = arm === 'x'
+  const direct = 1000 * (alongX ? fx : fy) / section.areaMm2
+  const bendingAtPositiveWidthEdge = 1e6 * (alongX ? -mz : mz) / section.widthSectionModulusMm3
+  const bendingAtTopEdge = 1e6 * (alongX ? my : -mx) / section.thicknessSectionModulusMm3
+  const extremeBending = Math.abs(bendingAtPositiveWidthEdge) + Math.abs(bendingAtTopEdge)
+  return {
+    normalStressMPa: { direct, bendingAtPositiveWidthEdge, bendingAtTopEdge,
+      minimum: direct - extremeBending, maximum: direct + extremeBending },
+    shearResultantKN: Math.hypot(alongX ? fy : fx, fz),
+    torsionKNm: alongX ? mx : my,
+  }
+}
+
 function grossRootWebDemands({ extendedWeb, isolatedKeyLoadPath }: CollectorComparison['groundSplice']) {
   const { widenedWidthMm: widthMm, runs } = isolatedKeyLoadPath
-  const { thicknessMm } = extendedWeb
-  const areaMm2 = widthMm * thicknessMm
-  const widthSectionModulusMm3 = thicknessMm * widthMm ** 2 / 6
-  const thicknessSectionModulusMm3 = widthMm * thicknessMm ** 2 / 6
+  const section = rectangularWebSection(widthMm, extendedWeb.thicknessMm)
   return {
     schema: 'str-north-collector-gross-root-web/1' as const,
-    section: { widthMm, thicknessMm, areaMm2, widthSectionModulusMm3, thicknessSectionModulusMm3 },
-    cuts: runs.flatMap(run => run.webCutDemands.filter(cut => cut.section === 'root').map(cut => {
-      const [fx, fy, fz, mx, my, mz] = cut.toeSideExternalWrench
-      const alongX = cut.arm === 'x'
-      const directMPa = 1000 * (alongX ? fx : fy) / areaMm2
-      const atPositiveWidthEdgeMPa = 1e6 * (alongX ? -mz : mz) / widthSectionModulusMm3
-      const atTopEdgeMPa = 1e6 * (alongX ? my : -mx) / thicknessSectionModulusMm3
-      const extremeBendingMPa = Math.abs(atPositiveWidthEdgeMPa) + Math.abs(atTopEdgeMPa)
-      return {
-        upperYawSign: run.upperYawSign, arm: cut.arm, originXYZMm: cut.originXYZMm,
-        normalStressMPa: {
-          direct: directMPa, bendingAtPositiveWidthEdge: atPositiveWidthEdgeMPa, bendingAtTopEdge: atTopEdgeMPa,
-          minimum: directMPa - extremeBendingMPa, maximum: directMPa + extremeBendingMPa,
-        },
-        shearResultantKN: Math.hypot(alongX ? fy : fx, fz),
-        torsionKNm: alongX ? mx : my,
-      }
-    })),
+    section,
+    cuts: runs.flatMap(run => run.webCutDemands.filter(cut => cut.section === 'root').map(cut => ({
+      upperYawSign: run.upperYawSign, arm: cut.arm, originXYZMm: cut.originXYZMm,
+      ...rectangularWebDemand(cut.arm, cut.toeSideExternalWrench, section),
+    }))),
     admitted: false as const,
     scope: 'Nominal elastic normal stress on the gross solid rectangular root cuts under isolated key yaw. Effective section, combined shear and torsion, toe weld, bedding and stiffness require separate checks.',
+  }
+}
+
+function toeTransferDemands({ extendedWeb, isolatedKeyLoadPath }: CollectorComparison['groundSplice'], interval?: Point) {
+  const blockWidthMm = isolatedKeyLoadPath.legacyControl.widthMm
+  const span: Point = interval ?? [0, blockWidthMm]
+  if (span[1] > blockWidthMm) throw new Error('Toe transfer interval exceeds the retained block width')
+  const centroidMm = (span[0] + span[1]) / 2
+  const section = rectangularWebSection(span[1] - span[0], extendedWeb.thicknessMm)
+  const cuts = isolatedKeyLoadPath.runs.flatMap(run => run.webCutDemands.filter(cut => cut.section === 'toe').map(cut => {
+    const [x, y, z] = cut.originXYZMm
+    const originXYZMm: Vector3 = cut.arm === 'x' ? [x, centroidMm, z] : [centroidMm, y, z]
+    const dx = (originXYZMm[0] - x) / 1000
+    const dy = (originXYZMm[1] - y) / 1000
+    const [fx, fy, fz, mx, my, mz] = cut.toeSideExternalWrench
+    const wrench: Wrench = [fx, fy, fz, mx - dy * fz, my + dx * fz, mz - dx * fy + dy * fx]
+    const demand = rectangularWebDemand(cut.arm, wrench, section)
+    if (!Object.values(demand.normalStressMPa).every(Number.isFinite)) throw new Error('Toe transfer demand is outside the finite comparison range')
+    return { upperYawSign: run.upperYawSign, arm: cut.arm, originXYZMm, wrench, ...demand }
+  }))
+  return {
+    schema: 'str-north-collector-toe-transfer/1' as const, intervalMm: span, section, cuts, admitted: false as const,
+    scope: 'Isolated key yaw transferred over a rectangular toe-cut envelope at web depth. Weld topology, effective area, resistance, stiffness and coupled actions remain open.',
   }
 }
 
@@ -532,6 +567,7 @@ export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: 
     method: { id, path: methodPath, blob: method.blob, receipt: { path: receiptPath, blob: receipt.blob }, inputs },
     comparison,
     grossRootWeb: grossRootWebDemands(comparison.groundSplice),
+    toeTransfer: toeTransferDemands(comparison.groundSplice, trial.toeTransferIntervalMm),
     stationCapacity,
     cabinetStationCapacity,
     drawingSvg,

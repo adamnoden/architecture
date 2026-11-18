@@ -139,3 +139,37 @@ test('a rounded Utility lid proves the shape and declares the axial withdrawal s
   assert.deepEqual(locked.roundedRelease?.diagnostics, ['FILLER_AND_COLLAR_REMAIN_ENGAGED', 'UTILITY_TAPER_REMAINS_ATTACHED'])
   await assert.rejects(compile.inletCover({ ...plant, closure }), /rounded Utility taper/)
 })
+
+test('westward Utility toe relief preserves the wall heel and replays filler, purge and baffle fit together', async () => {
+  const [{ cover: utility }, { cover: plant }] = await compile.readInletCoverCases()
+  const closure = { profile: 'rounded-taper' as const, notchLapMm: 9, collarSealLandMm: 4,
+    collarOutsideDiameterMm: 92, wallReturnDepthMm: 10, fillerAndCollarClear: true, taperDetached: true }
+  const nominal = await compile.inletCover({ ...utility, closure: { ...closure, taperToeReliefMm: 0 } })
+  assert.deepEqual(nominal.installedClosure.diagnostics, ['ROUND_FILLER_INTERSECTS_TAPER', 'TAPER_RELIEF_INTERSECTS_BAFFLE'])
+  assert.deepEqual(nominal.installedClosure.roundedTaper?.relief, {
+    heelMm: [9995, 522], boundToeMm: [10058, 665], trialToeMm: [10058, 665],
+    minimumToeReliefForSelectedFillerMm: 3.1172, minimumToeReliefForBaffleMm: 3.7073,
+    purgeBodyReserveAfterAccessSettingMm: 30.8205, baffleWestReserveAfterFabricationSettingMm: -3.1888,
+  })
+
+  const candidate = await compile.inletCover({ ...utility, closure: { ...closure, taperToeReliefMm: 4 } })
+  const taper = candidate.installedClosure.roundedTaper
+  assert.deepEqual(taper?.relief.trialToeMm, [10054, 665])
+  assert.equal(taper?.fillerToTaperAfterSettingMm, 0.4537)
+  assert.equal(taper?.relief.purgeBodyReserveAfterAccessSettingMm, 28.2662)
+  assert.equal(taper?.relief.baffleWestReserveAfterFabricationSettingMm, 0.2517)
+  assert.equal(candidate.roundedRelease?.assembledCandidateStatus, 'within-conditional-fit-and-withdrawal')
+  assert.equal(candidate.installedClosure.wetClosureQualified, false)
+  assert.equal(candidate.roundedRelease?.captureQualified, false)
+  assert.deepEqual(candidate.calculation, nominal.calculation)
+  assert.notEqual(candidate.source.caseDigest, nominal.source.caseDigest)
+  assert.equal(candidate.source.removalCaseDigest, nominal.source.removalCaseDigest)
+  assert.ok(candidate.drawing.primitives.some(item => item.id === 'utility-taper-relief-trial'))
+
+  const excessive = await compile.inletCover({ ...utility, closure: { ...closure, taperToeReliefMm: 62 } })
+  assert.deepEqual(excessive.installedClosure.diagnostics, ['TAPER_RELIEF_INTERSECTS_PURGE_STANCE'])
+  assert.equal(excessive.roundedRelease?.assembledCandidateStatus, 'blocked')
+  await assert.rejects(compile.inletCover({ ...utility, closure: { ...closure, taperToeReliefMm: 63 } }), /positive taper slope/)
+  await assert.rejects(compile.inletCover({ ...utility, closure: { ...closure, taperToeReliefMm: -1 } }), /non-negative/)
+  assert.equal((await compile.inletCover(plant)).installedClosure.roundedTaper, null)
+})

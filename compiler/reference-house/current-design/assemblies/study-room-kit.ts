@@ -13,6 +13,7 @@ import { compileStudyWallTransition } from './study-wall-transition.js'
 
 type FloorAssembly = ReturnType<typeof compileResolvedStudyAssembly>
 type Box = readonly [number, number, number, number]
+type Pair = readonly [number, number]
 type BcrFurnitureAccess = ReturnType<typeof compileRenewableOpenings>['window']['furnitureAccess']
 type OpeningCase = { readonly id: string; readonly hostId: string; readonly widthMm?: number } & (
   { readonly occupiedCentreMm: number; readonly nominalCentreMm?: never }
@@ -25,6 +26,7 @@ type Case = {
   readonly wearingFace: 'oak' | 'stone-steel'
   readonly finishDepthMm?: 15 | 20
   readonly groundDeckLevelLossMm?: number
+  readonly firstRestBoardSizeMm?: Pair
   readonly opening?: OpeningCase
 }
 
@@ -38,7 +40,7 @@ function record(input: unknown): input is Record<string, unknown> {
 }
 
 function caseInput(input: unknown): Case {
-  if (!record(input) || Object.keys(input).some(key => !['schema', 'units', 'pitchMm', 'wearingFace', 'finishDepthMm', 'groundDeckLevelLossMm', 'opening'].includes(key))
+  if (!record(input) || Object.keys(input).some(key => !['schema', 'units', 'pitchMm', 'wearingFace', 'finishDepthMm', 'groundDeckLevelLossMm', 'firstRestBoardSizeMm', 'opening'].includes(key))
     || input.schema !== 'ias-study-room-kit-case/1' || input.units !== 'mm'
     || typeof input.pitchMm !== 'number' || !Number.isFinite(input.pitchMm)
     || (input.finishDepthMm !== undefined && input.finishDepthMm !== 15 && input.finishDepthMm !== 20)
@@ -47,9 +49,14 @@ function caseInput(input: unknown): Case {
     || (input.wearingFace !== 'oak' && input.wearingFace !== 'stone-steel')) {
     throw new TypeError('INVALID_STUDY_ROOM_KIT_CASE')
   }
+  const size = input.firstRestBoardSizeMm
+  if (size !== undefined && (!Array.isArray(size) || size.length !== 2 || [size[0], size[1]].some(
+    value => typeof value !== 'number' || !Number.isFinite(value) || value <= 0,
+  ))) throw new TypeError('INVALID_STUDY_FIRST_REST_BOARD_SIZE')
   const common: Case = { schema: input.schema, units: input.units, pitchMm: input.pitchMm, wearingFace: input.wearingFace,
     ...(input.finishDepthMm === undefined ? {} : { finishDepthMm: input.finishDepthMm }),
-    ...(input.groundDeckLevelLossMm === undefined ? {} : { groundDeckLevelLossMm: input.groundDeckLevelLossMm }) } as const
+    ...(input.groundDeckLevelLossMm === undefined ? {} : { groundDeckLevelLossMm: input.groundDeckLevelLossMm }),
+    ...(size === undefined ? {} : { firstRestBoardSizeMm: [size[0], size[1]] as const }) } as const
   if (input.opening === undefined) return common
   const opening = input.opening
   const finite = (value: unknown): value is number => typeof value === 'number' && Number.isFinite(value) && !Object.is(value, -0)
@@ -279,55 +286,100 @@ function handlingScreen(assembly: FloorAssembly, layout: ReturnType<typeof partS
   } as const
 }
 
+const boardAxes = [0, 1] as const
+const boxSize = ([x0, y0, x1, y1]: Box): Pair => [x1 - x0, y1 - y0]
+type BoardFitLimit = {
+  partId: string
+  restPartId: string
+  movingFaceSizeMm: Pair
+  receivingFaceSizeMm: Pair
+  orientationLimits: {
+    turnDeg: number
+    boardFaceShortfallMm: number[]
+    receivingPadShortfallMm: number[]
+    originIntervalGapMm: number[]
+  }[]
+}
+
 function compareFirstRestBoard(
   parts: ReturnType<typeof partSetout>['parts'],
   handling: ReturnType<typeof handlingScreen>,
   firstRest: NonNullable<ReturnType<typeof compileStudyFurnitureMotion>['firstRest']> | null | undefined,
+  trialSize: Pair | undefined,
 ) {
-  if (!firstRest || handling.state === 'withheld') return null
+  if (!firstRest || handling.state === 'withheld') return { retained: null, trial: null }
   const { firstRestBoard, padCentres, padWidthMm, worstRestPadN, restPadDemandMPa } = handling.emitterEdgeRelease
-  const axes = [0, 1] as const
-  const width = firstRestBoard[2] - firstRestBoard[0]
-  const depth = firstRestBoard[3] - firstRestBoard[1]
-  const offsets = padCentres.map(([x, y]) => [x - firstRestBoard[0], y - firstRestBoard[1]] as const)
-  const orientations = [
-    { turnDeg: 0, dimensions: [width, depth], offsets },
-    { turnDeg: 90, dimensions: [depth, width], offsets: offsets.map(([x, y]) => [depth - y, x] as const) },
-  ] as const
+  const retainedSize = boxSize(firstRestBoard)
+  const centredPads = padCentres.map(([x, y]) => [
+    x - firstRestBoard[0] - retainedSize[0] / 2, y - firstRestBoard[1] - retainedSize[1] / 2,
+  ] as const)
+  const padHalf = padWidthMm / 2
+  const padPatternSizeMm = boardAxes.map(axis => 2 * Math.max(...centredPads.map(point => Math.abs(point[axis]))) + padWidthMm)
   const faceByPartId = new Map(parts.map(part => [part.id, part.face]))
-  const outsideBoardFitPartIds: string[] = []
-  const placements = firstRest.parts.flatMap(result => {
-    if (result.state !== 'direct-geometry-witness') return []
-    const { restPartId, shiftXYMm } = result.witness
-    const moving = faceByPartId.get(result.partId)!
-    const receiving = faceByPartId.get(restPartId)!
-    for (const { turnDeg, dimensions, offsets: rotatedOffsets } of orientations) {
-      const lower = axes.map(axis => Math.max(
-        moving[axis + 2] + shiftXYMm[axis] - dimensions[axis],
-        receiving[axis] + padWidthMm / 2 - Math.min(...rotatedOffsets.map(point => point[axis])),
-      ))
-      const upper = axes.map(axis => Math.min(
-        moving[axis] + shiftXYMm[axis],
-        receiving[axis + 2] - padWidthMm / 2 - Math.max(...rotatedOffsets.map(point => point[axis])),
-      ))
-      if (axes.some(axis => lower[axis] > upper[axis])) continue
-      const [x, y] = axes.map(axis => (lower[axis] + upper[axis]) / 2)
-      return [{
-        partId: result.partId, restPartId, turnDeg,
-        boardXYXYMm: [x, y, x + dimensions[0], y + dimensions[1]] as Box,
-        padCentresXYMm: rotatedOffsets.map(([u, v]) => [x + u, y + v] as const),
-      }]
-    }
-    outsideBoardFitPartIds.push(result.partId)
-    return []
-  })
-  return {
+  const comparison = {
     state: 'placement-comparison-only', physicalAcceptance: false, comparedWitnessCount: firstRest.witnessCount,
-    boardSizeMm: [width, depth], padWidthMm, worstRestPadN, restPadDemandMPa,
-    placements, outsideBoardFitPartIds,
-    held: ['Board placement and clearance to occupant, adjacent finishes and fixed obstructions',
-      'Stable board and panel under load, breakaway and grip exchange', 'Qualified deck, finish and bedding under local pad demand'],
   } as const
+  const held = ['Board placement and clearance to occupant, adjacent finishes and fixed obstructions',
+    'Stable board and panel under load, breakaway and grip exchange', 'Qualified deck, finish and bedding under local pad demand'] as const
+  const fit = (boardSizeMm: Pair) => {
+    const [width, depth] = boardSizeMm
+    const offsets = centredPads.map(([x, y]) => [x + width / 2, y + depth / 2] as const)
+    const orientations = [
+      { turnDeg: 0, dimensions: boardSizeMm, offsets },
+      { turnDeg: 90, dimensions: [depth, width], offsets: offsets.map(([x, y]) => [depth - y, x] as const) },
+    ].map(orientation => ({
+      ...orientation,
+      minPad: boardAxes.map(axis => Math.min(...orientation.offsets.map(point => point[axis])) - padHalf),
+      maxPad: boardAxes.map(axis => Math.max(...orientation.offsets.map(point => point[axis])) + padHalf),
+    }))
+    const outsideFit: BoardFitLimit[] = []
+    const placements = firstRest.parts.flatMap(result => {
+      if (result.state !== 'direct-geometry-witness') return []
+      const { restPartId, shiftXYMm } = result.witness
+      const moving = faceByPartId.get(result.partId)!
+      const receiving = faceByPartId.get(restPartId)!
+      const movingFaceSizeMm = boxSize(moving)
+      const receivingFaceSizeMm = boxSize(receiving)
+      const orientationLimits = []
+      for (const { turnDeg, dimensions, offsets: rotatedOffsets, minPad, maxPad } of orientations) {
+        const lower = boardAxes.map(axis => Math.max(
+          moving[axis + 2] + shiftXYMm[axis] - dimensions[axis], receiving[axis] - minPad[axis],
+        ))
+        const upper = boardAxes.map(axis => Math.min(
+          moving[axis] + shiftXYMm[axis], receiving[axis + 2] - maxPad[axis],
+        ))
+        if (boardAxes.some(axis => lower[axis] > upper[axis])) {
+          orientationLimits.push({
+            turnDeg,
+            boardFaceShortfallMm: boardAxes.map(axis => Math.max(0, movingFaceSizeMm[axis] - dimensions[axis])),
+            receivingPadShortfallMm: boardAxes.map(axis => Math.max(0, maxPad[axis] - minPad[axis] - receivingFaceSizeMm[axis])),
+            originIntervalGapMm: boardAxes.map(axis => Math.max(0, lower[axis] - upper[axis])),
+          })
+          continue
+        }
+        const [x, y] = boardAxes.map(axis => (lower[axis] + upper[axis]) / 2)
+        return [{
+          partId: result.partId, restPartId, turnDeg,
+          boardXYXYMm: [x, y, x + dimensions[0], y + dimensions[1]] as Box,
+          padCentresXYMm: rotatedOffsets.map(([u, v]) => [x + u, y + v] as const),
+        }]
+      }
+      outsideFit.push({ partId: result.partId, restPartId, movingFaceSizeMm, receivingFaceSizeMm, orientationLimits })
+      return []
+    })
+    return { placements, outsideFit }
+  }
+  const { placements, outsideFit } = fit(retainedSize)
+  const retained = {
+    ...comparison, boardSizeMm: retainedSize, padWidthMm, worstRestPadN, restPadDemandMPa,
+    placements, outsideBoardFitPartIds: outsideFit.map(row => row.partId), held,
+  }
+  if (!trialSize) return { retained, trial: null }
+  const trialGeometry = { boardSizeMm: trialSize, padWidthMm, padPatternSizeMm, physicalAcceptance: false } as const
+  if (boardAxes.some(axis => trialSize[axis] < padPatternSizeMm[axis])) {
+    return { retained, trial: { ...trialGeometry, state: 'withheld', code: 'STUDY_BOARD_CANNOT_CONTAIN_PAD_PATTERN' } as const }
+  }
+  return { retained, trial: { ...comparison, ...trialGeometry, ...fit(trialSize), held } }
 }
 
 function openingSetout(resolved: CurrentDesignResolution, config: Case) {
@@ -454,6 +506,7 @@ function deriveStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
   const furnitureMotion = handling.state === 'withheld' ? null : compileStudyFurnitureMotion(
     movement.receipt.sha256, movement.turnReceiptSha256, handling.parking.parkedDesk, handling.parking.parkedChair, firstRest,
   )
+  const board = compareFirstRestBoard(parts, handling, furnitureMotion?.firstRest, request.firstRestBoardSizeMm)
   const { house } = readBoundOccupiedServices(resolved)
   const [doorMin, doorMax] = house.model.studyDoorOperation.rough
   const [, doorAxis] = house.model.studyDoorOperation.hinge
@@ -465,7 +518,8 @@ function deriveStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
     floor: {
       parts, emitterPlinth, jointMm: assembly.section.jointMm, wearingFaceMm: assembly.section.wearFaceMm, beddingMm: assembly.section.beddingTerritoryMm,
       depthUnassignedWithinFinishMm: assembly.section.finishSupportDepthUnresolvedMm, handling, furnitureMotion,
-      firstRestBoard: compareFirstRestBoard(parts, handling, furnitureMotion?.firstRest),
+      firstRestBoard: board.retained,
+      ...(request.firstRestBoardSizeMm === undefined ? {} : { firstRestBoardTrial: board.trial }),
       groundSupport: compileStudyGroundSupport(resolved, assembly.section, request.groundDeckLevelLossMm ?? 0),
       borderParts: parts.filter(part => part.role === 'border').length, release,
       coverageMm2: parts.reduce((total, part) => total + area(part.box), emitterPlinth.state === 'withheld' ? 0 : emitterPlinth.areaMm2),

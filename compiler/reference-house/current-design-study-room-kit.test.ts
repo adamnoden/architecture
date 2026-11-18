@@ -215,6 +215,46 @@ test('the retained emitter board supports the moving face and lands every pad fo
   }
 })
 
+test('Study board trials distinguish board coverage from irreducible receiver shortfalls', async () => {
+  const [squareResult, biggerResult, tooSmallResult, unsupportedResult] = await Promise.all([
+    current.studyRoomKit({ ...initial, firstRestBoardSizeMm: [300, 300] }),
+    current.studyRoomKit({ ...initial, firstRestBoardSizeMm: [400, 400] }),
+    current.studyRoomKit({ ...initial, firstRestBoardSizeMm: [119, 175] }),
+    current.studyRoomKit({ ...initial, pitchMm: 450, firstRestBoardSizeMm: [300, 300] }),
+  ])
+  const { kit } = squareResult
+  const retained = kit.floor.firstRestBoard
+  const square = kit.floor.firstRestBoardTrial
+  const bigger = biggerResult.kit.floor.firstRestBoardTrial
+  assert.ok(retained && square?.state === 'placement-comparison-only' && bigger?.state === 'placement-comparison-only')
+  assert.equal(square.physicalAcceptance, false)
+  assert.deepEqual(square.boardSizeMm, [300, 300])
+  assert.deepEqual(square.padPatternSizeMm, [120, 175])
+  assert.equal(square.comparedWitnessCount, 119)
+  assert.equal(square.placements.length, 107)
+  assert.equal(square.placements.filter(row => row.turnDeg === 90).length, 36)
+  const placed = new Set(square.placements.map(row => row.partId))
+  assert.ok(retained.placements.every(row => placed.has(row.partId)))
+  assert.notEqual(kit.caseDigest, biggerResult.kit.caseDigest)
+  assert.deepEqual(kit.floor.firstRestBoard, biggerResult.kit.floor.firstRestBoard)
+  assert.deepEqual(kit.floor.furnitureMotion?.firstRest, biggerResult.kit.floor.furnitureMotion?.firstRest)
+  assert.deepEqual(square.outsideFit, bigger.outsideFit)
+  assert.equal(square.outsideFit.length, 12)
+  assert.equal(square.outsideFit.filter(row => Math.min(...row.receivingFaceSizeMm) === 67.5).length, 8)
+  for (const row of square.outsideFit) {
+    assert.ok(!placed.has(row.partId))
+    const receiverShortfall = Math.min(...row.orientationLimits.map(limit => Math.max(...limit.receivingPadShortfallMm)))
+    assert.equal(receiverShortfall, Math.min(...row.receivingFaceSizeMm) === 67.5 ? 52.5 : 26.5)
+    assert.ok(row.orientationLimits.every(limit => limit.boardFaceShortfallMm.every(mm => mm === 0)))
+  }
+  assert.deepEqual(tooSmallResult.kit.floor.firstRestBoardTrial, {
+    state: 'withheld', code: 'STUDY_BOARD_CANNOT_CONTAIN_PAD_PATTERN', physicalAcceptance: false,
+    boardSizeMm: [119, 175], padWidthMm: 25, padPatternSizeMm: [120, 175],
+  })
+  assert.equal(unsupportedResult.kit.floor.firstRestBoardTrial, null)
+  await assert.rejects(current.studyRoomKit({ ...initial, firstRestBoardSizeMm: [0, 300] }), /INVALID_STUDY_FIRST_REST_BOARD_SIZE/)
+})
+
 test('A 15 mm finish preserves the ground datum but the floating support allowance is still short', async () => {
   const [standard, oak, stone] = await Promise.all([
     current.studyRoomKit(initial),
