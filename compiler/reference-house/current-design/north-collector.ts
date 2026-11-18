@@ -21,9 +21,17 @@ const id = 'STR-NORTH-FLOOR-COLLECTOR'
 type Point = readonly [number, number]
 type Vector3 = readonly [number, number, number]
 type Wrench = readonly [number, number, number, number, number, number]
+const keyContactIds = ['x-toe-end', 'x-toe-side', 'y-toe-end', 'y-toe-side'] as const
+type KeyContactId = typeof keyContactIds[number]
+type ContactCondition = { readonly gapMm: number; readonly stiffnessKNPerMm: number }
+type KeyContactTrial = {
+  readonly upper: Readonly<Record<KeyContactId, ContactCondition>>
+  readonly lower: Readonly<Record<KeyContactId, ContactCondition>>
+  readonly rotationBudgetMrad: number
+}
 type KeyFace = {
   readonly contacts: readonly {
-    readonly id: string
+    readonly id: KeyContactId
     readonly centreXYZMm: Vector3
     readonly forceKN: Vector3
     readonly bearingAreaMm2: number
@@ -42,6 +50,7 @@ interface NorthCollectorCase {
   readonly remoteMainBarShiftMm?: number
   readonly chordBendRadiusMm?: number
   readonly toeTransferIntervalMm?: Point
+  readonly keyContactTrial?: KeyContactTrial
   readonly yawProbe?: NorthYawProbe
   readonly deadLoadReplay?: { readonly windIndex: number }
 }
@@ -255,7 +264,7 @@ export function readNorthCollectorCase(resolved: CurrentDesignResolution) {
 
 function admitCase(value: unknown, binding: NonNullable<ReturnType<typeof bindingFor>>): NorthCollectorCase {
   const fields = ['schema', 'planDigest', 'bindingDigest', 'collectorId', 'portAxisXYMm', 'dragDemandFactor']
-  const optional = ['remoteMainBarShiftMm', 'chordBendRadiusMm', 'toeTransferIntervalMm', 'yawProbe', 'deadLoadReplay']
+  const optional = ['remoteMainBarShiftMm', 'chordBendRadiusMm', 'toeTransferIntervalMm', 'keyContactTrial', 'yawProbe', 'deadLoadReplay']
   if (!value || typeof value !== 'object' || Array.isArray(value)
       || fields.some(field => !Object.hasOwn(value, field))
       || Object.keys(value).some(field => !optional.includes(field) && !fields.includes(field))) {
@@ -283,6 +292,7 @@ function admitCase(value: unknown, binding: NonNullable<ReturnType<typeof bindin
       || !toeInterval.every(Number.isFinite) || toeInterval[0] < 0 || toeInterval[0] >= toeInterval[1])) {
     throw new Error('Use an increasing toe transfer interval in millimetres from the outboard edge')
   }
+  if (Object.hasOwn(trial, 'keyContactTrial')) admitKeyContactTrial(trial.keyContactTrial)
   if (Object.hasOwn(trial, 'yawProbe')) {
     const probe = trial.yawProbe
     if (!probe || typeof probe !== 'object' || Array.isArray(probe) || Object.keys(probe).length !== 2
@@ -300,6 +310,28 @@ function admitCase(value: unknown, binding: NonNullable<ReturnType<typeof bindin
     }
   }
   return trial
+}
+
+function hasExactKeys(value: unknown, keys: readonly string[]) {
+  return value !== null && typeof value === 'object' && !Array.isArray(value)
+    && Object.keys(value).length === keys.length && keys.every(key => Object.hasOwn(value, key))
+}
+
+function admitKeyContactTrial(trial: KeyContactTrial | undefined) {
+  if (!trial || !hasExactKeys(trial, ['upper', 'lower', 'rotationBudgetMrad'])
+      || !Number.isFinite(trial.rotationBudgetMrad) || trial.rotationBudgetMrad <= 0) {
+    throw new Error('Specify both key contact levels and a finite positive rotation budget in mrad')
+  }
+  for (const level of [trial.upper, trial.lower]) {
+    if (!hasExactKeys(level, keyContactIds)) throw new Error('Specify all four retained key contacts at each level')
+    for (const id of keyContactIds) {
+      const contact = level[id]
+      if (!contact || !hasExactKeys(contact, ['gapMm', 'stiffnessKNPerMm']) || !Number.isFinite(contact.gapMm)
+          || contact.gapMm < 0 || !Number.isFinite(contact.stiffnessKNPerMm) || contact.stiffnessKNPerMm <= 0) {
+        throw new Error(`Specify a finite nonnegative gap and positive stiffness for ${id}`)
+      }
+    }
+  }
 }
 
 function combineFixedBaseActions(
@@ -404,6 +436,44 @@ function toeTransferDemands({ extendedWeb, isolatedKeyLoadPath }: CollectorCompa
   return {
     schema: 'str-north-collector-toe-transfer/1' as const, intervalMm: span, section, cuts, admitted: false as const,
     scope: 'Isolated key yaw transferred over a rectangular toe-cut envelope at web depth. Weld topology, effective area, resistance, stiffness and coupled actions remain open.',
+  }
+}
+
+function compareKeyContact(comparison: CollectorComparison['groundSplice'], trial: KeyContactTrial) {
+  const levels = ['upper', 'lower'] as const
+  const runs = comparison.isolatedKeyLoadPath.runs.map(run => {
+    const faces = levels.map(level => {
+      const { contacts, wrench } = run[level]
+      const [a, b] = contacts
+      if (contacts.length !== 2 || !a || !b || a.forceKN.some((force, axis) => force !== -b.forceKN[axis])) {
+        throw new Error('Expected two opposing native key forces')
+      }
+      const forceKN = Math.hypot(...a.forceKN)
+      const dxMm = a.centreXYZMm[0] - b.centreXYZMm[0]
+      const dyMm = a.centreXYZMm[1] - b.centreXYZMm[1]
+      const leverMm = Math.abs((dxMm * a.forceKN[1] - dyMm * a.forceKN[0]) / forceKN)
+      if (!Number.isFinite(leverMm) || leverMm <= 0) throw new Error('Expected a finite native key couple arm')
+      const contactClosures = contacts.map(({ id }) => {
+        const { gapMm, stiffnessKNPerMm } = trial[level][id]
+        return { id, gapMm, stiffnessKNPerMm, compressionMm: forceKN / stiffnessKNPerMm }
+      })
+      const gapRotationMrad = 1000 * contactClosures.reduce((sum, contact) => sum + contact.gapMm, 0) / leverMm
+      const elasticRotationMrad = 1000 * contactClosures.reduce((sum, contact) => sum + contact.compressionMm, 0) / leverMm
+      return { level, yawSign: Math.sign(wrench[5]), forceKN, leverMm, contactClosures, gapRotationMrad, elasticRotationMrad }
+    })
+    const gapRotationMrad = faces.reduce((sum, face) => sum + face.gapRotationMrad, 0)
+    const elasticRotationMrad = faces.reduce((sum, face) => sum + face.elasticRotationMrad, 0)
+    const rotationMrad = gapRotationMrad + elasticRotationMrad
+    if (!Number.isFinite(rotationMrad)) throw new Error('Key rotation is outside the finite comparison range')
+    const remainingMrad = trial.rotationBudgetMrad - rotationMrad
+    return { upperYawSign: run.upperYawSign, faces, gapRotationMrad, elasticRotationMrad, rotationMrad, remainingMrad,
+      status: gapRotationMrad >= trial.rotationBudgetMrad ? 'gap-exhausts-budget' as const
+        : remainingMrad < 0 ? 'elastic-rotation-exceeds-budget' as const : 'within-trial-budget' as const }
+  })
+  return {
+    schema: 'str-north-collector-key-contact/1' as const, rotationBudgetMrad: trial.rotationBudgetMrad, runs,
+    admitted: false as const,
+    scope: 'Small rotation from gap closure and linear compression of two engaged key pairs in series. The rotation budget and springs are trial inputs. Plate and weld flexibility, bedding, load redistribution and neighbouring actions are excluded.',
   }
 }
 
@@ -559,6 +629,7 @@ export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: 
     : undefined)
   const fixedBaseActions = sameWind ? combineFixedBaseActions(sameWind.yawProbe, sameWind.deadLoadReplay) : undefined
   const chordTurn = trial.chordBendRadiusMm === undefined ? undefined : compareChordTurn(comparison, trial.chordBendRadiusMm)
+  const keyContact = trial.keyContactTrial ? compareKeyContact(comparison.groundSplice, trial.keyContactTrial) : undefined
   return {
     schema: 'str-north-collector-result/1' as const,
     status: 'computed-comparison' as const,
@@ -568,6 +639,7 @@ export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: 
     comparison,
     grossRootWeb: grossRootWebDemands(comparison.groundSplice),
     toeTransfer: toeTransferDemands(comparison.groundSplice, trial.toeTransferIntervalMm),
+    ...(keyContact ? { keyContact } : {}),
     stationCapacity,
     cabinetStationCapacity,
     drawingSvg,
@@ -576,7 +648,7 @@ export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: 
     ...(fixedBaseActions ? { fixedBaseActions } : {}),
     ...(chordTurn ? { chordTurn: { ...chordTurn, drawing: drawChordTurn(comparison, chordTurn) } } : {}),
     evidence: {
-      state: isReference ? 'historical-demand-comparison' : 'trial-only',
+      state: isReference && !keyContact ? 'historical-demand-comparison' : 'trial-only',
       installedAcceptance: false as const,
       outstanding: ['Continuous chord and wall cage', 'Imperforate ground splice', 'Coupled signed 52-head replay', 'Usable foul route and renewal'],
     },

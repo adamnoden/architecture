@@ -37,15 +37,29 @@ export interface FirstRestScreen {
   readonly liftMm: number
   readonly finishDepthMm: number
   readonly restBoardTopMm: number
+  readonly includeAlternateReceivers?: boolean
+  readonly maximumExtendedTransferMm?: number
+}
+
+export interface FirstRestWitness {
+  readonly stage: string
+  readonly restPartId: string
+  readonly shiftXYMm: Point
+  readonly faceSweepXYXYMm: PlanBox
+  readonly worker: Worker
+  readonly reachMm: number
+}
+
+export interface ExtendedFirstRestWitness extends FirstRestWitness {
+  readonly interveningPartId: string
 }
 
 type FirstRestOutcome = {
   readonly partId: string
 } & (
-  | { readonly state: 'direct-geometry-witness'; readonly witness: {
-      readonly stage: string; readonly restPartId: string; readonly shiftXYMm: Point
-      readonly faceSweepXYXYMm: PlanBox; readonly worker: Worker; readonly reachMm: number
-    }}
+  | { readonly state: 'direct-geometry-witness'; readonly witness: FirstRestWitness;
+      readonly alternateWitnesses?: readonly FirstRestWitness[];
+      readonly extendedWitnesses?: readonly ExtendedFirstRestWitness[] }
   | { readonly state: 'panel-sweep-unsupported'; readonly encounteredPlanProjectionIds: readonly string[] }
   | { readonly state: 'no-adjacent-whole-face-rest' | 'worker-stance-or-reach-unsupported' }
 )
@@ -56,6 +70,7 @@ interface FurnitureMotion {
     readonly physicalAcceptance: false
     readonly partCount: number
     readonly witnessCount: number
+    readonly extendedTransfer?: { readonly maximumTravelMm: number; readonly interveningPartCount: 1 }
     readonly transferVertical: {
       readonly initialLiftMm: number; readonly travelTopMm: number
       readonly travelUndersideMm: number; readonly firstRestBoardTopMm: number; readonly undersideReserveMm: number

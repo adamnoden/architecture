@@ -11153,7 +11153,7 @@
           "Maintained door operation and handling of floor parts from a supported deck"
         ],
         "source": {
-          "project/ias/studies/study-furniture-motion.py": "d9b9ead516f9f0e6307689fcb2953a7eec22dd10e5f8edd1d33ed150417e2045",
+          "project/ias/studies/study-furniture-motion.py": "635cda985a2a7caa7a47dcbf491754084c4882f6b9f8d234631d6fe2e32ff747",
           "project/bcr/studies/bay-interface-study.py": "7fea8b8b1b8e66a6f52ae8a6124eda84f8759a9c42c3ae31644296679f4e3e7c"
         }
       },
@@ -13068,271 +13068,11 @@
       120,
       175
     ],
+    "extendedTransfer": {
+      "maximumTravelMm": 600,
+      "interveningPartCount": 1
+    },
     "outsideFit": [
-      {
-        "partId": "GROUND/G-STUDY/room-kit/floor/800/429.5",
-        "restPartId": "GROUND/G-STUDY/room-kit/floor/1100/429.5",
-        "movingFaceSizeMm": [
-          297,
-          67.5
-        ],
-        "receivingFaceSizeMm": [
-          297,
-          67.5
-        ],
-        "orientationLimits": [
-          {
-            "turnDeg": 0,
-            "boardFaceShortfallMm": [
-              0,
-              0
-            ],
-            "receivingPadShortfallMm": [
-              0,
-              107.5
-            ],
-            "originIntervalGapMm": [
-              0,
-              107.5
-            ]
-          },
-          {
-            "turnDeg": 90,
-            "boardFaceShortfallMm": [
-              0,
-              0
-            ],
-            "receivingPadShortfallMm": [
-              0,
-              52.5
-            ],
-            "originIntervalGapMm": [
-              0,
-              52.5
-            ]
-          }
-        ]
-      },
-      {
-        "partId": "GROUND/G-STUDY/room-kit/floor/1100/429.5",
-        "restPartId": "GROUND/G-STUDY/room-kit/floor/800/429.5",
-        "movingFaceSizeMm": [
-          297,
-          67.5
-        ],
-        "receivingFaceSizeMm": [
-          297,
-          67.5
-        ],
-        "orientationLimits": [
-          {
-            "turnDeg": 0,
-            "boardFaceShortfallMm": [
-              0,
-              0
-            ],
-            "receivingPadShortfallMm": [
-              0,
-              107.5
-            ],
-            "originIntervalGapMm": [
-              0,
-              107.5
-            ]
-          },
-          {
-            "turnDeg": 90,
-            "boardFaceShortfallMm": [
-              0,
-              0
-            ],
-            "receivingPadShortfallMm": [
-              0,
-              52.5
-            ],
-            "originIntervalGapMm": [
-              0,
-              52.5
-            ]
-          }
-        ]
-      },
-      {
-        "partId": "GROUND/G-STUDY/room-kit/floor/1400/429.5",
-        "restPartId": "GROUND/G-STUDY/room-kit/floor/1100/429.5",
-        "movingFaceSizeMm": [
-          297,
-          67.5
-        ],
-        "receivingFaceSizeMm": [
-          297,
-          67.5
-        ],
-        "orientationLimits": [
-          {
-            "turnDeg": 0,
-            "boardFaceShortfallMm": [
-              0,
-              0
-            ],
-            "receivingPadShortfallMm": [
-              0,
-              107.5
-            ],
-            "originIntervalGapMm": [
-              0,
-              107.5
-            ]
-          },
-          {
-            "turnDeg": 90,
-            "boardFaceShortfallMm": [
-              0,
-              0
-            ],
-            "receivingPadShortfallMm": [
-              0,
-              52.5
-            ],
-            "originIntervalGapMm": [
-              0,
-              52.5
-            ]
-          }
-        ]
-      },
-      {
-        "partId": "GROUND/G-STUDY/room-kit/floor/1700/429.5",
-        "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/429.5",
-        "movingFaceSizeMm": [
-          297,
-          67.5
-        ],
-        "receivingFaceSizeMm": [
-          297,
-          67.5
-        ],
-        "orientationLimits": [
-          {
-            "turnDeg": 0,
-            "boardFaceShortfallMm": [
-              0,
-              0
-            ],
-            "receivingPadShortfallMm": [
-              0,
-              107.5
-            ],
-            "originIntervalGapMm": [
-              0,
-              107.5
-            ]
-          },
-          {
-            "turnDeg": 90,
-            "boardFaceShortfallMm": [
-              0,
-              0
-            ],
-            "receivingPadShortfallMm": [
-              0,
-              52.5
-            ],
-            "originIntervalGapMm": [
-              0,
-              52.5
-            ]
-          }
-        ]
-      },
-      {
-        "partId": "GROUND/G-STUDY/room-kit/floor/2000/429.5",
-        "restPartId": "GROUND/G-STUDY/room-kit/floor/1700/429.5",
-        "movingFaceSizeMm": [
-          297,
-          67.5
-        ],
-        "receivingFaceSizeMm": [
-          297,
-          67.5
-        ],
-        "orientationLimits": [
-          {
-            "turnDeg": 0,
-            "boardFaceShortfallMm": [
-              0,
-              0
-            ],
-            "receivingPadShortfallMm": [
-              0,
-              107.5
-            ],
-            "originIntervalGapMm": [
-              0,
-              107.5
-            ]
-          },
-          {
-            "turnDeg": 90,
-            "boardFaceShortfallMm": [
-              0,
-              0
-            ],
-            "receivingPadShortfallMm": [
-              0,
-              52.5
-            ],
-            "originIntervalGapMm": [
-              0,
-              52.5
-            ]
-          }
-        ]
-      },
-      {
-        "partId": "GROUND/G-STUDY/room-kit/floor/2300/429.5",
-        "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/429.5",
-        "movingFaceSizeMm": [
-          297,
-          67.5
-        ],
-        "receivingFaceSizeMm": [
-          297,
-          67.5
-        ],
-        "orientationLimits": [
-          {
-            "turnDeg": 0,
-            "boardFaceShortfallMm": [
-              0,
-              0
-            ],
-            "receivingPadShortfallMm": [
-              0,
-              107.5
-            ],
-            "originIntervalGapMm": [
-              0,
-              107.5
-            ]
-          },
-          {
-            "turnDeg": 90,
-            "boardFaceShortfallMm": [
-              0,
-              0
-            ],
-            "receivingPadShortfallMm": [
-              0,
-              52.5
-            ],
-            "originIntervalGapMm": [
-              0,
-              52.5
-            ]
-          }
-        ]
-      },
       {
         "partId": "GROUND/G-STUDY/room-kit/floor/4400/429.5",
         "restPartId": "GROUND/G-STUDY/room-kit/floor/4551.5/429.5",
@@ -13375,92 +13115,50 @@
               52.5
             ]
           }
-        ]
-      },
-      {
-        "partId": "GROUND/G-STUDY/room-kit/floor/4400/800",
-        "restPartId": "GROUND/G-STUDY/room-kit/floor/4551.5/800",
-        "movingFaceSizeMm": [
-          148.5,
-          148.5
         ],
-        "receivingFaceSizeMm": [
-          148.5,
-          148.5
-        ],
-        "orientationLimits": [
+        "alternateLimits": [
           {
-            "turnDeg": 0,
-            "boardFaceShortfallMm": [
-              0,
-              0
+            "partId": "GROUND/G-STUDY/room-kit/floor/4400/429.5",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/4100/429.5",
+            "movingFaceSizeMm": [
+              148.5,
+              67.5
             ],
-            "receivingPadShortfallMm": [
-              0,
-              26.5
+            "receivingFaceSizeMm": [
+              297,
+              67.5
             ],
-            "originIntervalGapMm": [
-              0,
-              26.5
-            ]
-          },
-          {
-            "turnDeg": 90,
-            "boardFaceShortfallMm": [
-              0,
-              0
-            ],
-            "receivingPadShortfallMm": [
-              26.5,
-              0
-            ],
-            "originIntervalGapMm": [
-              26.5,
-              0
-            ]
-          }
-        ]
-      },
-      {
-        "partId": "GROUND/G-STUDY/room-kit/floor/4400/951.5",
-        "restPartId": "GROUND/G-STUDY/room-kit/floor/4551.5/951.5",
-        "movingFaceSizeMm": [
-          148.5,
-          148.5
-        ],
-        "receivingFaceSizeMm": [
-          148.5,
-          148.5
-        ],
-        "orientationLimits": [
-          {
-            "turnDeg": 0,
-            "boardFaceShortfallMm": [
-              0,
-              0
-            ],
-            "receivingPadShortfallMm": [
-              0,
-              26.5
-            ],
-            "originIntervalGapMm": [
-              0,
-              26.5
-            ]
-          },
-          {
-            "turnDeg": 90,
-            "boardFaceShortfallMm": [
-              0,
-              0
-            ],
-            "receivingPadShortfallMm": [
-              26.5,
-              0
-            ],
-            "originIntervalGapMm": [
-              26.5,
-              0
+            "orientationLimits": [
+              {
+                "turnDeg": 0,
+                "boardFaceShortfallMm": [
+                  0,
+                  0
+                ],
+                "receivingPadShortfallMm": [
+                  0,
+                  107.5
+                ],
+                "originIntervalGapMm": [
+                  0,
+                  107.5
+                ]
+              },
+              {
+                "turnDeg": 90,
+                "boardFaceShortfallMm": [
+                  0,
+                  0
+                ],
+                "receivingPadShortfallMm": [
+                  0,
+                  52.5
+                ],
+                "originIntervalGapMm": [
+                  0,
+                  52.5
+                ]
+              }
             ]
           }
         ]
@@ -13507,92 +13205,50 @@
               52.5
             ]
           }
-        ]
-      },
-      {
-        "partId": "GROUND/G-STUDY/room-kit/floor/4551.5/800",
-        "restPartId": "GROUND/G-STUDY/room-kit/floor/4400/800",
-        "movingFaceSizeMm": [
-          148.5,
-          148.5
         ],
-        "receivingFaceSizeMm": [
-          148.5,
-          148.5
-        ],
-        "orientationLimits": [
+        "extendedLimits": [
           {
-            "turnDeg": 0,
-            "boardFaceShortfallMm": [
-              0,
-              0
+            "partId": "GROUND/G-STUDY/room-kit/floor/4551.5/429.5",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/4100/429.5",
+            "movingFaceSizeMm": [
+              148.5,
+              67.5
             ],
-            "receivingPadShortfallMm": [
-              0,
-              26.5
+            "receivingFaceSizeMm": [
+              297,
+              67.5
             ],
-            "originIntervalGapMm": [
-              0,
-              26.5
-            ]
-          },
-          {
-            "turnDeg": 90,
-            "boardFaceShortfallMm": [
-              0,
-              0
-            ],
-            "receivingPadShortfallMm": [
-              26.5,
-              0
-            ],
-            "originIntervalGapMm": [
-              26.5,
-              0
-            ]
-          }
-        ]
-      },
-      {
-        "partId": "GROUND/G-STUDY/room-kit/floor/4551.5/951.5",
-        "restPartId": "GROUND/G-STUDY/room-kit/floor/4400/951.5",
-        "movingFaceSizeMm": [
-          148.5,
-          148.5
-        ],
-        "receivingFaceSizeMm": [
-          148.5,
-          148.5
-        ],
-        "orientationLimits": [
-          {
-            "turnDeg": 0,
-            "boardFaceShortfallMm": [
-              0,
-              0
-            ],
-            "receivingPadShortfallMm": [
-              0,
-              26.5
-            ],
-            "originIntervalGapMm": [
-              0,
-              26.5
-            ]
-          },
-          {
-            "turnDeg": 90,
-            "boardFaceShortfallMm": [
-              0,
-              0
-            ],
-            "receivingPadShortfallMm": [
-              26.5,
-              0
-            ],
-            "originIntervalGapMm": [
-              26.5,
-              0
+            "orientationLimits": [
+              {
+                "turnDeg": 0,
+                "boardFaceShortfallMm": [
+                  0,
+                  0
+                ],
+                "receivingPadShortfallMm": [
+                  0,
+                  107.5
+                ],
+                "originIntervalGapMm": [
+                  0,
+                  107.5
+                ]
+              },
+              {
+                "turnDeg": 90,
+                "boardFaceShortfallMm": [
+                  0,
+                  0
+                ],
+                "receivingPadShortfallMm": [
+                  0,
+                  52.5
+                ],
+                "originIntervalGapMm": [
+                  0,
+                  52.5
+                ]
+              }
             ]
           }
         ]
@@ -13603,8 +13259,674 @@
       "Stable board and panel under load, breakaway and grip exchange",
       "Qualified deck, finish and bedding under local pad demand"
     ],
-    "placementCount": 107,
-    "quarterTurnCount": 36
+    "placementCount": 117,
+    "alternatePlacements": [
+      {
+        "partId": "GROUND/G-STUDY/room-kit/floor/800/429.5",
+        "restPartId": "GROUND/G-STUDY/room-kit/floor/800/500",
+        "turnDeg": 0,
+        "boardXYXYMm": [
+          800,
+          500,
+          1100,
+          800
+        ],
+        "padCentresXYMm": [
+          [
+            902.5,
+            575
+          ],
+          [
+            997.5,
+            575
+          ],
+          [
+            902.5,
+            725
+          ],
+          [
+            997.5,
+            725
+          ]
+        ],
+        "alternateWitness": {
+          "stage": "desk-and-chair-parked",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/800/500",
+          "shiftXYMm": [
+            0,
+            185.25
+          ],
+          "faceSweepXYXYMm": [
+            801.5,
+            431,
+            1098.5,
+            683.75
+          ],
+          "reserveMm": 76.25,
+          "worker": {
+            "points": [
+              [
+                1087.8374406701753,
+                833.5
+              ],
+              [
+                1087.8374406701753,
+                1018.75
+              ]
+            ],
+            "radius": 300,
+            "minimumClearance": 81.25,
+            "limitingObstacle": "study-desk",
+            "segment": 0
+          },
+          "reachMm": 451.28645738324747,
+          "stanceIntervalMm": [
+            837.9267374265241,
+            1337.7481439138264
+          ],
+          "normalAxis": "y"
+        }
+      },
+      {
+        "partId": "GROUND/G-STUDY/room-kit/floor/1100/429.5",
+        "restPartId": "GROUND/G-STUDY/room-kit/floor/1100/500",
+        "turnDeg": 0,
+        "boardXYXYMm": [
+          1100,
+          500,
+          1400,
+          800
+        ],
+        "padCentresXYMm": [
+          [
+            1202.5,
+            575
+          ],
+          [
+            1297.5,
+            575
+          ],
+          [
+            1202.5,
+            725
+          ],
+          [
+            1297.5,
+            725
+          ]
+        ],
+        "alternateWitness": {
+          "stage": "desk-and-chair-parked",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1100/500",
+          "shiftXYMm": [
+            0,
+            185.25
+          ],
+          "faceSweepXYXYMm": [
+            1101.5,
+            431,
+            1398.5,
+            683.75
+          ],
+          "reserveMm": 76.25,
+          "worker": {
+            "points": [
+              [
+                1250,
+                833.5
+              ],
+              [
+                1250,
+                1018.75
+              ]
+            ],
+            "radius": 300,
+            "minimumClearance": 81.25,
+            "limitingObstacle": "study-desk",
+            "segment": 0
+          },
+          "reachMm": 413.372183994037,
+          "stanceIntervalMm": [
+            862.2518560861737,
+            1637.7481439138264
+          ],
+          "normalAxis": "y"
+        }
+      },
+      {
+        "partId": "GROUND/G-STUDY/room-kit/floor/1400/429.5",
+        "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/500",
+        "turnDeg": 0,
+        "boardXYXYMm": [
+          1400,
+          500,
+          1700,
+          800
+        ],
+        "padCentresXYMm": [
+          [
+            1502.5,
+            575
+          ],
+          [
+            1597.5,
+            575
+          ],
+          [
+            1502.5,
+            725
+          ],
+          [
+            1597.5,
+            725
+          ]
+        ],
+        "alternateWitness": {
+          "stage": "desk-and-chair-parked",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/500",
+          "shiftXYMm": [
+            0,
+            185.25
+          ],
+          "faceSweepXYXYMm": [
+            1401.5,
+            431,
+            1698.5,
+            683.75
+          ],
+          "reserveMm": 76.25,
+          "worker": {
+            "points": [
+              [
+                1550,
+                833.5
+              ],
+              [
+                1550,
+                1018.75
+              ]
+            ],
+            "radius": 300,
+            "minimumClearance": 81.25,
+            "limitingObstacle": "study-desk",
+            "segment": 0
+          },
+          "reachMm": 413.372183994037,
+          "stanceIntervalMm": [
+            1162.2518560861736,
+            1937.7481439138264
+          ],
+          "normalAxis": "y"
+        }
+      },
+      {
+        "partId": "GROUND/G-STUDY/room-kit/floor/1700/429.5",
+        "restPartId": "GROUND/G-STUDY/room-kit/floor/1700/500",
+        "turnDeg": 0,
+        "boardXYXYMm": [
+          1700,
+          500,
+          2000,
+          800
+        ],
+        "padCentresXYMm": [
+          [
+            1802.5,
+            575
+          ],
+          [
+            1897.5,
+            575
+          ],
+          [
+            1802.5,
+            725
+          ],
+          [
+            1897.5,
+            725
+          ]
+        ],
+        "alternateWitness": {
+          "stage": "desk-and-chair-parked",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/1700/500",
+          "shiftXYMm": [
+            0,
+            185.25
+          ],
+          "faceSweepXYXYMm": [
+            1701.5,
+            431,
+            1998.5,
+            683.75
+          ],
+          "reserveMm": 76.25,
+          "worker": {
+            "points": [
+              [
+                1850,
+                833.5
+              ],
+              [
+                1850,
+                1018.75
+              ]
+            ],
+            "radius": 300,
+            "minimumClearance": 81.25,
+            "limitingObstacle": "study-desk",
+            "segment": 0
+          },
+          "reachMm": 413.372183994037,
+          "stanceIntervalMm": [
+            1462.2518560861736,
+            2237.7481439138264
+          ],
+          "normalAxis": "y"
+        }
+      },
+      {
+        "partId": "GROUND/G-STUDY/room-kit/floor/2000/429.5",
+        "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/500",
+        "turnDeg": 0,
+        "boardXYXYMm": [
+          2000,
+          500,
+          2300,
+          800
+        ],
+        "padCentresXYMm": [
+          [
+            2102.5,
+            575
+          ],
+          [
+            2197.5,
+            575
+          ],
+          [
+            2102.5,
+            725
+          ],
+          [
+            2197.5,
+            725
+          ]
+        ],
+        "alternateWitness": {
+          "stage": "desk-and-chair-parked",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/500",
+          "shiftXYMm": [
+            0,
+            185.25
+          ],
+          "faceSweepXYXYMm": [
+            2001.5,
+            431,
+            2298.5,
+            683.75
+          ],
+          "reserveMm": 76.25,
+          "worker": {
+            "points": [
+              [
+                2150,
+                833.5
+              ],
+              [
+                2150,
+                1018.75
+              ]
+            ],
+            "radius": 300,
+            "minimumClearance": 81.25,
+            "limitingObstacle": "study-desk",
+            "segment": 0
+          },
+          "reachMm": 413.372183994037,
+          "stanceIntervalMm": [
+            1762.2518560861736,
+            2537.7481439138264
+          ],
+          "normalAxis": "y"
+        }
+      },
+      {
+        "partId": "GROUND/G-STUDY/room-kit/floor/2300/429.5",
+        "restPartId": "GROUND/G-STUDY/room-kit/floor/2300/500",
+        "turnDeg": 0,
+        "boardXYXYMm": [
+          2300,
+          500,
+          2600,
+          800
+        ],
+        "padCentresXYMm": [
+          [
+            2402.5,
+            575
+          ],
+          [
+            2497.5,
+            575
+          ],
+          [
+            2402.5,
+            725
+          ],
+          [
+            2497.5,
+            725
+          ]
+        ],
+        "alternateWitness": {
+          "stage": "desk-and-chair-parked",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/2300/500",
+          "shiftXYMm": [
+            0,
+            185.25
+          ],
+          "faceSweepXYXYMm": [
+            2301.5,
+            431,
+            2598.5,
+            683.75
+          ],
+          "reserveMm": 79.03015993257094,
+          "worker": {
+            "points": [
+              [
+                2301.125928043087,
+                833.5
+              ],
+              [
+                2301.125928043087,
+                1018.75
+              ]
+            ],
+            "radius": 300,
+            "minimumClearance": 84.03015993257094,
+            "limitingObstacle": "study-desk",
+            "segment": 0
+          },
+          "reachMm": 455.9906347686578,
+          "stanceIntervalMm": [
+            2062.2518560861736,
+            2540
+          ],
+          "normalAxis": "y"
+        }
+      },
+      {
+        "partId": "GROUND/G-STUDY/room-kit/floor/4400/800",
+        "restPartId": "GROUND/G-STUDY/room-kit/floor/4100/800",
+        "turnDeg": 90,
+        "boardXYXYMm": [
+          4100,
+          725.75,
+          4400,
+          1025.75
+        ],
+        "padCentresXYMm": [
+          [
+            4325,
+            828.25
+          ],
+          [
+            4325,
+            923.25
+          ],
+          [
+            4175,
+            828.25
+          ],
+          [
+            4175,
+            923.25
+          ]
+        ],
+        "alternateWitness": {
+          "stage": "occupied",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/4100/800",
+          "shiftXYMm": [
+            -225.75,
+            0
+          ],
+          "faceSweepXYXYMm": [
+            4175.75,
+            801.5,
+            4550,
+            950
+          ],
+          "reserveMm": 13.75,
+          "worker": {
+            "points": [
+              [
+                4066.5,
+                766.25
+              ],
+              [
+                3840.75,
+                766.25
+              ]
+            ],
+            "radius": 300,
+            "minimumClearance": 18.75,
+            "limitingObstacle": "outer-S",
+            "segment": 0
+          },
+          "reachMm": 474.68496131645037,
+          "stanceIntervalMm": [
+            752.5,
+            780
+          ],
+          "normalAxis": "x"
+        }
+      },
+      {
+        "partId": "GROUND/G-STUDY/room-kit/floor/4400/951.5",
+        "restPartId": "GROUND/G-STUDY/room-kit/floor/4100/951.5",
+        "turnDeg": 90,
+        "boardXYXYMm": [
+          4100,
+          877.25,
+          4400,
+          1177.25
+        ],
+        "padCentresXYMm": [
+          [
+            4325,
+            979.75
+          ],
+          [
+            4325,
+            1074.75
+          ],
+          [
+            4175,
+            979.75
+          ],
+          [
+            4175,
+            1074.75
+          ]
+        ],
+        "alternateWitness": {
+          "stage": "occupied",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/4100/951.5",
+          "shiftXYMm": [
+            -225.75,
+            0
+          ],
+          "faceSweepXYXYMm": [
+            4175.75,
+            953,
+            4550,
+            1101.5
+          ],
+          "reserveMm": 13.75,
+          "worker": {
+            "points": [
+              [
+                4066.5,
+                766.25
+              ],
+              [
+                3840.75,
+                766.25
+              ]
+            ],
+            "radius": 300,
+            "minimumClearance": 18.75,
+            "limitingObstacle": "outer-S",
+            "segment": 0
+          },
+          "reachMm": 544.6159770884435,
+          "stanceIntervalMm": [
+            752.5,
+            780
+          ],
+          "normalAxis": "x"
+        }
+      }
+    ],
+    "extendedPlacements": [
+      {
+        "partId": "GROUND/G-STUDY/room-kit/floor/4551.5/800",
+        "restPartId": "GROUND/G-STUDY/room-kit/floor/4100/800",
+        "turnDeg": 90,
+        "boardXYXYMm": [
+          4100,
+          725.75,
+          4400,
+          1025.75
+        ],
+        "padCentresXYMm": [
+          [
+            4325,
+            828.25
+          ],
+          [
+            4325,
+            923.25
+          ],
+          [
+            4175,
+            828.25
+          ],
+          [
+            4175,
+            923.25
+          ]
+        ],
+        "extendedWitness": {
+          "stage": "occupied",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/4100/800",
+          "shiftXYMm": [
+            -377.25,
+            0
+          ],
+          "faceSweepXYXYMm": [
+            4175.75,
+            801.5,
+            4701.5,
+            950
+          ],
+          "reserveMm": 13.75,
+          "worker": {
+            "points": [
+              [
+                4218,
+                766.25
+              ],
+              [
+                3840.75,
+                766.25
+              ]
+            ],
+            "radius": 300,
+            "minimumClearance": 18.75,
+            "limitingObstacle": "outer-S",
+            "segment": 0
+          },
+          "reachMm": 474.68496131645037,
+          "stanceIntervalMm": [
+            752.5,
+            780
+          ],
+          "normalAxis": "x",
+          "interveningPartId": "GROUND/G-STUDY/room-kit/floor/4400/800"
+        }
+      },
+      {
+        "partId": "GROUND/G-STUDY/room-kit/floor/4551.5/951.5",
+        "restPartId": "GROUND/G-STUDY/room-kit/floor/4100/951.5",
+        "turnDeg": 90,
+        "boardXYXYMm": [
+          4100,
+          877.25,
+          4400,
+          1177.25
+        ],
+        "padCentresXYMm": [
+          [
+            4325,
+            979.75
+          ],
+          [
+            4325,
+            1074.75
+          ],
+          [
+            4175,
+            979.75
+          ],
+          [
+            4175,
+            1074.75
+          ]
+        ],
+        "extendedWitness": {
+          "stage": "occupied",
+          "restPartId": "GROUND/G-STUDY/room-kit/floor/4100/951.5",
+          "shiftXYMm": [
+            -377.25,
+            0
+          ],
+          "faceSweepXYXYMm": [
+            4175.75,
+            953,
+            4701.5,
+            1101.5
+          ],
+          "reserveMm": 13.75,
+          "worker": {
+            "points": [
+              [
+                4218,
+                766.25
+              ],
+              [
+                3840.75,
+                766.25
+              ]
+            ],
+            "radius": 300,
+            "minimumClearance": 18.75,
+            "limitingObstacle": "outer-S",
+            "segment": 0
+          },
+          "reachMm": 544.6159770884435,
+          "stanceIntervalMm": [
+            752.5,
+            780
+          ],
+          "normalAxis": "x",
+          "interveningPartId": "GROUND/G-STUDY/room-kit/floor/4400/951.5"
+        }
+      }
+    ],
+    "quarterTurnCount": 40
   },
   "thinGroundComparison": [
     {

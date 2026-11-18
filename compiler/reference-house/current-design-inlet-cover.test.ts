@@ -173,3 +173,77 @@ test('westward Utility toe relief preserves the wall heel and replays filler, pu
   await assert.rejects(compile.inletCover({ ...utility, closure: { ...closure, taperToeReliefMm: -1 } }), /non-negative/)
   assert.equal((await compile.inletCover(plant)).installedClosure.roundedTaper, null)
 })
+
+test('the shaped lid draws both actual first-rest contacts and checks a declared minimum per rail', async () => {
+  const [{ cover: utility }, { cover: plant }] = await compile.readInletCoverCases()
+  const closure = { profile: 'rounded-taper' as const, notchLapMm: 9, collarSealLandMm: 4,
+    collarOutsideDiameterMm: 92, wallReturnDepthMm: 10, fillerAndCollarClear: true, taperDetached: true,
+    taperToeReliefMm: 4 }
+  const surveyed = await compile.inletCover({ ...utility, closure })
+  const receiver = surveyed.roundedRelease?.receiver
+  assert.equal(receiver?.requiredFullWidthContactMm, null)
+  assert.equal(receiver?.lengthRequirementMet, null)
+  assert.deepEqual(receiver?.contact.map(({ side, fullWidthContactMm }) => [side, fullWidthContactMm]),
+    [['west', 29.0599], ['east', 127]])
+  assert.deepEqual(receiver?.contact[0].boundsMm?.x, [9915, 9923])
+  assert.equal(receiver?.contact[0].boundsMm?.y[0], 670)
+  assert.equal(surveyed.calculation.receiverBearingReserveMm, 1)
+  assert.equal(surveyed.roundedRelease?.captureQualified, false)
+
+  const westContact = surveyed.drawing.primitives.find(item => item.id === 'receiver-full-width-contact-0')
+  assert.equal(westContact?.metadata?.yMaxMm, receiver?.contact[0].boundsMm?.y[1])
+  assert.ok(surveyed.drawing.primitives.some(item => item.id === 'rounded-first-rest-notch-west'))
+  assert.ok(surveyed.drawing.primitives.some(item => item.id === 'rounded-after-axial-release-notch-east'))
+  assert.ok(!surveyed.drawing.primitives.some(item => item.id === 'first-rest-0'))
+
+  const tooShort = await compile.inletCover({ ...utility, closure: { ...closure, minimumReceiverContactMm: 30 } })
+  assert.deepEqual(tooShort.roundedRelease?.diagnostics, ['ROUNDED_RECEIVER_CONTACT_TOO_SHORT'])
+  assert.equal(tooShort.roundedRelease?.assembledCandidateStatus, 'blocked')
+  const inside = await compile.inletCover({ ...utility, closure: { ...closure, minimumReceiverContactMm: 29 } })
+  assert.equal(inside.roundedRelease?.receiver?.lengthRequirementMet, true)
+  assert.equal(inside.roundedRelease?.assembledCandidateStatus, 'within-conditional-fit-and-withdrawal')
+  assert.notEqual(inside.source.caseDigest, tooShort.source.caseDigest)
+
+  const bound = await compile.inletCover({ ...utility, closure: { ...closure, taperToeReliefMm: 0 } })
+  assert.deepEqual(bound.roundedRelease?.receiver?.contact.map(row => row.fullWidthContactMm), [26.0744, 127])
+  assert.equal((await compile.inletCover(plant)).roundedRelease, null)
+  await assert.rejects(compile.inletCover({ ...utility, closure: { ...closure, minimumReceiverContactMm: 0 } }), /positive Utility minimum/)
+})
+
+test('the held-heel taper reports the simultaneous three-interface reserve interval and governing limits', async () => {
+  const [{ cover }] = await compile.readInletCoverCases()
+  const closure = { profile: 'rounded-taper' as const, notchLapMm: 9, collarSealLandMm: 4,
+    collarOutsideDiameterMm: 92, wallReturnDepthMm: 10, fillerAndCollarClear: true, taperDetached: true,
+    taperToeReliefMm: 4, minimumTaperReservesMm: { filler: 5, baffle: 5, purge: 5 } }
+  const narrow = await compile.inletCover({ ...cover, closure })
+  const envelope = narrow.installedClosure.roundedTaper?.relief.reserveEnvelope
+  const range = envelope?.toeReliefRangeMm
+  assert.ok(range)
+  assert.ok(Math.abs(range.minimum - 12.8189) < 0.0001)
+  assert.ok(Math.abs(range.maximum - 30.9822) < 0.0001)
+  assert.equal(range.maximumIncluded, true)
+  for (const taperToeReliefMm of [range.minimum, range.maximum]) {
+    const limit = await compile.inletCover({ ...cover, closure: { ...closure, taperToeReliefMm } })
+    assert.deepEqual(limit.installedClosure.roundedTaper?.relief.reserveEnvelope?.trialMisses, [])
+  }
+  assert.deepEqual(envelope?.trialMisses, ['filler', 'baffle'])
+  assert.deepEqual(envelope?.bestCommonReserve, { afterSettingsMm: 11.0756, toeReliefMm: 24.6507,
+    attained: true, controllingInterfaces: ['filler', 'purge'] })
+  assert.deepEqual(narrow.installedClosure.diagnostics, ['TAPER_RELIEF_MISSES_DECLARED_RESERVES'])
+
+  const balanced = await compile.inletCover({ ...cover, closure: { ...closure, taperToeReliefMm: 20 } })
+  assert.deepEqual(balanced.installedClosure.roundedTaper?.relief.reserveEnvelope?.trialMisses, [])
+  assert.equal(balanced.roundedRelease?.assembledCandidateStatus, 'within-conditional-fit-and-withdrawal')
+  assert.deepEqual(balanced.roundedRelease?.receiver?.contact.map(row => row.fullWidthContactMm), [46.4506, 127])
+  assert.equal(balanced.roundedRelease?.captureQualified, false)
+  assert.equal(balanced.installedClosure.wetClosureQualified, false)
+
+  const separate = await compile.inletCover({ ...cover, closure: { ...closure, taperToeReliefMm: 20,
+    minimumTaperReservesMm: { ...closure.minimumTaperReservesMm, baffle: 20 } } })
+  assert.deepEqual(separate.installedClosure.roundedTaper?.relief.reserveEnvelope?.trialMisses, ['baffle'])
+  const impossible = await compile.inletCover({ ...cover, closure: { ...closure,
+    minimumTaperReservesMm: { filler: 12, baffle: 12, purge: 12 } } })
+  assert.equal(impossible.installedClosure.roundedTaper?.relief.reserveEnvelope?.toeReliefRangeMm, null)
+  await assert.rejects(compile.inletCover({ ...cover, closure: { ...closure,
+    minimumTaperReservesMm: { filler: -1, baffle: 5, purge: 5 } } }), /separate finite non-negative/)
+})

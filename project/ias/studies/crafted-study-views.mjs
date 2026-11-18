@@ -279,6 +279,8 @@ const drawings = [
       caseDigest: squareBoard.kit.caseDigest,
       ...boardLimits,
       placementCount: boardPlacements.length,
+      alternatePlacements: boardPlacements.filter(row => row.alternateWitness),
+      extendedPlacements: boardPlacements.filter(row => row.extendedWitness),
       quarterTurnCount: boardPlacements.filter(row => row.turnDeg === 90).length,
     },
     thinGroundComparison: [thinOak.kit, thinStone.kit].map(({request, caseDigest, floor}) => ({

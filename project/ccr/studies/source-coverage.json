@@ -847,7 +847,7 @@
     "project/design-constraints.ts": "0c76e5372a2537bbc6f3c6c29f07ab0efa297129",
     "project/str/studies/floor-portal-monolithic-drag.py": "2a68e1ca739c93505482a5e9b503aff4340b5c64",
     "project/str/studies/floor-portal-monolithic-drag.json": "9a8cf79026419f3b9f05cee4b573b6dd1f3a04e6",
-    "project/str/floor-portal-monolithic-drag.md": "69cdea936dc83a379f83e384b3dff572b604d7e0",
+    "project/str/floor-portal-monolithic-drag.md": "dca12581ec6d80bc8e41fbe48c953c3c48fdb5e5",
     "project/str/studies/current-house-ground-ties.json": "80c5ede6bcbe0b0bb3a19032feddd8403fbf19b1",
     "project/had/studies/south-inlet-sill-insert.mjs": "5b8102418d8ea33bd6a03fe2dd7cde41efe943ff",
     "project/had/studies/south-inlet-sill-insert-kernel.mjs": "3df75b2cb2fa492c6b3e5b2a04a113f481007880",
@@ -856,7 +856,7 @@
     "project/had/studies/south-inlet-under-sill.json": "7d60da325cd76bb9d7924bc4bb64f1b93b51b644",
     "project/had/studies/south-inlet-wet-box.json": "0ccc6a7b1584145b5e77c7b89e9e2b8ce8b7d665",
     "project/str/studies/floor-portal-interface-review.json": "ad8aac21e936f0199b331c3bd886c8bb41f30ee3",
-    "compiler/reference-house/current-design/north-collector.ts": "f5dae6b1afc2b78b843afa38fa4bfd8ae46cb42e",
+    "compiler/reference-house/current-design/north-collector.ts": "e96577df8dffd7eb59e851d9fc6fcd3016e8e64e",
     "compiler/reference-house/current-design/inlet-sill-insert.ts": "08d96ab51ecbd883df0dd56573327a2e0e4d63b4",
     "project/had/south-inlet-relief.md": "9bde59b3cc55bc4fb7156402e50337b9f27fc3a5",
     "project/had/studies/south-inlet-relief.mjs": "2648332efff491577ce285dc315e9e38006ecbbc",
@@ -885,9 +885,9 @@
     "project/had/studies/current-house-service-outputs.mjs": "ed9b9796099e5b8736d11a1d90bb93a566bfe12d",
     "project/had/studies/occupied-service-plate.mjs": "1d5b59e2945bcc58234d7ee96d41ec3473aa1ec2",
     "project/had/studies/selected-service-plate.mjs": "732c5d440d2963a6092a0bf2bfdd8df8e198a54b",
-    "project/had/south-inlet-wet-box.md": "05869e09ff181bd87c8ae218f18f56cfb9e78d8c",
+    "project/had/south-inlet-wet-box.md": "e7f6e88b8b359b6a1019033c775c5b0bd803a539",
     "project/had/studies/south-inlet-wet-box.mjs": "2b6ae4e01c29823c6d91e78cd4657b4fe373a618",
     "compiler/reference-house/current-design/inlet-removal.ts": "7ec2b5103fd2012cffaacc9153a53128502c5308",
-    "compiler/reference-house/current-design/inlet-cover.ts": "521d162759e31fae9c7e96496a47d3a82505ed0d"
+    "compiler/reference-house/current-design/inlet-cover.ts": "60b2977b483e005fb40a704052601f81410efab5"
   }
 }

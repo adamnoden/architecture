@@ -5,7 +5,7 @@ import { applyDesignEdit, beginDesignEdit, editBase, type EditOperation } from '
 import { readBoundOccupiedServices } from '../occupied-services.js'
 import type { CurrentDesignResolution } from '../resolve.js'
 import { compileRenewableOpenings } from './renewable-openings.js'
-import { compileStudyFurnitureMotion } from './study-furniture-motion.js'
+import { compileStudyFurnitureMotion, type ExtendedFirstRestWitness, type FirstRestWitness } from './study-furniture-motion.js'
 import { compileResolvedStudyAssembly } from './study-floor.js'
 import { compileStudyGroundSupport } from './study-ground-support.js'
 import { compileResolvedStudyLinings, layStudySouthPanelStock } from './study-linings.js'
@@ -321,7 +321,7 @@ function compareFirstRestBoard(
   } as const
   const held = ['Board placement and clearance to occupant, adjacent finishes and fixed obstructions',
     'Stable board and panel under load, breakaway and grip exchange', 'Qualified deck, finish and bedding under local pad demand'] as const
-  const fit = (boardSizeMm: Pair) => {
+  const fit = (boardSizeMm: Pair, tryOtherReceivers = false) => {
     const [width, depth] = boardSizeMm
     const offsets = centredPads.map(([x, y]) => [x + width / 2, y + depth / 2] as const)
     const orientations = [
@@ -332,11 +332,8 @@ function compareFirstRestBoard(
       minPad: boardAxes.map(axis => Math.min(...orientation.offsets.map(point => point[axis])) - padHalf),
       maxPad: boardAxes.map(axis => Math.max(...orientation.offsets.map(point => point[axis])) + padHalf),
     }))
-    const outsideFit: BoardFitLimit[] = []
-    const placements = firstRest.parts.flatMap(result => {
-      if (result.state !== 'direct-geometry-witness') return []
-      const { restPartId, shiftXYMm } = result.witness
-      const moving = faceByPartId.get(result.partId)!
+    const place = (partId: string, { restPartId, shiftXYMm }: FirstRestWitness) => {
+      const moving = faceByPartId.get(partId)!
       const receiving = faceByPartId.get(restPartId)!
       const movingFaceSizeMm = boxSize(moving)
       const receivingFaceSizeMm = boxSize(receiving)
@@ -358,13 +355,42 @@ function compareFirstRestBoard(
           continue
         }
         const [x, y] = boardAxes.map(axis => (lower[axis] + upper[axis]) / 2)
-        return [{
-          partId: result.partId, restPartId, turnDeg,
-          boardXYXYMm: [x, y, x + dimensions[0], y + dimensions[1]] as Box,
-          padCentresXYMm: rotatedOffsets.map(([u, v]) => [x + u, y + v] as const),
-        }]
+        return {
+          placement: {
+            partId, restPartId, turnDeg,
+            boardXYXYMm: [x, y, x + dimensions[0], y + dimensions[1]] as Box,
+            padCentresXYMm: rotatedOffsets.map(([u, v]) => [x + u, y + v] as const),
+          },
+        }
       }
-      outsideFit.push({ partId: result.partId, restPartId, movingFaceSizeMm, receivingFaceSizeMm, orientationLimits })
+      return { limit: { partId, restPartId, movingFaceSizeMm, receivingFaceSizeMm, orientationLimits } }
+    }
+    const outsideFit: (BoardFitLimit & { alternateLimits?: BoardFitLimit[]; extendedLimits?: BoardFitLimit[] })[] = []
+    type Placement = NonNullable<ReturnType<typeof place>['placement']> & {
+      alternateWitness?: FirstRestWitness
+      extendedWitness?: ExtendedFirstRestWitness
+    }
+    const placements = firstRest.parts.flatMap<Placement>(result => {
+      if (result.state !== 'direct-geometry-witness') return []
+      const preferred = place(result.partId, result.witness)
+      if (preferred.placement) return [preferred.placement]
+      const alternateLimits: BoardFitLimit[] = []
+      for (const alternate of (tryOtherReceivers ? result.alternateWitnesses ?? [] : [])) {
+        const candidate = place(result.partId, alternate)
+        if (candidate.placement) return [{ ...candidate.placement, alternateWitness: alternate }]
+        alternateLimits.push(candidate.limit)
+      }
+      const extendedLimits: BoardFitLimit[] = []
+      for (const extended of (tryOtherReceivers ? result.extendedWitnesses ?? [] : [])) {
+        const candidate = place(result.partId, extended)
+        if (candidate.placement) return [{ ...candidate.placement, extendedWitness: extended }]
+        extendedLimits.push(candidate.limit)
+      }
+      outsideFit.push({
+        ...preferred.limit,
+        ...(alternateLimits.length ? { alternateLimits } : {}),
+        ...(extendedLimits.length ? { extendedLimits } : {}),
+      })
       return []
     })
     return { placements, outsideFit }
@@ -379,7 +405,9 @@ function compareFirstRestBoard(
   if (boardAxes.some(axis => trialSize[axis] < padPatternSizeMm[axis])) {
     return { retained, trial: { ...trialGeometry, state: 'withheld', code: 'STUDY_BOARD_CANNOT_CONTAIN_PAD_PATTERN' } as const }
   }
-  return { retained, trial: { ...comparison, ...trialGeometry, ...fit(trialSize), held } }
+  return { retained, trial: {
+    ...comparison, ...trialGeometry, extendedTransfer: firstRest.extendedTransfer, ...fit(trialSize, true), held,
+  } }
 }
 
 function openingSetout(resolved: CurrentDesignResolution, config: Case) {
@@ -502,6 +530,7 @@ function deriveStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
     bodyRadiusMm, bodyToPanelMm, bodySettingMm, maximumReachMm, verticalGripDifferenceMm: shoulderZ - gripZ,
     liftMm: handling.emitterEdgeRelease.pickupLiftMm,
     restBoardTopMm: handling.emitterEdgeRelease.restBoardTopMm, finishDepthMm: assembly.section.finishDepthMm,
+    ...(request.firstRestBoardSizeMm ? { includeAlternateReceivers: true, maximumExtendedTransferMm: 2 * assembly.grid.pitchMm } : {}),
   }
   const furnitureMotion = handling.state === 'withheld' ? null : compileStudyFurnitureMotion(
     movement.receipt.sha256, movement.turnReceiptSha256, handling.parking.parkedDesk, handling.parking.parkedChair, firstRest,
