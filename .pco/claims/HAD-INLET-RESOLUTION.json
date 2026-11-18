@@ -9,9 +9,9 @@
     "label": "ovid-inlet-removal"
   },
   "claimedAt": "2026-11-17T22:59:48.025Z",
-  "heartbeatAt": "2026-11-18T00:12:59.509Z",
-  "expiresAt": "2026-11-18T00:57:59.509Z",
-  "branch": "work/study-room-kit-integration-2026-11-17",
+  "heartbeatAt": "2026-11-18T00:41:33.760Z",
+  "expiresAt": "2026-11-18T01:26:33.760Z",
+  "branch": "work/current-gallery-compiler-2026-11-18",
   "predecessor": {
     "leaseId": "0ddabf6c-f6bb-4124-8614-3bf3b1a6c543",
     "generation": 41,
@@ -34,10 +34,10 @@
       "blocker": "The retained plant envelope does not admit the R75 lift-off comparison. Actual restraint, withdrawal, capture and rated assembled performance remain unproved."
     }
   },
-  "pr": 1568,
+  "pr": 1573,
   "checkpoint": {
-    "evidence": "Joint PR #1568 merged via 3e8e6a8b8c4ca39383b14f45103dff25917c2ec8 with inlet carrier draw and IAS washer binding. The separate upper cover and offset first rest are implemented and locally verified in df0d2c28432d4fc1d3105c3adedec7eda58f17af, including the inline-rest and installed-washer failures. The cover follow-on is not published.",
-    "next": "Reconcile the verified cover case with current main and coordinate the next combined PR branch before rebinding this lease. Verify hosted exact-head CI and preflight before merge.",
-    "blocker": "The cover and offset landing are geometric comparisons. Actual pressure/weather seals, support, positive capture, rated Z900 disconnection and installed wet verification remain open."
+    "evidence": "Joint follow-on PR #1573 exact head e8a4490861b1959d58932f7befc55adb24b57d29 includes the locally verified U-notched cover, retained-front and washer comparisons, and independent bearing footprints. Original carrier draw is merged at 3e8e6a8b.",
+    "next": "Verify hosted CI at this exact head and run HAD lease preflight on the joint branch before its coordinated merge. Continue with positive transfer capture, independently retained notch filler and matched Z900 disconnect.",
+    "blocker": "The modeled inline rest blocks the carrier at 84 mm. Side rest is conditional on the restrained washer and actual lid, seal, anchor, capture, product and pressure evidence."
   }
 }
