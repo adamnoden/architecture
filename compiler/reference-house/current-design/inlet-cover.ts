@@ -312,8 +312,97 @@ function roundedReceiverContact(taper: RoundedTaper, rails: readonly Footprint[]
   }
 }
 
+function roundedLidCentroid(taper: RoundedTaper, fabricationMm: number) {
+  const { outline, centre: [cx, cy], formedNotchRadiusMm: radius } = taper
+  const back = outline[0][1] - cy
+  const front = outline[2][1] - cy
+  const { heelMm: [heelX, heelY], trialToeMm: [toeX, toeY] } = taper.relief
+  const dx = toeX - heelX
+  const dy = toeY - heelY
+  const distance = (dy * (cx - heelX) - dx * (cy - heelY)) / Math.hypot(dx, dy)
+  if (back > 0 || front < radius || distance < radius + fabricationMm ||
+      outline[0][0] > cx - radius || outline[1][0] < cx + radius) return null
+
+  const ring = outline.map(([x, y]) => [x - cx, y - cy] as const)
+  let twiceArea = 0
+  let firstMomentXTimesSix = 0
+  let firstMomentYTimesSix = 0
+  for (const [index, [x, y]] of ring.entries()) {
+    const [u, v] = ring[(index + 1) % ring.length]
+    const cross = x * v - u * y
+    twiceArea += cross
+    firstMomentXTimesSix += (x + u) * cross
+    firstMomentYTimesSix += (y + v) * cross
+  }
+  const throatArea = -2 * radius * back
+  const arcArea = Math.PI * radius * radius / 2
+  const areaMm2 = twiceArea / 2 - throatArea - arcArea
+  if (areaMm2 <= 0) return null
+  // The rear throat and front semicircle are both symmetric across the riser axis.
+  const notchFirstMomentY = throatArea * back / 2 + 2 * radius ** 3 / 3
+  return { areaMm2, centreMm: [cx + firstMomentXTimesSix / (6 * areaMm2),
+    cy + (firstMomentYTimesSix / 6 - notchFirstMomentY) / areaMm2] as const }
+}
+
+function receiverSupportPolygon(contact: ReturnType<typeof roundedReceiverContact>['contact']): PlanPoint[] {
+  const bands = contact.flatMap(({ boundsMm }) => boundsMm ? [boundsMm] : [])
+  if (bands.length === 0) return []
+  const [west, east = west] = bands
+  // The two parallel bands begin at the same Y. Only the longer band
+  // contributes both of its front corners to the convex support polygon.
+  const polygon: PlanPoint[] = [[west.x[0], west.y[0]], [east.x[1], east.y[0]], [east.x[1], east.y[1]]]
+  if (east.y[1] > west.y[1]) polygon.push([east.x[0], east.y[1]])
+  if (west.y[1] > east.y[1]) polygon.push([west.x[1], west.y[1]])
+  polygon.push([west.x[0], west.y[1]])
+  return polygon
+}
+
+type SupportEdge = readonly [PlanPoint, PlanPoint]
+const signedSupportMargin = ([[x, y], [u, v]]: SupportEdge, [px, py]: PlanPoint) =>
+  ((u - x) * (py - y) - (v - y) * (px - x)) / Math.hypot(u - x, v - y)
+
+function eccentricVerticalLoad(outline: readonly PlanPoint[], edges: readonly SupportEdge[], centreMm: PlanPoint) {
+  let governing: { ratio: number; vertexMm: PlanPoint; supportEdgeMm: SupportEdge } | null = null
+  for (const supportEdgeMm of edges) {
+    const lidMarginMm = signedSupportMargin(supportEdgeMm, centreMm)
+    // The signed moment arm is linear in the load point. Its extreme over
+    // the remaining lid is at an outer vertex, despite the inner U-notch.
+    for (const vertexMm of outline) {
+      const loadArmMm = signedSupportMargin(supportEdgeMm, vertexMm)
+      if (loadArmMm >= 0) continue
+      const ratio = lidMarginMm / -loadArmMm
+      if (governing === null || ratio < governing.ratio) governing = { ratio, vertexMm, supportEdgeMm }
+    }
+  }
+  return governing === null ? { status: 'entire-outline-inside-support' as const } : {
+    status: 'finite-support-edge-limit' as const,
+    pointLoadToBareLidWeightAtEdge: round(governing.ratio),
+    governingVertexMm: governing.vertexMm, governingSupportEdgeMm: governing.supportEdgeMm,
+  }
+}
+
+function roundedGravityRest(taper: RoundedTaper, receiver: ReturnType<typeof roundedReceiverContact>,
+  fabricationMm: number, sideMm: number, axialMm: number) {
+  const lid = roundedLidCentroid(taper, fabricationMm)
+  const supportPolygonMm = receiverSupportPolygon(receiver.contact)
+  const centreMm = lid ? [lid.centreMm[0] + sideMm, lid.centreMm[1] + axialMm] as const : null
+  const edges = supportPolygonMm.map((vertex, i) => [vertex, supportPolygonMm[(i + 1) % supportPolygonMm.length]] as const)
+  const edgeMargins = centreMm ? edges.map(edge => signedSupportMargin(edge, centreMm)) : []
+  const margin = edgeMargins.length > 0 ? Math.min(...edgeMargins) : null
+  const status = lid === null ? 'unsupported-lid-profile' : margin === null ? 'no-full-width-support' :
+    margin < 0 ? 'centre-outside-support' : margin === 0 ? 'centre-on-support-edge' : 'centre-inside-support'
+  return {
+    status, lidAreaMm2: lid === null ? null : round(lid.areaMm2), centreOfMassMm: centreMm, supportPolygonMm,
+    minimumSignedSupportEdgeMarginMm: margin === null ? null : round(margin),
+    eccentricVerticalPointLoad: centreMm && margin !== null && margin > 0
+      ? eccentricVerticalLoad(taper.outline.map(([x, y]) => [x + sideMm, y + axialMm]), edges, centreMm) : null,
+    evidence: 'bare uniform flat lid under vertical gravity only' as const,
+  }
+}
+
 function coverPlan(branch: CoverCase['branch'], positions: Readonly<Record<string, readonly Footprint[]>>,
-  caseDigest: string, rounded?: { taper: RoundedTaper; axialMm: number; sideMm: number }): DrawingSceneV2 {
+  caseDigest: string, rounded?: { taper: RoundedTaper; axialMm: number; sideMm: number;
+    gravity: ReturnType<typeof roundedGravityRest> | null }): DrawingSceneV2 {
   const items = Object.values(positions).flat()
   const taper = rounded ? [rounded.taper.relief.heelMm, rounded.taper.relief.boundToeMm, rounded.taper.relief.trialToeMm] : []
   const west = Math.min(...items.map(item => item.x[0]), ...taper.map(([x]) => x))
@@ -333,8 +422,8 @@ function coverPlan(branch: CoverCase['branch'], positions: Readonly<Record<strin
     }))
   })
   if (rounded) {
-    const addLine = (id: string, from: PlanPoint, to: PlanPoint) => primitives.push({
-      id, kind: 'line', role: 'primary',
+    const addLine = (id: string, from: PlanPoint, to: PlanPoint, role: 'primary' | 'secondary' = 'primary') => primitives.push({
+      id, kind: 'line', role,
       a: project.point(...from), b: project.point(...to),
       metadata: { caseDigest, fromXMm: from[0], fromYMm: from[1], toXMm: to[0], toYMm: to[1] },
     })
@@ -362,6 +451,16 @@ function coverPlan(branch: CoverCase['branch'], positions: Readonly<Record<strin
       for (let index = 0; index < arcSegments; index++) addLine(notch + 'arc-' + index, arcPoint(index), arcPoint(index + 1))
       addLine(notch + 'west', translate([cx - radius, cy]), translate([cx - radius, yBack]))
       addLine(notch + 'east', translate([cx + radius, cy]), translate([cx + radius, yBack]))
+    }
+    const gravity = rounded.gravity
+    if (gravity) {
+      gravity.supportPolygonMm.forEach((from, index, ring) => addLine('first-rest-support-polygon-' + index,
+        from, ring[(index + 1) % ring.length], 'secondary'))
+      if (gravity.centreOfMassMm) {
+        const [x, y] = gravity.centreOfMassMm
+        addLine('first-rest-lid-centre-x', [x - 2, y], [x + 2, y])
+        addLine('first-rest-lid-centre-y', [x, y - 2], [x, y + 2])
+      }
     }
   }
   return {
@@ -455,17 +554,22 @@ export function runInletCoverCase(resolved: CurrentDesignResolution, input: unkn
   const rounded = installedClosure.roundedTaper
   const receiver = rounded ? roundedReceiverContact(rounded, rails, fabrication, side, axial,
     calculation.receiverBearingReserveMm, trial.closure?.minimumReceiverContactMm) : null
+  const gravity = rounded && receiver ? roundedGravityRest(rounded, receiver, fabrication, side, axial) : null
   const shapedReleaseDiagnostics = rounded ? [
     ...(trial.closure?.fillerAndCollarClear ? [] : ['FILLER_AND_COLLAR_REMAIN_ENGAGED']),
     ...(trial.closure?.taperDetached ? [] : ['UTILITY_TAPER_REMAINS_ATTACHED']),
     ...(receiver?.lengthRequirementMet === false ? ['ROUNDED_RECEIVER_CONTACT_TOO_SHORT'] : []),
+    ...(gravity?.status === 'unsupported-lid-profile' ? ['UNSUPPORTED_ROUNDED_LID_CENTROID'] : []),
+    ...(gravity?.status === 'no-full-width-support' ? ['ROUNDED_LID_HAS_NO_FULL_WIDTH_SUPPORT'] : []),
+    ...(gravity?.status === 'centre-outside-support' || gravity?.status === 'centre-on-support-edge'
+      ? ['ROUNDED_LID_LACKS_POSITIVE_GRAVITY_RESERVE'] : []),
     ...diagnostics.map(({ code }) => code),
   ] : null
   const roundedRelease = shapedReleaseDiagnostics && {
     status: shapedReleaseDiagnostics.length ? 'blocked' as const : 'within-declared-rounded-release-screen' as const,
     assembledCandidateStatus: installedClosure.status === 'blocked' || shapedReleaseDiagnostics.length
       ? 'blocked' as const : 'within-conditional-fit-and-withdrawal' as const,
-    diagnostics: shapedReleaseDiagnostics, receiver,
+    diagnostics: shapedReleaseDiagnostics, receiver, gravity,
     axialStrokeToClearRiserMm: clearStationaryRiserMm,
     axialStrokeBeforeSideTransferMm: beyondFrontToTurnMm,
     splitFillerWithdrawalQualified: false,
@@ -484,7 +588,7 @@ export function runInletCoverCase(resolved: CurrentDesignResolution, input: unkn
       'installed-collar-reservation': [installedClosure.collar], 'after-axial-release': closed.map(item => offset(item, 0, axial)),
       'first-rest': parkedPanels, 'receiver-bearing': rails,
       'receiver-full-width-contact': receiver?.contact.flatMap(({ boundsMm }) => boundsMm ? [boundsMm] : []) ?? [],
-      'carrier-corridor': [carrier], washer: [washerBox] }, caseDigest, rounded ? { taper: rounded, axialMm: axial, sideMm: side } : undefined),
+      'carrier-corridor': [carrier], washer: [washerBox] }, caseDigest, rounded ? { taper: rounded, axialMm: axial, sideMm: side, gravity } : undefined),
     evidence: {
       wetClosure: 'unqualified', receiverAnchorageAndPositiveCapture: 'unqualified',
       coverThicknessSealsLatchAndTools: 'unqualified', heldCaptureThroughTransfer: 'unqualified',

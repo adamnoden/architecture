@@ -11153,7 +11153,7 @@
           "Maintained door operation and handling of floor parts from a supported deck"
         ],
         "source": {
-          "project/ias/studies/study-furniture-motion.py": "635cda985a2a7caa7a47dcbf491754084c4882f6b9f8d234631d6fe2e32ff747",
+          "project/ias/studies/study-furniture-motion.py": "7364fec29c77930608c58b7497c851b5f15d1d3833dc6d6e4e0496196ff78a62",
           "project/bcr/studies/bay-interface-study.py": "7fea8b8b1b8e66a6f52ae8a6124eda84f8759a9c42c3ae31644296679f4e3e7c"
         }
       },
@@ -13072,6 +13072,32 @@
       "maximumTravelMm": 600,
       "interveningPartCount": 1
     },
+    "closedApproachCuts": [
+      {
+        "cutXMm": 3303,
+        "roomYMm": [
+          429.5,
+          2553
+        ],
+        "settingEnvelopeRadiusMm": 305,
+        "blockingIntervals": [
+          {
+            "obstacleId": "study-inlet-carrier",
+            "excludedYMm": [
+              375.56553304604364,
+              1199.4344669539564
+            ]
+          },
+          {
+            "obstacleId": "wall:cloak-west:0",
+            "excludedYMm": [
+              895,
+              2955
+            ]
+          }
+        ]
+      }
+    ],
     "outsideFit": [
       {
         "partId": "GROUND/G-STUDY/room-kit/floor/4400/429.5",
@@ -13115,6 +13141,9 @@
               52.5
             ]
           }
+        ],
+        "isolatingApproachCutXMm": [
+          3303
         ],
         "alternateLimits": [
           {
@@ -13206,6 +13235,9 @@
             ]
           }
         ],
+        "isolatingApproachCutXMm": [
+          3303
+        ],
         "extendedLimits": [
           {
             "partId": "GROUND/G-STUDY/room-kit/floor/4551.5/429.5",
@@ -13259,6 +13291,24 @@
       "Stable board and panel under load, breakaway and grip exchange",
       "Qualified deck, finish and bedding under local pad demand"
     ],
+    "floorBandContainment": {
+      "state": "floor-band-comparison-only",
+      "planarPlacementCount": 117,
+      "selectedBoxInsideCount": 105,
+      "sameReceiverPossibleCount": 114,
+      "containedPlacementCount": 115,
+      "outsidePartIds": [
+        "GROUND/G-STUDY/room-kit/floor/4400/951.5",
+        "GROUND/G-STUDY/room-kit/floor/4551.5/951.5"
+      ],
+      "reassignedReceivers": [
+        {
+          "partId": "GROUND/G-STUDY/room-kit/floor/4400/500",
+          "planarReceiverId": "GROUND/G-STUDY/room-kit/floor/4551.5/500",
+          "floorBandReceiverId": "GROUND/G-STUDY/room-kit/floor/4100/500"
+        }
+      ]
+    },
     "placementCount": 117,
     "alternatePlacements": [
       {

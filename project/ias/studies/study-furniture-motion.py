@@ -57,6 +57,41 @@ def edges(box):
     return [x,y,x+width,y+depth]
 
 
+def blocked_stance_intervals(obstacles, normal_axis, normal_span, tangent_travel, radius):
+    tangent_axis = 1-normal_axis
+    start_normal,end_normal = normal_span
+    min_shift,max_shift = tangent_travel
+    blocked = []
+    for key,box in obstacles.items():
+        limits = edges(box)
+        gap = max(limits[normal_axis]-end_normal,start_normal-limits[normal_axis+2],0)
+        if gap < radius:
+            reach = math.sqrt(radius**2-gap**2)
+            blocked.append((limits[tangent_axis]-reach-max_shift,limits[tangent_axis+2]+reach-min_shift,key))
+    return blocked
+
+
+def closed_approach_cuts(fixed, bands, entry_x, radius):
+    cuts = []
+    eastmost = max(band[2] for band in bands)
+    for x in sorted({band[2] for band in bands if entry_x < band[2] < eastmost}):
+        crossing = [band for band in bands if band[0] <= x <= band[2]]
+        lower,upper = min(band[1] for band in crossing),max(band[3] for band in crossing)
+        blocked = blocked_stance_intervals(fixed,0,(x,x),(0,0),radius)
+        covers_until, controls = lower,[]
+        while covers_until <= upper:
+            next_block = max((row for row in blocked if row[0] < covers_until < row[1]),
+                             key=lambda row: row[1],default=None)
+            if next_block is None:
+                break
+            start,covers_until,key = next_block
+            controls.append({'obstacleId':key,'excludedYMm':[start,covers_until]})
+        if covers_until > upper:
+            cuts.append({'cutXMm':x,'roomYMm':[lower,upper],'settingEnvelopeRadiusMm':radius,
+                         'blockingIntervals':controls})
+    return cuts
+
+
 def first_rest_stance(bcr, obstacles, face, delta, keys, normal_axis, sign, screen):
     tangent_axis = 1-normal_axis
     body_radius, body_gap = screen['bodyRadiusMm'], screen['bodyToPanelMm']
@@ -69,19 +104,12 @@ def first_rest_stance(bcr, obstacles, face, delta, keys, normal_axis, sign, scre
     hi = min(key[tangent_axis]+math.sqrt(budget) for key,budget in zip(keys,budgets))
     if lo > hi:
         return None
-    start_normal,end_normal = sorted((n,n+delta[normal_axis]))
-    min_shift,max_shift = sorted((0,delta[tangent_axis]))
-    blocked = []
-    expanded_radius = body_radius+screen['bodySettingMm']
-    for box in obstacles.values():
-        limits = edges(box)
-        gap = max(limits[normal_axis]-end_normal,start_normal-limits[normal_axis+2],0)
-        if gap < expanded_radius:
-            radius = math.sqrt(expanded_radius**2-gap**2)
-            blocked.append((limits[tangent_axis]-radius-max_shift,limits[tangent_axis+2]+radius-min_shift))
+    blocked = blocked_stance_intervals(
+        obstacles,normal_axis,sorted((n,n+delta[normal_axis])),sorted((0,delta[tangent_axis])),
+        body_radius+screen['bodySettingMm'])
     available = []
     cursor = lo
-    for start, stop in sorted(blocked):
+    for start,stop,_ in sorted(blocked):
         if start >= hi:
             break
         if start > cursor:
@@ -101,7 +129,7 @@ def first_rest_stance(bcr, obstacles, face, delta, keys, normal_axis, sign, scre
     return {'worker':worker,'reachMm':measured,'stanceIntervalMm':[left,right],'normalAxis':'xy'[normal_axis]}
 
 
-def floor_first_rests(bcr, house, fixed, desk, chair, desk_park, chair_park, screen):
+def floor_first_rests(bcr, house, fixed, desk, chair, desk_park, chair_park, entry, screen):
     parts, bands = screen['parts'], screen['bandsXYXYMm']
     max_extended = screen.get('maximumExtendedTransferMm',0)
     if screen['bodyRadiusMm'] != house['studyDoorOperation']['bodyRadius']:
@@ -211,12 +239,14 @@ def floor_first_rests(bcr, house, fixed, desk, chair, desk_park, chair_park, scr
     if board_reserve <= 0:
         raise ValueError('The Study floor lift does not clear the retained first-rest board')
     inlet = next(item for item in house['architecturalServices']['supply'] if item['id']=='study')['selectedFirstRelease']
+    cuts = closed_approach_cuts(fixed,bands,entry[0],screen['bodyRadiusMm']+screen['bodySettingMm']) if max_extended else []
     return {
         'schema':'ias-study-floor-first-rest/1','physicalAcceptance':False,
         'numericalScope':'Straight, unrotated whole-face transfer after local removable edges are released.',
         'witnessCount':sum(row['state']=='direct-geometry-witness' for row in outcomes),
         'partCount':len(outcomes),'parts':outcomes,
-        **({'extendedTransfer':{'maximumTravelMm':max_extended,'interveningPartCount':1}} if max_extended else {}),
+        **({'extendedTransfer':{'maximumTravelMm':max_extended,'interveningPartCount':1},
+            'closedApproachCuts':cuts} if max_extended else {}),
         'transferVertical':{'initialLiftMm':screen['liftMm'],'travelTopMm':screen['liftMm'],
                             'travelUndersideMm':travel_bottom,'firstRestBoardTopMm':screen['restBoardTopMm'],
                             'undersideReserveMm':board_reserve},
@@ -313,7 +343,7 @@ def room_motion(root, request):
     ) < clearance or p.get('maximumProspectiveReachMm', 0) > 600]
     floor_case = request.get('firstRest')
     first_rest = None if conflicts or floor_case is None else floor_first_rests(
-        bcr,house,fixed,desk,chair,desk_park,chair_park,floor_case)
+        bcr,house,fixed,desk,chair,desk_park,chair_park,entry,floor_case)
     return {
         'firstRest':first_rest,
         'schema':'ias-study-furniture-native-result/1', 'state':'geometry-screen-only' if not conflicts else 'geometry-conflict',

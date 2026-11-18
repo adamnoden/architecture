@@ -29,6 +29,8 @@ type KeyContactTrial = {
   readonly lower: Readonly<Record<KeyContactId, ContactCondition>>
   readonly rotationBudgetMrad: number
 }
+const placementGroups = ['withinDragCage', 'toRetainedSteel', 'toFormwork'] as const
+type PlacementTolerances = Readonly<Record<typeof placementGroups[number], number>>
 type KeyFace = {
   readonly contacts: readonly {
     readonly id: KeyContactId
@@ -51,6 +53,7 @@ interface NorthCollectorCase {
   readonly chordBendRadiusMm?: number
   readonly toeTransferIntervalMm?: Point
   readonly keyContactTrial?: KeyContactTrial
+  readonly placementToleranceMm?: PlacementTolerances
   readonly yawProbe?: NorthYawProbe
   readonly deadLoadReplay?: { readonly windIndex: number }
 }
@@ -71,6 +74,7 @@ interface CollectorComparison {
   }
   readonly straightDrag: {
     readonly requiredBondLengthEachSideMm: number
+    readonly coverToActualToeEndAfter5mm: number
     readonly lowerPathsLocalXYZMm: readonly (readonly [Vector3, Vector3])[]
     readonly upperPathsLocalXYZMm: readonly (readonly [Vector3, Vector3])[]
   }
@@ -95,6 +99,10 @@ interface CollectorComparison {
   readonly stack: {
     readonly axesInSectionZMm: readonly number[]
     readonly barDiametersMm: readonly number[]
+    readonly unrelatedDragPlanesClearShared5Mm: number
+    readonly samePlaneWingPairClearShared5Mm: number
+    readonly alongOneSignClearShared5Mm: number
+    readonly wallLongitudinalTrial: { readonly minimumUnrelatedGapMm: number }
     readonly uprightScreenClearShared5Mm: { readonly primaryH20: number; readonly secondaryH12: number }
     readonly primaryPlacingComparisonMm: number
     readonly primaryPlacingComparisonMet: boolean
@@ -171,6 +179,7 @@ interface NativeResult {
   readonly schema: 'str-north-collector-native-result/1'
   readonly comparison: CollectorComparison
   readonly drawingSvg: string
+  readonly placementReferences: { readonly relativeSettingMm: number; readonly concreteCoverMm: number }
   readonly stationCapacity: {
     readonly schema: 'str-north-collector-station-capacity/1'
     readonly state: 'required-station-count-excluded' | 'required-shared-plane-gap-excluded' | 'placing-ranges-remain'
@@ -264,7 +273,8 @@ export function readNorthCollectorCase(resolved: CurrentDesignResolution) {
 
 function admitCase(value: unknown, binding: NonNullable<ReturnType<typeof bindingFor>>): NorthCollectorCase {
   const fields = ['schema', 'planDigest', 'bindingDigest', 'collectorId', 'portAxisXYMm', 'dragDemandFactor']
-  const optional = ['remoteMainBarShiftMm', 'chordBendRadiusMm', 'toeTransferIntervalMm', 'keyContactTrial', 'yawProbe', 'deadLoadReplay']
+  const optional = ['remoteMainBarShiftMm', 'chordBendRadiusMm', 'toeTransferIntervalMm', 'keyContactTrial',
+    'placementToleranceMm', 'yawProbe', 'deadLoadReplay']
   if (!value || typeof value !== 'object' || Array.isArray(value)
       || fields.some(field => !Object.hasOwn(value, field))
       || Object.keys(value).some(field => !optional.includes(field) && !fields.includes(field))) {
@@ -293,6 +303,11 @@ function admitCase(value: unknown, binding: NonNullable<ReturnType<typeof bindin
     throw new Error('Use an increasing toe transfer interval in millimetres from the outboard edge')
   }
   if (Object.hasOwn(trial, 'keyContactTrial')) admitKeyContactTrial(trial.keyContactTrial)
+  const tolerances = trial.placementToleranceMm
+  if (Object.hasOwn(trial, 'placementToleranceMm') && (!tolerances || !hasExactKeys(tolerances, placementGroups)
+      || placementGroups.some(group => !Number.isFinite(tolerances[group]) || tolerances[group] < 0))) {
+    throw new Error('Specify finite nonnegative placement tolerances for all three interface groups')
+  }
   if (Object.hasOwn(trial, 'yawProbe')) {
     const probe = trial.yawProbe
     if (!probe || typeof probe !== 'object' || Array.isArray(probe) || Object.keys(probe).length !== 2
@@ -477,6 +492,36 @@ function compareKeyContact(comparison: CollectorComparison['groundSplice'], tria
   }
 }
 
+function comparePlacementTolerances(comparison: CollectorComparison, references: NativeResult['placementReferences'], trial: PlacementTolerances) {
+  const { straightDrag, stack, retainedNWPort } = comparison
+  const { relativeSettingMm, concreteCoverMm } = references
+  if (![relativeSettingMm, concreteCoverMm].every(value => Number.isFinite(value) && value > 0)) {
+    throw new Error('Expected finite native placement references')
+  }
+  const row = (group: typeof placementGroups[number], interfaceId: string, clearAfterReferenceMm: number, requiredClearMm: number) => {
+    const nominalClearMm = clearAfterReferenceMm + relativeSettingMm
+    const maximumRelativeSettingMm = nominalClearMm - requiredClearMm
+    const remainingMm = maximumRelativeSettingMm - trial[group]
+    return { group, interfaceId, nominalClearMm, requiredClearMm, maximumRelativeSettingMm, remainingMm }
+  }
+  const placing = stack.primaryPlacingComparisonMm
+  const rows = [
+    row('withinDragCage', 'parallel-same-sign', stack.alongOneSignClearShared5Mm, placing),
+    row('withinDragCage', 'same-level-adjacent-wings', stack.samePlaneWingPairClearShared5Mm, placing),
+    row('withinDragCage', 'separate-drag-levels', stack.unrelatedDragPlanesClearShared5Mm, placing),
+    row('toRetainedSteel', 'wall-primary-h20', stack.uprightScreenClearShared5Mm.primaryH20, placing),
+    row('toRetainedSteel', 'wall-secondary-h12', stack.uprightScreenClearShared5Mm.secondaryH12, placing),
+    row('toRetainedSteel', 'wall-longitudinal-rails', stack.wallLongitudinalTrial.minimumUnrelatedGapMm, placing),
+    row('toFormwork', 'concrete-toe', straightDrag.coverToActualToeEndAfter5mm, concreteCoverMm),
+    ...retainedNWPort.levels.map(level => row('toFormwork', `nw-formed-port-Z${level.levelZMm}`, level.minimumClearToFormedEdgeAfter5Mm, concreteCoverMm)),
+  ]
+  return {
+    schema: 'str-north-collector-placement-tolerance/1' as const, tolerancesMm: trial, referenceRelativeSettingMm: relativeSettingMm,
+    rows, exceededInterfaces: rows.filter(item => item.remainingMm < 0).map(item => item.interfaceId), admitted: false as const,
+    scope: 'Conservative loss of nominal finite clearance for bounded relative placement of the represented surfaces. Intended H28 contacts, production jig evidence, full cage and installation remain outside this comparison.',
+  }
+}
+
 function compareChordTurn(comparison: CollectorComparison, radiusMm: number) {
   const axis = comparison.geometry.receivingUMm
   const toe = comparison.geometry.wallUAndLegVLimitsMm[1][1]
@@ -630,6 +675,9 @@ export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: 
   const fixedBaseActions = sameWind ? combineFixedBaseActions(sameWind.yawProbe, sameWind.deadLoadReplay) : undefined
   const chordTurn = trial.chordBendRadiusMm === undefined ? undefined : compareChordTurn(comparison, trial.chordBendRadiusMm)
   const keyContact = trial.keyContactTrial ? compareKeyContact(comparison.groundSplice, trial.keyContactTrial) : undefined
+  const placementTolerance = trial.placementToleranceMm
+    ? comparePlacementTolerances(comparison, native.placementReferences, trial.placementToleranceMm)
+    : undefined
   return {
     schema: 'str-north-collector-result/1' as const,
     status: 'computed-comparison' as const,
@@ -640,6 +688,7 @@ export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: 
     grossRootWeb: grossRootWebDemands(comparison.groundSplice),
     toeTransfer: toeTransferDemands(comparison.groundSplice, trial.toeTransferIntervalMm),
     ...(keyContact ? { keyContact } : {}),
+    ...(placementTolerance ? { placementTolerance } : {}),
     stationCapacity,
     cabinetStationCapacity,
     drawingSvg,
@@ -648,7 +697,7 @@ export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: 
     ...(fixedBaseActions ? { fixedBaseActions } : {}),
     ...(chordTurn ? { chordTurn: { ...chordTurn, drawing: drawChordTurn(comparison, chordTurn) } } : {}),
     evidence: {
-      state: isReference && !keyContact ? 'historical-demand-comparison' : 'trial-only',
+      state: isReference && !keyContact && !placementTolerance ? 'historical-demand-comparison' : 'trial-only',
       installedAcceptance: false as const,
       outstanding: ['Continuous chord and wall cage', 'Imperforate ground splice', 'Coupled signed 52-head replay', 'Usable foul route and renewal'],
     },

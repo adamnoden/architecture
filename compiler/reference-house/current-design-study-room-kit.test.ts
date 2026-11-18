@@ -287,6 +287,31 @@ test('Study board trials distinguish board coverage from irreducible receiver sh
   assert.deepEqual(kit.floor.firstRestBoard, biggerResult.kit.floor.firstRestBoard)
   assert.deepEqual(kit.floor.furnitureMotion?.firstRest, biggerResult.kit.floor.furnitureMotion?.firstRest)
   assert.deepEqual(square.outsideFit, bigger.outsideFit)
+  const containment = square.floorBandContainment
+  assert.deepEqual([
+    containment.planarPlacementCount, containment.selectedBoxInsideCount,
+    containment.sameReceiverPossibleCount, containment.containedPlacementCount,
+  ], [117, 105, 114, 115])
+  const partId = (suffix: string) => `GROUND/G-STUDY/room-kit/floor/${suffix}`
+  assert.deepEqual(containment.outsidePartIds, [partId('4400/951.5'), partId('4551.5/951.5')])
+  assert.deepEqual(containment.reassignedReceivers, [{
+    partId: partId('4400/500'), planarReceiverId: partId('4551.5/500'), floorBandReceiverId: partId('4100/500'),
+  }])
+  assert.equal(containment.placements.length, 115)
+  for (const { boardXYXYMm: [x0, y0, x1, y1] } of containment.placements) {
+    const areaInside = kit.bands.reduce((area, [left, bottom, right, top]) => area
+      + Math.max(0, Math.min(x1, right) - Math.max(x0, left)) * Math.max(0, Math.min(y1, top) - Math.max(y0, bottom)), 0)
+    assert.equal(areaInside, (x1 - x0) * (y1 - y0))
+  }
+  assert.equal(square.closedApproachCuts?.length, 1)
+  const cut = square.closedApproachCuts![0]
+  assert.equal(cut.cutXMm, 3303)
+  assert.equal(cut.settingEnvelopeRadiusMm, 305)
+  assert.deepEqual(cut.roomYMm, [429.5, 2553])
+  assert.deepEqual(cut.blockingIntervals.map(interval => interval.obstacleId), ['study-inlet-carrier', 'wall:cloak-west:0'])
+  const [carrier, cloak] = cut.blockingIntervals.map(interval => interval.excludedYMm)
+  assert.ok(carrier[0] < cut.roomYMm[0] && cloak[0] < carrier[1] && cloak[1] > cut.roomYMm[1])
+  assert.ok(square.outsideFit.every(row => row.isolatingApproachCutXMm?.includes(cut.cutXMm)))
   assert.equal(square.outsideFit.length, 2)
   assert.deepEqual(square.outsideFit.map(row => row.partId.split('/').slice(-2)), [['4400', '429.5'], ['4551.5', '429.5']])
   assert.ok(square.outsideFit.some(row => row.alternateLimits?.length))
