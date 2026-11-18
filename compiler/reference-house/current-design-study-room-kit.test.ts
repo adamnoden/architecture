@@ -184,6 +184,37 @@ test('the Study kit locates whole-face first rests and withholds unknown G1 cros
   assert.deepEqual(results.g1Projection.releasedPackageZMm, [1933.58, 2282.08])
 })
 
+test('the retained emitter board supports the moving face and lands every pad for 38 scheduled first rests', async () => {
+  const { kit } = await current.studyRoomKit(initial)
+  const board = kit.floor.firstRestBoard
+  const firstRest = kit.floor.furnitureMotion?.firstRest
+  assert.ok(board && firstRest)
+  assert.equal(board.physicalAcceptance, false)
+  assert.deepEqual(board.boardSizeMm, [165, 330])
+  assert.equal(board.padWidthMm, 25)
+  assert.equal(board.comparedWitnessCount, 119)
+  assert.equal(board.placements.length, 38)
+  assert.equal(board.outsideBoardFitPartIds.length, 81)
+  assert.equal(board.placements.filter(row => row.turnDeg === 90).length, 24)
+  assert.ok(board.outsideBoardFitPartIds.some(id => id.endsWith('/500/500')))
+  assert.ok(board.placements.some(row => row.partId.endsWith('/634.5/1246')))
+  const byId = new Map(kit.floor.parts.map(part => [part.id, part.face]))
+  for (const row of board.placements) {
+    const route = firstRest.parts.find(result => result.partId === row.partId)
+    assert.ok(route?.state === 'direct-geometry-witness')
+    const moving = byId.get(row.partId)!
+    const receiving = byId.get(row.restPartId)!
+    for (const axis of [0, 1] as const) {
+      assert.ok(row.boardXYXYMm[axis] <= moving[axis] + route.witness.shiftXYMm[axis])
+      assert.ok(row.boardXYXYMm[axis + 2] >= moving[axis + 2] + route.witness.shiftXYMm[axis])
+      for (const centre of row.padCentresXYMm) {
+        assert.ok(centre[axis] - board.padWidthMm / 2 >= receiving[axis])
+        assert.ok(centre[axis] + board.padWidthMm / 2 <= receiving[axis + 2])
+      }
+    }
+  }
+})
+
 test('A 15 mm finish preserves the ground datum but the floating support allowance is still short', async () => {
   const [standard, oak, stone] = await Promise.all([
     current.studyRoomKit(initial),

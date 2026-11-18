@@ -92,6 +92,16 @@ test('the west buried run checks both cover endpoints and the full direct plan e
   assert.ok(lowGrade.buriedReceiving.stackCoverMm > 600)
   assert.equal(lowGrade.buriedReceiving.hostCoverMm, 570)
   assert.deepEqual(lowGrade.buriedReceiving.failedChecks, ['MINIMUM_CROWN_COVER'])
+  const lowBetweenEnds = await compile.rearFoulVent({
+    ...trial,
+    buriedReceiving: { ...trial.buriedReceiving, interiorGrade: [{ distanceFromStackMm: 1000, gradeZMm: -1860 }] },
+  })
+  assert.equal(lowBetweenEnds.status, 'computed-comparison')
+  assert.equal(lowBetweenEnds.buriedReceiving.stackCoverMm, deeper.buriedReceiving.stackCoverMm)
+  assert.equal(lowBetweenEnds.buriedReceiving.hostCoverMm, deeper.buriedReceiving.hostCoverMm)
+  assert.equal(lowBetweenEnds.buriedReceiving.governingCover.distanceFromStackMm, 1000)
+  assert.ok(Math.abs(lowBetweenEnds.buriedReceiving.governingCover.coverMm - 570.4046) < 0.01)
+  assert.deepEqual(lowBetweenEnds.buriedReceiving.failedChecks, ['MINIMUM_CROWN_COVER'])
   const inward = await compile.rearFoulVent({
     ...trial, buriedReceiving: { ...trial.buriedReceiving, hostAxisXYZMm: [-90, 11177.5, -2600] },
   })
@@ -101,6 +111,13 @@ test('the west buried run checks both cover endpoints and the full direct plan e
   await assert.rejects(compile.rearFoulVent({
     ...trial, buriedReceiving: { ...trial.buriedReceiving, hostAxisXYZMm: [-300, 9400, -2600] },
   }), /nonzero/)
+  for (const distances of [[0], [750, 750], [1000, 900], [2000]]) {
+    await assert.rejects(compile.rearFoulVent({
+      ...trial,
+      buriedReceiving: { ...trial.buriedReceiving,
+        interiorGrade: distances.map(distanceFromStackMm => ({ distanceFromStackMm, gradeZMm: -1800 })) },
+    }), /chainages/)
+  }
 })
 
 test('a supported dry offset recomputes clearances, while missing tangent, stale and unbound cases fail closed', async () => {

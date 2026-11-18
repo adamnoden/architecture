@@ -279,6 +279,57 @@ function handlingScreen(assembly: FloorAssembly, layout: ReturnType<typeof partS
   } as const
 }
 
+function compareFirstRestBoard(
+  parts: ReturnType<typeof partSetout>['parts'],
+  handling: ReturnType<typeof handlingScreen>,
+  firstRest: NonNullable<ReturnType<typeof compileStudyFurnitureMotion>['firstRest']> | null | undefined,
+) {
+  if (!firstRest || handling.state === 'withheld') return null
+  const { firstRestBoard, padCentres, padWidthMm, worstRestPadN, restPadDemandMPa } = handling.emitterEdgeRelease
+  const axes = [0, 1] as const
+  const width = firstRestBoard[2] - firstRestBoard[0]
+  const depth = firstRestBoard[3] - firstRestBoard[1]
+  const offsets = padCentres.map(([x, y]) => [x - firstRestBoard[0], y - firstRestBoard[1]] as const)
+  const orientations = [
+    { turnDeg: 0, dimensions: [width, depth], offsets },
+    { turnDeg: 90, dimensions: [depth, width], offsets: offsets.map(([x, y]) => [depth - y, x] as const) },
+  ] as const
+  const faceByPartId = new Map(parts.map(part => [part.id, part.face]))
+  const outsideBoardFitPartIds: string[] = []
+  const placements = firstRest.parts.flatMap(result => {
+    if (result.state !== 'direct-geometry-witness') return []
+    const { restPartId, shiftXYMm } = result.witness
+    const moving = faceByPartId.get(result.partId)!
+    const receiving = faceByPartId.get(restPartId)!
+    for (const { turnDeg, dimensions, offsets: rotatedOffsets } of orientations) {
+      const lower = axes.map(axis => Math.max(
+        moving[axis + 2] + shiftXYMm[axis] - dimensions[axis],
+        receiving[axis] + padWidthMm / 2 - Math.min(...rotatedOffsets.map(point => point[axis])),
+      ))
+      const upper = axes.map(axis => Math.min(
+        moving[axis] + shiftXYMm[axis],
+        receiving[axis + 2] - padWidthMm / 2 - Math.max(...rotatedOffsets.map(point => point[axis])),
+      ))
+      if (axes.some(axis => lower[axis] > upper[axis])) continue
+      const [x, y] = axes.map(axis => (lower[axis] + upper[axis]) / 2)
+      return [{
+        partId: result.partId, restPartId, turnDeg,
+        boardXYXYMm: [x, y, x + dimensions[0], y + dimensions[1]] as Box,
+        padCentresXYMm: rotatedOffsets.map(([u, v]) => [x + u, y + v] as const),
+      }]
+    }
+    outsideBoardFitPartIds.push(result.partId)
+    return []
+  })
+  return {
+    state: 'placement-comparison-only', physicalAcceptance: false, comparedWitnessCount: firstRest.witnessCount,
+    boardSizeMm: [width, depth], padWidthMm, worstRestPadN, restPadDemandMPa,
+    placements, outsideBoardFitPartIds,
+    held: ['Board placement and clearance to occupant, adjacent finishes and fixed obstructions',
+      'Stable board and panel under load, breakaway and grip exchange', 'Qualified deck, finish and bedding under local pad demand'],
+  } as const
+}
+
 function openingSetout(resolved: CurrentDesignResolution, config: Case) {
   const { window, door } = compileRenewableOpenings(resolved)
   const current = window.opening
@@ -414,6 +465,7 @@ function deriveStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
     floor: {
       parts, emitterPlinth, jointMm: assembly.section.jointMm, wearingFaceMm: assembly.section.wearFaceMm, beddingMm: assembly.section.beddingTerritoryMm,
       depthUnassignedWithinFinishMm: assembly.section.finishSupportDepthUnresolvedMm, handling, furnitureMotion,
+      firstRestBoard: compareFirstRestBoard(parts, handling, furnitureMotion?.firstRest),
       groundSupport: compileStudyGroundSupport(resolved, assembly.section, request.groundDeckLevelLossMm ?? 0),
       borderParts: parts.filter(part => part.role === 'border').length, release,
       coverageMm2: parts.reduce((total, part) => total + area(part.box), emitterPlinth.state === 'withheld' ? 0 : emitterPlinth.areaMm2),
