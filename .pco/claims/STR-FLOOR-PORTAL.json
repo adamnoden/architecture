@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 39,
-  "state": "released",
-  "leaseId": "716fb931-d672-45ff-8c49-ea1a08bea348",
+  "generation": 40,
+  "state": "claimed",
+  "leaseId": "63619a6c-6728-4b79-8459-af6bb401f51a",
   "holder": {
     "kind": "codex",
-    "label": "rush-west-foul"
+    "label": "rush-dpc-splice"
   },
-  "claimedAt": "2026-11-18T07:48:13.711Z",
-  "heartbeatAt": "2026-11-18T08:58:53.103Z",
-  "expiresAt": "2026-11-18T08:58:53.103Z",
-  "branch": "work/rush-fit-clearances-2026-11-18",
+  "claimedAt": "2026-11-18T12:10:17.078Z",
+  "heartbeatAt": "2026-11-18T12:10:17.078Z",
+  "expiresAt": "2026-11-18T12:55:17.078Z",
+  "branch": "work/rush-dpc-splice-2026-11-18",
   "predecessor": {
-    "leaseId": "22f8af96-a0db-49bc-90d4-cd08e44fef13",
-    "generation": 38,
-    "branch": "work/current-gallery-compiler-2026-11-18",
-    "pr": 1573,
+    "leaseId": "716fb931-d672-45ff-8c49-ea1a08bea348",
+    "generation": 39,
+    "branch": "work/rush-fit-clearances-2026-11-18",
+    "pr": 1575,
     "checkpoint": {
-      "evidence": "Merged #1573 at 5bf811890511d82481d8eb60048a84a18da427e5. Full-demand retained cage excludes every cabinet port centre even with independent station placement.",
-      "next": "Bind a viable independent west foul route or revise the collector topology, then solve the coupled splice with actual receiver, weld, bedding and contact geometry.",
-      "blocker": "Full-demand cabinet relocation fails. Joined DPC stiffness and physical acceptance require a dimensioned load path."
+      "evidence": "Merged #1574 b4db7d7a and #1575 da46dc52. West receiving compares the full supplied grade profile and its governing station.",
+      "next": "Bind an actual west receiving profile and the outlet fittings, then check their joined route and the dimensioned coupled DPC splice.",
+      "blocker": "Surveyed grade, confirmed host, fitting geometry and coupled splice stiffness remain open."
     }
   },
   "recoverySource": {
-    "leaseId": "22f8af96-a0db-49bc-90d4-cd08e44fef13",
-    "generation": 38,
-    "branch": "work/current-gallery-compiler-2026-11-18",
-    "pr": 1573,
+    "leaseId": "716fb931-d672-45ff-8c49-ea1a08bea348",
+    "generation": 39,
+    "branch": "work/rush-fit-clearances-2026-11-18",
+    "pr": 1575,
     "checkpoint": {
-      "evidence": "Merged #1573 at 5bf811890511d82481d8eb60048a84a18da427e5. Full-demand retained cage excludes every cabinet port centre even with independent station placement.",
-      "next": "Bind a viable independent west foul route or revise the collector topology, then solve the coupled splice with actual receiver, weld, bedding and contact geometry.",
-      "blocker": "Full-demand cabinet relocation fails. Joined DPC stiffness and physical acceptance require a dimensioned load path."
+      "evidence": "Merged #1574 b4db7d7a and #1575 da46dc52. West receiving compares the full supplied grade profile and its governing station.",
+      "next": "Bind an actual west receiving profile and the outlet fittings, then check their joined route and the dimensioned coupled DPC splice.",
+      "blocker": "Surveyed grade, confirmed host, fitting geometry and coupled splice stiffness remain open."
     }
-  },
-  "pr": 1575,
-  "checkpoint": {
-    "evidence": "Merged #1574 b4db7d7a and #1575 da46dc52. West receiving compares the full supplied grade profile and its governing station.",
-    "next": "Bind an actual west receiving profile and the outlet fittings, then check their joined route and the dimensioned coupled DPC splice.",
-    "blocker": "Surveyed grade, confirmed host, fitting geometry and coupled splice stiffness remain open."
-  },
-  "releasedAt": "2026-11-18T08:58:53.103Z",
-  "releaseReason": "handoff"
+  }
 }
