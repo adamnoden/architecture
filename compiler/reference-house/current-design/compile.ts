@@ -3,6 +3,7 @@ import { createLayoutFamilyScene, layoutFamilySource } from '../georgian/layout-
 import { candidatePlanMethod, createCandidatePlanScene } from './candidate-plan.js'
 import { resolveCurrentDesign, type CurrentDesignResolution } from './resolve.js'
 import type { StoreyId } from './snapshot.js'
+import type { InletCoverSources } from './inlet-cover.js'
 
 type Domain = 'plans' | 'occupied-services' | 'selected-water-event'
 type CompileDiagnostic = {
@@ -162,29 +163,29 @@ export function prepareCurrentDesignCompile(input: unknown) {
       const { runInletSillInsertCase } = await import('./inlet-sill-insert.js')
       return runInletSillInsertCase(resolved, input)
     },
-    readInletFaultCase: async () => {
+    readInletFaultCase: async (insertCase?: unknown) => {
       const { readInletFaultCase } = await import('./inlet-fault.js')
-      return readInletFaultCase(resolved)
+      return readInletFaultCase(resolved, insertCase)
     },
-    inletFault: async (input: unknown) => {
+    inletFault: async (input: unknown, insertCase?: unknown) => {
       const { runInletFaultCase } = await import('./inlet-fault.js')
-      return runInletFaultCase(resolved, input)
+      return runInletFaultCase(resolved, input, insertCase)
     },
-    readInletRemovalCases: async () => {
+    readInletRemovalCases: async (insertCase?: unknown) => {
       const { readInletRemovalCases } = await import('./inlet-removal.js')
-      return readInletRemovalCases(resolved)
+      return readInletRemovalCases(resolved, insertCase)
     },
-    inletRemoval: async (input: unknown) => {
+    inletRemoval: async (input: unknown, insertCase?: unknown) => {
       const { runInletRemovalCase } = await import('./inlet-removal.js')
-      return runInletRemovalCase(resolved, input)
+      return runInletRemovalCase(resolved, input, insertCase)
     },
-    readInletCoverCases: async () => {
+    readInletCoverCases: async (sources?: InletCoverSources) => {
       const { readInletCoverCases } = await import('./inlet-cover.js')
-      return readInletCoverCases(resolved)
+      return readInletCoverCases(resolved, sources)
     },
-    inletCover: async (input: unknown) => {
+    inletCover: async (input: unknown, sources?: InletCoverSources) => {
       const { runInletCoverCase } = await import('./inlet-cover.js')
-      return runInletCoverCase(resolved, input)
+      return runInletCoverCase(resolved, input, sources)
     },
     renewableOpenings: async (widthCase?: unknown) => {
       const [{ compileRenewableOpenings }, { drawStudyJambScreen }] = await Promise.all([

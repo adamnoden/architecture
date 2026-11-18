@@ -14,7 +14,7 @@ const cli = (args: string[], input?: unknown) => spawnSync(process.execPath,
     input: input === undefined ? undefined : JSON.stringify(input), encoding: 'utf8', maxBuffer: 32 * 1024 * 1024,
   })
 
-test('one saved engineering document replays the four bound stages and preserves their conditional evidence', async () => {
+test('one saved engineering document replays its bound stages and preserves their conditional evidence', async () => {
   const design = readGeorgianDesignSnapshot()
   const document = await readEngineeringDocument(design)
   const saved = JSON.stringify(document)
@@ -23,7 +23,8 @@ test('one saved engineering document replays the four bound stages and preserves
   assert.equal(result.source.planDigest, sha256SemanticFingerprint(design))
   assert.equal(result.documentIdentity.planDigest, result.source.planDigest)
   assert.deepEqual(result.manifest.map(item => item.stage), ['plans', 'occupiedServices', 'selectedWaterEvent',
-    'northCollector', 'rearFoulVent', 'inletCovers/plant', 'inletCovers/utility', 'studyRoomKit'])
+    'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'inletRemovals/plant', 'inletRemovals/utility',
+    'inletCovers/plant', 'inletCovers/utility', 'studyRoomKit'])
   assert.ok(result.engineering.northCollector?.status === 'computed-comparison')
   assert.equal(result.engineering.northCollector.evidence.installedAcceptance, false)
   assert.equal(result.engineering.studyRoomKit?.kit.state, 'candidate')
@@ -37,6 +38,9 @@ test('one saved engineering document replays the four bound stages and preserves
   assert.deepEqual(result.engineering.northCollector, await direct.northCollectorCase(request.collector))
   assert.ok(document.bindings.implementations['project/ias/studies/study-furniture-motion.py'])
   assert.ok(document.bindings.implementations['compiler/reference-house/current-design/engineering-document.ts'])
+  assert.ok(document.bindings.implementations['compiler/reference-house/georgian/layout-family.ts'])
+  assert.ok(document.bindings.implementations['compiler/publication-drawing/projection.ts'])
+  assert.ok(document.bindings.implementations['compiler/core/identity.ts'])
 })
 
 test('a stored collector edit changes its result and manifest while the vent and nominal plans retain their source', async () => {
@@ -66,6 +70,9 @@ test('saved method drift, injected derived identities, duplicate branches and un
   await assert.rejects(compileEngineeringDocument({ ...document, bindings: { ...document.bindings,
     implementations: { ...document.bindings.implementations,
       'project/ias/studies/study-furniture-motion.py': '0'.repeat(40) } } }), /Stale engineering source or implementation binding/)
+  await assert.rejects(compileEngineeringDocument({ ...document, bindings: { ...document.bindings,
+    implementations: { ...document.bindings.implementations,
+      'compiler/publication-drawing/projection.ts': '0'.repeat(40) } } }), /Stale engineering source or implementation binding/)
   await assert.rejects(compileEngineeringDocument({ ...document,
     stages: { northCollector: { bindingDigest: '0'.repeat(64) } } }), /derived identity supplied/)
   await assert.rejects(compileEngineeringDocument({ ...document,

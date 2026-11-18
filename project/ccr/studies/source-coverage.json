@@ -863,7 +863,7 @@
     "project/had/studies/south-inlet-relief-hydraulics.mjs": "1cb8dd67e832ce2986f042844122a39e625fef93",
     "project/had/studies/south-inlet-relief.json": "b6c4340e57b616caf6c2daf184bc6c144db2a473",
     "project/had/south-inlet-fault-envelope.md": "08474506308fcb9028d9c2eeee0e7366f287d8f9",
-    "compiler/reference-house/current-design/inlet-fault.ts": "a0d8af746218a1f52dc724d4355d3433a2a3b74d",
+    "compiler/reference-house/current-design/inlet-fault.ts": "d4628b45f6b89d320553fd96f114d899b7dec58e",
     "project/mat/studies/rear-wc-west-roof-interface.py": "e25745bed843af992970f8b98ddb0e09dfdb82f8",
     "project/mat/studies/rear-wc-west-roof-interface.json": "b3b9941d049d525cf497029538985036e8fe1f0e",
     "project/mat/rear-wc-west-gravity.md": "a025e4ebd6ccc55376d397a31fe63ea653dfdd3f",
@@ -887,7 +887,7 @@
     "project/had/studies/selected-service-plate.mjs": "732c5d440d2963a6092a0bf2bfdd8df8e198a54b",
     "project/had/south-inlet-wet-box.md": "3f6eb36c2baf2011d7699a7807213b4785375c98",
     "project/had/studies/south-inlet-wet-box.mjs": "2b6ae4e01c29823c6d91e78cd4657b4fe373a618",
-    "compiler/reference-house/current-design/inlet-removal.ts": "7ec2b5103fd2012cffaacc9153a53128502c5308",
-    "compiler/reference-house/current-design/inlet-cover.ts": "54c5eebd4e008a0614fa3b657a3808f2d87a4b68"
+    "compiler/reference-house/current-design/inlet-removal.ts": "47f9a6615634de9062190c2e7e5e20384837d043",
+    "compiler/reference-house/current-design/inlet-cover.ts": "c24b643034c96b483ea58aa59b3b1423d633d781"
   }
 }

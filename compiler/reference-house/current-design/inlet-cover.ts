@@ -5,6 +5,10 @@ import { readInletRemovalCases, runInletRemovalCase } from './inlet-removal.js'
 import type { CurrentDesignResolution } from './resolve.js'
 
 type Removal = ReturnType<typeof readInletRemovalCases>[number]['removal']
+export type InletCoverSources = {
+  readonly insertCase?: unknown
+  readonly removalCases?: readonly unknown[]
+}
 type CoverCase = {
   readonly schema: 'had-inlet-cover-case/1'
   readonly branch: Removal['branch']
@@ -36,11 +40,31 @@ type Bounds = readonly [number, number]
 type PlanPoint = readonly [number, number]
 type Footprint = { readonly x: Bounds; readonly y: Bounds }
 
-const sourceDraw = (resolved: CurrentDesignResolution, removal: Removal) =>
-  runInletRemovalCase(resolved, { ...removal, roofAccess: 'clear-strip-comparison' })
+function sourceDraw(resolved: CurrentDesignResolution, removal: Removal, sources?: InletCoverSources) {
+  const explicitRemoval = sources?.removalCases?.some(input => input !== null && typeof input === 'object'
+    && 'branch' in input && input.branch === removal.branch)
+  const selected = explicitRemoval ? removal : { ...removal, roofAccess: 'clear-strip-comparison' as const }
+  return runInletRemovalCase(resolved, selected, sources?.insertCase)
+}
 
-function reference(resolved: CurrentDesignResolution, removal: Removal) {
-  const { calculation, source } = sourceDraw(resolved, removal)
+function sourceRemovals(resolved: CurrentDesignResolution, sources?: InletCoverSources) {
+  if (sources !== undefined && (!sources || typeof sources !== 'object' || Array.isArray(sources)
+      || Object.keys(sources).some(key => key !== 'insertCase' && key !== 'removalCases')
+      || (sources.removalCases !== undefined && !Array.isArray(sources.removalCases)))) {
+    throw new Error('Expected explicit inlet cover insert and removal source cases')
+  }
+  const defaults = readInletRemovalCases(resolved, sources?.insertCase).map(({ removal }) => removal)
+  const selected = new Map<string, Removal>()
+  for (const input of sources?.removalCases ?? []) {
+    const result = runInletRemovalCase(resolved, input, sources?.insertCase)
+    if (selected.has(result.branch)) throw new Error('A cover source cannot select the same removal branch twice')
+    selected.set(result.branch, input as Removal)
+  }
+  return sources?.removalCases === undefined ? defaults : [...selected.values()]
+}
+
+function reference(resolved: CurrentDesignResolution, removal: Removal, sources?: InletCoverSources) {
+  const { calculation, source } = sourceDraw(resolved, removal, sources)
   const { roofStrip, settingsMm } = calculation
   const cheekMm = 20
   const width = roofStrip.widthMm
@@ -54,9 +78,9 @@ function reference(resolved: CurrentDesignResolution, removal: Removal) {
   return baseline
 }
 
-export function readInletCoverCases(resolved: CurrentDesignResolution) {
-  return readInletRemovalCases(resolved).map(({ removal }) => ({
-    schema: 'had-inlet-cover-request/1' as const, design: resolved.design, cover: reference(resolved, removal),
+export function readInletCoverCases(resolved: CurrentDesignResolution, sources?: InletCoverSources) {
+  return sourceRemovals(resolved, sources).map(removal => ({
+    schema: 'had-inlet-cover-request/1' as const, design: resolved.design, cover: reference(resolved, removal, sources),
   }))
 }
 
@@ -519,17 +543,26 @@ function coverPlan(branch: CoverCase['branch'], positions: Readonly<Record<strin
   }
 }
 
-export function runInletCoverCase(resolved: CurrentDesignResolution, input: unknown) {
+export function runInletCoverCase(resolved: CurrentDesignResolution, input: unknown, sources?: InletCoverSources) {
   if (!input || typeof input !== 'object' || Array.isArray(input)) throw new Error('Expected a versioned south inlet cover case')
   const trial = input as CoverCase
-  const removal = readInletRemovalCases(resolved).find(row => row.removal.branch === trial.branch)?.removal
+  const removal = sourceRemovals(resolved, sources).find(removal => removal.branch === trial.branch)
   if (!removal) throw new Error('Expected a south inlet cover case for one bound branch')
-  const { calculation: baseline, source, method } = sourceDraw(resolved, removal)
+  const selectedDraw = sourceDraw(resolved, removal, sources)
+  const explicitRemoval = sources?.removalCases?.some(input => input !== null && typeof input === 'object'
+    && 'branch' in input && input.branch === removal.branch)
+  if (explicitRemoval && selectedDraw.status === 'blocked') {
+    throw new Error(`The selected ${removal.branch} removal blocks the dependent cover: ${selectedDraw.diagnostics.map(item => item.code).join(', ')}`)
+  }
+  const { calculation: baseline, source, method } = selectedDraw
   const fields = ['schema', 'branch', 'removalCaseDigest', 'washer', 'cheekMm', 'retainedSideLandMm', 'receiverRailWidthMm',
     'minimumFrontBridgeMm', 'axialTravelMm', 'sideTravelMm']
   if (trial.schema !== 'had-inlet-cover-case/1' || fields.some(key => !Object.hasOwn(trial, key)) ||
       Object.keys(trial).some(key => key !== 'closure' && !fields.includes(key))) throw new Error('Expected a versioned south inlet cover case')
   if (trial.removalCaseDigest !== source.caseDigest) throw new Error('Stale south inlet cover source binding')
+  if (explicitRemoval && trial.washer !== removal.washer) {
+    throw new Error('The cover washer state differs from the selected upstream removal scenario')
+  }
   const [cellWest, cellEast] = baseline.wetBox.sideLimitsXMm
   const cellWidthMm = cellEast - cellWest
   if ((trial.washer !== 'installed' && trial.washer !== 'restrained-first-rest') ||
@@ -540,7 +573,7 @@ export function runInletCoverCase(resolved: CurrentDesignResolution, input: unkn
       trial.axialTravelMm < 0 || trial.axialTravelMm > baseline.drawMm) throw new Error('South inlet cover inputs exceed the screened motion range')
   const { roofStrip, wetBox, dryBreak, settingsMm, drawMm } = baseline
   const washer = trial.washer === removal.washer ? baseline.washerEnvelopeMm :
-    sourceDraw(resolved, { ...removal, washer: trial.washer }).calculation.washerEnvelopeMm
+    sourceDraw(resolved, { ...removal, washer: trial.washer }, sources).calculation.washerEnvelopeMm
   const utility = resolved.design.storeys.GROUND.rooms.find(room => room.id === 'GROUND/G-UTILITY')
   if (utility?.boxes.length !== 1) throw new Error('The cover path requires the bound rectangular ground Utility')
   const [room] = utility.boxes

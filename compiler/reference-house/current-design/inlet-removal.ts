@@ -52,7 +52,7 @@ const records = (value: unknown, keys: readonly string[]): value is Readonly<Rec
   !!value && typeof value === 'object' && !Array.isArray(value) &&
   Object.keys(value).length === keys.length && keys.every(key => Object.hasOwn(value, key))
 
-function readReference(resolved: CurrentDesignResolution) {
+function readReference(resolved: CurrentDesignResolution, insertCase?: unknown) {
   const binding = resolved.disciplineBindings.find(entry => entry.id === 'had-inlet-south-removal')
   if (!binding) throw new Error('The south inlet removal requires an applicable HAD inlet and utility layout')
   const paths = [geometryPath, underSillPath, cellsPath, reliefPath, servicesPath, nativeMethodPath, washerPath]
@@ -63,8 +63,10 @@ function readReference(resolved: CurrentDesignResolution) {
     return [path, { bytes, gitBlob }]
   }))
   const json = <T>(path: string): T => JSON.parse(observed.get(path)!.bytes.toString('utf8'))
-  const insert = runInletSillInsertCase(resolved, readInletSillInsertCase(resolved).insert)
-  if (insert.status !== 'within-conditional-screen') throw new Error('The source sill no longer clears its conditional screen')
+  const insert = runInletSillInsertCase(resolved, insertCase === undefined ? readInletSillInsertCase(resolved).insert : insertCase)
+  if (insert.status !== 'within-conditional-screen') {
+    throw new Error(`The selected sill insert blocks carrier removal: ${insert.diagnostics.map(item => item.code).join(', ')}`)
+  }
   const underSill = json<{ branches: { id: BranchId; coordinates: Point[] }[] }>(underSillPath)
   const cells = json<{ branches: Cell[] }>(cellsPath)
   const { throughWallRupture: { preferredWideBore: sleeve } } = json<{
@@ -115,8 +117,8 @@ function readReference(resolved: CurrentDesignResolution) {
     utilityPurge: selectedServiceInterfaces?.purge.find(entry => entry.room === 'utility') }
 }
 
-export function readInletRemovalCases(resolved: CurrentDesignResolution) {
-  return readReference(resolved).cases.map(removal => ({
+export function readInletRemovalCases(resolved: CurrentDesignResolution, insertCase?: unknown) {
+  return readReference(resolved, insertCase).cases.map(removal => ({
     schema: 'had-inlet-removal-request/1' as const, design: resolved.design, removal,
   }))
 }
@@ -180,8 +182,8 @@ function section(branch: ReturnType<typeof readReference>['branches'][number], t
   }
 }
 
-export function runInletRemovalCase(resolved: CurrentDesignResolution, input: unknown) {
-  const reference = readReference(resolved)
+export function runInletRemovalCase(resolved: CurrentDesignResolution, input: unknown, insertCase?: unknown) {
+  const reference = readReference(resolved, insertCase)
   const matching = reference.cases.find(entry => records(input, Object.keys(entry)) && entry.branch === input.branch)
   if (!matching || !records(input, Object.keys(matching)) || input.schema !== matching.schema ||
       !records(input.preparation, readiness) || readiness.some(key => typeof (input.preparation as Record<string, unknown>)[key] !== 'boolean')) {

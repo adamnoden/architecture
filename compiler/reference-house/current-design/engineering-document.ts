@@ -6,16 +6,22 @@ import { readStudyRoomKitReferenceCase } from './assemblies/study-room-kit.js'
 import { resolveCurrentDesign, type CurrentDesignResolution } from './resolve.js'
 
 const repository = new URL('../../../', import.meta.url)
-const implementationRoot = 'compiler/reference-house/current-design/'
-const nativeAssemblyMethods = [
+const implementationRoots = [
+  'compiler/reference-house/current-design/', 'compiler/reference-house/georgian/', 'compiler/core/',
+  'compiler/architectural-drawing/', 'compiler/publication-drawing/', 'compiler/publication-drawing-v2/',
+] as const
+const additionalImplementationFiles = [
+  'compiler/units.ts',
+  'project/design-constraints.ts',
   'project/ias/studies/study-furniture-motion.py',
   'project/bcr/studies/bay-interface-study.py',
   'project/ias/studies/workable-floor-tiles.mjs',
   'project/ias/studies/workable-lining-dimensions.mjs',
 ] as const
-const stageKeys = ['northCollector', 'rearFoulVent', 'inletCovers', 'studyRoomKit'] as const
+const stageKeys = ['northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'inletRemovals', 'inletCovers', 'studyRoomKit'] as const
 type Settings = Readonly<Record<string, unknown>>
-type EngineeringStages = Partial<Readonly<Record<Exclude<typeof stageKeys[number], 'inletCovers'>, Settings>>> & {
+type EngineeringStages = Partial<Readonly<Record<Exclude<typeof stageKeys[number], 'inletCovers' | 'inletRemovals'>, Settings>>> & {
+  readonly inletRemovals?: readonly Settings[]
   readonly inletCovers?: readonly Settings[]
 }
 type SourceBindings = {
@@ -28,6 +34,9 @@ const northFields = ['portAxisXYMm', 'dragDemandFactor', 'remoteMainBarShiftMm',
 const foulFields = ['riserAxisXYMm', 'wetStackAirTakeoffZMm', 'terminalZMm', 'buriedReceiving'] as const
 const inletFields = ['branch', 'washer', 'cheekMm', 'retainedSideLandMm', 'receiverRailWidthMm',
   'minimumFrontBridgeMm', 'axialTravelMm', 'sideTravelMm', 'closure'] as const
+const insertFields = ['eastEdgeMm', 'headZMm', 'plantPressureAxisXMm'] as const
+const faultFields = ['branches'] as const
+const removalFields = ['branch', 'drawMm', 'roofAccess', 'washer', 'utilityTaperRemoved', 'preparation'] as const
 const studyFields = ['pitchMm', 'wearingFace', 'finishDepthMm', 'groundDeckLevelLossMm', 'firstRestBoardSizeMm', 'opening'] as const
 
 function object(value: unknown): value is Record<string, unknown> {
@@ -53,12 +62,12 @@ function implementationFiles(directory: string): string[] {
   return readdirSync(new URL(directory, repository), { withFileTypes: true }).flatMap(entry => {
     const path = directory + entry.name
     if (entry.isDirectory()) return implementationFiles(path + '/')
-    return entry.isFile() && path.endsWith('.ts') ? [path] : []
+    return entry.isFile() && path.endsWith('.ts') && !path.endsWith('.test.ts') ? [path] : []
   }).sort()
 }
 
 function sourceBindings(resolved: CurrentDesignResolution): SourceBindings {
-  const paths = [...implementationFiles(implementationRoot), ...nativeAssemblyMethods].sort()
+  const paths = [...implementationRoots.flatMap(implementationFiles), ...additionalImplementationFiles].sort()
   return {
     disciplines: Object.fromEntries(resolved.disciplineBindings.map(binding => [binding.id, binding.digest]).sort(([a], [b]) => a.localeCompare(b))),
     implementations: Object.fromEntries(paths.map(path => {
@@ -78,10 +87,15 @@ function acceptedCompile(design: unknown) {
 
 export async function readEngineeringDocument(design: unknown) {
   const { resolved, compile } = acceptedCompile(design)
-  const [north, foul, covers] = await Promise.all([
-    compile.readNorthCollectorCase(), compile.readRearFoulVentCase(), compile.readInletCoverCases(),
+  const [north, foul, sill] = await Promise.all([
+    compile.readNorthCollectorCase(), compile.readRearFoulVentCase(), compile.readInletSillInsertCase(),
   ])
   if (!('collector' in north) || !('vent' in foul)) throw new Error('Current engineering cases are unavailable')
+  const [fault, removals] = await Promise.all([
+    compile.readInletFaultCase(sill.insert), compile.readInletRemovalCases(sill.insert),
+  ])
+  const removalCases = removals.map(({ removal }) => ({ ...removal, roofAccess: 'clear-strip-comparison' as const }))
+  const covers = await compile.readInletCoverCases({ insertCase: sill.insert, removalCases })
   return {
     schema: 'current-engineering-document/1' as const,
     design: resolved.design,
@@ -89,10 +103,26 @@ export async function readEngineeringDocument(design: unknown) {
     stages: {
       northCollector: select(north.collector, northFields),
       rearFoulVent: select(foul.vent, foulFields),
+      inletSillInsert: select(sill.insert, insertFields),
+      inletFault: select(fault.fault, faultFields),
+      inletRemovals: removalCases.map(removal => select(removal, removalFields)).sort((a, b) => String(a.branch).localeCompare(String(b.branch))),
       inletCovers: covers.map(({ cover }) => select(cover, inletFields)).sort((a, b) => String(a.branch).localeCompare(String(b.branch))),
       studyRoomKit: select(readStudyRoomKitReferenceCase(), studyFields),
     },
   }
+}
+
+function branchSettings(value: unknown, fields: readonly string[], name: string) {
+  if (!Array.isArray(value) || !value.length) throw new TypeError(`Specify at least one ${name} branch`)
+  const seen = new Set<unknown>()
+  return value.map(input => {
+    const selected = settings(input, fields, name)
+    if (!['utility', 'plant'].includes(selected.branch as string) || seen.has(selected.branch)) {
+      throw new TypeError(`Specify each bound ${name} branch at most once`)
+    }
+    seen.add(selected.branch)
+    return selected
+  }).sort((a, b) => String(a.branch).localeCompare(String(b.branch)))
 }
 
 function admitStages(value: unknown): EngineeringStages {
@@ -102,20 +132,13 @@ function admitStages(value: unknown): EngineeringStages {
   const stages: EngineeringStages = {
     ...(Object.hasOwn(value, 'northCollector') ? { northCollector: settings(value.northCollector, northFields, 'north collector') } : {}),
     ...(Object.hasOwn(value, 'rearFoulVent') ? { rearFoulVent: settings(value.rearFoulVent, foulFields, 'rear foul vent') } : {}),
+    ...(Object.hasOwn(value, 'inletSillInsert') ? { inletSillInsert: settings(value.inletSillInsert, insertFields, 'inlet sill insert') } : {}),
+    ...(Object.hasOwn(value, 'inletFault') ? { inletFault: settings(value.inletFault, faultFields, 'inlet fault') } : {}),
+    ...(Object.hasOwn(value, 'inletRemovals') ? { inletRemovals: branchSettings(value.inletRemovals, removalFields, 'inlet removal') } : {}),
+    ...(Object.hasOwn(value, 'inletCovers') ? { inletCovers: branchSettings(value.inletCovers, inletFields, 'inlet cover') } : {}),
     ...(Object.hasOwn(value, 'studyRoomKit') ? { studyRoomKit: settings(value.studyRoomKit, studyFields, 'Study room kit') } : {}),
   }
-  if (!Object.hasOwn(value, 'inletCovers')) return stages
-  if (!Array.isArray(value.inletCovers) || !value.inletCovers.length) throw new TypeError('Specify at least one inlet cover branch')
-  const seen = new Set<unknown>()
-  const inletCovers = value.inletCovers.map(input => {
-    const cover = settings(input, inletFields, 'inlet cover')
-    if (!['utility', 'plant'].includes(cover.branch as string) || seen.has(cover.branch)) {
-      throw new TypeError('Specify each bound inlet cover branch at most once')
-    }
-    seen.add(cover.branch)
-    return cover
-  }).sort((a, b) => String(a.branch).localeCompare(String(b.branch)))
-  return { ...stages, inletCovers }
+  return stages
 }
 
 export async function compileEngineeringDocument(input: unknown) {
@@ -138,14 +161,17 @@ export async function compileEngineeringDocument(input: unknown) {
   const engineering: {
     northCollector?: Awaited<ReturnType<typeof compile.northCollectorCase>>
     rearFoulVent?: Awaited<ReturnType<typeof compile.rearFoulVent>>
+    inletSillInsert?: Awaited<ReturnType<typeof compile.inletSillInsert>>
+    inletFault?: Awaited<ReturnType<typeof compile.inletFault>>
+    inletRemovals?: readonly Awaited<ReturnType<typeof compile.inletRemoval>>[]
     inletCovers?: readonly Awaited<ReturnType<typeof compile.inletCover>>[]
     studyRoomKit?: Awaited<ReturnType<typeof compile.studyRoomKit>>
   } = {}
   const manifest: { stage: string; settingsDigest: string; resultDigest: string; controls: readonly string[]; dependsOn: readonly string[] }[] = []
-  const recordResult = (stage: string, settings: unknown, result: unknown) => {
+  const recordResult = (stage: string, settings: unknown, result: unknown, upstream: readonly string[] = []) => {
     manifest.push({ stage, settingsDigest: sha256SemanticFingerprint(settings), resultDigest: sha256SemanticFingerprint(result),
       controls: object(settings) && Object.keys(settings).length ? Object.keys(settings).sort().map(key => `stages.${stage}.${key}`) : ['design'],
-      dependsOn: ['design', 'bindings.disciplines', 'bindings.implementations'] })
+      dependsOn: ['design', 'bindings.disciplines', 'bindings.implementations', ...upstream] })
   }
   const base = await compileCurrentDesignBundle(resolved.design)
   recordResult('plans', {}, base.plans)
@@ -163,15 +189,45 @@ export async function compileEngineeringDocument(input: unknown) {
     engineering.rearFoulVent = await compile.rearFoulVent({ ...request.vent, ...stages.rearFoulVent })
     recordResult('rearFoulVent', stages.rearFoulVent, engineering.rearFoulVent)
   }
+  const sill = stages.inletSillInsert || stages.inletFault || stages.inletRemovals || stages.inletCovers
+    ? await compile.readInletSillInsertCase() : undefined
+  const insertCase = sill ? { ...sill.insert, ...stages.inletSillInsert } : undefined
+  const insertDependency = stages.inletSillInsert ? ['inletSillInsert'] : []
+  if (stages.inletSillInsert) {
+    engineering.inletSillInsert = await compile.inletSillInsert(insertCase)
+    recordResult('inletSillInsert', stages.inletSillInsert, engineering.inletSillInsert)
+  }
+  if (stages.inletFault) {
+    const request = await compile.readInletFaultCase(insertCase)
+    engineering.inletFault = await compile.inletFault({ ...request.fault, ...stages.inletFault }, insertCase)
+    recordResult('inletFault', stages.inletFault, engineering.inletFault, insertDependency)
+  }
+  const removalCases = []
+  if (stages.inletRemovals) {
+    const requests = await compile.readInletRemovalCases(insertCase)
+    const results = []
+    for (const removal of stages.inletRemovals) {
+      const request = requests.find(request => request.removal.branch === removal.branch)
+      if (!request) throw new Error('The requested inlet removal branch is unavailable')
+      const selected = { ...request.removal, ...removal }
+      const result = await compile.inletRemoval(selected, insertCase)
+      removalCases.push(selected)
+      results.push(result)
+      recordResult(`inletRemovals/${removal.branch}`, removal, result, insertDependency)
+    }
+    engineering.inletRemovals = results
+  }
   if (stages.inletCovers) {
-    const requests = await compile.readInletCoverCases()
+    const sources = { insertCase, ...(stages.inletRemovals ? { removalCases } : {}) }
+    const requests = await compile.readInletCoverCases(sources)
     const results = []
     for (const cover of stages.inletCovers) {
       const request = requests.find(request => request.cover.branch === cover.branch)
       if (!request) throw new Error('The requested inlet branch is unavailable')
-      const result = await compile.inletCover({ ...request.cover, ...cover })
+      const result = await compile.inletCover({ ...request.cover, ...cover }, sources)
       results.push(result)
-      recordResult(`inletCovers/${cover.branch}`, cover, result)
+      recordResult(`inletCovers/${cover.branch}`, cover, result, [...insertDependency,
+        ...(stages.inletRemovals?.some(removal => removal.branch === cover.branch) ? [`inletRemovals/${cover.branch}`] : [])])
     }
     engineering.inletCovers = results
   }
