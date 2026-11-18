@@ -300,6 +300,38 @@ test('the widened splice provides backed reversible key pairs and exposes both w
   }
 })
 
+test('the isolated key trial separates each signed pair’s take-up from elastic rotation', async () => {
+  const compile = prepareCurrentDesignCompile(readGeorgianDesignSnapshot())
+  const request = await compile.readNorthCollectorCase()
+  assert.ok('collector' in request)
+  const face = { gapMm: 0.1, stiffnessKNPerMm: 100 }
+  const lower = { 'x-toe-end': face, 'x-toe-side': face, 'y-toe-end': face, 'y-toe-side': face }
+  const upper = { ...lower, 'x-toe-end': { ...face, gapMm: 1.1 } }
+  const keyContactTrial = { upper, lower, rotationBudgetMrad: 2 }
+  const [full, half, narrow] = await Promise.all([
+    compile.northCollectorCase({ ...request.collector, keyContactTrial }),
+    compile.northCollectorCase({ ...request.collector, keyContactTrial, dragDemandFactor: 0.5 }),
+    compile.northCollectorCase({ ...request.collector, keyContactTrial: { ...keyContactTrial, rotationBudgetMrad: 1.5 } }),
+  ])
+  assert.ok(full.status === 'computed-comparison' && full.keyContact && half.status === 'computed-comparison' && half.keyContact
+    && narrow.status === 'computed-comparison' && narrow.keyContact)
+  assert.equal(full.keyContact.admitted, false)
+  assert.equal(full.evidence.state, 'trial-only')
+  const [positive, negative] = full.keyContact.runs
+  assert.deepEqual(positive.faces.map(face => [face.level, face.yawSign, face.leverMm]), [['upper', 1, 830], ['lower', -1, 830]])
+  assert.equal(positive.status, 'elastic-rotation-exceeds-budget')
+  assert.equal(negative.status, 'within-trial-budget')
+  assert.equal(narrow.keyContact.runs[0].status, 'gap-exhausts-budget')
+  assert.ok(Math.abs(positive.gapRotationMrad - 1.4 / 830 * 1000) < 1e-8)
+  const keyForce = full.comparison.lateralClosure.momentAboutUnchangedGroundAxisU0KNm * 1000 / 830
+  assert.ok(Math.abs(positive.elasticRotationMrad - 4 * keyForce / 100 / 830 * 1000) < 1e-8)
+  assert.equal(half.keyContact.runs[0].gapRotationMrad, positive.gapRotationMrad)
+  assert.ok(Math.abs(half.keyContact.runs[0].elasticRotationMrad * 2 - positive.elasticRotationMrad) < 1e-8)
+  await assert.rejects(compile.northCollectorCase({ ...request.collector, keyContactTrial: { ...keyContactTrial,
+    upper: { ...upper, 'x-toe-end': { ...face, stiffnessKNPerMm: 0 } } } }), /positive stiffness/)
+  await assert.rejects(compile.northCollectorCase({ ...request.collector, keyContactTrial: { ...keyContactTrial, lower: {} } }), /all four retained key contacts/)
+})
+
 test('the local H28 turn resolves finite drag crossings and port overlap from the saved north case', async () => {
   const compile = prepareCurrentDesignCompile(readGeorgianDesignSnapshot())
   const request = await compile.readNorthCollectorCase()

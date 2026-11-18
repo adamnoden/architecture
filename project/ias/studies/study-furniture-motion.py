@@ -103,6 +103,7 @@ def first_rest_stance(bcr, obstacles, face, delta, keys, normal_axis, sign, scre
 
 def floor_first_rests(bcr, house, fixed, desk, chair, desk_park, chair_park, screen):
     parts, bands = screen['parts'], screen['bandsXYXYMm']
+    max_extended = screen.get('maximumExtendedTransferMm',0)
     if screen['bodyRadiusMm'] != house['studyDoorOperation']['bodyRadius']:
         raise ValueError('The first-rest worker does not match the source Study body radius')
     if len(parts) > 200 or len(parts) != len({part['id'] for part in parts}):
@@ -120,10 +121,24 @@ def floor_first_rests(bcr, house, fixed, desk, chair, desk_park, chair_park, scr
         return sorted(key for key,box in obstacles.items() if not key.startswith(('outer-','wall:'))
                       and overlap_xyxy(sweep,edges(box)))
 
+    def keep_receivers(candidates, excluded=()):
+        seen = set(excluded)
+        retained = []
+        for candidate in sorted(candidates,key=rank,reverse=True):
+            receiver = candidate['restPartId']
+            if receiver not in seen:
+                retained.append(candidate)
+                seen.add(receiver)
+        return retained
+
+    def rank(candidate):
+        return candidate['reserveMm'],-math.hypot(*candidate['shiftXYMm'])
+
     outcomes = []
     for part,(x,y) in zip(parts,centres):
         face, box, keys = part['face'], part['box'], part['keyCentresXYMm']
-        shortlist, controls, whole_rest, clear_face_sweep = [], set(), False, False
+        shortlist, extended = [], []
+        controls, whole_rest, clear_face_sweep = set(), False, False
         for receiving,(u,v) in zip(parts,centres):
             if receiving is part:
                 continue
@@ -132,27 +147,36 @@ def floor_first_rests(bcr, house, fixed, desk, chair, desk_park, chair_park, scr
                 tangent = 1-axis
                 if not (rest[tangent] <= face[tangent]+1e-8 and face[tangent+2] <= rest[tangent+2]+1e-8):
                     continue
-                if not (abs(box[axis]-receiving['box'][axis+2]) < 1e-8
-                        or abs(receiving['box'][axis]-box[axis+2]) < 1e-8):
+                adjacent = abs(box[axis]-receiving['box'][axis+2]) < 1e-8 or abs(receiving['box'][axis]-box[axis+2]) < 1e-8
+                travel = (u-x,v-y)[axis]
+                if not adjacent and not 0 < abs(travel) <= max_extended:
                     continue
                 delta = [0,0]
-                delta[axis] = (u-x,v-y)[axis]
+                delta[axis] = travel
                 moved = [value+delta[i%2] for i,value in enumerate(face)]
                 if rest[axis] <= moved[axis]+1e-8 and moved[axis+2] <= rest[axis+2]+1e-8:
                     break
             else:
                 continue
-            whole_rest = True
+            whole_rest |= adjacent
             sweep = [min(face[i],moved[i]) if i < 2 else max(face[i],moved[i]) for i in range(4)]
             if not within_room(sweep):
-                controls.add('finished-room-boundary')
+                if adjacent:
+                    controls.add('finished-room-boundary')
                 continue
+            intervening = []
+            if not adjacent:
+                intervening = [other['id'] for other in parts if other is not part and other is not receiving
+                               and overlap_xyxy(sweep,other['face'])]
+                if len(intervening) != 1:
+                    continue
             for label,obstacles in stage_obstacles:
                 conflicts = floor_obstacles(obstacles,sweep)
                 if conflicts:
-                    controls.update(conflicts)
+                    if adjacent:
+                        controls.update(conflicts)
                     continue
-                clear_face_sweep = True
+                clear_face_sweep |= adjacent
                 for normal_axis,sign in ((0,-1),(0,1),(1,-1),(1,1)):
                     stance = first_rest_stance(bcr,obstacles,face,delta,keys,normal_axis,sign,screen)
                     if not stance:
@@ -160,11 +184,20 @@ def floor_first_rests(bcr, house, fixed, desk, chair, desk_park, chair_park, scr
                     reserve = min(stance['worker']['minimumClearance']-screen['bodySettingMm'],screen['maximumReachMm']-stance['reachMm'])
                     witness = {'stage':label,'restPartId':receiving['id'],'shiftXYMm':delta,
                                'faceSweepXYXYMm':sweep,'reserveMm':reserve,**stance}
-                    shortlist.append(witness)
+                    if adjacent:
+                        shortlist.append(witness)
+                    else:
+                        extended.append({**witness,'interveningPartId':intervening[0]})
         row = {'partId':part['id']}
         if shortlist:
-            witness = max(shortlist,key=lambda candidate:(candidate['reserveMm'],-math.hypot(*candidate['shiftXYMm'])))
+            witness = max(shortlist,key=rank)
             row.update({'state':'direct-geometry-witness','witness':witness})
+            if screen.get('includeAlternateReceivers'):
+                alternates = keep_receivers(shortlist,[witness['restPartId']])
+                if alternates:
+                    row['alternateWitnesses'] = alternates
+            if extended:
+                row['extendedWitnesses'] = keep_receivers(extended)
         elif not whole_rest:
             row.update({'state':'no-adjacent-whole-face-rest'})
         elif not clear_face_sweep:
@@ -183,6 +216,7 @@ def floor_first_rests(bcr, house, fixed, desk, chair, desk_park, chair_park, scr
         'numericalScope':'Straight, unrotated whole-face transfer after local removable edges are released.',
         'witnessCount':sum(row['state']=='direct-geometry-witness' for row in outcomes),
         'partCount':len(outcomes),'parts':outcomes,
+        **({'extendedTransfer':{'maximumTravelMm':max_extended,'interveningPartCount':1}} if max_extended else {}),
         'transferVertical':{'initialLiftMm':screen['liftMm'],'travelTopMm':screen['liftMm'],
                             'travelUndersideMm':travel_bottom,'firstRestBoardTopMm':screen['restBoardTopMm'],
                             'undersideReserveMm':board_reserve},

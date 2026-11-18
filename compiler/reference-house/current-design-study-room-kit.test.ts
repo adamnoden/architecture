@@ -231,20 +231,69 @@ test('Study board trials distinguish board coverage from irreducible receiver sh
   assert.deepEqual(square.boardSizeMm, [300, 300])
   assert.deepEqual(square.padPatternSizeMm, [120, 175])
   assert.equal(square.comparedWitnessCount, 119)
-  assert.equal(square.placements.length, 107)
-  assert.equal(square.placements.filter(row => row.turnDeg === 90).length, 36)
+  assert.equal(square.placements.length, 117)
+  const alternatePlacements = square.placements.filter(row => row.alternateWitness)
+  assert.equal(alternatePlacements.length, 8)
+  assert.equal(square.placements.filter(row => row.turnDeg === 90).length, 40)
+  const byId = new Map(kit.floor.parts.map(part => [part.id, part.face]))
+  for (const row of alternatePlacements) {
+    const route = kit.floor.furnitureMotion?.firstRest?.parts.find(part => part.partId === row.partId)
+    assert.ok(route?.state === 'direct-geometry-witness' && row.alternateWitness)
+    assert.notEqual(row.restPartId, route.witness.restPartId)
+    assert.equal(row.restPartId, row.alternateWitness.restPartId)
+    assert.ok(route.alternateWitnesses?.includes(row.alternateWitness))
+    assert.deepEqual(row.alternateWitness.shiftXYMm, row.partId.endsWith('/429.5') ? [0, 185.25] : [-225.75, 0])
+    const moving = byId.get(row.partId)!
+    const receiving = byId.get(row.restPartId)!
+    for (const axis of [0, 1] as const) {
+      assert.ok(row.boardXYXYMm[axis] <= moving[axis] + row.alternateWitness.shiftXYMm[axis])
+      assert.ok(row.boardXYXYMm[axis + 2] >= moving[axis + 2] + row.alternateWitness.shiftXYMm[axis])
+      for (const centre of row.padCentresXYMm) {
+        assert.ok(centre[axis] - square.padWidthMm / 2 >= receiving[axis])
+        assert.ok(centre[axis] + square.padWidthMm / 2 <= receiving[axis + 2])
+      }
+    }
+  }
+  assert.deepEqual(square.extendedTransfer, { maximumTravelMm: 600, interveningPartCount: 1 })
+  const extendedPlacements = square.placements.filter(row => row.extendedWitness)
+  assert.equal(extendedPlacements.length, 2)
+  for (const row of extendedPlacements) {
+    const witness = row.extendedWitness!
+    const y = row.partId.split('/').at(-1)
+    assert.ok(row.partId.endsWith(`/4551.5/${y}`))
+    assert.ok(row.restPartId.endsWith(`/4100/${y}`))
+    assert.ok(witness.interveningPartId.endsWith(`/4400/${y}`))
+    assert.deepEqual(witness.shiftXYMm, [-377.25, 0])
+    assert.equal(witness.stage, 'occupied')
+    assert.equal(witness.worker.minimumClearance, 18.75)
+    assert.ok(witness.reachMm <= 600)
+    const [start, end] = witness.worker.points
+    const moving = byId.get(row.partId)!
+    const receiving = byId.get(row.restPartId)!
+    assert.deepEqual(witness.faceSweepXYXYMm, [moving[0] - 377.25, moving[1], moving[2], moving[3]])
+    for (const axis of [0, 1] as const) {
+      assert.equal(end[axis] - start[axis], witness.shiftXYMm[axis])
+      assert.ok(row.boardXYXYMm[axis] <= moving[axis] + witness.shiftXYMm[axis])
+      assert.ok(row.boardXYXYMm[axis + 2] >= moving[axis + 2] + witness.shiftXYMm[axis])
+      for (const centre of row.padCentresXYMm) {
+        assert.ok(centre[axis] - square.padWidthMm / 2 >= receiving[axis])
+        assert.ok(centre[axis] + square.padWidthMm / 2 <= receiving[axis + 2])
+      }
+    }
+  }
   const placed = new Set(square.placements.map(row => row.partId))
   assert.ok(retained.placements.every(row => placed.has(row.partId)))
   assert.notEqual(kit.caseDigest, biggerResult.kit.caseDigest)
   assert.deepEqual(kit.floor.firstRestBoard, biggerResult.kit.floor.firstRestBoard)
   assert.deepEqual(kit.floor.furnitureMotion?.firstRest, biggerResult.kit.floor.furnitureMotion?.firstRest)
   assert.deepEqual(square.outsideFit, bigger.outsideFit)
-  assert.equal(square.outsideFit.length, 12)
-  assert.equal(square.outsideFit.filter(row => Math.min(...row.receivingFaceSizeMm) === 67.5).length, 8)
+  assert.equal(square.outsideFit.length, 2)
+  assert.deepEqual(square.outsideFit.map(row => row.partId.split('/').slice(-2)), [['4400', '429.5'], ['4551.5', '429.5']])
+  assert.ok(square.outsideFit.some(row => row.alternateLimits?.length))
   for (const row of square.outsideFit) {
     assert.ok(!placed.has(row.partId))
     const receiverShortfall = Math.min(...row.orientationLimits.map(limit => Math.max(...limit.receivingPadShortfallMm)))
-    assert.equal(receiverShortfall, Math.min(...row.receivingFaceSizeMm) === 67.5 ? 52.5 : 26.5)
+    assert.equal(receiverShortfall, 52.5)
     assert.ok(row.orientationLimits.every(limit => limit.boardFaceShortfallMm.every(mm => mm === 0)))
   }
   assert.deepEqual(tooSmallResult.kit.floor.firstRestBoardTrial, {
