@@ -9,8 +9,8 @@
     "label": "ovid-inlet-removal"
   },
   "claimedAt": "2026-11-17T22:59:48.025Z",
-  "heartbeatAt": "2026-11-17T23:45:49.321Z",
-  "expiresAt": "2026-11-18T00:30:49.321Z",
+  "heartbeatAt": "2026-11-18T00:12:59.509Z",
+  "expiresAt": "2026-11-18T00:57:59.509Z",
   "branch": "work/study-room-kit-integration-2026-11-17",
   "predecessor": {
     "leaseId": "0ddabf6c-f6bb-4124-8614-3bf3b1a6c543",
@@ -36,8 +36,8 @@
   },
   "pr": 1568,
   "checkpoint": {
-    "evidence": "HAD carrier draw and bound native IAS washer reserved in joint STR/IAS/HAD integration tree 2ba2fc999ca3c037fef0a234c1e87b7617641258. Earlier standalone #1567 remains traceable; active publication is through #1568.",
-    "next": "Validate the joint PR at its exact head and merge with all three live lease preflights. Develop the independently retained roof strip, rated Z900 disconnect and positively supported first rest.",
-    "blocker": "The existing collar permits only 2 mm on the 620 mm straight draw. Actual independent wet closure, supported draw and installed pressure evidence remain open."
+    "evidence": "Joint PR #1568 merged via 3e8e6a8b8c4ca39383b14f45103dff25917c2ec8 with inlet carrier draw and IAS washer binding. The separate upper cover and offset first rest are implemented and locally verified in df0d2c28432d4fc1d3105c3adedec7eda58f17af, including the inline-rest and installed-washer failures. The cover follow-on is not published.",
+    "next": "Reconcile the verified cover case with current main and coordinate the next combined PR branch before rebinding this lease. Verify hosted exact-head CI and preflight before merge.",
+    "blocker": "The cover and offset landing are geometric comparisons. Actual pressure/weather seals, support, positive capture, rated Z900 disconnection and installed wet verification remain open."
   }
 }
