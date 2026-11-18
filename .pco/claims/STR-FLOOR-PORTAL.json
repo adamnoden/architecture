@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 38,
-  "state": "released",
-  "leaseId": "22f8af96-a0db-49bc-90d4-cd08e44fef13",
+  "generation": 39,
+  "state": "claimed",
+  "leaseId": "716fb931-d672-45ff-8c49-ea1a08bea348",
   "holder": {
     "kind": "codex",
-    "label": "ovid-structural-continuity"
+    "label": "rush-west-foul"
   },
-  "claimedAt": "2026-11-17T22:58:46.069Z",
-  "heartbeatAt": "2026-11-18T01:08:43.419Z",
-  "expiresAt": "2026-11-18T01:08:43.419Z",
-  "branch": "work/current-gallery-compiler-2026-11-18",
+  "claimedAt": "2026-11-18T07:48:13.711Z",
+  "heartbeatAt": "2026-11-18T07:48:13.711Z",
+  "expiresAt": "2026-11-18T08:33:13.711Z",
+  "branch": "work/rush-west-foul-2026-11-18",
   "predecessor": {
-    "leaseId": "20c1309c-7ef1-40dd-8d07-97a790f27619",
-    "generation": 37,
-    "branch": "work/total-integration-splice-dead-load-2026-11-17",
-    "pr": 1564,
+    "leaseId": "22f8af96-a0db-49bc-90d4-cd08e44fef13",
+    "generation": 38,
+    "branch": "work/current-gallery-compiler-2026-11-18",
+    "pr": 1573,
     "checkpoint": {
-      "evidence": "Merged PRs #1561–#1564 through main 27dac4e974bef538a222e8c4cb514e827acf08d1. Current collector, reversible key cut demands, 52-head yaw and added-gravity cases, and rear-vent comparisons are executable.",
-      "next": "Define the actual continuous DPC web-to-block seam, key confinement, weld effective throat, bedding contact and signed engagement. Then run a coupled 52-head, roof and rainwater replay on that geometry.",
-      "blocker": "The isolated references do not determine the joined splice capacity or constitutive stiffness, and the vent's roof, site and installation boundaries remain open."
+      "evidence": "Merged #1573 at 5bf811890511d82481d8eb60048a84a18da427e5. Full-demand retained cage excludes every cabinet port centre even with independent station placement.",
+      "next": "Bind a viable independent west foul route or revise the collector topology, then solve the coupled splice with actual receiver, weld, bedding and contact geometry.",
+      "blocker": "Full-demand cabinet relocation fails. Joined DPC stiffness and physical acceptance require a dimensioned load path."
     }
   },
   "recoverySource": {
-    "leaseId": "20c1309c-7ef1-40dd-8d07-97a790f27619",
-    "generation": 37,
-    "branch": "work/total-integration-splice-dead-load-2026-11-17",
-    "pr": 1564,
+    "leaseId": "22f8af96-a0db-49bc-90d4-cd08e44fef13",
+    "generation": 38,
+    "branch": "work/current-gallery-compiler-2026-11-18",
+    "pr": 1573,
     "checkpoint": {
-      "evidence": "Merged PRs #1561–#1564 through main 27dac4e974bef538a222e8c4cb514e827acf08d1. Current collector, reversible key cut demands, 52-head yaw and added-gravity cases, and rear-vent comparisons are executable.",
-      "next": "Define the actual continuous DPC web-to-block seam, key confinement, weld effective throat, bedding contact and signed engagement. Then run a coupled 52-head, roof and rainwater replay on that geometry.",
-      "blocker": "The isolated references do not determine the joined splice capacity or constitutive stiffness, and the vent's roof, site and installation boundaries remain open."
+      "evidence": "Merged #1573 at 5bf811890511d82481d8eb60048a84a18da427e5. Full-demand retained cage excludes every cabinet port centre even with independent station placement.",
+      "next": "Bind a viable independent west foul route or revise the collector topology, then solve the coupled splice with actual receiver, weld, bedding and contact geometry.",
+      "blocker": "Full-demand cabinet relocation fails. Joined DPC stiffness and physical acceptance require a dimensioned load path."
     }
-  },
-  "checkpoint": {
-    "evidence": "Merged #1573 at 5bf811890511d82481d8eb60048a84a18da427e5. Full-demand retained cage excludes every cabinet port centre even with independent station placement.",
-    "next": "Bind a viable independent west foul route or revise the collector topology, then solve the coupled splice with actual receiver, weld, bedding and contact geometry.",
-    "blocker": "Full-demand cabinet relocation fails. Joined DPC stiffness and physical acceptance require a dimensioned load path."
-  },
-  "pr": 1573,
-  "releasedAt": "2026-11-18T01:08:43.419Z",
-  "releaseReason": "handoff"
+  }
 }
