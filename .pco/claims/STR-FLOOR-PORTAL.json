@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 40,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "63619a6c-6728-4b79-8459-af6bb401f51a",
   "holder": {
     "kind": "codex",
     "label": "rush-dpc-splice"
   },
   "claimedAt": "2026-11-18T12:10:17.078Z",
-  "heartbeatAt": "2026-11-18T13:15:42.313Z",
-  "expiresAt": "2026-11-18T14:00:42.313Z",
+  "heartbeatAt": "2026-11-18T13:26:57.632Z",
+  "expiresAt": "2026-11-18T13:26:57.632Z",
   "branch": "work/rush-installation-bounds-2026-11-18",
   "predecessor": {
     "leaseId": "716fb931-d672-45ff-8c49-ea1a08bea348",
@@ -39,5 +39,7 @@
     "next": "Merge upon verified hosted validation, then obtain installed DPC rotation and simultaneous load evidence at the resolved foul interface",
     "blocker": "Existing northwest port intersects cage even at zero setting; coupled joint stiffness and route survey remain unresolved"
   },
-  "pr": 1578
+  "pr": 1578,
+  "releasedAt": "2026-11-18T13:26:57.632Z",
+  "releaseReason": "handoff"
 }
