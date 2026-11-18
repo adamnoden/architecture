@@ -1,6 +1,10 @@
 import assert from 'node:assert/strict'
-import { readFileSync } from 'node:fs'
+import { createHash } from 'node:crypto'
+import { copyFileSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import { tmpdir } from 'node:os'
+import { join } from 'node:path'
 import test from 'node:test'
+import { pathToFileURL } from 'node:url'
 import { auditSourceCoverage } from './source-coverage.ts'
 import { deriveWaterReplan } from '../../had/studies/water-replan.mjs'
 
@@ -9,6 +13,33 @@ const read = path => readFileSync(new URL(path, root))
 const rwtSource = 'project/rwt/studies/selected-receiving-interface.json'
 const hadReceipt = 'project/had/studies/water-replan.json'
 const currentMatDock = 'project/mat/studies/plant-threshold.json'
+
+test('an already loaded audit accepts a refreshed authority and its matching source account', async () => {
+  const sandbox = mkdtempSync(join(tmpdir(), 'ovid-source-refresh-'))
+  try {
+    const scope = join(sandbox, 'project/ccr/studies')
+    mkdirSync(scope, { recursive: true })
+    const method = join(scope, 'source-coverage.ts')
+    copyFileSync(new URL('./source-coverage.ts', import.meta.url), method)
+    const source = 'project/authority.json'
+    const manifest = join(scope, 'source-coverage.json')
+    const write = widthMm => {
+      const content = Buffer.from(JSON.stringify({ widthMm }))
+      writeFileSync(join(sandbox, source), content)
+      return createHash('sha1').update(`blob ${content.length}\0`).update(content).digest('hex')
+    }
+    const bind = blob => writeFileSync(manifest, JSON.stringify({ families: [], gitBlobs: { [source]: blob }, receiptEdges: [] }))
+    bind(write(12000))
+    const loaded = await import(pathToFileURL(method).href)
+    assert.deepEqual(loaded.auditSourceCoverage().findings, [])
+    const next = write(12001)
+    assert.deepEqual(loaded.auditSourceCoverage().findings.map(entry => entry.kind), ['changed-file'])
+    bind(next)
+    assert.deepEqual(loaded.auditSourceCoverage().findings, [])
+  } finally {
+    rmSync(sandbox, { recursive: true, force: true })
+  }
+})
 
 test('the selected overlay account authenticates the real source edges and separates authored RWT inputs from receipts', () => {
   const audit = auditSourceCoverage()

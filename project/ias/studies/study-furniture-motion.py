@@ -47,8 +47,152 @@ def cardinal(box, side, offset):
     return [box[0]-offset, box[1]+box[3]/2] if side == 'west' else [box[0]+box[2]/2, box[1]+box[3]+offset]
 
 
+
+def overlap_xyxy(a, b):
+    return all(a[i] < b[i+2] and b[i] < a[i+2] for i in (0,1))
+
+
+def edges(box):
+    x, y, width, depth = box
+    return [x,y,x+width,y+depth]
+
+
+def first_rest_stance(bcr, obstacles, face, delta, keys, normal_axis, sign, screen):
+    tangent_axis = 1-normal_axis
+    body_radius, body_gap = screen['bodyRadiusMm'], screen['bodyToPanelMm']
+    reach, grip_height = screen['maximumReachMm'], screen['verticalGripDifferenceMm']
+    n = face[normal_axis+(2 if sign > 0 else 0)] + sign*(body_radius+body_gap)
+    budgets = [reach**2-grip_height**2-(key[normal_axis]-n)**2 for key in keys]
+    if min(budgets) < 0:
+        return None
+    lo = max(key[tangent_axis]-math.sqrt(budget) for key,budget in zip(keys,budgets))
+    hi = min(key[tangent_axis]+math.sqrt(budget) for key,budget in zip(keys,budgets))
+    if lo > hi:
+        return None
+    start_normal,end_normal = sorted((n,n+delta[normal_axis]))
+    min_shift,max_shift = sorted((0,delta[tangent_axis]))
+    blocked = []
+    expanded_radius = body_radius+screen['bodySettingMm']
+    for box in obstacles.values():
+        limits = edges(box)
+        gap = max(limits[normal_axis]-end_normal,start_normal-limits[normal_axis+2],0)
+        if gap < expanded_radius:
+            radius = math.sqrt(expanded_radius**2-gap**2)
+            blocked.append((limits[tangent_axis]-radius-max_shift,limits[tangent_axis+2]+radius-min_shift))
+    available = []
+    cursor = lo
+    for start, stop in sorted(blocked):
+        if start >= hi:
+            break
+        if start > cursor:
+            available.append((cursor,start))
+        cursor = max(cursor,stop)
+    if cursor < hi:
+        available.append((cursor,hi))
+    if not available:
+        return None
+    left,right = max(available,key=lambda interval: interval[1]-interval[0])
+    tangent = (left+right)/2
+    start = [n,tangent] if normal_axis == 0 else [tangent,n]
+    end = [value+step for value,step in zip(start,delta)]
+    worker = bcr['route']([start,end],obstacles,body_radius)
+    measured = max(math.dist((*start,grip_height),(*key,0)) for key in keys)
+    assert worker['minimumClearance'] >= screen['bodySettingMm']-1e-8 and measured <= reach+1e-8
+    return {'worker':worker,'reachMm':measured,'stanceIntervalMm':[left,right],'normalAxis':'xy'[normal_axis]}
+
+
+def floor_first_rests(bcr, house, fixed, desk, chair, desk_park, chair_park, screen):
+    parts, bands = screen['parts'], screen['bandsXYXYMm']
+    if screen['bodyRadiusMm'] != house['studyDoorOperation']['bodyRadius']:
+        raise ValueError('The first-rest worker does not match the source Study body radius')
+    if len(parts) > 200 or len(parts) != len({part['id'] for part in parts}):
+        raise ValueError('Expected unique parts for one occupied Study floor')
+    fixed = {**fixed,'study-emitter-plinth':footprint(screen['emitterPlinthXYXYMm'])}
+    stages = [('occupied',desk,chair),('chair-parked',desk,chair_park),('desk-and-chair-parked',desk_park,chair_park)]
+    stage_obstacles = [(label,{**fixed,'study-desk':d,'study-chair':c}) for label,d,c in stages]
+    centres = [tuple((part['face'][i]+part['face'][i+2])/2 for i in (0,1)) for part in parts]
+
+    def within_room(sweep):
+        area = sum(math.prod(max(0,min(sweep[i+2],band[i+2])-max(sweep[i],band[i])) for i in (0,1)) for band in bands)
+        return abs(area-(sweep[2]-sweep[0])*(sweep[3]-sweep[1])) < 1e-8
+
+    def floor_obstacles(obstacles, sweep):
+        return sorted(key for key,box in obstacles.items() if not key.startswith(('outer-','wall:'))
+                      and overlap_xyxy(sweep,edges(box)))
+
+    outcomes = []
+    for part,(x,y) in zip(parts,centres):
+        face, box, keys = part['face'], part['box'], part['keyCentresXYMm']
+        shortlist, controls, whole_rest, clear_face_sweep = [], set(), False, False
+        for receiving,(u,v) in zip(parts,centres):
+            if (x,y) == (u,v) or (x != u and y != v):
+                continue
+            delta = [u-x,v-y]
+            axis = 0 if delta[0] else 1
+            boundary_gap = max(box[axis]-receiving['box'][axis+2],receiving['box'][axis]-box[axis+2],0)
+            moved = [value+delta[i%2] for i,value in enumerate(face)]
+            rest = receiving['face']
+            if boundary_gap > 0 or not all(rest[i] <= moved[i]+1e-8 and moved[i+2] <= rest[i+2]+1e-8 for i in (0,1)):
+                continue
+            whole_rest = True
+            sweep = [min(face[i],moved[i]) if i < 2 else max(face[i],moved[i]) for i in range(4)]
+            if not within_room(sweep):
+                controls.add('finished-room-boundary')
+                continue
+            for label,obstacles in stage_obstacles:
+                conflicts = floor_obstacles(obstacles,sweep)
+                if conflicts:
+                    controls.update(conflicts)
+                    continue
+                clear_face_sweep = True
+                for normal_axis,sign in ((0,-1),(0,1),(1,-1),(1,1)):
+                    stance = first_rest_stance(bcr,obstacles,face,delta,keys,normal_axis,sign,screen)
+                    if not stance:
+                        continue
+                    reserve = min(stance['worker']['minimumClearance']-screen['bodySettingMm'],screen['maximumReachMm']-stance['reachMm'])
+                    witness = {'stage':label,'restPartId':receiving['id'],'shiftXYMm':delta,
+                               'faceSweepXYXYMm':sweep,'reserveMm':reserve,**stance}
+                    shortlist.append(witness)
+        row = {'partId':part['id']}
+        if shortlist:
+            witness = max(shortlist,key=lambda candidate:(candidate['reserveMm'],-math.hypot(*candidate['shiftXYMm'])))
+            row.update({'state':'direct-geometry-witness','witness':witness})
+        elif not whole_rest:
+            row.update({'state':'no-adjacent-whole-face-rest'})
+        elif not clear_face_sweep:
+            row.update({'state':'panel-sweep-unsupported','encounteredPlanProjectionIds':sorted(controls)})
+        else:
+            row.update({'state':'worker-stance-or-reach-unsupported'})
+        outcomes.append(row)
+
+    travel_bottom = screen['liftMm']-screen['finishDepthMm']
+    board_reserve = travel_bottom-screen['restBoardTopMm']
+    if board_reserve <= 0:
+        raise ValueError('The Study floor lift does not clear the retained first-rest board')
+    inlet = next(item for item in house['architecturalServices']['supply'] if item['id']=='study')['selectedFirstRelease']
+    return {
+        'schema':'ias-study-floor-first-rest/1','physicalAcceptance':False,
+        'numericalScope':'Straight, unrotated whole-face transfer after local removable edges are released.',
+        'witnessCount':sum(row['state']=='direct-geometry-witness' for row in outcomes),
+        'partCount':len(outcomes),'parts':outcomes,
+        'transferVertical':{'initialLiftMm':screen['liftMm'],'travelTopMm':screen['liftMm'],
+                            'travelUndersideMm':travel_bottom,'firstRestBoardTopMm':screen['restBoardTopMm'],
+                            'undersideReserveMm':board_reserve},
+        'held': ['Separate entry and grip exchange at each pickup','Support of the fitted deck, board and receiving finish',
+                 'Package release and loaded motion under actual fixed service supports','Refit, tolerance and repeatability'],
+        'g1Projection': {
+            'carrierPlanXYWHMm':inlet['innerCartridge']['supportedCarrier'],
+            'releasedPackageZMm':inlet['innerCartridge']['finalZ'],
+            'installedCarrierMinimumZMm':None,
+            'treatment':'Retain installed inlet and carrier as full-height BCR plan projections until the complete lowest fixed support can be bound.',
+        },
+    }
+
+
 def room_motion(root, request):
-    if not isinstance(request, dict) or set(request) != {'schema', 'bayReceiptSha256', 'deskParkXYXYMm', 'chairParkXYXYMm'} or request['schema'] != 'ias-study-furniture-native-case/1':
+    keys = {'schema', 'bayReceiptSha256', 'deskParkXYXYMm', 'chairParkXYXYMm'}
+    if (not isinstance(request, dict) or set(request)-{'firstRest'} != keys
+            or request['schema'] != 'ias-study-furniture-native-case/1'):
         raise ValueError('Expected a versioned occupied furniture case')
     boxes = [request[name] for name in ('deskParkXYXYMm', 'chairParkXYXYMm')]
     if not all(isinstance(box,list) and len(box) == 4
@@ -125,7 +269,11 @@ def room_motion(root, request):
         p.get('bodyToItemMm', math.inf), p.get('forearmClearanceMm', math.inf),
         p.get('hand', p.get('handCorridor', {'minimumClearance': math.inf}))['minimumClearance'],
     ) < clearance or p.get('maximumProspectiveReachMm', 0) > 600]
+    floor_case = request.get('firstRest')
+    first_rest = None if conflicts or floor_case is None else floor_first_rests(
+        bcr,house,fixed,desk,chair,desk_park,chair_park,floor_case)
     return {
+        'firstRest':first_rest,
         'schema':'ias-study-furniture-native-result/1', 'state':'geometry-screen-only' if not conflicts else 'geometry-conflict',
         'basis': {'bayReceiptSha256':request['bayReceiptSha256'], 'bayInputs':baseline['sourceGitBlobs'],
                   'occupiedHouseInputs':baseline['currentHouseInputBlobs'],

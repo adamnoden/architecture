@@ -1,6 +1,7 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { buildDrawingGallery } from '../scripts/drawing-gallery.js'
+import { readGeorgianDesignSnapshot } from '../compiler/reference-house/current-design/georgian-source.js'
 
 // VitePress evaluates data loaders before copying public assets into the site.
 // The same loader runs again when source files are added, changed or removed in dev.
@@ -12,6 +13,7 @@ export default {
     './**/*.svg',
     '../project/**/*.md',
     '../project/**/*.svg',
+    '../project/**/studies/**/*.{json,mjs,py}',
     '../public/drawings/**/*.svg',
     '../public/figures/**/*.svg',
     '../compiler/**/*.ts',
@@ -25,8 +27,8 @@ export default {
     '../project/nomenclature.ts',
     '../scripts/drawing-gallery.ts'
   ],
-  load() {
-    const { catalogue, assets } = buildDrawingGallery()
+  async load() {
+    const { catalogue, assets } = await buildDrawingGallery(process.cwd(), { currentDesign: readGeorgianDesignSnapshot() })
     const output = resolve(process.cwd(), 'public/drawing-gallery')
     mkdirSync(output, { recursive: true })
     const expected = new Set<string>()

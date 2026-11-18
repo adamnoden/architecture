@@ -31,6 +31,7 @@ type Case = {
 const minimumBorderMm = 60
 const pickupBox: Box = [3800, 500, 4100, 800]
 const firstRestBox: Box = [4100, 500, 4400, 800]
+const directRelease = { bodyRadiusMm: 300, bodyToPanelMm: 35, bodySettingMm: 5, maximumReachMm: 600, gripZ: 180, shoulderZ: 360 }
 
 function record(input: unknown): input is Record<string, unknown> {
   return !!input && typeof input === 'object' && !Array.isArray(input)
@@ -356,11 +357,9 @@ function releaseScreen(assembly: FloorAssembly, parts: ReturnType<typeof partSet
   const rest = at(firstRestBox)
   if (!pickup || !rest) return { state: 'withheld', code: 'TRIAL_PICKUP_OR_FIRST_REST_CHANGED' } as const
   const [, south, , north] = assembly.grid.bands[pickup.band]
-  const radius = 300
-  const setting = 5
+  const { bodyRadiusMm: radius, bodySettingMm: setting, bodyToPanelMm: gap, gripZ, shoulderZ } = directRelease
   const projection = assembly.section.skirting.projectionMm
   const stanceY = (south + north) / 2
-  const gap = 35
   const startX = pickupBox[0] - radius - gap
   const endX = firstRestBox[0] - radius - gap
   const workerSweep: Box = [startX - radius, stanceY - radius, endX + radius, stanceY + radius]
@@ -369,8 +368,6 @@ function releaseScreen(assembly: FloorAssembly, parts: ReturnType<typeof partSet
   const blocked = wallMarginMm <= 0 || assembly.grid.occupied.some(([, box]) => intersects(box, workerSweep) || intersects(box, panelSweep))
   const gripX = (pickupBox[0] + pickupBox[2]) / 2
   const gripY = (pickupBox[1] + pickupBox[3]) / 2
-  const gripZ = 180
-  const shoulderZ = 360
   const gripCentres = [gripY - 50, gripY + 50].map(y => [gripX, y, gripZ] as const)
   const reachMm = Math.max(...gripCentres.map(([x, y, z]) => Math.hypot(x - startX, y - stanceY, z - shoulderZ)))
   return {
@@ -391,8 +388,20 @@ function deriveStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
   const release = releaseScreen(assembly, parts)
   const handling = handlingScreen(assembly, floorLayout, nativeWindow.furnitureAccess)
   const movement = nativeWindow.furnitureAccess
+  const { bodyRadiusMm, bodyToPanelMm, bodySettingMm, maximumReachMm, gripZ, shoulderZ } = directRelease
+  const firstRest = emitterPlinth.state === 'withheld' || handling.state === 'withheld' ? undefined : {
+    parts: parts.map(({ id, box, face, grip }) => {
+      if (!grip) throw new Error(`Missing Study pickup keys for ${id}`)
+      return { id, box, face, keyCentresXYMm: grip.centres }
+    }),
+    bandsXYXYMm: assembly.grid.bands,
+    emitterPlinthXYXYMm: emitterPlinth.box,
+    bodyRadiusMm, bodyToPanelMm, bodySettingMm, maximumReachMm, verticalGripDifferenceMm: shoulderZ - gripZ,
+    liftMm: handling.emitterEdgeRelease.pickupLiftMm,
+    restBoardTopMm: handling.emitterEdgeRelease.restBoardTopMm, finishDepthMm: assembly.section.finishDepthMm,
+  }
   const furnitureMotion = handling.state === 'withheld' ? null : compileStudyFurnitureMotion(
-    movement.receipt.sha256, movement.turnReceiptSha256, handling.parking.parkedDesk, handling.parking.parkedChair,
+    movement.receipt.sha256, movement.turnReceiptSha256, handling.parking.parkedDesk, handling.parking.parkedChair, firstRest,
   )
   const { house } = readBoundOccupiedServices(resolved)
   const [doorMin, doorMax] = house.model.studyDoorOperation.rough

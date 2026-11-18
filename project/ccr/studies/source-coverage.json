@@ -467,7 +467,7 @@
     {
       "id": "had-inlet-south-removal",
       "state": "candidate-interface",
-      "authority": "Straight removal draw for one conditional sill carrier and its modeled obstacles. Independent roof closure, rated disconnect and captured first rest remain unresolved.",
+      "authority": "Straight removal draw and separate upper cover first-rest comparison for one conditional sill carrier. Installed independent closure, matched disconnect and captured support remain unresolved.",
       "decisions": [
         "project/had/south-inlet-wet-box.md"
       ],
@@ -485,7 +485,8 @@
       "authoredInputs": [],
       "receipts": [],
       "consumers": [
-        "compiler/reference-house/current-design/inlet-removal.ts"
+        "compiler/reference-house/current-design/inlet-removal.ts",
+        "compiler/reference-house/current-design/inlet-cover.ts"
       ],
       "producerChecks": [
         "node project/had/studies/south-inlet-wet-box.mjs --check",
@@ -844,9 +845,9 @@
     "project/str/studies/floor-portal-north-cage.json": "2b58f32dfcb90a44785d9217284f39b3ecbb7241",
     "project/str/studies/current-house-structural-case.py": "4708a0182ddb3bf67651a4469048de4639d3c2cb",
     "project/design-constraints.ts": "0c76e5372a2537bbc6f3c6c29f07ab0efa297129",
-    "project/str/studies/floor-portal-monolithic-drag.py": "55df2044d7ad72fbb7406b42564b1175a86b9fd1",
+    "project/str/studies/floor-portal-monolithic-drag.py": "2a68e1ca739c93505482a5e9b503aff4340b5c64",
     "project/str/studies/floor-portal-monolithic-drag.json": "9a8cf79026419f3b9f05cee4b573b6dd1f3a04e6",
-    "project/str/floor-portal-monolithic-drag.md": "669a0aad854f41e42d2326a83605ecefd424a2bd",
+    "project/str/floor-portal-monolithic-drag.md": "ac3303f72aa48829dc84fbe7e98da94a6a462b9d",
     "project/str/studies/current-house-ground-ties.json": "80c5ede6bcbe0b0bb3a19032feddd8403fbf19b1",
     "project/had/studies/south-inlet-sill-insert.mjs": "5b8102418d8ea33bd6a03fe2dd7cde41efe943ff",
     "project/had/studies/south-inlet-sill-insert-kernel.mjs": "3df75b2cb2fa492c6b3e5b2a04a113f481007880",
@@ -855,7 +856,7 @@
     "project/had/studies/south-inlet-under-sill.json": "7d60da325cd76bb9d7924bc4bb64f1b93b51b644",
     "project/had/studies/south-inlet-wet-box.json": "0ccc6a7b1584145b5e77c7b89e9e2b8ce8b7d665",
     "project/str/studies/floor-portal-interface-review.json": "ad8aac21e936f0199b331c3bd886c8bb41f30ee3",
-    "compiler/reference-house/current-design/north-collector.ts": "09bc8a194db5b0d0e1fc831b411e2c5e9853fd0f",
+    "compiler/reference-house/current-design/north-collector.ts": "5f1baa2946d96f2c1e7d869c1f8f87a1facefc93",
     "compiler/reference-house/current-design/inlet-sill-insert.ts": "08d96ab51ecbd883df0dd56573327a2e0e4d63b4",
     "project/had/south-inlet-relief.md": "9bde59b3cc55bc4fb7156402e50337b9f27fc3a5",
     "project/had/studies/south-inlet-relief.mjs": "2648332efff491577ce285dc315e9e38006ecbbc",
@@ -884,8 +885,9 @@
     "project/had/studies/current-house-service-outputs.mjs": "ed9b9796099e5b8736d11a1d90bb93a566bfe12d",
     "project/had/studies/occupied-service-plate.mjs": "1d5b59e2945bcc58234d7ee96d41ec3473aa1ec2",
     "project/had/studies/selected-service-plate.mjs": "732c5d440d2963a6092a0bf2bfdd8df8e198a54b",
-    "project/had/south-inlet-wet-box.md": "979d9a4952456b5487f22e37117197c36d0261d4",
+    "project/had/south-inlet-wet-box.md": "c33700faa17635b4b2c3b98f8cdd3c0d0618e748",
     "project/had/studies/south-inlet-wet-box.mjs": "2b6ae4e01c29823c6d91e78cd4657b4fe373a618",
-    "compiler/reference-house/current-design/inlet-removal.ts": "1562bc7c875c87064834be380cbe7d668a3e2032"
+    "compiler/reference-house/current-design/inlet-removal.ts": "5310a17425cbf81b50ae3b8d702224ac0bf83d7e",
+    "compiler/reference-house/current-design/inlet-cover.ts": "f83140eafd9afdca6d8e8690020841b0f477985d"
   }
 }

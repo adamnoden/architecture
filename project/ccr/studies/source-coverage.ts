@@ -32,12 +32,12 @@ interface SourceAccount {
   readonly receiptEdges: readonly ReceiptEdge[]
 }
 
-const contract = JSON.parse(readSource('project/ccr/studies/source-coverage.json').toString('utf8')) as SourceAccount
 const gitBlob = (bytes: Buffer) => createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')
 const sha256 = (bytes: Buffer) => createHash('sha256').update(bytes).digest('hex')
 
 /** Checks the source account, and the input identities claimed by existing receipts. */
 export function auditSourceCoverage(read: FileReader = readSource) {
+  const contract = JSON.parse(readSource('project/ccr/studies/source-coverage.json').toString('utf8')) as SourceAccount
   const findings: Array<{ readonly kind: string; readonly [key: string]: unknown }> = []
   const observed = new Map<string, { bytes: Buffer; gitBlob: string; sha256: string }>()
   for (const [path, expectedGitBlob] of Object.entries(contract.gitBlobs)) {

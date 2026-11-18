@@ -7,6 +7,7 @@ import { routeForSource } from '../project/site-routes.js'
 import { publicationFigurePlacements } from '../publication/figures.js'
 import { publicationPlatePlacements } from '../publication/plates-current.js'
 import { publicationEntries } from '../publication/publication.js'
+import { prepareCurrentDesignCompile } from '../compiler/reference-house/current-design/compile.js'
 import { layoutFamilySource, layoutFamilyViews, createLayoutFamilyScene } from '../compiler/reference-house/georgian/layout-family.js'
 import { layoutAnalysisSource, layoutAnalysisViews, createLayoutAnalysisScene } from '../compiler/reference-house/georgian/layout-analysis.js'
 import { synthesisSource, createCurrentSynthesisScene } from '../compiler/reference-house/georgian/sectional-synthesis.js'
@@ -161,7 +162,16 @@ export function frameGalleryScene(scene: DrawingSceneV2): DrawingSceneV2 {
 }
 
 /** A build projection: no persisted inventory and no second source of drawing geometry. */
-export function buildDrawingGallery(root = process.cwd(), options: { includeCurrent?: boolean } = {}): DrawingGallery {
+export async function buildDrawingGallery(
+  root: string,
+  options: { includeCurrent: false } | { currentDesign: unknown }
+): Promise<DrawingGallery> {
+  const compile = 'currentDesign' in options ? prepareCurrentDesignCompile(options.currentDesign) : undefined
+  const currentPlans = compile?.plans()
+  if (currentPlans && currentPlans.status !== 'NOMINAL_PLAN_ONLY') throw new Error('The public gallery requires the accepted current design')
+  const occupiedServices = await compile?.occupiedServiceDrawings()
+  const serviceDrawings = new Map(Object.entries(occupiedServices?.drawings ?? {})
+    .map(([name, svg]) => [`project/had/studies/${name}`, svg]))
   const entries: GalleryEntry[] = []
   const assets = new Map<string, string>()
   const addSvg = (entry: Omit<GalleryEntry, 'href' | 'preview'>, content: string) => {
@@ -185,28 +195,38 @@ export function buildDrawingGallery(root = process.cwd(), options: { includeCurr
   const publications = publicationMetadata()
   const historicalPaths = historicalArtwork(root)
   const currentExteriorPaths = new Set(exteriorViews.map((view) => `public/drawings/exterior-isometrics/${view}.svg`))
-  for (const path of files.filter((path) => path.endsWith('.svg'))) {
-    if (options.includeCurrent !== false && currentExteriorPaths.has(path)) continue
-    const content = readFileSync(resolve(root, path), 'utf8')
+  const svgPaths = new Set([...files.filter((path) => path.endsWith('.svg')), ...serviceDrawings.keys()])
+  for (const path of svgPaths) {
+    if (currentPlans && currentExteriorPaths.has(path)) continue
+    const serviceDrawing = serviceDrawings.get(path)
+    const content = serviceDrawing ?? readFileSync(resolve(root, path), 'utf8')
     const metadata = publications.get(path)
     const rawTitle = metadata?.title || svgText(content, 'title') || humanise(posix.basename(path))
     const historical = metadata?.historical || historicalPaths.has(path)
       || (path.startsWith('docs/reference-house/') && (/\/(?:rhc[0-4]-)|-rh(?:0\d|1[01])\.svg$/.test(path) || /\bRH-(?:C[0-4]|0\d|1[01])\b/.test(svgText(content, 'title'))))
     const identity = classification(path, historical)
+    if (serviceDrawing !== undefined) {
+      identity.basis = 'study'
+      identity.collection = 'Conditional occupied services'
+    }
     const title = readerTitle(rawTitle, path) || humanise(posix.basename(path))
     const rawDescription = metadata?.description || svgText(content, 'desc')
-    const description = hasInternalIdentity(rawDescription) ? '' : rawDescription
+    const description = serviceDrawing !== undefined
+      ? 'Selected service coordination. Physical and structural adoption remain open.'
+      : hasInternalIdentity(rawDescription) ? '' : rawDescription
     const sibling = path.replace(/\.svg$/, '.md')
-    const context = contexts.get(path) ?? (metadata && existsSync(resolve(root, metadata.source)) ? metadata.source : undefined)
+    const context = contexts.get(path) ?? (serviceDrawing !== undefined ? 'project/had/inhabited-services-selection.md' : undefined)
+      ?? (metadata && existsSync(resolve(root, metadata.source)) ? metadata.source : undefined)
       ?? (existsSync(resolve(root, sibling)) ? sibling : path)
     addSvg({ id: path, title, description, ...identity, sourcePath: path, context: contextFor(root, context) }, content)
   }
 
-  if (options.includeCurrent !== false) {
+  if (currentPlans) {
     const currentContext = contextFor(root, 'docs/reference-house/current-house-basis.md')
-    const current = (scene: DrawingSceneV2, sourcePath: string, title: string, collection: string, description = scene.description) => {
+    const current = (scene: DrawingSceneV2, sourcePath: string, title: string, collection: string,
+      description = scene.description, basis: GalleryEntry['basis'] = 'current') => {
       addSvg({
-        id: scene.viewId, title, description, category: 'architecture', basis: 'current', collection,
+        id: scene.viewId, title, description, category: 'architecture', basis, collection,
         sourcePath, sourceId: scene.sourceId, context: currentContext
       }, renderDrawingSceneV2SvgWithTokens(frameGalleryScene(scene), PLT_CANDIDATE_TOKENS) + '\n')
     }
@@ -217,8 +237,18 @@ export function buildDrawingGallery(root = process.cwd(), options: { includeCurr
       'GROUND-SERVICES': 'Ground-floor service overlay', 'FIRST-SERVICES': 'First-floor service overlay', STRUCTURE: 'Structural overlay',
       'ROOF-FAILURE': 'Roof water and failure overlay', 'EXTERNAL-ACCESS': 'External maintenance overlay', ADAPTATION: 'Future adaptation overlay'
     }
-    for (const view of layoutFamilyViews) current(createLayoutFamilyScene(view, 100), 'compiler/reference-house/georgian/layout-family.ts', viewTitles[view] ?? humanise(view.toLowerCase()), 'Coordinated drawings', '')
-    for (const view of layoutAnalysisViews) current(createLayoutAnalysisScene(view, 100), 'compiler/reference-house/georgian/layout-analysis.ts', viewTitles[view] ?? humanise(view.toLowerCase()), 'Analysis overlays')
+    for (const view of layoutFamilyViews) {
+      const scene = view === 'GROUND' || view === 'FIRST' ? currentPlans.plans[view] : createLayoutFamilyScene(view, 100)
+      current(scene, 'compiler/reference-house/georgian/layout-family.ts', viewTitles[view] ?? humanise(view.toLowerCase()), 'Coordinated drawings', '')
+    }
+    for (const view of layoutAnalysisViews) {
+      const scene = createLayoutAnalysisScene(view, 100)
+      const title = viewTitles[view] ?? humanise(view.toLowerCase())
+      const source = 'compiler/reference-house/georgian/layout-analysis.ts'
+      if (view === 'GROUND-SERVICES' || view === 'FIRST-SERVICES') {
+        current(scene, source, title, 'Nominal service reservations', 'Spatial reservations from the Georgian layout.', 'study')
+      } else current(scene, source, title, 'Analysis overlays')
+    }
     current(createCurrentSynthesisScene('BOOK', 'b5'), 'compiler/reference-house/georgian/sectional-synthesis.ts', 'Sectional isometric', 'Coordinated drawings', synthesisSource.scope)
     for (const view of exteriorViews) current(createExteriorIsometricScene(view, 'svg'), 'compiler/reference-house/georgian/exterior-isometrics.ts', `${humanise(view)} exterior isometric`, 'Coordinated drawings')
     // Keep identities tied to the exported source families, even if their view lists evolve.

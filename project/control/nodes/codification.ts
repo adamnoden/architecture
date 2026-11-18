@@ -61,7 +61,7 @@ export const codificationNodes = defineNodes([
     id: 'CCR-CURRENT-GALLERY', owners: ['CCR', 'PLT'],
     title: 'Route public floor plans and occupied service drawings through the current compiler',
     dependencies: ['PCO-CURRENT-GALLERY', 'CCR-CURRENT-COMPILE', 'CCR-SERVICES-INTEGRATION', 'PLT-CURRENT-REVIEW'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/ccr/current-gallery-result.md']
   },

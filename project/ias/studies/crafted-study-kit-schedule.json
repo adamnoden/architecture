@@ -5499,6 +5499,5032 @@
         ]
       },
       "furnitureMotion": {
+        "firstRest": {
+          "schema": "ias-study-floor-first-rest/1",
+          "physicalAcceptance": false,
+          "numericalScope": "Straight, unrotated whole-face transfer after local removable edges are released.",
+          "witnessCount": 118,
+          "partCount": 144,
+          "parts": [
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/429.5/429.5",
+              "state": "no-adjacent-whole-face-rest"
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/429.5/500",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/500/500",
+                "shiftXYMm": [
+                  185.25,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  431,
+                  501.5,
+                  683.75,
+                  798.5
+                ],
+                "reserveMm": 81,
+                "worker": {
+                  "points": [
+                    [
+                      833.5,
+                      883.6818382944507
+                    ],
+                    [
+                      1018.75,
+                      883.6818382944507
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 86,
+                  "limitingObstacle": "outer-W",
+                  "segment": 0
+                },
+                "reachMm": 498.8506268194106,
+                "stanceIntervalMm": [
+                  752.5,
+                  1014.8636765889014
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/429.5/800",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/500/800",
+                "shiftXYMm": [
+                  185.25,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  431,
+                  801.5,
+                  683.75,
+                  950
+                ],
+                "reserveMm": 81,
+                "worker": {
+                  "points": [
+                    [
+                      833.5,
+                      883.6818382944507
+                    ],
+                    [
+                      1018.75,
+                      883.6818382944507
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 86,
+                  "limitingObstacle": "outer-W",
+                  "segment": 0
+                },
+                "reachMm": 414.4063952066551,
+                "stanceIntervalMm": [
+                  752.5,
+                  1014.8636765889014
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/429.5/951.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/500/951.5",
+                "shiftXYMm": [
+                  185.25,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  431,
+                  953,
+                  683.75,
+                  1101.5
+                ],
+                "reserveMm": 81,
+                "worker": {
+                  "points": [
+                    [
+                      833.5,
+                      883.6818382944507
+                    ],
+                    [
+                      1018.75,
+                      883.6818382944507
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 86,
+                  "limitingObstacle": "outer-W",
+                  "segment": 0
+                },
+                "reachMm": 453.701659382094,
+                "stanceIntervalMm": [
+                  752.5,
+                  1014.8636765889014
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/500/500",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/800/500",
+                "shiftXYMm": [
+                  300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  501.5,
+                  501.5,
+                  1098.5,
+                  798.5
+                ],
+                "reserveMm": 35.37656070402306,
+                "worker": {
+                  "points": [
+                    [
+                      1133.5,
+                      829.4065783765099
+                    ],
+                    [
+                      1433.5,
+                      829.4065783765099
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 81.90657837650906,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 564.6234392959769,
+                "stanceIntervalMm": [
+                  752.5,
+                  906.3131567530197
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/500/800",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/500/951.5",
+                "shiftXYMm": [
+                  0,
+                  151.5
+                ],
+                "faceSweepXYXYMm": [
+                  501.5,
+                  801.5,
+                  798.5,
+                  1101.5
+                ],
+                "reserveMm": 36.269290795684924,
+                "worker": {
+                  "points": [
+                    [
+                      1133.5,
+                      848
+                    ],
+                    [
+                      1133.5,
+                      999.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 100.5,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 563.7307092043151,
+                "stanceIntervalMm": [
+                  752.5,
+                  943.5
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/500/951.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/500/800",
+                "shiftXYMm": [
+                  0,
+                  -151.5
+                ],
+                "faceSweepXYXYMm": [
+                  501.5,
+                  801.5,
+                  798.5,
+                  1101.5
+                ],
+                "reserveMm": 36.269290795684924,
+                "worker": {
+                  "points": [
+                    [
+                      1133.5,
+                      999.5
+                    ],
+                    [
+                      1133.5,
+                      848
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 100.5,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 563.7307092043151,
+                "stanceIntervalMm": [
+                  904,
+                  1095
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/800/429.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1100/429.5",
+                "shiftXYMm": [
+                  300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  801.5,
+                  431,
+                  1398.5,
+                  498.5
+                ],
+                "reserveMm": 81,
+                "worker": {
+                  "points": [
+                    [
+                      1045.1240719569132,
+                      833.5
+                    ],
+                    [
+                      1345.1240719569132,
+                      833.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 86,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 435.24425184183116,
+                "stanceIntervalMm": [
+                  752.5,
+                  1337.7481439138264
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/800/500",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/500/500",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  501.5,
+                  501.5,
+                  1098.5,
+                  798.5
+                ],
+                "reserveMm": 35.37656070402306,
+                "worker": {
+                  "points": [
+                    [
+                      1433.5,
+                      829.4065783765099
+                    ],
+                    [
+                      1133.5,
+                      829.4065783765099
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 81.90657837650906,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 564.6234392959769,
+                "stanceIntervalMm": [
+                  752.5,
+                  906.3131567530197
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/800/800",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/800/951.5",
+                "shiftXYMm": [
+                  0,
+                  151.5
+                ],
+                "faceSweepXYXYMm": [
+                  801.5,
+                  801.5,
+                  1098.5,
+                  1101.5
+                ],
+                "reserveMm": 36.269290795684924,
+                "worker": {
+                  "points": [
+                    [
+                      1433.5,
+                      848
+                    ],
+                    [
+                      1433.5,
+                      999.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 100.5,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 563.7307092043151,
+                "stanceIntervalMm": [
+                  752.5,
+                  943.5
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/800/951.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/800/800",
+                "shiftXYMm": [
+                  0,
+                  -151.5
+                ],
+                "faceSweepXYXYMm": [
+                  801.5,
+                  801.5,
+                  1098.5,
+                  1101.5
+                ],
+                "reserveMm": 36.269290795684924,
+                "worker": {
+                  "points": [
+                    [
+                      1433.5,
+                      999.5
+                    ],
+                    [
+                      1433.5,
+                      848
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 100.5,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 563.7307092043151,
+                "stanceIntervalMm": [
+                  904,
+                  1095
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1100/429.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/800/429.5",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  801.5,
+                  431,
+                  1398.5,
+                  498.5
+                ],
+                "reserveMm": 81,
+                "worker": {
+                  "points": [
+                    [
+                      1345.1240719569132,
+                      833.5
+                    ],
+                    [
+                      1045.1240719569132,
+                      833.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 86,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 435.24425184183116,
+                "stanceIntervalMm": [
+                  1052.5,
+                  1637.7481439138264
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1100/500",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/800/500",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  801.5,
+                  501.5,
+                  1398.5,
+                  798.5
+                ],
+                "reserveMm": 35.37656070402306,
+                "worker": {
+                  "points": [
+                    [
+                      1733.5,
+                      829.4065783765099
+                    ],
+                    [
+                      1433.5,
+                      829.4065783765099
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 81.90657837650906,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 564.6234392959769,
+                "stanceIntervalMm": [
+                  752.5,
+                  906.3131567530197
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1100/800",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1100/951.5",
+                "shiftXYMm": [
+                  0,
+                  151.5
+                ],
+                "faceSweepXYXYMm": [
+                  1101.5,
+                  801.5,
+                  1398.5,
+                  1101.5
+                ],
+                "reserveMm": 36.269290795684924,
+                "worker": {
+                  "points": [
+                    [
+                      1733.5,
+                      848
+                    ],
+                    [
+                      1733.5,
+                      999.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 100.5,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 563.7307092043151,
+                "stanceIntervalMm": [
+                  752.5,
+                  943.5
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1100/951.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1100/800",
+                "shiftXYMm": [
+                  0,
+                  -151.5
+                ],
+                "faceSweepXYXYMm": [
+                  1101.5,
+                  801.5,
+                  1398.5,
+                  1101.5
+                ],
+                "reserveMm": 36.269290795684924,
+                "worker": {
+                  "points": [
+                    [
+                      1733.5,
+                      999.5
+                    ],
+                    [
+                      1733.5,
+                      848
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 100.5,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 563.7307092043151,
+                "stanceIntervalMm": [
+                  904,
+                  1095
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1400/429.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1100/429.5",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  1101.5,
+                  431,
+                  1698.5,
+                  498.5
+                ],
+                "reserveMm": 81,
+                "worker": {
+                  "points": [
+                    [
+                      1550,
+                      833.5
+                    ],
+                    [
+                      1250,
+                      833.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 86,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 413.372183994037,
+                "stanceIntervalMm": [
+                  1162.2518560861736,
+                  1937.7481439138264
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1400/500",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1100/500",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  1101.5,
+                  501.5,
+                  1698.5,
+                  798.5
+                ],
+                "reserveMm": 35.37656070402306,
+                "worker": {
+                  "points": [
+                    [
+                      2033.5,
+                      829.4065783765099
+                    ],
+                    [
+                      1733.5,
+                      829.4065783765099
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 81.90657837650906,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 564.6234392959769,
+                "stanceIntervalMm": [
+                  752.5,
+                  906.3131567530197
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1400/800",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/951.5",
+                "shiftXYMm": [
+                  0,
+                  151.5
+                ],
+                "faceSweepXYXYMm": [
+                  1401.5,
+                  801.5,
+                  1698.5,
+                  1101.5
+                ],
+                "reserveMm": 36.269290795684924,
+                "worker": {
+                  "points": [
+                    [
+                      1066.5,
+                      848
+                    ],
+                    [
+                      1066.5,
+                      999.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 100.5,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 563.7307092043151,
+                "stanceIntervalMm": [
+                  752.5,
+                  943.5
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1400/951.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/800",
+                "shiftXYMm": [
+                  0,
+                  -151.5
+                ],
+                "faceSweepXYXYMm": [
+                  1401.5,
+                  801.5,
+                  1698.5,
+                  1101.5
+                ],
+                "reserveMm": 36.269290795684924,
+                "worker": {
+                  "points": [
+                    [
+                      1066.5,
+                      999.5
+                    ],
+                    [
+                      1066.5,
+                      848
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 100.5,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 563.7307092043151,
+                "stanceIntervalMm": [
+                  904,
+                  1095
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1700/429.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/429.5",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  1401.5,
+                  431,
+                  1998.5,
+                  498.5
+                ],
+                "reserveMm": 81,
+                "worker": {
+                  "points": [
+                    [
+                      1850,
+                      833.5
+                    ],
+                    [
+                      1550,
+                      833.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 86,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 413.372183994037,
+                "stanceIntervalMm": [
+                  1462.2518560861736,
+                  2237.7481439138264
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1700/500",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/500",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  1401.5,
+                  501.5,
+                  1998.5,
+                  798.5
+                ],
+                "reserveMm": 35.37656070402306,
+                "worker": {
+                  "points": [
+                    [
+                      1366.5,
+                      829.4065783765099
+                    ],
+                    [
+                      1066.5,
+                      829.4065783765099
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 81.90657837650906,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 564.6234392959769,
+                "stanceIntervalMm": [
+                  752.5,
+                  906.3131567530197
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1700/800",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1700/951.5",
+                "shiftXYMm": [
+                  0,
+                  151.5
+                ],
+                "faceSweepXYXYMm": [
+                  1701.5,
+                  801.5,
+                  1998.5,
+                  1101.5
+                ],
+                "reserveMm": 36.49882674911419,
+                "worker": {
+                  "points": [
+                    [
+                      2333.5,
+                      853.1375641487967
+                    ],
+                    [
+                      2333.5,
+                      1004.6375641487967
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 103.08027200819049,
+                  "limitingObstacle": "study-desk",
+                  "segment": 0
+                },
+                "reachMm": 563.5011732508858,
+                "stanceIntervalMm": [
+                  752.5,
+                  953.7751282975935
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1700/951.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1700/800",
+                "shiftXYMm": [
+                  0,
+                  -151.5
+                ],
+                "faceSweepXYXYMm": [
+                  1701.5,
+                  801.5,
+                  1998.5,
+                  1101.5
+                ],
+                "reserveMm": 36.49882674911419,
+                "worker": {
+                  "points": [
+                    [
+                      2333.5,
+                      1004.6375641487967
+                    ],
+                    [
+                      2333.5,
+                      853.1375641487967
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 103.08027200819049,
+                  "limitingObstacle": "study-desk",
+                  "segment": 0
+                },
+                "reachMm": 563.5011732508858,
+                "stanceIntervalMm": [
+                  904,
+                  1105.2751282975935
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2000/429.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1700/429.5",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  1701.5,
+                  431,
+                  2298.5,
+                  498.5
+                ],
+                "reserveMm": 81,
+                "worker": {
+                  "points": [
+                    [
+                      2150,
+                      833.5
+                    ],
+                    [
+                      1850,
+                      833.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 86,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 413.372183994037,
+                "stanceIntervalMm": [
+                  1762.2518560861736,
+                  2537.7481439138264
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2000/500",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1700/500",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  1701.5,
+                  501.5,
+                  2298.5,
+                  798.5
+                ],
+                "reserveMm": 35.37656070402306,
+                "worker": {
+                  "points": [
+                    [
+                      1666.5,
+                      829.4065783765099
+                    ],
+                    [
+                      1366.5,
+                      829.4065783765099
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 81.90657837650906,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 564.6234392959769,
+                "stanceIntervalMm": [
+                  752.5,
+                  906.3131567530197
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2000/800",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/951.5",
+                "shiftXYMm": [
+                  0,
+                  151.5
+                ],
+                "faceSweepXYXYMm": [
+                  2001.5,
+                  801.5,
+                  2298.5,
+                  1101.5
+                ],
+                "reserveMm": 36.269290795684924,
+                "worker": {
+                  "points": [
+                    [
+                      1666.5,
+                      848
+                    ],
+                    [
+                      1666.5,
+                      999.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 100.5,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 563.7307092043151,
+                "stanceIntervalMm": [
+                  752.5,
+                  943.5
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2000/951.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/800",
+                "shiftXYMm": [
+                  0,
+                  -151.5
+                ],
+                "faceSweepXYXYMm": [
+                  2001.5,
+                  801.5,
+                  2298.5,
+                  1101.5
+                ],
+                "reserveMm": 36.269290795684924,
+                "worker": {
+                  "points": [
+                    [
+                      1666.5,
+                      999.5
+                    ],
+                    [
+                      1666.5,
+                      848
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 100.5,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 563.7307092043151,
+                "stanceIntervalMm": [
+                  904,
+                  1095
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2300/429.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/429.5",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  2001.5,
+                  431,
+                  2598.5,
+                  498.5
+                ],
+                "reserveMm": 81,
+                "worker": {
+                  "points": [
+                    [
+                      2301.125928043087,
+                      833.5
+                    ],
+                    [
+                      2001.1259280430868,
+                      833.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 86,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 455.9906347686578,
+                "stanceIntervalMm": [
+                  2062.2518560861736,
+                  2540
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2300/500",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/500",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  2001.5,
+                  501.5,
+                  2598.5,
+                  798.5
+                ],
+                "reserveMm": 35.37656070402306,
+                "worker": {
+                  "points": [
+                    [
+                      1966.5,
+                      829.4065783765099
+                    ],
+                    [
+                      1666.5,
+                      829.4065783765099
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 81.90657837650906,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 564.6234392959769,
+                "stanceIntervalMm": [
+                  752.5,
+                  906.3131567530197
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2300/800",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2300/951.5",
+                "shiftXYMm": [
+                  0,
+                  151.5
+                ],
+                "faceSweepXYXYMm": [
+                  2301.5,
+                  801.5,
+                  2598.5,
+                  1101.5
+                ],
+                "reserveMm": 72.43425662815207,
+                "worker": {
+                  "points": [
+                    [
+                      2680.071510653066,
+                      1285
+                    ],
+                    [
+                      2680.071510653066,
+                      1436.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 118.83935655363348,
+                  "limitingObstacle": "study-inlet-carrier",
+                  "segment": 0
+                },
+                "reachMm": 527.5657433718479,
+                "stanceIntervalMm": [
+                  2560,
+                  2800.1430213061326
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2300/951.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2300/1103",
+                "shiftXYMm": [
+                  0,
+                  224.25
+                ],
+                "faceSweepXYXYMm": [
+                  2301.5,
+                  953,
+                  2598.5,
+                  1325.75
+                ],
+                "reserveMm": 80.81466342937404,
+                "worker": {
+                  "points": [
+                    [
+                      2663.946682513636,
+                      1436.5
+                    ],
+                    [
+                      2663.946682513636,
+                      1660.75
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 131.1260130622004,
+                  "limitingObstacle": "study-desk",
+                  "segment": 0
+                },
+                "reachMm": 519.185336570626,
+                "stanceIntervalMm": [
+                  2527.75034372114,
+                  2800.1430213061326
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2600/429.5",
+              "state": "panel-sweep-unsupported",
+              "encounteredPlanProjectionIds": [
+                "study-inlet-carrier",
+                "study-inlet-installed"
+              ]
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2600/500",
+              "state": "panel-sweep-unsupported",
+              "encounteredPlanProjectionIds": [
+                "study-inlet-carrier",
+                "study-inlet-installed"
+              ]
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2600/800",
+              "state": "panel-sweep-unsupported",
+              "encounteredPlanProjectionIds": [
+                "study-inlet-carrier",
+                "study-inlet-installed"
+              ]
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2600/951.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2600/1103",
+                "shiftXYMm": [
+                  0,
+                  224.25
+                ],
+                "faceSweepXYXYMm": [
+                  2601.5,
+                  953,
+                  2898.5,
+                  1325.75
+                ],
+                "reserveMm": 149.6800063921146,
+                "worker": {
+                  "points": [
+                    [
+                      2753.87517186057,
+                      1436.5
+                    ],
+                    [
+                      2753.87517186057,
+                      1660.75
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 217.2124197067518,
+                  "limitingObstacle": "study-desk",
+                  "segment": 0
+                },
+                "reachMm": 450.3199936078854,
+                "stanceIntervalMm": [
+                  2527.75034372114,
+                  2980
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2900/429.5",
+              "state": "panel-sweep-unsupported",
+              "encounteredPlanProjectionIds": [
+                "study-inlet-carrier",
+                "study-inlet-installed"
+              ]
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2900/500",
+              "state": "panel-sweep-unsupported",
+              "encounteredPlanProjectionIds": [
+                "study-inlet-carrier",
+                "study-inlet-installed"
+              ]
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2900/800",
+              "state": "panel-sweep-unsupported",
+              "encounteredPlanProjectionIds": [
+                "study-inlet-carrier",
+                "study-inlet-installed"
+              ]
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2900/951.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/1103",
+                "shiftXYMm": [
+                  0,
+                  224.25
+                ],
+                "faceSweepXYXYMm": [
+                  2901.5,
+                  953,
+                  3198.5,
+                  1325.75
+                ],
+                "reserveMm": 82.77398252469175,
+                "worker": {
+                  "points": [
+                    [
+                      2839.928489346934,
+                      1436.5
+                    ],
+                    [
+                      2839.928489346934,
+                      1660.75
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 145.07151065306607,
+                  "limitingObstacle": "wall:cloak-west:0",
+                  "segment": 0
+                },
+                "reachMm": 517.2260174753083,
+                "stanceIntervalMm": [
+                  2699.8569786938674,
+                  2980
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/3200/429.5",
+              "state": "panel-sweep-unsupported",
+              "encounteredPlanProjectionIds": [
+                "study-inlet-carrier",
+                "study-inlet-installed"
+              ]
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/3200/500",
+              "state": "panel-sweep-unsupported",
+              "encounteredPlanProjectionIds": [
+                "study-inlet-carrier",
+                "study-inlet-installed"
+              ]
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/3200/800",
+              "state": "panel-sweep-unsupported",
+              "encounteredPlanProjectionIds": [
+                "study-inlet-carrier",
+                "study-inlet-installed"
+              ]
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/3200/951.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/951.5",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  2901.5,
+                  953,
+                  3498.5,
+                  1101.5
+                ],
+                "reserveMm": 4.945215412687503,
+                "worker": {
+                  "points": [
+                    [
+                      2866.5,
+                      1219.7803785386943
+                    ],
+                    [
+                      2566.5,
+                      1219.7803785386943
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 11.5,
+                  "limitingObstacle": "study-desk",
+                  "segment": 0
+                },
+                "reachMm": 595.0547845873125,
+                "stanceIntervalMm": [
+                  1205,
+                  1234.5607570773886
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/3500/429.5",
+              "state": "worker-stance-or-reach-unsupported"
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/3500/500",
+              "state": "worker-stance-or-reach-unsupported"
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/3500/800",
+              "state": "worker-stance-or-reach-unsupported"
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/3500/951.5",
+              "state": "worker-stance-or-reach-unsupported"
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/3800/429.5",
+              "state": "worker-stance-or-reach-unsupported"
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/3800/500",
+              "state": "worker-stance-or-reach-unsupported"
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/3800/800",
+              "state": "worker-stance-or-reach-unsupported"
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/3800/951.5",
+              "state": "worker-stance-or-reach-unsupported"
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/4100/429.5",
+              "state": "worker-stance-or-reach-unsupported"
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/4100/500",
+              "state": "worker-stance-or-reach-unsupported"
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/4100/800",
+              "state": "worker-stance-or-reach-unsupported"
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/4100/951.5",
+              "state": "worker-stance-or-reach-unsupported"
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/4400/429.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/4551.5/429.5",
+                "shiftXYMm": [
+                  151.5,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  4401.5,
+                  431,
+                  4701.5,
+                  498.5
+                ],
+                "reserveMm": 13.75,
+                "worker": {
+                  "points": [
+                    [
+                      4066.5,
+                      766.25
+                    ],
+                    [
+                      4218,
+                      766.25
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 18.75,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 578.1114187593945,
+                "stanceIntervalMm": [
+                  752.5,
+                  780
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/4400/500",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/4551.5/500",
+                "shiftXYMm": [
+                  151.5,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  4401.5,
+                  501.5,
+                  4701.5,
+                  798.5
+                ],
+                "reserveMm": 13.75,
+                "worker": {
+                  "points": [
+                    [
+                      4066.5,
+                      766.25
+                    ],
+                    [
+                      4218,
+                      766.25
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 18.75,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 476.99541402407635,
+                "stanceIntervalMm": [
+                  752.5,
+                  780
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/4400/800",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/4551.5/800",
+                "shiftXYMm": [
+                  151.5,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  4401.5,
+                  801.5,
+                  4701.5,
+                  950
+                ],
+                "reserveMm": 13.75,
+                "worker": {
+                  "points": [
+                    [
+                      4066.5,
+                      766.25
+                    ],
+                    [
+                      4218,
+                      766.25
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 18.75,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 474.68496131645037,
+                "stanceIntervalMm": [
+                  752.5,
+                  780
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/4400/951.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/4551.5/951.5",
+                "shiftXYMm": [
+                  151.5,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  4401.5,
+                  953,
+                  4701.5,
+                  1101.5
+                ],
+                "reserveMm": 13.75,
+                "worker": {
+                  "points": [
+                    [
+                      4066.5,
+                      766.25
+                    ],
+                    [
+                      4218,
+                      766.25
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 18.75,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 544.6159770884435,
+                "stanceIntervalMm": [
+                  752.5,
+                  780
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/4551.5/429.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/4400/429.5",
+                "shiftXYMm": [
+                  -151.5,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  4401.5,
+                  431,
+                  4701.5,
+                  498.5
+                ],
+                "reserveMm": 13.75,
+                "worker": {
+                  "points": [
+                    [
+                      4218,
+                      766.25
+                    ],
+                    [
+                      4066.5,
+                      766.25
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 18.75,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 578.1114187593945,
+                "stanceIntervalMm": [
+                  752.5,
+                  780
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/4551.5/500",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/4400/500",
+                "shiftXYMm": [
+                  -151.5,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  4401.5,
+                  501.5,
+                  4701.5,
+                  798.5
+                ],
+                "reserveMm": 13.75,
+                "worker": {
+                  "points": [
+                    [
+                      4218,
+                      766.25
+                    ],
+                    [
+                      4066.5,
+                      766.25
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 18.75,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 476.99541402407635,
+                "stanceIntervalMm": [
+                  752.5,
+                  780
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/4551.5/800",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/4400/800",
+                "shiftXYMm": [
+                  -151.5,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  4401.5,
+                  801.5,
+                  4701.5,
+                  950
+                ],
+                "reserveMm": 13.75,
+                "worker": {
+                  "points": [
+                    [
+                      4218,
+                      766.25
+                    ],
+                    [
+                      4066.5,
+                      766.25
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 18.75,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 474.68496131645037,
+                "stanceIntervalMm": [
+                  752.5,
+                  780
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/4551.5/951.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/4400/951.5",
+                "shiftXYMm": [
+                  -151.5,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  4401.5,
+                  953,
+                  4701.5,
+                  1101.5
+                ],
+                "reserveMm": 13.75,
+                "worker": {
+                  "points": [
+                    [
+                      4218,
+                      766.25
+                    ],
+                    [
+                      4066.5,
+                      766.25
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 18.75,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 544.6159770884435,
+                "stanceIntervalMm": [
+                  752.5,
+                  780
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/800/1103",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1100/1103",
+                "shiftXYMm": [
+                  300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  801.5,
+                  1104.5,
+                  1398.5,
+                  1398.5
+                ],
+                "reserveMm": 17,
+                "worker": {
+                  "points": [
+                    [
+                      980.5840532740588,
+                      769.5
+                    ],
+                    [
+                      1280.5840532740588,
+                      769.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 22,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 520.7857425487725,
+                "stanceIntervalMm": [
+                  752.5,
+                  1208.6681065481175
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/800/1400",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/800/1700",
+                "shiftXYMm": [
+                  0,
+                  300
+                ],
+                "faceSweepXYXYMm": [
+                  801.5,
+                  1401.5,
+                  1098.5,
+                  1998.5
+                ],
+                "reserveMm": 44.60205417238569,
+                "worker": {
+                  "points": [
+                    [
+                      1433.5,
+                      1705.65657837651
+                    ],
+                    [
+                      1433.5,
+                      2005.65657837651
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 105.65657837650997,
+                  "limitingObstacle": "study-desk",
+                  "segment": 0
+                },
+                "reachMm": 555.3979458276143,
+                "stanceIntervalMm": [
+                  1605,
+                  1806.3131567530197
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/800/1700",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/800/2000",
+                "shiftXYMm": [
+                  0,
+                  300
+                ],
+                "faceSweepXYXYMm": [
+                  801.5,
+                  1701.5,
+                  1098.5,
+                  2298.5
+                ],
+                "reserveMm": 81.08776780983419,
+                "worker": {
+                  "points": [
+                    [
+                      1433.5,
+                      1855.6565783765097
+                    ],
+                    [
+                      1433.5,
+                      2155.65657837651
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 255.65657837650974,
+                  "limitingObstacle": "study-desk",
+                  "segment": 0
+                },
+                "reachMm": 518.9122321901658,
+                "stanceIntervalMm": [
+                  1605,
+                  2106.3131567530195
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/800/2000",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1100/2000",
+                "shiftXYMm": [
+                  300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  801.5,
+                  2001.5,
+                  1398.5,
+                  2298.5
+                ],
+                "reserveMm": 81.6639603500447,
+                "worker": {
+                  "points": [
+                    [
+                      1433.5,
+                      2150
+                    ],
+                    [
+                      1733.5,
+                      2150
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 291.5,
+                  "limitingObstacle": "study-chair",
+                  "segment": 0
+                },
+                "reachMm": 518.3360396499553,
+                "stanceIntervalMm": [
+                  1893.6868432469803,
+                  2406.3131567530195
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/800/2300",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/800/2000",
+                "shiftXYMm": [
+                  0,
+                  -276.5
+                ],
+                "faceSweepXYXYMm": [
+                  801.5,
+                  2025,
+                  1098.5,
+                  2551.5
+                ],
+                "reserveMm": 70.73950637276835,
+                "worker": {
+                  "points": [
+                    [
+                      1090.043863659264,
+                      1966.5
+                    ],
+                    [
+                      1090.043863659264,
+                      1690
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 90,
+                  "limitingObstacle": "study-desk",
+                  "segment": 0
+                },
+                "reachMm": 529.2604936272317,
+                "stanceIntervalMm": [
+                  939.5,
+                  1240.587727318528
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1100/1103",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/800/1103",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  801.5,
+                  1104.5,
+                  1398.5,
+                  1398.5
+                ],
+                "reserveMm": 17,
+                "worker": {
+                  "points": [
+                    [
+                      1280.5840532740588,
+                      769.5
+                    ],
+                    [
+                      980.5840532740588,
+                      769.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 22,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 520.7857425487725,
+                "stanceIntervalMm": [
+                  1052.5,
+                  1508.6681065481175
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1100/1400",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/800/1400",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  801.5,
+                  1401.5,
+                  1398.5,
+                  1698.5
+                ],
+                "reserveMm": 44.60205417238569,
+                "worker": {
+                  "points": [
+                    [
+                      1733.5,
+                      1705.65657837651
+                    ],
+                    [
+                      1433.5,
+                      1705.65657837651
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 105.65657837650997,
+                  "limitingObstacle": "study-desk",
+                  "segment": 0
+                },
+                "reachMm": 555.3979458276143,
+                "stanceIntervalMm": [
+                  1605,
+                  1806.3131567530197
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1100/1700",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/800/1700",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  801.5,
+                  1701.5,
+                  1398.5,
+                  1998.5
+                ],
+                "reserveMm": 81.08776780983419,
+                "worker": {
+                  "points": [
+                    [
+                      1733.5,
+                      1855.6565783765097
+                    ],
+                    [
+                      1433.5,
+                      1855.6565783765097
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 255.65657837650974,
+                  "limitingObstacle": "study-desk",
+                  "segment": 0
+                },
+                "reachMm": 518.9122321901658,
+                "stanceIntervalMm": [
+                  1605,
+                  2106.3131567530195
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1100/2000",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/800/2000",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  801.5,
+                  2001.5,
+                  1398.5,
+                  2298.5
+                ],
+                "reserveMm": 81.6639603500447,
+                "worker": {
+                  "points": [
+                    [
+                      1733.5,
+                      2150
+                    ],
+                    [
+                      1433.5,
+                      2150
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 291.5,
+                  "limitingObstacle": "study-chair",
+                  "segment": 0
+                },
+                "reachMm": 518.3360396499553,
+                "stanceIntervalMm": [
+                  1893.6868432469803,
+                  2406.3131567530195
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1100/2300",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/2300",
+                "shiftXYMm": [
+                  300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  1101.5,
+                  2301.5,
+                  1698.5,
+                  2551.5
+                ],
+                "reserveMm": 103.51233650774361,
+                "worker": {
+                  "points": [
+                    [
+                      1250,
+                      1966.5
+                    ],
+                    [
+                      1550,
+                      1966.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 315.5,
+                  "limitingObstacle": "study-emitter-plinth",
+                  "segment": 0
+                },
+                "reachMm": 496.4876634922564,
+                "stanceIntervalMm": [
+                  959.4122726814719,
+                  1540.587727318528
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1400/1103",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1100/1103",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  1101.5,
+                  1104.5,
+                  1698.5,
+                  1398.5
+                ],
+                "reserveMm": 17,
+                "worker": {
+                  "points": [
+                    [
+                      1550,
+                      769.5
+                    ],
+                    [
+                      1250,
+                      769.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 22,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 516.9371335085148,
+                "stanceIntervalMm": [
+                  1291.3318934518825,
+                  1808.6681065481175
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1400/1400",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/1700",
+                "shiftXYMm": [
+                  0,
+                  300
+                ],
+                "faceSweepXYXYMm": [
+                  1401.5,
+                  1401.5,
+                  1698.5,
+                  1998.5
+                ],
+                "reserveMm": 44.60205417238569,
+                "worker": {
+                  "points": [
+                    [
+                      1066.5,
+                      1705.65657837651
+                    ],
+                    [
+                      1066.5,
+                      2005.65657837651
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 105.65657837650997,
+                  "limitingObstacle": "study-desk",
+                  "segment": 0
+                },
+                "reachMm": 555.3979458276143,
+                "stanceIntervalMm": [
+                  1605,
+                  1806.3131567530197
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1400/1700",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/2000",
+                "shiftXYMm": [
+                  0,
+                  300
+                ],
+                "faceSweepXYXYMm": [
+                  1401.5,
+                  1701.5,
+                  1698.5,
+                  2298.5
+                ],
+                "reserveMm": 81.08776780983419,
+                "worker": {
+                  "points": [
+                    [
+                      1066.5,
+                      1855.6565783765097
+                    ],
+                    [
+                      1066.5,
+                      2155.65657837651
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 132,
+                  "limitingObstacle": "study-emitter-plinth",
+                  "segment": 0
+                },
+                "reachMm": 518.9122321901658,
+                "stanceIntervalMm": [
+                  1605,
+                  2106.3131567530195
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1400/2000",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1700/2000",
+                "shiftXYMm": [
+                  300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  1401.5,
+                  2001.5,
+                  1998.5,
+                  2298.5
+                ],
+                "reserveMm": 81.6639603500447,
+                "worker": {
+                  "points": [
+                    [
+                      1066.5,
+                      2150
+                    ],
+                    [
+                      1366.5,
+                      2150
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 132,
+                  "limitingObstacle": "study-emitter-plinth",
+                  "segment": 0
+                },
+                "reachMm": 518.3360396499553,
+                "stanceIntervalMm": [
+                  1893.6868432469803,
+                  2406.3131567530195
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1400/2300",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1100/2300",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  1101.5,
+                  2301.5,
+                  1698.5,
+                  2551.5
+                ],
+                "reserveMm": 103.51233650774361,
+                "worker": {
+                  "points": [
+                    [
+                      1550,
+                      1966.5
+                    ],
+                    [
+                      1250,
+                      1966.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 315.5,
+                  "limitingObstacle": "study-emitter-plinth",
+                  "segment": 0
+                },
+                "reachMm": 496.4876634922564,
+                "stanceIntervalMm": [
+                  1259.412272681472,
+                  1840.587727318528
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1700/1103",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/1103",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  1401.5,
+                  1104.5,
+                  1998.5,
+                  1398.5
+                ],
+                "reserveMm": 17,
+                "worker": {
+                  "points": [
+                    [
+                      1850,
+                      769.5
+                    ],
+                    [
+                      1550,
+                      769.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 22,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 516.9371335085148,
+                "stanceIntervalMm": [
+                  1591.3318934518825,
+                  2108.6681065481175
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1700/1400",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/1400",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  1401.5,
+                  1401.5,
+                  1998.5,
+                  1698.5
+                ],
+                "reserveMm": 44.60205417238569,
+                "worker": {
+                  "points": [
+                    [
+                      1366.5,
+                      1705.65657837651
+                    ],
+                    [
+                      1066.5,
+                      1705.65657837651
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 105.65657837650997,
+                  "limitingObstacle": "study-desk",
+                  "segment": 0
+                },
+                "reachMm": 555.3979458276143,
+                "stanceIntervalMm": [
+                  1605,
+                  1806.3131567530197
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1700/1700",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/1700",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  1401.5,
+                  1701.5,
+                  1998.5,
+                  1998.5
+                ],
+                "reserveMm": 81.08776780983419,
+                "worker": {
+                  "points": [
+                    [
+                      1366.5,
+                      1855.6565783765097
+                    ],
+                    [
+                      1066.5,
+                      1855.6565783765097
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 132,
+                  "limitingObstacle": "study-emitter-plinth",
+                  "segment": 0
+                },
+                "reachMm": 518.9122321901658,
+                "stanceIntervalMm": [
+                  1605,
+                  2106.3131567530195
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1700/2000",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/2000",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  1401.5,
+                  2001.5,
+                  1998.5,
+                  2298.5
+                ],
+                "reserveMm": 81.6639603500447,
+                "worker": {
+                  "points": [
+                    [
+                      1366.5,
+                      2150
+                    ],
+                    [
+                      1066.5,
+                      2150
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 132,
+                  "limitingObstacle": "study-emitter-plinth",
+                  "segment": 0
+                },
+                "reachMm": 518.3360396499553,
+                "stanceIntervalMm": [
+                  1893.6868432469803,
+                  2406.3131567530195
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1700/2300",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/2300",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  1401.5,
+                  2301.5,
+                  1998.5,
+                  2551.5
+                ],
+                "reserveMm": 93.87280614366483,
+                "worker": {
+                  "points": [
+                    [
+                      1789.706136340736,
+                      1966.5
+                    ],
+                    [
+                      1489.706136340736,
+                      1966.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 235.29386365926393,
+                  "limitingObstacle": "study-chair",
+                  "segment": 0
+                },
+                "reachMm": 506.12719385633517,
+                "stanceIntervalMm": [
+                  1559.412272681472,
+                  2020
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2000/1103",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1700/1103",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  1701.5,
+                  1104.5,
+                  2298.5,
+                  1398.5
+                ],
+                "reserveMm": 17,
+                "worker": {
+                  "points": [
+                    [
+                      2150,
+                      769.5
+                    ],
+                    [
+                      1850,
+                      769.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 22,
+                  "limitingObstacle": "outer-S",
+                  "segment": 0
+                },
+                "reachMm": 516.9371335085148,
+                "stanceIntervalMm": [
+                  1891.3318934518825,
+                  2408.6681065481175
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2000/1400",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/1700",
+                "shiftXYMm": [
+                  0,
+                  300
+                ],
+                "faceSweepXYXYMm": [
+                  2001.5,
+                  1401.5,
+                  2298.5,
+                  1998.5
+                ],
+                "reserveMm": 81.6639603500447,
+                "worker": {
+                  "points": [
+                    [
+                      2633.5,
+                      1550
+                    ],
+                    [
+                      2633.5,
+                      1850
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 153.6102401842357,
+                  "limitingObstacle": "study-desk",
+                  "segment": 0
+                },
+                "reachMm": 518.3360396499553,
+                "stanceIntervalMm": [
+                  1293.6868432469803,
+                  1806.3131567530197
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2000/1700",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/1400",
+                "shiftXYMm": [
+                  0,
+                  -300
+                ],
+                "faceSweepXYXYMm": [
+                  2001.5,
+                  1401.5,
+                  2298.5,
+                  1998.5
+                ],
+                "reserveMm": 81.6639603500447,
+                "worker": {
+                  "points": [
+                    [
+                      2633.5,
+                      1850
+                    ],
+                    [
+                      2633.5,
+                      1550
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 153.6102401842357,
+                  "limitingObstacle": "study-desk",
+                  "segment": 0
+                },
+                "reachMm": 518.3360396499553,
+                "stanceIntervalMm": [
+                  1593.6868432469803,
+                  2106.3131567530195
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2000/2000",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1700/2000",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  1701.5,
+                  2001.5,
+                  2298.5,
+                  2298.5
+                ],
+                "reserveMm": 81.6639603500447,
+                "worker": {
+                  "points": [
+                    [
+                      1666.5,
+                      2150
+                    ],
+                    [
+                      1366.5,
+                      2150
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 358.5,
+                  "limitingObstacle": "study-chair",
+                  "segment": 0
+                },
+                "reachMm": 518.3360396499553,
+                "stanceIntervalMm": [
+                  1893.6868432469803,
+                  2406.3131567530195
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2000/2300",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/2000",
+                "shiftXYMm": [
+                  0,
+                  -276.5
+                ],
+                "faceSweepXYXYMm": [
+                  2001.5,
+                  2025,
+                  2298.5,
+                  2551.5
+                ],
+                "reserveMm": 58.11707382108568,
+                "worker": {
+                  "points": [
+                    [
+                      2322.793863659264,
+                      1966.5
+                    ],
+                    [
+                      2322.793863659264,
+                      1690
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 95.84846589301173,
+                  "limitingObstacle": "study-desk",
+                  "segment": 0
+                },
+                "reachMm": 541.8829261789143,
+                "stanceIntervalMm": [
+                  2205,
+                  2440.587727318528
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2300/1103",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2300/1400",
+                "shiftXYMm": [
+                  0,
+                  298.5
+                ],
+                "faceSweepXYXYMm": [
+                  2301.5,
+                  1104.5,
+                  2598.5,
+                  1697
+                ],
+                "reserveMm": 82.35716018517314,
+                "worker": {
+                  "points": [
+                    [
+                      2456.8340532740585,
+                      1733.5
+                    ],
+                    [
+                      2456.8340532740585,
+                      2032
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 178.1832651411334,
+                  "limitingObstacle": "study-desk",
+                  "segment": 0
+                },
+                "reachMm": 517.6428398148269,
+                "stanceIntervalMm": [
+                  2205,
+                  2708.6681065481175
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2300/1400",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/1400",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  2001.5,
+                  1401.5,
+                  2598.5,
+                  1698.5
+                ],
+                "reserveMm": 46.5,
+                "worker": {
+                  "points": [
+                    [
+                      2933.5,
+                      1550
+                    ],
+                    [
+                      2633.5,
+                      1550
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 51.5,
+                  "limitingObstacle": "wall:cloak-west:0",
+                  "segment": 0
+                },
+                "reachMm": 518.3360396499553,
+                "stanceIntervalMm": [
+                  1293.6868432469803,
+                  1806.3131567530197
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2300/1700",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/1700",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  2001.5,
+                  1701.5,
+                  2598.5,
+                  1998.5
+                ],
+                "reserveMm": 46.5,
+                "worker": {
+                  "points": [
+                    [
+                      2933.5,
+                      1850
+                    ],
+                    [
+                      2633.5,
+                      1850
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 51.5,
+                  "limitingObstacle": "wall:cloak-west:0",
+                  "segment": 0
+                },
+                "reachMm": 518.3360396499553,
+                "stanceIntervalMm": [
+                  1593.6868432469803,
+                  2106.3131567530195
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2300/2000",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/2000",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  2001.5,
+                  2001.5,
+                  2598.5,
+                  2298.5
+                ],
+                "reserveMm": 46.5,
+                "worker": {
+                  "points": [
+                    [
+                      2933.5,
+                      2061.84342162349
+                    ],
+                    [
+                      2633.5,
+                      2061.84342162349
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 51.5,
+                  "limitingObstacle": "wall:cloak-west:0",
+                  "segment": 0
+                },
+                "reachMm": 534.0968920979645,
+                "stanceIntervalMm": [
+                  1893.6868432469803,
+                  2230
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2300/2300",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2600/2300",
+                "shiftXYMm": [
+                  300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  2301.5,
+                  2301.5,
+                  2898.5,
+                  2551.5
+                ],
+                "reserveMm": 102.70104564759038,
+                "worker": {
+                  "points": [
+                    [
+                      2442.5,
+                      1966.5
+                    ],
+                    [
+                      2742.5,
+                      1966.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 242.5,
+                  "limitingObstacle": "study-chair",
+                  "segment": 0
+                },
+                "reachMm": 497.2989543524096,
+                "stanceIntervalMm": [
+                  2205,
+                  2680
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2600/1103",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2300/1103",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  2301.5,
+                  1104.5,
+                  2898.5,
+                  1398.5
+                ],
+                "reserveMm": 82.28362011618754,
+                "worker": {
+                  "points": [
+                    [
+                      2742.5,
+                      1733.5
+                    ],
+                    [
+                      2442.5,
+                      1733.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 172.311867308032,
+                  "limitingObstacle": "study-desk",
+                  "segment": 0
+                },
+                "reachMm": 517.7163798838125,
+                "stanceIntervalMm": [
+                  2505,
+                  2980
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2600/1400",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2600/1700",
+                "shiftXYMm": [
+                  0,
+                  300
+                ],
+                "faceSweepXYXYMm": [
+                  2601.5,
+                  1401.5,
+                  2898.5,
+                  1998.5
+                ],
+                "reserveMm": 44.64219901926856,
+                "worker": {
+                  "points": [
+                    [
+                      2266.5,
+                      1705.5481381821633
+                    ],
+                    [
+                      2266.5,
+                      2005.5481381821633
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 66.5,
+                  "limitingObstacle": "study-chair",
+                  "segment": 0
+                },
+                "reachMm": 555.3578009807314,
+                "stanceIntervalMm": [
+                  1604.7831196113066,
+                  1806.3131567530197
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2600/1700",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2600/2000",
+                "shiftXYMm": [
+                  0,
+                  300
+                ],
+                "faceSweepXYXYMm": [
+                  2601.5,
+                  1701.5,
+                  2898.5,
+                  2298.5
+                ],
+                "reserveMm": 61.5,
+                "worker": {
+                  "points": [
+                    [
+                      2266.5,
+                      1855.548138182163
+                    ],
+                    [
+                      2266.5,
+                      2155.548138182163
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 66.5,
+                  "limitingObstacle": "study-chair",
+                  "segment": 0
+                },
+                "reachMm": 518.9006125025337,
+                "stanceIntervalMm": [
+                  1604.7831196113066,
+                  2106.3131567530195
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2600/2000",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2600/1700",
+                "shiftXYMm": [
+                  0,
+                  -300
+                ],
+                "faceSweepXYXYMm": [
+                  2601.5,
+                  1701.5,
+                  2898.5,
+                  2298.5
+                ],
+                "reserveMm": 61.5,
+                "worker": {
+                  "points": [
+                    [
+                      2266.5,
+                      2155.548138182163
+                    ],
+                    [
+                      2266.5,
+                      1855.5481381821628
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 66.5,
+                  "limitingObstacle": "study-chair",
+                  "segment": 0
+                },
+                "reachMm": 518.9006125025337,
+                "stanceIntervalMm": [
+                  1904.7831196113066,
+                  2406.3131567530195
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2600/2300",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2300/2300",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  2301.5,
+                  2301.5,
+                  2898.5,
+                  2551.5
+                ],
+                "reserveMm": 102.70104564759038,
+                "worker": {
+                  "points": [
+                    [
+                      2742.5,
+                      1966.5
+                    ],
+                    [
+                      2442.5,
+                      1966.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 242.5,
+                  "limitingObstacle": "study-chair",
+                  "segment": 0
+                },
+                "reachMm": 497.2989543524096,
+                "stanceIntervalMm": [
+                  2505,
+                  2980
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2900/1103",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/1400",
+                "shiftXYMm": [
+                  0,
+                  298.5
+                ],
+                "faceSweepXYXYMm": [
+                  2901.5,
+                  1104.5,
+                  3198.5,
+                  1697
+                ],
+                "reserveMm": 42.62841264297754,
+                "worker": {
+                  "points": [
+                    [
+                      2885.6659467259415,
+                      1733.5
+                    ],
+                    [
+                      2885.6659467259415,
+                      2032
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 99.33405327405853,
+                  "limitingObstacle": "wall:cloak-west:0",
+                  "segment": 0
+                },
+                "reachMm": 557.3715873570225,
+                "stanceIntervalMm": [
+                  2791.3318934518825,
+                  2980
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2900/1400",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/1700",
+                "shiftXYMm": [
+                  0,
+                  300
+                ],
+                "faceSweepXYXYMm": [
+                  2901.5,
+                  1401.5,
+                  3198.5,
+                  1998.5
+                ],
+                "reserveMm": 81.6639603500447,
+                "worker": {
+                  "points": [
+                    [
+                      2566.5,
+                      1550
+                    ],
+                    [
+                      2566.5,
+                      1850
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 99.41488454988757,
+                  "limitingObstacle": "study-desk",
+                  "segment": 0
+                },
+                "reachMm": 518.3360396499553,
+                "stanceIntervalMm": [
+                  1293.6868432469803,
+                  1806.3131567530197
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2900/1700",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/1400",
+                "shiftXYMm": [
+                  0,
+                  -300
+                ],
+                "faceSweepXYXYMm": [
+                  2901.5,
+                  1401.5,
+                  3198.5,
+                  1998.5
+                ],
+                "reserveMm": 81.6639603500447,
+                "worker": {
+                  "points": [
+                    [
+                      2566.5,
+                      1850
+                    ],
+                    [
+                      2566.5,
+                      1550
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 99.41488454988757,
+                  "limitingObstacle": "study-desk",
+                  "segment": 0
+                },
+                "reachMm": 518.3360396499553,
+                "stanceIntervalMm": [
+                  1593.6868432469803,
+                  2106.3131567530195
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2900/2000",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/1700",
+                "shiftXYMm": [
+                  0,
+                  -300
+                ],
+                "faceSweepXYXYMm": [
+                  2901.5,
+                  1701.5,
+                  3198.5,
+                  2298.5
+                ],
+                "reserveMm": 79.0406573440581,
+                "worker": {
+                  "points": [
+                    [
+                      2566.5,
+                      2127.706247154328
+                    ],
+                    [
+                      2566.5,
+                      1827.7062471543281
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 178.4236627792476,
+                  "limitingObstacle": "wall:study-cloak-north:0",
+                  "segment": 0
+                },
+                "reachMm": 520.9593426559419,
+                "stanceIntervalMm": [
+                  1893.6868432469803,
+                  2361.725651061676
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2900/2300",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/2000",
+                "shiftXYMm": [
+                  0,
+                  -276.5
+                ],
+                "faceSweepXYXYMm": [
+                  2901.5,
+                  2025,
+                  3198.5,
+                  2551.5
+                ],
+                "reserveMm": 54.990583898670934,
+                "worker": {
+                  "points": [
+                    [
+                      2869.706136340736,
+                      1966.5
+                    ],
+                    [
+                      2869.706136340736,
+                      1690
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 115.29386365926393,
+                  "limitingObstacle": "wall:cloak-west:0",
+                  "segment": 0
+                },
+                "reachMm": 545.0094161013291,
+                "stanceIntervalMm": [
+                  2759.412272681472,
+                  2980
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/3200/1103",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/1103",
+                "shiftXYMm": [
+                  -201.5,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  3000,
+                  1104.5,
+                  3301.5,
+                  1398.5
+                ],
+                "reserveMm": 113.5,
+                "worker": {
+                  "points": [
+                    [
+                      2866.5,
+                      1415.0134293262176
+                    ],
+                    [
+                      2665,
+                      1415.0134293262176
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 118.5,
+                  "limitingObstacle": "wall:cloak-west:0",
+                  "segment": 0
+                },
+                "reachMm": 475.618528342454,
+                "stanceIntervalMm": [
+                  1205,
+                  1625.0268586524353
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/3200/1400",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/1400",
+                "shiftXYMm": [
+                  -201.5,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  3000,
+                  1401.5,
+                  3301.5,
+                  1698.5
+                ],
+                "reserveMm": 113.5,
+                "worker": {
+                  "points": [
+                    [
+                      2866.5,
+                      1564.2634293262176
+                    ],
+                    [
+                      2665,
+                      1564.2634293262176
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 118.5,
+                  "limitingObstacle": "wall:cloak-west:0",
+                  "segment": 0
+                },
+                "reachMm": 429.8311160778914,
+                "stanceIntervalMm": [
+                  1205,
+                  1923.5268586524353
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/3200/1700",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/1700",
+                "shiftXYMm": [
+                  -201.5,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  3000,
+                  1701.5,
+                  3301.5,
+                  1998.5
+                ],
+                "reserveMm": 113.5,
+                "worker": {
+                  "points": [
+                    [
+                      2866.5,
+                      1850
+                    ],
+                    [
+                      2665,
+                      1850
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 118.5,
+                  "limitingObstacle": "wall:cloak-west:0",
+                  "segment": 0
+                },
+                "reachMm": 427.93106921559223,
+                "stanceIntervalMm": [
+                  1476.4731413475647,
+                  2223.5268586524353
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/3200/2000",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/2000",
+                "shiftXYMm": [
+                  -201.5,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  3000,
+                  2001.5,
+                  3301.5,
+                  2298.5
+                ],
+                "reserveMm": 113.5,
+                "worker": {
+                  "points": [
+                    [
+                      2866.5,
+                      2003.2365706737824
+                    ],
+                    [
+                      2665,
+                      2003.2365706737824
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 118.5,
+                  "limitingObstacle": "wall:cloak-west:0",
+                  "segment": 0
+                },
+                "reachMm": 468.3383895435153,
+                "stanceIntervalMm": [
+                  1776.4731413475647,
+                  2230
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/3200/2300",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/2300",
+                "shiftXYMm": [
+                  -201.5,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  3000,
+                  2301.5,
+                  3301.5,
+                  2551.5
+                ],
+                "reserveMm": 58.835516844543235,
+                "worker": {
+                  "points": [
+                    [
+                      2866.5,
+                      2141.4865706737824
+                    ],
+                    [
+                      2665,
+                      2141.4865706737824
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 93.51342932621765,
+                  "limitingObstacle": "wall:study-cloak-north:0",
+                  "segment": 0
+                },
+                "reachMm": 541.1644831554568,
+                "stanceIntervalMm": [
+                  2052.9731413475647,
+                  2230
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/429.5/2553",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/500/2553",
+                "shiftXYMm": [
+                  185.25,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  431,
+                  2554.5,
+                  683.75,
+                  2725
+                ],
+                "reserveMm": 77.63704841611269,
+                "worker": {
+                  "points": [
+                    [
+                      833.5,
+                      2731.8181617055493
+                    ],
+                    [
+                      1018.75,
+                      2731.8181617055493
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 82.63704841611269,
+                  "limitingObstacle": "study-emitter-plinth",
+                  "segment": 0
+                },
+                "reachMm": 434.2348731624328,
+                "stanceIntervalMm": [
+                  2636.1363234110986,
+                  2827.5
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/429.5/2726.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/500/2726.5",
+                "shiftXYMm": [
+                  185.25,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  431,
+                  2728,
+                  683.75,
+                  2898.5
+                ],
+                "reserveMm": 77.63704841611269,
+                "worker": {
+                  "points": [
+                    [
+                      833.5,
+                      2731.8181617055493
+                    ],
+                    [
+                      1018.75,
+                      2731.8181617055493
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 82.63704841611269,
+                  "limitingObstacle": "study-emitter-plinth",
+                  "segment": 0
+                },
+                "reachMm": 430.87224396270716,
+                "stanceIntervalMm": [
+                  2636.1363234110986,
+                  2827.5
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/429.5/2900",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/500/2900",
+                "shiftXYMm": [
+                  185.25,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  431,
+                  2901.5,
+                  683.75,
+                  3149
+                ],
+                "reserveMm": 65.34731944249518,
+                "worker": {
+                  "points": [
+                    [
+                      833.5,
+                      2732.500928043087
+                    ],
+                    [
+                      1018.75,
+                      2732.500928043087
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 83.22037767984506,
+                  "limitingObstacle": "study-emitter-plinth",
+                  "segment": 0
+                },
+                "reachMm": 534.6526805575048,
+                "stanceIntervalMm": [
+                  2637.5018560861736,
+                  2827.5
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/500/2553",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/800/2553",
+                "shiftXYMm": [
+                  300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  501.5,
+                  2554.5,
+                  1098.5,
+                  2725
+                ],
+                "reserveMm": 36.867772362156416,
+                "worker": {
+                  "points": [
+                    [
+                      1133.5,
+                      2629.969621461306
+                    ],
+                    [
+                      1433.5,
+                      2629.969621461306
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 202.5303785386941,
+                  "limitingObstacle": "study-frame:0",
+                  "segment": 0
+                },
+                "reachMm": 563.1322276378436,
+                "stanceIntervalMm": [
+                  2432.4392429226114,
+                  2827.5
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/500/2726.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/500/2553",
+                "shiftXYMm": [
+                  0,
+                  -173.5
+                ],
+                "faceSweepXYXYMm": [
+                  501.5,
+                  2554.5,
+                  798.5,
+                  2898.5
+                ],
+                "reserveMm": 28.73792005698158,
+                "worker": {
+                  "points": [
+                    [
+                      1133.5,
+                      2716.719621461306
+                    ],
+                    [
+                      1133.5,
+                      2543.219621461306
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 115.7803785386941,
+                  "limitingObstacle": "wall:study-L-north:0",
+                  "segment": 0
+                },
+                "reachMm": 571.2620799430184,
+                "stanceIntervalMm": [
+                  2605.9392429226114,
+                  2827.5
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/500/2900",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/800/2900",
+                "shiftXYMm": [
+                  300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  501.5,
+                  2901.5,
+                  1098.5,
+                  3149
+                ],
+                "reserveMm": 13.640534773428953,
+                "worker": {
+                  "points": [
+                    [
+                      917.7512548532112,
+                      2566.5
+                    ],
+                    [
+                      1217.7512548532113,
+                      2566.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 26.057546110987573,
+                  "limitingObstacle": "study-emitter-plinth",
+                  "segment": 0
+                },
+                "reachMm": 586.359465226571,
+                "stanceIntervalMm": [
+                  893.2329704540957,
+                  942.2695392523267
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/800/2553",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/800/2726.5",
+                "shiftXYMm": [
+                  0,
+                  173.5
+                ],
+                "faceSweepXYXYMm": [
+                  801.5,
+                  2554.5,
+                  1098.5,
+                  2898.5
+                ],
+                "reserveMm": 95.20107909021783,
+                "worker": {
+                  "points": [
+                    [
+                      1114.0371183969746,
+                      2219.5
+                    ],
+                    [
+                      1114.0371183969746,
+                      2393
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 179.53711839697462,
+                  "limitingObstacle": "study-emitter-plinth",
+                  "segment": 0
+                },
+                "reachMm": 504.79892090978217,
+                "stanceIntervalMm": [
+                  939.5,
+                  1288.574236793949
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/800/2726.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/800/2553",
+                "shiftXYMm": [
+                  0,
+                  -173.5
+                ],
+                "faceSweepXYXYMm": [
+                  801.5,
+                  2554.5,
+                  1098.5,
+                  2898.5
+                ],
+                "reserveMm": 95.20107909021783,
+                "worker": {
+                  "points": [
+                    [
+                      1114.0371183969746,
+                      2393
+                    ],
+                    [
+                      1114.0371183969746,
+                      2219.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 179.53711839697462,
+                  "limitingObstacle": "study-emitter-plinth",
+                  "segment": 0
+                },
+                "reachMm": 504.79892090978217,
+                "stanceIntervalMm": [
+                  939.5,
+                  1288.574236793949
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/800/2900",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/500/2900",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  501.5,
+                  2901.5,
+                  1098.5,
+                  3149
+                ],
+                "reserveMm": 13.64053477342884,
+                "worker": {
+                  "points": [
+                    [
+                      1217.7512548532113,
+                      2566.5
+                    ],
+                    [
+                      917.7512548532113,
+                      2566.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 26.057546110987687,
+                  "limitingObstacle": "study-emitter-plinth",
+                  "segment": 0
+                },
+                "reachMm": 586.3594652265712,
+                "stanceIntervalMm": [
+                  1193.2329704540957,
+                  1242.2695392523267
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1100/2553",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1100/2726.5",
+                "shiftXYMm": [
+                  0,
+                  173.5
+                ],
+                "faceSweepXYXYMm": [
+                  1101.5,
+                  2554.5,
+                  1398.5,
+                  2898.5
+                ],
+                "reserveMm": 138.36073062120448,
+                "worker": {
+                  "points": [
+                    [
+                      1264.0371183969746,
+                      2219.5
+                    ],
+                    [
+                      1264.0371183969746,
+                      2393
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 329.5371183969746,
+                  "limitingObstacle": "study-emitter-plinth",
+                  "segment": 0
+                },
+                "reachMm": 461.6392693787955,
+                "stanceIntervalMm": [
+                  939.5,
+                  1588.574236793949
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1100/2726.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1100/2553",
+                "shiftXYMm": [
+                  0,
+                  -173.5
+                ],
+                "faceSweepXYXYMm": [
+                  1101.5,
+                  2554.5,
+                  1398.5,
+                  2898.5
+                ],
+                "reserveMm": 138.36073062120448,
+                "worker": {
+                  "points": [
+                    [
+                      1264.0371183969746,
+                      2393
+                    ],
+                    [
+                      1264.0371183969746,
+                      2219.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 329.5371183969746,
+                  "limitingObstacle": "study-emitter-plinth",
+                  "segment": 0
+                },
+                "reachMm": 461.6392693787955,
+                "stanceIntervalMm": [
+                  939.5,
+                  1588.574236793949
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1100/2900",
+              "state": "panel-sweep-unsupported",
+              "encounteredPlanProjectionIds": [
+                "study-frame:0"
+              ]
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1400/2553",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/2726.5",
+                "shiftXYMm": [
+                  0,
+                  173.5
+                ],
+                "faceSweepXYXYMm": [
+                  1401.5,
+                  2554.5,
+                  1698.5,
+                  2898.5
+                ],
+                "reserveMm": 140.097768542052,
+                "worker": {
+                  "points": [
+                    [
+                      1550,
+                      2219.5
+                    ],
+                    [
+                      1550,
+                      2393
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 459.92450282906395,
+                  "limitingObstacle": "study-frame:0",
+                  "segment": 0
+                },
+                "reachMm": 459.902231457948,
+                "stanceIntervalMm": [
+                  1211.425763206051,
+                  1888.574236793949
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1400/2726.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/2553",
+                "shiftXYMm": [
+                  0,
+                  -173.5
+                ],
+                "faceSweepXYXYMm": [
+                  1401.5,
+                  2554.5,
+                  1698.5,
+                  2898.5
+                ],
+                "reserveMm": 140.097768542052,
+                "worker": {
+                  "points": [
+                    [
+                      1550,
+                      2393
+                    ],
+                    [
+                      1550,
+                      2219.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 459.92450282906395,
+                  "limitingObstacle": "study-frame:0",
+                  "segment": 0
+                },
+                "reachMm": 459.902231457948,
+                "stanceIntervalMm": [
+                  1211.425763206051,
+                  1888.574236793949
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1400/2900",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1700/2900",
+                "shiftXYMm": [
+                  300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  1401.5,
+                  2901.5,
+                  1998.5,
+                  3149
+                ],
+                "reserveMm": 96.4897560473135,
+                "worker": {
+                  "points": [
+                    [
+                      1496.6994517667313,
+                      2566.5
+                    ],
+                    [
+                      1796.6994517667313,
+                      2566.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 237.041636433873,
+                  "limitingObstacle": "study-chair",
+                  "segment": 0
+                },
+                "reachMm": 503.5102439526865,
+                "stanceIntervalMm": [
+                  1257.7304607476733,
+                  1735.6684427857895
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1700/2553",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1700/2726.5",
+                "shiftXYMm": [
+                  0,
+                  173.5
+                ],
+                "faceSweepXYXYMm": [
+                  1701.5,
+                  2554.5,
+                  1998.5,
+                  2898.5
+                ],
+                "reserveMm": 123.50960905033656,
+                "worker": {
+                  "points": [
+                    [
+                      1765.7128816030254,
+                      2219.5
+                    ],
+                    [
+                      1765.7128816030254,
+                      2393
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 259.2871183969746,
+                  "limitingObstacle": "study-chair",
+                  "segment": 0
+                },
+                "reachMm": 476.49039094966344,
+                "stanceIntervalMm": [
+                  1511.425763206051,
+                  2020
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1700/2726.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1700/2553",
+                "shiftXYMm": [
+                  0,
+                  -173.5
+                ],
+                "faceSweepXYXYMm": [
+                  1701.5,
+                  2554.5,
+                  1998.5,
+                  2898.5
+                ],
+                "reserveMm": 123.50960905033656,
+                "worker": {
+                  "points": [
+                    [
+                      1765.7128816030254,
+                      2393
+                    ],
+                    [
+                      1765.7128816030254,
+                      2219.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 259.2871183969746,
+                  "limitingObstacle": "study-chair",
+                  "segment": 0
+                },
+                "reachMm": 476.49039094966344,
+                "stanceIntervalMm": [
+                  1511.425763206051,
+                  2020
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/1700/2900",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/2900",
+                "shiftXYMm": [
+                  -300,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  1401.5,
+                  2901.5,
+                  1998.5,
+                  3149
+                ],
+                "reserveMm": 96.4897560473135,
+                "worker": {
+                  "points": [
+                    [
+                      1796.6994517667313,
+                      2566.5
+                    ],
+                    [
+                      1496.6994517667313,
+                      2566.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 237.041636433873,
+                  "limitingObstacle": "study-chair",
+                  "segment": 0
+                },
+                "reachMm": 503.5102439526865,
+                "stanceIntervalMm": [
+                  1557.7304607476733,
+                  2035.6684427857895
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2000/2553",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/2726.5",
+                "shiftXYMm": [
+                  0,
+                  173.5
+                ],
+                "faceSweepXYXYMm": [
+                  2001.5,
+                  2554.5,
+                  2298.5,
+                  2898.5
+                ],
+                "reserveMm": 80.4675714580635,
+                "worker": {
+                  "points": [
+                    [
+                      2346.7871183969746,
+                      2219.5
+                    ],
+                    [
+                      2346.7871183969746,
+                      2393
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 138.8401236650176,
+                  "limitingObstacle": "wall:study-L-return:0",
+                  "segment": 0
+                },
+                "reachMm": 519.5324285419365,
+                "stanceIntervalMm": [
+                  2205,
+                  2488.5742367939492
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2000/2726.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/2900",
+                "shiftXYMm": [
+                  0,
+                  212
+                ],
+                "faceSweepXYXYMm": [
+                  2001.5,
+                  2728,
+                  2298.5,
+                  3110.5
+                ],
+                "reserveMm": 101.43969798150943,
+                "worker": {
+                  "points": [
+                    [
+                      2295.6567048532106,
+                      2393
+                    ],
+                    [
+                      2295.6567048532106,
+                      2605
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 106.43969798150943,
+                  "limitingObstacle": "study-chair",
+                  "segment": 0
+                },
+                "reachMm": 497.28423326505776,
+                "stanceIntervalMm": [
+                  2190.4754722863877,
+                  2400.837937420033
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2000/2900",
+              "state": "panel-sweep-unsupported",
+              "encounteredPlanProjectionIds": [
+                "study-frame:1"
+              ]
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2300/2553",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2300/2300",
+                "shiftXYMm": [
+                  0,
+                  -213.25
+                ],
+                "faceSweepXYXYMm": [
+                  2301.5,
+                  2341.25,
+                  2598.5,
+                  2725
+                ],
+                "reserveMm": 132.69088518670003,
+                "worker": {
+                  "points": [
+                    [
+                      2496.7871183969746,
+                      2219.5
+                    ],
+                    [
+                      2496.7871183969746,
+                      2006.25
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 149.88554369541168,
+                  "limitingObstacle": "wall:study-cloak-north:0",
+                  "segment": 0
+                },
+                "reachMm": 467.30911481329997,
+                "stanceIntervalMm": [
+                  2205,
+                  2788.5742367939492
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2300/2726.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2300/2553",
+                "shiftXYMm": [
+                  0,
+                  -173.5
+                ],
+                "faceSweepXYXYMm": [
+                  2301.5,
+                  2554.5,
+                  2598.5,
+                  2898.5
+                ],
+                "reserveMm": 113.95726295604345,
+                "worker": {
+                  "points": [
+                    [
+                      2371.6281393294084,
+                      2393
+                    ],
+                    [
+                      2371.6281393294084,
+                      2219.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 118.95726295604345,
+                  "limitingObstacle": "wall:study-L-return:0",
+                  "segment": 0
+                },
+                "reachMm": 474.8572386644535,
+                "stanceIntervalMm": [
+                  2205,
+                  2538.2562786588173
+                ],
+                "normalAxis": "y"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2300/2900",
+              "state": "panel-sweep-unsupported",
+              "encounteredPlanProjectionIds": [
+                "study-frame:1"
+              ]
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2600/2553",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2300/2553",
+                "shiftXYMm": [
+                  -210.25,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  2391.25,
+                  2554.5,
+                  2719,
+                  2725
+                ],
+                "reserveMm": 119.51939378783459,
+                "worker": {
+                  "points": [
+                    [
+                      2266.5,
+                      2694.7184480132523
+                    ],
+                    [
+                      2056.25,
+                      2694.7184480132523
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 124.51939378783459,
+                  "limitingObstacle": "study-chair",
+                  "segment": 0
+                },
+                "reachMm": 445.4856199455947,
+                "stanceIntervalMm": [
+                  2561.9368960265047,
+                  2827.5
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2600/2726.5",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2300/2726.5",
+                "shiftXYMm": [
+                  -210.25,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  2391.25,
+                  2728,
+                  2719,
+                  2898.5
+                ],
+                "reserveMm": 119.51939378783459,
+                "worker": {
+                  "points": [
+                    [
+                      2266.5,
+                      2694.7184480132523
+                    ],
+                    [
+                      2056.25,
+                      2694.7184480132523
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 124.51939378783459,
+                  "limitingObstacle": "study-chair",
+                  "segment": 0
+                },
+                "reachMm": 464.5879319515971,
+                "stanceIntervalMm": [
+                  2561.9368960265047,
+                  2827.5
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/2600/2900",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/2300/2900",
+                "shiftXYMm": [
+                  -210.25,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  2391.25,
+                  2901.5,
+                  2719,
+                  3149
+                ],
+                "reserveMm": 54.67207046169483,
+                "worker": {
+                  "points": [
+                    [
+                      2266.5,
+                      2743.672726601272
+                    ],
+                    [
+                      2056.25,
+                      2743.672726601272
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 88.82727339872781,
+                  "limitingObstacle": "study-frame:1",
+                  "segment": 0
+                },
+                "reachMm": 545.3279295383052,
+                "stanceIntervalMm": [
+                  2659.845453202544,
+                  2827.5
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/429.5/1103",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/500/1103",
+                "shiftXYMm": [
+                  185.25,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  431,
+                  1104.5,
+                  683.75,
+                  1244.5
+                ],
+                "reserveMm": 77.3593733420696,
+                "worker": {
+                  "points": [
+                    [
+                      833.5,
+                      900.8077663375375
+                    ],
+                    [
+                      1018.75,
+                      900.8077663375375
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 86,
+                  "limitingObstacle": "outer-W",
+                  "segment": 0
+                },
+                "reachMm": 522.6406266579304,
+                "stanceIntervalMm": [
+                  786.7518560861737,
+                  1014.8636765889014
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/429.5/2405",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "occupied",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/500/2405",
+                "shiftXYMm": [
+                  185.25,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  431,
+                  2406.5,
+                  683.75,
+                  2551.5
+                ],
+                "reserveMm": 77.63704841611269,
+                "worker": {
+                  "points": [
+                    [
+                      833.5,
+                      2731.8181617055493
+                    ],
+                    [
+                      1018.75,
+                      2731.8181617055493
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 82.63704841611269,
+                  "limitingObstacle": "study-emitter-plinth",
+                  "segment": 0
+                },
+                "reachMm": 509.9758833108956,
+                "stanceIntervalMm": [
+                  2636.1363234110986,
+                  2827.5
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/500/1103",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/500/951.5",
+                "shiftXYMm": [
+                  0,
+                  -147.25
+                ],
+                "faceSweepXYXYMm": [
+                  501.5,
+                  957.25,
+                  798.5,
+                  1244.5
+                ],
+                "reserveMm": 18.977321790426004,
+                "worker": {
+                  "points": [
+                    [
+                      1133.5,
+                      1031.0946214613057
+                    ],
+                    [
+                      1133.5,
+                      883.8446214613057
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 68.90537853869432,
+                  "limitingObstacle": "study-desk",
+                  "segment": 0
+                },
+                "reachMm": 581.022678209574,
+                "stanceIntervalMm": [
+                  967.1892429226115,
+                  1095
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/500/2405",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/500/2553",
+                "shiftXYMm": [
+                  0,
+                  160.75
+                ],
+                "faceSweepXYXYMm": [
+                  501.5,
+                  2406.5,
+                  798.5,
+                  2712.25
+                ],
+                "reserveMm": 36.867772362156416,
+                "worker": {
+                  "points": [
+                    [
+                      1133.5,
+                      2469.219621461306
+                    ],
+                    [
+                      1133.5,
+                      2629.969621461306
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 202.5303785386941,
+                  "limitingObstacle": "wall:study-L-north:0",
+                  "segment": 0
+                },
+                "reachMm": 563.1322276378436,
+                "stanceIntervalMm": [
+                  2271.6892429226114,
+                  2666.75
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/634.5/1246",
+              "state": "panel-sweep-unsupported",
+              "encounteredPlanProjectionIds": [
+                "study-desk"
+              ]
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/634.5/1400",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/800/1400",
+                "shiftXYMm": [
+                  232.75,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  636,
+                  1401.5,
+                  1031.25,
+                  1698.5
+                ],
+                "reserveMm": 82.67104893705618,
+                "worker": {
+                  "points": [
+                    [
+                      1133.5,
+                      1748.9280641227215
+                    ],
+                    [
+                      1366.25,
+                      1748.9280641227215
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 148.92806412272148,
+                  "limitingObstacle": "study-desk",
+                  "segment": 0
+                },
+                "reachMm": 517.3289510629438,
+                "stanceIntervalMm": [
+                  1605,
+                  1892.856128245443
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/634.5/1700",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/800/1700",
+                "shiftXYMm": [
+                  232.75,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  636,
+                  1701.5,
+                  1031.25,
+                  1998.5
+                ],
+                "reserveMm": 135.83319337648743,
+                "worker": {
+                  "points": [
+                    [
+                      1133.5,
+                      1898.9280641227215
+                    ],
+                    [
+                      1366.25,
+                      1898.9280641227215
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 199,
+                  "limitingObstacle": "study-emitter-plinth",
+                  "segment": 0
+                },
+                "reachMm": 464.16680662351257,
+                "stanceIntervalMm": [
+                  1605,
+                  2192.856128245443
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/634.5/2000",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/800/2000",
+                "shiftXYMm": [
+                  232.75,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  636,
+                  2001.5,
+                  1031.25,
+                  2298.5
+                ],
+                "reserveMm": 143.75,
+                "worker": {
+                  "points": [
+                    [
+                      1133.5,
+                      2150
+                    ],
+                    [
+                      1366.25,
+                      2150
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 199,
+                  "limitingObstacle": "study-emitter-plinth",
+                  "segment": 0
+                },
+                "reachMm": 456.25,
+                "stanceIntervalMm": [
+                  1807.143871754557,
+                  2492.856128245443
+                ],
+                "normalAxis": "x"
+              }
+            },
+            {
+              "partId": "GROUND/G-STUDY/room-kit/floor/634.5/2300",
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/634.5/2000",
+                "shiftXYMm": [
+                  0,
+                  -202.5
+                ],
+                "faceSweepXYXYMm": [
+                  636,
+                  2099,
+                  798.5,
+                  2403.5
+                ],
+                "reserveMm": 100.21098201340999,
+                "worker": {
+                  "points": [
+                    [
+                      1133.5,
+                      2352.5
+                    ],
+                    [
+                      1133.5,
+                      2150
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 199,
+                  "limitingObstacle": "study-emitter-plinth",
+                  "segment": 0
+                },
+                "reachMm": 499.78901798659,
+                "stanceIntervalMm": [
+                  2020.5196730226323,
+                  2684.480326977368
+                ],
+                "normalAxis": "x"
+              }
+            }
+          ],
+          "transferVertical": {
+            "initialLiftMm": 38,
+            "travelTopMm": 38,
+            "travelUndersideMm": 18,
+            "firstRestBoardTopMm": 12,
+            "undersideReserveMm": 6
+          },
+          "held": [
+            "Separate entry and grip exchange at each pickup",
+            "Support of the fitted deck, board and receiving finish",
+            "Package release and loaded motion under actual fixed service supports",
+            "Refit, tolerance and repeatability"
+          ],
+          "g1Projection": {
+            "carrierPlanXYWHMm": [
+              2845,
+              675,
+              400,
+              225
+            ],
+            "releasedPackageZMm": [
+              1933.58,
+              2282.08
+            ],
+            "installedCarrierMinimumZMm": null,
+            "treatment": "Retain installed inlet and carrier as full-height BCR plan projections until the complete lowest fixed support can be bound."
+          }
+        },
         "schema": "ias-study-furniture-native-result/1",
         "state": "geometry-screen-only",
         "basis": {
@@ -6093,7 +11119,7 @@
           "Maintained door operation and handling of floor parts from a supported deck"
         ],
         "source": {
-          "project/ias/studies/study-furniture-motion.py": "ded87a912a3d5187c7310dbc8dc9589ec5a5a225a38ef754f8c656588a13e36d",
+          "project/ias/studies/study-furniture-motion.py": "72b1dda0ae74adcdc74f9c0431d60e0757fdb8d14d7a0623aba63c395822ace0",
           "project/bcr/studies/bay-interface-study.py": "7fea8b8b1b8e66a6f52ae8a6124eda84f8759a9c42c3ae31644296679f4e3e7c"
         }
       },
