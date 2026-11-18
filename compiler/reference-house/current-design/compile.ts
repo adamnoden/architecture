@@ -178,6 +178,14 @@ export function prepareCurrentDesignCompile(input: unknown) {
       const { runInletRemovalCase } = await import('./inlet-removal.js')
       return runInletRemovalCase(resolved, input)
     },
+    readInletCoverCases: async () => {
+      const { readInletCoverCases } = await import('./inlet-cover.js')
+      return readInletCoverCases(resolved)
+    },
+    inletCover: async (input: unknown) => {
+      const { runInletCoverCase } = await import('./inlet-cover.js')
+      return runInletCoverCase(resolved, input)
+    },
     renewableOpenings: async (widthCase?: unknown) => {
       const [{ compileRenewableOpenings }, { drawStudyJambScreen }] = await Promise.all([
         import('./assemblies/renewable-openings.js'), import('./assemblies/renewable-opening-views.js'),

@@ -24,7 +24,45 @@ type FurniturePhase = { readonly type: 'approach'; readonly id: string; readonly
   | (MovingPhase & { readonly type: 'translation'; readonly itemSweepXYWHMm: PlanBox })
   | (MovingPhase & { readonly type: 'rotation'; readonly centreXYMm: Point; readonly radiusMm: number; readonly angleDeg: 90 })
 
+type FirstRestPart = { readonly id: string; readonly box: PlanBox; readonly face: PlanBox; readonly keyCentresXYMm: readonly Point[] }
+export interface FirstRestScreen {
+  readonly parts: readonly FirstRestPart[]
+  readonly bandsXYXYMm: readonly PlanBox[]
+  readonly emitterPlinthXYXYMm: PlanBox
+  readonly bodyRadiusMm: number
+  readonly bodyToPanelMm: number
+  readonly bodySettingMm: number
+  readonly maximumReachMm: number
+  readonly verticalGripDifferenceMm: number
+  readonly liftMm: number
+  readonly finishDepthMm: number
+  readonly restBoardTopMm: number
+}
+
+type FirstRestOutcome = {
+  readonly partId: string
+} & (
+  | { readonly state: 'direct-geometry-witness'; readonly witness: {
+      readonly stage: string; readonly restPartId: string; readonly shiftXYMm: Point
+      readonly faceSweepXYXYMm: PlanBox; readonly worker: Worker; readonly reachMm: number
+    }}
+  | { readonly state: 'panel-sweep-unsupported'; readonly encounteredPlanProjectionIds: readonly string[] }
+  | { readonly state: 'no-adjacent-whole-face-rest' | 'worker-stance-or-reach-unsupported' }
+)
+
 interface FurnitureMotion {
+  readonly firstRest: {
+    readonly schema: 'ias-study-floor-first-rest/1'
+    readonly physicalAcceptance: false
+    readonly partCount: number
+    readonly witnessCount: number
+    readonly transferVertical: {
+      readonly initialLiftMm: number; readonly travelTopMm: number
+      readonly travelUndersideMm: number; readonly firstRestBoardTopMm: number; readonly undersideReserveMm: number
+    }
+    readonly parts: readonly FirstRestOutcome[]
+    readonly g1Projection: { readonly installedCarrierMinimumZMm: null; readonly releasedPackageZMm: Point }
+  } | null
   readonly schema: 'ias-study-furniture-native-result/1'
   readonly state: 'geometry-screen-only' | 'geometry-conflict'
   readonly basis: {
@@ -54,6 +92,7 @@ export function compileStudyFurnitureMotion(
   turnReceiptSha256: string,
   deskParkXYXYMm: PlanBox,
   chairParkXYXYMm: PlanBox,
+  firstRest?: FirstRestScreen,
 ) {
   const source = { [nativePath]: sourceSha256(nativePath), [bcrPath]: sourceSha256(bcrPath) }
   const result: FurnitureMotion = JSON.parse(execFileSync('python3', [
@@ -61,10 +100,13 @@ export function compileStudyFurnitureMotion(
   ], {
     encoding: 'utf8',
     stdio: ['pipe', 'pipe', 'pipe'],
-    input: JSON.stringify({ schema: 'ias-study-furniture-native-case/1', bayReceiptSha256, deskParkXYXYMm, chairParkXYXYMm }),
+    input: JSON.stringify({ schema: 'ias-study-furniture-native-case/1', bayReceiptSha256, deskParkXYXYMm, chairParkXYXYMm, firstRest }),
   }))
   if (result.schema !== 'ias-study-furniture-native-result/1' || result.basis.bayReceiptSha256 !== bayReceiptSha256
       || result.basis.turnReceiptSha256 !== turnReceiptSha256 || result.physicalAcceptance !== false
+      || (firstRest && result.state === 'geometry-screen-only' && (result.firstRest?.partCount !== firstRest.parts.length
+          || result.firstRest.physicalAcceptance !== false
+          || result.firstRest.parts.some((part, index) => part.partId !== firstRest.parts[index].id)))
       || !result.candidate.deskParkXYXYMm.every((value, index) => value === deskParkXYXYMm[index])
       || !result.candidate.chairParkXYXYMm.every((value, index) => value === chairParkXYXYMm[index])) {
     throw new Error('The Study furniture motion disagrees with its source-bound room case')

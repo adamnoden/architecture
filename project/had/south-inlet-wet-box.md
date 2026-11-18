@@ -44,3 +44,16 @@ node --import tsx scripts/compile-current-design.ts --read-georgian-source |
 node -p 'JSON.stringify(require("./removal-cases.json")[0])' |
   node --import tsx scripts/compile-current-design.ts --inlet-removal -
 ```
+
+### Park the independent cover outside the carrier path
+
+A rear-open U-notch gives each cover an 84 mm straight northward release stroke around the stationary riser. At an inline rest after that stroke, the solid front bridge obstructs the next carrier after 84 mm, leaving 536 mm of its required draw untraveled. Move the released cover fully past its own wet front before a sideways handover to an independent receiver.
+
+The Utility cover needs 132 mm straight travel to turn and Plant needs 167 mm, each including the 5 mm retained-front allowance. With the installed washer, 125 mm is available with the modeled clearance. The two cover paths miss by 7 mm and 42 mm. With the washer restrained at first rest, the trial can park the Utility cover west and the Plant cover east. The two receivers occupy separate positions outside their respective carrier corridors. The comparison uses 20 mm cheeks and retained side lands, 8 mm bearing bands and a 20 mm minimum front bridge. These are adjustable envelope inputs. Fit, anchored guide, controlled load handover, retained capture, covers, vent returns, latch and sealed wet boundaries remain qualification duties.
+
+```sh
+node --import tsx scripts/compile-current-design.ts --read-georgian-source |
+  node --import tsx scripts/compile-current-design.ts --read-inlet-cover - > cover-cases.json
+node -p 'JSON.stringify(require("./cover-cases.json")[0])' |
+  node --import tsx scripts/compile-current-design.ts --inlet-cover -
+```
