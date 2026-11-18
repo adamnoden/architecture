@@ -24,6 +24,7 @@ type CoverCase = {
     readonly profile?: 'rounded-taper'
     readonly fillerAndCollarClear?: boolean
     readonly taperDetached?: boolean
+    readonly taperToeReliefMm?: number
   }
 }
 type Bounds = readonly [number, number]
@@ -61,7 +62,10 @@ const offset = ({ x, y }: Footprint, dx: number, dy: number): Footprint => ({
 const clearInside = ([lo, hi]: Bounds, [innerLo, innerHi]: Bounds) => Math.min(innerLo - lo, hi - innerHi)
 const intervalGap = (first: Bounds, second: Bounds) => Math.max(first[0] - second[1], second[0] - first[1])
 
-function taperAwareProfile(plan: readonly PlanPoint[], envelope: Footprint, centre: PlanPoint, radiusMm: number, settingMm: number) {
+function taperAwareProfile(
+  plan: readonly PlanPoint[], envelope: Footprint, centre: PlanPoint, radiusMm: number, settingMm: number,
+  toeReliefMm: number, neighbors: ReturnType<typeof sourceDraw>['calculation']['wetBox']['utilityClosureNeighbors'], accessMm: number,
+) {
   const sloped = plan.flatMap(([x, y], index) => {
     const next = plan[(index + 1) % plan.length]
     if (x === next[0] || y === next[1]) return []
@@ -69,7 +73,9 @@ function taperAwareProfile(plan: readonly PlanPoint[], envelope: Footprint, cent
     return [y < next[1] ? [here, next] as const : [next, here] as const]
   })
   if (sloped.length !== 1) throw new Error('The rounded cover requires one bound straight Utility taper')
-  const [heel, toe] = sloped[0]
+  const [heel, boundToe] = sloped[0]
+  if (toeReliefMm >= boundToe[0] - heel[0]) throw new Error('Utility taper toe relief must retain a positive taper slope')
+  const toe = [boundToe[0] - toeReliefMm, boundToe[1]] as const
   const dx = toe[0] - heel[0]
   const dy = toe[1] - heel[1]
   const length = Math.hypot(dx, dy)
@@ -82,12 +88,39 @@ function taperAwareProfile(plan: readonly PlanPoint[], envelope: Footprint, cent
   if (westAt(front) >= east) throw new Error('The available Utility taper does not leave a remaining cover')
   const outline: PlanPoint[] = [[westAt(back), back], [east, back], [east, front], [westAt(front), front]]
   if (knee > back && knee < front) outline.push([west, knee])
+  const distanceMm = signedDistance(centre)
+  const baffle = neighbors?.baffle
+  const purge = neighbors?.purge
+  if (!baffle || !purge || ![...baffle.x, ...baffle.y, ...purge.body, purge.bodyRadiusMM].every(Number.isFinite) ||
+      purge.bodyRadiusMM <= 0 || baffle.y[0] < heel[1] || baffle.y[1] > toe[1] || baffle.y[1] <= baffle.y[0]) {
+    throw new Error('The taper relief requires a bound Utility purge stance and baffle within the taper')
+  }
+  const rx = centre[0] - heel[0]
+  const ry = centre[1] - heel[1]
+  if (rx <= 0 || ry <= 0 || ry >= dy) throw new Error('The Utility riser no longer lies east of the screened taper heel and within its run')
+  const radiusWithSetting = radiusMm + settingMm
+  // The centre offset to a taper at angle theta from +Y is rx cos(theta) - ry sin(theta).
+  const requiredReliefMm = radiusWithSetting >= rx ? null : Math.max(0, boundToe[0] - heel[0] - dy *
+    Math.tan(Math.acos(radiusWithSetting / Math.hypot(rx, ry)) - Math.atan2(ry, rx)))
+  const baffleRun = baffle.y[1] - heel[1]
+  const baffleWestAllowance = baffle.x[0] - heel[0] - settingMm
+  const px = purge.body[0] - heel[0]
+  const py = purge.body[1] - heel[1]
+  const foot = Math.max(0, Math.min(1, (px * dx + py * dy) / (length * length)))
+  const relief = {
+    heelMm: heel, boundToeMm: boundToe, trialToeMm: toe,
+    minimumToeReliefForSelectedFillerMm: requiredReliefMm === null ? null : round(requiredReliefMm),
+    minimumToeReliefForBaffleMm: baffleWestAllowance <= 0 ? null :
+      round(Math.max(0, boundToe[0] - heel[0] - dy * baffleWestAllowance / baffleRun)),
+    purgeBodyReserveAfterAccessSettingMm: round(Math.hypot(px - foot * dx, py - foot * dy) - purge.bodyRadiusMM - accessMm),
+    baffleWestReserveAfterFabricationSettingMm: round(baffleWestAllowance - baffleRun * dx / dy),
+  }
   return {
-    outline,
+    outline, relief,
     westFrontTrimMm: round(westAt(front) - west),
     coverSideAfterSettingMm: round(Math.min(...outline.map(signedDistance)) - settingMm),
-    centreToTaperMm: round(signedDistance(centre)),
-    fillerToTaperAfterSettingMm: round(signedDistance(centre) - radiusMm - settingMm),
+    centreToTaperMm: round(distanceMm),
+    fillerToTaperAfterSettingMm: round(distanceMm - radiusMm - settingMm),
   }
 }
 
@@ -100,20 +133,24 @@ function closedCoverComparison(
     wallReturnDepthMm: 12,
   }
   const keys = ['notchLapMm', 'collarSealLandMm', 'collarOutsideDiameterMm', 'wallReturnDepthMm'] as const
-  const optional = ['profile', 'fillerAndCollarClear', 'taperDetached']
+  const optional = ['profile', 'fillerAndCollarClear', 'taperDetached', 'taperToeReliefMm']
   if (!closure || typeof closure !== 'object' || Array.isArray(closure) ||
       Object.keys(closure).some(key => !(keys as readonly string[]).includes(key) && !optional.includes(key)) ||
       keys.some(key => !Object.hasOwn(closure, key) || !Number.isFinite(closure[key]) || closure[key] <= 0 ||
         closure[key] > wetBox.sideLimitsXMm[1] - wetBox.sideLimitsXMm[0])) {
     throw new Error('Expected finite positive south inlet closure comparison dimensions')
   }
-  const { notchLapMm, collarSealLandMm, collarOutsideDiameterMm, wallReturnDepthMm, profile, fillerAndCollarClear, taperDetached } = closure
+  const { notchLapMm, collarSealLandMm, collarOutsideDiameterMm, wallReturnDepthMm, profile, fillerAndCollarClear, taperDetached, taperToeReliefMm } = closure
   const rounded = profile === 'rounded-taper'
-  if ((Object.hasOwn(closure, 'profile') || Object.hasOwn(closure, 'fillerAndCollarClear') || Object.hasOwn(closure, 'taperDetached')) &&
+  if ((Object.hasOwn(closure, 'profile') || Object.hasOwn(closure, 'fillerAndCollarClear') || Object.hasOwn(closure, 'taperDetached') || Object.hasOwn(closure, 'taperToeReliefMm')) &&
       (!rounded || trial.branch !== 'utility' || typeof fillerAndCollarClear !== 'boolean' || typeof taperDetached !== 'boolean')) {
     throw new Error('Expected a rounded Utility taper profile and explicit release states')
   }
-  const { planMm, innerVentAxisMm, formedVentDiameterMm } = wetBox
+  const checksRelief = Object.hasOwn(closure, 'taperToeReliefMm')
+  if (checksRelief && (typeof taperToeReliefMm !== 'number' || !Number.isFinite(taperToeReliefMm) || taperToeReliefMm < 0)) {
+    throw new Error('Expected a finite non-negative Utility taper toe relief')
+  }
+  const { planMm, innerVentAxisMm, formedVentDiameterMm, utilityClosureNeighbors } = wetBox
   const [back, front] = envelope.y
   const xLimitsAt = (y: number): Bounds => {
     const x = planMm.flatMap(([x0, y0], i) => {
@@ -133,7 +170,8 @@ function closedCoverComparison(
   const formedNotchRadiusMm = roofStrip.widthMm / 2
   const fillerRadiusMm = formedNotchRadiusMm + notchLapMm
   const centre = [dryBreak.xMm, dryBreak.yMm] as const
-  const shaped = rounded ? taperAwareProfile(planMm, envelope, centre, fillerRadiusMm, fabrication) : null
+  const shaped = rounded ? taperAwareProfile(planMm, envelope, centre, fillerRadiusMm, fabrication,
+    taperToeReliefMm ?? 0, utilityClosureNeighbors, baseline.settingsMm.access) : null
   const collarRadius = collarOutsideDiameterMm / 2
   const collar: Footprint = {
     x: [dryBreak.xMm - collarRadius, dryBreak.xMm + collarRadius],
@@ -156,6 +194,8 @@ function closedCoverComparison(
     ['FILLER_LAP_HAS_INSUFFICIENT_BACKING', Math.min(clearance.fillerSideLapBackingAfterSettingMm,
       clearance.fillerRearLapBackingAfterSettingMm, clearance.fillerFrontLapBackingAfterSettingMm) < 0],
     ['ROUND_FILLER_INTERSECTS_TAPER', shaped !== null && shaped.fillerToTaperAfterSettingMm < 0],
+    ['TAPER_RELIEF_INTERSECTS_PURGE_STANCE', checksRelief && shaped !== null && shaped.relief.purgeBodyReserveAfterAccessSettingMm < 0],
+    ['TAPER_RELIEF_INTERSECTS_BAFFLE', checksRelief && shaped !== null && shaped.relief.baffleWestReserveAfterFabricationSettingMm < 0],
     ['COLLAR_RADIAL_SEAL_LAND_SHORT', clearance.collarRadialSealLandAfterSettingMm < collarSealLandMm],
     ['COLLAR_EXCEEDS_FILLER', clearance.collarInsideFillerAfterSettingMm < 0],
     ['WALL_RETURN_INTERCEPTS_FORMED_VENT', clearance.formedVentBelowWallReturnAfterSettingMm < 0],
@@ -173,12 +213,13 @@ function closedCoverComparison(
 }
 
 function coverPlan(branch: CoverCase['branch'], positions: Readonly<Record<string, readonly Footprint[]>>,
-  caseDigest: string, rounded?: { outline: readonly PlanPoint[]; centre: PlanPoint; formedNotchRadiusMm: number }): DrawingSceneV2 {
+  caseDigest: string, rounded?: NonNullable<ReturnType<typeof closedCoverComparison>['roundedTaper']>): DrawingSceneV2 {
   const items = Object.values(positions).flat()
-  const west = Math.min(...items.map(item => item.x[0]))
+  const taper = rounded ? [rounded.relief.heelMm, rounded.relief.boundToeMm, rounded.relief.trialToeMm] : []
+  const west = Math.min(...items.map(item => item.x[0]), ...taper.map(([x]) => x))
   const east = Math.max(...items.map(item => item.x[1]))
-  const south = Math.min(...items.map(item => item.y[0]))
-  const north = Math.max(...items.map(item => item.y[1]))
+  const south = Math.min(...items.map(item => item.y[0]), ...taper.map(([, y]) => y))
+  const north = Math.max(...items.map(item => item.y[1]), ...taper.map(([, y]) => y))
   const modelBounds = { x: west, y: south, width: east - west, height: north - south }
   const scaleDenominator = 10
   const project = createPlanPaperProjection({ scaleDenominator, modelBounds, paperOrigin: { x: 12, y: 12 } })
@@ -195,6 +236,9 @@ function coverPlan(branch: CoverCase['branch'], positions: Readonly<Record<strin
     })
     rounded.outline.forEach((from, index) => addLine('rounded-outer-closed-' + index, from,
       rounded.outline[(index + 1) % rounded.outline.length]))
+    const { heelMm, boundToeMm, trialToeMm } = rounded.relief
+    addLine('utility-taper-bound', heelMm, boundToeMm)
+    if (trialToeMm[0] !== boundToeMm[0]) addLine('utility-taper-relief-trial', heelMm, trialToeMm)
     const [cx, cy] = rounded.centre
     const radius = rounded.formedNotchRadiusMm
     const arcSegments = 16

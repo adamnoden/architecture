@@ -24,6 +24,7 @@ type Cell = {
   readonly id: BranchId
   readonly case: { plan: readonly (readonly [number, number])[]; sideLimitsX: readonly [number, number]; frontY: number; roofZ: number; permanentLowerTroughLipZ: number }
   readonly vent: { inner: Point; formedDiameterMM: number }
+  readonly baffle: { x: readonly [number, number]; y: readonly [number, number] }
   readonly access: {
     splitCollarODMM: number; originalFixedFrontRailAfterSettingMM: number
     upperCutZ: number; requiredDrawMM: number; outsideRelease: Point; parkedRiserY: number
@@ -69,7 +70,10 @@ function readReference(resolved: CurrentDesignResolution) {
   const { throughWallRupture: { preferredWideBore: sleeve } } = json<{
     throughWallRupture: { preferredWideBore: { cleanBoreMM: number; carrierEnvelopeODMM: number } }
   }>(reliefPath)
-  const { utility } = json<{ utility: { washer: Rect; washerFirstRest: Rect } }>(servicesPath)
+  const { utility, selectedServiceInterfaces } = json<{
+    utility: { washer: Rect; washerFirstRest: Rect }
+    selectedServiceInterfaces?: { purge: { room: string; body: readonly [number, number]; bodyRadiusMM: number }[] }
+  }>(servicesPath)
   const { native: washer } = json<{ native: { width: number; closedDepth: number; height: number } }>(washerPath)
   if (![washer.width, washer.closedDepth, washer.height].every(value => Number.isFinite(value) && value > 0) ||
       [utility.washer, utility.washerFirstRest].some(([, , width, depth]) => width !== washer.width || depth !== washer.closedDepth)) {
@@ -107,7 +111,8 @@ function readReference(resolved: CurrentDesignResolution) {
   }))
   const method = { id: 'HAD-SOUTH-INLET-REMOVAL/1', gitBlob: binding.identities['compiler/reference-house/current-design/inlet-removal.ts'],
     inputs: Object.fromEntries([...observed].map(([path, file]) => [path, file.gitBlob])) }
-  return { cases, branches, method, utility, washer, sleeve, host: insert.host }
+  return { cases, branches, method, utility, washer, sleeve, host: insert.host,
+    utilityPurge: selectedServiceInterfaces?.purge.find(entry => entry.room === 'utility') }
 }
 
 export function readInletRemovalCases(resolved: CurrentDesignResolution) {
@@ -209,7 +214,11 @@ export function runInletRemovalCase(resolved: CurrentDesignResolution, input: un
   const calculation = {
     drawMm: trial.drawMm,
     wetBox: { sideLimitsXMm: sideLimitsX, frontYMm: frontY, planMm: cell.case.plan,
-      innerVentAxisMm: cell.vent.inner, formedVentDiameterMm: cell.vent.formedDiameterMM },
+      innerVentAxisMm: cell.vent.inner, formedVentDiameterMm: cell.vent.formedDiameterMM,
+      utilityClosureNeighbors: trial.branch === 'utility' ? {
+        baffle: cell.baffle && { x: cell.baffle.x, y: cell.baffle.y },
+        purge: reference.utilityPurge && { body: reference.utilityPurge.body, bodyRadiusMM: reference.utilityPurge.bodyRadiusMM },
+      } : null },
     washerEnvelopeMm: box,
     settingsMm: { fabrication: fabricationSettingMm, access: clearanceSettingMm },
     exteriorTipPastInsideFaceMm: round(exteriorRelease[1] + trial.drawMm - innerY),

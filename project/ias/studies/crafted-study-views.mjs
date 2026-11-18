@@ -9,11 +9,12 @@ const location = file => new URL(file, import.meta.url);
 const { study } = JSON.parse(readFileSync(location('workable-study-floor.json')));
 const compiler = prepareCurrentDesignCompile(readGeorgianDesignSnapshot());
 const common = { schema: 'ias-study-room-kit-case/1', units: 'mm', pitchMm: 300 };
-const [oak, stone, thinOak, thinStone] = await Promise.all([
+const [oak, stone, thinOak, thinStone, squareBoard] = await Promise.all([
   compiler.studyRoomKit({ ...common, wearingFace: 'oak' }),
   compiler.studyRoomKit({ ...common, wearingFace: 'stone-steel' }),
   compiler.studyRoomKit({ ...common, wearingFace: 'oak', finishDepthMm: 15 }),
   compiler.studyRoomKit({ ...common, wearingFace: 'stone-steel', finishDepthMm: 15 }),
+  compiler.studyRoomKit({ ...common, wearingFace: 'oak', firstRestBoardSizeMm: [300, 300] }),
 ]);
 if (JSON.stringify(oak.kit.bands) !== JSON.stringify(study.bands)
     || JSON.stringify(oak.kit.occupied) !== JSON.stringify(study.occupied)) {
@@ -257,6 +258,10 @@ const floorKeys = `<svg xmlns="http://www.w3.org/2000/svg" width="297mm" height=
 </svg>
 `;
 
+const boardTrial = squareBoard.kit.floor.firstRestBoardTrial;
+if (boardTrial?.state !== 'placement-comparison-only') throw new Error('Study square-board comparison unavailable');
+const { placements: boardPlacements, ...boardLimits } = boardTrial;
+
 const drawings = [
   ['crafted-study-comparison.svg', comparison],
   ['crafted-study-tile.svg', tile],
@@ -269,6 +274,13 @@ const drawings = [
   ['crafted-study-south-stock.svg', renderDrawingSceneV2Svg(oak.wallElevation)],
   ['crafted-study-kit-schedule.json', JSON.stringify({
     oak: oak.kit,
+    firstRestBoardComparison: {
+      request: squareBoard.kit.request,
+      caseDigest: squareBoard.kit.caseDigest,
+      ...boardLimits,
+      placementCount: boardPlacements.length,
+      quarterTurnCount: boardPlacements.filter(row => row.turnDeg === 90).length,
+    },
     thinGroundComparison: [thinOak.kit, thinStone.kit].map(({request, caseDigest, floor}) => ({
       request, caseDigest, wearingFaceMm: floor.wearingFaceMm, groundSupport: floor.groundSupport,
       maxWearingPackageKgBeforeAccessories: Math.max(...floor.parts.map(part => part.wearFaceKg)),
