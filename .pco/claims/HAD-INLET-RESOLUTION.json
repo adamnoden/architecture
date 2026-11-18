@@ -9,8 +9,8 @@
     "label": "rush-utility-relief"
   },
   "claimedAt": "2026-11-18T12:10:38.327Z",
-  "heartbeatAt": "2026-11-18T12:33:18.644Z",
-  "expiresAt": "2026-11-18T13:18:18.644Z",
+  "heartbeatAt": "2026-11-18T12:57:39.031Z",
+  "expiresAt": "2026-11-18T13:42:39.031Z",
   "branch": "work/rush-contact-geometry-2026-11-18",
   "predecessor": {
     "leaseId": "d89fd90f-7e08-40a7-9bdf-189bf725ecca",
@@ -31,5 +31,9 @@
       "evidence": "Verified #1574 b4db7d7a and #1575 da46dc523eacc79765d5b72ec443e958e972981c on main. Exact HAD source matches and 13 post-merge tests passed. Ø92 Utility collar and 4 mm radial seal-land trial misses concentric lap by 1.598 mm.",
       "next": "Bind rated collar, split filler and seal package or recover taper width. Prove installed fit, filler withdrawal, vent continuity, guide anchorage and positive capture under isolated wet/loaded tests."
     }
+  },
+  "checkpoint": {
+    "evidence": "PR #1577 exact head 270a8597 carries shaped receiver contact and simultaneous taper reserve changes. Browser and drawing checks green; repository health running. Focused HAD tests and TypeScript passed.",
+    "next": "Verify exact head and all hosted checks, merge #1577, then rebind to the third integration branch for bare lid and eccentric vertical load geometry. Wet sealing, guides, anchorage and capture remain unqualified."
   }
 }
