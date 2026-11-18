@@ -9,8 +9,8 @@
     "label": "ovid-study-rush"
   },
   "claimedAt": "2026-11-18T07:48:24.146Z",
-  "heartbeatAt": "2026-11-18T07:55:12.644Z",
-  "expiresAt": "2026-11-18T09:25:12.644Z",
+  "heartbeatAt": "2026-11-18T08:01:09.757Z",
+  "expiresAt": "2026-11-18T09:31:09.757Z",
   "branch": "work/rush-west-foul-2026-11-18",
   "predecessor": {
     "leaseId": "1c4221de-640e-4c87-8b54-48e11d047837",
@@ -33,7 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "IAS effdcf1600d986441ce5e58bae7f630a424759d9 admits the Study offset first-rest transfer and reports 119 of 144 matching witnesses. Receipt replay, 12 focused tests and TypeScript passed.",
-    "next": "Publish the exact combined STR, HAD and IAS tree, verify CI and merge preflight, then reconcile remaining physical limits."
-  }
+    "evidence": "Joint PR #1574 at 99c06a0d76ce8b5192889f00a1e8232fa008028c includes IAS effdcf16 and 119 of 144 Study first-rest witnesses. Strong exact joint predecessor Study receipt and 12 tests passed.",
+    "next": "Verify exact joint hosted proof, then merge and release IAS to the remaining G1 and installed support evidence."
+  },
+  "pr": 1574
 }
