@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 40,
-  "state": "released",
-  "leaseId": "63619a6c-6728-4b79-8459-af6bb401f51a",
+  "generation": 41,
+  "state": "claimed",
+  "leaseId": "62533e71-334f-41b1-8a06-e0cb4a0ac9d7",
   "holder": {
     "kind": "codex",
-    "label": "rush-dpc-splice"
+    "label": "rush-night-structure"
   },
-  "claimedAt": "2026-11-18T12:10:17.078Z",
-  "heartbeatAt": "2026-11-18T13:26:57.632Z",
-  "expiresAt": "2026-11-18T13:26:57.632Z",
-  "branch": "work/rush-installation-bounds-2026-11-18",
+  "claimedAt": "2026-11-18T23:19:20.165Z",
+  "heartbeatAt": "2026-11-18T23:19:20.165Z",
+  "expiresAt": "2026-11-19T00:04:20.165Z",
+  "branch": "work/rush-night-integration-2026-11-18",
   "predecessor": {
-    "leaseId": "716fb931-d672-45ff-8c49-ea1a08bea348",
-    "generation": 39,
-    "branch": "work/rush-fit-clearances-2026-11-18",
-    "pr": 1575,
+    "leaseId": "63619a6c-6728-4b79-8459-af6bb401f51a",
+    "generation": 40,
+    "branch": "work/rush-installation-bounds-2026-11-18",
+    "pr": 1578,
     "checkpoint": {
-      "evidence": "Merged #1574 b4db7d7a and #1575 da46dc52. West receiving compares the full supplied grade profile and its governing station.",
-      "next": "Bind an actual west receiving profile and the outlet fittings, then check their joined route and the dimensioned coupled DPC splice.",
-      "blocker": "Surveyed grade, confirmed host, fitting geometry and coupled splice stiffness remain open."
+      "evidence": "PR #1578 exact head 5aa3476b; 483 Reference House tests; hosted browser and drawing checks passed",
+      "next": "Merge upon verified hosted validation, then obtain installed DPC rotation and simultaneous load evidence at the resolved foul interface",
+      "blocker": "Existing northwest port intersects cage even at zero setting; coupled joint stiffness and route survey remain unresolved"
     }
   },
   "recoverySource": {
-    "leaseId": "716fb931-d672-45ff-8c49-ea1a08bea348",
-    "generation": 39,
-    "branch": "work/rush-fit-clearances-2026-11-18",
-    "pr": 1575,
+    "leaseId": "63619a6c-6728-4b79-8459-af6bb401f51a",
+    "generation": 40,
+    "branch": "work/rush-installation-bounds-2026-11-18",
+    "pr": 1578,
     "checkpoint": {
-      "evidence": "Merged #1574 b4db7d7a and #1575 da46dc52. West receiving compares the full supplied grade profile and its governing station.",
-      "next": "Bind an actual west receiving profile and the outlet fittings, then check their joined route and the dimensioned coupled DPC splice.",
-      "blocker": "Surveyed grade, confirmed host, fitting geometry and coupled splice stiffness remain open."
+      "evidence": "PR #1578 exact head 5aa3476b; 483 Reference House tests; hosted browser and drawing checks passed",
+      "next": "Merge upon verified hosted validation, then obtain installed DPC rotation and simultaneous load evidence at the resolved foul interface",
+      "blocker": "Existing northwest port intersects cage even at zero setting; coupled joint stiffness and route survey remain unresolved"
     }
-  },
-  "checkpoint": {
-    "evidence": "PR #1578 exact head 5aa3476b; 483 Reference House tests; hosted browser and drawing checks passed",
-    "next": "Merge upon verified hosted validation, then obtain installed DPC rotation and simultaneous load evidence at the resolved foul interface",
-    "blocker": "Existing northwest port intersects cage even at zero setting; coupled joint stiffness and route survey remain unresolved"
-  },
-  "pr": 1578,
-  "releasedAt": "2026-11-18T13:26:57.632Z",
-  "releaseReason": "handoff"
+  }
 }
