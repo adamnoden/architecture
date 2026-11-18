@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-CRAFT-ROOM-KIT",
   "generation": 7,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "618f0178-26ca-46ef-9213-52cb834867ea",
   "holder": {
     "kind": "codex",
     "label": "rush-study-board-20261118"
   },
   "claimedAt": "2026-11-18T12:11:00.066Z",
-  "heartbeatAt": "2026-11-18T12:57:36.422Z",
-  "expiresAt": "2026-11-18T13:42:36.422Z",
+  "heartbeatAt": "2026-11-18T13:01:34.844Z",
+  "expiresAt": "2026-11-18T13:01:34.844Z",
   "branch": "work/rush-contact-geometry-2026-11-18",
   "predecessor": {
     "leaseId": "e392ca22-6026-4cc3-9630-5f4013ff26df",
@@ -39,5 +39,7 @@
     "next": "Confirm repository-health CI and fresh canonical preflight on exact head, merge #1577, then verify source-bound floor-band and approach diagnostics separately.",
     "blocker": "Hosted repository-health job pending. Board fixed obstruction, G1 underside and loaded board/deck acceptance remain outside the planar comparison."
   },
-  "pr": 1577
+  "pr": 1577,
+  "releasedAt": "2026-11-18T13:01:34.844Z",
+  "releaseReason": "handoff"
 }
