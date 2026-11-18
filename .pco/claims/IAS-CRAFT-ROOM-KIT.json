@@ -9,9 +9,9 @@
     "label": "ovid-study-room-kit"
   },
   "claimedAt": "2026-11-17T23:01:17.702Z",
-  "heartbeatAt": "2026-11-18T00:33:27.726Z",
-  "expiresAt": "2026-11-18T01:18:27.726Z",
-  "branch": "work/study-room-kit-integration-2026-11-17",
+  "heartbeatAt": "2026-11-18T00:41:33.035Z",
+  "expiresAt": "2026-11-18T01:41:33.035Z",
+  "branch": "work/current-gallery-compiler-2026-11-18",
   "predecessor": {
     "leaseId": "ae8d08f5-d3e1-43a2-b775-90245a38223f",
     "generation": 4,
@@ -34,9 +34,9 @@
       "blocker": "The comparison leaves 64.7 mm at nominal stack and 63.7 mm at 1 mm level loss. Bearing, separator, fixing and protective wet-edge evidence remain open."
     }
   },
-  "pr": 1568,
+  "pr": 1573,
   "checkpoint": {
-    "evidence": "Merged PR #1568 at 3e8e6a8b verifies Study furniture access geometry",
-    "next": "Verify and publish the coordinated follow-on first-rest geometry, then investigate actual G1 support and floor qualification"
+    "evidence": "PR #1573 exact head e8a44908 includes the verified 118-of-144 Study whole-face first-rest screen",
+    "next": "Verify combined hosted proof and exact-head preflight; then measure the fixed G1 support envelope and qualify deck and loaded handling"
   }
 }
