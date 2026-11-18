@@ -232,12 +232,48 @@ test('Study board trials distinguish board coverage from irreducible receiver sh
   assert.deepEqual(square.padPatternSizeMm, [120, 175])
   assert.equal(square.comparedWitnessCount, 119)
   assert.equal(square.placements.length, 117)
+  const catalogue = square.boardCatalogue
+  assert.equal(catalogue.physicalAcceptance, false)
+  assert.deepEqual(catalogue.boards.map(board => board.sizeMm), [[165, 330], [300, 300]])
+  assert.equal(catalogue.floorBands.placementCount, 117)
+  assert.equal(catalogue.installedPlanObstructions.placementCount, 111)
+  assert.equal(catalogue.localWallTrimReleased.placementCount, 117)
+  assert.deepEqual(catalogue.localWallTrimReleased.boardUseCounts.map(board => board.count), [46, 71])
+  assert.equal(catalogue.localWallTrimReleased.placements.filter(row => row.trimReleases.length).length, 6)
+  assert.equal(catalogue.installedPlanObstructions.placements.some(row => row.trimReleases.length), false)
+  for (const kept of catalogue.installedPlanObstructions.placements) {
+    assert.deepEqual(catalogue.localWallTrimReleased.placements.find(row => row.partId === kept.partId), kept)
+  }
+  assert.equal(bigger.boardCatalogue.floorBands.placementCount < catalogue.floorBands.placementCount, true)
+  const obstructions = kit.floor.furnitureMotion?.firstRest?.boardPlanObstructions
+  assert.ok(obstructions)
+  const overlap = (a: readonly number[], b: readonly number[]) => a[0] < b[2] && b[0] < a[2] && a[1] < b[3] && b[1] < a[3]
+  for (const row of catalogue.localWallTrimReleased.placements) {
+    const [x0, y0, x1, y1] = row.boardXYXYMm
+    const withinFloorArea = kit.bands.reduce((sum, band) => sum + Math.max(0, Math.min(x1, band[2]) - Math.max(x0, band[0]))
+      * Math.max(0, Math.min(y1, band[3]) - Math.max(y0, band[1])), 0)
+    assert.ok(Math.abs(withinFloorArea - (x1 - x0) * (y1 - y0)) < 1e-8)
+    const stage: { readonly stage: string; readonly obstacles: Readonly<Record<string, {
+      readonly boxXYXYMm: readonly number[]; readonly withoutWallTrimXYXYMm?: readonly number[]
+    }>> } = obstructions.find(item => item.stage === row.stage)!
+    assert.ok(stage)
+    for (const [id, obstacle] of Object.entries(stage.obstacles)) {
+      assert.equal(overlap(row.boardXYXYMm, obstacle.withoutWallTrimXYXYMm ?? obstacle.boxXYXYMm), false)
+      if (row.trimReleases.includes(id)) assert.ok(obstacle.withoutWallTrimXYXYMm && overlap(row.boardXYXYMm, obstacle.boxXYXYMm))
+    }
+    const receiving = kit.floor.parts.find(part => part.id === row.restPartId)!.face
+    for (const [x, y] of row.padCentresXYMm) {
+      assert.ok(x - 12.5 >= receiving[0] && x + 12.5 <= receiving[2])
+      assert.ok(y - 12.5 >= receiving[1] && y + 12.5 <= receiving[3])
+    }
+  }
   const alternatePlacements = square.placements.filter(row => row.alternateWitness)
   assert.equal(alternatePlacements.length, 8)
   assert.equal(square.placements.filter(row => row.turnDeg === 90).length, 40)
   const byId = new Map(kit.floor.parts.map(part => [part.id, part.face]))
   for (const row of alternatePlacements) {
-    const route = kit.floor.furnitureMotion?.firstRest?.parts.find(part => part.partId === row.partId)
+    const route: NonNullable<ReturnType<typeof compileStudyFurnitureMotion>['firstRest']>['parts'][number] | undefined =
+      kit.floor.furnitureMotion?.firstRest?.parts.find(part => part.partId === row.partId)
     assert.ok(route?.state === 'direct-geometry-witness' && row.alternateWitness)
     assert.notEqual(row.restPartId, route.witness.restPartId)
     assert.equal(row.restPartId, row.alternateWitness.restPartId)

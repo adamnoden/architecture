@@ -27,6 +27,7 @@ type CoverCase = {
     readonly taperToeReliefMm?: number
     readonly minimumReceiverContactMm?: number
     readonly minimumTaperReservesMm?: TaperReserves
+    readonly frontReceiver?: { readonly widthMm: number; readonly edgeInsetMm: number }
   }
 }
 const taperInterfaces = ['filler', 'baffle', 'purge'] as const
@@ -194,7 +195,7 @@ function closedCoverComparison(
     wallReturnDepthMm: 12,
   }
   const keys = ['notchLapMm', 'collarSealLandMm', 'collarOutsideDiameterMm', 'wallReturnDepthMm'] as const
-  const optional = ['profile', 'fillerAndCollarClear', 'taperDetached', 'taperToeReliefMm', 'minimumReceiverContactMm', 'minimumTaperReservesMm']
+  const optional = ['profile', 'fillerAndCollarClear', 'taperDetached', 'taperToeReliefMm', 'minimumReceiverContactMm', 'minimumTaperReservesMm', 'frontReceiver']
   if (!closure || typeof closure !== 'object' || Array.isArray(closure) ||
       Object.keys(closure).some(key => !(keys as readonly string[]).includes(key) && !optional.includes(key)) ||
       keys.some(key => !Object.hasOwn(closure, key) || !Number.isFinite(closure[key]) || closure[key] <= 0 ||
@@ -203,7 +204,7 @@ function closedCoverComparison(
   }
   const { notchLapMm, collarSealLandMm, collarOutsideDiameterMm, wallReturnDepthMm, profile, fillerAndCollarClear, taperDetached, taperToeReliefMm, minimumReceiverContactMm, minimumTaperReservesMm } = closure
   const rounded = profile === 'rounded-taper'
-  if ((Object.hasOwn(closure, 'profile') || Object.hasOwn(closure, 'fillerAndCollarClear') || Object.hasOwn(closure, 'taperDetached') || Object.hasOwn(closure, 'taperToeReliefMm') || Object.hasOwn(closure, 'minimumReceiverContactMm') || Object.hasOwn(closure, 'minimumTaperReservesMm')) &&
+  if ((Object.hasOwn(closure, 'profile') || Object.hasOwn(closure, 'fillerAndCollarClear') || Object.hasOwn(closure, 'taperDetached') || Object.hasOwn(closure, 'taperToeReliefMm') || Object.hasOwn(closure, 'minimumReceiverContactMm') || Object.hasOwn(closure, 'minimumTaperReservesMm') || Object.hasOwn(closure, 'frontReceiver')) &&
       (!rounded || trial.branch !== 'utility' || typeof fillerAndCollarClear !== 'boolean' || typeof taperDetached !== 'boolean')) {
     throw new Error('Expected a rounded Utility taper profile and explicit release states')
   }
@@ -221,6 +222,14 @@ function closedCoverComparison(
       taperInterfaces.some(name => !Object.hasOwn(minimumTaperReservesMm, name) ||
         !Number.isFinite(minimumTaperReservesMm[name]) || minimumTaperReservesMm[name] < 0))) {
     throw new Error('Expected separate finite non-negative Utility taper reserve requirements')
+  }
+  if (Object.hasOwn(closure, 'frontReceiver')) {
+    const receiver = closure.frontReceiver
+    if (!receiver || typeof receiver !== 'object' || Array.isArray(receiver) || Object.keys(receiver).length !== 2 ||
+        !Object.hasOwn(receiver, 'widthMm') || !Object.hasOwn(receiver, 'edgeInsetMm') ||
+        ![receiver.widthMm, receiver.edgeInsetMm].every(value => Number.isFinite(value) && value > 0 && value <= wetBox.sideLimitsXMm[1] - wetBox.sideLimitsXMm[0])) {
+      throw new Error('Expected finite positive Utility front receiver width and edge inset')
+    }
   }
   const { planMm, innerVentAxisMm, formedVentDiameterMm, utilityClosureNeighbors } = wetBox
   const [back, front] = envelope.y
@@ -344,17 +353,54 @@ function roundedLidCentroid(taper: RoundedTaper, fabricationMm: number) {
     cy + (firstMomentYTimesSix / 6 - notchFirstMomentY) / areaMm2] as const }
 }
 
-function receiverSupportPolygon(contact: ReturnType<typeof roundedReceiverContact>['contact']): PlanPoint[] {
-  const bands = contact.flatMap(({ boundsMm }) => boundsMm ? [boundsMm] : [])
-  if (bands.length === 0) return []
-  const [west, east = west] = bands
-  // The two parallel bands begin at the same Y. Only the longer band
-  // contributes both of its front corners to the convex support polygon.
-  const polygon: PlanPoint[] = [[west.x[0], west.y[0]], [east.x[1], east.y[0]], [east.x[1], east.y[1]]]
-  if (east.y[1] > west.y[1]) polygon.push([east.x[0], east.y[1]])
-  if (west.y[1] > east.y[1]) polygon.push([west.x[1], west.y[1]])
-  polygon.push([west.x[0], west.y[1]])
-  return polygon
+function frontReceiverComparison(taper: RoundedTaper, dimensions: NonNullable<NonNullable<CoverCase['closure']>['frontReceiver']>,
+  fabricationMm: number, sideMm: number, axialMm: number, carrier: Footprint, room: Footprint, accessMm: number) {
+  const { heelMm: [heelX, heelY], trialToeMm: [toeX, toeY] } = taper.relief
+  const dx = toeX - heelX
+  const dy = toeY - heelY
+  const frontY = taper.outline[2][1]
+  const eastX = taper.outline[1][0]
+  const front = frontY - dimensions.edgeInsetMm
+  const back = front - dimensions.widthMm
+  const west = Math.max(taper.outline[0][0], heelX + ((front - heelY) * dx + fabricationMm * Math.hypot(dx, dy)) / dy)
+    + fabricationMm
+  const local: Footprint = { x: [west, eastX - fabricationMm], y: [back, front] }
+  const reservation = offset(local, sideMm, axialMm)
+  const clearance = {
+    frontEdgeAfterSettingMm: dimensions.edgeInsetMm - fabricationMm,
+    notchAfterSettingMm: back - taper.centre[1] - taper.formedNotchRadiusMm - fabricationMm,
+    contactWidthMm: local.x[1] - local.x[0],
+    carrierAfterSettingMm: intervalGap(reservation.x, carrier.x) - fabricationMm,
+    roomAfterAccessSettingMm: Math.min(clearInside(room.x, reservation.x), clearInside(room.y, reservation.y)) - accessMm,
+  }
+  const diagnostics = ([
+    ['FRONT_RECEIVER_EDGE_RESERVE_SHORT', clearance.frontEdgeAfterSettingMm < 0],
+    ['FRONT_RECEIVER_ENTERS_NOTCH', clearance.notchAfterSettingMm < 0],
+    ['FRONT_RECEIVER_HAS_NO_CONTACT_WIDTH', clearance.contactWidthMm <= 0],
+    ['FRONT_RECEIVER_ENTERS_CARRIER_CORRIDOR', clearance.carrierAfterSettingMm < 0],
+    ['FRONT_RECEIVER_EXCEEDS_ROOM', clearance.roomAfterAccessSettingMm < 0],
+  ] as const).filter(([, failed]) => failed).map(([code]) => code)
+  return {
+    status: diagnostics.length ? 'blocked' as const : 'within-plan-contact-screen' as const,
+    inputs: dimensions, reservation, contact: diagnostics.length ? null : reservation, clearance, diagnostics,
+    anchoredSupportAndCaptureQualified: false as const,
+  }
+}
+
+function receiverSupportPolygon(bands: readonly Footprint[]): PlanPoint[] {
+  const points = bands.flatMap(({ x, y }) => [[x[0], y[0]], [x[1], y[0]], [x[1], y[1]], [x[0], y[1]]] as PlanPoint[])
+    .sort((a, b) => a[0] - b[0] || a[1] - b[1])
+  const cross = ([ax, ay]: PlanPoint, [bx, by]: PlanPoint, [cx, cy]: PlanPoint) =>
+    (bx - ax) * (cy - ay) - (by - ay) * (cx - ax)
+  const boundary = (sequence: readonly PlanPoint[]) => {
+    const hull: PlanPoint[] = []
+    for (const point of sequence) {
+      while (hull.length > 1 && cross(hull[hull.length - 2], hull[hull.length - 1], point) <= 0) hull.pop()
+      hull.push(point)
+    }
+    return hull.slice(0, -1)
+  }
+  return [...boundary(points), ...boundary([...points].reverse())]
 }
 
 type SupportEdge = readonly [PlanPoint, PlanPoint]
@@ -382,9 +428,11 @@ function eccentricVerticalLoad(outline: readonly PlanPoint[], edges: readonly Su
 }
 
 function roundedGravityRest(taper: RoundedTaper, receiver: ReturnType<typeof roundedReceiverContact>,
-  fabricationMm: number, sideMm: number, axialMm: number) {
+  fabricationMm: number, sideMm: number, axialMm: number, frontContact?: Footprint | null) {
   const lid = roundedLidCentroid(taper, fabricationMm)
-  const supportPolygonMm = receiverSupportPolygon(receiver.contact)
+  const supportPolygonMm = receiverSupportPolygon([
+    ...receiver.contact.flatMap(({ boundsMm }) => boundsMm ? [boundsMm] : []), ...(frontContact ? [frontContact] : []),
+  ])
   const centreMm = lid ? [lid.centreMm[0] + sideMm, lid.centreMm[1] + axialMm] as const : null
   const edges = supportPolygonMm.map((vertex, i) => [vertex, supportPolygonMm[(i + 1) % supportPolygonMm.length]] as const)
   const edgeMargins = centreMm ? edges.map(edge => signedSupportMargin(edge, centreMm)) : []
@@ -416,7 +464,7 @@ function coverPlan(branch: CoverCase['branch'], positions: Readonly<Record<strin
     if (rounded && ['closed-envelope', 'after-axial-release', 'first-rest'].includes(stage)) return []
     return boxes.map((box, i) => ({
       id: stage + '-' + i, kind: 'rect' as const,
-      stroke: stage === 'first-rest' || stage === 'receiver-full-width-contact' ? 'primary' as const : 'secondary' as const,
+      stroke: stage === 'first-rest' || stage === 'receiver-full-width-contact' || stage === 'front-receiver' ? 'primary' as const : 'secondary' as const,
       ...project.rect({ x: box.x[0], y: box.y[0], width: box.x[1] - box.x[0], height: box.y[1] - box.y[0] }),
       metadata: { caseDigest, xMinMm: box.x[0], xMaxMm: box.x[1], yMinMm: box.y[0], yMaxMm: box.y[1] },
     }))
@@ -554,11 +602,14 @@ export function runInletCoverCase(resolved: CurrentDesignResolution, input: unkn
   const rounded = installedClosure.roundedTaper
   const receiver = rounded ? roundedReceiverContact(rounded, rails, fabrication, side, axial,
     calculation.receiverBearingReserveMm, trial.closure?.minimumReceiverContactMm) : null
-  const gravity = rounded && receiver ? roundedGravityRest(rounded, receiver, fabrication, side, axial) : null
+  const frontReceiver = rounded && trial.closure?.frontReceiver ? frontReceiverComparison(rounded, trial.closure.frontReceiver,
+    fabrication, side, axial, carrier, { x: [room.x, room.x + room.width], y: [room.y, room.y + room.depth] }, access) : null
+  const gravity = rounded && receiver ? roundedGravityRest(rounded, receiver, fabrication, side, axial, frontReceiver?.contact) : null
   const shapedReleaseDiagnostics = rounded ? [
     ...(trial.closure?.fillerAndCollarClear ? [] : ['FILLER_AND_COLLAR_REMAIN_ENGAGED']),
     ...(trial.closure?.taperDetached ? [] : ['UTILITY_TAPER_REMAINS_ATTACHED']),
     ...(receiver?.lengthRequirementMet === false ? ['ROUNDED_RECEIVER_CONTACT_TOO_SHORT'] : []),
+    ...(frontReceiver?.diagnostics ?? []),
     ...(gravity?.status === 'unsupported-lid-profile' ? ['UNSUPPORTED_ROUNDED_LID_CENTROID'] : []),
     ...(gravity?.status === 'no-full-width-support' ? ['ROUNDED_LID_HAS_NO_FULL_WIDTH_SUPPORT'] : []),
     ...(gravity?.status === 'centre-outside-support' || gravity?.status === 'centre-on-support-edge'
@@ -569,7 +620,7 @@ export function runInletCoverCase(resolved: CurrentDesignResolution, input: unkn
     status: shapedReleaseDiagnostics.length ? 'blocked' as const : 'within-declared-rounded-release-screen' as const,
     assembledCandidateStatus: installedClosure.status === 'blocked' || shapedReleaseDiagnostics.length
       ? 'blocked' as const : 'within-conditional-fit-and-withdrawal' as const,
-    diagnostics: shapedReleaseDiagnostics, receiver, gravity,
+    diagnostics: shapedReleaseDiagnostics, receiver, frontReceiver, gravity,
     axialStrokeToClearRiserMm: clearStationaryRiserMm,
     axialStrokeBeforeSideTransferMm: beyondFrontToTurnMm,
     splitFillerWithdrawalQualified: false,
@@ -588,6 +639,7 @@ export function runInletCoverCase(resolved: CurrentDesignResolution, input: unkn
       'installed-collar-reservation': [installedClosure.collar], 'after-axial-release': closed.map(item => offset(item, 0, axial)),
       'first-rest': parkedPanels, 'receiver-bearing': rails,
       'receiver-full-width-contact': receiver?.contact.flatMap(({ boundsMm }) => boundsMm ? [boundsMm] : []) ?? [],
+      'front-receiver': frontReceiver ? [frontReceiver.reservation] : [],
       'carrier-corridor': [carrier], washer: [washerBox] }, caseDigest, rounded ? { taper: rounded, axialMm: axial, sideMm: side, gravity } : undefined),
     evidence: {
       wetClosure: 'unqualified', receiverAnchorageAndPositiveCapture: 'unqualified',

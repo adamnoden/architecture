@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs'
 import { compileCurrentDesignBundle, prepareCurrentDesignCompile } from '../compiler/reference-house/current-design/compile.js'
 import { readGeorgianDesignSnapshot } from '../compiler/reference-house/current-design/georgian-source.js'
+import { compileEngineeringDocument, readEngineeringDocument } from '../compiler/reference-house/current-design/engineering-document.js'
 
 type Compile = ReturnType<typeof prepareCurrentDesignCompile>
 type TrialMode = {
@@ -84,7 +85,7 @@ async function runTrial(input: unknown, trial: TrialMode) {
 const args = process.argv.slice(2)
 const modes = [
   '--occupied-services', '--occupied-service-drawings', '--selected-water-event', '--structural-bridge', '--structural-actions',
-  '--bundle', '--study-assembly', '--study-linings', '--renewable-openings',
+  '--bundle', '--read-engineering', '--study-assembly', '--study-linings', '--renewable-openings',
   '--read-roof-pitch', '--read-court-intake', '--read-inlet-route', '--read-east-ground-receiving',
   '--read-occupied-condensate', '--read-structural-case', '--read-structural-interfaces',
   '--read-north-collector', '--read-rear-foul-vent', '--read-inlet-sill-insert', '--read-inlet-fault', '--read-inlet-removal', '--read-inlet-cover', ...Object.keys(trialModes),
@@ -109,8 +110,13 @@ try {
       }
       const compile = prepareCurrentDesignCompile(input.design)
       process.stdout.write(JSON.stringify(await compile.renewableOpenings('study' in input ? input.study : undefined)) + '\n')
+    } else if (mode === '--read-engineering') {
+      process.stdout.write(JSON.stringify(await readEngineeringDocument(input), null, 2) + '\n')
     } else if (mode === '--bundle') {
-      process.stdout.write(JSON.stringify(await compileCurrentDesignBundle(input)) + '\n')
+      const isEngineering = input !== null && typeof input === 'object' && 'schema' in input
+        && input.schema === 'current-engineering-document/1'
+      const bundle = isEngineering ? await compileEngineeringDocument(input) : await compileCurrentDesignBundle(input)
+      process.stdout.write(JSON.stringify(bundle) + '\n')
     } else {
       const compile = prepareCurrentDesignCompile(input)
       if (mode === '--read-roof-pitch') process.stdout.write(JSON.stringify(await compile.readRoofPitchCase(), null, 2) + '\n')

@@ -71,6 +71,13 @@ interface FurnitureMotion {
     readonly partCount: number
     readonly witnessCount: number
     readonly extendedTransfer?: { readonly maximumTravelMm: number; readonly interveningPartCount: 1 }
+    readonly boardPlanObstructions?: readonly {
+      readonly stage: string
+      readonly obstacles: Readonly<Record<string, {
+        readonly boxXYXYMm: PlanBox
+        readonly withoutWallTrimXYXYMm?: PlanBox
+      }>>
+    }[]
     readonly closedApproachCuts?: readonly {
       readonly cutXMm: number
       readonly roomYMm: Point

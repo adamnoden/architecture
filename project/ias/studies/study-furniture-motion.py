@@ -92,6 +92,32 @@ def closed_approach_cuts(fixed, bands, entry_x, radius):
     return cuts
 
 
+def board_plan_obstructions(house, stages):
+    walls = house['groundWalls']
+    trim = stages[0][1]['outer-S'][1]+stages[0][1]['outer-S'][3]-house['envelope']
+    result = []
+    for stage,obstacles in stages:
+        records = {}
+        for key,box in obstacles.items():
+            record = {'boxXYXYMm':edges(box)}
+            core = list(record['boxXYXYMm'])
+            if key in ('outer-W','outer-S'):
+                core[2 if key == 'outer-W' else 3] -= trim
+                record['withoutWallTrimXYXYMm'] = core
+            elif key in ('outer-E','outer-N'):
+                core[0 if key == 'outer-E' else 1] += trim
+                record['withoutWallTrimXYXYMm'] = core
+            elif key.startswith('wall:'):
+                wall = next(wall for wall in walls if key.startswith('wall:'+wall['id']+':'))
+                normal = 1 if wall['a'][1] == wall['b'][1] else 0
+                core[normal] += trim
+                core[normal+2] -= trim
+                record['withoutWallTrimXYXYMm'] = core
+            records[key] = record
+        result.append({'stage':stage,'obstacles':records})
+    return result
+
+
 def first_rest_stance(bcr, obstacles, face, delta, keys, normal_axis, sign, screen):
     tangent_axis = 1-normal_axis
     body_radius, body_gap = screen['bodyRadiusMm'], screen['bodyToPanelMm']
@@ -246,7 +272,7 @@ def floor_first_rests(bcr, house, fixed, desk, chair, desk_park, chair_park, ent
         'witnessCount':sum(row['state']=='direct-geometry-witness' for row in outcomes),
         'partCount':len(outcomes),'parts':outcomes,
         **({'extendedTransfer':{'maximumTravelMm':max_extended,'interveningPartCount':1},
-            'closedApproachCuts':cuts} if max_extended else {}),
+            'closedApproachCuts':cuts,'boardPlanObstructions':board_plan_obstructions(house,stage_obstacles)} if max_extended else {}),
         'transferVertical':{'initialLiftMm':screen['liftMm'],'travelTopMm':screen['liftMm'],
                             'travelUndersideMm':travel_bottom,'firstRestBoardTopMm':screen['restBoardTopMm'],
                             'undersideReserveMm':board_reserve},
