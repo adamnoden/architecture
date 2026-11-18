@@ -9,9 +9,9 @@
     "label": "rush-night-structure"
   },
   "claimedAt": "2026-11-18T23:19:20.165Z",
-  "heartbeatAt": "2026-11-18T23:33:36.416Z",
-  "expiresAt": "2026-11-19T00:18:36.416Z",
-  "branch": "work/rush-night-integration-2026-11-18",
+  "heartbeatAt": "2026-11-18T23:53:35.871Z",
+  "expiresAt": "2026-11-19T00:38:35.871Z",
+  "branch": "work/rush-inlet-dependencies-2026-11-18",
   "predecessor": {
     "leaseId": "63619a6c-6728-4b79-8459-af6bb401f51a",
     "generation": 40,
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1579 head 9023fac17d50c04f29fbed061894e4a272535c9d; saved engineering-document CLI, source binding and selective propagation tests passed",
-    "next": "Observe exact submitted head repository and publication CI, then merge and reconcile source documents",
-    "blocker": "Conditional stage settings do not adopt physical geometry or resolve coupled DPC and foul-route interfaces"
+    "evidence": "Merged #1579 at8ae3b30a; saved inlet dependency propagation passes495 Reference House tests and11 updated pipeline tests",
+    "next": "Publish and verify inlet sill to fault/removal/cover propagation, including stale source and blocked upstream guards",
+    "blocker": "Shared blocked inlet insert currently halts its bundle with a precise upstream error; physical geometry remains conditional"
   }
 }
