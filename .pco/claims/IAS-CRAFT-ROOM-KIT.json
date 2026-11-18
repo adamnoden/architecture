@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "IAS-CRAFT-ROOM-KIT",
-  "generation": 8,
-  "state": "released",
-  "leaseId": "76e13051-1e0b-4b78-b4bd-760bff232354",
+  "generation": 9,
+  "state": "claimed",
+  "leaseId": "c3f08d3f-2feb-4d9f-98b4-82567db2cbd3",
   "holder": {
     "kind": "codex",
-    "label": "rush-study-board-20261118"
+    "label": "rush-night-study"
   },
-  "claimedAt": "2026-11-18T13:02:29.999Z",
-  "heartbeatAt": "2026-11-18T13:26:53.015Z",
-  "expiresAt": "2026-11-18T13:26:53.015Z",
-  "checkpoint": {
-    "evidence": "PR #1578 exact head 5aa3476b19324a2300d2bfb0b3df3e020b2762b9. Study reports 117/119 planar fits, 115 board placements wholly inside floor bands, and current G1 approach obstruction; 19 focused Study tests passed.",
-    "next": "After exact-head repository health and canonical merge, bind independent installed inlet and carrier underside envelopes, phase-specific worker height, and released east and cloak trim geometry before replaying access and board insertion.",
-    "blocker": "Hosted repository health pending. Installed module, grille, fasteners and support envelopes, trim removal, and loaded board/deck handling need evidence."
-  },
-  "branch": "work/rush-installation-bounds-2026-11-18",
+  "claimedAt": "2026-11-18T23:20:10.772Z",
+  "heartbeatAt": "2026-11-18T23:20:10.772Z",
+  "expiresAt": "2026-11-19T00:05:10.772Z",
+  "branch": "work/rush-night-integration-2026-11-18",
   "predecessor": {
-    "leaseId": "618f0178-26ca-46ef-9213-52cb834867ea",
-    "generation": 7,
-    "branch": "work/rush-contact-geometry-2026-11-18",
-    "pr": 1577,
+    "leaseId": "76e13051-1e0b-4b78-b4bd-760bff232354",
+    "generation": 8,
+    "branch": "work/rush-installation-bounds-2026-11-18",
+    "pr": 1578,
     "checkpoint": {
-      "evidence": "PR #1577 exact head 270a8597607125d2102aa82310348f40fb27724c. Study 117/119 face-and-pad fits including eight alternate adjacent and two bounded extended transfers; all 19 focused Study tests passed.",
-      "next": "Confirm repository-health CI and fresh canonical preflight on exact head, merge #1577, then verify source-bound floor-band and approach diagnostics separately.",
-      "blocker": "Hosted repository-health job pending. Board fixed obstruction, G1 underside and loaded board/deck acceptance remain outside the planar comparison."
+      "evidence": "PR #1578 exact head 5aa3476b19324a2300d2bfb0b3df3e020b2762b9. Study reports 117/119 planar fits, 115 board placements wholly inside floor bands, and current G1 approach obstruction; 19 focused Study tests passed.",
+      "next": "After exact-head repository health and canonical merge, bind independent installed inlet and carrier underside envelopes, phase-specific worker height, and released east and cloak trim geometry before replaying access and board insertion.",
+      "blocker": "Hosted repository health pending. Installed module, grille, fasteners and support envelopes, trim removal, and loaded board/deck handling need evidence."
     }
   },
   "recoverySource": {
-    "leaseId": "618f0178-26ca-46ef-9213-52cb834867ea",
-    "generation": 7,
-    "branch": "work/rush-contact-geometry-2026-11-18",
-    "pr": 1577,
+    "leaseId": "76e13051-1e0b-4b78-b4bd-760bff232354",
+    "generation": 8,
+    "branch": "work/rush-installation-bounds-2026-11-18",
+    "pr": 1578,
     "checkpoint": {
-      "evidence": "PR #1577 exact head 270a8597607125d2102aa82310348f40fb27724c. Study 117/119 face-and-pad fits including eight alternate adjacent and two bounded extended transfers; all 19 focused Study tests passed.",
-      "next": "Confirm repository-health CI and fresh canonical preflight on exact head, merge #1577, then verify source-bound floor-band and approach diagnostics separately.",
-      "blocker": "Hosted repository-health job pending. Board fixed obstruction, G1 underside and loaded board/deck acceptance remain outside the planar comparison."
+      "evidence": "PR #1578 exact head 5aa3476b19324a2300d2bfb0b3df3e020b2762b9. Study reports 117/119 planar fits, 115 board placements wholly inside floor bands, and current G1 approach obstruction; 19 focused Study tests passed.",
+      "next": "After exact-head repository health and canonical merge, bind independent installed inlet and carrier underside envelopes, phase-specific worker height, and released east and cloak trim geometry before replaying access and board insertion.",
+      "blocker": "Hosted repository health pending. Installed module, grille, fasteners and support envelopes, trim removal, and loaded board/deck handling need evidence."
     }
-  },
-  "pr": 1578,
-  "releasedAt": "2026-11-18T13:26:53.015Z",
-  "releaseReason": "handoff"
+  }
 }
