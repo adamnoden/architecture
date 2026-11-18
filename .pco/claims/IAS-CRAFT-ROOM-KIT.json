@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-CRAFT-ROOM-KIT",
   "generation": 8,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "76e13051-1e0b-4b78-b4bd-760bff232354",
   "holder": {
     "kind": "codex",
     "label": "rush-study-board-20261118"
   },
   "claimedAt": "2026-11-18T13:02:29.999Z",
-  "heartbeatAt": "2026-11-18T13:16:00.557Z",
-  "expiresAt": "2026-11-18T14:01:00.557Z",
+  "heartbeatAt": "2026-11-18T13:26:53.015Z",
+  "expiresAt": "2026-11-18T13:26:53.015Z",
   "checkpoint": {
     "evidence": "PR #1578 exact head 5aa3476b19324a2300d2bfb0b3df3e020b2762b9. Study reports 117/119 planar fits, 115 board placements wholly inside floor bands, and current G1 approach obstruction; 19 focused Study tests passed.",
     "next": "After exact-head repository health and canonical merge, bind independent installed inlet and carrier underside envelopes, phase-specific worker height, and released east and cloak trim geometry before replaying access and board insertion.",
@@ -39,5 +39,7 @@
       "blocker": "Hosted repository-health job pending. Board fixed obstruction, G1 underside and loaded board/deck acceptance remain outside the planar comparison."
     }
   },
-  "pr": 1578
+  "pr": 1578,
+  "releasedAt": "2026-11-18T13:26:53.015Z",
+  "releaseReason": "handoff"
 }
