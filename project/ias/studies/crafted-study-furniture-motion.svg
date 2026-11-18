@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="194.94mm" height="142.84mm" viewBox="0 0 194.94 142.84" role="img" aria-labelledby="title desc" data-view-id="ias-study-room-kit-furniture-motion" data-source-id="HAD-SERVICES-02" data-scale-denominator="25">
+<title id="title">Study staged furniture motion</title>
+<desc id="desc">Original and parked furniture, straight centreline movements and the whole turning reservation.</desc>
+<style>.line-cut{stroke:#000000;stroke-width:0.5;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.line-profile{stroke:#000000;stroke-width:0.35;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.line-primary{stroke:#000000;stroke-width:0.25;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.line-secondary{stroke:#000000;stroke-width:0.18;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.text-label{font-family:Arial, Helvetica, sans-serif;font-size:2.646px;font-weight:400;fill:#000000}.text-note{font-family:Arial, Helvetica, sans-serif;font-size:2.293px;font-weight:400;fill:#000000}.text-marker{font-family:Arial, Helvetica, sans-serif;font-size:2.293px;font-weight:700;fill:#000000}.dash-overhead{stroke-dasharray:3 1.5}.dash-datum{stroke-dasharray:6 1.5 1 1.5}.dash-provisional{stroke-dasharray:1 1}.fill-paper{fill:#ffffff;stroke:none}.fill-ink{fill:#000000;stroke:none}.fill-context{fill:#666666;stroke:none}.fill-faint{fill:#a6a6a6;stroke:none}</style>
+<rect x="12.06" y="120.08" width="14.7" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/429.5" data-band="0" data-role="border"/>
+<rect x="12.06" y="108.08" width="2.7" height="11.88" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/500" data-band="0" data-role="border"/>
+<rect x="12.06" y="102.02" width="2.7" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/800" data-band="0" data-role="border"/>
+<rect x="12.06" y="95.96" width="2.7" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/951.5" data-band="0" data-role="border"/>
+<rect x="14.88" y="108.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/500/500" data-band="0" data-role="field"/>
+<rect x="14.88" y="102.02" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/500/800" data-band="0" data-role="border"/>
+<rect x="14.88" y="95.96" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/500/951.5" data-band="0" data-role="border"/>
+<rect x="26.88" y="120.08" width="11.88" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/800/429.5" data-band="0" data-role="border"/>
+<rect x="26.88" y="108.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/800/500" data-band="0" data-role="field"/>
+<rect x="26.88" y="102.02" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/800/800" data-band="0" data-role="border"/>
+<rect x="26.88" y="95.96" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/800/951.5" data-band="0" data-role="border"/>
+<rect x="38.88" y="120.08" width="11.88" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1100/429.5" data-band="0" data-role="border"/>
+<rect x="38.88" y="108.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/1100/500" data-band="0" data-role="field"/>
+<rect x="38.88" y="102.02" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1100/800" data-band="0" data-role="border"/>
+<rect x="38.88" y="95.96" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1100/951.5" data-band="0" data-role="border"/>
+<rect x="50.88" y="120.08" width="11.88" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1400/429.5" data-band="0" data-role="border"/>
+<rect x="50.88" y="108.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/1400/500" data-band="0" data-role="field"/>
+<rect x="50.88" y="102.02" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1400/800" data-band="0" data-role="border"/>
+<rect x="50.88" y="95.96" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1400/951.5" data-band="0" data-role="border"/>
+<rect x="62.88" y="120.08" width="11.88" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1700/429.5" data-band="0" data-role="border"/>
+<rect x="62.88" y="108.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/1700/500" data-band="0" data-role="field"/>
+<rect x="62.88" y="102.02" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1700/800" data-band="0" data-role="border"/>
+<rect x="62.88" y="95.96" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1700/951.5" data-band="0" data-role="border"/>
+<rect x="74.88" y="120.08" width="11.88" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2000/429.5" data-band="0" data-role="border"/>
+<rect x="74.88" y="108.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2000/500" data-band="0" data-role="field"/>
+<rect x="74.88" y="102.02" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2000/800" data-band="0" data-role="border"/>
+<rect x="74.88" y="95.96" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2000/951.5" data-band="0" data-role="border"/>
+<rect x="86.88" y="120.08" width="11.88" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2300/429.5" data-band="0" data-role="border"/>
+<rect x="86.88" y="108.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2300/500" data-band="0" data-role="field"/>
+<rect x="86.88" y="102.02" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2300/800" data-band="0" data-role="border"/>
+<rect x="86.88" y="95.96" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2300/951.5" data-band="0" data-role="border"/>
+<rect x="98.88" y="120.08" width="11.88" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2600/429.5" data-band="0" data-role="border"/>
+<rect x="98.88" y="108.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2600/500" data-band="0" data-role="field"/>
+<rect x="98.88" y="102.02" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2600/800" data-band="0" data-role="border"/>
+<rect x="98.88" y="95.96" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2600/951.5" data-band="0" data-role="border"/>
+<rect x="110.88" y="120.08" width="11.88" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2900/429.5" data-band="0" data-role="border"/>
+<rect x="110.88" y="108.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2900/500" data-band="0" data-role="field"/>
+<rect x="110.88" y="102.02" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2900/800" data-band="0" data-role="border"/>
+<rect x="110.88" y="95.96" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2900/951.5" data-band="0" data-role="border"/>
+<rect x="122.88" y="120.08" width="11.88" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3200/429.5" data-band="0" data-role="border"/>
+<rect x="122.88" y="108.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/3200/500" data-band="0" data-role="field"/>
+<rect x="122.88" y="102.02" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3200/800" data-band="0" data-role="border"/>
+<rect x="122.88" y="95.96" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3200/951.5" data-band="0" data-role="border"/>
+<rect x="134.88" y="120.08" width="11.88" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3500/429.5" data-band="0" data-role="border"/>
+<rect x="134.88" y="108.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/3500/500" data-band="0" data-role="field"/>
+<rect x="134.88" y="102.02" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3500/800" data-band="0" data-role="border"/>
+<rect x="134.88" y="95.96" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3500/951.5" data-band="0" data-role="border"/>
+<rect x="146.88" y="120.08" width="11.88" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3800/429.5" data-band="0" data-role="border"/>
+<rect x="146.88" y="108.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/3800/500" data-band="0" data-role="field"/>
+<rect x="146.88" y="102.02" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3800/800" data-band="0" data-role="border"/>
+<rect x="146.88" y="95.96" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3800/951.5" data-band="0" data-role="border"/>
+<rect x="158.88" y="120.08" width="11.88" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/4100/429.5" data-band="0" data-role="border"/>
+<rect x="158.88" y="108.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/4100/500" data-band="0" data-role="field"/>
+<rect x="158.88" y="102.02" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/4100/800" data-band="0" data-role="border"/>
+<rect x="158.88" y="95.96" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/4100/951.5" data-band="0" data-role="border"/>
+<rect x="170.88" y="120.08" width="5.94" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/4400/429.5" data-band="0" data-role="border"/>
+<rect x="170.88" y="108.08" width="5.94" height="11.88" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/4400/500" data-band="0" data-role="border"/>
+<rect x="170.88" y="102.02" width="5.94" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/4400/800" data-band="0" data-role="border"/>
+<rect x="170.88" y="95.96" width="5.94" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/4400/951.5" data-band="0" data-role="border"/>
+<rect x="176.94" y="120.08" width="5.94" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/4551.5/429.5" data-band="0" data-role="border"/>
+<rect x="176.94" y="108.08" width="5.94" height="11.88" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/4551.5/500" data-band="0" data-role="border"/>
+<rect x="176.94" y="102.02" width="5.94" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/4551.5/800" data-band="0" data-role="border"/>
+<rect x="176.94" y="95.96" width="5.94" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/4551.5/951.5" data-band="0" data-role="border"/>
+<rect x="26.88" y="84.08" width="11.88" height="11.76" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/800/1103" data-band="1" data-role="border"/>
+<rect x="26.88" y="72.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/800/1400" data-band="1" data-role="field"/>
+<rect x="26.88" y="60.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/800/1700" data-band="1" data-role="field"/>
+<rect x="26.88" y="48.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/800/2000" data-band="1" data-role="field"/>
+<rect x="26.88" y="37.96" width="11.88" height="10" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/800/2300" data-band="1" data-role="border"/>
+<rect x="38.88" y="84.08" width="11.88" height="11.76" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1100/1103" data-band="1" data-role="border"/>
+<rect x="38.88" y="72.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/1100/1400" data-band="1" data-role="field"/>
+<rect x="38.88" y="60.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/1100/1700" data-band="1" data-role="field"/>
+<rect x="38.88" y="48.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/1100/2000" data-band="1" data-role="field"/>
+<rect x="38.88" y="37.96" width="11.88" height="10" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1100/2300" data-band="1" data-role="border"/>
+<rect x="50.88" y="84.08" width="11.88" height="11.76" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1400/1103" data-band="1" data-role="border"/>
+<rect x="50.88" y="72.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/1400/1400" data-band="1" data-role="field"/>
+<rect x="50.88" y="60.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/1400/1700" data-band="1" data-role="field"/>
+<rect x="50.88" y="48.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/1400/2000" data-band="1" data-role="field"/>
+<rect x="50.88" y="37.96" width="11.88" height="10" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1400/2300" data-band="1" data-role="border"/>
+<rect x="62.88" y="84.08" width="11.88" height="11.76" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1700/1103" data-band="1" data-role="border"/>
+<rect x="62.88" y="72.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/1700/1400" data-band="1" data-role="field"/>
+<rect x="62.88" y="60.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/1700/1700" data-band="1" data-role="field"/>
+<rect x="62.88" y="48.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/1700/2000" data-band="1" data-role="field"/>
+<rect x="62.88" y="37.96" width="11.88" height="10" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1700/2300" data-band="1" data-role="border"/>
+<rect x="74.88" y="84.08" width="11.88" height="11.76" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2000/1103" data-band="1" data-role="border"/>
+<rect x="74.88" y="72.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2000/1400" data-band="1" data-role="field"/>
+<rect x="74.88" y="60.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2000/1700" data-band="1" data-role="field"/>
+<rect x="74.88" y="48.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2000/2000" data-band="1" data-role="field"/>
+<rect x="74.88" y="37.96" width="11.88" height="10" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2000/2300" data-band="1" data-role="border"/>
+<rect x="86.88" y="84.08" width="11.88" height="11.76" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2300/1103" data-band="1" data-role="border"/>
+<rect x="86.88" y="72.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2300/1400" data-band="1" data-role="field"/>
+<rect x="86.88" y="60.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2300/1700" data-band="1" data-role="field"/>
+<rect x="86.88" y="48.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2300/2000" data-band="1" data-role="field"/>
+<rect x="86.88" y="37.96" width="11.88" height="10" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2300/2300" data-band="1" data-role="border"/>
+<rect x="98.88" y="84.08" width="11.88" height="11.76" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2600/1103" data-band="1" data-role="border"/>
+<rect x="98.88" y="72.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2600/1400" data-band="1" data-role="field"/>
+<rect x="98.88" y="60.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2600/1700" data-band="1" data-role="field"/>
+<rect x="98.88" y="48.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2600/2000" data-band="1" data-role="field"/>
+<rect x="98.88" y="37.96" width="11.88" height="10" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2600/2300" data-band="1" data-role="border"/>
+<rect x="110.88" y="84.08" width="11.88" height="11.76" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2900/1103" data-band="1" data-role="border"/>
+<rect x="110.88" y="72.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2900/1400" data-band="1" data-role="field"/>
+<rect x="110.88" y="60.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2900/1700" data-band="1" data-role="field"/>
+<rect x="110.88" y="48.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2900/2000" data-band="1" data-role="field"/>
+<rect x="110.88" y="37.96" width="11.88" height="10" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2900/2300" data-band="1" data-role="border"/>
+<rect x="122.88" y="84.08" width="4" height="11.76" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3200/1103" data-band="1" data-role="border"/>
+<rect x="122.88" y="72.08" width="4" height="11.88" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3200/1400" data-band="1" data-role="border"/>
+<rect x="122.88" y="60.08" width="4" height="11.88" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3200/1700" data-band="1" data-role="border"/>
+<rect x="122.88" y="48.08" width="4" height="11.88" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3200/2000" data-band="1" data-role="border"/>
+<rect x="122.88" y="37.96" width="4" height="10" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3200/2300" data-band="1" data-role="border"/>
+<rect x="12.06" y="31.02" width="2.7" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/2553" data-band="2" data-role="border"/>
+<rect x="12.06" y="24.08" width="2.7" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/2726.5" data-band="2" data-role="border"/>
+<rect x="12.06" y="14.06" width="2.7" height="9.9" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/2900" data-band="2" data-role="border"/>
+<rect x="14.88" y="31.02" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/500/2553" data-band="2" data-role="border"/>
+<rect x="14.88" y="24.08" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/500/2726.5" data-band="2" data-role="border"/>
+<rect x="14.88" y="14.06" width="11.88" height="9.9" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/500/2900" data-band="2" data-role="border"/>
+<rect x="26.88" y="31.02" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/800/2553" data-band="2" data-role="border"/>
+<rect x="26.88" y="24.08" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/800/2726.5" data-band="2" data-role="border"/>
+<rect x="26.88" y="14.06" width="11.88" height="9.9" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/800/2900" data-band="2" data-role="border"/>
+<rect x="38.88" y="31.02" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1100/2553" data-band="2" data-role="border"/>
+<rect x="38.88" y="24.08" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1100/2726.5" data-band="2" data-role="border"/>
+<rect x="38.88" y="14.06" width="11.88" height="9.9" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1100/2900" data-band="2" data-role="border"/>
+<rect x="50.88" y="31.02" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1400/2553" data-band="2" data-role="border"/>
+<rect x="50.88" y="24.08" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1400/2726.5" data-band="2" data-role="border"/>
+<rect x="50.88" y="14.06" width="11.88" height="9.9" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1400/2900" data-band="2" data-role="border"/>
+<rect x="62.88" y="31.02" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1700/2553" data-band="2" data-role="border"/>
+<rect x="62.88" y="24.08" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1700/2726.5" data-band="2" data-role="border"/>
+<rect x="62.88" y="14.06" width="11.88" height="9.9" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1700/2900" data-band="2" data-role="border"/>
+<rect x="74.88" y="31.02" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2000/2553" data-band="2" data-role="border"/>
+<rect x="74.88" y="24.08" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2000/2726.5" data-band="2" data-role="border"/>
+<rect x="74.88" y="14.06" width="11.88" height="9.9" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2000/2900" data-band="2" data-role="border"/>
+<rect x="86.88" y="31.02" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2300/2553" data-band="2" data-role="border"/>
+<rect x="86.88" y="24.08" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2300/2726.5" data-band="2" data-role="border"/>
+<rect x="86.88" y="14.06" width="11.88" height="9.9" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2300/2900" data-band="2" data-role="border"/>
+<rect x="98.88" y="31.02" width="4.7" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2600/2553" data-band="2" data-role="border"/>
+<rect x="98.88" y="24.08" width="4.7" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2600/2726.5" data-band="2" data-role="border"/>
+<rect x="98.88" y="14.06" width="4.7" height="9.9" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2600/2900" data-band="2" data-role="border"/>
+<rect x="12.06" y="90.24" width="2.7" height="5.6" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/1103" data-band="1" data-role="border"/>
+<rect x="12.06" y="37.96" width="2.7" height="5.8" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/2405" data-band="1" data-role="border"/>
+<rect x="14.88" y="90.24" width="11.88" height="5.6" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/500/1103" data-band="1" data-role="border"/>
+<rect x="14.88" y="37.96" width="11.88" height="5.8" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/500/2405" data-band="1" data-role="border"/>
+<rect x="20.26" y="84.08" width="6.5" height="6.04" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/634.5/1246" data-band="1" data-role="border"/>
+<rect x="20.26" y="72.08" width="6.5" height="11.88" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/634.5/1400" data-band="1" data-role="border"/>
+<rect x="20.26" y="60.08" width="6.5" height="11.88" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/634.5/1700" data-band="1" data-role="border"/>
+<rect x="20.26" y="48.08" width="6.5" height="11.88" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/634.5/2000" data-band="1" data-role="border"/>
+<rect x="20.26" y="43.88" width="6.5" height="4.08" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/634.5/2300" data-band="1" data-role="border"/>
+<rect x="12" y="43.88" width="8.14" height="46.24" class="line-primary fill-context" data-entity="GROUND/G-STUDY/room-kit/floor/emitter-plinth" data-role="fixed emitter plinth"/>
+<rect x="21.02" y="88.02" width="64" height="28" class="line-profile dash-provisional" data-entity="occupied:study-desk"/>
+<rect x="30.82" y="48.02" width="40" height="36" class="line-profile dash-provisional" data-entity="occupied:study-chair"/>
+<rect x="12" y="44.02" width="8" height="46" class="line-profile fill-context" data-entity="occupied:service-emitter-study-W"/>
+<rect x="21.02" y="56.02" width="64" height="28" class="line-profile" data-entity="parked:study-desk"/>
+<rect x="87.82" y="41.22" width="36" height="40" class="line-profile" data-entity="parked:study-chair"/>
+<line x1="50.82" y1="66.02" x2="84.82" y2="66.02" class="line-primary" data-entity="shift-chair-east"/>
+<line x1="84.82" y1="66.02" x2="84.82" y2="59.22" class="line-primary" data-entity="shift-chair-north"/>
+<path d="M 111.76 59.22 L 111.63 56.579 L 111.242 53.964 L 110.6 51.4 L 109.709 48.911 L 108.579 46.521 L 107.22 44.253 L 105.645 42.13 L 103.869 40.171 L 101.91 38.395 L 99.787 36.82 L 97.519 35.461 L 95.129 34.331 L 92.64 33.44 L 90.076 32.798 L 87.461 32.41 L 84.82 32.28 L 82.179 32.41 L 79.564 32.798 L 77 33.44 L 74.511 34.331 L 72.121 35.461 L 69.853 36.82 L 67.73 38.395 L 65.771 40.171 L 63.995 42.13 L 62.42 44.253 L 61.061 46.521 L 59.931 48.911 L 59.04 51.4 L 58.398 53.964 L 58.01 56.579 L 57.88 59.22 L 58.01 61.861 L 58.398 64.476 L 59.04 67.04 L 59.931 69.529 L 61.061 71.919 L 62.42 74.187 L 63.995 76.31 L 65.771 78.269 L 67.73 80.045 L 69.853 81.62 L 72.121 82.979 L 74.511 84.109 L 77 85 L 79.564 85.642 L 82.179 86.03 L 84.82 86.16 L 87.461 86.03 L 90.076 85.642 L 92.64 85 L 95.129 84.109 L 97.519 82.979 L 99.787 81.62 L 101.91 80.045 L 103.869 78.269 L 105.645 76.31 L 107.22 74.187 L 108.579 71.919 L 109.709 69.529 L 110.6 67.04 L 111.242 64.476 L 111.63 61.861 Z" fill-rule="evenodd" class="line-secondary dash-provisional" data-entity="turn-chair"/>
+<line x1="84.82" y1="59.22" x2="84.82" y2="61.22" class="line-primary" data-entity="align-turned-chair-south"/>
+<line x1="84.82" y1="61.22" x2="105.82" y2="61.22" class="line-primary" data-entity="park-turned-chair-east"/>
+<line x1="53.02" y1="102.02" x2="53.02" y2="70.02" class="line-primary" data-entity="pull-desk-north"/>
+<line x1="58.82" y1="122.84" x2="98.82" y2="122.84" class="line-profile" data-entity="GROUND/south-window-0"/>
+<line x1="130.82" y1="122.84" x2="170.82" y2="122.84" class="line-profile" data-entity="GROUND/south-window-1"/>
+<line x1="48.82" y1="10.12" x2="84.82" y2="10.12" class="line-profile" data-entity="HAD/protectedRoute/STUDY"/>
+<text x="12" y="132.84" class="text-note" text-anchor="start" data-entity="pitch">Dashed: starting positions and turning reservation · solid: translation and parking</text>
+</svg>

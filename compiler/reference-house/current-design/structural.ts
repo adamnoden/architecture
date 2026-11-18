@@ -239,8 +239,15 @@ function runNorthHeadReplay(value: unknown) {
 }
 
 export function runStructuralNorthYawProbe(resolved: CurrentDesignResolution, probe: NorthYawProbe, yawMagnitudeKNm: number) {
-  const { wind, sortedHeads, method } = bindNorthHeadReplay(resolved, probe.windIndex)
+  const binding = bindNorthHeadReplay(resolved, probe.windIndex)
   const native: NativeNorthYawProbe = runNorthHeadReplay({ schema: 'str-head-north-yaw-probe/1', ...probe, yawMagnitudeKNm })
+  return verifyNorthYawProbe(binding, native, probe, yawMagnitudeKNm)
+}
+
+function verifyNorthYawProbe(
+  { wind, sortedHeads, method }: ReturnType<typeof bindNorthHeadReplay>,
+  native: NativeNorthYawProbe, probe: NorthYawProbe, yawMagnitudeKNm: number,
+) {
   if (native.schema !== 'str-head-north-yaw-probe-result/1' || native.windIndex !== probe.windIndex
       || native.sense !== probe.sense || native.yawMagnitudeKNm !== yawMagnitudeKNm || native.admitted !== false
       || sha256SemanticFingerprint(native.windProgramme) !== sha256SemanticFingerprint(wind.programme)
@@ -269,6 +276,7 @@ interface NativeNorthDeadLoad {
   readonly windProgramme: readonly number[]
   readonly admitted: false
   readonly horizontalEquilibrium: HorizontalEquilibrium
+  readonly equilibriumOrder: readonly ['N_kN', 'X_first_moment_kNm', 'Y_first_moment_kNm']
   readonly states: readonly {
     readonly id: 'GQ+wind' | 'stripped suction+wind' | 'retained suction+wind'
     readonly additionalGravityFactor: number
@@ -287,9 +295,21 @@ interface NativeNorthDeadLoad {
 }
 
 export function runStructuralNorthDeadLoad(resolved: CurrentDesignResolution, windIndex: number, corners: readonly NorthCornerDeadLoad[]) {
-  const { wind, sortedHeads, method } = bindNorthHeadReplay(resolved, windIndex)
-  const increments = corners.map(({ cornerHeadId, centroidXYMm, characteristicKN }) => ({ cornerHeadId, centroidXYMm, characteristicKN }))
-  const native: NativeNorthDeadLoad = runNorthHeadReplay({ schema: 'str-head-north-dead-load/1', windIndex, increments })
+  const binding = bindNorthHeadReplay(resolved, windIndex)
+  const native: NativeNorthDeadLoad = runNorthHeadReplay({
+    schema: 'str-head-north-dead-load/1', windIndex, increments: northCornerIncrements(corners),
+  })
+  return verifyNorthDeadLoad(binding, native, windIndex)
+}
+
+function northCornerIncrements(corners: readonly NorthCornerDeadLoad[]) {
+  return corners.map(({ cornerHeadId, centroidXYMm, characteristicKN }) => ({ cornerHeadId, centroidXYMm, characteristicKN }))
+}
+
+function verifyNorthDeadLoad(
+  { wind, sortedHeads, method }: ReturnType<typeof bindNorthHeadReplay>,
+  native: NativeNorthDeadLoad, windIndex: number,
+) {
   const withinReceiptRounding = (a: readonly number[], b: readonly number[]) =>
     a.length === b.length && a.every((value, index) => Math.abs(value - b[index]) <= 0.000051)
   const states = Object.keys(wind.conservedStates).sort()
@@ -311,6 +331,22 @@ export function runStructuralNorthDeadLoad(resolved: CurrentDesignResolution, wi
   return {
     ...native, method,
     scope: 'Source-supported added gross permanent load on the retained fixed statical receiving paths. DPC capacity, changed stiffness and physical acceptance remain open.',
+  }
+}
+
+export function runStructuralNorthFixedBaseReplays(
+  resolved: CurrentDesignResolution, probe: NorthYawProbe, yawMagnitudeKNm: number, corners: readonly NorthCornerDeadLoad[],
+) {
+  const binding = bindNorthHeadReplay(resolved, probe.windIndex)
+  const native: { schema: string; yawProbe: NativeNorthYawProbe; deadLoadReplay: NativeNorthDeadLoad } =
+    runNorthHeadReplay({ schema: 'str-head-north-fixed-base-replays/1', ...probe, yawMagnitudeKNm,
+      increments: northCornerIncrements(corners) })
+  if (native.schema !== 'str-head-north-fixed-base-replays-result/1') {
+    throw new Error('Unexpected fixed-base replay method result')
+  }
+  return {
+    yawProbe: verifyNorthYawProbe(binding, native.yawProbe, probe, yawMagnitudeKNm),
+    deadLoadReplay: verifyNorthDeadLoad(binding, native.deadLoadReplay, probe.windIndex),
   }
 }
 

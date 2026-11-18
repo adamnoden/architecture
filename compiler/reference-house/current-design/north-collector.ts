@@ -6,7 +6,10 @@ import { sha256SemanticFingerprint } from '../../core/identity.js'
 import type { DrawingScene } from '../../publication-drawing/model.js'
 import { createPlanPaperProjection } from '../../publication-drawing/projection.js'
 import type { CurrentDesignResolution } from './resolve.js'
-import { runStructuralNorthDeadLoad, runStructuralNorthYawProbe, type NorthCornerDeadLoad, type NorthYawProbe } from './structural.js'
+import {
+  runStructuralNorthDeadLoad, runStructuralNorthFixedBaseReplays, runStructuralNorthYawProbe,
+  type NorthCornerDeadLoad, type NorthYawProbe,
+} from './structural.js'
 
 const repository = new URL('../../../', import.meta.url)
 const studies = 'project/str/studies/'
@@ -271,6 +274,8 @@ function combineFixedBaseActions(
     yawSense: yaw.sense,
     admitted: false as const,
     componentOrder: ['N_kN', 'Cx_kNm', 'Cy_kNm', 'Vx_kN', 'Vy_kN'] as const,
+    verticalEquilibriumOrder: gravity.equilibriumOrder,
+    horizontalEquilibriumOrder: yaw.horizontalEquilibriumOrder,
     method: yaw.method,
     states: gravity.states.map(state => {
       if (state.heads.length !== yaw.heads.length) throw new Error('North collector head sets differ')
@@ -464,19 +469,21 @@ export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: 
       || (isReference && sha256SemanticFingerprint(comparison) !== sha256SemanticFingerprint(reference))) {
     throw new Error('The recomputed north collector does not match its source-bound case')
   }
-  const yawProbe = trial.yawProbe
-    ? runStructuralNorthYawProbe(resolved, trial.yawProbe, comparison.lateralClosure.momentAboutUnchangedGroundAxisU0KNm)
-    : undefined
   const deadLoad = comparison.groundSplice.nominalDeadLoadDelta
   if (trial.deadLoadReplay && !deadLoad.geometryWithinRetainedReceivingProjection) {
     throw new Error('The widened north load leaves the retained receiving projection')
   }
-  const deadLoadReplay = trial.deadLoadReplay
+  const yawMagnitudeKNm = comparison.lateralClosure.momentAboutUnchangedGroundAxisU0KNm
+  const sameWind = trial.yawProbe && trial.yawProbe.windIndex === trial.deadLoadReplay?.windIndex
+    ? runStructuralNorthFixedBaseReplays(resolved, trial.yawProbe, yawMagnitudeKNm, deadLoad.corners)
+    : undefined
+  const yawProbe = sameWind?.yawProbe ?? (trial.yawProbe
+    ? runStructuralNorthYawProbe(resolved, trial.yawProbe, yawMagnitudeKNm)
+    : undefined)
+  const deadLoadReplay = sameWind?.deadLoadReplay ?? (trial.deadLoadReplay
     ? runStructuralNorthDeadLoad(resolved, trial.deadLoadReplay.windIndex, deadLoad.corners)
-    : undefined
-  const fixedBaseActions = yawProbe && deadLoadReplay && yawProbe.windIndex === deadLoadReplay.windIndex
-    ? combineFixedBaseActions(yawProbe, deadLoadReplay)
-    : undefined
+    : undefined)
+  const fixedBaseActions = sameWind ? combineFixedBaseActions(sameWind.yawProbe, sameWind.deadLoadReplay) : undefined
   const chordTurn = trial.chordBendRadiusMm === undefined ? undefined : compareChordTurn(comparison, trial.chordBendRadiusMm)
   return {
     schema: 'str-north-collector-result/1' as const,

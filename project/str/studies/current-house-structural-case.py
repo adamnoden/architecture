@@ -190,6 +190,22 @@ def north_dead_load(request, model):
     }
 
 
+def north_fixed_base_replays(request, model):
+    if set(request) != {'schema', 'windIndex', 'sense', 'yawMagnitudeKNm', 'increments'}:
+        raise ValueError('Expected exact str-head-north-fixed-base-replays/1 fields')
+    wind = request['windIndex']
+    return {
+        'schema': 'str-head-north-fixed-base-replays-result/1',
+        'yawProbe': north_yaw_probe({
+            'schema': 'str-head-north-yaw-probe/1', 'windIndex': wind,
+            'sense': request['sense'], 'yawMagnitudeKNm': request['yawMagnitudeKNm'],
+        }, model),
+        'deadLoadReplay': north_dead_load({
+            'schema': 'str-head-north-dead-load/1', 'windIndex': wind, 'increments': request['increments'],
+        }, model),
+    }
+
+
 if __name__ == '__main__':
     try:
         request = json.load(sys.stdin)
@@ -198,7 +214,11 @@ if __name__ == '__main__':
         schema = request.get('schema') if isinstance(request,dict) else None
         if not isinstance(schema,str):
             schema = None
-        run = {'str-head-north-yaw-probe/1':north_yaw_probe, 'str-head-north-dead-load/1':north_dead_load}.get(schema,current_case)
+        run = {
+            'str-head-north-yaw-probe/1': north_yaw_probe,
+            'str-head-north-dead-load/1': north_dead_load,
+            'str-head-north-fixed-base-replays/1': north_fixed_base_replays,
+        }.get(schema, current_case)
         result = run(request, model)
     except ValueError as error:
         raise SystemExit(str(error)) from None
