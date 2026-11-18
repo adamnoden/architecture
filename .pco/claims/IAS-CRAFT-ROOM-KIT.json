@@ -9,8 +9,8 @@
     "label": "rush-night-study"
   },
   "claimedAt": "2026-11-18T23:20:10.772Z",
-  "heartbeatAt": "2026-11-18T23:20:10.772Z",
-  "expiresAt": "2026-11-19T00:05:10.772Z",
+  "heartbeatAt": "2026-11-18T23:38:35.149Z",
+  "expiresAt": "2026-11-19T00:23:35.149Z",
   "branch": "work/rush-night-integration-2026-11-18",
   "predecessor": {
     "leaseId": "76e13051-1e0b-4b78-b4bd-760bff232354",
@@ -33,5 +33,10 @@
       "next": "After exact-head repository health and canonical merge, bind independent installed inlet and carrier underside envelopes, phase-specific worker height, and released east and cloak trim geometry before replaying access and board insertion.",
       "blocker": "Hosted repository health pending. Installed module, grille, fasteners and support envelopes, trim removal, and loaded board/deck handling need evidence."
     }
+  },
+  "checkpoint": {
+    "evidence": "PR #1579 exact head 9023fac17d50c04f29fbed061894e4a272535c9d; 490 joint Reference House tests and saved-document catalogue replay passed locally",
+    "next": "Observe hosted checks and canonical preflight then merge; detail six named local trim releases and independent installed G1 module and carrier underside bounds before joined approach and loaded board handling proof",
+    "blocker": "Two southeast strips retain blocked approaches; board insertion, grip exchange, tolerance and loaded deck support remain unqualified"
   }
 }
