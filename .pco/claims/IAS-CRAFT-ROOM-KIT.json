@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-CRAFT-ROOM-KIT",
   "generation": 5,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "1c4221de-640e-4c87-8b54-48e11d047837",
   "holder": {
     "kind": "codex",
     "label": "ovid-study-room-kit"
   },
   "claimedAt": "2026-11-17T23:01:17.702Z",
-  "heartbeatAt": "2026-11-18T01:07:33.244Z",
-  "expiresAt": "2026-11-18T01:52:33.244Z",
+  "heartbeatAt": "2026-11-18T01:08:09.244Z",
+  "expiresAt": "2026-11-18T01:08:09.244Z",
   "branch": "work/current-gallery-compiler-2026-11-18",
   "predecessor": {
     "leaseId": "ae8d08f5-d3e1-43a2-b775-90245a38223f",
@@ -38,5 +38,7 @@
   "checkpoint": {
     "evidence": "Merged PR #1573 at 5bf81189 verifies 118 of 144 straight first rests and 6 mm underside reserve",
     "next": "Bind actual minimum Z of installed G1 receiver and carrier and the low worker envelope. Qualify continuous deck and loaded release. The thin stack has 64.7 mm versus the retained 65 mm comparator before level loss."
-  }
+  },
+  "releasedAt": "2026-11-18T01:08:09.244Z",
+  "releaseReason": "handoff"
 }
