@@ -103,3 +103,39 @@ test('the installed filler and formed vent are screened separately from the open
   await assert.rejects(compile.inletCover({ ...plant, closure: { ...closure, notchLapMm: 0 } }), /closure comparison/)
   await assert.rejects(compile.inletCover({ ...plant, closure: null }), /closure comparison/)
 })
+
+test('a rounded Utility lid proves the shape and declares the axial withdrawal stages without inventing a qualified seal', async () => {
+  const [{ cover: utility }, { cover: plant }] = await compile.readInletCoverCases()
+  const closure = { profile: 'rounded-taper' as const, notchLapMm: 10, collarSealLandMm: 4,
+    collarOutsideDiameterMm: 92, wallReturnDepthMm: 10, fillerAndCollarClear: true, taperDetached: true }
+  const attempted = await compile.inletCover({ ...utility, closure })
+  const taper = attempted.installedClosure.roundedTaper
+  assert.ok(taper)
+  assert.equal(taper.centreToTaperMm, 54.402)
+  assert.equal(taper.maximumConcentricLapAfterSettingMm, 7.402)
+  assert.equal(taper.minimumConcentricLapForCollarMm, 9)
+  assert.equal(taper.fillerToTaperAfterSettingMm, -2.598)
+  assert.deepEqual(attempted.installedClosure.diagnostics, ['ROUND_FILLER_INTERSECTS_TAPER'])
+  assert.equal(attempted.roundedRelease?.status, 'within-declared-rounded-release-screen')
+  assert.equal(attempted.roundedRelease?.assembledCandidateStatus, 'blocked')
+  assert.equal(attempted.roundedRelease?.axialStrokeToClearRiserMm, 84)
+  assert.equal(attempted.roundedRelease?.axialStrokeBeforeSideTransferMm, 132)
+  assert.equal(attempted.drawing.primitives.filter(item => item.id.startsWith('rounded-outer-closed-')).length, 5)
+  assert.equal(attempted.drawing.primitives.filter(item => item.id.startsWith('rounded-notch-arc-')).length, 16)
+
+  const narrowLap = await compile.inletCover({ ...utility, closure: { ...closure, notchLapMm: 7 } })
+  assert.ok(narrowLap.installedClosure.diagnostics.includes('COLLAR_EXCEEDS_FILLER'))
+  const reducedLand = { ...closure, notchLapMm: 7, collarSealLandMm: 2, collarOutsideDiameterMm: 88 }
+  const conditional = await compile.inletCover({ ...utility, closure: reducedLand })
+  assert.equal(conditional.installedClosure.roundedTaper?.fillerToTaperAfterSettingMm, 0.402)
+  assert.equal(conditional.roundedRelease?.assembledCandidateStatus, 'within-conditional-fit-and-withdrawal')
+  assert.equal(conditional.roundedRelease?.captureQualified, false)
+  assert.equal(conditional.roundedRelease?.splitFillerWithdrawalQualified, false)
+
+  const locked = await compile.inletCover({ ...utility, closure: {
+    ...reducedLand, taperDetached: false, fillerAndCollarClear: false,
+  } })
+  assert.equal(locked.roundedRelease?.assembledCandidateStatus, 'blocked')
+  assert.deepEqual(locked.roundedRelease?.diagnostics, ['FILLER_AND_COLLAR_REMAIN_ENGAGED', 'UTILITY_TAPER_REMAINS_ATTACHED'])
+  await assert.rejects(compile.inletCover({ ...plant, closure }), /rounded Utility taper/)
+})

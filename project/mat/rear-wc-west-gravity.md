@@ -46,6 +46,8 @@ The existing western receiving comparison is **X−450/Y11177.5/Z−2480** on th
 
 The compiler reports this shortfall in `buriedReceiving`. The same rear-foul case accepts a candidate `buriedReceiving` with `hostAxisXYZMm`, `stackGradeZMm` and `hostGradeZMm`. It checks both ends of the straight minimum-fall axis against the linear grade and the entire plan envelope against the west girder face. At the same plan position and flat grade, a trial axis at Z−2530 clears the geometric screen. Dropping the host grade to Z−1880 cuts the downstream cover to 570 mm. Use the actual site profile and fittings for the next check.
 
+Supply intermediate `interiorGrade` stations with increasing `distanceFromStackMm` and a `gradeZMm` to check a surveyed or trial profile. The compiler uses a straight minimum-fall pipe axis and interpolates grade linearly between readings. A grade dip to Z−1860 at chainage 1000 mm reduces the Z−2530 trial to **570.4 mm** cover there, even though both ends clear 600 mm. The result identifies the controlling station and the maximum host axis level for that profile.
+
 Keep the rear floor port as an unresolved source reservation while these interfaces are open. The Y9400 sleeves earn a routing comparison. Retiring the old port needs a joined foul and ventilation route, independent roof renewal, and structural and weather details for both the new apertures and former port.
 
 Reproduce both comparisons with `python3 -B project/mat/studies/rear-wc-west-gravity.py . --check` and `python3 -B project/mat/studies/rear-wc-west-roof-interface.py . --check`.

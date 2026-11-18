@@ -21,9 +21,13 @@ type CoverCase = {
     readonly collarSealLandMm: number
     readonly collarOutsideDiameterMm: number
     readonly wallReturnDepthMm: number
+    readonly profile?: 'rounded-taper'
+    readonly fillerAndCollarClear?: boolean
+    readonly taperDetached?: boolean
   }
 }
 type Bounds = readonly [number, number]
+type PlanPoint = readonly [number, number]
 type Footprint = { readonly x: Bounds; readonly y: Bounds }
 
 const sourceDraw = (resolved: CurrentDesignResolution, removal: Removal) =>
@@ -57,6 +61,36 @@ const offset = ({ x, y }: Footprint, dx: number, dy: number): Footprint => ({
 const clearInside = ([lo, hi]: Bounds, [innerLo, innerHi]: Bounds) => Math.min(innerLo - lo, hi - innerHi)
 const intervalGap = (first: Bounds, second: Bounds) => Math.max(first[0] - second[1], second[0] - first[1])
 
+function taperAwareProfile(plan: readonly PlanPoint[], envelope: Footprint, centre: PlanPoint, radiusMm: number, settingMm: number) {
+  const sloped = plan.flatMap(([x, y], index) => {
+    const next = plan[(index + 1) % plan.length]
+    if (x === next[0] || y === next[1]) return []
+    const here = [x, y] as const
+    return [y < next[1] ? [here, next] as const : [next, here] as const]
+  })
+  if (sloped.length !== 1) throw new Error('The rounded cover requires one bound straight Utility taper')
+  const [heel, toe] = sloped[0]
+  const dx = toe[0] - heel[0]
+  const dy = toe[1] - heel[1]
+  const length = Math.hypot(dx, dy)
+  const [back, front] = envelope.y
+  if (dx <= 0 || back < heel[1] || front > toe[1]) throw new Error('The Utility taper no longer bounds the full cover length')
+  const [west, east] = envelope.x
+  const signedDistance = ([x, y]: PlanPoint) => (dy * (x - heel[0]) - dx * (y - heel[1])) / length
+  const westAt = (y: number) => Math.max(west, heel[0] + ((y - heel[1]) * dx + settingMm * length) / dy)
+  const knee = heel[1] + ((west - heel[0]) * dy - settingMm * length) / dx
+  if (westAt(front) >= east) throw new Error('The available Utility taper does not leave a remaining cover')
+  const outline: PlanPoint[] = [[westAt(back), back], [east, back], [east, front], [westAt(front), front]]
+  if (knee > back && knee < front) outline.push([west, knee])
+  return {
+    outline,
+    westFrontTrimMm: round(westAt(front) - west),
+    coverSideAfterSettingMm: round(Math.min(...outline.map(signedDistance)) - settingMm),
+    centreToTaperMm: round(signedDistance(centre)),
+    fillerToTaperAfterSettingMm: round(signedDistance(centre) - radiusMm - settingMm),
+  }
+}
+
 function closedCoverComparison(
   trial: CoverCase, baseline: ReturnType<typeof sourceDraw>['calculation'], envelope: Footprint, throatEndMm: number,
 ) {
@@ -66,12 +100,19 @@ function closedCoverComparison(
     wallReturnDepthMm: 12,
   }
   const keys = ['notchLapMm', 'collarSealLandMm', 'collarOutsideDiameterMm', 'wallReturnDepthMm'] as const
-  if (!closure || typeof closure !== 'object' || Array.isArray(closure) || Object.keys(closure).length !== keys.length ||
+  const optional = ['profile', 'fillerAndCollarClear', 'taperDetached']
+  if (!closure || typeof closure !== 'object' || Array.isArray(closure) ||
+      Object.keys(closure).some(key => !(keys as readonly string[]).includes(key) && !optional.includes(key)) ||
       keys.some(key => !Object.hasOwn(closure, key) || !Number.isFinite(closure[key]) || closure[key] <= 0 ||
         closure[key] > wetBox.sideLimitsXMm[1] - wetBox.sideLimitsXMm[0])) {
     throw new Error('Expected finite positive south inlet closure comparison dimensions')
   }
-  const { notchLapMm, collarSealLandMm, collarOutsideDiameterMm, wallReturnDepthMm } = closure
+  const { notchLapMm, collarSealLandMm, collarOutsideDiameterMm, wallReturnDepthMm, profile, fillerAndCollarClear, taperDetached } = closure
+  const rounded = profile === 'rounded-taper'
+  if ((Object.hasOwn(closure, 'profile') || Object.hasOwn(closure, 'fillerAndCollarClear') || Object.hasOwn(closure, 'taperDetached')) &&
+      (!rounded || trial.branch !== 'utility' || typeof fillerAndCollarClear !== 'boolean' || typeof taperDetached !== 'boolean')) {
+    throw new Error('Expected a rounded Utility taper profile and explicit release states')
+  }
   const { planMm, innerVentAxisMm, formedVentDiameterMm } = wetBox
   const [back, front] = envelope.y
   const xLimitsAt = (y: number): Bounds => {
@@ -89,13 +130,19 @@ function closedCoverComparison(
     x: [roofStrip.xMm[0] - notchLapMm, roofStrip.xMm[1] + notchLapMm],
     y: [back - notchLapMm, throatEndMm + notchLapMm],
   }
+  const formedNotchRadiusMm = roofStrip.widthMm / 2
+  const fillerRadiusMm = formedNotchRadiusMm + notchLapMm
+  const centre = [dryBreak.xMm, dryBreak.yMm] as const
+  const shaped = rounded ? taperAwareProfile(planMm, envelope, centre, fillerRadiusMm, fabrication) : null
   const collarRadius = collarOutsideDiameterMm / 2
   const collar: Footprint = {
     x: [dryBreak.xMm - collarRadius, dryBreak.xMm + collarRadius],
     y: [dryBreak.yMm - collarRadius, dryBreak.yMm + collarRadius],
   }
   const clearance = {
-    installedCoverToCellSideAfterSettingMm: round(plantOrUtilitySideFit - fabrication),
+    installedCoverToCellSideAfterSettingMm: shaped
+      ? Math.min(shaped.coverSideAfterSettingMm, wetBox.sideLimitsXMm[1] - envelope.x[1] - fabrication)
+      : round(plantOrUtilitySideFit - fabrication),
     fillerSideLapBackingAfterSettingMm: round(trial.cheekMm - notchLapMm - fabrication),
     fillerRearLapBackingAfterSettingMm: round(filler.y[0] - innerVentAxisMm[1] - fabrication),
     fillerFrontLapBackingAfterSettingMm: round(front - filler.y[1] - trial.minimumFrontBridgeMm - fabrication),
@@ -108,6 +155,7 @@ function closedCoverComparison(
     ['RECTANGULAR_COVER_EXCEEDS_INSTALLED_CELL_PLAN', clearance.installedCoverToCellSideAfterSettingMm < 0],
     ['FILLER_LAP_HAS_INSUFFICIENT_BACKING', Math.min(clearance.fillerSideLapBackingAfterSettingMm,
       clearance.fillerRearLapBackingAfterSettingMm, clearance.fillerFrontLapBackingAfterSettingMm) < 0],
+    ['ROUND_FILLER_INTERSECTS_TAPER', shaped !== null && shaped.fillerToTaperAfterSettingMm < 0],
     ['COLLAR_RADIAL_SEAL_LAND_SHORT', clearance.collarRadialSealLandAfterSettingMm < collarSealLandMm],
     ['COLLAR_EXCEEDS_FILLER', clearance.collarInsideFillerAfterSettingMm < 0],
     ['WALL_RETURN_INTERCEPTS_FORMED_VENT', clearance.formedVentBelowWallReturnAfterSettingMm < 0],
@@ -115,12 +163,17 @@ function closedCoverComparison(
   return {
     status: diagnostics.length ? 'blocked' as const : 'within-conditional-closure-fit' as const,
     inputs: closure, clearance, diagnostics, filler, collar,
+    roundedTaper: shaped && {
+      ...shaped, centre, formedNotchRadiusMm, fillerRadiusMm,
+      maximumConcentricLapAfterSettingMm: round(shaped.fillerToTaperAfterSettingMm + notchLapMm),
+      minimumConcentricLapForCollarMm: round(collarRadius + fabrication - formedNotchRadiusMm),
+    },
     splitFillerReleaseQualified: false, wetClosureQualified: false,
   }
 }
 
 function coverPlan(branch: CoverCase['branch'], positions: Readonly<Record<string, readonly Footprint[]>>,
-  caseDigest: string): DrawingSceneV2 {
+  caseDigest: string, rounded?: { outline: readonly PlanPoint[]; centre: PlanPoint; formedNotchRadiusMm: number }): DrawingSceneV2 {
   const items = Object.values(positions).flat()
   const west = Math.min(...items.map(item => item.x[0]))
   const east = Math.max(...items.map(item => item.x[1]))
@@ -134,6 +187,26 @@ function coverPlan(branch: CoverCase['branch'], positions: Readonly<Record<strin
     ...project.rect({ x: box.x[0], y: box.y[0], width: box.x[1] - box.x[0], height: box.y[1] - box.y[0] }),
     metadata: { caseDigest, xMinMm: box.x[0], xMaxMm: box.x[1], yMinMm: box.y[0], yMaxMm: box.y[1] },
   })))
+  if (rounded) {
+    const addLine = (id: string, from: PlanPoint, to: PlanPoint) => primitives.push({
+      id, kind: 'line', role: 'primary',
+      a: project.point(...from), b: project.point(...to),
+      metadata: { caseDigest, fromXMm: from[0], fromYMm: from[1], toXMm: to[0], toYMm: to[1] },
+    })
+    rounded.outline.forEach((from, index) => addLine('rounded-outer-closed-' + index, from,
+      rounded.outline[(index + 1) % rounded.outline.length]))
+    const [cx, cy] = rounded.centre
+    const radius = rounded.formedNotchRadiusMm
+    const arcSegments = 16
+    const arcPoint = (index: number): PlanPoint => {
+      const angle = index * Math.PI / arcSegments
+      return [cx + radius * Math.cos(angle), cy + radius * Math.sin(angle)]
+    }
+    for (let index = 0; index < arcSegments; index++) addLine('rounded-notch-arc-' + index, arcPoint(index), arcPoint(index + 1))
+    const yBack = positions['closed-envelope'][0].y[0]
+    addLine('rounded-notch-west', [cx - radius, cy], [cx - radius, yBack])
+    addLine('rounded-notch-east', [cx + radius, cy], [cx + radius, yBack])
+  }
   return {
     viewId: 'HAD-SOUTH-INLET-COVER-' + branch.toUpperCase(), sourceId: 'south-inlet-' + branch,
     title: 'South inlet upper cover and first rest',
@@ -222,6 +295,21 @@ export function runInletCoverCase(resolved: CurrentDesignResolution, input: unkn
     ['FIRST_REST_OVERLAPS_CARRIER_CORRIDOR', calculation.parkedCarrierClearanceMm < fabrication],
     ['FIRST_REST_EXCEEDS_UTILITY_ROOM', calculation.parkedRoomReserveMm < 0],
   ] as const).flatMap(([code, blocked]) => blocked ? [{ code, objectId: 'south-inlet-' + trial.branch }] : [])
+  const shapedReleaseDiagnostics = installedClosure.roundedTaper ? [
+    ...(trial.closure?.fillerAndCollarClear ? [] : ['FILLER_AND_COLLAR_REMAIN_ENGAGED']),
+    ...(trial.closure?.taperDetached ? [] : ['UTILITY_TAPER_REMAINS_ATTACHED']),
+    ...diagnostics.map(({ code }) => code),
+  ] : null
+  const roundedRelease = shapedReleaseDiagnostics && {
+    status: shapedReleaseDiagnostics.length ? 'blocked' as const : 'within-declared-rounded-release-screen' as const,
+    assembledCandidateStatus: installedClosure.status === 'blocked' || shapedReleaseDiagnostics.length
+      ? 'blocked' as const : 'within-conditional-fit-and-withdrawal' as const,
+    diagnostics: shapedReleaseDiagnostics,
+    axialStrokeToClearRiserMm: clearStationaryRiserMm,
+    axialStrokeBeforeSideTransferMm: beyondFrontToTurnMm,
+    splitFillerWithdrawalQualified: false,
+    captureQualified: false,
+  }
   const caseDigest = sha256SemanticFingerprint(trial)
   return {
     schema: 'had-inlet-cover-result/1' as const, branch: trial.branch,
@@ -229,10 +317,11 @@ export function runInletCoverCase(resolved: CurrentDesignResolution, input: unkn
     source: { ...source, removalCaseDigest: source.caseDigest, caseDigest, method: 'HAD-SOUTH-INLET-COVER/1',
       gitBlob: resolved.disciplineBindings.find(binding => binding.id === 'had-inlet-south-removal')!
         .identities['compiler/reference-house/current-design/inlet-cover.ts'], carrierMethod: method.id },
-    calculation, diagnostics, installedClosure,
-    drawing: coverPlan(trial.branch, { closed, 'installed-filler-reservation': [installedClosure.filler],
+    calculation, diagnostics, installedClosure, roundedRelease,
+    drawing: coverPlan(trial.branch, { ...(installedClosure.roundedTaper ? { 'closed-envelope': [envelope] } : { closed }),
+      'installed-filler-reservation': [installedClosure.filler],
       'installed-collar-reservation': [installedClosure.collar], 'after-axial-release': closed.map(item => offset(item, 0, axial)),
-      'first-rest': parkedPanels, 'receiver-bearing': rails, 'carrier-corridor': [carrier], washer: [washerBox] }, caseDigest),
+      'first-rest': parkedPanels, 'receiver-bearing': rails, 'carrier-corridor': [carrier], washer: [washerBox] }, caseDigest, installedClosure.roundedTaper ?? undefined),
     evidence: {
       wetClosure: 'unqualified', receiverAnchorageAndPositiveCapture: 'unqualified',
       coverThicknessSealsLatchAndTools: 'unqualified', heldCaptureThroughTransfer: 'unqualified',

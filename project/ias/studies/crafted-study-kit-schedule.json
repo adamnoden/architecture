@@ -11157,6 +11157,1210 @@
           "project/bcr/studies/bay-interface-study.py": "7fea8b8b1b8e66a6f52ae8a6124eda84f8759a9c42c3ae31644296679f4e3e7c"
         }
       },
+      "firstRestBoard": {
+        "state": "placement-comparison-only",
+        "physicalAcceptance": false,
+        "comparedWitnessCount": 119,
+        "boardSizeMm": [
+          165,
+          330
+        ],
+        "padWidthMm": 25,
+        "worstRestPadN": 117.72,
+        "restPadDemandMPa": 0.188352,
+        "placements": [
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/429.5/500",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/500/500",
+            "turnDeg": 0,
+            "boardXYXYMm": [
+              567.5,
+              485,
+              732.5,
+              815
+            ],
+            "padCentresXYMm": [
+              [
+                602.5,
+                575
+              ],
+              [
+                697.5,
+                575
+              ],
+              [
+                602.5,
+                725
+              ],
+              [
+                697.5,
+                725
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/429.5/800",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/500/800",
+            "turnDeg": 90,
+            "boardXYXYMm": [
+              485,
+              793.25,
+              815,
+              958.25
+            ],
+            "padCentresXYMm": [
+              [
+                725,
+                828.25
+              ],
+              [
+                725,
+                923.25
+              ],
+              [
+                575,
+                828.25
+              ],
+              [
+                575,
+                923.25
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/429.5/951.5",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/500/951.5",
+            "turnDeg": 90,
+            "boardXYXYMm": [
+              485,
+              944.75,
+              815,
+              1109.75
+            ],
+            "padCentresXYMm": [
+              [
+                725,
+                979.75
+              ],
+              [
+                725,
+                1074.75
+              ],
+              [
+                575,
+                979.75
+              ],
+              [
+                575,
+                1074.75
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/500/800",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/500/951.5",
+            "turnDeg": 90,
+            "boardXYXYMm": [
+              485,
+              944.75,
+              815,
+              1109.75
+            ],
+            "padCentresXYMm": [
+              [
+                725,
+                979.75
+              ],
+              [
+                725,
+                1074.75
+              ],
+              [
+                575,
+                979.75
+              ],
+              [
+                575,
+                1074.75
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/500/951.5",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/500/800",
+            "turnDeg": 90,
+            "boardXYXYMm": [
+              485,
+              793.25,
+              815,
+              958.25
+            ],
+            "padCentresXYMm": [
+              [
+                725,
+                828.25
+              ],
+              [
+                725,
+                923.25
+              ],
+              [
+                575,
+                828.25
+              ],
+              [
+                575,
+                923.25
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/800/800",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/800/951.5",
+            "turnDeg": 90,
+            "boardXYXYMm": [
+              785,
+              944.75,
+              1115,
+              1109.75
+            ],
+            "padCentresXYMm": [
+              [
+                1025,
+                979.75
+              ],
+              [
+                1025,
+                1074.75
+              ],
+              [
+                875,
+                979.75
+              ],
+              [
+                875,
+                1074.75
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/800/951.5",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/800/800",
+            "turnDeg": 90,
+            "boardXYXYMm": [
+              785,
+              793.25,
+              1115,
+              958.25
+            ],
+            "padCentresXYMm": [
+              [
+                1025,
+                828.25
+              ],
+              [
+                1025,
+                923.25
+              ],
+              [
+                875,
+                828.25
+              ],
+              [
+                875,
+                923.25
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/1100/800",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/1100/951.5",
+            "turnDeg": 90,
+            "boardXYXYMm": [
+              1085,
+              944.75,
+              1415,
+              1109.75
+            ],
+            "padCentresXYMm": [
+              [
+                1325,
+                979.75
+              ],
+              [
+                1325,
+                1074.75
+              ],
+              [
+                1175,
+                979.75
+              ],
+              [
+                1175,
+                1074.75
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/1100/951.5",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/1100/800",
+            "turnDeg": 90,
+            "boardXYXYMm": [
+              1085,
+              793.25,
+              1415,
+              958.25
+            ],
+            "padCentresXYMm": [
+              [
+                1325,
+                828.25
+              ],
+              [
+                1325,
+                923.25
+              ],
+              [
+                1175,
+                828.25
+              ],
+              [
+                1175,
+                923.25
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/1400/800",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/951.5",
+            "turnDeg": 90,
+            "boardXYXYMm": [
+              1385,
+              944.75,
+              1715,
+              1109.75
+            ],
+            "padCentresXYMm": [
+              [
+                1625,
+                979.75
+              ],
+              [
+                1625,
+                1074.75
+              ],
+              [
+                1475,
+                979.75
+              ],
+              [
+                1475,
+                1074.75
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/1400/951.5",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/1400/800",
+            "turnDeg": 90,
+            "boardXYXYMm": [
+              1385,
+              793.25,
+              1715,
+              958.25
+            ],
+            "padCentresXYMm": [
+              [
+                1625,
+                828.25
+              ],
+              [
+                1625,
+                923.25
+              ],
+              [
+                1475,
+                828.25
+              ],
+              [
+                1475,
+                923.25
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/1700/800",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/1700/951.5",
+            "turnDeg": 90,
+            "boardXYXYMm": [
+              1685,
+              944.75,
+              2015,
+              1109.75
+            ],
+            "padCentresXYMm": [
+              [
+                1925,
+                979.75
+              ],
+              [
+                1925,
+                1074.75
+              ],
+              [
+                1775,
+                979.75
+              ],
+              [
+                1775,
+                1074.75
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/1700/951.5",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/1700/800",
+            "turnDeg": 90,
+            "boardXYXYMm": [
+              1685,
+              793.25,
+              2015,
+              958.25
+            ],
+            "padCentresXYMm": [
+              [
+                1925,
+                828.25
+              ],
+              [
+                1925,
+                923.25
+              ],
+              [
+                1775,
+                828.25
+              ],
+              [
+                1775,
+                923.25
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/2000/800",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/951.5",
+            "turnDeg": 90,
+            "boardXYXYMm": [
+              1985,
+              944.75,
+              2315,
+              1109.75
+            ],
+            "padCentresXYMm": [
+              [
+                2225,
+                979.75
+              ],
+              [
+                2225,
+                1074.75
+              ],
+              [
+                2075,
+                979.75
+              ],
+              [
+                2075,
+                1074.75
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/2000/951.5",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/2000/800",
+            "turnDeg": 90,
+            "boardXYXYMm": [
+              1985,
+              793.25,
+              2315,
+              958.25
+            ],
+            "padCentresXYMm": [
+              [
+                2225,
+                828.25
+              ],
+              [
+                2225,
+                923.25
+              ],
+              [
+                2075,
+                828.25
+              ],
+              [
+                2075,
+                923.25
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/2300/800",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/2300/951.5",
+            "turnDeg": 90,
+            "boardXYXYMm": [
+              2285,
+              944.75,
+              2615,
+              1109.75
+            ],
+            "padCentresXYMm": [
+              [
+                2525,
+                979.75
+              ],
+              [
+                2525,
+                1074.75
+              ],
+              [
+                2375,
+                979.75
+              ],
+              [
+                2375,
+                1074.75
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/2300/951.5",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/2300/1103",
+            "turnDeg": 90,
+            "boardXYXYMm": [
+              2285,
+              1169,
+              2615,
+              1334
+            ],
+            "padCentresXYMm": [
+              [
+                2525,
+                1204
+              ],
+              [
+                2525,
+                1299
+              ],
+              [
+                2375,
+                1204
+              ],
+              [
+                2375,
+                1299
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/2600/951.5",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/2600/1103",
+            "turnDeg": 90,
+            "boardXYXYMm": [
+              2585,
+              1169,
+              2915,
+              1334
+            ],
+            "padCentresXYMm": [
+              [
+                2825,
+                1204
+              ],
+              [
+                2825,
+                1299
+              ],
+              [
+                2675,
+                1204
+              ],
+              [
+                2675,
+                1299
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/2900/951.5",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/1103",
+            "turnDeg": 90,
+            "boardXYXYMm": [
+              2885,
+              1169,
+              3215,
+              1334
+            ],
+            "padCentresXYMm": [
+              [
+                3125,
+                1204
+              ],
+              [
+                3125,
+                1299
+              ],
+              [
+                2975,
+                1204
+              ],
+              [
+                2975,
+                1299
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/3200/951.5",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/951.5",
+            "turnDeg": 90,
+            "boardXYXYMm": [
+              2885,
+              944.75,
+              3215,
+              1109.75
+            ],
+            "padCentresXYMm": [
+              [
+                3125,
+                979.75
+              ],
+              [
+                3125,
+                1074.75
+              ],
+              [
+                2975,
+                979.75
+              ],
+              [
+                2975,
+                1074.75
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/4400/500",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/4551.5/500",
+            "turnDeg": 0,
+            "boardXYXYMm": [
+              4544.75,
+              485,
+              4709.75,
+              815
+            ],
+            "padCentresXYMm": [
+              [
+                4579.75,
+                575
+              ],
+              [
+                4674.75,
+                575
+              ],
+              [
+                4579.75,
+                725
+              ],
+              [
+                4674.75,
+                725
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/4551.5/500",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/4400/500",
+            "turnDeg": 0,
+            "boardXYXYMm": [
+              4393.25,
+              485,
+              4558.25,
+              815
+            ],
+            "padCentresXYMm": [
+              [
+                4428.25,
+                575
+              ],
+              [
+                4523.25,
+                575
+              ],
+              [
+                4428.25,
+                725
+              ],
+              [
+                4523.25,
+                725
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/3200/1103",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/1103",
+            "turnDeg": 0,
+            "boardXYXYMm": [
+              2967.5,
+              1086.5,
+              3132.5,
+              1416.5
+            ],
+            "padCentresXYMm": [
+              [
+                3002.5,
+                1176.5
+              ],
+              [
+                3097.5,
+                1176.5
+              ],
+              [
+                3002.5,
+                1326.5
+              ],
+              [
+                3097.5,
+                1326.5
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/3200/1400",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/1400",
+            "turnDeg": 0,
+            "boardXYXYMm": [
+              2967.5,
+              1385,
+              3132.5,
+              1715
+            ],
+            "padCentresXYMm": [
+              [
+                3002.5,
+                1475
+              ],
+              [
+                3097.5,
+                1475
+              ],
+              [
+                3002.5,
+                1625
+              ],
+              [
+                3097.5,
+                1625
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/3200/1700",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/1700",
+            "turnDeg": 0,
+            "boardXYXYMm": [
+              2967.5,
+              1685,
+              3132.5,
+              2015
+            ],
+            "padCentresXYMm": [
+              [
+                3002.5,
+                1775
+              ],
+              [
+                3097.5,
+                1775
+              ],
+              [
+                3002.5,
+                1925
+              ],
+              [
+                3097.5,
+                1925
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/3200/2000",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/2000",
+            "turnDeg": 0,
+            "boardXYXYMm": [
+              2967.5,
+              1985,
+              3132.5,
+              2315
+            ],
+            "padCentresXYMm": [
+              [
+                3002.5,
+                2075
+              ],
+              [
+                3097.5,
+                2075
+              ],
+              [
+                3002.5,
+                2225
+              ],
+              [
+                3097.5,
+                2225
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/3200/2300",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/2900/2300",
+            "turnDeg": 0,
+            "boardXYXYMm": [
+              2967.5,
+              2261.5,
+              3132.5,
+              2591.5
+            ],
+            "padCentresXYMm": [
+              [
+                3002.5,
+                2351.5
+              ],
+              [
+                3097.5,
+                2351.5
+              ],
+              [
+                3002.5,
+                2501.5
+              ],
+              [
+                3097.5,
+                2501.5
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/429.5/2900",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/500/2900",
+            "turnDeg": 0,
+            "boardXYXYMm": [
+              567.5,
+              2860.25,
+              732.5,
+              3190.25
+            ],
+            "padCentresXYMm": [
+              [
+                602.5,
+                2950.25
+              ],
+              [
+                697.5,
+                2950.25
+              ],
+              [
+                602.5,
+                3100.25
+              ],
+              [
+                697.5,
+                3100.25
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/2600/2900",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/2300/2900",
+            "turnDeg": 0,
+            "boardXYXYMm": [
+              2367.5,
+              2860.25,
+              2532.5,
+              3190.25
+            ],
+            "padCentresXYMm": [
+              [
+                2402.5,
+                2950.25
+              ],
+              [
+                2497.5,
+                2950.25
+              ],
+              [
+                2402.5,
+                3100.25
+              ],
+              [
+                2497.5,
+                3100.25
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/429.5/1103",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/500/1103",
+            "turnDeg": 90,
+            "boardXYXYMm": [
+              485,
+              1092,
+              815,
+              1257
+            ],
+            "padCentresXYMm": [
+              [
+                725,
+                1127
+              ],
+              [
+                725,
+                1222
+              ],
+              [
+                575,
+                1127
+              ],
+              [
+                575,
+                1222
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/429.5/2405",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/500/2405",
+            "turnDeg": 90,
+            "boardXYXYMm": [
+              485,
+              2396.5,
+              815,
+              2561.5
+            ],
+            "padCentresXYMm": [
+              [
+                725,
+                2431.5
+              ],
+              [
+                725,
+                2526.5
+              ],
+              [
+                575,
+                2431.5
+              ],
+              [
+                575,
+                2526.5
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/500/1103",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/500/951.5",
+            "turnDeg": 90,
+            "boardXYXYMm": [
+              485,
+              944.75,
+              815,
+              1109.75
+            ],
+            "padCentresXYMm": [
+              [
+                725,
+                979.75
+              ],
+              [
+                725,
+                1074.75
+              ],
+              [
+                575,
+                979.75
+              ],
+              [
+                575,
+                1074.75
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/500/2405",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/800/2300",
+            "turnDeg": 90,
+            "boardXYXYMm": [
+              785,
+              2396.5,
+              1115,
+              2561.5
+            ],
+            "padCentresXYMm": [
+              [
+                1025,
+                2431.5
+              ],
+              [
+                1025,
+                2526.5
+              ],
+              [
+                875,
+                2431.5
+              ],
+              [
+                875,
+                2526.5
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/634.5/1246",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/800/1103",
+            "turnDeg": 0,
+            "boardXYXYMm": [
+              867.5,
+              1107.25,
+              1032.5,
+              1437.25
+            ],
+            "padCentresXYMm": [
+              [
+                902.5,
+                1197.25
+              ],
+              [
+                997.5,
+                1197.25
+              ],
+              [
+                902.5,
+                1347.25
+              ],
+              [
+                997.5,
+                1347.25
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/634.5/1400",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/800/1400",
+            "turnDeg": 0,
+            "boardXYXYMm": [
+              867.5,
+              1385,
+              1032.5,
+              1715
+            ],
+            "padCentresXYMm": [
+              [
+                902.5,
+                1475
+              ],
+              [
+                997.5,
+                1475
+              ],
+              [
+                902.5,
+                1625
+              ],
+              [
+                997.5,
+                1625
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/634.5/1700",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/800/1700",
+            "turnDeg": 0,
+            "boardXYXYMm": [
+              867.5,
+              1685,
+              1032.5,
+              2015
+            ],
+            "padCentresXYMm": [
+              [
+                902.5,
+                1775
+              ],
+              [
+                997.5,
+                1775
+              ],
+              [
+                902.5,
+                1925
+              ],
+              [
+                997.5,
+                1925
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/634.5/2000",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/800/2000",
+            "turnDeg": 0,
+            "boardXYXYMm": [
+              867.5,
+              1985,
+              1032.5,
+              2315
+            ],
+            "padCentresXYMm": [
+              [
+                902.5,
+                2075
+              ],
+              [
+                997.5,
+                2075
+              ],
+              [
+                902.5,
+                2225
+              ],
+              [
+                997.5,
+                2225
+              ]
+            ]
+          },
+          {
+            "partId": "GROUND/G-STUDY/room-kit/floor/634.5/2300",
+            "restPartId": "GROUND/G-STUDY/room-kit/floor/500/2405",
+            "turnDeg": 90,
+            "boardXYXYMm": [
+              507.25,
+              2396.5,
+              837.25,
+              2561.5
+            ],
+            "padCentresXYMm": [
+              [
+                747.25,
+                2431.5
+              ],
+              [
+                747.25,
+                2526.5
+              ],
+              [
+                597.25,
+                2431.5
+              ],
+              [
+                597.25,
+                2526.5
+              ]
+            ]
+          }
+        ],
+        "outsideBoardFitPartIds": [
+          "GROUND/G-STUDY/room-kit/floor/500/500",
+          "GROUND/G-STUDY/room-kit/floor/800/429.5",
+          "GROUND/G-STUDY/room-kit/floor/800/500",
+          "GROUND/G-STUDY/room-kit/floor/1100/429.5",
+          "GROUND/G-STUDY/room-kit/floor/1100/500",
+          "GROUND/G-STUDY/room-kit/floor/1400/429.5",
+          "GROUND/G-STUDY/room-kit/floor/1400/500",
+          "GROUND/G-STUDY/room-kit/floor/1700/429.5",
+          "GROUND/G-STUDY/room-kit/floor/1700/500",
+          "GROUND/G-STUDY/room-kit/floor/2000/429.5",
+          "GROUND/G-STUDY/room-kit/floor/2000/500",
+          "GROUND/G-STUDY/room-kit/floor/2300/429.5",
+          "GROUND/G-STUDY/room-kit/floor/2300/500",
+          "GROUND/G-STUDY/room-kit/floor/4400/429.5",
+          "GROUND/G-STUDY/room-kit/floor/4400/800",
+          "GROUND/G-STUDY/room-kit/floor/4400/951.5",
+          "GROUND/G-STUDY/room-kit/floor/4551.5/429.5",
+          "GROUND/G-STUDY/room-kit/floor/4551.5/800",
+          "GROUND/G-STUDY/room-kit/floor/4551.5/951.5",
+          "GROUND/G-STUDY/room-kit/floor/800/1103",
+          "GROUND/G-STUDY/room-kit/floor/800/1400",
+          "GROUND/G-STUDY/room-kit/floor/800/1700",
+          "GROUND/G-STUDY/room-kit/floor/800/2000",
+          "GROUND/G-STUDY/room-kit/floor/800/2300",
+          "GROUND/G-STUDY/room-kit/floor/1100/1103",
+          "GROUND/G-STUDY/room-kit/floor/1100/1400",
+          "GROUND/G-STUDY/room-kit/floor/1100/1700",
+          "GROUND/G-STUDY/room-kit/floor/1100/2000",
+          "GROUND/G-STUDY/room-kit/floor/1100/2300",
+          "GROUND/G-STUDY/room-kit/floor/1400/1103",
+          "GROUND/G-STUDY/room-kit/floor/1400/1400",
+          "GROUND/G-STUDY/room-kit/floor/1400/1700",
+          "GROUND/G-STUDY/room-kit/floor/1400/2000",
+          "GROUND/G-STUDY/room-kit/floor/1400/2300",
+          "GROUND/G-STUDY/room-kit/floor/1700/1103",
+          "GROUND/G-STUDY/room-kit/floor/1700/1400",
+          "GROUND/G-STUDY/room-kit/floor/1700/1700",
+          "GROUND/G-STUDY/room-kit/floor/1700/2000",
+          "GROUND/G-STUDY/room-kit/floor/1700/2300",
+          "GROUND/G-STUDY/room-kit/floor/2000/1103",
+          "GROUND/G-STUDY/room-kit/floor/2000/1400",
+          "GROUND/G-STUDY/room-kit/floor/2000/1700",
+          "GROUND/G-STUDY/room-kit/floor/2000/2000",
+          "GROUND/G-STUDY/room-kit/floor/2000/2300",
+          "GROUND/G-STUDY/room-kit/floor/2300/1103",
+          "GROUND/G-STUDY/room-kit/floor/2300/1400",
+          "GROUND/G-STUDY/room-kit/floor/2300/1700",
+          "GROUND/G-STUDY/room-kit/floor/2300/2000",
+          "GROUND/G-STUDY/room-kit/floor/2300/2300",
+          "GROUND/G-STUDY/room-kit/floor/2600/1103",
+          "GROUND/G-STUDY/room-kit/floor/2600/1400",
+          "GROUND/G-STUDY/room-kit/floor/2600/1700",
+          "GROUND/G-STUDY/room-kit/floor/2600/2000",
+          "GROUND/G-STUDY/room-kit/floor/2600/2300",
+          "GROUND/G-STUDY/room-kit/floor/2900/1103",
+          "GROUND/G-STUDY/room-kit/floor/2900/1400",
+          "GROUND/G-STUDY/room-kit/floor/2900/1700",
+          "GROUND/G-STUDY/room-kit/floor/2900/2000",
+          "GROUND/G-STUDY/room-kit/floor/2900/2300",
+          "GROUND/G-STUDY/room-kit/floor/429.5/2553",
+          "GROUND/G-STUDY/room-kit/floor/429.5/2726.5",
+          "GROUND/G-STUDY/room-kit/floor/500/2553",
+          "GROUND/G-STUDY/room-kit/floor/500/2726.5",
+          "GROUND/G-STUDY/room-kit/floor/500/2900",
+          "GROUND/G-STUDY/room-kit/floor/800/2553",
+          "GROUND/G-STUDY/room-kit/floor/800/2726.5",
+          "GROUND/G-STUDY/room-kit/floor/800/2900",
+          "GROUND/G-STUDY/room-kit/floor/1100/2553",
+          "GROUND/G-STUDY/room-kit/floor/1100/2726.5",
+          "GROUND/G-STUDY/room-kit/floor/1400/2553",
+          "GROUND/G-STUDY/room-kit/floor/1400/2726.5",
+          "GROUND/G-STUDY/room-kit/floor/1400/2900",
+          "GROUND/G-STUDY/room-kit/floor/1700/2553",
+          "GROUND/G-STUDY/room-kit/floor/1700/2726.5",
+          "GROUND/G-STUDY/room-kit/floor/1700/2900",
+          "GROUND/G-STUDY/room-kit/floor/2000/2553",
+          "GROUND/G-STUDY/room-kit/floor/2000/2726.5",
+          "GROUND/G-STUDY/room-kit/floor/2300/2553",
+          "GROUND/G-STUDY/room-kit/floor/2300/2726.5",
+          "GROUND/G-STUDY/room-kit/floor/2600/2553",
+          "GROUND/G-STUDY/room-kit/floor/2600/2726.5"
+        ],
+        "held": [
+          "Board placement and clearance to occupant, adjacent finishes and fixed obstructions",
+          "Stable board and panel under load, breakaway and grip exchange",
+          "Qualified deck, finish and bedding under local pad demand"
+        ]
+      },
       "groundSupport": {
         "state": "geometry-comparison",
         "method": "IAS-STUDY-GROUND-SUPPORT-1",

@@ -34,6 +34,12 @@ interface BuriedReceivingCase {
   readonly hostAxisXYZMm: SpatialPoint
   readonly stackGradeZMm: number
   readonly hostGradeZMm: number
+  readonly interiorGrade?: readonly GradeStation[]
+}
+
+interface GradeStation {
+  readonly distanceFromStackMm: number
+  readonly gradeZMm: number
 }
 
 interface ModelledOpening {
@@ -193,10 +199,16 @@ function admitCase(value: unknown, binding: Bindings): VentCase {
   if (Object.hasOwn(trial, 'buriedReceiving')) {
     const receiving = trial.buriedReceiving
     if (!receiving || typeof receiving !== 'object' || Array.isArray(receiving)
-        || Object.keys(receiving).length !== 3 || !Array.isArray(receiving.hostAxisXYZMm)
+        || Object.keys(receiving).some(key => !['hostAxisXYZMm', 'stackGradeZMm', 'hostGradeZMm', 'interiorGrade'].includes(key))
+        || !Array.isArray(receiving.hostAxisXYZMm)
         || receiving.hostAxisXYZMm.length !== 3 || !receiving.hostAxisXYZMm.every(Number.isFinite)
         || !Number.isFinite(receiving.stackGradeZMm) || !Number.isFinite(receiving.hostGradeZMm)) {
       throw new Error('Use a buried receiving host axis and two finite grade levels in millimetres')
+    }
+    if (Object.hasOwn(receiving, 'interiorGrade') && (!Array.isArray(receiving.interiorGrade)
+      || receiving.interiorGrade.some(station => !station || typeof station !== 'object'
+        || Object.keys(station).length !== 2 || !Number.isFinite(station.distanceFromStackMm) || !Number.isFinite(station.gradeZMm)))) {
+      throw new Error('Use finite chainage and grade for each interior grade station')
     }
   }
   return trial
@@ -204,7 +216,7 @@ function admitCase(value: unknown, binding: Bindings): VentCase {
 
 function compareBuriedReceiving(reference: StudyReceipt, trial?: BuriedReceivingCase) {
   const { independentFoul: basis, existingStackXYmm: stack } = reference
-  const { hostAxisXYZMm: host, stackGradeZMm, hostGradeZMm } = trial ?? {
+  const { hostAxisXYZMm: host, stackGradeZMm, hostGradeZMm, interiorGrade = [] } = trial ?? {
     hostAxisXYZMm: basis.previousConditionalHostXYZmm,
     stackGradeZMm: basis.trialGradeZmm, hostGradeZMm: basis.trialGradeZmm,
   }
@@ -216,16 +228,32 @@ function compareBuriedReceiving(reference: StudyReceipt, trial?: BuriedReceiving
   const radiusMm = basis.trialGradeZmm - basis.trialCoverMM - basis.maximumUpstreamAxisZmm
   const dropMm = lengthMm * fall
   const stackAxisZMm = hostZ + dropMm
-  const stackCoverMm = stackGradeZMm - stackAxisZMm - radiusMm
-  const hostCoverMm = hostGradeZMm - hostZ - radiusMm
   const westGirderClearanceMm = basis.minimumPipeEnvelopeToWestGirderPlanMM + stackX - Math.max(stackX, hostX)
-  const maxHostAxisZMm = Math.min(stackGradeZMm - radiusMm - basis.trialCoverMM - dropMm,
-    hostGradeZMm - radiusMm - basis.trialCoverMM)
-  if (![dropMm, stackAxisZMm, stackCoverMm, hostCoverMm, westGirderClearanceMm, maxHostAxisZMm].every(Number.isFinite)) {
+  const profile = [
+    { distanceFromStackMm: 0, gradeZMm: stackGradeZMm },
+    ...interiorGrade,
+    { distanceFromStackMm: lengthMm, gradeZMm: hostGradeZMm },
+  ]
+  const coverProfile = profile.map(({distanceFromStackMm, gradeZMm}, index) => {
+    if (index && distanceFromStackMm <= profile[index - 1].distanceFromStackMm) {
+      throw new Error('Interior grade chainages must increase strictly between stack and host')
+    }
+    const remainingFallMm = (lengthMm - distanceFromStackMm) * fall
+    const coverMm = gradeZMm - (hostZ + remainingFallMm) - radiusMm
+    const maximumHostAxisZMm = gradeZMm - radiusMm - basis.trialCoverMM - remainingFallMm
+    if (!Number.isFinite(coverMm) || !Number.isFinite(maximumHostAxisZMm)) {
+      throw new Error('West foul receiving geometry exceeds the finite comparison range')
+    }
+    return { distanceFromStackMm, gradeZMm, coverMm, maximumHostAxisZMm }
+  })
+  const governingCover = coverProfile.reduce((lowest, station) =>
+    station.maximumHostAxisZMm < lowest.maximumHostAxisZMm ? station : lowest)
+  const { maximumHostAxisZMm } = governingCover
+  if (![dropMm, stackAxisZMm, westGirderClearanceMm].every(Number.isFinite)) {
     throw new Error('West foul receiving geometry exceeds the finite comparison range')
   }
   const failedChecks = [
-    ...(hostZ > maxHostAxisZMm ? ['MINIMUM_CROWN_COVER'] : []),
+    ...(hostZ > maximumHostAxisZMm ? ['MINIMUM_CROWN_COVER'] : []),
     ...(westGirderClearanceMm < 0 ? ['WEST_GIRDER_PLAN_CLEARANCE'] : []),
   ]
   return {
@@ -233,10 +261,11 @@ function compareBuriedReceiving(reference: StudyReceipt, trial?: BuriedReceiving
     stackAxisXYZMm: [stackX, stackY, stackAxisZMm], hostAxisXYZMm: host,
     gradient: fall, planLengthMm: lengthMm, fallMm: dropMm,
     stackGradeZMm, hostGradeZMm, pipeEnvelopeDiameterMm: radiusMm * 2,
-    requiredCoverMm: basis.trialCoverMM, stackCoverMm, hostCoverMm,
-    maximumHostAxisZMm: maxHostAxisZMm, westGirderClearanceMm, failedChecks,
+    requiredCoverMm: basis.trialCoverMM, stackCoverMm: coverProfile[0].coverMm,
+    hostCoverMm: coverProfile[coverProfile.length - 1].coverMm,
+    coverProfile, governingCover, maximumHostAxisZMm, westGirderClearanceMm, failedChecks,
     installedAcceptance: false as const,
-    scope: 'Straight minimum-fall axis and linear grade between endpoints. Site profile, fittings, support, inspection, hydraulic and lawful receiving duties remain open.',
+    scope: 'Straight minimum-fall axis and piecewise-linear grade between supplied stations. Survey, fittings, support, inspection, hydraulic and lawful receiving duties remain open.',
   }
 }
 
