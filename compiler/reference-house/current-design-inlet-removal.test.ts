@@ -16,10 +16,10 @@ test('each native draw with a local collar needs a continuous opening through it
   assert.deepEqual([utility.branch, plant.branch], ['utility', 'plant'])
   assert.deepEqual([utility.status, plant.status], ['blocked', 'blocked'])
   assert.deepEqual(utility.calculation.roofStrip, {
-    xMm: [10038, 10122], yMm: [538, 665], zMm: 680, widthMm: 84, lengthMm: 127, splitCollarTravelMm: 2,
+    xMm: [10038, 10122], yMm: [538, 665], zMm: 680, widthMm: 84, lengthMm: 127, splitCollarTravelMm: 2, boundSplitCollarOutsideDiameterMm: 88, jacketOutsideDiameterMm: 74,
   })
   assert.deepEqual(plant.calculation.roofStrip, {
-    xMm: [10243, 10327], yMm: [503, 665], zMm: 730, widthMm: 84, lengthMm: 162, splitCollarTravelMm: 2,
+    xMm: [10243, 10327], yMm: [503, 665], zMm: 730, widthMm: 84, lengthMm: 162, splitCollarTravelMm: 2, boundSplitCollarOutsideDiameterMm: 88, jacketOutsideDiameterMm: 74,
   })
   for (const result of [utility, plant]) {
     assert.deepEqual(result.diagnostics.map(({ code }) => code), ['ROOF_STRIP_REQUIRED'])

@@ -885,9 +885,9 @@
     "project/had/studies/current-house-service-outputs.mjs": "ed9b9796099e5b8736d11a1d90bb93a566bfe12d",
     "project/had/studies/occupied-service-plate.mjs": "1d5b59e2945bcc58234d7ee96d41ec3473aa1ec2",
     "project/had/studies/selected-service-plate.mjs": "732c5d440d2963a6092a0bf2bfdd8df8e198a54b",
-    "project/had/south-inlet-wet-box.md": "c33700faa17635b4b2c3b98f8cdd3c0d0618e748",
+    "project/had/south-inlet-wet-box.md": "89a945f5a26006df236fea642e613c804f805432",
     "project/had/studies/south-inlet-wet-box.mjs": "2b6ae4e01c29823c6d91e78cd4657b4fe373a618",
-    "compiler/reference-house/current-design/inlet-removal.ts": "5310a17425cbf81b50ae3b8d702224ac0bf83d7e",
-    "compiler/reference-house/current-design/inlet-cover.ts": "f83140eafd9afdca6d8e8690020841b0f477985d"
+    "compiler/reference-house/current-design/inlet-removal.ts": "9051c4cfe9713299e9c59878717cd1076aa5a414",
+    "compiler/reference-house/current-design/inlet-cover.ts": "74fd8bbd1b37166e9728d44f9b5800e177aa8718"
   }
 }

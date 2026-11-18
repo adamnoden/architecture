@@ -148,7 +148,7 @@ test('the Study kit locates whole-face first rests and withholds unknown G1 cros
   assert.ok(results)
   assert.equal(results.physicalAcceptance, false)
   assert.equal(results.partCount, 144)
-  assert.equal(results.witnessCount, 118)
+  assert.equal(results.witnessCount, 119)
   assert.deepEqual(results.transferVertical, {
     initialLiftMm: 38, travelTopMm: 38, travelUndersideMm: 18, firstRestBoardTopMm: 12, undersideReserveMm: 6,
   })
@@ -170,6 +170,11 @@ test('the Study kit locates whole-face first rests and withholds unknown G1 cros
     }
   }
   const at = (suffix: string) => results.parts.find(part => part.partId.endsWith(`/${suffix}`))
+  const offsetEdge = at('634.5/1246')
+  assert.ok(offsetEdge?.state === 'direct-geometry-witness')
+  assert.ok(offsetEdge.witness.restPartId.endsWith('/800/1103'))
+  assert.equal(offsetEdge.witness.stage, 'desk-and-chair-parked')
+  assert.deepEqual(offsetEdge.witness.shiftXYMm, [232.75, 0])
   assert.equal(at('429.5/429.5')?.state, 'no-adjacent-whole-face-rest')
   assert.equal(at('3800/500')?.state, 'worker-stance-or-reach-unsupported')
   const g1 = at('2900/500')

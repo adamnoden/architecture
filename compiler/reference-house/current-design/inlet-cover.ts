@@ -16,6 +16,12 @@ type CoverCase = {
   readonly minimumFrontBridgeMm: number
   readonly axialTravelMm: number
   readonly sideTravelMm: number
+  readonly closure?: {
+    readonly notchLapMm: number
+    readonly collarSealLandMm: number
+    readonly collarOutsideDiameterMm: number
+    readonly wallReturnDepthMm: number
+  }
 }
 type Bounds = readonly [number, number]
 type Footprint = { readonly x: Bounds; readonly y: Bounds }
@@ -51,6 +57,68 @@ const offset = ({ x, y }: Footprint, dx: number, dy: number): Footprint => ({
 const clearInside = ([lo, hi]: Bounds, [innerLo, innerHi]: Bounds) => Math.min(innerLo - lo, hi - innerHi)
 const intervalGap = (first: Bounds, second: Bounds) => Math.max(first[0] - second[1], second[0] - first[1])
 
+function closedCoverComparison(
+  trial: CoverCase, baseline: ReturnType<typeof sourceDraw>['calculation'], envelope: Footprint, throatEndMm: number,
+) {
+  const { roofStrip, wetBox, dryBreak, settingsMm: { fabrication } } = baseline
+  const closure = Object.hasOwn(trial, 'closure') ? trial.closure : {
+    notchLapMm: 10, collarSealLandMm: 4, collarOutsideDiameterMm: roofStrip.boundSplitCollarOutsideDiameterMm,
+    wallReturnDepthMm: 12,
+  }
+  const keys = ['notchLapMm', 'collarSealLandMm', 'collarOutsideDiameterMm', 'wallReturnDepthMm'] as const
+  if (!closure || typeof closure !== 'object' || Array.isArray(closure) || Object.keys(closure).length !== keys.length ||
+      keys.some(key => !Object.hasOwn(closure, key) || !Number.isFinite(closure[key]) || closure[key] <= 0 ||
+        closure[key] > wetBox.sideLimitsXMm[1] - wetBox.sideLimitsXMm[0])) {
+    throw new Error('Expected finite positive south inlet closure comparison dimensions')
+  }
+  const { notchLapMm, collarSealLandMm, collarOutsideDiameterMm, wallReturnDepthMm } = closure
+  const { planMm, innerVentAxisMm, formedVentDiameterMm } = wetBox
+  const [back, front] = envelope.y
+  const xLimitsAt = (y: number): Bounds => {
+    const x = planMm.flatMap(([x0, y0], i) => {
+      const [x1, y1] = planMm[(i + 1) % planMm.length]
+      if (y < Math.min(y0, y1) || y > Math.max(y0, y1)) return []
+      return y0 === y1 ? [x0, x1] : [x0 + (y - y0) * (x1 - x0) / (y1 - y0)]
+    })
+    if (x.length < 2) throw new Error('The installed cover no longer has a bound cell plan section')
+    return [Math.min(...x), Math.max(...x)]
+  }
+  const yStations = [back, ...planMm.map(([, y]) => y).filter(y => y > back && y < front), front]
+  const plantOrUtilitySideFit = Math.min(...yStations.map(y => clearInside(xLimitsAt(y), envelope.x)))
+  const filler: Footprint = {
+    x: [roofStrip.xMm[0] - notchLapMm, roofStrip.xMm[1] + notchLapMm],
+    y: [back - notchLapMm, throatEndMm + notchLapMm],
+  }
+  const collarRadius = collarOutsideDiameterMm / 2
+  const collar: Footprint = {
+    x: [dryBreak.xMm - collarRadius, dryBreak.xMm + collarRadius],
+    y: [dryBreak.yMm - collarRadius, dryBreak.yMm + collarRadius],
+  }
+  const clearance = {
+    installedCoverToCellSideAfterSettingMm: round(plantOrUtilitySideFit - fabrication),
+    fillerSideLapBackingAfterSettingMm: round(trial.cheekMm - notchLapMm - fabrication),
+    fillerRearLapBackingAfterSettingMm: round(filler.y[0] - innerVentAxisMm[1] - fabrication),
+    fillerFrontLapBackingAfterSettingMm: round(front - filler.y[1] - trial.minimumFrontBridgeMm - fabrication),
+    collarRadialSealLandAfterSettingMm: round(collarRadius - roofStrip.jacketOutsideDiameterMm / 2 - fabrication),
+    collarInsideFillerAfterSettingMm: round(Math.min(clearInside(filler.x, collar.x), clearInside(filler.y, collar.y)) - fabrication),
+    formedVentBelowWallReturnAfterSettingMm: round(roofStrip.zMm - innerVentAxisMm[2] -
+      formedVentDiameterMm / 2 - wallReturnDepthMm - fabrication),
+  }
+  const diagnostics = ([
+    ['RECTANGULAR_COVER_EXCEEDS_INSTALLED_CELL_PLAN', clearance.installedCoverToCellSideAfterSettingMm < 0],
+    ['FILLER_LAP_HAS_INSUFFICIENT_BACKING', Math.min(clearance.fillerSideLapBackingAfterSettingMm,
+      clearance.fillerRearLapBackingAfterSettingMm, clearance.fillerFrontLapBackingAfterSettingMm) < 0],
+    ['COLLAR_RADIAL_SEAL_LAND_SHORT', clearance.collarRadialSealLandAfterSettingMm < collarSealLandMm],
+    ['COLLAR_EXCEEDS_FILLER', clearance.collarInsideFillerAfterSettingMm < 0],
+    ['WALL_RETURN_INTERCEPTS_FORMED_VENT', clearance.formedVentBelowWallReturnAfterSettingMm < 0],
+  ] as const).filter(([, failed]) => failed).map(([code]) => code)
+  return {
+    status: diagnostics.length ? 'blocked' as const : 'within-conditional-closure-fit' as const,
+    inputs: closure, clearance, diagnostics, filler, collar,
+    splitFillerReleaseQualified: false, wetClosureQualified: false,
+  }
+}
+
 function coverPlan(branch: CoverCase['branch'], positions: Readonly<Record<string, readonly Footprint[]>>,
   caseDigest: string): DrawingSceneV2 {
   const items = Object.values(positions).flat()
@@ -82,8 +150,8 @@ export function runInletCoverCase(resolved: CurrentDesignResolution, input: unkn
   const { calculation: baseline, source, method } = sourceDraw(resolved, removal)
   const fields = ['schema', 'branch', 'removalCaseDigest', 'washer', 'cheekMm', 'retainedSideLandMm', 'receiverRailWidthMm',
     'minimumFrontBridgeMm', 'axialTravelMm', 'sideTravelMm']
-  if (trial.schema !== 'had-inlet-cover-case/1' || Object.keys(trial).length !== fields.length ||
-      fields.some(key => !Object.hasOwn(trial, key))) throw new Error('Expected a versioned south inlet cover case')
+  if (trial.schema !== 'had-inlet-cover-case/1' || fields.some(key => !Object.hasOwn(trial, key)) ||
+      Object.keys(trial).some(key => key !== 'closure' && !fields.includes(key))) throw new Error('Expected a versioned south inlet cover case')
   if (trial.removalCaseDigest !== source.caseDigest) throw new Error('Stale south inlet cover source binding')
   const [cellWest, cellEast] = baseline.wetBox.sideLimitsXMm
   const cellWidthMm = cellEast - cellWest
@@ -111,6 +179,7 @@ export function runInletCoverCase(resolved: CurrentDesignResolution, input: unkn
     { x: [slotRight, envelope.x[1]], y: envelope.y },
     { x: roofStrip.xMm, y: [throatEnd, front] },
   ]
+  const installedClosure = closedCoverComparison(trial, baseline, envelope, throatEnd)
   const turned = offset(envelope, 0, axial)
   const parked = offset(envelope, side, axial)
   const parkedPanels = closed.map(footprint => offset(footprint, side, axial))
@@ -160,8 +229,9 @@ export function runInletCoverCase(resolved: CurrentDesignResolution, input: unkn
     source: { ...source, removalCaseDigest: source.caseDigest, caseDigest, method: 'HAD-SOUTH-INLET-COVER/1',
       gitBlob: resolved.disciplineBindings.find(binding => binding.id === 'had-inlet-south-removal')!
         .identities['compiler/reference-house/current-design/inlet-cover.ts'], carrierMethod: method.id },
-    calculation, diagnostics,
-    drawing: coverPlan(trial.branch, { closed, 'after-axial-release': closed.map(item => offset(item, 0, axial)),
+    calculation, diagnostics, installedClosure,
+    drawing: coverPlan(trial.branch, { closed, 'installed-filler-reservation': [installedClosure.filler],
+      'installed-collar-reservation': [installedClosure.collar], 'after-axial-release': closed.map(item => offset(item, 0, axial)),
       'first-rest': parkedPanels, 'receiver-bearing': rails, 'carrier-corridor': [carrier], washer: [washerBox] }, caseDigest),
     evidence: {
       wetClosure: 'unqualified', receiverAnchorageAndPositiveCapture: 'unqualified',

@@ -22,7 +22,8 @@ type Rect = readonly [number, number, number, number]
 type Box = readonly [number, number, number, number, number, number]
 type Cell = {
   readonly id: BranchId
-  readonly case: { sideLimitsX: readonly [number, number]; frontY: number; roofZ: number; permanentLowerTroughLipZ: number }
+  readonly case: { plan: readonly (readonly [number, number])[]; sideLimitsX: readonly [number, number]; frontY: number; roofZ: number; permanentLowerTroughLipZ: number }
+  readonly vent: { inner: Point; formedDiameterMM: number }
   readonly access: {
     splitCollarODMM: number; originalFixedFrontRailAfterSettingMM: number
     upperCutZ: number; requiredDrawMM: number; outsideRelease: Point; parkedRiserY: number
@@ -207,7 +208,8 @@ export function runInletRemovalCase(resolved: CurrentDesignResolution, input: un
     sweptGap([exteriorRelease, wallPoint], obstacle, trial.drawMm, bareRadiusMm))
   const calculation = {
     drawMm: trial.drawMm,
-    wetBox: { sideLimitsXMm: sideLimitsX, frontYMm: frontY },
+    wetBox: { sideLimitsXMm: sideLimitsX, frontYMm: frontY, planMm: cell.case.plan,
+      innerVentAxisMm: cell.vent.inner, formedVentDiameterMm: cell.vent.formedDiameterMM },
     washerEnvelopeMm: box,
     settingsMm: { fabrication: fabricationSettingMm, access: clearanceSettingMm },
     exteriorTipPastInsideFaceMm: round(exteriorRelease[1] + trial.drawMm - innerY),
@@ -215,7 +217,8 @@ export function runInletRemovalCase(resolved: CurrentDesignResolution, input: un
     troughGapAfterSettingMm: round(combinedGap(lipBox) - fabricationSettingMm),
     sleeveRadialReserveAfterSettingMm: sleeveReserve(branch, trial.drawMm, reference.sleeve.cleanBoreMM / 2),
     roofStrip: { xMm: [x - requiredHalfSlotMm, x + requiredHalfSlotMm] as const, yMm: slot, zMm: cell.case.roofZ,
-      widthMm: 2 * requiredHalfSlotMm, lengthMm: round(slot[1] - slot[0]), splitCollarTravelMm: collarTravelMm },
+      widthMm: 2 * requiredHalfSlotMm, lengthMm: round(slot[1] - slot[0]), splitCollarTravelMm: collarTravelMm,
+      boundSplitCollarOutsideDiameterMm: cell.access.splitCollarODMM, jacketOutsideDiameterMm: 2 * jacketRadiusMm },
     dryBreak: { xMm: x, yMm: startY, zMm: cut[2], fixedCompanionRetreatMm: null, guideAndFirstRestQualified: false },
   }
   const diagnostics = [
