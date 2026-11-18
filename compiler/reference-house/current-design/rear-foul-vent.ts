@@ -27,6 +27,13 @@ interface VentCase extends VentParameters {
   readonly planDigest: string
   readonly bindingDigest: string
   readonly routeId: typeof id
+  readonly buriedReceiving?: BuriedReceivingCase
+}
+
+interface BuriedReceivingCase {
+  readonly hostAxisXYZMm: SpatialPoint
+  readonly stackGradeZMm: number
+  readonly hostGradeZMm: number
 }
 
 interface ModelledOpening {
@@ -94,6 +101,16 @@ interface VentComparison {
 
 interface StudyReceipt {
   readonly dryReturnComparison: { readonly lowObliqueReturn: VentComparison }
+  readonly existingStackXYmm: Point
+  readonly independentFoul: {
+    readonly previousConditionalHostXYZmm: SpatialPoint
+    readonly trialGradeZmm: number
+    readonly trialCoverMM: number
+    readonly maximumUpstreamAxisZmm: number
+    readonly minimumDirectPlanLengthMM: number
+    readonly minimumDropAt1In40MM: number
+    readonly minimumPipeEnvelopeToWestGirderPlanMM: number
+  }
 }
 
 interface NativeResult {
@@ -144,7 +161,7 @@ function readReference(binding: Bindings) {
     }
     return [path, source.blob]
   }))
-  return { method, receipt, reference, sourceBlobs }
+  return { method, receipt, reference, sourceBlobs, receivingReference: decoded }
 }
 
 export function readRearFoulVentCase(resolved: CurrentDesignResolution) {
@@ -160,7 +177,8 @@ export function readRearFoulVentCase(resolved: CurrentDesignResolution) {
 
 function admitCase(value: unknown, binding: Bindings): VentCase {
   const keys = ['schema', 'planDigest', 'bindingDigest', 'routeId', 'riserAxisXYMm', 'wetStackAirTakeoffZMm', 'terminalZMm']
-  if (!value || typeof value !== 'object' || Array.isArray(value) || Object.keys(value).length !== keys.length
+  if (!value || typeof value !== 'object' || Array.isArray(value)
+      || Object.keys(value).some(key => key !== 'buriedReceiving' && !keys.includes(key))
       || keys.some(key => !Object.hasOwn(value, key))) throw new Error('Expected an explicit versioned rear foul vent case')
   const trial = value as VentCase
   if (trial.schema !== 'mat-rear-foul-vent-case/1' || trial.routeId !== id
@@ -172,7 +190,54 @@ function admitCase(value: unknown, binding: Bindings): VentCase {
       || !Number.isFinite(trial.wetStackAirTakeoffZMm) || !Number.isFinite(trial.terminalZMm)) {
     throw new Error('Use finite riser coordinates and levels in millimetres')
   }
+  if (Object.hasOwn(trial, 'buriedReceiving')) {
+    const receiving = trial.buriedReceiving
+    if (!receiving || typeof receiving !== 'object' || Array.isArray(receiving)
+        || Object.keys(receiving).length !== 3 || !Array.isArray(receiving.hostAxisXYZMm)
+        || receiving.hostAxisXYZMm.length !== 3 || !receiving.hostAxisXYZMm.every(Number.isFinite)
+        || !Number.isFinite(receiving.stackGradeZMm) || !Number.isFinite(receiving.hostGradeZMm)) {
+      throw new Error('Use a buried receiving host axis and two finite grade levels in millimetres')
+    }
+  }
   return trial
+}
+
+function compareBuriedReceiving(reference: StudyReceipt, trial?: BuriedReceivingCase) {
+  const { independentFoul: basis, existingStackXYmm: stack } = reference
+  const { hostAxisXYZMm: host, stackGradeZMm, hostGradeZMm } = trial ?? {
+    hostAxisXYZMm: basis.previousConditionalHostXYZmm,
+    stackGradeZMm: basis.trialGradeZmm, hostGradeZMm: basis.trialGradeZmm,
+  }
+  const [hostX, hostY, hostZ] = host
+  const [stackX, stackY] = stack
+  const lengthMm = Math.hypot(hostX - stackX, hostY - stackY)
+  if (!Number.isFinite(lengthMm) || lengthMm <= 0) throw new Error('Use a finite nonzero west foul receiving run')
+  const fall = basis.minimumDropAt1In40MM / basis.minimumDirectPlanLengthMM
+  const radiusMm = basis.trialGradeZmm - basis.trialCoverMM - basis.maximumUpstreamAxisZmm
+  const dropMm = lengthMm * fall
+  const stackAxisZMm = hostZ + dropMm
+  const stackCoverMm = stackGradeZMm - stackAxisZMm - radiusMm
+  const hostCoverMm = hostGradeZMm - hostZ - radiusMm
+  const westGirderClearanceMm = basis.minimumPipeEnvelopeToWestGirderPlanMM + stackX - Math.max(stackX, hostX)
+  const maxHostAxisZMm = Math.min(stackGradeZMm - radiusMm - basis.trialCoverMM - dropMm,
+    hostGradeZMm - radiusMm - basis.trialCoverMM)
+  if (![dropMm, stackAxisZMm, stackCoverMm, hostCoverMm, westGirderClearanceMm, maxHostAxisZMm].every(Number.isFinite)) {
+    throw new Error('West foul receiving geometry exceeds the finite comparison range')
+  }
+  const failedChecks = [
+    ...(hostZ > maxHostAxisZMm ? ['MINIMUM_CROWN_COVER'] : []),
+    ...(westGirderClearanceMm < 0 ? ['WEST_GIRDER_PLAN_CLEARANCE'] : []),
+  ]
+  return {
+    state: failedChecks.length ? 'geometric-failure' : 'bounded-direct-run-comparison',
+    stackAxisXYZMm: [stackX, stackY, stackAxisZMm], hostAxisXYZMm: host,
+    gradient: fall, planLengthMm: lengthMm, fallMm: dropMm,
+    stackGradeZMm, hostGradeZMm, pipeEnvelopeDiameterMm: radiusMm * 2,
+    requiredCoverMm: basis.trialCoverMM, stackCoverMm, hostCoverMm,
+    maximumHostAxisZMm: maxHostAxisZMm, westGirderClearanceMm, failedChecks,
+    installedAcceptance: false as const,
+    scope: 'Straight minimum-fall axis and linear grade between endpoints. Site profile, fittings, support, inspection, hydraulic and lawful receiving duties remain open.',
+  }
 }
 
 function planDrawing(comparison: VentComparison, caseDigest: string): DrawingSceneV2 | undefined {
@@ -212,7 +277,8 @@ export function runRearFoulVentCase(resolved: CurrentDesignResolution, value: un
   const binding = bindingsFor(resolved)
   if (!binding) return unavailable()
   const trial = admitCase(value, binding)
-  const { method, receipt, reference, sourceBlobs } = readReference(binding)
+  const { method, receipt, reference, sourceBlobs, receivingReference } = readReference(binding)
+  const buriedReceiving = compareBuriedReceiving(receivingReference, trial.buriedReceiving)
   const { house } = readBoundOccupiedServices(resolved)
   const occupied = { model: house.model }
   const { riserAxisXYMm, wetStackAirTakeoffZMm, terminalZMm } = trial
@@ -243,6 +309,7 @@ export function runRearFoulVentCase(resolved: CurrentDesignResolution, value: un
       occupiedScheduleBlob: sourceBlobs[occupiedSchedulePath],
     },
     comparison,
+    buriedReceiving,
     drawing: planDrawing(comparison, caseDigest),
   }
 }

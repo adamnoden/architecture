@@ -44,6 +44,8 @@ Continue the west route only on an admissible foul host with a proved open stack
 
 The existing western receiving comparison is **X−450/Y11177.5/Z−2480** on the separate foul network. Connecting from the trial stack needs at least **44.6 mm** fall at 1:40. At the retained Z−1800 grade and 600 mm crown-cover comparison for a Ø160 buried envelope, the downstream axis must be **Z−2524.6 or lower** for that direct route. Retaining the old level leaves about **555.4 mm** cover upstream. Confirm the actual separate host, support, grades, fittings, excavation and inspection territory. Keep the wet liner and inner air seal independent of the removable covers and the drained cavity empty.
 
+The compiler reports this shortfall in `buriedReceiving`. The same rear-foul case accepts a candidate `buriedReceiving` with `hostAxisXYZMm`, `stackGradeZMm` and `hostGradeZMm`. It checks both ends of the straight minimum-fall axis against the linear grade and the entire plan envelope against the west girder face. At the same plan position and flat grade, a trial axis at Z−2530 clears the geometric screen. Dropping the host grade to Z−1880 cuts the downstream cover to 570 mm. Use the actual site profile and fittings for the next check.
+
 Keep the rear floor port as an unresolved source reservation while these interfaces are open. The Y9400 sleeves earn a routing comparison. Retiring the old port needs a joined foul and ventilation route, independent roof renewal, and structural and weather details for both the new apertures and former port.
 
 Reproduce both comparisons with `python3 -B project/mat/studies/rear-wc-west-gravity.py . --check` and `python3 -B project/mat/studies/rear-wc-west-roof-interface.py . --check`.

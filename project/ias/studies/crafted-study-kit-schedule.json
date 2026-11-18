@@ -5503,7 +5503,7 @@
           "schema": "ias-study-floor-first-rest/1",
           "physicalAcceptance": false,
           "numericalScope": "Straight, unrotated whole-face transfer after local removable edges are released.",
-          "witnessCount": 118,
+          "witnessCount": 119,
           "partCount": 144,
           "parts": [
             {
@@ -10289,48 +10289,82 @@
               "state": "direct-geometry-witness",
               "witness": {
                 "stage": "chair-parked",
-                "restPartId": "GROUND/G-STUDY/room-kit/floor/500/2553",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/800/2300",
                 "shiftXYMm": [
-                  0,
-                  160.75
+                  300,
+                  0
                 ],
                 "faceSweepXYXYMm": [
                   501.5,
                   2406.5,
-                  798.5,
-                  2712.25
+                  1098.5,
+                  2551.5
                 ],
-                "reserveMm": 36.867772362156416,
+                "reserveMm": 36.952710689412925,
                 "worker": {
                   "points": [
                     [
                       1133.5,
-                      2469.219621461306
+                      2479
                     ],
                     [
-                      1133.5,
-                      2629.969621461306
+                      1433.5,
+                      2479
                     ]
                   ],
                   "radius": 300,
-                  "minimumClearance": 202.5303785386941,
-                  "limitingObstacle": "wall:study-L-north:0",
+                  "minimumClearance": 204.45713395689035,
+                  "limitingObstacle": "study-emitter-plinth",
                   "segment": 0
                 },
-                "reachMm": 563.1322276378436,
+                "reachMm": 563.0472893105871,
                 "stanceIntervalMm": [
                   2271.6892429226114,
-                  2666.75
+                  2686.3107570773886
                 ],
                 "normalAxis": "x"
               }
             },
             {
               "partId": "GROUND/G-STUDY/room-kit/floor/634.5/1246",
-              "state": "panel-sweep-unsupported",
-              "encounteredPlanProjectionIds": [
-                "study-desk"
-              ]
+              "state": "direct-geometry-witness",
+              "witness": {
+                "stage": "desk-and-chair-parked",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/800/1103",
+                "shiftXYMm": [
+                  232.75,
+                  0
+                ],
+                "faceSweepXYXYMm": [
+                  636,
+                  1247.5,
+                  1031.25,
+                  1398.5
+                ],
+                "reserveMm": 90.58758388566207,
+                "worker": {
+                  "points": [
+                    [
+                      909.3052823043682,
+                      912.5
+                    ],
+                    [
+                      1142.0552823043681,
+                      912.5
+                    ]
+                  ],
+                  "radius": 300,
+                  "minimumClearance": 132.13446192404456,
+                  "limitingObstacle": "study-emitter-plinth",
+                  "segment": 0
+                },
+                "reachMm": 509.41241611433793,
+                "stanceIntervalMm": [
+                  752.5,
+                  1066.1105646087365
+                ],
+                "normalAxis": "y"
+              }
             },
             {
               "partId": "GROUND/G-STUDY/room-kit/floor/634.5/1400",
@@ -10460,16 +10494,16 @@
               "state": "direct-geometry-witness",
               "witness": {
                 "stage": "chair-parked",
-                "restPartId": "GROUND/G-STUDY/room-kit/floor/634.5/2000",
+                "restPartId": "GROUND/G-STUDY/room-kit/floor/500/2405",
                 "shiftXYMm": [
                   0,
-                  -202.5
+                  126.5
                 ],
                 "faceSweepXYXYMm": [
                   636,
-                  2099,
+                  2301.5,
                   798.5,
-                  2403.5
+                  2530
                 ],
                 "reserveMm": 100.21098201340999,
                 "worker": {
@@ -10480,7 +10514,7 @@
                     ],
                     [
                       1133.5,
-                      2150
+                      2479
                     ]
                   ],
                   "radius": 300,
@@ -11119,7 +11153,7 @@
           "Maintained door operation and handling of floor parts from a supported deck"
         ],
         "source": {
-          "project/ias/studies/study-furniture-motion.py": "72b1dda0ae74adcdc74f9c0431d60e0757fdb8d14d7a0623aba63c395822ace0",
+          "project/ias/studies/study-furniture-motion.py": "d9b9ead516f9f0e6307689fcb2953a7eec22dd10e5f8edd1d33ed150417e2045",
           "project/bcr/studies/bay-interface-study.py": "7fea8b8b1b8e66a6f52ae8a6124eda84f8759a9c42c3ae31644296679f4e3e7c"
         }
       },

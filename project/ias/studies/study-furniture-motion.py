@@ -125,14 +125,22 @@ def floor_first_rests(bcr, house, fixed, desk, chair, desk_park, chair_park, scr
         face, box, keys = part['face'], part['box'], part['keyCentresXYMm']
         shortlist, controls, whole_rest, clear_face_sweep = [], set(), False, False
         for receiving,(u,v) in zip(parts,centres):
-            if (x,y) == (u,v) or (x != u and y != v):
+            if receiving is part:
                 continue
-            delta = [u-x,v-y]
-            axis = 0 if delta[0] else 1
-            boundary_gap = max(box[axis]-receiving['box'][axis+2],receiving['box'][axis]-box[axis+2],0)
-            moved = [value+delta[i%2] for i,value in enumerate(face)]
             rest = receiving['face']
-            if boundary_gap > 0 or not all(rest[i] <= moved[i]+1e-8 and moved[i+2] <= rest[i+2]+1e-8 for i in (0,1)):
+            for axis in (0,1):
+                tangent = 1-axis
+                if not (rest[tangent] <= face[tangent]+1e-8 and face[tangent+2] <= rest[tangent+2]+1e-8):
+                    continue
+                if not (abs(box[axis]-receiving['box'][axis+2]) < 1e-8
+                        or abs(receiving['box'][axis]-box[axis+2]) < 1e-8):
+                    continue
+                delta = [0,0]
+                delta[axis] = (u-x,v-y)[axis]
+                moved = [value+delta[i%2] for i,value in enumerate(face)]
+                if rest[axis] <= moved[axis]+1e-8 and moved[axis+2] <= rest[axis+2]+1e-8:
+                    break
+            else:
                 continue
             whole_rest = True
             sweep = [min(face[i],moved[i]) if i < 2 else max(face[i],moved[i]) for i in range(4)]

@@ -78,3 +78,28 @@ test('side shift and bearing allowances show specific changed geometry and keep 
   await assert.rejects(compile.inletCover({ ...cover, sideTravelMm: Number.MAX_VALUE }), /screened motion range/)
   await assert.rejects(compile.inletCover({ ...cover, anotherField: true }), /versioned south inlet cover case/)
 })
+
+test('the installed filler and formed vent are screened separately from the opened cover sweep', async () => {
+  const [{ cover: utility }, { cover: plant }] = await compile.readInletCoverCases()
+  const west = await compile.inletCover(utility)
+  const east = await compile.inletCover(plant)
+  assert.equal(west.status, 'within-conditional-cover-screen')
+  assert.equal(west.installedClosure.status, 'blocked')
+  assert.equal(west.installedClosure.clearance.installedCoverToCellSideAfterSettingMm, -45)
+  assert.equal(east.installedClosure.clearance.installedCoverToCellSideAfterSettingMm, 18)
+  assert.equal(east.installedClosure.clearance.formedVentBelowWallReturnAfterSettingMm, -1.39)
+  assert.equal(east.installedClosure.clearance.collarRadialSealLandAfterSettingMm, 2)
+  assert.deepEqual(east.installedClosure.diagnostics, ['COLLAR_RADIAL_SEAL_LAND_SHORT', 'WALL_RETURN_INTERCEPTS_FORMED_VENT'])
+
+  const closure = { notchLapMm: 10, collarSealLandMm: 4, collarOutsideDiameterMm: 92, wallReturnDepthMm: 10 }
+  const refit = await compile.inletCover({ ...plant, closure })
+  assert.equal(refit.installedClosure.status, 'within-conditional-closure-fit')
+  assert.equal(refit.installedClosure.clearance.formedVentBelowWallReturnAfterSettingMm, 0.61)
+  assert.equal(refit.installedClosure.clearance.collarInsideFillerAfterSettingMm, 1)
+  assert.equal(refit.installedClosure.wetClosureQualified, false)
+  assert.equal(refit.installedClosure.splitFillerReleaseQualified, false)
+  assert.deepEqual((await compile.inletCover({ ...utility, closure })).installedClosure.diagnostics,
+    ['RECTANGULAR_COVER_EXCEEDS_INSTALLED_CELL_PLAN'])
+  await assert.rejects(compile.inletCover({ ...plant, closure: { ...closure, notchLapMm: 0 } }), /closure comparison/)
+  await assert.rejects(compile.inletCover({ ...plant, closure: null }), /closure comparison/)
+})

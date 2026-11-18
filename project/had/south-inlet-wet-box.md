@@ -57,3 +57,9 @@ node --import tsx scripts/compile-current-design.ts --read-georgian-source |
 node -p 'JSON.stringify(require("./cover-cases.json")[0])' |
   node --import tsx scripts/compile-current-design.ts --inlet-cover -
 ```
+
+### Fit the closure while the taper and vent are still installed
+
+The motion comparison starts with the removable taper out. With the taper installed, the Utility's rectangular lid exceeds its left front edge by **45 mm** including the 5 mm setting. Carry a shaped lid and related backing into the next fit comparison. The same rectangular lid leaves **18 mm** to the Plant sides after setting.
+
+The geometric closure comparison reserves a separate split filler over the U-notch and a radial collar over the Ø74 jacket. With a 10 mm filler lap, the baseline Ø88 collar reserves **2 mm** of radial seal land after setting. The authored 4 mm comparison requires at least Ø92. At the fixed wall edge a 12 mm downward return leaves **1.61 mm** above the Utility's formed vent and overlaps Plant's by **1.39 mm**. At Plant, a 10 mm return and Ø92 collar leave **0.61 mm** above the vent and **1 mm** within the filler after setting. Run either case through the current cover method with a `closure` object containing the four trial dimensions. This checks available fit only. A split and captive filler, actual gasket compression and return continuity, seal tests and the assembled removal sequence still require evidence.
