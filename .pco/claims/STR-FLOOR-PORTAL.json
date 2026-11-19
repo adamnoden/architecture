@@ -9,8 +9,8 @@
     "label": "convergence-2026-11-19-resumed"
   },
   "claimedAt": "2026-11-19T21:54:48.397Z",
-  "heartbeatAt": "2026-11-19T23:20:27.065Z",
-  "expiresAt": "2026-11-20T00:50:27.065Z",
+  "heartbeatAt": "2026-11-19T23:53:43.396Z",
+  "expiresAt": "2026-11-20T01:23:43.396Z",
   "branch": "work/convergence-integrated-2026-11-19",
   "predecessor": {
     "leaseId": "1e462ea9-3790-42cc-8040-6bc65e6c313e",
@@ -34,8 +34,8 @@
   },
   "pr": 1584,
   "checkpoint": {
-    "evidence": "Consolidated PR #1584 published at c09e7e12ae5461c40489f75524e6fdddb6a374e4; 16 combined integration tests, 11 native mechanics checks, complete source replay, production preparation and website build pass. Current book has five generated architectural views.",
-    "next": "Observe exact-head full health and paired PDF proofs; record measured pagination; inspect rendered current plates; fresh canonical preflight and merge; then release or hand off remaining genuine engineering obligations.",
-    "blocker": "STR remains incomplete for complete roof/floor/support loading, qualified joint laws and moisture continuity. HAD requires the replacement fixed entry bay and admitted failure-flow envelope. Owner aesthetic and physical acceptance remain unearned."
+    "evidence": "429cca has seven green specialized workflows. Full health exposed one genuine stale native receipt chain and two stale test contracts; Study/freeze fixes pass9/9 and remaining tail suites pass. Actual receipt replay is finishing. First cleanup sink PR1585 retired DPC helper ref with source preserved.",
+    "next": "Publish minimal consolidated repairs, require exact-head full health and fresh3node preflight, merge1584. Continue actual retained-component accounting to replace hypothetical DPC stabilising load; no structural or roof completion is claimed.",
+    "blocker": "Full submitted-head validation pending; complete distributed support, roof/joint laws and moisture path remain internal engineering."
   }
 }
