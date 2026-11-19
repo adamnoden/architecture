@@ -9,9 +9,9 @@
     "label": "convergence-2026-11-19"
   },
   "claimedAt": "2026-11-19T20:30:01.372Z",
-  "heartbeatAt": "2026-11-19T20:50:54.454Z",
-  "expiresAt": "2026-11-19T21:35:54.454Z",
-  "branch": "work/convergence-2026-11-19",
+  "heartbeatAt": "2026-11-19T21:04:51.382Z",
+  "expiresAt": "2026-11-19T21:49:51.382Z",
+  "branch": "work/convergence-dpc-2026-11-19",
   "predecessor": {
     "leaseId": "b71fcf09-0375-4d95-a9d9-eebf11c2a61f",
     "generation": 42,
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1582 recovered exact c0671af0 full hosted health running; DPC origin audit published at work/convergence-dpc-2026-11-19 commit2971594ee5e01831c4f0c003e2221cdd725c1fa3, three targeted tests pass",
-    "next": "Finish canonical structural provenance regeneration; integrate joined HAD and IAS branches, run exact-head CI and publication preflight"
+    "evidence": "6d05f4e2e304b04573a866a481402026f497ecd7 on work/convergence-dpc-2026-11-19;16 final source/structural/DPC tests passed; native structural receipts regenerated with only2 provenance changes; #1582 merged12bd98fe",
+    "next": "Integrate final HAD split hood and IAS full-room handling branches, exact-head hosted fullhealth and publication preflight; full DPC six-component demand and whole-floor moisture path remain unresolved"
   },
   "pr": 1582
 }
