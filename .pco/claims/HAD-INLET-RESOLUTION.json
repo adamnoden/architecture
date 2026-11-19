@@ -9,8 +9,8 @@
     "label": "convergence-inlet"
   },
   "claimedAt": "2026-11-19T20:30:02.696Z",
-  "heartbeatAt": "2026-11-19T21:58:14.646Z",
-  "expiresAt": "2026-11-19T22:43:14.646Z",
+  "heartbeatAt": "2026-11-19T22:20:39.769Z",
+  "expiresAt": "2026-11-19T23:50:39.769Z",
   "branch": "work/convergence-integrated-2026-11-19",
   "predecessor": {
     "leaseId": "5ddd99a4-fd1f-49de-af1d-7d77372c4077",
@@ -34,10 +34,10 @@
       "blocker": "Geometric fit and saved dependency propagation retain physical attachment, guided retention, wet closure and loaded handling as unqualified."
     }
   },
-  "pr": 1583,
+  "pr": 1584,
   "checkpoint": {
-    "evidence": "HAD source head93f71621113cf1a96f8ce6c8579138a91445322f remains pushed on work/convergence-inlet-split-roof-2026-11-19;42 affected tests and native/current witness checks passed. Root has assembled it into the intended shared integration branch locally; shared remote publication is pending. Internal DPC LP challenge matched576 cases within1.42e-13kN; stdlib oracle matchesHiGHS within1.14e-13kN.",
-    "next": "Publish and verify shared remote head, attach final shared PR identity, inspect exact-head CI and run canonical publication preflight before merge. Do not infer whole inlet or structural acceptance from these implementation proofs.",
-    "blocker": "Shared remote publication and exact-head CI pending. HAD packet remains planned on actual carrier receiving cage/support, retained-end release and wet-seam engineering."
+    "evidence": "Shared PR #1584 exacthead07d533f650b6acf3deba9084ad6c8da704f46d5a is published, integrating HAD93f716 with STR and IAS. HAD42 affected tests, native/current-witness checks and source audit passed on predecessor. Root reports40 combined tests and6 source audits plus generation checks passed at sharedsource. Independent contact LP oracle is retained as internalvalidation, not engineeringapproval.",
+    "next": "Observe full exact-head hosted CI for PR1584, then perform fresh canonical publication preflight against the unchanged validated remotehead. Root coordinates merge and closure; release HAD lease after verified publication or durable handoff. HAD packet remains planned.",
+    "blocker": "Exact submitted-head hosted checks pending. Complete inlet still requires actual independent carrier receiving cage/support, retained-end release and wet-seam engineering; no site/physical acceptance fabricated."
   }
 }
