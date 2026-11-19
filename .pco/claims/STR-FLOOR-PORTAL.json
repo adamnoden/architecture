@@ -9,8 +9,8 @@
     "label": "convergence-2026-11-19"
   },
   "claimedAt": "2026-11-19T20:30:01.372Z",
-  "heartbeatAt": "2026-11-19T20:30:01.372Z",
-  "expiresAt": "2026-11-19T21:15:01.372Z",
+  "heartbeatAt": "2026-11-19T20:31:48.438Z",
+  "expiresAt": "2026-11-19T21:16:48.438Z",
   "branch": "work/convergence-2026-11-19",
   "predecessor": {
     "leaseId": "b71fcf09-0375-4d95-a9d9-eebf11c2a61f",
@@ -33,5 +33,9 @@
       "next": "Verify this head hosted checks, merge and release; next joint proof needs above/below DPC load classification and compatible stiffness",
       "blocker": "West route and its site envelope are conditional; current source port remains reserved and full damp-proof joint transfer is unresolved"
     }
+  },
+  "checkpoint": {
+    "evidence": "Recovered PR #1581 c0671af04745e39f97a00b393939ed46352a2731 on successor branch; hosted validation and both proof jobs succeeded",
+    "next": "Merge recovered linked-route implementation under current lease; resolve full DPC cut action classification and successor whole-frame proof"
   }
 }
