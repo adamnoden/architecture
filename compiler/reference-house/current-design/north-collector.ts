@@ -756,7 +756,8 @@ export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: 
     evidence: {
       state: isReference && !keyContact && !placementTolerance ? 'historical-demand-comparison' : 'trial-only',
       installedAcceptance: false as const,
-      outstanding: ['Continuous chord and wall cage', 'Imperforate ground splice', 'Coupled signed 52-head replay', 'Usable foul route and renewal'],
+      outstanding: ['Continuous chord and wall cage', 'Actual signed DPC crossing loads and positive transfer',
+        'Complete occupied-floor moisture boundary', 'Coupled signed 52-head replay', 'Usable foul route and renewal'],
     },
   }
 }
