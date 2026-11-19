@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 41,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "62533e71-334f-41b1-8a06-e0cb4a0ac9d7",
   "holder": {
     "kind": "codex",
     "label": "rush-night-structure"
   },
   "claimedAt": "2026-11-18T23:19:20.165Z",
-  "heartbeatAt": "2026-11-19T00:01:08.504Z",
-  "expiresAt": "2026-11-19T00:46:08.504Z",
+  "heartbeatAt": "2026-11-19T00:25:23.902Z",
+  "expiresAt": "2026-11-19T00:25:23.902Z",
   "branch": "work/rush-inlet-dependencies-2026-11-18",
   "predecessor": {
     "leaseId": "63619a6c-6728-4b79-8459-af6bb401f51a",
@@ -39,5 +39,7 @@
     "next": "Observe this submitted head hosted health/publication checks, merge, then verify main and release",
     "blocker": "Shared blocked sill still halts the bundle; physical coupled DPC, foul route, service and handling acceptance remain open"
   },
-  "pr": 1580
+  "pr": 1580,
+  "releasedAt": "2026-11-19T00:25:23.902Z",
+  "releaseReason": "handoff"
 }
