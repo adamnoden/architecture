@@ -9,8 +9,8 @@
     "label": "converge-room-kit"
   },
   "claimedAt": "2026-11-19T20:30:11.806Z",
-  "heartbeatAt": "2026-11-19T22:51:34.773Z",
-  "expiresAt": "2026-11-20T00:21:34.773Z",
+  "heartbeatAt": "2026-11-19T23:52:31.583Z",
+  "expiresAt": "2026-11-20T01:22:31.583Z",
   "branch": "work/convergence-integrated-2026-11-19",
   "predecessor": {
     "leaseId": "c3f08d3f-2feb-4d9f-98b4-82567db2cbd3",
@@ -33,9 +33,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Shared PR 1584 source head 0b982539 has typography and specialised proofs passing; IAS c840e82 complete conceptual room kit is integrated. Full-health identified a genuinely stale house-corner receipt; source-bound downstream replay and exact five-field MRA bridge repair are in progress.",
-    "next": "Complete canonical source replay, observe exact repaired-head hosted full-health CI, then perform fresh canonical merge preflight and merge PR 1584.",
-    "blocker": "Awaiting source-bound receipt repair and exact repaired-head hosted full-health; owner aesthetics, physical installation and selected material/manufacturing qualification remain explicit downstream gates."
+    "evidence": "Shared PR 1584 has seven publication proof checks green. Full-health identified stale Study expectations and historical-freeze tests; both were corrected with 9 of 9 local checks passing. Actual structural receipt-chain replay repair is finishing for imminent new-head resubmission.",
+    "next": "Observe exact new-head full hosted CI, perform fresh canonical preflight, merge PR 1584, then verify IAS projection and release this lease if still held.",
+    "blocker": "Awaiting genuine structural receipt-chain replay completion and exact resubmitted-head hosted CI; owner aesthetics and later physical/material qualification remain explicit downstream gates."
   },
   "pr": 1584
 }
