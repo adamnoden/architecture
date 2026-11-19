@@ -487,7 +487,8 @@
       "consumers": [
         "compiler/reference-house/current-design/inlet-removal.ts",
         "compiler/reference-house/current-design/inlet-cover.ts",
-        "compiler/reference-house/current-design/inlet-assembly.ts"
+        "compiler/reference-house/current-design/inlet-assembly.ts",
+        "compiler/reference-house/current-design/inlet-split-roof.ts"
       ],
       "producerChecks": [
         "node project/had/studies/south-inlet-wet-box.mjs --check",
@@ -890,6 +891,7 @@
     "project/had/studies/south-inlet-wet-box.mjs": "2b6ae4e01c29823c6d91e78cd4657b4fe373a618",
     "compiler/reference-house/current-design/inlet-removal.ts": "47f9a6615634de9062190c2e7e5e20384837d043",
     "compiler/reference-house/current-design/inlet-cover.ts": "c24b643034c96b483ea58aa59b3b1423d633d781",
-    "compiler/reference-house/current-design/inlet-assembly.ts": "f734eecd580b6b56620aeee893f6aed62b8adffe"
+    "compiler/reference-house/current-design/inlet-assembly.ts": "b1726620579d1fa0d5b04df10e28d17ce2e8d841",
+    "compiler/reference-house/current-design/inlet-split-roof.ts": "ede7080de3204f1763916d5bd136708d09a86ed8"
   }
 }

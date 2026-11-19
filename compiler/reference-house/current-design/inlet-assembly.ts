@@ -9,6 +9,7 @@ import type { runInletCoverCase } from './inlet-cover.js'
 import type { runInletFaultCase } from './inlet-fault.js'
 import type { runInletRemovalCase } from './inlet-removal.js'
 import type { runInletSillInsertCase } from './inlet-sill-insert.js'
+import { compareSplitInletRoofs, readSplitRoofReferenceSettings } from './inlet-split-roof.js'
 import type { CurrentDesignResolution } from './resolve.js'
 
 type Point = readonly [number, number, number]
@@ -52,7 +53,7 @@ export function readInletAssemblySettings(resolved: CurrentDesignResolution) {
   const source = boundJson<{ branches: { id: Branch; coordinates: Point[] }[] }>(resolved, 'south-inlet-under-sill')
   const plant = source.branches.find(branch => branch.id === 'plant')
   if (!plant) throw new Error('Missing joined plant route')
-  return { plantSouthLegLevelMm: plant.coordinates[plantLegStart(plant.coordinates)][2] }
+  return { plantSouthLegLevelMm: plant.coordinates[plantLegStart(plant.coordinates)][2], splitRoof: readSplitRoofReferenceSettings() }
 }
 
 function requireSources(sources: Sources) {
@@ -101,9 +102,9 @@ function routeDrawing(routes: Readonly<Record<Branch, readonly Point[]>>, digest
 }
 
 export function compileInletAssembly(resolved: CurrentDesignResolution, input: unknown, sources: Sources) {
-  if (!input || typeof input !== 'object' || Array.isArray(input) || Object.keys(input).length !== 1
+  if (!input || typeof input !== 'object' || Array.isArray(input) || Object.keys(input).some(key => !['plantSouthLegLevelMm', 'splitRoof'].includes(key))
       || !Object.hasOwn(input, 'plantSouthLegLevelMm')) throw new Error('Expected an explicit joined inlet plant-leg setting')
-  const { plantSouthLegLevelMm } = input as { plantSouthLegLevelMm: number }
+  const { plantSouthLegLevelMm, splitRoof } = input as { plantSouthLegLevelMm: number; splitRoof?: unknown }
   requireSources(sources)
   const underSill = boundJson<{ branches: { id: Branch; coordinates: Point[]; bores: { outer: Point; inner: Point }[] }[] }>(resolved, 'south-inlet-under-sill')
   const wet = boundJson<{ branches: { id: Branch; access: { parkedRiserY: number; requiredDrawMM: number; releasedSpoolOutline: { x: [number, number] } } }[];
@@ -181,21 +182,27 @@ export function compileInletAssembly(resolved: CurrentDesignResolution, input: u
     .identities['compiler/reference-house/current-design/inlet-assembly.ts'] }
   const caseDigest = sha256SemanticFingerprint({ input, inputs, method, insert: sources.insert.source.caseDigest,
     fault: sources.fault.source.caseDigest, removals: sources.removals.map(row => row.source.caseDigest), covers: sources.covers.map(row => row.source.caseDigest) })
+  const utilityRoom = resolved.design.storeys.GROUND.rooms.find(room => room.id === 'GROUND/G-UTILITY')
+  if (utilityRoom?.boxes.length !== 1) throw new Error('The split roof requires the bound rectangular Utility')
+  const upperClosure = Object.hasOwn(input, 'splitRoof') ? compareSplitInletRoofs(splitRoof, sources.removals, utilityRoom.boxes[0]) : null
   const branches = branchIds.map(branch => {
     const removal = sources.removals.find(row => row.branch === branch)!
     const cover = sources.covers.find(row => row.branch === branch)!
     const fault = sources.fault.branchCases.find(row => row.id === branch)!
+    const split = upperClosure?.branches.find(row => row.branch === branch)
+    const closureBlockers = split ? split.diagnostics : [
+      ...(cover.status === 'blocked' ? cover.diagnostics.map(row => row.code) : []),
+      ...cover.installedClosure.diagnostics, ...(cover.roundedRelease?.diagnostics ?? []),
+    ]
     const blockers = [
       ...(removal.status === 'blocked' ? removal.diagnostics.map(row => row.code) : []),
-      ...(cover.status === 'blocked' ? cover.diagnostics.map(row => row.code) : []),
-      ...cover.installedClosure.diagnostics,
-      ...(cover.roundedRelease?.diagnostics ?? []),
+      ...closureBlockers,
       ...(fault.status === 'within-conditional-open-flow' ? [] : [fault.status]),
     ]
     return { branch, routeMm: routes[branch], dryBreak: removal.calculation.dryBreak, sourceCaseDigests: {
       removal: removal.source.caseDigest, cover: cover.source.caseDigest, fault: sources.fault.source.caseDigest },
       geometryBlockers: [...new Set(blockers)],
-      closedWetBoundary: cover.installedClosure.status,
+      closedWetBoundary: split ? 'split-roof-fit-wet-seams-unqualified' : cover.installedClosure.status,
       sourceFailure: { upperMouth: 'blocked', lowerReliefAndHighHood: fault.status, manualClosureCredited: false },
       serviceSequence: [
         'Close the subject Lodge branch and dry local cut; prove both sides at zero pressure and drain separately.',
@@ -222,13 +229,14 @@ export function compileInletAssembly(resolved: CurrentDesignResolution, input: u
     routeCalculation: { plantSouthLegLevelMm, nativeLevelMm: nativeLevel, settingMm, comparisonMm, bendRadiusMm: radiusMm,
       pairClearanceMm: pairMm, terminalToHotMm, branches: clearance, routesClear,
       nativeWetBoxControl: { pairClearanceMm: wet.installedColdPairAfterSettingMM, utilityHotMm: wet.installedUtilityToRevisedHotAfterSettingMM } },
-    branches, geometryBlockers,
+    branches, geometryBlockers, upperClosure,
+    displacedCoverComparison: upperClosure ? { state: 'historical-comparison-only', cases: sources.covers.map(row => row.source.caseDigest) } : null,
     pressureNetwork: { continuity, utilityWasherTerminalMm: network.utilitySuccessor.vertices.coldWasher,
       utilitySinkTerminalMm: network.utilitySuccessor.vertices.coldSink, plantRemovableDropMm: station.paths.removablePlantDrop,
       plantColdConnectorMm: station.paths.exposedColdConnector, factoryColdPortMm: station.removal.factoryColdPort,
       terminalMotionProved: station.removal.completeDryLoadAndMotionProved,
       completeRouteToNamedEndpoints: true, installedContinuityAndRatedConnectionsProved: false },
-    independentSupport: { windowSill: sources.insert.calculation.loads, carrierAndWetCells: 'separate-anchored-support-not-qualified',
+    independentSupport: { upperClosure: upperClosure ? 'two handheld flat plates; full U-lid receiver and guides retired' : 'whole-lid receiver and capture unqualified', windowSill: sources.insert.calculation.loads, carrierAndWetCells: 'separate-anchored-support-not-qualified',
       pressureReactionMustNotUse: ['removable wet closure', 'window sash', 'sibling wet cell', 'finish backing'] },
     materialBoundary: { pressureTube: 'continuous metallic candidate; matched fittings and complete potable pressure rating outstanding',
       wetLiner: 'continuously joined metal; complete seams and corrosion compatibility outstanding',
@@ -239,9 +247,9 @@ export function compileInletAssembly(resolved: CurrentDesignResolution, input: u
       failureAheadOfB0: 'provider-controlled upstream action; no private stop credit',
       unattendedPressureFault: 'separate passive receiver; finite maintenance pan and manual isolation receive no fault credit' },
     remainingProof: [
-      { owner: 'HAD/MAT', stage: 'pre-site arrangement', obligation: 'Complete rated dry connection, split filler/collar wet closure and hand/tool release; ordinary operating access with covers closed.' },
+      { owner: 'HAD/MAT', stage: 'pre-site arrangement', obligation: upperClosure ? 'Complete retained pressure-end disconnect and reaction supports; direct split collar, seam and captive-retainer wet detail. The oversized filler and full-lid rest are retired.' : 'Complete rated dry connection, split filler/collar wet closure and hand/tool release; ordinary operating access with covers closed.' },
       { owner: 'STR/HAD', stage: 'pre-site arrangement', obligation: 'Actual independent sleeve/trough/receiver/guide sections, anchored pressure and handling reactions, retained sub-sill restraint and full barrier continuity.' },
-      { owner: 'HAD/IAS/MRA', stage: 'pre-site arrangement', obligation: 'Complete carried mass, hand loads and positive captured transfer, carrier and cover rest, branch isolation and restoration on the joined geometry.' },
+      { owner: 'HAD/IAS/MRA', stage: 'pre-site arrangement', obligation: upperClosure ? 'Complete the carrier mass/reaction envelope, independent guided draw and captured carrier rest, branch isolation and restoration. Split roof plates use the dimensioned hand route and conservative authored mass budgets.' : 'Complete carried mass, hand loads and positive captured transfer, carrier and cover rest, branch isolation and restoration on the joined geometry.' },
       { owner: 'DPL/HAD', stage: 'plot acceptance', obligation: 'Actual provider pressure/flow, lengths, frost protection, dry access and independent lawful receiver tailwaters.' },
       { owner: 'MAT/PHY/MRA', stage: 'installation and occupied use', obligation: 'Qualified constituents and separate assembled blocked-upper-mouth, hood, relief, wet impact, loaded handling and reinstatement challenges.' },
     ],

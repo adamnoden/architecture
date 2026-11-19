@@ -7,7 +7,7 @@ import { readGeorgianDesignSnapshot } from './current-design/georgian-source.js'
 async function inletDocument() {
   const document = await readEngineeringDocument(readGeorgianDesignSnapshot())
   const { inletSillInsert, inletFault, inletRemovals, inletCovers, inletAssembly } = document.stages
-  return { ...document, stages: { inletSillInsert, inletFault, inletRemovals, inletCovers, inletAssembly } }
+  return { ...document, stages: { inletSillInsert, inletFault, inletRemovals, inletCovers, inletAssembly: { plantSouthLegLevelMm: inletAssembly.plantSouthLegLevelMm } } }
 }
 
 async function refittedDocument() {
