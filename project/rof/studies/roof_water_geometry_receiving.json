@@ -1,0 +1,3175 @@
+{
+  "windQualification": "Declared original house-wind comparison; extra inner panels pending.",
+  "selectionStatus": "Unselected new350/425 geometry with160/190 water and60 dry caps.",
+  "role": "All-station receiving action union of installed and bounded finite local renewal; no receiver resistance is selected.",
+  "baselineCourtWidthMM": 220,
+  "joinedCourtWidthMM": 280,
+  "admittedSources": {
+    "installed": "project/rof/studies/roof_water_geometry_trial_280_60.json",
+    "finiteRenewal": "project/rof/studies/roof_water_geometry_maintenance_280_60_finite.json"
+  },
+  "excludedScope": "Unrestricted independent simultaneous dry removals are outside the permitted one-local-operation sequence and are not in this union.",
+  "stationCount": 22,
+  "stations": [
+    {
+      "xy": [
+        332.5,
+        332.5
+      ],
+      "originalRangeKN": [
+        -47.749303251,
+        98.730954064
+      ],
+      "installedRangeKN": [
+        -53.266863469,
+        126.162668908
+      ],
+      "finiteRenewalRangeKN": [
+        -52.563012544,
+        126.253871577
+      ],
+      "admittedRangeKN": [
+        -53.266863469,
+        126.253871577
+      ],
+      "admittedControllingCases": [
+        {
+          "source": "installed",
+          "case": {
+            "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+            "windIndex": 55,
+            "guard": [
+              5,
+              1
+            ],
+            "guardSign": -1
+          }
+        },
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water down|specials=1.35",
+            "windIndex": 31,
+            "programme": [
+              4,
+              4
+            ],
+            "guard": [
+              5,
+              1
+            ],
+            "guardSign": 1
+          }
+        }
+      ],
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 55,
+          "programme": [
+            1,
+            1
+          ],
+          "guard": [
+            2,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 31,
+          "programme": [
+            4,
+            4
+          ],
+          "guard": [
+            2,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "installedControllingCases": [
+        {
+          "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 55,
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 31,
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "finiteRenewalControllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0",
+          "windIndex": 55,
+          "programme": [
+            1,
+            1
+          ],
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35",
+          "windIndex": 31,
+          "programme": [
+            4,
+            4
+          ],
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "compressionIncreaseFromOriginalKN": 27.522917513,
+      "tensionIncreaseFromOriginalKN": 5.517560218,
+      "compressionIncreaseFromInstalledKN": 0.091202669,
+      "tensionIncreaseFromInstalledKN": 0.0
+    },
+    {
+      "xy": [
+        332.5,
+        3800
+      ],
+      "originalRangeKN": [
+        -40.160551187,
+        70.890009131
+      ],
+      "installedRangeKN": [
+        -42.35038966,
+        87.586577766
+      ],
+      "finiteRenewalRangeKN": [
+        -43.450646816,
+        87.818038064
+      ],
+      "admittedRangeKN": [
+        -43.450646816,
+        87.818038064
+      ],
+      "admittedControllingCases": [
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water up|specials=0.0",
+            "windIndex": 84,
+            "programme": [
+              5,
+              2
+            ],
+            "guard": [
+              6,
+              1
+            ],
+            "guardSign": -1
+          }
+        },
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.35|partial water down|specials=1.35",
+            "windIndex": 23,
+            "programme": [
+              3,
+              3
+            ],
+            "guard": [
+              6,
+              1
+            ],
+            "guardSign": 1
+          }
+        }
+      ],
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 84,
+          "programme": [
+            5,
+            2
+          ],
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 23,
+          "programme": [
+            3,
+            3
+          ],
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "installedControllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 84,
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.35|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 23,
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "finiteRenewalControllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0",
+          "windIndex": 84,
+          "programme": [
+            5,
+            2
+          ],
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.35|partial water down|specials=1.35",
+          "windIndex": 23,
+          "programme": [
+            3,
+            3
+          ],
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "compressionIncreaseFromOriginalKN": 16.928028933,
+      "tensionIncreaseFromOriginalKN": 3.290095629,
+      "compressionIncreaseFromInstalledKN": 0.231460298,
+      "tensionIncreaseFromInstalledKN": 1.100257156
+    },
+    {
+      "xy": [
+        332.5,
+        6000
+      ],
+      "originalRangeKN": [
+        -45.413785934,
+        90.108394208
+      ],
+      "installedRangeKN": [
+        -47.435436379,
+        103.098637559
+      ],
+      "finiteRenewalRangeKN": [
+        -48.210830537,
+        103.237493317
+      ],
+      "admittedRangeKN": [
+        -48.210830537,
+        103.237493317
+      ],
+      "admittedControllingCases": [
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water up|specials=0.0",
+            "windIndex": 55,
+            "programme": [
+              1,
+              1
+            ],
+            "guard": [
+              7,
+              1
+            ],
+            "guardSign": 1
+          }
+        },
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water down|specials=1.35",
+            "windIndex": 81,
+            "programme": [
+              4,
+              6
+            ],
+            "guard": [
+              7,
+              1
+            ],
+            "guardSign": -1
+          }
+        }
+      ],
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 59,
+          "programme": [
+            1,
+            5
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 81,
+          "programme": [
+            4,
+            6
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "installedControllingCases": [
+        {
+          "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 55,
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 81,
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "finiteRenewalControllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0",
+          "windIndex": 55,
+          "programme": [
+            1,
+            1
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35",
+          "windIndex": 81,
+          "programme": [
+            4,
+            6
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "compressionIncreaseFromOriginalKN": 13.129099109,
+      "tensionIncreaseFromOriginalKN": 2.797044603,
+      "compressionIncreaseFromInstalledKN": 0.138855758,
+      "tensionIncreaseFromInstalledKN": 0.775394158
+    },
+    {
+      "xy": [
+        332.5,
+        8200
+      ],
+      "originalRangeKN": [
+        -40.194164133,
+        70.687432444
+      ],
+      "installedRangeKN": [
+        -42.23004572,
+        87.144565613
+      ],
+      "finiteRenewalRangeKN": [
+        -43.330279119,
+        87.376013473
+      ],
+      "admittedRangeKN": [
+        -43.330279119,
+        87.376013473
+      ],
+      "admittedControllingCases": [
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.35|partial water up|specials=0.0",
+            "windIndex": 26,
+            "programme": [
+              3,
+              6
+            ],
+            "guard": [
+              7,
+              1
+            ],
+            "guardSign": -1
+          }
+        },
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.35|partial water down|specials=1.35",
+            "windIndex": 18,
+            "programme": [
+              2,
+              5
+            ],
+            "guard": [
+              7,
+              1
+            ],
+            "guardSign": 1
+          }
+        }
+      ],
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 95,
+          "programme": [
+            6,
+            6
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 18,
+          "programme": [
+            2,
+            5
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "installedControllingCases": [
+        {
+          "case": "0.35|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 26,
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.35|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 18,
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "finiteRenewalControllingCases": [
+        {
+          "case": "0.35|partial water up|specials=0.0",
+          "windIndex": 26,
+          "programme": [
+            3,
+            6
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.35|partial water down|specials=1.35",
+          "windIndex": 18,
+          "programme": [
+            2,
+            5
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "compressionIncreaseFromOriginalKN": 16.688581029,
+      "tensionIncreaseFromOriginalKN": 3.136114986,
+      "compressionIncreaseFromInstalledKN": 0.23144786,
+      "tensionIncreaseFromInstalledKN": 1.100233399
+    },
+    {
+      "xy": [
+        332.5,
+        11667.5
+      ],
+      "originalRangeKN": [
+        -47.737310795,
+        98.727239926
+      ],
+      "installedRangeKN": [
+        -53.190511161,
+        126.092658685
+      ],
+      "finiteRenewalRangeKN": [
+        -52.479458237,
+        126.183745655
+      ],
+      "admittedRangeKN": [
+        -53.190511161,
+        126.183745655
+      ],
+      "admittedControllingCases": [
+        {
+          "source": "installed",
+          "case": {
+            "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+            "windIndex": 58,
+            "guard": [
+              1,
+              1
+            ],
+            "guardSign": -1
+          }
+        },
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water down|specials=1.35",
+            "windIndex": 28,
+            "programme": [
+              4,
+              1
+            ],
+            "guard": [
+              1,
+              1
+            ],
+            "guardSign": 1
+          }
+        }
+      ],
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 58,
+          "programme": [
+            1,
+            4
+          ],
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 28,
+          "programme": [
+            4,
+            1
+          ],
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "installedControllingCases": [
+        {
+          "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 58,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 28,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "finiteRenewalControllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0",
+          "windIndex": 58,
+          "programme": [
+            1,
+            4
+          ],
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35",
+          "windIndex": 28,
+          "programme": [
+            4,
+            1
+          ],
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "compressionIncreaseFromOriginalKN": 27.456505729,
+      "tensionIncreaseFromOriginalKN": 5.453200366,
+      "compressionIncreaseFromInstalledKN": 0.09108697,
+      "tensionIncreaseFromInstalledKN": 0.0
+    },
+    {
+      "xy": [
+        3917.5,
+        3917.5
+      ],
+      "originalRangeKN": [
+        -105.940128545,
+        195.254262108
+      ],
+      "installedRangeKN": [
+        -112.199197946,
+        201.931105772
+      ],
+      "finiteRenewalRangeKN": [
+        -113.031203417,
+        202.126933903
+      ],
+      "admittedRangeKN": [
+        -113.031203417,
+        202.126933903
+      ],
+      "admittedControllingCases": [
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water down|specials=0.0",
+            "windIndex": 31,
+            "programme": [
+              4,
+              4
+            ],
+            "guard": [
+              4,
+              1
+            ],
+            "guardSign": 1
+          }
+        },
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water up|specials=1.35",
+            "windIndex": 55,
+            "programme": [
+              1,
+              1
+            ],
+            "guard": [
+              4,
+              1
+            ],
+            "guardSign": -1
+          }
+        }
+      ],
+      "originalControllingCases": [
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 31,
+          "programme": [
+            4,
+            4
+          ],
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 55,
+          "programme": [
+            1,
+            1
+          ],
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "installedControllingCases": [
+        {
+          "case": "0.2|partial water down|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 31,
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.2|partial water up|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 55,
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "finiteRenewalControllingCases": [
+        {
+          "case": "0.2|partial water down|specials=0.0",
+          "windIndex": 31,
+          "programme": [
+            4,
+            4
+          ],
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.2|partial water up|specials=1.35",
+          "windIndex": 55,
+          "programme": [
+            1,
+            1
+          ],
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "compressionIncreaseFromOriginalKN": 6.872671795,
+      "tensionIncreaseFromOriginalKN": 7.091074872,
+      "compressionIncreaseFromInstalledKN": 0.195828131,
+      "tensionIncreaseFromInstalledKN": 0.832005471
+    },
+    {
+      "xy": [
+        3917.5,
+        6000
+      ],
+      "originalRangeKN": [
+        -74.414478505,
+        133.593356869
+      ],
+      "installedRangeKN": [
+        -80.232860569,
+        149.609894559
+      ],
+      "finiteRenewalRangeKN": [
+        -80.738948084,
+        149.695271434
+      ],
+      "admittedRangeKN": [
+        -80.738948084,
+        149.695271434
+      ],
+      "admittedControllingCases": [
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water up|specials=0.0",
+            "windIndex": 6,
+            "programme": [
+              1,
+              0
+            ],
+            "guard": [
+              4,
+              1
+            ],
+            "guardSign": -1
+          }
+        },
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water down|specials=1.35",
+            "windIndex": 28,
+            "programme": [
+              4,
+              1
+            ],
+            "guard": [
+              4,
+              1
+            ],
+            "guardSign": 1
+          }
+        }
+      ],
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 6,
+          "programme": [
+            1,
+            0
+          ],
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 31,
+          "programme": [
+            4,
+            4
+          ],
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "installedControllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 6,
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 28,
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "finiteRenewalControllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0",
+          "windIndex": 6,
+          "programme": [
+            1,
+            0
+          ],
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35",
+          "windIndex": 28,
+          "programme": [
+            4,
+            1
+          ],
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "compressionIncreaseFromOriginalKN": 16.101914565,
+      "tensionIncreaseFromOriginalKN": 6.324469579,
+      "compressionIncreaseFromInstalledKN": 0.085376875,
+      "tensionIncreaseFromInstalledKN": 0.506087515
+    },
+    {
+      "xy": [
+        3917.5,
+        8082.5
+      ],
+      "originalRangeKN": [
+        -106.894050731,
+        194.995722113
+      ],
+      "installedRangeKN": [
+        -113.565570876,
+        199.501561707
+      ],
+      "finiteRenewalRangeKN": [
+        -113.673389111,
+        199.595671061
+      ],
+      "admittedRangeKN": [
+        -113.673389111,
+        199.595671061
+      ],
+      "admittedControllingCases": [
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water down|specials=0.0",
+            "windIndex": 28,
+            "programme": [
+              4,
+              1
+            ],
+            "guard": [
+              0,
+              1
+            ],
+            "guardSign": 1
+          }
+        },
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water up|specials=1.35",
+            "windIndex": 58,
+            "programme": [
+              1,
+              4
+            ],
+            "guard": [
+              0,
+              1
+            ],
+            "guardSign": -1
+          }
+        }
+      ],
+      "originalControllingCases": [
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 28,
+          "programme": [
+            4,
+            1
+          ],
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 58,
+          "programme": [
+            1,
+            4
+          ],
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "installedControllingCases": [
+        {
+          "case": "0.2|partial water down|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 28,
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.2|partial water up|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 58,
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "finiteRenewalControllingCases": [
+        {
+          "case": "0.2|partial water down|specials=0.0",
+          "windIndex": 28,
+          "programme": [
+            4,
+            1
+          ],
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.2|partial water up|specials=1.35",
+          "windIndex": 58,
+          "programme": [
+            1,
+            4
+          ],
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "compressionIncreaseFromOriginalKN": 4.599948948,
+      "tensionIncreaseFromOriginalKN": 6.77933838,
+      "compressionIncreaseFromInstalledKN": 0.094109354,
+      "tensionIncreaseFromInstalledKN": 0.107818235
+    },
+    {
+      "xy": [
+        4700,
+        332.5
+      ],
+      "originalRangeKN": [
+        -46.074572124,
+        96.837110899
+      ],
+      "installedRangeKN": [
+        -51.010234928,
+        117.756315525
+      ],
+      "finiteRenewalRangeKN": [
+        -50.280238824,
+        117.919552652
+      ],
+      "admittedRangeKN": [
+        -51.010234928,
+        117.919552652
+      ],
+      "admittedControllingCases": [
+        {
+          "source": "installed",
+          "case": {
+            "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+            "windIndex": 69,
+            "guard": [
+              0,
+              1
+            ],
+            "guardSign": -1
+          }
+        },
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water down|specials=1.35",
+            "windIndex": 59,
+            "programme": [
+              1,
+              5
+            ],
+            "guard": [
+              0,
+              1
+            ],
+            "guardSign": 1
+          }
+        }
+      ],
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original stripped suction",
+          "windIndex": 69,
+          "programme": [
+            3,
+            1
+          ],
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 66,
+          "programme": [
+            2,
+            5
+          ],
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "installedControllingCases": [
+        {
+          "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 69,
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 59,
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "finiteRenewalControllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0",
+          "windIndex": 69,
+          "programme": [
+            3,
+            1
+          ],
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35",
+          "windIndex": 59,
+          "programme": [
+            1,
+            5
+          ],
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "compressionIncreaseFromOriginalKN": 21.082441753,
+      "tensionIncreaseFromOriginalKN": 4.935662804,
+      "compressionIncreaseFromInstalledKN": 0.163237127,
+      "tensionIncreaseFromInstalledKN": 0.0
+    },
+    {
+      "xy": [
+        4700,
+        11667.5
+      ],
+      "originalRangeKN": [
+        -46.07524877,
+        97.189040034
+      ],
+      "installedRangeKN": [
+        -50.967413051,
+        117.754439411
+      ],
+      "finiteRenewalRangeKN": [
+        -50.647556809,
+        118.044099175
+      ],
+      "admittedRangeKN": [
+        -50.967413051,
+        118.044099175
+      ],
+      "admittedControllingCases": [
+        {
+          "source": "installed",
+          "case": {
+            "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+            "windIndex": 65,
+            "guard": [
+              4,
+              1
+            ],
+            "guardSign": -1
+          }
+        },
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water down|specials=1.35",
+            "windIndex": 57,
+            "programme": [
+              1,
+              3
+            ],
+            "guard": [
+              4,
+              1
+            ],
+            "guardSign": 1
+          }
+        }
+      ],
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original stripped suction",
+          "windIndex": 65,
+          "programme": [
+            2,
+            4
+          ],
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 23,
+          "programme": [
+            3,
+            3
+          ],
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "installedControllingCases": [
+        {
+          "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 65,
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 57,
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "finiteRenewalControllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0",
+          "windIndex": 65,
+          "programme": [
+            2,
+            4
+          ],
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35",
+          "windIndex": 57,
+          "programme": [
+            1,
+            3
+          ],
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "compressionIncreaseFromOriginalKN": 20.855059141,
+      "tensionIncreaseFromOriginalKN": 4.892164281,
+      "compressionIncreaseFromInstalledKN": 0.289659764,
+      "tensionIncreaseFromInstalledKN": 0.0
+    },
+    {
+      "xy": [
+        5925,
+        8082.5
+      ],
+      "originalRangeKN": [
+        -74.357454089,
+        133.826073621
+      ],
+      "installedRangeKN": [
+        -81.467664514,
+        147.708232374
+      ],
+      "finiteRenewalRangeKN": [
+        -81.486128405,
+        147.909651736
+      ],
+      "admittedRangeKN": [
+        -81.486128405,
+        147.909651736
+      ],
+      "admittedControllingCases": [
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water up|specials=0.0",
+            "windIndex": 3,
+            "programme": [
+              0,
+              4
+            ],
+            "guard": [
+              7,
+              1
+            ],
+            "guardSign": -1
+          }
+        },
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water down|specials=1.35",
+            "windIndex": 7,
+            "programme": [
+              1,
+              1
+            ],
+            "guard": [
+              7,
+              1
+            ],
+            "guardSign": 1
+          }
+        }
+      ],
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 3,
+          "programme": [
+            0,
+            4
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 7,
+          "programme": [
+            1,
+            1
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "installedControllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 3,
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 7,
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "finiteRenewalControllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0",
+          "windIndex": 3,
+          "programme": [
+            0,
+            4
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35",
+          "windIndex": 7,
+          "programme": [
+            1,
+            1
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "compressionIncreaseFromOriginalKN": 14.083578115,
+      "tensionIncreaseFromOriginalKN": 7.128674316,
+      "compressionIncreaseFromInstalledKN": 0.201419362,
+      "tensionIncreaseFromInstalledKN": 0.018463891
+    },
+    {
+      "xy": [
+        6000,
+        3917.5
+      ],
+      "originalRangeKN": [
+        -74.287089141,
+        133.671040523
+      ],
+      "installedRangeKN": [
+        -79.763212052,
+        151.693906491
+      ],
+      "finiteRenewalRangeKN": [
+        -80.358547722,
+        151.80092626
+      ],
+      "admittedRangeKN": [
+        -80.358547722,
+        151.80092626
+      ],
+      "admittedControllingCases": [
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water up|specials=0.0",
+            "windIndex": 0,
+            "programme": [
+              0,
+              1
+            ],
+            "guard": [
+              6,
+              1
+            ],
+            "guardSign": -1
+          }
+        },
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water down|specials=1.35",
+            "windIndex": 10,
+            "programme": [
+              1,
+              4
+            ],
+            "guard": [
+              6,
+              1
+            ],
+            "guardSign": 1
+          }
+        }
+      ],
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 0,
+          "programme": [
+            0,
+            1
+          ],
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 10,
+          "programme": [
+            1,
+            4
+          ],
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "installedControllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 0,
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 10,
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "finiteRenewalControllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0",
+          "windIndex": 0,
+          "programme": [
+            0,
+            1
+          ],
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35",
+          "windIndex": 10,
+          "programme": [
+            1,
+            4
+          ],
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "compressionIncreaseFromOriginalKN": 18.129885737,
+      "tensionIncreaseFromOriginalKN": 6.071458581,
+      "compressionIncreaseFromInstalledKN": 0.107019769,
+      "tensionIncreaseFromInstalledKN": 0.59533567
+    },
+    {
+      "xy": [
+        7300,
+        332.5
+      ],
+      "originalRangeKN": [
+        -46.057397403,
+        97.176829602
+      ],
+      "installedRangeKN": [
+        -51.977702806,
+        121.522971345
+      ],
+      "finiteRenewalRangeKN": [
+        -49.818075444,
+        121.686209471
+      ],
+      "admittedRangeKN": [
+        -51.977702806,
+        121.686209471
+      ],
+      "admittedControllingCases": [
+        {
+          "source": "installed",
+          "case": {
+            "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+            "windIndex": 55,
+            "guard": [
+              1,
+              1
+            ],
+            "guardSign": -1
+          }
+        },
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water down|specials=1.35",
+            "windIndex": 81,
+            "programme": [
+              4,
+              6
+            ],
+            "guard": [
+              1,
+              1
+            ],
+            "guardSign": 1
+          }
+        }
+      ],
+      "originalControllingCases": [
+        {
+          "crack": 0.35,
+          "mode": "original stripped suction",
+          "windIndex": 83,
+          "programme": [
+            5,
+            1
+          ],
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 47,
+          "programme": [
+            6,
+            6
+          ],
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "installedControllingCases": [
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 55,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 81,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "finiteRenewalControllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0",
+          "windIndex": 55,
+          "programme": [
+            1,
+            1
+          ],
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35",
+          "windIndex": 81,
+          "programme": [
+            4,
+            6
+          ],
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "compressionIncreaseFromOriginalKN": 24.509379869,
+      "tensionIncreaseFromOriginalKN": 5.920305403,
+      "compressionIncreaseFromInstalledKN": 0.163238126,
+      "tensionIncreaseFromInstalledKN": 0.0
+    },
+    {
+      "xy": [
+        7300,
+        11667.5
+      ],
+      "originalRangeKN": [
+        -46.047982504,
+        96.835967781
+      ],
+      "installedRangeKN": [
+        -52.263440162,
+        124.956449571
+      ],
+      "finiteRenewalRangeKN": [
+        -49.536013445,
+        125.119643512
+      ],
+      "admittedRangeKN": [
+        -52.263440162,
+        125.119643512
+      ],
+      "admittedControllingCases": [
+        {
+          "source": "installed",
+          "case": {
+            "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+            "windIndex": 58,
+            "guard": [
+              5,
+              1
+            ],
+            "guardSign": -1
+          }
+        },
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.35|partial water down|specials=1.35",
+            "windIndex": 32,
+            "programme": [
+              4,
+              5
+            ],
+            "guard": [
+              5,
+              1
+            ],
+            "guardSign": 1
+          }
+        }
+      ],
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original stripped suction",
+          "windIndex": 93,
+          "programme": [
+            6,
+            4
+          ],
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 36,
+          "programme": [
+            5,
+            2
+          ],
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "installedControllingCases": [
+        {
+          "case": "0.35|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 58,
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.35|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 32,
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "finiteRenewalControllingCases": [
+        {
+          "case": "0.35|partial water up|specials=0.0",
+          "windIndex": 58,
+          "programme": [
+            1,
+            4
+          ],
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.35|partial water down|specials=1.35",
+          "windIndex": 32,
+          "programme": [
+            4,
+            5
+          ],
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "compressionIncreaseFromOriginalKN": 28.283675731,
+      "tensionIncreaseFromOriginalKN": 6.215457658,
+      "compressionIncreaseFromInstalledKN": 0.163193941,
+      "tensionIncreaseFromInstalledKN": 0.0
+    },
+    {
+      "xy": [
+        8082.5,
+        3917.5
+      ],
+      "originalRangeKN": [
+        -106.16065923,
+        195.332282218
+      ],
+      "installedRangeKN": [
+        -112.790132809,
+        201.301559351
+      ],
+      "finiteRenewalRangeKN": [
+        -113.622268013,
+        201.497146781
+      ],
+      "admittedRangeKN": [
+        -113.622268013,
+        201.497146781
+      ],
+      "admittedControllingCases": [
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water down|specials=0.0",
+            "windIndex": 10,
+            "programme": [
+              1,
+              4
+            ],
+            "guard": [
+              5,
+              1
+            ],
+            "guardSign": 1
+          }
+        },
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water up|specials=1.35",
+            "windIndex": 76,
+            "programme": [
+              4,
+              1
+            ],
+            "guard": [
+              5,
+              1
+            ],
+            "guardSign": -1
+          }
+        }
+      ],
+      "originalControllingCases": [
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 10,
+          "programme": [
+            1,
+            4
+          ],
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 76,
+          "programme": [
+            4,
+            1
+          ],
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "installedControllingCases": [
+        {
+          "case": "0.2|partial water down|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 10,
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.2|partial water up|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 76,
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "finiteRenewalControllingCases": [
+        {
+          "case": "0.2|partial water down|specials=0.0",
+          "windIndex": 10,
+          "programme": [
+            1,
+            4
+          ],
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.2|partial water up|specials=1.35",
+          "windIndex": 76,
+          "programme": [
+            4,
+            1
+          ],
+          "guard": [
+            5,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "compressionIncreaseFromOriginalKN": 6.164864563,
+      "tensionIncreaseFromOriginalKN": 7.461608783,
+      "compressionIncreaseFromInstalledKN": 0.19558743,
+      "tensionIncreaseFromInstalledKN": 0.832135204
+    },
+    {
+      "xy": [
+        8082.5,
+        6000
+      ],
+      "originalRangeKN": [
+        -74.385803236,
+        133.687108653
+      ],
+      "installedRangeKN": [
+        -80.239752621,
+        149.846753762
+      ],
+      "finiteRenewalRangeKN": [
+        -80.745542816,
+        149.932074836
+      ],
+      "admittedRangeKN": [
+        -80.745542816,
+        149.932074836
+      ],
+      "admittedControllingCases": [
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.35|partial water up|specials=0.0",
+            "windIndex": 6,
+            "programme": [
+              1,
+              0
+            ],
+            "guard": [
+              1,
+              1
+            ],
+            "guardSign": -1
+          }
+        },
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.35|partial water down|specials=1.35",
+            "windIndex": 31,
+            "programme": [
+              4,
+              4
+            ],
+            "guard": [
+              1,
+              1
+            ],
+            "guardSign": 1
+          }
+        }
+      ],
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 27,
+          "programme": [
+            4,
+            0
+          ],
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 7,
+          "programme": [
+            1,
+            1
+          ],
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "installedControllingCases": [
+        {
+          "case": "0.35|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 6,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.35|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 31,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "finiteRenewalControllingCases": [
+        {
+          "case": "0.35|partial water up|specials=0.0",
+          "windIndex": 6,
+          "programme": [
+            1,
+            0
+          ],
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.35|partial water down|specials=1.35",
+          "windIndex": 31,
+          "programme": [
+            4,
+            4
+          ],
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "compressionIncreaseFromOriginalKN": 16.244966183,
+      "tensionIncreaseFromOriginalKN": 6.35973958,
+      "compressionIncreaseFromInstalledKN": 0.085321074,
+      "tensionIncreaseFromInstalledKN": 0.505790195
+    },
+    {
+      "xy": [
+        8082.5,
+        8082.5
+      ],
+      "originalRangeKN": [
+        -105.454314166,
+        195.775269571
+      ],
+      "installedRangeKN": [
+        -112.436777401,
+        199.613207956
+      ],
+      "finiteRenewalRangeKN": [
+        -112.560357608,
+        199.805137959
+      ],
+      "admittedRangeKN": [
+        -112.560357608,
+        199.805137959
+      ],
+      "admittedControllingCases": [
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water down|specials=0.0",
+            "windIndex": 7,
+            "programme": [
+              1,
+              1
+            ],
+            "guard": [
+              1,
+              1
+            ],
+            "guardSign": 1
+          }
+        },
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water up|specials=1.35",
+            "windIndex": 79,
+            "programme": [
+              4,
+              4
+            ],
+            "guard": [
+              1,
+              1
+            ],
+            "guardSign": -1
+          }
+        }
+      ],
+      "originalControllingCases": [
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 7,
+          "programme": [
+            1,
+            1
+          ],
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 79,
+          "programme": [
+            4,
+            4
+          ],
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "installedControllingCases": [
+        {
+          "case": "0.2|partial water down|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 7,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.2|partial water up|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 79,
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "finiteRenewalControllingCases": [
+        {
+          "case": "0.2|partial water down|specials=0.0",
+          "windIndex": 7,
+          "programme": [
+            1,
+            1
+          ],
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.2|partial water up|specials=1.35",
+          "windIndex": 79,
+          "programme": [
+            4,
+            4
+          ],
+          "guard": [
+            1,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "compressionIncreaseFromOriginalKN": 4.029868388,
+      "tensionIncreaseFromOriginalKN": 7.106043442,
+      "compressionIncreaseFromInstalledKN": 0.191930003,
+      "tensionIncreaseFromInstalledKN": 0.123580207
+    },
+    {
+      "xy": [
+        11667.5,
+        332.5
+      ],
+      "originalRangeKN": [
+        -47.711649425,
+        98.700184256
+      ],
+      "installedRangeKN": [
+        -54.689569495,
+        138.928750204
+      ],
+      "finiteRenewalRangeKN": [
+        -50.378608161,
+        139.042451923
+      ],
+      "admittedRangeKN": [
+        -54.689569495,
+        139.042451923
+      ],
+      "admittedControllingCases": [
+        {
+          "source": "installed",
+          "case": {
+            "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+            "windIndex": 76,
+            "guard": [
+              4,
+              1
+            ],
+            "guardSign": -1
+          }
+        },
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water down|specials=1.35",
+            "windIndex": 10,
+            "programme": [
+              1,
+              4
+            ],
+            "guard": [
+              4,
+              1
+            ],
+            "guardSign": 1
+          }
+        }
+      ],
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 76,
+          "programme": [
+            4,
+            1
+          ],
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 10,
+          "programme": [
+            1,
+            4
+          ],
+          "guard": [
+            6,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "installedControllingCases": [
+        {
+          "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 76,
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 10,
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "finiteRenewalControllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0",
+          "windIndex": 76,
+          "programme": [
+            4,
+            1
+          ],
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35",
+          "windIndex": 10,
+          "programme": [
+            1,
+            4
+          ],
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "compressionIncreaseFromOriginalKN": 40.342267667,
+      "tensionIncreaseFromOriginalKN": 6.97792007,
+      "compressionIncreaseFromInstalledKN": 0.113701719,
+      "tensionIncreaseFromInstalledKN": 0.0
+    },
+    {
+      "xy": [
+        11667.5,
+        3800
+      ],
+      "originalRangeKN": [
+        -40.180423679,
+        70.689910431
+      ],
+      "installedRangeKN": [
+        -46.435933252,
+        85.950198644
+      ],
+      "finiteRenewalRangeKN": [
+        -47.536189322,
+        86.694584472
+      ],
+      "admittedRangeKN": [
+        -47.536189322,
+        86.694584472
+      ],
+      "admittedControllingCases": [
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water up|specials=0.0",
+            "windIndex": 78,
+            "programme": [
+              4,
+              3
+            ],
+            "guard": [
+              2,
+              1
+            ],
+            "guardSign": -1
+          }
+        },
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.35|partial water down|specials=1.35",
+            "windIndex": 35,
+            "programme": [
+              5,
+              1
+            ],
+            "guard": [
+              2,
+              1
+            ],
+            "guardSign": 1
+          }
+        }
+      ],
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 71,
+          "programme": [
+            3,
+            3
+          ],
+          "guard": [
+            2,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 36,
+          "programme": [
+            5,
+            2
+          ],
+          "guard": [
+            2,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "installedControllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 78,
+          "guard": [
+            2,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.35|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 35,
+          "guard": [
+            2,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "finiteRenewalControllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0",
+          "windIndex": 78,
+          "programme": [
+            4,
+            3
+          ],
+          "guard": [
+            2,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.35|partial water down|specials=1.35",
+          "windIndex": 35,
+          "programme": [
+            5,
+            1
+          ],
+          "guard": [
+            2,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "compressionIncreaseFromOriginalKN": 16.004674041,
+      "tensionIncreaseFromOriginalKN": 7.355765643,
+      "compressionIncreaseFromInstalledKN": 0.744385828,
+      "tensionIncreaseFromInstalledKN": 1.10025607
+    },
+    {
+      "xy": [
+        11667.5,
+        6000
+      ],
+      "originalRangeKN": [
+        -45.413359834,
+        90.110408235
+      ],
+      "installedRangeKN": [
+        -47.781820729,
+        105.061470928
+      ],
+      "finiteRenewalRangeKN": [
+        -47.872910025,
+        105.200325447
+      ],
+      "admittedRangeKN": [
+        -47.872910025,
+        105.200325447
+      ],
+      "admittedControllingCases": [
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water up|specials=0.0",
+            "windIndex": 76,
+            "programme": [
+              4,
+              1
+            ],
+            "guard": [
+              3,
+              1
+            ],
+            "guardSign": 1
+          }
+        },
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water down|specials=1.35",
+            "windIndex": 59,
+            "programme": [
+              1,
+              5
+            ],
+            "guard": [
+              3,
+              1
+            ],
+            "guardSign": -1
+          }
+        }
+      ],
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 77,
+          "programme": [
+            4,
+            2
+          ],
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 57,
+          "programme": [
+            1,
+            3
+          ],
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "installedControllingCases": [
+        {
+          "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 76,
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 59,
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "finiteRenewalControllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0",
+          "windIndex": 76,
+          "programme": [
+            4,
+            1
+          ],
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": 1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35",
+          "windIndex": 59,
+          "programme": [
+            1,
+            5
+          ],
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": -1
+        }
+      ],
+      "compressionIncreaseFromOriginalKN": 15.089917212,
+      "tensionIncreaseFromOriginalKN": 2.459550191,
+      "compressionIncreaseFromInstalledKN": 0.138854519,
+      "tensionIncreaseFromInstalledKN": 0.091089296
+    },
+    {
+      "xy": [
+        11667.5,
+        8200
+      ],
+      "originalRangeKN": [
+        -40.154072613,
+        70.904663703
+      ],
+      "installedRangeKN": [
+        -45.542705474,
+        86.26173365
+      ],
+      "finiteRenewalRangeKN": [
+        -46.642954048,
+        86.944840122
+      ],
+      "admittedRangeKN": [
+        -46.642954048,
+        86.944840122
+      ],
+      "admittedControllingCases": [
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water up|specials=0.0",
+            "windIndex": 80,
+            "programme": [
+              4,
+              5
+            ],
+            "guard": [
+              3,
+              1
+            ],
+            "guardSign": -1
+          }
+        },
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water down|specials=1.35",
+            "windIndex": 44,
+            "programme": [
+              6,
+              3
+            ],
+            "guard": [
+              3,
+              1
+            ],
+            "guardSign": 1
+          }
+        }
+      ],
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 66,
+          "programme": [
+            2,
+            5
+          ],
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 47,
+          "programme": [
+            6,
+            6
+          ],
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "installedControllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 80,
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 44,
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "finiteRenewalControllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0",
+          "windIndex": 80,
+          "programme": [
+            4,
+            5
+          ],
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35",
+          "windIndex": 44,
+          "programme": [
+            6,
+            3
+          ],
+          "guard": [
+            3,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "compressionIncreaseFromOriginalKN": 16.040176419,
+      "tensionIncreaseFromOriginalKN": 6.488881435,
+      "compressionIncreaseFromInstalledKN": 0.683106472,
+      "tensionIncreaseFromInstalledKN": 1.100248574
+    },
+    {
+      "xy": [
+        11667.5,
+        11667.5
+      ],
+      "originalRangeKN": [
+        -47.724356274,
+        98.703549675
+      ],
+      "installedRangeKN": [
+        -54.466090951,
+        135.606766119
+      ],
+      "finiteRenewalRangeKN": [
+        -51.555021234,
+        135.720340414
+      ],
+      "admittedRangeKN": [
+        -54.466090951,
+        135.720340414
+      ],
+      "admittedControllingCases": [
+        {
+          "source": "installed",
+          "case": {
+            "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+            "windIndex": 79,
+            "guard": [
+              0,
+              1
+            ],
+            "guardSign": -1
+          }
+        },
+        {
+          "source": "finiteRenewal",
+          "case": {
+            "case": "0.2|partial water down|specials=1.35",
+            "windIndex": 7,
+            "programme": [
+              1,
+              1
+            ],
+            "guard": [
+              0,
+              1
+            ],
+            "guardSign": 1
+          }
+        }
+      ],
+      "originalControllingCases": [
+        {
+          "crack": 0.2,
+          "mode": "original gravity",
+          "windIndex": 79,
+          "programme": [
+            4,
+            4
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "crack": 0.35,
+          "mode": "original gravity",
+          "windIndex": 7,
+          "programme": [
+            1,
+            1
+          ],
+          "guard": [
+            7,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "installedControllingCases": [
+        {
+          "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 79,
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+          "windIndex": 7,
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "finiteRenewalControllingCases": [
+        {
+          "case": "0.2|partial water up|specials=0.0",
+          "windIndex": 79,
+          "programme": [
+            4,
+            4
+          ],
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": -1
+        },
+        {
+          "case": "0.2|partial water down|specials=1.35",
+          "windIndex": 7,
+          "programme": [
+            1,
+            1
+          ],
+          "guard": [
+            0,
+            1
+          ],
+          "guardSign": 1
+        }
+      ],
+      "compressionIncreaseFromOriginalKN": 37.016790739,
+      "tensionIncreaseFromOriginalKN": 6.741734677,
+      "compressionIncreaseFromInstalledKN": 0.113574295,
+      "tensionIncreaseFromInstalledKN": 0.0
+    }
+  ],
+  "originalMaximumCompressionKN": 195.775269571,
+  "admittedMaximumCompressionKN": 202.126933903,
+  "admittedMaximumTensionKN": 113.673389111,
+  "M24ComparisonResistanceKN": 113.922727273,
+  "M24RemainingKN": 0.249338162,
+  "largestCompressionIncrease": {
+    "xy": [
+      11667.5,
+      332.5
+    ],
+    "originalRangeKN": [
+      -47.711649425,
+      98.700184256
+    ],
+    "installedRangeKN": [
+      -54.689569495,
+      138.928750204
+    ],
+    "finiteRenewalRangeKN": [
+      -50.378608161,
+      139.042451923
+    ],
+    "admittedRangeKN": [
+      -54.689569495,
+      139.042451923
+    ],
+    "admittedControllingCases": [
+      {
+        "source": "installed",
+        "case": {
+          "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+          "windIndex": 76,
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": -1
+        }
+      },
+      {
+        "source": "finiteRenewal",
+        "case": {
+          "case": "0.2|partial water down|specials=1.35",
+          "windIndex": 10,
+          "programme": [
+            1,
+            4
+          ],
+          "guard": [
+            4,
+            1
+          ],
+          "guardSign": 1
+        }
+      }
+    ],
+    "originalControllingCases": [
+      {
+        "crack": 0.2,
+        "mode": "original gravity",
+        "windIndex": 76,
+        "programme": [
+          4,
+          1
+        ],
+        "guard": [
+          6,
+          1
+        ],
+        "guardSign": -1
+      },
+      {
+        "crack": 0.35,
+        "mode": "original gravity",
+        "windIndex": 10,
+        "programme": [
+          1,
+          4
+        ],
+        "guard": [
+          6,
+          1
+        ],
+        "guardSign": 1
+      }
+    ],
+    "installedControllingCases": [
+      {
+        "case": "0.2|stripped up|specials=0.0|body=independent exposed-panel bounds",
+        "windIndex": 76,
+        "guard": [
+          4,
+          1
+        ],
+        "guardSign": -1
+      },
+      {
+        "case": "0.2|partial water down|specials=1.35|body=independent exposed-panel bounds",
+        "windIndex": 10,
+        "guard": [
+          4,
+          1
+        ],
+        "guardSign": 1
+      }
+    ],
+    "finiteRenewalControllingCases": [
+      {
+        "case": "0.2|partial water up|specials=0.0",
+        "windIndex": 76,
+        "programme": [
+          4,
+          1
+        ],
+        "guard": [
+          4,
+          1
+        ],
+        "guardSign": -1
+      },
+      {
+        "case": "0.2|partial water down|specials=1.35",
+        "windIndex": 10,
+        "programme": [
+          1,
+          4
+        ],
+        "guard": [
+          4,
+          1
+        ],
+        "guardSign": 1
+      }
+    ],
+    "compressionIncreaseFromOriginalKN": 40.342267667,
+    "tensionIncreaseFromOriginalKN": 6.97792007,
+    "compressionIncreaseFromInstalledKN": 0.113701719,
+    "tensionIncreaseFromInstalledKN": 0.0
+  },
+  "upperCompressionResistanceKN": null,
+  "receivingDuty": "Qualify actual steel load introduction, finite contact and bedding, core material/section, spreading, splitting, eccentricity/slenderness and the downstream floor/foundation route. The stiffness spring and historical 200 kN collector screen supply no receiving resistance.",
+  "maintenanceConditions": [
+    "The finite scope admits exactly one of its identified local states, or the unchanged zero option. Reinstate the previous bay/head before another remote operation.",
+    "The 64 primary units are the source 793.125 mm tributaries; paired lower units are the nearest 799.6875 mm tributaries on the same face. Actual moving-part mass, centroid and root allocation must fit the represented loads.",
+    "The captured normal head and upper spool are at most25 kg. The six complete head/leader alternatives retain the larger75 kg head plus8.4 m copper-leader dry bound.",
+    "Transfer removed parts completely to independent ground support before moving them away from their source load location. Temporary roof-supported apparatus or water needs its own load case.",
+    "Inner cassette remaining dry mass and centroid stay within the original independent cassette rectangles. Those cassette bounds do not themselves include head/leader removal.",
+    "The retained added-wind and water stress comparisons do not prove arbitrary absent-body wind redistribution, fabrication, connection, site actions or the local temporary works.",
+    "The independent scope permits arbitrary remote removals simultaneously and is a rejected comparison, not the ordinary renewal sequence."
+  ],
+  "sourceHashes": {
+    "project/rof/studies/roof_water_receiving_baseline.json": "8d9c3200f9cea459454884b5d569235286f2522cc7766eb999934f0001334c0d",
+    "project/rof/studies/roof_water_geometry_trial_280_60.json": "e15de9db4d9b6d54c368190612c0d245719af3ce06d314b3cddac946163f456a",
+    "project/rof/studies/roof_water_geometry_maintenance_280_60_finite.json": "d6733e83d8a47ce7ed0589fd39c557dcde816ed519415e2e61797588afc6ced3",
+    "project/rof/studies/roof_water_geometry_receiving.py": "7f3bc31ff9de1990caa3c8477cd1d54e3b635b11eac8b9125cb65a61f4fc61cf"
+  }
+}

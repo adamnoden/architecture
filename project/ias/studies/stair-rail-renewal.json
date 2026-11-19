@@ -1,0 +1,167 @@
+{
+  "source": "project/had/studies/water-replan.json \u00b7 model.stairGuard and lowCillWindowGuard",
+  "stair": {
+    "wellX": [
+      1523.5,
+      1723.5
+    ],
+    "railCentreX": [
+      1543.5,
+      1703.5
+    ],
+    "flightWidth": 1094,
+    "betweenRails": 1004,
+    "widthAfterSourceLoss": 984,
+    "firstUpperNoseYZ": [
+      7132.5,
+      1897.5
+    ],
+    "landingYZ": [
+      7132.5,
+      1725
+    ],
+    "upperArrivalYZ": [
+      4432.5,
+      3450
+    ],
+    "rise": 172.5,
+    "going": 300,
+    "pitchDegrees": 29.89890183861456
+  },
+  "transfer": {
+    "newelXY": [
+      1703.5,
+      7132.5
+    ],
+    "diameter": 40,
+    "lowerRailTop": 2725,
+    "upperRailTopAtAxis": 2897.5,
+    "lowerHorizontalAxis": 2705.0,
+    "inclinedAxisAtPost": 2874.4294560098815,
+    "landingHeightBand": [
+      2625,
+      2725
+    ],
+    "upperNosingHeightBand": [
+      2797.5,
+      2897.5
+    ],
+    "unbridgedBand": 72.5,
+    "heightDifference": 172.5,
+    "minimumUpperUndersideAcrossPost": 2839.8589120197626,
+    "bareVerticalLand": 114.85891201976256,
+    "filletAllowanceAtEachEnd": 10,
+    "clearPostLandZ": [
+      2735,
+      2829.8589120197626
+    ],
+    "usableVerticalLength": 94.85891201976256,
+    "declared90HandBandReserve": 4.858912019762556,
+    "lowerTubeAxisPoint": [
+      1680.0685424949238,
+      7189.068542494923,
+      2705.0
+    ],
+    "postEastContact": [
+      1723.5,
+      7132.5,
+      2782.4294560098815
+    ],
+    "upperTubeAxisPoint": [
+      1703.5,
+      7072.5,
+      2908.9294560098815
+    ],
+    "gripReferenceSeparations": [
+      105.26923652711348,
+      141.42931096487743,
+      236.06033408577804
+    ],
+    "returnOuterProjection": 100.0,
+    "remainingLanding": 1523.0,
+    "uncappedPlanGap": 120.0,
+    "straightBarGap": 88,
+    "turnChord": 79.99999999999999,
+    "turnBarGap": 67.99999999999999,
+    "studiedUnderPanelGap": 50,
+    "sourceUnderPanelLimit": 80
+  },
+  "wallGrip": {
+    "moduleY": [
+      5332.5,
+      6232.5
+    ],
+    "axisX": 499.5,
+    "nominalAxialLength": 1038.1744795553393,
+    "supportSaddlesY": [
+      5407.5,
+      6157.5
+    ],
+    "openJointMm": 3,
+    "pinHeight": 12,
+    "verticalUnseat": 20,
+    "clearOverPin": 8,
+    "saddleLipHeight": 8,
+    "clearOverSaddleLip": 12,
+    "inclinedCutIntrusion": 6.969422485161655,
+    "perpendicularCutLiftLimit": 6.018402780030953,
+    "carriageStroke": 280.0,
+    "firstRestAxisX": 779.5,
+    "firstRestFeetXYWD": [
+      [
+        459.5,
+        5422.5,
+        360.0,
+        120
+      ],
+      [
+        459.5,
+        6022.5,
+        360.0,
+        120
+      ]
+    ],
+    "restCradlesY": [
+      5482.5,
+      6082.5
+    ],
+    "installedCentresZ": [
+      1753.1794560098813,
+      2098.1794560098815
+    ],
+    "cradleFeetTreadZ": [
+      690.0,
+      1035.0
+    ],
+    "restCentresZ": [
+      1453.1794560098813,
+      1798.1794560098815
+    ],
+    "lowestRestHeightAboveTread": 763.1794560098813,
+    "supportToCradleClearY": 35.0,
+    "supportProjectionInsideFeet": 40.0,
+    "stairClearBeyondStand": 704.0,
+    "railsAboveNoses": 1000,
+    "sourceBracketWallClear": 50,
+    "restFeetTreadY": [
+      5482.5,
+      6082.5
+    ]
+  },
+  "window": {
+    "rawJambsY": [
+      6900,
+      7900
+    ],
+    "supportCentresY": [
+      6790,
+      8010
+    ],
+    "maxPlateAlongY": 100,
+    "fixingPlateToRaw": 60,
+    "unsupportedPlanSpan": 1220,
+    "railNearX": 479.5,
+    "grilleOutermostXInFirstMove": 462.5,
+    "firstMoveReserve": 17.0
+  }
+}

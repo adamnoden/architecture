@@ -1,0 +1,335 @@
+{
+  "identity": "J-RC3 compact-B joined RC reference; conditional internal design, unadopted",
+  "startingMain": "1e7b2cbce408834ca3cbb91c286af37eda066829",
+  "sourceSha256": {
+    "house-plan.json": "193805456e26533026814bebe8c6be862e26a7d944c360dbb6047a1bde2d2282",
+    "house-bedroom-options.json": "57137bfc955d9dc26ad3037952cbf193753649a7464d2c1b9113bcac23e259b9",
+    "house-source.json": "071dbcb60d5b61d6f3b9aa5ccbda120725f4e88b39812ed64f5de2a250f5bc73",
+    "house-riser-trim.json": "73e1f78a590f2daf2dd3a339d74114fdcc06901ce80cdc9150ad20e2d028c323"
+  },
+  "units": "mm; actions kN, kN/m or kPa as labelled; stresses MPa",
+  "upper": {
+    "section": {
+      "FFL": 3450,
+      "finish": 20,
+      "IAS_function": 60,
+      "slab_top": 3370,
+      "slab_soffit": 3170,
+      "services": 55,
+      "ceiling": 15,
+      "ceiling_underside": 3100
+    },
+    "old_opening": [
+      9370,
+      4650,
+      700,
+      800
+    ],
+    "gross_riser": [
+      9410,
+      4700,
+      550,
+      700
+    ],
+    "cabinet": [
+      9385,
+      4675,
+      600,
+      750
+    ],
+    "formed_holes": [
+      [
+        9500,
+        4850,
+        50,
+        "22 water"
+      ],
+      [
+        9700,
+        4850,
+        50,
+        "22 return"
+      ],
+      [
+        9800,
+        5200,
+        160,
+        "110 soil-stack comparator"
+      ]
+    ],
+    "contact_plinths_100_square": [
+      [
+        9435,
+        4700
+      ],
+      [
+        9835,
+        4700
+      ],
+      [
+        9435,
+        5300
+      ],
+      [
+        9835,
+        5300
+      ]
+    ],
+    "floor_action": {
+      "M_kNm": 9.994826660156251,
+      "V_kN": 16.21171875
+    },
+    "section_check": {
+      "b_mm": 800,
+      "h_mm": 200,
+      "d_mm": 160,
+      "As_mm2": 418.8790204786391,
+      "As_min_mm2": 193.024,
+      "x_mm": 16.73909129150572,
+      "x_over_d": 0.10461932057191074,
+      "z_mm": 153.3043634833977,
+      "MR_kNm": 27.9199920047943,
+      "VRdc_kN": 69.40386156403692,
+      "ductility_screen": true
+    },
+    "elastic_deflection_mm": {
+      "1": 0.17752349324686958,
+      "0.25": 0.7100939729874783,
+      "0.1": 1.7752349324686958
+    },
+    "elastic_E_MPa": 32836.56803133079,
+    "actual_cracked_EI": null,
+    "actual_creep": null
+  },
+  "cap": {
+    "clear_service_width": 600,
+    "RC_clear_span": 803.0,
+    "support_axis_span": 903.0,
+    "outside_width": 1003.0,
+    "RC_thickness": 100,
+    "module_length": 400,
+    "section_check": {
+      "b_mm": 400,
+      "h_mm": 100,
+      "d_mm": 62,
+      "As_mm2": 201.06192982974676,
+      "As_min_mm2": 37.398399999999995,
+      "x_mm": 16.06952763984549,
+      "x_over_d": 0.25918592967492726,
+      "z_mm": 55.57218894406181,
+      "MR_kNm": 4.858022414763645,
+      "VRdc_kN": 17.244981364673354,
+      "ductility_screen": true
+    },
+    "UDL": {
+      "M_kNm": 0.4800720487500001,
+      "V_kN": 2.1265650000000003
+    },
+    "point_alternative": {
+      "M_kNm": 1.03501069875,
+      "V_kN": 3.084765
+    },
+    "bare_RC_mass_kg": 100.30000000000001,
+    "mass_with_80mm_mineral_upper_at_2200_kg_m3": 170.9112
+  },
+  "bridge": {
+    "travel_length": 700,
+    "RC_flange_thickness": 120,
+    "RC_rib_width": 140,
+    "RC_rib_height_above_flange": 100,
+    "links_H6_at_100_VR_kN": 40.27248599932237,
+    "flange_outstand_M_kNm_m": 0.4615800000000001,
+    "overall_cross_width": 1603.0,
+    "seat_each_side": 300,
+    "support_axis_span": 1303.0,
+    "G_envelope_kN_m": 30.008125000000007,
+    "Q_envelope_kN_m": 5.3675,
+    "ULS_kN_m": 48.562218750000014,
+    "action": {
+      "M_kNm": 10.306171506714847,
+      "V_kN": 31.638285515625007
+    },
+    "section_check": {
+      "b_mm": 140,
+      "h_mm": 220,
+      "d_mm": 182,
+      "As_mm2": 307.8760800517997,
+      "As_min_mm2": 38.42384,
+      "x_mm": 70.30418342432401,
+      "x_over_d": 0.38628672211167037,
+      "z_mm": 153.8783266302704,
+      "MR_kNm": 20.59802435124266,
+      "VRdc_kN": 20.23841941499077,
+      "ductility_screen": true
+    },
+    "seat_stress_MPa": 0.753292512276786,
+    "rejected_RC100_cover35": {
+      "b_mm": 700,
+      "h_mm": 100,
+      "d_mm": 52,
+      "As_mm2": 549.7787143782139,
+      "As_min_mm2": 54.891200000000005,
+      "x_mm": 25.10863693725858,
+      "x_over_d": 0.48285840263958807,
+      "z_mm": 41.95654522509657,
+      "MR_kNm": 10.029050214610862,
+      "VRdc_kN": 31.144537756479213,
+      "ductility_screen": false
+    },
+    "SLS": {
+      "0": 1.0658460553997087,
+      "1": 1.2571915201676809,
+      "2": 1.4243052188855567,
+      "3": 1.5796181743589686,
+      "differential_shrinkage_300_microstrain_mm": 0.28939926136363636,
+      "L_over_250_comparator_mm": 5.212,
+      "cracking_moment_kNm": 3.2750666666666666,
+      "SLS_moment_kNm": 7.507631813203126,
+      "crack_width_sensitivity_mm": 0.09362835225051586,
+      "crack_width_comparator_mm": 0.3
+    }
+  },
+  "fixed_U": {
+    "outer_width": 1003.0,
+    "sidewall_depth": 559.5,
+    "base_top": -739.5,
+    "base_bottom": -839.5,
+    "side_RC": 100,
+    "base_RC": 100,
+    "physical_inner_leaf_axis_gap": 3585.0,
+    "conservative_calculation_span": 4250.0,
+    "G_kN_m": 12.3245,
+    "Q_kN_m": 3.566,
+    "per_sidewall_action": {
+      "M_kNm": 24.82134638671875,
+      "V_kN": 23.3612671875
+    },
+    "sidewall_section": {
+      "b_mm": 100,
+      "h_mm": 509.5,
+      "d_mm": 453,
+      "As_mm2": 226.1946710584651,
+      "As_min_mm2": 68.3124,
+      "x_mm": 72.3128743793047,
+      "x_over_d": 0.1596310692699883,
+      "z_mm": 424.0748502482781,
+      "MR_kNm": 41.70585706785961,
+      "VRdc_kN": 22.30420642044068,
+      "ductility_screen": true
+    },
+    "seat_stress_MPa": 0.77870890625,
+    "seat_length": 300,
+    "local_notched_wall_top": -330,
+    "notch_taper_each_end": 300,
+    "actual_support_stiffness": null,
+    "links_H6_at_150_VR_kN": 66.82577347140305,
+    "base_transverse_action": {
+      "M_kNm": 0.734785435125,
+      "V_kN": 3.2548635000000004
+    },
+    "base_section": {
+      "b_mm": 1000,
+      "h_mm": 100,
+      "d_mm": 62,
+      "As_mm2": 502.65482457436684,
+      "As_min_mm2": 93.496,
+      "x_mm": 16.06952763984549,
+      "x_over_d": 0.25918592967492726,
+      "z_mm": 55.57218894406181,
+      "MR_kNm": 12.145056036909113,
+      "VRdc_kN": 43.11245341168339,
+      "ductility_screen": true
+    },
+    "end_seats_N_xywh": [
+      [
+        6098.5,
+        7932.5,
+        100,
+        300
+      ],
+      [
+        6098.5,
+        11517.5,
+        100,
+        300
+      ],
+      [
+        7001.5,
+        7932.5,
+        100,
+        300
+      ],
+      [
+        7001.5,
+        11517.5,
+        100,
+        300
+      ]
+    ],
+    "end_seats_E_xywh": [
+      [
+        7932.5,
+        6623.5,
+        300,
+        100
+      ],
+      [
+        7932.5,
+        7526.5,
+        300,
+        100
+      ],
+      [
+        11517.5,
+        6623.5,
+        300,
+        100
+      ],
+      [
+        11517.5,
+        7526.5,
+        300,
+        100
+      ]
+    ]
+  },
+  "ground": {
+    "FFL": 0,
+    "field_RC200_bottom": -380,
+    "cover_RC100_bottom": -280,
+    "bridge_RC120_bottom": -300,
+    "tray_bottom": -639.5,
+    "U_bottom": -839.5,
+    "grade": -1300,
+    "raw_soil_clearance": 460.5,
+    "authored_heave_stress": 300,
+    "declared_final_reserve": 50,
+    "surplus_beyond_reserve": 60.5,
+    "separate_construction_loss_50_residual_clearance": 110.5,
+    "N_axis": 6600,
+    "N_service_band": [
+      6300,
+      6900
+    ],
+    "N_outer_U": [
+      6098.5,
+      7101.5
+    ],
+    "E_axis": 7125,
+    "E_service_band": [
+      6825,
+      7425
+    ],
+    "E_outer_U": [
+      6623.5,
+      7626.5
+    ]
+  },
+  "limits": [
+    "No selected roof, reinforcement procurement, masonry/ground capacity, firestop, acoustic/wet-floor qualification or engineer acceptance.",
+    "Two22 pipes and110 stack comparator do not fit or qualify the whole riser programme; future penetrations require structural recalculation.",
+    "Wide permanent bridges bypass trough; mineral wall plinth through insulation creates a named thermal bridge requiring calculation.",
+    "25mm cover is an explicit trial; rejected RC100 at35mm invalidates its ductility screen. RC120 is the corrected candidate. No durability/fire requirement is waived.",
+    "Fixed U sidewall seats and bridge seats must connect to distinct named grillage supports; no soil bearing or DPC sliding capacity inferred."
+  ]
+}

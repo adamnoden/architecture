@@ -1,0 +1,2227 @@
+{
+  "status": "Joined reaction destinations only; incomplete conditional house/foundation concept",
+  "sources": {
+    "project/had/studies/open-north-loggia.json": "542781c6bb1d277b20492e8433cea498e98eaea5db2e737a5ec7e9655f9d18fd",
+    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+    "project/str/studies/house-supports.json": "f0594e0afd90334d20614330fdbe5ad676f8dc9f4d2aca4fa9fdb2881b6e8388",
+    "project/mat/studies/warm-receiving-grid.json": "a2b15c9505ee3888ffb892aa7e5182f80f4aa5a70bd5058a915df6e3bec4de99"
+  },
+  "unit_system": "mm, m, kN; authored ULS action comparisons",
+  "parent_roof": {
+    "area_m2": 144.15,
+    "downward_ULS_kN": 908.1450000000001,
+    "signed_uplift_no_favourable_G_kN": -324.33750000000003,
+    "exits": 30,
+    "scope": "Collapsed corners are conservative action exits, not finite jack/hip paths; q450 delta excluded"
+  },
+  "axis_floor": {
+    "area_m2": 90.57854999999999,
+    "ULS_kN": 1204.5484575,
+    "support_edges": [
+      {
+        "field": "SW-L",
+        "segment": [
+          332.5,
+          332.5,
+          2817.5,
+          332.5
+        ],
+        "vertical_ULS_kN": 47.5372734375,
+        "ground": {
+          "route": "outer-S",
+          "axis": [
+            1575.0,
+            300.0
+          ],
+          "offset_mm": [
+            0.0,
+            32.5
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "SW-L",
+        "segment": [
+          332.5,
+          3247.5,
+          2817.5,
+          3247.5
+        ],
+        "vertical_ULS_kN": 47.5372734375,
+        "ground": {
+          "route": "actual-study-L-north",
+          "axis": [
+            1575.0,
+            3247.5
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "SW-main",
+        "segment": [
+          2817.5,
+          332.5,
+          4800,
+          332.5
+        ],
+        "vertical_ULS_kN": 30.151037109374997,
+        "ground": {
+          "route": "outer-S",
+          "axis": [
+            3808.75,
+            300.0
+          ],
+          "offset_mm": [
+            0.0,
+            32.5
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "SW-main",
+        "segment": [
+          2817.5,
+          2650,
+          4800,
+          2650
+        ],
+        "vertical_ULS_kN": 30.151037109374997,
+        "ground": {
+          "route": "actual-study-cloak-north",
+          "axis": [
+            3808.75,
+            2650.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "SE-front",
+        "segment": [
+          7200,
+          332.5,
+          9300,
+          332.5
+        ],
+        "vertical_ULS_kN": 31.938046874999998,
+        "ground": {
+          "route": "outer-S",
+          "axis": [
+            8250.0,
+            300.0
+          ],
+          "offset_mm": [
+            0.0,
+            32.5
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "SE-front",
+        "segment": [
+          7200,
+          2650,
+          9300,
+          2650
+        ],
+        "vertical_ULS_kN": 31.938046874999998,
+        "ground": {
+          "route": "actual-wc-north",
+          "axis": [
+            8250.0,
+            2650.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "east-strip",
+        "segment": [
+          9300,
+          332.5,
+          9300,
+          8290
+        ],
+        "vertical_ULS_kN": 123.633439453125,
+        "ground": {
+          "route": "spine",
+          "axis": [
+            9300.0,
+            4311.25
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "east-strip",
+        "segment": [
+          11667.5,
+          332.5,
+          11667.5,
+          8290
+        ],
+        "vertical_ULS_kN": 123.633439453125,
+        "ground": {
+          "route": "outer-E",
+          "axis": [
+            11700.0,
+            4311.25
+          ],
+          "offset_mm": [
+            -32.5,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "south-W-gallery",
+        "segment": [
+          2917.5,
+          2650,
+          4800,
+          2650
+        ],
+        "vertical_ULS_kN": 15.658576171875,
+        "ground": {
+          "route": "actual-study-cloak-north",
+          "axis": [
+            3858.75,
+            2650.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "south-W-gallery",
+        "segment": [
+          2917.5,
+          3917.5,
+          4800,
+          3917.5
+        ],
+        "vertical_ULS_kN": 15.658576171875,
+        "ground": {
+          "route": "court-S",
+          "axis": [
+            3950,
+            3950
+          ],
+          "offset_mm": [
+            -91.25,
+            -32.5
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "south-E-gallery",
+        "segment": [
+          7200,
+          2650,
+          9300,
+          2650
+        ],
+        "vertical_ULS_kN": 17.467734375,
+        "ground": {
+          "route": "actual-wc-north",
+          "axis": [
+            8250.0,
+            2650.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "south-E-gallery",
+        "segment": [
+          7200,
+          3917.5,
+          9300,
+          3917.5
+        ],
+        "vertical_ULS_kN": 17.467734375,
+        "ground": {
+          "route": "court-E",
+          "axis": [
+            8050,
+            3950
+          ],
+          "offset_mm": [
+            200.0,
+            -32.5
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "east-gallery",
+        "segment": [
+          8082.5,
+          3917.5,
+          8082.5,
+          8082.5
+        ],
+        "vertical_ULS_kN": 33.27769921875,
+        "ground": {
+          "route": "court-E",
+          "axis": [
+            8050.0,
+            6000.0
+          ],
+          "offset_mm": [
+            32.5,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "east-gallery",
+        "segment": [
+          9300,
+          3917.5,
+          9300,
+          8082.5
+        ],
+        "vertical_ULS_kN": 33.27769921875,
+        "ground": {
+          "route": "spine",
+          "axis": [
+            9300.0,
+            6000.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "west-south",
+        "segment": [
+          332.5,
+          3247.5,
+          2817.5,
+          3247.5
+        ],
+        "vertical_ULS_kN": 17.6939765625,
+        "ground": {
+          "route": "actual-study-L-north",
+          "axis": [
+            1575.0,
+            3247.5
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "west-south",
+        "segment": [
+          332.5,
+          4332.5,
+          2817.5,
+          4332.5
+        ],
+        "vertical_ULS_kN": 17.6939765625,
+        "ground": {
+          "route": "stair-header-line",
+          "axis": [
+            1575.0,
+            4332.5
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "SW-collector-bay",
+        "segment": [
+          2917.5,
+          3917.5,
+          3917.5,
+          3917.5
+        ],
+        "vertical_ULS_kN": 2.7234374999999997,
+        "ground": {
+          "route": "actual-protected-west-cross",
+          "axis": [
+            3417.5,
+            4250.0
+          ],
+          "offset_mm": [
+            0.0,
+            -332.5
+          ],
+          "inside_drawn_width": false,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": "CW collector y3917.5 → west return x2917.5 to header/grid y4250 and court-W x3950; finite joints unproved",
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "SW-collector-bay",
+        "segment": [
+          2917.5,
+          4332.5,
+          3917.5,
+          4332.5
+        ],
+        "vertical_ULS_kN": 2.7234374999999997,
+        "ground": {
+          "route": "stair-header-line",
+          "axis": [
+            3417.5,
+            4332.5
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "west-stair-gallery",
+        "segment": [
+          2917.5,
+          4432.5,
+          2917.5,
+          8082.5
+        ],
+        "vertical_ULS_kN": 23.953125,
+        "ground": {
+          "route": "actual-protected-stair-east",
+          "axis": [
+            2894.5,
+            6257.5
+          ],
+          "offset_mm": [
+            23.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "west-stair-gallery",
+        "segment": [
+          3917.5,
+          4432.5,
+          3917.5,
+          8082.5
+        ],
+        "vertical_ULS_kN": 23.953125,
+        "ground": {
+          "route": "court-W",
+          "axis": [
+            3950.0,
+            6257.5
+          ],
+          "offset_mm": [
+            -32.5,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "west-stair-gallery-N",
+        "segment": [
+          2917.5,
+          8082.5,
+          2917.5,
+          8852.5
+        ],
+        "vertical_ULS_kN": 7.377562499999999,
+        "ground": {
+          "route": "actual-protected-stair-east",
+          "axis": [
+            2894.5,
+            8467.5
+          ],
+          "offset_mm": [
+            23.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "west-stair-gallery-N",
+        "segment": [
+          4377.5,
+          8082.5,
+          4377.5,
+          8852.5
+        ],
+        "vertical_ULS_kN": 7.377562499999999,
+        "ground": {
+          "route": "loggia-W",
+          "axis": [
+            4500.0,
+            8467.5
+          ],
+          "offset_mm": [
+            -122.5,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "east-gallery-N",
+        "segment": [
+          7622.5,
+          8082.5,
+          7622.5,
+          8290
+        ],
+        "vertical_ULS_kN": 2.284283203125,
+        "ground": {
+          "route": "rear-E",
+          "axis": [
+            7622.5,
+            8290.0
+          ],
+          "offset_mm": [
+            0.0,
+            -103.75
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "east-gallery-N",
+        "segment": [
+          9300,
+          8082.5,
+          9300,
+          8290
+        ],
+        "vertical_ULS_kN": 2.284283203125,
+        "ground": {
+          "route": "spine",
+          "axis": [
+            9300.0,
+            8186.25
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "NW-W",
+        "segment": [
+          332.5,
+          8852.5,
+          332.5,
+          11667.5
+        ],
+        "vertical_ULS_kN": 47.47673437499999,
+        "ground": {
+          "route": "outer-W",
+          "axis": [
+            300.0,
+            10260.0
+          ],
+          "offset_mm": [
+            32.5,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "NW-W",
+        "segment": [
+          2902.5,
+          8852.5,
+          2902.5,
+          11667.5
+        ],
+        "vertical_ULS_kN": 47.47673437499999,
+        "ground": {
+          "route": "wet-wall-node-line",
+          "axis": [
+            2902.5,
+            10260.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "NW-E",
+        "segment": [
+          2902.5,
+          8852.5,
+          2902.5,
+          11667.5
+        ],
+        "vertical_ULS_kN": 27.2483203125,
+        "ground": {
+          "route": "wet-wall-node-line",
+          "axis": [
+            2902.5,
+            10260.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "NW-E",
+        "segment": [
+          4377.5,
+          8852.5,
+          4377.5,
+          11667.5
+        ],
+        "vertical_ULS_kN": 27.2483203125,
+        "ground": {
+          "route": "loggia-W",
+          "axis": [
+            4500.0,
+            10260.0
+          ],
+          "offset_mm": [
+            -122.5,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "above-loggia",
+        "segment": [
+          4377.5,
+          8082.5,
+          4377.5,
+          11667.5
+        ],
+        "vertical_ULS_kN": 84.19618968750001,
+        "ground": {
+          "route": "loggia-W",
+          "axis": [
+            4500.0,
+            9875.0
+          ],
+          "offset_mm": [
+            -122.5,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "above-loggia",
+        "segment": [
+          7622.5,
+          8082.5,
+          7622.5,
+          11667.5
+        ],
+        "vertical_ULS_kN": 84.19618968750001,
+        "ground": {
+          "route": "loggia-E",
+          "axis": [
+            7500.0,
+            9875.0
+          ],
+          "offset_mm": [
+            122.5,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "NE",
+        "segment": [
+          7622.5,
+          8290,
+          11667.5,
+          8290
+        ],
+        "vertical_ULS_kN": 89.65679296875,
+        "ground": {
+          "route": "rear-E",
+          "axis": [
+            9645.0,
+            8290.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      },
+      {
+        "field": "NE",
+        "segment": [
+          7622.5,
+          11667.5,
+          11667.5,
+          11667.5
+        ],
+        "vertical_ULS_kN": 89.65679296875,
+        "ground": {
+          "route": "outer-N-E",
+          "axis": [
+            9645.0,
+            11700.0
+          ],
+          "offset_mm": [
+            0.0,
+            -32.5
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "intermediate_chain": null,
+        "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
+      }
+    ],
+    "outside_drawn_grid_direct_edges": [
+      "SW-collector-bay/y3917.5: collector and west-return intermediate chain required"
+    ],
+    "surface_audit": {
+      "gross_12x12_m2": 144,
+      "court_clear_m2": 12.25,
+      "entrance_void_m2": 5.168025,
+      "stair_aperture_m2": 10.404,
+      "gross_outside_openings_m2": 116.177975,
+      "explicit_bridge_m2": 2.447425,
+      "remaining_surface_domain_m2": 23.15200000000001,
+      "landing_inside_stair_upper_rectangle_m2": 3.8952,
+      "bound_ULS_if_all_remaining_8p5G_2Q_kN": 335.1252000000002,
+      "status": "Upper rectangular area/action challenge only. Walls, bands, trims and actual landing have no disjoint physical mass or support destination in this remainder."
+    },
+    "exclusions": [
+      "Wall-width and cantilever bands",
+      "Physical slab openings and service trim",
+      "Entrance bridge",
+      "Heavy walls and stair; do not add intermediate reactions twice"
+    ]
+  },
+  "upper_internal_wall_challenge": {
+    "trial_height_m": 3.1,
+    "density_kN_m3": 20,
+    "rows": [
+      {
+        "id": "bed2-east",
+        "axis": "x",
+        "datum": 4800,
+        "length_mm": 2650,
+        "core_mm": 140,
+        "line_ULS_kN_per_m": 11.718000000000002,
+        "gross_ULS_kN": 31.052700000000005,
+        "opening_intervals_mm": [],
+        "opening_total_mm": 0,
+        "aligned_ground_segments": [
+          [
+            "study-east",
+            1200
+          ],
+          [
+            "cloak-east",
+            1450
+          ]
+        ],
+        "aligned_lower_opening_mm": 800,
+        "route_at_midpoint": {
+          "route": "actual-cloak-east",
+          "axis": [
+            4800.0,
+            1325.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "accounting": "direct-line-or-transfer-unproved",
+        "destination": "Opening arch/head and floor/ground transfer required; alignment alone is not capacity"
+      },
+      {
+        "id": "bed2-north-main",
+        "axis": "y",
+        "datum": 2650,
+        "length_mm": 1982.5,
+        "core_mm": 140,
+        "line_ULS_kN_per_m": 11.718000000000002,
+        "gross_ULS_kN": 23.230935000000002,
+        "opening_intervals_mm": [
+          [
+            3450,
+            4350
+          ]
+        ],
+        "opening_total_mm": 900,
+        "aligned_ground_segments": [
+          [
+            "study-cloak-north",
+            1982.5
+          ]
+        ],
+        "aligned_lower_opening_mm": 0,
+        "route_at_midpoint": {
+          "route": "actual-study-cloak-north",
+          "axis": [
+            3808.75,
+            2650.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "accounting": "direct-line-or-transfer-unproved",
+        "destination": "Opening arch/head and floor/ground transfer required; alignment alone is not capacity"
+      },
+      {
+        "id": "bed2-L-return",
+        "axis": "x",
+        "datum": 2817.5,
+        "length_mm": 597.5,
+        "core_mm": 140.0,
+        "line_ULS_kN_per_m": 11.718000000000002,
+        "gross_ULS_kN": 7.001505000000002,
+        "opening_intervals_mm": [],
+        "opening_total_mm": 0,
+        "aligned_ground_segments": [
+          [
+            "study-L-return",
+            597.5
+          ]
+        ],
+        "aligned_lower_opening_mm": 0,
+        "route_at_midpoint": {
+          "route": "actual-study-L-return",
+          "axis": [
+            2817.5,
+            2948.75
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "accounting": "direct-line-or-transfer-unproved",
+        "destination": "Opening arch/head and floor/ground transfer required; alignment alone is not capacity"
+      },
+      {
+        "id": "bed2-L-north",
+        "axis": "y",
+        "datum": 3247.5,
+        "length_mm": 2817.5,
+        "core_mm": 140.0,
+        "line_ULS_kN_per_m": 11.718000000000002,
+        "gross_ULS_kN": 33.015465000000006,
+        "opening_intervals_mm": [],
+        "opening_total_mm": 0,
+        "aligned_ground_segments": [
+          [
+            "study-L-north",
+            2817.5
+          ]
+        ],
+        "aligned_lower_opening_mm": 900,
+        "route_at_midpoint": {
+          "route": "actual-study-L-north",
+          "axis": [
+            1408.75,
+            3247.5
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "accounting": "direct-line-or-transfer-unproved",
+        "destination": "Opening arch/head and floor/ground transfer required; alignment alone is not capacity"
+      },
+      {
+        "id": "bed3-west",
+        "axis": "x",
+        "datum": 7200,
+        "length_mm": 2650,
+        "core_mm": 140,
+        "line_ULS_kN_per_m": 11.718000000000002,
+        "gross_ULS_kN": 31.052700000000005,
+        "opening_intervals_mm": [],
+        "opening_total_mm": 0,
+        "aligned_ground_segments": [
+          [
+            "wc-west",
+            2650
+          ]
+        ],
+        "aligned_lower_opening_mm": 0,
+        "route_at_midpoint": {
+          "route": "actual-wc-west",
+          "axis": [
+            7200.0,
+            1325.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "accounting": "direct-line-or-transfer-unproved",
+        "destination": "Opening arch/head and floor/ground transfer required; alignment alone is not capacity"
+      },
+      {
+        "id": "bed3-north-main",
+        "axis": "y",
+        "datum": 2650,
+        "length_mm": 2100,
+        "core_mm": 140,
+        "line_ULS_kN_per_m": 11.718000000000002,
+        "gross_ULS_kN": 24.607800000000005,
+        "opening_intervals_mm": [
+          [
+            8250,
+            9150
+          ]
+        ],
+        "opening_total_mm": 900,
+        "aligned_ground_segments": [
+          [
+            "wc-north",
+            2100
+          ]
+        ],
+        "aligned_lower_opening_mm": 900,
+        "route_at_midpoint": {
+          "route": "actual-wc-north",
+          "axis": [
+            8250.0,
+            2650.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "accounting": "direct-line-or-transfer-unproved",
+        "destination": "Opening arch/head and floor/ground transfer required; alignment alone is not capacity"
+      },
+      {
+        "id": "wet-spine",
+        "axis": "x",
+        "datum": 9300,
+        "length_mm": 3850,
+        "core_mm": 140,
+        "line_ULS_kN_per_m": 11.718000000000002,
+        "gross_ULS_kN": 45.11430000000001,
+        "opening_intervals_mm": [
+          [
+            5450,
+            6350
+          ]
+        ],
+        "opening_total_mm": 900,
+        "aligned_ground_segments": [
+          [
+            "service-spine",
+            3850
+          ]
+        ],
+        "aligned_lower_opening_mm": 900,
+        "route_at_midpoint": {
+          "route": "spine",
+          "axis": [
+            9300.0,
+            4575.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "accounting": "direct-line-or-transfer-unproved",
+        "destination": "Opening arch/head and floor/ground transfer required; alignment alone is not capacity"
+      },
+      {
+        "id": "bed3-L-north",
+        "axis": "y",
+        "datum": 3700,
+        "length_mm": 2700,
+        "core_mm": 140,
+        "line_ULS_kN_per_m": 11.718000000000002,
+        "gross_ULS_kN": 31.638600000000007,
+        "opening_intervals_mm": [],
+        "opening_total_mm": 0,
+        "aligned_ground_segments": [
+          [
+            "plant-intermediate-arch",
+            2700
+          ]
+        ],
+        "aligned_lower_opening_mm": 1400,
+        "route_at_midpoint": {
+          "route": "actual-plant-intermediate-arch",
+          "axis": [
+            10650.0,
+            3700.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "accounting": "direct-line-or-transfer-unproved",
+        "destination": "Opening arch/head and floor/ground transfer required; alignment alone is not capacity"
+      },
+      {
+        "id": "bath-north",
+        "axis": "y",
+        "datum": 6500,
+        "length_mm": 2700,
+        "core_mm": 140,
+        "line_ULS_kN_per_m": 11.718000000000002,
+        "gross_ULS_kN": 31.638600000000007,
+        "opening_intervals_mm": [],
+        "opening_total_mm": 0,
+        "aligned_ground_segments": [
+          [
+            "plant-north",
+            2700
+          ]
+        ],
+        "aligned_lower_opening_mm": 0,
+        "route_at_midpoint": {
+          "route": "actual-plant-north",
+          "axis": [
+            10650.0,
+            6500.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "accounting": "direct-line-or-transfer-unproved",
+        "destination": "Opening arch/head and floor/ground transfer required; alignment alone is not capacity"
+      },
+      {
+        "id": "rear-west",
+        "axis": "y",
+        "datum": 8852.5,
+        "length_mm": 1475.0,
+        "core_mm": 140.0,
+        "line_ULS_kN_per_m": 11.718000000000002,
+        "gross_ULS_kN": 17.284050000000004,
+        "opening_intervals_mm": [
+          [
+            3100,
+            4000
+          ]
+        ],
+        "opening_total_mm": 900,
+        "aligned_ground_segments": [
+          [
+            "rear-west",
+            1475.0
+          ]
+        ],
+        "aligned_lower_opening_mm": 900,
+        "route_at_midpoint": {
+          "route": "rear-W",
+          "axis": [
+            3640.0,
+            8852.5
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "accounting": "direct-line-or-transfer-unproved",
+        "destination": "Opening arch/head and floor/ground transfer required; alignment alone is not capacity"
+      },
+      {
+        "id": "rear-west-return",
+        "axis": "x",
+        "datum": 4377.5,
+        "length_mm": 840.0,
+        "core_mm": 140.0,
+        "line_ULS_kN_per_m": 11.718000000000002,
+        "gross_ULS_kN": 9.84312,
+        "opening_intervals_mm": [],
+        "opening_total_mm": 0,
+        "aligned_ground_segments": [
+          [
+            "loggia-west-weather",
+            840.0
+          ]
+        ],
+        "aligned_lower_opening_mm": 0,
+        "route_at_midpoint": {
+          "route": "loggia-W",
+          "axis": [
+            4500.0,
+            8432.5
+          ],
+          "offset_mm": [
+            -122.5,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "accounting": "direct-line-or-transfer-unproved",
+        "destination": "Opening arch/head and floor/ground transfer required; alignment alone is not capacity"
+      },
+      {
+        "id": "rear-east",
+        "axis": "y",
+        "datum": 8290,
+        "length_mm": 1747.5,
+        "core_mm": 215.0,
+        "line_ULS_kN_per_m": 17.995500000000003,
+        "gross_ULS_kN": 31.447136250000007,
+        "opening_intervals_mm": [
+          [
+            8250,
+            9150
+          ]
+        ],
+        "opening_total_mm": 900,
+        "aligned_ground_segments": [
+          [
+            "rear-east",
+            1747.5
+          ]
+        ],
+        "aligned_lower_opening_mm": 900,
+        "route_at_midpoint": {
+          "route": "rear-E",
+          "axis": [
+            8426.25,
+            8290.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "accounting": "direct-line-or-transfer-unproved",
+        "destination": "Opening arch/head and floor/ground transfer required; alignment alone is not capacity"
+      },
+      {
+        "id": "rear-divider",
+        "axis": "x",
+        "datum": 7622.5,
+        "length_mm": 3832.5,
+        "core_mm": 140.0,
+        "line_ULS_kN_per_m": 11.718000000000002,
+        "gross_ULS_kN": 44.90923500000001,
+        "opening_intervals_mm": [],
+        "opening_total_mm": 0,
+        "aligned_ground_segments": [
+          [
+            "loggia-east-weather",
+            3832.5
+          ]
+        ],
+        "aligned_lower_opening_mm": 0,
+        "route_at_midpoint": {
+          "route": "loggia-E",
+          "axis": [
+            7500.0,
+            10083.75
+          ],
+          "offset_mm": [
+            122.5,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "accounting": "direct-line-or-transfer-unproved",
+        "destination": "Opening arch/head and floor/ground transfer required; alignment alone is not capacity"
+      },
+      {
+        "id": "rear-wet-east",
+        "axis": "x",
+        "datum": 2902.5,
+        "length_mm": 3147.5,
+        "core_mm": 140.0,
+        "line_ULS_kN_per_m": 11.718000000000002,
+        "gross_ULS_kN": 36.882405000000006,
+        "opening_intervals_mm": [
+          [
+            10350,
+            11250
+          ]
+        ],
+        "opening_total_mm": 900,
+        "aligned_ground_segments": [],
+        "aligned_lower_opening_mm": 0,
+        "route_at_midpoint": {
+          "route": "wet-wall-node-line",
+          "axis": [
+            2902.5,
+            10426.25
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "accounting": "wet-beam-included",
+        "destination": "Opening arch/head and floor/ground transfer required; alignment alone is not capacity"
+      },
+      {
+        "id": "wet-spine-principal",
+        "axis": "x",
+        "datum": 9300,
+        "length_mm": 1790,
+        "core_mm": 140,
+        "line_ULS_kN_per_m": 11.718000000000002,
+        "gross_ULS_kN": 20.975220000000004,
+        "opening_intervals_mm": [],
+        "opening_total_mm": 0,
+        "aligned_ground_segments": [
+          [
+            "service-spine",
+            1790
+          ]
+        ],
+        "aligned_lower_opening_mm": 0,
+        "route_at_midpoint": {
+          "route": "spine",
+          "axis": [
+            9300.0,
+            7395.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "accounting": "direct-line-or-transfer-unproved",
+        "destination": "Opening arch/head and floor/ground transfer required; alignment alone is not capacity"
+      },
+      {
+        "id": "rear-east-principal",
+        "axis": "y",
+        "datum": 8290,
+        "length_mm": 2700,
+        "core_mm": 215.0,
+        "line_ULS_kN_per_m": 17.995500000000003,
+        "gross_ULS_kN": 48.58785000000001,
+        "opening_intervals_mm": [
+          [
+            9900,
+            10800
+          ]
+        ],
+        "opening_total_mm": 900,
+        "aligned_ground_segments": [
+          [
+            "rear-east",
+            2700
+          ]
+        ],
+        "aligned_lower_opening_mm": 900,
+        "route_at_midpoint": {
+          "route": "rear-E",
+          "axis": [
+            10650.0,
+            8290.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "accounting": "direct-line-or-transfer-unproved",
+        "destination": "Opening arch/head and floor/ground transfer required; alignment alone is not capacity"
+      },
+      {
+        "id": "rear-wet-south",
+        "axis": "y",
+        "datum": 8852.5,
+        "length_mm": 2902.5,
+        "core_mm": 140.0,
+        "line_ULS_kN_per_m": 11.718000000000002,
+        "gross_ULS_kN": 34.011495000000004,
+        "opening_intervals_mm": [],
+        "opening_total_mm": 0,
+        "aligned_ground_segments": [
+          [
+            "rear-west",
+            2902.5
+          ]
+        ],
+        "aligned_lower_opening_mm": 0,
+        "route_at_midpoint": {
+          "route": "rear-W",
+          "axis": [
+            1451.25,
+            8852.5
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "accounting": "direct-line-or-transfer-unproved",
+        "destination": "Opening arch/head and floor/ground transfer required; alignment alone is not capacity"
+      }
+    ],
+    "scope": "Gross actual 140/215-core internal wall challenge only. External leaves and void/head reactions omitted; wet-wall beam already includes its wall."
+  },
+  "ground_internal_wall_challenge": {
+    "trial_height_m": 3.17,
+    "rows": [
+      {
+        "id": "study-east",
+        "length_mm": 1200,
+        "core_mm": 140.0,
+        "opening_intervals_mm": [],
+        "gross_ULS_kN": 14.379120000000004,
+        "ground": {
+          "route": "actual-study-east",
+          "axis": [
+            4800.0,
+            600.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "status": "Gross masonry challenge to ground line; arches, piers, doors and upper/floor tributaries require separate nonduplicated transfer"
+      },
+      {
+        "id": "cloak-east",
+        "length_mm": 1450,
+        "core_mm": 140.0,
+        "opening_intervals_mm": [
+          [
+            1700,
+            2500
+          ]
+        ],
+        "gross_ULS_kN": 17.374770000000005,
+        "ground": {
+          "route": "actual-cloak-east",
+          "axis": [
+            4800.0,
+            1925.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "status": "Gross masonry challenge to ground line; arches, piers, doors and upper/floor tributaries require separate nonduplicated transfer"
+      },
+      {
+        "id": "cloak-west",
+        "length_mm": 1450,
+        "core_mm": 140.0,
+        "opening_intervals_mm": [],
+        "gross_ULS_kN": 17.374770000000005,
+        "ground": {
+          "route": "actual-cloak-west",
+          "axis": [
+            3400.0,
+            1925.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "status": "Gross masonry challenge to ground line; arches, piers, doors and upper/floor tributaries require separate nonduplicated transfer"
+      },
+      {
+        "id": "cloak-south",
+        "length_mm": 1400,
+        "core_mm": 140.0,
+        "opening_intervals_mm": [],
+        "gross_ULS_kN": 16.775640000000003,
+        "ground": {
+          "route": "actual-cloak-south",
+          "axis": [
+            4100.0,
+            1200.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "status": "Gross masonry challenge to ground line; arches, piers, doors and upper/floor tributaries require separate nonduplicated transfer"
+      },
+      {
+        "id": "study-cloak-north",
+        "length_mm": 1982.5,
+        "core_mm": 140.0,
+        "opening_intervals_mm": [],
+        "gross_ULS_kN": 23.755504500000008,
+        "ground": {
+          "route": "actual-study-cloak-north",
+          "axis": [
+            3808.75,
+            2650.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "status": "Gross masonry challenge to ground line; arches, piers, doors and upper/floor tributaries require separate nonduplicated transfer"
+      },
+      {
+        "id": "study-L-return",
+        "length_mm": 597.5,
+        "core_mm": 140.0,
+        "opening_intervals_mm": [],
+        "gross_ULS_kN": 7.159603500000002,
+        "ground": {
+          "route": "actual-study-L-return",
+          "axis": [
+            2817.5,
+            2948.75
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "status": "Gross masonry challenge to ground line; arches, piers, doors and upper/floor tributaries require separate nonduplicated transfer"
+      },
+      {
+        "id": "study-L-north",
+        "length_mm": 2817.5,
+        "core_mm": 140.0,
+        "opening_intervals_mm": [
+          [
+            1350,
+            2250
+          ]
+        ],
+        "gross_ULS_kN": 33.76097550000001,
+        "ground": {
+          "route": "actual-study-L-north",
+          "axis": [
+            1408.75,
+            3247.5
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "status": "Gross masonry challenge to ground line; arches, piers, doors and upper/floor tributaries require separate nonduplicated transfer"
+      },
+      {
+        "id": "wc-west",
+        "length_mm": 2650,
+        "core_mm": 140.0,
+        "opening_intervals_mm": [],
+        "gross_ULS_kN": 31.75389000000001,
+        "ground": {
+          "route": "actual-wc-west",
+          "axis": [
+            7200.0,
+            1325.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "status": "Gross masonry challenge to ground line; arches, piers, doors and upper/floor tributaries require separate nonduplicated transfer"
+      },
+      {
+        "id": "wc-north",
+        "length_mm": 2100,
+        "core_mm": 140.0,
+        "opening_intervals_mm": [
+          [
+            7650,
+            8550
+          ]
+        ],
+        "gross_ULS_kN": 25.163460000000008,
+        "ground": {
+          "route": "actual-wc-north",
+          "axis": [
+            8250.0,
+            2650.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "status": "Gross masonry challenge to ground line; arches, piers, doors and upper/floor tributaries require separate nonduplicated transfer"
+      },
+      {
+        "id": "service-spine",
+        "length_mm": 8290,
+        "core_mm": 140.0,
+        "opening_intervals_mm": [
+          [
+            2750,
+            3650
+          ]
+        ],
+        "gross_ULS_kN": 99.33575400000004,
+        "ground": {
+          "route": "spine",
+          "axis": [
+            9300.0,
+            4145.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "status": "Gross masonry challenge to ground line; arches, piers, doors and upper/floor tributaries require separate nonduplicated transfer"
+      },
+      {
+        "id": "utility-north",
+        "length_mm": 2700,
+        "core_mm": 140.0,
+        "opening_intervals_mm": [
+          [
+            10250,
+            11150
+          ]
+        ],
+        "gross_ULS_kN": 32.35302000000001,
+        "ground": {
+          "route": "actual-utility-north",
+          "axis": [
+            10650.0,
+            2550.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "status": "Gross masonry challenge to ground line; arches, piers, doors and upper/floor tributaries require separate nonduplicated transfer"
+      },
+      {
+        "id": "plant-intermediate-arch",
+        "length_mm": 2700,
+        "core_mm": 140.0,
+        "opening_intervals_mm": [
+          [
+            9650,
+            11050
+          ]
+        ],
+        "gross_ULS_kN": 32.35302000000001,
+        "ground": {
+          "route": "actual-plant-intermediate-arch",
+          "axis": [
+            10650.0,
+            3700.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "status": "Gross masonry challenge to ground line; arches, piers, doors and upper/floor tributaries require separate nonduplicated transfer"
+      },
+      {
+        "id": "plant-north",
+        "length_mm": 2700,
+        "core_mm": 140.0,
+        "opening_intervals_mm": [],
+        "gross_ULS_kN": 32.35302000000001,
+        "ground": {
+          "route": "actual-plant-north",
+          "axis": [
+            10650.0,
+            6500.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "status": "Gross masonry challenge to ground line; arches, piers, doors and upper/floor tributaries require separate nonduplicated transfer"
+      },
+      {
+        "id": "rear-west",
+        "length_mm": 4377.5,
+        "core_mm": 140.0,
+        "opening_intervals_mm": [
+          [
+            3100,
+            4000
+          ]
+        ],
+        "gross_ULS_kN": 52.453831500000014,
+        "ground": {
+          "route": "rear-W",
+          "axis": [
+            2188.75,
+            8852.5
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "status": "Gross masonry challenge to ground line; arches, piers, doors and upper/floor tributaries require separate nonduplicated transfer"
+      },
+      {
+        "id": "rear-east",
+        "length_mm": 4447.5,
+        "core_mm": 215.0,
+        "opening_intervals_mm": [
+          [
+            8250,
+            9150
+          ],
+          [
+            10450,
+            11350
+          ]
+        ],
+        "gross_ULS_kN": 81.842227875,
+        "ground": {
+          "route": "rear-E",
+          "axis": [
+            9776.25,
+            8290.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "status": "Gross masonry challenge to ground line; arches, piers, doors and upper/floor tributaries require separate nonduplicated transfer"
+      },
+      {
+        "id": "loggia-west-weather",
+        "length_mm": 4250,
+        "core_mm": 140.0,
+        "opening_intervals_mm": [],
+        "gross_ULS_kN": 50.92605000000001,
+        "ground": {
+          "route": "loggia-W",
+          "axis": [
+            4500.0,
+            9875.0
+          ],
+          "offset_mm": [
+            -122.5,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "status": "Gross masonry challenge to ground line; arches, piers, doors and upper/floor tributaries require separate nonduplicated transfer"
+      },
+      {
+        "id": "loggia-east-weather",
+        "length_mm": 4250,
+        "core_mm": 140.0,
+        "opening_intervals_mm": [],
+        "gross_ULS_kN": 50.92605000000001,
+        "ground": {
+          "route": "loggia-E",
+          "axis": [
+            7500.0,
+            9875.0
+          ],
+          "offset_mm": [
+            122.5,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "status": "Gross masonry challenge to ground line; arches, piers, doors and upper/floor tributaries require separate nonduplicated transfer"
+      },
+      {
+        "id": "protected-stair-east",
+        "length_mm": 4776.5,
+        "core_mm": 100.0,
+        "opening_intervals_mm": [],
+        "gross_ULS_kN": 40.8820635,
+        "ground": {
+          "route": "actual-protected-stair-east",
+          "axis": [
+            2894.5,
+            6561.25
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "status": "Gross masonry challenge to ground line; arches, piers, doors and upper/floor tributaries require separate nonduplicated transfer"
+      },
+      {
+        "id": "protected-west-cross",
+        "length_mm": 1003.0,
+        "core_mm": 100.0,
+        "opening_intervals_mm": [
+          [
+            2971.5,
+            3820.5
+          ]
+        ],
+        "gross_ULS_kN": 8.584677000000001,
+        "ground": {
+          "route": "actual-protected-west-cross",
+          "axis": [
+            3319.0,
+            4250.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "status": "Gross masonry challenge to ground line; arches, piers, doors and upper/floor tributaries require separate nonduplicated transfer"
+      },
+      {
+        "id": "protected-east-cross",
+        "length_mm": 1357.5,
+        "core_mm": 100.0,
+        "opening_intervals_mm": [
+          [
+            8241.25,
+            9141.25
+          ]
+        ],
+        "gross_ULS_kN": 11.618842500000001,
+        "ground": {
+          "route": "actual-protected-east-cross",
+          "axis": [
+            8691.25,
+            4250.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        },
+        "status": "Gross masonry challenge to ground line; arches, piers, doors and upper/floor tributaries require separate nonduplicated transfer"
+      }
+    ],
+    "scope": "Gross source-wall base selfweight challenge, not exact mass. Opening/arch RC substitution and external leaves omitted."
+  },
+  "entrance_bridge": {
+    "area_m2": 2.447425,
+    "slab_G_kN": 18.3556875,
+    "slab_Q_kN": 4.89485,
+    "two_member_gross_G_kN": 4.43625,
+    "overlap_with_axis_slab_G_already_counted_kN": 1.457625,
+    "two_member_incremental_G_kN": 2.978625,
+    "ULS_kN": 36.143596875,
+    "seats": [
+      {
+        "xy": [
+          4785.0,
+          2650
+        ],
+        "vertical_ULS_kN": 9.03589921875,
+        "ground": {
+          "route": "actual-study-cloak-north",
+          "axis": [
+            4785.0,
+            2650.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        }
+      },
+      {
+        "xy": [
+          4785.0,
+          3917.5
+        ],
+        "vertical_ULS_kN": 9.03589921875,
+        "ground": {
+          "route": "court-S",
+          "axis": [
+            4785.0,
+            3950.0
+          ],
+          "offset_mm": [
+            0.0,
+            -32.5
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        }
+      },
+      {
+        "xy": [
+          7215.0,
+          2650
+        ],
+        "vertical_ULS_kN": 9.03589921875,
+        "ground": {
+          "route": "actual-wc-north",
+          "axis": [
+            7215.0,
+            2650.0
+          ],
+          "offset_mm": [
+            0.0,
+            0.0
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        }
+      },
+      {
+        "xy": [
+          7215.0,
+          3917.5
+        ],
+        "vertical_ULS_kN": 9.03589921875,
+        "ground": {
+          "route": "court-S",
+          "axis": [
+            7215.0,
+            3950.0
+          ],
+          "offset_mm": [
+            0.0,
+            -32.5
+          ],
+          "inside_drawn_width": true,
+          "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+        }
+      }
+    ],
+    "court_opening_mm": [
+      5100.0,
+      6900.0
+    ],
+    "patch_to_jamb_mm": [
+      215.0,
+      215.0
+    ],
+    "skewback_clearance_mm": 16.53846153846098,
+    "status": "Four finite action destinations, not adequate bearing: west/east south lines and court-south piers/arch still require actual joint and thrust resolution"
+  },
+  "named_stair_wet_receivers": [
+    {
+      "id": "stair-midpost",
+      "xy": [
+        2942.5,
+        7257.5
+      ],
+      "N_ULS_kN": 74.8593414111478,
+      "M_ULS_kNm": 2.274063533337014,
+      "ground": {
+        "route": "stair-post-node-line",
+        "axis": [
+          2942.5,
+          7257.5
+        ],
+        "offset_mm": [
+          0.0,
+          0.0
+        ],
+        "inside_drawn_width": true,
+        "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+      },
+      "accounting": "distinct-demand-with-origin-audit-required"
+    },
+    {
+      "id": "stair-mid-W",
+      "xy": [
+        332.5,
+        7257.5
+      ],
+      "N_ULS_kN": 40.073099034153884,
+      "M_ULS_kNm": null,
+      "ground": {
+        "route": "outer-W",
+        "axis": [
+          300.0,
+          7257.5
+        ],
+        "offset_mm": [
+          32.5,
+          0.0
+        ],
+        "inside_drawn_width": true,
+        "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+      },
+      "accounting": "intermediate-or-overlapping"
+    },
+    {
+      "id": "header-W",
+      "xy": [
+        332.5,
+        4332.5
+      ],
+      "N_ULS_kN": 30.02036886377492,
+      "M_ULS_kNm": null,
+      "ground": {
+        "route": "stair-header-line",
+        "axis": [
+          332.5,
+          4332.5
+        ],
+        "offset_mm": [
+          0.0,
+          0.0
+        ],
+        "inside_drawn_width": true,
+        "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+      },
+      "accounting": "intermediate-or-overlapping"
+    },
+    {
+      "id": "header-E",
+      "xy": [
+        3917.5,
+        4332.5
+      ],
+      "N_ULS_kN": 38.71576567512379,
+      "M_ULS_kNm": null,
+      "ground": {
+        "route": "stair-header-line",
+        "axis": [
+          3917.5,
+          4332.5
+        ],
+        "offset_mm": [
+          0.0,
+          0.0
+        ],
+        "inside_drawn_width": true,
+        "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+      },
+      "accounting": "intermediate-or-overlapping"
+    },
+    {
+      "id": "stair-west-masonry",
+      "xy": [
+        332.5,
+        7257.5
+      ],
+      "N_ULS_kN": 50.839484034153884,
+      "M_ULS_kNm": 1.0167896806830776,
+      "ground": {
+        "route": "outer-W",
+        "axis": [
+          300.0,
+          7257.5
+        ],
+        "offset_mm": [
+          32.5,
+          0.0
+        ],
+        "inside_drawn_width": true,
+        "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
+      },
+      "accounting": "distinct-demand-with-origin-audit-required"
+    }
+  ],
+  "lateral": {
+    "reference_H_kN": 1,
+    "roof_application_height_m": 6.746721089070517,
+    "outer_axis_separation_m": 11.335,
+    "unit_base_shear_kN": 1,
+    "unit_base_overturning_kNm": 6.746721089070517,
+    "unit_boundary_couple_kN": 0.5952113885373195,
+    "both_axes": "Apply Hx and Hy separately with reversal; this is global equilibrium, not a split to individual walls.",
+    "candidate_wall_lines": {
+      "Hx": [
+        "outer-S/N inner core with actual openings",
+        "court-S/N and rear-west/rear-east segmented lines with arch and loggia interruptions"
+      ],
+      "Hy": [
+        "outer-W/E inner core with actual windows",
+        "service spine x9300, court-W/E and loggia x4377.5/7622.5 tied returns"
+      ]
+    },
+    "candidate_status": "These are route candidates from actual geometry, not assigned shares or credited shear-wall capacities.",
+    "path": [
+      "roof rail/post/purlin signed cleats and ordinary/corner frames",
+      "continuous warm collector/tie/roof diaphragm with verified chord and shear joints",
+      "selected transverse/longitudinal RC wall and masonry restraint lines around court, void and loggia",
+      "floor diaphragm/anchored upper-wall supports and warm reinforced spreader",
+      "tested AAC/mineral-DPC shear and tension interface to cold grid",
+      "cold grid, support groups and actual ground"
+    ],
+    "open": [
+      "No site wind Hx/Hy/pressure distribution or directional stiffness; 1 kN is a unit demand only",
+      "No roof/floor diaphragm shear, collector continuity, arch pierhead/tie anchor or torsional response",
+      "No warm/cold horizontal or uplift crossing detail; steel starter bypass would defeat thermal separation",
+      "No support-group lateral/uplift, tree/heave and settlement action combination"
+    ]
+  },
+  "preferred_foundation": {
+    "warm": "RC ground slab and integral reinforced warm reaction spreader support inner wall/bridge/stair loads",
+    "authored_vertical_z": {
+      "warm_grid_top": -80,
+      "warm_grid_soffit": -380,
+      "AAC": [
+        -605,
+        -390
+      ],
+      "DPC": [
+        -765,
+        -615
+      ],
+      "cold_grid_top": -765,
+      "cold_member_soffit": -1215
+    },
+    "receiver_screen": [
+      {
+        "name": "wet",
+        "N_ULS": 71.13795,
+        "M_ULS": 1.442435,
+        "maximum_contact_MPa": 0.9168668528326145,
+        "status": "Rounded single-node screen; not combined whole-house acceptance"
+      },
+      {
+        "name": "stair",
+        "N_ULS": 75,
+        "M_ULS": 2.3,
+        "maximum_contact_MPa": 1.1173055971997516,
+        "status": "Rounded single-node screen; not combined whole-house acceptance"
+      }
+    ],
+    "interface": "Engineered continuous mineral bearing/DPC with explicit contact, shear, restraint, differential movement and no thermal-bypassing starter assumption",
+    "cold": "Connected RC grid supports inner and separately weather-leaf load routes; node depth/size and support sharing follow combined N/M/H/uplit actions",
+    "site": "Deep-support G1 leading pre-site hypothesis; raft/piled raft and site-justified alternatives retained",
+    "rejected": [
+      "Old 400 pile joint/cage is failed",
+      "850/100/100 node load ceiling not re-earned by this ledger",
+      "D1800 is member-only cost control, not selected whole-house depth"
+    ],
+    "unresolved": [
+      "Complete physical slab and wall/external-leaf/ceiling mass and opening head schedule",
+      "Corner jack/hip and q450 receiving system; signed ordinary uplift anchors",
+      "Actual diaphragm, wall-line distribution, arch thrust, assembled masonry and load combinations",
+      "Warm/cold interface contact, force transfer and cap/beam node N-M-H-uplift response",
+      "Site ground, water, heave, tree, pile/group and construction data"
+    ]
+  },
+  "no_aggregate_adequacy": true
+}

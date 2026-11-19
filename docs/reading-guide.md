@@ -1,7 +1,7 @@
 ---
 next:
   text: Preface
-  link: /docs/manuscript/preface
+  link: /manuscript/preface
 ---
 
 # Reading guide
@@ -12,7 +12,7 @@ Ovid’s House can be read as an architectural argument, explored as a set of de
 
 This is the primary sequence and the best route for a first reading.
 
-1. [Project overview](../README.md)
+1. [Project overview](../index.md)
 2. [Preface](manuscript/preface.md)
 3. [Part I — The Proposition](manuscript/part-i.md)
 4. [Part II — Architecture of the Platform](manuscript/part-ii.md)

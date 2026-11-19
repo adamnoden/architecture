@@ -1,0 +1,1015 @@
+{
+  "disposition": "Reject the straight tall stack. Retain the rear floor port in source pending coordinated redesign.",
+  "sourceSHA256": {
+    "project/mat/studies/rear-wc-west-gravity.json": "ae8ac6c5983636b3aad27df4718ecaeedb9d797318d7017149d5dfc66c663ebd",
+    "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+    "project/rof/studies/outer_66_checkpoint/outer-66-pieces.json": "db90a5429c27a3244e617b444a09972d5aa7fb2b1151d601562c007d9efca8d8",
+    "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+    "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+    "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5"
+  },
+  "existingStackXYmm": [
+    -300,
+    9400
+  ],
+  "screenedBareVentZmm": 7200,
+  "westGoods": {
+    "primary": {
+      "piece": "primary-west-13",
+      "pieceYmm": [
+        9177.5,
+        9960.625
+      ],
+      "installedRadialMM": [
+        170.0,
+        520.0
+      ],
+      "bedZmm": 6841.554466361,
+      "lipZmm": [
+        6971.554466361,
+        7071.554466361
+      ],
+      "stackOverlapMM": 110.0,
+      "clearanceAfter400OutAndSettingMM": 195.0,
+      "northShiftBeforePassingMastMM": 352.5,
+      "southShiftBeforePassingMastMM": 690.625,
+      "northShiftBeyondPickupCentred1200BayMM": 144.0625
+    },
+    "lower": {
+      "piece": "lower-west-13",
+      "pieceYmm": [
+        9203.75,
+        9993.4375
+      ],
+      "installedRadialMM": [
+        125.0,
+        670.0
+      ],
+      "bedZmm": 6478.0,
+      "lipZmm": [
+        6603.0
+      ],
+      "stackOverlapMM": 110.0,
+      "clearanceAfter400OutAndSettingMM": 45.0,
+      "northShiftBeforePassingMastMM": 326.25,
+      "southShiftBeforePassingMastMM": 723.4375,
+      "northShiftBeyondPickupCentred1200BayMM": 121.09375
+    }
+  },
+  "bareVentMinimumRadiusForInstalledGoodsMM": 735.0,
+  "standOffVent": {
+    "trialMastRadiusMM": 1220,
+    "completeSupportReserveDiameterMM": 190,
+    "escapeRadialMM": [
+      1400,
+      2600
+    ],
+    "mastClearOfEscapeAfterSettingMM": 75,
+    "bodyCentreRadiusAndYmm": [
+      1050,
+      9825
+    ],
+    "bodyClearOfMastAfterSettingMM": 52.73900860643283,
+    "bodyClearOfEscapeAfterSettingMM": 40,
+    "scope": "Plan and initial withdrawal only. The lower 400 mm movement is a sensitivity. Full pan transfer, wet pickup, support, tool and escape states remain unproved."
+  },
+  "unalteredDryRiser": {
+    "roofReservationXYZmm": [
+      567.5,
+      11177.5,
+      7800
+    ],
+    "idealBareOutsideDiameterMM": 75,
+    "nearestHipAxisDistanceMM": 180.3122292025696,
+    "hipOuterRailFaceFromAxisMM": 146,
+    "bareVentInterferenceWithHipRailMM": 3.187770797430403,
+    "firstInteriorWestPurlinXAndNorthCentrelineEndYmm": [
+      500,
+      11500
+    ],
+    "purlinMinimumHalfWidthInPlanMM": 40.0,
+    "minimumBareVentInterferenceWithPurlinMM": 10.0,
+    "possibleDryTakeoffAtWCBranchAxisZmm": 3626.7,
+    "WCVerticalAbovePriorHostAxisMM": 5930.0,
+    "showerStackConnectionAbovePriorHostAxisMM": 5195.5,
+    "scope": "The WC takeoff would connect to the external stack through the wet WC branch. It does not provide separate open stack ventilation during flush or surcharge. A roof offset and an independently established air path are distinct obligations."
+  },
+  "independentFoul": {
+    "previousConditionalHostXYZmm": [
+      -450,
+      11177.5,
+      -2480
+    ],
+    "trialGradeZmm": -1800,
+    "trialCoverMM": 600,
+    "maximumUpstreamAxisZmm": -2480,
+    "minimumDirectPlanLengthMM": 1783.8178858840945,
+    "minimumDropAt1In40MM": 44.59544714710236,
+    "maximumHostAxisZmmWithSameCover": -2524.5954471471023,
+    "upstreamCoverMMIfPreviousHostLevelHeld": 555.4045528528977,
+    "minimumPipeEnvelopeToWestGirderPlanMM": 202.5,
+    "scope": "Direct run is a plan lower bound. Confirm actual grade, fitted branches, excavation, separate vent, inspection and lawful receiving."
+  },
+  "dryReturnComparison": {
+    "lowObliqueReturn": {
+      "case": {
+        "riserAxisXYMm": [
+          775,
+          9090
+        ],
+        "wetStackAirTakeoffZMm": 3800,
+        "terminalZMm": 8000
+      },
+      "state": "bounded-dry-return-comparison",
+      "installedAcceptance": false,
+      "sourceSHA256": {
+        "project/mat/studies/rear-wc-west-gravity.json": "ae8ac6c5983636b3aad27df4718ecaeedb9d797318d7017149d5dfc66c663ebd",
+        "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+        "project/rof/studies/outer_66_checkpoint/outer-66-pieces.json": "db90a5429c27a3244e617b444a09972d5aa7fb2b1151d601562c007d9efca8d8",
+        "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+        "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+        "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+        "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+        "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+        "project/str/studies/court_tie_starter_paths.py": "5b570b78dc7f5ec495eabfd4dd2bfaa8c96dc36c83088a655f5076a4bf46d535",
+        "project/rof/studies/outer_physical_checkpoint/outer-renewal-path-checks.json": "f1672d280a2a7e0a2cc2e10cadc937333b4dbdd4622b95888a455e1de6ead1a2",
+        "project/had/studies/current-house-services.json": "fa820740d3c6b55917715945b158bc4ad1005ab80306fb3165b59c0136d31a84",
+        "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+        "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c"
+      },
+      "wet": {
+        "stackAxisXYMm": [
+          -300,
+          9400
+        ],
+        "upperWC": {
+          "endAxisZMm": 3568.075,
+          "fallMM": 66.925,
+          "planMM": [
+            [
+              899.5,
+              11177.5
+            ],
+            [
+              510,
+              11177.5
+            ],
+            [
+              510,
+              9400
+            ],
+            [
+              0,
+              9400
+            ]
+          ],
+          "squarePlanLengthMM": 2677.0
+        },
+        "lowerShower": {
+          "endAxisZMm": 2723.0,
+          "fallMM": 45.0625,
+          "planMM": [
+            [
+              1750,
+              9452.5
+            ],
+            [
+              1750,
+              9400
+            ],
+            [
+              0,
+              9400
+            ]
+          ],
+          "squarePlanLengthMM": 1802.5
+        },
+        "junctionLevelsZMm": [
+          2715.5,
+          3560.575
+        ]
+      },
+      "clearanceMm": {
+        "westWindowRawPlan": 25.942236032906834,
+        "westWindowConservativeFullArch": 1134.2066013230888,
+        "westWindowThreeSillVertical": 383.87749975113513,
+        "rearBathExtractFullCollar": 81.47159213191296,
+        "rearBathIndependentCondensate": 230.95614235846423,
+        "rearBathSouthWall": 32.471592131912956,
+        "rearBasinShaftPlan": 84.97159213191296,
+        "rearRadiatorAndCarrier": 27.4720098300277,
+        "headRenewalDeck": 392.10415067584563,
+        "headRenewalScaffoldLegs": 151.38907455254693,
+        "headRenewalMovingCartridges": 554.9861606222956,
+        "roofRenewalTray": 782.4720098300277,
+        "installedWestRoofTrays": 792.4720098300277,
+        "westPurlinsCompleteFlashingPlan": 30.0,
+        "roofRadialRailsPlan": 1203.6729778332788,
+        "roofBraceTubesPlan": 970.8385320441853,
+        "flashingToTerminalOverSlopedCover": 271.1447292066259
+      },
+      "failedChecks": [],
+      "cornersXYZmm": [
+        [
+          -300,
+          9400,
+          3560.575
+        ],
+        [
+          -300,
+          9400,
+          3800
+        ],
+        [
+          460.0,
+          9090,
+          3820.5198075039702
+        ],
+        [
+          775,
+          9090,
+          3828.3948075039702
+        ],
+        [
+          775,
+          9090,
+          8000
+        ]
+      ],
+      "roundedCentrelineXYZmm": [
+        [
+          -300,
+          9400,
+          3560.575
+        ],
+        [
+          -300.0,
+          9400.0,
+          3692.715630369416
+        ],
+        [
+          -299.9006783809095,
+          9399.959487234319,
+          3697.57228449027
+        ],
+        [
+          -299.60290723030704,
+          9399.838027949205,
+          3702.4194666925123
+        ],
+        [
+          -299.1072672904141,
+          9399.635859026354,
+          3707.247723530588
+        ],
+        [
+          -298.4147252063848,
+          9399.353374755236,
+          3712.0476384690246
+        ],
+        [
+          -297.52663164106065,
+          9398.991126064117,
+          3716.809850247476
+        ],
+        [
+          -296.4447186407765,
+          9398.54981944558,
+          3721.5250711379604
+        ],
+        [
+          -295.17109625735577,
+          9398.030315578659,
+          3726.18410505869
+        ],
+        [
+          -293.7082484328822,
+          9397.433627650254,
+          3730.777865509164
+        ],
+        [
+          -292.05902815527503,
+          9396.760919379125,
+          3735.2973932915424
+        ],
+        [
+          -290.2266518941144,
+          9396.013502746284,
+          3739.733873983746
+        ],
+        [
+          -288.21469332757033,
+          9395.192835436246,
+          3744.0786551301967
+        ],
+        [
+          -286.0270763726684,
+          9394.300517994116,
+          3748.323263116678
+        ],
+        [
+          -283.6680675324852,
+          9393.33829070404,
+          3752.4594196964003
+        ],
+        [
+          -281.14226757520026,
+          9392.308030195147,
+          3756.479058135042
+        ],
+        [
+          -278.45460256123056,
+          9391.211745781555,
+          3760.374338943277
+        ],
+        [
+          -275.61031423594915,
+          9390.051575543612,
+          3764.1376651661103
+        ],
+        [
+          -272.61494980672427,
+          9388.829782158005,
+          3767.7616971991965
+        ],
+        [
+          -269.4743511242167,
+          9387.548748484878,
+          3771.2393671032487
+        ],
+        [
+          -266.19464328903496,
+          9386.210972920528,
+          3774.5638923886218
+        ],
+        [
+          -262.78222270596945,
+          9384.819064524803,
+          3777.7287892431796
+        ],
+        [
+          -259.24374460910224,
+          9383.37573793266,
+          3780.727885177659
+        ],
+        [
+          -255.5861100821234,
+          9381.883808059814,
+          3783.555331063855
+        ],
+        [
+          -251.816452599167,
+          9380.346184612818,
+          3786.205612542161
+        ],
+        [
+          -247.94212411241708,
+          9378.765866414276,
+          3788.673560776205
+        ],
+        [
+          -243.9706807136164,
+          9377.14593555424,
+          3790.95436253362
+        ],
+        [
+          -239.90986789744224,
+          9375.48955137922,
+          3793.043569573277
+        ],
+        [
+          -235.76760545549058,
+          9373.799944330529,
+          3794.937107320675
+        ],
+        [
+          -231.55197203032895,
+          9372.08040964395,
+          3796.631282814571
+        ],
+        [
+          -227.27118935974318,
+          9370.334300923054,
+          3798.122791909357
+        ],
+        [
+          -222.93360624190575,
+          9368.565023598672,
+          3799.4087257191195
+        ],
+        [
+          -218.54768225273858,
+          9366.776028287302,
+          3800.4865762908357
+        ],
+        [
+          -214.12197124722636,
+          9364.97080406137,
+          3801.354241495625
+        ],
+        [
+          -209.6651046768577,
+          9363.152871644508,
+          3802.0100291285253
+        ],
+        [
+          -205.1857747557302,
+          9361.325776545102,
+          3802.452660208796
+        ],
+        [
+          -200.69271750814985,
+          9359.493082141482,
+          3802.6812714743096
+        ],
+        [
+          440.0389528474169,
+          9098.142006075395,
+          3819.980864286669
+        ],
+        [
+          444.456264928515,
+          9096.450116159172,
+          3820.0995917564082
+        ],
+        [
+          448.94225263000897,
+          9094.949827315075,
+          3820.2190967723113
+        ],
+        [
+          453.48861530502893,
+          9093.643915602408,
+          3820.339158208285
+        ],
+        [
+          458.08694059187917,
+          9092.534797414772,
+          3820.459553908664
+        ],
+        [
+          462.72871997985067,
+          9091.624525008885,
+          3820.580061099276
+        ],
+        [
+          467.405364552943,
+          9090.914782707201,
+          3820.7004567996555
+        ],
+        [
+          472.1082208823641,
+          9090.406883781312,
+          3820.8205182356287
+        ],
+        [
+          476.82858703840117,
+          9090.10176802194,
+          3820.9400232515322
+        ],
+        [
+          481.55772869203594,
+          9090.0,
+          3821.058750721271
+        ],
+        [
+          667.7491410276224,
+          9090.0,
+          3825.7135360296606
+        ],
+        [
+          672.6015973341838,
+          9090.0,
+          3825.942147295174
+        ],
+        [
+          677.4392282672529,
+          9090.0,
+          3826.384778375445
+        ],
+        [
+          682.2525990090869,
+          9090.0,
+          3827.040566008345
+        ],
+        [
+          687.0323220565244,
+          9090.0,
+          3827.9082312131345
+        ],
+        [
+          691.7690755294063,
+          9090.0,
+          3828.9860817848507
+        ],
+        [
+          696.4536213510114,
+          9090.0,
+          3830.2720155946135
+        ],
+        [
+          701.076823265051,
+          9090.0,
+          3831.763524689399
+        ],
+        [
+          705.6296646540836,
+          9090.0,
+          3833.4577001832954
+        ],
+        [
+          710.103266124598,
+          9090.0,
+          3835.3512379306926
+        ],
+        [
+          714.488902824469,
+          9090.0,
+          3837.4404449703497
+        ],
+        [
+          718.7780214590114,
+          9090.0,
+          3839.7212467277654
+        ],
+        [
+          722.962256972446,
+          9090.0,
+          3842.1891949618093
+        ],
+        [
+          727.0334488622442,
+          9090.0,
+          3844.839476440115
+        ],
+        [
+          730.9836570945328,
+          9090.0,
+          3847.666922326311
+        ],
+        [
+          734.8051775895185,
+          9090.0,
+          3850.66601826079
+        ],
+        [
+          738.4905572467338,
+          9090.0,
+          3853.830915115349
+        ],
+        [
+          742.0326084807966,
+          9090.0,
+          3857.155440400721
+        ],
+        [
+          745.4244232393377,
+          9090.0,
+          3860.6331103047737
+        ],
+        [
+          748.6593864757552,
+          9090.0,
+          3864.2571423378595
+        ],
+        [
+          751.7311890505217,
+          9090.0,
+          3868.020468560693
+        ],
+        [
+          754.6338400358804,
+          9090.0,
+          3871.9157493689286
+        ],
+        [
+          757.3616783999342,
+          9090.0,
+          3875.93538780757
+        ],
+        [
+          759.9093840473408,
+          9090.0,
+          3880.071544387292
+        ],
+        [
+          762.2719881950782,
+          9090.0,
+          3884.3161523737735
+        ],
+        [
+          764.4448830630491,
+          9090.0,
+          3888.6609335202243
+        ],
+        [
+          766.4238308606208,
+          9090.0,
+          3893.097414212428
+        ],
+        [
+          768.2049720515759,
+          9090.0,
+          3897.6169419948064
+        ],
+        [
+          769.7848328813548,
+          9090.0,
+          3902.21070244528
+        ],
+        [
+          771.1603321519094,
+          9090.0,
+          3906.8697363660103
+        ],
+        [
+          772.3287872309555,
+          9090.0,
+          3911.5849572564944
+        ],
+        [
+          773.287919283901,
+          9090.0,
+          3916.3471690349456
+        ],
+        [
+          774.0358577182526,
+          9090.0,
+          3921.1470839733825
+        ],
+        [
+          774.5711438318253,
+          9090.0,
+          3925.975340811458
+        ],
+        [
+          774.8927336576463,
+          9090.0,
+          3930.8225230137004
+        ],
+        [
+          775.0,
+          9090.0,
+          3935.6791771345543
+        ],
+        [
+          775,
+          9090,
+          8000
+        ]
+      ],
+      "formedWallCentreXYZmm": [
+        0,
+        9277.631578947368,
+        3808.0999240147253
+      ],
+      "formedWallProjectedRadiusMm": 86.42618501972484,
+      "receiverWallFinishXMm": 429.5,
+      "minimumRoomSideUndersideAboveFFLMm": 274.9524564185822,
+      "bendRadiusMm": 110,
+      "remainingStraightBetweenBendsMm": 132.1406303694161,
+      "insideWallFaceToFirstBendTangentMm": 10.538952847416883,
+      "completeDryEnvelopeDiameterMm": 190,
+      "roofFlashingEnvelopeDiameterMm": 300,
+      "nearOpeningHeads": [
+        [
+          "FIRST/west-window-3",
+          6300
+        ],
+        [
+          "GROUND/west-window-3",
+          2850
+        ],
+        [
+          "rear-bath-exhaust",
+          6130.0
+        ],
+        [
+          "rear-bath-condensate",
+          5980.0
+        ],
+        [
+          "FIRST/west-window-2",
+          6300
+        ],
+        [
+          "GROUND/west-window-2",
+          2850
+        ],
+        [
+          "FIRST/north-window-0",
+          6300
+        ],
+        [
+          "GROUND/north-window-0",
+          2850
+        ]
+      ],
+      "terminalAboveOpeningAllowanceMm": 800,
+      "terminalApplicability": {
+        "modelledOpenings": {
+          "scope": "Modelled fa\u00e7ade and courtyard opening envelopes and complete service weather faces",
+          "guidance": "England Approved Document H (2015), paragraph 1.31 and Diagram 6",
+          "guidanceUrl": "https://assets.publishing.service.gov.uk/media/5a80cf9ded915d74e33fc8ae/BR_PDF_AD_H_2015.pdf",
+          "state": "passes",
+          "horizontalCutoffMm": 3000,
+          "minimumHeightAboveOpeningMm": 900,
+          "terminalPlanRadiusAllowanceMm": 95,
+          "inventoryCount": 70,
+          "nearby": [
+            {
+              "id": "FIRST/west-window-3",
+              "kind": "window",
+              "wall": "outer-west",
+              "xyBoundsMm": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  9400.0,
+                  10400.0
+                ]
+              ],
+              "topZMm": 6300,
+              "axisDistanceMm": 834.7005451058482,
+              "comparisonDistanceMm": 739.7005451058482,
+              "heightReserveMm": 800
+            },
+            {
+              "id": "GROUND/west-window-3",
+              "kind": "window",
+              "wall": "outer-west",
+              "xyBoundsMm": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  9400.0,
+                  10400.0
+                ]
+              ],
+              "topZMm": 2850,
+              "axisDistanceMm": 834.7005451058482,
+              "comparisonDistanceMm": 739.7005451058482,
+              "heightReserveMm": 4250
+            },
+            {
+              "id": "rear-bath-exhaust",
+              "kind": "service-weather-face",
+              "wall": "outer-west",
+              "xyBoundsMm": [
+                [
+                  -100,
+                  0
+                ],
+                [
+                  9720.0,
+                  10080.0
+                ]
+              ],
+              "topZMm": 6130.0,
+              "axisDistanceMm": 998.761733347849,
+              "comparisonDistanceMm": 903.761733347849,
+              "heightReserveMm": 970.0
+            },
+            {
+              "id": "rear-bath-condensate",
+              "kind": "service-weather-face",
+              "wall": "outer-west",
+              "xyBoundsMm": [
+                [
+                  -100,
+                  0
+                ],
+                [
+                  10115.0,
+                  10175.0
+                ]
+              ],
+              "topZMm": 5980.0,
+              "axisDistanceMm": 1285.0097275896396,
+              "comparisonDistanceMm": 1190.0097275896396,
+              "heightReserveMm": 1120.0
+            },
+            {
+              "id": "FIRST/west-window-2",
+              "kind": "window",
+              "wall": "outer-west",
+              "xyBoundsMm": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  6900.0,
+                  7900.0
+                ]
+              ],
+              "topZMm": 6300,
+              "axisDistanceMm": 1420.1144320089138,
+              "comparisonDistanceMm": 1325.1144320089138,
+              "heightReserveMm": 800
+            },
+            {
+              "id": "GROUND/west-window-2",
+              "kind": "window",
+              "wall": "outer-west",
+              "xyBoundsMm": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  6900.0,
+                  7900.0
+                ]
+              ],
+              "topZMm": 2850,
+              "axisDistanceMm": 1420.1144320089138,
+              "comparisonDistanceMm": 1325.1144320089138,
+              "heightReserveMm": 4250
+            },
+            {
+              "id": "FIRST/north-window-0",
+              "kind": "window",
+              "wall": "outer-north",
+              "xyBoundsMm": [
+                [
+                  1600.0,
+                  2600.0
+                ],
+                [
+                  12000,
+                  12000
+                ]
+              ],
+              "topZMm": 6300,
+              "axisDistanceMm": 3024.6859341095233,
+              "comparisonDistanceMm": 2929.6859341095233,
+              "heightReserveMm": 800
+            },
+            {
+              "id": "GROUND/north-window-0",
+              "kind": "window",
+              "wall": "outer-north",
+              "xyBoundsMm": [
+                [
+                  1600.0,
+                  2600.0
+                ],
+                [
+                  12000,
+                  12000
+                ]
+              ],
+              "topZMm": 2850,
+              "axisDistanceMm": 3024.6859341095233,
+              "comparisonDistanceMm": 2929.6859341095233,
+              "heightReserveMm": 4250
+            }
+          ],
+          "governingKnownOpening": {
+            "id": "FIRST/west-window-3",
+            "kind": "window",
+            "wall": "outer-west",
+            "xyBoundsMm": [
+              [
+                0,
+                0
+              ],
+              [
+                9400.0,
+                10400.0
+              ]
+            ],
+            "topZMm": 6300,
+            "axisDistanceMm": 834.7005451058482,
+            "comparisonDistanceMm": 739.7005451058482,
+            "heightReserveMm": 800
+          },
+          "nearbyOpeningsWithoutHeight": [],
+          "nearestModelledAirIntake": {
+            "id": "living-supply",
+            "kind": "air-intake",
+            "wall": "outer-north",
+            "xyBoundsMm": [
+              [
+                2890.0,
+                3290.0
+              ],
+              [
+                12000,
+                12100
+              ]
+            ],
+            "topZMm": 2300.0,
+            "axisDistanceMm": 3597.4053149457595,
+            "comparisonDistanceMm": 3502.4053149457595
+          }
+        },
+        "roofBoundary": {
+          "state": "unresolved",
+          "maximumNominalRoofCoverAtFlashingZMm": 7728.855270793374,
+          "terminalRiseAboveNominalRoofCoverMm": 271.1447292066259,
+          "remaining": "Nearby roof ventilation connections, downdraught, flashing drainage and independent weather closure"
+        },
+        "siteOpenings": {
+          "state": "unresolved",
+          "remaining": "Survey neighbouring and site-specific openings and intakes"
+        },
+        "terminalCover": {
+          "state": "unresolved",
+          "remaining": "Select the actual outlet envelope, clear vent bore and fixed nonrestrictive perforated cover"
+        },
+        "otherBuildingVentilation": {
+          "state": "unresolved",
+          "remaining": "Locate any connected underfloor and other ventilation mouths not in the current weather-face inventory"
+        }
+      },
+      "minimumDryRisePerChordMm": 0.11872746973858739,
+      "minimumGeometricReserveMm": 25,
+      "hostAndRenewalUnresolved": [
+        "Drain hydraulic and ventilation performance, site host levels, surcharge and positive pressure relief",
+        "Native bends, loaded supports, scaffold ties, step access, tool sweep and first release",
+        "Wall and ceiling structural opening, wet/air/fire/thermal closures and renewable roof flashing",
+        "Actual air intakes, roof downdraught and terminal performance",
+        "NW port stays in the canonical structure until full foul route and port removal are accepted"
+      ]
+    },
+    "directFormerAxis": {
+      "case": {
+        "riserAxisXYMm": [
+          670,
+          9400
+        ],
+        "wetStackAirTakeoffZMm": 3800,
+        "terminalZMm": 8000
+      },
+      "state": "geometric-failure",
+      "failedChecks": [
+        "westWindowRawPlan",
+        "rearBathExtractFullCollar",
+        "rearRadiatorAndCarrier",
+        "westPurlinsCompleteFlashingPlan"
+      ],
+      "clearanceMm": {
+        "westWindowRawPlan": -90.02499609497023,
+        "westWindowConservativeFullArch": 1107.5991321572635,
+        "westWindowThreeSillVertical": 391.7375039050296,
+        "rearBathExtractFullCollar": -148.52840786808704,
+        "rearBathIndependentCondensate": 154.97159213191296,
+        "rearBathSouthWall": 342.471592131913,
+        "rearBasinShaftPlan": 229.38338917262743,
+        "rearRadiatorAndCarrier": -107.52746538059897,
+        "headRenewalDeck": 392.7986454344316,
+        "headRenewalScaffoldLegs": 192.52454342136824,
+        "headRenewalMovingCartridges": 230.48141024251245,
+        "roofRenewalTray": 677.472534619401,
+        "installedWestRoofTrays": 687.472534619401,
+        "westPurlinsCompleteFlashingPlan": -75.0,
+        "roofRadialRailsPlan": 1058.7160876900366,
+        "roofBraceTubesPlan": 830.8307790065846,
+        "flashingToTerminalOverSlopedCover": 320.10703331290097
+      }
+    },
+    "highReturn": {
+      "case": {
+        "riserAxisXYMm": [
+          775,
+          9140
+        ],
+        "wetStackAirTakeoffZMm": 5550,
+        "terminalZMm": 8000
+      },
+      "state": "geometric-failure",
+      "failedChecks": [
+        "westWindowRawPlan",
+        "westWindowConservativeFullArch",
+        "westWindowThreeSillVertical",
+        "headRenewalDeck"
+      ],
+      "clearanceMm": {
+        "westWindowRawPlan": 8.053221107088348,
+        "westWindowConservativeFullArch": -251.68126389298902,
+        "westWindowThreeSillVertical": -1363.8535577950736,
+        "rearBathExtractFullCollar": 31.471592131912956,
+        "rearBathIndependentCondensate": 188.38027101620932,
+        "rearBathSouthWall": 82.47159213191296,
+        "rearBasinShaftPlan": 84.97159213191296,
+        "rearRadiatorAndCarrier": 621.9753843993276,
+        "headRenewalDeck": -106.97710444596039,
+        "headRenewalScaffoldLegs": 192.4753843993275,
+        "headRenewalMovingCartridges": 276.39573993404395,
+        "roofRenewalTray": 237.47467838643578,
+        "installedWestRoofTrays": 792.4718518028186,
+        "westPurlinsCompleteFlashingPlan": 30.0,
+        "roofRadialRailsPlan": 1168.3176387739513,
+        "roofBraceTubesPlan": 936.0819981818256,
+        "flashingToTerminalOverSlopedCover": 271.1447292066259
+      }
+    }
+  }
+}

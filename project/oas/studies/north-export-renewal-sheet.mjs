@@ -1,0 +1,22 @@
+/** Nominal occurrence inspection sheet. Dimensions/proxies are not product or rig acceptance. */
+import {readFileSync,writeFileSync} from 'node:fs';
+import assert from 'node:assert/strict';
+const W=1280,H=900;let s=`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><rect width="100%" height="100%" fill="#faf9f4"/><style>text{font-family:Arial,sans-serif;fill:#233d45}.h{font-size:26px;font-weight:700}.t{font-size:17px;font-weight:700}.n{font-size:14px}.small{font-size:12px}.dim{font-size:13px;fill:#415d64}</style><text x="35" y="38" class="h">FIRST north-window-0 · supported renewal trial</text><text x="35" y="64" class="n">Actual 1000 raw · sill 850 · head 2850 · 35 joint + 60 frame = 810 clear · mm relative FIRST FFL</text>`;
+const X=x=>60+(x-1200)*.47,Z=z=>760-(z-800)*.295;
+const R=(500**2+300**2)/600,C=2850-R;
+function arch(inset,color,width){let r=R-inset,x0=1300+inset,x1=2300-inset,pts=[];for(let i=0;i<=100;i++){let x=x0+(x1-x0)*i/100;pts.push(`${X(x)} ${Z(C+Math.sqrt(r*r-(x-1800)**2))}`);}return `<path d="M${X(x0)} ${Z(850+inset)} L${pts.join(' L')} L${X(x1)} ${Z(850+inset)} Z" fill="none" stroke="${color}" stroke-width="${width}"/>`;}
+function rect(x,z,w,h,fill,stroke='none',opacity=1){return `<rect x="${X(x)}" y="${Z(z+h)}" width="${w*.47}" height="${h*.295}" fill="${fill}" stroke="${stroke}" opacity="${opacity}"/>`;}
+s+=`<text x="60" y="112" class="t">1 · Elevation / guard and frame</text>`+arch(0,'#a7865e',2)+arch(27,'#c7aa85',1.4)+arch(35,'#497789',2.4)+arch(95,'#497789',2.4)+arch(60,'#638a6d',2);
+for(const x of [1500,1600,1700,1800,1900,2000,2100]){let r=R-110,z=C+Math.sqrt(r*r-(x-1800)**2);s+=rect(x-6,960,12,z-960,'#638a6d');}
+for(const x of [1530,2030])s+=rect(x,1080,40,40,'#ad5f86');
+for(const x of [1340,2210])for(const z of [1250,2150])s+=rect(x,z,50,100,'#d89c45');
+for(const x of [1375,2225])for(const z of [2000,2100])s+=`<circle cx="${X(x)}" cy="${Z(z)}" r="4.5" fill="#ad5f86"/>`;
+s+=`<text x="60" y="802" class="small">Brown: raw + 27 finish · blue: 35/95 frame profiles · green: full independent grille</text><text x="60" y="821" class="small">Orange: capture-pad allocations · magenta: 40 strut sections and guard fixing axes</text>`;
+const Y=y=>650+(y-11500)*.275, Q=z=>440-(z-800)*.145;function box(y,z,w,h,fill,opacity=1){return `<rect x="${Y(y)}" y="${Q(z+h)}" width="${w*.275}" height="${h*.145}" fill="${fill}" opacity="${opacity}"/>`;}
+s+=`<text x="650" y="112" class="t">2 · Section / supported outward sequence</text>`;
+s+=box(11570,850,430,2000,'#e4dfd1',.45)+box(11570,885,140,60,'#497789')+box(11570,2755,140,60,'#497789')+box(11840,910,30,1880,'#638a6d')+box(11500,1080,1700,40,'#ad5f86')+box(12200,1150,800,50,'#c1a06e');
+s+=`<path d="M${Y(11870)} ${Q(2050)} H${Y(13210)}" stroke="#638a6d" stroke-width="3" stroke-dasharray="8 6" fill="none"/><path d="M${Y(11710)} ${Q(2650)} H${Y(13350)}" stroke="#497789" stroke-width="3" stroke-dasharray="8 6" fill="none"/><text x="650" y="468" class="small">Wall slab 11570–12000 · guard 11840–11870 · frame 11570–11710</text><text x="650" y="487" class="small">Basket retreats before guard moves; frame continues until its back face clears strut ends.</text>`;
+const notes=[['3 · Protected first release','Open both leaves under the retained grille; support and release the stays.'],['','Erect the L barrier; insert and latch the two struts through grille gaps.'],['','Capture guard and brackets; release and remove the brackets from protected exterior access.'],['4 · Frame exchange','Retreat the basket; withdraw the captured guard past the retained strut ends.'],['','Capture frame before releasing jamb/head screws; retain the sill pan and struts.'],['','Withdraw frame, replace, renew seals/pan transitions, refit leaves and full guard.'],['Boundary','Illustrated envelopes are authored trials; no product, rig, weather or tolerance pass.'],['','Full clamps/slings, joins, barrier delivery, material, roof and physical tests remain open.']];
+notes.forEach((a,i)=>{let y=535+i*38;s+=`<text x="650" y="${y}" class="t">${a[0]}</text><text x="650" y="${y+18}" class="small">${a[1]}</text>`;});
+s+=`<text x="35" y="877" class="small">Source-bound local geometry only · see north-export-occurrence-result.md and the access/exterior/frame reproducers · WIP / no IAS export pass</text></svg>\n`;
+const path=new URL('./north-export-renewal-sheet.svg',import.meta.url);if(process.argv.includes('--check'))assert.equal(readFileSync(path,'utf8'),s);else writeFileSync(path,s);

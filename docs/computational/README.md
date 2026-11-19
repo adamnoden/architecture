@@ -32,7 +32,7 @@ At its bounded scope, the current system can represent and check selected relati
 - selected versioned numeric methods;
 - deterministic human-readable inspection outputs.
 
-The Reference House is the principal controlled fixture. Contrast fixtures are used where needed to test that shared semantics do not silently depend on its grammar, courtyard morphology or other project-specific choices.
+The historical Reference House technical model is the principal controlled compiler fixture. Its checks do not establish technical coordination of the accepted current house; [Current House Basis](../reference-house/current-house-basis.md) owns that applicability boundary. Contrast fixtures are used where needed to test that shared semantics do not silently depend on its grammar, courtyard morphology or other project-specific choices.
 
 These are claims about **representation, traceability and internal coherence**. They do not establish structural capacity, environmental performance, fire adequacy, MEP sizing, product suitability, planning acceptability or regulatory approval.
 
@@ -89,7 +89,7 @@ Drawing/publication records live under `docs/publication/`; publication build ma
 
 ## Deployment and external targets
 
-A target, jurisdiction or site rule is not architecture merely because it may later be machine-checkable. The DPL programme under `project/dpl/` is establishing the separate target/site/deployment model.
+A target, jurisdiction or site rule is not architecture merely because it may later be machine-checkable. The DPL programme under `project/dpl/` records the separate target/site/deployment model and its completed conditional design-study scope; real-site verification remains deferred.
 
 The bounded deployment runtime now checks authored candidate conformance and composes selected target obligations. It is not a release-grade jurisdiction/site compiler. [Deployment under explicit assumptions](deployment-exploration.md) adds conditional exploration while preserving evidence-backed site unknowns. Target and site checks retain explicit authority, applicability, evidence and proof contracts.
 

@@ -1,0 +1,173 @@
+{
+  "status": "UNSELECTED COMPONENT AND STIFFNESS COMPARISON; NO RECEIVING LOAD PATH ADMITTED",
+  "historicalBaselineReproduced": {
+    "loadKN": 107.271873,
+    "rodMaterial": "source355/1.1",
+    "values": {
+      "shaftKN": 107.271873,
+      "oneM16StudKN": 64.3631238,
+      "crossbarNetStressMPa": 248.314520833,
+      "bottomPatchPressureMPa": 6.604373208,
+      "bottomPlateStressMPa": 79.252478494,
+      "roof25PlateStressMPa": 147.115711543
+    },
+    "comparisonLimits": {
+      "shaftKN": 113.922727273,
+      "oneM16StudKN": 90.432,
+      "crossbarNetStressMPa": 322.727272727,
+      "bottomPatchPressureMPa": 10.2,
+      "bottomPlateStressMPa": 322.727272727,
+      "roof25PlateStressMPa": 322.727272727
+    },
+    "utilisation": {
+      "shaftKN": 0.941619601,
+      "oneM16StudKN": 0.711729518,
+      "crossbarNetStressMPa": 0.769425276,
+      "bottomPatchPressureMPa": 0.647487569,
+      "bottomPlateStressMPa": 0.24557106,
+      "roof25PlateStressMPa": 0.455851501
+    },
+    "componentScreensPass": true,
+    "completeConnectionQualified": false
+  },
+  "declared125KNActionComparison": {
+    "oldRodControl": {
+      "loadKN": 125.0,
+      "rodMaterial": "source355/1.1",
+      "values": {
+        "shaftKN": 125.0,
+        "oneM16StudKN": 75.0,
+        "crossbarNetStressMPa": 289.351851852,
+        "bottomPatchPressureMPa": 7.695835151,
+        "bottomPlateStressMPa": 92.350021816,
+        "roof25PlateStressMPa": 171.428571429
+      },
+      "comparisonLimits": {
+        "shaftKN": 113.922727273,
+        "oneM16StudKN": 90.432,
+        "crossbarNetStressMPa": 322.727272727,
+        "bottomPatchPressureMPa": 10.2,
+        "bottomPlateStressMPa": 322.727272727,
+        "roof25PlateStressMPa": 322.727272727
+      },
+      "utilisation": {
+        "shaftKN": 1.097234968,
+        "oneM16StudKN": 0.829352442,
+        "crossbarNetStressMPa": 0.896583203,
+        "bottomPatchPressureMPa": 0.754493642,
+        "bottomPlateStressMPa": 0.286154997,
+        "roof25PlateStressMPa": 0.531187123
+      },
+      "componentScreensPass": false,
+      "completeConnectionQualified": false
+    },
+    "sameDiameterGrade88Candidate": {
+      "loadKN": 125.0,
+      "rodMaterial": "candidate class8.8",
+      "values": {
+        "shaftKN": 125.0,
+        "oneM16StudKN": 75.0,
+        "crossbarNetStressMPa": 289.351851852,
+        "bottomPatchPressureMPa": 7.695835151,
+        "bottomPlateStressMPa": 92.350021816,
+        "roof25PlateStressMPa": 171.428571429
+      },
+      "comparisonLimits": {
+        "shaftKN": 203.328,
+        "oneM16StudKN": 90.432,
+        "crossbarNetStressMPa": 322.727272727,
+        "bottomPatchPressureMPa": 10.2,
+        "bottomPlateStressMPa": 322.727272727,
+        "roof25PlateStressMPa": 322.727272727
+      },
+      "utilisation": {
+        "shaftKN": 0.614770223,
+        "oneM16StudKN": 0.829352442,
+        "crossbarNetStressMPa": 0.896583203,
+        "bottomPatchPressureMPa": 0.754493642,
+        "bottomPlateStressMPa": 0.286154997,
+        "roof25PlateStressMPa": 0.531187123
+      },
+      "componentScreensPass": true,
+      "completeConnectionQualified": false
+    },
+    "scope": "125kN is an explicit action comparison, not a substituted native result or a full connection resistance."
+  },
+  "materialBasis": {
+    "source": "https://www.hilti.co.uk/content/dam/documents/pdf/temp/technical-marketing---bu-anchors/seismic/Concrete%20anchor%20fastening_TECHNOLOGY%20MANUAL%20for%20seismic%20condition.pdf",
+    "edition": "April2017, material table on printed page101",
+    "M24ThreadAreaMM2": 353,
+    "candidateMinimumYieldMPa": 640,
+    "candidateMinimumUltimateMPa": 800,
+    "nominalRodDiameterMM": 24,
+    "scope": "Primary manufacturer material-property evidence only. No resin, bond, catalogue anchor capacity, present product availability or corrosion/fire suitability is transferred. Actual rod, matching nuts and full thread engagement need certificates and assembly definition."
+  },
+  "shortestRodEnvelope": {
+    "roofSteelLowestZ": 6540,
+    "floorFittingHighestZ": 3920,
+    "lengthMM": 2620,
+    "E_MPa": 200000.0,
+    "qualification": "A deliberately short axial length between complete source envelopes. Actual bearing faces make the rod longer. A larger bespoke shank must be explicitly authored; it is not inferred from the M24 thread label."
+  },
+  "axialShaftComparisons": [
+    {
+      "nominalDiameterMM": 24,
+      "threadTensileAreaMM2": 353,
+      "fullyThreadedUniformAreaStiffnessKNPerMM": 26.946564885,
+      "solidNominalShankAreaMM2": 452.389342117,
+      "solidNominalShankUpperStiffnessKNPerMM": 34.533537566
+    },
+    {
+      "nominalDiameterMM": 27,
+      "threadTensileAreaMM2": 459,
+      "fullyThreadedUniformAreaStiffnessKNPerMM": 35.038167939,
+      "solidNominalShankAreaMM2": 572.555261117,
+      "solidNominalShankUpperStiffnessKNPerMM": 43.706508482
+    },
+    {
+      "nominalDiameterMM": 30,
+      "threadTensileAreaMM2": 561,
+      "fullyThreadedUniformAreaStiffnessKNPerMM": 42.824427481,
+      "solidNominalShankAreaMM2": 706.858347058,
+      "solidNominalShankUpperStiffnessKNPerMM": 53.958652447
+    }
+  ],
+  "nativeSpringRequirementKNPerMM": 40.0,
+  "minimumUniformAreaForPerfect40SpringMM2": 524.0,
+  "illustrativeOrdinarySeries": {
+    "fullThreadM24RodKNPerMM": 26.946564885,
+    "assumedM16ThreadedLengthMM": 795,
+    "centredTwoM16ThreadedStudsKNPerMM": 78.993710692,
+    "centredSeriesBeforePlateConcreteAndSupportKNPerMM": 20.092539302,
+    "source10MMEccentricStudForceFractions": [
+      0.6,
+      0.4
+    ],
+    "eccentricTwoM16EffectiveStiffnessKNPerMM": 75.95549105,
+    "eccentricSeriesBeforePlateConcreteAndSupportKNPerMM": 19.890171769,
+    "scope": "Illustrative centred50/50 and source10mm-eccentric60/40 serial steel calculations, not measured stiffnesses, lower bounds or corner models. Nominal solid shanks, thread lengths and actual bearing planes require a physical schedule."
+  },
+  "portalQualificationDuties": {
+    "sourceKN": [
+      8,
+      3
+    ],
+    "sourceMinimumNormalStiffnessNPerMM": 2000,
+    "scope": "These are source qualification requirements, not tested product capacities. Revised actions require a defined two-sided sliding receiver and supporting substrate; changing a numeric limit is not verification."
+  },
+  "unproved": [
+    "The ordinary fourteen-station fitting expressly excludes all eight corners, including the governing court corner.",
+    "No receiving compression, contact, splitting, local core, floor collector or downstream capacity is inferred.",
+    "Higher rod grade does not increase the elastic modulus or establish the native40kN/mm spring.",
+    "Any receiving-stiffness sensitivity must rebuild the native model, backgrounds, local recovery and reactions consistently; changing the reaction multiplier alone is invalid.",
+    "Tension and compression may have different stiffness and contact states. A uniform20kN/mm sensitivity is a numerical comparison only.",
+    "Actual sliding tie bearing, movement, friction, fixings and substrate remain unqualified."
+  ],
+  "sourceHashes": {
+    "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+    "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+    "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+    "project/str/studies/reconciled-house-interface.json": "ae17f6de977de58ae54f25edfc67c48c36f348cffc288e839f25a8b4143c16cf",
+    "project/rof/studies/roof_water_receiving_components.py": "ba4935948fd721714d0894c9ce3e968f06d2d92bb0bef0e700848965f00320ae"
+  }
+}

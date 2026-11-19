@@ -4,6 +4,8 @@
 **Date:** 2026-10-29  
 **Owning packet:** `PCO-DISPATCH`
 
+**Historical design boundary:** this record preserves the original READY-only dispatcher. [MVB crash recovery](mvb-crash-recovery-result.md) later admitted guarded recovery of started self-service packets with predecessor branch/checkpoint evidence. Use the [current MVB manual](../control/README.md#self-service-dispatcher) for present eligibility and acquisition rules; the original exclusions below are not the current recovery policy.
+
 ## Purpose
 
 The dispatcher lets an idle general-purpose agent discover and claim the best currently executable packet without reconstructing programme state from chat history.

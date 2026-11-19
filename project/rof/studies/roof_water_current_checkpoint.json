@@ -1,0 +1,2933 @@
+{
+  "status": "UNADMITTED 280x120x25 FROZEN-EXPORT / INSTALLED-MASS / RECEIVING-STIFFNESS COMPARISONS",
+  "cases": {
+    "40": {
+      "source": "roof_water_current_trial_280_25_60_40_independent.json",
+      "outerInteraction": 0.928906246,
+      "courtInteraction": 0.975725378,
+      "maximumTensionKN": 119.914114192,
+      "maximumCompressionKN": 208.565650791,
+      "originalM24ResistanceKN": 113.922727273,
+      "maximumPortalNormalTieKN": {
+        "floor": 8.22176021,
+        "roof": 3.064154314
+      },
+      "screens": {
+        "outer": true,
+        "court": true,
+        "M24": false,
+        "floorTies": false,
+        "roofTies": false
+      },
+      "innerWidthMM": {
+        "primary": {
+          "range": [
+            -3.163279514,
+            4.204520009
+          ],
+          "minimumQuery": "inner face2 primary width q4725.0 minus q4375.0 root6000.0",
+          "maximumQuery": "inner face0 primary width q4725.0 minus q4375.0 root6000.0",
+          "minimumControl": {
+            "crack": 0.35,
+            "mode": "partial water up",
+            "specials": 0.0,
+            "windIndex": 6,
+            "guard": 11,
+            "sign": -1
+          },
+          "maximumControl": {
+            "crack": 0.35,
+            "mode": "partial water down",
+            "specials": 1.35,
+            "windIndex": 28,
+            "guard": 3,
+            "sign": 1
+          }
+        },
+        "lower": {
+          "range": [
+            -3.841125124,
+            5.105488583
+          ],
+          "minimumQuery": "inner face2 lower width q4800.0 minus q4375.0 root6000.0",
+          "maximumQuery": "inner face0 lower width q4800.0 minus q4375.0 root6000.0",
+          "minimumControl": {
+            "crack": 0.35,
+            "mode": "partial water up",
+            "specials": 0.0,
+            "windIndex": 6,
+            "guard": 11,
+            "sign": -1
+          },
+          "maximumControl": {
+            "crack": 0.35,
+            "mode": "partial water down",
+            "specials": 1.35,
+            "windIndex": 28,
+            "guard": 3,
+            "sign": 1
+          }
+        }
+      },
+      "innerAbsoluteVerticalMM": {
+        "primary": {
+          "range": [
+            -8.843795346,
+            14.141527134
+          ],
+          "minimumQuery": "inner face2 primary module0 p4375.0 q4725.0 absolute",
+          "maximumQuery": "inner face0 primary module5 p7625.0 q4725.0 absolute",
+          "minimumControl": {
+            "crack": 0.2,
+            "mode": "partial water up",
+            "specials": 0.0,
+            "windIndex": 16,
+            "guard": 11,
+            "sign": -1
+          },
+          "maximumControl": {
+            "crack": 0.35,
+            "mode": "partial water down",
+            "specials": 1.35,
+            "windIndex": 28,
+            "guard": 3,
+            "sign": 1
+          }
+        },
+        "lower": {
+          "range": [
+            -9.441198192,
+            14.969780846
+          ],
+          "minimumQuery": "inner face2 lower module0 p4375.0 q4800.0 absolute",
+          "maximumQuery": "inner face0 lower module6 p7625.0 q4800.0 absolute",
+          "minimumControl": {
+            "crack": 0.2,
+            "mode": "partial water up",
+            "specials": 0.0,
+            "windIndex": 16,
+            "guard": 11,
+            "sign": -1
+          },
+          "maximumControl": {
+            "crack": 0.35,
+            "mode": "partial water down",
+            "specials": 1.35,
+            "windIndex": 28,
+            "guard": 3,
+            "sign": 1
+          }
+        }
+      },
+      "retainedOuterHeadCornersMM": {
+        "south": {
+          "full": {
+            "range": [
+              -19.355227785,
+              28.153004569
+            ],
+            "minimumQuery": "south normal retained-arm corner R1260.0 pOffset-125.0 absolute",
+            "maximumQuery": "south normal retained-arm corner R1260.0 pOffset-125.0 absolute",
+            "minimumControl": {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 76,
+              "guard": 3,
+              "sign": -1
+            },
+            "maximumControl": {
+              "crack": 0.2,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 86,
+              "guard": 3,
+              "sign": 1
+            }
+          },
+          "waterZero": {
+            "range": [
+              -18.274367786,
+              23.083132173
+            ]
+          },
+          "allSixRows": [
+            {
+              "label": "south normal retained-arm corner R-332.5 pOffset-125.0 absolute",
+              "references": [
+                [
+                  [
+                    11150,
+                    332.5
+                  ],
+                  [
+                    11025.0,
+                    332.5
+                  ]
+                ],
+                null
+              ],
+              "rangeMM": [
+                -5.891260841,
+                9.043921753
+              ],
+              "incrementOnlyRangeMM": [
+                -1.045408156,
+                1.681686831
+              ],
+              "dryDiversionRangeMM": [
+                -5.620047355,
+                7.882259258
+              ],
+              "control": [
+                {
+                  "crack": 0.2,
+                  "mode": "partial water up",
+                  "specials": 0.0,
+                  "windIndex": 57,
+                  "guard": 3,
+                  "sign": -1
+                },
+                {
+                  "crack": 0.2,
+                  "mode": "partial water down",
+                  "specials": 1.35,
+                  "windIndex": 28,
+                  "guard": 3,
+                  "sign": 1
+                }
+              ]
+            },
+            {
+              "label": "south normal retained-arm corner R-332.5 pOffset125.0 absolute",
+              "references": [
+                [
+                  [
+                    11150,
+                    332.5
+                  ],
+                  [
+                    11275.0,
+                    332.5
+                  ]
+                ],
+                null
+              ],
+              "rangeMM": [
+                -4.162072662,
+                6.852068104
+              ],
+              "incrementOnlyRangeMM": [
+                -0.71406116,
+                1.205034858
+              ],
+              "dryDiversionRangeMM": [
+                -4.008992874,
+                5.972860047
+              ],
+              "control": [
+                {
+                  "crack": 0.2,
+                  "mode": "partial water up",
+                  "specials": 0.0,
+                  "windIndex": 71,
+                  "guard": 3,
+                  "sign": -1
+                },
+                {
+                  "crack": 0.2,
+                  "mode": "partial water down",
+                  "specials": 1.35,
+                  "windIndex": 39,
+                  "guard": 3,
+                  "sign": 1
+                }
+              ]
+            },
+            {
+              "label": "south normal retained-arm corner R1000.0 pOffset-125.0 absolute",
+              "references": [
+                [
+                  [
+                    11150,
+                    332.5
+                  ],
+                  [
+                    11025.0,
+                    -1000.0
+                  ]
+                ],
+                null
+              ],
+              "rangeMM": [
+                -16.796622954,
+                24.681652672
+              ],
+              "incrementOnlyRangeMM": [
+                -3.372619802,
+                5.484475733
+              ],
+              "dryDiversionRangeMM": [
+                -15.859166654,
+                20.261071876
+              ],
+              "control": [
+                {
+                  "crack": 0.2,
+                  "mode": "partial water up",
+                  "specials": 0.0,
+                  "windIndex": 78,
+                  "guard": 3,
+                  "sign": -1
+                },
+                {
+                  "crack": 0.2,
+                  "mode": "partial water down",
+                  "specials": 1.35,
+                  "windIndex": 87,
+                  "guard": 3,
+                  "sign": 1
+                }
+              ]
+            },
+            {
+              "label": "south normal retained-arm corner R1000.0 pOffset125.0 absolute",
+              "references": [
+                [
+                  [
+                    11150,
+                    332.5
+                  ],
+                  [
+                    11275.0,
+                    -1000.0
+                  ]
+                ],
+                null
+              ],
+              "rangeMM": [
+                -15.923516559,
+                23.305364664
+              ],
+              "incrementOnlyRangeMM": [
+                -3.257483377,
+                5.183518188
+              ],
+              "dryDiversionRangeMM": [
+                -15.081416088,
+                19.144460436
+              ],
+              "control": [
+                {
+                  "crack": 0.2,
+                  "mode": "partial water up",
+                  "specials": 0.0,
+                  "windIndex": 76,
+                  "guard": 3,
+                  "sign": -1
+                },
+                {
+                  "crack": 0.2,
+                  "mode": "partial water down",
+                  "specials": 1.35,
+                  "windIndex": 86,
+                  "guard": 3,
+                  "sign": 1
+                }
+              ]
+            },
+            {
+              "label": "south normal retained-arm corner R1260.0 pOffset-125.0 absolute",
+              "references": [
+                [
+                  [
+                    11150,
+                    332.5
+                  ],
+                  [
+                    11025.0,
+                    -1260.0
+                  ]
+                ],
+                null
+              ],
+              "rangeMM": [
+                -19.355227785,
+                28.153004569
+              ],
+              "incrementOnlyRangeMM": [
+                -3.91987683,
+                6.309008306
+              ],
+              "dryDiversionRangeMM": [
+                -18.274367786,
+                23.083132173
+              ],
+              "control": [
+                {
+                  "crack": 0.2,
+                  "mode": "partial water up",
+                  "specials": 0.0,
+                  "windIndex": 76,
+                  "guard": 3,
+                  "sign": -1
+                },
+                {
+                  "crack": 0.2,
+                  "mode": "partial water down",
+                  "specials": 1.35,
+                  "windIndex": 86,
+                  "guard": 3,
+                  "sign": 1
+                }
+              ]
+            },
+            {
+              "label": "south normal retained-arm corner R1260.0 pOffset125.0 absolute",
+              "references": [
+                [
+                  [
+                    11150,
+                    332.5
+                  ],
+                  [
+                    11275.0,
+                    -1260.0
+                  ]
+                ],
+                null
+              ],
+              "rangeMM": [
+                -18.569923988,
+                26.863866789
+              ],
+              "incrementOnlyRangeMM": [
+                -3.810447632,
+                6.013105619
+              ],
+              "dryDiversionRangeMM": [
+                -17.580922253,
+                22.050173397
+              ],
+              "control": [
+                {
+                  "crack": 0.2,
+                  "mode": "partial water up",
+                  "specials": 0.0,
+                  "windIndex": 76,
+                  "guard": 3,
+                  "sign": -1
+                },
+                {
+                  "crack": 0.2,
+                  "mode": "partial water down",
+                  "specials": 1.35,
+                  "windIndex": 86,
+                  "guard": 3,
+                  "sign": 1
+                }
+              ]
+            }
+          ]
+        },
+        "north": {
+          "full": {
+            "range": [
+              -28.736319677,
+              41.121575417
+            ],
+            "minimumQuery": "north normal retained-arm corner R1260.0 pOffset-125.0 absolute",
+            "maximumQuery": "north normal retained-arm corner R1260.0 pOffset-125.0 absolute",
+            "minimumControl": {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 79,
+              "guard": 11,
+              "sign": -1
+            },
+            "maximumControl": {
+              "crack": 0.2,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 45,
+              "guard": 11,
+              "sign": 1
+            }
+          },
+          "waterZero": {
+            "range": [
+              -27.918017039,
+              34.402125558
+            ]
+          },
+          "allSixRows": [
+            {
+              "label": "north normal retained-arm corner R-332.5 pOffset-125.0 absolute",
+              "references": [
+                [
+                  [
+                    9025,
+                    11667.5
+                  ],
+                  [
+                    9150.0,
+                    11667.5
+                  ]
+                ],
+                null
+              ],
+              "rangeMM": [
+                -8.563171372,
+                13.21518606
+              ],
+              "incrementOnlyRangeMM": [
+                -1.538134136,
+                2.635280324
+              ],
+              "dryDiversionRangeMM": [
+                -8.112048828,
+                11.20200924
+              ],
+              "control": [
+                {
+                  "crack": 0.2,
+                  "mode": "partial water up",
+                  "specials": 0.0,
+                  "windIndex": 57,
+                  "guard": 11,
+                  "sign": -1
+                },
+                {
+                  "crack": 0.2,
+                  "mode": "partial water down",
+                  "specials": 1.35,
+                  "windIndex": 32,
+                  "guard": 11,
+                  "sign": 1
+                }
+              ]
+            },
+            {
+              "label": "north normal retained-arm corner R-332.5 pOffset125.0 absolute",
+              "references": [
+                [
+                  [
+                    9025,
+                    11667.5
+                  ],
+                  [
+                    8900.0,
+                    11667.5
+                  ]
+                ],
+                null
+              ],
+              "rangeMM": [
+                -7.874825833,
+                12.291315972
+              ],
+              "incrementOnlyRangeMM": [
+                -1.397089725,
+                2.417354715
+              ],
+              "dryDiversionRangeMM": [
+                -7.470712325,
+                10.418052161
+              ],
+              "control": [
+                {
+                  "crack": 0.2,
+                  "mode": "partial water up",
+                  "specials": 0.0,
+                  "windIndex": 57,
+                  "guard": 11,
+                  "sign": -1
+                },
+                {
+                  "crack": 0.2,
+                  "mode": "partial water down",
+                  "specials": 1.35,
+                  "windIndex": 32,
+                  "guard": 11,
+                  "sign": 1
+                }
+              ]
+            },
+            {
+              "label": "north normal retained-arm corner R1000.0 pOffset-125.0 absolute",
+              "references": [
+                [
+                  [
+                    9025,
+                    11667.5
+                  ],
+                  [
+                    9150.0,
+                    13000.0
+                  ]
+                ],
+                null
+              ],
+              "rangeMM": [
+                -24.971764698,
+                36.113626093
+              ],
+              "incrementOnlyRangeMM": [
+                -3.19431531,
+                6.482474536
+              ],
+              "dryDiversionRangeMM": [
+                -24.228703681,
+                30.177841194
+              ],
+              "control": [
+                {
+                  "crack": 0.2,
+                  "mode": "partial water up",
+                  "specials": 0.0,
+                  "windIndex": 79,
+                  "guard": 11,
+                  "sign": -1
+                },
+                {
+                  "crack": 0.2,
+                  "mode": "partial water down",
+                  "specials": 1.35,
+                  "windIndex": 45,
+                  "guard": 11,
+                  "sign": 1
+                }
+              ]
+            },
+            {
+              "label": "north normal retained-arm corner R1000.0 pOffset125.0 absolute",
+              "references": [
+                [
+                  [
+                    9025,
+                    11667.5
+                  ],
+                  [
+                    8900.0,
+                    13000.0
+                  ]
+                ],
+                null
+              ],
+              "rangeMM": [
+                -24.584876044,
+                35.4632426
+              ],
+              "incrementOnlyRangeMM": [
+                -3.103892376,
+                6.287200115
+              ],
+              "dryDiversionRangeMM": [
+                -23.882603645,
+                29.661150294
+              ],
+              "control": [
+                {
+                  "crack": 0.2,
+                  "mode": "partial water up",
+                  "specials": 0.0,
+                  "windIndex": 79,
+                  "guard": 11,
+                  "sign": -1
+                },
+                {
+                  "crack": 0.2,
+                  "mode": "partial water down",
+                  "specials": 1.35,
+                  "windIndex": 45,
+                  "guard": 11,
+                  "sign": 1
+                }
+              ]
+            },
+            {
+              "label": "north normal retained-arm corner R1260.0 pOffset-125.0 absolute",
+              "references": [
+                [
+                  [
+                    9025,
+                    11667.5
+                  ],
+                  [
+                    9150.0,
+                    13260.0
+                  ]
+                ],
+                null
+              ],
+              "rangeMM": [
+                -28.736319677,
+                41.121575417
+              ],
+              "incrementOnlyRangeMM": [
+                -3.63051877,
+                7.323275527
+              ],
+              "dryDiversionRangeMM": [
+                -27.918017039,
+                34.402125558
+              ],
+              "control": [
+                {
+                  "crack": 0.2,
+                  "mode": "partial water up",
+                  "specials": 0.0,
+                  "windIndex": 79,
+                  "guard": 11,
+                  "sign": -1
+                },
+                {
+                  "crack": 0.2,
+                  "mode": "partial water down",
+                  "specials": 1.35,
+                  "windIndex": 45,
+                  "guard": 11,
+                  "sign": 1
+                }
+              ]
+            },
+            {
+              "label": "north normal retained-arm corner R1260.0 pOffset125.0 absolute",
+              "references": [
+                [
+                  [
+                    9025,
+                    11667.5
+                  ],
+                  [
+                    8900.0,
+                    13260.0
+                  ]
+                ],
+                null
+              ],
+              "rangeMM": [
+                -28.355635108,
+                40.477516482
+              ],
+              "incrementOnlyRangeMM": [
+                -3.545197074,
+                7.133222815
+              ],
+              "dryDiversionRangeMM": [
+                -27.57701824,
+                33.890656367
+              ],
+              "control": [
+                {
+                  "crack": 0.2,
+                  "mode": "partial water up",
+                  "specials": 0.0,
+                  "windIndex": 79,
+                  "guard": 11,
+                  "sign": -1
+                },
+                {
+                  "crack": 0.2,
+                  "mode": "partial water down",
+                  "specials": 1.35,
+                  "windIndex": 45,
+                  "guard": 11,
+                  "sign": 1
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "pairedNativeAlongGapChangeMM": {
+        "25.0": {
+          "range": [
+            -0.228479163,
+            0.230863831
+          ],
+          "minimumQuery": "face2 adjacent arm gap primary7200 lower7400 pq4345.0 lq4325.0 pz6633.5 lz6579.25",
+          "maximumQuery": "face2 adjacent arm gap primary7200 lower7400 pq4345.0 lq4325.0 pz6579.25 lz6633.5",
+          "minimumControl": {
+            "crack": 0.2,
+            "mode": "partial water up",
+            "specials": 1.35,
+            "windIndex": 87,
+            "guard": 11,
+            "sign": 1
+          },
+          "maximumControl": {
+            "crack": 0.2,
+            "mode": "partial water up",
+            "specials": 1.35,
+            "windIndex": 71,
+            "guard": 11,
+            "sign": -1
+          }
+        },
+        "50.0": {
+          "range": [
+            -0.555093413,
+            0.604567148
+          ],
+          "minimumQuery": "face3 adjacent arm gap primary6675 lower6450 pq4325.0 lq4345.0 pz6579.25 lz6633.5",
+          "maximumQuery": "face3 adjacent arm gap primary5325 lower5550 pq4345.0 lq4325.0 pz6579.25 lz6633.5",
+          "minimumControl": {
+            "crack": 0.2,
+            "mode": "partial water up",
+            "specials": 1.35,
+            "windIndex": 83,
+            "guard": 13,
+            "sign": -1
+          },
+          "maximumControl": {
+            "crack": 0.2,
+            "mode": "partial water down",
+            "specials": 0.0,
+            "windIndex": 57,
+            "guard": 15,
+            "sign": 1
+          }
+        }
+      },
+      "normalVirtualWorkError": 0.0,
+      "nativeInterfaceRecoveryError": 0.0
+    },
+    "20": {
+      "source": "roof_water_current_trial_280_25_60_20_independent.json",
+      "outerInteraction": 0.943109805,
+      "courtInteraction": 1.015566371,
+      "maximumTensionKN": 110.97868419,
+      "maximumCompressionKN": 199.78341958,
+      "originalM24ResistanceKN": 113.922727273,
+      "maximumPortalNormalTieKN": {
+        "floor": 8.234219351,
+        "roof": 3.069072941
+      },
+      "screens": {
+        "outer": true,
+        "court": false,
+        "M24": true,
+        "floorTies": false,
+        "roofTies": false
+      },
+      "innerWidthMM": {
+        "primary": {
+          "range": [
+            -3.948901827,
+            4.909174496
+          ],
+          "minimumQuery": "inner face2 primary width q4725.0 minus q4375.0 root6000.0",
+          "maximumQuery": "inner face0 primary width q4725.0 minus q4375.0 root6000.0",
+          "minimumControl": {
+            "crack": 0.35,
+            "mode": "partial water up",
+            "specials": 0.0,
+            "windIndex": 6,
+            "guard": 11,
+            "sign": -1
+          },
+          "maximumControl": {
+            "crack": 0.35,
+            "mode": "partial water down",
+            "specials": 0.0,
+            "windIndex": 28,
+            "guard": 3,
+            "sign": 1
+          }
+        },
+        "lower": {
+          "range": [
+            -4.795095075,
+            5.96114046
+          ],
+          "minimumQuery": "inner face2 lower width q4800.0 minus q4375.0 root6000.0",
+          "maximumQuery": "inner face0 lower width q4800.0 minus q4375.0 root6000.0",
+          "minimumControl": {
+            "crack": 0.35,
+            "mode": "partial water up",
+            "specials": 0.0,
+            "windIndex": 6,
+            "guard": 11,
+            "sign": -1
+          },
+          "maximumControl": {
+            "crack": 0.35,
+            "mode": "partial water down",
+            "specials": 0.0,
+            "windIndex": 28,
+            "guard": 3,
+            "sign": 1
+          }
+        }
+      },
+      "innerAbsoluteVerticalMM": {
+        "primary": {
+          "range": [
+            -10.505782668,
+            17.656175383
+          ],
+          "minimumQuery": "inner face2 primary module2 p5437.5 q4725.0 absolute",
+          "maximumQuery": "inner face0 primary module5 p7625.0 q4725.0 absolute",
+          "minimumControl": {
+            "crack": 0.2,
+            "mode": "partial water up",
+            "specials": 0.0,
+            "windIndex": 54,
+            "guard": 9,
+            "sign": -1
+          },
+          "maximumControl": {
+            "crack": 0.35,
+            "mode": "partial water down",
+            "specials": 1.35,
+            "windIndex": 28,
+            "guard": 3,
+            "sign": 1
+          }
+        },
+        "lower": {
+          "range": [
+            -11.344498242,
+            18.558527046
+          ],
+          "minimumQuery": "inner face2 lower module2 p5325.0 q4800.0 absolute",
+          "maximumQuery": "inner face0 lower module6 p7625.0 q4800.0 absolute",
+          "minimumControl": {
+            "crack": 0.2,
+            "mode": "partial water up",
+            "specials": 0.0,
+            "windIndex": 6,
+            "guard": 9,
+            "sign": -1
+          },
+          "maximumControl": {
+            "crack": 0.35,
+            "mode": "partial water down",
+            "specials": 1.35,
+            "windIndex": 28,
+            "guard": 3,
+            "sign": 1
+          }
+        }
+      },
+      "retainedOuterHeadCornersMM": {
+        "south": {
+          "full": {
+            "range": [
+              -21.459606627,
+              32.449548626
+            ],
+            "minimumQuery": "south normal retained-arm corner R1260.0 pOffset-125.0 absolute",
+            "maximumQuery": "south normal retained-arm corner R1260.0 pOffset-125.0 absolute",
+            "minimumControl": {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 76,
+              "guard": 3,
+              "sign": -1
+            },
+            "maximumControl": {
+              "crack": 0.2,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 86,
+              "guard": 3,
+              "sign": 1
+            }
+          },
+          "waterZero": {
+            "range": [
+              -20.330343851,
+              26.819788942
+            ]
+          },
+          "allSixRows": [
+            {
+              "label": "south normal retained-arm corner R-332.5 pOffset-125.0 absolute",
+              "references": [
+                [
+                  [
+                    11150,
+                    332.5
+                  ],
+                  [
+                    11025.0,
+                    332.5
+                  ]
+                ],
+                null
+              ],
+              "rangeMM": [
+                -6.896566583,
+                11.887505227
+              ],
+              "incrementOnlyRangeMM": [
+                -1.203515192,
+                2.051769162
+              ],
+              "dryDiversionRangeMM": [
+                -6.648357562,
+                10.331802887
+              ],
+              "control": [
+                {
+                  "crack": 0.2,
+                  "mode": "partial water up",
+                  "specials": 0.0,
+                  "windIndex": 78,
+                  "guard": 3,
+                  "sign": -1
+                },
+                {
+                  "crack": 0.2,
+                  "mode": "partial water down",
+                  "specials": 1.35,
+                  "windIndex": 39,
+                  "guard": 3,
+                  "sign": 1
+                }
+              ]
+            },
+            {
+              "label": "south normal retained-arm corner R-332.5 pOffset125.0 absolute",
+              "references": [
+                [
+                  [
+                    11150,
+                    332.5
+                  ],
+                  [
+                    11275.0,
+                    332.5
+                  ]
+                ],
+                null
+              ],
+              "rangeMM": [
+                -5.234138392,
+                9.745250299
+              ],
+              "incrementOnlyRangeMM": [
+                -0.986825568,
+                1.672684383
+              ],
+              "dryDiversionRangeMM": [
+                -5.070881377,
+                8.434351288
+              ],
+              "control": [
+                {
+                  "crack": 0.2,
+                  "mode": "partial water up",
+                  "specials": 0.0,
+                  "windIndex": 78,
+                  "guard": 3,
+                  "sign": -1
+                },
+                {
+                  "crack": 0.2,
+                  "mode": "partial water down",
+                  "specials": 1.35,
+                  "windIndex": 11,
+                  "guard": 3,
+                  "sign": 1
+                }
+              ]
+            },
+            {
+              "label": "south normal retained-arm corner R1000.0 pOffset-125.0 absolute",
+              "references": [
+                [
+                  [
+                    11150,
+                    332.5
+                  ],
+                  [
+                    11025.0,
+                    -1000.0
+                  ]
+                ],
+                null
+              ],
+              "rangeMM": [
+                -18.758041284,
+                28.766708248
+              ],
+              "incrementOnlyRangeMM": [
+                -3.841121926,
+                6.090979981
+              ],
+              "dryDiversionRangeMM": [
+                -17.784301621,
+                23.813778385
+              ],
+              "control": [
+                {
+                  "crack": 0.2,
+                  "mode": "partial water up",
+                  "specials": 0.0,
+                  "windIndex": 76,
+                  "guard": 3,
+                  "sign": -1
+                },
+                {
+                  "crack": 0.2,
+                  "mode": "partial water down",
+                  "specials": 1.35,
+                  "windIndex": 86,
+                  "guard": 3,
+                  "sign": 1
+                }
+              ]
+            },
+            {
+              "label": "south normal retained-arm corner R1000.0 pOffset125.0 absolute",
+              "references": [
+                [
+                  [
+                    11150,
+                    332.5
+                  ],
+                  [
+                    11275.0,
+                    -1000.0
+                  ]
+                ],
+                null
+              ],
+              "rangeMM": [
+                -17.778824901,
+                27.308968151
+              ],
+              "incrementOnlyRangeMM": [
+                -3.73658092,
+                5.825346843
+              ],
+              "dryDiversionRangeMM": [
+                -16.89680997,
+                22.607614344
+              ],
+              "control": [
+                {
+                  "crack": 0.2,
+                  "mode": "partial water up",
+                  "specials": 0.0,
+                  "windIndex": 76,
+                  "guard": 3,
+                  "sign": -1
+                },
+                {
+                  "crack": 0.2,
+                  "mode": "partial water down",
+                  "specials": 1.35,
+                  "windIndex": 58,
+                  "guard": 3,
+                  "sign": 1
+                }
+              ]
+            },
+            {
+              "label": "south normal retained-arm corner R1260.0 pOffset-125.0 absolute",
+              "references": [
+                [
+                  [
+                    11150,
+                    332.5
+                  ],
+                  [
+                    11025.0,
+                    -1260.0
+                  ]
+                ],
+                null
+              ],
+              "rangeMM": [
+                -21.459606627,
+                32.449548626
+              ],
+              "incrementOnlyRangeMM": [
+                -4.420530681,
+                6.946078555
+              ],
+              "dryDiversionRangeMM": [
+                -20.330343851,
+                26.819788942
+              ],
+              "control": [
+                {
+                  "crack": 0.2,
+                  "mode": "partial water up",
+                  "specials": 0.0,
+                  "windIndex": 76,
+                  "guard": 3,
+                  "sign": -1
+                },
+                {
+                  "crack": 0.2,
+                  "mode": "partial water down",
+                  "specials": 1.35,
+                  "windIndex": 86,
+                  "guard": 3,
+                  "sign": 1
+                }
+              ]
+            },
+            {
+              "label": "south normal retained-arm corner R1260.0 pOffset125.0 absolute",
+              "references": [
+                [
+                  [
+                    11150,
+                    332.5
+                  ],
+                  [
+                    11275.0,
+                    -1260.0
+                  ]
+                ],
+                null
+              ],
+              "rangeMM": [
+                -20.526554175,
+                31.036411231
+              ],
+              "incrementOnlyRangeMM": [
+                -4.319052451,
+                6.681946964
+              ],
+              "dryDiversionRangeMM": [
+                -19.488469604,
+                25.657681075
+              ],
+              "control": [
+                {
+                  "crack": 0.2,
+                  "mode": "partial water up",
+                  "specials": 0.0,
+                  "windIndex": 76,
+                  "guard": 3,
+                  "sign": -1
+                },
+                {
+                  "crack": 0.2,
+                  "mode": "partial water down",
+                  "specials": 1.35,
+                  "windIndex": 58,
+                  "guard": 3,
+                  "sign": 1
+                }
+              ]
+            }
+          ]
+        },
+        "north": {
+          "full": {
+            "range": [
+              -30.955922283,
+              45.445682468
+            ],
+            "minimumQuery": "north normal retained-arm corner R1260.0 pOffset-125.0 absolute",
+            "maximumQuery": "north normal retained-arm corner R1260.0 pOffset-125.0 absolute",
+            "minimumControl": {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 79,
+              "guard": 11,
+              "sign": -1
+            },
+            "maximumControl": {
+              "crack": 0.35,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 90,
+              "guard": 11,
+              "sign": 1
+            }
+          },
+          "waterZero": {
+            "range": [
+              -30.08652388,
+              38.215150954
+            ]
+          },
+          "allSixRows": [
+            {
+              "label": "north normal retained-arm corner R-332.5 pOffset-125.0 absolute",
+              "references": [
+                [
+                  [
+                    9025,
+                    11667.5
+                  ],
+                  [
+                    9150.0,
+                    11667.5
+                  ]
+                ],
+                null
+              ],
+              "rangeMM": [
+                -9.847732601,
+                16.33707749
+              ],
+              "incrementOnlyRangeMM": [
+                -1.661311385,
+                2.998130008
+              ],
+              "dryDiversionRangeMM": [
+                -9.423825337,
+                13.984335607
+              ],
+              "control": [
+                {
+                  "crack": 0.2,
+                  "mode": "partial water up",
+                  "specials": 0.0,
+                  "windIndex": 57,
+                  "guard": 11,
+                  "sign": -1
+                },
+                {
+                  "crack": 0.2,
+                  "mode": "partial water down",
+                  "specials": 1.35,
+                  "windIndex": 32,
+                  "guard": 11,
+                  "sign": 1
+                }
+              ]
+            },
+            {
+              "label": "north normal retained-arm corner R-332.5 pOffset125.0 absolute",
+              "references": [
+                [
+                  [
+                    9025,
+                    11667.5
+                  ],
+                  [
+                    8900.0,
+                    11667.5
+                  ]
+                ],
+                null
+              ],
+              "rangeMM": [
+                -9.16626246,
+                15.410444623
+              ],
+              "incrementOnlyRangeMM": [
+                -1.534612918,
+                2.787235395
+              ],
+              "dryDiversionRangeMM": [
+                -8.781473394,
+                13.194991441
+              ],
+              "control": [
+                {
+                  "crack": 0.2,
+                  "mode": "partial water up",
+                  "specials": 0.0,
+                  "windIndex": 92,
+                  "guard": 11,
+                  "sign": -1
+                },
+                {
+                  "crack": 0.2,
+                  "mode": "partial water down",
+                  "specials": 1.35,
+                  "windIndex": 32,
+                  "guard": 11,
+                  "sign": 1
+                }
+              ]
+            },
+            {
+              "label": "north normal retained-arm corner R1000.0 pOffset-125.0 absolute",
+              "references": [
+                [
+                  [
+                    9025,
+                    11667.5
+                  ],
+                  [
+                    9150.0,
+                    13000.0
+                  ]
+                ],
+                null
+              ],
+              "rangeMM": [
+                -27.053382749,
+                40.210499677
+              ],
+              "incrementOnlyRangeMM": [
+                -3.571364322,
+                6.921495009
+              ],
+              "dryDiversionRangeMM": [
+                -26.268845168,
+                33.788448192
+              ],
+              "control": [
+                {
+                  "crack": 0.2,
+                  "mode": "partial water up",
+                  "specials": 0.0,
+                  "windIndex": 79,
+                  "guard": 11,
+                  "sign": -1
+                },
+                {
+                  "crack": 0.2,
+                  "mode": "partial water down",
+                  "specials": 1.35,
+                  "windIndex": 90,
+                  "guard": 11,
+                  "sign": 1
+                }
+              ]
+            },
+            {
+              "label": "north normal retained-arm corner R1000.0 pOffset125.0 absolute",
+              "references": [
+                [
+                  [
+                    9025,
+                    11667.5
+                  ],
+                  [
+                    8900.0,
+                    13000.0
+                  ]
+                ],
+                null
+              ],
+              "rangeMM": [
+                -26.639441625,
+                39.557422795
+              ],
+              "incrementOnlyRangeMM": [
+                -3.475129271,
+                6.747135294
+              ],
+              "dryDiversionRangeMM": [
+                -25.889521249,
+                33.268203531
+              ],
+              "control": [
+                {
+                  "crack": 0.2,
+                  "mode": "partial water up",
+                  "specials": 0.0,
+                  "windIndex": 79,
+                  "guard": 11,
+                  "sign": -1
+                },
+                {
+                  "crack": 0.35,
+                  "mode": "partial water down",
+                  "specials": 1.35,
+                  "windIndex": 90,
+                  "guard": 11,
+                  "sign": 1
+                }
+              ]
+            },
+            {
+              "label": "north normal retained-arm corner R1260.0 pOffset-125.0 absolute",
+              "references": [
+                [
+                  [
+                    9025,
+                    11667.5
+                  ],
+                  [
+                    9150.0,
+                    13260.0
+                  ]
+                ],
+                null
+              ],
+              "rangeMM": [
+                -30.955922283,
+                45.445682468
+              ],
+              "incrementOnlyRangeMM": [
+                -4.03811659,
+                7.812728753
+              ],
+              "dryDiversionRangeMM": [
+                -30.08652388,
+                38.215150954
+              ],
+              "control": [
+                {
+                  "crack": 0.2,
+                  "mode": "partial water up",
+                  "specials": 0.0,
+                  "windIndex": 79,
+                  "guard": 11,
+                  "sign": -1
+                },
+                {
+                  "crack": 0.35,
+                  "mode": "partial water down",
+                  "specials": 1.35,
+                  "windIndex": 90,
+                  "guard": 11,
+                  "sign": 1
+                }
+              ]
+            },
+            {
+              "label": "north normal retained-arm corner R1260.0 pOffset125.0 absolute",
+              "references": [
+                [
+                  [
+                    9025,
+                    11667.5
+                  ],
+                  [
+                    8900.0,
+                    13260.0
+                  ]
+                ],
+                null
+              ],
+              "rangeMM": [
+                -30.547286323,
+                44.797362976
+              ],
+              "incrementOnlyRangeMM": [
+                -3.946125294,
+                7.642012712
+              ],
+              "dryDiversionRangeMM": [
+                -29.712176875,
+                37.699283126
+              ],
+              "control": [
+                {
+                  "crack": 0.2,
+                  "mode": "partial water up",
+                  "specials": 0.0,
+                  "windIndex": 79,
+                  "guard": 11,
+                  "sign": -1
+                },
+                {
+                  "crack": 0.35,
+                  "mode": "partial water down",
+                  "specials": 1.35,
+                  "windIndex": 90,
+                  "guard": 11,
+                  "sign": 1
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "pairedNativeAlongGapChangeMM": {
+        "25.0": {
+          "range": [
+            -0.338644656,
+            0.337115178
+          ],
+          "minimumQuery": "face2 adjacent arm gap primary7200 lower7400 pq4345.0 lq4325.0 pz6633.5 lz6579.25",
+          "maximumQuery": "face2 adjacent arm gap primary7200 lower7400 pq4345.0 lq4325.0 pz6579.25 lz6633.5",
+          "minimumControl": {
+            "crack": 0.2,
+            "mode": "partial water up",
+            "specials": 1.35,
+            "windIndex": 66,
+            "guard": 11,
+            "sign": 1
+          },
+          "maximumControl": {
+            "crack": 0.2,
+            "mode": "partial water up",
+            "specials": 1.35,
+            "windIndex": 57,
+            "guard": 1,
+            "sign": -1
+          }
+        },
+        "50.0": {
+          "range": [
+            -0.630740487,
+            0.680938686
+          ],
+          "minimumQuery": "face3 adjacent arm gap primary6675 lower6450 pq4325.0 lq4345.0 pz6579.25 lz6633.5",
+          "maximumQuery": "face3 adjacent arm gap primary6675 lower6450 pq4345.0 lq4325.0 pz6633.5 lz6579.25",
+          "minimumControl": {
+            "crack": 0.2,
+            "mode": "partial water up",
+            "specials": 1.35,
+            "windIndex": 83,
+            "guard": 13,
+            "sign": -1
+          },
+          "maximumControl": {
+            "crack": 0.2,
+            "mode": "partial water up",
+            "specials": 1.35,
+            "windIndex": 59,
+            "guard": 13,
+            "sign": 1
+          }
+        }
+      },
+      "normalVirtualWorkError": 0.0,
+      "nativeInterfaceRecoveryError": 0.0
+    }
+  },
+  "physicalGeometry": {
+    "courtBoundsQMM": [
+      3777.5,
+      4057.5
+    ],
+    "courtZMM": [
+      6540,
+      6660
+    ],
+    "courtWallMM": 25,
+    "courtInternalClearHeightMM": 70,
+    "nominal300HeelShoulderEachSideMM": 10,
+    "outerSectionUnchangedMM": [
+      220,
+      120,
+      20
+    ],
+    "courtAndHeelDeclaredStressBudgetMPa": 181.8181818181818,
+    "actual25To20SkinAnd16WebTransitionQualified": false
+  },
+  "receivingStiffnessQualification": "20 and40kN/mm are symmetric numerical hypotheses, not admitted actual tension/compression/contact chains or a proved intermediate-stiffness envelope.",
+  "windDomain": {
+    "localInputSourceSHA256": "4eb505e4349b1af1eaa98c96b0aa7174a8b6e3c4210628a969cc10c8252e7eba",
+    "retainedNativeVerticalProjectionKN": 62.622225,
+    "addedExplicitFloorGrossKN": 19.940625,
+    "addedFloorSignGroups": 24,
+    "areaCancellationCredited": false,
+    "knownMissingPhysicalRows": [
+      "Primary120mm roof lap aboveZ7290.188718 to7340.902909; no shielding/load route earned.",
+      "Secondary baffle aboveZ7107.33 to7145; no shielding/load route earned."
+    ],
+    "missingLocalReturn": "Exported apron-rib/standoff pressure is included globally but has not yet been returned through the local main-frame/contact model."
+  },
+  "massDomain": {
+    "outerHeadIndependentIntervals": 134,
+    "eachInterval": "0..source cap",
+    "wholeWeatherRoofRetained": true,
+    "finite144ContainedAtSourcePoints": [
+      {
+        "finiteChoice": "one-local-renewal-state/000",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "0": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/001",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "0": 1.0,
+          "64": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/002",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "1": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/003",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "1": 1.0,
+          "65": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/004",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "2": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/005",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "2": 1.0,
+          "66": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/006",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "3": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/007",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "3": 1.0,
+          "67": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/008",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "4": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/009",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "4": 1.0,
+          "68": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/010",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "5": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/011",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "5": 1.0,
+          "69": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/012",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "6": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/013",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "6": 1.0,
+          "70": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/014",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "7": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/015",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "7": 1.0,
+          "71": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/016",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "8": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/017",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "8": 1.0,
+          "72": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/018",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "9": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/019",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "9": 1.0,
+          "73": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/020",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "10": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/021",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "10": 1.0,
+          "74": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/022",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "11": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/023",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "11": 1.0,
+          "75": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/024",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "12": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/025",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "12": 1.0,
+          "76": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/026",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "13": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/027",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "13": 1.0,
+          "77": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/028",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "14": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/029",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "14": 1.0,
+          "78": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/030",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "15": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/031",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "15": 1.0,
+          "79": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/032",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "16": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/033",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "16": 1.0,
+          "80": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/034",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "17": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/035",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "17": 1.0,
+          "81": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/036",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "18": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/037",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "18": 1.0,
+          "82": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/038",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "19": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/039",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "19": 1.0,
+          "83": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/040",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "20": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/041",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "20": 1.0,
+          "84": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/042",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "21": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/043",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "21": 1.0,
+          "85": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/044",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "22": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/045",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "22": 1.0,
+          "86": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/046",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "23": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/047",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "23": 1.0,
+          "87": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/048",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "24": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/049",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "24": 1.0,
+          "88": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/050",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "25": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/051",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "25": 1.0,
+          "89": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/052",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "26": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/053",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "26": 1.0,
+          "90": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/054",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "27": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/055",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "27": 1.0,
+          "91": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/056",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "28": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/057",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "28": 1.0,
+          "92": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/058",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "29": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/059",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "29": 1.0,
+          "93": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/060",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "30": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/061",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "30": 1.0,
+          "94": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/062",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "31": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/063",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "31": 1.0,
+          "95": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/064",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "32": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/065",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "32": 1.0,
+          "96": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/066",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "33": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/067",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "33": 1.0,
+          "97": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/068",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "34": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/069",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "34": 1.0,
+          "98": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/070",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "35": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/071",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "35": 1.0,
+          "99": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/072",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "36": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/073",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "36": 1.0,
+          "100": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/074",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "37": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/075",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "37": 1.0,
+          "101": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/076",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "38": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/077",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "38": 1.0,
+          "102": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/078",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "39": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/079",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "39": 1.0,
+          "103": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/080",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "40": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/081",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "40": 1.0,
+          "104": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/082",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "41": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/083",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "41": 1.0,
+          "105": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/084",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "42": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/085",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "42": 1.0,
+          "106": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/086",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "43": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/087",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "43": 1.0,
+          "107": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/088",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "44": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/089",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "44": 1.0,
+          "108": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/090",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "45": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/091",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "45": 1.0,
+          "109": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/092",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "46": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/093",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "46": 1.0,
+          "110": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/094",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "47": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/095",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "47": 1.0,
+          "111": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/096",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "48": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/097",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "48": 1.0,
+          "112": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/098",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "49": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/099",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "49": 1.0,
+          "113": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/100",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "50": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/101",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "50": 1.0,
+          "114": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/102",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "51": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/103",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "51": 1.0,
+          "115": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/104",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "52": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/105",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "52": 1.0,
+          "116": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/106",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "53": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/107",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "53": 1.0,
+          "117": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/108",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "54": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/109",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "54": 1.0,
+          "118": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/110",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "55": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/111",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "55": 1.0,
+          "119": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/112",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "56": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/113",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "56": 1.0,
+          "120": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/114",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "57": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/115",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "57": 1.0,
+          "121": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/116",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "58": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/117",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "58": 1.0,
+          "122": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/118",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "59": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/119",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "59": 1.0,
+          "123": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/120",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "60": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/121",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "60": 1.0,
+          "124": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/122",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "61": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/123",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "61": 1.0,
+          "125": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/124",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "62": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/125",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "62": 1.0,
+          "126": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/126",
+        "label": "one exterior primary tributary",
+        "removedFractionsOfIndependentMassGroups": {
+          "63": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/127",
+        "label": "one paired exterior primary/lower tributary bay",
+        "removedFractionsOfIndependentMassGroups": {
+          "63": 1.0,
+          "127": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/128",
+        "label": "one captured normal head/upper spool, 25 kg",
+        "removedFractionsOfIndependentMassGroups": {
+          "128": 0.17039258829853207
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/129",
+        "label": "primary bay plus complete adjacent head and8.4m leader dry bound",
+        "removedFractionsOfIndependentMassGroups": {
+          "14": 1.0,
+          "128": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/130",
+        "label": "paired bay plus complete adjacent head and8.4m leader dry bound",
+        "removedFractionsOfIndependentMassGroups": {
+          "14": 1.0,
+          "78": 1.0,
+          "128": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/131",
+        "label": "primary bay plus complete adjacent head and8.4m leader dry bound",
+        "removedFractionsOfIndependentMassGroups": {
+          "13": 1.0,
+          "128": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/132",
+        "label": "paired bay plus complete adjacent head and8.4m leader dry bound",
+        "removedFractionsOfIndependentMassGroups": {
+          "13": 1.0,
+          "77": 1.0,
+          "128": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/133",
+        "label": "one captured normal head/upper spool, 25 kg",
+        "removedFractionsOfIndependentMassGroups": {
+          "130": 0.17039258829853207
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/134",
+        "label": "primary bay plus complete adjacent head and8.4m leader dry bound",
+        "removedFractionsOfIndependentMassGroups": {
+          "36": 1.0,
+          "130": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/135",
+        "label": "paired bay plus complete adjacent head and8.4m leader dry bound",
+        "removedFractionsOfIndependentMassGroups": {
+          "36": 1.0,
+          "100": 1.0,
+          "130": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/136",
+        "label": "primary bay plus complete adjacent head and8.4m leader dry bound",
+        "removedFractionsOfIndependentMassGroups": {
+          "35": 1.0,
+          "130": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/137",
+        "label": "paired bay plus complete adjacent head and8.4m leader dry bound",
+        "removedFractionsOfIndependentMassGroups": {
+          "35": 1.0,
+          "99": 1.0,
+          "130": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/138",
+        "label": "one complete head plus 8.4m leader dry bound",
+        "removedFractionsOfIndependentMassGroups": {
+          "128": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/139",
+        "label": "one complete head plus 8.4m leader dry bound",
+        "removedFractionsOfIndependentMassGroups": {
+          "129": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/140",
+        "label": "one complete head plus 8.4m leader dry bound",
+        "removedFractionsOfIndependentMassGroups": {
+          "130": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/141",
+        "label": "one complete head plus 8.4m leader dry bound",
+        "removedFractionsOfIndependentMassGroups": {
+          "131": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/142",
+        "label": "one complete head plus 8.4m leader dry bound",
+        "removedFractionsOfIndependentMassGroups": {
+          "132": 1.0
+        }
+      },
+      {
+        "finiteChoice": "one-local-renewal-state/143",
+        "label": "one complete head plus 8.4m leader dry bound",
+        "removedFractionsOfIndependentMassGroups": {
+          "133": 1.0
+        }
+      }
+    ],
+    "roundedReceiptComparisonTolerance": {
+      "absolute": 2e-09,
+      "relative": 2e-12
+    },
+    "notPhysicalPermission": "Only one local operation at a time. Broad installed-mass uncertainty authorises no simultaneous physical removals.",
+    "remainingPhysicalQualification": "Actual residual-piece centroids/root allocation, new head topology, added joining stock and temporary equipment must separately fit the declared contract."
+  },
+  "parameterSeamParity40Fixed": {
+    "previousSource": "roof_water_thick_pressure_trial_280_25_60.json",
+    "exactlyEqualNumericalFields": [
+      "supportReactionRanges",
+      "portalNormalTieRanges",
+      "cases",
+      "worst",
+      "nativeEndParity",
+      "portalLocalFlexibilityParity",
+      "maximumSixComponentBalanceError",
+      "independentWaterSuperpositionError",
+      "maximumPortalNormalTieKN",
+      "worstUpperTensionKN",
+      "worstUpperCompressionKN"
+    ],
+    "all22ReceiverAnd32TieRowsEqual": true
+  },
+  "movementScope": {
+    "verticalQueries": 920,
+    "lateralQueries": 1112,
+    "newOuterRetainedHeadCorners": 12,
+    "newOuterRadialMM": [
+      -332.5,
+      1000,
+      1260
+    ],
+    "newOuterAlongOffsetsMM": [
+      -125,
+      125
+    ],
+    "nativeRootZMM": 6600,
+    "localFrameAxis6200IsSeparate": true,
+    "datum": "Absolute native fixed-base datum; facade co-motion is not credited."
+  },
+  "upperCompressionResistanceKN": null,
+  "all22Rows": "roof_water_current_receiving.json",
+  "unchangedControls": [
+    "Original220/240/260 source-faithful recovery, old134-removal rejection and 280/20,300/20 frozen-pressure failures remain unchanged.",
+    "No M24,8kN floor-tie,3kN roof-tie,collector or receiving resistance limit is raised."
+  ],
+  "fullNumericalReplayCommandsFromRepositoryRoot": [
+    "python -S project/rof/studies/roof_water_current_trial.py --court-width=280 --court-wall-mm=25 --inner-dry-kg-per-m=60 --receiving-spring-kn-per-mm=40 --outer-head-dry-domain=independent --check",
+    "python -S project/rof/studies/roof_water_current_movement.py --court-width=280 --court-wall-mm=25 --inner-dry-kg-per-m=60 --receiving-spring-kn-per-mm=40 --outer-head-dry-domain=independent --check",
+    "python -S project/rof/studies/roof_water_current_lateral.py --court-width=280 --court-wall-mm=25 --inner-dry-kg-per-m=60 --receiving-spring-kn-per-mm=40 --outer-head-dry-domain=independent --check",
+    "python -S project/rof/studies/roof_water_current_trial.py --court-width=280 --court-wall-mm=25 --inner-dry-kg-per-m=60 --receiving-spring-kn-per-mm=20 --outer-head-dry-domain=independent --check",
+    "python -S project/rof/studies/roof_water_current_movement.py --court-width=280 --court-wall-mm=25 --inner-dry-kg-per-m=60 --receiving-spring-kn-per-mm=20 --outer-head-dry-domain=independent --check",
+    "python -S project/rof/studies/roof_water_current_lateral.py --court-width=280 --court-wall-mm=25 --inner-dry-kg-per-m=60 --receiving-spring-kn-per-mm=20 --outer-head-dry-domain=independent --check",
+    "python -S project/rof/studies/roof_water_current_receiving.py --check",
+    "python -S project/rof/studies/roof_water_current_checkpoint.py --check"
+  ],
+  "nativeInputs": [
+    {
+      "path": "project/str/studies/structural-linear.py",
+      "sha256": "96e27fef3c808aa66822d0941a23fc551ea0139ee34a81960a6bc80441863d1f"
+    },
+    {
+      "path": "project/str/studies/current-house-roof-bracing.py",
+      "sha256": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1"
+    },
+    {
+      "path": "project/str/studies/current-house-membrane.py",
+      "sha256": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e"
+    },
+    {
+      "path": "project/str/studies/current-house-ring-return.py",
+      "sha256": "e0e81c445ae210fc43f3335f1a6d8aac6faa7026af755fa4f1282eceeaa39cb6"
+    },
+    {
+      "path": "project/str/studies/current-house-welded-network.json",
+      "sha256": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b"
+    },
+    {
+      "path": "project/str/studies/current-house-welded-heel.json",
+      "sha256": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e"
+    },
+    {
+      "path": "project/str/studies/current-house-ring-space.json",
+      "sha256": "28dd034381847b786a31a4f38ffe95d83b948f08bda5f9fe8a6337118584a574"
+    },
+    {
+      "path": "project/str/studies/reconciled-corner-portals.py",
+      "sha256": "a0c158fbff68bc250e6ab64ab6251cc396abc7efb6ef3f398325629e678b92bd"
+    },
+    {
+      "path": "project/str/studies/reconciled-corner-portals.json",
+      "sha256": "d0fa19a7f772094610bdc67adadfcdb352923c825869e617b66a9f55a4d0d848"
+    },
+    {
+      "path": "project/str/studies/arch-space-kernel.py",
+      "sha256": "ed07cf97bfa1d8359a97486a679d3220bbd81c14cccfabc8eed9a01717bd3a24"
+    },
+    {
+      "path": "project/str/studies/reconciled-slate-roof.py",
+      "sha256": "7f42a9c530092e077e5052f5e1f0c1872186790726cda31bb0a800902e031643"
+    },
+    {
+      "path": "project/str/studies/house-corner-rewind.json",
+      "sha256": "0a927d781097f01693195bae56712204abd8d5c6d7335a56038d3ea3d26007a1"
+    },
+    {
+      "path": "project/str/studies/current-house-window-receivers.json",
+      "sha256": "7968c876c4926fe5c266e4486aac04afd063ee55993bd95c2dfdff9522162294"
+    },
+    {
+      "path": "project/str/studies/current-house-guard-bracket.json",
+      "sha256": "8ced0fe445a04f7133cbe737c47ed3f34046f6994f3b33c257b93677b483dd8c"
+    },
+    {
+      "path": "project/str/studies/current-house-joined-foundation.json",
+      "sha256": "1b21b4215bc1d5b164f7d50c705617a2014d91e6fe00e0cc4f6b58a37586a648"
+    },
+    {
+      "path": "project/str/studies/open-loggia-support.json",
+      "sha256": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5"
+    },
+    {
+      "path": "project/str/studies/current-house-arch-jambs.py",
+      "sha256": "108e5bf4f246aa1629ffbb3f26b12fbf6a4a1e2543b4b2bda7c76bef2d149426"
+    },
+    {
+      "path": "project/str/studies/current-house-arch-jambs.json",
+      "sha256": "5398e4b04c1af76cf7fd8beab4d15950983b446487f310a5e6879b69ae1f1f2a"
+    },
+    {
+      "path": "project/str/studies/current-house-head-actions.py",
+      "sha256": "ca6b7f7f97aab3a7bbba605d2b0d2f2bc32c83ddb4e36f4c4eb2c9c604e1eb52"
+    },
+    {
+      "path": "project/str/studies/current-house-head-actions.json",
+      "sha256": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6"
+    },
+    {
+      "path": "project/str/studies/current-house-ground-ties.json",
+      "sha256": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6"
+    },
+    {
+      "path": "project/str/studies/current-house-grid.json",
+      "sha256": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294"
+    },
+    {
+      "path": "project/str/studies/current-house-roof-network.json",
+      "sha256": "557de43293e636fbe7e84e007d899d7fbcd4ca29d4af4e1eab0866501c1103a7"
+    },
+    {
+      "path": "project/str/studies/physical-slab-join.json",
+      "sha256": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c"
+    },
+    {
+      "path": "project/str/studies/current-house-lateral.json",
+      "sha256": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574"
+    },
+    {
+      "path": "project/str/studies/current-house-roof-connection.json",
+      "sha256": "9de2bb56a68d3a234cdf4fb8cdc657434340329bbfb93e4febeef464ac0ddfff"
+    },
+    {
+      "path": "project/str/studies/reconciled-house-interface.json",
+      "sha256": "ae17f6de977de58ae54f25edfc67c48c36f348cffc288e839f25a8b4143c16cf"
+    },
+    {
+      "path": "project/str/studies/current-house-floor-closure.json",
+      "sha256": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09"
+    },
+    {
+      "path": "project/had/studies/water-replan.json",
+      "sha256": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc"
+    },
+    {
+      "path": "project/oas/studies/north-export-occurrence.json",
+      "sha256": "0dc62373393811e3103800b9d8e3ed8bc0b2beb278503816695370122c434eb9"
+    },
+    {
+      "path": "project/mat/studies/whole-envelope.json",
+      "sha256": "a7d959b109a55cbf7bd8538894bcbc942ce9de84b2b40259530f6794f6665e15"
+    },
+    {
+      "path": "project/rof/studies/roof_water_structure.py",
+      "sha256": "b70d9141fc8394ca80e911ba3f2fa001ddc58d05a2943150f208629dcf36e9fa"
+    },
+    {
+      "path": "project/rof/studies/roof_water_receiving_baseline.py",
+      "sha256": "5ebdafb4861f10cc099986aa2e0af6cbae1e7fc9768fef366f02207b8fec54d9"
+    },
+    {
+      "path": "project/rof/studies/roof_water_receiving_baseline.json",
+      "sha256": "8d9c3200f9cea459454884b5d569235286f2522cc7766eb999934f0001334c0d"
+    }
+  ],
+  "sourceHashes": {
+    "project/rof/studies/roof_water_current_trial.py": "e7a232cf47a79a59d61caa6a7ee8f5340c684735a0ea8d0db0f45c8f288222cf",
+    "project/rof/studies/roof_water_current_trial_280_25_60_40_fixed.json": "e42c678a13e55d791db70777dd542a054a6fe3a555f9a9b73243a06c03563a8f",
+    "project/rof/studies/roof_water_current_trial_280_25_60_40_independent.json": "0f3c526b05203554ec04496c6744143a9715c117534876c54c24c18380fd8c84",
+    "project/rof/studies/roof_water_current_trial_280_25_60_20_independent.json": "b68add723f473528a0b0b306c7635e5272cc42ad25d561ab4720422fbb281889",
+    "project/rof/studies/roof_water_current_movement.py": "cda3a56cf32017b9f212ce3ae7753b0f33305cea2ff9d61afb53c9ade38d3578",
+    "project/rof/studies/roof_water_current_movement_280_25_60_40_independent.json": "f1122b48fbc01fdf1cde190bec0d5509918516016c188c39da278e013c356f27",
+    "project/rof/studies/roof_water_current_movement_280_25_60_20_independent.json": "ff6a94bd9f79687e688675414589033ac8f0a80d25a06fe9c3ac6fe5c490de23",
+    "project/rof/studies/roof_water_current_lateral.py": "ffeda3957f20e4d74a2b6fb4b8ce59b72fb60b93afd329fd6a5582e631b29c62",
+    "project/rof/studies/roof_water_current_lateral_280_25_60_40_independent.json": "0a2803be0b4268a475f0d28696029073e2b6b47a45375602c251676675ce5ef8",
+    "project/rof/studies/roof_water_current_lateral_280_25_60_20_independent.json": "987bb75c74d042960e37129a84a5c4844afaee1ffb6b5cd9ea5d09ca72479e06",
+    "project/rof/studies/roof_water_current_receiving.py": "357d70742e78165f7a34692f8e87199af8a10626e250fe26f13c2803cf8a0a6f",
+    "project/rof/studies/roof_water_current_receiving.json": "54d1d81e6f82d6df29ac876d77e69b1da15e19d4c4752a2e9b7227a7734dd49c",
+    "project/rof/studies/roof_water_thick_pressure_trial.py": "ab28dea0a305e58c7a51bdc0085267fc4c931170abf92c01b3f2d6bf69cfad1b",
+    "project/rof/studies/roof_water_thick_pressure_trial_280_25_60.json": "5d5c54819dff343abddfd5f45d4e8f3fae0565773e7de8a30758f3b2f15a1b57",
+    "project/rof/studies/roof_water_thick_pressure_maintenance.py": "2be6653c02e76778b97fafe49b5adc3523f47d84065a660e32050cad11b27a41",
+    "project/rof/studies/roof_water_thick_pressure_maintenance_280_25_60_finite.json": "cfbb356276b26b720182bffeee00b5ee2b551669d03749f13698e36633bf02c0",
+    "project/rof/studies/stiffness_inputs/roof.py": "1f3c2e584ee3c0136aba0fda97c55e92be672f181dbe12e02f27088686fc2f5e",
+    "project/rof/studies/stiffness_inputs/ring.py": "9a088788ad68626b6b9746702388c604cd95661d4ad14b023661e121d4063c6a",
+    "project/rof/studies/stiffness_inputs/slate.py": "b589ab5bd0a66f81d34df4f99d275a0e10d7d76e75827563981408f1e6df6051",
+    "project/rof/studies/stiffness_inputs/portals.py": "eff6d7d7dc465cbd572eb6103dd6d6a427c7cb99c4edb74334b058c6a635ff97",
+    "project/rof/studies/stiffness_inputs/manifest.json": "59a8b2f4b5e62191dbca58967e84d6d572fe617a698a68c71db32312d9270df2",
+    "project/rof/studies/roof_water_current_checkpoint.py": "bc646cb46f912f308da14dec3907b02e5e81f5f20442ab936c604d1884eff030"
+  }
+}

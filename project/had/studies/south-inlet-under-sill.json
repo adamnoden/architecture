@@ -1,0 +1,325 @@
+{
+  "disposition": "Prefer both branches under the sill for development. Hold selection and retain the indoor inlet reference.",
+  "sources": {
+    "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2",
+    "project/had/studies/incoming-water-geometry.mjs": "ed658b7df0edf5d8e6d1826d32730a14b00199c7",
+    "project/had/studies/current-house-services.json": "248c8281369d16a8885506660f740c1f66462d9d",
+    "project/had/studies/south-utility-inlet.json": "60c7979e8e1036946473e07f2530525cc7b46bce",
+    "project/had/studies/south-inlet-relief.json": "b6c4340e57b616caf6c2daf184bc6c144db2a473",
+    "project/had/studies/utility-dry-bowl-release.json": "7f1e60c8dbbb93a4a50ed7bb7db13e426ef25603",
+    "project/had/studies/utility-wide-capture.json": "999fe25948911c6325590186db1e94f884d44ae2",
+    "project/str/studies/floor-portal-interface-review.json": "ad8aac21e936f0199b331c3bd886c8bb41f30ee3",
+    "project/str/studies/house-corner-rewind.json": "6471d89c213724ec02a26d797c85185beadb25b5",
+    "project/had/studies/water-replan.json": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d"
+  },
+  "sillBay": [
+    9400,
+    10400
+  ],
+  "sillZ": 750,
+  "branches": [
+    {
+      "id": "utility",
+      "bores": [
+        {
+          "outer": [
+            10080,
+            -90,
+            450
+          ],
+          "inner": [
+            10080,
+            429.5,
+            460.39
+          ],
+          "radius": 80
+        },
+        {
+          "outer": [
+            10080,
+            -90,
+            190
+          ],
+          "inner": [
+            10080,
+            429.5,
+            233.29166666666666
+          ],
+          "radius": 55
+        }
+      ],
+      "coordinates": [
+        [
+          10080,
+          -90,
+          468
+        ],
+        [
+          10080,
+          429.5,
+          478.39
+        ],
+        [
+          10080,
+          600,
+          478.39
+        ],
+        [
+          10080,
+          600,
+          2725
+        ],
+        [
+          10760,
+          600,
+          2725
+        ],
+        [
+          10760,
+          1250,
+          2725
+        ],
+        [
+          10760,
+          1250,
+          1000
+        ]
+      ],
+      "riserY": 600,
+      "chamber": [
+        [
+          9995,
+          429.5
+        ],
+        [
+          10165,
+          429.5
+        ],
+        [
+          10165,
+          665
+        ],
+        [
+          10058,
+          665
+        ],
+        [
+          9995,
+          522
+        ]
+      ],
+      "clearUpperMouthSidePackingMM": 10,
+      "formedReserveToNearestJambAfterSettingMM": 230,
+      "formedReserveBelowRawSillAfterSettingMM": 199.61,
+      "pipeToInverterWorkingAfterSettingMM": 52.9971,
+      "pipeToWasherThroughFirstRestAfterSettingMM": 127.6396,
+      "pipeToBowlTransportAfterSettingMM": 166.9971,
+      "revisedHotReserveAfterSettingMM": 40.1917,
+      "reliefReceiver": {
+        "x": [
+          9980,
+          10160
+        ],
+        "terminalY": -650,
+        "terminalInvertZ": 93.3333,
+        "receiverY": [
+          -1300,
+          -650
+        ],
+        "clearWidthMM": 180,
+        "adverseBottomOpenWidthMM": 90,
+        "overflowCrestZ": -35,
+        "raisedCrestSensitivityMM": 32,
+        "overflowHeadMM": 50.3207,
+        "ratedReceiverWaterZ": 47.3207,
+        "maximumReceiverWaterZ": 68.3333,
+        "freeDropReserveAfterSettingsMM": 11.0126
+      }
+    },
+    {
+      "id": "plant",
+      "bores": [
+        {
+          "outer": [
+            10285,
+            -90,
+            570
+          ],
+          "inner": [
+            10285,
+            429.5,
+            580.39
+          ],
+          "radius": 80
+        },
+        {
+          "outer": [
+            10285,
+            -90,
+            290
+          ],
+          "inner": [
+            10285,
+            429.5,
+            333.2916666666667
+          ],
+          "radius": 55
+        }
+      ],
+      "coordinates": [
+        [
+          10285,
+          -90,
+          588
+        ],
+        [
+          10285,
+          429.5,
+          598.39
+        ],
+        [
+          10285,
+          545,
+          598.39
+        ],
+        [
+          10285,
+          545,
+          2610
+        ],
+        [
+          11505,
+          545,
+          2610
+        ],
+        [
+          11505,
+          820,
+          2610
+        ],
+        [
+          11505,
+          1180,
+          2725
+        ],
+        [
+          11505,
+          2199.2,
+          2725
+        ],
+        [
+          11315,
+          2323,
+          2725
+        ],
+        [
+          11315,
+          2940,
+          2725
+        ],
+        [
+          11385,
+          3050,
+          2725
+        ],
+        [
+          11385,
+          3370,
+          2725
+        ],
+        [
+          11385,
+          3370,
+          2260
+        ],
+        [
+          10245,
+          3370,
+          2260
+        ],
+        [
+          10245,
+          3797,
+          2260
+        ],
+        [
+          10222.5,
+          3842.9,
+          2260
+        ]
+      ],
+      "riserY": 545,
+      "chamber": [
+        [
+          10200,
+          429.5
+        ],
+        [
+          10370,
+          429.5
+        ],
+        [
+          10370,
+          665
+        ],
+        [
+          10200,
+          665
+        ]
+      ],
+      "clearUpperMouthSidePackingMM": 10,
+      "formedReserveToNearestJambAfterSettingMM": 25,
+      "formedReserveBelowRawSillAfterSettingMM": 79.61,
+      "pipeToInverterWorkingAfterSettingMM": 107.9971,
+      "pipeToWasherThroughFirstRestAfterSettingMM": 207.9971,
+      "pipeToBowlTransportAfterSettingMM": 677.6496,
+      "revisedHotReserveAfterSettingMM": 255.4792,
+      "reliefReceiver": {
+        "x": [
+          10200,
+          10380
+        ],
+        "terminalY": -650,
+        "terminalInvertZ": 193.3333,
+        "receiverY": [
+          -1300,
+          -650
+        ],
+        "clearWidthMM": 180,
+        "adverseBottomOpenWidthMM": 90,
+        "overflowCrestZ": 65,
+        "raisedCrestSensitivityMM": 32,
+        "overflowHeadMM": 50.3207,
+        "ratedReceiverWaterZ": 147.3207,
+        "maximumReceiverWaterZ": 168.3333,
+        "freeDropReserveAfterSettingsMM": 11.0126
+      }
+    }
+  ],
+  "borePairMinimumAfterSettingMM": 67.5274,
+  "coldPipePairAfterSettingMM": 43.4698,
+  "utilityPurge": {
+    "stance": [
+      9725,
+      754.5
+    ],
+    "rectangularBoxClearanceAfterSettingMM": -25.5527,
+    "taperedBoxClearanceAfterSettingMM": 30.8205,
+    "taperedBoxToRiserBeforeAllowanceMM": 9.3387,
+    "plateAndSettingAllowanceMM": 5,
+    "taperedBoxToRiserAfterAllowanceMM": 4.3387
+  },
+  "rejectSplitByRightJamb": {
+    "availableWidthMM": 132.5,
+    "formedUpperDiameterMM": 160
+  },
+  "receivers": {
+    "betweenAfterSettingMM": 30,
+    "toRoofRenewalLaneAfterSettingMM": 560,
+    "frontRouteEdgeX": 6700,
+    "toFrontRouteAfterSettingMM": 3270,
+    "maximumFixedWeatherHousingZ": 715,
+    "physicalWindowRenewalAdmitted": false
+  },
+  "supportedOutdoorAndIndoorClosureQualified": false
+}

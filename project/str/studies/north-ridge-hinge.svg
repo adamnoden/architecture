@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 510" role="img" aria-labelledby="title desc">
+<title id="title">A lower ridge collector around the crown pin</title>
+<desc id="desc">Two sloping rafter centrelines leave the pin in opposite directions and cross the longitudinal webs of the lowered hollow section. The pin alone fits in its bore.</desc>
+<rect width="1000" height="510" fill="#faf8f2"/><g font-family="sans-serif">
+<text x="32" y="44" font-size="28" fill="#253b41">A lower ridge collector around the crown pin</text>
+<text x="32" y="74" font-size="16" fill="#253b41">Ordinary north frame. Cut perpendicular to the ridge and pin axes. Dimensions in mm.</text>
+<rect x="185.0" y="174.0" width="140.0" height="262.5" fill="#263b43"/>
+<rect x="199.0" y="188.0" width="112.0" height="234.5" fill="#faf8f2"/>
+<polyline points="97.50,195.47 255.00,122.03 412.50,195.47" fill="none" stroke="#44706b" stroke-width="3" stroke-dasharray=""/>
+<circle cx="255.0" cy="366.0" r="39.375" fill="#d6dacb" stroke="#546662" stroke-width="2"/>
+<polyline points="80.00,447.60 255.00,366.00 430.00,447.60" fill="none" stroke="#a0442b" stroke-width="2.5" stroke-dasharray="6 3"/>
+<text x="31" y="128" font-size="15" fill="#44706b">Board underside</text>
+<text x="341" y="225" font-size="15" fill="#253b41">150 × 80 × 8 RHS</text>
+<text x="341" y="370" font-size="16" fill="#253b41">Ø45 pin</text>
+<text x="32" y="467" font-size="16" fill="#a0442b">Rafter force axes cross the two webs.</text>
+<text x="520" y="132" font-size="20" fill="#253b41">The shaft fits. The rafter routes cross steel.</text>
+<text x="520" y="174" font-size="15" fill="#253b41">The nominal square-corner bore leaves 9.50 mm</text>
+<text x="520" y="204" font-size="15" fill="#253b41">beside the pin and 9.78 mm below it.</text>
+<text x="520" y="234" font-size="15" fill="#253b41">The axes meet the web 32–40 mm from the crown.</text>
+<text x="520" y="264" font-size="15" fill="#253b41">They remain above the hollow floor on both sides.</text>
+<text x="520" y="294" font-size="15" fill="#253b41">Rolling the section through 90° leaves its underside</text>
+<text x="520" y="324" font-size="15" fill="#253b41">9.10 mm below the pin top with the same weather field.</text>
+<text x="520" y="354" font-size="15" fill="#253b41">Actual clevis plates, end gaps, axial restraint and</text>
+<text x="520" y="384" font-size="15" fill="#253b41">the continuous collector force path need a joint detail.</text>
+<text x="520" y="467" font-size="14" fill="#253b41">Pin, bearing and roof construction remain unselected.</text>
+</g></svg>

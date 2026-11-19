@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" role="img" aria-labelledby="title desc">
+  <title id="title">Cylinder replacement fit at the station and east door</title>
+  <desc id="desc">The 720 millimetre jacketed cylinder exceeds the 700 millimetre station. At the east door the larger trolley has 9 mm overlap at the south jamb and 41 mm clear at the north jamb. All outlines share a scale of one to eight.</desc>
+  <defs>
+    <style>
+      text {font-family:"DejaVu Sans",Arial,sans-serif;fill:#182d36}
+      .title {font-size:9px;font-weight:bold}
+      .heading {font-size:5.8px;font-weight:bold} .sub {font-size:3.7px}
+      .kicker {font-size:3.05px;font-weight:bold;letter-spacing:.55px;fill:#385965}
+      .label {font-size:3.3px} .fine {font-size:3.15px;fill:#405963}
+      .metric {font-size:5.8px;font-weight:bold;fill:#953d25}
+      .old {fill:none;stroke:#267778;stroke-width:.55;stroke-dasharray:2.7 1.5}
+      .new {fill:#f8e8df;fill-opacity:.85;stroke:#a24929;stroke-width:.7}
+      .station {fill:none;stroke:#405963;stroke-width:.58}
+      .dim {fill:none;stroke:#53636b;stroke-width:.32}
+      .call {fill:none;stroke:#a24929;stroke-width:.42}
+      .axis {stroke:#819097;stroke-width:.26;stroke-dasharray:2 .9 .4 .9}
+    </style>
+    <pattern id="wall" width="2.5" height="2.5" patternUnits="userSpaceOnUse"><rect width="2.5" height="2.5" fill="#dbe1df"/><path d="M0 2.5L2.5 0" stroke="#a8b7b6" stroke-width=".4"/></pattern>
+  </defs>
+  <rect width="420" height="297" fill="#fcfcfa"/>
+  <text class="kicker" x="14" y="15">HOUSE SERVICES  /  DOMESTIC HOT WATER</text>
+  <text class="title" x="14" y="31">Cylinder replacement fit</text>
+  <text class="sub" x="14" y="42">McDonald nominal 300 L study envelope against the existing plant station and east exit.</text>
+  <path d="M14 50H406" stroke="#203f48" stroke-width=".8"/>
+  <path d="M202 58V223" stroke="#ced6d5" stroke-width=".4"/>
+  <text class="kicker" x="14" y="62">01  /  STATION PLAN</text>
+  <text class="heading" x="14" y="72">Jacket against the reserved square</text>
+  <text class="sub" x="14" y="80">Both cylinders share the existing centre.</text>
+  <text class="kicker" x="213" y="62">02  /  EXIT PLAN</text>
+  <text class="heading" x="213" y="72">Trolley at the finished jambs</text>
+  <text class="sub" x="213" y="80">The exit line is 25 mm south of the opening midpoint.</text>
+  <g aria-label="Station plan">
+    <rect x="59.25" y="97.25" width="87.5" height="87.5" fill="#eaf0ed"/>
+    <circle class="new" cx="103" cy="141" r="45"/>
+    <rect class="station" x="59.25" y="97.25" width="87.5" height="87.5"/>
+    <circle class="old" cx="103" cy="141" r="37.1875"/>
+    <path d="M101 141h4m-2 -2v4" class="dim"/>
+    <text class="label" x="103" y="133" text-anchor="middle">Current body Ø595</text>
+    <path class="dim" d="M59.25 96.25V91m0 2h87.5m0 -2v5.25"/>
+    <text class="label" x="103" y="90" text-anchor="middle">700  station</text>
+    <path class="call" d="M58 147V200m0 -2h90m0 2V147"/>
+    <text class="label" x="103" y="204" text-anchor="middle">Ø720  finished jacket</text>
+    <text class="metric" x="14" y="218">10 mm overhang per side</text>
+  </g>
+  <g aria-label="Door plan" transform="translate(0 8)">
+    <circle class="new" cx="293" cy="145" r="60.5"/>
+    <circle class="old" cx="293" cy="145" r="53.125"/>
+    <path class="axis" d="M225.5 145H356.5"/>
+    <path class="axis" d="M293 79.375V204.375"/>
+    <path d="M291 145h4m-2 -2v4" stroke="#273e45" stroke-width=".45"/>
+    <text class="label" x="293" y="136" text-anchor="middle">Current trolley Ø850</text>
+    <text class="label" x="293" y="155" text-anchor="middle">Revised trolley Ø968</text>
+    <g fill="url(#wall)" stroke="#3c515a" stroke-width=".55">
+      <rect x="286" y="74.375" width="14" height="5"/>
+      <rect x="286" y="204.375" width="14" height="5"/>
+    </g>
+    <path class="dim" d="M285 79.375H220m2 -2v129m-2 -2h65"/>
+    <text class="label" transform="translate(219 141.875) rotate(-90)" text-anchor="middle">1000 clear opening</text>
+    <path class="call" d="M300 79.375h10l7 7h29"/>
+    <text class="label" x="350" y="85.375">North jamb Y5100</text>
+    <text class="fine" x="350" y="90.375">41 mm clear</text>
+    <path class="dim" d="M355.5 145h6"/>
+    <text class="label" x="364" y="143">Route centre</text>
+    <text class="fine" x="364" y="148">Y4575</text>
+    <path class="call" d="M300 204.375h10l7 -7h29"/>
+    <text class="label" x="350" y="197.375">South jamb Y4100</text>
+    <text class="fine" x="350" y="202.375">9 mm overlap</text>
+  </g>
+  <path d="M14 227H406" stroke="#bccac8" stroke-width=".5"/>
+  <text class="kicker" x="14" y="238">READING THE OUTLINES</text>
+  <path class="old" d="M14 248h12"/>
+  <text class="label" x="29" y="249">Existing body or handling envelope</text>
+  <path class="call" d="M14 258h12" style="stroke-width:.8"/>
+  <text class="label" x="29" y="259">Replacement body or handling envelope</text>
+  <text class="kicker" x="185" y="238">SCOPE OF THE CHECK</text>
+  <text class="label" x="185" y="248">The station outline excludes fittings and safety equipment.</text>
+  <text class="label" x="185" y="256">The trolley retains the study’s side-tail and handling allowances.</text>
+  <text class="label" x="185" y="264">Jamb marks locate the finished faces. Wall thickness is schematic.</text>
+  <path d="M14 273H406" stroke="#203f48" stroke-width=".6"/>
+  <text class="fine" x="14" y="283">Plan dimensions in mm  ·  Both plans 1:8 when printed at A3</text>
+  <path class="dim" d="M330 284v-3m0 1.5h62.5m0 -1.5v3"/>
+  <text class="fine" x="361.25" y="280" text-anchor="middle">500 mm</text>
+</svg>

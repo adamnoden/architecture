@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="297mm" height="260mm" viewBox="0 0 297 260"><rect width="297" height="260" fill="white"/>
+<style>text{font-family:Arial,sans-serif;fill:#172531;font-size:3px} .dash{stroke-dasharray:2 1}</style>
+<text x="15" y="12">Kitchen replan / actual heat-host failure and unselected west alternative</text>
+<text x="15" y="19">Retained furniture and source Services. 1:20 at native297mm. GroundFFL0 / dimensionsmm.</text>
+<rect x="30.0" y="47.69999999999999" width="192.55" height="157.3" fill="none" stroke="#222" stroke-width="0.3"/>
+<rect x="69.025" y="111.225" width="40.0" height="60.0" fill="#edf0ec" stroke="#778078" stroke-width="0.3"/>
+<rect x="44.025" y="143.725" width="25.0" height="25.0" fill="#edf0ec" stroke="#778078" stroke-width="0.3"/>
+<rect x="44.025" y="113.725" width="25.0" height="25.0" fill="#edf0ec" stroke="#778078" stroke-width="0.3"/>
+<rect x="109.025" y="143.725" width="25.0" height="25.0" fill="#edf0ec" stroke="#778078" stroke-width="0.3"/>
+<rect x="109.025" y="113.725" width="25.0" height="25.0" fill="#edf0ec" stroke="#778078" stroke-width="0.3"/>
+<rect x="79.025" y="47.69999999999999" width="45.0" height="30.0" fill="#edf0ec" stroke="#778078" stroke-width="0.3"/>
+<rect x="181.525" y="47.69999999999999" width="30.0" height="30.0" fill="#edf0ec" stroke="#778078" stroke-width="0.3"/>
+<text x="182.525" y="51.69999999999999">HOB / OVEN</text>
+<rect x="190.05" y="142.475" width="32.5" height="32.5" fill="#edf0ec" stroke="#778078" stroke-width="0.3"/>
+<text x="191.05" y="146.475">COLD STORE</text>
+<rect x="215.275" y="55.625" width="7.25" height="11.2" fill="#edf0ec" stroke="#778078" stroke-width="0.3"/>
+<rect x="212.55" y="73.725" width="10.0" height="67.5" fill="#edf0ec" stroke="#778078" stroke-width="0.3"/>
+<rect x="126.525" y="47.69999999999999" width="50.0" height="10.0" fill="#edf0ec" stroke="#778078" stroke-width="0.3"/>
+<text x="127.525" y="51.69999999999999">LARDER</text>
+<rect x="212.55" y="49.974999999999994" width="10.0" height="77.5" fill="none" stroke="#b03030" stroke-width="0.3" class="dash"/>
+<rect x="215.275" y="55.625" width="7.25" height="11.2" fill="#f5a3a3" stroke="#b03030" stroke-width="0.3"/>
+<text x="225" y="51">East1400 REJECTED</text>
+<text x="225" y="58">Red: feed column clash</text>
+<rect x="30.0" y="49.849999999999994" width="10.0" height="62.5" fill="#ccebe0" stroke="#186d54" stroke-width="0.3" class="dash"/>
+<text x="31.0" y="53.849999999999994">WEST1100</text>
+<polygon points="30.000,109.100 40.000,109.100 40.000,53.100 30.000,53.100" fill="none" stroke="#a87522" stroke-width="0.25" opacity="0.7"/>
+<polygon points="40.000,109.100 50.000,109.100 50.000,53.100 40.000,53.100" fill="none" stroke="#a87522" stroke-width="0.25" opacity="0.7"/>
+<text x="45.0" y="81.1">1</text>
+<polygon points="85.714,108.154 93.906,102.418 61.786,56.546 53.594,62.282" fill="none" stroke="#a87522" stroke-width="0.25" opacity="0.7"/>
+<polygon points="104.249,109.430 109.249,100.770 60.751,72.770 55.751,81.430" fill="none" stroke="#a87522" stroke-width="0.25" opacity="0.7"/>
+<polygon points="113.264,109.965 117.490,100.902 66.736,77.235 62.510,86.298" fill="none" stroke="#a87522" stroke-width="0.25" opacity="0.7"/>
+<polygon points="128.264,112.465 132.490,103.402 81.736,79.735 77.510,88.798" fill="none" stroke="#a87522" stroke-width="0.25" opacity="0.7"/>
+<polygon points="138.264,112.465 142.490,103.402 91.736,79.735 87.510,88.798" fill="none" stroke="#a87522" stroke-width="0.25" opacity="0.7"/>
+<polygon points="165.499,129.430 170.499,120.770 122.001,92.770 117.001,101.430" fill="none" stroke="#a87522" stroke-width="0.25" opacity="0.7"/>
+<polygon points="151.052,144.840 160.115,140.614 136.448,89.860 127.385,94.086" fill="none" stroke="#a87522" stroke-width="0.25" opacity="0.7"/>
+<polygon points="137.579,153.558 147.541,154.429 152.421,98.642 142.459,97.771" fill="none" stroke="#a87522" stroke-width="0.25" opacity="0.7"/>
+<text x="145.0" y="126.1">9</text>
+<text x="15" y="218">Existing east1200 + proposed westH700L1100: 2965.1W at55/45/20; band2836.5W; margin128.7W.</text>
+<text x="15" y="225">RED full1550east box crosses retained feed column. North900 overlaps actual low larder.</text>
+<text x="15" y="232">AMBER released1120x200 maximum, room-only swept lower bound24.70. All chairs retained.</text>
+<text x="15" y="239">Not matched handling equipment. Native1100x180 leaves10mm/edge for support: actual kit may reject it.</text>
+<text x="15" y="246">No adopted radiator/valve/support, full operator/export, cooker control, net plant or material pass.</text>
+</svg>

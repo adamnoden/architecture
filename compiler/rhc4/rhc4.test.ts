@@ -76,7 +76,7 @@ describe('RH-C4 bounded envelope / boundary view', () => {
     assert.equal(result.derived.serviceObligations.some((item) => item.serviceCrossingId === 'PEN-BX-01'), false)
   })
 
-  test('represents RH-08 drainage as four outward roof fields plus independent courtyard primary and emergency routes', () => {
+  test('represents RH-08 drainage as four outward roof fields plus distinct courtyard route declarations', () => {
     const result = compileReferenceHouseBoundaryView(createReferenceHouseSource())
     const routes = result.boundaries.derived.drainageRoutes
     const roof = routes.filter((item) => item.kind === 'roof-field')
@@ -254,7 +254,7 @@ describe('RH-C4 bounded envelope / boundary view', () => {
 
     const result = compileReferenceHouseBoundaryView(house, source)
     assert.equal(result.status, 'FAIL')
-    assert.ok(codes(result.boundaries).includes('RH_COURTYARD_OVERFLOW_NOT_INDEPENDENT'))
+    assert.ok(codes(result.boundaries).includes('RH_COURTYARD_DESTINATIONS_NOT_DISTINCT'))
   })
 
   test('fails when a drainage route hides its failure behaviour', () => {

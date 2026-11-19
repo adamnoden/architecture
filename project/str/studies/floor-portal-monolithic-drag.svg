@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" role="img" aria-labelledby="title">
+<title id="title">Opposed straight collector reinforcement and retained port</title>
+<style>.paper{fill:#f8f4eb}.rule,.face,.steelPlan,.seat{fill:none;stroke:#5b554c;stroke-width:.4}.face{stroke-dasharray:1 1}.concrete,.slab{fill:#dcd8cf;stroke:#777166;stroke-width:.3}.slab{fill:#e9e4db}.steelPlan{stroke:#244658;stroke-width:2;stroke-linecap:round}.steelSection,.seat{fill:#244658;stroke:#244658;stroke-width:.65}.port{fill:#a94d42;fill-opacity:.20;stroke:#a94d42;stroke-width:.7}.title{font:8px Georgia;fill:#302a24}.head{font:4.8px Georgia;fill:#302a24}.note{font:3.5px Arial;fill:#514639}</style>
+<rect x="0" y="0" width="420" height="297" class="paper"/>
+<text x="14" y="20" class="title">North collector · opposed straight steel</text>
+<text x="14" y="30" class="note">Northwest comparison · retained port shown in red · print at actual A3 size.</text>
+<path d="M14 37L406 37" class="rule"/>
+<text x="17" y="47" class="head">Lower group at Z3260 · 1:10</text>
+<rect x="17" y="58" width="100" height="24" class="concrete"/>
+<rect x="17" y="82" width="24" height="76" class="concrete"/>
+<path d="M41 82L41 158" class="face"/>
+<path d="M41 82L117 82" class="face"/>
+<path d="M33.0959 83.9346L48.9041 113.665" class="steelPlan"/>
+<path d="M33.0959 94.1346L48.9041 123.865" class="steelPlan"/>
+<path d="M33.0959 104.335L48.9041 134.065" class="steelPlan"/>
+<path d="M33.0959 114.535L48.9041 144.265" class="steelPlan"/>
+<path d="M33.0959 124.735L48.9041 154.465" class="steelPlan"/>
+<path d="M72.6654 74.0959L42.9346 89.9041" class="steelPlan"/>
+<path d="M82.8654 74.0959L53.1346 89.9041" class="steelPlan"/>
+<path d="M93.0654 74.0959L63.3346 89.9041" class="steelPlan"/>
+<path d="M103.265 74.0959L73.5346 89.9041" class="steelPlan"/>
+<path d="M113.465 74.0959L83.7346 89.9041" class="steelPlan"/>
+<circle cx="47.5" cy="114" r="8" class="port"/>
+<text x="17" y="170" class="note">Formed Ø160 port signed gap: -81.03 mm</text>
+<text x="17" y="178" class="note">Both wing directions shown. Positive axes into the room.</text>
+<path d="M17 184L67 184" class="rule"/>
+<text x="17" y="190" class="note">500 mm</text>
+<text x="148" y="47" class="head">Upper group at Z3308 · 1:10</text>
+<rect x="148" y="58" width="100" height="24" class="concrete"/>
+<rect x="148" y="82" width="24" height="76" class="concrete"/>
+<path d="M172 82L172 158" class="face"/>
+<path d="M172 82L248 82" class="face"/>
+<path d="M164.096 113.665L179.904 83.9346" class="steelPlan"/>
+<path d="M164.096 123.865L179.904 94.1346" class="steelPlan"/>
+<path d="M164.096 134.065L179.904 104.335" class="steelPlan"/>
+<path d="M164.096 144.265L179.904 114.535" class="steelPlan"/>
+<path d="M164.096 154.465L179.904 124.735" class="steelPlan"/>
+<path d="M173.935 74.0959L203.665 89.9041" class="steelPlan"/>
+<path d="M184.135 74.0959L213.865 89.9041" class="steelPlan"/>
+<path d="M194.335 74.0959L224.065 89.9041" class="steelPlan"/>
+<path d="M204.535 74.0959L234.265 89.9041" class="steelPlan"/>
+<path d="M214.735 74.0959L244.465 89.9041" class="steelPlan"/>
+<circle cx="178.5" cy="114" r="8" class="port"/>
+<text x="148" y="170" class="note">Formed Ø160 port signed gap: -80.09 mm</text>
+<text x="148" y="178" class="note">Both wing directions shown. Positive axes into the room.</text>
+<path d="M148 184L198 184" class="rule"/>
+<text x="148" y="190" class="note">500 mm</text>
+<path d="M270 42L270 208" class="rule"/>
+<text x="285" y="47" class="head">Local floor section · 1:5</text>
+<rect x="288" y="93.4" width="48" height="45.6" class="concrete"/>
+<rect x="288" y="139" width="48" height="25" class="concrete"/>
+<rect x="336" y="93.4" width="32" height="45.6" class="slab"/>
+<path d="M336 93.4L336 139" class="face"/>
+<path d="M296 139L316 139" class="seat"/>
+<circle cx="341.2" cy="131.8" r="1.2" class="steelSection"/>
+<circle cx="341.2" cy="129.4" r="1.2" class="steelSection"/>
+<circle cx="341.2" cy="121" r="2" class="steelSection"/>
+<circle cx="341.2" cy="116.2" r="2.8" class="steelSection"/>
+<circle cx="341.2" cy="111.4" r="2" class="steelSection"/>
+<circle cx="341.2" cy="103" r="1.2" class="steelSection"/>
+<circle cx="341.2" cy="100.6" r="1.2" class="steelSection"/>
+<path d="M307 86L355 86" class="rule"/>
+<text x="373" y="87" class="note">Z3435 finish underside</text>
+<text x="373" y="94.4" class="note">Z3398 local slab top</text>
+<text x="373" y="140" class="note">Z3170 soffit</text>
+<text x="287" y="174" class="note">100 mm gravity seat centred over the old core.</text>
+<text x="287" y="182" class="note">Dash marks the roomward wall face at U170.</text>
+<text x="287" y="190" class="note">Lower and upper diagonal bars bear against H28 chord.</text>
+<path d="M14 206L406 206" class="rule"/>
+<text x="14" y="223" class="head">Release conditions</text>
+<text x="14" y="234" class="note">The existing cabinet has no clear port position. Resolve an independent route or redesign the cage.</text>
+<text x="14" y="244" class="note">Prove the widened body, full chord, round ties and imperforate DPC splice as one force path.</text>
+<text x="14" y="254" class="note">This section screens geometry and isolated loads. Ground, roof and whole-house checks remain open.</text>
+<text x="14" y="263" class="note">Ground splice: 15 mm maximum H20 axis offset; 162000 mm² outside the legacy plate.</text>
+<text x="14" y="280" class="note">Plan coordinates U/V and levels Z are in millimetres.</text></svg>

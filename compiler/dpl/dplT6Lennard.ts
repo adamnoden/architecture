@@ -1,4 +1,4 @@
-import { sha256SemanticFingerprint } from '../core/identity.js'
+import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
 import {
   applyArchitecturalReviewLedger,
   architecturalReviewClauseIds,
@@ -87,7 +87,7 @@ export interface DPLT6Result {
 }
 
 const canonicalStrings = (values: readonly string[]): string[] =>
-  [...new Set(values)].sort((a, b) => a.localeCompare(b))
+  [...new Set(values)].sort((a, b) => compareDplIdentityStrings(a, b))
 
 const ownerOrder: Readonly<Record<CoverageOwner, number>> = {
   REFERENCE_HOUSE: 0,
@@ -117,7 +117,7 @@ const mappedClaimIds = (
 ): string[] => claims
   .filter((claim) => claim.coverageFamilyRefs.includes(`${owner}:${entryId}`))
   .map((claim) => claim.id)
-  .sort((a, b) => a.localeCompare(b))
+  .sort((a, b) => compareDplIdentityStrings(a, b))
 
 const realClaimNeedsAccelerationReview = (claim: DPLT5Claim): boolean =>
   claim.evidenceState.startsWith('UNKNOWN_') || claim.evidenceState.startsWith('PARTIALLY_')
@@ -240,7 +240,7 @@ const composeNormalizedCoverage = (
     .map((entry) => ({ ...entry, claimRefs: canonicalStrings(entry.claimRefs) }))
     .sort((a, b) => {
       const byOwner = ownerOrder[a.owner] - ownerOrder[b.owner]
-      return byOwner || a.ownerEntryId.localeCompare(b.ownerEntryId)
+      return byOwner || compareDplIdentityStrings(a.ownerEntryId, b.ownerEntryId)
     })
 }
 
@@ -337,7 +337,7 @@ const sourceFinding = (
     sourceRefs: canonicalStrings(value.sourceRefs),
     missingFacts: canonicalStrings(value.missingFacts)
   }
-  return { ...canonical, fingerprint: sha256SemanticFingerprint(canonical) }
+  return { ...canonical, fingerprint: sha256DplSemanticFingerprint(canonical) }
 }
 
 const composeEnglandSourceFinding = (): NarrowSourceFinding => {
@@ -434,7 +434,7 @@ const canonicalRecords = (records: readonly ScreeningAggregationRecord[]): Scree
   }))
   .sort((a, b) => {
     const byOwner = ownerOrder[a.owner] - ownerOrder[b.owner]
-    return byOwner || a.ownerEntryId.localeCompare(b.ownerEntryId)
+    return byOwner || compareDplIdentityStrings(a.ownerEntryId, b.ownerEntryId)
   })
 
 export const composeDPLT6LennardScreeningAggregation = (): DPLT6Result => {
@@ -447,7 +447,7 @@ export const composeDPLT6LennardScreeningAggregation = (): DPLT6Result => {
   const uncoveredRealClaimIds = t5.manifest.claims
     .filter((claim) => claim.coverageFamilyRefs.length === 0)
     .map((claim) => claim.id)
-    .sort((a, b) => a.localeCompare(b))
+    .sort((a, b) => compareDplIdentityStrings(a, b))
   if (uncoveredRealClaimIds.length > 0) {
     throw new Error(`DPL-T6 refuses uncovered real claims: ${uncoveredRealClaimIds.join(', ')}.`)
   }
@@ -491,7 +491,7 @@ export const composeDPLT6LennardScreeningAggregation = (): DPLT6Result => {
     }))
     .sort((a, b) => {
       const byOwner = ownerOrder[a.owner] - ownerOrder[b.owner]
-      return byOwner || a.ownerEntryId.localeCompare(b.ownerEntryId)
+      return byOwner || compareDplIdentityStrings(a.ownerEntryId, b.ownerEntryId)
     })
 
   const blockerCountsByOwner: Record<CoverageOwner, number> = {
@@ -526,7 +526,7 @@ export const composeDPLT6LennardScreeningAggregation = (): DPLT6Result => {
     accelerationReviewCount: readinessManifest.accelerationReviewCount,
     uncoveredRealClaimIds,
     localPlanningTargetId: DPL_T6_BROMLEY_TARGET_ID,
-    identityFingerprint: sha256SemanticFingerprint(readinessManifest)
+    identityFingerprint: sha256DplSemanticFingerprint(readinessManifest)
   }
   const proofBoundary = {
     compatibleAtScreening: 'NOT_ADMITTED' as const,
@@ -567,6 +567,6 @@ export const composeDPLT6LennardScreeningAggregation = (): DPLT6Result => {
     blockerCountsByState,
     result: 'UNRESOLVED_AT_SCREENING_GENUINE_FRONTIER_CLASSIFIED',
     proofBoundary,
-    resultFingerprint: sha256SemanticFingerprint(resultPayload)
+    resultFingerprint: sha256DplSemanticFingerprint(resultPayload)
   }
 }

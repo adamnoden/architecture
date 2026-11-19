@@ -1,0 +1,376 @@
+{
+  "status": "Elastic normal transfer and finite one-face weld comparison only",
+  "sourceSha256": "7a5635c9478defebdff2ce67d18dd67ab41742acc751746f7fe5898e6672407b",
+  "trialInputs": {
+    "cassetteSideMm": 300,
+    "centrelineBoundsMm": [
+      52,
+      28,
+      73
+    ],
+    "existingAndReturnEffectiveThroatMm": 8,
+    "oneSideFilletLegMm": 11.313708498984761,
+    "fullTransferAtOriginalLineKN": 170.8035712,
+    "inheritedComparisonMPa": 100
+  },
+  "mirrorAtOtherControllingWeb": [
+    {
+      "survivingFacesOnOriginalWings": 1,
+      "inheritedPlanRoute": {
+        "webCentrelineRelativeToLoadedLineMm": [
+          [
+            -41.878679656440355,
+            0
+          ],
+          [
+            -41.878679656440355,
+            37
+          ],
+          [
+            46.121320343559645,
+            37
+          ],
+          [
+            46.121320343559645,
+            0
+          ]
+        ],
+        "outboardWeldRootLineMm": [
+          [
+            -49.878679656440355,
+            8
+          ],
+          [
+            -49.878679656440355,
+            45
+          ],
+          [
+            54.121320343559645,
+            45
+          ],
+          [
+            54.121320343559645,
+            8
+          ]
+        ],
+        "reservesMm": {
+          "socketToWebMm": 0.06749647439727369,
+          "crossWebToFilletToeMm": 6.564971157455602,
+          "cassetteEdgeToFilletToeMm": 14.413167541846567
+        },
+        "effectiveLengthMm": 266.0,
+        "centroidRelativeToLoadedLineMm": [
+          0.8453381820200088,
+          27.612781954887218
+        ],
+        "directAverageMPa": 80.26483609022557,
+        "linearEndStressRangeMPa": [
+          -61.62592380089001,
+          241.59341479675984
+        ],
+        "maximumAbsoluteLinearEndStressMPa": 241.59341479675984
+      },
+      "lowestElasticPeakIntegerTrial": {
+        "webCentrelineRelativeToLoadedLineMm": [
+          [
+            -42,
+            0
+          ],
+          [
+            -42,
+            57
+          ],
+          [
+            46,
+            57
+          ],
+          [
+            46,
+            0
+          ]
+        ],
+        "outboardWeldRootLineMm": [
+          [
+            -50,
+            8
+          ],
+          [
+            -50,
+            65
+          ],
+          [
+            54,
+            65
+          ],
+          [
+            54,
+            8
+          ]
+        ],
+        "reservesMm": {
+          "socketToWebMm": 0.4442126132090536,
+          "crossWebToFilletToeMm": 6.6862915010152335,
+          "cassetteEdgeToFilletToeMm": 0.3568183557425148
+        },
+        "effectiveLengthMm": 306.0,
+        "centroidRelativeToLoadedLineMm": [
+          0.9257024028225667,
+          37.990196078431374
+        ],
+        "directAverageMPa": 69.77270065359477,
+        "linearEndStressRangeMPa": [
+          -49.62992805013974,
+          203.08478510909197
+        ],
+        "maximumAbsoluteLinearEndStressMPa": 203.08478510909197
+      },
+      "passingTrialCount": 0,
+      "passingTrialWithMostMinimumSpace": null
+    },
+    {
+      "survivingFacesOnOriginalWings": 2,
+      "inheritedPlanRoute": {
+        "webCentrelineRelativeToLoadedLineMm": [
+          [
+            -41.878679656440355,
+            0
+          ],
+          [
+            -41.878679656440355,
+            37
+          ],
+          [
+            46.121320343559645,
+            37
+          ],
+          [
+            46.121320343559645,
+            0
+          ]
+        ],
+        "outboardWeldRootLineMm": [
+          [
+            -49.878679656440355,
+            8
+          ],
+          [
+            -49.878679656440355,
+            45
+          ],
+          [
+            54.121320343559645,
+            45
+          ],
+          [
+            54.121320343559645,
+            8
+          ]
+        ],
+        "reservesMm": {
+          "socketToWebMm": 0.06749647439727369,
+          "crossWebToFilletToeMm": 6.564971157455602,
+          "cassetteEdgeToFilletToeMm": 14.413167541846567
+        },
+        "effectiveLengthMm": 354.0,
+        "centroidRelativeToLoadedLineMm": [
+          0.20374263186731,
+          18.759887005649716
+        ],
+        "directAverageMPa": 60.31199548022599,
+        "linearEndStressRangeMPa": [
+          -7.9385258043635005,
+          130.79478618944825
+        ],
+        "maximumAbsoluteLinearEndStressMPa": 130.79478618944825
+      },
+      "lowestElasticPeakIntegerTrial": {
+        "webCentrelineRelativeToLoadedLineMm": [
+          [
+            -42,
+            0
+          ],
+          [
+            -42,
+            57
+          ],
+          [
+            46,
+            57
+          ],
+          [
+            46,
+            0
+          ]
+        ],
+        "outboardWeldRootLineMm": [
+          [
+            -50,
+            8
+          ],
+          [
+            -50,
+            65
+          ],
+          [
+            54,
+            65
+          ],
+          [
+            54,
+            8
+          ]
+        ],
+        "reservesMm": {
+          "socketToWebMm": 0.4442126132090536,
+          "crossWebToFilletToeMm": 6.6862915010152335,
+          "cassetteEdgeToFilletToeMm": 0.3568183557425148
+        },
+        "effectiveLengthMm": 394.0,
+        "centroidRelativeToLoadedLineMm": [
+          0.33129408763302237,
+          27.718274111675125
+        ],
+        "directAverageMPa": 54.18895025380711,
+        "linearEndStressRangeMPa": [
+          -13.838457860029266,
+          120.14971646411993
+        ],
+        "maximumAbsoluteLinearEndStressMPa": 120.14971646411993
+      },
+      "passingTrialCount": 0,
+      "passingTrialWithMostMinimumSpace": null
+    }
+  ],
+  "extendedCentredGrooveComparator": [
+    {
+      "axis": 0,
+      "stationMm": -80,
+      "centredLineEffectiveGrooveMm": 16,
+      "effectiveIntervalsMm": [
+        [
+          -115,
+          -78
+        ],
+        [
+          -62,
+          -33.15896367878153
+        ],
+        [
+          33.15896367878153,
+          62
+        ],
+        [
+          78,
+          115
+        ]
+      ],
+      "effectiveLengthMm": 131.68207264243694,
+      "grossDirectAverageMPa": 81.06815898157208,
+      "elasticPeakAtGroupEndsMPa": 81.06815898157208,
+      "minimumEffectiveGrooveToMeetLinear100MPaMm": 12.970905437051533,
+      "additionalTransverseMomentAt100MPaKNm": 0.10636732007439753,
+      "equivalentTransverseForceLineErrorMm": 0.6227464644158303,
+      "shortestWebHalfSpanMm": 115,
+      "uninterruptedOutboardWingMmEachEnd": 37,
+      "reserveToCassetteEdgeBeforeProcessMm": 6.457323419130858
+    },
+    {
+      "axis": 0,
+      "stationMm": 80,
+      "centredLineEffectiveGrooveMm": 16,
+      "effectiveIntervalsMm": [
+        [
+          -115,
+          -78
+        ],
+        [
+          -62,
+          -17.07139302983743
+        ],
+        [
+          17.07139302983743,
+          62
+        ],
+        [
+          78,
+          115
+        ]
+      ],
+      "effectiveLengthMm": 163.85721394032515,
+      "grossDirectAverageMPa": 65.14954662836993,
+      "elasticPeakAtGroupEndsMPa": 65.14954662836993,
+      "minimumEffectiveGrooveToMeetLinear100MPaMm": 10.42392746053919,
+      "additionalTransverseMomentAt100MPaKNm": 0.24364792294538729,
+      "equivalentTransverseForceLineErrorMm": 1.426480261704196,
+      "shortestWebHalfSpanMm": 115,
+      "uninterruptedOutboardWingMmEachEnd": 37,
+      "reserveToCassetteEdgeBeforeProcessMm": 6.457323419130858
+    },
+    {
+      "axis": 1,
+      "stationMm": -70,
+      "centredLineEffectiveGrooveMm": 16,
+      "effectiveIntervalsMm": [
+        [
+          -115,
+          -88
+        ],
+        [
+          -72,
+          -33.878679656440355
+        ],
+        [
+          38.121320343559645,
+          72
+        ],
+        [
+          88,
+          115
+        ]
+      ],
+      "effectiveLengthMm": 126.0,
+      "grossDirectAverageMPa": 84.72399365079366,
+      "elasticPeakAtGroupEndsMPa": 86.65986260146245,
+      "minimumEffectiveGrooveToMeetLinear100MPaMm": 13.865578016233991,
+      "additionalTransverseMomentAt100MPaKNm": 0.07171657865453787,
+      "equivalentTransverseForceLineErrorMm": 0.41987751281009433,
+      "shortestWebHalfSpanMm": 115,
+      "uninterruptedOutboardWingMmEachEnd": 27,
+      "reserveToCassetteEdgeBeforeProcessMm": 13.528391230996332
+    },
+    {
+      "axis": 1,
+      "stationMm": 70,
+      "centredLineEffectiveGrooveMm": 16,
+      "effectiveIntervalsMm": [
+        [
+          -115,
+          -88
+        ],
+        [
+          -72,
+          -33.878679656440355
+        ],
+        [
+          38.121320343559645,
+          72
+        ],
+        [
+          88,
+          115
+        ]
+      ],
+      "effectiveLengthMm": 126.0,
+      "grossDirectAverageMPa": 84.72399365079366,
+      "elasticPeakAtGroupEndsMPa": 86.65986260146245,
+      "minimumEffectiveGrooveToMeetLinear100MPaMm": 13.865578016233991,
+      "additionalTransverseMomentAt100MPaKNm": 0.07171657865453787,
+      "equivalentTransverseForceLineErrorMm": 0.41987751281009433,
+      "shortestWebHalfSpanMm": 115,
+      "uninterruptedOutboardWingMmEachEnd": 27,
+      "reserveToCassetteEdgeBeforeProcessMm": 13.528391230996332
+    }
+  ],
+  "grooveLimitations": "Full effective groove and transfer beyond both intersecting webs are assumptions. No torch, groove preparation, closure, fatigue or skin participation established.",
+  "limitations": "No weld end setbacks, tool envelope, shell flexibility, shear, fatigue, access qualification or load redistribution."
+}

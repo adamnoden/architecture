@@ -1,0 +1,36 @@
+{
+  "retrieved": "2026-11-09",
+  "sources": [
+    {
+      "name": "Bøjsø DUOWOOD 1+1 tender, 18 August 2022 revision 9, sections 2–6",
+      "url": "https://boejsoe.dk/media/wz3ddsf2/udbudsbeskrivelse-duowood-version-1.pdf",
+      "sha256": "adeabfa59e11fbdbcf77f5fb6dd05f7e9a208d61add73a78f728e9b2fe4374a9",
+      "fixedFrameDepth": 128,
+      "outerSashFace": 52,
+      "outerSashDepth": 28,
+      "factoryBarFace": 19
+    },
+    {
+      "name": "Bøjsø A-02-82 DUOWOOD+ A-19, outward side-hung section, revision 1 dated 16 January 2025",
+      "url": "https://boejsoe.dk/media/boyp3gga/a-02-82-duowoodplus-a-19-udadgaaende.pdf",
+      "sha256": "01d80ce9400eff9de9606df6ff37fff102f37a3e4a274af3a85321bd238c6a76",
+      "outerJambFace": 32,
+      "sideGap": 3,
+      "sillFace": 26.4
+    },
+    {
+      "name": "Bøjsø maintenance guide, 2022, pp 5–9 and 17–18",
+      "url": "https://boejsoe.dk/media/maepa32v/vedligeholdelsesvejledning_2022-low-komprimeret.pdf",
+      "sha256": "353195ebb680639c7e461be663011a158f101b84216fe159de8e9d8dc97d4f0b",
+      "nominalPerimeterJoint": 12,
+      "ordinarySideHungReleaseDegrees": 90
+    },
+    {
+      "name": "AGC FINEO 8 Declaration of Performance A000522502, 14 May 2025",
+      "url": "https://www.fineoglass.eu/wp-content/uploads/40/A000522502_-_FINEO_8_EN.pdf",
+      "sha256": "1a88caf928e3d12faa47228c1fd1846632caf0fbf948b7b49e98c9c323400c59",
+      "glassPlyMm": [4, 4],
+      "centreU": 0.7
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import { readFileSync, readdirSync } from 'node:fs'
 import { join, relative, sep } from 'node:path'
 import type { DefaultTheme } from 'vitepress'
+import { siteRootSources } from '../project/public-surface.js'
 
 const page = (text: string, link: string): DefaultTheme.SidebarItem => ({ text, link })
 const group = (
@@ -18,7 +19,8 @@ const section = (
 const startSidebar: DefaultTheme.SidebarItem[] = [
   group('Start here', [
     page('Project overview', '/'),
-    page('Reading guide', '/docs/reading-guide')
+    page('Reading guide', '/docs/reading-guide'),
+    page('Drawings', '/docs/drawings')
   ], false)
 ]
 
@@ -172,9 +174,14 @@ const grammarSidebar: DefaultTheme.SidebarItem[] = [
 const referenceHouseSidebar: DefaultTheme.SidebarItem[] = [
   group('Reference House', [
     page('Reference House overview', '/docs/reference-house/'),
+    page('Current house basis', '/docs/reference-house/current-house-basis'),
+    page('Whole-house material policy', '/docs/reference-house/material-policy'),
+    page('Ground water and rising damp', '/docs/reference-house/ground-water-policy'),
+    page('Structural brief', '/docs/reference-house/structural-brief'),
     page('G-01 v0.1 conformance — D12', '/docs/reference-house/g01-v0.1-conformance-d12'),
     page('Pattern occurrence register', '/docs/reference-house/pattern-occurrence-register'),
     page('Tectonic architectural language', '/docs/reference-house/tectonic-architectural-language'),
+    page('Exterior isometrics', '/docs/reference-house/exterior-isometrics'),
     page('Whole-house coordination fixture', '/docs/reference-house/whole-house-coordination-fixture'),
     page('Vertical bay options', '/docs/reference-house/vertical-bay-options'),
     page('Vertical bay coordination', '/docs/reference-house/vertical-bay-coordination'),
@@ -244,13 +251,30 @@ const researchSidebar: DefaultTheme.SidebarItem[] = [
     page('Candidate pattern hardening', '/docs/research/candidate-pattern-hardening-summary')
   ]),
   group('Floor & wall systems', [
+    page('Primary floor and roof options', '/docs/research/structural-floor-roof-options'),
+    page('Solid walls and masonry arches', '/docs/research/solid-walls-and-masonry-arches'),
     page('Primary floor structure baseline', '/docs/research/primary-floor-structure-baseline'),
     page('Seated floor structure options', '/docs/research/seated-floor-structure-options'),
     page('Finish-agnostic floor platform options', '/docs/research/finish-agnostic-floor-platform-options'),
     page('Replaceable wall system options', '/docs/research/replaceable-wall-system-options')
   ]),
+  group('Roof & rainwater', [
+    page('Rainfall & hydraulic basis', '/docs/research/rainfall-and-hydraulic-basis'),
+    page('Rainwater collection options', '/docs/research/rainwater-collection-options'),
+    page('Roof shedding & ground receivers', '/docs/research/roof-shedding-and-ground-receivers'),
+    page('Rainwater conveyance options', '/docs/research/rainwater-conveyance-options'),
+    page('Roof & rainwater materials', '/docs/research/roof-rainwater-material-compatibility'),
+    page('Rainwater failure & exceedance', '/docs/research/rainwater-failure-and-exceedance')
+  ]),
   group('Maintenance & precedent', [
     page('External maintenance access', '/docs/research/external-maintenance-access'),
+    page('Roof failure and recovery evaluation', '/docs/research/roof-failure-evaluation'),
+    page('Roof topology and water paths', '/docs/research/roof-topology-families'),
+    page('Roof covering families', '/docs/research/roof-covering-families'),
+    page('Roof junction families', '/docs/research/roof-junction-families'),
+    page('Roof access and renewal', '/docs/research/roof-access-and-renewal'),
+    page('Roof system candidates', '/docs/research/roof-system-candidates'),
+    page('Roof assemblies and renewal', '/docs/research/roof-assembly-options'),
     page('Preface precedents', '/docs/research/preface-precedents')
   ]),
   group('Historical targeted evidence', [
@@ -276,6 +300,8 @@ const prototypesSidebar: DefaultTheme.SidebarItem[] = [
 const deliverySidebar: DefaultTheme.SidebarItem[] = [
   group('Delivery', [
     page('Delivery overview', '/docs/delivery/'),
+    page('Owner project brief', '/docs/delivery/owner-project-brief'),
+    page('Information issue profiles', '/docs/delivery/information-issue-profiles'),
     page('RIBA implementation brief', '/docs/delivery/riba-implementation-brief-template'),
     page('Human-factors verification requirements', '/docs/delivery/human-factors-verification-requirements'),
     page('External maintenance access requirements', '/docs/delivery/external-maintenance-access-requirements')
@@ -460,6 +486,8 @@ const editorialSidebar: DefaultTheme.SidebarItem[] = [
 
 const projectSidebar: DefaultTheme.SidebarItem[] = [
   group('Project records', [
+    page('Repository guide', '/README'),
+    page('Dependency graph', '/docs/project/dependency-graph'),
     page('Project status', '/STATUS'),
     page('Documentation structure', '/docs/'),
     page('Development', '/docs/development/'),
@@ -468,32 +496,38 @@ const projectSidebar: DefaultTheme.SidebarItem[] = [
 ]
 
 export const nav: DefaultTheme.NavItem[] = [
-  { text: 'Start reading', link: '/docs/reading-guide' },
+  { text: 'Read', link: '/docs/manuscript/preface' },
+  { text: 'The house', link: '/docs/reference-house/' },
+  { text: 'Drawings', link: '/docs/drawings' },
   {
-    text: 'Architecture',
+    text: 'Explore',
     items: [
-      { text: 'Architectural argument', link: '/docs/manuscript/' },
-      { text: 'Pattern language', link: '/docs/patterns/' },
-      { text: 'Architectural grammar', link: '/docs/grammar/' },
-      { text: 'Reference House', link: '/docs/reference-house/' }
-    ]
-  },
-  {
-    text: 'Evidence & testing',
-    items: [
-      { text: 'Research', link: '/docs/research/' },
-      { text: 'Physical prototypes', link: '/docs/prototypes/' },
-      { text: 'Computational track', link: '/docs/computational/' }
-    ]
-  },
-  { text: 'Delivery', link: '/docs/delivery/' },
-  {
-    text: 'Project',
-    items: [
-      { text: 'Project status', link: '/STATUS' },
-      { text: 'Documentation structure', link: '/docs/' },
-      { text: 'Development records', link: '/docs/development/' },
-      { text: 'Editorial system', link: '/docs/editorial/' }
+      {
+        text: 'Architecture',
+        items: [
+          { text: 'Architectural argument', link: '/docs/manuscript/' },
+          { text: 'Pattern language', link: '/docs/patterns/' },
+          { text: 'Architectural grammar', link: '/docs/grammar/' }
+        ]
+      },
+      {
+        text: 'Research & practice',
+        items: [
+          { text: 'Research', link: '/docs/research/' },
+          { text: 'Physical prototypes', link: '/docs/prototypes/' },
+          { text: 'Computational track', link: '/docs/computational/' },
+          { text: 'Delivery', link: '/docs/delivery/' }
+        ]
+      },
+      {
+        text: 'Reference',
+        items: [
+          { text: 'Reading guide', link: '/docs/reading-guide' },
+          { text: 'Repository guide', link: '/README' },
+          { text: 'Dependency graph', link: '/docs/project/dependency-graph' },
+          { text: 'Source repository', link: 'https://github.com/adamnoden/architecture' }
+        ]
+      }
     ]
   }
 ]
@@ -509,7 +543,9 @@ export const sidebar = {
   '/docs/computational/': computationalSidebar,
   '/docs/development/': developmentSidebar,
   '/docs/editorial/': editorialSidebar,
+  '/docs/project/': projectSidebar,
   '/docs/reading-guide': startSidebar,
+  '/README': projectSidebar,
   '/STATUS': projectSidebar,
   '/docs/': projectSidebar,
   '/': startSidebar
@@ -536,7 +572,7 @@ function flattenLinks(items: DefaultTheme.SidebarItem[]): string[] {
 
 function sourceRoute(source: string): string {
   const normal = source.split(sep).join('/')
-  if (normal === 'README.md') return '/'
+  if (normal === 'index.md') return '/'
   if (normal.endsWith('/README.md')) return `/${normal.slice(0, -'README.md'.length)}`
   return `/${normal.slice(0, -'.md'.length)}`
 }
@@ -553,7 +589,7 @@ function excludedFromNavigation(source: string): boolean {
  */
 export function assertNavigationCoverage(): void {
   const root = process.cwd()
-  const sources = [join(root, 'README.md'), join(root, 'STATUS.md'), ...collectMarkdown(join(root, 'docs'))]
+  const sources = [...siteRootSources.map((source) => join(root, source)), ...collectMarkdown(join(root, 'docs'))]
   const publishedRoutes = sources
     .filter((source) => !excludedFromNavigation(source))
     .map((source) => sourceRoute(relative(root, source)))

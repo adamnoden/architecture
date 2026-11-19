@@ -1,0 +1,330 @@
+{
+  "disposition": "Prefer branch-specific wet closure and carrier withdrawal for development. Retain the indoor reference.",
+  "sources": {
+    "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2",
+    "project/had/studies/incoming-water-geometry.mjs": "ed658b7df0edf5d8e6d1826d32730a14b00199c7",
+    "project/had/studies/south-inlet-under-sill.json": "7d60da325cd76bb9d7924bc4bb64f1b93b51b644",
+    "project/had/studies/south-inlet-relief.json": "b6c4340e57b616caf6c2daf184bc6c144db2a473",
+    "project/had/studies/current-house-services.json": "248c8281369d16a8885506660f740c1f66462d9d",
+    "project/had/studies/utility-dry-bowl-release.json": "7f1e60c8dbbb93a4a50ed7bb7db13e426ef25603",
+    "project/had/studies/utility-wide-capture.json": "999fe25948911c6325590186db1e94f884d44ae2"
+  },
+  "branches": [
+    {
+      "id": "utility",
+      "case": {
+        "sideLimitsX": [
+          9995,
+          10165
+        ],
+        "plan": [
+          [
+            9995,
+            429.5
+          ],
+          [
+            10165,
+            429.5
+          ],
+          [
+            10165,
+            665
+          ],
+          [
+            10058,
+            665
+          ],
+          [
+            9995,
+            522
+          ]
+        ],
+        "frontY": 665,
+        "roofZ": 680,
+        "permanentLowerTroughLipZ": 363.2917,
+        "designWetStageZ": 322.5438,
+        "dryReserveAfterSplashAndSettingMM": 10.7479,
+        "lowerReliefCrownVentDrownedMM": 39.2521,
+        "continuousMouthSideFitAfterLinerAndSettingMM": 5,
+        "exteriorReceiver": {
+          "x": [
+            9980,
+            10160
+          ],
+          "terminalY": -650,
+          "terminalInvertZ": 93.3333,
+          "receiverY": [
+            -1300,
+            -650
+          ],
+          "clearWidthMM": 180,
+          "adverseBottomOpenWidthMM": 90,
+          "overflowCrestZ": -35,
+          "raisedCrestSensitivityMM": 32,
+          "overflowHeadMM": 50.3207,
+          "ratedReceiverWaterZ": 47.3207,
+          "maximumReceiverWaterZ": 68.3333,
+          "freeDropReserveAfterSettingsMM": 11.0126
+        }
+      },
+      "access": {
+        "splitCollarODMM": 88,
+        "splitCollarAfterPlateAndSettingMM": 5.402,
+        "originalFixedFrontRailAfterSettingMM": -20,
+        "openedFrontWithoutTaperOrWithdrawingAttachmentAfterSettingMM": 43,
+        "lowestJacketAtWallAboveFixedTroughAfterSettingMM": 73.0983,
+        "upperCutZ": 900,
+        "outsideRelease": [
+          10080,
+          -140,
+          467
+        ],
+        "requiredDrawMM": 620,
+        "releasedSpoolOutline": {
+          "x": [
+            10043,
+            10117
+          ],
+          "y": [
+            -140,
+            580
+          ],
+          "highestCutZ": 900,
+          "radiusBeforeBulkhead": 14
+        },
+        "translatedEndBeyondInnerFaceMM": 50.5,
+        "parkedRiserY": 1200,
+        "jacketToRestrainedWasherAfterSettingMM": 253,
+        "installedPipeToInverterWorkingAfterSettingMM": 65.9971,
+        "installedPipeToWasherThroughFirstRestAfterSettingMM": 127.6396,
+        "installedPipeToBowlAfterSettingMM": 166.9971,
+        "qualifiedReleaseAndFirstRest": false
+      },
+      "baffle": {
+        "x": [
+          10051,
+          10160
+        ],
+        "y": [
+          637,
+          645
+        ],
+        "z": [
+          385,
+          620
+        ],
+        "supportsX": [
+          10051,
+          10105.5,
+          10160
+        ],
+        "clearSupportPitchUpperMM": 54.5,
+        "toNearestTaperSideGrossMM": 5.3357,
+        "toRiserAfterPlateAndSettingMM": 15,
+        "lowerEdgeAboveWetStageMM": 62.4562,
+        "localPlatePressureAssemblyQualified": false
+      },
+      "vent": {
+        "outer": [
+          10115,
+          -90,
+          635
+        ],
+        "inner": [
+          10115,
+          429.5,
+          645.39
+        ],
+        "formedDiameterMM": 32,
+        "nearestOriginalBoreAfterSettingMM": 75.9981,
+        "rawSillAfterSettingMM": 78.61,
+        "rawJambAfterSettingMM": 259,
+        "belowExteriorHousingTopMM": 64,
+        "clearDiameterMM": 26,
+        "shellSideGrossMM": 34,
+        "topOfInteriorBoxAfterPlateAndSettingMM": 13.61,
+        "aboveScreenedWetStageMM": 296.4562,
+        "fixedWeatherHoodAndSplashQualified": false
+      }
+    },
+    {
+      "id": "plant",
+      "case": {
+        "sideLimitsX": [
+          10200,
+          10370
+        ],
+        "plan": [
+          [
+            10200,
+            429.5
+          ],
+          [
+            10370,
+            429.5
+          ],
+          [
+            10370,
+            665
+          ],
+          [
+            10200,
+            665
+          ]
+        ],
+        "frontY": 665,
+        "roofZ": 730,
+        "permanentLowerTroughLipZ": 463.2917,
+        "designWetStageZ": 422.5438,
+        "dryReserveAfterSplashAndSettingMM": 10.7479,
+        "lowerReliefCrownVentDrownedMM": 39.2521,
+        "continuousMouthSideFitAfterLinerAndSettingMM": 5,
+        "exteriorReceiver": {
+          "x": [
+            10200,
+            10380
+          ],
+          "terminalY": -650,
+          "terminalInvertZ": 193.3333,
+          "receiverY": [
+            -1300,
+            -650
+          ],
+          "clearWidthMM": 180,
+          "adverseBottomOpenWidthMM": 90,
+          "overflowCrestZ": 65,
+          "raisedCrestSensitivityMM": 32,
+          "overflowHeadMM": 50.3207,
+          "ratedReceiverWaterZ": 147.3207,
+          "maximumReceiverWaterZ": 168.3333,
+          "freeDropReserveAfterSettingsMM": 11.0126
+        }
+      },
+      "access": {
+        "splitCollarODMM": 88,
+        "splitCollarAfterPlateAndSettingMM": 36,
+        "originalFixedFrontRailAfterSettingMM": 43,
+        "openedFrontWithoutTaperOrWithdrawingAttachmentAfterSettingMM": 43,
+        "lowestJacketAtWallAboveFixedTroughAfterSettingMM": 93.0983,
+        "upperCutZ": 900,
+        "outsideRelease": [
+          10285,
+          -140,
+          587
+        ],
+        "requiredDrawMM": 620,
+        "releasedSpoolOutline": {
+          "x": [
+            10248,
+            10322
+          ],
+          "y": [
+            -140,
+            545
+          ],
+          "highestCutZ": 900,
+          "radiusBeforeBulkhead": 14
+        },
+        "translatedEndBeyondInnerFaceMM": 50.5,
+        "parkedRiserY": 1165,
+        "jacketToRestrainedWasherAfterSettingMM": 288,
+        "installedPipeToInverterWorkingAfterSettingMM": 107.9971,
+        "installedPipeToWasherThroughFirstRestAfterSettingMM": 207.9971,
+        "installedPipeToBowlAfterSettingMM": 677.6496,
+        "qualifiedReleaseAndFirstRest": false
+      },
+      "baffle": {
+        "x": [
+          10205,
+          10365
+        ],
+        "y": [
+          637,
+          645
+        ],
+        "z": [
+          485,
+          705
+        ],
+        "supportsX": [
+          10205,
+          10258,
+          10312,
+          10365
+        ],
+        "clearSupportPitchUpperMM": 54,
+        "toNearestTaperSideGrossMM": 5,
+        "toRiserAfterPlateAndSettingMM": 50,
+        "lowerEdgeAboveWetStageMM": 62.4562,
+        "localPlatePressureAssemblyQualified": false
+      },
+      "vent": {
+        "outer": [
+          10345,
+          -90,
+          688
+        ],
+        "inner": [
+          10345,
+          429.5,
+          698.39
+        ],
+        "formedDiameterMM": 32,
+        "nearestOriginalBoreAfterSettingMM": 26.3572,
+        "rawSillAfterSettingMM": 25.61,
+        "rawJambAfterSettingMM": 29,
+        "belowExteriorHousingTopMM": 11,
+        "clearDiameterMM": 26,
+        "shellSideGrossMM": 9,
+        "topOfInteriorBoxAfterPlateAndSettingMM": 10.61,
+        "aboveScreenedWetStageMM": 249.4562,
+        "fixedWeatherHoodAndSplashQualified": false
+      }
+    }
+  ],
+  "formedOpenings": 6,
+  "ventPairAfterSettingMM": 194.0252,
+  "installedColdPairAfterSettingMM": 36.2024,
+  "installedUtilityToRevisedHotAfterSettingMM": 40.1917,
+  "receiverLaneSeparationAfterSettingMM": 30,
+  "rejected": {
+    "jointWetCover": "Opening a common wet cover breaches the live branch unless its separate sealed inner cover stays fixed.",
+    "sharedReplacementBulkhead": "Breaking a common sleeve-to-wall bulkhead opens both pressure-fault paths and disturbs both fitted mouths.",
+    "completeUtilityTaperDrawIntoOccupiedPurgeMM": -40,
+    "shortUtilityFront": {
+      "riserY": 560,
+      "frontY": 625,
+      "taper": [
+        [
+          9995,
+          522
+        ],
+        [
+          10034,
+          625
+        ]
+      ],
+      "jacketThroughFixedFrontAfterSettingMM": 4,
+      "purgeClearanceAfterSettingMM": 25.0392,
+      "straightBetweenWallAndR75TangentMM": 55.5
+    },
+    "oldVent": {
+      "outer": [
+        10340,
+        -90,
+        690
+      ],
+      "inner": [
+        10340,
+        429.5,
+        700.39
+      ],
+      "formedDiameterMM": 30,
+      "nearestOriginalBoreAfterSettingMM": 26.982,
+      "rawSillAfterSettingMM": 24.61,
+      "rawJambAfterSettingMM": 35,
+      "belowExteriorHousingTopMM": 10
+    }
+  },
+  "adjoiningConstructionAndInstalledFaultEvidenceQualified": false
+}

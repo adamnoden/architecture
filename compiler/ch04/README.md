@@ -143,6 +143,6 @@ CH-04 passes only if:
 - canonical compilation does not mutate source input;
 - M3 remains unchanged and no RH-C6 appears.
 
-## Next gate
+## Historical handoff
 
-After CH-04 passes, **CH-05 — determinism, identity and provenance — is NEXT**. CH-05 owns canonical ordering/permutation evidence, stable source/method identity, result/schema identity where justified, artefact/compile manifests and lightweight derivation lineage. None of that work is pre-authorised by CH-04.
+CH-04 handed canonical ordering/permutation evidence, stable source/method identity, justified result/schema identity, artefact/compile manifests and lightweight derivation lineage to [CH-05 — determinism, identity and provenance](../ch05/README.md). That work and the [CH programme](../../docs/computational/compiler-hardening-programme.md) are complete; CH-04's original scope did not include them.

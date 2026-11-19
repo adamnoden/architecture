@@ -1,7 +1,7 @@
 # COA-00 — baseline and output audit
 
 **Programme:** COA — Compiler Output Architecture  
-**Status:** PASS subject to repository CI  
+**Status:** PASS — accepted in the [completed COA programme](../../docs/computational/compiler-output-architecture-programme.md)\
 **Planning baseline:** `2bacd97889caa7da1fe83ad4cbd7a7cdfb7be22c`  
 **Programme-plan commit:** `7eae354cfb095705d91a5d5d6e3cf7bf1a529e9d`  
 **Execution baseline:** `836cf9624d90bd8f0dfa71e26b25bc718d1c6911`  
@@ -221,4 +221,4 @@ The Reference House remains M3 at virtual-design scope. The computational workst
 
 The baseline is now sufficiently explicit to redesign the output system without confusing representational change with architectural change.
 
-**Next gate:** COA-01 — output contract and dependency architecture.
+**Historical handoff:** [COA-01 — output contract and dependency architecture](../coa01/README.md), subsequently completed.

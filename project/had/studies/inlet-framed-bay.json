@@ -1,0 +1,476 @@
+{
+  "status": "PREFERRED_FRAMED_BAY_PRE_SITE_RESERVATION",
+  "sourceModel": "HAD-SERVICES-02",
+  "frame": {
+    "y": [
+      3035,
+      3335
+    ],
+    "z": [
+      45,
+      465
+    ],
+    "jambWidthMM": 150,
+    "headDepthMM": 150,
+    "wallX": [
+      11570.5,
+      12090
+    ],
+    "nominalHouseEastX": 12000,
+    "headZ": [
+      465,
+      615
+    ],
+    "structuralEnvelopeY": [
+      2885,
+      3485
+    ],
+    "supplyEndsX": [
+      11525,
+      12165
+    ],
+    "intake": [
+      2800,
+      600
+    ],
+    "intakeSideClearanceAfterSettingMM": 25,
+    "bearingToFinishedPierAfterSettingMM": [
+      228,
+      108
+    ],
+    "bearingToNeighbourRawMM": [
+      285,
+      415
+    ],
+    "frameEndAndDockStartY": [
+      3485,
+      3400
+    ],
+    "foundation": {
+      "capY": [
+        3100,
+        3700
+      ],
+      "capTopZ": -180,
+      "separationFromSouthJambMM": 65,
+      "northJambOverlapMM": 150,
+      "wallToDockPlanXSeparationMM": 40
+    },
+    "intendedLoadPath": "Separate leaf heads deliver into paired side jambs; jambs continue through the base to the outer east ground beam. Obtain STR transfer, support and cavity closure. Hydraulic infill has no bearing duty."
+  },
+  "drainage": {
+    "pipes": [
+      {
+        "id": "ordinary",
+        "y": 3115,
+        "formedOD": 100,
+        "minimumClearID": 80,
+        "insideInvertZ": 100.39,
+        "outerInvertZ": 90,
+        "centreZ": 140.39,
+        "terminalX": 13717.5,
+        "terminalY": 2810,
+        "terminalInvertZ": 54.9233,
+        "maximumReceivingZ": 22.06,
+        "developedUpperMM": 1753.83514,
+        "outsideCenterlineEndpoints": [
+          [
+            12090,
+            3115,
+            130
+          ],
+          [
+            13717.5,
+            2810,
+            94.9233
+          ]
+        ],
+        "doglegPlanVertices": [
+          [
+            12090,
+            3115
+          ],
+          [
+            12600,
+            3115
+          ],
+          [
+            12905,
+            2810
+          ],
+          [
+            13717.5,
+            2810
+          ]
+        ],
+        "receivingLaneY": [
+          2750,
+          2870
+        ],
+        "retiredZ70OuterBaseClearanceAfterSettingMM": -0.01,
+        "bodyY": [
+          3065,
+          3165
+        ],
+        "bodyZ": [
+          79.99000099980006,
+          190.39999900019993
+        ],
+        "minimumEdgeClearanceAfterSettingMM": 20
+      },
+      {
+        "id": "blocked-primary relief",
+        "y": 3245,
+        "formedOD": 100,
+        "minimumClearID": 80,
+        "insideInvertZ": 160.39,
+        "outerInvertZ": 150,
+        "centreZ": 200.39,
+        "terminalX": 13450,
+        "terminalY": 2965,
+        "terminalInvertZ": 120.4804,
+        "maximumReceivingZ": 95.4804,
+        "developedUpperMM": 1475.9798,
+        "outsideCenterlineEndpoints": [
+          [
+            12090,
+            3245,
+            190
+          ],
+          [
+            13450,
+            2965,
+            160.4804
+          ]
+        ],
+        "doglegPlanVertices": [
+          [
+            12090,
+            3245
+          ],
+          [
+            12775,
+            3245
+          ],
+          [
+            13055,
+            2965
+          ],
+          [
+            13450,
+            2965
+          ]
+        ],
+        "receivingLaneY": [
+          2905,
+          3025
+        ],
+        "retiredZ70OuterBaseClearanceAfterSettingMM": 59.99,
+        "bodyY": [
+          3195,
+          3295
+        ],
+        "bodyZ": [
+          139.99000099980006,
+          250.39999900019993
+        ],
+        "minimumEdgeClearanceAfterSettingMM": 30
+      }
+    ],
+    "spill": {
+      "y": [
+        3080,
+        3300
+      ],
+      "z": [
+        315,
+        425
+      ],
+      "outsideZ": [
+        304.61,
+        414.61
+      ],
+      "terminalX": 13815,
+      "firstExitZ": 270.11,
+      "maximumReceivingZ": 245.11,
+      "minimumEdgeClearanceAfterSettingMM": 25
+    },
+    "lowPipeSeparationAfterSettingMM": 20,
+    "pipeToSpillSeparationAfterSettingMM": 54.60000099980007,
+    "d2GrateNorthAndDockSouthY": [
+      2650,
+      3400
+    ],
+    "toOutsideObstructionsAfterSettingMM": [
+      90,
+      70
+    ],
+    "d2CrossingAxes": [
+      {
+        "y": 3115,
+        "x": 12450,
+        "rawVerticalGapFromFormedSleeveToD2AxisMM": 1024.04
+      },
+      {
+        "y": 3245,
+        "x": 12450,
+        "rawVerticalGapFromFormedSleeveToD2AxisMM": 1082.415
+      }
+    ],
+    "receivingLanes": [
+      [
+        2750,
+        2870
+      ],
+      [
+        2905,
+        3025
+      ],
+      [
+        3060,
+        3320
+      ]
+    ],
+    "receivingSeparationAfterSettingMM": [
+      25,
+      25
+    ],
+    "outsidePipeGapAfterSettingMM": 33.16747,
+    "heldSlope": 50,
+    "heldTerminalRunsMM": [
+      1627.5,
+      1360
+    ],
+    "panFloor": {
+      "datum": [
+        11570.5,
+        3115,
+        100.39
+      ],
+      "panFloorCorners": [
+        {
+          "x": 11210,
+          "y": 2710,
+          "z": 115.7
+        },
+        {
+          "x": 11210,
+          "y": 3525,
+          "z": 115.8
+        },
+        {
+          "x": 11545,
+          "y": 2710,
+          "z": 109
+        },
+        {
+          "x": 11545,
+          "y": 3525,
+          "z": 109.1
+        }
+      ],
+      "panFloorMaximumZ": 115.8,
+      "longitudinalFall": 50,
+      "crossFall": 50,
+      "grossBlockedCapacityUpperL": 86.55863,
+      "allOutletsBlockedSecondsAt60LminUpper": 86.55863
+    },
+    "gravityControls": [
+      {
+        "flowLmin": 6,
+        "thresholdReserveMM": 43.72946
+      },
+      {
+        "flowLmin": 15,
+        "thresholdReserveMM": 38.44957
+      },
+      {
+        "flowLmin": 30,
+        "thresholdReserveMM": 31.66483
+      },
+      {
+        "flowLmin": 60,
+        "thresholdReserveMM": 20.89473
+      }
+    ],
+    "sharedPhysicalFailure": "A blocked outer face can obstruct all three exits. No shared cover, grille, sleeve chase, receiving sump or overflow credit. At real site verify independent receiving and a common inundation/face-obstruction rejection state."
+  },
+  "closure": {
+    "fitting": {
+      "body": {
+        "id": "0730G02000",
+        "axialMM": 78.5,
+        "source": "https://www.kemper-group.com/datasheet/en_uk/FG-0730G"
+      },
+      "union": {
+        "id": "4760402000",
+        "axialMM": 21,
+        "gasketMM": 2,
+        "source": "https://www.kemper-group.com/datasheet/en_en/FG-47604"
+      },
+      "wheel": {
+        "west": 100,
+        "east": 19,
+        "diameter": 60
+      }
+    },
+    "moduleAxialUpperMM": 124.5,
+    "axialReservationMM": 165,
+    "moduleAxialReserveMM": 40.5,
+    "currentRestX": 11113,
+    "westmostWheelX": 11013,
+    "oldFrontBoundAfterSettingMM": -2,
+    "newFrontBoundAfterSettingMM": 33,
+    "trayNoseBoundAfterSettingMM": 60,
+    "stepBackFromOrdinaryMM": 125,
+    "rows": {
+      "I0": {
+        "axis": [
+          11385,
+          2800,
+          875
+        ],
+        "stance": [
+          10670,
+          2985,
+          1050
+        ],
+        "wrenchReachUpperMM": 627.10044,
+        "restGripReachMM": 510.97847,
+        "closedControlReachMM": 436.89244,
+        "originalSector": [
+          120,
+          180
+        ]
+      },
+      "U0": {
+        "axis": [
+          11385,
+          3110,
+          1392.5
+        ],
+        "stance": [
+          10670,
+          3110,
+          1450
+        ],
+        "wrenchReachUpperMM": 501.87081,
+        "restGripReachMM": 446.71607,
+        "closedControlReachMM": 359.62654,
+        "originalSector": [
+          150,
+          210
+        ]
+      },
+      "P0": {
+        "axis": [
+          11385,
+          3370,
+          1392.5
+        ],
+        "stance": [
+          10670,
+          3250,
+          1450
+        ],
+        "wrenchReachUpperMM": 600.10497,
+        "restGripReachMM": 462.55297,
+        "closedControlReachMM": 379.11904,
+        "originalSector": [
+          180,
+          240
+        ]
+      }
+    },
+    "wheelDrive": {
+      "insideLeadX": 11285,
+      "dryControlX": 11145,
+      "minimumCouplingLengthMM": 140,
+      "dryBodyX": 10790,
+      "frontClearanceAfterSettingMM": 45,
+      "sequence": "Independent fixed dry-face rotary support; retained native handwheel; disengage the captive drive before the west draw. Prove torque, thrust restraint, operational stops and sealed wet penetration."
+    },
+    "materialStatus": "Manufacturer valve and unions have documented EPDM parts. Hold as a geometry comparator pending owner material disposition and matched installation proof."
+  },
+  "serviceHandoff": {
+    "inwardSpool": {
+      "strokeInwardMM": 619.5,
+      "firstRest": [
+        10905.5,
+        11545.5,
+        2800,
+        600
+      ],
+      "closedRouteAvailableOnlyOutsideMaintenance": true,
+      "temporaryCapturedSupportsX": [
+        11025,
+        11325
+      ],
+      "providerSideCut": "B0",
+      "sideStance": [
+        10920,
+        3175
+      ],
+      "sideStancePlanClearanceMM": 38,
+      "nominalBodyAxisClearanceMM": 60.5,
+      "prerequisite": "With B0 and I0 independently proved, drain both exposed ends, remove the single local inlet elbow with D0 and its release key, clear the eye and fit temporary supports. Keep the fixed I0, U0 and P0 in place. Verify wall seals release before drawing the capped bare spool inward."
+    },
+    "plant": {
+      "plantSplit": [
+        10222.5,
+        3842.9,
+        2260
+      ],
+      "factoryColdPort": [
+        10131.5,
+        4018.71,
+        380
+      ],
+      "dropDevelopedMM": 1827.0837925258163,
+      "highUnionPodium": [
+        10245,
+        10905,
+        3822,
+        4482,
+        400
+      ],
+      "highUnionShoulder": [
+        10575,
+        4152,
+        1850
+      ],
+      "highUnionTool": {
+        "sector": [
+          -60,
+          0
+        ],
+        "maxReachUpperMM": 455.9299403600116,
+        "servicePanelMinGapMM": 53.60204652
+      },
+      "oldStandRemoved": true,
+      "splitOpeningMM": 79.66845628116826,
+      "dropMotionToPlainCaseAfterSettingsMM": 26.250554952451296,
+      "firstRemovalTranslation": [
+        125,
+        150,
+        0
+      ],
+      "lowerOnto400PodiumMM": 120,
+      "exposedColdConnectorDevelopedMM": 201.13495764939094,
+      "exposedColdConnectorEnvelopeOD": 50,
+      "coldConnectorFirstRelease": [
+        25,
+        -20,
+        -35
+      ],
+      "support": "Suspend and laterally retain the long narrow drop from the permanent high rail until a captured receiver takes its load. Use no fixed low rail or stand in the cradle field. A maker-matched short final connector must reach this port and leave it with the cradle restrained.",
+      "completeDryLoadAndMotionProved": false
+    },
+    "utilityColdPoint": [
+      10760,
+      1250,
+      1000
+    ],
+    "release": "Keep the prior independently held high plant split and removable low connector. The valve handling route and closed operation do not certify actual loaded cargo, safe outlet, hot/return links or the utility head."
+  }
+}

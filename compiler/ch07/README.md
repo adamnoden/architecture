@@ -85,7 +85,7 @@ This is a deliberate non-move, not a claim that formatting/linting tools are gen
 
 ## Developer documentation
 
-`compiler/README.md` now records the install, health, targeted-test, artefact-check, artefact-generation, CI and proof-boundary workflow close to the compiler itself.
+At CH-07 closeout, `compiler/README.md` recorded the install, health, targeted-test, artefact-check, artefact-generation, CI and proof-boundary workflow close to the compiler itself. Use the [current compiler overview](../README.md) and [`package.json`](../../package.json) for the maintained workflow and commands.
 
 ## Mechanical contracts
 
@@ -126,4 +126,4 @@ CH-07 preserves:
 
 **PASS.** A clean checkout now has one obvious repository-health command, one explicit non-mutating artefact-verification path, one explicit canonical generation path, one local/CI Node authority and a concise compiler developer workflow. Canonical generation is consistently PASS-only. CI reuses the same health contract rather than duplicating it. No new tooling dependency, compiler capability, architectural claim or maturity promotion was introduced.
 
-**Next:** CH-08 — distillation and deletion.
+**Historical handoff:** [CH-08 — distillation and deletion](../ch08/README.md), subsequently completed as the final CH gate.

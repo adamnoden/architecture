@@ -1,0 +1,325 @@
+{
+  "disposition": "PREFER_SPLIT_DRY_BOWL_FOR_JOINED_DETAIL",
+  "basinComparator": {
+    "maker": "Franke BOX BXX 110 40",
+    "article": "127.0369.215",
+    "outer": [
+      440,
+      450
+    ],
+    "inner": [
+      400,
+      410,
+      200
+    ],
+    "source": "https://www.franke.com/gb/en/home-solutions/products/kitchen-sinks/product-detail-page.html/127.0369.215.html",
+    "adoption": false
+  },
+  "rejectStock": {
+    "railSlot": [
+      10980,
+      11500
+    ],
+    "stockInternalWidth": 500,
+    "maximumOuterWidthForFreeLoadedLiftMM": 450,
+    "oldMaximumRawSideGapMM": 10,
+    "adoptedRawReserveMM": 35
+  },
+  "firstLift": {
+    "dryProfile": [
+      11020,
+      815,
+      680,
+      440,
+      450,
+      220
+    ],
+    "travelMM": 385,
+    "initialObstacleMargins": {
+      "coldWasherStop": 185,
+      "lowerRack": 380.54,
+      "washer": 336,
+      "wasteCap": 557.82,
+      "leg 1": 47.01,
+      "sole 1": 666.41,
+      "leg 2": 63.82,
+      "sole 2": 668.03,
+      "leg 3": 47.01,
+      "sole 3": 666.41,
+      "leg 4": 63.82,
+      "sole 4": 668.03,
+      "EW rail at y750 / z850": 40,
+      "EW rail at y1350 / z850": 60,
+      "NS rail at x10975 / z850": 30,
+      "NS rail at x11525 / z850": 30,
+      "EW rail at y750 / z135": 522.35,
+      "EW rail at y1350 / z135": 524.6,
+      "NS rail at x10975 / z135": 521.51,
+      "NS rail at x11525 / z135": 521.51,
+      "H0": 189.64,
+      "hotCap": 139.33,
+      "coldCap": 213
+    },
+    "initialPipeMargins": {
+      "cold backbone": 213,
+      "hot backbone": 149.97,
+      "hot fixed tail": 50.59,
+      "cold retained branch 1": 185,
+      "cold retained branch 2": 50.59,
+      "fixed waste": 35
+    },
+    "removedBeforeLift": [
+      "Independent tap tails stay on the isolated fixed deck or their dry rack.",
+      "Strip the strainer, overflow tail and trap into a second supported wet receiver. Only the dry stainless shell rises."
+    ],
+    "retained": [
+      "Complete Ø74 cold cap and bracket silhouette, not an approved native part.",
+      "Fixed washer, capped waste branch and the retained H0 assembly."
+    ],
+    "cutout": "Actual slimtop template and all release clips must be exposed from above or below; guided from rest through the normal support lip without levering. Four dedicated positive under-rim clamp reliefs go in the dry deck. No holes drilled into the native bowl."
+  },
+  "rejectedManual": {
+    "manualNorthBodyCentreMaximum": 2118,
+    "manualNorthBodyRequired": 2365.5,
+    "shortfallMM": 247.5,
+    "scope": "Following the load on foot on its north side through arrival fails even before choosing a hand-loaded mass. Underframe clips can be guided from protected positions while the independent rail supports the complete shell."
+  },
+  "capture": {
+    "packageQuietDimensions": [
+      470,
+      480,
+      430
+    ],
+    "boxFitted": [
+      532,
+      541,
+      467
+    ],
+    "angularControl": {
+      "yawDegrees": 5,
+      "pitchAndRollDegrees": 2
+    },
+    "contact": [
+      {
+        "point": [
+          11028,
+          862,
+          897
+        ],
+        "type": "southwest"
+      },
+      {
+        "point": [
+          11452,
+          862,
+          897
+        ],
+        "type": "southeast"
+      },
+      {
+        "point": [
+          11028,
+          1218,
+          897
+        ],
+        "type": "northwest"
+      },
+      {
+        "point": [
+          11452,
+          1218,
+          897
+        ],
+        "type": "northeast"
+      }
+    ],
+    "grossDryLimitKG": 25,
+    "singlePointMinimumDesignVerticalN": 367.88,
+    "independentLatchMinimumN": 500,
+    "combinedCg": {
+      "maxHorizontalErrorMM": 5,
+      "minimumEyeAboveCgMM": 240,
+      "maximumFreeTiltDegrees": 1.69
+    },
+    "routeCentres": [
+      [
+        11240,
+        1040
+      ],
+      [
+        11240,
+        1760
+      ]
+    ],
+    "moves": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        720,
+        0
+      ],
+      [
+        0,
+        720,
+        -285
+      ]
+    ],
+    "clearSweeps": [
+      {
+        "stage": 1,
+        "box": [
+          10974,
+          769.5,
+          1046.5,
+          532,
+          1261,
+          467
+        ],
+        "clearanceMM": 54.5
+      },
+      {
+        "stage": 2,
+        "box": [
+          10974,
+          1489.5,
+          761.5,
+          532,
+          541,
+          752
+        ],
+        "clearanceMM": 51.5
+      }
+    ],
+    "rest": {
+      "plan": [
+        10965,
+        1485,
+        550,
+        550
+      ],
+      "base": [
+        10965,
+        1505,
+        0,
+        365,
+        510,
+        735
+      ],
+      "rimZ": 1000,
+      "lowerDryShellZ": 780,
+      "baseMinimumKG": 50,
+      "baseMaximumHorizontalCgOffsetMM": 35,
+      "minimumIndependentBaseOverturnMomentNM": 72.35,
+      "adversePullN": 50,
+      "adversePullHeightMM": 1000,
+      "keeperRequiredLateralAndUpliftN": 200,
+      "baseToActualRadiatorMM": 30.5,
+      "cantilever": {
+        "maxProjectionMM": 185,
+        "oneSaddleDesignForceN": 500,
+        "squareHollowSectionMM": [
+          40,
+          40,
+          3
+        ],
+        "nominalStripBendingMPa": 18.14
+      },
+      "dryBowlCgAtLeastInsideBaseXMM": 55,
+      "throat": "Slimtop factory-specific cutout supported by an independent rigid ring. Positively lock two opposed keepers before slacking. Keep the loose wet tray and fixed drain off this bearing."
+    }
+  },
+  "independentSupport": {
+    "straightAxis": [
+      [
+        11240,
+        429.5,
+        2226.2
+      ],
+      [
+        11240,
+        2453,
+        2226.2
+      ]
+    ],
+    "clearancesMM": {
+      "fan insulated duct and supports": 41.55,
+      "fan drain": 175.72,
+      "cold backbone": 344.83,
+      "hot backbone": 264.83,
+      "PVinverter": 1494.83
+    },
+    "trolleyGaps": [
+      173
+    ],
+    "rejectedSwingArm": {
+      "pivot": [
+        11350,
+        2380
+      ],
+      "armLength": 1750,
+      "clearancesMM": {
+        "fan insulated duct and supports": 35.04,
+        "fan drain": 172.21,
+        "cold backbone": -137.83,
+        "hot backbone": -136.85,
+        "PVinverter": 219.89,
+        "ordinaryWall": 44.6
+      }
+    },
+    "armBottom": 2150,
+    "armTop": 2302.4,
+    "aboveBeamToSlabMM": 867.6,
+    "bearing": {
+      "beamWeightKg": 32.38,
+      "minimumEachEndDesignVerticalN": 1500,
+      "grossVerticalComparisonN": 856.18,
+      "steelSimpleSpanMomentUpperNM": 352.78,
+      "steelSimpleSpanDeflectionMM": 0.07,
+      "northernAnchorTerritory": [
+        11190,
+        11300,
+        2453,
+        2647
+      ],
+      "southAnchorAtInnerFaceY": 429.5,
+      "scope": "Pin the removable straight rail to designed independent north return and south wall supports. Confirm native lining, anchors, bracket geometry, movement and suspension. Preserve utilities and fire/air boundaries."
+    },
+    "standardHoist": {
+      "name": "YaleMINI 360 250",
+      "article": "192084199",
+      "capacityKG": 250,
+      "headroomMM": 245,
+      "source": "https://www.cmco.com/en-gb/products/hoisting--lifting-equipment/manual-hoists/hand-chain-hoists/yalemini-360-hand-chain-hoist/"
+    },
+    "standardTrolley": {
+      "name": "Yale HTP 500 A locking variant",
+      "comparisonArticle": "N05141273",
+      "admissibleFlangeWidthMM": [
+        50,
+        220
+      ],
+      "maximumFlangeThicknessMM": 25,
+      "actualAuthorFlangeMM": [
+        88.7,
+        7.7
+      ],
+      "source": "https://www.cmco.com/en-gb/products/hoisting--lifting-equipment/trolleys-and-trolley-clamps/manual-trolleys/yale-htp-push-and-gear-trolleys/"
+    },
+    "trolleyTopEyeZ": 2000,
+    "conservativeRaisedHookZ": 1530,
+    "hookHeightReserveMM": 215,
+    "westOperatedControls": {
+      "maximumGuideLineX": 10925,
+      "packageClearanceMM": 39,
+      "maximumHotCapX": 10877,
+      "capToGuideXMM": 38,
+      "scope": "Reserve west operation for travel and floor-end points. Prove the loaded operating line, emergency stop, hold, controlled orientation and people in each state."
+    },
+    "mountedGuideAndSupportsQualified": false
+  },
+  "physicalAssemblyAndWaterAccepted": false
+}

@@ -1,0 +1,35 @@
+{
+  "familyWCFirstAndRest": [
+    20.0,
+    5.0
+  ],
+  "principalWCFirstAndRest": [
+    12.5,
+    9.338070212202183
+  ],
+  "principalShower": {
+    "body to room/fixtures/glazing": 23.402224031075882,
+    "body to moving glass": 26.803268150269155,
+    "body to handle": 96.2032658925629,
+    "hand reach": 29.628536203406384,
+    "arm to moving glass": 11.059964881998303,
+    "arm to fixed glass/fixtures": 15.009348809164587
+  },
+  "familySmallBathComparator": 11.404091582650544,
+  "originalBathRollYokeAndFeetToBasin": 325.0,
+  "selectedRearTrayToBasin": 58.0,
+  "rearTrayApproachToBasin": 700.4905047025684,
+  "principalCarrierVsStructuralBed": {
+    "terminalRest": [
+      10342.5,
+      8520.0,
+      390.0,
+      690.0
+    ],
+    "ordinaryPlanOverlap": [
+      390.0,
+      60.0
+    ],
+    "parkedBedToFullSweep": 202.5
+  }
+}

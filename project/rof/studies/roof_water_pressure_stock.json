@@ -1,0 +1,1099 @@
+{
+  "status": "CONDITIONAL MATERIAL PARTITION, NOT A JOINED FABRICATION OR RESIDUAL-CENTROID PASS",
+  "inputSHA256": "27950e4f14f995ec8573930ec103da487d2f8cc76b6af7f63216e50fad1a4454",
+  "candidateSourceSHA256": "4eb505e4349b1af1eaa98c96b0aa7174a8b6e3c4210628a969cc10c8252e7eba",
+  "partitionSourceSHA256": "5b28e2d44e6fa90f71c08af437a46c8ef58ede9a875dd442025880f9ce84d173",
+  "families": {
+    "primary": {
+      "rootsP": [
+        5025,
+        6000,
+        6975
+      ],
+      "kgByCassette": [
+        52.54785110495806,
+        61.50936181170269,
+        52.54785110495806
+      ],
+      "native60CapKg": [
+        58.5,
+        67.5,
+        58.5
+      ],
+      "reserveKg": [
+        5.952148895041937,
+        5.990638188297311,
+        5.952148895041937
+      ],
+      "massScreen": true,
+      "sourceFaceKg": 166.6050640216188,
+      "partitionFaceKg": 166.60506402161883,
+      "equivalentKgPerM": 57.45002207642029,
+      "backingRibsByCassette": [
+        8,
+        8,
+        8
+      ],
+      "apronRibsByCassette": [
+        7,
+        9,
+        7
+      ],
+      "items": [
+        {
+          "item": "copper wet body with both actual mitred walls",
+          "kgByCassette": [
+            5.2824225,
+            6.537374999999999,
+            5.2824225
+          ],
+          "basis": "Exact mitred profile area split at unchanged independent-cassette joints",
+          "sourceFaceKg": 17.10222,
+          "includedFaceKg": 17.10222,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": [
+            {
+              "p": 4972.438033283971,
+              "q": 4507.376066567943
+            },
+            {
+              "p": 6000.0,
+              "q": 4528.461538461538
+            },
+            {
+              "p": 7027.561966716028,
+              "q": 4507.376066567943
+            }
+          ]
+        },
+        {
+          "item": "copper rear25 hem",
+          "kgByCassette": [
+            0.23746875,
+            0.2514375,
+            0.23746875
+          ],
+          "basis": "Exact mitred profile area split at unchanged independent-cassette joints",
+          "sourceFaceKg": 0.726375,
+          "includedFaceKg": 0.726375,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": [
+            {
+              "p": 4906.25,
+              "q": 4375.0
+            },
+            {
+              "p": 6000.0,
+              "q": 4375.0
+            },
+            {
+              "p": 7093.75,
+              "q": 4375.0
+            }
+          ]
+        },
+        {
+          "item": "copper front25 hem",
+          "kgByCassette": [
+            0.15924375000000002,
+            0.2514375,
+            0.15924375000000002
+          ],
+          "basis": "Exact mitred profile area split at unchanged independent-cassette joints",
+          "sourceFaceKg": 0.569925,
+          "includedFaceKg": 0.569925,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": [
+            {
+              "p": 5081.25,
+              "q": 4725.0
+            },
+            {
+              "p": 6000.0,
+              "q": 4725.0
+            },
+            {
+              "p": 6918.75,
+              "q": 4725.0
+            }
+          ]
+        },
+        {
+          "item": "cap100 top and two20 folds",
+          "kgByCassette": [
+            0.5389999999999999,
+            0.8819999999999999,
+            0.5389999999999999
+          ],
+          "basis": "Exact mitred profile area split at unchanged independent-cassette joints",
+          "sourceFaceKg": 1.9599999999999997,
+          "includedFaceKg": 1.9599999999999997,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": [
+            {
+              "p": 5092.797619047619,
+              "q": 4748.095238095238
+            },
+            {
+              "p": 6000.0,
+              "q": 4750.0
+            },
+            {
+              "p": 6907.202380952381,
+              "q": 4748.095238095238
+            }
+          ]
+        },
+        {
+          "item": "front spill215 drop after primary+30/front+10,50 crossing and40 hems",
+          "kgByCassette": [
+            1.19021,
+            1.9215,
+            1.19021
+          ],
+          "basis": "Exact mitred profile area split at unchanged independent-cassette joints",
+          "sourceFaceKg": 4.30192,
+          "includedFaceKg": 4.30192,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": [
+            {
+              "p": 5088.8260650081365,
+              "q": 4740.152130016271
+            },
+            {
+              "p": 6000.0,
+              "q": 4740.6557377049185
+            },
+            {
+              "p": 6911.173934991865,
+              "q": 4740.152130016271
+            }
+          ]
+        },
+        {
+          "item": "fixed primary apron,120 roof lap and courtward wet turn",
+          "kgByCassette": [
+            2.806080749483024,
+            3.601069193002274,
+            2.806080749483024
+          ],
+          "basis": "Exact mitred profile area split at unchanged independent-cassette joints",
+          "sourceFaceKg": 9.213230691968322,
+          "includedFaceKg": 9.213230691968322,
+          "loadRoute": "fixed",
+          "profileOrRailCentroidPQMM": [
+            {
+              "p": 4997.739122910117,
+              "q": 4557.9782458202335
+            },
+            {
+              "p": 5999.999999999999,
+              "q": 4560.8601261250715
+            },
+            {
+              "p": 7002.260877089882,
+              "q": 4557.9782458202335
+            }
+          ]
+        },
+        {
+          "item": "captured primary lower leaf320,190 stroke,120 minimum lap",
+          "kgByCassette": [
+            1.513344,
+            2.016,
+            1.513344
+          ],
+          "basis": "Exact mitred profile area split at unchanged independent-cassette joints",
+          "sourceFaceKg": 5.042688,
+          "includedFaceKg": 5.042688,
+          "loadRoute": "fixed",
+          "profileOrRailCentroidPQMM": [
+            {
+              "p": 5015.25,
+              "q": 4593.0
+            },
+            {
+              "p": 6000.0,
+              "q": 4593.0
+            },
+            {
+              "p": 6984.75,
+              "q": 4593.0
+            }
+          ]
+        },
+        {
+          "item": "fixed and moving primary apron40 hems each",
+          "kgByCassette": [
+            0.37968,
+            0.504,
+            0.37968
+          ],
+          "basis": "Exact mitred profile area split at unchanged independent-cassette joints",
+          "sourceFaceKg": 1.26336,
+          "includedFaceKg": 1.26336,
+          "loadRoute": "fixed",
+          "profileOrRailCentroidPQMM": [
+            {
+              "p": 5013.75,
+              "q": 4590.0
+            },
+            {
+              "p": 6000.0,
+              "q": 4590.0
+            },
+            {
+              "p": 6986.25,
+              "q": 4590.0
+            }
+          ]
+        },
+        {
+          "item": "independent RHS20\u00d720\u00d71 apron ribs,at150 maximum with separate cassette ends",
+          "kgByCassette": [
+            4.1351222992726475,
+            5.316585813350547,
+            4.1351222992726475
+          ],
+          "basis": "Separate supported apron segment ends, using explicit cassette rib counts",
+          "sourceFaceKg": 13.586830411895841,
+          "includedFaceKg": 13.586830411895843,
+          "loadRoute": "fixed",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "apron radial standoffs20\u00d720\u00d71.5 at each rib",
+          "kgByCassette": [
+            2.20668,
+            2.83716,
+            2.20668
+          ],
+          "basis": "Separate supported apron segment ends, using explicit cassette rib counts",
+          "sourceFaceKg": 7.250519999999999,
+          "includedFaceKg": 7.25052,
+          "loadRoute": "fixed",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "independent backing with no composite credit",
+          "kgByCassette": [
+            2.9819999999999998,
+            3.78,
+            2.9819999999999998
+          ],
+          "basis": "Exact mitred profile area split at unchanged independent-cassette joints",
+          "sourceFaceKg": 9.744,
+          "includedFaceKg": 9.744,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": [
+            {
+              "p": 4987.99882629108,
+              "q": 4538.497652582159
+            },
+            {
+              "p": 6000.0,
+              "q": 4550.0
+            },
+            {
+              "p": 7012.001173708919,
+              "q": 4538.497652582159
+            }
+          ]
+        },
+        {
+          "item": "moving longitudinal rail30\u00d725\u00d72",
+          "kgByCassette": [
+            1.70136,
+            1.8359999999999999,
+            1.70136
+          ],
+          "basis": "Actual constant-q stock lengths split at independent-cassette joints",
+          "sourceFaceKg": 5.23872,
+          "includedFaceKg": 5.23872,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": [
+            {
+              "p": 4916.25,
+              "q": 4395
+            },
+            {
+              "p": 6000.0,
+              "q": 4395
+            },
+            {
+              "p": 7083.75,
+              "q": 4395
+            }
+          ]
+        },
+        {
+          "item": "moving longitudinal rail30\u00d725\u00d72",
+          "kgByCassette": [
+            1.19544,
+            1.8360000000000003,
+            1.19544
+          ],
+          "basis": "Actual constant-q stock lengths split at independent-cassette joints",
+          "sourceFaceKg": 4.22688,
+          "includedFaceKg": 4.22688,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": [
+            {
+              "p": 5071.25,
+              "q": 4705
+            },
+            {
+              "p": 6000.0,
+              "q": 4705
+            },
+            {
+              "p": 6928.75,
+              "q": 4705
+            }
+          ]
+        },
+        {
+          "item": "separate moving-pan backing ribs20\u00d725\u00d72; corner lengths bounded by fullwidth",
+          "kgByCassette": [
+            3.6736000000000004,
+            3.6736000000000004,
+            3.6736000000000004
+          ],
+          "basis": "Each separate body has supported ends; corner rear span500 needs5 ribs at150 (or4 at200); full-width lengths are an explicit mass overbound",
+          "sourceFaceKg": 11.020800000000001,
+          "includedFaceKg": 11.020800000000001,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "three root plates160\u00d7120\u00d78",
+          "kgByCassette": [
+            1.2288,
+            1.2288,
+            1.2288
+          ],
+          "basis": "One finite root hardware allocation per independent cassette",
+          "sourceFaceKg": 3.6864,
+          "includedFaceKg": 3.6864,
+          "loadRoute": "fixed",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "root and elbow gussets,12 triangular80\u00d780\u00d75",
+          "kgByCassette": [
+            0.5119999999999999,
+            0.5119999999999999,
+            0.5119999999999999
+          ],
+          "basis": "One finite root hardware allocation per independent cassette",
+          "sourceFaceKg": 1.5359999999999998,
+          "includedFaceKg": 1.5359999999999996,
+          "loadRoute": "fixed",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "two continuous guide flats20\u00d73",
+          "kgByCassette": [
+            0.8136000000000001,
+            1.08,
+            0.8136000000000001
+          ],
+          "basis": "Actual constant-q stock lengths split at independent-cassette joints",
+          "sourceFaceKg": 2.7072000000000003,
+          "includedFaceKg": 2.7072000000000003,
+          "loadRoute": "fixed",
+          "profileOrRailCentroidPQMM": [
+            {
+              "p": 5013.75,
+              "q": 4590
+            },
+            {
+              "p": 6000.0,
+              "q": 4590
+            },
+            {
+              "p": 6986.25,
+              "q": 4590
+            }
+          ]
+        },
+        {
+          "item": "two20 end-flange returns at every equivalent module",
+          "kgByCassette": [
+            0.46488,
+            0.46488,
+            0.46488
+          ],
+          "basis": "Actual number of owned pan modules/arms",
+          "sourceFaceKg": 1.39464,
+          "includedFaceKg": 1.39464,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "replaceable seam strips20\u00d70.7,each side of every module",
+          "kgByCassette": [
+            0.2912,
+            0.2912,
+            0.2912
+          ],
+          "basis": "Actual number of owned pan modules/arms",
+          "sourceFaceKg": 0.8736,
+          "includedFaceKg": 0.8736,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "sixM12\u00d750 root bolts perroot,eachwithnut/twowashers",
+          "kgByCassette": [
+            0.5639813643587708,
+            0.5639813643587708,
+            0.5639813643587708
+          ],
+          "basis": "One finite root hardware allocation per independent cassette",
+          "sourceFaceKg": 1.6919440930763123,
+          "includedFaceKg": 1.6919440930763123,
+          "loadRoute": "fixed",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "twoM10\u00d745 capture bolts perarm,eachwithnut/twowashers",
+          "kgByCassette": [
+            0.2374496318828007,
+            0.2374496318828007,
+            0.2374496318828007
+          ],
+          "basis": "Actual number of owned pan modules/arms",
+          "sourceFaceKg": 0.7123488956484021,
+          "includedFaceKg": 0.7123488956484021,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "two captive socket plates60\u00d740\u00d76 perarm",
+          "kgByCassette": [
+            0.4608,
+            0.4608,
+            0.4608
+          ],
+          "basis": "Actual number of owned pan modules/arms",
+          "sourceFaceKg": 1.3824,
+          "includedFaceKg": 1.3824,
+          "loadRoute": "fixed",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "twoM8\u00d735 pan locks perarm,eachwithnut/twowashers",
+          "kgByCassette": [
+            0.11588506337093031,
+            0.11588506337093031,
+            0.11588506337093031
+          ],
+          "basis": "Actual number of owned pan modules/arms",
+          "sourceFaceKg": 0.34765519011279095,
+          "includedFaceKg": 0.34765519011279095,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "apron clips30\u00d760\u00d70.7 and tabs30\u00d730\u00d73",
+          "kgByCassette": [
+            0.4435200000000001,
+            0.5702400000000001,
+            0.4435200000000001
+          ],
+          "basis": "Two clip/tab assemblies per actual apron rib",
+          "sourceFaceKg": 1.4572800000000001,
+          "includedFaceKg": 1.4572800000000004,
+          "loadRoute": "fixed",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "twoM6\u00d725 guide bolts perclip,eachwithnut/twowashers",
+          "kgByCassette": [
+            0.3549621220161472,
+            0.45637987116361783,
+            0.3549621220161472
+          ],
+          "basis": "Four M6 bolt/nut/two-washer assemblies per actual apron rib",
+          "sourceFaceKg": 1.1663041151959121,
+          "includedFaceKg": 1.1663041151959121,
+          "loadRoute": "fixed",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "3mm equal-leg fillet weld metal along declared carrier/root seams",
+          "kgByCassette": [
+            0.17766,
+            0.19476000000000002,
+            0.17766
+          ],
+          "basis": "Explicit declared carrier/root fillet-seam length only; other actual joining stock remains unproved",
+          "sourceFaceKg": 0.5500799999999999,
+          "includedFaceKg": 0.55008,
+          "loadRoute": "fixed",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "captured80-stroke spill: two315-long Cguides40developed\u00d71.5 per module",
+          "kgByCassette": [
+            0.6048,
+            0.6048,
+            0.6048
+          ],
+          "basis": "Actual number of owned pan modules/arms",
+          "sourceFaceKg": 1.8144,
+          "includedFaceKg": 1.8144,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "twoM6\u00d725 spill locks per module",
+          "kgByCassette": [
+            0.05070887457373531,
+            0.05070887457373531,
+            0.05070887457373531
+          ],
+          "basis": "Actual number of owned pan modules/arms",
+          "sourceFaceKg": 0.15212662372120594,
+          "includedFaceKg": 0.15212662372120594,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "four20\u00d720\u00d73 spill stops per module",
+          "kgByCassette": [
+            0.0768,
+            0.0768,
+            0.0768
+          ],
+          "basis": "Actual number of owned pan modules/arms",
+          "sourceFaceKg": 0.2304,
+          "includedFaceKg": 0.2304,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "complete fixed root, rail, hanger and removable arm stock",
+          "kgByCassette": [
+            18.149152,
+            19.356512000000002,
+            18.149152
+          ],
+          "basis": "Actual finite local frame member mass per root",
+          "sourceFaceKg": 55.654816000000004,
+          "includedFaceKg": 55.654816000000004,
+          "loadRoute": "frame",
+          "profileOrRailCentroidPQMM": null
+        }
+      ],
+      "limitations": [
+        "Physical profiles are conditionally split at listed independent joints; this is not proof of their joining, support or articulation.",
+        "Corner body support uses conservative full-width rib masses; actual mitres, p supports and interfaces still need a finite detail.",
+        "Finite item masses are not a proof that every permitted remaining-state centre of mass lies in the native p/q rectangles.",
+        "Only declared seam weld stock is included. Unspecified apron, rib, splice, socket, guide and contact joining is not supplied by a percentage allowance.",
+        "This partition does not add absent strength, local deflection, receiver, wind or maintenance qualifications."
+      ]
+    },
+    "lower": {
+      "rootsP": [
+        5041.6666667,
+        6000,
+        6958.3333333
+      ],
+      "kgByCassette": [
+        53.237862344791154,
+        77.55629156496171,
+        53.237862344791154
+      ],
+      "native60CapKg": [
+        57.5,
+        81.0,
+        57.5
+      ],
+      "reserveKg": [
+        4.262137655208846,
+        3.443708435038289,
+        4.262137655208846
+      ],
+      "massScreen": true,
+      "sourceFaceKg": 184.03201625454403,
+      "partitionFaceKg": 184.03201625454403,
+      "equivalentKgPerM": 65.14407655028107,
+      "backingRibsByCassette": [
+        9,
+        12,
+        9
+      ],
+      "apronRibsByCassette": [
+        8,
+        10,
+        8
+      ],
+      "items": [
+        {
+          "item": "316L lower liner with both actual125 walls",
+          "kgByCassette": [
+            2.78775,
+            5.103,
+            2.78775
+          ],
+          "basis": "Exact mitred profile area split at unchanged independent-cassette joints",
+          "sourceFaceKg": 10.6785,
+          "includedFaceKg": 10.6785,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": [
+            {
+              "p": 4938.486084955011,
+              "q": 4551.972169910024
+            },
+            {
+              "p": 6000.0,
+              "q": 4587.5
+            },
+            {
+              "p": 7061.513915044989,
+              "q": 4551.972169910024
+            }
+          ]
+        },
+        {
+          "item": "lower rear15 hem",
+          "kgByCassette": [
+            0.07980000000000001,
+            0.11340000000000001,
+            0.07980000000000001
+          ],
+          "basis": "Exact mitred profile area split at unchanged independent-cassette joints",
+          "sourceFaceKg": 0.273,
+          "includedFaceKg": 0.273,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": [
+            {
+              "p": 4850.0,
+              "q": 4375.0
+            },
+            {
+              "p": 6000.0,
+              "q": 4375.0
+            },
+            {
+              "p": 7150.0,
+              "q": 4375.0
+            }
+          ]
+        },
+        {
+          "item": "lower front15 hem",
+          "kgByCassette": [
+            0.0441,
+            0.1134,
+            0.0441
+          ],
+          "basis": "Exact mitred profile area split at unchanged independent-cassette joints",
+          "sourceFaceKg": 0.2016,
+          "includedFaceKg": 0.2016,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": [
+            {
+              "p": 5062.5,
+              "q": 4800.0
+            },
+            {
+              "p": 6000.0,
+              "q": 4800.0
+            },
+            {
+              "p": 6937.5,
+              "q": 4800.0
+            }
+          ]
+        },
+        {
+          "item": "secondary turn exact slope plus fixed downleg",
+          "kgByCassette": [
+            4.409735365722572,
+            6.331074008402233,
+            4.409735365722572
+          ],
+          "basis": "Exact mitred profile area split at unchanged independent-cassette joints",
+          "sourceFaceKg": 15.150544739847378,
+          "includedFaceKg": 15.150544739847376,
+          "loadRoute": "fixed",
+          "profileOrRailCentroidPQMM": [
+            {
+              "p": 4852.388205897832,
+              "q": 4379.776411795665
+            },
+            {
+              "p": 6000.0,
+              "q": 4384.694652783271
+            },
+            {
+              "p": 7147.6117941021685,
+              "q": 4379.776411795665
+            }
+          ]
+        },
+        {
+          "item": "secondary downleg120 lap and40 hems",
+          "kgByCassette": [
+            0.877184,
+            1.2096,
+            0.877184
+          ],
+          "basis": "Exact mitred profile area split at unchanged independent-cassette joints",
+          "sourceFaceKg": 2.963968,
+          "includedFaceKg": 2.963968,
+          "loadRoute": "fixed",
+          "profileOrRailCentroidPQMM": [
+            {
+              "p": 4835.5,
+              "q": 4346.0
+            },
+            {
+              "p": 6000.0,
+              "q": 4346.0
+            },
+            {
+              "p": 7164.5,
+              "q": 4346.0
+            }
+          ]
+        },
+        {
+          "item": "rear shoe90,20 fold,60 retracting tongue",
+          "kgByCassette": [
+            0.9133600000000001,
+            1.2852,
+            0.9133600000000001
+          ],
+          "basis": "Exact mitred profile area split at unchanged independent-cassette joints",
+          "sourceFaceKg": 3.11192,
+          "includedFaceKg": 3.11192,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": [
+            {
+              "p": 4844.669681177192,
+              "q": 4364.339362354383
+            },
+            {
+              "p": 6000.0,
+              "q": 4365.588235294118
+            },
+            {
+              "p": 7155.330318822808,
+              "q": 4364.339362354383
+            }
+          ]
+        },
+        {
+          "item": "independent RHS20\u00d720\u00d71 apron ribs,at150 maximum with separate cassette ends",
+          "kgByCassette": [
+            4.8515659228661985,
+            6.064457403582748,
+            4.8515659228661985
+          ],
+          "basis": "Separate supported apron segment ends, using explicit cassette rib counts",
+          "sourceFaceKg": 15.767589249315144,
+          "includedFaceKg": 15.767589249315144,
+          "loadRoute": "fixed",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "apron radial standoffs20\u00d720\u00d71.5 at each rib",
+          "kgByCassette": [
+            2.34432,
+            2.9304,
+            2.34432
+          ],
+          "basis": "Separate supported apron segment ends, using explicit cassette rib counts",
+          "sourceFaceKg": 7.61904,
+          "includedFaceKg": 7.61904,
+          "loadRoute": "fixed",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "independent backing with no composite credit",
+          "kgByCassette": [
+            3.0090000000000003,
+            5.508,
+            3.0090000000000003
+          ],
+          "basis": "Exact mitred profile area split at unchanged independent-cassette joints",
+          "sourceFaceKg": 11.526,
+          "includedFaceKg": 11.526,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": [
+            {
+              "p": 4946.045197740113,
+              "q": 4567.090395480226
+            },
+            {
+              "p": 6000.0,
+              "q": 4587.5
+            },
+            {
+              "p": 7053.954802259886,
+              "q": 4567.090395480226
+            }
+          ]
+        },
+        {
+          "item": "moving longitudinal rail30\u00d725\u00d72",
+          "kgByCassette": [
+            1.5177599999999998,
+            2.2032,
+            1.5177599999999998
+          ],
+          "basis": "Actual constant-q stock lengths split at independent-cassette joints",
+          "sourceFaceKg": 5.23872,
+          "includedFaceKg": 5.238719999999999,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": [
+            {
+              "p": 4860.0,
+              "q": 4395
+            },
+            {
+              "p": 6000.0,
+              "q": 4395
+            },
+            {
+              "p": 7140.0,
+              "q": 4395
+            }
+          ]
+        },
+        {
+          "item": "moving longitudinal rail30\u00d725\u00d72",
+          "kgByCassette": [
+            0.88944,
+            2.2032000000000003,
+            0.88944
+          ],
+          "basis": "Actual constant-q stock lengths split at independent-cassette joints",
+          "sourceFaceKg": 3.9820800000000003,
+          "includedFaceKg": 3.9820800000000003,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": [
+            {
+              "p": 5052.5,
+              "q": 4780
+            },
+            {
+              "p": 6000.0,
+              "q": 4780
+            },
+            {
+              "p": 6947.5,
+              "q": 4780
+            }
+          ]
+        },
+        {
+          "item": "separate moving-pan backing ribs20\u00d725\u00d72; corner lengths bounded by fullwidth",
+          "kgByCassette": [
+            5.018400000000001,
+            6.691200000000001,
+            5.018400000000001
+          ],
+          "basis": "Each separate body has supported ends; corner rear span500 needs5 ribs at150 (or4 at200); full-width lengths are an explicit mass overbound",
+          "sourceFaceKg": 16.728,
+          "includedFaceKg": 16.728,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "three root plates160\u00d7120\u00d78",
+          "kgByCassette": [
+            1.2288,
+            1.2288,
+            1.2288
+          ],
+          "basis": "One finite root hardware allocation per independent cassette",
+          "sourceFaceKg": 3.6864,
+          "includedFaceKg": 3.6864,
+          "loadRoute": "fixed",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "root and elbow gussets,12 triangular80\u00d780\u00d75",
+          "kgByCassette": [
+            0.5119999999999999,
+            0.5119999999999999,
+            0.5119999999999999
+          ],
+          "basis": "One finite root hardware allocation per independent cassette",
+          "sourceFaceKg": 1.5359999999999998,
+          "includedFaceKg": 1.5359999999999996,
+          "loadRoute": "fixed",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "two continuous guide flats20\u00d73",
+          "kgByCassette": [
+            0.9398400000000001,
+            1.296,
+            0.9398400000000001
+          ],
+          "basis": "Actual constant-q stock lengths split at independent-cassette joints",
+          "sourceFaceKg": 3.1756800000000003,
+          "includedFaceKg": 3.1756800000000003,
+          "loadRoute": "fixed",
+          "profileOrRailCentroidPQMM": [
+            {
+              "p": 4835.5,
+              "q": 4346
+            },
+            {
+              "p": 6000.0,
+              "q": 4346
+            },
+            {
+              "p": 7164.5,
+              "q": 4346
+            }
+          ]
+        },
+        {
+          "item": "two20 end-flange returns at every equivalent module",
+          "kgByCassette": [
+            0.3024,
+            0.4536,
+            0.3024
+          ],
+          "basis": "Actual number of owned pan modules/arms",
+          "sourceFaceKg": 1.0584,
+          "includedFaceKg": 1.0584,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "replaceable seam strips20\u00d70.7,each side of every module",
+          "kgByCassette": [
+            0.3024,
+            0.4536,
+            0.3024
+          ],
+          "basis": "Actual number of owned pan modules/arms",
+          "sourceFaceKg": 1.0584,
+          "includedFaceKg": 1.0584,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "sixM12\u00d750 root bolts perroot,eachwithnut/twowashers",
+          "kgByCassette": [
+            0.5639813643587708,
+            0.5639813643587708,
+            0.5639813643587708
+          ],
+          "basis": "One finite root hardware allocation per independent cassette",
+          "sourceFaceKg": 1.6919440930763123,
+          "includedFaceKg": 1.6919440930763123,
+          "loadRoute": "fixed",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "twoM10\u00d745 capture bolts perarm,eachwithnut/twowashers",
+          "kgByCassette": [
+            0.23744963188280066,
+            0.356174447824201,
+            0.23744963188280066
+          ],
+          "basis": "Actual number of owned pan modules/arms",
+          "sourceFaceKg": 0.8310737115898024,
+          "includedFaceKg": 0.8310737115898024,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "two captive socket plates60\u00d740\u00d76 perarm",
+          "kgByCassette": [
+            0.4608,
+            0.6911999999999999,
+            0.4608
+          ],
+          "basis": "Actual number of owned pan modules/arms",
+          "sourceFaceKg": 1.6128,
+          "includedFaceKg": 1.6128,
+          "loadRoute": "fixed",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "twoM8\u00d735 pan locks perarm,eachwithnut/twowashers",
+          "kgByCassette": [
+            0.11588506337093031,
+            0.17382759505639547,
+            0.11588506337093031
+          ],
+          "basis": "Actual number of owned pan modules/arms",
+          "sourceFaceKg": 0.4055977217982561,
+          "includedFaceKg": 0.4055977217982561,
+          "loadRoute": "moving",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "apron clips30\u00d760\u00d70.7 and tabs30\u00d730\u00d73",
+          "kgByCassette": [
+            0.5068800000000001,
+            0.6336,
+            0.5068800000000001
+          ],
+          "basis": "Two clip/tab assemblies per actual apron rib",
+          "sourceFaceKg": 1.6473600000000002,
+          "includedFaceKg": 1.6473600000000004,
+          "loadRoute": "fixed",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "twoM6\u00d725 guide bolts perclip,eachwithnut/twowashers",
+          "kgByCassette": [
+            0.40567099658988254,
+            0.5070887457373532,
+            0.40567099658988254
+          ],
+          "basis": "Four M6 bolt/nut/two-washer assemblies per actual apron rib",
+          "sourceFaceKg": 1.3184307389171182,
+          "includedFaceKg": 1.3184307389171184,
+          "loadRoute": "fixed",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "3mm equal-leg fillet weld metal along declared carrier/root seams",
+          "kgByCassette": [
+            0.17766000000000004,
+            0.27396,
+            0.17766000000000004
+          ],
+          "basis": "Explicit declared carrier/root fillet-seam length only; other actual joining stock remains unproved",
+          "sourceFaceKg": 0.6292800000000001,
+          "includedFaceKg": 0.6292800000000001,
+          "loadRoute": "fixed",
+          "profileOrRailCentroidPQMM": null
+        },
+        {
+          "item": "complete fixed root, rail, hanger and removable arm stock",
+          "kgByCassette": [
+            20.741680000000002,
+            30.656328000000002,
+            20.741680000000002
+          ],
+          "basis": "Actual finite local frame member mass per root",
+          "sourceFaceKg": 72.139688,
+          "includedFaceKg": 72.139688,
+          "loadRoute": "frame",
+          "profileOrRailCentroidPQMM": null
+        }
+      ],
+      "limitations": [
+        "Physical profiles are conditionally split at listed independent joints; this is not proof of their joining, support or articulation.",
+        "Corner body support uses conservative full-width rib masses; actual mitres, p supports and interfaces still need a finite detail.",
+        "Finite item masses are not a proof that every permitted remaining-state centre of mass lies in the native p/q rectangles.",
+        "Only declared seam weld stock is included. Unspecified apron, rib, splice, socket, guide and contact joining is not supplied by a percentage allowance.",
+        "This partition does not add absent strength, local deflection, receiver, wind or maintenance qualifications."
+      ]
+    }
+  }
+}

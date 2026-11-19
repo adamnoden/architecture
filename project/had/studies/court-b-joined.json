@@ -1,0 +1,822 @@
+{
+  "identity": "UNADOPTED compact B joined ground court/room design; not accepted RH layout",
+  "sourceSha256": {
+    "project/str/studies/house-plan.json": "193805456e26533026814bebe8c6be862e26a7d944c360dbb6047a1bde2d2282",
+    "project/str/studies/house-bedroom-options.json": "57137bfc955d9dc26ad3037952cbf193753649a7464d2c1b9113bcac23e259b9",
+    "compiler/reference-house/georgian/layout-revision.ts": "d05fd7755a286db5b19db022950131982c5eed7e798a6808fa103d19f9a3c670"
+  },
+  "authority": "House-plan B geometry plus compact-front bedroom alternative; accepted layout supplies unchanged outer/court openings only, not9500spine.",
+  "slots": {
+    "north": {
+      "axis": 6600,
+      "clearBand": [
+        6300,
+        6900
+      ],
+      "outerBand": [
+        6098.5,
+        7101.5
+      ],
+      "run": [
+        7750,
+        12000
+      ]
+    },
+    "east": {
+      "axis": 7125,
+      "clearBand": [
+        6825,
+        7425
+      ],
+      "outerBand": [
+        6623.5,
+        7626.5
+      ],
+      "run": [
+        7750,
+        12000
+      ]
+    }
+  },
+  "bridges": {
+    "north": [
+      [
+        7732.5,
+        8432.5
+      ],
+      [
+        11300,
+        12000
+      ]
+    ],
+    "east": [
+      [
+        7732.5,
+        8432.5
+      ],
+      [
+        8950,
+        9650
+      ],
+      [
+        11300,
+        12000
+      ]
+    ]
+  },
+  "bridgeProfile": {
+    "flangeDepth": 120,
+    "flangeTop": -180,
+    "underside": -300,
+    "ribWidth": 140,
+    "ribAboveFlange": 100,
+    "ribTop": -80,
+    "actualRibAxes": {
+      "court": 8082.5,
+      "spine": 9300,
+      "outer": 11667.5
+    },
+    "meaning": "Monolithic140x220 rib supports actual wall;120flange is not a700-wide masonry beam. Rib replaces100insulation locally; thermal bridge unqualified."
+  },
+  "crossingRenewal": [
+    {
+      "route": "north",
+      "permanent": [
+        7732.5,
+        8432.5
+      ],
+      "piece": [
+        7707.5,
+        8457.5
+      ],
+      "destination": [
+        8457.5,
+        9207.5
+      ],
+      "translation": 750,
+      "clearRoom": [
+        8432.5,
+        11300
+      ],
+      "totalLift": 650,
+      "requiredInitialRemovedNeighbor": [
+        8457.5,
+        9207.5
+      ],
+      "witness": {
+        "samples": 51,
+        "bridgeIntact": true,
+        "adjacentSegmentAbsent": true,
+        "finalLowestBottom": 97.42499999999995
+      }
+    },
+    {
+      "route": "north",
+      "permanent": [
+        11300,
+        12000
+      ],
+      "piece": [
+        11275,
+        12025
+      ],
+      "destination": [
+        10525,
+        11275
+      ],
+      "translation": -750,
+      "clearRoom": [
+        8432.5,
+        11300
+      ],
+      "totalLift": 650,
+      "requiredInitialRemovedNeighbor": [
+        10525,
+        11275
+      ],
+      "witness": {
+        "samples": 51,
+        "bridgeIntact": true,
+        "adjacentSegmentAbsent": true,
+        "finalLowestBottom": 76.75
+      }
+    },
+    {
+      "route": "east",
+      "permanent": [
+        7732.5,
+        8432.5
+      ],
+      "piece": [
+        7707.5,
+        8457.5
+      ],
+      "destination": [
+        6957.5,
+        7707.5
+      ],
+      "translation": -750,
+      "clearRoom": [
+        4250,
+        7732.5
+      ],
+      "totalLift": 650,
+      "requiredInitialRemovedNeighbor": [
+        6957.5,
+        7707.5
+      ],
+      "witness": {
+        "samples": 51,
+        "bridgeIntact": true,
+        "adjacentSegmentAbsent": true,
+        "finalLowestBottom": 112.42499999999995
+      }
+    },
+    {
+      "route": "east",
+      "permanent": [
+        8950,
+        9650
+      ],
+      "piece": [
+        8925,
+        9675
+      ],
+      "destination": [
+        9675,
+        10425
+      ],
+      "translation": 750,
+      "clearRoom": [
+        9650,
+        11300
+      ],
+      "totalLift": 650,
+      "requiredInitialRemovedNeighbor": [
+        9675,
+        10425
+      ],
+      "witness": {
+        "samples": 51,
+        "bridgeIntact": true,
+        "adjacentSegmentAbsent": true,
+        "finalLowestBottom": 85.25
+      }
+    },
+    {
+      "route": "east",
+      "permanent": [
+        11300,
+        12000
+      ],
+      "piece": [
+        11275,
+        12025
+      ],
+      "destination": [
+        10525,
+        11275
+      ],
+      "translation": -750,
+      "clearRoom": [
+        9650,
+        11300
+      ],
+      "totalLift": 650,
+      "requiredInitialRemovedNeighbor": [
+        10525,
+        11275
+      ],
+      "witness": {
+        "samples": 51,
+        "bridgeIntact": true,
+        "adjacentSegmentAbsent": true,
+        "finalLowestBottom": 76.75
+      }
+    }
+  ],
+  "renewal": {
+    "maxWetPiece": 750,
+    "totalLift": 650,
+    "grossJointWidth": 300,
+    "carrierBodyWidth": 200,
+    "dryCapsLong": 400,
+    "airLidGrossModuleLong": 840,
+    "airLidNetClearLong": 780,
+    "distinctLidRenewal": "Separate lower lid under permanent bridge requires its own bounded side withdrawal; routine wet-piece clearance is not complete lid renewal or seal qualification.",
+    "fixedCapNeverRemoved": true,
+    "EexteriorReleaseToNbridgeGap": 106,
+    "failedGalleryLift": "750piece exceeds517.5clear between actual court bridge end8432.5 and spinebridge start8950; withdraw E court piece west instead."
+  },
+  "actualCrossings": {
+    "court": [
+      7750,
+      8167.5
+    ],
+    "spine": [
+      9215,
+      9385
+    ],
+    "outer": [
+      11582.5,
+      12000
+    ],
+    "plantNorthFaces": [
+      6415,
+      6585
+    ],
+    "pantryNorthFinishedFace": 8167.5
+  },
+  "pantry": {
+    "oldShelf": [
+      9385,
+      6800,
+      600,
+      1150
+    ],
+    "newShelf": [
+      9450,
+      7767.5,
+      900,
+      400
+    ],
+    "oldFootprintM2": 0.69,
+    "newFootprintM2": 0.36,
+    "frontageLost": 250,
+    "depthLost": 200,
+    "footprintLossPercent": 47.82608695652174,
+    "capacity": "Unknown. This is an explicit smaller furniture envelope, no equivalent storage claim."
+  },
+  "ordinaryCollisions": {
+    "N": [
+      "dining-chair-east-south",
+      "dining-chair-east-north"
+    ],
+    "EoldShelf": true
+  },
+  "maintenance": {
+    "moves": [
+      {
+        "id": "dining-chair-west-south",
+        "from": [
+          4700,
+          8850,
+          500,
+          500
+        ],
+        "to": [
+          5300,
+          8200,
+          500,
+          500
+        ],
+        "path": [
+          [
+            4700,
+            8850
+          ],
+          [
+            4700,
+            8200
+          ],
+          [
+            5300,
+            8200
+          ]
+        ],
+        "meaning": "Exact translating furniture envelope; no person, grip, weight, disassembly or actual furniture product."
+      },
+      {
+        "id": "dining-chair-west-north",
+        "from": [
+          4700,
+          9450,
+          500,
+          500
+        ],
+        "to": [
+          4700,
+          8200,
+          500,
+          500
+        ],
+        "path": [
+          [
+            4700,
+            9450
+          ],
+          [
+            4700,
+            8200
+          ]
+        ],
+        "meaning": "Exact translating furniture envelope; no person, grip, weight, disassembly or actual furniture product."
+      },
+      {
+        "id": "family-side-table300",
+        "from": [
+          4000,
+          9200,
+          300,
+          300
+        ],
+        "to": [
+          5200,
+          10500,
+          300,
+          300
+        ],
+        "path": [
+          [
+            4000,
+            9200
+          ],
+          [
+            4500,
+            9200
+          ],
+          [
+            4500,
+            10500
+          ],
+          [
+            5200,
+            10500
+          ]
+        ],
+        "meaning": "Exact translating furniture envelope; no person, grip, weight, disassembly or actual furniture product."
+      },
+      {
+        "id": "dining-chair-west-north",
+        "from": [
+          4700,
+          8200,
+          500,
+          500
+        ],
+        "to": [
+          1600,
+          10900,
+          500,
+          500
+        ],
+        "path": [
+          [
+            4700,
+            8200
+          ],
+          [
+            4700,
+            8200
+          ],
+          [
+            4700,
+            8950
+          ],
+          [
+            3100,
+            8950
+          ],
+          [
+            3100,
+            10300
+          ],
+          [
+            1600,
+            10300
+          ],
+          [
+            1600,
+            10900
+          ]
+        ],
+        "meaning": "Exact translating furniture envelope; no person, grip, weight, disassembly or actual furniture product."
+      },
+      {
+        "id": "dining-chair-west-south",
+        "from": [
+          5300,
+          8200,
+          500,
+          500
+        ],
+        "to": [
+          1000,
+          10900,
+          500,
+          500
+        ],
+        "path": [
+          [
+            5300,
+            8200
+          ],
+          [
+            4700,
+            8200
+          ],
+          [
+            4700,
+            8950
+          ],
+          [
+            3100,
+            8950
+          ],
+          [
+            3100,
+            10300
+          ],
+          [
+            1000,
+            10300
+          ],
+          [
+            1000,
+            10900
+          ]
+        ],
+        "meaning": "Exact translating furniture envelope; no person, grip, weight, disassembly or actual furniture product."
+      },
+      {
+        "id": "dining-chair-east-south",
+        "from": [
+          6000,
+          8850,
+          500,
+          500
+        ],
+        "to": [
+          1000,
+          10300,
+          500,
+          500
+        ],
+        "path": [
+          [
+            6000,
+            8850
+          ],
+          [
+            6500,
+            8850
+          ],
+          [
+            6500,
+            8200
+          ],
+          [
+            4700,
+            8200
+          ],
+          [
+            4700,
+            8950
+          ],
+          [
+            3100,
+            8950
+          ],
+          [
+            3100,
+            10300
+          ],
+          [
+            1000,
+            10300
+          ],
+          [
+            1000,
+            10300
+          ]
+        ],
+        "meaning": "Exact translating furniture envelope; no person, grip, weight, disassembly or actual furniture product."
+      },
+      {
+        "id": "dining-chair-east-north",
+        "from": [
+          6000,
+          9450,
+          500,
+          500
+        ],
+        "to": [
+          1600,
+          10300,
+          500,
+          500
+        ],
+        "path": [
+          [
+            6000,
+            9450
+          ],
+          [
+            6500,
+            9450
+          ],
+          [
+            6500,
+            8200
+          ],
+          [
+            4700,
+            8200
+          ],
+          [
+            4700,
+            8950
+          ],
+          [
+            3100,
+            8950
+          ],
+          [
+            3100,
+            10300
+          ],
+          [
+            1600,
+            10300
+          ],
+          [
+            1600,
+            10300
+          ]
+        ],
+        "meaning": "Exact translating furniture envelope; no person, grip, weight, disassembly or actual furniture product."
+      }
+    ],
+    "furniture": {
+      "study-desk": [
+        600,
+        600,
+        1600,
+        700
+      ],
+      "study-chair": [
+        1000,
+        1400,
+        1000,
+        900
+      ],
+      "cloak-hanging": [
+        3537.5,
+        1337.5,
+        1125,
+        600
+      ],
+      "guest-WC-pan": [
+        8700,
+        600,
+        400,
+        650
+      ],
+      "guest-WC-basin": [
+        7450,
+        600,
+        400,
+        400
+      ],
+      "plant-water-reserve": [
+        9485,
+        3900,
+        700,
+        700
+      ],
+      "plant-riser": [
+        9410,
+        4700,
+        550,
+        700
+      ],
+      "Q350-body": [
+        9862.5,
+        5550,
+        570,
+        725
+      ],
+      "pantry-shelf-comparison": [
+        9450,
+        7767.5,
+        900,
+        400
+      ],
+      "rear-stack": [
+        417.5,
+        10800,
+        300,
+        750
+      ],
+      "reading-sofa1900x850": [
+        500,
+        9300,
+        1900,
+        850
+      ],
+      "reading-side-table300": [
+        2450,
+        9600,
+        300,
+        300
+      ],
+      "family-sofa1900x750": [
+        3650,
+        9600,
+        750,
+        1900
+      ],
+      "family-side-table300": [
+        5200,
+        10500,
+        300,
+        300
+      ],
+      "dining-table1200x800": [
+        5200,
+        8800,
+        800,
+        1200
+      ],
+      "dining-chair-west-south": [
+        1000,
+        10900,
+        500,
+        500
+      ],
+      "dining-chair-west-north": [
+        1600,
+        10900,
+        500,
+        500
+      ],
+      "dining-chair-east-south": [
+        1000,
+        10300,
+        500,
+        500
+      ],
+      "dining-chair-east-north": [
+        1600,
+        10300,
+        500,
+        500
+      ],
+      "north-sink-station": [
+        8700,
+        10982.5,
+        900,
+        600
+      ],
+      "north-cooking-station": [
+        10800,
+        10982.5,
+        600,
+        600
+      ],
+      "dry-prep-table": [
+        8500,
+        9400,
+        1200,
+        600
+      ],
+      "cold-storage": [
+        9700,
+        8412.5,
+        650,
+        650
+      ]
+    },
+    "tableFixed": true,
+    "firstReleaseFullOuterWidth": 1003,
+    "firstReleaseClearOfAllFurniture": true,
+    "bodyRadius": 300,
+    "bodyPath": [
+      [
+        5400,
+        7450
+      ],
+      [
+        5400,
+        8483.75
+      ],
+      [
+        4886.25,
+        8483.75
+      ],
+      [
+        4886.25,
+        11250
+      ],
+      [
+        5400,
+        11250
+      ],
+      [
+        5400,
+        12500
+      ]
+    ],
+    "minStaticBodyReserve": 13.75,
+    "governing": "rear-west-return",
+    "limits": "Open door APERTURES only; actual leaf/handles, human handling, guarding, temporary rain diversion, safe lifting and egress approval not proved. Reading room deliberately becomes chair store; ordinary room use unavailable."
+  },
+  "levels": {
+    "cover": 280,
+    "coverBottom": -280,
+    "independentLidTop": -310,
+    "lidSteel": 6,
+    "lidCopperSeal": 2,
+    "lidClosureBottom": -318,
+    "inletCrown": -378,
+    "inletInvert": -538,
+    "outletInvert": -580.5,
+    "boxBottom": -638,
+    "outerBottom": -839.5,
+    "authoredSoil": -1300,
+    "rawClearance": 460.5,
+    "after300Stress": 160.5,
+    "afterConstructionLoss": 110.5,
+    "beyondFinal50Reserve": 60.5
+  },
+  "layerRecipe": {
+    "finish": 15,
+    "distribution": 65,
+    "insulation": 100,
+    "rcCap": 100
+  },
+  "sectionScope": "Coordinated MAT/STR trial: other owners retain capacity, complete gas/water/material acceptance. Covers and containment are independent of carrier; no280universalminimum.",
+  "rejectedInherited": {
+    "cover100": 100,
+    "completeCapDepth280": 280,
+    "minimumCapAloneClashWithOldCrown": 120,
+    "syntheticReceiver": -450,
+    "finalDeeperOutlet": -580.5,
+    "outletBelowReceiver": 130.5,
+    "interpretation": "280cap already defeats100reserve; separate lower lid and bridge clearance further deepen final constructive case."
+  },
+  "siteCost": {
+    "D": 1300,
+    "acceptedSchematicDifference": 150,
+    "wholeHouseRise": 1150,
+    "totalApproachAt1in20": 26000,
+    "incrementalApproachAt1in20": 23000,
+    "landings": "Additional; geometry and available plot unknown.",
+    "roofAndEavesRiseRelativeFixedGrade": 1150,
+    "actualHeave": "Unknown;300heave,50constructionloss and50finalreserve are authored adverse comparison, not survey, law or universal margin."
+  },
+  "firstHarm": {
+    "openNorthDoorWalkingPlane": 0,
+    "doorAperture": [
+      4800,
+      7200
+    ],
+    "doorCentre": 6000,
+    "Naxis": 6600,
+    "carrierCrown": -378,
+    "exposedEcrest": -75,
+    "actualClosedDoorLowestSusceptibleJoint": "UNRESOLVED: no product-bound sill/weep/end/meeting-stile/pan/frame fixing datum",
+    "firstHarmConclusion": "Open near-level doorway admits water at walking plane0. Neither that conditional datum nor−75activation proves a safe closed-doorset operating water level. Floor gas/cap joints and threshold water boundary remain unaccepted."
+  },
+  "disposition": "Develop D1300 as one constructive reference design; reject inherited100cover/300rise joined package. Do not adopt B, D1300, hydraulic flow, receiving levels or construction readiness. HAD03 incomplete; RWT06 blocked."
+}

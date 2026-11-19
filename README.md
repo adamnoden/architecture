@@ -1,23 +1,25 @@
 ---
+title: Repository guide
 sidebar: false
 aside: false
 outline: false
 prev: false
 next: false
-pageClass: house-kernel-landing-page
 ---
 
 # Ovid’s House
+
+For the architectural introduction, visit the [homepage](index.md). This README maps the repository, its sources and contributor workflows.
 
 A house should seek **permanence without stasis**.
 
 **Ovid’s House** is an architectural design-research project about how a house can remain durable while the shorter-lived things inside it are maintained, repaired, replaced and changed. It treats those relationships as architecture: access, interfaces, movement, failure, replacement and the geometry needed to work on a building after handover.
 
+The practical purpose is to design and ultimately build the owner’s own home on a later-selected London site. The book is a means of thinking through that architecture and communicating what it teaches; computational tools support consistent design information and bounded checks. The Reference House is the pre-site design study, with real-site adaptation and construction still to be undertaken.
+
 The project does not argue that everything should be demountable, exposed or technically novel. Capacity for change must earn its spatial, material and financial cost. Conventional construction should win where it is the better architectural answer.
 
 The public architectural proposition begins in the [manuscript](docs/manuscript/) and its [governing principles](docs/manuscript/governing-principles.md). The [reading guide](docs/reading-guide.md) is the shortest route through the publication argument.
-
-The current project brief excludes flat roofs, including dormer and ancillary roofs. The [roof constraint](docs/reference-house/georgian-replan.md#roof-constraint) owns this project-specific choice.
 
 ## Project map
 
@@ -51,7 +53,7 @@ flowchart TB
     DPL -. "compatibility / bounded adaptation question" .-> RH
 ```
 
-The diagram is an **authority and navigation map**, not a claim that every arrow is an implemented data pipeline. In particular, the deployment/context relation is a separately governed question, not a claim that a site-deployment compiler already exists.
+The diagram is an **authority and navigation map**, not a claim that every arrow is an implemented data pipeline. The [deployment compiler](https://github.com/adamnoden/architecture/blob/main/compiler/dpl/README.md) implements bounded conformance and obligation/evidence checks; it does not establish whole-site compatibility or select architecture.
 
 ### Protected distinctions
 
@@ -63,12 +65,13 @@ The diagram is an **authority and navigation map**, not a claim that every arrow
 - **Research, prototypes and professional review** can support, narrow or falsify claims. Evidence does not become doctrine merely because it is favourable.
 - **Metamorph Compiler** checks bounded executable representations. A passing compile is not architectural merit, engineering adequacy or regulatory approval.
 - **Generated inspection outputs** are downstream views of controlled sources. They are not architectural source authority.
-- **Deployment, jurisdiction and real-site work** is a distinct layer. Its exact model is owned by the DPL programme while that foundation is being established; the README does not assume an implemented deployment compiler that does not yet exist.
+- **Deployment, jurisdiction and real-site work** is a distinct layer. The DPL programme and [bounded implementation](https://github.com/adamnoden/architecture/blob/main/compiler/dpl/README.md) own its model and checks. The completed conditional studies retain their historical house basis; [owner-house site work](https://github.com/adamnoden/architecture/blob/main/project/dpl/owner-house-site-programme.md) must establish applicability to the accepted design and an actual site.
 
 ## What is authoritative for what?
 
 | Kind | Canonical owner | Read it as |
 |---|---|---|
+| Public introduction | [`index.md`](index.md) | Website homepage and onward routes; not a second source of architectural doctrine |
 | Architectural proposition | [`docs/manuscript/`](docs/manuscript/) | Public architectural argument and governing principles |
 | Reusable design knowledge | [`docs/patterns/`](docs/patterns/) | Patterns, strategies, candidates and their stated evidence status |
 | Architectural language | [`docs/grammar/`](docs/grammar/) | Grammar framework and selectable grammar instances |
@@ -80,7 +83,8 @@ The diagram is an **authority and navigation map**, not a claim that every arrow
 | Drawing/publication records | `docs/publication/` | Authored authority, drawing and proof records for publication production |
 | Publication build system | `publication/` | Preparation, validation, metadata, layout and proof machinery |
 | Delivery requirements | [`docs/delivery/`](docs/delivery/) | Mature requirements intended for an appointed project team |
-| Current project state | `STATUS.md` | Present maturity, active programme state and next meaningful gates |
+| Current project state | `STATUS.md` | Generated durable execution state and assessed maturity; query live claims separately |
+| Minimum Viable Bureaucracy (MVB) | [Integrated manual](https://github.com/adamnoden/architecture/blob/main/project/control/README.md) | Workstreams, packets, dependencies, agent leases, validation, integration and recovery |
 | Operating rules | `AGENTS.md` | Durable rules for agents and contributors changing the repository |
 | Durable programme history | `project/` | Audits, programme records, provenance and machine-readable project controls |
 
@@ -94,7 +98,7 @@ Start with the [reading guide](docs/reading-guide.md), then the [Preface](docs/m
 
 ### Developer or contributor
 
-Before changing the repository, read `AGENTS.md`. Use `docs/README.md` for documentation ownership, [`docs/computational/README.md`](docs/computational/) for computational proof boundaries and `compiler/README.md` for executable workflow. [`package.json`](package.json) is the command authority.
+Before changing the repository, read `AGENTS.md` and the [Minimum Viable Bureaucracy (MVB) manual](https://github.com/adamnoden/architecture/blob/main/project/control/README.md). The manual explains the shared execution scaffolding, from workstream and dependency modelling through concurrent agent claims, GitHub automation and recovery. Use `docs/README.md` for documentation ownership, [`docs/computational/README.md`](docs/computational/) for computational proof boundaries and `compiler/README.md` for executable workflow. [`package.json`](package.json) is the command authority.
 
 ### Investigating a decision
 
@@ -113,7 +117,7 @@ Start at the surface that owns the decision, then follow its explicit evidence/p
 | `.github/` | CI and repository automation |
 | `.vitepress/` | Website configuration and navigation; website structure does not redefine repository ownership or publication order |
 
-The detailed ownership model inside `docs/` is recorded in `docs/README.md`.
+The detailed ownership model inside `docs/` is recorded in `docs/README.md`. The public root is authored separately in `index.md`; this README remains the repository guide, also published at `/project/repository` on the website. Do not merge those two audiences back into a single page.
 
 ## Source and generated boundaries
 
@@ -125,7 +129,7 @@ Publication records, architectural publication drawings, compiler proof artefact
 
 ## Build and verification
 
-Install the locked dependencies with `npm ci`. The canonical repository-health entry point is:
+Use the repository's declared Node.js runtime and Python 3. The material studies checked by canonical health use the Python standard library; no extra Python packages are required. Install the locked Node dependencies with `npm ci`. The canonical repository-health entry point is:
 
 ```sh
 npm run check
@@ -147,4 +151,4 @@ Use [`package.json`](package.json) for the current command set and local subsyst
 
 The repository is intentionally ahead in some internal forms and behind in external validation. Physical testing, competent professional review and real-site evidence remain distinct from internal coordination and deterministic checks.
 
-For current project-wide state, maturity judgements and active work, use `STATUS.md`. This README is deliberately kept free of packet numbers, branch hashes and live work queues so that it remains a stable map rather than a second status system.
+For current project-wide durable state and maturity judgements, use `STATUS.md`; use `npm run control:brief` for observed live occupancy and available work. The [current Reference House basis](docs/reference-house/current-house-basis.md) distinguishes the accepted design from historical technical studies. This README is deliberately kept free of packet numbers, branch hashes and live work queues so that it remains a stable map rather than a second status system.

@@ -1,0 +1,94 @@
+{
+  "status": "INDEPENDENT NUMERICAL AUDIT; NOT A COMPLETE PHYSICAL ASSEMBLY PROOF",
+  "startingDevelopmentCommit": "a9f7fddc18103ef36f99a5e0e8fd0d86e09b4986",
+  "cornerFlowLps": {
+    "total": 3.25815,
+    "valley": 0.3456,
+    "directFace": 0.4248,
+    "newGoods": 0.17655,
+    "adverseArm": 1.71735,
+    "otherArm": 1.1952,
+    "SWValleyToHead": 0.3456
+  },
+  "independentProfileMinimum": {
+    "distanceMM": 2900.0,
+    "face": 1,
+    "flowLps": 1.29255,
+    "bedMM": 6620.375,
+    "depthMM": 29.628327578,
+    "K4MM": 12.669670477,
+    "Froude": 0.462396026,
+    "reserveMM": 3.327001944
+  },
+  "sourceConservativeIntervalMinimumMM": 3.323805865,
+  "independentSpillHeadsMM": {
+    "uniformHalf": 20.30405452,
+    "lowestHalfBlocked": 29.769549002,
+    "highestHalfBlocked": 15.394549002
+  },
+  "uniformHalfUnderstatementMM": 9.465494481,
+  "transport": {
+    "primary": {
+      "flowLps": 3.25815,
+      "widthMM": 175.0,
+      "minimumDepthMM": 93.87626887,
+      "lengthMM": 5800.0,
+      "n": 0.02,
+      "K": 4,
+      "frictionMM": 5.652811677,
+      "localMM": 8.018911121,
+      "sumMM": 13.671722798
+    },
+    "lower": {
+      "flowLps": 3.25815,
+      "widthMM": 212.5,
+      "minimumDepthMM": 125.0,
+      "lengthMM": 5650.0,
+      "n": 0.02,
+      "K": 4,
+      "frictionMM": 1.534510083,
+      "localMM": 3.067363482,
+      "sumMM": 4.601873565
+    }
+  },
+  "current170And6795": {
+    "primaryWaterMM": 160.797991667,
+    "lowerWaterMM": 183.371422567,
+    "primary170ReserveMM": 9.202008333,
+    "lower190ReserveMM": 6.628577433,
+    "primaryRearReserveMM": 3.452008333
+  },
+  "former160And6790Controls": {
+    "primary160ReserveMM": -0.797991667,
+    "lower160ReserveMM": -23.371422567,
+    "6790RearReserveMM": -1.547991667,
+    "accepted": false
+  },
+  "unknownCrestShapeControl": {
+    "allClearCrestAtMaximumHeadMM": 37.491501621,
+    "waterWithSameTransportMM": 191.093375187,
+    "190ReserveMM": -1.093375187,
+    "accepted": false
+  },
+  "conditions": [
+    "The interval proof bounds normal-depth plusK4, not a solved subcritical backwater profile.",
+    "Worst low-half blockage is valid for the authored LINEAR crest and common-level overflow relation; a total-rise cap is insufficient.",
+    "Full flow over each full arm at its minimum flooded depth is a deliberately conservative transport bound.",
+    "Count10 setting+14 movement once in the water level and once in the separately checked rear inequality; do not add them again with transport. The24 mm allowance must bound adverse bed/crest relative shifts.",
+    "25 splash is freeboard, not uniform stored water mass. RetainingK4 with the conservative spill coefficient may duplicate a local allowance conservatively.",
+    "Actual geometry,14 mm complete movement, jets, inlets, outlets, native resistance and ordinary renewal remain separate."
+  ],
+  "validation": {
+    "owningJSONReproduced": true,
+    "independentNewtonAndCrestQuadratureMatched": true,
+    "former1606790AndUnknownCrestControlsFail": true,
+    "physicalAssemblyAccepted": false
+  },
+  "sourceHashes": {
+    "project/rof/studies/roof_water_inner_hydraulics.py": "49dc655d0e936cc08102c5688e35c1a14c19807396b418d69a9fb749f716dde7",
+    "project/rof/studies/roof_water_inner_hydraulics.json": "935e327beeb63086ea95f7e72edd44c161ba75d767481ea641af00bbb2ecf56f",
+    "project/mat/studies/ring-roof-family.json": "b8aa44fab2b13d329f4ccb6cda0210c1fe3aab1b13e8ec96a47e9e0271c07a81",
+    "project/rwt/studies/selected-water-event.json": "179832f10e0b3c2cc3cde05d7b99878819c49b4e5ef451785c5a5c99a6e7e0d3",
+    "project/rof/studies/inner_hydraulics_audit.py": "7d2b363fc35ccdac3e6f22f302d3ca16d2d8a6141b501bcc00f7a8a0e8e3ef95"
+  }
+}

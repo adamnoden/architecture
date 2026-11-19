@@ -1,0 +1,130 @@
+{
+  "status": "Authored unadopted pre-site comparison; no real plot, installed system or material exception.",
+  "source": {
+    "brief": "11d25edd516e2c899ed1213abcd92bf19bdb35566421e28d5136b73f9225b34d",
+    "site": "97f57fc1008174f70541fea428a4248e4807cdf18be2a57c76e4a730b00c6768",
+    "charter": "2cc61f1e6872ad9fe19d510f86d3ff98de83ae5e38d08accc6d8038f3ce371c9"
+  },
+  "electricalPrimary": {
+    "document": "UKPN EDS 08-2110-13c",
+    "version": "09",
+    "date": "01/12/2025",
+    "sha256": "ccd29a0bebe16422d818447bebedf3fb0fedfa852badfda36d984f49b0633edb",
+    "threePhase100A": {
+      "height": 1100,
+      "depth": 250,
+      "dnoOnlyWidth": 445,
+      "frontWorking": 1000,
+      "ductBendRadiusMinimum": 250,
+      "ductSize": 50
+    },
+    "applicability": "Comparative supply only; actual service and current applicable drawing require DNO agreement."
+  },
+  "geometryMm": {
+    "cabinet": {
+      "internal": [
+        795,
+        250,
+        1100
+      ],
+      "wall": 215,
+      "doorReservation": 50,
+      "plinth": 100,
+      "eaves": 1500,
+      "pitchDegrees": 30,
+      "customerWidthReservation": 350
+    },
+    "walkIn": {
+      "internal": [
+        1800,
+        1800,
+        2100
+      ],
+      "wall": 215,
+      "doorClear": 900,
+      "equipmentDepth": 500,
+      "workingDepth": 1300
+    },
+    "separate": {
+      "electricalInternal": [
+        795,
+        250,
+        1100
+      ],
+      "communicationsInternal": [
+        400,
+        250,
+        600
+      ],
+      "wall": 215,
+      "clearGap": 300,
+      "waterChamberClear": [
+        600,
+        600
+      ],
+      "waterChamberSeparation": 1000,
+      "communicationsEaves": 950
+    },
+    "raceway": {
+      "length": 12000,
+      "clearWidth": 600,
+      "wall": 100,
+      "depthAtHouse": 650,
+      "fallDenominator": 100,
+      "coverLength": 500,
+      "coverThickness": 8,
+      "steelDensityKgM3": 7850,
+      "houseDryEntryHeight": 450,
+      "assessmentGroundwater": -1200,
+      "assumedReceivingWater": -900,
+      "blockedStateExternalWater": 0,
+      "waterPipeCrownDepth": 900,
+      "waterPipeDiameter": 32
+    },
+    "movement": {
+      "verticalSensitivity": 50,
+      "transitionRun": 1000
+    }
+  },
+  "results": {
+    "cabinetOuter": [
+      1225,
+      515
+    ],
+    "walkInOuter": [
+      2230,
+      2230
+    ],
+    "communicationsOuter": [
+      830,
+      515
+    ],
+    "clusterOuterWidth": 2355,
+    "footprintsM2": {
+      "cabinet": 0.630875,
+      "walkIn": 4.9729,
+      "separateBuilt": 1.058325,
+      "separateEnvelope": 1.212825
+    },
+    "cabinetRoofRise": 353.62703987864575,
+    "dnoAndCustomerWidth": 795,
+    "racewayExitInvert": -770,
+    "normalOutfallHead": 130,
+    "normalWaterBelowInvert": -430,
+    "blockedWaterAboveHouseInvert": 650,
+    "blockedWaterBelowDryEntry": 450,
+    "bareSteelCoverMassKg": 25.12,
+    "coverCount": 24,
+    "excavationPrismM3": 6.816,
+    "movementAngleDegrees": 2.8624052261117474,
+    "waterBelowTroughBase": 250,
+    "missingSiteAndAssemblyInputs": [
+      "Actual groundwater/flood and receiving levels",
+      "Cable diameter, rating, bend radius, terminations and pulling force",
+      "Water duty, frost/no-demand protection and movement package",
+      "Support/cover load class, members, lifting device and joints",
+      "Foul invert and backwater",
+      "Approved constituents, roof, membranes and operator access"
+    ]
+  }
+}

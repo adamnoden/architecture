@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 600" role="img" aria-labelledby="t d">
+<title id="t">East basin, staff escape and module exchange</title>
+<desc id="d">The upper service landing turns north before the stair descends. The goods lift and its unloading bay lie further north. Two open water channels continue east below the upper landing.</desc>
+<defs>
+  <pattern id="steps" width="18" height="18" patternUnits="userSpaceOnUse"><path d="M0 0V18" stroke="#68846f" stroke-width="2"/></pattern>
+  <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L7 3L0 6Z" fill="#286758"/></marker>
+  <style>text{font-family:DejaVu Sans,sans-serif;fill:#25333c}.t{font-size:25px;font-weight:bold}.h{font-size:17px;font-weight:bold}.s{font-size:13px}.tiny{font-size:12px}.guide{stroke:#536875;fill:none;stroke-width:1.5}.wet{fill:#bfdeef;stroke:#407797}.dry{fill:#e4eee6;stroke:#577863}.cargo{fill:#e6def0;stroke:#856e9a}.panel{fill:#f4f6f6;stroke:#bcc6c8}</style>
+</defs>
+<rect width="1020" height="600" fill="#fff"/>
+<text x="32" y="39" class="t">East ground outfall and dry withdrawal</text>
+<text x="32" y="64" class="s">Development section • house coordinates in mm • plot levels and installed performance unverified</text>
+<rect x="26" y="83" width="968" height="302" rx="4" class="panel"/>
+<text x="722" y="112" class="h">Upper service plan</text>
+<text x="847" y="134" class="tiny">N ↑    EAST →</text>
+<!-- Plan 0.06 px/mm, x=92+0.06(X-12000), y=385-0.06(Y-6000) -->
+<rect x="107" y="97" width="237" height="201" fill="#fff" stroke="#95a3a8" transform="translate(0 0)"/>
+<rect x="107" y="97" width="162" height="72" class="cargo"/><text x="115" y="130" class="tiny">Handover pad</text>
+<rect x="107" y="182.5" width="162" height="72" class="cargo"/><text x="115" y="216" class="tiny">Rack shifted 75 N</text>
+<rect x="290" y="205" width="48" height="48" fill="#e6def0" stroke="#856e9a"/><text x="294" y="232" class="tiny">Pad</text>
+<rect x="107" y="259" width="237" height="39" class="dry"/>
+
+<rect x="344" y="181" width="72" height="124.5" class="dry" fill-opacity=".65"/>
+<rect x="416" y="190" width="198" height="54" class="dry"/><rect x="416" y="190" width="198" height="54" fill="url(#steps)"/>
+<rect x="614" y="190" width="72" height="54" class="dry"/>
+<path d="M158 278H344H380V217H653" fill="none" stroke="#286758" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="699" y="207" class="s">Dry lower landing</text><text x="699" y="227" class="tiny">X21900 · Z−1800</text>
+<rect x="344" y="88" width="180" height="90" class="cargo"/><rect x="524" y="88" width="180" height="90" class="cargo"/>
+<text x="362" y="130" class="s">Goods lift</text><text x="541" y="130" class="s">Ground swap bay</text>
+<path d="M237 146H678" fill="none" stroke="#856e9a" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="719" y="155" class="s">One module at a time</text>
+<rect x="122" y="283" width="120" height="96" class="wet" fill-opacity=".72"/>
+<rect x="242" y="285" width="90" height="24" class="wet"/><rect x="242" y="311.5" width="90" height="66" class="wet"/>
+<rect x="332" y="285" width="84" height="24" class="wet" fill-opacity=".48"/><rect x="332" y="311.5" width="84" height="66" class="wet" fill-opacity=".48"/>
+<text x="139" y="333" class="s">East basin</text><text x="248" y="303" class="tiny">Low 400</text><text x="246" y="347" class="tiny">High 1100</text>
+<text x="439" y="324" class="s">Separate armoured aprons below deck</text><text x="439" y="344" class="tiny">Both site mouths require water ≤ −1600 at X16000</text>
+<text x="439" y="365" class="tiny">Keep the downstream wet corridor south of the stair</text>
+<rect x="26" y="401" width="968" height="175" rx="4" class="panel"/>
+<text x="43" y="429" class="h">East section · two parallel water paths</text>
+<path d="M63 526H230L466 547" fill="none" stroke="#407797" stroke-width="4"/>
+<path d="M111 526V465H230V526" fill="none" stroke="#4285a0" stroke-width="3" stroke-dasharray="7 4"/>
+<path d="M63 455H228" stroke="#c1723f" stroke-width="2"/><path d="M304 511H477" stroke="#488da6" stroke-width="2"/>
+<text x="238" y="456" class="tiny">Fault limit −1250</text><text x="238" y="477" class="tiny">Overflow crest −1300</text>
+<text x="68" y="550" class="tiny">Low bed −1650</text><text x="358" y="567" class="tiny">Far bed −1725</text>
+<text x="512" y="458" class="s">Primary plugged, half of high crest clear</text>
+<text x="512" y="485" class="h">7.41 mm head margin at 4.43895 L/s</text>
+<text x="512" y="509" class="tiny">Includes 5 mm crest error and one velocity head of local loss.</text>
+<text x="512" y="535" class="tiny">Prove the free drop, dissipation, debris access and site tailwater.</text>
+</svg>

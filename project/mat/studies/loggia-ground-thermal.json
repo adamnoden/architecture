@@ -1,0 +1,188 @@
+{
+  "authority": "Bounded internal2Dair-backed comparison only; NO ISO13370/ENISO10211/house/material/site acceptance. Coupled240AAC trial NOT selected/admitted.",
+  "nodeStatus": "Currentprimaryjoint unearned; no beam/node changes adopted. RCpier continuity would bypassAAC unless actual bearing/starter joint is redesigned.",
+  "assumptions": {
+    "roomAir": 1,
+    "coldAir": 0,
+    "filmRsi": 0.13,
+    "outsideH": 25,
+    "masonryLambda": 0.77,
+    "dpcLambda": 1.3,
+    "mortarLambda": 0.87,
+    "rcLambda": 1.75,
+    "stoneLambda": 2,
+    "screedLambda": 1.4,
+    "plasterLambda": 0.57,
+    "glassLambda": 0.041,
+    "AACwetComparator": 0.29,
+    "AACwetterStress": 0.5,
+    "domainMm": [
+      -1800,
+      100,
+      -1000,
+      1200
+    ],
+    "domainCuts": "Adiabatic; allnonroomvoids treatedcoldventilatedair, no soilcoupling/cavityradiation/watertransient/pointbridges."
+  },
+  "candidateGeometry": {
+    "floor": [
+      15,
+      65,
+      240,
+      200
+    ],
+    "floorZ": [
+      0,
+      -15,
+      -80,
+      -320,
+      -520
+    ],
+    "aacBlock": [
+      -395,
+      -180
+    ],
+    "aacBed": [
+      -405,
+      -395
+    ],
+    "dpc": [
+      -180,
+      -30
+    ],
+    "beam": [
+      -855,
+      -405
+    ],
+    "wallGlassDownTo": -405,
+    "slabAACcontact": [
+      -395,
+      -320
+    ],
+    "shortestTopAACToColdSlab": 140,
+    "requiredD": 1355,
+    "authoredDtrial": 1400,
+    "H": 300,
+    "constructionLoss": 50,
+    "vent": 150,
+    "frontSlopingRun": 28000,
+    "gardenPathTotal": 29750
+  },
+  "loadScreen": {
+    "source": "STRowner message/current114.76line/71.138N/1.442M receiver, not finalnodepass",
+    "conservativeAllLineOn140Mpa": 0.8197142857142857,
+    "fk140M4": 5.5,
+    "gammaStress": 3,
+    "eccentricReductionStress": 0.6666666666666666,
+    "effectiveDesignStressMpa": 1.222222222222222,
+    "pierAverageMpa": 0.608017094017094,
+    "pierElasticMaxMpa": 0.892,
+    "pierElasticMinMpa": 0.324,
+    "pierFailure": "275\u00d7440singleunit doesnotcover450receiver; headjointaloneisnotmissingAAC. Fullbed/moment/actualpad/starteranchorage remains unearned."
+  },
+  "sourceEvidence": {
+    "product": "H+H HighStrength7.3/AAC140, traditionalM4 fulljoints (NOT Celfixthinlayer substitution)",
+    "BBA": "https://www.hplush.com/fileadmin/UK/Certificates/BBA/BBA_Cert_01_3816_Sheet_2_High_and_Super_Strength__Jan_2026_.pdf",
+    "strength": "https://www.hplush.com/fileadmin/UK/TSD_Files/TSD03_Characteristic_strength_of_masonry__Jun_2025_.pdf",
+    "EPD": "https://www.hplush.com/fileadmin/UK/EPDs/MLM045.00_EPD_H_H_Celcon_High___Super_Strength_Grade_Products_2024.pdf",
+    "materialScope": "EPD99.98%minerals/.02%metals and100yearreference are NOT exactcompletecomposition or1000yearproof. Lubricatedmoulds/gradepaint/mortar/additives remain exactunknown. No syntheticexception."
+  },
+  "grossInternalGeometryProbe": {
+    "floorArea": 93.459,
+    "perimeter": 61.904,
+    "scope": "Declared rectangleunion estimate for27finish candidate. NOT surveyed/acceptedISOground geometry."
+  },
+  "cases": [
+    {
+      "glass": 100,
+      "aac": false,
+      "lambdaAAC": 0.29,
+      "grid": 5,
+      "Qroom": 1.1282776748160002,
+      "Qoutside": 1.1282776748163763,
+      "balance": -3.7614356074300304e-13,
+      "UfloorAir": 0.3600698811581202,
+      "Uwall": 0.189493158321766,
+      "psi": 0.4398164020069081,
+      "floorEffectiveProbe": 0.6513890109351951,
+      "minimumT": 4.673513581059534e-14,
+      "maxT": 0.9742881008401864
+    },
+    {
+      "glass": 240,
+      "aac": true,
+      "lambdaAAC": 0.29,
+      "grid": 5,
+      "Qroom": 0.6104193415294925,
+      "Qoutside": 0.6104193415296744,
+      "balance": -1.8185453143360064e-13,
+      "UfloorAir": 0.16150202510596812,
+      "Uwall": 0.189493158321766,
+      "psi": 0.1762242083951812,
+      "floorEffectiveProbe": 0.2782268284581899,
+      "minimumT": 1.409802002830287e-16,
+      "maxT": 0.9787941854390627
+    },
+    {
+      "glass": 360,
+      "aac": true,
+      "lambdaAAC": 0.29,
+      "grid": 5,
+      "Qroom": 0.5328781739451822,
+      "Qoutside": 0.5328781739454225,
+      "balance": -2.402522625288839e-13,
+      "UfloorAir": 0.10966472970223354,
+      "Uwall": 0.189493158321766,
+      "psi": 0.16506069757535305,
+      "floorEffectiveProbe": 0.21899521069073818,
+      "minimumT": 1.796457870094144e-16,
+      "maxT": 0.9855938608708139
+    },
+    {
+      "glass": 360,
+      "aac": true,
+      "lambdaAAC": 0.5,
+      "grid": 5,
+      "Qroom": 0.5798199986455844,
+      "Qoutside": 0.5798199986458338,
+      "balance": -2.4935609133081016e-13,
+      "UfloorAir": 0.10966472970223354,
+      "Uwall": 0.189493158321766,
+      "psi": 0.21200252227575525,
+      "floorEffectiveProbe": 0.2500878472078601,
+      "minimumT": 2.401963942271159e-16,
+      "maxT": 0.9855908056794664
+    },
+    {
+      "glass": 100,
+      "aac": false,
+      "lambdaAAC": 0.29,
+      "grid": 2.5,
+      "Qroom": 1.1273906257360307,
+      "Qoutside": 1.1273906257377386,
+      "balance": -1.7079671010833408e-12,
+      "UfloorAir": 0.3600698811581202,
+      "Uwall": 0.189493158321766,
+      "psi": 0.4389293529269386,
+      "floorEffectiveProbe": 0.6508014603916794,
+      "minimumT": 2.838905728816263e-14,
+      "maxT": 0.9747117421235472
+    },
+    {
+      "glass": 240,
+      "aac": true,
+      "lambdaAAC": 0.29,
+      "grid": 2.5,
+      "Qroom": 0.6103800484226326,
+      "Qoutside": 0.6103800484236284,
+      "balance": -9.95759030786303e-13,
+      "UfloorAir": 0.16150202510596812,
+      "Uwall": 0.189493158321766,
+      "psi": 0.17618491528832128,
+      "floorEffectiveProbe": 0.27820080206707665,
+      "minimumT": 7.946307310915781e-17,
+      "maxT": 0.9788951978083077
+    }
+  ],
+  "decision": "225AAC course +240field materiallyreduces modelheatflow but doesNOTearn completeenvelope recommendation. Field360 alone stillleaves edge penalty; exactreceivingjoint and thermal/materialqualification remain unresolved beforeselection."
+}

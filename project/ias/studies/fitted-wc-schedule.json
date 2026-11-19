@@ -1,0 +1,185 @@
+{
+  "basis": "Joined pre-site fixture selection; the pads, source interfaces and product limits retain their separate approval duties.",
+  "coordinateSystem": "All plan rectangles are X/Y/width/depth in millimetres. Section levels are local to the room FFL.",
+  "guest": {
+    "pan": [
+      8720.0,
+      707.5,
+      360.0,
+      525.0
+    ],
+    "cistern": [
+      8661,
+      492.5,
+      454.0,
+      218.0
+    ],
+    "valve": [
+      8745,
+      547.5
+    ],
+    "servicesReferenceXY": [
+      8900,
+      650
+    ],
+    "soilAxisZ": 195,
+    "southWall": [
+      8900,
+      0,
+      163.75
+    ],
+    "selectedTakeoff": "Continuous formed above-floor south-wall branch",
+    "firstDraw": [
+      0,
+      100
+    ],
+    "plugDraw": [
+      0,
+      180
+    ],
+    "dryPanRest": [
+      8070,
+      1500,
+      360,
+      525
+    ]
+  },
+  "rear": {
+    "pan": [
+      729.5,
+      11000,
+      560,
+      355
+    ],
+    "cabinet": [
+      429.5,
+      10800,
+      300,
+      750
+    ],
+    "valve": [
+      500,
+      10000
+    ],
+    "stack": [
+      567.5,
+      11177.5,
+      160
+    ],
+    "localSoilAxisZ": 185,
+    "soilSpigotTip": [
+      864.5,
+      11177.5,
+      185
+    ],
+    "flushAxisZ": 340,
+    "firstDraw": [
+      250,
+      0
+    ],
+    "dryPanRest": [
+      3800,
+      10622.5,
+      560,
+      355
+    ]
+  },
+  "replay": {
+    "guestBendDegrees": 3.51083,
+    "guestStraightY": 478.76275,
+    "guestCarrierClear": 430.0,
+    "guestWorkerClear": 6.44127,
+    "guestGripReach": 430.37774,
+    "guestCapReach": 565.00553,
+    "rearStackEntry": 176.70049,
+    "rearTransferClear": 62.5,
+    "rearWorkerClear": 20,
+    "rearGripReach": 451.69127
+  },
+  "family": {
+    "suite": [
+      10813.357725457383,
+      5705.0,
+      640.0,
+      340.0
+    ],
+    "matchedSuiteMovement": [
+      10738.357725457383,
+      5695.0,
+      720.0,
+      410.0
+    ],
+    "back": [
+      11453.357725457383,
+      5875.0
+    ],
+    "fixedServicePort": [
+      11003.357725457383,
+      6150.0
+    ],
+    "travellingServicePort": [
+      11003.357725457383,
+      6085.0
+    ],
+    "firstDrawMM": 150,
+    "onwardCarrierCentrePath": [
+      [
+        10983.357725457383,
+        5875.0
+      ],
+      [
+        10425,
+        5875.0
+      ],
+      [
+        10425,
+        5900
+      ]
+    ]
+  },
+  "principal": {
+    "suite": [
+      10980.0,
+      7425.661929787798,
+      340.0,
+      640.0
+    ],
+    "matchedSuiteMovement": [
+      10920.0,
+      7350.661929787798,
+      410.0,
+      720.0
+    ],
+    "back": [
+      11150.0,
+      8065.661929787798
+    ],
+    "fixedServicePort": [
+      10875.0,
+      7920.661929787798
+    ],
+    "travellingServicePort": [
+      10940.0,
+      7920.661929787798
+    ],
+    "firstDrawMM": 150,
+    "onwardCarrierCentrePath": [
+      [
+        11150.0,
+        7595.661929787798
+      ],
+      [
+        11150.0,
+        7525.661929787798
+      ],
+      [
+        10537.5,
+        7525.661929787798
+      ],
+      [
+        10537.5,
+        8865
+      ]
+    ]
+  }
+}

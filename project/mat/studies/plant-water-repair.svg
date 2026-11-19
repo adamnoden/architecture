@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="550" viewBox="0 0 1040 550">
+<title>Incoming water and cylinder removal at the east plant station</title>
+<desc>The fixed water run crosses two wall cores, a radiator and the cylinder route. Two unmade slip sleeves park clear of a 100 mm repair spool.</desc>
+<rect width="1040" height="550" fill="#faf9f5"/><g font-family="Arial, sans-serif">
+<text x="32" y="40" fill="#253d45" font-size="27">Where the incoming water meets the cylinder route</text>
+<text x="32" y="68" fill="#253d45" font-size="15">Plan at left. The axial repair detail at right uses a larger scale. Dimensions in millimetres.</text>
+<rect x="46.00" y="428.09" width="107.35" height="15.82" fill="#8c9288" stroke="none"/>
+<rect x="255.05" y="428.09" width="96.05" height="15.82" fill="#8c9288" stroke="none"/>
+<rect x="46.00" y="298.14" width="39.55" height="15.82" fill="#8c9288" stroke="none"/>
+<rect x="229.62" y="298.14" width="121.48" height="15.82" fill="#8c9288" stroke="none"/>
+<rect x="69.73" y="204.35" width="79.10" height="79.10" fill="none" stroke="#78847d" stroke-dasharray="4 3"/>
+<rect x="148.83" y="190.23" width="101.70" height="79.10" fill="none" stroke="#6a7477" stroke-dasharray="4 3"/>
+<polyline points="109.28,243.90 181.60,243.90 181.60,207.18 407.60,207.18" fill="none" stroke="#a7cfc5" stroke-width="96.05" stroke-linecap="round" stroke-linejoin="round" opacity="0.65"/>
+<polyline points="109.28,243.90 181.60,243.90 181.60,207.18 407.60,207.18" fill="none" stroke="#52867f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<rect x="235.84" y="272.49" width="62.15" height="22.60" fill="#c67b5d" stroke="none"/>
+<polyline points="260.70,447.30 260.70,238.25 170.30,238.25" fill="none" stroke="#35596b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<text x="43" y="470" fill="#253d45" font-size="14">Grey = structural core · Rust = radiator</text>
+<text x="43" y="495" fill="#253d45" font-size="14">Green = 850-wide cart · Blue = water at Z500</text>
+<text x="482" y="112" fill="#253d45" font-size="20">One damaged piece, two butt joints</text>
+<text x="482" y="147" fill="#253d45" font-size="15">Cut at X10450 and X10550. The view uses 41 mm sleeves.</text>
+<text x="482" y="191" fill="#253d45" font-size="14">PARK ON SOUND TUBE</text>
+<polyline points="493.00,218.00 610.50,218.00" fill="none" stroke="#467180" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<polyline points="845.50,218.00 951.25,218.00" fill="none" stroke="#467180" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<rect x="514.1" y="208" width="96.4" height="20" fill="#ae6949" fill-opacity=".75"/>
+<rect x="845.5" y="208" width="96.4" height="20" fill="#ae6949" fill-opacity=".75"/>
+<polyline points="493.00,330.00 610.50,330.00" fill="none" stroke="#467180" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<polyline points="845.50,330.00 951.25,330.00" fill="none" stroke="#467180" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<polyline points="610.50,330.00 845.50,330.00" fill="none" stroke="#467180" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<rect x="562.3" y="320" width="96.3" height="20" fill="#ae6949" fill-opacity=".75"/>
+<rect x="797.3" y="320" width="96.3" height="20" fill="#ae6949" fill-opacity=".75"/>
+<text x="482" y="258" fill="#253d45" font-size="15">The west sleeve parks 9 mm from the drawn terminal.</text>
+<text x="482" y="300" fill="#253d45" font-size="14">CENTRE OVER THE TWO CUTS</text>
+<text x="482" y="370" fill="#253d45" font-size="15">The accurately sized replacement tube enters from the side.</text>
+<text x="482" y="396" fill="#253d45" font-size="15">Each unmade sleeve travels 20.5 mm before joining.</text>
+<text x="482" y="440" fill="#253d45" font-size="15">Bare-part geometry only. Clamps, insertion space, heat</text>
+<text x="482" y="465" fill="#253d45" font-size="15">protection and actual kit dimensions still need a detail.</text>
+<text x="32" y="532" fill="#253d45" font-size="14">Reroute the fixed feed past the radiator and resolve both wall penetrations before detailing the terminal.</text>
+</g></svg>

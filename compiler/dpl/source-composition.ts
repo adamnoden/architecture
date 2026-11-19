@@ -1,7 +1,7 @@
+import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { sha256SemanticFingerprint } from '../core/identity.js'
 import type { ScreeningCoverageReadinessResult } from './coverage-readiness.js'
 import { composeDPL13EProjectReview } from './dpl13e-project-review.js'
 import { composeDPL13DSecondFixture } from './dpl13d.js'
@@ -87,7 +87,7 @@ export interface DPL13FSourceCompositionResult {
 }
 
 const canonicalStrings = (values: readonly string[]): string[] =>
-  [...new Set(values)].sort((a, b) => a.localeCompare(b))
+  [...new Set(values)].sort((a, b) => compareDplIdentityStrings(a, b))
 
 const gitBlobSha = (path: string): string => {
   const bytes = readFileSync(resolve(process.cwd(), path))
@@ -130,7 +130,7 @@ const finding = (
     sourceRefs: canonicalStrings(value.sourceRefs),
     missingFacts: canonicalStrings(value.missingFacts)
   }
-  return { ...canonical, findingFingerprint: sha256SemanticFingerprint(canonical) }
+  return { ...canonical, findingFingerprint: sha256DplSemanticFingerprint(canonical) }
 }
 
 const composeEnglandFinding = (target: RawTargetSlice): NarrowSourceCompositionFinding => {
@@ -187,7 +187,7 @@ const composePlanningStatuses = (
     { id: 'LPG_HOUSING_DESIGN_STANDARDS_2023', sourceClass: 'LONDON_PLAN_GUIDANCE', status: 'ADOPTED_GUIDANCE', developmentPlanMembership: 'NO', materialConsiderationCapability: 'YES', authorityRef: `${PATHS.london}#${housingLpg.id}` },
     { id: 'CROYDON_SPD2', sourceClass: 'REVOKED_SUPPLEMENTARY_PLANNING_DOCUMENT', status: 'REVOKED_FROM_2022-07-26', developmentPlanMembership: 'NO', materialConsiderationCapability: 'NO', authorityRef: `${PATHS.croydon}#${revokedSpd.id}` }
   ]
-  return entries.sort((a, b) => a.id.localeCompare(b.id))
+  return entries.sort((a, b) => compareDplIdentityStrings(a.id, b.id))
 }
 
 const composePlanningFinding = (
@@ -261,8 +261,8 @@ export const composeDPL13FSourceComposition = (): DPL13FSourceCompositionResult 
     incompatible: 'NOT_ADMITTED' as const,
     routeExhaustion: 'NOT_IMPLEMENTED' as const
   }
-  const sourceSnapshotIds = england.sourceSnapshots.map((entry) => entry.id).sort((a, b) => a.localeCompare(b))
-  const identityFingerprint = sha256SemanticFingerprint({
+  const sourceSnapshotIds = england.sourceSnapshots.map((entry) => entry.id).sort((a, b) => compareDplIdentityStrings(a, b))
+  const identityFingerprint = sha256DplSemanticFingerprint({
     schemaVersion: DPL13F_SOURCE_COMPOSITION_SCHEMA_VERSION,
     siteId: fixture.site.siteId,
     candidateFingerprint: fixture.canonicalCase.authoredCandidate.fingerprint,
@@ -285,7 +285,7 @@ export const composeDPL13FSourceComposition = (): DPL13FSourceCompositionResult 
     planning: { strategicTargetId: london.id, localTargetId: croydon.id, sourceStatus: statuses, finding: planningFinding },
     aggregation,
     identityFingerprint,
-    resultFingerprint: sha256SemanticFingerprint({ identityFingerprint, aggregationResultFingerprint: aggregation.resultFingerprint }),
+    resultFingerprint: sha256DplSemanticFingerprint({ identityFingerprint, aggregationResultFingerprint: aggregation.resultFingerprint }),
     proofBoundary
   }
 }

@@ -1,0 +1,244 @@
+{
+  "scope": "Materials comparison on six-extract source, no installation approval",
+  "counts": {
+    "cold": 14,
+    "hot": 9,
+    "radiators": 16,
+    "localFans": 6,
+    "backgroundInlets": 6
+  },
+  "comparedStore": {
+    "W9FootprintOverlapWithLocalBufferStationXY": [
+      375,
+      503
+    ],
+    "W9FootprintOverlapWithLocalControlsXY": [
+      510.5,
+      263.5
+    ],
+    "attachmentsAfter25ReserveMM": 20,
+    "bareCaseToCartEdgeMM": 45,
+    "caseToRiserMM": 70,
+    "caseToSouthWallMM": 73,
+    "caseToWestWallMM": 53,
+    "centre": [
+      9830,
+      4250
+    ],
+    "existingEastWorkFieldMarginMM": 0,
+    "height": 1650,
+    "installedOD": 760,
+    "newBridgeClearMM": 43.02717311045876,
+    "newSeatExcessOverCartMM": 72.02717311045876,
+    "newWestSeat": [
+      10195,
+      3970
+    ],
+    "newWorkingEast": [
+      10245,
+      4025,
+      900,
+      700
+    ],
+    "nominalL": 370,
+    "operatorEntryClearMM": 35,
+    "originalBridgeClearAtSlimStationMM": -44.944896554287254
+  },
+  "localAirAndHeat": {
+    "otherFanMasks": 32,
+    "hotPressureCases": 96,
+    "kitchenSetpointsLps": [
+      5,
+      16,
+      20
+    ],
+    "kitchenPa": [
+      -4.7094861514782345,
+      -3.4367119521921285
+    ],
+    "aggregateHealthyIdleLps": [
+      70,
+      85
+    ],
+    "roomCaps": {
+      "bed2": {
+        "inletLps": 10.628309125604574,
+        "outputW": 961.817646367322,
+        "maxFabricInfiltrationWK": 19.306617261518582
+      },
+      "bed3": {
+        "inletLps": 10.628309125604574,
+        "outputW": 961.817646367322,
+        "maxFabricInfiltrationWK": 19.306617261518582
+      },
+      "bed4": {
+        "inletLps": 21.178503877308685,
+        "outputW": 1215.7268226136011,
+        "maxFabricInfiltrationWK": 15.110022767682949
+      },
+      "principal": {
+        "inletLps": 21.178503877308685,
+        "outputW": 1202.2720579591526,
+        "maxFabricInfiltrationWK": 14.661530612534662
+      },
+      "study": {
+        "inletLps": 10.69318699737778,
+        "outputW": 1202.2720579591526,
+        "maxFabricInfiltrationWK": 27.24391086845175
+      },
+      "living": {
+        "inletLps": 10.69318699737778,
+        "outputW": 1923.635292734644,
+        "maxFabricInfiltrationWK": 51.289352027634806
+      }
+    },
+    "minimumWholeDwellingLps": 58.02352499999999,
+    "residualHoodLpsAtMinus5": {
+      "normal": 3.3078143188483153,
+      "allBoost": 0.6967087488450971
+    },
+    "hotDirectLps": 104.49102546697692,
+    "hotWholeKW": 13.345540833582115,
+    "hotCoilKW": 3.510898455690424,
+    "hotEastEmitterDutyKW": 1.3907784611207445
+  },
+  "principal": {
+    "roomM": [
+      3.851,
+      3.146
+    ],
+    "openingAreaM2": 5.346285519796245,
+    "heightPricedM": 2.85,
+    "wholeWindowTarget": 1.6,
+    "wallU": 0.3244526919653185,
+    "wallWindowWK": 13.2894972369527,
+    "allRemainingWK": 1.372033375581962,
+    "maxEquivalentRoofUWithZeroOtherLosses": 0.11324849496097414,
+    "originalH600L1000": [
+      9625,
+      11370.5,
+      1150,
+      200
+    ],
+    "trialH600L1200": [
+      10165,
+      11370.5,
+      1350,
+      200
+    ],
+    "newOutputW": 1442.726469550983,
+    "newLocalWK": 22.676677665595676,
+    "toParkedBed": 25,
+    "toEastWall": 55.5,
+    "toOrdinaryBed": 130.5,
+    "dryRadiatorKg": 63.0,
+    "servicePark": [
+      8540,
+      9150,
+      1600,
+      2090
+    ]
+  },
+  "copperFireInterface": {
+    "assumedBore": 100,
+    "copperOD": 22,
+    "houseCore": [
+      140,
+      140
+    ],
+    "studiedTubeCompleteOD": 74,
+    "assessedMortarDepth": 150,
+    "throughWoolOD": 82,
+    "remainingRadial": 9.0,
+    "shortCoreMM": 10,
+    "localInsulationLengthMinMM": 1000,
+    "straightUtilityTipToPierAxis": 170
+  },
+  "rearFoulService": {
+    "axis": [
+      567.5,
+      11177.5
+    ],
+    "cabinet": [
+      429.5,
+      10800,
+      300,
+      750
+    ],
+    "proposedStraightZ": [
+      950,
+      1550
+    ],
+    "clearTailZones": [
+      [
+        800,
+        950
+      ],
+      [
+        1550,
+        1700
+      ]
+    ],
+    "couplingOverall": 130,
+    "reservedParkingEach": 150,
+    "measuredSpigotToleranceAndGap": null,
+    "table": [
+      800,
+      10925,
+      300,
+      300
+    ],
+    "tablePark": [
+      1800,
+      10925,
+      300,
+      300
+    ],
+    "tableToSofa": 25,
+    "tablePullCentres": [
+      [
+        1425,
+        11250
+      ],
+      [
+        2425,
+        11250
+      ]
+    ],
+    "tablePullNorthReserve": 20.5,
+    "remoteToParkedTable": 50.89172119045497,
+    "remoteToFixedFurniture": 50.0,
+    "task": [
+      1075,
+      11225
+    ],
+    "taskToCupboard": 45.5,
+    "taskToNorthWall": 45.5,
+    "taskToSofa": 25,
+    "rackCentre": [
+      1035,
+      11177.5
+    ],
+    "rackHalfWidth": 90,
+    "remoteOperator": [
+      1450,
+      11250
+    ],
+    "operatorClearOfRack": 25,
+    "minProposedClearOpening": [
+      200,
+      900
+    ],
+    "proposedOpeningY": [
+      11077.5,
+      11277.5
+    ],
+    "proposedOpeningZ": [
+      800,
+      1700
+    ],
+    "comparisonRingCountForTwoDoubleSockets": 4
+  },
+  "followOn": "HAD-SERVICES-ADOPTION",
+  "approvedExceptions": []
+}

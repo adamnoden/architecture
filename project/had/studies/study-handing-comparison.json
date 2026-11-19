@@ -1,0 +1,414 @@
+{
+  "basis": "Same accepted RH-LAYOUT-REVISION-02 and exact proxies as study-operation.json",
+  "starting_main": "76addac4dfcb64d54ce6a794b07d012de7349435",
+  "accepted_predecessor_pr": 1163,
+  "source_sha256": {
+    "compiler/reference-house/georgian/layout-revision.ts": "d05fd7755a286db5b19db022950131982c5eed7e798a6808fa103d19f9a3c670",
+    "compiler/reference-house/georgian/source.ts": "974aa1d6e89c2e9f2d6ac9495741e5f9a9b276f1e564d8e9e38dbb9ceb9a6ad1",
+    "compiler/reference-house/georgian/section-exemplar.ts": "c4fe97c34f600fbb228b6013c7578f2050c1e6aa4f51cc9a905d0bdfba92ba86",
+    "compiler/architectural-drawing/opening-symbol.ts": "4b4b2d75c5fdc15d0443a3fe22b38fc0cd0bfa30752b7f04fc6c47ab8a15641c"
+  },
+  "adopted": false,
+  "source_handing": "low; unchanged",
+  "unadopted_trial_handing": "high; exact mirror about x2850",
+  "state_assumption": "The leaf is already stationary at the declared angle and remains there during unheld entry and reversed exit. Establishing or maintaining that state is not proved.",
+  "unchanged_proxy_mm": {
+    "body_diameter": 600,
+    "arm_diameter": 80,
+    "reach_limit": 600,
+    "leaf_width": 762,
+    "leaf_thickness": 44,
+    "spindle_station": 702,
+    "face_offsets": [
+      -84,
+      84
+    ],
+    "body_only_handle_bound": [
+      600.0,
+      -84.0,
+      204.0,
+      168.0
+    ]
+  },
+  "retained_low": {
+    "hinge": [
+      2469.0,
+      2587.5
+    ],
+    "parked_angle_degrees": 90,
+    "body_path": "(clamp(C.x,2530,3000), C.y-500)",
+    "contact": "G-minus throughout modelled closing and reopening; no handover",
+    "stages": {
+      "parked_90_unheld_entry": {
+        "points": [
+          [
+            6000.0,
+            3250.0
+          ],
+          [
+            2850.0,
+            3250.0
+          ],
+          [
+            2850.0,
+            2200.0
+          ],
+          [
+            3020.0,
+            2200.0
+          ],
+          [
+            3020.0,
+            1385.5
+          ],
+          [
+            2530.0,
+            1385.5
+          ]
+        ],
+        "exact_swept_minima_mm": {
+          "body_fixed": 17.5,
+          "body_leaf": 59.0,
+          "body_handle_bound": 65.19207275076496
+        },
+        "clear": true,
+        "maximum_face_reach_mm": null
+      },
+      "close_90_to_0_same_minus_contact": {
+        "sample_intervals": 1800,
+        "sampled_minima_mm": {
+          "body_fixed": 37.5,
+          "body_leaf": 136.09382085885892,
+          "body_handle_bound": 67.86372052559915,
+          "arm_leaf": 2.8351395895314937,
+          "arm_fixed": 57.75479527879949
+        },
+        "half_step_corrections_mm": {
+          "body_fixed": 0.3063052837250048,
+          "body_leaf": 0.6389290500942039,
+          "body_handle_bound": 0.6590259190573987,
+          "arm_leaf": 0.6411141060220237,
+          "arm_fixed": 0.30849033965282463
+        },
+        "continuous_lower_bounds_mm": {
+          "body_fixed": 37.193694716275,
+          "body_leaf": 135.45489180876473,
+          "body_handle_bound": 67.20469460654175,
+          "arm_leaf": 2.19402548350947,
+          "arm_fixed": 57.446304939146664
+        },
+        "sampled_maximum_face_reach_mm": 520.6006146750117,
+        "continuous_face_reach_upper_mm": 521.2154102983895,
+        "illustrative_states": [
+          {
+            "angle_degrees": 90.0,
+            "body": [
+              2530.0,
+              1385.5
+            ],
+            "grip": [
+              2385.0,
+              1885.5
+            ]
+          },
+          {
+            "angle_degrees": 78.75,
+            "body": [
+              2605.953406055322,
+              1398.988733156932
+            ],
+            "grip": [
+              2523.5674425014504,
+              1882.6011461075773
+            ]
+          },
+          {
+            "angle_degrees": 67.5,
+            "body": [
+              2737.643769520293,
+              1438.9365681770769
+            ],
+            "grip": [
+              2660.037888789345,
+              1906.7911598584094
+            ]
+          },
+          {
+            "angle_degrees": 56.25,
+            "body": [
+              2859.010303579761,
+              1503.8083321636132
+            ],
+            "grip": [
+              2789.166856146347,
+              1957.1404325899666
+            ]
+          },
+          {
+            "angle_degrees": 45.0,
+            "body": [
+              2965.3889603929565,
+              1591.1110396070435
+            ],
+            "grip": [
+              2905.9919907732865,
+              2031.7140699873735
+            ]
+          },
+          {
+            "angle_degrees": 33.75,
+            "body": [
+              3000.0,
+              1697.4896964202394
+            ],
+            "grip": [
+              3006.0237682627403,
+              2127.6462489868254
+            ]
+          },
+          {
+            "angle_degrees": 22.5,
+            "body": [
+              3000.0,
+              1818.856230479707
+            ],
+            "grip": [
+              3085.4180235042554,
+              2241.2503497487587
+            ]
+          },
+          {
+            "angle_degrees": 11.25,
+            "body": [
+              3000.0,
+              1950.546593944678
+            ],
+            "grip": [
+              3141.123679793713,
+              2368.1606303908065
+            ]
+          },
+          {
+            "angle_degrees": 0.0,
+            "body": [
+              3000.0,
+              2087.5
+            ],
+            "grip": [
+              3171.0,
+              2503.5
+            ]
+          }
+        ]
+      },
+      "closed_join_to_accepted_task_origin": {
+        "points": [
+          [
+            3000.0,
+            2087.5
+          ],
+          [
+            2871.0,
+            2087.5
+          ]
+        ],
+        "exact_swept_minima_mm": {
+          "body_fixed": 37.5,
+          "body_leaf": 178.0,
+          "body_handle_bound": 121.68353062456686
+        },
+        "clear": true,
+        "maximum_face_reach_mm": null
+      },
+      "closed_chair_side": {
+        "points": [
+          [
+            3000.0,
+            2087.5
+          ],
+          [
+            2871.0,
+            2087.5
+          ],
+          [
+            2871.0,
+            2000.0
+          ],
+          [
+            2325.0,
+            2000.0
+          ]
+        ],
+        "exact_swept_minima_mm": {
+          "body_fixed": 25.0,
+          "body_leaf": 178.0,
+          "body_handle_bound": 121.68353062456686
+        },
+        "clear": true,
+        "maximum_face_reach_mm": null
+      }
+    },
+    "movement_speed_bounds_mm_per_radian": {
+      "body_fixed": 702.0,
+      "body_leaf": 1464.3175191480254,
+      "body_handle_bound": 1510.376150068766,
+      "arm_fixed": 707.0077793065647,
+      "arm_leaf": 1469.32529845459,
+      "reach": 1409.0077793065648
+    },
+    "reverse": "Return from the task to (3000,2087.5), reacquire the same authored G-minus, reverse P(theta) from0 to90, release at the stationary leaf, then reverse SINGLE_ENTRY. The same exact swept sets and continuous bounds apply.",
+    "accepted_tasks": "The explicit closed connector reaches the unchanged (2871,2087.5) origin of study-operation.json. Its chair-stow/window-approach states and limitations remain unchanged, including restoring the chair before returning."
+  },
+  "mirrored_high_trials": {
+    "hinge": [
+      3231.0,
+      2587.5
+    ],
+    "closed_room_face_contact": "G-plus in the mirrored basis",
+    "parked_90": {
+      "contact": [
+        3315.0,
+        1885.5
+      ],
+      "endpoint_to_cloak_margin_mm": -17.5,
+      "result": "The radius40 capsule at this contact overlaps the cloak independently of torso position; no full90 same-contact loop is earned."
+    },
+    "parked_85": {
+      "body_path_trial": "(min(C.x,3000), C.y-500)",
+      "initial_body": [
+        3000.0,
+        1388.1713219395947
+      ],
+      "entry": {
+        "points": [
+          [
+            6000.0,
+            3250.0
+          ],
+          [
+            2800.0,
+            3250.0
+          ],
+          [
+            2800.0,
+            2350.0
+          ],
+          [
+            2700.0,
+            2350.0
+          ],
+          [
+            2700.0,
+            1388.1713219395947
+          ],
+          [
+            3000.0,
+            1388.1713219395947
+          ]
+        ],
+        "exact_swept_minima_mm": {
+          "body_fixed": 21.0,
+          "body_leaf": 86.66042597497352,
+          "body_handle_bound": 77.24642819117628
+        },
+        "clear": true,
+        "maximum_face_reach_mm": null
+      },
+      "initial_contact_checks": {
+        "body_fixed": 37.5,
+        "body_leaf": 164.59432323800775,
+        "body_handle_bound": 112.9975598548155,
+        "arm_leaf": -5.303805386182205,
+        "arm_fixed": 44.00297676914897,
+        "face_reach": 554.0697218252161
+      },
+      "result": "This particular turn fails already at its initial forearm/leaf capsule. A clear body entry is not a clear turn; no claim about all85-degree paths."
+    },
+    "adverse_straight_entry_at_85": {
+      "points": [
+        [
+          6000.0,
+          3250.0
+        ],
+        [
+          2800.0,
+          3250.0
+        ],
+        [
+          2800.0,
+          1388.1713219395947
+        ],
+        [
+          3000.0,
+          1388.1713219395947
+        ]
+      ],
+      "exact_swept_minima_mm": {
+        "body_fixed": 21.0,
+        "body_leaf": 42.67104066826607,
+        "body_handle_bound": -22.75357180882378
+      },
+      "clear": false,
+      "maximum_face_reach_mm": null
+    },
+    "separate_closed_state_west_window_path": {
+      "points": [
+        [
+          2195.0,
+          1610.0
+        ],
+        [
+          2500.0,
+          1610.0
+        ],
+        [
+          2500.0,
+          2230.0
+        ],
+        [
+          800.0,
+          2230.0
+        ],
+        [
+          800.0,
+          1800.0
+        ]
+      ],
+      "exact_swept_minima_mm": {
+        "body_fixed": 10.0,
+        "body_leaf": 35.5,
+        "body_handle_bound": -26.5
+      },
+      "clear": false,
+      "maximum_face_reach_mm": null
+    },
+    "closed_handle_bound_world_vertices": [
+      [
+        2631.0,
+        2671.5
+      ],
+      [
+        2427.0,
+        2671.5
+      ],
+      [
+        2427.0,
+        2503.5
+      ],
+      [
+        2631.0,
+        2503.5
+      ]
+    ]
+  },
+  "decision": "Retain the source handing as eligible: removing the earlier witness handover does not require rehanding. These failed high trials are not a universal impossibility proof. No handing or doorset is adopted by the comparison.",
+  "limits": [
+    "One unchanged face contact is not a one-handed human-use result; grip acquisition, orientation, force, balance and release are unproved.",
+    "Zero angle is geometrically closed, not proved latched; reverse geometry does not qualify actual unlatching.",
+    "No stop, detent, closer or hold-open hardware is inferred from either parked angle.",
+    "The handle rectangle is a body-clearance bound, not actual hardware/frame fit or a recovered contact shape.",
+    "Small proxy margins do not establish comfort, accessibility, construction tolerance or preference.",
+    "The original two-hand witness and its chair/window task evidence remain valid within their own states; no high-hinge inheritance.",
+    "No material admission, source geometry change, product selection or HAD lifecycle completion."
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "admitted": false,
+  "frames": [
+    {
+      "L250": 10.261414646351174,
+      "actualUniformGplusQPeak": 0.16738733731358718,
+      "coherentUniformGplusQplusFullWindSLS": 0.18586716840179074,
+      "frame": "ordinary",
+      "governs": [
+        7,
+        [
+          7300,
+          332.5
+        ],
+        [
+          7300.0,
+          2125.0
+        ],
+        0.675
+      ],
+      "previousPeakCurvaturePlusOffset": 5.270611,
+      "priorIndependentPatternPlusFullWindAndSampleReserve": 5.421658825584334,
+      "sampleMarginMM": 0.1,
+      "windServiceVerticalRelativeToHeelChord": 0.05104782558433477
+    },
+    {
+      "L250": 13.848705013262087,
+      "actualUniformGplusQPeak": 0.48854869258600236,
+      "coherentUniformGplusQplusFullWindSLS": 0.6117197265097566,
+      "frame": "hip",
+      "governs": [
+        7,
+        [
+          332.5,
+          332.5
+        ],
+        [
+          2125.0,
+          2125.0
+        ],
+        0.675
+      ],
+      "previousPeakCurvaturePlusOffset": 13.337892,
+      "priorIndependentPatternPlusFullWindAndSampleReserve": 13.631522162722973,
+      "sampleMarginMM": 0.1,
+      "windServiceVerticalRelativeToHeelChord": 0.19363016272297282
+    }
+  ],
+  "role": "Service comparison, not final roof guarantee. Uses actual full uniform row G + Q simultaneously with full 2.25/1.5 wind in each actual 3D state, without favourable combination factors. Separately retain previous independent variable row-pattern gravity-only component bounds. Frame deflections relative to the chord through both heels; finite vertical ring settlements / total cover fall must be checked separately. Primary pin and purlin roof-layer actual clearance, differential construction, site actions and vibration remain open."
+}

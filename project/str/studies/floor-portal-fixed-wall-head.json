@@ -1,0 +1,161 @@
+{
+  "sourceSHA256": {
+    "reconciled-house-interface.json": "ae17f6de977de58ae54f25edfc67c48c36f348cffc288e839f25a8b4143c16cf",
+    "current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+    "current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+    "floor-portal-permanent-seat.json": "17f56050baf042551dd6c6af681d67c144cd36822306639500600fe5a2b3a0e0"
+  },
+  "numericalScope": "Gross elastic local strip screens and geometric reservation only",
+  "existingSection": {
+    "roomFinishQmm": 429.5,
+    "ordinaryConcreteQmm": [
+      262.5,
+      402.5
+    ],
+    "clearArchCrownZmm": 6300,
+    "structuralExtradosZmm": 6515.0,
+    "roofRingZmm": [
+      6540,
+      6660
+    ],
+    "newBandBelowRoofRingGrossHeightMm": 25.0
+  },
+  "independentAddedBand": {
+    "simpleSpanMm": 6595.0,
+    "eachSameSignReactionKN": 11.982290625,
+    "momentKNm": 19.75580166796875,
+    "grossElasticStressMPa": 241.90777552614796,
+    "elasticDeflectionMm": 78.28528896152282,
+    "lOver250ComparisonMm": 26.38,
+    "qKNPerM": 3.63375,
+    "grossWidthAndDepthMm": [
+      140.0,
+      25.0
+    ],
+    "grossSteelStressComparisonMPa": 181.8181818181818,
+    "minGrossDepthForL250AtSameWidthMm": 74.1900009112233,
+    "maxSpanForL250Mm": 4589.298898423153,
+    "idealRotationallyFixedEnds": {
+      "endMomentKNm": 13.1705344453125,
+      "grossElasticStressMPa": 161.2718503507653,
+      "displacementMm": 15.657057792304565
+    }
+  },
+  "reuseExistingFootprintAsFixedHead": {
+    "simpleSpanMm": 6595.0,
+    "eachSameSignReactionKN": 11.982290625,
+    "momentKNm": 19.75580166796875,
+    "grossElasticStressMPa": 32.14701454849364,
+    "elasticDeflectionMm": 6.62027961385659,
+    "lOver250ComparisonMm": 26.38,
+    "oldRingWidthDepthAndWallMm": [
+      220,
+      120,
+      20
+    ],
+    "northernPierModelAxesMm": [
+      4377.5,
+      7622.5
+    ],
+    "northernPierLargestBay": {
+      "simpleSpanMm": 3245.0,
+      "eachSameSignReactionKN": 5.895759375,
+      "momentKNm": 4.78293479296875,
+      "grossElasticStressMPa": 7.782882059570291,
+      "elasticDeflectionMm": 0.3880395012275854,
+      "lOver250ComparisonMm": 12.98
+    },
+    "oldGrossStrongAxisComparisonKNm": 72.727273,
+    "ordinaryVerticalRoofForceStationsMm": [
+      4700,
+      7300
+    ],
+    "sameUniformFactoredGravityEachSeatKN": 30.291315487907045,
+    "simpleStrongAxisMomentWithTwoUniformSeatsAndBandWeightKNm": 67.42082163615682,
+    "simpleStrongAxisMomentWithTwoSeparateAdverseSeatValuesAsSensitivityKNm": 87.83499749299611
+  },
+  "raisedRoofComparison": {
+    "oldNominalBareClearanceAboveBandMm": 24.75801,
+    "heightBudgetForDiscreteSeatMm": 70.0,
+    "independentSettingsMm": [
+      5.0,
+      5.0
+    ],
+    "minDatumRiseForTrialReserveMm": 55.24199,
+    "datumRiseMm": 60.0,
+    "minimumBareClearanceZmm": [
+      6684.75801,
+      6744.75801
+    ],
+    "netSeatZoneAfterSettingsMm": 74.75801,
+    "remainingNetGeometricAllowanceBeyondSeatZoneMm": 4.758009999999999,
+    "oldSlateEaveRidgeCapZmm": [
+      7418.423322641297,
+      8409.327095641296,
+      8645.327095641296
+    ],
+    "raisedSlateEaveRidgeCapZmm": [
+      7478.423322641297,
+      8469.327095641296,
+      8705.327095641296
+    ],
+    "incrementalProjectedFullFacePressureKNAtRetainedReference": 1.6740000000000002,
+    "oldAndRaisedRoofHeelCentreToRingCentreMm": [
+      260.0,
+      320.0
+    ],
+    "sameHistoricalOrdinaryTieForceAddedLeverMomentKNm": 2.3258483943536303
+  },
+  "raisedRoofOptions": [
+    {
+      "datumRiseMm": 60.0,
+      "grossZoneMm": 84.75801,
+      "netAfterSettingsMm": 74.75801,
+      "remainingBeyond70MmEnvelopeMm": 4.758009999999999,
+      "remainingBeyondSeparateOld32MmHeadAnd70MmStrokeMm": -27.24199,
+      "slateEaveRidgeCapMm": [
+        7478.423322641297,
+        8469.327095641296,
+        8705.327095641296
+      ],
+      "newHeelToRingCentreArmMm": 320.0,
+      "extraProjectedFullFacePressureKN": 1.6740000000000002
+    },
+    {
+      "datumRiseMm": 100.0,
+      "grossZoneMm": 124.75801,
+      "netAfterSettingsMm": 114.75801,
+      "remainingBeyond70MmEnvelopeMm": 44.75801,
+      "remainingBeyondSeparateOld32MmHeadAnd70MmStrokeMm": 12.758009999999999,
+      "slateEaveRidgeCapMm": [
+        7518.423322641297,
+        8509.327095641296,
+        8745.327095641296
+      ],
+      "newHeelToRingCentreArmMm": 360.0,
+      "extraProjectedFullFacePressureKN": 2.79
+    },
+    {
+      "datumRiseMm": 120.0,
+      "grossZoneMm": 144.75801,
+      "netAfterSettingsMm": 134.75801,
+      "remainingBeyond70MmEnvelopeMm": 64.75801000000001,
+      "remainingBeyondSeparateOld32MmHeadAnd70MmStrokeMm": 32.75801000000001,
+      "slateEaveRidgeCapMm": [
+        7538.423322641297,
+        8529.327095641296,
+        8765.327095641296
+      ],
+      "newHeelToRingCentreArmMm": 380.0,
+      "extraProjectedFullFacePressureKN": 3.3480000000000003
+    }
+  ],
+  "segmentMovementComparison": {
+    "freeStrain": 0.00072,
+    "symmetricHypotheticalCentralFixedPointToOuterSeamMm": 5667.5,
+    "alignedNorthPierAsymmetricLongestToOuterSeamMm": 7290.0,
+    "centralFixedPointLongitudinalMotionEachArmMm": 4.0806000000000004,
+    "relativeVectorAtTwoOrthogonalCentralFixedArmsMm": 5.770839862619652,
+    "relativeVectorWithOneAsymmetricNorthernAlongArmMm": 6.64839813789758
+  }
+}

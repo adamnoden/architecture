@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="500" viewBox="0 0 1040 500" role="img">
+<title>South courtyard gutter, low crossover during centre removal</title>
+<rect width="1040" height="500" fill="#faf9f5"/><g font-family="sans-serif" fill="#203b40">
+<text x="30" y="37" font-size="26">Could one retained outlet take over?</text>
+<text x="30" y="66" font-size="15">South courtyard, X along gutter. Plan cuts the fixed crossover at its open ends. All dimensions in mm.</text>
+<rect x="32.00" y="100.00" width="173.4142857142854" height="154" fill="#dfdcd0" stroke="#7c796e"/>
+<rect x="492.99" y="100.00" width="173.41428571428594" height="154" fill="#dfdcd0" stroke="#7c796e"/>
+<rect x="205.41" y="100.00" width="287.57142857142867" height="77.88" fill="#d7e0e5" stroke="#527383"/>
+<rect x="205.41" y="184.48" width="287.57142857142867" height="82.72" fill="#b3d9ce" stroke="#1e6d69"/>
+<line x1="32.00" y1="144.00" x2="666.40" y2="144.00" stroke="#50616a" stroke-dasharray="4 3"/>
+<line x1="32.00" y1="152.80" x2="666.40" y2="152.80" stroke="#50616a" stroke-dasharray="4 3"/>
+<line x1="205.41" y1="184.48" x2="205.41" y2="254.00" stroke="#fcf9e8" stroke-width="4"/>
+<line x1="492.99" y1="184.48" x2="492.99" y2="254.00" stroke="#fcf9e8" stroke-width="4"/>
+<line x1="32.00" y1="278.64" x2="666.40" y2="278.64" stroke="#564c47" stroke-width="3"/>
+<text x="44" y="128" font-size="15">West retained</text>
+<text x="252" y="119" font-size="15">Removable drip tray</text>
+<text x="514" y="128" font-size="15">East retained</text>
+<text x="254" y="210" font-size="15">Fixed low crossover</text>
+<text x="43" y="267" font-size="13">Guard face q−506</text>
+<line x1="123.50" y1="231" x2="587.10" y2="231" stroke="#1e6d69" stroke-width="2"/>
+<path d="M 587.10 231 l -12 -5 v 10 z" fill="#1e6d69"/>
+<text x="30" y="309" font-size="15">West downstream outlet blocked</text>
+<text x="306" y="309" font-size="15">East outlet open</text>
+<text x="30" y="336" font-size="14">Reverse the flow when east is blocked. The middle drip tray and aprons can be out.</text>
+<text x="699" y="108" font-size="18">Widths at the control sections</text>
+<text x="699" y="146" font-size="15">Drip tray     174 clear</text>
+<text x="699" y="177" font-size="15">Crossover  185 clear</text>
+<text x="699" y="208" font-size="15">End mouth  155 clear</text>
+<text x="699" y="246" font-size="15">Only the end inside the existing</text>
+<text x="699" y="267" font-size="15">350-wide receiver communicates.</text>
+<line x1="30" y1="359" x2="1006" y2="359" stroke="#a7a492" />
+<text x="30" y="389" font-size="20">The retained mouth governs</text>
+<text x="30" y="418" font-size="15">At 3.604 L/s it needs 57.08 mm even without a local loss. The adverse trial grants only 56.15 mm.</text>
+<text x="30" y="447" font-size="15">With one velocity head lost, ideal width redistribution needs 395.94 mm clear. The guarded section offers 380 mm.</text>
+<text x="30" y="474" font-size="13">Amber-grey = adjacent gutters. Blue = removable rear tray location. Green = bidirectional low connection.</text>
+</g></svg>

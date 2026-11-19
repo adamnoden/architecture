@@ -1,0 +1,215 @@
+{
+  "occurrence": {
+    "doorX": [
+      5100.0,
+      6900.0
+    ],
+    "leaves": 2,
+    "doorHead": 2850,
+    "oas": {
+      "sillYZ": [
+        [
+          -20.0,
+          -60.0
+        ],
+        [
+          360.0,
+          -60.0
+        ],
+        [
+          390.0,
+          0.0
+        ],
+        [
+          417.5,
+          0.0
+        ],
+        [
+          360.0,
+          15.0
+        ],
+        [
+          220.0,
+          15.0
+        ],
+        [
+          -20.0,
+          0.0
+        ]
+      ],
+      "collectorY": [
+        -120.0,
+        -20.0
+      ],
+      "collectorBottom": -100.0,
+      "sillBottom": -60.0,
+      "crest": 15.0
+    }
+  },
+  "ground": {
+    "oldLanding": [
+      5400.0,
+      -1200,
+      1200.0,
+      1200
+    ],
+    "proposedLanding": [
+      5000,
+      -1200,
+      2000,
+      1200
+    ],
+    "openingBeyondOldLandingEach": 300.0,
+    "newLandingBeyondJambEach": 100.0,
+    "facetedLength": 1080.0,
+    "lowLineEndY": -1120.0,
+    "constantLowSideLength": 80.0,
+    "sideLowZ": -12.5,
+    "diagonalRun": 1414.213562373095,
+    "diagonalGradientDenominator": 113.13708498984761,
+    "twoEndErrorsAt5Residual": 2.5,
+    "errorAtEachEndForZeroFall": 6.25,
+    "onePlaneStepAtRamp": 13.5,
+    "rampEdgeAtTie": -7.5,
+    "fadeLength": 1200,
+    "steepestFirstRampLongitudinal": 20,
+    "maximumResultantGradientLimitDenominator": 19.402850002906636,
+    "shallowestFirstRampLongitudinal": 22.857142857142854,
+    "frontFlights": [
+      9000,
+      9000,
+      9000,
+      9000
+    ],
+    "outsideGrade": -1800
+  },
+  "foldRepair": {
+    "originalLowerTurn": {
+      "plan": [
+        2400,
+        -1200,
+        2700,
+        1200
+      ],
+      "z": -900
+    },
+    "originalClearPlanOverlap": 100,
+    "originalMaximumClearHeight": 700,
+    "revisedFlightAxes": [
+      6000,
+      3900,
+      2400,
+      900
+    ],
+    "guardEach": 100,
+    "sideWorkAndChuteWestX": 4700,
+    "westShiftLowerThree": 600,
+    "shiftForZeroGuardToChuteGap": 500,
+    "guardToChuteGap": 100,
+    "revisedLandingsXYWH": [
+      [
+        5000,
+        -1200,
+        2000,
+        1200
+      ],
+      [
+        3300.0,
+        -11400,
+        3300.0,
+        1200
+      ],
+      [
+        1800.0,
+        -1200,
+        2700.0,
+        1200
+      ],
+      [
+        300.0,
+        -11400,
+        2700.0,
+        1200
+      ],
+      [
+        300.0,
+        -1200,
+        1200.0,
+        1200
+      ]
+    ],
+    "minimumGapBetweenLowerRunGuards": 100.0,
+    "oldFoot": [
+      1500,
+      -600,
+      -1800
+    ],
+    "newFoot": [
+      900,
+      -600,
+      -1800
+    ],
+    "newWestGuardLimit": 200.0
+  },
+  "bearing": {
+    "beamY": [
+      -17.5,
+      682.5
+    ],
+    "beamTop": -180,
+    "proposedBedY": [
+      20,
+      360
+    ],
+    "nearBeamEdgeMargin": 37.5,
+    "sillNoseOutstandFromBed": 40.0,
+    "sillUnderside": -60.0,
+    "grossSupportHeight": 120.0,
+    "floorStack": [
+      0,
+      -15,
+      -80,
+      -180,
+      -380
+    ],
+    "innerDPC": [
+      -180,
+      -30
+    ],
+    "panBackYZ": [
+      435,
+      -60
+    ],
+    "panToeYZ": [
+      -40,
+      -65.9375
+    ],
+    "backdamZ": -20,
+    "panToeOverlap": 20,
+    "toeToTrayFloorAfterSkinAnd4mm": 5.5625,
+    "panFallDenominator": 80.0,
+    "troughCentreInvert": -77,
+    "troughEndInvert": -87,
+    "troughRunEach": 1000,
+    "endBelowSkinAndBedReserve": 3.5
+  },
+  "water": {
+    "rainMmH": 216,
+    "landingM2": 2.4,
+    "additionalDoorRectangleM2": 5.13,
+    "oneSideChallengeLps": 0.4517999999999999,
+    "pavingEdgeAvailableWidth": 380.0,
+    "highestPavingEdgeZ": -8.75,
+    "idealEdgeEnergy": 7.863997074125175,
+    "idealEdgeEnergyLevel": -0.8860029258748252,
+    "sillAboveIdealEdgeWith5mmAdverse": 10.886002925874825,
+    "lowReliefWidth": 200,
+    "lowReliefCrest": -55,
+    "idealLowReliefEnergy": 12.063659682996597,
+    "idealLowReliefEnergyLevel": -42.9363403170034,
+    "lowSideAboveReliefWith5mmAdverse": 25.4363403170034,
+    "blockedToeSubmergenceWith5mmAdverse": 28.0011596829966,
+    "backdamAboveReliefWith5mmAdverse": 17.9363403170034
+  },
+  "scope": "Front only. Whole-event ideal controls are not measured water depth, outlet rating, exit admission or site outfall."
+}

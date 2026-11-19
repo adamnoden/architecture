@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297"><rect width="420" height="297" fill="#fffdf8"/><style>text{font-family:Arial,sans-serif;font-size:3.3px;fill:#243d43}.title{font-size:6px;font-weight:bold}.head{font-size:4.2px;font-weight:bold}.small{font-size:2.9px}.slab{fill:#d9e0e3;stroke:#64787b;stroke-width:.35}.space{fill:#cee6df;stroke:#6f9a8e;stroke-width:.2}.ceiling{fill:#ddcab3;stroke:#9a7443;stroke-width:.25}.line{fill:none;stroke:#526d74;stroke-width:.3}.datum{fill:none;stroke:#9a7443;stroke-width:.35;stroke-dasharray:2,1}.warn{fill:#9d4f32}</style>
+<text x="12" y="15" class="title">Riser hanger: keep the whole floor depth in the comparison</text>
+<text x="12" y="24" class="">31 October 2026 / unadopted B plan / mm / manufacturer geometry plus a conditional datum comparison</text>
+<text x="12" y="38" class="head">A  Hold slab top +3320 and ceiling top +3115</text>
+<text x="18" y="49" class="head">150 slab</text>
+<rect x="18" y="55" width="48" height="51.00000000000001" class="slab"/>
+<rect x="18" y="106" width="48" height="18.700000000000003" class="space"/>
+<rect x="18" y="124.7" width="48" height="5.1000000000000005" class="ceiling"/>
+<text x="18" y="140" class="">55 gross remaining</text>
+<text x="18" y="149" class="small">soffit +3170</text>
+<text x="82" y="49" class="head">175 slab</text>
+<rect x="82" y="55" width="48" height="59.50000000000001" class="slab"/>
+<rect x="82" y="114.5" width="48" height="10.200000000000001" class="space"/>
+<rect x="82" y="124.7" width="48" height="5.1000000000000005" class="ceiling"/>
+<text x="82" y="140" class="">30 gross remaining</text>
+<text x="82" y="149" class="small">soffit +3145</text>
+<text x="146" y="49" class="head">200 slab</text>
+<rect x="146" y="55" width="48" height="68" class="slab"/>
+<rect x="146" y="123" width="48" height="1.7000000000000002" class="space"/>
+<rect x="146" y="124.7" width="48" height="5.1000000000000005" class="ceiling"/>
+<text x="146" y="140" class="warn">5 gross remaining</text>
+<text x="146" y="149" class="small">soffit +3120</text>
+<path d="M12,55L210,55" class="datum"/>
+<path d="M12,124.7L210,124.7" class="datum"/>
+<text x="12" y="163" class="small">Remaining depth precedes actual hanger, protection and tolerances.</text>
+<text x="12" y="172" class="small">No hanger section is drawn: its installed downstand is unbound.</text>
+<text x="12" y="188" class="head">B  Keep the original 55 service reservation instead</text>
+<text x="12" y="200" class="">150 / 175 / 200 slabs give ceiling undersides +3100 / +3075 / +3050.</text>
+<text x="12" y="210" class="small">Those are gross datums before further hanger or protection depth.</text>
+<text x="12" y="220" class="warn">The 200 case spends 50 mm; it requires an explicit section rewind.</text>
+<text x="235" y="38" class="head">C  A named product brings real constraints</text>
+<text x="12" y="157" class="small">Grey: slab / green: unallocated depth / ochre: 15 ceiling.</text>
+<text x="235" y="51" class="">PETRA standard symmetric depths start at 175; HC150 is unbound.</text>
+<text x="235" y="62" class="">200 is the first shared listed depth with the cited Ibstock range.</text>
+<text x="235" y="71" class="small">This is a comparison opportunity, not approved compatibility.</text>
+<text x="235" y="88" class="">Table 3, 175/200: b1 = 140, L2 = 150, b2 = 100; tolerance ±2.</text>
+<text x="235" y="99" class="">Page 22 illustrates 55 overlap on a sound receiving edge.</text>
+<text x="235" y="110" class="small">Neither figure turns the old 100 tail sensitivity into a bearing.</text>
+<text x="235" y="126" class="">For depths ≤200: joint 50–70; supported bearing maximum 80.</text>
+<text x="235" y="137" class="">Fire-rebar arrangement: slab face at least 51 past opening edge.</text>
+<text x="235" y="148" class="">At x = 10070 this gives x = 10121, before further allowance.</text>
+<text x="235" y="157" class="small">The resulting 1476.5 to the outer structural face is not a cut length.</text>
+<text x="235" y="175" class="head">D  Retain separate load and closure duties</text>
+<text x="235" y="187" class="">Receiving slabs need their own concentrated-reaction check.</text>
+<text x="235" y="198" class="">Direct cabinet or closure point/line loads require individual design.</text>
+<text x="235" y="209" class="">The service zone is not a sealed opening or a cabinet support.</text>
+<text x="235" y="220" class="">Keep the permanent trim distinct from renewable service faces.</text>
+<path d="M12,239L408,239" class="line"/>
+<text x="12" y="251" class="head">Continue the HC150 supplier enquiry or redraw the complete section; retain the independent frame alternative.</text>
+<text x="12" y="262" class="small">Source: PETRA PEIKKO GROUP 04/2025, pp 6–11, 14, 21–22; Ibstock nominal depths, accessed 31 October 2026.</text>
+<text x="12" y="273" class="small">No resistance, chosen hanger, manufacturing approval, firestop, material exception or STR-HOUSE completion is established.</text>
+<text x="12" y="284" class="small">Reproduce with house-riser-trim.mjs; source-bound product/depth record: house-riser-product.json.</text>
+</svg>

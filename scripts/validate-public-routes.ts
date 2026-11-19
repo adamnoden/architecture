@@ -1,11 +1,13 @@
 import { readFileSync, readdirSync } from 'node:fs'
 import { join, relative, sep } from 'node:path'
 import { nav, sidebar } from '../.vitepress/navigation.js'
-import { filterPublicNavigation, isPublicSource } from '../project/public-surface.js'
+import { filterPublicNavigation, isPublicSource, siteRootSources } from '../project/public-surface.js'
 import {
   mapNavigationLinks,
   mapSidebarRoutes,
+  publicRoute,
   routeForSource,
+  rewriteMarkdownPageLink,
   rewriteSourceId
 } from '../project/site-routes.js'
 
@@ -48,7 +50,7 @@ function isInternalPageRoute(route: string): boolean {
 
 function validatePublicRoutes(): void {
   const failures: string[] = []
-  const files = [join(repoRoot, 'README.md'), join(repoRoot, 'STATUS.md'), ...collectMarkdown(join(repoRoot, 'docs'))]
+  const files = [...siteRootSources.map((source) => join(repoRoot, source)), ...collectMarkdown(join(repoRoot, 'docs'))]
   const publicFiles = files.filter((file) => isPublicSource(sourcePath(file)))
   const routeOwners = new Map<string, string>()
 
@@ -67,7 +69,8 @@ function validatePublicRoutes(): void {
   }
 
   const expectedRoutes: Record<string, string> = {
-    'README.md': '/',
+    'index.md': '/',
+    'README.md': '/project/repository',
     'docs/reading-guide.md': '/reading-guide',
     'docs/prototypes/README.md': '/prototypes/',
     'docs/prototypes/w2-wall-bay-build-pack.md': '/prototypes/w2-wall-bay-build-pack'
@@ -76,6 +79,29 @@ function validatePublicRoutes(): void {
   for (const [source, expected] of Object.entries(expectedRoutes)) {
     const actual = routeForSource(source)
     if (actual !== expected) failures.push(`public route contract changed: ${source} -> ${actual}; expected ${expected}`)
+  }
+
+  if (routeOwners.get('/') !== 'index.md') failures.push('the dedicated index.md must be the sole public homepage')
+  if (routeOwners.get('/project/repository') !== 'README.md') failures.push('README.md must remain available as the repository guide')
+
+  const linkCases: readonly [string, string, string][] = [
+    ['README.md#project-map', 'index.md', '/project/repository#project-map'],
+    ['../README.md#build-and-verification', 'docs/reading-guide.md', '/project/repository#build-and-verification'],
+    ['../index.md', 'docs/reading-guide.md', '/'],
+    ['../', 'docs/reading-guide.md', '/'],
+    ['/index.md?from=guide#top', 'README.md', '/?from=guide#top'],
+    ['/README.md#project-map', 'index.md', '/project/repository#project-map'],
+    ['docs/reference-house/', 'index.md', '/reference-house/'],
+    ['docs/manuscript/preface.md', 'index.md', '/manuscript/preface'],
+    ['#project-map', 'README.md', '#project-map'],
+    ['https://example.org/README.md#section', 'index.md', 'https://example.org/README.md#section']
+  ]
+  for (const [href, source, expected] of linkCases) {
+    const actual = rewriteMarkdownPageLink(href, source, repoRoot)
+    if (actual !== expected) failures.push(`entry-page link drift: ${source}: ${href} -> ${actual}; expected ${expected}`)
+  }
+  if (publicRoute('/README#project-map') !== '/project/repository#project-map') {
+    failures.push('repository navigation must preserve its destination and fragment')
   }
 
   const publicNav = mapNavigationLinks(filterPublicNavigation(nav))
@@ -87,6 +113,8 @@ function validatePublicRoutes(): void {
     if (link === '/STATUS' || link.startsWith('/docs/')) {
       failures.push(`legacy repository path remains in public navigation: ${link}`)
     }
+    const pathname = link.split(/[?#]/, 1)[0]
+    if (!routeOwners.has(pathname)) failures.push(`public navigation has no published destination: ${link}`)
   }
 
   const publishedRoutes = publicFiles
@@ -103,4 +131,4 @@ function validatePublicRoutes(): void {
 }
 
 validatePublicRoutes()
-console.log('Public route integrity valid: resolved public surface, clean URL tree and mapped navigation coverage.')
+console.log('Public route integrity valid: separate homepage and repository guide, clean URL tree and mapped navigation coverage.')

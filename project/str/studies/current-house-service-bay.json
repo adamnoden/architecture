@@ -1,0 +1,157 @@
+{
+  "RCGrossKN": 33.634924999999996,
+  "admitted": false,
+  "cheeks": {
+    "barYLanes": [
+      [
+        6128,
+        6192
+      ],
+      [
+        7458,
+        7522
+      ]
+    ],
+    "developmentGrossRequiredAvailable": [
+      416.69052282392204,
+      550
+    ],
+    "earthControlWallMomentOnly": 31.512780000000006,
+    "firstUnresolvedPileStarterEnvelope": 100,
+    "floorPlanWidthMM": 1330,
+    "fourH16EachFaceSharedMaximumBarKN": 43.98481534689055,
+    "fullUnderbaseCharacteristicKN": 33.84348957000001,
+    "horizontalBarLevels": [
+      -252,
+      -302,
+      -628,
+      -678
+    ],
+    "hydroOneSide_H_Mplan": [
+      22.524971535000006,
+      19.202538233587507
+    ],
+    "jointChordAndPlanT": [
+      161.5012627156919,
+      14.437998671870306
+    ],
+    "membraneGrossShearMPa": 0.12545236165413537,
+    "nominalMinimumClearToVerticalPileBars": 6.958363963477495,
+    "positiveKeyTwo80x100NominalPressure": 3.1625514717226038,
+    "qualifications": "In plan, existing 140 mm base must act as the full 1.33 m wide diaphragm: east-west opposite wall chords and transverse shear at both nodes, including lower-to-upper force turn. A single 180 mm wall as an isolated sideways cantilever FAILS. Four H16 levels in 180 wall, two bars each level; minimum calculated starter clearance is less than 25 mm, so no anchored joint pass. Neck gross length is not clear development past the earlier cage. Need actual eight bar lanes, return into west box, hydrostatic uplift/anchorage, crack, differential movement and watertight construction; no buried seal or substitute rail support credited.",
+    "retiredSingleCheekMaximumBarKN": 110.02341767217874,
+    "rollVerticalCoupleKN": 7.254282812650378,
+    "wallMR_VR": [
+      40.29409844748173,
+      78.71104548718294
+    ],
+    "wallNeckV_M": [
+      45.3108044625,
+      48.355922585531246
+    ],
+    "waterFaceMoment_Shear": [
+      5.9009700600000015,
+      13.211127000000003
+    ],
+    "wholeFloorDiaphragmChordKN": 14.437998671870306,
+    "worstBarStress": 218.7625244825591
+  },
+  "clearInsideXY": [
+    6125,
+    6250,
+    7650,
+    7400
+  ],
+  "concreteM3": 1.345397,
+  "conditionalGradeFor500AirGap": -1840,
+  "crewVariableDistribution": "Global upper live total 5 kPa \u00d71.75375 m\u00b2 plus 5 kN. Concentrate mobile 5 kN on the actual 200 mm pad; for connection envelope, all live load may reach one cheek at full west lever. Carrier rails are outside this slab; no 200 kg sled load applied.",
+  "fixedIncludingAllowanceKN": 36.5298955,
+  "floodDesign": "One side, external/internal hydrostatic water to Z0; separate full underside pressure without G. No retaining earth, surcharge, groundwater/site acceptance or waterproofing. Do not backfill a suspended pit designed for air.",
+  "floor": {
+    "MR_VR": [
+      3.3776591119803205,
+      9.734707943957094
+    ],
+    "M_V": [
+      3.0716827968750007,
+      9.23814375
+    ],
+    "centralBars": "H10/100 each way, positive 300 mm bent ends and 40 mm internal mandrel diameter; central slab mats, not four face layers. Smaller equipment footprint, bent cage, crack/water and service floor finish/level/drain remain open.",
+    "endDevelopmentNeededAvailable": [
+      87.51763350035705,
+      300
+    ],
+    "floorLiveKPa": 5,
+    "minimumEffectiveDepth": 59.5,
+    "pointKN": 5,
+    "referenceLoadedPrint": [
+      200,
+      200
+    ],
+    "upwardM": 0.8719836772500003
+  },
+  "floorTopUnderside": [
+    -1200,
+    -1340
+  ],
+  "floorXYZ": [
+    5945,
+    6070,
+    7650,
+    7580,
+    -1340,
+    -1200
+  ],
+  "incrementAgainstD1800": 40,
+  "receivingHeads": [
+    {
+      "Cx": -23.520509156875,
+      "Cy": 1.095896865,
+      "N": 18.26494775,
+      "at": [
+        7950,
+        6100
+      ],
+      "support": "P36"
+    },
+    {
+      "Cx": -23.520509156875,
+      "Cy": -3.8356390274999996,
+      "N": 18.26494775,
+      "at": [
+        7950,
+        7700
+      ],
+      "support": "P37"
+    }
+  ],
+  "sourceGrid": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+  "sourceNode": "d618128c0f6921df1d056875aac6e4578b99f14969b76c8d7cf0eed38a908733",
+  "status": "Finite suspended RC work-bay comparator only; ground, water, cage and access not selected.",
+  "threeWallXYZ": [
+    [
+      5945,
+      6070,
+      7650,
+      6250,
+      -1200,
+      0
+    ],
+    [
+      5945,
+      7400,
+      7650,
+      7580,
+      -1200,
+      0
+    ],
+    [
+      5945,
+      6250,
+      6125,
+      7400,
+      -1200,
+      0
+    ]
+  ]
+}

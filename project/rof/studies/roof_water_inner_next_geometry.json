@@ -1,0 +1,506 @@
+{
+  "status": "CONDITIONAL NEXT GEOMETRY; REJECT FOR SELECTION AND ORDINARY-RENEWAL CLAIM",
+  "units": "mm, kg, L/s unless stated; SW uses global x/y with courtward increase; reflect x about 6000 for SE.",
+  "sourceSHA256": "d61feef43a2b252194eea46ec4e2879fdab548507fdde30a0bef129f084f530e",
+  "evidenceBoundary": "All results here are finite geometry/arithmetic screens. No new local frame, complete stock, hydraulic rating, native pressure, source-point reaction or temporary-works run is supplied.",
+  "currentComparison": {
+    "primaryShift": 200.0,
+    "lowerShift": 10.0,
+    "primary": {
+      "wetQ": [
+        4375,
+        4725
+      ],
+      "waterComparison": 200,
+      "beds": {
+        "SW": 6805.75,
+        "NW": 6820.375,
+        "NE": 6835.0,
+        "SE": 6820.375
+      },
+      "front": 6935.0,
+      "rear": 7030.0,
+      "capBottomTop": [
+        7060.0,
+        7080.0
+      ],
+      "carrierBottom": {
+        "SW": 6778.85,
+        "NW": 6793.475,
+        "NE": 6808.1,
+        "SE": 6793.475
+      },
+      "armAxisBelowBed": 14.4,
+      "armAxis": {
+        "SW": 6791.35,
+        "NW": 6805.975,
+        "NE": 6820.6,
+        "SE": 6805.975
+      },
+      "releaseQ": 4380
+    },
+    "lower": {
+      "wetQ": [
+        4375,
+        4800
+      ],
+      "waterComparison": 220,
+      "beds": {
+        "SW": 6410.625,
+        "NW": 6425.0,
+        "NE": 6410.625,
+        "SE": 6396.25
+      },
+      "frontDepth": 140,
+      "rearDepth": 245,
+      "front": {
+        "SW": 6550.625,
+        "NW": 6565.0,
+        "NE": 6550.625,
+        "SE": 6536.25
+      },
+      "rear": {
+        "SW": 6655.625,
+        "NW": 6670.0,
+        "NE": 6655.625,
+        "SE": 6641.25
+      },
+      "carrierLowest": 6369.35,
+      "windowHead": 6300,
+      "nominalCarrierToWindow": 69.35000000000036,
+      "releaseQ": 4335
+    },
+    "roots": {
+      "primaryP": [
+        5025,
+        6000,
+        6975
+      ],
+      "lowerP": [
+        5041.6666667,
+        6000,
+        6958.3333333
+      ],
+      "primaryRailQZ": [
+        4235,
+        6880
+      ],
+      "lowerRailQZ": [
+        4235,
+        6730
+      ],
+      "existingRootStemsQ": [
+        3850,
+        3985
+      ],
+      "baseZ": 6660,
+      "qualifications": "Topology only. Direct permanent root welds, new stock and receiving box are not adopted; the old 6-bolt feet and 60 kg/m caps do not bind this new load allocation."
+    },
+    "proposedPrimaryExteriorDrop": {
+      "centreQ": 4340,
+      "sectionAlongRadial": [
+        60,
+        20,
+        3
+      ],
+      "solidQ": [
+        4330,
+        4350
+      ],
+      "reason": "The raised arm cannot descend at q4235 through the continuous lower rail. Exact new header/drop joints and local sheet jogs are not modelled."
+    },
+    "primaryArmStations": [
+      4800,
+      5325,
+      5775,
+      6225,
+      6675,
+      7200
+    ],
+    "lowerArmStations": [
+      4600,
+      5100,
+      5550,
+      6000,
+      6450,
+      6900,
+      7400
+    ],
+    "secondaryOwnership": "Proposed: primary fixed frame/cassette, including collars around retained fixed primary stubs. Lower wet pan retains separate roots. This invalidates the old dry/wind/root allocation.",
+    "discardedLowerHandoff": "Discard the bed-level 90 mm shoe/60 mm tongue. A separate removable over-rear chute is required; its exact lower bend, support, motion and wet closure are not yet authored.",
+    "secondaryFixedProfileControl": [
+      [
+        4545,
+        7107.3288
+      ],
+      [
+        4565,
+        7085
+      ],
+      [
+        4346,
+        6990
+      ]
+    ],
+    "secondaryBaffleTop": [
+      4565,
+      7145
+    ]
+  },
+  "hingedPrimaryLeaf": {
+    "wetPlaneQ": 4615.0,
+    "leafQ": 4618.0,
+    "hingeAxisQ": 4618.0,
+    "hingeZ": 7200.0,
+    "fixedToeZ": 7080.0,
+    "normalOverlap": 120.0,
+    "normalToeByCorner": {
+      "SW": 6880.75,
+      "NW": 6895.375,
+      "NE": 6910.0,
+      "SE": 6895.375
+    },
+    "normalToeAboveBed": 75,
+    "lengthByCorner": {
+      "SW": 319.25,
+      "NW": 304.625,
+      "NE": 290.0,
+      "SE": 304.625
+    },
+    "maximumStowedQ": 4937.25,
+    "fixedRibRoofwardQ": [
+      4595.0,
+      4615.0
+    ],
+    "secondaryBaffleQ": 4565,
+    "nominalRibToBaffle": 30.0,
+    "roofAtFixedPlaneZ": 7248.221028417098,
+    "roofContinuationAtHingeZ": 7246.822105442633,
+    "roofAboveHingeAnd20Stock": 26.822105442633074,
+    "fixedToeToPrimaryRear": 50.0,
+    "stowedUndersideToCap": 120.0,
+    "possibleRetainedCatchSweep": null,
+    "qualifications": [
+      "A hinge replaces the old vertical slider. Normal and stowed stock, wind, locks, rotation, wet overlaps and actual longitudinal joints are not modelled.",
+      "Head/catch/support removal must precede rotation wherever the complete swept geometry requires it. No inherited 1171-state result applies.",
+      "The 75 mm toe is nominal, not a movement-qualified under-leaf opening. The sheet creates 243/107 mm longitudinal lanes; ribs and joints must be deducted.",
+      "The roof screen is at the declared hinge axis q4618, not the q4615 fixed wet plane. The 20 mm top envelope is a declared screen; a hinge bearing, lock and full swept stock are not authored."
+    ]
+  },
+  "headArmCorridor": {
+    "axisZ": 6720.0,
+    "depth": 40.0,
+    "upperNominal": 38.850000000000364,
+    "lowerNominal": 30.0,
+    "upperAfter25": 13.850000000000364,
+    "lowerAfter25": 5.0,
+    "scope": "25 mm on each side is a declared screening envelope, not a proved paired native/local/ground movement allowance. No physical arm/fork or force path is admitted."
+  },
+  "normalHeadHypothesis": {
+    "axisXY": [
+      5100.0,
+      5100.0
+    ],
+    "bowlGrossPlan": [
+      190,
+      190
+    ],
+    "bowlFloor": 6800.75,
+    "bowlRim": 7055.0,
+    "upperSpoolJoint": 6300.0,
+    "lowerLeaderAxis": [
+      4500.0,
+      4500.0
+    ],
+    "lowerSpoolJoint": 6000.0,
+    "headBottomAfter800": 7100.0,
+    "headTopAfter800": 7855.0,
+    "hoist8350MarginBeforeRigging": 495.0,
+    "aboveClosedGate6640After800": 460.0,
+    "catchGrossPlan": [
+      510,
+      260
+    ],
+    "catchPlanBox": [
+      4845.0,
+      4970.0,
+      510.0,
+      260.0
+    ],
+    "catchFloor": 6620.625,
+    "catchRim": 7080.0,
+    "catchWaterComparison": 70,
+    "returnClearSection": [
+      300,
+      120
+    ],
+    "returnFloor": 6605.625,
+    "collarODClear": [
+      198,
+      194
+    ],
+    "collarTop": 6720.625,
+    "dripRingOD": 218,
+    "dripRingZ": 6743.625,
+    "lowestWetJoint": 6795.75,
+    "jointToDripAfter10": 42.125,
+    "perpendicularCapClearanceNominal": 45.0,
+    "previous5000CatchPerpendicularCapOverlap": 55,
+    "qualifications": [
+      "The 190 mm bowl and 300 mm return are geometry hypotheses, not hydraulic capacities. Spout necks, pressure losses, outlet rating and possible larger bowl remain unresolved.",
+      "No head support/shoulder/fork/notch/catch arm has a complete located solid, stock inventory or moment connection. The old 6860 arm and 75 kg/40 kg/4500-point bounds are not inherited.",
+      "The SE lower head has different bowl/pipe elevations and is not the reflected SW high head. Its upper extension, side-entry or low-spout solution remains undesigned.",
+      "The catch floor/return may be submerged in adverse lower states. Actual backflow, dry-collar water level and safe emergency spill require the full hydraulic route."
+    ]
+  },
+  "skyApertureRevision": {
+    "oldClearPlan": [
+      4800,
+      7200,
+      4800,
+      7200
+    ],
+    "oneProposedCatchPlanM2": 0.1326,
+    "oneProposedCatchRainAt216MMhLps": 0.007956,
+    "twoEqualPlanCatchesM2": 0.2652,
+    "twoEqualPlanCatchRainAt216MMhLps": 0.015912,
+    "qualification": "The 2400 mm square cannot remain labelled unobstructed. The two-catch figure assumes the same plan for the still-undesigned SE head. Supports, spouts and stowed leaves add projections. The 3.60375 L/s full inward-catchment hydraulic comparison avoids credit for this unproved remaining aperture."
+  },
+  "leaderLength": {
+    "diagonalShift": 848.5281374238571,
+    "bendR": 150.0,
+    "straightLength": 548.5281374238571,
+    "twoBendsLength": 471.23889803846896,
+    "doglegDeveloped": 1019.767035462326,
+    "extraOver300Vertical": 719.767035462326,
+    "fromBuriedDatumMinus750ToBowlFloor": 8270.517035462326,
+    "remainingWithin8400": 129.48296453767398,
+    "qualification": "Only these declared centreline lengths. Flange take-up, buried offsets, lower-source datum and all component quantities remain to be reconciled."
+  },
+  "completeBodyHandling": {
+    "primarySpillStroke": 80,
+    "primarySpillInstalledToe": {
+      "SW": 6545.625,
+      "NW": 6560.0,
+      "NE": 6545.625,
+      "SE": 6531.25
+    },
+    "primarySpillRetractedToe": {
+      "SW": 6625.625,
+      "NW": 6640.0,
+      "NE": 6625.625,
+      "SE": 6611.25
+    },
+    "primarySpillRetractedTop": 7015.0,
+    "spillTopToCapUnderside": 45.0,
+    "maximumSpillBelowCarrier": 182.47500000000036,
+    "proposedPrimaryCarrierRest": 6350,
+    "lowestSpillOnPrimaryRest": 6167.525,
+    "primaryRestSpillToTroughFloorAfter25": 42.524999999999636,
+    "lowerCarrierRest": 6300,
+    "troughFloor": 6100,
+    "troughRim": 6250,
+    "stageFloor": 5540,
+    "primaryTopToOpenGate7140": 60.0,
+    "qualification": "The primary needs actual two-saddle support with a void for the long spill. A solid 650 mm square pad and old 261 mm part-height assumption cannot be inherited. No complete swept transfer/reverse receipt is supplied."
+  },
+  "firstDiversionProposal": {
+    "status": "UNIMPLEMENTED; REJECT CURRENT TWO-PORT POSITIONS",
+    "dutyLps": 3.60375,
+    "ports150LocalSW": {
+      "normal": [
+        4765.0,
+        4610.0
+      ],
+      "service": [
+        4610.0,
+        4765.0
+      ]
+    },
+    "SEReflection": "x=12000-x; y unchanged",
+    "proposedSequence": [
+      "Install and support the independent temporary receiving route while the service top blank remains closed.",
+      "Prove full flow, continuous rain capture and movement clearances before opening the service blank.",
+      "Open service takeoff, then positively blank the normal outlet before any head/spout joint is released.",
+      "Keep normal and service route isolation reversible and independently capture leaks from a mis-seated blank."
+    ],
+    "assumedVentilatedHalfArea150OrificeHeadMM": 23.551740058281524,
+    "skirt": {
+      "square": 250,
+      "length": 220,
+      "top": 6386.25,
+      "bottom": 6166.25,
+      "roofHungMass": "NOT INVENTORIED"
+    },
+    "receptor": {
+      "clearSquare": 380,
+      "floor": 6100.0,
+      "rim": 6310.0,
+      "waterComparison": 70.0,
+      "nominalRadialNoncontact": 65.0,
+      "unearnedScreeningMotionSettingBudget": 53,
+      "nominalOverlap": 143.75,
+      "nominalBottomToFloor": 66.25,
+      "skirtImmersionAt70Water": 3.75
+    },
+    "collisions": {
+      "portCentreSeparation": 219.20310216782974,
+      "skirtNearestCornerToNormalPipeAxis": 42.42640687119285,
+      "skirtToRetained154PipeIntrusion": 34.57359312880715,
+      "normalPipeCentreInside380Receptor": true,
+      "normalPortCentreInsideOppositeCornerArm": true,
+      "servicePortCentreInsideOppositeCornerArm": true
+    },
+    "requirements": [
+      "The proposed skirt collides with the retained normal spool. The receptor also encloses its axis; no first-opening capture pass exists.",
+      "Actual corner trimmers and port placement must clear both face carriers, not merely the same-face arm.",
+      "The ground outlet/receiving territory, wind shroud, venting, emergency spill, skin/water pressure and movable lower-pipe joints are not located.",
+      "Do not introduce an unmodelled rigid roof-to-ground pipe connection. Any roof-hung temporary skirt, wet loading or flexible-joint force requires an explicit source term."
+    ]
+  },
+  "exactNegativeControls": {
+    "lowerCornerArms": {
+      "southSolidXYZ": [
+        [
+          4525.0,
+          4675.0
+        ],
+        [
+          4335.0,
+          4800.0
+        ],
+        [
+          6359.75,
+          6384.75
+        ]
+      ],
+      "westSolidXYZ": [
+        [
+          4335.0,
+          4800.0
+        ],
+        [
+          4525.0,
+          4675.0
+        ],
+        [
+          6359.75,
+          6384.75
+        ]
+      ],
+      "intersectionDimensions": [
+        150.0,
+        150.0,
+        25.0
+      ],
+      "conclusion": "Full 150 x 150 x 25 mm intersection in the frozen uniform lowest-bed comparison. Applying a common corner grade to both arms merely translates the conflict. A real corner frame is missing."
+    },
+    "primaryCornerArms": {
+      "southSolidXYZ": [
+        [
+          4725.0,
+          4875.0
+        ],
+        [
+          4335.0,
+          4725.0
+        ],
+        [
+          6579.25,
+          6604.25
+        ]
+      ],
+      "westSolidXYZ": [
+        [
+          4335.0,
+          4725.0
+        ],
+        [
+          4725.0,
+          4875.0
+        ],
+        [
+          6579.25,
+          6604.25
+        ]
+      ],
+      "intersectionDimensions": [
+        0.0,
+        0.0,
+        25.0
+      ],
+      "conclusion": "Zero nominal plan clearance at the perpendicular arm ends; finite mitres/clearance remain unproved."
+    },
+    "secondarySheetCrossing": {
+      "sheetQ": 4346,
+      "sheetZ": [
+        6421.25,
+        6990
+      ],
+      "primaryArmQ": [
+        4235,
+        4725
+      ],
+      "primaryArmZ": [
+        6579.25,
+        6604.25
+      ],
+      "conclusion": "The frozen primary crossarms cross the continuous secondary sheet. Moving p stations only avoided the lower hangers."
+    },
+    "lowShoeRearWall": {
+      "downlegQ": 4346,
+      "rearWallQ": 4375,
+      "downlegToeAboveBed": 35,
+      "rearWallHeight": 125,
+      "deficitToRearWallTop": 90,
+      "conclusion": "The low shoe cannot convey water across the intact rear wall; its wet opening/pressure seal was never authored."
+    },
+    "oldHeadLift": {
+      "axis": [
+        4500,
+        4500
+      ],
+      "bowlRoofwardEdge": 4405,
+      "roofZAtEdge": 7346.145636629648,
+      "exampleBowlRim": 6795,
+      "exampleTopAfter800": 7595,
+      "sweptReachAboveRoofAtEdge": 248.85436337035208,
+      "conclusion": "Continuous upward extraction crosses slate. Moving only an upper head outside the ring is a new topology."
+    },
+    "wholeDoglegLift": {
+      "horizontalPipeTop": 6227,
+      "topAfter800": 7027,
+      "lowestOldLowerCarrier": 6359.35,
+      "conclusion": "A connected under-pan dogleg cannot lift with the upper head; separate whole spools and their own routes are needed."
+    }
+  },
+  "hydraulicHolds": {
+    "relative25Earned": false,
+    "capacityCalculatedHere": false,
+    "lowerStageOrCrestShape": "Use the separately source-bound high-back/leaf studies. This source does not establish the crest, corner, under-leaf or spout route.",
+    "leafAuditControls": {
+      "net175CommonLevelNormalReserve": 1.971895918,
+      "front107OnlyNormalReserve": -15.750920863,
+      "oneFullNormalCrossingClearLength": 399.515919657,
+      "oneFullBlockedCrossingClearLength": 467.239475013,
+      "twoSerialNormalCrossingsEachClearLength": 565.000831963,
+      "twoSerialBlockedCrossingsEachClearLength": 660.77640244,
+      "qualification": "Historical audit controls, conditional on Cd 0.6/common levels/clear openings. Exact canonical leaf receipt is the authority; ribs/ends/actual pressure distribution are unjoined."
+    },
+    "pressureBoundary": {
+      "selectedHistorical": 6750,
+      "proposedComparison": 7100,
+      "adopted": false
+    }
+  },
+  "stockAndWindHolds": [
+    "No complete next dry inventory or per-root allocation. Old 60 kg/m caps, centroid rectangles and 0/full native units cannot be inherited.",
+    "Raising walls, lengthening spill/guides, adding high backs, baffle stock, collars, hinges, locks, secondary chute, heads and temporary skirts all require actual quantities.",
+    "The fixed primary roof-lap projection to 7340.9029 and secondary baffle 7145 were not completely included in frozen 4eb pressure/stock.",
+    "Cap/spill/hem/connection and apron-rib/standoff pressure needs actual full force return. Both normal and stowed leaf projections are required.",
+    "New secondary support ownership and head location change wind moments and roof-root reactions. No native replay for this topology exists.",
+    "Whole corner supports, wet joints and residual-stock groups require actual contacts. A rigid whole L-pan cannot inherit independent diagonal-half reactions.",
+    "Root load introduction, thick-box/heel transition, field/member stiffness and the separate upstream floor/jamb structural conflict remain open."
+  ],
+  "conclusion": "Preserve as an adverse, concrete partial checkpoint. No ordinary rain-safe renewal, hydraulic, local-frame or global structural admission follows."
+}

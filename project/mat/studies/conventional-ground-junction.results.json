@@ -1,0 +1,451 @@
+{
+  "status": "Unselected ordinary mineral wall / suspended concrete comparison. Complete material, air, moisture, structural, thermal and site admission remain open.",
+  "sources": {
+    "HAD": {
+      "commit": "c2d5c3805cfa70739130d1cf4a593c8f17a9c414",
+      "path": "project/had/studies/water-replan.json",
+      "blob": "265ac19420f1b1fa6bba41dd859d7ee758187d6b",
+      "role": "Immutable corrected integral-pan / selected floor checkpoint; later water proposals are not silently imported"
+    },
+    "STRfloor": {
+      "commit": "5f56d58f5c2d4b7d65b712be10c39d274884b154",
+      "path": "project/str/studies/current-house-occupied-interfaces.json",
+      "blob": "c4b2261a7c62481b64617cca57b6b2baabec330e",
+      "key": "groundFloor",
+      "role": "Immutable unadopted STR1354 ground-floor structural/pour comparison. Not a selected cage, moisture/air/gas proof or concrete constituent recipe."
+    },
+    "STRgrid": {
+      "commit": "8c2159a8cb67782cfc854fcf230025f04f1b81af",
+      "path": "project/str/studies/current-house-grid.json",
+      "blob": "1409f0b80739e2dc46ff078e31df6685f12b7371",
+      "role": "Merged structural development candidate, not selected capacity or geometry; actual spine at the chosen section is 900 mm wide and -630..-180"
+    },
+    "currentHAD": {
+      "commit": "2a31084013cebca2094692263f0c7a2b2f8d2166",
+      "path": "project/had/studies/water-replan.json",
+      "blob": "6f089df104fe85c028978892e7f6b63f862e3237",
+      "role": "Actual merged RWT checkpoint; compare the named relevant projections with the intentionally pinned floor/pan case. Changed receiver/maintenance and other source roles are not relabelled as unchanged."
+    }
+  },
+  "currentHADProjectionReconciliation": {
+    "allNamedProjectionsEqual": true,
+    "projectionSha256": {
+      "shell": "c5d1866aabc15dda07995e73b08c4ccb514947dcd3a621cea851af5fe366f11b",
+      "envelope": "2f7f958d859cc4b069e390c5a40fbdb8dd39ab876ebf40eb4435dab181aa21a4",
+      "court": "a6088e3803b949f0b9b98aa48256d25e52966c9334c57b061f5ba9d654282323",
+      "sections": "0ef1e8fb8cc07dadf5252fd9c899e57f90eda1a5e8ce81e4484704f06916afad",
+      "void": "d6bc9235a01317d6ca3afe241b51a825f47b3b8bf37ca7e6970c52e23406d3b5",
+      "groundWalls": "6b37b1132c369b266a1156b22fb70fb42f554edba5c537c9684ec98b68962661",
+      "northNormalRoute.floorJoin": "34360a1c8035a431e3c7320d93ea12609de5de35e145f59218deadc12b7a1f4e",
+      "southCourtThresholdReference": "1affa6f450554ea40d12d077b22f8d70246fe9a3cb6dfcd9bc431c4d0eda2dd2",
+      "structuralChanges.stairMidPost.concrete": "25b7b8cc3739fecc88db5b3c94a139b6dd6ffa692a3ac7d6b1a715bc18a0827c",
+      "structuralChanges.newWetWallBeam.southReceiverCore": "eb209bf27e95c0117a953fae660675de6410987e5be0a74865ca195680f2565b",
+      "structuralChanges.newWetWallBeam.northReceiverCore": "3315f25f58157ed61e241af0c54e1669b53b9cce65cbf083cd2517d008e5e1c9",
+      "structuralChanges.newWetWallBeam.beamBottom": "ecd6512bdf3b727d065dec7da7b0523023594a474c7fb63bf0efce1e8d080da6"
+    },
+    "scope": "Only the named floor/wall/core/threshold and reference-air inputs are proved unchanged. Other current HAD changes retain their owning source; no physical or material admission."
+  },
+  "section": {
+    "wall": {
+      "id": "service-spine",
+      "a": [
+        9300,
+        0
+      ],
+      "b": [
+        9300,
+        8290
+      ],
+      "t": 194,
+      "holes": [
+        [
+          2750,
+          3650
+        ]
+      ],
+      "structuralCore": [
+        9230,
+        9370
+      ],
+      "finishedFaces": [
+        9203,
+        9397
+      ],
+      "faceFinish": [
+        27,
+        27
+      ]
+    },
+    "y": 4500,
+    "floor": {
+      "layers": [
+        15,
+        65,
+        100,
+        200
+      ],
+      "z": [
+        0,
+        -15,
+        -80,
+        -180,
+        -380
+      ],
+      "innerDpc": [
+        -180,
+        -30
+      ],
+      "plasterStops": 0,
+      "airLine": "Wallmineralplaster meets floorfinish at0; movement/airtightness unqualified",
+      "moisture": "40cover suspendedRC is a deliberate moisture hypothesis. NoDPM or site-required gas barrier is waived; exact floor/end/DPC transition not qualified."
+    },
+    "candidateDpcFaces": [
+      9192.5,
+      9407.5
+    ],
+    "candidateDpcCourses": [
+      {
+        "id": "bed-1",
+        "z": [
+          -180,
+          -170
+        ]
+      },
+      {
+        "id": "course-1",
+        "z": [
+          -170,
+          -105
+        ]
+      },
+      {
+        "id": "bed-2",
+        "z": [
+          -105,
+          -95
+        ]
+      },
+      {
+        "id": "course-2",
+        "z": [
+          -95,
+          -30
+        ]
+      }
+    ],
+    "underlyingSpine": {
+      "axis": "y",
+      "datum": 9300,
+      "extent": [
+        332.5,
+        8290
+      ],
+      "width": 900,
+      "z": [
+        -630,
+        -180
+      ],
+      "heads": [
+        {
+          "id": "P23",
+          "u": 332.5,
+          "offset": 0
+        },
+        {
+          "id": "P41",
+          "u": 2650,
+          "offset": 0
+        },
+        {
+          "id": "P42",
+          "u": 4100,
+          "offset": 0
+        },
+        {
+          "id": "P43",
+          "u": 6100,
+          "offset": 0
+        },
+        {
+          "id": "P44",
+          "u": 7700,
+          "offset": 0
+        }
+      ],
+      "maximumPitch": 2317.5,
+      "endCantilevers": [
+        0,
+        590
+      ]
+    },
+    "supportRole": "900 mm common RC spine is integral beneath this section; do not draw a freestanding RC200 coupon here",
+    "headerProjectionFromCoreEach_mm": 37.5,
+    "headerProjectionBeyondFinishedFaceEach_mm": [
+      10.5,
+      10.5
+    ],
+    "unplasteredWallCoreAboveDpc_mm": 30,
+    "concreteToPlasterOffset_mm": 180,
+    "belowFflFaceTerritory": {
+      "normalDepthEach_mm": [
+        27,
+        27
+      ],
+      "z": [
+        -30,
+        0
+      ],
+      "status": "Unassigned 3D finish/base territory. No solid plaster, open void or selected glass filler is inferred from a finished-plan mask."
+    }
+  },
+  "airRouteControl": {
+    "name": "Concrete body -> complete bottom bed -> bonded DPC body/perpends/upper bed -> wall core below plaster stop -> plaster",
+    "selected": false,
+    "rules": [
+      "First compare the actual bonded mineral assembly as a complete air transition; neither brick absorption nor mortar designation demonstrates its leakage",
+      "Include the 30 mm wall-core height above DPC and below plaster stop; do not jump from DPC top -30 to plaster at0",
+      "Do not plaster continuously down to wet RC and around the DPC; do not close an air drawing by creating a damp bypass",
+      "Concrete moisture resistance, air permeability, crack/joint leakage and gas suitability remain separate duties",
+      "Do not assume a new metal return is needed or qualified; if used it needs actual cast-in depth, cage/compaction, weld, movement and plaster-interface evidence"
+    ]
+  },
+  "plasterBypassNegativeControl": {
+    "continuousPlasterDownToRC": [
+      -180,
+      150
+    ],
+    "overlapsWholeDpc": true,
+    "status": "Reject an ordinary capillary finish bridging this territory; this is a contact test, not a moisture transport result"
+  },
+  "structuralFloorInputBound": true,
+  "structuralFloorComparison": {
+    "sourceRole": "Immutable unadopted STR1354 ground-floor structural/pour comparison. Not a selected cage, moisture/air/gas proof or concrete constituent recipe.",
+    "matchedInputSha256": {
+      "HAD": "1a6bdba15b88f81adb57c978b365033ace174f06ca9e4022366c8639016b2fdb",
+      "STRgrid": "870c915cd8d5c9c9a7dd3f28cf7ea4f260132fc73be709329db986cea0cbae2d"
+    },
+    "physicalRcPlan_m2": 104.895225,
+    "physicalAreaParts_m2": {
+      "direct": 53.862194,
+      "simple": 50.634031,
+      "cant": 0.399
+    },
+    "maximumClearSpan_mm": 2967.5,
+    "effectiveSpanCompared_mm": 3167.5,
+    "depthRange_mm": [
+      195,
+      205
+    ],
+    "faceCoverRange_mm": [
+      40,
+      50
+    ],
+    "preferredField": {
+      "effectiveDepth": 127.0,
+      "MR": 55.337752,
+      "Vr": 91.118158,
+      "M": 16.672118,
+      "V": 21.053977,
+      "steelStressFullService": 100.687803,
+      "flexCrackSpacing": 290.169181,
+      "pureRestraintCrackSpacing": 369.538363,
+      "crackWidthFlexOnly": 0.146082,
+      "crackWidthFullRestraint": 0.293898,
+      "deflection": 10.18456,
+      "comparatorL250": 12.67,
+      "coverToControllingDirectionCompared": 62,
+      "bar": 12,
+      "pitch": 100,
+      "steelKgM2": 35.512563,
+      "actualFreeVerticalClear": 47
+    },
+    "steelTonnesBeforeLapsEdges": 3.725098,
+    "H12at150ControlSteelTonnes": 2.483399,
+    "localStripEconomy": {
+      "base": "H12/150 each face/two axes; add offset H12/150 each face only in the actual span direction at governing >0.30mm regions, resulting local75 rather than pretending to make 100 from 150. Includes650 beyond both receiving faces and 150 side extension clipped to real slab; boundary bars still require hook/anchorage. Plant point, lap extensions, threshold and re-entrant edge extras not included in this quantity.",
+      "actualDirectionAreasEWNS": [
+        14.3722,
+        30.039756
+      ],
+      "tonnesBeforeLapsExtras": 3.009126,
+      "decision": "Simpler uniform100 is the bounded reproducible control. Compare this lower-mass reinforcement layout for actual cover/joint/scheduling rather than declaring dense steel a whole-house invariant."
+    },
+    "crackMethod": "JRC Eurocode 2 worked examples, 2014, 7.3.4 form sr=3.4c+0.8*k2*0.425*bar/rhoeff. Deliberately neglect favourable tension-stiffening, full G+Q elastic cracked stress plus a separate 400microstrain upper restraint comparison using pure-tension k2=1.0. The 0.30mm is an authored structural comparison only, not acceptable gas transmission, liquid permeability or proof of lifetime crack width. Full restraint, unmodeled settlement and thermal exposure remain bounded hypotheses. https://eurocodes.jrc.ec.europa.eu/publications/eurocode-2-background-appications-design-concrete-buildings-worked-examples",
+    "wkIf500Microstrain_mm": 0.330852,
+    "pour": "Preferred finite construction control: form a continuous upper200mm dry-floor lift (20.98m3 nominal), including the head/beam overlap once and the formed threshold seat. No planned full-depth intermediate joint in occupied field; if the lower grillage is cast first, structural horizontal construction interface is at underside -380 with prepared rough concrete and continuing reinforcement. Starter/interlock, real pour length, temperature/early-age restraint, interruption detail and any service penetrations still need coordinated design. Do not declare the construction joint airtight.",
+    "materials": "C30/S500 only structural comparison. Composite RC density at or below25kN/m3 including the actual bars must be delivered for this load bound. Cement dose, constituent mix, permeability, curing, floor surface/air-wall seal and actual site/water exposure remain the material/source owners’ duties. 300kg/m3 or 40mm exposure hypothesis alone gives no admission.",
+    "nominalUpperLiftVolume_m3": 20.979045,
+    "volumeRole": "Gross nominal RC layer before reinforcement/cast-in displacement and actual volume reconciliation; not measured net supplied concrete",
+    "cementDoseScreenOnGrossRcVolumeOnly_kg": 6293.7135,
+    "guidanceDimensionalScreens": {
+      "thickness": true,
+      "cover": true
+    },
+    "scope": "Only candidate thickness/cover comparisons. Actual mix, curing, crack/joint moisture/air/gas performance, floor/wall and renewable threshold construction remain unearned."
+  },
+  "airDutyComparison": {
+    "source": {
+      "commit": "90a18dae76c338a389dfb401a23f1decf6fc43e2",
+      "path": "project/mat/studies/whole-house-leakage-duty.json",
+      "blob": "5b93cdd9ea1ee7d825fa4596a44caf06431afc49",
+      "role": "Immutable, unadopted Services1356 comparison refreshed against merged RWT 2a310840 / HAD 6f089df1; not a final test envelope, owner target or assembly performance.",
+      "previousReviewedSource": {
+        "commit": "e85cc19fc858069cb874a3b0622303c2edc56ac5",
+        "path": "project/mat/studies/whole-house-leakage-duty.json",
+        "blob": "c4e6e9fd168078c83d092d13f1913b5d0128b7af",
+        "role": "Immutable unadopted Services1356 whole-house reference and single aggregate family allocation; not final test envelope or owner target."
+      }
+    },
+    "status": "Provisional design comparison and allocation; no adopted owner invariant, tested envelope or compliance result",
+    "floorWallAllocation": {
+      "aggregate_m3_per_h_at50Pa": 63.234655000000004,
+      "ordinaryEdge_m": 118.761,
+      "bookkeepingEquivalent_m3_per_h_m_at50Pa": 0.5324530359293035,
+      "bookkeepingEquivalent_Lps_m_at50Pa": 0.14790362109147318,
+      "role": "Authored finite accounting proposal, not a product or normative joint limit. Floor/wall10% is ONE aggregate covering field body, ordinary edge, associated joints, three structural RC core crossings in the pinned floor study, and wall-base routes. Complete service sleeves/collars and fixed/renewable air joints belong to the separate servicePenetrations10% family. Three complete external door/threshold assemblies, including fixed/renewable air joints, belong to openings25%; floor/wall ends at their assigned assembly boundaries. Every physical path must receive one owner; no duplicated budget.",
+      "threeDoorWidths_m": 5,
+      "threeDoorAssemblyFamily": "completeOpeningsIncludingThreeDoorThresholds",
+      "notAdmitted": [
+        "A uniform line rating or tested length",
+        "63.2 budget plus additional field/core budgets",
+        "Arbitrary zero-leak junction",
+        "A mineral/concrete/DPC/clamp alone establishes the allocated performance"
+      ]
+    },
+    "allFamilyBudgets": {
+      "floorWallField": {
+        "fraction": 0.1,
+        "aggregate_m3_per_h_at50Pa": 63.234655000000004
+      },
+      "wallBodiesAndPermanentJunctions": {
+        "fraction": 0.15,
+        "aggregate_m3_per_h_at50Pa": 94.85198249999999
+      },
+      "roofCeilingAndHeadTransitions": {
+        "fraction": 0.2,
+        "aggregate_m3_per_h_at50Pa": 126.46931000000001
+      },
+      "completeOpeningsIncludingThreeDoorThresholds": {
+        "fraction": 0.25,
+        "aggregate_m3_per_h_at50Pa": 158.0866375
+      },
+      "servicePenetrations": {
+        "fraction": 0.1,
+        "aggregate_m3_per_h_at50Pa": 63.234655000000004
+      },
+      "unassignedReserve": {
+        "fraction": 0.2,
+        "aggregate_m3_per_h_at50Pa": 126.46931000000001
+      }
+    },
+    "physicalTestBoundaryRegisterComplete": false,
+    "previousReviewedNumericGeometryCasesBudgetsEqual": true,
+    "allocationRule": "This is one aggregate for the whole family, not a per-detail budget or a demonstrated line rating. The three complete door/threshold assemblies stop this family and belong to openings."
+  },
+  "ordinaryThresholdAirComparison": {
+    "control": {
+      "role": "Ordinary dry-side air-control development control, not an actual seal/product or pressure-water closure",
+      "pressure_Pa": 50,
+      "dynamicViscosity_Pa_s": 1.81e-05,
+      "airDensity_kg_per_m3": 1.2,
+      "nominalOverlap_mm": 24,
+      "relativeMovementYBound_mm": 2,
+      "edgePositionToleranceEach_mm": 1,
+      "gapChallenges_mm": [
+        0.1,
+        0.2,
+        0.3,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "width_mm": 1780,
+      "rule": "Ideal no-slip, steady laminar, fully developed central-slot sensitivity derived from pressure-driven momentum balance; uniform connected gap and constant properties. Not measured leakage, an installed rating, an adopted allocation or a strict assembly bound. Entry/end effects, variable-gap paths, deformation and achieved tolerances remain unqualified; especially the largest gaps must not be treated as a supplied joint performance.",
+      "waterDuty": "No source-qualified head is assigned to this dry apron behind the +15 mm crest. Quiet water −35 mm and geometric crest +15 mm are not a first-leak rating; firstSusceptible remains null. No closed E roof/pipe pressure duty is transferred. Water/capillary/end qualification remains independent.",
+      "toleranceRole": "The 2 mm movement and 1 mm edge tolerances are authored challenge bounds, not actual fabrication/installation tolerances. Gap control is an unproven requirement on formed faces and supports, not an achieved fit.",
+      "ends": "No actual end gap or end closure is authored. Every gap result is central only and cannot be credited as total assembly leakage.",
+      "renewal": "Ordinary retention/cover must be independently supported and entirely released before NORTH 500 mm withdrawal; no permanent field-to-pan weld or through-pan fixing. No high preload is inferred from air duty alone.",
+      "backingEndY": 4054,
+      "panStartY": 4030,
+      "referenceRetainerY": 4010,
+      "referenceHoleDiameter_mm": 6.5
+    },
+    "minimumOverlapUnderAuthoredChallenge_mm": 20,
+    "minimumRiserClearanceUnderSameChallenge_mm": 2,
+    "rejected4058BackingNegativeControl_mm": -2,
+    "entireOpeningsBudgetForComparisonOnly_m3_per_h_at50Pa": 158.0866375,
+    "centralGapChallenges": [
+      {
+        "uniformConnectedGap_mm": 0.1,
+        "centralFlow_m3_per_h_at50Pa": 0.07375690607734808,
+        "fractionOfEntireOpeningsBudgetOnly": 0.00046656002837272114,
+        "hydraulicDiameterReynolds": 1.5262049387991823
+      },
+      {
+        "uniformConnectedGap_mm": 0.2,
+        "centralFlow_m3_per_h_at50Pa": 0.5900552486187847,
+        "fractionOfEntireOpeningsBudgetOnly": 0.003732480226981769,
+        "hydraulicDiameterReynolds": 12.209639510393458
+      },
+      {
+        "uniformConnectedGap_mm": 0.3,
+        "centralFlow_m3_per_h_at50Pa": 1.991436464088397,
+        "fractionOfEntireOpeningsBudgetOnly": 0.012597120766063464,
+        "hydraulicDiameterReynolds": 41.2075333475779
+      },
+      {
+        "uniformConnectedGap_mm": 0.5,
+        "centralFlow_m3_per_h_at50Pa": 9.219613259668508,
+        "fractionOfEntireOpeningsBudgetOnly": 0.05832000354659013,
+        "hydraulicDiameterReynolds": 190.77561734989771
+      },
+      {
+        "uniformConnectedGap_mm": 0.75,
+        "centralFlow_m3_per_h_at50Pa": 31.11619475138121,
+        "fractionOfEntireOpeningsBudgetOnly": 0.19683001196974168,
+        "hydraulicDiameterReynolds": 643.8677085559048
+      },
+      {
+        "uniformConnectedGap_mm": 1.0,
+        "centralFlow_m3_per_h_at50Pa": 73.75690607734806,
+        "fractionOfEntireOpeningsBudgetOnly": 0.46656002837272104,
+        "hydraulicDiameterReynolds": 1526.2049387991817
+      }
+    ],
+    "jointBudgetAllocated": false,
+    "completeAssemblyTested": false,
+    "recommendation": "Do not specify a high-force vacuum-style seal from a circular catalogue. First test an ordinary supported overlap or replaceable compression interface against actual air duty, with independent water/capillary/end/movement and walking qualification."
+  },
+  "moistureControl": {
+    "source": "https://assets.publishing.service.gov.uk/media/5a8192a0e5274a2e8ab54b5f/BR_PDF_AD_C_2013.pdf",
+    "edition": "England AD C 2004 with2010/2013 amendments, sections4.17–4.22 and5.5; accessed6November2026",
+    "inSituControl": {
+      "thicknessMinimum_mm": 100,
+      "cementMinimum_kg_per_m3": 300,
+      "coverMinimum_mm": 40
+    },
+    "actualMix": null,
+    "actualAirMoisturePerformance": null,
+    "actualSiteGasAndPressureWater": null,
+    "rule": "Guidance control, not adoption of a concrete recipe or automatic membrane waiver; preserve the common ground/pile/grid/seat sources and assigned drainage/ventilation duties"
+  },
+  "airEvidence": {
+    "source": "https://passipedia.org/planning/airtight_construction/general_principles/principles_for_improving_airtightness",
+    "role": "PHI method guidance, accessed6November2026: identify actual air layers and continuous joined ends. Do not assume a masonry wall supplies its intended plaster air layer. No house target or assembly acceptance transferred.",
+    "bondedMasonryResearch": {
+      "source": "https://store.astm.org/stp157720130132.html",
+      "citation": "Sanders, Stroble and Clark, Air Permeability of Masonry Materials, 30 September 2014, DOI10.1520/STP157720130132",
+      "access": "Public publisher abstract inspected6November2026; complete paid paper not inspected",
+      "role": "Four clay-brick/mortar panel groups had low measured air permeance. Relevant against blanket rejection of an unplastered bonded masonry control, not evidence for WCBL65/M12, this DPC/floor joint, movement, moisture, gas or site performance. No measured value is transferred to the house."
+    },
+    "servicesTarget": "Proposed q50 ≤1.0 comparison and one 10% floor/wall aggregate pinned under ServicesAir. No owner invariant or assembly performance is adopted. Only three structural RC core crossings belong here; complete service sleeves/collars belong to the separate penetrations 10% family."
+  },
+  "admission": {
+    "selected": false,
+    "material": false,
+    "structural": false,
+    "airMoisture": false,
+    "thermal": false,
+    "site": false
+  }
+}

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 815 405" width="815" height="405" role="img" aria-labelledby="title">
+<title id="title">Alternative captive hold-down at the north collector</title>
+<rect width="815" height="405" fill="#fcfaf2"/>
+<g font-family="sans-serif" font-size="14" fill="#18262a">
+<text x="31" y="31">North floor-transfer pocket at the garden pier · Y increases right</text>
+<text x="32" y="60">218 mm body, plate below the collector</text>
+<rect x="47.40" y="112.00" width="252.45" height="152.60" fill="#d8d4c9"/>
+<rect x="131.00" y="264.60" width="236.50" height="60.90" fill="#ebddbc"/>
+<polyline points="81.50,142.80 177.75,142.80 220.65,151.90 239.35,165.20 249.25,188.30 239.35,211.40 220.65,224.70 177.75,233.80 81.50,233.80" fill="none" stroke="#15516e" stroke-width="3"/>
+<rect x="209.65" y="264.60" width="79.20" height="27.30" fill="#b65542"/>
+<rect x="80.40" y="84.70" width="35.20" height="27.30" fill="#36686b"/>
+<text x="32" y="351">Red: outer bearing and nut package</text>
+<text x="32" y="374">Blue: bar centreline; green: upper capture</text>
+<text x="425" y="60">245 mm body, plate held in collector pocket</text>
+<rect x="440.40" y="112.00" width="252.45" height="171.50" fill="#d8d4c9"/>
+<rect x="524.00" y="283.50" width="236.50" height="42.00" fill="#ebddbc"/>
+<polyline points="474.50,142.80 570.75,142.80 613.65,151.90 632.35,165.20 642.25,188.30 632.35,211.40 613.65,224.70 570.75,233.80 474.50,233.80" fill="none" stroke="#15516e" stroke-width="3"/>
+<rect x="602.65" y="256.20" width="79.20" height="27.30" fill="#b65542"/>
+<rect x="473.40" y="84.70" width="35.20" height="27.30" fill="#36686b"/>
+<text x="425" y="351">Red: outer bearing and nut package</text>
+<text x="425" y="374">Blue: bar centreline; green: upper capture</text>
+</g></svg>

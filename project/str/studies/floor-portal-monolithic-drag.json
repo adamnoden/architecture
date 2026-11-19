@@ -1,0 +1,1144 @@
+{
+  "geometry": {
+    "NWCornerOriginXYmm": [
+      332.5,
+      11667.5
+    ],
+    "NWOriginalRearCabinetPlanMm": [
+      429.5,
+      10800,
+      300,
+      750
+    ],
+    "finishUndersideZMm": 3435,
+    "northNearestRawOpeningReserveAtOldToeMm": 37.5,
+    "permanentWallRoomwardIncreaseMm": 100,
+    "receivingUMm": 170,
+    "soffitAndOrdinarySlabTopZMm": [
+      3170,
+      3370
+    ],
+    "unchangedExteriorGlassCavityBrickMm": [
+      110.0,
+      50.0,
+      102.5
+    ],
+    "wallUAndLegVLimitsMm": [
+      [
+        -70,
+        170
+      ],
+      [
+        -70,
+        930
+      ]
+    ]
+  },
+  "gravity": {
+    "directBearingURangeMm": [
+      -30,
+      70
+    ],
+    "records": [
+      {
+        "U190ToU20IndependentTieKN": 16.733055772898066,
+        "field": "NW-W",
+        "mean100WideSeatMPa": 0.16865624999999998,
+        "wingReactionKN": 14.504437499999998
+      },
+      {
+        "U190ToU20IndependentTieKN": 21.990620962242502,
+        "field": "NE",
+        "mean100WideSeatMPa": 0.2216484375,
+        "wingReactionKN": 19.061765625
+      }
+    ]
+  },
+  "groundAlternative": {
+    "insidePlanGapToSmallestCapAfter5Mm": 125.0,
+    "outsidePlanGapToSmallestCapAfter5Mm": 225.0,
+    "retainedNorthCornerAndToeCapIDs": [
+      "P07",
+      "P08",
+      "P09",
+      "P10",
+      "P11",
+      "P12"
+    ],
+    "scope": "Plan-only alternative with actual continuous widened body onto a redesigned imperforate DPC plate and cap. Existing shallow node, anchors and soil capacities are not transferred."
+  },
+  "groundSplice": {
+    "extendedWeb": {
+      "extraUnboredStockKgPerCorner": 25.92000000000001,
+      "retainedBlindBlockUncutCoreMm": 26,
+      "retainedBlindBlockUncutCoreZMm": [
+        -53,
+        -27
+      ],
+      "thicknessMm": 20,
+      "totalUnboredStockKgPerCorner": 140.16000000000005,
+      "zMm": [
+        -50,
+        -30
+      ]
+    },
+    "footprint": {
+      "extendedWebOverhangMm2": 0,
+      "legacyMetalMm2": 260400.0,
+      "uncoveredByExtendedWebMm2": 0,
+      "uncoveredByLegacyMetalMm2": 162000.0,
+      "widenedBodyMm2": 422400.0
+    },
+    "isolatedKeyLoadPath": {
+      "coordinateBasis": "Local legacy DPC outer heel at [0,0]. Positive x/y extend into the two L legs, positive z is up.",
+      "legacyControl": {
+        "status": "backing-unavailable",
+        "unsupportedFaces": [
+          "y-toe-side",
+          "x-toe-side"
+        ],
+        "widthMm": 140
+      },
+      "runs": [
+        {
+          "externalNetWrench": [
+            0.0,
+            0.0,
+            0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "lower": {
+            "contacts": [
+              {
+                "bearingAreaMm2": 12000,
+                "centreXYZMm": [
+                  900.0,
+                  140,
+                  -80.0
+                ],
+                "forceKN": [
+                  0,
+                  -19.490561275484396,
+                  0
+                ],
+                "id": "x-toe-side",
+                "meanBearingDemandMPa": 1.6242134396236998
+              },
+              {
+                "bearingAreaMm2": 8400,
+                "centreXYZMm": [
+                  70.0,
+                  800,
+                  -80.0
+                ],
+                "forceKN": [
+                  0,
+                  19.490561275484396,
+                  0
+                ],
+                "id": "y-toe-end",
+                "meanBearingDemandMPa": 2.3203049137481426
+              }
+            ],
+            "wrench": [
+              0,
+              0.0,
+              0,
+              0.0,
+              0.0,
+              -16.17716585865205
+            ]
+          },
+          "upper": {
+            "contacts": [
+              {
+                "bearingAreaMm2": 8400,
+                "centreXYZMm": [
+                  800,
+                  70.0,
+                  0.0
+                ],
+                "forceKN": [
+                  19.490561275484396,
+                  0,
+                  0
+                ],
+                "id": "x-toe-end",
+                "meanBearingDemandMPa": 2.3203049137481426
+              },
+              {
+                "bearingAreaMm2": 12000,
+                "centreXYZMm": [
+                  140,
+                  900.0,
+                  0.0
+                ],
+                "forceKN": [
+                  -19.490561275484396,
+                  0,
+                  0
+                ],
+                "id": "y-toe-side",
+                "meanBearingDemandMPa": 1.6242134396236998
+              }
+            ],
+            "wrench": [
+              0.0,
+              0,
+              0,
+              0.0,
+              0.0,
+              16.17716585865205
+            ]
+          },
+          "upperYawSign": 1,
+          "webCutDemands": [
+            {
+              "arm": "x",
+              "originXYZMm": [
+                240.0,
+                120.0,
+                -40.0
+              ],
+              "section": "root",
+              "toeSideExternalWrench": [
+                19.490561275484396,
+                -19.490561275484396,
+                0,
+                -0.7796224510193759,
+                0.7796224510193759,
+                -11.889242378045482
+              ]
+            },
+            {
+              "arm": "x",
+              "originXYZMm": [
+                800,
+                120.0,
+                -40.0
+              ],
+              "section": "toe",
+              "toeSideExternalWrench": [
+                19.490561275484396,
+                -19.490561275484396,
+                0,
+                -0.7796224510193759,
+                0.7796224510193759,
+                -0.9745280637742199
+              ]
+            },
+            {
+              "arm": "y",
+              "originXYZMm": [
+                120.0,
+                240.0,
+                -40.0
+              ],
+              "section": "root",
+              "toeSideExternalWrench": [
+                -19.490561275484396,
+                19.490561275484396,
+                0,
+                0.7796224510193759,
+                -0.7796224510193759,
+                11.889242378045482
+              ]
+            },
+            {
+              "arm": "y",
+              "originXYZMm": [
+                120.0,
+                800,
+                -40.0
+              ],
+              "section": "toe",
+              "toeSideExternalWrench": [
+                -19.490561275484396,
+                19.490561275484396,
+                0,
+                0.7796224510193759,
+                -0.7796224510193759,
+                0.9745280637742199
+              ]
+            }
+          ]
+        },
+        {
+          "externalNetWrench": [
+            0.0,
+            0.0,
+            0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "lower": {
+            "contacts": [
+              {
+                "bearingAreaMm2": 8400,
+                "centreXYZMm": [
+                  800,
+                  70.0,
+                  -80.0
+                ],
+                "forceKN": [
+                  19.490561275484396,
+                  0,
+                  0
+                ],
+                "id": "x-toe-end",
+                "meanBearingDemandMPa": 2.3203049137481426
+              },
+              {
+                "bearingAreaMm2": 12000,
+                "centreXYZMm": [
+                  140,
+                  900.0,
+                  -80.0
+                ],
+                "forceKN": [
+                  -19.490561275484396,
+                  0,
+                  0
+                ],
+                "id": "y-toe-side",
+                "meanBearingDemandMPa": 1.6242134396236998
+              }
+            ],
+            "wrench": [
+              0.0,
+              0,
+              0,
+              0.0,
+              0.0,
+              16.17716585865205
+            ]
+          },
+          "upper": {
+            "contacts": [
+              {
+                "bearingAreaMm2": 12000,
+                "centreXYZMm": [
+                  900.0,
+                  140,
+                  0.0
+                ],
+                "forceKN": [
+                  0,
+                  -19.490561275484396,
+                  0
+                ],
+                "id": "x-toe-side",
+                "meanBearingDemandMPa": 1.6242134396236998
+              },
+              {
+                "bearingAreaMm2": 8400,
+                "centreXYZMm": [
+                  70.0,
+                  800,
+                  0.0
+                ],
+                "forceKN": [
+                  0,
+                  19.490561275484396,
+                  0
+                ],
+                "id": "y-toe-end",
+                "meanBearingDemandMPa": 2.3203049137481426
+              }
+            ],
+            "wrench": [
+              0,
+              0.0,
+              0,
+              0.0,
+              0.0,
+              -16.17716585865205
+            ]
+          },
+          "upperYawSign": -1,
+          "webCutDemands": [
+            {
+              "arm": "x",
+              "originXYZMm": [
+                240.0,
+                120.0,
+                -40.0
+              ],
+              "section": "root",
+              "toeSideExternalWrench": [
+                19.490561275484396,
+                -19.490561275484396,
+                0,
+                0.7796224510193759,
+                -0.7796224510193759,
+                -11.889242378045482
+              ]
+            },
+            {
+              "arm": "x",
+              "originXYZMm": [
+                800,
+                120.0,
+                -40.0
+              ],
+              "section": "toe",
+              "toeSideExternalWrench": [
+                19.490561275484396,
+                -19.490561275484396,
+                0,
+                0.7796224510193759,
+                -0.7796224510193759,
+                -0.9745280637742199
+              ]
+            },
+            {
+              "arm": "y",
+              "originXYZMm": [
+                120.0,
+                240.0,
+                -40.0
+              ],
+              "section": "root",
+              "toeSideExternalWrench": [
+                -19.490561275484396,
+                19.490561275484396,
+                0,
+                -0.7796224510193759,
+                0.7796224510193759,
+                11.889242378045482
+              ]
+            },
+            {
+              "arm": "y",
+              "originXYZMm": [
+                120.0,
+                800,
+                -40.0
+              ],
+              "section": "toe",
+              "toeSideExternalWrench": [
+                -19.490561275484396,
+                19.490561275484396,
+                0,
+                -0.7796224510193759,
+                0.7796224510193759,
+                0.9745280637742199
+              ]
+            }
+          ]
+        }
+      ],
+      "scope": "Isolated equal and opposite yaw only. Web cut wrenches are external demands on the toe side. No strength, stiffness or concurrent splice actions are admitted.",
+      "status": "balanced-compression-only-comparison",
+      "widenedUnsupportedFaces": [],
+      "widenedWidthMm": 240.0,
+      "wrenchOrder": [
+        "Fx_kN",
+        "Fy_kN",
+        "Fz_kN",
+        "Mx_kNm",
+        "My_kNm",
+        "Mz_kNm"
+      ],
+      "wrenchOriginXYZMm": [
+        0,
+        0,
+        -40.0
+      ]
+    },
+    "isolatedPositiveKeyCouple": {
+      "forceIfOneCoupleTakesWholeYawKN": [
+        19.490561275484396,
+        19.490561275484396
+      ],
+      "historicalYawAboutU0KNm": 16.17716585865205,
+      "leverArmsMm": [
+        830.0,
+        830.0
+      ]
+    },
+    "knownMainBarAxes": [
+      {
+        "axisOffsetMm": 0.0,
+        "id": "H20-43-43",
+        "legacyBlindBoreXYMm": [
+          -27.0,
+          -27.0
+        ],
+        "upperBarXYMm": [
+          -27.0,
+          -27.0
+        ]
+      },
+      {
+        "axisOffsetMm": 0.0,
+        "id": "H20-43-97",
+        "legacyBlindBoreXYMm": [
+          -27.0,
+          27.0
+        ],
+        "upperBarXYMm": [
+          -27.0,
+          27.0
+        ]
+      },
+      {
+        "axisOffsetMm": 15.0,
+        "id": "H20-43-850",
+        "legacyBlindBoreXYMm": [
+          -27.0,
+          780.0
+        ],
+        "upperBarXYMm": [
+          -12.0,
+          780.0
+        ]
+      },
+      {
+        "axisOffsetMm": 15.0,
+        "id": "H20-43-950",
+        "legacyBlindBoreXYMm": [
+          -27.0,
+          880.0
+        ],
+        "upperBarXYMm": [
+          -12.0,
+          880.0
+        ]
+      },
+      {
+        "axisOffsetMm": 0.0,
+        "id": "H20-97-43",
+        "legacyBlindBoreXYMm": [
+          27.0,
+          -27.0
+        ],
+        "upperBarXYMm": [
+          27.0,
+          -27.0
+        ]
+      },
+      {
+        "axisOffsetMm": 0.0,
+        "id": "H20-97-97",
+        "legacyBlindBoreXYMm": [
+          27.0,
+          27.0
+        ],
+        "upperBarXYMm": [
+          27.0,
+          27.0
+        ]
+      },
+      {
+        "axisOffsetMm": 15.0,
+        "id": "H20-97-850",
+        "legacyBlindBoreXYMm": [
+          27.0,
+          780.0
+        ],
+        "upperBarXYMm": [
+          42.0,
+          780.0
+        ]
+      },
+      {
+        "axisOffsetMm": 15.0,
+        "id": "H20-97-950",
+        "legacyBlindBoreXYMm": [
+          27.0,
+          880.0
+        ],
+        "upperBarXYMm": [
+          42.0,
+          880.0
+        ]
+      },
+      {
+        "axisOffsetMm": 15.0,
+        "id": "H20-850-43",
+        "legacyBlindBoreXYMm": [
+          780.0,
+          -27.0
+        ],
+        "upperBarXYMm": [
+          780.0,
+          -12.0
+        ]
+      },
+      {
+        "axisOffsetMm": 15.0,
+        "id": "H20-850-97",
+        "legacyBlindBoreXYMm": [
+          780.0,
+          27.0
+        ],
+        "upperBarXYMm": [
+          780.0,
+          42.0
+        ]
+      },
+      {
+        "axisOffsetMm": 15.0,
+        "id": "H20-950-43",
+        "legacyBlindBoreXYMm": [
+          880.0,
+          -27.0
+        ],
+        "upperBarXYMm": [
+          880.0,
+          -12.0
+        ]
+      },
+      {
+        "axisOffsetMm": 15.0,
+        "id": "H20-950-97",
+        "legacyBlindBoreXYMm": [
+          880.0,
+          27.0
+        ],
+        "upperBarXYMm": [
+          880.0,
+          42.0
+        ]
+      }
+    ],
+    "legacyBoreAlignment": {
+      "axesOutsideBudgetCount": 8,
+      "comparisonBudgetMm": 1,
+      "maximumAxisOffsetMm": 15.0
+    },
+    "nominalDeadLoadDelta": {
+      "additionalFootprintMm2": 162000.0,
+      "admitted": false,
+      "centroidUVMm": [
+        321.7283950617284,
+        321.7283950617284
+      ],
+      "concreteUnitWeightKNPerM3": 25,
+      "corners": [
+        {
+          "additionalConcreteKN": 13.486500000000001,
+          "additionalConcreteM3": 0.53946,
+          "additionalWebKN": 0.2542752000000001,
+          "additionalWebKg": 25.92000000000001,
+          "centroidXYMm": [
+            654.2283950617284,
+            11345.771604938273
+          ],
+          "characteristicKN": 13.740775200000002,
+          "cornerHeadId": "P07",
+          "verticalExtentZMm": [
+            -180,
+            3170
+          ]
+        },
+        {
+          "additionalConcreteKN": 13.486500000000001,
+          "additionalConcreteM3": 0.53946,
+          "additionalWebKN": 0.2542752000000001,
+          "additionalWebKg": 25.92000000000001,
+          "centroidXYMm": [
+            11345.771604938273,
+            11345.771604938273
+          ],
+          "characteristicKN": 13.740775200000002,
+          "cornerHeadId": "P10",
+          "verticalExtentZMm": [
+            -180,
+            3170
+          ]
+        }
+      ],
+      "geometryWithinRetainedReceivingProjection": true,
+      "scope": "Gross candidate concrete below the first-floor soffit, with added web stock replacing concrete in its 20 mm band. No stock, reinforcement or geometry is selected."
+    },
+    "receivingPlan": [
+      {
+        "girders": [
+          "outer-W",
+          "outer-NW"
+        ],
+        "heads": [
+          "P07",
+          "P08",
+          "P09"
+        ],
+        "receivingLevelZMm": -180,
+        "uncoveredWithSettingMm2": 0,
+        "verticalGapToBlockUndersideMm": 70,
+        "verticalGapToWebUndersideMm": 130
+      },
+      {
+        "girders": [
+          "outer-E",
+          "outer-NE"
+        ],
+        "heads": [
+          "P10",
+          "P11",
+          "P12"
+        ],
+        "receivingLevelZMm": -180,
+        "uncoveredWithSettingMm2": 0,
+        "verticalGapToBlockUndersideMm": 70,
+        "verticalGapToWebUndersideMm": 130
+      }
+    ],
+    "remoteMainBarShiftMm": 15,
+    "scope": "Geometry and isolated force demand only. Bearing spread, confinement, keys, bore strength, welds, moisture perimeter and coupled signed responses remain open."
+  },
+  "lateralClosure": {
+    "comparisonForceKN": 95.15979916854145,
+    "dragDemandFactor": 1,
+    "meanOnAdverseCommonWallFaceMPa": 0.3640752850003644,
+    "minimumAreaAtDeclaredCrackedStrutMM2": 5636.961088784051,
+    "momentAboutUnchangedGroundAxisU0KNm": 16.17716585865205,
+    "momentAboutWidenedMidPlaneKNm": 11.419175900224975,
+    "normalCompressionReturnKN": 50.59736273292564,
+    "ownerHistoricalForceKN": 95.15979916854145,
+    "scope": "No friction credit. Normal return balances at the same V centroid. Mean pressure only. The positive torque transfer and real L-ground stability splice are unproved."
+  },
+  "rearCabinetPortTerritory": {
+    "barCount": 20,
+    "bestSampleGapMm": -10.72048534302813,
+    "bestSampleUVmm": [
+      317.0,
+      740.5
+    ],
+    "centreBoundsUVmm": [
+      250.0,
+      317.0,
+      197.5,
+      787.5
+    ],
+    "continuousUpperBoundGapMm": -10.013378561841582,
+    "distanceToNearestSampleBoundMm": 0.7071067811865476,
+    "requiredCoverMm": 25,
+    "state": "overlap-throughout-territory"
+  },
+  "retainedNWPort": {
+    "admitted": false,
+    "axisUVAndDiameterMm": [
+      235.0,
+      490.0,
+      160
+    ],
+    "axisXYmm": [
+      567.5,
+      11177.5
+    ],
+    "gapToWidenedWallUMm": -15.0,
+    "levels": [
+      {
+        "direction": 1,
+        "levelZMm": 3260,
+        "minimumClearToFormedEdgeAfter5Mm": -81.03191599237486
+      },
+      {
+        "direction": -1,
+        "levelZMm": 3308,
+        "minimumClearToFormedEdgeAfter5Mm": -80.09297286680305
+      }
+    ],
+    "referenceAxisXYmm": [
+      567.5,
+      11177.5
+    ]
+  },
+  "sourceSHA256": {
+    "project/had/studies/open-north-loggia.json": "542781c6bb1d277b20492e8433cea498e98eaea5db2e737a5ec7e9655f9d18fd",
+    "project/mat/studies/loggia-soffit.json": "b02717a9ad5431259f9f0f1850ab7f596cf612bc13f04fbd9bdfc7b5f893fc29",
+    "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+    "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+    "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+    "project/str/studies/floor-portal-north-collar.json": "e996f409d47a6d81aa7624d683e86d92e7e5bc5ac5c828dcc7df39552e929c87",
+    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5"
+  },
+  "stack": {
+    "alongOneSignClearIndependent10Mm": 17.886099404160866,
+    "alongOneSignClearShared5Mm": 22.886099404160866,
+    "axesInSectionZMm": [
+      3206,
+      3218,
+      3260,
+      3284,
+      3308,
+      3350,
+      3362
+    ],
+    "barDiametersMm": [
+      12,
+      12,
+      20,
+      28,
+      20,
+      12,
+      12
+    ],
+    "commonJig": "Two opposed groups on each arm. Same level swaps signs on adjoining wings; each plane deliberately touches the intervening H28 at crossings. 5 mm total relative setting is binding.",
+    "localSlabTopZMm": 3398.0,
+    "primaryPlacingComparisonMet": true,
+    "primaryPlacingComparisonMm": 21,
+    "reserveToActualFinishUndersideMm": 37.0,
+    "samePlaneWingPairClearShared5Mm": 33.84502723889042,
+    "slabDepthMm": 228.0,
+    "unrelatedDragPlanesClearShared5Mm": 23,
+    "uprightScreenClearShared5Mm": {
+      "primaryH20": 25.56803176478971,
+      "secondaryH12": 29.256543499717758
+    },
+    "wallLongitudinalTrial": {
+      "governingGapAndAxes": [
+        44.57962017433566,
+        -1,
+        3260,
+        26,
+        3251,
+        12
+      ],
+      "minimumUnrelatedGapMm": 44.57962017433566,
+      "oneCourseReplacementAreaMM2": 201.06192982974676,
+      "priorSeparateH12AndH10AreaMM2": 191.63715186897738,
+      "railAxesUMmZMmDiameterMm": [
+        [
+          -28,
+          3211,
+          12
+        ],
+        [
+          -28,
+          3251,
+          12
+        ],
+        [
+          -28,
+          3335,
+          12
+        ],
+        [
+          26,
+          3211,
+          12
+        ],
+        [
+          26,
+          3251,
+          12
+        ],
+        [
+          26,
+          3335,
+          12
+        ],
+        [
+          -30,
+          3293,
+          16
+        ],
+        [
+          24,
+          3293,
+          16
+        ],
+        [
+          -27,
+          3143,
+          10
+        ],
+        [
+          -27,
+          3443,
+          10
+        ],
+        [
+          27,
+          3143,
+          10
+        ],
+        [
+          27,
+          3443,
+          10
+        ]
+      ]
+    }
+  },
+  "status": "Geometric and static monolithic redesign screen. Coupled wall, corner cage and splice loads unadmitted.",
+  "straightDrag": {
+    "anglesDeg": [
+      -62,
+      62
+    ],
+    "barCentresAtReceivingPlaneVMm": [
+      338,
+      440,
+      542,
+      644,
+      746
+    ],
+    "basicPoorBondOnlySafetyRatio": 1.030606987196698,
+    "coverToActualToeEndAfter5mm": 25.65099953827117,
+    "derivedTensionPerBarKN": 21.55502771357476,
+    "diagonalRootsUMm": 90.95911469693942,
+    "lowerPathsLocalXYZMm": [
+      [
+        [
+          90.95911469693942,
+          189.34571516613008,
+          3260
+        ],
+        [
+          249.04088530306058,
+          486.65428483386995,
+          3260
+        ]
+      ],
+      [
+        [
+          90.95911469693942,
+          291.34571516613005,
+          3260
+        ],
+        [
+          249.04088530306058,
+          588.65428483387,
+          3260
+        ]
+      ],
+      [
+        [
+          90.95911469693942,
+          393.34571516613005,
+          3260
+        ],
+        [
+          249.04088530306058,
+          690.65428483387,
+          3260
+        ]
+      ],
+      [
+        [
+          90.95911469693942,
+          495.34571516613005,
+          3260
+        ],
+        [
+          249.04088530306058,
+          792.65428483387,
+          3260
+        ]
+      ],
+      [
+        [
+          90.95911469693942,
+          597.34571516613,
+          3260
+        ],
+        [
+          249.04088530306058,
+          894.65428483387,
+          3260
+        ]
+      ],
+      [
+        [
+          486.65428483386995,
+          90.95911469693942,
+          3260
+        ],
+        [
+          189.34571516613008,
+          249.04088530306058,
+          3260
+        ]
+      ],
+      [
+        [
+          588.65428483387,
+          90.95911469693942,
+          3260
+        ],
+        [
+          291.34571516613005,
+          249.04088530306058,
+          3260
+        ]
+      ],
+      [
+        [
+          690.65428483387,
+          90.95911469693942,
+          3260
+        ],
+        [
+          393.34571516613005,
+          249.04088530306058,
+          3260
+        ]
+      ],
+      [
+        [
+          792.65428483387,
+          90.95911469693942,
+          3260
+        ],
+        [
+          495.34571516613005,
+          249.04088530306058,
+          3260
+        ]
+      ],
+      [
+        [
+          894.65428483387,
+          90.95911469693942,
+          3260
+        ],
+        [
+          597.34571516613,
+          249.04088530306058,
+          3260
+        ]
+      ]
+    ],
+    "modelledLengthEachSideMm": 168.36139090943894,
+    "projectionEachSideUAndVMm": [
+      79.04088530306058,
+      148.65428483386992
+    ],
+    "requiredBondLengthEachSideMm": 163.36139090943894,
+    "roomwardAffectedUAtMinimumMm": 249.04088530306058,
+    "steel": "S500 H20; C30/37 and declared 2.1MPa poor-bond",
+    "stripExtentsVMm": [
+      189.34571516613008,
+      894.65428483387
+    ],
+    "upperPathsLocalXYZMm": [
+      [
+        [
+          90.95911469693942,
+          486.65428483386995,
+          3308
+        ],
+        [
+          249.04088530306058,
+          189.34571516613008,
+          3308
+        ]
+      ],
+      [
+        [
+          90.95911469693942,
+          588.65428483387,
+          3308
+        ],
+        [
+          249.04088530306058,
+          291.34571516613005,
+          3308
+        ]
+      ],
+      [
+        [
+          90.95911469693942,
+          690.65428483387,
+          3308
+        ],
+        [
+          249.04088530306058,
+          393.34571516613005,
+          3308
+        ]
+      ],
+      [
+        [
+          90.95911469693942,
+          792.65428483387,
+          3308
+        ],
+        [
+          249.04088530306058,
+          495.34571516613005,
+          3308
+        ]
+      ],
+      [
+        [
+          90.95911469693942,
+          894.65428483387,
+          3308
+        ],
+        [
+          249.04088530306058,
+          597.34571516613,
+          3308
+        ]
+      ],
+      [
+        [
+          189.34571516613008,
+          90.95911469693942,
+          3308
+        ],
+        [
+          486.65428483386995,
+          249.04088530306058,
+          3308
+        ]
+      ],
+      [
+        [
+          291.34571516613005,
+          90.95911469693942,
+          3308
+        ],
+        [
+          588.65428483387,
+          249.04088530306058,
+          3308
+        ]
+      ],
+      [
+        [
+          393.34571516613005,
+          90.95911469693942,
+          3308
+        ],
+        [
+          690.65428483387,
+          249.04088530306058,
+          3308
+        ]
+      ],
+      [
+        [
+          495.34571516613005,
+          90.95911469693942,
+          3308
+        ],
+        [
+          792.65428483387,
+          249.04088530306058,
+          3308
+        ]
+      ],
+      [
+        [
+          597.34571516613,
+          90.95911469693942,
+          3308
+        ],
+        [
+          894.65428483387,
+          249.04088530306058,
+          3308
+        ]
+      ]
+    ]
+  }
+}

@@ -1,0 +1,446 @@
+{
+  "status": "One source-located field topology and datum test; not a sealed barrier or selected structural arrangement",
+  "sources": {
+    "project/had/studies/open-north-loggia.json": "25faad2c4d40df2b7da7212f73808843a88d2f52",
+    "project/mat/studies/warm-receiving-grid.json": "a5bff9f37b8d78dfb32359427314b4013fe8a45e",
+    "project/str/studies/sw-corner-station.json": "2c215912f4b55ca4587e32763bf66160d4b433d0",
+    "project/mat/studies/joined-ground-boundary.json": "2a74ab4e2e88bf80405a5ca36a7eaabcd1e93fc6"
+  },
+  "hipExtensionControl": {
+    "extensionTop_mm": 6660,
+    "hipAxisXY_mm": [
+      262.5,
+      262.5
+    ],
+    "hipAxisZ_mm": 6519.079552999668,
+    "faceProjectedHalfWidth_mm": 84.8528137423857,
+    "faceProjectedVerticalBounds_mm": [
+      6436.118289886794,
+      6602.0408161125415
+    ],
+    "result": "FAIL: the sloped SHS120 axis crosses the folded sheet corner within the extension. The ring-side 10 mm gap is not a hip clearance.",
+    "collarHypothesis": "Cut the sheet around the actual finite hip and use a fully closed, accessible metal saddle/collar to join the sheet to verified closed member skin and roof AVCL. Exact polygon, fabrication, member ends, welds, access, compatible movement, corrosion, 3D thermal/fire and gas/air integrity are unproved. This is a bounding projection, not an exact collar or structural pass."
+  },
+  "southWindow0Reveal": {
+    "openingX_mm": [
+      1300,
+      2300
+    ],
+    "sill_mm": 750,
+    "spring_mm": 2550,
+    "crown_mm": 2850,
+    "segmentalRadius_mm": 566.6666666666666,
+    "openingPerimeter_mm": 5824.950867279991,
+    "trialRevealReturnQ_mm": [
+      262.5,
+      302.5
+    ],
+    "trialReturnDepth_mm": 40,
+    "sheetThickness_mm": 1,
+    "nominalOpeningWidthAfterTwoJambSheets_mm": 998,
+    "grossReturnArea_m2": 0.23299803469119967,
+    "grossReturnMass_kg_at_7900": 1.8406844740604773,
+    "scope": "Local formed metal reveal return, not an accepted window frame or airtight joint. The 40mm depth is an authored reservation, not a product dimension. Real frame position, assembly, arch fabrication, nominal 1mm clear intrusion each jamb, sill, water drainage, movement, support, corrosion, welds, fire and replacement are unresolved; no seam/hole is credited as sealed."
+  },
+  "SWverticalTurn": {
+    "warmPierFaces_mm": {
+      "x_face": [
+        262.5,
+        262.5,
+        562.5
+      ],
+      "y_face": [
+        262.5,
+        262.5,
+        562.5
+      ]
+    },
+    "sheetZ_mm": [
+      -380,
+      6410
+    ],
+    "nominalThickness_mm": 1,
+    "inGlassNormalBand_mm": [
+      261.5,
+      262.5
+    ],
+    "residualGlass_mm": 109,
+    "drainedCavity_mm": [
+      102.5,
+      152.5
+    ],
+    "sheetGrossFaceArea_m2": 4.074,
+    "sheetMass_kg_at_7900": 32.184599999999996,
+    "firstOpeningControls": [
+      {
+        "level": "GROUND",
+        "wall": "outer-south",
+        "firstOpening": "south-window-0",
+        "firstOpeningStart_mm": 1300.0,
+        "setbackBeyondPierFace_mm": 737.5
+      },
+      {
+        "level": "GROUND",
+        "wall": "outer-west",
+        "firstOpening": "west-window-0",
+        "firstOpeningStart_mm": 1300.0,
+        "setbackBeyondPierFace_mm": 737.5
+      },
+      {
+        "level": "FIRST",
+        "wall": "outer-south",
+        "firstOpening": "south-window-0",
+        "firstOpeningStart_mm": 1300.0,
+        "setbackBeyondPierFace_mm": 737.5
+      },
+      {
+        "level": "FIRST",
+        "wall": "outer-west",
+        "firstOpening": "west-window-0",
+        "firstOpeningStart_mm": 1300.0,
+        "setbackBeyondPierFace_mm": 737.5
+      }
+    ],
+    "nominalRingOuterFace_mm": 272.5,
+    "planGapFromCoreOutsideFaceToRing_mm": 10,
+    "ringBottomZ_mm": 6540,
+    "ringAboveSheetTop_mm": 130,
+    "closestRodCentreFromPierFace_mm": 60,
+    "closestRodSurfaceFromPierFace_mm": 50,
+    "trialLinkOutsideCover_mm": 42,
+    "localRchange_m2K_W": 0.02432357723577236,
+    "scope": "Local SW pier-face turn only, not an installed air/gas or roof connection. Sheets, folded corner and butt weld are proposals; no existing through-opening within those 300mm face runs proves neither fixing nor continuity. Face sheet occupies 1mm of 110mm glass; cut retention, backside support, movement, corrosion, head/cap/wings/ring joints and 3D heat/moisture remain unqualified. The nominal 10mm ring-plan gap omits welds, tolerances, fixings and actual section interactions."
+  },
+  "sheetEvidence": {
+    "manufacturer": "Aperam",
+    "family": "316L stainless; page title EN 1.4404",
+    "page": "https://www.aperam.com/product/316l-1-4404/",
+    "dataSheet": "https://www.aperam.com/sites/default/files/documents/FT_316L_en_web.pdf",
+    "declaredSheetThicknessRange_mm": [
+      0.4,
+      15
+    ],
+    "declaredSheetWidthMax_mm": 2000,
+    "typicalDensity_kg_m3": 7900,
+    "typicalConductivity_W_mK": 15,
+    "typicalE_GPa": 200,
+    "meanExpansion_20_100C_perK": 1.6e-05,
+    "typicalValueLimit": "Family data and dimensional ranges only: exact supplied designation, thickness, finish, film/coatings, filler, forming, corrosion/site suitability and system/gas/water acceptance not established. Page heading 1.4404 and norms list 1.4401 require actual supplied identity."
+  },
+  "fieldControl": {
+    "outerCoreBounds_mm": [
+      262.5,
+      262.5,
+      11737.5,
+      11737.5
+    ],
+    "courtCoreCut_mm": [
+      3987.5,
+      3987.5,
+      8012.5,
+      8012.5
+    ],
+    "loggiaCoreCut_mm": [
+      4447.5,
+      8012.5,
+      7552.5,
+      11737.5
+    ],
+    "grossControlArea_m2": 103.908875,
+    "sheetThickness_mm": 1,
+    "grossSheetMass_kg_at_7850": 815.68466875,
+    "grossSheetMass_kg_at_aperam_typical7900": 820.8801125,
+    "scope": "Bounding shape only: door/threshold returns, service openings, joints, structural bands, support cuts and actual coverage are not laid out. This is not a cut list or net quantity."
+  },
+  "datum_mm": {
+    "earlierFieldControl": [
+      -383,
+      -382
+    ],
+    "preferredField": [
+      -381,
+      -380
+    ],
+    "cornerPatch": [
+      -383,
+      -380
+    ],
+    "upperMortarOriginal": [
+      -390,
+      -380
+    ],
+    "AAC": [
+      -605,
+      -390
+    ],
+    "DPC": [
+      -765,
+      -615
+    ],
+    "warmGirder": [
+      -380,
+      -80
+    ],
+    "MATfloor": [
+      0,
+      -15,
+      -80,
+      -280,
+      -600
+    ],
+    "HADfloorRC": [
+      -380,
+      -180
+    ],
+    "coldNode": [
+      -1257,
+      -765
+    ]
+  },
+  "negativeControls": {
+    "upperBed": "3 mm plate occupies the upper 3 mm of the 10 mm bed, leaving 7 mm beneath; adjacent 1 mm sheet splits it into 7 mm below and 2 mm above. Neither joint, bearing nor monolithic lateral transfer is established.",
+    "slabDatum": {
+      "MATclear_mm": 102,
+      "HADclear_mm": 2,
+      "railDepth_mm": 40,
+      "MATmargin_mm": 62,
+      "HADmargin_mm": -38,
+      "result": "FAIL on unchanged HAD ground slab: 2 mm clear vs 40 mm trial rail, 38 mm overlap. MAT alternative permits nominal spatial reservation only; adoption, hanger anchorage and insulation repair remain unproved."
+    },
+    "girder": "Even in MAT slab alternative, field top \u2212382 is only 2 mm below \u2212380 girder soffit; a 40 mm top-side rail cannot continue through it. End supports, welded transitions, reinforced contact and accessible sequencing are not designed.",
+    "courtServiceAlternative": "The distinct joined-ground service reference starts its DPC field at \u2212380; \u2212383 lies within the upper 3 mm of that DPC band. Its W1 carrier crown \u2212378 and invert \u2212538 straddle the metal plane; a flat sheet intersects the carrier 5 mm below its crown. The independent W2 tray, air lid \u2212310..\u2212316 and seal to \u2212318 also require their own continuous, accessible transitions. This is an incompatible reference comparison, not an assertion both designs are selected."
+  },
+  "HADAlignedDirection": {
+    "floorCandidate": {
+      "layers_mm": [
+        15,
+        65,
+        100,
+        200
+      ],
+      "z_mm": [
+        0,
+        -15,
+        -80,
+        -180,
+        -380
+      ],
+      "source": "HAD RC200 and joined-ground 100 mm glass are coordinated candidates, not an adopted material/whole-floor assembly",
+      "glassR_m2K_W_at_0p041": 2.4390243902439024,
+      "oldMAT320glassR_m2K_W_at_0p041": 7.804878048780488,
+      "limit": "Core-only one-dimensional glass resistance, no whole-floor U or thermal bridge result."
+    },
+    "warmPad": {
+      "boundsXY_mm": [
+        262.5,
+        262.5,
+        562.5,
+        562.5
+      ],
+      "z_mm": [
+        -380,
+        -80
+      ],
+      "upstandAboveSlabTop_mm": 100,
+      "conditionalOverlapIfFirstFloorRectangleProjected_m2": 0.0529,
+      "conditionalOutsideProjectedRectangle_m2": 0.0371,
+      "limit": "The projected rectangle is from first-floor SW-L; actual ground slab plan is not established. Pad occupies local 100 mm glass territory only if this HAD-aligned build-up is adopted; concrete/slab reinforcement, actual casting, thermal bridge and non-double-counted takeoff unproved."
+    },
+    "hypotheticalMeshControl": {
+      "groundMeshStatus": "H12/150 and 25 mm cover are first-floor source values only; not established ground reinforcement.",
+      "bottomBarCentreZ_mm": -349,
+      "barZ_mm": [
+        -355,
+        -343
+      ],
+      "trialStudZ_mm": [
+        -380,
+        -340
+      ],
+      "regular200Vs150BestClear_mm": 16,
+      "regularGridResult": "If studs are fixed to 200 mm grid and mesh repeats at 150 mm, residues 0/50/100 give some centre separation at most25 mm for any phase; after radii9 mm clear at best16 mm, below illustrative22 mm comparator.",
+      "independentMidpointStudCoordinates_mm": [
+        1075,
+        1225,
+        1375,
+        1525,
+        1675,
+        1825,
+        1975
+      ],
+      "count2D": 49,
+      "minimumPlanClearToHypotheticalBars_mm": 66,
+      "limit": "This is a hypothetical mesh and ideal plan only. Actual ground cage, bar layers, physical stud locations, edge coverage, weld/access, transfer and 22 mm applicability are not established; no accepted stud array."
+    },
+    "falseworkCell": {
+      "xy_mm": [
+        1000,
+        1000,
+        2000,
+        2000
+      ],
+      "representedGroundWallPlanHits": [],
+      "panel_mm": [
+        1000,
+        1000,
+        1
+      ],
+      "wetRC_kPa": 5,
+      "upperAngles_count": 11,
+      "upperAngleSpacing_mm": 100,
+      "lowerBearers_count": 6,
+      "lowerBearerSpacing_mm": 200,
+      "angle_mm": [
+        40,
+        40,
+        4
+      ],
+      "supportGrid": [
+        6,
+        6
+      ],
+      "supportCount": 36,
+      "temporaryBottomZ_mm": -461,
+      "supports": "36 trial prop heads in an isolated cell at 200 mm grid below double 40 mm angles; neighbouring cells may share edges. Actual whole-site count, prop feet, foundation, lateral stability, access, loads and removal route not designed.",
+      "centralWetRCTributary_kN": 0.2,
+      "centralWetRCPlusListedCellMetalUniform_kN": 0.2191249532887487,
+      "fieldStuds_count": 36,
+      "fieldStud_mm": [
+        6,
+        40
+      ],
+      "grossMetalMass_kg_excludingPropsWeldsAnchors": 48.73841307020562,
+      "angleGrossI_mm4": 46081.12280701754,
+      "angleGrossZ_mm3": 1615.389913899139,
+      "simpleSpanBeamSensitivities": [
+        {
+          "role": "upper_100mm_tributary",
+          "lineLoad_Nmm": 0.5,
+          "span_mm": 200,
+          "grossElasticStress_MPa": 1.5476139713944592,
+          "grossElasticDeflection_mm": 0.001130253131015326
+        },
+        {
+          "role": "lower_200mm_tributary",
+          "lineLoad_Nmm": 1.0,
+          "span_mm": 200,
+          "grossElasticStress_MPa": 3.0952279427889184,
+          "grossElasticDeflection_mm": 0.002260506262030652
+        }
+      ],
+      "limit": "One clear 1 m cell, straight angle idealisation. No stability, allowable, fastener or physical acceptance. Studs are a detachable-form retention hypothesis, not composite reinforcement or approved concrete connection."
+    },
+    "decision": "HAD-aligned floor is the preferred development basis only. MAT \u221280/\u2212280 remains unadopted whole-house-rewind comparator; field, formwork, seams, all perimeter/box/threshold/penetrations and material/site acceptance remain open."
+  },
+  "flushSoffitTrial": {
+    "sheetZ_mm": [
+      -381,
+      -380
+    ],
+    "patchZ_mm": [
+      -383,
+      -380
+    ],
+    "plateUndersideStep_mm": 2,
+    "HADslabBottom_mm": -380,
+    "MATslabBottom_mm": -280,
+    "HADdirectContact": "Field top coincides with selected HAD slab soffit; sheet may be used as permanent formwork only with a fully designed support, bond, movement and sealing strategy.",
+    "MATgap_mm": 100,
+    "MATlimit": "General MAT slab remains 100 mm above the field, so no slab/formwork load or bond is assumed. Warm receiving girder alone reaches \u2212380.",
+    "assumedConcrete_kNm3": 25,
+    "HAD200mmWetDead_kPa": 5,
+    "grossElasticBeamStripControl": [
+      {
+        "span_mm": 100,
+        "grossElasticStress_MPa": 37.5,
+        "grossElasticDeflection_mm": 0.390625
+      },
+      {
+        "span_mm": 250,
+        "grossElasticStress_MPa": 234.375,
+        "grossElasticDeflection_mm": 15.2587890625
+      },
+      {
+        "span_mm": 1000,
+        "grossElasticStress_MPa": 3750.0,
+        "grossElasticDeflection_mm": 3906.25
+      }
+    ],
+    "controlLimit": "1 m-wide, 1 mm thick ideal simply supported strip with E200 GPa under 5 kPa only; excludes plate action, membrane action, restraints and all work/live/water loads. Large deflection and possible yielding invalidate the linear estimate, so it is a failure indicator for this idealization, not a physical prediction or actual plate capacity.",
+    "scope": "Top-aligned 1mm field leaves 9mm below within nominal 10mm bed, while 3mm patch leaves 7mm; field-to-patch underside steps 2mm. Neither metal/concrete contact, bed nor the stepped weld is qualified."
+  },
+  "movementChallenge": {
+    "trialYSeam_mm": 6000,
+    "straightSeamWallIntersections": [
+      {
+        "id": "service-spine",
+        "axisX_mm": 9300
+      },
+      {
+        "id": "protected-stair-east",
+        "axisX_mm": 2894.5
+      }
+    ],
+    "steelFree_mm_at_alpha16e6_delta20": 3.6719999999999997,
+    "concreteFree_mm_at_alpha10e6_delta20": 2.295,
+    "difference_mm": 1.3769999999999998,
+    "scope": "Illustrative uniform temperatures and free strains only; not an imposed joint movement or measured site condition. A 40 mm wide 15 mm deep folded-metal loop cannot simply pass through these walls and receivers; design continuous terminations, structural bearing, actual restraint, fatigue, gas seal, inspection and repair."
+  },
+  "serviceBoxWrap": {
+    "segmentLength_mm": 840,
+    "boxOuterWidth_mm": 1003,
+    "fieldBottomZ_mm": -381,
+    "boxBottomZ_mm": -839.5,
+    "verticalDrop_mm": 458.5,
+    "bottomPlusTwoSides_m2": 1.6127999999999998,
+    "flatControl_m2": 0.8425199999999998,
+    "sheetMass_kg_at_1mm_7850": 12.660479999999998,
+    "extraSideMass_kg": 6.046698,
+    "sheetMass_kg_at_aperam_typical7900": 12.741119999999999,
+    "route": "Field at \u2212381 turns down the two exterior 1003-wide box faces, passes under the RC underside \u2212839.5, and rises on the other side; 840 length is one part of a continuous wrap, not a removable section. W1 and its lid remain above the retained field.",
+    "hold": "Node-side DPC/bearing piers may intersect the fold; ends, turns, fixed collars, continuous corner welds, concrete-on-metal support and friction separation, W2 drainage, site pressure, movement, inspection and repair are unproved. Do not count the geometry as a sealed field or assume access below the box."
+  },
+  "panelSensitivity": {
+    "panel_mm": [
+      1000,
+      1000,
+      1
+    ],
+    "perimeterAngles_mm": [
+      40,
+      40,
+      4
+    ],
+    "fourHangerDiameter_mm": 8,
+    "hangerLength_mm": 102,
+    "sheet_kg": 7.85,
+    "angles_kg": 9.5456,
+    "hangers_kg": 0.16099028721467823,
+    "total_kg": 17.55659028721468,
+    "gravity_kN": 0.172230150717576,
+    "limit": "Local gross self-weight only, no overlap/anchors/welds, glass support, pressure, water, construction or design factors. No stiffness or anchor capacity."
+  },
+  "interfaces": [
+    {
+      "id": "SW",
+      "location": "x/y262.5..562.5",
+      "duty": "split rod/plate, cold node, AAC bed, exterior core/cavity/weather leaf; no through rod or steel bypass declared sealed"
+    },
+    {
+      "id": "court-south-door",
+      "location": "rough x5100..6900, weather face y4250; field control ends at core-face y3987.5",
+      "duty": "262.5 mm to weather face is a geometric interval, not a closed threshold connection"
+    },
+    {
+      "id": "loggia",
+      "location": "between x4447.5..7552.5 from y8012.5..11737.5 control cut",
+      "duty": "separate 519.5 sidewalls, portal, water routes and south/north transitions; no inherited SW detail"
+    },
+    {
+      "id": "services",
+      "location": "whole house, exact points and formation to coordinate",
+      "duty": "complete welded sleeves, access, movement, retained constituents and repair; no omitted penetrations"
+    }
+  ],
+  "decision": "The candidate supplies a single connected bounding field and explicit failure controls, not a complete buildable assembly. Whole perimeter, threshold, services, movement, supported sheet, testing, repair, reinforcement, structural force route, thermal, material and site evidence remain open."
+}

@@ -1,0 +1,660 @@
+{
+  "family": {
+    "soil": {
+      "stackAxis": [
+        11432.5,
+        6267.5
+      ],
+      "originalBack": [
+        11557.5,
+        5900
+      ],
+      "branchLateral": 392.5,
+      "obliqueDrift": 17.142274542617315,
+      "branchAxisFall": 9.8125,
+      "horizontalSpigotCentre": 180,
+      "nominalStackEntryAboveFFL": 170.1875,
+      "requiredFixtureForward": 104.14227454261732,
+      "pairedDimensionalExtremes": [
+        80.14227454261732,
+        127.14227454261732
+      ],
+      "declaredSpigotSetback": 205,
+      "declaredCeramicEntry": 35,
+      "adaptorLength": 125,
+      "stopGap": 3,
+      "elbowX1X2R": [
+        74,
+        136,
+        110
+      ],
+      "rolledElbowDegrees": 1.4320961841646465,
+      "backClearAtTurn": 97.14227454261732,
+      "pipeAfterBendToStackAxis": 256.54248008849527
+    },
+    "floorFixing": {
+      "deliveredFixedBracketPassWidth": 140,
+      "directReleaseRequiresFull150Stroke": true,
+      "strips": {
+        "count": 2,
+        "width": 32,
+        "thickness": 6,
+        "length": 635,
+        "centresAcross": [
+          -85,
+          85
+        ],
+        "depth": [
+          80,
+          715
+        ],
+        "trackEnd": 890,
+        "pull": 150,
+        "endReserve": 25,
+        "massOfTwoBareKg": 1.9141439999999998
+      },
+      "visibleLockBolts": [
+        [
+          10773.357725457383,
+          5960.0
+        ],
+        [
+          10773.357725457383,
+          5790.0
+        ]
+      ],
+      "guideStripRunOutSurface": [
+        10563.357725457383,
+        5765.0,
+        175.0,
+        220.0
+      ],
+      "underlayMinimumToProve": 18,
+      "movingInitialLength": 720,
+      "remainingAboveMinimumRebateFloor": 12,
+      "wetBoundary": "All removable lock fixings above the continuous membrane. Permanent anchors and upstands detailed at construction; no later drilling.",
+      "kneelingFrontStation": [
+        10498.357725457383,
+        5875.0
+      ],
+      "furthestFrontDriverReach": 353.3765696816924
+    },
+    "depth": 450,
+    "back": [
+      11453.357725457383,
+      5875.0
+    ],
+    "front": [
+      -1,
+      0
+    ],
+    "serviceSide": -1,
+    "carrierSideLimits": [
+      -230,
+      180
+    ],
+    "packedWidth": 410,
+    "tailPort": [
+      11003.357725457383,
+      6085.0
+    ],
+    "fixedPort": [
+      11003.357725457383,
+      6150.0
+    ],
+    "portGroupElevation": 300,
+    "spoolVerticalRelease": 25,
+    "operator": [
+      10485,
+      6075
+    ],
+    "entry": [
+      10380,
+      5800
+    ],
+    "tools": {
+      "bodyReserve": 25,
+      "maxShoulderToGrip": 462.6901794855524,
+      "handleGapAfter18Radius": 20.647369829704395,
+      "forearmGapAfter30Radius": 7.669356713591312
+    },
+    "ordinaryWCApproach": [
+      [
+        10380,
+        5800
+      ],
+      [
+        10395,
+        5850
+      ],
+      [
+        10498.357725457383,
+        5875.0
+      ]
+    ],
+    "ordinaryApproachReserve": 15.0,
+    "feedCentreline": [
+      [
+        10650,
+        6310
+      ],
+      [
+        10650,
+        6360
+      ],
+      [
+        11003.357725457383,
+        6360
+      ],
+      [
+        11003.357725457383,
+        6150.0
+      ]
+    ],
+    "fixedFeedBeforeTubeRadius": 105.0,
+    "fixedTerminal": [
+      10988.357725457383,
+      6135.0,
+      40.0,
+      30.0
+    ],
+    "suite": [
+      10813.357725457383,
+      5705.0,
+      640.0,
+      340.0
+    ],
+    "travelling": [
+      10738.357725457383,
+      5695.0,
+      720.0,
+      410.0
+    ],
+    "first150Sweep": [
+      10588.357725457383,
+      5695.0,
+      870.0,
+      410.0
+    ],
+    "after150": [
+      10588.357725457383,
+      5695.0,
+      720.0,
+      410.0
+    ],
+    "minFirstSweep": 30.0,
+    "trimmedCarrierCentrePath": [
+      [
+        10983.357725457383,
+        5875.0
+      ],
+      [
+        10425,
+        5875.0
+      ],
+      [
+        10425,
+        5900
+      ]
+    ],
+    "afterFirst150Min": 30.0,
+    "fixed": [
+      [
+        9397,
+        4675,
+        600,
+        750
+      ],
+      [
+        11227.5,
+        5200,
+        340,
+        450
+      ],
+      [
+        9460,
+        3800,
+        1700,
+        700
+      ],
+      [
+        11297.5,
+        6135,
+        270,
+        265
+      ],
+      [
+        11367.5,
+        4525,
+        200,
+        650
+      ]
+    ],
+    "wetWitness": {
+      "soilWitnessTongueWidth": 145,
+      "adapterMaxOD": 135,
+      "requiredClearVoid": 150,
+      "formedWidths": {
+        "outer": 145,
+        "innerBetween1_5Returns": 142,
+        "jointNominalOutside": 133
+      },
+      "tongueToClayAtMinimumVoidEach": 2.5,
+      "stackOrSealToInnerReturnEach": 3.5,
+      "sideLip": [
+        10988.357725457383,
+        6117.0
+      ],
+      "sideLipSightPlanClearance": 57.19928818496532,
+      "runLegs": [
+        {
+          "from": "under socket",
+          "to": "rear trough",
+          "run": 155,
+          "fall": 5
+        },
+        {
+          "from": "rear trough",
+          "to": "service-side gutter",
+          "run": 280,
+          "fall": 7
+        },
+        {
+          "from": "gutter",
+          "to": "visible lip",
+          "run": 390,
+          "fall": 8
+        }
+      ],
+      "smallEndSetoutEach": 2,
+      "minimumResidualFall": 1,
+      "clearPanHeelOnRearTrough": 20,
+      "foulInvertAboveCatcherTop": 17.5
+    }
+  },
+  "principal": {
+    "soil": {
+      "stackAxis": [
+        11432.5,
+        8040.0
+      ],
+      "originalBack": [
+        11130,
+        8142.5
+      ],
+      "branchLateral": 282.5,
+      "obliqueDrift": 12.338070212202272,
+      "branchAxisFall": 7.0625,
+      "horizontalSpigotCentre": 180,
+      "nominalStackEntryAboveFFL": 172.9375,
+      "requiredFixtureForward": 76.83807021220227,
+      "pairedDimensionalExtremes": [
+        52.83807021220227,
+        99.83807021220227
+      ],
+      "declaredSpigotSetback": 205,
+      "declaredCeramicEntry": 35,
+      "adaptorLength": 125,
+      "stopGap": 3,
+      "elbowX1X2R": [
+        74,
+        136,
+        110
+      ],
+      "rolledElbowDegrees": 1.4320961841646465,
+      "backClearAtTurn": 69.83807021220227,
+      "pipeAfterBendToStackAxis": 146.5424800884953
+    },
+    "floorFixing": {
+      "deliveredFixedBracketPassWidth": 140,
+      "directReleaseRequiresFull150Stroke": true,
+      "strips": {
+        "count": 2,
+        "width": 32,
+        "thickness": 6,
+        "length": 635,
+        "centresAcross": [
+          -85,
+          85
+        ],
+        "depth": [
+          80,
+          715
+        ],
+        "trackEnd": 890,
+        "pull": 150,
+        "endReserve": 25,
+        "massOfTwoBareKg": 1.9141439999999998
+      },
+      "visibleLockBolts": [
+        [
+          11065.0,
+          7385.661929787798
+        ],
+        [
+          11235.0,
+          7385.661929787798
+        ]
+      ],
+      "guideStripRunOutSurface": [
+        11040.0,
+        7175.661929787798,
+        220.0,
+        175.0
+      ],
+      "underlayMinimumToProve": 18,
+      "movingInitialLength": 720,
+      "remainingAboveMinimumRebateFloor": 12,
+      "wetBoundary": "All removable lock fixings above the continuous membrane. Permanent anchors and upstands detailed at construction; no later drilling.",
+      "kneelingFrontStation": [
+        11045,
+        7080
+      ],
+      "furthestFrontDriverReach": 414.1910372299244
+    },
+    "depth": 145,
+    "back": [
+      11150.0,
+      8065.661929787798
+    ],
+    "front": [
+      0,
+      -1
+    ],
+    "serviceSide": -1,
+    "carrierSideLimits": [
+      -230,
+      180
+    ],
+    "packedWidth": 410,
+    "tailPort": [
+      10940.0,
+      7920.661929787798
+    ],
+    "fixedPort": [
+      10875.0,
+      7920.661929787798
+    ],
+    "portGroupElevation": 300,
+    "spoolVerticalRelease": 25,
+    "operator": [
+      10520,
+      7780
+    ],
+    "entry": [
+      10400,
+      7850
+    ],
+    "tools": {
+      "bodyReserve": 2.5,
+      "maxShoulderToGrip": 468.932121013735,
+      "handleGapAfter18Radius": 20.647369829704395,
+      "forearmGapAfter30Radius": 8.647369829704395
+    },
+    "ordinaryWCApproach": [
+      [
+        10400,
+        7850
+      ],
+      [
+        10520,
+        7780
+      ],
+      [
+        10640,
+        7650
+      ],
+      [
+        10660,
+        7310
+      ],
+      [
+        10700,
+        7080
+      ],
+      [
+        11045,
+        7080
+      ]
+    ],
+    "ordinaryApproachReserve": 2.5,
+    "feedCentreline": [
+      [
+        10900,
+        8050
+      ],
+      [
+        10875,
+        8085
+      ],
+      [
+        10875.0,
+        7920.661929787798
+      ]
+    ],
+    "fixedFeedBeforeTubeRadius": 80.0,
+    "fixedTerminal": [
+      10860.0,
+      7905.661929787798,
+      30.0,
+      40.0
+    ],
+    "suite": [
+      10980.0,
+      7425.661929787798,
+      340.0,
+      640.0
+    ],
+    "travelling": [
+      10920.0,
+      7350.661929787798,
+      410.0,
+      720.0
+    ],
+    "first150Sweep": [
+      10920.0,
+      7200.661929787798,
+      410.0,
+      870.0
+    ],
+    "after150": [
+      10920.0,
+      7200.661929787798,
+      410.0,
+      720.0
+    ],
+    "minFirstSweep": 12.5,
+    "trimmedCarrierCentrePath": [
+      [
+        11150.0,
+        7595.661929787798
+      ],
+      [
+        11150.0,
+        7525.661929787798
+      ],
+      [
+        10537.5,
+        7525.661929787798
+      ],
+      [
+        10537.5,
+        8865
+      ]
+    ],
+    "afterFirst150Min": 9.338070212202183,
+    "fixed": [
+      [
+        9400,
+        6600,
+        900,
+        900
+      ],
+      [
+        9400,
+        7600,
+        340,
+        450
+      ],
+      [
+        11342.5,
+        7950,
+        180,
+        180
+      ],
+      [
+        10255,
+        7455,
+        50,
+        50
+      ]
+    ],
+    "wetWitness": {
+      "soilWitnessTongueWidth": 145,
+      "adapterMaxOD": 135,
+      "requiredClearVoid": 150,
+      "formedWidths": {
+        "outer": 145,
+        "innerBetween1_5Returns": 142,
+        "jointNominalOutside": 133
+      },
+      "tongueToClayAtMinimumVoidEach": 2.5,
+      "stackOrSealToInnerReturnEach": 3.5,
+      "sideLip": [
+        10908.0,
+        7905.661929787798
+      ],
+      "sideLipSightPlanClearance": 72.0,
+      "runLegs": [
+        {
+          "from": "under socket",
+          "to": "rear trough",
+          "run": 155,
+          "fall": 5
+        },
+        {
+          "from": "rear trough",
+          "to": "service-side gutter",
+          "run": 280,
+          "fall": 7
+        },
+        {
+          "from": "gutter",
+          "to": "visible lip",
+          "run": 85,
+          "fall": 8
+        }
+      ],
+      "smallEndSetoutEach": 2,
+      "minimumResidualFall": 1,
+      "clearPanHeelOnRearTrough": 20,
+      "foulInvertAboveCatcherTop": 17.5
+    },
+    "openSliderOperatorReserve": 39.78853718158297,
+    "openSliderOrdinaryReserve": 26.239701795948065,
+    "showerAt145": {
+      "body to room/fixtures/glazing": 23.402224031075882,
+      "body to moving glass": 26.803268150269155,
+      "body to handle": 96.2032658925629,
+      "hand reach": 29.628536203406384,
+      "arm to moving glass": 11.059964881998303,
+      "arm to fixed glass/fixtures": 15.009348809164587
+    },
+    "showerAt280": {
+      "body to room/fixtures/glazing": -18.924032276446553,
+      "body to moving glass": 26.803268150269155,
+      "body to handle": 96.2032658925629,
+      "hand reach": 29.628536203406384,
+      "arm to moving glass": 11.059964881998303,
+      "arm to fixed glass/fixtures": 15.009348809164587
+    },
+    "showerAt450": {
+      "body to room/fixtures/glazing": -67.9314548522631,
+      "body to moving glass": 26.803268150269155,
+      "body to handle": 96.2032658925629,
+      "hand reach": 29.628536203406384,
+      "arm to moving glass": 11.059964881998303,
+      "arm to fixed glass/fixtures": 15.009348809164587
+    }
+  },
+  "bath": {
+    "keeper": [
+      10500,
+      6060
+    ],
+    "oldKeeperOverlap": 70.76812879516629,
+    "newKeeperReserve": 13.319079464870953,
+    "shoulderToGrip": 409.8269580162597,
+    "path": [
+      [
+        9775,
+        4215,
+        0
+      ],
+      [
+        10485,
+        4215,
+        0
+      ],
+      [
+        10485,
+        4995,
+        0
+      ],
+      [
+        10382.1,
+        5456.6,
+        53.7
+      ],
+      [
+        10124.6,
+        5645.9,
+        53.3
+      ],
+      [
+        10066,
+        5681.6,
+        56.9
+      ],
+      [
+        9798.1,
+        5851.9,
+        57.5
+      ],
+      [
+        9765,
+        5815,
+        90
+      ]
+    ],
+    "newRoom": {
+      "minimumContinuousGap": 11.404091582650544,
+      "nearest": "family-service-cabinet"
+    },
+    "onwardRouteAtSamePose": {
+      "minimumContinuousGap": 32.00118764845606,
+      "nearest": "service-emitter-protected-F"
+    }
+  },
+  "handling": {
+    "packedGrossItemAllowances_kg": [
+      24,
+      13,
+      3
+    ],
+    "temporaryCarrier_kg": 10,
+    "screenVertical_kN": 0.73575,
+    "oneSaddleTarget_kN": 1,
+    "stockJackBase": [
+      609.5999999999999,
+      365.125
+    ],
+    "stockJackMinMaxHeight": [
+      165.1,
+      657.2249999999999
+    ],
+    "stockJackNet_kg": 10.0017117585,
+    "claimedCompatibleWithCeramic": false,
+    "supportScreen": "Wearable/service-only equipment. Delivered gross masses are upper design comparisons; weigh the actual drained suite, parts, support and residual water."
+  }
+}

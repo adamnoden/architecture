@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="980" viewBox="0 0 1200 980">
+<style>text{font-family:Arial,sans-serif;fill:#182b3b;font-size:16px}.h{font-size:25px;font-weight:bold}.s{font-size:13px}.b{font-weight:bold}</style>
+<rect width="1200" height="980" fill="#fff"/>
+<text x="32" y="40" class="h">Folded service renewal: one uncertainty narrowed</text>
+<text x="32" y="69" class="">Actual HAD route + complete carrier/operator plan. No loaded handling or apparatus acceptance.</text>
+<text x="32" y="111" class="b">Actual four-flight approach</text>
+<text x="620" y="111" class="b">Constructive turn through each intermediate landing</text>
+<rect x="247.0" y="204.0" width="54.0" height="405.0" fill="#e8f1ef" stroke="#527b70"/>
+<rect x="179.5" y="204.0" width="54.0" height="405.0" fill="#e8f1ef" stroke="#527b70"/>
+<rect x="112.0" y="204.0" width="54.0" height="405.0" fill="#e8f1ef" stroke="#527b70"/>
+<rect x="44.5" y="204.0" width="54.0" height="405.0" fill="#e8f1ef" stroke="#527b70"/>
+<rect x="247.0" y="150.0" width="54.0" height="54.0" fill="#e8f1ef" stroke="#527b70"/>
+<rect x="179.5" y="609.0" width="121.5" height="54.0" fill="#e8f1ef" stroke="#527b70"/>
+<rect x="112.0" y="150.0" width="121.5" height="54.0" fill="#e8f1ef" stroke="#527b70"/>
+<rect x="44.5" y="609.0" width="121.5" height="54.0" fill="#e8f1ef" stroke="#527b70"/>
+<rect x="44.5" y="150.0" width="54.0" height="54.0" fill="#e8f1ef" stroke="#527b70"/>
+<polyline points="274.00,150.00 274.00,177.00 274.00,204.00 274.00,609.00 274.00,636.00 206.50,636.00 206.50,609.00 206.50,204.00 206.50,177.00 139.00,177.00 139.00,204.00 139.00,609.00 139.00,636.00 71.50,636.00 71.50,609.00 71.50,204.00 71.50,177.00" fill="none" stroke="#247ba0" stroke-width="3"/>
+<text x="248.25" y="636.0" class="b">T1</text>
+<text x="180.75" y="177.0" class="b">T2</text>
+<text x="113.25" y="636.0" class="b">T3</text>
+<text x="340" y="190" class="b">Four 9000 mm ramps</text>
+<text x="340" y="215" class="">1200 mm clear; 1:20</text>
+<text x="340" y="252" class="b">Three folded U-turns</text>
+<text x="340" y="277" class="">2700 × 1200 landings</text>
+<text x="340" y="314" class="b">45.945 m XYZ travel</text>
+<text x="340" y="339" class="">42 m: old straight budget</text>
+<text x="340" y="386" class="b">D1800 grade comparator</text>
+<text x="340" y="411" class="">Actual site / bearing unearned</text>
+<text x="340" y="458" class="b">No rope shortcut</text>
+<text x="340" y="483" class="">Turns require real setups</text>
+<text x="340" y="530" class="b">Entry and foot transfer</text>
+<text x="340" y="555" class="">remain unearned</text>
+<rect x="670.0" y="512.0" width="310.5" height="138.0" fill="#e8f1ef" stroke="#527b70"/>
+<rect x="670.0" y="167.0" width="138.0" height="345.0" fill="#e8f1ef" stroke="#527b70"/>
+<rect x="842.5" y="167.0" width="138.0" height="345.0" fill="#e8f1ef" stroke="#527b70"/>
+<polyline points="911.50,328.00 905.75,328.00 900.00,328.00 900.00,328.00 900.00,328.00 900.00,328.00 900.00,333.75 900.00,339.50 900.00,345.25 900.00,351.00 900.00,356.75 900.00,362.50 900.00,368.25 900.00,374.00 900.00,379.75 900.00,385.50 900.00,391.25 900.00,397.00 900.00,402.75 900.00,408.50 900.00,414.25 900.00,420.00 900.00,425.75 900.00,431.50 900.00,437.25 900.00,443.00 900.00,448.75 900.00,454.50 900.00,460.25 900.00,466.00 900.00,466.00 900.00,471.75 900.00,477.50 900.00,483.25 894.25,483.25 894.25,489.00 894.25,494.75 894.25,494.75 894.25,500.50 894.25,506.25 888.50,506.25 888.50,512.00 888.50,517.75 882.75,517.75 882.75,523.50 882.75,523.50 882.75,529.25 877.00,529.25 877.00,529.25 877.00,535.00 877.00,540.75 871.25,540.75 871.25,540.75 871.25,546.50 865.50,546.50 865.50,546.50 865.50,552.25 859.75,552.25 859.75,558.00 854.00,558.00 854.00,558.00 848.25,558.00 848.25,558.00 848.25,558.00 842.50,558.00 842.50,558.00 836.75,558.00 836.75,558.00 836.75,558.00 831.00,558.00 831.00,558.00 831.00,558.00 831.00,558.00 831.00,558.00 831.00,558.00 831.00,558.00 825.25,558.00 819.50,558.00 819.50,558.00 813.75,558.00 813.75,558.00 808.00,558.00 802.25,558.00 802.25,552.25 796.50,552.25 796.50,552.25 790.75,552.25 790.75,546.50 790.75,546.50 785.00,546.50 779.25,546.50 779.25,540.75 779.25,540.75 773.50,540.75 773.50,535.00 773.50,535.00 767.75,535.00 767.75,529.25 762.00,529.25 762.00,523.50 762.00,523.50 762.00,517.75 762.00,517.75 762.00,517.75 762.00,512.00 762.00,512.00 762.00,506.25 762.00,506.25 762.00,506.25 762.00,500.50 762.00,494.75 762.00,489.00 756.25,489.00 756.25,483.25 756.25,477.50 756.25,471.75 756.25,466.00 750.50,466.00 750.50,460.25 750.50,454.50 750.50,448.75 750.50,443.00 750.50,437.25 750.50,431.50 744.75,431.50 744.75,425.75 744.75,420.00 739.00,420.00 739.00,414.25 739.00,408.50 739.00,402.75 739.00,397.00 739.00,391.25 739.00,385.50 739.00,379.75 739.00,374.00 739.00,368.25 739.00,362.50 739.00,356.75 739.00,351.00 739.00,345.25 739.00,339.50 739.00,333.75 739.00,328.00 739.00,328.00 739.00,328.00 739.00,328.00" fill="none" stroke="#d17a22" stroke-width="2"/>
+<polygon points="873.61,253.25 873.61,402.75 949.39,402.75 949.39,253.25" fill="#1c7c94" fill-opacity=".24" stroke="#1c7c94" stroke-width="1.4"/>
+<polygon points="949.06,218.75 948.33,211.42 946.20,204.38 942.73,197.89 938.06,192.19 932.36,187.52 925.87,184.05 918.83,181.92 911.50,181.19 904.17,181.92 897.13,184.05 890.64,187.52 884.94,192.19 880.27,197.89 876.80,204.38 874.67,211.42 873.94,218.75 874.67,226.08 876.80,233.12 880.27,239.61 884.94,245.31 890.64,249.98 897.13,253.45 904.17,255.58 911.50,256.31 918.83,255.58 925.87,253.45 932.36,249.98 938.06,245.31 942.73,239.61 946.20,233.12 948.33,226.08" fill="#8555a3" fill-opacity=".24" stroke="#8555a3" stroke-width="1.4"/>
+<text x="918.5" y="323.0" class="s">1</text>
+<polygon points="908.77,526.77 759.84,513.74 753.23,589.23 902.16,602.26" fill="#1c7c94" fill-opacity=".24" stroke="#1c7c94" stroke-width="1.4"/>
+<polygon points="977.39,567.52 976.67,560.19 974.53,553.15 971.06,546.66 966.39,540.97 960.70,536.30 954.21,532.82 947.16,530.69 939.83,529.97 932.51,530.69 925.46,532.82 918.97,536.30 913.28,540.97 908.61,546.66 905.14,553.15 903.00,560.19 902.28,567.52 903.00,574.85 905.14,581.89 908.61,588.39 913.28,594.08 918.97,598.75 925.46,602.22 932.51,604.36 939.83,605.08 947.16,604.36 954.21,602.22 960.70,598.75 966.39,594.08 971.06,588.39 974.53,581.89 976.67,574.85" fill="#8555a3" fill-opacity=".24" stroke="#8555a3" stroke-width="1.4"/>
+<text x="838.0" y="553.0" class="s">74</text>
+<polygon points="776.89,402.75 776.89,253.25 701.11,253.25 701.11,402.75" fill="#1c7c94" fill-opacity=".24" stroke="#1c7c94" stroke-width="1.4"/>
+<polygon points="776.56,437.25 775.83,429.92 773.70,422.88 770.23,416.39 765.56,410.69 759.86,406.02 753.37,402.55 746.33,400.42 739.00,399.69 731.67,400.42 724.63,402.55 718.14,406.02 712.44,410.69 707.77,416.39 704.30,422.88 702.17,429.92 701.44,437.25 702.17,444.58 704.30,451.62 707.77,458.11 712.44,463.81 718.14,468.48 724.63,471.95 731.67,474.08 739.00,474.81 746.33,474.08 753.37,471.95 759.86,468.48 765.56,463.81 770.23,458.11 773.70,451.62 775.83,444.58" fill="#8555a3" fill-opacity=".24" stroke="#8555a3" stroke-width="1.4"/>
+<text x="746.0" y="323.0" class="s">147</text>
+<text x="1000" y="206" class="s">Blue: full cart</text>
+<text x="1000" y="228" class="s">Purple: operator</text>
+<text x="1000" y="250" class="s">Both include 25 mm</text>
+<text x="1000" y="294" class="b">147 poses</text>
+<text x="1000" y="319" class="s">1966 dense checks</text>
+<text x="1000" y="341" class="s">per actual turn</text>
+<text x="1000" y="385" class="b">&gt;22 mm reserve</text>
+<text x="1000" y="410" class="s">uninflated comparison</text>
+<text x="1000" y="432" class="s">from sample bound</text>
+<text x="620" y="693" class="b">PLAN RESULT: complete bodies remain in clear territory.</text>
+<text x="32" y="741" class="b">Whole-system development decision</text>
+<text x="32" y="770" class="">Retain W9 direct 96/128 L/s as leading direction; this is one renewal comparison, not an apparatus pass.</text>
+<text x="32" y="800" class="">Investigate grip-hoist control per 9 m flight, with positively held transfers through each landing.</text>
+<text x="32" y="830" class="">TU8: anchor and structure ≥7.85 kN per unit; constant rope tension. No slack catch-rope credit.</text>
+<text x="32" y="860" class="">Still bind: supported W9 loading/withdrawal; caster/wheel contact and CG; exact slope/landing control bodies.</text>
+<text x="32" y="890" class="">Still bind: actual dirty-filter pressure/noise; native mode/lost-duty behaviour; winter/defrost heat; full constituents.</text>
+<text x="32" y="934" class="s">No HAD/Services geometry change. No 1280/1288 combination, driving-brake claim, or hidden tool constituents.</text>
+</svg>

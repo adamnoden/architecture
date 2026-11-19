@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 665" role="img" aria-labelledby="t d">
+<title id="t">A corner exchange and two ground service heads</title>
+<desc id="d">The upper catch moves diagonally clear of both returned drips. A lower transfer links the adjacent retained pickups. Below, two independent impact chambers precede the normal and east receiving routes. At the east basin angled lances clear both faces of the overflow.</desc>
+<defs>
+<style>text{font-family:DejaVu Sans,sans-serif;fill:#203641}.t{font-size:25px;font-weight:bold}.h{font-size:18px;font-weight:bold}.s{font-size:14px}.sm{font-size:12px}.panel{fill:#f4f7f7;stroke:#c8d2d3}.wet{fill:#c5e2f0;stroke:#39758c}.dry{fill:#dceadc;stroke:#577760}.line{stroke:#365761;stroke-width:2;fill:none}</style>
+<marker id="a" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0 0L8 3.5L0 7" fill="#266956"/></marker>
+</defs>
+<rect width="1100" height="665" fill="white"/><text class="t" x="30" y="39">Change the corner without losing either drip</text><text class="s" x="31" y="66">House coordinates in millimetres · trial hardware and working loads · water / access study</text>
+<rect class="panel" x="25" y="85" width="518" height="319" rx="4"/><text class="h" x="42" y="114">Southwest corner / view from above</text>
+<!-- North points upward. Local origin (4350,4350) = (64,372), scale 0.16. -->
+<path d="M64 372H139.4V316H120V296.6H64Z" fill="#e1caa5" stroke="#967842" stroke-width="2"/>
+<path d="M66.4 369.6H240V333H103.2V196H66.4Z" fill="#84b8ce" fill-opacity=".65" stroke="#346c82"/>
+<path d="M90.4 345.6H264V309H127.2V172H90.4Z" fill="none" stroke="#346c82" stroke-dasharray="5 3"/>
+<path d="M80 352V154M80 356H313" fill="none" stroke="#bd6845" stroke-width="2"/>
+<path d="M83.2 352.8V154M83.2 352.8H313" fill="none" stroke="#bd6845" stroke-dasharray="3 3"/>
+<path d="M92 332L156 268" class="line" marker-end="url(#a)"/>
+<rect x="200" y="140" width="96" height="96" class="dry"/>
+<text class="sm" x="210" y="182">600-square</text><text class="sm" x="211" y="199">first rest</text>
+<path d="M132.8 192L244 303.2" stroke="#5b5c76" stroke-width="3" stroke-dasharray="6 4"/>
+<text class="s" x="312" y="153">Both roof edges stay live</text><text class="sm" x="312" y="178">Blue · 150 / 150 hood stroke</text><text class="sm" x="312" y="197">Ochre · welded L cassette</text><text class="sm" x="312" y="216">Orange · two drip lines</text>
+<text class="sm" x="312" y="253">Lower the cassette 225.</text><text class="sm" x="312" y="272">Draw 900 along each axis.</text><text class="sm" x="312" y="291">Lower onto the fixed rest.</text>
+<text class="sm" x="312" y="331">Diagonal guard opening 935</text><text class="sm" x="312" y="351">Cassette projection 667</text><text class="sm" x="42" y="390">N ↑   E →     Dashed blue is the dry park.</text>
+<rect class="panel" x="558" y="85" width="517" height="319" rx="4"/><text class="h" x="575" y="114">The six-metre fall must end before the inlets</text>
+<rect x="586" y="153" width="104" height="45" class="wet"/><rect x="889" y="153" width="142" height="45" class="wet"/>
+<text x="596" y="181" class="s">One pickup</text><text x="903" y="181" class="s">Other pickup</text>
+<path d="M690 175H889M638 199V274M948 199V274" stroke="#39758c" stroke-width="3" fill="none"/>
+<text class="sm" x="715" y="167">250 clear transfer</text>
+<rect x="585" y="275" width="156" height="55" class="wet"/><rect x="873" y="275" width="165" height="55" class="wet"/>
+<text class="s" x="599" y="299">Impact / quiet bay</text><text class="sm" x="599" y="318">to western N grate</text>
+<text class="s" x="888" y="299">Impact / quiet bay</text><text class="sm" x="888" y="318">to west E mouth</text>
+<text class="sm" x="703" y="235">6 m fall · 212 W</text><text class="sm" x="703" y="254">at 3.60375 L/s</text>
+<text class="s" x="575" y="360">Plugged lower outlet: 60.97 kPa at the enclosure base.</text>
+<text class="sm" x="575" y="382">A blocked surface still needs an independent working ground intake.</text>
+<rect class="panel" x="25" y="420" width="1050" height="220" rx="4"/><text class="h" x="43" y="451">East ground cleanout / transverse section</text>
+<path d="M55 484H535" stroke="#72818b" stroke-width="12"/><path d="M92 485L175 589M325 485L177 589M432 485L460 601" stroke="#287a8e" stroke-width="3"/>
+<path d="M62 603H375V556H392V603H525" class="line"/>
+<rect x="158" y="551" width="34" height="12" fill="#817761"/><rect x="404" y="551" width="34" height="12" fill="#817761"/>
+<text class="sm" x="57" y="627">Lances enter from a guarded deck. Rails remain above the wet mouths.</text>
+<text class="s" x="563" y="492">Nine guides missed 25 high-sill targets behind the rail.</text>
+<text class="s" x="563" y="520">Four oblique guides reach both faces and the crest.</text>
+<text class="sm" x="563" y="551">25 mm sampling · 4,105 floor positions · 1,419 crest/face positions</text>
+<text class="sm" x="563" y="576">Move X14950 posts outside both channels and retain the operative rails.</text>
+<text class="sm" x="563" y="600">Actual frame, foundations, wet response and access remain conditional.</text>
+</svg>

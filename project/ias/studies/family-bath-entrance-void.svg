@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="690" viewBox="0 0 1120 690">
+<title>Bath exchange at the two-storey entrance</title><desc>Upper guard transfer and signed four-seat frame. Lower protected public side and isolated receiving bay.</desc>
+<rect width="1120" height="690" fill="#faf8f1"/>
+<defs><clipPath id="plot"><rect x="0" y="128" width="1120" height="416"/></clipPath></defs>
+<style>text{font-family:Arial,sans-serif;fill:#212f2a}.h{font-weight:bold;font-size:19px}.k{font-size:13px}.b{font-size:16px}</style>
+<text font-family="sans-serif" font-size="20" font-weight="bold" fill="#212f2a" x="32" y="44">Intact bath exchange at the front entrance</text>
+<text font-family="sans-serif" font-size="15" font-weight="normal" fill="#212f2a" x="32" y="72">First-floor finish +3450 mm  /  ground floor 0  /  north up  /  pre-site design comparison</text>
+<text font-family="sans-serif" font-size="20" font-weight="bold" fill="#212f2a" x="44" y="116">Upper bridge</text>
+<polyline clip-path="url(#plot)" points="165.50,484.25 388.50,484.25 388.50,252.50 165.50,252.50 165.50,484.25" fill="#e5e9e6" stroke="#84938b" stroke-width="1"/>
+<polyline clip-path="url(#plot)" points="217.00,247.50 317.00,247.50 317.00,156.00 217.00,156.00 217.00,247.50" fill="#e8d5b8" stroke="#926b37" stroke-width="1"/>
+<polyline clip-path="url(#plot)" points="146.50,261.00 164.50,261.00 164.50,134.25 146.50,134.25 146.50,261.00" fill="#c5c5be" stroke="#758078" stroke-width="1"/>
+<polyline clip-path="url(#plot)" points="389.50,261.00 407.50,261.00 407.50,134.25 389.50,134.25 389.50,261.00" fill="#c5c5be" stroke="#758078" stroke-width="1"/>
+<polyline clip-path="url(#plot)" points="155.50,234.00 398.50,234.00" fill="none" stroke="#9a856a" stroke-width="4"/>
+<polyline clip-path="url(#plot)" points="155.50,163.00 398.50,163.00" fill="none" stroke="#9a856a" stroke-width="4"/>
+<circle cx="155.5" cy="234.0" r="4" fill="#4d5246"/>
+<circle cx="398.5" cy="234.0" r="4" fill="#4d5246"/>
+<circle cx="155.5" cy="163.0" r="4" fill="#4d5246"/>
+<circle cx="398.5" cy="163.0" r="4" fill="#4d5246"/>
+<polyline clip-path="url(#plot)" points="165.50,250.00 217.00,250.00" fill="none" stroke="#29483e" stroke-width="4"/>
+<polyline clip-path="url(#plot)" points="317.00,250.00 388.50,250.00" fill="none" stroke="#29483e" stroke-width="4"/>
+<polyline clip-path="url(#plot)" points="217.00,250.00 317.00,250.00" fill="none" stroke="#9e4a29" stroke-width="3" stroke-dasharray="5 3"/>
+<polyline clip-path="url(#plot)" points="217.55,326.00 218.72,325.00 219.87,324.00 220.99,323.00 222.08,322.00 223.15,321.00 224.19,320.00 225.21,319.00 226.20,318.00 227.17,317.00 228.11,316.00 229.04,315.00 229.94,314.00 230.83,313.00 231.69,312.00 232.54,311.00 233.37,310.00 234.17,309.00 234.97,308.00 235.74,307.00 236.50,306.00 237.24,305.00 237.97,304.00 238.68,303.00 239.37,302.00 240.05,301.00 240.72,300.00 241.37,299.00 242.01,298.00 242.63,297.00 243.24,296.00 243.84,295.00 244.42,294.00 244.99,293.00 245.55,292.00 246.10,291.00 246.63,290.00 247.15,289.00 247.66,288.00 248.16,287.00 248.65,286.00 249.12,285.00 249.59,284.00 250.04,283.00 250.48,282.00 250.91,281.00 251.33,280.00 251.74,279.00 252.14,278.00 252.53,277.00 252.91,276.00 253.28,275.00 253.64,274.00 253.99,273.00 254.32,272.00 254.65,271.00 254.97,270.00 255.28,269.00 255.58,268.00 255.87,267.00 256.15,266.00 256.43,265.00 256.69,264.00 256.94,263.00 257.19,262.00 257.42,261.00 257.65,260.00 257.87,259.00 258.08,258.00 258.28,257.00 258.47,256.00 258.65,255.00 258.82,254.00 258.99,253.00 259.14,252.00 259.29,251.00 259.43,250.00 259.56,249.00 259.68,248.00 259.79,247.00 259.90,246.00 259.99,245.00 260.08,244.00 260.16,243.00 260.23,242.00 260.30,241.00 260.35,240.00 260.40,239.00 260.43,238.00 260.46,237.00 260.48,236.00 260.50,235.00 260.50,234.00 260.50,233.00 260.48,232.00 260.46,231.00 260.43,230.00 260.40,229.00 260.35,228.00 260.30,227.00 260.23,226.00 260.16,225.00 260.08,224.00 259.99,223.00 259.90,222.00 259.79,221.00 259.68,220.00 259.56,219.00 259.43,218.00 259.29,217.00 259.14,216.00 258.99,215.00 258.82,214.00 258.65,213.00 258.47,212.00 258.28,211.00 258.08,210.00 257.87,209.00 257.65,208.00 257.42,207.00 257.19,206.00 256.94,205.00 256.69,204.00 256.43,203.00 256.15,202.00 255.87,201.00" fill="none" stroke="#9e4a29" stroke-width="3"/>
+<polyline clip-path="url(#plot)" points="231.87,237.50 279.87,237.50 279.87,164.50 231.87,164.50 231.87,237.50" fill="#ebc181" stroke="#865c31" stroke-width="1"/>
+<polyline clip-path="url(#plot)" points="193.55,362.50 241.55,362.50 241.55,289.50 193.55,289.50 193.55,362.50" fill="#ebc181" stroke="#865c31" stroke-width="1"/>
+<polyline clip-path="url(#plot)" points="140.50,234.00 217.55,326.00" fill="none" stroke="#394f46" stroke-width="2"/>
+<circle cx="140.5" cy="234.0" r="5" fill="#1b534a"/>
+<text font-family="sans-serif" font-size="13" font-weight="normal" fill="#212f2a" x="132" y="482">Entrance void</text>
+<text font-family="sans-serif" font-size="15" font-weight="normal" fill="#212f2a" x="44" y="563">Four steel-frame seats, one offset socket.</text>
+<text font-family="sans-serif" font-size="13" font-weight="normal" fill="#212f2a" x="44" y="589">Dashed opening needs two interlocked guards.</text>
+<text font-family="sans-serif" font-size="13" font-weight="normal" fill="#212f2a" x="44" y="612">The enclosure interrupts the east bedrooms’ route to the stair.</text>
+<text font-family="sans-serif" font-size="20" font-weight="bold" fill="#212f2a" x="598" y="116">Ground entrance</text>
+<polyline clip-path="url(#plot)" points="720.70,484.25 941.15,484.25 941.15,252.50 720.70,252.50 720.70,484.25" fill="#e9ebe5" stroke="#84938b" stroke-width="1"/>
+<polyline clip-path="url(#plot)" points="737.00,371.00 826.00,371.00 826.00,346.00 737.00,346.00 737.00,371.00" fill="#ead3ba" stroke="#ad7958" stroke-width="1"/>
+<polyline clip-path="url(#plot)" points="737.00,346.00 836.00,346.00 836.00,326.00 737.00,326.00 737.00,346.00" fill="#ead3ba" stroke="#ad7958" stroke-width="1"/>
+<polyline clip-path="url(#plot)" points="737.00,326.00 846.00,326.00 846.00,301.00 737.00,301.00 737.00,326.00" fill="#ead3ba" stroke="#ad7958" stroke-width="1"/>
+<polyline clip-path="url(#plot)" points="737.00,301.00 849.00,301.00 849.00,247.50 737.00,247.50 737.00,301.00" fill="#ead3ba" stroke="#ad7958" stroke-width="1"/>
+<polyline clip-path="url(#plot)" points="740.00,370.00 805.00,370.00 805.00,282.00 740.00,282.00 740.00,370.00" fill="#d7a978" stroke="#865c31" stroke-width="1"/>
+<polyline clip-path="url(#plot)" points="895.00,201.00 895.00,361.00 879.00,377.00 872.00,390.00 870.00,405.00 870.00,446.00" fill="none" stroke="#017666" stroke-width="2"/>
+<polyline clip-path="url(#plot)" points="870.00,446.00 873.50,464.00 873.50,526.00" fill="none" stroke="#017666" stroke-width="2"/>
+<polyline clip-path="url(#plot)" points="870.00,446.00 847.00,436.50 811.00,433.00 788.50,438.50 788.50,526.00" fill="none" stroke="#017666" stroke-width="2" stroke-dasharray="5 3"/>
+<polyline clip-path="url(#plot)" points="741.00,499.00 831.00,499.00" fill="none" stroke="#474f4c" stroke-width="3"/>
+<polyline clip-path="url(#plot)" points="916.00,499.00 916.00,404.60" fill="none" stroke="#474f4c" stroke-width="3"/>
+<text font-family="sans-serif" font-size="13" font-weight="normal" fill="#212f2a" x="718" y="330">Receiving bay</text>
+<text font-family="sans-serif" font-size="15" font-weight="normal" fill="#212f2a" x="598" y="563">Stepped exclusion at left. Clear route at right.</text>
+<text font-family="sans-serif" font-size="13" font-weight="normal" fill="#212f2a" x="598" y="589">East leaf shown open. Dashed line is the west-leaf alternative.</text>
+<text font-family="sans-serif" font-size="13" font-weight="normal" fill="#212f2a" x="598" y="612">The measured leaf, retaining hardware and ramp still control.</text>
+<text font-family="sans-serif" font-size="13" font-weight="normal" fill="#212f2a" x="32" y="660">All upright load positions include a 480 × 730 mm cradle. Screens, guidance, floor anchors and door performance require qualification.</text>
+</svg>

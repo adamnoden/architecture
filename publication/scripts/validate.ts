@@ -1,9 +1,9 @@
 import { existsSync, lstatSync, readFileSync } from 'node:fs'
 import { dirname, extname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { applyAdapter, dependenciesForAdapter, readFrontmatterValue } from '../adapters.js'
+import { applyAdapter, createAdapterContext, dependenciesForAdapter, readFrontmatterValue } from '../adapters.js'
 import { applyPublicationFigures, publicationFigurePlacements } from '../figures.js'
-import { publicationPlatePlacements } from '../plates.js'
+import { publicationPlatePlacements } from '../plates-current.js'
 import {
   canonicalPatternOrder,
   primerPublicationEntries,
@@ -82,10 +82,7 @@ function validateEntries(label: string, entries: readonly PublicationEntry[]): v
     }
 
     const sourceMarkdown = readFileSync(localPath(entry.source), 'utf8')
-    const adapted = applyAdapter(entry.adapter, sourceMarkdown, {
-      repoRoot,
-      workSourceRoot: repoRoot
-    })
+    const adapted = applyAdapter(entry.adapter, sourceMarkdown, createAdapterContext(entry.adapter, { repoRoot, workSourceRoot: repoRoot }))
     const composed = label === 'publication'
       ? applyPublicationFigures(entry.id, adapted)
       : adapted

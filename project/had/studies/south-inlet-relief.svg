@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="590" viewBox="0 0 1160 590" role="img" aria-labelledby="title desc">
+<title id="title">Two separate emergency reliefs below the south inlet bores</title>
+<desc id="desc">Thirty-five millimetre clear receiver separation in plan. Each gravity route has its own unpressurised receiver.</desc>
+<style>text{font:16px sans-serif;fill:#202524}.head{font:700 28px sans-serif}.sub{font:700 19px sans-serif}</style>
+<rect width="1160" height="590" fill="#faf9f5"/>
+<text class="head" x="44" y="58">South inlet · independent low reliefs</text>
+<text x="44" y="90">Wider upper sleeves return wall ruptures to the indoor wet boxes. Each new gravity bore takes its own 90 L/min challenge.</text>
+<text class="sub" x="44" y="138">At the outside wall face · X/Z</text>
+<text class="sub" x="525" y="138">Section through both outlet axes · Y/Z</text>
+<rect x="88" y="177" width="202.5" height="372" fill="#e5ded1"/>
+<rect x="88" y="177" width="123" height="372" fill="#bf7967" opacity=".48"/>
+<text x="85" y="168">Provisional jamb</text>
+<line x1="290.5" y1="177" x2="290.5" y2="550" stroke="#263e3c" stroke-width="3"/>
+<ellipse cx="160" cy="325" rx="48" ry="40" fill="#436b88" stroke="#243334" stroke-width="2"/><ellipse cx="148" cy="455" rx="33" ry="27.5" fill="#13867a" stroke="#243334" stroke-width="2"/>
+<path d="M208 325 H306" stroke="#436b88"/>
+<path d="M181 455 H306" stroke="#13867a"/>
+<text x="313" y="330">Pressure Z450</text>
+<text x="313" y="460">Relief Z190</text>
+<ellipse cx="218.5" cy="225" rx="48" ry="40" fill="#436b88" stroke="#243334" stroke-width="2"/><ellipse cx="235" cy="405" rx="33" ry="27.5" fill="#13867a" stroke="#243334" stroke-width="2"/>
+<path d="M266.5 225 H306" stroke="#436b88"/>
+<path d="M268 405 H306" stroke="#13867a"/>
+<text x="313" y="230">Pressure Z650</text>
+<text x="313" y="410">Relief Z290</text>
+<rect x="925.7" y="168" width="140.26499999999987" height="379" fill="#e5ded1" opacity=".45"/>
+<path d="M1065.965,458.35415 L774.5,503.33335" fill="none" stroke="#13867a" stroke-width="3"/>
+<line x1="620.5" x2="774.5" y1="526.33965" y2="526.33965" stroke="#13867a" stroke-width="2"/>
+<path d="M1065.965 368.35415 H1125 M1065.965 388.72810000000004 H1125" stroke="#13867a" stroke-dasharray="7 5"/>
+<text x="541" y="515.33965">utility receiver</text>
+<text x="820" y="360.35415">utility dry seal datum</text>
+<path d="M1065.965,408.35415 L774.5,453.33335" fill="none" stroke="#b06828" stroke-width="3"/>
+<line x1="620.5" x2="774.5" y1="476.33965" y2="476.33965" stroke="#b06828" stroke-width="2"/>
+<path d="M1065.965 318.35415 H1125 M1065.965 338.72810000000004 H1125" stroke="#b06828" stroke-dasharray="7 5"/>
+<text x="541" y="465.33965">plant receiver</text>
+<text x="820" y="310.35415">plant dry seal datum</text>
+<text x="44" y="570">Blue Ø160 formed pressure sleeves · green Ø110 formed reliefs · each channel falls 1:12 to its own free lip. All four overlap the shaded jamb.</text>
+</svg>

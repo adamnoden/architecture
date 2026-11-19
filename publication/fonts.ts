@@ -1,5 +1,5 @@
-import { createHash } from 'node:crypto'
-import { mkdir, writeFile } from 'node:fs/promises'
+import { createHash, randomUUID } from 'node:crypto'
+import { mkdir, readFile, rename, rm, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 
 export type PublicationFontSlot =
@@ -88,26 +88,53 @@ const rawUrl = (pin: Pin): string => {
   return `https://raw.githubusercontent.com/${pin.repo}/${pin.commit}/${encodedPath}`
 }
 
-export async function fetchPublicationFonts(cacheRoot: string): Promise<Record<PublicationFontSlot, string>> {
+/** A restored cache is only an optimisation: the existing upstream pin verifies every read. */
+export async function readPinnedPublicationAsset(
+  pin: Pin,
+  cacheRoot: string,
+  request: typeof fetch = fetch
+): Promise<Buffer> {
+  const cachePath = resolve(cacheRoot, pin.gitBlobSha)
+  try {
+    const cached = await readFile(cachePath)
+    if (gitBlobSha(cached) === pin.gitBlobSha) return cached
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error
+  }
+
+  const response = await request(rawUrl(pin), { redirect: 'follow' })
+  if (!response.ok) {
+    throw new Error(`Failed to fetch ${pin.repo}@${pin.commit}:${pin.path}: HTTP ${response.status}`)
+  }
+
+  const bytes = Buffer.from(await response.arrayBuffer())
+  const actualBlobSha = gitBlobSha(bytes)
+  if (actualBlobSha !== pin.gitBlobSha) {
+    throw new Error(
+      `Publication font integrity failure for ${pin.repo}@${pin.commit}:${pin.path}: expected Git blob ${pin.gitBlobSha}, got ${actualBlobSha}`
+    )
+  }
+
   await mkdir(cacheRoot, { recursive: true })
+  const temporaryPath = `${cachePath}.${randomUUID()}.tmp`
+  try {
+    await writeFile(temporaryPath, bytes, { flag: 'wx' })
+    await rename(temporaryPath, cachePath)
+  } finally {
+    await rm(temporaryPath, { force: true })
+  }
+  return bytes
+}
+
+export async function fetchPublicationFonts(outputRoot: string): Promise<Record<PublicationFontSlot, string>> {
+  await mkdir(outputRoot, { recursive: true })
+  const cacheRoot = resolve(import.meta.dirname, '../node_modules/.cache/ovids-house/publication-fonts')
   const slots = {} as Record<PublicationFontSlot, string>
   const evidence: Array<Pin & { sha256: string }> = []
 
   for (const pin of pins) {
-    const response = await fetch(rawUrl(pin), { redirect: 'follow' })
-    if (!response.ok) {
-      throw new Error(`Failed to fetch ${pin.repo}@${pin.commit}:${pin.path}: HTTP ${response.status}`)
-    }
-
-    const bytes = Buffer.from(await response.arrayBuffer())
-    const actualBlobSha = gitBlobSha(bytes)
-    if (actualBlobSha !== pin.gitBlobSha) {
-      throw new Error(
-        `Publication font integrity failure for ${pin.repo}@${pin.commit}:${pin.path}: expected Git blob ${pin.gitBlobSha}, got ${actualBlobSha}`
-      )
-    }
-
-    const outputPath = resolve(cacheRoot, pin.outputName)
+    const bytes = await readPinnedPublicationAsset(pin, cacheRoot)
+    const outputPath = resolve(outputRoot, pin.outputName)
     await writeFile(outputPath, bytes)
     evidence.push({ ...pin, sha256: createHash('sha256').update(bytes).digest('hex') })
     if (pin.slot) slots[pin.slot] = outputPath
@@ -125,7 +152,7 @@ export async function fetchPublicationFonts(cacheRoot: string): Promise<Record<P
   }
 
   await writeFile(
-    resolve(cacheRoot, 'upstream-evidence.json'),
+    resolve(outputRoot, 'upstream-evidence.json'),
     `${JSON.stringify({
       schemaVersion: 1,
       contract: 'publication-typography-v1-candidate',

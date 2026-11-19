@@ -1,0 +1,325 @@
+{
+  "status": "UNSELECTED PRIVATE COMPARISON; NO COMPLETE ORDINARY RENEWAL ROUTE",
+  "basis": {
+    "developmentCommit": "f49968e96ad7dceb35ea448d87d20c851d337b40",
+    "sourceIdentityRule": "The exact per-file hashes below govern reproduction; this is the reviewed development checkpoint.",
+    "pressureTrialOnly": "280x20 collector and 40 kN/mm receiving spring; full added inner pressure and170/190 water.",
+    "pressureQualification": "Original house wind PLUS exported inner horizontal pressure and24 independently signed actual floor groups; no vertical-area cancellation; actual graded-skin/contact joins pending.",
+    "pressureInnerDryKGPerM": [
+      60.0,
+      60.0
+    ],
+    "nativeFiniteRemovalChoices": 144
+  },
+  "centrelineMovementIdentity": "w(R1260,head) = w(R520,neighbour) + [w(R1130,head)-w(R520,neighbour)] +130/1135*[w(R1260,head)-w(R125,head)]. Every bracket uses its exact existing source query. No single favourable load state is substituted.",
+  "nativeCentrelineSensitivity": [
+    {
+      "head": "south normal",
+      "options": [
+        {
+          "neighbourRootAlongMM": 11155.3125,
+          "R1260AbsoluteBoundMM": [
+            -17.554946106,
+            27.317210731
+          ],
+          "R1000AbsoluteBoundMM": [
+            -18.087105234,
+            26.785051603
+          ],
+          "rootAbsoluteBoundMM": [
+            -14.298106065,
+            17.531216451
+          ],
+          "sourceLabels": [
+            "outer face0 primary root u11155.3125 R520.0 absolute",
+            "south normal head at R1130 minus primary front R520, root 1",
+            "south normal widest return R1260 minus lower back R125",
+            "outer face0 primary root u11155.3125 R170.0 absolute",
+            "outer face0 primary root u11155.3125 cross-section R520 minus R170",
+            "south normal head root minus primary root 1"
+          ]
+        },
+        {
+          "neighbourRootAlongMM": 10362.1875,
+          "R1260AbsoluteBoundMM": [
+            -22.917088142,
+            32.609818164
+          ],
+          "R1000AbsoluteBoundMM": [
+            -23.44924727,
+            32.077659036
+          ],
+          "rootAbsoluteBoundMM": [
+            -24.885339015,
+            28.106376435
+          ],
+          "sourceLabels": [
+            "outer face0 primary root u10362.1875 R520.0 absolute",
+            "south normal head at R1130 minus primary front R520, root 2",
+            "south normal widest return R1260 minus lower back R125",
+            "outer face0 primary root u10362.1875 R170.0 absolute",
+            "outer face0 primary root u10362.1875 cross-section R520 minus R170",
+            "south normal head root minus primary root 2"
+          ]
+        }
+      ],
+      "centrelineEnvelope": {
+        "rootAbsoluteBoundMM": [
+          -14.298106065,
+          17.531216451
+        ],
+        "R1000AbsoluteBoundMM": [
+          -18.087105234,
+          26.785051603
+        ],
+        "R1260AbsoluteBoundMM": [
+          -17.554946106,
+          27.317210731
+        ]
+      },
+      "peakAbsoluteCentrelineMM": 27.317210731,
+      "reserveWithin50MM": 22.682789269,
+      "scope": "Exact rigid-arm linear identities, conservatively summed scalar intervals. Only the centreline is bounded. The along +/-125 mm fork/plate extrema require longitudinal rotation."
+    },
+    {
+      "head": "north normal",
+      "options": [
+        {
+          "neighbourRootAlongMM": 3224.0625,
+          "R1260AbsoluteBoundMM": [
+            -27.073983865,
+            40.94766969
+          ],
+          "R1000AbsoluteBoundMM": [
+            -27.795682925,
+            40.22597063
+          ],
+          "rootAbsoluteBoundMM": [
+            -23.177383501,
+            28.240856238
+          ],
+          "sourceLabels": [
+            "outer face2 primary root u3224.0625 R520.0 absolute",
+            "north normal head at R1130 minus primary front R520, root 1",
+            "north normal widest return R1260 minus lower back R125",
+            "outer face2 primary root u3224.0625 R170.0 absolute",
+            "outer face2 primary root u3224.0625 cross-section R520 minus R170",
+            "north normal head root minus primary root 1"
+          ]
+        },
+        {
+          "neighbourRootAlongMM": 2430.9375,
+          "R1260AbsoluteBoundMM": [
+            -28.502759666,
+            42.292764037
+          ],
+          "R1000AbsoluteBoundMM": [
+            -29.224458726,
+            41.571064977
+          ],
+          "rootAbsoluteBoundMM": [
+            -23.891494502,
+            28.956088214
+          ],
+          "sourceLabels": [
+            "outer face2 primary root u2430.9375 R520.0 absolute",
+            "north normal head at R1130 minus primary front R520, root 2",
+            "north normal widest return R1260 minus lower back R125",
+            "outer face2 primary root u2430.9375 R170.0 absolute",
+            "outer face2 primary root u2430.9375 cross-section R520 minus R170",
+            "north normal head root minus primary root 2"
+          ]
+        }
+      ],
+      "centrelineEnvelope": {
+        "rootAbsoluteBoundMM": [
+          -23.177383501,
+          28.240856238
+        ],
+        "R1000AbsoluteBoundMM": [
+          -27.795682925,
+          40.22597063
+        ],
+        "R1260AbsoluteBoundMM": [
+          -27.073983865,
+          40.94766969
+        ]
+      },
+      "peakAbsoluteCentrelineMM": 40.94766969,
+      "reserveWithin50MM": 9.05233031,
+      "scope": "Exact rigid-arm linear identities, conservatively summed scalar intervals. Only the centreline is bounded. The along +/-125 mm fork/plate extrema require longitudinal rotation."
+    }
+  ],
+  "nativeBodyEdgeSensitivity": [
+    {
+      "circuit": "primary",
+      "edgeQueryCount": 128,
+      "rangeMM": [
+        -19.03919976,
+        26.160223988
+      ]
+    },
+    {
+      "circuit": "lower",
+      "edgeQueryCount": 128,
+      "rangeMM": [
+        -22.115645755,
+        28.723389505
+      ]
+    }
+  ],
+  "retainedArmTrials": [
+    {
+      "centreZMM": 6240,
+      "topZMM": 6340,
+      "bottomZMM": 6140,
+      "armMassKG": 30.96792,
+      "wholeHeadMassKG": 71.528313089,
+      "wholeLocalDeflectionMM": 5.513326639,
+      "lowerCarrierClearanceAfter50Native6Local10SettingMM": -30.724995,
+      "tray6025RimClearanceAfterSame66MM": 49,
+      "status": "SOURCE CONTROL"
+    },
+    {
+      "centreZMM": 6200,
+      "topZMM": 6300,
+      "bottomZMM": 6100,
+      "armMassKG": 31.6476,
+      "wholeHeadMassKG": 72.207993089,
+      "wholeLocalDeflectionMM": 5.754769994,
+      "lowerCarrierClearanceAfter50Native6Local10SettingMM": 9.275005,
+      "tray6025RimClearanceAfterSame66MM": 9,
+      "status": "UNSELECTED LOCAL CANDIDATE"
+    }
+  ],
+  "wholeApronTransfer": {
+    "sourceDrawnTopRadialZMM": [
+      200,
+      7325
+    ],
+    "sourceDrawnToeRadialAboveBedMM": [
+      260,
+      95
+    ],
+    "foldHalfEnvelopeMM": 12.85,
+    "drawnLineLengthRangeMM": [
+      376.260261602,
+      464.536659115
+    ],
+    "sourceUnbracedAndPricedLengthMM": 580,
+    "missingCompleteUpperLapAndClipGeometry": true,
+    "toeMaximumAfter400OutMM": 672.85,
+    "toeBeyondIntactLowerR670MM": 2.85,
+    "meaning": "The entire folded part reaches beyond the lower collector before the proposed400 mm transfer finishes. A receiving catch must already exist. The drawn two-point line is shorter than the580 mm stock bound; unshown lap/clip stock may not be discarded from a collision check."
+  },
+  "flatUpperPanCounterexample": {
+    "proposedPanZMM": 7200.0,
+    "proposedPanRadialMM": [
+      170,
+      625
+    ],
+    "existingApronCrossingRadialRangeMM": [
+      216.281499444,
+      220.191385602
+    ],
+    "rejected": true,
+    "reason": "A closed horizontal pickup at7200 physically crosses the retained primary apron. It cannot be introduced before first release without an authored dry slot or different assembly sequence."
+  },
+  "fixedApronDropComparison": [
+    {
+      "dropMM": 165,
+      "nominalRearToToeClearanceMM": 30,
+      "sourceAfter10OnlyMM": 20,
+      "afterHypothesised50Native6Local10SettingMM": -36
+    },
+    {
+      "dropMM": 161,
+      "nominalRearToToeClearanceMM": 26,
+      "sourceAfter10OnlyMM": 16,
+      "afterHypothesised50Native6Local10SettingMM": -40
+    }
+  ],
+  "lowTrayCoverageCounterexample": {
+    "floorZMM": 5900,
+    "rimZMM": 6025,
+    "outboardOnlyRadialMM": [
+      625,
+      3250
+    ],
+    "secondaryApronToeRadialMM": 146,
+    "lowerInnerEdgeRadialMM": 125,
+    "missedSecondaryDripDistanceMM": 479,
+    "trialExtendedBackRMM": 115,
+    "facadeFaceMaximumProjectionMM": 100,
+    "trialBackToFacadeClearanceAfter10SettingMM": 5,
+    "trialOverlapBehindLowerBackBeforeAnySplashMM": 10,
+    "reason": "The outboard tray catches transferred bodies but does not catch the retained secondary rain path. An extension to115 has only5 mm after setting beside the source facade projections and10 mm behind the lower back. Neither a rain-tight back wall nor horizontal wind/splash capture follows from the vertical arm clearance."
+  },
+  "perBayInventoryReconciliation": [
+    {
+      "circuit": "primary",
+      "originalScheduledKGPerM": 49.201813749,
+      "physicalMovingBodyInventoryKG": 1346.777332383,
+      "retainedFixedScheduleKGPerM": 22.244916822,
+      "trialTotalKGPerM": 48.777173173,
+      "remainingTo50KGPerM": 1.222826827,
+      "leastExisting600BayClearanceAfter10EachMM": -188.026966094,
+      "leastTrial1200BayClearanceAfter10EachMM": 111.973033906,
+      "qualification": "No new corner reinforcement, temporary rain tools or extra thermal guides priced. This reconciles the enumerated metal only; it does not establish local frame or native load-resultant adequacy."
+    },
+    {
+      "circuit": "lower",
+      "originalScheduledKGPerM": 45.91667163,
+      "physicalMovingBodyInventoryKG": 1820.021313649,
+      "retainedFixedScheduleKGPerM": 11.372051583,
+      "trialTotalKGPerM": 46.933233952,
+      "remainingTo50KGPerM": 3.066766048,
+      "leastExisting600BayClearanceAfter10EachMM": -240.058216094,
+      "leastTrial1200BayClearanceAfter10EachMM": 59.941783906,
+      "qualification": "No new corner reinforcement, temporary rain tools or extra thermal guides priced. This reconciles the enumerated metal only; it does not establish local frame or native load-resultant adequacy."
+    }
+  ],
+  "physicalJointThermalInterface": {
+    "trialFabricationGapMM": 10,
+    "independentPrimaryBayFull80KExpansionMM": 1.07865,
+    "independentLowerBayFull80KExpansionMM": 1.087575,
+    "sourceHeadEndMinimumTravelMM": 30,
+    "sourceOpposedLongArmLipGapMM": 60,
+    "longArmThermalTrainOption": "Soldered sacrificial per-bay cover strips may retain a continuous wet liner train. Then crown fixation, every carrier longitudinal slide/capture, the two head end joints and installation thermal datum must be authored. The10 mm fabrication seam is not itself an expansion joint.",
+    "independentModuleOption": "If each module is longitudinally fixed at its own root, every sealed seam needs a real compliant metal joint, its complete backing/folds and thermal-cycle check. The current90 mm stock allowance does not establish that detail.",
+    "jointAccepted": false
+  },
+  "headSequenceInventory": {
+    "fourLocatedLeaderAndGroundLanes": 4,
+    "explicitNormalHeadSpoolCatchTransferExamples": 2,
+    "explicitReliefHeadTransferExamples": 0,
+    "missing": "The two relief heads at11750 need their actual removable body/spout, upper spool, first rest, retained pipe support and contained rain path before release. The four-head load bound does not define these parts."
+  },
+  "remainingAuthoring": [
+    "Contained roof and underlay interception must be operating before either apron weatherlap or first wet joint is released.",
+    "Retained neighbouring open ends need continuous reception; do not invent transverse walls in a continuous gutter.",
+    "Complete physical corner and head-straddling pan surfaces must reconcile their grades, stepped beds, rail ends and native root couples.",
+    "One-root rails are cantilevers from their own crossarm after adjacent seams are released. The continuous-span source check is not their corner check.",
+    "The1200 mm body bay is an unselected plan envelope; complete grips, first rest, worker, gate, site and ground-nest geometry still need joining.",
+    "Use the full added-pressure movement family and full head/leader absence. The current280x20 spring40 comparison is not admitted.",
+    "The reverse installation must restore every wet joint, apron lap, head connection and receiving path before temporary rain interception is removed."
+  ],
+  "sourceHashes": {
+    "project/rof/studies/roof_water_edges.py": "573eef52a75744c5247148c90999fa1a34b931fec04bf6e381e4c459fd9e8d29",
+    "project/rof/studies/roof_water_heads.py": "cd4c5be755649adda2611bd561841c26ec452d1d220886e029f82d4f01c2160f",
+    "project/rof/studies/roof_water_movement.json": "b32100891d49db07ccab698bda682d8a2e457216715ba264758d3e56e2bb30cc",
+    "project/rof/studies/roof_water_joined_pressure_movement_280_60.json": "a667eeccc987c6571327c1b23ab1422276ff38e440578e7625a7584789ce2387",
+    "project/mat/studies/ring-roof-family.json": "b8aa44fab2b13d329f4ccb6cda0210c1fe3aab1b13e8ec96a47e9e0271c07a81",
+    "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+    "project/had/studies/current-house-services.json": "fa820740d3c6b55917715945b158bc4ad1005ab80306fb3165b59c0136d31a84",
+    "project/rwt/studies/selected-water-event.json": "179832f10e0b3c2cc3cde05d7b99878819c49b4e5ef451785c5a5c99a6e7e0d3",
+    "project/rwt/studies/court-service-selection.json": "fc62adf66ab862f8dfbb10be0c72cf447e113b2280ff68dc286a9b511ad6d908",
+    "project/rwt/studies/over-roof-site-envelope.json": "0c6e6d9617091a8a069280fd9e884ea24d06d7e9def1b4f35e96beb46081b747",
+    "project/mat/studies/plant-threshold.json": "3cc494ddaf6bcdfebb8c1e9108d987f26196ac58fcf84ecd313659fa763cfa4b",
+    "project/str/studies/reconciled-house-interface.json": "ae17f6de977de58ae54f25edfc67c48c36f348cffc288e839f25a8b4143c16cf"
+  },
+  "privateInputHashes": {
+    "outer-module-inventory.json": "9baa465750cc067fb98ec564b3d07515cc7aba160668ee7f8e13e5019d90a635",
+    "outer-renewal-path-checks.py": "c3e30519a54e548c80d314776e84a55885a534b27f04716b5539270135c1d06e"
+  }
+}

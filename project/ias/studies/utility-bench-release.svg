@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560">
+<title>Utility bench and independently supported sink top</title>
+<desc>Plan of the retained underframe and top path. A receiving section shows the two bearing strips and the open throat.</desc>
+<rect width="960" height="560" fill="#fffdf8"/><g font-family="sans-serif" fill="#25342f">
+<text x="35" y="38" font-size="26">Utility sink  /  first supported release</text>
+<text x="35" y="64" font-size="14">Floor plan, north up. The factory frame remains on its four seats.</text>
+<rect x="84.25" y="307.75" width="126.75" height="136.5" fill="#e5e6de" stroke="#667770"/>
+<rect x="84.25" y="444.25" width="292.5" height="48.75" fill="#e5e6de" stroke="#667770"/>
+<rect x="341.748" y="107.29" width="39" height="126.75" fill="#e5e6de" stroke="#667770"/>
+<rect x="107.65" y="164.425" width="130.65" height="130.65" fill="#f4ead8" stroke="#667770"/>
+<rect x="256.825" y="319.45" width="117" height="117" fill="#f3f4ee" stroke="#667770"/>
+<rect x="255.85" y="405.25" width="17.55" height="39" fill="#c5b294" stroke="#667770"/>
+<rect x="255.85" y="307.75" width="17.55" height="39" fill="#c5b294" stroke="#667770"/>
+<rect x="363.1" y="405.25" width="17.55" height="39" fill="#c5b294" stroke="#667770"/>
+<rect x="363.1" y="307.75" width="17.55" height="39" fill="#c5b294" stroke="#667770"/>
+<rect x="237.325" y="346.75" width="13.65" height="19.5" fill="#a5654b" stroke="#667770"/>
+<rect x="225.625" y="332.125" width="9.75" height="9.75" fill="#a5654b" stroke="#667770"/>
+<polyline points="315.325,377.95 315.325,229.75 172.975,229.75" fill="none" stroke="#216b62" stroke-width="4"/>
+<path d="M182.975,223.75 L172.975,229.75 L182.975,235.75" fill="#216b62"/>
+<text x="103.75" y="379.9" font-size="14">Washer</text>
+<text x="260.725" y="416.95" font-size="14">Frame</text>
+<text x="120.325" y="260.95" font-size="14">Head rest</text>
+<text x="331.9" y="93.25" font-size="14">Radiator</text>
+<text x="56" y="103" font-size="13">Brown: installed foot seats</text>
+<text x="56" y="124" font-size="13">Rust: fixed services</text>
+<text x="520" y="112" font-size="15">TRANSVERSE SECTION AT THE RECEIVER</text>
+<rect x="533" y="186" width="354" height="5" fill="#296e66"/>
+<rect x="538.9" y="191" width="8.85" height="35" fill="#9b7853"/>
+<rect x="872.25" y="191" width="8.85" height="35" fill="#9b7853"/>
+<text x="520" y="158" font-size="14">600 mm integral top, supported at two lands</text>
+<text x="622" y="250" font-size="14">550 mm clear between rails</text>
+<text x="520" y="293" font-size="14">Each bearing strip is 15 mm wide.</text>
+<text x="520" y="321" font-size="14">530 mm maximum lower body at 10 mm each side.</text>
+<text x="520" y="370" font-size="14">Before the last of four top screws comes out,</text>
+<text x="520" y="393" font-size="14">capture the head against both fall and tipping.</text>
+<text x="520" y="431" font-size="14">Verify underside contacts, actual feet and load;</text>
+<text x="520" y="454" font-size="14">the supplier does not rate these receiving lands.</text>
+<text x="35" y="533" font-size="13">Five millimetres of handling equipment per side. Mounted taps, pickup and projections must fit the measured package.</text>
+</g></svg>

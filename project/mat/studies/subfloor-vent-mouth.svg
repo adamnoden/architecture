@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="540" viewBox="0 0 1000 540">
+<title>Section through the removable subfloor vent hood</title>
+<desc>Downward intake between a free sill drip and an outer skirt. The projected roof edge falls on the hood.</desc>
+<rect width="1000" height="540" fill="#faf9f4"/>
+<g font-family="Arial, sans-serif" fill="#233b45">
+<text x="35" y="43" font-size="26">Where rain meets the subfloor vent</text>
+<text x="35" y="74" font-size="16">West and east mouths · local section looking along the wall · dimensions in millimetres</text>
+<g transform="translate(145,-790) scale(1.16,-1.16)" stroke-linejoin="round">
+<path d="M -75 -850 H 0 V -778 H -75 Z M -75 -1000 H 0 V -1042 H -75 Z" fill="#ddd9ce"/>
+<path d="M 0 -820 L 200 -840.0 V -1030" fill="none" stroke="#324955" stroke-width="4"/>
+<path d="M -60 -1000 H 0 L 100 -1010.0 v -4" fill="none" stroke="#324955" stroke-width="3"/>
+<path d="M 0 -1000 V -850" stroke="#324955" stroke-width="4" stroke-dasharray="3 3"/>
+<path d="M 50 -772 V -822.0 l -4 7 m 4 -7 l 4 7" stroke="#9e5739" stroke-width="2.6" fill="none"/>
+<path d="M 170 -1075 V -970 Q 170 -933 133 -933 H -40 l 9 -4 m -9 4 l 9 4" stroke="#326c71" stroke-width="3" fill="none"/>
+</g>
+<text x="136" y="106" fill="#884b34" font-size="15">Projected roof drip</text>
+<text x="47" y="317" font-size="14">Floor void</text>
+<text x="203" y="469" font-size="15">Exterior air enters from below</text>
+<text x="480" y="148" font-size="19">The metal hood takes the drip</text>
+<text x="480" y="180" font-size="16">The roof edge projects 50 past the screen at all four mouths.</text>
+<text x="480" y="210" font-size="16">The cap and sill slope outwards at 1 in 10.</text>
+<text x="480" y="240" font-size="16">The skirt ends 20 below the sill tip.</text>
+<text x="480" y="307" font-size="19">Two restrictions in series</text>
+<text x="480" y="339" font-size="16">100 clear at the intake gives 40,000 mm².</text>
+<text x="480" y="369" font-size="16">The framed screen reduces this to 29,000 mm².</text>
+<text x="480" y="413" font-size="16">Remove the hood from outside to reach the screen.</text>
+<text x="35" y="514" font-size="14">Study geometry. Wind-driven rain, splash, discharge, framing and installed pressure loss require testing.</text>
+</g></svg>

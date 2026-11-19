@@ -1,0 +1,48 @@
+{
+  "authority": "Authored alternative section; no house adoption, capacity, material or membrane-omission acceptance.",
+  "sourceCommit": "d81aab99cd8900395deffc16a26f1490fb9658f6",
+  "sourceBlobs": {
+    "compiler/reference-house/georgian/section-source.ts": "1617867dc3441206c116ddf877dcfd5ba89fb5a4",
+    "compiler/reference-house/georgian/section-exemplar.ts": "75bf5c749da5095c07eed46105817a79095ca418"
+  },
+  "wallTotal": 417.5,
+  "floorStack": 330,
+  "cases": {
+    "guidanceComparison": {
+      "voidDepth": 150,
+      "totalDepth": 480,
+      "excessOverReserve": 180,
+      "relativeRaiseAtFixedOldGround": 330
+    },
+    "supplierComparison": {
+      "voidDepth": 225,
+      "totalDepth": 555,
+      "excessOverReserve": 255,
+      "relativeRaiseAtFixedOldGround": 405
+    },
+    "drawnTrial": {
+      "voidDepth": 300,
+      "totalDepth": 630,
+      "excessOverReserve": 330,
+      "relativeRaiseAtFixedOldGround": 480
+    }
+  },
+  "straightVentBoreOnlyMinimum": 250,
+  "drawnVent": {
+    "residualBeyondBore": 0,
+    "completeEnvelopeResidual": null,
+    "completeDuctFit": "not-established",
+    "scope": "One straight below-DPC route only; body, cavity crossing, support, free area and water protection remain unqualified."
+  },
+  "trialDpcLowerEdgeClearance": 150,
+  "membraneOmission": "not-established; actual site, ground gas, floor and junction evidence required",
+  "serviceAccess": "not-established; ventilation space is not a renewal route",
+  "excluded": [
+    "Floor load/span, concrete constituents and reinforcement exposure",
+    "Qualified mineral DPC and its bearing, bedding and controlling datum",
+    "Actual insulation, finishes, separators and thermal/air continuity",
+    "Duct body, grille, cavity crossing, distribution and airflow",
+    "Groundwater, gas, heave, flood and lawful passive discharge",
+    "Thresholds, accessible approach and complete service intervention"
+  ]
+}

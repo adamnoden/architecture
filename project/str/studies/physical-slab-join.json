@@ -1,0 +1,1517 @@
+{
+  "status": "Inner-axis RC200 trial mass closed; exterior wall/cavity, members and site capacities remain open",
+  "sources": {
+    "project/had/studies/open-north-loggia.json": "542781c6bb1d277b20492e8433cea498e98eaea5db2e737a5ec7e9655f9d18fd",
+    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+    "project/str/studies/whole-house-reaction-join.json": "d48f810099cfbe36c3762955bc272df7b8c9fcd222a6bf0ef4c54fdb3a02e97b"
+  },
+  "method": "Exact x/y partition of B inner structural-axis rectangle outside three disjoint openings, then 16 axis fields and entrance bridge; every residual cell appears once",
+  "inner_axis_rectangle_mm": [
+    332.5,
+    332.5,
+    11667.5,
+    11667.5
+  ],
+  "exterior_shell_perimeter_band_m2": 15.517775,
+  "exterior_band_status": "Not RC slab mass. Weather leaf/cavity/actual upper floor edge and support geometry remain separate.",
+  "gross_surface_m2": 100.66019999999999,
+  "axis_fields_m2": 90.57854999999999,
+  "bridge_m2": 2.447425,
+  "residual_m2": 7.634225,
+  "residual_modes_m2": {
+    "SW-return-plate-and-collector": 0.067,
+    "bridge-side-beam-top-already-counted": 0.215475,
+    "direct-width-candidate": 6.2727875,
+    "loggia-transverse-end": 1.0789625
+  },
+  "cells": [
+    {
+      "rect": [
+        332.5,
+        4332.5,
+        417.5,
+        4432.5
+      ],
+      "area_m2": 0.0085,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "stair-header-line",
+      "max_corner_to_any_route_mm": 100.0,
+      "G_RC200_kN": 0.0425,
+      "maximum_assumed_ULS_kN": 0.12303750000000002,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        332.5,
+        4432.5,
+        417.5,
+        7750
+      ],
+      "area_m2": 0.2819875,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "outer-W",
+      "max_corner_to_any_route_mm": 117.5,
+      "G_RC200_kN": 1.4099375,
+      "maximum_assumed_ULS_kN": 4.0817690625,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        332.5,
+        7750,
+        417.5,
+        8082.5
+      ],
+      "area_m2": 0.0282625,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "outer-W",
+      "max_corner_to_any_route_mm": 117.5,
+      "G_RC200_kN": 0.1413125,
+      "maximum_assumed_ULS_kN": 0.40909968750000003,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        332.5,
+        8082.5,
+        417.5,
+        8290
+      ],
+      "area_m2": 0.0176375,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "outer-W",
+      "max_corner_to_any_route_mm": 117.5,
+      "G_RC200_kN": 0.0881875,
+      "maximum_assumed_ULS_kN": 0.25530281250000003,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        332.5,
+        8290,
+        417.5,
+        8767.5
+      ],
+      "area_m2": 0.0405875,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "outer-W",
+      "max_corner_to_any_route_mm": 117.5,
+      "G_RC200_kN": 0.2029375,
+      "maximum_assumed_ULS_kN": 0.5875040625000001,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        332.5,
+        8767.5,
+        417.5,
+        8852.5
+      ],
+      "area_m2": 0.007225,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "rear-W",
+      "max_corner_to_any_route_mm": 85.0,
+      "G_RC200_kN": 0.036125,
+      "maximum_assumed_ULS_kN": 0.104581875,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        417.5,
+        4332.5,
+        2817.5,
+        4432.5
+      ],
+      "area_m2": 0.24,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "stair-header-line",
+      "max_corner_to_any_route_mm": 100.0,
+      "G_RC200_kN": 1.2,
+      "maximum_assumed_ULS_kN": 3.474,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        417.5,
+        8767.5,
+        2817.5,
+        8852.5
+      ],
+      "area_m2": 0.204,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "rear-W",
+      "max_corner_to_any_route_mm": 85.0,
+      "G_RC200_kN": 1.02,
+      "maximum_assumed_ULS_kN": 2.9529,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        2817.5,
+        2650,
+        2902.5,
+        2735
+      ],
+      "area_m2": 0.007225,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "actual-study-cloak-north",
+      "max_corner_to_any_route_mm": 85.0,
+      "G_RC200_kN": 0.036125,
+      "maximum_assumed_ULS_kN": 0.104581875,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        2817.5,
+        2735,
+        2902.5,
+        3247.5
+      ],
+      "area_m2": 0.0435625,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "actual-study-L-return",
+      "max_corner_to_any_route_mm": 85.0,
+      "G_RC200_kN": 0.2178125,
+      "maximum_assumed_ULS_kN": 0.6305671875000001,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        2817.5,
+        3247.5,
+        2902.5,
+        3832.5
+      ],
+      "area_m2": 0.049725,
+      "mode": "SW-return-plate-and-collector",
+      "nearest_axis": "actual-study-L-return",
+      "max_corner_to_any_route_mm": 349.09776567603524,
+      "G_RC200_kN": 0.24862499999999998,
+      "maximum_assumed_ULS_kN": 0.719769375,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        2817.5,
+        3832.5,
+        2902.5,
+        3917.5
+      ],
+      "area_m2": 0.007225,
+      "mode": "SW-return-plate-and-collector",
+      "nearest_axis": "actual-protected-stair-east",
+      "max_corner_to_any_route_mm": 349.09776567603524,
+      "G_RC200_kN": 0.036125,
+      "maximum_assumed_ULS_kN": 0.104581875,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        2817.5,
+        3917.5,
+        2902.5,
+        4250
+      ],
+      "area_m2": 0.0282625,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "actual-protected-stair-east",
+      "max_corner_to_any_route_mm": 266.8506136399165,
+      "G_RC200_kN": 0.1413125,
+      "maximum_assumed_ULS_kN": 0.40909968750000003,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        2817.5,
+        4250,
+        2902.5,
+        4332.5
+      ],
+      "area_m2": 0.0070125,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "actual-protected-stair-east",
+      "max_corner_to_any_route_mm": 0.0,
+      "G_RC200_kN": 0.035062499999999996,
+      "maximum_assumed_ULS_kN": 0.1015059375,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        2817.5,
+        4332.5,
+        2902.5,
+        4432.5
+      ],
+      "area_m2": 0.0085,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "actual-protected-stair-east",
+      "max_corner_to_any_route_mm": 77.0,
+      "G_RC200_kN": 0.0425,
+      "maximum_assumed_ULS_kN": 0.12303750000000002,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        2817.5,
+        4432.5,
+        2902.5,
+        7750
+      ],
+      "area_m2": 0.2819875,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "actual-protected-stair-east",
+      "max_corner_to_any_route_mm": 77.0,
+      "G_RC200_kN": 1.4099375,
+      "maximum_assumed_ULS_kN": 4.0817690625,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        2817.5,
+        7750,
+        2902.5,
+        8082.5
+      ],
+      "area_m2": 0.0282625,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "actual-protected-stair-east",
+      "max_corner_to_any_route_mm": 77.0,
+      "G_RC200_kN": 0.1413125,
+      "maximum_assumed_ULS_kN": 0.40909968750000003,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        2817.5,
+        8082.5,
+        2902.5,
+        8290
+      ],
+      "area_m2": 0.0176375,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "actual-protected-stair-east",
+      "max_corner_to_any_route_mm": 77.0,
+      "G_RC200_kN": 0.0881875,
+      "maximum_assumed_ULS_kN": 0.25530281250000003,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        2817.5,
+        8290,
+        2902.5,
+        8767.5
+      ],
+      "area_m2": 0.0405875,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "actual-protected-stair-east",
+      "max_corner_to_any_route_mm": 77.0,
+      "G_RC200_kN": 0.2029375,
+      "maximum_assumed_ULS_kN": 0.5875040625000001,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        2817.5,
+        8767.5,
+        2902.5,
+        8852.5
+      ],
+      "area_m2": 0.007225,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "actual-protected-stair-east",
+      "max_corner_to_any_route_mm": 77.0,
+      "G_RC200_kN": 0.036125,
+      "maximum_assumed_ULS_kN": 0.104581875,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        2902.5,
+        2650,
+        2917.5,
+        2735
+      ],
+      "area_m2": 0.001275,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "actual-study-cloak-north",
+      "max_corner_to_any_route_mm": 85.0,
+      "G_RC200_kN": 0.0063750000000000005,
+      "maximum_assumed_ULS_kN": 0.018455625000000003,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        2902.5,
+        2735,
+        2917.5,
+        3247.5
+      ],
+      "area_m2": 0.0076875,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "actual-study-L-return",
+      "max_corner_to_any_route_mm": 100.0,
+      "G_RC200_kN": 0.0384375,
+      "maximum_assumed_ULS_kN": 0.11127656250000001,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        2902.5,
+        3247.5,
+        2917.5,
+        3832.5
+      ],
+      "area_m2": 0.008775,
+      "mode": "SW-return-plate-and-collector",
+      "nearest_axis": "actual-study-L-return",
+      "max_corner_to_any_route_mm": 341.2759147669229,
+      "G_RC200_kN": 0.043875,
+      "maximum_assumed_ULS_kN": 0.127018125,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        2902.5,
+        3832.5,
+        2917.5,
+        3917.5
+      ],
+      "area_m2": 0.001275,
+      "mode": "SW-return-plate-and-collector",
+      "nearest_axis": "actual-protected-stair-east",
+      "max_corner_to_any_route_mm": 341.2759147669229,
+      "G_RC200_kN": 0.0063750000000000005,
+      "maximum_assumed_ULS_kN": 0.018455625000000003,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        2902.5,
+        3917.5,
+        2917.5,
+        4250
+      ],
+      "area_m2": 0.0049875,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "actual-protected-stair-east",
+      "max_corner_to_any_route_mm": 256.5331362611856,
+      "G_RC200_kN": 0.024937499999999998,
+      "maximum_assumed_ULS_kN": 0.0721940625,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        2902.5,
+        4250,
+        2917.5,
+        4332.5
+      ],
+      "area_m2": 0.0012375,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "actual-protected-stair-east",
+      "max_corner_to_any_route_mm": 0.0,
+      "G_RC200_kN": 0.0061875,
+      "maximum_assumed_ULS_kN": 0.017912812500000003,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        2902.5,
+        4332.5,
+        2917.5,
+        4432.5
+      ],
+      "area_m2": 0.0015,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "actual-protected-stair-east",
+      "max_corner_to_any_route_mm": 23.0,
+      "G_RC200_kN": 0.0075,
+      "maximum_assumed_ULS_kN": 0.021712500000000003,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        2902.5,
+        4432.5,
+        2917.5,
+        7750
+      ],
+      "area_m2": 0.0497625,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "actual-protected-stair-east",
+      "max_corner_to_any_route_mm": 23.0,
+      "G_RC200_kN": 0.2488125,
+      "maximum_assumed_ULS_kN": 0.7203121875,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        2902.5,
+        7750,
+        2917.5,
+        8082.5
+      ],
+      "area_m2": 0.0049875,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "actual-protected-stair-east",
+      "max_corner_to_any_route_mm": 23.0,
+      "G_RC200_kN": 0.024937499999999998,
+      "maximum_assumed_ULS_kN": 0.0721940625,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        2902.5,
+        8082.5,
+        2917.5,
+        8290
+      ],
+      "area_m2": 0.0031125,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "actual-protected-stair-east",
+      "max_corner_to_any_route_mm": 23.0,
+      "G_RC200_kN": 0.0155625,
+      "maximum_assumed_ULS_kN": 0.0450534375,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        2902.5,
+        8290,
+        2917.5,
+        8767.5
+      ],
+      "area_m2": 0.0071625,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "actual-protected-stair-east",
+      "max_corner_to_any_route_mm": 23.0,
+      "G_RC200_kN": 0.0358125,
+      "maximum_assumed_ULS_kN": 0.1036771875,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        2902.5,
+        8767.5,
+        2917.5,
+        8852.5
+      ],
+      "area_m2": 0.001275,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "actual-protected-stair-east",
+      "max_corner_to_any_route_mm": 23.0,
+      "G_RC200_kN": 0.0063750000000000005,
+      "maximum_assumed_ULS_kN": 0.018455625000000003,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        2917.5,
+        4332.5,
+        3917.5,
+        4432.5
+      ],
+      "area_m2": 0.1,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "stair-header-line",
+      "max_corner_to_any_route_mm": 32.5,
+      "G_RC200_kN": 0.5,
+      "maximum_assumed_ULS_kN": 1.4475000000000002,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        3917.5,
+        3917.5,
+        4250,
+        4250
+      ],
+      "area_m2": 0.11055625,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "court-W",
+      "max_corner_to_any_route_mm": 300.0,
+      "G_RC200_kN": 0.55278125,
+      "maximum_assumed_ULS_kN": 1.6003017187500002,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        3917.5,
+        4250,
+        4250,
+        4332.5
+      ],
+      "area_m2": 0.02743125,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "court-W",
+      "max_corner_to_any_route_mm": 300.0,
+      "G_RC200_kN": 0.13715625,
+      "maximum_assumed_ULS_kN": 0.39706734375,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        3917.5,
+        4332.5,
+        4250,
+        4432.5
+      ],
+      "area_m2": 0.03325,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "court-W",
+      "max_corner_to_any_route_mm": 300.0,
+      "G_RC200_kN": 0.16625,
+      "maximum_assumed_ULS_kN": 0.4812937500000001,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        3917.5,
+        4432.5,
+        4250,
+        7750
+      ],
+      "area_m2": 1.10306875,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "court-W",
+      "max_corner_to_any_route_mm": 300.0,
+      "G_RC200_kN": 5.51534375,
+      "maximum_assumed_ULS_kN": 15.966920156250001,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        3917.5,
+        7750,
+        4250,
+        8082.5
+      ],
+      "area_m2": 0.11055625,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "court-W",
+      "max_corner_to_any_route_mm": 300.0,
+      "G_RC200_kN": 0.55278125,
+      "maximum_assumed_ULS_kN": 1.6003017187500002,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        4250,
+        3917.5,
+        4377.5,
+        4250
+      ],
+      "area_m2": 0.04239375,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "court-S",
+      "max_corner_to_any_route_mm": 300.0,
+      "G_RC200_kN": 0.21196875,
+      "maximum_assumed_ULS_kN": 0.6136495312500001,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        4250,
+        7750,
+        4377.5,
+        8082.5
+      ],
+      "area_m2": 0.04239375,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "court-N-W",
+      "max_corner_to_any_route_mm": 300.0,
+      "G_RC200_kN": 0.21196875,
+      "maximum_assumed_ULS_kN": 0.6136495312500001,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        4377.5,
+        3917.5,
+        4800,
+        4250
+      ],
+      "area_m2": 0.14048125,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "court-S",
+      "max_corner_to_any_route_mm": 300.0,
+      "G_RC200_kN": 0.70240625,
+      "maximum_assumed_ULS_kN": 2.0334660937500004,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        4377.5,
+        7750,
+        4800,
+        8082.5
+      ],
+      "area_m2": 0.14048125,
+      "mode": "loggia-transverse-end",
+      "nearest_axis": "loggia-W",
+      "max_corner_to_any_route_mm": 424.26406871192853,
+      "G_RC200_kN": 0.70240625,
+      "maximum_assumed_ULS_kN": 2.0334660937500004,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        4800,
+        332.5,
+        4885,
+        417.5
+      ],
+      "area_m2": 0.007225,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "actual-study-east",
+      "max_corner_to_any_route_mm": 85.0,
+      "G_RC200_kN": 0.036125,
+      "maximum_assumed_ULS_kN": 0.104581875,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        4800,
+        417.5,
+        4885,
+        2650
+      ],
+      "area_m2": 0.1897625,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "actual-cloak-east",
+      "max_corner_to_any_route_mm": 85.0,
+      "G_RC200_kN": 0.9488125000000001,
+      "maximum_assumed_ULS_kN": 2.7468121875000002,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        4800,
+        2650,
+        4885,
+        2735
+      ],
+      "area_m2": 0.007225,
+      "mode": "bridge-side-beam-top-already-counted",
+      "nearest_axis": "actual-cloak-east",
+      "max_corner_to_any_route_mm": 120.20815280171308,
+      "G_RC200_kN": 0.036125,
+      "maximum_assumed_ULS_kN": 0.104581875,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        4800,
+        2735,
+        4885,
+        3247.5
+      ],
+      "area_m2": 0.0435625,
+      "mode": "bridge-side-beam-top-already-counted",
+      "nearest_axis": "actual-cloak-east",
+      "max_corner_to_any_route_mm": 603.5157413025778,
+      "G_RC200_kN": 0.2178125,
+      "maximum_assumed_ULS_kN": 0.6305671875000001,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        4800,
+        3247.5,
+        4885,
+        3832.5
+      ],
+      "area_m2": 0.049725,
+      "mode": "bridge-side-beam-top-already-counted",
+      "nearest_axis": "court-S",
+      "max_corner_to_any_route_mm": 603.5157413025778,
+      "G_RC200_kN": 0.24862499999999998,
+      "maximum_assumed_ULS_kN": 0.719769375,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        4800,
+        3832.5,
+        4885,
+        3917.5
+      ],
+      "area_m2": 0.007225,
+      "mode": "bridge-side-beam-top-already-counted",
+      "nearest_axis": "court-S",
+      "max_corner_to_any_route_mm": 117.5,
+      "G_RC200_kN": 0.036125,
+      "maximum_assumed_ULS_kN": 0.104581875,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        4800,
+        3917.5,
+        4885,
+        4250
+      ],
+      "area_m2": 0.0282625,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "court-S",
+      "max_corner_to_any_route_mm": 300.0,
+      "G_RC200_kN": 0.1413125,
+      "maximum_assumed_ULS_kN": 0.40909968750000003,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        4800,
+        7750,
+        4885,
+        8082.5
+      ],
+      "area_m2": 0.0282625,
+      "mode": "loggia-transverse-end",
+      "nearest_axis": "loggia-W",
+      "max_corner_to_any_route_mm": 488.082984747471,
+      "G_RC200_kN": 0.1413125,
+      "maximum_assumed_ULS_kN": 0.40909968750000003,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        4885,
+        332.5,
+        7115,
+        417.5
+      ],
+      "area_m2": 0.18955,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "outer-S",
+      "max_corner_to_any_route_mm": 85.0,
+      "G_RC200_kN": 0.94775,
+      "maximum_assumed_ULS_kN": 2.7437362500000004,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        4885,
+        3832.5,
+        7115,
+        3917.5
+      ],
+      "area_m2": 0.18955,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "court-S",
+      "max_corner_to_any_route_mm": 117.5,
+      "G_RC200_kN": 0.94775,
+      "maximum_assumed_ULS_kN": 2.7437362500000004,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        4885,
+        3917.5,
+        7115,
+        4250
+      ],
+      "area_m2": 0.741475,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "court-S",
+      "max_corner_to_any_route_mm": 300.0,
+      "G_RC200_kN": 3.707375,
+      "maximum_assumed_ULS_kN": 10.732850625000001,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        4885,
+        7750,
+        7115,
+        8082.5
+      ],
+      "area_m2": 0.741475,
+      "mode": "loggia-transverse-end",
+      "nearest_axis": "loggia-W",
+      "max_corner_to_any_route_mm": 488.082984747471,
+      "G_RC200_kN": 3.707375,
+      "maximum_assumed_ULS_kN": 10.732850625000001,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        7115,
+        332.5,
+        7200,
+        417.5
+      ],
+      "area_m2": 0.007225,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "actual-wc-west",
+      "max_corner_to_any_route_mm": 85.0,
+      "G_RC200_kN": 0.036125,
+      "maximum_assumed_ULS_kN": 0.104581875,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        7115,
+        417.5,
+        7200,
+        2650
+      ],
+      "area_m2": 0.1897625,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "actual-wc-west",
+      "max_corner_to_any_route_mm": 85.0,
+      "G_RC200_kN": 0.9488125000000001,
+      "maximum_assumed_ULS_kN": 2.7468121875000002,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        7115,
+        2650,
+        7200,
+        2735
+      ],
+      "area_m2": 0.007225,
+      "mode": "bridge-side-beam-top-already-counted",
+      "nearest_axis": "actual-wc-west",
+      "max_corner_to_any_route_mm": 120.20815280171308,
+      "G_RC200_kN": 0.036125,
+      "maximum_assumed_ULS_kN": 0.104581875,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        7115,
+        2735,
+        7200,
+        3247.5
+      ],
+      "area_m2": 0.0435625,
+      "mode": "bridge-side-beam-top-already-counted",
+      "nearest_axis": "actual-wc-west",
+      "max_corner_to_any_route_mm": 603.5157413025778,
+      "G_RC200_kN": 0.2178125,
+      "maximum_assumed_ULS_kN": 0.6305671875000001,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        7115,
+        3247.5,
+        7200,
+        3832.5
+      ],
+      "area_m2": 0.049725,
+      "mode": "bridge-side-beam-top-already-counted",
+      "nearest_axis": "court-S",
+      "max_corner_to_any_route_mm": 603.5157413025778,
+      "G_RC200_kN": 0.24862499999999998,
+      "maximum_assumed_ULS_kN": 0.719769375,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        7115,
+        3832.5,
+        7200,
+        3917.5
+      ],
+      "area_m2": 0.007225,
+      "mode": "bridge-side-beam-top-already-counted",
+      "nearest_axis": "court-S",
+      "max_corner_to_any_route_mm": 117.5,
+      "G_RC200_kN": 0.036125,
+      "maximum_assumed_ULS_kN": 0.104581875,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        7115,
+        3917.5,
+        7200,
+        4250
+      ],
+      "area_m2": 0.0282625,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "court-S",
+      "max_corner_to_any_route_mm": 300.0,
+      "G_RC200_kN": 0.1413125,
+      "maximum_assumed_ULS_kN": 0.40909968750000003,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        7115,
+        7750,
+        7200,
+        8082.5
+      ],
+      "area_m2": 0.0282625,
+      "mode": "loggia-transverse-end",
+      "nearest_axis": "loggia-E",
+      "max_corner_to_any_route_mm": 488.082984747471,
+      "G_RC200_kN": 0.1413125,
+      "maximum_assumed_ULS_kN": 0.40909968750000003,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        7200,
+        3917.5,
+        7622.5,
+        4250
+      ],
+      "area_m2": 0.14048125,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "court-S",
+      "max_corner_to_any_route_mm": 300.0,
+      "G_RC200_kN": 0.70240625,
+      "maximum_assumed_ULS_kN": 2.0334660937500004,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        7200,
+        7750,
+        7622.5,
+        8082.5
+      ],
+      "area_m2": 0.14048125,
+      "mode": "loggia-transverse-end",
+      "nearest_axis": "loggia-E",
+      "max_corner_to_any_route_mm": 424.26406871192853,
+      "G_RC200_kN": 0.70240625,
+      "maximum_assumed_ULS_kN": 2.0334660937500004,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        7622.5,
+        3917.5,
+        7750,
+        4250
+      ],
+      "area_m2": 0.04239375,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "court-S",
+      "max_corner_to_any_route_mm": 300.0,
+      "G_RC200_kN": 0.21196875,
+      "maximum_assumed_ULS_kN": 0.6136495312500001,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        7622.5,
+        7750,
+        7750,
+        8082.5
+      ],
+      "area_m2": 0.04239375,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "court-N-E",
+      "max_corner_to_any_route_mm": 300.0,
+      "G_RC200_kN": 0.21196875,
+      "maximum_assumed_ULS_kN": 0.6136495312500001,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        7750,
+        3917.5,
+        8082.5,
+        4250
+      ],
+      "area_m2": 0.11055625,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "court-E",
+      "max_corner_to_any_route_mm": 262.5,
+      "G_RC200_kN": 0.55278125,
+      "maximum_assumed_ULS_kN": 1.6003017187500002,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        7750,
+        4250,
+        8082.5,
+        4332.5
+      ],
+      "area_m2": 0.02743125,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "actual-protected-east-cross",
+      "max_corner_to_any_route_mm": 275.15904491766213,
+      "G_RC200_kN": 0.13715625,
+      "maximum_assumed_ULS_kN": 0.39706734375,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        7750,
+        4332.5,
+        8082.5,
+        4432.5
+      ],
+      "area_m2": 0.03325,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "court-E",
+      "max_corner_to_any_route_mm": 300.0,
+      "G_RC200_kN": 0.16625,
+      "maximum_assumed_ULS_kN": 0.4812937500000001,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        7750,
+        4432.5,
+        8082.5,
+        7750
+      ],
+      "area_m2": 1.10306875,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "court-E",
+      "max_corner_to_any_route_mm": 300.0,
+      "G_RC200_kN": 5.51534375,
+      "maximum_assumed_ULS_kN": 15.966920156250001,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    },
+    {
+      "rect": [
+        7750,
+        7750,
+        8082.5,
+        8082.5
+      ],
+      "area_m2": 0.11055625,
+      "mode": "direct-width-candidate",
+      "nearest_axis": "court-E",
+      "max_corner_to_any_route_mm": 300.0,
+      "G_RC200_kN": 0.55278125,
+      "maximum_assumed_ULS_kN": 1.6003017187500002,
+      "credit": "Physical RC200 volume only; finish/live maximum is an authored challenge, not an occupied-area allocation"
+    }
+  ],
+  "RC200_mass": {
+    "physical_gross_slab_G_kN": 503.30099999999993,
+    "parent_axis_fields_G_kN": 452.89275,
+    "bridge_slab_RC_G_kN": 12.237124999999999,
+    "bridge_slab_total_authored_G_kN": 18.3556875,
+    "bridge_member_top_already_counted_G_kN": 1.077375,
+    "new_residual_RC_G_kN": 37.09375,
+    "bridge_downstand_increment_G_kN": 1.90125,
+    "slab_plus_bridge_downstand_G_kN": 505.20224999999994,
+    "limit": "Exact geometric RC200 volume under the continuous-trial assumption; ports/edge beams/actual arch cutouts and constructed thickness remain to adjust. No finish/live or wall mass silently included."
+  },
+  "maximum_surface_action": {
+    "inner_residual_all_8p5G_2Q_kN": 110.505406875,
+    "limit": "Conditional trial on the inner-axis remainder, includes bridge member top already counted and is NOT a ceiling on unknown wall/cavity/ceiling/site loads; not an additive mass total. The prior 23.152m² shell residual was a deliberately broader bounding audit."
+  },
+  "loggia_transverse_edges": [
+    {
+      "id": "south",
+      "span_x_mm": 3245,
+      "y": [
+        7750,
+        8082.5
+      ],
+      "area_m2": 1.0789625,
+      "G_kN": 9.17118125,
+      "Q_kN": 2.157925,
+      "ULS_kN": 15.617982187500001,
+      "simple_transverse_M_kNm": 6.335044024804688,
+      "scaled_RC200_section_MR_kNm": 16.061994830401236,
+      "section_scope": "First-order strip bending only; end anchorage, edge torsion, wall/plate and return joints unqualified",
+      "wall_reactions": [
+        {
+          "wall_x": 4377.5,
+          "cold_grid_axis_x": 4500,
+          "cold_grid_end_y": 8050,
+          "vertical_ULS_kN": 7.8089910937500004,
+          "longitudinal_M_kNm": 1.0444525587890625,
+          "transverse_M_kNm": 0.9566014089843751,
+          "status": "Two-axis endpoint action; actual warm spreader, wall, grid arm and node sharing not sized"
+        },
+        {
+          "wall_x": 7622.5,
+          "cold_grid_axis_x": 7500,
+          "cold_grid_end_y": 8050,
+          "vertical_ULS_kN": 7.8089910937500004,
+          "longitudinal_M_kNm": 1.0444525587890625,
+          "transverse_M_kNm": 0.9566014089843751,
+          "status": "Two-axis endpoint action; actual warm spreader, wall, grid arm and node sharing not sized"
+        }
+      ]
+    }
+  ],
+  "southwest_collector": {
+    "source_axis_field_CW_end_reaction_kN": 5.689453125000001,
+    "CW_west_end_to_return_y3917p5_kN": 5.689453125000001,
+    "CW_east_end_to_courtW_kN": 5.689453125000001,
+    "west_return_existing_south_y2650_kN": 1.6872639533803866,
+    "west_return_existing_north_y4332p5_kN": 4.570032921619615,
+    "header_existing_point_x2917p5_kN": 15.189503142429427,
+    "header_existing_W_E_reactions_kN": [
+      30.02036886377492,
+      38.71576567512379
+    ],
+    "residual_patch_area_m2": 0.067,
+    "residual_patch_RC_G_kN": 0.335,
+    "residual_patch_maximum_ULS_challenge_kN": 0.969825,
+    "supplemental_return_south_north_kN": [
+      0.4323142644873701,
+      0.53751073551263
+    ],
+    "supplemental_header_W_E_kN": [
+      0.14993325955721898,
+      0.387577475955411
+    ],
+    "revised_return_south_north_kN": [
+      2.1195782178677565,
+      5.107543657132244
+    ],
+    "revised_header_W_E_kN": [
+      30.17030212333214,
+      39.1033431510792
+    ],
+    "return_M_conservative_additive_bound_kNm": 2.2725860415300003,
+    "header_M_conservative_additive_bound_kNm": 43.27921054327287,
+    "existing_return_MR_kNm": 25.475384094686667,
+    "existing_header_MR_kNm": 57.54736868236587,
+    "eccentric_strip_torsion_kNm": 0.04849125000000001,
+    "chain": "Residual patch to west return/CW then south support and header; header to outer-W/court-W warm lines, cold grid and actual supports",
+    "status": "Incremental return/header static actions and conservative bending screen; existing CW axis-field reactions counted once. Torsion, plate anchorage, continuous joint and ground node remain unqualified."
+  },
+  "upper_wall_opening_transfers": [
+    {
+      "upper": "bed2-east",
+      "lower": "cloak-east",
+      "hole": [
+        1700,
+        2500
+      ],
+      "overlap": [
+        1700,
+        2500
+      ],
+      "gross_head_challenge_kN": 9.374400000000001,
+      "left_pier": [
+        4800,
+        1700
+      ],
+      "right_pier": [
+        4800,
+        2500
+      ],
+      "left_ground_route": "actual-cloak-east",
+      "right_ground_route": "actual-cloak-east",
+      "left_kN": 4.687200000000001,
+      "right_kN": 4.687200000000001,
+      "source_qualifier": "Already within upper gross wall row; real opening/head/spandrel mass and arch thrust must replace this gross challenge"
+    },
+    {
+      "upper": "bed2-L-north",
+      "lower": "study-L-north",
+      "hole": [
+        1350,
+        2250
+      ],
+      "overlap": [
+        1350,
+        2250
+      ],
+      "gross_head_challenge_kN": 10.5462,
+      "left_pier": [
+        1350,
+        3247.5
+      ],
+      "right_pier": [
+        2250,
+        3247.5
+      ],
+      "left_ground_route": "actual-study-L-north",
+      "right_ground_route": "actual-study-L-north",
+      "left_kN": 5.2731,
+      "right_kN": 5.2731,
+      "source_qualifier": "Already within upper gross wall row; real opening/head/spandrel mass and arch thrust must replace this gross challenge"
+    },
+    {
+      "upper": "bed3-north-main",
+      "lower": "wc-north",
+      "hole": [
+        7650,
+        8550
+      ],
+      "overlap": [
+        7650,
+        8550
+      ],
+      "gross_head_challenge_kN": 10.5462,
+      "left_pier": [
+        7650,
+        2650
+      ],
+      "right_pier": [
+        8550,
+        2650
+      ],
+      "left_ground_route": "actual-wc-north",
+      "right_ground_route": "actual-wc-north",
+      "left_kN": 5.2731,
+      "right_kN": 5.2731,
+      "source_qualifier": "Already within upper gross wall row; real opening/head/spandrel mass and arch thrust must replace this gross challenge"
+    },
+    {
+      "upper": "wet-spine",
+      "lower": "service-spine",
+      "hole": [
+        2750,
+        3650
+      ],
+      "overlap": [
+        2750,
+        3650
+      ],
+      "gross_head_challenge_kN": 10.5462,
+      "left_pier": [
+        9300,
+        2750
+      ],
+      "right_pier": [
+        9300,
+        3650
+      ],
+      "left_ground_route": "spine",
+      "right_ground_route": "spine",
+      "left_kN": 5.2731,
+      "right_kN": 5.2731,
+      "source_qualifier": "Already within upper gross wall row; real opening/head/spandrel mass and arch thrust must replace this gross challenge"
+    },
+    {
+      "upper": "bed3-L-north",
+      "lower": "plant-intermediate-arch",
+      "hole": [
+        9650,
+        11050
+      ],
+      "overlap": [
+        9650,
+        11050
+      ],
+      "gross_head_challenge_kN": 16.4052,
+      "left_pier": [
+        9650,
+        3700
+      ],
+      "right_pier": [
+        11050,
+        3700
+      ],
+      "left_ground_route": "actual-plant-intermediate-arch",
+      "right_ground_route": "actual-plant-intermediate-arch",
+      "left_kN": 8.2026,
+      "right_kN": 8.2026,
+      "source_qualifier": "Already within upper gross wall row; real opening/head/spandrel mass and arch thrust must replace this gross challenge"
+    },
+    {
+      "upper": "rear-west",
+      "lower": "rear-west",
+      "hole": [
+        3100,
+        4000
+      ],
+      "overlap": [
+        3100,
+        4000
+      ],
+      "gross_head_challenge_kN": 10.5462,
+      "left_pier": [
+        3100,
+        8852.5
+      ],
+      "right_pier": [
+        4000,
+        8852.5
+      ],
+      "left_ground_route": "rear-W",
+      "right_ground_route": "rear-W",
+      "left_kN": 5.2731,
+      "right_kN": 5.2731,
+      "source_qualifier": "Already within upper gross wall row; real opening/head/spandrel mass and arch thrust must replace this gross challenge"
+    },
+    {
+      "upper": "rear-east",
+      "lower": "rear-east",
+      "hole": [
+        8250,
+        9150
+      ],
+      "overlap": [
+        8250,
+        9150
+      ],
+      "gross_head_challenge_kN": 16.195950000000003,
+      "left_pier": [
+        8250,
+        8290
+      ],
+      "right_pier": [
+        9150,
+        8290
+      ],
+      "left_ground_route": "rear-E",
+      "right_ground_route": "rear-E",
+      "left_kN": 8.097975000000002,
+      "right_kN": 8.097975000000002,
+      "source_qualifier": "Already within upper gross wall row; real opening/head/spandrel mass and arch thrust must replace this gross challenge"
+    },
+    {
+      "upper": "rear-east-principal",
+      "lower": "rear-east",
+      "hole": [
+        10450,
+        11350
+      ],
+      "overlap": [
+        10450,
+        11350
+      ],
+      "gross_head_challenge_kN": 16.195950000000003,
+      "left_pier": [
+        10450,
+        8290
+      ],
+      "right_pier": [
+        11350,
+        8290
+      ],
+      "left_ground_route": "rear-E",
+      "right_ground_route": "rear-E",
+      "left_kN": 8.097975000000002,
+      "right_kN": 8.097975000000002,
+      "source_qualifier": "Already within upper gross wall row; real opening/head/spandrel mass and arch thrust must replace this gross challenge"
+    }
+  ],
+  "selected_lateral_foundation_mechanism": {
+    "primary": "Connected RC200 first-floor diaphragm and warm RC roof/window collector return signed H/uplift around void/court/loggia to selected inner-core RC boundary piers and paired orthogonal wall lines.",
+    "floor": "Actual slab edge/corner/end strips and CW/return/header load into continuous warm RC ground grid; 215 mm rear-east wall and eight opened lower lines need independent head/pier joining before wall-line shares are credited.",
+    "thermal_interface_z": {
+      "warm_grid_top": -80,
+      "warm_grid_soffit": -380,
+      "AAC": [
+        -605,
+        -390
+      ],
+      "DPC": [
+        -765,
+        -615
+      ],
+      "cold_grid_top": -765,
+      "cold_member_soffit": -1215
+    },
+    "candidate_four_outer_corner_crossings": [
+      {
+        "cold_grid_station": [
+          300,
+          300
+        ],
+        "nearest_inner_leaf_axis": [
+          332.5,
+          332.5
+        ],
+        "status": "Candidate combined shear/tension crossing station only; old cap dimensions and capacity not inherited"
+      },
+      {
+        "cold_grid_station": [
+          300,
+          11700
+        ],
+        "nearest_inner_leaf_axis": [
+          332.5,
+          11667.5
+        ],
+        "status": "Candidate combined shear/tension crossing station only; old cap dimensions and capacity not inherited"
+      },
+      {
+        "cold_grid_station": [
+          11700,
+          300
+        ],
+        "nearest_inner_leaf_axis": [
+          11667.5,
+          332.5
+        ],
+        "status": "Candidate combined shear/tension crossing station only; old cap dimensions and capacity not inherited"
+      },
+      {
+        "cold_grid_station": [
+          11700,
+          11700
+        ],
+        "nearest_inner_leaf_axis": [
+          11667.5,
+          11667.5
+        ],
+        "status": "Candidate combined shear/tension crossing station only; old cap dimensions and capacity not inherited"
+      }
+    ],
+    "symmetric_unit_H_sensitivity": {
+      "total_opposing_side_couple_kN_per_1kN_H": 0.5952113885373195,
+      "if_two_equal_corner_stations_each_kN": 0.29760569426865974,
+      "if_only_one_corner_station_kN": 0.5952113885373195,
+      "status": "Equilibrium and sensitivity only. Real diaphragm/wall stiffness, torsion and individual site actions govern; no equal-share capacity credit."
+    },
+    "crossing": "AAC and mineral DPC bear vertical compression only in this preliminary model. Localised designed shear/tension crossing at selected robust inner-core/grid nodes is REQUIRED for reversed H/uplift, with explicit MAT thermal/moisture/air/gas/fire source rewind and tested performance; no unqualified steel starter or friction credit.",
+    "cold": "Connected cold RC grid distributes combined N/M/H/uplift to actual deep supports under G1 pre-site hypothesis, with independent weather leaf route; raft/piled raft remains a site challenger.",
+    "unit_global_lateral": {
+      "reference_H_kN": 1,
+      "roof_application_height_m": 6.746721089070517,
+      "outer_axis_separation_m": 11.335,
+      "unit_base_shear_kN": 1,
+      "unit_base_overturning_kNm": 6.746721089070517,
+      "unit_boundary_couple_kN": 0.5952113885373195,
+      "both_axes": "Apply Hx and Hy separately with reversal; this is global equilibrium, not a split to individual walls.",
+      "candidate_wall_lines": {
+        "Hx": [
+          "outer-S/N inner core with actual openings",
+          "court-S/N and rear-west/rear-east segmented lines with arch and loggia interruptions"
+        ],
+        "Hy": [
+          "outer-W/E inner core with actual windows",
+          "service spine x9300, court-W/E and loggia x4377.5/7622.5 tied returns"
+        ]
+      },
+      "candidate_status": "These are route candidates from actual geometry, not assigned shares or credited shear-wall capacities.",
+      "path": [
+        "roof rail/post/purlin signed cleats and ordinary/corner frames",
+        "continuous warm collector/tie/roof diaphragm with verified chord and shear joints",
+        "selected transverse/longitudinal RC wall and masonry restraint lines around court, void and loggia",
+        "floor diaphragm/anchored upper-wall supports and warm reinforced spreader",
+        "tested AAC/mineral-DPC shear and tension interface to cold grid",
+        "cold grid, support groups and actual ground"
+      ],
+      "open": [
+        "No site wind Hx/Hy/pressure distribution or directional stiffness; 1 kN is a unit demand only",
+        "No roof/floor diaphragm shear, collector continuity, arch pierhead/tie anchor or torsional response",
+        "No warm/cold horizontal or uplift crossing detail; steel starter bypass would defeat thermal separation",
+        "No support-group lateral/uplift, tree/heave and settlement action combination"
+      ]
+    },
+    "failed_control": [
+      "No AAC/DPC tensile or frictional shear path under no-favourable-G uplift",
+      "Old 400 pile joint and low ties/cage do not carry these loads",
+      "D1800 member-only depth does not cover lowest actual node plus heave/ventilation",
+      "SW and loggia end reactions cannot stop at nearest drawn cold centreline"
+    ],
+    "internal_next": [
+      "Select actual wall-line stiffness/distribution and finite diaphragm/chord/roof-corner joint forces",
+      "Design localised warm/cold crossing and its MAT source amendment, inspect thermal and DPC breach",
+      "Reanalyse SW collector/return/header with residual mass and combined wall/roof actions",
+      "Reconcile slab ports/arch cuts, first-floor edge top steel and permanent joint/temporary load paths"
+    ],
+    "later_acceptance": [
+      "Site wind/snow/seismic where applicable, soil/tree/water and pile group actions",
+      "Physical materials, fabrication, inspection, actual unit/connection ratings and competent acceptance"
+    ]
+  },
+  "no_house_or_foundation_pass": true
+}

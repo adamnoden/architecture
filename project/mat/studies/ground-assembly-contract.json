@@ -1,0 +1,139 @@
+{
+  "interface": "MAT ground assembly development geometry, version 1",
+  "sources_git_blobs": {
+    "project/had/studies/open-north-loggia.mjs": "92df870ae7ff8de65ea16566dda449cacc1c39b7",
+    "project/had/studies/open-north-loggia.json": "25faad2c4d40df2b7da7212f73808843a88d2f52",
+    "project/had/studies/open-north-facade-projection.json": "eb70d77ee57571088c4a73caa076681dc00590cd",
+    "project/mat/studies/sw-corner-envelope.json": "e3655ddc0ba3369a433a482172cd6d636bad289b",
+    "project/mat/studies/warm-receiving-grid.json": "a5bff9f37b8d78dfb32359427314b4013fe8a45e",
+    "project/str/studies/sw-corner-station.json": "2c215912f4b55ca4587e32763bf66160d4b433d0",
+    "project/str/studies/sw-grid-arm-join.json": "ee1d6cf0a4f27e5773ec37c83a8326f1caeddd1d"
+  },
+  "selection": "HAD-B-OPEN-LOGGIA-2026-11-02",
+  "coordinate_convention": "x east, y north, z up, mm; ground FFL 0",
+  "authority": "Preferred geometric development proposal derived from selected enclosure; the source HAD scene does not itself author a ground slab polygon. Coordinates are not structural, material, site or physical acceptance.",
+  "slab": {
+    "z_mm": [
+      -380,
+      -180
+    ],
+    "plan_definition": {
+      "outer_rectangle_mm": [
+        262.5,
+        262.5,
+        11737.5,
+        11737.5
+      ],
+      "excluded_court_rectangle_mm": [
+        3987.5,
+        3987.5,
+        8012.5,
+        8012.5
+      ],
+      "excluded_loggia_rectangle_mm": [
+        4447.5,
+        8012.5,
+        7552.5,
+        11737.5
+      ]
+    },
+    "gross_plan_area_m2": 103.908875,
+    "gross_RC200_volume_m3": 20.781774999999996,
+    "scope": "Gross conditional bounding footprint. Thresholds, openings, penetrations, cast splits, edge support, reinforcement, service boxes and as-built extents remain unassigned; not a construction takeoff."
+  },
+  "SW_warm_pad": {
+    "xy_mm": [
+      262.5,
+      262.5,
+      562.5,
+      562.5
+    ],
+    "z_mm": [
+      -380,
+      -80
+    ],
+    "plan_area_m2": 0.09,
+    "shared_RC200_volume_m3_if_monolithic": 0.018,
+    "upstand_above_slab_m3_if_monolithic": 0.009,
+    "upstand_height_mm": 100,
+    "top_below_FFL_mm": 80,
+    "scope": "Merged STR candidate at one location; union arithmetic only. Continuous reinforcement, pad/slab contact, floor build-up, field and all capacities remain open."
+  },
+  "SW_cold_interface": {
+    "node_xy_mm": [
+      -50,
+      -50,
+      777,
+      777
+    ],
+    "node_z_mm": [
+      -1257,
+      -765
+    ],
+    "arm_width_mm": 600,
+    "arm_local_z_mm": [
+      -1257,
+      -765
+    ],
+    "source_axes_mm": {
+      "SW": [
+        300,
+        300
+      ],
+      "east": [
+        3150,
+        300
+      ],
+      "hypothetical_420_pile_footprint_along_arm_mm": [
+        2940,
+        3360
+      ],
+      "next_node_footprint_along_arm_mm": [
+        2850,
+        3450
+      ],
+      "north": [
+        300,
+        3150
+      ]
+    },
+    "preferred_constant_depth_to_axis_mm": 3450,
+    "late_transition_trial_axis_mm": [
+      3450,
+      4450
+    ],
+    "rejected_early_transition_comparator_axis_mm": [
+      2050,
+      3050
+    ],
+    "scope": "Merged STR development challenger, not site-foundation acceptance or a whole-house cold network. No insulation/bearing, tie, drainage or capacity is inferred."
+  },
+  "threshold": {
+    "court_south_rough_x_mm": [
+      5100.0,
+      6900.0
+    ],
+    "slab_control_edge_y_mm": 3987.5,
+    "weather_face_y_mm": 4250,
+    "intervening_mm": 262.5,
+    "status": "Unassigned; the slab boundary does not define sill, frame, support or weather connection."
+  },
+  "prior_comparators": {
+    "MAT_old_floor_z_mm": [
+      0,
+      -15,
+      -80,
+      -280,
+      -600
+    ],
+    "historical_grid": "The older -180..-630 lower-grid and -750 nodes are a separate conditional comparator, not the preferred present network.",
+    "prior_first_floor_projection": "The former 230\u00d7230 mm SW projection was a conditional first-floor proxy; this explicit core-face candidate contains the 300\u00d7300 pad, without retroactively authoring the HAD ground slab."
+  },
+  "unassigned": [
+    "All warm receivers beyond the single SW pad, including court-S and entrance nodes",
+    "Ground slab actual edge, structural reinforcement and all opening/penetration details",
+    "Whole-house cold routes, soil and site conditions",
+    "Thermal, DPC, capillary, water, gas and air continuity",
+    "Movement, construction, inspection, repair and all structural/material/site acceptance"
+  ]
+}

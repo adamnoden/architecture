@@ -1,0 +1,82 @@
+{
+  "armLengthMM": 582.5,
+  "riserHeightMM": 260.0,
+  "factoredHeadPipeDownKN": 4.715984598011049,
+  "E_MPa": 180000.0,
+  "G_MPa": 69230.76923076923,
+  "densityKgPerM3": 8000.0,
+  "proofStressAt100C_MPa": 165,
+  "comparisonResistanceMPa": 150.0,
+  "sections": [
+    {
+      "sectionMM": [
+        60.0,
+        100.0,
+        6.0
+      ],
+      "grossTwoMemberKg": 11.97024,
+      "Amm2": 1776.0,
+      "IstrongMM4": 2274112.0,
+      "IminorMM4": 988992.0,
+      "Jmm4": 2089116.9729729728,
+      "cases": [
+        {
+          "case": "top1.5m",
+          "horizontalForceEachAxisKN": 0.84375,
+          "rootAddedWindMomentKNm": 0.219375,
+          "armCombinedMPa": 76.47531550701221,
+          "riserCombinedMPa": 76.65031531161898,
+          "verticalTipMM": 1.8198139758780945,
+          "normalTipMM": 0.2404436520542548,
+          "alongTipMM": 0.8546832691805655
+        },
+        {
+          "case": "full8.4m adverse comparison",
+          "horizontalForceEachAxisKN": 4.7250000000000005,
+          "rootAddedWindMomentKNm": 1.2285000000000001,
+          "armCombinedMPa": 148.18117906885385,
+          "riserCombinedMPa": 162.04042718807813,
+          "verticalTipMM": 2.0064948786876307,
+          "normalTipMM": 0.30306606644596557,
+          "alongTipMM": 4.786226307411168
+        }
+      ]
+    },
+    {
+      "sectionMM": [
+        60.0,
+        100.0,
+        8.0
+      ],
+      "grossTwoMemberKg": 15.52896,
+      "Amm2": 2304.0,
+      "IstrongMM4": 2826752.0,
+      "IminorMM4": 1203712.0,
+      "Jmm4": 2542961.777777778,
+      "cases": [
+        {
+          "case": "top1.5m",
+          "horizontalForceEachAxisKN": 0.84375,
+          "rootAddedWindMomentKNm": 0.219375,
+          "armCombinedMPa": 61.746537534621105,
+          "riserCombinedMPa": 61.6624753526559,
+          "verticalTipMM": 1.463904798655132,
+          "normalTipMM": 0.19338431425633562,
+          "alongTipMM": 0.7021775359895412
+        },
+        {
+          "case": "full8.4m adverse comparison",
+          "horizontalForceEachAxisKN": 4.7250000000000005,
+          "rootAddedWindMomentKNm": 1.2285000000000001,
+          "armCombinedMPa": 120.54376331946858,
+          "riserCombinedMPa": 130.40297076219943,
+          "verticalTipMM": 1.614088925614271,
+          "normalTipMM": 0.24352575437765983,
+          "alongTipMM": 3.932194201541431
+        }
+      ]
+    }
+  ],
+  "selectedWallMM": 8,
+  "scope": "Linear centroidal nominal-section comparison. Positive root and elbow moment joints, full-depth load introduction, finite pipe restraints, fabrication and actual material/temperature receipt remain required."
+}

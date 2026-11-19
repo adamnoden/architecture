@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="656" viewBox="0 0 1200 656" role="img" aria-label="North cap upper reinforcement and surveyed head connector lanes">
+<rect width="1200" height="656" fill="#fffdf8"/>
+<g font-family="DejaVu Sans, Arial, sans-serif" fill="#22323a">
+<text x="38" y="48" font-size="24" fill="#22323a">NORTH HOLD-DOWN / CAP TOP MAT AND LINKED HEADS</text>
+<text x="38" y="76" font-size="16" fill="#22323a">Current cap axes shown • modelled steel paths • no new stiffness or foundation capacity credited</text>
+<path d="M38.00 98.00 L1162.00 98.00" fill="none" stroke="#8a9294" stroke-width="2"/>
+<text x="38" y="129" font-size="17" fill="#22323a">A / WEST NEAR CAP PLAN</text>
+<text x="650" y="129" font-size="17" fill="#22323a">B / FOUR COLLINEAR CONTINUITY LINES PER NORTH ARM</text>
+<rect x="156.00" y="141.00" width="390" height="348" fill="#f0e7d8" stroke="#8d7661"/>
+<path d="M156.00 402.00 L510.25 402.00" fill="none" stroke="#216082" stroke-width="2.5"/>
+<path d="M156.00 367.20 L510.25 367.20" fill="none" stroke="#216082" stroke-width="2.5"/>
+<path d="M156.00 262.80 L510.25 262.80" fill="none" stroke="#216082" stroke-width="2.5"/>
+<path d="M156.00 228.00 L510.25 228.00" fill="none" stroke="#216082" stroke-width="2.5"/>
+<path d="M340.60 489.00 L340.60 172.90" fill="none" stroke="#4d7657" stroke-width="2.5"/>
+<path d="M383.50 489.00 L383.50 172.90" fill="none" stroke="#4d7657" stroke-width="2.5"/>
+<path d="M426.40 489.00 L426.40 172.90" fill="none" stroke="#4d7657" stroke-width="2.5"/>
+<circle cx="247.00" cy="315.00" r="10" fill="#935343"/>
+<rect x="208.00" y="300.50" width="78" height="29" fill="none" stroke="#935343" stroke-width="2"/>
+<text x="65" y="519" font-size="15" fill="#22323a">P25 sleeve X4340 and split E/W top rails in blue</text>
+<text x="65" y="544" font-size="15" fill="#22323a">Three deliberately tied N/S rails at Z−256 in green</text>
+<text x="65" y="569" font-size="15" fill="#935343">Plate outline is below the upper mat at Z−316…−300</text>
+<text x="670" y="190" font-size="16" fill="#22323a">P24 – P25</text>
+<path d="M692.00 209.00 L692.00 313.00" fill="none" stroke="#216082" stroke-width="2"/>
+<path d="M1115.00 209.00 L1115.00 313.00" fill="none" stroke="#216082" stroke-width="2"/>
+<path d="M783.34 224.00 L1023.66 224.00" fill="none" stroke="#216082" stroke-width="2"/>
+<path d="M907.47 224.00 L933.95 224.00" fill="none" stroke="#935343" stroke-width="7"/>
+<path d="M803.55 248.00 L1003.45 248.00" fill="none" stroke="#216082" stroke-width="2"/>
+<path d="M873.05 248.00 L899.53 248.00" fill="none" stroke="#935343" stroke-width="7"/>
+<path d="M803.55 272.00 L1072.44 272.00" fill="none" stroke="#216082" stroke-width="2"/>
+<path d="M941.97 272.00 L968.44 272.00" fill="none" stroke="#935343" stroke-width="7"/>
+<path d="M783.34 296.00 L1052.23 296.00" fill="none" stroke="#216082" stroke-width="2"/>
+<path d="M887.34 296.00 L913.82 296.00" fill="none" stroke="#935343" stroke-width="7"/>
+<text x="670" y="358" font-size="16" fill="#22323a">P26 – P27</text>
+<path d="M692.00 377.00 L692.00 481.00" fill="none" stroke="#216082" stroke-width="2"/>
+<path d="M1115.00 377.00 L1115.00 481.00" fill="none" stroke="#216082" stroke-width="2"/>
+<path d="M773.07 392.00 L1033.93 392.00" fill="none" stroke="#216082" stroke-width="2"/>
+<path d="M907.02 392.00 L930.52 392.00" fill="none" stroke="#935343" stroke-width="7"/>
+<path d="M791.00 416.00 L1016.00 416.00" fill="none" stroke="#216082" stroke-width="2"/>
+<path d="M876.48 416.00 L899.98 416.00" fill="none" stroke="#935343" stroke-width="7"/>
+<path d="M729.77 440.00 L1016.00 440.00" fill="none" stroke="#216082" stroke-width="2"/>
+<path d="M876.41 440.00 L899.91 440.00" fill="none" stroke="#935343" stroke-width="7"/>
+<path d="M747.70 464.00 L1033.93 464.00" fill="none" stroke="#216082" stroke-width="2"/>
+<path d="M863.79 464.00 L887.29 464.00" fill="none" stroke="#935343" stroke-width="7"/>
+<text x="650" y="543" font-size="15" fill="#935343">Red: staggered 48 × 100 mm splice reservations.</text>
+<text x="650" y="569" font-size="14" fill="#22323a">Allow room above the upper connector or choose a smaller assessed head.</text>
+<path d="M38.00 604.00 L1162.00 604.00" fill="none" stroke="#8a9294" stroke-width="2"/>
+<text x="38" y="631" font-size="15" fill="#22323a">Legacy independent tails intersect. The paired collinear lines are a product and erection hold.</text>
+</g></svg>

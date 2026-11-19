@@ -1,0 +1,164 @@
+{
+  "status": "UNSELECTED heat/room-release challenger; no canonical Services change or whole-system/handling/material admission.",
+  "source": {
+    "HADReviewCommit": "bc1231479ccbcae3c15b3f5cc7f86055dbeb7a0e",
+    "affectedProjectionSha256": "77727aec9abcefc050d0b755ce34f211dd7e8aac6b136a7f40669b1b4ed0227c",
+    "servicesBlob": "3e934b29d9f328b41cb9bd2498184154090492c0",
+    "heatSource": "joined-cooker-system.json / SwegonExternalMotorCandidate",
+    "projectionScope": "Kitchen/HAD/Services fields, excluding independent eastFoulExit and otherServiceDuties downstream foul/receiver route correction. Whole Services equality remains HAD authentication duty."
+  },
+  "rejectedOldJoin": {
+    "northH700L900LarderOverlap": [
+      9675,
+      11370.5,
+      975,
+      200.0
+    ],
+    "eastH600L1400FeedColumnOverlap": [
+      11425,
+      11188,
+      145,
+      224
+    ],
+    "east200PullCookingOverlap": [
+      11170.5,
+      10970.5,
+      179.5,
+      554.5
+    ],
+    "actualFeed": "Cold/hot complete74OD atx11487/y11250,11350 descend2945to242, crossing proposed radiator100to700. No through-radiator nesting or omitted column permitted."
+  },
+  "recommendedDevelopment": {
+    "retainEast1200": [
+      11370.5,
+      9700,
+      200,
+      1350
+    ],
+    "westH700L1100": [
+      7719.5,
+      10277.5,
+      200,
+      1250
+    ],
+    "native": "Stelrad3073311,1100x700,180 mounted depth; nominal2983WDelta50/n1.34. Complete installed1250x200 includes150valve territory.",
+    "support": "Solid loggia-east-weather structural core7552.5..7692.5;27 internal finish to7719.5. Native brackets retained, no insulation/core omitted; actual anchors/reactions and thermal movement required.",
+    "dryMassKg": 66.84700000000001,
+    "filledMassBeforeValvesKg": 79.35400000000001,
+    "at55_45_20W": 2965.1302652627114,
+    "zeroHeaterBandW": 2836.4600329384884,
+    "zeroHeaterBandMarginW": 128.67023232422298,
+    "all256ModesThermalComparison": true,
+    "sourceOperationalAdmission": false,
+    "branch": {
+      "section": [
+        243,
+        134
+      ],
+      "completePipeOD": 84,
+      "edgeAndBetween": 25,
+      "points": [
+        [
+          10500,
+          8585,
+          2945
+        ],
+        [
+          7841,
+          8585,
+          2945
+        ],
+        [
+          7841,
+          10340,
+          2945
+        ],
+        [
+          7841,
+          10340,
+          200
+        ],
+        [
+          7819.5,
+          10370,
+          200
+        ]
+      ],
+      "scope": "Proposed connected branch inside warm kitchen. No wall/core crossing or cill; pressure, actual valve/bend/support and thermal movement not proved."
+    },
+    "actualKitchenPersonPathReserves": {
+      "kitchen-entry-to-working-aisle": 30.5,
+      "low-larder-and-revised-kitchen-window": 1324.327187638008,
+      "kitchen8300": 30.5,
+      "kitchen10200": 2205.5
+    },
+    "smallerWestH700L1000ThermalMarginW": -8.005675235261151
+  },
+  "roomReleaseOnly": {
+    "maximumSupportedPlan": [
+      1120,
+      200
+    ],
+    "nativeBodyPlan": [
+      1100,
+      180
+    ],
+    "lift": 50,
+    "poseKnotsXYDegrees": [
+      [
+        7819.5,
+        10902.5,
+        0
+      ],
+      [
+        8019.5,
+        10902.5,
+        0
+      ],
+      [
+        8594.5,
+        10877.5,
+        35
+      ],
+      [
+        8769.5,
+        10702.5,
+        60
+      ],
+      [
+        8919.5,
+        10652.5,
+        65
+      ],
+      [
+        9219.5,
+        10602.5,
+        65
+      ],
+      [
+        9419.5,
+        10602.5,
+        65
+      ],
+      [
+        9994.5,
+        10302.5,
+        60
+      ],
+      [
+        9994.5,
+        10177.5,
+        25
+      ],
+      [
+        10019.5,
+        10002.5,
+        -5
+      ]
+    ],
+    "continuousClearanceLowerBound": 24.70299472154329,
+    "method": "Exact convex polygon distances; samples have<=1mm maximum point movement. Subtract half adjacent point-travel bound for continuous clearance. Fixed furniture/table/chairs/larder retained; no pocket/body proxy.",
+    "notProved": "Matched support before union release, actual valves/tool/anchor/mass/centre, cradle fitting the10mm edge budget, people/reach/forces,3D lift, door/gallery/whole-house export and reinstatement. End is the room handoff point, not outside."
+  },
+  "decision": "Reject the existing north900/east1400 join on actual larder/retained feed/cooking collisions. Prefer retained east1200 plus west1100 for next joined kit proof. Do not adopt any radiator, source/HX duty, hood mode, heater/controller or material exception from this geometric and heat comparison."
+}

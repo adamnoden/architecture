@@ -1,10 +1,22 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { join, resolve } from 'node:path'
-import { canonicalPatternOrder, type PublicationAdapter } from './publication.js'
+import { canonicalPatternOrder, publicationEntries, type PublicationAdapter } from './publication.js'
+import { compileCurrentDesign } from '../compiler/reference-house/current-design/compile.js'
+import { readGeorgianDesignSnapshot } from '../compiler/reference-house/current-design/georgian-source.js'
+import { renderPrimerGroundPlanSvg } from './primer/figure.js'
 
 export interface AdapterContext {
   repoRoot: string
   workSourceRoot: string
+  currentDesign?: unknown
+}
+
+export function createAdapterContext(
+  adapter: PublicationAdapter | undefined,
+  context: Omit<AdapterContext, 'currentDesign'>
+): AdapterContext {
+  if (adapter !== 'primer-reference-house') return context
+  return { ...context, currentDesign: readGeorgianDesignSnapshot() }
 }
 
 interface PatternMetadata {
@@ -26,16 +38,16 @@ const adapterDependencies: Record<PublicationAdapter, readonly string[]> = {
   'pattern-page': [],
   'reference-house-overview': [],
   'reference-house-page': [],
-  'primer-principles': [],
+  'primer-principles': ['publication/primer/constitution.md'],
   'primer-patterns': [
-    'docs/patterns/controlled-utility-entry.md',
-    'docs/patterns/designed-structural-penetration.md',
-    'docs/patterns/failure-tolerant-wet-service-room.md',
-    'docs/patterns/permanent-opening-replaceable-window.md',
-    'docs/patterns/ground-supported-facade-access.md',
-    'docs/patterns/physical-service-index.md'
+    'publication/primer/patterns.md',
+    ...publicationEntries.filter((entry) => entry.kind === 'pattern').map((entry) => entry.source)
   ],
-  'primer-reference-house': []
+  'primer-reference-house': [
+    'publication/primer/reference-house.md',
+    'docs/reference-house/current-house-basis.md',
+    'project/owner-house-charter.md'
+  ]
 }
 
 export function dependenciesForAdapter(adapter?: PublicationAdapter): readonly string[] {
@@ -319,7 +331,48 @@ function firstParagraphs(markdown: string, count: number): string[] {
     .slice(0, count)
 }
 
-function adaptPrimerPrinciples(markdown: string): string {
+// Authored framing is a normal publication/EDA source; only selected material is inserted here.
+function composePrimer(context: AdapterContext, source: string, slots: Record<string, string>): string {
+  let text = readWork(context, source)
+  for (const [name, value] of Object.entries(slots)) {
+    const marker = `<!-- primer:${name} -->`
+    if (text.split(marker).length !== 2) throw new Error(`${source}: expected one ${marker}`)
+    text = text.replace(marker, () => value)
+  }
+  if (/<!-- primer:/.test(text)) throw new Error(`${source}: unknown Primer composition slot`)
+  return text
+}
+
+// The anchors select complete source sentences, not a second maintained paraphrase.
+// A changed or ambiguous selection requires an editorial decision instead of a silent fallback.
+function sourceSentences(markdown: string, starts: readonly string[], label: string): string {
+  const sentences = markdown.trim().split(/\n{2,}/)
+    .filter((paragraph) => !paragraph.startsWith('#'))
+    .flatMap((paragraph) => paragraph.split(/(?<=[.!?])\s+(?=[A-Z“])/u))
+    .map((sentence) => sentence.trim())
+  return starts.map((start) => {
+    const matches = sentences.filter((sentence) => sentence.replace(/\*\*/g, '').startsWith(start))
+    if (matches.length !== 1) throw new Error(`${label}: expected one source sentence beginning “${start}”, found ${matches.length}.`)
+    return matches[0]
+  }).join(' ')
+}
+
+// Supporting explanations are selected for meaning, never merely by paragraph position.
+const primerPrincipleSupport: Record<number, readonly string[]> = {
+  1: ['Foreseeable change includes', 'Where a modest early decision'],
+  2: ['Mechanical fasteners', 'Reversible screws', 'The objective is'],
+  3: ['Required load paths', 'Where constructions of different'],
+  4: ['Ask how the system fails'],
+  5: ['A person needs', 'The same rule applies outside'],
+  6: ['Test for understandability', 'Repeated construction should'],
+  7: ['Well-proportioned rooms', 'Permanence carries'],
+  8: ['Where recurring use demands', 'A room can be ornamented', 'Thermal conditions'],
+  9: ['Mechanical systems are the correct answer', 'A long-lived real project', 'At the ground'],
+  10: ['The strongest form of legibility', 'A restrained amount'],
+  11: ['Architecture may cover services', 'Cosmetic continuity']
+}
+
+function adaptPrimerPrinciples(markdown: string, context: AdapterContext): string {
   const constraints = markdownSection(markdown, 'Governing constraints')
     .replace(/\n?---\s*$/, '')
     .trim()
@@ -338,21 +391,24 @@ function adaptPrimerPrinciples(markdown: string): string {
 
     const title = match[2].trim()
     const rule = match[3].trim()
-    const support = firstParagraphs(match[4], 1)[0]
-    if (!support) throw new Error(`Primer governing provision ${number} has no supporting paragraph.`)
+    const support = sourceSentences(match[4], primerPrincipleSupport[number], `Primer provision ${number}`)
 
-    return `## ${number}. ${title}\n\n**${rule}**\n\n${support}`
+    return `<section class="primer-provision">\n\n## ${number}. ${title}\n\n**${rule}**\n\n${support}\n\n</section>`
   })
 
-  return `# Governing constitution\n\nThe constitution retains eleven stable numbered provisions because the wider project refers to them. They are not eleven co-equal novelty claims: core doctrine is distinguished from standing architectural disciplines. All operate within non-negotiable requirements for life safety, legal compliance, structural integrity, health and environmental performance.\n\n${constraints}\n\n${rendered.join('\n\n')}\n`
+  return composePrimer(context, 'publication/primer/constitution.md', {
+    'constraints': constraints,
+    'provisions': rendered.join('\n\n')
+  })
 }
 
 function activePatternsInCanonicalOrder(context: AdapterContext): PatternMetadata[] {
-  const active = new Map(
-    patternMetadata(context)
-      .filter((pattern) => pattern.state === 'active')
-      .map((pattern) => [pattern.id, pattern])
-  )
+  const metadata = patternMetadata(context).filter((pattern) => pattern.state === 'active')
+  const active = new Map(metadata.map((pattern) => [pattern.id, pattern]))
+  if (active.size !== metadata.length || new Set(canonicalPatternOrder).size !== canonicalPatternOrder.length ||
+      active.size !== canonicalPatternOrder.length) {
+    throw new Error('Primer active pattern inventory differs from the canonical order; review the complete map.')
+  }
 
   return canonicalPatternOrder.map((id) => {
     const pattern = active.get(id)
@@ -372,16 +428,21 @@ function primerPatternList(context: AdapterContext): string {
     { title: 'E · Stewardship', ids: canonicalPatternOrder.slice(20, 21) }
   ]
 
-  return groups
+  const groupedIds = groups.flatMap((group) => group.ids)
+  if (groupedIds.length !== patterns.length || new Set(groupedIds).size !== patterns.length) {
+    throw new Error('Primer pattern grouping omits or duplicates an active pattern; review the complete map.')
+  }
+  const rows = groups
     .map(({ title, ids }) => {
-      const rows = ids.map((id) => {
+      const links = ids.map((id) => {
         const pattern = byId.get(id)
         if (!pattern) throw new Error(`Primer pattern group is missing ${id}.`)
-        return `- [${pattern.title}](${pattern.href})`
+        return `[${pattern.title}](${pattern.href})`
       })
-      return `### ${title}\n\n${rows.join('\n')}`
+      return `| ${title.replace(/^[A-E] · /, '')} | ${links.join('; ')} |`
     })
-    .join('\n\n')
+    .join('\n')
+  return `| Field | Patterns |\n| --- | --- |\n${rows}`
 }
 
 function concisePattern(context: AdapterContext, id: string): string {
@@ -389,12 +450,23 @@ function concisePattern(context: AdapterContext, id: string): string {
   if (!metadata) throw new Error(`Primer representative pattern missing: ${id}`)
 
   const source = readWork(context, `docs/patterns/${metadata.href}`)
-  const problem = firstParagraphs(markdownSection(source, 'Problem'), 1)[0]
-  const pattern = firstParagraphs(markdownSection(source, 'Pattern'), 1)[0]
-  if (!problem || !pattern) throw new Error(`Primer could not compress representative pattern ${id}.`)
-
-  const invariant = pattern.replace(/^\*\*/, '').replace(/\*\*$/, '')
-  return `### ${metadata.title}\n\n**Problem.** ${problem}\n\n**Pattern.** ${invariant}`
+  const patternSection = markdownSection(source, 'Pattern')
+  const pattern = firstParagraphs(patternSection, 1)[0]
+  if (!pattern?.startsWith('**') || !pattern.endsWith('**')) {
+    throw new Error(`Primer representative ${id} has no complete canonical pattern statement.`)
+  }
+  const qualifications: Record<string, readonly string[]> = {
+    'PAT-001': ['The pattern does not require', 'Supplier rules'],
+    'PAT-005': ['An ordinary engineered opening'],
+    'PAT-018': ['The invariant is room-scale'],
+    'PAT-007': ['The required outcome'],
+    'PAT-013': ['For ground-supported access', 'The pattern does'],
+    'PAT-012': ['Typical content may include']
+  }
+  const invariant = pattern.slice(2, -2)
+  const contextText = id === 'PAT-018' ? `${markdownSection(source, 'Context')}\n\n` : ''
+  const qualification = sourceSentences(patternSection, qualifications[id], `Primer pattern ${id}`)
+  return `<section class="primer-pattern">\n\n### ${metadata.title}\n\n*Evidence: ${metadata.evidence}.*\n\n${contextText}${invariant} ${qualification}\n\n</section>`
 }
 
 function adaptPrimerPatterns(_markdown: string, context: AdapterContext): string {
@@ -409,10 +481,14 @@ function adaptPrimerPatterns(_markdown: string, context: AdapterContext): string
     .map((id) => concisePattern(context, id))
     .join('\n\n')
 
-  return `# From constitution to patterns\n\nThe governing constitution is intentionally too general to specify a building. Ovid’s House therefore keeps four levels of authority distinct:\n\n**Constitution** — core doctrine plus standing disciplines.  \n**Strategy** — a general way to satisfy it.  \n**Pattern** — a reusable architectural response with stated trade-offs and evidence.  \n**Reference implementation** — one project-specific choice.\n\nA pattern is not a product detail and does not become universally correct because it has a stable name. It is specific enough to shape design, but general enough to admit materially different implementations. Evidence maturity is recorded separately from pattern identity.\n\nThe current system contains **21 active patterns**. Service topology has the strongest demonstrated generative sequence; the other fields are not presented as one uniformly mature pattern language. Three broader strategies sit beside the set; four plausible propositions remain held candidates rather than being promoted prematurely. The complete active set is listed below so the Primer remains complete in coverage even though only a small set is expanded.\n\n## The complete current pattern set\n\n${primerPatternList(context)}\n\n## Six patterns in brief\n\nThe following examples are not a privileged inner canon. They are chosen because, together, they show the range of consequences that follows from the constitution: service topology, permanent-fabric protection, water failure, replaceable openings, external maintenance and intergenerational legibility.\n\n${representative}\n`
+  return composePrimer(context, 'publication/primer/patterns.md', {
+    'pattern-list': primerPatternList(context),
+    'representatives': representative,
+    'pattern-count': String(activePatternsInCanonicalOrder(context).length)
+  })
 }
 
-function adaptPrimerReferenceHouse(markdown: string): string {
+function adaptPrimerReferenceHouse(markdown: string, context: AdapterContext): string {
   const opening = '# Reference House\n'
   if (!markdown.startsWith(opening)) {
     throw new Error('Reference House opening changed; update the Primer adapter deliberately.')
@@ -424,24 +500,36 @@ function adaptPrimerReferenceHouse(markdown: string): string {
     throw new Error('Reference House Authority stack changed; update the Primer adapter deliberately.')
   }
 
-  const architecturalScope = firstParagraphs(
-    markdown.slice(opening.length, authorityStart).trim(),
-    2
-  )
-  if (architecturalScope.length !== 2) {
-    throw new Error('Primer expected two opening Reference House scope paragraphs.')
+  const basis = readWork(context, 'docs/reference-house/current-house-basis.md')
+  const facts = markdownSection(basis, 'Dimensions and rooms in the accepted layout')
+  const charter = readWork(context, 'project/owner-house-charter.md')
+  const roofRow = markdownSection(basis, 'Sources to use').split('\n').find((line) => line.startsWith('| Roof prohibition |'))
+  if (!roofRow) throw new Error('Primer current-house roof requirement is missing from its owning basis.')
+  const compiled = compileCurrentDesign(context.currentDesign)
+  if (compiled.status !== 'NOMINAL_PLAN_ONLY') {
+    throw new Error(`Primer requires an applicable current plan: ${compiled.diagnostics[0].message}`)
+  }
+  const { widthMm, depthMm, court } = compiled.nominalDimensions
+  if (widthMm !== depthMm) throw new Error('Primer footprint description requires review: the footprint is not square.')
+  if (court.width !== court.depth) throw new Error('Primer courtyard description requires review: the court is not square.')
+  if (court.x !== (widthMm - court.width) / 2 || court.y !== (depthMm - court.depth) / 2) {
+    throw new Error('Primer courtyard description requires review: the court is not centred.')
   }
 
-  const authority = markdownSection(markdown, 'Authority stack')
-  const compositionChain = authority.match(/```text\n[\s\S]*?```/)?.[0]
-  if (!compositionChain) throw new Error('Primer could not find the Reference House authority chain.')
-
-  const coordination = firstParagraphs(markdownSection(markdown, 'Maturity'), 2)
-  if (coordination.length !== 2) {
-    throw new Error('Primer expected two Reference House Maturity paragraphs.')
-  }
-
-  return `# The Reference House\n\n## One interpretation, not a style doctrine\n\n${architecturalScope.join('\n\n')}\n\n## What is being integrated\n\n${compositionChain}\n\nThe layers constrain one another without becoming interchangeable. A project-specific choice can satisfy an Ovid’s House provision without being promoted into Ovid’s House doctrine, and use of a pattern in the Reference House does not increase that pattern's general evidence.\n\n## Current coordination test\n\n${coordination.join('\n\n')}\n\n![Reference House type and orientation](../manuscript/figures/reference-house-type-orientation.svg)\n\n*The Reference House is a compact two-storey ring around an open court, with a concentrated service flank and a legible front-to-court-to-garden sequence.*\n`
+  return composePrimer(context, 'publication/primer/reference-house.md', {
+    'scope': sourceSentences(markdown.slice(opening.length, authorityStart), [
+      'The Reference House is', 'It forces doctrine', 'It is not proof'
+    ], 'Primer Reference House scope'),
+    'shell': String(widthMm / 1000),
+    'court': String(court.width / 1000),
+    'arrangement': sourceSentences(facts, ['The front has five bays', 'Four bedrooms'], 'Primer current-house arrangement'),
+    'material-direction': sourceSentences(charter, ['The owner requires the strongest practicable avoidance'], 'Primer material direction'),
+    'structural-direction': sourceSentences(charter, ['The owner prefers solid internal masonry', 'Explore non-timber primary'], 'Primer structural direction'),
+    'water-direction': sourceSentences(charter, ['The owner requires dryness by position and geometry'], 'Primer water direction'),
+    'roof-direction': `${roofRow.split('|')[3].trim()}.`,
+    'technical-limit': sourceSentences(facts, ['Actual structural, thermal'], 'Primer technical limit'),
+    'ground-plan': renderPrimerGroundPlanSvg(compiled.plans.GROUND)
+  })
 }
 
 export function applyAdapter(
@@ -467,11 +555,11 @@ export function applyAdapter(
     case 'reference-house-page':
       return adaptReferenceHousePage(markdown)
     case 'primer-principles':
-      return adaptPrimerPrinciples(markdown)
+      return adaptPrimerPrinciples(markdown, context)
     case 'primer-patterns':
       return adaptPrimerPatterns(markdown, context)
     case 'primer-reference-house':
-      return adaptPrimerReferenceHouse(markdown)
+      return adaptPrimerReferenceHouse(markdown, context)
   }
 }
 

@@ -1,8 +1,9 @@
 # PLT room-programme revision
 
 Owner choice #903: south-west study, open hall/family, eastern guest WC and
-walk-in cloakroom with separate doors. This is a current-house coordination
+walk-in cloakroom with separate doors. This is a retained coordination
 candidate, not approval of an RSI successor or a physical/token freeze.
+For the current house and review family, see the [current-source rollout](../../../docs/publication/architectural-plate-current-source-and-rollout.md).
 
 B5/A4 page 1 = retained B4; page 2 = new room programme, both 1:100.
 A2 = revision only at 1:50. Print at actual size without fit scaling.

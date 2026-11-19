@@ -1,0 +1,113 @@
+{
+  "status": "UNSELECTED NATIVE SENSITIVITY AND LOCAL CLEARANCE COMPARISON",
+  "cases": [
+    {
+      "receivingSpringKNPerMM": 40.0,
+      "sourceReceiptSHA256": "f1122b48fbc01fdf1cde190bec0d5509918516016c188c39da278e013c356f27",
+      "heads": [
+        {
+          "head": "south normal",
+          "absoluteCornerRangeMM": [
+            -19.355227785,
+            28.153004569
+          ],
+          "peakAbsoluteMM": 28.153004569,
+          "reserveWithin50MM": 21.846995431,
+          "lowerCarrierReserveAfterExactPeak6Local10SettingMM": 31.122000431,
+          "trayRimReserveAfterExactPeak6Local10SettingMM": 30.846995431,
+          "source12RowExtractVerified": true
+        },
+        {
+          "head": "north normal",
+          "absoluteCornerRangeMM": [
+            -28.736319677,
+            41.121575417
+          ],
+          "peakAbsoluteMM": 41.121575417,
+          "reserveWithin50MM": 8.878424583,
+          "lowerCarrierReserveAfterExactPeak6Local10SettingMM": 18.153429583,
+          "trayRimReserveAfterExactPeak6Local10SettingMM": 17.878424583,
+          "source12RowExtractVerified": true
+        }
+      ],
+      "allHeadCornersWithin50MM": true
+    },
+    {
+      "receivingSpringKNPerMM": 20.0,
+      "sourceReceiptSHA256": "ff6a94bd9f79687e688675414589033ac8f0a80d25a06fe9c3ac6fe5c490de23",
+      "heads": [
+        {
+          "head": "south normal",
+          "absoluteCornerRangeMM": [
+            -21.459606627,
+            32.449548626
+          ],
+          "peakAbsoluteMM": 32.449548626,
+          "reserveWithin50MM": 17.550451374,
+          "lowerCarrierReserveAfterExactPeak6Local10SettingMM": 26.825456374,
+          "trayRimReserveAfterExactPeak6Local10SettingMM": 26.550451374,
+          "source12RowExtractVerified": true
+        },
+        {
+          "head": "north normal",
+          "absoluteCornerRangeMM": [
+            -30.955922283,
+            45.445682468
+          ],
+          "peakAbsoluteMM": 45.445682468,
+          "reserveWithin50MM": 4.554317532,
+          "lowerCarrierReserveAfterExactPeak6Local10SettingMM": 13.829322532,
+          "trayRimReserveAfterExactPeak6Local10SettingMM": 13.554317532,
+          "source12RowExtractVerified": true
+        }
+      ],
+      "allHeadCornersWithin50MM": true
+    }
+  ],
+  "source6200LocalCandidate": {
+    "centreZMM": 6200,
+    "topZMM": 6300,
+    "bottomZMM": 6100,
+    "armMassKG": 31.6476,
+    "wholeHeadMassKG": 72.207993089,
+    "wholeLocalDeflectionMM": 5.754769994,
+    "lowerCarrierClearanceAfter50Native6Local10SettingMM": 9.275005,
+    "tray6025RimClearanceAfterSame66MM": 9,
+    "status": "UNSELECTED LOCAL CANDIDATE"
+  },
+  "fullRetainedEnvelope": {
+    "radialMM": [
+      -332.5,
+      1260
+    ],
+    "alongMM": [
+      -125,
+      125
+    ],
+    "basis": "160-wide arm + two30-wide forks at+/-110 +240-wide split plate. High450-wide catch is removed first."
+  },
+  "original6240ArmWith100LowerPanLift": {
+    "lowestCarrierBeforeLiftZMM": 6375.275005,
+    "proposedFirstLiftMM": 100,
+    "nominalPostLiftToOriginal6340ArmTopMM": 135.275005,
+    "postLiftReserveAfter50Native6Arm10SettingMM": 69.275005,
+    "postLiftReserveAlsoCharging8PanAnd5FittingsMM": 56.275005,
+    "originalArmTo6025TrayAfter50Native6Local10SettingMM": 49,
+    "status": "POST-LIFT GEOMETRIC CANDIDATE ONLY",
+    "firstReleaseGate": "The original40 mm horizontal fork release, weight handoff and retained secondary rails/clips must be joined. A later safe lift does not prove the first opening or earlier path. No new attachment or guided vertical release is inferred."
+  },
+  "qualifications": [
+    "Both280x120x25 global variants remain unadmitted. Their exported pressure still has named actual lap/baffle/contact joins pending.",
+    "Weather roof and independent water remain available;134 installed outer/head dry-mass intervals conservatively contain the old finite144 source-point removals.",
+    "The6200/drop400 arm is a local unselected change; original6240 remains the source control.",
+    "Absolute50 assumes a transfer path controlled to the ground datum. A guide frozen at its first captured deflected height needs the whole subsequent movement excursion or a real normalization step.",
+    "The6 mm arm allowance does not establish stiffness/capacity of a new moving pan rig. Complete grip, hardware, pan and rig movements still need charging.",
+    "Vertical clearance does not establish horizontal sway, weather capture, first release, complete module departure or reverse installation."
+  ],
+  "inputHashes": {
+    "native-arm-inputs.json": "e861fde17a7cac02f70093a8eed21c2492b3056df41f1270cf5d1b0a54940d51",
+    "outer-renewal-path-checks.json": "f1672d280a2a7e0a2cc2e10cadc937333b4dbdd4622b95888a455e1de6ead1a2",
+    "native-arm-checks.py": "fa5346e6f0ebb7fe9ff247727d81bf9d0cd37584b3e68713ed2a38dca50d5ce7"
+  },
+  "completeRenewalAccepted": false
+}

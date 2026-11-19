@@ -1,0 +1,896 @@
+{
+  "inspectedMain": "c82a11ed2ae03486a0825112cb503ff9d30ada71",
+  "sourceSelection": "Named pre-site current overlay entry roots and their direct provenance; no transitive graph closure or design admission.",
+  "families": [
+    {
+      "id": "had-selected-water",
+      "state": "selected-reference",
+      "authority": "Selected architectural development and conditional reserves. Ground, moisture, structural and capacity admission remain open.",
+      "decisions": [
+        "project/had/water-replan-result.md"
+      ],
+      "authorRoots": [
+        "project/had/studies/open-north-loggia.mjs",
+        "project/had/studies/water-replan.mjs",
+        "project/had/studies/south-court-threshold.mjs",
+        "project/had/studies/garden-failure-bypass.mjs",
+        "project/had/studies/court-east-window.mjs",
+        "project/had/studies/north-intake.mjs",
+        "project/had/studies/north-protective-return.mjs",
+        "project/had/studies/maintenance-rain.mjs",
+        "compiler/reference-house/georgian/layout-revision.ts",
+        "project/str/studies/house-plan.py"
+      ],
+      "inputReceipts": [
+        "project/had/studies/open-north-loggia.json",
+        "project/mat/studies/east-water-plant.json",
+        "project/mat/studies/whole-house-service-baseline.json",
+        "project/mat/studies/upper-access-renewal.json",
+        "project/mat/studies/loggia-envelope-section.json",
+        "project/str/studies/ground-interfaces.json",
+        "project/rwt/studies/open-loggia-event.json",
+        "project/str/studies/house-plan.json",
+        "project/ias/studies/selected-family-convergence.json"
+      ],
+      "authoredInputs": [
+        "project/rwt/studies/selected-receiving-interface.json"
+      ],
+      "receipts": [
+        "project/had/studies/water-replan.json"
+      ],
+      "consumers": [
+        "project/had/studies/current-house.mjs",
+        "project/str/studies/current-house-grid.py",
+        "project/str/studies/reconciled-house-interface.py",
+        "project/rwt/studies/selected-water-event.mjs",
+        "project/rwt/studies/east-ground-outfall.mjs"
+      ],
+      "producerChecks": [
+        "node --import tsx project/had/studies/open-north-loggia.mjs --check",
+        "node project/had/studies/water-replan.mjs --check"
+      ],
+      "historicalInputs": [
+        "project/had/studies/fixtures/services-9476-prose-successor.json"
+      ]
+    },
+    {
+      "id": "had-occupied-services",
+      "state": "selected-reference",
+      "authority": "Selected occupied coordination and explicit blocked incoming water. Supplier products and physical or structural adoption remain open.",
+      "decisions": [
+        "project/had/inhabited-services-selection.md"
+      ],
+      "authorRoots": [
+        "project/had/studies/current-house.mjs",
+        "project/had/studies/fitted-house-services.mjs",
+        "project/had/studies/service-apertures.mjs",
+        "project/had/studies/cooker-fault.mjs",
+        "project/had/studies/inhabited-service-rooms.mjs",
+        "project/had/studies/inhabited-service-faults.mjs",
+        "project/had/studies/inhabited-service-compose.mjs",
+        "project/had/studies/selected-service-interfaces.mjs",
+        "project/had/studies/selected-water-duties.mjs",
+        "project/mat/studies/whole-house-service-baseline.py",
+        "project/had/studies/occupied-condensate-port.mjs",
+        "project/had/studies/service-head-maintenance.mjs",
+        "project/had/studies/service-interface-geometry.mjs",
+        "project/had/studies/current-house-service-outputs.mjs",
+        "project/had/studies/occupied-service-plate.mjs",
+        "project/had/studies/selected-service-plate.mjs"
+      ],
+      "inputReceipts": [
+        "project/had/studies/receiver-selection.json",
+        "project/had/studies/water-replan.json",
+        "project/ias/studies/fitted-wc-schedule.json",
+        "project/ias/studies/household-water.json",
+        "project/ias/studies/shared-family-bathing.json",
+        "project/ias/studies/utility-first-release.json",
+        "project/ias/studies/utility-host-revised-route.json",
+        "project/mat/studies/joined-cooker-system.json",
+        "project/mat/studies/local-extract-heat-and-store.json",
+        "project/mat/studies/loggia-soffit.json",
+        "project/mat/studies/service-material-offer.json",
+        "project/mat/studies/tempered-kitchen-air.json",
+        "project/mat/studies/whole-house-leakage-duty.json",
+        "project/mat/studies/whole-house-service-baseline.json",
+        "project/str/studies/current-house-arch-movement.json",
+        "project/str/studies/house-corner-rewind.json",
+        "project/str/studies/reconciled-house-interface.json"
+      ],
+      "authoredInputs": [],
+      "receipts": [
+        "project/had/studies/current-house-services.json",
+        "project/ias/studies/workable-study-floor.json",
+        "project/ias/studies/workable-study-release.json",
+        "project/ias/studies/workable-room-assemblies.json"
+      ],
+      "consumers": [
+        "project/mra/studies/internal-leak-study.mjs",
+        "project/had/studies/incoming-water.mjs",
+        "project/rwt/studies/outer-network.py",
+        "project/ias/studies/workable-study-floor.mjs",
+        "project/ias/studies/workable-study-release.mjs",
+        "project/ias/studies/workable-floor-tiles.mjs",
+        "project/ias/studies/workable-room-assemblies.mjs",
+        "project/ias/studies/workable-lining-dimensions.mjs"
+      ],
+      "producerChecks": [
+        "node --test project/had/studies/current-house.test.mjs",
+        "node project/had/studies/current-house-service-outputs.mjs --check"
+      ]
+    },
+    {
+      "id": "str-conditional-interface",
+      "state": "candidate-interface",
+      "authority": "Consumed STR grid, conditional load/reference geometry and selected-service interfaces. Consumed candidate evidence carries its limitations.",
+      "decisions": [
+        "project/had/service-structural-applicability.md",
+        "project/str/structural-architecture-programme.md",
+        "project/str/floor-portal-monolithic-drag.md",
+        "project/mat/rear-wc-west-gravity.md"
+      ],
+      "authorRoots": [
+        "project/str/studies/current-house-grid.py",
+        "project/str/studies/reconciled-house-interface.py",
+        "project/str/studies/current-house-joined-foundation.py",
+        "project/str/studies/ground-interfaces.py",
+        "project/str/studies/current-house-membrane.py",
+        "project/str/studies/current-house-head-actions.py",
+        "project/str/studies/current-house-floor-closure.py",
+        "project/str/studies/current-house-roof-bracing.py",
+        "project/str/studies/current-house-lateral.py",
+        "project/str/studies/open-loggia-support.py",
+        "project/ias/studies/wc-service-stations.py",
+        "project/str/studies/current-house-bridge.py",
+        "project/str/studies/floor-portal-north-collar.py",
+        "project/str/studies/court_tie_starter_paths.py",
+        "project/str/studies/floor-portal-north-roof-shoe.py",
+        "project/str/studies/current-house-outward-arches.py",
+        "project/str/studies/arch-normal-kernel.py",
+        "project/str/studies/arch-space-flexibility.py",
+        "project/str/studies/arch-space-kernel.py",
+        "project/str/studies/arch-width-geometry.py",
+        "project/str/studies/current-house-coupled-arches.py",
+        "project/str/studies/current-house-spatial-arches.py",
+        "project/str/studies/current-house-roof-route.py",
+        "project/str/studies/current-house-roof-stiffness.py",
+        "project/str/studies/current-house-membrane-reactions.py",
+        "project/str/studies/current-house-floor-stops.py",
+        "project/str/studies/current-house-wall-transfers.py",
+        "project/str/studies/floor-portal-north-cap-layer.py",
+        "project/str/studies/floor-portal-north-cage.py",
+        "project/str/studies/current-house-structural-case.py",
+        "project/str/studies/floor-portal-monolithic-drag.py",
+        "project/mat/studies/rear-wc-west-roof-interface.py",
+        "project/str/studies/structural-linear.py"
+      ],
+      "inputReceipts": [
+        "project/had/studies/water-replan.json",
+        "project/ias/studies/bedroom4-wet-section.json",
+        "project/mat/studies/raised-roof-edge.json",
+        "project/mat/studies/study-coupled-window.json",
+        "project/oas/studies/north-export-occurrence.json",
+        "project/str/studies/current-house-floor-closure.json",
+        "project/str/studies/current-house-grid.json",
+        "project/str/studies/current-house-guard-bracket.json",
+        "project/str/studies/current-house-head-actions.json",
+        "project/str/studies/current-house-lateral.json",
+        "project/str/studies/current-house-ring-space.json",
+        "project/str/studies/current-house-roof-route.json",
+        "project/str/studies/current-house-welded-network.json",
+        "project/str/studies/current-house-window-renewal.json",
+        "project/str/studies/house-corner-rewind.json",
+        "project/str/studies/open-loggia-support.json",
+        "project/str/studies/p32-court-hold.json",
+        "project/str/studies/reconciled-corner-portals.json",
+        "project/str/studies/current-house-floor-stops.json",
+        "project/had/studies/open-north-loggia.json",
+        "project/mat/studies/loggia-soffit.json",
+        "project/str/studies/floor-portal-fixed-wall-head.json",
+        "project/str/studies/floor-portal-north-transfer.json",
+        "project/str/studies/floor-portal-twin-garden-tie.json",
+        "project/str/studies/current-house-welded-heel.json",
+        "project/str/studies/current-house-arch-detail.json",
+        "project/str/studies/current-house-window-receivers.json",
+        "project/str/studies/current-house-arch-jambs.json",
+        "project/mat/studies/whole-house-service-baseline.json",
+        "project/str/studies/current-house-ground-ties.json",
+        "project/mat/studies/rear-wc-west-gravity.json",
+        "project/rof/studies/outer_66_checkpoint/outer-66-pieces.json",
+        "project/rof/studies/outer_physical_checkpoint/outer-renewal-path-checks.json",
+        "project/had/studies/current-house-services.json",
+        "project/str/studies/current-house-ring-floor-stations.json",
+        "project/str/studies/current-house-roof-network.json",
+        "project/str/studies/physical-slab-join.json",
+        "project/str/studies/current-house-roof-connection.json",
+        "project/str/studies/current-house-floor-closure.svg"
+      ],
+      "authoredInputs": [
+        "project/str/dpc-origin-paths.json"
+      ],
+      "receipts": [
+        "project/str/studies/current-house-grid.json",
+        "project/str/studies/reconciled-house-interface.json",
+        "project/str/studies/current-house-joined-foundation.json",
+        "project/str/studies/current-house-bridge.json",
+        "project/str/studies/floor-portal-north-collar.json",
+        "project/str/studies/floor-portal-north-roof-shoe.json",
+        "project/str/studies/current-house-outward-arches.json",
+        "project/str/studies/current-house-roof-route.json",
+        "project/str/studies/current-house-roof-stiffness.json",
+        "project/str/studies/current-house-membrane-reactions.json",
+        "project/str/studies/current-house-floor-stops.json",
+        "project/str/studies/current-house-wall-transfers.json",
+        "project/str/studies/floor-portal-north-cap-layer.json",
+        "project/str/studies/floor-portal-north-cage.json",
+        "project/str/studies/floor-portal-monolithic-drag.json",
+        "project/mat/studies/rear-wc-west-roof-interface.json"
+      ],
+      "consumers": [
+        "project/had/studies/current-house.mjs",
+        "project/had/studies/court-intake-selection.mjs",
+        "project/had/studies/receiver-selection.mjs",
+        "project/rwt/studies/court-bypass-choice.mjs",
+        "compiler/reference-house/current-design/north-collector.ts",
+        "compiler/reference-house/current-design/rear-foul-vent.ts",
+        "compiler/reference-house/current-design/structural.ts"
+      ],
+      "producerChecks": [
+        "python3 -B project/str/studies/current-house-grid.py --check",
+        "python3 -B project/str/studies/reconciled-house-interface.py --check",
+        "python3 -B project/str/studies/current-house-joined-foundation.py --check",
+        "python3 -B project/str/studies/floor-portal-monolithic-drag.py . --check",
+        "python3 -B project/mat/studies/rear-wc-west-roof-interface.py . --check"
+      ]
+    },
+    {
+      "id": "rwt-conditional-receiving",
+      "state": "selected-reference",
+      "authority": "RWT authors the JSON receiving requirements. Generated event and service receipts are conditional scope only. The authored startingHouseBlob is historical provenance.",
+      "decisions": [
+        "project/rwt/rwt-06-finite-exit-map.md",
+        "project/rwt/rwt-06-permanent-receiver-service.md"
+      ],
+      "authorRoots": [
+        "project/rwt/studies/open-loggia-event.mjs",
+        "project/rwt/studies/selected-water-event.mjs",
+        "project/rwt/studies/court-service-selection.mjs",
+        "project/rwt/studies/east-ground-outfall.mjs",
+        "project/rwt/studies/court-bypass-choice.mjs"
+      ],
+      "inputReceipts": [
+        "project/had/studies/water-replan.json",
+        "project/had/studies/receiver-selection.json",
+        "project/had/studies/court-intake-selection.json",
+        "project/rwt/studies/joined-service-routes.json",
+        "project/rwt/studies/fork-outlet-joint.json",
+        "project/rwt/studies/forked-side-outlet.json",
+        "project/mat/studies/plant-threshold.json",
+        "project/mat/studies/loggia-envelope-section.json",
+        "project/mat/studies/ring-roof-family.json"
+      ],
+      "authoredInputs": [
+        "project/rwt/studies/selected-receiving-interface.json"
+      ],
+      "receipts": [
+        "project/rwt/studies/selected-water-event.json",
+        "project/rwt/studies/court-service-selection.json",
+        "project/rwt/studies/open-loggia-event.json"
+      ],
+      "consumers": [
+        "project/had/studies/water-replan.mjs",
+        "project/had/studies/receiver-selection.mjs",
+        "project/rwt/studies/outer-network.py"
+      ],
+      "producerChecks": [
+        "node project/rwt/studies/open-loggia-event.mjs --check",
+        "node project/rwt/studies/selected-water-event.mjs --check",
+        "node project/rwt/studies/court-service-selection.mjs --check"
+      ]
+    },
+    {
+      "id": "mat-roof-pitch-reference",
+      "state": "candidate-interface",
+      "authority": "Nominal fixed-footprint pitch and slate stock comparison. Roof support, covering approval and roof-water applicability require a joined successor.",
+      "decisions": [
+        "project/mat/ring-roof-family.md"
+      ],
+      "authorRoots": [
+        "project/mat/studies/ring-roof-pitch-case.py",
+        "project/mat/studies/ring-roof-family.py",
+        "project/mat/studies/ring_roof_family_figure.py"
+      ],
+      "inputReceipts": [
+        "project/had/studies/water-replan.json",
+        "project/mat/studies/ring-roof-family.json"
+      ],
+      "authoredInputs": [
+        "project/mat/studies/ring-roof-family-sources.json",
+        "project/design-constraints.ts"
+      ],
+      "receipts": [],
+      "consumers": [
+        "compiler/reference-house/current-design/roof-pitch.ts"
+      ],
+      "producerChecks": [
+        "python3 -B project/mat/studies/ring-roof-family.py --check"
+      ]
+    },
+    {
+      "id": "had-inlet-indoor-reference",
+      "state": "candidate-interface",
+      "authority": "Current indoor cabinet reference. Route comparisons grant no installed, pressure, material or wet-state acceptance.",
+      "decisions": [
+        "project/had/inlet-fixed-station.md",
+        "project/had/inlet-protected-daylight.md"
+      ],
+      "authorRoots": [
+        "project/had/studies/incoming-water-geometry.mjs",
+        "project/had/studies/service-interface-geometry.mjs",
+        "project/had/studies/inlet-fixed-station.mjs",
+        "project/had/studies/inlet-protected-daylight.mjs",
+        "project/had/studies/utility-wide-capture.mjs",
+        "project/had/studies/utility-dry-bowl-release.mjs"
+      ],
+      "inputReceipts": [
+        "project/had/studies/current-house-services.json",
+        "project/had/studies/incoming-water.json",
+        "project/had/studies/inlet-rewind.json",
+        "project/had/studies/utility-dry-bowl-release.json",
+        "project/had/studies/utility-wide-capture.json"
+      ],
+      "authoredInputs": [],
+      "receipts": [
+        "project/had/studies/inlet-fixed-station.json",
+        "project/had/studies/inlet-protected-daylight.json"
+      ],
+      "consumers": [],
+      "producerChecks": [
+        "node project/had/studies/inlet-fixed-station.mjs --check",
+        "node project/had/studies/inlet-protected-daylight.mjs --check"
+      ]
+    },
+    {
+      "id": "had-inlet-south-development",
+      "state": "candidate-interface",
+      "authority": "Conditional south dual-entry development. The retained indoor reference and HAD admission remain open.",
+      "decisions": [
+        "project/had/south-utility-inlet.md"
+      ],
+      "authorRoots": [
+        "project/had/studies/incoming-water-geometry.mjs",
+        "project/had/studies/service-interface-geometry.mjs",
+        "project/had/studies/south-utility-inlet.mjs",
+        "project/had/studies/utility-wide-capture.mjs",
+        "project/had/studies/utility-dry-bowl-release.mjs"
+      ],
+      "inputReceipts": [
+        "project/had/studies/boundary-service-lodge.json",
+        "project/had/studies/current-house-services.json",
+        "project/had/studies/incoming-water.json",
+        "project/had/studies/inlet-fixed-station.json",
+        "project/had/studies/inlet-rewind.json",
+        "project/had/studies/utility-dry-bowl-release.json",
+        "project/had/studies/utility-wide-capture.json",
+        "project/str/studies/current-house-lateral.json"
+      ],
+      "authoredInputs": [
+        "project/had/studies/current-house.mjs",
+        "project/had/studies/incoming-water-geometry.mjs",
+        "project/had/studies/service-interface-geometry.mjs",
+        "project/rof/studies/roof_water_edges.py"
+      ],
+      "receipts": [
+        "project/had/studies/south-utility-inlet.json"
+      ],
+      "consumers": [],
+      "producerChecks": [
+        "node project/had/studies/south-utility-inlet.mjs --check"
+      ]
+    },
+    {
+      "id": "had-inlet-south-sill-insert",
+      "state": "candidate-interface",
+      "authority": "Conditional southern inlet insert beneath the explicitly rewound Utility window. Installed hydraulic, structural, material and handling evidence remains open.",
+      "decisions": [
+        "project/had/south-inlet-sill-insert.md"
+      ],
+      "authorRoots": [
+        "project/had/studies/south-inlet-sill-insert.mjs",
+        "project/had/studies/south-inlet-sill-insert-kernel.mjs",
+        "project/had/studies/service-interface-geometry.mjs",
+        "project/had/studies/south-inlet-sill-wind-source.py",
+        "project/str/studies/reconciled-corner-portals.py"
+      ],
+      "inputReceipts": [
+        "project/had/studies/south-inlet-under-sill.json",
+        "project/had/studies/south-inlet-wet-box.json",
+        "project/str/studies/house-corner-rewind.json",
+        "project/str/studies/floor-portal-interface-review.json",
+        "project/str/studies/current-house-grid.json",
+        "project/str/studies/current-house-joined-foundation.json",
+        "project/str/studies/reconciled-corner-portals.json"
+      ],
+      "authoredInputs": [],
+      "receipts": [
+        "project/had/studies/south-inlet-sill-insert.json",
+        "project/had/studies/south-inlet-sill-wind-source.json"
+      ],
+      "consumers": [
+        "compiler/reference-house/current-design/inlet-sill-insert.ts",
+        "compiler/reference-house/current-design/inlet-sill-wind.ts"
+      ],
+      "producerChecks": [
+        "node project/had/studies/south-inlet-sill-insert.mjs --check",
+        "python3 -B project/had/studies/south-inlet-sill-wind-source.py --check"
+      ]
+    },
+    {
+      "id": "had-inlet-south-fault-envelope",
+      "state": "candidate-interface",
+      "authority": "Static comparison for one incident branch with a blocked exterior sleeve, conditional lower relief and a clear independent vent. Installed flow, air and pressure evidence remains open.",
+      "decisions": [
+        "project/had/south-inlet-relief.md",
+        "project/had/south-inlet-fault-envelope.md"
+      ],
+      "authorRoots": [
+        "project/had/studies/south-inlet-relief.mjs",
+        "project/had/studies/south-inlet-relief-hydraulics.mjs",
+        "project/had/studies/service-interface-geometry.mjs",
+        "project/had/studies/incoming-water-geometry.mjs",
+        "project/had/studies/south-inlet-sill-insert-kernel.mjs"
+      ],
+      "inputReceipts": [
+        "project/had/studies/south-inlet-relief.json",
+        "project/had/studies/south-inlet-under-sill.json",
+        "project/had/studies/south-inlet-wet-box.json",
+        "project/had/studies/south-inlet-sill-insert.json",
+        "project/had/studies/south-utility-inlet.json",
+        "project/had/studies/current-house-services.json",
+        "project/had/studies/utility-dry-bowl-release.json",
+        "project/str/studies/current-house-joined-foundation.json",
+        "project/had/studies/utility-wide-capture.json",
+        "project/had/studies/inlet-protected-daylight.json",
+        "project/str/studies/floor-portal-interface-review.json",
+        "project/str/studies/house-corner-rewind.json",
+        "project/had/studies/water-replan.json",
+        "project/str/studies/current-house-grid.json"
+      ],
+      "authoredInputs": [],
+      "receipts": [],
+      "consumers": [
+        "compiler/reference-house/current-design/inlet-fault.ts"
+      ],
+      "producerChecks": [
+        "node project/had/studies/south-inlet-relief.mjs --check",
+        "node project/had/studies/south-inlet-wet-box.mjs --check"
+      ]
+    },
+    {
+      "id": "had-inlet-south-removal",
+      "state": "candidate-interface",
+      "authority": "Straight removal draw and separate upper cover first-rest comparison for one conditional sill carrier. Installed independent closure, matched disconnect and captured support remain unresolved.",
+      "decisions": [
+        "project/had/south-inlet-wet-box.md"
+      ],
+      "authorRoots": [
+        "project/had/studies/incoming-water-geometry.mjs",
+        "project/had/studies/south-inlet-wet-box.mjs"
+      ],
+      "inputReceipts": [
+        "project/had/studies/south-inlet-under-sill.json",
+        "project/had/studies/south-inlet-wet-box.json",
+        "project/had/studies/south-inlet-relief.json",
+        "project/had/studies/current-house-services.json",
+        "project/ias/studies/utility-first-release.json"
+      ],
+      "authoredInputs": [],
+      "receipts": [],
+      "consumers": [
+        "compiler/reference-house/current-design/inlet-removal.ts",
+        "compiler/reference-house/current-design/inlet-cover.ts"
+      ],
+      "producerChecks": [
+        "node project/had/studies/south-inlet-wet-box.mjs --check",
+        "node project/ias/studies/utility-first-release.mjs --check"
+      ]
+    }
+  ],
+  "receiptEdges": [
+    {
+      "receipt": "project/had/studies/water-replan.json",
+      "location": [
+        "sources",
+        "had"
+      ],
+      "format": "path-and-blob",
+      "algorithm": "gitBlob",
+      "source": "project/had/studies/open-north-loggia.json"
+    },
+    {
+      "receipt": "project/had/studies/water-replan.json",
+      "location": [
+        "sources",
+        "services"
+      ],
+      "format": "path-and-blob",
+      "algorithm": "gitBlob",
+      "source": "project/mat/studies/whole-house-service-baseline.json"
+    },
+    {
+      "receipt": "project/had/studies/water-replan.json",
+      "location": [
+        "renewal",
+        "receivingInterface",
+        "source"
+      ],
+      "format": "path-and-blob",
+      "algorithm": "gitBlob",
+      "source": "project/rwt/studies/selected-receiving-interface.json"
+    },
+    {
+      "receipt": "project/had/studies/water-replan.json",
+      "location": [
+        "hydraulicProbe",
+        "catchment",
+        "source"
+      ],
+      "format": "path-and-blob",
+      "algorithm": "gitBlob",
+      "source": "project/rwt/studies/open-loggia-event.json"
+    },
+    {
+      "receipt": "project/had/studies/current-house-services.json",
+      "location": [
+        "sources"
+      ],
+      "format": "map",
+      "algorithm": "gitBlob"
+    },
+    {
+      "receipt": "project/str/studies/current-house-grid.json",
+      "location": [
+        "sources"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/str/studies/reconciled-house-interface.json",
+      "location": [
+        "sourceGitBlobs"
+      ],
+      "format": "map",
+      "algorithm": "gitBlob"
+    },
+    {
+      "receipt": "project/str/studies/current-house-joined-foundation.json",
+      "location": [
+        "sources"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/rwt/studies/open-loggia-event.json",
+      "location": [
+        "inputs",
+        "house"
+      ],
+      "format": "path-and-blob",
+      "algorithm": "gitBlob",
+      "source": "project/had/studies/open-north-loggia.json"
+    },
+    {
+      "receipt": "project/rwt/studies/open-loggia-event.json",
+      "location": [
+        "inputs",
+        "envelope"
+      ],
+      "format": "path-and-blob",
+      "algorithm": "gitBlob",
+      "source": "project/mat/studies/loggia-envelope-section.json"
+    },
+    {
+      "receipt": "project/rwt/studies/selected-water-event.json",
+      "location": [
+        "source"
+      ],
+      "format": "path-and-blob",
+      "algorithm": "gitBlob",
+      "source": "project/had/studies/water-replan.json"
+    },
+    {
+      "receipt": "project/had/studies/south-utility-inlet.json",
+      "location": [
+        "sources"
+      ],
+      "format": "map",
+      "algorithm": "gitBlob"
+    },
+    {
+      "receipt": "project/str/studies/floor-portal-monolithic-drag.json",
+      "location": [
+        "sourceSHA256"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/had/studies/south-inlet-sill-insert.json",
+      "location": [
+        "sources"
+      ],
+      "format": "map",
+      "algorithm": "gitBlob"
+    },
+    {
+      "receipt": "project/had/studies/south-inlet-relief.json",
+      "location": [
+        "sources"
+      ],
+      "format": "map",
+      "algorithm": "gitBlob"
+    },
+    {
+      "receipt": "project/had/studies/south-inlet-under-sill.json",
+      "location": [
+        "sources"
+      ],
+      "format": "map",
+      "algorithm": "gitBlob"
+    },
+    {
+      "receipt": "project/had/studies/south-inlet-wet-box.json",
+      "location": [
+        "sources"
+      ],
+      "format": "map",
+      "algorithm": "gitBlob"
+    },
+    {
+      "receipt": "project/mat/studies/rear-wc-west-roof-interface.json",
+      "location": [
+        "sourceSHA256"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/mat/studies/rear-wc-west-roof-interface.json",
+      "location": [
+        "dryReturnComparison",
+        "lowObliqueReturn",
+        "sourceSHA256"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/had/studies/south-inlet-sill-wind-source.json",
+      "location": [
+        "sources"
+      ],
+      "format": "map",
+      "algorithm": "gitBlob"
+    }
+  ],
+  "gitBlobs": {
+    "compiler/reference-house/georgian/layout-revision.ts": "af955c7da2e2469fd24598f98db6fc942a119ed3",
+    "project/had/inhabited-services-selection.md": "4ff15ebce20dccee4205a9cea70b7b1ab533db30",
+    "project/had/service-structural-applicability.md": "91e87bafe1f19403e8ec4846b44ff6437190a713",
+    "project/had/studies/cooker-fault.mjs": "8eaf819eac101f22e306d62376c6836ac67beb49",
+    "project/had/studies/court-east-window.mjs": "876ee826eaf61b88ebf5e7c4596fba0da07cc1f6",
+    "project/had/studies/court-intake-selection.json": "887a3df5b7a335b3eaafc7c8de4529a339428cbc",
+    "project/had/studies/court-intake-selection.mjs": "4f8eda047d3c354166b1961f16fbd1227dd07138",
+    "project/had/studies/current-house-services.json": "248c8281369d16a8885506660f740c1f66462d9d",
+    "project/had/studies/current-house.mjs": "58bf1a6248af8268de70d838cce23f249ce30b91",
+    "project/had/studies/fitted-house-services.mjs": "a22e08e94dc1d8fc2ae84b5fed5a71eaf97e3dd5",
+    "project/had/studies/fixtures/services-9476-prose-successor.json": "2d8f7243fb87d350763f2bca3d103b89b9d14b7d",
+    "project/had/studies/garden-failure-bypass.mjs": "e7c2ea8c8a7ad3730a7113e45488f3163a6f52d9",
+    "project/had/studies/incoming-water.mjs": "90af438144296ff78349939bfb95d5bdb9769a44",
+    "project/had/studies/inhabited-service-compose.mjs": "632421d4b4b4dcdc028590694e877d290d768485",
+    "project/had/studies/inhabited-service-faults.mjs": "0499f4a2e648838dad54578412fc04bfe60ff31e",
+    "project/had/studies/inhabited-service-rooms.mjs": "07035847ee3475cbfd22a1f67bbf1fa435b1986c",
+    "project/had/studies/maintenance-rain.mjs": "806b216dc0994ff2035f70be658a01116d9ae5a7",
+    "project/had/studies/north-intake.mjs": "539705304d41d8510d615dd69aaacad4cb25c8d3",
+    "project/had/studies/north-protective-return.mjs": "3a9ef1ab2babd302786cf2aad0dac7fe7eb9e1b0",
+    "project/had/studies/open-north-loggia.json": "25faad2c4d40df2b7da7212f73808843a88d2f52",
+    "project/had/studies/open-north-loggia.mjs": "88b2589aef8c5bc4816e08b911eafa845909f43b",
+    "project/had/studies/receiver-selection.json": "2def3f7221d55b180cd46392a227b8c56972d03f",
+    "project/had/studies/receiver-selection.mjs": "141b3dbc780ea0661c483278a090e0e6ec40023e",
+    "project/had/studies/selected-service-interfaces.mjs": "712065e8dfefc0c2d357e232ca17bbed5a376ea2",
+    "project/had/studies/selected-water-duties.mjs": "332755d589080661042af6491d0f23d7947829bf",
+    "project/had/studies/service-apertures.mjs": "ecfe9aed698346a8a260ac6f0f35981717dd08c0",
+    "project/had/studies/south-court-threshold.mjs": "d1067300b8513d5d98a76897e5bba87bbc7286c4",
+    "project/had/studies/water-replan.json": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+    "project/had/studies/water-replan.mjs": "5525676d6cc2bb167eccd35249afaa6928142011",
+    "project/had/water-replan-result.md": "fff4ce4ddef614e4f5912ffc1f7fe072319091ef",
+    "project/ias/studies/bedroom4-wet-section.json": "2b9ca6642cf7baf330bbe36039241609355e892c",
+    "project/ias/studies/fitted-wc-schedule.json": "5e20c73409b5406a2de9d7ee7e5853e9302189c8",
+    "project/ias/studies/household-water.json": "30c96e79dd3a35c96bb30e355b668c9a710a4060",
+    "project/ias/studies/selected-family-convergence.json": "7922be5910c40198563d5bd67f4cf306ea221dbd",
+    "project/ias/studies/shared-family-bathing.json": "f89302f9d87708b5314bd68a768c976efcd07b8d",
+    "project/ias/studies/utility-first-release.json": "be84a64623c8042a002af108a784b8668acd7542",
+    "project/ias/studies/utility-host-revised-route.json": "69e6b0aa5e1847f09c7ac3da3b98eec9bf1d5c0b",
+    "project/ias/studies/wc-service-stations.py": "00d4023a9422fa93fccd8f8140034f8a677ec537",
+    "project/mat/studies/east-water-plant.json": "a79242dbe0118d393d906a7d01df9061fb2cdb5b",
+    "project/mat/studies/joined-cooker-system.json": "d04dd78ba3fd040c7abd1aecb94aa9a3ce95d5e0",
+    "project/mat/studies/local-extract-heat-and-store.json": "550709d0e0ca0acff81cb42e502640771f4ac2d0",
+    "project/mat/studies/loggia-envelope-section.json": "0ec54ba2420b9337ce81b1867eef4c83d661e69b",
+    "project/mat/studies/loggia-soffit.json": "c9c914169547bd42b90cd69512ba1a28d97ca6fe",
+    "project/mat/studies/plant-threshold.json": "58c0c78aa8985d4299c8d8b8750e55c98a129de2",
+    "project/mat/studies/raised-roof-edge.json": "8406cb6c76245ea63c5935f8a3915a4a55f03942",
+    "project/mat/studies/ring-roof-family.json": "28afcd1cd63aa4d17cd8dfeb433dba1885b92478",
+    "project/mat/studies/ring-roof-pitch-case.py": "6062712677b7e483a7744c0af534cecfc7248d29",
+    "project/mat/studies/ring-roof-family.py": "1f126dbd6f7b6c28d9e3db59620f60968675b928",
+    "project/mat/studies/ring_roof_family_figure.py": "6a45cc507d9f17f3fed416e95d95d0c32c1e329f",
+    "project/mat/studies/ring-roof-family-sources.json": "47873ca0a4d383bdef0e16d507935e4e4990a627",
+    "project/mat/ring-roof-family.md": "627e776e0e4d17a9aa08085e6495b0ed9860d4fb",
+    "project/mat/studies/service-material-offer.json": "e5686440fa6a3f68387576883b1e0c768e0596bb",
+    "project/mat/studies/study-coupled-window.json": "00184ad7c13d39b38a1ac95a82fa462a8d13eea7",
+    "project/mat/studies/tempered-kitchen-air.json": "b18044acaec99caf00eab9a542fff78e510857c9",
+    "project/mat/studies/upper-access-renewal.json": "213e122e6c9244d82178feee836cf04ed27fef0d",
+    "project/mat/studies/whole-house-leakage-duty.json": "5b93cdd9ea1ee7d825fa4596a44caf06431afc49",
+    "project/mat/studies/whole-house-service-baseline.json": "049161ebac29b24e0acc7d8085302fca906fe9d2",
+    "project/mat/studies/whole-house-service-baseline.py": "e1c4e1a645ee707622c9bcc7a064fcd430715a63",
+    "project/mra/studies/internal-leak-study.mjs": "835b4c10b3f1184db98e1ce0f973682372abf579",
+    "project/oas/studies/north-export-occurrence.json": "5a0860a715688f8ef4eda3184fd8fe8bc26774b6",
+    "project/rwt/rwt-06-finite-exit-map.md": "86f2166ab4db6f9f4d1a227f4d1293b4aea4a534",
+    "project/rwt/rwt-06-permanent-receiver-service.md": "48a9577c4a702752b15f84eb5143342ed2defaf2",
+    "project/rwt/studies/court-bypass-choice.mjs": "128032d7b5def6db35dd54905a272a595185de25",
+    "project/rwt/studies/court-service-selection.json": "96aa5b061c0fd38138ccb38dded3749355213b94",
+    "project/rwt/studies/court-service-selection.mjs": "810ad4b14d9d5a4f8a44b929cb9c67e4726e423d",
+    "project/rwt/studies/east-ground-outfall.mjs": "85fc0521a066d24570806238407189edbbacb8df",
+    "project/rwt/studies/fork-outlet-joint.json": "da0e6d87b51a70c67990460461b06cded24bfb2e",
+    "project/rwt/studies/forked-side-outlet.json": "64351c5d25a1d5a8d3621c851fd47123ccfe0017",
+    "project/rwt/studies/joined-service-routes.json": "1f7f1ee43934355b5598acb55adb5a3357fc2df9",
+    "project/rwt/studies/open-loggia-event.json": "f096160f98e175c7d5f3ec117a9ae41da2162b30",
+    "project/rwt/studies/open-loggia-event.mjs": "a2cc9673908c88ae6c84be2cae61b08c9f8453e2",
+    "project/rwt/studies/outer-network.py": "39fbdd10eb8a8e463cee5c28b4210e132503ad04",
+    "project/rwt/studies/selected-receiving-interface.json": "847eecc74b95fc189dab3f45e02f54cdb41c6d29",
+    "project/rwt/studies/selected-water-event.json": "b5f8b7c6460c8d5838ccd5bc3107c2656081cf35",
+    "project/rwt/studies/selected-water-event.mjs": "a50f0c66142bcf1cf823775f3a7868b972baf48d",
+    "project/str/structural-architecture-programme.md": "5a289be91e6a847b2a5ff28276060c34308f2bf1",
+    "project/str/studies/current-house-arch-movement.json": "05db94a987c7bf45b885c6d02f701b31bcf91740",
+    "project/str/studies/current-house-floor-closure.json": "402cec2347ab9bf4efd624e269918096a1e70f97",
+    "project/str/studies/current-house-floor-closure.py": "98efe8a379a709399a9d89689495a40dfa18d443",
+    "project/str/studies/current-house-grid.json": "56aca6f99f5fa60b21d58c89115ac1ee824e3828",
+    "project/str/studies/current-house-grid.py": "abb96e665bdc4d1b900d73125acb3bde68ca0b0b",
+    "project/str/studies/current-house-guard-bracket.json": "1a771395a3d326e93a94f01e1f020499ebbee981",
+    "project/str/studies/current-house-head-actions.json": "0d5c8c0d67378b0acd1a7680053e3b0783045c7c",
+    "project/str/studies/current-house-head-actions.py": "6635d8b11ea9edf948583097ad674d7741d62bf1",
+    "project/str/studies/current-house-joined-foundation.json": "ffc3ccb68655eead7c7f56a8dd3179d7d8d6f7bc",
+    "project/str/studies/current-house-joined-foundation.py": "2dbd7d33959639f68bca70caf512165c54b88c37",
+    "project/str/studies/current-house-lateral.json": "a3a4ae8393c14e04e874de02beebf901a4b87227",
+    "project/str/studies/current-house-lateral.py": "afd974189c5dad52b21e4432131d56d9df623a43",
+    "project/str/studies/current-house-membrane.py": "6d6b5cd9280dcceebd7d1896e11f5e260c9cc793",
+    "project/str/studies/current-house-ring-space.json": "b71119e0d4e9dd91c5ee7cad02076dd806c7ec67",
+    "project/str/studies/current-house-roof-bracing.py": "1fa8729ed65a62767ce12e0da81dae11e288513d",
+    "project/str/studies/current-house-roof-route.json": "c61d588392724f831b7ad72c9474eab2ce3a733f",
+    "project/str/studies/current-house-welded-network.json": "9a072fe11db7ee8f09e2fe048f7b7a3ae5d2195b",
+    "project/str/studies/current-house-window-renewal.json": "9e190c8683dbd4ff2f341589fd1676abd31f090b",
+    "project/str/studies/ground-interfaces.json": "4110aab34d263fbc9f8ae44f8006aed85b797406",
+    "project/str/studies/ground-interfaces.py": "2957a4403a0bd798b7e592d464f1f0f7660d0d6f",
+    "project/str/studies/house-corner-rewind.json": "6471d89c213724ec02a26d797c85185beadb25b5",
+    "project/str/studies/house-plan.json": "d722ada30df5729852043f0010433a890e399999",
+    "project/str/studies/house-plan.py": "5c1d6bfb5bb2382e909d481846f172f23044ed94",
+    "project/str/studies/open-loggia-support.json": "20dec4384d09a0d02075fdd34a247e775532763b",
+    "project/str/studies/open-loggia-support.py": "15a83176f8b1ad894d20eada0251d31fc1e0e025",
+    "project/str/studies/p32-court-hold.json": "e4895257d44765754dc449a8b0c4e6c59ccd80dd",
+    "project/str/studies/reconciled-corner-portals.json": "0fe6b9c2007cf5ea39b584cc2a2ac0568a0116be",
+    "project/str/studies/reconciled-house-interface.json": "4d3080dc4540ce7218b86f1d27518fbeb1f8e85d",
+    "project/str/studies/reconciled-house-interface.py": "c4f0b0777a061c3b9dfc09ca3fa7895d99fd3b9c",
+    "project/str/studies/current-house-bridge.py": "7562197dc35a2753c9e593a8e38199b148de7207",
+    "project/str/studies/current-house-bridge.json": "aceadbc891a23f0dd5c4b2c49b0422881b44bd55",
+    "project/ias/studies/workable-study-floor.json": "4cc89e12782021fa6de7752d3313d3487b22f872",
+    "project/ias/studies/workable-study-release.json": "6b890c098e2e025b0db29bb2568a5fc256b64b8d",
+    "project/ias/studies/workable-study-floor.mjs": "d00522ea819fad915e82e76fe733ce4073beed9c",
+    "project/ias/studies/workable-study-release.mjs": "c35969d287854cfec00e249226f8da0a0caf2f4e",
+    "project/ias/studies/workable-room-assemblies.json": "6be5770a7caf3155a34a4cfd5236c4908aa46b15",
+    "project/ias/studies/workable-room-assemblies.mjs": "927dd01ea360cac019c7d2635ae477ba187e987c",
+    "project/ias/studies/workable-lining-dimensions.mjs": "c028959c486242d72f95eeac9dc9e8854191cb6d",
+    "project/ias/studies/workable-floor-tiles.mjs": "af462e054441fdf8bb40fccbd6021bbe0f0726d0",
+    "project/had/inlet-fixed-station.md": "2231e0c0789ed420b20f018c10239bfb81f5a996",
+    "project/had/inlet-protected-daylight.md": "4829622b5df086373093ddce631c5f48d391af4b",
+    "project/had/south-utility-inlet.md": "5574fa027bf0d8809139bfec7ea2402b7c5125d9",
+    "project/had/studies/boundary-service-lodge.json": "edccc843f1829bf583e517095442ad9fe481da53",
+    "project/had/studies/incoming-water-geometry.mjs": "ed658b7df0edf5d8e6d1826d32730a14b00199c7",
+    "project/had/studies/incoming-water.json": "1aa08121cdc10dc1ccbe2ae40bf54f8cee54d205",
+    "project/had/studies/inlet-fixed-station.json": "69e0be05955a9f8fa3494f6a8c5e686dd8bc2e16",
+    "project/had/studies/inlet-fixed-station.mjs": "464ac9425351d98fe5a952f6da56c9c79908a20e",
+    "project/had/studies/inlet-protected-daylight.json": "4d801f04763c81fd2f5495a8633689838943dae2",
+    "project/had/studies/inlet-protected-daylight.mjs": "6bf9082ba4a4ad4099dfd148c32e6411a6126f46",
+    "project/had/studies/inlet-rewind.json": "df1d23f44eb905c0b18e7a089afb571945e3884d",
+    "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2",
+    "project/had/studies/south-utility-inlet.json": "60c7979e8e1036946473e07f2530525cc7b46bce",
+    "project/had/studies/south-utility-inlet.mjs": "7a78b4203f50d25287607fa32f3c310ab07bba53",
+    "project/had/studies/utility-dry-bowl-release.json": "7f1e60c8dbbb93a4a50ed7bb7db13e426ef25603",
+    "project/had/studies/utility-dry-bowl-release.mjs": "9e6e1914a3863054ebdd480f33400a2a9aed7016",
+    "project/had/studies/utility-wide-capture.json": "999fe25948911c6325590186db1e94f884d44ae2",
+    "project/had/studies/utility-wide-capture.mjs": "6d5550e414d68a5b2e7189b5e1517689c3ee1614",
+    "project/rof/studies/roof_water_edges.py": "e381233093301614ca06c58cb851bc476f6db852",
+    "project/had/studies/occupied-condensate-port.mjs": "74149aa363733c8902ff9721adb62cbe8a4a98ab",
+    "project/had/studies/service-head-maintenance.mjs": "2c10be026021f6baeb64f0b7802ba931d48d6bb7",
+    "project/str/studies/floor-portal-north-collar.py": "635f150f816d93564294e21914429140aab67097",
+    "project/str/studies/court_tie_starter_paths.py": "7c195eba77124b73184744184b2db581963a186f",
+    "project/str/studies/floor-portal-north-roof-shoe.py": "198c9b7dc96605362ac743709348d9895faa2da0",
+    "project/str/studies/current-house-outward-arches.py": "9532c5ad461320f6090bffec9a36d6a9ebc21d32",
+    "project/str/studies/arch-normal-kernel.py": "d02836295f3ce1ae0f1894fc8fa3aff20d063bfb",
+    "project/str/studies/arch-space-flexibility.py": "4996bd6c20163a04d4e1090a8e84a09b90bf1ecf",
+    "project/str/studies/arch-space-kernel.py": "585207e4b964cf58e755313aa1f1bec8855b4962",
+    "project/str/studies/arch-width-geometry.py": "da499998361837e86aded38682c471f2140ec3a4",
+    "project/str/studies/current-house-coupled-arches.py": "b83b224bd343f8c36189d4ddb3d413c4825831c4",
+    "project/str/studies/current-house-spatial-arches.py": "2370904079a2e486c8847133898e5ed34dfeaf6b",
+    "project/str/studies/current-house-floor-stops.json": "eaa3b7ac8fadb9583fb1bf6810495ac3ea4bbbb2",
+    "project/str/studies/floor-portal-fixed-wall-head.json": "a5ba5189ef3b2394eea68369e58d0a4e1b46f385",
+    "project/str/studies/floor-portal-north-transfer.json": "cb20d54d61e0adfc45e3828550d6baf8230306ea",
+    "project/str/studies/floor-portal-twin-garden-tie.json": "be6939ba8a00e1d601115d8ff9aab081ebb063cd",
+    "project/str/studies/current-house-welded-heel.json": "8effbf8a9961ce490452f1ec6ec731b481cc7b11",
+    "project/str/studies/current-house-arch-detail.json": "504202be0ff1ee1a56628349deaf8395846a0177",
+    "project/str/studies/current-house-window-receivers.json": "58f2f9ad659373411833007e56600627d4b99cb2",
+    "project/str/studies/current-house-arch-jambs.json": "eb43644fe6b23260ee1e102e14bb76025454587f",
+    "project/str/studies/floor-portal-north-collar.json": "cb1760a60c0d82425f5e1a29e269cf97f9954ff7",
+    "project/str/studies/floor-portal-north-roof-shoe.json": "12a82f9a31378d65422c1a2a964311e462f7d5d5",
+    "project/str/studies/current-house-outward-arches.json": "b4b086d1c06f1e2d2cfc272e71bd4dad88aa08d2",
+    "project/str/studies/current-house-roof-route.py": "cbfae05e000a11cf2bf0f73356a55f85757e422f",
+    "project/str/studies/current-house-roof-stiffness.py": "f9ad60356adc741eaa4ac17bb4aac4d191161345",
+    "project/str/studies/current-house-membrane-reactions.py": "56494807b5573c5f42a94cfad925b06c25d8f9b2",
+    "project/str/studies/current-house-floor-stops.py": "67c9c6522e032ab6d4002f42767c4a257dd1010e",
+    "project/str/studies/current-house-wall-transfers.py": "becd6b296bf0c9d0f8e13ab6ef083e79d29cefac",
+    "project/str/studies/floor-portal-north-cap-layer.py": "ac7e38c008d84620ef1d8b15fe4b505b59f591c2",
+    "project/str/studies/floor-portal-north-cage.py": "495f9de576296bf9f3f104be6c87956e41b7f5a4",
+    "project/str/studies/current-house-roof-stiffness.json": "648a91b31418b70924614933d480c279a8581a87",
+    "project/str/studies/current-house-membrane-reactions.json": "e1c995b916b9ddd47fd323309868bcd1127b2f0b",
+    "project/str/studies/current-house-wall-transfers.json": "e0f07982d5c14a464599eb5ac98952dcdcdaf892",
+    "project/str/studies/floor-portal-north-cap-layer.json": "dab58749281eb22c46354098a183a6937339cfda",
+    "project/str/studies/floor-portal-north-cage.json": "2b58f32dfcb90a44785d9217284f39b3ecbb7241",
+    "project/str/studies/current-house-structural-case.py": "17abff02fafed0456baaf17dc6e92dd18b08106f",
+    "project/design-constraints.ts": "0c76e5372a2537bbc6f3c6c29f07ab0efa297129",
+    "project/str/studies/floor-portal-monolithic-drag.py": "083100d4cb2f189385e216ed149119f9e899277c",
+    "project/str/studies/floor-portal-monolithic-drag.json": "9a8cf79026419f3b9f05cee4b573b6dd1f3a04e6",
+    "project/str/floor-portal-monolithic-drag.md": "9f869170d81a7a192bb7f1cb7a516a458c3cd4c6",
+    "project/str/studies/current-house-ground-ties.json": "80c5ede6bcbe0b0bb3a19032feddd8403fbf19b1",
+    "project/had/studies/south-inlet-sill-insert.mjs": "5b8102418d8ea33bd6a03fe2dd7cde41efe943ff",
+    "project/had/studies/south-inlet-sill-insert-kernel.mjs": "3df75b2cb2fa492c6b3e5b2a04a113f481007880",
+    "project/had/studies/south-inlet-sill-insert.json": "7e7fc6162c34e3d02794eeaedc68cd0914820e78",
+    "project/had/south-inlet-sill-insert.md": "00c4d90838cec6bd864a9ccfe195dea0c7561f15",
+    "project/had/studies/south-inlet-under-sill.json": "7d60da325cd76bb9d7924bc4bb64f1b93b51b644",
+    "project/had/studies/south-inlet-wet-box.json": "0ccc6a7b1584145b5e77c7b89e9e2b8ce8b7d665",
+    "project/str/studies/floor-portal-interface-review.json": "ad8aac21e936f0199b331c3bd886c8bb41f30ee3",
+    "compiler/reference-house/current-design/north-collector.ts": "776f63aefea21c25bd1b45bc95d201fd2b7ec35e",
+    "compiler/reference-house/current-design/inlet-sill-insert.ts": "08d96ab51ecbd883df0dd56573327a2e0e4d63b4",
+    "project/had/south-inlet-relief.md": "9bde59b3cc55bc4fb7156402e50337b9f27fc3a5",
+    "project/had/studies/south-inlet-relief.mjs": "2648332efff491577ce285dc315e9e38006ecbbc",
+    "project/had/studies/south-inlet-relief-hydraulics.mjs": "1cb8dd67e832ce2986f042844122a39e625fef93",
+    "project/had/studies/south-inlet-relief.json": "b6c4340e57b616caf6c2daf184bc6c144db2a473",
+    "project/had/south-inlet-fault-envelope.md": "08474506308fcb9028d9c2eeee0e7366f287d8f9",
+    "compiler/reference-house/current-design/inlet-fault.ts": "d4628b45f6b89d320553fd96f114d899b7dec58e",
+    "project/mat/studies/rear-wc-west-roof-interface.py": "e25745bed843af992970f8b98ddb0e09dfdb82f8",
+    "project/mat/studies/rear-wc-west-roof-interface.json": "b3b9941d049d525cf497029538985036e8fe1f0e",
+    "project/mat/rear-wc-west-gravity.md": "a025e4ebd6ccc55376d397a31fe63ea653dfdd3f",
+    "project/mat/studies/rear-wc-west-gravity.json": "5bc28cedb62b4ea705e7b155144f8e5308e259b4",
+    "project/rof/studies/outer_66_checkpoint/outer-66-pieces.json": "c5e172d571338c173b63a3d475be314781e99e75",
+    "project/rof/studies/outer_physical_checkpoint/outer-renewal-path-checks.json": "c2df5b400d752de6d290e29bd8358ca3e5fe2a5f",
+    "project/str/studies/structural-linear.py": "6c35479b857ce3cffe5e31fd4022b9e500911d18",
+    "compiler/reference-house/current-design/rear-foul-vent.ts": "377b943b04d649dd74fb3ffe3ea5bbebebae02d0",
+    "project/str/studies/current-house-ring-floor-stations.json": "4e99fb625bf1e0eefd2a1e58265c46d18c3d9107",
+    "project/str/studies/current-house-roof-network.json": "0763e9410de7077a08c6adfd24a644f39d54f110",
+    "project/str/studies/physical-slab-join.json": "79b28df58f00fcf6e31a97cd376efe15a6c2566f",
+    "project/str/studies/current-house-roof-connection.json": "b7499d25908e41be0903c24183aa3a5e487a61a0",
+    "project/str/studies/current-house-floor-closure.svg": "92af682f05bf44a6a0af8237385e2d1345d7c9ca",
+    "compiler/reference-house/current-design/structural.ts": "19ca8eb9cde0037c7390cda4fab473579cfab1bc",
+    "project/had/studies/south-inlet-sill-wind-source.py": "4ceae4c90ff02d4457b9690959638e3ff90fa521",
+    "project/had/studies/south-inlet-sill-wind-source.json": "5bf4cb356f72054abfe706011ea8507b1332c305",
+    "compiler/reference-house/current-design/inlet-sill-wind.ts": "45fd3e5f0c80f8bf6b06af8aed1687f5220aee7b",
+    "project/str/studies/reconciled-corner-portals.py": "5ed97fdd2f7f1a8ca5dd0a741623d472f9d8178f",
+    "project/had/studies/current-house-service-outputs.mjs": "ed9b9796099e5b8736d11a1d90bb93a566bfe12d",
+    "project/had/studies/occupied-service-plate.mjs": "1d5b59e2945bcc58234d7ee96d41ec3473aa1ec2",
+    "project/had/studies/selected-service-plate.mjs": "732c5d440d2963a6092a0bf2bfdd8df8e198a54b",
+    "project/had/south-inlet-wet-box.md": "3f6eb36c2baf2011d7699a7807213b4785375c98",
+    "project/had/studies/south-inlet-wet-box.mjs": "2b6ae4e01c29823c6d91e78cd4657b4fe373a618",
+    "compiler/reference-house/current-design/inlet-removal.ts": "47f9a6615634de9062190c2e7e5e20384837d043",
+    "compiler/reference-house/current-design/inlet-cover.ts": "c24b643034c96b483ea58aa59b3b1423d633d781",
+    "project/str/dpc-origin-paths.json": "338d870cdc6bc55913a75d72f649a41002429659"
+  }
+}

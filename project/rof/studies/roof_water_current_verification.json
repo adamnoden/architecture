@@ -1,0 +1,25 @@
+{
+  "status": "BOTH FULL NUMERICAL REPLAYS EXACTLY REPRODUCE FROZEN JSON",
+  "checks": [
+    {
+      "command": "python -S project/rof/studies/roof_water_current_trial.py --court-width=280 --court-wall-mm=25 --inner-dry-kg-per-m=60 --receiving-spring-kn-per-mm=40 --outer-head-dry-domain=independent --check",
+      "exitCode": 0,
+      "result": "project/rof/studies/roof_water_current_trial_280_25_60_40_independent.json",
+      "resultSHA256": "0f3c526b05203554ec04496c6744143a9715c117534876c54c24c18380fd8c84",
+      "logSHA256": "4d5eb8ff5abe400af16157820eb94e12e0d8e3be98ba1ac81ef8119426b3d3f2"
+    },
+    {
+      "command": "python -S project/rof/studies/roof_water_current_trial.py --court-width=280 --court-wall-mm=25 --inner-dry-kg-per-m=60 --receiving-spring-kn-per-mm=20 --outer-head-dry-domain=independent --check",
+      "exitCode": 0,
+      "result": "project/rof/studies/roof_water_current_trial_280_25_60_20_independent.json",
+      "resultSHA256": "b68add723f473528a0b0b306c7635e5272cc42ad25d561ab4720422fbb281889",
+      "logSHA256": "ec862101ef69a335b80866bc46764412ad965ed8bf14324a0865c992e2cb3bc5"
+    }
+  ],
+  "staticChecks": [
+    "roof_water_current_checkpoint.py --check PASS",
+    "roof_water_current_receiving.py --check PASS",
+    "git apply --check current-stiffness-mass-checkpoint.patch PASS"
+  ],
+  "motionValidation": "Both920-query and1112-query generation runs completed with source identities and their native/virtual-work consistency checks. No claim of a second complete motion replay."
+}

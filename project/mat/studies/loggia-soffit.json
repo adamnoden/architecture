@@ -1,0 +1,927 @@
+{
+  "section": {
+    "walk": [
+      4800,
+      7750,
+      2400,
+      4250
+    ],
+    "flat": [
+      4800,
+      8470,
+      2400,
+      2810
+    ],
+    "portalFaces": [
+      [
+        7695,
+        8470
+      ],
+      [
+        11280,
+        12055
+      ]
+    ],
+    "pier": [
+      4307.5,
+      4520
+    ],
+    "tieBottom": 2175,
+    "slab": [
+      4377.5,
+      8082.5,
+      7622.5,
+      11667.5
+    ],
+    "slabZ": [
+      3170,
+      3370
+    ],
+    "westX": [
+      4280.5,
+      4307.5,
+      4447.5,
+      4647.5,
+      4697.5,
+      4800
+    ],
+    "northOrdinaryY": [
+      11570.5,
+      11597.5,
+      11737.5,
+      11847.5,
+      11897.5,
+      12000
+    ],
+    "z": {
+      "floor": 3450,
+      "glassBottom": 2930,
+      "railTop": 2963,
+      "railBottom": 2923,
+      "ribBottom": 2915,
+      "finish": 2890,
+      "brickHead": 2870
+    },
+    "normalCoverX": [
+      4825,
+      400
+    ],
+    "fireField": {
+      "thickness": 200,
+      "outer_main_axis": 31,
+      "reference_hs": 60,
+      "reference_a": 10,
+      "route": "TCC linked2018StructuralFireDesign SlabsTable5 firstgeneration one-wayREI30 comparator ONLY",
+      "source": "https://www.concretecentre.com/TCC/media/TCCMediaLibrary/Events/Online%20course/CCIP_HowToComp_Feb18.pdf",
+      "rating_qualified": false,
+      "holds": "Current edition/UKNA,fireactions,supports,spalling,actualports/edges/seals"
+    }
+  },
+  "dry": {
+    "finishKgMax": 16.005000000000003,
+    "glassPieceKg": 3.5639999999999996
+  },
+  "grid": {
+    "bayY": [
+      450,
+      450,
+      300,
+      450,
+      300,
+      450,
+      410
+    ],
+    "railY": [
+      8470,
+      8920,
+      9370,
+      9670,
+      10120,
+      10420,
+      10870,
+      11280
+    ],
+    "hangersXY": [
+      [
+        5100,
+        8470
+      ],
+      [
+        5700,
+        8470
+      ],
+      [
+        6300,
+        8470
+      ],
+      [
+        6900,
+        8470
+      ],
+      [
+        5100,
+        8920
+      ],
+      [
+        5700,
+        8920
+      ],
+      [
+        6300,
+        8920
+      ],
+      [
+        6900,
+        8920
+      ],
+      [
+        5100,
+        9370
+      ],
+      [
+        5700,
+        9370
+      ],
+      [
+        6300,
+        9370
+      ],
+      [
+        6900,
+        9370
+      ],
+      [
+        5100,
+        9670
+      ],
+      [
+        5700,
+        9670
+      ],
+      [
+        6300,
+        9670
+      ],
+      [
+        6900,
+        9670
+      ],
+      [
+        5100,
+        10120
+      ],
+      [
+        5700,
+        10120
+      ],
+      [
+        6300,
+        10120
+      ],
+      [
+        6900,
+        10120
+      ],
+      [
+        5100,
+        10420
+      ],
+      [
+        5700,
+        10420
+      ],
+      [
+        6300,
+        10420
+      ],
+      [
+        6900,
+        10420
+      ],
+      [
+        5100,
+        10870
+      ],
+      [
+        5700,
+        10870
+      ],
+      [
+        6300,
+        10870
+      ],
+      [
+        6900,
+        10870
+      ],
+      [
+        5100,
+        11280
+      ],
+      [
+        5700,
+        11280
+      ],
+      [
+        6300,
+        11280
+      ],
+      [
+        6900,
+        11280
+      ]
+    ],
+    "catchXY": [
+      [
+        5400,
+        8470
+      ],
+      [
+        6600,
+        8470
+      ],
+      [
+        5400,
+        8920
+      ],
+      [
+        6600,
+        8920
+      ],
+      [
+        5400,
+        9370
+      ],
+      [
+        6600,
+        9370
+      ],
+      [
+        5400,
+        9670
+      ],
+      [
+        6600,
+        9670
+      ],
+      [
+        5400,
+        10120
+      ],
+      [
+        6600,
+        10120
+      ],
+      [
+        5400,
+        10420
+      ],
+      [
+        6600,
+        10420
+      ],
+      [
+        5400,
+        10870
+      ],
+      [
+        6600,
+        10870
+      ],
+      [
+        5400,
+        11280
+      ],
+      [
+        6600,
+        11280
+      ]
+    ],
+    "fieldAreaM2": 6.744,
+    "returnAreaInWalkProjectionM2": 3.4559999999999995,
+    "lowerGlassBays": 28,
+    "staggeredUpperPieces": 35,
+    "railKgPerM": 3.312,
+    "wetKgPerM2": 128.26403855594506,
+    "massKgPerM2": {
+      "glass": 26.4,
+      "wetRender": 50.0,
+      "ribLath": 1.5,
+      "panelFramesAndCaptives": 8.718861209964414,
+      "lowerCatchTrays": 9.330486358244364,
+      "upperTrays": 9.463819691577699,
+      "formedTrayRibs": 6.4399999999999995,
+      "mainRails": 9.429181494661922,
+      "upperAndLowerLedgers": 3.461921708185053,
+      "rodsAndEndHardware": 1.753954938523601,
+      "catchRodsAndCartridges": 1.7658131547880007
+    }
+  },
+  "signed": {
+    "downKPa": 3.9486647946156586,
+    "upKPa": 1.1175568035895609,
+    "maxTributaryM": 0.45,
+    "maxHangerDownKN": 1.2371244734856541,
+    "maxHangerUpKN": 0.47272531590860767,
+    "floodedDownKPa": 4.265979054615658,
+    "floodedHangerDownKN": 1.3335086799606541,
+    "sheetStressMPa": 71.98839654663924,
+    "sheetDeflectionMM": 1.7484228435874167,
+    "ribStressMPa": 101.23368264371143,
+    "ribDeflectionMM": 1.1064238307076621,
+    "railMomentKNmBound": 0.15992092418193415,
+    "railStressMPaBound": 34.886002526544836,
+    "lossCatchFactor": 2.414213562373095,
+    "lossCatchPeakKN": 6.438749481406508,
+    "survivingHangerPeakKN": 3.509191426248248,
+    "lostHangerRailMPa": 181.9807036772031,
+    "rodRootEulerPinnedKN": 5.686696621861057,
+    "rodRootEulerCantileverKN": 1.4216741554652643
+  },
+  "castInsert": {
+    "article": "1074A10S",
+    "length": 60,
+    "thread": [
+      "M10",
+      35
+    ],
+    "bodyOD": 16,
+    "crossPin": [
+      6,
+      50
+    ],
+    "axialShearRatedKg": [
+      600,
+      400
+    ],
+    "minimumEdgeSpacingSlab": [
+      75,
+      150,
+      85
+    ],
+    "fieldEdge": 387.5,
+    "meshXYPhase": [
+      5025,
+      8375
+    ],
+    "steelSurfaceClearXY": [
+      44,
+      41
+    ],
+    "relativePositionBudget": 5,
+    "barClearTrial": 21,
+    "catchArticle": "1074A12S",
+    "catchBodyOD": 20,
+    "catchCrossPin": [
+      10,
+      75
+    ],
+    "catchThread": [
+      "M12",
+      20
+    ],
+    "catchLength": 50,
+    "catchSurfaceClearXY": [
+      31.5,
+      39
+    ]
+  },
+  "thermal": {
+    "wallU110": 0.3244526919653185,
+    "wallU200": 0.189493158321766,
+    "floorU240": 0.15990639625585024,
+    "railNotchAreaFraction": 0.09964412811387902,
+    "rodDeltaU": 0.03995232569626608,
+    "railOnlyComparison": 0.2022124068372848,
+    "allFieldWorstNotchAndRods": 0.26597217134124956,
+    "wallHead2D": [
+      {
+        "cellMM": 20,
+        "brickAndOpenCavityToRC": false,
+        "fromRoomWPerM": 4.4528,
+        "lowestWarmSurfaceC": 19.5315
+      },
+      {
+        "cellMM": 20,
+        "brickAndOpenCavityToRC": true,
+        "fromRoomWPerM": 23.35,
+        "lowestWarmSurfaceC": 16.9678
+      },
+      {
+        "cellMM": 10,
+        "brickAndOpenCavityToRC": false,
+        "fromRoomWPerM": 4.4529,
+        "lowestWarmSurfaceC": 19.536
+      },
+      {
+        "cellMM": 10,
+        "brickAndOpenCavityToRC": true,
+        "fromRoomWPerM": 24.1205,
+        "lowestWarmSurfaceC": 16.8436
+      }
+    ]
+  },
+  "service": {
+    "footLinesX": [
+      5390,
+      6800
+    ],
+    "footSize": 200,
+    "floorClearToTrough": 65,
+    "deckX": [
+      4850,
+      7150
+    ],
+    "deckZ": 950,
+    "ballastKN": 2.4,
+    "ballastX": 6150,
+    "overturnKNm": 1.1815,
+    "restoringKNm": 1.824,
+    "ratio": 1.5438002539145155,
+    "nearFootLineKN": 4.294326241134752,
+    "eastOverturnKNm": 0.735,
+    "eastRestoringKNm": 1.56,
+    "stageAxisYRange": [
+      8970,
+      10780
+    ],
+    "footYOffsets": [
+      -400,
+      400
+    ],
+    "largestPanelHalfDiagonal": 375.0,
+    "sideRelease": {
+      "stations": [
+        {
+          "panel": [
+            4800,
+            8470,
+            600,
+            450
+          ],
+          "worker": [
+            5175,
+            9245
+          ],
+          "controlY": 9045,
+          "stageY": 8970,
+          "nearFootMarginY": 125,
+          "maxControlReach": 557.79
+        },
+        {
+          "panel": [
+            5400,
+            8470,
+            600,
+            450
+          ],
+          "worker": [
+            5700,
+            9245
+          ],
+          "controlY": 9045,
+          "stageY": 8970,
+          "nearFootMarginY": 125,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6000,
+            8470,
+            600,
+            450
+          ],
+          "worker": [
+            6300,
+            9245
+          ],
+          "controlY": 9045,
+          "stageY": 8970,
+          "nearFootMarginY": 125,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6600,
+            8470,
+            600,
+            450
+          ],
+          "worker": [
+            6825,
+            9245
+          ],
+          "controlY": 9045,
+          "stageY": 8970,
+          "nearFootMarginY": 125,
+          "maxControlReach": 557.79
+        },
+        {
+          "panel": [
+            4800,
+            8920,
+            600,
+            450
+          ],
+          "worker": [
+            5175,
+            9695
+          ],
+          "controlY": 9495,
+          "stageY": 9370,
+          "nearFootMarginY": 75,
+          "maxControlReach": 557.79
+        },
+        {
+          "panel": [
+            5400,
+            8920,
+            600,
+            450
+          ],
+          "worker": [
+            5700,
+            9695
+          ],
+          "controlY": 9495,
+          "stageY": 9370,
+          "nearFootMarginY": 75,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6000,
+            8920,
+            600,
+            450
+          ],
+          "worker": [
+            6300,
+            9695
+          ],
+          "controlY": 9495,
+          "stageY": 9370,
+          "nearFootMarginY": 75,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6600,
+            8920,
+            600,
+            450
+          ],
+          "worker": [
+            6825,
+            9695
+          ],
+          "controlY": 9495,
+          "stageY": 9370,
+          "nearFootMarginY": 75,
+          "maxControlReach": 557.79
+        },
+        {
+          "panel": [
+            4800,
+            9370,
+            600,
+            300
+          ],
+          "worker": [
+            5175,
+            9995
+          ],
+          "controlY": 9795,
+          "stageY": 9670,
+          "nearFootMarginY": 75,
+          "maxControlReach": 557.79
+        },
+        {
+          "panel": [
+            5400,
+            9370,
+            600,
+            300
+          ],
+          "worker": [
+            5700,
+            9995
+          ],
+          "controlY": 9795,
+          "stageY": 9670,
+          "nearFootMarginY": 75,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6000,
+            9370,
+            600,
+            300
+          ],
+          "worker": [
+            6300,
+            9995
+          ],
+          "controlY": 9795,
+          "stageY": 9670,
+          "nearFootMarginY": 75,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6600,
+            9370,
+            600,
+            300
+          ],
+          "worker": [
+            6825,
+            9995
+          ],
+          "controlY": 9795,
+          "stageY": 9670,
+          "nearFootMarginY": 75,
+          "maxControlReach": 557.79
+        },
+        {
+          "panel": [
+            4800,
+            9670,
+            600,
+            450
+          ],
+          "worker": [
+            5175,
+            10445
+          ],
+          "controlY": 10245,
+          "stageY": 10120,
+          "nearFootMarginY": 75,
+          "maxControlReach": 557.79
+        },
+        {
+          "panel": [
+            5400,
+            9670,
+            600,
+            450
+          ],
+          "worker": [
+            5700,
+            10445
+          ],
+          "controlY": 10245,
+          "stageY": 10120,
+          "nearFootMarginY": 75,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6000,
+            9670,
+            600,
+            450
+          ],
+          "worker": [
+            6300,
+            10445
+          ],
+          "controlY": 10245,
+          "stageY": 10120,
+          "nearFootMarginY": 75,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6600,
+            9670,
+            600,
+            450
+          ],
+          "worker": [
+            6825,
+            10445
+          ],
+          "controlY": 10245,
+          "stageY": 10120,
+          "nearFootMarginY": 75,
+          "maxControlReach": 557.79
+        },
+        {
+          "panel": [
+            4800,
+            10120,
+            600,
+            300
+          ],
+          "worker": [
+            5175,
+            10745
+          ],
+          "controlY": 10545,
+          "stageY": 10420,
+          "nearFootMarginY": 75,
+          "maxControlReach": 557.79
+        },
+        {
+          "panel": [
+            5400,
+            10120,
+            600,
+            300
+          ],
+          "worker": [
+            5700,
+            10745
+          ],
+          "controlY": 10545,
+          "stageY": 10420,
+          "nearFootMarginY": 75,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6000,
+            10120,
+            600,
+            300
+          ],
+          "worker": [
+            6300,
+            10745
+          ],
+          "controlY": 10545,
+          "stageY": 10420,
+          "nearFootMarginY": 75,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6600,
+            10120,
+            600,
+            300
+          ],
+          "worker": [
+            6825,
+            10745
+          ],
+          "controlY": 10545,
+          "stageY": 10420,
+          "nearFootMarginY": 75,
+          "maxControlReach": 557.79
+        },
+        {
+          "panel": [
+            4800,
+            10420,
+            600,
+            450
+          ],
+          "worker": [
+            5175,
+            10095
+          ],
+          "controlY": 10295,
+          "stageY": 10420,
+          "nearFootMarginY": 75,
+          "maxControlReach": 557.79
+        },
+        {
+          "panel": [
+            5400,
+            10420,
+            600,
+            450
+          ],
+          "worker": [
+            5700,
+            10095
+          ],
+          "controlY": 10295,
+          "stageY": 10420,
+          "nearFootMarginY": 75,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6000,
+            10420,
+            600,
+            450
+          ],
+          "worker": [
+            6300,
+            10095
+          ],
+          "controlY": 10295,
+          "stageY": 10420,
+          "nearFootMarginY": 75,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6600,
+            10420,
+            600,
+            450
+          ],
+          "worker": [
+            6825,
+            10095
+          ],
+          "controlY": 10295,
+          "stageY": 10420,
+          "nearFootMarginY": 75,
+          "maxControlReach": 557.79
+        },
+        {
+          "panel": [
+            4800,
+            10870,
+            600,
+            410
+          ],
+          "worker": [
+            5175,
+            10545
+          ],
+          "controlY": 10745,
+          "stageY": 10780,
+          "nearFootMarginY": 165,
+          "maxControlReach": 557.79
+        },
+        {
+          "panel": [
+            5400,
+            10870,
+            600,
+            410
+          ],
+          "worker": [
+            5700,
+            10545
+          ],
+          "controlY": 10745,
+          "stageY": 10780,
+          "nearFootMarginY": 165,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6000,
+            10870,
+            600,
+            410
+          ],
+          "worker": [
+            6300,
+            10545
+          ],
+          "controlY": 10745,
+          "stageY": 10780,
+          "nearFootMarginY": 165,
+          "maxControlReach": 514.78
+        },
+        {
+          "panel": [
+            6600,
+            10870,
+            600,
+            410
+          ],
+          "worker": [
+            6825,
+            10545
+          ],
+          "controlY": 10745,
+          "stageY": 10780,
+          "nearFootMarginY": 165,
+          "maxControlReach": 557.79
+        }
+      ],
+      "maxReach": 557.79,
+      "bodyToPanelPlan": 25,
+      "maxLongDriver": 545,
+      "shortDriver": 155,
+      "clearBetween20Heads": 15,
+      "stageHalfLength": 650,
+      "floorToDeckAdjustmentMM": 8
+    }
+  },
+  "northShoulder": {
+    "outerRingFace": 11775,
+    "axialGlassEnd": 12015,
+    "overlapUpperLowerGlass": 72.5,
+    "gapToFirstUpperBrick": 122.5,
+    "bearingMM": 80.0,
+    "toeY": 11977.5,
+    "trialReceiverFaceY": 11737.5,
+    "steelProjectionMM": 240.0,
+    "upperLeafTrialHeightM": 4,
+    "bracketPitchMM": 600,
+    "characteristicKN": 4.919999999999999,
+    "eccentricMomentKNm": 1.03935
+  }
+}

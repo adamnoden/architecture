@@ -1,7 +1,7 @@
+import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { sha256SemanticFingerprint } from '../core/identity.js'
 import { createReferenceHouseSource } from '../reference-house/fixture.js'
 import { referenceHouseSourceFingerprint } from '../reference-house/identity.js'
 import { compileDeploymentCase } from './compile.js'
@@ -197,7 +197,7 @@ const exact = <T extends string | number>(value: unknown, expected: T, label: st
 }
 
 const uniqueSorted = (values: readonly string[]): string[] =>
-  [...new Set(values)].sort((a, b) => a.localeCompare(b))
+  [...new Set(values)].sort((a, b) => compareDplIdentityStrings(a, b))
 
 const coverageRegistryIds = (
   path: string,
@@ -307,7 +307,7 @@ export const validateDPLT5Manifest = (value: unknown): DPLT5Manifest => {
   if (!Array.isArray(raw.sources) || raw.sources.length !== 5) {
     throw new Error('DPL-T5 requires exactly five pinned T1–T4/control source records.')
   }
-  const sources = raw.sources.map(validateSource).sort((a, b) => a.id.localeCompare(b.id))
+  const sources = raw.sources.map(validateSource).sort((a, b) => compareDplIdentityStrings(a.id, b.id))
   const expectedSourceIds = ['S1', 'S2', 'S3', 'S4', 'S5']
   if (JSON.stringify(sources.map((source) => source.id)) !== JSON.stringify(expectedSourceIds)) {
     throw new Error('DPL-T5 source ids must be exactly S1 through S5.')
@@ -320,7 +320,7 @@ export const validateDPLT5Manifest = (value: unknown): DPLT5Manifest => {
   const ids = controlledCoverageIds()
   const claims = raw.claims
     .map((claim, index) => validateClaim(claim, index, sourceIds, ids))
-    .sort((a, b) => a.id.localeCompare(b.id))
+    .sort((a, b) => compareDplIdentityStrings(a.id, b.id))
   const expectedClaimIds = Array.from({ length: 17 }, (_, index) => `LNR-C${String(index + 1).padStart(2, '0')}`)
   if (JSON.stringify(claims.map((claim) => claim.id)) !== JSON.stringify(expectedClaimIds)) {
     throw new Error('DPL-T5 claims must be exactly LNR-C01 through LNR-C17.')
@@ -439,8 +439,8 @@ const createRuntimeSite = (manifest: DPLT5Manifest): LoadedPilotSite => {
     indexEntry,
     recordPath: DPL_T5_MANIFEST_PATH,
     recordText,
-    recordFingerprint: sha256SemanticFingerprint({ recordPath: DPL_T5_MANIFEST_PATH, recordText }),
-    indexEntryFingerprint: sha256SemanticFingerprint(indexEntry)
+    recordFingerprint: sha256DplSemanticFingerprint({ recordPath: DPL_T5_MANIFEST_PATH, recordText }),
+    indexEntryFingerprint: sha256DplSemanticFingerprint(indexEntry)
   }
 }
 
@@ -540,15 +540,15 @@ export const compileDPLT5LennardRealControlCase = (
       claim.evidenceState.startsWith('UNKNOWN_') || claim.evidenceState.startsWith('PARTIALLY_')
     )
     .map((claim) => claim.id)
-    .sort((a, b) => a.localeCompare(b))
+    .sort((a, b) => compareDplIdentityStrings(a, b))
 
   const runtime: DPLT5RuntimeSummary = {
-    targetIds: ledger.targetComposition.map((target) => target.targetId).sort((a, b) => a.localeCompare(b)),
-    interfaceIds: ledger.caseIdentity.manifest.interfaceContracts.map((contract) => contract.id).sort((a, b) => a.localeCompare(b)),
+    targetIds: ledger.targetComposition.map((target) => target.targetId).sort((a, b) => compareDplIdentityStrings(a, b)),
+    interfaceIds: ledger.caseIdentity.manifest.interfaceContracts.map((contract) => contract.id).sort((a, b) => compareDplIdentityStrings(a, b)),
     obligationResultCounts: obligationResultCounts(ledger),
     applicabilityCounts: applicabilityCounts(ledger),
     candidateConformanceCounts: candidateConformanceCounts(ledger),
-    unresolvedInputs: [...ledger.unresolvedInputs].sort((a, b) => a.localeCompare(b)),
+    unresolvedInputs: [...ledger.unresolvedInputs].sort((a, b) => compareDplIdentityStrings(a, b)),
     unresolvedInputCount: ledger.unresolvedInputs.length
   }
   const coverage: DPLT5CoverageSummary = {
@@ -567,8 +567,8 @@ export const compileDPLT5LennardRealControlCase = (
     siteInterfaceDischarge: 'NOT_INFERRED_FROM_PLACEMENT' as const,
     corpusMembership: 'EXCLUDED_FROM_DPL14_AND_DPL16_SAMPLE' as const
   }
-  const manifestFingerprint = sha256SemanticFingerprint(manifest)
-  const sourceSetFingerprint = sha256SemanticFingerprint(
+  const manifestFingerprint = sha256DplSemanticFingerprint(manifest)
+  const sourceSetFingerprint = sha256DplSemanticFingerprint(
     manifest.sources.map(({ id, path, gitBlobSha }) => ({ id, path, gitBlobSha }))
   )
   const resultPayload = {
@@ -595,6 +595,6 @@ export const compileDPLT5LennardRealControlCase = (
     coverage,
     readiness: 'REAL_CONTROL_RUNTIME_COMPOSED_GAPS_EXPOSED',
     proofBoundary,
-    resultFingerprint: sha256SemanticFingerprint(resultPayload)
+    resultFingerprint: sha256DplSemanticFingerprint(resultPayload)
   }
 }

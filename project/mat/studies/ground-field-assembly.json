@@ -1,0 +1,85 @@
+{
+  "status": "Unselected whole-field development comparison. Bespoke threshold rail withdrawn as preferred detail; concrete performance/junction proof takes priority. No geometry, material, air, moisture, thermal or structural admission.",
+  "stockPriceScreen": {
+    "source": "https://stainlesseurope.co.uk/en_GB/p/Stainless-steel-sheet-1-X-1000-X-2000-mm-2B-1.4404/40850",
+    "accessed": "6 November 2026",
+    "productCode": "S-BL-MZ3/1.0X1000X2000/1.4404/2B",
+    "sheet_mm": [1, 1000, 2000],
+    "priceGBP_withoutVAT": 216.53,
+    "supplierNominalMass_kg": 16,
+    "scope": "Advertised stock-only price, not a quotation, landed UK price, stock reservation, constituent acceptance or installed assembly cost. One full sheet per occupied layout slot is an explicit no-offcut-reuse scenario; returns are not silently nested into waste. No purchase."
+  },
+  "referenceControl": "current-ground-pier-boundary.json",
+  "panelLayout": {
+    "width": 1000,
+    "length": 2000,
+    "rule": "One explicit layout, not an optimised stock order. Clip the actual room-field topology; count connected pieces and shared seams, including three confirmed source-proposed RC crossings. Welding, backing, movement, protection and inspection remain unqualified."
+  },
+  "mineralWallBase": {
+    "status": "Bonded DPC1 comparison only; exact unit, beds, constituents, mechanical and moisture performance remain unselected",
+    "courseHeights": [
+      65,
+      65
+    ],
+    "bedHeights": [
+      10,
+      10
+    ],
+    "headerWidth": 215,
+    "rule": "Two courses plus two beds occupy the existing 150 mm territory; a top bed belongs to the wall above. Full-width 215 mm headers are a proposed local base widening, not 102/102.5 mm stretchers silently supporting 140 mm walls. No cut unit or generic mortar acceptance."
+  },
+  "thresholdCover": {
+    "status": "WITHDRAWN as preferred detail: integral pan retained, but fixed cover and grooved riser rail require custom seal/ends, thin lands and individually closed bolt penetrations without demonstrated whole-house benefit. Geometric trial only.",
+    "coverThickness": 4,
+    "nominalSlideGap": 1,
+    "clampThickness": 3,
+    "endClearanceFromOuterPan": 8,
+    "boltPitchMaximum": 50,
+    "boltDiameterReference": 3,
+    "walkingLoadSensitivity_N": 1500,
+    "loadedWidthSensitivity_mm": 100,
+    "steelESensitivity_MPa": 200000,
+    "rule": "Fixed field rises behind the existing apron start and covers its dry horizontal leg with a nominal sliding gap. Its welded grooved riser rail closes against the existing 15 mm pan riser; groove depth is not an open flange gap. Remove the bolts and release end captures before north withdrawal; the fixed rail stays south of the receding riser and above the sliding zero-level apron. No permanent weld to the pan or wet-floor penetration.",
+    "boltEndInset": 6,
+    "sealCentreZReference": 6.5,
+    "boltHoleDiameterReference": 3.5
+  },
+  "metalSealBurden": {
+    "role": "Circular catalogue data used only to expose clamp and machining burden; rejected as a drop-in 1.78 m custom threshold seal",
+    "source": "https://www.trelleborg.com/seals/-/media/tss-media-repository/tss_website/pdf-and-other-literature/catalogs/wills_rings_gb_en.pdf?rev=aa8596043d1d45b0b3da37c0cdb6b4bd",
+    "edition": "April 2025; accessed 6 November 2026",
+    "pages": [
+      6,
+      10,
+      14,
+      24
+    ],
+    "type": "Wills Rings C, thin-wall K, 1.59 mm free height",
+    "typicalLineLoad_N_per_mm": 15,
+    "grooveDepthNominal_mm": 1.32,
+    "grooveDepthPositiveTolerance_mm": 0.08,
+    "catalogueDiameterRange_mm": [
+      20,
+      150
+    ],
+    "airWaterHousingRa_um": [
+      0.4,
+      0.8
+    ],
+    "scope": "Typical circular data, not design criteria or evidence for a custom straight/end-return shape, formed-pan finish, working gap, force, water, air or renewal performance. Replace after dismantling; no polymer exception.",
+    "grooveWidthMinimum_mm": 2.25
+  },
+  "concreteControl": {
+    "status": "Conditional complete-route challenger, not a universal membrane waiver",
+    "source": "https://assets.publishing.service.gov.uk/media/5a8192a0e5274a2e8ab54b5f/BR_PDF_AD_C_2013.pdf",
+    "sourceRole": "England AD C 2004 edition with 2010/2013 amendments, paragraphs 4.17–4.22 and 5.5; accessed 6 November 2026. Guidance control, not project acceptance or proof of connected support, floor-joint, air or gas performance.",
+    "inSituGuidanceControl": {"minimumThickness_mm": 100, "minimumCement_kg_per_m3": 300, "minimumReinforcementCover_mm": 40},
+    "requires": [
+      "Actual monolithic concrete/crack/construction-joint air and moisture performance under the assigned exposures",
+      "Continuous external and internal wall/pier DPC, floor/wall and three actual threshold transitions",
+      "Actual wet-tolerant subfloor and outdoor contacts, gravity routes, vapour/drying and condensation consequences",
+      "Site-specific ground-gas and pressure-water suitability without relying on active dewatering",
+      "Complete constituents, intervention route and actual thermal/heat price"
+    ]
+  }
+}

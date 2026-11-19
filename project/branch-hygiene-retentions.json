@@ -1,4 +1,6 @@
 {
   "schemaVersion": 1,
-  "retainedBranches": {}
+  "retainedBranches": {
+    "runtime/claims": "Canonical ACO lease store and runtime operations entry point; retained coordination infrastructure under AGENTS.md and project/control/README.md. Never merge into main or delete during branch cleanup."
+  }
 }

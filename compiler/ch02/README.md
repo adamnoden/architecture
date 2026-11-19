@@ -90,6 +90,6 @@ CH-00 remains the semantic/artefact authority and CH-01 remains the fail-closed 
 - no canonical status, diagnostic set, proof boundary or selected derived value changes;
 - M3 remains unchanged and no RH-C6 appears.
 
-## Next gate
+## Historical handoff
 
-After CH-02 passes, **CH-03 — single-pass Reference House compiler — is NEXT**. CH-03, not CH-02, owns removal of nested stage orchestration and duplicate plan compilation.
+CH-02 handed removal of nested stage orchestration and duplicate plan compilation to [CH-03 — single-pass Reference House compiler](../ch03/README.md). That work and the [CH programme](../../docs/computational/compiler-hardening-programme.md) are complete.

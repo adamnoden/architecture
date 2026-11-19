@@ -1,0 +1,245 @@
+{
+  "sourceHashes": {
+    "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+    "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+    "project/had/studies/open-north-loggia.json": "542781c6bb1d277b20492e8433cea498e98eaea5db2e737a5ec7e9655f9d18fd",
+    "project/mat/studies/loggia-soffit.json": "b02717a9ad5431259f9f0f1850ab7f596cf612bc13f04fbd9bdfc7b5f893fc29"
+  },
+  "scope": "Preferred concealed collar geometry. No D-region, full local stiffness, full floor-mesh transitions or final coupled structure adoption.",
+  "cornerCandidate": {
+    "sameExistingSoffitOrdinarySlabTopAndCollarTopZmm": [
+      3170,
+      3370,
+      3415
+    ],
+    "nominalCollarAndActuallyCommonContactDepthMm": [
+      245,
+      200
+    ],
+    "FFLAndFinishUndersideZmm": [
+      3450,
+      3435
+    ],
+    "residualServiceHeightUnder15FinishMm": 20,
+    "unchangedExteriorGlassCavityAndBrickMm": [
+      110.0,
+      50.0,
+      102.5
+    ],
+    "newThickeningPlanAreaM2PerCorner": 0.192,
+    "oldConcreteUnitWeightAdditionalDeadKNPerCorner": 0.216,
+    "allNearestApertures": {
+      "NW north": {
+        "wingAxisSpanMm": [
+          332.5,
+          1192.5
+        ],
+        "nearestRawPlanReserveMm": 107.5,
+        "nearestWindow": "north-window-0",
+        "sillAboveCollarTopMm": 885
+      },
+      "NW west": {
+        "wingAxisSpanMm": [
+          10807.5,
+          11667.5
+        ],
+        "nearestRawPlanReserveMm": 107.5,
+        "nearestWindow": "west-window-3",
+        "sillAboveCollarTopMm": 785
+      },
+      "NE north": {
+        "wingAxisSpanMm": [
+          10807.5,
+          11667.5
+        ],
+        "nearestRawPlanReserveMm": 107.5,
+        "nearestWindow": "north-window-4",
+        "sillAboveCollarTopMm": 885
+      },
+      "NE east": {
+        "wingAxisSpanMm": [
+          10807.5,
+          11667.5
+        ],
+        "nearestRawPlanReserveMm": 107.5,
+        "nearestWindow": "east-window-3",
+        "sillAboveCollarTopMm": 785
+      }
+    },
+    "NWRearCabinetPlanOverlapInWestStripXYmm": [
+      93.0,
+      742.5
+    ],
+    "NENorthEmitterPlanGapToNearestCollarXmm": 32.5,
+    "slabOnRemoteSideMustRemainZ3370": true,
+    "placingFace": "Monolithic layout. Do not introduce a pour joint by using the internal verification plane."
+  },
+  "bendShoulderGeometry": {
+    "actualStepUAndZmm": [
+      70.0,
+      3415
+    ],
+    "lowerUpperAxisToSteppedFreeCornerMm": [
+      49.89135566778661,
+      40.15609746567516
+    ],
+    "lowerUpperSteelCoverAfter5SettingMm": [
+      36.89135566778661,
+      27.15609746567516
+    ],
+    "old3410UpperSteelCoverAfter5SettingMm": 23.855550256751258,
+    "requiredNoFurtherReceiverCoverMm": 25,
+    "nominalMinimumShoulderTopToFitH8RadiallyAheadOfUpperH16Mm": 3432.9841289832475,
+    "remainingFinishedFloorVoidIfH8MinimumTopUsedMm": 2.0158710167524987,
+    "radialLineForceOldBondedShearWitnessNPerMm": 240.3025231528825,
+    "separate90DegreeBendResultantAtOldWitnessKN": 56.07344940702138,
+    "scope": "Exact re-entrant corner cover, not stress-spread, confinement, crack-width or positive welded development. A conventional radially additional H8 cannot fit the selected vertical budget. Locate confinement beside the bend or externally around a developed alternative strut."
+  },
+  "interfaceComparisons": {
+    "chosen": {
+      "inboardFaceFromWallCentreMm": 190.0,
+      "extraRoomwardWidthBeyondOldCoreMm": 120.0,
+      "straightCrossingReservationMm": 25.0,
+      "localBendAngleAtFaceDegrees": 0.0,
+      "tensionPerCrossingH16KNAtSensitivity": 39.64991632022561,
+      "additionalVerticalInterfaceActionKN": 0.0
+    },
+    "tooNarrowRoomwardExtension": {
+      "inboardFaceFromWallCentreMm": 150.0,
+      "extraRoomwardWidthBeyondOldCoreMm": 80,
+      "straightCrossingReservationMm": -15.0,
+      "localBendAngleAtFaceDegrees": 5.215908570454124,
+      "tensionPerCrossingH16KNAtSensitivity": 39.81478154826296,
+      "additionalVerticalInterfaceActionKN": 14.47810238118653
+    },
+    "unchanged140Core": {
+      "inboardFaceFromWallCentreMm": 70.0,
+      "extraRoomwardWidthBeyondOldCoreMm": 0,
+      "straightCrossingReservationMm": -95.0,
+      "localBendAngleAtFaceDegrees": 35.15270296678005,
+      "tensionPerCrossingH16KNAtSensitivity": 48.49428107376118,
+      "additionalVerticalInterfaceActionKN": 111.6837988365409
+    },
+    "shallower195BodyAlternative": {
+      "notionalUpperSurfaceZmm": 3365,
+      "topH16CoverAfter5MmSettingsMm": 21.0,
+      "requiredLocalTopCoverMm": 25
+    },
+    "oldGeneralPlainTractionAt200CommonDepthMPa": 0.5532546463287294,
+    "counterfactual240GrossTractionMPaNotAdmitted": 0.45163644598263625
+  },
+  "actualTopReplacement": {
+    "barShapeRAndDiameterMm": [
+      165.0,
+      16.0
+    ],
+    "topAxisZByDirectionMm": [
+      3315.0,
+      3331.0
+    ],
+    "westCornerLocalAlongWingStationsMm": [
+      175,
+      325,
+      475,
+      625
+    ],
+    "reflectedToNorthEast": true,
+    "shopHoopStationsMm": [
+      130,
+      220,
+      280,
+      370,
+      430,
+      520,
+      580,
+      670
+    ],
+    "developedStraightEachSideAfterTangentMm": 850.0,
+    "fixedWallH10RephasedZFirstTwoMm": [
+      3300,
+      3450
+    ],
+    "fixedWallH10PitchMm": 150,
+    "adoptedDeckCageUnchangedOutsideStrip": true,
+    "chord4H20AxesInboardFromOldWallCentreMm": [
+      115.5,
+      167.5,
+      219.5,
+      271.5
+    ],
+    "chordBendRadiiMm": [
+      536,
+      484,
+      432,
+      380
+    ],
+    "chordPlaneZmm": 3265,
+    "chordParallelSpacingAfter10SettingsMm": 22
+  },
+  "nearestMainH12InCombined5Fixture": [
+    1.9748697008045593,
+    "swapped top H16 V175 Z3331.0",
+    "swapped collector H12 U+21 Z3760"
+  ],
+  "nearestMainH12Independent10": [
+    -3.0251302991954407,
+    "swapped top H16 V175 Z3331.0",
+    "swapped collector H12 U+21 Z3760"
+  ],
+  "nearestVerticalH20InIndependent10": [
+    46.97486970080456,
+    "swapped top H16 V175 Z3331.0",
+    "swapped wing H20 U+27 V100"
+  ],
+  "nearestH10WallFacesInCombined5": [
+    9.056189468668746,
+    "swapped top H16 V175 Z3331.0",
+    "swapped H10 wall face +35 Z3450"
+  ],
+  "nearestHoopInIndependent10": [
+    22.97486970080456,
+    "swapped top H16 V175 Z3331.0",
+    "swapped closed H8 at station 130"
+  ],
+  "nearestH20ChordInIndependent10": [
+    21.89323430463028,
+    "top H16 V175 Z3315.0",
+    "H20 chord V115.5"
+  ],
+  "closestNonCrossingH16": 123.94973940160912,
+  "crossedContacts": 16,
+  "old_new_chord": [
+    93.53532443196335,
+    95.15979916854145
+  ],
+  "friction_force_per_rod": 39.64991632022561,
+  "full_bond": 828.1573498964804,
+  "mandrelNeedAndActual": [
+    303.5355220859704,
+    314.0
+  ],
+  "steel_one": 87.41823036075947,
+  "new_top_d_z": [
+    149.0,
+    131.85917051749814
+  ],
+  "new_steelArea": 1340.412865531645,
+  "slabComparison": [
+    {
+      "id": "NW-W",
+      "oldM": 10.836164062499998,
+      "oldV": 16.865624999999998,
+      "oldMPerOne150MmLayoutAtNewZ": 12.3269743241658,
+      "gravityAndFrictionPerRodOldSensitivity": 51.9768906443914
+    },
+    {
+      "id": "NE",
+      "oldM": 18.71543994140625,
+      "oldV": 22.16484375,
+      "oldMPerOne150MmLayoutAtNewZ": 21.29025975359368,
+      "gravityAndFrictionPerRodOldSensitivity": 60.94017607381929
+    }
+  ],
+  "topH16CoverAfter5MmSetting": 26.0
+}

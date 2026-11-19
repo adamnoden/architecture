@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="1000" viewBox="0 0 1100 1000" role="img"><title>Retained stair guard and renewable wall rail</title><rect width="1100" height="1000" fill="#fbfaf5"/><g font-family="sans-serif" fill="#203538">
+<text x="32" y="42" font-size="28">Stair rail renewal on the two-flight RC stair</text>
+<text x="32" y="69" font-size="15">Fixed metal guards and transfer newel at the well. Removable solid timber on independent wall brackets.</text>
+<text x="32" y="115" font-size="20">1   Midlanding in plan</text>
+<rect x="78" y="189" width="220" height="226" fill="#e1e2d8"/>
+<path d="M96 386 V249 A92 92 0 0 1 280 249 V386" fill="none" stroke="#286a67" stroke-width="14" />
+<path d="M96 249 H280" fill="none" stroke="#9faea8" stroke-width="2" stroke-dasharray="5 4"/>
+<circle cx="96" cy="249" r="6" fill="#384749"/>
+<circle cx="142" cy="169.3" r="6" fill="#384749"/>
+<circle cx="234" cy="169.3" r="6" fill="#384749"/>
+<circle cx="280" cy="249" r="6" fill="#384749"/>
+<circle cx="280" cy="249" r="17" fill="#384749"/>
+<text x="42" y="144" font-size="14">Landing</text>
+<text x="38" y="439" font-size="15">Lower flight</text>
+<text x="234" y="439" font-size="15">Upper flight</text>
+<text x="105" y="280" font-size="15">200 mm well</text>
+<text x="117" y="306" font-size="13">Axes 160 apart</text>
+<text x="35" y="474" font-size="15">Ø40 post at X1703.5 / Y7132.5</text>
+<text x="374" y="115" font-size="20">2   Two heights at the first upper riser</text>
+<path d="M390 394 H548 V333 H802" fill="none" stroke="#384749" stroke-width="4" />
+<rect x="531" y="172" width="26" height="221" fill="#476865"/>
+<path d="M386 242 H542" fill="none" stroke="#286a67" stroke-width="14" />
+<path d="M548 178 L766 135" fill="none" stroke="#286a67" stroke-width="14" />
+<path d="M562 195 V233" fill="none" stroke="#946438" stroke-width="6" />
+<text x="586" y="210" font-size="15">Clear vertical land</text>
+<text x="586" y="232" font-size="14">94.9 mm after joint allowances</text>
+<text x="373" y="271" font-size="13">Landing rail top +2725</text>
+<text x="784" y="155" font-size="14">Flight rail top +2897.5 at nose</text>
+<text x="391" y="420" font-size="15">Landing +1725</text>
+<text x="575" y="357" font-size="15">First upper tread +1897.5</text>
+<text x="375" y="472" font-size="14">Newel is a vertical hand transfer. User and grip trials remain open.</text>
+<text x="32" y="528" font-size="20">3   Release the timber on the wall side</text>
+<path d="M55 694 L284 574" fill="none" stroke="#946438" stroke-width="15" />
+<path d="M294 568 L342 543" fill="none" stroke="#946438" stroke-width="15" />
+<path d="M284 559 V597" fill="none" stroke="#384749" stroke-width="2" />
+<path d="M159 636 V598 M153 607 L159 597 L165 607" fill="none" stroke="#286a67" stroke-width="3" />
+<text x="374" y="571" font-size="15">Plumb end joints allow a 20 mm lift off a 12 mm vertical pin.</text>
+<text x="374" y="605" font-size="15">A square cut normal to the sloping timber binds after 6.0 mm.</text>
+<text x="374" y="639" font-size="15">Move the supported rail toward the flight onto two retained cradles.</text>
+<text x="374" y="673" font-size="15">The well guard, treads, window grille and its independent frame stay fixed.</text>
+<text x="32" y="750" font-size="20">4   Two tread-supported pickup stations in plan</text>
+<rect x="97.6" y="797.1" width="52.8" height="133.2" fill="#c8d9d3"/>
+<rect x="361.6" y="797.1" width="52.8" height="133.2" fill="#c8d9d3"/>
+<rect x="85.0" y="775" width="12" height="41" fill="#80938e"/>
+<rect x="415.0" y="775" width="12" height="41" fill="#80938e"/>
+<path d="M124.0 811.9 V915.5" fill="none" stroke="#286a67" stroke-width="4" />
+<path d="M388.0 811.9 V915.5" fill="none" stroke="#286a67" stroke-width="4" />
+<path d="M58.0 811.9 H454.0" fill="none" stroke="#946438" stroke-width="8" />
+<path d="M58.0 915.5 H454.0" fill="none" stroke="#286a67" stroke-width="8" />
+<text x="490" y="799" font-size="15">Installed timber at X499.5. Gray saddles stay with the wall.</text>
+<text x="490" y="837" font-size="15">Two sliding cradles start 75 mm from the nearest saddle centre.</text>
+<text x="490" y="875" font-size="15">First rest at X779.5 after a 280 mm supported transverse draw.</text>
+<text x="490" y="913" font-size="15">Each foot sits on its own tread: +690 or +1035.</text>
+<text x="32" y="973" font-size="13">Diagrams are schematic. Use the coordinate ledger for scales, section heights and release allowances.</text>
+</g></svg>

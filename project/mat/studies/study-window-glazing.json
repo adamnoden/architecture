@@ -1,0 +1,134 @@
+{
+  "occurrence": "GROUND / outer-south / south-window-0",
+  "opening": {
+    "id": "south-window-0",
+    "wall": "outer-south",
+    "centre": 1800,
+    "width": 1000,
+    "kind": "window",
+    "swing": "left",
+    "hinge": "low",
+    "leaves": 1,
+    "sill": 750,
+    "head": 2850,
+    "spring": 2550,
+    "radialRingTrial": 215,
+    "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+  },
+  "geometry": {
+    "rawRadius": 566.6666666666666,
+    "centreZ": 2283.3333333333335,
+    "dryFinish": 27,
+    "inset": 35,
+    "nominal15LessFinish": -12,
+    "outside": [
+      930,
+      2030
+    ],
+    "face": 60,
+    "clear": 810,
+    "clearSill": 845,
+    "bar": 40,
+    "impost": 2440,
+    "bite": 15,
+    "opposingRebateWeb": 4,
+    "fanlightClearSideTop": 2525.08619152625
+  },
+  "lower12": {
+    "count": 12,
+    "visible": [
+      243.33333333333334,
+      363.75
+    ],
+    "unit": [
+      273.33333333333337,
+      393.75
+    ],
+    "under400Both": true,
+    "perimeterM": 16.01
+  },
+  "glassOnlyKgAtEpdAndTrialDensity": 27.97062565633058,
+  "controls": {
+    "springFour": {
+      "count": 12,
+      "visible": [
+        243.33333333333334,
+        391.25
+      ],
+      "unit": [
+        273.33333333333337,
+        421.25
+      ],
+      "under400Both": false,
+      "perimeterM": 16.67
+    },
+    "springFive": {
+      "count": 15,
+      "visible": [
+        243.33333333333334,
+        305.0
+      ],
+      "unit": [
+        273.33333333333337,
+        335.0
+      ],
+      "under400Both": true,
+      "perimeterM": 18.25
+    },
+    "lowerMinimumBite": {
+      "count": 12,
+      "visible": [
+        243.33333333333334,
+        363.75
+      ],
+      "unit": [
+        269.33333333333337,
+        389.75
+      ],
+      "under400Both": true,
+      "perimeterM": 15.818
+    }
+  },
+  "impostStrictUpperBoundAt15": 2465.0,
+  "fanlight": {
+    "cutWidth": 840.0,
+    "cutRadius": 486.66666666666663,
+    "cutZ": [
+      2445.0,
+      2770.0
+    ],
+    "cutAreaM2": 0.21406256563305745,
+    "glassOnlyKgAt4mm2500KgM3": 2.1406256563305743,
+    "openPocketWidth": 846.0,
+    "openPocketRadialAndLinearGap": 3,
+    "throughRetainedSightWidthDeficit": 30.0,
+    "clearM2": 0.18454167570454796,
+    "rectangularVisibleM2": 1.06215,
+    "visibleShare": 0.14802511262478527,
+    "centreOnlyWK": {
+      "fanlight": 1.0703417190863782,
+      "rectangles": 0.7435049999999999
+    },
+    "fanlightShare": 0.5900949114517802
+  },
+  "secondary": {
+    "outsideRadius": 531.6666666666666,
+    "frameMaximumWH": [
+      1000,
+      2200
+    ],
+    "minSashWH": [
+      450,
+      700
+    ],
+    "springHeadGrossHeight": 265,
+    "upperSashLowerEdgeMaximum": 2115,
+    "frameDeskXOverlap": 920.0,
+    "deskXYWH": [
+      655,
+      600,
+      1600,
+      700
+    ]
+  }
+}

@@ -1,0 +1,517 @@
+{
+  "affectedStates": [
+    {
+      "after": {
+        "blockers": [
+          "STR-RECONCILE"
+        ],
+        "state": "blocked"
+      },
+      "before": {
+        "blockers": [],
+        "state": "done"
+      },
+      "id": "HAD-SERVICES-ADOPTION"
+    },
+    {
+      "after": {
+        "blockers": [
+          "STR-RECONCILE"
+        ],
+        "state": "blocked"
+      },
+      "before": {
+        "blockers": [],
+        "state": "done"
+      },
+      "id": "HAD-COURT-BYPASS"
+    },
+    {
+      "after": {
+        "blockers": [
+          "HAD-COURT-BYPASS"
+        ],
+        "state": "blocked"
+      },
+      "before": {
+        "blockers": [],
+        "state": "done"
+      },
+      "id": "RWT-06"
+    },
+    {
+      "after": {
+        "blockers": [
+          "RWT-06"
+        ],
+        "state": "blocked"
+      },
+      "before": {
+        "blockers": [],
+        "state": "done"
+      },
+      "id": "RWT-07"
+    },
+    {
+      "after": {
+        "blockers": [
+          "HAD-SERVICES-ADOPTION"
+        ],
+        "state": "blocked"
+      },
+      "before": {
+        "blockers": [],
+        "state": "ready"
+      },
+      "id": "BCR-BAY-INTERFACES"
+    },
+    {
+      "after": {
+        "blockers": [
+          "HAD-SERVICES-ADOPTION"
+        ],
+        "state": "blocked"
+      },
+      "before": {
+        "blockers": [],
+        "state": "ready"
+      },
+      "id": "MRA-INTERNAL-LEAKS"
+    },
+    {
+      "after": {
+        "blockers": [
+          "RWT-07",
+          "STR-RECONCILE"
+        ],
+        "state": "blocked"
+      },
+      "before": {
+        "blockers": [],
+        "state": "ready"
+      },
+      "id": "ROF-RWT-GATE"
+    },
+    {
+      "after": {
+        "blockers": [
+          "ROF-RWT-GATE",
+          "MAT-COORDINATION",
+          "STR-RECONCILE"
+        ],
+        "state": "blocked"
+      },
+      "before": {
+        "blockers": [
+          "ROF-RWT-GATE",
+          "MAT-COORDINATION"
+        ],
+        "state": "blocked"
+      },
+      "id": "TRIAD-GATE"
+    }
+  ],
+  "authorityObservation": "Read-only local working-tree graph including the active PCO registration overlay. Exact file hashes are recorded; this is not a clean-main or live-claim observation.",
+  "baseCommit": "97b2920999d250d976702f39bf46cdd11760b716",
+  "baselineValidation": [],
+  "descendants": [
+    {
+      "id": "HAD-SERVICES-ADOPTION",
+      "lifecycle": "complete",
+      "path": [
+        "STR-RECONCILE",
+        "HAD-SERVICES-ADOPTION"
+      ]
+    },
+    {
+      "id": "HAD-COURT-BYPASS",
+      "lifecycle": "complete",
+      "path": [
+        "STR-RECONCILE",
+        "HAD-COURT-BYPASS"
+      ]
+    },
+    {
+      "id": "TRIAD-GATE",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "TRIAD-GATE"
+      ]
+    },
+    {
+      "id": "ROF-RWT-GATE",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "ROF-RWT-GATE"
+      ]
+    },
+    {
+      "id": "MAT-COORDINATION",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "HAD-SERVICES-ADOPTION",
+        "MAT-COORDINATION"
+      ]
+    },
+    {
+      "id": "MRA-INTERNAL-LEAKS",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "HAD-SERVICES-ADOPTION",
+        "MRA-INTERNAL-LEAKS"
+      ]
+    },
+    {
+      "id": "BCR-BAY-INTERFACES",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "HAD-SERVICES-ADOPTION",
+        "BCR-BAY-INTERFACES"
+      ]
+    },
+    {
+      "id": "RWT-06",
+      "lifecycle": "complete",
+      "path": [
+        "STR-RECONCILE",
+        "HAD-COURT-BYPASS",
+        "RWT-06"
+      ]
+    },
+    {
+      "id": "BCR-CONVERGENCE",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "TRIAD-GATE",
+        "BCR-CONVERGENCE"
+      ]
+    },
+    {
+      "id": "HRS-TECHNICAL",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "TRIAD-GATE",
+        "HRS-TECHNICAL"
+      ]
+    },
+    {
+      "id": "MRA-01",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "TRIAD-GATE",
+        "MRA-01"
+      ]
+    },
+    {
+      "id": "MRA-02",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "TRIAD-GATE",
+        "MRA-02"
+      ]
+    },
+    {
+      "id": "MRA-03",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "TRIAD-GATE",
+        "MRA-03"
+      ]
+    },
+    {
+      "id": "BCR-BAY-DESIGN",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "TRIAD-GATE",
+        "BCR-BAY-DESIGN"
+      ]
+    },
+    {
+      "id": "ROF-09",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "ROF-RWT-GATE",
+        "ROF-09"
+      ]
+    },
+    {
+      "id": "RWT-08",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "ROF-RWT-GATE",
+        "RWT-08"
+      ]
+    },
+    {
+      "id": "RWT-07",
+      "lifecycle": "complete",
+      "path": [
+        "STR-RECONCILE",
+        "HAD-COURT-BYPASS",
+        "RWT-06",
+        "RWT-07"
+      ]
+    },
+    {
+      "id": "HRS-SYNTHESIS",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "TRIAD-GATE",
+        "BCR-CONVERGENCE",
+        "HRS-SYNTHESIS"
+      ]
+    },
+    {
+      "id": "MRA-05",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "TRIAD-GATE",
+        "BCR-CONVERGENCE",
+        "MRA-05"
+      ]
+    },
+    {
+      "id": "DEL-CURRENT",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "TRIAD-GATE",
+        "BCR-CONVERGENCE",
+        "DEL-CURRENT"
+      ]
+    },
+    {
+      "id": "ADE-MODEL",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "TRIAD-GATE",
+        "HRS-TECHNICAL",
+        "ADE-MODEL"
+      ]
+    },
+    {
+      "id": "MRA-04",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "TRIAD-GATE",
+        "MRA-01",
+        "MRA-04"
+      ]
+    },
+    {
+      "id": "ADE-DETAILS",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "TRIAD-GATE",
+        "BCR-BAY-DESIGN",
+        "ADE-DETAILS"
+      ]
+    },
+    {
+      "id": "ADE-SCHEDULES",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "TRIAD-GATE",
+        "BCR-BAY-DESIGN",
+        "ADE-SCHEDULES"
+      ]
+    },
+    {
+      "id": "ADE-EVIDENCE",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "TRIAD-GATE",
+        "BCR-BAY-DESIGN",
+        "ADE-EVIDENCE"
+      ]
+    },
+    {
+      "id": "PLT-FINAL-PREP",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "TRIAD-GATE",
+        "BCR-CONVERGENCE",
+        "HRS-SYNTHESIS",
+        "PLT-FINAL-PREP"
+      ]
+    },
+    {
+      "id": "DEL-BAY-PACK",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "TRIAD-GATE",
+        "BCR-BAY-DESIGN",
+        "ADE-DETAILS",
+        "DEL-BAY-PACK"
+      ]
+    },
+    {
+      "id": "PLT-FINAL-FREEZE",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "TRIAD-GATE",
+        "BCR-CONVERGENCE",
+        "HRS-SYNTHESIS",
+        "PLT-FINAL-PREP",
+        "PLT-FINAL-FREEZE"
+      ]
+    },
+    {
+      "id": "PLT-PRINT-REVIEW",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "TRIAD-GATE",
+        "BCR-CONVERGENCE",
+        "HRS-SYNTHESIS",
+        "PLT-FINAL-PREP",
+        "PLT-PRINT-REVIEW"
+      ]
+    },
+    {
+      "id": "EPR-BAY-REVIEW",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "TRIAD-GATE",
+        "BCR-BAY-DESIGN",
+        "ADE-DETAILS",
+        "DEL-BAY-PACK",
+        "EPR-BAY-REVIEW"
+      ]
+    },
+    {
+      "id": "DEL-COMMISSION-PLAN",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "TRIAD-GATE",
+        "BCR-BAY-DESIGN",
+        "ADE-DETAILS",
+        "DEL-BAY-PACK",
+        "DEL-COMMISSION-PLAN"
+      ]
+    },
+    {
+      "id": "EDA-RENEWED",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "TRIAD-GATE",
+        "BCR-CONVERGENCE",
+        "HRS-SYNTHESIS",
+        "PLT-FINAL-PREP",
+        "PLT-FINAL-FREEZE",
+        "EDA-RENEWED"
+      ]
+    },
+    {
+      "id": "PUB-02-FINAL",
+      "lifecycle": "planned",
+      "path": [
+        "STR-RECONCILE",
+        "TRIAD-GATE",
+        "BCR-CONVERGENCE",
+        "HRS-SYNTHESIS",
+        "PLT-FINAL-PREP",
+        "PLT-FINAL-FREEZE",
+        "EDA-RENEWED",
+        "PUB-02-FINAL"
+      ]
+    }
+  ],
+  "forcedReopenIds": [
+    "STR-RECONCILE",
+    "HAD-SERVICES-ADOPTION",
+    "HAD-COURT-BYPASS",
+    "RWT-06",
+    "RWT-07"
+  ],
+  "observedWorkingTreePathsDifferingFromBaseCommit": [
+    "project/control/nodes/house-delivery.ts",
+    "project/control/nodes/mra.ts",
+    "project/bcr/buildability-construction-resolution-programme.md",
+    "project/mra/moisture-resilience-assurance-programme.md"
+  ],
+  "role": "Read-only hypothetical cascade; no graph or claim mutation. Live claims supplied by root are not re-queried here.",
+  "sourcesSha256": {
+    "project/bcr/buildability-construction-resolution-programme.md": "97a43cf44e75d21bd978d286eab61eb61d789c103efef418d83453623f55660c",
+    "project/control/derive.ts": "dec43becddc8603d32ea0ed7e6ca58b79fb8cfe762a279e438511ca09592b963",
+    "project/control/nodes/architecture.ts": "8f4c5cd75810fb8621406c49bac75979f0eac07ac493c02771bd0d4466212b80",
+    "project/control/nodes/house-delivery.ts": "5bab7d5891e9d16754853ae6c9b0cbcd2cba3d1f9980d7b324923f4807d1056f",
+    "project/control/nodes/mra.ts": "5399bd0d1f4f872b4ab3816a45d849794813c7c238e90aacf0175a33ea9207c8",
+    "project/control/nodes/roof-water.ts": "a85498e97cfa1408e6cf455e7508b928e18b297ef29e432e836a1fd476b57a5f",
+    "project/control/nodes/structure.ts": "61d75d2efaec29aa4251c68ad7310d30176f5dbda5416366a0cb61af0bbb1e45",
+    "project/control/validate.ts": "c37e3d3f80fc5c053050f25b5e36a1aed8dc9e55b85d19d218571ae1e0cc3f52",
+    "project/had/inhabited-services-selection.md": "1a40946e6747b16070d3649a057d93b48db3b009bba12b787d22c5215bd46b8f",
+    "project/had/receiver-selection.md": "59a8999480353f5be5b3ea4d1b93eb28ab8954b36c699bca10682636dbe6fe36",
+    "project/mra/moisture-resilience-assurance-programme.md": "b66ffdccbc60b8fc6c984c8f2e0c78c38d01a0f36146402ac668266023544735",
+    "project/rwt/rwt-06-permanent-receiver-service.md": "a772917dbad1944228dd8082c67633942f71a00bdb6a175ee68e8507f1a703ad",
+    "project/rwt/rwt-07-network-candidates.md": "f4b8b0db2bbba0b3ad1d0e27b5f5a003c008ddee4a435f1608ddc3958417ced8"
+  },
+  "steps": [
+    {
+      "failures": [
+        "HAD-SERVICES-ADOPTION is complete with incomplete dependency STR-RECONCILE",
+        "HAD-COURT-BYPASS is complete with incomplete dependency STR-RECONCILE"
+      ],
+      "planned": [
+        "STR-RECONCILE"
+      ]
+    },
+    {
+      "failures": [
+        "RWT-06 is complete with incomplete dependency HAD-COURT-BYPASS"
+      ],
+      "planned": [
+        "STR-RECONCILE",
+        "HAD-SERVICES-ADOPTION",
+        "HAD-COURT-BYPASS"
+      ]
+    },
+    {
+      "failures": [
+        "RWT-07 is complete with incomplete dependency RWT-06"
+      ],
+      "planned": [
+        "STR-RECONCILE",
+        "HAD-SERVICES-ADOPTION",
+        "HAD-COURT-BYPASS",
+        "RWT-06"
+      ]
+    },
+    {
+      "failures": [],
+      "planned": [
+        "STR-RECONCILE",
+        "HAD-SERVICES-ADOPTION",
+        "HAD-COURT-BYPASS",
+        "RWT-06",
+        "RWT-07"
+      ]
+    }
+  ]
+}

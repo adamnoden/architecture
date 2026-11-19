@@ -1,0 +1,91 @@
+{
+  "frameDepthAndWallMm": [
+    230,
+    194
+  ],
+  "frameYmm": [
+    3132.5,
+    3362.5
+  ],
+  "finishedWallYmm": [
+    3150.5,
+    3344.5
+  ],
+  "edgeGapsClosedMm": 10,
+  "centredSlabAt90HingeOverlapMm": 12.0,
+  "facePivotHingeAndWorstLatchReserveMm": [
+    10,
+    8.834553172474443
+  ],
+  "gripOffsetsFromAxisMm": [
+    62.0,
+    -106.0
+  ],
+  "facePivot": {
+    "sampledMm": [
+      4.187853143415339,
+      3.154323690702853,
+      15.22273847217798,
+      10.734414107353565,
+      548.0830055940592
+    ],
+    "continuousBodyGapMm": 3.054397267687385,
+    "continuousArmGapMm": 2.020867814974899,
+    "continuousReachUpperMm": 549.9033965459168
+  },
+  "oldGripsAtFacePivot": {
+    "sampledMm": [
+      4.187853143415339,
+      8.449202616014198,
+      15.22273847217798,
+      -3.4604635688696703,
+      552.9078478020924
+    ],
+    "continuousBodyGapMm": 3.054397267687385,
+    "continuousArmGapMm": -5.319248128395133,
+    "continuousReachUpperMm": 554.7259178368769
+  },
+  "casingOverlay": {
+    "sampledMm": [
+      4.187853143415339,
+      -1.7847260727417407,
+      15.22273847217798,
+      10.734414107353565,
+      548.0830055940592
+    ],
+    "continuousBodyGapMm": 3.054397267687385,
+    "continuousArmGapMm": -2.9181819484696945,
+    "continuousReachUpperMm": 549.9033965459168
+  },
+  "trimEndPieceXmm": [
+    [
+      1225,
+      1345
+    ],
+    [
+      2255,
+      2375
+    ]
+  ],
+  "closedBladeToTrimBackMm": 97.0,
+  "releaseSouthMm": 22,
+  "supplierComparisonRoughMm": 906,
+  "supplierComparisonJambFacesMm": [
+    1382,
+    2218
+  ],
+  "supplierComparisonWorstLatchReserveMm": 1.8345531724744433,
+  "supplierComparison768Grip": {
+    "sampledMm": [
+      4.187853143415339,
+      5.979388305225072,
+      15.22273847217798,
+      8.645435220106798,
+      559.8452055167179
+    ],
+    "continuousBodyGapMm": 3.054397267687385,
+    "continuousArmGapMm": 4.845932429497118,
+    "continuousReachUpperMm": 561.6552213423709
+  },
+  "status": "IAS trial for the Study room face. Functional frame, stops, ironmongery, seals, head, fixing and opening adoption require their owning evidence."
+}

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1130" height="645" viewBox="0 0 1130 645" role="img" aria-labelledby="title description">
+<title id="title">Fixed indoor stop station and separate removable plant feed</title>
+<desc id="description">West elevation of the proposed lobby cabinet trial and projection of its plant feed and vessel connection in the house north-south axis.</desc>
+<style>text{fill:#243c37;font-family:sans-serif;font-size:15px}.title{font-size:30px;font-weight:bold}.head{font-size:21px;font-weight:bold}.small{font-size:13px}.wet{fill:#324f79}.release{fill:#a74e36}</style>
+<rect width="1130" height="645" fill="#f5f2e9"/>
+<text x="35" y="46" class="title">Fixed stop station and removable plant feed</text>
+<text x="35" y="74" class="">Independent isolation, restraint and D2. Dimensioned pre-site comparison in millimetres.</text>
+<text x="65" y="107" class="head">West elevation of cabinet at X11185</text>
+<text x="675" y="107" class="head">Plant projection on the north-south axis</text>
+<rect x="70" y="125" width="512.3529411764706" height="325" fill="#e4e0d2" stroke="#54706c"/>
+<rect x="84.70588235294117" y="131.66666666666669" width="482.94117647058835" height="298.3333333333333" fill="#ecede4" stroke="#54706c"/>
+<polyline points="139.41176470588235,350 139.41176470588235,350 139.41176470588235,317.91666666666663" fill="none" stroke="#305f58" stroke-width="5" stroke-linejoin="round"/>
+<polyline points="139.41176470588235,290.41666666666663 139.41176470588235,261.66666666666663 474.70588235294116,261.66666666666663 474.70588235294116,231.66666666666666" fill="none" stroke="#305f58" stroke-width="5" stroke-linejoin="round"/>
+<polyline points="321.7647058823529,261.66666666666663 321.7647058823529,231.66666666666666" fill="none" stroke="#305f58" stroke-width="5" stroke-linejoin="round"/>
+<polyline points="321.7647058823529,204.16666666666666 321.7647058823529,166.66666666666669 187.64705882352942,166.66666666666669 187.64705882352942,133.33333333333331" fill="none" stroke="#305f58" stroke-width="3" stroke-linejoin="round"/>
+<text x="195.64705882352942" y="150" class="small">To utility</text>
+<polyline points="474.70588235294116,204.16666666666666 474.70588235294116,133.33333333333331" fill="none" stroke="#305f58" stroke-width="3" stroke-linejoin="round"/>
+<text x="482.70588235294116" y="150" class="small">To plant</text>
+<rect x="117.64705882352942" y="290.41666666666663" width="43.529411764705884" height="27.5" fill="#95c0aa" stroke="#54706c"/><text x="169.41176470588235" y="304.16666666666663" class="">I0</text><rect x="300" y="204.16666666666666" width="43.52941176470591" height="27.5" fill="#95c0aa" stroke="#54706c"/><text x="351.7647058823529" y="217.91666666666666" class="">U0</text><rect x="452.94117647058823" y="204.16666666666666" width="43.52941176470591" height="27.5" fill="#95c0aa" stroke="#54706c"/><text x="504.70588235294116" y="217.91666666666666" class="">P0</text>
+<polyline points="139.41176470588235,350 139.41176470588235,391.6666666666667" fill="none" stroke="#5373a0" stroke-width="2" stroke-linejoin="round"/><text x="144.41176470588235" y="387.6666666666667" class="small wet">D0</text><polyline points="233.52941176470588,261.66666666666663 233.52941176470588,391.6666666666667" fill="none" stroke="#5373a0" stroke-width="2" stroke-linejoin="round"/><text x="238.52941176470588" y="387.6666666666667" class="small wet">D1</text><polyline points="321.7647058823529,190.83333333333331 321.7647058823529,391.6666666666667" fill="none" stroke="#5373a0" stroke-width="2" stroke-linejoin="round"/><text x="326.7647058823529" y="387.6666666666667" class="small wet">DU</text><polyline points="474.70588235294116,190.83333333333331 474.70588235294116,391.6666666666667" fill="none" stroke="#5373a0" stroke-width="2" stroke-linejoin="round"/><text x="479.70588235294116" y="387.6666666666667" class="small wet">DP</text>
+<rect x="110" y="408.3333333333333" width="411.7647058823529" height="17.5" fill="#deecf1" stroke="#54706c"/>
+<text x="229.35294117647058" y="469" class="small wet">Ø100 normal</text><text x="361.70588235294116" y="459" class="small wet">Ø100 relief</text>
+<rect x="838.2835820895523" y="392.85714285714283" width="197.01492537313425" height="57.14285714285717" fill="#e4e0d2" stroke="#54706c"/>
+<polyline points="703.3582089552239,239.28571428571428 703.3582089552239,127.14285714285717 703.3582089552239,127.14285714285717 830.820895522388,127.14285714285717 844.5223880597015,127.14285714285717" fill="none" stroke="#305f58" stroke-width="5" stroke-linejoin="round"/>
+<polyline points="844.5223880597015,127.14285714285717 876.4925373134329,127.14285714285717 876.4925373134329,375.7142857142857" fill="none" stroke="#a74e36" stroke-width="5" stroke-linejoin="round"/>
+<polyline points="876.4925373134329,375.7142857142857 876.4925373134329,382.1428571428571 885.1930951925539,395.7142857142857 897.0029850746268,395.7142857142857" fill="none" stroke="#a74e36" stroke-width="3" stroke-linejoin="round"/>
+<text x="715.3582089552239" y="149.71428571428572" class="">Fixed over arch</text>
+<text x="896.4925373134329" y="221.42857142857142" class="release">Removable drop</text>
+<text x="896.4925373134329" y="411.42857142857144" class="">Trial podium</text>
+<text x="65" y="504" class="">619.5 inward stroke for the one joint-free wall spool.</text>
+<text x="65" y="531" class="">Blue  Controlled drain spouts above a removable receiver.</text>
+<text x="65" y="558" class="">Each behind-cover stop has separate fixed end restraints.</text>
+<text x="675" y="504" class="">Z2260 fixed spine. Z2223 underside.</text>
+<text x="675" y="531" class="">Disconnect cold port before moving the drop.</text>
+<text x="675" y="558" class="">No low permanent support in vessel cart path.</text>
+<path d="M35 581 H1094" stroke="#bfb8a4"/>
+<text x="35" y="610" class="small">HAD · Geometry comparison only. Verify complete pressure supports, loaded release, fabrication and receiving water.</text>
+</svg>

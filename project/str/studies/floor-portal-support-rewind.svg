@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 695" role="img" aria-labelledby="title">
+<title id="title">Outer roof support rewind plan</title>
+<rect width="810" height="695" fill="#fff"/>
+<g font-family="sans-serif" fill="#182429" stroke-width="1.5">
+<text x="42" y="37" font-size="24" font-weight="bold">Outer roof support rewind</text>
+<text x="42" y="59" font-size="14">Reference setout in mm · north up</text>
+<rect x="84.63" y="96.63" width="498.74" height="498.74" fill="none" stroke="#718086"/>
+<rect x="242.37" y="254.37" width="183.26" height="183.26" fill="none" stroke="#a5afb1" stroke-dasharray="5 5"/>
+<text x="334" y="351" font-size="16" text-anchor="middle">Court</text>
+<path d="M 135.89 595.37 H 84.63 V 544.11" fill="none" stroke="#a24725" stroke-width="4"/>
+<path d="M 84.63 614.37 v14 M 135.89 614.37 v14 M 84.63 621.37 H 135.89 M 65.63 595.37 h-14 M 65.63 544.11 h-14 M 58.63 595.37 V 544.11" stroke="#6b4635"/>
+<text x="110.26" y="641.37" text-anchor="middle" font-size="13">1165</text>
+<text x="43.63" y="569.74" text-anchor="end" font-size="13">1165</text>
+<path d="M 654 138 V 100 l -5 8 m 5 -8 l 5 8" fill="none" stroke="#182429"/>
+<text x="654" y="94" font-size="13" text-anchor="middle">N</text>
+<circle cx="618" cy="215" r="6" fill="#182429"/>
+<text x="634" y="219" font-size="14">L-pier gravity seat</text>
+<rect x="613" y="247" width="10" height="10" fill="#a24725"/>
+<text x="634" y="256" font-size="14">Near-jamb hold-down</text>
+<path d="M 618 280 l 7 7 l -7 7 l -7 -7 z" fill="#176773"/>
+<text x="634" y="291" font-size="14">Far-jamb guide axis</text>
+<path d="M 612 322 h12" stroke="#a24725" stroke-width="4"/>
+<text x="634" y="326" font-size="14">Example uplift transfer</text>
+<circle cx="84.63" cy="595.37" r="6" fill="#182429"/>
+<circle cx="583.37" cy="595.37" r="6" fill="#182429"/>
+<circle cx="84.63" cy="96.63" r="6" fill="#182429"/>
+<circle cx="583.37" cy="96.63" r="6" fill="#182429"/>
+<rect x="130.89" y="590.37" width="10" height="10" fill="#a24725"/>
+<rect x="527.11" y="590.37" width="10" height="10" fill="#a24725"/>
+<rect x="578.37" y="539.11" width="10" height="10" fill="#a24725"/>
+<rect x="578.37" y="142.89" width="10" height="10" fill="#a24725"/>
+<rect x="527.11" y="91.63" width="10" height="10" fill="#a24725"/>
+<rect x="130.89" y="91.63" width="10" height="10" fill="#a24725"/>
+<rect x="79.63" y="142.89" width="10" height="10" fill="#a24725"/>
+<rect x="79.63" y="539.11" width="10" height="10" fill="#a24725"/>
+<path d="M 188.91 589.25 l 7 7 l -7 7 l -7 -7 z" fill="#176773"/>
+<path d="M 584.25 484.09 l 7 7 l -7 7 l -7 -7 z" fill="#176773"/>
+<path d="M 479.09 88.75 l 7 7 l -7 7 l -7 -7 z" fill="#176773"/>
+<path d="M 83.75 193.91 l 7 7 l -7 7 l -7 -7 z" fill="#176773"/>
+<text x="42" y="675" font-size="13">Proposed load-path setout for redraw. Connections and framing require the joined comparison.</text>
+</g>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297"><rect width="420" height="297" fill="#fffdf8"/><style>text{font-family:Arial,sans-serif;font-size:3.1px;fill:#243d43}.title{font-size:6px;font-weight:bold}.head{font-size:4.1px;font-weight:bold}.small{font-size:2.7px}.wall{fill:#d9dfdf;stroke:#64787b;stroke-width:.3}.slab{fill:#e8eef0;stroke:#a4b5bb;stroke-width:.3}.hole{fill:#fffdf8;stroke:#476773;stroke-width:.45}.cabinet{fill:none;stroke:#9a7443;stroke-width:.45;stroke-dasharray:2,1}.riser{fill:#c6dfdb;stroke:#417c70;stroke-width:.4}.trim{fill:#adbdc8;stroke:#3c5368;stroke-width:.45}.door{fill:#f7d8c8;stroke:#ae6347;stroke-width:.4}.line{fill:none;stroke:#526d74;stroke-width:.35}.dash{fill:none;stroke:#8a6a43;stroke-width:.45;stroke-dasharray:2,1}.warn{fill:#9d4f32}.arrow{fill:none;stroke:#486879;stroke-width:.6;marker-end:url(#a)}</style><defs><marker id="a" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0,0L5,2.5L0,5Z" fill="#486879"/></marker></defs>
+<text x="12" y="14" class="title">Riser trimming: support the hole and close its actual perimeter</text>
+<text x="12" y="23" class="">31 October 2026 / unadopted B plan / mm / conditional geometry, no capacity or construction approval</text>
+<text x="12" y="35" class="head">A  Local trimmer on adjacent full-length planks</text>
+<rect x="17" y="47" width="7.7" height="154" class="wall"/>
+<rect x="147.2125" y="47" width="7.7" height="154" class="wall"/>
+<rect x="24.7" y="50.85" width="122.5125" height="48.4" class="slab"/>
+<rect x="24.7" y="143.25" width="122.5125" height="53.9" class="slab"/>
+<rect x="63.2" y="99.25" width="84.0125" height="44" class="slab"/>
+<rect x="24.7" y="99.25" width="38.5" height="44" class="hole"/>
+<rect x="25.525" y="100.625" width="33" height="41.25" class="cabinet"/>
+<rect x="26.9" y="102" width="30.25" height="38.5" class="riser"/>
+<path d="M63.2,93.75L63.2,148.75" class="line"/>
+<path d="M103.35,121.25L65.4,121.25" class="arrow"/>
+<path d="M63.2,118.5L63.2,95.4" class="arrow"/>
+<path d="M63.2,124L63.2,147.1" class="arrow"/>
+<rect x="63.2" y="93.75" width="4" height="5.5" class="trim"/>
+<rect x="63.2" y="143.25" width="4" height="5.5" class="trim"/>
+<rect x="147.2125" y="58" width="7.7" height="77" class="door"/>
+<path d="M69.25,77.25L34.6,77.25" class="arrow"/>
+<path d="M81.35,77.25L136.35,77.25" class="arrow"/>
+<path d="M69.25,168L34.6,168" class="arrow"/>
+<path d="M81.35,168L136.35,168" class="arrow"/>
+<text x="20" y="211" class="small">100 mm y tails: AUTHOR sensitivity; transverse tab widths are symbolic.</text>
+<text x="20" y="218" class="small warn">Orange: ground plant door below. Its arch receives changed floor reactions.</text>
+<text x="20" y="225" class="small">Adjacent field widths 880 / 980 do not select stock panels or cut strands.</text>
+<text x="20" y="232" class="small">Clear bay 700 × 800; gross riser 550 × 700; dashed cabinet 600 × 750.</text>
+<text x="190" y="35" class="head">B  A cabinet outline is not a floor closure</text>
+<rect x="198" y="47" width="70" height="80" class="hole"/>
+<rect x="199.5" y="49.5" width="60" height="75" class="cabinet"/>
+<rect x="202" y="52" width="55" height="70" class="riser"/>
+<text x="280" y="55" class="">Bay beyond cabinet footprint:</text>
+<text x="280" y="64" class="">15 west / 85 east</text>
+<text x="280" y="73" class="">25 south / 25 north</text>
+<text x="280" y="85" class="">0.110 m² of the floor opening</text>
+<text x="280" y="93" class="">lies outside the cabinet footprint.</text>
+<text x="280" y="106" class="">The cabinet itself also needs</text>
+<text x="280" y="114" class="">a defined supporting load path.</text>
+<text x="193" y="139" class="head">C  Independent frame: different members, same receiving walls</text>
+<text x="193" y="149" class="">Two cross-span members flank the hole; an east-side header joins them.</text>
+<text x="193" y="157" class="">At the illustrative 100 mm edge bands:</text>
+<text x="193" y="166" class="warn">South y4550–4650 lies wholly over ground door y3900–5300.</text>
+<text x="193" y="175" class="">North y5450–5550 clears its upper jamb by 150 mm in plan.</text>
+<text x="193" y="184" class="small">That gap is neither a bearing length nor an arch/abutment verdict.</text>
+<text x="193" y="199" class="head">D  Keep the complete section budget</text>
+<text x="193" y="209" class="">Retained HC soffit +3170; ceiling top +3115; services 55.</text>
+<text x="193" y="218" class="">Remaining service depth = 55 − trim downstand − protection.</text>
+<text x="193" y="227" class="">The primary detail supplies none of those installed section dimensions.</text>
+<text x="193" y="236" class="small">Top tabs, topping, wet/fire/acoustic closure and finishes also need space.</text>
+<path d="M12,246L408,246" class="line"/>
+<text x="12" y="256" class="head">Advance a supplier-designed strap enquiry, with actual adjacent panels and a supported perimeter closure.</text>
+<text x="12" y="266" class="">Retain the independent frame comparator. Neither earns a chosen floor, member, material exception or STR-HOUSE completion.</text>
+<text x="12" y="277" class="small">Primary detail: Ibstock/Coltman current colour isometric; width label up to1200 mm; no bearing, plate or shelf dimensions.</text>
+<text x="12" y="284" class="small">Source-bound inputs and reproduction: house-riser-trim.mjs / house-riser-trim.json. Full technical, physical and professional duties remain.</text>
+</svg>

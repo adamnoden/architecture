@@ -1,0 +1,277 @@
+{
+  "sourceHashes": {
+    "project/str/studies/floor-portal-twin-garden-tie.json": "914c51cd394d41033d5e4f6f3392165e636ef0c68aa75a5ce2dd94c5411b899c",
+    "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+    "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+    "project/had/studies/open-north-loggia.json": "542781c6bb1d277b20492e8433cea498e98eaea5db2e737a5ec7e9655f9d18fd",
+    "project/mat/studies/loggia-soffit.json": "b02717a9ad5431259f9f0f1850ab7f596cf612bc13f04fbd9bdfc7b5f893fc29"
+  },
+  "decision": "Reject the 180 mm stop. Carry the bar and link arrangement below as a local fitting witness; hold the collector joint on actual slab and chord development, verified form and thermal return, and the adopted whole-house actions.",
+  "geometry": {
+    "straightWidthDepthMm": [
+      200.0,
+      750
+    ],
+    "upperAndLowerZmm": [
+      3920,
+      3170
+    ],
+    "westAxisXYmm": [
+      4340.0,
+      11667.5
+    ],
+    "westAndEastMainBarTransitionXmm": [
+      [
+        4101.366533460062,
+        4578.633466539938
+      ],
+      [
+        7421.366533460062,
+        7898.633466539938
+      ]
+    ],
+    "minimumSameXRawWindowGaps": [
+      {
+        "planGapMm": 51.36653346006187,
+        "id": "north-window-1",
+        "sillAboveCollectorTopMm": 480
+      },
+      {
+        "planGapMm": 51.36653346006187,
+        "id": "north-window-3",
+        "sillAboveCollectorTopMm": 280
+      }
+    ],
+    "transitionInsideMandrelMm": 428.0,
+    "transitionCentrelineRadiusMm": 220.0,
+    "transitionAngleDegrees": 10,
+    "transitionHorizontalLengthMm": 208.63346653993773,
+    "straightBayLengthMm": 60.0,
+    "mainH12YAxesAtSleeveMm": [
+      11616.5,
+      11718.5
+    ],
+    "topAndBottomMainH12ZRowsMm": [
+      [
+        3849.0,
+        3812.0,
+        3775.0,
+        3738.0
+      ],
+      [
+        3241.0,
+        3278.0,
+        3315.0,
+        3352.0
+      ]
+    ],
+    "unchanged750MmSectionOriginalCoverAndRoundedCornerIntrusionMm": 4.142135623730951,
+    "allRowsMovedInwardToRemainOutsideFilletMm": 22.0,
+    "linkCentrelineCornerRadiusMm": 20.0,
+    "sleeveToEachPrincipalH12After5CombinedJigSettingMm": 24.0,
+    "sleeveToPrincipalH12AfterIndependent5Plus5MmSettingMm": 19.0,
+    "sleeveToNearestH8HoopAfter10RelativeSettingMm": 22.0,
+    "placingGapComparatorMm": 21,
+    "maximumCageHoopPitchMm": 108.0,
+    "sleeveToH12HoopAtFormer100MmCentredBayAfter10SettingMm": 18.0,
+    "formWidthAtFirstHeavierHoopMm": 208.01041185202746,
+    "fabricationAndInsertionComparator": {
+      "thinMetalSleeveTrialODandIDmm": [
+        32,
+        28
+      ],
+      "plainM24EnvelopeRadialClearanceBeforeStraightnessMm": 2,
+      "couplerPassageProved": false,
+      "scope": "Set the tube, principal rails and end markers in one indexed fixture, with a combined 5 mm relative limit and resurvey before pour. Price straight rod feed separately from rebar clearance; actual internal liner section, threaded-end shape, stroke, gauge and on-site tolerances remain open."
+    },
+    "straightSleeveBayWestAndMirrorHoopLayout": [
+      {
+        "westXPairMm": [
+          4286.0,
+          4394.0
+        ],
+        "diameterMm": 12,
+        "mandrelAndAxisRadiusMm": [
+          48,
+          30.0
+        ],
+        "barAbsoluteYAxesMm": [
+          11617.813009074614,
+          11717.186990925386
+        ],
+        "linkAbsoluteYLegsMm": [
+          11604.740960395227,
+          11730.259039604773
+        ],
+        "linkZBottomAndTopAxisMm": [
+          3211.0,
+          3879.0
+        ],
+        "localFormRequiredYHalfWidthAtHoopMm": 104.00520592601373,
+        "nominalBarToHoopSideClearanceMm": 0.9940317769335749
+      },
+      {
+        "westXPairMm": [
+          4206.0,
+          4474.0
+        ],
+        "diameterMm": 8,
+        "mandrelAndAxisRadiusMm": [
+          32,
+          20.0
+        ],
+        "barAbsoluteYAxesMm": [
+          11631.444151378817,
+          11703.555848621183
+        ],
+        "linkAbsoluteYLegsMm": [
+          11620.28988525996,
+          11714.71011474004
+        ],
+        "linkZBottomAndTopAxisMm": [
+          3209.0,
+          3881.0
+        ],
+        "localFormRequiredYHalfWidthAtHoopMm": 86.81175260358503,
+        "nominalBarToHoopSideClearanceMm": 0.9848077530122072
+      },
+      {
+        "westXPairMm": [
+          4120.0,
+          4560.0
+        ],
+        "diameterMm": 12,
+        "mandrelAndAxisRadiusMm": [
+          48,
+          30.0
+        ],
+        "barAbsoluteYAxesMm": [
+          11645.709474988435,
+          11689.290525011565
+        ],
+        "linkAbsoluteYLegsMm": [
+          11632.66619994232,
+          11702.33380005768
+        ],
+        "linkZBottomAndTopAxisMm": [
+          3211.0,
+          3879.0
+        ],
+        "localFormRequiredYHalfWidthAtHoopMm": 75.98165646523657,
+        "nominalBarToHoopSideClearanceMm": 0.9964067044928839
+      },
+      {
+        "westXPairMm": [
+          4040.0,
+          4640.0
+        ],
+        "diameterMm": 8,
+        "mandrelAndAxisRadiusMm": [
+          32,
+          20.0
+        ],
+        "barAbsoluteYAxesMm": [
+          11646.5,
+          11688.5
+        ],
+        "linkAbsoluteYLegsMm": [
+          11636.5,
+          11698.5
+        ],
+        "linkZBottomAndTopAxisMm": [
+          3209.0,
+          3881.0
+        ],
+        "localFormRequiredYHalfWidthAtHoopMm": 70.0,
+        "nominalBarToHoopSideClearanceMm": 0.0
+      }
+    ],
+    "finishAndCavityReturn": {
+      "ordinaryFaceYmm": 11570.5,
+      "roomFinishYToRetain27ThicknessMm": 11540.5,
+      "outerConcreteYmm": 11767.5,
+      "glassThicknessIfFormerOutboardFaceHeldMm": 80.0,
+      "oldCavityGapMm": 50.0,
+      "remainingCavityIf110GlassAndBrickSeatHeldMm": 20.0,
+      "minimumCavityAtHeavierHoopIfGlassAndBrickSeatHeldMm": 15.994794073985759
+    }
+  },
+  "localMemberComparison": {
+    "oldSeparateGoverningMAndV": [
+      170.39261269421388,
+      151.42987576257872
+    ],
+    "reducedGrossRCComparisons": [
+      {
+        "netWidthComparisonMm": 140,
+        "localPitchMm": 86,
+        "adverseEffectiveDepthMm": 613.5,
+        "MRdKNm": 208.82949569998183,
+        "shearCapacityReducedForPitchAndDepthKN": 320.2402043076923
+      },
+      {
+        "netWidthComparisonMm": 168.0,
+        "localPitchMm": 108.0,
+        "adverseEffectiveDepthMm": 613.5,
+        "MRdKNm": 214.2478929947293,
+        "shearCapacityReducedForPitchAndDepthKN": 296.5187076923077
+      }
+    ],
+    "bendMandrelNeedAtFullYieldAndHalfVerticalPitchMm": 276.8736181189594,
+    "fullYieldBarTensionKN": 49.17275457792719,
+    "fullYieldTransverseTurnForcePerBarKN": 8.538759223320262,
+    "fullYieldTotalPerCurveFourSameFaceRailsKN": 34.15503689328105,
+    "fullYieldRadialLoadPerBarKNPerMm": 0.22351252080875997,
+    "confinementHoopH12SingleCrossbarSteelOnlyKN": 49.17275457792719,
+    "gapForForceSpreadFromH12HoopToFarEndOfCurveMm": 24.0,
+    "straightFullYieldPoorBondComparatorMm": 621.1180124223603,
+    "scope": "Section/mandrel checks only. Bedding, developed receiving tie, full bar cut/splice schedule, shed force and splitting, sleeve/joint local stress and rotation require the joined transfer."
+  },
+  "floorBarAndChordComparison": {
+    "westLocalNSAxesXAndZmm": [
+      [
+        4246.0,
+        4434.0
+      ],
+      [
+        3201,
+        3333
+      ]
+    ],
+    "normalH12Per150AreaRateMm2PerM": 753.9822368615504,
+    "localH14Per188AreaRateMm2PerM": 818.8193618398928,
+    "NSSlabH14ToCollectorMainBarsAtOrthogonalCrossingsAfter5SettingMm": [
+      22.0,
+      0.0
+    ],
+    "candidateTopSlabEWBarAxisToSitBelowH14Mm": 3320.0,
+    "H14ToSleeveAfter5MmSettingMm": 66,
+    "H14ToNearestHoopAfter5MmSettingMm": 22.0,
+    "chord4H20InboardYAxesMm": [
+      11420,
+      11464,
+      11508,
+      11552
+    ],
+    "chordAxisZmm": 3270.0,
+    "localChordToNorthSouthSteelAfter5SettingMm": 41.0,
+    "oldSeparatePlanChordForceKN": 93.53532443196335,
+    "oldPlanChordAxisToTrialChordCentroidMoveMm": 181.5,
+    "associatedPlanMomentWitnessKNm": 16.97666138440135,
+    "negativeHeadingControl": {
+      "comparisonModel": "Ancon TTH12 negative control. It serves H12, not the local H14 candidate. Its minimum C32/40 also exceeds the C30/37 source.",
+      "manufacturerMinimumConcreteClass": "C32/40",
+      "presentCollectorConcreteClass": "C30/37",
+      "headDiameterMm": 40,
+      "axialLengthMm": 27,
+      "axisYLimitsMm": [
+        11658,
+        11685
+      ],
+      "bottomStemAxisZmm": 3201,
+      "undersideCoverIfPlacedOnBottomAxisMm": 11,
+      "lowestAxisToRetain35CoverAnd5SettingMm": 3230
+    },
+    "scope": "A local obstacle-routing check, not substitution of slab bars by area alone. The outer E/W distribution row and N/S end anchorage need an actual developed node. Preserve the separate plan chord action and provide its return; treat the two former lateral and cost-ledger cages as separate comparisons pending reconciliation."
+  }
+}

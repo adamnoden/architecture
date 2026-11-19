@@ -1,0 +1,204 @@
+{
+  "port": [
+    12950,
+    6647,
+    -880.8823529411765
+  ],
+  "exposed": 60,
+  "engagement": 31,
+  "gap": 2,
+  "casingWidth": 107,
+  "casingOd": 181,
+  "closingHeight": 212,
+  "casingY": [
+    6532.5,
+    6639.5
+  ],
+  "midY": 6586,
+  "forkPlainEndY": 6585,
+  "plainLandCoveredEach": 52.5,
+  "socketToCasingRoom": 7.5,
+  "actualEndGapLimit": 5,
+  "originalHalfWidthFit": {
+    "near": [
+      12946.43554078449,
+      6950,
+      -1183.861386259492
+    ],
+    "far": [
+      12945.806172573171,
+      6950,
+      -1237.3576842216369
+    ],
+    "bounds": [
+      [
+        12866.311673732227,
+        13025.930039625435
+      ],
+      [
+        6870.5,
+        7029.5
+      ],
+      [
+        -1238.2929136197656,
+        -1182.9261568613633
+      ]
+    ],
+    "margins": [
+      [
+        291.31167373222706,
+        9.069960374565198
+      ],
+      [
+        15.5,
+        15.5
+      ],
+      [
+        17.589439321410964,
+        387.04380392018675
+      ]
+    ],
+    "maximumLengthAtLowerFace": 71.09065654153085
+  },
+  "trialFit": {
+    "near": [
+      12946.43554078449,
+      6950,
+      -1183.861386259492
+    ],
+    "far": [
+      12945.729707276469,
+      6950,
+      -1243.8572344413367
+    ],
+    "bounds": [
+      [
+        12866.235208435524,
+        13025.930039625435
+      ],
+      [
+        6870.5,
+        7029.5
+      ],
+      [
+        -1244.7924638394654,
+        -1182.9261568613633
+      ]
+    ],
+    "margins": [
+      [
+        291.2352084355243,
+        9.069960374565198
+      ],
+      [
+        15.5,
+        15.5
+      ],
+      [
+        11.089889101711151,
+        387.04380392018675
+      ]
+    ],
+    "maximumLengthAtLowerFace": 71.09065654153088
+  },
+  "fabricationAllowance": 5,
+  "leastPrismMarginAfterAllowance": 4.069960374565198,
+  "copperKg": 0.8043201016137257,
+  "exposedWaterKg": 1.1321514525374214,
+  "addedWetTorqueBoundNm": 6.203628827041301,
+  "remainingHardwareKgAfterWetStub": 134.72976364915894,
+  "axialThrustNPerMetreDifferentialHead": 185.1067624898685,
+  "tool": {
+    "length": 234,
+    "openingDegrees": 18,
+    "headWidth": 24,
+    "headThickness": 10.2,
+    "handAllowance": 35
+  },
+  "pocket": {
+    "x": [
+      12750,
+      13250
+    ],
+    "y": [
+      6436,
+      6736
+    ],
+    "z": [
+      -1020.8823529411765,
+      -455.88235294117646
+    ]
+  },
+  "casingTop": 121.5,
+  "pocketSideReserveOverHandle": 24.894335180585983,
+  "pocketHeightReserveOverHandle": 34.5,
+  "minimumPocketToSplitterY": 36,
+  "pocketToKnownPostX": 225,
+  "paths": [
+    [
+      [
+        12950,
+        6400
+      ],
+      [
+        12775,
+        6100
+      ],
+      [
+        13175,
+        5000
+      ],
+      [
+        13175,
+        4500
+      ]
+    ],
+    [
+      [
+        12950,
+        6400
+      ],
+      [
+        13125,
+        6100
+      ],
+      [
+        13525,
+        5000
+      ],
+      [
+        13525,
+        4500
+      ]
+    ]
+  ],
+  "splitY": 6400,
+  "rootsY": 6100,
+  "lead": 247,
+  "totalLength": 2264.7810908082074,
+  "grade": 0.03333333333333333,
+  "levelError": 10,
+  "grades": [
+    {
+      "flowLps": 3.60375,
+      "oldGradeMarginMm": 18.05263633482172,
+      "marginMm": 34.86529694123965,
+      "afterLevelErrorMm": 24.86529694123965,
+      "limitingCombinedKAfterLevelError": 5.343720026212017
+    },
+    {
+      "flowLps": 4.43895,
+      "oldGradeMarginMm": 1.2986041355159017,
+      "marginMm": 18.110136242456207,
+      "afterLevelErrorMm": 8.110136242456207,
+      "limitingCombinedKAfterLevelError": 2.718808511074874
+    }
+  ],
+  "doglegClear": 169.92769822095295,
+  "rimClear": 187.3582773652165,
+  "parkedBasinClear": 90,
+  "actualOpenAndToolSweep": null,
+  "actualLoss": null,
+  "supportsQualified": false,
+  "materialExceptionApproved": false
+}

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="485" viewBox="0 0 1000 485" role="img">
+<title>Raised weather stack across the north ridge purlin</title>
+<rect width="1000" height="485" fill="#faf9f5"/><g font-family="sans-serif" fill="#213638">
+<text x="26" y="36" font-size="25">The ridge purlin cuts through the continuous deck</text>
+<text x="26" y="62" font-size="16">North roof section across the ridge. Vertical scale compressed. Dimensions and levels in mm.</text>
+<polyline points="52.00,216.22 325.00,154.21 598.00,216.22" fill="none" stroke="#8c7971" stroke-width="2" stroke-dasharray="6 4"/>
+<polyline points="52.00,392.62 325.00,330.60 598.00,392.62" fill="none" stroke="#8c7971" stroke-width="2" stroke-dasharray="6 4"/>
+<polyline points="52.00,392.62 130.00,374.90 130.00,312.09 325.00,267.79 520.00,312.09 520.00,374.90 598.00,392.62" fill="none" stroke="#116963" stroke-width="3" stroke-dasharray=""/>
+<polyline points="52.00,247.55 130.00,229.83 130.00,208.86" fill="none" stroke="#697ea1" stroke-width="2" stroke-dasharray=""/>
+<polyline points="52.00,216.22 98.80,205.59" fill="none" stroke="#116963" stroke-width="3" stroke-dasharray=""/>
+<polyline points="325.00,91.40 67.60,149.88 67.60,178.38" fill="none" stroke="#116963" stroke-width="3" stroke-dasharray=""/>
+<polyline points="130.00,208.86 130.00,146.06" fill="none" stroke="#63817c" stroke-width="2" stroke-dasharray=""/>
+<polyline points="598.00,247.55 520.00,229.83 520.00,208.86" fill="none" stroke="#697ea1" stroke-width="2" stroke-dasharray=""/>
+<polyline points="598.00,216.22 551.20,205.59" fill="none" stroke="#116963" stroke-width="3" stroke-dasharray=""/>
+<polyline points="325.00,91.40 582.40,149.88 582.40,178.38" fill="none" stroke="#116963" stroke-width="3" stroke-dasharray=""/>
+<polyline points="520.00,208.86 520.00,146.06" fill="none" stroke="#63817c" stroke-width="2" stroke-dasharray=""/>
+<polyline points="293.80,336.07 293.80,279.07 356.20,279.07 356.20,336.07 293.80,336.07" fill="none" stroke="#202d33" stroke-width="4" stroke-dasharray=""/>
+<polyline points="293.80,307.57 356.20,307.57" fill="none" stroke="#75888d" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="630" y="123" font-size="16">Dashed   Continuous weather and deck</text>
+<text x="630" y="162" font-size="16">Green   Raised pitched ridge and deck</text>
+<text x="630" y="201" font-size="16">Black   Upright ridge purlin</text>
+<text x="630" y="226" font-size="16">Blue   Field breather return</text>
+<text x="630" y="251" font-size="17">Top corner overlap   154.2</text>
+<text x="630" y="283" font-size="17">Trial local rise   165.3</text>
+<text x="630" y="315" font-size="17">Trial cap width   500</text>
+<text x="630" y="349" font-size="17">New weather apex   +8464.7</text>
+<text x="26" y="427" font-size="16">Deck line is the underside of the lower boards. The two stepped lines bound the local envelope reservation.</text>
+<text x="26" y="453" font-size="15">The hood laps the field edge. The breather returns outward; fixings, fire, drainage laps and end closures need a joined detail.</text>
+</g></svg>

@@ -104,7 +104,7 @@ These precedents do not establish that every domestic utility should share one e
 
 ## Reference House application
 
-The Reference House uses a side/rear intake condition close to the principal service hub so the transition into internal distribution can remain short, accessible and subordinate to the main elevations.
+The Reference House keeps a short side/rear intake to its internal service hub. A small boundary service lodge and an accessible private raceway are being investigated upstream, subject to utility rules, water protection and differential ground movement.
 
 ## Formalisation boundary
 

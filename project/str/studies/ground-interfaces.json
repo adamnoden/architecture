@@ -1,0 +1,914 @@
+{
+  "status": "Pre-site option comparison. No adopted foundation, assembly, site or capacity.",
+  "source_sha256": {
+    "project/str/studies/house-plan.json": "193805456e26533026814bebe8c6be862e26a7d944c360dbb6047a1bde2d2282",
+    "project/str/studies/house-source.json": "071dbcb60d5b61d6f3b9aa5ccbda120725f4e88b39812ed64f5de2a250f5bc73",
+    "project/str/studies/span-envelopes.json": "57f40878a9dc2ef74d2e922ea488c7ac72d3ecf7d644102fdae027a332f30499",
+    "compiler/reference-house/georgian/section-exemplar.ts": "c4fe97c34f600fbb228b6013c7578f2050c1e6aa4f51cc9a905d0bdfba92ba86",
+    "project/mat/envelope-ground-boundary.md": "eb67353c8314449a0c10e12e8f41ca6e0c3bd1997776abcedc3bbf7f2346f0ae",
+    "docs/reference-house/ground-water-policy.md": "707e6da4c798246e1583bbc4185af0850540e800c1c9e36d74af77079b4795ab",
+    "project/mat/studies/suspended-ground-section.json": "f0e54672c4fd3345b235bf8165965c0f9fa9b180d65f48eecd9d27f7c8b2e868",
+    "project/mat/studies/suspended-ground-vent-connection.json": "b85484fe3cb256be55462e1a214f0e983471285f234050d54255521db3ae8ed5"
+  },
+  "source_authority": {
+    "head": "68d0273f928681aed7222bba2927dc8a89ae5ead",
+    "design": "RH-LAYOUT-REVISION-02",
+    "family": "RH-LAYOUT-FAMILY-02",
+    "files": {
+      "compiler/reference-house/georgian/layout-revision.ts": "af955c7da2e2469fd24598f98db6fc942a119ed3",
+      "compiler/reference-house/georgian/layout-family.ts": "30ef287f3176e0f4cf2b03ef57c4fdfc915494c9",
+      "compiler/reference-house/georgian/section-exemplar.ts": "75bf5c749da5095c07eed46105817a79095ca418",
+      "compiler/reference-house/georgian/source.ts": "1edcfe12392e7b56bf957ffa10a57e21878f3fa0",
+      "project/bcr/bcr-structure-result.md": "334798985eeb828f7c3e6f175c0ee1678bc1c8ea",
+      "project/bcr/bcr-occupation-result.md": "434c634347c07a473fbb5c13c764064aceb37bb7",
+      "project/bcr/bcr-wet-result.md": "a8c28116e5b795704667b8fec44a297645f47ba9",
+      "project/bcr/bcr-services-result.md": "6bcca017f919726c245986d5c936ef7208f1dca4",
+      "project/bcr/bcr-preflight-result.md": "1af61accfaa5bbcb84fa02fca208b6121273f102",
+      "docs/reference-house/structural-brief.md": "ee6ffe9704e1da927ff3a6a1d052da2f0dba7abf"
+    }
+  },
+  "plan_basis": "B joined unadopted candidate; accepted shell/court only. Rebind on C/facade/support change.",
+  "foundation_routes": [
+    {
+      "id": "outer-south",
+      "a": [
+        332.5,
+        332.5
+      ],
+      "b": [
+        11667.5,
+        332.5
+      ],
+      "role": "both leaves require continuous common support; line is inner-leaf axis"
+    },
+    {
+      "id": "outer-east",
+      "a": [
+        11667.5,
+        332.5
+      ],
+      "b": [
+        11667.5,
+        11667.5
+      ],
+      "role": "both leaves require continuous common support; line is inner-leaf axis"
+    },
+    {
+      "id": "outer-north",
+      "a": [
+        332.5,
+        11667.5
+      ],
+      "b": [
+        11667.5,
+        11667.5
+      ],
+      "role": "both leaves require continuous common support; line is inner-leaf axis"
+    },
+    {
+      "id": "outer-west",
+      "a": [
+        332.5,
+        332.5
+      ],
+      "b": [
+        332.5,
+        11667.5
+      ],
+      "role": "both leaves require continuous common support; line is inner-leaf axis"
+    },
+    {
+      "id": "court-south",
+      "a": [
+        3917.5,
+        3917.5
+      ],
+      "b": [
+        8082.5,
+        3917.5
+      ],
+      "role": "both leaves require continuous common support; line is inner-leaf axis"
+    },
+    {
+      "id": "court-east",
+      "a": [
+        8082.5,
+        3917.5
+      ],
+      "b": [
+        8082.5,
+        8082.5
+      ],
+      "role": "both leaves require continuous common support; line is inner-leaf axis"
+    },
+    {
+      "id": "court-north",
+      "a": [
+        3917.5,
+        8082.5
+      ],
+      "b": [
+        8082.5,
+        8082.5
+      ],
+      "role": "both leaves require continuous common support; line is inner-leaf axis"
+    },
+    {
+      "id": "court-west",
+      "a": [
+        3917.5,
+        3917.5
+      ],
+      "b": [
+        3917.5,
+        8082.5
+      ],
+      "role": "both leaves require continuous common support; line is inner-leaf axis"
+    },
+    {
+      "id": "study-east",
+      "a": [
+        4800,
+        332.5
+      ],
+      "b": [
+        4800,
+        1200
+      ],
+      "holes": [],
+      "core_mm": 140,
+      "role": "load reservation including masonry above openings; arch thrust is not calculated"
+    },
+    {
+      "id": "cloak-east",
+      "a": [
+        4800,
+        1200
+      ],
+      "b": [
+        4800,
+        2650
+      ],
+      "holes": [
+        [
+          1700.0,
+          2500.0
+        ]
+      ],
+      "core_mm": 140,
+      "role": "load reservation including masonry above openings; arch thrust is not calculated"
+    },
+    {
+      "id": "cloak-west",
+      "a": [
+        3400,
+        1200
+      ],
+      "b": [
+        3400,
+        2650
+      ],
+      "holes": [],
+      "core_mm": 140,
+      "role": "load reservation including masonry above openings; arch thrust is not calculated"
+    },
+    {
+      "id": "cloak-south",
+      "a": [
+        3400,
+        1200
+      ],
+      "b": [
+        4800,
+        1200
+      ],
+      "holes": [],
+      "core_mm": 140,
+      "role": "load reservation including masonry above openings; arch thrust is not calculated"
+    },
+    {
+      "id": "study-cloak-north",
+      "a": [
+        2817.5,
+        2650
+      ],
+      "b": [
+        4800,
+        2650
+      ],
+      "holes": [],
+      "core_mm": 140,
+      "role": "load reservation including masonry above openings; arch thrust is not calculated"
+    },
+    {
+      "id": "study-L-return",
+      "a": [
+        2817.5,
+        2650
+      ],
+      "b": [
+        2817.5,
+        3247.5
+      ],
+      "holes": [],
+      "core_mm": 140,
+      "role": "load reservation including masonry above openings; arch thrust is not calculated"
+    },
+    {
+      "id": "study-L-north",
+      "a": [
+        332.5,
+        3247.5
+      ],
+      "b": [
+        2817.5,
+        3247.5
+      ],
+      "holes": [
+        [
+          1350.0,
+          2250.0
+        ]
+      ],
+      "core_mm": 140,
+      "role": "load reservation including masonry above openings; arch thrust is not calculated"
+    },
+    {
+      "id": "wc-west",
+      "a": [
+        7200,
+        332.5
+      ],
+      "b": [
+        7200,
+        2650
+      ],
+      "holes": [],
+      "core_mm": 140,
+      "role": "load reservation including masonry above openings; arch thrust is not calculated"
+    },
+    {
+      "id": "wc-north",
+      "a": [
+        7200,
+        2650
+      ],
+      "b": [
+        9300,
+        2650
+      ],
+      "holes": [
+        [
+          7650.0,
+          8550.0
+        ]
+      ],
+      "core_mm": 140,
+      "role": "load reservation including masonry above openings; arch thrust is not calculated"
+    },
+    {
+      "id": "service-spine",
+      "a": [
+        9300,
+        332.5
+      ],
+      "b": [
+        9300,
+        8290
+      ],
+      "holes": [
+        [
+          2750.0,
+          3650.0
+        ]
+      ],
+      "core_mm": 140,
+      "role": "load reservation including masonry above openings; arch thrust is not calculated"
+    },
+    {
+      "id": "utility-north",
+      "a": [
+        9300,
+        2550
+      ],
+      "b": [
+        11667.5,
+        2550
+      ],
+      "holes": [
+        [
+          10250.0,
+          11150.0
+        ]
+      ],
+      "core_mm": 140,
+      "role": "load reservation including masonry above openings; arch thrust is not calculated"
+    },
+    {
+      "id": "plant-intermediate-arch",
+      "a": [
+        9300,
+        3700
+      ],
+      "b": [
+        11667.5,
+        3700
+      ],
+      "holes": [
+        [
+          9650.0,
+          11050.0
+        ]
+      ],
+      "core_mm": 140,
+      "role": "load reservation including masonry above openings; arch thrust is not calculated"
+    },
+    {
+      "id": "plant-north",
+      "a": [
+        9300,
+        6500
+      ],
+      "b": [
+        11667.5,
+        6500
+      ],
+      "holes": [],
+      "core_mm": 140,
+      "role": "load reservation including masonry above openings; arch thrust is not calculated"
+    },
+    {
+      "id": "rear-west",
+      "a": [
+        332.5,
+        8852.5
+      ],
+      "b": [
+        4450,
+        8852.5
+      ],
+      "holes": [
+        [
+          3100.0,
+          4000.0
+        ]
+      ],
+      "core_mm": 140,
+      "role": "load reservation including masonry above openings; arch thrust is not calculated"
+    },
+    {
+      "id": "rear-west-return",
+      "a": [
+        4450,
+        8012.5
+      ],
+      "b": [
+        4450,
+        8852.5
+      ],
+      "holes": [],
+      "core_mm": 215,
+      "role": "load reservation including masonry above openings; arch thrust is not calculated"
+    },
+    {
+      "id": "rear-east",
+      "a": [
+        7750,
+        8290
+      ],
+      "b": [
+        11667.5,
+        8290
+      ],
+      "holes": [
+        [
+          8250.0,
+          9150.0
+        ],
+        [
+          10450.0,
+          11350.0
+        ]
+      ],
+      "core_mm": 215,
+      "role": "load reservation including masonry above openings; arch thrust is not calculated"
+    },
+    {
+      "id": "rear-divider",
+      "a": [
+        7400,
+        8167.5
+      ],
+      "b": [
+        7400,
+        11667.5
+      ],
+      "holes": [
+        [
+          9450.0,
+          10950.0
+        ]
+      ],
+      "core_mm": 215,
+      "role": "load reservation including masonry above openings; arch thrust is not calculated"
+    },
+    {
+      "id": "rear-reading-east",
+      "a": [
+        2902.5,
+        8852.5
+      ],
+      "b": [
+        2902.5,
+        11667.5
+      ],
+      "holes": [
+        [
+          9400.0,
+          10900.0
+        ]
+      ],
+      "core_mm": 140,
+      "role": "load reservation including masonry above openings; arch thrust is not calculated"
+    }
+  ],
+  "proposed_connecting_returns": [
+    {
+      "id": "rear-divider-return",
+      "a": [
+        7400,
+        8082.5
+      ],
+      "b": [
+        7400,
+        8167.5
+      ]
+    },
+    {
+      "id": "rear-east-return",
+      "a": [
+        7750,
+        8082.5
+      ],
+      "b": [
+        7750,
+        8290
+      ]
+    }
+  ],
+  "bridge_reaction_reservations": [
+    {
+      "id": "bridge-west",
+      "a": [
+        4785,
+        332.5
+      ],
+      "b": [
+        4785,
+        3917.5
+      ]
+    },
+    {
+      "id": "bridge-east",
+      "a": [
+        7215,
+        332.5
+      ],
+      "b": [
+        7215,
+        3917.5
+      ]
+    }
+  ],
+  "length_basis": "Centreline routes; overlapping routes not deduplicated; no concrete quantities or pile count.",
+  "route_length_mm": {
+    "study-east": 867.5,
+    "cloak-east": 1450.0,
+    "cloak-west": 1450.0,
+    "cloak-south": 1400.0,
+    "study-cloak-north": 1982.5,
+    "study-L-return": 597.5,
+    "study-L-north": 2485.0,
+    "wc-west": 2317.5,
+    "wc-north": 2100.0,
+    "service-spine": 7957.5,
+    "utility-north": 2367.5,
+    "plant-intermediate-arch": 2367.5,
+    "plant-north": 2367.5,
+    "rear-west": 4117.5,
+    "rear-west-return": 840.0,
+    "rear-east": 3917.5,
+    "rear-divider": 3500.0,
+    "rear-reading-east": 2815.0,
+    "outer-south": 11335.0,
+    "outer-east": 11335.0,
+    "outer-north": 11335.0,
+    "outer-west": 11335.0,
+    "court-south": 4165.0,
+    "court-east": 4165.0,
+    "court-north": 4165.0,
+    "court-west": 4165.0
+  },
+  "gradient_diagnostics": [
+    {
+      "id": "outer-to-court inner leaf axes",
+      "L_mm": 3585,
+      "difference_mm": 1,
+      "gradient_ratio": 3585.0
+    },
+    {
+      "id": "outer-to-court inner leaf axes",
+      "L_mm": 3585,
+      "difference_mm": 5,
+      "gradient_ratio": 717.0
+    },
+    {
+      "id": "outer-to-court inner leaf axes",
+      "L_mm": 3585,
+      "difference_mm": 15,
+      "gradient_ratio": 239.0
+    },
+    {
+      "id": "B court-south bridge reaction axes",
+      "L_mm": 2430,
+      "difference_mm": 1,
+      "gradient_ratio": 2430.0
+    },
+    {
+      "id": "B court-south bridge reaction axes",
+      "L_mm": 2430,
+      "difference_mm": 5,
+      "gradient_ratio": 486.0
+    },
+    {
+      "id": "B court-south bridge reaction axes",
+      "L_mm": 2430,
+      "difference_mm": 15,
+      "gradient_ratio": 162.0
+    },
+    {
+      "id": "B short L return",
+      "L_mm": 597.5,
+      "difference_mm": 1,
+      "gradient_ratio": 597.5
+    },
+    {
+      "id": "B short L return",
+      "L_mm": 597.5,
+      "difference_mm": 5,
+      "gradient_ratio": 119.5
+    },
+    {
+      "id": "B short L return",
+      "L_mm": 597.5,
+      "difference_mm": 15,
+      "gradient_ratio": 39.833333333333336
+    }
+  ],
+  "spring_beam": {
+    "model": "Two axial springs and a rotation-restrained Euler beam; rho=12EI/(k L^3). Linear, 1D, equal nominal load, no masonry, soil contact, group effects or torsion.",
+    "prescribed_movement": [
+      {
+        "rho": 0,
+        "prescribed_support_ground_difference_mm": 15,
+        "resulting_difference_mm": 15.0,
+        "redistribution_over_k_mm": 0.0,
+        "end_moment_over_EI_per_mm": null,
+        "gradient_ratio": 239.0
+      },
+      {
+        "rho": 0.1,
+        "prescribed_support_ground_difference_mm": 15,
+        "resulting_difference_mm": 12.5,
+        "redistribution_over_k_mm": 1.25,
+        "end_moment_over_EI_per_mm": 5.835565437113029e-06,
+        "gradient_ratio": 286.8
+      },
+      {
+        "rho": 1,
+        "prescribed_support_ground_difference_mm": 15,
+        "resulting_difference_mm": 5.0,
+        "redistribution_over_k_mm": 5.0,
+        "end_moment_over_EI_per_mm": 2.3342261748452117e-06,
+        "gradient_ratio": 717.0
+      },
+      {
+        "rho": 10,
+        "prescribed_support_ground_difference_mm": 15,
+        "resulting_difference_mm": 0.7142857142857143,
+        "redistribution_over_k_mm": 7.142857142857143,
+        "end_moment_over_EI_per_mm": 3.334608821207445e-07,
+        "gradient_ratio": 5019.0
+      }
+    ],
+    "half_stiffness_anomaly": [
+      {
+        "rho": 0,
+        "anomalous_spring_ratio": 0.5,
+        "displacements_over_P_div_k": [
+          2.0,
+          1.0
+        ],
+        "difference_over_P_div_k": 1.0,
+        "reaction_over_P": [
+          1.0,
+          1.0
+        ],
+        "redistribution_over_P": 0.0
+      },
+      {
+        "rho": 0.1,
+        "anomalous_spring_ratio": 0.5,
+        "displacements_over_P_div_k": [
+          1.8461538461538463,
+          1.0769230769230769
+        ],
+        "difference_over_P_div_k": 0.7692307692307694,
+        "reaction_over_P": [
+          0.9230769230769231,
+          1.0769230769230769
+        ],
+        "redistribution_over_P": 0.07692307692307694
+      },
+      {
+        "rho": 1,
+        "anomalous_spring_ratio": 0.5,
+        "displacements_over_P_div_k": [
+          1.5,
+          1.25
+        ],
+        "difference_over_P_div_k": 0.25,
+        "reaction_over_P": [
+          0.75,
+          1.25
+        ],
+        "redistribution_over_P": 0.25
+      },
+      {
+        "rho": 10,
+        "anomalous_spring_ratio": 0.5,
+        "displacements_over_P_div_k": [
+          1.3548387096774193,
+          1.3225806451612903
+        ],
+        "difference_over_P_div_k": 0.032258064516129004,
+        "reaction_over_P": [
+          0.6774193548387096,
+          1.3225806451612903
+        ],
+        "redistribution_over_P": 0.32258064516129004
+      }
+    ]
+  },
+  "void_trials": [
+    {
+      "clear_trial_mm": 150,
+      "soil_rise_trial_mm": 50,
+      "construction_loss_trial_mm": 0,
+      "residual_mm": 100,
+      "contact": false
+    },
+    {
+      "clear_trial_mm": 150,
+      "soil_rise_trial_mm": 50,
+      "construction_loss_trial_mm": 50,
+      "residual_mm": 50,
+      "contact": false
+    },
+    {
+      "clear_trial_mm": 150,
+      "soil_rise_trial_mm": 150,
+      "construction_loss_trial_mm": 0,
+      "residual_mm": 0,
+      "contact": true
+    },
+    {
+      "clear_trial_mm": 150,
+      "soil_rise_trial_mm": 150,
+      "construction_loss_trial_mm": 50,
+      "residual_mm": -50,
+      "contact": true
+    },
+    {
+      "clear_trial_mm": 150,
+      "soil_rise_trial_mm": 300,
+      "construction_loss_trial_mm": 0,
+      "residual_mm": -150,
+      "contact": true
+    },
+    {
+      "clear_trial_mm": 150,
+      "soil_rise_trial_mm": 300,
+      "construction_loss_trial_mm": 50,
+      "residual_mm": -200,
+      "contact": true
+    },
+    {
+      "clear_trial_mm": 300,
+      "soil_rise_trial_mm": 50,
+      "construction_loss_trial_mm": 0,
+      "residual_mm": 250,
+      "contact": false
+    },
+    {
+      "clear_trial_mm": 300,
+      "soil_rise_trial_mm": 50,
+      "construction_loss_trial_mm": 50,
+      "residual_mm": 200,
+      "contact": false
+    },
+    {
+      "clear_trial_mm": 300,
+      "soil_rise_trial_mm": 150,
+      "construction_loss_trial_mm": 0,
+      "residual_mm": 150,
+      "contact": false
+    },
+    {
+      "clear_trial_mm": 300,
+      "soil_rise_trial_mm": 150,
+      "construction_loss_trial_mm": 50,
+      "residual_mm": 100,
+      "contact": false
+    },
+    {
+      "clear_trial_mm": 300,
+      "soil_rise_trial_mm": 300,
+      "construction_loss_trial_mm": 0,
+      "residual_mm": 0,
+      "contact": true
+    },
+    {
+      "clear_trial_mm": 300,
+      "soil_rise_trial_mm": 300,
+      "construction_loss_trial_mm": 50,
+      "residual_mm": -50,
+      "contact": true
+    },
+    {
+      "clear_trial_mm": 450,
+      "soil_rise_trial_mm": 50,
+      "construction_loss_trial_mm": 0,
+      "residual_mm": 400,
+      "contact": false
+    },
+    {
+      "clear_trial_mm": 450,
+      "soil_rise_trial_mm": 50,
+      "construction_loss_trial_mm": 50,
+      "residual_mm": 350,
+      "contact": false
+    },
+    {
+      "clear_trial_mm": 450,
+      "soil_rise_trial_mm": 150,
+      "construction_loss_trial_mm": 0,
+      "residual_mm": 300,
+      "contact": false
+    },
+    {
+      "clear_trial_mm": 450,
+      "soil_rise_trial_mm": 150,
+      "construction_loss_trial_mm": 50,
+      "residual_mm": 250,
+      "contact": false
+    },
+    {
+      "clear_trial_mm": 450,
+      "soil_rise_trial_mm": 300,
+      "construction_loss_trial_mm": 0,
+      "residual_mm": 150,
+      "contact": false
+    },
+    {
+      "clear_trial_mm": 450,
+      "soil_rise_trial_mm": 300,
+      "construction_loss_trial_mm": 50,
+      "residual_mm": 100,
+      "contact": false
+    }
+  ],
+  "gravity_crossing": [
+    {
+      "length_mm": 2000,
+      "nominal_gradient_denominator": 40,
+      "initial_fall_mm": 50.0,
+      "adverse_vertical_relative_motion_mm": 25,
+      "residual_fall_mm": 25.0,
+      "residual_gradient": 0.0125,
+      "positive_fall": true
+    },
+    {
+      "length_mm": 2000,
+      "nominal_gradient_denominator": 40,
+      "initial_fall_mm": 50.0,
+      "adverse_vertical_relative_motion_mm": 50,
+      "residual_fall_mm": 0.0,
+      "residual_gradient": 0.0,
+      "positive_fall": false
+    },
+    {
+      "length_mm": 2000,
+      "nominal_gradient_denominator": 80,
+      "initial_fall_mm": 25.0,
+      "adverse_vertical_relative_motion_mm": 25,
+      "residual_fall_mm": 0.0,
+      "residual_gradient": 0.0,
+      "positive_fall": false
+    },
+    {
+      "length_mm": 2000,
+      "nominal_gradient_denominator": 80,
+      "initial_fall_mm": 25.0,
+      "adverse_vertical_relative_motion_mm": 50,
+      "residual_fall_mm": -25.0,
+      "residual_gradient": -0.0125,
+      "positive_fall": false
+    },
+    {
+      "length_mm": 4000,
+      "nominal_gradient_denominator": 40,
+      "initial_fall_mm": 100.0,
+      "adverse_vertical_relative_motion_mm": 25,
+      "residual_fall_mm": 75.0,
+      "residual_gradient": 0.01875,
+      "positive_fall": true
+    },
+    {
+      "length_mm": 4000,
+      "nominal_gradient_denominator": 40,
+      "initial_fall_mm": 100.0,
+      "adverse_vertical_relative_motion_mm": 50,
+      "residual_fall_mm": 50.0,
+      "residual_gradient": 0.0125,
+      "positive_fall": true
+    },
+    {
+      "length_mm": 4000,
+      "nominal_gradient_denominator": 80,
+      "initial_fall_mm": 50.0,
+      "adverse_vertical_relative_motion_mm": 25,
+      "residual_fall_mm": 25.0,
+      "residual_gradient": 0.00625,
+      "positive_fall": true
+    },
+    {
+      "length_mm": 4000,
+      "nominal_gradient_denominator": 80,
+      "initial_fall_mm": 50.0,
+      "adverse_vertical_relative_motion_mm": 50,
+      "residual_fall_mm": 0.0,
+      "residual_gradient": 0.0,
+      "positive_fall": false
+    }
+  ],
+  "three_axis_joint_envelope_trial_mm": {
+    "axial": 20,
+    "transverse": 20,
+    "vertical": 50,
+    "combined_translation": 57.445626465380286,
+    "meaning": "Demand test only. No available joint or service is certified to accept it."
+  },
+  "synthetic_tree": {
+    "centre_mm": [
+      -3500,
+      6000
+    ],
+    "exclusion_radius_trial_mm": 6000,
+    "authority": "Synthetic constraint only; no species, stem, actual tree, roots or legal RPA represented"
+  },
+  "synthetic_tree_routes": {
+    "west_control": {
+      "length_mm": 11250.0,
+      "closest_distance_mm": 2488.473427625861,
+      "exclusion_overlap": true
+    },
+    "east_trial": {
+      "length_mm": 11050.0,
+      "closest_distance_mm": 15529.085613776491,
+      "exclusion_overlap": false
+    }
+  },
+  "section": {
+    "scale": "1:10 only within dimensioned upper interface. Lower beam/pile continuation NTS and unsized.",
+    "accepted_wall_layers_mm": [
+      102.5,
+      160,
+      140,
+      15
+    ],
+    "ground_floor_source_reserve_mm": 300,
+    "authored_floor_stack_from_MAT_mm": 330,
+    "authored_clear_void_trial_mm": 300,
+    "authored_external_grade_trial_mm": -630,
+    "authored_court_grade_trial_mm": -150,
+    "authored_DPC_lower_bed_trial_mm": -480,
+    "authored_DPC_upper_bed_trial_mm": -330,
+    "authored_cavity_fill_top_trial_mm": -705,
+    "statement": "DPC dimensions are occupied envelope trials, not a brick/slate specification. Floor layers, junction, thermal/gas/air/fire and capacities remain unqualified.",
+    "external_DPC_to_grade_mm": 150,
+    "court_DPC_to_grade_mm": -330,
+    "clear_cavity_below_lower_bed_mm": 225,
+    "adverse_result": "Court grade at -150 is 330 mm above lowest DPC bed: fails ordinary 150 mm exterior clearance at this junction. Outer raised-grade candidate gains clearance but needs accessible approach and no water-trapping moat."
+  }
+}

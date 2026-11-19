@@ -1,0 +1,3584 @@
+{
+  "status": "IAS current-source occurrence/disassembly ledger; IAS-03 open; no route, joint, installation, material or performance admission",
+  "geometryUnits": "mm; furniture rectangles are [x,y,width,depth] plan records, not complete XYZ envelopes. Other copied source fields retain their owning definitions and units.",
+  "sources": {
+    "had": {
+      "path": "project/had/studies/water-replan.json",
+      "blob": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d"
+    },
+    "services": {
+      "path": "project/mat/studies/whole-house-service-baseline.json",
+      "blob": "049161ebac29b24e0acc7d8085302fca906fe9d2"
+    },
+    "ias": {
+      "path": "project/ias/studies/selected-family-convergence.json",
+      "blob": "7922be5910c40198563d5bd67f4cf306ea221dbd"
+    },
+    "materials": {
+      "path": "project/mat/studies/interiors-whole-house-assembly.json",
+      "blob": "5f666647e82d7f46aa759d0dd45550cca228a149"
+    }
+  },
+  "counts": {
+    "groundFurniture": 38,
+    "upperFurniture": 32,
+    "wallSegments": 39,
+    "protectedDoors": 10,
+    "openings": 49,
+    "materialOccurrenceRoles": 18
+  },
+  "currentMap": {
+    "wallSegments": {
+      "groundWalls": [
+        {
+          "id": "study-east",
+          "a": [
+            4800,
+            0
+          ],
+          "b": [
+            4800,
+            1200
+          ],
+          "t": 194,
+          "holes": [],
+          "structuralCore": [
+            4730,
+            4870
+          ],
+          "finishedFaces": [
+            4703,
+            4897
+          ],
+          "faceFinish": [
+            27,
+            27
+          ]
+        },
+        {
+          "id": "cloak-east",
+          "a": [
+            4800,
+            1200
+          ],
+          "b": [
+            4800,
+            2650
+          ],
+          "t": 194,
+          "holes": [
+            [
+              1700,
+              2500
+            ]
+          ],
+          "structuralCore": [
+            4730,
+            4870
+          ],
+          "finishedFaces": [
+            4703,
+            4897
+          ],
+          "faceFinish": [
+            27,
+            27
+          ]
+        },
+        {
+          "id": "cloak-west",
+          "a": [
+            3400,
+            1200
+          ],
+          "b": [
+            3400,
+            2650
+          ],
+          "t": 194,
+          "holes": [],
+          "structuralCore": [
+            3330,
+            3470
+          ],
+          "finishedFaces": [
+            3303,
+            3497
+          ],
+          "faceFinish": [
+            27,
+            27
+          ]
+        },
+        {
+          "id": "cloak-south",
+          "a": [
+            3400,
+            1200
+          ],
+          "b": [
+            4800,
+            1200
+          ],
+          "t": 194,
+          "holes": [],
+          "structuralCore": [
+            1130,
+            1270
+          ],
+          "finishedFaces": [
+            1103,
+            1297
+          ],
+          "faceFinish": [
+            27,
+            27
+          ]
+        },
+        {
+          "id": "study-cloak-north",
+          "a": [
+            2817.5,
+            2650
+          ],
+          "b": [
+            4800,
+            2650
+          ],
+          "t": 194,
+          "holes": [],
+          "structuralCore": [
+            2580,
+            2720
+          ],
+          "finishedFaces": [
+            2553,
+            2747
+          ],
+          "faceFinish": [
+            27,
+            27
+          ]
+        },
+        {
+          "id": "study-L-return",
+          "a": [
+            2817.5,
+            2650
+          ],
+          "b": [
+            2817.5,
+            3247.5
+          ],
+          "t": 194,
+          "holes": [],
+          "structuralCore": [
+            2747.5,
+            2887.5
+          ],
+          "finishedFaces": [
+            2720.5,
+            2914.5
+          ],
+          "faceFinish": [
+            27,
+            27
+          ]
+        },
+        {
+          "id": "study-L-north",
+          "a": [
+            0,
+            3247.5
+          ],
+          "b": [
+            2817.5,
+            3247.5
+          ],
+          "t": 194,
+          "holes": [
+            [
+              1350,
+              2250
+            ]
+          ],
+          "structuralCore": [
+            3177.5,
+            3317.5
+          ],
+          "finishedFaces": [
+            3150.5,
+            3344.5
+          ],
+          "faceFinish": [
+            27,
+            27
+          ]
+        },
+        {
+          "id": "wc-west",
+          "a": [
+            7200,
+            0
+          ],
+          "b": [
+            7200,
+            2650
+          ],
+          "t": 197,
+          "holes": [],
+          "structuralCore": [
+            7130,
+            7270
+          ],
+          "finishedFaces": [
+            7103,
+            7300
+          ],
+          "faceFinish": [
+            27,
+            30
+          ]
+        },
+        {
+          "id": "wc-north",
+          "a": [
+            7200,
+            2650
+          ],
+          "b": [
+            9300,
+            2650
+          ],
+          "t": 197,
+          "holes": [
+            [
+              7650,
+              8550
+            ]
+          ],
+          "structuralCore": [
+            2580,
+            2720
+          ],
+          "finishedFaces": [
+            2550,
+            2747
+          ],
+          "faceFinish": [
+            30,
+            27
+          ]
+        },
+        {
+          "id": "service-spine",
+          "a": [
+            9300,
+            0
+          ],
+          "b": [
+            9300,
+            8290
+          ],
+          "t": 194,
+          "holes": [
+            [
+              2750,
+              3650
+            ]
+          ],
+          "structuralCore": [
+            9230,
+            9370
+          ],
+          "finishedFaces": [
+            9203,
+            9397
+          ],
+          "faceFinish": [
+            27,
+            27
+          ]
+        },
+        {
+          "id": "utility-north",
+          "a": [
+            9300,
+            2550
+          ],
+          "b": [
+            12000,
+            2550
+          ],
+          "t": 194,
+          "holes": [
+            [
+              10250,
+              11150
+            ]
+          ],
+          "structuralCore": [
+            2480,
+            2620
+          ],
+          "finishedFaces": [
+            2453,
+            2647
+          ],
+          "faceFinish": [
+            27,
+            27
+          ]
+        },
+        {
+          "id": "plant-intermediate-arch",
+          "a": [
+            9300,
+            3700
+          ],
+          "b": [
+            12000,
+            3700
+          ],
+          "t": 194,
+          "holes": [
+            [
+              9650,
+              10925
+            ]
+          ],
+          "structuralCore": [
+            3630,
+            3770
+          ],
+          "finishedFaces": [
+            3603,
+            3797
+          ],
+          "faceFinish": [
+            27,
+            27
+          ]
+        },
+        {
+          "id": "plant-north",
+          "a": [
+            9300,
+            5877.5
+          ],
+          "b": [
+            12000,
+            5877.5
+          ],
+          "t": 519.5,
+          "holes": [],
+          "structuralCore": [
+            5807.5,
+            5947.5
+          ],
+          "finishedFaces": [
+            5780.5,
+            6300
+          ],
+          "faceFinish": [
+            27,
+            27
+          ],
+          "scope": "New complete weather-wall comparator from protected south face; owning MAT recipe/support admission required."
+        },
+        {
+          "id": "rear-west",
+          "a": [
+            0,
+            8852.5
+          ],
+          "b": [
+            4377.5,
+            8852.5
+          ],
+          "t": 194,
+          "holes": [
+            [
+              3100,
+              4000
+            ]
+          ],
+          "structuralCore": [
+            8782.5,
+            8922.5
+          ],
+          "finishedFaces": [
+            8755.5,
+            8949.5
+          ],
+          "faceFinish": [
+            27,
+            27
+          ]
+        },
+        {
+          "id": "rear-east",
+          "a": [
+            7552.5,
+            8290
+          ],
+          "b": [
+            12000,
+            8290
+          ],
+          "t": 269,
+          "holes": [
+            [
+              8250,
+              9150
+            ],
+            [
+              10450,
+              11350
+            ]
+          ],
+          "structuralCore": [
+            8182.5,
+            8397.5
+          ],
+          "finishedFaces": [
+            8155.5,
+            8424.5
+          ],
+          "faceFinish": [
+            27,
+            27
+          ]
+        },
+        {
+          "id": "loggia-west-weather",
+          "a": [
+            4377.5,
+            7750
+          ],
+          "b": [
+            4377.5,
+            12000
+          ],
+          "t": 519.5,
+          "holes": [],
+          "finishedFaces": [
+            4280.5,
+            4800
+          ],
+          "structuralCore": [
+            4307.5,
+            4447.5
+          ],
+          "roomSide": "west"
+        },
+        {
+          "id": "loggia-east-weather",
+          "a": [
+            7622.5,
+            7750
+          ],
+          "b": [
+            7622.5,
+            12000
+          ],
+          "t": 519.5,
+          "holes": [],
+          "finishedFaces": [
+            7200,
+            7719.5
+          ],
+          "structuralCore": [
+            7552.5,
+            7692.5
+          ],
+          "roomSide": "east"
+        },
+        {
+          "id": "protected-stair-east",
+          "a": [
+            2894.5,
+            4173
+          ],
+          "b": [
+            2894.5,
+            8949.5
+          ],
+          "t": 154,
+          "holes": [],
+          "finishedFaces": [
+            2817.5,
+            2971.5
+          ],
+          "structuralCore": [
+            2844.5,
+            2944.5
+          ],
+          "faceFinish": [
+            27,
+            27
+          ]
+        },
+        {
+          "id": "protected-west-cross",
+          "a": [
+            2817.5,
+            4250
+          ],
+          "b": [
+            3820.5,
+            4250
+          ],
+          "t": 154,
+          "holes": [
+            [
+              2971.5,
+              3820.5
+            ]
+          ],
+          "structuralCore": [
+            4200,
+            4300
+          ],
+          "finishedFaces": [
+            4173,
+            4327
+          ],
+          "faceFinish": [
+            27,
+            27
+          ]
+        },
+        {
+          "id": "protected-east-cross",
+          "a": [
+            8012.5,
+            4250
+          ],
+          "b": [
+            9370,
+            4250
+          ],
+          "t": 154,
+          "holes": [
+            [
+              8241.25,
+              9141.25
+            ]
+          ],
+          "structuralCore": [
+            4200,
+            4300
+          ],
+          "finishedFaces": [
+            4173,
+            4327
+          ],
+          "faceFinish": [
+            27,
+            27
+          ]
+        },
+        {
+          "id": "east-passage-north-weather",
+          "a": [
+            9397,
+            7922.5
+          ],
+          "b": [
+            12000,
+            7922.5
+          ],
+          "t": 519.5,
+          "finishedFaces": [
+            7500,
+            8019.5
+          ],
+          "structuralCore": [
+            7852.5,
+            7992.5
+          ],
+          "scope": "Outdoor-to-dry northern separator; the 136 mm strip to existing rear wall is not usable room area."
+        },
+        {
+          "id": "gallery-east-water-weather",
+          "a": [
+            9300,
+            6300
+          ],
+          "b": [
+            9300,
+            7500
+          ],
+          "t": 519.5,
+          "finishedFaces": [
+            9203,
+            9722.5
+          ],
+          "structuralCore": [
+            9230,
+            9370
+          ],
+          "replacesLocalSegmentOf": "service-spine",
+          "scope": "Same retained spine core, new local outside layers; not a second added core. Permanent warm gallery above deep water passage; exterior wall displaces pantry, not indoor gallery."
+        }
+      ],
+      "upperWalls": [
+        {
+          "id": "bed2-east",
+          "a": [
+            4800,
+            0
+          ],
+          "b": [
+            4800,
+            2650
+          ],
+          "t": 194,
+          "holes": [],
+          "structuralCore": [
+            4730,
+            4870
+          ],
+          "finishedFaces": [
+            4703,
+            4897
+          ],
+          "faceFinish": [
+            27,
+            27
+          ]
+        },
+        {
+          "id": "bed2-north-main",
+          "a": [
+            2817.5,
+            2650
+          ],
+          "b": [
+            4800,
+            2650
+          ],
+          "t": 194,
+          "holes": [
+            [
+              3450,
+              4350
+            ]
+          ],
+          "structuralCore": [
+            2580,
+            2720
+          ],
+          "finishedFaces": [
+            2553,
+            2747
+          ],
+          "faceFinish": [
+            27,
+            27
+          ]
+        },
+        {
+          "id": "bed2-L-return",
+          "a": [
+            2817.5,
+            2650
+          ],
+          "b": [
+            2817.5,
+            3247.5
+          ],
+          "t": 194,
+          "holes": [],
+          "structuralCore": [
+            2747.5,
+            2887.5
+          ],
+          "finishedFaces": [
+            2720.5,
+            2914.5
+          ],
+          "faceFinish": [
+            27,
+            27
+          ]
+        },
+        {
+          "id": "bed2-L-north",
+          "a": [
+            0,
+            3247.5
+          ],
+          "b": [
+            2817.5,
+            3247.5
+          ],
+          "t": 194,
+          "holes": [],
+          "structuralCore": [
+            3177.5,
+            3317.5
+          ],
+          "finishedFaces": [
+            3150.5,
+            3344.5
+          ],
+          "faceFinish": [
+            27,
+            27
+          ]
+        },
+        {
+          "id": "bed3-west",
+          "a": [
+            7200,
+            0
+          ],
+          "b": [
+            7200,
+            2650
+          ],
+          "t": 194,
+          "holes": [],
+          "structuralCore": [
+            7130,
+            7270
+          ],
+          "finishedFaces": [
+            7103,
+            7297
+          ],
+          "faceFinish": [
+            27,
+            27
+          ]
+        },
+        {
+          "id": "bed3-north-main",
+          "a": [
+            7200,
+            2650
+          ],
+          "b": [
+            9300,
+            2650
+          ],
+          "t": 194,
+          "holes": [
+            [
+              8250,
+              9150
+            ]
+          ],
+          "structuralCore": [
+            2580,
+            2720
+          ],
+          "finishedFaces": [
+            2553,
+            2747
+          ],
+          "faceFinish": [
+            27,
+            27
+          ]
+        },
+        {
+          "id": "wet-spine",
+          "a": [
+            9300,
+            2650
+          ],
+          "b": [
+            9300,
+            6500
+          ],
+          "t": 194,
+          "holes": [
+            [
+              5450,
+              6350
+            ]
+          ],
+          "finishedFaces": [
+            9203,
+            9397
+          ],
+          "structuralCore": [
+            9230,
+            9370
+          ],
+          "faceFinish": [
+            27,
+            27
+          ]
+        },
+        {
+          "id": "bed3-L-north",
+          "a": [
+            9300,
+            3700
+          ],
+          "b": [
+            12000,
+            3700
+          ],
+          "t": 197,
+          "holes": [],
+          "structuralCore": [
+            3630,
+            3770
+          ],
+          "finishedFaces": [
+            3603,
+            3800
+          ],
+          "faceFinish": [
+            27,
+            30
+          ]
+        },
+        {
+          "id": "bath-north",
+          "a": [
+            9300,
+            6500
+          ],
+          "b": [
+            12000,
+            6500
+          ],
+          "t": 200,
+          "holes": [],
+          "finishedFaces": [
+            6400,
+            6600
+          ],
+          "structuralCore": [
+            6430,
+            6570
+          ],
+          "faceFinish": [
+            30,
+            30
+          ]
+        },
+        {
+          "id": "rear-west",
+          "a": [
+            2902.5,
+            8852.5
+          ],
+          "b": [
+            4377.5,
+            8852.5
+          ],
+          "t": 194,
+          "holes": [
+            [
+              3100,
+              4000
+            ]
+          ],
+          "structuralCore": [
+            8782.5,
+            8922.5
+          ],
+          "finishedFaces": [
+            8755.5,
+            8949.5
+          ],
+          "faceFinish": [
+            27,
+            27
+          ]
+        },
+        {
+          "id": "rear-west-return",
+          "a": [
+            4377.5,
+            8012.5
+          ],
+          "b": [
+            4377.5,
+            8852.5
+          ],
+          "t": 194,
+          "holes": [],
+          "structuralCore": [
+            4307.5,
+            4447.5
+          ],
+          "finishedFaces": [
+            4280.5,
+            4474.5
+          ],
+          "faceFinish": [
+            27,
+            27
+          ]
+        },
+        {
+          "id": "rear-east",
+          "a": [
+            7552.5,
+            8290
+          ],
+          "b": [
+            9300,
+            8290
+          ],
+          "t": 269,
+          "holes": [
+            [
+              8250,
+              9150
+            ]
+          ],
+          "finishedFaces": [
+            8155.5,
+            8424.5
+          ],
+          "structuralCore": [
+            8182.5,
+            8397.5
+          ],
+          "faceFinish": [
+            27,
+            27
+          ]
+        },
+        {
+          "id": "rear-divider",
+          "a": [
+            7622.5,
+            8167.5
+          ],
+          "b": [
+            7622.5,
+            12000
+          ],
+          "t": 194,
+          "holes": [],
+          "structuralCore": [
+            7552.5,
+            7692.5
+          ],
+          "finishedFaces": [
+            7525.5,
+            7719.5
+          ],
+          "faceFinish": [
+            27,
+            27
+          ]
+        },
+        {
+          "id": "rear-wet-east",
+          "a": [
+            2902.5,
+            8852.5
+          ],
+          "b": [
+            2902.5,
+            12000
+          ],
+          "t": 194,
+          "holes": [
+            [
+              10350,
+              11250
+            ]
+          ],
+          "structuralCore": [
+            2832.5,
+            2972.5
+          ],
+          "finishedFaces": [
+            2805.5,
+            2999.5
+          ],
+          "faceFinish": [
+            27,
+            27
+          ]
+        },
+        {
+          "id": "wet-spine-principal",
+          "a": [
+            9300,
+            6500
+          ],
+          "b": [
+            9300,
+            8290
+          ],
+          "t": 197,
+          "holes": [],
+          "finishedFaces": [
+            9203,
+            9400
+          ],
+          "structuralCore": [
+            9230,
+            9370
+          ],
+          "faceFinish": [
+            27,
+            30
+          ]
+        },
+        {
+          "id": "rear-east-principal",
+          "a": [
+            9300,
+            8290
+          ],
+          "b": [
+            12000,
+            8290
+          ],
+          "t": 272,
+          "holes": [
+            [
+              9900,
+              10800
+            ]
+          ],
+          "finishedFaces": [
+            8152.5,
+            8424.5
+          ],
+          "structuralCore": [
+            8182.5,
+            8397.5
+          ],
+          "faceFinish": [
+            30,
+            27
+          ]
+        },
+        {
+          "id": "rear-wet-south",
+          "a": [
+            0,
+            8852.5
+          ],
+          "b": [
+            2902.5,
+            8852.5
+          ],
+          "t": 197,
+          "holes": [],
+          "structuralCore": [
+            8782.5,
+            8922.5
+          ],
+          "finishedFaces": [
+            8755.5,
+            8952.5
+          ],
+          "faceFinish": [
+            27,
+            30
+          ]
+        }
+      ]
+    },
+    "furniture": {
+      "GROUND": {
+        "study-desk": {
+          "box": [
+            655,
+            600,
+            1600,
+            700
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "study-chair": {
+          "box": [
+            900,
+            1400,
+            1000,
+            900
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "cloak-hanging": {
+          "box": [
+            3537.5,
+            1337.5,
+            1125,
+            600
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "guest-WC-pan": {
+          "box": [
+            8700,
+            600,
+            400,
+            650
+          ],
+          "owner": "IAS / Services / MAT / HAD",
+          "release": "Retain occurrence-specific water/electrical isolation, real supported first release, complete moving package and reinstated boundary; do not borrow another fixture mechanism."
+        },
+        "guest-WC-basin": {
+          "box": [
+            7450,
+            600,
+            400,
+            400
+          ],
+          "owner": "IAS / Services / MAT / HAD",
+          "release": "Retain occurrence-specific water/electrical isolation, real supported first release, complete moving package and reinstated boundary; do not borrow another fixture mechanism."
+        },
+        "plant-water-reserve": {
+          "box": [
+            9510,
+            3900,
+            700,
+            700
+          ],
+          "owner": "Services / IAS / HAD",
+          "release": "Use the actual device isolation, fixed service support, independently opening access and complete exchange method; current plan box alone proves none of those tasks."
+        },
+        "plant-riser": {
+          "box": [
+            9400,
+            4700,
+            550,
+            700
+          ],
+          "owner": "Services / IAS / HAD",
+          "release": "Use the actual device isolation, fixed service support, independently opening access and complete exchange method; current plan box alone proves none of those tasks."
+        },
+        "rear-stack": {
+          "box": [
+            429.5,
+            10800,
+            300,
+            750
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "reading-sofa1900x850": {
+          "box": [
+            800,
+            9000,
+            850,
+            1900
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "reading-side-table300": {
+          "box": [
+            800,
+            10925,
+            300,
+            300
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "family-sofa1900x750": {
+          "box": [
+            2337.5,
+            9800,
+            1900,
+            750
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "family-side-table300": {
+          "box": [
+            3900,
+            9450,
+            300,
+            300
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "dining-table1200x800": {
+          "box": [
+            8500,
+            9100,
+            800,
+            1200
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "dining-chair-west-south": {
+          "box": [
+            8000,
+            9150,
+            500,
+            500
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "dining-chair-west-north": {
+          "box": [
+            8000,
+            9750,
+            500,
+            500
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "dining-chair-east-south": {
+          "box": [
+            9300,
+            9150,
+            500,
+            500
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "dining-chair-east-north": {
+          "box": [
+            9300,
+            9750,
+            500,
+            500
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "north-sink-station": {
+          "box": [
+            8700,
+            10970.5,
+            900,
+            600
+          ],
+          "owner": "IAS / Services / MAT / HAD",
+          "release": "Retain occurrence-specific water/electrical isolation, real supported first release, complete moving package and reinstated boundary; do not borrow another fixture mechanism."
+        },
+        "north-cooking-station": {
+          "box": [
+            10750,
+            10970.5,
+            600,
+            600
+          ],
+          "owner": "IAS / Services / MAT / HAD",
+          "release": "Retain occurrence-specific water/electrical isolation, real supported first release, complete moving package and reinstated boundary; do not borrow another fixture mechanism."
+        },
+        "cold-storage": {
+          "box": [
+            10920.5,
+            9025,
+            650,
+            650
+          ],
+          "owner": "IAS / Services / MAT / HAD",
+          "release": "Retain occurrence-specific water/electrical isolation, real supported first release, complete moving package and reinstated boundary; do not borrow another fixture mechanism."
+        },
+        "service-kitchen-feed-column": {
+          "box": [
+            11425,
+            11188,
+            145,
+            224
+          ],
+          "owner": "Services / IAS / HAD",
+          "release": "Use the actual device isolation, fixed service support, independently opening access and complete exchange method; current plan box alone proves none of those tasks."
+        },
+        "service-emitter-study-W": {
+          "box": [
+            429.5,
+            1250,
+            200,
+            1150
+          ],
+          "serviceSourceKey": "heat.emitterSchedule[id=study-W].renewal",
+          "owner": "Services / IAS / HAD",
+          "release": "Isolate and drain actual local valves; support emitter before union/bracket release; qualify complete lift/pull, lower room handling and restoration. No generic furniture deletion."
+        },
+        "service-emitter-living-W": {
+          "box": [
+            429.5,
+            9800,
+            200,
+            950
+          ],
+          "serviceSourceKey": "heat.emitterSchedule[id=living-W].renewal",
+          "owner": "Services / IAS / HAD",
+          "release": "Isolate and drain actual local valves; support emitter before union/bracket release; qualify complete lift/pull, lower room handling and restoration. No generic furniture deletion."
+        },
+        "service-emitter-living-N2": {
+          "box": [
+            3102.5,
+            11370.5,
+            950,
+            200
+          ],
+          "serviceSourceKey": "heat.emitterSchedule[id=living-N2].renewal",
+          "owner": "Services / IAS / HAD",
+          "release": "Isolate and drain actual local valves; support emitter before union/bracket release; qualify complete lift/pull, lower room handling and restoration. No generic furniture deletion."
+        },
+        "service-emitter-kitchen-E": {
+          "box": [
+            11370.5,
+            9700,
+            200,
+            1350
+          ],
+          "serviceSourceKey": "heat.emitterSchedule[id=kitchen-E].renewal",
+          "owner": "Services / IAS / HAD",
+          "release": "Isolate and drain actual local valves; support emitter before union/bracket release; qualify complete lift/pull, lower room handling and restoration. No generic furniture deletion."
+        },
+        "service-emitter-utility-E": {
+          "box": [
+            11370.5,
+            1778,
+            200,
+            650
+          ],
+          "serviceSourceKey": "heat.emitterSchedule[id=utility-E].renewal",
+          "owner": "Services / IAS / HAD",
+          "release": "Isolate and drain actual local valves; support emitter before union/bracket release; qualify complete lift/pull, lower room handling and restoration. No generic furniture deletion."
+        },
+        "service-emitter-plant-N": {
+          "box": [
+            10980,
+            3797,
+            550,
+            200
+          ],
+          "serviceSourceKey": "heat.emitterSchedule[id=plant-N].renewal",
+          "owner": "Services / IAS / HAD",
+          "release": "Isolate and drain actual local valves; support emitter before union/bracket release; qualify complete lift/pull, lower room handling and restoration. No generic furniture deletion."
+        },
+        "service-emitter-protected-G": {
+          "box": [
+            3500,
+            2747.5,
+            550,
+            200
+          ],
+          "serviceSourceKey": "heat.emitterSchedule[id=protected-G].renewal",
+          "owner": "Services / IAS / HAD",
+          "release": "Isolate and drain actual local valves; support emitter before union/bracket release; qualify complete lift/pull, lower room handling and restoration. No generic furniture deletion."
+        },
+        "service-emitter-guest-WC-E": {
+          "box": [
+            9003,
+            1900,
+            200,
+            550
+          ],
+          "serviceSourceKey": "heat.emitterSchedule[id=guest-WC-E].renewal",
+          "owner": "Services / IAS / HAD",
+          "release": "Isolate and drain actual local valves; support emitter before union/bracket release; qualify complete lift/pull, lower room handling and restoration. No generic furniture deletion."
+        },
+        "plant-primary-buffer-round-bounding600": {
+          "box": [
+            10150,
+            5025,
+            600,
+            600
+          ],
+          "owner": "Services / IAS / HAD",
+          "release": "Use the actual device isolation, fixed service support, independently opening access and complete exchange method; current plan box alone proves none of those tasks."
+        },
+        "plant-controls": {
+          "box": [
+            10895.5,
+            5480.5,
+            650,
+            300
+          ],
+          "owner": "Services / IAS / HAD",
+          "release": "Use the actual device isolation, fixed service support, independently opening access and complete exchange method; current plan box alone proves none of those tasks."
+        },
+        "service-utility-washer": {
+          "box": [
+            10050,
+            700,
+            650,
+            700
+          ],
+          "serviceSourceKey": "interfaces.architecturalServices.utility.washer",
+          "handlingSourceKey": "interfaces.architecturalServices.utility.working",
+          "owner": "Services / IAS / HAD",
+          "release": "Isolate actual water/electrical duties; support the complete device and retained services; qualify the specific access, first release, receiving state and restoration."
+        },
+        "service-utility-sink": {
+          "box": [
+            10950,
+            700,
+            600,
+            700
+          ],
+          "serviceSourceKey": "interfaces.architecturalServices.utility.sink",
+          "handlingSourceKey": "interfaces.architecturalServices.utility.working",
+          "owner": "Services / IAS / HAD",
+          "release": "Isolate actual water/electrical duties; support the complete device and retained services; qualify the specific access, first release, receiving state and restoration."
+        },
+        "service-utility-rearServiceChase": {
+          "box": [
+            10050,
+            450,
+            1500,
+            250
+          ],
+          "serviceSourceKey": "interfaces.architecturalServices.utility.rearServiceChase",
+          "handlingSourceKey": "interfaces.architecturalServices.utility.working",
+          "owner": "Services / IAS / HAD",
+          "release": "Isolate actual water/electrical duties; support the complete device and retained services; qualify the specific access, first release, receiving state and restoration."
+        },
+        "service-utility-valveBay": {
+          "box": [
+            10700,
+            700,
+            250,
+            700
+          ],
+          "serviceSourceKey": "interfaces.architecturalServices.utility.valveBay",
+          "handlingSourceKey": "interfaces.architecturalServices.utility.working",
+          "owner": "Services / IAS / HAD",
+          "release": "Isolate actual water/electrical duties; support the complete device and retained services; qualify the specific access, first release, receiving state and restoration."
+        },
+        "service-utility-electricalStation": {
+          "box": [
+            9397,
+            1750,
+            300,
+            650
+          ],
+          "serviceSourceKey": "interfaces.architecturalServices.utility.electricalStation",
+          "handlingSourceKey": "interfaces.architecturalServices.utility.working",
+          "owner": "Services / IAS / HAD",
+          "release": "Isolate actual water/electrical duties; support the complete device and retained services; qualify the specific access, first release, receiving state and restoration."
+        },
+        "service-utility-PVinverter": {
+          "box": [
+            9400,
+            429.5,
+            500,
+            250
+          ],
+          "serviceSourceKey": "interfaces.architecturalServices.utility.PVinverter",
+          "handlingSourceKey": "interfaces.architecturalServices.utility.working",
+          "owner": "Services / IAS / HAD",
+          "release": "Isolate actual water/electrical duties; support the complete device and retained services; qualify the specific access, first release, receiving state and restoration."
+        },
+        "low-food-larder": {
+          "box": [
+            9650,
+            11370.5,
+            1000,
+            200
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        }
+      },
+      "FIRST": {
+        "bed2": {
+          "box": [
+            1100,
+            1065.5,
+            950,
+            2055
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "bed2-wardrobe": {
+          "box": [
+            4043,
+            1067.5,
+            660,
+            900
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "bed3": {
+          "box": [
+            9942.5,
+            1518,
+            950,
+            2055
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "bed3-wardrobe": {
+          "box": [
+            7297,
+            1047.5,
+            660,
+            1500
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "bed4": {
+          "box": [
+            5405.5,
+            9250,
+            2000,
+            1500
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "bed4-head": {
+          "box": [
+            7405.5,
+            9250,
+            90,
+            1500
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "bed4-island-wardrobe": {
+          "box": [
+            3042,
+            9800,
+            1500,
+            660
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "principal": {
+          "box": [
+            9450.5,
+            9150,
+            2000,
+            1600
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "principal-head": {
+          "box": [
+            11450.5,
+            9150,
+            90,
+            1600
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "principal-wardrobe": {
+          "box": [
+            7749.5,
+            9300,
+            660,
+            1500
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "rear-shower1000": {
+          "box": [
+            1802.5,
+            8952.5,
+            1000,
+            1000
+          ],
+          "owner": "IAS / Services / MAT / HAD",
+          "release": "Retain occurrence-specific water/electrical isolation, real supported first release, complete moving package and reinstated boundary; do not borrow another fixture mechanism."
+        },
+        "rear-WC": {
+          "box": [
+            729.5,
+            11000,
+            560,
+            355
+          ],
+          "owner": "IAS / Services / MAT / HAD",
+          "release": "Retain occurrence-specific water/electrical isolation, real supported first release, complete moving package and reinstated boundary; do not borrow another fixture mechanism."
+        },
+        "rear-basin": {
+          "box": [
+            1000,
+            8952.5,
+            400,
+            220
+          ],
+          "owner": "IAS / Services / MAT / HAD",
+          "release": "Retain occurrence-specific water/electrical isolation, real supported first release, complete moving package and reinstated boundary; do not borrow another fixture mechanism."
+        },
+        "rear-cabinet": {
+          "box": [
+            429.5,
+            10800,
+            300,
+            750
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "rear-west-low-box": {
+          "box": [
+            429.5,
+            9937.5,
+            150,
+            862.5
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "principal-shower900": {
+          "box": [
+            9400,
+            6600,
+            900,
+            900
+          ],
+          "owner": "IAS / Services / MAT / HAD",
+          "release": "Retain occurrence-specific water/electrical isolation, real supported first release, complete moving package and reinstated boundary; do not borrow another fixture mechanism."
+        },
+        "principal-WC": {
+          "box": [
+            10972.5,
+            7412.5,
+            355,
+            560
+          ],
+          "owner": "IAS / Services / MAT / HAD",
+          "release": "Retain occurrence-specific water/electrical isolation, real supported first release, complete moving package and reinstated boundary; do not borrow another fixture mechanism."
+        },
+        "principal-basin": {
+          "box": [
+            9400,
+            7600,
+            340,
+            450
+          ],
+          "owner": "IAS / Services / MAT / HAD",
+          "release": "Retain occurrence-specific water/electrical isolation, real supported first release, complete moving package and reinstated boundary; do not borrow another fixture mechanism."
+        },
+        "family-bath1700": {
+          "box": [
+            9460,
+            3800,
+            1700,
+            700
+          ],
+          "owner": "IAS / Services / MAT / HAD",
+          "release": "Retain occurrence-specific water/electrical isolation, real supported first release, complete moving package and reinstated boundary; do not borrow another fixture mechanism."
+        },
+        "family-WC": {
+          "box": [
+            10777.5,
+            5750,
+            560,
+            355
+          ],
+          "owner": "IAS / Services / MAT / HAD",
+          "release": "Retain occurrence-specific water/electrical isolation, real supported first release, complete moving package and reinstated boundary; do not borrow another fixture mechanism."
+        },
+        "family-basin": {
+          "box": [
+            11227.5,
+            5200,
+            340,
+            450
+          ],
+          "owner": "IAS / Services / MAT / HAD",
+          "release": "Retain occurrence-specific water/electrical isolation, real supported first release, complete moving package and reinstated boundary; do not borrow another fixture mechanism."
+        },
+        "family-service-cabinet": {
+          "box": [
+            9397,
+            4675,
+            600,
+            750
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "principal-local-soil-column": {
+          "box": [
+            11342.5,
+            7950,
+            180,
+            180
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "family-local-soil-column": {
+          "box": [
+            11297.5,
+            6135,
+            270,
+            265
+          ],
+          "owner": "IAS / HAD; MAT constituents",
+          "release": "Retain the whole source piece; empty and support it before any actual anti-tip/attachment release. Earn grip, route, receiving state and restored restraints where movement is required."
+        },
+        "service-emitter-bed2-S": {
+          "box": [
+            3425,
+            429.5,
+            950,
+            200
+          ],
+          "serviceSourceKey": "heat.emitterSchedule[id=bed2-S].renewal",
+          "owner": "Services / IAS / HAD",
+          "release": "Isolate and drain actual local valves; support emitter before union/bracket release; qualify complete lift/pull, lower room handling and restoration. No generic furniture deletion."
+        },
+        "service-emitter-bed3-S": {
+          "box": [
+            7625,
+            429.5,
+            950,
+            200
+          ],
+          "serviceSourceKey": "heat.emitterSchedule[id=bed3-S].renewal",
+          "owner": "Services / IAS / HAD",
+          "release": "Isolate and drain actual local valves; support emitter before union/bracket release; qualify complete lift/pull, lower room handling and restoration. No generic furniture deletion."
+        },
+        "service-emitter-bed4-N": {
+          "box": [
+            3102.5,
+            11370.5,
+            1050,
+            200
+          ],
+          "serviceSourceKey": "heat.emitterSchedule[id=bed4-N].renewal",
+          "owner": "Services / IAS / HAD",
+          "release": "Isolate and drain actual local valves; support emitter before union/bracket release; qualify complete lift/pull, lower room handling and restoration. No generic furniture deletion."
+        },
+        "service-emitter-principal-N": {
+          "box": [
+            9625,
+            11370.5,
+            1150,
+            200
+          ],
+          "serviceSourceKey": "heat.emitterSchedule[id=principal-N].renewal",
+          "owner": "Services / IAS / HAD",
+          "release": "Isolate and drain actual local valves; support emitter before union/bracket release; qualify complete lift/pull, lower room handling and restoration. No generic furniture deletion."
+        },
+        "service-emitter-rear-N": {
+          "box": [
+            2100,
+            11367.5,
+            650,
+            200
+          ],
+          "serviceSourceKey": "heat.emitterSchedule[id=rear-N].renewal",
+          "owner": "Services / IAS / HAD",
+          "release": "Isolate and drain actual local valves; support emitter before union/bracket release; qualify complete lift/pull, lower room handling and restoration. No generic furniture deletion."
+        },
+        "service-emitter-family-E": {
+          "box": [
+            11367.5,
+            4525,
+            200,
+            650
+          ],
+          "serviceSourceKey": "heat.emitterSchedule[id=family-E].renewal",
+          "owner": "Services / IAS / HAD",
+          "release": "Isolate and drain actual local valves; support emitter before union/bracket release; qualify complete lift/pull, lower room handling and restoration. No generic furniture deletion."
+        },
+        "service-emitter-principal-E-high": {
+          "box": [
+            11367.5,
+            6775,
+            200,
+            650
+          ],
+          "serviceSourceKey": "heat.emitterSchedule[id=principal-E-high].renewal",
+          "owner": "Services / IAS / HAD",
+          "release": "Isolate and drain actual local valves; support emitter before union/bracket release; qualify complete lift/pull, lower room handling and restoration. No generic furniture deletion."
+        },
+        "service-emitter-protected-F": {
+          "box": [
+            8180,
+            4400,
+            200,
+            550
+          ],
+          "serviceSourceKey": "heat.emitterSchedule[id=protected-F].renewal",
+          "owner": "Services / IAS / HAD",
+          "release": "Isolate and drain actual local valves; support emitter before union/bracket release; qualify complete lift/pull, lower room handling and restoration. No generic furniture deletion."
+        }
+      }
+    },
+    "protectedDoors": [
+      {
+        "id": "FD-WEST-CROSS",
+        "level": "GROUND",
+        "host": "protected-west-cross",
+        "rough": [
+          2971.5,
+          3820.5
+        ],
+        "axis": 4250,
+        "frameEach": 25,
+        "leaf": [
+          794,
+          44
+        ],
+        "hinge": [
+          3793,
+          4250
+        ],
+        "opening": "NORTHintoexcludedgallery",
+        "closed": [
+          2999,
+          4228,
+          794,
+          44
+        ],
+        "open": [
+          3771,
+          4250,
+          44,
+          794
+        ],
+        "edgeGapsEach": 2.5,
+        "minimumClearBudget": 755,
+        "performance": "E20minimumreference;classifiedfullassembly/actualgaprequired"
+      },
+      {
+        "id": "FD-EAST-CROSS",
+        "level": "GROUND",
+        "host": "protected-east-cross",
+        "rough": [
+          8241.25,
+          9141.25
+        ],
+        "axis": 4250,
+        "frameEach": 25,
+        "leaf": [
+          845,
+          44
+        ],
+        "hinge": [
+          9113.75,
+          4250
+        ],
+        "opening": "NORTHintoexcludedgallery",
+        "closed": [
+          8268.75,
+          4228,
+          845,
+          44
+        ],
+        "open": [
+          9091.75,
+          4250,
+          44,
+          845
+        ],
+        "edgeGapsEach": 2.5,
+        "minimumClearBudget": 806,
+        "performance": "E20minimumreference;classifiedfullassemblyrequired"
+      },
+      {
+        "id": "STUDY",
+        "level": "GROUND",
+        "host": "study-L-north",
+        "rough": [
+          1350,
+          2250
+        ],
+        "axis": 3247.5,
+        "frameEach": 25,
+        "leaf": [
+          830,
+          44
+        ],
+        "hinge": [
+          1385,
+          3247.5
+        ],
+        "opening": "SOUTHINTOSTUDY",
+        "performance": "ProtectedhallboundaryE20reference, notordinaryratedclaim",
+        "frameDepth": 230
+      },
+      {
+        "id": "GUEST-WC",
+        "level": "GROUND",
+        "host": "wc-north",
+        "rough": [
+          7650,
+          8550
+        ],
+        "axis": 2650,
+        "performance": "Protectedhallboundarydoor;actualbathroom/firestrategyexceptionnotassumed"
+      },
+      {
+        "id": "PLANT",
+        "level": "GROUND",
+        "host": "service-spine",
+        "rough": [
+          2750,
+          3650
+        ],
+        "axis": 9300,
+        "performance": "Protectedhallboundarydoor;plantactualhazard/requiredratingtoconfirm"
+      },
+      {
+        "id": "BED2",
+        "level": "FIRST",
+        "host": "bed2-north-main",
+        "rough": [
+          3450,
+          4350
+        ],
+        "axis": 2650,
+        "performance": "E20minimumreference;privateclosurepreserved, actualclassifieddoorset/operationrequired"
+      },
+      {
+        "id": "BED3",
+        "level": "FIRST",
+        "host": "bed3-north-main",
+        "rough": [
+          8250,
+          9150
+        ],
+        "axis": 2650,
+        "performance": "E20minimumreference;privateclosurepreserved, actualclassifieddoorset/operationrequired"
+      },
+      {
+        "id": "BED4",
+        "level": "FIRST",
+        "host": "rear-west",
+        "rough": [
+          3100,
+          4000
+        ],
+        "axis": 8852.5,
+        "performance": "E20minimumreference;privateclosurepreserved, actualclassifieddoorset/operationrequired"
+      },
+      {
+        "id": "PRINCIPAL",
+        "level": "FIRST",
+        "host": "rear-east",
+        "rough": [
+          8250,
+          9150
+        ],
+        "axis": 8290,
+        "performance": "E20minimumreference;privateclosurepreserved, actualclassifieddoorset/operationrequired"
+      },
+      {
+        "id": "FAMILY-BATH",
+        "level": "FIRST",
+        "host": "wet-spine",
+        "rough": [
+          5450,
+          6350
+        ],
+        "axis": 9300,
+        "performance": "Actualprotectedboundarybathroomroletoqualify; inside-slideroperationisnotfirerating",
+        "trial": {
+          "rough": [
+            5450,
+            6350
+          ],
+          "completeFrame": 825,
+          "leaf": [
+            762,
+            44
+          ],
+          "hinge": [
+            9397,
+            6281
+          ],
+          "clear": [
+            5516.5,
+            6283.5
+          ],
+          "net": 767,
+          "status": "IAS delayed-closer release/wait direction; manual arm/regrip rejected. Bound to independently reviewed IAS30cf600 proof; E20 assembly, closer force/delay and physical operation remain unqualified"
+        }
+      }
+    ],
+    "openings": {
+      "GROUND": [
+        {
+          "id": "south-window-0",
+          "wall": "outer-south",
+          "centre": 1800,
+          "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "south-window-1",
+          "wall": "outer-south",
+          "centre": 3900,
+          "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "front-door",
+          "wall": "outer-south",
+          "centre": 6000,
+          "width": 1800,
+          "kind": "door",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 2
+        },
+        {
+          "id": "south-window-3",
+          "wall": "outer-south",
+          "centre": 8100,
+          "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "south-window-4",
+          "wall": "outer-south",
+          "centre": 10200,
+          "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "east-window-0",
+          "wall": "outer-east",
+          "centre": 1800,
+          "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
+          "sill": 850,
+          "head": 2850,
+          "spring": 2550,
+          "cillUndersideMinimum": 800,
+          "cillDepthMaximum": 50
+        },
+        {
+          "id": "plant-replacement",
+          "wall": "outer-east",
+          "centre": 4600,
+          "width": 1400,
+          "kind": "door",
+          "swing": "right",
+          "hinge": "low",
+          "leaves": 1
+        },
+        {
+          "id": "east-window-3",
+          "wall": "outer-east",
+          "centre": 10200,
+          "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
+          "sill": 850,
+          "head": 2850,
+          "spring": 2550,
+          "cillUndersideMinimum": 800,
+          "cillDepthMaximum": 50
+        },
+        {
+          "id": "west-window-0",
+          "wall": "outer-west",
+          "centre": 1800,
+          "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
+          "sill": 850,
+          "head": 2850,
+          "spring": 2550,
+          "cillUndersideMinimum": 800,
+          "cillDepthMaximum": 50
+        },
+        {
+          "id": "west-window-1",
+          "wall": "outer-west",
+          "centre": 4600,
+          "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
+          "head": 2750,
+          "spring": 2450,
+          "sill": 750
+        },
+        {
+          "id": "west-window-2",
+          "wall": "outer-west",
+          "centre": 7400,
+          "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
+          "sill": 1750,
+          "head": 2850,
+          "spring": 2550,
+          "operation": "FIXED +independentrevealgrille"
+        },
+        {
+          "id": "west-window-3",
+          "wall": "outer-west",
+          "centre": 10200,
+          "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
+          "sill": 850,
+          "head": 2850,
+          "spring": 2550,
+          "cillUndersideMinimum": 800,
+          "cillDepthMaximum": 50
+        },
+        {
+          "id": "north-window-0",
+          "wall": "outer-north",
+          "centre": 1800,
+          "width": 1000,
+          "kind": "window",
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "north-window-1",
+          "wall": "outer-north",
+          "centre": 3700,
+          "width": 700,
+          "kind": "window",
+          "operation": "FIXED; ordinary operation not credited",
+          "sill": 850,
+          "head": 2850,
+          "spring": 2550,
+          "cillUndersideMinimum": 800,
+          "cillDepthMaximum": 50
+        },
+        {
+          "id": "garden-entry",
+          "wall": "outer-north",
+          "centre": 6000,
+          "width": 2960,
+          "kind": "open-loggia",
+          "swing": "right",
+          "hinge": "low",
+          "leaves": 2,
+          "finishedWidth": 2400
+        },
+        {
+          "id": "north-window-3",
+          "wall": "outer-north",
+          "centre": 8300,
+          "width": 700,
+          "kind": "window",
+          "sill": 1050,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "north-window-4",
+          "wall": "outer-north",
+          "centre": 10200,
+          "width": 1000,
+          "kind": "window",
+          "sill": 1050,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "grand-court-entry-south",
+          "wall": "court-south",
+          "centre": 6000,
+          "width": 1800,
+          "kind": "door",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 2
+        },
+        {
+          "id": "grand-court-entry-north",
+          "wall": "court-north",
+          "centre": 6000,
+          "width": 2960,
+          "kind": "open-loggia",
+          "swing": "right",
+          "hinge": "low",
+          "leaves": 2,
+          "finishedWidth": 2400
+        },
+        {
+          "id": "court-east-0",
+          "wall": "court-east",
+          "centre": 5150,
+          "width": 1000,
+          "kind": "window",
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "court-east-1",
+          "wall": "court-east",
+          "centre": 6850,
+          "width": 1000,
+          "kind": "window",
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "court-west-0",
+          "wall": "court-west",
+          "centre": 5150,
+          "width": 1000,
+          "kind": "window",
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "court-west-1",
+          "wall": "court-west",
+          "centre": 6850,
+          "width": 1000,
+          "kind": "window",
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "east-outdoor-water-portal",
+          "wall": "outer-east",
+          "centre": 6900,
+          "width": 1254,
+          "finishedWidth": 1200,
+          "jambFinishEach": 27,
+          "kind": "open-service-portal",
+          "head": 2850,
+          "spring": 2550,
+          "radialRingTrial": 215,
+          "leaves": 0,
+          "rejectedPriorRawWidth": 1760,
+          "scope": "Project-designed open service arch: raw6273..7527, finished6300..7500, 27 jamb returns; ringtop3065 leaves105 to RC3170. Replaces unallocated1760 raw width. Outer support/node reservations remain; no qualified thrust/capacity or ordinary accessible route acceptance."
+        }
+      ],
+      "FIRST": [
+        {
+          "id": "south-window-0",
+          "wall": "outer-south",
+          "centre": 1800,
+          "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "south-window-1",
+          "wall": "outer-south",
+          "centre": 3900,
+          "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
+          "sill": 850,
+          "head": 2850,
+          "spring": 2550,
+          "cillUndersideMinimum": 800,
+          "cillDepthMaximum": 50
+        },
+        {
+          "id": "south-window-2",
+          "wall": "outer-south",
+          "centre": 6000,
+          "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "south-window-3",
+          "wall": "outer-south",
+          "centre": 8100,
+          "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
+          "sill": 850,
+          "head": 2850,
+          "spring": 2550,
+          "cillUndersideMinimum": 800,
+          "cillDepthMaximum": 50
+        },
+        {
+          "id": "south-window-4",
+          "wall": "outer-south",
+          "centre": 10200,
+          "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "east-window-0",
+          "wall": "outer-east",
+          "centre": 1800,
+          "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "east-window-1",
+          "wall": "outer-east",
+          "centre": 4600,
+          "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
+          "sill": 850,
+          "head": 2850,
+          "spring": 2550,
+          "cillUndersideMinimum": 800,
+          "cillDepthMaximum": 50
+        },
+        {
+          "id": "east-window-2",
+          "wall": "outer-east",
+          "centre": 7400,
+          "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
+          "fixedTransomTopBand": 480,
+          "openingLeafHeadMaximum": 2370,
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "east-window-3",
+          "wall": "outer-east",
+          "centre": 10200,
+          "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "west-window-0",
+          "wall": "outer-west",
+          "centre": 1800,
+          "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "west-window-1",
+          "wall": "outer-west",
+          "centre": 4600,
+          "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "west-window-2",
+          "wall": "outer-west",
+          "centre": 7400,
+          "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "west-window-3",
+          "wall": "outer-west",
+          "centre": 10200,
+          "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "north-window-0",
+          "wall": "outer-north",
+          "centre": 1800,
+          "width": 1000,
+          "kind": "window",
+          "sill": 850,
+          "head": 2850,
+          "spring": 2550,
+          "cillUndersideMinimum": 800,
+          "cillDepthMaximum": 50
+        },
+        {
+          "id": "north-window-1",
+          "wall": "outer-north",
+          "centre": 3700,
+          "width": 700,
+          "kind": "window",
+          "sill": 950,
+          "head": 2850,
+          "spring": 2550,
+          "cillUndersideMinimum": 900,
+          "cillDepthMaximum": 50
+        },
+        {
+          "id": "north-window-3",
+          "wall": "outer-north",
+          "centre": 8300,
+          "width": 700,
+          "kind": "window",
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "north-window-4",
+          "wall": "outer-north",
+          "centre": 10200,
+          "width": 1000,
+          "kind": "window",
+          "sill": 850,
+          "head": 2850,
+          "spring": 2550,
+          "cillUndersideMinimum": 800,
+          "cillDepthMaximum": 50
+        },
+        {
+          "id": "court-south-0",
+          "wall": "court-south",
+          "centre": 5150,
+          "width": 1000,
+          "kind": "window",
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "court-south-1",
+          "wall": "court-south",
+          "centre": 6850,
+          "width": 1000,
+          "kind": "window",
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "court-north-0",
+          "wall": "court-north",
+          "centre": 5150,
+          "width": 1000,
+          "kind": "window",
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "court-north-1",
+          "wall": "court-north",
+          "centre": 6700,
+          "width": 1000,
+          "kind": "window",
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "court-east-0",
+          "wall": "court-east",
+          "centre": 5150,
+          "width": 1000,
+          "kind": "window",
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "court-east-1",
+          "wall": "court-east",
+          "centre": 6850,
+          "width": 1000,
+          "kind": "window",
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "court-west-0",
+          "wall": "court-west",
+          "centre": 5150,
+          "width": 1000,
+          "kind": "window",
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "court-west-1",
+          "wall": "court-west",
+          "centre": 6850,
+          "width": 1000,
+          "kind": "window",
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        }
+      ]
+    },
+    "protectedRoofClosureDomains": {
+      "top": 6620,
+      "bottom": 6444,
+      "rectangles": [
+        [
+          "stairVoid",
+          [
+            429.5,
+            4432.5,
+            2388,
+            4323
+          ]
+        ],
+        [
+          "entranceVoid",
+          [
+            4885,
+            429.5,
+            2230,
+            2305.5
+          ]
+        ],
+        [
+          "westUpperGallery",
+          [
+            2999.5,
+            3344.5,
+            821,
+            5411
+          ]
+        ],
+        [
+          "southWestUpperHall",
+          [
+            429.5,
+            3344.5,
+            4405.5,
+            476
+          ]
+        ],
+        [
+          "southUpperBridge",
+          [
+            2914.5,
+            2747,
+            1904.5,
+            1073.5
+          ]
+        ],
+        [
+          "southEastUpperHall",
+          [
+            7180.5,
+            2747,
+            2022.5,
+            1073.5
+          ]
+        ],
+        [
+          "eastUpperGallery",
+          [
+            8179.5,
+            3820.5,
+            1023.5,
+            4359
+          ]
+        ]
+      ],
+      "scope": "Unionincludingassociatedwallheads,notroofoversprivatebedrooms. Actualfire-perimeter/support systemmustbind. GroundC-GRCsoffit appliesonlywhereactualFIRSTslabexists, neveracrosseitheropenvoid."
+    },
+    "floorSections": {
+      "groundFFL": 0,
+      "firstFFL": 3450,
+      "atticDatum": 6900,
+      "groundFloorRC": {
+        "top": -180,
+        "bottom": -380
+      },
+      "firstFloorRC": {
+        "top": 3370,
+        "bottom": 3170
+      },
+      "loggiaSoffit": {
+        "insulation": 240,
+        "railLathTerritory": 15,
+        "mineralProtection": 25,
+        "underside": 2890,
+        "scope": "MAT provisional exact recipe; arch/head thermal interface notyet admitted."
+      },
+      "groundSupport": {
+        "grid": [
+          600,
+          450
+        ],
+        "top": -180,
+        "bottom": -630,
+        "integralNode": [
+          600,
+          600,
+          570
+        ],
+        "lowTies": [
+          600,
+          200
+        ],
+        "lowTieTop": -550,
+        "lowestNodeTie": -750,
+        "heaveStress": 300,
+        "constructionLoss": 50,
+        "ventilationReserve": 150,
+        "Drequired": 1688,
+        "Dtrial": 1800,
+        "Dsurplus": 112,
+        "scope": "D1800 is the joined pre-site comparator. Retained grid/member capacities and actual ground/heave/ventilation remain unqualified; actual site and any deeper structural member reopen this reference."
+      },
+      "waterLevels": {
+        "southLandingStart": 0,
+        "landingRun": 1500,
+        "landingDrop": 30,
+        "courtNorth": -110,
+        "courtRun": 3500,
+        "loggiaNorth": -152.5,
+        "loggiaRun": 4250,
+        "scope": "MAT constructiveONEproposal; structure/slopes/receivers/firstharm need joined check."
+      },
+      "fireHeight": {
+        "firstAboveAuthoredExterior": 5250,
+        "lowRiseComparison": 4500,
+        "scope": "D1800 comparator gives5250 above authored lowest exterior; actual adjacent-ground interpretation and strategy remain required."
+      }
+    },
+    "baseboardTerminations": {
+      "fixedCabinets": [
+        "pantry-shelf-comparison",
+        "north-sink-station",
+        "north-cooking-station",
+        "bed2-wardrobe",
+        "bed3-wardrobe",
+        "rear-cabinet"
+      ],
+      "rule": "Decorative18base may terminate behindFIXEDjoinery with full27primaryfinish and independentfloor/wallboundary retained. No18deletion inprotectedhall. Actualcaptivebase/endreturns/release remainIAS/MATdetail.",
+      "northStationsOnly": true
+    },
+    "localServiceCeilings": {
+      "rear": {
+        "underside": 2575.375,
+        "hatch": [
+          1722.5,
+          9052.5,
+          800,
+          800
+        ]
+      },
+      "bath": {
+        "underside": 2587.5,
+        "hatch": [
+          10750,
+          3950,
+          400,
+          400
+        ]
+      }
+    },
+    "materialOccurrences": [
+      {
+        "id": "G-HALL",
+        "name": "Entrance/south hall and void",
+        "families": [
+          "W-D",
+          "F-D",
+          "C-G",
+          "C-U",
+          "J-T",
+          "D-R",
+          "H-M",
+          "B-S",
+          "J-P"
+        ]
+      },
+      {
+        "id": "G-STAIR",
+        "name": "Stair approach and ground protected connection",
+        "families": [
+          "J-S",
+          "W-D",
+          "F-D",
+          "C-G",
+          "C-U",
+          "J-T",
+          "H-M",
+          "B-S",
+          "J-P"
+        ]
+      },
+      {
+        "id": "G-STUDY",
+        "name": "Study",
+        "families": [
+          "W-D",
+          "F-D",
+          "C-G",
+          "J-T",
+          "J-C",
+          "J-P",
+          "D-R",
+          "H-M",
+          "B-S"
+        ]
+      },
+      {
+        "id": "G-CLOAK",
+        "name": "Cloak / storage",
+        "families": [
+          "W-D",
+          "F-D",
+          "C-G",
+          "J-T",
+          "J-C",
+          "J-P",
+          "H-M",
+          "B-S"
+        ]
+      },
+      {
+        "id": "G-WC",
+        "name": "Guest WC",
+        "families": [
+          "W-D",
+          "F-M",
+          "C-G",
+          "J-T",
+          "D-O",
+          "H-M",
+          "S-W",
+          "B-S",
+          "D-R",
+          "J-P"
+        ]
+      },
+      {
+        "id": "G-UTILITY",
+        "name": "Utility",
+        "families": [
+          "W-D",
+          "F-M",
+          "C-G",
+          "J-C",
+          "J-P",
+          "H-M",
+          "S-W",
+          "B-S"
+        ]
+      },
+      {
+        "id": "G-PLANT",
+        "name": "Plant",
+        "families": [
+          "W-D",
+          "F-M",
+          "C-G",
+          "D-R",
+          "H-M",
+          "B-S"
+        ]
+      },
+      {
+        "id": "G-PANTRY",
+        "name": "Pantry",
+        "families": [
+          "W-D",
+          "F-M",
+          "C-G",
+          "J-C",
+          "J-P",
+          "D-O",
+          "H-M",
+          "B-S"
+        ]
+      },
+      {
+        "id": "G-LIVING",
+        "name": "Living",
+        "families": [
+          "W-D",
+          "F-D",
+          "C-G",
+          "J-C",
+          "J-T",
+          "J-P",
+          "H-M",
+          "B-S"
+        ]
+      },
+      {
+        "id": "G-KITCHEN",
+        "name": "Kitchen / dining",
+        "families": [
+          "W-D",
+          "F-D",
+          "C-G",
+          "J-T",
+          "J-C",
+          "J-P",
+          "H-M",
+          "S-W",
+          "B-S"
+        ]
+      },
+      {
+        "id": "U-B2",
+        "name": "Bedroom2",
+        "families": [
+          "C-O",
+          "W-D",
+          "F-D",
+          "J-T",
+          "J-C",
+          "J-P",
+          "D-R",
+          "H-M",
+          "B-S"
+        ]
+      },
+      {
+        "id": "U-B3",
+        "name": "Bedroom3",
+        "families": [
+          "C-O",
+          "W-D",
+          "F-D",
+          "J-T",
+          "J-C",
+          "J-P",
+          "D-R",
+          "H-M",
+          "B-S"
+        ]
+      },
+      {
+        "id": "U-B4",
+        "name": "Bedroom4",
+        "families": [
+          "C-O",
+          "W-D",
+          "F-D",
+          "J-T",
+          "J-C",
+          "J-P",
+          "D-R",
+          "D-O",
+          "H-M",
+          "B-S"
+        ]
+      },
+      {
+        "id": "U-PRINCIPAL",
+        "name": "Principal bedroom",
+        "families": [
+          "C-O",
+          "W-D",
+          "F-D",
+          "J-T",
+          "J-C",
+          "J-P",
+          "D-R",
+          "D-O",
+          "H-M",
+          "B-S"
+        ]
+      },
+      {
+        "id": "U-REAR-WET",
+        "name": "Rear wet room",
+        "families": [
+          "C-O",
+          "W-D",
+          "W-W",
+          "F-M",
+          "J-C",
+          "J-P",
+          "D-O",
+          "H-M",
+          "S-W",
+          "B-S"
+        ]
+      },
+      {
+        "id": "U-FAMILY",
+        "name": "Family bathroom",
+        "families": [
+          "C-O",
+          "W-D",
+          "W-W",
+          "F-M",
+          "J-C",
+          "J-P",
+          "D-R",
+          "H-M",
+          "S-W",
+          "B-S"
+        ]
+      },
+      {
+        "id": "U-PRINCIPAL-WET",
+        "name": "Principal en suite",
+        "families": [
+          "C-O",
+          "W-W",
+          "F-M",
+          "J-C",
+          "J-P",
+          "D-O",
+          "H-M",
+          "S-W",
+          "B-S"
+        ]
+      },
+      {
+        "id": "U-ROUTE",
+        "name": "Whole upper ring / stair roof closure",
+        "families": [
+          "J-S",
+          "W-D",
+          "F-D",
+          "C-U",
+          "J-T",
+          "H-M",
+          "B-S",
+          "J-P"
+        ]
+      }
+    ],
+    "materialSourceDomain": {
+      "hadHead": "cfacc96c61ce1be5befa3bc0a10086c7cb6b4202",
+      "hadBlob": "25faad2c4d40df2b7da7212f73808843a88d2f52",
+      "services": {
+        "head": "9476f39edfeb1f2b03e59cbbc1c5a15fc3ab5de2",
+        "blob": "e827caa8c6c0cfc23bef0f08b3452f57984875d6",
+        "logicalInput": "project/mat/studies/whole-house-service-baseline.json"
+      }
+    },
+    "fixedScene": {
+      "stair": [
+        417.5,
+        4432.5,
+        2400,
+        4335
+      ],
+      "void": [
+        4885,
+        417.5,
+        2230,
+        2317.5
+      ],
+      "fixedObstacles": {
+        "GROUND": [
+          [
+            "wetBeamSouthReceiver",
+            [
+              2745.5,
+              8600.5,
+              314,
+              504
+            ]
+          ],
+          [
+            "wetBeamNorthReceiver",
+            [
+              2745.5,
+              11260.5,
+              314,
+              477
+            ]
+          ],
+          [
+            "stairMidPostFinished",
+            [
+              2817.5,
+              7105.5,
+              277,
+              304
+            ]
+          ]
+        ],
+        "FIRST": [
+          [
+            "principalEastExtraWetLining",
+            [
+              11567.5,
+              6600,
+              3,
+              1552.5
+            ]
+          ],
+          [
+            "familyEastWetFace",
+            [
+              11567.5,
+              3800,
+              3,
+              2600
+            ]
+          ],
+          [
+            "familyWestBathEndWetReturn",
+            [
+              9397,
+              3800,
+              3,
+              700
+            ]
+          ],
+          [
+            "rearShowerWetReturn",
+            [
+              2802.5,
+              8952.5,
+              3,
+              1000
+            ]
+          ]
+        ]
+      },
+      "court": [
+        4250,
+        4250,
+        3500,
+        3500
+      ],
+      "envelopeSource": "model.envelope / groundWalls / upperWalls / openings; retain the complete enclosure in every applicable motion proof"
+    }
+  },
+  "snapshotDifferences": {
+    "GROUND": {
+      "beforeCount": 22,
+      "currentCount": 38,
+      "added": [
+        "low-food-larder",
+        "plant-controls",
+        "plant-primary-buffer-round-bounding600",
+        "service-emitter-guest-WC-E",
+        "service-emitter-kitchen-E",
+        "service-emitter-living-N2",
+        "service-emitter-living-W",
+        "service-emitter-plant-N",
+        "service-emitter-protected-G",
+        "service-emitter-study-W",
+        "service-emitter-utility-E",
+        "service-kitchen-feed-column",
+        "service-utility-PVinverter",
+        "service-utility-electricalStation",
+        "service-utility-rearServiceChase",
+        "service-utility-sink",
+        "service-utility-valveBay",
+        "service-utility-washer"
+      ],
+      "removed": [
+        "Q350-body",
+        "pantry-shelf-comparison"
+      ],
+      "changed": [
+        {
+          "id": "north-cooking-station",
+          "before": [
+            10800,
+            10970.5,
+            600,
+            600
+          ],
+          "current": [
+            10750,
+            10970.5,
+            600,
+            600
+          ]
+        },
+        {
+          "id": "plant-riser",
+          "before": [
+            9410,
+            4700,
+            550,
+            700
+          ],
+          "current": [
+            9400,
+            4700,
+            550,
+            700
+          ]
+        },
+        {
+          "id": "plant-water-reserve",
+          "before": [
+            9485,
+            3900,
+            700,
+            700
+          ],
+          "current": [
+            9510,
+            3900,
+            700,
+            700
+          ]
+        },
+        {
+          "id": "study-desk",
+          "before": [
+            600,
+            600,
+            1600,
+            700
+          ],
+          "current": [
+            655,
+            600,
+            1600,
+            700
+          ]
+        }
+      ]
+    },
+    "FIRST": {
+      "beforeCount": 24,
+      "currentCount": 32,
+      "added": [
+        "service-emitter-bed2-S",
+        "service-emitter-bed3-S",
+        "service-emitter-bed4-N",
+        "service-emitter-family-E",
+        "service-emitter-principal-E-high",
+        "service-emitter-principal-N",
+        "service-emitter-protected-F",
+        "service-emitter-rear-N"
+      ],
+      "removed": [],
+      "changed": [
+        {
+          "id": "bed4",
+          "before": [
+            5405.5,
+            9350,
+            2000,
+            1500
+          ],
+          "current": [
+            5405.5,
+            9250,
+            2000,
+            1500
+          ]
+        },
+        {
+          "id": "bed4-head",
+          "before": [
+            7405.5,
+            9350,
+            90,
+            1500
+          ],
+          "current": [
+            7405.5,
+            9250,
+            90,
+            1500
+          ]
+        },
+        {
+          "id": "principal",
+          "before": [
+            9450.5,
+            9175,
+            2000,
+            1600
+          ],
+          "current": [
+            9450.5,
+            9150,
+            2000,
+            1600
+          ]
+        },
+        {
+          "id": "principal-head",
+          "before": [
+            11450.5,
+            9175,
+            90,
+            1600
+          ],
+          "current": [
+            11450.5,
+            9150,
+            90,
+            1600
+          ]
+        }
+      ]
+    }
+  },
+  "protectedDoorDifferences": [
+    {
+      "id": "STUDY",
+      "field": "frameDepth",
+      "before": 194,
+      "current": 230
+    }
+  ],
+  "preservedSourceJoins": {
+    "bed4": {
+      "currentBody": [
+        5405.5,
+        9250,
+        2000,
+        1500
+      ],
+      "currentHead": [
+        7405.5,
+        9250,
+        90,
+        1500
+      ],
+      "newerIASBody": [
+        5405.5,
+        9250,
+        2000,
+        1500
+      ],
+      "newerIASHead": [
+        7405.5,
+        9250,
+        90,
+        1500
+      ],
+      "newerIASGeometryMatches": true,
+      "hadIndependentEvidence": {
+        "commit": "dc3093e4c886dad3fc57c3463e047cb96a2a34e2",
+        "blob": "87a45043dce090adc24f91b92fae70d85e2990d8",
+        "path": "project/ias/studies/selected-family-convergence.json",
+        "key": "rearEmitterRepair",
+        "geometryEquivalent": true
+      },
+      "currentHADPass": true,
+      "scope": "Preserve the explicitly joined newer emitter-aware repair at its existing limits; the old furniture snapshot is not its actual input."
+    },
+    "principal": {
+      "currentBody": [
+        9450.5,
+        9150,
+        2000,
+        1600
+      ],
+      "currentHead": [
+        11450.5,
+        9150,
+        90,
+        1600
+      ],
+      "sourceRequirementMatches": true,
+      "maintenance": {
+        "translation": [
+          0,
+          500
+        ],
+        "whole": [
+          9450.5,
+          9650,
+          2090,
+          1600
+        ],
+        "swept": [
+          9450.5,
+          9150,
+          2090,
+          2100
+        ],
+        "trayStage": [
+          10275,
+          8540,
+          250,
+          900
+        ],
+        "handlingPad": 100,
+        "nominalStageGap": 210,
+        "after100Pad": 110,
+        "windowTasks": "Unavailable during bedroom maintenance; restore ordinary state.",
+        "sweptConflicts": [],
+        "pass": true,
+        "paddedStage": [
+          10175,
+          8440,
+          450,
+          1100
+        ],
+        "stageToTemporaryBedGap": 110
+      },
+      "currentApproach": {
+        "id": "principal-wardrobe-foot-north-windows",
+        "level": "FIRST",
+        "bodyRadius": 300,
+        "points": [
+          [
+            8730,
+            8824.5
+          ],
+          [
+            8730,
+            10000
+          ],
+          [
+            9000,
+            10000
+          ],
+          [
+            9000,
+            11060.25
+          ],
+          [
+            10200,
+            11060.25
+          ],
+          [
+            11235,
+            11060.25
+          ],
+          [
+            11235,
+            11100
+          ]
+        ],
+        "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
+        "minimumReserve": 10.25,
+        "controlling": {
+          "obstacle": "principal",
+          "segment": 3
+        },
+        "pass": true
+      },
+      "scope": "Current HAD records the 25 mm south correction and 500 mm north maintenance translation. This is not a rerun of the old IAS wardrobe route or a whole-export/handling pass."
+    },
+    "studyDoor": {
+      "currentDepth": 230,
+      "door": {
+        "id": "STUDY",
+        "level": "GROUND",
+        "host": "study-L-north",
+        "rough": [
+          1350,
+          2250
+        ],
+        "axis": 3247.5,
+        "frameEach": 25,
+        "leaf": [
+          830,
+          44
+        ],
+        "hinge": [
+          1385,
+          3247.5
+        ],
+        "opening": "SOUTHINTOSTUDY",
+        "performance": "ProtectedhallboundaryE20reference, notordinaryratedclaim",
+        "frameDepth": 230
+      },
+      "operation": {
+        "completeFrameEnvelopeDepth": 230,
+        "checkedFramePieces": [
+          [
+            1350,
+            3132.5,
+            25,
+            230
+          ],
+          [
+            2225,
+            3132.5,
+            25,
+            230
+          ]
+        ],
+        "rough": [
+          1350,
+          2250
+        ],
+        "frameEach": 25,
+        "leafEdgeGapEach": 10,
+        "hinge": [
+          1385,
+          3247.5
+        ],
+        "leaf": [
+          830,
+          44
+        ],
+        "minimumClearBudget": 786,
+        "bodyRadius": 300,
+        "forearmRadius": 40,
+        "handleAlong": 780,
+        "handleFaceOffset": 84,
+        "bodyKnots": [
+          [
+            0,
+            2275,
+            2800
+          ],
+          [
+            15,
+            2400,
+            2600
+          ],
+          [
+            30,
+            2400,
+            2400
+          ],
+          [
+            45,
+            2350,
+            2350
+          ],
+          [
+            60,
+            2150,
+            2625
+          ],
+          [
+            90,
+            1780,
+            2625
+          ]
+        ],
+        "handleState": "Southface0–45deg; explicit two-hand handover at45; oppositeface45–90.",
+        "stepDegrees": 0.1,
+        "sampledBodyReserve": 4.187853143415339,
+        "sampledArmReserve": 7.668699193285377,
+        "sampledReach": 552.9078478020924,
+        "continuousBodyLowerBound": 1.9348531434153386,
+        "continuousArmLowerBound": 4.595699193285377,
+        "continuousReachUpperBound": 555.1953478020924,
+        "bodyAt": {
+          "angle": 15,
+          "obstacle": "study-L-return+18trim"
+        },
+        "armAt": {
+          "angle": 45,
+          "obstacle": "moving-study-leaf"
+        },
+        "pass": true,
+        "scope": "One geometric inside close/reopen sequence from leaf-open entry, not actual operator strength, hardware, classified frame or outside first-opening admission. Both hands have reachable collision-free paths at45; no teleporting hand throughleaf."
+      },
+      "scope": "Preserve the actual 230 mm-frame inside close/reopen witness. Actual assembly, outside first opening, support and room-side renewal remain unearned."
+    },
+    "familyDoor": {
+      "source": {
+        "commit": "30cf11096e98ec8c18e6269330b986751b9e63f5",
+        "path": "project/ias/studies/selected-family-convergence.json",
+        "blob": "3bf11679be73d6f7c8566b893f8302fa4454949b"
+      },
+      "geometryEquivalent": true,
+      "projectionEquivalent": true,
+      "scope": "Retain the current HAD keyed join to its independent family-door evidence; no physical closer/force admission."
+    }
+  },
+  "boundaries": [
+    "Generated source map is current only for its recorded blobs; --check fails when any recorded map/source changes.",
+    "Snapshot differences are dependency findings, not universal failures of newer independently sourced proofs.",
+    "The MAT eighteen-role schedule remains at its own immutable HAD/service identities; this map does not repin or reopen its completed alternatives investigation.",
+    "Conventional rear joint remains the specific native seat/straight sealing land/tolerance/engagement hold recorded in ias-03-renewal-proportionality-result.md.",
+    "All retained fixtures, structural obstacles, stair and court/weather enclosure remain in each applicable whole-event proof."
+  ]
+}

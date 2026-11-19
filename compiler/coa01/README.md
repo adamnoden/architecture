@@ -1,7 +1,7 @@
 # COA-01 — output contract and dependency architecture
 
 **Gate:** COA-01  
-**Status:** PASS subject to repository CI  
+**Status:** PASS — accepted in the [completed COA programme](../../docs/computational/compiler-output-architecture-programme.md)\
 **Starting main:** `114892835b7e0316579eeed3eafbf29969f83280`  
 **Issue:** #95  
 **Authority effect:** none
@@ -47,7 +47,7 @@ Publication figures remain outside this generic format policy because PR-00D own
 
 ## Successor family frozen at v1
 
-Schema: `OH-RH-OUTPUT-1`  
+Current schema: `RH-OUTPUT-1` (the original gate label was `OH-RH-OUTPUT-1`)\
 Renderer family: `1.0.0`
 
 Stable successor paths:
@@ -74,7 +74,7 @@ Every generated successor artefact will carry:
 - source compile fingerprint;
 - SHA-256 content fingerprint.
 
-The final output manifest will carry the Reference House compile schema/fingerprint plus the generated content identities. It therefore links representation to an exact compiled semantic state without making representation source authority.
+The output manifest carries the Reference House compact compile schema/fingerprint plus the SHA-256 identities of actual generated content. The compile stamp is an association with the declared summary, not proof of complete runtime-state equality. The [CCR identity result](../../project/ccr/ccr-identity-result.md) records the tested limit; `outputs:check` separately regenerates and compares output bytes. Representation remains downstream of source authority.
 
 ## Canonical input contract
 
@@ -111,4 +111,4 @@ Generic runtime domains and the Reference House semantic compiler remain upstrea
 
 COA-01 changes no historical SVG, historical generator, Reference House source fact, semantic result, proof boundary or maturity assessment.
 
-**Next gate:** COA-02 — non-spatial report extraction.
+**Historical handoff:** [COA-02 — non-spatial report extraction](../coa02/README.md), subsequently completed.

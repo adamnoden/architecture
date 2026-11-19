@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+<rect width="1200" height="720" fill="#faf9f4"/>
+<style>text{font-family:Arial,sans-serif;fill:#25343d}.title{font-size:26px;font-weight:bold}.label{font-size:18px}.small{font-size:15px}.hold{fill:#a3442b}</style>
+<text x="35" y="42" class="title">OUTWARD RC ARCH: ACTUAL CLOSED-LINK CELLS</text>
+<text x="35" y="71" class="label hold">160 / 180 width-only controls fail joined bending. Proposed geometry; no section selected.</text>
+<text x="55" y="116" class="label">160 ordinary arch</text>
+<rect x="55" y="155" width="240.0" height="322.5" fill="#dfe2df" stroke="#69797b" stroke-width="2"/>
+<rect x="112.0" y="212.0" width="126.0" height="208.5" fill="none" stroke="#b26929" stroke-width="9.0"/>
+<circle cx="128.5" cy="228.5" r="12.0" fill="#294f65"/>
+<circle cx="128.5" cy="404.0" r="12.0" fill="#294f65"/>
+<circle cx="221.5" cy="228.5" r="12.0" fill="#294f65"/>
+<circle cx="221.5" cy="404.0" r="12.0" fill="#294f65"/>
+<text x="55" y="510" class="label">H6 cell: 84.00 × 139.00 mm</text>
+<text x="55" y="540" class="small">Adverse: 64.00 × 119.00 mm</text>
+<text x="55" y="566" class="small">Gross RC: 160 × 215 mm; four H16</text>
+<text x="430" y="116" class="label">180 ordinary arch</text>
+<rect x="430" y="155" width="270.0" height="322.5" fill="#dfe2df" stroke="#69797b" stroke-width="2"/>
+<rect x="487.0" y="212.0" width="156.0" height="208.5" fill="none" stroke="#b26929" stroke-width="9.0"/>
+<circle cx="503.5" cy="228.5" r="12.0" fill="#294f65"/>
+<circle cx="503.5" cy="404.0" r="12.0" fill="#294f65"/>
+<circle cx="626.5" cy="228.5" r="12.0" fill="#294f65"/>
+<circle cx="626.5" cy="404.0" r="12.0" fill="#294f65"/>
+<text x="430" y="510" class="label">H6 cell: 104.00 × 139.00 mm</text>
+<text x="430" y="540" class="small">Adverse: 84.00 × 119.00 mm</text>
+<text x="430" y="566" class="small">Gross RC: 180 × 215 mm; four H16</text>
+<text x="805" y="116" class="label">225 fixed jamb foot</text>
+<rect x="805" y="155" width="337.5" height="307.5" fill="#dfe2df" stroke="#69797b" stroke-width="2"/>
+<rect x="859.0" y="217.4705882352946" width="111.0" height="187.85294117647027" fill="none" stroke="#b26929" stroke-width="9.0"/>
+<circle cx="875.5" cy="233.9705882352946" r="12.0" fill="#294f65"/>
+<circle cx="875.5" cy="388.82352941176487" r="12.0" fill="#294f65"/>
+<circle cx="953.5" cy="233.9705882352946" r="12.0" fill="#294f65"/>
+<circle cx="953.5" cy="388.82352941176487" r="12.0" fill="#294f65"/>
+<text x="805" y="510" class="label">H6 cell: 74.00 × 125.24 mm</text>
+<text x="805" y="540" class="small">Adverse: 54.00 × 105.24 mm</text>
+<text x="805" y="566" class="small">Gross RC: 225 × 205 mm; four H16</text>
+<text x="35" y="620" class="label hold">Foot 149 mm gross-cell assumption REJECTED: actual enclosed normal width is 74 mm.</text>
+<text x="35" y="650" class="small">Adverse comparison: formed width/depth −10, both opposing steel layers 5 inward; not measured tolerances.</text>
+<text x="35" y="678" class="small">Schematic link corners. Actual bends, cage/sleeve placement, anchorage, insulation and complete force path remain unadmitted.</text>
+</svg>

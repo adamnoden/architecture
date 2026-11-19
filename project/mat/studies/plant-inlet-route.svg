@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 525" width="1040" height="525">
+<title>Lobby water inlet and lift-off cylinder bridge</title><desc>Plan locates the utility and plant branches, two pierced walls, radiator and trolley. Elevation shows the operating and upright stowed bridge.</desc>
+<rect width="1040" height="525" fill="#faf9f5"/><g font-family="Arial, sans-serif" fill="#203c45">
+<text x="26" y="37" font-size="24">Bring water into the shared lobby</text>
+<text x="554" y="37" font-size="24">Lift and park the cold bridge</text>
+<text x="26" y="63" font-size="14">North-up plan · dimensions in mm</text>
+<text x="554" y="63" font-size="14">Front elevation · moving assembly in two positions</text>
+<rect x="36.9" y="338.0" width="102.6" height="15.1" fill="#aaa89b"/>
+<rect x="236.7" y="338.0" width="91.8" height="15.1" fill="#aaa89b"/>
+<rect x="36.9" y="213.8" width="37.8" height="15.1" fill="#aaa89b"/>
+<rect x="212.4" y="213.8" width="116.1" height="15.1" fill="#aaa89b"/>
+<rect x="218.4" y="189.3" width="59.4" height="21.6" fill="#c9957c"/>
+<rect x="47.4" y="361.8" width="32.4" height="70.2" fill="#c9957c"/>
+<circle cx="97.4" cy="162.0" r="32.1" fill="#d1cbc0"/>
+<polyline points="97.4,162.0 166.5,162.0 166.5,126.9 328.5,126.9" fill="none" stroke="#a1c8b9" stroke-width="91.8" stroke-linejoin="round" stroke-linecap="round" opacity="0.5"/>
+<polyline points="338.2,280.8 254.5,280.8" fill="none" stroke="#295b71" stroke-width="5" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<polyline points="254.5,280.8 254.5,243.0 228.6,243.0 228.6,192.2" fill="none" stroke="#295b71" stroke-width="5" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<polyline points="254.5,280.8 254.5,364.0" fill="none" stroke="#295b71" stroke-width="5" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<polyline points="627.5,362.5 627.9,353.2 629.0,344.0 630.8,334.8 633.3,325.6 636.6,316.6 640.5,307.7 645.2,299.0 650.5,290.4 656.5,282.0 663.1,273.9 670.4,265.9 678.3,258.3 686.8,250.9 695.8,243.9 705.4,237.1 715.5,230.7 726.1,224.7 737.1,219.1 748.6,213.8 760.5,209.0 772.7,204.5 785.3,200.5 798.1,197.0 811.3,193.9 824.6,191.2 838.2,189.1 851.8,187.4 865.7,186.2 879.5,185.4 893.5,185.2" fill="none" stroke="#98aaa3" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<text x="359" y="161" font-size="14">Cylinder route</text>
+<text x="359" y="219" font-size="14">Plant pier</text>
+<text x="359" y="282" font-size="14">East entry</text>
+<text x="359" y="353" font-size="14">Utility pier</text>
+<polyline points="122.2,192.2 228.6,192.2" fill="none" stroke="#b35931" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<polyline points="253.5,181.4 274.0,181.4" fill="none" stroke="#487969" stroke-width="5" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<text x="32" y="464" font-size="14">Blue = fixed feed   ·   Orange = removable bridge</text>
+<text x="32" y="489" font-size="14">Green = parked bridge   ·   Pale band = cylinder trolley</text>
+<text x="555" y="118" font-size="14">Upright spine sits on two wall brackets.</text>
+<polyline points="595.1,377.8 595.1,343.6 861.0,343.6 861.0,377.8" fill="none" stroke="#b35931" stroke-width="8" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<polyline points="923.2,185.2 974.5,185.2 974.5,362.5 923.2,362.5" fill="none" stroke="#487969" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<text x="554" y="441" font-size="14">Release both nuts. Lift 85 and translate 120 east / 100 north.</text>
+<text x="554" y="466" font-size="14">Tilt the west end up, then move 110 east onto the clips.</text>
+<text x="554" y="491" font-size="14">Reverse the supported sequence before pressure testing.</text>
+</g></svg>

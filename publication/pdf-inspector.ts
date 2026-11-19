@@ -5,7 +5,7 @@ import { extractText, getDocumentProxy } from 'unpdf'
 
 const POINTS_PER_INCH = 72
 const MILLIMETRES_PER_INCH = 25.4
-const CACHE_SCHEMA = 'unpdf-1.8.1-v1'
+const CACHE_SCHEMA = 'unpdf-1.8.1-v2'
 const CACHE_DIRECTORY = resolve(
   process.cwd(),
   'node_modules/.cache/ovids-house/pdf-inspector'
@@ -22,10 +22,12 @@ export interface PdfInspection {
   readonly pages: number
   readonly pageSize: PdfPageSize
   readonly text?: string
+  readonly links?: readonly string[]
 }
 
 export interface PdfInspectionOptions {
   readonly text?: boolean
+  readonly links?: boolean
 }
 
 interface CachedPdfInspection extends PdfInspection {
@@ -61,7 +63,8 @@ function isPositiveFinite(value: unknown): value is number {
 function validCachedInspection(
   value: unknown,
   sha256: string,
-  requireText: boolean
+  requireText: boolean,
+  requireLinks: boolean
 ): value is CachedPdfInspection {
   if (!value || typeof value !== 'object') return false
   const candidate = value as Partial<CachedPdfInspection>
@@ -74,20 +77,24 @@ function validCachedInspection(
   if (!isPositiveFinite(candidate.pageSize.heightMm)) return false
   if (requireText && typeof candidate.text !== 'string') return false
   if (candidate.text !== undefined && typeof candidate.text !== 'string') return false
+  if (requireLinks && !Array.isArray(candidate.links)) return false
+  if (candidate.links !== undefined && (!Array.isArray(candidate.links) || candidate.links.some((link) => typeof link !== 'string'))) return false
   return true
 }
 
 async function readCachedInspection(
   sha256: string,
-  requireText: boolean
+  requireText: boolean,
+  requireLinks: boolean
 ): Promise<PdfInspection | null> {
   try {
     const parsed: unknown = JSON.parse(await readFile(cachePath(sha256), 'utf8'))
-    if (!validCachedInspection(parsed, sha256, requireText)) return null
+    if (!validCachedInspection(parsed, sha256, requireText, requireLinks)) return null
     return {
       pages: parsed.pages,
       pageSize: parsed.pageSize,
-      ...(parsed.text === undefined ? {} : { text: parsed.text })
+      ...(parsed.text === undefined ? {} : { text: parsed.text }),
+      ...(parsed.links === undefined ? {} : { links: parsed.links })
     }
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code === 'ENOENT') return null
@@ -116,7 +123,7 @@ export async function inspectPdf(
   if (bytes.byteLength === 0) throw new Error(`PDF is empty: ${path}`)
 
   const sha256 = digest(bytes)
-  const cached = await readCachedInspection(sha256, options.text === true)
+  const cached = await readCachedInspection(sha256, options.text === true, options.links === true)
   if (cached) return cached
 
   const document = await getDocumentProxy(new Uint8Array(bytes))
@@ -139,6 +146,18 @@ export async function inspectPdf(
       text = Array.isArray(extracted.text) ? extracted.text.join('\n') : extracted.text
     }
 
+    let links: string[] | undefined
+    if (options.links) {
+      links = []
+      for (let number = 1; number <= document.numPages; number += 1) {
+        const page = await document.getPage(number)
+        for (const annotation of await page.getAnnotations()) {
+          if (annotation.subtype === 'Link' && typeof annotation.url === 'string') links.push(annotation.url)
+        }
+        page.cleanup()
+      }
+    }
+
     const inspection: PdfInspection = {
       pages: document.numPages,
       pageSize: {
@@ -147,7 +166,8 @@ export async function inspectPdf(
         widthMm: pointsToMillimetres(viewport.width),
         heightMm: pointsToMillimetres(viewport.height)
       },
-      ...(text === undefined ? {} : { text })
+      ...(text === undefined ? {} : { text }),
+      ...(links === undefined ? {} : { links })
     }
 
     await writeCachedInspection(sha256, inspection)

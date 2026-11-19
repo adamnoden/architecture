@@ -1,0 +1,310 @@
+{
+  "status": "PROPOSED HYDRAULIC COMPARISON; complete local assembly and renewal remain unjoined",
+  "flow": {
+    "rainLpsM2": 0.06,
+    "normalLps": 3.25815,
+    "valleyLps": 0.3456,
+    "newExposedGoodsAndCapLps": 0.17655,
+    "directRoofPerFaceLps": 0.4248,
+    "remainingCourtLps": 0.3456
+  },
+  "geometry": {
+    "primaryWidthMM": 350,
+    "lowerWidthMM": 425,
+    "primaryQMM": [
+      4375,
+      4725
+    ],
+    "lowerQMM": [
+      4375,
+      4800
+    ],
+    "primaryFrontMM": 6715.0,
+    "primaryRearMM": 6795.0,
+    "primaryCrownBedMM": 6635,
+    "primaryHeadBedMM": 6605.75,
+    "lowerDepthMM": 125.0,
+    "capBottomTopMM": [
+      6820,
+      6840
+    ]
+  },
+  "conditions": {
+    "halfWidthUnavailable": true,
+    "ManningN": 0.02,
+    "hydraulicFall": 0.004,
+    "localK": 4,
+    "movementMM": 14.0,
+    "settingMM": 10.0,
+    "splashMM": 25.0,
+    "siteRainfallEstablished": false,
+    "componentRatingEstablished": false,
+    "normalProfileScope": "A continuous bound on the declared normal-depth plus K4 comparison. It is not a nonuniform subcritical backwater solution or a qualified inlet/outlet capacity."
+  },
+  "primary": {
+    "frontMM": 6715.0,
+    "widthMM": 350.0,
+    "crownBedMM": 6635.0,
+    "headBedMM": 6605.75,
+    "authoredBedFall": 0.005043103,
+    "oneArmLengthMM": 5800.0,
+    "adverseCrownDoseLps": 0.52215,
+    "intermediateCornerLps": 0.3456,
+    "directPerFaceLps": 0.4248,
+    "allAddedGoodsRainAtCrownLps": 0.17655,
+    "minimum": {
+      "reserveMM": 3.323805865,
+      "pathIntervalMM": [
+        2900.0,
+        2901.0
+      ],
+      "flowAtUpperIntervalEndLps": 1.292696483,
+      "bedAtLowerIntervalEndMM": 6620.375,
+      "normalDepthMM": 29.630568977,
+      "K4HeadMM": 12.670625158
+    },
+    "boundaryChecks": [
+      {
+        "face": 0,
+        "distanceMM": 0.0,
+        "flowLps": 0.52215,
+        "bedMM": 6635.0,
+        "reserveMM": 7.852845617
+      },
+      {
+        "face": 0,
+        "distanceMM": 2900.0,
+        "flowLps": 0.94695,
+        "bedMM": 6620.375,
+        "reserveMM": 11.245123345
+      },
+      {
+        "face": 1,
+        "distanceMM": 2900.0,
+        "flowLps": 1.29255,
+        "bedMM": 6620.375,
+        "reserveMM": 3.327001944
+      },
+      {
+        "face": 1,
+        "distanceMM": 5800.0,
+        "flowLps": 1.71735,
+        "bedMM": 6605.75,
+        "reserveMM": 9.11993706
+      }
+    ],
+    "intervalWidthAtMostMM": 1.0,
+    "proof": "Within each interval the available depth increases with distance. Normal depth and K4 head increase with flow: rectangular hydraulic radius, velocity and discharge all increase with depth. Using the earlier bed and later flow is therefore a conservative continuous-interval bound, not only a sampled-point pass."
+  },
+  "earlierFrontComparisons": [
+    {
+      "frontMM": 6705.0,
+      "widthMM": 375.0,
+      "crownBedMM": 6635.0,
+      "headBedMM": 6605.75,
+      "authoredBedFall": 0.005,
+      "oneArmLengthMM": 5850.0,
+      "adverseCrownDoseLps": 0.52215,
+      "intermediateCornerLps": 0.3456,
+      "directPerFaceLps": 0.4248,
+      "allAddedGoodsRainAtCrownLps": 0.17655,
+      "minimum": {
+        "reserveMM": -4.747033669,
+        "pathIntervalMM": [
+          2925.0,
+          2926.0
+        ],
+        "flowAtUpperIntervalEndLps": 1.292695231,
+        "bedAtLowerIntervalEndMM": 6620.375,
+        "normalDepthMM": 28.095175496,
+        "K4HeadMM": 12.276858173
+      },
+      "boundaryChecks": [
+        {
+          "face": 0,
+          "distanceMM": 0.0,
+          "flowLps": 0.52215,
+          "bedMM": 6635.0,
+          "reserveMM": -1.099958503
+        },
+        {
+          "face": 0,
+          "distanceMM": 2925.0,
+          "flowLps": 0.94695,
+          "bedMM": 6620.375,
+          "reserveMM": 2.807920372
+        },
+        {
+          "face": 1,
+          "distanceMM": 2925.0,
+          "flowLps": 1.29255,
+          "bedMM": 6620.375,
+          "reserveMM": -4.744012091
+        },
+        {
+          "face": 1,
+          "distanceMM": 5850.0,
+          "flowLps": 1.71735,
+          "bedMM": 6605.75,
+          "reserveMM": 1.46168875
+        }
+      ],
+      "intervalWidthAtMostMM": 1.0,
+      "proof": "Within each interval the available depth increases with distance. Normal depth and K4 head increase with flow: rectangular hydraulic radius, velocity and discharge all increase with depth. Using the earlier bed and later flow is therefore a conservative continuous-interval bound, not only a sampled-point pass."
+    },
+    {
+      "frontMM": 6710.0,
+      "widthMM": 350.0,
+      "crownBedMM": 6635.0,
+      "headBedMM": 6605.75,
+      "authoredBedFall": 0.005043103,
+      "oneArmLengthMM": 5800.0,
+      "adverseCrownDoseLps": 0.52215,
+      "intermediateCornerLps": 0.3456,
+      "directPerFaceLps": 0.4248,
+      "allAddedGoodsRainAtCrownLps": 0.17655,
+      "minimum": {
+        "reserveMM": -1.676194135,
+        "pathIntervalMM": [
+          2900.0,
+          2901.0
+        ],
+        "flowAtUpperIntervalEndLps": 1.292696483,
+        "bedAtLowerIntervalEndMM": 6620.375,
+        "normalDepthMM": 29.630568977,
+        "K4HeadMM": 12.670625158
+      },
+      "boundaryChecks": [
+        {
+          "face": 0,
+          "distanceMM": 0.0,
+          "flowLps": 0.52215,
+          "bedMM": 6635.0,
+          "reserveMM": 2.852845617
+        },
+        {
+          "face": 0,
+          "distanceMM": 2900.0,
+          "flowLps": 0.94695,
+          "bedMM": 6620.375,
+          "reserveMM": 6.245123345
+        },
+        {
+          "face": 1,
+          "distanceMM": 2900.0,
+          "flowLps": 1.29255,
+          "bedMM": 6620.375,
+          "reserveMM": -1.672998056
+        },
+        {
+          "face": 1,
+          "distanceMM": 5800.0,
+          "flowLps": 1.71735,
+          "bedMM": 6605.75,
+          "reserveMM": 4.11993706
+        }
+      ],
+      "intervalWidthAtMostMM": 1.0,
+      "proof": "Within each interval the available depth increases with distance. Normal depth and K4 head increase with flow: rectangular hydraulic radius, velocity and discharge all increase with depth. Using the earlier bed and later flow is therefore a conservative continuous-interval bound, not only a sampled-point pass."
+    }
+  ],
+  "lowerOnePathFullDose": {
+    "normalDepthMM": 47.358981327,
+    "K4HeadMM": 21.368821151,
+    "reserveMM": 7.272197522
+  },
+  "blockedSpill": {
+    "nominalAvailablePathMM": 4800,
+    "clearFraction": 0.5,
+    "dischargeComparison": 0.75,
+    "effectiveLengthMM": 1800.0,
+    "primaryLevelLipHeadMM": 13.87626887,
+    "lowerPathRiseMM": 28.75,
+    "lowerCrestProfile": "Explicit linear rise along EACH4800 mm path; a maximum-height bound alone is insufficient.",
+    "lowerUniformHalfComparison": {
+      "clearIntervalOnEachPathMM": [
+        0,
+        4800
+      ],
+      "distributedEffectiveFactor": 0.5,
+      "headAboveLowestRimMM": 20.30405441,
+      "reproducedFlowLps": 3.25815
+    },
+    "lowerLowestHalfBlocked": {
+      "clearIntervalOnEachPathMM": [
+        2400,
+        4800
+      ],
+      "distributedEffectiveFactor": 1.0,
+      "headAboveLowestRimMM": 29.769548892,
+      "reproducedFlowLps": 3.25815
+    },
+    "lowerHighestHalfBlockedControl": {
+      "clearIntervalOnEachPathMM": [
+        0,
+        2400
+      ],
+      "distributedEffectiveFactor": 1.0,
+      "headAboveLowestRimMM": 15.394548892,
+      "reproducedFlowLps": 3.25815
+    },
+    "primaryTransport": {
+      "flowLps": 3.25815,
+      "clearWidthMM": 175.0,
+      "minimumFloodedDepthMM": 93.87626887,
+      "fullArmLengthMM": 5800,
+      "frictionHeadMM": 5.652811677,
+      "K4HeadMM": 8.018911121,
+      "totalHeadMM": 13.671722798,
+      "scope": "Conservative full-dose transport comparison. The24 mm setting/movement stage allowance must bound adverse bed-to-crest relative shifts so this minimum depth remains available."
+    },
+    "lowerTransport": {
+      "flowLps": 3.25815,
+      "clearWidthMM": 212.5,
+      "minimumFloodedDepthMM": 125.0,
+      "fullArmLengthMM": 5650,
+      "frictionHeadMM": 1.534510083,
+      "K4HeadMM": 3.067363482,
+      "totalHeadMM": 4.601873565,
+      "scope": "Conservative full-dose transport comparison. The24 mm setting/movement stage allowance must bound adverse bed-to-crest relative shifts so this minimum depth remains available."
+    },
+    "primaryRearReserveMM": 3.452008333,
+    "primaryMaximumWaterMM": 160.797991667,
+    "lowerMaximumWaterMM": 183.371422457,
+    "nativePrimaryWaterBoundMM": 170.0,
+    "nativeLowerWaterBoundMM": 190.0,
+    "nativePrimaryWaterReserveMM": 9.202008333,
+    "nativeLowerWaterReserveMM": 6.628577543,
+    "former160PrimaryReserveMM": -0.797991667,
+    "former160LowerReserveMM": -23.371422457,
+    "unknownCrestShapeControl": {
+      "allClearCrestAtMaximumHeadMM": 37.491501621,
+      "storedWaterWithSameTransportMM": 191.093375187,
+      "reserveAgainst190MM": -1.093375187,
+      "decision": "Reject replacing the explicit linear crest with only a maximum-height statement."
+    },
+    "clearLengthProof": "For a common water level the local discharge decreases monotonically with crest elevation. Removing the lowest half of the two identical graded paths therefore minimises capacity among all blockages covering the same total length."
+  },
+  "pressureComparison": {
+    "blockedRoofLevelMM": 6800.0,
+    "abovePrimaryRearMM": 5.0,
+    "scope": "Static buried-route comparator only; actual outlet, seal, transient and qualification duties remain separate."
+  },
+  "unproved": [
+    "The actual spill edges, corner transitions and both outlet bodies must provide the stated lengths and level continuity.",
+    "Normal head and overflow-entry capacity, physical jets/splash and partial-obstruction behaviour require joined detail and testing.",
+    "The complete collector/assembly movement must fit the14 mm allowance.",
+    "This comparison does not prove first release, temporary rain capture or any receiving resistance."
+  ],
+  "screens": {
+    "primaryNormalProfile": true,
+    "lowerFullDose": true,
+    "primaryRear": true,
+    "nativeWaterBound": true
+  },
+  "sourceHashes": {
+    "project/mat/studies/ring-roof-family.json": "b8aa44fab2b13d329f4ccb6cda0210c1fe3aab1b13e8ec96a47e9e0271c07a81",
+    "project/rwt/studies/selected-water-event.json": "179832f10e0b3c2cc3cde05d7b99878819c49b4e5ef451785c5a5c99a6e7e0d3",
+    "project/rof/studies/roof_water_inner_hydraulics.py": "49dc655d0e936cc08102c5688e35c1a14c19807396b418d69a9fb749f716dde7"
+  }
+}

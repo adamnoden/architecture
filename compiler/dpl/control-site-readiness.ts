@@ -1,6 +1,6 @@
+import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { sha256SemanticFingerprint } from '../core/identity.js'
 import { DPL15C_DIMENSIONS, type DPL15CDimension } from './corpus-candidate-readiness.js'
 
 export const DPLR1_SCHEMA_VERSION = 'dpl.controlSiteCandidateReadiness.v1' as const
@@ -94,7 +94,7 @@ const exact = <T extends string | number | boolean>(value: unknown, expected: T,
   return expected
 }
 
-const uniqueSorted = (values: readonly string[]): string[] => [...new Set(values)].sort((a, b) => a.localeCompare(b))
+const uniqueSorted = (values: readonly string[]): string[] => [...new Set(values)].sort((a, b) => compareDplIdentityStrings(a, b))
 
 const asStrings = (value: unknown, label: string): string[] => {
   if (!Array.isArray(value) || value.length === 0) throw new Error(`${label} must be a non-empty array.`)
@@ -173,7 +173,7 @@ export const validateDPLR1Assessment = (value: unknown): RawAssessment => {
   }
 
   if (!Array.isArray(raw.sources) || raw.sources.length === 0) throw new Error('DPL-R1 requires evidence sources.')
-  const sources = raw.sources.map(canonicalSource).sort((a, b) => a.id.localeCompare(b.id))
+  const sources = raw.sources.map(canonicalSource).sort((a, b) => compareDplIdentityStrings(a.id, b.id))
   const sourceIds = sources.map((source) => source.id)
   if (new Set(sourceIds).size !== sourceIds.length) throw new Error('DPL-R1 evidence source ids must be unique.')
   for (const source of sources) {
@@ -193,7 +193,7 @@ export const validateDPLR1Assessment = (value: unknown): RawAssessment => {
   }
   const sourceIdSet = new Set(sourceIds)
   const assessments = raw.assessments.map((entry, index) => canonicalAssessment(entry, index, sourceIdSet))
-    .sort((a, b) => a.dimension.localeCompare(b.dimension))
+    .sort((a, b) => compareDplIdentityStrings(a.dimension, b.dimension))
   const assessmentDimensions = assessments.map((assessment) => assessment.dimension)
   if (new Set(assessmentDimensions).size !== DPL15C_DIMENSIONS.length ||
       JSON.stringify(assessmentDimensions) !== JSON.stringify([...DPL15C_DIMENSIONS].sort())) {
@@ -259,12 +259,12 @@ export const composeDPLR1ControlReadiness = (
       ? 'CONTROL_SITE_NOT_READY_EVIDENCE_GAP'
       : 'CONTROL_SITE_CANDIDATE_AUTHORING_READY'
 
-  const evidenceFingerprint = sha256SemanticFingerprint({
+  const evidenceFingerprint = sha256DplSemanticFingerprint({
     controlSiteId: assessment.controlSiteId,
     siteSnapshot: assessment.siteSnapshot,
     sources: assessment.sources
   })
-  const assessmentFingerprint = sha256SemanticFingerprint({
+  const assessmentFingerprint = sha256DplSemanticFingerprint({
     schemaVersion: assessment.schemaVersion,
     assessmentId: assessment.assessmentId,
     footprint: assessment.referenceHouseFootprintMm,
@@ -274,7 +274,7 @@ export const composeDPLR1ControlReadiness = (
     assessments: assessment.assessments,
     proofBoundary: assessment.resultBoundary
   })
-  const resultFingerprint = sha256SemanticFingerprint({
+  const resultFingerprint = sha256DplSemanticFingerprint({
     assessmentFingerprint,
     readiness,
     gaps

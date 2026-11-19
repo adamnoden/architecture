@@ -1,0 +1,530 @@
+{
+  "status": "UNSELECTED66-PIECE PHYSICAL CANDIDATE; NO ORDINARY RENEWAL OR NATIVE FORCE/MOMENT CLOSURE",
+  "primarySpreaderDepthMM": 40,
+  "summary": [
+    {
+      "circuit": "primary",
+      "physicalPieces": 66,
+      "originalNativeRoots": 64,
+      "uniqueNativeAttachmentCoordinates": 60,
+      "splitRoots": [
+        {
+          "sourceRootId": "primary-north-12",
+          "circuit": "primary",
+          "face": "north",
+          "nominalRootPacketStationAlongMM": 8775.9375,
+          "actualNativeAttachmentAlongMM": 8775.9375,
+          "nativeRootWorldXYMM": [
+            8775.9375,
+            11667.5
+          ],
+          "nativeDryPointRadialAlongMM": [
+            345,
+            8775.9375
+          ],
+          "nativeWholeRootDryCapKG": 39.65625,
+          "removablePieceIds": [
+            "primary-north-12-a",
+            "primary-north-12-b"
+          ],
+          "knownRemovableDryKG": 17.841459875,
+          "knownNewRetainedSupportKG": 2.18174865,
+          "existingFixedScheduleUnlocatedKG": 17.642999655,
+          "twoAdjacentSeamHalfShareHypothesisKG": 0.870742,
+          "trialInstalledMassKG": 38.53695018,
+          "massReserveToNativeWholeRootCapKG": 1.11929982,
+          "unlocatedFixedSchedule": {
+            "rootSteelPlatesGussetsAndOriginalClips": true,
+            "primaryAndSecondaryApronsAndTheirRailStock": true,
+            "reason": "The original schedule gives lengths/mass but does not define every fixed centroid and receiving route. It is not placed at a convenient native point or credited as negative moment."
+          },
+          "seamReactionQualification": "The half-share records stock, not proven reactions. A soldered/clipped seam connects adjacent roots; its retained/removed stiffness and real vertical/moment sharing need the physical joint detail.",
+          "nativeForceMomentClosure": false
+        },
+        {
+          "sourceRootId": "primary-south-15",
+          "circuit": "primary",
+          "face": "south",
+          "nominalRootPacketStationAlongMM": 11155.3125,
+          "actualNativeAttachmentAlongMM": 11155.3125,
+          "nativeRootWorldXYMM": [
+            11155.3125,
+            332.5
+          ],
+          "nativeDryPointRadialAlongMM": [
+            345,
+            11155.3125
+          ],
+          "nativeWholeRootDryCapKG": 39.65625,
+          "removablePieceIds": [
+            "primary-south-15-a",
+            "primary-south-15-b"
+          ],
+          "knownRemovableDryKG": 18.340019875,
+          "knownNewRetainedSupportKG": 2.23291835,
+          "existingFixedScheduleUnlocatedKG": 17.642999655,
+          "twoAdjacentSeamHalfShareHypothesisKG": 0.870742,
+          "trialInstalledMassKG": 39.08667988,
+          "massReserveToNativeWholeRootCapKG": 0.56957012,
+          "unlocatedFixedSchedule": {
+            "rootSteelPlatesGussetsAndOriginalClips": true,
+            "primaryAndSecondaryApronsAndTheirRailStock": true,
+            "reason": "The original schedule gives lengths/mass but does not define every fixed centroid and receiving route. It is not placed at a convenient native point or credited as negative moment."
+          },
+          "seamReactionQualification": "The half-share records stock, not proven reactions. A soldered/clipped seam connects adjacent roots; its retained/removed stiffness and real vertical/moment sharing need the physical joint detail.",
+          "nativeForceMomentClosure": false
+        }
+      ],
+      "knownRemovableMetalKG": 1167.681109897,
+      "trialInstalledMassKGPerM": 46.442904443,
+      "maximumKnownRemovablePieceKG": 18.329766612,
+      "minimumRootDryMassReserveKG": 0.56957012,
+      "rootDryMassCapFailures": [],
+      "maximumNominalPieceAlongMM": 956.053932188
+    },
+    {
+      "circuit": "lower",
+      "physicalPieces": 66,
+      "originalNativeRoots": 64,
+      "uniqueNativeAttachmentCoordinates": 60,
+      "splitRoots": [
+        {
+          "sourceRootId": "lower-north-16",
+          "circuit": "lower",
+          "face": "north",
+          "nominalRootPacketStationAlongMM": 11997.65625,
+          "actualNativeAttachmentAlongMM": 11667.5,
+          "nativeRootWorldXYMM": [
+            11667.5,
+            11667.5
+          ],
+          "nativeDryPointRadialAlongMM": [
+            397.5,
+            11997.65625
+          ],
+          "nativeWholeRootDryCapKG": 39.984375,
+          "removablePieceIds": [
+            "lower-north-16-a",
+            "lower-north-16-b"
+          ],
+          "knownRemovableDryKG": 25.618125548,
+          "knownNewRetainedSupportKG": 2.218739357,
+          "existingFixedScheduleUnlocatedKG": 9.0940875,
+          "twoAdjacentSeamHalfShareHypothesisKG": 0.997766773,
+          "trialInstalledMassKG": 37.928719177,
+          "massReserveToNativeWholeRootCapKG": 2.055655823,
+          "unlocatedFixedSchedule": {
+            "rootSteelPlatesGussetsAndOriginalClips": true,
+            "primaryAndSecondaryApronsAndTheirRailStock": false,
+            "reason": "The original schedule gives lengths/mass but does not define every fixed centroid and receiving route. It is not placed at a convenient native point or credited as negative moment."
+          },
+          "seamReactionQualification": "The half-share records stock, not proven reactions. A soldered/clipped seam connects adjacent roots; its retained/removed stiffness and real vertical/moment sharing need the physical joint detail.",
+          "nativeForceMomentClosure": false
+        },
+        {
+          "sourceRootId": "lower-south-16",
+          "circuit": "lower",
+          "face": "south",
+          "nominalRootPacketStationAlongMM": 11997.65625,
+          "actualNativeAttachmentAlongMM": 11667.5,
+          "nativeRootWorldXYMM": [
+            11667.5,
+            332.5
+          ],
+          "nativeDryPointRadialAlongMM": [
+            397.5,
+            11997.65625
+          ],
+          "nativeWholeRootDryCapKG": 39.984375,
+          "removablePieceIds": [
+            "lower-south-16-a",
+            "lower-south-16-b"
+          ],
+          "knownRemovableDryKG": 25.618125548,
+          "knownNewRetainedSupportKG": 2.218739357,
+          "existingFixedScheduleUnlocatedKG": 9.0940875,
+          "twoAdjacentSeamHalfShareHypothesisKG": 0.997766773,
+          "trialInstalledMassKG": 37.928719177,
+          "massReserveToNativeWholeRootCapKG": 2.055655823,
+          "unlocatedFixedSchedule": {
+            "rootSteelPlatesGussetsAndOriginalClips": true,
+            "primaryAndSecondaryApronsAndTheirRailStock": false,
+            "reason": "The original schedule gives lengths/mass but does not define every fixed centroid and receiving route. It is not placed at a convenient native point or credited as negative moment."
+          },
+          "seamReactionQualification": "The half-share records stock, not proven reactions. A soldered/clipped seam connects adjacent roots; its retained/removed stiffness and real vertical/moment sharing need the physical joint detail.",
+          "nativeForceMomentClosure": false
+        }
+      ],
+      "knownRemovableMetalKG": 1636.568426739,
+      "trialInstalledMassKGPerM": 44.583798039,
+      "maximumKnownRemovablePieceKG": 25.966323066,
+      "minimumRootDryMassReserveKG": 2.055655823,
+      "rootDryMassCapFailures": [],
+      "maximumNominalPieceAlongMM": 1060.116432188
+    }
+  ],
+  "headGaps": [
+    {
+      "sourceRootId": "primary-north-12",
+      "face": "north",
+      "circuit": "primary",
+      "headStationMM": 9025,
+      "opposedWetEndStationsMM": [
+        8995,
+        9055
+      ],
+      "gapMM": 60,
+      "originalMeanBedJumpMM": 30.25,
+      "status": "REAL SOURCE HEAD-END GAP; two-entry head turn-box and thermal/sliding connection remain unqualified."
+    },
+    {
+      "sourceRootId": "primary-south-15",
+      "face": "south",
+      "circuit": "primary",
+      "headStationMM": 11150,
+      "opposedWetEndStationsMM": [
+        11120,
+        11180
+      ],
+      "gapMM": 60,
+      "originalMeanBedJumpMM": 51.5,
+      "status": "REAL SOURCE HEAD-END GAP; two-entry head turn-box and thermal/sliding connection remain unqualified."
+    },
+    {
+      "sourceRootId": "lower-north-16",
+      "face": "north",
+      "circuit": "lower",
+      "headStationMM": 11750,
+      "opposedWetEndStationsMM": [
+        11720,
+        11780
+      ],
+      "gapMM": 60,
+      "originalMeanBedJumpMM": 57.5,
+      "status": "REAL SOURCE HEAD-END GAP; two-entry head turn-box and thermal/sliding connection remain unqualified."
+    },
+    {
+      "sourceRootId": "lower-south-16",
+      "face": "south",
+      "circuit": "lower",
+      "headStationMM": 11750,
+      "opposedWetEndStationsMM": [
+        11720,
+        11780
+      ],
+      "gapMM": 60,
+      "originalMeanBedJumpMM": 57.5,
+      "status": "REAL SOURCE HEAD-END GAP; two-entry head turn-box and thermal/sliding connection remain unqualified."
+    }
+  ],
+  "comparisonControl": {
+    "original64PieceInventorySHA256": "9baa465750cc067fb98ec564b3d07515cc7aba160668ee7f8e13e5019d90a635",
+    "originalHeadStepFailuresRetained": true
+  },
+  "stockRules": [
+    "All known pan/carrier atoms are individually located and mapped to the exact original64 roots.",
+    "The64 roots per circuit are nominal root packets; their corner attachments are clamped to the actual collector. Both nominal tributary station and actual native attachment coordinate are recorded. Every r-cross-F uses the actual attachment.",
+    "Primary head halves split the160 mm crossarm width into80+80 or120+40, all3 mm wall. Lower halves use40x25x3 and120x25x4. These are new stock comparisons requiring their own local checks.",
+    "Rails butt to crossarm faces and ribs butt between rail faces in a coplanar25 mm grillage. This avoids the impossible assumption of stacked25 mm members within a27 mm carrier. The butt joints, end ribs and crossarm wall stresses still need a complete check.",
+    "No credit is taken for removing existing fixed-root/fork stock when the new spreader is added.",
+    "Each head end is open, with a20 mm copper termination, supporting end rib and fasteners. No transverse dam is invented.",
+    "The original60 mm opposed thermal head gap is distinct from the new10 mm per-bay fabrication seams."
+  ],
+  "unresolved": [
+    "Actual fixed-root/apron centroid and receiving ownership is a separate ledger, not hidden inside50 kg/m.",
+    "The same64-root dry cap is only a scalar comparison. Retained-body and removed-half native moments remain open.",
+    "The two-entry normal and relief head turn boxes must receive the unequal bed elevations and thermal travel.",
+    "Corner floor continuity, cantilever rails, miter end ribs and root torsion remain local checks.",
+    "Primary stubs cross the secondary skin atR146: wet collars, removal around retained roots and baffle wind need actual geometry.",
+    "All new retained support wind area must be mapped to the pressure family; no automatic shielding or existing allowance is credited.",
+    "Rain interception before first wet opening, complete part departure/first rest and reverse installation remain unselected."
+  ],
+  "sourceHashes": {
+    "project/rof/studies/roof_water_edges.py": "573eef52a75744c5247148c90999fa1a34b931fec04bf6e381e4c459fd9e8d29",
+    "project/rof/studies/roof_water_heads.py": "cd4c5be755649adda2611bd561841c26ec452d1d220886e029f82d4f01c2160f",
+    "project/rof/studies/roof_water_movement.json": "b32100891d49db07ccab698bda682d8a2e457216715ba264758d3e56e2bb30cc",
+    "project/mat/studies/ring-roof-family.json": "b8aa44fab2b13d329f4ccb6cda0210c1fe3aab1b13e8ec96a47e9e0271c07a81",
+    "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+    "project/had/studies/current-house-services.json": "fa820740d3c6b55917715945b158bc4ad1005ab80306fb3165b59c0136d31a84",
+    "project/rwt/studies/selected-water-event.json": "179832f10e0b3c2cc3cde05d7b99878819c49b4e5ef451785c5a5c99a6e7e0d3",
+    "project/rwt/studies/court-service-selection.json": "fc62adf66ab862f8dfbb10be0c72cf447e113b2280ff68dc286a9b511ad6d908",
+    "project/rwt/studies/over-roof-site-envelope.json": "0c6e6d9617091a8a069280fd9e884ea24d06d7e9def1b4f35e96beb46081b747",
+    "project/mat/studies/plant-threshold.json": "3cc494ddaf6bcdfebb8c1e9108d987f26196ac58fcf84ecd313659fa763cfa4b",
+    "project/str/studies/reconciled-house-interface.json": "ae17f6de977de58ae54f25edfc67c48c36f348cffc288e839f25a8b4143c16cf"
+  },
+  "scriptSHA256": "f4842ba5739a790a380bf04d263c4f10c9456b4d7819a5c4f43f9481492f4c8f",
+  "retainedSupportSummaries": [
+    {
+      "sourceRootId": "primary-north-12",
+      "face": "north",
+      "circuit": "primary",
+      "beamPlanRadialAlongMM": {
+        "radial": [
+          97.5,
+          122.5
+        ],
+        "along": [
+          8677.1875,
+          9123.75
+        ]
+      },
+      "actualNativeAttachmentWorldXYMM": [
+        8775.9375,
+        11667.5
+      ],
+      "newPickupStationsMM": [
+        8689.6875,
+        9111.25
+      ],
+      "lowestBeamTopDatumZMM": 6754.656028861,
+      "knownAddedRetainedMassKG": 2.18174865,
+      "knownAddedRetainedCentroidRadialAlongMM": [
+        127.151013248,
+        8902.269003123
+      ],
+      "knownAddedRootGravity": {
+        "forceXYZ_N": [
+          0.0,
+          0.0,
+          -21.402954256
+        ],
+        "momentXYZ_NMM": [
+          -9837.889610501,
+          2703.867382492,
+          0.0
+        ],
+        "nativeDownMxGradientMyGradient_N_NMM_NMM": [
+          21.402954256,
+          2703.867382492,
+          9837.889610501
+        ]
+      },
+      "localSpreaderScreen": {
+        "sectionRadialDepthWallMM": [
+          25,
+          40,
+          2
+        ],
+        "fullOriginalRootGravityWaterWindForceAtOnePickupN": 1885.03605,
+        "longestPickupCantileverMM": 335.3125,
+        "stressMPa": 244.586272256,
+        "allowableMPa": 150.0,
+        "tipDeflectionMM": 2.54628968,
+        "stressScreenPass": false,
+        "scope": "One full original root demand at either pickup; deliberately no favourable fractional-load credit. This screens the branch beam alone, not its joints, stub, root torsion or complete pan frame."
+      },
+      "primarySecondarySkinPenetrations": 2,
+      "primaryStockVerticalComparison": {
+        "spreaderStockTopZMM": 6754.656028861,
+        "spreaderStockBottomZMM": 6714.656028861,
+        "largestIntactLowerRimAcrossPlanZMM": 6542.6390625,
+        "nominalStockToIntactLowerRimMM": 172.016966361,
+        "afterHypothesised50Native8Lower1Spreader10SettingMM": 103.016966361,
+        "afterSameAnd100LowerLiftIfRadialOverlapPersistsMM": 3.016966361,
+        "scope": "Beam stock only. Forks/collars need their actual envelope. The100 mm lower lift requires radial release first."
+      },
+      "qualification": "This is priced retained geometry, not a checked bracket. Local bending/torsion, root contact, source carrier height, facade clearances and each primary stub/secondary-skin collar remain open."
+    },
+    {
+      "sourceRootId": "primary-south-15",
+      "face": "south",
+      "circuit": "primary",
+      "beamPlanRadialAlongMM": {
+        "radial": [
+          97.5,
+          122.5
+        ],
+        "along": [
+          10929.375,
+          11375.9375
+        ]
+      },
+      "actualNativeAttachmentWorldXYMM": [
+        11155.3125,
+        332.5
+      ],
+      "newPickupStationsMM": [
+        10941.875,
+        11363.4375
+      ],
+      "lowestBeamTopDatumZMM": 6743.395091361,
+      "knownAddedRetainedMassKG": 2.23291835,
+      "knownAddedRetainedCentroidRadialAlongMM": [
+        126.757979529,
+        11163.802341906
+      ],
+      "knownAddedRootGravity": {
+        "forceXYZ_N": [
+          0.0,
+          0.0,
+          -21.904929014
+        ],
+        "momentXYZ_NMM": [
+          10060.013440474,
+          185.969384294,
+          0.0
+        ],
+        "nativeDownMxGradientMyGradient_N_NMM_NMM": [
+          21.904929014,
+          185.969384294,
+          -10060.013440474
+        ]
+      },
+      "localSpreaderScreen": {
+        "sectionRadialDepthWallMM": [
+          25,
+          40,
+          2
+        ],
+        "fullOriginalRootGravityWaterWindForceAtOnePickupN": 1885.03605,
+        "longestPickupCantileverMM": 213.4375,
+        "stressMPa": 155.687254381,
+        "allowableMPa": 150.0,
+        "tipDeflectionMM": 0.656705653,
+        "stressScreenPass": false,
+        "scope": "One full original root demand at either pickup; deliberately no favourable fractional-load credit. This screens the branch beam alone, not its joints, stub, root torsion or complete pan frame."
+      },
+      "primarySecondarySkinPenetrations": 2,
+      "primaryStockVerticalComparison": {
+        "spreaderStockTopZMM": 6743.395091361,
+        "spreaderStockBottomZMM": 6703.395091361,
+        "largestIntactLowerRimAcrossPlanZMM": 6531.378125,
+        "nominalStockToIntactLowerRimMM": 172.016966361,
+        "afterHypothesised50Native8Lower1Spreader10SettingMM": 103.016966361,
+        "afterSameAnd100LowerLiftIfRadialOverlapPersistsMM": 3.016966361,
+        "scope": "Beam stock only. Forks/collars need their actual envelope. The100 mm lower lift requires radial release first."
+      },
+      "qualification": "This is priced retained geometry, not a checked bracket. Local bending/torsion, root contact, source carrier height, facade clearances and each primary stub/secondary-skin collar remain open."
+    },
+    {
+      "sourceRootId": "lower-north-16",
+      "face": "north",
+      "circuit": "lower",
+      "beamPlanRadialAlongMM": {
+        "radial": [
+          62.5,
+          87.5
+        ],
+        "along": [
+          11648.90625,
+          12060.428932188
+        ]
+      },
+      "actualNativeAttachmentWorldXYMM": [
+        11667.5,
+        11667.5
+      ],
+      "newPickupStationsMM": [
+        11661.40625,
+        12047.928932188
+      ],
+      "lowestBeamTopDatumZMM": 6375.71796875,
+      "knownAddedRetainedMassKG": 2.218739357,
+      "knownAddedRetainedCentroidRadialAlongMM": [
+        80.367372227,
+        11871.409683348
+      ],
+      "knownAddedRootGravity": {
+        "forceXYZ_N": [
+          0.0,
+          0.0,
+          -21.765833087
+        ],
+        "momentXYZ_NMM": [
+          -8986.402311067,
+          4438.264132641,
+          0.0
+        ],
+        "nativeDownMxGradientMyGradient_N_NMM_NMM": [
+          21.765833087,
+          4438.264132641,
+          8986.402311067
+        ]
+      },
+      "localSpreaderScreen": {
+        "sectionRadialDepthWallMM": [
+          25,
+          80,
+          2
+        ],
+        "fullOriginalRootGravityWaterWindForceAtOnePickupN": 2632.465791211,
+        "longestPickupCantileverMM": 336.25,
+        "stressMPa": 118.631719719,
+        "allowableMPa": 150.0,
+        "tipDeflectionMM": 0.620971489,
+        "stressScreenPass": true,
+        "scope": "One full original root demand at either pickup; deliberately no favourable fractional-load credit. This screens the branch beam alone, not its joints, stub, root torsion or complete pan frame."
+      },
+      "primarySecondarySkinPenetrations": 0,
+      "primaryStockVerticalComparison": null,
+      "qualification": "This is priced retained geometry, not a checked bracket. Local bending/torsion, root contact, source carrier height, facade clearances and each primary stub/secondary-skin collar remain open."
+    },
+    {
+      "sourceRootId": "lower-south-16",
+      "face": "south",
+      "circuit": "lower",
+      "beamPlanRadialAlongMM": {
+        "radial": [
+          62.5,
+          87.5
+        ],
+        "along": [
+          11648.90625,
+          12060.428932188
+        ]
+      },
+      "actualNativeAttachmentWorldXYMM": [
+        11667.5,
+        332.5
+      ],
+      "newPickupStationsMM": [
+        11661.40625,
+        12047.928932188
+      ],
+      "lowestBeamTopDatumZMM": 6375.71796875,
+      "knownAddedRetainedMassKG": 2.218739357,
+      "knownAddedRetainedCentroidRadialAlongMM": [
+        80.367372227,
+        11871.409683348
+      ],
+      "knownAddedRootGravity": {
+        "forceXYZ_N": [
+          0.0,
+          0.0,
+          -21.765833087
+        ],
+        "momentXYZ_NMM": [
+          8986.402311067,
+          4438.264132641,
+          0.0
+        ],
+        "nativeDownMxGradientMyGradient_N_NMM_NMM": [
+          21.765833087,
+          4438.264132641,
+          -8986.402311067
+        ]
+      },
+      "localSpreaderScreen": {
+        "sectionRadialDepthWallMM": [
+          25,
+          80,
+          2
+        ],
+        "fullOriginalRootGravityWaterWindForceAtOnePickupN": 2632.465791211,
+        "longestPickupCantileverMM": 336.25,
+        "stressMPa": 118.631719719,
+        "allowableMPa": 150.0,
+        "tipDeflectionMM": 0.620971489,
+        "stressScreenPass": true,
+        "scope": "One full original root demand at either pickup; deliberately no favourable fractional-load credit. This screens the branch beam alone, not its joints, stub, root torsion or complete pan frame."
+      },
+      "primarySecondarySkinPenetrations": 0,
+      "primaryStockVerticalComparison": null,
+      "qualification": "This is priced retained geometry, not a checked bracket. Local bending/torsion, root contact, source carrier height, facade clearances and each primary stub/secondary-skin collar remain open."
+    }
+  ],
+  "fullReceiptSHA256": "e807f817260b876fca73b92a87b73e45d7ad524692823ceefb7aa4fbb7a3746f",
+  "fullReceiptBytes": 3143573,
+  "fullReceiptReproductionCommand": "python -B project/rof/studies/outer_66_checkpoint/outer-66-pieces.py --repo . --primary-spreader-depth 40 --full-control-receipt",
+  "fullReceiptPurpose": "Exact reproduction only. Retain the80 mm full inventory plus these compact controls in the repository."
+}

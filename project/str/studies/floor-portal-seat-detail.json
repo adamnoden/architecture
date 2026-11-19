@@ -1,0 +1,771 @@
+{
+  "sourceSHA256": {
+    "current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+    "current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+    "floor-portal-receiver-cover.py": "b538cd5bd5fe33a71990047ad99b307496801a087b81200a8f0362643e36df79",
+    "floor-portal-cap-replay.json": "6a8df8838126e436b45f46f7ab469f2edad59b93f790b44e914f16f9e4c73bb0"
+  },
+  "originalPositionsMm": [
+    [
+      43,
+      43
+    ],
+    [
+      43,
+      97
+    ],
+    [
+      43,
+      850
+    ],
+    [
+      43,
+      950
+    ],
+    [
+      97,
+      43
+    ],
+    [
+      97,
+      97
+    ],
+    [
+      97,
+      850
+    ],
+    [
+      97,
+      950
+    ],
+    [
+      850,
+      43
+    ],
+    [
+      850,
+      97
+    ],
+    [
+      950,
+      43
+    ],
+    [
+      950,
+      97
+    ]
+  ],
+  "trialPositionsMm": [
+    [
+      29.0,
+      29.0
+    ],
+    [
+      27.0,
+      116.0
+    ],
+    [
+      27.0,
+      772.0
+    ],
+    [
+      27.0,
+      882.0
+    ],
+    [
+      116.0,
+      27.0
+    ],
+    [
+      98.5,
+      98.5
+    ],
+    [
+      76.0,
+      827.0
+    ],
+    [
+      76.0,
+      937.0
+    ],
+    [
+      772.0,
+      27.0
+    ],
+    [
+      827.0,
+      76.0
+    ],
+    [
+      882.0,
+      27.0
+    ],
+    [
+      937.0,
+      76.0
+    ]
+  ],
+  "barBendLowerZmm": 6140.0,
+  "barBendUpperZmm": 6450.0,
+  "minimumContinuousBarClearAfterSettingsMm": 23.17777056786297,
+  "minimumBendRadiusLowerBoundMm": 201.1534605377077,
+  "clearScreenMm": 21.0,
+  "unshiftedCxl20wPairGapAfterSettingsMm": 6.0,
+  "minimumStaggeredCouplerWeldEnvelopeGapAfterSettingsMm": 21.610461213064,
+  "minimumBearingPlateEdgeReserveMm": 1.0,
+  "maximumRadialWeldToeAllowanceAtPackingScreenMm": 2.3052306065319996,
+  "fiveMmWeldToePlateEdgeReserveMm": -2.0,
+  "fixedPlateFullTurnScreen": {
+    "lowerCoreTypeCSpliceScreen": {
+      "cxl20TypeCBodyDiameterMm": 35.0,
+      "bodyWithSimultaneousNeighboursGapMm": 9.0,
+      "staggeredBodyAgainstNeighbourBarGapMm": 16.5,
+      "staggeredBodyCoverAfterSettingMm": 20.5,
+      "trialLocknutDiameterEnvelopeMm": 42.0,
+      "staggeredLocknutAgainstNeighbourBarGapMm": 13.0,
+      "locknutCoverAfterSettingMm": 17.0,
+      "coreCoverShortfallAtTrialLocknutMm": 8.0,
+      "maximumLocknutDiameterAtCoverScreenMm": 26.0
+    },
+    "rotationScreenZmm": 6140.0,
+    "fullTurnConflicts": [
+      {
+        "rotatingBar": 2,
+        "installedBar": 6,
+        "surfaceGapAfterSettingsMm": -4.819536896986307
+      },
+      {
+        "rotatingBar": 3,
+        "installedBar": 6,
+        "surfaceGapAfterSettingsMm": -22.88947116671649
+      },
+      {
+        "rotatingBar": 3,
+        "installedBar": 7,
+        "surfaceGapAfterSettingsMm": -2.2660135962451022
+      },
+      {
+        "rotatingBar": 6,
+        "installedBar": 2,
+        "surfaceGapAfterSettingsMm": -20.920452282557342
+      },
+      {
+        "rotatingBar": 7,
+        "installedBar": 3,
+        "surfaceGapAfterSettingsMm": -19.22988236852054
+      },
+      {
+        "rotatingBar": 8,
+        "installedBar": 9,
+        "surfaceGapAfterSettingsMm": -4.819536896986307
+      },
+      {
+        "rotatingBar": 9,
+        "installedBar": 8,
+        "surfaceGapAfterSettingsMm": -20.920452282557342
+      },
+      {
+        "rotatingBar": 10,
+        "installedBar": 9,
+        "surfaceGapAfterSettingsMm": -22.88947116671649
+      },
+      {
+        "rotatingBar": 10,
+        "installedBar": 11,
+        "surfaceGapAfterSettingsMm": -2.2660135962451022
+      },
+      {
+        "rotatingBar": 11,
+        "installedBar": 10,
+        "surfaceGapAfterSettingsMm": -19.22988236852054
+      }
+    ],
+    "reciprocalConflicts": [
+      [
+        2,
+        6
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        10,
+        11
+      ]
+    ],
+    "sameAngleFullTurnMinimumGapMm": -11.565417643124718,
+    "straightBelowWeldableSleeveMm": 17.0,
+    "cxl20TypeCCouplerBodyMm": 48.0,
+    "straightShortfallForTypeCBodyBeforeLocknutMm": 31.0
+  },
+  "minimumCxl20wSideCoverAfterSettingsMm": 34.68986283848344,
+  "sideCoverScreenMm": 25.0,
+  "minimumCxl20wToCassettePlanGapAfterSettingsMm": 26.31325889133244,
+  "retained350And600H12StationGapAfterSettingsMm": 15.576366025482287,
+  "trial350And590H12StationGapAfterSettingsMm": 25.576366025482287,
+  "longerTonguePlanOnly": {
+    "tongueLengthMm": 73.0,
+    "cassetteWebAfterSettingsMm": 25.97643600268742,
+    "couplerToCassetteGapAfterSettingsMm": 25.13516337554959,
+    "trial350And590H12StationGapAfterSettingsMm": 24.579361504637454,
+    "trial350And589H12StationGapAfterSettingsMm": 25.579361504637454
+  },
+  "steelSoffitZmm": 6540.0,
+  "seatOuterInwardCoordinateMm": 262.5,
+  "projectingHardwareMaximumZmm": 6525.0,
+  "capArmWidthMm": 175.0,
+  "guideAcrossOldCoreOriginMm": 52.5,
+  "minimumCassetteWebAfterSettingsMm": 27.097142023646967,
+  "unrecentredCassetteWebAfterSettingsMm": 24.594074557226698,
+  "nominalGlassWidthMm": 75.0,
+  "minimumGlassWidthAfterSingleOutwardCapSettingMm": 70.0,
+  "cavityGlassBoundaryInwardQmm": 152.5,
+  "nominalOuterConcreteFaceInwardQmm": 227.5,
+  "couplerHeightMm": 48.0,
+  "guideStationsMm": [
+    220.0,
+    475.0,
+    680.0
+  ],
+  "authoredGapMm": 15.0,
+  "gapAfterTwoVerticalSettingsBeforePlateFlexAtPriorApproachMm": 4.884179855295503,
+  "roundedH8LinkScreen": {
+    "levelsMm": [
+      6355.0,
+      6394.0,
+      6433.0
+    ],
+    "centrelineSegmentsFromCoreOriginMm": [
+      [
+        [
+          19.0,
+          -1.0
+        ],
+        [
+          946.0,
+          -1.0
+        ]
+      ],
+      [
+        [
+          966.0,
+          19.0
+        ],
+        [
+          966.0,
+          86.0
+        ]
+      ],
+      [
+        [
+          946.0,
+          106.0
+        ],
+        [
+          140.0,
+          106.0
+        ]
+      ],
+      [
+        [
+          106.0,
+          140.0
+        ],
+        [
+          106.0,
+          946.0
+        ]
+      ],
+      [
+        [
+          86.0,
+          966.0
+        ],
+        [
+          19.0,
+          966.0
+        ]
+      ],
+      [
+        [
+          -1.0,
+          946.0
+        ],
+        [
+          -1.0,
+          19.0
+        ]
+      ]
+    ],
+    "centrelineArcsFromCoreOriginMm": [
+      [
+        [
+          19.0,
+          19.0
+        ],
+        20.0,
+        180,
+        270
+      ],
+      [
+        [
+          946.0,
+          19.0
+        ],
+        20.0,
+        270,
+        360
+      ],
+      [
+        [
+          946.0,
+          86.0
+        ],
+        20.0,
+        0,
+        90
+      ],
+      [
+        [
+          140.0,
+          140.0
+        ],
+        34.0,
+        180,
+        270
+      ],
+      [
+        [
+          86.0,
+          946.0
+        ],
+        20.0,
+        0,
+        90
+      ],
+      [
+        [
+          19.0,
+          946.0
+        ],
+        20.0,
+        90,
+        180
+      ]
+    ],
+    "minimumAfterIndependentCageSettingsMm": 0.05742008723313319,
+    "witness": {
+      "linkZmm": 6355.0,
+      "barIndex": 6,
+      "relativeVerticalSettingMm": -10
+    },
+    "axialLoopFeedPastOldCoreH20MinimumGapMm": -15.704699910719626,
+    "axialLoopFeedPastPrethreadedWeldSleeveMinimumGapMm": -10.310137161516558,
+    "upperHoopToCassetteAfterIndependentSettingsMm": 2.0,
+    "minimumVerticalLinkGapWithIndependentSettingsMm": 21.0,
+    "maximumRelativeVerticalSettingAt21MmFlowScreenMm": 10.0
+  },
+  "roundedH8LowerLinkFailureMm": -0.3977471464994409,
+  "barSideCoverAtOldCoreShoulderAfterSettingsMm": 25.050921419220572,
+  "fiveMmReplayMinimumProjectedGap": {
+    "case": "1.35G+1.5Q; downward roof pressure; W(4, 6);court=True;goodsZ=7400",
+    "corner": "(11667.5, 332.5)",
+    "point": [
+      10957.277860021395,
+      230.9529946162075,
+      6540.0
+    ],
+    "signedGapMM": 4.884179855295503,
+    "bearingForceN": 0.0
+  },
+  "ringSkinConcentratedLoadAdverse": {
+    "previousCapCoreCompressionN": 128520.30876218424,
+    "overhangMm": 40.0,
+    "ringSkinThicknessMm": 20,
+    "independentStripWidthMm": 100.0,
+    "concentratedTipLoadStressMPa": 771.1218525731055,
+    "elasticYieldComparatorMPa": 355.0,
+    "requiredUniformStripWidthAtYieldComparatorMm": 217.2174232600297
+  },
+  "signed": {
+    "cases": 579,
+    "headCount": 52,
+    "maximumBalanceResidualNAndNmm": [
+      0.00002763208360789804,
+      0.00021954542899038643,
+      0.0000665541610942455,
+      1.8978191500063986,
+      0.49664502404630184,
+      1.5888794524322414
+    ],
+    "minimumHeadReaction": {
+      "valueKN": -159.35309067256833,
+      "head": "P12",
+      "case": "zero favourable G; U; W(4, 1);court=True;goodsZ=7400"
+    },
+    "memberTorsion": {
+      "L": {
+        "maximumAbsoluteTorsionKNm": 2.84129069873522,
+        "case": "1.35G+1.5Q; downward roof pressure; W(4, 4);court=False;goodsZ=6000",
+        "simultaneousLocalActionNAndNmm": [
+          142222.06085697198,
+          1817.8855849606825,
+          -85288.7406895922,
+          2841290.6987352204,
+          197762794.17503262,
+          23152891.028605312
+        ],
+        "atMm": [
+          11436.3172043,
+          563.6827957,
+          3920.0
+        ]
+      },
+      "collector": {
+        "maximumAbsoluteTorsionKNm": 11.966958781915706,
+        "case": "1.35G+1.5Q; downward roof pressure; W(4, 1);court=True;goodsZ=7400",
+        "simultaneousLocalActionNAndNmm": [
+          -8137.15865423865,
+          -181.45802269130945,
+          39348.99720614079,
+          11966958.781915706,
+          70942993.07169342,
+          -53218.67473602295
+        ],
+        "atMm": [
+          1262.5,
+          11667.5,
+          3545.0
+        ]
+      }
+    },
+    "maximumLGuideCartesianComponentKN": 29.131712816455604,
+    "capTransition": {
+      "peakProjectedBearing": {
+        "case": "adverse G budgets",
+        "corner": "(332.5, 332.5)",
+        "reference": [
+          563.6827957,
+          563.6827957,
+          6215.0
+        ],
+        "globalActionNAndNmm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "minimumProjectedGap": {
+        "case": "1.35G+1.5Q; downward roof pressure; W(4, 6);court=True;goodsZ=7400",
+        "corner": "(11667.5, 332.5)",
+        "point": [
+          10956.22123569437,
+          234.89637028918156,
+          6540.0
+        ],
+        "signedGapMM": 14.8899109859583,
+        "bearingForceN": 0.0
+      },
+      "peakCoreBearing": {
+        "case": "1.35G+1.5Q; downward roof pressure; W(4, 4);court=False;goodsZ=6000",
+        "corner": "(11667.5, 332.5)",
+        "compressionN": 130535.68691427857
+      },
+      "peakLAnchorTension": {
+        "case": "zero favourable G; U; W(4, 1);court=True;goodsZ=6000",
+        "anchor": "L-cap-anchor-(11667.5, 11667.5)-11",
+        "tensionN": 8584.889282479106
+      },
+      "stepComponentWitnesses": [
+        {
+          "case": "1.35G+1.5Q; downward roof pressure; W(1, 1);court=True;goodsZ=6000",
+          "corner": "(11667.5, 332.5)",
+          "reference": [
+            11436.3172043,
+            563.6827957,
+            6215.0
+          ],
+          "globalActionNAndNmm": [
+            -61390.72867005488,
+            -58862.85811985336,
+            122206.09693151766,
+            -20268890.597908545,
+            -1928909.8949895569,
+            -2577293.103713807
+          ]
+        },
+        {
+          "case": "1.35G+1.5Q; downward roof pressure; W(4, 1);court=True;goodsZ=6000",
+          "corner": "(11667.5, 11667.5)",
+          "reference": [
+            11436.3172043,
+            11436.3172043,
+            6215.0
+          ],
+          "globalActionNAndNmm": [
+            59977.47162920129,
+            -61874.19927184941,
+            117131.21737018094,
+            11406699.988158626,
+            -13091879.858492207,
+            -2103613.3442589487
+          ]
+        },
+        {
+          "case": "1.35G+1.5Q; downward roof pressure; W(1, 4);court=False;goodsZ=7400",
+          "corner": "(11667.5, 332.5)",
+          "reference": [
+            11436.3172043,
+            563.6827957,
+            6215.0
+          ],
+          "globalActionNAndNmm": [
+            -2322.0929996742616,
+            5160.243303273934,
+            133240.1011832441,
+            -17633528.66877678,
+            -10326634.183110869,
+            -940682.3344228436
+          ]
+        },
+        {
+          "case": "1.35G+1.5Q; downward roof pressure; W(2, 3);court=False;goodsZ=6000",
+          "corner": "(11667.5, 332.5)",
+          "reference": [
+            11436.3172043,
+            563.6827957,
+            6215.0
+          ],
+          "globalActionNAndNmm": [
+            -31647.12437941807,
+            -30692.014910856527,
+            118874.96887531767,
+            -21610189.78009696,
+            -3875415.7223685877,
+            -382740.63232352474
+          ]
+        },
+        {
+          "case": "1.35G+1.5Q; downward roof pressure; W(3, 3);court=True;goodsZ=7400",
+          "corner": "(332.5, 11667.5)",
+          "reference": [
+            563.6827957,
+            11436.3172043,
+            6215.0
+          ],
+          "globalActionNAndNmm": [
+            -22055.477212381513,
+            -22838.495450931434,
+            109301.42555138758,
+            5520275.964474501,
+            14316806.200282441,
+            922112.9701904575
+          ]
+        },
+        {
+          "case": "1.35G+1.5Q; downward roof pressure; W(4, 4);court=False;goodsZ=6000",
+          "corner": "(11667.5, 332.5)",
+          "reference": [
+            11436.3172043,
+            563.6827957,
+            6215.0
+          ],
+          "globalActionNAndNmm": [
+            59022.80767591227,
+            61593.68612505492,
+            122052.45335696757,
+            -14853469.421025211,
+            -11989497.03906628,
+            2841290.6987354476
+          ]
+        }
+      ],
+      "maximumStepComponentNAndNmm": [
+        61390.72867005488,
+        61874.19927184941,
+        133240.1011832441,
+        21610189.78009696,
+        14316806.200282441,
+        2841290.6987354476
+      ],
+      "maximumLocalEquilibriumResidualNAndNmm": [
+        2.2175663616508245E-7,
+        2.53909092862159E-7,
+        2.3096799850463867E-7,
+        0.00003738701343536377,
+        0.00003033597022294998,
+        0.000004706904292106628
+      ]
+    },
+    "sourceHashes": {
+      "floor_portal_frame.py": "78d0e990c36f6dc1b68246dbf94a86248579abc94e0c38e2b2b591d318dde2c4",
+      "floor_portal_roof.py": "7238b1c4b7f6e0cd7e082f7eccd197f1a12098c7800bf89472b7d6a7ead6cb79",
+      "floor_portal_house.py": "66ebf61cb097fd2dfcc13b1f637e399389711ff6ca42646372ff83ccabd0ba6f",
+      "floor_portal_loads.py": "7e395d4aa2c4e22541ba8ca6e3cbb42c2a31bd7c537e1acfd137a0ab7c25ffa5",
+      "floor_portal_domain.py": "45026d6e7394358340a60c59336a481ed523d225fb1e0d826a058238962a14eb"
+    }
+  },
+  "movement": {
+    "cases": 110,
+    "headCount": 52,
+    "maximumBalanceResidualNAndNmm": [
+      0.0002824738039635122,
+      0.0004858556785620749,
+      0.0003223488565708976,
+      3.253155017737299,
+      2.310494718607515,
+      1.733518293921577
+    ],
+    "witnesses": {
+      "minimumHeadReactionKN": {
+        "value": -1459.7169179457724,
+        "case": "P10 -1 mm",
+        "location": "P10"
+      },
+      "maximumLGuideCartesianComponentKN": {
+        "value": 14.256144298240484,
+        "case": "superstructure net free dimensional strain-0.0003",
+        "location": "L-cap-key-(11667.5, 11667.5)-2"
+      },
+      "maximumLReleasedTravelMM": {
+        "value": 5.753489963413861,
+        "case": "roof actual axial member free strain0.00072",
+        "location": "L-cap-key-(11667.5, 11667.5)-3"
+      }
+    },
+    "minimumProjectedGap": {
+      "gapMM": 14.969292459568901,
+      "case": "superstructure net free dimensional strain0.0003",
+      "bearingForceN": 0.0,
+      "contact": "L-cap-projected-bearing-(11667.5, 332.5)"
+    }
+  },
+  "friction": [
+    {
+      "programme": [
+        4,
+        4
+      ],
+      "court": false,
+      "goodsZmm": 6000,
+      "uplift": false,
+      "minimumShelfGapMm": 14.908537422759665,
+      "maximumShelfCompressionN": 0.0,
+      "maximumResultantGuide": "L-cap-key-(11667.5, 332.5)-5",
+      "resultantKN": 50.60129865560686,
+      "simultaneousTangentKN": 49.61865562655303,
+      "simultaneousRadialKN": 9.923731125310603,
+      "concretePressureComparatorMPa": 17.0,
+      "nominalTangentPressureMPa": 15.751954167159692,
+      "engagementNeededAtPressureComparatorMm": 55.59513235468127,
+      "directionReversalCount": 12
+    },
+    {
+      "programme": [
+        1,
+        4
+      ],
+      "court": true,
+      "goodsZmm": 7400,
+      "uplift": false,
+      "minimumShelfGapMm": 14.918914251288658,
+      "maximumShelfCompressionN": 0.0,
+      "maximumResultantGuide": "L-cap-key-(11667.5, 11667.5)-2",
+      "resultantKN": 56.180186236397766,
+      "simultaneousTangentKN": 55.08920498012865,
+      "simultaneousRadialKN": 11.01784099602573,
+      "concretePressureComparatorMPa": 17.0,
+      "nominalTangentPressureMPa": 17.488636501628143,
+      "engagementNeededAtPressureComparatorMm": 61.724599417511094,
+      "directionReversalCount": 12
+    },
+    {
+      "programme": [
+        4,
+        1
+      ],
+      "court": true,
+      "goodsZmm": 7400,
+      "uplift": true,
+      "minimumShelfGapMm": 15.057898243558393,
+      "maximumShelfCompressionN": 0.0,
+      "maximumResultantGuide": "L-cap-key-(11667.5, 11667.5)-5",
+      "resultantKN": 25.276774044152113,
+      "simultaneousTangentKN": 24.78591617150139,
+      "simultaneousRadialKN": 4.957183234300279,
+      "concretePressureComparatorMPa": 17.0,
+      "nominalTangentPressureMPa": 7.868544816349647,
+      "engagementNeededAtPressureComparatorMm": 27.771334645939934,
+      "directionReversalCount": 12
+    }
+  ],
+  "frictionLonger": [
+    {
+      "programme": [
+        4,
+        4
+      ],
+      "court": false,
+      "goodsZmm": 6000,
+      "uplift": false,
+      "minimumShelfGapMm": 14.908310647036005,
+      "maximumShelfCompressionN": 0.0,
+      "maximumResultantGuide": "L-cap-key-(11667.5, 332.5)-5",
+      "resultantKN": 51.77805001445582,
+      "simultaneousTangentKN": 50.77255526913335,
+      "simultaneousRadialKN": 10.154511053826669,
+      "concretePressureComparatorMPa": 17.0,
+      "nominalTangentPressureMPa": 15.455876794256728,
+      "engagementNeededAtPressureComparatorMm": 54.550153391494334,
+      "directionReversalCount": 12
+    },
+    {
+      "programme": [
+        1,
+        4
+      ],
+      "court": true,
+      "goodsZmm": 7400,
+      "uplift": false,
+      "minimumShelfGapMm": 14.918952817862642,
+      "maximumShelfCompressionN": 0.0,
+      "maximumResultantGuide": "L-cap-key-(11667.5, 11667.5)-2",
+      "resultantKN": 57.56570116749855,
+      "simultaneousTangentKN": 56.447814147447325,
+      "simultaneousRadialKN": 11.289562829489464,
+      "concretePressureComparatorMPa": 17.0,
+      "nominalTangentPressureMPa": 17.18350506771608,
+      "engagementNeededAtPressureComparatorMm": 60.64766494488028,
+      "directionReversalCount": 12
+    },
+    {
+      "programme": [
+        4,
+        1
+      ],
+      "court": true,
+      "goodsZmm": 7400,
+      "uplift": true,
+      "minimumShelfGapMm": 15.057646984221375,
+      "maximumShelfCompressionN": 0.0,
+      "maximumResultantGuide": "L-cap-key-(11667.5, 11667.5)-5",
+      "resultantKN": 25.398441619136754,
+      "simultaneousTangentKN": 24.905221044389506,
+      "simultaneousRadialKN": 4.9810442088779014,
+      "concretePressureComparatorMPa": 17.0,
+      "nominalTangentPressureMPa": 7.5814980348217675,
+      "engagementNeededAtPressureComparatorMm": 26.758228358194472,
+      "directionReversalCount": 12
+    }
+  ],
+  "replayPatchSHA256": "78364371ac9796cbb47fbad395898acc7b4a8a62c55b5b6033ae476ff14309f5",
+  "replaySourceCommit": "7a1b697431e9c1556f426068068b96356d3158ca"
+}

@@ -1,0 +1,369 @@
+{
+  "disposition": "PREFER_WIDER_RESERVATION_FOR_JOINED_DETAIL",
+  "candidate": "620 mm complete captured head with a dedicated hot riser turn and 10 mm bench shift west",
+  "package": [
+    10915,
+    735,
+    935,
+    620,
+    610,
+    700
+  ],
+  "bareTop": [
+    10925,
+    740,
+    600,
+    600
+  ],
+  "moves": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      760,
+      0
+    ],
+    [
+      -720,
+      760,
+      0
+    ],
+    [
+      -720,
+      760,
+      -585
+    ]
+  ],
+  "stages": [
+    {
+      "stage": 1,
+      "box": [
+        10915,
+        735,
+        935,
+        620,
+        1370,
+        700
+      ],
+      "closest": "frame",
+      "obstacleMM": 25,
+      "pressureMM": [
+        107.99714,
+        27.99714,
+        39.99905
+      ],
+      "clearanceMM": 25
+    },
+    {
+      "stage": 2,
+      "box": [
+        10195,
+        1495,
+        935,
+        1340,
+        610,
+        700
+      ],
+      "closest": "eastWall",
+      "obstacleMM": 25.5,
+      "pressureMM": [
+        197.99714,
+        102.99714,
+        111.11439
+      ],
+      "clearanceMM": 25.5
+    },
+    {
+      "stage": 3,
+      "box": [
+        10195,
+        1495,
+        350,
+        620,
+        610,
+        1285
+      ],
+      "closest": "H0",
+      "obstacleMM": 30,
+      "pressureMM": [
+        197.99714,
+        105.06621,
+        84.99905
+      ],
+      "clearanceMM": 30
+    }
+  ],
+  "workClear": {
+    "washer": 91.5381,
+    "PV": 97.99714,
+    "electrical": 97.99714,
+    "fan": 415.16836
+  },
+  "staticClear": {
+    "fanWithSupportsMM": 370.56173,
+    "heatPairMM": 453.34121,
+    "condensateMM": 500.49714
+  },
+  "hot": {
+    "body": [
+      10803,
+      1308,
+      1417.5,
+      74,
+      147,
+      165
+    ],
+    "cap": [
+      10803,
+      1308,
+      963,
+      74,
+      74,
+      2019
+    ],
+    "backbone": [
+      [
+        10100,
+        3200,
+        2945
+      ],
+      [
+        10100,
+        600,
+        2945
+      ],
+      [
+        10840,
+        600,
+        2945
+      ],
+      [
+        10840,
+        1345,
+        2945
+      ],
+      [
+        10840,
+        1345,
+        1000
+      ]
+    ],
+    "terminal": [
+      [
+        10840,
+        1345,
+        1000
+      ],
+      [
+        10840,
+        1345,
+        950
+      ],
+      [
+        10808,
+        1375,
+        750
+      ],
+      [
+        10808,
+        1375,
+        381
+      ],
+      [
+        10800,
+        1000,
+        375
+      ],
+      [
+        11300,
+        1000,
+        369
+      ],
+      [
+        11300,
+        1275,
+        365
+      ],
+      [
+        11300,
+        1275,
+        595
+      ]
+    ],
+    "westOnlyGapMM": -4.00571,
+    "pairedBackbonesMM": 40.19171,
+    "lowerToColdBranchesMM": 46.90886,
+    "upperToColdBranchesMM": 52.19362,
+    "lowerToColdBackboneMM": 52.19362,
+    "nearestTerminalObstacles": [
+      {
+        "obstacle": "lower pipe arm",
+        "afterSettingMM": 26.23121
+      },
+      {
+        "obstacle": "rearLink300",
+        "afterSettingMM": 28.85445
+      },
+      {
+        "obstacle": "rackPost",
+        "afterSettingMM": 36.03622
+      },
+      {
+        "obstacle": "inheritedHeadBody",
+        "afterSettingMM": 39.99905
+      },
+      {
+        "obstacle": "lower pipe arm return",
+        "afterSettingMM": 57.96334
+      }
+    ],
+    "wasteClearAfterSettingMM": 39.99905,
+    "localHotHandMM": 243.63514,
+    "coldCapArmMM": 137.98404,
+    "controlAfterLanding": {
+      "shoulder": [
+        11185,
+        1725,
+        1450
+      ],
+      "reachMM": 431.91434,
+      "bodyToStandMM": 25
+    },
+    "rectangularColdAttachmentMM": 11.84033,
+    "rearLowerLink": {
+      "original": [
+        10875,
+        700,
+        300,
+        20,
+        485,
+        20
+      ],
+      "candidate": [
+        10875,
+        700,
+        290,
+        20,
+        485,
+        20
+      ],
+      "originalGapMM": 18.85517,
+      "revisedGapMM": 28.85445,
+      "coldBranchClearancesMM": {
+        "coldWasher": 416.05337,
+        "coldSink": 154.99905
+      }
+    },
+    "carryBarGapMM": -32.52861
+  },
+  "release": {
+    "headWorkingBottom": 670,
+    "spannerZ": 620,
+    "tools": [
+      {
+        "id": "cold",
+        "clearanceMM": 25.95205,
+        "reachMM": 542.89664
+      },
+      {
+        "id": "hot",
+        "clearanceMM": 25.95205,
+        "reachMM": 513.67229
+      }
+    ],
+    "drains": [
+      {
+        "id": "cold",
+        "armMM": 28.58224,
+        "pipeMM": 35
+      },
+      {
+        "id": "hot",
+        "armMM": 50,
+        "pipeMM": 35
+      }
+    ],
+    "receiverAfterSettingMM": 25,
+    "coldTerminalClearances": {
+      "coldSink": {
+        "obstacle": "rearLink800",
+        "afterSettingMM": 39.99905
+      },
+      "coldWasher": {
+        "obstacle": "valve reaction arm return",
+        "afterSettingMM": 41.48434
+      }
+    },
+    "retainedWasherSupportContactUnchanged": true,
+    "capturedHeadInitialTravelMM": 385,
+    "stand": [
+      10160,
+      1465,
+      0,
+      690,
+      670,
+      700
+    ],
+    "standMargins": [
+      35,
+      35,
+      30,
+      30
+    ],
+    "standToHotTailMM": 54.99905,
+    "contactedLegs": [
+      {
+        "id": "sole 1",
+        "box": [
+          10945,
+          730,
+          0,
+          40,
+          40,
+          6
+        ],
+        "marginMM": 15
+      },
+      {
+        "id": "sole 2",
+        "box": [
+          10945,
+          1330,
+          0,
+          40,
+          40,
+          6
+        ],
+        "marginMM": 15
+      },
+      {
+        "id": "sole 3",
+        "box": [
+          11495,
+          730,
+          0,
+          40,
+          40,
+          6
+        ],
+        "marginMM": 15
+      },
+      {
+        "id": "sole 4",
+        "box": [
+          11495,
+          1330,
+          0,
+          40,
+          40,
+          6
+        ],
+        "marginMM": 15
+      }
+    ],
+    "hotValveToColdCapMM": 25.20111
+  }
+}

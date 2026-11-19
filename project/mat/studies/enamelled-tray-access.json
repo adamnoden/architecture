@@ -1,0 +1,144 @@
+{
+  "scope": "Unadopted nominal-plan comparison in the prior IAS/HAD NE wet-room proposal; no STR-HOUSE hybrid",
+  "units": "mm; Euclidean point distances in plan, not fitted routes or human reach",
+  "source_sha256": {
+    "project/ias/studies/bedroom4-connected-assembly.json": "6085f866ef2e298dfadc92671ab14feb230be0ca57b6fae3971f821d93214712",
+    "project/had/studies/bedroom4-maintenance-study.json": "c2485a231e4109af3f71ae4bd5f82d6498fe96cd0d7593f8eee578e4079e3cd1"
+  },
+  "manufacturer_evidence": {
+    "article": "BetteUltra 5940",
+    "document": "DS-BetteUltra_1000_mm-DW_0082-IT.pdf",
+    "url": "https://content.my-bette.com/produkt_downloads/BetteUltra-1000-mm-462223/BetteUltra-1000-700-25-mm-134290/DS-BetteUltra_1000_mm-DW_0082-IT.pdf",
+    "revision_date": null,
+    "accessed": "2026-10-31",
+    "sha256": "8ace4d9321aa118e6e0561e87252dfadf78f5ce147fb4f594b1429337b8d1a33",
+    "nominal_plan": [
+      1000,
+      1000
+    ],
+    "G": 210,
+    "H": 500,
+    "drain_diameter": 90
+  },
+  "source_parsing": {
+    "tray": "IAS trays.NE, checked against HAD fixed NE shower",
+    "boxing": "HAD fixed north/west waste boxing",
+    "old_JT_centre": "First point of the unique IAS route named NE west-facing corner, enlarged north boxing",
+    "stance": "Final HAD paths.trayServiceApproach point"
+  },
+  "finished_room_bounds": {
+    "west": 427.5,
+    "east": 2335,
+    "south": 8295,
+    "north": 10822.5
+  },
+  "tray_reservation": {
+    "x": 1335,
+    "y": 9822.5,
+    "w": 1000,
+    "h": 1000
+  },
+  "north_box": {
+    "id": "north waste boxing",
+    "x": 577.5,
+    "y": 10572.5,
+    "w": 757.5,
+    "h": 250
+  },
+  "west_box": {
+    "id": "west waste boxing",
+    "x": 427.5,
+    "y": 9550,
+    "w": 150,
+    "h": 1272.5
+  },
+  "had_stance": [
+    950,
+    10200
+  ],
+  "orientations": {
+    "W": {
+      "centre": [
+        1545,
+        10322.5
+      ],
+      "closest_north_box_point": [
+        1335.0,
+        10572.5
+      ],
+      "distance_to_north_box": 326.497,
+      "distance_to_had_stance": 607.479
+    },
+    "N": {
+      "centre": [
+        1835,
+        10612.5
+      ],
+      "closest_north_box_point": [
+        1335.0,
+        10612.5
+      ],
+      "distance_to_north_box": 500.0,
+      "distance_to_had_stance": 976.412
+    },
+    "E": {
+      "centre": [
+        2125,
+        10322.5
+      ],
+      "closest_north_box_point": [
+        1335.0,
+        10572.5
+      ],
+      "distance_to_north_box": 828.613,
+      "distance_to_had_stance": 1181.368
+    },
+    "S": {
+      "centre": [
+        1835,
+        10032.5
+      ],
+      "closest_north_box_point": [
+        1335.0,
+        10572.5
+      ],
+      "distance_to_north_box": 735.935,
+      "distance_to_had_stance": 900.712
+    }
+  },
+  "old_JT_comparison": {
+    "centre": [
+      1470,
+      10687.5
+    ],
+    "closest_north_box_point": [
+      1335.0,
+      10687.5
+    ],
+    "distance_to_north_box": 135.0,
+    "distance_to_had_stance": 712.781
+  },
+  "west_face_enquiry": {
+    "station": [
+      1335,
+      10322.5
+    ],
+    "stance_to_station": 404.019,
+    "station_to_west_drain": 210.0,
+    "stance_to_west_drain": 607.479
+  },
+  "assumptions": [
+    "Rotate the base 5940 drain geometry within the retained nominal 1000-square tray reservation.",
+    "G=210 is from the nearest outer side; H=500 is midway along that side. Each orientation is a separate case.",
+    "The proposed west-face station is an authored point on the tray edge, not a panel or operator position.",
+    "Nearest-box distances use the closed gross plan rectangle, without component, wall or tool clearance.",
+    "The HAD stance has an earlier proxy approach witness; this study establishes no reach or manipulation."
+  ],
+  "unresolved": [
+    "Configured Upstand footprint and finished-wall accommodation",
+    "Matched support, underside and waste assembly",
+    "Outlet direction, branch length, gradient and stack connection",
+    "First release, tool access and whole-body extraction",
+    "Lining/seal reinstatement, tray carrying and actual human operation"
+  ]
+}

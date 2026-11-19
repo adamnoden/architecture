@@ -44,6 +44,7 @@ No universal head/sill, moulding ratio or frame material becomes doctrine.
 |---|---|---|
 | Room-side lining, grounds, access front and removal order | IAS | HAD composition; OAS at reveal/door; competent boundaries through BCR |
 | Floor/ceiling layers, access and terminations | IAS | HAD floor/ceiling expression; OAS threshold; structure/acoustics/fire through BCR |
+| Permanent wall roles, primary floor/roof support and structural opening heads | STR | HAD source/room order; IAS complete layers and services; OAS arch/head and mounting interfaces; ROF support demands; competent evidence through BCR/EPR |
 | Opening mount, frame/tolerance relationship, weather/air/thermal/vapour transitions | OAS | IAS room-side edge; HAD visible sightlines; competent evidence through BCR |
 | External door and threshold as one envelope assembly | OAS | IAS interior floor end; HAD exterior/room expression; external levels and drainage with house/source owners |
 | Facade/room hierarchy, opening composition, trim and material expression | HAD | Actual IAS/OAS depths and operation; no cosmetic closure over unresolved mechanics |
@@ -54,6 +55,50 @@ No universal head/sill, moulding ratio or frame material becomes doctrine.
 
 Decorative trim never becomes the primary environmental/fire/acoustic boundary
 merely because it covers that boundary in an image.
+
+## Structural direction and selection compatibility
+
+The [structural brief](../docs/reference-house/structural-brief.md) and [STR programme](str/structural-architecture-programme.md) direct investigation of solid masonry, real arches, aligned support and non-timber primary structure. The controlled 125 mm partitions and 350 mm floor remain actual source reservations until an explicit rewind is adopted; neither is a preselected solution. IAS owns renewable layers and service fronts; STR owns the permanent support they connect to. An outer-leaf arch cannot certify the inner-leaf head or a doorway bearing below a floor reaction.
+
+STR-HOUSE coordinates proposed structure with HAD in the owning plan/section. STR-RECONCILE supplies exact candidate/source identities, support/reaction envelopes, interface budgets and affected-evidence dispositions. ROF-RWT-GATE must check its selected roof against that handoff. TRIAD-GATE must check actual selected walls, floor layers, opening heads, stair/void and service crossings against it, including the selected construction bay. Changed geometry or assembly outside the declared envelope requires targeted rechecking before admission; a completed study is not automatic compatibility.
+
+**9 November house rewind.** The [completed STR-HOUSE disposition](str/whole-house-corner-rewind.md) rejects selection of the supplied opening/crown combination. HAD/STR should redraw the paired ground and upper corner bays, two continuous jambs, revised bed and fridge, and raised north crown together. OAS/IAS own changed window capture, guards and room operations. MAT/ROF/RWT own changed reveals, ridge/hip weather, ventilation and drainage. STR-RECONCILE must distinguish this proposed successor from the controlled house before passing the roof or TRIAD gates.
+
+**10 November floor/portal correction.** SAP-C1's coherent structural handoff
+is withdrawn by the [located physical-interface review](str/floor-portal-interface-review.md).
+Its independent jamb motion has no physical route through the continuous floor
+collector. **STR-FLOOR-PORTAL** must reconcile the actual connection, coupled
+gravity/lateral system, reactions, movements and affected service/bay interfaces
+before ROF-RWT-GATE or TRIAD-GATE can pass. The historical STR completion is a
+dated study record; it no longer establishes a current coherent structure.
+The correction owns the choice between a joined floor/jamb and a real separated
+collector bypass. Neither is adopted here.
+
+**15 November north collector development.** The [straight north hold-down and paired arch ties](str/floor-portal-twin-garden-tie.md) develop separate uplift and arch-thrust paths. The [local collector cage](str/floor-portal-north-cage.md) compares a 200 × 750 mm section at the sleeve with short bent-bar returns and shared jig setting. Keep the existing floor and arch levels. Coordinate the room finish, insulation, window sill return and slab/bar force development at the widened shoulders. The [split cap mat and linked starter routes](str/floor-portal-north-cap-layer.md) retain the four north head axes and bound the catalogue splice bodies. The [slotted north roof shoe and separate dry ferrule](str/floor-portal-north-roof-shoe.md) preserve separate compression and normal restraint. Reconcile the full joint, far-head cages, tool and closure interfaces with signed actions and movements across all 52 heads before admission to the roof and TRIAD gates.
+
+The [north corner diaphragm collar](str/floor-portal-north-collar.md) brings the top-mesh bars straight across the receiving plane on both northern L piers. Carry the 120 mm roomward extension and Z3415 concrete top into the floor, northwest cabinet base and service-depth drawings. Develop restraint around the H16 bends and the transfer into the original L piers before admitting that joint into the coupled replay.
+
+**SAP-C1 retained comparison.** The [paired-jamb, raised-roof candidate](str/provisional-house-handoff.md)
+and its [source-bound interface schedule](str/studies/reconciled-house-interface.json)
+retain the geometry used by completed bounded studies. RH-LAYOUT-REVISION-02
+remains the controlled house. SAP-C1 moves the sixteen corner openings to
+2100/9900, retains the ordinary 429.5 inside face, Z0/3450 occupied levels,
+RC200 first floor at 3170–3370 and occupied ceilings at +3100 locally. Its
+normal-only floor/roof ties and direct jamb-foot support are model assumptions
+awaiting the correction above. The provisional slate control requires field
++7418.42/+8409.33 and continuous cap +8645.33. The thinner metal +8464.73 cap
+cannot house its full assembly. The signed frame and 52-head suction cards
+retain their higher wind face and enlarged court overhang as historical
+controls. The concentrated lead origin is routed separately at all 22 roof
+supports. Preserve the paired furniture and service states, independent
+roof/court water routes and accessible threshold unless the correction earns
+an explicit source change. BCR/OAS/BAY, EPR, PHY and HRS retain their
+occurrence-specific replay and site boundaries. No current structural,
+water-resistance, house-selection or plot approval follows from these studies.
+
+Existing independent studies may continue on source-bound provisional
+assumptions. Both final house gates require the structural correction through
+the existing source-rewind and evidence procedures.
 
 ## Candidate obligations
 
@@ -106,6 +151,8 @@ guarding, stair headroom and fire/structure remain unresolved. A candidate may
 bound or reject an arrangement; it cannot publish these as solved through
 furniture symbols, attractive panelling or a nominal walking-grid result.
 
+**East water and release.** The [separate cylinder and buffer routes](had/plant-release-route.md) bound the complete carrier widths at 830 and 750 mm respectively, with a dry level arrival at the east dock preferred. Keep the local protections and the independent lower G3 discharge in the receiving section. Carry the [protected daylight spill and separate inlet receivers](had/inlet-protected-daylight.md) through the east wall and site checks using the declared 60 L/min maximum supply comparison. The [split dry utility bowl and straight lift](had/utility-dry-bowl-release.md) preserve the fixed deck and backbones. Actual fitted equipment, anchors, loaded operations, cabinet containment and connected utility cutover still require joined evidence before TRIAD can accept the incoming-water arrangement.
+
 ## Change protocol
 
 1. Identify the conflicting task or relationship, not merely a preferred image.
@@ -135,3 +182,9 @@ retroactively turn an interface freeze into construction proof.
 The gate unlocks IAS-01V/01H, OAS-01E/01I and HAD-01E/01P/01S. Junctions, material
 synthesis, selection, TRIAD-GATE, MRA and BCR retain their own dependencies.
 No physical test or competent review has been completed by this contract.
+
+## 29 October owner confirmation and refurbishment integration
+
+The owner confirms the **12 × 12 m house** as the reference for the refurbishment programme. This confirms the selected shell, not technical adequacy of every current reservation or final roof/water selection. The current layout and explicit source rewinds remain authoritative for narrower dimensions.
+
+The [refurbishment plan](refurbishment-plan.md) adds early BCR feasibility input to TRIAD-GATE. IAS/OAS/HAD reconcile applicable conflicts in actual sanitary fit, door operation, access continuity, layer budgets and physical routes. A coherent local detail does not establish that its occurrence fits the house; BCR referral cannot conceal an unresolved architectural conflict. Historical 12 × 10.8 m evidence remains usable only with an explicit applicability decision.

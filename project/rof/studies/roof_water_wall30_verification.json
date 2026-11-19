@@ -1,0 +1,14 @@
+{
+  "status": "FULL30MM NATIVE REPLAY EXACTLY REPRODUCES FROZEN JSON",
+  "command": "python -S project/rof/studies/roof_water_wall30_trial.py --court-width=280 --court-wall-mm=30 --inner-dry-kg-per-m=60 --receiving-spring-kn-per-mm=20 --outer-head-dry-domain=independent --check",
+  "exitCode": 0,
+  "result": "project/rof/studies/roof_water_wall30_trial_280_30_60_20_independent.json",
+  "resultSHA256": "388b78e1123ff0dc06b19a26f82c30b3d2db975aeba4c27603279beaa0089192",
+  "logSHA256": "764d53f93a8e6f2058a443ec08a9dfff99482de6bd8359eb10a7fddcd44047b1",
+  "otherChecks": [
+    "920 vertical and1112 lateral generation passed their source/native/virtual-work guards",
+    "receiving --check PASS",
+    "checkpoint --check PASS",
+    "git apply --check PASS"
+  ]
+}

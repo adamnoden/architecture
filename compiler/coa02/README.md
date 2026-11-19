@@ -1,7 +1,7 @@
 # COA-02 — non-spatial report extraction
 
 **Gate:** COA-02  
-**Status:** PASS subject to repository CI  
+**Status:** PASS — accepted in the [completed COA programme](../../docs/computational/compiler-output-architecture-programme.md)\
 **Starting main:** `f536143a4a315d3e6442d742a29422cf44348f7a`  
 **Issue:** #95  
 **Authority effect:** none
@@ -70,4 +70,4 @@ They retain their CH-frozen historical-evidence role. The generated Markdown rep
 
 No service, envelope or building-performance claim changes.
 
-**Next gate:** COA-03 — shared drawing and uncertainty language.
+**Historical handoff:** [COA-03 — shared drawing and uncertainty language](../coa03/README.md), subsequently completed.

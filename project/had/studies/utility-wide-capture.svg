@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" role="img" aria-labelledby="title description">
+<title id="title">Make space for the complete utility head capture</title>
+<desc id="description">Plan with a wider start and receiving stand, a moved hot control, and its new lower route to the existing sink union.</desc>
+<defs><marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0l6 3-6 3z" fill="#356252"/></marker></defs>
+<style>text{font:16px sans-serif;fill:#263d36}.title{font:bold 29px sans-serif}</style>
+<rect width="1000" height="640" fill="#fbf7ec"/>
+<text x="35" y="46" class="title">Carry the complete 620 mm package</text>
+<text x="35" y="73">House plan, millimetres · Local occupied states shown in sequence</text>
+<rect x="735.3149999999999" y="92" width="43" height="390" fill="#d8c7a5" stroke="#3c514c"/>
+<rect x="128.8" y="110.75" width="296.7" height="167.5" fill="#d5e7d8" stroke="#3c514c"/>
+<rect x="453.45" y="118.25" width="266.6" height="152.5" fill="#dde2eb" stroke="#3c514c"/>
+<rect x="453.45" y="308.25" width="266.6" height="152.5" fill="#f2d1af" stroke="#3c514c"/>
+<rect x="457.75" y="309.5" width="258" height="150" fill="#ecc498" stroke="#3c514c"/>
+<rect x="370.89" y="322.75" width="31.82" height="18.5" fill="#a2bdcd" stroke="#3c514c"/>
+<rect x="405.29" y="280.75" width="31.82" height="36.75" fill="#ce886a" stroke="#3c514c"/>
+<polyline points="421.2,308.25 421.2,308.25 407.44,300.75 407.44,300.75 404,394.5 619,394.5 619,325.75 619,325.75" fill="none" stroke="#ae6042" stroke-width="2.5" stroke-dasharray="6 4"/>
+<path d="M586.75 384.5V194.5H277.15" fill="none" stroke="#356252" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="138" y="142">Independent first rest</text>
+<text x="470" y="145">North transfer</text>
+<text x="470" y="430">Raised start</text>
+<text x="800" y="116">North ↑</text>
+<text x="800" y="206">East wall</text>
+<text x="800" y="319">620 mm envelope</text>
+<text x="800" y="344">600 mm bare top</text>
+<text x="259" y="306">Retained cold</text>
+<text x="280" y="267">New H0 position</text>
+<text x="104" y="422">Bend below the cold branch</text>
+<path d="M353 302l18 24M395 273l26 34M335 412l77-27" stroke="#65746b" fill="none"/>
+<line x1="35" x2="960" y1="506" y2="506" stroke="#a0aaa3"/>
+<text x="35" y="535">Raised transfer · 760 north, 720 west, 585 down · Modeled clearances 25 / 25.5 / 30 mm.</text>
+<text x="35" y="566">The hot run uses a lower turn and an independent drain. Lower the rack link from Z300 to Z290.</text>
+<text x="35" y="597">Actual supports, circular cold attachment, assembled capture and initial lift still require verification.</text>
+</svg>

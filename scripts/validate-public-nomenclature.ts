@@ -7,7 +7,7 @@ import {
   type NomenclatureFamily,
   type NomenclatureSurface
 } from '../project/nomenclature.js'
-import { isPublicSource } from '../project/public-surface.js'
+import { isPublicSource, siteRootSources } from '../project/public-surface.js'
 import { routeForSource } from '../project/site-routes.js'
 import { dependenciesForAdapter } from '../publication/adapters.js'
 import { publicationFigurePlacements } from '../publication/figures.js'
@@ -117,7 +117,7 @@ function scanSource(source: string, text: string, failures: Failure[]): void {
 }
 
 function publicSiteSources(): Set<string> {
-  const sources = new Set<string>(['README.md'])
+  const sources = new Set<string>(siteRootSources.filter(isPublicSource))
   for (const file of walk(resolve(repoRoot, 'docs'))) {
     const source = sourcePath(file)
     if (!source.endsWith('.md')) continue
@@ -157,7 +157,6 @@ function publicationFigureSources(): Set<string> {
     const target = posix.normalize(posix.join(posix.dirname(entrySource), placement.image))
     if (target.endsWith('.svg')) sources.add(target)
   }
-
   return sources
 }
 

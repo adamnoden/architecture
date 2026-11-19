@@ -1,0 +1,1179 @@
+{
+  "role": "Exact12-row extracts of two complete920-query unadmitted native pressure variants. Not an independent native solve.",
+  "cases": [
+    {
+      "sourceRelativePath": "project/rof/studies/roof_water_current_movement_280_25_60_40_independent.json",
+      "sourceReceiptSHA256": "f1122b48fbc01fdf1cde190bec0d5509918516016c188c39da278e013c356f27",
+      "receivingSpringKNPerMM": 40.0,
+      "courtWallMM": 25.0,
+      "courtWidthMM": 280,
+      "installedOuterHeadMassGroups": 134,
+      "weatherRoofRetained": true,
+      "windQualification": "Frozen768-row pressure export plus independent actual floors and134 installed dry-mass intervals; known missing lap/baffle wind and local small-stock return remain open.",
+      "sourceQueryCount": 920,
+      "headCornerQueries": [
+        {
+          "label": "south normal retained-arm corner R-332.5 pOffset-125.0 absolute",
+          "references": [
+            [
+              [
+                11150,
+                332.5
+              ],
+              [
+                11025.0,
+                332.5
+              ]
+            ],
+            null
+          ],
+          "rangeMM": [
+            -5.891260841,
+            9.043921753
+          ],
+          "incrementOnlyRangeMM": [
+            -1.045408156,
+            1.681686831
+          ],
+          "dryDiversionRangeMM": [
+            -5.620047355,
+            7.882259258
+          ],
+          "control": [
+            {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 57,
+              "guard": 3,
+              "sign": -1
+            },
+            {
+              "crack": 0.2,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 28,
+              "guard": 3,
+              "sign": 1
+            }
+          ]
+        },
+        {
+          "label": "south normal retained-arm corner R-332.5 pOffset125.0 absolute",
+          "references": [
+            [
+              [
+                11150,
+                332.5
+              ],
+              [
+                11275.0,
+                332.5
+              ]
+            ],
+            null
+          ],
+          "rangeMM": [
+            -4.162072662,
+            6.852068104
+          ],
+          "incrementOnlyRangeMM": [
+            -0.71406116,
+            1.205034858
+          ],
+          "dryDiversionRangeMM": [
+            -4.008992874,
+            5.972860047
+          ],
+          "control": [
+            {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 71,
+              "guard": 3,
+              "sign": -1
+            },
+            {
+              "crack": 0.2,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 39,
+              "guard": 3,
+              "sign": 1
+            }
+          ]
+        },
+        {
+          "label": "south normal retained-arm corner R1000.0 pOffset-125.0 absolute",
+          "references": [
+            [
+              [
+                11150,
+                332.5
+              ],
+              [
+                11025.0,
+                -1000.0
+              ]
+            ],
+            null
+          ],
+          "rangeMM": [
+            -16.796622954,
+            24.681652672
+          ],
+          "incrementOnlyRangeMM": [
+            -3.372619802,
+            5.484475733
+          ],
+          "dryDiversionRangeMM": [
+            -15.859166654,
+            20.261071876
+          ],
+          "control": [
+            {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 78,
+              "guard": 3,
+              "sign": -1
+            },
+            {
+              "crack": 0.2,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 87,
+              "guard": 3,
+              "sign": 1
+            }
+          ]
+        },
+        {
+          "label": "south normal retained-arm corner R1000.0 pOffset125.0 absolute",
+          "references": [
+            [
+              [
+                11150,
+                332.5
+              ],
+              [
+                11275.0,
+                -1000.0
+              ]
+            ],
+            null
+          ],
+          "rangeMM": [
+            -15.923516559,
+            23.305364664
+          ],
+          "incrementOnlyRangeMM": [
+            -3.257483377,
+            5.183518188
+          ],
+          "dryDiversionRangeMM": [
+            -15.081416088,
+            19.144460436
+          ],
+          "control": [
+            {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 76,
+              "guard": 3,
+              "sign": -1
+            },
+            {
+              "crack": 0.2,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 86,
+              "guard": 3,
+              "sign": 1
+            }
+          ]
+        },
+        {
+          "label": "south normal retained-arm corner R1260.0 pOffset-125.0 absolute",
+          "references": [
+            [
+              [
+                11150,
+                332.5
+              ],
+              [
+                11025.0,
+                -1260.0
+              ]
+            ],
+            null
+          ],
+          "rangeMM": [
+            -19.355227785,
+            28.153004569
+          ],
+          "incrementOnlyRangeMM": [
+            -3.91987683,
+            6.309008306
+          ],
+          "dryDiversionRangeMM": [
+            -18.274367786,
+            23.083132173
+          ],
+          "control": [
+            {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 76,
+              "guard": 3,
+              "sign": -1
+            },
+            {
+              "crack": 0.2,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 86,
+              "guard": 3,
+              "sign": 1
+            }
+          ]
+        },
+        {
+          "label": "south normal retained-arm corner R1260.0 pOffset125.0 absolute",
+          "references": [
+            [
+              [
+                11150,
+                332.5
+              ],
+              [
+                11275.0,
+                -1260.0
+              ]
+            ],
+            null
+          ],
+          "rangeMM": [
+            -18.569923988,
+            26.863866789
+          ],
+          "incrementOnlyRangeMM": [
+            -3.810447632,
+            6.013105619
+          ],
+          "dryDiversionRangeMM": [
+            -17.580922253,
+            22.050173397
+          ],
+          "control": [
+            {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 76,
+              "guard": 3,
+              "sign": -1
+            },
+            {
+              "crack": 0.2,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 86,
+              "guard": 3,
+              "sign": 1
+            }
+          ]
+        },
+        {
+          "label": "north normal retained-arm corner R-332.5 pOffset-125.0 absolute",
+          "references": [
+            [
+              [
+                9025,
+                11667.5
+              ],
+              [
+                9150.0,
+                11667.5
+              ]
+            ],
+            null
+          ],
+          "rangeMM": [
+            -8.563171372,
+            13.21518606
+          ],
+          "incrementOnlyRangeMM": [
+            -1.538134136,
+            2.635280324
+          ],
+          "dryDiversionRangeMM": [
+            -8.112048828,
+            11.20200924
+          ],
+          "control": [
+            {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 57,
+              "guard": 11,
+              "sign": -1
+            },
+            {
+              "crack": 0.2,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 32,
+              "guard": 11,
+              "sign": 1
+            }
+          ]
+        },
+        {
+          "label": "north normal retained-arm corner R-332.5 pOffset125.0 absolute",
+          "references": [
+            [
+              [
+                9025,
+                11667.5
+              ],
+              [
+                8900.0,
+                11667.5
+              ]
+            ],
+            null
+          ],
+          "rangeMM": [
+            -7.874825833,
+            12.291315972
+          ],
+          "incrementOnlyRangeMM": [
+            -1.397089725,
+            2.417354715
+          ],
+          "dryDiversionRangeMM": [
+            -7.470712325,
+            10.418052161
+          ],
+          "control": [
+            {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 57,
+              "guard": 11,
+              "sign": -1
+            },
+            {
+              "crack": 0.2,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 32,
+              "guard": 11,
+              "sign": 1
+            }
+          ]
+        },
+        {
+          "label": "north normal retained-arm corner R1000.0 pOffset-125.0 absolute",
+          "references": [
+            [
+              [
+                9025,
+                11667.5
+              ],
+              [
+                9150.0,
+                13000.0
+              ]
+            ],
+            null
+          ],
+          "rangeMM": [
+            -24.971764698,
+            36.113626093
+          ],
+          "incrementOnlyRangeMM": [
+            -3.19431531,
+            6.482474536
+          ],
+          "dryDiversionRangeMM": [
+            -24.228703681,
+            30.177841194
+          ],
+          "control": [
+            {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 79,
+              "guard": 11,
+              "sign": -1
+            },
+            {
+              "crack": 0.2,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 45,
+              "guard": 11,
+              "sign": 1
+            }
+          ]
+        },
+        {
+          "label": "north normal retained-arm corner R1000.0 pOffset125.0 absolute",
+          "references": [
+            [
+              [
+                9025,
+                11667.5
+              ],
+              [
+                8900.0,
+                13000.0
+              ]
+            ],
+            null
+          ],
+          "rangeMM": [
+            -24.584876044,
+            35.4632426
+          ],
+          "incrementOnlyRangeMM": [
+            -3.103892376,
+            6.287200115
+          ],
+          "dryDiversionRangeMM": [
+            -23.882603645,
+            29.661150294
+          ],
+          "control": [
+            {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 79,
+              "guard": 11,
+              "sign": -1
+            },
+            {
+              "crack": 0.2,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 45,
+              "guard": 11,
+              "sign": 1
+            }
+          ]
+        },
+        {
+          "label": "north normal retained-arm corner R1260.0 pOffset-125.0 absolute",
+          "references": [
+            [
+              [
+                9025,
+                11667.5
+              ],
+              [
+                9150.0,
+                13260.0
+              ]
+            ],
+            null
+          ],
+          "rangeMM": [
+            -28.736319677,
+            41.121575417
+          ],
+          "incrementOnlyRangeMM": [
+            -3.63051877,
+            7.323275527
+          ],
+          "dryDiversionRangeMM": [
+            -27.918017039,
+            34.402125558
+          ],
+          "control": [
+            {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 79,
+              "guard": 11,
+              "sign": -1
+            },
+            {
+              "crack": 0.2,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 45,
+              "guard": 11,
+              "sign": 1
+            }
+          ]
+        },
+        {
+          "label": "north normal retained-arm corner R1260.0 pOffset125.0 absolute",
+          "references": [
+            [
+              [
+                9025,
+                11667.5
+              ],
+              [
+                8900.0,
+                13260.0
+              ]
+            ],
+            null
+          ],
+          "rangeMM": [
+            -28.355635108,
+            40.477516482
+          ],
+          "incrementOnlyRangeMM": [
+            -3.545197074,
+            7.133222815
+          ],
+          "dryDiversionRangeMM": [
+            -27.57701824,
+            33.890656367
+          ],
+          "control": [
+            {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 79,
+              "guard": 11,
+              "sign": -1
+            },
+            {
+              "crack": 0.2,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 45,
+              "guard": 11,
+              "sign": 1
+            }
+          ]
+        }
+      ],
+      "sourceHashes": {
+        "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+        "project/str/studies/current-house-ring-return.py": "e0e81c445ae210fc43f3335f1a6d8aac6faa7026af755fa4f1282eceeaa39cb6",
+        "project/rof/studies/stiffness_inputs/portals.py": "eff6d7d7dc465cbd572eb6103dd6d6a427c7cb99c4edb74334b058c6a635ff97",
+        "project/str/studies/reconciled-slate-roof.py": "7f42a9c530092e077e5052f5e1f0c1872186790726cda31bb0a800902e031643",
+        "project/mat/studies/whole-envelope.json": "a7d959b109a55cbf7bd8538894bcbc942ce9de84b2b40259530f6794f6665e15",
+        "project/str/studies/reconciled-house-interface.json": "ae17f6de977de58ae54f25edfc67c48c36f348cffc288e839f25a8b4143c16cf",
+        "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+        "project/rof/studies/roof_water_current_trial.py": "e7a232cf47a79a59d61caa6a7ee8f5340c684735a0ea8d0db0f45c8f288222cf",
+        "project/rof/studies/roof_water_joined_pressure_groups.py": "f94fd0656033098a6a5bf7b5cd9aeaeb2616cb0d9de6b9ce00dadadc807658aa",
+        "project/rof/studies/pressure_inputs/manifest.json": "63fde79f0000eea316fc88f82b0a1fe4f6f635464c805b1b433616bb663f0e11",
+        "project/rof/studies/stiffness_inputs/manifest.json": "59a8b2f4b5e62191dbca58967e84d6d572fe617a698a68c71db32312d9270df2",
+        "project/rof/studies/stiffness_inputs/roof.py": "1f3c2e584ee3c0136aba0fda97c55e92be672f181dbe12e02f27088686fc2f5e",
+        "project/rof/studies/stiffness_inputs/ring.py": "9a088788ad68626b6b9746702388c604cd95661d4ad14b023661e121d4063c6a",
+        "project/rof/studies/stiffness_inputs/slate.py": "b589ab5bd0a66f81d34df4f99d275a0e10d7d76e75827563981408f1e6df6051",
+        "project/rof/studies/pressure_inputs/candidate_stock_input.json": "27950e4f14f995ec8573930ec103da487d2f8cc76b6af7f63216e50fad1a4454",
+        "project/rof/studies/pressure_inputs/roof_water_inner_candidate.py": "4eb505e4349b1af1eaa98c96b0aa7174a8b6e3c4210628a969cc10c8252e7eba",
+        "project/rof/studies/pressure_inputs/roof_water_inner_candidate_wind.json": "2d710cfdc405b2e8bebf4fdc3aa7f38edfeee044db528b5168aa19c65bc074aa",
+        "project/rof/studies/pressure_inputs/roof_water_inner_candidate_wind.py": "033a199ee6e3fd9fb7c8fb3d68dbe317e11238c40c84c8a65570bdb233198ae4",
+        "project/rof/studies/roof_water_current_trial_280_25_60_40_independent.json": "0f3c526b05203554ec04496c6744143a9715c117534876c54c24c18380fd8c84",
+        "project/rof/studies/roof_water_current_movement.py": "cda3a56cf32017b9f212ce3ae7753b0f33305cea2ff9d61afb53c9ade38d3578"
+      }
+    },
+    {
+      "sourceRelativePath": "project/rof/studies/roof_water_current_movement_280_25_60_20_independent.json",
+      "sourceReceiptSHA256": "ff6a94bd9f79687e688675414589033ac8f0a80d25a06fe9c3ac6fe5c490de23",
+      "receivingSpringKNPerMM": 20.0,
+      "courtWallMM": 25.0,
+      "courtWidthMM": 280,
+      "installedOuterHeadMassGroups": 134,
+      "weatherRoofRetained": true,
+      "windQualification": "Frozen768-row pressure export plus independent actual floors and134 installed dry-mass intervals; known missing lap/baffle wind and local small-stock return remain open.",
+      "sourceQueryCount": 920,
+      "headCornerQueries": [
+        {
+          "label": "south normal retained-arm corner R-332.5 pOffset-125.0 absolute",
+          "references": [
+            [
+              [
+                11150,
+                332.5
+              ],
+              [
+                11025.0,
+                332.5
+              ]
+            ],
+            null
+          ],
+          "rangeMM": [
+            -6.896566583,
+            11.887505227
+          ],
+          "incrementOnlyRangeMM": [
+            -1.203515192,
+            2.051769162
+          ],
+          "dryDiversionRangeMM": [
+            -6.648357562,
+            10.331802887
+          ],
+          "control": [
+            {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 78,
+              "guard": 3,
+              "sign": -1
+            },
+            {
+              "crack": 0.2,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 39,
+              "guard": 3,
+              "sign": 1
+            }
+          ]
+        },
+        {
+          "label": "south normal retained-arm corner R-332.5 pOffset125.0 absolute",
+          "references": [
+            [
+              [
+                11150,
+                332.5
+              ],
+              [
+                11275.0,
+                332.5
+              ]
+            ],
+            null
+          ],
+          "rangeMM": [
+            -5.234138392,
+            9.745250299
+          ],
+          "incrementOnlyRangeMM": [
+            -0.986825568,
+            1.672684383
+          ],
+          "dryDiversionRangeMM": [
+            -5.070881377,
+            8.434351288
+          ],
+          "control": [
+            {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 78,
+              "guard": 3,
+              "sign": -1
+            },
+            {
+              "crack": 0.2,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 11,
+              "guard": 3,
+              "sign": 1
+            }
+          ]
+        },
+        {
+          "label": "south normal retained-arm corner R1000.0 pOffset-125.0 absolute",
+          "references": [
+            [
+              [
+                11150,
+                332.5
+              ],
+              [
+                11025.0,
+                -1000.0
+              ]
+            ],
+            null
+          ],
+          "rangeMM": [
+            -18.758041284,
+            28.766708248
+          ],
+          "incrementOnlyRangeMM": [
+            -3.841121926,
+            6.090979981
+          ],
+          "dryDiversionRangeMM": [
+            -17.784301621,
+            23.813778385
+          ],
+          "control": [
+            {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 76,
+              "guard": 3,
+              "sign": -1
+            },
+            {
+              "crack": 0.2,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 86,
+              "guard": 3,
+              "sign": 1
+            }
+          ]
+        },
+        {
+          "label": "south normal retained-arm corner R1000.0 pOffset125.0 absolute",
+          "references": [
+            [
+              [
+                11150,
+                332.5
+              ],
+              [
+                11275.0,
+                -1000.0
+              ]
+            ],
+            null
+          ],
+          "rangeMM": [
+            -17.778824901,
+            27.308968151
+          ],
+          "incrementOnlyRangeMM": [
+            -3.73658092,
+            5.825346843
+          ],
+          "dryDiversionRangeMM": [
+            -16.89680997,
+            22.607614344
+          ],
+          "control": [
+            {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 76,
+              "guard": 3,
+              "sign": -1
+            },
+            {
+              "crack": 0.2,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 58,
+              "guard": 3,
+              "sign": 1
+            }
+          ]
+        },
+        {
+          "label": "south normal retained-arm corner R1260.0 pOffset-125.0 absolute",
+          "references": [
+            [
+              [
+                11150,
+                332.5
+              ],
+              [
+                11025.0,
+                -1260.0
+              ]
+            ],
+            null
+          ],
+          "rangeMM": [
+            -21.459606627,
+            32.449548626
+          ],
+          "incrementOnlyRangeMM": [
+            -4.420530681,
+            6.946078555
+          ],
+          "dryDiversionRangeMM": [
+            -20.330343851,
+            26.819788942
+          ],
+          "control": [
+            {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 76,
+              "guard": 3,
+              "sign": -1
+            },
+            {
+              "crack": 0.2,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 86,
+              "guard": 3,
+              "sign": 1
+            }
+          ]
+        },
+        {
+          "label": "south normal retained-arm corner R1260.0 pOffset125.0 absolute",
+          "references": [
+            [
+              [
+                11150,
+                332.5
+              ],
+              [
+                11275.0,
+                -1260.0
+              ]
+            ],
+            null
+          ],
+          "rangeMM": [
+            -20.526554175,
+            31.036411231
+          ],
+          "incrementOnlyRangeMM": [
+            -4.319052451,
+            6.681946964
+          ],
+          "dryDiversionRangeMM": [
+            -19.488469604,
+            25.657681075
+          ],
+          "control": [
+            {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 76,
+              "guard": 3,
+              "sign": -1
+            },
+            {
+              "crack": 0.2,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 58,
+              "guard": 3,
+              "sign": 1
+            }
+          ]
+        },
+        {
+          "label": "north normal retained-arm corner R-332.5 pOffset-125.0 absolute",
+          "references": [
+            [
+              [
+                9025,
+                11667.5
+              ],
+              [
+                9150.0,
+                11667.5
+              ]
+            ],
+            null
+          ],
+          "rangeMM": [
+            -9.847732601,
+            16.33707749
+          ],
+          "incrementOnlyRangeMM": [
+            -1.661311385,
+            2.998130008
+          ],
+          "dryDiversionRangeMM": [
+            -9.423825337,
+            13.984335607
+          ],
+          "control": [
+            {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 57,
+              "guard": 11,
+              "sign": -1
+            },
+            {
+              "crack": 0.2,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 32,
+              "guard": 11,
+              "sign": 1
+            }
+          ]
+        },
+        {
+          "label": "north normal retained-arm corner R-332.5 pOffset125.0 absolute",
+          "references": [
+            [
+              [
+                9025,
+                11667.5
+              ],
+              [
+                8900.0,
+                11667.5
+              ]
+            ],
+            null
+          ],
+          "rangeMM": [
+            -9.16626246,
+            15.410444623
+          ],
+          "incrementOnlyRangeMM": [
+            -1.534612918,
+            2.787235395
+          ],
+          "dryDiversionRangeMM": [
+            -8.781473394,
+            13.194991441
+          ],
+          "control": [
+            {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 92,
+              "guard": 11,
+              "sign": -1
+            },
+            {
+              "crack": 0.2,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 32,
+              "guard": 11,
+              "sign": 1
+            }
+          ]
+        },
+        {
+          "label": "north normal retained-arm corner R1000.0 pOffset-125.0 absolute",
+          "references": [
+            [
+              [
+                9025,
+                11667.5
+              ],
+              [
+                9150.0,
+                13000.0
+              ]
+            ],
+            null
+          ],
+          "rangeMM": [
+            -27.053382749,
+            40.210499677
+          ],
+          "incrementOnlyRangeMM": [
+            -3.571364322,
+            6.921495009
+          ],
+          "dryDiversionRangeMM": [
+            -26.268845168,
+            33.788448192
+          ],
+          "control": [
+            {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 79,
+              "guard": 11,
+              "sign": -1
+            },
+            {
+              "crack": 0.2,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 90,
+              "guard": 11,
+              "sign": 1
+            }
+          ]
+        },
+        {
+          "label": "north normal retained-arm corner R1000.0 pOffset125.0 absolute",
+          "references": [
+            [
+              [
+                9025,
+                11667.5
+              ],
+              [
+                8900.0,
+                13000.0
+              ]
+            ],
+            null
+          ],
+          "rangeMM": [
+            -26.639441625,
+            39.557422795
+          ],
+          "incrementOnlyRangeMM": [
+            -3.475129271,
+            6.747135294
+          ],
+          "dryDiversionRangeMM": [
+            -25.889521249,
+            33.268203531
+          ],
+          "control": [
+            {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 79,
+              "guard": 11,
+              "sign": -1
+            },
+            {
+              "crack": 0.35,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 90,
+              "guard": 11,
+              "sign": 1
+            }
+          ]
+        },
+        {
+          "label": "north normal retained-arm corner R1260.0 pOffset-125.0 absolute",
+          "references": [
+            [
+              [
+                9025,
+                11667.5
+              ],
+              [
+                9150.0,
+                13260.0
+              ]
+            ],
+            null
+          ],
+          "rangeMM": [
+            -30.955922283,
+            45.445682468
+          ],
+          "incrementOnlyRangeMM": [
+            -4.03811659,
+            7.812728753
+          ],
+          "dryDiversionRangeMM": [
+            -30.08652388,
+            38.215150954
+          ],
+          "control": [
+            {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 79,
+              "guard": 11,
+              "sign": -1
+            },
+            {
+              "crack": 0.35,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 90,
+              "guard": 11,
+              "sign": 1
+            }
+          ]
+        },
+        {
+          "label": "north normal retained-arm corner R1260.0 pOffset125.0 absolute",
+          "references": [
+            [
+              [
+                9025,
+                11667.5
+              ],
+              [
+                8900.0,
+                13260.0
+              ]
+            ],
+            null
+          ],
+          "rangeMM": [
+            -30.547286323,
+            44.797362976
+          ],
+          "incrementOnlyRangeMM": [
+            -3.946125294,
+            7.642012712
+          ],
+          "dryDiversionRangeMM": [
+            -29.712176875,
+            37.699283126
+          ],
+          "control": [
+            {
+              "crack": 0.2,
+              "mode": "partial water up",
+              "specials": 0.0,
+              "windIndex": 79,
+              "guard": 11,
+              "sign": -1
+            },
+            {
+              "crack": 0.35,
+              "mode": "partial water down",
+              "specials": 1.35,
+              "windIndex": 90,
+              "guard": 11,
+              "sign": 1
+            }
+          ]
+        }
+      ],
+      "sourceHashes": {
+        "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+        "project/str/studies/current-house-ring-return.py": "e0e81c445ae210fc43f3335f1a6d8aac6faa7026af755fa4f1282eceeaa39cb6",
+        "project/rof/studies/stiffness_inputs/portals.py": "eff6d7d7dc465cbd572eb6103dd6d6a427c7cb99c4edb74334b058c6a635ff97",
+        "project/str/studies/reconciled-slate-roof.py": "7f42a9c530092e077e5052f5e1f0c1872186790726cda31bb0a800902e031643",
+        "project/mat/studies/whole-envelope.json": "a7d959b109a55cbf7bd8538894bcbc942ce9de84b2b40259530f6794f6665e15",
+        "project/str/studies/reconciled-house-interface.json": "ae17f6de977de58ae54f25edfc67c48c36f348cffc288e839f25a8b4143c16cf",
+        "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+        "project/rof/studies/roof_water_current_trial.py": "e7a232cf47a79a59d61caa6a7ee8f5340c684735a0ea8d0db0f45c8f288222cf",
+        "project/rof/studies/roof_water_joined_pressure_groups.py": "f94fd0656033098a6a5bf7b5cd9aeaeb2616cb0d9de6b9ce00dadadc807658aa",
+        "project/rof/studies/pressure_inputs/manifest.json": "63fde79f0000eea316fc88f82b0a1fe4f6f635464c805b1b433616bb663f0e11",
+        "project/rof/studies/stiffness_inputs/manifest.json": "59a8b2f4b5e62191dbca58967e84d6d572fe617a698a68c71db32312d9270df2",
+        "project/rof/studies/stiffness_inputs/roof.py": "1f3c2e584ee3c0136aba0fda97c55e92be672f181dbe12e02f27088686fc2f5e",
+        "project/rof/studies/stiffness_inputs/ring.py": "9a088788ad68626b6b9746702388c604cd95661d4ad14b023661e121d4063c6a",
+        "project/rof/studies/stiffness_inputs/slate.py": "b589ab5bd0a66f81d34df4f99d275a0e10d7d76e75827563981408f1e6df6051",
+        "project/rof/studies/pressure_inputs/candidate_stock_input.json": "27950e4f14f995ec8573930ec103da487d2f8cc76b6af7f63216e50fad1a4454",
+        "project/rof/studies/pressure_inputs/roof_water_inner_candidate.py": "4eb505e4349b1af1eaa98c96b0aa7174a8b6e3c4210628a969cc10c8252e7eba",
+        "project/rof/studies/pressure_inputs/roof_water_inner_candidate_wind.json": "2d710cfdc405b2e8bebf4fdc3aa7f38edfeee044db528b5168aa19c65bc074aa",
+        "project/rof/studies/pressure_inputs/roof_water_inner_candidate_wind.py": "033a199ee6e3fd9fb7c8fb3d68dbe317e11238c40c84c8a65570bdb233198ae4",
+        "project/rof/studies/roof_water_current_trial_280_25_60_20_independent.json": "b68add723f473528a0b0b306c7635e5272cc42ad25d561ab4720422fbb281889",
+        "project/rof/studies/roof_water_current_movement.py": "cda3a56cf32017b9f212ce3ae7753b0f33305cea2ff9d61afb53c9ade38d3578"
+      }
+    }
+  ]
+}

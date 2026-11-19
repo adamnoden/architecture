@@ -1,0 +1,568 @@
+{
+  "upper": {
+    "radiusAt75PercentWLL": 1200,
+    "mast": [
+      4635,
+      2920
+    ],
+    "pinAHeightAboveSocket": 1935,
+    "floorDatum": 3450,
+    "roofComparisonAboveFloor": 2994,
+    "minimumDeckTop": 200,
+    "loadedDollyTop": 300,
+    "floatingShellBottom": 340,
+    "cradleTop": 2030,
+    "heightOfLiftIfSocketDatum350": 2285,
+    "connectorAndUpperStopAllowance": 225,
+    "hookBudgetRemainder": 30,
+    "ordinaryGuardComparison": 1100,
+    "deficitAboveIntactGuardWith60Clearance": 790,
+    "requiredInstalledMaximumHeightWith100RoofReserve": 2894,
+    "oneWayLowerTo100Dolly": 3690,
+    "approachEast": [
+      [
+        8780,
+        3290
+      ],
+      [
+        8000,
+        3250
+      ],
+      [
+        6400,
+        3250
+      ]
+    ],
+    "levelLiftTable": [
+      7340,
+      2820,
+      940,
+      880
+    ],
+    "deckLift": 200,
+    "crankForceFirstLayerN": 150,
+    "rope": {
+      "length_m": 15,
+      "ratedFirstLastLayer_kg": [
+        500,
+        430
+      ],
+      "winch_kg": 14,
+      "bracketAllowance_kg": 5,
+      "column_kg": 28,
+      "beam_kg": 13
+    },
+    "transportMass_kg": 71,
+    "spreaderAndLooseGearAllowance_kg": 14,
+    "pressureBrake": {
+      "minimumSuspended_kg": 70,
+      "bareCrateMargin_kg": 1,
+      "fullySuspendedMargin_kg": 15,
+      "supportShareForBrakeThreshold_N": 147.15,
+      "emptyCradleBelowMinimum_kg": 45
+    },
+    "frameMassAllowance_kg": 200,
+    "mastWestOffsetFromBeam": 150,
+    "basis": "Temporary structural, restraint and height envelopes for purchasing. No proof of the rated socket, host, classification, fitted winch or site.",
+    "comparisonFlatPack": {
+      "centre": [
+        5978.437097257535,
+        2794.668859059259
+      ],
+      "yawDeg": 72,
+      "eastShadow": 6342.833221544403,
+      "widthBeforeBarrier": 758.6667784555966
+    },
+    "blockedEastBedroomEscape": [
+      [
+        8700,
+        8771.25
+      ],
+      [
+        8700,
+        3485
+      ],
+      [
+        3450,
+        3485
+      ],
+      [
+        3450,
+        3782.5
+      ],
+      [
+        2270.5,
+        3782.5
+      ],
+      [
+        2270.5,
+        4100
+      ]
+    ]
+  },
+  "seats": {
+    "frameXY": [
+      [
+        4785,
+        2920
+      ],
+      [
+        7215,
+        2920
+      ],
+      [
+        4785,
+        3630
+      ],
+      [
+        7215,
+        3630
+      ]
+    ],
+    "existingBridgeULSPerSeat_kN": 9.03589921875,
+    "heads": {
+      "P49": [
+        4800,
+        2650
+      ],
+      "P52": [
+        7200,
+        2650
+      ],
+      "P38": [
+        4785,
+        3917.5
+      ],
+      "P40": [
+        7215,
+        3917.5
+      ]
+    }
+  },
+  "additionAt85kgOperatingArc": {
+    "holdDown_kN": {
+      "SW": [
+        1.49,
+        3.262
+      ],
+      "SE": [
+        0.716,
+        1.342
+      ],
+      "NW": [
+        -0.731,
+        0.84
+      ],
+      "NE": [
+        0.024,
+        0.755
+      ]
+    },
+    "existingSeatAdditional_kN": {
+      "P49": [
+        1.347,
+        2.418
+      ],
+      "P52": [
+        0.718,
+        1.087
+      ],
+      "P38": [
+        0.113,
+        0.984
+      ],
+      "P40": [
+        0.276,
+        0.753
+      ]
+    }
+  },
+  "additionAt500kgAllDirections": {
+    "holdDown_kN": {
+      "SW": [
+        -4.601,
+        24.961
+      ],
+      "SE": [
+        -6.413,
+        5.529
+      ],
+      "NW": [
+        -14.005,
+        14.986
+      ],
+      "NE": [
+        -3.225,
+        4.206
+      ]
+    },
+    "existingSeatAdditional_kN": {
+      "P49": [
+        -0.431,
+        16.632
+      ],
+      "P52": [
+        -4.243,
+        4.009
+      ],
+      "P38": [
+        -5.682,
+        10.788
+      ],
+      "P40": [
+        -2.341,
+        2.536
+      ]
+    }
+  },
+  "markedLoadAloneAt1_5": {
+    "moment_kNm": 8.828999999999999,
+    "rowCouple710_kN": 12.435211267605633,
+    "local200mmBoltRow_kN": 44.14499999999999,
+    "staticCounterweightAt710_kg": 845.0704225352113
+  },
+  "plan": {
+    "r": 1200,
+    "mast": [
+      4635,
+      2920
+    ],
+    "start": [
+      5788.733071381765,
+      3250
+    ],
+    "end": [
+      5405.454411370329,
+      2000
+    ],
+    "indexedEndRadiusCases": [
+      [
+        1180,
+        5392.613504514156,
+        2015.3333333333335
+      ],
+      [
+        1195,
+        5402.244184656285,
+        2003.8333333333335
+      ],
+      [
+        1200,
+        5405.454411370329,
+        2000.0
+      ],
+      [
+        1205,
+        5408.664638084372,
+        1996.1666666666665
+      ],
+      [
+        1220,
+        5418.295318226501,
+        1984.6666666666665
+      ]
+    ],
+    "horizontalHalfEnvelope": [
+      246.33357518714237,
+      369.13298627703085
+    ],
+    "budget": {
+      "radius": 5,
+      "mastEach": 3,
+      "sway": 10,
+      "yawDeg": 1,
+      "eachTranslation": 18
+    },
+    "eastOfOverheadByBand": [
+      5849.5472039026945,
+      5974.532508262304,
+      6065.518059969653,
+      6099.333575187143
+    ],
+    "outsideBarriers": [
+      [
+        5060,
+        1550,
+        5950,
+        1800
+      ],
+      [
+        5060,
+        1800,
+        6050,
+        2000
+      ],
+      [
+        5060,
+        2000,
+        6150,
+        2250
+      ],
+      [
+        5060,
+        2250,
+        6180,
+        2785
+      ]
+    ],
+    "barrierThickness": 60,
+    "barrierSetout": 5,
+    "innerGapByBand": [
+      35.45279609730551,
+      10.467491737696037,
+      19.481940030346777,
+      15.666424812857258
+    ],
+    "lowerAisle": 921.5,
+    "lowerAisleAfterTwo5": 911.5,
+    "receiverOuter": [
+      5090,
+      1560,
+      5740,
+      2440
+    ],
+    "settledPackAdverseGaps": [
+      51.12083618318593,
+      70.21201344252896,
+      52.867013722969205,
+      52.86701372296915
+    ],
+    "toWestCheek": 193,
+    "oldCloakDoorAccessibleWithFrame": false,
+    "northGuardY": [
+      2735,
+      2785
+    ],
+    "gateClear": [
+      5400,
+      6400
+    ],
+    "gateShadowX": [
+      5425.495247899204,
+      6099.333575187143
+    ],
+    "pairedGateMargins": [
+      20.495247899203605,
+      295.66642481285726
+    ],
+    "upperBridgeNorth": 3802.5,
+    "startNorthRemainingWithoutLock": 165.3670137229692,
+    "lowerPathToOperatingZone": [
+      [
+        6640,
+        3250
+      ],
+      [
+        6640,
+        1650
+      ],
+      [
+        6480,
+        1490
+      ],
+      [
+        6410,
+        1360
+      ],
+      [
+        6390,
+        1210
+      ],
+      [
+        6390,
+        800
+      ]
+    ],
+    "lowerBeforeDoorClearance": 455.4361794336479,
+    "lowerWestHeldOpenClearance": 460.0,
+    "eastDoorApproachPath": [
+      [
+        6390,
+        800
+      ],
+      [
+        6425,
+        620
+      ],
+      [
+        6425,
+        0
+      ],
+      [
+        6200,
+        -675
+      ],
+      [
+        6000,
+        -1050
+      ],
+      [
+        6000,
+        -1450
+      ]
+    ],
+    "eastDoorApproachClearance": 425.0,
+    "westDoorApproachPath": [
+      [
+        6390,
+        800
+      ],
+      [
+        6160,
+        895
+      ],
+      [
+        5800,
+        930
+      ],
+      [
+        5575,
+        875
+      ],
+      [
+        5575,
+        0
+      ],
+      [
+        5800,
+        -675
+      ],
+      [
+        6000,
+        -1050
+      ],
+      [
+        6000,
+        -1450
+      ]
+    ],
+    "westDoorApproachClearance": 425.0,
+    "doorMeasurement": "Two independently measured configurations. East clear interval must contain 6000..6850 for the 850 witness, west must contain 5150..6000. At 775 measure centre and repeat; a 900 approach does not imply passage of an R450 circle through an 850 opening.",
+    "westSpotter": [
+      4450,
+      3300
+    ],
+    "rayToGroundAtUpperFloor": [
+      4761.985113916842,
+      2875.5102040816328
+    ],
+    "tagHorizontalExamples": [
+      {
+        "hookY": 3250,
+        "lugSign": -1,
+        "guide": [
+          5000,
+          2875
+        ],
+        "horizontalLever": -364.97066740997644
+      },
+      {
+        "hookY": 3250,
+        "lugSign": 1,
+        "guide": [
+          5000,
+          3350
+        ],
+        "horizontalLever": 345.9935102868326
+      },
+      {
+        "hookY": 2920,
+        "lugSign": -1,
+        "guide": [
+          5000,
+          2875
+        ],
+        "horizontalLever": -340.82870001114884
+      },
+      {
+        "hookY": 2920,
+        "lugSign": 1,
+        "guide": [
+          5000,
+          3350
+        ],
+        "horizontalLever": 363.8990988907471
+      },
+      {
+        "hookY": 2000,
+        "lugSign": -1,
+        "guide": [
+          5000,
+          2875
+        ],
+        "horizontalLever": -113.43732426508488
+      },
+      {
+        "hookY": 2000,
+        "lugSign": 1,
+        "guide": [
+          5000,
+          3350
+        ],
+        "horizontalLever": 138.9344692407439
+      }
+    ],
+    "scope": "Upper preparations interrupt the only demonstrated east-to-stair route. Planned vacancy only; west operators need a preserved escape. These example tag guides control an upright package horizontally, not a physical arrest rating or proof of clear lines during lowering.",
+    "housePaths": {
+      "lowerStairSource": [
+        [
+          3200,
+          3485
+        ],
+        [
+          3600,
+          3300
+        ],
+        [
+          6640,
+          3300
+        ],
+        [
+          6640,
+          3250
+        ]
+      ],
+      "lowerSourceClearance": [
+        346.029623,
+        "study-L-return"
+      ],
+      "westOperatorEscape": [
+        [
+          4450,
+          3300
+        ],
+        [
+          4050,
+          3460
+        ],
+        [
+          3280,
+          3460
+        ],
+        [
+          3220,
+          3700
+        ],
+        [
+          2400,
+          3700
+        ],
+        [
+          2250,
+          3890
+        ],
+        [
+          2250,
+          4432.5
+        ]
+      ],
+      "westOperatorClearance": [
+        337.5,
+        "bed2-L-north"
+      ],
+      "mastToTrimmedBed2Face": 155,
+      "full322PlanDiskIntrusion": 167,
+      "crankCondition": "Only a measured handle axle, orientation, axial projection and safe operator posture can replace the rejected 322 mm plan disk. Keep the west route outside the measured control assembly throughout."
+    }
+  }
+}

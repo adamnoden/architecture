@@ -1,0 +1,455 @@
+{
+  "sourceHashes": {
+    "project/had/studies/open-north-loggia.json": "542781c6bb1d277b20492e8433cea498e98eaea5db2e737a5ec7e9655f9d18fd",
+    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+    "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+    "project/str/studies/floor-portal-north-transfer.json": "32c028800665a2bc6f792aa0f56c108918f831d7e254b9f42b2dac228b5887f4",
+    "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+    "project/mat/studies/loggia-soffit.json": "b02717a9ad5431259f9f0f1850ab7f596cf612bc13f04fbd9bdfc7b5f893fc29"
+  },
+  "directSleeve": {
+    "existingWestUnwidenedAxisRangeUsingFullRingAndCoverMm": [
+      4353.5,
+      4344.282308657465
+    ],
+    "existingIntervalDeficitMm": 9.217691342534636,
+    "fullAnnularSectorEdgeXmm": 4370.282308657465,
+    "newLowerPierXExtentsWestMm": [
+      4270.0,
+      4520
+    ],
+    "newLowerPierYExtentsMm": [
+      11552.5,
+      11782.5
+    ],
+    "physicalMirrorAboutXmm": 6000.0,
+    "positiveTieXYWestThenEastMm": [
+      [
+        4340.0,
+        11667.5
+      ],
+      [
+        7660.0,
+        11667.5
+      ]
+    ],
+    "roofHoldDownShiftAwayFromOpeningXmm": 37.5,
+    "oldSignedActionKN": 33.207486,
+    "newLocalRoofPointMomentKNmAtReference": 1.245280725,
+    "oldFloorOffsetMomentRemovedKNmAtReference": 4.566029325000001,
+    "coverAndSettingMm": [
+      25,
+      5,
+      10
+    ],
+    "pierH8XAxesMmWest": [
+      4306.0,
+      4470
+    ],
+    "pierH8YAxesMm": [
+      11589.0,
+      11746.0
+    ],
+    "pierH12XAxesWestMm": [
+      4316.0,
+      4460
+    ],
+    "pierH12YAxesMm": [
+      11599.0,
+      11736.0
+    ],
+    "linkCoverAfter5SettingMm": 27.0,
+    "upperHoopAtRadialBevel": {
+      "oldArchSideLegXmm": 4485,
+      "upperHoopZmm": 2250,
+      "oldPerpendicularCoverAfter5SettingMm": 16.119196988707685,
+      "oldHighestZFor25After5SettingMm": 2237.246846846847,
+      "slotLowestUpperLinkZWith10RelativeSettingMm": 2238,
+      "newArchSideLegXmm": 4470,
+      "newPerpendicularCoverAfter5SettingMm": 26.884567126725216
+    },
+    "sleeveRingClearAfter10SettingMm": 4.282308657465364,
+    "sleeveLinkClearAfter10SettingMm": 4.0,
+    "axialWrapRemainingWithinUnchangedPortalFacesMm": 272.5
+  },
+  "firstFloorCageRejection": {
+    "canonicalCoreWidthDepthMm": [
+      140,
+      750
+    ],
+    "nominalAndAdverseCentralLanesMm": [
+      30,
+      20
+    ],
+    "sleeveDiameterMm": 32,
+    "deficitsNominalAndAdverseBeforeInstallationMm": [
+      2,
+      12
+    ],
+    "minimumWidthIncreaseFor42MmLaneAfterSettingsMm": 22,
+    "minimumTrialLocalCoreWidthMm": 162
+  },
+  "localWidenedCollectorGeometryReservation": {
+    "trialCoreWidthDepthMm": [
+      180,
+      750
+    ],
+    "structuralBottomAndTopZmm": [
+      3170,
+      3920
+    ],
+    "sameSlabSoffitDownstandMm": 0,
+    "firstFloorSlabTopZmm": 3370,
+    "westStraightCageXmm": [
+      4278.0,
+      4402.0
+    ],
+    "westAndEastFullTaperedXExtentsMm": [
+      [
+        4078.0,
+        4602.0
+      ],
+      [
+        7398.0,
+        7922.0
+      ]
+    ],
+    "outsideSleeveRawWebWidthMm": 148,
+    "southAndNorthYFacesMm": [
+      11577.5,
+      11757.5
+    ],
+    "longitudinalH12YAxesMm": [
+      11626.5,
+      11708.5
+    ],
+    "adverseLaneMm": 60.0,
+    "nearestTwoWestH8HoopXmm": [
+      4304.0,
+      4376.0
+    ],
+    "nearestHoopClearAfter10SettingMm": 6,
+    "ordinaryRoomFinishRemainingIfNotMovedMm": 7.0,
+    "ordinaryGlassThicknessIfOutsideFaceHeldMm": 90.0,
+    "nearUpperWindowSetouts": [
+      {
+        "xClearMm": 28.0,
+        "id": "north-window-1",
+        "rawOpeningXmm": [
+          3350.0,
+          4050.0
+        ],
+        "rawSillClearFromCollectorTopMm": 480
+      },
+      {
+        "xClearMm": 28.0,
+        "id": "north-window-3",
+        "rawOpeningXmm": [
+          7950.0,
+          8650.0
+        ],
+        "rawSillClearFromCollectorTopMm": 280
+      }
+    ],
+    "archMaxVerticalClearMm": 105.0,
+    "northSouthSlabH12CandidatePhaseAroundWestSleeveXmm": [
+      4265.0,
+      4415.0
+    ],
+    "roomwardSlabH12EwCandidateEndYmm": 11568.5,
+    "alternativeOuterSlabH12Ymm": 11718.5,
+    "alternativeOuterSlabH12PlanSeparationToNewCollectorOuterRowMm": 10.0,
+    "newCollectorRowsEachClearAfter5SettingMm": 14.0,
+    "placingGapTargetMm": 21,
+    "minimumTrialConcreteWidthForPlacingGapMm": 194,
+    "taperOverlapWithNearestWestRawWindowAtThatWidthMm": 42.0,
+    "scope": "Unadopted local dimensions. Slab H12/150, discrete floor plan chords, longitudinal row returns, concrete placement, local bending and shear, fit in the existing solid eastern divider and all moisture/finish systems require coordinated detailed checks."
+  },
+  "pairedArchTie": {
+    "shaftYAxesMm": [
+      11630.0,
+      11705.0
+    ],
+    "centreZmm": 2200,
+    "boreYandZOutsideMm": [
+      16,
+      48
+    ],
+    "coreVerticalSlotExtentMm": [
+      2176,
+      2224
+    ],
+    "sleeveToSlotClearAfter10SettingMm": 3.5,
+    "slotToH12ClearAfter10SettingMm": 7.0,
+    "slotToNearH8ClearAfter10SettingMm": 12,
+    "loadPath": "Independent horizontal flat straps; one central rocker at west equalizes by moment equilibrium; east fixed two-tail receiver addresses the net central thrust. Centre pivot and outside wedge plates bear on pier; temporary falsework remains until both straps are commissioned.",
+    "hardwareEnvelope": {
+      "grossBendingDepthAlongXmm": 30,
+      "grossHeightZmm": 55,
+      "outerSweepProjectionFromPierXmm": 110,
+      "pivotDiameterMm": 24,
+      "doubleShearCheekCentreSpanMm": 40,
+      "middleTongueBearingLengthMm": 24,
+      "equalizerLimitDegreesEitherSide": 3.5
+    },
+    "nominalElasticChecks": {
+      "westFaceAndHardwareLimitsXmm": [
+        4160.0,
+        4270.0,
+        4280.5
+      ],
+      "minimumRoomProjectionAtWestAndEastMm": 120.5,
+      "grossBarSectionmm": [
+        10,
+        40
+      ],
+      "assumedElasticModulusMPa": 200000,
+      "assumedProofMPaAndMaterialFactor": [
+        200,
+        1.1
+      ],
+      "spanBetweenEffectiveHardwareSeatsMm": 3630.0,
+      "pairElasticStiffnessKNPerMm": 44.07713498622589,
+      "equalEachStrandKN": 14.98964709335326,
+      "eachGrossStrandTensionMPa": 37.47411773338315,
+      "pairElasticExtensionMm": 0.6801552368609042,
+      "oneStrandAbnormalGrossTensionMPa": 74.9482354667663,
+      "oneStrandAbnormalEccentricMomentKNm": 1.1242235320014946,
+      "equalizerArmMomentKNm": 0.5621117660007473,
+      "equalizerGrossBendingMPa": 68.13475951524208,
+      "centralPinDoubleShearAverageMPa": 33.13439486264212,
+      "centralPinUniformBearingBendingMPa": 154.62717602566323,
+      "bearingPadNetAreaExcludingStrapSlotsMm2": 20964,
+      "availableDifferentialAdjustmentMm": 4.578640465114265,
+      "maxFrictionMomentKNmAt10PercentArmImbalance": 0.11221266284954312,
+      "archThrustSourceSeparateCaseKN": 29.97929418670652,
+      "grossPadContactMPa": 1.4300369293410857,
+      "differential40KTrialAt16eMinus6Mm": 2.3232
+    }
+  },
+  "constructionBraceComparison": {
+    "sameAxisFloorBraceFootYmm": 10467.5,
+    "diagonalRunAndRiseMm": [
+      1200,
+      3170
+    ],
+    "braceHorizontalVerticalAndAxialAtSeparateFacadeWitnessKN": [
+      7.557282965299684,
+      19.963822499999996,
+      21.34635178734565
+    ],
+    "remainingCollectorHorizontalAtSameWitnessKN": 1.3817420347003155,
+    "scope": "Indicative reversible erection diagonal position. Attachment, temporary wind, construction load and an anchored floor-to-girder brace before roof closure remain required. Independent falsework holds the ground arch until both straps engage."
+  },
+  "sameAxisCap": {
+    "westTranslatedP25CageShiftYmm": -32.5,
+    "sleeveTopDatumZmm": -180,
+    "westCageDepthBreaks": [
+      {
+        "endpointZmm": -300,
+        "sampleCentrelineDistanceMm": 53.958363963478405,
+        "closestOldBar": "P5",
+        "clearanceAfterH22Sleeve10SettingAnd0p05ChordMm": 16.908363963478404
+      },
+      {
+        "endpointZmm": -320,
+        "sampleCentrelineDistanceMm": 53.958363963478405,
+        "closestOldBar": "P5",
+        "clearanceAfterH22Sleeve10SettingAnd0p05ChordMm": 16.908363963478404
+      },
+      {
+        "endpointZmm": -340,
+        "sampleCentrelineDistanceMm": 50.98201273487846,
+        "closestOldBar": "P8",
+        "clearanceAfterH22Sleeve10SettingAnd0p05ChordMm": 13.932012734878459
+      },
+      {
+        "endpointZmm": -400,
+        "sampleCentrelineDistanceMm": 29.835254340627465,
+        "closestOldBar": "P8",
+        "clearanceAfterH22Sleeve10SettingAnd0p05ChordMm": -7.214745659372535
+      }
+    ],
+    "westShallowTopCapPlateTrials": [
+      {
+        "plateXYZmm": [
+          120,
+          50,
+          16
+        ],
+        "absoluteBoxXYZmm": [
+          [
+            4280.0,
+            4400.0
+          ],
+          [
+            11642.5,
+            11692.5
+          ],
+          [
+            -316,
+            -300
+          ]
+        ],
+        "sampleBarCentrelineDistanceFromPlateMm": 31.081615207001875,
+        "closestOldBar": "P5",
+        "clearAfterH22Radius10SettingAnd0p05ChordMm": 10.031615207001874,
+        "meanNetContactAt33p207KNWithTrial36mmHoleMPa": 6.665327103807027
+      },
+      {
+        "plateXYZmm": [
+          120,
+          60,
+          16
+        ],
+        "absoluteBoxXYZmm": [
+          [
+            4280.0,
+            4400.0
+          ],
+          [
+            11637.5,
+            11697.5
+          ],
+          [
+            -316,
+            -300
+          ]
+        ],
+        "sampleBarCentrelineDistanceFromPlateMm": 26.48552744880392,
+        "closestOldBar": "P5",
+        "clearAfterH22Radius10SettingAnd0p05ChordMm": 5.435527448803922,
+        "meanNetContactAt33p207KNWithTrial36mmHoleMPa": 5.3715334901335074
+      },
+      {
+        "plateXYZmm": [
+          120,
+          72,
+          16
+        ],
+        "absoluteBoxXYZmm": [
+          [
+            4280.0,
+            4400.0
+          ],
+          [
+            11631.5,
+            11703.5
+          ],
+          [
+            -316,
+            -300
+          ]
+        ],
+        "sampleBarCentrelineDistanceFromPlateMm": 21.21279794557062,
+        "closestOldBar": "P5",
+        "clearAfterH22Radius10SettingAnd0p05ChordMm": 0.16279794557062105,
+        "meanNetContactAt33p207KNWithTrial36mmHoleMPa": 4.356723412804926
+      },
+      {
+        "plateXYZmm": [
+          120,
+          50,
+          16
+        ],
+        "absoluteBoxXYZmm": [
+          [
+            4280.0,
+            4400.0
+          ],
+          [
+            11642.5,
+            11692.5
+          ],
+          [
+            -336,
+            -320
+          ]
+        ],
+        "sampleBarCentrelineDistanceFromPlateMm": 27.02232106596699,
+        "closestOldBar": "P8",
+        "clearAfterH22Radius10SettingAnd0p05ChordMm": 5.972321065966992,
+        "meanNetContactAt33p207KNWithTrial36mmHoleMPa": 6.665327103807027
+      },
+      {
+        "plateXYZmm": [
+          120,
+          50,
+          16
+        ],
+        "absoluteBoxXYZmm": [
+          [
+            4280.0,
+            4400.0
+          ],
+          [
+            11642.5,
+            11692.5
+          ],
+          [
+            -356,
+            -340
+          ]
+        ],
+        "sampleBarCentrelineDistanceFromPlateMm": 12.422570962285391,
+        "closestOldBar": "P8",
+        "clearAfterH22Radius10SettingAnd0p05ChordMm": -8.62742903771461,
+        "meanNetContactAt33p207KNWithTrial36mmHoleMPa": 6.665327103807027
+      }
+    ],
+    "shaftEdgeReserveAfter10SettingMm": 14.0,
+    "shaftCoverCredit": false,
+    "bareShaftEdgeReserveMm": 24.0,
+    "sameYCapHeadPaths": [
+      {
+        "sameYHeads": [
+          "P25",
+          "P24"
+        ],
+        "signedReactions": [
+          {
+            "referenceVKN": 33.207486,
+            "reactionsKN": {
+              "P25": 29.881540610328642,
+              "P24": 3.3259453896713618
+            }
+          },
+          {
+            "referenceVKN": -33.207486,
+            "reactionsKN": {
+              "P25": -29.881540610328642,
+              "P24": -3.3259453896713618
+            }
+          }
+        ],
+        "nearCapEccentricityXmm": -160.0,
+        "nearCapMomentAboutYAtReferenceKNm": 5.313197760000001
+      },
+      {
+        "sameYHeads": [
+          "P26",
+          "P27"
+        ],
+        "signedReactions": [
+          {
+            "referenceVKN": 33.207486,
+            "reactionsKN": {
+              "P26": 30.25570946666667,
+              "P27": 2.9517765333333337
+            }
+          },
+          {
+            "referenceVKN": -33.207486,
+            "reactionsKN": {
+              "P26": -30.25570946666667,
+              "P27": -2.9517765333333337
+            }
+          }
+        ],
+        "nearCapEccentricityXmm": 160.0,
+        "nearCapMomentAboutYAtReferenceKNm": -5.313197760000001
+      }
+    ],
+    "scope": "Sampled older P25 cage translated in Y only. Shallow cap head and transverse reinforcement require current as-designed joining; no deep sleeve, P26 cage or shaft anchorage adoption."
+  }
+}

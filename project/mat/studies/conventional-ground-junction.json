@@ -1,0 +1,143 @@
+{
+  "status": "Unselected ordinary mineral wall / suspended concrete comparison. Complete material, air, moisture, structural, thermal and site admission remain open.",
+  "HAD": {
+    "commit": "c2d5c3805cfa70739130d1cf4a593c8f17a9c414",
+    "path": "project/had/studies/water-replan.json",
+    "blob": "265ac19420f1b1fa6bba41dd859d7ee758187d6b",
+    "role": "Immutable corrected integral-pan / selected floor checkpoint; later water proposals are not silently imported"
+  },
+  "STRfloor": {
+    "commit": "5f56d58f5c2d4b7d65b712be10c39d274884b154",
+    "path": "project/str/studies/current-house-occupied-interfaces.json",
+    "blob": "c4b2261a7c62481b64617cca57b6b2baabec330e",
+    "key": "groundFloor",
+    "role": "Immutable unadopted STR1354 ground-floor structural/pour comparison. Not a selected cage, moisture/air/gas proof or concrete constituent recipe."
+  },
+  "STRgrid": {
+    "commit": "8c2159a8cb67782cfc854fcf230025f04f1b81af",
+    "path": "project/str/studies/current-house-grid.json",
+    "blob": "1409f0b80739e2dc46ff078e31df6685f12b7371",
+    "role": "Merged structural development candidate, not selected capacity or geometry; actual spine at the chosen section is 900 mm wide and -630..-180"
+  },
+  "section": {
+    "wall": "service-spine",
+    "atY": 4500,
+    "drawingHalfWidth": 650
+  },
+  "bondedMineralBase": {
+    "headerWidth": 215,
+    "fromZ": -180,
+    "beds": [
+      10,
+      10
+    ],
+    "courses": [
+      65,
+      65
+    ],
+    "unitReference": "Ketley WCBL65 candidate only; 102/102.5 longitudinal identity remains unresolved, and exact mortar retained constituents/bond/exposure are unqualified",
+    "role": "Full wall-width capillary control. Not an impermeable air/gas sheet and not proof of joint performance. Existing top bed belongs to the wall above."
+  },
+  "airRouteControl": {
+    "name": "Concrete body -> complete bottom bed -> bonded DPC body/perpends/upper bed -> wall core below plaster stop -> plaster",
+    "selected": false,
+    "rules": [
+      "First compare the actual bonded mineral assembly as a complete air transition; neither brick absorption nor mortar designation demonstrates its leakage",
+      "Include the 30 mm wall-core height above DPC and below plaster stop; do not jump from DPC top -30 to plaster at0",
+      "Do not plaster continuously down to wet RC and around the DPC; do not close an air drawing by creating a damp bypass",
+      "Concrete moisture resistance, air permeability, crack/joint leakage and gas suitability remain separate duties",
+      "Do not assume a new metal return is needed or qualified; if used it needs actual cast-in depth, cage/compaction, weld, movement and plaster-interface evidence"
+    ]
+  },
+  "moistureControl": {
+    "source": "https://assets.publishing.service.gov.uk/media/5a8192a0e5274a2e8ab54b5f/BR_PDF_AD_C_2013.pdf",
+    "edition": "England AD C 2004 with2010/2013 amendments, sections4.17–4.22 and5.5; accessed6November2026",
+    "inSituControl": {
+      "thicknessMinimum_mm": 100,
+      "cementMinimum_kg_per_m3": 300,
+      "coverMinimum_mm": 40
+    },
+    "actualMix": null,
+    "actualAirMoisturePerformance": null,
+    "actualSiteGasAndPressureWater": null,
+    "rule": "Guidance control, not adoption of a concrete recipe or automatic membrane waiver; preserve the common ground/pile/grid/seat sources and assigned drainage/ventilation duties"
+  },
+  "airEvidence": {
+    "source": "https://passipedia.org/planning/airtight_construction/general_principles/principles_for_improving_airtightness",
+    "role": "PHI method guidance, accessed6November2026: identify actual air layers and continuous joined ends. Do not assume a masonry wall supplies its intended plaster air layer. No house target or assembly acceptance transferred.",
+    "bondedMasonryResearch": {
+      "source": "https://store.astm.org/stp157720130132.html",
+      "citation": "Sanders, Stroble and Clark, Air Permeability of Masonry Materials, 30 September 2014, DOI10.1520/STP157720130132",
+      "access": "Public publisher abstract inspected6November2026; complete paid paper not inspected",
+      "role": "Four clay-brick/mortar panel groups had low measured air permeance. Relevant against blanket rejection of an unplastered bonded masonry control, not evidence for WCBL65/M12, this DPC/floor joint, movement, moisture, gas or site performance. No measured value is transferred to the house."
+    },
+    "servicesTarget": "Proposed q50 ≤1.0 comparison and one 10% floor/wall aggregate pinned under ServicesAir. No owner invariant or assembly performance is adopted. Only three structural RC core crossings belong here; complete service sleeves/collars belong to the separate penetrations 10% family."
+  },
+  "admission": {
+    "selected": false,
+    "material": false,
+    "structural": false,
+    "airMoisture": false,
+    "thermal": false,
+    "site": false
+  },
+  "ServicesAir": {
+    "commit": "90a18dae76c338a389dfb401a23f1decf6fc43e2",
+    "path": "project/mat/studies/whole-house-leakage-duty.json",
+    "blob": "5b93cdd9ea1ee7d825fa4596a44caf06431afc49",
+    "role": "Immutable, unadopted Services1356 comparison refreshed against merged RWT 2a310840 / HAD 6f089df1; not a final test envelope, owner target or assembly performance.",
+    "previousReviewedSource": {
+      "commit": "e85cc19fc858069cb874a3b0622303c2edc56ac5",
+      "path": "project/mat/studies/whole-house-leakage-duty.json",
+      "blob": "c4e6e9fd168078c83d092d13f1913b5d0128b7af",
+      "role": "Immutable unadopted Services1356 whole-house reference and single aggregate family allocation; not final test envelope or owner target."
+    }
+  },
+  "thresholdAirOverlap": {
+    "role": "Ordinary dry-side air-control development control, not an actual seal/product or pressure-water closure",
+    "pressure_Pa": 50,
+    "dynamicViscosity_Pa_s": 1.81e-05,
+    "airDensity_kg_per_m3": 1.2,
+    "nominalOverlap_mm": 24,
+    "relativeMovementYBound_mm": 2,
+    "edgePositionToleranceEach_mm": 1,
+    "gapChallenges_mm": [
+      0.1,
+      0.2,
+      0.3,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "width_mm": 1780,
+    "rule": "Ideal no-slip, steady laminar, fully developed central-slot sensitivity derived from pressure-driven momentum balance; uniform connected gap and constant properties. Not measured leakage, an installed rating, an adopted allocation or a strict assembly bound. Entry/end effects, variable-gap paths, deformation and achieved tolerances remain unqualified; especially the largest gaps must not be treated as a supplied joint performance.",
+    "waterDuty": "No source-qualified head is assigned to this dry apron behind the +15 mm crest. Quiet water −35 mm and geometric crest +15 mm are not a first-leak rating; firstSusceptible remains null. No closed E roof/pipe pressure duty is transferred. Water/capillary/end qualification remains independent.",
+    "toleranceRole": "The 2 mm movement and 1 mm edge tolerances are authored challenge bounds, not actual fabrication/installation tolerances. Gap control is an unproven requirement on formed faces and supports, not an achieved fit.",
+    "ends": "No actual end gap or end closure is authored. Every gap result is central only and cannot be credited as total assembly leakage.",
+    "renewal": "Ordinary retention/cover must be independently supported and entirely released before NORTH 500 mm withdrawal; no permanent field-to-pan weld or through-pan fixing. No high preload is inferred from air duty alone.",
+    "backingEndY": 4054,
+    "panStartY": 4030,
+    "referenceRetainerY": 4010,
+    "referenceHoleDiameter_mm": 6.5
+  },
+  "currentHADReconciliation": {
+    "commit": "2a31084013cebca2094692263f0c7a2b2f8d2166",
+    "path": "project/had/studies/water-replan.json",
+    "blob": "6f089df104fe85c028978892e7f6b63f862e3237",
+    "role": "Actual merged RWT checkpoint; compare the named relevant projections with the intentionally pinned floor/pan case. Changed receiver/maintenance and other source roles are not relabelled as unchanged."
+  },
+  "currentHADProjectionPaths": [
+    "shell",
+    "envelope",
+    "court",
+    "sections",
+    "void",
+    "groundWalls",
+    "northNormalRoute.floorJoin",
+    "southCourtThresholdReference",
+    "structuralChanges.stairMidPost.concrete",
+    "structuralChanges.newWetWallBeam.southReceiverCore",
+    "structuralChanges.newWetWallBeam.northReceiverCore",
+    "structuralChanges.newWetWallBeam.beamBottom"
+  ]
+}

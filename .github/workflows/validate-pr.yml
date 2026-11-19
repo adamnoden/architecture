@@ -29,22 +29,52 @@ jobs:
       - name: Install locked dependencies
         run: npm ci --no-audit --no-fund
 
-      - name: Probe live self-service dispatcher
+      - name: Cache verified publication fonts
+        uses: actions/cache@v6
+        with:
+          path: node_modules/.cache/ovids-house/publication-fonts
+          key: ${{ runner.os }}-publication-fonts-v1-${{ hashFiles('publication/fonts.ts') }}
+          restore-keys: ${{ runner.os }}-publication-fonts-v1-
+
+      - name: Validate packet and lease declaration
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: npm run control:next -- --format json --limit 20
+        run: node --import tsx scripts/control-operations.ts packet-check
 
       - name: Render project-control projections for validation
         run: npm run status:update
+
+      # Catch presentation defects before the long canonical suite. This
+      # preview build does not replace or weaken npm run check below.
+      - name: Build and review homepage in browser
+        run: |
+          npm run docs:build
+          node scripts/validate-homepage.mjs
+
+      - name: Retain built website for rendered review
+        if: always() && hashFiles('.vitepress/dist/index.html') != ''
+        uses: actions/upload-artifact@v6
+        with:
+          name: website-preview
+          path: .vitepress/dist
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Retain homepage browser evidence
+        if: always() && hashFiles('node_modules/.cache/ovids-house/homepage-proof/review.json') != ''
+        uses: actions/upload-artifact@v6
+        with:
+          name: homepage-browser-review
+          path: node_modules/.cache/ovids-house/homepage-proof
+          if-no-files-found: error
+          retention-days: 7
 
       - name: Check repository health
         run: npm run check
 
       - name: Validate project control
         run: npx tsx scripts/validate-project-control.ts
-
-      - name: Prove project-control invariants
-        run: node --import tsx --test project/control/control.test.ts
 
       - name: Validate public nomenclature source
         run: npx tsx scripts/validate-public-nomenclature.ts --source
@@ -76,3 +106,14 @@ jobs:
             --files=compiler.cf \
             --files=compiler.ch \
             --files=compiler.h1
+
+      - name: Fingerprint validated publication PDFs
+        run: node scripts/publication-review-manifest.mjs "$RUNNER_TEMP/publication-review-manifest.json"
+
+      - name: Retain publication review manifest
+        uses: actions/upload-artifact@v6
+        with:
+          name: publication-review-manifest
+          path: ${{ runner.temp }}/publication-review-manifest.json
+          if-no-files-found: error
+          retention-days: 7

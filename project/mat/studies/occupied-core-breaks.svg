@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 555" role="img" aria-labelledby="title desc">
+<title id="title">Where the room sheet meets the three upper cores</title>
+<desc id="desc">Scaled plans show how the wider masonry damp course interrupts the proposed 30 mm returns around the stair and two wet-wall support cores. A section sets the metal cap at the top of the masonry damp course.</desc>
+<rect width="1000" height="555" fill="#fbfaf6"/><g font-family="DejaVu Sans,Arial,sans-serif" fill="#193846">
+<text x="35" y="32" font-size="13" font-weight="700">REFERENCE HOUSE  /  GROUND FLOOR</text>
+<text x="34" y="76" font-size="33" font-weight="700">Where the room sheet can meet each support</text>
+<text x="35" y="104" font-size="15" font-weight="400">Plans at one scale, north up. Edge colours include the proposed 215 mm masonry bases.</text>
+<path d="M34.00 121.00 L966.00 121.00" fill="none" stroke="#abb8b7" stroke-width="1"/>
+<rect x="115.00" y="212.00" width="87.50" height="87.50" fill="#e1ded3"/>
+<text x="58" y="155" font-size="18" font-weight="700">P46   Stair post</text>
+<path d="M115.00 299.50 L179.57 299.50" fill="none" stroke="#af4a22" stroke-width="6"/>
+<path d="M179.57 299.50 L202.50 299.50" fill="none" stroke="#087879" stroke-width="6"/>
+<path d="M115.00 212.00 L179.57 212.00" fill="none" stroke="#af4a22" stroke-width="6"/>
+<path d="M179.57 212.00 L202.50 212.00" fill="none" stroke="#087879" stroke-width="6"/>
+<path d="M115.00 299.50 L115.00 212.00" fill="none" stroke="#af4a22" stroke-width="6"/>
+<path d="M202.50 299.50 L202.50 212.00" fill="none" stroke="#087879" stroke-width="6"/>
+<path d="M153.75 255.75 L163.75 255.75" fill="none" stroke="#253944" stroke-width="1.6"/>
+<path d="M158.75 250.75 L158.75 260.75" fill="none" stroke="#253944" stroke-width="1.6"/>
+<text x="60" y="367" font-size="15" font-weight="700">381 / 1000 mm to sheet</text>
+<rect x="428.00" y="177.00" width="91.00" height="157.50" fill="#e1ded3"/>
+<text x="371" y="155" font-size="18" font-weight="700">P47   South receiver</text>
+<path d="M428.00 334.50 L433.07 334.50" fill="none" stroke="#087879" stroke-width="6"/>
+<path d="M433.07 334.50 L508.32 334.50" fill="none" stroke="#af4a22" stroke-width="6"/>
+<path d="M508.32 334.50 L519.00 334.50" fill="none" stroke="#087879" stroke-width="6"/>
+<path d="M428.00 177.00 L519.00 177.00" fill="none" stroke="#087879" stroke-width="6"/>
+<path d="M428.00 334.50 L428.00 293.38" fill="none" stroke="#087879" stroke-width="6"/>
+<path d="M428.00 293.38 L428.00 218.12" fill="none" stroke="#af4a22" stroke-width="6"/>
+<path d="M428.00 218.12 L428.00 177.00" fill="none" stroke="#087879" stroke-width="6"/>
+<path d="M519.00 334.50 L519.00 293.38" fill="none" stroke="#087879" stroke-width="6"/>
+<path d="M519.00 293.38 L519.00 218.12" fill="none" stroke="#af4a22" stroke-width="6"/>
+<path d="M519.00 218.12 L519.00 177.00" fill="none" stroke="#087879" stroke-width="6"/>
+<path d="M482.50 255.75 L492.50 255.75" fill="none" stroke="#253944" stroke-width="1.6"/>
+<path d="M487.50 250.75 L487.50 260.75" fill="none" stroke="#253944" stroke-width="1.6"/>
+<text x="373" y="367" font-size="15" font-weight="700">775 / 1420 mm to sheet</text>
+<rect x="746.00" y="177.00" width="91.00" height="157.50" fill="#e1ded3"/>
+<text x="689" y="155" font-size="18" font-weight="700">P24   North receiver</text>
+<path d="M746.00 334.50 L837.00 334.50" fill="none" stroke="#087879" stroke-width="6"/>
+<path d="M746.00 177.00 L837.00 177.00" fill="none" stroke="#af4a22" stroke-width="6"/>
+<path d="M746.00 334.50 L746.00 235.45" fill="none" stroke="#087879" stroke-width="6"/>
+<path d="M746.00 235.45 L746.00 177.00" fill="none" stroke="#af4a22" stroke-width="6"/>
+<path d="M837.00 334.50 L837.00 235.45" fill="none" stroke="#087879" stroke-width="6"/>
+<path d="M837.00 235.45 L837.00 177.00" fill="none" stroke="#af4a22" stroke-width="6"/>
+<path d="M786.50 201.50 L796.50 201.50" fill="none" stroke="#253944" stroke-width="1.6"/>
+<path d="M791.50 196.50 L791.50 206.50" fill="none" stroke="#253944" stroke-width="1.6"/>
+<text x="691" y="367" font-size="15" font-weight="700">826 / 1420 mm to sheet</text>
+<path d="M41.00 400.00 L74.00 400.00" fill="none" stroke="#087879" stroke-width="6"/>
+<text x="84" y="405" font-size="14" font-weight="400">30 mm room-sheet flange</text>
+<path d="M325.00 400.00 L358.00 400.00" fill="none" stroke="#af4a22" stroke-width="6"/>
+<text x="368" y="405" font-size="14" font-weight="400">Wall or outer return required</text>
+<text x="704" y="405" font-size="14" font-weight="400">+  Shaft axis beneath core</text>
+<path d="M34.00 422.00 L966.00 422.00" fill="none" stroke="#abb8b7" stroke-width="1"/>
+<text x="36" y="450" font-size="17" font-weight="700">Section through a room-facing edge</text>
+<rect x="56.00" y="462.00" width="128.00" height="14.00" fill="#d0cec4"/>
+<rect x="56.00" y="476.00" width="128.00" height="7.00" fill="#354d56"/>
+<rect x="56.00" y="483.00" width="128.00" height="40.00" fill="#d0cec4"/>
+<path d="M184.00 480.00 L184.00 508.00" fill="none" stroke="#087879" stroke-width="3"/>
+<path d="M184.00 508.00 L239.00 508.00" fill="none" stroke="#087879" stroke-width="3"/>
+<text x="256" y="482" font-size="14" font-weight="400">Core cap at −42 to −30 mm</text>
+<text x="256" y="507" font-size="14" font-weight="400">Room sheet at −80 to −79 mm</text>
+<text x="583" y="476" font-size="14" font-weight="400">Separate anchorage on each cap face.</text>
+<text x="583" y="500" font-size="14" font-weight="400">Embedded edges must be built before the wall.</text>
+<text x="36" y="543" font-size="13" font-weight="400">Trial section, enlarged. The floor field, anchors and exposed wall base have independent duties.</text>
+</g></svg>

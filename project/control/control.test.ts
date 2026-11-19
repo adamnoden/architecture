@@ -3,6 +3,7 @@ import test from 'node:test'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import {
+  derivedState,
   directBlockers,
   nodesByDerivedState,
   readyFrontier,
@@ -66,20 +67,102 @@ test('triad fan-out advances only after constitutions and the shared interface g
   )
   complete('TRIAD-IFACE-FREEZE')
   assert.deepEqual(readyIds(), [...candidateIds].sort())
-  assert.equal(node('BCR-CONVERGENCE').dependencies.some((id) => /PHY|EPR|DEL/.test(id)), false)
+  assert.equal(node('BCR-CONVERGENCE').dependencies.some((id) => ['EPR-RH11', 'PHY-03-ENGINEERING', 'PHY-04', 'DEL-CURRENT'].includes(id)), false)
+  assert.ok(node('BCR-CONVERGENCE').dependencies.includes('EPR-REFRESH'))
+  assert.ok(node('BCR-CONVERGENCE').dependencies.includes('PHY-APPLICABILITY'))
 })
 
 test('MRA starts in parallel but gates construction convergence and final synthesis at the correct boundaries', () => {
   assert.deepEqual(node('MRA-00').dependencies, ['BSR-ROOT'])
 
-  for (const id of ['MRA-01', 'MRA-02', 'MRA-03']) {
+  for (const id of ['MRA-01', 'MRA-03']) {
     assert.deepEqual(node(id).dependencies, ['MRA-00', 'TRIAD-GATE'])
   }
+  assert.deepEqual(node('MRA-02').dependencies, ['MRA-00', 'MRA-INTERNAL-LEAKS', 'HAD-INLET-RESOLUTION', 'TRIAD-GATE'])
 
   assert.deepEqual(node('MRA-04').dependencies, ['MRA-01', 'MRA-02', 'MRA-03'])
   assert.equal(node('BCR-CONVERGENCE').dependencies.includes('MRA-04'), true)
   assert.deepEqual(node('MRA-05').dependencies, ['BCR-CONVERGENCE'])
   assert.equal(node('HRS-SYNTHESIS').dependencies.includes('MRA-05'), true)
+})
+
+test('bounded current-source studies can run before roof integration without releasing final gates', () => {
+  const studies = ['BCR-BAY-INTERFACES', 'MRA-INTERNAL-LEAKS']
+  const finalGates = ['BCR-BAY-DESIGN', 'MRA-02']
+  const fixture: ControlNode[] = controlNodes.map((candidate) => ({
+    ...candidate,
+    lifecycle: [...studies, ...finalGates, 'STR-FLOOR-PORTAL', 'ROF-RWT-GATE', 'TRIAD-GATE'].includes(candidate.id)
+      ? 'planned' : 'complete'
+  }))
+  const state = (id: string) => derivedState(fixture.find((candidate) => candidate.id === id)!, fixture)
+  assert.equal(state('STR-FLOOR-PORTAL'), 'ready')
+  assert.equal(state('ROF-RWT-GATE'), 'blocked')
+  assert.deepEqual(directBlockers(fixture.find((candidate) => candidate.id === 'ROF-RWT-GATE')!, fixture), ['STR-FLOOR-PORTAL'])
+  for (const id of studies) assert.equal(state(id), 'ready')
+  for (const id of finalGates) assert.equal(state(id), 'blocked')
+  for (const id of studies) fixture.find((candidate) => candidate.id === id)!.lifecycle = 'complete'
+  for (const id of finalGates) assert.equal(state(id), 'blocked')
+  assert.equal(state('TRIAD-GATE'), 'blocked')
+})
+
+test('inlet correction can proceed before roof integration and remains an input to whole-house acceptance', () => {
+  assert.deepEqual(node('HAD-INLET-RESOLUTION').dependencies, ['HAD-SERVICES-ADOPTION', 'MRA-INTERNAL-LEAKS'])
+  const fixture: ControlNode[] = controlNodes.map(candidate => ({
+    ...candidate,
+    lifecycle: ['HAD-INLET-RESOLUTION', 'ROF-RWT-GATE', 'TRIAD-GATE', 'MRA-02'].includes(candidate.id)
+      ? 'planned' : 'complete'
+  }))
+  const state = (id: string) => derivedState(fixture.find(candidate => candidate.id === id)!, fixture)
+  assert.equal(state('HAD-INLET-RESOLUTION'), 'ready')
+  fixture.find(candidate => candidate.id === 'ROF-RWT-GATE')!.lifecycle = 'complete'
+  assert.equal(state('TRIAD-GATE'), 'blocked')
+  assert.ok(directBlockers(fixture.find(candidate => candidate.id === 'MRA-02')!, fixture).includes('HAD-INLET-RESOLUTION'))
+  fixture.find(candidate => candidate.id === 'HAD-INLET-RESOLUTION')!.lifecycle = 'complete'
+  assert.equal(state('TRIAD-GATE'), 'ready')
+  assert.equal(state('MRA-02'), 'blocked')
+})
+
+test('workable interior concept runs early and owner decisions gate details and freeze', () => {
+  const concept = node('IAS-WORKABLE-CONCEPT')
+  const triad = node('TRIAD-GATE')
+  assert.equal(concept.agentDispatch?.mode, 'self-service')
+  assert.ok(triad.dependencies.includes(concept.id))
+
+  // Exercise readiness and unlock order independently of ongoing project progress.
+  const fixture = controlNodes.map((candidate): ControlNode => {
+    if (candidate.id === concept.id || candidate.id === triad.id) {
+      return { ...candidate, lifecycle: 'planned' }
+    }
+    if (concept.dependencies.includes(candidate.id) || triad.dependencies.includes(candidate.id)) {
+      return { ...candidate, lifecycle: 'complete' }
+    }
+    return candidate
+  })
+  const candidate = fixture.find((entry) => entry.id === concept.id)!
+  const gate = fixture.find((entry) => entry.id === triad.id)!
+  assert.equal(derivedState(candidate, fixture), 'ready')
+  assert.deepEqual(directBlockers(gate, fixture), [concept.id])
+  assert.ok(unlocksOnCompletion(concept.id, fixture).some((entry) => entry.id === triad.id))
+
+  const firstApproval = node('HAD-OWNER-DESIGN-REVIEW')
+  assert.deepEqual(firstApproval.dependencies, ['TRIAD-GATE', 'OAS-STUDY-SUBFRAME'])
+  const subframe = node('OAS-STUDY-SUBFRAME')
+  assert.deepEqual(subframe.dependencies, ['OAS-DETAIL', 'BCR-BAY-INTERFACES', 'IAS-WORKABLE-CONCEPT'])
+  assert.ok(!triad.dependencies.includes(subframe.id))
+  assert.equal(firstApproval.agentDispatch?.mode, 'manual')
+  const details = node('IAS-WORKABLE-DETAILS')
+  assert.deepEqual(details.dependencies, [firstApproval.id])
+  assert.equal(details.agentDispatch?.mode, 'self-service')
+  assert.ok(node('BCR-BAY-DESIGN').dependencies.includes(details.id))
+  assert.ok(node('BCR-CONVERGENCE').dependencies.includes(firstApproval.id))
+  assert.ok(node('BCR-CONVERGENCE').dependencies.includes(details.id))
+
+  const finalApproval = node('PLT-OWNER-FINAL-DESIGN-ACCEPTANCE')
+  assert.deepEqual(finalApproval.dependencies, ['PLT-FINAL-PREP'])
+  assert.equal(finalApproval.agentDispatch?.mode, 'manual')
+  assert.deepEqual(node('PLT-FINAL-FREEZE').dependencies, [
+    'PLT-FINAL-PREP', 'PLT-PRINT-REVIEW', finalApproval.id
+  ])
 })
 
 test('held evidence research never leaks into the ready frontier', () => {

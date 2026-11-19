@@ -1,0 +1,425 @@
+{
+  "status": "CONDITIONAL TWO-LANE COMPARISON; NO JOINED LEAF HYDRAULIC PASS",
+  "leafInput": {
+    "source": "Owner-confirmed next geometry; no frozen leaf source yet.",
+    "fixedWetPlaneQMM": 4615,
+    "leafPlaneQMM": 4618,
+    "hingeZMM": 7200,
+    "fixedToeZMM": 7080,
+    "nominalNormalToeAboveBedMM": 75,
+    "thicknessMM": 0.7,
+    "courtwardRibProjectionMM": 20,
+    "physicalLaneWidthsMM": [
+      243,
+      107
+    ],
+    "hypothesisedMinimumToeGapAfter25And10MM": 40,
+    "relativeToeMotionEarned": false,
+    "exactLongitudinalRibAndJointPositionsKnown": false
+  },
+  "cases": [
+    {
+      "meaning": "Original residual width, conditional on175 NET clear after leaf/ribs.",
+      "normal": {
+        "netClearWidthMM": 175.0,
+        "alongStepAtMostMM": 10.0,
+        "widthStepAtMostMM": 0.25,
+        "continuousIntervalBound": {
+          "reserveMM": 1.971895918,
+          "alongIntervalMM": [
+            3250.0,
+            3260.0
+          ],
+          "narrowWidthIntervalMM": [
+            45.75,
+            46.0
+          ],
+          "lateFlowLps": 1.639457077,
+          "earlyBedMM": 6620.375,
+          "upperNormalDepthMM": 38.454102743,
+          "upperMaxLaneK4MM": 14.199001338,
+          "upperDepthPlusLocalMM": 52.653104082
+        },
+        "proof": "Earlier bed and later flow bound every path interval. For narrower width b in[lo,hi], normal depth is bounded by b=hi because the sum of the two convex Manning width-conveyances decreases toward equal widths. The widest lane is at most B-lo. Hydraulic radius and K4 velocity increase with both width and depth. These separate upper bounds cover every width split continuously."
+      },
+      "blocked": {
+        "netClearWidthMM": 175.0,
+        "twoEqualLaneWidthsMM": [
+          87.5,
+          87.5
+        ],
+        "minimumDepthMM": 114.840951987,
+        "lengthMM": 6500,
+        "frictionHeadMM": 8.339712512,
+        "K4HeadMM": 6.55542169,
+        "commonLongitudinalHeadMM": 14.895134202,
+        "storedPrimaryMM": 193.986086189,
+        "native200ReserveMM": 6.013913811,
+        "rearAfter25SplashMM": 5.263913811,
+        "maximumLocalToFrictionCoefficientRatio": 1.431360531,
+        "proof": "For a common end-to-end head, lane discharge is A*sqrt(head/(n^2*L/R^(4/3)+K/(2g))). Its conductance is convex in lane width when the local/friction coefficient ratio is below5. The maximum ratio over widths0..B is reported and is below5, so equal widths minimise total conductance. This proves the conditional common-level longitudinal bound, not entry or cross-transfer."
+      }
+    },
+    {
+      "meaning": "Deduct0.7 full-depth sheet from the old175 width as a pessimistic strip.",
+      "normal": {
+        "netClearWidthMM": 174.3,
+        "alongStepAtMostMM": 10.0,
+        "widthStepAtMostMM": 0.25,
+        "continuousIntervalBound": {
+          "reserveMM": 1.812806305,
+          "alongIntervalMM": [
+            3250.0,
+            3260.0
+          ],
+          "narrowWidthIntervalMM": [
+            45.69756447,
+            45.947277937
+          ],
+          "lateFlowLps": 1.639457077,
+          "earlyBedMM": 6620.375,
+          "upperNormalDepthMM": 38.602975149,
+          "upperMaxLaneK4MM": 14.209218546,
+          "upperDepthPlusLocalMM": 52.812193695
+        },
+        "proof": "Earlier bed and later flow bound every path interval. For narrower width b in[lo,hi], normal depth is bounded by b=hi because the sum of the two convex Manning width-conveyances decreases toward equal widths. The widest lane is at most B-lo. Hydraulic radius and K4 velocity increase with both width and depth. These separate upper bounds cover every width split continuously."
+      },
+      "blocked": {
+        "netClearWidthMM": 174.3,
+        "twoEqualLaneWidthsMM": [
+          87.15,
+          87.15
+        ],
+        "minimumDepthMM": 114.840951987,
+        "lengthMM": 6500,
+        "frictionHeadMM": 8.439446394,
+        "K4HeadMM": 6.608181411,
+        "commonLongitudinalHeadMM": 15.047627805,
+        "storedPrimaryMM": 194.138579792,
+        "native200ReserveMM": 5.861420208,
+        "rearAfter25SplashMM": 5.111420208,
+        "maximumLocalToFrictionCoefficientRatio": 1.427021948,
+        "proof": "For a common end-to-end head, lane discharge is A*sqrt(head/(n^2*L/R^(4/3)+K/(2g))). Its conductance is convex in lane width when the local/friction coefficient ratio is below5. The maximum ratio over widths0..B is reported and is below5, so equal widths minimise total conductance. This proves the conditional common-level longitudinal bound, not entry or cross-transfer."
+      }
+    },
+    {
+      "meaning": "Half of the350 width after subtracting20 mm rib+0.7 sheet, as full-depth strips.",
+      "normal": {
+        "netClearWidthMM": 164.65,
+        "alongStepAtMostMM": 10.0,
+        "widthStepAtMostMM": 0.25,
+        "continuousIntervalBound": {
+          "reserveMM": -0.520493227,
+          "alongIntervalMM": [
+            3250.0,
+            3260.0
+          ],
+          "narrowWidthIntervalMM": [
+            44.655075758,
+            44.904545455
+          ],
+          "lateFlowLps": 1.639457077,
+          "earlyBedMM": 6620.375,
+          "upperNormalDepthMM": 40.805936455,
+          "upperMaxLaneK4MM": 14.339556772,
+          "upperDepthPlusLocalMM": 55.145493227
+        },
+        "proof": "Earlier bed and later flow bound every path interval. For narrower width b in[lo,hi], normal depth is bounded by b=hi because the sum of the two convex Manning width-conveyances decreases toward equal widths. The widest lane is at most B-lo. Hydraulic radius and K4 velocity increase with both width and depth. These separate upper bounds cover every width split continuously."
+      },
+      "blocked": {
+        "netClearWidthMM": 164.65,
+        "twoEqualLaneWidthsMM": [
+          82.325,
+          82.325
+        ],
+        "minimumDepthMM": 114.840951987,
+        "lengthMM": 6500,
+        "frictionHeadMM": 9.997234094,
+        "K4HeadMM": 7.405480813,
+        "commonLongitudinalHeadMM": 17.402714907,
+        "storedPrimaryMM": 196.493666894,
+        "native200ReserveMM": 3.506333106,
+        "rearAfter25SplashMM": 2.756333106,
+        "maximumLocalToFrictionCoefficientRatio": 1.365997102,
+        "proof": "For a common end-to-end head, lane discharge is A*sqrt(head/(n^2*L/R^(4/3)+K/(2g))). Its conductance is convex in lane width when the local/friction coefficient ratio is below5. The maximum ratio over widths0..B is reported and is below5, so equal widths minimise total conductance. This proves the conditional common-level longitudinal bound, not entry or cross-transfer."
+      }
+    },
+    {
+      "meaning": "Old175 unavailable width PLUS20 mm rib+0.7 sheet, as full-depth strips.",
+      "normal": {
+        "netClearWidthMM": 154.3,
+        "alongStepAtMostMM": 10.0,
+        "widthStepAtMostMM": 0.25,
+        "continuousIntervalBound": {
+          "reserveMM": -3.360919667,
+          "alongIntervalMM": [
+            3250.0,
+            3260.0
+          ],
+          "narrowWidthIntervalMM": [
+            43.693365696,
+            43.943042071
+          ],
+          "lateFlowLps": 1.639457077,
+          "earlyBedMM": 6620.375,
+          "upperNormalDepthMM": 43.578922033,
+          "upperMaxLaneK4MM": 14.406997635,
+          "upperDepthPlusLocalMM": 57.985919667
+        },
+        "proof": "Earlier bed and later flow bound every path interval. For narrower width b in[lo,hi], normal depth is bounded by b=hi because the sum of the two convex Manning width-conveyances decreases toward equal widths. The widest lane is at most B-lo. Hydraulic radius and K4 velocity increase with both width and depth. These separate upper bounds cover every width split continuously."
+      },
+      "blocked": {
+        "netClearWidthMM": 154.3,
+        "twoEqualLaneWidthsMM": [
+          77.15,
+          77.15
+        ],
+        "minimumDepthMM": 114.840951987,
+        "lengthMM": 6500,
+        "frictionHeadMM": 12.138945815,
+        "K4HeadMM": 8.432277279,
+        "commonLongitudinalHeadMM": 20.571223093,
+        "storedPrimaryMM": 199.66217508,
+        "native200ReserveMM": 0.33782492,
+        "rearAfter25SplashMM": -0.41217508,
+        "maximumLocalToFrictionCoefficientRatio": 1.297946854,
+        "proof": "For a common end-to-end head, lane discharge is A*sqrt(head/(n^2*L/R^(4/3)+K/(2g))). Its conductance is convex in lane width when the local/friction coefficient ratio is below5. The maximum ratio over widths0..B is reported and is below5, so equal widths minimise total conductance. This proves the conditional common-level longitudinal bound, not entry or cross-transfer."
+      }
+    }
+  ],
+  "normalEqualSplitIsNotWorstLocalLoss": {
+    "criticalFlowLps": 1.63815,
+    "equal87_5DepthPlusK4MM": 50.854789418,
+    "sampledUnequalMaximum": {
+      "depthPlusK4MM": 52.610442099,
+      "widthsMM": [
+        46.03,
+        128.97
+      ],
+      "depthMM": 38.433200247,
+      "K4MM": 14.177241852,
+      "scope": "Diagnostic sample only; the independent continuous interval bound above governs."
+    }
+  },
+  "singleFrontLaneControl": {
+    "widthMM": 107,
+    "flowLps": 1.63815,
+    "depthMM": 53.97045125,
+    "K4MM": 16.405469613,
+    "reserveAtIntermediateCornerAfter10Setting25Splash25MovementMM": -15.750920863,
+    "meaning": "If only the front lane is actually reached, the normal duty fails; favourable sharing cannot be presumed."
+  },
+  "underLeafTransferScreens": [
+    {
+      "duty": "critical normal",
+      "availableAdditionalHeadBudgetMM": 1.971895918,
+      "serialFullFlowCrossings": 1,
+      "minimumClearLengthMM": 399.515919657,
+      "examples": [
+        {
+          "flowLps": 1.63815,
+          "clearHeightMM": 34.743761148,
+          "clearLengthMM": 250.0,
+          "assumedCd": 0.6,
+          "serialFullFlowCrossings": 1,
+          "singleHeadMM": 5.035842627,
+          "totalHeadMM": 5.035842627,
+          "remainingBudgetMM": -3.063946709
+        },
+        {
+          "flowLps": 1.63815,
+          "clearHeightMM": 34.743761148,
+          "clearLengthMM": 500.0,
+          "assumedCd": 0.6,
+          "serialFullFlowCrossings": 1,
+          "singleHeadMM": 1.258960657,
+          "totalHeadMM": 1.258960657,
+          "remainingBudgetMM": 0.712935262
+        },
+        {
+          "flowLps": 1.63815,
+          "clearHeightMM": 34.743761148,
+          "clearLengthMM": 750.0,
+          "assumedCd": 0.6,
+          "serialFullFlowCrossings": 1,
+          "singleHeadMM": 0.55953807,
+          "totalHeadMM": 0.55953807,
+          "remainingBudgetMM": 1.412357849
+        },
+        {
+          "flowLps": 1.63815,
+          "clearHeightMM": 34.743761148,
+          "clearLengthMM": 1000.0,
+          "assumedCd": 0.6,
+          "serialFullFlowCrossings": 1,
+          "singleHeadMM": 0.314740164,
+          "totalHeadMM": 0.314740164,
+          "remainingBudgetMM": 1.657155754
+        }
+      ],
+      "qualification": "Illustrative fully submerged rectangular slot model with assumedCd0.6, not an installed rating. Normal uses only the common water depth below the opening and discards the upper free-flow portion. The required clear length, actual ribs/ends, transferred fraction and entry/exit water levels are not authored."
+    },
+    {
+      "duty": "critical normal",
+      "availableAdditionalHeadBudgetMM": 1.971895918,
+      "serialFullFlowCrossings": 2,
+      "minimumClearLengthMM": 565.000831963,
+      "examples": [
+        {
+          "flowLps": 1.63815,
+          "clearHeightMM": 34.743761148,
+          "clearLengthMM": 250.0,
+          "assumedCd": 0.6,
+          "serialFullFlowCrossings": 2,
+          "singleHeadMM": 5.035842627,
+          "totalHeadMM": 10.071685254,
+          "remainingBudgetMM": -8.099789336
+        },
+        {
+          "flowLps": 1.63815,
+          "clearHeightMM": 34.743761148,
+          "clearLengthMM": 500.0,
+          "assumedCd": 0.6,
+          "serialFullFlowCrossings": 2,
+          "singleHeadMM": 1.258960657,
+          "totalHeadMM": 2.517921314,
+          "remainingBudgetMM": -0.546025395
+        },
+        {
+          "flowLps": 1.63815,
+          "clearHeightMM": 34.743761148,
+          "clearLengthMM": 750.0,
+          "assumedCd": 0.6,
+          "serialFullFlowCrossings": 2,
+          "singleHeadMM": 0.55953807,
+          "totalHeadMM": 1.119076139,
+          "remainingBudgetMM": 0.852819779
+        },
+        {
+          "flowLps": 1.63815,
+          "clearHeightMM": 34.743761148,
+          "clearLengthMM": 1000.0,
+          "assumedCd": 0.6,
+          "serialFullFlowCrossings": 2,
+          "singleHeadMM": 0.314740164,
+          "totalHeadMM": 0.629480328,
+          "remainingBudgetMM": 1.34241559
+        }
+      ],
+      "qualification": "Illustrative fully submerged rectangular slot model with assumedCd0.6, not an installed rating. Normal uses only the common water depth below the opening and discards the upper free-flow portion. The required clear length, actual ribs/ends, transferred fraction and entry/exit water levels are not authored."
+    },
+    {
+      "duty": "full blocked",
+      "availableAdditionalHeadBudgetMM": 5.263913811,
+      "serialFullFlowCrossings": 1,
+      "minimumClearLengthMM": 467.239475013,
+      "examples": [
+        {
+          "flowLps": 3.60375,
+          "clearHeightMM": 40,
+          "clearLengthMM": 250.0,
+          "assumedCd": 0.6,
+          "serialFullFlowCrossings": 1,
+          "singleHeadMM": 18.386870062,
+          "totalHeadMM": 18.386870062,
+          "remainingBudgetMM": -13.122956251
+        },
+        {
+          "flowLps": 3.60375,
+          "clearHeightMM": 40,
+          "clearLengthMM": 500.0,
+          "assumedCd": 0.6,
+          "serialFullFlowCrossings": 1,
+          "singleHeadMM": 4.596717516,
+          "totalHeadMM": 4.596717516,
+          "remainingBudgetMM": 0.667196296
+        },
+        {
+          "flowLps": 3.60375,
+          "clearHeightMM": 40,
+          "clearLengthMM": 750.0,
+          "assumedCd": 0.6,
+          "serialFullFlowCrossings": 1,
+          "singleHeadMM": 2.042985562,
+          "totalHeadMM": 2.042985562,
+          "remainingBudgetMM": 3.220928249
+        },
+        {
+          "flowLps": 3.60375,
+          "clearHeightMM": 40,
+          "clearLengthMM": 1000.0,
+          "assumedCd": 0.6,
+          "serialFullFlowCrossings": 1,
+          "singleHeadMM": 1.149179379,
+          "totalHeadMM": 1.149179379,
+          "remainingBudgetMM": 4.114734432
+        }
+      ],
+      "qualification": "Illustrative fully submerged rectangular slot model with assumedCd0.6, not an installed rating. Normal uses only the common water depth below the opening and discards the upper free-flow portion. The required clear length, actual ribs/ends, transferred fraction and entry/exit water levels are not authored."
+    },
+    {
+      "duty": "full blocked",
+      "availableAdditionalHeadBudgetMM": 5.263913811,
+      "serialFullFlowCrossings": 2,
+      "minimumClearLengthMM": 660.77640244,
+      "examples": [
+        {
+          "flowLps": 3.60375,
+          "clearHeightMM": 40,
+          "clearLengthMM": 250.0,
+          "assumedCd": 0.6,
+          "serialFullFlowCrossings": 2,
+          "singleHeadMM": 18.386870062,
+          "totalHeadMM": 36.773740125,
+          "remainingBudgetMM": -31.509826314
+        },
+        {
+          "flowLps": 3.60375,
+          "clearHeightMM": 40,
+          "clearLengthMM": 500.0,
+          "assumedCd": 0.6,
+          "serialFullFlowCrossings": 2,
+          "singleHeadMM": 4.596717516,
+          "totalHeadMM": 9.193435031,
+          "remainingBudgetMM": -3.92952122
+        },
+        {
+          "flowLps": 3.60375,
+          "clearHeightMM": 40,
+          "clearLengthMM": 750.0,
+          "assumedCd": 0.6,
+          "serialFullFlowCrossings": 2,
+          "singleHeadMM": 2.042985562,
+          "totalHeadMM": 4.085971125,
+          "remainingBudgetMM": 1.177942686
+        },
+        {
+          "flowLps": 3.60375,
+          "clearHeightMM": 40,
+          "clearLengthMM": 1000.0,
+          "assumedCd": 0.6,
+          "serialFullFlowCrossings": 2,
+          "singleHeadMM": 1.149179379,
+          "totalHeadMM": 2.298358758,
+          "remainingBudgetMM": 2.965555054
+        }
+      ],
+      "qualification": "Illustrative fully submerged rectangular slot model with assumedCd0.6, not an installed rating. Normal uses only the common water depth below the opening and discards the upper free-flow portion. The required clear length, actual ribs/ends, transferred fraction and entry/exit water levels are not authored."
+    }
+  ],
+  "unproved": [
+    "Net residual area and wetted perimeter at actual0.7 mm leaf,20 mm ribs, hems, guides and ends.",
+    "Actual toe-to-bed motion, currently only an unearned nominal75 mm clearance.",
+    "Continuous lower connection and the clear lengths at concentrated valley entries and head exits.",
+    "How inflow reaches both lanes and returns to the front spill/outlet without exceeding the remaining head.",
+    "Shared longitudinal inlet/outlet levels and common pressure relief; equal-lane transport is conditional on those levels.",
+    "True nonuniform subcritical profile and corner/transverse-flow losses. Neither this normal-depth model nor the earlier rectangle establishes it.",
+    "The pessimistic full-depth rib-strip failures are controls, not proof that the actual partially submerged rib geometry fails.",
+    "Raising or moving the toe would require new weather capture, wind, physical motion and structural checks."
+  ],
+  "sourceHashes": {
+    "project/rof/studies/roof_water_inner_highback_hydraulics.json": "db7e7bf96777f7fe4421aa909260e00cd656861f94ff9ed5849ed11ea73cd627",
+    "project/rof/studies/roof_water_inner_highback_hydraulics.py": "d5b624a10bfd98ff1a462561f9feedf221600a0acba14fef648d48aef147b070"
+  },
+  "scriptSHA256": "5f1663e8cb6cb5fb5ff6f26558cf050bf8fcf531683105f4ef8bc6a6b0c6627d"
+}

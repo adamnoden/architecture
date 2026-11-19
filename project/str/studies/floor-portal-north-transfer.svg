@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="845" height="765" viewBox="0 0 845 765" role="img" aria-labelledby="title">
+<title id="title">North retaining routes, at the west loggia return</title>
+<rect width="845" height="765" fill="#faf7ee"/>
+<g font-family="sans-serif" font-size="14">
+<text x="32.00" y="32.00" fill="#18262a">North retaining routes · X4377.5</text>
+<text x="32.00" y="57.00" fill="#18262a">North is to the right. Vertical scale changes at Z6540.</text>
+<rect x="297.65" y="125.40" width="189.20" height="39.60" fill="#79a6a0"/>
+<rect x="362.15" y="102.30" width="60.20" height="23.10" fill="#d3a658"/>
+<rect x="332.05" y="165.00" width="120.40" height="237.75" fill="#ddd5bf"/>
+<rect x="188.00" y="402.75" width="264.45" height="15.00" fill="#8d9287"/>
+<rect x="234.44" y="402.75" width="197.37" height="16.35" fill="#d3a658"/>
+<line x1="243.04" y1="415.80" x2="423.21" y2="415.80" stroke="#765b07" stroke-width="2"/>
+<line x1="243.04" y1="406.05" x2="423.21" y2="406.05" stroke="#765b07" stroke-width="2"/>
+<rect x="231.00" y="417.75" width="77.40" height="251.25" fill="#ddd5bf"/>
+<rect x="299.80" y="417.75" width="184.90" height="251.25" fill="#ddd5bf"/>
+<rect x="188.00" y="669.00" width="285.95" height="33.75" fill="#8d9287"/>
+<rect x="239.60" y="657.75" width="68.80" height="11.25" fill="#bd7caa"/>
+<line x1="308.83" y1="402.75" x2="308.83" y2="165.00" stroke="#333333" stroke-width="2" stroke-dasharray="5 4"/>
+<line x1="392.25" y1="165.00" x2="392.25" y2="669.00" stroke="#a53034" stroke-width="2" stroke-dasharray="5 4"/>
+<line x1="392.25" y1="165.00" x2="274.00" y2="402.75" stroke="#055186" stroke-width="2"/>
+<line x1="392.25" y1="402.75" x2="274.00" y2="402.75" stroke="#765b07" stroke-width="2"/>
+<line x1="274.00" y1="402.75" x2="274.00" y2="669.00" stroke="#216861" stroke-width="2"/>
+<circle cx="392.25" cy="490.50" r="8" fill="#a53034"/>
+<text x="503.00" y="76.00" fill="#18262a">+100 roof raised, 70 mm seat envelope</text>
+<text x="503.00" y="132.00" fill="#18262a">Existing 220 × 120 band zone, fixed</text>
+<text x="503.00" y="253.00" fill="#18262a">Blue: inclined tie and normal endpoint couple</text>
+<text x="503.00" y="275.00" fill="#18262a">Dashed black: ordinary interior finish face</text>
+<text x="503.00" y="397.00" fill="#18262a">Ochre: 218 mm minimum transfer at floor datum</text>
+<text x="503.00" y="494.00" fill="#18262a">Red: through-route clashes with Ø40 arch bore</text>
+<text x="503.00" y="632.00" fill="#18262a">Purple: older mineral band, Z−180 to −30</text>
+<text x="503.00" y="657.00" fill="#18262a">Green: shared lower return for both offset routes</text>
+<text x="503.00" y="680.00" fill="#18262a">Cap accepts footprint; straight drop misses shaft</text>
+<text x="32.00" y="729.00" fill="#18262a">Located demand comparison. Retention, cage anchorage and the moisture crossing remain to be joined.</text>
+</g></svg>

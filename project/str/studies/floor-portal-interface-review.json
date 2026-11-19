@@ -1,0 +1,515 @@
+{
+  "assumptions": {
+    "authoredNormalExcursionEachWayMM": 5.0,
+    "bypassIsZeroExtraClearanceGeometricLowerBound": true,
+    "normalExcursionIsAdmitted": false,
+    "openingExcludesSettingsSealsAndRotation": true,
+    "sourceTangentialTravelEachWayMM": 45.0
+  },
+  "authority": {
+    "adopted": false,
+    "candidate": "SAP-C1",
+    "completionClaim": "STR-RECONCILE internal proposition complete; BCR 002/003 load route resolved.",
+    "heldExplicitly": "Joint/cage/anchorage design, qualification and external acceptance.",
+    "notLocated": "Floor-jamb sliding opening and continuous collector bypass.",
+    "recommendation": "Register targeted STR-FLOOR-PORTAL depending on historical STR-RECONCILE, with hard ROF/TRIAD dependencies. Explicitly withdraw current SAP-C1 coherence/load-route acceptance; keep the original exit unchanged. Compare monolithic floor-jamb first."
+  },
+  "authorityObservation": "The pre-correction claim is preserved at this immutable commit; it is not current acceptance after the owning correction.",
+  "geometry": {
+    "collectorAboveFFLmm": 470,
+    "collectorBottomTopZmm": [
+      3170,
+      3920
+    ],
+    "collectorDepthMM": 750,
+    "collectorQmm": [
+      262.5,
+      402.5
+    ],
+    "jambNormalAlongMM": [
+      180,
+      205
+    ],
+    "jambQmm": [
+      222.5,
+      402.5
+    ],
+    "minimumAddedSlabEdgeNotchDepthFrom332p5MM": 75.0,
+    "minimumBypassAxisOffsetMM": 145.0,
+    "minimumOpeningAlongNormalMM": [
+      295.0,
+      190.0
+    ],
+    "minimumProjectionBeyond429p5FinishedFaceMM": 118.0,
+    "minimumSameWidthInboardBypassQmm": [
+      407.5,
+      547.5
+    ],
+    "occurrences": [
+      {
+        "collectorIntersectionQmm": [
+          262.5,
+          402.5
+        ],
+        "collectorIntersectionZmm": [
+          3170,
+          3920
+        ],
+        "face": "outer-south",
+        "jambAxisPmm": 1497.5,
+        "jambPmm": [
+          1395.0,
+          1600.0
+        ],
+        "minimumSlidingOpeningPmm": [
+          1350.0,
+          1645.0
+        ],
+        "minimumSlidingOpeningQmm": [
+          217.5,
+          407.5
+        ],
+        "opening": "south-window-0",
+        "unseparatedNominalCollectorJambIntersectionM3": 0.021525
+      },
+      {
+        "collectorIntersectionQmm": [
+          262.5,
+          402.5
+        ],
+        "collectorIntersectionZmm": [
+          3170,
+          3920
+        ],
+        "face": "outer-south",
+        "jambAxisPmm": 2702.5,
+        "jambPmm": [
+          2600.0,
+          2805.0
+        ],
+        "minimumSlidingOpeningPmm": [
+          2555.0,
+          2850.0
+        ],
+        "minimumSlidingOpeningQmm": [
+          217.5,
+          407.5
+        ],
+        "opening": "south-window-0",
+        "unseparatedNominalCollectorJambIntersectionM3": 0.021525
+      },
+      {
+        "collectorIntersectionQmm": [
+          262.5,
+          402.5
+        ],
+        "collectorIntersectionZmm": [
+          3170,
+          3920
+        ],
+        "face": "outer-south",
+        "jambAxisPmm": 10502.5,
+        "jambPmm": [
+          10400.0,
+          10605.0
+        ],
+        "minimumSlidingOpeningPmm": [
+          10355.0,
+          10650.0
+        ],
+        "minimumSlidingOpeningQmm": [
+          217.5,
+          407.5
+        ],
+        "opening": "south-window-4",
+        "unseparatedNominalCollectorJambIntersectionM3": 0.021525
+      },
+      {
+        "collectorIntersectionQmm": [
+          262.5,
+          402.5
+        ],
+        "collectorIntersectionZmm": [
+          3170,
+          3920
+        ],
+        "face": "outer-south",
+        "jambAxisPmm": 9297.5,
+        "jambPmm": [
+          9195.0,
+          9400.0
+        ],
+        "minimumSlidingOpeningPmm": [
+          9150.0,
+          9445.0
+        ],
+        "minimumSlidingOpeningQmm": [
+          217.5,
+          407.5
+        ],
+        "opening": "south-window-4",
+        "unseparatedNominalCollectorJambIntersectionM3": 0.021525
+      },
+      {
+        "collectorIntersectionQmm": [
+          262.5,
+          402.5
+        ],
+        "collectorIntersectionZmm": [
+          3170,
+          3920
+        ],
+        "face": "outer-east",
+        "jambAxisPmm": 1497.5,
+        "jambPmm": [
+          1395.0,
+          1600.0
+        ],
+        "minimumSlidingOpeningPmm": [
+          1350.0,
+          1645.0
+        ],
+        "minimumSlidingOpeningQmm": [
+          217.5,
+          407.5
+        ],
+        "opening": "east-window-0",
+        "unseparatedNominalCollectorJambIntersectionM3": 0.021525
+      },
+      {
+        "collectorIntersectionQmm": [
+          262.5,
+          402.5
+        ],
+        "collectorIntersectionZmm": [
+          3170,
+          3920
+        ],
+        "face": "outer-east",
+        "jambAxisPmm": 2702.5,
+        "jambPmm": [
+          2600.0,
+          2805.0
+        ],
+        "minimumSlidingOpeningPmm": [
+          2555.0,
+          2850.0
+        ],
+        "minimumSlidingOpeningQmm": [
+          217.5,
+          407.5
+        ],
+        "opening": "east-window-0",
+        "unseparatedNominalCollectorJambIntersectionM3": 0.021525
+      },
+      {
+        "collectorIntersectionQmm": [
+          262.5,
+          402.5
+        ],
+        "collectorIntersectionZmm": [
+          3170,
+          3920
+        ],
+        "face": "outer-east",
+        "jambAxisPmm": 10502.5,
+        "jambPmm": [
+          10400.0,
+          10605.0
+        ],
+        "minimumSlidingOpeningPmm": [
+          10355.0,
+          10650.0
+        ],
+        "minimumSlidingOpeningQmm": [
+          217.5,
+          407.5
+        ],
+        "opening": "east-window-3",
+        "unseparatedNominalCollectorJambIntersectionM3": 0.021525
+      },
+      {
+        "collectorIntersectionQmm": [
+          262.5,
+          402.5
+        ],
+        "collectorIntersectionZmm": [
+          3170,
+          3920
+        ],
+        "face": "outer-east",
+        "jambAxisPmm": 9297.5,
+        "jambPmm": [
+          9195.0,
+          9400.0
+        ],
+        "minimumSlidingOpeningPmm": [
+          9150.0,
+          9445.0
+        ],
+        "minimumSlidingOpeningQmm": [
+          217.5,
+          407.5
+        ],
+        "opening": "east-window-3",
+        "unseparatedNominalCollectorJambIntersectionM3": 0.021525
+      },
+      {
+        "collectorIntersectionQmm": [
+          262.5,
+          402.5
+        ],
+        "collectorIntersectionZmm": [
+          3170,
+          3920
+        ],
+        "face": "outer-north",
+        "jambAxisPmm": 1497.5,
+        "jambPmm": [
+          1395.0,
+          1600.0
+        ],
+        "minimumSlidingOpeningPmm": [
+          1350.0,
+          1645.0
+        ],
+        "minimumSlidingOpeningQmm": [
+          217.5,
+          407.5
+        ],
+        "opening": "north-window-0",
+        "unseparatedNominalCollectorJambIntersectionM3": 0.021525
+      },
+      {
+        "collectorIntersectionQmm": [
+          262.5,
+          402.5
+        ],
+        "collectorIntersectionZmm": [
+          3170,
+          3920
+        ],
+        "face": "outer-north",
+        "jambAxisPmm": 2702.5,
+        "jambPmm": [
+          2600.0,
+          2805.0
+        ],
+        "minimumSlidingOpeningPmm": [
+          2555.0,
+          2850.0
+        ],
+        "minimumSlidingOpeningQmm": [
+          217.5,
+          407.5
+        ],
+        "opening": "north-window-0",
+        "unseparatedNominalCollectorJambIntersectionM3": 0.021525
+      },
+      {
+        "collectorIntersectionQmm": [
+          262.5,
+          402.5
+        ],
+        "collectorIntersectionZmm": [
+          3170,
+          3920
+        ],
+        "face": "outer-north",
+        "jambAxisPmm": 10502.5,
+        "jambPmm": [
+          10400.0,
+          10605.0
+        ],
+        "minimumSlidingOpeningPmm": [
+          10355.0,
+          10650.0
+        ],
+        "minimumSlidingOpeningQmm": [
+          217.5,
+          407.5
+        ],
+        "opening": "north-window-4",
+        "unseparatedNominalCollectorJambIntersectionM3": 0.021525
+      },
+      {
+        "collectorIntersectionQmm": [
+          262.5,
+          402.5
+        ],
+        "collectorIntersectionZmm": [
+          3170,
+          3920
+        ],
+        "face": "outer-north",
+        "jambAxisPmm": 9297.5,
+        "jambPmm": [
+          9195.0,
+          9400.0
+        ],
+        "minimumSlidingOpeningPmm": [
+          9150.0,
+          9445.0
+        ],
+        "minimumSlidingOpeningQmm": [
+          217.5,
+          407.5
+        ],
+        "opening": "north-window-4",
+        "unseparatedNominalCollectorJambIntersectionM3": 0.021525
+      },
+      {
+        "collectorIntersectionQmm": [
+          262.5,
+          402.5
+        ],
+        "collectorIntersectionZmm": [
+          3170,
+          3920
+        ],
+        "face": "outer-west",
+        "jambAxisPmm": 1497.5,
+        "jambPmm": [
+          1395.0,
+          1600.0
+        ],
+        "minimumSlidingOpeningPmm": [
+          1350.0,
+          1645.0
+        ],
+        "minimumSlidingOpeningQmm": [
+          217.5,
+          407.5
+        ],
+        "opening": "west-window-0",
+        "unseparatedNominalCollectorJambIntersectionM3": 0.021525
+      },
+      {
+        "collectorIntersectionQmm": [
+          262.5,
+          402.5
+        ],
+        "collectorIntersectionZmm": [
+          3170,
+          3920
+        ],
+        "face": "outer-west",
+        "jambAxisPmm": 2702.5,
+        "jambPmm": [
+          2600.0,
+          2805.0
+        ],
+        "minimumSlidingOpeningPmm": [
+          2555.0,
+          2850.0
+        ],
+        "minimumSlidingOpeningQmm": [
+          217.5,
+          407.5
+        ],
+        "opening": "west-window-0",
+        "unseparatedNominalCollectorJambIntersectionM3": 0.021525
+      },
+      {
+        "collectorIntersectionQmm": [
+          262.5,
+          402.5
+        ],
+        "collectorIntersectionZmm": [
+          3170,
+          3920
+        ],
+        "face": "outer-west",
+        "jambAxisPmm": 10502.5,
+        "jambPmm": [
+          10400.0,
+          10605.0
+        ],
+        "minimumSlidingOpeningPmm": [
+          10355.0,
+          10650.0
+        ],
+        "minimumSlidingOpeningQmm": [
+          217.5,
+          407.5
+        ],
+        "opening": "west-window-3",
+        "unseparatedNominalCollectorJambIntersectionM3": 0.021525
+      },
+      {
+        "collectorIntersectionQmm": [
+          262.5,
+          402.5
+        ],
+        "collectorIntersectionZmm": [
+          3170,
+          3920
+        ],
+        "face": "outer-west",
+        "jambAxisPmm": 9297.5,
+        "jambPmm": [
+          9195.0,
+          9400.0
+        ],
+        "minimumSlidingOpeningPmm": [
+          9150.0,
+          9445.0
+        ],
+        "minimumSlidingOpeningQmm": [
+          217.5,
+          407.5
+        ],
+        "opening": "west-window-3",
+        "unseparatedNominalCollectorJambIntersectionM3": 0.021525
+      }
+    ]
+  },
+  "kernelBoundary": {
+    "availableBuildingBlocks": [
+      "current-house-membrane.py basis/reduced/recover",
+      "arch-space-kernel.py SpaceArch.member/point/global_totals",
+      "reconciled-corner-portals.py Portal/house_interfaces",
+      "current-house-joined-foundation.py realState/horizontal",
+      "reconciled-foundation-join.py WindFoundation"
+    ],
+    "bypassNeeds": "Remesh sixteen openings; route real offset chords/beams and all corner forces; new gravity/torsion and local cage checks.",
+    "existingFloor": "Two-displacement membrane plus edge yaw, condensed to eight L-pier translations; no floor vertical plate stiffness.",
+    "existingFloorGravity": "Static short-span/load-route and passive-contact redistribution, not assembled vertical compatibility.",
+    "existingPortal": "Six DOF members, condensed only at four normal ties per portal; feet retain three translations and free rotations.",
+    "monolithicNeeds": "Replace 16 floor sliders with located finite joint translations and rotations; add coupled floor vertical/grillage response, loads once, feet/foundation and movement replay.",
+    "notAValidShortcut": "Set k_tie to infinity or delete the 16 scalar floor ties without adding physical multi-DOF connectivity."
+  },
+  "nominalMonolithicBarCrossingScreen": {
+    "inferredCollectorH12Qmm": [
+      311.5,
+      353.5
+    ],
+    "minimumOrthogonalBarSurfaceClearanceMM": -1.0,
+    "result": "Negative: retained source cages need a real local redesign; monolithic is not a ready detail.",
+    "sourceJambH12Qmm": [
+      260.5,
+      364.5
+    ]
+  },
+  "sourceCommit": "97b2920999d250d976702f39bf46cdd11760b716",
+  "sourcesSha256": {
+    "project/control/nodes/roof-water.ts": "a85498e97cfa1408e6cf455e7508b928e18b297ef29e432e836a1fd476b57a5f",
+    "project/control/nodes/structure.ts": "61d75d2efaec29aa4251c68ad7310d30176f5dbda5416366a0cb61af0bbb1e45",
+    "project/str/current-house-structural-reference.md": "0a3915707514e0300159adb87534965ee79cd565befe465740c24f68ba446206",
+    "project/str/provisional-house-handoff.md": "3a4ddb66e7936875c2f40a05d013c83bb1374398aca1dc38dda8a442beeddce0",
+    "project/str/structural-architecture-programme.md": "1f6002b42e4b214e9777abedfb91620d103251ea07075916a74b0b004a109d65",
+    "project/str/studies/arch-space-kernel.py": "ed07cf97bfa1d8359a97486a679d3220bbd81c14cccfabc8eed9a01717bd3a24",
+    "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+    "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+    "project/str/studies/current-house-floor-stops.py": "df2f4f5c6c2bda984174d56e95498c8fb0b924eaf19efd4607a8a21c020f0c78",
+    "project/str/studies/current-house-joined-foundation.py": "5f4beaaa6f3927e4cf3decd62bde67106cff238a50d4c47238c3cc21dcce8f7a",
+    "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+    "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+    "project/str/studies/house-corner-rewind.json": "0a927d781097f01693195bae56712204abd8d5c6d7335a56038d3ea3d26007a1",
+    "project/str/studies/reconciled-corner-portals.py": "a0c158fbff68bc250e6ab64ab6251cc396abc7efb6ef3f398325629e678b92bd",
+    "project/str/studies/reconciled-foundation-join.py": "981fb663303dddb6edd854bb6dd9d48a299e251a6da468469db75cd06a25431e",
+    "project/str/studies/reconciled-house-interface.json": "ae17f6de977de58ae54f25edfc67c48c36f348cffc288e839f25a8b4143c16cf",
+    "project/triad-interface-contract.md": "dc05fc75909de4eefae9eea16bd5f6f51e406dd9a0de821fcdc20c0a75af6dde"
+  },
+  "status": "Upstream topology conflict; neither alternative admitted; no native replay or graph edit."
+}

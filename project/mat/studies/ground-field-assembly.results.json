@@ -1,0 +1,1782 @@
+{
+  "status": "Unselected whole-field development comparison. Bespoke threshold rail withdrawn as preferred detail; concrete performance/junction proof takes priority. No geometry, material, air, moisture, thermal or structural admission.",
+  "sources": {
+    "STR": {
+      "commit": "18e802fbbf23730db69d922707e3576576cd8c19",
+      "path": "project/str/studies/current-house-lateral.json",
+      "blob": "f37fca49400c3b61a518cf25e20db6ab18234bf4"
+    },
+    "HAD": {
+      "commit": "c2d5c3805cfa70739130d1cf4a593c8f17a9c414",
+      "path": "project/had/studies/water-replan.json",
+      "blob": "265ac19420f1b1fa6bba41dd859d7ee758187d6b"
+    },
+    "STRground": {
+      "commit": "0a40215a8a562bc0d9e554edcf89778023598262",
+      "path": "project/str/studies/open-loggia-support.json",
+      "blob": "20dec4384d09a0d02075fdd34a247e775532763b"
+    },
+    "STRgrid": {
+      "commit": "732901d46c697f039f1bb55574d69b005a34ed64",
+      "path": "project/str/studies/current-house-grid.json",
+      "blob": "ce5905adafc8132182b7a4022e2476c78af0d978"
+    },
+    "HADthreshold": {
+      "commit": "0a40215a8a562bc0d9e554edcf89778023598262",
+      "path": "project/had/studies/south-court-threshold.mjs",
+      "blob": "77a2f7844b2e809b332e1c5c550eb93f752f6483"
+    }
+  },
+  "unchangedFloor": {
+    "layers": [
+      15,
+      65,
+      100,
+      200
+    ],
+    "z": [
+      0,
+      -15,
+      -80,
+      -180,
+      -380
+    ],
+    "innerDpc": [
+      -180,
+      -30
+    ],
+    "plasterStops": 0,
+    "airLine": "Wallmineralplaster meets floorfinish at0; movement/airtightness unqualified",
+    "moisture": "40cover suspendedRC is a deliberate moisture hypothesis. NoDPM or site-required gas barrier is waived; exact floor/end/DPC transition not qualified."
+  },
+  "earlierRoomFieldQuantity": {
+    "outer": [
+      429.5,
+      429.5,
+      11141.0,
+      11141.0
+    ],
+    "outdoorAndWallCuts": [
+      [
+        3820.5,
+        3820.5,
+        4359.0,
+        3929.5
+      ],
+      [
+        4280.5,
+        7750,
+        3439.0,
+        3820.5
+      ],
+      [
+        9203,
+        5780.5,
+        2367.5,
+        2239.0
+      ]
+    ],
+    "netField_m2": 83.20179,
+    "edgeLength_m": 122.747,
+    "connectedComponents_m2": [
+      83.20179
+    ]
+  },
+  "confirmedSourceProposedSupportCrossings": [
+    {
+      "id": "stair-midlanding-post",
+      "core": [
+        2817.5,
+        7132.5,
+        250,
+        250
+      ],
+      "baseZ": -180,
+      "scope": "250 square actual source-proposed RC core, not the finished obstacle rectangle"
+    },
+    {
+      "id": "wet-wall-south-receiver",
+      "core": [
+        2772.5,
+        8627.5,
+        260,
+        450
+      ],
+      "baseZ": -180,
+      "topZ": 3020,
+      "scope": "HAD literal core with STR receiving-pier height; source-proposed structure, not capacity admission"
+    },
+    {
+      "id": "wet-wall-north-receiver",
+      "core": [
+        2772.5,
+        11287.5,
+        260,
+        450
+      ],
+      "baseZ": -180,
+      "topZ": 3020,
+      "scope": "HAD literal core with STR receiving-pier height; source-proposed structure, not capacity admission"
+    }
+  ],
+  "supportAwareRoomField": {
+    "outer": [
+      429.5,
+      429.5,
+      11141.0,
+      11141.0
+    ],
+    "outdoorAndWallCuts": [
+      [
+        3820.5,
+        3820.5,
+        4359.0,
+        3929.5
+      ],
+      [
+        4280.5,
+        7750,
+        3439.0,
+        3820.5
+      ],
+      [
+        9203,
+        5780.5,
+        2367.5,
+        2239.0
+      ]
+    ],
+    "netField_m2": 83.057362,
+    "edgeLength_m": 123.761,
+    "connectedComponents_m2": [
+      83.057362
+    ],
+    "ordinaryUpstandExcludingThreeDoors_m": 118.761,
+    "ordinaryFlatAndUpstandScreen_kg": 871.9418967999999,
+    "omittedThreeDoorUpstands_kg": 9.084999999999999
+  },
+  "panelLayout": {
+    "panelModule_mm": [
+      1000,
+      2000
+    ],
+    "occupiedLayoutSlots": 60,
+    "connectedCutPieces": 80,
+    "net_m2": 83.057362,
+    "allocatedSlotArea_m2": 102.698881,
+    "unusedWithinOccupiedSlots_m2": 19.641519000000002,
+    "sharedButtSeamLength_m": 116.9405,
+    "sharedSeamSegments": [
+      {
+        "axis": "x",
+        "at": 1429.5,
+        "span": [
+          429.5,
+          8755.5
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 1429.5,
+        "span": [
+          8949.5,
+          11570.5
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 2429.5,
+        "span": [
+          429.5,
+          3150.5
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 2429.5,
+        "span": [
+          3344.5,
+          8755.5
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 2429.5,
+        "span": [
+          8949.5,
+          11570.5
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 3429.5,
+        "span": [
+          429.5,
+          1103
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 3429.5,
+        "span": [
+          2747,
+          11570.5
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 4429.5,
+        "span": [
+          429.5,
+          1103
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 4429.5,
+        "span": [
+          1297,
+          2553
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 4429.5,
+        "span": [
+          2747,
+          3820.5
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 5429.5,
+        "span": [
+          429.5,
+          3820.5
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 6429.5,
+        "span": [
+          429.5,
+          3820.5
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 7429.5,
+        "span": [
+          429.5,
+          2550
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 7429.5,
+        "span": [
+          2747,
+          3820.5
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 8429.5,
+        "span": [
+          429.5,
+          11570.5
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 9429.5,
+        "span": [
+          429.5,
+          2453
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 9429.5,
+        "span": [
+          2647,
+          3603
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 9429.5,
+        "span": [
+          3797,
+          5780.5
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 9429.5,
+        "span": [
+          8019.5,
+          8155.5
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 9429.5,
+        "span": [
+          8424.5,
+          11570.5
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 10429.5,
+        "span": [
+          429.5,
+          5780.5
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 10429.5,
+        "span": [
+          8019.5,
+          8155.5
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 10429.5,
+        "span": [
+          8424.5,
+          11570.5
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 11429.5,
+        "span": [
+          429.5,
+          2453
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 11429.5,
+        "span": [
+          2647,
+          3603
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 11429.5,
+        "span": [
+          3797,
+          5780.5
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 11429.5,
+        "span": [
+          8019.5,
+          8155.5
+        ]
+      },
+      {
+        "axis": "x",
+        "at": 11429.5,
+        "span": [
+          8424.5,
+          11570.5
+        ]
+      },
+      {
+        "axis": "y",
+        "at": 2429.5,
+        "span": [
+          429.5,
+          3303
+        ]
+      },
+      {
+        "axis": "y",
+        "at": 2429.5,
+        "span": [
+          3497,
+          7103
+        ]
+      },
+      {
+        "axis": "y",
+        "at": 2429.5,
+        "span": [
+          7300,
+          9203
+        ]
+      },
+      {
+        "axis": "y",
+        "at": 2429.5,
+        "span": [
+          9397,
+          11570.5
+        ]
+      },
+      {
+        "axis": "y",
+        "at": 4429.5,
+        "span": [
+          429.5,
+          2817.5
+        ]
+      },
+      {
+        "axis": "y",
+        "at": 4429.5,
+        "span": [
+          2971.5,
+          3820.5
+        ]
+      },
+      {
+        "axis": "y",
+        "at": 4429.5,
+        "span": [
+          8179.5,
+          9203
+        ]
+      },
+      {
+        "axis": "y",
+        "at": 4429.5,
+        "span": [
+          9397,
+          11570.5
+        ]
+      },
+      {
+        "axis": "y",
+        "at": 6429.5,
+        "span": [
+          429.5,
+          2817.5
+        ]
+      },
+      {
+        "axis": "y",
+        "at": 6429.5,
+        "span": [
+          2971.5,
+          3820.5
+        ]
+      },
+      {
+        "axis": "y",
+        "at": 6429.5,
+        "span": [
+          8179.5,
+          9203
+        ]
+      },
+      {
+        "axis": "y",
+        "at": 8429.5,
+        "span": [
+          429.5,
+          2817.5
+        ]
+      },
+      {
+        "axis": "y",
+        "at": 8429.5,
+        "span": [
+          2971.5,
+          4280.5
+        ]
+      },
+      {
+        "axis": "y",
+        "at": 8429.5,
+        "span": [
+          7719.5,
+          11570.5
+        ]
+      },
+      {
+        "axis": "y",
+        "at": 10429.5,
+        "span": [
+          429.5,
+          4280.5
+        ]
+      },
+      {
+        "axis": "y",
+        "at": 10429.5,
+        "span": [
+          7719.5,
+          11570.5
+        ]
+      }
+    ],
+    "slots": [
+      {
+        "slot": [
+          0,
+          0
+        ],
+        "area_mm2": 2000000.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          0,
+          1
+        ],
+        "area_mm2": 1821423.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          0,
+          2
+        ],
+        "area_mm2": 2000000.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          0,
+          3
+        ],
+        "area_mm2": 2000000.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          0,
+          4
+        ],
+        "area_mm2": 1806000.0,
+        "connectedPieces": 2
+      },
+      {
+        "slot": [
+          0,
+          5
+        ],
+        "area_mm2": 1141000.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          1,
+          0
+        ],
+        "area_mm2": 2000000.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          1,
+          1
+        ],
+        "area_mm2": 1965177.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          1,
+          2
+        ],
+        "area_mm2": 2000000.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          1,
+          3
+        ],
+        "area_mm2": 2000000.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          1,
+          4
+        ],
+        "area_mm2": 1806000.0,
+        "connectedPieces": 2
+      },
+      {
+        "slot": [
+          1,
+          5
+        ],
+        "area_mm2": 1141000.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          2,
+          0
+        ],
+        "area_mm2": 1841606.75,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          2,
+          1
+        ],
+        "area_mm2": 1653779.25,
+        "connectedPieces": 2
+      },
+      {
+        "slot": [
+          2,
+          2
+        ],
+        "area_mm2": 1692000.0,
+        "connectedPieces": 2
+      },
+      {
+        "slot": [
+          2,
+          3
+        ],
+        "area_mm2": 1668000.0,
+        "connectedPieces": 2
+      },
+      {
+        "slot": [
+          2,
+          4
+        ],
+        "area_mm2": 1772871.0,
+        "connectedPieces": 2
+      },
+      {
+        "slot": [
+          2,
+          5
+        ],
+        "area_mm2": 1067420.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          3,
+          0
+        ],
+        "area_mm2": 1729556.25,
+        "connectedPieces": 2
+      },
+      {
+        "slot": [
+          3,
+          1
+        ],
+        "area_mm2": 1426782.75,
+        "connectedPieces": 2
+      },
+      {
+        "slot": [
+          3,
+          2
+        ],
+        "area_mm2": 782000.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          3,
+          3
+        ],
+        "area_mm2": 1094570.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          3,
+          4
+        ],
+        "area_mm2": 1647583.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          3,
+          5
+        ],
+        "area_mm2": 970991.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          4,
+          0
+        ],
+        "area_mm2": 1700464.0,
+        "connectedPieces": 2
+      },
+      {
+        "slot": [
+          4,
+          1
+        ],
+        "area_mm2": 1299432.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          5,
+          0
+        ],
+        "area_mm2": 2000000.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          5,
+          1
+        ],
+        "area_mm2": 1391000.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          6,
+          0
+        ],
+        "area_mm2": 1606000.0,
+        "connectedPieces": 2
+      },
+      {
+        "slot": [
+          6,
+          1
+        ],
+        "area_mm2": 1312350.0,
+        "connectedPieces": 2
+      },
+      {
+        "slot": [
+          7,
+          0
+        ],
+        "area_mm2": 2000000.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          7,
+          1
+        ],
+        "area_mm2": 1490302.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          7,
+          3
+        ],
+        "area_mm2": 669865.5,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          7,
+          4
+        ],
+        "area_mm2": 1420000.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          7,
+          5
+        ],
+        "area_mm2": 810110.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          7,
+          2
+        ],
+        "area_mm2": 500000.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          8,
+          0
+        ],
+        "area_mm2": 1612000.0,
+        "connectedPieces": 2
+      },
+      {
+        "slot": [
+          8,
+          1
+        ],
+        "area_mm2": 1631280.5,
+        "connectedPieces": 3
+      },
+      {
+        "slot": [
+          8,
+          2
+        ],
+        "area_mm2": 1590907.5,
+        "connectedPieces": 2
+      },
+      {
+        "slot": [
+          8,
+          3
+        ],
+        "area_mm2": 1538295.5,
+        "connectedPieces": 2
+      },
+      {
+        "slot": [
+          8,
+          4
+        ],
+        "area_mm2": 2000000.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          8,
+          5
+        ],
+        "area_mm2": 1141000.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          9,
+          0
+        ],
+        "area_mm2": 2000000.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          9,
+          1
+        ],
+        "area_mm2": 1798046.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          9,
+          2
+        ],
+        "area_mm2": 1351000.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          9,
+          3
+        ],
+        "area_mm2": 141000.0,
+        "connectedPieces": 2
+      },
+      {
+        "slot": [
+          9,
+          4
+        ],
+        "area_mm2": 2000000.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          9,
+          5
+        ],
+        "area_mm2": 1141000.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          10,
+          0
+        ],
+        "area_mm2": 2000000.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          10,
+          1
+        ],
+        "area_mm2": 1847904.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          10,
+          2
+        ],
+        "area_mm2": 1351000.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          10,
+          3
+        ],
+        "area_mm2": 383100.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          10,
+          4
+        ],
+        "area_mm2": 2000000.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          10,
+          5
+        ],
+        "area_mm2": 1141000.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          11,
+          0
+        ],
+        "area_mm2": 282000.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          11,
+          1
+        ],
+        "area_mm2": 227292.0,
+        "connectedPieces": 3
+      },
+      {
+        "slot": [
+          11,
+          2
+        ],
+        "area_mm2": 190491.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          11,
+          3
+        ],
+        "area_mm2": 19881.0,
+        "connectedPieces": 2
+      },
+      {
+        "slot": [
+          11,
+          4
+        ],
+        "area_mm2": 282000.0,
+        "connectedPieces": 1
+      },
+      {
+        "slot": [
+          11,
+          5
+        ],
+        "area_mm2": 160881.0,
+        "connectedPieces": 1
+      }
+    ],
+    "scope": "Explicit clipped layout, not purchased sheet count, a weld procedure, a fabrication cut list or an optimised offcut plan."
+  },
+  "wallBaseRegister": [
+    {
+      "id": "study-east",
+      "axis": 4800,
+      "along": [
+        0,
+        1200
+      ],
+      "openIntervals": [],
+      "rawSolidLength_mm": 1200,
+      "coreWidth_mm": 140,
+      "proposedDpcWidth_mm": 215,
+      "proposedDpcFaces": [
+        4692.5,
+        4907.5
+      ],
+      "finishedFaces": [
+        4703,
+        4897
+      ],
+      "roomSideProjectionBeyondFinish_mm": [
+        10.5,
+        10.5
+      ],
+      "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+    },
+    {
+      "id": "cloak-east",
+      "axis": 4800,
+      "along": [
+        1200,
+        2650
+      ],
+      "openIntervals": [
+        [
+          1700,
+          2500
+        ]
+      ],
+      "rawSolidLength_mm": 650,
+      "coreWidth_mm": 140,
+      "proposedDpcWidth_mm": 215,
+      "proposedDpcFaces": [
+        4692.5,
+        4907.5
+      ],
+      "finishedFaces": [
+        4703,
+        4897
+      ],
+      "roomSideProjectionBeyondFinish_mm": [
+        10.5,
+        10.5
+      ],
+      "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+    },
+    {
+      "id": "cloak-west",
+      "axis": 3400,
+      "along": [
+        1200,
+        2650
+      ],
+      "openIntervals": [],
+      "rawSolidLength_mm": 1450,
+      "coreWidth_mm": 140,
+      "proposedDpcWidth_mm": 215,
+      "proposedDpcFaces": [
+        3292.5,
+        3507.5
+      ],
+      "finishedFaces": [
+        3303,
+        3497
+      ],
+      "roomSideProjectionBeyondFinish_mm": [
+        10.5,
+        10.5
+      ],
+      "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+    },
+    {
+      "id": "cloak-south",
+      "axis": 1200,
+      "along": [
+        3400,
+        4800
+      ],
+      "openIntervals": [],
+      "rawSolidLength_mm": 1400,
+      "coreWidth_mm": 140,
+      "proposedDpcWidth_mm": 215,
+      "proposedDpcFaces": [
+        1092.5,
+        1307.5
+      ],
+      "finishedFaces": [
+        1103,
+        1297
+      ],
+      "roomSideProjectionBeyondFinish_mm": [
+        10.5,
+        10.5
+      ],
+      "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+    },
+    {
+      "id": "study-cloak-north",
+      "axis": 2650,
+      "along": [
+        2817.5,
+        4800
+      ],
+      "openIntervals": [],
+      "rawSolidLength_mm": 1982.5,
+      "coreWidth_mm": 140,
+      "proposedDpcWidth_mm": 215,
+      "proposedDpcFaces": [
+        2542.5,
+        2757.5
+      ],
+      "finishedFaces": [
+        2553,
+        2747
+      ],
+      "roomSideProjectionBeyondFinish_mm": [
+        10.5,
+        10.5
+      ],
+      "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+    },
+    {
+      "id": "study-L-return",
+      "axis": 2817.5,
+      "along": [
+        2650,
+        3247.5
+      ],
+      "openIntervals": [],
+      "rawSolidLength_mm": 597.5,
+      "coreWidth_mm": 140.0,
+      "proposedDpcWidth_mm": 215,
+      "proposedDpcFaces": [
+        2710.0,
+        2925.0
+      ],
+      "finishedFaces": [
+        2720.5,
+        2914.5
+      ],
+      "roomSideProjectionBeyondFinish_mm": [
+        10.5,
+        10.5
+      ],
+      "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+    },
+    {
+      "id": "study-L-north",
+      "axis": 3247.5,
+      "along": [
+        0,
+        2817.5
+      ],
+      "openIntervals": [
+        [
+          1350,
+          2250
+        ]
+      ],
+      "rawSolidLength_mm": 1917.5,
+      "coreWidth_mm": 140.0,
+      "proposedDpcWidth_mm": 215,
+      "proposedDpcFaces": [
+        3140.0,
+        3355.0
+      ],
+      "finishedFaces": [
+        3150.5,
+        3344.5
+      ],
+      "roomSideProjectionBeyondFinish_mm": [
+        10.5,
+        10.5
+      ],
+      "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+    },
+    {
+      "id": "wc-west",
+      "axis": 7200,
+      "along": [
+        0,
+        2650
+      ],
+      "openIntervals": [],
+      "rawSolidLength_mm": 2650,
+      "coreWidth_mm": 140,
+      "proposedDpcWidth_mm": 215,
+      "proposedDpcFaces": [
+        7092.5,
+        7307.5
+      ],
+      "finishedFaces": [
+        7103,
+        7300
+      ],
+      "roomSideProjectionBeyondFinish_mm": [
+        10.5,
+        7.5
+      ],
+      "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+    },
+    {
+      "id": "wc-north",
+      "axis": 2650,
+      "along": [
+        7200,
+        9300
+      ],
+      "openIntervals": [
+        [
+          7650,
+          8550
+        ]
+      ],
+      "rawSolidLength_mm": 1200,
+      "coreWidth_mm": 140,
+      "proposedDpcWidth_mm": 215,
+      "proposedDpcFaces": [
+        2542.5,
+        2757.5
+      ],
+      "finishedFaces": [
+        2550,
+        2747
+      ],
+      "roomSideProjectionBeyondFinish_mm": [
+        7.5,
+        10.5
+      ],
+      "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+    },
+    {
+      "id": "service-spine",
+      "axis": 9300,
+      "along": [
+        0,
+        8290
+      ],
+      "openIntervals": [
+        [
+          2750,
+          3650
+        ]
+      ],
+      "rawSolidLength_mm": 7390,
+      "coreWidth_mm": 140,
+      "proposedDpcWidth_mm": 215,
+      "proposedDpcFaces": [
+        9192.5,
+        9407.5
+      ],
+      "finishedFaces": [
+        9203,
+        9397
+      ],
+      "roomSideProjectionBeyondFinish_mm": [
+        10.5,
+        10.5
+      ],
+      "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+    },
+    {
+      "id": "utility-north",
+      "axis": 2550,
+      "along": [
+        9300,
+        12000
+      ],
+      "openIntervals": [
+        [
+          10250,
+          11150
+        ]
+      ],
+      "rawSolidLength_mm": 1800,
+      "coreWidth_mm": 140,
+      "proposedDpcWidth_mm": 215,
+      "proposedDpcFaces": [
+        2442.5,
+        2657.5
+      ],
+      "finishedFaces": [
+        2453,
+        2647
+      ],
+      "roomSideProjectionBeyondFinish_mm": [
+        10.5,
+        10.5
+      ],
+      "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+    },
+    {
+      "id": "plant-intermediate-arch",
+      "axis": 3700,
+      "along": [
+        9300,
+        12000
+      ],
+      "openIntervals": [
+        [
+          9650,
+          10925
+        ]
+      ],
+      "rawSolidLength_mm": 1425,
+      "coreWidth_mm": 140,
+      "proposedDpcWidth_mm": 215,
+      "proposedDpcFaces": [
+        3592.5,
+        3807.5
+      ],
+      "finishedFaces": [
+        3603,
+        3797
+      ],
+      "roomSideProjectionBeyondFinish_mm": [
+        10.5,
+        10.5
+      ],
+      "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+    },
+    {
+      "id": "plant-north",
+      "axis": 5877.5,
+      "along": [
+        9300,
+        12000
+      ],
+      "openIntervals": [],
+      "rawSolidLength_mm": 2700,
+      "coreWidth_mm": 140.0,
+      "proposedDpcWidth_mm": 215,
+      "proposedDpcFaces": [
+        5770.0,
+        5985.0
+      ],
+      "finishedFaces": [
+        5780.5,
+        6300
+      ],
+      "roomSideProjectionBeyondFinish_mm": [
+        10.5,
+        0
+      ],
+      "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+    },
+    {
+      "id": "rear-west",
+      "axis": 8852.5,
+      "along": [
+        0,
+        4377.5
+      ],
+      "openIntervals": [
+        [
+          3100,
+          4000
+        ]
+      ],
+      "rawSolidLength_mm": 3477.5,
+      "coreWidth_mm": 140.0,
+      "proposedDpcWidth_mm": 215,
+      "proposedDpcFaces": [
+        8745.0,
+        8960.0
+      ],
+      "finishedFaces": [
+        8755.5,
+        8949.5
+      ],
+      "roomSideProjectionBeyondFinish_mm": [
+        10.5,
+        10.5
+      ],
+      "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+    },
+    {
+      "id": "rear-east",
+      "axis": 8290,
+      "along": [
+        7552.5,
+        12000
+      ],
+      "openIntervals": [
+        [
+          8250,
+          9150
+        ],
+        [
+          10450,
+          11350
+        ]
+      ],
+      "rawSolidLength_mm": 2647.5,
+      "coreWidth_mm": 215.0,
+      "proposedDpcWidth_mm": 215.0,
+      "proposedDpcFaces": [
+        8182.5,
+        8397.5
+      ],
+      "finishedFaces": [
+        8155.5,
+        8424.5
+      ],
+      "roomSideProjectionBeyondFinish_mm": [
+        0,
+        0
+      ],
+      "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+    },
+    {
+      "id": "loggia-west-weather",
+      "axis": 4377.5,
+      "along": [
+        7750,
+        12000
+      ],
+      "openIntervals": [],
+      "rawSolidLength_mm": 4250,
+      "coreWidth_mm": 140.0,
+      "proposedDpcWidth_mm": 215,
+      "proposedDpcFaces": [
+        4270.0,
+        4485.0
+      ],
+      "finishedFaces": [
+        4280.5,
+        4800
+      ],
+      "roomSideProjectionBeyondFinish_mm": [
+        10.5,
+        0
+      ],
+      "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+    },
+    {
+      "id": "loggia-east-weather",
+      "axis": 7622.5,
+      "along": [
+        7750,
+        12000
+      ],
+      "openIntervals": [],
+      "rawSolidLength_mm": 4250,
+      "coreWidth_mm": 140.0,
+      "proposedDpcWidth_mm": 215,
+      "proposedDpcFaces": [
+        7515.0,
+        7730.0
+      ],
+      "finishedFaces": [
+        7200,
+        7719.5
+      ],
+      "roomSideProjectionBeyondFinish_mm": [
+        0,
+        10.5
+      ],
+      "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+    },
+    {
+      "id": "protected-stair-east",
+      "axis": 2894.5,
+      "along": [
+        4173,
+        8949.5
+      ],
+      "openIntervals": [],
+      "rawSolidLength_mm": 4776.5,
+      "coreWidth_mm": 100.0,
+      "proposedDpcWidth_mm": 215,
+      "proposedDpcFaces": [
+        2787.0,
+        3002.0
+      ],
+      "finishedFaces": [
+        2817.5,
+        2971.5
+      ],
+      "roomSideProjectionBeyondFinish_mm": [
+        30.5,
+        30.5
+      ],
+      "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+    },
+    {
+      "id": "protected-west-cross",
+      "axis": 4250,
+      "along": [
+        2817.5,
+        3820.5
+      ],
+      "openIntervals": [
+        [
+          2971.5,
+          3820.5
+        ]
+      ],
+      "rawSolidLength_mm": 154.0,
+      "coreWidth_mm": 100,
+      "proposedDpcWidth_mm": 215,
+      "proposedDpcFaces": [
+        4142.5,
+        4357.5
+      ],
+      "finishedFaces": [
+        4173,
+        4327
+      ],
+      "roomSideProjectionBeyondFinish_mm": [
+        30.5,
+        30.5
+      ],
+      "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+    },
+    {
+      "id": "protected-east-cross",
+      "axis": 4250,
+      "along": [
+        8012.5,
+        9370
+      ],
+      "openIntervals": [
+        [
+          8241.25,
+          9141.25
+        ]
+      ],
+      "rawSolidLength_mm": 457.5,
+      "coreWidth_mm": 100,
+      "proposedDpcWidth_mm": 215,
+      "proposedDpcFaces": [
+        4142.5,
+        4357.5
+      ],
+      "finishedFaces": [
+        4173,
+        4327
+      ],
+      "roomSideProjectionBeyondFinish_mm": [
+        30.5,
+        30.5
+      ],
+      "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+    },
+    {
+      "id": "east-passage-north-weather",
+      "axis": 7922.5,
+      "along": [
+        9397,
+        12000
+      ],
+      "openIntervals": [],
+      "rawSolidLength_mm": 2603,
+      "coreWidth_mm": 140.0,
+      "proposedDpcWidth_mm": 215,
+      "proposedDpcFaces": [
+        7815.0,
+        8030.0
+      ],
+      "finishedFaces": [
+        7500,
+        8019.5
+      ],
+      "roomSideProjectionBeyondFinish_mm": [
+        0,
+        10.5
+      ],
+      "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+    },
+    {
+      "id": "gallery-east-water-weather",
+      "axis": 9300,
+      "along": [
+        6300,
+        7500
+      ],
+      "openIntervals": [],
+      "rawSolidLength_mm": 1200,
+      "coreWidth_mm": 140,
+      "proposedDpcWidth_mm": 215,
+      "proposedDpcFaces": [
+        9192.5,
+        9407.5
+      ],
+      "finishedFaces": [
+        9203,
+        9722.5
+      ],
+      "roomSideProjectionBeyondFinish_mm": [
+        10.5,
+        0
+      ],
+      "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+    }
+  ],
+  "mineralBaseWidthComparison": {
+    "sourceGroundWallSegments": 22,
+    "courseAndBedHeight_mm": 150,
+    "fieldAfter215WidthAndThreeCores_m2": 82.22890525,
+    "additionalFloorTerritory_m2": 0.8284567500000009,
+    "scope": "Only explicit ground-wall segments. Outer/court implicit walls, doorway/end bonds, four portal piers and other structural contacts are NOT silently priced by this number."
+  },
+  "threeDoorTransitions": [
+    {
+      "id": "front-door",
+      "wall": "outer-south",
+      "centre": 6000,
+      "width": 1800,
+      "kind": "door",
+      "swing": "left",
+      "hinge": "low",
+      "leaves": 2,
+      "head": 2850,
+      "spring": 2550,
+      "radialRingTrial": 215,
+      "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+    },
+    {
+      "id": "plant-replacement",
+      "wall": "outer-east",
+      "centre": 4600,
+      "width": 1400,
+      "kind": "door",
+      "swing": "right",
+      "hinge": "low",
+      "leaves": 1,
+      "head": 2850,
+      "spring": 2550,
+      "radialRingTrial": 215,
+      "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+    },
+    {
+      "id": "grand-court-entry-south",
+      "wall": "court-south",
+      "centre": 6000,
+      "width": 1800,
+      "kind": "door",
+      "swing": "left",
+      "hinge": "low",
+      "leaves": 2,
+      "head": 2850,
+      "spring": 2550,
+      "radialRingTrial": 215,
+      "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+    }
+  ],
+  "thresholdCover": {
+    "status": "WITHDRAWN as preferred detail: integral pan retained, but fixed cover and grooved riser rail require custom seal/ends, thin lands and individually closed bolt penetrations without demonstrated whole-house benefit. Geometric trial only.",
+    "integralPanBody_mm": [
+      1796,
+      420,
+      131.5
+    ],
+    "fixedCoverYZ": [
+      [
+        4030,
+        1
+      ],
+      [
+        4057,
+        1
+      ],
+      [
+        4057,
+        5
+      ],
+      [
+        4030,
+        5
+      ]
+    ],
+    "nominalPanApronSlideGap_mm": 1,
+    "coverWidth_mm": 1780,
+    "verticalClampLandZ_mm": [
+      5,
+      15
+    ],
+    "clampLandHeight_mm": 10,
+    "centredShankEdgeClearance_mm": 3.5,
+    "closedFlangeFaceGap_mm": 0,
+    "grooveBottomY_mm": 4058.68,
+    "grooveWidthMinimum_mm": 2.25,
+    "sealCentreZReference": 6.5,
+    "grooveToReferenceBoltHoleWeb_mm": 0.625,
+    "clampMetalBehindGroove_mm": 1.68,
+    "boltEndInset_mm": 6,
+    "referenceBoltLocations": 37,
+    "actualMaximumPitch_mm": 49.111111111111114,
+    "catalogueLinearSeatingBurden_N": 26700,
+    "equalShareBurdenPerBolt_N": 721.6216216216217,
+    "coverMass_kg": 1.5186959999999998,
+    "clampRailMass_kg": 0.42185999999999996,
+    "centralSectionWithdrawal": {
+      "centralSectionOnly": true,
+      "minimumNominalGap_mm": 1,
+      "initialRiserSeparation_mm": 3,
+      "northTranslation_mm": 500,
+      "scope": "Analytic central-section nonintersection after bolt/end release; fixed rail separates northward from the pan riser. No 3D end, tolerance, apparatus, bearing or physical renewal pass."
+    },
+    "coverCantileverSensitivity": {
+      "force_N": 1500,
+      "loadedWidth_mm": 100,
+      "stress_MPa": 75.9375,
+      "tipDeflection_mm": 0.0345990234375,
+      "status": "Elastic strip sensitivity, not selected loading, strength, bearing, anchor, fatigue or physical pass"
+    },
+    "mandatoryBeforeProgress": [
+      "Actual loaded working gap and machined face/stop budget; the 0.08 mm catalogue band is not earned on formed pan",
+      "A supplied custom straight/end-return seal and complete constituents; circular 20–150 mm range is not this 1780 mm joint",
+      "Two released end closures with actual pan end-wall extent and no trapped corner or leak bypass; fixed rail is continuously welded to the fixed cover",
+      "Actual screw heads/tool, hole edge, plate bending and restraint; no bolt capacity or pretension is assigned",
+      "Every dry-riser bolt penetration needs an evidenced closed welded boss or its own sealed boundary; an ordinary captive nut is a bypass",
+      "Walking line, supported cover and sliding tolerance, floor access and full NORTH 500 mm withdrawal; nominal 1 mm gap is not a physical clearance pass",
+      "Fixed return/thermal bridge, first-wetting and inspection/renewal sequence; no pan or field geometry adoption"
+    ]
+  },
+  "stockPriceScreen": {
+    "source": "https://stainlesseurope.co.uk/en_GB/p/Stainless-steel-sheet-1-X-1000-X-2000-mm-2B-1.4404/40850",
+    "accessed": "6 November 2026",
+    "productCode": "S-BL-MZ3/1.0X1000X2000/1.4404/2B",
+    "sheet_mm": [
+      1,
+      1000,
+      2000
+    ],
+    "priceGBP_withoutVAT": 216.53,
+    "supplierNominalMass_kg": 16,
+    "scope": "Advertised stock-only price, not a quotation, landed UK price, stock reservation, constituent acceptance or installed assembly cost. One full sheet per occupied layout slot is an explicit no-offcut-reuse scenario; returns are not silently nested into waste. No purchase.",
+    "oneFullSheetPerOccupiedSlot_count": 60,
+    "oneFullSheetPerOccupiedSlot_GBP_withoutVAT": 12991.8,
+    "oneFullSheetPerOccupiedSlot_stockArea_m2": 120.0,
+    "oneFullSheetPerOccupiedSlot_supplierNominalMass_kg": 960
+  },
+  "concreteControl": {
+    "status": "Conditional complete-route challenger, not a universal membrane waiver",
+    "source": "https://assets.publishing.service.gov.uk/media/5a8192a0e5274a2e8ab54b5f/BR_PDF_AD_C_2013.pdf",
+    "sourceRole": "England AD C 2004 edition with 2010/2013 amendments, paragraphs 4.17–4.22 and 5.5; accessed 6 November 2026. Guidance control, not project acceptance or proof of connected support, floor-joint, air or gas performance.",
+    "inSituGuidanceControl": {
+      "minimumThickness_mm": 100,
+      "minimumCement_kg_per_m3": 300,
+      "minimumReinforcementCover_mm": 40
+    },
+    "requires": [
+      "Actual monolithic concrete/crack/construction-joint air and moisture performance under the assigned exposures",
+      "Continuous external and internal wall/pier DPC, floor/wall and three actual threshold transitions",
+      "Actual wet-tolerant subfloor and outdoor contacts, gravity routes, vapour/drying and condensation consequences",
+      "Site-specific ground-gas and pressure-water suitability without relying on active dewatering",
+      "Complete constituents, intervention route and actual thermal/heat price"
+    ]
+  },
+  "unassignedContacts": [
+    "Actual lower-flight/toe three-dimensional contact; only lowerFlightX and bearing axis are bound",
+    "Four lower loggia portal piers and source-proposed upper L piers require their own source/bearing/exposure boundary",
+    "Ground-wall/base junction is not a demonstrated continuous internal-wall DPC or a qualified metal-to-mineral air/moisture joint"
+  ],
+  "admission": {
+    "selected": false,
+    "material": false,
+    "structural": false,
+    "airMoisture": false,
+    "thermal": false,
+    "weatherPhysical": false,
+    "site": false
+  }
+}

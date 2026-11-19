@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "scope": "Static comparative architectural geometry on the selected Study occurrence. No fit, rating, specimen approval or shape transfer beyond it.",
+  "sourceBlobs": {
+    "project/had/studies/water-replan.json": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+    "project/mat/studies/whole-house-service-baseline.json": "049161ebac29b24e0acc7d8085302fca906fe9d2",
+    "project/mat/studies/service-material-offer.json": "e5686440fa6a3f68387576883b1e0c768e0596bb",
+    "project/mat/studies/tempered-kitchen-air.json": "b18044acaec99caf00eab9a542fff78e510857c9",
+    "project/mat/studies/local-extract-heat-and-store.json": "550709d0e0ca0acff81cb42e502640771f4ac2d0",
+    "project/had/studies/receiver-selection.json": "2def3f7221d55b180cd46392a227b8c56972d03f",
+    "project/mat/studies/whole-house-leakage-duty.json": "5b93cdd9ea1ee7d825fa4596a44caf06431afc49",
+    "project/mat/studies/loggia-soffit.json": "c9c914169547bd42b90cd69512ba1a28d97ca6fe",
+    "project/mat/studies/joined-cooker-system.json": "d04dd78ba3fd040c7abd1aecb94aa9a3ce95d5e0",
+    "project/ias/studies/shared-family-bathing.json": "f89302f9d87708b5314bd68a768c976efcd07b8d",
+    "project/ias/studies/household-water.json": "30c96e79dd3a35c96bb30e355b668c9a710a4060",
+    "project/ias/studies/fitted-wc-schedule.json": "5e20c73409b5406a2de9d7ee7e5853e9302189c8",
+    "project/ias/studies/utility-first-release.json": "be84a64623c8042a002af108a784b8668acd7542",
+    "project/ias/studies/utility-host-revised-route.json": "69e6b0aa5e1847f09c7ac3da3b98eec9bf1d5c0b",
+    "project/str/studies/reconciled-house-interface.json": "4d3080dc4540ce7218b86f1d27518fbeb1f8e85d",
+    "project/str/studies/current-house-arch-movement.json": "05db94a987c7bf45b885c6d02f701b31bcf91740",
+    "project/str/studies/house-corner-rewind.json": "6471d89c213724ec02a26d797c85185beadb25b5"
+  },
+  "sourceSha256": {
+    "bay": "d1fb2d528c82df414451701aafbdbb29e01be01453ad848213c87344cb822c8f",
+    "window": "3ebdd8711d96647bccf9a303fd133de148b0e8120fb46aa7957641cc5511071a",
+    "sash": "55681e4e870157e97a6ccfcfb5c8dbfa7f061053ff77f4a2329e7b7fc62eccb5",
+    "room": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593"
+  },
+  "occurrence": {
+    "level": "GROUND",
+    "host": "outer-south",
+    "id": "south-window-0",
+    "centre": 2100,
+    "width": 1000,
+    "sill": 750,
+    "spring": 2550,
+    "head": 2850,
+    "radius": 566.6666666666666,
+    "centreZ": 2283.3333333333335
+  },
+  "e0": {
+    "roomFace": 429.5,
+    "lining": 27,
+    "joint": 12,
+    "normalInset": 39,
+    "frameWidth": 922,
+    "frameAxis": [
+      220,
+      348
+    ],
+    "crownZ": 2811,
+    "shoulderZ": 2540.0649268529296
+  },
+  "e1": {
+    "frameWidth": 922,
+    "proposedIsolatedPadQ": [
+      282.5,
+      317.5
+    ],
+    "frameFixingLineQ": 300,
+    "nominalOldJointReserve": 12,
+    "hold": "17.5 mm nominal offset to both ends of the trial 35 mm pad; no fixing or support capacity follows."
+  },
+  "e2": [
+    {
+      "id": "Tight carrier",
+      "plate": 3,
+      "structureFit": 4,
+      "openDryRelease": 5,
+      "nominalWetCassette": false,
+      "nested": 12,
+      "additionalInset": 4,
+      "remainingFrameWidth": 914,
+      "nominalDryReleaseAfterSettings": 1,
+      "crownZ": 2807,
+      "shoulderZ": 2539.0241188102013,
+      "outerSashWidthIfProfilesUnchanged": 844,
+      "existingFrameWholeInwardPassAtEachJamb": -4,
+      "unchangedExistingFrameRoomFaceShiftIfLiningCharged": 4
+    },
+    {
+      "id": "Separated carrier",
+      "plate": 4,
+      "structureFit": 5,
+      "openDryRelease": 8,
+      "nominalWetCassette": false,
+      "nested": 17,
+      "additionalInset": 9,
+      "remainingFrameWidth": 904,
+      "nominalDryReleaseAfterSettings": 4,
+      "crownZ": 2802,
+      "shoulderZ": 2537.717120377852,
+      "outerSashWidthIfProfilesUnchanged": 834,
+      "existingFrameWholeInwardPassAtEachJamb": -9,
+      "unchangedExistingFrameRoomFaceShiftIfLiningCharged": 9
+    }
+  ],
+  "retainedControls": {
+    "frameAxis": [
+      220,
+      348
+    ],
+    "portalCore": [
+      222.5,
+      402.5
+    ],
+    "existingCeiling": 3100,
+    "release": {
+      "headDraw": 250,
+      "headFarFaceBeyondLining": 40.5,
+      "headPocketAfterTwo2": 2,
+      "weatherLatticeAfterTwo2": [
+        7,
+        7
+      ],
+      "movingFrameSideTopBottom": [
+        21,
+        18
+      ],
+      "glassOnlyMovingMassKg": 24.12856
+    },
+    "allowedFirstRestPlan": [
+      1350,
+      475,
+      1200,
+      700
+    ],
+    "occupiedApron": [
+      2917.5,
+      1225
+    ],
+    "roomFaceWithRetainedMineralAndAdditionalPanel": 456.5,
+    "controls": [
+      "Retain structural arch and support; no packing against glass or trim.",
+      "Keep the exterior drainage and permanent dry line separately inspectable.",
+      "Trial weather upstand is kept separately supported. No seal or exit relies on the retained carrier."
+    ]
+  }
+}

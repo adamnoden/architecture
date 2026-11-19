@@ -1,0 +1,335 @@
+{
+  "status": "Source-located SW corner interface; four-bore geometry is a conditional design enquiry, no structural/material/physical acceptance",
+  "inputs": {
+    "project/had/studies/open-north-loggia.json": {
+      "path": "project/had/studies/open-north-loggia.json",
+      "blob": "25faad2c4d40df2b7da7212f73808843a88d2f52"
+    },
+    "project/had/studies/open-north-loggia.mjs": {
+      "path": "project/had/studies/open-north-loggia.mjs",
+      "blob": "92df870ae7ff8de65ea16566dda449cacc1c39b7"
+    },
+    "project/had/studies/open-north-facade-projection.json": {
+      "path": "project/had/studies/open-north-facade-projection.json",
+      "blob": "eb70d77ee57571088c4a73caa076681dc00590cd"
+    },
+    "project/str/studies/physical-slab-join.json": {
+      "path": "project/str/studies/physical-slab-join.json",
+      "blob": "79b28df58f00fcf6e31a97cd376efe15a6c2566f"
+    },
+    "project/str/studies/sw-corner-station.json": {
+      "path": "project/str/studies/sw-corner-station.json",
+      "blob": "2c215912f4b55ca4587e32763bf66160d4b433d0"
+    },
+    "project/mat/studies/warm-receiving-grid.json": {
+      "path": "project/mat/studies/warm-receiving-grid.json",
+      "blob": "a5bff9f37b8d78dfb32359427314b4013fe8a45e"
+    }
+  },
+  "occurrence": {
+    "selectedHAD": "HAD-B-OPEN-LOGGIA-2026-11-02",
+    "corner": "outer-south \u00d7 outer-west, GROUND ordinary; not loggia sidewall or IAS NW window",
+    "axis": [
+      332.5,
+      332.5
+    ],
+    "outerSouthAxisY": 208.75,
+    "outerWestAxisX": 208.75,
+    "ordinaryPerpendicularLayers_mm": [
+      [
+        "weather brick",
+        0,
+        102.5
+      ],
+      [
+        "drained cavity",
+        102.5,
+        152.5
+      ],
+      [
+        "bare glass",
+        152.5,
+        262.5
+      ],
+      [
+        "140 core",
+        262.5,
+        402.5
+      ],
+      [
+        "27 finish",
+        402.5,
+        429.5
+      ]
+    ],
+    "cornerLayerJoint": "L-shaped turn with min(x,y) shell-distance ownership is a MAT trial; HAD exports enclosure axes, not a bonded physical corner."
+  },
+  "vertical": {
+    "groundFFL": 0,
+    "floorRoomToVoid": [
+      15,
+      65,
+      200,
+      320
+    ],
+    "floorZ": [
+      0,
+      -15,
+      -80,
+      -280,
+      -600
+    ],
+    "warmRC": [
+      -380,
+      -80
+    ],
+    "upperMortar": [
+      -390,
+      -380
+    ],
+    "AAC": [
+      -605,
+      -390
+    ],
+    "lowerMortar": [
+      -615,
+      -605
+    ],
+    "mineralDPC": [
+      -765,
+      -615
+    ],
+    "coldRC": [
+      -1257,
+      -765
+    ],
+    "continuousPier": [
+      -80,
+      6410
+    ],
+    "roofCapPlate": [
+      6410,
+      6430
+    ],
+    "continuousBarTrial": [
+      -990,
+      6410
+    ],
+    "note": "Cold RC and local warm pad dimensions are bound to the STR station candidate, which is not selected or structurally qualified. Warm-grid material/thermal values came from a 519.5 loggia sidewall and cannot transfer to this 429.5 SW corner."
+  },
+  "plan": {
+    "warmPadXY": [
+      262.5,
+      262.5,
+      562.5,
+      562.5
+    ],
+    "coldReceiverXY": [
+      -50,
+      -50,
+      777,
+      777
+    ],
+    "ordinaryCoreCornerXY": [
+      262.5,
+      262.5,
+      402.5,
+      402.5
+    ],
+    "roofPointXY": [
+      332.5,
+      332.5
+    ],
+    "barCentresXY": [
+      [
+        322.5,
+        322.5
+      ],
+      [
+        322.5,
+        502.5
+      ],
+      [
+        502.5,
+        322.5
+      ],
+      [
+        502.5,
+        502.5
+      ]
+    ],
+    "barDiameter": 20,
+    "boreDiameter": 60,
+    "boreToPadEdgeMin": 30.0,
+    "boreToBoreClearMin": 120,
+    "roomProjectionBeyondFinish": 133.0,
+    "glassIntrusion": 0,
+    "drainedGapIntrusion": 0,
+    "boreAreaFraction": 0.12566370614359174,
+    "fourBoreArea_mm2": 11309.733552923255,
+    "steelArea_mm2": 1256.6370614359173,
+    "annulusArea_mm2": 10053.096491487338,
+    "boreVolumeBand_m3": 0.004354247417875453,
+    "annulusVolumeBand_m3": 0.0038704421492226256,
+    "fullHeightPierCoreReplaced_m2": 0.0644,
+    "fullHeightRoomToePlan_m2": 0.017689000000000003,
+    "furnitureRectangleIntersections": {
+      "groundFurniture": [],
+      "upperFurniture": []
+    },
+    "roofCapNominalGapToTrialHip_mm": 58.54358438968029,
+    "roofPointBilinearFractionsThoughtExperiment": [
+      0.8919753086419753,
+      0.05246913580246913,
+      0.05246913580246913,
+      0.0030864197530864196
+    ],
+    "limit": "These fractions only demonstrate one nonnegative roof-only equilibrium allocation; actual stiffness, bending, contact, tie capacity, wind combination and biaxial force path belong to STR. The pier replaces a joined 0.0644 m2 ordinary core overlap and projects a 133\u00d7133 mm toe into both storeys; furniture rectangles do not certify door/route/fire/roof clearances. Trial lowered hip-to-cap gap is nominal geometry, not qualified hip seat/tolerance."
+  },
+  "continuousMetalFieldChallenger": {
+    "fieldZ_mm": [
+      -574,
+      -573
+    ],
+    "patchZ_mm": [
+      -574,
+      -571
+    ],
+    "structuralPatch_mm": [
+      262.5,
+      262.5,
+      562.5,
+      562.5
+    ],
+    "fieldThickness_trial_mm": 1,
+    "thickerPatch_trial_mm": 3,
+    "grossBounds_mm": [
+      0,
+      0,
+      12000,
+      12000
+    ],
+    "grossSquareNotActualFloorArea_m2": 144,
+    "grossFieldMass_kg_at_7850": 1130.3999999999999,
+    "grossExtraPatchMass_kg_at_7850": 1.413,
+    "freeExpansion12m_20K_mm_at_16e6": 3.84,
+    "meaning": "Whole-footprint welded sheet concept at local AAC datum, joined continuously to unpierced split-rod patch. A gross 12m bounding square is not a measured actual sheet area or takeoff. Sheet at this datum hangs below much of the suspended slab: an independent substrate/support and all crossings are unplanned.",
+    "failure": "No complete evidenced sheet assembly, perimeter/court connection, movement seam, rod weld/force route, moisture/gas test or repair strategy is established. Reject as a completed assembly; retain for coupled structural, moisture, thermal, construction and material challenge."
+  },
+  "splitRodDiaphragmRedesign": {
+    "plateXY": [
+      262.5,
+      262.5,
+      562.5,
+      562.5
+    ],
+    "plateZ": [
+      -574,
+      -571
+    ],
+    "plateThickness_mm": 3,
+    "upperRodZ": [
+      -571,
+      6410
+    ],
+    "lowerRodZ": [
+      -990,
+      -574
+    ],
+    "upperRodLength_mm": 6981,
+    "lowerRodLength_mm": 416,
+    "weldNote": "Four upper and four lower rod ends join opposite faces of one unperforated plate. Weld size, alloy, fatigue, anchorage, contact and construction access not designed.",
+    "plateMass_kg_at_7850": 2.1195,
+    "thermalSeriesIndicator_WK": 0.16446325667803577,
+    "boundaryResult": "FAIL as a complete envelope: no evidenced gas-tight and capillary-tight junction from plate perimeter to actual field barrier, no compatible movement joint, and no admissible field gas barrier established. An unperforated plate alone does not close its perimeter or the rod/concrete interfaces.",
+    "movementChallenge": "Rigid welded crossing ties warm and cold receivers; imposed relative translation, rotation, shrinkage and temperature cycles load bars, welds, plate, concrete and perimeter joint. Their magnitudes and allowable movement require a coupled structural/thermal design; do not assert a sliding or sealed joint.",
+    "erection": "Prefabricate and inspect accessible rod-to-plate welds; survey and anchor lower rods before casting cold receiver; protect plate and join its perimeter before closing the warm work; position long upper rods and reinforcement, then cast warm receiver and pier. This is a proposed sequence requiring fit, temporary support and pre-concealment inspection, not a method statement."
+  },
+  "controls": {
+    "twoTensionOnly": {
+      "centresXY": [
+        [
+          337.5,
+          337.5
+        ],
+        [
+          487.5,
+          487.5
+        ]
+      ],
+      "nearInterpolation": 1.0333333333333334,
+      "farInterpolation": -0.03333333333333344,
+      "result": "FAIL: roof point outside their convex hull; far tie would be compression for roof-only uplift. Contact compression might change equilibrium; arbitrary biaxial moment remains unsolved."
+    },
+    "centred300": {
+      "padXY": [
+        182.5,
+        182.5,
+        482.5,
+        482.5
+      ],
+      "glassIntrusion": 80,
+      "glassRemainingBeforeCavity": 30,
+      "drainedGapIntrusion": 0,
+      "result": "Not the selected full-glass corner; does not directly occupy the 50 drained slot."
+    },
+    "solidRCBypass": {
+      "samePlanXY": [
+        262.5,
+        262.5,
+        562.5,
+        562.5
+      ],
+      "band": [
+        -765,
+        -380
+      ],
+      "isolatedAxialG_WK": 0.40909090909090906,
+      "result": "Direct continuous RC heat/capillary bridge through the intended mineral break; rejected as a dry thermal-break substitution."
+    },
+    "bareOrUnsealedBores": {
+      "result": "FAIL: four penetrations interrupt 215 AAC, two 10 mortar beds and entire 150 mineral DPC; a 20 mm annulus is a reservation, not water/air/gas sealing or shear restraint."
+    }
+  },
+  "isolatedAxialIndicators": {
+    "steelLambdaAuthored_WmK": 50,
+    "fourShanksG_WK": 0.16319961836830096,
+    "solidRCG_WK": 0.40909090909090906,
+    "at20K_fourShanks_W": 3.2639923673660194,
+    "at20K_solidRC_W": 8.181818181818182,
+    "limit": "Fixed-end one-dimensional steel/RC conductance only. Neither includes lateral conduction, full AAC/DPC/annulus, contact, films, soil or climatic temperatures. No \u03c8, U, fRsi, condensation or ISO result."
+  },
+  "pathSchedule": [
+    {
+      "path": "signed force",
+      "sequence": "assumed roof cap at +6410..+6430 \u2192 four continuous pier bars and tied RC 300 square from +6410 to \u221280 \u2192 four \u00d860 band crossings \u2192 cold grid",
+      "hold": "STR actual roof hip/seat, cap welded bar ends, cage ties, anchorage, signed N/M/V, stiffness/contact and cold grid; no equal sharing or AAC/DPC tension/shear credit"
+    },
+    {
+      "path": "capillary",
+      "sequence": "cold grid \u2192 150 mineral DPC \u2192 215 AAC \u2192 warm pad / ordinary core",
+      "hold": "Four \u00d860 bores destroy continuous mineral course unless exact bonded mineral/metal collars and anti-bypass termination are proved; ordinary room/cavity finishes cannot wick across"
+    },
+    {
+      "path": "air/gas",
+      "sequence": "floor field and ordinary plaster \u2192 supported joint at warm pad/bores \u2192 sealed indoor boundary",
+      "hold": "No continuous seal at shanks, cold grid, brick/perps or floor edge defined; site gas duty distinct"
+    },
+    {
+      "path": "thermal",
+      "sequence": "110 glass and floor320 glass return around full-height warm RC pier, four steel shanks and cold receiver",
+      "hold": "Pier replaces ordinary core and projects into both room corners; point and corner 3D conduction, condensation and drying; prior loggia 2D \u03c8 does not transfer"
+    },
+    {
+      "path": "rain/cavity",
+      "sequence": "102.5 weather brick \u2192 50 drained cavity turning SW corner \u2192 exterior declaration, separate from DPC",
+      "hold": "Cavity head/base tray, fire closure, mortar droppings, splash and blocked discharge; no tie across drained slot"
+    },
+    {
+      "path": "movement/repair",
+      "sequence": "cold RC/starter erection \u2192 bored mineral courses \u2192 full-height tied 300 RC pier and cap bars \u2192 floor/wall/roof glass, cavity and finishes",
+      "hold": "Core/cold differential motion, corrosion/electrochemistry, bored-unit bond/crack, cap-weld/tool/cage access, pre-concealment test and eventual embedded-anchor renewal method"
+    }
+  ],
+  "decision": "A split-rod unperforated diaphragm removes the four plate penetrations in principle but its perimeter and movement interface remain unresolved; neither crossing is a complete envelope. Reject bare shanks and solid RC bypass as complete envelope solutions. Do not infer conventional component availability, material approval, site suitability or six-row completion."
+}

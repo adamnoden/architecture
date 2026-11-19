@@ -1,0 +1,279 @@
+{
+  "sourceHashes": {
+    "project/str/studies/floor-portal-north-transfer.json": "32c028800665a2bc6f792aa0f56c108918f831d7e254b9f42b2dac228b5887f4",
+    "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+    "project/had/studies/open-north-loggia.json": "542781c6bb1d277b20492e8433cea498e98eaea5db2e737a5ec7e9655f9d18fd",
+    "project/mat/studies/loggia-soffit.json": "b02717a9ad5431259f9f0f1850ab7f596cf612bc13f04fbd9bdfc7b5f893fc29"
+  },
+  "frozenOldNorthUpliftReferenceKN": 33.207486,
+  "outerUBar": {
+    "pairedBarAxesXmmAtWest": [
+      4324.5,
+      4430.5
+    ],
+    "circleCentreYZmm": [
+      11602.5,
+      3261.0
+    ],
+    "outerTangentYmm": 11667.5,
+    "bendCentrelineRadiusMm": 65.0,
+    "arcTopBottomZmm": [
+      3326.0,
+      3196.0
+    ],
+    "spareOuterCoverBeyondScreenMm": 2.0,
+    "sameForcePairKN": 35.1233025,
+    "barStressAtEqualShareMPa": 155.27908918297015,
+    "minimumBondTrialPastInboardLoadLineMm": 221.8272702613859,
+    "inboardBarTailTargetYmm": 11308.172729738613,
+    "scope": "Position comparator; the bend mandrel, concrete split/bearing, link leg, manufacturing and node loading path are unqualified."
+  },
+  "outerUnderBodyCapture": {
+    "rodAxisXYmm": [
+      4377.5,
+      11667.5
+    ],
+    "plate12Washer8Nut19Only": [
+      12,
+      8,
+      19
+    ],
+    "remainingVerticalToolSpaceAboveCrownComparatorMm": 48.0,
+    "maxCrownExtradosComparatorZmm": 3065.0,
+    "lowerSolidPierWindowXBoundsMm": [
+      4307.5,
+      4520
+    ],
+    "minimumOpeningWithSettingMm": [
+      140,
+      92
+    ],
+    "pierPocketNominalBodyFractionWithinClearanceOpening": 0.28191518467852256,
+    "pierStructuralWestSideMarginAfterOpeningMm": 0.0,
+    "belowSlabPierPocketRejected": true,
+    "surfacePlate120x72": {
+      "grossPlatePlanXYmm": [
+        120,
+        72
+      ],
+      "oneDiagonalStrutGrossProjectedDemandMPa": 9.230646609452448,
+      "oneDiagonalResultantKN": 48.33615111846104,
+      "oneDiagonalScope": "Lumped plate footprint projected normal to a 130 by 137.5 force path; no load-spreading or strut confinement is credited.",
+      "assumingUniformNetContactDemandMPa": 4.356723412804926,
+      "grossSideGapToNearestH12After10SettingMm": -23.0,
+      "longitudinalEdgeReserveAtOutboardAfter10SettingMm": 0.0
+    },
+    "flush120x72ClashesInCageByMm": 1.0,
+    "flush70x72": {
+      "grossPlatePlanXYmm": [
+        70,
+        72
+      ],
+      "oneDiagonalStrutGrossProjectedDemandMPa": 17.492532110075803,
+      "oneDiagonalResultantKN": 48.33615111846104,
+      "oneDiagonalScope": "Lumped plate footprint projected normal to a 130 by 137.5 force path; no load-spreading or strut confinement is credited.",
+      "assumingUniformNetContactDemandMPa": 8.256206462846043,
+      "grossSideGapToNearestH12After10SettingMm": 2.0,
+      "longitudinalEdgeReserveAtOutboardAfter10SettingMm": 0.0
+    },
+    "scope": "Separate end unit. Pocket on the retained compression pier is a geometry cost, contact demand is a gross average and no concrete splitting/bolt/plate capacity is established."
+  },
+  "innerOverBodyCapture": {
+    "rodAxisXYmm": [
+      4377.5,
+      11530
+    ],
+    "stackTopZmm": 3409,
+    "remainingTo15MmFinishUndersideBeforeToolsMm": 26,
+    "requiresLocalDistributionRecess": true
+  },
+  "capLoadPaths": [
+    {
+      "pointXYmm": [
+        4377.5,
+        11530
+      ],
+      "referenceOriginAtCentreHeadXYmm": [
+        4500,
+        11667.5
+      ],
+      "signedConservationChecks": [
+        {
+          "referenceVKNandMxMyKNm": [
+            -33.207486,
+            4.566029325000001,
+            -4.067917035000001
+          ],
+          "signedSupportVKN": {
+            "P25": -28.113762366472194,
+            "P29": -2.54729669456067,
+            "P24": -2.5464269389671363
+          },
+          "forceAndMomentResiduals": [
+            0.0,
+            8.881784197001252e-16,
+            0.0
+          ]
+        },
+        {
+          "referenceVKNandMxMyKNm": [
+            33.207486,
+            -4.566029325000001,
+            4.067917035000001
+          ],
+          "signedSupportVKN": {
+            "P25": 28.113762366472194,
+            "P29": 2.54729669456067,
+            "P24": 2.5464269389671363
+          },
+          "forceAndMomentResiduals": [
+            0.0,
+            -8.881784197001252e-16,
+            0.0
+          ]
+        }
+      ],
+      "verticalOnlyUpliftFractions": {
+        "P25": 0.8466091762102134,
+        "P29": 0.07670850767085077,
+        "P24": 0.07668231611893583
+      },
+      "referenceUpliftKN": {
+        "P25": 28.113762366472194,
+        "P29": 2.54729669456067,
+        "P24": 2.5464269389671363
+      },
+      "xBranchMaxPointMomentKNmAtReference": 3.7559797349765263,
+      "yBranchMaxPointMomentKNmAtReference": 4.215776029497909,
+      "assumesPositiveAnchorageAtAllThreeHeads": true
+    },
+    {
+      "pointXYmm": [
+        7622.5,
+        11530
+      ],
+      "referenceOriginAtCentreHeadXYmm": [
+        7500,
+        11667.5
+      ],
+      "signedConservationChecks": [
+        {
+          "referenceVKNandMxMyKNm": [
+            -33.207486,
+            4.566029325000001,
+            4.067917035000001
+          ],
+          "signedSupportVKN": {
+            "P26": -28.400235397105998,
+            "P31": -2.54729669456067,
+            "P27": -2.2599539083333333
+          },
+          "forceAndMomentResiduals": [
+            0.0,
+            8.881784197001252e-16,
+            -8.881784197001252e-16
+          ]
+        },
+        {
+          "referenceVKNandMxMyKNm": [
+            33.207486,
+            -4.566029325000001,
+            -4.067917035000001
+          ],
+          "signedSupportVKN": {
+            "P26": 28.400235397105998,
+            "P31": 2.54729669456067,
+            "P27": 2.2599539083333333
+          },
+          "forceAndMomentResiduals": [
+            0.0,
+            -8.881784197001252e-16,
+            8.881784197001252e-16
+          ]
+        }
+      ],
+      "verticalOnlyUpliftFractions": {
+        "P26": 0.8552359367735937,
+        "P31": 0.07670850767085077,
+        "P27": 0.06805555555555555
+      },
+      "referenceUpliftKN": {
+        "P26": 28.400235397105998,
+        "P31": 2.54729669456067,
+        "P27": 2.2599539083333333
+      },
+      "xBranchMaxPointMomentKNmAtReference": 3.7910726812291666,
+      "yBranchMaxPointMomentKNmAtReference": 4.215776029497909,
+      "assumesPositiveAnchorageAtAllThreeHeads": true
+    }
+  ],
+  "P25HistoricalStarterCollision": {
+    "olderStarterCentreXYmm": [
+      4500,
+      11700
+    ],
+    "currentP25CentreXYmm": [
+      4500,
+      11667.5
+    ],
+    "referenceTranslationXYmm": [
+      0,
+      -32.5
+    ],
+    "centralSleeveZExtentsMm": [
+      -300,
+      -180
+    ],
+    "centrelineDistanceMm": 7.767014084090988,
+    "nearestOldStarterId": "P8",
+    "centralSleeveBareClearanceMm": -19.232985915909012,
+    "sleeveDepthControlZmm": -400,
+    "maxLocalShiftEitherSideMm": 24,
+    "maximumSampleCentrelineDistanceMm": 31.767014084090988,
+    "XShiftAtMaximumSampleDistanceMm": 24,
+    "maximumContinuousBareClearanceBoundMm": 5.317014084090985,
+    "chordEnvelopeAllowanceMm": 0.05,
+    "maximumContinuousClearanceAfter10SettingMm": -4.682985915909015,
+    "assessment": "Translated historical H22 starter lines only. The central 120 mm embedment hits an old starter. All same-Y shifts permitted in the 140 mm core fail the 10 mm relative setting screen at 220 mm embedment. Do not treat the translated cage as current structure."
+  },
+  "recessedWiderPlateDepthComparisons": [
+    {
+      "trialDepthMm": 218,
+      "newLocalSoffitZmm": 3152,
+      "localSoffitDropBelowOrdinarySlabMm": 18,
+      "clearToClosestBottomH12After10SettingMm": -11.0,
+      "lowerRecessHardwareCrownComparatorClearanceMm": 87.0,
+      "availableToolHeightBeyondStackIfAccessUsesSameCavityMm": 0,
+      "planClearanceToFlatSoffitMm": [
+        325.5,
+        204
+      ]
+    },
+    {
+      "trialDepthMm": 230,
+      "newLocalSoffitZmm": 3140,
+      "localSoffitDropBelowOrdinarySlabMm": 30,
+      "clearToClosestBottomH12After10SettingMm": 1.0,
+      "lowerRecessHardwareCrownComparatorClearanceMm": 75.0,
+      "availableToolHeightBeyondStackIfAccessUsesSameCavityMm": 0,
+      "planClearanceToFlatSoffitMm": [
+        325.5,
+        204
+      ]
+    },
+    {
+      "trialDepthMm": 245,
+      "newLocalSoffitZmm": 3125,
+      "localSoffitDropBelowOrdinarySlabMm": 45,
+      "clearToClosestBottomH12After10SettingMm": 16.0,
+      "lowerRecessHardwareCrownComparatorClearanceMm": 60.0,
+      "availableToolHeightBeyondStackIfAccessUsesSameCavityMm": 0,
+      "planClearanceToFlatSoffitMm": [
+        325.5,
+        204
+      ]
+    }
+  ],
+  "limits": "Positive three-head vertical solution only; does not establish actual distribution, stiffness, cap struts, overlapping bar paths, uplift capacity, moisture crossing or foundation response."
+}

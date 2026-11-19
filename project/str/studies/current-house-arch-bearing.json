@@ -1,0 +1,1102 @@
+{
+  "admitted": false,
+  "controls": [
+    {
+      "coupled": [
+        {
+          "H6Minimum5p7MaximumPitch58NPerMM": 191.2862543387039,
+          "LAndUpstandTorsionFactor": 0.15,
+          "allLowerBearings": true,
+          "crackedEI": 0.2,
+          "floorRoofYawJoin": true,
+          "governingStates": {
+            "adverseLink/0": [
+              58,
+              5,
+              5,
+              2240,
+              -1,
+              -1,
+              0,
+              -2.370058287057631,
+              3.9064960221668077,
+              4.121593078858481,
+              9996.0,
+              406.0
+            ],
+            "adverseLink/1": [
+              81,
+              6,
+              6,
+              2240,
+              -1,
+              1,
+              29,
+              1.7134770341668464,
+              1.9723981032680111,
+              8.389917487314378,
+              8839.764705882335,
+              378.4705882352937
+            ],
+            "adverseRatio/0": [
+              24,
+              4,
+              4,
+              2240,
+              1,
+              1,
+              17,
+              -5.1688986224279105,
+              4.905815165566977,
+              1.2194386891937246,
+              19.270919741248818,
+              14.5656748347013,
+              0.6100743163552542,
+              0.03543158090894101,
+              0.91,
+              1
+            ],
+            "adverseRatio/1": [
+              24,
+              4,
+              4,
+              2240,
+              1,
+              1,
+              18,
+              -0.0060616752507569515,
+              6.481913369955029,
+              0.8492457846960015,
+              17.832294308254188,
+              9.160469731655034,
+              0.7610263930676167,
+              0.06098483766917734,
+              0.88,
+              0
+            ],
+            "nominalLink/0": [
+              58,
+              5,
+              5,
+              2240,
+              -1,
+              -1,
+              0,
+              -2.370058287057631,
+              3.9064960221668077,
+              4.121593078858481,
+              14456.0,
+              486.0
+            ],
+            "nominalLink/1": [
+              81,
+              6,
+              6,
+              2240,
+              -1,
+              1,
+              29,
+              1.7134770341668464,
+              1.9723981032680111,
+              8.389917487314378,
+              13024.470588235272,
+              458.4705882352937
+            ],
+            "nominalRatio/0": [
+              24,
+              4,
+              4,
+              2240,
+              1,
+              1,
+              16,
+              -5.642870138885136,
+              5.153891869547636,
+              1.0576974542432338,
+              22.08354104920731,
+              17.192769870899774,
+              0.4868637782628623,
+              0.023404727936402997,
+              0.92,
+              1
+            ],
+            "nominalRatio/1": [
+              24,
+              4,
+              4,
+              2240,
+              1,
+              1,
+              18,
+              -0.0060616752507569515,
+              6.481913369955029,
+              0.8492457846960015,
+              20.584027929204677,
+              11.812873051817236,
+              0.7610263930676167,
+              0.04678919057634662,
+              0.9,
+              0
+            ]
+          },
+          "maximumSameStateActions": {
+            "adverseLink": [
+              139.4509079088795,
+              139.4639220492215
+            ],
+            "adverseLongitudinalRatio": [
+              0.13764702054411504,
+              0.10490053912642518
+            ],
+            "adverseRatio": [
+              0.3382909156652022,
+              0.4562006237682293
+            ],
+            "adverseStrut": [
+              0.6541758157342993,
+              0.6282995852432265
+            ],
+            "nominalLink": [
+              100.48227724016114,
+              103.4527736763149
+            ],
+            "nominalLongitudinalRatio": [
+              0.11393447588136674,
+              0.08624574757674527
+            ],
+            "nominalRatio": [
+              0.2949014859012039,
+              0.3867916971601785
+            ],
+            "nominalStrut": [
+              0.44674891099259967,
+              0.43551624508193304
+            ]
+          },
+          "memberWindowRecoveries": 49152,
+          "nearBearing": {
+            "compression": {
+              "loadedWindow": 7,
+              "minimumKN": -0.037013431166413646,
+              "otherSeat": {
+                "centroidMomentsXYZkNm": [
+                  0.5830674961915072,
+                  0.0,
+                  -1.7584359966171224
+                ],
+                "edgeEquivalentKN": [
+                  9.272482377818202,
+                  -5.638302207678263
+                ],
+                "forceXYZkN": [
+                  -5.074787226380857,
+                  -2.520373477681643,
+                  6.8252907135617225
+                ],
+                "normalCompressionKN": 3.6341801701399374
+              },
+              "otherWindow": 5,
+              "pointSign": -1,
+              "pointX": 1360,
+              "pressureSign": 1,
+              "seat": {
+                "centroidMomentsXYZkNm": [
+                  -0.10386781381714413,
+                  0.0,
+                  -0.3397204497347694
+                ],
+                "edgeEquivalentKN": [
+                  0.3604953728550269,
+                  -0.39750880402144056
+                ],
+                "forceXYZkN": [
+                  5.473334988687115,
+                  -0.1800301461863637,
+                  -2.961060549288399
+                ],
+                "normalCompressionKN": -0.037013431166413646
+              },
+              "wind": 7,
+              "window": 2
+            },
+            "edge": {
+              "loadedWindow": 4,
+              "minimumKN": -12.243738275084771,
+              "otherSeat": {
+                "centroidMomentsXYZkNm": [
+                  -0.33254227822918453,
+                  0.0,
+                  2.250804596736038
+                ],
+                "edgeEquivalentKN": [
+                  -6.561601036463852,
+                  8.467530301657769
+                ],
+                "forceXYZkN": [
+                  4.173305895354912,
+                  2.8441202918746002,
+                  -0.06570997696951435
+                ],
+                "normalCompressionKN": 1.905929265193918
+              },
+              "otherWindow": 0,
+              "pointSign": -1,
+              "pointX": 2240,
+              "pressureSign": -1,
+              "seat": {
+                "centroidMomentsXYZkNm": [
+                  -0.8117575521021501,
+                  0.0,
+                  3.253421752973283
+                ],
+                "edgeEquivalentKN": [
+                  -12.243738275084771,
+                  12.726024669567865
+                ],
+                "forceXYZkN": [
+                  4.055188146015583,
+                  4.153364642748565,
+                  -1.6161757641274723
+                ],
+                "normalCompressionKN": 0.4822863944830944
+              },
+              "wind": 7,
+              "window": 4
+            }
+          }
+        },
+        {
+          "H6Minimum5p7MaximumPitch58NPerMM": 191.2862543387039,
+          "LAndUpstandTorsionFactor": 0.25,
+          "allLowerBearings": true,
+          "crackedEI": 0.35,
+          "floorRoofYawJoin": true,
+          "governingStates": {
+            "adverseLink/0": [
+              58,
+              2,
+              2,
+              2240,
+              1,
+              1,
+              0,
+              2.315137645619464,
+              8.756788030108675,
+              4.027880621642602,
+              9996.0,
+              406.0
+            ],
+            "adverseLink/1": [
+              81,
+              6,
+              6,
+              2240,
+              -1,
+              1,
+              29,
+              1.7454518067082094,
+              3.2060935937048076,
+              8.365882722271111,
+              8839.764705882335,
+              378.4705882352937
+            ],
+            "adverseRatio/0": [
+              24,
+              4,
+              4,
+              2240,
+              1,
+              1,
+              15,
+              -10.154938493514091,
+              8.604548266475708,
+              0.9210347699597747,
+              19.138245739285587,
+              14.472115408388682,
+              0.3893234777993795,
+              0.022610927773209822,
+              0.92,
+              1
+            ],
+            "adverseRatio/1": [
+              42,
+              7,
+              7,
+              2240,
+              1,
+              1,
+              18,
+              -2.530431759047488,
+              10.303614096701594,
+              0.8991443236568346,
+              17.584694764553877,
+              8.981766203500658,
+              0.8778198826166028,
+              0.07034408206049354,
+              0.87,
+              0
+            ],
+            "nominalLink/0": [
+              58,
+              2,
+              2,
+              2240,
+              1,
+              1,
+              0,
+              2.315137645619464,
+              8.756788030108675,
+              4.027880621642602,
+              14456.0,
+              486.0
+            ],
+            "nominalLink/1": [
+              81,
+              6,
+              6,
+              2240,
+              -1,
+              1,
+              29,
+              1.7454518067082094,
+              3.2060935937048076,
+              8.365882722271111,
+              13024.470588235272,
+              458.4705882352937
+            ],
+            "nominalRatio/0": [
+              58,
+              4,
+              4,
+              2240,
+              1,
+              1,
+              15,
+              -10.01303868462055,
+              8.540073563772607,
+              0.9254867670729924,
+              21.719519017559513,
+              16.92806978986257,
+              0.4238114357155772,
+              0.020373648219736668,
+              0.92,
+              1
+            ],
+            "nominalRatio/1": [
+              24,
+              4,
+              4,
+              2240,
+              1,
+              1,
+              18,
+              -2.5851117659554546,
+              10.384755987215199,
+              0.8653672152720243,
+              20.284213886988482,
+              11.581631944349818,
+              0.8649131033988194,
+              0.05317632134121155,
+              0.89,
+              0
+            ]
+          },
+          "maximumSameStateActions": {
+            "adverseLink": [
+              149.91612927376815,
+              141.1506178994518
+            ],
+            "adverseLongitudinalRatio": [
+              0.13780391189005,
+              0.10685806222778658
+            ],
+            "adverseRatio": [
+              0.5132416610226479,
+              0.6860499044766512
+            ],
+            "adverseStrut": [
+              0.6891217260049631,
+              0.6721101470599932
+            ],
+            "nominalLink": [
+              111.10575220904387,
+              104.5723376486323
+            ],
+            "nominalLongitudinalRatio": [
+              0.11406433944978082,
+              0.08785515821163432
+            ],
+            "nominalRatio": [
+              0.44786982229618183,
+              0.5866813932957734
+            ],
+            "nominalStrut": [
+              0.47852991940127115,
+              0.4710524416191692
+            ]
+          },
+          "memberWindowRecoveries": 49152,
+          "nearBearing": {
+            "compression": {
+              "loadedWindow": 7,
+              "minimumKN": -0.7683541975209405,
+              "otherSeat": {
+                "centroidMomentsXYZkNm": [
+                  0.5970873705688052,
+                  0.0,
+                  -1.7099449645527902
+                ],
+                "edgeEquivalentKN": [
+                  9.589120574381935,
+                  -5.205565879836632
+                ],
+                "forceXYZkN": [
+                  -8.300485289579614,
+                  -2.498897800492771,
+                  9.39495414159381
+                ],
+                "normalCompressionKN": 4.383554694545304
+              },
+              "otherWindow": 5,
+              "pointSign": -1,
+              "pointX": 1360,
+              "pressureSign": 1,
+              "seat": {
+                "centroidMomentsXYZkNm": [
+                  -0.10849711261690756,
+                  0.0,
+                  -0.42273524856448025
+                ],
+                "edgeEquivalentKN": [
+                  0.18916450230561843,
+                  -0.9575186998265589
+                ],
+                "forceXYZkN": [
+                  8.66717551585284,
+                  -0.21886136137716722,
+                  -5.493295032311918
+                ],
+                "normalCompressionKN": -0.7683541975209405
+              },
+              "wind": 7,
+              "window": 2
+            },
+            "edge": {
+              "loadedWindow": 4,
+              "minimumKN": -12.512054977663881,
+              "otherSeat": {
+                "centroidMomentsXYZkNm": [
+                  -0.335305817446376,
+                  0.0,
+                  2.265306647708414
+                ],
+                "edgeEquivalentKN": [
+                  -6.815038984867589,
+                  8.317013592493828
+                ],
+                "forceXYZkN": [
+                  6.4511147233243245,
+                  2.862109246684513,
+                  -1.7383566304632387
+                ],
+                "normalCompressionKN": 1.5019746076262384
+              },
+              "otherWindow": 0,
+              "pointSign": -1,
+              "pointX": 2240,
+              "pressureSign": -1,
+              "seat": {
+                "centroidMomentsXYZkNm": [
+                  -0.8214201558241334,
+                  0.0,
+                  3.259485697483107
+                ],
+                "edgeEquivalentKN": [
+                  -12.512054977663881,
+                  12.58414627542558
+                ],
+                "forceXYZkN": [
+                  6.378960424830506,
+                  4.168942133302078,
+                  -3.3204087557796824
+                ],
+                "normalCompressionKN": 0.07209129776169698
+              },
+              "wind": 7,
+              "window": 4
+            }
+          }
+        },
+        {
+          "H6Minimum5p7MaximumPitch58NPerMM": 191.2862543387039,
+          "LAndUpstandTorsionFactor": 0.08,
+          "allLowerBearings": false,
+          "crackedEI": 0.2,
+          "floorRoofYawJoin": false,
+          "governingStates": {
+            "adverseLink/0": [
+              42,
+              1,
+              6,
+              2240,
+              1,
+              1,
+              0,
+              2.8489309346726337,
+              4.314007503626757,
+              1.274198993762635,
+              9996.0,
+              406.0
+            ],
+            "adverseLink/1": [
+              76,
+              0,
+              0,
+              2240,
+              1,
+              1,
+              18,
+              1.7542319678193827,
+              6.078569412610831,
+              2.633986718951259,
+              5682.70588235293,
+              318.4705882352937
+            ],
+            "adverseRatio/0": [
+              29,
+              0,
+              0,
+              2240,
+              1,
+              1,
+              16,
+              -5.682163959451196,
+              6.326210176887144,
+              2.352162406781929,
+              19.270919741248818,
+              14.5656748347013,
+              0.5393807939605102,
+              0.0313258790439098,
+              0.91,
+              0
+            ],
+            "adverseRatio/1": [
+              29,
+              0,
+              0,
+              2240,
+              1,
+              1,
+              18,
+              1.015679413710046,
+              7.601022720810838,
+              1.4702190010461136,
+              16.857866011393455,
+              8.846913558895302,
+              1.6929821722573202,
+              0.1356670989237959,
+              0.81,
+              0
+            ],
+            "nominalLink/0": [
+              42,
+              1,
+              6,
+              2240,
+              1,
+              1,
+              0,
+              2.8489309346726337,
+              4.314007503626757,
+              1.274198993762635,
+              14456.0,
+              486.0
+            ],
+            "nominalLink/1": [
+              54,
+              5,
+              5,
+              2240,
+              1,
+              -1,
+              29,
+              -2.1864243062719058,
+              1.1897211139117856,
+              8.206816763989991,
+              13024.470588235272,
+              458.4705882352937
+            ],
+            "nominalRatio/0": [
+              29,
+              0,
+              0,
+              2240,
+              1,
+              1,
+              15,
+              -6.163600919805496,
+              6.326210176888928,
+              2.4019849977661782,
+              22.170575263150827,
+              17.253369035711433,
+              0.2515312721492215,
+              0.012091721041879217,
+              0.93,
+              1
+            ],
+            "nominalRatio/1": [
+              29,
+              0,
+              0,
+              2240,
+              1,
+              1,
+              18,
+              1.015679413710046,
+              7.601022720810838,
+              1.4702190010461136,
+              19.578957187884452,
+              11.376761582596611,
+              1.6929821722573202,
+              0.10408740908551774,
+              0.84,
+              0
+            ]
+          },
+          "maximumSameStateActions": {
+            "adverseLink": [
+              159.309187045089,
+              180.3807157009196
+            ],
+            "adverseLongitudinalRatio": [
+              0.16737156685316107,
+              0.14057541381304353
+            ],
+            "adverseRatio": [
+              0.48976421822059535,
+              0.6170731825088764
+            ],
+            "adverseStrut": [
+              0.7414311134637509,
+              0.7687615930878404
+            ],
+            "nominalLink": [
+              113.82506670323755,
+              120.78669162182267
+            ],
+            "nominalLongitudinalRatio": [
+              0.13853835463693467,
+              0.1103055194949254
+            ],
+            "nominalRatio": [
+              0.42456094339896067,
+              0.5174540929860554
+            ],
+            "nominalStrut": [
+              0.497901011991845,
+              0.5209232623166973
+            ]
+          },
+          "memberWindowRecoveries": 49152,
+          "nearBearing": {
+            "compression": {
+              "loadedWindow": 1,
+              "minimumKN": 0.3491087770650221,
+              "otherSeat": {
+                "centroidMomentsXYZkNm": [
+                  1.3918409466128199,
+                  0.0,
+                  -0.410284618473243
+                ],
+                "edgeEquivalentKN": [
+                  10.012092642786842,
+                  -5.778685884649919
+                ],
+                "forceXYZkN": [
+                  -5.883169928123174,
+                  -1.964280866777517,
+                  7.935551620887541
+                ],
+                "normalCompressionKN": 4.233406758136922
+              },
+              "otherWindow": 3,
+              "pointSign": -1,
+              "pointX": 1360,
+              "pressureSign": 1,
+              "seat": {
+                "centroidMomentsXYZkNm": [
+                  -0.9072630006484618,
+                  0.0,
+                  -1.7721317613051533
+                ],
+                "edgeEquivalentKN": [
+                  0.360210950857449,
+                  -0.011102173792426895
+                ],
+                "forceXYZkN": [
+                  4.044924953083035,
+                  -0.8426819375709601,
+                  -1.7616366943039286
+                ],
+                "normalCompressionKN": 0.3491087770650221
+              },
+              "wind": 10,
+              "window": 7
+            },
+            "edge": {
+              "loadedWindow": 7,
+              "minimumKN": -12.639025595254271,
+              "otherSeat": {
+                "centroidMomentsXYZkNm": [
+                  0.010289804092484424,
+                  0.0,
+                  3.0130882525895637
+                ],
+                "edgeEquivalentKN": [
+                  -6.536468802559997,
+                  9.117360582622524
+                ],
+                "forceXYZkN": [
+                  2.8176432397555073,
+                  3.291685195374026,
+                  1.4222676228679265
+                ],
+                "normalCompressionKN": 2.5808917800625277
+              },
+              "otherWindow": 3,
+              "pointSign": -1,
+              "pointX": 2240,
+              "pressureSign": -1,
+              "seat": {
+                "centroidMomentsXYZkNm": [
+                  -1.1128599420123124,
+                  0.0,
+                  2.8963704038374973
+                ],
+                "edgeEquivalentKN": [
+                  -12.639025595254271,
+                  13.41578640532395
+                ],
+                "forceXYZkN": [
+                  2.9715408650208266,
+                  4.118009021736083,
+                  -0.7044928765988072
+                ],
+                "normalCompressionKN": 0.7767608100696779
+              },
+              "wind": 31,
+              "window": 7
+            }
+          }
+        },
+        {
+          "H6Minimum5p7MaximumPitch58NPerMM": 191.2862543387039,
+          "LAndUpstandTorsionFactor": 0.25,
+          "allLowerBearings": false,
+          "crackedEI": 0.35,
+          "floorRoofYawJoin": true,
+          "governingStates": {
+            "adverseLink/0": [
+              55,
+              1,
+              1,
+              2240,
+              -1,
+              -1,
+              0,
+              -2.061788085220391,
+              11.95124866139648,
+              3.9624152861706388,
+              9996.0,
+              406.0
+            ],
+            "adverseLink/1": [
+              81,
+              6,
+              6,
+              2240,
+              -1,
+              1,
+              29,
+              1.744455686109391,
+              4.127903081204116,
+              8.368398917881073,
+              8839.764705882335,
+              378.4705882352937
+            ],
+            "adverseRatio/0": [
+              29,
+              0,
+              0,
+              2240,
+              1,
+              1,
+              15,
+              -10.441248378436812,
+              9.674650884462013,
+              0.9074980246470608,
+              19.138245739285587,
+              14.472115408388682,
+              0.403566132703551,
+              0.023438105325299104,
+              0.92,
+              1
+            ],
+            "adverseRatio/1": [
+              29,
+              0,
+              0,
+              2240,
+              1,
+              1,
+              18,
+              -1.6253567959921154,
+              11.693167038307983,
+              0.8894345316897072,
+              17.6796662979533,
+              9.099082622979385,
+              0.8891950239131325,
+              0.07125562882385421,
+              0.87,
+              0
+            ],
+            "nominalLink/0": [
+              55,
+              1,
+              1,
+              2240,
+              -1,
+              -1,
+              0,
+              -2.061788085220391,
+              11.95124866139648,
+              3.9624152861706388,
+              14456.0,
+              486.0
+            ],
+            "nominalLink/1": [
+              81,
+              6,
+              6,
+              2240,
+              -1,
+              1,
+              29,
+              1.744455686109391,
+              4.127903081204116,
+              8.368398917881073,
+              13024.470588235272,
+              458.4705882352937
+            ],
+            "nominalRatio/0": [
+              9,
+              1,
+              1,
+              2240,
+              1,
+              1,
+              14,
+              -10.87398375371088,
+              9.931082662139834,
+              0.7161647822040045,
+              21.92797893328782,
+              17.07697108267012,
+              0.31254825932429603,
+              0.015024956267196334,
+              0.93,
+              1
+            ],
+            "nominalRatio/1": [
+              29,
+              0,
+              0,
+              2240,
+              1,
+              1,
+              18,
+              -1.6253567959921154,
+              11.693167038307983,
+              0.8894345316897072,
+              20.39771754287835,
+              11.717653440212212,
+              0.8891950239131325,
+              0.05466921490818005,
+              0.89,
+              0
+            ]
+          },
+          "maximumSameStateActions": {
+            "adverseLink": [
+              149.68791659918992,
+              141.10703434956434
+            ],
+            "adverseLongitudinalRatio": [
+              0.1374754293175629,
+              0.10679707886718856
+            ],
+            "adverseRatio": [
+              0.5682206460716784,
+              0.7591406222615682
+            ],
+            "adverseStrut": [
+              0.6636839331438625,
+              0.6802724471704666
+            ],
+            "nominalLink": [
+              113.6628162787249,
+              104.54539588802174
+            ],
+            "nominalLongitudinalRatio": [
+              0.1137924447906408,
+              0.08780501971312595
+            ],
+            "nominalRatio": [
+              0.49483294481231066,
+              0.6491641178739842
+            ],
+            "nominalStrut": [
+              0.4660885288843862,
+              0.4787139921395954
+            ]
+          },
+          "memberWindowRecoveries": 49152,
+          "nearBearing": {
+            "compression": {
+              "loadedWindow": 1,
+              "minimumKN": -0.12189638787222856,
+              "otherSeat": {
+                "centroidMomentsXYZkNm": [
+                  0.6214445102660524,
+                  0.0,
+                  -1.6552573295519195
+                ],
+                "edgeEquivalentKN": [
+                  9.848019424560345,
+                  -4.899514098580929
+                ],
+                "forceXYZkN": [
+                  -9.083492414394707,
+                  -2.4645059510324216,
+                  10.452835323787186
+                ],
+                "normalCompressionKN": 4.948505325979415
+              },
+              "otherWindow": 3,
+              "pointSign": -1,
+              "pointX": 1360,
+              "pressureSign": 1,
+              "seat": {
+                "centroidMomentsXYZkNm": [
+                  -0.11856048363803161,
+                  0.0,
+                  -0.4223857256915309
+                ],
+                "edgeEquivalentKN": [
+                  0.46214937173766857,
+                  -0.5840457596098971
+                ],
+                "forceXYZkN": [
+                  6.410207435472883,
+                  -0.2313721321083949,
+                  -3.5569265385074
+                ],
+                "normalCompressionKN": -0.12189638787222856
+              },
+              "wind": 10,
+              "window": 7
+            },
+            "edge": {
+              "loadedWindow": 7,
+              "minimumKN": -12.265538931665478,
+              "otherSeat": {
+                "centroidMomentsXYZkNm": [
+                  -0.3353274810262479,
+                  0.0,
+                  2.244865326641216
+                ],
+                "edgeEquivalentKN": [
+                  -6.310060202034663,
+                  8.715322038830344
+                ],
+                "forceXYZkN": [
+                  4.412329521478709,
+                  2.831557873349338,
+                  0.37272100357979226
+                ],
+                "normalCompressionKN": 2.405261836795681
+              },
+              "otherWindow": 3,
+              "pointSign": -1,
+              "pointX": 2240,
+              "pressureSign": -1,
+              "seat": {
+                "centroidMomentsXYZkNm": [
+                  -0.8256775950246301,
+                  0.0,
+                  3.2463546731839252
+                ],
+                "edgeEquivalentKN": [
+                  -12.265538931665478,
+                  12.803742970844898
+                ],
+                "forceXYZkN": [
+                  4.787708217548722,
+                  4.159621690343674,
+                  -1.9434798049559778
+                ],
+                "normalCompressionKN": 0.5382040391794196
+              },
+              "wind": 31,
+              "window": 7
+            }
+          }
+        }
+      ],
+      "geometry": {
+        "additionalCharacteristicKN": 15.58372740118053,
+        "admitted": false,
+        "drainedCavity": 50,
+        "insideConcreteFace": 140,
+        "maximumCoverComparison": 40,
+        "minimumAsBuiltWidthComparison": 170,
+        "minimumH6CellAreaMm2": 9996.0,
+        "minimumRadialDepthComparison": 205,
+        "nearLGrossNormalWidth": 180,
+        "nearLInsideLegEnds": 1037.5,
+        "nearLNormalBandZ": [
+          5000,
+          6200
+        ],
+        "newConcreteM3AcrossEight": 0.6233490960472212,
+        "newNearLConcreteM3AcrossFour": 0.40608,
+        "normalH16Centres": [
+          9,
+          91
+        ],
+        "normalWidthNominal": 180,
+        "oneDimensionalAddedWPerKOnArchAndJamb": 0.8434205437170799,
+        "oneDimensionalAddedWPerKOnNearBands": 1.6100806897840318,
+        "outsideConcreteFace": -40,
+        "parallelBarClearAfterTwo5": 56,
+        "remainingOrdinaryGlass": 70,
+        "sourceRoles": "Gross additions into the old insulation, BEFORE near-L/ring intersection reconciliation and without crediting a displaced masonry weight. The RC arch radial depth and full window opening remain the reference. Verify exposed corners, cast steps, main-bar restraint, local shear-centre transition and 3D thermal/cavity joints.",
+        "thermalScope": "Separate gross face screens, before 3D thermal returns and overlap reconciliation. Remaining glass is a nominal geometric thickness, not a delivered product guarantee.",
+        "unchangedFootGlass": 25,
+        "unchangedFootNormal": 225
+      }
+    }
+  ],
+  "method": "JRC Walraven 2008 slides83-87, thin-wall torsion at theta45; C30 fcd17/nu0.528, four H16 ties, same-state longitudinal reserve before biaxial bending. Authored comparison only, not current-code compliance. The 5% steel reserve and cast -10/setout5 challenges are requirements to qualify, not delivered bounds. K uses nominal sections; minimum-section stiffness, longitudinal shear-shift anchorage and full all-head transfer remain open.",
+  "methodSource": "https://eurocodes.jrc.ec.europa.eu/sites/default/files/2022-06/EN1992_1_Walraven.pdf",
+  "role": "Trial near-spring joint releases rotation about the wall normal; all other nominal kinematics retained. Signed contact at each window with the other corner arm on the same state. No contact, joint or construction acceptance.",
+  "sources": {
+    "arch-normal-kernel.py": "8685fc05d57e75ab031a43adc62e1eac9d0118e610c0d3d3c24075784394f3c8",
+    "arch-space-flexibility.py": "61048dc2565027aa4cae679e2fd213f007f7da2b3f82ba4655865da67260afd1",
+    "arch-space-kernel.py": "ed07cf97bfa1d8359a97486a679d3220bbd81c14cccfabc8eed9a01717bd3a24",
+    "arch-width-geometry.py": "c6f310f1dfab9c6e36f49e7511ddf80f1d37596ac43b5868c0205fe67febab1f",
+    "current-house-arch-detail.json": "a0ef80d3e6be8c4b015ede5d292642e36427f04aafca86bac6f7a7b21aaf4aed",
+    "current-house-coupled-arches.py": "e9211a4b4405bf479ad13d46c9bdd226286fdd81284d8aa5242318cbe5a65e29",
+    "current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+    "current-house-window-receivers.json": "7968c876c4926fe5c266e4486aac04afd063ee55993bd95c2dfdff9522162294"
+  }
+}

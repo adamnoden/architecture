@@ -1,0 +1,445 @@
+{
+  "admitted": false,
+  "capture": {
+    "bladeToNWSillAfter5": 8,
+    "closedFrameDraw": 880,
+    "fourFramePads": "X1340..1390/2210..2260, q260..290, local Z1250..1350/2150..2250. All four must engage actual load-rated matched frame fittings while the closed frame is still fixed. Consumer OAS envelope alone does not provide those fittings.",
+    "guardBodyMassLimit": 50,
+    "guardDraw": 665,
+    "newBracketToCapturedGuardRigDuring100": 42.5,
+    "older1640": "The previous L-barrier retains projecting struts. Its 1640 frame draw and rejected tray export remain historical. This new room-side temporary support changes that event.",
+    "qAtPark": {
+      "frame": [
+        -590,
+        -450
+      ],
+      "guard": [
+        -535,
+        -505
+      ]
+    },
+    "sameBladesBelowFrameFailBy": 17,
+    "supportShoeEach": [
+      {
+        "bearingZ": 1950,
+        "designVerticalKN": 0.12656626559999998,
+        "draw": 100,
+        "qRangeBefore": [
+          -32,
+          0
+        ],
+        "x": 1250
+      },
+      {
+        "bearingZ": 1950,
+        "designVerticalKN": 0.12656626559999998,
+        "draw": 100,
+        "qRangeBefore": [
+          -32,
+          0
+        ],
+        "x": 2350
+      }
+    ],
+    "twoSillBlades": [
+      60,
+      20
+    ]
+  },
+  "externalGeometrySources": {
+    "north-export-frame-access.mjs": "da9236cfebfe03c2e95d243f221bac3c3f6916a53b86e09afefe20efbad44a96",
+    "north-export-occurrence.json": "0dc62373393811e3103800b9d8e3ed8bc0b2beb278503816695370122c434eb9"
+  },
+  "handling": {
+    "SKF": "KR52 PPA OD52, 20 stud, 24 running width, C15.7/C0 27 kN catalogue. Positive upper/lower rollers and separately guided lateral faces. Ordinary vertical hoist takes the captured cassette at q\u2212520, with the worker basket independently retreated. Minimum actual WLL must include the cassette plus positive lifting yoke. Establish complete ground-supported rail/hoist heads, actuator brake, travel stops, wind/coordinated handling and erection before use.",
+    "grossMovingKg": 300.0,
+    "hoistHandoff": {
+      "axialSuspendedMassBudget": 250,
+      "legForceAtEqualShareKN": 2.1239273027813352,
+      "maximumTwoLegAngleFromVerticalDeg": 30,
+      "oneLegFullVerticalFactoredKN": 3.6787499999999995,
+      "planDropEnvelopeWith100": {
+        "q": [
+          -690,
+          -350
+        ],
+        "x": [
+          1235,
+          2365
+        ]
+      },
+      "releaseOnlyAfterEntireLoadIsCaptured": true,
+      "sequence": "Erect positive room barrier with window still shut. Support whole grille on two blades plus four side cuffs. Support each fork and withdraw both collars 100. Retreat the separate worker basket. Move the retained assembly on both captured rails. Connect independent hoist, support all weight, disengage and retract the carriage 100, then lower into a restrained landing rack. For the whole frame capture all four external fitting territories before unfastening. Reverse after confirming both end captures. The assigned 50 kg yoke is a procurement condition. Actual suspension, support feet, setup and transfer remain unproven.",
+      "slingVerticalFactor": 1.5,
+      "toCrossheadFace": 30,
+      "toPostFace": 95,
+      "toRetractedGuardBlade": 55
+    },
+    "installedCombinedWindowAndGuardLimitKg": 200,
+    "movingBodyAndYokeMassActuallyMeasured": false,
+    "movingWheelQInitial": [
+      -260,
+      -760
+    ],
+    "rail150x80x6GrossStressMPa": 105.23723023987091,
+    "railX": [
+      1100,
+      2500
+    ],
+    "remaining": "Measured 200 mm roof overhang plus actual eaves/gutter/hoist and site assembly clearance. The inlet and outlet positions are reversible only after capture transfer to/from a real lowering rig and restrained landing rack.",
+    "rollerSource": "https://cdn.skfmediahub.skf.com/api/public/0901d196802809de/pdf_preview_medium/0901d196802809de_pdf_preview_medium.pdf",
+    "signedQOrXWindKN": 1.5,
+    "signedRailEndKN": [
+      -2.867378048780488,
+      8.086428364547038
+    ],
+    "signedWheelKN": [
+      -9.344422607142857,
+      13.017917249999998
+    ],
+    "upperSupportQ": [
+      -260,
+      -1900
+    ]
+  },
+  "role": "Ordinary replacement control. Independent indoor barrier, supported common brackets, short captured draw, then outside vertical lowering. A conditional structural layout, with actual matched window, lifting attachment, work platform, ground and weather still required.",
+  "temporaryBarrier": {
+    "coverAndBarChecks": [
+      {
+        "afterTwo5": 62.0,
+        "barSurfaceNominal": 72.0,
+        "horizontalPinToLongitudinalAfterTwo5": 40.5,
+        "socketToSharedClosedLinkAfterTwo5": 12.5,
+        "socketX": 980.0,
+        "z": 4400
+      },
+      {
+        "afterTwo5": 28.40000000000009,
+        "barSurfaceNominal": 38.40000000000009,
+        "horizontalPinToLongitudinalAfterTwo5": 6.900000000000091,
+        "socketToSharedClosedLinkAfterTwo5": 12.5,
+        "socketX": 980.0,
+        "z": 4720
+      },
+      {
+        "afterTwo5": 23.3529410000001,
+        "barSurfaceNominal": 33.3529410000001,
+        "horizontalPinToLongitudinalAfterTwo5": 1.8529410000001008,
+        "socketToSharedClosedLinkAfterTwo5": 5.5,
+        "socketX": 2402.5,
+        "z": 4400
+      },
+      {
+        "afterTwo5": 23.3529410000001,
+        "barSurfaceNominal": 33.3529410000001,
+        "horizontalPinToLongitudinalAfterTwo5": 1.8529410000001008,
+        "socketToSharedClosedLinkAfterTwo5": 5.5,
+        "socketX": 2402.5,
+        "z": 4720
+      }
+    ],
+    "limitations": "Confirm socket/pin cross section, real cage hoop/cover, combined load/torque, seated barrier installation and independent proof before releasing the exterior assembly.",
+    "linearInteractionAgainst5And3p25": 0.4294289295649842,
+    "manual": "https://vjtechnology-pim.s3.eu-west-2.amazonaws.com/11784/Manual.pdf",
+    "nativeSource": "https://www.euroacc.co.uk/fixing-sockets-with-cross-pin",
+    "occupied": [
+      {
+        "centre": 1800,
+        "face": "south",
+        "panelBottom": 730,
+        "panelToKnownTop": {},
+        "panelTop": 1200,
+        "plan": [
+          965.0,
+          455,
+          2420.0,
+          495
+        ],
+        "planOverlaps": [],
+        "socketAccess": [
+          {
+            "furnitureAtFinishFace": [],
+            "xy": [
+              980.0,
+              429.5
+            ]
+          },
+          {
+            "furnitureAtFinishFace": [],
+            "xy": [
+              2402.5,
+              429.5
+            ]
+          }
+        ],
+        "unboundHeightAtPanel": []
+      },
+      {
+        "centre": 10200,
+        "face": "south",
+        "panelBottom": 730,
+        "panelToKnownTop": {},
+        "panelTop": 1200,
+        "plan": [
+          9580.0,
+          455,
+          11035.0,
+          495
+        ],
+        "planOverlaps": [],
+        "socketAccess": [
+          {
+            "furnitureAtFinishFace": [],
+            "xy": [
+              11020.0,
+              429.5
+            ]
+          },
+          {
+            "furnitureAtFinishFace": [],
+            "xy": [
+              9597.5,
+              429.5
+            ]
+          }
+        ],
+        "unboundHeightAtPanel": []
+      },
+      {
+        "centre": 1800,
+        "face": "north",
+        "panelBottom": 830,
+        "panelToKnownTop": {
+          "service-emitter-rear-N": 130
+        },
+        "panelTop": 1200,
+        "plan": [
+          965.0,
+          11505,
+          2420.0,
+          11545
+        ],
+        "planOverlaps": [
+          "service-emitter-rear-N"
+        ],
+        "socketAccess": [
+          {
+            "furnitureAtFinishFace": [],
+            "xy": [
+              980.0,
+              11570.5
+            ]
+          },
+          {
+            "furnitureAtFinishFace": [],
+            "xy": [
+              2402.5,
+              11570.5
+            ]
+          }
+        ],
+        "unboundHeightAtPanel": []
+      },
+      {
+        "centre": 10200,
+        "face": "north",
+        "panelBottom": 830,
+        "panelToKnownTop": {
+          "service-emitter-principal-N": 130
+        },
+        "panelTop": 1200,
+        "plan": [
+          9580.0,
+          11505,
+          11035.0,
+          11545
+        ],
+        "planOverlaps": [
+          "service-emitter-principal-N"
+        ],
+        "socketAccess": [
+          {
+            "furnitureAtFinishFace": [],
+            "xy": [
+              11020.0,
+              11570.5
+            ]
+          },
+          {
+            "furnitureAtFinishFace": [],
+            "xy": [
+              9597.5,
+              11570.5
+            ]
+          }
+        ],
+        "unboundHeightAtPanel": []
+      },
+      {
+        "centre": 1800,
+        "face": "west",
+        "panelBottom": 730,
+        "panelToKnownTop": {},
+        "panelTop": 1200,
+        "plan": [
+          455,
+          965.0,
+          495,
+          2420.0
+        ],
+        "planOverlaps": [],
+        "socketAccess": [
+          {
+            "furnitureAtFinishFace": [],
+            "xy": [
+              429.5,
+              980.0
+            ]
+          },
+          {
+            "furnitureAtFinishFace": [],
+            "xy": [
+              429.5,
+              2402.5
+            ]
+          }
+        ],
+        "unboundHeightAtPanel": []
+      },
+      {
+        "centre": 10200,
+        "face": "west",
+        "panelBottom": 730,
+        "panelToKnownTop": {},
+        "panelTop": 1200,
+        "plan": [
+          455,
+          9580.0,
+          495,
+          11035.0
+        ],
+        "planOverlaps": [
+          "rear-cabinet",
+          "rear-west-low-box"
+        ],
+        "socketAccess": [
+          {
+            "furnitureAtFinishFace": [
+              "rear-cabinet"
+            ],
+            "xy": [
+              429.5,
+              11020.0
+            ]
+          },
+          {
+            "furnitureAtFinishFace": [],
+            "xy": [
+              429.5,
+              9597.5
+            ]
+          }
+        ],
+        "unboundHeightAtPanel": [
+          "rear-cabinet",
+          "rear-west-low-box"
+        ]
+      },
+      {
+        "centre": 1800,
+        "face": "east",
+        "panelBottom": 730,
+        "panelToKnownTop": {},
+        "panelTop": 1200,
+        "plan": [
+          11505,
+          965.0,
+          11545,
+          2420.0
+        ],
+        "planOverlaps": [],
+        "socketAccess": [
+          {
+            "furnitureAtFinishFace": [],
+            "xy": [
+              11570.5,
+              980.0
+            ]
+          },
+          {
+            "furnitureAtFinishFace": [],
+            "xy": [
+              11570.5,
+              2402.5
+            ]
+          }
+        ],
+        "unboundHeightAtPanel": []
+      },
+      {
+        "centre": 10200,
+        "face": "east",
+        "panelBottom": 730,
+        "panelToKnownTop": {
+          "principal-head": 30
+        },
+        "panelTop": 1200,
+        "plan": [
+          11505,
+          9580.0,
+          11545,
+          11035.0
+        ],
+        "planOverlaps": [
+          "principal-head"
+        ],
+        "socketAccess": [
+          {
+            "furnitureAtFinishFace": [],
+            "xy": [
+              11570.5,
+              11020.0
+            ]
+          },
+          {
+            "furnitureAtFinishFace": [],
+            "xy": [
+              11570.5,
+              9597.5
+            ]
+          }
+        ],
+        "unboundHeightAtPanel": []
+      }
+    ],
+    "postSocketsX": [
+      980.0,
+      2402.5
+    ],
+    "quarterPointAndEndsBound": 1.5,
+    "railNormal": [
+      455,
+      495
+    ],
+    "railTop": 1200,
+    "rowsLocalZ": [
+      950,
+      1270
+    ],
+    "screenedAxialAndShear": [
+      1.5738754170556901,
+      0.372625
+    ],
+    "shortenedEdgeAfter5": 97.5,
+    "sockets": "Euro Accessories SFCP12060 SS M12, 60 long, 17 OD, 50x10 crosspin. Manufacturer catalogue lists 5 kN; manual table29 reduces shear by edge distance. Fixing duty only. Minimum concrete25, pack the 27 finish to RC and respect the manufacturer torque limit. Compliance of the complete temporary barrier is not claimed.",
+    "topRail": {
+      "deflection": 4.410582133798065,
+      "section": [
+        40,
+        40,
+        3
+      ],
+      "stress": 104.62430863374259
+    }
+  }
+}

@@ -1,0 +1,554 @@
+{
+  "status": "CONDITIONAL_PRE_SITE_FIXED_STATION",
+  "selection": "HAD-SERVICES-02",
+  "face": {
+    "westX": 11185,
+    "clearY": [
+      2707,
+      3528
+    ],
+    "clearZ": [
+      120,
+      1910
+    ]
+  },
+  "cupboard": [
+    11185,
+    11570.5,
+    2682,
+    3553
+  ],
+  "cupboardHeight": 2000,
+  "rows": {
+    "I0": {
+      "axis": [
+        11385,
+        2800,
+        875
+      ],
+      "facesZ": [
+        792.5,
+        957.5
+      ],
+      "stance": [
+        10860,
+        3010,
+        1050
+      ],
+      "sector": [
+        120,
+        180
+      ],
+      "zones": [
+        {
+          "unionZ": 792.5,
+          "reachUpperMM": 459.21882164753754,
+          "planGapLowerMM": 42.35204652,
+          "planGapAfterSettingsMM": 32.35204652,
+          "scope": "Front-opening strip only. Actual opposite reaction, lid stays, guards, fasteners and matched valve seat still require physical detail."
+        },
+        {
+          "unionZ": 957.5,
+          "reachUpperMM": 391.2081167480029,
+          "planGapLowerMM": 42.35204652,
+          "planGapAfterSettingsMM": 32.35204652,
+          "scope": "Front-opening strip only. Actual opposite reaction, lid stays, guards, fasteners and matched valve seat still require physical detail."
+        }
+      ],
+      "captiveFlatBreaks": {
+        "fullMatchedLengthMM": 165,
+        "projectingPilotAllowanceMM": 0,
+        "withdraw": "Straight west on separately retained horizontal tray after both end nuts are loose and positively clear."
+      },
+      "wallSupport": {
+        "anchorRailX": 11545,
+        "counterholdArmDepthMM": 160,
+        "retainedEnds": "Both pipe ends have a shaped keyed reaction and axial restraint back to the fixed cabinet rail. The removable valve and drain pan carry neither end."
+      }
+    },
+    "U0": {
+      "axis": [
+        11385,
+        3110,
+        1392.5
+      ],
+      "facesZ": [
+        1310,
+        1475
+      ],
+      "stance": [
+        10860,
+        3110,
+        1450
+      ],
+      "sector": [
+        150,
+        210
+      ],
+      "zones": [
+        {
+          "unionZ": 1310,
+          "reachUpperMM": 337.34362887518915,
+          "planGapLowerMM": 203.85204652,
+          "planGapAfterSettingsMM": 193.85204652,
+          "scope": "Front-opening strip only. Actual opposite reaction, lid stays, guards, fasteners and matched valve seat still require physical detail."
+        },
+        {
+          "unionZ": 1475,
+          "reachUpperMM": 307.8758458169794,
+          "planGapLowerMM": 203.85204652,
+          "planGapAfterSettingsMM": 193.85204652,
+          "scope": "Front-opening strip only. Actual opposite reaction, lid stays, guards, fasteners and matched valve seat still require physical detail."
+        }
+      ],
+      "captiveFlatBreaks": {
+        "fullMatchedLengthMM": 165,
+        "projectingPilotAllowanceMM": 0,
+        "withdraw": "Straight west on separately retained horizontal tray after both end nuts are loose and positively clear."
+      },
+      "wallSupport": {
+        "anchorRailX": 11545,
+        "counterholdArmDepthMM": 160,
+        "retainedEnds": "Both pipe ends have a shaped keyed reaction and axial restraint back to the fixed cabinet rail. The removable valve and drain pan carry neither end."
+      }
+    },
+    "P0": {
+      "axis": [
+        11385,
+        3370,
+        1392.5
+      ],
+      "facesZ": [
+        1310,
+        1475
+      ],
+      "stance": [
+        10860,
+        3250,
+        1450
+      ],
+      "sector": [
+        180,
+        240
+      ],
+      "zones": [
+        {
+          "unionZ": 1310,
+          "reachUpperMM": 425.12258077619686,
+          "planGapLowerMM": 107.35204652,
+          "planGapAfterSettingsMM": 97.35204652,
+          "scope": "Front-opening strip only. Actual opposite reaction, lid stays, guards, fasteners and matched valve seat still require physical detail."
+        },
+        {
+          "unionZ": 1475,
+          "reachUpperMM": 402.1497706841632,
+          "planGapLowerMM": 107.35204652,
+          "planGapAfterSettingsMM": 97.35204652,
+          "scope": "Front-opening strip only. Actual opposite reaction, lid stays, guards, fasteners and matched valve seat still require physical detail."
+        }
+      ],
+      "captiveFlatBreaks": {
+        "fullMatchedLengthMM": 165,
+        "projectingPilotAllowanceMM": 0,
+        "withdraw": "Straight west on separately retained horizontal tray after both end nuts are loose and positively clear."
+      },
+      "wallSupport": {
+        "anchorRailX": 11545,
+        "counterholdArmDepthMM": 160,
+        "retainedEnds": "Both pipe ends have a shaped keyed reaction and axial restraint back to the fixed cabinet rail. The removable valve and drain pan carry neither end."
+      }
+    }
+  },
+  "paths": {
+    "jointFreeSpool": [
+      [
+        11525,
+        2800,
+        600
+      ],
+      [
+        12165,
+        2800,
+        600
+      ]
+    ],
+    "mainIn": [
+      [
+        11525,
+        2800,
+        600
+      ],
+      [
+        11385,
+        2800,
+        600
+      ],
+      [
+        11385,
+        2800,
+        792.5
+      ]
+    ],
+    "header": [
+      [
+        11385,
+        2800,
+        957.5
+      ],
+      [
+        11385,
+        2800,
+        1130
+      ],
+      [
+        11385,
+        3370,
+        1130
+      ],
+      [
+        11385,
+        3370,
+        1310
+      ]
+    ],
+    "utilityIn": [
+      [
+        11385,
+        3110,
+        1130
+      ],
+      [
+        11385,
+        3110,
+        1310
+      ]
+    ],
+    "utility": [
+      [
+        11385,
+        3110,
+        1475
+      ],
+      [
+        11385,
+        3110,
+        1700
+      ],
+      [
+        11505,
+        2882,
+        1700
+      ],
+      [
+        11505,
+        2882,
+        2725
+      ],
+      [
+        11315,
+        2882,
+        2725
+      ],
+      [
+        11315,
+        2323,
+        2725
+      ],
+      [
+        11505,
+        2199.2,
+        2725
+      ],
+      [
+        11505,
+        600,
+        2725
+      ],
+      [
+        10760,
+        600,
+        2725
+      ],
+      [
+        10760,
+        1250,
+        2725
+      ],
+      [
+        10760,
+        1250,
+        1000
+      ]
+    ],
+    "plant": [
+      [
+        11385,
+        3370,
+        1475
+      ],
+      [
+        11385,
+        3370,
+        2260
+      ],
+      [
+        10245,
+        3370,
+        2260
+      ],
+      [
+        10245,
+        3797,
+        2260
+      ],
+      [
+        10222.5,
+        3842.9,
+        2260
+      ]
+    ],
+    "removablePlantDrop": [
+      [
+        10222.5,
+        3842.9,
+        2260
+      ],
+      [
+        10170,
+        3950,
+        2260
+      ],
+      [
+        10170,
+        3950,
+        520
+      ]
+    ],
+    "exposedColdConnector": [
+      [
+        10170,
+        3950,
+        520
+      ],
+      [
+        10170,
+        3950,
+        475
+      ],
+      [
+        10183.072848061485,
+        3979.1468688950554,
+        380
+      ],
+      [
+        10131.5,
+        4018.71,
+        380
+      ]
+    ]
+  },
+  "separations": {
+    "ordinaryToClosedFaceMM": 340,
+    "utilityAndPlantMM": 185.9942884596257,
+    "fixedPlantToOpenLeafMM": 48.99714421981285,
+    "fixedPlantToHeatMM": 408.9971442298129,
+    "dropToBodyAfterSettingsMM": 28,
+    "dropToPlainCylinderAfterSettingsMM": 26.431361950185305,
+    "fixedDropWouldOverlapCartMM": 162,
+    "fixedPlantUndersideZ": 2223,
+    "capturedCarrierRiseAllowanceBeforeSettingsMM": 73
+  },
+  "removal": {
+    "plantSplit": [
+      10222.5,
+      3842.9,
+      2260
+    ],
+    "factoryColdPort": [
+      10131.5,
+      4018.71,
+      380
+    ],
+    "dropDevelopedMM": 1827.0837925258163,
+    "highUnionPodium": [
+      10245,
+      10905,
+      3822,
+      4482,
+      400
+    ],
+    "highUnionShoulder": [
+      10575,
+      4152,
+      1850
+    ],
+    "highUnionTool": {
+      "sector": [
+        -60,
+        0
+      ],
+      "maxReachUpperMM": 455.9299403600116,
+      "servicePanelMinGapMM": 53.60204652
+    },
+    "oldStandRemoved": true,
+    "splitOpeningMM": 79.66845628116826,
+    "dropMotionToPlainCaseAfterSettingsMM": 26.250554952451296,
+    "firstRemovalTranslation": [
+      125,
+      150,
+      0
+    ],
+    "lowerOnto400PodiumMM": 120,
+    "exposedColdConnectorDevelopedMM": 201.13495764939094,
+    "exposedColdConnectorEnvelopeOD": 50,
+    "coldConnectorFirstRelease": [
+      25,
+      -20,
+      -35
+    ],
+    "support": "Suspend and laterally retain the long narrow drop from the permanent high rail until a captured receiver takes its load. Use no fixed low rail or stand in the cradle field. A maker-matched short final connector must reach this port and leave it with the cradle restrained.",
+    "completeDryLoadAndMotionProved": false
+  },
+  "spoolRenewal": {
+    "strokeInwardMM": 619.5,
+    "firstRest": [
+      10905.5,
+      11545.5,
+      2800,
+      600
+    ],
+    "closedRouteAvailableOnlyOutsideMaintenance": true,
+    "temporaryCapturedSupportsX": [
+      11025,
+      11325
+    ],
+    "providerSideCut": "B0",
+    "sideStance": [
+      10920,
+      3175
+    ],
+    "sideStancePlanClearanceMM": 38,
+    "nominalBodyAxisClearanceMM": 60.5,
+    "prerequisite": "With B0 and I0 independently proved, drain both exposed ends, remove the single local inlet elbow with D0 and its release key, clear the eye and fit temporary supports. Keep the fixed I0, U0 and P0 in place. Verify wall seals release before drawing the capped bare spool inward."
+  },
+  "controlledDrain": {
+    "drainSpouts": [
+      {
+        "id": "D0",
+        "tee": [
+          11482,
+          2800,
+          600
+        ],
+        "spout": [
+          11482,
+          2800,
+          350
+        ],
+        "cut": "B0",
+        "purpose": "Wet-side upstream spool, external protected rise needs a separate true low drain."
+      },
+      {
+        "id": "D1",
+        "tee": [
+          11385,
+          2960,
+          1130
+        ],
+        "spout": [
+          11470,
+          2960,
+          350
+        ],
+        "cut": "I0",
+        "purpose": "Vent common header and prove both fixed branch seats isolated. The sealed I0 outlet leg below this takeoff remains a measured local residual."
+      },
+      {
+        "id": "DU",
+        "tee": [
+          11385,
+          3110,
+          1555
+        ],
+        "spout": [
+          11470,
+          3110,
+          350
+        ],
+        "cut": "U0",
+        "purpose": "Utility tail remains locally drainable where its own low points require it."
+      },
+      {
+        "id": "DP",
+        "tee": [
+          11385,
+          3370,
+          1555
+        ],
+        "spout": [
+          11470,
+          3370,
+          350
+        ],
+        "cut": "P0",
+        "purpose": "Plant tail and vessel drain stay distinct. Charge the outlet pocket below the tee as residual."
+      }
+    ],
+    "pan": [
+      11200,
+      11555,
+      2750,
+      3450,
+      145,
+      250
+    ],
+    "externalUpperBoundLitres": 26.0925,
+    "trialNetL": 18,
+    "maximumBatchL": 5,
+    "minimumSpoutToRimMM": 100,
+    "headerResidualMM": 300.30972450961735,
+    "headerResidualTubeOnlyUpperL": 0.11415754974283962,
+    "branchResidualTubeOnlyUpperLEach": 0.0304106168867492,
+    "residualHandling": "Positive zero-pressure proof and a captured local pan before either I0 face opens. Add actual fitting/valve voids, verify retained pockets, and use a separately accessible outdoor low cut for the rise.",
+    "passiveFaultCredit": false
+  },
+  "faultBoundary": {
+    "wetOutlets": [
+      {
+        "id": "ordinary",
+        "crossing": [
+          12090,
+          2975,
+          90
+        ],
+        "outerX": 13717.5,
+        "existingComparison": true,
+        "receivingMaximumZ": 22.060000000000002,
+        "formedOD": 100,
+        "minimumClearID": 80,
+        "pressureJetOrBlockedAcceptance": false
+      },
+      {
+        "id": "blocked-primary relief",
+        "crossing": [
+          12090,
+          3200,
+          150
+        ],
+        "outerX": 13450,
+        "existingComparison": false,
+        "receivingMaximumZ": 97.8,
+        "formedOD": 100,
+        "minimumClearID": 80,
+        "pressureJetOrBlockedAcceptance": false
+      }
+    ],
+    "ordinaryChuteFallRatio": 50,
+    "permanentPitchedPanBelowControlledTray": true,
+    "wallCrossingPlanBetweenOutletsMM": 225,
+    "d2CrossingKeptIndependent": true,
+    "normalHalfClearIdealBoundLmin": 32.34810659064917,
+    "closedControlPenetrationsUnqualified": true,
+    "blockedAndSaturatedDestinationsStillRequireProof": true
+  }
+}

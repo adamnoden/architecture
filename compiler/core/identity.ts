@@ -2,7 +2,11 @@ import { createHash } from 'node:crypto'
 
 type CanonicalValue = null | boolean | string | number | CanonicalValue[] | { [key: string]: CanonicalValue }
 
-const canonicalize = (value: unknown): { value: CanonicalValue; nonFinite: boolean } => {
+/** Total UTF-16 code-unit order. Never consult the host locale or ICU collation. */
+export const compareCanonicalStrings = (a: string, b: string): number =>
+  a < b ? -1 : a > b ? 1 : 0
+
+const canonicalize = (value: unknown, compareKeys: (a: string, b: string) => number): { value: CanonicalValue; nonFinite: boolean } => {
   const ancestors = new Set<object>()
   let nonFinite = false
   const visit = (item: unknown): CanonicalValue => {
@@ -21,7 +25,7 @@ const canonicalize = (value: unknown): { value: CanonicalValue; nonFinite: boole
       if (Array.isArray(item)) return Array.from(item, visit)
       return Object.fromEntries(Object.entries(item)
         .filter(([, child]) => child !== undefined)
-        .sort(([a], [b]) => a.localeCompare(b))
+        .sort(([a], [b]) => compareKeys(a, b))
         .map(([key, child]) => [key, visit(child)]))
     } finally {
       ancestors.delete(item)
@@ -30,9 +34,11 @@ const canonicalize = (value: unknown): { value: CanonicalValue; nonFinite: boole
   return { value: visit(value), nonFinite }
 }
 
-/** Canonical JSON for finite plain data; absent object properties are omitted. */
+/** Canonical JSON for finite plain data; absent object properties are omitted.
+ * Non-index keys use code-unit order; integer-index keys retain JSON's ECMAScript
+ * property order. Arrays and Unicode spelling remain authored, without normalization. */
 export const stableJsonStringify = (value: unknown): string => {
-  const canonical = canonicalize(value)
+  const canonical = canonicalize(value, compareCanonicalStrings)
   if (canonical.nonFinite) throw new Error('Non-finite numbers cannot be represented in canonical JSON.')
   return JSON.stringify(canonical.value)
 }
@@ -47,10 +53,15 @@ const numericFailureTree = (value: CanonicalValue): unknown => {
   return [typeof value, value]
 }
 
-/** Valid-data hashes retain their original bytes. Failed numeric inputs use a
+/** Finite data hashes its canonical JSON bytes. Failed numeric inputs use a
  * disjoint hash domain so NaN/infinities never alias null or sentinel-shaped data. */
-export const sha256SemanticFingerprint = (value: unknown): string => {
-  const canonical = canonicalize(value)
+// A caller with an existing versioned identity may supply its explicitly fixed
+// key-order contract. New identities use the locale/ICU-independent default.
+export const sha256SemanticFingerprint = (
+  value: unknown,
+  compareKeys: (a: string, b: string) => number = compareCanonicalStrings
+): string => {
+  const canonical = canonicalize(value, compareKeys)
   const hash = createHash('sha256')
   if (canonical.nonFinite) {
     hash.update('HK-NONFINITE-1\0').update(JSON.stringify(numericFailureTree(canonical.value)))
