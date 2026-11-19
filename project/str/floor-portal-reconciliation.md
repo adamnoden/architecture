@@ -1,5 +1,39 @@
 # Floor and portal reconciliation
 
+## Convergence disposition — 19 November 2026
+
+**Retain one development baseline: intact NW floor, continuous mineral diaphragm/chord, aligned solid supports, independently fixed wall heads and tied roof sectors.** The linked west foul route can now produce the intact-floor candidate through the saved engineering document. Its receiving site envelope is a requirement, not a surveyed connection. The source floor opening remains reserved until that route is adopted.
+
+Retire the nested hip/collar, four-jamb guide retrofit and short floor shear tooth as active competitors. Their failures and pinned replay sources remain historical evidence. PR #1489 is closed as superseded; its head is retained because the finite-detail replays depend on it. No wider pier or revised cassette inherits its old force or movement passes.
+
+The remaining structural question is the **assembled load and moisture path**, rather than another hardware fit. Before further splice refinement, compare participation of the actual connected walls/abutments and diaphragms against the four isolated L-cantilever model. Use real openings, actual stiffness and justified minimum stabilising weight; gross filled-opening gravity budgets cannot stabilise suction. A compression/shear-only mineral DPC is a challenger, not an accepted replacement. The retained upper-origin suction account has only **58.4605 kN net compression before lateral overturning**. If the actual signed contact or evidenced shear path fails, retain a deliberately engineered positive crossing where required. Neither masonry tension nor an assumed friction coefficient supplies the missing path.
+
+The [ground-pier boundary](../mat/ground-pier-boundary.md) also rejects an upper-plate-only moisture solution: the common RC grid and RC200 floor bypass that plate. Any successor must reconcile the occupied floor's complete moisture boundary, thresholds and bulk-water exposure. Moving cuts below every support is not the default simplification; it adds many structural cuts and still needs a complete exposure strategy.
+
+### Source-origin accounting is now executable
+
+Set `northCollector.dpcOriginAudit: { cutZMm: -40 }` in the saved engineering document. The current compiler reruns the native structural model, obtains its originating loads and native core-height metadata, and partitions them using [the authored crossing policy](dpc-origin-paths.json). The source grid-top-to-soffit interval must equal the native uniform ground-core budget height. A mismatched interval, stale source or unbound house rejects the result.
+
+The retained GQ account separates approximately **6,286.886 kN** of inner-wall above-cut gross budget, **2,710.769 kN** below or bypassing the inner-wall cut, **1,599.362 kN** on separate weather-leaf paths and **162.533 kN** of mixed/unclassified reserves. They conserve **10,759.550 kN** and both originating first moments. The figures are aggregate source accounting across the house, not loads on either north splice. Mixed allowances, the lower stair route and equipment elevations remain explicitly unresolved. The native emitter retains full precision; the historical receipt remains independently reproducible.
+
+The ground-core split is a sensitivity of a uniform **gross budget**. Moving the requested evaluation level inside the metal plate does not imply actual concrete slices there. Signed lateral forces, their source heights, below-cut façade/plinth subtraction, actual crossing distribution and six-component joint actions remain absent. `completeSpliceDemand` therefore remains null. Wind moments and foundation-head totals cannot fill that field.
+
+The method preserves negative suction and keeps its three combinations separate. The same-document manifest invalidates the collector result when the cut changes, while plans remain unchanged. Newly encountered load families remain unresolved. This closes the accounting ambiguity, not structural acceptance.
+
+### Exact remaining proof obligations
+
+| Joined question | Required proof before structural selection |
+| --- | --- |
+| Distributed support topology | Actual wall/abutment, opening and diaphragm stiffness; signed contact, sliding, torsion, settlement/heave and erection stages; actual minimum gravity without filled-opening credit |
+| Floor and widened support | Complete perimeter chord and cage, independent gravity seating, actual floor mass/stiffness, construction tolerances and occupied room/service clearances |
+| DPC and ground floor | Component-specific crossing/vertical metadata; split mixed reserves at emission; full signed cut actions; force transfer, wet perimeter and an occupied-floor boundary without the known RC bypass |
+| Roof and wall head | Ordinary and hip/valley assemblies on the same raised tied-roof geometry, real compression/uplift/fixed restraints, movement and inspectable connections |
+| Whole-house response | One compatible floor/wall/roof/contact model, original signed/adverse families and actual 52-head actions and movements; fixed-base increments are not this replay |
+| Receiving coordination | The same support/weather datums, independent water paths, floor interfaces, services, insulation/air/fire continuity and installation access in STR, ROF/RWT, MAT and HAD |
+
+STR-FLOOR-PORTAL remains incomplete. ROF-RWT-GATE retains its genuine prerequisite. The owner review gates and separate physical/site acceptance routes remain intact. Further development should answer the distributed-support and complete-cut questions before adding another local connector variant.
+
+## Retained detail development and historical comparisons
 
 The [independent north bearing comparison](floor-portal-bearing-toe.md) separates the floor gravity seat from the lateral collector. Carry the 100 mm load-aligned bearing and a 180 mm roomward-backed toe into the next coordinated detail. The reversible shear tooth has enough face area in the 105 mm projection trial, but its short-anchor group fails the full-tip moment bound. Keep that tooth withheld. Coordinate the separate west-wall gravity route and replay the head and service interfaces before selecting a portal.
 

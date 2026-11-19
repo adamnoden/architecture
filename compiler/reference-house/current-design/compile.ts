@@ -71,6 +71,10 @@ export function prepareCurrentDesignCompile(input: unknown) {
       const { runStructuralActions } = await import('./structural.js')
       return runStructuralActions(resolved)
     },
+    structuralDpcOriginAudit: async (cutZMm?: number) => {
+      const { runStructuralDpcOriginAudit } = await import('./structural-dpc.js')
+      return runStructuralDpcOriginAudit(resolved, cutZMm)
+    },
     readStructuralCase: async () => {
       const { readStructuralCase } = await import('./structural.js')
       return readStructuralCase(resolved)

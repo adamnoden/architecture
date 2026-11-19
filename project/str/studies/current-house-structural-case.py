@@ -206,6 +206,19 @@ def north_fixed_base_replays(request, model):
     }
 
 
+def origin_load_account(request, model):
+    if set(request) != {'schema'}:
+        raise ValueError('Expected exact str-origin-load-account/1 fields')
+    return {
+        'schema': 'str-origin-load-account-result/1',
+        'admitted': False,
+        'coreBudgetHeightsMm': model['old']['CORE_HEIGHTS_MM'],
+        'origins': [{'family': family, 'case': case, 'N_Xmoment_Ymoment': vector}
+                    for (family, case), vector in sorted(model['orig'].items())
+                    if case in ('G', 'Q', 'U', 'retainedMin')],
+    }
+
+
 if __name__ == '__main__':
     try:
         request = json.load(sys.stdin)
@@ -215,6 +228,7 @@ if __name__ == '__main__':
         if not isinstance(schema,str):
             schema = None
         run = {
+            'str-origin-load-account/1': origin_load_account,
             'str-head-north-yaw-probe/1': north_yaw_probe,
             'str-head-north-dead-load/1': north_dead_load,
             'str-head-north-fixed-base-replays/1': north_fixed_base_replays,

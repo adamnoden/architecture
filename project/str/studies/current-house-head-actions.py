@@ -174,7 +174,8 @@ def lower(p):
 wr={}
 def wallrect(i,u0,u1,d,w):return [u0,d-w/2,u1,d+w/2] if i==0 else [d-w/2,u0,d+w/2,u1]
 def clipped(r):return [max(0,r[0]),max(0,r[1]),min(12000,r[2]),min(12000,r[3])]
-for level,hh in [('ground',3.350),('upper',3.170)]:
+CORE_HEIGHTS_MM = {'ground': 3350, 'upper': 3170}
+for level,hh in [(level,height/1000) for level,height in CORE_HEIGHTS_MM.items()]:
     rows=[]
     for w,(i,d) in outer.items():
         lo,hi=(A-70,B+70) if w.startswith('outer') else (C-70,E+70)
