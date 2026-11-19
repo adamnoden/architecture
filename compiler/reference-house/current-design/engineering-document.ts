@@ -41,7 +41,7 @@ type SourceBindings = {
 }
 
 const northFields = ['portAxisXYMm', 'dragDemandFactor', 'remoteMainBarShiftMm', 'chordBendRadiusMm',
-  'toeTransferIntervalMm', 'keyContactTrial', 'placementToleranceMm', 'yawProbe', 'deadLoadReplay'] as const
+  'toeTransferIntervalMm', 'keyContactTrial', 'placementToleranceMm', 'yawProbe', 'deadLoadReplay', 'portStrategy'] as const
 const foulFields = ['riserAxisXYMm', 'wetStackAirTakeoffZMm', 'terminalZMm', 'buriedReceiving'] as const
 const inletFields = ['branch', 'washer', 'cheekMm', 'retainedSideLandMm', 'receiverRailWidthMm',
   'minimumFrontBridgeMm', 'axialTravelMm', 'sideTravelMm', 'closure'] as const
@@ -188,18 +188,27 @@ export async function compileEngineeringDocument(input: unknown) {
   recordResult('plans', {}, base.plans)
   recordResult('occupiedServices', {}, base.occupiedServices)
   recordResult('selectedWaterEvent', {}, base.selectedWaterEvent)
+  const linkedPort = stages.northCollector?.portStrategy === 'linked-west-foul-route'
+  let westVentCase: unknown
+  const compileWestVent = async (settings: Settings) => {
+    const request = await compile.readRearFoulVentCase()
+    if (!('vent' in request)) throw new Error('The bound rear foul vent case is unavailable')
+    westVentCase = { ...request.vent, ...settings }
+    engineering.rearFoulVent = await compile.rearFoulVent(westVentCase)
+    recordResult('rearFoulVent', settings, engineering.rearFoulVent)
+  }
+  if (linkedPort) {
+    if (!stages.rearFoulVent) throw new Error('The linked north collector requires an explicit saved west foul vent stage')
+    await compileWestVent(stages.rearFoulVent)
+  }
   if (stages.northCollector) {
     const request = await compile.readNorthCollectorCase()
     if (!('collector' in request)) throw new Error('The bound north collector case is unavailable')
-    engineering.northCollector = await compile.northCollectorCase({ ...request.collector, ...stages.northCollector })
-    recordResult('northCollector', stages.northCollector, engineering.northCollector)
+    engineering.northCollector = await compile.northCollectorCase({ ...request.collector, ...stages.northCollector },
+      linkedPort ? westVentCase : undefined)
+    recordResult('northCollector', stages.northCollector, engineering.northCollector, linkedPort ? ['rearFoulVent'] : [])
   }
-  if (stages.rearFoulVent) {
-    const request = await compile.readRearFoulVentCase()
-    if (!('vent' in request)) throw new Error('The bound rear foul vent case is unavailable')
-    engineering.rearFoulVent = await compile.rearFoulVent({ ...request.vent, ...stages.rearFoulVent })
-    recordResult('rearFoulVent', stages.rearFoulVent, engineering.rearFoulVent)
-  }
+  if (stages.rearFoulVent && !linkedPort) await compileWestVent(stages.rearFoulVent)
   const sill = stages.inletSillInsert || stages.inletFault || stages.inletRemovals || stages.inletCovers
     ? await compile.readInletSillInsertCase() : undefined
   const insertCase = sill ? { ...sill.insert, ...stages.inletSillInsert } : undefined

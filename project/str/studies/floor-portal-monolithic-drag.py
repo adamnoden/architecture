@@ -84,10 +84,12 @@ def finite_number(value):
 
 def native_request(value, retained_port, cabinet):
     required = {'schema', 'portAxisXYMm', 'dragDemandFactor'}
-    if not isinstance(value, dict) or not required <= set(value) <= required | {'remoteMainBarShiftMm'}:
+    if not isinstance(value, dict) or not required <= set(value) <= required | {'remoteMainBarShiftMm', 'portStrategy'}:
         raise ValueError('Expected an explicit versioned north collector case')
     if value['schema'] != 'str-north-collector-native-case/1':
         raise ValueError('Unknown north collector case schema')
+    if 'portStrategy' in value and value['portStrategy'] != 'linked-west-foul-route':
+        raise ValueError('Unknown north collector port strategy')
     axis, factor = value['portAxisXYMm'], value['dragDemandFactor']
     if not finite_number(factor) or not 0 < factor <= 1:
         raise ValueError('Demand factor must be greater than zero and at most the retained historical demand')
@@ -341,6 +343,7 @@ def compare_collector(source_data, source_hashes, request=None):
     cabinet = house['upperFurniture']['rear-cabinet']
     port_axis_xy, factor, shift = (native_request(request, retained_port, cabinet) if request is not None
                                    else (retained_port[:2], 1, REFERENCE_MAIN_BAR_SHIFT))
+    omitted_port = request is not None and request.get('portStrategy') == 'linked-west-foul-route'
     corner_x, corner_y = next(head['xy'] for head in grid['heads'] if head['id'] == 'P07')
     port_u, port_v = port_axis_xy[0]-corner_x, corner_y-port_axis_xy[1]
 
@@ -383,7 +386,7 @@ def compare_collector(source_data, source_hashes, request=None):
 
     port_radius = port_diameter/2
     port_axis = [((port_u, port_v, soffit), (port_u, port_v, regular_top))]
-    port_clearances = [{
+    port_clearances = [] if omitted_port else [{
         'levelZMm': z, 'direction': sign,
         'minimumClearToFormedEdgeAfter5Mm': minimum_gap(paths, port_axis, BAR_DIAMETER/2+port_radius),
     } for sign,z,paths in ((1,lower_z,lower_paths), (-1,upper_z,upper_paths))]
@@ -419,7 +422,7 @@ def compare_collector(source_data, source_hashes, request=None):
         for row in collar['cornerCandidate']['allNearestApertures'].values()
     )
     yaw_at_ground = force*RECEIVER_U/1000
-    return {
+    result = {
         'status':'Geometric and static monolithic redesign screen. Coupled wall, corner cage and splice loads unadmitted.',
         'sourceSHA256':source_hashes,
         'geometry':{'wallUAndLegVLimitsMm':[[-70,RECEIVER_U], EDGE_V], 'receivingUMm':RECEIVER_U,
@@ -460,8 +463,9 @@ def compare_collector(source_data, source_hashes, request=None):
                           'scope':'No friction credit. Normal return balances at the same V centroid. Mean pressure only. The positive torque transfer and real L-ground stability splice are unproved.'},
         'retainedNWPort':{'referenceAxisXYmm':retained_port[:2], 'axisXYmm':port_axis_xy,
                           'axisUVAndDiameterMm':[port_u, port_v, port_diameter], 'levels':port_clearances,
-                          'gapToWidenedWallUMm':port_u-port_radius-RECEIVER_U, 'admitted':False},
-        'rearCabinetPortTerritory':port_clearance(cabinet_centre_bounds, lower_paths+upper_paths, port_radius),
+                          'gapToWidenedWallUMm':None if omitted_port else port_u-port_radius-RECEIVER_U, 'admitted':False},
+        'rearCabinetPortTerritory':({'state':'not-applicable-no-floor-port', 'centreBoundsUVmm':cabinet_centre_bounds}
+                                   if omitted_port else port_clearance(cabinet_centre_bounds, lower_paths+upper_paths, port_radius)),
         'gravity':{'directBearingURangeMm':[-30,70], 'records':[gravity(n) for n in ('NW-W','NE')]},
         'groundSplice': ground_splice(ground['outer'], grid, axes, shift, yaw_at_ground, soffit),
         'groundAlternative':{'retainedNorthCornerAndToeCapIDs':[h['id'] for h in north_heads],
@@ -469,6 +473,10 @@ def compare_collector(source_data, source_hashes, request=None):
                              'outsidePlanGapToSmallestCapAfter5Mm':cap_min_half_width-70-FORM_SETTING,
                              'scope':'Plan-only alternative with actual continuous widened body onto a redesigned imperforate DPC plate and cap. Existing shallow node, anchors and soil capacities are not transferred.'},
     }
+    if omitted_port:
+        result['retainedNWPort']['state'] = 'omitted-in-linked-candidate'
+        result['retainedNWPort']['canonicalSourcePortRetained'] = True
+    return result
 
 
 def diagram(result):
@@ -477,6 +485,7 @@ def diagram(result):
     stack_top = result['stack']['localSlabTopZMm']
     heights = result['stack']['axesInSectionZMm']
     port_u, port_v, port_diameter = result['retainedNWPort']['axisUVAndDiameterMm']
+    omitted_port = result['retainedNWPort'].get('state') == 'omitted-in-linked-candidate'
     ink = []
     def line(x1,y1,x2,y2,role):
         ink.append(f'<path d="M{x1:g} {y1:g}L{x2:g} {y2:g}" class="{role}"/>')
@@ -490,7 +499,8 @@ def diagram(result):
     box(0,0,420,297,'paper')
     label(14,20,'North collector · opposed straight steel','title')
     port_label = 'retained port' if result['retainedNWPort']['axisXYmm'] == result['retainedNWPort']['referenceAxisXYmm'] else 'trial port'
-    label(14,30,f'Northwest comparison · {port_label} shown in red · print at actual A3 size.')
+    label(14,30,'Northwest intact-floor candidate · conditional on the linked west foul route.' if omitted_port
+          else f'Northwest comparison · {port_label} shown in red · print at actual A3 size.')
     line(14,37,406,37,'rule')
     for x, sign, heading in [(17,1,'Lower group at Z3260 · 1:10'),(148,-1,'Upper group at Z3308 · 1:10')]:
         y=58
@@ -503,9 +513,12 @@ def diagram(result):
         line(*plan(170,170),*plan(930,170),'face')
         for a,b in result['straightDrag']['lowerPathsLocalXYZMm' if sign == 1 else 'upperPathsLocalXYZMm']:
             line(*plan(*a[:2]),*plan(*b[:2]),'steelPlan')
-        circle(*plan(port_u,port_v),port_diameter/20,'port')
-        mark=result['retainedNWPort']['levels'][0 if sign==1 else 1]['minimumClearToFormedEdgeAfter5Mm']
-        label(x,170,f'Formed Ø{port_diameter} port signed gap: {mark:.2f} mm')
+        if omitted_port:
+            label(x,170,'Old floor port omitted in this conditional candidate.')
+        else:
+            circle(*plan(port_u,port_v),port_diameter/20,'port')
+            mark=result['retainedNWPort']['levels'][0 if sign==1 else 1]['minimumClearToFormedEdgeAfter5Mm']
+            label(x,170,f'Formed Ø{port_diameter} port signed gap: {mark:.2f} mm')
         label(x,178,'Both wing directions shown. Positive axes into the room.')
         line(x,184,x+50,184,'rule')
         label(x,190,'500 mm')
@@ -532,7 +545,9 @@ def diagram(result):
     label(287,190,'Lower and upper diagonal bars bear against H28 chord.')
     line(14,206,406,206,'rule')
     label(14,223,'Release conditions','head')
-    if result['rearCabinetPortTerritory']['state'] == 'overlap-throughout-territory':
+    if omitted_port:
+        label(14,234,'Source port remains reserved. Adopt the linked route and its site envelope before retirement.')
+    elif result['rearCabinetPortTerritory']['state'] == 'overlap-throughout-territory':
         label(14,234,'The existing cabinet has no clear port position. Resolve an independent route or redesign the cage.')
     else:
         label(14,234,'Any proposed port needs an independent service and cover check.')
@@ -544,8 +559,9 @@ def diagram(result):
     label(14,263,f'Ground splice: {maximum_offset:g} mm maximum H20 axis offset; {uncovered:g} mm² outside the legacy plate.')
     label(14,280,'Plan coordinates U/V and levels Z are in millimetres.')
     return ('<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" role="img" aria-labelledby="title">\n'
-            '<title id="title">Opposed straight collector reinforcement and retained port</title>\n'
-            '<style>.paper{fill:#f8f4eb}.rule,.face,.steelPlan,.seat{fill:none;stroke:#5b554c;stroke-width:.4}'
+            +('<title id="title">Intact collector candidate with linked west foul route</title>\n' if omitted_port
+              else '<title id="title">Opposed straight collector reinforcement and retained port</title>\n')
+            +'<style>.paper{fill:#f8f4eb}.rule,.face,.steelPlan,.seat{fill:none;stroke:#5b554c;stroke-width:.4}'
             '.face{stroke-dasharray:1 1}.concrete,.slab{fill:#dcd8cf;stroke:#777166;stroke-width:.3}.slab{fill:#e9e4db}'
             '.steelPlan{stroke:#244658;stroke-width:2;stroke-linecap:round}.steelSection,.seat{fill:#244658;stroke:#244658;stroke-width:.65}'
             '.port{fill:#a94d42;fill-opacity:.20;stroke:#a94d42;stroke-width:.7}.title{font:8px Georgia;fill:#302a24}'
@@ -581,6 +597,9 @@ def packing_witness(intervals, pitch):
 def station_capacity(result, port=None, relaxed_port_clearance_mm=0):
     drag = result['straightDrag']
     required = len(drag['barCentresAtReceivingPlaneVMm'])
+    if result['retainedNWPort'].get('state') == 'omitted-in-linked-candidate':
+        return {'schema':'str-north-collector-station-capacity/1', 'state':'not-applicable-no-floor-port',
+                'requiredStationsPerGroup':required, 'groups':[], 'sharedPlanes':[], 'admitted':False}
     first_station = drag['barCentresAtReceivingPlaneVMm'][0]
     port_u, port_v, port_diameter = result['retainedNWPort']['axisUVAndDiameterMm'] if port is None else port
     heel, toe = result['geometry']['wallUAndLegVLimitsMm'][1]
@@ -649,6 +668,11 @@ def station_capacity(result, port=None, relaxed_port_clearance_mm=0):
 
 def cabinet_station_capacity(result):
     bounds = result['rearCabinetPortTerritory']['centreBoundsUVmm']
+    if result['retainedNWPort'].get('state') == 'omitted-in-linked-candidate':
+        return {'schema':'str-north-collector-cabinet-station-capacity/1', 'state':'not-applicable-no-floor-port',
+                'centreBoundsUVmm':bounds, 'cellsChecked':0, 'resolvedCells':{
+                    'required-station-count-excluded':0, 'required-shared-plane-gap-excluded':0},
+                'minimumSubdivisionSideMm':0, 'unresolvedWitnessBoxUVmm':None, 'admitted':False}
     centre_diameter = result['retainedNWPort']['axisUVAndDiameterMm'][2]
     min_cell_mm = 1
     cells = [bounds]
