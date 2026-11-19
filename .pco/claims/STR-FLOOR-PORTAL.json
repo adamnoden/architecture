@@ -9,8 +9,8 @@
     "label": "convergence-2026-11-19-resumed"
   },
   "claimedAt": "2026-11-19T21:54:48.397Z",
-  "heartbeatAt": "2026-11-19T21:54:48.397Z",
-  "expiresAt": "2026-11-19T22:39:48.397Z",
+  "heartbeatAt": "2026-11-19T22:07:42.955Z",
+  "expiresAt": "2026-11-19T23:37:42.955Z",
   "branch": "work/convergence-integrated-2026-11-19",
   "predecessor": {
     "leaseId": "1e462ea9-3790-42cc-8040-6bc65e6c313e",
