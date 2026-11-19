@@ -73,7 +73,7 @@ const records = (value: unknown, keys: readonly string[]): value is Readonly<Rec
   !!value && typeof value === 'object' && !Array.isArray(value) &&
   Object.keys(value).length === keys.length && keys.every(key => Object.hasOwn(value, key))
 
-function readReference(resolved: CurrentDesignResolution) {
+function readReference(resolved: CurrentDesignResolution, insertCase?: unknown) {
   const binding = resolved.disciplineBindings.find(entry => entry.id === 'had-inlet-south-fault-envelope')
   if (!binding) throw new Error('The south inlet fault requires the applicable HAD relief and STR sill bindings')
   const observed = new Map([hydraulics, reliefReceipt, sillReceipt, cellReceipt, inletReceipt].map(path => {
@@ -92,8 +92,10 @@ function readReference(resolved: CurrentDesignResolution) {
   }
   const sill = json<{ readonly branches: readonly { readonly id: BranchId; readonly reliefReceiver: Receiver }[] }>(sillReceipt)
   const wet = json<{ readonly branches: readonly { readonly id: BranchId; readonly case: Cell }[] }>(cellReceipt)
-  const insert = runInletSillInsertCase(resolved, readInletSillInsertCase(resolved).insert)
-  if (insert.status !== 'within-conditional-screen') throw new Error('The bound sill geometry no longer clears its conditional screen')
+  const insert = runInletSillInsertCase(resolved, insertCase === undefined ? readInletSillInsertCase(resolved).insert : insertCase)
+  if (insert.status !== 'within-conditional-screen') {
+    throw new Error(`The selected sill insert blocks the fault comparison: ${insert.diagnostics.map(item => item.code).join(', ')}`)
+  }
 
   const branchCase: BranchCase = {
     flowLmin: native.hydraulics.challengeLminPerBranch,
@@ -128,11 +130,11 @@ function readReference(resolved: CurrentDesignResolution) {
   const method = { id: 'HAD-SOUTH-INLET-RELIEF/1', path: hydraulics,
     gitBlob: observed.get(hydraulics)!.gitBlob,
     sources: Object.fromEntries([...observed].map(([path, file]) => [path, file.gitBlob])) }
-  return { baseline, native, branches, host: insert.host, sources, method }
+  return { baseline, native, branches, host: insert.host, sources, method, insertNativeReplay: insert.source.nativeReplay }
 }
 
-export function readInletFaultCase(resolved: CurrentDesignResolution) {
-  return { schema: 'had-inlet-fault-request/1' as const, design: resolved.design, fault: readReference(resolved).baseline }
+export function readInletFaultCase(resolved: CurrentDesignResolution, insertCase?: unknown) {
+  return { schema: 'had-inlet-fault-request/1' as const, design: resolved.design, fault: readReference(resolved, insertCase).baseline }
 }
 
 function readTrial(input: unknown, reference: ReturnType<typeof readReference>): FaultCase {
@@ -273,12 +275,12 @@ function elevation(reference: ReturnType<typeof readReference>, results: readonl
     widthMm: 2 * column, heightMm: 29 + (verticalBounds.max - verticalBounds.min) / scaleDenominator, primitives }
 }
 
-export function runInletFaultCase(resolved: CurrentDesignResolution, input: unknown) {
-  const reference = readReference(resolved)
+export function runInletFaultCase(resolved: CurrentDesignResolution, input: unknown, insertCase?: unknown) {
+  const reference = readReference(resolved, insertCase)
   const trial = readTrial(input, reference)
   const caseDigest = sha256SemanticFingerprint(trial)
   const results = reference.branches.map(branch => branchFault(branch, trial.branches[branch.id], reference.native))
-  const nativeReplay = caseDigest === sha256SemanticFingerprint(reference.baseline)
+  const nativeReplay = reference.insertNativeReplay && caseDigest === sha256SemanticFingerprint(reference.baseline)
   if (nativeReplay && results.some((result, index) => {
     const { calculation } = result
     const { cell, receiver } = reference.branches[index]
