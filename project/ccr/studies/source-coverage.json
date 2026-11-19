@@ -164,7 +164,10 @@
         "project/mat/studies/rear-wc-west-roof-interface.py",
         "project/str/studies/structural-linear.py",
         "project/str/studies/joined_successor_compatibility.py",
-        "project/str/studies/joined_successor_kernel.py"
+        "project/str/studies/joined_successor_kernel.py",
+        "project/str/studies/floor-portal-fixed-wall-head.py",
+        "project/str/studies/floor-portal-north-transfer.py",
+        "project/str/studies/floor-portal-twin-garden-tie.py"
       ],
       "inputReceipts": [
         "project/had/studies/water-replan.json",
@@ -244,6 +247,9 @@
         "python3 -B project/str/studies/current-house-joined-foundation.py --check",
         "python3 -B project/str/studies/floor-portal-monolithic-drag.py . --check",
         "python3 -B project/mat/studies/rear-wc-west-roof-interface.py . --check"
+      ],
+      "historicalInputs": [
+        "project/str/studies/floor-portal-permanent-seat.json"
       ]
     },
     {
@@ -772,6 +778,86 @@
       "format": "value",
       "algorithm": "gitBlob",
       "source": "project/rwt/studies/temporary-two-path-control.json"
+    },
+    {
+      "receipt": "project/str/studies/floor-portal-fixed-wall-head.json",
+      "location": [
+        "sourceSHA256",
+        "reconciled-house-interface.json"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/reconciled-house-interface.json"
+    },
+    {
+      "receipt": "project/str/studies/floor-portal-fixed-wall-head.json",
+      "location": [
+        "sourceSHA256",
+        "current-house-welded-heel.json"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/current-house-welded-heel.json"
+    },
+    {
+      "receipt": "project/str/studies/floor-portal-fixed-wall-head.json",
+      "location": [
+        "sourceSHA256",
+        "current-house-welded-network.json"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/current-house-welded-network.json"
+    },
+    {
+      "receipt": "project/str/studies/floor-portal-fixed-wall-head.json",
+      "location": [
+        "sourceSHA256",
+        "floor-portal-permanent-seat.json"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/floor-portal-permanent-seat.json"
+    },
+    {
+      "receipt": "project/str/studies/floor-portal-north-transfer.json",
+      "location": [
+        "sourcesSHA256"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/str/studies/floor-portal-twin-garden-tie.json",
+      "location": [
+        "sourceHashes"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/str/studies/floor-portal-north-roof-shoe.json",
+      "location": [
+        "sourceSHA256"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/str/studies/floor-portal-north-cap-layer.json",
+      "location": [
+        "sourceHashes"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/str/studies/floor-portal-north-cage.json",
+      "location": [
+        "sourceHashes"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
     }
   ],
   "gitBlobs": {
@@ -922,15 +1008,15 @@
     "project/str/studies/current-house-coupled-arches.py": "b83b224bd343f8c36189d4ddb3d413c4825831c4",
     "project/str/studies/current-house-spatial-arches.py": "2370904079a2e486c8847133898e5ed34dfeaf6b",
     "project/str/studies/current-house-floor-stops.json": "eaa3b7ac8fadb9583fb1bf6810495ac3ea4bbbb2",
-    "project/str/studies/floor-portal-fixed-wall-head.json": "a5ba5189ef3b2394eea68369e58d0a4e1b46f385",
-    "project/str/studies/floor-portal-north-transfer.json": "e4bf8ab88fd42f9f28db5aafea9ae69b7db76ceb",
-    "project/str/studies/floor-portal-twin-garden-tie.json": "be6939ba8a00e1d601115d8ff9aab081ebb063cd",
+    "project/str/studies/floor-portal-fixed-wall-head.json": "d216fd594e9a0c25536682b2f379cc784090e8f0",
+    "project/str/studies/floor-portal-north-transfer.json": "39c1ad09597d6e42b7fc7a4bb03af8253ac8326b",
+    "project/str/studies/floor-portal-twin-garden-tie.json": "fff8fa8685f994d2003bdadc38fc1c84dc134fa4",
     "project/str/studies/current-house-welded-heel.json": "8effbf8a9961ce490452f1ec6ec731b481cc7b11",
     "project/str/studies/current-house-arch-detail.json": "504202be0ff1ee1a56628349deaf8395846a0177",
     "project/str/studies/current-house-window-receivers.json": "58f2f9ad659373411833007e56600627d4b99cb2",
     "project/str/studies/current-house-arch-jambs.json": "eb43644fe6b23260ee1e102e14bb76025454587f",
     "project/str/studies/floor-portal-north-collar.json": "cb1760a60c0d82425f5e1a29e269cf97f9954ff7",
-    "project/str/studies/floor-portal-north-roof-shoe.json": "12a82f9a31378d65422c1a2a964311e462f7d5d5",
+    "project/str/studies/floor-portal-north-roof-shoe.json": "3c0c23a0f9848a2c7bc32a5ef5aa45914fc90523",
     "project/str/studies/current-house-outward-arches.json": "b4b086d1c06f1e2d2cfc272e71bd4dad88aa08d2",
     "project/str/studies/current-house-roof-route.py": "cbfae05e000a11cf2bf0f73356a55f85757e422f",
     "project/str/studies/current-house-roof-stiffness.py": "f9ad60356adc741eaa4ac17bb4aac4d191161345",
@@ -942,8 +1028,8 @@
     "project/str/studies/current-house-roof-stiffness.json": "648a91b31418b70924614933d480c279a8581a87",
     "project/str/studies/current-house-membrane-reactions.json": "e1c995b916b9ddd47fd323309868bcd1127b2f0b",
     "project/str/studies/current-house-wall-transfers.json": "e0f07982d5c14a464599eb5ac98952dcdcdaf892",
-    "project/str/studies/floor-portal-north-cap-layer.json": "dab58749281eb22c46354098a183a6937339cfda",
-    "project/str/studies/floor-portal-north-cage.json": "2b58f32dfcb90a44785d9217284f39b3ecbb7241",
+    "project/str/studies/floor-portal-north-cap-layer.json": "4ae6dba1c9050f1398e0896d8cd073e2fe4359cd",
+    "project/str/studies/floor-portal-north-cage.json": "e8e436bc87870666aa1ed702d34923ba240969fb",
     "project/str/studies/current-house-structural-case.py": "17abff02fafed0456baaf17dc6e92dd18b08106f",
     "project/design-constraints.ts": "0c76e5372a2537bbc6f3c6c29f07ab0efa297129",
     "project/str/studies/floor-portal-monolithic-drag.py": "083100d4cb2f189385e216ed149119f9e899277c",
@@ -1005,6 +1091,10 @@
     "compiler/reference-house/current-design/structural-successor.ts": "9ae813ed40695e6e94df43caa0b45e7db54d02c4",
     "compiler/reference-house/current-design/inlet-support.ts": "a2404befdbeda6464bc9f772d25bccd8d78d2479",
     "compiler/reference-house/current-design/engineering-document.ts": "5d0f209d9b20acb09255a0b0dcdccc10865857b5",
-    "project/had/inlet-assembly-convergence.md": "3607a02de6bac48ffc68a1059c104d4d91aea9de"
+    "project/had/inlet-assembly-convergence.md": "3607a02de6bac48ffc68a1059c104d4d91aea9de",
+    "project/str/studies/floor-portal-fixed-wall-head.py": "807159aa9439837489d3e95f9bf359983635c342",
+    "project/str/studies/floor-portal-north-transfer.py": "20f79473e3fd3e88351b3fa4d68ac1f1ef476d03",
+    "project/str/studies/floor-portal-twin-garden-tie.py": "5d5b7f6446c5ea5a54a444157406d62bc59373dc",
+    "project/str/studies/floor-portal-permanent-seat.json": "7d3b78abe753ed63f073b2612d93f9953b52721c"
   }
 }

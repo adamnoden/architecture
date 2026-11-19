@@ -104,3 +104,15 @@ test('current court intake identity invalidates both active RWT records and thei
     'project/rwt/studies/joined-service-routes.json',
   ])
 })
+
+
+test('a changed north-transfer receipt invalidates the actual twin-tie and roof-shoe source maps before interface replay', () => {
+  const source = 'project/str/studies/floor-portal-north-transfer.json'
+  const changed = auditSourceCoverage(path => path === source ? Buffer.concat([read(path), Buffer.from('\n')]) : read(path))
+  const receipts = changed.findings.filter(finding => finding.kind === 'source-contradiction' && finding.source === source)
+    .map(finding => finding.receipt).sort()
+  assert.deepEqual(receipts, [
+    'project/str/studies/floor-portal-north-roof-shoe.json',
+    'project/str/studies/floor-portal-twin-garden-tie.json',
+  ])
+})
