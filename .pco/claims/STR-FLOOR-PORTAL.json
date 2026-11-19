@@ -9,8 +9,8 @@
     "label": "convergence-2026-11-19-resumed"
   },
   "claimedAt": "2026-11-19T21:54:48.397Z",
-  "heartbeatAt": "2026-11-19T22:07:42.955Z",
-  "expiresAt": "2026-11-19T23:37:42.955Z",
+  "heartbeatAt": "2026-11-19T22:20:40.074Z",
+  "expiresAt": "2026-11-19T23:50:40.074Z",
   "branch": "work/convergence-integrated-2026-11-19",
   "predecessor": {
     "leaseId": "1e462ea9-3790-42cc-8040-6bc65e6c313e",
@@ -31,5 +31,11 @@
       "evidence": "6d05f4e2e304b04573a866a481402026f497ecd7 on work/convergence-dpc-2026-11-19;16 final source/structural/DPC tests passed; native structural receipts regenerated with only2 provenance changes; #1582 merged12bd98fe",
       "next": "Integrate final HAD split hood and IAS full-room handling branches, exact-head hosted fullhealth and publication preflight; full DPC six-component demand and whole-floor moisture path remain unresolved"
     }
+  },
+  "pr": 1584,
+  "checkpoint": {
+    "evidence": "PR #1584 exact07d533f650b6acf3deba9084ad6c8da704f46d5a;40 combined semantic tests and6 source-account tests pass; current Study/inlet drawings regenerated and inspected; native globalcontact remains unadmitted.",
+    "next": "Observe exact-head full health and A4/B5 proof, reconcile actual pagination if needed, fresh canonical preflight then merge; delegated coupled floor/wall/52-head implementation continues separately.",
+    "blocker": "Full successor roof/joint/moisture compatibility and independent inlet support/disconnect/seams remain real internal obligations."
   }
 }
