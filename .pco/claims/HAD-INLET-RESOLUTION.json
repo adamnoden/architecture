@@ -9,8 +9,8 @@
     "label": "convergence-inlet"
   },
   "claimedAt": "2026-11-19T20:30:02.696Z",
-  "heartbeatAt": "2026-11-19T20:30:02.696Z",
-  "expiresAt": "2026-11-19T21:15:02.696Z",
+  "heartbeatAt": "2026-11-19T20:44:46.459Z",
+  "expiresAt": "2026-11-19T21:29:46.459Z",
   "branch": "work/convergence-inlet-2026-11-19",
   "predecessor": {
     "leaseId": "5ddd99a4-fd1f-49de-af1d-7d77372c4077",
@@ -33,5 +33,11 @@
       "next": "Verify hosted checks at the final source and merge. Detail independent receiver section and anchors, actual lid and hand loads, positive captured transfer, rated split filler/collar wet seals and separate blocked-upper-mouth 90 L/min challenges.",
       "blocker": "Geometric fit and saved dependency propagation retain physical attachment, guided retention, wet closure and loaded handling as unqualified."
     }
+  },
+  "pr": 1583,
+  "checkpoint": {
+    "evidence": "PR #1583 exact head c619af73176b24bee95998727f96b032c6ca4cc5. TypeScript, source audit, repository integrity and 17 targeted tests passed. Joined routes and all five pressure joints are recomputed; labelled SVG rendered and inspected.",
+    "next": "Inspect exact-head hosted checks, coordinate main with root, run fresh publication preflight and merge. Retain planned node until rated independent support, dry disconnect and complete captured handling are resolved.",
+    "blocker": "Complete inlet arrangement still lacks rated wet closure, anchored independent support and loaded transfer proof; default closures are explicitly rejected."
   }
 }
