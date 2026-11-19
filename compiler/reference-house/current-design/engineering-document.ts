@@ -46,7 +46,7 @@ const northFields = ['portAxisXYMm', 'dragDemandFactor', 'remoteMainBarShiftMm',
 const foulFields = ['riserAxisXYMm', 'wetStackAirTakeoffZMm', 'terminalZMm', 'buriedReceiving'] as const
 const inletFields = ['branch', 'washer', 'cheekMm', 'retainedSideLandMm', 'receiverRailWidthMm',
   'minimumFrontBridgeMm', 'axialTravelMm', 'sideTravelMm', 'closure'] as const
-const insertFields = ['eastEdgeMm', 'headZMm', 'plantPressureAxisXMm'] as const
+const insertFields = ['eastEdgeMm', 'headZMm', 'plantPressureAxisXMm', 'plantVentOuterZMm'] as const
 const faultFields = ['branches'] as const
 const assemblyFields = ['plantSouthLegLevelMm', 'splitRoof'] as const
 const removalFields = ['branch', 'drawMm', 'roofAccess', 'washer', 'utilityTaperRemoved', 'preparation'] as const

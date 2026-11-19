@@ -27,7 +27,7 @@ export type SplitRoofSettings = {
 export function readSplitRoofReferenceSettings(): SplitRoofSettings {
   return { liftMm: 70, sideTravelMm: 100, forwardTravelMm: 400, plateThicknessMm: 1.5, densityKgM3: 8000,
     handleAndRetainersMassBudgetKg: 0.15, handMassComparisonKg: 2, seamLapMm: 10,
-    collarOutsideDiameterMm: 92, collarSealLandMm: 4, rearReturnDepthMm: 8, plantRoofRiseMm: 5,
+    collarOutsideDiameterMm: 92, collarSealLandMm: 4, rearReturnDepthMm: 8, plantRoofRiseMm: 0,
     handWidthMm: 100, handDepthMm: 60, handHeightMm: 60, handleGripHeightMm: 45 }
 }
 const keys = ['liftMm', 'sideTravelMm', 'forwardTravelMm', 'plateThicknessMm', 'densityKgM3',
@@ -60,7 +60,7 @@ export function compareSplitInletRoofs(input: unknown, removals: readonly Remova
   if (!input || typeof input !== 'object' || Array.isArray(input) || Object.keys(input).length !== keys.length
       || keys.some(key => !Object.hasOwn(input, key))) throw new Error('Expected complete split-roof authoring settings')
   const settings = input as SplitRoofSettings
-  if (keys.some(key => !Number.isFinite(settings[key]) || settings[key] <= 0)
+  if (keys.some(key => !Number.isFinite(settings[key]) || settings[key] < 0 || (settings[key] === 0 && key !== 'plantRoofRiseMm'))
       || settings.liftMm > 200 || settings.sideTravelMm > 300 || settings.forwardTravelMm > 600
       || settings.plateThicknessMm > 5 || settings.densityKgM3 < 1000 || settings.densityKgM3 > 20000
       || settings.seamLapMm > 20 || settings.plantRoofRiseMm > 15) throw new Error('Split-roof settings exceed the bounded two-plate comparison')

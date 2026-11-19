@@ -9,7 +9,7 @@ The [inlet assembly compiler](../../compiler/reference-house/current-design/inle
 | Arrangement | Current disposition | Reason |
 | --- | --- | --- |
 | Inherited east lobby line and open transfer cabinet | Rejected as an adopted inlet | Conflicts with plant-N, pressure containment and occupied handling; retained in the [owning rejection](inlet-resolution.md). |
-| Independent south feeds with native rectangular roof closures | Reject for adoption | Utility lid exceeds its installed tapered cell; both collar reservations miss their declared seal land; Plant wall return intercepts the formed high vent. Clear pipe routes cannot cure these failures. |
+| Independent south feeds with native rectangular roof closures | Reject for adoption | Utility lid exceeds its installed tapered cell; both collar reservations miss their declared seal land. The old high Plant vent remains a historical adverse comparison; the actual insert vent now clears the return. Clear pipe routes cannot cure these failures. |
 | Same south feeds with the already tested shaped Utility lid, smaller collar envelope, thinner Plant return and independent front rest | Conditional comparison; incomplete | The closures can fit together, but rated seals, complete connection and retained-end retreat, anchored independent supports, complete mass and positive captured handling remain missing. These are pre-site engineering obligations. |
 | Two light roof plates over each fixed trough | Preferred and implemented development candidate | Plain separately handled plates replace the complete U-lid, oversized filler, axial guides and offset rest. The fixed rear return, lower liner, sibling closure, independent relief and vent remain. The source-bound paths, mass budgets and hand envelopes below are checked; wet seams, retained pressure-end release and complete carrier support remain open. |
 
@@ -49,15 +49,17 @@ Lift each held plate **70 mm**, move its own half **100 mm outward in X**, carry
 | Authored comparison, not an ergonomic certification | 2 kg per plate |
 | Hand envelope about each computed grip | 100 × 60 × 60 mm |
 | Grip centre above plate | 45 mm |
-| Utility / Plant roof datum | Z680 / Z735 mm |
+| Utility / Plant roof datum | Z680 / Z730 mm |
 | Fixed rear return depth | 8 mm |
 | Utility direct collar to the unchanged fixed taper, after fabrication setting | 3.402 mm |
-| Utility lifted east plate to the closed Plant roof, after access setting | 5 mm |
-| Plant hand to the retained dry connection at Z900, governing west lap plate | 7 mm |
+| Utility lifted east plate to the closed Plant roof, after access setting | 10 mm |
+| Plant hand to the retained dry connection at Z900, governing west lap plate | 12 mm |
 | Governing hand-to-riser reserve, after access setting | 3 mm |
 | Both parked inboard envelopes to the restrained washer, where plans overlap | 425 mm |
 
 These are small but explicit residuals after the declared settings, not invented fabrication quality. The compiler blocks a 20 mm lift at the sibling, a 120 mm lift at the dry connection, a short lateral step at the riser, or a short forward step when lowering through the live sibling cell. Larger hands, heavier hardware or thicker plate stock recompute the actual constraints and parts budgets. Altering one failed boundary does not erase the other constraints. The generated plan shows the gross blanks, separate notch cuts, grip routes and dry parts areas from these inputs.
+
+The actual Plant insert vent is **X10348/Z660 outside, Z670.39 inside, Ø30 formed**, as already used by the fault calculation. Removal and both closure methods now take that same vent from the selected insert. The old wet-box vent at X10345/Z688 outside, Z698.39 inside, Ø32 remains historical. Its old return collision is not a current blocker. On the actual vent the native 12 mm return leaves **27.61 mm** and the split roof's fixed 8 mm return leaves **31.61 mm** after setting. The previously unnecessary 5 mm roof rise has therefore been removed. A saved `plantVentOuterZMm` edit propagates through the insert/fault drawings and the removal and closure calculations; raising it 0.5 mm reduces those actual reserves, while a 1 mm raise violates the existing header-clearance comparison and blocks the dependent stages.
 
 This removes the old lid's axial guides, offset receiving rails and transverse front bearing from the proposed architecture. It does **not** remove the independent carrier guide, supported disconnect or carrier first rest. The low fixed trough, lower outlet, high hood and source-fed fault account remain untouched. A flat lap and split collar are dimensioned interfaces; their complete seal, clamping and wet restoration are still missing design/evidence, not a rated product inferred from shape.
 

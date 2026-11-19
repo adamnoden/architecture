@@ -6,7 +6,7 @@ import { readGeorgianDesignSnapshot } from './current-design/georgian-source.js'
 const roof = {
   liftMm: 70, sideTravelMm: 100, forwardTravelMm: 400, plateThicknessMm: 1.5, densityKgM3: 8000,
   handleAndRetainersMassBudgetKg: 0.15, handMassComparisonKg: 2, seamLapMm: 10,
-  collarOutsideDiameterMm: 92, collarSealLandMm: 4, rearReturnDepthMm: 8, plantRoofRiseMm: 5,
+  collarOutsideDiameterMm: 92, collarSealLandMm: 4, rearReturnDepthMm: 8, plantRoofRiseMm: 0,
   handWidthMm: 100, handDepthMm: 60, handHeightMm: 60, handleGripHeightMm: 45,
 }
 async function document() {
@@ -41,7 +41,7 @@ test('two light split roof plates replace the complete U-lid transfer and its of
     }
   }
   assert.equal(split.branches.find(branch => branch.branch === 'utility')!.directSplitCollar.collarToFixedCellAfterSettingMm, 3.402)
-  assert.equal(split.branches.find(branch => branch.branch === 'plant')!.roofZMm, 735)
+  assert.equal(split.branches.find(branch => branch.branch === 'plant')!.roofZMm, 730)
   assert.equal(split.evidence.wetClosureQualified, false)
   assert.equal(assembly.evidence.preSiteArrangementComplete, false)
   assert.equal(assembly.evidence.installedAcceptance, false)
