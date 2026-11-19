@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 45,
-  "state": "released",
-  "leaseId": "5ddd99a4-fd1f-49de-af1d-7d77372c4077",
+  "generation": 46,
+  "state": "claimed",
+  "leaseId": "6d1a0dde-e1e3-4014-99e6-bac6f58d5756",
   "holder": {
     "kind": "codex",
-    "label": "rush-front-receiver"
+    "label": "convergence-inlet"
   },
-  "claimedAt": "2026-11-18T23:20:04.017Z",
-  "heartbeatAt": "2026-11-19T00:25:04.595Z",
-  "expiresAt": "2026-11-19T00:25:04.595Z",
-  "branch": "work/rush-inlet-dependencies-2026-11-18",
+  "claimedAt": "2026-11-19T20:30:02.696Z",
+  "heartbeatAt": "2026-11-19T20:30:02.696Z",
+  "expiresAt": "2026-11-19T21:15:02.696Z",
+  "branch": "work/convergence-inlet-2026-11-19",
   "predecessor": {
-    "leaseId": "229ffcde-aa94-498e-af37-4679e76c38b3",
-    "generation": 44,
-    "branch": "work/rush-installation-bounds-2026-11-18",
-    "pr": 1578,
+    "leaseId": "5ddd99a4-fd1f-49de-af1d-7d77372c4077",
+    "generation": 45,
+    "branch": "work/rush-inlet-dependencies-2026-11-18",
+    "pr": 1580,
     "checkpoint": {
-      "evidence": "PR #1578 exact head 5aa3476b19324a2300d2bfb0b3df3e020b2762b9. Packet preflight, browser and drawing passed; repository health running. HAD geometry measures bare lid gravity and governing eccentric vertical load only.",
-      "next": "Bind rated collar and removable filler with seal and vent details. Physically challenge each isolated closure at 90 L/min with its upper mouth blocked. Measure assembled lid mass and handling loads; detail and test anchored guides and positive capture through transfer and first rest."
+      "evidence": "PR #1580 exact final head e8f03902ab59d91dd96c9ea3108718584efcc5e1. Complete runtime import closure audited; 11 final pipeline tests passed and 495 pre-pin Reference House tests passed. Hosted suite rerunning final source.",
+      "next": "Verify hosted checks at the final source and merge. Detail independent receiver section and anchors, actual lid and hand loads, positive captured transfer, rated split filler/collar wet seals and separate blocked-upper-mouth 90 L/min challenges.",
+      "blocker": "Geometric fit and saved dependency propagation retain physical attachment, guided retention, wet closure and loaded handling as unqualified."
     }
   },
   "recoverySource": {
-    "leaseId": "229ffcde-aa94-498e-af37-4679e76c38b3",
-    "generation": 44,
-    "branch": "work/rush-installation-bounds-2026-11-18",
-    "pr": 1578,
+    "leaseId": "5ddd99a4-fd1f-49de-af1d-7d77372c4077",
+    "generation": 45,
+    "branch": "work/rush-inlet-dependencies-2026-11-18",
+    "pr": 1580,
     "checkpoint": {
-      "evidence": "PR #1578 exact head 5aa3476b19324a2300d2bfb0b3df3e020b2762b9. Packet preflight, browser and drawing passed; repository health running. HAD geometry measures bare lid gravity and governing eccentric vertical load only.",
-      "next": "Bind rated collar and removable filler with seal and vent details. Physically challenge each isolated closure at 90 L/min with its upper mouth blocked. Measure assembled lid mass and handling loads; detail and test anchored guides and positive capture through transfer and first rest."
+      "evidence": "PR #1580 exact final head e8f03902ab59d91dd96c9ea3108718584efcc5e1. Complete runtime import closure audited; 11 final pipeline tests passed and 495 pre-pin Reference House tests passed. Hosted suite rerunning final source.",
+      "next": "Verify hosted checks at the final source and merge. Detail independent receiver section and anchors, actual lid and hand loads, positive captured transfer, rated split filler/collar wet seals and separate blocked-upper-mouth 90 L/min challenges.",
+      "blocker": "Geometric fit and saved dependency propagation retain physical attachment, guided retention, wet closure and loaded handling as unqualified."
     }
-  },
-  "checkpoint": {
-    "evidence": "PR #1580 exact final head e8f03902ab59d91dd96c9ea3108718584efcc5e1. Complete runtime import closure audited; 11 final pipeline tests passed and 495 pre-pin Reference House tests passed. Hosted suite rerunning final source.",
-    "next": "Verify hosted checks at the final source and merge. Detail independent receiver section and anchors, actual lid and hand loads, positive captured transfer, rated split filler/collar wet seals and separate blocked-upper-mouth 90 L/min challenges.",
-    "blocker": "Geometric fit and saved dependency propagation retain physical attachment, guided retention, wet closure and loaded handling as unqualified."
-  },
-  "pr": 1580,
-  "releasedAt": "2026-11-19T00:25:04.595Z",
-  "releaseReason": "handoff"
+  }
 }
