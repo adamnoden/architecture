@@ -9,9 +9,9 @@
     "label": "converge-room-kit"
   },
   "claimedAt": "2026-11-19T20:30:11.806Z",
-  "heartbeatAt": "2026-11-19T21:56:34.506Z",
-  "expiresAt": "2026-11-19T22:41:34.506Z",
-  "branch": "work/converge-room-kit-2026-11-19",
+  "heartbeatAt": "2026-11-19T22:16:36.892Z",
+  "expiresAt": "2026-11-19T23:01:36.892Z",
+  "branch": "work/convergence-integrated-2026-11-19",
   "predecessor": {
     "leaseId": "c3f08d3f-2feb-4d9f-98b4-82567db2cbd3",
     "generation": 9,
@@ -33,8 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Publishedcheckpoint1cf60fa4; productiongenericvalidator nowcomputes144joinedfloor transfer-placement-approach witnesses fromeditableplan; source-frameLnotches andfurnishedsourceviews integrated; finaltestsrunning",
-    "next": "Finishnegative-input/currentdocument tests andrenderedreview; publishfinalconceptcloseoutcommitforrootserialintegration",
-    "blocker": "No owner orphysicalacceptance claimed;64.7mmcourseversus65mmcontrol remainsMATcoordination obligation"
+    "evidence": "IAS source published at c840e82bb152010f283a5e8cf474a98f1e64ea76; final 12 Study tests, 181 control tests, TypeScript, source validation and rendered views passed; root has integrated the completed concept proposal",
+    "next": "Observe exact shared-head CI and canonical publication preflight; reconcile graph and release after verified merge",
+    "blocker": "Hosted shared-head checks pending; owner acceptance and physical performance remain unearned; MAT retains the 64.7 mm course versus 65 mm conventional control"
   }
 }
