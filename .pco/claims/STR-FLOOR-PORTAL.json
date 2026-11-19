@@ -9,8 +9,8 @@
     "label": "convergence-2026-11-19"
   },
   "claimedAt": "2026-11-19T20:30:01.372Z",
-  "heartbeatAt": "2026-11-19T20:31:48.438Z",
-  "expiresAt": "2026-11-19T21:16:48.438Z",
+  "heartbeatAt": "2026-11-19T20:50:54.454Z",
+  "expiresAt": "2026-11-19T21:35:54.454Z",
   "branch": "work/convergence-2026-11-19",
   "predecessor": {
     "leaseId": "b71fcf09-0375-4d95-a9d9-eebf11c2a61f",
@@ -35,7 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Recovered PR #1581 c0671af04745e39f97a00b393939ed46352a2731 on successor branch; hosted validation and both proof jobs succeeded",
-    "next": "Merge recovered linked-route implementation under current lease; resolve full DPC cut action classification and successor whole-frame proof"
-  }
+    "evidence": "PR #1582 recovered exact c0671af0 full hosted health running; DPC origin audit published at work/convergence-dpc-2026-11-19 commit2971594ee5e01831c4f0c003e2221cdd725c1fa3, three targeted tests pass",
+    "next": "Finish canonical structural provenance regeneration; integrate joined HAD and IAS branches, run exact-head CI and publication preflight"
+  },
+  "pr": 1582
 }
