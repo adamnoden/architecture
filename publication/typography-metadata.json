@@ -7,27 +7,27 @@
     "note": "Typography authority is frozen by the v1 release; pagination below tracks the current reader-facing production content. Exact RC2 release pagination remains preserved in publication/release-candidates/typ09d1.json."
   },
   "a4": {
-    "pages": 279,
-    "duplexLeaves": 140,
-    "sixteenPageSections": 18,
-    "pagesAtSixteenPageBoundary": 288,
-    "paddingToSixteenPageBoundary": 9,
+    "pages": 257,
+    "duplexLeaves": 129,
+    "sixteenPageSections": 17,
+    "pagesAtSixteenPageBoundary": 272,
+    "paddingToSixteenPageBoundary": 15,
     "widthMm": 210,
     "heightMm": 297
   },
   "b5": {
-    "pages": 333,
-    "duplexLeaves": 167,
-    "sixteenPageSections": 21,
-    "pagesAtSixteenPageBoundary": 336,
-    "paddingToSixteenPageBoundary": 3,
+    "pages": 313,
+    "duplexLeaves": 157,
+    "sixteenPageSections": 20,
+    "pagesAtSixteenPageBoundary": 320,
+    "paddingToSixteenPageBoundary": 7,
     "widthMm": 176,
     "heightMm": 250
   },
   "comparison": {
-    "b5MinusA4Pages": 54,
-    "b5PageChangePercent": 19.35,
-    "b5MinusA4Leaves": 27,
+    "b5MinusA4Pages": 56,
+    "b5PageChangePercent": 21.79,
+    "b5MinusA4Leaves": 28,
     "spineWidthClaim": "not admissible without final paper caliper / manufacturing specification"
   }
 }
