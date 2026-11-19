@@ -115,7 +115,7 @@ Where structure is conspicuous, support, mass and equilibrium are reviewed as ar
 
 This has direct consequences.
 
-Quiet masonry walls remain directly finished where no service burden justifies another layer. Principal floors remain continuous rather than raised or panelised. Technical access is concentrated at real interfaces and service spaces. Plant and terminals are given hierarchy rather than hidden behind fake architecture. Metal is used sparsely where touch, wear, indexing or disassembly gives it a reason to exist.
+Permanent masonry gives the rooms their durable background. The current interior proposal places workshop-crafted timber or tiled faces over independent support, with seated floor pieces and locally releasable panelling. Their joints should belong to the architecture rather than advertise the means of removal. Plant and terminals are given hierarchy, and metal is reserved for touch, wear, indexing or disassembly. The proposed room must earn the owner’s approval on appearance as well as demonstrate credible access and renewal.
 
 ## Tectonic language
 
@@ -181,17 +181,17 @@ The diaphragm remains part of the permanent floor structure. Any future access l
 
 ## Quiet walls and selective infrastructure
 
-The interior rejects the idea that every wall should become demountable simply because change is possible.
+The current interior enquiry is a complete crafted room whose finishes can be installed and later opened without destructive work. Extensive timber panelling and a tiled variant are central design proposals. Their modular construction should be almost invisible in occupation; the owner has not yet selected a family.
 
-Three conditions are distinguished.
+Three layers keep distinct responsibilities.
 
-**Quiet permanent wall.** Direct mineral or plaster finish on the permanent background remains the default where there is little service or change burden.
+**Permanent background.** Masonry, protective mineral returns and the required air, fire, acoustic or wet boundaries retain their own continuity. Removing a decorative face must not remove the protection behind it.
 
-**Controlled architectural datum.** Where fixing, local services or replaceable joinery justify it, sparse known grounds are introduced at skirtings, architraves, picture rails or specific heavy-load positions.
+**Independent support and services.** Fixed rails, hard bearing, known fixing grounds and separately supported service routes provide the controlled interfaces. A skirting or panel exposes a defined task; it does not become a pipe support or promise access through a permanent deck.
 
-**Replaceable architectural lining.** This remains an experimental challenger rather than the house-wide baseline. If physical testing cannot equal an excellent conventional wall for solidity, acoustics, appearance, fixing behaviour and reinstatement, the house remains complete without it.
+**Crafted wearing faces.** Gravity-hung wall panels and seated timber or tiled floor pieces use simple, accessible positive restraint. Local mouldings and stops permit individual release; adjacent finish fields should remain intact. Fixed joinery and conventional continuous finishes remain fair comparisons rather than automatic defaults or vetoes of the proposal.
 
-That asymmetry is deliberate. A long-life house does not become more credible by maximising the quantity of removable construction.
+The Study is the first furnished comparison. Appearance, sound, solidity, ordinary handling and faithful reinstatement all matter. The current proposal carries explicit unresolved details and proceeds to the owner’s coordinated design review without claiming fabricated performance or aesthetic acceptance.
 
 ## Openings as life-separated assemblies
 
@@ -372,7 +372,7 @@ The current design exposes these questions so that adverse findings can change t
 
 This chapter interface is deliberately established before the selected interior system is fully authored.
 
-Part IV already fixes several constraints that the eventual interior architecture must respect: quiet permanent walls remain the default where service burden is low; principal floors should feel continuous and settled; technical access must occur at credible architectural datums rather than turning every surface into equipment; and visible joinery must belong to the rooms even when it also carries fixing, service or replacement logic.
+Part IV fixes several constraints that the proposed crafted interior must respect: permanent walls and protective layers retain their own continuity; individually removable floor fields should feel settled and coherent; access belongs at credible architectural datums; and visible joinery must belong to the room while its hidden interfaces permit local renewal. The owner has not yet accepted the timber or tiled family.
 
 The resolved chapter will define the selected family of wall finishes and linings, floor/ceiling relationships, skirtings, architraves, grilles, access pieces, fixing grounds and other repeated interior interfaces. It must distinguish what is permanent, what is replaceable, what is merely conventional finish, and what has genuinely earned a special interface.
 

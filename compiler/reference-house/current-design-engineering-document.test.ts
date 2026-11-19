@@ -153,8 +153,10 @@ test('one saved file regenerates the inlet front bearing and the Study board cat
     assert.equal(utility.roundedRelease.gravity.minimumSignedSupportEdgeMarginMm, 46.2737)
     assert.equal(utility.roundedRelease.captureQualified, false)
     const catalogue = result.engineering.studyRoomKit.kit.floor.firstRestBoardTrial.boardCatalogue
-    assert.equal(catalogue.installedPlanObstructions.placementCount, 111)
-    assert.equal(catalogue.localWallTrimReleased.placementCount, 117)
+    assert.equal(catalogue.installedPlanObstructions.placementCount, 128)
+    assert.equal(catalogue.localWallTrimReleased.placementCount, 135)
+    assert.equal(result.engineering.studyRoomKit.kit.floor.ordinaryHandling.witnessCount, 144)
+    assert.equal(result.engineering.studyRoomKit.kit.floor.ordinaryHandling.physicalAcceptance, false)
     assert.equal(catalogue.physicalAcceptance, false)
     assert.equal(result.documentIdentity.digest, sha256SemanticFingerprint(document))
   } finally {

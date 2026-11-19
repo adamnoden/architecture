@@ -2,6 +2,8 @@ import { execFileSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
+import type { StudyOrdinaryHandlingPlan } from './study-ordinary-handling.js'
+import type { compileStudyInstalledInlet } from './study-installed-inlet.js'
 
 type Point = readonly [number, number]
 type PlanBox = readonly [number, number, number, number]
@@ -9,6 +11,7 @@ type Worker = {
   readonly points: readonly Point[]
   readonly minimumClearance: number
   readonly limitingObstacle: string
+  readonly lowSupportSweepsXYXYMm?: readonly PlanBox[]
 }
 type MovingPhase = {
   readonly id: string
@@ -24,9 +27,10 @@ type FurniturePhase = { readonly type: 'approach'; readonly id: string; readonly
   | (MovingPhase & { readonly type: 'translation'; readonly itemSweepXYWHMm: PlanBox })
   | (MovingPhase & { readonly type: 'rotation'; readonly centreXYMm: Point; readonly radiusMm: number; readonly angleDeg: 90 })
 
-type FirstRestPart = { readonly id: string; readonly box: PlanBox; readonly face: PlanBox; readonly keyCentresXYMm: readonly Point[] }
+type FirstRestPart = { readonly id: string; readonly box: PlanBox; readonly face: PlanBox; readonly keyCentresXYMm: readonly Point[]; readonly facePieces?: readonly PlanBox[] }
 export interface FirstRestScreen {
   readonly parts: readonly FirstRestPart[]
+  readonly ordinaryHandling?: StudyOrdinaryHandlingPlan
   readonly bandsXYXYMm: readonly PlanBox[]
   readonly emitterPlinthXYXYMm: PlanBox
   readonly bodyRadiusMm: number
@@ -37,6 +41,9 @@ export interface FirstRestScreen {
   readonly liftMm: number
   readonly finishDepthMm: number
   readonly restBoardTopMm: number
+  readonly lowWorkerProfile?: { readonly schema: 'ias-kneeling-floor-profile/1'; readonly torsoBottomMm: number; readonly torsoTopMm: number;
+    readonly lowContactHeightMm: number; readonly normalRangeMm: Point; readonly tangentRangesMm: readonly Point[]; readonly physicalAcceptance: false }
+  readonly installedServices?: Extract<ReturnType<typeof compileStudyInstalledInlet>, { state: 'wall-hung-candidate' }>
   readonly includeAlternateReceivers?: boolean
   readonly maximumExtendedTransferMm?: number
 }
@@ -66,6 +73,18 @@ type FirstRestOutcome = {
 
 interface FurnitureMotion {
   readonly firstRest: {
+    readonly ordinaryHandling?: {
+      readonly schema: 'ias-study-ordinary-handling-result/1'; readonly units: 'mm';
+      readonly state: 'joined-geometry-witnesses' | 'partial-geometry-witnesses'; readonly physicalAcceptance: false;
+      readonly partCount: number; readonly witnessCount: number;
+      readonly parts: readonly { readonly partId: string; readonly state: string; readonly diagnostic?: string;
+        readonly stage?: string; readonly boardId?: string; readonly trimReleases?: readonly string[]; readonly boardXYXYMm?: PlanBox;
+        readonly panelPathWaypointDeltasMm?: readonly Point[]; readonly workerPathXYMm?: readonly Point[];
+        readonly padBearingPartIds?: readonly string[]; readonly maximumKeyReachMm?: number;
+        readonly bodyToPanelMm?: number; readonly boardPickupClearanceMm?: number; readonly bodyToBoardClearanceMm?: number;
+        readonly staging?: { readonly state: string; readonly arrivalPathXYMm?: readonly Point[]; readonly secondHandlerWithdrawalXYMm?: readonly Point[];
+          readonly placement?: { readonly maximumReachMm: number; readonly carriedXYXYMm?: PlanBox }; readonly holdReserveMm?: number } }[]
+    }
     readonly schema: 'ias-study-floor-first-rest/1'
     readonly physicalAcceptance: false
     readonly partCount: number
@@ -89,7 +108,7 @@ interface FurnitureMotion {
       readonly travelUndersideMm: number; readonly firstRestBoardTopMm: number; readonly undersideReserveMm: number
     }
     readonly parts: readonly FirstRestOutcome[]
-    readonly g1Projection: { readonly installedCarrierMinimumZMm: null; readonly releasedPackageZMm: Point }
+    readonly g1Projection: { readonly installedCarrierMinimumZMm: number | null; readonly releasedPackageZMm: Point }
   } | null
   readonly schema: 'ias-study-furniture-native-result/1'
   readonly state: 'geometry-screen-only' | 'geometry-conflict'
@@ -113,6 +132,7 @@ interface FurnitureMotion {
 const repository = new URL('../../../../', import.meta.url)
 const nativePath = 'project/ias/studies/study-furniture-motion.py'
 const bcrPath = 'project/bcr/studies/bay-interface-study.py'
+const ordinaryPath = 'project/ias/studies/study-floor-handling.py'
 const sourceSha256 = (path: string) => createHash('sha256').update(readFileSync(new URL(path, repository))).digest('hex')
 
 export function compileStudyFurnitureMotion(
@@ -122,7 +142,7 @@ export function compileStudyFurnitureMotion(
   chairParkXYXYMm: PlanBox,
   firstRest?: FirstRestScreen,
 ) {
-  const source = { [nativePath]: sourceSha256(nativePath), [bcrPath]: sourceSha256(bcrPath) }
+  const source = { [nativePath]: sourceSha256(nativePath), [bcrPath]: sourceSha256(bcrPath), [ordinaryPath]: sourceSha256(ordinaryPath) }
   const result: FurnitureMotion = JSON.parse(execFileSync('python3', [
     '-B', fileURLToPath(new URL(nativePath, repository)), fileURLToPath(repository),
   ], {

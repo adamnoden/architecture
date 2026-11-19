@@ -89,7 +89,9 @@ export function runStructuralDpcOriginAudit(resolved: CurrentDesignResolution, c
       { code: 'DPC_CROSSING_OWNERSHIP_INCOMPLETE',
         message: 'Inner-wall totals are source-origin accounting over all inner crossings. Actual wall/pier distribution and mixed reserve extents are unresolved; these are not NW or NE splice demands.' },
       { code: 'DPC_SIGNED_LATERAL_CUT_MISSING',
-        message: 'This partition preserves vertical force and two first moments. Signed six-component cut actions require originating lateral forces at their actual heights and exclude below-cut facade/plinth actions.' },
+        message: actions.native.globalContact
+          ? 'Global contact reconstructs aggregate force and moment at the cut. Individual crossing distribution and signed six-component joint recovery remain unresolved.'
+          : 'This partition preserves vertical force and two first moments. Signed six-component cut actions require originating lateral forces at their actual heights and exclude below-cut facade/plinth actions.' },
       { code: 'DPC_CANDIDATE_COMPATIBILITY_UNPROVED',
         message: 'Retained fixed-base load paths are recomputed. The widened collector, fixed wall head, tied roof sectors, joint stiffness and non-plastic moisture continuity require the joined successor model.' },
     ],
