@@ -1,44 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "IAS-CRAFT-ROOM-KIT",
-  "generation": 9,
-  "state": "released",
-  "leaseId": "c3f08d3f-2feb-4d9f-98b4-82567db2cbd3",
+  "generation": 10,
+  "state": "claimed",
+  "leaseId": "43e7994b-0a56-4ac7-995c-51c742eb689c",
   "holder": {
     "kind": "codex",
-    "label": "rush-night-study"
+    "label": "converge-room-kit"
   },
-  "claimedAt": "2026-11-18T23:20:10.772Z",
-  "heartbeatAt": "2026-11-18T23:53:50.457Z",
-  "expiresAt": "2026-11-18T23:53:50.457Z",
-  "branch": "work/rush-night-integration-2026-11-18",
+  "claimedAt": "2026-11-19T20:30:11.806Z",
+  "heartbeatAt": "2026-11-19T20:30:11.806Z",
+  "expiresAt": "2026-11-19T21:15:11.806Z",
+  "branch": "work/converge-room-kit-2026-11-19",
   "predecessor": {
-    "leaseId": "76e13051-1e0b-4b78-b4bd-760bff232354",
-    "generation": 8,
-    "branch": "work/rush-installation-bounds-2026-11-18",
-    "pr": 1578,
+    "leaseId": "c3f08d3f-2feb-4d9f-98b4-82567db2cbd3",
+    "generation": 9,
+    "branch": "work/rush-night-integration-2026-11-18",
     "checkpoint": {
-      "evidence": "PR #1578 exact head 5aa3476b19324a2300d2bfb0b3df3e020b2762b9. Study reports 117/119 planar fits, 115 board placements wholly inside floor bands, and current G1 approach obstruction; 19 focused Study tests passed.",
-      "next": "After exact-head repository health and canonical merge, bind independent installed inlet and carrier underside envelopes, phase-specific worker height, and released east and cloak trim geometry before replaying access and board insertion.",
-      "blocker": "Hosted repository health pending. Installed module, grille, fasteners and support envelopes, trim removal, and loaded board/deck handling need evidence."
+      "evidence": "PR #1579 exact head 9023fac17d50c04f29fbed061894e4a272535c9d; 490 joint Reference House tests and saved-document catalogue replay passed locally",
+      "next": "Observe hosted checks and canonical preflight then merge; detail six named local trim releases and independent installed G1 module and carrier underside bounds before joined approach and loaded board handling proof",
+      "blocker": "Two southeast strips retain blocked approaches; board insertion, grip exchange, tolerance and loaded deck support remain unqualified"
     }
   },
   "recoverySource": {
-    "leaseId": "76e13051-1e0b-4b78-b4bd-760bff232354",
-    "generation": 8,
-    "branch": "work/rush-installation-bounds-2026-11-18",
-    "pr": 1578,
+    "leaseId": "c3f08d3f-2feb-4d9f-98b4-82567db2cbd3",
+    "generation": 9,
+    "branch": "work/rush-night-integration-2026-11-18",
     "checkpoint": {
-      "evidence": "PR #1578 exact head 5aa3476b19324a2300d2bfb0b3df3e020b2762b9. Study reports 117/119 planar fits, 115 board placements wholly inside floor bands, and current G1 approach obstruction; 19 focused Study tests passed.",
-      "next": "After exact-head repository health and canonical merge, bind independent installed inlet and carrier underside envelopes, phase-specific worker height, and released east and cloak trim geometry before replaying access and board insertion.",
-      "blocker": "Hosted repository health pending. Installed module, grille, fasteners and support envelopes, trim removal, and loaded board/deck handling need evidence."
+      "evidence": "PR #1579 exact head 9023fac17d50c04f29fbed061894e4a272535c9d; 490 joint Reference House tests and saved-document catalogue replay passed locally",
+      "next": "Observe hosted checks and canonical preflight then merge; detail six named local trim releases and independent installed G1 module and carrier underside bounds before joined approach and loaded board handling proof",
+      "blocker": "Two southeast strips retain blocked approaches; board insertion, grip exchange, tolerance and loaded deck support remain unqualified"
     }
-  },
-  "checkpoint": {
-    "evidence": "PR #1579 exact head 9023fac17d50c04f29fbed061894e4a272535c9d; 490 joint Reference House tests and saved-document catalogue replay passed locally",
-    "next": "Observe hosted checks and canonical preflight then merge; detail six named local trim releases and independent installed G1 module and carrier underside bounds before joined approach and loaded board handling proof",
-    "blocker": "Two southeast strips retain blocked approaches; board insertion, grip exchange, tolerance and loaded deck support remain unqualified"
-  },
-  "releasedAt": "2026-11-18T23:53:50.457Z",
-  "releaseReason": "handoff"
+  }
 }
