@@ -19,7 +19,7 @@ type Context = {
   readonly occupied: readonly { id: string; box: Box }[]
   readonly branches: readonly {
     id: Branch; route: readonly Point[]; cut: Point; drawMm: number
-    radiusMm: number; releasedTip: Point
+    radiusMm: number; bareRadiusMm: number; releasedTip: Point
     wetPlan: readonly (readonly [number, number])[]; wetZ: readonly [number, number]
   }[]
 }
@@ -56,7 +56,7 @@ export function compareInletSupport(input: unknown, context: Context) {
       const [x, y, z, width, depth, height] = rail.box
       const inverse: Box = [x, y - branch.drawMm, z, width, depth + branch.drawMm, height]
       const jacketGap = Math.min(...bend.path.slice(1).map((end, i) => exactSegmentBoxDistance(bend.path[i], end, inverse))) - branch.radiusMm - bend.hausdorffError
-      const bareGap = exactSegmentBoxDistance(branch.releasedTip, branch.route[1], inverse) - 14
+      const bareGap = exactSegmentBoxDistance(branch.releasedTip, branch.route[1], inverse) - branch.bareRadiusMm
       return { branch: branch.id, rail: rail.id, afterSettingMm: round(Math.min(jacketGap, bareGap) - 10) }
     })
   })

@@ -24,11 +24,12 @@ type Sources = {
 }
 const branchIds = ['utility', 'plant'] as const
 const root = 'project/had/studies/'
+const portalPath = 'project/str/studies/floor-portal-interface-review.json'
 const round = (value: number) => Number(value.toFixed(4))
 const settingMm = 10
 const comparisonMm = 25
 const radiusMm = 75
-const suppliedInputs = ['south-inlet-under-sill', 'south-inlet-wet-box', 'utility-dry-bowl-release',
+const suppliedInputs = ['south-inlet-under-sill', 'south-inlet-wet-box', 'south-inlet-relief', 'utility-dry-bowl-release',
   'utility-wide-capture', 'current-house-services', 'incoming-water', 'inlet-fixed-station'] as const
 
 function boundSource<T>(resolved: CurrentDesignResolution, path: string): T {
@@ -177,8 +178,8 @@ export function compileInletAssembly(resolved: CurrentDesignResolution, input: u
   const terminalToHotMm = Math.min(...lowerTerminals.flatMap(route => hotRoutes.map((h, index) => pair(route, h, 25 + (index === 0 ? pipeRadii.utility : 25)))))
   const routesClear = Math.min(pairMm, terminalToHotMm, ...clearance.flatMap(row => [row.hotBackboneMm, row.hotTerminalMm,
     row.washerThroughFirstRestMm, row.inverterWorkMm, ...row.bowlTransport.map(stage => stage.reserveMm)])) >= comparisonMm
-  const inputs = suppliedInputs.map(name => ({ path: root + name + '.json', gitBlob: resolved.disciplineBindings.flatMap(binding =>
-    binding.identities[root + name + '.json'] ? [binding.identities[root + name + '.json']] : [])[0] }))
+  const inputs = [...suppliedInputs.map(name => root + name + '.json'), portalPath].map(path => ({ path,
+    gitBlob: resolved.disciplineBindings.flatMap(binding => binding.identities[path] ? [binding.identities[path]] : [])[0] }))
   const method = { id: 'HAD-JOINED-INLET/1', gitBlob: resolved.disciplineBindings.find(binding => binding.id === 'had-inlet-south-removal')!
     .identities['compiler/reference-house/current-design/inlet-assembly.ts'] }
   const caseDigest = sha256SemanticFingerprint({ input, inputs, method, insert: sources.insert.source.caseDigest,
@@ -222,8 +223,8 @@ export function compileInletAssembly(resolved: CurrentDesignResolution, input: u
     ...(sources.insert.status === 'within-conditional-screen' ? [] : ['SILL_INSERT_GEOMETRY']),
     ...branches.flatMap(row => row.geometryBlockers.map(code => row.branch + ':' + code)),
   ]
-  const portalPath = 'project/str/studies/floor-portal-interface-review.json'
   const portal = boundSource<{ geometry: { jambQmm: [number, number]; occurrences: { face: string; opening: string; jambAxisPmm: number }[] } }>(resolved, portalPath)
+  const reliefSource = boundJson<{ throughWallRupture: { preferredWideBore: { carrierEnvelopeODMM: number } } }>(resolved, 'south-inlet-relief')
   const supportComparison = supportRails === undefined ? null : compareInletSupport(supportRails, {
     jambAxesXMm: portal.geometry.occurrences.filter(row => row.face === 'outer-south' && row.opening === 'south-window-4').map(row => row.jambAxisPmm),
     jambNormalFacesYMm: portal.geometry.jambQmm,
@@ -234,7 +235,8 @@ export function compileInletAssembly(resolved: CurrentDesignResolution, input: u
       const relief = sources.insert.calculation.bores.find(row => row.id === branch.branch + '-relief')!
       return { id: branch.branch, route: branch.routeMm,
         cut: [branch.dryBreak.xMm, branch.dryBreak.yMm, branch.dryBreak.zMm], drawMm: removal.calculation.drawMm,
-        radiusMm: removal.calculation.roofStrip.jacketOutsideDiameterMm / 2, releasedTip: cell.access.outsideRelease,
+        radiusMm: removal.calculation.roofStrip.jacketOutsideDiameterMm / 2,
+        bareRadiusMm: reliefSource.throughWallRupture.preferredWideBore.carrierEnvelopeODMM / 2, releasedTip: cell.access.outsideRelease,
         wetPlan: removal.calculation.wetBox.planMm,
         wetZ: [relief.axis[1][2] - relief.formedReserveODMM / 2,
           upperClosure?.branches.find(row => row.branch === branch.branch)?.roofZMm ?? removal.calculation.roofStrip.zMm] }
