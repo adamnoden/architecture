@@ -9,8 +9,8 @@
     "label": "rush-night-structure"
   },
   "claimedAt": "2026-11-18T23:19:20.165Z",
-  "heartbeatAt": "2026-11-18T23:53:35.871Z",
-  "expiresAt": "2026-11-19T00:38:35.871Z",
+  "heartbeatAt": "2026-11-19T00:01:08.504Z",
+  "expiresAt": "2026-11-19T00:46:08.504Z",
   "branch": "work/rush-inlet-dependencies-2026-11-18",
   "predecessor": {
     "leaseId": "63619a6c-6728-4b79-8459-af6bb401f51a",
@@ -35,8 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Merged #1579 at8ae3b30a; saved inlet dependency propagation passes495 Reference House tests and11 updated pipeline tests",
-    "next": "Publish and verify inlet sill to fault/removal/cover propagation, including stale source and blocked upstream guards",
-    "blocker": "Shared blocked inlet insert currently halts its bundle with a precise upstream error; physical geometry remains conditional"
-  }
+    "evidence": "PR #1580 exact e8f03902ab59d91dd96c9ea3108718584efcc5e1; inlet propagation and full runtime import-pin audit verified by11 updated pipeline tests",
+    "next": "Observe this submitted head hosted health/publication checks, merge, then verify main and release",
+    "blocker": "Shared blocked sill still halts the bundle; physical coupled DPC, foul route, service and handling acceptance remain open"
+  },
+  "pr": 1580
 }
