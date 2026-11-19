@@ -2,6 +2,7 @@ import { execFileSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
+import type { compileStudyInstalledInlet } from './study-installed-inlet.js'
 
 type Point = readonly [number, number]
 type PlanBox = readonly [number, number, number, number]
@@ -9,6 +10,7 @@ type Worker = {
   readonly points: readonly Point[]
   readonly minimumClearance: number
   readonly limitingObstacle: string
+  readonly lowSupportSweepsXYXYMm?: readonly PlanBox[]
 }
 type MovingPhase = {
   readonly id: string
@@ -37,6 +39,9 @@ export interface FirstRestScreen {
   readonly liftMm: number
   readonly finishDepthMm: number
   readonly restBoardTopMm: number
+  readonly lowWorkerProfile?: { readonly schema: 'ias-kneeling-floor-profile/1'; readonly torsoBottomMm: number; readonly torsoTopMm: number;
+    readonly lowContactHeightMm: number; readonly normalRangeMm: Point; readonly tangentRangesMm: readonly Point[]; readonly physicalAcceptance: false }
+  readonly installedServices?: Extract<ReturnType<typeof compileStudyInstalledInlet>, { state: 'wall-hung-candidate' }>
   readonly includeAlternateReceivers?: boolean
   readonly maximumExtendedTransferMm?: number
 }
@@ -89,7 +94,7 @@ interface FurnitureMotion {
       readonly travelUndersideMm: number; readonly firstRestBoardTopMm: number; readonly undersideReserveMm: number
     }
     readonly parts: readonly FirstRestOutcome[]
-    readonly g1Projection: { readonly installedCarrierMinimumZMm: null; readonly releasedPackageZMm: Point }
+    readonly g1Projection: { readonly installedCarrierMinimumZMm: number | null; readonly releasedPackageZMm: Point }
   } | null
   readonly schema: 'ias-study-furniture-native-result/1'
   readonly state: 'geometry-screen-only' | 'geometry-conflict'

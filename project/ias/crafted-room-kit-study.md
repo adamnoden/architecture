@@ -1,5 +1,7 @@
 # The crafted Study
 
+The [joined room proposal and convergence decision](crafted-room-kit-result.md) now owns the whole-room wall, local trim and explicit installed-service candidate. The detailed comparisons retained below preserve their original inputs and limits; they are not competing selections.
+
 Develop individually seated timber finish pieces and independently gravity-hung wall faces. Compare stone-faced trays on the same floor set-out. Retain the existing finish plane in the east handling neck while the backing and window returns are designed. This is a current-house design candidate. The floor, wall, window and handling results have the limits stated below. [Owner direction](crafted-room-kit-brief.md)
 
 ## Inhabited comparisons

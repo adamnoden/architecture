@@ -48,7 +48,7 @@ const inletFields = ['branch', 'washer', 'cheekMm', 'retainedSideLandMm', 'recei
 const insertFields = ['eastEdgeMm', 'headZMm', 'plantPressureAxisXMm'] as const
 const faultFields = ['branches'] as const
 const removalFields = ['branch', 'drawMm', 'roofAccess', 'washer', 'utilityTaperRemoved', 'preparation'] as const
-const studyFields = ['pitchMm', 'wearingFace', 'finishDepthMm', 'groundDeckLevelLossMm', 'firstRestBoardSizeMm', 'opening'] as const
+const studyFields = ['pitchMm', 'wearingFace', 'finishDepthMm', 'groundDeckLevelLossMm', 'firstRestBoardSizeMm', 'floorBorderMinimumMm', 'installedServices', 'floorWorkerTopMm', 'floorPosture', 'wallPanelWidthMm', 'wallFace', 'wallReleaseMm', 'opening'] as const
 
 function object(value: unknown): value is Record<string, unknown> {
   return value !== null && typeof value === 'object' && Object.getPrototypeOf(value) === Object.prototype

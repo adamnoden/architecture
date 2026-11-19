@@ -150,6 +150,24 @@ def first_rest_stance(bcr, obstacles, face, delta, keys, normal_axis, sign, scre
     start = [n,tangent] if normal_axis == 0 else [tangent,n]
     end = [value+step for value,step in zip(start,delta)]
     worker = bcr['route']([start,end],obstacles,body_radius)
+    profile = screen.get('lowWorkerProfile')
+    if profile:
+        contacts = []
+        for lo_t,hi_t in profile['tangentRangesMm']:
+            relative = [sign*value for value in profile['normalRangeMm']]
+            low_n,high_n = min(relative),max(relative)
+            initial = [0.,0.,0.,0.]
+            initial[normal_axis],initial[normal_axis+2] = n+low_n,n+high_n
+            initial[tangent_axis],initial[tangent_axis+2] = tangent+lo_t,tangent+hi_t
+            final = [value+delta[i%2] for i,value in enumerate(initial)]
+            swept = [min(initial[i],final[i]) for i in (0,1)]+[max(initial[i],final[i]) for i in (2,3)]
+            if bcr['rectangle_distance'](footprint(initial),footprint(face)) < screen['bodySettingMm']:
+                return None
+            if min(bcr['rectangle_distance'](footprint(swept),box) for box in obstacles.values()) < screen['bodySettingMm']:
+                return None
+            contacts.append(swept)
+        worker['lowSupportSweepsXYXYMm'] = contacts
+        worker['profile'] = profile
     measured = max(math.dist((*start,grip_height),(*key,0)) for key in keys)
     assert worker['minimumClearance'] >= screen['bodySettingMm']-1e-8 and measured <= reach+1e-8
     return {'worker':worker,'reachMm':measured,'stanceIntervalMm':[left,right],'normalAxis':'xy'[normal_axis]}
@@ -158,10 +176,43 @@ def first_rest_stance(bcr, obstacles, face, delta, keys, normal_axis, sign, scre
 def floor_first_rests(bcr, house, fixed, desk, chair, desk_park, chair_park, entry, screen):
     parts, bands = screen['parts'], screen['bandsXYXYMm']
     max_extended = screen.get('maximumExtendedTransferMm',0)
+    profile = screen.get('lowWorkerProfile')
+    if profile is not None:
+        if (profile.get('schema') != 'ias-kneeling-floor-profile/1' or profile.get('physicalAcceptance') is not False
+                or profile.get('torsoBottomMm') != 180 or profile.get('lowContactHeightMm') != 180
+                or screen.get('bodyToPanelMm') != -40 or profile.get('normalRangeMm') != [-250,150] or profile.get('tangentRangesMm') != [[-200,-60],[60,200]]
+                or not 900 <= profile.get('torsoTopMm',0) <= 2000
+                or not screen['liftMm']+screen['bodySettingMm'] < profile['torsoBottomMm']):
+            raise ValueError('Unsupported explicit kneeling floor profile')
     if screen['bodyRadiusMm'] != house['studyDoorOperation']['bodyRadius']:
         raise ValueError('The first-rest worker does not match the source Study body radius')
     if len(parts) > 200 or len(parts) != len({part['id'] for part in parts}):
         raise ValueError('Expected unique parts for one occupied Study floor')
+    installed_case = screen.get('installedServices')
+    admitted_installed = None
+    if installed_case is not None:
+        if (installed_case.get('schema') != 'ias-study-installed-inlet-candidate/1'
+                or installed_case.get('state') != 'wall-hung-candidate'
+                or installed_case.get('sourceId') != 'study'
+                or installed_case.get('acceptance') != {'installedEvidence':False,'anchorAndCompleteSupport':False,'phasePostureVerified':False}):
+            raise ValueError('Expected the bounded authored wall-hung Study inlet candidate')
+        components = installed_case.get('components')
+        if not isinstance(components,list) or not components:
+            raise ValueError('Missing complete installed Study inlet component bounds')
+        for component in components:
+            volume = component.get('xyzxyzMm')
+            if (not isinstance(volume,list) or len(volume) != 6
+                    or not all(type(value) in (int,float) and math.isfinite(value) for value in volume)
+                    or not all(volume[i] < volume[i+3] for i in range(3))):
+                raise ValueError('Invalid installed Study inlet volume')
+        lowest = min(component['xyzxyzMm'][2] for component in components)
+        top = installed_case.get('workerTopMm')
+        if (type(top) not in (int,float) or not math.isfinite(top) or not 900 <= top <= 2000
+                or lowest != installed_case.get('installedCarrierMinimumZMm')):
+            raise ValueError('Invalid floor-phase body or installed envelope height')
+        if lowest > top+screen['bodySettingMm'] and lowest > screen['liftMm']+screen['bodySettingMm']:
+            fixed = {key:box for key,box in fixed.items() if key not in ('study-inlet-carrier','study-inlet-installed')}
+            admitted_installed = installed_case
     fixed = {**fixed,'study-emitter-plinth':footprint(screen['emitterPlinthXYXYMm'])}
     stages = [('occupied',desk,chair),('chair-parked',desk,chair_park),('desk-and-chair-parked',desk_park,chair_park)]
     stage_obstacles = [(label,{**fixed,'study-desk':d,'study-chair':c}) for label,d,c in stages]
@@ -281,8 +332,9 @@ def floor_first_rests(bcr, house, fixed, desk, chair, desk_park, chair_park, ent
         'g1Projection': {
             'carrierPlanXYWHMm':inlet['innerCartridge']['supportedCarrier'],
             'releasedPackageZMm':inlet['innerCartridge']['finalZ'],
-            'installedCarrierMinimumZMm':None,
-            'treatment':'Retain installed inlet and carrier as full-height BCR plan projections until the complete lowest fixed support can be bound.',
+            'installedCarrierMinimumZMm':admitted_installed['installedCarrierMinimumZMm'] if admitted_installed else None,
+            **({'candidate':admitted_installed} if installed_case else {}),
+            'treatment':('Authored wall-hung candidate clears only the declared crouched floor phase; installed and support acceptance remain false.' if admitted_installed else 'Retain installed inlet and carrier as full-height BCR plan projections until the complete lowest fixed support can be bound.'),
         },
     }
 

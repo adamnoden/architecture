@@ -10,6 +10,8 @@ import { compileResolvedStudyAssembly } from './study-floor.js'
 import { compileStudyGroundSupport } from './study-ground-support.js'
 import { compileResolvedStudyLinings, layStudySouthPanelStock } from './study-linings.js'
 import { compileStudyWallTransition } from './study-wall-transition.js'
+import { compileStudyInstalledInlet } from './study-installed-inlet.js'
+import { compileStudyRoomAssembly } from './study-room-assembly.js'
 
 type FloorAssembly = ReturnType<typeof compileResolvedStudyAssembly>
 type Box = readonly [number, number, number, number]
@@ -27,6 +29,13 @@ type Case = {
   readonly finishDepthMm?: 15 | 20
   readonly groundDeckLevelLossMm?: number
   readonly firstRestBoardSizeMm?: Pair
+  readonly floorBorderMinimumMm?: 60 | 150
+  readonly installedServices?: 'retained-plan-projection' | 'wall-hung-candidate'
+  readonly floorWorkerTopMm?: number
+  readonly floorPosture?: 'retained-cylinder' | 'kneeling-candidate'
+  readonly wallPanelWidthMm?: 420 | 450
+  readonly wallFace?: 'oak' | 'porcelain-steel'
+  readonly wallReleaseMm?: number
   readonly opening?: OpeningCase
 }
 
@@ -34,7 +43,6 @@ export function readStudyRoomKitReferenceCase(): Case {
   return { schema: 'ias-study-room-kit-case/1', units: 'mm', pitchMm: 300, wearingFace: 'oak' }
 }
 
-const minimumBorderMm = 60
 const pickupBox: Box = [3800, 500, 4100, 800]
 const firstRestBox: Box = [4100, 500, 4400, 800]
 const directRelease = { bodyRadiusMm: 300, bodyToPanelMm: 35, bodySettingMm: 5, maximumReachMm: 600, gripZ: 180, shoulderZ: 360 }
@@ -44,12 +52,19 @@ function record(input: unknown): input is Record<string, unknown> {
 }
 
 function caseInput(input: unknown): Case {
-  if (!record(input) || Object.keys(input).some(key => !['schema', 'units', 'pitchMm', 'wearingFace', 'finishDepthMm', 'groundDeckLevelLossMm', 'firstRestBoardSizeMm', 'opening'].includes(key))
+  if (!record(input) || Object.keys(input).some(key => !['schema', 'units', 'pitchMm', 'wearingFace', 'finishDepthMm', 'groundDeckLevelLossMm', 'firstRestBoardSizeMm', 'floorBorderMinimumMm', 'installedServices', 'floorWorkerTopMm', 'floorPosture', 'wallPanelWidthMm', 'wallFace', 'wallReleaseMm', 'opening'].includes(key))
     || input.schema !== 'ias-study-room-kit-case/1' || input.units !== 'mm'
     || typeof input.pitchMm !== 'number' || !Number.isFinite(input.pitchMm)
     || (input.finishDepthMm !== undefined && input.finishDepthMm !== 15 && input.finishDepthMm !== 20)
     || (input.groundDeckLevelLossMm !== undefined && (typeof input.groundDeckLevelLossMm !== 'number'
       || !Number.isFinite(input.groundDeckLevelLossMm) || input.groundDeckLevelLossMm < 0))
+    || (input.floorBorderMinimumMm !== undefined && input.floorBorderMinimumMm !== 60 && input.floorBorderMinimumMm !== 150)
+    || (input.installedServices !== undefined && input.installedServices !== 'retained-plan-projection' && input.installedServices !== 'wall-hung-candidate')
+    || (input.floorPosture !== undefined && input.floorPosture !== 'retained-cylinder' && input.floorPosture !== 'kneeling-candidate')
+    || (input.floorWorkerTopMm !== undefined && (typeof input.floorWorkerTopMm !== 'number' || !Number.isFinite(input.floorWorkerTopMm) || input.floorWorkerTopMm < 900 || input.floorWorkerTopMm > 2000))
+    || (input.wallPanelWidthMm !== undefined && input.wallPanelWidthMm !== 420 && input.wallPanelWidthMm !== 450)
+    || (input.wallFace !== undefined && input.wallFace !== 'oak' && input.wallFace !== 'porcelain-steel')
+    || (input.wallReleaseMm !== undefined && (typeof input.wallReleaseMm !== 'number' || !Number.isFinite(input.wallReleaseMm) || input.wallReleaseMm <= 0))
     || (input.wearingFace !== 'oak' && input.wearingFace !== 'stone-steel')) {
     throw new TypeError('INVALID_STUDY_ROOM_KIT_CASE')
   }
@@ -60,7 +75,14 @@ function caseInput(input: unknown): Case {
   const common: Case = { schema: input.schema, units: input.units, pitchMm: input.pitchMm, wearingFace: input.wearingFace,
     ...(input.finishDepthMm === undefined ? {} : { finishDepthMm: input.finishDepthMm }),
     ...(input.groundDeckLevelLossMm === undefined ? {} : { groundDeckLevelLossMm: input.groundDeckLevelLossMm }),
-    ...(size === undefined ? {} : { firstRestBoardSizeMm: [size[0], size[1]] as const }) } as const
+    ...(size === undefined ? {} : { firstRestBoardSizeMm: [size[0], size[1]] as const }),
+    ...(input.floorBorderMinimumMm === undefined ? {} : { floorBorderMinimumMm: input.floorBorderMinimumMm }),
+    ...(input.installedServices === undefined ? {} : { installedServices: input.installedServices }),
+    ...(input.floorWorkerTopMm === undefined ? {} : { floorWorkerTopMm: input.floorWorkerTopMm }),
+    ...(input.floorPosture === undefined ? {} : { floorPosture: input.floorPosture }),
+    ...(input.wallPanelWidthMm === undefined ? {} : { wallPanelWidthMm: input.wallPanelWidthMm }),
+    ...(input.wallFace === undefined ? {} : { wallFace: input.wallFace }),
+    ...(input.wallReleaseMm === undefined ? {} : { wallReleaseMm: input.wallReleaseMm }) } as const
   if (input.opening === undefined) return common
   const opening = input.opening
   const finite = (value: unknown): value is number => typeof value === 'number' && Number.isFinite(value) && !Object.is(value, -0)
@@ -76,7 +98,7 @@ function caseInput(input: unknown): Case {
   throw new TypeError('INVALID_STUDY_ROOM_KIT_OPENING')
 }
 
-function setout(from: number, to: number, origin: number, pitch: number) {
+function setout(from: number, to: number, origin: number, pitch: number, minimumBorderMm: number) {
   const cuts = [from]
   for (let cut = origin + Math.floor((from - origin) / pitch + 1) * pitch; cut < to; cut += pitch) cuts.push(cut)
   cuts.push(to)
@@ -108,7 +130,7 @@ function gripGeometry([x0, y0, x1, y1]: Box) {
   return { centres, endMarginMm: (Math.max(x1 - x0, y1 - y0) - keyCentresMm) / 2 }
 }
 
-function partSetout(assembly: FloorAssembly) {
+function partSetout(assembly: FloorAssembly, minimumBorderMm: number) {
   const { grid, source, section, schedule } = assembly
   const inset = section.jointMm / 2
   const massPerSquareMm = schedule.completeTileWearFaceMassKg / (schedule.clearTileSideMm ** 2)
@@ -130,8 +152,8 @@ function partSetout(assembly: FloorAssembly) {
     }
   }
   const original = grid.bands.flatMap(([x0, y0, x1, y1], band) =>
-    setout(x0, x1, grid.origin[0], grid.pitchMm).flatMap(([left, right]) =>
-      setout(y0, y1, grid.origin[1], grid.pitchMm).map(([bottom, top]) => makePart([left, bottom, right, top], band))))
+    setout(x0, x1, grid.origin[0], grid.pitchMm, minimumBorderMm).flatMap(([left, right]) =>
+      setout(y0, y1, grid.origin[1], grid.pitchMm, minimumBorderMm).map(([bottom, top]) => makePart([left, bottom, right, top], band))))
   const withheld = (code: string) => ({ parts: original, emitterPlinth: { state: 'withheld', code } as const })
   if (grid.pitchMm !== 300) return withheld('TRIAL_EMITTER_BORDER_REQUIRES_300_MM_STOCK')
   const emitterId = 'service-emitter-study-W'
@@ -355,7 +377,7 @@ function compareFirstRestBoard(
       maxPad: boardAxes.map(axis => Math.max(...orientation.offsets.map(point => point[axis])) + padHalf),
       bandOrigins: containInBands ? boardOriginsInsideBands(floorBands, orientation.dimensions[0], orientation.dimensions[1]) : null,
     }))
-    const place = (partId: string, { restPartId, shiftXYMm, stage }: FirstRestWitness) => {
+    const place = (partId: string, { restPartId, shiftXYMm, stage, worker }: FirstRestWitness) => {
       const moving = faceByPartId.get(partId)!
       const receiving = faceByPartId.get(restPartId)!
       const movingFaceSizeMm = boxSize(moving)
@@ -385,9 +407,9 @@ function compareFirstRestBoard(
           : [{ lower, upper }]
         const stageObstructions = firstRest.boardPlanObstructions?.find(item => item.stage === stage)?.obstacles
         if (obstructionMode && !stageObstructions) continue
-        const obstacles = obstructionMode ? Object.values(stageObstructions!).map(item =>
+        const obstacles = [...(obstructionMode ? Object.values(stageObstructions!).map(item =>
           obstructionMode === 'local-wall-trim-released' ? item.withoutWallTrimXYXYMm ?? item.boxXYXYMm : item.boxXYXYMm,
-        ) : []
+        ) : []), ...(worker.lowSupportSweepsXYXYMm ?? [])]
         const origins = originRanges.flatMap(range => {
           const coordinates = boardAxes.map(axis => [...new Set([
             (range.lower[axis] + range.upper[axis]) / 2, range.lower[axis], range.upper[axis],
@@ -632,9 +654,17 @@ function releaseScreen(assembly: FloorAssembly, parts: ReturnType<typeof partSet
 function deriveStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
   const request = caseInput(input)
   const assembly = compileResolvedStudyAssembly(resolved, { pitchMm: request.pitchMm, wearingFace: request.wearingFace, finishDepthMm: request.finishDepthMm })
-  const floorLayout = partSetout(assembly)
+  const floorLayout = partSetout(assembly, request.floorBorderMinimumMm ?? 60)
   const { parts, emitterPlinth } = floorLayout
   const { opening, wall, grille, grilleKeepOut, nativeWindow } = openingSetout(resolved, request)
+  const installedInlet = compileStudyInstalledInlet(grille.actualRetainedInlet, request.installedServices ?? 'retained-plan-projection', request.floorWorkerTopMm ?? 900, assembly.grid.bands[0][1])
+  const coordinatedGrilleKeepOut = installedInlet.state === 'wall-hung-candidate'
+    ? { ...grilleKeepOut, box: [Math.min(grilleKeepOut.box[0], installedInlet.wallReserveXZMm[0]),
+      Math.min(grilleKeepOut.box[1], installedInlet.wallReserveXZMm[1]), Math.max(grilleKeepOut.box[2], installedInlet.wallReserveXZMm[2]),
+      Math.max(grilleKeepOut.box[3], installedInlet.wallReserveXZMm[3])] as Box } : grilleKeepOut
+  const coordinatedWall = installedInlet.state === 'wall-hung-candidate' ? { ...wall,
+    southField: layStudySouthPanelStock(wall.southField.startXMm, wall.southField.startXMm + wall.southField.widthMm,
+      wall.southField.pitchMm, wall.southField.windows, [coordinatedGrilleKeepOut.box]) } : wall
   const release = releaseScreen(assembly, parts)
   const handling = handlingScreen(assembly, floorLayout, nativeWindow.furnitureAccess)
   const movement = nativeWindow.furnitureAccess
@@ -646,9 +676,14 @@ function deriveStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
     }),
     bandsXYXYMm: assembly.grid.bands,
     emitterPlinthXYXYMm: emitterPlinth.box,
-    bodyRadiusMm, bodyToPanelMm, bodySettingMm, maximumReachMm, verticalGripDifferenceMm: shoulderZ - gripZ,
+    bodyRadiusMm, bodyToPanelMm: request.floorPosture === 'kneeling-candidate' ? -40 : bodyToPanelMm,
+    ...(request.floorPosture === 'kneeling-candidate' ? { lowWorkerProfile: { schema: 'ias-kneeling-floor-profile/1' as const,
+      torsoBottomMm: 180, torsoTopMm: request.floorWorkerTopMm ?? 900, lowContactHeightMm: 180,
+      normalRangeMm: [-250, 150] as const, tangentRangesMm: [[-200, -60], [60, 200]] as const, physicalAcceptance: false as const } } : {}),
+    bodySettingMm, maximumReachMm, verticalGripDifferenceMm: shoulderZ - gripZ,
     liftMm: handling.emitterEdgeRelease.pickupLiftMm,
     restBoardTopMm: handling.emitterEdgeRelease.restBoardTopMm, finishDepthMm: assembly.section.finishDepthMm,
+    ...(installedInlet.state === 'wall-hung-candidate' ? { installedServices: installedInlet } : {}),
     ...(request.firstRestBoardSizeMm ? { includeAlternateReceivers: true, maximumExtendedTransferMm: 2 * assembly.grid.pitchMm } : {}),
   }
   const furnitureMotion = handling.state === 'withheld' ? null : compileStudyFurnitureMotion(
@@ -664,7 +699,7 @@ function deriveStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
     source: assembly.source, caseDigest: sha256SemanticFingerprint({ request, source: assembly.source, opening }),
     bands: assembly.grid.bands, occupied: assembly.grid.occupied,
     floor: {
-      parts, emitterPlinth, jointMm: assembly.section.jointMm, wearingFaceMm: assembly.section.wearFaceMm, beddingMm: assembly.section.beddingTerritoryMm,
+      parts, emitterPlinth, installedInlet, jointMm: assembly.section.jointMm, wearingFaceMm: assembly.section.wearFaceMm, beddingMm: assembly.section.beddingTerritoryMm,
       depthUnassignedWithinFinishMm: assembly.section.finishSupportDepthUnresolvedMm, handling, furnitureMotion,
       firstRestBoard: board.retained,
       ...(request.firstRestBoardSizeMm === undefined ? {} : { firstRestBoardTrial: board.trial }),
@@ -673,7 +708,7 @@ function deriveStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
       coverageMm2: parts.reduce((total, part) => total + area(part.box), emitterPlinth.state === 'withheld' ? 0 : emitterPlinth.areaMm2),
       heldEvidence: ['permanent deck, bedding and product tests', 'finished-room installation and handling'],
     },
-    opening, door, wall, grille, grilleKeepOut,
+    opening, door, wall: coordinatedWall, grille, grilleKeepOut: coordinatedGrilleKeepOut,
   } as const
   return { kit, nativeWindow }
 }
@@ -682,7 +717,8 @@ export type StudyRoomKit = ReturnType<typeof deriveStudyRoomKit>['kit']
 
 export function compileStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
   const { kit, nativeWindow } = deriveStudyRoomKit(resolved, input)
-  return { kit, wallTransition: compileStudyWallTransition(kit, nativeWindow) }
+  const wallTransition = compileStudyWallTransition(kit, nativeWindow)
+  return { kit, wallTransition, roomAssembly: compileStudyRoomAssembly(kit, wallTransition) }
 }
 
 export function drawStudyRoomKitPlan(kit: StudyRoomKit, view: 'layout' | 'emitter-edge' | 'furniture-access' | 'furniture-motion' = 'layout'): DrawingSceneV2 {

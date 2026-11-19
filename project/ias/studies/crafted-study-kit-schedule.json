@@ -5360,6 +5360,11 @@
         "smallestAdjacentFaceGapMm": 5.5,
         "support": "independent bearing to continuous deck; no radiator support on removable finishes"
       },
+      "installedInlet": {
+        "state": "unknown-installed-height",
+        "sourceId": "study",
+        "installedCarrierMinimumZMm": null
+      },
       "jointMm": 3,
       "wearingFaceMm": 18,
       "beddingMm": 2,
@@ -11153,7 +11158,7 @@
           "Maintained door operation and handling of floor parts from a supported deck"
         ],
         "source": {
-          "project/ias/studies/study-furniture-motion.py": "e4d5c5b78d3b17a4b8bd43d7942de7e9e9ab713490932626b8a7aafe8235de71",
+          "project/ias/studies/study-furniture-motion.py": "8b96a141a09ea52440b392b8f1816f59126ca59a44d1cf54c8a8e76621cb3056",
           "project/bcr/studies/bay-interface-study.py": "7fea8b8b1b8e66a6f52ae8a6124eda84f8759a9c42c3ae31644296679f4e3e7c"
         }
       },
@@ -12534,6 +12539,35 @@
       "referenceDepthMm": 27,
       "totalDepthMm": 27,
       "wallFaceOverrunMm": 0,
+      "boundRoomOpenings": [
+        {
+          "id": "south-window-0",
+          "wall": "outer-south",
+          "centre": 2100,
+          "width": 1000,
+          "sill": 750,
+          "spring": 2550,
+          "head": 2850
+        },
+        {
+          "id": "south-window-1",
+          "wall": "outer-south",
+          "centre": 3900,
+          "width": 1000,
+          "sill": 750,
+          "spring": 2550,
+          "head": 2850
+        },
+        {
+          "id": "west-window-0",
+          "wall": "outer-west",
+          "centre": 2100,
+          "width": 1000,
+          "sill": 850,
+          "spring": 2550,
+          "head": 2850
+        }
+      ],
       "southField": {
         "pitchMm": 420,
         "rowDatumsMm": [
@@ -13013,7 +13047,26 @@
         "completeOD": 347,
         "retainedReceiverID": 354,
         "radialGapMM": 3.5,
-        "drawMM": 250
+        "drawMM": 250,
+        "installedNormalMM": [
+          458,
+          608
+        ],
+        "finalNormalMM": [
+          708,
+          858
+        ],
+        "finalZ": [
+          1933.58,
+          2282.08
+        ],
+        "maximumCompleteMassKG": 12,
+        "supportedCarrier": [
+          2845,
+          675,
+          400,
+          225
+        ]
       },
       "nominalPlateMm": 4,
       "slotSchedule": {

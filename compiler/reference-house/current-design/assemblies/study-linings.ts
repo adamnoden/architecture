@@ -34,7 +34,7 @@ interface RoomReceipt {
 interface ServicesReceipt {
   selectedServiceInterfaces: { inletMaintenance: readonly {
     id: string; wall: string; point: readonly [number, number, number]; innerCartridge: {
-      completeOD: number; retainedReceiverID: number; radialGapMM: number; drawMM: number
+      completeOD: number; retainedReceiverID: number; radialGapMM: number; drawMM: number; installedNormalMM: readonly [number, number]; finalNormalMM: readonly [number, number]; finalZ: readonly [number, number]; maximumCompleteMassKG: number; supportedCarrier: readonly [number, number, number, number]
     }
   }[] }
 }
@@ -158,12 +158,12 @@ export function compileResolvedStudyLinings(resolved: CurrentDesignResolution, o
   }
   const totalOpenAreaMm2 = grossSlotArea(slot.slotLength, slotWidthMm, slot.slots)
   const inwardGrossMarginMm2 = totalOpenAreaMm2 - slot.referenceInwardEquivalentArea
-  const { completeOD, retainedReceiverID, radialGapMM, drawMM } = inlet.innerCartridge
+  const { completeOD, retainedReceiverID, radialGapMM, drawMM, installedNormalMM, finalNormalMM, finalZ, maximumCompleteMassKG, supportedCarrier } = inlet.innerCartridge
   return {
     schema: 'ias-study-lining-trial/1', state: 'candidate', units: 'mm', source,
     wall: {
       id: `${studyId}/W1`, backing: retainMineral ? 'retain-mineral' : 'replace-mineral',
-      referenceDepthMm, totalDepthMm, wallFaceOverrunMm,
+      referenceDepthMm, totalDepthMm, wallFaceOverrunMm, boundRoomOpenings: floor.study.windows,
       southField: southPanelField(floor, config.panelPitchMm ?? studyWallPanel.pitchMm),
       layerSchedule: retainMineral
         ? [{ id: `${studyId}/W1/retained-mineral`, role: 'retained-mineral', depthMm: referenceDepthMm }, ...fixedParts]
@@ -177,7 +177,7 @@ export function compileResolvedStudyLinings(resolved: CurrentDesignResolution, o
     },
     grille: {
       id: `${studyId}/G1/room-side-grille`,
-      actualRetainedInlet: { id: inlet.id, wall: inlet.wall, stationDatumMm: inlet.point, completeOD, retainedReceiverID, radialGapMM, drawMM },
+      actualRetainedInlet: { id: inlet.id, wall: inlet.wall, stationDatumMm: inlet.point, completeOD, retainedReceiverID, radialGapMM, drawMM, installedNormalMM, finalNormalMM, finalZ, maximumCompleteMassKG, supportedCarrier },
       nominalPlateMm: roomSideGrillePlateMm,
       slotSchedule: { id: `${studyId}/G1/slots`, count: slot.slots, lengthMm: slot.slotLength, clearWidthMm: slotWidthMm, totalOpenAreaMm2 },
       grossAreaScreen: {
