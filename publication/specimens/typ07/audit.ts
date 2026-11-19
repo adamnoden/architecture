@@ -2,7 +2,7 @@ import { existsSync, readFileSync } from 'node:fs'
 import { posix, resolve } from 'node:path'
 
 import { publicationFigurePlacements } from '../../figures.js'
-import { publicationPlatePlacements } from '../../plates-current.js'
+import { publicationPlatePlacements } from '../../plates.js'
 import { publicationEntries } from '../../publication.js'
 import {
   typ07ProductionDebt,
@@ -148,7 +148,7 @@ console.log(JSON.stringify({
   sourceIdentities,
   productionBoundary: {
     theme: 'working-system legacy; do not use as TYP-07 proof authority',
-    plates: 'canonical placement metadata retained; proof-only typography rebinding required for DRW v1 SVG text',
+    plates: 'historical predecessor typography fixture; active current-house plates are outside this retained specimen',
     canonicalMutation: false
   }
 }, null, 2))

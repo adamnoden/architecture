@@ -22,6 +22,7 @@ import {
   type PublicationEntry
 } from '../publication.js'
 import { applyProductionTypography } from './typography.js'
+import { buildCurrentPublicationAssets } from '../current-assets.js'
 import { fetchPublicationFonts, type PublicationFontSlot } from '../fonts.js'
 import { publicationSourceUrl, renderPublicationMermaid } from '../preparation.js'
 
@@ -142,6 +143,15 @@ mkdirSync(workPath('publication'), { recursive: true })
 cpSync(repoPath('publication/primer'), workPath('publication/primer'), { recursive: true })
 copyFileSync(repoPath('publication/part-iii.md'), workPath('publication/part-iii.md'))
 copyFileSync(repoPath('publication/pattern-reference.md'), workPath('publication/pattern-reference.md'))
+const currentAssets = fullMode ? buildCurrentPublicationAssets(repoRoot) : undefined
+if (currentAssets) {
+  for (const asset of currentAssets.assets) {
+    mkdirSync(dirname(workPath(asset.path)), { recursive: true })
+    writeFileSync(workPath(asset.path), asset.svg)
+  }
+  writeFileSync(resolve(workRoot, 'current-publication-assets.json'), JSON.stringify({ ...currentAssets,
+    assets: currentAssets.assets.map(({ path, sha256 }) => ({ path, sha256 })) }, null, 2) + '\n')
+}
 
 const metadata = editionMetadata()
 const titlePage = smokeMode ? null : writeTitlePage(metadata, primerMode ? 'Primer' : 'Working Edition')
@@ -194,7 +204,7 @@ writeFileSync(buildPath, JSON.stringify({
 }, null, 2))
 
 if (fullMode && process.env.PUBLICATION_RAW_PREPARE !== '1') {
-  await applyProductionTypography({ repoRoot, publicationRoot, workRoot, workSourceRoot })
+  await applyProductionTypography({ repoRoot, publicationRoot, workRoot, workSourceRoot, currentAssets: currentAssets! })
 }
 if (primerMode) {
   const fonts = await fetchPublicationFonts(resolve(workRoot, 'publication-fonts'))

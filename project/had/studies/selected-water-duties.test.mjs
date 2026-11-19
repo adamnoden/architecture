@@ -61,7 +61,7 @@ test('pre-fix main bytes and captured house identities constrain the correction 
   assert.equal(boundary.observed.scheduleBlob,boundary.sourceRefresh.scheduleBlob);
   assert.equal(boundary.joinedObserved.scheduleBlob,boundary.sourceIdentityReconciliation.scheduleBlob);
   assert.equal(Object.keys(boundary.sourceRefresh.houseInputs).length,4);
-  assert.equal(Object.keys(boundary.sourceRefresh.receiverInputs).length,1);
+  assert.equal(Object.keys(boundary.sourceRefresh.receiverInputs).length,2);
   const input=structuredClone(house);
   input.inputs['project/had/studies/receiver-selection.json']='0'.repeat(40);
   assert.throws(()=>verifyPreFixBoundary(input),/Expected joined house input identity/);

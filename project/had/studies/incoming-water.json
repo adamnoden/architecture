@@ -5,7 +5,7 @@
   "selection": "HAD-SERVICES-02",
   "sourceBlobs": {
     "project/had/studies/current-house.mjs": "58bf1a6248af8268de70d838cce23f249ce30b91",
-    "project/had/studies/current-house-services.json": "d32748bc33cc0b8b8e8bfe3e3a017236ff8a7688",
+    "project/had/studies/current-house-services.json": "e649805e78244527fe6498b516fa5f23734ac5ea",
     "project/had/studies/selected-water-duties.mjs": "332755d589080661042af6491d0f23d7947829bf",
     "project/had/studies/incoming-water.mjs": "90af438144296ff78349939bfb95d5bdb9769a44",
     "project/had/studies/incoming-water-geometry.mjs": "ed658b7df0edf5d8e6d1826d32730a14b00199c7",
@@ -28,7 +28,7 @@
     "project/mat/studies/service-material-offer.json": "e5686440fa6a3f68387576883b1e0c768e0596bb",
     "project/mat/studies/tempered-kitchen-air.json": "b18044acaec99caf00eab9a542fff78e510857c9",
     "project/mat/studies/local-extract-heat-and-store.json": "550709d0e0ca0acff81cb42e502640771f4ac2d0",
-    "project/had/studies/receiver-selection.json": "c1f80a51f2cc862e08bcb61d39c018f567267a8f",
+    "project/had/studies/receiver-selection.json": "f43ca5bc2bb8d5800d80c2dd6951ac7c3f5e8354",
     "project/mat/studies/whole-house-leakage-duty.json": "5b93cdd9ea1ee7d825fa4596a44caf06431afc49",
     "project/mat/studies/loggia-soffit.json": "c9c914169547bd42b90cd69512ba1a28d97ca6fe",
     "project/mat/studies/joined-cooker-system.json": "d04dd78ba3fd040c7abd1aecb94aa9a3ce95d5e0",
@@ -42,7 +42,7 @@
     "project/str/studies/house-corner-rewind.json": "2a3f6ccb0f869c0ab860ba7846bbdbe2613ee640"
   },
   "unchangedSelectedGeometry": {
-    "fullCurrentHouseSHA256": "59c9d9934b2031cb487b1664900e0010705153f2f383cd5ac8832dff524d1188",
+    "fullCurrentHouseSHA256": "825a565b504586926e03f741243aa8efd082bf85db1868f7763a19144bae2b59",
     "exteriorPortsSHA256": "9d16691683c6255acad78736c3f6a77ac3c27d01e5f6d7ab908fab1e8fdffabb",
     "weatherFacesSHA256": "1155d413b399a8ea93c4097f402e2089ded7131a68177b93a37d881216d7986f",
     "scope": "The joined rewrite updates selected inlet duty metadata only. The rejected inherited path remains an adverse witness; the compact service schedule, ports and weather faces are unaffected."

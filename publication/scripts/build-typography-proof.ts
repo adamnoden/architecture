@@ -35,6 +35,7 @@ for (const format of ['a4', 'b5'] as const) {
 
 copyFileSync(resolve(publicationRoot, '.work/build.json'), resolve(proofRoot, 'build.json'))
 copyFileSync(resolve(publicationRoot, '.work/typography-integration.json'), resolve(proofRoot, 'typography-integration.json'))
+copyFileSync(resolve(publicationRoot, '.work/current-publication-assets.json'), resolve(proofRoot, 'current-publication-assets.json'))
 copyFileSync(resolve(publicationRoot, '.work/publication-fonts/upstream-evidence.json'), resolve(proofRoot, 'font-upstream-evidence.json'))
 
 console.log('Built normalized production typography proof in A4 and conservative B5.')

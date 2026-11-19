@@ -6,12 +6,14 @@ import { fetchPublicationFonts, type PublicationFontSlot } from '../fonts.js'
 import { publicationFigurePlacements } from '../figures.js'
 import { publicationPlatePlacements } from '../plates-current.js'
 import { publicationEntries, type PublicationEntry } from '../publication.js'
+import type { CurrentPublicationAssets } from '../current-assets.js'
 
 export type ProductionTypographyContext = {
   repoRoot: string
   publicationRoot: string
   workRoot: string
   workSourceRoot: string
+  currentAssets: CurrentPublicationAssets
 }
 
 type Build = Record<string, unknown> & {
@@ -293,7 +295,9 @@ export async function applyProductionTypography(context: ProductionTypographyCon
 
   const svgEvidence: Record<string, { canonicalSha256: string; transformedSha256: string; familyDeclarations: number; tabularNotes: boolean }> = {}
   for (const sourcePath of [...controlledAssets].sort()) {
-    const canonical = await readFile(resolve(repoRoot, sourcePath), 'utf8')
+    const generated = context.currentAssets.assets.find(asset => asset.path === sourcePath)
+    if (sourcePath.startsWith('publication/current/') && !generated) throw new Error(`Missing compiled current plate: ${sourcePath}`)
+    const canonical = generated?.svg ?? await readFile(resolve(repoRoot, sourcePath), 'utf8')
     const preparedPath = resolve(workSourceRoot, sourcePath)
     const prepared = await readFile(preparedPath, 'utf8')
     if (prepared !== canonical) throw new Error(`Controlled SVG copy diverged before production typography rebinding: ${sourcePath}`)

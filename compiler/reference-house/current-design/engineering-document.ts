@@ -32,7 +32,7 @@ const additionalImplementationFiles = [
   'project/ias/studies/workable-floor-tiles.mjs',
   'project/ias/studies/workable-lining-dimensions.mjs',
 ] as const
-const stageKeys = ['northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit'] as const
+const stageKeys = ['structuralSuccessor', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit'] as const
 type Settings = Readonly<Record<string, unknown>>
 type EngineeringStages = Partial<Readonly<Record<Exclude<typeof stageKeys[number], 'inletCovers' | 'inletRemovals'>, Settings>>> & {
   readonly inletRemovals?: readonly Settings[]
@@ -44,6 +44,7 @@ type SourceBindings = {
   readonly authoredDefaults: Readonly<Record<string, string>>
 }
 
+const successorFields = ['northWallWidthMm', 'memberLaw', 'jointLaw', 'boundaryActions'] as const
 const northFields = ['portAxisXYMm', 'dragDemandFactor', 'remoteMainBarShiftMm', 'chordBendRadiusMm',
   'toeTransferIntervalMm', 'keyContactTrial', 'placementToleranceMm', 'yawProbe', 'deadLoadReplay', 'portStrategy', 'dpcOriginAudit'] as const
 const foulFields = ['riserAxisXYMm', 'wetStackAirTakeoffZMm', 'terminalZMm', 'buriedReceiving'] as const
@@ -51,7 +52,7 @@ const inletFields = ['branch', 'washer', 'cheekMm', 'retainedSideLandMm', 'recei
   'minimumFrontBridgeMm', 'axialTravelMm', 'sideTravelMm', 'closure'] as const
 const insertFields = ['eastEdgeMm', 'headZMm', 'plantPressureAxisXMm', 'plantVentOuterZMm'] as const
 const faultFields = ['branches'] as const
-const assemblyFields = ['plantSouthLegLevelMm', 'splitRoof'] as const
+const assemblyFields = ['plantSouthLegLevelMm', 'splitRoof', 'supportRails'] as const
 const removalFields = ['branch', 'drawMm', 'roofAccess', 'washer', 'utilityTaperRemoved', 'preparation'] as const
 const studyFields = ['pitchMm', 'wearingFace', 'finishDepthMm', 'groundDeckLevelLossMm', 'firstRestBoardSizeMm', 'ordinaryHandling', 'frameFootClearanceMm', 'floorBorderMinimumMm', 'installedServices', 'floorWorkerTopMm', 'floorPosture', 'wallPanelWidthMm', 'wallFace', 'wallReleaseMm', 'opening'] as const
 
@@ -152,6 +153,7 @@ function admitStages(value: unknown): EngineeringStages {
     throw new TypeError('Specify at least one supported engineering stage')
   }
   const stages: EngineeringStages = {
+    ...(Object.hasOwn(value, 'structuralSuccessor') ? { structuralSuccessor: settings(value.structuralSuccessor, successorFields, 'structural successor') } : {}),
     ...(Object.hasOwn(value, 'northCollector') ? { northCollector: settings(value.northCollector, northFields, 'north collector') } : {}),
     ...(Object.hasOwn(value, 'rearFoulVent') ? { rearFoulVent: settings(value.rearFoulVent, foulFields, 'rear foul vent') } : {}),
     ...(Object.hasOwn(value, 'inletSillInsert') ? { inletSillInsert: settings(value.inletSillInsert, insertFields, 'inlet sill insert') } : {}),
@@ -182,6 +184,7 @@ export async function compileEngineeringDocument(input: unknown) {
     sourceBindingsDigest: sha256SemanticFingerprint(observedBindings),
   }
   const engineering: {
+    structuralSuccessor?: Awaited<ReturnType<typeof compile.structuralSuccessorCase>>
     northCollector?: Awaited<ReturnType<typeof compile.northCollectorCase>>
     rearFoulVent?: Awaited<ReturnType<typeof compile.rearFoulVent>>
     inletSillInsert?: Awaited<ReturnType<typeof compile.inletSillInsert>>
@@ -201,6 +204,13 @@ export async function compileEngineeringDocument(input: unknown) {
   recordResult('plans', {}, base.plans)
   recordResult('occupiedServices', {}, base.occupiedServices)
   recordResult('selectedWaterEvent', {}, base.selectedWaterEvent)
+  if (stages.structuralSuccessor) {
+    const request = await compile.readStructuralSuccessorCase()
+    if (!object(request.successor.comparison)) throw new Error('The bound structural successor case is unavailable')
+    engineering.structuralSuccessor = await compile.structuralSuccessorCase({ ...request.successor,
+      comparison: { ...request.successor.comparison, ...stages.structuralSuccessor } })
+    recordResult('structuralSuccessor', stages.structuralSuccessor, engineering.structuralSuccessor)
+  }
   const linkedPort = stages.northCollector?.portStrategy === 'linked-west-foul-route'
   let westVentCase: unknown
   const compileWestVent = async (settings: Settings) => {

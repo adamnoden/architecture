@@ -7,7 +7,7 @@
     "project/mat/studies/service-material-offer.json": "e5686440fa6a3f68387576883b1e0c768e0596bb",
     "project/mat/studies/tempered-kitchen-air.json": "b18044acaec99caf00eab9a542fff78e510857c9",
     "project/mat/studies/local-extract-heat-and-store.json": "550709d0e0ca0acff81cb42e502640771f4ac2d0",
-    "project/had/studies/receiver-selection.json": "c1f80a51f2cc862e08bcb61d39c018f567267a8f",
+    "project/had/studies/receiver-selection.json": "f43ca5bc2bb8d5800d80c2dd6951ac7c3f5e8354",
     "project/mat/studies/whole-house-leakage-duty.json": "5b93cdd9ea1ee7d825fa4596a44caf06431afc49",
     "project/mat/studies/loggia-soffit.json": "c9c914169547bd42b90cd69512ba1a28d97ca6fe",
     "project/mat/studies/joined-cooker-system.json": "d04dd78ba3fd040c7abd1aecb94aa9a3ce95d5e0",
@@ -21,7 +21,7 @@
     "project/str/studies/house-corner-rewind.json": "2a3f6ccb0f869c0ab860ba7846bbdbe2613ee640"
   },
   "sourceSha256": {
-    "bay": "220954ba67592211fbb086b53a1959e49e48e231e39ff5d5e98e8bb224b2fade",
+    "bay": "88fad8763552800fa802f0d23246974873c2b71cfe4e1ec179a144b1a89bfb96",
     "window": "3ebdd8711d96647bccf9a303fd133de148b0e8120fb46aa7957641cc5511071a",
     "sash": "55681e4e870157e97a6ccfcfb5c8dbfa7f061053ff77f4a2329e7b7fc62eccb5",
     "room": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593"
