@@ -24,7 +24,7 @@ test('one saved engineering document replays its bound stages and preserves thei
   assert.equal(result.documentIdentity.planDigest, result.source.planDigest)
   assert.deepEqual(result.manifest.map(item => item.stage), ['plans', 'occupiedServices', 'selectedWaterEvent',
     'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'inletRemovals/plant', 'inletRemovals/utility',
-    'inletCovers/plant', 'inletCovers/utility', 'studyRoomKit'])
+    'inletCovers/plant', 'inletCovers/utility', 'inletAssembly', 'studyRoomKit'])
   assert.ok(result.engineering.northCollector?.status === 'computed-comparison')
   assert.equal(result.engineering.northCollector.evidence.installedAcceptance, false)
   assert.equal(result.engineering.studyRoomKit?.kit.state, 'candidate')

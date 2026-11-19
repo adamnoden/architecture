@@ -486,7 +486,8 @@
       "receipts": [],
       "consumers": [
         "compiler/reference-house/current-design/inlet-removal.ts",
-        "compiler/reference-house/current-design/inlet-cover.ts"
+        "compiler/reference-house/current-design/inlet-cover.ts",
+        "compiler/reference-house/current-design/inlet-assembly.ts"
       ],
       "producerChecks": [
         "node project/had/studies/south-inlet-wet-box.mjs --check",
@@ -888,6 +889,7 @@
     "project/had/south-inlet-wet-box.md": "3f6eb36c2baf2011d7699a7807213b4785375c98",
     "project/had/studies/south-inlet-wet-box.mjs": "2b6ae4e01c29823c6d91e78cd4657b4fe373a618",
     "compiler/reference-house/current-design/inlet-removal.ts": "47f9a6615634de9062190c2e7e5e20384837d043",
-    "compiler/reference-house/current-design/inlet-cover.ts": "c24b643034c96b483ea58aa59b3b1423d633d781"
+    "compiler/reference-house/current-design/inlet-cover.ts": "c24b643034c96b483ea58aa59b3b1423d633d781",
+    "compiler/reference-house/current-design/inlet-assembly.ts": "f734eecd580b6b56620aeee893f6aed62b8adffe"
   }
 }
