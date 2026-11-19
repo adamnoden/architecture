@@ -25,6 +25,10 @@ const { inletSillInsert, inletFault, inletRemovals, inletCovers, inletAssembly }
 const inletDocument = { ...engineering, stages: { inletSillInsert, inletFault, inletRemovals, inletCovers,
   inletAssembly: { ...inletAssembly, plantSouthLegLevelMm: Number(inletAssembly.plantSouthLegLevelMm) + 25 } } }
 const raisedBundle = await compileEngineeringDocument(inletDocument)
+const supportBundle = await compileEngineeringDocument({ ...inletDocument, stages: { ...inletDocument.stages, inletAssembly } })
+const inletSupport = supportBundle.engineering.inletAssembly?.supportComparison
+assert.ok(inletSupport, 'The support witness requires the current joined support comparison')
+assert.equal(inletSupport.disposition, 'reject-geometric-arrangement')
 const raisedInlet = raisedBundle.engineering.inletAssembly
 assert.ok(raisedInlet, 'The current inlet witness requires the joined inlet assembly')
 assert.equal(raisedInlet.routeCalculation.routesClear, false)
@@ -43,6 +47,7 @@ const witnesses = [
   ['ground-wc-condensate-25mm-lowering.svg', loweredCondensate.drawing],
   ['east-ground-receiving-20mm-lower.svg', lowered.drawing],
   ['inlet-plant-25mm-raise.svg', raisedInlet.drawing],
+  ['inlet-front-rail-rejection.svg', inletSupport.drawing],
   ['court-intake-25mm-narrowing.svg', narrowed.drawing],
   ['study-floor-450mm-plan.svg', tile.plan],
   ['study-service-skirting-section.svg', skirting.section],

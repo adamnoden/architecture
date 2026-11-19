@@ -10,6 +10,7 @@ import type { runInletFaultCase } from './inlet-fault.js'
 import type { runInletRemovalCase } from './inlet-removal.js'
 import type { runInletSillInsertCase } from './inlet-sill-insert.js'
 import { compareSplitInletRoofs, readSplitRoofReferenceSettings } from './inlet-split-roof.js'
+import { compareInletSupport, readInletSupportSettings } from './inlet-support.js'
 import type { CurrentDesignResolution } from './resolve.js'
 
 type Point = readonly [number, number, number]
@@ -30,14 +31,14 @@ const radiusMm = 75
 const suppliedInputs = ['south-inlet-under-sill', 'south-inlet-wet-box', 'utility-dry-bowl-release',
   'utility-wide-capture', 'current-house-services', 'incoming-water', 'inlet-fixed-station'] as const
 
-function boundJson<T>(resolved: CurrentDesignResolution, name: string): T {
-  const path = root + name + '.json'
+function boundSource<T>(resolved: CurrentDesignResolution, path: string): T {
   const expected = resolved.disciplineBindings.flatMap(binding => binding.identities[path] ? [binding.identities[path]] : [])
   const bytes = readFileSync(new URL('../../../' + path, import.meta.url))
   const actual = createHash('sha1').update('blob ' + bytes.length + '\0').update(bytes).digest('hex')
   if (!expected.length || expected.some(blob => blob !== actual)) throw new Error('Stale joined inlet source: ' + path)
   return JSON.parse(bytes.toString('utf8'))
 }
+const boundJson = <T>(resolved: CurrentDesignResolution, name: string): T => boundSource(resolved, root + name + '.json')
 
 function plantLegStart(points: readonly Point[]) {
   const legs = points.flatMap(([x, y, z], index) => {
@@ -53,7 +54,7 @@ export function readInletAssemblySettings(resolved: CurrentDesignResolution) {
   const source = boundJson<{ branches: { id: Branch; coordinates: Point[] }[] }>(resolved, 'south-inlet-under-sill')
   const plant = source.branches.find(branch => branch.id === 'plant')
   if (!plant) throw new Error('Missing joined plant route')
-  return { plantSouthLegLevelMm: plant.coordinates[plantLegStart(plant.coordinates)][2], splitRoof: readSplitRoofReferenceSettings() }
+  return { plantSouthLegLevelMm: plant.coordinates[plantLegStart(plant.coordinates)][2], splitRoof: readSplitRoofReferenceSettings(), supportRails: readInletSupportSettings() }
 }
 
 function requireSources(sources: Sources) {
@@ -102,12 +103,12 @@ function routeDrawing(routes: Readonly<Record<Branch, readonly Point[]>>, digest
 }
 
 export function compileInletAssembly(resolved: CurrentDesignResolution, input: unknown, sources: Sources) {
-  if (!input || typeof input !== 'object' || Array.isArray(input) || Object.keys(input).some(key => !['plantSouthLegLevelMm', 'splitRoof'].includes(key))
+  if (!input || typeof input !== 'object' || Array.isArray(input) || Object.keys(input).some(key => !['plantSouthLegLevelMm', 'splitRoof', 'supportRails'].includes(key))
       || !Object.hasOwn(input, 'plantSouthLegLevelMm')) throw new Error('Expected an explicit joined inlet plant-leg setting')
-  const { plantSouthLegLevelMm, splitRoof } = input as { plantSouthLegLevelMm: number; splitRoof?: unknown }
+  const { plantSouthLegLevelMm, splitRoof, supportRails } = input as { plantSouthLegLevelMm: number; splitRoof?: unknown; supportRails?: unknown }
   requireSources(sources)
   const underSill = boundJson<{ branches: { id: Branch; coordinates: Point[]; bores: { outer: Point; inner: Point }[] }[] }>(resolved, 'south-inlet-under-sill')
-  const wet = boundJson<{ branches: { id: Branch; access: { parkedRiserY: number; requiredDrawMM: number; releasedSpoolOutline: { x: [number, number] } } }[];
+  const wet = boundJson<{ branches: { id: Branch; access: { parkedRiserY: number; requiredDrawMM: number; outsideRelease: Point; releasedSpoolOutline: { x: [number, number] } } }[];
     installedColdPairAfterSettingMM: number; installedUtilityToRevisedHotAfterSettingMM: number }>(resolved, 'south-inlet-wet-box')
   const bowl = boundJson<{ capture: { clearSweeps: { stage: number; box: Box }[] } }>(resolved, 'utility-dry-bowl-release')
   const hot = boundJson<{ hot: { backbone: Point[]; terminal: Point[] } }>(resolved, 'utility-wide-capture')
@@ -221,6 +222,24 @@ export function compileInletAssembly(resolved: CurrentDesignResolution, input: u
     ...(sources.insert.status === 'within-conditional-screen' ? [] : ['SILL_INSERT_GEOMETRY']),
     ...branches.flatMap(row => row.geometryBlockers.map(code => row.branch + ':' + code)),
   ]
+  const portalPath = 'project/str/studies/floor-portal-interface-review.json'
+  const portal = boundSource<{ geometry: { jambQmm: [number, number]; occurrences: { face: string; opening: string; jambAxisPmm: number }[] } }>(resolved, portalPath)
+  const supportComparison = supportRails === undefined ? null : compareInletSupport(supportRails, {
+    jambAxesXMm: portal.geometry.occurrences.filter(row => row.face === 'outer-south' && row.opening === 'south-window-4').map(row => row.jambAxisPmm),
+    jambNormalFacesYMm: portal.geometry.jambQmm,
+    occupied: [{ id: 'PV-permanent-working-field', box: inverter }, { id: 'washer-installed-through-first-rest', box: washer }],
+    branches: branches.map(branch => {
+      const removal = sources.removals.find(row => row.branch === branch.branch)!
+      const cell = wet.branches.find(row => row.id === branch.branch)!
+      const relief = sources.insert.calculation.bores.find(row => row.id === branch.branch + '-relief')!
+      return { id: branch.branch, route: branch.routeMm,
+        cut: [branch.dryBreak.xMm, branch.dryBreak.yMm, branch.dryBreak.zMm], drawMm: removal.calculation.drawMm,
+        radiusMm: removal.calculation.roofStrip.jacketOutsideDiameterMm / 2, releasedTip: cell.access.outsideRelease,
+        wetPlan: removal.calculation.wetBox.planMm,
+        wetZ: [relief.axis[1][2] - relief.formedReserveODMM / 2,
+          upperClosure?.branches.find(row => row.branch === branch.branch)?.roofZMm ?? removal.calculation.roofStrip.zMm] }
+    }),
+  })
   return {
     schema: 'had-inlet-assembly-result/1' as const,
     disposition: geometryBlockers.length ? 'reject-current-arrangement' as const : 'conditional-arrangement-incomplete' as const,
@@ -229,7 +248,7 @@ export function compileInletAssembly(resolved: CurrentDesignResolution, input: u
     routeCalculation: { plantSouthLegLevelMm, nativeLevelMm: nativeLevel, settingMm, comparisonMm, bendRadiusMm: radiusMm,
       pairClearanceMm: pairMm, terminalToHotMm, branches: clearance, routesClear,
       nativeWetBoxControl: { pairClearanceMm: wet.installedColdPairAfterSettingMM, utilityHotMm: wet.installedUtilityToRevisedHotAfterSettingMM } },
-    branches, geometryBlockers, upperClosure,
+    branches, geometryBlockers, upperClosure, supportComparison,
     displacedCoverComparison: upperClosure ? { state: 'historical-comparison-only', cases: sources.covers.map(row => row.source.caseDigest) } : null,
     pressureNetwork: { continuity, utilityWasherTerminalMm: network.utilitySuccessor.vertices.coldWasher,
       utilitySinkTerminalMm: network.utilitySuccessor.vertices.coldSink, plantRemovableDropMm: station.paths.removablePlantDrop,
@@ -237,6 +256,8 @@ export function compileInletAssembly(resolved: CurrentDesignResolution, input: u
       terminalMotionProved: station.removal.completeDryLoadAndMotionProved,
       completeRouteToNamedEndpoints: true, installedContinuityAndRatedConnectionsProved: false },
     independentSupport: { upperClosure: upperClosure ? 'two handheld flat plates; full U-lid receiver and guides retired' : 'whole-lid receiver and capture unqualified', windowSill: sources.insert.calculation.loads, carrierAndWetCells: 'separate-anchored-support-not-qualified',
+      frontRailComparisonIsAdoptedSupport: false,
+      supportReceivingSource: { path: portalPath, gitBlob: resolved.disciplineBindings.flatMap(binding => binding.identities[portalPath] ? [binding.identities[portalPath]] : [])[0] },
       pressureReactionMustNotUse: ['removable wet closure', 'window sash', 'sibling wet cell', 'finish backing'] },
     materialBoundary: { pressureTube: 'continuous metallic candidate; matched fittings and complete potable pressure rating outstanding',
       wetLiner: 'continuously joined metal; complete seams and corrosion compatibility outstanding',
