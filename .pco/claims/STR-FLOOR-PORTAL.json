@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 42,
+  "generation": 43,
   "state": "claimed",
-  "leaseId": "b71fcf09-0375-4d95-a9d9-eebf11c2a61f",
+  "leaseId": "1e462ea9-3790-42cc-8040-6bc65e6c313e",
   "holder": {
-    "kind": "codex",
-    "label": "rush-intact-collector"
+    "kind": "chatgpt",
+    "label": "convergence-2026-11-19"
   },
-  "claimedAt": "2026-11-19T00:27:12.649Z",
-  "heartbeatAt": "2026-11-19T00:34:15.222Z",
-  "expiresAt": "2026-11-19T01:19:15.222Z",
-  "branch": "work/rush-intact-collector-2026-11-19",
+  "claimedAt": "2026-11-19T20:30:01.372Z",
+  "heartbeatAt": "2026-11-19T20:30:01.372Z",
+  "expiresAt": "2026-11-19T21:15:01.372Z",
+  "branch": "work/convergence-2026-11-19",
   "predecessor": {
-    "leaseId": "62533e71-334f-41b1-8a06-e0cb4a0ac9d7",
-    "generation": 41,
-    "branch": "work/rush-inlet-dependencies-2026-11-18",
-    "pr": 1580,
+    "leaseId": "b71fcf09-0375-4d95-a9d9-eebf11c2a61f",
+    "generation": 42,
+    "branch": "work/rush-intact-collector-2026-11-19",
+    "pr": 1581,
     "checkpoint": {
-      "evidence": "PR #1580 exact e8f03902ab59d91dd96c9ea3108718584efcc5e1; inlet propagation and full runtime import-pin audit verified by11 updated pipeline tests",
-      "next": "Observe this submitted head hosted health/publication checks, merge, then verify main and release",
-      "blocker": "Shared blocked sill still halts the bundle; physical coupled DPC, foul route, service and handling acceptance remain open"
+      "evidence": "PR #1581 exact c0671af04745e39f97a00b393939ed46352a2731;499 Reference House tests, source/native receipt checks and rendered intact-cage candidate verified",
+      "next": "Verify this head hosted checks, merge and release; next joint proof needs above/below DPC load classification and compatible stiffness",
+      "blocker": "West route and its site envelope are conditional; current source port remains reserved and full damp-proof joint transfer is unresolved"
     }
   },
   "recoverySource": {
-    "leaseId": "62533e71-334f-41b1-8a06-e0cb4a0ac9d7",
-    "generation": 41,
-    "branch": "work/rush-inlet-dependencies-2026-11-18",
-    "pr": 1580,
+    "leaseId": "b71fcf09-0375-4d95-a9d9-eebf11c2a61f",
+    "generation": 42,
+    "branch": "work/rush-intact-collector-2026-11-19",
+    "pr": 1581,
     "checkpoint": {
-      "evidence": "PR #1580 exact e8f03902ab59d91dd96c9ea3108718584efcc5e1; inlet propagation and full runtime import-pin audit verified by11 updated pipeline tests",
-      "next": "Observe this submitted head hosted health/publication checks, merge, then verify main and release",
-      "blocker": "Shared blocked sill still halts the bundle; physical coupled DPC, foul route, service and handling acceptance remain open"
+      "evidence": "PR #1581 exact c0671af04745e39f97a00b393939ed46352a2731;499 Reference House tests, source/native receipt checks and rendered intact-cage candidate verified",
+      "next": "Verify this head hosted checks, merge and release; next joint proof needs above/below DPC load classification and compatible stiffness",
+      "blocker": "West route and its site envelope are conditional; current source port remains reserved and full damp-proof joint transfer is unresolved"
     }
-  },
-  "pr": 1581,
-  "checkpoint": {
-    "evidence": "PR #1581 exact c0671af04745e39f97a00b393939ed46352a2731;499 Reference House tests, source/native receipt checks and rendered intact-cage candidate verified",
-    "next": "Verify this head hosted checks, merge and release; next joint proof needs above/below DPC load classification and compatible stiffness",
-    "blocker": "West route and its site envelope are conditional; current source port remains reserved and full damp-proof joint transfer is unresolved"
   }
 }
