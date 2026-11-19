@@ -9,9 +9,9 @@
     "label": "convergence-inlet"
   },
   "claimedAt": "2026-11-19T20:30:02.696Z",
-  "heartbeatAt": "2026-11-19T21:35:12.649Z",
-  "expiresAt": "2026-11-19T22:20:12.649Z",
-  "branch": "work/convergence-inlet-split-roof-2026-11-19",
+  "heartbeatAt": "2026-11-19T21:58:14.646Z",
+  "expiresAt": "2026-11-19T22:43:14.646Z",
+  "branch": "work/convergence-integrated-2026-11-19",
   "predecessor": {
     "leaseId": "5ddd99a4-fd1f-49de-af1d-7d77372c4077",
     "generation": 45,
@@ -36,8 +36,8 @@
   },
   "pr": 1583,
   "checkpoint": {
-    "evidence": "HAD successor head93f71621113cf1a96f8ce6c8579138a91445322f, including current witness28049 and editable exact vent correction.42 affected tests, TypeScript, source audit, repository integrity, native sill and current-witness reproduction passed. First PR1583 exact c619 full hosted checks green; final shared head still requires its own CI.",
-    "next": "Root serial integration of c619/40dde/28049/93f716 with STR and IAS on work/convergence-integrated-2026-11-19. Renew this lease to shared branch when pushed, require exact-head CI and publication preflight, then release. Independent carrier chassis/cage and retained-end release remain internal engineering scope.",
-    "blocker": "No complete inlet adoption: source-bound light split roof and exact vent are implemented; independent receiver/cage, supported carrier disconnect/draw and wet seam remain unresolved."
+    "evidence": "HAD source head93f71621113cf1a96f8ce6c8579138a91445322f remains pushed on work/convergence-inlet-split-roof-2026-11-19;42 affected tests and native/current witness checks passed. Root has assembled it into the intended shared integration branch locally; shared remote publication is pending. Internal DPC LP challenge matched576 cases within1.42e-13kN; stdlib oracle matchesHiGHS within1.14e-13kN.",
+    "next": "Publish and verify shared remote head, attach final shared PR identity, inspect exact-head CI and run canonical publication preflight before merge. Do not infer whole inlet or structural acceptance from these implementation proofs.",
+    "blocker": "Shared remote publication and exact-head CI pending. HAD packet remains planned on actual carrier receiving cage/support, retained-end release and wet-seam engineering."
   }
 }
