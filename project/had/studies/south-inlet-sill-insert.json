@@ -3,9 +3,9 @@
   "sources": {
     "project/had/studies/south-inlet-sill-insert-kernel.mjs": "153cd3e2c747bd980ae2128d99a9a84b5885ae20",
     "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2",
-    "project/had/studies/south-inlet-under-sill.json": "7d60da325cd76bb9d7924bc4bb64f1b93b51b644",
-    "project/had/studies/south-inlet-wet-box.json": "0ccc6a7b1584145b5e77c7b89e9e2b8ce8b7d665",
-    "project/str/studies/house-corner-rewind.json": "6471d89c213724ec02a26d797c85185beadb25b5",
+    "project/had/studies/south-inlet-under-sill.json": "e081e2d4757ca82fb4def3facf1b01bcb2ac721c",
+    "project/had/studies/south-inlet-wet-box.json": "2061bb04b908957f34ed11c21ac8592e850b4fe4",
+    "project/str/studies/house-corner-rewind.json": "2a3f6ccb0f869c0ab860ba7846bbdbe2613ee640",
     "project/str/studies/floor-portal-interface-review.json": "ad8aac21e936f0199b331c3bd886c8bb41f30ee3",
     "project/str/studies/current-house-grid.json": "56aca6f99f5fa60b21d58c89115ac1ee824e3828",
     "project/str/studies/current-house-joined-foundation.json": "ffc3ccb68655eead7c7f56a8dd3179d7d8d6f7bc"

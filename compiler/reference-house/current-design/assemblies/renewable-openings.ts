@@ -81,7 +81,7 @@ export function compileRenewableOpenings(resolved: CurrentDesignResolution, rece
   const windowBytes = read(windowPath)
   const windowHash = sha(windowBytes)
   // The OAS comparison is a candidate receipt, separate from the selected HAD binding.
-  if (windowHash !== '4aea83e5cb2451b65acd8818e06cba6010128b84e755ae199c7d2193e92410e6') {
+  if (windowHash !== '72e77dccc022fa38f75b1056966c18ea49f9e4d5e453215d1441f678f7520710') {
     throw new TypeError('The OAS Study comparison receipt changed')
   }
   const window = JSON.parse(windowBytes.toString('utf8')) as WindowReceipt

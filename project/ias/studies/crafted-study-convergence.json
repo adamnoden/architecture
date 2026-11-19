@@ -20,7 +20,7 @@
         "currentPlanBasis": "RH-LAYOUT-REVISION-02",
         "occupiedHouse": "HAD-SERVICES-02",
         "roomId": "GROUND/G-STUDY",
-        "bindingDigest": "acf0c617f37c02da8ba08f558466f102ec1dc9cfe8a75fa198e1c8a4cdf4b8e2",
+        "bindingDigest": "e2e777365b08a8ffd644767e9f8c925f421efef1c49cf5ceab2ce6281dfc48b9",
         "floor": {
           "path": "project/ias/studies/workable-study-floor.json",
           "sha256": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593"
@@ -31,7 +31,7 @@
         },
         "furnishedGeometrySha256": "ff387bfb8119310c7fccbd54848d8982bd2feba8541b297b0583bd8640f1352e"
       },
-      "caseDigest": "b56252c33c0dcf9816cf2375fc9ad93086396bf7110c6bb04e8b38a3f6981609",
+      "caseDigest": "365f1f2922154b48e272c350d1825c189788c4de268277d465042e3f478bf08d",
       "floorParts": 144,
       "ordinaryHandlingWitnesses": null,
       "directRestWitnesses": 135,
@@ -9287,7 +9287,7 @@
         "currentPlanBasis": "RH-LAYOUT-REVISION-02",
         "occupiedHouse": "HAD-SERVICES-02",
         "roomId": "GROUND/G-STUDY",
-        "bindingDigest": "acf0c617f37c02da8ba08f558466f102ec1dc9cfe8a75fa198e1c8a4cdf4b8e2",
+        "bindingDigest": "e2e777365b08a8ffd644767e9f8c925f421efef1c49cf5ceab2ce6281dfc48b9",
         "floor": {
           "path": "project/ias/studies/workable-study-floor.json",
           "sha256": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593"
@@ -9298,7 +9298,7 @@
         },
         "furnishedGeometrySha256": "ff387bfb8119310c7fccbd54848d8982bd2feba8541b297b0583bd8640f1352e"
       },
-      "caseDigest": "29c88ab06136dd9123008083e0bc3deca9050e216066127d6121c4a7f157dbab",
+      "caseDigest": "dac63992f98f983c5d368404dd41ccc74049dfe190425592454ffb9d208ae740",
       "floorParts": 144,
       "ordinaryHandlingWitnesses": 144,
       "directRestWitnesses": 137,
@@ -18555,7 +18555,7 @@
         "currentPlanBasis": "RH-LAYOUT-REVISION-02",
         "occupiedHouse": "HAD-SERVICES-02",
         "roomId": "GROUND/G-STUDY",
-        "bindingDigest": "acf0c617f37c02da8ba08f558466f102ec1dc9cfe8a75fa198e1c8a4cdf4b8e2",
+        "bindingDigest": "e2e777365b08a8ffd644767e9f8c925f421efef1c49cf5ceab2ce6281dfc48b9",
         "floor": {
           "path": "project/ias/studies/workable-study-floor.json",
           "sha256": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593"
@@ -18566,7 +18566,7 @@
         },
         "furnishedGeometrySha256": "ff387bfb8119310c7fccbd54848d8982bd2feba8541b297b0583bd8640f1352e"
       },
-      "caseDigest": "75712da779af3c229b5ca8a8ab5cf462b0d6df3bf383c7a298507fb4b97e901c",
+      "caseDigest": "78fa51d4168a1066c0e4a0bbb4519dd31b83d4be50f21414cb192d22d1809ff0",
       "floorParts": 144,
       "ordinaryHandlingWitnesses": 144,
       "directRestWitnesses": 137,
@@ -18645,7 +18645,7 @@
         "currentPlanBasis": "RH-LAYOUT-REVISION-02",
         "occupiedHouse": "HAD-SERVICES-02",
         "roomId": "GROUND/G-STUDY",
-        "bindingDigest": "acf0c617f37c02da8ba08f558466f102ec1dc9cfe8a75fa198e1c8a4cdf4b8e2",
+        "bindingDigest": "e2e777365b08a8ffd644767e9f8c925f421efef1c49cf5ceab2ce6281dfc48b9",
         "floor": {
           "path": "project/ias/studies/workable-study-floor.json",
           "sha256": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593"
@@ -18656,7 +18656,7 @@
         },
         "furnishedGeometrySha256": "ff387bfb8119310c7fccbd54848d8982bd2feba8541b297b0583bd8640f1352e"
       },
-      "caseDigest": "0c13aa2f7de53e8f295f57ab250461001d4036ed110ac71e8b47b8d0fbfffd24",
+      "caseDigest": "c7c3d03607a80fee1a785b504b830742e174d2b7a23fb342e8045ca7d7875bd6",
       "floorParts": 145,
       "ordinaryHandlingWitnesses": null,
       "directRestWitnesses": 137,
@@ -18735,7 +18735,7 @@
         "currentPlanBasis": "RH-LAYOUT-REVISION-02",
         "occupiedHouse": "HAD-SERVICES-02",
         "roomId": "GROUND/G-STUDY",
-        "bindingDigest": "acf0c617f37c02da8ba08f558466f102ec1dc9cfe8a75fa198e1c8a4cdf4b8e2",
+        "bindingDigest": "e2e777365b08a8ffd644767e9f8c925f421efef1c49cf5ceab2ce6281dfc48b9",
         "floor": {
           "path": "project/ias/studies/workable-study-floor.json",
           "sha256": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593"
@@ -18746,7 +18746,7 @@
         },
         "furnishedGeometrySha256": "ff387bfb8119310c7fccbd54848d8982bd2feba8541b297b0583bd8640f1352e"
       },
-      "caseDigest": "bd510701d7ad39a90cf8bb073bf3fdaa3e6238f5d7d1814f8c8b655bb6ab62e0",
+      "caseDigest": "2b76697efc4f812fad97116a1fd3e64ad601c8a171a1969125b7ff4f2098d557",
       "floorParts": 144,
       "ordinaryHandlingWitnesses": null,
       "directRestWitnesses": 119,
@@ -18850,7 +18850,7 @@
         "currentPlanBasis": "RH-LAYOUT-REVISION-02",
         "occupiedHouse": "HAD-SERVICES-02",
         "roomId": "GROUND/G-STUDY",
-        "bindingDigest": "acf0c617f37c02da8ba08f558466f102ec1dc9cfe8a75fa198e1c8a4cdf4b8e2",
+        "bindingDigest": "e2e777365b08a8ffd644767e9f8c925f421efef1c49cf5ceab2ce6281dfc48b9",
         "floor": {
           "path": "project/ias/studies/workable-study-floor.json",
           "sha256": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593"
@@ -18861,7 +18861,7 @@
         },
         "furnishedGeometrySha256": "ff387bfb8119310c7fccbd54848d8982bd2feba8541b297b0583bd8640f1352e"
       },
-      "caseDigest": "8e9efb094f7aca75e3bb31351ae78a6d036151f5ace527345fef1aaa3712a50e",
+      "caseDigest": "fb01ac947355be1f2d290b66718e9d5e081ef7ae425080d856df54c81627f8b3",
       "floorParts": 144,
       "ordinaryHandlingWitnesses": null,
       "directRestWitnesses": 140,
@@ -54415,7 +54415,7 @@
       "state": "candidate-unqualified",
       "source": {
         "roomId": "GROUND/G-STUDY",
-        "bindingDigest": "acf0c617f37c02da8ba08f558466f102ec1dc9cfe8a75fa198e1c8a4cdf4b8e2",
+        "bindingDigest": "e2e777365b08a8ffd644767e9f8c925f421efef1c49cf5ceab2ce6281dfc48b9",
         "jointInterfaceDigest": "2c9d1200bea048920e5be51737773ddedc33443021900731eb8bb1c566b655f6",
         "inputDigest": "efa4891193343fe175e9661603ee2afa8a368a0cf2126789946bfaa907a2b186",
         "method": "ias-whole-study-assembly/1"
@@ -60598,7 +60598,7 @@
       "state": "candidate-unqualified",
       "source": {
         "roomId": "GROUND/G-STUDY",
-        "bindingDigest": "acf0c617f37c02da8ba08f558466f102ec1dc9cfe8a75fa198e1c8a4cdf4b8e2",
+        "bindingDigest": "e2e777365b08a8ffd644767e9f8c925f421efef1c49cf5ceab2ce6281dfc48b9",
         "jointInterfaceDigest": "2c9d1200bea048920e5be51737773ddedc33443021900731eb8bb1c566b655f6",
         "inputDigest": "3308d609efb3e9837d2268130253db26b7379af570535319ec39fcab4e75b0d9",
         "method": "ias-whole-study-assembly/1"

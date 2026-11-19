@@ -41,6 +41,36 @@ const roofJoin={commit:'f7942830ae24ef1d308f01e71a4f87f306f37ab0',
       before:'80a8481b4e5a508164eff51b596e5a954c152a30',after:'887a3df5b7a335b3eaafc7c8de4529a339428cbc'},
     'rwt/studies/court-bypass-choice':{
       before:'164cbc28358aed78335f59c6856e5ee0ab8fd274',after:'450d121b5c70d95073f1daadd1332c789751156d'}}};
+const sourceRefresh={
+  "baselineCommit": "0b982539e9e3407e6a57863f2de8cbf5ed612a8d",
+  "baselineScheduleBlob": "248c8281369d16a8885506660f740c1f66462d9d",
+  "scheduleBlob": "d32748bc33cc0b8b8e8bfe3e3a017236ff8a7688",
+  "houseExceptDeclaredChangesSHA256": "2358daf9f0b76ec039c7ed5606f005929b9ea8fd299a75e066fd8242a7aec1b2",
+  "houseInputs": {
+    "project/had/studies/receiver-selection.json": {
+      "before": "2def3f7221d55b180cd46392a227b8c56972d03f",
+      "after": "c1f80a51f2cc862e08bcb61d39c018f567267a8f"
+    },
+    "project/ias/studies/shared-family-bathing.json": {
+      "before": "f89302f9d87708b5314bd68a768c976efcd07b8d",
+      "after": "8f49647baf8c07260438fd909c11af8eaaad4ba8"
+    },
+    "project/str/studies/reconciled-house-interface.json": {
+      "before": "4d3080dc4540ce7218b86f1d27518fbeb1f8e85d",
+      "after": "4b680b7012bda54d4aff83da8f8718b3b191ea69"
+    },
+    "project/str/studies/house-corner-rewind.json": {
+      "before": "6471d89c213724ec02a26d797c85185beadb25b5",
+      "after": "2a3f6ccb0f869c0ab860ba7846bbdbe2613ee640"
+    }
+  },
+  "receiverInputs": {
+    "had/studies/court-intake-selection": {
+      "before": "887a3df5b7a335b3eaafc7c8de4529a339428cbc",
+      "after": "d4e6c37dbac7777abeb83e85ee3232f608523bdc"
+    }
+  }
+};
 export function verifyPreFixBoundary(house){
   const copy=structuredClone(house);
   for(const s of [copy.model.architecturalServices,copy.model.servicesInterface])
@@ -52,7 +82,21 @@ export function verifyPreFixBoundary(house){
     exteriorPortsSHA256:digest(house.model.exteriorPortGeometry),
     weatherFacesSHA256:digest(house.selectedServiceInterfaces.weatherFaces),
     selectedInterfacesSHA256:digest(house.selectedServiceInterfaces),houseExceptDeclaredChangesSHA256:digest(copy)};
-  assert.equal(observed.scheduleBlob,roofJoin.scheduleBlob,'Joined service schedule identity changed');
+  assert.equal(observed.scheduleBlob,sourceRefresh.scheduleBlob,'Refreshed joined service schedule identity changed');
+  assert.equal(sourceRefresh.baselineScheduleBlob,roofJoin.scheduleBlob,'Original joined schedule anchor changed');
+  for(const [path,{before,after}] of Object.entries(sourceRefresh.houseInputs)){
+    assert.equal(copy.inputs[path],after,'Expected joined house input identity during source refresh: '+path);
+    assert.equal(schedule.sources[path],after,'Expected joined schedule input identity during source refresh: '+path);
+    copy.inputs[path]=before;schedule.sources[path]=before;
+  }
+  for(const [path,{before,after}] of Object.entries(sourceRefresh.receiverInputs)){
+    assert.equal(copy.courtReceiver.inputs[path],after,'Expected joined receiver input identity during source refresh: '+path);
+    copy.courtReceiver.inputs[path]=before;
+  }
+  const joinedObserved={...observed,
+    scheduleBlob:gitBlobBytes(Buffer.from(JSON.stringify(schedule,null,2)+'\n')),
+    houseExceptDeclaredChangesSHA256:digest(copy)};
+  assert.equal(joinedObserved.scheduleBlob,roofJoin.scheduleBlob,'Joined service schedule identity changed');
   // Normalize only the independently observed, exact old/new identity pairs.
   // The rest of the schedule and complete model remain covered by the original
   // preFix hashes; an unlisted identity change is not silently discarded.
@@ -65,18 +109,20 @@ export function verifyPreFixBoundary(house){
     assert.equal(copy.courtReceiver.inputs[path],after,'Expected joined receiver input identity: '+path);
     copy.courtReceiver.inputs[path]=before;
   }
-  const normalizedObserved={...observed,
+  const normalizedObserved={...joinedObserved,
     scheduleBlob:gitBlobBytes(Buffer.from(JSON.stringify(schedule,null,2)+'\n')),
     houseExceptDeclaredChangesSHA256:digest(copy)};
   for(const [key,value] of Object.entries(normalizedObserved))assert.equal(value,preFix[key],
     'Current-source boundary changed; reassess the bounded MRA result: '+key);
-  assert.equal(observed.houseExceptDeclaredChangesSHA256,roofJoin.houseExceptDeclaredChangesSHA256,
+  assert.equal(joinedObserved.houseExceptDeclaredChangesSHA256,roofJoin.houseExceptDeclaredChangesSHA256,
     'Joined pre-water-correction house boundary changed');
-  return {preFix,sourceIdentityReconciliation:roofJoin,observed,normalizedObserved,unchanged:true,
+  assert.equal(observed.houseExceptDeclaredChangesSHA256,sourceRefresh.houseExceptDeclaredChangesSHA256,
+    'Current-source boundary changed; reassess the bounded MRA result: houseExceptDeclaredChangesSHA256');
+  return {preFix,sourceIdentityReconciliation:roofJoin,sourceRefresh,observed,joinedObserved,normalizedObserved,unchanged:true,
     declaredChanges:['Both foul-kitchen duties: superseded downstream reservation corrected; upstream branch stays with IAS.',
       'Both incoming-water duties: rejected status, current witness and adoption duty added; path geometry retained.',
       'model.currentAdoptionBlockers: explicit incoming-water duty replaces the empty list.'],
-    scope:'The original a060 observation remains exact after five named source-identity normalizations from the independently replayed f794 pre-water-correction house. Current and normalized schedules and complete unaffected models are separately guarded. Only the two declared water duties and their blocker are excluded from physical comparison; no other provenance or geometry is omitted. No whole-house structural or moisture acceptance is claimed.'};
+    scope:'The independently replayed 0b producer and current regenerated producer differ only at the four named house-input identities and one named receiver-input identity. That exact refresh first returns the original joined schedule and unaffected-house hashes; the preserved f794 bridge then returns the original a060 observation. Current, joined and normalized schedules and complete unaffected models are separately guarded. Only the two declared water duties and their blocker are excluded from physical comparison; no blanket provenance normalization or other geometry exclusion is applied. No whole-house structural or moisture acceptance is claimed.'};
 }
 export function retainedVolume({initialL=0,flowLmin,seconds,residualL=0,safeDrainLmin=0}) {
   for (const value of [initialL,flowLmin,seconds,residualL,safeDrainLmin])
