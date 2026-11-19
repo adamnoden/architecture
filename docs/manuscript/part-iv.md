@@ -139,7 +139,7 @@ The architecture would be weakened if every joint announced its replaceability.
 
 The Reference House is materially conservative where conservatism improves longevity and understanding.
 
-Its current baseline is masonry enclosure, short-span engineered timber floors, conventional continuous room finishes and selectively designed interfaces. The system is not chosen because traditional construction is inherently superior. It is chosen because the house already possesses two long-lived wall systems—the outer boundary and courtyard boundary—and those walls can carry useful structural, environmental and architectural work simultaneously.
+Masonry enclosure remains the starting point. Mineral floors, steel roof structure and crafted removable finishes are being developed around it; no complete joined assembly is yet selected. The house already possesses two long-lived wall systems—the outer boundary and courtyard boundary—and the investigation asks how they can carry structural, environmental and architectural work together.
 
 ## A layered masonry envelope
 
@@ -161,19 +161,19 @@ The central structural fact is geometric.
 
 The house does not require floors to span the 12.0 metre building width. The courtyard creates a ring of comparatively short spans between outer and inner permanent walls.
 
-The working structural concept uses masonry inner leaves at the outer and courtyard envelopes with engineered-timber framing. The gross surrounding bands are 4.25 metres; actual support lines, clear spans and loads must be established for the current plan.
+The structural investigation uses aligned solid walls and reinforced-concrete supports, with mineral-floor and tied steel-roof candidates. The gross surrounding bands are 4.25 metres; actual support lines, openings, clear spans and loads control the work. Earlier timber framing remains a comparison rather than the current selected system.
 
 The entrance void, bridge, stair and service openings need explicit trimming and load paths. Historical edge-beam arrangements cannot be carried forward without checking the changed interruptions.
 
-This is a structural concept, not structural design. No beam, joist, lintel, bearing, tie, foundation or connection has been sized for the current house. Whether the arrangement can avoid disproportionate transfers or intrusive structure remains an open feasibility question.
+Candidate members, connections and foundation load paths have been calculated. They do not yet form a compatible, selected structural system for this house. Floor and portal continuity, roof restraint, ground movement and the complete moisture boundary still require a joined resolution. Avoiding disproportionate transfers or intrusive structure remains an architectural test as well as a calculation.
 
 If engineering later demonstrates otherwise, the architecture must respond. The present drawings are not permitted to convert plausibility into adequacy.
 
 ## The floor zone
 
-A 350 millimetre floor/service/ceiling reservation remains the current architectural datum between ground ceiling and first-floor level.
+The nominal drawings reserve 350 millimetres between ground ceiling and first-floor level. That reservation is not a selected floor assembly.
 
-The drawing allocates 20 millimetres to finish, 22 to deck, 238 to framing, 55 to service void and 15 to ceiling. No free depth remains. Structural, acoustic, fire or wet-room requirements that exceed this budget require an explicit revision, not another invisible layer.
+The mineral-floor fields, local collectors, finish supports, service crossings and ceiling must still be reconciled in one section. Account for every layer and its actual tolerance before adoption. Structural, acoustic, fire or wet-room requirements that exceed the reservation require an explicit revision, not another invisible layer or a mixture of different design comparisons.
 
 Services are deliberately prevented from consuming this zone indiscriminately. The structural floor is not treated as a universal horizontal service void. Necessary crossings are designed and recorded; larger service distribution prefers explicit routes and the service flank.
 
@@ -221,9 +221,9 @@ Important open obligations include:
 - wall/ceiling movement-junction behaviour;
 - ordinary workmanship tolerances.
 
-Two physical questions remain particularly important to the house: the structural floor edge and the wall/ceiling movement junction. Both can still simplify or reject current implementation ideas.
+The coupled floor and portal load path, roof restraints and movement, and moisture continuity beneath floors and walls remain particularly important. A damp-proof cut in an upper wall does not by itself protect a connected concrete floor below it. The wall/ceiling movement junction also needs its own finish and reinstatement comparison.
 
-The architectural system is intentionally able to survive those failures. They are also the current non-standard proof families: the ordinary wall, floor, plant, opening and service conditions should not quietly acquire bespoke mechanisms merely because the project values maintainability.
+These investigations can simplify or reject the proposed assemblies. Conventional construction remains the first comparator. Ordinary wall, floor, plant, opening and service conditions should acquire a special mechanism only when its complete load path, access and maintenance advantage justify it.
 
 ---
 
