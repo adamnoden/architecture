@@ -9,8 +9,8 @@
     "label": "converge-room-kit"
   },
   "claimedAt": "2026-11-19T20:30:11.806Z",
-  "heartbeatAt": "2026-11-19T20:30:11.806Z",
-  "expiresAt": "2026-11-19T21:15:11.806Z",
+  "heartbeatAt": "2026-11-19T20:41:09.071Z",
+  "expiresAt": "2026-11-19T21:26:09.071Z",
   "branch": "work/converge-room-kit-2026-11-19",
   "predecessor": {
     "leaseId": "c3f08d3f-2feb-4d9f-98b4-82567db2cbd3",
@@ -31,5 +31,10 @@
       "next": "Observe hosted checks and canonical preflight then merge; detail six named local trim releases and independent installed G1 module and carrier underside bounds before joined approach and loaded board handling proof",
       "blocker": "Two southeast strips retain blocked approaches; board insertion, grip exchange, tolerance and loaded deck support remain unqualified"
     }
+  },
+  "checkpoint": {
+    "evidence": "Main 1dc19739 plus recovered structural integration c0671af0; whole-room compiler implementation and source-bound G1 candidate validated locally in progress",
+    "next": "Finish parameter/adverse tests, publish joined room and removal comparison PR, inspect hosted checks",
+    "blocker": "Full floor release, deck and connections remain unqualified"
   }
 }
