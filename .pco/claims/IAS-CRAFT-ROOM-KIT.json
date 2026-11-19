@@ -9,8 +9,8 @@
     "label": "converge-room-kit"
   },
   "claimedAt": "2026-11-19T20:30:11.806Z",
-  "heartbeatAt": "2026-11-19T20:41:09.071Z",
-  "expiresAt": "2026-11-19T21:26:09.071Z",
+  "heartbeatAt": "2026-11-19T21:22:39.255Z",
+  "expiresAt": "2026-11-19T22:07:39.255Z",
   "branch": "work/converge-room-kit-2026-11-19",
   "predecessor": {
     "leaseId": "c3f08d3f-2feb-4d9f-98b4-82567db2cbd3",
@@ -33,8 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Main 1dc19739 plus recovered structural integration c0671af0; whole-room compiler implementation and source-bound G1 candidate validated locally in progress",
-    "next": "Finish parameter/adverse tests, publish joined room and removal comparison PR, inspect hosted checks",
-    "blocker": "Full floor release, deck and connections remain unqualified"
+    "evidence": "Published branch exact head1cf60fa4b7120ea8258659b33ab6a4e5f9d6259d;29focused Study tests and typecheckpassed; whole-room timbertile sheets rendered and inspected",
+    "next": "Finish actual shaped-frame pieces and generic ordinary workboard handling, then hand root final integrated source commit",
+    "blocker": "Source-specific full-floor operation under validation; physical/owner acceptance remains separate"
   }
 }
