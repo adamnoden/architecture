@@ -9,8 +9,8 @@
     "label": "convergence-inlet"
   },
   "claimedAt": "2026-11-19T20:30:02.696Z",
-  "heartbeatAt": "2026-11-19T22:20:39.769Z",
-  "expiresAt": "2026-11-19T23:50:39.769Z",
+  "heartbeatAt": "2026-11-19T22:42:48.661Z",
+  "expiresAt": "2026-11-20T00:12:48.661Z",
   "branch": "work/convergence-integrated-2026-11-19",
   "predecessor": {
     "leaseId": "5ddd99a4-fd1f-49de-af1d-7d77372c4077",
@@ -36,8 +36,8 @@
   },
   "pr": 1584,
   "checkpoint": {
-    "evidence": "Shared PR #1584 exacthead07d533f650b6acf3deba9084ad6c8da704f46d5a is published, integrating HAD93f716 with STR and IAS. HAD42 affected tests, native/current-witness checks and source audit passed on predecessor. Root reports40 combined tests and6 source audits plus generation checks passed at sharedsource. Independent contact LP oracle is retained as internalvalidation, not engineeringapproval.",
-    "next": "Observe full exact-head hosted CI for PR1584, then perform fresh canonical publication preflight against the unchanged validated remotehead. Root coordinates merge and closure; release HAD lease after verified publication or durable handoff. HAD packet remains planned.",
-    "blocker": "Exact submitted-head hosted checks pending. Complete inlet still requires actual independent carrier receiving cage/support, retained-end release and wet-seam engineering; no site/physical acceptance fabricated."
+    "evidence": "Shared PR1584 exact07d533f sources remain frozen. Successor b579c56aa7b0676c36cab5b39da6cebafe7cdb20 on work/convergence-inlet-support-2026-11-19 rejects whole inlet dead ends against actual electrical fields and carrier/wet-cell envelopes; current saved model and source-bound rendered witness.14 focused tests passed, final3support+5sourceaudits passed, typecheck/repository integrity/witness reproduction passed.",
+    "next": "Root serial integration after exact-head PR1584 CI. Continue fixed accessible entry redesign with cold-cut replaceable metallic tails; preserve useful south routing and independent relief, price external bay only if internal arrangement fails.",
+    "blocker": "HAD remains open: no complete independent support/receiving anchors or matched cold renewal tool geometry and wet restoration. Source pressure does not prove source flow; current R75 cannot silently claim matched Viega R98 pipe. Owner footprint/aesthetic and later site/physical acceptance remain genuine gates."
   }
 }
