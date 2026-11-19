@@ -6,6 +6,7 @@ import { sha256SemanticFingerprint } from '../../core/identity.js'
 import type { DrawingScene } from '../../publication-drawing/model.js'
 import { createPlanPaperProjection } from '../../publication-drawing/projection.js'
 import type { CurrentDesignResolution } from './resolve.js'
+import { runStructuralDpcOriginAudit } from './structural-dpc.js'
 import { runRearFoulVentCase } from './rear-foul-vent.js'
 import {
   runStructuralNorthDeadLoad, runStructuralNorthFixedBaseReplays, runStructuralNorthYawProbe,
@@ -57,6 +58,7 @@ interface NorthCollectorCase {
   readonly placementToleranceMm?: PlacementTolerances
   readonly yawProbe?: NorthYawProbe
   readonly deadLoadReplay?: { readonly windIndex: number }
+  readonly dpcOriginAudit?: { readonly cutZMm: number; readonly globalContactTrial?: unknown }
   readonly portStrategy?: 'linked-west-foul-route'
 }
 
@@ -278,13 +280,16 @@ export function readNorthCollectorCase(resolved: CurrentDesignResolution) {
 function admitCase(value: unknown, binding: NonNullable<ReturnType<typeof bindingFor>>): NorthCollectorCase {
   const fields = ['schema', 'planDigest', 'bindingDigest', 'collectorId', 'portAxisXYMm', 'dragDemandFactor']
   const optional = ['remoteMainBarShiftMm', 'chordBendRadiusMm', 'toeTransferIntervalMm', 'keyContactTrial',
-    'placementToleranceMm', 'yawProbe', 'deadLoadReplay', 'portStrategy']
+    'placementToleranceMm', 'yawProbe', 'deadLoadReplay', 'portStrategy', 'dpcOriginAudit']
   if (!value || typeof value !== 'object' || Array.isArray(value)
       || fields.some(field => !Object.hasOwn(value, field))
       || Object.keys(value).some(field => !optional.includes(field) && !fields.includes(field))) {
     throw new Error('Expected an explicit versioned north collector case')
   }
   const trial = value as NorthCollectorCase
+  if (Object.hasOwn(trial, 'dpcOriginAudit') && (!trial.dpcOriginAudit || typeof trial.dpcOriginAudit !== 'object'
+      || Object.keys(trial.dpcOriginAudit).some(key => !['cutZMm', 'globalContactTrial'].includes(key)) || !Object.hasOwn(trial.dpcOriginAudit, 'cutZMm')
+      || !Number.isFinite(trial.dpcOriginAudit.cutZMm))) throw new Error('Expected a finite explicit DPC cut level')
   if (Object.hasOwn(trial, 'portStrategy') && trial.portStrategy !== 'linked-west-foul-route') {
     throw new Error('Expected a linked west foul route port strategy')
   }
@@ -746,11 +751,14 @@ export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: 
     ...(yawProbe ? { yawProbe } : {}),
     ...(deadLoadReplay ? { deadLoadReplay } : {}),
     ...(fixedBaseActions ? { fixedBaseActions } : {}),
+    ...(trial.dpcOriginAudit ? { dpcOriginAudit: runStructuralDpcOriginAudit(resolved, trial.dpcOriginAudit.cutZMm,
+      trial.dpcOriginAudit.globalContactTrial) } : {}),
     ...(chordTurn ? { chordTurn: { ...chordTurn, drawing: drawChordTurn(comparison, chordTurn) } } : {}),
     evidence: {
       state: isReference && !keyContact && !placementTolerance ? 'historical-demand-comparison' : 'trial-only',
       installedAcceptance: false as const,
-      outstanding: ['Continuous chord and wall cage', 'Imperforate ground splice', 'Coupled signed 52-head replay', 'Usable foul route and renewal'],
+      outstanding: ['Continuous chord and wall cage', 'Actual signed DPC crossing loads and positive transfer',
+        'Complete occupied-floor moisture boundary', 'Coupled signed 52-head replay', 'Usable foul route and renewal'],
     },
   }
 }

@@ -15,6 +15,7 @@ export interface SillInsertGeometry {
   readonly eastEdgeMm: number
   readonly headZMm: number
   readonly plantPressureAxisXMm: number
+  readonly plantVentOuterZMm: number
 }
 
 export function readSouthInletSillInsertInputs(read: (path: string) => unknown): SillInsertInputs
