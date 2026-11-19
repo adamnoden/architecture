@@ -9,8 +9,8 @@
     "label": "convergence-inlet"
   },
   "claimedAt": "2026-11-19T20:30:02.696Z",
-  "heartbeatAt": "2026-11-19T23:00:40.561Z",
-  "expiresAt": "2026-11-20T00:30:40.561Z",
+  "heartbeatAt": "2026-11-19T23:52:55.684Z",
+  "expiresAt": "2026-11-20T01:22:55.684Z",
   "branch": "work/convergence-integrated-2026-11-19",
   "predecessor": {
     "leaseId": "5ddd99a4-fd1f-49de-af1d-7d77372c4077",
@@ -36,8 +36,8 @@
   },
   "pr": 1584,
   "checkpoint": {
-    "evidence": "Final HAD successor17273ea933be2ebf2415a36f61dbb1110dc1da10 (parentb579c56) is durable on work/convergence-inlet-support-2026-11-19. Whole-option rejection, recommended fixed cold-cut entry, actual occupied/wet/carrier support checks, actual carrier diameter and structural receiving source are integrated.14 focused tests,6 existing saved-document/pipeline tests and fresh8 support/sourceaudit tests passed; typecheck, integrity and witness reproduction passed. PR1584 was observed at23:00Z on27c5fe3ed838c31267c097ca3407b171892ee676; old07d533 CI is not a current validation.",
-    "next": "Root serial reconciliation and exact-head hosted validation for the current shared PR1584; perform fresh canonical merge preflight only at its actual validated head. Successor17273ea remains source-frozen. Release after verified publication or durable handoff.",
-    "blocker": "HAD remains open: neither whole inlet mechanism is accepted. Fixed-entry replacement still needs actual independent receiving anchors, cold cutting/joint tooling and wet restoration plus admitted failure flow; R75 cannot silently claim a matched R98 system. No fabricated owner/site/physical acceptance."
+    "evidence": "Canonical gen46/UUID verified23:52Z before renewal. Published HAD successor17273ea is integrated into shared PR1584. Read-only next-cycle investigation against429cca: R98 fixed south routing can fit atY600-620 with actual occupied controls; simple cold-cut tails remove heavy carrier and invented165mm cartridge. Primary catalogue stopless coupling96mm/24mm insertion and actual cutter/valve data checked; industrial3part2375.8 rejected because explicitly nonpotable. No design sources edited during sharedCI repair.",
+    "next": "Root resubmits exact-head full health for minimal STRreceipt/test repairs and completes fresh canonical preflight/merge PR1584. Then implement full fixed-entry proposal with two exposed cold-cut joint zones, ordinary closed-cover controls and actual independent supports. Keep source selection and genuine evidence gates separate.",
+    "blocker": "Read-only fixed-entry arrangement still needs complete matched static wetneck/control interface and actual anchor reaction design; geometric routing fit does not qualify them. Actual site flow must satisfy declared source envelope; pressure rating alone cannot establish that flow. HAD remains open; no owner/site/physical approval fabricated."
   }
 }
