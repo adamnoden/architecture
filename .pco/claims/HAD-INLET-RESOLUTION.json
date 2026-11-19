@@ -9,8 +9,8 @@
     "label": "convergence-inlet"
   },
   "claimedAt": "2026-11-19T20:30:02.696Z",
-  "heartbeatAt": "2026-11-19T21:09:04.864Z",
-  "expiresAt": "2026-11-19T21:54:04.864Z",
+  "heartbeatAt": "2026-11-19T21:35:12.649Z",
+  "expiresAt": "2026-11-19T22:20:12.649Z",
   "branch": "work/convergence-inlet-split-roof-2026-11-19",
   "predecessor": {
     "leaseId": "5ddd99a4-fd1f-49de-af1d-7d77372c4077",
@@ -36,8 +36,8 @@
   },
   "pr": 1583,
   "checkpoint": {
-    "evidence": "PR #1583 c619af73 plus successor 40dde8ac8cbeaeba4742dd813884c2e45ef2510b on work/convergence-inlet-split-roof-2026-11-19. Final22 targeted tests, TypeScript, source audit and repository integrity passed.501 Reference House tests passed before successor. Joined pressure paths and split roof plans rendered and inspected.",
-    "next": "Root to integrate STR/HAD/IAS on work/convergence-integrated-2026-11-19; renew lease branch to shared publication head when ready, inspect exact-head hosted checks and run canonical preflight. Continue actual retained disconnect, independent chassis/receiving cage and wet-seam design under HAD.",
-    "blocker": "Split roofs retire the U-lid mechanism, but carrier support and receiving cage, rated retained-end release and complete wet seam remain internal design debt. No packet completion or selected inlet claimed."
+    "evidence": "HAD successor head93f71621113cf1a96f8ce6c8579138a91445322f, including current witness28049 and editable exact vent correction.42 affected tests, TypeScript, source audit, repository integrity, native sill and current-witness reproduction passed. First PR1583 exact c619 full hosted checks green; final shared head still requires its own CI.",
+    "next": "Root serial integration of c619/40dde/28049/93f716 with STR and IAS on work/convergence-integrated-2026-11-19. Renew this lease to shared branch when pushed, require exact-head CI and publication preflight, then release. Independent carrier chassis/cage and retained-end release remain internal engineering scope.",
+    "blocker": "No complete inlet adoption: source-bound light split roof and exact vent are implemented; independent receiver/cage, supported carrier disconnect/draw and wet seam remain unresolved."
   }
 }
