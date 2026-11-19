@@ -2,7 +2,7 @@ import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import type { CurrentDesignResolution } from './resolve.js'
 import { partitionDpcOrigins, type OriginLoad, type OriginPathRule } from './dpc-origin-ledger.js'
-import { runStructuralOriginAccount } from './structural.js'
+import { runStructuralOriginAccount, type UpperCutContactTrial } from './structural.js'
 
 const root = new URL('../../../', import.meta.url)
 const policyPath = 'project/str/dpc-origin-paths.json'
@@ -19,7 +19,7 @@ function boundRead(path: string, identities: Readonly<Record<string, string>>) {
   return { blob, value: JSON.parse(bytes.toString('utf8')) }
 }
 
-export function runStructuralDpcOriginAudit(resolved: CurrentDesignResolution, cutZMm?: number) {
+export function runStructuralDpcOriginAudit(resolved: CurrentDesignResolution, cutZMm?: number, trial?: unknown) {
   const structure = resolved.disciplineBindings.find(binding => binding.id === 'str-conditional-interface')
   if (!structure) throw new Error('DPC originating load audit requires the current structural source')
   const policy = boundRead(policyPath, structure.identities)
@@ -36,7 +36,14 @@ export function runStructuralDpcOriginAudit(resolved: CurrentDesignResolution, c
   }
   const groundTop = Math.max(...Object.values(grid.value.girders as Record<string, { z: number[] }>).map(girder => girder.z[1]))
   const floorSoffit = collar.value.cornerCandidate.sameExistingSoffitOrdinarySlabTopAndCollarTopZmm[0]
-  const actions = runStructuralOriginAccount(resolved)
+  let globalContactTrial: UpperCutContactTrial | undefined
+  if (trial !== undefined) {
+    const fields = ['roofRiseMm', 'additionalRetainedNKN', 'additionalRetainedCentroidXYMm']
+    if (!trial || typeof trial !== 'object' || Array.isArray(trial) || Object.keys(trial).length !== fields.length
+        || fields.some(field => !Object.hasOwn(trial, field))) throw new Error('Expected complete explicit global-contact trial settings')
+    globalContactTrial = { ...(trial as Omit<UpperCutContactTrial, 'cutZMm'>), cutZMm: cut }
+  }
+  const actions = runStructuralOriginAccount(resolved, globalContactTrial)
   if (floorSoffit - groundTop !== actions.native.coreBudgetHeightsMm.ground) {
     throw new Error('The physical ground core interval differs from the native uniform load budget height')
   }
@@ -61,6 +68,7 @@ export function runStructuralDpcOriginAudit(resolved: CurrentDesignResolution, c
       inputs: { [policyPath]: policy.blob, [geometryPaths.lateral]: lateral.blob,
         [geometryPaths.grid]: grid.blob, [geometryPaths.collar]: collar.blob } },
     cases: combinations.map(({ id, factors }) => ({ id, ...partitionDpcOrigins(origins, rules, cut, factors) })),
+    ...(actions.native.globalContact ? { globalContact: actions.native.globalContact } : {}),
     completeSpliceDemand: null,
     installedAcceptance: false as const,
     diagnostics: [

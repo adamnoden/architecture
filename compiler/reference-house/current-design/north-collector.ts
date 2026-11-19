@@ -58,7 +58,7 @@ interface NorthCollectorCase {
   readonly placementToleranceMm?: PlacementTolerances
   readonly yawProbe?: NorthYawProbe
   readonly deadLoadReplay?: { readonly windIndex: number }
-  readonly dpcOriginAudit?: { readonly cutZMm: number }
+  readonly dpcOriginAudit?: { readonly cutZMm: number; readonly globalContactTrial?: unknown }
   readonly portStrategy?: 'linked-west-foul-route'
 }
 
@@ -288,7 +288,7 @@ function admitCase(value: unknown, binding: NonNullable<ReturnType<typeof bindin
   }
   const trial = value as NorthCollectorCase
   if (Object.hasOwn(trial, 'dpcOriginAudit') && (!trial.dpcOriginAudit || typeof trial.dpcOriginAudit !== 'object'
-      || Object.keys(trial.dpcOriginAudit).length !== 1 || !Object.hasOwn(trial.dpcOriginAudit, 'cutZMm')
+      || Object.keys(trial.dpcOriginAudit).some(key => !['cutZMm', 'globalContactTrial'].includes(key)) || !Object.hasOwn(trial.dpcOriginAudit, 'cutZMm')
       || !Number.isFinite(trial.dpcOriginAudit.cutZMm))) throw new Error('Expected a finite explicit DPC cut level')
   if (Object.hasOwn(trial, 'portStrategy') && trial.portStrategy !== 'linked-west-foul-route') {
     throw new Error('Expected a linked west foul route port strategy')
@@ -751,7 +751,8 @@ export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: 
     ...(yawProbe ? { yawProbe } : {}),
     ...(deadLoadReplay ? { deadLoadReplay } : {}),
     ...(fixedBaseActions ? { fixedBaseActions } : {}),
-    ...(trial.dpcOriginAudit ? { dpcOriginAudit: runStructuralDpcOriginAudit(resolved, trial.dpcOriginAudit.cutZMm) } : {}),
+    ...(trial.dpcOriginAudit ? { dpcOriginAudit: runStructuralDpcOriginAudit(resolved, trial.dpcOriginAudit.cutZMm,
+      trial.dpcOriginAudit.globalContactTrial) } : {}),
     ...(chordTurn ? { chordTurn: { ...chordTurn, drawing: drawChordTurn(comparison, chordTurn) } } : {}),
     evidence: {
       state: isReference && !keyContact && !placementTolerance ? 'historical-demand-comparison' : 'trial-only',
