@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 41,
-  "state": "released",
-  "leaseId": "62533e71-334f-41b1-8a06-e0cb4a0ac9d7",
+  "generation": 42,
+  "state": "claimed",
+  "leaseId": "b71fcf09-0375-4d95-a9d9-eebf11c2a61f",
   "holder": {
     "kind": "codex",
-    "label": "rush-night-structure"
+    "label": "rush-intact-collector"
   },
-  "claimedAt": "2026-11-18T23:19:20.165Z",
-  "heartbeatAt": "2026-11-19T00:25:23.902Z",
-  "expiresAt": "2026-11-19T00:25:23.902Z",
-  "branch": "work/rush-inlet-dependencies-2026-11-18",
+  "claimedAt": "2026-11-19T00:27:12.649Z",
+  "heartbeatAt": "2026-11-19T00:27:12.649Z",
+  "expiresAt": "2026-11-19T01:12:12.649Z",
+  "branch": "work/rush-intact-collector-2026-11-19",
   "predecessor": {
-    "leaseId": "63619a6c-6728-4b79-8459-af6bb401f51a",
-    "generation": 40,
-    "branch": "work/rush-installation-bounds-2026-11-18",
-    "pr": 1578,
+    "leaseId": "62533e71-334f-41b1-8a06-e0cb4a0ac9d7",
+    "generation": 41,
+    "branch": "work/rush-inlet-dependencies-2026-11-18",
+    "pr": 1580,
     "checkpoint": {
-      "evidence": "PR #1578 exact head 5aa3476b; 483 Reference House tests; hosted browser and drawing checks passed",
-      "next": "Merge upon verified hosted validation, then obtain installed DPC rotation and simultaneous load evidence at the resolved foul interface",
-      "blocker": "Existing northwest port intersects cage even at zero setting; coupled joint stiffness and route survey remain unresolved"
+      "evidence": "PR #1580 exact e8f03902ab59d91dd96c9ea3108718584efcc5e1; inlet propagation and full runtime import-pin audit verified by11 updated pipeline tests",
+      "next": "Observe this submitted head hosted health/publication checks, merge, then verify main and release",
+      "blocker": "Shared blocked sill still halts the bundle; physical coupled DPC, foul route, service and handling acceptance remain open"
     }
   },
   "recoverySource": {
-    "leaseId": "63619a6c-6728-4b79-8459-af6bb401f51a",
-    "generation": 40,
-    "branch": "work/rush-installation-bounds-2026-11-18",
-    "pr": 1578,
+    "leaseId": "62533e71-334f-41b1-8a06-e0cb4a0ac9d7",
+    "generation": 41,
+    "branch": "work/rush-inlet-dependencies-2026-11-18",
+    "pr": 1580,
     "checkpoint": {
-      "evidence": "PR #1578 exact head 5aa3476b; 483 Reference House tests; hosted browser and drawing checks passed",
-      "next": "Merge upon verified hosted validation, then obtain installed DPC rotation and simultaneous load evidence at the resolved foul interface",
-      "blocker": "Existing northwest port intersects cage even at zero setting; coupled joint stiffness and route survey remain unresolved"
+      "evidence": "PR #1580 exact e8f03902ab59d91dd96c9ea3108718584efcc5e1; inlet propagation and full runtime import-pin audit verified by11 updated pipeline tests",
+      "next": "Observe this submitted head hosted health/publication checks, merge, then verify main and release",
+      "blocker": "Shared blocked sill still halts the bundle; physical coupled DPC, foul route, service and handling acceptance remain open"
     }
-  },
-  "checkpoint": {
-    "evidence": "PR #1580 exact e8f03902ab59d91dd96c9ea3108718584efcc5e1; inlet propagation and full runtime import-pin audit verified by11 updated pipeline tests",
-    "next": "Observe this submitted head hosted health/publication checks, merge, then verify main and release",
-    "blocker": "Shared blocked sill still halts the bundle; physical coupled DPC, foul route, service and handling acceptance remain open"
-  },
-  "pr": 1580,
-  "releasedAt": "2026-11-19T00:25:23.902Z",
-  "releaseReason": "handoff"
+  }
 }
