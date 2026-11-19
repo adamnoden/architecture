@@ -41,6 +41,9 @@ test('one saved engineering document replays its bound stages and preserves thei
   assert.ok(document.bindings.implementations['compiler/reference-house/georgian/layout-family.ts'])
   assert.ok(document.bindings.implementations['compiler/publication-drawing/projection.ts'])
   assert.ok(document.bindings.implementations['compiler/core/identity.ts'])
+  assert.ok(document.bindings.implementations['compiler/reference-house/construction-bay/opening-inspection.ts'])
+  assert.ok(document.bindings.implementations['project/had/studies/inlet-maintenance.mjs'])
+  assert.ok(document.bindings.implementations['project/ccr/studies/source-coverage.ts'])
 })
 
 test('a stored collector edit changes its result and manifest while the vent and nominal plans retain their source', async () => {
@@ -73,6 +76,9 @@ test('saved method drift, injected derived identities, duplicate branches and un
   await assert.rejects(compileEngineeringDocument({ ...document, bindings: { ...document.bindings,
     implementations: { ...document.bindings.implementations,
       'compiler/publication-drawing/projection.ts': '0'.repeat(40) } } }), /Stale engineering source or implementation binding/)
+  await assert.rejects(compileEngineeringDocument({ ...document, bindings: { ...document.bindings,
+    implementations: { ...document.bindings.implementations,
+      'compiler/reference-house/construction-bay/opening-inspection.ts': '0'.repeat(40) } } }), /Stale engineering source or implementation binding/)
   await assert.rejects(compileEngineeringDocument({ ...document,
     stages: { northCollector: { bindingDigest: '0'.repeat(64) } } }), /derived identity supplied/)
   await assert.rejects(compileEngineeringDocument({ ...document,

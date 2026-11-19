@@ -87,7 +87,7 @@ node --import tsx scripts/compile-current-design.ts --bundle engineering.json > 
 
 Save parameter changes in the document’s named stages and compile that exact file again. Reopening it after its pinned source or method changes rejects the stale document. Generate a new bound document explicitly when reviewing a changed source. The constituent case readers and independent commands remain available through the same compiler.
 
-The method pins cover the current-design and Georgian methods, shared compiler identity and geometry functions, drawing projections, units and owner constraints, plus the bound native assembly methods. Directory-level coverage deliberately invalidates more broadly than individual stage dependencies. Tests are excluded from those implementation pins.
+The method pins cover the current-design and Georgian methods, shared compiler identity and geometry functions, drawing projections, units and owner constraints, plus the bound native assembly methods. An import-closure audit also identified the opening inspection, Reference House plan and unit helpers, source-account method, HAD maintenance helpers and OAS dry-seam method outside those directories. These are explicitly pinned. Directory-level coverage deliberately invalidates more broadly than individual stage dependencies. Tests are excluded from those implementation pins.
 
 The stage parameters describe conditional comparisons. Their drawings and calculations retain the adoption, physical evidence and supported-domain limits of each method. Changing a trial port, taper or room-kit parameter recalculates its engineering stage. Selection of those alternatives into the nominal house and compatibility with every other stage still require their owning architectural decisions.
 

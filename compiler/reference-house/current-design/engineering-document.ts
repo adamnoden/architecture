@@ -12,7 +12,18 @@ const implementationRoots = [
 ] as const
 const additionalImplementationFiles = [
   'compiler/units.ts',
+  'compiler/reference-house/ade-plan.ts',
+  'compiler/reference-house/construction-bay/opening-inspection.ts',
+  'compiler/reference-house/internal-partitions.ts',
+  'compiler/reference-house/units.ts',
+  'project/ccr/studies/source-coverage.ts',
   'project/design-constraints.ts',
+  'project/had/studies/inlet-maintenance.mjs',
+  'project/had/studies/purge-window-interfaces.mjs',
+  'project/had/studies/radiator-maintenance.mjs',
+  'project/had/studies/store-discharge-release.mjs',
+  'project/had/studies/store-exchange.mjs',
+  'project/oas/studies/study-dry-seam.mjs',
   'project/ias/studies/study-furniture-motion.py',
   'project/bcr/studies/bay-interface-study.py',
   'project/ias/studies/workable-floor-tiles.mjs',
