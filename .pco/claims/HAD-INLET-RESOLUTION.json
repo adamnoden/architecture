@@ -9,9 +9,9 @@
     "label": "convergence-inlet"
   },
   "claimedAt": "2026-11-19T20:30:02.696Z",
-  "heartbeatAt": "2026-11-19T20:44:46.459Z",
-  "expiresAt": "2026-11-19T21:29:46.459Z",
-  "branch": "work/convergence-inlet-2026-11-19",
+  "heartbeatAt": "2026-11-19T21:09:04.864Z",
+  "expiresAt": "2026-11-19T21:54:04.864Z",
+  "branch": "work/convergence-inlet-split-roof-2026-11-19",
   "predecessor": {
     "leaseId": "5ddd99a4-fd1f-49de-af1d-7d77372c4077",
     "generation": 45,
@@ -36,8 +36,8 @@
   },
   "pr": 1583,
   "checkpoint": {
-    "evidence": "PR #1583 exact head c619af73176b24bee95998727f96b032c6ca4cc5. TypeScript, source audit, repository integrity and 17 targeted tests passed. Joined routes and all five pressure joints are recomputed; labelled SVG rendered and inspected.",
-    "next": "Inspect exact-head hosted checks, coordinate main with root, run fresh publication preflight and merge. Retain planned node until rated independent support, dry disconnect and complete captured handling are resolved.",
-    "blocker": "Complete inlet arrangement still lacks rated wet closure, anchored independent support and loaded transfer proof; default closures are explicitly rejected."
+    "evidence": "PR #1583 c619af73 plus successor 40dde8ac8cbeaeba4742dd813884c2e45ef2510b on work/convergence-inlet-split-roof-2026-11-19. Final22 targeted tests, TypeScript, source audit and repository integrity passed.501 Reference House tests passed before successor. Joined pressure paths and split roof plans rendered and inspected.",
+    "next": "Root to integrate STR/HAD/IAS on work/convergence-integrated-2026-11-19; renew lease branch to shared publication head when ready, inspect exact-head hosted checks and run canonical preflight. Continue actual retained disconnect, independent chassis/receiving cage and wet-seam design under HAD.",
+    "blocker": "Split roofs retire the U-lid mechanism, but carrier support and receiving cage, rated retained-end release and complete wet seam remain internal design debt. No packet completion or selected inlet claimed."
   }
 }
