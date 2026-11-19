@@ -44,12 +44,12 @@ const roofJoin={commit:'f7942830ae24ef1d308f01e71a4f87f306f37ab0',
 const sourceRefresh={
   "baselineCommit": "0b982539e9e3407e6a57863f2de8cbf5ed612a8d",
   "baselineScheduleBlob": "248c8281369d16a8885506660f740c1f66462d9d",
-  "scheduleBlob": "d32748bc33cc0b8b8e8bfe3e3a017236ff8a7688",
-  "houseExceptDeclaredChangesSHA256": "2358daf9f0b76ec039c7ed5606f005929b9ea8fd299a75e066fd8242a7aec1b2",
+  "scheduleBlob": "e649805e78244527fe6498b516fa5f23734ac5ea",
+  "houseExceptDeclaredChangesSHA256": "07efe59dcb947e3936ba9b2fcb5553e04e56af62e3518c943ba1dd96c5b95982",
   "houseInputs": {
     "project/had/studies/receiver-selection.json": {
       "before": "2def3f7221d55b180cd46392a227b8c56972d03f",
-      "after": "c1f80a51f2cc862e08bcb61d39c018f567267a8f"
+      "after": "f43ca5bc2bb8d5800d80c2dd6951ac7c3f5e8354"
     },
     "project/ias/studies/shared-family-bathing.json": {
       "before": "f89302f9d87708b5314bd68a768c976efcd07b8d",
@@ -68,6 +68,10 @@ const sourceRefresh={
     "had/studies/court-intake-selection": {
       "before": "887a3df5b7a335b3eaafc7c8de4529a339428cbc",
       "after": "d4e6c37dbac7777abeb83e85ee3232f608523bdc"
+    },
+    "rwt/studies/court-bypass-choice": {
+      "before": "450d121b5c70d95073f1daadd1332c789751156d",
+      "after": "ee11908156548b7c03daea8ddf0ad972ea0cf188"
     }
   }
 };
@@ -122,7 +126,7 @@ export function verifyPreFixBoundary(house){
     declaredChanges:['Both foul-kitchen duties: superseded downstream reservation corrected; upstream branch stays with IAS.',
       'Both incoming-water duties: rejected status, current witness and adoption duty added; path geometry retained.',
       'model.currentAdoptionBlockers: explicit incoming-water duty replaces the empty list.'],
-    scope:'The independently replayed 0b producer and current regenerated producer differ only at the four named house-input identities and one named receiver-input identity. That exact refresh first returns the original joined schedule and unaffected-house hashes; the preserved f794 bridge then returns the original a060 observation. Current, joined and normalized schedules and complete unaffected models are separately guarded. Only the two declared water duties and their blocker are excluded from physical comparison; no blanket provenance normalization or other geometry exclusion is applied. No whole-house structural or moisture acceptance is claimed.'};
+    scope:'The independently replayed 0b producer and current regenerated producer differ only at the four named house-input identities and two named receiver-input identities. That exact refresh first returns the original joined schedule and unaffected-house hashes; the preserved f794 bridge then returns the original a060 observation. Current, joined and normalized schedules and complete unaffected models are separately guarded. Only the two declared water duties and their blocker are excluded from physical comparison; no blanket provenance normalization or other geometry exclusion is applied. No whole-house structural or moisture acceptance is claimed.'};
 }
 export function retainedVolume({initialL=0,flowLmin,seconds,residualL=0,safeDrainLmin=0}) {
   for (const value of [initialL,flowLmin,seconds,residualL,safeDrainLmin])

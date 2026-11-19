@@ -2,13 +2,13 @@
   "schema": "ias-crafted-study-wall-transition/1",
   "status": "DEVELOPMENT_COMPARISON",
   "inputs": {
-    "project/oas/studies/study-subframe.json": "72e77dccc022fa38f75b1056966c18ea49f9e4d5e453215d1441f678f7520710",
+    "project/oas/studies/study-subframe.json": "c7b0de561a7f481e5aa5891bbd0d07315f51bd672c70d5d200e6dffac7d97908",
     "project/ias/studies/study-door-reveal.json": "5defb570d91832c5d862226fd93c46aa0026124a02b74bae0d5fe9f60a5f20b9"
   },
   "source": {
-    "kitCaseDigest": "1838ff0db945993f4b13ff6ff8ae9aba124fee8f20fac3d8265d805a4e7a4bc8",
-    "binding": "e2e777365b08a8ffd644767e9f8c925f421efef1c49cf5ceab2ce6281dfc48b9",
-    "transitionCaseDigest": "e635a6463364a67d46aac156f482aeac12f410a98b2229ed3c7477bfe9bf5f89",
+    "kitCaseDigest": "d8d40556e1db87c77913b5ccace33420bc3c4722e35e8f562dd44dba53796d80",
+    "binding": "384837dd37a4ca46629d67068e5fd3352301f8e4172911513cabcb54f5e1fb1c",
+    "transitionCaseDigest": "690cd655347e8f8e253e33073eb69884b8b4739075edc0f57ce2d298044d3452",
     "wallId": "GROUND/G-STUDY/W1",
     "openingId": "GROUND/south-window-0",
     "hostId": "GROUND/outer-south",
