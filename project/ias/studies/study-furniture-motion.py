@@ -173,7 +173,7 @@ def first_rest_stance(bcr, obstacles, face, delta, keys, normal_axis, sign, scre
     return {'worker':worker,'reachMm':measured,'stanceIntervalMm':[left,right],'normalAxis':'xy'[normal_axis]}
 
 
-def floor_first_rests(bcr, house, fixed, desk, chair, desk_park, chair_park, entry, screen):
+def floor_first_rests(bcr, house, fixed, desk, chair, desk_park, chair_park, entry, screen, phases):
     parts, bands = screen['parts'], screen['bandsXYXYMm']
     max_extended = screen.get('maximumExtendedTransferMm',0)
     profile = screen.get('lowWorkerProfile')
@@ -276,7 +276,9 @@ def floor_first_rests(bcr, house, fixed, desk, chair, desk_park, chair_park, ent
                 if len(intervening) != 1:
                     continue
             for label,obstacles in stage_obstacles:
-                conflicts = floor_obstacles(obstacles,sweep)
+                pieces = part.get('facePieces',[face])
+                component_sweeps = [[min(piece[i],piece[i]+delta[i%2]) if i < 2 else max(piece[i],piece[i]+delta[i%2]) for i in range(4)] for piece in pieces]
+                conflicts = sorted({key for component_sweep in component_sweeps for key in floor_obstacles(obstacles,component_sweep)})
                 if conflicts:
                     if adjacent:
                         controls.update(conflicts)
@@ -288,7 +290,8 @@ def floor_first_rests(bcr, house, fixed, desk, chair, desk_park, chair_park, ent
                         continue
                     reserve = min(stance['worker']['minimumClearance']-screen['bodySettingMm'],screen['maximumReachMm']-stance['reachMm'])
                     witness = {'stage':label,'restPartId':receiving['id'],'shiftXYMm':delta,
-                               'faceSweepXYXYMm':sweep,'reserveMm':reserve,**stance}
+                               'faceSweepXYXYMm':sweep,'reserveMm':reserve,**stance,
+                               **({'componentSweepsXYXYMm':component_sweeps} if 'facePieces' in part else {})}
                     if adjacent:
                         shortlist.append(witness)
                     else:
@@ -317,7 +320,12 @@ def floor_first_rests(bcr, house, fixed, desk, chair, desk_park, chair_park, ent
         raise ValueError('The Study floor lift does not clear the retained first-rest board')
     inlet = next(item for item in house['architecturalServices']['supply'] if item['id']=='study')['selectedFirstRelease']
     cuts = closed_approach_cuts(fixed,bands,entry[0],screen['bodyRadiusMm']+screen['bodySettingMm']) if max_extended else []
+    ordinary = None
+    if screen.get('ordinaryHandling') is not None:
+        handling_method = runpy.run_path(str(Path(__file__).with_name('study-floor-handling.py')))
+        ordinary = handling_method['validate_floor_handling'](parts,board_plan_obstructions(house,stage_obstacles),bands,bcr,screen['ordinaryHandling'],entry,phases)
     return {
+        **({'ordinaryHandling':ordinary} if ordinary is not None else {}),
         'schema':'ias-study-floor-first-rest/1','physicalAcceptance':False,
         'numericalScope':'Straight, unrotated whole-face transfer after local removable edges are released.',
         'witnessCount':sum(row['state']=='direct-geometry-witness' for row in outcomes),
@@ -421,7 +429,7 @@ def room_motion(root, request):
     ) < clearance or p.get('maximumProspectiveReachMm', 0) > 600]
     floor_case = request.get('firstRest')
     first_rest = None if conflicts or floor_case is None else floor_first_rests(
-        bcr,house,fixed,desk,chair,desk_park,chair_park,entry,floor_case)
+        bcr,house,fixed,desk,chair,desk_park,chair_park,entry,floor_case,phases)
     return {
         'firstRest':first_rest,
         'schema':'ias-study-furniture-native-result/1', 'state':'geometry-screen-only' if not conflicts else 'geometry-conflict',

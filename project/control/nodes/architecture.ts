@@ -312,7 +312,7 @@ export const architectureNodes = defineNodes([
     owners: ['IAS', 'HAD'],
     title: 'Design a beautiful gravity-led prefabricated room kit with serviceable timber and tile surfaces',
     dependencies: ['PCO-CRAFT-ROOM-KIT', 'IAS-WORKABLE-CONCEPT', 'CCR-ASSEMBLY-INTEGRATION'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/ias/crafted-room-kit-result.md'],
   },

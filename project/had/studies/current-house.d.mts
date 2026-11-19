@@ -5,6 +5,7 @@ interface OccupiedHouse {
     readonly studyDoorOperation: {
       readonly rough: readonly [number, number]
       readonly hinge: readonly [number, number]
+      readonly checkedFramePieces: readonly (readonly [number, number, number, number])[]
     }
   }
 }

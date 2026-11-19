@@ -5,7 +5,7 @@ import type { compileStudyWallTransition } from './study-wall-transition.js'
 type Box = readonly [number, number, number, number]
 type Edge = { readonly id: string; readonly axis: 'x' | 'y'; readonly fixedMm: number; readonly fromMm: number; readonly toMm: number; readonly normal: -1 | 1; readonly sourceWallId: string }
 type Transition = ReturnType<typeof compileStudyWallTransition>
-type Basis = Pick<StudyRoomKit, 'bands' | 'wall' | 'opening' | 'door' | 'grilleKeepOut' | 'request' | 'source' | 'floor'>
+type Basis = Pick<StudyRoomKit, 'bands' | 'wall' | 'opening' | 'door' | 'grilleKeepOut' | 'request' | 'source' | 'floor' | 'occupied'>
 
 const design = {
   cornerStopMm: 50, jointMm: 3, bottomMm: 150, topMm: 2970,
@@ -63,7 +63,11 @@ export function compileStudyRoomAssembly(kit: Basis, transition: Transition) {
   const windows = boundWindows.map(window => ({ id: 'GROUND/' + window.id, wall: window.wall,
     box: ('GROUND/' + window.id === kit.opening.id ? kit.opening.box
       : [window.centre - window.width / 2, window.sill, window.centre + window.width / 2, window.head]) as Box }))
+  const emitter = kit.occupied.find(([id]) => id === 'service-emitter-study-W')
+  if (!emitter) throw new TypeError('MISSING_BOUND_STUDY_ROOM_ASSEMBLY_EMITTER')
   const reserves = (edge: Edge) => [
+    ...(edge.id === 'west' ? [{ id: emitter[0], role: 'retained-emitter-background' as const,
+      box: [emitter[1][1] - 25, 0, emitter[1][3] + 25, transition.field.ceilingZMm] as Box }] : []),
     ...windows.filter(window => window.wall === 'outer-' + edge.id).map(window => ({ ...window, role: 'retained-mineral-window-surround' as const,
       box: [window.box[0] - design.cornerStopMm, window.box[1] - design.cornerStopMm, window.box[2] + design.cornerStopMm, window.box[3] + design.cornerStopMm] as Box })),
     ...(edge.id === 'south' ? [{ id: kit.grilleKeepOut.id, role: 'independent-service-opening' as const, box: kit.grilleKeepOut.box }] : []),
@@ -71,8 +75,14 @@ export function compileStudyRoomAssembly(kit: Basis, transition: Transition) {
       box: [kit.door.rough[0] - design.cornerStopMm, 0, kit.door.rough[1] + design.cornerStopMm, transition.field.ceilingZMm] as Box }] : []),
   ]
   const walls = roomEdges.map(edge => {
-    const columns = divisions(edge.fromMm + design.cornerStopMm, edge.toMm - design.cornerStopMm, widthMm)
     const kept = reserves(edge)
+    const fieldStart = edge.fromMm + design.cornerStopMm, fieldEnd = edge.toMm - design.cornerStopMm
+    const architecturalDatums = [fieldStart, fieldEnd, ...kept.filter(reserve => reserve.role !== 'independent-service-opening')
+      .flatMap(reserve => [reserve.box[0], reserve.box[2]]).filter(value => value > fieldStart && value < fieldEnd)]
+      .sort((a, b) => a - b).filter((value, index, sorted) => index === 0 || value !== sorted[index - 1])
+    const columns = architecturalDatums.slice(1).reduce<number[]>((result, end) => [
+      ...result, ...divisions(result.at(-1)!, end, widthMm).slice(1),
+    ], [fieldStart])
     const pieces = columns.slice(1).flatMap((right, column) => rows.slice(1).flatMap((top, row) => {
       const zone: Box = [columns[column], rows[row], right, top]
       const boxes = kept.reduce<readonly Box[]>((parts, reserve) => parts.flatMap(part => subtract(part, reserve.box)), [zone])
@@ -93,7 +103,8 @@ export function compileStudyRoomAssembly(kit: Basis, transition: Transition) {
           evidence: kit.opening.relation === 'native' || edge.id !== 'south' ? 'candidate-unqualified' as const : 'opening-details-stale' as const }
       })
     }))
-    const trimRanges = edge.id === 'north-door' ? [[edge.fromMm, kit.door.rough[0]], [kit.door.rough[1], edge.toMm]] : [[edge.fromMm, edge.toMm]]
+    const trimRanges = edge.id === 'north-door' ? [[edge.fromMm, kit.door.rough[0]], [kit.door.rough[1], edge.toMm]]
+      : edge.id === 'west' ? [[edge.fromMm, emitter[1][1] - 25], [emitter[1][3] + 25, edge.toMm]] : [[edge.fromMm, edge.toMm]]
     const protectedEnds = edge.id === 'north-door' ? transition.field.retainedSkirtingEndPiecesXMm ?? [] : []
     const trims = trimRanges.flatMap(([from, to], range) => {
       const protectedCuts = protectedEnds.flatMap(piece => [...piece]).filter(value => value > from && value < to)
@@ -115,16 +126,27 @@ export function compileStudyRoomAssembly(kit: Basis, transition: Transition) {
   const releaseReserveMm = design.releasePocketMm - design.settingMm - releaseMm
   const diagnostic = (code: string, objectIds: readonly string[]) => ({ code, objectIds, severity: 'error' as const })
   const diagnostics = [
+    ...(!transition.field.retainedSkirtingEndPiecesXMm ? [diagnostic('IAS_ROOM_KIT_PROTECTED_DOOR_SOURCE_UNAVAILABLE', [kit.door.id])] : []),
     ...(releaseReserveMm < 0 ? [diagnostic('IAS_ROOM_KIT_INDEPENDENT_RELEASE_POCKET_EXCEEDED', pieces.filter(piece => piece.family === 'gravity-hung-cassette').map(piece => piece.id))] : []),
     ...(oversized.length ? [diagnostic('IAS_ROOM_KIT_COMPLETE_FACE_MASS_LIMIT_EXCEEDED', oversized.map(piece => piece.id))] : []),
     ...(!transition.fitUm.maximumStack.admitted ? [diagnostic('IAS_ROOM_KIT_SHARED_WALL_DEPTH_UNSUPPORTED', [kit.wall.id])] : []),
   ]
   const catalogue = kit.floor.firstRestBoardTrial && 'boardCatalogue' in kit.floor.firstRestBoardTrial ? kit.floor.firstRestBoardTrial.boardCatalogue : null
-  const trimReleaseBindings = catalogue?.localWallTrimReleased.placements.filter(row => row.trimReleases.length).map(row => ({
+  const ordinary = kit.floor.ordinaryHandling
+  const releaseRequests = ordinary && ordinary.state !== 'source-withheld' ? ordinary.parts.flatMap(row => {
+    if (row.state !== 'joined-geometry-witness' || !row.trimReleases?.length || !row.boardXYXYMm) return []
+    const sourcePart = kit.floor.parts.find(part => part.id === row.partId)!
+    const boxes = [row.boardXYXYMm, ...(row.staging?.placement?.carriedXYXYMm ? [row.staging.placement.carriedXYXYMm] : []),
+      ...[[0, 0], ...(row.panelPathWaypointDeltasMm ?? [])].map(delta => [sourcePart.face[0] + delta[0], sourcePart.face[1] + delta[1], sourcePart.face[2] + delta[0], sourcePart.face[3] + delta[1]] as Box)]
+    const accessEnvelope: Box = [Math.min(...boxes.map(box => box[0])), Math.min(...boxes.map(box => box[1])),
+      Math.max(...boxes.map(box => box[2])), Math.max(...boxes.map(box => box[3]))]
+    return [{ partId: row.partId, stage: row.stage!, boardXYXYMm: row.boardXYXYMm, accessEnvelope, trimReleases: row.trimReleases }]
+  }) : catalogue?.localWallTrimReleased.placements.filter(row => row.trimReleases.length).map(row => ({ ...row, accessEnvelope: row.boardXYXYMm })) ?? []
+  const trimReleaseBindings = releaseRequests.map(row => ({
     partId: row.partId, stage: row.stage, boardXYXYMm: row.boardXYXYMm, releases: row.trimReleases.map(obstacleId => {
       const edge = walls.find(wall => obstacleId === wall.sourceWallId || obstacleId.startsWith(wall.sourceWallId + ':'))
       const tangent = edge?.axis === 'x' ? 0 : 1
-      const trims = edge?.trims.filter(trim => trim.intervalMm[0] < row.boardXYXYMm[tangent + 2] && trim.intervalMm[1] > row.boardXYXYMm[tangent]) ?? []
+      const trims = edge?.trims.filter(trim => trim.intervalMm[0] < row.accessEnvelope[tangent + 2] && trim.intervalMm[1] > row.accessEnvelope[tangent]) ?? []
       return { obstacleId, wallId: edge?.id ?? null, trimIds: trims.map(trim => trim.id),
         localGeometry: trims.map(trim => ({ intervalMm: trim.intervalMm, firstDrawMm: trim.firstDrawMm, inheritedProtectedEnd: trim.inheritedProtectedEnd })),
         physicalAccessQualified: false }
@@ -132,12 +154,18 @@ export function compileStudyRoomAssembly(kit: Basis, transition: Transition) {
   })) ?? []
   const unmatchedTrimBindings = trimReleaseBindings.flatMap(row => row.releases.filter(release => !release.trimIds.length))
   if (unmatchedTrimBindings.length) diagnostics.push(diagnostic('IAS_ROOM_KIT_TRIM_DEPENDENCY_UNBOUND', unmatchedTrimBindings.map(release => release.obstacleId)))
-  const source = { roomId: kit.source.roomId, bindingDigest: kit.source.bindingDigest,
-    inputDigest: sha256SemanticFingerprint({ bands: kit.bands, windows, door: kit.door, grille: kit.grilleKeepOut,
+  const source = { roomId: kit.source.roomId, bindingDigest: kit.source.bindingDigest, jointInterfaceDigest: sha256SemanticFingerprint(trimReleaseBindings),
+    inputDigest: sha256SemanticFingerprint({ bands: kit.bands, emitter, windows, door: kit.door, grille: kit.grilleKeepOut,
       widthMm, face, releaseMm, design, depth: transition.fitUm }), method: 'ias-whole-study-assembly/1' }
   return {
     schema: 'ias-whole-study-assembly/1', units: 'mm', state: diagnostics.length ? 'geometry-rejected' : 'candidate-unqualified',
-    source, face, widthMm, releaseMm, design, rowsMm: rows, walls, trimReleaseBindings, releaseReserveMm, diagnostics,
+    source, face, widthMm, releaseMm, design, rowsMm: rows, walls, trimReleaseBindings,
+    serviceAccess: { id: kit.grilleKeepOut.id + '/local-cover', hostId: 'south', boxXZMm: kit.grilleKeepOut.box,
+      retention: 'roomward-accessible-screws', ownIndependentSupport: true,
+      containsRetainedG1Grille: true, carriesCartridgeOrCarrierLoad: false, installedConstituentsAndHandling: 'unqualified' },
+    structuralActions: walls.map(wall => ({ sourceWallId: wall.sourceWallId, wallId: wall.id,
+      movingFaceGravityN: wall.pieces.reduce((sum, piece) => sum + piece.movingKg * 9.81, 0),
+      omitted: ['fixed rails, stops, anchors, backing and independent service cover'], structuralAcceptance: 'not-assessed' as const })), releaseReserveMm, diagnostics,
     schedule: { wallCount: walls.length, movingFaceCount: pieces.length,
       hungFaces: pieces.filter(piece => piece.family === 'gravity-hung-cassette').length,
       screwedEdgeFaces: pieces.filter(piece => piece.family === 'roomward-screwed-edge-piece').length,
@@ -168,6 +196,7 @@ export function compileStudyRoomAssembly(kit: Basis, transition: Transition) {
 }
 
 export function drawStudyRoomAssembly(result: ReturnType<typeof compileStudyRoomAssembly>) {
+  if (result.state === 'geometry-rejected') return null
   const escape = (value: string) => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('"', '&quot;')
   const colour = result.face === 'oak' ? '#ad8661' : '#c5c0b3'
   const scale = .085
@@ -185,5 +214,5 @@ export function drawStudyRoomAssembly(result: ReturnType<typeof compileStudyRoom
       + wall.trims.map(trim => rect([trim.intervalMm[0], 0, trim.intervalMm[1], trim.heightMm], '#80694f')).join('')
       + `<text x="${x}" y="${y + 290}" class="small">${wall.pieces.length} moving faces · ${wall.trims.length} local skirts</text></g>`
   }).join('')
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1320" viewBox="0 0 1800 1320" role="img" aria-labelledby="title desc"><title id="title">The whole Study: ${result.face === 'oak' ? 'timber' : 'tiled'} wall kit</title><desc id="desc">Eight source-bound wall elevations, with retained protected openings and local release pockets. Candidate local release geometry only; installed load and occupied handling remain unqualified.</desc><metadata>${result.source.inputDigest}</metadata><style>text{font-family:Arial;fill:#302d27}.title{font:36px Georgia}.name{font:21px Georgia}.small{font-size:16px}.body{font-size:20px}</style><rect width="1800" height="1320" fill="#f7f2e7"/><text x="40" y="60" class="title">The whole Study · ${result.face === 'oak' ? 'hung timber faces' : 'independently tiled trays'}</text><text x="40" y="100" class="body">${result.schedule.movingFaceCount} moving wall faces · ${result.schedule.floorLevelTrimCount} separate skirts · maximum face ${result.schedule.maximumFaceMassKg.toFixed(2)} kg</text><text x="40" y="135" class="body">Open the local moulding, lift ${result.releaseMm} mm, draw ${result.design.roomwardDrawMm} mm. Adjacent faces stay installed.</text>${elevations}<path d="M40 1050H1760" stroke="#9e9686"/><text x="40" y="1090" class="name">A separate release pocket at every row</text><text x="40" y="1125" class="body">20 mm local pocket − 5 mm setting − ${result.releaseMm} mm lift = ${result.releaseReserveMm} mm reserve.</text><text x="40" y="1160" class="body">Local positive stops prevent lift. Narrow cut faces draw forward on accessible screws.</text><text x="40" y="1195" class="body">Corners and protected returns stay fixed. Services and the cornice have independent positive support.</text><text x="40" y="1245" class="small">Reference proposal · wall anchors, sealed backing, occupied handling and complete moving assemblies remain unqualified.</text><text x="40" y="1275" class="small">Dry Study tile variant. Wet-room waterproofing, whole-floor access and owner aesthetic acceptance remain separate.</text></svg>\n`
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1320" viewBox="0 0 1800 1320" role="img" aria-labelledby="title desc"><title id="title">The whole Study: ${result.face === 'oak' ? 'timber' : 'tiled'} wall kit</title><desc id="desc">Eight source-bound wall elevations, with retained protected openings and local release pockets. Candidate local release geometry only; installed load and occupied handling remain unqualified.</desc><metadata>${result.source.inputDigest}</metadata><style>text{font-family:Arial;fill:#302d27}.title{font:36px Georgia}.name{font:21px Georgia}.small{font-size:16px}.body{font-size:20px}</style><rect width="1800" height="1320" fill="#f7f2e7"/><text x="40" y="60" class="title">The whole Study · ${result.face === 'oak' ? 'hung timber faces' : 'independently tiled trays'}</text><text x="40" y="100" class="body">${result.schedule.movingFaceCount} moving wall faces · ${result.schedule.floorLevelTrimCount} separate skirts · maximum face ${result.schedule.maximumFaceMassKg.toFixed(2)} kg</text><text x="40" y="135" class="body">Open the local moulding, lift ${result.releaseMm} mm, draw ${result.design.roomwardDrawMm} mm. Adjacent faces stay installed.</text>${elevations}<path d="M40 1050H1760" stroke="#9e9686"/><text x="40" y="1090" class="name">A separate release pocket at every row</text><text x="40" y="1125" class="body">20 mm local pocket − 5 mm setting − ${result.releaseMm} mm lift = ${result.releaseReserveMm} mm reserve.</text><text x="40" y="1160" class="body">Local positive stops prevent lift. Narrow cut faces draw forward on accessible screws.</text><text x="40" y="1195" class="body">Corners and protected returns stay fixed. Services and the cornice have independent positive support.</text><text x="40" y="1245" class="small">Reference proposal · wall anchors, sealed backing, occupied handling and complete moving assemblies remain unqualified.</text><text x="40" y="1275" class="small">${result.face === 'oak' ? 'Dry Study timber variant.' : 'Dry Study tiled variant.'} Wet-room performance, whole-floor access and owner acceptance remain separate.</text></svg>\n`
 }

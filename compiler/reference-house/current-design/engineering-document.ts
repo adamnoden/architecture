@@ -25,6 +25,7 @@ const additionalImplementationFiles = [
   'project/had/studies/store-exchange.mjs',
   'project/oas/studies/study-dry-seam.mjs',
   'project/ias/studies/study-furniture-motion.py',
+  'project/ias/studies/study-floor-handling.py',
   'project/bcr/studies/bay-interface-study.py',
   'project/ias/studies/workable-floor-tiles.mjs',
   'project/ias/studies/workable-lining-dimensions.mjs',
@@ -38,6 +39,7 @@ type EngineeringStages = Partial<Readonly<Record<Exclude<typeof stageKeys[number
 type SourceBindings = {
   readonly disciplines: Readonly<Record<string, string>>
   readonly implementations: Readonly<Record<string, string>>
+  readonly authoredDefaults: Readonly<Record<string, string>>
 }
 
 const northFields = ['portAxisXYMm', 'dragDemandFactor', 'remoteMainBarShiftMm', 'chordBendRadiusMm',
@@ -48,7 +50,7 @@ const inletFields = ['branch', 'washer', 'cheekMm', 'retainedSideLandMm', 'recei
 const insertFields = ['eastEdgeMm', 'headZMm', 'plantPressureAxisXMm'] as const
 const faultFields = ['branches'] as const
 const removalFields = ['branch', 'drawMm', 'roofAccess', 'washer', 'utilityTaperRemoved', 'preparation'] as const
-const studyFields = ['pitchMm', 'wearingFace', 'finishDepthMm', 'groundDeckLevelLossMm', 'firstRestBoardSizeMm', 'floorBorderMinimumMm', 'installedServices', 'floorWorkerTopMm', 'floorPosture', 'wallPanelWidthMm', 'wallFace', 'wallReleaseMm', 'opening'] as const
+const studyFields = ['pitchMm', 'wearingFace', 'finishDepthMm', 'groundDeckLevelLossMm', 'firstRestBoardSizeMm', 'ordinaryHandling', 'frameFootClearanceMm', 'floorBorderMinimumMm', 'installedServices', 'floorWorkerTopMm', 'floorPosture', 'wallPanelWidthMm', 'wallFace', 'wallReleaseMm', 'opening'] as const
 
 function object(value: unknown): value is Record<string, unknown> {
   return value !== null && typeof value === 'object' && Object.getPrototypeOf(value) === Object.prototype
@@ -81,6 +83,9 @@ function sourceBindings(resolved: CurrentDesignResolution): SourceBindings {
   const paths = [...implementationRoots.flatMap(implementationFiles), ...additionalImplementationFiles].sort()
   return {
     disciplines: Object.fromEntries(resolved.disciplineBindings.map(binding => [binding.id, binding.digest]).sort(([a], [b]) => a.localeCompare(b))),
+    authoredDefaults: { 'project/ias/studies/crafted-study-handling-plan.json': createHash('sha1')
+      .update(`blob ${readFileSync(new URL('project/ias/studies/crafted-study-handling-plan.json', repository)).length}\0`)
+      .update(readFileSync(new URL('project/ias/studies/crafted-study-handling-plan.json', repository))).digest('hex') },
     implementations: Object.fromEntries(paths.map(path => {
       const bytes = readFileSync(new URL(path, repository))
       return [path, createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')]
@@ -118,7 +123,9 @@ export async function readEngineeringDocument(design: unknown) {
       inletFault: select(fault.fault, faultFields),
       inletRemovals: removalCases.map(removal => select(removal, removalFields)).sort((a, b) => String(a.branch).localeCompare(String(b.branch))),
       inletCovers: covers.map(({ cover }) => select(cover, inletFields)).sort((a, b) => String(a.branch).localeCompare(String(b.branch))),
-      studyRoomKit: select(readStudyRoomKitReferenceCase(), studyFields),
+      studyRoomKit: select({ ...readStudyRoomKitReferenceCase(), finishDepthMm: 15, installedServices: 'wall-hung-candidate',
+        frameFootClearanceMm: 5, firstRestBoardSizeMm: [300, 300],
+        ordinaryHandling: JSON.parse(readFileSync(new URL('project/ias/studies/crafted-study-handling-plan.json', repository), 'utf8')) }, studyFields),
     },
   }
 }
@@ -158,7 +165,7 @@ export async function compileEngineeringDocument(input: unknown) {
   }
   const { resolved, compile } = acceptedCompile(input.design)
   const observedBindings = sourceBindings(resolved)
-  if (!exactKeys(input.bindings, ['disciplines', 'implementations'])
+  if (!exactKeys(input.bindings, ['disciplines', 'implementations', 'authoredDefaults'])
       || stableJsonStringify(input.bindings) !== stableJsonStringify(observedBindings)) {
     throw new Error('Stale engineering source or implementation binding; explicitly read and review a refreshed document')
   }

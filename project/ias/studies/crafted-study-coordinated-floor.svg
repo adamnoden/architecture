@@ -121,7 +121,8 @@
 <rect x="26.88" y="14.06" width="11.88" height="9.9" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/800/2900" data-band="2" data-role="border"/>
 <rect x="38.88" y="31.02" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1100/2553" data-band="2" data-role="border"/>
 <rect x="38.88" y="24.08" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1100/2726.5" data-band="2" data-role="border"/>
-<rect x="38.88" y="14.06" width="11.88" height="9.9" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1100/2900" data-band="2" data-role="border"/>
+<rect x="38.88" y="14.06" width="9.74" height="9.9" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1100/2900" data-band="2" data-role="border" data-shapedPartId="GROUND/G-STUDY/room-kit/floor/1100/2900"/>
+<rect x="48.62" y="14.92" width="2.14" height="9.04" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1100/2900/shape/1" data-band="2" data-role="border" data-shapedPartId="GROUND/G-STUDY/room-kit/floor/1100/2900"/>
 <rect x="50.88" y="31.02" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1400/2553" data-band="2" data-role="border"/>
 <rect x="50.88" y="24.08" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1400/2726.5" data-band="2" data-role="border"/>
 <rect x="50.88" y="14.06" width="11.88" height="9.9" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1400/2900" data-band="2" data-role="border"/>
@@ -130,7 +131,8 @@
 <rect x="62.88" y="14.06" width="11.88" height="9.9" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1700/2900" data-band="2" data-role="border"/>
 <rect x="74.88" y="31.02" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2000/2553" data-band="2" data-role="border"/>
 <rect x="74.88" y="24.08" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2000/2726.5" data-band="2" data-role="border"/>
-<rect x="74.88" y="14.06" width="11.88" height="9.9" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2000/2900" data-band="2" data-role="border"/>
+<rect x="74.88" y="14.06" width="8.74" height="9.9" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2000/2900" data-band="2" data-role="border" data-shapedPartId="GROUND/G-STUDY/room-kit/floor/2000/2900"/>
+<rect x="83.62" y="14.92" width="3.14" height="9.04" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2000/2900/shape/1" data-band="2" data-role="border" data-shapedPartId="GROUND/G-STUDY/room-kit/floor/2000/2900"/>
 <rect x="86.88" y="31.02" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2300/2553" data-band="2" data-role="border"/>
 <rect x="86.88" y="24.08" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2300/2726.5" data-band="2" data-role="border"/>
 <rect x="86.88" y="14.06" width="11.88" height="9.9" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2300/2900" data-band="2" data-role="border"/>

@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="194.94mm" height="142.84mm" viewBox="0 0 194.94 142.84" role="img" aria-labelledby="title desc" data-view-id="ias-study-ordinary-handling-429.5-2900" data-source-id="HAD-SERVICES-02/29c88ab06136dd9123008083e0bc3deca9050e216066127d6121c4a7f157dbab" data-scale-denominator="25">
+<title id="title">Study ordinary floor renewal</title>
+<desc id="desc">Source-bound moving finish, ordinary work board and 600 mm handler envelopes. Nominal geometric witness; loaded handling and tolerances remain unqualified.</desc>
+<style>.line-cut{stroke:#000000;stroke-width:0.5;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.line-profile{stroke:#000000;stroke-width:0.35;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.line-primary{stroke:#000000;stroke-width:0.25;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.line-secondary{stroke:#000000;stroke-width:0.18;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.text-label{font-family:Arial, Helvetica, sans-serif;font-size:2.646px;font-weight:400;fill:#000000}.text-note{font-family:Arial, Helvetica, sans-serif;font-size:2.293px;font-weight:400;fill:#000000}.text-marker{font-family:Arial, Helvetica, sans-serif;font-size:2.293px;font-weight:700;fill:#000000}.dash-overhead{stroke-dasharray:3 1.5}.dash-datum{stroke-dasharray:6 1.5 1 1.5}.dash-provisional{stroke-dasharray:1 1}.fill-paper{fill:#ffffff;stroke:none}.fill-ink{fill:#000000;stroke:none}.fill-context{fill:#666666;stroke:none}.fill-faint{fill:#a6a6a6;stroke:none}</style>
+<rect x="0" y="0" width="194.94" height="142.84" class="fill-paper" data-entity="handling-paper"/>
+<rect x="12.06" y="120.08" width="14.7" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/429.5" data-band="0" data-role="border"/>
+<rect x="12.06" y="108.08" width="2.7" height="11.88" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/500" data-band="0" data-role="border"/>
+<rect x="12.06" y="102.02" width="2.7" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/800" data-band="0" data-role="border"/>
+<rect x="12.06" y="95.96" width="2.7" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/951.5" data-band="0" data-role="border"/>
+<rect x="14.88" y="108.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/500/500" data-band="0" data-role="field"/>
+<rect x="14.88" y="102.02" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/500/800" data-band="0" data-role="border"/>
+<rect x="14.88" y="95.96" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/500/951.5" data-band="0" data-role="border"/>
+<rect x="26.88" y="120.08" width="11.88" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/800/429.5" data-band="0" data-role="border"/>
+<rect x="26.88" y="108.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/800/500" data-band="0" data-role="field"/>
+<rect x="26.88" y="102.02" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/800/800" data-band="0" data-role="border"/>
+<rect x="26.88" y="95.96" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/800/951.5" data-band="0" data-role="border"/>
+<rect x="38.88" y="120.08" width="11.88" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1100/429.5" data-band="0" data-role="border"/>
+<rect x="38.88" y="108.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/1100/500" data-band="0" data-role="field"/>
+<rect x="38.88" y="102.02" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1100/800" data-band="0" data-role="border"/>
+<rect x="38.88" y="95.96" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1100/951.5" data-band="0" data-role="border"/>
+<rect x="50.88" y="120.08" width="11.88" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1400/429.5" data-band="0" data-role="border"/>
+<rect x="50.88" y="108.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/1400/500" data-band="0" data-role="field"/>
+<rect x="50.88" y="102.02" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1400/800" data-band="0" data-role="border"/>
+<rect x="50.88" y="95.96" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1400/951.5" data-band="0" data-role="border"/>
+<rect x="62.88" y="120.08" width="11.88" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1700/429.5" data-band="0" data-role="border"/>
+<rect x="62.88" y="108.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/1700/500" data-band="0" data-role="field"/>
+<rect x="62.88" y="102.02" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1700/800" data-band="0" data-role="border"/>
+<rect x="62.88" y="95.96" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1700/951.5" data-band="0" data-role="border"/>
+<rect x="74.88" y="120.08" width="11.88" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2000/429.5" data-band="0" data-role="border"/>
+<rect x="74.88" y="108.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2000/500" data-band="0" data-role="field"/>
+<rect x="74.88" y="102.02" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2000/800" data-band="0" data-role="border"/>
+<rect x="74.88" y="95.96" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2000/951.5" data-band="0" data-role="border"/>
+<rect x="86.88" y="120.08" width="11.88" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2300/429.5" data-band="0" data-role="border"/>
+<rect x="86.88" y="108.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2300/500" data-band="0" data-role="field"/>
+<rect x="86.88" y="102.02" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2300/800" data-band="0" data-role="border"/>
+<rect x="86.88" y="95.96" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2300/951.5" data-band="0" data-role="border"/>
+<rect x="98.88" y="120.08" width="11.88" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2600/429.5" data-band="0" data-role="border"/>
+<rect x="98.88" y="108.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2600/500" data-band="0" data-role="field"/>
+<rect x="98.88" y="102.02" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2600/800" data-band="0" data-role="border"/>
+<rect x="98.88" y="95.96" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2600/951.5" data-band="0" data-role="border"/>
+<rect x="110.88" y="120.08" width="11.88" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2900/429.5" data-band="0" data-role="border"/>
+<rect x="110.88" y="108.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2900/500" data-band="0" data-role="field"/>
+<rect x="110.88" y="102.02" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2900/800" data-band="0" data-role="border"/>
+<rect x="110.88" y="95.96" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2900/951.5" data-band="0" data-role="border"/>
+<rect x="122.88" y="120.08" width="11.88" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3200/429.5" data-band="0" data-role="border"/>
+<rect x="122.88" y="108.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/3200/500" data-band="0" data-role="field"/>
+<rect x="122.88" y="102.02" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3200/800" data-band="0" data-role="border"/>
+<rect x="122.88" y="95.96" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3200/951.5" data-band="0" data-role="border"/>
+<rect x="134.88" y="120.08" width="11.88" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3500/429.5" data-band="0" data-role="border"/>
+<rect x="134.88" y="108.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/3500/500" data-band="0" data-role="field"/>
+<rect x="134.88" y="102.02" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3500/800" data-band="0" data-role="border"/>
+<rect x="134.88" y="95.96" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3500/951.5" data-band="0" data-role="border"/>
+<rect x="146.88" y="120.08" width="11.88" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3800/429.5" data-band="0" data-role="border"/>
+<rect x="146.88" y="108.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/3800/500" data-band="0" data-role="field"/>
+<rect x="146.88" y="102.02" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3800/800" data-band="0" data-role="border"/>
+<rect x="146.88" y="95.96" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3800/951.5" data-band="0" data-role="border"/>
+<rect x="158.88" y="120.08" width="11.88" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/4100/429.5" data-band="0" data-role="border"/>
+<rect x="158.88" y="108.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/4100/500" data-band="0" data-role="field"/>
+<rect x="158.88" y="102.02" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/4100/800" data-band="0" data-role="border"/>
+<rect x="158.88" y="95.96" width="11.88" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/4100/951.5" data-band="0" data-role="border"/>
+<rect x="170.88" y="120.08" width="5.94" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/4400/429.5" data-band="0" data-role="border"/>
+<rect x="170.88" y="108.08" width="5.94" height="11.88" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/4400/500" data-band="0" data-role="border"/>
+<rect x="170.88" y="102.02" width="5.94" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/4400/800" data-band="0" data-role="border"/>
+<rect x="170.88" y="95.96" width="5.94" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/4400/951.5" data-band="0" data-role="border"/>
+<rect x="176.94" y="120.08" width="5.94" height="2.7" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/4551.5/429.5" data-band="0" data-role="border"/>
+<rect x="176.94" y="108.08" width="5.94" height="11.88" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/4551.5/500" data-band="0" data-role="border"/>
+<rect x="176.94" y="102.02" width="5.94" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/4551.5/800" data-band="0" data-role="border"/>
+<rect x="176.94" y="95.96" width="5.94" height="5.94" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/4551.5/951.5" data-band="0" data-role="border"/>
+<rect x="26.88" y="84.08" width="11.88" height="11.76" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/800/1103" data-band="1" data-role="border"/>
+<rect x="26.88" y="72.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/800/1400" data-band="1" data-role="field"/>
+<rect x="26.88" y="60.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/800/1700" data-band="1" data-role="field"/>
+<rect x="26.88" y="48.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/800/2000" data-band="1" data-role="field"/>
+<rect x="26.88" y="37.96" width="11.88" height="10" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/800/2300" data-band="1" data-role="border"/>
+<rect x="38.88" y="84.08" width="11.88" height="11.76" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1100/1103" data-band="1" data-role="border"/>
+<rect x="38.88" y="72.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/1100/1400" data-band="1" data-role="field"/>
+<rect x="38.88" y="60.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/1100/1700" data-band="1" data-role="field"/>
+<rect x="38.88" y="48.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/1100/2000" data-band="1" data-role="field"/>
+<rect x="38.88" y="37.96" width="11.88" height="10" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1100/2300" data-band="1" data-role="border"/>
+<rect x="50.88" y="84.08" width="11.88" height="11.76" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1400/1103" data-band="1" data-role="border"/>
+<rect x="50.88" y="72.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/1400/1400" data-band="1" data-role="field"/>
+<rect x="50.88" y="60.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/1400/1700" data-band="1" data-role="field"/>
+<rect x="50.88" y="48.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/1400/2000" data-band="1" data-role="field"/>
+<rect x="50.88" y="37.96" width="11.88" height="10" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1400/2300" data-band="1" data-role="border"/>
+<rect x="62.88" y="84.08" width="11.88" height="11.76" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1700/1103" data-band="1" data-role="border"/>
+<rect x="62.88" y="72.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/1700/1400" data-band="1" data-role="field"/>
+<rect x="62.88" y="60.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/1700/1700" data-band="1" data-role="field"/>
+<rect x="62.88" y="48.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/1700/2000" data-band="1" data-role="field"/>
+<rect x="62.88" y="37.96" width="11.88" height="10" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1700/2300" data-band="1" data-role="border"/>
+<rect x="74.88" y="84.08" width="11.88" height="11.76" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2000/1103" data-band="1" data-role="border"/>
+<rect x="74.88" y="72.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2000/1400" data-band="1" data-role="field"/>
+<rect x="74.88" y="60.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2000/1700" data-band="1" data-role="field"/>
+<rect x="74.88" y="48.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2000/2000" data-band="1" data-role="field"/>
+<rect x="74.88" y="37.96" width="11.88" height="10" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2000/2300" data-band="1" data-role="border"/>
+<rect x="86.88" y="84.08" width="11.88" height="11.76" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2300/1103" data-band="1" data-role="border"/>
+<rect x="86.88" y="72.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2300/1400" data-band="1" data-role="field"/>
+<rect x="86.88" y="60.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2300/1700" data-band="1" data-role="field"/>
+<rect x="86.88" y="48.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2300/2000" data-band="1" data-role="field"/>
+<rect x="86.88" y="37.96" width="11.88" height="10" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2300/2300" data-band="1" data-role="border"/>
+<rect x="98.88" y="84.08" width="11.88" height="11.76" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2600/1103" data-band="1" data-role="border"/>
+<rect x="98.88" y="72.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2600/1400" data-band="1" data-role="field"/>
+<rect x="98.88" y="60.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2600/1700" data-band="1" data-role="field"/>
+<rect x="98.88" y="48.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2600/2000" data-band="1" data-role="field"/>
+<rect x="98.88" y="37.96" width="11.88" height="10" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2600/2300" data-band="1" data-role="border"/>
+<rect x="110.88" y="84.08" width="11.88" height="11.76" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2900/1103" data-band="1" data-role="border"/>
+<rect x="110.88" y="72.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2900/1400" data-band="1" data-role="field"/>
+<rect x="110.88" y="60.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2900/1700" data-band="1" data-role="field"/>
+<rect x="110.88" y="48.08" width="11.88" height="11.88" class="line-secondary" data-entity="GROUND/G-STUDY/room-kit/floor/2900/2000" data-band="1" data-role="field"/>
+<rect x="110.88" y="37.96" width="11.88" height="10" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2900/2300" data-band="1" data-role="border"/>
+<rect x="122.88" y="84.08" width="4" height="11.76" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3200/1103" data-band="1" data-role="border"/>
+<rect x="122.88" y="72.08" width="4" height="11.88" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3200/1400" data-band="1" data-role="border"/>
+<rect x="122.88" y="60.08" width="4" height="11.88" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3200/1700" data-band="1" data-role="border"/>
+<rect x="122.88" y="48.08" width="4" height="11.88" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3200/2000" data-band="1" data-role="border"/>
+<rect x="122.88" y="37.96" width="4" height="10" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/3200/2300" data-band="1" data-role="border"/>
+<rect x="12.06" y="31.02" width="2.7" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/2553" data-band="2" data-role="border"/>
+<rect x="12.06" y="24.08" width="2.7" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/2726.5" data-band="2" data-role="border"/>
+<rect x="12.06" y="14.06" width="2.7" height="9.9" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/2900" data-band="2" data-role="border"/>
+<rect x="14.88" y="31.02" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/500/2553" data-band="2" data-role="border"/>
+<rect x="14.88" y="24.08" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/500/2726.5" data-band="2" data-role="border"/>
+<rect x="14.88" y="14.06" width="11.88" height="9.9" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/500/2900" data-band="2" data-role="border"/>
+<rect x="26.88" y="31.02" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/800/2553" data-band="2" data-role="border"/>
+<rect x="26.88" y="24.08" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/800/2726.5" data-band="2" data-role="border"/>
+<rect x="26.88" y="14.06" width="11.88" height="9.9" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/800/2900" data-band="2" data-role="border"/>
+<rect x="38.88" y="31.02" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1100/2553" data-band="2" data-role="border"/>
+<rect x="38.88" y="24.08" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1100/2726.5" data-band="2" data-role="border"/>
+<rect x="38.88" y="14.06" width="9.74" height="9.9" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1100/2900" data-band="2" data-role="border" data-shapedPartId="GROUND/G-STUDY/room-kit/floor/1100/2900"/>
+<rect x="48.62" y="14.92" width="2.14" height="9.04" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1100/2900/shape/1" data-band="2" data-role="border" data-shapedPartId="GROUND/G-STUDY/room-kit/floor/1100/2900"/>
+<rect x="50.88" y="31.02" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1400/2553" data-band="2" data-role="border"/>
+<rect x="50.88" y="24.08" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1400/2726.5" data-band="2" data-role="border"/>
+<rect x="50.88" y="14.06" width="11.88" height="9.9" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1400/2900" data-band="2" data-role="border"/>
+<rect x="62.88" y="31.02" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1700/2553" data-band="2" data-role="border"/>
+<rect x="62.88" y="24.08" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1700/2726.5" data-band="2" data-role="border"/>
+<rect x="62.88" y="14.06" width="11.88" height="9.9" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/1700/2900" data-band="2" data-role="border"/>
+<rect x="74.88" y="31.02" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2000/2553" data-band="2" data-role="border"/>
+<rect x="74.88" y="24.08" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2000/2726.5" data-band="2" data-role="border"/>
+<rect x="74.88" y="14.06" width="8.74" height="9.9" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2000/2900" data-band="2" data-role="border" data-shapedPartId="GROUND/G-STUDY/room-kit/floor/2000/2900"/>
+<rect x="83.62" y="14.92" width="3.14" height="9.04" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2000/2900/shape/1" data-band="2" data-role="border" data-shapedPartId="GROUND/G-STUDY/room-kit/floor/2000/2900"/>
+<rect x="86.88" y="31.02" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2300/2553" data-band="2" data-role="border"/>
+<rect x="86.88" y="24.08" width="11.88" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2300/2726.5" data-band="2" data-role="border"/>
+<rect x="86.88" y="14.06" width="11.88" height="9.9" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2300/2900" data-band="2" data-role="border"/>
+<rect x="98.88" y="31.02" width="4.7" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2600/2553" data-band="2" data-role="border"/>
+<rect x="98.88" y="24.08" width="4.7" height="6.82" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2600/2726.5" data-band="2" data-role="border"/>
+<rect x="98.88" y="14.06" width="4.7" height="9.9" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/2600/2900" data-band="2" data-role="border"/>
+<rect x="12.06" y="90.24" width="2.7" height="5.6" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/1103" data-band="1" data-role="border"/>
+<rect x="12.06" y="37.96" width="2.7" height="5.8" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/429.5/2405" data-band="1" data-role="border"/>
+<rect x="14.88" y="90.24" width="11.88" height="5.6" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/500/1103" data-band="1" data-role="border"/>
+<rect x="14.88" y="37.96" width="11.88" height="5.8" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/500/2405" data-band="1" data-role="border"/>
+<rect x="20.26" y="84.08" width="6.5" height="6.04" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/634.5/1246" data-band="1" data-role="border"/>
+<rect x="20.26" y="72.08" width="6.5" height="11.88" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/634.5/1400" data-band="1" data-role="border"/>
+<rect x="20.26" y="60.08" width="6.5" height="11.88" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/634.5/1700" data-band="1" data-role="border"/>
+<rect x="20.26" y="48.08" width="6.5" height="11.88" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/634.5/2000" data-band="1" data-role="border"/>
+<rect x="20.26" y="43.88" width="6.5" height="4.08" class="line-secondary dash-datum" data-entity="GROUND/G-STUDY/room-kit/floor/634.5/2300" data-band="1" data-role="border"/>
+<rect x="12" y="43.88" width="8.14" height="46.24" class="line-primary fill-context" data-entity="GROUND/G-STUDY/room-kit/floor/emitter-plinth" data-role="fixed emitter plinth"/>
+<rect x="21.02" y="88.02" width="64" height="28" class="line-profile fill-context" data-entity="occupied:study-desk"/>
+<rect x="30.82" y="48.02" width="40" height="36" class="line-profile fill-context" data-entity="occupied:study-chair"/>
+<rect x="12" y="44.02" width="8" height="46" class="line-profile fill-context" data-entity="occupied:service-emitter-study-W"/>
+<line x1="58.82" y1="122.84" x2="98.82" y2="122.84" class="line-profile" data-entity="GROUND/south-window-0"/>
+<line x1="130.82" y1="122.84" x2="170.82" y2="122.84" class="line-profile" data-entity="GROUND/south-window-1"/>
+<line x1="48.82" y1="10.12" x2="84.82" y2="10.12" class="line-profile" data-entity="HAD/protectedRoute/STUDY"/>
+<rect x="146.82" y="108.02" width="24" height="12" class="line-primary dash-provisional" data-entity="trial-panel-sweep"/>
+<rect x="121.42" y="97.37" width="36" height="24" class="line-secondary dash-provisional" data-entity="trial-worker-sweep"/>
+<rect x="12.06" y="14.06" width="2.7" height="9.9" class="line-primary" data-entity="panel-path/0/0"/>
+<rect x="37.188" y="34.252" width="2.7" height="9.9" class="line-primary dash-provisional" data-entity="panel-path/1/0"/>
+<rect x="43.47" y="39.3" width="2.7" height="9.9" class="line-primary dash-provisional" data-entity="panel-path/2/0"/>
+<path d="M 40.22 27.02 L 40.162 25.844 L 39.989 24.679 L 39.703 23.537 L 39.307 22.428 L 38.803 21.363 L 38.198 20.353 L 37.496 19.407 L 36.705 18.535 L 35.833 17.744 L 34.887 17.042 L 33.877 16.437 L 32.812 15.933 L 31.703 15.537 L 30.561 15.251 L 29.396 15.078 L 28.22 15.02 L 27.044 15.078 L 25.879 15.251 L 24.737 15.537 L 23.628 15.933 L 22.563 16.437 L 21.553 17.042 L 20.607 17.744 L 19.735 18.535 L 18.944 19.407 L 18.242 20.353 L 17.637 21.363 L 17.133 22.428 L 16.737 23.537 L 16.451 24.679 L 16.278 25.844 L 16.22 27.02 L 16.278 28.196 L 16.451 29.361 L 16.737 30.503 L 17.133 31.612 L 17.637 32.677 L 18.242 33.687 L 18.944 34.633 L 19.735 35.505 L 20.607 36.296 L 21.553 36.998 L 22.563 37.603 L 23.628 38.107 L 24.737 38.503 L 25.879 38.789 L 27.044 38.962 L 28.22 39.02 L 29.396 38.962 L 30.561 38.789 L 31.703 38.503 L 32.812 38.107 L 33.877 37.603 L 34.887 36.998 L 35.833 36.296 L 36.705 35.505 L 37.496 34.633 L 38.198 33.687 L 38.803 32.677 L 39.307 31.612 L 39.703 30.503 L 39.989 29.361 L 40.162 28.196 Z" fill-rule="evenodd" class="line-secondary dash-datum" data-entity="worker/0"/>
+<path d="M 65.348 27.02 L 65.29 25.844 L 65.117 24.679 L 64.831 23.537 L 64.435 22.428 L 63.931 21.363 L 63.326 20.353 L 62.624 19.407 L 61.833 18.535 L 60.961 17.744 L 60.015 17.042 L 59.005 16.437 L 57.94 15.933 L 56.831 15.537 L 55.689 15.251 L 54.524 15.078 L 53.348 15.02 L 52.172 15.078 L 51.007 15.251 L 49.865 15.537 L 48.756 15.933 L 47.691 16.437 L 46.681 17.042 L 45.735 17.744 L 44.863 18.535 L 44.072 19.407 L 43.37 20.353 L 42.765 21.363 L 42.261 22.428 L 41.865 23.537 L 41.579 24.679 L 41.406 25.844 L 41.348 27.02 L 41.406 28.196 L 41.579 29.361 L 41.865 30.503 L 42.261 31.612 L 42.765 32.677 L 43.37 33.687 L 44.072 34.633 L 44.863 35.505 L 45.735 36.296 L 46.681 36.998 L 47.691 37.603 L 48.756 38.107 L 49.865 38.503 L 51.007 38.789 L 52.172 38.962 L 53.348 39.02 L 54.524 38.962 L 55.689 38.789 L 56.831 38.503 L 57.94 38.107 L 59.005 37.603 L 60.015 36.998 L 60.961 36.296 L 61.833 35.505 L 62.624 34.633 L 63.326 33.687 L 63.931 32.677 L 64.435 31.612 L 64.831 30.503 L 65.117 29.361 L 65.29 28.196 Z" fill-rule="evenodd" class="line-secondary dash-datum" data-entity="worker/1"/>
+<path d="M 69.02 27.02 L 68.962 25.844 L 68.789 24.679 L 68.503 23.537 L 68.107 22.428 L 67.603 21.363 L 66.998 20.353 L 66.296 19.407 L 65.505 18.535 L 64.633 17.744 L 63.687 17.042 L 62.677 16.437 L 61.612 15.933 L 60.503 15.537 L 59.361 15.251 L 58.196 15.078 L 57.02 15.02 L 55.844 15.078 L 54.679 15.251 L 53.537 15.537 L 52.428 15.933 L 51.363 16.437 L 50.353 17.042 L 49.407 17.744 L 48.535 18.535 L 47.744 19.407 L 47.042 20.353 L 46.437 21.363 L 45.933 22.428 L 45.537 23.537 L 45.251 24.679 L 45.078 25.844 L 45.02 27.02 L 45.078 28.196 L 45.251 29.361 L 45.537 30.503 L 45.933 31.612 L 46.437 32.677 L 47.042 33.687 L 47.744 34.633 L 48.535 35.505 L 49.407 36.296 L 50.353 36.998 L 51.363 37.603 L 52.428 38.107 L 53.537 38.503 L 54.679 38.789 L 55.844 38.962 L 57.02 39.02 L 58.196 38.962 L 59.361 38.789 L 60.503 38.503 L 61.612 38.107 L 62.677 37.603 L 63.687 36.998 L 64.633 36.296 L 65.505 35.505 L 66.296 34.633 L 66.998 33.687 L 67.603 32.677 L 68.107 31.612 L 68.503 30.503 L 68.789 29.361 L 68.962 28.196 Z" fill-rule="evenodd" class="line-secondary dash-datum" data-entity="worker/2"/>
+<rect x="38.82" y="39.26" width="12" height="12" class="line-primary fill-context" data-entity="ordinary-work-board"/>
+<rect x="48.82" y="5.52" width="1" height="9.2" class="line-primary fill-context" data-entity="fixed-frame-foot/0"/>
+<rect x="83.82" y="5.52" width="1" height="9.2" class="line-primary fill-context" data-entity="fixed-frame-foot/1"/>
+<text x="12" y="132.84" class="text-note" text-anchor="start" data-entity="ordinary-handling-key">Board square · 597.1 mm key reach · 336.5 mm body/part</text>
+</svg>
