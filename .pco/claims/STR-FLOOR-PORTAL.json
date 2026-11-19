@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 43,
+  "generation": 44,
   "state": "claimed",
-  "leaseId": "1e462ea9-3790-42cc-8040-6bc65e6c313e",
+  "leaseId": "dec44b72-4e34-40df-8172-25ba1d1a5e53",
   "holder": {
     "kind": "chatgpt",
-    "label": "convergence-2026-11-19"
+    "label": "convergence-2026-11-19-resumed"
   },
-  "claimedAt": "2026-11-19T20:30:01.372Z",
-  "heartbeatAt": "2026-11-19T21:04:51.382Z",
-  "expiresAt": "2026-11-19T21:49:51.382Z",
-  "branch": "work/convergence-dpc-2026-11-19",
+  "claimedAt": "2026-11-19T21:54:48.397Z",
+  "heartbeatAt": "2026-11-19T21:54:48.397Z",
+  "expiresAt": "2026-11-19T22:39:48.397Z",
+  "branch": "work/convergence-integrated-2026-11-19",
   "predecessor": {
-    "leaseId": "b71fcf09-0375-4d95-a9d9-eebf11c2a61f",
-    "generation": 42,
-    "branch": "work/rush-intact-collector-2026-11-19",
-    "pr": 1581,
+    "leaseId": "1e462ea9-3790-42cc-8040-6bc65e6c313e",
+    "generation": 43,
+    "branch": "work/convergence-dpc-2026-11-19",
+    "pr": 1582,
     "checkpoint": {
-      "evidence": "PR #1581 exact c0671af04745e39f97a00b393939ed46352a2731;499 Reference House tests, source/native receipt checks and rendered intact-cage candidate verified",
-      "next": "Verify this head hosted checks, merge and release; next joint proof needs above/below DPC load classification and compatible stiffness",
-      "blocker": "West route and its site envelope are conditional; current source port remains reserved and full damp-proof joint transfer is unresolved"
+      "evidence": "6d05f4e2e304b04573a866a481402026f497ecd7 on work/convergence-dpc-2026-11-19;16 final source/structural/DPC tests passed; native structural receipts regenerated with only2 provenance changes; #1582 merged12bd98fe",
+      "next": "Integrate final HAD split hood and IAS full-room handling branches, exact-head hosted fullhealth and publication preflight; full DPC six-component demand and whole-floor moisture path remain unresolved"
     }
   },
   "recoverySource": {
-    "leaseId": "b71fcf09-0375-4d95-a9d9-eebf11c2a61f",
-    "generation": 42,
-    "branch": "work/rush-intact-collector-2026-11-19",
-    "pr": 1581,
+    "leaseId": "1e462ea9-3790-42cc-8040-6bc65e6c313e",
+    "generation": 43,
+    "branch": "work/convergence-dpc-2026-11-19",
+    "pr": 1582,
     "checkpoint": {
-      "evidence": "PR #1581 exact c0671af04745e39f97a00b393939ed46352a2731;499 Reference House tests, source/native receipt checks and rendered intact-cage candidate verified",
-      "next": "Verify this head hosted checks, merge and release; next joint proof needs above/below DPC load classification and compatible stiffness",
-      "blocker": "West route and its site envelope are conditional; current source port remains reserved and full damp-proof joint transfer is unresolved"
+      "evidence": "6d05f4e2e304b04573a866a481402026f497ecd7 on work/convergence-dpc-2026-11-19;16 final source/structural/DPC tests passed; native structural receipts regenerated with only2 provenance changes; #1582 merged12bd98fe",
+      "next": "Integrate final HAD split hood and IAS full-room handling branches, exact-head hosted fullhealth and publication preflight; full DPC six-component demand and whole-floor moisture path remain unresolved"
     }
-  },
-  "checkpoint": {
-    "evidence": "6d05f4e2e304b04573a866a481402026f497ecd7 on work/convergence-dpc-2026-11-19;16 final source/structural/DPC tests passed; native structural receipts regenerated with only2 provenance changes; #1582 merged12bd98fe",
-    "next": "Integrate final HAD split hood and IAS full-room handling branches, exact-head hosted fullhealth and publication preflight; full DPC six-component demand and whole-floor moisture path remain unresolved"
-  },
-  "pr": 1582
+  }
 }
