@@ -9,8 +9,8 @@
     "label": "converge-room-kit"
   },
   "claimedAt": "2026-11-19T20:30:11.806Z",
-  "heartbeatAt": "2026-11-19T21:22:39.255Z",
-  "expiresAt": "2026-11-19T22:07:39.255Z",
+  "heartbeatAt": "2026-11-19T21:56:34.506Z",
+  "expiresAt": "2026-11-19T22:41:34.506Z",
   "branch": "work/converge-room-kit-2026-11-19",
   "predecessor": {
     "leaseId": "c3f08d3f-2feb-4d9f-98b4-82567db2cbd3",
@@ -33,8 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Published branch exact head1cf60fa4b7120ea8258659b33ab6a4e5f9d6259d;29focused Study tests and typecheckpassed; whole-room timbertile sheets rendered and inspected",
-    "next": "Finish actual shaped-frame pieces and generic ordinary workboard handling, then hand root final integrated source commit",
-    "blocker": "Source-specific full-floor operation under validation; physical/owner acceptance remains separate"
+    "evidence": "Publishedcheckpoint1cf60fa4; productiongenericvalidator nowcomputes144joinedfloor transfer-placement-approach witnesses fromeditableplan; source-frameLnotches andfurnishedsourceviews integrated; finaltestsrunning",
+    "next": "Finishnegative-input/currentdocument tests andrenderedreview; publishfinalconceptcloseoutcommitforrootserialintegration",
+    "blocker": "No owner orphysicalacceptance claimed;64.7mmcourseversus65mmcontrol remainsMATcoordination obligation"
   }
 }
