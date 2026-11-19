@@ -9,8 +9,8 @@
     "label": "rush-intact-collector"
   },
   "claimedAt": "2026-11-19T00:27:12.649Z",
-  "heartbeatAt": "2026-11-19T00:27:12.649Z",
-  "expiresAt": "2026-11-19T01:12:12.649Z",
+  "heartbeatAt": "2026-11-19T00:34:15.222Z",
+  "expiresAt": "2026-11-19T01:19:15.222Z",
   "branch": "work/rush-intact-collector-2026-11-19",
   "predecessor": {
     "leaseId": "62533e71-334f-41b1-8a06-e0cb4a0ac9d7",
@@ -33,5 +33,11 @@
       "next": "Observe this submitted head hosted health/publication checks, merge, then verify main and release",
       "blocker": "Shared blocked sill still halts the bundle; physical coupled DPC, foul route, service and handling acceptance remain open"
     }
+  },
+  "pr": 1581,
+  "checkpoint": {
+    "evidence": "PR #1581 exact c0671af04745e39f97a00b393939ed46352a2731;499 Reference House tests, source/native receipt checks and rendered intact-cage candidate verified",
+    "next": "Verify this head hosted checks, merge and release; next joint proof needs above/below DPC load classification and compatible stiffness",
+    "blocker": "West route and its site envelope are conditional; current source port remains reserved and full damp-proof joint transfer is unresolved"
   }
 }
