@@ -156,6 +156,14 @@ export function prepareCurrentDesignCompile(input: unknown) {
       const { runVerticalRcFloorCase } = await import('./structural-vertical-floor.js')
       return runVerticalRcFloorCase(resolved, input)
     },
+    readMasonryFrameCase: async () => {
+      const { readMasonryFrameCase } = await import('./structural-masonry-frame.js')
+      return readMasonryFrameCase(resolved)
+    },
+    masonryFrameCase: async (input: unknown) => {
+      const { runMasonryFrameCase } = await import('./structural-masonry-frame.js')
+      return runMasonryFrameCase(resolved, input)
+    },
     joinedRcFloorCase: async (input: unknown) => {
       const { runJoinedRcFloorCase } = await import('./structural-rc-floor.js')
       return runJoinedRcFloorCase(resolved, input)

@@ -2,11 +2,27 @@
 
 ## Current development disposition — 20 November 2026
 
-**Reject further local repairs of the loaded portal DPC and the worked crossing arch/post cage. Develop a straight RC frame with a separate compression masonry arch on direct-bearing abutments as the recommended architectural replacement.** The [architectural comparison](portal-architectural-simplification.md) retains the finished2400 opening and775 envelope; its major cost is only60 mm local jamb glass. It has an own-ring equilibrium witness, not a complete structural or thermal proof. The inward-enlarged RC alternative was also tested and rejected at its joint links. The [current native load result](continuous-rc-house-load-result.md) replaces gross lower-wall pressure with the actual opening, uses consistent physical post/upstand loads and joins the floor to all 52 named heads. Four finite 20 mm RC members replace the four portal contact joints. This is the source-bound finite-frame reference behind the rejection and redesign comparison, not a fabricable accepted cage or moisture barrier.
+**Reject further local repairs of the loaded portal DPC and the worked crossing arch/post cage. Develop a straight RC frame with a separate compression masonry arch on direct-bearing abutments as the recommended architectural replacement.** The [architectural comparison](portal-architectural-simplification.md) retains the finished2400 opening and775 envelope; its major cost is only60 mm local jamb glass. The [joined replacement](masonry-frame-a-result.md) now removes the curved RC stiffness, mass and infill, introduces the separate masonry courses at their actual seats, and solves the same perforated RC200 floor and 52-head grid. This is an unselected source-ground-zero comparison, not complete structural or thermal proof. The inward-enlarged curved RC alternative remains rejected at its joint links.
+
+The saved `masonryFrame` stage uses the sole `distributedFloor` authoring stage.
+It includes the [actual disjoint foundation self-weight](foundation-solid-weight-result.md)
+and an explicitly authored SW formed-quarter node. That candidate closes the
+0.01050625 m² missing normal footprint without adding a support; it does not
+qualify the local joint. The worked source W31 case still has a −50.800819 kN
+head demand. Below-cut foundation weight supplies no above-DPC precompression.
+[Recovered plate moments and conventional anchorage](floor-reinforcement-result.md)
+separate the RC200 section question from the rejected return template: retain
+the slab for development, but do not invent a complete edge cage. Lower wall
+bodies, upper structure/roof, full signed programmes and the complete moisture
+boundary remain internal engineering obligations. STR-FLOOR-PORTAL stays open.
+
+The earlier [continuous curved-frame load result](continuous-rc-house-load-result.md)
+is retained as the mechanical control behind the rejection. Its four finite
+20 mm bridges, old cage axes and barrier duties are not replacement-A details.
 
 The earlier rocking/contact comparisons remain bounded rejection evidence. Their original source tuple is reachable in [archival b8f27f2d](https://github.com/adamnoden/architecture/tree/b8f27f2dd07fa5b61749e6524aaf0059c5f1da27); the subsequent exposure/load correction is explicit. Do not continue optimising those bearing patches or transfer the old collar, roof-shoe or fixed-base results into the replacement.
 
-The editable house supplies the **one** `distributedFloor` authoring stage to `joinedRcFloor`. A floor-opening edit changes the actual mesh, portal actions, 52-head response, drawing and freshly recomputed reinforcement/cap screens. The [worked cage](continuous-rc-portal-cage.md) remains a conditional section-action comparison. Its [complete joint detail is rejected](continuous-rc-closed-links.md): the near-bend lap cannot meet its mandrel, and the revised hook/rib trials do not supply a complete station layout. Strength ratios do not rescue the geometry. No native48 response is transferred to the separate masonry arch; it requires a fresh joined load path, reinforcement/cap transfer and thermal/water detail.
+The editable house supplies the **one** `distributedFloor` authoring stage to the joined structural consumers. A floor-opening edit changes the actual mesh, portal actions, 52-head response, drawing and freshly recomputed reinforcement/cap screens. The former [worked cage](continuous-rc-portal-cage.md) remains a conditional section-action comparison. Its [complete joint detail is rejected](continuous-rc-closed-links.md): the near-bend lap cannot meet its mandrel, and the revised hook/rib trials do not supply a complete station layout. Strength ratios do not rescue the geometry. No native48 response is transferred to the separate masonry arch; its new joined gravity comparison still needs reinforcement/cap transfer, complete wind/roof and thermal/water detail.
 
 The roof prerequisite remains genuine. All 28 receiving paths are still incomplete; full vertical slab/gravity and roof participation, physical L keys/ties, lower cap/foundation transfer, actual waterstop/bar seals and thermal interfaces remain internal engineering obligations. The separate raised ground/service-floor proposal has not transformed this source-ground-zero structural model. The first-floor finish at3450 and RC3170..3370 are compatible layers, not a reason to invent an additional dependency. STR-FLOOR-PORTAL stays open until its actual assembled-path criteria are met.
 
