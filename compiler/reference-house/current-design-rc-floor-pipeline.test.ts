@@ -16,7 +16,7 @@ const numerical = fixture.case.houseCase.joinedCase as Numerical
 
 function stages() {
   const portalFields = ['gridLaw', 'frameLaw', 'dpcLaw', 'dpcIntervalZMm', 'coverMm', 'archSegments', 'infillHeadGapMm']
-  const floorFields = ['cornerWidthsMm', 'memberLaw', 'jointLaw', 'membraneLaw', 'edgeBand', 'maxPitchMm']
+  const floorFields = ['cornerWidthsMm', 'memberLaw', 'jointLaw', 'membraneLaw', 'edgeBand', 'maxPitchMm', 'boundaryCase']
   const contactFields = ['geometry', 'portalDPCNormalMode', 'portalDPCNormalIntegration', 'portalDPCQuadratureOrder',
     'portalDPCNormalSubdivisions', 'portalDPCInsetMm']
   return {

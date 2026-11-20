@@ -1,0 +1,1753 @@
+{
+  "schema": "house-vertical-profile-comparison/1",
+  "cases": [
+    {
+      "schema": "house-vertical-profile-result/1",
+      "sourceIdentities": {
+        "project/had/studies/house_vertical_profile.py": "1686512e9ba1fd80091973d7f7d40d0eeddd9bb2657a46d40307cf029c583b58",
+        "project/str/studies/dry_side_ground_section.py": "1ebd67c260283463ab190aa2b8bf29c514c1fbcdf4e489fb44a1b0f8cc7643c7",
+        "project/str/studies/dry-side-ground-section.json": "03bc894b050eb9c257201fb5747e1bc28fdc4e2138f440cf06e21bfad6130e46",
+        "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+        "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+        "project/str/studies/current-house-occupied-interfaces.json": "8083132336cdbdd1d51f7652e620e75741a4e66b0ac2cedae552c026cbfc3f77",
+        "project/str/studies/current-house-bridge.py": "6da4f723a2a28d4e7307f01c55d150d565cbc7575e9c5d6e19cd3b68a5ee98ed",
+        "project/mat/studies/conventional-ground-junction.json": "439bfd151f40895b1e8abb1e17ae47ffd2dc02f977160a3c94362cc5f06f2f72",
+        "project/mat/envelope-ground-boundary.md": "eb67353c8314449a0c10e12e8f41ca6e0c3bd1997776abcedc3bbf7f2346f0ae",
+        "project/owner-house-charter.md": "891ed6b72ff7452826a18bf5f91458746b8594a5c5ac89f75407e9a40b776371",
+        "docs/reference-house/structural-brief.md": "63764b34f27ca25425e560a2a12fbf0fcd895ccad0f63b35ea5d8aa72566565e",
+        "project/str/studies/current-house-grid.py": "16253b545126847df0250bda3d1260c3210434387feea9abf4b5a0758308f635",
+        "project/had/studies/water-replan.mjs": "9ef245c2f354dcd4952e3ffe2d07a24b3d8fff4a73257bca8d9d27627015c078",
+        "project/mat/studies/whole-house-leakage-duty.json": "b2700cfa84010eea0c9d8f118a5e658138c75b180b4368110c1ab5f3c4c0cad8",
+        "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+        "project/triad-interface-contract.md": "3f489e840a2711873b9a8148970507e9504c31f5ad482967af6cfcccb2f42810",
+        "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+        "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+        "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+        "project/mat/studies/ring-roof-family.json": "b8aa44fab2b13d329f4ccb6cda0210c1fe3aab1b13e8ec96a47e9e0271c07a81"
+      },
+      "groundAuthority": {
+        "caseId": "raised-530-local-solum",
+        "caseDigest": "5677fcc42fd81655d24d937da4e6069a831841a1b7ddf41bc4f4e05e941de77d",
+        "resultDigest": "a2eee202f9c7c6714456b08399807fe71e249314af6804299919d8bc246d7499"
+      },
+      "status": "unselected-source-derived-vertical-proposal",
+      "selectedHouseAdmitted": false,
+      "installedAcceptance": false,
+      "groundLevelsMm": {
+        "coldGridTop": -180,
+        "wetRCPlinth": [
+          -180,
+          0
+        ],
+        "mineralCourse": [
+          0,
+          150
+        ],
+        "dryRC": [
+          150,
+          350
+        ],
+        "glass": [
+          350,
+          450
+        ],
+        "accessibleDistribution": [
+          450,
+          515
+        ],
+        "finish": [
+          515,
+          530
+        ],
+        "ffl": 530,
+        "occupiedTranslation": 530,
+        "authoredExteriorGrade": -150,
+        "sourceUnadoptedUniformGrade": -1800,
+        "localSolum": -1800,
+        "exteriorAboveLocalSolum": 1650,
+        "courseToGrade": 150,
+        "gradeClearanceToControlMargin": 0,
+        "nominalMinus150GradeWouldPass": true,
+        "courtSouthWalking": 530,
+        "courtNorthWalking": 420,
+        "gardenTerrace": 377.5,
+        "courtWeatherLeafDpcLowerReservation": 680,
+        "firstFFL": 3980,
+        "firstFloorAboveAuthoredGeneralGrade": 4130,
+        "firstFloorAboveLocalSolum": 5780,
+        "actualLowestAdjacentGround": null,
+        "MATeaves": 7630,
+        "MATridge": 8620.903773579372
+      },
+      "floorAssembly": {
+        "sourceLayersTopDownMm": [
+          15,
+          65,
+          100,
+          200
+        ],
+        "authoredLayersTopDownMm": [
+          15,
+          65,
+          100,
+          200
+        ],
+        "scope": "Only service depth is authored here; finish, glass and slab retain their bound source. No installed service or structural evidence transfers."
+      },
+      "transforms": {
+        "occupiedTranslationMm": 530,
+        "coldGridTranslationMm": 0,
+        "wetPlinthReceivingTopIsNotGridTop": true
+      },
+      "occupied": {
+        "groundFFLMm": 530,
+        "firstRCMm": [
+          3700,
+          3900
+        ],
+        "firstFFLMm": 3980,
+        "firstFinishAboveRCMm": 80,
+        "storeyIntervalMm": 3450,
+        "atticDatumMm": 7430,
+        "atticDatumIsNotVerifiedFloor": true,
+        "atticMinusFirstDatumMm": 3450
+      },
+      "walls": {
+        "ordinaryGroundFromColdGridToFirstSoffitMm": [
+          -180,
+          3700
+        ],
+        "ordinaryGroundStructuralHeightMm": 3880,
+        "dryMasonryAboveDryRCToFirstSoffitMm": [
+          350,
+          3700
+        ],
+        "groundCoreHeightIncreaseMm": 530.0,
+        "sourcePostSegmentsAroundDPCMm": [
+          [
+            -180.0,
+            -50
+          ],
+          [
+            -30,
+            3170
+          ]
+        ],
+        "candidatePostSegmentsAroundConceptMm": [
+          [
+            -180,
+            130
+          ],
+          [
+            150,
+            3700
+          ]
+        ],
+        "candidateLowerSegmentEnvelopeLengthMm": 310,
+        "candidatePostSegmentationIsAdopted": false,
+        "upperOccupiedDatumIntervalMm": [
+          3980,
+          7430
+        ],
+        "groundWallIds": [
+          "study-east",
+          "cloak-east",
+          "cloak-west",
+          "cloak-south",
+          "study-cloak-north",
+          "study-L-return",
+          "study-L-north",
+          "wc-west",
+          "wc-north",
+          "service-spine",
+          "utility-north",
+          "plant-intermediate-arch",
+          "plant-north",
+          "rear-west",
+          "rear-east",
+          "loggia-west-weather",
+          "loggia-east-weather",
+          "protected-stair-east",
+          "protected-west-cross",
+          "protected-east-cross",
+          "east-passage-north-weather",
+          "gallery-east-water-weather"
+        ],
+        "upperWallIds": [
+          "bed2-east",
+          "bed2-north-main",
+          "bed2-L-return",
+          "bed2-L-north",
+          "bed3-west",
+          "bed3-north-main",
+          "wet-spine",
+          "bed3-L-north",
+          "bath-north",
+          "rear-west",
+          "rear-west-return",
+          "rear-east",
+          "rear-divider",
+          "rear-wet-east",
+          "wet-spine-principal",
+          "rear-east-principal",
+          "rear-wet-south"
+        ],
+        "northPortal": {
+          "fixedBaseMm": -180,
+          "rawSpringMm": 2780,
+          "rawCrownMm": 3380,
+          "meanSkewbackMm": 2857.1518193224592,
+          "tieCentreMm": 2730,
+          "finishedCrownMm": 3100,
+          "upperRCFloorSoffitMm": 3700
+        }
+      },
+      "waterstop": {
+        "sourceReferenceIntervalMm": [
+          -50,
+          -30
+        ],
+        "candidateConceptIntervalMm": [
+          130,
+          150
+        ],
+        "candidateConceptIsNativeDPCRelocation": false,
+        "status": "Unproved top20 mineral-interface concept only; no continuous-bar/anchor/material/water/thermal/air acceptance"
+      },
+      "arches": [
+        {
+          "id": "GROUND/south-window-0",
+          "wall": "outer-south",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/south-window-1",
+          "wall": "outer-south",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/front-door",
+          "wall": "outer-south",
+          "datumsMm": {
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/south-window-3",
+          "wall": "outer-south",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/south-window-4",
+          "wall": "outer-south",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/east-window-0",
+          "wall": "outer-east",
+          "datumsMm": {
+            "sill": 1380,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/plant-replacement",
+          "wall": "outer-east",
+          "datumsMm": {
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/east-window-3",
+          "wall": "outer-east",
+          "datumsMm": {
+            "sill": 1380,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/west-window-0",
+          "wall": "outer-west",
+          "datumsMm": {
+            "sill": 1380,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/west-window-1",
+          "wall": "outer-west",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 2980,
+            "head": 3280
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/west-window-2",
+          "wall": "outer-west",
+          "datumsMm": {
+            "sill": 2280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/west-window-3",
+          "wall": "outer-west",
+          "datumsMm": {
+            "sill": 1380,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/north-window-0",
+          "wall": "outer-north",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/north-window-1",
+          "wall": "outer-north",
+          "datumsMm": {
+            "sill": 1380,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/north-window-3",
+          "wall": "outer-north",
+          "datumsMm": {
+            "sill": 1580,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/north-window-4",
+          "wall": "outer-north",
+          "datumsMm": {
+            "sill": 1580,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/grand-court-entry-south",
+          "wall": "court-south",
+          "datumsMm": {
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/court-east-0",
+          "wall": "court-east",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/court-east-1",
+          "wall": "court-east",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/court-west-0",
+          "wall": "court-west",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/court-west-1",
+          "wall": "court-west",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/east-outdoor-water-portal",
+          "wall": "outer-east",
+          "datumsMm": {
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/south-window-0",
+          "wall": "outer-south",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/south-window-1",
+          "wall": "outer-south",
+          "datumsMm": {
+            "sill": 1380,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/south-window-2",
+          "wall": "outer-south",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/south-window-3",
+          "wall": "outer-south",
+          "datumsMm": {
+            "sill": 1380,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/south-window-4",
+          "wall": "outer-south",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/east-window-0",
+          "wall": "outer-east",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/east-window-1",
+          "wall": "outer-east",
+          "datumsMm": {
+            "sill": 1380,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/east-window-2",
+          "wall": "outer-east",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/east-window-3",
+          "wall": "outer-east",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/west-window-0",
+          "wall": "outer-west",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/west-window-1",
+          "wall": "outer-west",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/west-window-2",
+          "wall": "outer-west",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/west-window-3",
+          "wall": "outer-west",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/north-window-0",
+          "wall": "outer-north",
+          "datumsMm": {
+            "sill": 1380,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/north-window-1",
+          "wall": "outer-north",
+          "datumsMm": {
+            "sill": 1480,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/north-window-3",
+          "wall": "outer-north",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/north-window-4",
+          "wall": "outer-north",
+          "datumsMm": {
+            "sill": 1380,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/court-south-0",
+          "wall": "court-south",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/court-south-1",
+          "wall": "court-south",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/court-north-0",
+          "wall": "court-north",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/court-north-1",
+          "wall": "court-north",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/court-east-0",
+          "wall": "court-east",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/court-east-1",
+          "wall": "court-east",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/court-west-0",
+          "wall": "court-west",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/court-west-1",
+          "wall": "court-west",
+          "datumsMm": {
+            "sill": 1280,
+            "spring": 3080,
+            "head": 3380
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        }
+      ],
+      "roof": {
+        "coherentWeatherProfile": null,
+        "wholeHouseWeatherHeightAboveAuthoredGradeMm": null,
+        "historicalNominalEaveMm": 6800,
+        "assemblyDatums": [
+          {
+            "id": "STR-ring-centre",
+            "sourceMm": 6600.0,
+            "translatedComparisonMm": 7130.0,
+            "role": "Structural ring/pressure datum; not weather eave or attic floor"
+          },
+          {
+            "id": "HAD-weather-eave",
+            "sourceMm": 7100,
+            "translatedComparisonMm": 7630,
+            "role": "HAD explicitly rewound7100eave; not native structural ring"
+          },
+          {
+            "id": "MAT-required-wall-line",
+            "sourceMm": 7418.423322641297,
+            "translatedComparisonMm": 7948.423322641297,
+            "role": "slate and combined Sarket below two-direction airspace"
+          },
+          {
+            "id": "MAT-weather-cap-apex",
+            "sourceMm": 8645.327095641296,
+            "translatedComparisonMm": 9175.327095641296,
+            "role": "Separate assembly comparison, not a selected whole-house height"
+          }
+        ],
+        "owner": "Joined ROF/MAT/HAD/STR assembly gate"
+      },
+      "heights": {
+        "firstAboveAuthoredGradeMm": 4130,
+        "atticDatumAboveAuthoredGradeMm": 7580,
+        "actualLowestAdjacentGroundMm": null,
+        "regulatoryHeightOrSiteAccepted": false
+      },
+      "approaches": {
+        "front": {
+          "riseMm": 680,
+          "slopeRatio": 20,
+          "slopingRunMm": 13600,
+          "flightsMm": [
+            9000,
+            4600
+          ],
+          "landingLengthMm": 1200,
+          "landings": 3,
+          "totalStraightReservationMm": 17200,
+          "extraStraightReservationMm": -24800
+        },
+        "garden": {
+          "riseMm": 527.5,
+          "slopeRatio": 20,
+          "slopingRunMm": 10550.0,
+          "flightsMm": [
+            8000,
+            2550.0
+          ],
+          "landingLengthMm": 1200,
+          "landings": 3,
+          "totalStraightReservationMm": 14150.0,
+          "extraStraightReservationMm": -26000.0
+        },
+        "clearWidthReservationMm": 1200,
+        "status": "same source flight-length/landing arithmetic, not accepted accessibility or a surveyed site"
+      },
+      "groundQuantityReceipt": {
+        "sourceEvidenceCurrent": true,
+        "evidenceRule": "Geometry quantities recompute from bound native declarations; sourceEvidenceCurrent marks old structural-receipt applicability, never physical acceptance.",
+        "floorAreaM2": 107.80958250000015,
+        "formerDirectOverlapM2": 53.86219375,
+        "originalOccupiedFloorAreaM2": 104.89522500000018,
+        "additionalDrySlabCoreEdgeAreaM2": 2.9143574999999657,
+        "additionalDrySlabCoreEdgeVolumeM3": 0.5828714999999931,
+        "wetPlinthUnion": {
+          "floorAreaM2": 107.80958250000015,
+          "bearingAreaM2": 57.17555125,
+          "disjointCellCount": 5670,
+          "disjointCellDigest": "2073c2f1e089e31e4f5aa420d00d935b585b8fa4e0e35c69be9d9cc1bc5c341a"
+        },
+        "additionalWetRCPlinthM3": 10.291599225,
+        "additionalWetRCPlinthWeightKN": 257.289980625,
+        "newDrySlabGrossM3": 21.561916500000027,
+        "removedOldFreeFieldGrossM3": 10.206606250000036,
+        "addedRCCausedBySeparationM3": 11.355310249999992,
+        "addedRCWeightBudgetKN": 283.8827562499998,
+        "newColdBeamGrossM3": 0.45539999999999997,
+        "newColdBeamNetAddedM3": 0.3366,
+        "newColdBeamNetAddedWeightKN": 8.415000000000001,
+        "fullWidthBearingFootprintM2": 57.17555125,
+        "mineralCourseGrossReservationM3": 8.5763326875,
+        "mineralCourseGrossWeightBudgetKN": 171.52665375,
+        "mineralCourseOnlyConductancePerUnitLambdaWPerK": 381.1703416666667,
+        "actualMineralConductivity": null,
+        "actualJunctionHeatLoss": null
+      },
+      "spineSection": {
+        "coreWidthMm": 140,
+        "coldGirderWidthMm": 900,
+        "coldGirderZMm": [
+          -630,
+          -180
+        ],
+        "wallBaseAboveDryRCMm": 350
+      },
+      "wind": {
+        "appliedRaisedPressure": null,
+        "occlusionAccepted": false,
+        "exposedGradeToFFLEnvelopeMm": 680,
+        "occlusionEnvelopeMm": [
+          -150,
+          530
+        ]
+      },
+      "diagnostics": [
+        {
+          "code": "PROFILE_FORCE_REPLAY_REQUIRED",
+          "objects": [
+            "source52-heads",
+            "ground-posts",
+            "first-floor",
+            "north-portals"
+          ],
+          "message": "Fixed coldgrid/caps-180; occupied shift530. Ordinary cap-to-soffit height3880, not3350. Rebuild actual member endpoints/sections/mass, floor/portal offsets and six-wrench transfers. No old reaction, stiffness, preload or load budget transfers."
+        },
+        {
+          "code": "PROFILE_ROOF_ASSEMBLY_UNRESOLVED",
+          "objects": [
+            "STR-ring-centre",
+            "HAD-weather-eave",
+            "MAT-required-wall-line",
+            "MAT-weather-cap-apex"
+          ],
+          "message": "Native6600ring, historical6800nominal eave, HAD7100eave and MAT7418.423wall line are distinct assembly datums. Arithmetic translation does not join roof structure, attic, weather skin, pitch, support, access or water receivers; complete weather height is withheld."
+        },
+        {
+          "code": "PROFILE_PLINTH_ENCLOSURE_UNQUALIFIED",
+          "objects": [
+            "wetRCPlinth",
+            "mineralCourse",
+            "lower-wall",
+            "court-boundaries",
+            "new-waterstop-concept"
+          ],
+          "message": "Exact ground slab construction is inherited only as an unselected ground case. Enclosure/air/gas/thermal/water returns, cold wet-leaf separation, anchors/bar continuity and site grade need actual joined construction."
+        },
+        {
+          "code": "PROFILE_WIND_OCCLUSION_UNPROVEN",
+          "objects": [
+            "exposed-plinth",
+            "lower-posts",
+            "exterior-grade"
+          ],
+          "message": "WalkingFFL does not occlude piers. Exposed grade-to-FFL envelope680mm under no-occlusion comparison; actual facade/plinth closures, openings, pressure law and member tributaries must define raised wind."
+        }
+      ],
+      "groundDiagnostics": [
+        "UNCOORDINATED_SERVICE_ROOF_FOUNDATION_LEVELS",
+        "LOWER_STAIR_TOE_CONTACT_UNLOCATED",
+        "UPPER_COMPONENT_WITHOUT_DIRECT_MINERAL_SUPPORT:court-south-native-ground-core-0",
+        "UPPER_COMPONENT_WITHOUT_DIRECT_MINERAL_SUPPORT:court-west-native-ground-core-0"
+      ],
+      "groundHolds": [
+        "actual mortar constituents and WCBL65 product dimension identity/bond/bed layout",
+        "distributed contact/sliding/shear and local mineral bearing under all adverse loads",
+        "new beam anchorage/node force and cold-grid reactions in compatible 52-head solve",
+        "court southwest upper-slab transfer and lower stair-toe contact-end/cage geometry",
+        "suspended slab body/joint air-moisture and site gas/pressure-water applicability",
+        "supported removable dry-apron/end/jamb seal under movement; pan/support renewal",
+        "3D surface/condensation/heat-loss with exact mineral properties",
+        "outer/court wet-leaf DPC/cavity tray and dry bearing separation",
+        "roof actual MAT geometry plus tied successor wind/support system",
+        "owner raised-plinth/approach/court aesthetic decision"
+      ],
+      "groundInvalidatedEvidence": [
+        "old ground-slab support/cage/crack/pour acceptance",
+        "retained ground slab credit",
+        "old DPC/global load distribution",
+        "native old-height wind and roof assumptions",
+        "actual 52-head compatible actions/movement",
+        "floor/wall/threshold air and thermal qualification"
+      ],
+      "forceReplay": {
+        "raisedCaseSolved": false,
+        "old52HeadActionsReusable": false,
+        "oldMemberStiffnessReusable": false,
+        "oldRoofPressureReusable": false,
+        "groundVerticalConsumer": "vertical_rc_floor.py baseline0 only; rebuild actual endpoints/offsets/loads before raised use"
+      },
+      "sourceApplicability": "Arch/window/door/court/upper-room/stair datums translate from their source. Floor support, source claims, new openings, weather enclosure and structural forces do not follow by translation."
+    },
+    {
+      "schema": "house-vertical-profile-result/1",
+      "sourceIdentities": {
+        "project/had/studies/house_vertical_profile.py": "1686512e9ba1fd80091973d7f7d40d0eeddd9bb2657a46d40307cf029c583b58",
+        "project/str/studies/dry_side_ground_section.py": "1ebd67c260283463ab190aa2b8bf29c514c1fbcdf4e489fb44a1b0f8cc7643c7",
+        "project/str/studies/dry-side-ground-section.json": "03bc894b050eb9c257201fb5747e1bc28fdc4e2138f440cf06e21bfad6130e46",
+        "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+        "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+        "project/str/studies/current-house-occupied-interfaces.json": "8083132336cdbdd1d51f7652e620e75741a4e66b0ac2cedae552c026cbfc3f77",
+        "project/str/studies/current-house-bridge.py": "6da4f723a2a28d4e7307f01c55d150d565cbc7575e9c5d6e19cd3b68a5ee98ed",
+        "project/mat/studies/conventional-ground-junction.json": "439bfd151f40895b1e8abb1e17ae47ffd2dc02f977160a3c94362cc5f06f2f72",
+        "project/mat/envelope-ground-boundary.md": "eb67353c8314449a0c10e12e8f41ca6e0c3bd1997776abcedc3bbf7f2346f0ae",
+        "project/owner-house-charter.md": "891ed6b72ff7452826a18bf5f91458746b8594a5c5ac89f75407e9a40b776371",
+        "docs/reference-house/structural-brief.md": "63764b34f27ca25425e560a2a12fbf0fcd895ccad0f63b35ea5d8aa72566565e",
+        "project/str/studies/current-house-grid.py": "16253b545126847df0250bda3d1260c3210434387feea9abf4b5a0758308f635",
+        "project/had/studies/water-replan.mjs": "9ef245c2f354dcd4952e3ffe2d07a24b3d8fff4a73257bca8d9d27627015c078",
+        "project/mat/studies/whole-house-leakage-duty.json": "b2700cfa84010eea0c9d8f118a5e658138c75b180b4368110c1ab5f3c4c0cad8",
+        "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+        "project/triad-interface-contract.md": "3f489e840a2711873b9a8148970507e9504c31f5ad482967af6cfcccb2f42810",
+        "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+        "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+        "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+        "project/mat/studies/ring-roof-family.json": "b8aa44fab2b13d329f4ccb6cda0210c1fe3aab1b13e8ec96a47e9e0271c07a81"
+      },
+      "groundAuthority": {
+        "caseId": "raised-715-profile",
+        "caseDigest": "105889c4c2958df25471a64595d08069d26519cd449ea5dcf5acf5494795e1d1",
+        "resultDigest": "704067444438742eecfd3427ea6dfd37e3f04c574375e2324679bc3e2ea61681"
+      },
+      "status": "unselected-source-derived-vertical-proposal",
+      "selectedHouseAdmitted": false,
+      "installedAcceptance": false,
+      "groundLevelsMm": {
+        "coldGridTop": -180,
+        "wetRCPlinth": [
+          -180,
+          0
+        ],
+        "mineralCourse": [
+          0,
+          150
+        ],
+        "dryRC": [
+          150,
+          350
+        ],
+        "glass": [
+          350,
+          450
+        ],
+        "accessibleDistribution": [
+          450,
+          700
+        ],
+        "finish": [
+          700,
+          715
+        ],
+        "ffl": 715,
+        "occupiedTranslation": 715,
+        "authoredExteriorGrade": -150,
+        "sourceUnadoptedUniformGrade": -1800,
+        "localSolum": -1800,
+        "exteriorAboveLocalSolum": 1650,
+        "courseToGrade": 150,
+        "gradeClearanceToControlMargin": 0,
+        "nominalMinus150GradeWouldPass": true,
+        "courtSouthWalking": 715,
+        "courtNorthWalking": 605,
+        "gardenTerrace": 562.5,
+        "courtWeatherLeafDpcLowerReservation": 865,
+        "firstFFL": 4165,
+        "firstFloorAboveAuthoredGeneralGrade": 4315,
+        "firstFloorAboveLocalSolum": 5965,
+        "actualLowestAdjacentGround": null,
+        "MATeaves": 7815,
+        "MATridge": 8805.903773579372
+      },
+      "floorAssembly": {
+        "sourceLayersTopDownMm": [
+          15,
+          65,
+          100,
+          200
+        ],
+        "authoredLayersTopDownMm": [
+          15,
+          250,
+          100,
+          200
+        ],
+        "scope": "Only service depth is authored here; finish, glass and slab retain their bound source. No installed service or structural evidence transfers."
+      },
+      "transforms": {
+        "occupiedTranslationMm": 715,
+        "coldGridTranslationMm": 0,
+        "wetPlinthReceivingTopIsNotGridTop": true
+      },
+      "occupied": {
+        "groundFFLMm": 715,
+        "firstRCMm": [
+          3885,
+          4085
+        ],
+        "firstFFLMm": 4165,
+        "firstFinishAboveRCMm": 80,
+        "storeyIntervalMm": 3450,
+        "atticDatumMm": 7615,
+        "atticDatumIsNotVerifiedFloor": true,
+        "atticMinusFirstDatumMm": 3450
+      },
+      "walls": {
+        "ordinaryGroundFromColdGridToFirstSoffitMm": [
+          -180,
+          3885
+        ],
+        "ordinaryGroundStructuralHeightMm": 4065,
+        "dryMasonryAboveDryRCToFirstSoffitMm": [
+          350,
+          3885
+        ],
+        "groundCoreHeightIncreaseMm": 715.0,
+        "sourcePostSegmentsAroundDPCMm": [
+          [
+            -180.0,
+            -50
+          ],
+          [
+            -30,
+            3170
+          ]
+        ],
+        "candidatePostSegmentsAroundConceptMm": [
+          [
+            -180,
+            130
+          ],
+          [
+            150,
+            3885
+          ]
+        ],
+        "candidateLowerSegmentEnvelopeLengthMm": 310,
+        "candidatePostSegmentationIsAdopted": false,
+        "upperOccupiedDatumIntervalMm": [
+          4165,
+          7615
+        ],
+        "groundWallIds": [
+          "study-east",
+          "cloak-east",
+          "cloak-west",
+          "cloak-south",
+          "study-cloak-north",
+          "study-L-return",
+          "study-L-north",
+          "wc-west",
+          "wc-north",
+          "service-spine",
+          "utility-north",
+          "plant-intermediate-arch",
+          "plant-north",
+          "rear-west",
+          "rear-east",
+          "loggia-west-weather",
+          "loggia-east-weather",
+          "protected-stair-east",
+          "protected-west-cross",
+          "protected-east-cross",
+          "east-passage-north-weather",
+          "gallery-east-water-weather"
+        ],
+        "upperWallIds": [
+          "bed2-east",
+          "bed2-north-main",
+          "bed2-L-return",
+          "bed2-L-north",
+          "bed3-west",
+          "bed3-north-main",
+          "wet-spine",
+          "bed3-L-north",
+          "bath-north",
+          "rear-west",
+          "rear-west-return",
+          "rear-east",
+          "rear-divider",
+          "rear-wet-east",
+          "wet-spine-principal",
+          "rear-east-principal",
+          "rear-wet-south"
+        ],
+        "northPortal": {
+          "fixedBaseMm": -180,
+          "rawSpringMm": 2965,
+          "rawCrownMm": 3565,
+          "meanSkewbackMm": 3042.1518193224592,
+          "tieCentreMm": 2915,
+          "finishedCrownMm": 3285,
+          "upperRCFloorSoffitMm": 3885
+        }
+      },
+      "waterstop": {
+        "sourceReferenceIntervalMm": [
+          -50,
+          -30
+        ],
+        "candidateConceptIntervalMm": [
+          130,
+          150
+        ],
+        "candidateConceptIsNativeDPCRelocation": false,
+        "status": "Unproved top20 mineral-interface concept only; no continuous-bar/anchor/material/water/thermal/air acceptance"
+      },
+      "arches": [
+        {
+          "id": "GROUND/south-window-0",
+          "wall": "outer-south",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/south-window-1",
+          "wall": "outer-south",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/front-door",
+          "wall": "outer-south",
+          "datumsMm": {
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/south-window-3",
+          "wall": "outer-south",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/south-window-4",
+          "wall": "outer-south",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/east-window-0",
+          "wall": "outer-east",
+          "datumsMm": {
+            "sill": 1565,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/plant-replacement",
+          "wall": "outer-east",
+          "datumsMm": {
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/east-window-3",
+          "wall": "outer-east",
+          "datumsMm": {
+            "sill": 1565,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/west-window-0",
+          "wall": "outer-west",
+          "datumsMm": {
+            "sill": 1565,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/west-window-1",
+          "wall": "outer-west",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3165,
+            "head": 3465
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/west-window-2",
+          "wall": "outer-west",
+          "datumsMm": {
+            "sill": 2465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/west-window-3",
+          "wall": "outer-west",
+          "datumsMm": {
+            "sill": 1565,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/north-window-0",
+          "wall": "outer-north",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/north-window-1",
+          "wall": "outer-north",
+          "datumsMm": {
+            "sill": 1565,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/north-window-3",
+          "wall": "outer-north",
+          "datumsMm": {
+            "sill": 1765,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/north-window-4",
+          "wall": "outer-north",
+          "datumsMm": {
+            "sill": 1765,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/grand-court-entry-south",
+          "wall": "court-south",
+          "datumsMm": {
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/court-east-0",
+          "wall": "court-east",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/court-east-1",
+          "wall": "court-east",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/court-west-0",
+          "wall": "court-west",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/court-west-1",
+          "wall": "court-west",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "GROUND/east-outdoor-water-portal",
+          "wall": "outer-east",
+          "datumsMm": {
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/south-window-0",
+          "wall": "outer-south",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/south-window-1",
+          "wall": "outer-south",
+          "datumsMm": {
+            "sill": 1565,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/south-window-2",
+          "wall": "outer-south",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/south-window-3",
+          "wall": "outer-south",
+          "datumsMm": {
+            "sill": 1565,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/south-window-4",
+          "wall": "outer-south",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/east-window-0",
+          "wall": "outer-east",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/east-window-1",
+          "wall": "outer-east",
+          "datumsMm": {
+            "sill": 1565,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/east-window-2",
+          "wall": "outer-east",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/east-window-3",
+          "wall": "outer-east",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/west-window-0",
+          "wall": "outer-west",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/west-window-1",
+          "wall": "outer-west",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/west-window-2",
+          "wall": "outer-west",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/west-window-3",
+          "wall": "outer-west",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/north-window-0",
+          "wall": "outer-north",
+          "datumsMm": {
+            "sill": 1565,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/north-window-1",
+          "wall": "outer-north",
+          "datumsMm": {
+            "sill": 1665,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/north-window-3",
+          "wall": "outer-north",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/north-window-4",
+          "wall": "outer-north",
+          "datumsMm": {
+            "sill": 1565,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/court-south-0",
+          "wall": "court-south",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/court-south-1",
+          "wall": "court-south",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/court-north-0",
+          "wall": "court-north",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/court-north-1",
+          "wall": "court-north",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/court-east-0",
+          "wall": "court-east",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/court-east-1",
+          "wall": "court-east",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/court-west-0",
+          "wall": "court-west",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        },
+        {
+          "id": "FIRST/court-west-1",
+          "wall": "court-west",
+          "datumsMm": {
+            "sill": 1465,
+            "spring": 3265,
+            "head": 3565
+          },
+          "role": "Source assembly datum translated arithmetically; ring/support/weather applicability reopened"
+        }
+      ],
+      "roof": {
+        "coherentWeatherProfile": null,
+        "wholeHouseWeatherHeightAboveAuthoredGradeMm": null,
+        "historicalNominalEaveMm": 6800,
+        "assemblyDatums": [
+          {
+            "id": "STR-ring-centre",
+            "sourceMm": 6600.0,
+            "translatedComparisonMm": 7315.0,
+            "role": "Structural ring/pressure datum; not weather eave or attic floor"
+          },
+          {
+            "id": "HAD-weather-eave",
+            "sourceMm": 7100,
+            "translatedComparisonMm": 7815,
+            "role": "HAD explicitly rewound7100eave; not native structural ring"
+          },
+          {
+            "id": "MAT-required-wall-line",
+            "sourceMm": 7418.423322641297,
+            "translatedComparisonMm": 8133.423322641297,
+            "role": "slate and combined Sarket below two-direction airspace"
+          },
+          {
+            "id": "MAT-weather-cap-apex",
+            "sourceMm": 8645.327095641296,
+            "translatedComparisonMm": 9360.327095641296,
+            "role": "Separate assembly comparison, not a selected whole-house height"
+          }
+        ],
+        "owner": "Joined ROF/MAT/HAD/STR assembly gate"
+      },
+      "heights": {
+        "firstAboveAuthoredGradeMm": 4315,
+        "atticDatumAboveAuthoredGradeMm": 7765,
+        "actualLowestAdjacentGroundMm": null,
+        "regulatoryHeightOrSiteAccepted": false
+      },
+      "approaches": {
+        "front": {
+          "riseMm": 865,
+          "slopeRatio": 20,
+          "slopingRunMm": 17300,
+          "flightsMm": [
+            9000,
+            8300
+          ],
+          "landingLengthMm": 1200,
+          "landings": 3,
+          "totalStraightReservationMm": 20900,
+          "extraStraightReservationMm": -21100
+        },
+        "garden": {
+          "riseMm": 712.5,
+          "slopeRatio": 20,
+          "slopingRunMm": 14250.0,
+          "flightsMm": [
+            8000,
+            6250.0
+          ],
+          "landingLengthMm": 1200,
+          "landings": 3,
+          "totalStraightReservationMm": 17850.0,
+          "extraStraightReservationMm": -22300.0
+        },
+        "clearWidthReservationMm": 1200,
+        "status": "same source flight-length/landing arithmetic, not accepted accessibility or a surveyed site"
+      },
+      "groundQuantityReceipt": {
+        "sourceEvidenceCurrent": true,
+        "evidenceRule": "Geometry quantities recompute from bound native declarations; sourceEvidenceCurrent marks old structural-receipt applicability, never physical acceptance.",
+        "floorAreaM2": 107.80958250000015,
+        "formerDirectOverlapM2": 53.86219375,
+        "originalOccupiedFloorAreaM2": 104.89522500000018,
+        "additionalDrySlabCoreEdgeAreaM2": 2.9143574999999657,
+        "additionalDrySlabCoreEdgeVolumeM3": 0.5828714999999931,
+        "wetPlinthUnion": {
+          "floorAreaM2": 107.80958250000015,
+          "bearingAreaM2": 57.17555125,
+          "disjointCellCount": 5670,
+          "disjointCellDigest": "2073c2f1e089e31e4f5aa420d00d935b585b8fa4e0e35c69be9d9cc1bc5c341a"
+        },
+        "additionalWetRCPlinthM3": 10.291599225,
+        "additionalWetRCPlinthWeightKN": 257.289980625,
+        "newDrySlabGrossM3": 21.561916500000027,
+        "removedOldFreeFieldGrossM3": 10.206606250000036,
+        "addedRCCausedBySeparationM3": 11.355310249999992,
+        "addedRCWeightBudgetKN": 283.8827562499998,
+        "newColdBeamGrossM3": 0.45539999999999997,
+        "newColdBeamNetAddedM3": 0.3366,
+        "newColdBeamNetAddedWeightKN": 8.415000000000001,
+        "fullWidthBearingFootprintM2": 57.17555125,
+        "mineralCourseGrossReservationM3": 8.5763326875,
+        "mineralCourseGrossWeightBudgetKN": 171.52665375,
+        "mineralCourseOnlyConductancePerUnitLambdaWPerK": 381.1703416666667,
+        "actualMineralConductivity": null,
+        "actualJunctionHeatLoss": null
+      },
+      "spineSection": {
+        "coreWidthMm": 140,
+        "coldGirderWidthMm": 900,
+        "coldGirderZMm": [
+          -630,
+          -180
+        ],
+        "wallBaseAboveDryRCMm": 350
+      },
+      "wind": {
+        "appliedRaisedPressure": null,
+        "occlusionAccepted": false,
+        "exposedGradeToFFLEnvelopeMm": 865,
+        "occlusionEnvelopeMm": [
+          -150,
+          715
+        ]
+      },
+      "diagnostics": [
+        {
+          "code": "PROFILE_FORCE_REPLAY_REQUIRED",
+          "objects": [
+            "source52-heads",
+            "ground-posts",
+            "first-floor",
+            "north-portals"
+          ],
+          "message": "Fixed coldgrid/caps-180; occupied shift715. Ordinary cap-to-soffit height4065, not3350. Rebuild actual member endpoints/sections/mass, floor/portal offsets and six-wrench transfers. No old reaction, stiffness, preload or load budget transfers."
+        },
+        {
+          "code": "PROFILE_ROOF_ASSEMBLY_UNRESOLVED",
+          "objects": [
+            "STR-ring-centre",
+            "HAD-weather-eave",
+            "MAT-required-wall-line",
+            "MAT-weather-cap-apex"
+          ],
+          "message": "Native6600ring, historical6800nominal eave, HAD7100eave and MAT7418.423wall line are distinct assembly datums. Arithmetic translation does not join roof structure, attic, weather skin, pitch, support, access or water receivers; complete weather height is withheld."
+        },
+        {
+          "code": "PROFILE_PLINTH_ENCLOSURE_UNQUALIFIED",
+          "objects": [
+            "wetRCPlinth",
+            "mineralCourse",
+            "lower-wall",
+            "court-boundaries",
+            "new-waterstop-concept"
+          ],
+          "message": "Exact ground slab construction is inherited only as an unselected ground case. Enclosure/air/gas/thermal/water returns, cold wet-leaf separation, anchors/bar continuity and site grade need actual joined construction."
+        },
+        {
+          "code": "PROFILE_WIND_OCCLUSION_UNPROVEN",
+          "objects": [
+            "exposed-plinth",
+            "lower-posts",
+            "exterior-grade"
+          ],
+          "message": "WalkingFFL does not occlude piers. Exposed grade-to-FFL envelope865mm under no-occlusion comparison; actual facade/plinth closures, openings, pressure law and member tributaries must define raised wind."
+        }
+      ],
+      "groundDiagnostics": [
+        "UNCOORDINATED_SERVICE_ROOF_FOUNDATION_LEVELS",
+        "LOWER_STAIR_TOE_CONTACT_UNLOCATED",
+        "UPPER_COMPONENT_WITHOUT_DIRECT_MINERAL_SUPPORT:court-south-native-ground-core-0",
+        "UPPER_COMPONENT_WITHOUT_DIRECT_MINERAL_SUPPORT:court-west-native-ground-core-0"
+      ],
+      "groundHolds": [
+        "actual mortar constituents and WCBL65 product dimension identity/bond/bed layout",
+        "distributed contact/sliding/shear and local mineral bearing under all adverse loads",
+        "new beam anchorage/node force and cold-grid reactions in compatible 52-head solve",
+        "court southwest upper-slab transfer and lower stair-toe contact-end/cage geometry",
+        "suspended slab body/joint air-moisture and site gas/pressure-water applicability",
+        "supported removable dry-apron/end/jamb seal under movement; pan/support renewal",
+        "3D surface/condensation/heat-loss with exact mineral properties",
+        "outer/court wet-leaf DPC/cavity tray and dry bearing separation",
+        "roof actual MAT geometry plus tied successor wind/support system",
+        "owner raised-plinth/approach/court aesthetic decision"
+      ],
+      "groundInvalidatedEvidence": [
+        "old ground-slab support/cage/crack/pour acceptance",
+        "retained ground slab credit",
+        "old DPC/global load distribution",
+        "native old-height wind and roof assumptions",
+        "actual 52-head compatible actions/movement",
+        "floor/wall/threshold air and thermal qualification"
+      ],
+      "forceReplay": {
+        "raisedCaseSolved": false,
+        "old52HeadActionsReusable": false,
+        "oldMemberStiffnessReusable": false,
+        "oldRoofPressureReusable": false,
+        "groundVerticalConsumer": "vertical_rc_floor.py baseline0 only; rebuild actual endpoints/offsets/loads before raised use"
+      },
+      "sourceApplicability": "Arch/window/door/court/upper-room/stair datums translate from their source. Floor support, source claims, new openings, weather enclosure and structural forces do not follow by translation."
+    }
+  ]
+}

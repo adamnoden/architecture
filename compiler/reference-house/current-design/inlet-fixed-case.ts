@@ -6,6 +6,7 @@ import { compareCurrentFixedInletSupport } from './inlet-fixed-support-integrati
 import { renderCompactInletSupportView } from './inlet-fixed-support-view.js'
 import { compareTemporaryFixedInletKeeper } from './inlet-fixed-temporary-keeper.js'
 import { compareFixedInletWetSupport } from './inlet-fixed-wet-support.js'
+import { compareCurrentSharedFixedInletServiceFrame } from './inlet-fixed-shared-service-frame.js'
 import { readInletSillInsertCase, runInletSillInsertCase } from './inlet-sill-insert.js'
 import { readInletFaultCase, runInletFaultCase } from './inlet-fault.js'
 import type { CurrentDesignResolution } from './resolve.js'
@@ -25,6 +26,7 @@ function boundSource(resolved: CurrentDesignResolution) {
     'compiler/reference-house/current-design/inlet-fixed-support-view.ts',
     'compiler/reference-house/current-design/inlet-fixed-temporary-keeper.ts',
     'compiler/reference-house/current-design/inlet-fixed-wet-support.ts',
+    'compiler/reference-house/current-design/inlet-fixed-shared-service-frame.ts',
     'project/had/studies/incoming-water-geometry.mjs',
     'project/had/studies/service-interface-geometry.mjs',
     'project/had/studies/south-inlet-relief-hydraulics.mjs',
@@ -32,6 +34,12 @@ function boundSource(resolved: CurrentDesignResolution) {
     const bytes = readFileSync(new URL('../../../' + path, import.meta.url))
     return [path, createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')]
   }))
+  for (const [path, blob] of Object.entries(implementations)) {
+    const expected = resolved.disciplineBindings.flatMap(binding => binding.identities[path] ? [binding.identities[path]] : [])
+    if (!expected.length || expected.some(value => value !== blob)) {
+      throw new Error('Stale fixed-inlet implementation source: ' + path)
+    }
+  }
   return { planDigest: sha256SemanticFingerprint(resolved.design), implementations,
     bindingDigest: sha256SemanticFingerprint({ disciplines: resolved.disciplineBindings, implementations }) }
 }
@@ -72,9 +80,15 @@ export function runFixedInletCase(resolved: CurrentDesignResolution, input: unkn
   })
   const geometryBlockers = [...candidate.geometryBlockers, ...wetSupportDevelopment.diagnostics
     .filter(value => value.endsWith('CURRENT_CLEAR_THROAT_BODY_INTERCEPTS_CELL'))]
+  const sharedServiceFrameDevelopment = candidate.settings.upperPipeGuideZMm < 1760
+    ? { schema: 'had-fixed-inlet-shared-service-frame-unavailable/1' as const,
+      status: 'unsupported-geometry' as const, source: { candidateCaseDigest: candidate.source.caseDigest },
+      diagnostics: ['SHARED_SERVICE_FRAME_REQUIRES_GUIDE_1760_TO_2000_MM'],
+      selected: false as const, installedAcceptance: false as const, completeSupportCapacity: false as const }
+    : compareCurrentSharedFixedInletServiceFrame(candidate, supportDevelopment, wetSupportDevelopment)
   return { ...candidate, geometryBlockers,
     status: geometryBlockers.length ? 'rejected-geometry' as const : candidate.status,
-    supportDevelopment, temporaryKeeper, wetSupportDevelopment,
+    supportDevelopment, temporaryKeeper, wetSupportDevelopment, sharedServiceFrameDevelopment,
     supportReviewSvg: renderCompactInletSupportView(candidate, supportDevelopment),
     source: { ...candidate.source, bindingDigest: binding.bindingDigest },
     method: { ...candidate.method, currentImplementations: binding.implementations } }
