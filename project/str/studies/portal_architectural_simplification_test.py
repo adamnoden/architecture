@@ -3,7 +3,7 @@ import json
 import math
 import unittest
 
-from portal_architectural_simplification import D, ROOT, derive, proof, reference_case
+from portal_architectural_simplification import D, ROOT, canonical_comparison_receipt, derive, proof, reference_case
 
 
 class ArchitecturalComparisonTests(unittest.TestCase):
@@ -50,6 +50,33 @@ class ArchitecturalComparisonTests(unittest.TestCase):
         with self.assertRaises(ValueError):derive(case,self.model,self.grid)
         grid=copy.deepcopy(self.grid);next(x for x in grid['heads'] if x['id']=='P25')['capXY']=[400,400]
         with self.assertRaises(ValueError):derive(reference_case(),self.model,grid)
+
+
+    def test_receipt_precision_preserves_authored_controls_and_raw_decisions(self):
+        before=copy.deepcopy(self.r);receipt=canonical_comparison_receipt(self.r)
+        self.assertEqual(self.r,before)
+        for key in ('case','sourcePortal','sourceSHA256'):
+            self.assertEqual(receipt[key],before[key])
+        self.assertFalse(receipt['selectedOrInstalled'])
+        self.assertEqual([row['passes'] for row in receipt['B']['barTieTrial']['stationTrials']],
+            [row['passes'] for row in before['B']['barTieTrial']['stationTrials']])
+        changed=copy.deepcopy(before);changed['case']['masonrySeatProjectionMm']+=1e-10
+        self.assertNotEqual(canonical_comparison_receipt(changed),receipt)
+        changed=copy.deepcopy(before);changed['sourcePortal']['rawRadius']+=1e-10
+        self.assertNotEqual(canonical_comparison_receipt(changed),receipt)
+        changed=copy.deepcopy(before);changed['sourceSHA256']['changed']='stale'
+        self.assertNotEqual(canonical_comparison_receipt(changed),receipt)
+
+    def test_observed_clearance_noise_canonicalizes_but_geometry_and_decisions_do_not(self):
+        before=copy.deepcopy(self.r);after=copy.deepcopy(self.r)
+        for index in (0,1,2,3,4,5,12,13,14,15,16):
+            before['B']['barTieTrial']['stationTrials'][index]['clearance']['adverseSurfaceLowerBoundMm']=1.405733448594022
+            after['B']['barTieTrial']['stationTrials'][index]['clearance']['adverseSurfaceLowerBoundMm']=1.4057334485940203
+        self.assertEqual(canonical_comparison_receipt(before),canonical_comparison_receipt(after))
+        changed=copy.deepcopy(before);changed['B']['barTieTrial']['stationTrials'][0]['clearance']['adverseSurfaceLowerBoundMm']+=1e-8
+        self.assertNotEqual(canonical_comparison_receipt(changed),canonical_comparison_receipt(before))
+        changed=copy.deepcopy(before);changed['B']['barTieTrial']['stationTrials'][0]['passes']=False
+        self.assertNotEqual(canonical_comparison_receipt(changed),canonical_comparison_receipt(before))
 
     def test_gravity_witness_is_not_wind_or_floor_acceptance(self):
         a=self.r['A'];w=a['ownRingOnlyThreeHingeWitness']

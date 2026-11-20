@@ -5,7 +5,7 @@ import math
 from pathlib import Path
 
 from continuous_rc_closed_links import closed_wire, main_to_wire_clearance, reference_closed_link_case, transform_wire
-from continuous_rc_closed_links_proof import reproduction_diagnostics
+from continuous_rc_closed_links_proof import canonical_receipt, reproduction_diagnostics
 
 D=Path(__file__).resolve().parent
 ROOT=D.parents[2]
@@ -118,6 +118,14 @@ def proof():
     return r
 
 
+def canonical_comparison_receipt(result):
+    receipt=canonical_receipt(result)
+    receipt['sourcePortal']=result['sourcePortal']
+    receipt['receiptPrecision']['schema']='str-portal-derived-receipt-precision/1'
+    receipt['receiptPrecision']['authoredCaseAndSourceIdentities']='Exact and unrounded, including sourcePortal'
+    return receipt
+
+
 def render_section(result):
     p=result['sourcePortal'];a=result['A'];b=result['B'];pieces=[]
     def chart(origin,kind):
@@ -152,7 +160,7 @@ def render_section(result):
 
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');args=parser.parse_args();result=proof();text=json.dumps(result,indent=2)+'\n';out=D/'portal-architectural-simplification.json'
+    parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');args=parser.parse_args();result=proof();text=json.dumps(canonical_comparison_receipt(result),indent=2,allow_nan=False)+'\n';out=D/'portal-architectural-simplification.json'
     svg=render_section(result);drawing=D/'portal-architectural-simplification.svg'
     if args.check:
         differences={name:reproduction_diagnostics(path.read_text(),actual) for name,path,actual in (

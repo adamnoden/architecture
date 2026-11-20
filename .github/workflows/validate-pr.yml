@@ -35,7 +35,12 @@ jobs:
       - name: Verify cage geometry evidence before full validation
         run: |
           python -B project/str/studies/continuous_rc_closed_links_proof.py --check
-          python -B project/str/studies/portal_architectural_simplification.py --check
+          python -B -m unittest discover -s project/str/studies -p portal_architectural_simplification_test.py
+          if ! python -B project/str/studies/portal_architectural_simplification.py --check; then
+            python -B project/str/studies/portal_architectural_simplification.py
+            git --no-pager -c color.ui=false diff --no-ext-diff -- project/str/studies/portal-architectural-simplification.json project/str/studies/portal-architectural-simplification.svg
+            exit 1
+          fi
 
       - name: Setup Node
         uses: actions/setup-node@v7
