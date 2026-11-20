@@ -48,9 +48,9 @@ function pagesContaining(pages: readonly string[], value: string): number[] {
   return pages.flatMap((page, index) => page.includes(needle) ? [index + 1] : [])
 }
 
-function expectPages(label: string, actual: readonly number[], expected: readonly number[]): void {
+function expectPages(label: string, actual: readonly number[], expected: readonly number[], detail = ''): void {
   if (actual.length !== expected.length || actual.some((page, index) => page !== expected[index])) {
-    throw new Error(`${label}: expected pages ${expected.join('/')}, got ${actual.join('/') || 'none'}.`)
+    throw new Error(`${label}: expected pages ${expected.join('/')}, got ${actual.join('/') || 'none'}.${detail ? '\n' + detail : ''}`)
   }
 }
 
@@ -65,7 +65,8 @@ for (const placement of publicationPlatePlacements()) {
   const located = placement.views.map((view) => {
     const titlePages = pagesContaining(workingPages, view.title)
     const captionPages = pagesContaining(workingPages, view.caption)
-    expectPages(`${view.title} caption`, captionPages, titlePages)
+    expectPages(`${view.title} caption`, captionPages, titlePages,
+      `Expected caption: ${normalized(view.caption)}\nTitle-page text:\n${titlePages.map(page => '[' + page + '] ' + workingPages[page - 1]).join('\n')}`)
 
     if (pagesContaining(primerPages, view.title).length > 0 || pagesContaining(primerPages, view.caption).length > 0) {
       throw new Error(`${view.title}: controlled Part IV plate leaked into the Primer.`)
