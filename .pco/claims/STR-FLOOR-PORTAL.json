@@ -9,8 +9,8 @@
     "label": "convergence-resumed-20261120"
   },
   "claimedAt": "2026-11-20T07:38:27.612Z",
-  "heartbeatAt": "2026-11-20T17:39:28.000Z",
-  "expiresAt": "2026-11-20T18:24:28.000Z",
+  "heartbeatAt": "2026-11-20T17:52:13.000Z",
+  "expiresAt": "2026-11-20T18:37:13.000Z",
   "branch": "work/convergence-gravity-house-20261120",
   "predecessor": {
     "leaseId": "dec44b72-4e34-40df-8172-25ba1d1a5e53",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1598 head2ae39d22: prior26head full health/all619tests passed; final plate rhythm found principal-section caption text mismatch. Complete publication gates now run in parallel with health, and preflight needs both. Physics and admitted sources unchanged.",
-    "next": "Read extracted caption diagnostic, fix its owning source/parser with a regression, then require final exact-head full health/publication and fresh dual preflight; merge and verify site recovery.",
-    "blocker": "Workspace unavailable. STR/HAD/roof/whole-house gates remain open; later A/foundation/roof/wet/enclosure source partly local. Caption correspondence remains unproved."
+    "evidence": "PR1598 head04cd6d89 fixes the observed reinforced- concrete extraction gap. Native caption regressions and complete parallel publication validation pass: metadata, plate rhythm and rendered adversarial checks. Final health/atlas checks continue.",
+    "next": "Finish final-head health/atlas and fresh dual preflight; merge1598, retire recovery ref, verify counts/site, then release with1597handoff at the workspace blocker.",
+    "blocker": "Workspace unavailable. No STR/HAD/roof/whole-house closeout; later A/foundation/roof/wet/enclosure sources partly local. Owner/material/physical/professional acceptance remains open."
   },
   "pr": 1598
 }
