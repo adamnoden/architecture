@@ -8,6 +8,7 @@ import { readStructuralDpcOriginSettings } from './structural-dpc.js'
 import { compileInletAssembly, readInletAssemblySettings } from './inlet-assembly.js'
 import { readFixedInletSettings } from './inlet-fixed-entry.js'
 import { joinedRcFloorStageFields, savedJoinedRcFloorCase } from './structural-rc-floor.js'
+import { verticalRcFloorStageFields, savedVerticalRcFloorCase } from './structural-vertical-floor.js'
 
 const repository = new URL('../../../', import.meta.url)
 const implementationRoots = [
@@ -38,13 +39,18 @@ const additionalImplementationFiles = [
   'project/str/studies/retained-contact.py',
   'project/str/studies/dry_side_ground_section.py',
   'project/had/studies/closed_service_floor.py',
+  'project/str/studies/vertical_rc_floor.py',
+  'project/str/studies/vertical_floor_plate.py',
+  'project/str/studies/vertical_floor_numerics.py',
+  'project/str/studies/vertical_floor_views.py',
+  'project/str/studies/vertical-floor-requirements.txt',
   'project/str/studies/distributed_floor_compatibility.py',
   'project/str/studies/perforated_floor_condensation.py',
   'project/str/studies/distributed_floor_views.py',
   'project/mat/studies/ring-roof-pitch-case.py',
 ] as const
-const stageKeys = ['structuralSuccessor', 'distributedFloor', 'joinedRcFloor', 'retainedComponents', 'groundSection', 'serviceFloor', 'roofPitch', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'fixedInlet', 'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit'] as const
-const sourceDatumStages = ['occupiedServices', 'selectedWaterEvent', 'structuralSuccessor', 'distributedFloor', 'joinedRcFloor',
+const stageKeys = ['structuralSuccessor', 'distributedFloor', 'joinedRcFloor', 'verticalRcFloor', 'retainedComponents', 'groundSection', 'houseVerticalProfile', 'serviceFloor', 'roofPitch', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'fixedInlet', 'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit'] as const
+const sourceDatumStages = ['occupiedServices', 'selectedWaterEvent', 'structuralSuccessor', 'distributedFloor', 'joinedRcFloor', 'verticalRcFloor',
   'retainedComponents', 'roofPitch', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'fixedInlet',
   'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit'] as const
 type Settings = Readonly<Record<string, unknown>>
@@ -180,8 +186,10 @@ function admitStages(value: unknown): EngineeringStages {
     ...(Object.hasOwn(value, 'structuralSuccessor') ? { structuralSuccessor: settings(value.structuralSuccessor, successorFields, 'structural successor') } : {}),
     ...(Object.hasOwn(value, 'distributedFloor') ? { distributedFloor: settings(value.distributedFloor, distributedFields, 'distributed floor') } : {}),
     ...(Object.hasOwn(value, 'joinedRcFloor') ? { joinedRcFloor: settings(value.joinedRcFloor, joinedRcFloorStageFields, 'joined RC floor') } : {}),
+    ...(Object.hasOwn(value, 'verticalRcFloor') ? { verticalRcFloor: settings(value.verticalRcFloor, verticalRcFloorStageFields, 'vertical RC floor') } : {}),
     ...(Object.hasOwn(value, 'retainedComponents') ? { retainedComponents: settings(value.retainedComponents, retainedFields, 'retained components') } : {}),
     ...(Object.hasOwn(value, 'groundSection') ? { groundSection: settings(value.groundSection, ['caseId', 'settings'], 'ground section') } : {}),
+    ...(Object.hasOwn(value, 'houseVerticalProfile') ? { houseVerticalProfile: settings(value.houseVerticalProfile, [], 'house vertical profile') } : {}),
     ...(Object.hasOwn(value, 'serviceFloor') ? { serviceFloor: settings(value.serviceFloor, ['caseId', 'settings'], 'service floor') } : {}),
     ...(Object.hasOwn(value, 'roofPitch') ? { roofPitch: settings(value.roofPitch, ['pitchDeg'], 'roof pitch') } : {}),
     ...(Object.hasOwn(value, 'northCollector') ? { northCollector: settings(value.northCollector, northFields, 'north collector') } : {}),
@@ -208,6 +216,7 @@ export async function compileEngineeringDocument(input: unknown) {
     throw new Error('Stale engineering source or implementation binding; explicitly read and review a refreshed document')
   }
   const stages = admitStages(input.stages)
+  if (stages.houseVerticalProfile && !stages.groundSection) throw new Error('The house vertical profile requires the sole saved groundSection stage')
   if (stages.serviceFloor && !stages.groundSection) throw new Error('The service floor requires an explicit saved groundSection stage; its floor levels cannot be supplied independently')
   const document = { schema: input.schema, design: resolved.design, bindings: observedBindings, stages }
   const documentIdentity = {
@@ -219,8 +228,10 @@ export async function compileEngineeringDocument(input: unknown) {
     structuralSuccessor?: Awaited<ReturnType<typeof compile.structuralSuccessorCase>>
     distributedFloor?: Awaited<ReturnType<typeof compile.distributedFloorCase>>
     joinedRcFloor?: Awaited<ReturnType<typeof compile.joinedRcFloorCase>>
+    verticalRcFloor?: Awaited<ReturnType<typeof compile.verticalRcFloorCase>>
     retainedComponents?: Awaited<ReturnType<typeof compile.retainedComponentCase>>
     groundSection?: Awaited<ReturnType<typeof compile.groundSectionCase>>
+    houseVerticalProfile?: Awaited<ReturnType<typeof compile.houseVerticalProfileCase>>
     serviceFloor?: Awaited<ReturnType<typeof compile.serviceFloorCase>>
     roofPitch?: Awaited<ReturnType<typeof compile.roofPitch>>
     northCollector?: Awaited<ReturnType<typeof compile.northCollectorCase>>
@@ -234,7 +245,7 @@ export async function compileEngineeringDocument(input: unknown) {
     studyRoomKit?: Awaited<ReturnType<typeof compile.studyRoomKit>>
   } = {}
   const manifest: { stage: string; settingsDigest: string; resultDigest: string; controls: readonly string[]; dependsOn: readonly string[];
-    applicability?: { state: 'withheld-for-stage-change'; controllingStage: 'roofPitch' | 'groundSection' | 'joinedRcFloor';
+    applicability?: { state: 'withheld-for-stage-change'; controllingStage: 'roofPitch' | 'groundSection' | 'joinedRcFloor' | 'verticalRcFloor';
       additionalControllingStages?: readonly string[]; reason: string } }[] = []
   const coordinationDiagnostics: { code: string; state: 'uncoordinated-comparisons'; stages: readonly string[]; message: string }[] = []
   const recordResult = (stage: string, settings: unknown, result: unknown, upstream: readonly string[] = []) => {
@@ -284,6 +295,21 @@ export async function compileEngineeringDocument(input: unknown) {
     component.applicability = { state: 'withheld-for-stage-change', controllingStage: 'joinedRcFloor',
       reason: 'The shared floor geometry feeds the joined portal. This separate floor-component replay retains its surrogate northern receivers and pressure boundary; its head actions are not the joined RC response. Use the joinedRcFloor result for this assembled comparison.' }
   }
+  if (stages.verticalRcFloor) {
+    const request = await compile.readVerticalRcFloorCase()
+    engineering.verticalRcFloor = await compile.verticalRcFloorCase(savedVerticalRcFloorCase(request.vertical,
+      stages.verticalRcFloor, sharedDistributedFloor))
+    recordResult('verticalRcFloor', stages.verticalRcFloor, engineering.verticalRcFloor, ['distributedFloor'])
+    const component = manifest.find(row => row.stage === 'distributedFloor')!
+    component.applicability = { state: 'withheld-for-stage-change', controllingStage: 'verticalRcFloor',
+      reason: 'The shared aperture geometry feeds the vertical RC plate. The separate membrane replay excludes actual plate bending and gravity; use verticalRcFloor for its coupled vertical comparison. Neither result supplies missing receiving resistance or installed acceptance.' }
+    const joined = manifest.find(row => row.stage === 'joinedRcFloor')
+    if (joined) {
+      joined.dependsOn = [...joined.dependsOn, 'verticalRcFloor']
+      joined.applicability = { state: 'withheld-for-stage-change', controllingStage: 'verticalRcFloor',
+        reason: 'This earlier joined portal replay omits the actual vertical plate self-weight and finite clear-core normal bearings. It cannot be combined with or substitute for the verticalRcFloor head response.' }
+    }
+  }
   if (stages.retainedComponents) {
     const request = await compile.readRetainedComponentCase()
     engineering.retainedComponents = await compile.retainedComponentCase({ ...request.retained,
@@ -299,6 +325,13 @@ export async function compileEngineeringDocument(input: unknown) {
     const request = await compile.readGroundSectionCase()
     engineering.groundSection = await compile.groundSectionCase({ ...request.ground, ...stages.groundSection })
     recordResult('groundSection', stages.groundSection, engineering.groundSection)
+  }
+  if (stages.houseVerticalProfile) {
+    if (!engineering.groundSection) throw new Error('The house vertical profile requires its computed ground section')
+    const request = await compile.readHouseVerticalProfileCase()
+    engineering.houseVerticalProfile = await compile.houseVerticalProfileCase({ ...request.profile,
+      groundCase: engineering.groundSection.authoredCase })
+    recordResult('houseVerticalProfile', stages.houseVerticalProfile, engineering.houseVerticalProfile, ['groundSection'])
   }
   if (stages.serviceFloor) {
     if (!engineering.groundSection) throw new Error('The service floor requires its computed saved groundSection stage')
@@ -410,12 +443,12 @@ export async function compileEngineeringDocument(input: unknown) {
       row.applicability = { state: 'withheld-for-stage-change', controllingStage: 'groundSection',
         ...(previous ? { additionalControllingStages: [...new Set([previous.controllingStage,
           ...(previous.additionalControllingStages ?? [])])].filter(value => value !== 'groundSection') } : {}),
-        reason: [previous?.reason, row.stage === 'joinedRcFloor' ? rcReason : sourceReason].filter(Boolean).join(' ') }
+        reason: [previous?.reason, ['joinedRcFloor', 'verticalRcFloor'].includes(row.stage) ? rcReason : sourceReason].filter(Boolean).join(' ') }
     }
     coordinationDiagnostics.push({ code: 'GROUND_STAGE_OUTPUTS_NOT_COORDINATED', state: 'uncoordinated-comparisons',
       stages: ['groundSection', ...affected.map(row => row.stage)], message: sourceReason })
-    if (engineering.joinedRcFloor) coordinationDiagnostics.push({ code: 'RC_GROUND_DATUM_NOT_COORDINATED',
-      state: 'uncoordinated-comparisons', stages: ['joinedRcFloor', 'groundSection'], message: rcReason })
+    if (engineering.joinedRcFloor || engineering.verticalRcFloor) coordinationDiagnostics.push({ code: 'RC_GROUND_DATUM_NOT_COORDINATED',
+      state: 'uncoordinated-comparisons', stages: [...(engineering.joinedRcFloor ? ['joinedRcFloor'] : []), ...(engineering.verticalRcFloor ? ['verticalRcFloor'] : []), 'groundSection'], message: rcReason })
   }
   const completedBindings = sourceBindings(resolveCurrentDesign(resolved.design))
   if (stableJsonStringify(completedBindings) !== stableJsonStringify(observedBindings)) {

@@ -2,7 +2,7 @@
 
 The Reference House is not a prototype offered as proof, nor a model house intended for repetition. It is a worked interpretation: one contemporary family house in which the propositions of Ovid’s House are forced to coexist with an architectural language, a programme, a structure, an envelope, services, weather, maintenance and the ordinary inconveniences of occupation.
 
-The worked house tests how general propositions interact in a specific arrangement. Current-house plans and conditional Study room comparisons appear through the current drawing pipeline. Historical predecessor illustrations remain outside this edition. The room comparisons do not establish whole-house technical acceptance; the current source and its coordination limits are described in the [Current House Basis](../reference-house/current-house-basis.md).
+The worked house tests how general propositions interact in a specific arrangement. Current-house plans and conditional Study room comparisons appear through the current drawing pipeline. The current front elevation and principal section also appear at nominal architectural scope; their floor, foundation and roof assemblies remain provisional. Historical predecessor illustrations remain outside this edition. These views do not establish whole-house technical acceptance; the current source and its coordination limits are described in the [Current House Basis](../reference-house/current-house-basis.md).
 
 The Reference House therefore carries several authorities at once. Ovid’s House supplies the long-life architectural position. The pattern set supplies reusable responses, with the service-topology family providing the strongest current generative sequence. G-01 supplies a bounded Georgian-derived grammar. The courtyard is a project morphology. The material and tectonic choices belong to this house. Technical systems remain project selections rather than doctrine. None of these authorities is allowed to absorb the others.
 
@@ -42,7 +42,7 @@ The environmental reading is explicit: the courtyard is a shaded light court and
 
 The programme is contemporary family occupation, not reconstructed Georgian domestic life.
 
-The ground floor has a study and cloakroom at the west front, WC and utility at the east front, an eastern plant room and pantry, a north-east kitchen and a north/west family-dining space. The centred entrance, two courtyard doors and garden opening form a direct route through the house.
+The ground floor has a study and cloakroom at the west front, WC and utility at the east front, an eastern plant room and pantry, a north-east kitchen and a north/west family-dining space. The centred entrance, two courtyard doors and garden opening form a direct route through the house. The nominal plans retain a dedicated pantry. A separate outdoor service-passage proposal replaces it with kitchen larder storage; that arrangement has not been reconciled with these plans.
 
 Four bedrooms occupy the upper floor, with a family bathroom and two en-suite reservations along the service side. The small en suite remains unfitted; its sanitary, access and drainage feasibility is an open design question. An entry void and bridge replace part of the first floor. The earlier deletion of a remote en suite remains a useful historical lesson, not a description of the current programme.
 

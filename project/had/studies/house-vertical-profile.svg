@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="2160" viewBox="0 0 1800 2160">
+<rect width="1800" height="2160" fill="#faf8f1"/><g font-family="sans-serif" fill="#263b42">
+<text x="45" y="40" font-size="26">Whole-house vertical proposal · one authored ground case per section</text>
+<text x="45" y="72" font-size="18">Fixed cold foundations; occupied levels move. No accepted roof profile, inherited structural forces or installed enclosure.</text>
+<text x="55" y="115" font-size="21">Ground FFL530 · service zone65</text>
+<path d="M55,1013.5 L815,1013.5" fill="none" stroke="#8d704b" stroke-width="2"/>
+<text x="485" y="1035.5" font-size="14">Authored grade-150; actual site unknown</text>
+<rect x="165" y="667.0" width="24" height="301.5" fill="#c6c6b1" stroke="#536b70"/>
+<rect x="165" y="1000.0" width="320" height="16.2" fill="#8eaaa6" stroke="#536b70"/>
+<rect x="165" y="986.5" width="320" height="13.5" fill="#d3b77f" stroke="#536b70"/>
+<rect x="165" y="968.5" width="320" height="18.0" fill="#a4b7b4" stroke="#536b70"/>
+<rect x="165" y="959.5" width="320" height="9.0" fill="#e5d79c" stroke="#536b70"/>
+<rect x="165" y="953.65" width="320" height="5.85" fill="#e9ebdb" stroke="#536b70"/>
+<rect x="165" y="952.3" width="320" height="1.3499999999999999" fill="#8b7f6e" stroke="#536b70"/>
+<rect x="165" y="649.0" width="320" height="18.0" fill="#a4b7b4" stroke="#536b70"/>
+<path d="M177,641.8 L177,331.30000000000007" fill="none" stroke="#9a9c8a" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="205" y="486.55000000000007" font-size="13">Upper wall/roof termination not assigned</text>
+<path d="M190,1016.2 L505,1016.2" fill="none" stroke="#49636a" stroke-width="2"/>
+<text x="510" y="1012.2" font-size="14">Coldgrid/captop fixed -180</text>
+<path d="M190,952.3 L505,952.3" fill="none" stroke="#49636a" stroke-width="2"/>
+<text x="510" y="948.3" font-size="14">Ground occupied 530</text>
+<path d="M190,667.0 L505,667.0" fill="none" stroke="#49636a" stroke-width="2"/>
+<text x="510" y="663.0" font-size="14">First RC soffit 3700</text>
+<path d="M190,641.8 L505,641.8" fill="none" stroke="#49636a" stroke-width="2"/>
+<text x="510" y="637.8" font-size="14">First FFL 3980</text>
+<path d="M190,331.30000000000007 L505,331.30000000000007" fill="none" stroke="#49636a" stroke-width="2"/>
+<text x="510" y="327.30000000000007" font-size="14">Attic DATUM: floor unproved 7430</text>
+<path d="M155,358.30000000000007 L455,358.30000000000007" fill="none" stroke="#a6624f" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="460" y="355.30000000000007" font-size="13">STR-ring-centre 7130.0</text>
+<path d="M155,313.30000000000007 L455,313.30000000000007" fill="none" stroke="#a6624f" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="460" y="310.30000000000007" font-size="13">HAD-weather-eave 7630.0</text>
+<path d="M155,284.64190096228333 L455,284.64190096228333" fill="none" stroke="#a6624f" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="460" y="281.64190096228333" font-size="13">MAT-required-wall-line 7948.4</text>
+<path d="M155,174.22056139228334 L455,174.22056139228334" fill="none" stroke="#a6624f" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="460" y="171.22056139228334" font-size="13">MAT-weather-cap-apex 9175.3</text>
+<text x="55" y="1050" font-size="16">First height above authored grade 4130; storey interval3450.</text>
+<text x="55" y="1078" font-size="16">Cap-to-first-soffit core height3880; no source3350 reuse.</text>
+<text x="55" y="1106" font-size="15">Front 1:20: rise680, sloping run13600, reservation17200.</text>
+<text x="55" y="1134" font-size="14">Wet plinth[-180, 0]; mineral[0, 150]; RC[150, 350]; glass[350, 450].</text>
+<text x="55" y="1162" font-size="14">Service[450, 515]; finish[515, 530]; waterstop CONCEPT[130, 150].</text>
+<text x="55" y="1190" font-size="15">North arch spring2780; crown3380.</text>
+<text x="55" y="1218" font-size="15">Exposed grade-to-FFL envelope680; no walking-plane occlusion credit.</text>
+<text x="55" y="1480" font-size="19">Ground detail · source900-wide spine girder /140 core</text>
+<rect x="70.0" y="1963.0" width="450.0" height="157.5" fill="#8eaaa6" stroke="#536b70"/>
+<rect x="70.0" y="1900.0" width="450.0" height="62.99999999999999" fill="#8eaaa6" stroke="#536b70"/>
+<rect x="70.0" y="1847.5" width="450.0" height="52.5" fill="#d3b77f" stroke="#536b70"/>
+<rect x="70.0" y="1777.5" width="450.0" height="70.0" fill="#a4b7b4" stroke="#536b70"/>
+<rect x="330.0" y="1742.5" width="190.0" height="35.0" fill="#e5d79c" stroke="#536b70"/>
+<rect x="330.0" y="1719.75" width="190.0" height="22.75" fill="#e9ebdb" stroke="#536b70"/>
+<rect x="330.0" y="1714.5" width="190.0" height="5.25" fill="#8b7f6e" stroke="#536b70"/>
+<rect x="260.0" y="1574.5" width="70.0" height="203.0" fill="#c6c6b1" stroke="#536b70"/>
+<path d="M520.0,1714.5 L555,1714.5" fill="none" stroke="#49636a" stroke-width="2"/>
+<text x="560" y="1719.5" font-size="13">FFL 530</text>
+<path d="M520.0,1777.5 L555,1777.5" fill="none" stroke="#49636a" stroke-width="2"/>
+<text x="560" y="1782.5" font-size="13">RCtop /wallbase 350</text>
+<path d="M520.0,1847.5 L555,1847.5" fill="none" stroke="#49636a" stroke-width="2"/>
+<text x="560" y="1852.5" font-size="13">DryRCbase /mineral top 150</text>
+<path d="M520.0,1900.0 L555,1900.0" fill="none" stroke="#49636a" stroke-width="2"/>
+<text x="560" y="1905.0" font-size="13">Mineralbase /wetplinthtop 0</text>
+<path d="M520.0,1963.0 L555,1963.0" fill="none" stroke="#49636a" stroke-width="2"/>
+<text x="560" y="1968.0" font-size="13">Retained coldgridtop -180</text>
+<path d="M70.0,1851.0 L520.0,1851.0" fill="none" stroke="#a6624f" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="55" y="2140" font-size="13">Dashed red: new top20 waterstop concept. No hidden continuous bars or accepted air/water joint.</text>
+<text x="930" y="115" font-size="21">Ground FFL715 · service zone250</text>
+<path d="M930,1013.5 L1690,1013.5" fill="none" stroke="#8d704b" stroke-width="2"/>
+<text x="1360" y="1035.5" font-size="14">Authored grade-150; actual site unknown</text>
+<rect x="1040" y="650.35" width="24" height="318.15" fill="#c6c6b1" stroke="#536b70"/>
+<rect x="1040" y="1000.0" width="320" height="16.2" fill="#8eaaa6" stroke="#536b70"/>
+<rect x="1040" y="986.5" width="320" height="13.5" fill="#d3b77f" stroke="#536b70"/>
+<rect x="1040" y="968.5" width="320" height="18.0" fill="#a4b7b4" stroke="#536b70"/>
+<rect x="1040" y="959.5" width="320" height="9.0" fill="#e5d79c" stroke="#536b70"/>
+<rect x="1040" y="937.0" width="320" height="22.5" fill="#e9ebdb" stroke="#536b70"/>
+<rect x="1040" y="935.65" width="320" height="1.3499999999999999" fill="#8b7f6e" stroke="#536b70"/>
+<rect x="1040" y="632.35" width="320" height="18.0" fill="#a4b7b4" stroke="#536b70"/>
+<path d="M1052,625.1500000000001 L1052,314.65" fill="none" stroke="#9a9c8a" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="1080" y="469.9" font-size="13">Upper wall/roof termination not assigned</text>
+<path d="M1065,1016.2 L1380,1016.2" fill="none" stroke="#49636a" stroke-width="2"/>
+<text x="1385" y="1012.2" font-size="14">Coldgrid/captop fixed -180</text>
+<path d="M1065,935.65 L1380,935.65" fill="none" stroke="#49636a" stroke-width="2"/>
+<text x="1385" y="931.65" font-size="14">Ground occupied 715</text>
+<path d="M1065,650.35 L1380,650.35" fill="none" stroke="#49636a" stroke-width="2"/>
+<text x="1385" y="646.35" font-size="14">First RC soffit 3885</text>
+<path d="M1065,625.1500000000001 L1380,625.1500000000001" fill="none" stroke="#49636a" stroke-width="2"/>
+<text x="1385" y="621.1500000000001" font-size="14">First FFL 4165</text>
+<path d="M1065,314.65 L1380,314.65" fill="none" stroke="#49636a" stroke-width="2"/>
+<text x="1385" y="310.65" font-size="14">Attic DATUM: floor unproved 7615</text>
+<path d="M1030,341.65 L1330,341.65" fill="none" stroke="#a6624f" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="1335" y="338.65" font-size="13">STR-ring-centre 7315.0</text>
+<path d="M1030,296.65 L1330,296.65" fill="none" stroke="#a6624f" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="1335" y="293.65" font-size="13">HAD-weather-eave 7815.0</text>
+<path d="M1030,267.99190096228324 L1330,267.99190096228324" fill="none" stroke="#a6624f" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="1335" y="264.99190096228324" font-size="13">MAT-required-wall-line 8133.4</text>
+<path d="M1030,157.57056139228337 L1330,157.57056139228337" fill="none" stroke="#a6624f" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="1335" y="154.57056139228337" font-size="13">MAT-weather-cap-apex 9360.3</text>
+<text x="930" y="1050" font-size="16">First height above authored grade 4315; storey interval3450.</text>
+<text x="930" y="1078" font-size="16">Cap-to-first-soffit core height4065; no source3350 reuse.</text>
+<text x="930" y="1106" font-size="15">Front 1:20: rise865, sloping run17300, reservation20900.</text>
+<text x="930" y="1134" font-size="14">Wet plinth[-180, 0]; mineral[0, 150]; RC[150, 350]; glass[350, 450].</text>
+<text x="930" y="1162" font-size="14">Service[450, 700]; finish[700, 715]; waterstop CONCEPT[130, 150].</text>
+<text x="930" y="1190" font-size="15">North arch spring2965; crown3565.</text>
+<text x="930" y="1218" font-size="15">Exposed grade-to-FFL envelope865; no walking-plane occlusion credit.</text>
+<text x="930" y="1480" font-size="19">Ground detail · source900-wide spine girder /140 core</text>
+<rect x="945.0" y="1963.0" width="450.0" height="157.5" fill="#8eaaa6" stroke="#536b70"/>
+<rect x="945.0" y="1900.0" width="450.0" height="62.99999999999999" fill="#8eaaa6" stroke="#536b70"/>
+<rect x="945.0" y="1847.5" width="450.0" height="52.5" fill="#d3b77f" stroke="#536b70"/>
+<rect x="945.0" y="1777.5" width="450.0" height="70.0" fill="#a4b7b4" stroke="#536b70"/>
+<rect x="1205.0" y="1742.5" width="190.0" height="35.0" fill="#e5d79c" stroke="#536b70"/>
+<rect x="1205.0" y="1655.0" width="190.0" height="87.5" fill="#e9ebdb" stroke="#536b70"/>
+<rect x="1205.0" y="1649.75" width="190.0" height="5.25" fill="#8b7f6e" stroke="#536b70"/>
+<rect x="1135.0" y="1509.75" width="70.0" height="267.75" fill="#c6c6b1" stroke="#536b70"/>
+<path d="M1395.0,1649.75 L1430,1649.75" fill="none" stroke="#49636a" stroke-width="2"/>
+<text x="1435" y="1654.75" font-size="13">FFL 715</text>
+<path d="M1395.0,1777.5 L1430,1777.5" fill="none" stroke="#49636a" stroke-width="2"/>
+<text x="1435" y="1782.5" font-size="13">RCtop /wallbase 350</text>
+<path d="M1395.0,1847.5 L1430,1847.5" fill="none" stroke="#49636a" stroke-width="2"/>
+<text x="1435" y="1852.5" font-size="13">DryRCbase /mineral top 150</text>
+<path d="M1395.0,1900.0 L1430,1900.0" fill="none" stroke="#49636a" stroke-width="2"/>
+<text x="1435" y="1905.0" font-size="13">Mineralbase /wetplinthtop 0</text>
+<path d="M1395.0,1963.0 L1430,1963.0" fill="none" stroke="#49636a" stroke-width="2"/>
+<text x="1435" y="1968.0" font-size="13">Retained coldgridtop -180</text>
+<path d="M945.0,1851.0 L1395.0,1851.0" fill="none" stroke="#a6624f" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="930" y="2140" font-size="13">Dashed red: new top20 waterstop concept. No hidden continuous bars or accepted air/water joint.</text>
+<text x="45" y="1278" font-size="19">Roof lines are separate arithmetic assembly references. Weather roof shape and complete house height are withheld.</text>
+<text x="45" y="1314" font-size="18">Ground floor/wall closure, outside wet leaf, DPC/air/gas/thermal returns and new receiving load path remain unresolved.</text>
+<text x="45" y="1350" font-size="18">Source firstFFL3450 = RC3370 +80. Ground/first occupied interval3450 is preserved, not compressed to source RCtop.</text>
+<text x="45" y="1386" font-size="18">No transplanted source52 forces, old lower-post stiffness, wind pressures, roof actions or capacity verdict.</text>
+<text x="45" y="1422" font-size="18">Front step count/going is withheld: no actual step geometry is authored. Ramp reservations are source-derived comparisons.</text>
+</g></svg>

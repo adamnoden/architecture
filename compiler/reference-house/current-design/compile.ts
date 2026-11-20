@@ -120,6 +120,14 @@ export function prepareCurrentDesignCompile(input: unknown) {
       const { readGroundSectionCase } = await import('./structural-ground.js')
       return readGroundSectionCase(resolved)
     },
+    readHouseVerticalProfileCase: async () => {
+      const { readHouseVerticalProfileCase } = await import('./house-vertical-profile.js')
+      return readHouseVerticalProfileCase(resolved)
+    },
+    houseVerticalProfileCase: async (input: unknown) => {
+      const { runHouseVerticalProfileCase } = await import('./house-vertical-profile.js')
+      return runHouseVerticalProfileCase(resolved, input)
+    },
     groundSectionCase: async (input: unknown) => {
       const { runGroundSectionCase } = await import('./structural-ground.js')
       return runGroundSectionCase(resolved, input)
@@ -139,6 +147,14 @@ export function prepareCurrentDesignCompile(input: unknown) {
     readJoinedRcFloorCase: async () => {
       const { readJoinedRcFloorCase } = await import('./structural-rc-floor.js')
       return readJoinedRcFloorCase(resolved)
+    },
+    readVerticalRcFloorCase: async () => {
+      const { readVerticalRcFloorCase } = await import('./structural-vertical-floor.js')
+      return readVerticalRcFloorCase(resolved)
+    },
+    verticalRcFloorCase: async (input: unknown) => {
+      const { runVerticalRcFloorCase } = await import('./structural-vertical-floor.js')
+      return runVerticalRcFloorCase(resolved, input)
     },
     joinedRcFloorCase: async (input: unknown) => {
       const { runJoinedRcFloorCase } = await import('./structural-rc-floor.js')

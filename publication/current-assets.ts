@@ -3,7 +3,8 @@ import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { prepareCurrentDesignCompile } from '../compiler/reference-house/current-design/compile.js'
-import { readGeorgianDesignSnapshot } from '../compiler/reference-house/current-design/georgian-source.js'
+import { createLayoutFamilyScene, layoutFamilySource } from '../compiler/reference-house/georgian/layout-family.js'
+import { readGeorgianDesignSnapshot, requireGeorgianDesignBasis } from '../compiler/reference-house/current-design/georgian-source.js'
 import { renderDrawingSceneV2SvgWithTokens } from '../compiler/publication-drawing-v2/svg.js'
 import { PLT_CANDIDATE_TOKENS } from '../compiler/publication-drawing-v2/plt-candidate-tokens.js'
 import { createPrimerGroundPlanScene } from './primer/figure.js'
@@ -11,6 +12,7 @@ import { translateDrawingPrimitive } from '../compiler/publication-drawing-v2/co
 
 export const currentPublicationAssetPaths = [
   'publication/current/ground-plan.svg', 'publication/current/first-plan.svg',
+  'publication/current/front-elevation.svg', 'publication/current/principal-section.svg',
   'publication/current/study-fixed.svg', 'publication/current/study-timber.svg', 'publication/current/study-tile.svg',
 ] as const
 
@@ -34,6 +36,18 @@ export function compilePublicationPlanAssets(input: unknown, scope: 'current' | 
   })
   return { source: plans.source, state: plans.status, scope, method: plans.method, assets,
     diagnostics: plans.diagnostics }
+}
+
+export function compilePublicationArchitectureAssets(input: unknown) {
+  const source = requireGeorgianDesignBasis(input).source
+  const scenes = (['FRONT', 'PRINCIPAL'] as const).map(view => createLayoutFamilyScene(view, 100))
+  return {
+    source,
+    method: { path: 'compiler/reference-house/georgian/layout-family.ts', sourceId: layoutFamilySource.id,
+      sourceFingerprint: digest(JSON.stringify(layoutFamilySource)), viewIds: scenes.map(scene => scene.viewId) },
+    assets: scenes.map((scene, index) => ({ path: currentPublicationAssetPaths[index + 2],
+      svg: renderDrawingSceneV2SvgWithTokens(scene, planTokens) + '\n' })),
+  }
 }
 
 export function blackOnlyPublicationSvg(svg: string) {
@@ -62,21 +76,24 @@ export function frameFurnishedStudy(svg: string, view: 'fixed' | 'timber' | 'til
 
 export function buildCurrentPublicationAssets(repoRoot: string, input: unknown = readGeorgianDesignSnapshot()) {
   const plans = compilePublicationPlanAssets(input)
+  const architecture = compilePublicationArchitectureAssets(input)
   const producer = 'project/ias/studies/crafted-study-views.mjs'
   execFileSync(process.execPath, ['--import', 'tsx', producer, '--check'], { cwd: repoRoot, stdio: ['ignore', 'pipe', 'pipe'] })
   const comparisonPath = 'project/ias/studies/crafted-study-comparison.svg'
   const tilePath = 'project/ias/studies/crafted-study-tile.svg'
   const comparison = readFileSync(resolve(repoRoot, comparisonPath), 'utf8')
   const tile = readFileSync(resolve(repoRoot, tilePath), 'utf8')
-  const assets = [...plans.assets,
-    { path: currentPublicationAssetPaths[2], svg: frameFurnishedStudy(comparison, 'fixed') },
-    { path: currentPublicationAssetPaths[3], svg: frameFurnishedStudy(comparison, 'timber') },
-    { path: currentPublicationAssetPaths[4], svg: frameFurnishedStudy(tile, 'tile') },
+  const assets = [...plans.assets, ...architecture.assets,
+    { path: currentPublicationAssetPaths[4], svg: frameFurnishedStudy(comparison, 'fixed') },
+    { path: currentPublicationAssetPaths[5], svg: frameFurnishedStudy(comparison, 'timber') },
+    { path: currentPublicationAssetPaths[6], svg: frameFurnishedStudy(tile, 'tile') },
   ]
   return {
     schema: 'current-publication-assets/1' as const, source: plans.source,
     nominalPlanMethod: plans.method,
-    scope: 'Two current nominal plans and three conditional owner-review room comparisons. The occupied Study opening set-out is not adopted into the nominal plans. No roof/section reconciliation or technical, physical or owner acceptance.',
+    architecturalDrawingMethod: { ...architecture.method,
+      sha256: digest(readFileSync(resolve(repoRoot, architecture.method.path), 'utf8')) },
+    scope: 'Two current nominal plans, a nominal front elevation and principal section, and three conditional owner-review room comparisons. The occupied Study opening set-out is not adopted into the nominal plans. Floor, foundation and roof assemblies remain provisional; these architectural views do not adopt structural candidates or raised-ground engineering datums. No technical, physical or owner acceptance.',
     producerChecks: [{ path: producer, sha256: digest(readFileSync(resolve(repoRoot, producer), 'utf8')),
       inputArtwork: { [comparisonPath]: digest(comparison), [tilePath]: digest(tile) } }],
     assets: assets.map(asset => ({ ...asset, sha256: digest(asset.svg) })),
