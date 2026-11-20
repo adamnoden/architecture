@@ -9,8 +9,8 @@
     "label": "convergence-resumed-20261120"
   },
   "claimedAt": "2026-11-20T07:38:27.612Z",
-  "heartbeatAt": "2026-11-20T15:51:08.000Z",
-  "expiresAt": "2026-11-20T16:36:08.000Z",
+  "heartbeatAt": "2026-11-20T16:09:02.000Z",
+  "expiresAt": "2026-11-20T16:54:02.000Z",
   "branch": "work/convergence-gravity-house-20261120",
   "predecessor": {
     "leaseId": "dec44b72-4e34-40df-8172-25ba1d1a5e53",
