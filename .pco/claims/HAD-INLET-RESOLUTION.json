@@ -9,8 +9,8 @@
     "label": "convergence-inlet-resumed-20261120"
   },
   "claimedAt": "2026-11-20T07:39:02.850Z",
-  "heartbeatAt": "2026-11-20T08:58:32.304Z",
-  "expiresAt": "2026-11-20T10:28:32.304Z",
+  "heartbeatAt": "2026-11-20T09:12:26.104Z",
+  "expiresAt": "2026-11-20T10:42:26.104Z",
   "branch": "work/convergence-joined-structure-20261120",
   "predecessor": {
     "leaseId": "6d1a0dde-e1e3-4014-99e6-bac6f58d5756",
@@ -34,10 +34,10 @@
       "blocker": "Wet neck, group support/thermal andexact materialdisposition remain unproved; draftonly."
     }
   },
-  "pr": 1589,
+  "pr": 1596,
   "checkpoint": {
-    "evidence": "Consolidating tested5cb9d33c inlet default/save/CLI migration with source-bound floor and dry-ground methods on one coordinated integration branch;41inlet and12inventorytests pass; rejected incomplete thermal helper excluded",
-    "next": "Publish joint STR/HAD review head, bind its allocated PR number, run exact-head CI and both fresh canonical preflights; continue complete receiver/thermal engineering",
-    "blocker": "HAD remains incomplete: actual support, full tool motion, warm envelope, materials and installed duties open; no7Nwhole-route thermal admission"
+    "evidence": "PR1596 head53cfd27c tree6dbcbc67 durably combines fixed-inlet default/save/CLI migration with floor and ground methods;30 integrated tests and TypeScript pass; source1589 preserved as parent",
+    "next": "Require exact1596-head CI and fresh joint lease preflights; integrate corrected lower-plus-upper thermal wrenches and physically clear independent receiver after current merge",
+    "blocker": "HAD not complete: actual support/clamp/guide/tool, thermal envelope, wet joints and material duties open; no unqualified7Nwhole-route admission"
   }
 }
