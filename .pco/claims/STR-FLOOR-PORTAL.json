@@ -9,8 +9,8 @@
     "label": "convergence-resumed-20261120"
   },
   "claimedAt": "2026-11-20T07:38:27.612Z",
-  "heartbeatAt": "2026-11-20T17:11:38.000Z",
-  "expiresAt": "2026-11-20T17:56:38.000Z",
+  "heartbeatAt": "2026-11-20T17:39:28.000Z",
+  "expiresAt": "2026-11-20T18:24:28.000Z",
   "branch": "work/convergence-gravity-house-20261120",
   "predecessor": {
     "leaseId": "dec44b72-4e34-40df-8172-25ba1d1a5e53",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1598 head26c37160: all619compiler tests and exact-size atlas pass. Eight of10workflows pass; primary and ADE full health still running. Paired261A4/315B5book proof is green. Owning A/B serialization also fixes the observed failed5ef Pages receipt drift.",
-    "next": "Finish full exact-head health and fresh dual canonical preflight; merge1598, verify site/publication recovery and source-ref cleanup. Retain1597successor handoff and release at workspace blocker.",
-    "blocker": "Workspace unavailable. STR/HAD/roof/whole-house acceptance remains open; later A/foundation/roof/wet/enclosure sources partly local. No owner/physical/professional approval."
+    "evidence": "PR1598 head2ae39d22: prior26head full health/all619tests passed; final plate rhythm found principal-section caption text mismatch. Complete publication gates now run in parallel with health, and preflight needs both. Physics and admitted sources unchanged.",
+    "next": "Read extracted caption diagnostic, fix its owning source/parser with a regression, then require final exact-head full health/publication and fresh dual preflight; merge and verify site recovery.",
+    "blocker": "Workspace unavailable. STR/HAD/roof/whole-house gates remain open; later A/foundation/roof/wet/enclosure source partly local. Caption correspondence remains unproved."
   },
   "pr": 1598
 }
