@@ -9,8 +9,8 @@
     "label": "convergence-resumed-20261120"
   },
   "claimedAt": "2026-11-20T07:38:27.612Z",
-  "heartbeatAt": "2026-11-20T08:02:10.681Z",
-  "expiresAt": "2026-11-20T09:32:10.681Z",
+  "heartbeatAt": "2026-11-20T09:12:48.312Z",
+  "expiresAt": "2026-11-20T10:42:48.312Z",
   "branch": "work/convergence-joined-structure-20261120",
   "predecessor": {
     "leaseId": "dec44b72-4e34-40df-8172-25ba1d1a5e53",
@@ -35,8 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1588 merged23b8a81c after fresh exact-head CI and canonical preflight; net component geometry and actual96case gravity replacement now current compiler/save/load/CLI/drawing",
-    "next": "Integrate whole dry ground-section alternatives and actual four-corner diaphragm/52head compatibility; source-bound methods and changes across outputs",
-    "blocker": "Complete signed support/contact/roof response and ground moisture/shear/architectural levels still unresolved; STR stays open"
-  }
+    "evidence": "PR1596 head53cfd27c durably contains actual four-wall perforated-floor and52head solve, corrected96case proof, whole dry-ground proposal and shared saved/current CLI stages;30 integrated tests,24native checks and types pass",
+    "next": "Require exact1596-head CI and fresh STR/HAD preflights, merge coordinated source, then continue actual lower receivers and court-node/stair closure; STR remains open",
+    "blocker": "28upper receiving paths, actual gravity/verticalfloor/roof and dryground contact/connection remain unproved; no roofunlock or owneracceptance"
+  },
+  "pr": 1596
 }
