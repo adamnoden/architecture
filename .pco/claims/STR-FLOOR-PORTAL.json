@@ -9,8 +9,8 @@
     "label": "convergence-resumed-20261120"
   },
   "claimedAt": "2026-11-20T07:38:27.612Z",
-  "heartbeatAt": "2026-11-20T10:31:08.598Z",
-  "expiresAt": "2026-11-20T12:01:08.598Z",
+  "heartbeatAt": "2026-11-20T11:56:06.509Z",
+  "expiresAt": "2026-11-20T13:26:06.509Z",
   "branch": "work/convergence-next-systems-20261120",
   "predecessor": {
     "leaseId": "dec44b72-4e34-40df-8172-25ba1d1a5e53",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1596 merged mainb7b87c03964ca3183f68ef9642569a658d0e8617 after all5 exact-head checks and fresh STR/HAD preflights; current floor/ground/inlet source cutover delivered without packet closure",
-    "next": "Publish joined continuous RC/perforated-floor contact proof and current saved case, preserving authentic96-case source regeneration and actual52-head response; compare robust core thickness",
-    "blocker": "Actual shear/key/Ltie laws, toleranced contact/material resistance, complete reinforcement/development and roof/vertical slab/remaining receiving paths still require engineering proof"
+    "evidence": "PR1596 merged b7b87c0 after all five exact-head checks and fresh dual preflight; continuation source commits preserved in local git; new continuous RC and service-floor adapters integrating",
+    "next": "Publish continuation code and source-bound current-house saved-stage propagation tests, then actual 48 unique physical wind cases and reinforcement/barrier review",
+    "blocker": "Owner material/appearance acceptance withheld; receiving paths, local transfer and physical barrier/support qualification remain unearned"
   },
   "pr": 1596
 }
