@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-CRAFT-ROOM-KIT",
   "generation": 10,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "43e7994b-0a56-4ac7-995c-51c742eb689c",
   "holder": {
     "kind": "codex",
     "label": "converge-room-kit"
   },
   "claimedAt": "2026-11-19T20:30:11.806Z",
-  "heartbeatAt": "2026-11-19T23:52:31.583Z",
-  "expiresAt": "2026-11-20T01:22:31.583Z",
+  "heartbeatAt": "2026-11-20T00:47:38.000Z",
+  "expiresAt": "2026-11-20T00:47:38.000Z",
   "branch": "work/convergence-integrated-2026-11-19",
   "predecessor": {
     "leaseId": "c3f08d3f-2feb-4d9f-98b4-82567db2cbd3",
@@ -37,5 +37,7 @@
     "next": "Observe exact new-head full hosted CI, perform fresh canonical preflight, merge PR 1584, then verify IAS projection and release this lease if still held.",
     "blocker": "Awaiting genuine structural receipt-chain replay completion and exact resubmitted-head hosted CI; owner aesthetics and later physical/material qualification remain explicit downstream gates."
   },
-  "pr": 1584
+  "pr": 1584,
+  "releasedAt": "2026-11-20T00:47:38.000Z",
+  "releaseReason": "completed"
 }
