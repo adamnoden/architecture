@@ -149,6 +149,10 @@ test('each assembly can be mechanically removed without making the other assembl
   for(const subsystem of ['pipe-only','wet-only'] as const){
     const result=compareSharedFixedInletServiceFrame(candidate,support,wet,subsystem)
     assert.equal(result.mechanics.representedSubsystem,subsystem)
+    assert.equal(result.mechanics.enclosureInteraction.status,'not-applicable-subsystem')
+    assert.equal(result.mechanics.enclosureInteraction.evaluatedCaseCount,0)
+    assert.equal(result.mechanics.enclosureInteraction.conditionalSteelPass,null)
+    assert.equal(result.mechanics.enclosureInteraction.isolatedAnchorScreenPass,null)
     assert.ok(result.quantities.representedWholeSteelKg>result.quantities.backboneSteelKg)
     for(const c of result.mechanics.cases){
       assert.ok(c.maximumMemberStressMpa<result.mechanics.allowableComparisonMpa)
@@ -174,8 +178,8 @@ test('missing and stale room-service context cannot acquire an actual spatial pa
 test('a seized top exit solves pipe and wet-frame compatibility rather than applying rigid-frame thermal thrust',()=>{
   const {result,candidate}=current(),comparison=result.mechanics.enclosureInteraction
   assert.equal(comparison.completeEnclosureQualified,false)
-  assert.equal(comparison.cases.length,7)
-  const singles=comparison.cases.filter(c=>c.topExitCouplings.length===1)
+  assert.equal(comparison.cases.length,9)
+  const singles=comparison.cases.filter(c=>c.topExitCouplings.length===1&&!c.fullStructuralWetInventoryIncluded)
   assert.equal(singles.length,2)
   for(const state of singles){
     const coupling=state.topExitCouplings[0]
@@ -187,12 +191,15 @@ test('a seized top exit solves pipe and wet-frame compatibility rather than appl
     close(coupling.ownThermalFrameOpeningMm+coupling.ownThermalCompatibleForceN/coupling.tubeOnlyStiffnessNPerMm,coupling.freeExpansionMm,1e-9)
     assert.ok(coupling.ownThermalCompatibleForceN<coupling.rigidFrameThrustN/10)
     assert.equal(state.pressureAndSourceRouteThermalIncluded,false)
+    assert.equal(state.pressureIncluded,true)
+    assert.equal(state.sourceRouteThermalIncluded,false)
+    assert.ok(state.loads.some(l=>l.id.includes('-pressure-')))
     assert.equal(state.fullStructuralWetInventoryIncluded,false)
     assert.equal(coupling.actualValveAndSealStiffnessQualified,false)
     assert.deepEqual(coupling.pointMm.slice(1),[600,1723])
   }
   const paired=comparison.cases.find(c=>c.topExitCouplings.length===2&&!c.fullStructuralWetInventoryIncluded)!
-  assert.ok(paired.maximumRemovableJointStressMpa>130&&paired.maximumRemovableJointStressMpa<result.mechanics.allowableComparisonMpa)
+  assert.ok(paired.maximumRemovableJointStressMpa>result.mechanics.allowableComparisonMpa)
   assert.ok(paired.topExitCouplings.every(c=>c.allBoundLoadForceN>c.ownThermalCompatibleForceN))
   const [a,b]=paired.topExitCouplings,A=1/a.tubeOnlyStiffnessNPerMm+a.uncoupledFrameComplianceMmPerN,D=1/b.tubeOnlyStiffnessNPerMm+b.uncoupledFrameComplianceMmPerN
   const B=a.uncoupledFrameCrossCompliance.find(c=>c.branch===b.branch)!.complianceMmPerN,C=b.uncoupledFrameCrossCompliance.find(c=>c.branch===a.branch)!.complianceMmPerN,det=A*D-B*C
@@ -258,6 +265,7 @@ test('a conventional noncontact gravity-shed replacement prices real geometry an
     assert.equal(b.capToUpstandAfter5Mm,2)
     assert.ok(b.upstandMassKg>0&&b.capMassKg>0&&b.extraStructuralWaterMassKg>0)
     assert.equal(b.fullPressureSprayAndPlainPipeCapClosureQualified,false)
+    assert.equal(b.actualRelativePipeShellMovementQualified,false)
   }
   const state=raised.result.mechanics.enclosureInteraction.cases.find(c=>c.topExitState==='passive-shed')!
   assert.equal(state.pressureAndSourceRouteThermalIncluded,true)
@@ -273,4 +281,18 @@ test('a conventional noncontact gravity-shed replacement prices real geometry an
   assert.equal(replacement.completeBackArmClosureSupplied,false)
   assert.notDeepEqual(raised.result.geometry.members,source.result.geometry.members)
   assert.deepEqual(raised.result.source.hostWindow,source.result.source.hostWindow)
+})
+
+
+test('passive normal clearance and independent single-seizure/partial-water faults cannot borrow paired-case passes',()=>{
+  const currentCase=current(),narrow=current({upperPipeGuideZMm:1850,wetGuardFrontYMm:650})
+  assert.ok(narrow.result.mechanics.enclosureInteraction.passiveExitReplacement.branches.every(b=>b.capToHoodNormalAfterMetalAnd5Mm<0&&!b.sourceGeometryPass))
+  const cases=currentCase.result.mechanics.enclosureInteraction.cases
+  assert.equal(cases.filter(c=>c.topExitState==='seized'&&c.fullStructuralWetInventoryIncluded).length,3)
+  for(const c of cases.filter(c=>c.fullStructuralWetInventoryIncluded)){
+    assert.equal(c.independentPartialWaterInventoryEnveloped,true)
+    assert.ok(c.loads.some(l=>l.id.includes('partial-water-prism')&&l.bound))
+    assert.ok(c.loads.some(l=>l.id.includes('partial-water-first-moment-X')&&l.bound))
+    assert.ok(c.loads.some(l=>l.id.includes('partial-water-first-moment-Y')&&l.bound))
+  }
 })
