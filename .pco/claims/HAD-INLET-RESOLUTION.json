@@ -11,7 +11,7 @@
   "claimedAt": "2026-11-20T07:39:02.850Z",
   "heartbeatAt": "2026-11-20T15:51:10.000Z",
   "expiresAt": "2026-11-20T16:36:10.000Z",
-  "branch": "work/convergence-next-systems-20261120",
+  "branch": "work/convergence-gravity-house-20261120",
   "predecessor": {
     "leaseId": "6d1a0dde-e1e3-4014-99e6-bac6f58d5756",
     "generation": 46,
@@ -34,10 +34,10 @@
       "blocker": "Wet neck, group support/thermal andexact materialdisposition remain unproved; draftonly."
     }
   },
-  "pr": 1597,
+  "pr": 1598,
   "checkpoint": {
-    "evidence": "PR1597 head1aeb01bb: all completed exact-head workflows pass; primary health and ADE generality still running. Read-only native canonical preflight follows full validation. Next tested47-file gravity/house/book package preserved remotely at765fd3c0.",
-    "next": "Finish exact-head CI and fresh dual preflight; merge1597, publish preserved gravity-house successor, then release handoff if the execution environment remains unavailable.",
-    "blocker": "Execution environment unavailable; no further local geometry work. STR/HAD/roof acceptance remains open. Detailed successor handoff posted on1597."
+    "evidence": "Main5ef016d2 merged1597 after21exact-head workflows and fresh dual canonical preflight. PR1598 head ec292964 publishes preserved47-file gravity/profile/inlet/book integration; all316registered source identities match. Independent static reviews found no blocker.",
+    "next": "Require1598 exact-head CI, rendered publication checks and fresh dual canonical preflight, then merge; preserve the detailed1597 outage handoff and release if execution remains unavailable.",
+    "blocker": "Execution environment unavailable. STR/HAD closure, complete receiving/roof, occupied wet hosts and full inlet enclosure/material proof remain open; no owner/physical approval."
   }
 }
