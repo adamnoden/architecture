@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 45,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "a044c93f-78e1-4267-955e-f89e12b23997",
   "holder": {
     "kind": "chatgpt",
     "label": "convergence-resumed-20261120"
   },
   "claimedAt": "2026-11-20T07:38:27.612Z",
-  "heartbeatAt": "2026-11-20T18:39:34.000Z",
-  "expiresAt": "2026-11-20T19:24:34.000Z",
+  "heartbeatAt": "2026-11-20T18:40:29.000Z",
+  "expiresAt": "2026-11-20T18:40:29.000Z",
   "branch": "work/convergence-gravity-house-20261120",
   "predecessor": {
     "leaseId": "dec44b72-4e34-40df-8172-25ba1d1a5e53",
@@ -39,5 +39,7 @@
     "next": "Recover A4482/foundation746a from local handoff first; finish RC anchorage, receivers/cap-grid, wind/roof and water barriers through saved model. No structural closeout.",
     "blocker": "Execution workspace unavailable; successor source partly local-only and not remotely fetchable. STR/HAD/roof/whole-house gates remain open."
   },
-  "pr": 1598
+  "pr": 1598,
+  "releasedAt": "2026-11-20T18:40:29.000Z",
+  "releaseReason": "handoff"
 }
