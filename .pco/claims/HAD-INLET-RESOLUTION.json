@@ -9,8 +9,8 @@
     "label": "convergence-inlet-resumed-20261120"
   },
   "claimedAt": "2026-11-20T07:39:02.850Z",
-  "heartbeatAt": "2026-11-20T15:51:10.000Z",
-  "expiresAt": "2026-11-20T16:36:10.000Z",
+  "heartbeatAt": "2026-11-20T16:09:10.000Z",
+  "expiresAt": "2026-11-20T16:54:10.000Z",
   "branch": "work/convergence-gravity-house-20261120",
   "predecessor": {
     "leaseId": "6d1a0dde-e1e3-4014-99e6-bac6f58d5756",
