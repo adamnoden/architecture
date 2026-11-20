@@ -9,8 +9,8 @@
     "label": "convergence-resumed-20261120"
   },
   "claimedAt": "2026-11-20T07:38:27.612Z",
-  "heartbeatAt": "2026-11-20T18:09:05.000Z",
-  "expiresAt": "2026-11-20T18:54:05.000Z",
+  "heartbeatAt": "2026-11-20T18:39:34.000Z",
+  "expiresAt": "2026-11-20T19:24:34.000Z",
   "branch": "work/convergence-gravity-house-20261120",
   "predecessor": {
     "leaseId": "dec44b72-4e34-40df-8172-25ba1d1a5e53",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1598 head04cd6d89: primary full health, complete publication validation and native dual preflight passed. Nine of10exact-head workflows green; ADE generality still in health. All619compiler/atlas tests pass; caption,261A4/315B5ledger and data plate are verified.",
-    "next": "Wait for final ADE workflow; refresh only native preflight, merge exact head, verify main/outputs, retire recovery ref, preserve1597handoff and release; monitor Pages recovery independently.",
-    "blocker": "Workspace unavailable. STR/HAD/roof/whole-house acceptance remains open; A/foundation/roof/wet/enclosure successors partly local. No owner/material/physical/professional approval."
+    "evidence": "Merged PR1598 at c1683cfc; e5dff991 adds STATUS only. All 10 exact-head checks and fresh dual preflight passed; 14 source families/41 consumer paths. Local-only successors: PR1597 comment7043849237.",
+    "next": "Recover A4482/foundation746a from local handoff first; finish RC anchorage, receivers/cap-grid, wind/roof and water barriers through saved model. No structural closeout.",
+    "blocker": "Execution workspace unavailable; successor source partly local-only and not remotely fetchable. STR/HAD/roof/whole-house gates remain open."
   },
   "pr": 1598
 }
