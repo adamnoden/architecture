@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 45,
-  "state": "released",
-  "leaseId": "a044c93f-78e1-4267-955e-f89e12b23997",
+  "generation": 46,
+  "state": "claimed",
+  "leaseId": "ba0fc4e9-5e82-4fee-ba2b-a68692aaf759",
   "holder": {
     "kind": "chatgpt",
-    "label": "convergence-resumed-20261120"
+    "label": "rush-structural-20261120"
   },
-  "claimedAt": "2026-11-20T07:38:27.612Z",
-  "heartbeatAt": "2026-11-20T18:40:29.000Z",
-  "expiresAt": "2026-11-20T18:40:29.000Z",
-  "branch": "work/convergence-gravity-house-20261120",
+  "claimedAt": "2026-11-20T22:25:00.372Z",
+  "heartbeatAt": "2026-11-20T22:25:00.372Z",
+  "expiresAt": "2026-11-20T23:10:00.372Z",
+  "branch": "work/rush-structural-20261120",
   "predecessor": {
-    "leaseId": "dec44b72-4e34-40df-8172-25ba1d1a5e53",
-    "generation": 44,
-    "branch": "work/convergence-retained-components-20261120",
-    "pr": 1586,
+    "leaseId": "a044c93f-78e1-4267-955e-f89e12b23997",
+    "generation": 45,
+    "branch": "work/convergence-gravity-house-20261120",
+    "pr": 1598,
     "checkpoint": {
-      "evidence": "Main0298c1f2 merged1584 after8exact-head checks and3freshpreflights; IASconcept complete and leaseauto-released. Newdeca931c branch replaces hypothetical mass with net components, all96x4adverse contact comparisons, savedCLI/drawing and stale-evidence proofs; source and production tests pass.",
-      "next": "Require exact newhead hosted CI and freshSTR preflight; merge retained comparison, then continue actual dry-side section and retention/joint proofs. HAD independently develops the fixed light-pipe inlet.",
-      "blocker": "Actual local DPC bearing/shear, connected wall/floor/roof topology and moisture remain internal engineering; no structural closeout claimed."
+      "evidence": "Merged PR1598 at c1683cfc; e5dff991 adds STATUS only. All 10 exact-head checks and fresh dual preflight passed; 14 source families/41 consumer paths. Local-only successors: PR1597 comment7043849237.",
+      "next": "Recover A4482/foundation746a from local handoff first; finish RC anchorage, receivers/cap-grid, wind/roof and water barriers through saved model. No structural closeout.",
+      "blocker": "Execution workspace unavailable; successor source partly local-only and not remotely fetchable. STR/HAD/roof/whole-house gates remain open."
     }
   },
   "recoverySource": {
-    "leaseId": "dec44b72-4e34-40df-8172-25ba1d1a5e53",
-    "generation": 44,
-    "branch": "work/convergence-retained-components-20261120",
-    "pr": 1586,
+    "leaseId": "a044c93f-78e1-4267-955e-f89e12b23997",
+    "generation": 45,
+    "branch": "work/convergence-gravity-house-20261120",
+    "pr": 1598,
     "checkpoint": {
-      "evidence": "Main0298c1f2 merged1584 after8exact-head checks and3freshpreflights; IASconcept complete and leaseauto-released. Newdeca931c branch replaces hypothetical mass with net components, all96x4adverse contact comparisons, savedCLI/drawing and stale-evidence proofs; source and production tests pass.",
-      "next": "Require exact newhead hosted CI and freshSTR preflight; merge retained comparison, then continue actual dry-side section and retention/joint proofs. HAD independently develops the fixed light-pipe inlet.",
-      "blocker": "Actual local DPC bearing/shear, connected wall/floor/roof topology and moisture remain internal engineering; no structural closeout claimed."
+      "evidence": "Merged PR1598 at c1683cfc; e5dff991 adds STATUS only. All 10 exact-head checks and fresh dual preflight passed; 14 source families/41 consumer paths. Local-only successors: PR1597 comment7043849237.",
+      "next": "Recover A4482/foundation746a from local handoff first; finish RC anchorage, receivers/cap-grid, wind/roof and water barriers through saved model. No structural closeout.",
+      "blocker": "Execution workspace unavailable; successor source partly local-only and not remotely fetchable. STR/HAD/roof/whole-house gates remain open."
     }
-  },
-  "checkpoint": {
-    "evidence": "Merged PR1598 at c1683cfc; e5dff991 adds STATUS only. All 10 exact-head checks and fresh dual preflight passed; 14 source families/41 consumer paths. Local-only successors: PR1597 comment7043849237.",
-    "next": "Recover A4482/foundation746a from local handoff first; finish RC anchorage, receivers/cap-grid, wind/roof and water barriers through saved model. No structural closeout.",
-    "blocker": "Execution workspace unavailable; successor source partly local-only and not remotely fetchable. STR/HAD/roof/whole-house gates remain open."
-  },
-  "pr": 1598,
-  "releasedAt": "2026-11-20T18:40:29.000Z",
-  "releaseReason": "handoff"
+  }
 }
