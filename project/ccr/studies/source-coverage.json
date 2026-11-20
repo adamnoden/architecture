@@ -181,7 +181,10 @@
         "project/str/studies/joined_rc_floor.py",
         "project/str/studies/joined_rc_floor_views.py",
         "project/str/studies/rc_portal_monolithic.py",
-        "project/str/studies/rc_floor_house_loads.py"
+        "project/str/studies/rc_floor_house_loads.py",
+        "project/str/studies/current_rc_cage.py",
+        "project/str/studies/continuous_rc_cage.py",
+        "project/str/studies/native_rc_cage_envelope.py"
       ],
       "inputReceipts": [
         "project/had/studies/water-replan.json",
@@ -277,7 +280,8 @@
         "project/str/studies/floor-portal-north-collar.json",
         "project/str/studies/floor-portal-north-roof-shoe.json",
         "project/str/studies/current-house-roof-stiffness.json",
-        "project/str/studies/current-house-membrane-reactions.json"
+        "project/str/studies/current-house-membrane-reactions.json",
+        "project/str/studies/continuous-rc-closed-links-proof.json"
       ]
     },
     {
@@ -556,7 +560,9 @@
       "decisions": [
         "project/had/fixed-inlet-entry-candidate.md",
         "project/had/fixed-inlet-receiver-development.md",
-        "project/had/fixed-inlet-temporary-keeper.md"
+        "project/had/fixed-inlet-temporary-keeper.md",
+        "project/had/fixed-inlet-wet-support-development.md",
+        "project/had/inlet-metal-compression-decision.md"
       ],
       "authorRoots": [
         "compiler/reference-house/current-design/inlet-fixed-entry.ts",
@@ -567,7 +573,8 @@
         "compiler/reference-house/current-design/inlet-fixed-receiver.ts",
         "compiler/reference-house/current-design/inlet-fixed-support-view.ts",
         "compiler/reference-house/current-design/inlet-fixed-compact-receiver.ts",
-        "compiler/reference-house/current-design/inlet-fixed-temporary-keeper.ts"
+        "compiler/reference-house/current-design/inlet-fixed-temporary-keeper.ts",
+        "compiler/reference-house/current-design/inlet-fixed-wet-support.ts"
       ],
       "authoredInputs": [],
       "inputReceipts": [],
@@ -589,7 +596,8 @@
         "project/had/closed-service-floor-comparison.md"
       ],
       "authorRoots": [
-        "project/had/studies/closed_service_floor.py"
+        "project/had/studies/closed_service_floor.py",
+        "project/had/studies/closed_service_tool_geometry.py"
       ],
       "authoredInputs": [
         "project/had/studies/closed-service-floor.json"
@@ -1236,7 +1244,7 @@
     "project/str/studies/joined_successor_kernel.py": "bbf1e80933260d0182db34d777427b68a361b2f0",
     "compiler/reference-house/current-design/structural-successor.ts": "9ae813ed40695e6e94df43caa0b45e7db54d02c4",
     "compiler/reference-house/current-design/inlet-support.ts": "a2404befdbeda6464bc9f772d25bccd8d78d2479",
-    "compiler/reference-house/current-design/engineering-document.ts": "2673ceecbb75af61fc6d368f7571c16b78cc6078",
+    "compiler/reference-house/current-design/engineering-document.ts": "b1dcb6b524a6d5aa1b78c26157c8aeda00fc668b",
     "project/had/inlet-assembly-convergence.md": "21719c69b3ec916043e53d7ae0891d5c6ce7aae5",
     "project/str/studies/floor-portal-fixed-wall-head.py": "807159aa9439837489d3e95f9bf359983635c342",
     "project/str/studies/floor-portal-north-transfer.py": "20f79473e3fd3e88351b3fa4d68ac1f1ef476d03",
@@ -1245,17 +1253,17 @@
     "project/str/studies/retained_components.py": "20d5ccd66cc0edcc2e785978247f0d80dc7f84e7",
     "project/str/studies/retained_component_geometry.py": "23f1346b8213f2c79e93190b1d8826a6cf35fc45",
     "project/str/studies/retained-contact.py": "d39e69bf084a58b320e41b05db74835882d6dc6a",
-    "project/had/fixed-inlet-entry-candidate.md": "0ac82a1553f3114be11955c5a9bdd6ee115c1790",
+    "project/had/fixed-inlet-entry-candidate.md": "3b99d8f34c8fe3b282fb54f1c38fc5e5a42d323c",
     "compiler/reference-house/current-design/inlet-fixed-entry.ts": "9ad3f449b36d8770ac1a1bfe167210fbca7581bf",
-    "compiler/reference-house/current-design/inlet-fixed-case.ts": "a411deb83849cefcfd0215940a80f02994f39a3a",
+    "compiler/reference-house/current-design/inlet-fixed-case.ts": "f431bafdc4b0045287cb012c0593039f524a7615",
     "compiler/reference-house/current-design/inlet-fixed-operating.ts": "8d2a9e0132d300e697cff2661f01222a7b661b45",
-    "compiler/reference-house/current-design/compile.ts": "7e8e65f2f939a09af180561adc63205b2cbd49ef",
+    "compiler/reference-house/current-design/compile.ts": "412377cf14ca4cc5051eb82db5b64771a149c5f9",
     "project/mat/envelope-ground-boundary.md": "7aae65350ded7bff6e21c4425153af3cdaec41d2",
     "project/owner-house-charter.md": "285202ef6be2ccd9954de51213d1faa23a158813",
     "project/mat/studies/conventional-ground-junction.json": "5d899197848d0f951d8ff4573983aff81d4fd32f",
     "project/str/studies/current-house-occupied-interfaces.json": "fb9f19324385a50c22761b38333c478075987a08",
     "docs/reference-house/structural-brief.md": "ee6ffe9704e1da927ff3a6a1d052da2f0dba7abf",
-    "compiler/reference-house/current-design/structural-ground.ts": "a85e0fc6ec57127d2caabb91c26a27f3b9e97484",
+    "compiler/reference-house/current-design/structural-ground.ts": "aad31e4b671976347944405de02e1b81d8e930a5",
     "project/str/studies/dry-side-ground-section.json": "dd41b708d9d3eace69419c22e986da2c6c723ab9",
     "project/triad-interface-contract.md": "c77897e0b18d780feae097707998c1006fccb857",
     "project/str/studies/dry_side_ground_section.py": "ab7455c6b2a7f3406bed27babed2b6cbd17276e7",
@@ -1278,21 +1286,29 @@
     "project/str/studies/joined_rc_floor.py": "a8a02facd7064644332d8de77bd812f5b93cd0e8",
     "project/str/studies/joined_rc_floor_views.py": "a9eadc53e42d731e35b67d139d39a06c796c0281",
     "compiler/reference-house/current-design/structural-retained.ts": "6b661cb24a5f57bc1e8845f2762edfd1f2563cdf",
-    "compiler/reference-house/current-design/structural-rc-floor.ts": "8b4074b0c70e62530bb88df5999679fa2d2c1b9d",
+    "compiler/reference-house/current-design/structural-rc-floor.ts": "702275029010d06b0bbfdab56531af938a91ea9e",
     "compiler/reference-house/current-design/inlet-fixed-compact-receiver.ts": "9837b84d84a51035da455bf90142b05c33993510",
     "project/str/studies/dry-side-ground-section.results.json": "bea66fbae461c950236940f5955929ddd7fb2bb1",
     "compiler/reference-house/current-design/inlet-fixed-temporary-keeper.ts": "4e1bbcbacef3e720275ded9a4c96833f2b278d9e",
     "compiler/reference-house/current-design/roof-pitch.ts": "9fd14188e1fc1911203c399d9f3cf6ee83b8d29e",
-    "compiler/reference-house/current-design/service-floor.ts": "6d8f13c8400e47ab4352af943827119a4c59499e",
+    "compiler/reference-house/current-design/service-floor.ts": "1822c538d67fdaa2ebd9c8bb382f0caf863d6a79",
     "compiler/reference-house/current-design/structural-interfaces.ts": "0feb380fcd4be333f0a7f81adb0707a8d0a960d5",
-    "project/had/closed-service-floor-comparison.md": "e1f42926d6b2583ede828fdac4efa5a9ff2a4f5f",
+    "project/had/closed-service-floor-comparison.md": "eee09b072dc2c8f262785d024915f42b7c06140b",
     "project/had/fixed-inlet-temporary-keeper.md": "787a84214931c3561540c133eaa81b82b9ad2787",
-    "project/had/studies/closed-service-floor.json": "aa8b990df96eccf1e871699ffdbb046988fd34d2",
-    "project/had/studies/closed-service-floor.results.json": "495a43a34e55d31ca3cf2bdd1ff6129830e7fff6",
-    "project/had/studies/closed-service-floor.svg": "819010e210720214bc6316dd4f36957acbf3fe94",
+    "project/had/studies/closed-service-floor.json": "1a05911e102ecc570e981f00bea6b1c950093c21",
+    "project/had/studies/closed-service-floor.results.json": "67978afaee5b1602531e59d3a7f366572c1402a9",
+    "project/had/studies/closed-service-floor.svg": "2334cceb2211388359b23c3f8eef936568b18945",
     "project/had/studies/closed-service-gasket-evidence.json": "5d996ef34394ed5ed9971598990a7d7e72ee4dc8",
-    "project/had/studies/closed_service_floor.py": "47856afa693b8e37caf1115728be46a463a911f4",
-    "project/str/studies/rc_floor_house_loads.py": "4010ba4bf9d6f5a0c0f1bf9271efa8c15c455918",
-    "project/str/studies/rc_portal_monolithic.py": "aa84eee222faebb5521d584d496b17db2fff30cb"
+    "project/had/studies/closed_service_floor.py": "ae948d7fa4b5eecfeb5da0570536da00e31f2343",
+    "project/str/studies/rc_floor_house_loads.py": "d0929c60c836d71bd3fb121186b2b3778eab53f5",
+    "project/str/studies/rc_portal_monolithic.py": "5b8eb9368043a2098876ef639db8aba28a034a76",
+    "project/str/studies/current_rc_cage.py": "f4cf323370650e99bb4ab2e2ed10b7290a8e9655",
+    "project/str/studies/continuous_rc_cage.py": "da4ea91d9096ed3442a9dd4a3b6db73f35de862d",
+    "project/had/studies/closed_service_tool_geometry.py": "c0749723075854885524d6cffb0509b3c3d49611",
+    "compiler/reference-house/current-design/inlet-fixed-wet-support.ts": "5c318dff47e8dc8bd14ca710a84b38e934e1f82e",
+    "project/had/fixed-inlet-wet-support-development.md": "64ef2a71d1cf5aab42b6d231b59e74133e28b43b",
+    "project/had/inlet-metal-compression-decision.md": "dfbd966fd05bddcbb867fde235f3616ab017f8f3",
+    "project/str/studies/native_rc_cage_envelope.py": "6b6b7ae3b7e51dd2fbdccefcd7a1d44fac1c00ce",
+    "project/str/studies/continuous-rc-closed-links-proof.json": "76c723aeab0e4ee5a7d1321935e98b010e7ffd1d"
   }
 }

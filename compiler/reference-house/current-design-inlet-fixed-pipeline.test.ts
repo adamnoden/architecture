@@ -13,10 +13,13 @@ test('the fixed inlet is the same saved, edited and CLI proposal with exact upst
   const document = { ...source, stages: { inletSillInsert: source.stages.inletSillInsert,
     inletFault: source.stages.inletFault, fixedInlet: request.fixed.settings } }
   const before = await compileEngineeringDocument(JSON.parse(JSON.stringify(document)))
-  assert.equal(before.engineering.fixedInlet?.status, 'conditional-whole-arrangement')
+  assert.equal(before.engineering.fixedInlet?.status, 'rejected-geometry')
   assert.equal(before.engineering.fixedInlet?.source.insertCaseDigest, before.engineering.inletSillInsert?.source.caseDigest)
   assert.equal(before.engineering.fixedInlet?.source.faultCaseDigest, before.engineering.inletFault?.source.caseDigest)
   assert.equal(before.engineering.fixedInlet?.evidence.preSiteArrangementComplete, false)
+  assert.ok(before.engineering.fixedInlet?.geometryBlockers.includes('utility:CURRENT_CLEAR_THROAT_BODY_INTERCEPTS_CELL'))
+  assert.equal(before.engineering.fixedInlet?.wetSupportDevelopment.source.candidateCaseDigest, before.engineering.fixedInlet?.source.caseDigest)
+  assert.equal(before.engineering.fixedInlet?.wetSupportDevelopment.completeSupportCapacity, false)
   assert.equal(before.engineering.fixedInlet?.supportDevelopment.source.candidateCaseDigest,
     before.engineering.fixedInlet?.source.caseDigest)
   assert.equal(before.engineering.fixedInlet?.supportDevelopment.evidence.completeSupportCapacity, false)

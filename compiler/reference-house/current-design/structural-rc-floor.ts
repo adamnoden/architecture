@@ -7,6 +7,10 @@ import type { CurrentDesignResolution } from './resolve.js'
 
 const root = new URL('../../../', import.meta.url)
 const methodPath = 'project/str/studies/rc_portal_monolithic.py'
+const cagePath = 'project/str/studies/current_rc_cage.py'
+const cageDetailProofPath = 'project/str/studies/continuous-rc-closed-links-proof.json'
+const cageAssessmentPath = 'project/str/studies/native_rc_cage_envelope.py'
+const cageModulePath = 'project/str/studies/continuous_rc_cage.py'
 const adapterPath = 'compiler/reference-house/current-design/structural-rc-floor.ts'
 const record = (value: unknown): value is Record<string, unknown> =>
   value !== null && typeof value === 'object' && !Array.isArray(value)
@@ -60,12 +64,12 @@ function currentBinding(resolved: CurrentDesignResolution) {
     || !record(comparison.houseCase.joinedCase.floor)) {
     throw new Error('The joined RC floor native source inventory or schema changed; integrate it explicitly')
   }
-  const inputs = Object.fromEntries([...Object.keys(comparison.sourceSHA256), adapterPath].map(path => {
+  const inputs = Object.fromEntries([...Object.keys(comparison.sourceSHA256), adapterPath, cagePath, cageModulePath, cageAssessmentPath, cageDetailProofPath].map(path => {
     const bytes = readFileSync(new URL(path, root))
     const blob = createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')
     const owners = resolved.disciplineBindings.flatMap(binding => binding.identities[path] ? [binding.identities[path]] : [])
     if (!owners.length || owners.some(value => value !== blob)
-      || (path !== adapterPath && comparison.sourceSHA256[path] !== createHash('sha256').update(bytes).digest('hex'))) {
+      || (Object.hasOwn(comparison.sourceSHA256, path) && comparison.sourceSHA256[path] !== createHash('sha256').update(bytes).digest('hex'))) {
       throw new Error(`Stale or missing current joined RC floor source: ${path}`)
     }
     return [path, blob]
@@ -128,6 +132,13 @@ export function runJoinedRcFloorCase(resolved: CurrentDesignResolution, input: u
       throw new Error('The joined RC floor cannot replace nested source identities')
     }
   }
+  const floor = joined.floor
+  const referenceFloor = current.comparison.houseCase.joinedCase.floor
+  if (record(house.boundary) && house.boundary.includeExternalGMAXQ === true && record(floor)
+    && record(floor.componentCase) && record(referenceFloor.componentCase)
+    && !same(floor.componentCase.edits, referenceFloor.componentCase.edits)) {
+    throw new Error('Edited floor apertures require remapped vertical tributary cards before external GMAX/Q; the source baseline cannot supply changed whole-house gravity')
+  }
   const output: NativeResult = JSON.parse(execFileSync('python3', ['-B', fileURLToPath(new URL(methodPath, root))], {
     input: JSON.stringify({ case: comparison, name: request.caseId }), encoding: 'utf8', maxBuffer: 32 * 1024 * 1024,
   }))
@@ -153,7 +164,32 @@ export function runJoinedRcFloorCase(resolved: CurrentDesignResolution, input: u
     || !output.drawings?.['floor.svg']?.startsWith('<svg') || !output.drawings?.['barrier.svg']?.startsWith('<svg')) {
     throw new Error('The joined RC floor result differs from the actual source, heads or unearned acceptance boundary')
   }
+  const cageComparison: { schema: string; sourceSHA256: Readonly<Record<string, string>>; nativeCaseId: string;
+    status: string; structureSelected: boolean; jointPanelAccepted: boolean; waterstopAccepted: boolean; installedAcceptance: boolean;
+    memberReview?: { nativeCutDigest: string; worstUniaxialComparison: { linearUniaxialRatio: number }; [key: string]: unknown };
+    [key: string]: unknown } = JSON.parse(execFileSync('python3', ['-B', fileURLToPath(new URL(cagePath, root))], {
+    input: JSON.stringify({ schema: 'str-current-rc-cage-request/1', native: output.native }), encoding: 'utf8', maxBuffer: 8 * 1024 * 1024,
+  }))
+  if (cageComparison.schema !== 'str-current-rc-cage-result/1' || cageComparison.nativeCaseId !== request.caseId
+    || cageComparison.structureSelected !== false || cageComparison.jointPanelAccepted !== false
+    || cageComparison.waterstopAccepted !== false || cageComparison.installedAcceptance !== false
+    || Object.keys(cageComparison.sourceSHA256).length !== 5
+    || [cagePath, cageModulePath, cageAssessmentPath, 'project/had/studies/water-replan.json', 'project/str/studies/current-house-grid.json']
+      .some(path => !Object.hasOwn(cageComparison.sourceSHA256, path))
+    || Object.entries(cageComparison.sourceSHA256).some(([path, hash]) =>
+      !current.inputs[path] || createHash('sha256').update(readFileSync(new URL(path, root))).digest('hex') !== hash)) {
+    throw new Error('Current cage comparison changed its native case, source or unearned acceptance boundary')
+  }
+  const assessment = cageComparison.detailAssessment
+  if (record(assessment) && record(assessment.reviewEvidence)) {
+    const review = assessment.reviewEvidence
+    if (review.path !== cageDetailProofPath || review.sha256 !== createHash('sha256')
+      .update(readFileSync(new URL(cageDetailProofPath, root))).digest('hex')) {
+      throw new Error('Stale cage rejection evidence; replay and review the actual detailing source')
+    }
+  }
   return { status: 'computed-comparison' as const,
+    cageComparison,
     source: { planDigest: current.planDigest, bindingDigest: current.bindingDigest, caseDigest: sha256SemanticFingerprint(request) },
     method: { id: 'str-current-joined-rc-floor/1', path: methodPath, inputs: current.inputs },
     native: output.native, schedule: output.schedule, floor: output.floor, floorSvg: output.drawings['floor.svg'], barrierSvg: output.drawings['barrier.svg'],

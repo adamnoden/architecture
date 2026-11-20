@@ -5,6 +5,7 @@ import { compileFixedInletCandidate, readFixedInletSettings } from './inlet-fixe
 import { compareCurrentFixedInletSupport } from './inlet-fixed-support-integration.js'
 import { renderCompactInletSupportView } from './inlet-fixed-support-view.js'
 import { compareTemporaryFixedInletKeeper } from './inlet-fixed-temporary-keeper.js'
+import { compareFixedInletWetSupport } from './inlet-fixed-wet-support.js'
 import { readInletSillInsertCase, runInletSillInsertCase } from './inlet-sill-insert.js'
 import { readInletFaultCase, runInletFaultCase } from './inlet-fault.js'
 import type { CurrentDesignResolution } from './resolve.js'
@@ -23,6 +24,7 @@ function boundSource(resolved: CurrentDesignResolution) {
     'compiler/reference-house/current-design/inlet-fixed-compact-receiver.ts',
     'compiler/reference-house/current-design/inlet-fixed-support-view.ts',
     'compiler/reference-house/current-design/inlet-fixed-temporary-keeper.ts',
+    'compiler/reference-house/current-design/inlet-fixed-wet-support.ts',
     'project/had/studies/incoming-water-geometry.mjs',
     'project/had/studies/service-interface-geometry.mjs',
     'project/had/studies/south-inlet-relief-hydraulics.mjs',
@@ -62,7 +64,17 @@ export function runFixedInletCase(resolved: CurrentDesignResolution, input: unkn
   })
   const supportDevelopment = compareCurrentFixedInletSupport(resolved, candidate)
   const temporaryKeeper = compareTemporaryFixedInletKeeper(candidate, supportDevelopment.compactReceiver)
-  return { ...candidate, supportDevelopment, temporaryKeeper,
+  const read = (path: string) => readFileSync(new URL('../../../' + path, import.meta.url), 'utf8')
+  const wetSupportDevelopment = compareFixedInletWetSupport(candidate, {
+    wetCellsText: read('project/had/studies/south-inlet-wet-box.json'),
+    servicesText: read('project/had/studies/current-house-services.json'),
+    portalText: read('project/str/studies/floor-portal-interface-review.json'),
+  })
+  const geometryBlockers = [...candidate.geometryBlockers, ...wetSupportDevelopment.diagnostics
+    .filter(value => value.endsWith('CURRENT_CLEAR_THROAT_BODY_INTERCEPTS_CELL'))]
+  return { ...candidate, geometryBlockers,
+    status: geometryBlockers.length ? 'rejected-geometry' as const : candidate.status,
+    supportDevelopment, temporaryKeeper, wetSupportDevelopment,
     supportReviewSvg: renderCompactInletSupportView(candidate, supportDevelopment),
     source: { ...candidate.source, bindingDigest: binding.bindingDigest },
     method: { ...candidate.method, currentImplementations: binding.implementations } }

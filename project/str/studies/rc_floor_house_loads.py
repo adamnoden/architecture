@@ -7,7 +7,7 @@ import sys
 
 from distributed_floor_compatibility import _native_floor_wind, native_intermediate_support_ports
 from joined_rc_floor import _author_portal_contact, build_joined_rc_floor, joined_physical_schedule, load_joined_rc_floor_source, reference_joined_rc_floor_case, solve_joined_rc_floor
-from joined_successor_compatibility import _wrench_at
+from joined_successor_compatibility import _grid, _wrench_at
 from joined_successor_kernel import FrameModel, cross, rectangle_contact_quadrature, rectangle_section
 from north_portal_receiving import GAUSS
 from perforated_floor_condensation import compile_perforated_floor
@@ -102,36 +102,159 @@ def _author_widths(model,case,source):
         'postAlongWidthMm':212.5,'thermalAdoption':False,'reinforcementAdoption':False}
 
 
+def _timoshenko_shapes(value,length,phi):
+    v=value;den=1+phi
+    n=[(1-3*v*v+2*v**3+phi*(1-v))/den,length*(v-2*v*v+v**3+phi*(v-v*v)/2)/den,
+       (3*v*v-2*v**3+phi*v)/den,length*(-v*v+v**3+phi*(-v+v*v)/2)/den]
+    r=[6*(v*v-v)/(length*den),(1-4*v+3*v*v+phi*(1-v))/den,
+       6*(v-v*v)/(length*den),(-2*v+3*v*v+phi*v)/den]
+    return n,r
+
+
+def consistent_member_point_load(model,member,point,force,moment=(0,0,0)):
+    p,q=member['physicalStartMm'],member['physicalEndMm'];length=math.dist(p,q)
+    axis=[(b-a)/length for a,b in zip(p,q)];normal=[0,1,0];radial=cross(axis,normal);basis=[axis,normal,radial]
+    dot=lambda a,b:sum(x*y for x,y in zip(a,b))
+    s=dot([a-b for a,b in zip(point,p)],axis);v=s/length
+    if not -1e-8<=v<=1+1e-8:raise ValueError('Consistent load point lies outside its actual finite member')
+    at=[a+s*x for a,x in zip(p,axis)];couple=[a+b for a,b in zip(moment,cross([a-b for a,b in zip(point,at)],force))]
+    local_force=[dot(force,row) for row in basis];local_moment=[dot(couple,row) for row in basis]
+    section=rectangle_section(member['depthMm'],member['breadthMm']);law=model['request']['frameLaw'];e=law['elasticModulusMPa'];g=e/(2*(1+law['poissonRatio']))
+    phi_y=12*e*law['flexuralFactor']*section['Iz']/(g*law['shearAreaFactor']*section['A']*length**2)
+    phi_z=12*e*law['flexuralFactor']*section['Iy']/(g*law['shearAreaFactor']*section['A']*length**2)
+    ny,ry=_timoshenko_shapes(v,length,phi_y);nz,rz=_timoshenko_shapes(v,length,phi_z)
+    local=[0.]*12
+    for index,value in ((0,1-v),(6,v)):local[index]+=local_force[0]*value
+    for index,value in zip((1,5,7,11),ny):local[index]+=local_force[1]*value
+    for index,value,sign in zip((2,4,8,10),nz,(1,-1,1,-1)):local[index]+=local_force[2]*value*sign
+    for index,value in ((3,1-v),(9,v)):local[index]+=local_moment[0]*value
+    for index,value in zip((1,5,7,11),ry):local[index]+=local_moment[2]*value
+    for index,value,sign in zip((2,4,8,10),rz,(-1,1,-1,1)):local[index]+=local_moment[1]*value*sign
+    result=[]
+    for end,node in enumerate((member['a'],member['b'])):
+        load=local[6*end:6*end+6]
+        global_force=[sum(load[j]*basis[j][i] for j in range(3)) for i in range(3)]
+        global_moment=[sum(load[j+3]*basis[j][i] for j in range(3)) for i in range(3)]
+        physical=p if end==0 else q;shift=cross([a-b for a,b in zip(physical,model['model'].nodes[node])],global_force)
+        result.extend([*global_force,*[a+b for a,b in zip(global_moment,shift)]])
+    return result
+
+
+def _record_equivalent(model,family,name,vector):
+    row=model.setdefault('memberEquivalentLoads',{}).setdefault(family,{}).setdefault(name,[0.]*12)
+    for i,value in enumerate(vector):row[i]+=value
+
+
+def _consistent_point(model,loads,family,name,member,point,force,moment=(0,0,0),apply=True):
+    vector=consistent_member_point_load(model,member,point,force,moment)
+    _record_equivalent(model,family,name,vector)
+    model.setdefault('memberPointLoads',{}).setdefault(family,{}).setdefault(name,[]).append({'pointXYZMm':list(point),'forceKN':list(force),'momentKNmm':list(moment)})
+    if apply:
+        for end,node in enumerate((member['a'],member['b'])):_add(loads,node,vector[6*end:6*end+6])
+    return vector
+
+
+def _consistent_line(model,loads,family,name,member,s0,s1,force_density,moment_density=(0,0,0),apply=True):
+    p,q=member['physicalStartMm'],member['physicalEndMm'];length=math.dist(p,q);axis=[(b-a)/length for a,b in zip(p,q)]
+    if s1<=s0:return
+    vector=[0.]*12
+    for coordinate in (-1/math.sqrt(3),1/math.sqrt(3)):
+        s=(s0+s1)/2+(s1-s0)*coordinate/2;weight=(s1-s0)/2;point=[a+s*x for a,x in zip(p,axis)]
+        values=consistent_member_point_load(model,member,point,[weight*x for x in force_density],[weight*x for x in moment_density])
+        for i,value in enumerate(values):vector[i]+=value
+    _record_equivalent(model,family,name,vector)
+    model.setdefault('memberDistributedLoads',{}).setdefault(family,{}).setdefault(name,[]).append({'s0Mm':s0,'s1Mm':s1,'forceDensityKNPerMm':list(force_density),'momentDensityKNmmPerMm':list(moment_density)})
+    if apply:
+        for end,node in enumerate((member['a'],member['b'])):_add(loads,node,vector[6*end:6*end+6])
+
+
+def register_member_gravity(model,name,already_lumped=True):
+    member=model['members'][name];p,q=member['physicalStartMm'],member['physicalEndMm'];length=math.dist(p,q)
+    density=[0,0,-25*member['breadthMm']*member['depthMm']/1e9];loads=model['families']['physical-G']
+    if already_lumped:
+        midpoint=[(a+b)/2 for a,b in zip(p,q)]
+        for node in (member['a'],member['b']):
+            old=[0,0,density[2]*length/2]
+            wrench=_wrench_at(old,midpoint,model['model'].nodes[node]) if member['kind']=='post' else [*old,0,0,0]
+            _add(loads,node,[-value for value in wrench])
+    _consistent_line(model,loads,'physical-G',name,member,0,length,density)
+
+
+def _upstand_member(model,wall,x):
+    for name,member in model['members'].items():
+        if name.startswith(wall+'/upstand/') and member['physicalStartMm'][0]-1e-7<=x<=member['physicalEndMm'][0]+1e-7:return name,member
+    return None,None
+
+
+def _beam_point(model,loads,family,wall,point,force,apply=True,moment=(0,0,0)):
+    name,member=_upstand_member(model,wall,point[0])
+    if member is not None:return _consistent_point(model,loads,family,name,member,point,force,moment=moment,apply=apply)
+    nodes=model['wallFrames'][wall]['beamNodes'];node=nodes[0] if point[0]<model['model'].nodes[nodes[0]][0] else nodes[-1]
+    if apply:
+        wrench=_wrench_at(force,point,model['model'].nodes[node]);wrench[3:]=[a+b for a,b in zip(wrench[3:],moment)]
+        _add(loads,node,wrench)
+    return None
+
+
+def _replace_known_gravity_loads(model):
+    for name,member in model['members'].items():
+        if member['kind'] in ('post','upstand'):register_member_gravity(model,name)
+    for key in ('external-GMAX','external-Q'):model['families'][key]={}
+    for row in model['admittedNativeActions']:
+        x,y=row['receivingXYMm'];dx,dy=row['residualOffsetXYMm'];family='external-GMAX' if row['programme']=='G' else 'external-Q'
+        force=[0,0,-row['valueKN']];moment=cross([dx,dy,0],force)
+        _beam_point(model,model['families'][family],family,row['wallId'],[x,y,3370],force,moment=moment)
+
+
+def _post_strip(model,loads,family,wall,side,x,z0,z1,density,origins):
+    stem=wall+'/'+side+'/';members=[(name,member) for name,member in model['members'].items() if name.startswith(stem+'post/')]
+    geometry=model['wallFrames'][wall][side];pier=geometry['pier'];cx,cy=pier['footCentroidXYMm']
+    low,high=model['request']['dpcIntervalZMm'];virtual_name=stem+'finite-continuous-RC-former-DPC'
+    if virtual_name not in model['members']:
+        a=next(row['low'] for row in model['dpcNodes'] if row['pierId']==pier['id']);b=next(row['high'] for row in model['dpcNodes'] if row['pierId']==pier['id'])
+        virtual={'a':a,'b':b,'physicalStartMm':list(model['model'].nodes[a]),'physicalEndMm':list(model['model'].nodes[b]),
+            'breadthMm':model['widthEdit']['coreAxialWidthMm'],'depthMm':212.5,'kind':'post'}
+        members.append((virtual_name,virtual));model.setdefault('virtualJointLoadMembers',{})[virtual_name]=virtual
+    for name,member in members:
+        p,q=member['physicalStartMm'],member['physicalEndMm'];a=max(z0,p[2]);b=min(z1,q[2])
+        if b<=a:continue
+        force_density=[0,density,0];moment_density=cross([x-cx,0,0],force_density)
+        _consistent_line(model,loads,family,name,member,a-p[2],b-p[2],force_density,moment_density)
+        origins.append({'pointXYZMm':[x,cy+775/2,(a+b)/2],'forceKN':[0,density*(b-a),0],
+            'source':'actual-post-or-jamb-strip-consistent-member-load','memberId':name})
+
+
 def _local_outer_pressure(model,source,low,high,pressure):
     frame=model['model'];geometry=model['wallFrames']['outer-north'];portal=model['portal'];family={};origins=[]
     west,east=geometry['west'],geometry['east'];y=west['pier']['footCentroidXYMm'][1]
-    left,right=west['pier']['footprintXYMm'][0],east['pier']['footprintXYMm'][2]
-    low=max(low,left);high=min(high,right)
+    low=max(low,west['pier']['footprintXYMm'][0]);high=min(high,east['pier']['footprintXYMm'][2])
     if high<=low:return family,origins
     raw_left=6000-portal['rawSpan']/2;raw_right=6000+portal['rawSpan']/2
     finish_left=6000-portal['finishedWidthAtVerticalJambs']/2;finish_right=6000+portal['finishedWidthAtVerticalJambs']/2
     stations=sorted({low,high,*[value for value in (raw_left,raw_right,finish_left,finish_right,*geometry['beamXMm']) if low<value<high]})
-    ff=source['nativeWind']['sourceDatumsMm']['ff'];exposure=source['gardenWalkingZMm']
+    ff=source['nativeWind']['sourceDatumsMm']['ff'];exposure=source['gardenWalkingZMm'];family_name='actual-outer-portal-ground-pressure'
     for a,b in zip(stations,stations[1:]):
         for coordinate,weight in GAUSS:
-            x=(a+b)/2+(b-a)*coordinate/2
-            opening=exposure if x<finish_left or x>finish_right else portal['centreZ']+math.sqrt(portal['finishedRadius']**2-(x-6000)**2)
-            height=3170-opening;force=pressure*(b-a)*weight*height/2e6
-            z=(3170+opening)/2
-            node=west['nodes'][-2] if x<raw_left else east['nodes'][-2] if x>raw_right else min(geometry['arcNodes'],key=lambda name:abs(frame.nodes[name][0]-x))
-            point=[x,y+775/2,z];vector=[0,force,0]
-            _add(family,node,_wrench_at(vector,point,frame.nodes[node]));origins.append({'pointXYZMm':point,'forceKN':vector,'source':'actual-open-portal-ground-solid-face'})
+            x=(a+b)/2+(b-a)*coordinate/2;dx=(b-a)*weight/2;density=pressure*dx/1e6
+            if x<raw_left or x>raw_right:
+                _post_strip(model,family,family_name,'outer-north','west' if x<6000 else 'east',x,exposure,3170,density,origins)
+                continue
+            if x<finish_left or x>finish_right:
+                _post_strip(model,family,family_name,'outer-north','west' if x<6000 else 'east',x,exposure,portal['rawSpring'],density,origins)
+                opening=portal['rawSpring']
+            else:opening=portal['centreZ']+math.sqrt(portal['finishedRadius']**2-(x-6000)**2)
+            height=3170-opening;point=[x,y+775/2,(3170+opening)/2];force=[0,density*height,0]
+            node=min(geometry['arcNodes'],key=lambda name:abs(frame.nodes[name][0]-x))
+            _add(family,node,_wrench_at(force,point,frame.nodes[node]));origins.append({'pointXYZMm':point,'forceKN':force,'source':'explicit-arch-infill-cladding-receiver-qualification-open'})
     if ff<3170:raise ValueError('Native firstfloor pressure datum is below actual RC soffit')
     for a,b in zip(stations,stations[1:]):
-        x=(a+b)/2;force=pressure*(b-a)*(ff-3170)/1e6;z=(3170+ff)/2
-        xs=geometry['beamXMm'];nodes=geometry['beamNodes']
-        if x<=xs[0]:shares=[(nodes[0],1.)]
-        elif x>=xs[-1]:shares=[(nodes[-1],1.)]
-        else:
-            i=next(i for i in range(len(xs)-1) if xs[i]<=x<=xs[i+1]);v=(x-xs[i])/(xs[i+1]-xs[i]);shares=[(nodes[i],1-v),(nodes[i+1],v)]
-        point=[x,y+775/2,z];vector=[0,force,0]
-        for node,factor in shares:_add(family,node,[factor*v for v in _wrench_at(vector,point,frame.nodes[node])])
-        origins.append({'pointXYZMm':point,'forceKN':vector,'source':'actual-ground-to-source-ff-slab-edge-strip'})
+        x=(a+b)/2;density=[0,pressure*(ff-3170)/1e6,0];point=[x,y+775/2,(3170+ff)/2]
+        name,member=_upstand_member(model,'outer-north',x)
+        if member is not None:
+            p=member['physicalStartMm'];moment=cross([0,y+775/2-p[1],point[2]-p[2]],density)
+            _consistent_line(model,family,family_name,name,member,a-p[0],b-p[0],density,moment)
+        else:_beam_point(model,family,family_name,'outer-north',point,[(b-a)*value for value in density])
+        origins.append({'pointXYZMm':point,'forceKN':[(b-a)*value for value in density],'source':'actual-slab-edge-consistent-uniform-beam-load'})
     return family,origins
 
 
@@ -183,6 +306,19 @@ def _floor_offset_couples(model,rows,family,ff):
     return records
 
 
+def _record_native_collector_loads(model,rows,ff):
+    geometry=model['wallFrames']['outer-north'];datum=geometry['west']['pier']['footCentroidXYMm'][1]
+    for row in rows:
+        if row['forceKN'][0] or abs(row['pointXYZMm'][1]-datum)>1e-6:continue
+        low,high=row['loadedAlongIntervalMm'];density=[0,row['forceKN'][1]/(high-low),0]
+        for name,member in model['members'].items():
+            if not name.startswith('outer-north/upstand/'):continue
+            p,q=member['physicalStartMm'],member['physicalEndMm'];a=max(low,p[0]);b=min(high,q[0])
+            if b<=a:continue
+            moment=cross([0,0,ff-p[2]],density)
+            _consistent_line(model,{},'native-floor-reconciled',name,member,a-p[0],b-p[0],density,moment,apply=False)
+
+
 def build_rc_floor_house(case,source):
     expected=reference_rc_floor_house_case(source)
     if not isinstance(case,dict) or set(case)!=set(expected) or any(case[key]!=expected[key] for key in ('schema','sourceSHA256','finishedAxialWidthMm','mineralFaceLiningMm','courtyardPressure','reinforcement','use')):
@@ -195,6 +331,7 @@ def build_rc_floor_house(case,source):
     portal=source['joined']['floor']['retained']['values']['project/had/studies/water-replan.json']['model']['insulatedPortal']
     model['sourceUpperEnvelope']={'floorCollectorGlassCavityBrickMm':geometry['unchangedExteriorGlassCavityBrickMm'],'portalAdjacentRecipeText':portal['wrap']['localReplacement']}
     _author_widths(model,case,source)
+    _replace_known_gravity_loads(model)
     floor_source=source['joined']['floor'];request=case['joinedCase']['floor'];joined=model['joinedFloor'];old=joined['floor'];width=case['northUpstandWidthMm']
     retained=evaluate_retained_components(request['componentCase'],floor_source['retained']);bodies=[row['geometry']['bodyRectangleXYMm'] for row in retained['components'] if row['kind']=='first-floor']
     omissions=copy.deepcopy(old['omissionsXYMm']);receivers=copy.deepcopy(old['finiteBeamBoundaryReceivers'])
@@ -241,6 +378,7 @@ def build_rc_floor_house(case,source):
     for coefficient,terms in zip(floor['condensedForceKN'],joined['portTerms']):
         for node,row in terms:_add(condensed,node,[coefficient*value for value in row])
     projection=_floor_offset_couples(model,rows,condensed,wind['sourceDatumsMm']['ff'])
+    _record_native_collector_loads(model,rows,wind['sourceDatumsMm']['ff'])
     model['families']['native-floor-reconciled']=condensed;model['families']['actual-outer-portal-ground-pressure']=portal_loads
     joined['floor']=floor;model['houseLoadCase']=case;model['houseBaseSchedule']=base_schedule
     model['housePressure']={'nativeWind':wind,'reconciledFloorRows':rows,'removedGrossLowerPortalShares':removed,
@@ -293,7 +431,8 @@ def rc_house_schedule(model):
 def _physical_cut_rows(model,raw,metadata):
     rows=[];frame=model['model']
     for name,member in metadata.items():
-        a,b=member['physicalStartMm'],member['physicalEndMm'];length=math.dist(a,b);axis=[(v-u)/length for u,v in zip(a,b)];normal=[0,1,0];radial=cross(axis,normal)
+        a,b=member['physicalStartMm'],member['physicalEndMm'];length=math.dist(a,b);axis=[(v-u)/length for u,v in zip(a,b)]
+        trial=member.get('yAxisGlobal',[0,1,0]);projection=sum(u*v for u,v in zip(trial,axis));normal=[u-projection*v for u,v in zip(trial,axis)];scale=math.sqrt(sum(value*value for value in normal));normal=[value/scale for value in normal];radial=cross(axis,normal)
         for end,node in enumerate((member['a'],member['b'])):
             wrench=raw['memberEndWrenchesKN_KNmm'][name][6*end:6*end+6];force=wrench[:3];point=a if end==0 else b
             offset=[u-v for u,v in zip(frame.nodes[node],point)];moment=[u+v for u,v in zip(wrench[3:],cross(offset,force))]
@@ -304,6 +443,82 @@ def _physical_cut_rows(model,raw,metadata):
                 'torsionKNm':dot(moment,axis)/1000,'bendingYKNm':dot(moment,normal)/1000,'bendingZKNm':dot(moment,radial)/1000,
                 'globalPhysicalEndWrenchKN_KNm':[*force,*[value/1000 for value in moment]]})
     return rows
+
+
+def recovered_member_actions(model,raw,multipliers):
+    recovered={'memberEndWrenchesKN_KNmm':{name:list(row) for name,row in raw['memberEndWrenchesKN_KNmm'].items()}}
+    for family,factor in multipliers.items():
+        for name,vector in model.get('memberEquivalentLoads',{}).get(family,{}).items():
+            if name not in recovered['memberEndWrenchesKN_KNmm']:continue
+            recovered['memberEndWrenchesKN_KNmm'][name]=[a-factor*b for a,b in zip(recovered['memberEndWrenchesKN_KNmm'][name],vector)]
+    return recovered
+
+
+def _member_left_resultant(model,name,member,recovered,multipliers,s,side='right'):
+    p,q=member['physicalStartMm'],member['physicalEndMm'];length=math.dist(p,q);axis=[(b-a)/length for a,b in zip(p,q)]
+    point=[a+s*x for a,x in zip(p,axis)];start=recovered['memberEndWrenchesKN_KNmm'][name][:6];force=list(start[:3])
+    moment=[a+b for a,b in zip(start[3:],cross([a-b for a,b in zip(model['model'].nodes[member['a']],point)],force))]
+    for family,factor in multipliers.items():
+        for load in model.get('memberDistributedLoads',{}).get(family,{}).get(name,[]):
+            a=load['s0Mm'];b=min(s,load['s1Mm'])
+            if b<=a:continue
+            amount=[factor*(b-a)*value for value in load['forceDensityKNPerMm']];at=[u+(a+b)/2*x for u,x in zip(p,axis)]
+            addition=cross([u-v for u,v in zip(at,point)],amount);force=[u+v for u,v in zip(force,amount)]
+            moment=[u+v+factor*(b-a)*w for u,v,w in zip(moment,addition,load['momentDensityKNmmPerMm'])]
+        for load in model.get('memberPointLoads',{}).get(family,{}).get(name,[]):
+            at=load['pointXYZMm'];station=sum((a-b)*x for a,b,x in zip(at,p,axis))
+            if station>s+1e-7 or (side=='left' and abs(station-s)<1e-7):continue
+            amount=[factor*x for x in load['forceKN']];addition=cross([u-v for u,v in zip(at,point)],amount)
+            force=[u+v for u,v in zip(force,amount)];moment=[u+v+factor*w for u,v,w in zip(moment,addition,load['momentKNmm'])]
+    return force,moment
+
+
+def _interior_member_cuts(model,recovered,multipliers):
+    rows=[]
+    for name,member in model['members'].items():
+        p,q=member['physicalStartMm'],member['physicalEndMm'];length=math.dist(p,q);axis=[(b-a)/length for a,b in zip(p,q)];normal=[0,1,0];radial=cross(axis,normal)
+        breaks={0.,length};point_stations=set()
+        for family in model.get('memberPointLoads',{}):
+            for load in model['memberPointLoads'][family].get(name,[]):
+                s=sum((a-b)*x for a,b,x in zip(load['pointXYZMm'],p,axis))
+                if 1e-7<s<length-1e-7:breaks.add(s);point_stations.add(s)
+        for family in model.get('memberDistributedLoads',{}):
+            for load in model['memberDistributedLoads'][family].get(name,[]):breaks.update((load['s0Mm'],load['s1Mm']))
+        candidates={(v,'right') for v in breaks if 1e-7<v<length-1e-7}|{(v,'left') for v in point_stations}
+        def derivative(s):
+            force,_=_member_left_resultant(model,name,member,recovered,multipliers,s)
+            density=[0.,0.,0.]
+            for family,factor in multipliers.items():
+                for load in model.get('memberDistributedLoads',{}).get(family,{}).get(name,[]):
+                    if load['s0Mm']<s<load['s1Mm']:density=[a+factor*b for a,b in zip(density,load['momentDensityKNmmPerMm'])]
+            return [a+b for a,b in zip(cross([-v for v in axis],force),density)]
+        ordered=sorted(breaks)
+        for lo,hi in zip(ordered,ordered[1:]):
+            a=lo+(hi-lo)/3;b=lo+2*(hi-lo)/3;da=derivative(a);db=derivative(b)
+            for direction in (axis,normal,radial):
+                va=sum(u*v for u,v in zip(da,direction));vb=sum(u*v for u,v in zip(db,direction));slope=(vb-va)/(b-a)
+                if abs(slope)>1e-14:
+                    root=a-va/slope
+                    if lo+1e-7<root<hi-1e-7:candidates.add((root,'right'))
+        for s,side in sorted(candidates):
+            force,moment=_member_left_resultant(model,name,member,recovered,multipliers,s,side);dot=lambda a,b:sum(u*v for u,v in zip(a,b))
+            rows.append({'memberId':name,'end':None,'fraction':s/length,'cutSide':side,'kind':member['kind'],'physicalPointMm':[a+s*x for a,x in zip(p,axis)],
+                'breadthMm':member['breadthMm'],'depthMm':member['depthMm'],'axialCompressionKN':dot(force,axis),
+                'shearYKN':dot(force,normal),'shearZKN':dot(force,radial),'torsionKNm':dot(moment,axis)/1000,
+                'bendingYKNm':dot(moment,normal)/1000,'bendingZKNm':dot(moment,radial)/1000,
+                'signConvention':'Left-resultant interiorsection, positivecompression. Bothsides of pointloads, distributedsegmentboundaries and exactcomponentmomentstationarycuts; endpointcuts separate.'})
+    return rows
+
+
+def member_load_equilibrium(model,recovered,multipliers):
+    worst=0.;governing=None
+    for name,member in model['members'].items():
+        p,q=member['physicalStartMm'],member['physicalEndMm'];force,moment=_member_left_resultant(model,name,member,recovered,multipliers,math.dist(p,q))
+        end=recovered['memberEndWrenchesKN_KNmm'][name][6:];em=[a+b for a,b in zip(end[3:],cross([a-b for a,b in zip(model['model'].nodes[member['b']],q)],end[:3]))]
+        residual=[*[a+b for a,b in zip(force,end[:3])],*[(a+b)/1000 for a,b in zip(moment,em)]];error=max(abs(v) for v in residual)
+        if error>worst:worst=error;governing={'memberId':name,'residualKN_KNm':residual}
+    if worst>1e-6:raise ValueError('Physical recoveredmember distributedload equilibrium fails: '+str(governing))
+    return {'maximumResidualKN_KNm':worst,'governing':governing,'scope':'Each actual portal/bridge member: bothphysicalendwrenches plus allapplied consistentpoint/distributedloads; no totalphysical strainenergy claim.'}
 
 
 def _member_cuts(model,raw):
@@ -324,6 +539,37 @@ def _cap_cuts(model,raw):
     return rows
 
 
+def _adjacent_grid_geometry(model):
+    class Recorder(FrameModel):
+        def __init__(self):
+            super().__init__();self.geometry={}
+        def member(self,name,a,b,section,material,physical_start=None,physical_end=None,y_axis=None):
+            self.geometry[name]={'a':a,'b':b,'physicalStartMm':list(physical_start or self.nodes[a]),'physicalEndMm':list(physical_end or self.nodes[b]),'trialY':y_axis}
+            super().member(name,a,b,section,material,physical_start,physical_end,y_axis)
+    recorder=Recorder();lines=_grid(recorder,model['grid'],model['request']['gridLaw'])
+    actual={name:(a,b,matrix) for name,a,b,matrix in model['model'].members};metadata={};heads={'P25','P26','P28','P30'}
+    for name,a,b,matrix in recorder.members:
+        if not ({a,b}&heads):continue
+        if actual.get(name)!=(a,b,matrix):raise ValueError('Source gridgeometry recorder disagrees with actual solved member')
+        row=recorder.geometry[name];line=lines[name[5:].rsplit('/',1)[0]];height=line['z'][1]-line['z'][0]
+        p,q=row['physicalStartMm'],row['physicalEndMm'];length=math.dist(p,q);axis=[(v-u)/length for u,v in zip(p,q)]
+        row.update(kind='source-ground-grid',breadthMm=height,depthMm=line['width'],sourceBeamWidthMm=line['width'],sourceBeamVerticalDepthMm=height,
+            yAxisGlobal=row.pop('trialY') or ([0,0,1] if abs(axis[2])<.9 else [1,0,0]),adjacentHeadIds=sorted({a,b}&heads))
+        metadata[name]=row
+    return metadata
+
+
+def _adjacent_grid_cuts(model,raw):
+    if 'adjacentGridGeometry' not in model:model['adjacentGridGeometry']=_adjacent_grid_geometry(model)
+    metadata=model['adjacentGridGeometry'];rows=_physical_cut_rows(model,raw,metadata)
+    for row in rows:
+        item=metadata[row['memberId']];row['aNode']=item['a'];row['bNode']=item['b'];row['sourceBeamWidthMm']=item['sourceBeamWidthMm'];row['sourceBeamVerticalDepthMm']=item['sourceBeamVerticalDepthMm']
+        row['physicalMemberStartMm']=item['physicalStartMm'];row['physicalMemberEndMm']=item['physicalEndMm'];row['localYAxisGlobal']=item['yAxisGlobal'];row['adjacentHeadIds']=item['adjacentHeadIds']
+        node=item['a'] if row['end']==0 else item['b'];row['isCapGridInterfaceEnd']=node in item['adjacentHeadIds']
+        row['scope']='Exact actual source grid member physicalcut; gridyaxis is vertical, not portalnormalY. Lowercap/head and soil remain inherited unqualified; no gridselfweight is imported.'
+    return rows
+
+
 def solve_rc_floor_house(model,source,name,structural_solver=solve_joined_rc_floor):
     case=model['houseLoadCase'];boundary=case['boundary'];multipliers={'physical-G':boundary['physicalGFactor'],'native-floor-reconciled':1.,'actual-outer-portal-ground-pressure':1.}
     if boundary['includeExternalGMAXQ']:multipliers.update({'external-GMAX':1.35,'external-Q':1.5})
@@ -334,11 +580,14 @@ def solve_rc_floor_house(model,source,name,structural_solver=solve_joined_rc_flo
         frame.solve=record
         result=structural_solver(model,context,name,multipliers)
     finally:frame.solve=original
-    cuts=_member_cuts(model,captured['last'])
+    recovered=recovered_member_actions(model,captured['last'],multipliers)
+    cuts=_member_cuts(model,recovered)
+    interior=_interior_member_cuts(model,recovered,multipliers)
     result.pop('memberNecessaryScreens',None)
     result['inheritedFourH16StrengthScreensDiscarded']=True
     result['requiresActualWorkedCageStrengthProof']=True
-    result['memberCuts']=cuts;result['capCuts']=_cap_cuts(model,captured['last']);result['request']=case;result['caseId']=name
+    result['memberCuts']=cuts;result['interiorMemberCuts']=interior;result['memberLoadRecovery']='Actual K·u minus consistentmemberload vectors; post/upstand distributedselfweight, actualpost/slab-edgewind, specifiedGMAX/Q pointloads and directnativecollectorline load are recovered. Arch/infill localtransfer remains explicitlyqualified.';result['capCuts']=_cap_cuts(model,captured['last']);result['request']=case;result['caseId']=name
+    result['adjacentGridMemberCuts']=_adjacent_grid_cuts(model,captured['last']);result['memberLoadEquilibrium']=member_load_equilibrium(model,recovered,multipliers)
     result['sourceSHA256']=source['identities'];pressure=model['housePressure']
     expected=_origin_wrench(pressure['reconciledFloorRows']);actual=_family_wrench(model,model['families']['native-floor-reconciled'])
     difference=[a-b for a,b in zip(actual,expected)]
@@ -347,7 +596,7 @@ def solve_rc_floor_house(model,source,name,structural_solver=solve_joined_rc_flo
     result['pressureBoundary']=pressure
     result['condensedSystemStrainEnergyKNmm']=result.pop('strainEnergyKNmm')
     result['recoveredCondensedSystemInternalEnergyKNmm']=result.pop('recoveredInternalStrainEnergyKNmm')
-    result['energyScope']='Exact reduced-system work balance. Internally applied floorpressure has a load-only condensation energy constant not recovered here; this is not totalphysical floor strainenergy.'
+    result['energyScope']='Exact reduced nodal-system work balance. Internally appliedfloorpressure and consistentdistributedmemberloads have load-only internalenergy constants not recovered here; this is not totalphysical floor/member strainenergy.'
     floor=model['joinedFloor']['floor'];balance=[0.]*6
     for i,row in enumerate(result['floorInterfacePorts']):
         applied=floor['condensedForceKN'][3*i:3*i+3];old=row['forceOnFloorKN_KNm'];force=[old[0]-applied[0],old[1]-applied[1],0.];mz=old[5]-applied[2]
@@ -368,6 +617,7 @@ def rc_floor_house_diagnostics():
     return [
         'This authored structural successor reuses the actual native floor/grid/portal builder. Width edits regenerate finite post/ring/upstand sections, all own RC/infill mass, finite contact/shear face quadrature, cap containment and the same perforated floor condensation. No copied house or extra material stiffness is substituted.',
         'The full3D200mm upstand exclusively owns its widened centralnorth strips. Old140mm band/chord stiffness and additional CSTfield inside the200mm strip are absent. Other source floorbands stay140mm and retain actual aperture guards.',
+        'Consistent nativeTimoshenko point/uniform load work is applied to actual post/slab-edge members and specified upperGMAX/Qreceivers. Endactions recover K·u minus appliedmemberload vectors; sampledinteriorsections recover the actual cumulativebodyloads. Arch/infill and rigidjoint-cladding reactions remain explicitlyqualified, not invented bond/fixing evidence.',
         'The source firstfloor P1=qL(rr−base)/2 already includes a gross lower-wall contribution. Over the actual loaded outerportal territory that lower contribution is removed at its exact firstfloor station, then actual open-portal solid-face and3170→ff slab-edge pressure are applied to the finite RC body. Other faces retain their native source resultant. No filled-opening counterweight or P0/roof/fixed-base increment is imported.',
         'All96 source programme identities are supported through the SAME staged floor.boundaryCase.windIndex. A result claims only its executed case. The pairedcourtProjection flag affects omittedroof duties; actual courtyardface pressure is a separate unresolved challenge and is not silently added.',
         'The nativeff3370 to membrane3270 eccentricwork is conserved explicitly. Centralnorth offsets enter actual finite upstand torsion stations; other face offsets retain the declared source Lface projection. Local vertical slab/collector transfer outside the workedupstand remains unproved.',

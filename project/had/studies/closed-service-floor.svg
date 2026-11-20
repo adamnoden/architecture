@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1500" viewBox="0 0 1800 1500">
-<rect width="1800" height="1500" fill="#faf8f1"/><g font-family="sans-serif" fill="#263b42">
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="2240" viewBox="0 0 1800 2240">
+<rect width="1800" height="2240" fill="#faf8f1"/><g font-family="sans-serif" fill="#263b42">
 <text x="45" y="42" font-size="26">Enclosed E gravity body + actual-grid N support · FFL715 comparison</text>
 <text x="45" y="72" font-size="17">All dimensions mm. Author inputs and numerical comparisons; no selected-house, installed seal, grid capacity or site acceptance.</text>
 <text x="45" y="118" font-size="20">A · E transverse at upstream pressure cleanout</text>
@@ -67,7 +67,7 @@
 <polyline points="1238.33,337.20 1238.33,220.30" fill="none" stroke="#c2563e" stroke-width="2" />
 <polyline points="1317.47,337.20 1317.47,220.30" fill="none" stroke="#c2563e" stroke-width="2" />
 <polyline points="1557.00,275.00 1722.00,275.00" fill="none" stroke="#b45b3c" stroke-width="3" stroke-dasharray="7 5"/>
-<text x="1030" y="430" font-size="15">E1200 passage6300..7500; gross6452..7298; all service bodies aboveRC350.</text>
+<text x="1030" y="430" font-size="15">E1200 passage6300..7500; gross6452..7298; actual RCtop350.</text>
 <text x="1030" y="458" font-size="15">New scuppers: raw1200; bottom350; spring700/crown850/ring1065.</text>
 <text x="1030" y="486" font-size="15">Finished crown713 below FFL715; window sill1465.</text>
 <text x="1030" y="514" font-size="15">Joint-free wall bodies draw550/750 into real8179.5..9203 gallery.</text>
@@ -112,9 +112,9 @@
 <text x="435" y="1070" font-size="15">Water-only terminal continues13550 into existing N receiver.</text>
 <text x="435" y="1100" font-size="15">Local cantilever is a selection cost, no new foundation invented.</text>
 <text x="980" y="790" font-size="20">D · N section along the rail; cold structure unchanged</text>
-<polyline points="990.00,966.40 1024.50,967.36 1129.44,970.28 1234.38,973.20 1440.51,978.94 1478.75,980.00 1553.50,982.08 1657.00,984.96" fill="none" stroke="#8d6d45" stroke-width="3" />
-<polyline points="990.00,1020.80 1024.50,1021.76 1129.44,1024.68 1234.38,1027.60 1440.51,1033.34 1478.75,1034.40 1553.50,1036.48 1657.00,1039.36" fill="none" stroke="#3e8093" stroke-width="4" />
-<polyline points="990.00,1078.40 1024.50,1079.36 1129.44,1082.28 1234.38,1085.20 1440.51,1090.94 1478.75,1092.00 1553.50,1094.08 1657.00,1096.96" fill="none" stroke="#3e8093" stroke-width="2" />
+<polyline points="990.00,966.40 1024.50,967.36 1129.44,970.28 1234.38,973.20 1440.51,978.94 1478.75,980.00 1519.00,981.12 1553.50,982.08 1657.00,984.96" fill="none" stroke="#8d6d45" stroke-width="3" />
+<polyline points="990.00,1020.80 1024.50,1021.76 1129.44,1024.68 1234.38,1027.60 1440.51,1033.34 1478.75,1034.40 1519.00,1035.52 1553.50,1036.48 1657.00,1039.36" fill="none" stroke="#3e8093" stroke-width="4" />
+<polyline points="990.00,1078.40 1024.50,1079.36 1129.44,1082.28 1234.38,1085.20 1440.51,1090.94 1478.75,1092.00 1519.00,1093.12 1553.50,1094.08 1657.00,1096.96" fill="none" stroke="#3e8093" stroke-width="2" />
 <polyline points="990.00,999.60 1478.75,1013.20 1616.75,1017.04" fill="none" stroke="#58a6b8" stroke-width="3" />
 <rect x="1018.50" y="1079.36" width="12.00" height="64.00" fill="#65818a" stroke="#52666b"/>
 <rect x="1019.50" y="1143.36" width="10.00" height="74.24" fill="#879998" stroke="#52666b"/>
@@ -131,8 +131,79 @@
 <polyline points="1645.50,1187.20 1680.00,1187.20" fill="none" stroke="#448c9e" stroke-width="2" stroke-dasharray="7 5"/>
 <text x="1000" y="842" font-size="15">12cover +50frame +58mineral +50crossbearer +180rail +200crossbeam; no coplanar overlap.</text>
 <text x="1000" y="870" font-size="15">EW top=walk−350; bottom=walk−550. Stools end above−180 coldRC top.</text>
-<text x="1000" y="898" font-size="15">Cold anchors−300/−500; bracket bottom−550; retained caps/ties−750 still governD1250.</text>
+<text x="1000" y="898" font-size="15">Cold anchors−300/−500; bracket−550; lowest retained-750 gives minimumD1250.</text>
 <text x="1000" y="926" font-size="15">N shoe sole350 staysRC-owned; crest730; taller return, no apron cut.</text>
-<text x="1000" y="1450" font-size="15">Rail projection1882.5; people982.5. SLS loaded maximum5.11mm.</text>
+<text x="1000" y="1450" font-size="15">Rail projection1882.5; people982.5. SLS loaded maximum5.14mm.</text>
 <text x="45" y="1478" font-size="16">No actual site grade/outfall capacity, qualified first harm or installed seal claim. bounded-numerical-comparison.</text>
+<text x="45" y="1530" font-size="20">E · Actual capture and 550-long floor opening: plan projection</text>
+<rect x="151.25" y="1579.05" width="357.50" height="471.90" fill="#e9e3d0" stroke="#52666b"/>
+<rect x="157.75" y="1815.65" width="344.50" height="222.30" fill="#bac8c9" stroke="#52666b"/>
+<rect x="174.00" y="1941.42" width="52.00" height="19.50" fill="#b78b56" stroke="#52666b"/>
+<rect x="174.00" y="1941.42" width="9.75" height="19.50" fill="#869b9e" stroke="#52666b"/>
+<rect x="190.25" y="1941.42" width="39.00" height="19.50" fill="#869b9e" stroke="#52666b"/>
+<rect x="190.25" y="1941.42" width="39.00" height="19.50" fill="#869b9e" stroke="#52666b"/>
+<rect x="190.25" y="1960.92" width="39.00" height="1.95" fill="#869b9e" stroke="#52666b"/>
+<rect x="434.00" y="1891.38" width="52.00" height="19.50" fill="#b78b56" stroke="#52666b"/>
+<rect x="476.25" y="1891.38" width="9.75" height="19.50" fill="#869b9e" stroke="#52666b"/>
+<rect x="430.75" y="1891.38" width="39.00" height="19.50" fill="#869b9e" stroke="#52666b"/>
+<rect x="430.75" y="1891.38" width="39.00" height="19.50" fill="#869b9e" stroke="#52666b"/>
+<rect x="430.75" y="1910.88" width="39.00" height="1.95" fill="#869b9e" stroke="#52666b"/>
+<polyline points="200.00,1951.17 200.00,1951.17" fill="none" stroke="#344f59" stroke-width="6.5" />
+<polyline points="200.00,1951.17 200.00,1951.17" fill="none" stroke="#344f59" stroke-width="11.700000000000001" />
+<polyline points="219.50,1951.17 219.50,1951.17" fill="none" stroke="#344f59" stroke-width="10.4" />
+<polyline points="460.00,1901.12 460.00,1901.12" fill="none" stroke="#344f59" stroke-width="6.5" />
+<polyline points="460.00,1901.12 460.00,1901.12" fill="none" stroke="#344f59" stroke-width="11.700000000000001" />
+<polyline points="440.50,1901.12 440.50,1901.12" fill="none" stroke="#344f59" stroke-width="10.4" />
+<polyline points="219.50,1951.17 440.50,1901.12" fill="none" stroke="#344f59" stroke-width="10.4" />
+<circle cx="167.5" cy="2026.25" r="4" fill="#263b42"/>
+<circle cx="167.5" cy="1826.05" r="4" fill="#263b42"/>
+<circle cx="221.66666666666706" cy="2026.25" r="4" fill="#263b42"/>
+<circle cx="221.66666666666706" cy="1826.05" r="4" fill="#263b42"/>
+<circle cx="275.8333333333329" cy="2026.25" r="4" fill="#263b42"/>
+<circle cx="275.8333333333329" cy="1826.05" r="4" fill="#263b42"/>
+<circle cx="330.0" cy="2026.25" r="4" fill="#263b42"/>
+<circle cx="330.0" cy="1826.05" r="4" fill="#263b42"/>
+<circle cx="384.1666666666671" cy="2026.25" r="4" fill="#263b42"/>
+<circle cx="384.1666666666671" cy="1826.05" r="4" fill="#263b42"/>
+<circle cx="438.3333333333329" cy="2026.25" r="4" fill="#263b42"/>
+<circle cx="438.3333333333329" cy="1826.05" r="4" fill="#263b42"/>
+<circle cx="492.5" cy="2026.25" r="4" fill="#263b42"/>
+<circle cx="492.5" cy="1826.05" r="4" fill="#263b42"/>
+<circle cx="167.5" cy="1976.2" r="4" fill="#263b42"/>
+<circle cx="167.5" cy="1926.15" r="4" fill="#263b42"/>
+<circle cx="167.5" cy="1876.1" r="4" fill="#263b42"/>
+<circle cx="492.5" cy="1976.2" r="4" fill="#263b42"/>
+<circle cx="492.5" cy="1926.15" r="4" fill="#263b42"/>
+<circle cx="492.5" cy="1876.1" r="4" fill="#263b42"/>
+<polyline points="167.50,2026.25 167.50,2026.25" fill="none" stroke="#c2563e" stroke-width="16.900000000000002" />
+<polyline points="167.50,2026.25 167.50,2026.25" fill="none" stroke="#c2563e" stroke-width="13.0" />
+<polyline points="167.50,2026.25 167.50,2026.25" fill="none" stroke="#c2563e" stroke-width="32.5" />
+<polyline points="167.50,2026.25 557.49,2023.64" fill="none" stroke="#c2563e" stroke-width="19.5" />
+<circle cx="710.25" cy="1926.8" r="195.0" fill="none" stroke="#4f7357" stroke-width="2"/>
+<text x="45" y="2180" font-size="15">Plan shows actual lid, tongues, fork/pins, bail and one tool witness; continuous sweep is numerical proof.</text>
+<text x="45" y="2208" font-size="15">Circle: 300 body radius. Opening550; stance offset585 gives10 nominal /5 after setting.</text>
+<text x="1000" y="1530" font-size="20">F · Capture elevation projection and current controls</text>
+<rect x="1172.00" y="2070.50" width="36.00" height="2.70" fill="#b78b56" stroke="#52666b"/>
+<rect x="1172.00" y="2073.20" width="6.75" height="2.00" fill="#869b9e" stroke="#52666b"/>
+<rect x="1183.25" y="2073.65" width="27.00" height="2.00" fill="#869b9e" stroke="#52666b"/>
+<rect x="1183.25" y="2068.70" width="27.00" height="2.00" fill="#869b9e" stroke="#52666b"/>
+<rect x="1183.25" y="2068.70" width="27.00" height="6.30" fill="#869b9e" stroke="#52666b"/>
+<rect x="1352.00" y="2072.62" width="36.00" height="2.70" fill="#b78b56" stroke="#52666b"/>
+<rect x="1381.25" y="2075.32" width="6.75" height="2.00" fill="#869b9e" stroke="#52666b"/>
+<rect x="1349.75" y="2075.77" width="27.00" height="2.00" fill="#869b9e" stroke="#52666b"/>
+<rect x="1349.75" y="2070.82" width="27.00" height="2.00" fill="#869b9e" stroke="#52666b"/>
+<rect x="1349.75" y="2070.82" width="27.00" height="6.30" fill="#869b9e" stroke="#52666b"/>
+<polyline points="1190.00,2075.00 1190.00,2068.25" fill="none" stroke="#344f59" stroke-width="6.5" />
+<polyline points="1190.00,2068.25 1190.00,2065.10" fill="none" stroke="#344f59" stroke-width="11.700000000000001" />
+<polyline points="1203.50,2068.70 1203.50,1764.66" fill="none" stroke="#344f59" stroke-width="10.4" />
+<polyline points="1370.00,2077.12 1370.00,2070.37" fill="none" stroke="#344f59" stroke-width="6.5" />
+<polyline points="1370.00,2070.37 1370.00,2067.22" fill="none" stroke="#344f59" stroke-width="11.700000000000001" />
+<polyline points="1356.50,2070.82 1356.50,1764.66" fill="none" stroke="#344f59" stroke-width="10.4" />
+<polyline points="1203.50,1764.66 1356.50,1764.66" fill="none" stroke="#344f59" stroke-width="10.4" />
+<text x="1000" y="1558" font-size="15">700 bail; leg X±170, tongues/pins X±200.</text>
+<text x="1000" y="1586" font-size="15">Fork60×30×3; tongue80×30×6; shoulder10 /threadM8.</text>
+<text x="1000" y="1614" font-size="15">Charged lid13.939kg; grip/force event unqualified.</text>
+<text x="1000" y="1642" font-size="15">Full tool reach587.696 of600; carry592.136.</text>
+<text x="1000" y="1670" font-size="15">All stance/tool/stage paths: body gap≥5 after5.</text>
+<text x="1000" y="1698" font-size="15">Crew floor ports17 regenerate; actual ground transfer unconsumed.</text>
 </g></svg>

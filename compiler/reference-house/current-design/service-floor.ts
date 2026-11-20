@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { sha256SemanticFingerprint } from '../../core/identity.js'
 import type { CurrentDesignResolution } from './resolve.js'
-import type { runGroundSectionCase } from './structural-ground.js'
+import { runGroundSectionCase } from './structural-ground.js'
 
 const repository = new URL('../../../', import.meta.url)
 const methodPath = 'project/had/studies/closed_service_floor.py'
@@ -54,6 +54,10 @@ function binding(resolved: CurrentDesignResolution, ground: Ground) {
       || ground.native.schema !== 'dry-side-ground-section-result/2' || ground.native.selected !== false
       || ground.evidence.installedAcceptance !== false || !ground.source.caseDigest) {
     throw new Error('The service floor requires its computed current-plan ground-section stage')
+  }
+  const replayedGround = runGroundSectionCase(resolved, ground.authoredCase)
+  if (sha256SemanticFingerprint(replayedGround) !== sha256SemanticFingerprint(ground)) {
+    throw new Error('Modified or stale computed ground-section result; replay its authored case')
   }
   const reference: NativeCase = JSON.parse(execFileSync('python3', ['-B', fileURLToPath(new URL(methodPath, repository)), '--read'], { encoding: 'utf8' }))
   if (reference.schema !== 'closed-service-floor/2' || !reference.sources || !reference.settings

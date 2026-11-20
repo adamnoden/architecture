@@ -5,11 +5,12 @@ from pathlib import Path
 from xml.sax.saxutils import escape
 
 import numpy as np
+from closed_service_tool_geometry import bolt_access, capture_geometry, half_coordinates, floor_opening_body_clearance
 
 SOURCE_PATHS = ('project/had/studies/water-replan.json', 'project/rwt/studies/open-loggia-event.json',
                 'project/rwt/studies/selected-receiving-interface.json', 'project/str/studies/current-house-grid.json',
                 'project/mat/studies/upper-access-renewal.json',
-                'project/owner-house-charter.md', 'project/had/studies/closed-service-gasket-evidence.json', 'project/had/studies/closed_service_floor.py')
+                'project/owner-house-charter.md', 'project/had/studies/closed_service_tool_geometry.py', 'project/had/studies/closed-service-gasket-evidence.json', 'project/had/studies/closed_service_floor.py')
 
 
 def derive_ground_stack(value):
@@ -68,17 +69,23 @@ def beam(nodes, supports, loads, point_loads, inertia, elastic):
     samples=[]
     for i,(a,b) in enumerate(zip(nodes,nodes[1:])):
         length=b-a; u0,t0,u1,t1=displacement[2*i:2*i+4]
-        for fraction in np.linspace(0,1,41):
+        c=loads[i]*length**4/(24*elastic*inertia)
+        coefficients=[c,2*u0+length*t0-2*u1+length*t1-2*c,-3*u0-2*length*t0+3*u1-length*t1+c,length*t0,u0]
+        derivative=[4*coefficients[0],3*coefficients[1],2*coefficients[2],coefficients[3]]
+        positions=[0.,1.]+[float(r.real) for r in np.roots(derivative) if abs(r.imag)<1e-8 and 0<r.real<1]
+        if loads[i]:
+            critical=-actions[i][0]/(loads[i]*length)
+            if 0<critical<1:positions.append(critical)
+        for fraction in positions:
             x=fraction*length
-            shape=np.array([1-3*fraction**2+2*fraction**3,length*(fraction-2*fraction**2+fraction**3),3*fraction**2-2*fraction**3,length*(-fraction**2+fraction**3)])
-            deflection=float(shape@np.array([u0,t0,u1,t1])+loads[i]*x**2*(length-x)**2/(24*elastic*inertia))
+            deflection=float(np.polyval(coefficients,fraction))
             moment=-actions[i][1]+actions[i][0]*x+loads[i]*x**2/2
             samples.append([a+x,deflection,moment])
     return {'nodesMm':nodes, 'supportReactionsKN':[-float(residual[2*nodes.index(y)])/1000 for y in supports],
             'nodeDownwardMm':[float(v) for v in displacement[::2]],
             'elementEndActionsN_Nmm':actions,
             'maximumEndMomentNmm':max(abs(a[j]) for a in actions for j in (1,3)),
-            'maximumMomentNmm':max(abs(v[2]) for v in samples),
+            'interiorRecovery':'Quadratic moment stationary point and all real quartic-deflection derivative roots within each element; no grid-sampling maximum.','maximumMomentNmm':max(abs(v[2]) for v in samples),
             'maximumDeflectionMm':max(abs(v[1]) for v in samples),
             'maximumNodeDeflectionMm':max(abs(float(v)) for v in displacement[::2]),
             'appliedDownwardKN':float(sum(force[::2]))/1000,
@@ -122,11 +129,13 @@ def compile_closed(case, raw):
     reference = default_settings()
     if set(s) != set(reference) or any(type(v) not in (int,float) or not math.isfinite(v) for v in s.values()):
         raise ValueError('Expected exact finite closed comparison settings')
-    if any(s[k] != int(s[k]) or s[k]<2 for k in ('boltsOnLongSide','boltsOnShortSide')):
+    if any(s[k] != int(s[k]) or not 2<=s[k]<=16 for k in ('boltsOnLongSide','boltsOnShortSide','walkingGridSimultaneousPoints')):
         raise ValueError('Bolt rows must have explicit integer counts of at least2')
+    if not 0<=s['bailOffsetFraction']<=1 or not s['metalLossMm']<min(s['bodyMm'],s['lidMm'],s['lidRimMm'],3):
+        raise ValueError('Unsupported tool offset or remaining metal thickness')
     if not (60<=s['centralFlangeMm']<s['waterWidthMm']-100 and s['lidButtGapMm']<s['centralFlangeMm']-2*s['boltEdgeOffsetMm']):
         raise ValueError('Unsupported central split pressure-flange geometry')
-    if any(v <= 0 for k,v in s.items() if k not in ('exteriorGradeMm',)) or s['widthFraction'] > 1 or s['ventAreaFraction'] > 1 or s['preloadLossFraction'] >= 1:
+    if any(v <= 0 for k,v in s.items() if k not in ('exteriorGradeMm','bailOffsetFraction')) or s['widthFraction'] > 1 or s['ventAreaFraction'] > 1 or s['preloadLossFraction'] >= 1:
         raise ValueError('Unsupported positive comparison domain')
     source = json.loads(raw[SOURCE_PATHS[0]])
     h = source['model']; normal=h['northNormalRoute']['normal']; terminal=h['northNormalRoute']['terminal']
@@ -203,32 +212,42 @@ def compile_closed(case, raw):
                          'jointFreeWallBodyXmm':module,'shortDrawMm':pull,'parkXmm':park,'parkReserveAfter10Mm':min(park[0]-gallery[0],gallery[1]-park[1])-10,
                          'wallBodyStockMassKg':(module[1]-module[0])*(2*s['waterWidthMm']+3*s['waterHeightMm'])*s['bodyMm']*8e-6,
                          'noRCorDPCcut':True,'thermalGlassReductionMm':dict(h['weather']['layersRoomToWeather'])['bareCellularGlass']-s['jambGlassMm']})
+    walk_point=s['walkingCoverPointLoadKN'];walk_live=s['walkingLiveLoadKPa'];grid_point=walk_point*s['walkingGridSimultaneousPoints']
     frame_span=outer_width+2*s['frameGapMm']+s['railWidthMm']
     frame_section=section(100,40,4-s['metalLossMm'])
-    grid_moment=1.5*4*1000*frame_span/4+(1.35*1.7+1.5*2)*.65*frame_span**2/8
-    frame_check={'spanMm':frame_span,'sectionMm':[100,40,4],'minimumWallMm':4-s['metalLossMm'],'ULSStressMPa':grid_moment/frame_section['modulusMm3'],
-                 'SLSPointDeflectionMm':4000*frame_span**3/(48*s['elasticMPa']*frame_section['inertiaMm4']),
+    grid_moment=1.5*grid_point*1000*frame_span/4+(1.35*1.7+1.5*walk_live)*.65*frame_span**2/8
+    frame_check={'pointLoadLaw':{'independentWalkingCoverPointKN':walk_point,'simultaneousNeighbouringCoverPoints':s['walkingGridSimultaneousPoints'],'gridPointResultantKN':grid_point,'walkingLiveKPa':walk_live,'NpointLoadKNDoesNotSetThisLaw':True},'spanMm':frame_span,'sectionMm':[100,40,4],'minimumWallMm':4-s['metalLossMm'],'ULSStressMPa':grid_moment/frame_section['modulusMm3'],
+                 'SLSPointDeflectionMm':grid_point*1000*frame_span**3/(48*s['elasticMPa']*frame_section['inertiaMm4']),
                  'bayPitchMm':650,'crossbarWidthMm':100,'clearAccessLengthMm':550,'clearAccessWidthMm':outer_width+2*s['frameGapMm'],
                  'lidEnvelopeMmPerHalf':[s['lidClearLengthMm']+2*s['flangeWidthMm'],half_lid_outer],
-                 'medianSectionMm':[100,30,4],'medianULSStressMPa':(1.5*4000*650/4+(1.35*1.7+1.5*2)*.373*650**2/8)/section(100,30,4-s['metalLossMm'])['modulusMm3'],'medianSLSPointDeflectionMm':4000*650**3/(48*s['elasticMPa']*section(100,30,4-s['metalLossMm'])['inertiaMm4']),'solePlateXYmm':[280,60],'authored60x280SoleGlassSLSContactMPa':(4000+(1.7+2)*.373*100)/(280*60),'glassCapacityCreepOrUniformContactAdmitted':False,'lidReleaseRequiresOwnMedianSegmentRemoval':True,'loadPath':'Walking plate/stone to40-deep dry grid to60 rails to60×280 soles on retained100glass and RC350; pressure body takes no walking load.'}
+                 'medianSectionMm':[100,30,4],'medianULSStressMPa':(1.5*grid_point*1000*650/4+(1.35*1.7+1.5*walk_live)*.373*650**2/8)/section(100,30,4-s['metalLossMm'])['modulusMm3'],'medianSLSPointDeflectionMm':grid_point*1000*650**3/(48*s['elasticMPa']*section(100,30,4-s['metalLossMm'])['inertiaMm4']),'solePlateXYmm':[280,60],'authored60x280SoleGlassSLSContactMPa':(grid_point*1000+(1.7+walk_live)*.373*100)/(280*60),'glassCapacityCreepOrUniformContactAdmitted':False,'lidReleaseRequiresOwnMedianSegmentRemoval':True,'loadPath':'Walking plate/stone to40-deep dry grid to60 rails to60×280 soles on retained100glass and RC350; pressure body takes no walking load.'}
     intake=compile_intake(h,delta,duty,flows['one-half-plus-width-loss'],invert1+s['waterHeightMm'],s)
     local_catch=compile_catch(s,h,source,invert0,invert1,outer_width)
     north=compile_north(s,h,grid,ffl)
     east_terminal=compile_east_terminal(s,h,grid,invert1,station_extra)
     joined={}
     for label,ncase in north['loadCases'].items():
-        factor=1.35 if label.startswith('ULS') else 1
+        factor=ncase['deadFactor']
         joined[label]={head:{key:value+factor*east_terminal['source52SLSHeadLoadAdditions'][head][key] for key,value in forces.items()} for head,forces in ncase['source52HeadLoadAdditions'].items()}
     support_source=h['sections']['groundSupport']
     lowest_grid=min([g['z'][0] for g in grid['girders'].values()]+[g['z'][0] for g in grid['crossBeams'].values()]+[head['capZ'][0] for head in grid['heads']])
     reserve=support_source['heaveStress']+support_source['constructionLoss']+support_source['ventilationReserve']
     diagnostics=[]
     if ground['localSolum']>-max(-lowest_grid,-north['lowestNewStructuralMm'])-reserve:diagnostics.append('ACTUAL_GROUND_SOLUM_SHALLOWER_THAN_KNOWN_HEAVE_STRUCTURE_ENVELOPE')
+    if east_terminal['equilibrium']['maximumAbsoluteResidual']>1e-6:diagnostics.append('E_TERMINAL_GRAVITY_SIX_WRENCH_MISMATCH')
+    if handling['captureAdditionalWeldBudgetKg']<.04:diagnostics.append('LID_WELD_MASS_ALLOWANCE_BELOW_NOMINAL_FILLET_AND_CAPTURE_BUDGET')
     if not split_weld(s,max_pitch)['comparisonPass']:diagnostics.append('SPLIT_LID_DOUBLER_WELD_SCREEN_FAILS')
     if handling['bailCrossbarDynamicStressMPa']>s['stressScreenMPa']:diagnostics.append('SPLIT_LID_BAIL_STRESS_SCREEN_FAILS')
     if handling['chargedLiftingMassKg']>15:diagnostics.append('SPLIT_LID_CHARGED_LIFT_EXCEEDS15KG')
+    if any(not p['captureGeometry']['liftingTongueRimAttachmentGeometryPass'] for p in handling['operators']):diagnostics.append('SPLIT_LID_CAPTURE_TONGUE_HAS_NO_FIXED_RIM_SEAT')
+    if any(p['captureGeometry']['minimumContinuousLiftThroughFloorClearanceAfter5Mm']<0 for p in handling['operators']):diagnostics.append('SPLIT_LID_CAPTURE_CANNOT_PASS_DRY_FLOOR_OPENING')
+    if any(p['toolCaptureGeometryFailureBolts'] for p in handling['operators']):diagnostics.append('SPLIT_LID_SOCKET_BAIL_COEXISTENCE_FAILS')
+    if any(p['captureInstallation']['minimumContinuousForkInsertionToRetainedBoltClearanceAfter5Mm']<0 or p['captureInstallation']['minimumPinToolCaptureClearanceAfter5Mm']<0 or p['captureInstallation']['maximumPinToolReachMm']>600 for p in handling['operators']):diagnostics.append('SPLIT_LID_CAPTURE_INSTALL_RETURN_GEOMETRY_FAILS')
+    if max(handling['forkTongueDynamicStressMPa'],handling['forkLowerPlateDynamicStressMPa'])>s['stressScreenMPa']:diagnostics.append('SPLIT_LID_CAPTURE_PLATE_SCREEN_FAILS')
     if max(p['maximumAllBoltToolReachMm'] for p in handling['operators'])>600:diagnostics.append('SPLIT_LID_ALL_BOLT_TOOL_REACH_EXCEEDS600')
+    if min(p['minimumBodyToOpenFloorAfter5Mm'] for p in handling['operators'])<0:diagnostics.append('SPLIT_LID_OPERATOR_BODY_INTERSECTS_OPEN_FLOOR_SETTING')
     if max(p['standingCarryReachMm'] for p in handling['operators'])>600:diagnostics.append('SPLIT_LID_STANDING_CARRY_REACH_EXCEEDS600')
+    if 12200+(s['lidClearLengthMm']+2*s['flangeWidthMm'])/2>x1:diagnostics.append('PRESSURE_CLEANOUT_EXTENDS_BEYOND_BODY_ROUTE')
     if not intake['comparisonPass']:diagnostics.append('CLOSED_E_INLET_OR_FREE_OVERFALL_SCREEN_FAILS')
     if s['boltPreloadKN']>s['boltProofMPa']*s['boltTensileAreaMm2']/1000:diagnostics.append('BOLT_PRELOAD_EXCEEDS_AUTHORED_PROOF_LOAD')
     if not all(v['comparisonPass'] for v in flows.values()):diagnostics.append('CLOSED_E_HEAD_LOSS_EXCEEDS_SOURCE_QUIET_HEAD')
@@ -264,8 +283,9 @@ def compile_closed(case, raw):
                                'boltToThermalAfter5Mm':thermal_bottom+20-bolt_top-5,'centralBoltToMedianAfter5Mm':ffl-15-12-30-bolt_top-5,'lowestBodyBackingMm':body_bottom,'bodyBackingAtInteriorEndMm':invert0-(12000-x0)/s['slopeRatio']-6,
                                'supportTo100GlassAfter5Mm':invert0-(12000-x0)/s['slopeRatio']-6-450-s['supportHeightMm']-5},
                     'retainedOuterArch':{'finishedYmm':h['outerServiceArch']['finishedY'],'grossRouteSideReserveAfter5Mm':min(gross_y[0]-h['outerServiceArch']['finishedY'][0],h['outerServiceArch']['finishedY'][1]-gross_y[1])-5,'springMm':h['outerServiceArch']['spring']+delta,'crownMm':h['outerServiceArch']['crown']+delta,'ringTopMm':h['outerServiceArch']['ringTop']+delta,'overheadRCUndersideMm':h['outerServiceArch']['overheadRCUnderside']+delta,'sourceCapacityTransferred':False},
-                    'dryFloorGrid':frame_check,'walkingCassettes':{'clearOneWaySpanMm':(outer_width+2*s['frameGapMm']-100)/2,'panelMaximumLengthMm':240,'plateMm':12,'stoneMm':15,'bareGlassMm':50,'underskinMm':1.5,'numericalScreen':plate_walking(s,(outer_width+2*s['frameGapMm']-100)/2),'airGasEdgeJointAdmitted':False,'medianRHSsectionMm':[100,30,4],'medianAtGridBaySpanMm':650,'walkingPanelMaximumXYmm':[240,363],'removal':'240max short pairs release before own550clear median segment/pressurelid; no general room-floor opening.'},'scuppers':openings,'exteriorTerminalSupport':east_terminal,
+                    'dryFloorGrid':frame_check,'walkingCassettes':{'clearOneWaySpanMm':(outer_width+2*s['frameGapMm']-100)/2,'panelMaximumLengthMm':240,'plateMm':12,'stoneMm':15,'bareGlassMm':50,'underskinMm':1.5,'numericalScreen':plate_walking({**s,'pointLoadKN':walk_point,'liveKPa':walk_live},(outer_width+2*s['frameGapMm']-100)/2),'airGasEdgeJointAdmitted':False,'medianRHSsectionMm':[100,30,4],'medianAtGridBaySpanMm':650,'walkingPanelMaximumXYmm':[240,(outer_width+2*s['frameGapMm']-100)/2+50],'removal':'240max short pairs release before own550clear median segment/pressurelid; no general room-floor opening.'},'scuppers':openings,'exteriorTerminalSupport':east_terminal,
                     'pressureCleanouts':{'centresXmm':[8650,10050,12200],'clearPlanMmPerHalf':[lid_clear,450],'halvesAtYmm':[[s['centreYmm']-s['waterWidthMm']/2,s['centreYmm']-s['centralFlangeMm']/2],[s['centreYmm']+s['centralFlangeMm']/2,s['centreYmm']+s['waterWidthMm']/2]],'removeTopRoofForWholeBodyRenewal':True,'weldedRoofNotHiddenPermanentFabric':True},
+                    'crewFloorLoadPorts':crew_floor_ports(handling,s),
                     'gasketEvidence':gasket_evidence,'localLeakCatch':local_catch,
                     'renewal':'N assembled and proved full-duty plus temporary roof/segregated pipe in ordinary source rain states. Isolate/drain E; remove own dry cassettes, median segment and pressure lid. Cut accessible field welds outside walls; remove field bay first. Draw joint-free wall body at installed slope into gallery, capture and lift. Renew body by top-access cold cut/qualified reweld, then low-head leak test before restoring. No live fault opening and no embedded service/fabric joint.',
                     'receiver':{'planXYWHmm':receivers['east']['receiverBounds'],'outletInvertMm':invert1,'requiredMaximumWaterMm':invert1-200,
@@ -273,7 +293,7 @@ def compile_closed(case, raw):
                                 'backwaterFailure':'If water rises above the admitted tailwater/head boundary, E is unavailable; close maintenance and transfer assigned full source to independently verified N. No check-valve credit.'}},
             'approaches':{'front':approach(h['approaches']['front'],ffl-grade),'garden':approach(h['approaches']['garden'],h['sections']['waterLevels']['loggiaNorth']+delta-grade)},
             'sourceConsequences':{'firstAboveNominalGradeMm':h['sections']['firstFFL']+delta-grade,'actualLowestAdjacentGroundMm':None,'groundStoreyIntervalMm':h['sections']['firstFFL']-h['sections']['groundFFL'],'groundCoreStemIncreaseVs530Mm':ffl-530,'allGroundAndUpperSourceApplicabilityReopened':True,'addedRCComparedWith530ProposalRemovedM3':0,'monetarySaving':None},
-            'north':north,'joined52HeadLoadAdditions':joined,'joinedLoadBoundary':'N outdoor deck/frame/water and E exterior water terminal ONLY. New occupied floor, walls, scupper arches, wind/seismic, header, source upper loads and original gravity remain separate source52 demand; these cards are additions, not replacement or whole-house capacity.',
+            'north':north,'joinedGravityEquilibrium':{label:gravity_audit(ncase['gravityComponentLedger']+[{**row,'downwardKN':row['downwardKN']*ncase['deadFactor']} for row in east_terminal['componentGravityLedger']],joined[label],grid) for label,ncase in north['loadCases'].items()},'joined52HeadLoadAdditions':joined,'joinedLoadBoundary':'N outdoor deck/frame/water and E exterior water terminal ONLY. New occupied floor, walls, scupper arches, wind/seismic, header, source upper loads and original gravity remain separate source52 demand; these cards are additions, not replacement or whole-house capacity.',
             'ground':{'lowestNewStructuralMm':north['lowestNewStructuralMm'],'retainedGridLowestMm':lowest_grid,
                       'heaveMm':support_source['heaveStress'],'constructionMm':support_source['constructionLoss'],'ventilationMm':support_source['ventilationReserve'],'knownEnvelopeMinimumDmm':max(-lowest_grid,-north['lowestNewStructuralMm'])+reserve,
                       'authoredLocalSolumMm':ground['localSolum'],'authoredExtraDepthBeyondKnownMinimumMm':-ground['localSolum']-(max(-lowest_grid,-north['lowestNewStructuralMm'])+reserve),'completeSiteSolumMinimumDmm':None,'oldDeepServiceEnvelopeNoLongerRequiredWithinThisMethod':not diagnostics,'authoredGroundActuallyReducedFrom1800':ground['localSolum']>-1800,
@@ -282,7 +302,7 @@ def compile_closed(case, raw):
                              'Nmaintenance':'E must be proved full-duty and intact; preserve source staged court catch then separate loggia roof/pipe rain controls. No two-live claim while either body is open.',
                              'Nblocked':'Folded N returns translate withfloor; water returns onto court to E. New support frame cannot make the water body or gallery void a spill path.',
                              'bothUnavailable':'No protected occupation or maintenance claim; source quiet/first-harm and actual fallback routing require joined RWT proof.'},
-            'holds':[{'id':'E-pressure-seal','objects':['E-split-pressure-lids','E-fixed-central-flange'],'missing':'Actual rectangular water-seal contact/leak event; helium13MPa is only a comparison benchmark, not required water preload.'},{'id':'E-captured-handling','objects':['E-pressure-lids','E-700-bail','E-all-bolt-tool'],'missing':'Actual grip/capture/return/torque and~133N lift/~76Nm shoulder-offset event; mass/geometry does not certify a person or tool.'},{'id':'E-local-leak-first-harm','objects':['E-local-catch','E-separate-catch-receiver'],'missing':'Accepted physical leak area/head/duty and first harmful fabric/air wetting;0.302Lps is computed envelope, not an accepted leak event.'},{'id':'N-structural-frame','objects':['N-crossbearers','N-EW-beams','source52-added-head-wrenches'],'missing':'Compatible frame/actual RC grid settlement, anchors/rebar/lateral bracing/tied-seat tension and original combined demand; one-way fixed-primary trial has no whole-frame admission.'},{'id':'MAT-thermal-weather-material','objects':['E-scupper-arches','E-30-40-50-upperglass','N-350-sole-730-return'],'missing':'Exact constituents/residues/contact corrosion; continuous thermal/air/gas/weather faces, local glass creep, new masonry openings and taller shoe joins.'},{'id':'RWT-independent-receivers','objects':['N-receiver','E-main-receiver','E-local-catch-receiver'],'missing':'Actual separate outfall/terrain/backwater/splash/disposal and staged maintenance full-duty source; no original signoff transfers.'}],
+            'holds':[{'id':'E-pressure-seal','objects':['E-split-pressure-lids','E-fixed-central-flange'],'missing':'Actual rectangular water-seal contact/leak event; helium13MPa is only a comparison benchmark, not required water preload.'},{'id':'E-captured-handling','objects':['E-pressure-lids','E-700-bail','E-all-bolt-tool'],'missing':f'Actual grip/capture/return/torque and{handling["operators"][0]["verticalLiftForceN"]:.1f}N lift/up to{max(p["staticShoulderOffsetMomentNm"] for p in handling["operators"]):.1f}Nm shoulder-offset event; mass/geometry does not certify a person or tool.'},{'id':'E-local-leak-first-harm','objects':['E-local-catch','E-separate-catch-receiver'],'missing':f'Accepted physical leak area/head/duty and first harmful fabric/air wetting;{local_catch["computedMaximumLocalLeakLps"]:.5f}Lps is computed envelope, not an accepted leak event.'},{'id':'N-structural-frame','objects':['N-crossbearers','N-EW-beams','E-terminal-frame','E-crew-floor-ports','source52-added-head-wrenches'],'missing':'Compatible N/E frame/actual RC grid settlement, anchors/rebar/lateral bracing/tied-seat tension and original combined demand; one-way fixed-primary trial has no whole-frame admission.'},{'id':'MAT-thermal-weather-material','objects':['E-scupper-arches','E-30-40-50-upperglass','N-350-sole-730-return'],'missing':'Exact constituents/residues/contact corrosion; continuous thermal/air/gas/weather faces, local glass creep, new masonry openings and taller shoe joins.'},{'id':'RWT-independent-receivers','objects':['N-receiver','E-main-receiver','E-local-catch-receiver'],'missing':'Actual separate outfall/terrain/backwater/splash/disposal and staged maintenance full-duty source; no original signoff transfers.'}],
             'remainingPhysicalDuties':['Exact low-head rectangular gasket/flange contact and cyclic water leak test; source13MPa helium benchmark is not water certification.',
                                       'Exact uncoated graphite/steel/copper/mineral constituents, chloride/contact corrosion, weld filler/cleaning and retained-residue acceptance.',
                                       'SourceNwater body/saddles/long-liner operation retained geometrically; old physical or hydraulic admission does not transfer.',
@@ -300,8 +320,8 @@ def compile_north(s,h,grid,ffl):
     if supports != [v['u'] for v in east['heads']] or gx['z'] != east['z']:
         raise ValueError('Asymmetric source loggia support requires a new topology')
     start=h['loggia']['clear'][1];end=h['loggia']['clear'][1]+h['loggia']['clear'][3]
-    north_end=terminal['endY'];platform_end=normal['renewal']['endWorkBodyCentres'][-1][1]+300
-    nodes=sorted(set([start,end,platform_end,north_end,(supports[0]+supports[1])/2,*supports]))
+    north_end=terminal['endY'];operator_y=normal['renewal']['endWorkBodyCentres'][-1][1];platform_end=operator_y+300
+    nodes=sorted(set([start,end,operator_y,platform_end,north_end,(supports[0]+supports[1])/2,*supports]))
     walk=lambda y:h['sections']['waterLevels']['courtNorth']+delta-(y-start)*normal['flowSlope']
     ns=section(100,180,6-s['metalLossMm']);floor=section(50,100,5-s['metalLossMm']);ew=section(100,200,6-s['metalLossMm'])
     edge_frames=[normal['frame']['insideFrameX'][0]-10,normal['frame']['insideFrameX'][1]+10]
@@ -312,35 +332,57 @@ def compile_north(s,h,grid,ffl):
     column_x=[gx['datum']+gx['width']/2+100,east['datum']-east['width']/2-100]
     cross_nodes=sorted(set([column_x[0]-50,*column_x,column_x[1]+50,*rail_x,*field_x]))
     all_cases={};diagnostics=[]
-    for label,dead_factor,live_factor,point,field_point in [('SLS-gravity',1,1,0,0),('SLS-terminal2kN',1,1,s['pointLoadKN'],0),('ULS-terminal2kN',1.35,1.5,1.5*s['pointLoadKN'],0),('SLS-field2kN',1,1,0,s['pointLoadKN']),('ULS-field2kN',1.35,1.5,0,1.5*s['pointLoadKN']),('SLS-platform-west2kN',1,1,s['pointLoadKN'],0),('ULS-platform-west2kN',1.35,1.5,1.5*s['pointLoadKN'],0),('SLS-Ncover-west2kN',1,1,s['pointLoadKN'],0),('ULS-Ncover-west2kN',1.35,1.5,1.5*s['pointLoadKN'],0),('SLS-platform-west2kN-no-field-live',1,1,s['pointLoadKN'],0),('ULS-platform-west2kN-no-field-live',1.35,1.5,1.5*s['pointLoadKN'],0)]:
-        rails=[];floor_lines=[]
+    case_specs=[(*row,None,None) for row in [('SLS-gravity',1,1,0,0),('SLS-terminal2kN',1,1,s['pointLoadKN'],0),('ULS-terminal2kN',1.35,1.5,1.5*s['pointLoadKN'],0),('SLS-field2kN',1,1,0,s['pointLoadKN']),('ULS-field2kN',1.35,1.5,0,1.5*s['pointLoadKN']),('SLS-platform-west2kN',1,1,s['pointLoadKN'],0),('ULS-platform-west2kN',1.35,1.5,1.5*s['pointLoadKN'],0),('SLS-Ncover-west2kN',1,1,s['pointLoadKN'],0),('ULS-Ncover-west2kN',1.35,1.5,1.5*s['pointLoadKN'],0),('SLS-platform-west2kN-no-field-live',1,1,s['pointLoadKN'],0),('ULS-platform-west2kN-no-field-live',1.35,1.5,1.5*s['pointLoadKN'],0)]]
+    case_specs.extend([('SLS-endoperator2kN',1,1,s['pointLoadKN'],0,None,None),('ULS-endoperator2kN',1.35,1.5,1.5*s['pointLoadKN'],0,None,None),('STABILITY-dry-min-stock-platform-west2kN-no-field-live',.9,1.5,1.5*s['pointLoadKN'],0,None,None)])
+    field_ys=[start,(supports[0]+supports[1])/2,(supports[1]+supports[2])/2,end]
+    for prefix,df,lf,pf in [('SLS',1,1,1),('ULS',1.35,1.5,1.5)]:
+        for index in range(len(field_x)):
+            for iy,yy in enumerate(field_ys):
+                case_specs.append((prefix+'-field-family/x'+str(index)+'/y'+str(iy),df,lf,0,pf*s['pointLoadKN'],index,yy))
+    for label,dead_factor,live_factor,point,field_point,field_index,field_y_override in case_specs:
+        rails=[];floor_lines=[];ledger=[]
+        minimum_dead=label.startswith('STABILITY')
+        point_y=platform_end if 'platform-west' in label else (supports[0]+supports[1])/2 if 'Ncover-west' in label else operator_y if 'endoperator' in label else north_end
+        point_x=normal['centreX']-450 if 'platform-west' in label else edge_frames[0] if 'Ncover-west' in label else normal['centreX']
         for x in rail_x:
             fraction=(rail_x[1]-normal['centreX'])/(rail_x[1]-rail_x[0]) if x==rail_x[0] else (normal['centreX']-rail_x[0])/(rail_x[1]-rail_x[0])
             dead_water=normal['channelClear']/1000*normal['renewal']['wallHeight']/1000*9.81*fraction
             dead_cover=(normal['channelGross']/1000*.012*80+(.25+2*.075+.05)*.0015*89.6+2*(.02*.05-.014*.044)*80+.025*.012*80)*fraction
             dead_pedestal=(2*.05*.058*24+section(50,50,4)['areaMm2']*1e-6*80*.49/.5)*fraction
-            dead_steel=ns['areaMm2']*1e-6*80
+            dead_steel=(ns if minimum_dead else section(100,180,6))['areaMm2']*1e-6*80
+            if minimum_dead:dead_water=0;dead_cover=0;dead_pedestal=0
             loads=[]
             for a,b in zip(nodes,nodes[1:]):
                 mid=(a+b)/2
                 platform_dead=.9*(.02*26+.012*80+.35)*fraction if end<=mid<platform_end else 0
                 platform_live=.9*s['liveKPa']*fraction if end<=mid<platform_end else 0
-                loads.append(dead_factor*(dead_water+dead_cover+dead_pedestal+dead_steel+platform_dead)+live_factor*platform_live)
-            result=beam(nodes,supports,loads,[(platform_end if 'platform-west' in label else (supports[0]+supports[1])/2 if 'Ncover-west' in label else north_end,point*((rail_x[1]-(normal['centreX']-450 if 'platform-west' in label else edge_frames[0] if 'Ncover-west' in label else normal['centreX']))/(rail_x[1]-rail_x[0]) if x==rail_x[0] else ((normal['centreX']-450 if 'platform-west' in label else edge_frames[0] if 'Ncover-west' in label else normal['centreX'])-rail_x[0])/(rail_x[1]-rail_x[0]))*1000)],ns['inertiaMm4'],s['elasticMPa'])
+                if minimum_dead:platform_dead=0;platform_live=0
+                q=dead_factor*(dead_water+dead_cover+dead_pedestal+dead_steel+platform_dead)+live_factor*platform_live
+                loads.append(q)
+                ledger.append({'id':'NS-rail-equivalent/'+str(x)+'/'+str(a),'xyMm':[x,(a+b)/2],'downwardKN':q*(b-a)/1000})
+            point_fraction=(rail_x[1]-point_x)/(rail_x[1]-rail_x[0]) if x==rail_x[0] else (point_x-rail_x[0])/(rail_x[1]-rail_x[0])
+            ledger.append({'id':'NS-equivalent-point/'+str(x),'xyMm':[x,point_y],'downwardKN':point*point_fraction})
+            result=beam(nodes,supports,loads,[(point_y,point*point_fraction*1000)],ns['inertiaMm4'],s['elasticMPa'])
             result['xMm']=x;result['stressMPa']=result['maximumMomentNmm']/ns['modulusMm3']
             rails.append(result)
-        field_point_y=(supports[0]+supports[1])/2
+        field_point_y=field_y_override if field_y_override is not None else (supports[0]+supports[1])/2
         floor_nodes=sorted(set([start,end,field_point_y,*supports]))
         for i,x in enumerate(field_x):
             effective=strip_width/1000
-            dead=effective*(.02*26+.012*80)+floor['areaMm2']*1e-6*80
+            dead=(0 if minimum_dead else effective*(.02*26+.012*80))+(floor if minimum_dead else section(50,100,5))['areaMm2']*1e-6*80
             q=dead_factor*dead+(0 if 'no-field-live' in label else live_factor*effective*s['liveKPa'])
-            result=beam(floor_nodes,supports,[q]*(len(floor_nodes)-1),[(field_point_y,field_point*1000)] if i==len(field_x)-1 else [],floor['inertiaMm4'],s['elasticMPa'])
+            active_index=field_index if field_index is not None else len(field_x)-1
+            ledger.append({'id':'field-stringer/'+str(i),'xyMm':[x,(start+end)/2],'downwardKN':q*(end-start)/1000})
+            if i==active_index:ledger.append({'id':'field-person-point','xyMm':[x,field_point_y],'downwardKN':field_point})
+            result=beam(floor_nodes,supports,[q]*(len(floor_nodes)-1),[(field_point_y,field_point*1000)] if i==active_index else [],floor['inertiaMm4'],s['elasticMPa'])
             result['xMm']=x;result['stressMPa']=result['maximumMomentNmm']/floor['modulusMm3'];floor_lines.append(result)
         cross=[];head_loads={head['id']:{'FxKN':0,'FyKN':0,'FzKN':0,'MxKNm':0,'MyKNm':0,'MzKNm':0} for head in grid['heads']}
         for j,y in enumerate(supports):
-            forces=[(r['xMm'],r['supportReactionsKN'][j]*1000+(dead_factor*.12*.1*.218*24*1000 if r in floor_lines else 0)) for r in rails+floor_lines]
-            crossload=dead_factor*ew['areaMm2']*1e-6*80
+            forces=[(r['xMm'],r['supportReactionsKN'][j]*1000+(dead_factor*.12*.1*.218*24*1000 if r in floor_lines and not minimum_dead else 0)) for r in rails+floor_lines]
+            crossload=dead_factor*(ew if minimum_dead else section(100,200,6))['areaMm2']*1e-6*80
+            ledger.append({'id':'EW-crossbeam/'+str(y),'xyMm':[(cross_nodes[0]+cross_nodes[-1])/2,y],'downwardKN':crossload*(cross_nodes[-1]-cross_nodes[0])/1000})
+            if not minimum_dead:
+                for x in field_x:ledger.append({'id':'field-pedestal/'+str(y)+'/'+str(x),'xyMm':[x,y],'downwardKN':dead_factor*.12*.1*.218*24})
             result=beam(cross_nodes,column_x,[crossload]*(len(cross_nodes)-1),forces,ew['inertiaMm4'],s['elasticMPa'])
             result.update(yMm=y,topMm=walk(y)-350,bottomMm=walk(y)-550,stressMPa=result['maximumMomentNmm']/ew['modulusMm3'])
             cross.append(result)
@@ -348,18 +390,28 @@ def compile_north(s,h,grid,ffl):
                 head_id=source_girder['heads'][j]['id'];reaction=result['supportReactionsKN'][side]
                 eccentric=column_x[side]-source_girder['datum']
                 stool_height=walk(y)-550-source_girder['z'][1]
-                own_stool=section(100,100,6)['areaMm2']*stool_height*8e-8+s['bracketMassKg']*9.81/1000
-                downward=reaction+dead_factor*own_stool
+                column_stock=section(100,100,6-s['metalLossMm'] if minimum_dead else 6)['areaMm2']*stool_height*8e-8
+                bracket=0 if minimum_dead else s['bracketMassKg']*9.81/1000
+                face=source_girder['datum']+(source_girder['width']/2 if side==0 else -source_girder['width']/2)
+                bracket_x=(face+column_x[side])/2
+                ledger.extend([{'id':'column/'+head_id,'xyMm':[column_x[side],y],'downwardKN':dead_factor*column_stock},{'id':'bracket-allowance/'+head_id,'xyMm':[bracket_x,y],'downwardKN':dead_factor*bracket}])
+                downward=reaction+dead_factor*(column_stock+bracket)
                 head_loads[head_id]['FzKN']=-downward
-                head_loads[head_id]['MyKNm']=downward*eccentric/1000
+                head_loads[head_id]['MyKNm']=(reaction+dead_factor*column_stock)*eccentric/1000+dead_factor*bracket*(bracket_x-source_girder['datum'])/1000
         stress=max(r['stressMPa'] for r in rails+floor_lines+cross)
         total=sum(-v['FzKN'] for v in head_loads.values())
-        all_cases[label]={'railResults':rails,'fieldStringerResults':floor_lines,'crossbeamResults':cross,'source52HeadLoadAdditions':head_loads,
+        equilibrium=gravity_audit(ledger,head_loads,grid)
+        if equilibrium['maximumAbsoluteResidual']>1e-6:diagnostics.append('N_GRAVITY_SIX_WRENCH_MISMATCH/'+label)
+        all_cases[label]={'deadFactor':dead_factor,'minimumDeadCase':minimum_dead,'phase':'Ndrained/Eavailable; no favourable nonstructural mass' if minimum_dead else 'authored gravity and point trial','gravityComponentLedger':ledger,'equilibrium':equilibrium,'pointPlacement':{'railPointXYmm':[point_x,point_y] if point else None,'fieldPointXYmm':[field_x[field_index if field_index is not None else len(field_x)-1],field_point_y] if field_point else None},'railResults':rails,'fieldStringerResults':floor_lines,'crossbeamResults':cross,'source52HeadLoadAdditions':head_loads,
                           'totalAddedDownwardKN':total,'maximumMemberStressMPa':stress,
                           'maximumRailDeflectionMm':max(r['maximumDeflectionMm'] for r in rails),
                           'memberScreenPass':bool(stress<=s['stressScreenMPa'])}
         if stress>s['stressScreenMPa']:diagnostics.append('N_MEMBER_STRESS_SCREEN_FAILS/'+label)
         if max(r['maximumDeflectionMm'] for r in rails)>(north_end-supports[-1])/s['cantileverDeflectionRatio']:diagnostics.append('N_TERMINAL_DEFLECTION_SCREEN_FAILS/'+label)
+    field_family=[{'id':key,'pointXYmm':value['pointPlacement']['fieldPointXYmm'],'maximumMemberStressMPa':value['maximumMemberStressMPa'],'maximumRailDeflectionMm':value['maximumRailDeflectionMm']} for key,value in all_cases.items() if 'field-family' in key]
+    for key,value in all_cases.items():
+        if 'field-family' in key:
+            for detail in ['railResults','fieldStringerResults','crossbeamResults']:value.pop(detail)
     source_heads={head['id']:head for head in grid['heads']}
     seats=[]
     for j,y in enumerate(supports):
@@ -376,14 +428,15 @@ def compile_north(s,h,grid,ffl):
                           'wallWeatherFaceMm':4800 if side==0 else 7200,
                           'columnBeyondFinishedWallMm':50,'bracketBottomMm':-550,
                           'authoredAnchorsZMm':[-300,-500],'verticalULSForceKN':vertical,
-                          'bracketFaceMomentKNm':vertical*bracket_projection/1000,
-                          'anchorRowCoupleKN':abs(vertical*bracket_projection/200),
+                          'bracketFaceMomentKNm':force['MyKNm']-vertical*(face-g['datum'])/1000,
+                          'anchorRowCoupleKN':abs(force['MyKNm']-vertical*(face-g['datum'])/1000)*1000/200,
                           'headEccentricMomentKNm':force['MyKNm'],
                           'columnAxialULSStressMPa':vertical*1000/section(100,100,6-s['metalLossMm'])['areaMm2'],'columnPinnedEulerKN':math.pi**2*s['elasticMPa']*section(100,100,6-s['metalLossMm'])['inertiaMm4']/max(1,walk(y)-550-g['z'][1])**2/1000,'authoredBracketMassKg':s['bracketMassKg'],'jointCapacityAdmitted':False,'anchorToActualRebarProof':None})
     top=normal['carrierBottom'][1][1]+delta
     lifted=top+normal['renewal']['wallHeight']+normal['renewal']['lift']+normal['renewal']['riggingHeightAboveBody']
     portal=h['northNormalRoute']['portal']['finishedSpringAtVerticalJamb']+delta
     return {'analysisBoundary':'Linear prismatic NS beams on vertically fixed EW crossing points, followed by elastic EW response and actual-column reactions. This one-way transfer is a rigid-primary-support trial, not a compatible grillage or original cold-grid settlement solution. Recovered EW deflections and signed forces are exported for the joined model; no source52 capacity adoption.',
+            'fieldPointFamily':{'stringerAxesXmm':field_x,'positionsYmm':field_ys,'scope':'Every actual field stringer at both span midpoints and both deck overhang ends; finite28position family, not a continuous moving-load proof.','cases':field_family},'gravityMassRule':'Nominal full stock for adverse downward cases; separate dry minimum-corroded-stock stability case excludes uncertain nonstructural stabilizing mass and bracket allowance.',
             'status':'dimensioned-load-addition-comparison','diagnostics':diagnostics,
             'actualSupportHeads':[g['id'] for pair in zip(gx['heads'],east['heads']) for g in pair],
             'headCount':len(grid['heads']),'supportYsMm':supports,'railAxesXmm':rail_x,'retainedEdgeFrameAxesXmm':edge_frames,'fieldStringerAxesXmm':field_x,'fieldStringerWidthMm':50,'columnAxesXmm':column_x,
@@ -426,31 +479,6 @@ def split_weld(s,pitch):
             'centralFrame':'14fixed flange rests above the remaining3roof strip/3web; clamp preload self-equilibrates inside each frame and is not an external foundation force. Exact sheet weld/diaphragm/contact still unqualified.'}
 
 
-def bolt_tool_access(s,station,half,operator,ffl,bolt_z):
-    centre=s['centreYmm'];clear=(s['waterWidthMm']-s['centralFlangeMm'])/2
-    y0=centre-s['waterWidthMm']/2 if half=='south' else centre+s['centralFlangeMm']/2
-    y1=y0+clear
-    xs=[station-s['lidClearLengthMm']/2-s['boltEdgeOffsetMm']+i*(s['lidClearLengthMm']+2*s['boltEdgeOffsetMm'])/(s['boltsOnLongSide']-1) for i in range(int(s['boltsOnLongSide']))]
-    ys=[y0-s['boltEdgeOffsetMm']+i*(clear+2*s['boltEdgeOffsetMm'])/(s['boltsOnShortSide']-1) for i in range(int(s['boltsOnShortSide']))]
-    positions=[(x,y) for x in xs for y in (ys[0],ys[-1])]+[(x,y) for x in (xs[0],xs[-1]) for y in ys[1:-1]]
-    controls=[]
-    for x,y in positions:
-        dx,dy=operator[0]-x,operator[1]-y;distance=math.hypot(dx,dy)
-        angle=math.atan2(dy,dx)
-        actual_z=bolt_z-(x-station)/s['slopeRatio']
-        hand_z=actual_z+375
-        poses=[]
-        for sweep in [-10,0,10]:
-            a=angle+math.radians(sweep);hand=[x+600*math.cos(a),y+600*math.sin(a),hand_z]
-            reach=math.sqrt((hand[0]-operator[0])**2+(hand[1]-operator[1])**2+(ffl+640-hand[2])**2)
-            poses.append({'sweepDeg':sweep,'handXYZmm':hand,'shoulderReachMm':reach})
-        controls.append({'boltXYZmm':[x,y,actual_z],'staffSweep':poses})
-    return {'socketVerticalExtensionMm':350,'socketHeadAllowanceMm':25,'ratchetLeverMm':600,'ratchetSwingDegrees':20,
-            'trialTorqueRangeNm':[.15*s['boltPreloadKN']*10,.25*s['boltPreloadKN']*10],
-            'requiredHandForceRangeN':[.15*s['boltPreloadKN']*10/.6,.25*s['boltPreloadKN']*10/.6],
-            'maximumAllBoltToolReachMm':max(p['shoulderReachMm'] for b in controls for p in b['staffSweep']),
-            'allBoltControls':controls,'capturedSocketToolRatingAccepted':False}
-
 
 def compile_split_handling(s,h,ffl,lid_bottom,clear_width,outer_width,stock,bolts):
     shank=math.pi*10**2/4*45*8e-6
@@ -459,45 +487,57 @@ def compile_split_handling(s,h,ffl,lid_bottom,clear_width,outer_width,stock,bolt
     washer=math.pi*(20**2-10.5**2)/4*2*8e-6
     fasteners=bolts*(shank+head+nut+washer)
     tube_area=math.pi*(16**2-14**2)/4;tube_i=math.pi*(16**4-14**4)/64
-    tube_length=2*s['capturedBailHeightMm']+480
+    sample_capture=capture_geometry(s,8650,'south',0)
+    tube_length=sample_capture['tubeStockLengthMm']
+    bar_span=sample_capture['crossbarSpanMm']
     tube_mass=tube_area*tube_length*8e-6
-    eyes=2*(40*40-math.pi*10**2/4)*6*8e-6
-    clevis=2*50*30*3*8e-6;pin=2*math.pi*8**2/4*40*8e-6
-    capture=.01
-    bail=tube_mass+eyes+clevis+pin+capture
+    eyes=2*80*s['bailFootWidthMm']*s['bailFootPlateMm']*8e-6
+    seats=2*15*s['bailFootWidthMm']*s['bailTaperSeatMm']*8e-6
+    clevis=(4*60*s['bailFootWidthMm']*3+2*60*3*(s['bailFootPlateMm']+8))*8e-6
+    pin=2*(math.pi*10**2/4*(s['bailFootPlateMm']+6)+math.pi*8**2/4*3+math.pi*18**2/4*7)*8e-6
+    capture=.015
+    bail=tube_mass+eyes+seats+clevis+pin+capture
+    weld_length=2*(clear_width+s['lidClearLengthMm'])+2*(outer_width+s['lidClearLengthMm']+2*s['flangeWidthMm'])
+    field_weld_mass=weld_length*4**2/2*8e-6
     charged=stock+fasteners+bail+s['gasketMassAllowanceKg']+s['retainedWaterAllowanceKg']+s['weldMassAllowanceKg']
-    permanent=stock+fasteners+eyes+s['gasketMassAllowanceKg']+s['weldMassAllowanceKg']
+    permanent=stock+fasteners+eyes+seats+s['gasketMassAllowanceKg']+s['weldMassAllowanceKg']
     operators=[]
     for x in [8650,10050,12200]:
         for half in ['south','north']:
             cy=s['centreYmm']+(-1 if half=='south' else 1)*((s['waterWidthMm']+2*s['bodyMm']+2*s['flangeWidthMm']+s['lidButtGapMm'])/4)
+            open_y=(s['waterWidthMm']+2*s['bodyMm']+2*s['flangeWidthMm']+2*s['frameGapMm'])/2
+            opening=[[x-275,s['centreYmm']-open_y],[x+275,s['centreYmm']+open_y]]
             if x==8650:
-                operator=[x,6200 if half=='south' else 7550]
+                offset=max(675,open_y+300+10)
+                operator=[x,s['centreYmm']+(-offset if half=='south' else offset)]
                 horizontal=abs(operator[1]-cy)
                 edge=abs(operator[1]-(s['centreYmm']-s['waterWidthMm']/2-s['flangeWidthMm']-s['bodyMm'] if half=='south' else s['centreYmm']+s['waterWidthMm']/2+s['flangeWidthMm']+s['bodyMm']))
                 stage=[x,5600 if half=='south' else 7750]
             else:
-                operator=[x+(575 if x==10050 else -575),cy];horizontal=575;edge=575-265
+                operator=[x+(585 if x==10050 else -585),cy];horizontal=585;edge=585-(s['lidClearLengthMm']+2*s['flangeWidthMm'])/2
                 stage=[10950 if x==10050 else 11300,cy]
             actual_lid=lid_bottom-(x-7750)/s['slopeRatio']+s['lidMm']
             bolt=actual_lid+s['lidRimMm']+s['boltProjectionMm']
             shoulder_crouched=ffl+640;hand=bolt+300
             carry_handle=actual_lid+s['lidCarryLiftMm']+s['capturedBailHeightMm']
-            operators.append({'stationXmm':x,'half':half,'bodyCentreXYmm':operator,'bodyRadiusMm':300,'nearestBoltHorizontalMm':edge,
-                              'directNearestBolt300ExtensionReachMm':math.hypot(edge,shoulder_crouched-hand),**bolt_tool_access(s,x,half,operator,ffl,bolt),
+            access=bolt_access(s,x,half,operator,ffl,bolt,actual_lid,[8179.5,9203])
+            stage_body=[operator[0]+stage[0]-x,operator[1]+stage[1]-cy]
+            path_clearances=[floor_opening_body_clearance(operator,stage_body,opening)]+[floor_opening_body_clearance(b['operatorBodyCentreXYmm'],b['operatorBodyCentreXYmm'],opening) for b in access['allBoltControls']]
+            operators.append({'floorOpeningPlanBoundsMm':opening,'bodyStageCentreXYmm':stage_body,'minimumBodyToOpenFloorAfter5Mm':min(path_clearances),'bodyCarryPathMm':[operator,stage_body],'stationXmm':x,'half':half,'bodyCentreXYmm':operator,'bodyRadiusMm':300,'nearestBoltHorizontalMm':edge,
+                              'directNearestBolt300ExtensionReachMm':math.hypot(edge,shoulder_crouched-hand),**access,
                               'stageCentreXYmm':stage,'lidCarryLiftMm':s['lidCarryLiftMm'],'bailGripWorldZMm':carry_handle,
                               'standingCarryReachMm':math.hypot(horizontal,ffl+1450-carry_handle),
                               'verticalLiftForceN':charged*9.81,'staticShoulderOffsetMomentNm':charged*9.81*horizontal/1000,
                               'outsideHouseFootingRequired':False,'physicalForceOrHandlingAccepted':False})
     load=charged*9.81
     return {'targetChargedLiftingKg':15,'stockPlateAndRimKg':stock,'captiveBoltNutWasherMassKg':fasteners,
-            'capturedBailTubeODIDmm':[16,14],'bailHeightMm':s['capturedBailHeightMm'],'bailCrossbarMm':480,'bailStockLengthMm':tube_length,
-            'bailAndEyesClevisPinsCaptureKg':bail,'gasketAllowanceKg':s['gasketMassAllowanceKg'],'retainedWaterAllowanceKg':s['retainedWaterAllowanceKg'],'weldAllowanceKg':s['weldMassAllowanceKg'],
+            'capturedBailTubeODIDmm':[16,14],'bailHeightMm':s['capturedBailHeightMm'],'bailCrossbarMm':bar_span,'bailStockLengthMm':tube_length,
+            'bailAndEyesClevisPinsCaptureKg':bail,'bailInventoryKg':{'tube':tube_mass,'weldedLiftingTongues':eyes,'weldedTaperSeats':seats,'forkPlatesAndBacks':clevis,'captiveShoulderPins':pin,'retainers':capture},'gasketAllowanceKg':s['gasketMassAllowanceKg'],'retainedWaterAllowanceKg':s['retainedWaterAllowanceKg'],'weldAllowanceKg':s['weldMassAllowanceKg'],'doublerFilletNominalDepositKg':field_weld_mass,'captureAdditionalWeldBudgetKg':s['weldMassAllowanceKg']-field_weld_mass,
             'chargedLiftingMassKg':charged,'massReserveTo15Kg':15-charged,'permanentLidMassKg':permanent,
-            'dynamicFactor':s['handleDynamicFactor'],'bailCrossbarDynamicStressMPa':s['handleDynamicFactor']*load*480/4/(tube_i/8),
-            'bailCrossbarSLSDeflectionMm':load*480**3/(48*s['elasticMPa']*tube_i),
-            'operators':operators,'repeatOneCleanoutAtATime':True,'noGantryOrDrawer':True,
-            'method':'E isolated/drained, N full-duty and source rain controls admitted. Open only own short walking cassettes and median bay, stand in stated fixed field; release all bolts using350 vertical socket extension and600 ratchet above walking plane; attach700 positively captive bail with guided lifting hooks before complete release before releasing bolts. Lift800 to standing carry height, move away from hole into stated empty field, lower under capture. Reclose own walking covers before walking back. Whole-body cuts remain≤500 in field; short wall modules draw into gallery before300 lift. Exact force/capture/return/load event remains unqualified.',
+            'dynamicFactor':s['handleDynamicFactor'],'bailCrossbarDynamicStressMPa':s['handleDynamicFactor']*load*bar_span/4/(tube_i/8),
+            'bailCrossbarSLSDeflectionMm':load*bar_span**3/(48*s['elasticMPa']*tube_i),
+            'operators':operators,'repeatOneCleanoutAtATime':True,'noGantryOrDrawer':True,'forkTongueDynamicStressMPa':s['handleDynamicFactor']*load/2*25/(s['bailFootWidthMm']*(s['bailFootPlateMm']-s['metalLossMm'])**2/6),'forkLowerPlateDynamicStressMPa':s['handleDynamicFactor']*load/2*(s['bailPinHalfSpanMm']-s['bailLegHalfSpanMm'])/(s['bailFootWidthMm']*(3-s['metalLossMm'])**2/6),
+            'method':'E isolated/drained, N full-duty and source rain controls admitted. Open only the actual550-long walking bay and median segment, stand with the reported body-to-opening setting reserve; release all bolts using350 vertical socket extension and600 ratchet above walking plane; attach700 positively captive bail with guided lifting hooks before complete release before releasing bolts. Lift800 to standing carry height, move away from hole into stated empty field, lower under capture. Reclose own walking covers before walking back. Whole-body cuts remain≤500 in field; short wall modules draw into gallery before300 lift. Exact force/capture/return/load event remains unqualified.',
             'physicalHandlingAccepted':False}
 
 
@@ -583,44 +623,130 @@ def compile_intake(h,delta,duty,flow,outlet_crown,s):
             'physicalRatingOrSplashQualification':False}
 
 
+def crew_floor_ports(handling,s):
+    positions={}
+    for row in handling['operators']:
+        base=row['bodyCentreXYmm'];_,_,outer=half_coordinates(s,row['half'])
+        controls=[(base,'lidcapture-and-lift')]+[(b['operatorBodyCentreXYmm'],'full-bolt-tool') for b in row['allBoltControls']]
+        controls.append((row['bodyStageCentreXYmm'],'stage-return'))
+        for point,phase in controls:
+            key=tuple(point);positions.setdefault(key,set()).add(phase)
+    return [{'id':'E-floor-control/'+str(i),'xyMm':list(point),'phases':sorted(phases),'downwardKN':s['walkingCoverPointLoadKN'],
+             'globalWrench':global_gravity_wrench([{'xyMm':point,'downwardKN':s['walkingCoverPointLoadKN']}]),
+             'receivingStructure':'Occupied/proposed groundslab, not Eexterior frame',
+             'source52Transfer':'Unconsumed by this water-frame trial; actual verticalgroundslab consumer required before combined-house demand is adopted.'}
+            for i,(point,phases) in enumerate(sorted(positions.items()))]
+
+
+def empty_head_actions(grid):
+    return {head['id']:{'FxKN':0.,'FyKN':0.,'FzKN':0.,'MxKNm':0.,'MyKNm':0.,'MzKNm':0.} for head in grid['heads']}
+
+
+def global_gravity_wrench(ledger):
+    return [0.,0.,-sum(row['downwardKN'] for row in ledger),
+            -sum(row['downwardKN']*row['xyMm'][1]/1000 for row in ledger),
+            sum(row['downwardKN']*row['xyMm'][0]/1000 for row in ledger),0.]
+
+
+def head_global_wrench(actions,grid):
+    result=[0.]*6
+    for head in grid['heads']:
+        v=actions[head['id']];x,y=head['xy'];z=head['capZ'][1]
+        f=[v[k] for k in ['FxKN','FyKN','FzKN']]
+        moment=[v['MxKNm']+(y*f[2]-z*f[1])/1000,
+                v['MyKNm']+(z*f[0]-x*f[2])/1000,
+                v['MzKNm']+(x*f[1]-y*f[0])/1000]
+        result=[a+b for a,b in zip(result,f+moment)]
+    return result
+
+
+def gravity_audit(ledger,actions,grid):
+    applied=global_gravity_wrench(ledger);transferred=head_global_wrench(actions,grid)
+    difference=[a-b for a,b in zip(transferred,applied)]
+    return {'order':['FxKN','FyKN','FzKN','MxKNm','MyKNm','MzKNm'],'appliedGlobalWrench':applied,
+            'source52GlobalWrench':transferred,'residual':difference,'maximumAbsoluteResidual':max(map(abs,difference)),
+            'units':'kN andkNm; global origin0/0/0, vertical gravity projection preserves all six resultants'}
+
+
+def transfer_e_gravity(ledger,grid,girder,column_x,column_ys):
+    face=girder['datum']+girder['width']/2
+    seats=[{'xyMm':[column_x,y],'downwardKN':0.,'rootMyKNm':0.,'faceMyKNm':0.} for y in column_ys]
+    for row in ledger:
+        x,y=row['xyMm'];w=row['downwardKN']
+        fractions=[(column_ys[1]-y)/(column_ys[1]-column_ys[0]),(y-column_ys[0])/(column_ys[1]-column_ys[0])]
+        for seat,fraction in zip(seats,fractions):
+            force=w*fraction
+            seat['downwardKN']+=force
+            seat['rootMyKNm']+=force*(x-column_x)/1000
+            seat['faceMyKNm']+=force*(x-face)/1000
+    source_y=[row['u'] for row in girder['heads']]
+    low=max(y for y in source_y if y<min(column_ys));high=min(y for y in source_y if y>max(column_ys))
+    ids={row['u']:row['id'] for row in girder['heads']};actions=empty_head_actions(grid)
+    for seat in seats:
+        y=seat['xyMm'][1];w=seat['downwardKN']
+        seat['anchorRowCoupleKN']=abs(seat['faceMyKNm']*1000/200)
+        seat['columnRootMomentKNm']=seat['rootMyKNm']
+        for axis,fraction in [(low,(high-y)/(high-low)),(high,(y-low)/(high-low))]:
+            node=actions[ids[axis]]
+            node['FzKN']-=w*fraction
+            node['MyKNm']+=(seat['rootMyKNm']+w*(column_x-girder['datum'])/1000)*fraction
+    return {'seatActions':seats,'source52SLSHeadLoadAdditions':actions,'actualReceivingSourceHeads':[ids[low],ids[high]],
+            'equilibrium':gravity_audit(ledger,actions,grid),
+            'torsionDistributionBoundary':'Statically admissible linear split to the two actual source heads, not compatible RC torsion/contact capacity.'}
+
+
 def compile_east_terminal(s,h,grid,invert1,station_extra):
     g=grid['girders']['outer-E'];face=g['datum']+g['width']/2;column=face+100
-    y=s['centreYmm'];seats_y=[y-300,y+300]
-    members=section(80,100,6-s['metalLossMm'])
-    length=s['endXmm']-12000
-    if not 12000<column<s['endXmm'] or not 0<length<=750:
+    y=s['centreYmm'];seats_y=[y-300,y+300];rail_start=12150
+    members=section(80,100,6-s['metalLossMm']);nominal=section(80,100,6)
+    end=s['endXmm'];length=end-12000
+    if not rail_start<column<end or not 0<length<=750:
         raise ValueError('Unsupported exterior E terminal/cold-face support geometry')
     body_dead=(2*s['waterWidthMm']+3*s['waterHeightMm'])*s['bodyMm']*8e-5
     water_dead=s['waterWidthMm']*s['waterHeightMm']*9.81e-6
     pipe_line=(math.pi*(80**2-74**2)/4*8e-5+math.pi*74**2/4*9.81e-6)
-    pipe_weight=pipe_line*1.5
-    q=(body_dead+water_dead)/2+members['areaMm2']*8e-5
-    projection=s['endXmm']-column
-    moment=q*projection**2/2
-    rail_top=invert1-2*s['bodyMm']-s['supportHeightMm']
-    column_height=rail_top-100-g['z'][1]
-    column_weight=section(100,100,6)['areaMm2']*column_height*8e-8+s['bracketMassKg']*9.81/1000
-    per_seat=q*length/1000+column_weight+pipe_weight/2+station_extra*9.81/2000
-    bracket_y=[g['heads'][i]['u'] for i in range(len(g['heads']))]
-    left=max(v for v in bracket_y if v<min(seats_y));right=min(v for v in bracket_y if v>max(seats_y))
-    heads={v['u']:v['id'] for v in g['heads']}
-    additions={head['id']:{'FxKN':0,'FyKN':0,'FzKN':0,'MxKNm':0,'MyKNm':0,'MzKNm':0} for head in grid['heads']}
-    for sy in seats_y:
-        for axis,fraction in [(left,(right-sy)/(right-left)),(right,(sy-left)/(right-left))]:
-            force=per_seat*fraction;head=heads[axis]
-            additions[head]['FzKN']-=force
-            additions[head]['MyKNm']+=force*(column-g['datum'])/1000
+    rail_top=invert1-2*s['bodyMm']-s['supportHeightMm'];column_height=rail_top-100-g['z'][1]
+    column_weight=section(100,100,6)['areaMm2']*column_height*8e-8
+    clear_width=(s['waterWidthMm']-s['centralFlangeMm'])/2
+    full_removed_roof_kg=2*clear_width*s['lidClearLengthMm']*s['bodyMm']*8e-6
+    new_station_kg=station_extra+full_removed_roof_kg
+    roof_low=max(12000,12200-s['lidClearLengthMm']/2);roof_high=min(end,12200+s['lidClearLengthMm']/2)
+    removed_roof_kg=2*clear_width*max(0,roof_high-roof_low)*s['bodyMm']*8e-6
+    ledger=[{'id':'external-body-stock','downwardKN':body_dead*length/1000,'xyMm':[(12000+end)/2,y],'domainXmm':[12000,end]},
+            {'id':'external-contained-water','downwardKN':water_dead*length/1000,'xyMm':[(12000+end)/2,y],'domainXmm':[12000,end]},
+            {'id':'separate-local-pipe-stock-and-full-water','downwardKN':pipe_line*1.5,'xyMm':[12750,6900],'domainXmm':[12000,13500]},
+            {'id':'terminal-cleanout-new-stock','downwardKN':new_station_kg*9.81/1000,'xyMm':[12200,y],
+             'scope':'Entire positive station stock assigned to terminal trial; actual12200 centroid retained, not collapsed tocolumn.'},
+            {'id':'removed-outside-roof-under-cleanout','downwardKN':-removed_roof_kg*9.81/1000,'xyMm':[(roof_low+roof_high)/2,y],'domainXmm':[roof_low,roof_high],
+             'scope':'Subtract only old roof actually inside exterior cut; the inboard25mm was never in exterior body stock.'}]
+    for i,sy in enumerate(seats_y):
+        ledger.extend([{'id':'outdoor-rail-'+str(i),'downwardKN':nominal['areaMm2']*8e-5*(end-rail_start)/1000,'xyMm':[(rail_start+end)/2,sy],'domainXmm':[rail_start,end]},
+                       {'id':'column-'+str(i),'downwardKN':column_weight,'xyMm':[column,sy]},
+                       {'id':'bracket-mass-allowance-'+str(i),'downwardKN':s['bracketMassKg']*9.81/1000,'xyMm':[(face+column)/2,sy],
+                        'scope':'Authored25kg allowance at the middle of the100mm bracket projection; exact fabrication replaces this allowance.'}])
+    transfer=transfer_e_gravity(ledger,grid,g,column,seats_y)
+    projection=end-column
+    q_right=(body_dead+water_dead)/2+nominal['areaMm2']*8e-5
+    station_new_kn=new_station_kg*9.81/1000
+    right_m=q_right*projection**2/2+station_new_kn/2*max(0,12200+(s['lidClearLengthMm']+2*s['flangeWidthMm'])/2-column)*1000
+    left_m=(body_dead+water_dead)/2*(column-12000)**2/2+nominal['areaMm2']*8e-5*(column-rail_start)**2/2+station_new_kn/2*max(0,column-(12200-(s['lidClearLengthMm']+2*s['flangeWidthMm'])/2))*1000
     return {'actualColdGirder':'outer-E','actualGirderZMm':g['z'],'outerFaceXmm':face,'columnXmm':column,'columnsYmm':seats_y,
-            'bodyBeyondOccupiedFloorXmm':[12000,s['endXmm']],'retained100GlassClaimOutsideHouse':False,
+            'componentGravityLedger':ledger,'gravityMassBasis':'Nominal full stock for downward case; corroded sections only for stiffness/resistance.',**transfer,
+            'bodyBeyondOccupiedFloorXmm':[12000,end],'retained100GlassClaimOutsideHouse':False,
             'columnSectionMm':[100,100,6],'columnZMm':[g['z'][1],rail_top-100],
-            'twoOutdoorRailSectionMm':[80,100,6],'actualRailProjectionMm':projection,'railStartXmm':12150,'backwardRailOverhangMm':column-12150,'bareBodyClearSpanToRailMm':150,'bareBody150SpanSelfWeightMomentNmm':(body_dead+water_dead)*150**2/8,
-            'waterAndStockLineLoadKNperM':2*q,'localCatchPipeFullWaterAndStockKNperM':pipe_line,'localCatchPipeTotalGravityKN':pipe_weight,'terminalCleanoutExtraPermanentStockKgBeyondRoof':station_extra,'ULSMaximumRailStressMPa':1.35*moment/members['modulusMm3'],
-            'cantileverOnlySLSDeflectionMm':q*projection**4/(8*s['elasticMPa']*members['inertiaMm4']),
-            'bracketFaceSLSMomentKNm':per_seat*.1,'anchorRowsZMm':[-300,-500],'requiredAnchorRowCoupleSLSKN':per_seat*.5,
-            'source52SLSHeadLoadAdditions':additions,'actualReceivingSourceHeads':[heads[left],heads[right]],
-            'totalSLSDownwardKN':2*per_seat,'floorWalkingLoadOutsideHouse':False,
-            'jointCapacityAdmitted':False,'coldGirderCombinedOriginalLoadAndLocalAnchorsAdmitted':False,
-            'renewal':'External body and80×100 rails are accessible outside the house. Capture before releasing; no bearing on receiver, glass beyondX12000, new ground post or invented foundation.'}
+            'twoOutdoorRailSectionMm':[80,100,6],'actualRailProjectionMm':projection,'railStartXmm':rail_start,
+            'backwardRailOverhangMm':column-rail_start,'bareBodyClearSpanToRailMm':150,
+            'bareBody150SpanSelfWeightMomentNmm':(body_dead+water_dead)*150**2/8,
+            'waterAndBodyStockLineLoadKNperM':body_dead+water_dead,'nominalRailStockLineLoadKNperMEach':nominal['areaMm2']*8e-5,
+            'localCatchPipeFullWaterAndStockKNperM':pipe_line,'localCatchPipeTotalGravityKN':pipe_line*1.5,
+            'terminalCleanoutExtraPermanentStockKgBeyondRoof':new_station_kg-removed_roof_kg,'terminalCleanoutNewPositiveStockKg':new_station_kg,'removedExteriorRoofKg':removed_roof_kg,
+            'railInternalMomentBoundsNmm':{'rightOfColumn':right_m,'leftOfColumn':left_m,'method':'For railresistance put all positive stationstock at furthest respective edge; credit no removedroof as favourable load. Headreaction ledger separately retains true centroids.'},
+            'ULSMaximumRailStressMPa':1.35*max(abs(right_m),abs(left_m))/members['modulusMm3'],
+            'cantileverOnlySLSDeflectionMm':q_right*projection**4/(8*s['elasticMPa']*members['inertiaMm4']),
+            'anchorRowsZMm':[-300,-500],'totalSLSDownwardKN':sum(row['downwardKN'] for row in ledger),
+            'floorWalkingLoadOutsideHouse':False,'jointCapacityAdmitted':False,
+            'coldGirderCombinedOriginalLoadAndLocalAnchorsAdmitted':False,
+            'renewal':'External body and80×100 rails are accessible. All outboard gravity centroids/root couples transfer to cold face/source52; no receiver footing or invented soil support.'}
 
 
 def plate_walking(s,span=300):
@@ -641,13 +767,13 @@ def default_settings():
             'lidClearLengthMm':450,'gasketWidthMm':10,'boltEdgeOffsetMm':25,'boltsOnLongSide':7,'boltsOnShortSide':5,
             'boltPreloadKN':16,'preloadLossFraction':.2,'boltProofMPa':600,'boltTensileAreaMm2':58,'gasketMinimumStressMPa':13,
             'scupperSpanMm':1200,'scupperSpringMm':700,'scupperRiseMm':150,'jambGlassMm':110,'liningMm':27,'ringMm':215,
-            'wallTailMm':100,'courtDrawMm':550,'spineDrawMm':750,'pointLoadKN':2,'liveKPa':2,'cantileverDeflectionRatio':150,'bracketMassKg':25,'localLeakTrialLps':.1,'lidCarryLiftMm':800,'capturedBailHeightMm':700,'handleDynamicFactor':1.5,'gasketMassAllowanceKg':.1,'retainedWaterAllowanceKg':.25,'weldMassAllowanceKg':.1}
+            'wallTailMm':100,'courtDrawMm':550,'spineDrawMm':750,'pointLoadKN':2,'liveKPa':2,'walkingCoverPointLoadKN':2,'walkingGridSimultaneousPoints':2,'walkingLiveLoadKPa':2,'cantileverDeflectionRatio':150,'bracketMassKg':25,'localLeakTrialLps':.1,'lidCarryLiftMm':800,'capturedBailHeightMm':700,'handleDynamicFactor':1.5,'gasketMassAllowanceKg':.1,'bailLegHalfSpanMm':170,'bailPinHalfSpanMm':200,'bailOffsetFraction':.5,'bailFootWidthMm':30,'bailFootPlateMm':6,'bailTaperSeatMm':2,'retainedWaterAllowanceKg':.25,'weldMassAllowanceKg':.3}
 
 
 def render_closed(r):
     s=r['settings'];e=r['east'];n=r['north'];ffl=r['levelsMm']['ffl'];sec=e['section'];catch=e['localLeakCatch']
-    out=['<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1500" viewBox="0 0 1800 1500">',
-         '<rect width="1800" height="1500" fill="#faf8f1"/><g font-family="sans-serif" fill="#263b42">']
+    out=['<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="2240" viewBox="0 0 1800 2240">',
+         '<rect width="1800" height="2240" fill="#faf8f1"/><g font-family="sans-serif" fill="#263b42">']
     def box(x,y,w,h,fill,stroke='#52666b'):
         out.append(f'<rect x="{x:.2f}" y="{y:.2f}" width="{w:.2f}" height="{h:.2f}" fill="{fill}" stroke="{stroke}"/>')
     def text(x,y,label,size=16):out.append(f'<text x="{x}" y="{y}" font-size="{size}">{escape(label)}</text>')
@@ -690,7 +816,7 @@ def render_closed(r):
         box(X(c-s['railWidthMm']/2),Z(456),s['railWidthMm']*.8,6,'#7b9194')
     for z,label in [(ffl,f'FFL{ffl:g}'),(sec['pressureLidFieldUnderskinMm'],'40-core'+str(sec['pressureLidFieldUnderskinMm'])),(sec['boltTopMm'],'bolt'+str(sec['boltTopMm'])),(s['invertMm'],'water invert'+str(s['invertMm']))]:
         line([(780,Z(z)),(820,Z(z))]);text(825,Z(z)+(-12 if z==sec['pressureLidFieldUnderskinMm'] else 12 if z==sec['boltTopMm'] else 5),label,14)
-    text(45,660,f'600 water clear /686 frame /846 gross. Two lids {e["pressure"]["halfOuterLidMm"][0]:g}×530;4field+10rim;30bolt/40cleanout/50ordinary glass.',16)
+    text(45,660,f'{s["waterWidthMm"]:g} water clear /{e["bodyOuterWidthMm"]:g} frame /{e["grossWidthMm"]:g} gross. Two lids {e["pressure"]["halfOuterLidMm"][0]:g}×{e["pressure"]["halfOuterLidMm"][1]:g};4field+10rim;30bolt/40cleanout/50ordinary glass.',16)
     text(45,687,f'Catch{catch['catchClearWidthMm']:g}clear below body; side crest80, normal local leak trial0.1L/s, computed adverse limit{catch["computedMaximumLocalLeakLps"]:.3f}L/s.',16)
     text(45,714,'Walking plates → separate40deep grid/60rails/60×280soles →100glass →RC. Water body carries no walking load.',16)
     text(1030,118,'B · E passage and accessible joints',20)
@@ -703,21 +829,21 @@ def render_closed(r):
     a,b=e['routeXmm'];box(PX(a),PY(e['grossYmm'][1]),(b-a)*.11,e['grossWidthMm']*.15,'#a2c6ce')
     hx,hy,he,hn=e['headerPlanXYMm'];box(PX(hx),PY(hn),(he-hx)*.11,(hn-hy)*.15,'#7aadb9')
     for x in e['pressureCleanouts']['centresXmm']:
-        box(PX(x-265),PY(s['centreYmm']-s['lidButtGapMm']/2),530*.11,e['pressure']['halfOuterLidMm'][0]*.15,'#708c95')
-        box(PX(x-265),PY(s['centreYmm']+343),530*.11,e['pressure']['halfOuterLidMm'][0]*.15,'#8eaab3')
+        box(PX(x-e['pressure']['halfOuterLidMm'][1]/2),PY(s['centreYmm']-s['lidButtGapMm']/2),e['pressure']['halfOuterLidMm'][1]*.11,e['pressure']['halfOuterLidMm'][0]*.15,'#708c95')
+        box(PX(x-e['pressure']['halfOuterLidMm'][1]/2),PY(s['centreYmm']+e['bodyOuterWidthMm']/2),e['pressure']['halfOuterLidMm'][1]*.11,e['pressure']['halfOuterLidMm'][0]*.15,'#8eaab3')
     for o in e['scuppers']:
         a,b=o['jointFreeWallBodyXmm'];line([(PX(a),PY(e['grossYmm'][0])-5),(PX(a),PY(e['grossYmm'][1])+5)],'#c2563e')
         line([(PX(b),PY(e['grossYmm'][0])-5),(PX(b),PY(e['grossYmm'][1])+5)],'#c2563e')
     line([(PX(12000),PY(6900)),(PX(13500),PY(6900))],'#b45b3c',True,3)
-    for i,label in enumerate(['E1200 passage6300..7500; gross6452..7298; all service bodies aboveRC350.',
-        'New scuppers: raw1200; bottom350; spring700/crown850/ring1065.',
+    for i,label in enumerate([f'E1200 passage6300..7500; gross{e["grossYmm"][0]:g}..{e["grossYmm"][1]:g}; actual RCtop{r["groundStack"]["dryRC"][1]:g}.',
+        f'New scuppers: raw{s["scupperSpanMm"]:g}; bottom350; spring{s["scupperSpringMm"]:g}/crown{e["scuppers"][0]["rawCrownMm"]:g}/ring{e["scuppers"][0]["ringTopMm"]:g}.',
         f'Finished crown{e["scuppers"][0]["finishedCrownMm"]:g} below FFL{ffl:g}; window sill{e["scuppers"][0]["windowSillMm"]:g}.',
-        'Joint-free wall bodies draw550/750 into real8179.5..9203 gallery.',
+        f'Joint-free wall bodies draw{e["scuppers"][0]["shortDrawMm"]:g}/{abs(e["scuppers"][1]["shortDrawMm"]):g} into real8179.5..9203 gallery.',
         f'Main bed{e["invertEndsMm"][0]:g}→{e["invertEndsMm"][1]:.3f};1:{s["slopeRatio"]:g}; quiet{r["levelsMm"]["quiet"]:g} / return{e["headerWaterReturnsToMm"]:g}.',
         f'Intake front6500..7375, returns{e["headerWaterReturnsToMm"]:g}, hood{e["ventAndWeatherHoodTopMm"]:g}: visible, not walking.',
         'Local catch ends12000; separate80OD pipe390→345 to13500/6900.',
         'Pressure lids lifted only after N full-duty verification, E isolation/drain.',
-        'New masonry/90mm local glass reduction, welds, air collars remain unqualified.']):text(1030,430+28*i,label,15)
+        f'New masonry/{e["scuppers"][0]["thermalGlassReductionMm"]:g}mm local glass reduction, welds, air collars remain unqualified.']):text(1030,430+28*i,label,15)
     text(45,790,'C · N plan: actual heads, new support and operator domain',20)
     NX=lambda x:75+(x-4250)*.085
     NY=lambda y:1405-(y-7750)*.085
@@ -757,10 +883,47 @@ def render_closed(r):
     line([(SX(13450),SZ(receiver['maximumWaterMm'])),(SX(13750),SZ(receiver['maximumWaterMm']))],'#448c9e',True,2)
     text(1000,842,'12cover +50frame +58mineral +50crossbearer +180rail +200crossbeam; no coplanar overlap.',15)
     text(1000,870,'EW top=walk−350; bottom=walk−550. Stools end above−180 coldRC top.',15)
-    text(1000,898,'Cold anchors−300/−500; bracket bottom−550; retained caps/ties−750 still governD1250.',15)
+    text(1000,898,f'Cold anchors−300/−500; bracket−550; lowest retained{r["ground"]["retainedGridLowestMm"]:g} gives minimumD{r["ground"]["knownEnvelopeMinimumDmm"]:g}.',15)
     text(1000,926,f'N shoe sole350 staysRC-owned; crest{n["protectiveBoundary"]["sourceShoeCrestMm"]:g}; taller return, no apron cut.',15)
     text(1000,1450,f'Rail projection{n["terminalRailCantileverMm"]:g}; people{n["peoplePlatformCantileverMm"]:g}. SLS loaded maximum{max(v["maximumRailDeflectionMm"] for k,v in n["loadCases"].items() if k.startswith("SLS")):.2f}mm.',15)
     text(45,1478,'No actual site grade/outfall capacity, qualified first harm or installed seal claim. '+r['status']+'.',16)
+    handling=e['pressure']['handling'];access=next(p for p in handling['operators'] if p['stationXmm']==10050 and p['half']=='south')
+    capture=access['captureGeometry'];control=access['allBoltControls'][0];pose=control['staffSweep'][1]
+    scale=.65;station=access['stationXmm'];centre=s['centreYmm']
+    CX=lambda x:330+(x-station)*scale
+    CY=lambda y:1815-(y-centre)*scale
+    text(45,1530,'E · Actual capture and 550-long floor opening: plan projection',20)
+    low,high=access['floorOpeningPlanBoundsMm']
+    box(CX(low[0]),CY(high[1]),(high[0]-low[0])*scale,(high[1]-low[1])*scale,'#e9e3d0')
+    low,high=capture['lidAndCapturePlanBoundsMm']
+    lid_y=half_coordinates(s,access['half'])[2];lid_w,lid_l=e['pressure']['halfOuterLidMm']
+    box(CX(station-lid_l/2),CY(lid_y+lid_w/2),lid_l*scale,lid_w*scale,'#bac8c9')
+    for target in capture['boxes']:
+        lo,hi=target['lowMm'],target['highMm']
+        box(CX(lo[0]),CY(hi[1]),(hi[0]-lo[0])*scale,(hi[1]-lo[1])*scale,'#b78b56' if target['id'].startswith('lifting-tongue') else '#869b9e')
+    for cap in capture['capsules']:
+        a,b=cap['aMm'],cap['bMm'];line([(CX(a[0]),CY(a[1])),(CX(b[0]),CY(b[1]))],'#344f59',False,max(2,2*cap['radiusMm']*scale))
+    for bolt in access['allBoltControls']:
+        x,y,_=bolt['boltXYZmm'];out.append(f'<circle cx="{CX(x)}" cy="{CY(y)}" r="4" fill="#263b42"/>')
+    for part in pose['toolParts']:
+        a,b=part['aMm'],part['bMm'];line([(CX(a[0]),CY(a[1])),(CX(b[0]),CY(b[1]))],'#c2563e',False,max(2,2*part['radiusMm']*scale))
+    body=control['operatorBodyCentreXYmm']
+    out.append(f'<circle cx="{CX(body[0])}" cy="{CY(body[1])}" r="{300*scale}" fill="none" stroke="#4f7357" stroke-width="2"/>')
+    text(45,2180,'Plan shows actual lid, tongues, fork/pins, bail and one tool witness; continuous sweep is numerical proof.',15)
+    text(45,2208,'Circle: 300 body radius. Opening550; stance offset585 gives10 nominal /5 after setting.',15)
+    text(1000,1530,'F · Capture elevation projection and current controls',20)
+    EZ=lambda z:2075-(z-capture['capsules'][0]['aMm'][2])*.45
+    EX=lambda x:1280+(x-station)*.45
+    for target in capture['boxes']:
+        lo,hi=target['lowMm'],target['highMm'];box(EX(lo[0]),EZ(hi[2]),(hi[0]-lo[0])*.45,max(2,(hi[2]-lo[2])*.45),'#b78b56' if target['id'].startswith('lifting-tongue') else '#869b9e')
+    for cap in capture['capsules']:
+        a,b=cap['aMm'],cap['bMm'];line([(EX(a[0]),EZ(a[2])),(EX(b[0]),EZ(b[2]))],'#344f59',False,max(2,2*cap['radiusMm']*scale))
+    for i,label in enumerate([f'700 bail; leg X±{s["bailLegHalfSpanMm"]:g}, tongues/pins X±{s["bailPinHalfSpanMm"]:g}.',
+        'Fork60×30×3; tongue80×30×6; shoulder10 /threadM8.',
+        f'Charged lid{handling["chargedLiftingMassKg"]:.3f}kg; grip/force event unqualified.',
+        f'Full tool reach{max(p["maximumAllBoltToolReachMm"] for p in handling["operators"]):.3f} of600; carry{max(p["standingCarryReachMm"] for p in handling["operators"]):.3f}.',
+        f'All stance/tool/stage paths: body gap≥{min(p["minimumBodyToOpenFloorAfter5Mm"] for p in handling["operators"]):g} after5.',
+        f'Crew floor ports{len(e["crewFloorLoadPorts"])} regenerate; actual ground transfer unconsumed.']):text(1000,1558+28*i,label,15)
     out.append('</g></svg>')
     return '\n'.join(out)+'\n'
 

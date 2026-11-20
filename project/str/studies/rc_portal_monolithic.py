@@ -8,7 +8,7 @@ from joined_rc_floor import _solve_joined_rc_floor_fixed
 from distributed_floor_compatibility import native_intermediate_support_ports
 from joined_rc_floor_views import draw_joined_rc_floor
 from joined_successor_kernel import rectangle_section
-from rc_floor_house_loads import build_rc_floor_house, load_rc_floor_house_source, rc_floor_house_diagnostics, rc_house_schedule, reference_rc_floor_house_case, solve_rc_floor_house
+from rc_floor_house_loads import build_rc_floor_house, load_rc_floor_house_source, rc_floor_house_diagnostics, rc_house_schedule, reference_rc_floor_house_case, register_member_gravity, solve_rc_floor_house
 
 
 METHOD='project/str/studies/rc_portal_monolithic.py'
@@ -88,8 +88,7 @@ def build_monolithic_rc_portals(case,source):
         frame.member(name,a,b,rectangle_section(212.5,290),model['request']['frameLaw'],physical_start=start,physical_end=end,y_axis=[0,1,0])
         model['members'][name]={'a':a,'b':b,'physicalStartMm':start,'physicalEndMm':end,'breadthMm':290,'depthMm':212.5,'kind':'post'}
         volume=212.5*290*length/1e9;total_volume+=volume;weight=volume*25
-        for node in (a,b):
-            row=model['families']['physical-G'].setdefault(node,[0.]*6);row[2]-=weight/2
+        register_member_gravity(model,name,already_lumped=False)
         bridges.append({'id':name,'physicalStartMm':start,'physicalEndMm':end,'sectionMm':[212.5,290],
             'finiteLengthMm':length,'RCVolumeM3':volume,'physicalGKN':weight,
             'scope':'Actual finite20mmRC continuity comparison, not a rigidbase or adopted waterstop material.'})

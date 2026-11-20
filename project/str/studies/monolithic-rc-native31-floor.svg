@@ -2,7 +2,7 @@
 <rect width="920" height="1160" fill="#faf8f2"/>
 <style>text{font:12px sans-serif;fill:#243339}.small{font-size:10px}.tiny{font-size:7px}</style>
 <text x="35" y="25">JOINED PERFORATED FLOOR / CONTINUOUS RC PORTALS / ACTUAL52HEADS</text>
-<text x="35" y="46">MONOLITHIC290-UPSTAND200-native31-G0.9 — conditional numerical comparison, no house adoption</text>
+<text x="35" y="46">MONOLITHIC-CONSISTENT-G0.9-W31 — conditional numerical comparison, no house adoption</text>
 <polygon points="87.9425,787.0575 88.7975,787.0575 88.7975,786.2025" fill="#edf1df" stroke="#cad1be" stroke-width=".25"/>
 <polygon points="87.9425,787.0575 88.7975,786.2025 87.9425,786.2025" fill="#edf1df" stroke="#cad1be" stroke-width=".25"/>
 <polygon points="87.9425,786.2025 88.7975,786.2025 88.7975,738.0375" fill="#edf1df" stroke="#cad1be" stroke-width=".25"/>
@@ -2720,81 +2720,81 @@
 <rect x="722.6375" y="140.96249999999998" width="11.4" height="57.0" fill="#7b9a91" stroke="#344d54"/>
 <rect x="677.0375" y="140.96249999999998" width="45.6" height="11.4" fill="#7b9a91" stroke="#344d54"/>
 <circle cx="83.9525" cy="791.0475" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="88.9525" y="787.0475">P01 +67.28</text>
+<text class="tiny" x="88.9525" y="787.0475">P01 +67.50</text>
 <circle cx="132.9725" cy="791.0475" r="3.5" fill="#a94e3d"/>
-<text class="tiny" x="137.9725" y="787.0475">P02 -31.17</text>
+<text class="tiny" x="137.9725" y="787.0475">P02 -31.05</text>
 <circle cx="83.9525" cy="742.0275" r="3.5" fill="#a94e3d"/>
-<text class="tiny" x="88.9525" y="738.0275">P03 -27.12</text>
+<text class="tiny" x="88.9525" y="738.0275">P03 -27.42</text>
 <circle cx="730.0475" cy="791.0475" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="735.0475" y="787.0475">P04 +3.80</text>
+<text class="tiny" x="735.0475" y="787.0475">P04 +4.03</text>
 <circle cx="681.0275" cy="791.0475" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="686.0275" y="787.0475">P05 +60.21</text>
+<text class="tiny" x="686.0275" y="787.0475">P05 +60.30</text>
 <circle cx="730.0475" cy="742.0275" r="3.5" fill="#a94e3d"/>
-<text class="tiny" x="735.0475" y="738.0275">P06 -73.68</text>
+<text class="tiny" x="735.0475" y="738.0275">P06 -73.98</text>
 <circle cx="83.9525" cy="144.9525" r="3.5" fill="#a94e3d"/>
-<text class="tiny" x="88.9525" y="140.9525">P07 -7.65</text>
+<text class="tiny" x="88.9525" y="140.9525">P07 -7.90</text>
 <circle cx="132.9725" cy="144.9525" r="3.5" fill="#a94e3d"/>
-<text class="tiny" x="137.9725" y="140.9525">P08 -57.99</text>
+<text class="tiny" x="137.9725" y="140.9525">P08 -58.18</text>
 <circle cx="83.9525" cy="193.97249999999997" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="88.9525" y="189.97249999999997">P09 +68.68</text>
+<text class="tiny" x="88.9525" y="189.97249999999997">P09 +69.09</text>
 <circle cx="730.0475" cy="144.9525" r="3.5" fill="#a94e3d"/>
-<text class="tiny" x="735.0475" y="140.9525">P10 -77.53</text>
+<text class="tiny" x="735.0475" y="140.9525">P10 -77.82</text>
 <circle cx="681.0275" cy="144.9525" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="686.0275" y="140.9525">P11 +22.78</text>
+<text class="tiny" x="686.0275" y="140.9525">P11 +22.59</text>
 <circle cx="730.0475" cy="193.97249999999997" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="735.0475" y="189.97249999999997">P12 +42.63</text>
+<text class="tiny" x="735.0475" y="189.97249999999997">P12 +43.15</text>
 <circle cx="83.9525" cy="624.8924999999999" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="88.9525" y="620.8924999999999">P13 +5.77</text>
+<text class="tiny" x="88.9525" y="620.8924999999999">P13 +5.82</text>
 <circle cx="83.9525" cy="563.0475" r="3.5" fill="#a94e3d"/>
-<text class="tiny" x="88.9525" y="559.0475">P14 -6.49</text>
+<text class="tiny" x="88.9525" y="559.0475">P14 -6.56</text>
 <circle cx="83.9525" cy="439.5" r="3.5" fill="#345b8c"/>
 <text class="tiny" x="88.9525" y="435.5">P15 +1.48</text>
 <circle cx="83.9525" cy="305.40749999999997" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="88.9525" y="301.40749999999997">P16 +8.66</text>
+<text class="tiny" x="88.9525" y="301.40749999999997">P16 +8.71</text>
 <circle cx="730.0475" cy="616.2" r="3.5" fill="#a94e3d"/>
-<text class="tiny" x="735.0475" y="612.2">P17 -7.76</text>
+<text class="tiny" x="735.0475" y="612.2">P17 -7.79</text>
 <circle cx="730.0475" cy="468.0" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="735.0475" y="464.0">P18 +2.33</text>
+<text class="tiny" x="735.0475" y="464.0">P18 +2.36</text>
 <circle cx="730.0475" cy="365.4" r="3.5" fill="#a94e3d"/>
 <text class="tiny" x="735.0475" y="361.4">P19 -4.58</text>
 <circle cx="258.8" cy="791.0475" r="3.5" fill="#345b8c"/>
 <text class="tiny" x="263.8" y="787.0475">P20 +2.68</text>
 <circle cx="338.6" cy="791.0475" r="3.5" fill="#a94e3d"/>
-<text class="tiny" x="343.6" y="787.0475">P21 -3.44</text>
+<text class="tiny" x="343.6" y="787.0475">P21 -3.42</text>
 <circle cx="475.40000000000003" cy="791.0475" r="3.5" fill="#345b8c"/>
 <text class="tiny" x="480.40000000000003" y="787.0475">P22 +3.25</text>
 <circle cx="595.1" cy="791.0475" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="600.1" y="787.0475">P23 +14.23</text>
+<text class="tiny" x="600.1" y="787.0475">P23 +14.25</text>
 <circle cx="230.4425" cy="144.9525" r="3.5" fill="#a94e3d"/>
-<text class="tiny" x="235.4425" y="140.9525">P24 -2.84</text>
+<text class="tiny" x="235.4425" y="140.9525">P24 -2.83</text>
 <circle cx="321.5" cy="144.9525" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="326.5" y="140.9525">P25 +2.14</text>
+<text class="tiny" x="326.5" y="140.9525">P25 +2.44</text>
 <circle cx="492.5" cy="144.9525" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="497.5" y="140.9525">P26 +11.77</text>
+<text class="tiny" x="497.5" y="140.9525">P26 +12.10</text>
 <circle cx="595.1" cy="144.9525" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="600.1" y="140.9525">P27 +3.43</text>
+<text class="tiny" x="600.1" y="140.9525">P27 +3.40</text>
 <circle cx="321.5" cy="351.15" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="326.5" y="347.15">P28 +3.90</text>
+<text class="tiny" x="326.5" y="347.15">P28 +3.72</text>
 <circle cx="321.5" cy="247.125" r="3.5" fill="#a94e3d"/>
-<text class="tiny" x="326.5" y="243.125">P29 -0.31</text>
+<text class="tiny" x="326.5" y="243.125">P29 -0.44</text>
 <circle cx="492.5" cy="351.15" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="497.5" y="347.15">P30 +16.67</text>
+<text class="tiny" x="497.5" y="347.15">P30 +16.57</text>
 <circle cx="492.5" cy="247.125" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="497.5" y="243.125">P31 +0.90</text>
+<text class="tiny" x="497.5" y="243.125">P31 +0.75</text>
 <circle cx="290.15" cy="563.0475" r="3.5" fill="#a94e3d"/>
 <text class="tiny" x="295.15" y="559.0475">P32 -0.54</text>
 <circle cx="290.15" cy="456.59999999999997" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="295.15" y="452.59999999999997">P33 +0.17</text>
+<text class="tiny" x="295.15" y="452.59999999999997">P33 +0.16</text>
 <circle cx="290.15" cy="351.15" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="295.15" y="347.15">P34 +15.30</text>
+<text class="tiny" x="295.15" y="347.15">P34 +15.29</text>
 <circle cx="518.1500000000001" cy="584.85" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="523.1500000000001" y="580.85">P35 +0.44</text>
+<text class="tiny" x="523.1500000000001" y="580.85">P35 +0.42</text>
 <circle cx="518.1500000000001" cy="462.3" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="523.1500000000001" y="458.3">P36 +0.72</text>
+<text class="tiny" x="523.1500000000001" y="458.3">P36 +0.70</text>
 <circle cx="518.1500000000001" cy="371.09999999999997" r="3.5" fill="#a94e3d"/>
-<text class="tiny" x="523.1500000000001" y="367.09999999999997">P37 -4.73</text>
+<text class="tiny" x="523.1500000000001" y="367.09999999999997">P37 -4.80</text>
 <circle cx="337.745" cy="586.7025" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="342.745" y="582.7025">P38 +0.34</text>
+<text class="tiny" x="342.745" y="582.7025">P38 +0.32</text>
 <circle cx="407.0" cy="584.85" r="3.5" fill="#a94e3d"/>
 <text class="tiny" x="412.0" y="580.85">P39 -0.07</text>
 <circle cx="476.255" cy="586.7025" r="3.5" fill="#345b8c"/>
@@ -2808,9 +2808,9 @@
 <circle cx="595.1" cy="371.09999999999997" r="3.5" fill="#a94e3d"/>
 <text class="tiny" x="600.1" y="367.09999999999997">P44 -0.81</text>
 <circle cx="232.7225" cy="563.0475" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="237.7225" y="559.0475">P45 +0.32</text>
+<text class="tiny" x="237.7225" y="559.0475">P45 +0.31</text>
 <circle cx="232.7225" cy="396.3225" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="237.7225" y="392.3225">P46 +1.13</text>
+<text class="tiny" x="237.7225" y="392.3225">P46 +1.11</text>
 <circle cx="232.7225" cy="305.40749999999997" r="3.5" fill="#345b8c"/>
 <text class="tiny" x="237.7225" y="301.40749999999997">P47 +0.03</text>
 <circle cx="338.6" cy="741.6" r="3.5" fill="#a94e3d"/>
@@ -2818,7 +2818,7 @@
 <circle cx="338.6" cy="658.95" r="3.5" fill="#a94e3d"/>
 <text class="tiny" x="343.6" y="654.95">P49 -0.55</text>
 <circle cx="258.8" cy="741.6" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="263.8" y="737.6">P50 +1.33</text>
+<text class="tiny" x="263.8" y="737.6">P50 +1.32</text>
 <circle cx="258.8" cy="658.95" r="3.5" fill="#345b8c"/>
 <text class="tiny" x="263.8" y="654.95">P51 +0.63</text>
 <circle cx="475.40000000000003" cy="658.95" r="3.5" fill="#345b8c"/>
@@ -2829,18 +2829,18 @@
 <text x="35" y="1147">All28 complete receiving duties remain open. No roof, installed or owner appearance acceptance.</text>
 <rect x="45" y="925" width="127.5" height="116.0" fill="#99b7b1" stroke="#344d54"/>
 <text class="small" x="45" y="913">court-north/west</text>
-<text class="small" x="45" y="1060">20mm finite RC / σmax 3.868MPa</text>
+<text class="small" x="45" y="1060">20mm finite RC / σmax 3.881MPa</text>
 <text class="small" x="45" y="1077">Not adopted waterproofjoint</text>
 <rect x="260" y="925" width="127.5" height="116.0" fill="#99b7b1" stroke="#344d54"/>
 <text class="small" x="260" y="913">court-north/east</text>
-<text class="small" x="260" y="1060">20mm finite RC / σmax 3.228MPa</text>
+<text class="small" x="260" y="1060">20mm finite RC / σmax 3.240MPa</text>
 <text class="small" x="260" y="1077">Not adopted waterproofjoint</text>
 <rect x="475" y="925" width="127.5" height="116.0" fill="#99b7b1" stroke="#344d54"/>
 <text class="small" x="475" y="913">outer-north/west</text>
-<text class="small" x="475" y="1060">20mm finite RC / σmax 4.564MPa</text>
+<text class="small" x="475" y="1060">20mm finite RC / σmax 4.211MPa</text>
 <text class="small" x="475" y="1077">Not adopted waterproofjoint</text>
 <rect x="690" y="925" width="127.5" height="116.0" fill="#99b7b1" stroke="#344d54"/>
 <text class="small" x="690" y="913">outer-north/east</text>
-<text class="small" x="690" y="1060">20mm finite RC / σmax 4.041MPa</text>
+<text class="small" x="690" y="1060">20mm finite RC / σmax 3.688MPa</text>
 <text class="small" x="690" y="1077">Not adopted waterproofjoint</text>
 </svg>

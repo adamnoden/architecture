@@ -51,12 +51,15 @@ test('ground authority, current plan, sources and approval injection cannot be b
   const computed = runGroundSectionCase(current, ground)
   const input = readServiceFloorCase(current, computed).serviceFloor
   assert.throws(() => runServiceFloorCase(current, computed, { ...input, groundResultDigest: 'stale' }), /Stale service-floor/)
+  const forged = { ...computed, native: { ...computed.native, levelsMm: { ...computed.native.levelsMm, ffl: 715 } } }
+  assert.throws(() => readServiceFloorCase(current, forged), /Modified or stale computed ground-section/)
+  assert.throws(() => readServiceFloorCase(current, { ...computed, source: { ...computed.source, caseDigest: 'forged' } }), /Modified or stale computed ground-section/)
   assert.throws(() => runServiceFloorCase(current, computed, { ...input, planDigest: 'stale' }), /Stale service-floor/)
   assert.throws(() => runServiceFloorCase(current, computed, { ...input, selectedHouseAdmitted: true }), /Stale service-floor/)
   assert.throws(() => runServiceFloorCase(current, computed, { ...input, settings: { ...input.settings, accessibleZoneMm: 250 } }), /only service-floor/)
   const missing = { ...current, disciplineBindings: current.disciplineBindings.map(row => ({ ...row,
     identities: Object.fromEntries(Object.entries(row.identities).filter(([path]) => path !== 'project/had/studies/closed_service_floor.py')) })) }
-  assert.throws(() => readServiceFloorCase(missing, computed), /Stale service-floor or ground-section current source/)
+  assert.throws(() => readServiceFloorCase(missing, computed), /Stale service-floor or ground-section current source|Stale or unsupported dry ground-section case/)
 })
 
 test('a changed source-ground stack rejects explicitly and invalidates the previous service-floor case', () => {

@@ -2,7 +2,7 @@
 
 The Reference House is not a prototype offered as proof, nor a model house intended for repetition. It is a worked interpretation: one contemporary family house in which the propositions of Ovid’s House are forced to coexist with an architectural language, a programme, a structure, an envelope, services, weather, maintenance and the ordinary inconveniences of occupation.
 
-The worked house tests how general propositions interact in a specific arrangement. The retained publication plates show the historical predecessor and are labelled accordingly; they do not illustrate or validate the current geometry described here. The coordinated successor drawing family remains separate until publication reconciliation.
+The worked house tests how general propositions interact in a specific arrangement. Current-house plans and the Study room comparisons now appear in the publication through the current drawing pipeline. Other retained plates remain labelled historical or conditional: they do not validate current geometry or transfer technical acceptance. The current house and its remaining coordination limits are collected in the [owner-review package](../../project/ccr/convergence-owner-review.md).
 
 The Reference House therefore carries several authorities at once. Ovid’s House supplies the long-life architectural position. The pattern set supplies reusable responses, with the service-topology family providing the strongest current generative sequence. G-01 supplies a bounded Georgian-derived grammar. The courtyard is a project morphology. The material and tectonic choices belong to this house. Technical systems remain project selections rather than doctrine. None of these authorities is allowed to absorb the others.
 

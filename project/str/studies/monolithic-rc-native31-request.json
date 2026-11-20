@@ -30,8 +30,8 @@
       "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
       "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
       "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
-      "project/str/studies/rc_floor_house_loads.py": "f1bbe34e21e30afb7b7f62ea6bfaacad2e4f04acc07308ea3016c19b2d2b154f",
-      "project/str/studies/rc_portal_monolithic.py": "cc646716478d39ad5c1317fff683f98b30f83f79263fd17a841a8003da933762"
+      "project/str/studies/rc_floor_house_loads.py": "eaade7a26ecc682f742a1c3b3246ee648e5d497c236b52f656250994d0517654",
+      "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137"
     },
     "houseCase": {
       "schema": "str-rc-floor-house-load-case/1",
@@ -64,7 +64,7 @@
         "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
         "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
         "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
-        "project/str/studies/rc_floor_house_loads.py": "f1bbe34e21e30afb7b7f62ea6bfaacad2e4f04acc07308ea3016c19b2d2b154f"
+        "project/str/studies/rc_floor_house_loads.py": "eaade7a26ecc682f742a1c3b3246ee648e5d497c236b52f656250994d0517654"
       },
       "joinedCase": {
         "schema": "str-joined-rc-floor-case/1",
@@ -323,5 +323,5 @@
     },
     "use": "unqualified-continuous-RC-structural-replacement"
   },
-  "name": "MONOLITHIC290-UPSTAND200-native31-G0.9"
+  "name": "MONOLITHIC-CONSISTENT-G0.9-W31"
 }

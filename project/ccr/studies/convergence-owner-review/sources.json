@@ -1,0 +1,110 @@
+{
+  "sourceRevision": "08b11134af37453ea258a53bbb18551b32b33be0",
+  "scope": "Frozen owner-review snapshots of the existing current gallery, with linked source-specific development and IAS proposals. No candidate selection or whole-house reconciliation.",
+  "views": [
+    {
+      "path": "01-ground.svg",
+      "viewId": "LAYOUT-FAMILY-GROUND-100",
+      "sourceId": "RH-LAYOUT-FAMILY-02",
+      "sha256": "af4a637fa2eef831f33f88aad1fbc184cab44ad7c28c1d365c46473abcd77ea2",
+      "sourcePath": "compiler/reference-house/georgian/layout-family.ts",
+      "basis": "current"
+    },
+    {
+      "path": "02-first.svg",
+      "viewId": "LAYOUT-FAMILY-FIRST-100",
+      "sourceId": "RH-LAYOUT-FAMILY-02",
+      "sha256": "eba5ff6f813e4699e07711dcdc707bbc44d034c1c36484c0e38047719bbebe04",
+      "sourcePath": "compiler/reference-house/georgian/layout-family.ts",
+      "basis": "current"
+    },
+    {
+      "path": "03-principal-section.svg",
+      "viewId": "LAYOUT-FAMILY-PRINCIPAL-100",
+      "sourceId": "RH-LAYOUT-FAMILY-02",
+      "sha256": "13fd09286b372cda88b571bad7859463bbc6ab3a0c95feffd19d9550076be0ed",
+      "sourcePath": "compiler/reference-house/georgian/layout-family.ts",
+      "basis": "current"
+    },
+    {
+      "path": "04-front.svg",
+      "viewId": "LAYOUT-FAMILY-FRONT-100",
+      "sourceId": "RH-LAYOUT-FAMILY-02",
+      "sha256": "d50b26fcc06368dadda6ac26d210a4e78895434f822ff1a9b1148939d80f207e",
+      "sourcePath": "compiler/reference-house/georgian/layout-family.ts",
+      "basis": "current"
+    },
+    {
+      "path": "05-roof-court.svg",
+      "viewId": "LAYOUT-FAMILY-ROOF-WATER-100",
+      "sourceId": "RH-LAYOUT-FAMILY-02",
+      "sha256": "77aecded6ed47b5310ea937f9c5a47155d8cfb1e2c07bb8c616a1c42006d25a8",
+      "sourcePath": "compiler/reference-house/georgian/layout-family.ts",
+      "basis": "current"
+    },
+    {
+      "path": "court-north.svg",
+      "viewId": "LAYOUT-FAMILY-COURT-ENTRY-100",
+      "sourceId": "RH-LAYOUT-FAMILY-02",
+      "sha256": "6d8e09161635c428e92b1b42c81249ac4dc06d513781f2d53e21178c04dec968",
+      "sourcePath": "compiler/reference-house/georgian/layout-family.ts",
+      "basis": "current"
+    },
+    {
+      "path": "court-south.svg",
+      "viewId": "LAYOUT-FAMILY-COURT-WINDOWS-100",
+      "sourceId": "RH-LAYOUT-FAMILY-02",
+      "sha256": "e44402a7c5dcd7a098c397e46aa017c129f54c79fa3d1021bc7943f553ad76fa",
+      "sourcePath": "compiler/reference-house/georgian/layout-family.ts",
+      "basis": "current"
+    }
+  ],
+  "linkedVisuals": [
+    {
+      "path": "project/ias/studies/crafted-study-comparison.svg",
+      "gitBlob": "aeba306993d08e46af85c26d2740d77c7a4d7261",
+      "snapshot": "study-fixed-timber.svg"
+    },
+    {
+      "path": "project/ias/studies/crafted-study-tile.svg",
+      "gitBlob": "3344c88a7feb005a0278d4d06d9f1a6d88a6f8b0",
+      "snapshot": "study-tile.svg"
+    },
+    {
+      "path": "project/ias/studies/crafted-study-whole-timber.svg",
+      "gitBlob": "e2a84a343a525a9f323baaff0d32f3441ffd630d"
+    },
+    {
+      "path": "project/ias/studies/crafted-study-handling-east.svg",
+      "gitBlob": "972071124d6dab5e0c90c105e95a7c3059f3b5d8"
+    },
+    {
+      "path": "project/ias/studies/crafted-study-handling-north.svg",
+      "gitBlob": "a18dc6f53b66f0f4e4eb9f7742cae7d0fed0644f"
+    },
+    {
+      "path": "project/ias/studies/crafted-study-handling-corner.svg",
+      "gitBlob": "4e02650c6c6f8bf7c1c33fae8cba33c77ca0943c"
+    },
+    {
+      "path": "project/ias/studies/crafted-study-junctions.svg",
+      "gitBlob": "3219a5a79340dab0ce1f6285ed7e80d5fdd9e25c"
+    },
+    {
+      "path": "project/had/studies/water-replan.svg",
+      "gitBlob": "b6b39e6418b511f2a62efaa40933b12dc52c0cb5"
+    }
+  ],
+  "reproduction": "Existing scripts/drawing-gallery.ts buildDrawingGallery(root,{currentDesign:readGeorgianDesignSnapshot()}); select the recorded view IDs and copy the returned asset bytes without alteration. Furnished Study snapshots are byte copies of their recorded IAS source SVGs.",
+  "sourceBlobs": {
+    "compiler/reference-house/georgian/layout-revision.ts": "af955c7da2e2469fd24598f98db6fc942a119ed3",
+    "compiler/reference-house/georgian/layout-family.ts": "9863c874f19620d7aca02e37815a1cd6d9205d1d",
+    "compiler/reference-house/georgian/roof-surfaces.ts": "1296453bfa827a5742ccc2285256651d4b1ccae0",
+    "compiler/reference-house/current-design/georgian-source.ts": "a2c9029ac264ec6d1985b01746afb4c4f482948f",
+    "compiler/reference-house/current-design/compile.ts": "7e8e65f2f939a09af180561adc63205b2cbd49ef",
+    "scripts/drawing-gallery.ts": "d0798d86576760176b14d921046492fe17c4e1d8",
+    "project/ias/crafted-room-kit-result.md": "0441d5806a63c69f5010bd2af1d99fffaa77fb2a",
+    "publication/plates-current.ts": "7456c8b1d84d55e1346b26e50e0770e0c696cb60",
+    "docs/manuscript/part-iv.md": "656ac03a045adc66bbca5807404f64686727db36"
+  }
+}

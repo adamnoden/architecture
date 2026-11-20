@@ -4,6 +4,7 @@ import { candidatePlanMethod, createCandidatePlanScene } from './candidate-plan.
 import { resolveCurrentDesign, type CurrentDesignResolution } from './resolve.js'
 import type { StoreyId } from './snapshot.js'
 import type { InletCoverSources } from './inlet-cover.js'
+import type { runGroundSectionCase } from './structural-ground.js'
 
 type Domain = 'plans' | 'occupied-services' | 'selected-water-event'
 type CompileDiagnostic = {
@@ -122,6 +123,14 @@ export function prepareCurrentDesignCompile(input: unknown) {
     groundSectionCase: async (input: unknown) => {
       const { runGroundSectionCase } = await import('./structural-ground.js')
       return runGroundSectionCase(resolved, input)
+    },
+    readServiceFloorCase: async (ground: ReturnType<typeof runGroundSectionCase>) => {
+      const { readServiceFloorCase } = await import('./service-floor.js')
+      return readServiceFloorCase(resolved, ground)
+    },
+    serviceFloorCase: async (input: unknown, ground: ReturnType<typeof runGroundSectionCase>) => {
+      const { runServiceFloorCase } = await import('./service-floor.js')
+      return runServiceFloorCase(resolved, ground, input)
     },
     readNorthCollectorCase: async () => {
       const { readNorthCollectorCase } = await import('./north-collector.js')

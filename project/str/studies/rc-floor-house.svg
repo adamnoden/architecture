@@ -2726,13 +2726,13 @@
 <circle cx="83.9525" cy="742.0275" r="3.5" fill="#a94e3d"/>
 <text class="tiny" x="88.9525" y="738.0275">P03 -29.00</text>
 <circle cx="730.0475" cy="791.0475" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="735.0475" y="787.0475">P04 +3.80</text>
+<text class="tiny" x="735.0475" y="787.0475">P04 +3.81</text>
 <circle cx="681.0275" cy="791.0475" r="3.5" fill="#345b8c"/>
 <text class="tiny" x="686.0275" y="787.0475">P05 +62.75</text>
 <circle cx="730.0475" cy="742.0275" r="3.5" fill="#a94e3d"/>
-<text class="tiny" x="735.0475" y="738.0275">P06 -76.67</text>
+<text class="tiny" x="735.0475" y="738.0275">P06 -76.68</text>
 <circle cx="83.9525" cy="144.9525" r="3.5" fill="#a94e3d"/>
-<text class="tiny" x="88.9525" y="140.9525">P07 -8.83</text>
+<text class="tiny" x="88.9525" y="140.9525">P07 -8.84</text>
 <circle cx="132.9725" cy="144.9525" r="3.5" fill="#a94e3d"/>
 <text class="tiny" x="137.9725" y="140.9525">P08 -61.78</text>
 <circle cx="83.9525" cy="193.97249999999997" r="3.5" fill="#345b8c"/>
@@ -2740,9 +2740,9 @@
 <circle cx="730.0475" cy="144.9525" r="3.5" fill="#a94e3d"/>
 <text class="tiny" x="735.0475" y="140.9525">P10 -80.82</text>
 <circle cx="681.0275" cy="144.9525" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="686.0275" y="140.9525">P11 +25.96</text>
+<text class="tiny" x="686.0275" y="140.9525">P11 +25.94</text>
 <circle cx="730.0475" cy="193.97249999999997" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="735.0475" y="189.97249999999997">P12 +42.15</text>
+<text class="tiny" x="735.0475" y="189.97249999999997">P12 +42.17</text>
 <circle cx="83.9525" cy="624.8924999999999" r="3.5" fill="#345b8c"/>
 <text class="tiny" x="88.9525" y="620.8924999999999">P13 +6.15</text>
 <circle cx="83.9525" cy="563.0475" r="3.5" fill="#a94e3d"/>
@@ -2768,21 +2768,21 @@
 <circle cx="230.4425" cy="144.9525" r="3.5" fill="#a94e3d"/>
 <text class="tiny" x="235.4425" y="140.9525">P24 -3.68</text>
 <circle cx="321.5" cy="144.9525" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="326.5" y="140.9525">P25 +2.98</text>
+<text class="tiny" x="326.5" y="140.9525">P25 +2.95</text>
 <circle cx="492.5" cy="144.9525" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="497.5" y="140.9525">P26 +14.90</text>
+<text class="tiny" x="497.5" y="140.9525">P26 +14.87</text>
 <circle cx="595.1" cy="144.9525" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="600.1" y="140.9525">P27 +4.31</text>
+<text class="tiny" x="600.1" y="140.9525">P27 +4.30</text>
 <circle cx="321.5" cy="351.15" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="326.5" y="347.15">P28 +8.93</text>
+<text class="tiny" x="326.5" y="347.15">P28 +8.94</text>
 <circle cx="321.5" cy="247.125" r="3.5" fill="#a94e3d"/>
-<text class="tiny" x="326.5" y="243.125">P29 -0.53</text>
+<text class="tiny" x="326.5" y="243.125">P29 -0.52</text>
 <circle cx="492.5" cy="351.15" r="3.5" fill="#345b8c"/>
 <text class="tiny" x="497.5" y="347.15">P30 +12.90</text>
 <circle cx="492.5" cy="247.125" r="3.5" fill="#345b8c"/>
-<text class="tiny" x="497.5" y="243.125">P31 +0.39</text>
+<text class="tiny" x="497.5" y="243.125">P31 +0.40</text>
 <circle cx="290.15" cy="563.0475" r="3.5" fill="#a94e3d"/>
-<text class="tiny" x="295.15" y="559.0475">P32 -0.51</text>
+<text class="tiny" x="295.15" y="559.0475">P32 -0.50</text>
 <circle cx="290.15" cy="456.59999999999997" r="3.5" fill="#345b8c"/>
 <text class="tiny" x="295.15" y="452.59999999999997">P33 +0.07</text>
 <circle cx="290.15" cy="351.15" r="3.5" fill="#345b8c"/>
@@ -2792,7 +2792,7 @@
 <circle cx="518.1500000000001" cy="462.3" r="3.5" fill="#345b8c"/>
 <text class="tiny" x="523.1500000000001" y="458.3">P36 +0.23</text>
 <circle cx="518.1500000000001" cy="371.09999999999997" r="3.5" fill="#a94e3d"/>
-<text class="tiny" x="523.1500000000001" y="367.09999999999997">P37 -1.20</text>
+<text class="tiny" x="523.1500000000001" y="367.09999999999997">P37 -1.19</text>
 <circle cx="337.745" cy="586.7025" r="3.5" fill="#345b8c"/>
 <text class="tiny" x="342.745" y="582.7025">P38 +0.22</text>
 <circle cx="407.0" cy="584.85" r="3.5" fill="#a94e3d"/>
@@ -2826,25 +2826,25 @@
 <text x="35" y="849">Green centralnorth strips: full3Dupstand owns material; no duplicate slab band/chord.</text>
 <text x="35" y="870">Gold dots: internal beam work stations. Blue/red head labels: signedFz kN, not soil capacity.</text>
 <rect x="45" y="925" width="127.5" height="174.0" fill="#eee9dc" stroke="#344d54"/>
-<polygon points="45.0,1099.0 65.76975984378296,1099.0 45.0,1044.650546582652" fill="#ad5942"/>
+<polygon points="45.0,1099.0 65.77056127247415,1099.0 45.0,1044.6565209621651" fill="#ad5942"/>
 <text class="small" x="45" y="913">court-north/west</text>
 <text class="small" x="45" y="1070">A 2.54% / p 31.64MPa</text>
 <text class="small" x="45" y="1087">gap 0.5277mm</text>
 <rect x="260" y="925" width="127.5" height="174.0" fill="#eee9dc" stroke="#344d54"/>
-<polygon points="260.0,1099.0 281.8755809589167,1099.0 260.0,1062.3432089237117" fill="#ad5942"/>
+<polygon points="260.0,1099.0 281.8817146058112,1099.0 260.0,1062.34923428054" fill="#ad5942"/>
 <text class="small" x="260" y="913">court-north/east</text>
-<text class="small" x="260" y="1070">A 1.81% / p 28.35MPa</text>
-<text class="small" x="260" y="1087">gap 0.5428mm</text>
+<text class="small" x="260" y="1070">A 1.81% / p 28.34MPa</text>
+<text class="small" x="260" y="1087">gap 0.5427mm</text>
 <rect x="475" y="925" width="127.5" height="174.0" fill="#eee9dc" stroke="#344d54"/>
-<polygon points="475.0,1099.0 504.50447219068917,1099.0 475.0,1067.1769019654434" fill="#ad5942"/>
+<polygon points="475.0,1099.0 502.4139784317984,1099.0 475.0,1061.9685332290614" fill="#ad5942"/>
 <text class="small" x="475" y="913">outer-north/west</text>
-<text class="small" x="475" y="1070">A 2.12% / p 39.50MPa</text>
-<text class="small" x="475" y="1087">gap 0.6944mm</text>
+<text class="small" x="475" y="1070">A 2.29% / p 36.55MPa</text>
+<text class="small" x="475" y="1087">gap 0.6103mm</text>
 <rect x="690" y="925" width="127.5" height="174.0" fill="#eee9dc" stroke="#344d54"/>
-<polygon points="690.0,1099.0 719.1951560168993,1099.0 690.0,1074.7927654870741" fill="#ad5942"/>
+<polygon points="690.0,1099.0 717.3699874692786,1099.0 690.0,1071.3980118041388" fill="#ad5942"/>
 <text class="small" x="690" y="913">outer-north/east</text>
-<text class="small" x="690" y="1070">A 1.59% / p 34.87MPa</text>
-<text class="small" x="690" y="1087">gap 0.7360mm</text>
+<text class="small" x="690" y="1070">A 1.70% / p 32.60MPa</text>
+<text class="small" x="690" y="1087">gap 0.6495mm</text>
 <text x="35" y="1125">Contact polygons inspect the solved plane; bedding/key strengths and actual minimumG are unqualified.</text>
 <text x="35" y="1147">All28 complete receiving duties remain open. No roof, installed or owner appearance acceptance.</text>
 </svg>

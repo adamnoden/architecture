@@ -50,18 +50,41 @@ test('one saved floor aperture controls both the existing floor and actual joine
   assert.equal(baseline.evidence.completeHouseProof, false)
   assert.equal(baseline.evidence.candidateAccepted, false)
   assert.equal(baseline.unresolvedReceivingPorts.length, 28)
+  assert.equal(baseline.cageComparison.status, 'rejected-detail')
+  assert.equal(baseline.cageComparison.structureSelected, false)
+  assert.equal(baseline.cageComparison.installedAcceptance, false)
+  assert.ok(baseline.cageComparison.memberReview)
+  assert.ok(changed.cageComparison.memberReview)
+  assert.notEqual(changed.cageComparison.memberReview.nativeCutDigest, baseline.cageComparison.memberReview.nativeCutDigest)
+  assert.notDeepEqual(changed.cageComparison.memberReview.worstUniaxialComparison, baseline.cageComparison.memberReview.worstUniaxialComparison)
   assert.notEqual(changed.floor.triangleCount, baseline.floor.triangleCount)
   assert.notDeepEqual(changed.native.heads, baseline.native.heads)
   assert.notEqual(changed.floorSvg, baseline.floorSvg)
   assert.notDeepEqual(after.engineering.distributedFloor?.native.heads, before.engineering.distributedFloor?.native.heads)
-  assert.notEqual(changed.schedule.physicalGKN, baseline.schedule.physicalGKN)
+  assert.deepEqual(changed.schedule, baseline.schedule)
   assert.deepEqual(after.plans, before.plans)
   assert.deepEqual(after.selectedWaterEvent, before.selectedWaterEvent)
   assert.ok(after.manifest.find(row => row.stage === 'joinedRcFloor')?.dependsOn.includes('distributedFloor'))
+  assert.equal(after.manifest.find(row => row.stage === 'distributedFloor')?.applicability?.controllingStage, 'joinedRcFloor')
+  assert.ok(!after.manifest.find(row => row.stage === 'distributedFloor')?.dependsOn.includes('joinedRcFloor'))
   const cli = JSON.parse(execFileSync(process.execPath, ['--import', 'tsx', 'scripts/compile-current-design.ts', '--bundle', '-'], {
     input: JSON.stringify(edited), encoding: 'utf8', maxBuffer: 32 * 1024 * 1024,
   }))
-  assert.deepEqual(cli.engineering.joinedRcFloor, JSON.parse(JSON.stringify(changed)))
+  const close = (actual: unknown, expected: unknown, path = 'joinedRcFloor'): void => {
+    if (typeof expected === 'number') {
+      assert.equal(typeof actual, 'number', path)
+      assert.ok(Number.isFinite(actual) && Math.abs((actual as number) - expected) <= 1e-7 + 1e-12 * Math.abs(expected), path)
+    } else if (Array.isArray(expected)) {
+      assert.ok(Array.isArray(actual), path)
+      assert.equal(actual.length, expected.length, path)
+      expected.forEach((value, index) => close(actual[index], value, `${path}[${index}]`))
+    } else if (expected !== null && typeof expected === 'object') {
+      assert.ok(actual !== null && typeof actual === 'object', path)
+      assert.deepEqual(Object.keys(actual), Object.keys(expected), path)
+      for (const [key, value] of Object.entries(expected)) close((actual as Record<string, unknown>)[key], value, `${path}.${key}`)
+    } else assert.equal(actual, expected, path)
+  }
+  close(cli.engineering.joinedRcFloor, JSON.parse(JSON.stringify(changed)))
 })
 
 test('joined saved cases reject a second floor authority, injected sources, missing shared floor and stale bindings', async () => {
@@ -71,6 +94,11 @@ test('joined saved cases reject a second floor authority, injected sources, miss
     /explicit shared distributed-floor stage/)
   await assert.rejects(compileEngineeringDocument({ ...source, stages: {
     joinedRcFloor: { ...controls.joinedRcFloor, floor: numerical.floor } } }), /Unknown joined RC floor/)
+  await assert.rejects(compileEngineeringDocument({ ...source, stages: { ...controls,
+    distributedFloor: { ...controls.distributedFloor, edits: { floorApertures: [{ id: 'FLOOR-APERTURE/plant-riser',
+      shape: { kind: 'rectangle', boundsXYMm: [9240, 4760, 9905, 5305] } }], wallOpenings: [] } },
+    joinedRcFloor: { ...controls.joinedRcFloor, includeExternalGMAXQ: true },
+  } }), /require remapped vertical tributary cards/)
   const compile = prepareCurrentDesignCompile(source.design)
   const request = await compile.readJoinedRcFloorCase()
   await assert.rejects(compile.joinedRcFloorCase({ ...request.joined, bindingDigest: 'stale' }), /Stale joined RC floor/)

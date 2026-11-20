@@ -7,8 +7,9 @@
     "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
     "project/mat/studies/upper-access-renewal.json": "54481965f1ac39b83b8725e2550ab5c0f3e3e5b60df4e23ad55c9f4fc20b2114",
     "project/owner-house-charter.md": "891ed6b72ff7452826a18bf5f91458746b8594a5c5ac89f75407e9a40b776371",
+    "project/had/studies/closed_service_tool_geometry.py": "3bc2dbbc687c07bf63976808b4099d0fdeecac90e563c0bfc19b806a44fa88ad",
     "project/had/studies/closed-service-gasket-evidence.json": "4206c3b9af4662b5922255e6f56a1d1abc0ea8bbc6c82908c741f870cdce4d73",
-    "project/had/studies/closed_service_floor.py": "7a82f026579ffe68a58faacab52d9b8b0cf0da40bd76908ffa2a9e9ab3efa680"
+    "project/had/studies/closed_service_floor.py": "f5f0121d61ab0172d43ca0b4e2018c2682efa4578cbc23ed3570f29ecd4f391b"
   },
   "settings": {
     "endXmm": 12750,
@@ -65,6 +66,9 @@
     "spineDrawMm": 750,
     "pointLoadKN": 2,
     "liveKPa": 2,
+    "walkingCoverPointLoadKN": 2,
+    "walkingGridSimultaneousPoints": 2,
+    "walkingLiveLoadKPa": 2,
     "cantileverDeflectionRatio": 150,
     "bracketMassKg": 25,
     "localLeakTrialLps": 0.1,
@@ -72,8 +76,14 @@
     "capturedBailHeightMm": 700,
     "handleDynamicFactor": 1.5,
     "gasketMassAllowanceKg": 0.1,
+    "bailLegHalfSpanMm": 170,
+    "bailPinHalfSpanMm": 200,
+    "bailOffsetFraction": 0.5,
+    "bailFootWidthMm": 30,
+    "bailFootPlateMm": 6,
+    "bailTaperSeatMm": 2,
     "retainedWaterAllowanceKg": 0.25,
-    "weldMassAllowanceKg": 0.1
+    "weldMassAllowanceKg": 0.3
   },
   "groundStack": {
     "schema": "service-floor-ground-stack/1",

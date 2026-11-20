@@ -114,3 +114,10 @@ node --import tsx scripts/compile-current-design.ts --occupied-condensate conden
 The occupied schedule and ground WC case cover the active HAD calculation and a real port edit. The selected event, east intake and ground receiving cases cover the source-bound roof and water methods in their supported domains. The two distinct inlet requests expose the active branch, clearances and level mutation. Reference methods reproduce the owning schedule or bounded result. The tests verify that declared edits change the real drawing and calculation, record the matching evidence identity, and withhold unsupported routes.
 
 This completes the current services integration contract. Product, installed pressure, drainage, frost and water-law choices remain with HAD, MAT and RWT. Other active consumers are assessed against the final selected design in CCR-CURRENT-RELEASE.
+
+
+## One ground authority for the service floor
+
+The saved `serviceFloor` stage owns only its case ID and service-body settings. An explicit `groundSection` supplies every floor layer, finished level and exterior datum. `--read-service-floor` and `--service-floor` carry the authored ground case and recompute its result; an edited or stale computed receipt cannot inject levels. The250→270 mm service-zone edit changes FFL715→735, north water/support heights, east lid/thermal clearance, approach and drawings while retaining independently authored east inverts. Save/load and reverse edits reproduce the same current case.
+
+After all stages run, the manifest withholds the prior datum applicability of source roof, inlet, room, structural and water/service outputs when ground changes, while preserving an independent roof-pitch cause. The recomputed ground/service-floor pair and nominal two-dimensional plan remain distinguishable. Combining the stages therefore does not silently approve a raised house with untransformed source details. Local lid/water/support results and all actual material, handling, receiving and weather holds remain visible.

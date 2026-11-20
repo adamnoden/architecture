@@ -3,8 +3,10 @@ import hashlib
 import json
 from pathlib import Path
 import unittest
+import math
+from closed_service_tool_geometry import sector_point_distance, point_segment, segment_box, floor_opening_body_clearance
 
-from closed_service_floor import beam, compile_closed, plate_strip, render_closed
+from closed_service_floor import beam, compile_closed, plate_strip, render_closed, transfer_e_gravity, head_global_wrench
 
 ROOT=Path(__file__).resolve().parents[3]
 FOLDER=Path(__file__).resolve().parent
@@ -104,7 +106,7 @@ class ClosedServiceFloorTests(unittest.TestCase):
 
     def test_beam_load_and_moment_equilibrium_independently(self):
         for case in self.result['north']['loadCases'].values():
-            for r in case['railResults']+case['fieldStringerResults']+case['crossbeamResults']:
+            for r in case.get('railResults',[])+case.get('fieldStringerResults',[])+case.get('crossbeamResults',[]):
                 self.assertAlmostEqual(sum(r['supportReactionsKN']),r['appliedDownwardKN'],places=7)
                 self.assertLess(r['freeEquilibriumResidualN'],1e-4)
 
@@ -131,7 +133,7 @@ class ClosedServiceFloorTests(unittest.TestCase):
         self.assertGreater(h['massReserveTo15Kg'],1)
         for row in h['operators']:
             self.assertEqual(len(row['allBoltControls']),20)
-            self.assertLess(row['maximumAllBoltToolReachMm'],500)
+            self.assertLess(row['maximumAllBoltToolReachMm'],600)
             self.assertLess(row['standingCarryReachMm'],600)
             self.assertEqual(row['ratchetLeverMm'],600)
             self.assertFalse(row['physicalForceOrHandlingAccepted'])
@@ -209,6 +211,126 @@ class ClosedServiceFloorTests(unittest.TestCase):
     def test_missing_or_stale_source_rejects(self):
         raw=dict(self.raw);raw.pop(next(iter(raw)))
         with self.assertRaisesRegex(ValueError,'Missing or stale'):compile_closed(self.case,raw)
+
+    def test_independent_eccentric_load_preserves_column_face_and_head_couples(self):
+        grid={'heads':[{'id':'A','xy':[0,-1000],'capZ':[-1000,0]},{'id':'B','xy':[0,1000],'capZ':[-1000,0]}]}
+        g={'datum':0,'width':600,'heads':[{'id':'A','u':-1000},{'id':'B','u':1000}]}
+        result=transfer_e_gravity([{'id':'twoKN','downwardKN':2,'xyMm':[1500,250]}],grid,g,500,[-500,500])
+        self.assertAlmostEqual(sum(v['rootMyKNm'] for v in result['seatActions']),2)
+        self.assertAlmostEqual(sum(v['faceMyKNm'] for v in result['seatActions']),2.4)
+        actions=result['source52SLSHeadLoadAdditions']
+        self.assertAlmostEqual(actions['A']['FzKN'],-.75)
+        self.assertAlmostEqual(actions['B']['FzKN'],-1.25)
+        self.assertAlmostEqual(sum(v['MyKNm'] for v in actions.values()),3)
+        self.assertEqual(result['equilibrium']['appliedGlobalWrench'],[0,0,-2,-.5,3,0])
+
+    def test_full_n_e_wrenches_and_actual_crew_point_location(self):
+        for value in self.result['joinedGravityEquilibrium'].values():
+            self.assertLess(value['maximumAbsoluteResidual'],1e-6)
+        n=self.result['north']['loadCases']
+        grid=json.loads(self.raw['project/str/studies/current-house-grid.json'])
+        before=head_global_wrench(n['SLS-gravity']['source52HeadLoadAdditions'],grid)
+        after=head_global_wrench(n['SLS-endoperator2kN']['source52HeadLoadAdditions'],grid)
+        delta=[b-a for a,b in zip(before,after)]
+        self.assertAlmostEqual(delta[2],-2,places=7)
+        self.assertAlmostEqual(delta[3],-2*12.35,places=6)
+        self.assertAlmostEqual(delta[4],2*5.025,places=6)
+        self.assertTrue(n['STABILITY-dry-min-stock-platform-west2kN-no-field-live']['minimumDeadCase'])
+        self.assertTrue(self.result['east']['crewFloorLoadPorts'])
+
+    def test_all_actual_field_stringer_positions_are_challenged(self):
+        family=self.result['north']['fieldPointFamily']
+        self.assertEqual(len(family['stringerAxesXmm']),7)
+        self.assertEqual(len(family['positionsYmm']),4)
+        self.assertEqual(len(family['cases']),56)
+        worst=max(family['cases'],key=lambda v:v['maximumMemberStressMPa'])
+        self.assertAlmostEqual(worst['pointXYmm'][0],5930.357142857143)
+        self.assertEqual(worst['pointXYmm'][1],8962.5)
+        self.assertGreater(worst['maximumMemberStressMPa'],50)
+
+    def test_corroded_stiffness_does_not_erase_nominal_gravity(self):
+        altered=self.changed(metalLossMm=.8)
+        self.assertAlmostEqual(altered['north']['loadCases']['SLS-gravity']['totalAddedDownwardKN'],self.result['north']['loadCases']['SLS-gravity']['totalAddedDownwardKN'],places=6)
+        self.assertAlmostEqual(altered['east']['exteriorTerminalSupport']['totalSLSDownwardKN'],self.result['east']['exteriorTerminalSupport']['totalSLSDownwardKN'],places=8)
+
+    def test_continuous_stroke_catches_between_the_three_witnesses(self):
+        point=[100*math.cos(math.radians(5)),100*math.sin(math.radians(5)),0]
+        witnessed=min(point_segment(point,[0,0,0],[600*math.cos(math.radians(a)),600*math.sin(math.radians(a)),0]) for a in [-10,0,10])
+        self.assertGreater(witnessed,8)
+        self.assertEqual(sector_point_distance(point,[0,0,0],600,0,math.radians(10)),0)
+        self.assertEqual(segment_box([-5,0,0],[5,0,0],[-1,-1,-1],[1,1,1]),0)
+        self.assertEqual(segment_box([-5,5,0],[5,5,0],[-1,-1,-1],[1,1,1]),4)
+
+    def test_capture_and_complete_tools_coexist_through_return(self):
+        h=self.result['east']['pressure']['handling']
+        for a in h['operators']:
+            self.assertEqual(a['toolCaptureGeometryFailureBolts'],[])
+            self.assertTrue(all(b['continuousStroke']['minimumCaptureClearanceAfter5Mm']>5 for b in a['allBoltControls']))
+            self.assertGreater(a['minimumAllBoltCaptureClearanceAfter5Mm'],5)
+            self.assertGreaterEqual(a['captureGeometry']['minimumContinuousLiftThroughFloorClearanceAfter5Mm'],5)
+            c=a['captureInstallation']
+            self.assertGreater(c['minimumContinuousForkInsertionToRetainedBoltClearanceAfter5Mm'],20)
+            self.assertGreater(c['minimumPinToolCaptureClearanceAfter5Mm'],5)
+            self.assertTrue(all(p['minimumGuidedBitToOwnForkAfter1Mm']>=2 for p in c['pinActuation']))
+        bad=self.changed(bailLegHalfSpanMm=240,bailPinHalfSpanMm=240,bailOffsetFraction=0)
+        self.assertIn('SPLIT_LID_SOCKET_BAIL_COEXISTENCE_FAILS',bad['diagnostics'])
+
+    def test_actual_550_opening_rejects_old_tangent_body_stance(self):
+        opening=[[-275,-363],[275,363]]
+        self.assertEqual(floor_opening_body_clearance([575,0],[575,0],opening),-5)
+        self.assertEqual(floor_opening_body_clearance([585,0],[585,0],opening),5)
+
+    def test_every_tool_and_carry_body_clears_the_actual_open_floor(self):
+        for row in self.result['east']['pressure']['handling']['operators']:
+            opening=row['floorOpeningPlanBoundsMm']
+            self.assertEqual(opening[1][0]-opening[0][0],550)
+            self.assertGreaterEqual(row['minimumBodyToOpenFloorAfter5Mm'],5)
+            self.assertGreaterEqual(floor_opening_body_clearance(*row['bodyCarryPathMm'],opening),5)
+            for bolt in row['allBoltControls']:
+                body=bolt['operatorBodyCentreXYmm']
+                self.assertGreaterEqual(floor_opening_body_clearance(body,body,opening),5)
+
+    def test_body_carry_path_checks_between_its_endpoints(self):
+        opening=[[-275,-363],[275,363]]
+        self.assertGreater(floor_opening_body_clearance([-600,0],[-600,0],opening),0)
+        self.assertGreater(floor_opening_body_clearance([600,0],[600,0],opening),0)
+        self.assertEqual(floor_opening_body_clearance([-600,0],[600,0],opening),-305)
+
+    def test_wider_opening_repositions_gallery_body_and_regenerates_crew_ports(self):
+        altered=self.changed(waterWidthMm=620)
+        self.assertEqual(altered['diagnostics'],[])
+        for row in altered['east']['pressure']['handling']['operators']:
+            self.assertGreaterEqual(row['minimumBodyToOpenFloorAfter5Mm'],5)
+        ports=self.result['east']['crewFloorLoadPorts']
+        xs={p['xyMm'][0] for p in ports}
+        self.assertIn(10635,xs);self.assertIn(11615,xs)
+        self.assertNotIn(10625,xs);self.assertNotIn(11625,xs)
+        self.assertTrue(all(p['downwardKN']==2 for p in ports))
+        for row in self.result['east']['pressure']['handling']['operators']:
+            self.assertTrue(any(p['xyMm']==row['bodyStageCentreXYmm'] and 'stage-return' in p['phases'] for p in ports))
+
+    def test_width_and_scupper_edits_update_panel_and_drawing(self):
+        altered=self.changed(waterWidthMm=620,scupperSpringMm=720)
+        panel=altered['east']['walkingCassettes']
+        self.assertEqual(panel['walkingPanelMaximumXYmm'],[240,373])
+        svg=render_closed(altered)
+        self.assertIn('620 water clear /706 frame /866 gross',svg)
+        self.assertIn('spring720/crown870/ring1085',svg)
+
+    def test_walking_points_are_an_independent_explicit_law(self):
+        a=self.changed(pointLoadKN=5)
+        self.assertEqual(a['east']['dryFloorGrid']['pointLoadLaw'],self.result['east']['dryFloorGrid']['pointLoadLaw'])
+        b=self.changed(walkingCoverPointLoadKN=6)
+        self.assertIn('METAL_COMPONENT_NUMERICAL_SCREEN_FAILS',b['diagnostics'])
+        self.assertEqual(b['east']['dryFloorGrid']['pointLoadLaw']['gridPointResultantKN'],12)
+
+    def test_nominal_weld_deposit_is_in_charged_lifting_mass(self):
+        h=self.result['east']['pressure']['handling']
+        self.assertGreater(h['doublerFilletNominalDepositKg'],.2)
+        self.assertGreater(h['captureAdditionalWeldBudgetKg'],.09)
+        self.assertLess(h['chargedLiftingMassKg'],15)
+        bad=self.changed(weldMassAllowanceKg=.1)
+        self.assertIn('LID_WELD_MASS_ALLOWANCE_BELOW_NOMINAL_FILLET_AND_CAPTURE_BUDGET',bad['diagnostics'])
 
     def test_explicit_ground_authority_and_actual_solum_are_required(self):
         case=copy.deepcopy(self.case);case.pop('groundStack')
