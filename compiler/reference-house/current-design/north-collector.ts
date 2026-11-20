@@ -6,8 +6,6 @@ import { sha256SemanticFingerprint } from '../../core/identity.js'
 import type { DrawingScene } from '../../publication-drawing/model.js'
 import { createPlanPaperProjection } from '../../publication-drawing/projection.js'
 import type { CurrentDesignResolution } from './resolve.js'
-import { runStructuralDpcOriginAudit } from './structural-dpc.js'
-import { runRearFoulVentCase } from './rear-foul-vent.js'
 import {
   runStructuralNorthDeadLoad, runStructuralNorthFixedBaseReplays, runStructuralNorthYawProbe,
   type NorthCornerDeadLoad, type NorthYawProbe,
@@ -58,8 +56,6 @@ interface NorthCollectorCase {
   readonly placementToleranceMm?: PlacementTolerances
   readonly yawProbe?: NorthYawProbe
   readonly deadLoadReplay?: { readonly windIndex: number }
-  readonly dpcOriginAudit?: { readonly cutZMm: number; readonly globalContactTrial?: unknown }
-  readonly portStrategy?: 'linked-west-foul-route'
 }
 
 interface CollectorComparison {
@@ -72,9 +68,7 @@ interface CollectorComparison {
     readonly referenceAxisXYmm: Point
     readonly axisXYmm: Point
     readonly axisUVAndDiameterMm: readonly [number, number, number]
-    readonly gapToWidenedWallUMm: number | null
-    readonly state?: 'omitted-in-linked-candidate'
-    readonly canonicalSourcePortRetained?: true
+    readonly gapToWidenedWallUMm: number
     readonly levels: readonly { readonly levelZMm: number; readonly minimumClearToFormedEdgeAfter5Mm: number }[]
     readonly admitted: false
   }
@@ -92,7 +86,7 @@ interface CollectorComparison {
     readonly momentAboutUnchangedGroundAxisU0KNm: number
   }
   readonly rearCabinetPortTerritory: {
-    readonly state: 'no-port-territory' | 'overlap-throughout-territory' | 'not-applicable-no-floor-port'
+    readonly state: 'no-port-territory' | 'overlap-throughout-territory'
       | 'cover-shortfall-throughout-territory' | 'cannot-exclude-cover-by-this-bound'
     readonly centreBoundsUVmm: readonly [number, number, number, number]
     readonly barCount?: number
@@ -188,7 +182,7 @@ interface NativeResult {
   readonly placementReferences: { readonly relativeSettingMm: number; readonly concreteCoverMm: number }
   readonly stationCapacity: {
     readonly schema: 'str-north-collector-station-capacity/1'
-    readonly state: 'required-station-count-excluded' | 'required-shared-plane-gap-excluded' | 'placing-ranges-remain' | 'not-applicable-no-floor-port'
+    readonly state: 'required-station-count-excluded' | 'required-shared-plane-gap-excluded' | 'placing-ranges-remain'
     readonly requiredStationsPerGroup: number
     readonly admitted: false
     readonly groups: readonly {
@@ -215,7 +209,7 @@ interface NativeResult {
   }
   readonly cabinetStationCapacity: {
     readonly schema: 'str-north-collector-cabinet-station-capacity/1'
-    readonly state: 'no-port-territory' | 'excluded-throughout-territory' | 'unresolved-cell' | 'not-applicable-no-floor-port'
+    readonly state: 'no-port-territory' | 'excluded-throughout-territory' | 'unresolved-cell'
     readonly centreBoundsUVmm: readonly [number, number, number, number]
     readonly cellsChecked: number
     readonly resolvedCells: Readonly<Record<'required-station-count-excluded' | 'required-shared-plane-gap-excluded', number>>
@@ -280,19 +274,13 @@ export function readNorthCollectorCase(resolved: CurrentDesignResolution) {
 function admitCase(value: unknown, binding: NonNullable<ReturnType<typeof bindingFor>>): NorthCollectorCase {
   const fields = ['schema', 'planDigest', 'bindingDigest', 'collectorId', 'portAxisXYMm', 'dragDemandFactor']
   const optional = ['remoteMainBarShiftMm', 'chordBendRadiusMm', 'toeTransferIntervalMm', 'keyContactTrial',
-    'placementToleranceMm', 'yawProbe', 'deadLoadReplay', 'portStrategy', 'dpcOriginAudit']
+    'placementToleranceMm', 'yawProbe', 'deadLoadReplay']
   if (!value || typeof value !== 'object' || Array.isArray(value)
       || fields.some(field => !Object.hasOwn(value, field))
       || Object.keys(value).some(field => !optional.includes(field) && !fields.includes(field))) {
     throw new Error('Expected an explicit versioned north collector case')
   }
   const trial = value as NorthCollectorCase
-  if (Object.hasOwn(trial, 'dpcOriginAudit') && (!trial.dpcOriginAudit || typeof trial.dpcOriginAudit !== 'object'
-      || Object.keys(trial.dpcOriginAudit).some(key => !['cutZMm', 'globalContactTrial'].includes(key)) || !Object.hasOwn(trial.dpcOriginAudit, 'cutZMm')
-      || !Number.isFinite(trial.dpcOriginAudit.cutZMm))) throw new Error('Expected a finite explicit DPC cut level')
-  if (Object.hasOwn(trial, 'portStrategy') && trial.portStrategy !== 'linked-west-foul-route') {
-    throw new Error('Expected a linked west foul route port strategy')
-  }
   if (trial.schema !== 'str-north-collector-case/1' || trial.collectorId !== id
       || trial.planDigest !== binding.applicability.planDigest || trial.bindingDigest !== binding.digest) {
     throw new Error('Stale or unsupported north collector binding')
@@ -588,9 +576,7 @@ function compareChordTurn(comparison: CollectorComparison, radiusMm: number) {
       side, zMm, verticalSurfaceGapAtCrossingMm: Math.abs(zMm - chordZMm) - (dragDiameterMm + diameterMm) / 2,
       crossings: paths.map(intersection),
     })),
-    nwPort: comparison.retainedNWPort.state === 'omitted-in-linked-candidate'
-      ? { state: 'not-applicable-no-floor-port' as const, portGapMm: null, overlap: null }
-      : { portGapMm, overlap: portGapMm < 0 },
+    nwPort: { portGapMm, overlap: portGapMm < 0 },
     scope: 'Local centreline fit and bare clearance only. Bend bearing, cover, the full ring and adjoining chord development require separate geometry and checks.',
   }
 }
@@ -628,13 +614,11 @@ function drawChordTurn(comparison: CollectorComparison, turn: ReturnType<typeof 
     const angle = i * Math.PI / 24
     return [portU + portDiameter / 2 * Math.cos(angle), portV + portDiameter / 2 * Math.sin(angle)]
   })
-  if (portGapMm !== null) trace('floor-port', [...portRing, portRing[0]], 'primary', true)
+  trace('floor-port', [...portRing, portRing[0]], 'primary', true)
   const size = plan.length(toe - heel)
   return {
     viewId: 'STR-NORTH-COLLECTOR-CHORD-TURN', sourceId: id, title: 'North collector chord turn',
-    description: portGapMm === null
-      ? 'Local NW intact-floor candidate with upper and lower H20 bands and H28 chord centreline.'
-      : 'Local NW plan with upper and lower H20 bands, H28 chord centreline and formed floor port.',
+    description: 'Local NW plan with upper and lower H20 bands, H28 chord centreline and formed floor port.',
     scaleDenominator, widthMm: size + 24, heightMm: size + 47,
     primitives: [
       { kind: 'text', id: 'title', x: 12, y: 10, role: 'label', value: 'NW collector · local H28 turn' },
@@ -642,49 +626,16 @@ function drawChordTurn(comparison: CollectorComparison, turn: ReturnType<typeof 
       { kind: 'text', id: 'bend-radius', x: 12, y: size + 32, role: 'note',
         value: `Bend R${radiusMm.toFixed(1)} mm · nominal Z${chordZMm} mm` },
       { kind: 'text', id: 'port-gap', x: 12, y: size + 38, role: 'note',
-        value: portGapMm === null ? 'Intact-floor candidate · linked west foul route required'
-          : `Bare gap at NW port ${portGapMm.toFixed(1)} mm` },
+        value: `Bare gap at NW port ${portGapMm.toFixed(1)} mm` },
     ],
   }
 }
 
-function linkedWestRoute(resolved: CurrentDesignResolution, trial: NorthCollectorCase, westVentCase: unknown) {
-  if (trial.portStrategy !== 'linked-west-foul-route') {
-    if (westVentCase !== undefined) throw new Error('A west foul route case requires the linked collector strategy')
-    return null
-  }
-  if (westVentCase === undefined) throw new Error('The linked collector candidate requires an explicit west foul route case')
-  const route = runRearFoulVentCase(resolved, westVentCase)
-  if (route.status !== 'computed-comparison' || route.source.planDigest !== trial.planDigest) {
-    throw new Error('The linked west foul route does not share the current collector design')
-  }
-  const { comparison, buriedReceiving } = route
-  if (comparison.state !== 'bounded-dry-return-comparison' || comparison.failedChecks.length
-      || comparison.terminalApplicability.modelledOpenings.state !== 'passes'
-      || buriedReceiving.state !== 'bounded-direct-run-comparison' || buriedReceiving.failedChecks.length) {
-    throw new Error('The linked west foul route fails its dry, terminal or buried receiving geometry')
-  }
-  return {
-    state: 'conditional-pre-site-route' as const, canonicalSourcePortRetained: true as const,
-    installedAcceptance: false as const, source: route.source, method: route.method,
-    requiredSiteEnvelope: {
-      trialHostAxisXYZMm: buriedReceiving.hostAxisXYZMm, maximumHostAxisZMm: buriedReceiving.maximumHostAxisZMm,
-      gradient: buriedReceiving.gradient, pipeEnvelopeDiameterMm: buriedReceiving.pipeEnvelopeDiameterMm,
-      minimumCrownCoverMm: buriedReceiving.requiredCoverMm, gradeProfile: buriedReceiving.coverProfile,
-    },
-    adoptionConditions: comparison.hostAndRenewalUnresolved ?? [],
-  }
-}
-
-export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: unknown, westVentCase?: unknown) {
+export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: unknown) {
   const binding = bindingFor(resolved)
   if (!binding) return unavailable()
   const trial = admitCase(value, binding)
   const { reference, method, receipt, inputs } = readReference(binding)
-  const serviceDependency = linkedWestRoute(resolved, trial, westVentCase)
-  if (serviceDependency && trial.portAxisXYMm.some((coordinate, axis) => coordinate !== reference.retainedNWPort.referenceAxisXYmm[axis])) {
-    throw new Error('The intact collector candidate must retain the canonical source port identity')
-  }
   const { portAxisXYMm, dragDemandFactor } = trial
   const remoteMainBarShiftMm = trial.remoteMainBarShiftMm ?? reference.groundSplice.remoteMainBarShiftMm
   const native: NativeResult = JSON.parse(execFileSync('python3', [
@@ -692,11 +643,10 @@ export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: 
   ], {
     encoding: 'utf8',
     stdio: ['pipe', 'pipe', 'pipe'],
-    input: JSON.stringify({ schema: 'str-north-collector-native-case/1', portAxisXYMm, dragDemandFactor, remoteMainBarShiftMm,
-      ...(serviceDependency ? { portStrategy: trial.portStrategy } : {}) }),
+    input: JSON.stringify({ schema: 'str-north-collector-native-case/1', portAxisXYMm, dragDemandFactor, remoteMainBarShiftMm }),
   }))
   const { comparison, drawingSvg, stationCapacity, cabinetStationCapacity } = native
-  const isReference = !serviceDependency && dragDemandFactor === 1
+  const isReference = dragDemandFactor === 1
     && remoteMainBarShiftMm === reference.groundSplice.remoteMainBarShiftMm
     && portAxisXYMm.every((coordinate, index) => coordinate === reference.retainedNWPort.referenceAxisXYmm[index])
   if (native.schema !== 'str-north-collector-native-result/1'
@@ -705,10 +655,6 @@ export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: 
       || comparison.lateralClosure.dragDemandFactor !== dragDemandFactor
       || comparison.groundSplice.remoteMainBarShiftMm !== remoteMainBarShiftMm
       || portAxisXYMm.some((coordinate, index) => coordinate !== comparison.retainedNWPort.axisXYmm[index])
-      || (serviceDependency && (comparison.retainedNWPort.state !== 'omitted-in-linked-candidate'
-        || comparison.retainedNWPort.canonicalSourcePortRetained !== true || comparison.retainedNWPort.levels.length
-        || comparison.retainedNWPort.gapToWidenedWallUMm !== null
-        || stationCapacity.state !== 'not-applicable-no-floor-port' || cabinetStationCapacity.state !== 'not-applicable-no-floor-port'))
       || (isReference && sha256SemanticFingerprint(comparison) !== sha256SemanticFingerprint(reference))) {
     throw new Error('The recomputed north collector does not match its source-bound case')
   }
@@ -736,11 +682,9 @@ export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: 
     schema: 'str-north-collector-result/1' as const,
     status: 'computed-comparison' as const,
     source: { id: resolved.design.source.id, planDigest: trial.planDigest,
-      caseDigest: sha256SemanticFingerprint({ ...trial, remoteMainBarShiftMm,
-        ...(serviceDependency ? { westFoulRouteCaseDigest: serviceDependency.source.caseDigest } : {}) }) },
+      caseDigest: sha256SemanticFingerprint({ ...trial, remoteMainBarShiftMm }) },
     method: { id, path: methodPath, blob: method.blob, receipt: { path: receiptPath, blob: receipt.blob }, inputs },
     comparison,
-    ...(serviceDependency ? { serviceDependency } : {}),
     grossRootWeb: grossRootWebDemands(comparison.groundSplice),
     toeTransfer: toeTransferDemands(comparison.groundSplice, trial.toeTransferIntervalMm),
     ...(keyContact ? { keyContact } : {}),
@@ -751,14 +695,11 @@ export function runNorthCollectorCase(resolved: CurrentDesignResolution, value: 
     ...(yawProbe ? { yawProbe } : {}),
     ...(deadLoadReplay ? { deadLoadReplay } : {}),
     ...(fixedBaseActions ? { fixedBaseActions } : {}),
-    ...(trial.dpcOriginAudit ? { dpcOriginAudit: runStructuralDpcOriginAudit(resolved, trial.dpcOriginAudit.cutZMm,
-      trial.dpcOriginAudit.globalContactTrial) } : {}),
     ...(chordTurn ? { chordTurn: { ...chordTurn, drawing: drawChordTurn(comparison, chordTurn) } } : {}),
     evidence: {
       state: isReference && !keyContact && !placementTolerance ? 'historical-demand-comparison' : 'trial-only',
       installedAcceptance: false as const,
-      outstanding: ['Continuous chord and wall cage', 'Actual signed DPC crossing loads and positive transfer',
-        'Complete occupied-floor moisture boundary', 'Coupled signed 52-head replay', 'Usable foul route and renewal'],
+      outstanding: ['Continuous chord and wall cage', 'Imperforate ground splice', 'Coupled signed 52-head replay', 'Usable foul route and renewal'],
     },
   }
 }

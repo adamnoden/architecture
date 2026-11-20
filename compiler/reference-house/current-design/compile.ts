@@ -71,10 +71,6 @@ export function prepareCurrentDesignCompile(input: unknown) {
       const { runStructuralActions } = await import('./structural.js')
       return runStructuralActions(resolved)
     },
-    structuralDpcOriginAudit: async (cutZMm?: number, globalContactTrial?: unknown) => {
-      const { runStructuralDpcOriginAudit } = await import('./structural-dpc.js')
-      return runStructuralDpcOriginAudit(resolved, cutZMm, globalContactTrial)
-    },
     readStructuralCase: async () => {
       const { readStructuralCase } = await import('./structural.js')
       return readStructuralCase(resolved)
@@ -95,9 +91,9 @@ export function prepareCurrentDesignCompile(input: unknown) {
       const { readNorthCollectorCase } = await import('./north-collector.js')
       return readNorthCollectorCase(resolved)
     },
-    northCollectorCase: async (input: unknown, westVentCase?: unknown) => {
+    northCollectorCase: async (input: unknown) => {
       const { runNorthCollectorCase } = await import('./north-collector.js')
-      return runNorthCollectorCase(resolved, input, westVentCase)
+      return runNorthCollectorCase(resolved, input)
     },
     readRearFoulVentCase: async () => {
       const { readRearFoulVentCase } = await import('./rear-foul-vent.js')

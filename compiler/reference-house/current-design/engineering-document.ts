@@ -4,6 +4,7 @@ import { sha256SemanticFingerprint, stableJsonStringify } from '../../core/ident
 import { compileCurrentDesignBundle, prepareCurrentDesignCompile } from './compile.js'
 import { readStudyRoomKitReferenceCase } from './assemblies/study-room-kit.js'
 import { resolveCurrentDesign, type CurrentDesignResolution } from './resolve.js'
+import { compileInletAssembly, readInletAssemblySettings } from './inlet-assembly.js'
 
 const repository = new URL('../../../', import.meta.url)
 const implementationRoots = [
@@ -29,7 +30,7 @@ const additionalImplementationFiles = [
   'project/ias/studies/workable-floor-tiles.mjs',
   'project/ias/studies/workable-lining-dimensions.mjs',
 ] as const
-const stageKeys = ['northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'inletRemovals', 'inletCovers', 'studyRoomKit'] as const
+const stageKeys = ['northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit'] as const
 type Settings = Readonly<Record<string, unknown>>
 type EngineeringStages = Partial<Readonly<Record<Exclude<typeof stageKeys[number], 'inletCovers' | 'inletRemovals'>, Settings>>> & {
   readonly inletRemovals?: readonly Settings[]
@@ -41,12 +42,13 @@ type SourceBindings = {
 }
 
 const northFields = ['portAxisXYMm', 'dragDemandFactor', 'remoteMainBarShiftMm', 'chordBendRadiusMm',
-  'toeTransferIntervalMm', 'keyContactTrial', 'placementToleranceMm', 'yawProbe', 'deadLoadReplay', 'portStrategy', 'dpcOriginAudit'] as const
+  'toeTransferIntervalMm', 'keyContactTrial', 'placementToleranceMm', 'yawProbe', 'deadLoadReplay'] as const
 const foulFields = ['riserAxisXYMm', 'wetStackAirTakeoffZMm', 'terminalZMm', 'buriedReceiving'] as const
 const inletFields = ['branch', 'washer', 'cheekMm', 'retainedSideLandMm', 'receiverRailWidthMm',
   'minimumFrontBridgeMm', 'axialTravelMm', 'sideTravelMm', 'closure'] as const
 const insertFields = ['eastEdgeMm', 'headZMm', 'plantPressureAxisXMm'] as const
 const faultFields = ['branches'] as const
+const assemblyFields = ['plantSouthLegLevelMm'] as const
 const removalFields = ['branch', 'drawMm', 'roofAccess', 'washer', 'utilityTaperRemoved', 'preparation'] as const
 const studyFields = ['pitchMm', 'wearingFace', 'finishDepthMm', 'groundDeckLevelLossMm', 'firstRestBoardSizeMm', 'opening'] as const
 
@@ -118,6 +120,7 @@ export async function readEngineeringDocument(design: unknown) {
       inletFault: select(fault.fault, faultFields),
       inletRemovals: removalCases.map(removal => select(removal, removalFields)).sort((a, b) => String(a.branch).localeCompare(String(b.branch))),
       inletCovers: covers.map(({ cover }) => select(cover, inletFields)).sort((a, b) => String(a.branch).localeCompare(String(b.branch))),
+      inletAssembly: readInletAssemblySettings(resolved),
       studyRoomKit: select(readStudyRoomKitReferenceCase(), studyFields),
     },
   }
@@ -147,6 +150,7 @@ function admitStages(value: unknown): EngineeringStages {
     ...(Object.hasOwn(value, 'inletFault') ? { inletFault: settings(value.inletFault, faultFields, 'inlet fault') } : {}),
     ...(Object.hasOwn(value, 'inletRemovals') ? { inletRemovals: branchSettings(value.inletRemovals, removalFields, 'inlet removal') } : {}),
     ...(Object.hasOwn(value, 'inletCovers') ? { inletCovers: branchSettings(value.inletCovers, inletFields, 'inlet cover') } : {}),
+    ...(Object.hasOwn(value, 'inletAssembly') ? { inletAssembly: settings(value.inletAssembly, assemblyFields, 'inlet assembly') } : {}),
     ...(Object.hasOwn(value, 'studyRoomKit') ? { studyRoomKit: settings(value.studyRoomKit, studyFields, 'Study room kit') } : {}),
   }
   return stages
@@ -176,6 +180,7 @@ export async function compileEngineeringDocument(input: unknown) {
     inletFault?: Awaited<ReturnType<typeof compile.inletFault>>
     inletRemovals?: readonly Awaited<ReturnType<typeof compile.inletRemoval>>[]
     inletCovers?: readonly Awaited<ReturnType<typeof compile.inletCover>>[]
+    inletAssembly?: ReturnType<typeof compileInletAssembly>
     studyRoomKit?: Awaited<ReturnType<typeof compile.studyRoomKit>>
   } = {}
   const manifest: { stage: string; settingsDigest: string; resultDigest: string; controls: readonly string[]; dependsOn: readonly string[] }[] = []
@@ -188,27 +193,18 @@ export async function compileEngineeringDocument(input: unknown) {
   recordResult('plans', {}, base.plans)
   recordResult('occupiedServices', {}, base.occupiedServices)
   recordResult('selectedWaterEvent', {}, base.selectedWaterEvent)
-  const linkedPort = stages.northCollector?.portStrategy === 'linked-west-foul-route'
-  let westVentCase: unknown
-  const compileWestVent = async (settings: Settings) => {
-    const request = await compile.readRearFoulVentCase()
-    if (!('vent' in request)) throw new Error('The bound rear foul vent case is unavailable')
-    westVentCase = { ...request.vent, ...settings }
-    engineering.rearFoulVent = await compile.rearFoulVent(westVentCase)
-    recordResult('rearFoulVent', settings, engineering.rearFoulVent)
-  }
-  if (linkedPort) {
-    if (!stages.rearFoulVent) throw new Error('The linked north collector requires an explicit saved west foul vent stage')
-    await compileWestVent(stages.rearFoulVent)
-  }
   if (stages.northCollector) {
     const request = await compile.readNorthCollectorCase()
     if (!('collector' in request)) throw new Error('The bound north collector case is unavailable')
-    engineering.northCollector = await compile.northCollectorCase({ ...request.collector, ...stages.northCollector },
-      linkedPort ? westVentCase : undefined)
-    recordResult('northCollector', stages.northCollector, engineering.northCollector, linkedPort ? ['rearFoulVent'] : [])
+    engineering.northCollector = await compile.northCollectorCase({ ...request.collector, ...stages.northCollector })
+    recordResult('northCollector', stages.northCollector, engineering.northCollector)
   }
-  if (stages.rearFoulVent && !linkedPort) await compileWestVent(stages.rearFoulVent)
+  if (stages.rearFoulVent) {
+    const request = await compile.readRearFoulVentCase()
+    if (!('vent' in request)) throw new Error('The bound rear foul vent case is unavailable')
+    engineering.rearFoulVent = await compile.rearFoulVent({ ...request.vent, ...stages.rearFoulVent })
+    recordResult('rearFoulVent', stages.rearFoulVent, engineering.rearFoulVent)
+  }
   const sill = stages.inletSillInsert || stages.inletFault || stages.inletRemovals || stages.inletCovers
     ? await compile.readInletSillInsertCase() : undefined
   const insertCase = sill ? { ...sill.insert, ...stages.inletSillInsert } : undefined
@@ -250,6 +246,16 @@ export async function compileEngineeringDocument(input: unknown) {
         ...(stages.inletRemovals?.some(removal => removal.branch === cover.branch) ? [`inletRemovals/${cover.branch}`] : [])])
     }
     engineering.inletCovers = results
+  }
+  if (stages.inletAssembly) {
+    if (!engineering.inletSillInsert || !engineering.inletFault || !engineering.inletRemovals || !engineering.inletCovers) {
+      throw new Error('The joined inlet requires explicit insert, fault, both removals and both covers in the saved document')
+    }
+    engineering.inletAssembly = compileInletAssembly(resolved, stages.inletAssembly, {
+      insert: engineering.inletSillInsert, fault: engineering.inletFault, removals: engineering.inletRemovals, covers: engineering.inletCovers,
+    })
+    recordResult('inletAssembly', stages.inletAssembly, engineering.inletAssembly, ['inletSillInsert', 'inletFault',
+      'inletRemovals/utility', 'inletRemovals/plant', 'inletCovers/utility', 'inletCovers/plant'])
   }
   if (stages.studyRoomKit) {
     engineering.studyRoomKit = await compile.studyRoomKit({ schema: 'ias-study-room-kit-case/1', units: 'mm', ...stages.studyRoomKit })

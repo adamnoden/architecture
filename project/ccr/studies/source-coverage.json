@@ -205,9 +205,7 @@
         "project/str/studies/current-house-roof-connection.json",
         "project/str/studies/current-house-floor-closure.svg"
       ],
-      "authoredInputs": [
-        "project/str/dpc-origin-paths.json"
-      ],
+      "authoredInputs": [],
       "receipts": [
         "project/str/studies/current-house-grid.json",
         "project/str/studies/reconciled-house-interface.json",
@@ -488,7 +486,8 @@
       "receipts": [],
       "consumers": [
         "compiler/reference-house/current-design/inlet-removal.ts",
-        "compiler/reference-house/current-design/inlet-cover.ts"
+        "compiler/reference-house/current-design/inlet-cover.ts",
+        "compiler/reference-house/current-design/inlet-assembly.ts"
       ],
       "producerChecks": [
         "node project/had/studies/south-inlet-wet-box.mjs --check",
@@ -759,7 +758,7 @@
     "project/str/studies/current-house-grid.py": "abb96e665bdc4d1b900d73125acb3bde68ca0b0b",
     "project/str/studies/current-house-guard-bracket.json": "1a771395a3d326e93a94f01e1f020499ebbee981",
     "project/str/studies/current-house-head-actions.json": "0d5c8c0d67378b0acd1a7680053e3b0783045c7c",
-    "project/str/studies/current-house-head-actions.py": "6635d8b11ea9edf948583097ad674d7741d62bf1",
+    "project/str/studies/current-house-head-actions.py": "aef7fa4cad6e89fc09c47e55e071ad52da22b522",
     "project/str/studies/current-house-joined-foundation.json": "ffc3ccb68655eead7c7f56a8dd3179d7d8d6f7bc",
     "project/str/studies/current-house-joined-foundation.py": "2dbd7d33959639f68bca70caf512165c54b88c37",
     "project/str/studies/current-house-lateral.json": "a3a4ae8393c14e04e874de02beebf901a4b87227",
@@ -829,7 +828,7 @@
     "project/str/studies/current-house-welded-heel.json": "8effbf8a9961ce490452f1ec6ec731b481cc7b11",
     "project/str/studies/current-house-arch-detail.json": "504202be0ff1ee1a56628349deaf8395846a0177",
     "project/str/studies/current-house-window-receivers.json": "58f2f9ad659373411833007e56600627d4b99cb2",
-    "project/str/studies/current-house-arch-jambs.json": "eb43644fe6b23260ee1e102e14bb76025454587f",
+    "project/str/studies/current-house-arch-jambs.json": "2d814bebd663f4358c43c92c3c52668b61cf0cb0",
     "project/str/studies/floor-portal-north-collar.json": "cb1760a60c0d82425f5e1a29e269cf97f9954ff7",
     "project/str/studies/floor-portal-north-roof-shoe.json": "12a82f9a31378d65422c1a2a964311e462f7d5d5",
     "project/str/studies/current-house-outward-arches.json": "b4b086d1c06f1e2d2cfc272e71bd4dad88aa08d2",
@@ -845,11 +844,11 @@
     "project/str/studies/current-house-wall-transfers.json": "e0f07982d5c14a464599eb5ac98952dcdcdaf892",
     "project/str/studies/floor-portal-north-cap-layer.json": "dab58749281eb22c46354098a183a6937339cfda",
     "project/str/studies/floor-portal-north-cage.json": "2b58f32dfcb90a44785d9217284f39b3ecbb7241",
-    "project/str/studies/current-house-structural-case.py": "17abff02fafed0456baaf17dc6e92dd18b08106f",
+    "project/str/studies/current-house-structural-case.py": "4708a0182ddb3bf67651a4469048de4639d3c2cb",
     "project/design-constraints.ts": "0c76e5372a2537bbc6f3c6c29f07ab0efa297129",
-    "project/str/studies/floor-portal-monolithic-drag.py": "083100d4cb2f189385e216ed149119f9e899277c",
+    "project/str/studies/floor-portal-monolithic-drag.py": "4fe9ceaaf5a09ed7670237f55202f680ebeef1dd",
     "project/str/studies/floor-portal-monolithic-drag.json": "9a8cf79026419f3b9f05cee4b573b6dd1f3a04e6",
-    "project/str/floor-portal-monolithic-drag.md": "9f869170d81a7a192bb7f1cb7a516a458c3cd4c6",
+    "project/str/floor-portal-monolithic-drag.md": "f3d73eff1cb5eaec07a2b2743b84b83ab053eb3f",
     "project/str/studies/current-house-ground-ties.json": "80c5ede6bcbe0b0bb3a19032feddd8403fbf19b1",
     "project/had/studies/south-inlet-sill-insert.mjs": "5b8102418d8ea33bd6a03fe2dd7cde41efe943ff",
     "project/had/studies/south-inlet-sill-insert-kernel.mjs": "3df75b2cb2fa492c6b3e5b2a04a113f481007880",
@@ -858,7 +857,7 @@
     "project/had/studies/south-inlet-under-sill.json": "7d60da325cd76bb9d7924bc4bb64f1b93b51b644",
     "project/had/studies/south-inlet-wet-box.json": "0ccc6a7b1584145b5e77c7b89e9e2b8ce8b7d665",
     "project/str/studies/floor-portal-interface-review.json": "ad8aac21e936f0199b331c3bd886c8bb41f30ee3",
-    "compiler/reference-house/current-design/north-collector.ts": "776f63aefea21c25bd1b45bc95d201fd2b7ec35e",
+    "compiler/reference-house/current-design/north-collector.ts": "54ae2673f2a5c7ee715b3dc8cf113bc184cc859a",
     "compiler/reference-house/current-design/inlet-sill-insert.ts": "08d96ab51ecbd883df0dd56573327a2e0e4d63b4",
     "project/had/south-inlet-relief.md": "9bde59b3cc55bc4fb7156402e50337b9f27fc3a5",
     "project/had/studies/south-inlet-relief.mjs": "2648332efff491577ce285dc315e9e38006ecbbc",
@@ -879,7 +878,7 @@
     "project/str/studies/physical-slab-join.json": "79b28df58f00fcf6e31a97cd376efe15a6c2566f",
     "project/str/studies/current-house-roof-connection.json": "b7499d25908e41be0903c24183aa3a5e487a61a0",
     "project/str/studies/current-house-floor-closure.svg": "92af682f05bf44a6a0af8237385e2d1345d7c9ca",
-    "compiler/reference-house/current-design/structural.ts": "19ca8eb9cde0037c7390cda4fab473579cfab1bc",
+    "compiler/reference-house/current-design/structural.ts": "7e91a2d2d23d789ba9ab7d12bb6260851ba04b31",
     "project/had/studies/south-inlet-sill-wind-source.py": "4ceae4c90ff02d4457b9690959638e3ff90fa521",
     "project/had/studies/south-inlet-sill-wind-source.json": "5bf4cb356f72054abfe706011ea8507b1332c305",
     "compiler/reference-house/current-design/inlet-sill-wind.ts": "45fd3e5f0c80f8bf6b06af8aed1687f5220aee7b",
@@ -891,6 +890,6 @@
     "project/had/studies/south-inlet-wet-box.mjs": "2b6ae4e01c29823c6d91e78cd4657b4fe373a618",
     "compiler/reference-house/current-design/inlet-removal.ts": "47f9a6615634de9062190c2e7e5e20384837d043",
     "compiler/reference-house/current-design/inlet-cover.ts": "c24b643034c96b483ea58aa59b3b1423d633d781",
-    "project/str/dpc-origin-paths.json": "338d870cdc6bc55913a75d72f649a41002429659"
+    "compiler/reference-house/current-design/inlet-assembly.ts": "f734eecd580b6b56620aeee893f6aed62b8adffe"
   }
 }
