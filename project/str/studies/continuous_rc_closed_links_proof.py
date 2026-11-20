@@ -19,12 +19,31 @@ def render_section(result):
 
 
 def proof():
-    paths=['project/had/studies/water-replan.json','project/str/studies/continuous_rc_cage.py','project/str/studies/continuous_rc_closed_links.py']
+    paths=['project/had/studies/water-replan.json','project/str/studies/continuous_rc_cage.py','project/str/studies/continuous_rc_closed_links.py','project/str/studies/continuous_rc_closed_links_proof.py','project/str/studies/cage-requirements.txt']
     portal=json.loads((ROOT/paths[0]).read_text())['model']['insulatedPortal']
     result=derive_bounded_geometry(reference_closed_link_case(),portal)
     result['sourceSHA256']={p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in paths}
     result['forceScope']='Geometry rejection only. No historical or current native wind force receipt is treated as approval or an input to this geometry result.'
     return result
+
+
+def canonical_receipt(result):
+    def derived(value):
+        if isinstance(value,float):
+            if not math.isfinite(value):raise ValueError('Nonfinite closed-link derived receipt value')
+            rounded=round(value,9)
+            return 0. if rounded==0 else rounded
+        if isinstance(value,dict):return {key:derived(child) for key,child in value.items()}
+        if isinstance(value,list):return [derived(child) for child in value]
+        return value
+    receipt={key:value if key in ('case','sourceSHA256') else derived(value) for key,value in result.items()}
+    receipt['receiptPrecision']={'schema':'str-closed-link-derived-receipt-precision/1',
+        'derivedLengthDecimalPlaces':9,'derivedLengthResolutionMm':1e-9,
+        'authoredCaseAndSourceIdentities':'Exact and unrounded',
+        'physicsAndDecisions':'Computed from unrounded geometry before receipt serialization; no acceptance tolerance',
+        'comparison':'Exact canonical JSON and SVG reproduction required'}
+    json.dumps(receipt,allow_nan=False)
+    return receipt
 
 
 def reproduction_diagnostics(expected_text, actual_text):
@@ -72,7 +91,7 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');parser.add_argument('--read',action='store_true');args=parser.parse_args()
     if args.read:print(json.dumps(reference_closed_link_case(),indent=2));return
     result=proof();svg=render_section(result)
-    text=json.dumps(result,indent=2,allow_nan=False)+'\n'
+    text=json.dumps(canonical_receipt(result),indent=2,allow_nan=False)+'\n'
     if args.check:
         mismatches={}
         for path,actual in ((D/'continuous-rc-closed-links-proof.json',text),(D/'continuous-rc-closed-links.svg',svg)):

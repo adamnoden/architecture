@@ -2,7 +2,7 @@ import copy
 import unittest
 
 from continuous_rc_closed_links import closed_wire, derive_bounded_geometry, reference_closed_link_case, wire_self_clearance
-from continuous_rc_closed_links_proof import proof, reproduction_diagnostics
+from continuous_rc_closed_links_proof import proof, reproduction_diagnostics, canonical_receipt
 
 
 class ClosedLinkTests(unittest.TestCase):
@@ -30,6 +30,28 @@ class ClosedLinkTests(unittest.TestCase):
         self.assertEqual(result['nonFiniteDifferenceCount'],1)
         self.assertEqual([r['kind'] for r in result['differences']],['length','type','non-finite'])
         json.dumps(result,allow_nan=False)
+
+    def test_receipt_precision_does_not_change_authored_inputs_or_physics(self):
+        import json
+        raw=copy.deepcopy(self.result)
+        encoded=json.dumps(canonical_receipt(raw),allow_nan=False)
+        other=copy.deepcopy(raw)
+        for index in (0,8,10,12):
+            other['postArchJointTrials'][index]['clearance']['adverseSurfaceLowerBoundMm']=1.4057334485940203
+        self.assertEqual(encoded,json.dumps(canonical_receipt(other),allow_nan=False))
+        self.assertEqual(raw,self.result)
+        self.assertEqual(canonical_receipt(raw)['case'],raw['case'])
+        self.assertEqual(canonical_receipt(raw)['sourceSHA256'],raw['sourceSHA256'])
+        for path,value in ((('postArchJointTrials',0,'clearance','adverseSurfaceLowerBoundMm'),1e-8),
+                (('completeCageFabricationGeometryRejected',),False),(('sourceSHA256',next(iter(raw['sourceSHA256']))),'changed')):
+            edited=copy.deepcopy(raw);target=edited
+            for key in path[:-1]:target=target[key]
+            target[path[-1]]=target[path[-1]]+value if isinstance(value,float) else value
+            self.assertNotEqual(encoded,json.dumps(canonical_receipt(edited),allow_nan=False))
+        edited=copy.deepcopy(raw);edited['case']['archTailNormalOffsetMm']+=1e-12
+        self.assertNotEqual(encoded,json.dumps(canonical_receipt(edited),allow_nan=False))
+        edited=copy.deepcopy(raw);edited['maximumTrialAsBuiltGapMm']=float('nan')
+        with self.assertRaises(ValueError):canonical_receipt(edited)
 
     def test_whole_assembly_is_rejected(self):
         self.assertTrue(self.result['completeCageFabricationGeometryRejected'])

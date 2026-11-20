@@ -184,7 +184,10 @@
         "project/str/studies/rc_floor_house_loads.py",
         "project/str/studies/current_rc_cage.py",
         "project/str/studies/continuous_rc_cage.py",
-        "project/str/studies/native_rc_cage_envelope.py"
+        "project/str/studies/native_rc_cage_envelope.py",
+        "project/str/studies/continuous_rc_closed_links.py",
+        "project/str/studies/continuous_rc_closed_links_proof.py",
+        "project/str/studies/cage-requirements.txt"
       ],
       "inputReceipts": [
         "project/had/studies/water-replan.json",
@@ -1012,6 +1015,14 @@
       ],
       "format": "map",
       "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/str/studies/continuous-rc-closed-links-proof.json",
+      "location": [
+        "sourceSHA256"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
     }
   ],
   "gitBlobs": {
@@ -1308,7 +1319,10 @@
     "compiler/reference-house/current-design/inlet-fixed-wet-support.ts": "5c318dff47e8dc8bd14ca710a84b38e934e1f82e",
     "project/had/fixed-inlet-wet-support-development.md": "64ef2a71d1cf5aab42b6d231b59e74133e28b43b",
     "project/had/inlet-metal-compression-decision.md": "dfbd966fd05bddcbb867fde235f3616ab017f8f3",
-    "project/str/studies/native_rc_cage_envelope.py": "6b6b7ae3b7e51dd2fbdccefcd7a1d44fac1c00ce",
-    "project/str/studies/continuous-rc-closed-links-proof.json": "76c723aeab0e4ee5a7d1321935e98b010e7ffd1d"
+    "project/str/studies/native_rc_cage_envelope.py": "da55f544c1431ff503a897fb2f10e9f31b759684",
+    "project/str/studies/continuous-rc-closed-links-proof.json": "e5ae759e6dbd12c00025e004628086fade7df848",
+    "project/str/studies/continuous_rc_closed_links.py": "005de10b93766e5fddd1e75b64df8f07df17652e",
+    "project/str/studies/continuous_rc_closed_links_proof.py": "efd5717d7f41a053d99cd6c5f5d5a518869fa080",
+    "project/str/studies/cage-requirements.txt": "d59d856f1cc6c05962ca6bd4f14dd3315acd207c"
   }
 }

@@ -49,7 +49,7 @@ def assess_worked_cage_detail(case, controlling_sources=None):
         'reviewedRejectedGeometryMethodSHA256': REJECTED_DETAIL_METHOD_SHA256,
         'reviewedRejectedPortalSourceSHA256': REJECTED_DETAIL_WATER_SHA256,
         'reviewEvidence': {'path': 'project/str/studies/continuous-rc-closed-links-proof.json',
-            'sha256': 'f0971bd62d4d19064322c1e5ae7faaa03e0c08576a54623050d249408a7384e3',
+            'sha256': 'd883f33e0c75f0366ff2ff65aaf7eaf3ea29306db9b674f4ef7313c35782d32c',
             'record': 'project/str/continuous-rc-closed-links.md',
             'scope': 'Historical69mm-face lap rejection and explicit rejected71mm-face replacement joint trials; the latter are not relabelled as source69mm geometry.'},
         'basis': 'Owning geometric review of the exact worked69mm-face/4550mm-lap reference detail, separate from necessary section-action comparisons.',

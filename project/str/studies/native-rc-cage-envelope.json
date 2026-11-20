@@ -36,7 +36,7 @@
     "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137"
   },
   "sourceSHA256": {
-    "project/str/studies/native_rc_cage_envelope.py": "aa635479db7718d9fde67847beca18aea963b00dda02ee1d44ce2a60e587ea4b",
+    "project/str/studies/native_rc_cage_envelope.py": "4079c79cff9b867da159c87c1ee387014d6d51589bfa180fb1bab735f37f063e",
     "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c",
     "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
     "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294"
@@ -30853,7 +30853,7 @@
     "reviewedRejectedPortalSourceSHA256": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
     "reviewEvidence": {
       "path": "project/str/studies/continuous-rc-closed-links-proof.json",
-      "sha256": "f0971bd62d4d19064322c1e5ae7faaa03e0c08576a54623050d249408a7384e3",
+      "sha256": "d883f33e0c75f0366ff2ff65aaf7eaf3ea29306db9b674f4ef7313c35782d32c",
       "record": "project/str/continuous-rc-closed-links.md",
       "scope": "Historical69mm-face lap rejection and explicit rejected71mm-face replacement joint trials; the latter are not relabelled as source69mm geometry."
     },
