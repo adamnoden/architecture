@@ -9,9 +9,9 @@
     "label": "convergence-2026-11-19-resumed"
   },
   "claimedAt": "2026-11-19T21:54:48.397Z",
-  "heartbeatAt": "2026-11-19T23:53:43.396Z",
-  "expiresAt": "2026-11-20T01:23:43.396Z",
-  "branch": "work/convergence-integrated-2026-11-19",
+  "heartbeatAt": "2026-11-20T00:51:41.562Z",
+  "expiresAt": "2026-11-20T02:21:41.562Z",
+  "branch": "work/convergence-retained-components-20261120",
   "predecessor": {
     "leaseId": "1e462ea9-3790-42cc-8040-6bc65e6c313e",
     "generation": 43,
@@ -32,10 +32,10 @@
       "next": "Integrate final HAD split hood and IAS full-room handling branches, exact-head hosted fullhealth and publication preflight; full DPC six-component demand and whole-floor moisture path remain unresolved"
     }
   },
-  "pr": 1584,
+  "pr": 1586,
   "checkpoint": {
-    "evidence": "429cca has seven green specialized workflows. Full health exposed one genuine stale native receipt chain and two stale test contracts; Study/freeze fixes pass9/9 and remaining tail suites pass. Actual receipt replay is finishing. First cleanup sink PR1585 retired DPC helper ref with source preserved.",
-    "next": "Publish minimal consolidated repairs, require exact-head full health and fresh3node preflight, merge1584. Continue actual retained-component accounting to replace hypothetical DPC stabilising load; no structural or roof completion is claimed.",
-    "blocker": "Full submitted-head validation pending; complete distributed support, roof/joint laws and moisture path remain internal engineering."
+    "evidence": "Main0298c1f2 merged1584 after8exact-head checks and3freshpreflights; IASconcept complete and leaseauto-released. Newdeca931c branch replaces hypothetical mass with net components, all96x4adverse contact comparisons, savedCLI/drawing and stale-evidence proofs; source and production tests pass.",
+    "next": "Require exact newhead hosted CI and freshSTR preflight; merge retained comparison, then continue actual dry-side section and retention/joint proofs. HAD independently develops the fixed light-pipe inlet.",
+    "blocker": "Actual local DPC bearing/shear, connected wall/floor/roof topology and moisture remain internal engineering; no structural closeout claimed."
   }
 }
