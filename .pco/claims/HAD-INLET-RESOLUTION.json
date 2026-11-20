@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 48,
-  "state": "released",
-  "leaseId": "e177187b-d7d4-43ff-86ee-12aba745f8e0",
+  "generation": 49,
+  "state": "claimed",
+  "leaseId": "de383544-b716-40f5-8dfb-6a7fb19e8c2d",
   "holder": {
     "kind": "chatgpt",
-    "label": "ZR-HAD-20261120"
+    "label": "ZR-HAD-CABINET-20261120"
   },
-  "claimedAt": "2026-11-20T22:25:10.512Z",
-  "heartbeatAt": "2026-11-20T23:31:20.037Z",
-  "expiresAt": "2026-11-20T23:31:20.037Z",
-  "branch": "work/had-inlet-converge-20261120",
+  "claimedAt": "2026-11-20T23:32:07.738Z",
+  "heartbeatAt": "2026-11-20T23:32:07.738Z",
+  "expiresAt": "2026-11-21T00:17:07.738Z",
+  "branch": "work/had-cabinet-copper-20261120",
   "predecessor": {
-    "leaseId": "4fc55435-7e36-4112-9d39-f14c8f486b4c",
-    "generation": 47,
-    "branch": "work/convergence-gravity-house-20261120",
-    "pr": 1598,
+    "leaseId": "e177187b-d7d4-43ff-86ee-12aba745f8e0",
+    "generation": 48,
+    "branch": "work/had-inlet-converge-20261120",
+    "pr": 1601,
     "checkpoint": {
-      "evidence": "Merged PR1598 at c1683cfc with shared frame solver, true retained mounts and 3.996 mm removal reserve. All 10 exact-head checks and fresh dual preflight passed. Local enclosure handoff: PR1597 comment7043849237.",
-      "next": "Recover enclosure candidate; replay changed stock/water/drag/seize loads in the same frame solver, then finish isolation, renewal, fault and material proof. Default wet neck remains rejected.",
-      "blocker": "Execution workspace unavailable; enclosure successor partly local-only. Whole support, containment, materials and occupied-house acceptance remain open."
+      "evidence": "PR1601 exact head596f15a2; all15 local tests, full canonical health and publication/PLT/ADE proofs passed. Final hosted preflight failed on lease runway after environment interruption.",
+      "next": "Renew or reacquire canonically, rerun failed exact-head preflight, fresh local publication preflight then merge1601; next compare one cabinet with28copper material route",
+      "blocker": "Lease runway expired during long CI; no engineering acceptance or HAD closeout"
     }
   },
   "recoverySource": {
-    "leaseId": "4fc55435-7e36-4112-9d39-f14c8f486b4c",
-    "generation": 47,
-    "branch": "work/convergence-gravity-house-20261120",
-    "pr": 1598,
+    "leaseId": "e177187b-d7d4-43ff-86ee-12aba745f8e0",
+    "generation": 48,
+    "branch": "work/had-inlet-converge-20261120",
+    "pr": 1601,
     "checkpoint": {
-      "evidence": "Merged PR1598 at c1683cfc with shared frame solver, true retained mounts and 3.996 mm removal reserve. All 10 exact-head checks and fresh dual preflight passed. Local enclosure handoff: PR1597 comment7043849237.",
-      "next": "Recover enclosure candidate; replay changed stock/water/drag/seize loads in the same frame solver, then finish isolation, renewal, fault and material proof. Default wet neck remains rejected.",
-      "blocker": "Execution workspace unavailable; enclosure successor partly local-only. Whole support, containment, materials and occupied-house acceptance remain open."
+      "evidence": "PR1601 exact head596f15a2; all15 local tests, full canonical health and publication/PLT/ADE proofs passed. Final hosted preflight failed on lease runway after environment interruption.",
+      "next": "Renew or reacquire canonically, rerun failed exact-head preflight, fresh local publication preflight then merge1601; next compare one cabinet with28copper material route",
+      "blocker": "Lease runway expired during long CI; no engineering acceptance or HAD closeout"
     }
-  },
-  "pr": 1601,
-  "checkpoint": {
-    "evidence": "PR1601 exact head596f15a2; all15 local tests, full canonical health and publication/PLT/ADE proofs passed. Final hosted preflight failed on lease runway after environment interruption.",
-    "next": "Renew or reacquire canonically, rerun failed exact-head preflight, fresh local publication preflight then merge1601; next compare one cabinet with28copper material route",
-    "blocker": "Lease runway expired during long CI; no engineering acceptance or HAD closeout"
-  },
-  "releasedAt": "2026-11-20T23:31:20.037Z",
-  "releaseReason": "handoff"
+  }
 }
