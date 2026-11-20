@@ -2,7 +2,7 @@
 
 **Recommendation:** retain the accepted courtyard plan and develop the timber Study as the preferred interior proposal. Keep the tiled room as a fair appearance comparison. The structural and raised-ground alternatives below have real architectural consequences; none has yet replaced the accepted house.
 
-This is an owner-review index of the actual drawings, with their differences exposed. The five principal views are frozen from the existing current gallery at [source 08b11134](https://github.com/adamnoden/architecture/tree/08b11134af37453ea258a53bbb18551b32b33be0). That source was published in **draft [PR #1597](https://github.com/adamnoden/architecture/pull/1597)**; this package does not record a merge or an owner decision. [Exact visual and source identities](studies/convergence-owner-review/sources.json).
+This is an owner-review index of the actual drawings, with their differences exposed. The five principal views are frozen from the existing current gallery at [source 08b11134](https://github.com/adamnoden/architecture/tree/08b11134af37453ea258a53bbb18551b32b33be0). That source was published in **[PR #1597](https://github.com/adamnoden/architecture/pull/1597)**; this package does not record a merge or an owner decision. [Exact visual and source identities](studies/convergence-owner-review/sources.json).
 
 ## Read the house in five views
 
@@ -76,3 +76,11 @@ These are specific editorial boundaries to preserve, not reasons to disguise the
 | [Part IV floor-zone and interior prose](../../docs/manuscript/part-iv.md#the-floor-zone), [active Study plate captions](../../publication/plates-current.ts) and [IAS result](../ias/crafted-room-kit-result.md) | The prose correctly retains an unselected floor/interior and the captions disclose the occupied opening mismatch. Keep those qualifications when replacing pictures; the timber proposal and ordinary geometric renewal do not select the entire assembly. |
 
 *Reference design — not released for construction. Assumptions and outstanding verification accompany the proposal; internal checks do not constitute external assurance or certification.*
+
+## The pantry and service-passage conflict
+
+The accepted nominal Georgian plan retains G-PANTRY, its north wall and door. The conditional occupied-water proposal inserts an outdoor eastern passage and weather separator, expressly loses that pantry and substitutes a low kitchen larder. These are different architectural revisions, not one coordinated accepted plan. Its inherited principal lower-foul route also assumes the displaced pantry working field. Retaining the pantry is the preferred architectural control; the service layout and actual current-host foul route need a coordinated replacement before a joined owner review.
+
+## Worked coordination comparisons
+
+The [whole-house vertical section](../had/studies/house-vertical-profile.svg) compares the530/715occupied-floor proposals while holding the cold grid fixed. The roof weather height remains unresolved; these are not replacement elevations. The [vertical RC floor drawing](../str/studies/vertical-rc-floor.svg) shows actual plate/self-weight/normal-bearing participation and the remaining absent ground patch. It uses the source-ground-zero mechanical control, including the rejected curved cage, and does not adopt the raised house or replacementA. The current front elevation and principal section are now active book plates at their declared nominal architectural scope.
