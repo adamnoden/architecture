@@ -9,9 +9,9 @@
     "label": "convergence-inlet-resumed-20261120"
   },
   "claimedAt": "2026-11-20T07:39:02.850Z",
-  "heartbeatAt": "2026-11-20T07:58:44.476Z",
-  "expiresAt": "2026-11-20T09:28:44.476Z",
-  "branch": "work/convergence-fixed-recovery-20261120",
+  "heartbeatAt": "2026-11-20T08:58:32.304Z",
+  "expiresAt": "2026-11-20T10:28:32.304Z",
+  "branch": "work/convergence-joined-structure-20261120",
   "predecessor": {
     "leaseId": "6d1a0dde-e1e3-4014-99e6-bac6f58d5756",
     "generation": 46,
@@ -36,8 +36,8 @@
   },
   "pr": 1589,
   "checkpoint": {
-    "evidence": "PR1589 ec463940 preserves fixed-entry candidate and actual saved-document/CLI stage; twelve focused tests and TypeScript pass locally; old1587 closed superseded without packet closure",
-    "next": "Integrate joint-free sloping bend, corrected coupling bodies, whole operating-tool/support/frost checks and source evidence",
-    "blocker": "Exact receiving anchors and wet-neck/material/thermal evidence remain unearned; draft candidate is not adopted"
+    "evidence": "Consolidating tested5cb9d33c inlet default/save/CLI migration with source-bound floor and dry-ground methods on one coordinated integration branch;41inlet and12inventorytests pass; rejected incomplete thermal helper excluded",
+    "next": "Publish joint STR/HAD review head, bind its allocated PR number, run exact-head CI and both fresh canonical preflights; continue complete receiver/thermal engineering",
+    "blocker": "HAD remains incomplete: actual support, full tool motion, warm envelope, materials and installed duties open; no7Nwhole-route thermal admission"
   }
 }
