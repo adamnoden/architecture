@@ -8,7 +8,7 @@ The saved `masonryFrame` stage uses the sole `distributedFloor` authoring stage.
 It includes the [actual disjoint foundation self-weight](foundation-solid-weight-result.md)
 and an explicitly authored SW formed-quarter node. That candidate closes the
 0.01050625 m² missing normal footprint without adding a support; it does not
-qualify the local joint. The worked source W31 case still has a −50.800819 kN
+qualify the local joint. The worked source W31 case still has a −50.805972 kN
 head demand. Below-cut foundation weight supplies no above-DPC precompression.
 [Recovered plate moments and conventional anchorage](floor-reinforcement-result.md)
 separate the RC200 section question from the rejected return template: retain

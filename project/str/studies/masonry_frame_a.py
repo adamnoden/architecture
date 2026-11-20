@@ -164,6 +164,14 @@ def build_masonry_frame_a(case,source):
         for node,row in data['portTerms'][index]:_add(model['families']['physical-G'],node,[value*c for c in row])
     for name,m in model['members'].items():
         if m['kind'] in ('post','upstand'):register_member_gravity(model,name,already_lumped=False)
+    end_strips=[]
+    for wall,row in model['wallFrames'].items():
+        nodes=row['beamNodes'];y=frame.nodes[nodes[0]][1];depth=row['west']['topMm']-3170;width=model['widthEdit']['northUpstandWidthMm']
+        west_edge=model['portal']['piers']['westEW'][0]
+        for edge,node in ((west_edge,nodes[0]),(12000-west_edge,nodes[-1])):
+            at=frame.nodes[node];length=abs(edge-at[0]);volume=length*width*depth/1e9;weight=volume*25;point=[(edge+at[0])/2,y,at[2]]
+            _add(model['families']['physical-G'],node,_wrench_at([0,0,-weight],point,at))
+            end_strips.append({'wallId':wall,'receivingNode':node,'physicalCentroidXYZMm':point,'lengthMm':length,'widthMm':width,'depthMm':depth,'RCVolumeM3':volume,'physicalGKN':weight,'scope':'Actual end-zone material outside the finite upstand axis. Rigid joint-zone work trace only; local cage/resistance remains unqualified.'})
     for wall,row in model['wallFrames'].items():
         cy=row['west']['pier']['footCentroidXYMm'][1]
         for course in courses:
@@ -175,7 +183,7 @@ def build_masonry_frame_a(case,source):
     data['mass']['sourceRCAndInfillBeforeSlabKN']=-sum(v[2] for v in model['families']['physical-G'].values())-data['mass']['newPlatePhysicalSelfGKN']
     data['mass']['joinedPhysicalGKN']=-sum(v[2] for v in model['families']['physical-G'].values())
     model['masonryFrameA']={'request':case,'geometry':g,'courses':courses,'newPostMembers':new_members,'explicitTransferredLoads':transfer,
-        'RCPostVolumeM3':post_volume,'masonryPhysicalGKN':2*sum(r['physicalGKN'] for r in courses),'retainedOriginalMemberEquivalentLoads':removed_loads,
+        'RCPostVolumeM3':post_volume,'masonryPhysicalGKN':2*sum(r['physicalGKN'] for r in courses),'retainedOriginalMemberEquivalentLoads':removed_loads,'upstandEndStrips':end_strips,
         'oldCurvedRCAndInfillRemoved':True,'sourceWindTransferQualified':False,'archMovementCompatibilityQualified':False}
     from court_corner_closure import apply_court_corner_closure
     if case['courtCornerClosure'] is not None:
@@ -271,7 +279,7 @@ def run_masonry_frame_a(case,source,name):
     result={'schema':'str-masonry-frame-a-result/1','sourceSHA256':source['identities'],'request':case,'nativeVertical':native,
         'geometry':data['geometry'],'masonryCourses':data['courses'],'mass':{'RCPostVolumeM3':data['RCPostVolumeM3'],'masonryPhysicalGKN':data['masonryPhysicalGKN'],**native['mass']},
         'foundationWeight':model['foundationWeight'],'courtCornerClosure':model.get('courtCornerClosure'),'plateBending':bending,'floorReinforcement':reinforcement,'explicitTransferredLoads':data['explicitTransferredLoads'],
-        'loadIntroduction':{'physicalGravityConsistentMemberRecovery':True,'sourceWindEquivalentNodalComparison':True,
+        'loadIntroduction':{'physicalGravityConsistentMemberRecovery':True,'sourceWindEquivalentNodalComparison':True,'upstandEndStripGravity':data['upstandEndStrips'],
             'changedPostDistributedPressureRecoveryQualified':False,'retainedOriginalMemberEquivalentLoads':data['retainedOriginalMemberEquivalentLoads']},
         'drawings':{'masonry-frame-a-floor.svg':svg},'candidateAccepted':False,'completeHouseProof':False,'roofAdoption':False,
         'masonryStrengthAccepted':False,'archMovementCompatibilityAccepted':False,'frameReinforcementAccepted':False,

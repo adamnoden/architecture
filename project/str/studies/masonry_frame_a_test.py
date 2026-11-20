@@ -86,6 +86,18 @@ class MasonryFrameTests(unittest.TestCase):
         self.assertGreater(proof['cases'][1]['maximum52HeadComponentDeltaFromBaselineKN_KNm'],1e-6)
         self.assertAlmostEqual(proof['aperturePhysicalSelfGDeltaKN'],-.545)
         baseline=proof['baseline'];self.assertEqual(baseline['nativeVertical']['sourceSHA256'],proof['sourceSHA256'])
+        # Independent full-solid inventory includes joint end zones beyond the
+        # finite upstand axes; reproducing solved equilibrium alone misses them.
+        house=proof['authoredNumericalCase']['verticalCase']['monolithicCase']['houseCase']
+        width=house['northUpstandWidthMm']
+        for case in proof['cases']:
+            expected_shell=(case['mass']['newPlatePhysicalSelfGKN']
+                +25*(baseline['geometry']['fourRCPostUnionVolumeM3']+3385*width*(750+650)/1e9)
+                +baseline['mass']['masonryPhysicalGKN'])
+            self.assertAlmostEqual(case['mass']['referenceStructuralShellPhysicalGKN'],expected_shell,places=8)
+        strips=baseline['loadIntroduction']['upstandEndStripGravity']
+        self.assertEqual(len(strips),4)
+        self.assertAlmostEqual(math.fsum(row['physicalGKN'] for row in strips),1.4875)
         self.assertEqual(baseline['nativeVertical']['schema'],'str-masonry-frame-a-vertical-result/1')
         cut_heights=[row['physicalPointMm'][2] for row in baseline['nativeVertical']['native']['memberCuts'] if '/A-post/' in row['memberId']]
         for course in baseline['masonryCourses']:
