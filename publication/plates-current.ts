@@ -27,6 +27,22 @@ const placements: readonly PlatePlacement[] = [
   },
   {
     entryId: 'part-iv',
+    anchor: '## Order without false symmetry',
+    pageClass: 'PLATE_SINGLE',
+    views: [
+      { title: 'Current house — principal front', image: '../../publication/current/front-elevation.svg', alt: 'Nominal current five-bay front elevation with centred entrance', scale: '1:100', caption: 'The accepted five-bay front and centred entrance, drawn from the current architectural source. Joinery profiles and the pitched roof remain nominal; floor, foundation and roof assemblies await selection. The raised-ground and reinforced-concrete trials are not adopted by this view.' }
+    ]
+  },
+  {
+    entryId: 'part-iv',
+    anchor: '## Section as architecture',
+    pageClass: 'PLATE_SINGLE',
+    views: [
+      { title: 'Current house — principal section', image: '../../publication/current/principal-section.svg', alt: 'Nominal current principal section through entrance void and open courtyard', scale: '1:100', caption: 'Section through the entrance void and open court, looking west, with architectural floors at 0 and +3.45 m. Floor layers, foundation envelopes and the roof build-up are provisional representations, not selected construction. This section does not adopt the reinforced-concrete cage or the +715 mm raised-ground trial.' }
+    ]
+  },
+  {
+    entryId: 'part-iv',
     anchor: '## Quiet walls and selective infrastructure',
     pageClass: 'PLATE_PAIR',
     views: [

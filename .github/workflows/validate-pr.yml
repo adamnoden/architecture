@@ -20,20 +20,27 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup cage geometry numerical runtime
+      - name: Setup structural numerical runtime
         uses: actions/setup-python@v6
         with:
           python-version: '3.12'
           cache: pip
-          cache-dependency-path: project/str/studies/cage-requirements.txt
+          cache-dependency-path: |
+            project/str/studies/cage-requirements.txt
+            project/str/studies/vertical-floor-requirements.txt
 
-      - name: Install pinned cage geometry dependency
-        run: python -m pip install -r project/str/studies/cage-requirements.txt
+      - name: Install pinned structural numerical dependencies
+        run: python -m pip install -r project/str/studies/cage-requirements.txt -r project/str/studies/vertical-floor-requirements.txt
 
       - name: Verify cage geometry evidence before full validation
         run: |
           python -B project/str/studies/continuous_rc_closed_links_proof.py --check
-          python -B project/str/studies/portal_architectural_simplification.py --check
+          python -B -m unittest discover -s project/str/studies -p portal_architectural_simplification_test.py
+          if ! python -B project/str/studies/portal_architectural_simplification.py --check; then
+            python -B project/str/studies/portal_architectural_simplification.py
+            git --no-pager -c color.ui=false diff --no-ext-diff -- project/str/studies/portal-architectural-simplification.json project/str/studies/portal-architectural-simplification.svg
+            exit 1
+          fi
 
       - name: Setup Node
         uses: actions/setup-node@v7
@@ -94,6 +101,53 @@ jobs:
       - name: Validate public nomenclature source
         run: npx tsx scripts/validate-public-nomenclature.ts --source
 
+
+  publication:
+    name: Validate publication
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Setup structural numerical runtime
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: |
+            project/str/studies/cage-requirements.txt
+            project/str/studies/vertical-floor-requirements.txt
+
+      - name: Install pinned structural numerical dependencies
+        run: python -m pip install -r project/str/studies/cage-requirements.txt -r project/str/studies/vertical-floor-requirements.txt
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Cache verified publication fonts
+        uses: actions/cache@v6
+        with:
+          path: node_modules/.cache/ovids-house/publication-fonts
+          key: ${{ runner.os }}-publication-fonts-v1-${{ hashFiles('publication/fonts.ts') }}
+          restore-keys: ${{ runner.os }}-publication-fonts-v1-
+
+      - name: Verify publication text extraction regressions
+        run: node --import tsx --test publication/pdf-text.test.ts
+
+      - name: Render project-control projections for publication
+        run: npm run status:update
+
+      - name: Build documentation for publication checks
+        run: npm run docs:build
+
       - name: Build publication PDFs
         run: |
           npm run publication:build
@@ -135,7 +189,7 @@ jobs:
 
   publication-preflight:
     name: Canonical publication preflight
-    needs: validate
+    needs: [validate, publication]
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:

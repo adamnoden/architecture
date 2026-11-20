@@ -231,5 +231,5 @@ const verification = {
   failures
 }
 await writeFile(resolve(proofRoot, 'verification.json'), `${JSON.stringify(verification, null, 2)}\n`, 'utf8')
-if (failures.length) throw new Error(`Production typography verification failed:\n- ${failures.join('\n- ')}`)
 console.log(JSON.stringify(verification, null, 2))
+if (failures.length) throw new Error(`Production typography verification failed:\n- ${failures.join('\n- ')}`)
