@@ -9,8 +9,8 @@
     "label": "convergence-inlet-resumed-20261120"
   },
   "claimedAt": "2026-11-20T07:39:02.850Z",
-  "heartbeatAt": "2026-11-20T13:18:19.872Z",
-  "expiresAt": "2026-11-20T14:48:19.872Z",
+  "heartbeatAt": "2026-11-20T14:06:46.471Z",
+  "expiresAt": "2026-11-20T15:36:46.471Z",
   "branch": "work/convergence-next-systems-20261120",
   "predecessor": {
     "leaseId": "6d1a0dde-e1e3-4014-99e6-bac6f58d5756",
@@ -36,8 +36,8 @@
   },
   "pr": 1597,
   "checkpoint": {
-    "evidence": "Draft1597 remote08b11134 preserves source checkpoint and archived rejectionb8f27f2d; localfinalscience48unique+2GMAXQ+4uncached governors, corrected39native servicefloor and8saved/adapter pipeline checks verified; finalsource upload in progress",
-    "next": "Publish finalboundedcurrent-model changes, exact-head CI, freshcanonicalpreflight and merge1597; nextactualverticalfloor and simplifiedarch/serviceframes alreadyimplementing in isolatedworktrees",
-    "blocker": "Worked8bararch/post cage is REJECTEDdetail, notrescuedbysectionratios; actualverticalgravity/28paths and wetserviceframe, material and physical acceptance remain unearned"
+    "evidence": "PR1597 exact head14d41047740febb0b83b50ec792f80325db257db; complete defaultinlet now honestly rejects82mmneckclash and failedlowchassis; sharedfloor fullyparameterised",
+    "next": "Complete exact-head CI/preflight andmerge1597; integrate conventional sharedframe next with actualconsumer",
+    "blocker": "No completehood approval:850arm/back andupperexit closure, thermal/material/keeper andactualSTRgroup fixity remain open"
   }
 }
