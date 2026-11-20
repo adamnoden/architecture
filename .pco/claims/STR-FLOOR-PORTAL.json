@@ -1,41 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 44,
+  "generation": 45,
   "state": "claimed",
-  "leaseId": "dec44b72-4e34-40df-8172-25ba1d1a5e53",
+  "leaseId": "a044c93f-78e1-4267-955e-f89e12b23997",
   "holder": {
     "kind": "chatgpt",
-    "label": "convergence-2026-11-19-resumed"
+    "label": "convergence-resumed-20261120"
   },
-  "claimedAt": "2026-11-19T21:54:48.397Z",
-  "heartbeatAt": "2026-11-20T00:51:41.562Z",
-  "expiresAt": "2026-11-20T02:21:41.562Z",
-  "branch": "work/convergence-retained-components-20261120",
+  "claimedAt": "2026-11-20T07:38:27.612Z",
+  "heartbeatAt": "2026-11-20T07:38:27.612Z",
+  "expiresAt": "2026-11-20T09:08:27.612Z",
+  "branch": "work/convergence-retained-recovery-20261120",
   "predecessor": {
-    "leaseId": "1e462ea9-3790-42cc-8040-6bc65e6c313e",
-    "generation": 43,
-    "branch": "work/convergence-dpc-2026-11-19",
-    "pr": 1582,
+    "leaseId": "dec44b72-4e34-40df-8172-25ba1d1a5e53",
+    "generation": 44,
+    "branch": "work/convergence-retained-components-20261120",
+    "pr": 1586,
     "checkpoint": {
-      "evidence": "6d05f4e2e304b04573a866a481402026f497ecd7 on work/convergence-dpc-2026-11-19;16 final source/structural/DPC tests passed; native structural receipts regenerated with only2 provenance changes; #1582 merged12bd98fe",
-      "next": "Integrate final HAD split hood and IAS full-room handling branches, exact-head hosted fullhealth and publication preflight; full DPC six-component demand and whole-floor moisture path remain unresolved"
+      "evidence": "Main0298c1f2 merged1584 after8exact-head checks and3freshpreflights; IASconcept complete and leaseauto-released. Newdeca931c branch replaces hypothetical mass with net components, all96x4adverse contact comparisons, savedCLI/drawing and stale-evidence proofs; source and production tests pass.",
+      "next": "Require exact newhead hosted CI and freshSTR preflight; merge retained comparison, then continue actual dry-side section and retention/joint proofs. HAD independently develops the fixed light-pipe inlet.",
+      "blocker": "Actual local DPC bearing/shear, connected wall/floor/roof topology and moisture remain internal engineering; no structural closeout claimed."
     }
   },
   "recoverySource": {
-    "leaseId": "1e462ea9-3790-42cc-8040-6bc65e6c313e",
-    "generation": 43,
-    "branch": "work/convergence-dpc-2026-11-19",
-    "pr": 1582,
+    "leaseId": "dec44b72-4e34-40df-8172-25ba1d1a5e53",
+    "generation": 44,
+    "branch": "work/convergence-retained-components-20261120",
+    "pr": 1586,
     "checkpoint": {
-      "evidence": "6d05f4e2e304b04573a866a481402026f497ecd7 on work/convergence-dpc-2026-11-19;16 final source/structural/DPC tests passed; native structural receipts regenerated with only2 provenance changes; #1582 merged12bd98fe",
-      "next": "Integrate final HAD split hood and IAS full-room handling branches, exact-head hosted fullhealth and publication preflight; full DPC six-component demand and whole-floor moisture path remain unresolved"
+      "evidence": "Main0298c1f2 merged1584 after8exact-head checks and3freshpreflights; IASconcept complete and leaseauto-released. Newdeca931c branch replaces hypothetical mass with net components, all96x4adverse contact comparisons, savedCLI/drawing and stale-evidence proofs; source and production tests pass.",
+      "next": "Require exact newhead hosted CI and freshSTR preflight; merge retained comparison, then continue actual dry-side section and retention/joint proofs. HAD independently develops the fixed light-pipe inlet.",
+      "blocker": "Actual local DPC bearing/shear, connected wall/floor/roof topology and moisture remain internal engineering; no structural closeout claimed."
     }
-  },
-  "pr": 1586,
-  "checkpoint": {
-    "evidence": "Main0298c1f2 merged1584 after8exact-head checks and3freshpreflights; IASconcept complete and leaseauto-released. Newdeca931c branch replaces hypothetical mass with net components, all96x4adverse contact comparisons, savedCLI/drawing and stale-evidence proofs; source and production tests pass.",
-    "next": "Require exact newhead hosted CI and freshSTR preflight; merge retained comparison, then continue actual dry-side section and retention/joint proofs. HAD independently develops the fixed light-pipe inlet.",
-    "blocker": "Actual local DPC bearing/shear, connected wall/floor/roof topology and moisture remain internal engineering; no structural closeout claimed."
   }
 }
