@@ -101,9 +101,8 @@ function readTrial(input: unknown, reference: InsertCase): InsertCase {
   }
   if (!Number.isFinite(trial.eastEdgeMm) || Math.abs(trial.eastEdgeMm - reference.eastEdgeMm) > 10 ||
       !Number.isFinite(trial.headZMm) || trial.headZMm > reference.headZMm || trial.headZMm < reference.headZMm - 100 ||
-      !Number.isFinite(trial.plantPressureAxisXMm) || Math.abs(trial.plantPressureAxisXMm - reference.plantPressureAxisXMm) > 10 ||
-      !Number.isFinite(trial.plantVentOuterZMm) || Math.abs(trial.plantVentOuterZMm - reference.plantVentOuterZMm) > 5) {
-    throw new Error('South inlet sill geometry exceeds the screened edge, head, pressure-axis or vent-level range')
+      !Number.isFinite(trial.plantPressureAxisXMm) || Math.abs(trial.plantPressureAxisXMm - reference.plantPressureAxisXMm) > 10) {
+    throw new Error('South inlet sill geometry exceeds the screened edge, head or pressure-axis range')
   }
   return trial
 }

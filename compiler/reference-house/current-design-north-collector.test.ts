@@ -62,6 +62,74 @@ test('port movement and demand changes propagate separately through the north co
   assert.equal(reduced.evidence.installedAcceptance, false)
 })
 
+test('an intact collector candidate binds the real west route and omits only its candidate floor port', async () => {
+  const design = readGeorgianDesignSnapshot()
+  const saved = JSON.stringify(design)
+  const compile = prepareCurrentDesignCompile(design)
+  const request = await compile.readNorthCollectorCase()
+  const vent = await compile.readRearFoulVentCase()
+  assert.ok('collector' in request && 'vent' in vent)
+  const route = { ...vent.vent, buriedReceiving: {
+    hostAxisXYZMm: [-450, 11177.5, -2530], stackGradeZMm: -1800, hostGradeZMm: -1800,
+  } }
+  const trial = { ...request.collector, remoteMainBarShiftMm: 0, chordBendRadiusMm: 140,
+    portStrategy: 'linked-west-foul-route' as const,
+    placementToleranceMm: { withinDragCage: 5, toRetainedSteel: 5, toFormwork: 5 } }
+  const { portStrategy, ...retainedPortTrial } = trial
+  const [baseline, linked, changedRoute] = await Promise.all([
+    compile.northCollectorCase(retainedPortTrial),
+    compile.northCollectorCase(trial, route),
+    compile.northCollectorCase(trial, { ...route, buriedReceiving: { ...route.buriedReceiving, hostAxisXYZMm: [-450, 11177.5, -2550] } }),
+  ])
+  assert.ok(baseline.status === 'computed-comparison' && linked.status === 'computed-comparison'
+    && changedRoute.status === 'computed-comparison' && linked.serviceDependency)
+  assert.deepEqual(linked.comparison.straightDrag, baseline.comparison.straightDrag)
+  assert.deepEqual(linked.comparison.groundSplice, baseline.comparison.groundSplice)
+  assert.equal(linked.comparison.retainedNWPort.state, 'omitted-in-linked-candidate')
+  assert.equal(linked.comparison.retainedNWPort.canonicalSourcePortRetained, true)
+  assert.deepEqual(linked.comparison.retainedNWPort.levels, [])
+  assert.equal(linked.comparison.retainedNWPort.gapToWidenedWallUMm, null)
+  assert.equal(linked.comparison.rearCabinetPortTerritory.state, 'not-applicable-no-floor-port')
+  assert.equal(linked.stationCapacity.state, 'not-applicable-no-floor-port')
+  assert.equal(linked.cabinetStationCapacity.state, 'not-applicable-no-floor-port')
+  assert.doesNotMatch(linked.drawingSvg, /class="port"/)
+  assert.match(linked.drawingSvg, /intact-floor candidate/)
+  assert.ok(linked.chordTurn)
+  assert.deepEqual(linked.chordTurn.nwPort, { state: 'not-applicable-no-floor-port', portGapMm: null, overlap: null })
+  assert.equal(linked.chordTurn.drawing.primitives.some(item => item.id.startsWith('floor-port-')), false)
+  assert.deepEqual(linked.placementTolerance?.exceededInterfaces, [])
+  assert.equal(linked.serviceDependency.installedAcceptance, false)
+  assert.equal(linked.serviceDependency.canonicalSourcePortRetained, true)
+  assert.ok(Math.abs(linked.serviceDependency.requiredSiteEnvelope.maximumHostAxisZMm + 2524.5954471471023) < 1e-8)
+  assert.ok(linked.serviceDependency.adoptionConditions.some(condition => condition.includes('site host levels')))
+  assert.notEqual(linked.source.caseDigest, changedRoute.source.caseDigest)
+  assert.deepEqual(linked.comparison, changedRoute.comparison)
+  assert.equal(linked.evidence.installedAcceptance, false)
+  assert.equal(JSON.stringify(design), saved)
+  assert.deepEqual((await compile.readNorthCollectorCase()), request)
+})
+
+test('the linked collector cannot omit its port without an applicable geometrically viable service case', async () => {
+  const compile = prepareCurrentDesignCompile(readGeorgianDesignSnapshot())
+  const request = await compile.readNorthCollectorCase()
+  const vent = await compile.readRearFoulVentCase()
+  assert.ok('collector' in request && 'vent' in vent)
+  const trial = { ...request.collector, portStrategy: 'linked-west-foul-route' as const }
+  const route = { ...vent.vent, buriedReceiving: {
+    hostAxisXYZMm: [-450, 11177.5, -2530], stackGradeZMm: -1800, hostGradeZMm: -1800,
+  } }
+  await assert.rejects(compile.northCollectorCase(trial), /requires an explicit west foul route/)
+  await assert.rejects(compile.northCollectorCase(request.collector, route), /requires the linked collector strategy/)
+  await assert.rejects(compile.northCollectorCase(trial, vent.vent), /fails its dry, terminal or buried/)
+  await assert.rejects(compile.northCollectorCase(trial, { ...route, bindingDigest: '0'.repeat(64) }), /Stale|unsupported/)
+  await assert.rejects(compile.northCollectorCase(trial, { ...route, buriedReceiving: { ...route.buriedReceiving,
+    interiorGrade: [{ distanceFromStackMm: 1000, gradeZMm: -1860 }] } }), /fails its dry, terminal or buried/)
+  await assert.rejects(compile.northCollectorCase(trial, { ...route, riserAxisXYMm: [670, 9400] }), /fails its dry, terminal or buried/)
+  await assert.rejects(compile.northCollectorCase(trial, { ...route, terminalZMm: 7000 }), /This method covers/)
+  await assert.rejects(compile.northCollectorCase({ ...trial, portAxisXYMm: [649.5, 10927] }, route), /retain the canonical source port identity/)
+  await assert.rejects(compile.northCollectorCase({ ...trial, portStrategy: 'ignore' }, route), /Expected a linked/)
+})
+
 test('stale, outside-cabinet and unbound north collector cases fail closed', async () => {
   const design = readGeorgianDesignSnapshot()
   const compile = prepareCurrentDesignCompile(design)

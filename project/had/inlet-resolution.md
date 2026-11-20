@@ -2,10 +2,6 @@
 
 **HAD-INLET-RESOLUTION · 15 November 2026 · reject the three station layouts; redraw the east service sequence.** Assessment starts at main `a348aa922c8b90a00944b5d2ca9e7f8655fe698d`. The selected service model retains the old X11200/Z500 route only as a rejection witness. No inlet is adopted. [Owner-directed scope](https://github.com/adamnoden/architecture/issues/1477) · [Current service selection](inhabited-services-selection.md) · [Joined plan and section](studies/inlet-rewind.svg) · [Dimension and source receipt](studies/inlet-rewind.json)
 
-## Current joined result — 19 November 2026
-
-The [whole inlet convergence result](inlet-assembly-convergence.md) now controls the integration checkpoint. The saved compiler joins the actual sill axes, wet-cell risers, upper routes and named pressure endpoints with both fault, removal and cover cases. It rejects the native closure arrangement, distinguishes the refitted conditional option from a complete assembly, and identifies the remaining internal design obligations. Retain the indoor reference; no inlet or physical acceptance is adopted.
-
 ## Architectural disposition
 
 | Arrangement | Decision and controlling occurrence |

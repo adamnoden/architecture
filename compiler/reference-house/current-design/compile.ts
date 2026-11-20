@@ -91,9 +91,9 @@ export function prepareCurrentDesignCompile(input: unknown) {
       const { readNorthCollectorCase } = await import('./north-collector.js')
       return readNorthCollectorCase(resolved)
     },
-    northCollectorCase: async (input: unknown) => {
+    northCollectorCase: async (input: unknown, westVentCase?: unknown) => {
       const { runNorthCollectorCase } = await import('./north-collector.js')
-      return runNorthCollectorCase(resolved, input)
+      return runNorthCollectorCase(resolved, input, westVentCase)
     },
     readRearFoulVentCase: async () => {
       const { readRearFoulVentCase } = await import('./rear-foul-vent.js')

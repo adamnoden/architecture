@@ -10,6 +10,9 @@ import { compileResolvedStudyAssembly } from './study-floor.js'
 import { compileStudyGroundSupport } from './study-ground-support.js'
 import { compileResolvedStudyLinings, layStudySouthPanelStock } from './study-linings.js'
 import { compileStudyWallTransition } from './study-wall-transition.js'
+import { admitStudyOrdinaryHandlingPlan, type StudyOrdinaryHandlingPlan } from './study-ordinary-handling.js'
+import { compileStudyInstalledInlet } from './study-installed-inlet.js'
+import { compileStudyRoomAssembly } from './study-room-assembly.js'
 
 type FloorAssembly = ReturnType<typeof compileResolvedStudyAssembly>
 type Box = readonly [number, number, number, number]
@@ -27,6 +30,15 @@ type Case = {
   readonly finishDepthMm?: 15 | 20
   readonly groundDeckLevelLossMm?: number
   readonly firstRestBoardSizeMm?: Pair
+  readonly ordinaryHandling?: StudyOrdinaryHandlingPlan
+  readonly frameFootClearanceMm?: 5
+  readonly floorBorderMinimumMm?: 60 | 150
+  readonly installedServices?: 'retained-plan-projection' | 'wall-hung-candidate'
+  readonly floorWorkerTopMm?: number
+  readonly floorPosture?: 'retained-cylinder' | 'kneeling-candidate'
+  readonly wallPanelWidthMm?: 420 | 450
+  readonly wallFace?: 'oak' | 'porcelain-steel'
+  readonly wallReleaseMm?: number
   readonly opening?: OpeningCase
 }
 
@@ -34,7 +46,6 @@ export function readStudyRoomKitReferenceCase(): Case {
   return { schema: 'ias-study-room-kit-case/1', units: 'mm', pitchMm: 300, wearingFace: 'oak' }
 }
 
-const minimumBorderMm = 60
 const pickupBox: Box = [3800, 500, 4100, 800]
 const firstRestBox: Box = [4100, 500, 4400, 800]
 const directRelease = { bodyRadiusMm: 300, bodyToPanelMm: 35, bodySettingMm: 5, maximumReachMm: 600, gripZ: 180, shoulderZ: 360 }
@@ -44,12 +55,20 @@ function record(input: unknown): input is Record<string, unknown> {
 }
 
 function caseInput(input: unknown): Case {
-  if (!record(input) || Object.keys(input).some(key => !['schema', 'units', 'pitchMm', 'wearingFace', 'finishDepthMm', 'groundDeckLevelLossMm', 'firstRestBoardSizeMm', 'opening'].includes(key))
+  if (!record(input) || Object.keys(input).some(key => !['schema', 'units', 'pitchMm', 'wearingFace', 'finishDepthMm', 'groundDeckLevelLossMm', 'firstRestBoardSizeMm', 'ordinaryHandling', 'frameFootClearanceMm', 'floorBorderMinimumMm', 'installedServices', 'floorWorkerTopMm', 'floorPosture', 'wallPanelWidthMm', 'wallFace', 'wallReleaseMm', 'opening'].includes(key))
     || input.schema !== 'ias-study-room-kit-case/1' || input.units !== 'mm'
     || typeof input.pitchMm !== 'number' || !Number.isFinite(input.pitchMm)
     || (input.finishDepthMm !== undefined && input.finishDepthMm !== 15 && input.finishDepthMm !== 20)
     || (input.groundDeckLevelLossMm !== undefined && (typeof input.groundDeckLevelLossMm !== 'number'
       || !Number.isFinite(input.groundDeckLevelLossMm) || input.groundDeckLevelLossMm < 0))
+    || (input.frameFootClearanceMm !== undefined && input.frameFootClearanceMm !== 5)
+    || (input.floorBorderMinimumMm !== undefined && input.floorBorderMinimumMm !== 60 && input.floorBorderMinimumMm !== 150)
+    || (input.installedServices !== undefined && input.installedServices !== 'retained-plan-projection' && input.installedServices !== 'wall-hung-candidate')
+    || (input.floorPosture !== undefined && input.floorPosture !== 'retained-cylinder' && input.floorPosture !== 'kneeling-candidate')
+    || (input.floorWorkerTopMm !== undefined && (typeof input.floorWorkerTopMm !== 'number' || !Number.isFinite(input.floorWorkerTopMm) || input.floorWorkerTopMm < 900 || input.floorWorkerTopMm > 2000))
+    || (input.wallPanelWidthMm !== undefined && input.wallPanelWidthMm !== 420 && input.wallPanelWidthMm !== 450)
+    || (input.wallFace !== undefined && input.wallFace !== 'oak' && input.wallFace !== 'porcelain-steel')
+    || (input.wallReleaseMm !== undefined && (typeof input.wallReleaseMm !== 'number' || !Number.isFinite(input.wallReleaseMm) || input.wallReleaseMm <= 0))
     || (input.wearingFace !== 'oak' && input.wearingFace !== 'stone-steel')) {
     throw new TypeError('INVALID_STUDY_ROOM_KIT_CASE')
   }
@@ -60,7 +79,16 @@ function caseInput(input: unknown): Case {
   const common: Case = { schema: input.schema, units: input.units, pitchMm: input.pitchMm, wearingFace: input.wearingFace,
     ...(input.finishDepthMm === undefined ? {} : { finishDepthMm: input.finishDepthMm }),
     ...(input.groundDeckLevelLossMm === undefined ? {} : { groundDeckLevelLossMm: input.groundDeckLevelLossMm }),
-    ...(size === undefined ? {} : { firstRestBoardSizeMm: [size[0], size[1]] as const }) } as const
+    ...(size === undefined ? {} : { firstRestBoardSizeMm: [size[0], size[1]] as const }),
+    ...(input.ordinaryHandling === undefined ? {} : { ordinaryHandling: admitStudyOrdinaryHandlingPlan(input.ordinaryHandling) }),
+    ...(input.frameFootClearanceMm === undefined ? {} : { frameFootClearanceMm: input.frameFootClearanceMm }),
+    ...(input.floorBorderMinimumMm === undefined ? {} : { floorBorderMinimumMm: input.floorBorderMinimumMm }),
+    ...(input.installedServices === undefined ? {} : { installedServices: input.installedServices }),
+    ...(input.floorWorkerTopMm === undefined ? {} : { floorWorkerTopMm: input.floorWorkerTopMm }),
+    ...(input.floorPosture === undefined ? {} : { floorPosture: input.floorPosture }),
+    ...(input.wallPanelWidthMm === undefined ? {} : { wallPanelWidthMm: input.wallPanelWidthMm }),
+    ...(input.wallFace === undefined ? {} : { wallFace: input.wallFace }),
+    ...(input.wallReleaseMm === undefined ? {} : { wallReleaseMm: input.wallReleaseMm }) } as const
   if (input.opening === undefined) return common
   const opening = input.opening
   const finite = (value: unknown): value is number => typeof value === 'number' && Number.isFinite(value) && !Object.is(value, -0)
@@ -76,7 +104,7 @@ function caseInput(input: unknown): Case {
   throw new TypeError('INVALID_STUDY_ROOM_KIT_OPENING')
 }
 
-function setout(from: number, to: number, origin: number, pitch: number) {
+function setout(from: number, to: number, origin: number, pitch: number, minimumBorderMm: number) {
   const cuts = [from]
   for (let cut = origin + Math.floor((from - origin) / pitch + 1) * pitch; cut < to; cut += pitch) cuts.push(cut)
   cuts.push(to)
@@ -108,7 +136,7 @@ function gripGeometry([x0, y0, x1, y1]: Box) {
   return { centres, endMarginMm: (Math.max(x1 - x0, y1 - y0) - keyCentresMm) / 2 }
 }
 
-function partSetout(assembly: FloorAssembly) {
+function partSetout(assembly: FloorAssembly, minimumBorderMm: number) {
   const { grid, source, section, schedule } = assembly
   const inset = section.jointMm / 2
   const massPerSquareMm = schedule.completeTileWearFaceMassKg / (schedule.clearTileSideMm ** 2)
@@ -130,8 +158,8 @@ function partSetout(assembly: FloorAssembly) {
     }
   }
   const original = grid.bands.flatMap(([x0, y0, x1, y1], band) =>
-    setout(x0, x1, grid.origin[0], grid.pitchMm).flatMap(([left, right]) =>
-      setout(y0, y1, grid.origin[1], grid.pitchMm).map(([bottom, top]) => makePart([left, bottom, right, top], band))))
+    setout(x0, x1, grid.origin[0], grid.pitchMm, minimumBorderMm).flatMap(([left, right]) =>
+      setout(y0, y1, grid.origin[1], grid.pitchMm, minimumBorderMm).map(([bottom, top]) => makePart([left, bottom, right, top], band))))
   const withheld = (code: string) => ({ parts: original, emitterPlinth: { state: 'withheld', code } as const })
   if (grid.pitchMm !== 300) return withheld('TRIAL_EMITTER_BORDER_REQUIRES_300_MM_STOCK')
   const emitterId = 'service-emitter-study-W'
@@ -189,6 +217,30 @@ function partSetout(assembly: FloorAssembly) {
       support: 'independent bearing to continuous deck; no radiator support on removable finishes',
     } as const,
   }
+}
+
+function notchFrameFeet(layout: ReturnType<typeof partSetout>, frameFootprints: readonly Box[], clearanceMm: number | undefined) {
+  const subtract = (box: Box, reserve: Box): Box[] => {
+    const [x0, y0, x1, y1] = box
+    const left = Math.max(x0, reserve[0]), right = Math.min(x1, reserve[2])
+    const bottom = Math.max(y0, reserve[1]), top = Math.min(y1, reserve[3])
+    if (left >= right || bottom >= top) return [box]
+    const pieces: Box[] = [[x0, y0, left, y1], [right, y0, x1, y1], [left, y0, right, bottom], [left, top, right, y1]]
+    return pieces.filter(piece => piece[0] < piece[2] && piece[1] < piece[3])
+  }
+  return { ...layout, parts: layout.parts.map(part => {
+    if (clearanceMm === undefined) return { ...part, facePieces: [part.face], frameNotches: [] as Box[], stockAreaMm2: area(part.box) }
+    const frameNotches = frameFootprints.map(([x, y, width, depth]): Box => [x - clearanceMm, y - clearanceMm, x + width + clearanceMm, y + depth + clearanceMm])
+      .filter(footprint => intersects(part.box, footprint))
+      .map(([x0, y0, x1, y1]): Box => [x0, y0, Math.max(x1, part.box[2]), y1])
+    const facePieces = frameNotches.reduce<Box[]>((pieces, footprint) => pieces.flatMap(piece => subtract(piece, footprint)), [part.face])
+    const stockPieces = frameNotches.reduce<Box[]>((pieces, footprint) => pieces.flatMap(piece => subtract(piece, footprint)), [part.box])
+    if (part.grip?.centres.some(([x, y]) => !facePieces.some(box => x >= box[0] && x <= box[2] && y >= box[1] && y <= box[3]))) {
+      throw new RangeError('STUDY_FRAME_NOTCH_INTERSECTS_PICKUP_KEY')
+    }
+    return { ...part, facePieces, frameNotches, stockAreaMm2: stockPieces.reduce((sum, piece) => sum + area(piece), 0),
+      wearFaceKg: part.wearFaceKg * facePieces.reduce((sum, piece) => sum + area(piece), 0) / area(part.face) }
+  }) }
 }
 
 function handlingScreen(assembly: FloorAssembly, layout: ReturnType<typeof partSetout>, access: BcrFurnitureAccess) {
@@ -322,7 +374,7 @@ function boardOriginsInsideBands(bands: readonly Box[], width: number, depth: nu
 }
 
 function compareFirstRestBoard(
-  parts: ReturnType<typeof partSetout>['parts'],
+  parts: ReturnType<typeof notchFrameFeet>['parts'],
   handling: ReturnType<typeof handlingScreen>,
   firstRest: NonNullable<ReturnType<typeof compileStudyFurnitureMotion>['firstRest']> | null | undefined,
   trialSize: Pair | undefined,
@@ -337,6 +389,7 @@ function compareFirstRestBoard(
   const padHalf = padWidthMm / 2
   const padPatternSizeMm = boardAxes.map(axis => 2 * Math.max(...centredPads.map(point => Math.abs(point[axis]))) + padWidthMm)
   const faceByPartId = new Map(parts.map(part => [part.id, part.face]))
+  const facePiecesByPartId = new Map(parts.map(part => [part.id, part.facePieces]))
   const comparison = {
     state: 'placement-comparison-only', physicalAcceptance: false, comparedWitnessCount: firstRest.witnessCount,
   } as const
@@ -355,7 +408,7 @@ function compareFirstRestBoard(
       maxPad: boardAxes.map(axis => Math.max(...orientation.offsets.map(point => point[axis])) + padHalf),
       bandOrigins: containInBands ? boardOriginsInsideBands(floorBands, orientation.dimensions[0], orientation.dimensions[1]) : null,
     }))
-    const place = (partId: string, { restPartId, shiftXYMm, stage }: FirstRestWitness) => {
+    const place = (partId: string, { restPartId, shiftXYMm, stage, worker }: FirstRestWitness) => {
       const moving = faceByPartId.get(partId)!
       const receiving = faceByPartId.get(restPartId)!
       const movingFaceSizeMm = boxSize(moving)
@@ -385,9 +438,9 @@ function compareFirstRestBoard(
           : [{ lower, upper }]
         const stageObstructions = firstRest.boardPlanObstructions?.find(item => item.stage === stage)?.obstacles
         if (obstructionMode && !stageObstructions) continue
-        const obstacles = obstructionMode ? Object.values(stageObstructions!).map(item =>
+        const obstacles = [...(obstructionMode ? Object.values(stageObstructions!).map(item =>
           obstructionMode === 'local-wall-trim-released' ? item.withoutWallTrimXYXYMm ?? item.boxXYXYMm : item.boxXYXYMm,
-        ) : []
+        ) : []), ...(worker.lowSupportSweepsXYXYMm ?? [])]
         const origins = originRanges.flatMap(range => {
           const coordinates = boardAxes.map(axis => [...new Set([
             (range.lower[axis] + range.upper[axis]) / 2, range.lower[axis], range.upper[axis],
@@ -396,7 +449,14 @@ function compareFirstRestBoard(
           ])])
           return coordinates[0].flatMap(x => coordinates[1].map(y => [x, y] as const))
         })
-        const origin = origins.find(([x, y]) => !obstacles.some(box => intersects([x, y, x + dimensions[0], y + dimensions[1]], box)))
+        const origin = origins.find(([x, y]) => !obstacles.some(box => intersects([x, y, x + dimensions[0], y + dimensions[1]], box))
+          && rotatedOffsets.every(([u, v]) => {
+            const pad: Box = [x + u - padHalf, y + v - padHalf, x + u + padHalf, y + v + padHalf]
+            const supportedArea = facePiecesByPartId.get(restPartId)!.reduce((sum, box) => sum +
+              Math.max(0, Math.min(pad[2], box[2]) - Math.max(pad[0], box[0]))
+              * Math.max(0, Math.min(pad[3], box[3]) - Math.max(pad[1], box[1])), 0)
+            return Math.abs(supportedArea - padWidthMm ** 2) < 1e-8
+          }))
         if (!origin) continue
         const [x, y] = origin
         return {
@@ -632,30 +692,49 @@ function releaseScreen(assembly: FloorAssembly, parts: ReturnType<typeof partSet
 function deriveStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
   const request = caseInput(input)
   const assembly = compileResolvedStudyAssembly(resolved, { pitchMm: request.pitchMm, wearingFace: request.wearingFace, finishDepthMm: request.finishDepthMm })
-  const floorLayout = partSetout(assembly)
+  const { house } = readBoundOccupiedServices(resolved)
+  const floorLayout = notchFrameFeet(partSetout(assembly, request.floorBorderMinimumMm ?? 60),
+    house.model.studyDoorOperation.checkedFramePieces, request.frameFootClearanceMm)
   const { parts, emitterPlinth } = floorLayout
   const { opening, wall, grille, grilleKeepOut, nativeWindow } = openingSetout(resolved, request)
+  const installedInlet = compileStudyInstalledInlet(grille.actualRetainedInlet, request.installedServices ?? 'retained-plan-projection', request.floorWorkerTopMm ?? 900, assembly.grid.bands[0][1])
+  const coordinatedGrilleKeepOut = installedInlet.state === 'wall-hung-candidate'
+    ? { ...grilleKeepOut, box: [Math.min(grilleKeepOut.box[0], installedInlet.wallReserveXZMm[0]),
+      Math.min(grilleKeepOut.box[1], installedInlet.wallReserveXZMm[1]), Math.max(grilleKeepOut.box[2], installedInlet.wallReserveXZMm[2]),
+      Math.max(grilleKeepOut.box[3], installedInlet.wallReserveXZMm[3])] as Box } : grilleKeepOut
+  const coordinatedWall = installedInlet.state === 'wall-hung-candidate' ? { ...wall,
+    southField: layStudySouthPanelStock(wall.southField.startXMm, wall.southField.startXMm + wall.southField.widthMm,
+      wall.southField.pitchMm, wall.southField.windows, [coordinatedGrilleKeepOut.box]) } : wall
   const release = releaseScreen(assembly, parts)
   const handling = handlingScreen(assembly, floorLayout, nativeWindow.furnitureAccess)
   const movement = nativeWindow.furnitureAccess
   const { bodyRadiusMm, bodyToPanelMm, bodySettingMm, maximumReachMm, gripZ, shoulderZ } = directRelease
   const firstRest = emitterPlinth.state === 'withheld' || handling.state === 'withheld' ? undefined : {
-    parts: parts.map(({ id, box, face, grip }) => {
+    parts: parts.map(({ id, box, face, grip, facePieces }) => {
       if (!grip) throw new Error(`Missing Study pickup keys for ${id}`)
-      return { id, box, face, keyCentresXYMm: grip.centres }
+      return { id, box, face, keyCentresXYMm: grip.centres, ...(request.frameFootClearanceMm === undefined ? {} : { facePieces }) }
     }),
     bandsXYXYMm: assembly.grid.bands,
     emitterPlinthXYXYMm: emitterPlinth.box,
-    bodyRadiusMm, bodyToPanelMm, bodySettingMm, maximumReachMm, verticalGripDifferenceMm: shoulderZ - gripZ,
+    bodyRadiusMm, bodyToPanelMm: request.floorPosture === 'kneeling-candidate' ? -40 : bodyToPanelMm,
+    ...(request.floorPosture === 'kneeling-candidate' ? { lowWorkerProfile: { schema: 'ias-kneeling-floor-profile/1' as const,
+      torsoBottomMm: 180, torsoTopMm: request.floorWorkerTopMm ?? 900, lowContactHeightMm: 180,
+      normalRangeMm: [-250, 150] as const, tangentRangesMm: [[-200, -60], [60, 200]] as const, physicalAcceptance: false as const } } : {}),
+    bodySettingMm, maximumReachMm, verticalGripDifferenceMm: shoulderZ - gripZ,
     liftMm: handling.emitterEdgeRelease.pickupLiftMm,
     restBoardTopMm: handling.emitterEdgeRelease.restBoardTopMm, finishDepthMm: assembly.section.finishDepthMm,
+    ...(installedInlet.state === 'wall-hung-candidate' ? { installedServices: installedInlet } : {}),
+    ...(request.ordinaryHandling ? { ordinaryHandling: request.ordinaryHandling } : {}),
     ...(request.firstRestBoardSizeMm ? { includeAlternateReceivers: true, maximumExtendedTransferMm: 2 * assembly.grid.pitchMm } : {}),
   }
   const furnitureMotion = handling.state === 'withheld' ? null : compileStudyFurnitureMotion(
     movement.receipt.sha256, movement.turnReceiptSha256, handling.parking.parkedDesk, handling.parking.parkedChair, firstRest,
   )
   const board = compareFirstRestBoard(parts, handling, furnitureMotion?.firstRest, request.firstRestBoardSizeMm, assembly.grid.bands)
-  const { house } = readBoundOccupiedServices(resolved)
+  const ordinaryHandling = request.ordinaryHandling ? furnitureMotion?.firstRest?.ordinaryHandling ?? {
+    schema: 'ias-study-ordinary-handling-result/1' as const, state: 'source-withheld' as const, physicalAcceptance: false as const,
+    partCount: parts.length, witnessCount: 0, parts: [], diagnostics: [{ code: 'IAS_ORDINARY_SOURCE_FLOOR_FAMILY_WITHHELD', objectIds: [assembly.source.roomId] }],
+  } : null
   const [doorMin, doorMax] = house.model.studyDoorOperation.rough
   const [, doorAxis] = house.model.studyDoorOperation.hinge
   const door = { id: 'HAD/protectedRoute/STUDY', rough: [doorMin, doorMax], axis: doorAxis } as const
@@ -664,16 +743,16 @@ function deriveStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
     source: assembly.source, caseDigest: sha256SemanticFingerprint({ request, source: assembly.source, opening }),
     bands: assembly.grid.bands, occupied: assembly.grid.occupied,
     floor: {
-      parts, emitterPlinth, jointMm: assembly.section.jointMm, wearingFaceMm: assembly.section.wearFaceMm, beddingMm: assembly.section.beddingTerritoryMm,
+      parts, emitterPlinth, installedInlet, ordinaryHandling, frameFootprints: house.model.studyDoorOperation.checkedFramePieces, jointMm: assembly.section.jointMm, wearingFaceMm: assembly.section.wearFaceMm, beddingMm: assembly.section.beddingTerritoryMm,
       depthUnassignedWithinFinishMm: assembly.section.finishSupportDepthUnresolvedMm, handling, furnitureMotion,
       firstRestBoard: board.retained,
       ...(request.firstRestBoardSizeMm === undefined ? {} : { firstRestBoardTrial: board.trial }),
       groundSupport: compileStudyGroundSupport(resolved, assembly.section, request.groundDeckLevelLossMm ?? 0),
       borderParts: parts.filter(part => part.role === 'border').length, release,
-      coverageMm2: parts.reduce((total, part) => total + area(part.box), emitterPlinth.state === 'withheld' ? 0 : emitterPlinth.areaMm2),
+      coverageMm2: parts.reduce((total, part) => total + part.stockAreaMm2, emitterPlinth.state === 'withheld' ? 0 : emitterPlinth.areaMm2),
       heldEvidence: ['permanent deck, bedding and product tests', 'finished-room installation and handling'],
     },
-    opening, door, wall, grille, grilleKeepOut,
+    opening, door, wall: coordinatedWall, grille, grilleKeepOut: coordinatedGrilleKeepOut,
   } as const
   return { kit, nativeWindow }
 }
@@ -682,7 +761,8 @@ export type StudyRoomKit = ReturnType<typeof deriveStudyRoomKit>['kit']
 
 export function compileStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
   const { kit, nativeWindow } = deriveStudyRoomKit(resolved, input)
-  return { kit, wallTransition: compileStudyWallTransition(kit, nativeWindow) }
+  const wallTransition = compileStudyWallTransition(kit, nativeWindow)
+  return { kit, wallTransition, roomAssembly: compileStudyRoomAssembly(kit, wallTransition) }
 }
 
 export function drawStudyRoomKitPlan(kit: StudyRoomKit, view: 'layout' | 'emitter-edge' | 'furniture-access' | 'furniture-motion' = 'layout'): DrawingSceneV2 {
@@ -727,11 +807,11 @@ export function drawStudyRoomKitPlan(kit: StudyRoomKit, view: 'layout' | 'emitte
       : 'Candidate finish field, fabricated borders, rough openings and shown furniture.',
     widthMm: projection.length(width) + 24, heightMm: projection.length(height) + 34,
     primitives: [
-      ...kit.floor.parts.map(part => ({
-        kind: 'rect' as const, id: part.id, ...rect(part.face), stroke: 'secondary' as const,
+      ...kit.floor.parts.flatMap(part => part.facePieces.map((face, index) => ({
+        kind: 'rect' as const, id: index ? part.id + '/shape/' + index : part.id, ...rect(face), stroke: 'secondary' as const,
         fill: blockedPartIds.has(part.id) ? 'context' as const : 'none' as const, dash: part.role === 'border' ? 'datum' as const : 'none' as const,
-        metadata: { role: part.role, band: part.band, ...(blockedPartIds.has(part.id) ? { coveredInBothBcrStages: true } : {}) },
-      })),
+        metadata: { role: part.role, band: part.band, ...(part.frameNotches.length ? { shapedPartId: part.id } : {}), ...(blockedPartIds.has(part.id) ? { coveredInBothBcrStages: true } : {}) },
+      }))),
       ...(kit.floor.emitterPlinth.state === 'withheld' ? [] : [{
         kind: 'rect' as const, id: kit.floor.emitterPlinth.id, ...rect(kit.floor.emitterPlinth.face),
         stroke: 'primary' as const, fill: 'context' as const, metadata: { role: 'fixed emitter plinth' },
@@ -769,6 +849,44 @@ export function drawStudyRoomKitPlan(kit: StudyRoomKit, view: 'layout' | 'emitte
           : bcrParking ? `${blockedPartIds.size} parts covered in both BCR stages · ${bcrParking.deskShiftMm} mm desk shift`
           : useParking ? 'Chair parked · 300 mm lift-out transfer south of pickup'
           : `${kit.request.pitchMm} mm pitch · ${kit.floor.parts.length} parts · ${kit.floor.borderParts} border parts` },
+    ],
+  }
+}
+
+export function drawStudyOrdinaryHandling(kit: StudyRoomKit, partId: string): DrawingSceneV2 {
+  const proof = kit.floor.ordinaryHandling
+  if (!proof || proof.state === 'source-withheld') throw new RangeError('STUDY_ORDINARY_HANDLING_VIEW_WITHHELD')
+  const selected = proof.parts.find(part => part.partId === partId)
+  const part = kit.floor.parts.find(part => part.id === partId)
+  if (!selected || selected.state !== 'joined-geometry-witness' || !part || !selected.boardXYXYMm
+    || !selected.workerPathXYMm || !selected.panelPathWaypointDeltasMm) throw new RangeError('STUDY_ORDINARY_HANDLING_VIEW_HAS_NO_WITNESS')
+  const [x, y] = kit.bands[0]
+  const width = Math.max(...kit.bands.map(band => band[2])) - x
+  const height = Math.max(...kit.bands.map(band => band[3])) - y
+  const projection = createPlanPaperProjection({ scaleDenominator: 25, modelBounds: { x, y, width, height }, paperOrigin: { x: 12, y: 14 } })
+  const rectangle = ([x0, y0, x1, y1]: Box) => projection.rect({ x: x0, y: y0, width: x1 - x0, height: y1 - y0 })
+  const deltas: readonly Pair[] = [[0, 0], ...selected.panelPathWaypointDeltasMm]
+  const shapes = deltas.flatMap((delta, step) => part.facePieces.map((piece, index) => ({
+    kind: 'rect' as const, id: `panel-path/${step}/${index}`, ...rectangle([piece[0] + delta[0], piece[1] + delta[1], piece[2] + delta[0], piece[3] + delta[1]]),
+    stroke: 'primary' as const, dash: step ? 'provisional' as const : 'none' as const,
+  })))
+  const people = selected.workerPathXYMm.map(([cx, cy], index) => ({
+    kind: 'path' as const, id: `worker/${index}`, stroke: 'secondary' as const, dash: 'datum' as const,
+    rings: [Array.from({ length: 64 }, (_, side) => projection.point(cx + 300 * Math.cos(side * Math.PI / 32), cy + 300 * Math.sin(side * Math.PI / 32)))],
+  }))
+  const base = drawStudyRoomKitPlan(kit)
+  return {
+    ...base, sourceId: kit.source.occupiedHouse + '/' + kit.caseDigest, viewId: 'ias-study-ordinary-handling-' + partId.split('/').slice(-2).join('-'),
+    title: 'Study ordinary floor renewal',
+    description: 'Source-bound moving finish, ordinary work board and 600 mm handler envelopes. Nominal geometric witness; loaded handling and tolerances remain unqualified.',
+    primitives: [
+      { kind: 'rect', id: 'handling-paper', x: 0, y: 0, width: base.widthMm, height: base.heightMm, fill: 'paper' },
+      ...base.primitives.filter(primitive => primitive.id !== 'pitch'), ...shapes, ...people,
+      { kind: 'rect', id: 'ordinary-work-board', ...rectangle(selected.boardXYXYMm), stroke: 'primary', fill: 'context' },
+      ...kit.floor.frameFootprints.map(([a, b, w, d], index) => ({ kind: 'rect' as const, id: `fixed-frame-foot/${index}`,
+        ...rectangle([a, b, a + w, b + d]), stroke: 'primary' as const, fill: 'context' as const })),
+      { kind: 'text', id: 'ordinary-handling-key', x: 12, y: projection.length(height) + 24, role: 'note',
+        value: `Board ${selected.boardId} · ${selected.maximumKeyReachMm?.toFixed(1)} mm key reach · ${selected.bodyToPanelMm?.toFixed(1)} mm body/part` },
     ],
   }
 }

@@ -22,13 +22,13 @@ if (JSON.stringify(oak.kit.bands) !== JSON.stringify(study.bands)
 }
 
 const [x0, y0, x1] = study.bands[0];
-const ceiling = 3100;
+const ceiling = oak.wallTransition.field.ceilingZMm;
 const line = (a, b, colour, width = 1) => `<path d="M${a.join(',')} L${b.join(',')}" stroke="${colour}" stroke-width="${width}" fill="none"/>`;
 const label = (x, y, value, name = 'note') => `<text x="${x}" y="${y}" class="${name}">${value}</text>`;
 const shape = (points, fill, stroke = '#554838', width = 1) => `<polygon points="${points.map(p => p.join(',')).join(' ')}" fill="${fill}" stroke="${stroke}" stroke-width="${width}"/>`;
 const toString = value => Number(value.toFixed(2));
 
-function view(mode) {
+function view(mode, candidate = null) {
   const solid = mode === 'fixed';
   const ceramic = mode === 'ceramic';
   const p = (x, y, z = 0) => [
@@ -44,7 +44,9 @@ function view(mode) {
   const inset = ceramic ? '#d7c9a5' : '#b78a60';
   const cream = '#e9dfcc';
   const floorTint = ceramic ? ['#a8a49a', '#d3c7ae'] : ['#a17c53', '#b79363', '#aa8558', '#c29f71'];
-  const { parts } = (ceramic ? stone : oak).kit.floor;
+  const proposal = candidate ?? (ceramic ? stone : oak);
+  const { kit } = proposal;
+  const { parts } = kit.floor;
   const solidFloor = study.bands.flatMap(([a,b,c,d]) => {
     if (!solid) return [floor([a,b,c,d],floorTint[0])];
     return Array.from({length: Math.ceil((c - a) / 104)}, (_, i) => {
@@ -52,11 +54,12 @@ function view(mode) {
       return floor([left,b,Math.min(c,left+104),d],floorTint[i%floorTint.length]);
     });
   }).join('');
-  const trayFloor = solid ? '' : parts.map(({ face, band }, index) =>
-    floor(face, floorTint[(index + band) % floorTint.length])
+  const trayFloor = solid ? '' : parts.flatMap(({ facePieces, band }, index) => facePieces.map(face =>
+    floor(face, floorTint[(index + band) % floorTint.length]))
   ).join('');
   const faceData = (axis, start, end) => {
-    const windows = study.windows.filter(item => item.wall === 'outer-' + axis);
+    const windows = kit.wall.boundRoomOpenings.filter(item => item.wall === 'outer-' + axis).map(item => item.id === kit.opening.id.replace('GROUND/','')
+      ? { ...item, centre: kit.opening.occupiedCentreMm, width: kit.opening.box[2] - kit.opening.box[0] } : item);
     const edges = windows.flatMap(({ centre, width }) => [centre - width / 2, centre + width / 2]);
     return { axis, end, windows, origins: [start, 1120, ...edges, end] };
   };
@@ -65,12 +68,18 @@ function view(mode) {
     const start = axis === 'south' ? x0 : y0;
     const f = axis === 'south' ? (s,z)=>p(s,y0,z) : (s,z)=>p(x0,s,z);
     const piece = (a,b,l,h,fill,stroke) => face(axis,a,b,l,h,fill,stroke);
-    const panelFrames = origins.slice(0,-1).flatMap((a,i)=>{
-      const b=origins[i+1], span=b-a;
-      if (span < 180) return [];
-      const zones = solid ? [[195,886]] : [[195,886],[925,2730]];
-      return zones.map(([z1,z2])=>piece(a+35,b-35,z1,z2,inset,'#75563e')+piece(a+48,b-48,z1+16,z2-16,inset,ceramic?'#7c7867':'#9b6e49')).join('');
-    }).join('');
+    const sourceWall = proposal.roomAssembly.walls.find(item => item.id === axis);
+    const panelFrames = solid ? origins.slice(0,-1).flatMap((a,i)=>{
+      const b=origins[i+1];
+      if (b-a < 180) return [];
+      return piece(a+35,b-35,195,886,inset,'#75563e')+piece(a+48,b-48,211,870,inset,'#9b6e49');
+    }).join('') : sourceWall.pieces.map(part => {
+      const [a,z1,b,z2] = part.faceBox;
+      const plain = piece(a,b,z1,z2,panel,ceramic?'#a49a85':'#8f6e50');
+      return plain + (b-a > 120 && z2-z1 > 120 ? piece(a+18,b-18,z1+18,z2-18,inset,ceramic?'#b2a68c':'#9b7654')
+        + piece(a+24,b-24,z1+24,z2-24,inset,ceramic?'#cdc2aa':'#af8660') : '');
+    }).join('') + sourceWall.reserves.filter(item => item.role === 'retained-mineral-window-surround' || item.role === 'retained-emitter-background')
+      .map(({box:[a,z1,b,z2]})=>piece(a,b,z1,z2,cream,'#d4c6ae')).join('');
     const arches = windows.map(({centre,width,sill,spring,head})=>{
       const a = centre-width/2, b=centre+width/2, rise=head-spring;
       const radius=width**2/(8*rise)+rise/2;
@@ -86,9 +95,13 @@ function view(mode) {
       const bars = [...verticalBars, ...[1350, 1950].map(z => line(f(a, z), f(b, z), '#637470', 1.4))].join('');
       return jambs+bars+line(f(a-28,sill-14),f(b+28,sill-14),'#6c563d',2.4);
     }).join('');
-    const [grilleLeft, grilleBottom, grilleRight, grilleTop] = oak.kit.grilleKeepOut.box;
+    const inlet = kit.grille.actualRetainedInlet;
+    const radius = Math.max(inlet.completeOD, inlet.retainedReceiverID) / 2 + kit.grilleKeepOut.trialTrimMm;
+    const [gx,,gz] = inlet.stationDatumMm;
+    const [grilleLeft, grilleBottom, grilleRight, grilleTop] = [gx-radius,gz-radius,gx+radius,gz+radius];
+    const serviceCover = !solid && axis === 'south' ? piece(kit.grilleKeepOut.box[0],kit.grilleKeepOut.box[2],kit.grilleKeepOut.box[1],kit.grilleKeepOut.box[3],panel,'#8f6e50') : '';
     const grille = axis === 'south'
-      ? piece(grilleLeft,grilleRight,grilleBottom,grilleTop,'#655d4c','#a08049')
+      ? serviceCover + piece(grilleLeft,grilleRight,grilleBottom,grilleTop,'#655d4c','#a08049')
         + Array.from({ length: 7 }, (_, i) => {
           const z = grilleBottom + 31 + i * (grilleTop - grilleBottom - 62) / 6;
           return line(f(grilleLeft + 24,z),f(grilleRight - 24,z),'#b7a484',1.05);
@@ -96,7 +109,10 @@ function view(mode) {
       : '';
     return piece(start,end,0,ceiling,solid?cream:panel,'#594a3a')+(solid?piece(start,end,150,910,panel,'#75563e'):'')
       +panelFrames+piece(start,end,0,145,'#775737','#553b29')
-      +piece(start,end,895,922,'#997044','#6e5235')+piece(start,end,2970,3100,cream,'#947650')
+      +(solid ? piece(start,end,895,922,'#997044','#6e5235') : sourceWall.pieces.filter(part=>part.family==='gravity-hung-cassette').map(part=>piece(
+        part.box[0]+proposal.roomAssembly.design.jointMm/2,part.box[2]-proposal.roomAssembly.design.jointMm/2,
+        part.box[3]-proposal.roomAssembly.design.releasePocketMm,part.box[3],'#997044','#6e5235')).join(''))
+      +piece(start,end,proposal.roomAssembly.design.topMm,ceiling,cream,'#947650')
       +line(f(start,2992),f(end,2992),'#997853',2)+line(f(start,3039),f(end,3039),'#c0aa86',1)+arches+grille;
   }).join('');
   const [dx1,dy1,dx2,dy2] = study.occupied.find(([id])=>id==='study-desk')[1];
@@ -112,27 +128,32 @@ function view(mode) {
     shape([p(cx1+185,cy1+110,454),p(cx2-185,cy1+110,454),p(cx2-185,cy2-155,454),p(cx1+185,cy2-155,454)], '#737b5a','#544b37',2),
     shape([p(cx1+185,cy2-155,500),p(cx2-185,cy2-155,500),p(cx2-185,cy2-155,887),p(cx1+185,cy2-155,887)], '#6e7654','#444734',1.4),
   ].join('');
-  const plinth = (ceramic ? stone : oak).kit.floor.emitterPlinth;
+  const plinth = kit.floor.emitterPlinth;
   const fixedBorder = !solid && plinth.state !== 'withheld' ? floor(plinth.face, ceramic ? '#a8a49a' : '#8a6647') : '';
   return solidFloor+trayFloor+fixedBorder+wall+furniture;
 }
 
 const svg = (width, height, title, description, content) => `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title desc"><title id="title">${title}</title><desc id="desc">${description}</desc><style>.heading{font:34px Georgia;fill:#352b23}.name{font:22px Georgia;fill:#352b23}.note{font:15px Arial;fill:#514b3f}</style><rect width="${width}" height="${height}" fill="#f1ecdf"/>${content}</svg>\n`;
 
+const [furnishedTimber, furnishedTile] = await Promise.all([
+  compiler.studyRoomKit({ ...common, wearingFace: 'oak', finishDepthMm: 15, installedServices: 'wall-hung-candidate', frameFootClearanceMm: 5 }),
+  compiler.studyRoomKit({ ...common, wearingFace: 'stone-steel', wallFace: 'porcelain-steel', finishDepthMm: 15, installedServices: 'wall-hung-candidate', frameFootClearanceMm: 5 }),
+]);
+
 const comparison = svg(1440, 895, 'Three furnished Study finish proposals', 'Matched Study cutaway views. The datum, opening dimensions and furniture footprints are from the current occupied Study.',
   label(36,51,'The Study · fixed joinery and removable finishes','heading')+
   label(36,80,'Matched geometry and furniture · finish and colour trials')+
   label(35,116,'Fixed joinery and strip floor','name')+
   label(745,116,'Hung timber and seated oak','name')+
-  `<g transform="translate(6,50) scale(.95)">${view('fixed')}</g>`+
-  `<g transform="translate(722,50) scale(.95)">${view('timber')}</g>`+
+  `<g transform="translate(6,50) scale(.95)">${view('fixed', furnishedTimber)}</g>`+
+  `<g transform="translate(722,50) scale(.95)">${view('timber', furnishedTimber)}</g>`+
   label(35,853,'Keep the framed opening, deep skirt and cornice in both versions.')+
   label(745,853,'300 mm floor modules with seams set into the finish pattern.')
 );
 const tile = svg(790, 903, 'Study tile-faced comparison','Ceramic finish trial on the geometry used in the fixed and timber studies.',
   label(35,48,'The Study · framed tile fields','heading')+
   label(35,78,'Matched view · alternating warm-grey and limestone floor tones')+
-  `<g transform="translate(25,15)">${view('ceramic')}</g>`+
+  `<g transform="translate(25,15)">${view('ceramic', furnishedTile)}</g>`+
   label(35,861,'Grout stays within each tray. Keep a dry joint at every release edge.')
 );
 const junctions = `<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" role="img" aria-labelledby="title desc">

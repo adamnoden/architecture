@@ -32,15 +32,9 @@ The quiet-stage comparison addresses an ideal critical-section sensitivity. Real
 
 Verify the retained witness with `node --import tsx project/ccr/studies/current-projection-witnesses.ts --check`.
 
-## Current joined inlet witness
+## Recompute the active inlet routes from two different HAD sources
 
-The [current raised plant section](studies/inlet-plant-25mm-raise.svg) is regenerated through `readEngineeringDocument` and `compileEngineeringDocument`: the actual source plant leg is raised by 25 mm while the joined sill, faults, removals, split roofs and pressure endpoints retain their saved identities. The existing witness command verifies that this case rejects the joined route clearance.
-
-## Reproduce the indoor reference and earlier south comparison
-
-The current joined inlet witness now uses the saved engineering document and [whole inlet assembly](../had/inlet-assembly-convergence.md), with the actual sill axes X10080/X10285 and Utility riser Y580. The earlier two-scope adapter below preserves the indoor reference and explicitly bounded older south comparison; its X10500/X10645 ports are not substituted for the current joined arrangement.
-
-The earlier inlet adapter takes explicit `had-inlet-route-request/1` documents and validates the current design, case and binding identities. It distinguishes the **current indoor cabinet reference** from the **conditional south development**. It runs the native finite-bend, path separation and segment-to-box methods against the respective branch polylines and current bowl sweep. The two reference cases reproduce the respective native pipe-pair separations. Retained wall ports, installed pipe envelopes and the trial plant level appear with source identities in the result and coordinate-derived section.
+The inlet adapter takes explicit `had-inlet-route-request/1` documents and validates the current design, case and binding identities. It distinguishes the **current indoor cabinet reference** from the **conditional south development**. It runs the native finite-bend, path separation and segment-to-box methods against the respective branch polylines and current bowl sweep. The two reference cases reproduce the respective native pipe-pair separations. Retained wall ports, installed pipe envelopes and the trial plant level appear with source identities in the result and coordinate-derived section.
 
 | Case | Utility-to-plant clearance | Outcome within this calculation |
 | --- | ---: | --- |
@@ -48,7 +42,7 @@ The earlier inlet adapter takes explicit `had-inlet-route-request/1` documents a
 | South branch at Z2610, 10 mm setting allowance | 31.23 mm | Clears the screened comparisons |
 | South branch raised to Z2635, same allowance | 6.29 mm | Blocks the route pair |
 
-The south plant height edit moves the three vertices of the actual horizontal leg between its riser and the climb to the inherited high crossing. It preserves the source strokes, external wall ports and upper endpoint. A 25 mm raise moves the trial section and changes the calculation and case identity. The earlier case rejects stale geometry, scope substitution, port relocation and excursions outside the ±50 mm comparison.
+The south plant height edit moves the three vertices of the actual horizontal leg between its riser and the climb to the inherited high crossing. It preserves the source strokes, external wall ports and upper endpoint. A 25 mm raise moves the trial section and changes the calculation and case identity. [Raised plant branch section](studies/inlet-plant-25mm-raise.svg) The case rejects stale geometry, scope substitution, port relocation and excursions outside the ±50 mm comparison.
 
 The active input is the revised hot H0 route from the dry-bowl producer. The earlier path gives **15.99 mm** cold-to-hot after the south allowance. The actual revised hot path gives **40.19 mm** and the exposed terminals maintain **46.91 mm**. Moving the cold drop alone west 15 mm raises the active upper clearance to **50.34 mm** and keeps **46.91 mm** at the lower hot/cold pipe comparison. The moving washer, bowl and rail minima then remain 88.23, 182 and 403.65 mm respectively. Both the forward sink break and the washer stop stay fixed. Keep the sourced cold drop. The alternative adds change without improving the governing combined pipe clearance and still needs its own fittings, tools and retained support. An object-linked diagnostic preserves the earlier hot result as an adverse comparison.
 

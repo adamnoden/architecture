@@ -23,6 +23,7 @@ type Box = readonly [number, number, number, number, number, number]
 type Cell = {
   readonly id: BranchId
   readonly case: { plan: readonly (readonly [number, number])[]; sideLimitsX: readonly [number, number]; frontY: number; roofZ: number; permanentLowerTroughLipZ: number }
+  readonly vent: { inner: Point; formedDiameterMM: number }
   readonly baffle: { x: readonly [number, number]; y: readonly [number, number] }
   readonly access: {
     splitCollarODMM: number; originalFixedFrontRailAfterSettingMM: number
@@ -80,12 +81,11 @@ function readReference(resolved: CurrentDesignResolution, insertCase?: unknown) 
       [utility.washer, utility.washerFirstRest].some(([, , width, depth]) => width !== washer.width || depth !== washer.closedDepth)) {
     throw new Error('The HAD washer placements no longer match the bound IAS release envelope')
   }
-  const branches = branchIds.map((id, index) => {
+  const branches = branchIds.map(id => {
     const native = underSill.branches.find(branch => branch.id === id)
     const cell = cells.branches.find(branch => branch.id === id)
     const upper = insert.calculation.bores.find(bore => bore.id === id + '-pressure')
-    const vent = insert.calculation.vents[index]
-    if (!native || !cell || !upper || !vent || native.coordinates.length < 4 || sleeve.cleanBoreMM >= upper.formedReserveODMM) {
+    if (!native || !cell || !upper || native.coordinates.length < 4 || sleeve.cleanBoreMM >= upper.formedReserveODMM) {
       throw new Error('Missing south inlet removal geometry for ' + id)
     }
     const [outer, inner] = upper.axis
@@ -102,7 +102,7 @@ function readReference(resolved: CurrentDesignResolution, insertCase?: unknown) 
     const cut = [inner[0], riserY, access.upperCutZ] as const
     const elbow = [inner[0], riserY, wallPoint[2]] as const
     const jacket = finiteBends([wallPoint, elbow, cut])
-    return { id, cell, cut, jacket, jacketRadiusMm, bareRadiusMm, wallPoint, outer, inner, vent }
+    return { id, cell, cut, jacket, jacketRadiusMm, bareRadiusMm, wallPoint, outer, inner }
   })
   const preparation = Object.fromEntries(readiness.map(key => [key, true])) as RemovalCase['preparation']
   const cases = branches.map(({ id, cell }): RemovalCase => ({
@@ -199,7 +199,7 @@ export function runInletRemovalCase(resolved: CurrentDesignResolution, input: un
   }
   const trial = input as RemovalCase
   const branch = reference.branches.find(entry => entry.id === trial.branch)!
-  const { cell, cut, jacket, jacketRadiusMm, bareRadiusMm, wallPoint, vent } = branch
+  const { cell, cut, jacket, jacketRadiusMm, bareRadiusMm, wallPoint } = branch
   const { frontY, sideLimitsX, permanentLowerTroughLipZ: lip } = cell.case
   const exteriorRelease = cell.access.outsideRelease
   const [x, startY] = cut
@@ -216,7 +216,7 @@ export function runInletRemovalCase(resolved: CurrentDesignResolution, input: un
   const calculation = {
     drawMm: trial.drawMm,
     wetBox: { sideLimitsXMm: sideLimitsX, frontYMm: frontY, planMm: cell.case.plan,
-      innerVentAxisMm: vent.axis[1], formedVentDiameterMm: vent.outerDiameterMM,
+      innerVentAxisMm: cell.vent.inner, formedVentDiameterMm: cell.vent.formedDiameterMM,
       utilityClosureNeighbors: trial.branch === 'utility' ? {
         baffle: cell.baffle && { x: cell.baffle.x, y: cell.baffle.y },
         purge: reference.utilityPurge && { body: reference.utilityPurge.body, bodyRadiusMM: reference.utilityPurge.bodyRadiusMM },

@@ -19,7 +19,7 @@ export function readSouthInletSillInsertInputs(read) {
 }
 
 export function sourceSouthInletSillInsertCase({sill}) {
-  return {eastEdgeMm:10380,headZMm:700,plantPressureAxisXMm:sill.branches[1].bores[0].outer[0],plantVentOuterZMm:660};
+  return {eastEdgeMm:10380,headZMm:700,plantPressureAxisXMm:sill.branches[1].bores[0].outer[0]};
 }
 
 export function deriveSouthInletSillInsert({sill,cells,window,portal,grid,foundations},trial) {
@@ -67,7 +67,7 @@ export function deriveSouthInletSillInsert({sill,cells,window,portal,grid,founda
       freeCoreAboveWetStageGrossMM:round(z-26/2-cell.case.designWetStageZ),
     };
   }
-  const vents = [vent(10115,635,32,cells.branches[0]),vent(10348,trial.plantVentOuterZMm,30,cells.branches[1])];
+  const vents = [vent(10115,635,32,cells.branches[0]),vent(10348,660,30,cells.branches[1])];
   const weatherHoodX = [[10090,10140],[10320,10370]];
   const handlingAndVentHoodReservations = {
     utilityCellWestFaceToNarrowCutMM:cells.branches[0].case.sideLimitsX[0]-opening.x[0],
