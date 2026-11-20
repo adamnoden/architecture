@@ -1,0 +1,1416 @@
+{
+  "authoredNumericalCase": {
+    "boundaryCase": {
+      "kind": "native-floor-wind-band-only",
+      "windIndex": 0
+    },
+    "componentCase": {
+      "edits": {
+        "floorApertures": [],
+        "wallOpenings": []
+      },
+      "retentionPaths": [],
+      "schema": "str-retained-components-case/1",
+      "sourceSHA256": {
+        "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+        "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+        "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+        "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+        "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+        "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+        "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+        "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+        "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+        "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+        "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8"
+      }
+    },
+    "cornerWidthsMm": {
+      "NE": 200,
+      "NW": 200,
+      "SE": 140,
+      "SW": 140
+    },
+    "edgeBand": {
+      "axialRigidityKN": 180955.73684677208,
+      "depthMm": 200,
+      "elasticModulusMPa": 33000,
+      "flexuralFactor": 0.25,
+      "mode": "authored-conventional-slab-level-band",
+      "widthMm": 140
+    },
+    "jointLaw": {
+      "compressionGapMm": 0,
+      "compressionStiffnessKNPerMm3": 0.5,
+      "mode": "authored-spring-comparison",
+      "shearKeyStiffnessKNPerMm": 100,
+      "tieGapMm": 0,
+      "tieStiffnessKNPerMm": 50
+    },
+    "maxPitchMm": 1400,
+    "memberLaw": {
+      "elasticModulusMPa": 33000,
+      "flexuralFactor": 0.25,
+      "mode": "authored-linear-comparison",
+      "poissonRatio": 0.2,
+      "shearAreaFactor": 0.5,
+      "torsionFactor": 0.25
+    },
+    "membraneLaw": {
+      "elasticModulusMPa": 1200,
+      "mode": "authored-linear-comparison",
+      "poissonRatio": 0.15,
+      "shearModulusMPa": 440
+    },
+    "receivingLaws": {
+      "dryGround": null,
+      "intermediateSupports": {
+        "FLOOR/RECEIVER/court-east/3917.5": null,
+        "FLOOR/RECEIVER/court-east/6000.0": null,
+        "FLOOR/RECEIVER/court-east/8082.5": null,
+        "FLOOR/RECEIVER/court-north/3917.5": null,
+        "FLOOR/RECEIVER/court-north/4377.5": null,
+        "FLOOR/RECEIVER/court-north/7622.5": null,
+        "FLOOR/RECEIVER/court-north/8082.5": null,
+        "FLOOR/RECEIVER/court-south/3917.5": null,
+        "FLOOR/RECEIVER/court-south/4785": null,
+        "FLOOR/RECEIVER/court-south/7215": null,
+        "FLOOR/RECEIVER/court-south/8082.5": null,
+        "FLOOR/RECEIVER/court-west/3917.5": null,
+        "FLOOR/RECEIVER/court-west/6000.0": null,
+        "FLOOR/RECEIVER/court-west/8082.5": null,
+        "FLOOR/RECEIVER/outer-east/3100.0": null,
+        "FLOOR/RECEIVER/outer-east/5786.5": null,
+        "FLOOR/RECEIVER/outer-east/8613.5": null,
+        "FLOOR/RECEIVER/outer-north/2825.0": null,
+        "FLOOR/RECEIVER/outer-north/4377.5": null,
+        "FLOOR/RECEIVER/outer-north/7622.5": null,
+        "FLOOR/RECEIVER/outer-north/9175.0": null,
+        "FLOOR/RECEIVER/outer-south/2850.0": null,
+        "FLOOR/RECEIVER/outer-south/4750.0": null,
+        "FLOOR/RECEIVER/outer-south/7250.0": null,
+        "FLOOR/RECEIVER/outer-south/9150.0": null,
+        "FLOOR/RECEIVER/outer-west/3200.0": null,
+        "FLOOR/RECEIVER/outer-west/6000.0": null,
+        "FLOOR/RECEIVER/outer-west/8800.0": null
+      },
+      "successorRoof": null,
+      "verticalFloor": null
+    },
+    "schema": "str-distributed-floor-case/1",
+    "sourceSHA256": {
+      "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+      "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+      "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+      "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+      "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+      "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+      "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+      "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+      "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+      "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+      "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+      "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+      "project/str/studies/distributed_floor_compatibility.py": "343eb90499aabaf0a9d62302d1b91221599b66e3520fda7e40ba32da11a975c1",
+      "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+      "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+      "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+      "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+      "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+      "project/str/studies/perforated_floor_condensation.py": "2f0dcba9128d110204212fec6f2bad14449edd27a30eaa6f1a68a3bbbe4a08bd",
+      "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+      "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+      "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+      "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c"
+    },
+    "use": "bounded-diaphragm-comparison"
+  },
+  "baselineCaseDigest": "bc8b703ab8949682e95f46364e165d54434016373d2cdb14e2d5451e97a182a4",
+  "completeHouseProof": false,
+  "derivedSvgSha256": "1aa7a1c9e157db41105b000f6bbf4f995c1bd344ac8038880ef2ef592ec67076",
+  "installedAcceptance": false,
+  "meshRefinement": {
+    "maximumHeadComponentDeltaKN_KNm": 0.5042424556310152,
+    "maximumUpperTranslationDeltaMm": 0.0006386720539579699,
+    "pitchMm": [
+      1400,
+      700
+    ],
+    "triangleCount": [
+      2098,
+      2654
+    ]
+  },
+  "proofProducerSHA256": "00b26a527d786d1e2600f0523f12ceb2dc8b4734cbf16f633b73734cce0068f1",
+  "schema": "str-distributed-floor-proof/1",
+  "scope": "All96 native signed first-floor lateral band programme identities on the same actual52-head, four-wall, perforated-diaphragm comparison. No complete source house gravity/roof/wind proof is inferred.",
+  "sourceSHA256": {
+    "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+    "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+    "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+    "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+    "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+    "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+    "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+    "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+    "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+    "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+    "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+    "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+    "project/str/studies/distributed_floor_compatibility.py": "343eb90499aabaf0a9d62302d1b91221599b66e3520fda7e40ba32da11a975c1",
+    "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+    "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+    "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+    "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+    "project/str/studies/perforated_floor_condensation.py": "2f0dcba9128d110204212fec6f2bad14449edd27a30eaa6f1a68a3bbbe4a08bd",
+    "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+    "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+    "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+    "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c"
+  },
+  "sweep": {
+    "activeCompressionSampleRange": [
+      1,
+      2
+    ],
+    "caseCount": 96,
+    "cases": [
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 6.702421160298399e-10,
+        "maximumFreeResidualKNOrKNmm": 3.20301296596881e-09,
+        "programme": [
+          0,
+          1
+        ],
+        "windIndex": 0
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 4.509693098952994e-10,
+        "maximumFreeResidualKNOrKNmm": 2.0155539459665306e-09,
+        "programme": [
+          0,
+          2
+        ],
+        "windIndex": 1
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 2.3311895347433165e-10,
+        "maximumFreeResidualKNOrKNmm": 1.8780212940328056e-09,
+        "programme": [
+          0,
+          3
+        ],
+        "windIndex": 2
+      },
+      {
+        "activeSetIterations": 4,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 3.578802534320857e-10,
+        "maximumFreeResidualKNOrKNmm": 2.6520865503698587e-09,
+        "programme": [
+          0,
+          4
+        ],
+        "windIndex": 3
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 2.1940832084510475e-10,
+        "maximumFreeResidualKNOrKNmm": 1.175607167169801e-09,
+        "programme": [
+          0,
+          5
+        ],
+        "windIndex": 4
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 2.4841324375302063e-10,
+        "maximumFreeResidualKNOrKNmm": 1.6259491530945525e-09,
+        "programme": [
+          0,
+          6
+        ],
+        "windIndex": 5
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 2.2385938791558146e-10,
+        "maximumFreeResidualKNOrKNmm": 1.8126609102608882e-09,
+        "programme": [
+          1,
+          0
+        ],
+        "windIndex": 6
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 8.519582479493693e-10,
+        "maximumFreeResidualKNOrKNmm": 4.3699373009076226e-09,
+        "programme": [
+          1,
+          1
+        ],
+        "windIndex": 7
+      },
+      {
+        "activeSetIterations": 6,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 6.539230525959283e-10,
+        "maximumFreeResidualKNOrKNmm": 2.1360477830967284e-09,
+        "programme": [
+          1,
+          2
+        ],
+        "windIndex": 8
+      },
+      {
+        "activeSetIterations": 6,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 4.0910344978328796e-10,
+        "maximumFreeResidualKNOrKNmm": 2.9944544621685054e-09,
+        "programme": [
+          1,
+          3
+        ],
+        "windIndex": 9
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 4.754660949402023e-10,
+        "maximumFreeResidualKNOrKNmm": 3.892182576237246e-09,
+        "programme": [
+          1,
+          4
+        ],
+        "windIndex": 10
+      },
+      {
+        "activeSetIterations": 6,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 3.729919626493938e-10,
+        "maximumFreeResidualKNOrKNmm": 1.9572325982153416e-09,
+        "programme": [
+          1,
+          5
+        ],
+        "windIndex": 11
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 3.595519046939444e-10,
+        "maximumFreeResidualKNOrKNmm": 2.258502718177624e-09,
+        "programme": [
+          1,
+          6
+        ],
+        "windIndex": 12
+      },
+      {
+        "activeSetIterations": 7,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 2.155297806893941e-10,
+        "maximumFreeResidualKNOrKNmm": 2.388705011568959e-09,
+        "programme": [
+          2,
+          0
+        ],
+        "windIndex": 13
+      },
+      {
+        "activeSetIterations": 6,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 6.118261808296666e-10,
+        "maximumFreeResidualKNOrKNmm": 3.7037182210042374e-09,
+        "programme": [
+          2,
+          1
+        ],
+        "windIndex": 14
+      },
+      {
+        "activeSetIterations": 6,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 3.814684532699175e-10,
+        "maximumFreeResidualKNOrKNmm": 1.8829950931831263e-09,
+        "programme": [
+          2,
+          2
+        ],
+        "windIndex": 15
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 4.046223693876527e-10,
+        "maximumFreeResidualKNOrKNmm": 1.796459869751743e-09,
+        "programme": [
+          2,
+          3
+        ],
+        "windIndex": 16
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 4.3907084545935506e-10,
+        "maximumFreeResidualKNOrKNmm": 3.004970494657755e-09,
+        "programme": [
+          2,
+          4
+        ],
+        "windIndex": 17
+      },
+      {
+        "activeSetIterations": 6,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 1.8795924461301184e-10,
+        "maximumFreeResidualKNOrKNmm": 1.5669741060264641e-09,
+        "programme": [
+          2,
+          5
+        ],
+        "windIndex": 18
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 3.471991476544645e-10,
+        "maximumFreeResidualKNOrKNmm": 2.056594894384034e-09,
+        "programme": [
+          2,
+          6
+        ],
+        "windIndex": 19
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 4.233907020534389e-10,
+        "maximumFreeResidualKNOrKNmm": 1.0252847459923942e-09,
+        "programme": [
+          3,
+          0
+        ],
+        "windIndex": 20
+      },
+      {
+        "activeSetIterations": 4,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 9.523810149403289e-10,
+        "maximumFreeResidualKNOrKNmm": 3.1081714979563912e-09,
+        "programme": [
+          3,
+          1
+        ],
+        "windIndex": 21
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 7.049020496197045e-10,
+        "maximumFreeResidualKNOrKNmm": 2.005322130571585e-09,
+        "programme": [
+          3,
+          2
+        ],
+        "windIndex": 22
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 4.838038876187056e-10,
+        "maximumFreeResidualKNOrKNmm": 2.8923068384756334e-09,
+        "programme": [
+          3,
+          3
+        ],
+        "windIndex": 23
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 5.291472007229458e-10,
+        "maximumFreeResidualKNOrKNmm": 4.044522938784212e-09,
+        "programme": [
+          3,
+          4
+        ],
+        "windIndex": 24
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 6.125019353930838e-10,
+        "maximumFreeResidualKNOrKNmm": 2.1985897546983324e-09,
+        "programme": [
+          3,
+          5
+        ],
+        "windIndex": 25
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 3.7405470720841547e-10,
+        "maximumFreeResidualKNOrKNmm": 2.836713974829763e-09,
+        "programme": [
+          3,
+          6
+        ],
+        "windIndex": 26
+      },
+      {
+        "activeSetIterations": 6,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 4.443245416041464e-10,
+        "maximumFreeResidualKNOrKNmm": 2.093656803481281e-09,
+        "programme": [
+          4,
+          0
+        ],
+        "windIndex": 27
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 1.0714093150454574e-09,
+        "maximumFreeResidualKNOrKNmm": 4.296680344850756e-09,
+        "programme": [
+          4,
+          1
+        ],
+        "windIndex": 28
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 8.580245776101947e-10,
+        "maximumFreeResidualKNOrKNmm": 3.2766820368124172e-09,
+        "programme": [
+          4,
+          2
+        ],
+        "windIndex": 29
+      },
+      {
+        "activeSetIterations": 6,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 6.583977665286512e-10,
+        "maximumFreeResidualKNOrKNmm": 3.4178810892626643e-09,
+        "programme": [
+          4,
+          3
+        ],
+        "windIndex": 30
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 5.626079655485228e-10,
+        "maximumFreeResidualKNOrKNmm": 4.355257487986819e-09,
+        "programme": [
+          4,
+          4
+        ],
+        "windIndex": 31
+      },
+      {
+        "activeSetIterations": 6,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 6.416139513021335e-10,
+        "maximumFreeResidualKNOrKNmm": 2.2920971787243616e-09,
+        "programme": [
+          4,
+          5
+        ],
+        "windIndex": 32
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 3.2594834920018913e-10,
+        "maximumFreeResidualKNOrKNmm": 2.790329745039344e-09,
+        "programme": [
+          4,
+          6
+        ],
+        "windIndex": 33
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 2.6777343009598555e-10,
+        "maximumFreeResidualKNOrKNmm": 1.3092176232021302e-09,
+        "programme": [
+          5,
+          0
+        ],
+        "windIndex": 34
+      },
+      {
+        "activeSetIterations": 4,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 9.657442205934785e-10,
+        "maximumFreeResidualKNOrKNmm": 4.269168130122125e-09,
+        "programme": [
+          5,
+          1
+        ],
+        "windIndex": 35
+      },
+      {
+        "activeSetIterations": 6,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 7.134622137527913e-10,
+        "maximumFreeResidualKNOrKNmm": 3.383320290595293e-09,
+        "programme": [
+          5,
+          2
+        ],
+        "windIndex": 36
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 5.024685378884897e-10,
+        "maximumFreeResidualKNOrKNmm": 2.175283952965401e-09,
+        "programme": [
+          5,
+          3
+        ],
+        "windIndex": 37
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 2.4672590370755644e-10,
+        "maximumFreeResidualKNOrKNmm": 2.8638282856263686e-09,
+        "programme": [
+          5,
+          4
+        ],
+        "windIndex": 38
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 3.3537799026817084e-10,
+        "maximumFreeResidualKNOrKNmm": 2.3252937353390735e-09,
+        "programme": [
+          5,
+          5
+        ],
+        "windIndex": 39
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 1.1776455721701495e-10,
+        "maximumFreeResidualKNOrKNmm": 2.291216105732019e-09,
+        "programme": [
+          5,
+          6
+        ],
+        "windIndex": 40
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 2.9458351491484793e-10,
+        "maximumFreeResidualKNOrKNmm": 1.0108157644239668e-09,
+        "programme": [
+          6,
+          0
+        ],
+        "windIndex": 41
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 8.353704288310837e-10,
+        "maximumFreeResidualKNOrKNmm": 3.6748133425135165e-09,
+        "programme": [
+          6,
+          1
+        ],
+        "windIndex": 42
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 5.800811777589843e-10,
+        "maximumFreeResidualKNOrKNmm": 2.299429979757406e-09,
+        "programme": [
+          6,
+          2
+        ],
+        "windIndex": 43
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 3.8734333429601977e-10,
+        "maximumFreeResidualKNOrKNmm": 2.483830030541867e-09,
+        "programme": [
+          6,
+          3
+        ],
+        "windIndex": 44
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 4.568892109091394e-10,
+        "maximumFreeResidualKNOrKNmm": 2.922661224147305e-09,
+        "programme": [
+          6,
+          4
+        ],
+        "windIndex": 45
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 5.596657501882874e-10,
+        "maximumFreeResidualKNOrKNmm": 2.232553697467665e-09,
+        "programme": [
+          6,
+          5
+        ],
+        "windIndex": 46
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": false,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 2.4075870896922423e-10,
+        "maximumFreeResidualKNOrKNmm": 4.1020484786713496e-09,
+        "programme": [
+          6,
+          6
+        ],
+        "windIndex": 47
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 6.702421160298399e-10,
+        "maximumFreeResidualKNOrKNmm": 3.20301296596881e-09,
+        "programme": [
+          0,
+          1
+        ],
+        "windIndex": 48
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 4.509693098952994e-10,
+        "maximumFreeResidualKNOrKNmm": 2.0155539459665306e-09,
+        "programme": [
+          0,
+          2
+        ],
+        "windIndex": 49
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 2.3311895347433165e-10,
+        "maximumFreeResidualKNOrKNmm": 1.8780212940328056e-09,
+        "programme": [
+          0,
+          3
+        ],
+        "windIndex": 50
+      },
+      {
+        "activeSetIterations": 4,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 3.578802534320857e-10,
+        "maximumFreeResidualKNOrKNmm": 2.6520865503698587e-09,
+        "programme": [
+          0,
+          4
+        ],
+        "windIndex": 51
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 2.1940832084510475e-10,
+        "maximumFreeResidualKNOrKNmm": 1.175607167169801e-09,
+        "programme": [
+          0,
+          5
+        ],
+        "windIndex": 52
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 2.4841324375302063e-10,
+        "maximumFreeResidualKNOrKNmm": 1.6259491530945525e-09,
+        "programme": [
+          0,
+          6
+        ],
+        "windIndex": 53
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 2.2385938791558146e-10,
+        "maximumFreeResidualKNOrKNmm": 1.8126609102608882e-09,
+        "programme": [
+          1,
+          0
+        ],
+        "windIndex": 54
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 8.519582479493693e-10,
+        "maximumFreeResidualKNOrKNmm": 4.3699373009076226e-09,
+        "programme": [
+          1,
+          1
+        ],
+        "windIndex": 55
+      },
+      {
+        "activeSetIterations": 6,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 6.539230525959283e-10,
+        "maximumFreeResidualKNOrKNmm": 2.1360477830967284e-09,
+        "programme": [
+          1,
+          2
+        ],
+        "windIndex": 56
+      },
+      {
+        "activeSetIterations": 6,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 4.0910344978328796e-10,
+        "maximumFreeResidualKNOrKNmm": 2.9944544621685054e-09,
+        "programme": [
+          1,
+          3
+        ],
+        "windIndex": 57
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 4.754660949402023e-10,
+        "maximumFreeResidualKNOrKNmm": 3.892182576237246e-09,
+        "programme": [
+          1,
+          4
+        ],
+        "windIndex": 58
+      },
+      {
+        "activeSetIterations": 6,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 3.729919626493938e-10,
+        "maximumFreeResidualKNOrKNmm": 1.9572325982153416e-09,
+        "programme": [
+          1,
+          5
+        ],
+        "windIndex": 59
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 3.595519046939444e-10,
+        "maximumFreeResidualKNOrKNmm": 2.258502718177624e-09,
+        "programme": [
+          1,
+          6
+        ],
+        "windIndex": 60
+      },
+      {
+        "activeSetIterations": 7,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 2.155297806893941e-10,
+        "maximumFreeResidualKNOrKNmm": 2.388705011568959e-09,
+        "programme": [
+          2,
+          0
+        ],
+        "windIndex": 61
+      },
+      {
+        "activeSetIterations": 6,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 6.118261808296666e-10,
+        "maximumFreeResidualKNOrKNmm": 3.7037182210042374e-09,
+        "programme": [
+          2,
+          1
+        ],
+        "windIndex": 62
+      },
+      {
+        "activeSetIterations": 6,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 3.814684532699175e-10,
+        "maximumFreeResidualKNOrKNmm": 1.8829950931831263e-09,
+        "programme": [
+          2,
+          2
+        ],
+        "windIndex": 63
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 4.046223693876527e-10,
+        "maximumFreeResidualKNOrKNmm": 1.796459869751743e-09,
+        "programme": [
+          2,
+          3
+        ],
+        "windIndex": 64
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 4.3907084545935506e-10,
+        "maximumFreeResidualKNOrKNmm": 3.004970494657755e-09,
+        "programme": [
+          2,
+          4
+        ],
+        "windIndex": 65
+      },
+      {
+        "activeSetIterations": 6,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 1.8795924461301184e-10,
+        "maximumFreeResidualKNOrKNmm": 1.5669741060264641e-09,
+        "programme": [
+          2,
+          5
+        ],
+        "windIndex": 66
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 3.471991476544645e-10,
+        "maximumFreeResidualKNOrKNmm": 2.056594894384034e-09,
+        "programme": [
+          2,
+          6
+        ],
+        "windIndex": 67
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 4.233907020534389e-10,
+        "maximumFreeResidualKNOrKNmm": 1.0252847459923942e-09,
+        "programme": [
+          3,
+          0
+        ],
+        "windIndex": 68
+      },
+      {
+        "activeSetIterations": 4,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 9.523810149403289e-10,
+        "maximumFreeResidualKNOrKNmm": 3.1081714979563912e-09,
+        "programme": [
+          3,
+          1
+        ],
+        "windIndex": 69
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 7.049020496197045e-10,
+        "maximumFreeResidualKNOrKNmm": 2.005322130571585e-09,
+        "programme": [
+          3,
+          2
+        ],
+        "windIndex": 70
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 4.838038876187056e-10,
+        "maximumFreeResidualKNOrKNmm": 2.8923068384756334e-09,
+        "programme": [
+          3,
+          3
+        ],
+        "windIndex": 71
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 5.291472007229458e-10,
+        "maximumFreeResidualKNOrKNmm": 4.044522938784212e-09,
+        "programme": [
+          3,
+          4
+        ],
+        "windIndex": 72
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 6.125019353930838e-10,
+        "maximumFreeResidualKNOrKNmm": 2.1985897546983324e-09,
+        "programme": [
+          3,
+          5
+        ],
+        "windIndex": 73
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 3.7405470720841547e-10,
+        "maximumFreeResidualKNOrKNmm": 2.836713974829763e-09,
+        "programme": [
+          3,
+          6
+        ],
+        "windIndex": 74
+      },
+      {
+        "activeSetIterations": 6,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 4.443245416041464e-10,
+        "maximumFreeResidualKNOrKNmm": 2.093656803481281e-09,
+        "programme": [
+          4,
+          0
+        ],
+        "windIndex": 75
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 1.0714093150454574e-09,
+        "maximumFreeResidualKNOrKNmm": 4.296680344850756e-09,
+        "programme": [
+          4,
+          1
+        ],
+        "windIndex": 76
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 8.580245776101947e-10,
+        "maximumFreeResidualKNOrKNmm": 3.2766820368124172e-09,
+        "programme": [
+          4,
+          2
+        ],
+        "windIndex": 77
+      },
+      {
+        "activeSetIterations": 6,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 6.583977665286512e-10,
+        "maximumFreeResidualKNOrKNmm": 3.4178810892626643e-09,
+        "programme": [
+          4,
+          3
+        ],
+        "windIndex": 78
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 5.626079655485228e-10,
+        "maximumFreeResidualKNOrKNmm": 4.355257487986819e-09,
+        "programme": [
+          4,
+          4
+        ],
+        "windIndex": 79
+      },
+      {
+        "activeSetIterations": 6,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 6.416139513021335e-10,
+        "maximumFreeResidualKNOrKNmm": 2.2920971787243616e-09,
+        "programme": [
+          4,
+          5
+        ],
+        "windIndex": 80
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 3.2594834920018913e-10,
+        "maximumFreeResidualKNOrKNmm": 2.790329745039344e-09,
+        "programme": [
+          4,
+          6
+        ],
+        "windIndex": 81
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 2.6777343009598555e-10,
+        "maximumFreeResidualKNOrKNmm": 1.3092176232021302e-09,
+        "programme": [
+          5,
+          0
+        ],
+        "windIndex": 82
+      },
+      {
+        "activeSetIterations": 4,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 9.657442205934785e-10,
+        "maximumFreeResidualKNOrKNmm": 4.269168130122125e-09,
+        "programme": [
+          5,
+          1
+        ],
+        "windIndex": 83
+      },
+      {
+        "activeSetIterations": 6,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 7.134622137527913e-10,
+        "maximumFreeResidualKNOrKNmm": 3.383320290595293e-09,
+        "programme": [
+          5,
+          2
+        ],
+        "windIndex": 84
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 5.024685378884897e-10,
+        "maximumFreeResidualKNOrKNmm": 2.175283952965401e-09,
+        "programme": [
+          5,
+          3
+        ],
+        "windIndex": 85
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 2.4672590370755644e-10,
+        "maximumFreeResidualKNOrKNmm": 2.8638282856263686e-09,
+        "programme": [
+          5,
+          4
+        ],
+        "windIndex": 86
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 3.3537799026817084e-10,
+        "maximumFreeResidualKNOrKNmm": 2.3252937353390735e-09,
+        "programme": [
+          5,
+          5
+        ],
+        "windIndex": 87
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 1.1776455721701495e-10,
+        "maximumFreeResidualKNOrKNmm": 2.291216105732019e-09,
+        "programme": [
+          5,
+          6
+        ],
+        "windIndex": 88
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 2.9458351491484793e-10,
+        "maximumFreeResidualKNOrKNmm": 1.0108157644239668e-09,
+        "programme": [
+          6,
+          0
+        ],
+        "windIndex": 89
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 8.353704288310837e-10,
+        "maximumFreeResidualKNOrKNmm": 3.6748133425135165e-09,
+        "programme": [
+          6,
+          1
+        ],
+        "windIndex": 90
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 5.800811777589843e-10,
+        "maximumFreeResidualKNOrKNmm": 2.299429979757406e-09,
+        "programme": [
+          6,
+          2
+        ],
+        "windIndex": 91
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 3.8734333429601977e-10,
+        "maximumFreeResidualKNOrKNmm": 2.483830030541867e-09,
+        "programme": [
+          6,
+          3
+        ],
+        "windIndex": 92
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 4.568892109091394e-10,
+        "maximumFreeResidualKNOrKNmm": 2.922661224147305e-09,
+        "programme": [
+          6,
+          4
+        ],
+        "windIndex": 93
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 5.596657501882874e-10,
+        "maximumFreeResidualKNOrKNmm": 2.232553697467665e-09,
+        "programme": [
+          6,
+          5
+        ],
+        "windIndex": 94
+      },
+      {
+        "activeSetIterations": 5,
+        "courtProjection": true,
+        "headCount": 52,
+        "maximumEquilibriumResidualKN_KNm": 2.4075870896922423e-10,
+        "maximumFreeResidualKNOrKNmm": 4.1020484786713496e-09,
+        "programme": [
+          6,
+          6
+        ],
+        "windIndex": 95
+      }
+    ],
+    "headIds": [
+      "P01",
+      "P02",
+      "P03",
+      "P04",
+      "P05",
+      "P06",
+      "P07",
+      "P08",
+      "P09",
+      "P10",
+      "P11",
+      "P12",
+      "P13",
+      "P14",
+      "P15",
+      "P16",
+      "P17",
+      "P18",
+      "P19",
+      "P20",
+      "P21",
+      "P22",
+      "P23",
+      "P24",
+      "P25",
+      "P26",
+      "P27",
+      "P28",
+      "P29",
+      "P30",
+      "P31",
+      "P32",
+      "P33",
+      "P34",
+      "P35",
+      "P36",
+      "P37",
+      "P38",
+      "P39",
+      "P40",
+      "P41",
+      "P42",
+      "P43",
+      "P44",
+      "P45",
+      "P46",
+      "P47",
+      "P48",
+      "P49",
+      "P50",
+      "P51",
+      "P52"
+    ],
+    "headReactionMinimumMaximumKN_KNm": [
+      [
+        -269.94957643989846,
+        244.6857844048566
+      ],
+      [
+        -254.66231786053652,
+        249.06260023652362
+      ],
+      [
+        -95.22108519030206,
+        107.92971625530221
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    "maximumEquilibriumResidualKN_KNm": 1.0714093150454574e-09,
+    "maximumUnqualifiedJointGroupTieTensionKN": 177.9914843205072,
+    "maximumUpperTranslationComponentMm": 0.3837435870608312
+  }
+}

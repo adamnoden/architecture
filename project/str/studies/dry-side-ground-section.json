@@ -1,0 +1,59 @@
+{
+  "schema": "dry-side-ground-section-comparison/2",
+  "status": "unselected dry-side construction comparison; raised530 is preferred development topology",
+  "sources": {
+    "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+    "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+    "project/str/studies/current-house-occupied-interfaces.json": "8083132336cdbdd1d51f7652e620e75741a4e66b0ac2cedae552c026cbfc3f77",
+    "project/str/studies/current-house-bridge.py": "6da4f723a2a28d4e7307f01c55d150d565cbc7575e9c5d6e19cd3b68a5ee98ed",
+    "project/mat/studies/conventional-ground-junction.json": "439bfd151f40895b1e8abb1e17ae47ffd2dc02f977160a3c94362cc5f06f2f72",
+    "project/mat/envelope-ground-boundary.md": "eb67353c8314449a0c10e12e8f41ca6e0c3bd1997776abcedc3bbf7f2346f0ae",
+    "project/owner-house-charter.md": "891ed6b72ff7452826a18bf5f91458746b8594a5c5ac89f75407e9a40b776371",
+    "docs/reference-house/structural-brief.md": "63764b34f27ca25425e560a2a12fbf0fcd895ccad0f63b35ea5d8aa72566565e",
+    "project/str/studies/current-house-grid.py": "16253b545126847df0250bda3d1260c3210434387feea9abf4b5a0758308f635",
+    "project/had/studies/water-replan.mjs": "9ef245c2f354dcd4952e3ffe2d07a24b3d8fff4a73257bca8d9d27627015c078",
+    "project/mat/studies/whole-house-leakage-duty.json": "b2700cfa84010eea0c9d8f118a5e658138c75b180b4368110c1ab5f3c4c0cad8",
+    "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+    "project/triad-interface-contract.md": "3f489e840a2711873b9a8148970507e9504c31f5ad482967af6cfcccb2f42810",
+    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5"
+  },
+  "commonSettings": {
+    "minimumGradeClearanceMm": 150,
+    "approachSlopeRatio": 20,
+    "newBeam": {
+      "axisYmm": 4355,
+      "widthMm": 230,
+      "depthMm": 450,
+      "endExtensionMm": 200,
+      "nodeTransferLengthMm": 200,
+      "barsEachFace": 3,
+      "barDiameterMm": 20,
+      "linkDiameterMm": 8,
+      "linkPitchMm": 100,
+      "coverRangeMm": [
+        40,
+        50
+      ]
+    },
+    "rcDensityKNm3": 25,
+    "mineralDensityBudgetKNm3": 20,
+    "ordinaryBarClearanceMm": 21,
+    "geometryOnly": "No source-bound physical mineral course or retention capacity is accepted.",
+    "serviceZoneMm": 65
+  },
+  "recommendedCaseId": "raised-530-local-solum",
+  "cases": [
+    {
+      "caseId": "raised-530-local-solum",
+      "courseBottomMm": 0,
+      "exteriorGradeMm": -150,
+      "localSolumMm": -1800
+    },
+    {
+      "caseId": "low-350-deep-exterior",
+      "courseBottomMm": -180,
+      "exteriorGradeMm": -1800,
+      "localSolumMm": -1800
+    }
+  ]
+}

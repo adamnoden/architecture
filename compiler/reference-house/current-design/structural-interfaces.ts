@@ -30,6 +30,25 @@ const methods = {
 } as const
 type InterfaceId = keyof typeof methods
 
+// The current reconciliation retires these details or supersedes their
+// fixed-base system. Keep their native receipts available only by explicit ID.
+const historicalInterfaces = {
+  'north-floor-collar': 'The nested collar is retired from the current development baseline.',
+  'north-roof-shoe': 'The former combined corner shoe and guide arrangement is retired.',
+  'roof-action-route': 'This roof route uses the predecessor fixed-base L-cantilever system and earlier roof datums.',
+  'roof-stiffness': 'This sensitivity uses the predecessor roof route, not the successor wall/floor/roof/contact system.',
+  'floor-membrane': 'This membrane recovery uses the predecessor fixed-base roof-bracing solve.',
+  'floor-stops': 'This floor envelope uses prescribed actions from the predecessor joined-foundation replay.',
+} as const satisfies Partial<Record<InterfaceId, string>>
+const dispositionSource = 'project/str/floor-portal-reconciliation.md'
+
+function interfaceDisposition(id: InterfaceId) {
+  return Object.hasOwn(historicalInterfaces, id)
+    ? { state: 'historical-comparison' as const,
+      reason: historicalInterfaces[id as keyof typeof historicalInterfaces], source: dispositionSource }
+    : { state: 'current-bounded-comparison' as const }
+}
+
 interface ReceiptSources {
   readonly sourceHashes?: Readonly<Record<string, string>>
   readonly sourceSHA256?: Readonly<Record<string, string>>
@@ -93,7 +112,7 @@ export function readStructuralInterfaces(resolved: CurrentDesignResolution) {
     schema: 'str-interface-request/1' as const,
     design: resolved.design,
     replay: { schema: 'str-interface-replay/1' as const, planDigest: binding.applicability.planDigest,
-      bindingDigest: binding.digest, interfaces: Object.keys(methods) },
+      bindingDigest: binding.digest, interfaces: Object.keys(methods).filter(id => !Object.hasOwn(historicalInterfaces, id)) },
   }
 }
 
@@ -169,7 +188,8 @@ async function verifyInterface(id: InterfaceId, identities: Readonly<Record<stri
   return {
     geometry: comparisonGeometry(id, report),
     method: { path: method.path, blob: method.blob }, receipt: { path: receipt.path, blob: receipt.blob },
-    inputs, installedAcceptance: false as const,
+    inputs, disposition: interfaceDisposition(id), successorProof: 'not-established' as const,
+    installedAcceptance: false as const,
   }
 }
 

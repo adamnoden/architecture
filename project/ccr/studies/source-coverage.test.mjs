@@ -53,6 +53,38 @@ test('the selected overlay account authenticates the real source edges and separ
   assert.equal(JSON.stringify(deriveWaterReplan(), null, 2) + '\n', read(hadReceipt).toString('utf8'))
 })
 
+test('current RC, service-floor and keeper methods have canonical bindings without promoting retired structural defaults', () => {
+  const baseline = auditSourceCoverage()
+  const family = id => baseline.families.find(row => row.id === id)
+  const structural = family('str-conditional-interface')
+  for (const name of ['floor-portal-north-collar', 'floor-portal-north-roof-shoe', 'current-house-roof-route',
+    'current-house-roof-stiffness', 'current-house-membrane-reactions', 'current-house-floor-stops']) {
+    for (const extension of ['py', 'json']) {
+      const path = `project/str/studies/${name}.${extension}`
+      assert.ok(structural.historicalInputs.includes(path))
+      assert.ok(![...structural.authorRoots, ...structural.inputReceipts, ...structural.receipts].includes(path))
+      assert.ok(baseline.bindings.find(row => row.id === structural.id).identities[path])
+    }
+  }
+  for (const [id, source] of [
+    ['str-conditional-interface', 'project/str/studies/rc_portal_monolithic.py'],
+    ['str-conditional-interface', 'project/str/studies/rc_floor_house_loads.py'],
+    ['had-fixed-inlet-arrangement', 'compiler/reference-house/current-design/inlet-fixed-temporary-keeper.ts'],
+    ['had-fixed-inlet-arrangement', 'compiler/reference-house/current-design/inlet-fixed-support-view.ts'],
+    ['had-closed-service-floor', 'compiler/reference-house/current-design/service-floor.ts'],
+    ['had-closed-service-floor', 'project/had/studies/closed-service-gasket-evidence.json'],
+  ]) {
+    const binding = audit => audit.bindings.find(row => row.id === id)
+    assert.ok(binding(baseline).identities[source])
+    const changed = auditSourceCoverage(path => path === source ? Buffer.concat([read(path), Buffer.from('\n')]) : read(path))
+    assert.ok(changed.findings.some(row => row.kind === 'changed-file' && row.path === source))
+    assert.notEqual(binding(changed).digest, binding(baseline).digest)
+    assert.equal(changed.bindings.find(row => row.id === 'had-inlet-indoor-reference').digest,
+      baseline.bindings.find(row => row.id === 'had-inlet-indoor-reference').digest)
+  }
+  assert.equal(family('had-closed-service-floor').state, 'candidate-interface')
+})
+
 test('a changed active RWT receiving input contradicts the existing HAD producer receipt despite its retained identity', () => {
   const changed = JSON.parse(read(rwtSource))
   changed.east.maximumWater -= 10
@@ -62,6 +94,8 @@ test('a changed active RWT receiving input contradicts the existing HAD producer
     { kind: 'changed-file', path: rwtSource, receipt: undefined, source: undefined },
     { kind: 'source-contradiction', path: undefined, receipt: hadReceipt, source: rwtSource },
     { kind: 'source-contradiction', path: undefined, receipt: 'project/had/studies/receiver-selection.json', source: rwtSource },
+    { kind: 'source-contradiction', path: undefined, receipt: 'project/had/studies/closed-service-floor.json', source: rwtSource },
+    { kind: 'source-contradiction', path: undefined, receipt: 'project/had/studies/closed-service-floor.results.json', source: rwtSource },
   ])
 })
 

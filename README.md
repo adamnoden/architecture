@@ -129,7 +129,7 @@ Publication records, architectural publication drawings, compiler proof artefact
 
 ## Build and verification
 
-Use the repository's declared Node.js runtime and Python 3. The material studies checked by canonical health use the Python standard library; no extra Python packages are required. Install the locked Node dependencies with `npm ci`. The canonical repository-health entry point is:
+Use the repository's declared Node.js runtime and Python 3.12. Install the locked Node dependencies with `npm ci` and the cage and coupled vertical-floor numerical dependencies with `python -m pip install -r project/str/studies/cage-requirements.txt -r project/str/studies/vertical-floor-requirements.txt` in your Python environment. The other material studies retain their standard-library methods. The canonical repository-health entry point is:
 
 ```sh
 npm run check

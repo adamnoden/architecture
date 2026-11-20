@@ -1,0 +1,3454 @@
+{
+  "schema": "dry-side-ground-section-comparison-result/2",
+  "selected": false,
+  "recommendedCaseId": "raised-530-local-solum",
+  "cases": {
+    "raised-530-local-solum": {
+      "schema": "dry-side-ground-section-result/2",
+      "caseId": "raised-530-local-solum",
+      "status": "source-bound proposal; geometry and local member comparisons only",
+      "sources": {
+        "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+        "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+        "project/str/studies/current-house-occupied-interfaces.json": "8083132336cdbdd1d51f7652e620e75741a4e66b0ac2cedae552c026cbfc3f77",
+        "project/str/studies/current-house-bridge.py": "6da4f723a2a28d4e7307f01c55d150d565cbc7575e9c5d6e19cd3b68a5ee98ed",
+        "project/mat/studies/conventional-ground-junction.json": "439bfd151f40895b1e8abb1e17ae47ffd2dc02f977160a3c94362cc5f06f2f72",
+        "project/mat/envelope-ground-boundary.md": "eb67353c8314449a0c10e12e8f41ca6e0c3bd1997776abcedc3bbf7f2346f0ae",
+        "project/owner-house-charter.md": "891ed6b72ff7452826a18bf5f91458746b8594a5c5ac89f75407e9a40b776371",
+        "docs/reference-house/structural-brief.md": "63764b34f27ca25425e560a2a12fbf0fcd895ccad0f63b35ea5d8aa72566565e",
+        "project/str/studies/current-house-grid.py": "16253b545126847df0250bda3d1260c3210434387feea9abf4b5a0758308f635",
+        "project/had/studies/water-replan.mjs": "9ef245c2f354dcd4952e3ffe2d07a24b3d8fff4a73257bca8d9d27627015c078",
+        "project/mat/studies/whole-house-leakage-duty.json": "b2700cfa84010eea0c9d8f118a5e658138c75b180b4368110c1ab5f3c4c0cad8",
+        "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+        "project/triad-interface-contract.md": "3f489e840a2711873b9a8148970507e9504c31f5ad482967af6cfcccb2f42810",
+        "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5"
+      },
+      "selected": false,
+      "diagnostics": [
+        "UNCOORDINATED_SERVICE_ROOF_FOUNDATION_LEVELS",
+        "LOWER_STAIR_TOE_CONTACT_UNLOCATED",
+        "UPPER_COMPONENT_WITHOUT_DIRECT_MINERAL_SUPPORT:court-south-native-ground-core-0",
+        "UPPER_COMPONENT_WITHOUT_DIRECT_MINERAL_SUPPORT:court-west-native-ground-core-0"
+      ],
+      "floorAssembly": {
+        "sourceLayersTopDownMm": [
+          15,
+          65,
+          100,
+          200
+        ],
+        "authoredLayersTopDownMm": [
+          15,
+          65,
+          100,
+          200
+        ],
+        "scope": "Only service depth is authored here; finish, glass and slab retain their bound source. No installed service or structural evidence transfers."
+      },
+      "levelsMm": {
+        "coldGridTop": -180,
+        "wetRCPlinth": [
+          -180,
+          0
+        ],
+        "mineralCourse": [
+          0,
+          150
+        ],
+        "dryRC": [
+          150,
+          350
+        ],
+        "glass": [
+          350,
+          450
+        ],
+        "accessibleDistribution": [
+          450,
+          515
+        ],
+        "finish": [
+          515,
+          530
+        ],
+        "ffl": 530,
+        "occupiedTranslation": 530,
+        "authoredExteriorGrade": -150,
+        "sourceUnadoptedUniformGrade": -1800,
+        "localSolum": -1800,
+        "exteriorAboveLocalSolum": 1650,
+        "courseToGrade": 150,
+        "gradeClearanceToControlMargin": 0,
+        "nominalMinus150GradeWouldPass": true,
+        "courtSouthWalking": 530,
+        "courtNorthWalking": 420,
+        "gardenTerrace": 377.5,
+        "courtWeatherLeafDpcLowerReservation": 680,
+        "firstFFL": 3980,
+        "firstFloorAboveAuthoredGeneralGrade": 4130,
+        "firstFloorAboveLocalSolum": 5780,
+        "actualLowestAdjacentGround": null,
+        "MATeaves": 7630,
+        "MATridge": 8620.903773579372
+      },
+      "quantities": {
+        "sourceEvidenceCurrent": true,
+        "evidenceRule": "Geometry quantities recompute from bound native declarations; sourceEvidenceCurrent marks old structural-receipt applicability, never physical acceptance.",
+        "floorAreaM2": 107.80958250000015,
+        "formerDirectOverlapM2": 53.86219375,
+        "originalOccupiedFloorAreaM2": 104.89522500000018,
+        "additionalDrySlabCoreEdgeAreaM2": 2.9143574999999657,
+        "additionalDrySlabCoreEdgeVolumeM3": 0.5828714999999931,
+        "wetPlinthUnion": {
+          "floorAreaM2": 107.80958250000015,
+          "bearingAreaM2": 57.17555125,
+          "disjointCellCount": 5670,
+          "disjointCellDigest": "2073c2f1e089e31e4f5aa420d00d935b585b8fa4e0e35c69be9d9cc1bc5c341a"
+        },
+        "additionalWetRCPlinthM3": 10.291599225,
+        "additionalWetRCPlinthWeightKN": 257.289980625,
+        "newDrySlabGrossM3": 21.561916500000027,
+        "removedOldFreeFieldGrossM3": 10.206606250000036,
+        "addedRCCausedBySeparationM3": 11.355310249999992,
+        "addedRCWeightBudgetKN": 283.8827562499998,
+        "newColdBeamGrossM3": 0.45539999999999997,
+        "newColdBeamNetAddedM3": 0.3366,
+        "newColdBeamNetAddedWeightKN": 8.415000000000001,
+        "fullWidthBearingFootprintM2": 57.17555125,
+        "mineralCourseGrossReservationM3": 8.5763326875,
+        "mineralCourseGrossWeightBudgetKN": 171.52665375,
+        "mineralCourseOnlyConductancePerUnitLambdaWPerK": 381.1703416666667,
+        "actualMineralConductivity": null,
+        "actualJunctionHeatLoss": null
+      },
+      "approaches": {
+        "front": {
+          "riseMm": 680,
+          "slopeRatio": 20,
+          "slopingRunMm": 13600,
+          "flightsMm": [
+            9000,
+            4600
+          ],
+          "landingLengthMm": 1200,
+          "landings": 3,
+          "totalStraightReservationMm": 17200,
+          "extraStraightReservationMm": -24800
+        },
+        "garden": {
+          "riseMm": 527.5,
+          "slopeRatio": 20,
+          "slopingRunMm": 10550.0,
+          "flightsMm": [
+            8000,
+            2550.0
+          ],
+          "landingLengthMm": 1200,
+          "landings": 3,
+          "totalStraightReservationMm": 14150.0,
+          "extraStraightReservationMm": -26000.0
+        },
+        "clearWidthReservationMm": 1200,
+        "status": "same source flight-length/landing arithmetic, not accepted accessibility or a surveyed site"
+      },
+      "coldBeam": {
+        "planMm": [
+          3750,
+          4240.0,
+          8150,
+          4470.0
+        ],
+        "axisSupportSpanMm": 4000.0,
+        "zMm": [
+          -630,
+          -180
+        ],
+        "loadGKNm": 5.91375,
+        "loadQKNm": 5.42,
+        "variablePointULSKN": 7.5,
+        "torsionBoundKNm": 6.66790125,
+        "endReactionEnvelopeULSKN": 39.727125,
+        "nominalPlanNodeStressMPa": 0.863633152173913,
+        "sourceConcreteCompressionComparisonMPa": 17.0,
+        "nodeTransferLengthMm": 200,
+        "endSupportIds": [
+          "court-W",
+          "court-E"
+        ],
+        "physicalEndBearingCredited": false,
+        "comparisons": [
+          {
+            "width": 230,
+            "depth": 450,
+            "d": 392.0,
+            "cover": 40,
+            "steel": "3H20 each TOP/BOTTOM",
+            "As": 942.4777960769379,
+            "neutral_axis": 131.00158402047953,
+            "ductility": 0.33418771433795796,
+            "MR": 139.15863582003303,
+            "M": 39.727125,
+            "V": 39.727125,
+            "lever": 339.5993663918082,
+            "edge": 58.0,
+            "linkDiameter": 8,
+            "linkPitch": 100,
+            "deflectionIncluding400microstrain": 4.857769517955879,
+            "deflectionComparator": 16.0,
+            "torsionWall": 116.0,
+            "Ak": 38076.0,
+            "T": 6.66790125,
+            "torsionSteelRequired": 180.44451749133313,
+            "flexuralSteelRequired": 269.05935800416165,
+            "bottomCornerInteraction": 0.4290740299728498,
+            "shearTorsionStrut": 0.27727700048786175,
+            "outerLegRequired": 0.33088498444504655,
+            "outerLegProvided": 0.5026548245743669,
+            "minVerticalMainBarClear": 314.0,
+            "passChecks": {
+              "flexure": true,
+              "ductility": true,
+              "longitudinalCorner": true,
+              "closedLink": true,
+              "strut": true,
+              "verticalBarClear": true,
+              "serviceDeflection": true,
+              "horizontalBarClear": true
+            },
+            "pass": true,
+            "mainBarHorizontalClearMm": 37.0
+          },
+          {
+            "width": 230,
+            "depth": 450,
+            "d": 382.0,
+            "cover": 50,
+            "steel": "3H20 each TOP/BOTTOM",
+            "As": 942.4777960769379,
+            "neutral_axis": 131.00158402047953,
+            "ductility": 0.3429360838232448,
+            "MR": 135.0609062718724,
+            "M": 39.727125,
+            "V": 39.727125,
+            "lever": 329.5993663918082,
+            "edge": 68.0,
+            "linkDiameter": 8,
+            "linkPitch": 100,
+            "deflectionIncluding400microstrain": 5.049406422033584,
+            "deflectionComparator": 16.0,
+            "torsionWall": 136.0,
+            "Ak": 29516.0,
+            "T": 6.66790125,
+            "torsionSteelRequired": 211.99209015449247,
+            "flexuralSteelRequired": 277.2225823740872,
+            "bottomCornerInteraction": 0.46284024069925844,
+            "shearTorsionStrut": 0.29700280769416304,
+            "outerLegRequired": 0.3926801901723903,
+            "outerLegProvided": 0.5026548245743669,
+            "minVerticalMainBarClear": 294.0,
+            "passChecks": {
+              "flexure": true,
+              "ductility": true,
+              "longitudinalCorner": true,
+              "closedLink": true,
+              "strut": true,
+              "verticalBarClear": true,
+              "serviceDeflection": true,
+              "horizontalBarClear": true
+            },
+            "pass": true,
+            "mainBarHorizontalClearMm": 27.0
+          }
+        ],
+        "mainAndLinkBareSteelBeforeHooksAnchorageKg": 83.0046980845091,
+        "closedLinkCountReservation": 45,
+        "formerUnsupportedSeatM2": 0.399,
+        "remainingUnsupportedSeatM2": 0,
+        "bearingAndCageAnchorageQualified": false
+      },
+      "sourceSupportControl": {
+        "gridTopMm": -180,
+        "gridHeadCount": 52,
+        "groundSupport": {
+          "grid": [
+            600,
+            450
+          ],
+          "top": -180,
+          "bottom": -630,
+          "integralNode": [
+            600,
+            600,
+            570
+          ],
+          "lowTies": [
+            600,
+            200
+          ],
+          "lowTieTop": -550,
+          "lowestNodeTie": -750,
+          "heaveStress": 300,
+          "constructionLoss": 50,
+          "ventilationReserve": 150,
+          "Drequired": 1688,
+          "Dtrial": 1800,
+          "Dsurplus": 112,
+          "scope": "D1800 is the joined pre-site comparator. Retained grid/member capacities and actual ground/heave/ventilation remain unqualified; actual site and any deeper structural member reopen this reference."
+        },
+        "localSolumIsNotExteriorGrade": true
+      },
+      "lowerStairToe": {
+        "sourceControl": {
+          "control_RC_top": -180,
+          "new_MAT_thermal_level_unjoined": true
+        },
+        "proposedSupport": "upper dry slab",
+        "proposedSupportTopMm": 350,
+        "actualContactPlanMm": null,
+        "actualCageQualified": false
+      },
+      "downstreamApplicability": {
+        "status": "uncoordinated candidate only",
+        "occupiedTranslationMm": 530,
+        "nominalPlansRemainOriginalLevels": true,
+        "requiresRequalification": [
+          "services/water and maintenance translation",
+          "actual tied roof and wind heights",
+          "compatible foundation/contact response",
+          "site water and access terrain"
+        ]
+      },
+      "drawingGeometryMm": {
+        "courtSouthGridY": [
+          3650.0,
+          4250.0
+        ],
+        "courtSouthGridZ": [
+          -630,
+          -180
+        ],
+        "seatPlan": [
+          5050,
+          4060,
+          1900,
+          400
+        ],
+        "panThickness": 1.5,
+        "panBearingPads": [
+          {
+            "x": [
+              5110,
+              5150
+            ],
+            "y": [
+              4110,
+              4250
+            ]
+          },
+          {
+            "x": [
+              5980,
+              6020
+            ],
+            "y": [
+              4110,
+              4250
+            ]
+          },
+          {
+            "x": [
+              6850,
+              6890
+            ],
+            "y": [
+              4110,
+              4250
+            ]
+          }
+        ],
+        "coldSupportRectangles": [
+          [
+            -17.5,
+            332.5,
+            682.5,
+            11667.5
+          ],
+          [
+            11217.5,
+            332.5,
+            12117.5,
+            11667.5
+          ],
+          [
+            332.5,
+            -17.5,
+            11667.5,
+            682.5
+          ],
+          [
+            332.5,
+            11317.5,
+            4500,
+            12017.5
+          ],
+          [
+            7500,
+            11317.5,
+            11667.5,
+            12017.5
+          ],
+          [
+            4200.0,
+            8050,
+            4800.0,
+            11667.5
+          ],
+          [
+            7200.0,
+            8050,
+            7800.0,
+            11667.5
+          ],
+          [
+            3650.0,
+            3950,
+            4250.0,
+            8050
+          ],
+          [
+            7650.0,
+            3950,
+            8250.0,
+            8050
+          ],
+          [
+            3950,
+            3650.0,
+            8050,
+            4250.0
+          ],
+          [
+            3950,
+            7750.0,
+            4500,
+            8350.0
+          ],
+          [
+            8850.0,
+            332.5,
+            9750.0,
+            8290
+          ],
+          [
+            2642.5,
+            4173,
+            3242.5,
+            8949.5
+          ],
+          [
+            332.5,
+            4032.5,
+            3950,
+            4632.5
+          ],
+          [
+            332.5,
+            8552.5,
+            2942.5,
+            9152.5
+          ],
+          [
+            2602.5,
+            8852.5,
+            3202.5,
+            11667.5
+          ],
+          [
+            4500.0,
+            332.5,
+            5100.0,
+            2650
+          ],
+          [
+            3100.0,
+            1200,
+            3700.0,
+            2650
+          ],
+          [
+            2817.5,
+            2350.0,
+            4800,
+            2950.0
+          ],
+          [
+            6900.0,
+            332.5,
+            7500.0,
+            2650
+          ],
+          [
+            7200,
+            2350.0,
+            9300,
+            2950.0
+          ],
+          [
+            2942.5,
+            8552.5,
+            4500,
+            9152.5
+          ],
+          [
+            7500,
+            7990.0,
+            11667.5,
+            8590.0
+          ],
+          [
+            7500,
+            7750.0,
+            7950,
+            8350.0
+          ],
+          [
+            3400,
+            900.0,
+            4800,
+            1500.0
+          ],
+          [
+            332.5,
+            2947.5,
+            2817.5,
+            3547.5
+          ],
+          [
+            2517.5,
+            2650,
+            3117.5,
+            4332.5
+          ],
+          [
+            9300,
+            2250.0,
+            11667.5,
+            2850.0
+          ],
+          [
+            9300,
+            3400.0,
+            11667.5,
+            4000.0
+          ],
+          [
+            9300,
+            5775.0,
+            11667.5,
+            6425.0
+          ],
+          [
+            9300,
+            7375.0,
+            11667.5,
+            8025.0
+          ],
+          [
+            2817.5,
+            3950.0,
+            3950,
+            4550.0
+          ],
+          [
+            7950,
+            3950.0,
+            9300,
+            4550.0
+          ],
+          [
+            32.5,
+            32.5,
+            632.5,
+            632.5
+          ],
+          [
+            892.5,
+            32.5,
+            1492.5,
+            632.5
+          ],
+          [
+            32.5,
+            892.5,
+            632.5,
+            1492.5
+          ],
+          [
+            11217.5,
+            32.5,
+            12117.5,
+            632.5
+          ],
+          [
+            10507.5,
+            32.5,
+            11107.5,
+            632.5
+          ],
+          [
+            11217.5,
+            892.5,
+            12117.5,
+            1492.5
+          ],
+          [
+            32.5,
+            11367.5,
+            632.5,
+            11967.5
+          ],
+          [
+            892.5,
+            11367.5,
+            1492.5,
+            11967.5
+          ],
+          [
+            32.5,
+            10507.5,
+            632.5,
+            11107.5
+          ],
+          [
+            11217.5,
+            11367.5,
+            12117.5,
+            11967.5
+          ],
+          [
+            10507.5,
+            11367.5,
+            11107.5,
+            11967.5
+          ],
+          [
+            11217.5,
+            10507.5,
+            12117.5,
+            11107.5
+          ],
+          [
+            32.5,
+            2947.5,
+            632.5,
+            3547.5
+          ],
+          [
+            32.5,
+            4032.5,
+            632.5,
+            4632.5
+          ],
+          [
+            32.5,
+            6200.0,
+            632.5,
+            6800.0
+          ],
+          [
+            32.5,
+            8552.5,
+            632.5,
+            9152.5
+          ],
+          [
+            11217.5,
+            3100.0,
+            12117.5,
+            3700.0
+          ],
+          [
+            11217.5,
+            5700.0,
+            12117.5,
+            6300.0
+          ],
+          [
+            11217.5,
+            7500.0,
+            12117.5,
+            8100.0
+          ],
+          [
+            3100.0,
+            32.5,
+            3700.0,
+            632.5
+          ],
+          [
+            4500.0,
+            32.5,
+            5100.0,
+            632.5
+          ],
+          [
+            6900.0,
+            32.5,
+            7500.0,
+            632.5
+          ],
+          [
+            8850.0,
+            32.5,
+            9750.0,
+            632.5
+          ],
+          [
+            2602.5,
+            11367.5,
+            3202.5,
+            11967.5
+          ],
+          [
+            4200.0,
+            11367.5,
+            4800.0,
+            11967.5
+          ],
+          [
+            7200.0,
+            11367.5,
+            7800.0,
+            11967.5
+          ],
+          [
+            8850.0,
+            11367.5,
+            9750.0,
+            11967.5
+          ],
+          [
+            4200.0,
+            7750.0,
+            4800.0,
+            8350.0
+          ],
+          [
+            4200.0,
+            9575.0,
+            4800.0,
+            10175.0
+          ],
+          [
+            7200.0,
+            7750.0,
+            7800.0,
+            8350.0
+          ],
+          [
+            7200.0,
+            9575.0,
+            7800.0,
+            10175.0
+          ],
+          [
+            3650.0,
+            4032.5,
+            4250.0,
+            4632.5
+          ],
+          [
+            3650.0,
+            5900.0,
+            4250.0,
+            6500.0
+          ],
+          [
+            3650.0,
+            7750.0,
+            4250.0,
+            8350.0
+          ],
+          [
+            7650.0,
+            3650.0,
+            8250.0,
+            4250.0
+          ],
+          [
+            7650.0,
+            5775.0,
+            8250.0,
+            6425.0
+          ],
+          [
+            7650.0,
+            7375.0,
+            8250.0,
+            8025.0
+          ],
+          [
+            4485.0,
+            3617.5,
+            5085.0,
+            4217.5
+          ],
+          [
+            5700.0,
+            3650.0,
+            6300.0,
+            4250.0
+          ],
+          [
+            6915.0,
+            3617.5,
+            7515.0,
+            4217.5
+          ],
+          [
+            8850.0,
+            2350.0,
+            9750.0,
+            2950.0
+          ],
+          [
+            8850.0,
+            3800.0,
+            9750.0,
+            4400.0
+          ],
+          [
+            8850.0,
+            5775.0,
+            9750.0,
+            6425.0
+          ],
+          [
+            8850.0,
+            7375.0,
+            9750.0,
+            8025.0
+          ],
+          [
+            2642.5,
+            4032.5,
+            3242.5,
+            4632.5
+          ],
+          [
+            2642.5,
+            6957.5,
+            3242.5,
+            7557.5
+          ],
+          [
+            2642.5,
+            8552.5,
+            3242.5,
+            9152.5
+          ],
+          [
+            4500.0,
+            900.0,
+            5100.0,
+            1500.0
+          ],
+          [
+            4500.0,
+            2350.0,
+            5100.0,
+            2950.0
+          ],
+          [
+            3100.0,
+            900.0,
+            3700.0,
+            1500.0
+          ],
+          [
+            3100.0,
+            2350.0,
+            3700.0,
+            2950.0
+          ],
+          [
+            6900.0,
+            2350.0,
+            7500.0,
+            2950.0
+          ]
+        ]
+      },
+      "threshold": {
+        "panPlanUnchangedMm": [
+          5102,
+          4030,
+          1796,
+          420
+        ],
+        "bodyDimensionsMm": [
+          1796,
+          420,
+          131.5
+        ],
+        "panProfileYZMm": [
+          [
+            4030,
+            530
+          ],
+          [
+            4060,
+            530
+          ],
+          [
+            4060,
+            545
+          ],
+          [
+            4090,
+            545
+          ]
+        ],
+        "panWetFloorYZMm": [
+          [
+            4090,
+            485
+          ],
+          [
+            4450,
+            475
+          ]
+        ],
+        "rearCrestMm": 545,
+        "endCrestMm": 605,
+        "mineralBearingBottomMm": 350,
+        "northDrawMm": 500,
+        "planRotationRadiusMm": 922.2277376006429,
+        "sourcePlanDrawReservationMm": [
+          5050,
+          4030,
+          1900,
+          1420
+        ],
+        "sourcePanMinimumToDryRCMm": 123.5,
+        "wetFixingsCredited": 0,
+        "renewalQualified": false,
+        "fixedDryBackingEndYmm": 4054,
+        "minimumOverlapChallengeMm": 20,
+        "minimumRiserGapChallengeMm": 2,
+        "completeAirWaterEndJointQualified": false
+      },
+      "locatedRouteScreens": [
+        {
+          "id": "primaryTray",
+          "sourceStart": [
+            5050,
+            4300,
+            -25
+          ],
+          "sourceEnd": [
+            5000,
+            4300,
+            -35
+          ],
+          "lineBedToColdBeamMm": 675,
+          "qualification": "centreline/declared100mm width screen only; wall/gauge/support envelopes not transferred"
+        },
+        {
+          "id": "primaryTray",
+          "sourceStart": [
+            5000,
+            4300,
+            -35
+          ],
+          "sourceEnd": [
+            5000,
+            7750,
+            -140
+          ],
+          "lineBedToColdBeamMm": 570,
+          "qualification": "centreline/declared100mm width screen only; wall/gauge/support envelopes not transferred"
+        },
+        {
+          "id": "secondaryTray",
+          "sourceStart": [
+            6950,
+            4500,
+            -80
+          ],
+          "sourceEnd": [
+            7350,
+            4500,
+            -95
+          ],
+          "lineBedToColdBeamMm": 615,
+          "qualification": "centreline/declared100mm width screen only; wall/gauge/support envelopes not transferred"
+        },
+        {
+          "id": "secondaryTray",
+          "sourceStart": [
+            7350,
+            4500,
+            -95
+          ],
+          "sourceEnd": [
+            7350,
+            6300,
+            -125
+          ],
+          "lineBedToColdBeamMm": 585,
+          "qualification": "centreline/declared100mm width screen only; wall/gauge/support envelopes not transferred"
+        }
+      ],
+      "retainedColdGridEndProjections": [
+        {
+          "id": "court-W",
+          "endProjectionMm": [
+            382.5,
+            0
+          ]
+        },
+        {
+          "id": "court-E",
+          "endProjectionMm": [
+            0,
+            350
+          ]
+        },
+        {
+          "id": "court-S",
+          "endProjectionMm": [
+            835,
+            100
+          ]
+        },
+        {
+          "id": "spine",
+          "endProjectionMm": [
+            0,
+            590
+          ]
+        },
+        {
+          "id": "stair-post",
+          "endProjectionMm": [
+            159.5,
+            97.0
+          ]
+        },
+        {
+          "id": "study-north",
+          "endProjectionMm": [
+            582.5,
+            0
+          ]
+        }
+      ],
+      "supportTopology": {
+        "rule": "continuous full-width bonded mineral bearing over every existing slab-contact grid/cap footprint plus new court seat support; all occupied RC, wall, stair and portal reinforcement wholly above it",
+        "bearingFootprintReservationOnly": true,
+        "walls": [
+          "study-east",
+          "cloak-east",
+          "cloak-west",
+          "cloak-south",
+          "study-cloak-north",
+          "study-L-return",
+          "study-L-north",
+          "wc-west",
+          "wc-north",
+          "service-spine",
+          "utility-north",
+          "plant-intermediate-arch",
+          "plant-north",
+          "rear-west",
+          "rear-east",
+          "loggia-west-weather",
+          "loggia-east-weather",
+          "protected-stair-east",
+          "protected-west-cross",
+          "protected-east-cross",
+          "east-passage-north-weather",
+          "gallery-east-water-weather"
+        ],
+        "exteriorCoreFootprints": [
+          {
+            "id": "outer-south-ground-core-0",
+            "planMm": [
+              262.5,
+              262.5,
+              11737.5,
+              402.5
+            ],
+            "role": "actual structural-core-width support domain; open-loggia/service portals excluded; no weather-leaf credit",
+            "directSupportAreaM2": 1.6065,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "outer-north-ground-core-0",
+            "planMm": [
+              262.5,
+              11597.5,
+              4520.0,
+              11737.5
+            ],
+            "role": "actual structural-core-width support domain; open-loggia/service portals excluded; no weather-leaf credit",
+            "directSupportAreaM2": 0.59605,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "outer-north-ground-core-1",
+            "planMm": [
+              7480.0,
+              11597.5,
+              11737.5,
+              11737.5
+            ],
+            "role": "actual structural-core-width support domain; open-loggia/service portals excluded; no weather-leaf credit",
+            "directSupportAreaM2": 0.59605,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "outer-west-ground-core-0",
+            "planMm": [
+              262.5,
+              262.5,
+              402.5,
+              11737.5
+            ],
+            "role": "actual structural-core-width support domain; open-loggia/service portals excluded; no weather-leaf credit",
+            "directSupportAreaM2": 1.6065,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "outer-east-ground-core-0",
+            "planMm": [
+              11597.5,
+              262.5,
+              11737.5,
+              6273.0
+            ],
+            "role": "actual structural-core-width support domain; open-loggia/service portals excluded; no weather-leaf credit",
+            "directSupportAreaM2": 0.84147,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "outer-east-ground-core-1",
+            "planMm": [
+              11597.5,
+              7527.0,
+              11737.5,
+              11737.5
+            ],
+            "role": "actual structural-core-width support domain; open-loggia/service portals excluded; no weather-leaf credit",
+            "directSupportAreaM2": 0.58947,
+            "unsupportedAreaM2": 0
+          }
+        ],
+        "upperComponentFootprints": [
+          {
+            "id": "outer-south-ground-core-0",
+            "planMm": [
+              262.5,
+              262.5,
+              11737.5,
+              402.5
+            ],
+            "role": "actual structural-core-width support domain; open-loggia/service portals excluded; no weather-leaf credit",
+            "directSupportAreaM2": 1.6065,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "outer-north-ground-core-0",
+            "planMm": [
+              262.5,
+              11597.5,
+              4520.0,
+              11737.5
+            ],
+            "role": "actual structural-core-width support domain; open-loggia/service portals excluded; no weather-leaf credit",
+            "directSupportAreaM2": 0.59605,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "outer-north-ground-core-1",
+            "planMm": [
+              7480.0,
+              11597.5,
+              11737.5,
+              11737.5
+            ],
+            "role": "actual structural-core-width support domain; open-loggia/service portals excluded; no weather-leaf credit",
+            "directSupportAreaM2": 0.59605,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "outer-west-ground-core-0",
+            "planMm": [
+              262.5,
+              262.5,
+              402.5,
+              11737.5
+            ],
+            "role": "actual structural-core-width support domain; open-loggia/service portals excluded; no weather-leaf credit",
+            "directSupportAreaM2": 1.6065,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "outer-east-ground-core-0",
+            "planMm": [
+              11597.5,
+              262.5,
+              11737.5,
+              6273.0
+            ],
+            "role": "actual structural-core-width support domain; open-loggia/service portals excluded; no weather-leaf credit",
+            "directSupportAreaM2": 0.84147,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "outer-east-ground-core-1",
+            "planMm": [
+              11597.5,
+              7527.0,
+              11737.5,
+              11737.5
+            ],
+            "role": "actual structural-core-width support domain; open-loggia/service portals excluded; no weather-leaf credit",
+            "directSupportAreaM2": 0.58947,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "court-south-native-ground-core-0",
+            "planMm": [
+              3847.5,
+              3847.5,
+              8152.5,
+              3987.5
+            ],
+            "role": "native structural candidate core axis; actual MAT/weather alignment and load acceptance remain separate",
+            "directSupportAreaM2": 0.59219375,
+            "unsupportedAreaM2": 0.01050625000000005
+          },
+          {
+            "id": "court-north-native-ground-core-0",
+            "planMm": [
+              3847.5,
+              8012.5,
+              4520.0,
+              8152.5
+            ],
+            "role": "native structural candidate core axis; actual MAT/weather alignment and load acceptance remain separate",
+            "directSupportAreaM2": 0.09415,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "court-north-native-ground-core-1",
+            "planMm": [
+              7480.0,
+              8012.5,
+              8152.5,
+              8152.5
+            ],
+            "role": "native structural candidate core axis; actual MAT/weather alignment and load acceptance remain separate",
+            "directSupportAreaM2": 0.09415,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "court-west-native-ground-core-0",
+            "planMm": [
+              3847.5,
+              3847.5,
+              3987.5,
+              8152.5
+            ],
+            "role": "native structural candidate core axis; actual MAT/weather alignment and load acceptance remain separate",
+            "directSupportAreaM2": 0.59219375,
+            "unsupportedAreaM2": 0.01050625000000005
+          },
+          {
+            "id": "court-east-native-ground-core-0",
+            "planMm": [
+              8012.5,
+              3847.5,
+              8152.5,
+              8152.5
+            ],
+            "role": "native structural candidate core axis; actual MAT/weather alignment and load acceptance remain separate",
+            "directSupportAreaM2": 0.6027,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-study-east",
+            "planMm": [
+              4730,
+              262.5,
+              4870,
+              1200
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.13125,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-cloak-east",
+            "planMm": [
+              4730,
+              1200,
+              4870,
+              2650
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.203,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-cloak-west",
+            "planMm": [
+              3330,
+              1200,
+              3470,
+              2650
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.203,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-cloak-south",
+            "planMm": [
+              3400,
+              1130,
+              4800,
+              1270
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.196,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-study-cloak-north",
+            "planMm": [
+              2817.5,
+              2580,
+              4800,
+              2720
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.27755,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-study-L-return",
+            "planMm": [
+              2747.5,
+              2650,
+              2887.5,
+              3247.5
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.08365,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-study-L-north",
+            "planMm": [
+              262.5,
+              3177.5,
+              2817.5,
+              3317.5
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.3577,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-wc-west",
+            "planMm": [
+              7130,
+              262.5,
+              7270,
+              2650
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.33425,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-wc-north",
+            "planMm": [
+              7200,
+              2580,
+              9300,
+              2720
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.294,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-service-spine",
+            "planMm": [
+              9230,
+              262.5,
+              9370,
+              8290
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 1.12385,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-utility-north",
+            "planMm": [
+              9300,
+              2480,
+              11737.5,
+              2620
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.34125,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-plant-intermediate-arch",
+            "planMm": [
+              9300,
+              3630,
+              11737.5,
+              3770
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.34125,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-plant-north",
+            "planMm": [
+              9300,
+              5807.5,
+              11737.5,
+              5947.5
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.34125,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-rear-west",
+            "planMm": [
+              262.5,
+              8782.5,
+              4377.5,
+              8922.5
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.5761,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-rear-east",
+            "planMm": [
+              7552.5,
+              8182.5,
+              11737.5,
+              8397.5
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.899775,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-loggia-west-weather",
+            "planMm": [
+              4307.5,
+              7750,
+              4447.5,
+              11737.5
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.55825,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-loggia-east-weather",
+            "planMm": [
+              7552.5,
+              7750,
+              7692.5,
+              11737.5
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.55825,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-protected-stair-east",
+            "planMm": [
+              2844.5,
+              4173,
+              2944.5,
+              8949.5
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.47765,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-protected-west-cross",
+            "planMm": [
+              2817.5,
+              4200,
+              3820.5,
+              4300
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.1003,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-protected-east-cross",
+            "planMm": [
+              8012.5,
+              4200,
+              9370,
+              4300
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.13575,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-east-passage-north-weather",
+            "planMm": [
+              9397,
+              7852.5,
+              11737.5,
+              7992.5
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.32767,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-gallery-east-water-weather",
+            "planMm": [
+              9230,
+              6300,
+              9370,
+              7500
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.168,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "stairMidPost",
+            "planMm": [
+              2817.5,
+              7132.5,
+              3067.5,
+              7382.5
+            ],
+            "role": "actual RC core restarts in upper dry slab; no cold starter crosses course",
+            "directSupportAreaM2": 0.0625,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "southWetReceiver",
+            "planMm": [
+              2772.5,
+              8627.5,
+              3032.5,
+              9077.5
+            ],
+            "role": "actual RC core restarts in upper dry slab; no cold starter crosses course",
+            "directSupportAreaM2": 0.117,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "northWetReceiver",
+            "planMm": [
+              2772.5,
+              11287.5,
+              3032.5,
+              11737.5
+            ],
+            "role": "actual RC core restarts in upper dry slab; no cold starter crosses course",
+            "directSupportAreaM2": 0.117,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "north-portal-west-0",
+            "planMm": [
+              4307.5,
+              7975,
+              4520,
+              8190
+            ],
+            "role": "actual full portal-core bearing footprint, including projection beyond ordinary outer core",
+            "directSupportAreaM2": 0.0456875,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "north-portal-east-0",
+            "planMm": [
+              7480,
+              7975,
+              7692.5,
+              8190
+            ],
+            "role": "actual full portal-core bearing footprint, including projection beyond ordinary outer core",
+            "directSupportAreaM2": 0.0456875,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "north-portal-west-1",
+            "planMm": [
+              4307.5,
+              11560,
+              4520,
+              11775
+            ],
+            "role": "actual full portal-core bearing footprint, including projection beyond ordinary outer core",
+            "directSupportAreaM2": 0.0456875,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "north-portal-east-1",
+            "planMm": [
+              7480,
+              11560,
+              7692.5,
+              11775
+            ],
+            "role": "actual full portal-core bearing footprint, including projection beyond ordinary outer core",
+            "directSupportAreaM2": 0.0456875,
+            "unsupportedAreaM2": 0
+          }
+        ],
+        "drySlabEdgeRule": "extend upper dry RC to actual exterior structural-core weather faces; preserve open portals; no extension into weather leaf or cavity",
+        "crossings": [
+          {
+            "id": "stairMidPost",
+            "planMm": [
+              2817.5,
+              7132.5,
+              250,
+              250
+            ],
+            "construction": "restart in the upper dry slab; no lower RC/bar continuity through mineral course"
+          },
+          {
+            "id": "southWetReceiver",
+            "planMm": [
+              2772.5,
+              8627.5,
+              260,
+              450
+            ],
+            "construction": "restart in the upper dry slab; no lower RC/bar continuity through mineral course"
+          },
+          {
+            "id": "northWetReceiver",
+            "planMm": [
+              2772.5,
+              11287.5,
+              260,
+              450
+            ],
+            "construction": "restart in the upper dry slab; no lower RC/bar continuity through mineral course"
+          },
+          {
+            "id": "northPortal-west-1",
+            "construction": "full bearing on mineral course over named loggia girder; upper bars end above course"
+          },
+          {
+            "id": "northPortal-west-2",
+            "construction": "full bearing on mineral course over named loggia girder; upper bars end above course"
+          },
+          {
+            "id": "northPortal-east-1",
+            "construction": "full bearing on mineral course over named loggia girder; upper bars end above course"
+          },
+          {
+            "id": "northPortal-east-2",
+            "construction": "full bearing on mineral course over named loggia girder; upper bars end above course"
+          },
+          {
+            "id": "stair-lower-toe",
+            "construction": "seat on upper dry slab, no direct cold-grid contact"
+          },
+          {
+            "id": "inner-corner-SW",
+            "construction": "aligned dry wall/abutment above course; historical RC L and upper metal plate not inherited"
+          },
+          {
+            "id": "inner-corner-SE",
+            "construction": "aligned dry wall/abutment above course; historical RC L and upper metal plate not inherited"
+          },
+          {
+            "id": "inner-corner-NW",
+            "construction": "aligned dry wall/abutment above course; historical RC L and upper metal plate not inherited"
+          },
+          {
+            "id": "inner-corner-NE",
+            "construction": "aligned dry wall/abutment above course; historical RC L and upper metal plate not inherited"
+          }
+        ],
+        "foundationHeadsUncut": 52,
+        "upperSlabPositiveCrossingCredited": false,
+        "mineralShearResistance": null,
+        "retentionQualified": false,
+        "contactQualified": false
+      },
+      "invalidatedEvidence": [
+        "old ground-slab support/cage/crack/pour acceptance",
+        "retained ground slab credit",
+        "old DPC/global load distribution",
+        "native old-height wind and roof assumptions",
+        "actual 52-head compatible actions/movement",
+        "floor/wall/threshold air and thermal qualification"
+      ],
+      "holds": [
+        "actual mortar constituents and WCBL65 product dimension identity/bond/bed layout",
+        "distributed contact/sliding/shear and local mineral bearing under all adverse loads",
+        "new beam anchorage/node force and cold-grid reactions in compatible 52-head solve",
+        "court southwest upper-slab transfer and lower stair-toe contact-end/cage geometry",
+        "suspended slab body/joint air-moisture and site gas/pressure-water applicability",
+        "supported removable dry-apron/end/jamb seal under movement; pan/support renewal",
+        "3D surface/condensation/heat-loss with exact mineral properties",
+        "outer/court wet-leaf DPC/cavity tray and dry bearing separation",
+        "roof actual MAT geometry plus tied successor wind/support system",
+        "owner raised-plinth/approach/court aesthetic decision"
+      ]
+    },
+    "low-350-deep-exterior": {
+      "schema": "dry-side-ground-section-result/2",
+      "caseId": "low-350-deep-exterior",
+      "status": "source-bound proposal; geometry and local member comparisons only",
+      "sources": {
+        "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+        "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+        "project/str/studies/current-house-occupied-interfaces.json": "8083132336cdbdd1d51f7652e620e75741a4e66b0ac2cedae552c026cbfc3f77",
+        "project/str/studies/current-house-bridge.py": "6da4f723a2a28d4e7307f01c55d150d565cbc7575e9c5d6e19cd3b68a5ee98ed",
+        "project/mat/studies/conventional-ground-junction.json": "439bfd151f40895b1e8abb1e17ae47ffd2dc02f977160a3c94362cc5f06f2f72",
+        "project/mat/envelope-ground-boundary.md": "eb67353c8314449a0c10e12e8f41ca6e0c3bd1997776abcedc3bbf7f2346f0ae",
+        "project/owner-house-charter.md": "891ed6b72ff7452826a18bf5f91458746b8594a5c5ac89f75407e9a40b776371",
+        "docs/reference-house/structural-brief.md": "63764b34f27ca25425e560a2a12fbf0fcd895ccad0f63b35ea5d8aa72566565e",
+        "project/str/studies/current-house-grid.py": "16253b545126847df0250bda3d1260c3210434387feea9abf4b5a0758308f635",
+        "project/had/studies/water-replan.mjs": "9ef245c2f354dcd4952e3ffe2d07a24b3d8fff4a73257bca8d9d27627015c078",
+        "project/mat/studies/whole-house-leakage-duty.json": "b2700cfa84010eea0c9d8f118a5e658138c75b180b4368110c1ab5f3c4c0cad8",
+        "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+        "project/triad-interface-contract.md": "3f489e840a2711873b9a8148970507e9504c31f5ad482967af6cfcccb2f42810",
+        "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5"
+      },
+      "selected": false,
+      "diagnostics": [
+        "UNCOORDINATED_SERVICE_ROOF_FOUNDATION_LEVELS",
+        "LOWER_STAIR_TOE_CONTACT_UNLOCATED",
+        "UPPER_COMPONENT_WITHOUT_DIRECT_MINERAL_SUPPORT:court-south-native-ground-core-0",
+        "UPPER_COMPONENT_WITHOUT_DIRECT_MINERAL_SUPPORT:court-west-native-ground-core-0"
+      ],
+      "floorAssembly": {
+        "sourceLayersTopDownMm": [
+          15,
+          65,
+          100,
+          200
+        ],
+        "authoredLayersTopDownMm": [
+          15,
+          65,
+          100,
+          200
+        ],
+        "scope": "Only service depth is authored here; finish, glass and slab retain their bound source. No installed service or structural evidence transfers."
+      },
+      "levelsMm": {
+        "coldGridTop": -180,
+        "wetRCPlinth": [
+          -180,
+          -180
+        ],
+        "mineralCourse": [
+          -180,
+          -30
+        ],
+        "dryRC": [
+          -30,
+          170
+        ],
+        "glass": [
+          170,
+          270
+        ],
+        "accessibleDistribution": [
+          270,
+          335
+        ],
+        "finish": [
+          335,
+          350
+        ],
+        "ffl": 350,
+        "occupiedTranslation": 350,
+        "authoredExteriorGrade": -1800,
+        "sourceUnadoptedUniformGrade": -1800,
+        "localSolum": -1800,
+        "exteriorAboveLocalSolum": 0,
+        "courseToGrade": 1620,
+        "gradeClearanceToControlMargin": 1470,
+        "nominalMinus150GradeWouldPass": false,
+        "courtSouthWalking": 350,
+        "courtNorthWalking": 240,
+        "gardenTerrace": 197.5,
+        "courtWeatherLeafDpcLowerReservation": 500,
+        "firstFFL": 3800,
+        "firstFloorAboveAuthoredGeneralGrade": 5600,
+        "firstFloorAboveLocalSolum": 5600,
+        "actualLowestAdjacentGround": null,
+        "MATeaves": 7450,
+        "MATridge": 8440.903773579372
+      },
+      "quantities": {
+        "sourceEvidenceCurrent": true,
+        "evidenceRule": "Geometry quantities recompute from bound native declarations; sourceEvidenceCurrent marks old structural-receipt applicability, never physical acceptance.",
+        "floorAreaM2": 107.80958250000015,
+        "formerDirectOverlapM2": 53.86219375,
+        "originalOccupiedFloorAreaM2": 104.89522500000018,
+        "additionalDrySlabCoreEdgeAreaM2": 2.9143574999999657,
+        "additionalDrySlabCoreEdgeVolumeM3": 0.5828714999999931,
+        "wetPlinthUnion": {
+          "floorAreaM2": 107.80958250000015,
+          "bearingAreaM2": 57.17555125,
+          "disjointCellCount": 5670,
+          "disjointCellDigest": "2073c2f1e089e31e4f5aa420d00d935b585b8fa4e0e35c69be9d9cc1bc5c341a"
+        },
+        "additionalWetRCPlinthM3": 0.0,
+        "additionalWetRCPlinthWeightKN": 0.0,
+        "newDrySlabGrossM3": 21.561916500000027,
+        "removedOldFreeFieldGrossM3": 10.206606250000036,
+        "addedRCCausedBySeparationM3": 11.355310249999992,
+        "addedRCWeightBudgetKN": 283.8827562499998,
+        "newColdBeamGrossM3": 0.45539999999999997,
+        "newColdBeamNetAddedM3": 0.3366,
+        "newColdBeamNetAddedWeightKN": 8.415000000000001,
+        "fullWidthBearingFootprintM2": 57.17555125,
+        "mineralCourseGrossReservationM3": 8.5763326875,
+        "mineralCourseGrossWeightBudgetKN": 171.52665375,
+        "mineralCourseOnlyConductancePerUnitLambdaWPerK": 381.1703416666667,
+        "actualMineralConductivity": null,
+        "actualJunctionHeatLoss": null
+      },
+      "approaches": {
+        "front": {
+          "riseMm": 2150,
+          "slopeRatio": 20,
+          "slopingRunMm": 43000,
+          "flightsMm": [
+            9000,
+            9000,
+            9000,
+            9000,
+            7000
+          ],
+          "landingLengthMm": 1200,
+          "landings": 6,
+          "totalStraightReservationMm": 50200,
+          "extraStraightReservationMm": 8200
+        },
+        "garden": {
+          "riseMm": 1997.5,
+          "slopeRatio": 20,
+          "slopingRunMm": 39950.0,
+          "flightsMm": [
+            8000,
+            8000,
+            8000,
+            8000,
+            7950.0
+          ],
+          "landingLengthMm": 1200,
+          "landings": 6,
+          "totalStraightReservationMm": 47150.0,
+          "extraStraightReservationMm": 7000.0
+        },
+        "clearWidthReservationMm": 1200,
+        "status": "same source flight-length/landing arithmetic, not accepted accessibility or a surveyed site"
+      },
+      "coldBeam": {
+        "planMm": [
+          3750,
+          4240.0,
+          8150,
+          4470.0
+        ],
+        "axisSupportSpanMm": 4000.0,
+        "zMm": [
+          -630,
+          -180
+        ],
+        "loadGKNm": 4.87875,
+        "loadQKNm": 5.42,
+        "variablePointULSKN": 7.5,
+        "torsionBoundKNm": 6.025166249999999,
+        "endReactionEnvelopeULSKN": 36.932625,
+        "nominalPlanNodeStressMPa": 0.802883152173913,
+        "sourceConcreteCompressionComparisonMPa": 17.0,
+        "nodeTransferLengthMm": 200,
+        "endSupportIds": [
+          "court-W",
+          "court-E"
+        ],
+        "physicalEndBearingCredited": false,
+        "comparisons": [
+          {
+            "width": 230,
+            "depth": 450,
+            "d": 392.0,
+            "cover": 40,
+            "steel": "3H20 each TOP/BOTTOM",
+            "As": 942.4777960769379,
+            "neutral_axis": 131.00158402047953,
+            "ductility": 0.33418771433795796,
+            "MR": 139.15863582003303,
+            "M": 36.932625,
+            "V": 36.932625,
+            "lever": 339.5993663918082,
+            "edge": 58.0,
+            "linkDiameter": 8,
+            "linkPitch": 100,
+            "deflectionIncluding400microstrain": 4.555433047851073,
+            "deflectionComparator": 16.0,
+            "torsionWall": 116.0,
+            "Ak": 38076.0,
+            "T": 6.025166249999999,
+            "torsionSteelRequired": 163.05103750393945,
+            "flexuralSteelRequired": 250.1330859433813,
+            "bottomCornerInteraction": 0.39515134003319663,
+            "shearTorsionStrut": 0.2533913569430888,
+            "outerLegRequired": 0.30236356226523853,
+            "outerLegProvided": 0.5026548245743669,
+            "minVerticalMainBarClear": 314.0,
+            "passChecks": {
+              "flexure": true,
+              "ductility": true,
+              "longitudinalCorner": true,
+              "closedLink": true,
+              "strut": true,
+              "verticalBarClear": true,
+              "serviceDeflection": true,
+              "horizontalBarClear": true
+            },
+            "pass": true,
+            "mainBarHorizontalClearMm": 37.0
+          },
+          {
+            "width": 230,
+            "depth": 450,
+            "d": 382.0,
+            "cover": 50,
+            "steel": "3H20 each TOP/BOTTOM",
+            "As": 942.4777960769379,
+            "neutral_axis": 131.00158402047953,
+            "ductility": 0.3429360838232448,
+            "MR": 135.0609062718724,
+            "M": 36.932625,
+            "V": 36.932625,
+            "lever": 329.5993663918082,
+            "edge": 68.0,
+            "linkDiameter": 8,
+            "linkPitch": 100,
+            "deflectionIncluding400microstrain": 4.727523613219262,
+            "deflectionComparator": 16.0,
+            "torsionWall": 136.0,
+            "Ak": 29516.0,
+            "T": 6.025166249999999,
+            "torsionSteelRequired": 191.55766394497897,
+            "flexuralSteelRequired": 257.7220897901314,
+            "bottomCornerInteraction": 0.4258883757470491,
+            "shearTorsionStrut": 0.27129013767269416,
+            "outerLegRequired": 0.3582904881011381,
+            "outerLegProvided": 0.5026548245743669,
+            "minVerticalMainBarClear": 294.0,
+            "passChecks": {
+              "flexure": true,
+              "ductility": true,
+              "longitudinalCorner": true,
+              "closedLink": true,
+              "strut": true,
+              "verticalBarClear": true,
+              "serviceDeflection": true,
+              "horizontalBarClear": true
+            },
+            "pass": true,
+            "mainBarHorizontalClearMm": 27.0
+          }
+        ],
+        "mainAndLinkBareSteelBeforeHooksAnchorageKg": 83.0046980845091,
+        "closedLinkCountReservation": 45,
+        "formerUnsupportedSeatM2": 0.399,
+        "remainingUnsupportedSeatM2": 0,
+        "bearingAndCageAnchorageQualified": false
+      },
+      "sourceSupportControl": {
+        "gridTopMm": -180,
+        "gridHeadCount": 52,
+        "groundSupport": {
+          "grid": [
+            600,
+            450
+          ],
+          "top": -180,
+          "bottom": -630,
+          "integralNode": [
+            600,
+            600,
+            570
+          ],
+          "lowTies": [
+            600,
+            200
+          ],
+          "lowTieTop": -550,
+          "lowestNodeTie": -750,
+          "heaveStress": 300,
+          "constructionLoss": 50,
+          "ventilationReserve": 150,
+          "Drequired": 1688,
+          "Dtrial": 1800,
+          "Dsurplus": 112,
+          "scope": "D1800 is the joined pre-site comparator. Retained grid/member capacities and actual ground/heave/ventilation remain unqualified; actual site and any deeper structural member reopen this reference."
+        },
+        "localSolumIsNotExteriorGrade": true
+      },
+      "lowerStairToe": {
+        "sourceControl": {
+          "control_RC_top": -180,
+          "new_MAT_thermal_level_unjoined": true
+        },
+        "proposedSupport": "upper dry slab",
+        "proposedSupportTopMm": 170,
+        "actualContactPlanMm": null,
+        "actualCageQualified": false
+      },
+      "downstreamApplicability": {
+        "status": "uncoordinated candidate only",
+        "occupiedTranslationMm": 350,
+        "nominalPlansRemainOriginalLevels": true,
+        "requiresRequalification": [
+          "services/water and maintenance translation",
+          "actual tied roof and wind heights",
+          "compatible foundation/contact response",
+          "site water and access terrain"
+        ]
+      },
+      "drawingGeometryMm": {
+        "courtSouthGridY": [
+          3650.0,
+          4250.0
+        ],
+        "courtSouthGridZ": [
+          -630,
+          -180
+        ],
+        "seatPlan": [
+          5050,
+          4060,
+          1900,
+          400
+        ],
+        "panThickness": 1.5,
+        "panBearingPads": [
+          {
+            "x": [
+              5110,
+              5150
+            ],
+            "y": [
+              4110,
+              4250
+            ]
+          },
+          {
+            "x": [
+              5980,
+              6020
+            ],
+            "y": [
+              4110,
+              4250
+            ]
+          },
+          {
+            "x": [
+              6850,
+              6890
+            ],
+            "y": [
+              4110,
+              4250
+            ]
+          }
+        ],
+        "coldSupportRectangles": [
+          [
+            -17.5,
+            332.5,
+            682.5,
+            11667.5
+          ],
+          [
+            11217.5,
+            332.5,
+            12117.5,
+            11667.5
+          ],
+          [
+            332.5,
+            -17.5,
+            11667.5,
+            682.5
+          ],
+          [
+            332.5,
+            11317.5,
+            4500,
+            12017.5
+          ],
+          [
+            7500,
+            11317.5,
+            11667.5,
+            12017.5
+          ],
+          [
+            4200.0,
+            8050,
+            4800.0,
+            11667.5
+          ],
+          [
+            7200.0,
+            8050,
+            7800.0,
+            11667.5
+          ],
+          [
+            3650.0,
+            3950,
+            4250.0,
+            8050
+          ],
+          [
+            7650.0,
+            3950,
+            8250.0,
+            8050
+          ],
+          [
+            3950,
+            3650.0,
+            8050,
+            4250.0
+          ],
+          [
+            3950,
+            7750.0,
+            4500,
+            8350.0
+          ],
+          [
+            8850.0,
+            332.5,
+            9750.0,
+            8290
+          ],
+          [
+            2642.5,
+            4173,
+            3242.5,
+            8949.5
+          ],
+          [
+            332.5,
+            4032.5,
+            3950,
+            4632.5
+          ],
+          [
+            332.5,
+            8552.5,
+            2942.5,
+            9152.5
+          ],
+          [
+            2602.5,
+            8852.5,
+            3202.5,
+            11667.5
+          ],
+          [
+            4500.0,
+            332.5,
+            5100.0,
+            2650
+          ],
+          [
+            3100.0,
+            1200,
+            3700.0,
+            2650
+          ],
+          [
+            2817.5,
+            2350.0,
+            4800,
+            2950.0
+          ],
+          [
+            6900.0,
+            332.5,
+            7500.0,
+            2650
+          ],
+          [
+            7200,
+            2350.0,
+            9300,
+            2950.0
+          ],
+          [
+            2942.5,
+            8552.5,
+            4500,
+            9152.5
+          ],
+          [
+            7500,
+            7990.0,
+            11667.5,
+            8590.0
+          ],
+          [
+            7500,
+            7750.0,
+            7950,
+            8350.0
+          ],
+          [
+            3400,
+            900.0,
+            4800,
+            1500.0
+          ],
+          [
+            332.5,
+            2947.5,
+            2817.5,
+            3547.5
+          ],
+          [
+            2517.5,
+            2650,
+            3117.5,
+            4332.5
+          ],
+          [
+            9300,
+            2250.0,
+            11667.5,
+            2850.0
+          ],
+          [
+            9300,
+            3400.0,
+            11667.5,
+            4000.0
+          ],
+          [
+            9300,
+            5775.0,
+            11667.5,
+            6425.0
+          ],
+          [
+            9300,
+            7375.0,
+            11667.5,
+            8025.0
+          ],
+          [
+            2817.5,
+            3950.0,
+            3950,
+            4550.0
+          ],
+          [
+            7950,
+            3950.0,
+            9300,
+            4550.0
+          ],
+          [
+            32.5,
+            32.5,
+            632.5,
+            632.5
+          ],
+          [
+            892.5,
+            32.5,
+            1492.5,
+            632.5
+          ],
+          [
+            32.5,
+            892.5,
+            632.5,
+            1492.5
+          ],
+          [
+            11217.5,
+            32.5,
+            12117.5,
+            632.5
+          ],
+          [
+            10507.5,
+            32.5,
+            11107.5,
+            632.5
+          ],
+          [
+            11217.5,
+            892.5,
+            12117.5,
+            1492.5
+          ],
+          [
+            32.5,
+            11367.5,
+            632.5,
+            11967.5
+          ],
+          [
+            892.5,
+            11367.5,
+            1492.5,
+            11967.5
+          ],
+          [
+            32.5,
+            10507.5,
+            632.5,
+            11107.5
+          ],
+          [
+            11217.5,
+            11367.5,
+            12117.5,
+            11967.5
+          ],
+          [
+            10507.5,
+            11367.5,
+            11107.5,
+            11967.5
+          ],
+          [
+            11217.5,
+            10507.5,
+            12117.5,
+            11107.5
+          ],
+          [
+            32.5,
+            2947.5,
+            632.5,
+            3547.5
+          ],
+          [
+            32.5,
+            4032.5,
+            632.5,
+            4632.5
+          ],
+          [
+            32.5,
+            6200.0,
+            632.5,
+            6800.0
+          ],
+          [
+            32.5,
+            8552.5,
+            632.5,
+            9152.5
+          ],
+          [
+            11217.5,
+            3100.0,
+            12117.5,
+            3700.0
+          ],
+          [
+            11217.5,
+            5700.0,
+            12117.5,
+            6300.0
+          ],
+          [
+            11217.5,
+            7500.0,
+            12117.5,
+            8100.0
+          ],
+          [
+            3100.0,
+            32.5,
+            3700.0,
+            632.5
+          ],
+          [
+            4500.0,
+            32.5,
+            5100.0,
+            632.5
+          ],
+          [
+            6900.0,
+            32.5,
+            7500.0,
+            632.5
+          ],
+          [
+            8850.0,
+            32.5,
+            9750.0,
+            632.5
+          ],
+          [
+            2602.5,
+            11367.5,
+            3202.5,
+            11967.5
+          ],
+          [
+            4200.0,
+            11367.5,
+            4800.0,
+            11967.5
+          ],
+          [
+            7200.0,
+            11367.5,
+            7800.0,
+            11967.5
+          ],
+          [
+            8850.0,
+            11367.5,
+            9750.0,
+            11967.5
+          ],
+          [
+            4200.0,
+            7750.0,
+            4800.0,
+            8350.0
+          ],
+          [
+            4200.0,
+            9575.0,
+            4800.0,
+            10175.0
+          ],
+          [
+            7200.0,
+            7750.0,
+            7800.0,
+            8350.0
+          ],
+          [
+            7200.0,
+            9575.0,
+            7800.0,
+            10175.0
+          ],
+          [
+            3650.0,
+            4032.5,
+            4250.0,
+            4632.5
+          ],
+          [
+            3650.0,
+            5900.0,
+            4250.0,
+            6500.0
+          ],
+          [
+            3650.0,
+            7750.0,
+            4250.0,
+            8350.0
+          ],
+          [
+            7650.0,
+            3650.0,
+            8250.0,
+            4250.0
+          ],
+          [
+            7650.0,
+            5775.0,
+            8250.0,
+            6425.0
+          ],
+          [
+            7650.0,
+            7375.0,
+            8250.0,
+            8025.0
+          ],
+          [
+            4485.0,
+            3617.5,
+            5085.0,
+            4217.5
+          ],
+          [
+            5700.0,
+            3650.0,
+            6300.0,
+            4250.0
+          ],
+          [
+            6915.0,
+            3617.5,
+            7515.0,
+            4217.5
+          ],
+          [
+            8850.0,
+            2350.0,
+            9750.0,
+            2950.0
+          ],
+          [
+            8850.0,
+            3800.0,
+            9750.0,
+            4400.0
+          ],
+          [
+            8850.0,
+            5775.0,
+            9750.0,
+            6425.0
+          ],
+          [
+            8850.0,
+            7375.0,
+            9750.0,
+            8025.0
+          ],
+          [
+            2642.5,
+            4032.5,
+            3242.5,
+            4632.5
+          ],
+          [
+            2642.5,
+            6957.5,
+            3242.5,
+            7557.5
+          ],
+          [
+            2642.5,
+            8552.5,
+            3242.5,
+            9152.5
+          ],
+          [
+            4500.0,
+            900.0,
+            5100.0,
+            1500.0
+          ],
+          [
+            4500.0,
+            2350.0,
+            5100.0,
+            2950.0
+          ],
+          [
+            3100.0,
+            900.0,
+            3700.0,
+            1500.0
+          ],
+          [
+            3100.0,
+            2350.0,
+            3700.0,
+            2950.0
+          ],
+          [
+            6900.0,
+            2350.0,
+            7500.0,
+            2950.0
+          ]
+        ]
+      },
+      "threshold": {
+        "panPlanUnchangedMm": [
+          5102,
+          4030,
+          1796,
+          420
+        ],
+        "bodyDimensionsMm": [
+          1796,
+          420,
+          131.5
+        ],
+        "panProfileYZMm": [
+          [
+            4030,
+            350
+          ],
+          [
+            4060,
+            350
+          ],
+          [
+            4060,
+            365
+          ],
+          [
+            4090,
+            365
+          ]
+        ],
+        "panWetFloorYZMm": [
+          [
+            4090,
+            305
+          ],
+          [
+            4450,
+            295
+          ]
+        ],
+        "rearCrestMm": 365,
+        "endCrestMm": 425,
+        "mineralBearingBottomMm": 170,
+        "northDrawMm": 500,
+        "planRotationRadiusMm": 922.2277376006429,
+        "sourcePlanDrawReservationMm": [
+          5050,
+          4030,
+          1900,
+          1420
+        ],
+        "sourcePanMinimumToDryRCMm": 123.5,
+        "wetFixingsCredited": 0,
+        "renewalQualified": false,
+        "fixedDryBackingEndYmm": 4054,
+        "minimumOverlapChallengeMm": 20,
+        "minimumRiserGapChallengeMm": 2,
+        "completeAirWaterEndJointQualified": false
+      },
+      "locatedRouteScreens": [
+        {
+          "id": "primaryTray",
+          "sourceStart": [
+            5050,
+            4300,
+            -25
+          ],
+          "sourceEnd": [
+            5000,
+            4300,
+            -35
+          ],
+          "lineBedToColdBeamMm": 495,
+          "qualification": "centreline/declared100mm width screen only; wall/gauge/support envelopes not transferred"
+        },
+        {
+          "id": "primaryTray",
+          "sourceStart": [
+            5000,
+            4300,
+            -35
+          ],
+          "sourceEnd": [
+            5000,
+            7750,
+            -140
+          ],
+          "lineBedToColdBeamMm": 390,
+          "qualification": "centreline/declared100mm width screen only; wall/gauge/support envelopes not transferred"
+        },
+        {
+          "id": "secondaryTray",
+          "sourceStart": [
+            6950,
+            4500,
+            -80
+          ],
+          "sourceEnd": [
+            7350,
+            4500,
+            -95
+          ],
+          "lineBedToColdBeamMm": 435,
+          "qualification": "centreline/declared100mm width screen only; wall/gauge/support envelopes not transferred"
+        },
+        {
+          "id": "secondaryTray",
+          "sourceStart": [
+            7350,
+            4500,
+            -95
+          ],
+          "sourceEnd": [
+            7350,
+            6300,
+            -125
+          ],
+          "lineBedToColdBeamMm": 405,
+          "qualification": "centreline/declared100mm width screen only; wall/gauge/support envelopes not transferred"
+        }
+      ],
+      "retainedColdGridEndProjections": [
+        {
+          "id": "court-W",
+          "endProjectionMm": [
+            382.5,
+            0
+          ]
+        },
+        {
+          "id": "court-E",
+          "endProjectionMm": [
+            0,
+            350
+          ]
+        },
+        {
+          "id": "court-S",
+          "endProjectionMm": [
+            835,
+            100
+          ]
+        },
+        {
+          "id": "spine",
+          "endProjectionMm": [
+            0,
+            590
+          ]
+        },
+        {
+          "id": "stair-post",
+          "endProjectionMm": [
+            159.5,
+            97.0
+          ]
+        },
+        {
+          "id": "study-north",
+          "endProjectionMm": [
+            582.5,
+            0
+          ]
+        }
+      ],
+      "supportTopology": {
+        "rule": "continuous full-width bonded mineral bearing over every existing slab-contact grid/cap footprint plus new court seat support; all occupied RC, wall, stair and portal reinforcement wholly above it",
+        "bearingFootprintReservationOnly": true,
+        "walls": [
+          "study-east",
+          "cloak-east",
+          "cloak-west",
+          "cloak-south",
+          "study-cloak-north",
+          "study-L-return",
+          "study-L-north",
+          "wc-west",
+          "wc-north",
+          "service-spine",
+          "utility-north",
+          "plant-intermediate-arch",
+          "plant-north",
+          "rear-west",
+          "rear-east",
+          "loggia-west-weather",
+          "loggia-east-weather",
+          "protected-stair-east",
+          "protected-west-cross",
+          "protected-east-cross",
+          "east-passage-north-weather",
+          "gallery-east-water-weather"
+        ],
+        "exteriorCoreFootprints": [
+          {
+            "id": "outer-south-ground-core-0",
+            "planMm": [
+              262.5,
+              262.5,
+              11737.5,
+              402.5
+            ],
+            "role": "actual structural-core-width support domain; open-loggia/service portals excluded; no weather-leaf credit",
+            "directSupportAreaM2": 1.6065,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "outer-north-ground-core-0",
+            "planMm": [
+              262.5,
+              11597.5,
+              4520.0,
+              11737.5
+            ],
+            "role": "actual structural-core-width support domain; open-loggia/service portals excluded; no weather-leaf credit",
+            "directSupportAreaM2": 0.59605,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "outer-north-ground-core-1",
+            "planMm": [
+              7480.0,
+              11597.5,
+              11737.5,
+              11737.5
+            ],
+            "role": "actual structural-core-width support domain; open-loggia/service portals excluded; no weather-leaf credit",
+            "directSupportAreaM2": 0.59605,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "outer-west-ground-core-0",
+            "planMm": [
+              262.5,
+              262.5,
+              402.5,
+              11737.5
+            ],
+            "role": "actual structural-core-width support domain; open-loggia/service portals excluded; no weather-leaf credit",
+            "directSupportAreaM2": 1.6065,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "outer-east-ground-core-0",
+            "planMm": [
+              11597.5,
+              262.5,
+              11737.5,
+              6273.0
+            ],
+            "role": "actual structural-core-width support domain; open-loggia/service portals excluded; no weather-leaf credit",
+            "directSupportAreaM2": 0.84147,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "outer-east-ground-core-1",
+            "planMm": [
+              11597.5,
+              7527.0,
+              11737.5,
+              11737.5
+            ],
+            "role": "actual structural-core-width support domain; open-loggia/service portals excluded; no weather-leaf credit",
+            "directSupportAreaM2": 0.58947,
+            "unsupportedAreaM2": 0
+          }
+        ],
+        "upperComponentFootprints": [
+          {
+            "id": "outer-south-ground-core-0",
+            "planMm": [
+              262.5,
+              262.5,
+              11737.5,
+              402.5
+            ],
+            "role": "actual structural-core-width support domain; open-loggia/service portals excluded; no weather-leaf credit",
+            "directSupportAreaM2": 1.6065,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "outer-north-ground-core-0",
+            "planMm": [
+              262.5,
+              11597.5,
+              4520.0,
+              11737.5
+            ],
+            "role": "actual structural-core-width support domain; open-loggia/service portals excluded; no weather-leaf credit",
+            "directSupportAreaM2": 0.59605,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "outer-north-ground-core-1",
+            "planMm": [
+              7480.0,
+              11597.5,
+              11737.5,
+              11737.5
+            ],
+            "role": "actual structural-core-width support domain; open-loggia/service portals excluded; no weather-leaf credit",
+            "directSupportAreaM2": 0.59605,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "outer-west-ground-core-0",
+            "planMm": [
+              262.5,
+              262.5,
+              402.5,
+              11737.5
+            ],
+            "role": "actual structural-core-width support domain; open-loggia/service portals excluded; no weather-leaf credit",
+            "directSupportAreaM2": 1.6065,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "outer-east-ground-core-0",
+            "planMm": [
+              11597.5,
+              262.5,
+              11737.5,
+              6273.0
+            ],
+            "role": "actual structural-core-width support domain; open-loggia/service portals excluded; no weather-leaf credit",
+            "directSupportAreaM2": 0.84147,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "outer-east-ground-core-1",
+            "planMm": [
+              11597.5,
+              7527.0,
+              11737.5,
+              11737.5
+            ],
+            "role": "actual structural-core-width support domain; open-loggia/service portals excluded; no weather-leaf credit",
+            "directSupportAreaM2": 0.58947,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "court-south-native-ground-core-0",
+            "planMm": [
+              3847.5,
+              3847.5,
+              8152.5,
+              3987.5
+            ],
+            "role": "native structural candidate core axis; actual MAT/weather alignment and load acceptance remain separate",
+            "directSupportAreaM2": 0.59219375,
+            "unsupportedAreaM2": 0.01050625000000005
+          },
+          {
+            "id": "court-north-native-ground-core-0",
+            "planMm": [
+              3847.5,
+              8012.5,
+              4520.0,
+              8152.5
+            ],
+            "role": "native structural candidate core axis; actual MAT/weather alignment and load acceptance remain separate",
+            "directSupportAreaM2": 0.09415,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "court-north-native-ground-core-1",
+            "planMm": [
+              7480.0,
+              8012.5,
+              8152.5,
+              8152.5
+            ],
+            "role": "native structural candidate core axis; actual MAT/weather alignment and load acceptance remain separate",
+            "directSupportAreaM2": 0.09415,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "court-west-native-ground-core-0",
+            "planMm": [
+              3847.5,
+              3847.5,
+              3987.5,
+              8152.5
+            ],
+            "role": "native structural candidate core axis; actual MAT/weather alignment and load acceptance remain separate",
+            "directSupportAreaM2": 0.59219375,
+            "unsupportedAreaM2": 0.01050625000000005
+          },
+          {
+            "id": "court-east-native-ground-core-0",
+            "planMm": [
+              8012.5,
+              3847.5,
+              8152.5,
+              8152.5
+            ],
+            "role": "native structural candidate core axis; actual MAT/weather alignment and load acceptance remain separate",
+            "directSupportAreaM2": 0.6027,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-study-east",
+            "planMm": [
+              4730,
+              262.5,
+              4870,
+              1200
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.13125,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-cloak-east",
+            "planMm": [
+              4730,
+              1200,
+              4870,
+              2650
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.203,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-cloak-west",
+            "planMm": [
+              3330,
+              1200,
+              3470,
+              2650
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.203,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-cloak-south",
+            "planMm": [
+              3400,
+              1130,
+              4800,
+              1270
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.196,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-study-cloak-north",
+            "planMm": [
+              2817.5,
+              2580,
+              4800,
+              2720
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.27755,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-study-L-return",
+            "planMm": [
+              2747.5,
+              2650,
+              2887.5,
+              3247.5
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.08365,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-study-L-north",
+            "planMm": [
+              262.5,
+              3177.5,
+              2817.5,
+              3317.5
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.3577,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-wc-west",
+            "planMm": [
+              7130,
+              262.5,
+              7270,
+              2650
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.33425,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-wc-north",
+            "planMm": [
+              7200,
+              2580,
+              9300,
+              2720
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.294,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-service-spine",
+            "planMm": [
+              9230,
+              262.5,
+              9370,
+              8290
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 1.12385,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-utility-north",
+            "planMm": [
+              9300,
+              2480,
+              11737.5,
+              2620
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.34125,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-plant-intermediate-arch",
+            "planMm": [
+              9300,
+              3630,
+              11737.5,
+              3770
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.34125,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-plant-north",
+            "planMm": [
+              9300,
+              5807.5,
+              11737.5,
+              5947.5
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.34125,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-rear-west",
+            "planMm": [
+              262.5,
+              8782.5,
+              4377.5,
+              8922.5
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.5761,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-rear-east",
+            "planMm": [
+              7552.5,
+              8182.5,
+              11737.5,
+              8397.5
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.899775,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-loggia-west-weather",
+            "planMm": [
+              4307.5,
+              7750,
+              4447.5,
+              11737.5
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.55825,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-loggia-east-weather",
+            "planMm": [
+              7552.5,
+              7750,
+              7692.5,
+              11737.5
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.55825,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-protected-stair-east",
+            "planMm": [
+              2844.5,
+              4173,
+              2944.5,
+              8949.5
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.47765,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-protected-west-cross",
+            "planMm": [
+              2817.5,
+              4200,
+              3820.5,
+              4300
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.1003,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-protected-east-cross",
+            "planMm": [
+              8012.5,
+              4200,
+              9370,
+              4300
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.13575,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-east-passage-north-weather",
+            "planMm": [
+              9397,
+              7852.5,
+              11737.5,
+              7992.5
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.32767,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "internal-base-gallery-east-water-weather",
+            "planMm": [
+              9230,
+              6300,
+              9370,
+              7500
+            ],
+            "role": "source core footprint below FFL; ordinary door-base continuity is proposed, no filled opening above FFL",
+            "directSupportAreaM2": 0.168,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "stairMidPost",
+            "planMm": [
+              2817.5,
+              7132.5,
+              3067.5,
+              7382.5
+            ],
+            "role": "actual RC core restarts in upper dry slab; no cold starter crosses course",
+            "directSupportAreaM2": 0.0625,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "southWetReceiver",
+            "planMm": [
+              2772.5,
+              8627.5,
+              3032.5,
+              9077.5
+            ],
+            "role": "actual RC core restarts in upper dry slab; no cold starter crosses course",
+            "directSupportAreaM2": 0.117,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "northWetReceiver",
+            "planMm": [
+              2772.5,
+              11287.5,
+              3032.5,
+              11737.5
+            ],
+            "role": "actual RC core restarts in upper dry slab; no cold starter crosses course",
+            "directSupportAreaM2": 0.117,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "north-portal-west-0",
+            "planMm": [
+              4307.5,
+              7975,
+              4520,
+              8190
+            ],
+            "role": "actual full portal-core bearing footprint, including projection beyond ordinary outer core",
+            "directSupportAreaM2": 0.0456875,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "north-portal-east-0",
+            "planMm": [
+              7480,
+              7975,
+              7692.5,
+              8190
+            ],
+            "role": "actual full portal-core bearing footprint, including projection beyond ordinary outer core",
+            "directSupportAreaM2": 0.0456875,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "north-portal-west-1",
+            "planMm": [
+              4307.5,
+              11560,
+              4520,
+              11775
+            ],
+            "role": "actual full portal-core bearing footprint, including projection beyond ordinary outer core",
+            "directSupportAreaM2": 0.0456875,
+            "unsupportedAreaM2": 0
+          },
+          {
+            "id": "north-portal-east-1",
+            "planMm": [
+              7480,
+              11560,
+              7692.5,
+              11775
+            ],
+            "role": "actual full portal-core bearing footprint, including projection beyond ordinary outer core",
+            "directSupportAreaM2": 0.0456875,
+            "unsupportedAreaM2": 0
+          }
+        ],
+        "drySlabEdgeRule": "extend upper dry RC to actual exterior structural-core weather faces; preserve open portals; no extension into weather leaf or cavity",
+        "crossings": [
+          {
+            "id": "stairMidPost",
+            "planMm": [
+              2817.5,
+              7132.5,
+              250,
+              250
+            ],
+            "construction": "restart in the upper dry slab; no lower RC/bar continuity through mineral course"
+          },
+          {
+            "id": "southWetReceiver",
+            "planMm": [
+              2772.5,
+              8627.5,
+              260,
+              450
+            ],
+            "construction": "restart in the upper dry slab; no lower RC/bar continuity through mineral course"
+          },
+          {
+            "id": "northWetReceiver",
+            "planMm": [
+              2772.5,
+              11287.5,
+              260,
+              450
+            ],
+            "construction": "restart in the upper dry slab; no lower RC/bar continuity through mineral course"
+          },
+          {
+            "id": "northPortal-west-1",
+            "construction": "full bearing on mineral course over named loggia girder; upper bars end above course"
+          },
+          {
+            "id": "northPortal-west-2",
+            "construction": "full bearing on mineral course over named loggia girder; upper bars end above course"
+          },
+          {
+            "id": "northPortal-east-1",
+            "construction": "full bearing on mineral course over named loggia girder; upper bars end above course"
+          },
+          {
+            "id": "northPortal-east-2",
+            "construction": "full bearing on mineral course over named loggia girder; upper bars end above course"
+          },
+          {
+            "id": "stair-lower-toe",
+            "construction": "seat on upper dry slab, no direct cold-grid contact"
+          },
+          {
+            "id": "inner-corner-SW",
+            "construction": "aligned dry wall/abutment above course; historical RC L and upper metal plate not inherited"
+          },
+          {
+            "id": "inner-corner-SE",
+            "construction": "aligned dry wall/abutment above course; historical RC L and upper metal plate not inherited"
+          },
+          {
+            "id": "inner-corner-NW",
+            "construction": "aligned dry wall/abutment above course; historical RC L and upper metal plate not inherited"
+          },
+          {
+            "id": "inner-corner-NE",
+            "construction": "aligned dry wall/abutment above course; historical RC L and upper metal plate not inherited"
+          }
+        ],
+        "foundationHeadsUncut": 52,
+        "upperSlabPositiveCrossingCredited": false,
+        "mineralShearResistance": null,
+        "retentionQualified": false,
+        "contactQualified": false
+      },
+      "invalidatedEvidence": [
+        "old ground-slab support/cage/crack/pour acceptance",
+        "retained ground slab credit",
+        "old DPC/global load distribution",
+        "native old-height wind and roof assumptions",
+        "actual 52-head compatible actions/movement",
+        "floor/wall/threshold air and thermal qualification"
+      ],
+      "holds": [
+        "actual mortar constituents and WCBL65 product dimension identity/bond/bed layout",
+        "distributed contact/sliding/shear and local mineral bearing under all adverse loads",
+        "new beam anchorage/node force and cold-grid reactions in compatible 52-head solve",
+        "court southwest upper-slab transfer and lower stair-toe contact-end/cage geometry",
+        "suspended slab body/joint air-moisture and site gas/pressure-water applicability",
+        "supported removable dry-apron/end/jamb seal under movement; pan/support renewal",
+        "3D surface/condensation/heat-loss with exact mineral properties",
+        "outer/court wet-leaf DPC/cavity tray and dry bearing separation",
+        "roof actual MAT geometry plus tied successor wind/support system",
+        "owner raised-plinth/approach/court aesthetic decision"
+      ]
+    }
+  },
+  "recommendation": "Develop raised530 on nominal exterior with separately assessed local solum; deep-exterior350 is a special-site candidate, rejected as general compact-house default."
+}

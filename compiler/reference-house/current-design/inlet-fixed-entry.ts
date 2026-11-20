@@ -36,6 +36,8 @@ export type FixedInletSettings = {
   readonly cutterHandRadiusMm: number
   readonly localPipeTemperatureRangeK: number
   readonly controlHoodDrawMm: number
+  readonly controlHoodEastAllowanceMm: number
+  readonly upperPipeGuideZMm: number
 }
 const ids = ['utility', 'plant'] as const
 const root = 'project/had/studies/'
@@ -45,12 +47,12 @@ const length = (a: Point, b: Point) => Math.hypot(...a.map((v, i) => v - b[i]))
 const cross = (a: Point, b: Point): Point => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]]
 const fields = ['riserYMm', 'plantSouthLegLevelMm', 'pipeBendRadiusMm', 'protectedLowerDiameterMm',
   'outerCutYMm', 'lowerCutZMm', 'upperCutZMm', 'valveCentreZMm', 'wetGuardFrontYMm', 'pressureCeilingBar',
-  'cutterSweepRadiusMm', 'cutterHandRadiusMm', 'localPipeTemperatureRangeK', 'controlHoodDrawMm'] as const
+  'cutterSweepRadiusMm', 'cutterHandRadiusMm', 'localPipeTemperatureRangeK', 'controlHoodDrawMm', 'controlHoodEastAllowanceMm', 'upperPipeGuideZMm'] as const
 export function readFixedInletSettings(): FixedInletSettings {
   return { riserYMm: 600, plantSouthLegLevelMm: 2585, pipeBendRadiusMm: 98, protectedLowerDiameterMm: 50,
-    outerCutYMm: -300, lowerCutZMm: 975, upperCutZMm: 1425, valveCentreZMm: 1200,
+    outerCutYMm: -300, lowerCutZMm: 1075, upperCutZMm: 1525, valveCentreZMm: 1300,
     wetGuardFrontYMm: 685, pressureCeilingBar: 9, cutterSweepRadiusMm: 100, cutterHandRadiusMm: 150,
-    localPipeTemperatureRangeK: 40,controlHoodDrawMm:0 }
+    localPipeTemperatureRangeK: 40,controlHoodDrawMm:0,controlHoodEastAllowanceMm:60,upperPipeGuideZMm:1800 }
 }
 export const fixedInletProductFacts = {
   wetCellWallLiner: { thicknessMm: 2, source: 'project/had/studies/south-inlet-wet-box.mjs',
@@ -108,7 +110,9 @@ function admit(input: unknown): FixedInletSettings {
       || s.lowerCutZMm >= s.valveCentreZMm || s.upperCutZMm <= s.valveCentreZMm || s.pressureCeilingBar <= 0 || s.pressureCeilingBar > 16
       || s.wetGuardFrontYMm < s.riserYMm || s.wetGuardFrontYMm > 740 || s.cutterSweepRadiusMm <= 0 || s.cutterHandRadiusMm < s.cutterSweepRadiusMm
       || s.cutterHandRadiusMm > 200 || s.localPipeTemperatureRangeK < 0 || s.localPipeTemperatureRangeK > 80
-      || s.controlHoodDrawMm<0 || s.controlHoodDrawMm>150) throw new Error('Fixed-inlet settings exceed the bounded development case')
+      || s.controlHoodDrawMm<0 || s.controlHoodDrawMm>150
+      || s.controlHoodEastAllowanceMm<40 || s.controlHoodEastAllowanceMm>100
+      || s.upperPipeGuideZMm<1600 || s.upperPipeGuideZMm>2000) throw new Error('Fixed-inlet settings exceed the bounded development case')
   return s
 }
 function drawing(branches: readonly { branch: Branch; drawingPressurePathMm: readonly Point[]; components: readonly { id: string; boxMm: Box }[] }[], digest: string): DrawingSceneV2 {
@@ -225,7 +229,7 @@ export function compileFixedInletCandidate(resolved: CurrentDesignResolution, in
       riseM: (inner[2] - outer[2]) / 1000, roughness: southInletReliefComparison.roughness,
       entranceLossK: relief.throughWallRupture.preferredWideBore.entranceLossK, spareAirMM: relief.hydraulics.spareAirMM })
     const upperGuardTop=s.upperCutZMm+100+coupling.lengthMm/2+50
-    const upperGuard: Box = [x - 110, s.riserYMm - 60, cell.case.roofZ, 150, s.wetGuardFrontYMm - s.riserYMm + 60, upperGuardTop - cell.case.roofZ]
+    const upperGuard: Box = [x - 110, s.riserYMm - 60, cell.case.roofZ, 110+s.controlHoodEastAllowanceMm, s.wetGuardFrontYMm - s.riserYMm + 60, upperGuardTop - cell.case.roofZ]
     const elbowBox: Box = [x - 25, lowerArcStart[1]-25, lowerArcStart[2]-25, 50, s.riserYMm-lowerArcStart[1]+50, lowerArcEnd[2]-lowerArcStart[2]+50]
     const lowerFloor = fault.geometry.lowerInvertZMm - 3
     const lowerBore = joined.insert.calculation.bores.find(row => row.id === branch + '-relief')!
@@ -251,7 +255,7 @@ export function compileFixedInletCandidate(resolved: CurrentDesignResolution, in
     const hoodThroatNetArea=(Math.PI*(hoodThroatSize**2-s.protectedLowerDiameterMm**2)/4)/1e6
     const hoodThroatVelocity=trial.flowLmin/60000/hoodThroatNetArea
     const hoodThroatHead=hoodThroatVelocity**2/(2*9.81*.6**2)*1000
-    const hoodBody:Box=[x-110,s.riserYMm-60,cell.case.roofZ,150,s.wetGuardFrontYMm-s.riserYMm+60,upperGuardTop-cell.case.roofZ]
+    const hoodBody:Box=upperGuard
     const hoodThroatPlan:Rect=[x-hoodThroatSize/2,hoodThroatCentreY-hoodThroatSize/2,hoodThroatSize,hoodThroatSize]
     const throatToCell=Math.min(...cell.case.plan.map((a,i)=>{
       const b=cell.case.plan[(i+1)%cell.case.plan.length],dx=b[0]-a[0],dy=b[1]-a[1]
@@ -394,8 +398,8 @@ export function compileFixedInletCandidate(resolved: CurrentDesignResolution, in
             afterDrawBackToFullHandleAfter5Mm:round(s.riserYMm-60+150-s.riserYMm-valve.handleHalfLengthMm-5),
             siblingHoodsRemainSeparate:true,
             passiveSeatAndRetention:'Two lower metal seat cleats, captive mechanical retainers and30mm returned shingle overlaps; no actuator, electrical interlock or new pressure gland. Retainer/weld capacity and fitted splash-tightness remain unqualified.',
-            lowerSeatCleatPointsMm:[[x-110,s.riserYMm-20,s.valveCentreZMm-250],[x+40,s.riserYMm-20,s.valveCentreZMm-250]],
-            upperCaptiveRetainerPointsMm:[[x-110,s.wetGuardFrontYMm,s.valveCentreZMm+250],[x+40,s.wetGuardFrontYMm,s.valveCentreZMm+250]],
+            lowerSeatCleatPointsMm:[[x-110,s.riserYMm-20,s.valveCentreZMm-250],[x+s.controlHoodEastAllowanceMm,s.riserYMm-20,s.valveCentreZMm-250]],
+            upperCaptiveRetainerPointsMm:[[x-110,s.wetGuardFrontYMm,s.valveCentreZMm+250],[x+s.controlHoodEastAllowanceMm,s.wetGuardFrontYMm,s.valveCentreZMm+250]],
             retainerComparison:'Two proposed all-metal M6 captive retainers outside the returned wet face; exact grade, dry flange geometry, welds and capacity remain unqualified.30mm overlap is a drawing dimension, not tested spray-tightness.',
             lowPipeRenewal:'Isolate both Lodge branches, move washer to restrained first rest, remove full own front/side hood and split upper funnel/roof closure; lower troughs and independent reliefs remain fixed. Remove sibling front hood for tools only in the same isolated state.'},
           liveFaultContainedInsideShutoff:false,
@@ -436,6 +440,15 @@ export function compileFixedInletCandidate(resolved: CurrentDesignResolution, in
   })
   const pair = round(pathSeparation(upperPaths.utility.path, upperPaths.plant.path) - 74 - upperPaths.utility.hausdorffError - upperPaths.plant.hausdorffError - 10)
   if (pair < 25) geometryBlockers.push('FIXED_UPPER_PIPE_PAIR_COMPARISON')
+  const hoods=branches.map(branch=>branch.controlArrangementComparison.wholeOrdinaryValveHood.bodyMm)
+  const controlHoodClearances={
+    siblingAfterTwo3PlateAndTwo5SettingMm:round(hoods[1][0]-hoods[0][0]-hoods[0][3]-16),
+    eastConditionalWindowAfter3PlateAnd5SettingMm:round(joined.insert.host.candidateClearXMm[1]-hoods[1][0]-hoods[1][3]-8),
+    westConditionalWindowAfter3PlateAnd5SettingMm:round(hoods[0][0]-joined.insert.host.candidateClearXMm[0]-8),
+    scope:'Authored gross box separation and conditional host bounds; excludes clamp, installed seam and frame capacity qualification',
+  }
+  if(controlHoodClearances.siblingAfterTwo3PlateAndTwo5SettingMm<0)geometryBlockers.push('CONTROL_HOODS_LOSE_INDEPENDENT_SEPARATION')
+  if(Math.min(controlHoodClearances.eastConditionalWindowAfter3PlateAnd5SettingMm,controlHoodClearances.westConditionalWindowAfter3PlateAnd5SettingMm)<0)geometryBlockers.push('CONTROL_HOOD_INTERCEPTS_CONDITIONAL_WINDOW_BOUND')
   const frame = { normalAxisYMm: 480, railAxesZMm: [40, 120], normalDepthMm: 80, verticalDepthMm: 60, wallMm: 4, densityKgM3: 8000 }
   const span = Math.max(...axes) - Math.min(...axes)
   const area = frame.normalDepthMm * frame.verticalDepthMm - (frame.normalDepthMm - 2 * frame.wallMm) * (frame.verticalDepthMm - 2 * frame.wallMm)
@@ -485,7 +498,7 @@ export function compileFixedInletCandidate(resolved: CurrentDesignResolution, in
       faultCaseDigest: joined.fault.source.caseDigest, caseDigest, inputs: identities },
     method: { id: 'HAD-FIXED-INLET/1', gitBlob: createHash('sha1').update('blob ' + methodBytes.length + '\0').update(methodBytes).digest('hex'),
       operatingGitBlob:createHash('sha1').update('blob '+operatingBytes.length+'\0').update(operatingBytes).digest('hex') },
-    productFacts: fixedInletProductFacts, branches, geometryBlockers, upperPipePairAfterSettingMm: pair, supportFrame, operatingProof,
+    productFacts: fixedInletProductFacts, branches, geometryBlockers, upperPipePairAfterSettingMm: pair, controlHoodClearances, supportFrame, operatingProof,
     removes: ['loaded L-carrier and its1000N handling assumption', 'axially retracting dry companion', '165mm extracted valve module', 'in-situ low pressure joints', 'lower factory elbow and its two press seals', 'level-wall trapped inventory', 'whole moving U-lid receiver', 'floor posts and front crossrails'],
     serviceSequence: ['Close both Lodge branch cuts for entry renewal; prove downstream isolation, zero pressure and drain inventories independently.',
       'Keep fixed lower troughs and their independent reliefs/receivers intact; retain factory pressure glands.',

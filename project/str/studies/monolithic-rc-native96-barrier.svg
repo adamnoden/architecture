@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 760">
+<rect width="980" height="760" fill="#faf8f2"/>
+<style>text{font:12px sans-serif;fill:#243339}.small{font-size:10px}.hold{fill:#a84f3e}</style>
+<text x="35" y="28">CONTINUOUS RC / COORDINATE-DEFINED WATERSTOP CONCEPT</text>
+<text x="35" y="50">Mechanics: actual20mmRC bridge. Metalbarrier/rodseals are NOT included or accepted.</text>
+<text x="35" y="83">COURT WEST PLAN / repeated source-bound atall4piers</text>
+<rect x="161.71249999999998" y="96.87499999999997" width="285.725" height="426.25000000000006" fill="#e8dfbf" stroke="#405954" stroke-width=".8"/>
+<rect x="165.5625" y="175.25" width="182.87500000000003" height="269.5" fill="#87aaa8" stroke="#405954" stroke-width=".8"/>
+<rect x="176.5625" y="230.25" width="116.87500000000001" height="159.5" fill="#c6d2ca" stroke="#405954" stroke-width=".8"/>
+<rect x="176.5625" y="230.25" width="77.0" height="159.5" fill="#d7b3a2" stroke="#405954" stroke-width=".8"/>
+<circle cx="214.5125" cy="351.8" r="3.3" fill="#344d54"/>
+<circle cx="214.5125" cy="351.8" r="8" fill="none" stroke="#b34937" stroke-dasharray="3 2"/>
+<circle cx="214.5125" cy="268.2" r="3.3" fill="#344d54"/>
+<circle cx="214.5125" cy="268.2" r="8" fill="none" stroke="#b34937" stroke-dasharray="3 2"/>
+<circle cx="255.4875" cy="351.8" r="3.3" fill="#344d54"/>
+<circle cx="255.4875" cy="351.8" r="8" fill="none" stroke="#b34937" stroke-dasharray="3 2"/>
+<circle cx="255.4875" cy="268.2" r="3.3" fill="#344d54"/>
+<circle cx="255.4875" cy="268.2" r="8" fill="none" stroke="#b34937" stroke-dasharray="3 2"/>
+<text x="35" y="572">Clay:140mm heated-side core overlap, not an outdoor-only pier.</text>
+<text x="35" y="593">Blue:proposedunloadedflange; fourredcircles are UNQUALIFIEDmetal/barseals.</text>
+<text x="35" y="614">40lining +202.5glass eachnormalface;290core;775finishedenvelope retained.</text>
+<text x="35" y="635">Roomflange20+verticalfold80 has7.0mm nominalreserve: actualthickness/tolerances OPEN.</text>
+<rect x="565" y="474.0" width="180.0" height="171.0" fill="#c6d2ca" stroke="#405954"/>
+<rect x="597.25" y="270.0" width="63.75" height="204.0" fill="#a5beb4" stroke="#405954"/>
+<path d="M617.95 624.0 V270.0" stroke="#344d54" stroke-width="2.6"/>
+<path d="M640.3 624.0 V270.0" stroke="#344d54" stroke-width="2.6"/>
+<path d="M587.25 432.0 H681.0" stroke="#b34937" stroke-width="3" stroke-dasharray="5 3"/>
+<text class="small" x="835" y="424.0">0 sourcegroundFFL</text>
+<text class="small" x="835" y="436.0">−40 barrierreference</text>
+<text class="small" x="835" y="478.0">−180 captop</text>
+<text class="small" x="835" y="545.5">−405 finitecapcut</text>
+<text class="small" x="835" y="628.0">−680 starterend</text>
+<text class="small" x="835" y="649.0">−750 capbottom</text>
+<text x="555" y="100">SECTION / lower500mm; twoof4H12 shown</text>
+<text x="555" y="121">FiniteRC/barcontinuity is diagnosticonly.</text>
+<text x="555" y="142">500actualstarterrun;480credited;434.78required.</text>
+<text class="hold" x="35" y="687">Waterstopmetal/thickness/process/leak/gas/air andthermalproof remainnull. No coat-onlycapillarywaiver.</text>
+<text x="35" y="709">OthermasonryDPCs, sourcehydraulics and0/3170/3370datums arepreserved; no raised715mix.</text>
+<text x="35" y="731">The realplate/interface must replace the20mmRC surrogate beforephysicaladoption.</text>
+</svg>

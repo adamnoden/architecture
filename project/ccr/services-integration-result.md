@@ -46,6 +46,16 @@ node --import tsx scripts/compile-current-design.ts --bundle engineering.json
 
 The rejected loaded-carrier arrangement is removed from this default. `--read-retained-inlet-comparison` and `readRetainedInletComparisonDocument` deliberately preserve its adverse, source-bound replay. Existing saved carrier documents remain explicit comparisons; they cannot substitute for the fixed-entry stage.
 
+The candidate wrapper also returns the source-derived A3 `supportReviewSvg`. It shows the conditional and accepted window bounds, closed hoods, actual receiver rails/plates, clamp and guide path, with a clipped bounding-window obstruction measure. It omits the unrelated old low chassis and supplies no invented arch profile or glazing-area claim. The view is generated from the same candidate/support identities as both thermal subroutes and rejects mixed revisions. It documents the existing bridge comparison, not acceptance of that steelwork or adoption of the shifted sash.
+
+## Saved roof field and downstream applicability
+
+The default engineering document also includes the existing MAT `roofPitch` case. Its sole authored setting is `pitchDeg`; the same native method, exact discipline bindings, slate stock calculation and source-derived section serve the standalone CLI and saved `--bundle` path. No competing roof geometry is introduced.
+
+A saved 25→27° edit raises the calculated field ridge from8409.33 to8501.16mm and changes the severe court slate comparison from12 to13rows. The actual section changes and the roof result withholds the changed MAT/STR/RWT claims. The bundle still returns the explicitly bound reference water event; its manifest now marks applicability withheld by `roofPitch` rather than presenting it as a recomputed event for the edited roof. Nominal plans remain a control. Reversing the saved edit restores the original roof result and document identity; CLI replay matches the saved result.
+
+Absent pitch, pitch below25°, non-finite or null values, injected approval/vertical datums and stale native method identities reject. This is useful save/load integration before roof selection. The nominal Georgian elevations and MAT field retain their different weather/support levels and courtyard overhangs until the actual roof gate reconciles them. No whole-house drawing agreement or structural acceptance follows from this stage.
+
 ## Retained adverse carrier witness
 
 The [raised plant section](studies/inlet-plant-25mm-raise.svg) is regenerated through `readRetainedInletComparisonDocument` and `compileEngineeringDocument`: the retained source plant leg is raised by 25 mm while its sill, faults, removals, split roofs and pressure endpoints retain their saved identities. The witness command verifies the route rejection; this is not the default fixed-entry proposal.
@@ -104,3 +114,10 @@ node --import tsx scripts/compile-current-design.ts --occupied-condensate conden
 The occupied schedule and ground WC case cover the active HAD calculation and a real port edit. The selected event, east intake and ground receiving cases cover the source-bound roof and water methods in their supported domains. The two distinct inlet requests expose the active branch, clearances and level mutation. Reference methods reproduce the owning schedule or bounded result. The tests verify that declared edits change the real drawing and calculation, record the matching evidence identity, and withhold unsupported routes.
 
 This completes the current services integration contract. Product, installed pressure, drainage, frost and water-law choices remain with HAD, MAT and RWT. Other active consumers are assessed against the final selected design in CCR-CURRENT-RELEASE.
+
+
+## One ground authority for the service floor
+
+The saved `serviceFloor` stage owns only its case ID and service-body settings. An explicit `groundSection` supplies every floor layer, finished level and exterior datum. `--read-service-floor` and `--service-floor` carry the authored ground case and recompute its result; an edited or stale computed receipt cannot inject levels. The250→270 mm service-zone edit changes FFL715→735, north water/support heights, east lid/thermal clearance, approach and drawings while retaining independently authored east inverts. Save/load and reverse edits reproduce the same current case.
+
+After all stages run, the manifest withholds the prior datum applicability of source roof, inlet, room, structural and water/service outputs when ground changes, while preserving an independent roof-pitch cause. The recomputed ground/service-floor pair and nominal two-dimensional plan remain distinguishable. Combining the stages therefore does not silently approve a raised house with untransformed source details. Local lid/water/support results and all actual material, handling, receiving and weather holds remain visible.

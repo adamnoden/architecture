@@ -4,6 +4,7 @@ import { candidatePlanMethod, createCandidatePlanScene } from './candidate-plan.
 import { resolveCurrentDesign, type CurrentDesignResolution } from './resolve.js'
 import type { StoreyId } from './snapshot.js'
 import type { InletCoverSources } from './inlet-cover.js'
+import type { runGroundSectionCase } from './structural-ground.js'
 
 type Domain = 'plans' | 'occupied-services' | 'selected-water-event'
 type CompileDiagnostic = {
@@ -107,9 +108,57 @@ export function prepareCurrentDesignCompile(input: unknown) {
       const { runStructuralInterfaces } = await import('./structural-interfaces.js')
       return runStructuralInterfaces(resolved, input)
     },
+    readDistributedFloorCase: async () => {
+      const { readDistributedFloorCase } = await import('./structural-distributed-floor.js')
+      return readDistributedFloorCase(resolved)
+    },
+    distributedFloorCase: async (input: unknown) => {
+      const { runDistributedFloorCase } = await import('./structural-distributed-floor.js')
+      return runDistributedFloorCase(resolved, input)
+    },
+    readGroundSectionCase: async () => {
+      const { readGroundSectionCase } = await import('./structural-ground.js')
+      return readGroundSectionCase(resolved)
+    },
+    readHouseVerticalProfileCase: async () => {
+      const { readHouseVerticalProfileCase } = await import('./house-vertical-profile.js')
+      return readHouseVerticalProfileCase(resolved)
+    },
+    houseVerticalProfileCase: async (input: unknown) => {
+      const { runHouseVerticalProfileCase } = await import('./house-vertical-profile.js')
+      return runHouseVerticalProfileCase(resolved, input)
+    },
+    groundSectionCase: async (input: unknown) => {
+      const { runGroundSectionCase } = await import('./structural-ground.js')
+      return runGroundSectionCase(resolved, input)
+    },
+    readServiceFloorCase: async (ground: ReturnType<typeof runGroundSectionCase>) => {
+      const { readServiceFloorCase } = await import('./service-floor.js')
+      return readServiceFloorCase(resolved, ground)
+    },
+    serviceFloorCase: async (input: unknown, ground: ReturnType<typeof runGroundSectionCase>) => {
+      const { runServiceFloorCase } = await import('./service-floor.js')
+      return runServiceFloorCase(resolved, ground, input)
+    },
     readNorthCollectorCase: async () => {
       const { readNorthCollectorCase } = await import('./north-collector.js')
       return readNorthCollectorCase(resolved)
+    },
+    readJoinedRcFloorCase: async () => {
+      const { readJoinedRcFloorCase } = await import('./structural-rc-floor.js')
+      return readJoinedRcFloorCase(resolved)
+    },
+    readVerticalRcFloorCase: async () => {
+      const { readVerticalRcFloorCase } = await import('./structural-vertical-floor.js')
+      return readVerticalRcFloorCase(resolved)
+    },
+    verticalRcFloorCase: async (input: unknown) => {
+      const { runVerticalRcFloorCase } = await import('./structural-vertical-floor.js')
+      return runVerticalRcFloorCase(resolved, input)
+    },
+    joinedRcFloorCase: async (input: unknown) => {
+      const { runJoinedRcFloorCase } = await import('./structural-rc-floor.js')
+      return runJoinedRcFloorCase(resolved, input)
     },
     northCollectorCase: async (input: unknown, westVentCase?: unknown) => {
       const { runNorthCollectorCase } = await import('./north-collector.js')

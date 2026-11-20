@@ -1,5 +1,17 @@
 # Floor and portal reconciliation
 
+## Current development disposition — 20 November 2026
+
+**Reject further local repairs of the loaded portal DPC and the worked crossing arch/post cage. Develop a straight RC frame with a separate compression masonry arch on direct-bearing abutments as the recommended architectural replacement.** The [architectural comparison](portal-architectural-simplification.md) retains the finished2400 opening and775 envelope; its major cost is only60 mm local jamb glass. It has an own-ring equilibrium witness, not a complete structural or thermal proof. The inward-enlarged RC alternative was also tested and rejected at its joint links. The [current native load result](continuous-rc-house-load-result.md) replaces gross lower-wall pressure with the actual opening, uses consistent physical post/upstand loads and joins the floor to all 52 named heads. Four finite 20 mm RC members replace the four portal contact joints. This is the source-bound finite-frame reference behind the rejection and redesign comparison, not a fabricable accepted cage or moisture barrier.
+
+The earlier rocking/contact comparisons remain bounded rejection evidence. Their original source tuple is reachable in [archival b8f27f2d](https://github.com/adamnoden/architecture/tree/b8f27f2dd07fa5b61749e6524aaf0059c5f1da27); the subsequent exposure/load correction is explicit. Do not continue optimising those bearing patches or transfer the old collar, roof-shoe or fixed-base results into the replacement.
+
+The editable house supplies the **one** `distributedFloor` authoring stage to `joinedRcFloor`. A floor-opening edit changes the actual mesh, portal actions, 52-head response, drawing and freshly recomputed reinforcement/cap screens. The [worked cage](continuous-rc-portal-cage.md) remains a conditional section-action comparison. Its [complete joint detail is rejected](continuous-rc-closed-links.md): the near-bend lap cannot meet its mandrel, and the revised hook/rib trials do not supply a complete station layout. Strength ratios do not rescue the geometry. No native48 response is transferred to the separate masonry arch; it requires a fresh joined load path, reinforcement/cap transfer and thermal/water detail.
+
+The roof prerequisite remains genuine. All 28 receiving paths are still incomplete; full vertical slab/gravity and roof participation, physical L keys/ties, lower cap/foundation transfer, actual waterstop/bar seals and thermal interfaces remain internal engineering obligations. The separate raised ground/service-floor proposal has not transformed this source-ground-zero structural model. The first-floor finish at3450 and RC3170..3370 are compatible layers, not a reason to invent an additional dependency. STR-FLOOR-PORTAL stays open until its actual assembled-path criteria are met.
+
+The dated sequence below preserves why earlier directions were tried; it does not reinstate them as current design competitors.
+
 ## Convergence disposition — 19 November 2026
 
 **Retain one development baseline: intact NW floor, continuous mineral diaphragm/chord, aligned solid supports, independently fixed wall heads and tied roof sectors.** The linked west foul route can now produce the intact-floor candidate through the saved engineering document. Its receiving site envelope is a requirement, not a surveyed connection. The source floor opening remains reserved until that route is adopted.
@@ -55,6 +67,22 @@ The read request deliberately leaves `memberLaw` and `jointLaw` null. Supply exp
 | Explicit member stiffness | Additive rectangular L-section torsion and an authored isotropic shear factor omit shear-centre/warping coupling. These are comparison assumptions, not qualified constitutive evidence. |
 
 Internal review corrected the unequal NE cap axis assignment, replaced quarter-centre contact samples with Gaussian points, and rejected unsupported positive-gap branches. Analytical regressions cover unequal-section compliance, displaced-master offsets, full-contact area/centroid/rotational stiffness, rigid motion and signed reversal. The source geometry perturbation and saved-document stiffness edit exercise actual changes. Eleven native checks and the two production document/CLI checks pass. This is useful joined implementation, not the complete successor proof or an STR closeout.
+
+### Distributed floor and four finite corner paths
+
+The [distributed-floor calculation](distributed-floor-compatibility-result.md) now joins the actual perforated first-floor field, separately authored slab-level bands and all four finite L-wall/contact paths to the same 52-head grillage. Its current-design API, `--distributed-floor` CLI and optional saved `distributedFloor` stage share one bound case. An actual aperture edit changes the field, head reactions, joint movements and inspection drawing while the source pressure boundary remains unchanged. Missing constitutive laws, stale sources, invented approvals and complete-house use reject.
+
+The first 200 mm band comparison was rejected because it crossed the actual stair and entrance voids. The 240 mm north-west L also intersects the retained soil aperture. The executed replacement comparison uses 140 mm bands, 200 mm north L widths and 140 mm south widths; it does not remove the soil aperture or adopt the conditional west foul route. Every actual or edited opening must clear the bands and corner patches. The openly authored eight-H12 axial rigidity supplies no reinforcement or adverse-cover packing approval.
+
+All 96 inherited floor-pressure programmes were executed with all 52 heads. The worst global force/moment residual is approximately 1.08 × 10⁻⁹ kN/kNm. This no-gravity, membrane-only subsystem omits the actual roof, vertical floor/upstands and 28 named intermediate receiving laws. Its reactions are not whole-house foundation or splice demands. The source-bound proof and computed drawing preserve those omissions; no STR closure or roof unlock follows.
+
+### Complete ground-section proposal and its actual cost
+
+The [separated dry-side proposal](dry-side-ground-section.md) replaces the known RC bypass with an explicit upper slab and full component-footprint bearing reservation above the cold grid. The preferred development comparator separates ordinary exterior grade −150 from local solum −1800, places the mineral course at 0..150 and the new dry RC at 150..350, and gives FFL +530. Its front approach reserves 17.2 m. The low-course/deep-exterior comparison requires 50.2 m and is rejected as the general compact-house default.
+
+Actual exterior, internal, core and portal footprints are included without bridging the open loggia. Old free-field removal is kept separate from new dry edges and plinth. The preferred comparison adds 21.983509475 m³ of RC, approximately 549.588 kN at the stated density, before the mineral reservation and other changed details. The cold court-seat beam has local member comparisons; its coplanar girder intersections are nodes, not physical end bearings.
+
+The same shared 0.01050625 m² south-west court patch lacks direct mineral support in two component records; it is counted once. The lower stair toe's actual contact remains unlocated. Mineral resistance, full slab/node cages, weather/thermal boundaries and the compatible changed-height house remain open. The current compiler's `--ground-section` and optional saved `groundSection` stage recompute levels, quantities, approaches and the section from authored controls. They explicitly invalidate joined-house applicability rather than translate only a convincing drawing or transfer the nominal service/roof evidence. Raised appearance and actual site applicability retain their genuine owner and site gates.
 
 ### Exact remaining proof obligations
 

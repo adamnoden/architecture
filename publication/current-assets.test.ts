@@ -3,12 +3,15 @@ import { mkdtempSync, mkdirSync, readFileSync, rmSync, symlinkSync, writeFileSyn
 import { tmpdir } from 'node:os'
 import { dirname, resolve } from 'node:path'
 import test from 'node:test'
+import { layoutFamilySource, createLayoutFamilyScene } from '../compiler/reference-house/georgian/layout-family.js'
+import { renderDrawingSceneV2SvgWithTokens } from '../compiler/publication-drawing-v2/svg.js'
+import { PLT_CANDIDATE_TOKENS } from '../compiler/publication-drawing-v2/plt-candidate-tokens.js'
 import { readGeorgianDesignSnapshot } from '../compiler/reference-house/current-design/georgian-source.js'
 import { applyDesignEdit, beginDesignEdit, editBase, loadDesignDraft, saveDesignDraft } from '../compiler/reference-house/current-design/edit.js'
 import { createReferenceHouseSource } from '../compiler/reference-house/fixture.js'
 import { applyPublicationPlates, publicationPlatePlacements } from './plates-current.js'
 import { publicationPlatePlacements as historicalPlacements } from './plates.js'
-import { blackOnlyPublicationSvg, buildCurrentPublicationAssets, compilePublicationPlanAssets,
+import { blackOnlyPublicationSvg, buildCurrentPublicationAssets, compilePublicationPlanAssets, compilePublicationArchitectureAssets,
   currentPublicationAssetPaths, frameFurnishedStudy } from './current-assets.js'
 
 const root = resolve(import.meta.dirname, '..')
@@ -16,13 +19,14 @@ const root = resolve(import.meta.dirname, '..')
 test('current book placements retire predecessor artwork and keep genuine proposal boundaries', () => {
   const historical = new Set(historicalPlacements().flatMap(placement => placement.views.map(view => view.image)))
   const current = publicationPlatePlacements().flatMap(placement => placement.views)
-  assert.equal(current.length, 5)
+  assert.equal(current.length, 7)
   assert.ok(current.every(view => !historical.has(view.image)))
   assert.deepEqual(current.map(view => view.image.replace('../../', '')), [...currentPublicationAssetPaths])
-  assert.ok(current.slice(0, 2).every(view => view.scale === '1:100'))
-  assert.ok(current.slice(2).every(view => view.scale === 'NTS'))
+  assert.ok(current.slice(0, 4).every(view => view.scale === '1:100'))
+  assert.ok(current.slice(4).every(view => view.scale === 'NTS'))
   assert.ok(current.some(view => /Owner aesthetic approval/.test(view.caption)))
   assert.ok(current.some(view => /roof or section datums/.test(view.caption)))
+  assert.ok(current.find(view => view.image.endsWith('principal-section.svg'))?.caption.includes('provisional'))
   const source = readFileSync(resolve(root, 'docs/manuscript/part-iv.md'), 'utf8')
   const composed = applyPublicationPlates('part-iv', source)
   for (const path of historical) assert.ok(!composed.includes(path))
@@ -94,6 +98,8 @@ test('clean-source asset generation checks the native room producer and never su
   const generated = buildCurrentPublicationAssets(root)
   assert.deepEqual(generated.assets.map(asset => asset.path), [...currentPublicationAssetPaths])
   assert.ok(generated.assets.every(asset => /^[\da-f]{64}$/.test(asset.sha256)))
+  assert.match(generated.architecturalDrawingMethod.sha256, /^[\da-f]{64}$/)
+  assert.equal(generated.architecturalDrawingMethod.sourceId, layoutFamilySource.id)
   assert.ok(generated.producerChecks[0].inputArtwork['project/ias/studies/crafted-study-comparison.svg'])
   const temporary = mkdtempSync(resolve(tmpdir(), 'current-book-missing-producer-'))
   try {
@@ -105,4 +111,40 @@ test('clean-source asset generation checks the native room producer and never su
     writeFileSync(path, 'throw new Error("NATIVE_ROOM_PRODUCER_FAILED")')
     assert.throws(() => buildCurrentPublicationAssets(temporary), /NATIVE_ROOM_PRODUCER_FAILED/)
   } finally { rmSync(temporary, { recursive: true, force: true }) }
+})
+
+test('book elevations and section regenerate the exact current gallery geometry at physical scale', () => {
+  const accepted = readGeorgianDesignSnapshot()
+  const baseline = compilePublicationArchitectureAssets(accepted)
+  assert.equal(baseline.method.sourceId, layoutFamilySource.id)
+  assert.deepEqual(baseline.method.viewIds, ['LAYOUT-FAMILY-FRONT-100', 'LAYOUT-FAMILY-PRINCIPAL-100'])
+  for (const [index, view] of (['FRONT', 'PRINCIPAL'] as const).entries()) {
+    const native = createLayoutFamilyScene(view, 100)
+    assert.equal(baseline.assets[index].svg, renderDrawingSceneV2SvgWithTokens(native,
+      { ...PLT_CANDIDATE_TOKENS, fontFamily: 'Arial, Helvetica, sans-serif' }) + '\n')
+    assert.match(baseline.assets[index].svg, /width="145mm" height="190mm"/)
+    assert.match(baseline.assets[index].svg, /data-scale-denominator="100"/)
+    const scale = native.primitives.find(primitive => primitive.id === 'scale')!
+    assert.equal(scale.kind, 'line')
+    if (scale.kind !== 'line') throw new Error('Source scale bar is not a line')
+    assert.equal(Math.hypot(scale.b.x - scale.a.x, scale.b.y - scale.a.y), 30)
+  }
+  assert.match(baseline.assets[1].svg, /foundation type \/ depth unresolved/)
+  assert.match(baseline.assets[1].svg, /engineering unresolved/)
+  const face = layoutFamilySource.design.facade.frameFace
+  try {
+    layoutFamilySource.design.facade.frameFace = face + 10
+    const edited = compilePublicationArchitectureAssets(readGeorgianDesignSnapshot())
+    assert.notEqual(edited.assets[0].svg, baseline.assets[0].svg)
+    assert.equal(edited.assets[1].svg, baseline.assets[1].svg)
+    assert.notEqual(edited.method.sourceFingerprint, baseline.method.sourceFingerprint)
+  } finally { layoutFamilySource.design.facade.frameFace = face }
+  assert.deepEqual(compilePublicationArchitectureAssets(accepted), baseline)
+  const candidate = beginDesignEdit(accepted, 'book-architecture', 'SPECIMEN-BOOK-ARCHITECTURE')
+  assert.throws(() => compilePublicationArchitectureAssets(candidate.design), /candidate snapshots/)
+  assert.throws(() => compilePublicationArchitectureAssets(createReferenceHouseSource()), /expected exactly/)
+  const stale = { ...accepted, storeys: { ...accepted.storeys, GROUND: { ...accepted.storeys.GROUND,
+    openings: accepted.storeys.GROUND.openings.map((opening, index) => index === 0
+      ? { ...opening, widthMm: opening.widthMm - 10 } : opening) } } }
+  assert.throws(() => compilePublicationArchitectureAssets(stale), /differs from the current Georgian layout/)
 })

@@ -139,14 +139,30 @@ test('the versioned structural case rejects unbound design, material and unsuppo
   assert.equal((await edited.structuralCase(request.case)).status, 'unavailable')
 })
 
-test('current structural interface replay runs the actual floor, roof, wall and opening kernels', async () => {
+test('current structural interface defaults omit retired details and predecessor system replays', async () => {
+  const compile = prepareCurrentDesignCompile(readGeorgianDesignSnapshot())
+  const request = await compile.readStructuralInterfaces()
+  assert.ok('replay' in request)
+  assert.deepEqual(request.replay.interfaces, [
+    'outward-arch-widths', 'wall-load-transfers', 'north-cap-layer', 'north-floor-cage',
+  ])
+})
+
+test('explicit historical structural interface replay preserves the actual floor, roof, wall and opening kernels', async () => {
   const design = readGeorgianDesignSnapshot()
   const compile = prepareCurrentDesignCompile(design)
   const request = await compile.readStructuralInterfaces()
   assert.ok('replay' in request)
+  const historicalIds = [
+    'north-floor-collar', 'north-roof-shoe', 'roof-action-route', 'roof-stiffness', 'floor-membrane', 'floor-stops',
+  ]
+  const explicitIds = [
+    'north-floor-collar', 'north-roof-shoe', 'outward-arch-widths', 'roof-action-route', 'roof-stiffness',
+    'floor-membrane', 'floor-stops', 'wall-load-transfers', 'north-cap-layer', 'north-floor-cage',
+  ]
   const result = JSON.parse(execFileSync(process.execPath, [
     '--import', 'tsx', 'scripts/compile-current-design.ts', '--structural-interfaces', '-',
-  ], { input: JSON.stringify(request), encoding: 'utf8' })) as Awaited<ReturnType<typeof compile.structuralInterfaces>>
+  ], { input: JSON.stringify({ ...request, replay: { ...request.replay, interfaces: explicitIds } }), encoding: 'utf8' })) as Awaited<ReturnType<typeof compile.structuralInterfaces>>
   assert.equal(result.status, 'recomputed-comparisons')
   assert.deepEqual(result.source, compile.source)
   const [floor, roof, arch] = result.interfaces
@@ -159,10 +175,12 @@ test('current structural interface replay runs the actual floor, roof, wall and 
   assert.equal(arch.geometry.id, 'outward-arch-widths')
   assert.deepEqual(arch.geometry.controls.map(control => control.widthMm), [160, 180])
   assert.ok(arch.geometry.controls.every(control => control.memberRecoveries > 0 && control.largestAdverseRatio > 1))
-  assert.deepEqual(result.interfaces.map(row => row.geometry.id), [
-    'north-floor-collar', 'north-roof-shoe', 'outward-arch-widths', 'roof-action-route', 'roof-stiffness',
-    'floor-membrane', 'floor-stops', 'wall-load-transfers', 'north-cap-layer', 'north-floor-cage',
-  ])
+  assert.deepEqual(result.interfaces.map(row => row.geometry.id), explicitIds)
+  assert.deepEqual(result.interfaces.filter(row => row.disposition.state === 'historical-comparison')
+    .map(row => row.geometry.id), historicalIds)
+  assert.ok(result.interfaces.filter(row => row.disposition.state === 'historical-comparison')
+    .every(row => row.disposition.reason && row.disposition.source === 'project/str/floor-portal-reconciliation.md'))
+  assert.ok(result.interfaces.every(row => row.successorProof === 'not-established'))
   assert.ok(result.interfaces.every(row => !row.installedAcceptance && row.method.blob && row.receipt.blob
     && Object.keys(row.inputs).length >= 1))
 })
