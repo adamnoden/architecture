@@ -24,7 +24,7 @@ test('one saved engineering document replays its bound stages and preserves thei
   assert.equal(result.documentIdentity.planDigest, result.source.planDigest)
   assert.deepEqual(result.manifest.map(item => item.stage), ['plans', 'occupiedServices', 'selectedWaterEvent',
     'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'inletRemovals/plant', 'inletRemovals/utility',
-    'inletCovers/plant', 'inletCovers/utility', 'studyRoomKit'])
+    'inletCovers/plant', 'inletCovers/utility', 'inletAssembly', 'studyRoomKit'])
   assert.ok(result.engineering.northCollector?.status === 'computed-comparison')
   assert.equal(result.engineering.northCollector.evidence.installedAcceptance, false)
   assert.equal(result.engineering.studyRoomKit?.kit.state, 'candidate')
@@ -35,7 +35,9 @@ test('one saved engineering document replays its bound stages and preserves thei
   const direct = prepareCurrentDesignCompile(design)
   const request = await direct.readNorthCollectorCase()
   assert.ok('collector' in request)
-  assert.deepEqual(result.engineering.northCollector, await direct.northCollectorCase(request.collector))
+  assert.deepEqual(result.engineering.northCollector, await direct.northCollectorCase({ ...request.collector, ...document.stages.northCollector }))
+  assert.equal(result.engineering.northCollector.dpcOriginAudit?.globalContact?.baselinePassingCount, 4)
+  assert.equal(result.engineering.northCollector.dpcOriginAudit?.globalContact?.admitted, false)
   assert.ok(document.bindings.implementations['project/ias/studies/study-furniture-motion.py'])
   assert.ok(document.bindings.implementations['compiler/reference-house/current-design/engineering-document.ts'])
   assert.ok(document.bindings.implementations['compiler/reference-house/georgian/layout-family.ts'])
@@ -151,8 +153,10 @@ test('one saved file regenerates the inlet front bearing and the Study board cat
     assert.equal(utility.roundedRelease.gravity.minimumSignedSupportEdgeMarginMm, 46.2737)
     assert.equal(utility.roundedRelease.captureQualified, false)
     const catalogue = result.engineering.studyRoomKit.kit.floor.firstRestBoardTrial.boardCatalogue
-    assert.equal(catalogue.installedPlanObstructions.placementCount, 111)
-    assert.equal(catalogue.localWallTrimReleased.placementCount, 117)
+    assert.equal(catalogue.installedPlanObstructions.placementCount, 128)
+    assert.equal(catalogue.localWallTrimReleased.placementCount, 135)
+    assert.equal(result.engineering.studyRoomKit.kit.floor.ordinaryHandling.witnessCount, 144)
+    assert.equal(result.engineering.studyRoomKit.kit.floor.ordinaryHandling.physicalAcceptance, false)
     assert.equal(catalogue.physicalAcceptance, false)
     assert.equal(result.documentIdentity.digest, sha256SemanticFingerprint(document))
   } finally {

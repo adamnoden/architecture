@@ -6,6 +6,7 @@ import { isPublicSource } from '../project/public-surface.js'
 import { routeForSource } from '../project/site-routes.js'
 import { publicationFigurePlacements } from '../publication/figures.js'
 import { publicationPlatePlacements } from '../publication/plates-current.js'
+import { publicationPlatePlacements as historicalPlatePlacements } from '../publication/plates.js'
 import { publicationEntries } from '../publication/publication.js'
 import { prepareCurrentDesignCompile } from '../compiler/reference-house/current-design/compile.js'
 import { layoutFamilySource, layoutFamilyViews, createLayoutFamilyScene } from '../compiler/reference-house/georgian/layout-family.js'
@@ -131,6 +132,11 @@ function historicalArtwork(root: string): Set<string> {
   // These bounded predecessor records already enumerate their artwork. New
   // figures elsewhere must not inherit historical status from their directory.
   const paths = new Set<string>(Object.values(REFERENCE_HOUSE_OUTPUTS).filter((item) => item.format === 'svg').map((item) => item.path))
+  for (const placement of historicalPlatePlacements()) {
+    const entry = publicationEntries.find(entry => entry.id === placement.entryId)
+    if (!entry) throw new Error(`Historical plate register has no owning publication entry: ${placement.entryId}`)
+    for (const view of placement.views) paths.add(posix.normalize(posix.join(posix.dirname(entry.source), view.image)))
+  }
   paths.add('docs/reference-house/whole-house-coordination-fixture.svg')
   for (const record of ['publication/pr00d-reference-house-figures.md', 'publication/pr00d-reference-house-systems-figures.md']) {
     if (!existsSync(resolve(root, record))) continue

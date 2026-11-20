@@ -96,12 +96,12 @@
   "sourcesSHA256": {
     "project/had/studies/open-north-loggia.json": "542781c6bb1d277b20492e8433cea498e98eaea5db2e737a5ec7e9655f9d18fd",
     "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
-    "project/str/studies/reconciled-house-interface.json": "ae17f6de977de58ae54f25edfc67c48c36f348cffc288e839f25a8b4143c16cf",
+    "project/str/studies/reconciled-house-interface.json": "4e4587c3fcccb58632abdd9d49505d6b5de2f9be88f4cccedb27b6378ba0f146",
     "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
     "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
     "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
     "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
-    "project/str/studies/floor-portal-fixed-wall-head.json": "376d553d690b2b8b972f755141de338c8554ba288d83f8fe0dd0d4c0612a827f"
+    "project/str/studies/floor-portal-fixed-wall-head.json": "01ae1c87c23fd99ae9510f357768ad83c91be8786e375b85a9cfe1de67d9b7eb"
   },
   "northSupportAxesXmm": [
     4377.5,

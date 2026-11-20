@@ -20,6 +20,8 @@ test('the current Study basis binds native W1 dimensions and the real retained i
   assert.deepEqual(baseline.grille.actualRetainedInlet, {
     id: 'study', wall: 'outer-south', stationDatumMm: [3045, 0, 2100],
     completeOD: 347, retainedReceiverID: 354, radialGapMM: 3.5, drawMM: 250,
+    installedNormalMM: [458, 608], finalNormalMM: [708, 858], finalZ: [1933.58, 2282.08],
+    maximumCompleteMassKG: 12, supportedCarrier: [2845, 675, 400, 225],
   })
   assert.equal(baseline.grille.slotSchedule.totalOpenAreaMm2, 17280)
   assert.equal(baseline.grille.evidence.installedAreaSoundAndWeather, 'unresolved')

@@ -85,7 +85,7 @@ test('stale source, wrong occurrence and unsupported dimensions cannot reuse the
   const { insert } = await compile.readInletSillInsertCase()
   await assert.rejects(compile.inletSillInsert({ ...insert, planDigest: 'stale' }), /source binding/)
   await assert.rejects(compile.inletSillInsert({ ...insert, windowId: 'GROUND/south-window-3' }), /utility window occurrence/)
-  await assert.rejects(compile.inletSillInsert({ ...insert, plantPressureAxisXMm: 10274 }), /screened edge, head or pressure-axis range/)
+  await assert.rejects(compile.inletSillInsert({ ...insert, plantPressureAxisXMm: 10274 }), /screened edge, head, pressure-axis or vent-level range/)
   const candidate = prepareCurrentDesignCompile({
     ...accepted, source: { kind: 'contrast-specimen', id: 'SPECIMEN-OTHER-PLAN', state: 'candidate' },
   })

@@ -1,5 +1,75 @@
 # Floor and portal reconciliation
 
+## Convergence disposition — 19 November 2026
+
+**Retain one development baseline: intact NW floor, continuous mineral diaphragm/chord, aligned solid supports, independently fixed wall heads and tied roof sectors.** The linked west foul route can now produce the intact-floor candidate through the saved engineering document. Its receiving site envelope is a requirement, not a surveyed connection. The source floor opening remains reserved until that route is adopted.
+
+Retire the nested hip/collar, four-jamb guide retrofit and short floor shear tooth as active competitors. Their failures and pinned replay sources remain historical evidence. PR #1489 is closed as superseded; its head is retained because the finite-detail replays depend on it. No wider pier or revised cassette inherits its old force or movement passes.
+
+The remaining structural question is the **assembled load and moisture path**, rather than another hardware fit. Before further splice refinement, compare participation of the actual connected walls/abutments and diaphragms against the four isolated L-cantilever model. Use real openings, actual stiffness and justified minimum stabilising weight; gross filled-opening gravity budgets cannot stabilise suction. A compression/shear-only mineral DPC is a challenger, not an accepted replacement. The retained upper-origin suction account has only **58.4606 kN net compression before lateral overturning**. If the actual signed contact or evidenced shear path fails, retain a deliberately engineered positive crossing where required. Neither masonry tension nor an assumed friction coefficient supplies the missing path.
+
+The [ground-pier boundary](../mat/ground-pier-boundary.md) also rejects an upper-plate-only moisture solution: the common RC grid and RC200 floor bypass that plate. Any successor must reconcile the occupied floor's complete moisture boundary, thresholds and bulk-water exposure. Moving cuts below every support is not the default simplification; it adds many structural cuts and still needs a complete exposure strategy.
+
+### Source-origin accounting is now executable
+
+Set `northCollector.dpcOriginAudit: { cutZMm: -40 }` in the saved engineering document. The current compiler reruns the native structural model, obtains its originating loads and native core-height metadata, and partitions them using [the authored crossing policy](dpc-origin-paths.json). The source grid-top-to-soffit interval must equal the native uniform ground-core budget height. A mismatched interval, stale source or unbound house rejects the result.
+
+The retained GQ account separates approximately **6,286.886 kN** of inner-wall above-cut gross budget, **2,710.769 kN** below or bypassing the inner-wall cut, **1,599.362 kN** on separate weather-leaf paths and **162.533 kN** of mixed/unclassified reserves. They conserve **10,759.550 kN** and both originating first moments. The figures are aggregate source accounting across the house, not loads on either north splice. Mixed allowances, the lower stair route and equipment elevations remain explicitly unresolved. The native emitter retains full precision; the historical receipt remains independently reproducible.
+
+The ground-core split is a sensitivity of a uniform **gross budget**. Moving the requested evaluation level inside the metal plate does not imply actual concrete slices there. The optional global contact method below reconstructs aggregate lateral force and moment from actual source heights and subtracts below-cut pressure. Actual crossing distribution and six-component joint actions remain absent. `completeSpliceDemand` therefore remains null. Wind moments and foundation-head totals cannot fill that field.
+
+The method preserves negative suction and keeps its three combinations separate. The same-document manifest invalidates the collector result when the cut changes, while plans remain unchanged. Newly encountered load families remain unresolved. This closes the accounting ambiguity, not structural acceptance.
+
+### Bound the conventional compression-only challenger
+
+An optional `globalContactTrial` within `dpcOriginAudit` supplies `roofRiseMm`, `additionalRetainedNKN` and `additionalRetainedCentroidXYMm`. The native method compares all 96 signed wind programmes against the convex hull of the actual inner-pier footprints. It reconstructs the external wind force and moment **at the DPC cut**, using the original floor/roof lateral forces, actual ring vertical wind reactions, lower-wall reaction translation and removal of the below-cut pressure slice. The direct pressure integral agrees within **4.33 × 10⁻⁸ kNm**. Foundation-head moments are not substituted for this cut.
+
+The existing retained-mass case meets the necessary global vertical-contact condition in only **4 of 96** programmes. At an explicitly authored additional-load centroid of **X6000/Y6000 mm**, the theoretical minimum extra retained load is approximately **138.392 kN**. Raising the pressure envelope by 100 mm increases it to **142.466 kN**. A test just below the computed threshold fails; one just above reaches the necessary hull condition in all 96 cases. Moving the added-load centroid changes the demand, including the expected benefit of counterbalancing the retained source's asymmetric first moment.
+
+These are **conditional demand inputs**, not available material, a ballast recommendation or an adopted tie route. The threshold gives zero global contact margin at the governing edge. The full first-floor area is not an earned minimum retained mass: its complete aperture inventory and positive connection route are still missing. No floor weight is silently credited by this method. Local contact, shear, sliding, wall participation, stiffness, moisture and the complete joint remain unresolved; `completeSpliceDemand` stays null even when the necessary global condition passes. The roof-rise input changes pressure height only, not the roof framing or its engineering acceptance.
+
+Internal adversarial verification formulated nonnegative reactions at the actual hull vertices and minimised the additional retained load under three independent equality constraints. A HiGHS LP comparison covered 576 source cases across two pressure heights and three load centroids; its largest difference from the analytical envelope was **1.42 × 10⁻¹³ kN**. A separate standard-library basis-enumeration oracle agreed with HiGHS within **1.14 × 10⁻¹³ kN**. The [retained regression oracle](../../compiler/reference-house/test-support/contact-lp-oracle.py) checks the production results without reusing the hull-inequality implementation. This is internal mathematical challenge, not independent professional or physical acceptance.
+
+This narrows the next comparison: demonstrate actual net retained material and its diaphragm/tie participation, or reject compression-only transfer under the retained load envelope. Do not use the global result to justify another unpriced local splice.
+
+### First compatible north-floor and ground-grid replay
+
+The [current compiler adapter](../../compiler/reference-house/current-design/structural-successor.ts) now calls one finite-frame/contact solve for the two north wall cuts, their connecting floor band and the actual 52-head ground grillage. It contains 83 nodes and 102 finite three-dimensional members. Changing authored tie stiffness changes the compatible wall/contact state and named head reactions through this system; it is not a fixed-base increment added to an earlier foundation result.
+
+```sh
+node --import tsx scripts/compile-current-design.ts --read-georgian-source |
+  node --import tsx scripts/compile-current-design.ts --read-structural-successor - > successor.json
+node --import tsx scripts/compile-current-design.ts --structural-successor successor.json
+```
+
+The read request deliberately leaves `memberLaw` and `jointLaw` null. Supply explicit numerical comparison laws before requesting a solve. The same authored controls can be saved as `stages.structuralSuccessor` in the existing engineering document, with the current binding and method checks, result manifest, save/load and CLI replay. Injecting source identities or results as stage settings rejects. A stiffness edit changes this stage while nominal plans and the occupied-services and water-event controls retain their results.
+
+| Implemented comparison | Actual boundary |
+| --- | --- |
+| Widened north L members and the source 140 × 750 mm north band | Two corner cuts only; intermediate north supports, complete slab/chord and roof remain absent. The local collector is a rigid boundary section. |
+| Signed six-component joint/head actions and compatible displacements | Only the named wing-seat gravity challenges and retained historical 95.16 kN horizontal drag enter. Member self-weight, other gravity/precompression and full wind/roof actions are omitted. Contact states are not installed-house states. Applying drag at both corners is an authored doubled comparison. |
+| Unilateral normal contact and tension ties | Zero-gap laws only. Finite free travel explicitly rejects. Gaussian contact points reproduce full-contact area and rotational stiffness; partial-contact mesh convergence and physical pressure/resistance remain unproved. Bilateral biaxial key springs are a phenomenological law. |
+| Finite upper corner-cap transfer and ground beams | The lower cap transfer is rigid from Z−750 to −405; only Z−405 to −180 is a finite member. All heads restrain translation ideally and release rotation. Soil, pile/cap resistance and complete cap flexibility are not inferred. |
+| Explicit member stiffness | Additive rectangular L-section torsion and an authored isotropic shear factor omit shear-centre/warping coupling. These are comparison assumptions, not qualified constitutive evidence. |
+
+Internal review corrected the unequal NE cap axis assignment, replaced quarter-centre contact samples with Gaussian points, and rejected unsupported positive-gap branches. Analytical regressions cover unequal-section compliance, displaced-master offsets, full-contact area/centroid/rotational stiffness, rigid motion and signed reversal. The source geometry perturbation and saved-document stiffness edit exercise actual changes. Eleven native checks and the two production document/CLI checks pass. This is useful joined implementation, not the complete successor proof or an STR closeout.
+
+### Exact remaining proof obligations
+
+| Joined question | Required proof before structural selection |
+| --- | --- |
+| Distributed support topology | Actual wall/abutment, opening and diaphragm stiffness; signed contact, sliding, torsion, settlement/heave and erection stages; actual minimum gravity without filled-opening credit |
+| Floor and widened support | Complete perimeter chord and cage, independent gravity seating, actual floor mass/stiffness, construction tolerances and occupied room/service clearances |
+| DPC and ground floor | Component-specific crossing/vertical metadata; split mixed reserves at emission; full signed cut actions; force transfer, wet perimeter and an occupied-floor boundary without the known RC bypass |
+| Roof and wall head | Ordinary and hip/valley assemblies on the same raised tied-roof geometry, real compression/uplift/fixed restraints, movement and inspectable connections |
+| Whole-house response | One compatible floor/wall/roof/contact model, original signed/adverse families and actual 52-head actions and movements; fixed-base increments are not this replay |
+| Receiving coordination | The same support/weather datums, independent water paths, floor interfaces, services, insulation/air/fire continuity and installation access in STR, ROF/RWT, MAT and HAD |
+
+The existing `current-house-roof-bracing.py` retains the former four fixed-base 140 mm L-cantilevers and earlier roof datums. `current-house-joined-foundation.py` routes prescribed actions and statically redistributes released uplift; added loads do not feed back through new wall, floor, roof and DPC stiffness into compatible displacement and contact. Composing their outputs cannot produce the successor proof. Reuse the frame and membrane kernels inside one source-bound compatibility model of the actual successor and its 52 heads, with signed six-component interface actions and explicit connection/contact laws. This is internal design and model implementation, not a plot or external-review dependency.
+
+STR-FLOOR-PORTAL remains incomplete. ROF-RWT-GATE retains its genuine prerequisite. The owner review gates and separate physical/site acceptance routes remain intact. Further development should answer the distributed-support and complete-cut questions before adding another local connector variant.
+
+## Retained detail development and historical comparisons
 
 The [independent north bearing comparison](floor-portal-bearing-toe.md) separates the floor gravity seat from the lateral collector. Carry the 100 mm load-aligned bearing and a 180 mm roomward-backed toe into the next coordinated detail. The reversible shear tooth has enough face area in the 105 mm projection trial, but its short-anchor group fails the full-tip moment bound. Keep that tooth withheld. Coordinate the separate west-wall gravity route and replay the head and service interfaces before selecting a portal.
 

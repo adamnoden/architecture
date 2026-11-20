@@ -12,8 +12,10 @@ import {
   type PublicationEntry
 } from '../publication.js'
 import { readPublicationScope, renderPublicationScope } from '../scope-report.js'
+import { buildCurrentPublicationAssets, currentPublicationAssetPaths } from '../current-assets.js'
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../..')
+const compiledCurrentAssets = new Map(buildCurrentPublicationAssets(repoRoot).assets.map(asset => [resolve(repoRoot, asset.path), asset.svg]))
 const unsupportedSourceConstructs = [
   { label: '<script setup>', test: /<script\s+setup\b/i },
   { label: 'Vue v-if/v-for directive', test: /\bv-(?:if|for|else|show)\s*=/i },
@@ -41,7 +43,7 @@ function validateLocalImages(source: string, markdown: string): void {
 
     const pathOnly = href.split(/[?#]/, 1)[0]
     const target = resolve(sourceDirectory, pathOnly)
-    if (!existsSync(target)) throw new Error(`Missing local image in ${source}: ${href}`)
+    if (!compiledCurrentAssets.has(target) && !existsSync(target)) throw new Error(`Missing local image in ${source}: ${href}`)
   }
 }
 
@@ -151,25 +153,7 @@ function validateFigureRegister(): void {
 function validatePlateRegister(): void {
   const placements = publicationPlatePlacements()
   const views = placements.flatMap((placement) => placement.views)
-  const expectedImages = new Set([
-    '../reference-house/publication-ground-floor-plan.svg',
-    '../reference-house/publication-first-floor-plan.svg',
-    '../reference-house/publication-synthetic-setting.svg',
-    '../reference-house/publication-external-maintenance-setting-overlay.svg',
-    '../reference-house/publication-principal-front-elevation.svg',
-    '../reference-house/publication-principal-section.svg',
-    '../reference-house/publication-courtyard-elevation.svg',
-    '../reference-house/publication-structural-span-overlay.svg',
-    '../reference-house/publication-service-transverse-section.svg',
-    '../reference-house/publication-service-side-elevation.svg',
-    '../reference-house/publication-ground-service-maintenance-overlay.svg',
-    '../reference-house/publication-first-service-maintenance-overlay.svg',
-    '../reference-house/publication-roof-drainage.svg',
-    '../reference-house/publication-roof-water-failure-overlay.svg',
-    '../reference-house/publication-garden-elevation.svg',
-    '../reference-house/publication-sectional-axonometric.svg',
-    '../reference-house/publication-future-adaptation-overlay.svg'
-  ])
+  const expectedImages = new Set(currentPublicationAssetPaths.map(path => '../../' + path))
   const actualImages = new Set(views.map((view) => view.image))
 
   if (placements.some((placement) => placement.entryId !== 'part-iv')) {

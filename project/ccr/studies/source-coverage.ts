@@ -9,7 +9,7 @@ type FileReader = (path: string) => Buffer
 type ReceiptEdge = {
   readonly receipt: string
   readonly location: readonly string[]
-  readonly format: 'map' | 'path-and-blob'
+  readonly format: 'map' | 'path-and-blob' | 'value'
   readonly algorithm: Algorithm
   readonly source?: string
 }
@@ -66,6 +66,11 @@ export function auditSourceCoverage(read: FileReader = readSource) {
     if (!bytes) continue
     try {
       const data = location.reduce((value, field) => value[field], JSON.parse(bytes.toString('utf8')))
+      if (format === 'value') {
+        if (!expectedPath || typeof data !== 'string') throw new Error('Missing scalar source identity')
+        checkEdge(receipt, expectedPath, data, algorithm)
+        continue
+      }
       if (!data || Array.isArray(data) || typeof data !== 'object') throw new Error('Missing source record')
       if (format === 'path-and-blob') {
         if (data.path !== expectedPath || typeof data.blob !== 'string') {

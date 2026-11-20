@@ -58,7 +58,10 @@ test('pre-fix main bytes and captured house identities constrain the correction 
   const boundary=verifyPreFixBoundary(house);
   assert.equal(boundary.unchanged,true);
   assert.equal(boundary.normalizedObserved.scheduleBlob,boundary.preFix.scheduleBlob);
-  assert.equal(boundary.observed.scheduleBlob,boundary.sourceIdentityReconciliation.scheduleBlob);
+  assert.equal(boundary.observed.scheduleBlob,boundary.sourceRefresh.scheduleBlob);
+  assert.equal(boundary.joinedObserved.scheduleBlob,boundary.sourceIdentityReconciliation.scheduleBlob);
+  assert.equal(Object.keys(boundary.sourceRefresh.houseInputs).length,4);
+  assert.equal(Object.keys(boundary.sourceRefresh.receiverInputs).length,2);
   const input=structuredClone(house);
   input.inputs['project/had/studies/receiver-selection.json']='0'.repeat(40);
   assert.throws(()=>verifyPreFixBoundary(input),/Expected joined house input identity/);
@@ -72,6 +75,8 @@ test('pre-fix main bytes and captured house identities constrain the correction 
   assert.throws(()=>verifyPreFixBoundary(port),/exteriorPortsSHA256/);
   const unrelated=structuredClone(house);unrelated.model.groundFurniture['service-utility-washer'][0]+=1;
   assert.throws(()=>verifyPreFixBoundary(unrelated),/houseExceptDeclaredChangesSHA256/);
+  const flow=structuredClone(house);flow.model.architecturalServices.cooker.closure.supplyLoss.requiredFlowDeadlines[0].fraction+=.01;
+  assert.throws(()=>verifyPreFixBoundary(flow),/houseExceptDeclaredChangesSHA256/);
 });
 
 test('finite witnesses cannot contain the explicit unattended slow-leak sensitivity',()=>{

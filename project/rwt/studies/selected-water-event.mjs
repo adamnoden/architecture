@@ -24,7 +24,7 @@ export function readCurrentCourtIntake(){
  // its reconciled structural source identity. The located water geometry,
  // service paths and receiving conditions are byte-identical to the prior
  // intake after omitting its source map. Historical readSelected stays pinned.
- assert.equal(blob,'887a3df5b7a335b3eaafc7c8de4529a339428cbc','HAD changed: reconcile the court feeder, service paths and local/site receiving conditions');
+ assert.equal(blob,'d4e6c37dbac7777abeb83e85ee3232f608523bdc','HAD changed: reconcile the court feeder, service paths and local/site receiving conditions');
  return {path,blob,model:JSON.parse(raw)};
 }
 const floor=y=>-30-(y-5750)*.04;

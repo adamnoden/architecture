@@ -4,6 +4,8 @@ import { sha256SemanticFingerprint, stableJsonStringify } from '../../core/ident
 import { compileCurrentDesignBundle, prepareCurrentDesignCompile } from './compile.js'
 import { readStudyRoomKitReferenceCase } from './assemblies/study-room-kit.js'
 import { resolveCurrentDesign, type CurrentDesignResolution } from './resolve.js'
+import { readStructuralDpcOriginSettings } from './structural-dpc.js'
+import { compileInletAssembly, readInletAssemblySettings } from './inlet-assembly.js'
 
 const repository = new URL('../../../', import.meta.url)
 const implementationRoots = [
@@ -25,11 +27,12 @@ const additionalImplementationFiles = [
   'project/had/studies/store-exchange.mjs',
   'project/oas/studies/study-dry-seam.mjs',
   'project/ias/studies/study-furniture-motion.py',
+  'project/ias/studies/study-floor-handling.py',
   'project/bcr/studies/bay-interface-study.py',
   'project/ias/studies/workable-floor-tiles.mjs',
   'project/ias/studies/workable-lining-dimensions.mjs',
 ] as const
-const stageKeys = ['northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'inletRemovals', 'inletCovers', 'studyRoomKit'] as const
+const stageKeys = ['structuralSuccessor', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit'] as const
 type Settings = Readonly<Record<string, unknown>>
 type EngineeringStages = Partial<Readonly<Record<Exclude<typeof stageKeys[number], 'inletCovers' | 'inletRemovals'>, Settings>>> & {
   readonly inletRemovals?: readonly Settings[]
@@ -38,17 +41,20 @@ type EngineeringStages = Partial<Readonly<Record<Exclude<typeof stageKeys[number
 type SourceBindings = {
   readonly disciplines: Readonly<Record<string, string>>
   readonly implementations: Readonly<Record<string, string>>
+  readonly authoredDefaults: Readonly<Record<string, string>>
 }
 
+const successorFields = ['northWallWidthMm', 'memberLaw', 'jointLaw', 'boundaryActions'] as const
 const northFields = ['portAxisXYMm', 'dragDemandFactor', 'remoteMainBarShiftMm', 'chordBendRadiusMm',
-  'toeTransferIntervalMm', 'keyContactTrial', 'placementToleranceMm', 'yawProbe', 'deadLoadReplay', 'portStrategy'] as const
+  'toeTransferIntervalMm', 'keyContactTrial', 'placementToleranceMm', 'yawProbe', 'deadLoadReplay', 'portStrategy', 'dpcOriginAudit'] as const
 const foulFields = ['riserAxisXYMm', 'wetStackAirTakeoffZMm', 'terminalZMm', 'buriedReceiving'] as const
 const inletFields = ['branch', 'washer', 'cheekMm', 'retainedSideLandMm', 'receiverRailWidthMm',
   'minimumFrontBridgeMm', 'axialTravelMm', 'sideTravelMm', 'closure'] as const
-const insertFields = ['eastEdgeMm', 'headZMm', 'plantPressureAxisXMm'] as const
+const insertFields = ['eastEdgeMm', 'headZMm', 'plantPressureAxisXMm', 'plantVentOuterZMm'] as const
 const faultFields = ['branches'] as const
+const assemblyFields = ['plantSouthLegLevelMm', 'splitRoof', 'supportRails'] as const
 const removalFields = ['branch', 'drawMm', 'roofAccess', 'washer', 'utilityTaperRemoved', 'preparation'] as const
-const studyFields = ['pitchMm', 'wearingFace', 'finishDepthMm', 'groundDeckLevelLossMm', 'firstRestBoardSizeMm', 'opening'] as const
+const studyFields = ['pitchMm', 'wearingFace', 'finishDepthMm', 'groundDeckLevelLossMm', 'firstRestBoardSizeMm', 'ordinaryHandling', 'frameFootClearanceMm', 'floorBorderMinimumMm', 'installedServices', 'floorWorkerTopMm', 'floorPosture', 'wallPanelWidthMm', 'wallFace', 'wallReleaseMm', 'opening'] as const
 
 function object(value: unknown): value is Record<string, unknown> {
   return value !== null && typeof value === 'object' && Object.getPrototypeOf(value) === Object.prototype
@@ -81,6 +87,9 @@ function sourceBindings(resolved: CurrentDesignResolution): SourceBindings {
   const paths = [...implementationRoots.flatMap(implementationFiles), ...additionalImplementationFiles].sort()
   return {
     disciplines: Object.fromEntries(resolved.disciplineBindings.map(binding => [binding.id, binding.digest]).sort(([a], [b]) => a.localeCompare(b))),
+    authoredDefaults: { 'project/ias/studies/crafted-study-handling-plan.json': createHash('sha1')
+      .update(`blob ${readFileSync(new URL('project/ias/studies/crafted-study-handling-plan.json', repository)).length}\0`)
+      .update(readFileSync(new URL('project/ias/studies/crafted-study-handling-plan.json', repository))).digest('hex') },
     implementations: Object.fromEntries(paths.map(path => {
       const bytes = readFileSync(new URL(path, repository))
       return [path, createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')]
@@ -112,13 +121,16 @@ export async function readEngineeringDocument(design: unknown) {
     design: resolved.design,
     bindings: sourceBindings(resolved),
     stages: {
-      northCollector: select(north.collector, northFields),
+      northCollector: { ...select(north.collector, northFields), dpcOriginAudit: readStructuralDpcOriginSettings(resolved) },
       rearFoulVent: select(foul.vent, foulFields),
       inletSillInsert: select(sill.insert, insertFields),
       inletFault: select(fault.fault, faultFields),
       inletRemovals: removalCases.map(removal => select(removal, removalFields)).sort((a, b) => String(a.branch).localeCompare(String(b.branch))),
       inletCovers: covers.map(({ cover }) => select(cover, inletFields)).sort((a, b) => String(a.branch).localeCompare(String(b.branch))),
-      studyRoomKit: select(readStudyRoomKitReferenceCase(), studyFields),
+      inletAssembly: readInletAssemblySettings(resolved),
+      studyRoomKit: select({ ...readStudyRoomKitReferenceCase(), finishDepthMm: 15, installedServices: 'wall-hung-candidate',
+        frameFootClearanceMm: 5, firstRestBoardSizeMm: [300, 300],
+        ordinaryHandling: JSON.parse(readFileSync(new URL('project/ias/studies/crafted-study-handling-plan.json', repository), 'utf8')) }, studyFields),
     },
   }
 }
@@ -141,12 +153,14 @@ function admitStages(value: unknown): EngineeringStages {
     throw new TypeError('Specify at least one supported engineering stage')
   }
   const stages: EngineeringStages = {
+    ...(Object.hasOwn(value, 'structuralSuccessor') ? { structuralSuccessor: settings(value.structuralSuccessor, successorFields, 'structural successor') } : {}),
     ...(Object.hasOwn(value, 'northCollector') ? { northCollector: settings(value.northCollector, northFields, 'north collector') } : {}),
     ...(Object.hasOwn(value, 'rearFoulVent') ? { rearFoulVent: settings(value.rearFoulVent, foulFields, 'rear foul vent') } : {}),
     ...(Object.hasOwn(value, 'inletSillInsert') ? { inletSillInsert: settings(value.inletSillInsert, insertFields, 'inlet sill insert') } : {}),
     ...(Object.hasOwn(value, 'inletFault') ? { inletFault: settings(value.inletFault, faultFields, 'inlet fault') } : {}),
     ...(Object.hasOwn(value, 'inletRemovals') ? { inletRemovals: branchSettings(value.inletRemovals, removalFields, 'inlet removal') } : {}),
     ...(Object.hasOwn(value, 'inletCovers') ? { inletCovers: branchSettings(value.inletCovers, inletFields, 'inlet cover') } : {}),
+    ...(Object.hasOwn(value, 'inletAssembly') ? { inletAssembly: settings(value.inletAssembly, assemblyFields, 'inlet assembly') } : {}),
     ...(Object.hasOwn(value, 'studyRoomKit') ? { studyRoomKit: settings(value.studyRoomKit, studyFields, 'Study room kit') } : {}),
   }
   return stages
@@ -158,7 +172,7 @@ export async function compileEngineeringDocument(input: unknown) {
   }
   const { resolved, compile } = acceptedCompile(input.design)
   const observedBindings = sourceBindings(resolved)
-  if (!exactKeys(input.bindings, ['disciplines', 'implementations'])
+  if (!exactKeys(input.bindings, ['disciplines', 'implementations', 'authoredDefaults'])
       || stableJsonStringify(input.bindings) !== stableJsonStringify(observedBindings)) {
     throw new Error('Stale engineering source or implementation binding; explicitly read and review a refreshed document')
   }
@@ -170,12 +184,14 @@ export async function compileEngineeringDocument(input: unknown) {
     sourceBindingsDigest: sha256SemanticFingerprint(observedBindings),
   }
   const engineering: {
+    structuralSuccessor?: Awaited<ReturnType<typeof compile.structuralSuccessorCase>>
     northCollector?: Awaited<ReturnType<typeof compile.northCollectorCase>>
     rearFoulVent?: Awaited<ReturnType<typeof compile.rearFoulVent>>
     inletSillInsert?: Awaited<ReturnType<typeof compile.inletSillInsert>>
     inletFault?: Awaited<ReturnType<typeof compile.inletFault>>
     inletRemovals?: readonly Awaited<ReturnType<typeof compile.inletRemoval>>[]
     inletCovers?: readonly Awaited<ReturnType<typeof compile.inletCover>>[]
+    inletAssembly?: ReturnType<typeof compileInletAssembly>
     studyRoomKit?: Awaited<ReturnType<typeof compile.studyRoomKit>>
   } = {}
   const manifest: { stage: string; settingsDigest: string; resultDigest: string; controls: readonly string[]; dependsOn: readonly string[] }[] = []
@@ -188,6 +204,13 @@ export async function compileEngineeringDocument(input: unknown) {
   recordResult('plans', {}, base.plans)
   recordResult('occupiedServices', {}, base.occupiedServices)
   recordResult('selectedWaterEvent', {}, base.selectedWaterEvent)
+  if (stages.structuralSuccessor) {
+    const request = await compile.readStructuralSuccessorCase()
+    if (!object(request.successor.comparison)) throw new Error('The bound structural successor case is unavailable')
+    engineering.structuralSuccessor = await compile.structuralSuccessorCase({ ...request.successor,
+      comparison: { ...request.successor.comparison, ...stages.structuralSuccessor } })
+    recordResult('structuralSuccessor', stages.structuralSuccessor, engineering.structuralSuccessor)
+  }
   const linkedPort = stages.northCollector?.portStrategy === 'linked-west-foul-route'
   let westVentCase: unknown
   const compileWestVent = async (settings: Settings) => {
@@ -250,6 +273,16 @@ export async function compileEngineeringDocument(input: unknown) {
         ...(stages.inletRemovals?.some(removal => removal.branch === cover.branch) ? [`inletRemovals/${cover.branch}`] : [])])
     }
     engineering.inletCovers = results
+  }
+  if (stages.inletAssembly) {
+    if (!engineering.inletSillInsert || !engineering.inletFault || !engineering.inletRemovals || !engineering.inletCovers) {
+      throw new Error('The joined inlet requires explicit insert, fault, both removals and both covers in the saved document')
+    }
+    engineering.inletAssembly = compileInletAssembly(resolved, stages.inletAssembly, {
+      insert: engineering.inletSillInsert, fault: engineering.inletFault, removals: engineering.inletRemovals, covers: engineering.inletCovers,
+    })
+    recordResult('inletAssembly', stages.inletAssembly, engineering.inletAssembly, ['inletSillInsert', 'inletFault',
+      'inletRemovals/utility', 'inletRemovals/plant', 'inletCovers/utility', 'inletCovers/plant'])
   }
   if (stages.studyRoomKit) {
     engineering.studyRoomKit = await compile.studyRoomKit({ schema: 'ias-study-room-kit-case/1', units: 'mm', ...stages.studyRoomKit })
