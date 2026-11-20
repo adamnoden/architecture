@@ -9,8 +9,8 @@
     "label": "convergence-inlet-resumed-20261120"
   },
   "claimedAt": "2026-11-20T07:39:02.850Z",
-  "heartbeatAt": "2026-11-20T14:48:54.746Z",
-  "expiresAt": "2026-11-20T16:18:54.746Z",
+  "heartbeatAt": "2026-11-20T15:51:10.000Z",
+  "expiresAt": "2026-11-20T16:36:10.000Z",
   "branch": "work/convergence-next-systems-20261120",
   "predecessor": {
     "leaseId": "6d1a0dde-e1e3-4014-99e6-bac6f58d5756",
@@ -36,8 +36,8 @@
   },
   "pr": 1597,
   "checkpoint": {
-    "evidence": "PR1597 head e3047a0186137cca783c5dab6510b0a1596bbefb: exact canonical receipt now passes clean-runner fast proof; native wrapper and10actualconsumer checks pass. Next gravity-house checkpoint48ee86d0 contains tested35source gravity, derived house profile, shared inlet frame and book plates.",
-    "next": "Finish exact-head CI and fresh dual preflight, merge1597, then publish gravity-house integration and continue replacementA/roof/occupied interfaces.",
-    "blocker": "No STR/HAD closeout: actual complete receiving, roof, enclosure/material and installed proof remain open. Current PR full CI still running."
+    "evidence": "PR1597 head1aeb01bb: all completed exact-head workflows pass; primary health and ADE generality still running. Read-only native canonical preflight follows full validation. Next tested47-file gravity/house/book package preserved remotely at765fd3c0.",
+    "next": "Finish exact-head CI and fresh dual preflight; merge1597, publish preserved gravity-house successor, then release handoff if the execution environment remains unavailable.",
+    "blocker": "Execution environment unavailable; no further local geometry work. STR/HAD/roof acceptance remains open. Detailed successor handoff posted on1597."
   }
 }
