@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 46,
+  "generation": 47,
   "state": "claimed",
-  "leaseId": "6d1a0dde-e1e3-4014-99e6-bac6f58d5756",
+  "leaseId": "4fc55435-7e36-4112-9d39-f14c8f486b4c",
   "holder": {
-    "kind": "codex",
-    "label": "convergence-inlet"
+    "kind": "chatgpt",
+    "label": "convergence-inlet-resumed-20261120"
   },
-  "claimedAt": "2026-11-19T20:30:02.696Z",
-  "heartbeatAt": "2026-11-20T00:59:59.148Z",
-  "expiresAt": "2026-11-20T02:29:59.148Z",
-  "branch": "work/convergence-inlet-fixed-2026-11-20",
+  "claimedAt": "2026-11-20T07:39:02.850Z",
+  "heartbeatAt": "2026-11-20T07:39:02.850Z",
+  "expiresAt": "2026-11-20T09:09:02.850Z",
+  "branch": "work/convergence-fixed-recovery-20261120",
   "predecessor": {
-    "leaseId": "5ddd99a4-fd1f-49de-af1d-7d77372c4077",
-    "generation": 45,
-    "branch": "work/rush-inlet-dependencies-2026-11-18",
-    "pr": 1580,
+    "leaseId": "6d1a0dde-e1e3-4014-99e6-bac6f58d5756",
+    "generation": 46,
+    "branch": "work/convergence-inlet-fixed-2026-11-20",
+    "pr": 1587,
     "checkpoint": {
-      "evidence": "PR #1580 exact final head e8f03902ab59d91dd96c9ea3108718584efcc5e1. Complete runtime import closure audited; 11 final pipeline tests passed and 495 pre-pin Reference House tests passed. Hosted suite rerunning final source.",
-      "next": "Verify hosted checks at the final source and merge. Detail independent receiver section and anchors, actual lid and hand loads, positive captured transfer, rated split filler/collar wet seals and separate blocked-upper-mouth 90 L/min challenges.",
-      "blocker": "Geometric fit and saved dependency propagation retain physical attachment, guided retention, wet closure and loaded handling as unqualified."
+      "evidence": "Main0298 merged1584; tested fixed-entry checkpoint nowremote with4focusedtests andtypecheck, exactfactoryCADfacts andlightpipe renewal views. No adoptionorHADclosure.",
+      "next": "Complete sharedsavedstage andCLI integration; prove matchedtoolposes, source receiving group, fullthermal/restraintandwetneck. Keepmanualconstituent decisions explicit and preserve actualfailed states.",
+      "blocker": "Wet neck, group support/thermal andexact materialdisposition remain unproved; draftonly."
     }
   },
   "recoverySource": {
-    "leaseId": "5ddd99a4-fd1f-49de-af1d-7d77372c4077",
-    "generation": 45,
-    "branch": "work/rush-inlet-dependencies-2026-11-18",
-    "pr": 1580,
+    "leaseId": "6d1a0dde-e1e3-4014-99e6-bac6f58d5756",
+    "generation": 46,
+    "branch": "work/convergence-inlet-fixed-2026-11-20",
+    "pr": 1587,
     "checkpoint": {
-      "evidence": "PR #1580 exact final head e8f03902ab59d91dd96c9ea3108718584efcc5e1. Complete runtime import closure audited; 11 final pipeline tests passed and 495 pre-pin Reference House tests passed. Hosted suite rerunning final source.",
-      "next": "Verify hosted checks at the final source and merge. Detail independent receiver section and anchors, actual lid and hand loads, positive captured transfer, rated split filler/collar wet seals and separate blocked-upper-mouth 90 L/min challenges.",
-      "blocker": "Geometric fit and saved dependency propagation retain physical attachment, guided retention, wet closure and loaded handling as unqualified."
+      "evidence": "Main0298 merged1584; tested fixed-entry checkpoint nowremote with4focusedtests andtypecheck, exactfactoryCADfacts andlightpipe renewal views. No adoptionorHADclosure.",
+      "next": "Complete sharedsavedstage andCLI integration; prove matchedtoolposes, source receiving group, fullthermal/restraintandwetneck. Keepmanualconstituent decisions explicit and preserve actualfailed states.",
+      "blocker": "Wet neck, group support/thermal andexact materialdisposition remain unproved; draftonly."
     }
-  },
-  "pr": 1587,
-  "checkpoint": {
-    "evidence": "Main0298 merged1584; tested fixed-entry checkpoint nowremote with4focusedtests andtypecheck, exactfactoryCADfacts andlightpipe renewal views. No adoptionorHADclosure.",
-    "next": "Complete sharedsavedstage andCLI integration; prove matchedtoolposes, source receiving group, fullthermal/restraintandwetneck. Keepmanualconstituent decisions explicit and preserve actualfailed states.",
-    "blocker": "Wet neck, group support/thermal andexact materialdisposition remain unproved; draftonly."
   }
 }
