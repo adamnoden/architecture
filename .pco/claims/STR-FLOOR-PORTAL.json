@@ -9,8 +9,8 @@
     "label": "rush-structural-20261120"
   },
   "claimedAt": "2026-11-20T22:25:00.372Z",
-  "heartbeatAt": "2026-11-20T22:36:39.240Z",
-  "expiresAt": "2026-11-20T23:21:39.240Z",
+  "heartbeatAt": "2026-11-20T22:56:08.261Z",
+  "expiresAt": "2026-11-20T23:41:08.261Z",
   "branch": "work/rush-structural-20261120",
   "predecessor": {
     "leaseId": "a044c93f-78e1-4267-955e-f89e12b23997",
@@ -35,8 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote a06f7a25 preserves tested physical slab bending recovery; current native A and foundation/closure integration in progress, not merged.",
-    "next": "Finish distinct A result provenance, joined closure/weight proof and saved-document tests; require exact-head CI before merge.",
-    "blocker": "A remains an unqualified source-ground-zero comparison; wind/roof, full receiving, cage and water/thermal paths remain open."
-  }
+    "evidence": "PR1602 d879f3e1 preserves verified A41 joined source, proof and saved CLI tests; hosted CI running.",
+    "next": "Check exact CI, reconcile HAD1601 main if moved, fresh canonical merge preflight then merge; next45-source work isolated.",
+    "blocker": "STR internal coupled roof/wall, reinforcement, full receiving and moisture/thermal duties remain; no structural closeout."
+  },
+  "pr": 1602
 }
