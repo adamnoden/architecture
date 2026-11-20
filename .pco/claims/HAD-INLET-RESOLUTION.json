@@ -9,9 +9,9 @@
     "label": "convergence-inlet-resumed-20261120"
   },
   "claimedAt": "2026-11-20T07:39:02.850Z",
-  "heartbeatAt": "2026-11-20T10:04:17.733Z",
-  "expiresAt": "2026-11-20T11:34:17.733Z",
-  "branch": "work/convergence-joined-structure-20261120",
+  "heartbeatAt": "2026-11-20T10:31:09.310Z",
+  "expiresAt": "2026-11-20T12:01:09.310Z",
+  "branch": "work/convergence-next-systems-20261120",
   "predecessor": {
     "leaseId": "6d1a0dde-e1e3-4014-99e6-bac6f58d5756",
     "generation": 46,
@@ -36,8 +36,8 @@
   },
   "pr": 1596,
   "checkpoint": {
-    "evidence": "PR1596 debfe43fc3458822c9e91c3d2b97f147465f2cec publishes complete fixed inlet cutover and source attribution correction; exact-head CI active. Current support followups remain unselected and source-bound.",
-    "next": "Merge validated1596 after fresh preflight; publish integrated two-subroute thermal and receiver proof with real fabrication contacts and actual window context, then complete local connections.",
-    "blocker": "Actual fixedpoint/guide/receiver capacity, tool actions, material constituents and lodge network remain open; shallow open-Etrough fails connected courtyard head and is being rejected, not selected."
+    "evidence": "PR1596 merged mainb7b87c03964ca3183f68ef9642569a658d0e8617 after all5 exact-head checks and fresh two-node preflight; fixed entry default cutover and honest source confinement state delivered",
+    "next": "Publish source-bound compact receiver/thermal/actualhood and removablearm proof plus saved roof/view integration; finish enclosed E/N accessible gravity replacement after openU rejection",
+    "blocker": "Full tool/receiver/jamb/material/frost/lodge and fitted wet seams remain unearned; no installed approval or final coherent source adoption is inferred from dimensional development"
   }
 }
