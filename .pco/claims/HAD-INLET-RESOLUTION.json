@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 48,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "e177187b-d7d4-43ff-86ee-12aba745f8e0",
   "holder": {
     "kind": "chatgpt",
     "label": "ZR-HAD-20261120"
   },
   "claimedAt": "2026-11-20T22:25:10.512Z",
-  "heartbeatAt": "2026-11-20T23:29:14.564Z",
-  "expiresAt": "2026-11-21T00:14:14.564Z",
+  "heartbeatAt": "2026-11-20T23:31:20.037Z",
+  "expiresAt": "2026-11-20T23:31:20.037Z",
   "branch": "work/had-inlet-converge-20261120",
   "predecessor": {
     "leaseId": "4fc55435-7e36-4112-9d39-f14c8f486b4c",
@@ -39,5 +39,7 @@
     "evidence": "PR1601 exact head596f15a2; all15 local tests, full canonical health and publication/PLT/ADE proofs passed. Final hosted preflight failed on lease runway after environment interruption.",
     "next": "Renew or reacquire canonically, rerun failed exact-head preflight, fresh local publication preflight then merge1601; next compare one cabinet with28copper material route",
     "blocker": "Lease runway expired during long CI; no engineering acceptance or HAD closeout"
-  }
+  },
+  "releasedAt": "2026-11-20T23:31:20.037Z",
+  "releaseReason": "handoff"
 }
