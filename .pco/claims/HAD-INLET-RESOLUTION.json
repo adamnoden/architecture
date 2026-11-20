@@ -9,8 +9,8 @@
     "label": "ZR-HAD-CABINET-20261120"
   },
   "claimedAt": "2026-11-20T23:32:07.738Z",
-  "heartbeatAt": "2026-11-20T23:32:07.738Z",
-  "expiresAt": "2026-11-21T00:17:07.738Z",
+  "heartbeatAt": "2026-11-20T23:56:52.804Z",
+  "expiresAt": "2026-11-21T00:41:52.804Z",
   "branch": "work/had-cabinet-copper-20261120",
   "predecessor": {
     "leaseId": "e177187b-d7d4-43ff-86ee-12aba745f8e0",
@@ -33,5 +33,10 @@
       "next": "Renew or reacquire canonically, rerun failed exact-head preflight, fresh local publication preflight then merge1601; next compare one cabinet with28copper material route",
       "blocker": "Lease runway expired during long CI; no engineering acceptance or HAD closeout"
     }
+  },
+  "checkpoint": {
+    "evidence": "PR1601 merged5df56723. Successor whole cabinet source and compatible finite receiver thermal implemented locally; native case residual0; source-bound actual28 copper/Conex28 inventory.",
+    "next": "Publish tested successor recovery branch; complete valve decision and public optional-stage integration.",
+    "blocker": "Known Conex PTFE/EPDM valve has zero owner exceptions; actual floor/clamp/wet joints remain unqualified. No HAD completion claimed."
   }
 }
