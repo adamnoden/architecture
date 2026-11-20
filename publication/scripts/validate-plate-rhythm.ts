@@ -4,6 +4,7 @@ import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { extractText, getDocumentProxy } from 'unpdf'
 import { publicationPlatePlacements } from '../plates-current.js'
+import { normalizePublicationPdfText as normalized } from '../pdf-text.js'
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../..')
 const workingEditionPath = resolve(repoRoot, 'publication/dist/ovids-house.pdf')
@@ -13,12 +14,6 @@ interface DestroyablePdfDocument {
   destroy?: () => Promise<void> | void
 }
 
-function normalized(value: string): string {
-  return value
-    .replace(/[\u00ad\u2010]\s*/gu, '')
-    .replace(/\s+/g, ' ')
-    .trim()
-}
 
 async function extractPageText(path: string): Promise<readonly string[]> {
   if (!existsSync(path)) throw new Error(`Publication PDF is missing: ${path}`)

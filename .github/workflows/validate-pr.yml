@@ -139,6 +139,9 @@ jobs:
           key: ${{ runner.os }}-publication-fonts-v1-${{ hashFiles('publication/fonts.ts') }}
           restore-keys: ${{ runner.os }}-publication-fonts-v1-
 
+      - name: Verify publication text extraction regressions
+        run: node --import tsx --test publication/pdf-text.test.ts
+
       - name: Render project-control projections for publication
         run: npm run status:update
 
