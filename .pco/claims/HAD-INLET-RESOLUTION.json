@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 47,
-  "state": "released",
-  "leaseId": "4fc55435-7e36-4112-9d39-f14c8f486b4c",
+  "generation": 48,
+  "state": "claimed",
+  "leaseId": "e177187b-d7d4-43ff-86ee-12aba745f8e0",
   "holder": {
     "kind": "chatgpt",
-    "label": "convergence-inlet-resumed-20261120"
+    "label": "ZR-HAD-20261120"
   },
-  "claimedAt": "2026-11-20T07:39:02.850Z",
-  "heartbeatAt": "2026-11-20T18:40:32.000Z",
-  "expiresAt": "2026-11-20T18:40:32.000Z",
-  "branch": "work/convergence-gravity-house-20261120",
+  "claimedAt": "2026-11-20T22:25:10.512Z",
+  "heartbeatAt": "2026-11-20T22:25:10.512Z",
+  "expiresAt": "2026-11-20T23:10:10.512Z",
+  "branch": "work/had-inlet-converge-20261120",
   "predecessor": {
-    "leaseId": "6d1a0dde-e1e3-4014-99e6-bac6f58d5756",
-    "generation": 46,
-    "branch": "work/convergence-inlet-fixed-2026-11-20",
-    "pr": 1587,
+    "leaseId": "4fc55435-7e36-4112-9d39-f14c8f486b4c",
+    "generation": 47,
+    "branch": "work/convergence-gravity-house-20261120",
+    "pr": 1598,
     "checkpoint": {
-      "evidence": "Main0298 merged1584; tested fixed-entry checkpoint nowremote with4focusedtests andtypecheck, exactfactoryCADfacts andlightpipe renewal views. No adoptionorHADclosure.",
-      "next": "Complete sharedsavedstage andCLI integration; prove matchedtoolposes, source receiving group, fullthermal/restraintandwetneck. Keepmanualconstituent decisions explicit and preserve actualfailed states.",
-      "blocker": "Wet neck, group support/thermal andexact materialdisposition remain unproved; draftonly."
+      "evidence": "Merged PR1598 at c1683cfc with shared frame solver, true retained mounts and 3.996 mm removal reserve. All 10 exact-head checks and fresh dual preflight passed. Local enclosure handoff: PR1597 comment7043849237.",
+      "next": "Recover enclosure candidate; replay changed stock/water/drag/seize loads in the same frame solver, then finish isolation, renewal, fault and material proof. Default wet neck remains rejected.",
+      "blocker": "Execution workspace unavailable; enclosure successor partly local-only. Whole support, containment, materials and occupied-house acceptance remain open."
     }
   },
   "recoverySource": {
-    "leaseId": "6d1a0dde-e1e3-4014-99e6-bac6f58d5756",
-    "generation": 46,
-    "branch": "work/convergence-inlet-fixed-2026-11-20",
-    "pr": 1587,
+    "leaseId": "4fc55435-7e36-4112-9d39-f14c8f486b4c",
+    "generation": 47,
+    "branch": "work/convergence-gravity-house-20261120",
+    "pr": 1598,
     "checkpoint": {
-      "evidence": "Main0298 merged1584; tested fixed-entry checkpoint nowremote with4focusedtests andtypecheck, exactfactoryCADfacts andlightpipe renewal views. No adoptionorHADclosure.",
-      "next": "Complete sharedsavedstage andCLI integration; prove matchedtoolposes, source receiving group, fullthermal/restraintandwetneck. Keepmanualconstituent decisions explicit and preserve actualfailed states.",
-      "blocker": "Wet neck, group support/thermal andexact materialdisposition remain unproved; draftonly."
+      "evidence": "Merged PR1598 at c1683cfc with shared frame solver, true retained mounts and 3.996 mm removal reserve. All 10 exact-head checks and fresh dual preflight passed. Local enclosure handoff: PR1597 comment7043849237.",
+      "next": "Recover enclosure candidate; replay changed stock/water/drag/seize loads in the same frame solver, then finish isolation, renewal, fault and material proof. Default wet neck remains rejected.",
+      "blocker": "Execution workspace unavailable; enclosure successor partly local-only. Whole support, containment, materials and occupied-house acceptance remain open."
     }
-  },
-  "pr": 1598,
-  "checkpoint": {
-    "evidence": "Merged PR1598 at c1683cfc with shared frame solver, true retained mounts and 3.996 mm removal reserve. All 10 exact-head checks and fresh dual preflight passed. Local enclosure handoff: PR1597 comment7043849237.",
-    "next": "Recover enclosure candidate; replay changed stock/water/drag/seize loads in the same frame solver, then finish isolation, renewal, fault and material proof. Default wet neck remains rejected.",
-    "blocker": "Execution workspace unavailable; enclosure successor partly local-only. Whole support, containment, materials and occupied-house acceptance remain open."
-  },
-  "releasedAt": "2026-11-20T18:40:32.000Z",
-  "releaseReason": "handoff"
+  }
 }
