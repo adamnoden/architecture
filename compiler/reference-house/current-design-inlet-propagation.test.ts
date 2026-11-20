@@ -1,11 +1,11 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import { prepareCurrentDesignCompile } from './current-design/compile.js'
-import { compileEngineeringDocument, readRetainedInletComparisonDocument } from './current-design/engineering-document.js'
+import { compileEngineeringDocument, readEngineeringDocument } from './current-design/engineering-document.js'
 import { readGeorgianDesignSnapshot } from './current-design/georgian-source.js'
 
 async function inletDocument() {
-  const document = await readRetainedInletComparisonDocument(readGeorgianDesignSnapshot())
+  const document = await readEngineeringDocument(readGeorgianDesignSnapshot())
   const { inletSillInsert, inletFault, inletRemovals, inletCovers } = document.stages
   return { ...document, stages: { inletSillInsert, inletFault, inletRemovals, inletCovers } }
 }
@@ -104,7 +104,7 @@ test('normal standalone callers retain their default insert and explicit upstrea
 })
 
 test('the authored insert vent propagates the same axis and formed diameter through fault, removal, both closure methods and drawings', async () => {
-  const full = await readRetainedInletComparisonDocument(readGeorgianDesignSnapshot())
+  const full = await readEngineeringDocument(readGeorgianDesignSnapshot())
   const { inletSillInsert, inletFault, inletRemovals, inletCovers, inletAssembly } = full.stages
   const document = { ...full, stages: { inletSillInsert, inletFault, inletRemovals, inletCovers, inletAssembly } }
   const baseline = await compileEngineeringDocument(document)

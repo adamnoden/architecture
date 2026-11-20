@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import { compileEngineeringDocument, readRetainedInletComparisonDocument } from './current-design/engineering-document.js'
+import { compileEngineeringDocument, readEngineeringDocument } from './current-design/engineering-document.js'
 import { readGeorgianDesignSnapshot } from './current-design/georgian-source.js'
 
 const roof = {
@@ -10,7 +10,7 @@ const roof = {
   handWidthMm: 100, handDepthMm: 60, handHeightMm: 60, handleGripHeightMm: 45,
 }
 async function document() {
-  const d = await readRetainedInletComparisonDocument(readGeorgianDesignSnapshot())
+  const d = await readEngineeringDocument(readGeorgianDesignSnapshot())
   const { inletSillInsert, inletFault, inletRemovals, inletCovers, inletAssembly } = d.stages
   return { ...d, stages: { inletSillInsert, inletFault, inletRemovals, inletCovers,
     inletAssembly: { ...inletAssembly, splitRoof: roof } } }
@@ -18,7 +18,7 @@ async function document() {
 
 test('two light split roof plates replace the complete U-lid transfer and its offset receiver', async () => {
   const d = await document()
-  const defaultDocument = await readRetainedInletComparisonDocument(readGeorgianDesignSnapshot())
+  const defaultDocument = await readEngineeringDocument(readGeorgianDesignSnapshot())
   assert.deepEqual(defaultDocument.stages.inletAssembly.splitRoof, roof)
   const result = await compileEngineeringDocument(d)
   const assembly = result.engineering.inletAssembly!

@@ -6,7 +6,7 @@ import { join } from 'node:path'
 import test from 'node:test'
 import { sha256SemanticFingerprint } from '../core/identity.js'
 import { compileCurrentDesignBundle, prepareCurrentDesignCompile } from './current-design/compile.js'
-import { compileEngineeringDocument, readEngineeringDocument, readRetainedInletComparisonDocument } from './current-design/engineering-document.js'
+import { compileEngineeringDocument, readEngineeringDocument } from './current-design/engineering-document.js'
 import { readGeorgianDesignSnapshot } from './current-design/georgian-source.js'
 
 const cli = (args: string[], input?: unknown) => spawnSync(process.execPath,
@@ -23,11 +23,8 @@ test('one saved engineering document replays its bound stages and preserves thei
   assert.equal(result.source.planDigest, sha256SemanticFingerprint(design))
   assert.equal(result.documentIdentity.planDigest, result.source.planDigest)
   assert.deepEqual(result.manifest.map(item => item.stage), ['plans', 'occupiedServices', 'selectedWaterEvent',
-    'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'fixedInlet', 'studyRoomKit'])
-  assert.equal(result.engineering.inletAssembly, undefined)
-  assert.equal(result.engineering.inletRemovals, undefined)
-  assert.equal(result.engineering.fixedInlet?.status, 'conditional-whole-arrangement')
-  assert.equal(result.engineering.fixedInlet?.evidence.preSiteArrangementComplete, false)
+    'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'inletRemovals/plant', 'inletRemovals/utility',
+    'inletCovers/plant', 'inletCovers/utility', 'inletAssembly', 'studyRoomKit'])
   assert.ok(result.engineering.northCollector?.status === 'computed-comparison')
   assert.equal(result.engineering.northCollector.evidence.installedAcceptance, false)
   assert.equal(result.engineering.studyRoomKit?.kit.state, 'candidate')
@@ -133,8 +130,8 @@ test('the CLI saves and replays an explicit engineering document through the bun
   assert.equal(JSON.parse(legacy.stdout).schema, 'current-design-bundle/1')
 })
 
-test('an explicit retained carrier comparison regenerates its front bearing and the Study board catalogue', async () => {
-  const original = await readRetainedInletComparisonDocument(readGeorgianDesignSnapshot())
+test('one saved file regenerates the inlet front bearing and the Study board catalogue', async () => {
+  const original = await readEngineeringDocument(readGeorgianDesignSnapshot())
   const document = { ...original, stages: {
     ...original.stages,
     inletCovers: original.stages.inletCovers.map(cover => cover.branch === 'utility' ? { ...cover, closure: {

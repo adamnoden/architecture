@@ -6,7 +6,6 @@ import { readStudyRoomKitReferenceCase } from './assemblies/study-room-kit.js'
 import { resolveCurrentDesign, type CurrentDesignResolution } from './resolve.js'
 import { readStructuralDpcOriginSettings } from './structural-dpc.js'
 import { compileInletAssembly, readInletAssemblySettings } from './inlet-assembly.js'
-import { readFixedInletSettings } from './inlet-fixed-entry.js'
 
 const repository = new URL('../../../', import.meta.url)
 const implementationRoots = [
@@ -35,12 +34,8 @@ const additionalImplementationFiles = [
   'project/str/studies/retained_components.py',
   'project/str/studies/retained_component_geometry.py',
   'project/str/studies/retained-contact.py',
-  'project/str/studies/dry_side_ground_section.py',
-  'project/str/studies/distributed_floor_compatibility.py',
-  'project/str/studies/perforated_floor_condensation.py',
-  'project/str/studies/distributed_floor_views.py',
 ] as const
-const stageKeys = ['structuralSuccessor', 'distributedFloor', 'retainedComponents', 'groundSection', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'fixedInlet', 'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit'] as const
+const stageKeys = ['structuralSuccessor', 'retainedComponents', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit'] as const
 type Settings = Readonly<Record<string, unknown>>
 type EngineeringStages = Partial<Readonly<Record<Exclude<typeof stageKeys[number], 'inletCovers' | 'inletRemovals'>, Settings>>> & {
   readonly inletRemovals?: readonly Settings[]
@@ -53,7 +48,6 @@ type SourceBindings = {
 }
 
 const successorFields = ['northWallWidthMm', 'memberLaw', 'jointLaw', 'boundaryActions'] as const
-const distributedFields = ['cornerWidthsMm', 'memberLaw', 'jointLaw', 'membraneLaw', 'edgeBand', 'maxPitchMm', 'edits', 'boundaryCase', 'receivingLaws', 'use'] as const
 const retainedFields = ['cutZMm', 'roofRiseMm', 'edits', 'retentionPaths'] as const
 const northFields = ['portAxisXYMm', 'dragDemandFactor', 'remoteMainBarShiftMm', 'chordBendRadiusMm',
   'toeTransferIntervalMm', 'keyContactTrial', 'placementToleranceMm', 'yawProbe', 'deadLoadReplay', 'portStrategy', 'dpcOriginAudit'] as const
@@ -115,7 +109,7 @@ function acceptedCompile(design: unknown) {
   return { resolved, compile: prepareCurrentDesignCompile(resolved.design) }
 }
 
-export async function readRetainedInletComparisonDocument(design: unknown) {
+export async function readEngineeringDocument(design: unknown) {
   const { resolved, compile } = acceptedCompile(design)
   const [north, foul, sill] = await Promise.all([
     compile.readNorthCollectorCase(), compile.readRearFoulVentCase(), compile.readInletSillInsertCase(),
@@ -145,12 +139,6 @@ export async function readRetainedInletComparisonDocument(design: unknown) {
   }
 }
 
-export async function readEngineeringDocument(design: unknown) {
-  const retained = await readRetainedInletComparisonDocument(design)
-  const { inletRemovals: _removals, inletCovers: _covers, inletAssembly: _assembly, ...stages } = retained.stages
-  return { ...retained, stages: { ...stages, fixedInlet: readFixedInletSettings() } }
-}
-
 function branchSettings(value: unknown, fields: readonly string[], name: string) {
   if (!Array.isArray(value) || !value.length) throw new TypeError(`Specify at least one ${name} branch`)
   const seen = new Set<unknown>()
@@ -170,14 +158,11 @@ function admitStages(value: unknown): EngineeringStages {
   }
   const stages: EngineeringStages = {
     ...(Object.hasOwn(value, 'structuralSuccessor') ? { structuralSuccessor: settings(value.structuralSuccessor, successorFields, 'structural successor') } : {}),
-    ...(Object.hasOwn(value, 'distributedFloor') ? { distributedFloor: settings(value.distributedFloor, distributedFields, 'distributed floor') } : {}),
     ...(Object.hasOwn(value, 'retainedComponents') ? { retainedComponents: settings(value.retainedComponents, retainedFields, 'retained components') } : {}),
-    ...(Object.hasOwn(value, 'groundSection') ? { groundSection: settings(value.groundSection, ['caseId', 'settings'], 'ground section') } : {}),
     ...(Object.hasOwn(value, 'northCollector') ? { northCollector: settings(value.northCollector, northFields, 'north collector') } : {}),
     ...(Object.hasOwn(value, 'rearFoulVent') ? { rearFoulVent: settings(value.rearFoulVent, foulFields, 'rear foul vent') } : {}),
     ...(Object.hasOwn(value, 'inletSillInsert') ? { inletSillInsert: settings(value.inletSillInsert, insertFields, 'inlet sill insert') } : {}),
     ...(Object.hasOwn(value, 'inletFault') ? { inletFault: settings(value.inletFault, faultFields, 'inlet fault') } : {}),
-    ...(Object.hasOwn(value, 'fixedInlet') ? { fixedInlet: settings(value.fixedInlet, Object.keys(readFixedInletSettings()), 'fixed inlet') } : {}),
     ...(Object.hasOwn(value, 'inletRemovals') ? { inletRemovals: branchSettings(value.inletRemovals, removalFields, 'inlet removal') } : {}),
     ...(Object.hasOwn(value, 'inletCovers') ? { inletCovers: branchSettings(value.inletCovers, inletFields, 'inlet cover') } : {}),
     ...(Object.hasOwn(value, 'inletAssembly') ? { inletAssembly: settings(value.inletAssembly, assemblyFields, 'inlet assembly') } : {}),
@@ -205,14 +190,11 @@ export async function compileEngineeringDocument(input: unknown) {
   }
   const engineering: {
     structuralSuccessor?: Awaited<ReturnType<typeof compile.structuralSuccessorCase>>
-    distributedFloor?: Awaited<ReturnType<typeof compile.distributedFloorCase>>
     retainedComponents?: Awaited<ReturnType<typeof compile.retainedComponentCase>>
-    groundSection?: Awaited<ReturnType<typeof compile.groundSectionCase>>
     northCollector?: Awaited<ReturnType<typeof compile.northCollectorCase>>
     rearFoulVent?: Awaited<ReturnType<typeof compile.rearFoulVent>>
     inletSillInsert?: Awaited<ReturnType<typeof compile.inletSillInsert>>
     inletFault?: Awaited<ReturnType<typeof compile.inletFault>>
-    fixedInlet?: Awaited<ReturnType<typeof compile.fixedInletCase>>
     inletRemovals?: readonly Awaited<ReturnType<typeof compile.inletRemoval>>[]
     inletCovers?: readonly Awaited<ReturnType<typeof compile.inletCover>>[]
     inletAssembly?: ReturnType<typeof compileInletAssembly>
@@ -235,15 +217,6 @@ export async function compileEngineeringDocument(input: unknown) {
       comparison: { ...request.successor.comparison, ...stages.structuralSuccessor } })
     recordResult('structuralSuccessor', stages.structuralSuccessor, engineering.structuralSuccessor)
   }
-  if (stages.distributedFloor) {
-    const request = await compile.readDistributedFloorCase()
-    if (!object(request.floor.comparison) || !object(request.floor.comparison.componentCase)) throw new Error('The current distributed floor inputs are unavailable')
-    const { edits, ...authored } = stages.distributedFloor
-    engineering.distributedFloor = await compile.distributedFloorCase({ ...request.floor,
-      comparison: { ...request.floor.comparison, ...authored,
-        componentCase: { ...request.floor.comparison.componentCase, edits: edits ?? request.floor.comparison.componentCase.edits } } })
-    recordResult('distributedFloor', stages.distributedFloor, engineering.distributedFloor)
-  }
   if (stages.retainedComponents) {
     const request = await compile.readRetainedComponentCase()
     engineering.retainedComponents = await compile.retainedComponentCase({ ...request.retained,
@@ -253,12 +226,6 @@ export async function compileEngineeringDocument(input: unknown) {
         edits: stages.retainedComponents.edits ?? request.retained.componentCase.edits,
         retentionPaths: stages.retainedComponents.retentionPaths ?? request.retained.componentCase.retentionPaths } })
     recordResult('retainedComponents', stages.retainedComponents, engineering.retainedComponents)
-  }
-  if (stages.groundSection) {
-    if (!exactKeys(stages.groundSection, ['caseId', 'settings'])) throw new Error('The saved ground section requires its explicit case ID and authored settings')
-    const request = await compile.readGroundSectionCase()
-    engineering.groundSection = await compile.groundSectionCase({ ...request.ground, ...stages.groundSection })
-    recordResult('groundSection', stages.groundSection, engineering.groundSection)
   }
   const linkedPort = stages.northCollector?.portStrategy === 'linked-west-foul-route'
   let westVentCase: unknown
@@ -281,7 +248,7 @@ export async function compileEngineeringDocument(input: unknown) {
     recordResult('northCollector', stages.northCollector, engineering.northCollector, linkedPort ? ['rearFoulVent'] : [])
   }
   if (stages.rearFoulVent && !linkedPort) await compileWestVent(stages.rearFoulVent)
-  const sill = stages.inletSillInsert || stages.inletFault || stages.fixedInlet || stages.inletRemovals || stages.inletCovers
+  const sill = stages.inletSillInsert || stages.inletFault || stages.inletRemovals || stages.inletCovers
     ? await compile.readInletSillInsertCase() : undefined
   const insertCase = sill ? { ...sill.insert, ...stages.inletSillInsert } : undefined
   const insertDependency = stages.inletSillInsert ? ['inletSillInsert'] : []
@@ -293,22 +260,6 @@ export async function compileEngineeringDocument(input: unknown) {
     const request = await compile.readInletFaultCase(insertCase)
     engineering.inletFault = await compile.inletFault({ ...request.fault, ...stages.inletFault }, insertCase)
     recordResult('inletFault', stages.inletFault, engineering.inletFault, insertDependency)
-  }
-  if (stages.fixedInlet) {
-    if (!stages.inletSillInsert || !stages.inletFault || !engineering.inletSillInsert || !engineering.inletFault) {
-      throw new Error('The fixed inlet requires explicit saved insert and fault stages; no historical carrier is substituted')
-    }
-    const request = await compile.readFixedInletCase()
-    const fault = await compile.readInletFaultCase(insertCase)
-    engineering.fixedInlet = await compile.fixedInletCase({ ...request.fixed,
-      settings: { ...request.fixed.settings, ...stages.fixedInlet } }, {
-      insertCase, faultCase: { ...fault.fault, ...stages.inletFault },
-    })
-    if (engineering.fixedInlet.source.insertCaseDigest !== engineering.inletSillInsert.source.caseDigest
-        || engineering.fixedInlet.source.faultCaseDigest !== engineering.inletFault.source.caseDigest) {
-      throw new Error('The fixed inlet does not match its saved upstream insert and fault results')
-    }
-    recordResult('fixedInlet', stages.fixedInlet, engineering.fixedInlet, ['inletSillInsert', 'inletFault'])
   }
   const removalCases = []
   if (stages.inletRemovals) {

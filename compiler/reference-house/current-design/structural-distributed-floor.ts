@@ -179,6 +179,7 @@ export function runDistributedFloorCase(resolved: CurrentDesignResolution, input
     method: { id: 'str-distributed-floor-compatibility/1', path: methodPath, blob: current.sources[methodPath]!.blob,
       inputs: current.inputs, adapter: { path: adapterPath, blob: current.inputs[adapterPath] } },
     native,
+    planSvg: native.drawings['floor.svg'],
     floorSvg: native.drawings['floor.svg'],
     diagnostics: [
       { code: 'DISTRIBUTED_FLOOR_MISSING_RECEIVING_LAWS', state: 'unresolved' as const,

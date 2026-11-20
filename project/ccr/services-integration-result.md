@@ -32,27 +32,13 @@ The quiet-stage comparison addresses an ideal critical-section sensitivity. Real
 
 Verify the retained witness with `node --import tsx project/ccr/studies/current-projection-witnesses.ts --check`.
 
-## Current fixed-entry candidate
+## Current joined inlet witness
 
-The default saved engineering document now emits `fixedInlet`, with the actual authored sill insert and fault stages. It runs the joint-free sloping lower tubes, matched ordinary valves, independent closed access hoods and light cold-renewal modules through the same current compiler and CLI. The [complete candidate and proof limits](../had/fixed-inlet-entry-candidate.md) distinguish its geometric result from unresolved support, thermal, material, tool and installed evidence. No selection or occupied acceptance follows.
-
-The Y600 riser case includes the actual 2 mm wet-cell lining and 5 mm setting. Y605 fails that same boundary and remains an adverse regression. A 20 mm riser edit changes the actual paths, drawings and result identity while the upstream fault case, nominal plans, occupied-service schedule and water event retain their own source. Opening a control hood rejects passive source-fed fault containment. Missing explicit saved sill/fault stages, stale methods and injected approval reject.
-
-```sh
-node --import tsx scripts/compile-current-design.ts --read-georgian-source |
-  node --import tsx scripts/compile-current-design.ts --read-engineering - > engineering.json
-node --import tsx scripts/compile-current-design.ts --bundle engineering.json
-```
-
-The rejected loaded-carrier arrangement is removed from this default. `--read-retained-inlet-comparison` and `readRetainedInletComparisonDocument` deliberately preserve its adverse, source-bound replay. Existing saved carrier documents remain explicit comparisons; they cannot substitute for the fixed-entry stage.
-
-## Retained adverse carrier witness
-
-The [raised plant section](studies/inlet-plant-25mm-raise.svg) is regenerated through `readRetainedInletComparisonDocument` and `compileEngineeringDocument`: the retained source plant leg is raised by 25 mm while its sill, faults, removals, split roofs and pressure endpoints retain their saved identities. The witness command verifies the route rejection; this is not the default fixed-entry proposal.
+The [current raised plant section](studies/inlet-plant-25mm-raise.svg) is regenerated through `readEngineeringDocument` and `compileEngineeringDocument`: the actual source plant leg is raised by 25 mm while the joined sill, faults, removals, split roofs and pressure endpoints retain their saved identities. The existing witness command verifies that this case rejects the joined route clearance.
 
 ## Reproduce the indoor reference and earlier south comparison
 
-The retained carrier witness uses its explicit saved comparison and [assembly rejection](../had/inlet-assembly-convergence.md), with sill axes X10080/X10285 and Utility riser Y580. The earlier two-scope adapter below preserves the indoor reference and bounded older south comparison; its X10500/X10645 ports are not substituted for the current fixed-entry candidate.
+The current joined inlet witness now uses the saved engineering document and [whole inlet assembly](../had/inlet-assembly-convergence.md), with the actual sill axes X10080/X10285 and Utility riser Y580. The earlier two-scope adapter below preserves the indoor reference and explicitly bounded older south comparison; its X10500/X10645 ports are not substituted for the current joined arrangement.
 
 The earlier inlet adapter takes explicit `had-inlet-route-request/1` documents and validates the current design, case and binding identities. It distinguishes the **current indoor cabinet reference** from the **conditional south development**. It runs the native finite-bend, path separation and segment-to-box methods against the respective branch polylines and current bowl sweep. The two reference cases reproduce the respective native pipe-pair separations. Retained wall ports, installed pipe envelopes and the trial plant level appear with source identities in the result and coordinate-derived section.
 
