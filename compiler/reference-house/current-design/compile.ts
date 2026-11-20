@@ -83,6 +83,14 @@ export function prepareCurrentDesignCompile(input: unknown) {
       const { runStructuralSuccessorCase } = await import('./structural-successor.js')
       return runStructuralSuccessorCase(resolved, input)
     },
+    readRetainedComponentCase: async () => {
+      const { readRetainedComponentCase } = await import('./structural-retained.js')
+      return readRetainedComponentCase(resolved)
+    },
+    retainedComponentCase: async (input: unknown) => {
+      const { runRetainedComponentCase } = await import('./structural-retained.js')
+      return runRetainedComponentCase(resolved, input)
+    },
     readStructuralCase: async () => {
       const { readStructuralCase } = await import('./structural.js')
       return readStructuralCase(resolved)
