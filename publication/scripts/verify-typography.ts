@@ -3,6 +3,12 @@ import { execFileSync, spawnSync } from 'node:child_process'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { parsePdfPageSizes } from './pdf-page-geometry.js'
+import { publicationFigurePlacements } from '../figures.js'
+import { publicationPlatePlacements } from '../plates-current.js'
+import { publicationEntries } from '../publication.js'
+import { posix } from 'node:path'
+import { compilePublicationPlanAssets, currentPublicationAssetPaths } from '../current-assets.js'
+import { readGeorgianDesignSnapshot } from '../../compiler/reference-house/current-design/georgian-source.js'
 
 const repoRoot = resolve(import.meta.dirname, '../..')
 const proofRoot = resolve(repoRoot, 'publication/.proof/typ09b')
@@ -71,7 +77,29 @@ if (transforms.semanticDivisionOpenings !== 6) throw new Error(`Expected six sem
 if ((transforms.semanticEntryOpenings ?? 0) < 50) throw new Error(`Suspicious production entry-opening count: ${transforms.semanticEntryOpenings}.`)
 if (transforms.partINoteCitationRows !== 31 || (transforms.partINoteUrlRows ?? 0) < 20) throw new Error('Part I Notes production role mapping drifted.')
 if ((transforms.scheduleRecords ?? 0) < 20 || transforms.arrowSequences !== 2 || (transforms.referenceUrlRows ?? 0) < 5) throw new Error('TYP-05 production mixed-content transforms are incomplete.')
-if (transforms.strippedWorkingPlateStyles !== 1 || transforms.controlledSvgCount !== 22) throw new Error('Production plate / controlled-SVG integration boundary drifted.')
+const sourceByEntry = new Map(publicationEntries.map(entry => [entry.id, entry.source]))
+const expectedSvgPaths = new Set([
+  ...publicationFigurePlacements().map(placement => ({ entryId: placement.entryId, image: placement.image })),
+  ...publicationPlatePlacements().flatMap(placement => placement.views.map(view => ({ entryId: placement.entryId, image: view.image }))),
+].map(({ entryId, image }) => posix.normalize(posix.join(posix.dirname(sourceByEntry.get(entryId)!), image))))
+if (transforms.strippedWorkingPlateStyles !== 1 || transforms.controlledSvgCount !== expectedSvgPaths.size
+    || Object.keys(integration.svgEvidence ?? {}).length !== expectedSvgPaths.size
+    || [...expectedSvgPaths].some(path => !Object.hasOwn(integration.svgEvidence ?? {}, path))) {
+  throw new Error('Production plate / controlled-SVG integration boundary drifted.')
+}
+const currentAssetEvidence = JSON.parse(await readFile(resolve(proofRoot, 'current-publication-assets.json'), 'utf8'))
+const currentPlans = compilePublicationPlanAssets(readGeorgianDesignSnapshot())
+if (currentAssetEvidence.schema !== 'current-publication-assets/1'
+    || currentAssetEvidence.source?.planDigest !== currentPlans.source.planDigest
+    || currentAssetEvidence.assets?.length !== currentPublicationAssetPaths.length
+    || new Set(currentAssetEvidence.assets.map((asset: { path: string }) => asset.path)).size !== currentPublicationAssetPaths.length
+    || currentAssetEvidence.assets.some((asset: { path: string; sha256: string }) =>
+      !(currentPublicationAssetPaths as readonly string[]).includes(asset.path)
+      || integration.svgEvidence[asset.path]?.canonicalSha256 !== asset.sha256)
+    || currentPlans.assets.some(asset => currentAssetEvidence.assets.find((entry: { path: string }) => entry.path === asset.path)?.sha256
+      !== createHash('sha256').update(asset.svg).digest('hex'))) {
+  throw new Error('Current publication asset evidence differs from its admitted source or typography input')
+}
 
 const results: Record<string, unknown> = {}
 const pageCounts: Record<'a4' | 'b5', number> = { a4: 0, b5: 0 }

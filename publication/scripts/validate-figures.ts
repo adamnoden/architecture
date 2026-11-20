@@ -5,8 +5,10 @@ import puppeteer from 'puppeteer'
 import { publicationFigurePlacements } from '../figures.js'
 import { publicationPlatePlacements } from '../plates-current.js'
 import { publicationEntries } from '../publication.js'
+import { buildCurrentPublicationAssets, currentPublicationAssetPaths } from '../current-assets.js'
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../..')
+const compiledCurrentAssets = new Map(buildCurrentPublicationAssets(repoRoot).assets.map(asset => [resolve(repoRoot, asset.path), asset.svg]))
 const tolerance = 1
 
 interface Overflow {
@@ -42,7 +44,7 @@ const platePlacements = publicationPlatePlacements()
 const plateViews = platePlacements.flatMap((placement) =>
   placement.views.map((view) => ({ entryId: placement.entryId, image: view.image, alt: view.alt }))
 )
-if (plateViews.length !== 17) throw new Error(`Expected exactly 17 controlled Part IV plate views, got ${plateViews.length}`)
+if (plateViews.length !== currentPublicationAssetPaths.length) throw new Error(`Expected exactly ${currentPublicationAssetPaths.length} current Part IV plate views, got ${plateViews.length}`)
 if (new Set(plateViews.map((view) => view.image)).size !== plateViews.length) {
   throw new Error('Controlled Part IV plate assets must be unique in the active manifest')
 }
@@ -53,8 +55,8 @@ for (const placement of platePlacements) {
   }
 }
 for (const view of plateViews) {
-  if (!view.image.startsWith('../reference-house/publication-') || !view.image.endsWith('.svg')) {
-    throw new Error(`Part IV active plate is not a controlled publication SVG: ${view.image}`)
+  if (!(currentPublicationAssetPaths as readonly string[]).includes(view.image.replace(/^\.\.\/\.\.\//, ''))) {
+    throw new Error(`Part IV active plate is not a compiled current publication SVG: ${view.image}`)
   }
 }
 
@@ -74,7 +76,7 @@ try {
   for (const placement of assets) {
     const path = figurePath(placement.entryId, placement.image)
     const label = figureLabel(placement.alt, placement.image)
-    const svg = readFileSync(path, 'utf8')
+    const svg = compiledCurrentAssets.get(path) ?? readFileSync(path, 'utf8')
     const viewBoxMatch = svg.match(/viewBox=["']\s*([\d.-]+)\s+([\d.-]+)\s+([\d.-]+)\s+([\d.-]+)\s*["']/i)
     if (!viewBoxMatch) throw new Error(`${label}: SVG has no parseable viewBox: ${path}`)
 

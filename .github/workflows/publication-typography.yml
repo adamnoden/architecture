@@ -96,6 +96,7 @@ jobs:
             publication/.proof/typ09b/verification.json
             publication/.proof/typ09b/build.json
             publication/.proof/typ09b/typography-integration.json
+            publication/.proof/typ09b/current-publication-assets.json
             publication/.proof/typ09b/font-upstream-evidence.json
             publication/.proof/typ09b/a4/*.destination-normalization.json
             publication/.proof/typ09b/b5/*.destination-normalization.json

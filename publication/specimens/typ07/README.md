@@ -4,7 +4,7 @@ This directory carries the bounded TYP-07 proof programme defined by issues #541
 
 ## TYP-07A authority
 
-`manifest.ts` freezes ten real representative obligations and `audit.ts` proves their canonical source/registry identities.
+`manifest.ts` freezes ten real representative obligations and `audit.ts` proves their source/registry identities. Architectural plate fixtures use the retained historical `publication/plates.ts` register; they remain typography specimens rather than current-house design evidence. The active Working Edition has a separate current register and source-bound plan/room generation.
 
 The harness's accepted specimen contracts are its visual authority. The base `publication/theme.css` retains historical Working Edition styles; the current full-production build adds the released typography overlays. See the [production release](../../../docs/publication/publication-typography-v1-release.md) for that later authority.
 

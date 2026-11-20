@@ -162,7 +162,9 @@
         "project/str/studies/current-house-structural-case.py",
         "project/str/studies/floor-portal-monolithic-drag.py",
         "project/mat/studies/rear-wc-west-roof-interface.py",
-        "project/str/studies/structural-linear.py"
+        "project/str/studies/structural-linear.py",
+        "project/str/studies/joined_successor_compatibility.py",
+        "project/str/studies/joined_successor_kernel.py"
       ],
       "inputReceipts": [
         "project/had/studies/water-replan.json",
@@ -233,7 +235,8 @@
         "project/rwt/studies/court-bypass-choice.mjs",
         "compiler/reference-house/current-design/north-collector.ts",
         "compiler/reference-house/current-design/rear-foul-vent.ts",
-        "compiler/reference-house/current-design/structural.ts"
+        "compiler/reference-house/current-design/structural.ts",
+        "compiler/reference-house/current-design/structural-successor.ts"
       ],
       "producerChecks": [
         "python3 -B project/str/studies/current-house-grid.py --check",
@@ -484,7 +487,8 @@
       "state": "candidate-interface",
       "authority": "Straight removal draw and separate upper cover first-rest comparison for one conditional sill carrier. Installed independent closure, matched disconnect and captured support remain unresolved.",
       "decisions": [
-        "project/had/south-inlet-wet-box.md"
+        "project/had/south-inlet-wet-box.md",
+        "project/had/inlet-assembly-convergence.md"
       ],
       "authorRoots": [
         "project/had/studies/incoming-water-geometry.mjs",
@@ -503,7 +507,8 @@
         "compiler/reference-house/current-design/inlet-removal.ts",
         "compiler/reference-house/current-design/inlet-cover.ts",
         "compiler/reference-house/current-design/inlet-assembly.ts",
-        "compiler/reference-house/current-design/inlet-split-roof.ts"
+        "compiler/reference-house/current-design/inlet-split-roof.ts",
+        "compiler/reference-house/current-design/inlet-support.ts"
       ],
       "producerChecks": [
         "node project/had/studies/south-inlet-wet-box.mjs --check",
@@ -986,7 +991,7 @@
     "compiler/reference-house/current-design/inlet-removal.ts": "01244aa5799cc66cc13ee85244c691bffa3f1482",
     "compiler/reference-house/current-design/inlet-cover.ts": "c24b643034c96b483ea58aa59b3b1423d633d781",
     "project/str/dpc-origin-paths.json": "338d870cdc6bc55913a75d72f649a41002429659",
-    "compiler/reference-house/current-design/inlet-assembly.ts": "b1726620579d1fa0d5b04df10e28d17ce2e8d841",
+    "compiler/reference-house/current-design/inlet-assembly.ts": "d9c3d4ffb7ac2ac3dee3af82b5295a791abcd46c",
     "compiler/reference-house/current-design/inlet-split-roof.ts": "545622e71fe44aa630e5b10255205099f87ce542",
     "project/rwt/studies/joined-service-routes.mjs": "0e3fd85ee0abbc2481c32d22f33009a63d9745c8",
     "project/rwt/studies/raised-service-routes.mjs": "e08eabd4228c389bf27fedbf2942c9a530d32eaa",
@@ -994,6 +999,12 @@
     "project/rwt/studies/court-service-plate.mjs": "2180030dabaa392592cada4353f6ff192f8abd01",
     "project/rwt/studies/court-bypass-plate.mjs": "9b9c5bfe3d9b95f52428f0ece5034bafe0df1261",
     "project/rwt/studies/court-bypass-choice.json": "ee11908156548b7c03daea8ddf0ad972ea0cf188",
-    "project/rwt/studies/temporary-two-path-control.json": "fefae8d975c82b7d88c0eaf14e0de30f9f5008af"
+    "project/rwt/studies/temporary-two-path-control.json": "fefae8d975c82b7d88c0eaf14e0de30f9f5008af",
+    "project/str/studies/joined_successor_compatibility.py": "94196ac39dbb1a912b95bbde97b3db53ab29e58e",
+    "project/str/studies/joined_successor_kernel.py": "bbf1e80933260d0182db34d777427b68a361b2f0",
+    "compiler/reference-house/current-design/structural-successor.ts": "9ae813ed40695e6e94df43caa0b45e7db54d02c4",
+    "compiler/reference-house/current-design/inlet-support.ts": "a2404befdbeda6464bc9f772d25bccd8d78d2479",
+    "compiler/reference-house/current-design/engineering-document.ts": "5d0f209d9b20acb09255a0b0dcdccc10865857b5",
+    "project/had/inlet-assembly-convergence.md": "3607a02de6bac48ffc68a1059c104d4d91aea9de"
   }
 }

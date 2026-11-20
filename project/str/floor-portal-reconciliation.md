@@ -32,6 +32,28 @@ Internal adversarial verification formulated nonnegative reactions at the actual
 
 This narrows the next comparison: demonstrate actual net retained material and its diaphragm/tie participation, or reject compression-only transfer under the retained load envelope. Do not use the global result to justify another unpriced local splice.
 
+### First compatible north-floor and ground-grid replay
+
+The [current compiler adapter](../../compiler/reference-house/current-design/structural-successor.ts) now calls one finite-frame/contact solve for the two north wall cuts, their connecting floor band and the actual 52-head ground grillage. It contains 83 nodes and 102 finite three-dimensional members. Changing authored tie stiffness changes the compatible wall/contact state and named head reactions through this system; it is not a fixed-base increment added to an earlier foundation result.
+
+```sh
+node --import tsx scripts/compile-current-design.ts --read-georgian-source |
+  node --import tsx scripts/compile-current-design.ts --read-structural-successor - > successor.json
+node --import tsx scripts/compile-current-design.ts --structural-successor successor.json
+```
+
+The read request deliberately leaves `memberLaw` and `jointLaw` null. Supply explicit numerical comparison laws before requesting a solve. The same authored controls can be saved as `stages.structuralSuccessor` in the existing engineering document, with the current binding and method checks, result manifest, save/load and CLI replay. Injecting source identities or results as stage settings rejects. A stiffness edit changes this stage while nominal plans and the occupied-services and water-event controls retain their results.
+
+| Implemented comparison | Actual boundary |
+| --- | --- |
+| Widened north L members and the source 140 × 750 mm north band | Two corner cuts only; intermediate north supports, complete slab/chord and roof remain absent. The local collector is a rigid boundary section. |
+| Signed six-component joint/head actions and compatible displacements | Only the named wing-seat gravity challenges and retained historical 95.16 kN horizontal drag enter. Member self-weight, other gravity/precompression and full wind/roof actions are omitted. Contact states are not installed-house states. Applying drag at both corners is an authored doubled comparison. |
+| Unilateral normal contact and tension ties | Zero-gap laws only. Finite free travel explicitly rejects. Gaussian contact points reproduce full-contact area and rotational stiffness; partial-contact mesh convergence and physical pressure/resistance remain unproved. Bilateral biaxial key springs are a phenomenological law. |
+| Finite upper corner-cap transfer and ground beams | The lower cap transfer is rigid from Z−750 to −405; only Z−405 to −180 is a finite member. All heads restrain translation ideally and release rotation. Soil, pile/cap resistance and complete cap flexibility are not inferred. |
+| Explicit member stiffness | Additive rectangular L-section torsion and an authored isotropic shear factor omit shear-centre/warping coupling. These are comparison assumptions, not qualified constitutive evidence. |
+
+Internal review corrected the unequal NE cap axis assignment, replaced quarter-centre contact samples with Gaussian points, and rejected unsupported positive-gap branches. Analytical regressions cover unequal-section compliance, displaced-master offsets, full-contact area/centroid/rotational stiffness, rigid motion and signed reversal. The source geometry perturbation and saved-document stiffness edit exercise actual changes. Eleven native checks and the two production document/CLI checks pass. This is useful joined implementation, not the complete successor proof or an STR closeout.
+
 ### Exact remaining proof obligations
 
 | Joined question | Required proof before structural selection |
