@@ -9,9 +9,9 @@
     "label": "convergence-inlet"
   },
   "claimedAt": "2026-11-19T20:30:02.696Z",
-  "heartbeatAt": "2026-11-19T23:52:55.684Z",
-  "expiresAt": "2026-11-20T01:22:55.684Z",
-  "branch": "work/convergence-integrated-2026-11-19",
+  "heartbeatAt": "2026-11-20T00:56:34.630Z",
+  "expiresAt": "2026-11-20T02:26:34.630Z",
+  "branch": "work/convergence-inlet-fixed-2026-11-20",
   "predecessor": {
     "leaseId": "5ddd99a4-fd1f-49de-af1d-7d77372c4077",
     "generation": 45,
@@ -36,8 +36,8 @@
   },
   "pr": 1584,
   "checkpoint": {
-    "evidence": "Canonical gen46/UUID verified23:52Z before renewal. Published HAD successor17273ea is integrated into shared PR1584. Read-only next-cycle investigation against429cca: R98 fixed south routing can fit atY600-620 with actual occupied controls; simple cold-cut tails remove heavy carrier and invented165mm cartridge. Primary catalogue stopless coupling96mm/24mm insertion and actual cutter/valve data checked; industrial3part2375.8 rejected because explicitly nonpotable. No design sources edited during sharedCI repair.",
-    "next": "Root resubmits exact-head full health for minimal STRreceipt/test repairs and completes fresh canonical preflight/merge PR1584. Then implement full fixed-entry proposal with two exposed cold-cut joint zones, ordinary closed-cover controls and actual independent supports. Keep source selection and genuine evidence gates separate.",
-    "blocker": "Read-only fixed-entry arrangement still needs complete matched static wetneck/control interface and actual anchor reaction design; geometric routing fit does not qualify them. Actual site flow must satisfy declared source envelope; pressure rating alone cannot establish that flow. HAD remains open; no owner/site/physical approval fabricated."
+    "evidence": "PR1584 merged main0298c1f2; new local fixed-entry candidate41e80ef8 on ef7 exact base; typecheck and4focusedtests pass; both route and renewal drawings rendered and inspected. No adoption or packet closure.",
+    "next": "Root serial publication/current-model wiring of checkpoint; continue actual upper tool motions and conditional receiving/thermal design. Preserve exact material and wet-neck boundaries.",
+    "blocker": "Actual static wet-neck interface and matched tool/receiver/thermal proofs remain internal design duties; no owner material exception or installed evidence claimed."
   }
 }
