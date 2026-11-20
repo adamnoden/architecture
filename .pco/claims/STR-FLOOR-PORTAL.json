@@ -9,8 +9,8 @@
     "label": "rush-structural-20261120"
   },
   "claimedAt": "2026-11-20T22:25:00.372Z",
-  "heartbeatAt": "2026-11-20T23:27:39.694Z",
-  "expiresAt": "2026-11-21T00:12:39.694Z",
+  "heartbeatAt": "2026-11-20T23:52:27.844Z",
+  "expiresAt": "2026-11-21T00:37:27.844Z",
   "branch": "work/rush-structural-20261120",
   "predecessor": {
     "leaseId": "a044c93f-78e1-4267-955e-f89e12b23997",
@@ -35,9 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1602 exact2b480c4d preserves A41 and actualregenerated interface/ground/profile/raised-floor witnesses. Local184 HAD+STRchecks,20contracts, savedCLI tests pass; hostedfullhealthpending.",
-    "next": "Verify2b exactheadCI and currentmain, freshcanonicalpreflight thenmerge. Assembleactualcoupledbody/roof nextbranch; old35/foundation/corner/body receipts requirefreshreplay.",
-    "blocker": "STR notcomplete: combinedroof/wall, conventionalcage/650capcandidate, moisture/thermal and raised-house proof remain internal. Nextlocalcode notyetpublished."
+    "evidence": "PR1602 exact e22a66e977c36669744568cd122b07b31e082e20 integrates main5df and actual four-case end-zone gravity correction; independent solid mass regression and 10 contracts pass, source account15/0; full CI pending. Successor actual46 compatible roof/floor/body/52-head solve exposes adverse uplift and failed cage.",
+    "next": "Merge exact validated PR1602; integrate actual modeled roof steel gravity, complete source35 receipt replays and source47 saved-house perturbation; retain structural acceptance false."
   },
   "pr": 1602
 }
