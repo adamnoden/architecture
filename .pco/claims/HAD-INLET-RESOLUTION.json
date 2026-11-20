@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 47,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "4fc55435-7e36-4112-9d39-f14c8f486b4c",
   "holder": {
     "kind": "chatgpt",
     "label": "convergence-inlet-resumed-20261120"
   },
   "claimedAt": "2026-11-20T07:39:02.850Z",
-  "heartbeatAt": "2026-11-20T18:39:41.000Z",
-  "expiresAt": "2026-11-20T19:24:41.000Z",
+  "heartbeatAt": "2026-11-20T18:40:32.000Z",
+  "expiresAt": "2026-11-20T18:40:32.000Z",
   "branch": "work/convergence-gravity-house-20261120",
   "predecessor": {
     "leaseId": "6d1a0dde-e1e3-4014-99e6-bac6f58d5756",
@@ -39,5 +39,7 @@
     "evidence": "Merged PR1598 at c1683cfc with shared frame solver, true retained mounts and 3.996 mm removal reserve. All 10 exact-head checks and fresh dual preflight passed. Local enclosure handoff: PR1597 comment7043849237.",
     "next": "Recover enclosure candidate; replay changed stock/water/drag/seize loads in the same frame solver, then finish isolation, renewal, fault and material proof. Default wet neck remains rejected.",
     "blocker": "Execution workspace unavailable; enclosure successor partly local-only. Whole support, containment, materials and occupied-house acceptance remain open."
-  }
+  },
+  "releasedAt": "2026-11-20T18:40:32.000Z",
+  "releaseReason": "handoff"
 }
