@@ -9,8 +9,8 @@
     "label": "convergence-resumed-20261120"
   },
   "claimedAt": "2026-11-20T07:38:27.612Z",
-  "heartbeatAt": "2026-11-20T13:18:19.972Z",
-  "expiresAt": "2026-11-20T14:48:19.972Z",
+  "heartbeatAt": "2026-11-20T14:06:46.462Z",
+  "expiresAt": "2026-11-20T15:36:46.462Z",
   "branch": "work/convergence-next-systems-20261120",
   "predecessor": {
     "leaseId": "dec44b72-4e34-40df-8172-25ba1d1a5e53",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Draft1597 remote08b11134 preserves source checkpoint and archived rejectionb8f27f2d; localfinalscience48unique+2GMAXQ+4uncached governors, corrected39native servicefloor and8saved/adapter pipeline checks verified; finalsource upload in progress",
-    "next": "Publish finalboundedcurrent-model changes, exact-head CI, freshcanonicalpreflight and merge1597; nextactualverticalfloor and simplifiedarch/serviceframes alreadyimplementing in isolatedworktrees",
-    "blocker": "Worked8bararch/post cage is REJECTEDdetail, notrescuedbysectionratios; actualverticalgravity/28paths and wetserviceframe, material and physical acceptance remain unearned"
+    "evidence": "PR1597 exact head14d41047740febb0b83b50ec792f80325db257db; integrated native cage rejection and source-bound floor/inlet/roof stages; hosted browser/typography proofs green",
+    "next": "Complete exact-head health/publication CI, fresh dual merge preflight, merge1597 then bind next gravity-house integration",
+    "blocker": "STR remains open: complete receiving details, replacementA, actual gravity/roof and enclosure acceptance are not earned"
   },
   "pr": 1597
 }
