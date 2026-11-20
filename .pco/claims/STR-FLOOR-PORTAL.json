@@ -9,8 +9,8 @@
     "label": "convergence-resumed-20261120"
   },
   "claimedAt": "2026-11-20T07:38:27.612Z",
-  "heartbeatAt": "2026-11-20T09:12:48.312Z",
-  "expiresAt": "2026-11-20T10:42:48.312Z",
+  "heartbeatAt": "2026-11-20T10:02:06.995Z",
+  "expiresAt": "2026-11-20T11:32:06.995Z",
   "branch": "work/convergence-joined-structure-20261120",
   "predecessor": {
     "leaseId": "dec44b72-4e34-40df-8172-25ba1d1a5e53",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1596 head53cfd27c durably contains actual four-wall perforated-floor and52head solve, corrected96case proof, whole dry-ground proposal and shared saved/current CLI stages;30 integrated tests,24native checks and types pass",
-    "next": "Require exact1596-head CI and fresh STR/HAD preflights, merge coordinated source, then continue actual lower receivers and court-node/stair closure; STR remains open",
-    "blocker": "28upper receiving paths, actual gravity/verticalfloor/roof and dryground contact/connection remain unproved; no roofunlock or owneracceptance"
+    "evidence": "PR1596 debfe43fc3458822c9e91c3d2b97f147465f2cec corrects conditional jamb cover provenance; prior joined floor and fixed entry sources preserved, exact-head CI running",
+    "next": "Merge after exact-head CI and fresh preflight; join four actual north RC receiver ports to perforated floor; preserve rejected free-floor RC challenger evidence",
+    "blocker": "STR remains open: complete compatible floor/portal/roof/ground load paths and actual reinforcement/contact/interface proofs remain unearned"
   },
   "pr": 1596
 }
