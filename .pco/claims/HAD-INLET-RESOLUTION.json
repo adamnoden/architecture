@@ -9,8 +9,8 @@
     "label": "convergence-inlet-resumed-20261120"
   },
   "claimedAt": "2026-11-20T07:39:02.850Z",
-  "heartbeatAt": "2026-11-20T12:05:16.238Z",
-  "expiresAt": "2026-11-20T13:35:16.238Z",
+  "heartbeatAt": "2026-11-20T13:18:19.872Z",
+  "expiresAt": "2026-11-20T14:48:19.872Z",
   "branch": "work/convergence-next-systems-20261120",
   "predecessor": {
     "leaseId": "6d1a0dde-e1e3-4014-99e6-bac6f58d5756",
@@ -36,8 +36,8 @@
   },
   "pr": 1597,
   "checkpoint": {
-    "evidence": "Draft1597 durable remote08b11134 with exact treee6cdc0a8, archived rejected source tupleb8f27f2d; PR1596 mergedb7b after all exact-head checks and fresh dual preflight",
-    "next": "Finish native48 wind, current saved-stage integration, reinforcement/support/access corrections; rerun source-specific checks and exact submitted-head hosted CI before merge",
-    "blocker": "Source0 RC and raised715 ground are separate unselected comparisons; actual receiving paths, barrier and physical/material approvals remain unearned"
+    "evidence": "Draft1597 remote08b11134 preserves source checkpoint and archived rejectionb8f27f2d; localfinalscience48unique+2GMAXQ+4uncached governors, corrected39native servicefloor and8saved/adapter pipeline checks verified; finalsource upload in progress",
+    "next": "Publish finalboundedcurrent-model changes, exact-head CI, freshcanonicalpreflight and merge1597; nextactualverticalfloor and simplifiedarch/serviceframes alreadyimplementing in isolatedworktrees",
+    "blocker": "Worked8bararch/post cage is REJECTEDdetail, notrescuedbysectionratios; actualverticalgravity/28paths and wetserviceframe, material and physical acceptance remain unearned"
   }
 }
