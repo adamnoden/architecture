@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import { readFileSync, writeFileSync } from 'node:fs'
 import { renderDrawingSceneV2Svg } from '../../../compiler/publication-drawing-v2/svg.js'
 import { prepareCurrentDesignCompile } from '../../../compiler/reference-house/current-design/compile.js'
-import { compileEngineeringDocument, readEngineeringDocument } from '../../../compiler/reference-house/current-design/engineering-document.js'
+import { compileEngineeringDocument, readRetainedInletComparisonDocument } from '../../../compiler/reference-house/current-design/engineering-document.js'
 import { readGeorgianDesignSnapshot } from '../../../compiler/reference-house/current-design/georgian-source.js'
 
 const [mode, ...extra] = process.argv.slice(2)
@@ -20,7 +20,7 @@ const [{ intake }, tile, skirting, heavyTile, linings, openings] = await Promise
 ])
 const [[low, high], ...remaining] = intake.route.intervalsYMm
 const narrowed = await compile.courtIntake({ ...intake, route: { intervalsYMm: [[low, high - 25], ...remaining] } })
-const engineering = await readEngineeringDocument(design)
+const engineering = await readRetainedInletComparisonDocument(design)
 const { inletSillInsert, inletFault, inletRemovals, inletCovers, inletAssembly } = engineering.stages
 const inletDocument = { ...engineering, stages: { inletSillInsert, inletFault, inletRemovals, inletCovers,
   inletAssembly: { ...inletAssembly, plantSouthLegLevelMm: Number(inletAssembly.plantSouthLegLevelMm) + 25 } } }

@@ -127,7 +127,13 @@
         "project/had/service-structural-applicability.md",
         "project/str/structural-architecture-programme.md",
         "project/str/floor-portal-monolithic-drag.md",
-        "project/mat/rear-wc-west-gravity.md"
+        "project/mat/rear-wc-west-gravity.md",
+        "project/mat/envelope-ground-boundary.md",
+        "project/owner-house-charter.md",
+        "docs/reference-house/structural-brief.md",
+        "project/triad-interface-contract.md",
+        "project/str/distributed-floor-compatibility-result.md",
+        "project/str/dry-side-ground-section.md"
       ],
       "authorRoots": [
         "project/str/studies/current-house-grid.py",
@@ -170,7 +176,12 @@
         "project/str/studies/floor-portal-twin-garden-tie.py",
         "project/str/studies/retained_components.py",
         "project/str/studies/retained_component_geometry.py",
-        "project/str/studies/retained-contact.py"
+        "project/str/studies/retained-contact.py",
+        "project/str/studies/dry_side_ground_section.py",
+        "project/str/studies/distributed_floor_compatibility.py",
+        "project/str/studies/perforated_floor_condensation.py",
+        "project/str/studies/distributed_floor_views.py",
+        "project/str/studies/distributed_floor_proof.py"
       ],
       "inputReceipts": [
         "project/had/studies/water-replan.json",
@@ -211,10 +222,13 @@
         "project/str/studies/current-house-roof-network.json",
         "project/str/studies/physical-slab-join.json",
         "project/str/studies/current-house-roof-connection.json",
-        "project/str/studies/current-house-floor-closure.svg"
+        "project/str/studies/current-house-floor-closure.svg",
+        "project/str/studies/current-house-occupied-interfaces.json",
+        "project/mat/studies/conventional-ground-junction.json"
       ],
       "authoredInputs": [
-        "project/str/dpc-origin-paths.json"
+        "project/str/dpc-origin-paths.json",
+        "project/str/studies/dry-side-ground-section.json"
       ],
       "receipts": [
         "project/str/studies/current-house-grid.json",
@@ -232,7 +246,9 @@
         "project/str/studies/floor-portal-north-cap-layer.json",
         "project/str/studies/floor-portal-north-cage.json",
         "project/str/studies/floor-portal-monolithic-drag.json",
-        "project/mat/studies/rear-wc-west-roof-interface.json"
+        "project/mat/studies/rear-wc-west-roof-interface.json",
+        "project/str/studies/distributed-floor-compatibility-proof.json",
+        "project/str/studies/distributed-floor-compatibility.svg"
       ],
       "consumers": [
         "project/had/studies/current-house.mjs",
@@ -243,7 +259,9 @@
         "compiler/reference-house/current-design/rear-foul-vent.ts",
         "compiler/reference-house/current-design/structural.ts",
         "compiler/reference-house/current-design/structural-successor.ts",
-        "compiler/reference-house/current-design/structural-retained.ts"
+        "compiler/reference-house/current-design/structural-retained.ts",
+        "compiler/reference-house/current-design/structural-ground.ts",
+        "compiler/reference-house/current-design/structural-distributed-floor.ts"
       ],
       "producerChecks": [
         "python3 -B project/str/studies/current-house-grid.py --check",
@@ -523,6 +541,29 @@
       "producerChecks": [
         "node project/had/studies/south-inlet-wet-box.mjs --check",
         "node project/ias/studies/utility-first-release.mjs --check"
+      ]
+    },
+    {
+      "id": "had-fixed-inlet-arrangement",
+      "state": "candidate-interface",
+      "authority": "Unselected fixed pressure entry, closed operating hoods and light cold-renewal arrangement; actual support/thermal/tool/material and installed duties remain open.",
+      "decisions": [
+        "project/had/fixed-inlet-entry-candidate.md"
+      ],
+      "authorRoots": [
+        "compiler/reference-house/current-design/inlet-fixed-entry.ts",
+        "compiler/reference-house/current-design/inlet-fixed-case.ts",
+        "compiler/reference-house/current-design/inlet-fixed-operating.ts"
+      ],
+      "authoredInputs": [],
+      "inputReceipts": [],
+      "receipts": [],
+      "consumers": [
+        "compiler/reference-house/current-design/compile.ts",
+        "compiler/reference-house/current-design/engineering-document.ts"
+      ],
+      "producerChecks": [
+        "node --import tsx --test compiler/reference-house/current-design-inlet-fixed-entry.test.ts compiler/reference-house/current-design-inlet-fixed-pipeline.test.ts"
       ]
     }
   ],
@@ -862,6 +903,40 @@
       ],
       "format": "map",
       "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/str/studies/dry-side-ground-section.json",
+      "location": [
+        "sources"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/str/studies/distributed-floor-compatibility-proof.json",
+      "location": [
+        "sourceSHA256"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/str/studies/distributed-floor-compatibility-proof.json",
+      "location": [
+        "proofProducerSHA256"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/distributed_floor_proof.py"
+    },
+    {
+      "receipt": "project/str/studies/distributed-floor-compatibility-proof.json",
+      "location": [
+        "derivedSvgSha256"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/distributed-floor-compatibility.svg"
     }
   ],
   "gitBlobs": {
@@ -1094,7 +1169,7 @@
     "project/str/studies/joined_successor_kernel.py": "bbf1e80933260d0182db34d777427b68a361b2f0",
     "compiler/reference-house/current-design/structural-successor.ts": "9ae813ed40695e6e94df43caa0b45e7db54d02c4",
     "compiler/reference-house/current-design/inlet-support.ts": "a2404befdbeda6464bc9f772d25bccd8d78d2479",
-    "compiler/reference-house/current-design/engineering-document.ts": "b17f780ac688326349a0604838cb52e626b55d83",
+    "compiler/reference-house/current-design/engineering-document.ts": "2670dc3bddc19de583fe1414e29a02108308d8e0",
     "project/had/inlet-assembly-convergence.md": "21719c69b3ec916043e53d7ae0891d5c6ce7aae5",
     "project/str/studies/floor-portal-fixed-wall-head.py": "807159aa9439837489d3e95f9bf359983635c342",
     "project/str/studies/floor-portal-north-transfer.py": "20f79473e3fd3e88351b3fa4d68ac1f1ef476d03",
@@ -1102,6 +1177,29 @@
     "project/str/studies/floor-portal-permanent-seat.json": "7d3b78abe753ed63f073b2612d93f9953b52721c",
     "project/str/studies/retained_components.py": "20d5ccd66cc0edcc2e785978247f0d80dc7f84e7",
     "project/str/studies/retained_component_geometry.py": "23f1346b8213f2c79e93190b1d8826a6cf35fc45",
-    "project/str/studies/retained-contact.py": "d39e69bf084a58b320e41b05db74835882d6dc6a"
+    "project/str/studies/retained-contact.py": "d39e69bf084a58b320e41b05db74835882d6dc6a",
+    "project/had/fixed-inlet-entry-candidate.md": "a5991d33eef97a09fc6c6150406a9fc473f641d9",
+    "compiler/reference-house/current-design/inlet-fixed-entry.ts": "6219479d1faaaf1674c17d08c723effff5e4a784",
+    "compiler/reference-house/current-design/inlet-fixed-case.ts": "68706c1d8ea5d169e3e36f543cef75c973a91b9c",
+    "compiler/reference-house/current-design/inlet-fixed-operating.ts": "8d2a9e0132d300e697cff2661f01222a7b661b45",
+    "compiler/reference-house/current-design/compile.ts": "160adf0c77b183f653d012f60471dbeee6e1634e",
+    "project/mat/envelope-ground-boundary.md": "7aae65350ded7bff6e21c4425153af3cdaec41d2",
+    "project/owner-house-charter.md": "285202ef6be2ccd9954de51213d1faa23a158813",
+    "project/mat/studies/conventional-ground-junction.json": "5d899197848d0f951d8ff4573983aff81d4fd32f",
+    "project/str/studies/current-house-occupied-interfaces.json": "fb9f19324385a50c22761b38333c478075987a08",
+    "docs/reference-house/structural-brief.md": "ee6ffe9704e1da927ff3a6a1d052da2f0dba7abf",
+    "compiler/reference-house/current-design/structural-ground.ts": "a85e0fc6ec57127d2caabb91c26a27f3b9e97484",
+    "project/str/studies/dry-side-ground-section.json": "434c96bafad428ee55cdfca5a70c1815809e554c",
+    "project/triad-interface-contract.md": "c77897e0b18d780feae097707998c1006fccb857",
+    "project/str/studies/dry_side_ground_section.py": "c12c19361cb8c9e613879a5ae8e0441824cc600c",
+    "project/str/studies/distributed-floor-compatibility-proof.json": "4c1190c59d3e91af1fd0ade84898e07476b670e2",
+    "project/str/studies/perforated_floor_condensation.py": "38fbb2df2e65b571610849f4b40c28bea28b4822",
+    "project/str/studies/distributed-floor-compatibility.svg": "ea960660b19f1a43fd65e6e00e5db601eeb4becc",
+    "project/str/studies/distributed_floor_compatibility.py": "afa1f33b927a2f1ab9d69904822b8be998498135",
+    "project/str/studies/distributed_floor_views.py": "0434940a5bffcbd52c39e8add55d07788205348d",
+    "project/str/dry-side-ground-section.md": "a96f947c7e1953bde6cba9d128bc74db09ba663a",
+    "compiler/reference-house/current-design/structural-distributed-floor.ts": "9de49cffbfaf32ebd90f0a6c0b840bb232345589",
+    "project/str/distributed-floor-compatibility-result.md": "827ccf5db6c09c98d70d9b1b8c1270f4d72dbbe2",
+    "project/str/studies/distributed_floor_proof.py": "16ba7594db1280d7fcfad80bf132eacc0c0dfd8a"
   }
 }

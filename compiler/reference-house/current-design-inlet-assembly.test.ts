@@ -1,11 +1,11 @@
 import assert from 'node:assert/strict'
 import { spawnSync } from 'node:child_process'
 import test from 'node:test'
-import { compileEngineeringDocument, readEngineeringDocument } from './current-design/engineering-document.js'
+import { compileEngineeringDocument, readRetainedInletComparisonDocument } from './current-design/engineering-document.js'
 import { readGeorgianDesignSnapshot } from './current-design/georgian-source.js'
 
 async function inletDocument() {
-  const document = await readEngineeringDocument(readGeorgianDesignSnapshot())
+  const document = await readRetainedInletComparisonDocument(readGeorgianDesignSnapshot())
   const { inletSillInsert, inletFault, inletRemovals, inletCovers, inletAssembly } = document.stages
   return { ...document, stages: { inletSillInsert, inletFault, inletRemovals, inletCovers, inletAssembly: { plantSouthLegLevelMm: inletAssembly.plantSouthLegLevelMm } } }
 }
