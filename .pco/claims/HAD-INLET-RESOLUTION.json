@@ -9,8 +9,8 @@
     "label": "convergence-inlet"
   },
   "claimedAt": "2026-11-19T20:30:02.696Z",
-  "heartbeatAt": "2026-11-20T00:56:34.630Z",
-  "expiresAt": "2026-11-20T02:26:34.630Z",
+  "heartbeatAt": "2026-11-20T00:59:59.148Z",
+  "expiresAt": "2026-11-20T02:29:59.148Z",
   "branch": "work/convergence-inlet-fixed-2026-11-20",
   "predecessor": {
     "leaseId": "5ddd99a4-fd1f-49de-af1d-7d77372c4077",
@@ -34,10 +34,10 @@
       "blocker": "Geometric fit and saved dependency propagation retain physical attachment, guided retention, wet closure and loaded handling as unqualified."
     }
   },
-  "pr": 1584,
+  "pr": 1587,
   "checkpoint": {
-    "evidence": "PR1584 merged main0298c1f2; new local fixed-entry candidate41e80ef8 on ef7 exact base; typecheck and4focusedtests pass; both route and renewal drawings rendered and inspected. No adoption or packet closure.",
-    "next": "Root serial publication/current-model wiring of checkpoint; continue actual upper tool motions and conditional receiving/thermal design. Preserve exact material and wet-neck boundaries.",
-    "blocker": "Actual static wet-neck interface and matched tool/receiver/thermal proofs remain internal design duties; no owner material exception or installed evidence claimed."
+    "evidence": "Main0298 merged1584; tested fixed-entry checkpoint nowremote with4focusedtests andtypecheck, exactfactoryCADfacts andlightpipe renewal views. No adoptionorHADclosure.",
+    "next": "Complete sharedsavedstage andCLI integration; prove matchedtoolposes, source receiving group, fullthermal/restraintandwetneck. Keepmanualconstituent decisions explicit and preserve actualfailed states.",
+    "blocker": "Wet neck, group support/thermal andexact materialdisposition remain unproved; draftonly."
   }
 }
