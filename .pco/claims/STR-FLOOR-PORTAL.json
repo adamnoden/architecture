@@ -9,9 +9,9 @@
     "label": "convergence-resumed-20261120"
   },
   "claimedAt": "2026-11-20T07:38:27.612Z",
-  "heartbeatAt": "2026-11-20T10:02:06.995Z",
-  "expiresAt": "2026-11-20T11:32:06.995Z",
-  "branch": "work/convergence-joined-structure-20261120",
+  "heartbeatAt": "2026-11-20T10:31:08.598Z",
+  "expiresAt": "2026-11-20T12:01:08.598Z",
+  "branch": "work/convergence-next-systems-20261120",
   "predecessor": {
     "leaseId": "dec44b72-4e34-40df-8172-25ba1d1a5e53",
     "generation": 44,
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1596 debfe43fc3458822c9e91c3d2b97f147465f2cec corrects conditional jamb cover provenance; prior joined floor and fixed entry sources preserved, exact-head CI running",
-    "next": "Merge after exact-head CI and fresh preflight; join four actual north RC receiver ports to perforated floor; preserve rejected free-floor RC challenger evidence",
-    "blocker": "STR remains open: complete compatible floor/portal/roof/ground load paths and actual reinforcement/contact/interface proofs remain unearned"
+    "evidence": "PR1596 merged mainb7b87c03964ca3183f68ef9642569a658d0e8617 after all5 exact-head checks and fresh STR/HAD preflights; current floor/ground/inlet source cutover delivered without packet closure",
+    "next": "Publish joined continuous RC/perforated-floor contact proof and current saved case, preserving authentic96-case source regeneration and actual52-head response; compare robust core thickness",
+    "blocker": "Actual shear/key/Ltie laws, toleranced contact/material resistance, complete reinforcement/development and roof/vertical slab/remaining receiving paths still require engineering proof"
   },
   "pr": 1596
 }
