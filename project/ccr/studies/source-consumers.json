@@ -62,13 +62,15 @@
     {
       "id": "ias-crafted-room-kit",
       "state": "current-conditional-consumer",
-      "decision": "project/ias/crafted-room-kit-study.md",
+      "decision": "project/ias/crafted-room-kit-result.md",
       "entries": [
         "project/ias/studies/crafted-study-views.mjs",
         "project/ias/studies/crafted-study-wall-transition.mjs",
-        "project/ias/studies/study-furniture-motion.py"
+        "project/ias/studies/study-furniture-motion.py",
+        "project/ias/studies/crafted-study-convergence.mjs",
+        "project/ias/studies/study-floor-handling.py"
       ],
-      "boundary": "Compile the room kit, wall transition and furniture motion from one current-design case. Draw the matched Study from those results. The owner, loaded release and retained protective boundary stay open."
+      "boundary": "Compile the whole timber/tiled Study, local wall releases, shaped floor handling and furniture staging from the same current-design case and editable authored operation plan. Current views and schedules consume those results. The owner verdict, qualified floor course, loaded release and retained protective boundaries remain open."
     },
     {
       "id": "ias-comparison-and-proof-support",

@@ -489,7 +489,7 @@
   ],
   "scope": "Eight upper corner openings, six coupled terminal coordinates each, 96 directional winds, ceiling present or removed, and two flexural stiffnesses. The floor strong-axis comparison models the added arch loads. Existing floor sag, base settlement and construction variation must be introduced before window clearance can be accepted.",
   "sources": {
-    "current-house-arch-jambs.json": "5398e4b04c1af76cf7fd8beab4d15950983b446487f310a5e6879b69ae1f1f2a",
+    "current-house-arch-jambs.json": "0bc6ffa6b11043c3ac5dbf80f180eabdd5e9f7d04cdd3b0534e7feeecd9b7654",
     "current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
     "current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
     "current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1"

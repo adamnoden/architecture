@@ -874,19 +874,35 @@ export function drawStudyOrdinaryHandling(kit: StudyRoomKit, partId: string): Dr
     kind: 'path' as const, id: `worker/${index}`, stroke: 'secondary' as const, dash: 'datum' as const,
     rings: [Array.from({ length: 64 }, (_, side) => projection.point(cx + 300 * Math.cos(side * Math.PI / 32), cy + 300 * Math.sin(side * Math.PI / 32)))],
   }))
+  const panelLabels = deltas.map(([dx, dy], step) => ({
+    kind: 'text' as const, id: `panel-step/${step}`, role: 'marker' as const,
+    ...projection.point((part.box[0] + part.box[2]) / 2 + dx, (part.box[1] + part.box[3]) / 2 + dy), value: `P${step + 1}`,
+  }))
+  const workerLabels = selected.workerPathXYMm.map(([cx, cy], step) => ({
+    kind: 'text' as const, id: `worker-step/${step}`, role: 'marker' as const,
+    ...projection.point(cx, cy), value: `W${step + 1}`,
+  }))
+  const workerLinks = selected.workerPathXYMm.slice(1).map((point, step) => ({
+    kind: 'line' as const, id: `worker-route/${step}`, role: 'secondary' as const, dash: 'provisional' as const,
+    a: projection.point(...selected.workerPathXYMm![step]), b: projection.point(...point),
+  }))
   const base = drawStudyRoomKitPlan(kit)
   return {
-    ...base, sourceId: kit.source.occupiedHouse + '/' + kit.caseDigest, viewId: 'ias-study-ordinary-handling-' + partId.split('/').slice(-2).join('-'),
+    ...base, heightMm: base.heightMm + 6, sourceId: kit.source.occupiedHouse + '/' + kit.caseDigest, viewId: 'ias-study-ordinary-handling-' + partId.split('/').slice(-2).join('-'),
     title: 'Study ordinary floor renewal',
     description: 'Source-bound moving finish, ordinary work board and 600 mm handler envelopes. Nominal geometric witness; loaded handling and tolerances remain unqualified.',
     primitives: [
-      { kind: 'rect', id: 'handling-paper', x: 0, y: 0, width: base.widthMm, height: base.heightMm, fill: 'paper' },
-      ...base.primitives.filter(primitive => primitive.id !== 'pitch'), ...shapes, ...people,
-      { kind: 'rect', id: 'ordinary-work-board', ...rectangle(selected.boardXYXYMm), stroke: 'primary', fill: 'context' },
+      { kind: 'rect', id: 'handling-paper', x: 0, y: 0, width: base.widthMm, height: base.heightMm + 6, fill: 'paper' },
+      ...base.primitives.filter(primitive => primitive.id !== 'pitch'),
+      { kind: 'rect', id: 'ordinary-work-board', ...rectangle(selected.boardXYXYMm), stroke: 'primary', fill: 'faint' },
+      ...shapes, ...people, ...workerLinks, ...panelLabels, ...workerLabels,
+      { kind: 'text', id: 'ordinary-handling-title', x: 12, y: 8, role: 'label', value: `Floor renewal: ${partId.split('/').slice(-2).join(' / ')}` },
       ...kit.floor.frameFootprints.map(([a, b, w, d], index) => ({ kind: 'rect' as const, id: `fixed-frame-foot/${index}`,
         ...rectangle([a, b, a + w, b + d]), stroke: 'primary' as const, fill: 'context' as const })),
       { kind: 'text', id: 'ordinary-handling-key', x: 12, y: projection.length(height) + 24, role: 'note',
         value: `Board ${selected.boardId} · ${selected.maximumKeyReachMm?.toFixed(1)} mm key reach · ${selected.bodyToPanelMm?.toFixed(1)} mm body/part` },
+      { kind: 'text', id: 'ordinary-handling-legend', x: 12, y: projection.length(height) + 29, role: 'note',
+        value: 'P: finish sequence · W: 600 mm handler positions · shaded: ordinary rest board' },
     ],
   }
 }

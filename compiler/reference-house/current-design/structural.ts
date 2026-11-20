@@ -146,6 +146,11 @@ function bindStructuralActions(resolved: CurrentDesignResolution) {
     readonly admitted: false
     readonly status: string
     readonly heads: readonly { readonly id: string; readonly xy: [number, number] }[]
+    readonly origins: readonly {
+      readonly family: string
+      readonly case: string
+      readonly N_Xmoment_Ymoment: readonly [number, number, number]
+    }[]
     readonly coherentSignedStates: readonly {
       readonly wind: number
       readonly programme: readonly number[]
@@ -368,6 +373,61 @@ export function runStructuralActions(resolved: CurrentDesignResolution) {
       code: 'HEAD_ACTIONS_SCREEN_ONLY' as const, occurrence,
       message: 'Fixed-base signed actions only. Soil, section, proposed collar confinement and connection stiffness remain open.',
     }],
+  }
+}
+
+export type UpperCutContactTrial = {
+  readonly cutZMm: number
+  readonly roofRiseMm: number
+  readonly additionalRetainedNKN: number
+  readonly additionalRetainedCentroidXYMm: readonly [number, number]
+}
+
+export function runStructuralOriginAccount(resolved: CurrentDesignResolution, globalContactTrial?: UpperCutContactTrial) {
+  const binding = bindStructuralActions(resolved)
+  if (binding.status === 'unavailable') throw new Error('Current originating structural loads are unavailable')
+  const method = boundHeadCaseMethod(binding.structure.identities)
+  const native: {
+    readonly schema: 'str-origin-load-account-result/1'
+    readonly admitted: false
+    readonly coreBudgetHeightsMm: { readonly ground: number; readonly upper: number }
+    readonly globalContact?: {
+      readonly schema: 'str-upper-cut-compression-result/1'
+      readonly cutZMm: number; readonly roofRiseMm: number
+      readonly baselinePassingCount: number; readonly candidatePassingCount: number; readonly windCaseCount: number
+      readonly minimumAdditionalRetainedNKN: number | null
+      readonly additionalRetainedNKN: number
+      readonly additionalRetainedCentroidXYMm: readonly [number, number]
+      readonly innerContactConvexHullXYMm: readonly (readonly [number, number])[]
+      readonly nativeUpperCutReplayResidual: { readonly momentKNm: number; readonly forceKN: number; readonly netVerticalWindKN: number }
+      readonly completeSpliceDemand: null; readonly admitted: false
+      readonly cases: readonly { readonly wind: number; readonly baselineN_Xfirst_Yfirst: readonly number[];
+        readonly candidateN_Xfirst_Yfirst: readonly number[];
+        readonly baseline: { readonly minimumAdditionalRetainedNKN: number | null } }[]
+    }
+    readonly origins: readonly {
+      readonly family: string; readonly case: string; readonly N_Xmoment_Ymoment: readonly [number, number, number]
+    }[]
+  } = runNorthHeadReplay({ schema: 'str-origin-load-account/1', ...(globalContactTrial ? { globalContactTrial } : {}) })
+  if (native.schema !== 'str-origin-load-account-result/1' || native.admitted !== false
+      || native.origins.length !== binding.native.origins.length
+      || native.origins.some((origin, index) => {
+        const reference = binding.native.origins[index]
+        return origin.family !== reference.family || origin.case !== reference.case
+          || origin.N_Xmoment_Ymoment.some((value, component) => Math.abs(value - reference.N_Xmoment_Ymoment[component]) > 0.000051)
+      })) throw new Error('The recomputed originating load account differs from its retained structural source')
+  if (globalContactTrial && (native.globalContact?.schema !== 'str-upper-cut-compression-result/1'
+      || native.globalContact.admitted !== false || native.globalContact.completeSpliceDemand !== null
+      || native.globalContact.cutZMm !== globalContactTrial.cutZMm || native.globalContact.roofRiseMm !== globalContactTrial.roofRiseMm
+      || native.globalContact.additionalRetainedNKN !== globalContactTrial.additionalRetainedNKN
+      || native.globalContact.windCaseCount !== binding.native.coherentSignedStates.length)) {
+    throw new Error('The global upper-cut trial differs from its source-bound request')
+  }
+  return {
+    source: binding.source, native,
+    method: { id: 'str-origin-load-account/1', path: headCaseMethodPath, blob: method.blob,
+      solver: { path: foundationMethodPath, blob: binding.method.blob },
+      receipt: { path: foundationReceiptPath, blob: binding.receipt.blob }, inputs: binding.inputs },
   }
 }
 

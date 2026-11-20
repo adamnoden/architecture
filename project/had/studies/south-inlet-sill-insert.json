@@ -1,7 +1,7 @@
 {
   "disposition": "Prefer the framed sill insert as a geometric development of independent chambers. Retain the indoor inlet reference.",
   "sources": {
-    "project/had/studies/south-inlet-sill-insert-kernel.mjs": "3df75b2cb2fa492c6b3e5b2a04a113f481007880",
+    "project/had/studies/south-inlet-sill-insert-kernel.mjs": "153cd3e2c747bd980ae2128d99a9a84b5885ae20",
     "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2",
     "project/had/studies/south-inlet-under-sill.json": "7d60da325cd76bb9d7924bc4bb64f1b93b51b644",
     "project/had/studies/south-inlet-wet-box.json": "0ccc6a7b1584145b5e77c7b89e9e2b8ce8b7d665",

@@ -102,3 +102,38 @@ test('normal standalone callers retain their default insert and explicit upstrea
   await assert.rejects(compileEngineeringDocument({ ...document, stages: { inletRemovals: [{ branch: 'utility', insertCaseDigest: '0'.repeat(64) }] } }), /derived identity supplied/)
   await assert.rejects(compileEngineeringDocument({ ...document, stages: { inletRemovals: [{ branch: 'utility' }, { branch: 'utility' }] } }), /at most once/)
 })
+
+test('the authored insert vent propagates the same axis and formed diameter through fault, removal, both closure methods and drawings', async () => {
+  const full = await readEngineeringDocument(readGeorgianDesignSnapshot())
+  const { inletSillInsert, inletFault, inletRemovals, inletCovers, inletAssembly } = full.stages
+  const document = { ...full, stages: { inletSillInsert, inletFault, inletRemovals, inletCovers, inletAssembly } }
+  const baseline = await compileEngineeringDocument(document)
+  const changed = await compileEngineeringDocument({ ...document, stages: { ...document.stages,
+    inletSillInsert: { ...inletSillInsert, plantVentOuterZMm: Number(inletSillInsert.plantVentOuterZMm) + 0.5 } } })
+  const before = baseline.engineering, after = changed.engineering
+  const actual = after.inletSillInsert!.calculation.vents[1]
+  const removalBefore = before.inletRemovals!.find(row => row.branch === 'plant')!
+  const removalAfter = after.inletRemovals!.find(row => row.branch === 'plant')!
+  assert.deepEqual(removalBefore.calculation.wetBox.innerVentAxisMm, [10348, 429.5, 670.39])
+  assert.deepEqual(removalAfter.calculation.wetBox.innerVentAxisMm, actual.axis[1])
+  assert.equal(removalAfter.calculation.wetBox.formedVentDiameterMm, actual.outerDiameterMM)
+  assert.equal(actual.outerDiameterMM, 30)
+  assert.equal(after.inletFault!.branchCases[1].geometry.highVentInvertZMm - before.inletFault!.branchCases[1].geometry.highVentInvertZMm, 0.5)
+  const coverBefore = before.inletCovers!.find(row => row.branch === 'plant')!
+  const coverAfter = after.inletCovers!.find(row => row.branch === 'plant')!
+  assert.equal(coverAfter.installedClosure.clearance.formedVentBelowWallReturnAfterSettingMm,
+    coverBefore.installedClosure.clearance.formedVentBelowWallReturnAfterSettingMm - 0.5)
+  const splitBefore = before.inletAssembly!.upperClosure!.branches.find(row => row.branch === 'plant')!
+  const splitAfter = after.inletAssembly!.upperClosure!.branches.find(row => row.branch === 'plant')!
+  assert.equal(splitAfter.rearReturnBelowVentAfterSettingMm, splitBefore.rearReturnBelowVentAfterSettingMm - 0.5)
+  assert.notDeepEqual(after.inletSillInsert!.drawing, before.inletSillInsert!.drawing)
+  assert.notDeepEqual(after.inletFault!.drawing, before.inletFault!.drawing)
+  assert.notEqual(after.inletAssembly!.source.caseDigest, before.inletAssembly!.source.caseDigest)
+  assert.deepEqual(after.inletFault!.branchCases[0], before.inletFault!.branchCases[0])
+  assert.deepEqual(after.inletRemovals!.find(row => row.branch === 'utility')!.calculation,
+    before.inletRemovals!.find(row => row.branch === 'utility')!.calculation)
+  assert.deepEqual(changed.plans, baseline.plans)
+  assert.deepEqual(changed.selectedWaterEvent, baseline.selectedWaterEvent)
+  await assert.rejects(compileEngineeringDocument({ ...document, stages: { ...document.stages,
+    inletSillInsert: { ...inletSillInsert, plantVentOuterZMm: 661 } } }), /selected sill insert blocks/)
+})
