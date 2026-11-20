@@ -9,8 +9,8 @@
     "label": "convergence-inlet-resumed-20261120"
   },
   "claimedAt": "2026-11-20T07:39:02.850Z",
-  "heartbeatAt": "2026-11-20T11:56:06.724Z",
-  "expiresAt": "2026-11-20T13:26:06.724Z",
+  "heartbeatAt": "2026-11-20T12:05:16.238Z",
+  "expiresAt": "2026-11-20T13:35:16.238Z",
   "branch": "work/convergence-next-systems-20261120",
   "predecessor": {
     "leaseId": "6d1a0dde-e1e3-4014-99e6-bac6f58d5756",
@@ -34,10 +34,10 @@
       "blocker": "Wet neck, group support/thermal andexact materialdisposition remain unproved; draftonly."
     }
   },
-  "pr": 1596,
+  "pr": 1597,
   "checkpoint": {
-    "evidence": "PR1596 merged b7b87c0 after all five exact-head checks and fresh dual preflight; continuation source commits preserved in local git; new continuous RC and service-floor adapters integrating",
-    "next": "Publish continuation code and source-bound current-house saved-stage propagation tests, then actual 48 unique physical wind cases and reinforcement/barrier review",
-    "blocker": "Owner material/appearance acceptance withheld; receiving paths, local transfer and physical barrier/support qualification remain unearned"
+    "evidence": "Draft1597 durable remote08b11134 with exact treee6cdc0a8, archived rejected source tupleb8f27f2d; PR1596 mergedb7b after all exact-head checks and fresh dual preflight",
+    "next": "Finish native48 wind, current saved-stage integration, reinforcement/support/access corrections; rerun source-specific checks and exact submitted-head hosted CI before merge",
+    "blocker": "Source0 RC and raised715 ground are separate unselected comparisons; actual receiving paths, barrier and physical/material approvals remain unearned"
   }
 }
