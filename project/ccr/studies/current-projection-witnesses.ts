@@ -42,6 +42,16 @@ const { condensate } = await compile.readOccupiedCondensateCase()
 const loweredCondensate = await compile.occupiedCondensate({ ...condensate, portLevelMm: 2675 })
 const { roof } = await compile.readRoofPitchCase()
 const raisedRoof = await compile.roofPitch({ ...roof, pitchDeg: 27 })
+const retainedRequest = await compile.readRetainedComponentCase()
+const unresolvedRetained = await compile.retainedComponentCase(retainedRequest.retained)
+const declaredRetained = await compile.retainedComponentCase({ ...retainedRequest.retained,
+  componentCase: { ...retainedRequest.retained.componentCase, retentionPaths: [{
+    id: 'unqualified-floor-and-clear-wall-comparison', state: 'declared-comparison',
+    routeDescription: 'Virtual retained diaphragm and aligned-wall comparison only; material delivery bounds, actual continuity and all connection capacities remain unproved.',
+    sourceRefs: retainedRequest.retained.componentCase.sourceSHA256,
+    componentDigests: Object.fromEntries(unresolvedRetained.native.components.components.map(component => [component.id, component.componentDigest])),
+  }] } })
+assert.equal(declaredRetained.native.contact.candidatePassingCount, 96)
 const witnesses = [
   ['roof-pitch-27deg-field-section.svg', raisedRoof.drawing],
   ['ground-wc-condensate-25mm-lowering.svg', loweredCondensate.drawing],
@@ -56,7 +66,8 @@ const witnesses = [
   ['study-wall-grille-section.svg', linings.detail],
 ] as const
 const rendered = witnesses.map(([filename, scene]) => [filename, renderDrawingSceneV2Svg(scene)] as const)
-for (const [filename, svg] of [...rendered, ['study-window-1020mm-jamb.svg', openings.window.jambSvg] as const]) {
+for (const [filename, svg] of [...rendered, ['study-window-1020mm-jamb.svg', openings.window.jambSvg] as const,
+  ['retained-component-contact.svg', declaredRetained.planSvg] as const]) {
   const path = new URL(filename, import.meta.url)
   if (mode === '--check') assert.equal(readFileSync(path, 'utf8'), svg, 'Stale witness ' + filename)
   else writeFileSync(path, svg)

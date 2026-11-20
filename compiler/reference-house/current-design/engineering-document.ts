@@ -31,8 +31,11 @@ const additionalImplementationFiles = [
   'project/bcr/studies/bay-interface-study.py',
   'project/ias/studies/workable-floor-tiles.mjs',
   'project/ias/studies/workable-lining-dimensions.mjs',
+  'project/str/studies/retained_components.py',
+  'project/str/studies/retained_component_geometry.py',
+  'project/str/studies/retained-contact.py',
 ] as const
-const stageKeys = ['structuralSuccessor', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit'] as const
+const stageKeys = ['structuralSuccessor', 'retainedComponents', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit'] as const
 type Settings = Readonly<Record<string, unknown>>
 type EngineeringStages = Partial<Readonly<Record<Exclude<typeof stageKeys[number], 'inletCovers' | 'inletRemovals'>, Settings>>> & {
   readonly inletRemovals?: readonly Settings[]
@@ -45,6 +48,7 @@ type SourceBindings = {
 }
 
 const successorFields = ['northWallWidthMm', 'memberLaw', 'jointLaw', 'boundaryActions'] as const
+const retainedFields = ['cutZMm', 'roofRiseMm', 'edits', 'retentionPaths'] as const
 const northFields = ['portAxisXYMm', 'dragDemandFactor', 'remoteMainBarShiftMm', 'chordBendRadiusMm',
   'toeTransferIntervalMm', 'keyContactTrial', 'placementToleranceMm', 'yawProbe', 'deadLoadReplay', 'portStrategy', 'dpcOriginAudit'] as const
 const foulFields = ['riserAxisXYMm', 'wetStackAirTakeoffZMm', 'terminalZMm', 'buriedReceiving'] as const
@@ -154,6 +158,7 @@ function admitStages(value: unknown): EngineeringStages {
   }
   const stages: EngineeringStages = {
     ...(Object.hasOwn(value, 'structuralSuccessor') ? { structuralSuccessor: settings(value.structuralSuccessor, successorFields, 'structural successor') } : {}),
+    ...(Object.hasOwn(value, 'retainedComponents') ? { retainedComponents: settings(value.retainedComponents, retainedFields, 'retained components') } : {}),
     ...(Object.hasOwn(value, 'northCollector') ? { northCollector: settings(value.northCollector, northFields, 'north collector') } : {}),
     ...(Object.hasOwn(value, 'rearFoulVent') ? { rearFoulVent: settings(value.rearFoulVent, foulFields, 'rear foul vent') } : {}),
     ...(Object.hasOwn(value, 'inletSillInsert') ? { inletSillInsert: settings(value.inletSillInsert, insertFields, 'inlet sill insert') } : {}),
@@ -185,6 +190,7 @@ export async function compileEngineeringDocument(input: unknown) {
   }
   const engineering: {
     structuralSuccessor?: Awaited<ReturnType<typeof compile.structuralSuccessorCase>>
+    retainedComponents?: Awaited<ReturnType<typeof compile.retainedComponentCase>>
     northCollector?: Awaited<ReturnType<typeof compile.northCollectorCase>>
     rearFoulVent?: Awaited<ReturnType<typeof compile.rearFoulVent>>
     inletSillInsert?: Awaited<ReturnType<typeof compile.inletSillInsert>>
@@ -210,6 +216,16 @@ export async function compileEngineeringDocument(input: unknown) {
     engineering.structuralSuccessor = await compile.structuralSuccessorCase({ ...request.successor,
       comparison: { ...request.successor.comparison, ...stages.structuralSuccessor } })
     recordResult('structuralSuccessor', stages.structuralSuccessor, engineering.structuralSuccessor)
+  }
+  if (stages.retainedComponents) {
+    const request = await compile.readRetainedComponentCase()
+    engineering.retainedComponents = await compile.retainedComponentCase({ ...request.retained,
+      cutZMm: stages.retainedComponents.cutZMm ?? request.retained.cutZMm,
+      roofRiseMm: stages.retainedComponents.roofRiseMm ?? request.retained.roofRiseMm,
+      componentCase: { ...request.retained.componentCase,
+        edits: stages.retainedComponents.edits ?? request.retained.componentCase.edits,
+        retentionPaths: stages.retainedComponents.retentionPaths ?? request.retained.componentCase.retentionPaths } })
+    recordResult('retainedComponents', stages.retainedComponents, engineering.retainedComponents)
   }
   const linkedPort = stages.northCollector?.portStrategy === 'linked-west-foul-route'
   let westVentCase: unknown
