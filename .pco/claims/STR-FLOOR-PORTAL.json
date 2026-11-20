@@ -9,9 +9,9 @@
     "label": "convergence-resumed-20261120"
   },
   "claimedAt": "2026-11-20T07:38:27.612Z",
-  "heartbeatAt": "2026-11-20T07:38:27.612Z",
-  "expiresAt": "2026-11-20T09:08:27.612Z",
-  "branch": "work/convergence-retained-recovery-20261120",
+  "heartbeatAt": "2026-11-20T08:02:10.681Z",
+  "expiresAt": "2026-11-20T09:32:10.681Z",
+  "branch": "work/convergence-joined-structure-20261120",
   "predecessor": {
     "leaseId": "dec44b72-4e34-40df-8172-25ba1d1a5e53",
     "generation": 44,
@@ -33,5 +33,10 @@
       "next": "Require exact newhead hosted CI and freshSTR preflight; merge retained comparison, then continue actual dry-side section and retention/joint proofs. HAD independently develops the fixed light-pipe inlet.",
       "blocker": "Actual local DPC bearing/shear, connected wall/floor/roof topology and moisture remain internal engineering; no structural closeout claimed."
     }
+  },
+  "checkpoint": {
+    "evidence": "PR1588 merged23b8a81c after fresh exact-head CI and canonical preflight; net component geometry and actual96case gravity replacement now current compiler/save/load/CLI/drawing",
+    "next": "Integrate whole dry ground-section alternatives and actual four-corner diaphragm/52head compatibility; source-bound methods and changes across outputs",
+    "blocker": "Complete signed support/contact/roof response and ground moisture/shear/architectural levels still unresolved; STR stays open"
   }
 }
