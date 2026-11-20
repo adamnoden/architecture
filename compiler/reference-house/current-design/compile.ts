@@ -107,6 +107,22 @@ export function prepareCurrentDesignCompile(input: unknown) {
       const { runStructuralInterfaces } = await import('./structural-interfaces.js')
       return runStructuralInterfaces(resolved, input)
     },
+    readDistributedFloorCase: async () => {
+      const { readDistributedFloorCase } = await import('./structural-distributed-floor.js')
+      return readDistributedFloorCase(resolved)
+    },
+    distributedFloorCase: async (input: unknown) => {
+      const { runDistributedFloorCase } = await import('./structural-distributed-floor.js')
+      return runDistributedFloorCase(resolved, input)
+    },
+    readGroundSectionCase: async () => {
+      const { readGroundSectionCase } = await import('./structural-ground.js')
+      return readGroundSectionCase(resolved)
+    },
+    groundSectionCase: async (input: unknown) => {
+      const { runGroundSectionCase } = await import('./structural-ground.js')
+      return runGroundSectionCase(resolved, input)
+    },
     readNorthCollectorCase: async () => {
       const { readNorthCollectorCase } = await import('./north-collector.js')
       return readNorthCollectorCase(resolved)
@@ -190,6 +206,14 @@ export function prepareCurrentDesignCompile(input: unknown) {
     inletFault: async (input: unknown, insertCase?: unknown) => {
       const { runInletFaultCase } = await import('./inlet-fault.js')
       return runInletFaultCase(resolved, input, insertCase)
+    },
+    readFixedInletCase: async () => {
+      const { readFixedInletCase } = await import('./inlet-fixed-case.js')
+      return readFixedInletCase(resolved)
+    },
+    fixedInletCase: async (input: unknown, sources?: { readonly insertCase?: unknown; readonly faultCase?: unknown }) => {
+      const { runFixedInletCase } = await import('./inlet-fixed-case.js')
+      return runFixedInletCase(resolved, input, sources)
     },
     readInletRemovalCases: async (insertCase?: unknown) => {
       const { readInletRemovalCases } = await import('./inlet-removal.js')

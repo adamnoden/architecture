@@ -1,10 +1,10 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import { compileEngineeringDocument, readEngineeringDocument } from './current-design/engineering-document.js'
+import { compileEngineeringDocument, readRetainedInletComparisonDocument } from './current-design/engineering-document.js'
 import { readGeorgianDesignSnapshot } from './current-design/georgian-source.js'
 
 async function document() {
-  const all = await readEngineeringDocument(readGeorgianDesignSnapshot())
+  const all = await readRetainedInletComparisonDocument(readGeorgianDesignSnapshot())
   const { inletSillInsert, inletFault, inletRemovals, inletCovers, inletAssembly } = all.stages
   return { ...all, stages: { inletSillInsert, inletFault, inletRemovals, inletCovers, inletAssembly } }
 }
