@@ -9,8 +9,8 @@
     "label": "convergence-inlet-resumed-20261120"
   },
   "claimedAt": "2026-11-20T07:39:02.850Z",
-  "heartbeatAt": "2026-11-20T18:09:23.000Z",
-  "expiresAt": "2026-11-20T18:54:23.000Z",
+  "heartbeatAt": "2026-11-20T18:39:41.000Z",
+  "expiresAt": "2026-11-20T19:24:41.000Z",
   "branch": "work/convergence-gravity-house-20261120",
   "predecessor": {
     "leaseId": "6d1a0dde-e1e3-4014-99e6-bac6f58d5756",
@@ -36,8 +36,8 @@
   },
   "pr": 1598,
   "checkpoint": {
-    "evidence": "PR1598 head04cd6d89: primary full health, complete publication validation and native dual preflight passed. Nine of10exact-head workflows green; ADE generality still in health. All619compiler/atlas tests pass; caption,261A4/315B5ledger and data plate are verified.",
-    "next": "Wait for final ADE workflow; refresh only native preflight, merge exact head, verify main/outputs, retire recovery ref, preserve1597handoff and release; monitor Pages recovery independently.",
-    "blocker": "Workspace unavailable. STR/HAD/roof/whole-house acceptance remains open; A/foundation/roof/wet/enclosure successors partly local. No owner/material/physical/professional approval."
+    "evidence": "Merged PR1598 at c1683cfc with shared frame solver, true retained mounts and 3.996 mm removal reserve. All 10 exact-head checks and fresh dual preflight passed. Local enclosure handoff: PR1597 comment7043849237.",
+    "next": "Recover enclosure candidate; replay changed stock/water/drag/seize loads in the same frame solver, then finish isolation, renewal, fault and material proof. Default wet neck remains rejected.",
+    "blocker": "Execution workspace unavailable; enclosure successor partly local-only. Whole support, containment, materials and occupied-house acceptance remain open."
   }
 }
