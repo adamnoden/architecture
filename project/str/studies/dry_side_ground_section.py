@@ -200,14 +200,16 @@ def derive_section(case, raw_sources):
     bind_sources(case, raw_sources)
     s = case['settings']
     if set(s) != {'caseId', 'courseBottomMm', 'exteriorGradeMm', 'localSolumMm', 'minimumGradeClearanceMm', 'approachSlopeRatio', 'newBeam',
-                  'rcDensityKNm3', 'mineralDensityBudgetKNm3', 'ordinaryBarClearanceMm', 'geometryOnly'}:
+                  'rcDensityKNm3', 'mineralDensityBudgetKNm3', 'ordinaryBarClearanceMm', 'geometryOnly', 'serviceZoneMm'}:
         raise ValueError('unsupported section settings')
     for key in ('courseBottomMm', 'exteriorGradeMm', 'localSolumMm', 'minimumGradeClearanceMm',
-                'approachSlopeRatio', 'rcDensityKNm3', 'mineralDensityBudgetKNm3', 'ordinaryBarClearanceMm'):
+                'approachSlopeRatio', 'rcDensityKNm3', 'mineralDensityBudgetKNm3', 'ordinaryBarClearanceMm', 'serviceZoneMm'):
         if type(s[key]) not in (int, float) or not math.isfinite(s[key]):
             raise ValueError('nonfinite section setting: ' + key)
     if not isinstance(s['caseId'], str) or not s['caseId'] or min(s[k] for k in ('approachSlopeRatio', 'rcDensityKNm3', 'mineralDensityBudgetKNm3')) <= 0:
         raise ValueError('unsupported section settings domain')
+    if not 0 < s['serviceZoneMm'] <= 500:
+        raise ValueError('service zone must be positive and no more than500mm in this comparison')
     h = json.loads(raw_sources['project/had/studies/water-replan.json'])['model']
     grid = json.loads(raw_sources['project/str/studies/current-house-grid.json'])
     floor_source = json.loads(raw_sources['project/str/studies/current-house-occupied-interfaces.json'])
@@ -215,9 +217,10 @@ def derive_section(case, raw_sources):
     lower_toe = json.loads(raw_sources['project/str/studies/open-loggia-support.json'])['finite_floor_frame']['stair']['ground_toe_support']
     mineral = json.loads(raw_sources['project/mat/studies/conventional-ground-junction.json'])['bondedMineralBase']
     member, mechanics = native_member_method(raw_sources['project/str/studies/current-house-bridge.py'])
-    layers = h['northNormalRoute']['floorJoin']['layers']
-    if layers != [15, 65, 100, 200] or grid['girders']['court-S']['z'] != [-630, -180]:
+    source_layers = h['northNormalRoute']['floorJoin']['layers']
+    if source_layers != [15, 65, 100, 200] or grid['girders']['court-S']['z'] != [-630, -180]:
         raise ValueError('unsupported source floor/grid domain')
+    layers = [source_layers[0], s['serviceZoneMm'], *source_layers[2:]]
     cold_top = grid['girders']['court-S']['z'][1]
     course_bottom = s['courseBottomMm']
     course_height = sum(mineral['beds']) + sum(mineral['courses'])
@@ -355,6 +358,8 @@ def derive_section(case, raw_sources):
     garden = approach(h['approaches']['garden'], garden_level - grade, s['approachSlopeRatio'])
     return {'schema': 'dry-side-ground-section-result/2', 'caseId': s['caseId'], 'status': 'source-bound proposal; geometry and local member comparisons only',
             'sources': case['sources'], 'selected': False, 'diagnostics': diagnostics,
+            'floorAssembly': {'sourceLayersTopDownMm': source_layers, 'authoredLayersTopDownMm': layers,
+                              'scope': 'Only service depth is authored here; finish, glass and slab retain their bound source. No installed service or structural evidence transfers.'},
             'levelsMm': {'coldGridTop': cold_top, 'wetRCPlinth': [cold_top, course_bottom], 'mineralCourse': [course_bottom, dry_bottom],
                          'dryRC': [dry_bottom, dry_top], 'glass': [dry_top, dry_top + layers[2]],
                          'accessibleDistribution': [dry_top + layers[2], ffl - layers[0]],

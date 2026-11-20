@@ -139,3 +139,9 @@ python3 -B project/str/studies/dry_side_ground_section.py --read |
 python3 -B project/str/studies/dry_side_ground_section.py --check
 python3 -B project/str/studies/dry_side_ground_section_test.py
 ```
+
+## Shared accessible floor depth
+
+The versioned ground-section case now owns `serviceZoneMm`, default65. A250mm trial produces FFL715 and the accessible interval450–700, with the same mineral0–150, RC150–350 and100mm glass350–450. Its15mm finish remains source-bound. The actual section and approach reservation recompute while RC quantities and support control stay unchanged. Zero/non-finite depths and depths above500mm reject within this comparison. This is an unselected geometry control, not an installed service or raised-house approval.
+
+Current service-floor adapters must consume these actual derived layers and the bound ground-case identity; they may not carry a separately editable715/350/450 assembly. A changed layer stack outside their native domain must diagnose or reject rather than borrow an earlier floor proof.

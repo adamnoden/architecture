@@ -78,6 +78,7 @@ export function runGroundSectionCase(resolved: CurrentDesignResolution, input: u
     throw new Error('The dry ground section does not match its current source and comparison boundary')
   }
   return { status: 'computed-comparison' as const,
+    authoredCase: structuredClone(input),
     source: { ...current.source, caseId: input.caseId, caseDigest: sha256SemanticFingerprint(input) },
     method: { id: 'str-separated-dry-ground/1', path: methodPath, blob: current.inputs[methodPath], inputs: current.inputs },
     native: output.result, sectionSvg: output.sectionSvg,

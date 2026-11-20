@@ -43,6 +43,10 @@ const trialModes: Readonly<Record<string, TrialMode>> = {
     schema: 'str-distributed-floor-request/1', key: 'floor', name: 'distributed floor',
     run: (compile, value) => compile.distributedFloorCase(value),
   },
+  '--joined-rc-floor': {
+    schema: 'str-current-rc-floor-request/1', key: 'joined', name: 'joined RC floor',
+    run: (compile, value) => compile.joinedRcFloorCase(value),
+  },
   '--structural-case': {
     schema: 'str-structural-case-request/1', key: 'case', name: 'structural',
     run: (compile, value) => compile.structuralCase(value),
@@ -102,12 +106,32 @@ async function runTrial(input: unknown, trial: TrialMode) {
   return trial.run(prepareCurrentDesignCompile(request.design), request[trial.key])
 }
 
+async function runGroundedServiceFloor(input: unknown, readCase: boolean) {
+  const request = input as Readonly<Record<string, unknown>>
+  const keys = readCase ? ['schema', 'design', 'ground'] : ['schema', 'design', 'groundSection', 'serviceFloor']
+  const schema = readCase ? 'str-dry-ground-request/1' : 'had-grounded-service-floor-request/1'
+  if (!request || typeof request !== 'object' || Array.isArray(request) || Object.keys(request).length !== keys.length
+      || request.schema !== schema || keys.some(key => !Object.hasOwn(request, key))) {
+    throw new Error(readCase ? 'Expected an explicit versioned ground-section request to read the service floor'
+      : 'Expected a grounded service-floor request with authored groundSection and serviceFloor cases')
+  }
+  const compile = prepareCurrentDesignCompile(request.design)
+  const groundCase = readCase ? request.ground : request.groundSection
+  const ground = await compile.groundSectionCase(groundCase)
+  if (readCase) {
+    const floor = await compile.readServiceFloorCase(ground)
+    return { schema: 'had-grounded-service-floor-request/1', design: floor.design, groundSection: groundCase, serviceFloor: floor.serviceFloor }
+  }
+  return compile.serviceFloorCase(request.serviceFloor, ground)
+}
+
 const args = process.argv.slice(2)
 const modes = [
   '--occupied-services', '--occupied-service-drawings', '--selected-water-event', '--structural-bridge', '--structural-actions',
   '--bundle', '--read-engineering', '--read-retained-inlet-comparison', '--study-assembly', '--study-linings', '--renewable-openings',
+  '--read-service-floor', '--service-floor',
   '--read-roof-pitch', '--read-court-intake', '--read-inlet-route', '--read-east-ground-receiving',
-  '--read-occupied-condensate', '--read-structural-successor', '--read-retained-components', '--read-ground-section', '--read-distributed-floor', '--read-structural-case', '--read-structural-interfaces',
+  '--read-occupied-condensate', '--read-structural-successor', '--read-retained-components', '--read-ground-section', '--read-distributed-floor', '--read-joined-rc-floor', '--read-structural-case', '--read-structural-interfaces',
   '--read-north-collector', '--read-rear-foul-vent', '--read-inlet-sill-insert', '--read-inlet-fault', '--read-fixed-inlet', '--read-inlet-removal', '--read-inlet-cover', ...Object.keys(trialModes),
 ]
 const mode = modes.includes(args[0]) ? args.shift() : undefined
@@ -123,6 +147,8 @@ try {
     const input: unknown = JSON.parse(text)
     if (mode && Object.hasOwn(trialModes, mode)) {
       process.stdout.write(JSON.stringify(await runTrial(input, trialModes[mode])) + '\n')
+    } else if (mode === '--read-service-floor' || mode === '--service-floor') {
+      process.stdout.write(JSON.stringify(await runGroundedServiceFloor(input, mode === '--read-service-floor'), null, 2) + '\n')
     } else if (mode === '--renewable-openings') {
       if (!input || typeof input !== 'object' || !('schema' in input) || input.schema !== 'renewable-opening-request/1'
         || !('design' in input) || Object.keys(input).some(key => !['schema', 'design', 'study'].includes(key))) {
@@ -142,6 +168,7 @@ try {
     } else {
       const compile = prepareCurrentDesignCompile(input)
       if (mode === '--read-distributed-floor') process.stdout.write(JSON.stringify(await compile.readDistributedFloorCase(), null, 2) + '\n')
+      else if (mode === '--read-joined-rc-floor') process.stdout.write(JSON.stringify(await compile.readJoinedRcFloorCase(), null, 2) + '\n')
       else if (mode === '--read-ground-section') process.stdout.write(JSON.stringify(await compile.readGroundSectionCase(), null, 2) + '\n')
       else if (mode === '--read-roof-pitch') process.stdout.write(JSON.stringify(await compile.readRoofPitchCase(), null, 2) + '\n')
       else if (mode === '--read-court-intake') process.stdout.write(JSON.stringify(await compile.readCourtIntakeCase(), null, 2) + '\n')

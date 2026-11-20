@@ -30,6 +30,21 @@
         "UPPER_COMPONENT_WITHOUT_DIRECT_MINERAL_SUPPORT:court-south-native-ground-core-0",
         "UPPER_COMPONENT_WITHOUT_DIRECT_MINERAL_SUPPORT:court-west-native-ground-core-0"
       ],
+      "floorAssembly": {
+        "sourceLayersTopDownMm": [
+          15,
+          65,
+          100,
+          200
+        ],
+        "authoredLayersTopDownMm": [
+          15,
+          65,
+          100,
+          200
+        ],
+        "scope": "Only service depth is authored here; finish, glass and slab retain their bound source. No installed service or structural evidence transfers."
+      },
       "levelsMm": {
         "coldGridTop": -180,
         "wetRCPlinth": [
@@ -1735,6 +1750,21 @@
         "UPPER_COMPONENT_WITHOUT_DIRECT_MINERAL_SUPPORT:court-south-native-ground-core-0",
         "UPPER_COMPONENT_WITHOUT_DIRECT_MINERAL_SUPPORT:court-west-native-ground-core-0"
       ],
+      "floorAssembly": {
+        "sourceLayersTopDownMm": [
+          15,
+          65,
+          100,
+          200
+        ],
+        "authoredLayersTopDownMm": [
+          15,
+          65,
+          100,
+          200
+        ],
+        "scope": "Only service depth is authored here; finish, glass and slab retain their bound source. No installed service or structural evidence transfers."
+      },
       "levelsMm": {
         "coldGridTop": -180,
         "wetRCPlinth": [

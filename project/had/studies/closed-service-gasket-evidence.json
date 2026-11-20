@@ -1,0 +1,14 @@
+{
+  "identity": "KLINGER-PSM-NL-NOV2025-2MM-B-UNCOATED",
+  "url": "https://www.klinger.nl/downloads/631/datasheet-klinger-psm-bas.pdf",
+  "accessed": "2026-11-20",
+  "edition": "November 2025",
+  "variant": "Uncoated PSM, 2 mm, B quality; AS coating excluded",
+  "constituents": "Expanded graphite mechanically reinforced with 0.1 mm tanged AISI316(L); source states adhesive/resin/impregnation/organic-free. Optional anti-stick is not specified.",
+  "typicalMinimumStressMPa": 13,
+  "minimumStressTest": "Qmin(L=0.1), room temperature, 40 bar helium, EN13555. This is a material benchmark, not our rectangular low-head water-joint certification.",
+  "sourceThicknessTolerancePercent": 5,
+  "sourceCompressibilityPercent": [35, 45],
+  "exactWaterSealOrOwnerMaterialAdmission": false,
+  "remaining": "Exact ordered variant, exposed graphite shedding, constituents/residues, chlorides/contact corrosion, flange contact distribution, bolting and cyclic water leak test. UK PSM/AS coating variant is not silently substituted."
+}

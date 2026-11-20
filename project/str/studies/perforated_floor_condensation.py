@@ -68,9 +68,18 @@ def positive_energy_modes(matrix):
     return modes, error
 
 
-def compile_perforated_floor(bodies, omissions, loops, corner_patches, law, max_pitch_mm, pressure_rows=()):
+def compile_perforated_floor(bodies, omissions, loops, corner_patches, law, max_pitch_mm, pressure_rows=(), boundary_receivers=()):
     if not law or not all(math.isfinite(value) and value > 0 for key, value in law.items() if key != 'poissonRatio') or not 0 <= law['poissonRatio'] < .5:
         raise ValueError('An explicit positive finite membrane and edge law is required')
+    port_ids={row['id'] for row in corner_patches}
+    for receiver in boundary_receivers:
+        if set(receiver)!={'id','axis','datum','width','lo','hi','stations','shearPhi'} or receiver['axis']!=0 or any(type(receiver[key]) not in (int,float) or not math.isfinite(receiver[key]) for key in ('datum','width','lo','hi')) or not receiver['lo']<receiver['hi'] or receiver['width']<=0:
+            raise ValueError('Unsupported explicit horizontal finite beam receiver')
+        stations=receiver['stations']
+        if len(stations)<2 or len(receiver['shearPhi'])!=len(stations)-1 or any(set(row)!={'id','x'} or row['id'] not in port_ids or type(row['x']) not in (int,float) or not math.isfinite(row['x']) for row in stations):
+            raise ValueError('Finite beam receiver requires existing retained station ports')
+        if any(a['x']>=b['x'] for a,b in pairwise(stations)) or any(not math.isfinite(value) or value<0 for value in receiver['shearPhi']):
+            raise ValueError('Unordered or nonfinite beam receiver interpolation')
     bounds = [min(row[0] for row in bodies), min(row[1] for row in bodies), max(row[2] for row in bodies), max(row[3] for row in bodies)]
     coordinates = []
     for axis in (0, 1):
@@ -82,6 +91,11 @@ def compile_perforated_floor(bodies, omissions, loops, corner_patches, law, max_
             raw.update(value for value in [loop['lo']-loop['width']/2, loop['hi']+loop['width']/2] if bounds[axis] <= value <= bounds[axis+2])
         for corner in corner_patches:
             raw.update(value for rectangle in corner['rectangles'] for value in rectangle[axis::2] if bounds[axis] <= value <= bounds[axis+2])
+        for receiver in boundary_receivers:
+            if axis==receiver['axis']:
+                raw.update(value for value in [receiver['lo'],receiver['hi'],*[row['x'] for row in receiver['stations']]] if bounds[axis]<=value<=bounds[axis+2])
+            else:
+                raw.update(value for value in [receiver['datum']-receiver['width']/2,receiver['datum'],receiver['datum']+receiver['width']/2] if bounds[axis]<=value<=bounds[axis+2])
         values = []
         for a, b in pairwise(sorted(raw)):
             n = max(1, math.ceil((b-a)/max_pitch_mm))
@@ -118,12 +132,37 @@ def compile_perforated_floor(bodies, omissions, loops, corner_patches, law, max_
             if any(rectangle[0]-1e-6 <= point[0] <= rectangle[2]+1e-6 and rectangle[1]-1e-6 <= point[1] <= rectangle[3]+1e-6 for rectangle in corner['rectangles']):
                 return corner
         return None
+    def boundary_terms(point,axis):
+        for receiver in boundary_receivers:
+            if not receiver['lo']-1e-6<=point[0]<=receiver['hi']+1e-6 or abs(point[1]-receiver['datum'])>receiver['width']/2+1e-6:
+                continue
+            stations=receiver['stations'];u=point[0];offset=point[1]-receiver['datum']
+            if u<=stations[0]['x'] or u>=stations[-1]['x']:
+                row=stations[0] if u<=stations[0]['x'] else stations[-1]
+                identifier=row['id'];dx=u-row['x']
+                values={0:[(identifier,0,1.),(identifier,2,-offset)],1:[(identifier,1,1.),(identifier,2,dx)],2:[(identifier,2,1.)]}[axis]
+            else:
+                index=next(i for i,(a,b) in enumerate(pairwise(stations)) if a['x']<=u<=b['x'])
+                a,b=stations[index:index+2];length=b['x']-a['x'];v=(u-a['x'])/length;phi=receiver['shearPhi'][index];den=1+phi
+                lateral=[(1-3*v*v+2*v**3+phi*(1-v))/den,length*(v-2*v*v+v**3+phi*(v-v*v)/2)/den,
+                         (3*v*v-2*v**3+phi*v)/den,length*(-v*v+v**3+phi*(-v+v*v)/2)/den]
+                rotation=[6*(v*v-v)/(length*den),(1-4*v+3*v*v+phi*(1-v))/den,
+                          6*(v-v*v)/(length*den),(-2*v+3*v*v+phi*v)/den]
+                transverse=[(a['id'],1,lateral[0]),(a['id'],2,lateral[1]),(b['id'],1,lateral[2]),(b['id'],2,lateral[3])]
+                turning=[(a['id'],1,rotation[0]),(a['id'],2,rotation[1]),(b['id'],1,rotation[2]),(b['id'],2,rotation[3])]
+                values=[(a['id'],0,1-v),(b['id'],0,v)]+[(identifier,coordinate,-offset*coefficient) for identifier,coordinate,coefficient in turning] if axis==0 else transverse if axis==1 else turning
+            return [(dof(('corner',identifier,coordinate)),coefficient) for identifier,coordinate,coefficient in values if coefficient]
+        return None
     def axis_terms(point, axis):
+        boundary=boundary_terms(point,axis)
+        if boundary is not None:return boundary
         corner = owner(point)
         if corner:
             return corner_terms(point, corner, axis)
         return [(dof(('ring',point,axis)),1.)]
     def mesh_terms(point, axis):
+        boundary=boundary_terms(point,axis)
+        if boundary is not None:return boundary
         corner = owner(point)
         if corner:
             return corner_terms(point, corner, axis)
@@ -168,6 +207,8 @@ def compile_perforated_floor(bodies, omissions, loops, corner_patches, law, max_
         for a,b in pairwise(stations):
             p,q = ((a,datum),(b,datum)) if axis == 0 else ((datum,a),(datum,b))
             length = b-a
+            if any(receiver['axis']==axis and abs(receiver['datum']-datum)<1e-6 and receiver['lo']-1e-6<=a and b<=receiver['hi']+1e-6 for receiver in boundary_receivers):
+                continue
             axial = law['edgeAxialRigidityKN']/length
             _add(matrix,[axis_terms(p,axis),axis_terms(q,axis)],[[axial,-axial],[-axial,axial]])
             ei = law['edgeElasticModulusMPa']*law['edgeFlexuralFactor']*depth*width**3/12/1000
@@ -205,7 +246,7 @@ def compile_perforated_floor(bodies, omissions, loops, corner_patches, law, max_
         edge_records.append({**loop,'segmentCount':len(stations)-1})
     retained = list(range(len(corner_patches)*3))
     inverse = {value:key for key,value in dofs.items()}
-    cache_key = hashlib.sha256(json.dumps([bodies,omissions,loops,corner_patches,law,max_pitch_mm],sort_keys=True,separators=(',',':'),allow_nan=False).encode()).hexdigest()
+    cache_key = hashlib.sha256(json.dumps([bodies,omissions,loops,corner_patches,law,max_pitch_mm]+([boundary_receivers] if boundary_receivers else []),sort_keys=True,separators=(',',':'),allow_nan=False).encode()).hexdigest()
     cached = _OPERATOR_CACHE.get(cache_key)
     if cached is None:
         interiors = set(matrix)-set(retained)
@@ -249,4 +290,4 @@ def compile_perforated_floor(bodies, omissions, loops, corner_patches, law, max_
             'triangleCount':len(triangles),'pointCount':len(mesh_points),'assembledDofCount':len(dofs),'interiorDofCount':len(steps),
             'membraneAreaM2':area_total/1e6,'meshTrianglesXYMm':triangles,'bands':edge_records,'ports':corner_patches,
             'omissionsXYMm':omissions,'coordinateColumns':coordinates,'unqualifiedLaw':law,
-            'portCoordinates':['ux_mm','uy_mm','1000*rz_rad']}
+            'portCoordinates':['ux_mm','uy_mm','1000*rz_rad'],**({'finiteBeamBoundaryReceivers':boundary_receivers} if boundary_receivers else {})}

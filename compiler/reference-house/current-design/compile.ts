@@ -4,6 +4,7 @@ import { candidatePlanMethod, createCandidatePlanScene } from './candidate-plan.
 import { resolveCurrentDesign, type CurrentDesignResolution } from './resolve.js'
 import type { StoreyId } from './snapshot.js'
 import type { InletCoverSources } from './inlet-cover.js'
+import type { runGroundSectionCase } from './structural-ground.js'
 
 type Domain = 'plans' | 'occupied-services' | 'selected-water-event'
 type CompileDiagnostic = {
@@ -123,9 +124,25 @@ export function prepareCurrentDesignCompile(input: unknown) {
       const { runGroundSectionCase } = await import('./structural-ground.js')
       return runGroundSectionCase(resolved, input)
     },
+    readServiceFloorCase: async (ground: ReturnType<typeof runGroundSectionCase>) => {
+      const { readServiceFloorCase } = await import('./service-floor.js')
+      return readServiceFloorCase(resolved, ground)
+    },
+    serviceFloorCase: async (input: unknown, ground: ReturnType<typeof runGroundSectionCase>) => {
+      const { runServiceFloorCase } = await import('./service-floor.js')
+      return runServiceFloorCase(resolved, ground, input)
+    },
     readNorthCollectorCase: async () => {
       const { readNorthCollectorCase } = await import('./north-collector.js')
       return readNorthCollectorCase(resolved)
+    },
+    readJoinedRcFloorCase: async () => {
+      const { readJoinedRcFloorCase } = await import('./structural-rc-floor.js')
+      return readJoinedRcFloorCase(resolved)
+    },
+    joinedRcFloorCase: async (input: unknown) => {
+      const { runJoinedRcFloorCase } = await import('./structural-rc-floor.js')
+      return runJoinedRcFloorCase(resolved, input)
     },
     northCollectorCase: async (input: unknown, westVentCase?: unknown) => {
       const { runNorthCollectorCase } = await import('./north-collector.js')

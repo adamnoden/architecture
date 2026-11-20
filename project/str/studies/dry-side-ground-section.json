@@ -38,7 +38,8 @@
     "rcDensityKNm3": 25,
     "mineralDensityBudgetKNm3": 20,
     "ordinaryBarClearanceMm": 21,
-    "geometryOnly": "No source-bound physical mineral course or retention capacity is accepted."
+    "geometryOnly": "No source-bound physical mineral course or retention capacity is accepted.",
+    "serviceZoneMm": 65
   },
   "recommendedCaseId": "raised-530-local-solum",
   "cases": [

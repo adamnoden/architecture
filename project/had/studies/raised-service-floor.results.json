@@ -1,0 +1,788 @@
+{
+  "schema": "raised-service-floor-result/1",
+  "selected": false,
+  "installedAcceptance": false,
+  "caseDigest": "6567a6a19fcdb2647ca8ad26bbd1f01a8f22889d070e7c14c03f84d9f435cf71",
+  "sourceSHA256": {
+    "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+    "project/had/studies/water-replan.mjs": "9ef245c2f354dcd4952e3ffe2d07a24b3d8fff4a73257bca8d9d27627015c078",
+    "project/mat/studies/upper-access-renewal.json": "54481965f1ac39b83b8725e2550ab5c0f3e3e5b60df4e23ad55c9f4fc20b2114",
+    "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+    "project/mat/studies/loggia-envelope-section.json": "ae5972c3030fbf2c8a8175761637246f6c36fce7dc699db24d589fbd203ac8d1",
+    "project/rwt/studies/open-loggia-event.json": "ab123fbc8ef4b916088c75a8d15d7f0f105f2e95f0383f951ea86322ac41520e",
+    "project/rwt/studies/selected-receiving-interface.json": "b0c85061120dcf1ef79e0d40606848b2f82802801a58ae197b3950c371130b65",
+    "project/triad-interface-contract.md": "3f489e840a2711873b9a8148970507e9504c31f5ad482967af6cfcccb2f42810",
+    "project/owner-house-charter.md": "891ed6b72ff7452826a18bf5f91458746b8594a5c5ac89f75407e9a40b776371",
+    "project/had/studies/raised_service_floor.py": "f3b3f34764b156e194f291c349b84e5938389001b60fa9d15845664c564446f2",
+    "project/mat/joined-ground-floor-and-court-boundary.md": "4b35b8d898a04994d950da1cdd51539c4388fb68519f8c51cdd6dff86cedbd1b"
+  },
+  "settings": {
+    "accessibleZoneMm": 250,
+    "exteriorGradeMm": -150,
+    "routeEndXmm": 12750,
+    "channelWidthMm": 300,
+    "medianRailWidthMm": 80,
+    "outerRailWidthMm": 80,
+    "routeCentreYMm": 6875,
+    "upstreamInvertMm": 543.5,
+    "slopeRatio": 85,
+    "bodyDepthMm": 85,
+    "designWaterDepthMm": 65,
+    "bedDebrisMm": 10,
+    "lapIntrusionMm": 3,
+    "remainingWidthFraction": 0.8,
+    "roughness": 0.025,
+    "lapLossK": 0.2,
+    "entryLossK": 2,
+    "outletLossK": 1,
+    "settingLossMm": 10,
+    "splashAndFreeboardReserveMm": 10,
+    "coverPlateMm": 12,
+    "headerPlateMm": 44,
+    "coverPointLoadKN": 2,
+    "coverLiveLoadKPa": 2,
+    "coverStressScreenMPa": 150,
+    "coverElasticModulusMPa": 190000,
+    "moduleMaximumMm": 550,
+    "renewalLiftMm": 250,
+    "headerFrontYMm": [
+      6500,
+      7375
+    ],
+    "headerBlockedFraction": 0.5,
+    "referenceAirgapMm": 200,
+    "openRenewalLiftMm": 350,
+    "coverInsulationMm": 50,
+    "coverUndersheetMm": 1.5,
+    "coverCoreDensityKgM3": 110,
+    "coverConductivityWmK": 0.041,
+    "scupperRawSpanMm": 1200,
+    "scupperSpringMm": 1000,
+    "scupperRiseMm": 150,
+    "scupperRingMm": 215,
+    "scupperJambGlassMm": 110,
+    "scupperFinishMm": 27,
+    "coverThicknessLossMm": 1,
+    "headerThicknessLossMm": 2
+  },
+  "comparisonStatus": "rejected",
+  "blockers": [
+    "OPEN_HEADER_CONNECTS_SOURCE_QUIET_STAGE_ABOVE_U_CREST"
+  ],
+  "levelsMm": {
+    "mineral": [
+      0,
+      150
+    ],
+    "RC": [
+      150,
+      350
+    ],
+    "glass": [
+      350,
+      450
+    ],
+    "accessible": [
+      450,
+      700
+    ],
+    "finish": [
+      700,
+      715
+    ],
+    "ffl": 715,
+    "occupiedTranslation": 715,
+    "courtSouth": 715,
+    "courtNorth": 605,
+    "firstFFL": 4165,
+    "eaves": 7815,
+    "ridge": 8805.903773579372,
+    "firstAboveNominalExterior": 4315,
+    "actualLowestAdjacentGround": null,
+    "groundCoreHeightMm": 3535,
+    "groundCoreHeightAdditionVsSourceMm": 185
+  },
+  "approaches": {
+    "front": {
+      "riseMm": 865,
+      "slopingRunMm": 17300,
+      "flightsMm": [
+        9000,
+        8300
+      ],
+      "landingCount": 3,
+      "landingLengthMm": 1200,
+      "totalReservationMm": 20900
+    },
+    "garden": {
+      "riseMm": 712.5,
+      "slopingRunMm": 14250.0,
+      "flightsMm": [
+        8000,
+        6250.0
+      ],
+      "landingCount": 3,
+      "landingLengthMm": 1200,
+      "totalReservationMm": 17850.0
+    }
+  },
+  "route": {
+    "xMm": [
+      7750,
+      12750
+    ],
+    "grossYmm": [
+      6449.0,
+      7301.0
+    ],
+    "panOuterYmm": [
+      [
+        6529.0,
+        6835.0
+      ],
+      [
+        6915.0,
+        7221.0
+      ]
+    ],
+    "dryRailsYmm": [
+      [
+        6449.0,
+        6529.0
+      ],
+      [
+        6835.0,
+        6915.0
+      ],
+      [
+        7221.0,
+        7301.0
+      ]
+    ],
+    "clearChannelCount": 2,
+    "clearEachMm": 300,
+    "invertEndsZMm": [
+      543.5,
+      484.6764705882353
+    ],
+    "crestEndsZMm": [
+      628.5,
+      569.6764705882354
+    ],
+    "minimumMineralWedgeAbove100GlassMm": 29.676470588235304,
+    "minimumSolePlateToPanMm": 23.676470588235304,
+    "bodyWallAndLapStackMm": 5,
+    "lapCount": 9,
+    "modules": [
+      {
+        "id": "court-east",
+        "xMm": [
+          7750,
+          8179.5
+        ],
+        "wall": "court-east",
+        "lengthMm": 429.5,
+        "bedZMm": [
+          543.5,
+          538.4470588235295
+        ],
+        "maximumWetCrestMm": 628.5,
+        "renewalLiftMm": 250,
+        "bareUStockMassKgPerChannel": 2.42238,
+        "fullBodyToFloorAfterLiftAnd10Mm": 58.44705882352946,
+        "handling": "N verified/full-duty; E isolated/drained. Remove only own covers, release top-access saddle; retain ordinary dry rails and100glass. Capture and lift the small U; no sliding press joint, long under-house carriage or floor/DPC cut."
+      },
+      {
+        "id": "field/1",
+        "xMm": [
+          8179.5,
+          8691.25
+        ],
+        "wall": null,
+        "lengthMm": 511.75,
+        "bedZMm": [
+          538.4470588235295,
+          532.4264705882352
+        ],
+        "maximumWetCrestMm": 623.4470588235295,
+        "renewalLiftMm": 350,
+        "bareUStockMassKgPerChannel": 2.88627,
+        "fullBodyToFloorAfterLiftAnd10Mm": 152.42647058823525,
+        "handling": "N verified/full-duty; E isolated/drained. Remove only own covers, release top-access saddle; retain ordinary dry rails and100glass. Capture and lift the small U; no sliding press joint, long under-house carriage or floor/DPC cut."
+      },
+      {
+        "id": "field/3",
+        "xMm": [
+          8691.25,
+          9203.0
+        ],
+        "wall": null,
+        "lengthMm": 511.75,
+        "bedZMm": [
+          532.4264705882352,
+          526.4058823529411
+        ],
+        "maximumWetCrestMm": 617.4264705882352,
+        "renewalLiftMm": 350,
+        "bareUStockMassKgPerChannel": 2.88627,
+        "fullBodyToFloorAfterLiftAnd10Mm": 146.40588235294115,
+        "handling": "N verified/full-duty; E isolated/drained. Remove only own covers, release top-access saddle; retain ordinary dry rails and100glass. Capture and lift the small U; no sliding press joint, long under-house carriage or floor/DPC cut."
+      },
+      {
+        "id": "spine-weather",
+        "xMm": [
+          9203,
+          9722.5
+        ],
+        "wall": "spine-weather",
+        "lengthMm": 519.5,
+        "bedZMm": [
+          526.4058823529411,
+          520.2941176470588
+        ],
+        "maximumWetCrestMm": 611.4058823529411,
+        "renewalLiftMm": 250,
+        "bareUStockMassKgPerChannel": 2.9299799999999996,
+        "fullBodyToFloorAfterLiftAnd10Mm": 40.29411764705878,
+        "handling": "N verified/full-duty; E isolated/drained. Remove only own covers, release top-access saddle; retain ordinary dry rails and100glass. Capture and lift the small U; no sliding press joint, long under-house carriage or floor/DPC cut."
+      },
+      {
+        "id": "field/4",
+        "xMm": [
+          9722.5,
+          10227.083333333334
+        ],
+        "wall": null,
+        "lengthMm": 504.58333333333394,
+        "bedZMm": [
+          520.2941176470588,
+          514.3578431372549
+        ],
+        "maximumWetCrestMm": 605.2941176470588,
+        "renewalLiftMm": 350,
+        "bareUStockMassKgPerChannel": 2.8458500000000035,
+        "fullBodyToFloorAfterLiftAnd10Mm": 134.35784313725492,
+        "handling": "N verified/full-duty; E isolated/drained. Remove only own covers, release top-access saddle; retain ordinary dry rails and100glass. Capture and lift the small U; no sliding press joint, long under-house carriage or floor/DPC cut."
+      },
+      {
+        "id": "field/6",
+        "xMm": [
+          10227.083333333334,
+          10731.666666666666
+        ],
+        "wall": null,
+        "lengthMm": 504.5833333333321,
+        "bedZMm": [
+          514.3578431372549,
+          508.421568627451
+        ],
+        "maximumWetCrestMm": 599.3578431372549,
+        "renewalLiftMm": 350,
+        "bareUStockMassKgPerChannel": 2.8458499999999933,
+        "fullBodyToFloorAfterLiftAnd10Mm": 128.42156862745105,
+        "handling": "N verified/full-duty; E isolated/drained. Remove only own covers, release top-access saddle; retain ordinary dry rails and100glass. Capture and lift the small U; no sliding press joint, long under-house carriage or floor/DPC cut."
+      },
+      {
+        "id": "field/8",
+        "xMm": [
+          10731.666666666666,
+          11236.25
+        ],
+        "wall": null,
+        "lengthMm": 504.58333333333394,
+        "bedZMm": [
+          508.421568627451,
+          502.4852941176471
+        ],
+        "maximumWetCrestMm": 593.421568627451,
+        "renewalLiftMm": 350,
+        "bareUStockMassKgPerChannel": 2.8458500000000035,
+        "fullBodyToFloorAfterLiftAnd10Mm": 122.48529411764707,
+        "handling": "N verified/full-duty; E isolated/drained. Remove only own covers, release top-access saddle; retain ordinary dry rails and100glass. Capture and lift the small U; no sliding press joint, long under-house carriage or floor/DPC cut."
+      },
+      {
+        "id": "field/10",
+        "xMm": [
+          11236.25,
+          11740.833333333334
+        ],
+        "wall": null,
+        "lengthMm": 504.58333333333394,
+        "bedZMm": [
+          502.4852941176471,
+          496.54901960784315
+        ],
+        "maximumWetCrestMm": 587.4852941176471,
+        "renewalLiftMm": 350,
+        "bareUStockMassKgPerChannel": 2.8458500000000035,
+        "fullBodyToFloorAfterLiftAnd10Mm": 116.54901960784309,
+        "handling": "N verified/full-duty; E isolated/drained. Remove only own covers, release top-access saddle; retain ordinary dry rails and100glass. Capture and lift the small U; no sliding press joint, long under-house carriage or floor/DPC cut."
+      },
+      {
+        "id": "field/12",
+        "xMm": [
+          11740.833333333334,
+          12245.416666666666
+        ],
+        "wall": null,
+        "lengthMm": 504.5833333333321,
+        "bedZMm": [
+          496.54901960784315,
+          490.6127450980392
+        ],
+        "maximumWetCrestMm": 581.5490196078431,
+        "renewalLiftMm": 350,
+        "bareUStockMassKgPerChannel": 2.8458499999999933,
+        "fullBodyToFloorAfterLiftAnd10Mm": 110.61274509803923,
+        "handling": "N verified/full-duty; E isolated/drained. Remove only own covers, release top-access saddle; retain ordinary dry rails and100glass. Capture and lift the small U; no sliding press joint, long under-house carriage or floor/DPC cut."
+      },
+      {
+        "id": "field/14",
+        "xMm": [
+          12245.416666666666,
+          12750.0
+        ],
+        "wall": null,
+        "lengthMm": 504.58333333333394,
+        "bedZMm": [
+          490.6127450980392,
+          484.6764705882353
+        ],
+        "maximumWetCrestMm": 575.6127450980392,
+        "renewalLiftMm": 350,
+        "bareUStockMassKgPerChannel": 2.8458500000000035,
+        "fullBodyToFloorAfterLiftAnd10Mm": 104.67647058823536,
+        "handling": "N verified/full-duty; E isolated/drained. Remove only own covers, release top-access saddle; retain ordinary dry rails and100glass. Capture and lift the small U; no sliding press joint, long under-house carriage or floor/DPC cut."
+      }
+    ],
+    "fixedGridCrossings": [
+      {
+        "id": "outer-E",
+        "actualZMm": [
+          -630,
+          -180
+        ],
+        "routeBottomAtFarFaceMm": 487.11764705882354,
+        "clearAboveActualRCMm": 667.1176470588235,
+        "RCcut": false
+      },
+      {
+        "id": "court-E",
+        "actualZMm": [
+          -630,
+          -180
+        ],
+        "routeBottomAtFarFaceMm": 532.6176470588235,
+        "clearAboveActualRCMm": 712.6176470588235,
+        "RCcut": false
+      },
+      {
+        "id": "spine",
+        "actualZMm": [
+          -630,
+          -180
+        ],
+        "routeBottomAtFarFaceMm": 514.9705882352941,
+        "clearAboveActualRCMm": 694.9705882352941,
+        "RCcut": false
+      }
+    ],
+    "newWallOpenings": [
+      {
+        "id": "court-east",
+        "wallXmm": [
+          7750,
+          8179.5
+        ],
+        "newRawYmm": [
+          6250.0,
+          7450.0
+        ],
+        "newFinishedYmm": [
+          6387.0,
+          7313.0
+        ],
+        "centreYMm": 6850,
+        "retainedWindowSillZMm": 1465,
+        "rawBottomZMm": 350,
+        "bottomGlassReturnMm": 100,
+        "sideAndSoffitGlassFinishMm": [
+          110,
+          27
+        ],
+        "sourceWeatherGlassControlMm": 200,
+        "localGlassReductionMm": 90,
+        "aboveFloorScupperHeightMm": 298,
+        "fullAboveFloorClosureAndReleaseQualified": false,
+        "sillZMm": 450,
+        "springZMm": 1000,
+        "crownZMm": 1150,
+        "ringOuterCrownZMm": 1365,
+        "toRetainedWindowSillMm": 100,
+        "ringLoadsQualified": false,
+        "masonryOpeningIsNew": true,
+        "bodyLiftToFiniteIntradosAfter5Mm": 67.32665890002932,
+        "fullRouteSideReserveMm": 7.0,
+        "parkAfterShortDrawXmm": [
+          8200,
+          8629.5
+        ],
+        "parkToGalleryAfter10Mm": 10.5,
+        "shortDrawMm": 450,
+        "verticalLiftMm": 250,
+        "noRCorDPCcut": true,
+        "firstGripAndLoadedHandlerQualified": false,
+        "sequence": "Remove own short covers. Lift within new finite scupper, draw short wall U into the open1023.5gallery bay, then carry to a rated rest. Grip/force/operator state and removable weather/air closure remain explicit unqualified duties."
+      },
+      {
+        "id": "spine-weather",
+        "wallXmm": [
+          9203,
+          9722.5
+        ],
+        "newRawYmm": [
+          6300.0,
+          7500.0
+        ],
+        "newFinishedYmm": [
+          6437.0,
+          7363.0
+        ],
+        "centreYMm": 6900.0,
+        "retainedWindowSillZMm": null,
+        "rawBottomZMm": 350,
+        "bottomGlassReturnMm": 100,
+        "sideAndSoffitGlassFinishMm": [
+          110,
+          27
+        ],
+        "sourceWeatherGlassControlMm": 200,
+        "localGlassReductionMm": 90,
+        "aboveFloorScupperHeightMm": 298,
+        "fullAboveFloorClosureAndReleaseQualified": false,
+        "sillZMm": 450,
+        "springZMm": 1000,
+        "crownZMm": 1150,
+        "ringOuterCrownZMm": 1365,
+        "toRetainedWindowSillMm": null,
+        "ringLoadsQualified": false,
+        "masonryOpeningIsNew": true,
+        "bodyLiftToFiniteIntradosAfter5Mm": 84.42077654708817,
+        "fullRouteSideReserveMm": 7.0,
+        "parkAfterShortDrawXmm": [
+          8653,
+          9172.5
+        ],
+        "parkToGalleryAfter10Mm": 20.5,
+        "shortDrawMm": -550,
+        "verticalLiftMm": 250,
+        "noRCorDPCcut": true,
+        "firstGripAndLoadedHandlerQualified": false,
+        "sequence": "Remove own short covers. Lift within new finite scupper, draw short wall U into the open1023.5gallery bay, then carry to a rated rest. Grip/force/operator state and removable weather/air closure remain explicit unqualified duties."
+      }
+    ],
+    "checks": {
+      "panTo100GlassAnd20Support": 4.676470588235304,
+      "closedCoverToWetCrest": 3.0,
+      "bodyFreeboardAfterReserve": 10,
+      "routeTo1200Passage": 139.0,
+      "newInletToDisabledNPlan": 90,
+      "designWaterToQuietAfterReserve": 61.5,
+      "medianForTwo25Seats": 30,
+      "outerRailFor25Seat": 55,
+      "inletQReserveLps": 1.4295111187733296,
+      "outletInsideExistingReceiverAfter100Mm": 150
+    }
+  },
+  "hydraulics": {
+    "dutyLps": 3.60375,
+    "catchmentM2": 60.0625,
+    "rainfallMmHour": 216,
+    "sourceDutyIsSyntheticNotSiteRainfall": true,
+    "scenarios": {
+      "normal": {
+        "remainingClearWidthMm": 300,
+        "grossWaterDepthMm": 65,
+        "bedDebrisMm": 10,
+        "lapIntrusionMm": 3,
+        "effectiveDepthMm": 52,
+        "roughness": 0.025,
+        "dutyLps": 1.801875,
+        "velocityMps": 0.11550480769230768,
+        "frictionHeadMm": 3.194423558805331,
+        "minorLossK": 4.8,
+        "minorHeadMm": 3.2639414312017068,
+        "availableFallAfterSettingMm": 48.8235294117647,
+        "headReserveMm": 42.36516442175766,
+        "comparisonPass": true,
+        "method": "Rectangular Manning friction plus explicitly authored local K; no fitted inlet/joint/debris or tailwater qualification."
+      },
+      "one-half-blocked": {
+        "remainingClearWidthMm": 300,
+        "grossWaterDepthMm": 65,
+        "bedDebrisMm": 10,
+        "lapIntrusionMm": 3,
+        "effectiveDepthMm": 52,
+        "roughness": 0.025,
+        "dutyLps": 3.60375,
+        "velocityMps": 0.23100961538461537,
+        "frictionHeadMm": 12.777694235221324,
+        "minorLossK": 4.8,
+        "minorHeadMm": 13.055765724806827,
+        "availableFallAfterSettingMm": 48.8235294117647,
+        "headReserveMm": 22.990069451736552,
+        "comparisonPass": true,
+        "method": "Rectangular Manning friction plus explicitly authored local K; no fitted inlet/joint/debris or tailwater qualification."
+      },
+      "half-plus20pct-width": {
+        "remainingClearWidthMm": 240.0,
+        "grossWaterDepthMm": 65,
+        "bedDebrisMm": 10,
+        "lapIntrusionMm": 3,
+        "effectiveDepthMm": 52,
+        "roughness": 0.025,
+        "dutyLps": 3.60375,
+        "velocityMps": 0.2887620192307692,
+        "frictionHeadMm": 21.696447912720046,
+        "minorLossK": 4.8,
+        "minorHeadMm": 20.39963394501067,
+        "availableFallAfterSettingMm": 48.8235294117647,
+        "headReserveMm": 6.727447554033986,
+        "comparisonPass": true,
+        "method": "Rectangular Manning friction plus explicitly authored local K; no fitted inlet/joint/debris or tailwater qualification."
+      }
+    },
+    "header": {
+      "planXYMm": [
+        7300,
+        6500,
+        7750,
+        7375
+      ],
+      "commonToEHalvesNotSharedWithN": true,
+      "halfBlockedWorstRemainingYmm": [
+        6500,
+        6937.5
+      ],
+      "quietStageZMm": 680,
+      "courtLipEndsZMm": [
+        655.0,
+        620.0
+      ],
+      "idealWeirCapacityLps": 5.033261118773329,
+      "grateOpenFraction": 0.44178646691106466,
+      "halfBlockedIdealOrificeHeadMm": 0.243053482687632,
+      "medianSupportInsideHeader": false,
+      "loadPath": "Full-width removable grates span two independent dry side frames; no median beam obstructs one-half-blocked cross-feed.",
+      "actualOutdoorSideFrameBearings": null,
+      "panBareSheetMassKgBeforeFrameAndSaddles": 5.643000000000001,
+      "topRemovalLiftMm": 350,
+      "fittedTurnAndBlockedApproachQualified": false
+    }
+  },
+  "headerBackwaterRejection": {
+    "sourceQuietStageMm": 680,
+    "sourceSplashAndToleranceMm": [
+      25,
+      25
+    ],
+    "sourceLocatedProtectionCrestMm": 730,
+    "ordinaryUcrestMm": 628.5,
+    "quietStageAboveUcrestMm": 51.5,
+    "thermalSkinBottomMm": 636.5,
+    "protectionCrestAboveThermalSkinMm": 93.5,
+    "allFrontLipsBelowSourceQuiet": true,
+    "physicalAirbreakOrBackwaterBarrierPresent": false,
+    "reason": "The low-flow calculation is conditional. The open source-connected front does not geometrically exclude the source quiet pool from the header/body. No open-U containment or full-interface admission follows from a calculated low-flow stage."
+  },
+  "covers": {
+    "ordinary": {
+      "spanMm": 350,
+      "steelThicknessMm": 12,
+      "authoredThicknessLossMm": 1,
+      "effectiveMinimumSteelThicknessMm": 11,
+      "controllingNetWidthPer100Mm": 100,
+      "deadLoadKPa": 1.4960250000000002,
+      "pointLoadKN": 2,
+      "liveLoadKPa": 2,
+      "ULSMomentNmm": 270186.3141796875,
+      "stressMPa": 133.9766847172004,
+      "authoredStressScreenMPa": 150,
+      "deflectionMm": 0.8801147640502356,
+      "deflectionScreenL300Mm": 1.1666666666666667,
+      "panelLengthMm": 250,
+      "panelWidthMm": 356,
+      "panelMassKgBeforeHardware": 13.5725,
+      "comparisonPass": true,
+      "capacityAdmitted": false,
+      "boundary": "Metal E/stress are authored numerical controls. Exact grade, perforation stress concentration, edge/seat/contact, stone retention and fitted test remain unqualified."
+    },
+    "header": {
+      "spanMm": 906,
+      "steelThicknessMm": 44,
+      "authoredThicknessLossMm": 2,
+      "effectiveMinimumSteelThicknessMm": 42,
+      "controllingNetWidthPer100Mm": 18.75,
+      "deadLoadKPa": 1.9275783153800643,
+      "pointLoadKN": 2,
+      "liveLoadKPa": 2,
+      "ULSMomentNmm": 736981.4082501559,
+      "stressMPa": 133.6927724716836,
+      "authoredStressScreenMPa": 150,
+      "deflectionMm": 1.5654669898956013,
+      "deflectionScreenL300Mm": 3.02,
+      "panelLengthMm": 75,
+      "panelWidthMm": 931,
+      "panelMassKgBeforeHardware": 13.719995501673088,
+      "comparisonPass": true,
+      "capacityAdmitted": false,
+      "boundary": "Metal E/stress are authored numerical controls. Exact grade, perforation stress concentration, edge/seat/contact, stone retention and fitted test remain unqualified."
+    },
+    "stoneFixing": "Captive mechanical edge retention; no adhesive or stone-composite resistance credited.",
+    "loadPath": "Stone/plate\u2192dry25mm seats\u2192separate mineral rails\u21926mm160wide sole\u2192continuous100bare glass\u2192RC. Wet U and its joints carry no walking cover load.",
+    "thermalCassette": {
+      "glassCoreMm": 50,
+      "undersheetMm": 1.5,
+      "coreAndSkinZMm": [
+        636.5,
+        688
+      ],
+      "coreFieldWidthMm": 306,
+      "conductivityComparisonWmK": 0.041,
+      "coreOnlyResistanceM2KperW": 1.2195121951219512,
+      "airBoundary": "Static retained metal/replaceable compression flange along dry rails and slot returns; no open exterior air connection to occupied service floor is admitted.",
+      "assembledAirThermalAndCondensationAdmitted": false,
+      "deliveredCoreStockAndConstituentsAdmitted": false
+    },
+    "medianServiceLineKNm": 1.7548776250000002,
+    "conservativePointBearingOnGlassMPa": 0.13596798515625,
+    "railSolePlateMm": [
+      160,
+      6
+    ],
+    "railStemWidthsMm": {
+      "median": 80,
+      "outer": 80
+    },
+    "railStemHeightMm": 232,
+    "sole40mmCantileverServiceStressMPa": 18.1290646875,
+    "addedOrdinaryCoverSteelStockKg": 341.76,
+    "ordinaryCoverStoneAndPlateStockKg": 480.6,
+    "glassCreepAndConfinementQualified": false,
+    "railStabilitySeatAndConnectionQualified": false
+  },
+  "north": {
+    "actualSourceRoute": "independent250clear Ntrunk and cross-intake; no new connection to E",
+    "translatedCarrierBottomYZMm": [
+      [
+        7000,
+        508.75
+      ],
+      [
+        7750,
+        501.25
+      ],
+      [
+        12000,
+        458.75
+      ],
+      [
+        13200,
+        446.75
+      ]
+    ],
+    "actualFixedGridCrossings": [
+      {
+        "id": "low-tie-8050",
+        "actualZMm": [
+          -750,
+          -550
+        ],
+        "conservativeTranslatedBareBedReserveMm": 993.75
+      },
+      {
+        "id": "low-tie-11667",
+        "actualZMm": [
+          -750,
+          -550
+        ],
+        "conservativeTranslatedBareBedReserveMm": 993.75
+      }
+    ],
+    "newHeaderOverlapWithActualNInletRegions": [],
+    "sourcePortalCoreBandsYmm": [
+      [
+        7975,
+        8190
+      ],
+      [
+        11560,
+        11775
+      ]
+    ],
+    "trunkSideReserveToSourceWrappedWestPierMm": 25,
+    "translatedFinishedPortalSpringZMm": 2841.5422357208927,
+    "new715WalkingToTranslatedPortalHeadroomMm": 2126.5422357208927,
+    "source110PedestalReserveAboveHypotheticalContinuous100GlassAtHouseEdgeMm": -104.25,
+    "translatedOutletZMm": 115,
+    "translatedReceivingMaximumZMm": -85,
+    "oldPedestalHeightMm": 110,
+    "supportApplicability": "INAPPLICABLE: old110pedestals/RCrecess/cover bearings have not been extended to this715proposal on unchanged fixedgrid. New actual N support/air/door/receiving geometry required before N may back Emaintenance.",
+    "outdoorLoggiaIsNotAssumedToHaveOccupied100Glass": "AtY12000 the translated bareU leaves5.75 above hypotheticalglass450, not110 for oldpedestals. Outdoor loggia insulation/recess/support levels must be explicitly reauthored; no need is waived and no occupied-layer stack is silently copied into it.",
+    "fullDutyAndMaintenanceAdmitted": false
+  },
+  "eastReceiver": {
+    "sourceTerritoryXYMm": [
+      12500,
+      6100,
+      2000,
+      1600
+    ],
+    "twoOutletCentresXYZMm": [
+      [
+        12750,
+        6682.0,
+        484.6764705882353
+      ],
+      [
+        12750,
+        7068.0,
+        484.6764705882353
+      ]
+    ],
+    "requiredMaximumReceivingWaterZMm": 284.6764705882353,
+    "siteWaterOrSpillLevelsInvented": false,
+    "oldDeepCartridgeAndHeadLimitsSuperseded": true,
+    "passiveSpillSupportAndActualOutfallAdmitted": false
+  },
+  "ground": {
+    "oldTrackLowMm": -1132.358823529412,
+    "oldCatchLowMm": -1188,
+    "oldServiceRequiredDmm": 1688,
+    "unchangedStructuralRequiredDmm": 1250,
+    "newKnownEEnvelopeRequiredDmm": 150,
+    "translatedBareNEnvelopeRequiredDmm": 56.25,
+    "knownEnvelopeRequiredDmm": 1250,
+    "completeInterfaceMinimumDmm": null,
+    "trialSolumOrExteriorAdopted": false,
+    "reason": "Retire Etrack and80OD catch mechanism only in this proposal;1250fixedhead/heave control remains. Nsupports and new outdoorheader/terminal foundations have no complete source envelope."
+  },
+  "remainingProof": [
+    "new court/spine under-window scupper arches, weather/air returns and actual load transfer; no old wall result inherited",
+    "complete Nsupport/receiver/door/floor rewrite on these actual715datums before it can back Emaintenance",
+    "actual outdoor header bearings and terminal supports, without inventing a foundation below them",
+    "source-qualified U/saddle/copper seal, formed bends, debris/entry/fullone-halfblocked/receiver water proof",
+    "loaded wall-module first grip, operator/shortdraw/rest and cover handling; geometric body motion is not complete handling",
+    "glass creep/confinement, dry rail/seat/sole stability and fitted cover/perforation resistance",
+    "3D thermal/condensation and airtight renewable opening boundary;100glass remains beneath trough",
+    "full revised gravity/wind/roof/DPC/head response, owner715appearance/approach and real site/receiving evidence"
+  ],
+  "retiredOnlyWithinProposal": [
+    "deep Eintake well",
+    "two-piece under-gallery drawer",
+    "2100mm joint tool",
+    "horizontal withdrawal rails/hoist/rack",
+    "low80OD flange-catch pipe"
+  ],
+  "completeReplacementAdmitted": false
+}

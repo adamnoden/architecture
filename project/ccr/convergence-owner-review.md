@@ -1,0 +1,78 @@
+# The courtyard house and the crafted Study
+
+**Recommendation:** retain the accepted courtyard plan and develop the timber Study as the preferred interior proposal. Keep the tiled room as a fair appearance comparison. The structural and raised-ground alternatives below have real architectural consequences; none has yet replaced the accepted house.
+
+This is an owner-review index of the actual drawings, with their differences exposed. The five principal views are frozen from the existing current gallery at [source 08b11134](https://github.com/adamnoden/architecture/tree/08b11134af37453ea258a53bbb18551b32b33be0). That source was published in **draft [PR #1597](https://github.com/adamnoden/architecture/pull/1597)**; this package does not record a merge or an owner decision. [Exact visual and source identities](studies/convergence-owner-review/sources.json).
+
+## Read the house in five views
+
+The accepted working basis is the **12 m square house with a 3.5 m open court**, five front bays, a centred entrance and a west return stair. These views use `RH-LAYOUT-REVISION-02` / `RH-LAYOUT-FAMILY-02`, with nominal ground/first floors **0 / +3450 mm**. Sections and elevations retain their provisional assemblies and roof details; accepted layout is distinct from selected engineering. [Owning basis and limitations](../../docs/reference-house/current-house-basis.md).
+
+| View | What to judge |
+|---|---|
+| [1 · Ground floor](studies/convergence-owner-review/01-ground.svg) | Entrance–court–garden sequence, the two-window Study, kitchen/family relationship and the cost of the eastern service strip. |
+| [2 · First floor](studies/convergence-owner-review/02-first.svg) | Four-bedroom arrangement, the entrance void and bridge, west gallery and compact bathroom reservations. |
+| [3 · Principal section](studies/convergence-owner-review/03-principal-section.svg) | Room height, court enclosure, stair/void relationship and the roof's visible scale. Floor and foundation hatching are reservations. |
+| [4 · Front elevation](studies/convergence-owner-review/04-front.svg) | Quiet five-bay order, paired entrance and sash proportions. The drawing retains the accepted window grid. |
+| [5 · Roof and court](studies/convergence-owner-review/05-roof-court.svg) | The inward/outward 25° roof and the need to collect water at both eaves. Dashed collection is a reserve, not a sized drainage system. |
+
+![Accepted nominal ground-floor arrangement](studies/convergence-owner-review/01-ground.svg)
+
+![Accepted nominal first-floor arrangement](studies/convergence-owner-review/02-first.svg)
+
+![Current drawing-family principal section with provisional construction zones](studies/convergence-owner-review/03-principal-section.svg)
+
+![Current drawing-family front elevation and accepted aperture grid](studies/convergence-owner-review/04-front.svg)
+
+![Current drawing-family roof and courtyard with unresolved collection reserves](studies/convergence-owner-review/05-roof-court.svg)
+
+The court is an inhabited external room, not merely a drainage aperture. Read its [north entrance elevation](studies/convergence-owner-review/court-north.svg) and [south window elevation](studies/convergence-owner-review/court-south.svg) beside the section. The [four exterior isometrics](../../docs/reference-house/exterior-isometrics.md) show the same accepted massing.
+
+## What has developed beyond these drawings
+
+| Status | Actual proposal and visual | Architectural consequence |
+|---|---|---|
+| **Selected for architectural development** | [Open north loggia and independent east water route: plan and section](../had/studies/water-replan.svg); [owning selection](../had/water-replan-result.md) | A real northern opening and east under-gallery route supersede the earlier north-only water arrangement. This conditional development is not depicted by simply relabelling the nominal plans above. |
+| **Rejected cage; architectural replacement proposed** | [Continuous RC/whole-floor comparison](../str/studies/monolithic-rc-native31-floor.svg); [ground-joint barrier](../str/studies/monolithic-rc-native31-barrier.svg); [owning RC challenger](../str/continuous-rc-portal-challenger.md) | The crossing arch/post cage is [rejected](../str/continuous-rc-closed-links.md). The [recommended straight-frame/separate masonry-arch direction](../str/portal-architectural-simplification.md) keeps finished2400/775 but reduces local jamb glass to60mm; its complete load path and thermal junction remain unproved. The retained full-height RC reference and floor upstands show the source-bound force comparison. The proposed removal of the visible transom needs appearance judgement. Its source ground FFL is **0 mm**; first-floor RC spans **3170–3370 mm**, below the same **3450 mm** first-floor finish with an 80 mm gross finish/service zone. The metal barrier and reinforcing/contact path remain unqualified. |
+| **Candidate — separated dry ground** | [Raised-house section and approaches](../str/studies/dry-side-ground-section.svg); [owning comparison](../str/dry-side-ground-section.md) | Preferred development FFL **+530 mm** imposes a substantial accessible approach and a distinct local-solum obligation. The **+715 mm** service-floor trial comes from increasing that candidate's service zone; it has no unified RC/roof/house drawing. Neither is an adopted plinth or site datum. |
+| **Candidate — closed service floor** | [Split lids, east body and north support](../had/studies/closed-service-floor.svg); [owning comparison](../had/closed-service-floor-comparison.md) | A separately supported floor and maintainable water body are plausible design work, with pressure sealing, handling, compatible support and weather duties still open. Its drawn stack belongs to the explicit raised-ground case, not the RC comparison above. |
+| **Rejected wet/support detail; lower pipe retained for development** | [Fixed inlet proposal](../had/fixed-inlet-entry-candidate.md) and [compact receiver development](../had/fixed-inlet-receiver-development.md) | Joint-free lower tubes replace the rejected loaded carrier. The actual82OD collar clashes and the wet low-chassis screen fails; a conventional shared service frame is being developed. These remain development details; cold upper-pipe support and actual grip/material/wet duties are unresolved. They do not authorise the structural window rewind. |
+
+The accepted south Utility opening is **X9700–10700**. The structural rewind and current inlet host use **X9400–10400**. The light pipes fit the accepted aperture, but restoring its jambs also changes the corner toe, receiver lever and wind proof. Preserve the accepted uniform window grid as the architectural constraint; neither a convenient support nor a good local pipe fit chooses a new facade. [Owning corner disposition](../str/whole-house-corner-rewind.md) · [shared interface](../triad-interface-contract.md).
+
+The **3450 mm first-floor finish and 3170–3370 mm structural slab are compatible layer datums**, not competing floor heights. The real unresolved change is the proposed ground rise and its consequences for supports, approaches, occupied services and roof interfaces. No composite resolved-house image adopts the +715 ground trial while retaining untransformed source-ground details. The drawings above remain the architectural reference while those actual changes are coordinated.
+
+## The interior should earn its place on beauty
+
+The [completed IAS proposal](../ias/crafted-room-kit-result.md), integrated through [PR #1584](https://github.com/adamnoden/architecture/pull/1584), puts a fixed furnished room beside hung timber faces and seated oak floor modules. The furniture and occupied-room openings are matched. This is the strongest available appearance comparison, rather than an isolated panel detail.
+
+![Same furnished Study: conventional fixed joinery at left, removable timber proposal at right](studies/convergence-owner-review/study-fixed-timber.svg)
+
+**Prefer the timber direction:** warm wall fields, substantial skirt and cornice, local mouldings and a floor pattern that absorbs the 300 mm module seams. The removable room must look as composed as the fixed room. The complete tiled-wall comparison is much heavier and more fragmented; retain it as an alternative to judge, not the dry Study default or a claimed waterproof room.
+
+![Matched furnished tiled Study comparison](studies/convergence-owner-review/study-tile.svg)
+
+Read the [eight timber wall faces](../ias/studies/crafted-study-whole-timber.svg) and [coordinated floor](../ias/studies/crafted-study-coordinated-floor.svg) against those furnished views. The [floor/cornice/threshold sections](../ias/studies/crafted-study-junctions.svg), [fixed protective return](../ias/studies/crafted-study-wall-transition.svg) and [key seats](../ias/studies/crafted-study-floor-keys.svg) show what the appearance demands of the hidden interfaces. Decorative release does not remove the permanent protective layer or carry the services.
+
+For an ordinary renewal, the [eastern](../ias/studies/crafted-study-handling-east.svg), [northern](../ias/studies/crafted-study-handling-north.svg) and [corner](../ias/studies/crafted-study-handling-corner.svg) views show actual furniture staging, the person, the moving finish and the supported temporary rest. The nominal source now has a geometric operation for every shaped floor piece. Real loaded handling, tolerance, reinstatement and the one-hour installation ambition remain unearned. In particular, the tight floor-support depth and small board-clearance reserves are not construction allowances.
+
+The occupied Study opening/set-out still differs from the nominal house plan; the wall-hung inlet support is a stated candidate. Judge the matched room comparison at that scope, then reconcile its actual openings and support with the selected house before calling it the interior scheme.
+
+## The owner decision this package prepares
+
+At the existing **post-integration design gate**, the useful decision is whether the **joined house and timber room are a desirable home**: court and entrance sequence, facade rhythm, visible plinth/approach and northern opening, then the timber room's proportions, grain, seams, mouldings and brass interfaces against the fixed and tile alternatives. Aesthetic approval must attach to the drawings actually shown, with any requested changes recorded there. It cannot be inferred from passing calculations.
+
+That joined appearance decision is **not requested by this index**: the unresolved datum/window/support choices above still prevent one honest whole-house proposal. Once they are reconciled, bring the affected five views and inhabited room back together at the same revision. Final rendered book/drawing acceptance remains the separate existing owner gate. No new review packet or additional approval layer is created. [Owner charter](../owner-house-charter.md#book-stage-assurance-boundary--14-november-2026) · [interior review brief](../ias/crafted-room-kit-brief.md).
+
+## Book and house correspondence
+
+These are specific editorial boundaries to preserve, not reasons to disguise the remaining architecture.
+
+| Source address | Finding and required reading |
+|---|---|
+| [Part IV, opening paragraph](../../docs/manuscript/part-iv.md) versus [active plate registry](../../publication/plates-current.ts) | The opening now identifies the **current nominal plans and matched IAS Study proposals** inserted by the active registry. Historical and conditional technical plates retain their explicit limits; the corrected paragraph transfers no engineering or appearance acceptance. |
+| [Original Georgian re-plan](../../docs/reference-house/georgian-replan.md) versus [accepted revision 02](../../docs/reference-house/layout-revision-02.md) | The earlier 3.6 m court and attic-stair narrative is historical. The accepted 3.5 m court, revised rooms and ground–first return stair control the five views here. Do not use the original page as the current brief. |
+| [Nominal current-house basis](../../docs/reference-house/current-house-basis.md#dimensions-and-rooms-in-the-accepted-layout) versus [RC challenger](../str/continuous-rc-portal-challenger.md) and [raised-ground comparison](../str/dry-side-ground-section.md) | The nominal first-floor finish is +3450; RC underside/top are +3170/+3370 and its membrane port is at +3270. These are compatible construction layers. The proposed +530/+715 ground changes still require a real joined transformation, and the nominal section alone supplies no structural or service-floor acceptance. |
+| [Part IV floor-zone and interior prose](../../docs/manuscript/part-iv.md#the-floor-zone), [active Study plate captions](../../publication/plates-current.ts) and [IAS result](../ias/crafted-room-kit-result.md) | The prose correctly retains an unselected floor/interior and the captions disclose the occupied opening mismatch. Keep those qualifications when replacing pictures; the timber proposal and ordinary geometric renewal do not select the entire assembly. |
+
+*Reference design — not released for construction. Assumptions and outstanding verification accompany the proposal; internal checks do not constitute external assurance or certification.*

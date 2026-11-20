@@ -13,10 +13,16 @@ test('the fixed inlet is the same saved, edited and CLI proposal with exact upst
   const document = { ...source, stages: { inletSillInsert: source.stages.inletSillInsert,
     inletFault: source.stages.inletFault, fixedInlet: request.fixed.settings } }
   const before = await compileEngineeringDocument(JSON.parse(JSON.stringify(document)))
-  assert.equal(before.engineering.fixedInlet?.status, 'conditional-whole-arrangement')
+  assert.equal(before.engineering.fixedInlet?.status, 'rejected-geometry')
   assert.equal(before.engineering.fixedInlet?.source.insertCaseDigest, before.engineering.inletSillInsert?.source.caseDigest)
   assert.equal(before.engineering.fixedInlet?.source.faultCaseDigest, before.engineering.inletFault?.source.caseDigest)
   assert.equal(before.engineering.fixedInlet?.evidence.preSiteArrangementComplete, false)
+  assert.ok(before.engineering.fixedInlet?.geometryBlockers.includes('utility:CURRENT_CLEAR_THROAT_BODY_INTERCEPTS_CELL'))
+  assert.equal(before.engineering.fixedInlet?.wetSupportDevelopment.source.candidateCaseDigest, before.engineering.fixedInlet?.source.caseDigest)
+  assert.equal(before.engineering.fixedInlet?.wetSupportDevelopment.completeSupportCapacity, false)
+  assert.equal(before.engineering.fixedInlet?.supportDevelopment.source.candidateCaseDigest,
+    before.engineering.fixedInlet?.source.caseDigest)
+  assert.equal(before.engineering.fixedInlet?.supportDevelopment.evidence.completeSupportCapacity, false)
   assert.equal(before.engineering.inletRemovals, undefined)
   const changed = { ...document, stages: { ...document.stages,
     fixedInlet: { ...document.stages.fixedInlet, riserYMm: request.fixed.settings.riserYMm + 20 } } }
@@ -40,4 +46,34 @@ test('the fixed inlet is the same saved, edited and CLI proposal with exact upst
   const failed = await compileEngineeringDocument(fault)
   assert.equal(failed.engineering.fixedInlet?.status, 'rejected-geometry')
   assert.ok(failed.engineering.fixedInlet?.geometryBlockers.includes('plant:SOURCE_FED_FAULT_PATH_REJECTED'))
+})
+
+test('saved inlet temperature changes recompute both thermal subroutes and actual receiver wrenches without moving the pipe or fault case', async () => {
+  const source = await readEngineeringDocument(readGeorgianDesignSnapshot())
+  const document = { ...source, stages: { inletSillInsert: source.stages.inletSillInsert,
+    inletFault: source.stages.inletFault, fixedInlet: source.stages.fixedInlet } }
+  const before = await compileEngineeringDocument(document)
+  const changed = { ...document, stages: { ...document.stages,
+    fixedInlet: { ...document.stages.fixedInlet, localPipeTemperatureRangeK: 80 } } }
+  const after = await compileEngineeringDocument(changed)
+  const baseline = before.engineering.fixedInlet
+  const edited = after.engineering.fixedInlet
+  assert.ok(baseline && edited)
+  const original = baseline.supportDevelopment
+  const result = edited.supportDevelopment
+  assert.ok(Math.abs(result.thermal[0].result.combinedFixedPointWrench.forceComponentBoundsN[1]
+    - 2 * original.thermal[0].result.combinedFixedPointWrench.forceComponentBoundsN[1]) < .000001)
+  assert.notDeepEqual(result.receivers.guidedRoute.actions.thermalActionWrenches,
+    original.receivers.guidedRoute.actions.thermalActionWrenches)
+  assert.notDeepEqual(result.receivers.guidedRoute.elasticComparisons, original.receivers.guidedRoute.elasticComparisons)
+  assert.deepEqual(result.receivers.guidedRoute.geometry, original.receivers.guidedRoute.geometry)
+  assert.deepEqual(edited.branches.map(branch => branch.pressurePathMm), baseline.branches.map(branch => branch.pressurePathMm))
+  assert.deepEqual(after.engineering.inletFault, before.engineering.inletFault)
+  assert.deepEqual(after.plans, before.plans)
+  assert.equal(result.evidence.selectedHouseAdoption, false)
+  assert.equal(result.evidence.fullLodgeAndHouseSupportNetworkEstablished, false)
+  const cli = JSON.parse(execFileSync(process.execPath, ['--import', 'tsx', 'scripts/compile-current-design.ts', '--bundle', '-'], {
+    input: JSON.stringify(changed), encoding: 'utf8', maxBuffer: 32 * 1024 * 1024,
+  }))
+  assert.deepEqual(cli.engineering.fixedInlet.supportDevelopment, JSON.parse(JSON.stringify(result)))
 })
