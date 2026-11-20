@@ -132,3 +132,21 @@ jobs:
           path: ${{ runner.temp }}/publication-review-manifest.json
           if-no-files-found: error
           retention-days: 7
+
+  publication-preflight:
+    name: Canonical publication preflight
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+      - uses: ./.github/actions/control-runtime
+      - name: Verify exact submitted head and each canonical lease
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node --import tsx scripts/project-pr-preflight.ts
