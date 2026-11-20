@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs'
 import { compileCurrentDesignBundle, prepareCurrentDesignCompile } from '../compiler/reference-house/current-design/compile.js'
 import { readGeorgianDesignSnapshot } from '../compiler/reference-house/current-design/georgian-source.js'
-import { compileEngineeringDocument, readEngineeringDocument } from '../compiler/reference-house/current-design/engineering-document.js'
+import { compileEngineeringDocument, readEngineeringDocument, readRetainedInletComparisonDocument } from '../compiler/reference-house/current-design/engineering-document.js'
 
 type Compile = ReturnType<typeof prepareCurrentDesignCompile>
 type TrialMode = {
@@ -97,7 +97,7 @@ async function runTrial(input: unknown, trial: TrialMode) {
 const args = process.argv.slice(2)
 const modes = [
   '--occupied-services', '--occupied-service-drawings', '--selected-water-event', '--structural-bridge', '--structural-actions',
-  '--bundle', '--read-engineering', '--study-assembly', '--study-linings', '--renewable-openings',
+  '--bundle', '--read-engineering', '--read-retained-inlet-comparison', '--study-assembly', '--study-linings', '--renewable-openings',
   '--read-roof-pitch', '--read-court-intake', '--read-inlet-route', '--read-east-ground-receiving',
   '--read-occupied-condensate', '--read-structural-successor', '--read-retained-components', '--read-structural-case', '--read-structural-interfaces',
   '--read-north-collector', '--read-rear-foul-vent', '--read-inlet-sill-insert', '--read-inlet-fault', '--read-fixed-inlet', '--read-inlet-removal', '--read-inlet-cover', ...Object.keys(trialModes),
@@ -122,6 +122,8 @@ try {
       }
       const compile = prepareCurrentDesignCompile(input.design)
       process.stdout.write(JSON.stringify(await compile.renewableOpenings('study' in input ? input.study : undefined)) + '\n')
+    } else if (mode === '--read-retained-inlet-comparison') {
+      process.stdout.write(JSON.stringify(await readRetainedInletComparisonDocument(input), null, 2) + '\n')
     } else if (mode === '--read-engineering') {
       process.stdout.write(JSON.stringify(await readEngineeringDocument(input), null, 2) + '\n')
     } else if (mode === '--bundle') {

@@ -110,7 +110,7 @@ function acceptedCompile(design: unknown) {
   return { resolved, compile: prepareCurrentDesignCompile(resolved.design) }
 }
 
-export async function readEngineeringDocument(design: unknown) {
+export async function readRetainedInletComparisonDocument(design: unknown) {
   const { resolved, compile } = acceptedCompile(design)
   const [north, foul, sill] = await Promise.all([
     compile.readNorthCollectorCase(), compile.readRearFoulVentCase(), compile.readInletSillInsertCase(),
@@ -138,6 +138,12 @@ export async function readEngineeringDocument(design: unknown) {
         ordinaryHandling: JSON.parse(readFileSync(new URL('project/ias/studies/crafted-study-handling-plan.json', repository), 'utf8')) }, studyFields),
     },
   }
+}
+
+export async function readEngineeringDocument(design: unknown) {
+  const retained = await readRetainedInletComparisonDocument(design)
+  const { inletRemovals: _removals, inletCovers: _covers, inletAssembly: _assembly, ...stages } = retained.stages
+  return { ...retained, stages: { ...stages, fixedInlet: readFixedInletSettings() } }
 }
 
 function branchSettings(value: unknown, fields: readonly string[], name: string) {

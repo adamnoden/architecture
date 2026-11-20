@@ -19,7 +19,7 @@ test('the fixed inlet is the same saved, edited and CLI proposal with exact upst
   assert.equal(before.engineering.fixedInlet?.evidence.preSiteArrangementComplete, false)
   assert.equal(before.engineering.inletRemovals, undefined)
   const changed = { ...document, stages: { ...document.stages,
-    fixedInlet: { ...document.stages.fixedInlet, riserYMm: 605 } } }
+    fixedInlet: { ...document.stages.fixedInlet, riserYMm: request.fixed.settings.riserYMm + 20 } } }
   const after = await compileEngineeringDocument(changed)
   assert.notDeepEqual(after.engineering.fixedInlet?.drawing, before.engineering.fixedInlet?.drawing)
   assert.notDeepEqual(after.engineering.fixedInlet?.branches.map(branch => branch.pressurePathMm), before.engineering.fixedInlet?.branches.map(branch => branch.pressurePathMm))

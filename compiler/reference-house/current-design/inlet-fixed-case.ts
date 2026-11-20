@@ -13,6 +13,7 @@ function boundSource(resolved: CurrentDesignResolution) {
   const implementations = Object.fromEntries([
     'compiler/reference-house/current-design/inlet-fixed-case.ts',
     'compiler/reference-house/current-design/inlet-fixed-entry.ts',
+    'compiler/reference-house/current-design/inlet-fixed-operating.ts',
     'project/had/studies/incoming-water-geometry.mjs',
     'project/had/studies/service-interface-geometry.mjs',
     'project/had/studies/south-inlet-relief-hydraulics.mjs',
