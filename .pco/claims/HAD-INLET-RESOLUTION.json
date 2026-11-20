@@ -9,8 +9,8 @@
     "label": "convergence-inlet-resumed-20261120"
   },
   "claimedAt": "2026-11-20T07:39:02.850Z",
-  "heartbeatAt": "2026-11-20T16:40:56.000Z",
-  "expiresAt": "2026-11-20T17:25:56.000Z",
+  "heartbeatAt": "2026-11-20T16:55:41.000Z",
+  "expiresAt": "2026-11-20T17:40:41.000Z",
   "branch": "work/convergence-gravity-house-20261120",
   "predecessor": {
     "leaseId": "6d1a0dde-e1e3-4014-99e6-bac6f58d5756",
@@ -36,8 +36,8 @@
   },
   "pr": 1598,
   "checkpoint": {
-    "evidence": "PR1598 final head ee2fa922: native A/B receipt reproduces exactly and9precision/geometry tests pass. Paired typography/ledger PASS at261A4/315B5; generated data plate reconciled. Seven of10exact-head workflows passed; full health and ADE regressions continue.",
-    "next": "Finish exact-head CI and fresh dual canonical preflight, merge1598 and verify publication/hygiene. Preserve detailed1597 successor handoff, then release at the execution-environment blocker.",
-    "blocker": "Execution workspace unavailable (fresh pwd check failed). Complete A/foundation/roof/wet/enclosure successors remain partly local; STR/HAD/roof/whole-house acceptance stays open."
+    "evidence": "PR1598 head26c37160 requires all14named candidate/selected families. Canonical A/B receipt and9native regressions pass; paired typography/ledger261A4/315B5 pass; data plate reconciled. Seven of10exact-head workflows passed, full health/ADE remain running.",
+    "next": "Require all exact-head checks and fresh dual canonical preflight; merge1598, verify publication and retire obsolete recovery ref. Preserve1597handoff and release when workspace blocker ends execution.",
+    "blocker": "Execution workspace unavailable; later A/foundation/roof/wet/enclosure source partly local. No STR/HAD/roof/whole-house closeout, owner, physical or professional approval."
   }
 }
