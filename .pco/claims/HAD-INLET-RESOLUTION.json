@@ -9,8 +9,8 @@
     "label": "convergence-inlet-resumed-20261120"
   },
   "claimedAt": "2026-11-20T07:39:02.850Z",
-  "heartbeatAt": "2026-11-20T16:55:41.000Z",
-  "expiresAt": "2026-11-20T17:40:41.000Z",
+  "heartbeatAt": "2026-11-20T17:11:41.000Z",
+  "expiresAt": "2026-11-20T17:56:41.000Z",
   "branch": "work/convergence-gravity-house-20261120",
   "predecessor": {
     "leaseId": "6d1a0dde-e1e3-4014-99e6-bac6f58d5756",
@@ -36,8 +36,8 @@
   },
   "pr": 1598,
   "checkpoint": {
-    "evidence": "PR1598 head26c37160 requires all14named candidate/selected families. Canonical A/B receipt and9native regressions pass; paired typography/ledger261A4/315B5 pass; data plate reconciled. Seven of10exact-head workflows passed, full health/ADE remain running.",
-    "next": "Require all exact-head checks and fresh dual canonical preflight; merge1598, verify publication and retire obsolete recovery ref. Preserve1597handoff and release when workspace blocker ends execution.",
-    "blocker": "Execution workspace unavailable; later A/foundation/roof/wet/enclosure source partly local. No STR/HAD/roof/whole-house closeout, owner, physical or professional approval."
+    "evidence": "PR1598 head26c37160: all619compiler tests and exact-size atlas pass. Eight of10workflows pass; primary and ADE full health still running. Paired261A4/315B5book proof is green. Owning A/B serialization also fixes the observed failed5ef Pages receipt drift.",
+    "next": "Finish full exact-head health and fresh dual canonical preflight; merge1598, verify site/publication recovery and source-ref cleanup. Retain1597successor handoff and release at workspace blocker.",
+    "blocker": "Workspace unavailable. STR/HAD/roof/whole-house acceptance remains open; later A/foundation/roof/wet/enclosure sources partly local. No owner/physical/professional approval."
   }
 }
