@@ -1,6 +1,7 @@
 import argparse
 import hashlib
 import json
+import math
 from pathlib import Path
 
 from continuous_rc_closed_links import derive_bounded_geometry, reference_closed_link_case
@@ -26,13 +27,58 @@ def proof():
     return result
 
 
+def reproduction_diagnostics(expected_text, actual_text):
+    first=next((i for i,(a,b) in enumerate(zip(expected_text,actual_text)) if a!=b),min(len(expected_text),len(actual_text)))
+    report={'expectedBytes':len(expected_text.encode()),'actualBytes':len(actual_text.encode()),
+        'firstCharacterDifference':first,'firstDifferenceLine':expected_text.count('\n',0,first)+1,
+        'firstDifferenceExpected':expected_text[max(0,first-60):first+100],
+        'firstDifferenceActual':actual_text[max(0,first-60):first+100],
+        'numericDifferenceCount':0,'nonNumericDifferenceCount':0,'nonFiniteDifferenceCount':0,'maximumAbsoluteNumericDifference':0.,
+        'maximumRelativeNumericDifference':0.,'differences':[]}
+    try:expected=json.loads(expected_text);actual=json.loads(actual_text)
+    except json.JSONDecodeError:return report
+    def visit(a,b,path):
+        if type(a) is not type(b):
+            if isinstance(a,(int,float)) and not isinstance(a,bool) and isinstance(b,(int,float)) and not isinstance(b,bool):pass
+            else:record(path,'type',type(a).__name__,type(b).__name__);return
+        if isinstance(a,dict):
+            if a.keys()!=b.keys():record(path,'keys',list(a),list(b))
+            for key in a:
+                if key not in b:continue
+                visit(a[key],b[key],path+'/'+str(key))
+        elif isinstance(a,list):
+            if len(a)!=len(b):record(path,'length',len(a),len(b))
+            for i,(x,y) in enumerate(zip(a,b)):visit(x,y,path+'/'+str(i))
+        elif isinstance(a,(int,float)) and not isinstance(a,bool) and (not math.isfinite(a) or not math.isfinite(b)):
+            report['nonFiniteDifferenceCount']+=1
+            record(path,'non-finite',repr(a),repr(b))
+        elif a!=b:
+            if isinstance(a,(int,float)) and not isinstance(a,bool):
+                delta=abs(a-b);relative=delta/max(abs(a),abs(b),1e-300)
+                report['numericDifferenceCount']+=1
+                if delta>report['maximumAbsoluteNumericDifference']:
+                    report['maximumAbsoluteNumericDifference']=delta;report['maximumAbsoluteNumericDifferencePath']=path
+                report['maximumRelativeNumericDifference']=max(relative,report['maximumRelativeNumericDifference'])
+                if len(report['differences'])<12:report['differences'].append({'path':path,'kind':'number','expected':a,'actual':b,'absoluteDifference':delta})
+            else:record(path,'value',a,b)
+    def record(path,kind,a,b):
+        report['nonNumericDifferenceCount']+=1
+        if len(report['differences'])<12:report['differences'].append({'path':path,'kind':kind,'expected':a,'actual':b})
+    visit(expected,actual,'')
+    return report
+
+
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');parser.add_argument('--read',action='store_true');args=parser.parse_args()
     if args.read:print(json.dumps(reference_closed_link_case(),indent=2));return
     result=proof();svg=render_section(result)
     text=json.dumps(result,indent=2,allow_nan=False)+'\n'
     if args.check:
-        if (D/'continuous-rc-closed-links-proof.json').read_text()!=text or (D/'continuous-rc-closed-links.svg').read_text()!=svg:raise SystemExit('Closed-link geometry evidence differs from its source-bound reproduction')
+        mismatches={}
+        for path,actual in ((D/'continuous-rc-closed-links-proof.json',text),(D/'continuous-rc-closed-links.svg',svg)):
+            expected=path.read_text()
+            if expected!=actual:mismatches[path.name]=reproduction_diagnostics(expected,actual)
+        if mismatches:raise SystemExit('Closed-link geometry evidence differs from its source-bound reproduction\n'+json.dumps(mismatches,indent=2,allow_nan=False))
         print('Rejected assembly evidence reproduces exactly')
     else:
         (D/'continuous-rc-closed-links-proof.json').write_text(text);(D/'continuous-rc-closed-links.svg').write_text(svg)

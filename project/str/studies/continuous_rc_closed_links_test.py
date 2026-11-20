@@ -2,12 +2,34 @@ import copy
 import unittest
 
 from continuous_rc_closed_links import closed_wire, derive_bounded_geometry, reference_closed_link_case, wire_self_clearance
-from continuous_rc_closed_links_proof import proof
+from continuous_rc_closed_links_proof import proof, reproduction_diagnostics
 
 
 class ClosedLinkTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):cls.result=proof()
+
+    def test_exact_reproduction_diagnostics_find_numeric_and_discrete_changes(self):
+        import json
+        a={'a':[1.,2.,True],'b':'source','c':{'kept':3,'lost':4}}
+        b={'a':[1.+1e-12,2.,False],'b':'changed','c':{'kept':3},'extra':0}
+        result=reproduction_diagnostics(json.dumps(a),json.dumps(b))
+        self.assertEqual(result['numericDifferenceCount'],1)
+        self.assertEqual(result['nonNumericDifferenceCount'],4)
+        self.assertEqual(result['maximumAbsoluteNumericDifferencePath'],'/a/0')
+        self.assertAlmostEqual(result['maximumAbsoluteNumericDifference'],1e-12,delta=1e-15)
+        self.assertEqual(result['differences'][1]['path'],'/a/0')
+        self.assertEqual(reproduction_diagnostics('<svg>a</svg>','<svg>b</svg>')['firstCharacterDifference'],5)
+
+    def test_reproduction_diagnostics_separate_shape_type_and_nonfinite(self):
+        import json
+        a={'rows':[1,2],'type':False,'value':1.}
+        b={'rows':[1],'type':0,'value':float('nan')}
+        result=reproduction_diagnostics(json.dumps(a),json.dumps(b))
+        self.assertEqual(result['numericDifferenceCount'],0)
+        self.assertEqual(result['nonFiniteDifferenceCount'],1)
+        self.assertEqual([r['kind'] for r in result['differences']],['length','type','non-finite'])
+        json.dumps(result,allow_nan=False)
 
     def test_whole_assembly_is_rejected(self):
         self.assertTrue(self.result['completeCageFabricationGeometryRejected'])
