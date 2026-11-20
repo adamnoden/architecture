@@ -4713,8 +4713,10 @@
   "sourceSHA256": {
     "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
     "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
-    "project/str/studies/portal_architectural_simplification.py": "57c8b8b36098049005cc69749e4278d01ab78a3323be992bea14793fe68e6743",
+    "project/str/studies/portal_architectural_simplification.py": "1fa0ae6feb12d205dddac4e61e8b24a3b72299b044fd830e48f1df4ff516809f",
     "project/str/studies/continuous_rc_closed_links.py": "4cd16179f5dc045ef8ea9369d6e18d7bd9577f65ed6d784feb681eec5fdd34b2",
-    "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c"
+    "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c",
+    "project/str/studies/continuous_rc_closed_links_proof.py": "5efc972911921aecb5c3de33ff9d80d4eeef520b418bbb12e889a619eb5a0d04",
+    "project/str/studies/cage-requirements.txt": "7bd6b8946940b79948c548c8048e545684b91c8edc9444d8dfc0c8f76a97c0a7"
   }
 }

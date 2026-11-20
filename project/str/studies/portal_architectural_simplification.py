@@ -5,6 +5,7 @@ import math
 from pathlib import Path
 
 from continuous_rc_closed_links import closed_wire, main_to_wire_clearance, reference_closed_link_case, transform_wire
+from continuous_rc_closed_links_proof import reproduction_diagnostics
 
 D=Path(__file__).resolve().parent
 ROOT=D.parents[2]
@@ -112,7 +113,7 @@ def larger_joint_trial(inner,portal):
 def proof():
     path=ROOT/'project/had/studies/water-replan.json';grid_path=D/'current-house-grid.json';model=json.loads(path.read_text())['model'];r=derive(reference_case(),model,json.loads(grid_path.read_text()))
     r['sourceSHA256']={'project/had/studies/water-replan.json':hashlib.sha256(path.read_bytes()).hexdigest(),'project/str/studies/current-house-grid.json':hashlib.sha256(grid_path.read_bytes()).hexdigest(),str(Path(__file__).relative_to(ROOT)):hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}
-    for name in ('continuous_rc_closed_links.py','continuous_rc_cage.py'):
+    for name in ('continuous_rc_closed_links.py','continuous_rc_cage.py','continuous_rc_closed_links_proof.py','cage-requirements.txt'):
         path=D/name;r['sourceSHA256'][str(path.relative_to(ROOT))]=hashlib.sha256(path.read_bytes()).hexdigest()
     return r
 
@@ -154,7 +155,9 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');args=parser.parse_args();result=proof();text=json.dumps(result,indent=2)+'\n';out=D/'portal-architectural-simplification.json'
     svg=render_section(result);drawing=D/'portal-architectural-simplification.svg'
     if args.check:
-        if out.read_text()!=text or drawing.read_text()!=svg:raise SystemExit('Architectural comparison differs')
+        differences={name:reproduction_diagnostics(path.read_text(),actual) for name,path,actual in (
+            (out.name,out,text),(drawing.name,drawing,svg)) if path.read_text()!=actual}
+        if differences:raise SystemExit('Architectural comparison differs\n'+json.dumps(differences,indent=2,allow_nan=False))
         print('Architectural comparison reproduces')
     else:out.write_text(text);drawing.write_text(svg);print('Authored architectural comparison written')
 
