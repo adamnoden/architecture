@@ -167,7 +167,10 @@
         "project/str/studies/joined_successor_kernel.py",
         "project/str/studies/floor-portal-fixed-wall-head.py",
         "project/str/studies/floor-portal-north-transfer.py",
-        "project/str/studies/floor-portal-twin-garden-tie.py"
+        "project/str/studies/floor-portal-twin-garden-tie.py",
+        "project/str/studies/retained_components.py",
+        "project/str/studies/retained_component_geometry.py",
+        "project/str/studies/retained-contact.py"
       ],
       "inputReceipts": [
         "project/had/studies/water-replan.json",
@@ -239,7 +242,8 @@
         "compiler/reference-house/current-design/north-collector.ts",
         "compiler/reference-house/current-design/rear-foul-vent.ts",
         "compiler/reference-house/current-design/structural.ts",
-        "compiler/reference-house/current-design/structural-successor.ts"
+        "compiler/reference-house/current-design/structural-successor.ts",
+        "compiler/reference-house/current-design/structural-retained.ts"
       ],
       "producerChecks": [
         "python3 -B project/str/studies/current-house-grid.py --check",
@@ -1090,11 +1094,14 @@
     "project/str/studies/joined_successor_kernel.py": "bbf1e80933260d0182db34d777427b68a361b2f0",
     "compiler/reference-house/current-design/structural-successor.ts": "9ae813ed40695e6e94df43caa0b45e7db54d02c4",
     "compiler/reference-house/current-design/inlet-support.ts": "a2404befdbeda6464bc9f772d25bccd8d78d2479",
-    "compiler/reference-house/current-design/engineering-document.ts": "5d0f209d9b20acb09255a0b0dcdccc10865857b5",
+    "compiler/reference-house/current-design/engineering-document.ts": "e02029aba3e3e5ee28bceb23e5bc29436eb03fd8",
     "project/had/inlet-assembly-convergence.md": "21719c69b3ec916043e53d7ae0891d5c6ce7aae5",
     "project/str/studies/floor-portal-fixed-wall-head.py": "807159aa9439837489d3e95f9bf359983635c342",
     "project/str/studies/floor-portal-north-transfer.py": "20f79473e3fd3e88351b3fa4d68ac1f1ef476d03",
     "project/str/studies/floor-portal-twin-garden-tie.py": "5d5b7f6446c5ea5a54a444157406d62bc59373dc",
-    "project/str/studies/floor-portal-permanent-seat.json": "7d3b78abe753ed63f073b2612d93f9953b52721c"
+    "project/str/studies/floor-portal-permanent-seat.json": "7d3b78abe753ed63f073b2612d93f9953b52721c",
+    "project/str/studies/retained_components.py": "20d5ccd66cc0edcc2e785978247f0d80dc7f84e7",
+    "project/str/studies/retained_component_geometry.py": "23f1346b8213f2c79e93190b1d8826a6cf35fc45",
+    "project/str/studies/retained-contact.py": "d39e69bf084a58b320e41b05db74835882d6dc6a"
   }
 }

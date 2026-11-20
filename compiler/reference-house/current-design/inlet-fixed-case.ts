@@ -1,0 +1,55 @@
+import { sha256SemanticFingerprint } from '../../core/identity.js'
+import { createHash } from 'node:crypto'
+import { readFileSync } from 'node:fs'
+import { compileFixedInletCandidate, readFixedInletSettings } from './inlet-fixed-entry.js'
+import { readInletSillInsertCase, runInletSillInsertCase } from './inlet-sill-insert.js'
+import { readInletFaultCase, runInletFaultCase } from './inlet-fault.js'
+import type { CurrentDesignResolution } from './resolve.js'
+
+function boundSource(resolved: CurrentDesignResolution) {
+  if (resolved.design.source.kind !== 'georgian-layout-revision' || !resolved.disciplineBindings.length) {
+    throw new Error('The fixed inlet requires the admitted current house and its actual service bindings')
+  }
+  const implementations = Object.fromEntries([
+    'compiler/reference-house/current-design/inlet-fixed-case.ts',
+    'compiler/reference-house/current-design/inlet-fixed-entry.ts',
+    'project/had/studies/incoming-water-geometry.mjs',
+    'project/had/studies/service-interface-geometry.mjs',
+    'project/had/studies/south-inlet-relief-hydraulics.mjs',
+  ].map(path => {
+    const bytes = readFileSync(new URL('../../../' + path, import.meta.url))
+    return [path, createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')]
+  }))
+  return { planDigest: sha256SemanticFingerprint(resolved.design), implementations,
+    bindingDigest: sha256SemanticFingerprint({ disciplines: resolved.disciplineBindings, implementations }) }
+}
+
+export function readFixedInletCase(resolved: CurrentDesignResolution) {
+  const binding = boundSource(resolved)
+  return { schema: 'had-fixed-inlet-request/1' as const, design: resolved.design,
+    fixed: { schema: 'had-fixed-inlet-case/1' as const, planDigest: binding.planDigest,
+      bindingDigest: binding.bindingDigest, settings: readFixedInletSettings() } }
+}
+
+export function runFixedInletCase(resolved: CurrentDesignResolution, input: unknown,
+  sources: { readonly insertCase?: unknown; readonly faultCase?: unknown } = {}) {
+  const binding = boundSource(resolved)
+  const fields = ['schema', 'planDigest', 'bindingDigest', 'settings']
+  if (!input || typeof input !== 'object' || Array.isArray(input) || Object.keys(input).length !== fields.length
+      || fields.some(field => !Object.hasOwn(input, field))) throw new Error('Expected a versioned fixed-inlet case without derived evidence')
+  const value = input as Record<string, unknown>
+  if (value.schema !== 'had-fixed-inlet-case/1' || value.planDigest !== binding.planDigest || value.bindingDigest !== binding.bindingDigest) {
+    throw new Error('Stale or unsupported fixed-inlet source binding')
+  }
+  const referenceInsert = readInletSillInsertCase(resolved)
+  const insertCase = sources.insertCase ?? referenceInsert.insert
+  const insert = runInletSillInsertCase(resolved, insertCase)
+  const referenceFault = readInletFaultCase(resolved, insertCase)
+  const faultCase = sources.faultCase ?? referenceFault.fault
+  const fault = runInletFaultCase(resolved, faultCase, insertCase)
+  const candidate = compileFixedInletCandidate(resolved, value.settings, {
+    insert, fault, faultCase: faultCase as typeof referenceFault.fault,
+  })
+  return { ...candidate, source: { ...candidate.source, bindingDigest: binding.bindingDigest },
+    method: { ...candidate.method, currentImplementations: binding.implementations } }
+}

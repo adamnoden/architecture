@@ -83,6 +83,14 @@ export function prepareCurrentDesignCompile(input: unknown) {
       const { runStructuralSuccessorCase } = await import('./structural-successor.js')
       return runStructuralSuccessorCase(resolved, input)
     },
+    readRetainedComponentCase: async () => {
+      const { readRetainedComponentCase } = await import('./structural-retained.js')
+      return readRetainedComponentCase(resolved)
+    },
+    retainedComponentCase: async (input: unknown) => {
+      const { runRetainedComponentCase } = await import('./structural-retained.js')
+      return runRetainedComponentCase(resolved, input)
+    },
     readStructuralCase: async () => {
       const { readStructuralCase } = await import('./structural.js')
       return readStructuralCase(resolved)
@@ -182,6 +190,14 @@ export function prepareCurrentDesignCompile(input: unknown) {
     inletFault: async (input: unknown, insertCase?: unknown) => {
       const { runInletFaultCase } = await import('./inlet-fault.js')
       return runInletFaultCase(resolved, input, insertCase)
+    },
+    readFixedInletCase: async () => {
+      const { readFixedInletCase } = await import('./inlet-fixed-case.js')
+      return readFixedInletCase(resolved)
+    },
+    fixedInletCase: async (input: unknown, sources?: { readonly insertCase?: unknown; readonly faultCase?: unknown }) => {
+      const { runFixedInletCase } = await import('./inlet-fixed-case.js')
+      return runFixedInletCase(resolved, input, sources)
     },
     readInletRemovalCases: async (insertCase?: unknown) => {
       const { readInletRemovalCases } = await import('./inlet-removal.js')

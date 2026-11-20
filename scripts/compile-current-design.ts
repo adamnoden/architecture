@@ -31,6 +31,10 @@ const trialModes: Readonly<Record<string, TrialMode>> = {
     schema: 'str-successor-request/1', key: 'successor', name: 'structural successor',
     run: (compile, value) => compile.structuralSuccessorCase(value),
   },
+  '--retained-components': {
+    schema: 'str-retained-contact-request/1', key: 'retained', name: 'retained components',
+    run: (compile, value) => compile.retainedComponentCase(value),
+  },
   '--structural-case': {
     schema: 'str-structural-case-request/1', key: 'case', name: 'structural',
     run: (compile, value) => compile.structuralCase(value),
@@ -63,6 +67,10 @@ const trialModes: Readonly<Record<string, TrialMode>> = {
     schema: 'had-inlet-fault-request/1', key: 'fault', name: 'inlet fault envelope',
     run: (compile, value) => compile.inletFault(value),
   },
+  '--fixed-inlet': {
+    schema: 'had-fixed-inlet-request/1', key: 'fixed', name: 'fixed inlet',
+    run: (compile, value) => compile.fixedInletCase(value),
+  },
   '--inlet-removal': {
     schema: 'had-inlet-removal-request/1', key: 'removal', name: 'inlet removal',
     run: (compile, value) => compile.inletRemoval(value),
@@ -91,8 +99,8 @@ const modes = [
   '--occupied-services', '--occupied-service-drawings', '--selected-water-event', '--structural-bridge', '--structural-actions',
   '--bundle', '--read-engineering', '--study-assembly', '--study-linings', '--renewable-openings',
   '--read-roof-pitch', '--read-court-intake', '--read-inlet-route', '--read-east-ground-receiving',
-  '--read-occupied-condensate', '--read-structural-successor', '--read-structural-case', '--read-structural-interfaces',
-  '--read-north-collector', '--read-rear-foul-vent', '--read-inlet-sill-insert', '--read-inlet-fault', '--read-inlet-removal', '--read-inlet-cover', ...Object.keys(trialModes),
+  '--read-occupied-condensate', '--read-structural-successor', '--read-retained-components', '--read-structural-case', '--read-structural-interfaces',
+  '--read-north-collector', '--read-rear-foul-vent', '--read-inlet-sill-insert', '--read-inlet-fault', '--read-fixed-inlet', '--read-inlet-removal', '--read-inlet-cover', ...Object.keys(trialModes),
 ]
 const mode = modes.includes(args[0]) ? args.shift() : undefined
 const [argument, ...extra] = args
@@ -129,12 +137,14 @@ try {
       else if (mode === '--read-inlet-route') process.stdout.write(JSON.stringify(await compile.readInletRouteCases(), null, 2) + '\n')
       else if (mode === '--read-occupied-condensate') process.stdout.write(JSON.stringify(await compile.readOccupiedCondensateCase(), null, 2) + '\n')
       else if (mode === '--read-structural-successor') process.stdout.write(JSON.stringify(await compile.readStructuralSuccessorCase(), null, 2) + '\n')
+      else if (mode === '--read-retained-components') process.stdout.write(JSON.stringify(await compile.readRetainedComponentCase(), null, 2) + '\n')
       else if (mode === '--read-structural-case') process.stdout.write(JSON.stringify(await compile.readStructuralCase(), null, 2) + '\n')
       else if (mode === '--read-structural-interfaces') process.stdout.write(JSON.stringify(await compile.readStructuralInterfaces(), null, 2) + '\n')
       else if (mode === '--read-north-collector') process.stdout.write(JSON.stringify(await compile.readNorthCollectorCase(), null, 2) + '\n')
       else if (mode === '--read-rear-foul-vent') process.stdout.write(JSON.stringify(await compile.readRearFoulVentCase(), null, 2) + '\n')
       else if (mode === '--read-inlet-sill-insert') process.stdout.write(JSON.stringify(await compile.readInletSillInsertCase(), null, 2) + '\n')
       else if (mode === '--read-inlet-fault') process.stdout.write(JSON.stringify(await compile.readInletFaultCase(), null, 2) + '\n')
+      else if (mode === '--read-fixed-inlet') process.stdout.write(JSON.stringify(await compile.readFixedInletCase(), null, 2) + '\n')
       else if (mode === '--read-inlet-removal') process.stdout.write(JSON.stringify(await compile.readInletRemovalCases(), null, 2) + '\n')
       else if (mode === '--read-inlet-cover') process.stdout.write(JSON.stringify(await compile.readInletCoverCases(), null, 2) + '\n')
       else if (mode === '--occupied-services') process.stdout.write((await compile.occupiedServices()).schedule)
