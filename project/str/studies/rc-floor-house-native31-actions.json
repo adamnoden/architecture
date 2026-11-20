@@ -1,0 +1,5708 @@
+{
+  "sourceSHA256": {
+    "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+    "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+    "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+    "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+    "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+    "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+    "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+    "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+    "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+    "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+    "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+    "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+    "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+    "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+    "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+    "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+    "project/str/studies/distributed_floor_compatibility.py": "343eb90499aabaf0a9d62302d1b91221599b66e3520fda7e40ba32da11a975c1",
+    "project/str/studies/perforated_floor_condensation.py": "2f0dcba9128d110204212fec6f2bad14449edd27a30eaa6f1a68a3bbbe4a08bd",
+    "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+    "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+    "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+    "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+    "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+    "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+    "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+    "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+    "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+    "project/str/studies/rc_floor_house_loads.py": "91ddd09f0111a9936d8787470169f2795f3340940bb18a35c3255a63121f3730"
+  },
+  "caseId": "RC290-UPSTAND200-native31-G0.9",
+  "request": {
+    "schema": "str-rc-floor-house-load-case/1",
+    "sourceSHA256": {
+      "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+      "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+      "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+      "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+      "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+      "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+      "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+      "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+      "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+      "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+      "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+      "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+      "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+      "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+      "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+      "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+      "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+      "project/str/studies/distributed_floor_compatibility.py": "343eb90499aabaf0a9d62302d1b91221599b66e3520fda7e40ba32da11a975c1",
+      "project/str/studies/perforated_floor_condensation.py": "2f0dcba9128d110204212fec6f2bad14449edd27a30eaa6f1a68a3bbbe4a08bd",
+      "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+      "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+      "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+      "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+      "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+      "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+      "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+      "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+      "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+      "project/str/studies/rc_floor_house_loads.py": "91ddd09f0111a9936d8787470169f2795f3340940bb18a35c3255a63121f3730"
+    },
+    "joinedCase": {
+      "schema": "str-joined-rc-floor-case/1",
+      "sourceSHA256": {
+        "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+        "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+        "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+        "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+        "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+        "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+        "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+        "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+        "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+        "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+        "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+        "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+        "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+        "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+        "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+        "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+        "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+        "project/str/studies/distributed_floor_compatibility.py": "343eb90499aabaf0a9d62302d1b91221599b66e3520fda7e40ba32da11a975c1",
+        "project/str/studies/perforated_floor_condensation.py": "2f0dcba9128d110204212fec6f2bad14449edd27a30eaa6f1a68a3bbbe4a08bd",
+        "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+        "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+        "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+        "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+        "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+        "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+        "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+        "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+        "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4"
+      },
+      "portal": {
+        "schema": "str-continuous-rc-portal-case/1",
+        "sourceSHA256": {
+          "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+          "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+          "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+          "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+          "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+          "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+          "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+          "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+          "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+          "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+          "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+          "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+          "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+          "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+          "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+          "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+          "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+          "project/str/studies/distributed_floor_compatibility.py": "343eb90499aabaf0a9d62302d1b91221599b66e3520fda7e40ba32da11a975c1",
+          "project/str/studies/perforated_floor_condensation.py": "2f0dcba9128d110204212fec6f2bad14449edd27a30eaa6f1a68a3bbbe4a08bd",
+          "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+          "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+          "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+          "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+          "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+          "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+          "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7"
+        },
+        "scheme": "fullheight-piers-integral-curved-ring-no-tie-no-bore",
+        "gridLaw": {
+          "mode": "authored-linear-comparison",
+          "elasticModulusMPa": 33000,
+          "poissonRatio": 0.2,
+          "flexuralFactor": 0.25,
+          "torsionFactor": 0.25,
+          "shearAreaFactor": 0.5
+        },
+        "frameLaw": {
+          "mode": "authored-linear-comparison",
+          "elasticModulusMPa": 33000,
+          "poissonRatio": 0.2,
+          "flexuralFactor": 0.25,
+          "torsionFactor": 0.25,
+          "shearAreaFactor": 0.5
+        },
+        "dpcLaw": {
+          "mode": "authored-bilateral-elastic-comparison",
+          "normalStiffnessKNPerMm3": 0.5,
+          "shearStiffnessKNPerMm3": 0.05
+        },
+        "dpcIntervalZMm": [
+          -50,
+          -30
+        ],
+        "coverMm": 40,
+        "archSegments": 24,
+        "infillHeadGapMm": 30,
+        "jointZone": "authored-monolithic-rigid-end-offset-comparison",
+        "headBoundary": "source52-ideal-pinned-translations-free-rotations",
+        "use": "unqualified-continuous-rc-challenger"
+      },
+      "floor": {
+        "schema": "str-distributed-floor-case/1",
+        "sourceSHA256": {
+          "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+          "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+          "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+          "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+          "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+          "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+          "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+          "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+          "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+          "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+          "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+          "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+          "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+          "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+          "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+          "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+          "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+          "project/str/studies/distributed_floor_compatibility.py": "343eb90499aabaf0a9d62302d1b91221599b66e3520fda7e40ba32da11a975c1",
+          "project/str/studies/perforated_floor_condensation.py": "2f0dcba9128d110204212fec6f2bad14449edd27a30eaa6f1a68a3bbbe4a08bd",
+          "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+          "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+          "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+          "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41"
+        },
+        "cornerWidthsMm": {
+          "NW": 200,
+          "NE": 200,
+          "SW": 140,
+          "SE": 140
+        },
+        "memberLaw": {
+          "mode": "authored-linear-comparison",
+          "elasticModulusMPa": 33000,
+          "poissonRatio": 0.2,
+          "flexuralFactor": 0.25,
+          "torsionFactor": 0.25,
+          "shearAreaFactor": 0.5
+        },
+        "jointLaw": {
+          "mode": "authored-spring-comparison",
+          "compressionStiffnessKNPerMm3": 0.5,
+          "tieStiffnessKNPerMm": 50,
+          "shearKeyStiffnessKNPerMm": 100,
+          "compressionGapMm": 0,
+          "tieGapMm": 0
+        },
+        "membraneLaw": {
+          "mode": "authored-linear-comparison",
+          "elasticModulusMPa": 1200,
+          "poissonRatio": 0.15,
+          "shearModulusMPa": 440
+        },
+        "edgeBand": {
+          "mode": "authored-conventional-slab-level-band",
+          "widthMm": 140,
+          "depthMm": 200,
+          "elasticModulusMPa": 33000,
+          "flexuralFactor": 0.25,
+          "axialRigidityKN": 180955.73684677208
+        },
+        "maxPitchMm": 1400,
+        "componentCase": {
+          "schema": "str-retained-components-case/1",
+          "sourceSHA256": {
+            "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+            "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+            "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+            "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+            "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+            "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+            "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+            "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+            "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+            "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+            "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8"
+          },
+          "edits": {
+            "floorApertures": [],
+            "wallOpenings": []
+          },
+          "retentionPaths": []
+        },
+        "boundaryCase": {
+          "kind": "native-floor-wind-band-only",
+          "windIndex": 31
+        },
+        "receivingLaws": {
+          "successorRoof": null,
+          "verticalFloor": null,
+          "dryGround": null,
+          "intermediateSupports": {
+            "FLOOR/RECEIVER/court-east/3917.5": null,
+            "FLOOR/RECEIVER/court-east/6000.0": null,
+            "FLOOR/RECEIVER/court-east/8082.5": null,
+            "FLOOR/RECEIVER/court-north/3917.5": null,
+            "FLOOR/RECEIVER/court-north/4377.5": null,
+            "FLOOR/RECEIVER/court-north/7622.5": null,
+            "FLOOR/RECEIVER/court-north/8082.5": null,
+            "FLOOR/RECEIVER/court-south/3917.5": null,
+            "FLOOR/RECEIVER/court-south/4785": null,
+            "FLOOR/RECEIVER/court-south/7215": null,
+            "FLOOR/RECEIVER/court-south/8082.5": null,
+            "FLOOR/RECEIVER/court-west/3917.5": null,
+            "FLOOR/RECEIVER/court-west/6000.0": null,
+            "FLOOR/RECEIVER/court-west/8082.5": null,
+            "FLOOR/RECEIVER/outer-east/3100.0": null,
+            "FLOOR/RECEIVER/outer-east/5786.5": null,
+            "FLOOR/RECEIVER/outer-east/8613.5": null,
+            "FLOOR/RECEIVER/outer-north/2825.0": null,
+            "FLOOR/RECEIVER/outer-north/4377.5": null,
+            "FLOOR/RECEIVER/outer-north/7622.5": null,
+            "FLOOR/RECEIVER/outer-north/9175.0": null,
+            "FLOOR/RECEIVER/outer-south/2850.0": null,
+            "FLOOR/RECEIVER/outer-south/4750.0": null,
+            "FLOOR/RECEIVER/outer-south/7250.0": null,
+            "FLOOR/RECEIVER/outer-south/9150.0": null,
+            "FLOOR/RECEIVER/outer-west/3200.0": null,
+            "FLOOR/RECEIVER/outer-west/6000.0": null,
+            "FLOOR/RECEIVER/outer-west/8800.0": null
+          }
+        },
+        "use": "bounded-diaphragm-comparison"
+      },
+      "geometry": {
+        "outerUpstandDepthMm": 750,
+        "courtUpstandDepthMm": 650
+      },
+      "portalDPCNormalMode": "compression",
+      "portalDPCNormalIntegration": "exact-active-patch",
+      "portalDPCQuadratureOrder": 8,
+      "portalDPCNormalSubdivisions": 4,
+      "portalDPCInsetMm": 0,
+      "floorBoundary": "passive-floor-receiving-local-portal-challenges",
+      "northUnion": "full-3D-upstand-owns-central-north-band-material",
+      "use": "unqualified-eight-path-joined-comparison"
+    },
+    "coreAxialWidthMm": 290,
+    "northUpstandWidthMm": 200,
+    "finishedAxialWidthMm": 775,
+    "mineralFaceLiningMm": 40,
+    "boundary": {
+      "kind": "native-floor-and-actual-open-north-portal-replacement",
+      "physicalGFactor": 0.9,
+      "includeExternalGMAXQ": false
+    },
+    "courtyardPressure": null,
+    "reinforcement": "separate-worked-cage-proof-required",
+    "use": "unqualified-source-loaded-RC-house-subsystem"
+  },
+  "memberCuts": [
+    {
+      "memberId": "court-north/west/post/0",
+      "end": 0,
+      "kind": "post",
+      "physicalPointMm": [
+        4413.75,
+        8082.5,
+        -180
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 16.622803548033907,
+      "shearYKN": 0.6398633426233892,
+      "shearZKN": -2.3794452126979424,
+      "torsionKNm": 0.03465940637097518,
+      "bendingYKNm": 1.946644371754829,
+      "bendingZKNm": 2.1124265485005878,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.3794452126979424,
+        0.6398633426233892,
+        16.622803548033907,
+        -2.1124265485005878,
+        1.946644371754829,
+        0.03465940637097518
+      ]
+    },
+    {
+      "memberId": "court-north/west/post/0",
+      "end": 1,
+      "kind": "post",
+      "physicalPointMm": [
+        4413.75,
+        8082.5,
+        -50
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 16.622803548033907,
+      "shearYKN": -0.6398633426233892,
+      "shearZKN": 2.3794452126979424,
+      "torsionKNm": -0.03465940637097485,
+      "bendingYKNm": -1.6373164941040947,
+      "bendingZKNm": -2.0292443139595466,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.3794452126979424,
+        -0.6398633426233892,
+        -16.622803548033907,
+        2.0292443139595466,
+        -1.6373164941040947,
+        -0.03465940637097485
+      ]
+    },
+    {
+      "memberId": "court-north/west/post/2",
+      "end": 0,
+      "kind": "post",
+      "physicalPointMm": [
+        4413.75,
+        8082.5,
+        -30
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 16.511878548033565,
+      "shearYKN": 0.6398633426250626,
+      "shearZKN": -2.3794452126980445,
+      "torsionKNm": 0.03465940637097697,
+      "bendingYKNm": 1.5897275898509742,
+      "bendingZKNm": 2.0164470471061295,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.3794452126980445,
+        0.6398633426250626,
+        16.511878548033565,
+        -2.0164470471061295,
+        1.5897275898509742,
+        0.03465940637097697
+      ]
+    },
+    {
+      "memberId": "court-north/west/post/2",
+      "end": 1,
+      "kind": "post",
+      "physicalPointMm": [
+        4413.75,
+        8082.5,
+        0.0
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 16.511878548033565,
+      "shearYKN": -0.6398633426250626,
+      "shearZKN": 2.3794452126980445,
+      "torsionKNm": -0.03465940637097697,
+      "bendingYKNm": -1.5183442334700903,
+      "bendingZKNm": -1.9972511468273797,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.3794452126980445,
+        -0.6398633426250626,
+        -16.511878548033565,
+        1.9972511468273797,
+        -1.5183442334700903,
+        -0.03465940637097697
+      ]
+    },
+    {
+      "memberId": "court-north/west/post/3",
+      "end": 0,
+      "kind": "post",
+      "physicalPointMm": [
+        4413.75,
+        8082.5,
+        0.0
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 15.711138704284167,
+      "shearYKN": 0.6398633426269007,
+      "shearZKN": -2.379445212697626,
+      "torsionKNm": 0.034659406370977114,
+      "bendingYKNm": 1.5183442334712887,
+      "bendingZKNm": 1.9972511468273977,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.379445212697626,
+        0.6398633426269007,
+        15.711138704284167,
+        -1.9972511468273977,
+        1.5183442334712887,
+        0.034659406370977114
+      ]
+    },
+    {
+      "memberId": "court-north/west/post/3",
+      "end": 1,
+      "kind": "post",
+      "physicalPointMm": [
+        4413.75,
+        8082.5,
+        1125.0
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 15.711138704284167,
+      "shearYKN": -0.6398633426269007,
+      "shearZKN": 2.379445212697626,
+      "torsionKNm": -0.034659406370977114,
+      "bendingYKNm": 1.1585316308135403,
+      "bendingZKNm": -1.2774048863721457,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.379445212697626,
+        -0.6398633426269007,
+        -15.711138704284167,
+        1.2774048863721457,
+        1.1585316308135403,
+        -0.034659406370977114
+      ]
+    },
+    {
+      "memberId": "court-north/west/post/4",
+      "end": 0,
+      "kind": "post",
+      "physicalPointMm": [
+        4413.75,
+        8082.5,
+        1125.0
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 14.15125589178416,
+      "shearYKN": 0.6398633426268816,
+      "shearZKN": -2.3794452126976866,
+      "torsionKNm": 0.03465940637097708,
+      "bendingYKNm": -1.158531630813705,
+      "bendingZKNm": 1.277404886372111,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.3794452126976866,
+        0.6398633426268816,
+        14.15125589178416,
+        -1.277404886372111,
+        -1.158531630813705,
+        0.03465940637097708
+      ]
+    },
+    {
+      "memberId": "court-north/west/post/4",
+      "end": 1,
+      "kind": "post",
+      "physicalPointMm": [
+        4413.75,
+        8082.5,
+        2250.0
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 14.15125589178416,
+      "shearYKN": -0.6398633426268816,
+      "shearZKN": 2.3794452126976866,
+      "torsionKNm": -0.03465940637097708,
+      "bendingYKNm": 3.8354074950986177,
+      "bendingZKNm": -0.5575586259168877,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.3794452126976866,
+        -0.6398633426268816,
+        -14.15125589178416,
+        0.5575586259168877,
+        3.8354074950986177,
+        -0.03465940637097708
+      ]
+    },
+    {
+      "memberId": "court-north/west/post/5",
+      "end": 0,
+      "kind": "post",
+      "physicalPointMm": [
+        4413.75,
+        8082.5,
+        2250.0
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 13.269724316357042,
+      "shearYKN": 0.63986334262745,
+      "shearZKN": -2.3794452126993733,
+      "torsionKNm": 0.03465940637097697,
+      "bendingYKNm": -3.835407495098862,
+      "bendingZKNm": 0.5575586259166303,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.3794452126993733,
+        0.63986334262745,
+        13.269724316357042,
+        -0.5575586259166303,
+        -3.835407495098862,
+        0.03465940637097697
+      ]
+    },
+    {
+      "memberId": "court-north/west/post/5",
+      "end": 1,
+      "kind": "post",
+      "physicalPointMm": [
+        4413.75,
+        8082.5,
+        2396.5352902266773
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 13.269724316357042,
+      "shearYKN": -0.63986334262745,
+      "shearZKN": 2.3794452126993733,
+      "torsionKNm": -0.03465940637097697,
+      "bendingYKNm": 4.184080189920119,
+      "bendingZKNm": -0.46379606529930606,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.3794452126993733,
+        -0.63986334262745,
+        -13.269724316357042,
+        0.46379606529930606,
+        4.184080189920119,
+        -0.03465940637097697
+      ]
+    },
+    {
+      "memberId": "court-north/west/post/6",
+      "end": 0,
+      "kind": "post",
+      "physicalPointMm": [
+        4413.75,
+        8082.5,
+        2396.5352902266773
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 6.972745308249841,
+      "shearYKN": 0.6276153308058383,
+      "shearZKN": -1.1234142987117492,
+      "torsionKNm": 0.05995149529489355,
+      "bendingYKNm": -0.48020106887578556,
+      "bendingZKNm": 0.4762292041201435,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.1234142987117492,
+        0.6276153308058383,
+        6.972745308249841,
+        -0.4762292041201435,
+        -0.48020106887578556,
+        0.05995149529489355
+      ]
+    },
+    {
+      "memberId": "court-north/west/post/6",
+      "end": 1,
+      "kind": "post",
+      "physicalPointMm": [
+        4413.75,
+        8082.5,
+        3170
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 6.972745308249841,
+      "shearYKN": -0.6276153308058383,
+      "shearZKN": 1.1234142987117492,
+      "torsionKNm": -0.05995149529489355,
+      "bendingYKNm": 1.3491223833840587,
+      "bendingZKNm": 0.00920910557094112,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.1234142987117492,
+        -0.6276153308058383,
+        -6.972745308249841,
+        -0.00920910557094112,
+        1.3491223833840587,
+        -0.05995149529489355
+      ]
+    },
+    {
+      "memberId": "court-north/east/post/0",
+      "end": 0,
+      "kind": "post",
+      "physicalPointMm": [
+        7586.25,
+        8082.5,
+        -180
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 10.613259392988077,
+      "shearYKN": 0.3836935023679048,
+      "shearZKN": -1.296786751971359,
+      "torsionKNm": 0.005725022288286748,
+      "bendingYKNm": 1.2037164901071795,
+      "bendingZKNm": 1.4188445667370284,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.296786751971359,
+        0.3836935023679048,
+        10.613259392988077,
+        -1.4188445667370284,
+        1.2037164901071795,
+        0.005725022288286748
+      ]
+    },
+    {
+      "memberId": "court-north/east/post/0",
+      "end": 1,
+      "kind": "post",
+      "physicalPointMm": [
+        7586.25,
+        8082.5,
+        -50
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 10.613259392988077,
+      "shearYKN": -0.3836935023679048,
+      "shearZKN": 1.296786751971359,
+      "torsionKNm": -0.005725022288286464,
+      "bendingYKNm": -1.0351342123509026,
+      "bendingZKNm": -1.3689644114292008,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.296786751971359,
+        -0.3836935023679048,
+        -10.613259392988077,
+        1.3689644114292008,
+        -1.0351342123509026,
+        -0.005725022288286464
+      ]
+    },
+    {
+      "memberId": "court-north/east/post/2",
+      "end": 0,
+      "kind": "post",
+      "physicalPointMm": [
+        7586.25,
+        8082.5,
+        -30
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 10.502334392982448,
+      "shearYKN": 0.38369350236789046,
+      "shearZKN": -1.2967867519713536,
+      "torsionKNm": 0.005725022288298632,
+      "bendingYKNm": 1.0091984773132172,
+      "bendingZKNm": 1.3612905413820262,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.2967867519713536,
+        0.38369350236789046,
+        10.502334392982448,
+        -1.3612905413820262,
+        1.0091984773132172,
+        0.005725022288298632
+      ]
+    },
+    {
+      "memberId": "court-north/east/post/2",
+      "end": 1,
+      "kind": "post",
+      "physicalPointMm": [
+        7586.25,
+        8082.5,
+        0.0
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 10.502334392982448,
+      "shearYKN": -0.38369350236789046,
+      "shearZKN": 1.2967867519713536,
+      "torsionKNm": -0.005725022288298632,
+      "bendingYKNm": -0.9702948747541341,
+      "bendingZKNm": -1.3497797363110149,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.2967867519713536,
+        -0.38369350236789046,
+        -10.502334392982448,
+        1.3497797363110149,
+        -0.9702948747541341,
+        -0.005725022288298632
+      ]
+    },
+    {
+      "memberId": "court-north/east/post/3",
+      "end": 0,
+      "kind": "post",
+      "physicalPointMm": [
+        7586.25,
+        8082.5,
+        0.0
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 9.701594549226684,
+      "shearYKN": 0.3836935023678827,
+      "shearZKN": -1.2967867519713632,
+      "torsionKNm": 0.005725022288299323,
+      "bendingYKNm": 0.9702948747469592,
+      "bendingZKNm": 1.3497797363110218,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.2967867519713632,
+        0.3836935023678827,
+        9.701594549226684,
+        -1.3497797363110218,
+        0.9702948747469592,
+        0.005725022288299323
+      ]
+    },
+    {
+      "memberId": "court-north/east/post/3",
+      "end": 1,
+      "kind": "post",
+      "physicalPointMm": [
+        7586.25,
+        8082.5,
+        1125.0
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 9.701594549226684,
+      "shearYKN": -0.3836935023678827,
+      "shearZKN": 1.2967867519713632,
+      "torsionKNm": -0.005725022288299323,
+      "bendingYKNm": 0.48859022122082035,
+      "bendingZKNm": -0.9181245461471659,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.2967867519713632,
+        -0.3836935023678827,
+        -9.701594549226684,
+        0.9181245461471659,
+        0.48859022122082035,
+        -0.005725022288299323
+      ]
+    },
+    {
+      "memberId": "court-north/east/post/4",
+      "end": 0,
+      "kind": "post",
+      "physicalPointMm": [
+        7586.25,
+        8082.5,
+        1125.0
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 8.141711736726677,
+      "shearYKN": 0.3836935023678727,
+      "shearZKN": -1.2967867519713199,
+      "torsionKNm": 0.005725022288299325,
+      "bendingYKNm": -0.4885902212207338,
+      "bendingZKNm": 0.9181245461471627,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.2967867519713199,
+        0.3836935023678727,
+        8.141711736726677,
+        -0.9181245461471627,
+        -0.4885902212207338,
+        0.005725022288299325
+      ]
+    },
+    {
+      "memberId": "court-north/east/post/4",
+      "end": 1,
+      "kind": "post",
+      "physicalPointMm": [
+        7586.25,
+        8082.5,
+        2250.0
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 8.141711736726677,
+      "shearYKN": -0.3836935023678727,
+      "shearZKN": 1.2967867519713199,
+      "torsionKNm": -0.005725022288299325,
+      "bendingYKNm": 1.947475317188483,
+      "bendingZKNm": -0.4864693559833249,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.2967867519713199,
+        -0.3836935023678727,
+        -8.141711736726677,
+        0.4864693559833249,
+        1.947475317188483,
+        -0.005725022288299325
+      ]
+    },
+    {
+      "memberId": "court-north/east/post/5",
+      "end": 0,
+      "kind": "post",
+      "physicalPointMm": [
+        7586.25,
+        8082.5,
+        2250.0
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 7.260180161299559,
+      "shearYKN": 0.3836935023705337,
+      "shearZKN": -1.2967867519718084,
+      "torsionKNm": 0.005725022288299271,
+      "bendingYKNm": -1.947475317188326,
+      "bendingZKNm": 0.4864693559834632,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.2967867519718084,
+        0.3836935023705337,
+        7.260180161299559,
+        -0.4864693559834632,
+        -1.947475317188326,
+        0.005725022288299271
+      ]
+    },
+    {
+      "memberId": "court-north/east/post/5",
+      "end": 1,
+      "kind": "post",
+      "physicalPointMm": [
+        7586.25,
+        8082.5,
+        2396.5352902266773
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 7.260180161299559,
+      "shearYKN": -0.3836935023705337,
+      "shearZKN": 1.2967867519718084,
+      "torsionKNm": -0.005725022288299271,
+      "bendingYKNm": 2.137500340250345,
+      "bendingZKNm": -0.43024471725547847,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.2967867519718084,
+        -0.3836935023705337,
+        -7.260180161299559,
+        0.43024471725547847,
+        2.137500340250345,
+        -0.005725022288299271
+      ]
+    },
+    {
+      "memberId": "court-north/east/post/6",
+      "end": 0,
+      "kind": "post",
+      "physicalPointMm": [
+        7586.25,
+        8082.5,
+        2396.5352902266773
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 4.000836853373244,
+      "shearYKN": 0.39594151419208146,
+      "shearZKN": -2.5528176657940076,
+      "torsionKNm": -0.05842388415987936,
+      "bendingYKNm": -1.0229298318738969,
+      "bendingZKNm": 0.41781157843966504,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.5528176657940076,
+        0.39594151419208146,
+        4.000836853373244,
+        -0.41781157843966504,
+        -1.0229298318738969,
+        -0.05842388415987936
+      ]
+    },
+    {
+      "memberId": "court-north/east/post/6",
+      "end": 1,
+      "kind": "post",
+      "physicalPointMm": [
+        7586.25,
+        8082.5,
+        3170
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 4.000836853373244,
+      "shearYKN": -0.39594151419208146,
+      "shearZKN": 2.5528176657940076,
+      "torsionKNm": 0.05842388415987936,
+      "bendingYKNm": 2.9974442068514526,
+      "bendingZKNm": -0.11156479007783915,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.5528176657940076,
+        -0.39594151419208146,
+        -4.000836853373244,
+        0.11156479007783915,
+        2.9974442068514526,
+        0.05842388415987936
+      ]
+    },
+    {
+      "memberId": "outer-north/west/post/0",
+      "end": 0,
+      "kind": "post",
+      "physicalPointMm": [
+        4413.75,
+        11667.5,
+        -180
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 17.26157974683374,
+      "shearYKN": 2.613211355381808,
+      "shearZKN": -2.2709312860329973,
+      "torsionKNm": 0.2542566343798634,
+      "bendingYKNm": 1.9312995046502985,
+      "bendingZKNm": 2.628023285612322,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.2709312860329973,
+        2.613211355381808,
+        17.26157974683374,
+        -2.628023285612322,
+        1.9312995046502985,
+        0.2542566343798634
+      ]
+    },
+    {
+      "memberId": "outer-north/west/post/0",
+      "end": 1,
+      "kind": "post",
+      "physicalPointMm": [
+        4413.75,
+        11667.5,
+        -50
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 17.26157974683374,
+      "shearYKN": -2.613211355381808,
+      "shearZKN": 2.2709312860329973,
+      "torsionKNm": -0.2542566343798629,
+      "bendingYKNm": -1.636078437466008,
+      "bendingZKNm": -2.288305809412686,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.2709312860329973,
+        -2.613211355381808,
+        -17.26157974683374,
+        2.288305809412686,
+        -1.636078437466008,
+        -0.2542566343798629
+      ]
+    },
+    {
+      "memberId": "outer-north/west/post/2",
+      "end": 0,
+      "kind": "post",
+      "physicalPointMm": [
+        4413.75,
+        11667.5,
+        -30
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 17.150654746837972,
+      "shearYKN": 2.61321135537861,
+      "shearZKN": -2.2709312860334876,
+      "torsionKNm": 0.254256634379858,
+      "bendingYKNm": 1.5906598117452686,
+      "bendingZKNm": 2.2360415823067576,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.2709312860334876,
+        2.61321135537861,
+        17.150654746837972,
+        -2.2360415823067576,
+        1.5906598117452686,
+        0.254256634379858
+      ]
+    },
+    {
+      "memberId": "outer-north/west/post/2",
+      "end": 1,
+      "kind": "post",
+      "physicalPointMm": [
+        4413.75,
+        11667.5,
+        0.0
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 17.150654746837972,
+      "shearYKN": -2.61321135537861,
+      "shearZKN": 2.2709312860334876,
+      "torsionKNm": -0.254256634379858,
+      "bendingYKNm": -1.522531873164333,
+      "bendingZKNm": -2.1576452416454575,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.2709312860334876,
+        -2.61321135537861,
+        -17.150654746837972,
+        2.1576452416454575,
+        -1.522531873164333,
+        -0.254256634379858
+      ]
+    },
+    {
+      "memberId": "outer-north/west/post/3",
+      "end": 0,
+      "kind": "post",
+      "physicalPointMm": [
+        4413.75,
+        11667.5,
+        0.0
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 16.34991490308164,
+      "shearYKN": 2.6132113553759204,
+      "shearZKN": -2.270931286033225,
+      "torsionKNm": 0.2542566343798579,
+      "bendingYKNm": 1.5225318731376116,
+      "bendingZKNm": 2.157645241645556,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.270931286033225,
+        2.6132113553759204,
+        16.34991490308164,
+        -2.157645241645556,
+        1.5225318731376116,
+        0.2542566343798579
+      ]
+    },
+    {
+      "memberId": "outer-north/west/post/3",
+      "end": 1,
+      "kind": "post",
+      "physicalPointMm": [
+        4413.75,
+        11667.5,
+        1125.0
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 16.34991490308164,
+      "shearYKN": -2.6132113553759204,
+      "shearZKN": 2.270931286033225,
+      "torsionKNm": -0.2542566343798579,
+      "bendingYKNm": 1.0322658236497653,
+      "bendingZKNm": 0.7822175331523451,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.270931286033225,
+        -2.6132113553759204,
+        -16.34991490308164,
+        -0.7822175331523451,
+        1.0322658236497653,
+        -0.2542566343798579
+      ]
+    },
+    {
+      "memberId": "outer-north/west/post/4",
+      "end": 0,
+      "kind": "post",
+      "physicalPointMm": [
+        4413.75,
+        11667.5,
+        1125.0
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 14.790032090581747,
+      "shearYKN": 2.6132113553758742,
+      "shearZKN": -2.2709312860332567,
+      "torsionKNm": 0.254256634379858,
+      "bendingYKNm": -1.0322658236497146,
+      "bendingZKNm": -0.7822175331522522,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.2709312860332567,
+        2.6132113553758742,
+        14.790032090581747,
+        0.7822175331522522,
+        -1.0322658236497146,
+        0.254256634379858
+      ]
+    },
+    {
+      "memberId": "outer-north/west/post/4",
+      "end": 1,
+      "kind": "post",
+      "physicalPointMm": [
+        4413.75,
+        11667.5,
+        2250.0
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 14.790032090581747,
+      "shearYKN": -2.6132113553758742,
+      "shearZKN": 2.2709312860332567,
+      "torsionKNm": -0.254256634379858,
+      "bendingYKNm": 3.5870635204371424,
+      "bendingZKNm": 3.7220803079501037,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.2709312860332567,
+        -2.6132113553758742,
+        -14.790032090581747,
+        -3.7220803079501037,
+        3.5870635204371424,
+        -0.254256634379858
+      ]
+    },
+    {
+      "memberId": "outer-north/west/post/5",
+      "end": 0,
+      "kind": "post",
+      "physicalPointMm": [
+        4413.75,
+        11667.5,
+        2250.0
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 13.908500515154174,
+      "shearYKN": 2.613211355377075,
+      "shearZKN": -2.270931286033502,
+      "torsionKNm": 0.25425663437985624,
+      "bendingYKNm": -3.587063520437787,
+      "bendingZKNm": -3.7220803079502094,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.270931286033502,
+        2.613211355377075,
+        13.908500515154174,
+        3.7220803079502094,
+        -3.587063520437787,
+        0.25425663437985624
+      ]
+    },
+    {
+      "memberId": "outer-north/west/post/5",
+      "end": 1,
+      "kind": "post",
+      "physicalPointMm": [
+        4413.75,
+        11667.5,
+        2396.5352902266773
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 13.908500515154174,
+      "shearYKN": -2.613211355377075,
+      "shearZKN": 2.270931286033502,
+      "torsionKNm": -0.25425663437985624,
+      "bendingYKNm": 3.919835095521618,
+      "bendingZKNm": 4.105007992333864,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.270931286033502,
+        -2.613211355377075,
+        -13.908500515154174,
+        -4.105007992333864,
+        3.919835095521618,
+        -0.25425663437985624
+      ]
+    },
+    {
+      "memberId": "outer-north/west/post/6",
+      "end": 0,
+      "kind": "post",
+      "physicalPointMm": [
+        4413.75,
+        11667.5,
+        2396.5352902266773
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 7.673491632656237,
+      "shearYKN": -2.9062833385816376,
+      "shearZKN": 0.5355625389393968,
+      "torsionKNm": -0.7385684651037507,
+      "bendingYKNm": -0.8632790361205973,
+      "bendingZKNm": -2.01960058527808,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -0.5355625389393968,
+        -2.9062833385816376,
+        7.673491632656237,
+        2.01960058527808,
+        -0.8632790361205973,
+        -0.7385684651037507
+      ]
+    },
+    {
+      "memberId": "outer-north/west/post/6",
+      "end": 1,
+      "kind": "post",
+      "physicalPointMm": [
+        4413.75,
+        11667.5,
+        3170
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 7.673491632656237,
+      "shearYKN": 2.9062833385816376,
+      "shearZKN": -0.5355625389393968,
+      "torsionKNm": 0.7385684651037507,
+      "bendingYKNm": 0.4490403123743732,
+      "bendingZKNm": -0.22830701371702572,
+      "globalPhysicalEndWrenchKN_KNm": [
+        0.5355625389393968,
+        2.9062833385816376,
+        -7.673491632656237,
+        0.22830701371702572,
+        0.4490403123743732,
+        0.7385684651037507
+      ]
+    },
+    {
+      "memberId": "outer-north/east/post/0",
+      "end": 0,
+      "kind": "post",
+      "physicalPointMm": [
+        7586.25,
+        11667.5,
+        -180
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 11.497733194175842,
+      "shearYKN": 2.32093107339946,
+      "shearZKN": -1.3029537291561777,
+      "torsionKNm": -0.22081414946685424,
+      "bendingYKNm": 1.2557022036177468,
+      "bendingZKNm": 1.8639722248005637,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.3029537291561777,
+        2.32093107339946,
+        11.497733194175842,
+        -1.8639722248005637,
+        1.2557022036177468,
+        -0.22081414946685424
+      ]
+    },
+    {
+      "memberId": "outer-north/east/post/0",
+      "end": 1,
+      "kind": "post",
+      "physicalPointMm": [
+        7586.25,
+        11667.5,
+        -50
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 11.497733194175842,
+      "shearYKN": -2.32093107339946,
+      "shearZKN": 1.3029537291561777,
+      "torsionKNm": 0.22081414946685393,
+      "bendingYKNm": -1.0863182188274434,
+      "bendingZKNm": -1.5622511852586336,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.3029537291561777,
+        -2.32093107339946,
+        -11.497733194175842,
+        1.5622511852586336,
+        -1.0863182188274434,
+        0.22081414946685393
+      ]
+    },
+    {
+      "memberId": "outer-north/east/post/2",
+      "end": 0,
+      "kind": "post",
+      "physicalPointMm": [
+        7586.25,
+        11667.5,
+        -30
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 11.38680819417641,
+      "shearYKN": 2.32093107339972,
+      "shearZKN": -1.302953729156286,
+      "torsionKNm": -0.22081414946685549,
+      "bendingYKNm": 1.0602591442443954,
+      "bendingZKNm": 1.5158325637906682,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.302953729156286,
+        2.32093107339972,
+        11.38680819417641,
+        -1.5158325637906682,
+        1.0602591442443954,
+        -0.22081414946685549
+      ]
+    },
+    {
+      "memberId": "outer-north/east/post/2",
+      "end": 1,
+      "kind": "post",
+      "physicalPointMm": [
+        7586.25,
+        11667.5,
+        0.0
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 11.38680819417641,
+      "shearYKN": -2.32093107339972,
+      "shearZKN": 1.302953729156286,
+      "torsionKNm": 0.22081414946685549,
+      "bendingYKNm": -1.0211705323697389,
+      "bendingZKNm": -1.4462046315887118,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.302953729156286,
+        -2.32093107339972,
+        -11.38680819417641,
+        1.4462046315887118,
+        -1.0211705323697389,
+        0.22081414946685549
+      ]
+    },
+    {
+      "memberId": "outer-north/east/post/3",
+      "end": 0,
+      "kind": "post",
+      "physicalPointMm": [
+        7586.25,
+        11667.5,
+        0.0
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 10.58606835042383,
+      "shearYKN": 2.3209310733995814,
+      "shearZKN": -1.3029537291563464,
+      "torsionKNm": -0.22081414946685546,
+      "bendingYKNm": 1.0211705323521918,
+      "bendingZKNm": 1.4462046315887542,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.3029537291563464,
+        2.3209310733995814,
+        10.58606835042383,
+        -1.4462046315887542,
+        1.0211705323521918,
+        -0.22081414946685546
+      ]
+    },
+    {
+      "memberId": "outer-north/east/post/3",
+      "end": 1,
+      "kind": "post",
+      "physicalPointMm": [
+        7586.25,
+        11667.5,
+        1125.0
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 10.58606835042383,
+      "shearYKN": -2.3209310733995814,
+      "shearZKN": 1.3029537291563464,
+      "torsionKNm": 0.22081414946685546,
+      "bendingYKNm": 0.4446524129487022,
+      "bendingZKNm": 1.1648428259857642,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.3029537291563464,
+        -2.3209310733995814,
+        -10.58606835042383,
+        -1.1648428259857642,
+        0.4446524129487022,
+        0.22081414946685546
+      ]
+    },
+    {
+      "memberId": "outer-north/east/post/4",
+      "end": 0,
+      "kind": "post",
+      "physicalPointMm": [
+        7586.25,
+        11667.5,
+        1125.0
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 9.02618553792388,
+      "shearYKN": 2.3209310733995743,
+      "shearZKN": -1.302953729156318,
+      "torsionKNm": -0.22081414946685554,
+      "bendingYKNm": -0.44465241294871655,
+      "bendingZKNm": -1.1648428259857455,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.302953729156318,
+        2.3209310733995743,
+        9.02618553792388,
+        1.1648428259857455,
+        -0.44465241294871655,
+        -0.22081414946685554
+      ]
+    },
+    {
+      "memberId": "outer-north/east/post/4",
+      "end": 1,
+      "kind": "post",
+      "physicalPointMm": [
+        7586.25,
+        11667.5,
+        2250.0
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 9.02618553792388,
+      "shearYKN": -2.3209310733995743,
+      "shearZKN": 1.302953729156318,
+      "torsionKNm": 0.22081414946685554,
+      "bendingYKNm": 1.9104753582495815,
+      "bendingZKNm": 3.775890283560255,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.302953729156318,
+        -2.3209310733995743,
+        -9.02618553792388,
+        -3.775890283560255,
+        1.9104753582495815,
+        0.22081414946685554
+      ]
+    },
+    {
+      "memberId": "outer-north/east/post/5",
+      "end": 0,
+      "kind": "post",
+      "physicalPointMm": [
+        7586.25,
+        11667.5,
+        2250.0
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 8.144653962496704,
+      "shearYKN": 2.320931073399663,
+      "shearZKN": -1.3029537291573945,
+      "torsionKNm": -0.22081414946685482,
+      "bendingYKNm": -1.9104753582490406,
+      "bendingZKNm": -3.7758902835604786,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.3029537291573945,
+        2.320931073399663,
+        8.144653962496704,
+        3.7758902835604786,
+        -1.9104753582490406,
+        -0.22081414946685482
+      ]
+    },
+    {
+      "memberId": "outer-north/east/post/5",
+      "end": 1,
+      "kind": "post",
+      "physicalPointMm": [
+        7586.25,
+        11667.5,
+        2396.5352902266773
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 8.144653962496704,
+      "shearYKN": -2.320931073399663,
+      "shearZKN": 1.3029537291573945,
+      "torsionKNm": 0.22081414946685482,
+      "bendingYKNm": 2.1014040611031266,
+      "bendingZKNm": 4.115988591997182,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.3029537291573945,
+        -2.320931073399663,
+        -8.144653962496704,
+        -4.115988591997182,
+        2.1014040611031266,
+        0.22081414946685482
+      ]
+    },
+    {
+      "memberId": "outer-north/east/post/6",
+      "end": 0,
+      "kind": "post",
+      "physicalPointMm": [
+        7586.25,
+        11667.5,
+        2396.5352902266773
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 4.823340528973631,
+      "shearYKN": -3.1805208662048514,
+      "shearZKN": -4.109447554129752,
+      "torsionKNm": 0.7433906309146806,
+      "bendingYKNm": -0.5361107145789876,
+      "bendingZKNm": -2.066983707934665,
+      "globalPhysicalEndWrenchKN_KNm": [
+        4.109447554129752,
+        -3.1805208662048514,
+        4.823340528973631,
+        2.066983707934665,
+        -0.5361107145789876,
+        0.7433906309146806
+      ]
+    },
+    {
+      "memberId": "outer-north/east/post/6",
+      "end": 1,
+      "kind": "post",
+      "physicalPointMm": [
+        7586.25,
+        11667.5,
+        3170
+      ],
+      "breadthMm": 290,
+      "depthMm": 212.5,
+      "axialCompressionKN": 4.823340528973631,
+      "shearYKN": 3.1805208662048514,
+      "shearZKN": 4.109447554129752,
+      "torsionKNm": -0.7433906309146806,
+      "bendingYKNm": 3.7146233743626396,
+      "bendingZKNm": -0.3930369407724563,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -4.109447554129752,
+        3.1805208662048514,
+        -4.823340528973631,
+        0.3930369407724563,
+        3.7146233743626396,
+        -0.7433906309146806
+      ]
+    },
+    {
+      "memberId": "court-north/upstand/0",
+      "end": 0,
+      "kind": "upstand",
+      "physicalPointMm": [
+        4413.75,
+        8082.5,
+        3495.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 650,
+      "axialCompressionKN": 3.0688569474732503,
+      "shearYKN": 1.867271071164435,
+      "shearZKN": 5.97034485242817,
+      "torsionKNm": 0.49210662966196833,
+      "bendingYKNm": -2.1684668803460916,
+      "bendingZKNm": 0.16085778908316797,
+      "globalPhysicalEndWrenchKN_KNm": [
+        3.0688569474732503,
+        1.867271071164435,
+        5.97034485242817,
+        0.49210662966196833,
+        -2.1684668803460916,
+        0.16085778908316797
+      ]
+    },
+    {
+      "memberId": "court-north/upstand/0",
+      "end": 1,
+      "kind": "upstand",
+      "physicalPointMm": [
+        4520,
+        8082.5,
+        3495.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 650,
+      "axialCompressionKN": 3.0688569474732503,
+      "shearYKN": -1.867271071164435,
+      "shearZKN": -5.97034485242817,
+      "torsionKNm": -0.49210662966196833,
+      "bendingYKNm": 1.5341177397756018,
+      "bendingZKNm": 0.0375397622273108,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -3.0688569474732503,
+        -1.867271071164435,
+        -5.97034485242817,
+        -0.49210662966196833,
+        1.5341177397756018,
+        0.0375397622273108
+      ]
+    },
+    {
+      "memberId": "court-north/upstand/1",
+      "end": 0,
+      "kind": "upstand",
+      "physicalPointMm": [
+        4520,
+        8082.5,
+        3495.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 650,
+      "axialCompressionKN": 3.5988578180986224,
+      "shearYKN": 1.0495719439433255,
+      "shearZKN": 5.405454227428088,
+      "torsionKNm": 0.30812432603750495,
+      "bendingYKNm": -1.6533679356507227,
+      "bendingZKNm": 0.12327617187695808,
+      "globalPhysicalEndWrenchKN_KNm": [
+        3.5988578180986224,
+        1.0495719439433255,
+        5.405454227428088,
+        0.30812432603750495,
+        -1.6533679356507227,
+        0.12327617187695808
+      ]
+    },
+    {
+      "memberId": "court-north/upstand/1",
+      "end": 1,
+      "kind": "upstand",
+      "physicalPointMm": [
+        4800,
+        8082.5,
+        3495.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 650,
+      "axialCompressionKN": 3.5988578180986224,
+      "shearYKN": -1.0495719439433255,
+      "shearZKN": -5.405454227428088,
+      "torsionKNm": -0.30812432603750495,
+      "bendingYKNm": 0.13984075197085893,
+      "bendingZKNm": 0.17060397242728753,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -3.5988578180986224,
+        -1.0495719439433255,
+        -5.405454227428088,
+        -0.30812432603750495,
+        0.13984075197085893,
+        0.17060397242728753
+      ]
+    },
+    {
+      "memberId": "court-north/upstand/2",
+      "end": 0,
+      "kind": "upstand",
+      "physicalPointMm": [
+        4800,
+        8082.5,
+        3495.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 650,
+      "axialCompressionKN": 4.3018843249519705,
+      "shearYKN": 0.20273207945881833,
+      "shearZKN": 4.410954227427975,
+      "torsionKNm": 0.11758535652672436,
+      "bendingYKNm": -0.29802171599479493,
+      "bendingZKNm": -0.09158566688132305,
+      "globalPhysicalEndWrenchKN_KNm": [
+        4.3018843249519705,
+        0.20273207945881833,
+        4.410954227427975,
+        0.11758535652672436,
+        -0.29802171599479493,
+        -0.09158566688132305
+      ]
+    },
+    {
+      "memberId": "court-north/upstand/2",
+      "end": 1,
+      "kind": "upstand",
+      "physicalPointMm": [
+        5200,
+        8082.5,
+        3495.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 650,
+      "axialCompressionKN": 4.3018843249519705,
+      "shearYKN": -0.20273207945881833,
+      "shearZKN": -4.410954227427975,
+      "torsionKNm": -0.11758535652672436,
+      "bendingYKNm": -1.4663599749763991,
+      "bendingZKNm": 0.17267849866487223,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -4.3018843249519705,
+        -0.20273207945881833,
+        -4.410954227427975,
+        -0.11758535652672436,
+        -1.4663599749763991,
+        0.17267849866487223
+      ]
+    },
+    {
+      "memberId": "court-north/upstand/3",
+      "end": 0,
+      "kind": "upstand",
+      "physicalPointMm": [
+        5200,
+        8082.5,
+        3495.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 650,
+      "axialCompressionKN": 5.258084331057034,
+      "shearYKN": -0.058656703134716714,
+      "shearZKN": 3.2409542274279772,
+      "torsionKNm": 0.0587728804426406,
+      "bendingYKNm": 1.2512149736182827,
+      "bendingZKNm": -0.17139196772011836,
+      "globalPhysicalEndWrenchKN_KNm": [
+        5.258084331057034,
+        -0.058656703134716714,
+        3.2409542274279772,
+        0.0587728804426406,
+        1.2512149736182827,
+        -0.17139196772011836
+      ]
+    },
+    {
+      "memberId": "court-north/upstand/3",
+      "end": 1,
+      "kind": "upstand",
+      "physicalPointMm": [
+        5600,
+        8082.5,
+        3495.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 650,
+      "axialCompressionKN": 5.258084331057034,
+      "shearYKN": 0.058656703134716714,
+      "shearZKN": -3.2409542274279772,
+      "torsionKNm": -0.0587728804426406,
+      "bendingYKNm": -2.5475966645894714,
+      "bendingZKNm": 0.14792928646606424,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -5.258084331057034,
+        0.058656703134716714,
+        -3.2409542274279772,
+        -0.0587728804426406,
+        -2.5475966645894714,
+        0.14792928646606424
+      ]
+    },
+    {
+      "memberId": "court-north/upstand/4",
+      "end": 0,
+      "kind": "upstand",
+      "physicalPointMm": [
+        5600,
+        8082.5,
+        3495.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 650,
+      "axialCompressionKN": 6.269173731627234,
+      "shearYKN": -0.15567255674303926,
+      "shearZKN": 2.070954227427938,
+      "torsionKNm": 0.03694431337953211,
+      "bendingYKNm": 2.3201015494680925,
+      "bendingZKNm": -0.1905051300965565,
+      "globalPhysicalEndWrenchKN_KNm": [
+        6.269173731627234,
+        -0.15567255674303926,
+        2.070954227427938,
+        0.03694431337953211,
+        2.3201015494680925,
+        -0.1905051300965565
+      ]
+    },
+    {
+      "memberId": "court-north/upstand/4",
+      "end": 1,
+      "kind": "upstand",
+      "physicalPointMm": [
+        6000,
+        8082.5,
+        3495.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 650,
+      "axialCompressionKN": 6.269173731627234,
+      "shearYKN": 0.15567255674303926,
+      "shearZKN": -2.070954227427938,
+      "torsionKNm": -0.03694431337953211,
+      "bendingYKNm": -3.148483240439262,
+      "bendingZKNm": 0.12823610739947913,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -6.269173731627234,
+        0.15567255674303926,
+        -2.070954227427938,
+        -0.03694431337953211,
+        -3.148483240439262,
+        0.12823610739947913
+      ]
+    },
+    {
+      "memberId": "court-north/upstand/5",
+      "end": 0,
+      "kind": "upstand",
+      "physicalPointMm": [
+        6000,
+        8082.5,
+        3495.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 650,
+      "axialCompressionKN": 7.216836827428779,
+      "shearYKN": -0.19321121473988212,
+      "shearZKN": 0.9009542274338482,
+      "torsionKNm": 0.028498115329777647,
+      "bendingYKNm": 2.9352590439052775,
+      "bendingZKNm": -0.20072203411899692,
+      "globalPhysicalEndWrenchKN_KNm": [
+        7.216836827428779,
+        -0.19321121473988212,
+        0.9009542274338482,
+        0.028498115329777647,
+        2.9352590439052775,
+        -0.20072203411899692
+      ]
+    },
+    {
+      "memberId": "court-north/upstand/5",
+      "end": 1,
+      "kind": "upstand",
+      "physicalPointMm": [
+        6400,
+        8082.5,
+        3495.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 650,
+      "axialCompressionKN": 7.216836827428779,
+      "shearYKN": 0.19321121473988212,
+      "shearZKN": -0.9009542274338482,
+      "torsionKNm": -0.028498115329777647,
+      "bendingYKNm": -3.2956407348788233,
+      "bendingZKNm": 0.12343754822308779,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -7.216836827428779,
+        0.19321121473988212,
+        -0.9009542274338482,
+        -0.028498115329777647,
+        -3.2956407348788233,
+        0.12343754822308779
+      ]
+    },
+    {
+      "memberId": "court-north/upstand/6",
+      "end": 0,
+      "kind": "upstand",
+      "physicalPointMm": [
+        6400,
+        8082.5,
+        3495.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 650,
+      "axialCompressionKN": 8.021070822011097,
+      "shearYKN": -0.27327566163160133,
+      "shearZKN": -0.2690457725528006,
+      "torsionKNm": 0.010483614781838697,
+      "bendingYKNm": 3.1146880860959074,
+      "bendingZKNm": -0.22139835863082544,
+      "globalPhysicalEndWrenchKN_KNm": [
+        8.021070822011097,
+        -0.27327566163160133,
+        -0.2690457725528006,
+        0.010483614781838697,
+        3.1146880860959074,
+        -0.22139835863082544
+      ]
+    },
+    {
+      "memberId": "court-north/upstand/6",
+      "end": 1,
+      "kind": "upstand",
+      "physicalPointMm": [
+        6800,
+        8082.5,
+        3495.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 650,
+      "axialCompressionKN": 8.021070822011097,
+      "shearYKN": 0.27327566163160133,
+      "shearZKN": 0.2690457725528006,
+      "torsionKNm": -0.010483614781838697,
+      "bendingYKNm": -3.007069777074779,
+      "bendingZKNm": 0.11208809397818496,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -8.021070822011097,
+        0.27327566163160133,
+        0.2690457725528006,
+        -0.010483614781838697,
+        -3.007069777074779,
+        0.11208809397818496
+      ]
+    },
+    {
+      "memberId": "court-north/upstand/7",
+      "end": 0,
+      "kind": "upstand",
+      "physicalPointMm": [
+        6800,
+        8082.5,
+        3495.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 650,
+      "axialCompressionKN": 8.570342155333492,
+      "shearYKN": -0.4524232991013991,
+      "shearZKN": -1.4390457725531363,
+      "torsionKNm": -0.029824603648838093,
+      "bendingYKNm": 2.8834837270973637,
+      "bendingZKNm": -0.2225091826164735,
+      "globalPhysicalEndWrenchKN_KNm": [
+        8.570342155333492,
+        -0.4524232991013991,
+        -1.4390457725531363,
+        -0.029824603648838093,
+        2.8834837270973637,
+        -0.2225091826164735
+      ]
+    },
+    {
+      "memberId": "court-north/upstand/7",
+      "end": 1,
+      "kind": "upstand",
+      "physicalPointMm": [
+        7200,
+        8082.5,
+        3495.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 650,
+      "axialCompressionKN": 8.570342155333492,
+      "shearYKN": 0.4524232991013991,
+      "shearZKN": 1.4390457725531363,
+      "torsionKNm": 0.029824603648838093,
+      "bendingYKNm": -2.3078654180761142,
+      "bendingZKNm": 0.04153986297602296,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -8.570342155333492,
+        0.4524232991013991,
+        1.4390457725531363,
+        0.029824603648838093,
+        -2.3078654180761142,
+        0.04153986297602296
+      ]
+    },
+    {
+      "memberId": "court-north/upstand/8",
+      "end": 0,
+      "kind": "upstand",
+      "physicalPointMm": [
+        7200,
+        8082.5,
+        3495.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 650,
+      "axialCompressionKN": 8.55553258463624,
+      "shearYKN": -1.3458020691242552,
+      "shearZKN": -2.433545772551014,
+      "torsionKNm": -0.2308348269028538,
+      "bendingYKNm": 2.311197571484836,
+      "bendingZKNm": -0.18763743163549243,
+      "globalPhysicalEndWrenchKN_KNm": [
+        8.55553258463624,
+        -1.3458020691242552,
+        -2.433545772551014,
+        -0.2308348269028538,
+        2.311197571484836,
+        -0.18763743163549243
+      ]
+    },
+    {
+      "memberId": "court-north/upstand/8",
+      "end": 1,
+      "kind": "upstand",
+      "physicalPointMm": [
+        7480,
+        8082.5,
+        3495.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 650,
+      "axialCompressionKN": 8.55553258463624,
+      "shearYKN": 1.3458020691242552,
+      "shearZKN": 2.433545772551014,
+      "torsionKNm": 0.2308348269028538,
+      "bendingYKNm": -1.6298047551705594,
+      "bendingZKNm": -0.18918714771892742,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -8.55553258463624,
+        1.3458020691242552,
+        2.433545772551014,
+        0.2308348269028538,
+        -1.6298047551705594,
+        -0.18918714771892742
+      ]
+    },
+    {
+      "memberId": "court-north/upstand/9",
+      "end": 0,
+      "kind": "upstand",
+      "physicalPointMm": [
+        7480,
+        8082.5,
+        3495.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 650,
+      "axialCompressionKN": 7.884465128154261,
+      "shearYKN": -2.1504153446130045,
+      "shearZKN": -2.99843639755062,
+      "torsionKNm": -0.4118728138756269,
+      "bendingYKNm": 1.7807949329088515,
+      "bendingZKNm": 0.0005375587209591117,
+      "globalPhysicalEndWrenchKN_KNm": [
+        7.884465128154261,
+        -2.1504153446130045,
+        -2.99843639755062,
+        -0.4118728138756269,
+        1.7807949329088515,
+        0.0005375587209591117
+      ]
+    },
+    {
+      "memberId": "court-north/upstand/9",
+      "end": 1,
+      "kind": "upstand",
+      "physicalPointMm": [
+        7586.25,
+        8082.5,
+        3495.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 650,
+      "axialCompressionKN": 7.884465128154261,
+      "shearYKN": 2.1504153446130045,
+      "shearZKN": 2.99843639755062,
+      "torsionKNm": 0.4118728138756269,
+      "bendingYKNm": -1.462211065669064,
+      "bendingZKNm": -0.22901918908635815,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -7.884465128154261,
+        2.1504153446130045,
+        2.99843639755062,
+        0.4118728138756269,
+        -1.462211065669064,
+        -0.22901918908635815
+      ]
+    },
+    {
+      "memberId": "court-north/arch/0",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        4520.0,
+        8082.5,
+        2396.5352902266773
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 4.428856278851914,
+      "shearYKN": 0.01224801182112678,
+      "shearZKN": 3.3554453270551954,
+      "torsionKNm": -0.007463899206689554,
+      "bendingYKNm": -3.0898225636637937,
+      "bendingZKNm": -0.028391622183178138,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.2560309139960797,
+        0.01224801182112678,
+        5.412593428724232,
+        0.012433138821263014,
+        -3.0898225636637937,
+        -0.026593440180073667
+      ]
+    },
+    {
+      "memberId": "court-north/arch/0",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        4623.588791427044,
+        8082.5,
+        2482.8011550830615
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 4.428856278851914,
+      "shearYKN": -0.01224801182112678,
+      "shearZKN": -3.3554453270551954,
+      "torsionKNm": 0.00746389920659919,
+      "bendingYKNm": 2.6374911449782603,
+      "bendingZKNm": 0.030042717648047442,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.2560309139960797,
+        -0.01224801182112678,
+        -5.412593428724232,
+        -0.0134897241536612,
+        2.6374911449782603,
+        0.02786219692171999
+      ]
+    },
+    {
+      "memberId": "court-north/arch/1",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        4623.588791427044,
+        8082.5,
+        2482.8011550830615
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 3.9347794620394563,
+      "shearYKN": 0.012248011826009098,
+      "shearZKN": 3.231015644871412,
+      "torsionKNm": -0.0056373223489426996,
+      "bendingYKNm": -2.6376621025692164,
+      "bendingZKNm": -0.030438384840921127,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.2560309139539774,
+        0.012248011826009098,
+        4.933998161276844,
+        0.013489724151747115,
+        -2.6376621025692164,
+        -0.02786219692162979
+      ]
+    },
+    {
+      "memberId": "court-north/arch/1",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        4732.194636699073,
+        8082.5,
+        2562.658575035648
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 3.9347794620394563,
+      "shearYKN": -0.012248011826009098,
+      "shearZKN": -3.231015644871412,
+      "torsionKNm": 0.005637322348923134,
+      "bendingYKNm": 2.2021044498614497,
+      "bendingZKNm": 0.03208948030697016,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.2560309139539774,
+        -0.012248011826009098,
+        -4.933998161276844,
+        -0.01446781877586799,
+        2.2021044498614497,
+        0.029192402599062233
+      ]
+    },
+    {
+      "memberId": "court-north/arch/2",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        4732.194636699073,
+        8082.5,
+        2562.658575035648
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 3.48908714829345,
+      "shearYKN": 0.01224801182708557,
+      "shearZKN": 3.0856478200561748,
+      "torsionKNm": -0.003690559421973827,
+      "bendingYKNm": -2.20243418902748,
+      "bendingZKNm": -0.032371189672037205,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.2560309139582975,
+        0.01224801182708557,
+        4.4852355502230905,
+        0.01446781877581007,
+        -2.20243418902748,
+        -0.029192402598971625
+      ]
+    },
+    {
+      "memberId": "court-north/arch/2",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        4845.421664749203,
+        8082.5,
+        2635.8164677586537
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 3.48908714829345,
+      "shearYKN": -0.01224801182708557,
+      "shearZKN": -3.0856478200561748,
+      "torsionKNm": 0.003690559421942,
+      "bendingYKNm": 1.7864728724308825,
+      "bendingZKNm": 0.03402228513811394,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.2560309139582975,
+        -0.01224801182708557,
+        -4.4852355502230905,
+        -0.015363857511209365,
+        1.7864728724308825,
+        0.03057920857774559
+      ]
+    },
+    {
+      "memberId": "court-north/arch/3",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        4845.421664749203,
+        8082.5,
+        2635.8164677586537
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 3.091299775259742,
+      "shearYKN": 0.012248011827893812,
+      "shearZKN": 2.926482252506269,
+      "torsionKNm": -0.0016307064276669951,
+      "bendingYKNm": -1.7869280678894122,
+      "bendingZKNm": -0.034182991551302194,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.2560309139699992,
+        0.012248011827893812,
+        4.067286444044331,
+        0.01536385751092174,
+        -1.7869280678894122,
+        -0.03057920857762224
+      ]
+    },
+    {
+      "memberId": "court-north/arch/3",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        4962.857160181847,
+        8082.5,
+        2702.0081708733583
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 3.091299775259742,
+      "shearYKN": -0.012248011827893812,
+      "shearZKN": -2.926482252506269,
+      "torsionKNm": 0.0016307064276565252,
+      "bendingYKNm": 1.3924230946271254,
+      "bendingZKNm": 0.035834087017338534,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.2560309139699992,
+        -0.012248011827893812,
+        -4.067286444044331,
+        -0.016174574273566004,
+        1.3924230946271254,
+        0.032017559914651314
+      ]
+    },
+    {
+      "memberId": "court-north/arch/4",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        4962.857160181847,
+        8082.5,
+        2702.0081708733583
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.7396452700269034,
+      "shearYKN": 0.01224801182556412,
+      "shearZKN": 2.759535476352944,
+      "torsionKNm": 0.0005347284176013663,
+      "bendingYKNm": -1.3929661567873062,
+      "bendingZKNm": -0.035867186415624565,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.2560309139578756,
+        0.01224801182556412,
+        3.680092199118576,
+        0.016174574273610416,
+        -1.3929661567873062,
+        -0.03201755991516552
+      ]
+    },
+    {
+      "memberId": "court-north/arch/4",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5084.073067630827,
+        8082.5,
+        2760.9924139392488
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.7396452700269034,
+      "shearYKN": -0.01224801182556412,
+      "shearZKN": -2.759535476352944,
+      "torsionKNm": -0.0005347284174264111,
+      "bendingYKNm": 1.0209664741026385,
+      "bendingZKNm": 0.03751828188166732,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.2560309139578756,
+        -0.01224801182556412,
+        -3.680092199118576,
+        -0.01689701398016652,
+        1.0209664741026385,
+        0.03350221378337119
+      ]
+    },
+    {
+      "memberId": "court-north/arch/5",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5084.073067630827,
+        8082.5,
+        2760.9924139392488
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.4313895586530485,
+      "shearYKN": 0.012248011828393857,
+      "shearZKN": 2.589534077690418,
+      "torsionKNm": 0.0027978520487886554,
+      "bendingYKNm": -1.021557488945736,
+      "bendingZKNm": -0.03741763533032323,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.2560309139487167,
+        0.012248011828393857,
+        3.3226086541529654,
+        0.016897013979959852,
+        -1.021557488945736,
+        -0.03350221378298761
+      ]
+    },
+    {
+      "memberId": "court-north/arch/5",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5208.627552032061,
+        8082.5,
+        2812.5541978909127
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.4313895586530485,
+      "shearYKN": -0.012248011828393857,
+      "shearZKN": -2.589534077690418,
+      "torsionKNm": -0.002797852048797491,
+      "bendingYKNm": 0.672474875782247,
+      "bendingZKNm": 0.0390687307964831,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.2560309139487167,
+        -0.012248011828393857,
+        -3.3226086541529654,
+        -0.017528543319705266,
+        0.672474875782247,
+        0.035027758581220154
+      ]
+    },
+    {
+      "memberId": "court-north/arch/6",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5208.627552032061,
+        8082.5,
+        2812.5541978909127
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.163184740118751,
+      "shearYKN": 0.012248011827586502,
+      "shearZKN": 2.4198272134983947,
+      "torsionKNm": 0.005150415322973507,
+      "bendingYKNm": -0.6730735690751606,
+      "bendingZKNm": -0.03882868687091917,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.256030913942375,
+        0.012248011827586502,
+        2.992877930402628,
+        0.017528543319656236,
+        -0.6730735690751606,
+        -0.03502775858101609
+      ]
+    },
+    {
+      "memberId": "court-north/arch/6",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5336.066609123612,
+        8082.5,
+        2856.5055787150945
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.163184740118751,
+      "shearYKN": -0.012248011827586502,
+      "shearZKN": -2.4198272134983947,
+      "torsionKNm": -0.005150415322944116,
+      "bendingYKNm": 0.34686832066018314,
+      "bendingZKNm": 0.040479782336930344,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.256030913942375,
+        -0.012248011827586502,
+        -2.992877930402628,
+        -0.018066860351792356,
+        0.34686832066018314,
+        0.0365886336595521
+      ]
+    },
+    {
+      "memberId": "court-north/arch/7",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5336.066609123612,
+        8082.5,
+        2856.5055787150945
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.931418216713061,
+      "shearYKN": 0.012248011827195704,
+      "shearZKN": 2.252377939485122,
+      "torsionKNm": 0.007583843086929237,
+      "bendingYKNm": -0.34743597424627365,
+      "bendingZKNm": -0.040095197718231626,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.2560309139340085,
+        0.012248011827195704,
+        2.68811626485396,
+        0.01806686035176276,
+        -0.34743597424627365,
+        -0.03658863365939146
+      ]
+    },
+    {
+      "memberId": "court-north/arch/7",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5465.925720302751,
+        8082.5,
+        2892.686352511403
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.931418216713061,
+      "shearYKN": -0.012248011827195704,
+      "shearZKN": -2.252377939485122,
+      "torsionKNm": -0.007583843086883352,
+      "bendingYKNm": 0.0438037557243465,
+      "bendingZKNm": 0.04174629318425376,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.2560309139340085,
+        -0.012248011827195704,
+        -2.68811626485396,
+        -0.018510002897102154,
+        0.0438037557243465,
+        0.03817914958902844
+      ]
+    },
+    {
+      "memberId": "court-north/arch/8",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5465.925720302751,
+        8082.5,
+        2892.686352511403
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.7325466715939062,
+      "shearYKN": 0.012248011827029615,
+      "shearZKN": 2.0878304339497515,
+      "torsionKNm": 0.010089265434621944,
+      "bendingYKNm": -0.04430500501747497,
+      "bendingZKNm": -0.04121255140850849,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.2560309139492354,
+        0.012248011827029615,
+        2.404816049801269,
+        0.01851000289715398,
+        -0.04430500501747497,
+        -0.03817914958922688
+      ]
+    },
+    {
+      "memberId": "court-north/arch/8",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5597.731545808084,
+        8082.5,
+        2920.9646394395986
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.7325466715939062,
+      "shearYKN": -0.012248011827029615,
+      "shearZKN": -2.0878304339497515,
+      "torsionKNm": -0.010089265434657813,
+      "bendingYKNm": -0.23714535703980982,
+      "bendingZKNm": 0.042863646874192834,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.2560309139492354,
+        -0.012248011827029615,
+        -2.404816049801269,
+        -0.018856355689874846,
+        -0.23714535703980982,
+        0.03979350889860564
+      ]
+    },
+    {
+      "memberId": "court-north/arch/9",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5597.731545808084,
+        8082.5,
+        2920.9646394395986
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.5633998872956545,
+      "shearYKN": 0.01224801183150781,
+      "shearZKN": 1.92564722204974,
+      "torsionKNm": 0.012657550037979817,
+      "bendingYKNm": 0.2367409108877073,
+      "bendingZKNm": -0.04217667515826721,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.2560309139532695,
+        0.01224801183150781,
+        2.138860157789111,
+        0.018856355689862173,
+        0.2367409108877073,
+        -0.039793508898655315
+      ]
+    },
+    {
+      "memberId": "court-north/arch/9",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5731.0036500550095,
+        8082.5,
+        2941.2373644249665
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.5633998872956545,
+      "shearYKN": -0.01224801183150781,
+      "shearZKN": -1.92564722204974,
+      "torsionKNm": -0.012657550037993964,
+      "bendingYKNm": -0.49632813551443994,
+      "bendingZKNm": 0.043827770624911895,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.2560309139532695,
+        -0.01224801183150781,
+        -2.138860157789111,
+        -0.019104656265365276,
+        -0.49632813551443994,
+        0.041425827208354575
+      ]
+    },
+    {
+      "memberId": "court-north/arch/10",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5731.0036500550095,
+        8082.5,
+        2941.2373644249665
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.4214410040064118,
+      "shearYKN": 0.012248011831092143,
+      "shearZKN": 1.7643077721701697,
+      "torsionKNm": 0.015279335434235574,
+      "bendingYKNm": 0.4960445582841533,
+      "bendingZKNm": -0.04298405471332779,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.2560309139097408,
+        0.012248011831092143,
+        1.8856465167453536,
+        0.01910465626527059,
+        0.4960445582841533,
+        -0.04142582720835037
+      ]
+    },
+    {
+      "memberId": "court-north/arch/10",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5865.2562528356375,
+        8082.5,
+        2953.430632869582
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.4214410040064118,
+      "shearYKN": -0.012248011831092143,
+      "shearZKN": -1.7643077721701697,
+      "torsionKNm": -0.015279335434232077,
+      "bendingYKNm": -0.7338823889734204,
+      "bendingZKNm": 0.044635150179738695,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.2560309139097408,
+        -0.012248011831092143,
+        -1.8856465167453536,
+        -0.01925399956142724,
+        -0.7338823889734204,
+        0.04307015467546137
+      ]
+    },
+    {
+      "memberId": "court-north/arch/11",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5865.2562528356375,
+        8082.5,
+        2953.430632869582
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.304971883018612,
+      "shearYKN": 0.012248011829239402,
+      "shearZKN": 1.601557453716024,
+      "torsionKNm": 0.017945065149068254,
+      "bendingYKNm": 0.7337363413023474,
+      "bendingZKNm": -0.04363174715341707,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.2560309139131205,
+        0.012248011829239402,
+        1.6402207888930889,
+        0.019253999561365323,
+        0.7337363413023474,
+        -0.043070154675308114
+      ]
+    },
+    {
+      "memberId": "court-north/arch/11",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6000.0,
+        8082.5,
+        2957.5
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.304971883018612,
+      "shearYKN": -0.012248011829239402,
+      "shearZKN": -1.601557453716024,
+      "torsionKNm": -0.017945065149072577,
+      "bendingYKNm": -0.9496345856588273,
+      "bendingZKNm": 0.04528284261982847,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.2560309139131205,
+        -0.012248011829239402,
+        -1.6402207888930889,
+        -0.019303841218125,
+        -0.9496345856588273,
+        0.04472049768464156
+      ]
+    },
+    {
+      "memberId": "court-north/arch/12",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6000.0,
+        8082.5,
+        2957.5
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.213274704379737,
+      "shearYKN": 0.012248011829068872,
+      "shearZKN": 1.4346938985962545,
+      "torsionKNm": 0.02064502252994234,
+      "bendingYKNm": 0.9496345856588255,
+      "bendingZKNm": -0.04411739162319183,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.2560309139026216,
+        0.012248011829068872,
+        1.3974149112836898,
+        0.019303841218141743,
+        0.9496345856588255,
+        -0.04472049768417916
+      ]
+    },
+    {
+      "memberId": "court-north/arch/12",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6134.7437471643625,
+        8082.5,
+        2953.430632869582
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.213274704379737,
+      "shearYKN": -0.012248011829068872,
+      "shearZKN": -1.4346938985962545,
+      "torsionKNm": -0.02064502252994411,
+      "bendingYKNm": -1.1430387580643704,
+      "bendingZKNm": 0.04576848708948453,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.2560309139026216,
+        -0.012248011829068872,
+        -1.3974149112836898,
+        -0.019253999561391733,
+        -1.1430387580643704,
+        0.046370840693394144
+      ]
+    },
+    {
+      "memberId": "court-north/arch/13",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6134.7437471643625,
+        8082.5,
+        2953.430632869582
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.1466837066436468,
+      "shearYKN": 0.01224801182837787,
+      "shearZKN": 1.260876366774913,
+      "torsionKNm": 0.023369366163404293,
+      "bendingYKNm": 1.1431848057355751,
+      "bendingZKNm": -0.0444392179366598,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.25603091388473,
+        0.01224801182837787,
+        1.1519891834298654,
+        0.019253999561344735,
+        1.1431848057355751,
+        -0.04637084069318723
+      ]
+    },
+    {
+      "memberId": "court-north/arch/13",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6268.9963499449905,
+        8082.5,
+        2941.2373644249665
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.1466837066436468,
+      "shearYKN": -0.01224801182837787,
+      "shearZKN": -1.260876366774913,
+      "torsionKNm": -0.023369366163394155,
+      "bendingYKNm": -1.3131574740938576,
+      "bendingZKNm": 0.04609031340269862,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.25603091388473,
+        -0.01224801182837787,
+        -1.1519891834298654,
+        -0.019104656265208166,
+        -1.3131574740938576,
+        0.048015168159926444
+      ]
+    },
+    {
+      "memberId": "court-north/arch/14",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6268.9963499449905,
+        8082.5,
+        2941.2373644249665
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.1065839685065355,
+      "shearYKN": 0.012248011829342431,
+      "shearZKN": 1.0774428304333952,
+      "torsionKNm": 0.026108165747760544,
+      "bendingYKNm": 1.3134410513244748,
+      "bendingZKNm": -0.0445960530284952,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.256030913877352,
+        0.012248011829342431,
+        0.8987755423866535,
+        0.019104656265195846,
+        1.3134410513244748,
+        -0.04801516815988054
+      ]
+    },
+    {
+      "memberId": "court-north/arch/14",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6402.268454191916,
+        8082.5,
+        2920.9646394395986
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.1065839685065355,
+      "shearYKN": -0.012248011829342431,
+      "shearZKN": -1.0774428304333952,
+      "torsionKNm": -0.026108165747775,
+      "bendingYKNm": -1.4586859283942248,
+      "bendingZKNm": 0.04624714849471937,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.256030913877352,
+        -0.012248011829342431,
+        -0.8987755423866535,
+        -0.018856355689784266,
+        -1.4586859283942248,
+        0.04964748646916837
+      ]
+    },
+    {
+      "memberId": "court-north/arch/15",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6402.268454191916,
+        8082.5,
+        2920.9646394395986
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.0953372370646621,
+      "shearYKN": 0.012248011833214001,
+      "shearZKN": 0.8822191924852645,
+      "torsionKNm": 0.028851438288972842,
+      "bendingYKNm": 1.4590903745468957,
+      "bendingZKNm": -0.044587325231043515,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.256030913870572,
+        0.012248011833214001,
+        0.6328196503675083,
+        0.018856355689839597,
+        1.4590903745468957,
+        -0.049647486469100444
+      ]
+    },
+    {
+      "memberId": "court-north/arch/15",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6534.074279697249,
+        8082.5,
+        2892.686352511403
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.0953372370646621,
+      "shearYKN": -0.012248011833214001,
+      "shearZKN": -0.8822191924852645,
+      "torsionKNm": -0.028851438288941933,
+      "bendingYKNm": -1.5780180935327452,
+      "bendingZKNm": 0.0462384206977807,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.256030913870572,
+        -0.012248011833214001,
+        -0.6328196503675083,
+        -0.01851000289690272,
+        -1.5780180935327452,
+        0.05126184577950966
+      ]
+    },
+    {
+      "memberId": "court-north/arch/16",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6534.074279697249,
+        8082.5,
+        2892.686352511403
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.1161379110526248,
+      "shearYKN": 0.012248011832416417,
+      "shearZKN": 0.673805354524103,
+      "torsionKNm": 0.03158918448874413,
+      "bendingYKNm": 1.5785193428256876,
+      "bendingZKNm": -0.04441306635770182,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.2560309138758776,
+        0.012248011832416417,
+        0.349519435314257,
+        0.018510002896917576,
+        1.5785193428256876,
+        -0.05126184577942587
+      ]
+    },
+    {
+      "memberId": "court-north/arch/16",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6663.933390876388,
+        8082.5,
+        2856.5055787150945
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.1161379110526248,
+      "shearYKN": -0.012248011832416417,
+      "shearZKN": -0.673805354524103,
+      "torsionKNm": -0.03158918448870577,
+      "bendingYKNm": -1.6693517964114768,
+      "bendingZKNm": 0.0460641618244779,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.2560309138758776,
+        -0.012248011832416417,
+        -0.349519435314257,
+        -0.01806686035129467,
+        -1.6693517964114768,
+        0.05285236170976651
+      ]
+    },
+    {
+      "memberId": "court-north/arch/17",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6663.933390876388,
+        8082.5,
+        2856.5055787150945
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.172805280734534,
+      "shearYKN": 0.012248011833364103,
+      "shearZKN": 0.45182373558409095,
+      "torsionKNm": 0.034311425192719264,
+      "bendingYKNm": 1.6699194499974774,
+      "bendingZKNm": -0.04407391158635335,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.256030913871781,
+        0.012248011833364103,
+        0.04475776976559942,
+        0.01806686035125816,
+        1.6699194499974774,
+        -0.052852361710006845
+      ]
+    },
+    {
+      "memberId": "court-north/arch/17",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6791.372447967939,
+        8082.5,
+        2812.5541978909127
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.172805280734534,
+      "shearYKN": -0.012248011833364103,
+      "shearZKN": -0.45182373558409095,
+      "torsionKNm": -0.03431142519275419,
+      "bendingYKNm": -1.7308276309965562,
+      "bendingZKNm": 0.04572500705306594,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.256030913871781,
+        -0.012248011833364103,
+        -0.04475776976559942,
+        -0.01752854331889858,
+        -1.7308276309965562,
+        0.05441323678920776
+      ]
+    },
+    {
+      "memberId": "court-north/arch/18",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6791.372447967939,
+        8082.5,
+        2812.5541978909127
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.2695209038615032,
+      "shearYKN": 0.012248011833899675,
+      "shearZKN": 0.21711728574831257,
+      "torsionKNm": 0.03700823776438013,
+      "bendingYKNm": 1.7314263242892316,
+      "bendingZKNm": -0.04357109714399687,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.25603091387271,
+        0.012248011833899675,
+        -0.2849729539941066,
+        0.017528543318978657,
+        1.7314263242892316,
+        -0.05441323678914159
+      ]
+    },
+    {
+      "memberId": "court-north/arch/18",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6915.926932369173,
+        8082.5,
+        2760.9924139392488
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.2695209038615032,
+      "shearYKN": -0.012248011833899675,
+      "shearZKN": -0.21711728574831257,
+      "torsionKNm": -0.037008237764373106,
+      "bendingYKNm": -1.7606948595540375,
+      "bendingZKNm": 0.04522219261086077,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.25603091387271,
+        -0.012248011833899675,
+        0.2849729539941066,
+        -0.016897013978965623,
+        -1.7606948595540375,
+        0.05593878158802534
+      ]
+    },
+    {
+      "memberId": "court-north/arch/19",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6915.926932369173,
+        8082.5,
+        2760.9924139392488
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.4105224606162494,
+      "shearYKN": 0.012248011832918682,
+      "shearZKN": -0.028114014115624086,
+      "torsionKNm": 0.0396697922530654,
+      "bendingYKNm": 1.7612858744013857,
+      "bendingZKNm": -0.04290645580262102,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.256030913884775,
+        0.012248011832918682,
+        -0.6424564989619057,
+        0.016897013978906715,
+        1.7612858744013857,
+        -0.055938781587913294
+      ]
+    },
+    {
+      "memberId": "court-north/arch/19",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        7037.142839818153,
+        8082.5,
+        2702.008170873358
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.4105224606162494,
+      "shearYKN": -0.012248011832918682,
+      "shearZKN": 0.028114014115624086,
+      "torsionKNm": -0.03966979225300535,
+      "bendingYKNm": -1.7574959596059911,
+      "bendingZKNm": 0.04455755126932519,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.256030913884775,
+        -0.012248011832918682,
+        0.6424564989619057,
+        -0.016174574271849883,
+        -1.7574959596059911,
+        0.05742343545661089
+      ]
+    },
+    {
+      "memberId": "court-north/arch/20",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        7037.142839818153,
+        8082.5,
+        2702.008170873358
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.5997674976326057,
+      "shearYKN": 0.012248011835249262,
+      "shearZKN": -0.2802467921324222,
+      "torsionKNm": 0.04228638722534488,
+      "bendingYKNm": 1.7580390217704507,
+      "bendingZKNm": -0.04208241019658829,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.2560309138791084,
+        0.012248011835249262,
+        -1.0296507438749387,
+        0.01617457427193481,
+        1.7580390217704507,
+        -0.05742343545667913
+      ]
+    },
+    {
+      "memberId": "court-north/arch/20",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        7154.578335250797,
+        8082.5,
+        2635.8164677586537
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.5997674976326057,
+      "shearYKN": -0.012248011835249262,
+      "shearZKN": 0.2802467921324222,
+      "torsionKNm": -0.04228638722523334,
+      "bendingYKNm": -1.7202603018951466,
+      "bendingZKNm": 0.04373350566352492,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.2560309138791084,
+        -0.012248011835249262,
+        1.0296507438749387,
+        -0.015363857508760438,
+        -1.7202603018951466,
+        0.05886178679444288
+      ]
+    },
+    {
+      "memberId": "court-north/arch/21",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        7154.578335250797,
+        8082.5,
+        2635.8164677586537
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.8405820755397806,
+      "shearYKN": 0.012248011834835593,
+      "shearZKN": -0.5342439570531567,
+      "torsionKNm": 0.04484848512583837,
+      "bendingYKNm": 1.7207154973538776,
+      "bendingZKNm": -0.041101963993362536,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.256030913878,
+        0.012248011834835593,
+        -1.4475998500376193,
+        0.015363857508843623,
+        1.7207154973538776,
+        -0.05886178679450842
+      ]
+    },
+    {
+      "memberId": "court-north/arch/21",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        7267.805363300926,
+        8082.5,
+        2562.658575035648
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 1.8405820755397806,
+      "shearYKN": -0.012248011834835593,
+      "shearZKN": 0.5342439570531567,
+      "torsionKNm": -0.04484848512580514,
+      "bendingYKNm": -1.648696643382472,
+      "bendingZKNm": 0.04275305946040085,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.256030913878,
+        -0.012248011834835593,
+        1.4475998500376193,
+        -0.014467818772921302,
+        -1.648696643382472,
+        0.060248592774089275
+      ]
+    },
+    {
+      "memberId": "court-north/arch/22",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        7267.805363300926,
+        8082.5,
+        2562.658575035648
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.135310437062734,
+      "shearYKN": 0.01224801183005475,
+      "shearZKN": -0.7837433111990249,
+      "torsionKNm": 0.047346747042555405,
+      "bendingYKNm": 1.6490263825618476,
+      "bendingZKNm": -0.03996869094438118,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.2560309138797408,
+        0.01224801183005475,
+        -1.896362461096686,
+        0.014467818772743765,
+        1.6490263825618476,
+        -0.06024859277425682
+      ]
+    },
+    {
+      "memberId": "court-north/arch/22",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        7376.411208572956,
+        8082.5,
+        2482.8011550830615
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.135310437062734,
+      "shearYKN": -0.01224801183005475,
+      "shearZKN": 0.7837433111990249,
+      "torsionKNm": -0.04734674704249692,
+      "bendingYKNm": -1.5433737226948219,
+      "bendingZKNm": 0.041619786410724675,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.2560309138797408,
+        -0.01224801183005475,
+        1.896362461096686,
+        -0.013489724148417103,
+        -1.5433737226948219,
+        0.06157879845190345
+      ]
+    },
+    {
+      "memberId": "court-north/arch/23",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        7376.411208572956,
+        8082.5,
+        2482.8011550830615
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.4849824119544226,
+      "shearYKN": 0.01224801182202806,
+      "shearZKN": -1.0212248926048195,
+      "torsionKNm": 0.04977206674579138,
+      "bendingYKNm": 1.543544680304577,
+      "bendingZKNm": -0.038686721856270964,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.2560309138831798,
+        0.01224801182202806,
+        -2.374957728543464,
+        0.013489724147971685,
+        1.543544680304577,
+        -0.06157879844998288
+      ]
+    },
+    {
+      "memberId": "court-north/arch/23",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        7480.0,
+        8082.5,
+        2396.5352902266773
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.4849824119544226,
+      "shearYKN": -0.01224801182202806,
+      "shearZKN": 1.0212248926048195,
+      "torsionKNm": -0.049772066745612846,
+      "bendingYKNm": -1.4058782725864079,
+      "bendingZKNm": 0.04033781732138516,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.2560309138831798,
+        -0.01224801182202806,
+        2.374957728543464,
+        -0.01243313881534903,
+        -1.4058782725864079,
+        0.06284755519176098
+      ]
+    },
+    {
+      "memberId": "outer-north/upstand/0",
+      "end": 0,
+      "kind": "upstand",
+      "physicalPointMm": [
+        4413.75,
+        11667.5,
+        3545.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 750,
+      "axialCompressionKN": 20.280784891248913,
+      "shearYKN": -1.4641804294872252,
+      "shearZKN": 6.599372426835867,
+      "torsionKNm": -0.8636720750638415,
+      "bendingYKNm": -5.991750196544715,
+      "bendingZKNm": -0.43067223875676824,
+      "globalPhysicalEndWrenchKN_KNm": [
+        20.280784891248913,
+        -1.4641804294872252,
+        6.599372426835867,
+        -0.8636720750638415,
+        -5.991750196544715,
+        -0.43067223875676824
+      ]
+    },
+    {
+      "memberId": "outer-north/upstand/0",
+      "end": 1,
+      "kind": "upstand",
+      "physicalPointMm": [
+        4520,
+        11667.5,
+        3545.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 750,
+      "axialCompressionKN": 20.280784891248913,
+      "shearYKN": 1.4641804294872252,
+      "shearZKN": -6.599372426835867,
+      "torsionKNm": 0.8636720750638415,
+      "bendingYKNm": 5.290566876193374,
+      "bendingZKNm": 0.27510306812407226,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -20.280784891248913,
+        1.4641804294872252,
+        -6.599372426835867,
+        0.8636720750638415,
+        5.290566876193374,
+        0.27510306812407226
+      ]
+    },
+    {
+      "memberId": "outer-north/upstand/1",
+      "end": 0,
+      "kind": "upstand",
+      "physicalPointMm": [
+        4520,
+        11667.5,
+        3545.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 750,
+      "axialCompressionKN": 20.546911394179915,
+      "shearYKN": -0.6679310256934592,
+      "shearZKN": 5.947575551836032,
+      "torsionKNm": -0.5745266921505172,
+      "bendingYKNm": -5.363751664500064,
+      "bendingZKNm": -0.2763624290607554,
+      "globalPhysicalEndWrenchKN_KNm": [
+        20.546911394179915,
+        -0.6679310256934592,
+        5.947575551836032,
+        -0.5745266921505172,
+        -5.363751664500064,
+        -0.2763624290607554
+      ]
+    },
+    {
+      "memberId": "outer-north/upstand/1",
+      "end": 1,
+      "kind": "upstand",
+      "physicalPointMm": [
+        4800,
+        11667.5,
+        3545.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 750,
+      "axialCompressionKN": 20.546911394179915,
+      "shearYKN": 0.6679310256934592,
+      "shearZKN": -5.947575551836032,
+      "torsionKNm": 0.5745266921505172,
+      "bendingYKNm": 3.6984305099859567,
+      "bendingZKNm": 0.08934174186655036,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -20.546911394179915,
+        0.6679310256934592,
+        -5.947575551836032,
+        0.5745266921505172,
+        3.6984305099859567,
+        0.08934174186655036
+      ]
+    },
+    {
+      "memberId": "outer-north/upstand/2",
+      "end": 0,
+      "kind": "upstand",
+      "physicalPointMm": [
+        4800,
+        11667.5,
+        3545.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 750,
+      "axialCompressionKN": 20.678109019761905,
+      "shearYKN": -0.011497539703121173,
+      "shearZKN": 4.800075551836047,
+      "torsionKNm": -0.27045998350370976,
+      "bendingYKNm": -3.7345098570373247,
+      "bendingZKNm": -0.04097961348594481,
+      "globalPhysicalEndWrenchKN_KNm": [
+        20.678109019761905,
+        -0.011497539703121173,
+        4.800075551836047,
+        -0.27045998350370976,
+        -3.7345098570373247,
+        -0.04097961348594481
+      ]
+    },
+    {
+      "memberId": "outer-north/upstand/2",
+      "end": 1,
+      "kind": "upstand",
+      "physicalPointMm": [
+        5200,
+        11667.5,
+        3545.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 750,
+      "axialCompressionKN": 20.678109019761905,
+      "shearYKN": 0.011497539703121173,
+      "shearZKN": -4.800075551836047,
+      "torsionKNm": 0.27045998350370976,
+      "bendingYKNm": 1.8144796363029256,
+      "bendingZKNm": 0.03638059760474732,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -20.678109019761905,
+        0.011497539703121173,
+        -4.800075551836047,
+        0.27045998350370976,
+        1.8144796363029256,
+        0.03638059760474732
+      ]
+    },
+    {
+      "memberId": "outer-north/upstand/3",
+      "end": 0,
+      "kind": "upstand",
+      "physicalPointMm": [
+        5200,
+        11667.5,
+        3545.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 750,
+      "axialCompressionKN": 20.796170374786016,
+      "shearYKN": -0.03264334585573403,
+      "shearZKN": 3.4500755518360533,
+      "torsionKNm": -0.13092508019577873,
+      "bendingYKNm": -1.8469465089168675,
+      "bendingZKNm": -0.037564650075787936,
+      "globalPhysicalEndWrenchKN_KNm": [
+        20.796170374786016,
+        -0.03264334585573403,
+        3.4500755518360533,
+        -0.13092508019577873,
+        -1.8469465089168675,
+        -0.037564650075787936
+      ]
+    },
+    {
+      "memberId": "outer-north/upstand/3",
+      "end": 1,
+      "kind": "upstand",
+      "physicalPointMm": [
+        5600,
+        11667.5,
+        3545.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 750,
+      "axialCompressionKN": 20.796170374786016,
+      "shearYKN": 0.03264334585573403,
+      "shearZKN": -3.4500755518360533,
+      "torsionKNm": 0.13092508019577873,
+      "bendingYKNm": 0.4669162881824351,
+      "bendingZKNm": 0.024507311733305188,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -20.796170374786016,
+        0.03264334585573403,
+        -3.4500755518360533,
+        0.13092508019577873,
+        0.4669162881824351,
+        0.024507311733305188
+      ]
+    },
+    {
+      "memberId": "outer-north/upstand/4",
+      "end": 0,
+      "kind": "upstand",
+      "physicalPointMm": [
+        5600,
+        11667.5,
+        3545.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 750,
+      "axialCompressionKN": 20.568877671888913,
+      "shearYKN": -0.11145706905611652,
+      "shearZKN": 2.100075551836064,
+      "torsionKNm": -0.007248854076384305,
+      "bendingYKNm": -0.4044107949073769,
+      "bendingZKNm": -0.047236582015777684,
+      "globalPhysicalEndWrenchKN_KNm": [
+        20.568877671888913,
+        -0.11145706905611652,
+        2.100075551836064,
+        -0.007248854076384305,
+        -0.4044107949073769,
+        -0.047236582015777684
+      ]
+    },
+    {
+      "memberId": "outer-north/upstand/4",
+      "end": 1,
+      "kind": "upstand",
+      "physicalPointMm": [
+        6000,
+        11667.5,
+        3545.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 750,
+      "axialCompressionKN": 20.568877671888913,
+      "shearYKN": 0.11145706905611652,
+      "shearZKN": -2.100075551836064,
+      "torsionKNm": 0.007248854076384305,
+      "bendingYKNm": -0.4356194258270414,
+      "bendingZKNm": 0.0026537543935057214,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -20.568877671888913,
+        0.11145706905611652,
+        -2.100075551836064,
+        0.007248854076384305,
+        -0.4356194258270414,
+        0.0026537543935057214
+      ]
+    },
+    {
+      "memberId": "outer-north/upstand/5",
+      "end": 0,
+      "kind": "upstand",
+      "physicalPointMm": [
+        6000,
+        11667.5,
+        3545.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 750,
+      "axialCompressionKN": 19.927544987505826,
+      "shearYKN": -0.24186585830021645,
+      "shearZKN": 0.7500755518360306,
+      "torsionKNm": 0.10223872888502591,
+      "bendingYKNm": 0.6119859140531383,
+      "bendingZKNm": -0.06678702283770349,
+      "globalPhysicalEndWrenchKN_KNm": [
+        19.927544987505826,
+        -0.24186585830021645,
+        0.7500755518360306,
+        0.10223872888502591,
+        0.6119859140531383,
+        -0.06678702283770349
+      ]
+    },
+    {
+      "memberId": "outer-north/upstand/5",
+      "end": 1,
+      "kind": "upstand",
+      "physicalPointMm": [
+        6400,
+        11667.5,
+        3545.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 750,
+      "axialCompressionKN": 19.927544987505826,
+      "shearYKN": 0.24186585830021645,
+      "shearZKN": -0.7500755518360306,
+      "torsionKNm": -0.10223872888502591,
+      "bendingYKNm": -0.9120161347875688,
+      "bendingZKNm": -0.0299593204823758,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -19.927544987505826,
+        0.24186585830021645,
+        -0.7500755518360306,
+        -0.10223872888502591,
+        -0.9120161347875688,
+        -0.0299593204823758
+      ]
+    },
+    {
+      "memberId": "outer-north/upstand/6",
+      "end": 0,
+      "kind": "upstand",
+      "physicalPointMm": [
+        6400,
+        11667.5,
+        3545.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 750,
+      "axialCompressionKN": 18.836617880733684,
+      "shearYKN": -0.3425017147002327,
+      "shearZKN": -0.5999244481598285,
+      "torsionKNm": 0.21991386837328172,
+      "bendingYKNm": 1.2120210890873122,
+      "bendingZKNm": -0.07913339017285224,
+      "globalPhysicalEndWrenchKN_KNm": [
+        18.836617880733684,
+        -0.3425017147002327,
+        -0.5999244481598285,
+        0.21991386837328172,
+        1.2120210890873122,
+        -0.07913339017285224
+      ]
+    },
+    {
+      "memberId": "outer-north/upstand/6",
+      "end": 1,
+      "kind": "upstand",
+      "physicalPointMm": [
+        6800,
+        11667.5,
+        3545.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 750,
+      "axialCompressionKN": 18.836617880733684,
+      "shearYKN": 0.3425017147002327,
+      "shearZKN": 0.5999244481598285,
+      "torsionKNm": -0.21991386837328172,
+      "bendingYKNm": -0.9720513098233753,
+      "bendingZKNm": -0.05786729570728437,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -18.836617880733684,
+        0.3425017147002327,
+        0.5999244481598285,
+        -0.21991386837328172,
+        -0.9720513098233753,
+        -0.05786729570728437
+      ]
+    },
+    {
+      "memberId": "outer-north/upstand/7",
+      "end": 0,
+      "kind": "upstand",
+      "physicalPointMm": [
+        6800,
+        11667.5,
+        3545.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 750,
+      "axialCompressionKN": 17.27216557556676,
+      "shearYKN": -0.26544231526895246,
+      "shearZKN": -1.949924448149087,
+      "torsionKNm": 0.3864552032144693,
+      "bendingYKNm": 1.4022756938050964,
+      "bendingZKNm": -0.05297699658578637,
+      "globalPhysicalEndWrenchKN_KNm": [
+        17.27216557556676,
+        -0.26544231526895246,
+        -1.949924448149087,
+        0.3864552032144693,
+        1.4022756938050964,
+        -0.05297699658578637
+      ]
+    },
+    {
+      "memberId": "outer-north/upstand/7",
+      "end": 1,
+      "kind": "upstand",
+      "physicalPointMm": [
+        7200,
+        11667.5,
+        3545.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 750,
+      "axialCompressionKN": 17.27216557556676,
+      "shearYKN": 0.26544231526895246,
+      "shearZKN": 1.949924448149087,
+      "torsionKNm": -0.3864552032144693,
+      "bendingYKNm": -0.6223059145454175,
+      "bendingZKNm": -0.0531999295218163,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -17.27216557556676,
+        0.26544231526895246,
+        1.949924448149087,
+        -0.3864552032144693,
+        -0.6223059145454175,
+        -0.0531999295218163
+      ]
+    },
+    {
+      "memberId": "outer-north/upstand/8",
+      "end": 0,
+      "kind": "upstand",
+      "physicalPointMm": [
+        7200,
+        11667.5,
+        3545.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 750,
+      "axialCompressionKN": 15.770108996977797,
+      "shearYKN": 0.2053350951872004,
+      "shearZKN": -3.0974244481509086,
+      "torsionKNm": 0.6394664910925221,
+      "bendingYKNm": 1.0353714736769075,
+      "bendingZKNm": -0.10202552417189709,
+      "globalPhysicalEndWrenchKN_KNm": [
+        15.770108996977797,
+        0.2053350951872004,
+        -3.0974244481509086,
+        0.6394664910925221,
+        1.0353714736769075,
+        -0.10202552417189709
+      ]
+    },
+    {
+      "memberId": "outer-north/upstand/8",
+      "end": 1,
+      "kind": "upstand",
+      "physicalPointMm": [
+        7480,
+        11667.5,
+        3545.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 750,
+      "axialCompressionKN": 15.770108996977797,
+      "shearYKN": -0.2053350951872004,
+      "shearZKN": 3.0974244481509086,
+      "torsionKNm": -0.6394664910925221,
+      "bendingYKNm": -0.16809262819467993,
+      "bendingZKNm": 0.15951935082416757,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -15.770108996977797,
+        -0.2053350951872004,
+        3.0974244481509086,
+        -0.6394664910925221,
+        -0.16809262819467993,
+        0.15951935082416757
+      ]
+    },
+    {
+      "memberId": "outer-north/upstand/9",
+      "end": 0,
+      "kind": "upstand",
+      "physicalPointMm": [
+        7480,
+        11667.5,
+        3545.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 750,
+      "axialCompressionKN": 14.321808945736848,
+      "shearYKN": 1.0225732052954206,
+      "shearZKN": -3.749221323150959,
+      "torsionKNm": 0.9343837682296872,
+      "bendingYKNm": 0.5663751423059602,
+      "bendingZKNm": -0.2764773447275957,
+      "globalPhysicalEndWrenchKN_KNm": [
+        14.321808945736848,
+        1.0225732052954206,
+        -3.749221323150959,
+        0.9343837682296872,
+        0.5663751423059602,
+        -0.2764773447275957
+      ]
+    },
+    {
+      "memberId": "outer-north/upstand/9",
+      "end": 1,
+      "kind": "upstand",
+      "physicalPointMm": [
+        7586.25,
+        11667.5,
+        3545.0
+      ],
+      "breadthMm": 200,
+      "depthMm": 750,
+      "axialCompressionKN": 14.321808945736848,
+      "shearYKN": -1.0225732052954206,
+      "shearZKN": 3.749221323150959,
+      "torsionKNm": -0.9343837682296872,
+      "bendingYKNm": -0.16802037672120967,
+      "bendingZKNm": 0.38512574779023406,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -14.321808945736848,
+        -1.0225732052954206,
+        3.749221323150959,
+        -0.9343837682296872,
+        -0.16802037672120967,
+        0.38512574779023406
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/0",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        4520.0,
+        11667.5,
+        2396.5352902266773
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 5.580627079372498,
+      "shearYKN": 4.003838443957029,
+      "shearZKN": 2.3156378651357676,
+      "torsionKNm": 1.0204242463698612,
+      "bendingYKNm": -2.449083827868487,
+      "bendingZKNm": -0.11137297970522309,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.806493824976922,
+        4.003838443957029,
+        5.350623303115494,
+        0.855398872327605,
+        -2.449083827868487,
+        0.5674172648136298
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/0",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        4623.588791427044,
+        11667.5,
+        2482.8011550830615
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 5.580627079372498,
+      "shearYKN": -4.003838443957029,
+      "shearZKN": -2.3156378651357676,
+      "torsionKNm": -1.0204242463696707,
+      "bendingYKNm": 2.136923843543421,
+      "bendingZKNm": 0.6511111506538823,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.806493824976922,
+        -4.003838443957029,
+        -5.350623303115494,
+        -1.2007934584408912,
+        2.136923843543421,
+        -0.15266447933457392
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/1",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        4623.588791427044,
+        11667.5,
+        2482.8011550830615
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 5.147199919466355,
+      "shearYKN": 3.0052884439595786,
+      "shearZKN": 2.2626086181732035,
+      "torsionKNm": 0.3559379821509473,
+      "bendingYKNm": -2.1370948011351234,
+      "bendingZKNm": -0.02959622544588339,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.8064938249832956,
+        3.0052884439595786,
+        4.872028035666127,
+        0.3042941150337249,
+        -2.1370948011351234,
+        0.18701036135512344
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/1",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        4732.194636699073,
+        11667.5,
+        2562.658575035648
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 5.147199919466355,
+      "shearYKN": -3.0052884439595786,
+      "shearZKN": -2.2626086181732035,
+      "torsionKNm": -0.3559379821509932,
+      "bendingYKNm": 1.8320834341087653,
+      "bendingZKNm": 0.43472468170591305,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.8064938249832956,
+        -3.0052884439595786,
+        -4.872028035666127,
+        -0.5442886963817134,
+        1.8320834341087653,
+        0.13938153038736226
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/2",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        4732.194636699073,
+        11667.5,
+        2562.658575035648
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 4.7577379592061995,
+      "shearYKN": 2.107820198873817,
+      "shearZKN": 2.1921710968405526,
+      "torsionKNm": -0.3512800421499023,
+      "bendingYKNm": -1.8324131732807154,
+      "bendingZKNm": 0.07016464180446863,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.806493824991517,
+        2.107820198873817,
+        4.423265424613265,
+        -0.3331288292498413,
+        -1.8324131732807154,
+        -0.13170394107625116
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/2",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        4845.421664749203,
+        11667.5,
+        2635.8164677586537
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 4.7577379592061995,
+      "shearYKN": -2.107820198873817,
+      "shearZKN": -2.1921710968405526,
+      "torsionKNm": 0.35128004214993325,
+      "bendingYKNm": 1.53689714915153,
+      "bendingZKNm": 0.21398044415547646,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.806493824991517,
+        -2.107820198873817,
+        -4.423265424613265,
+        0.1789251452612859,
+        1.53689714915153,
+        0.37036615785876226
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/3",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        4845.421664749203,
+        11667.5,
+        2635.8164677586537
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 4.41155667518076,
+      "shearYKN": 1.7218973870962984,
+      "shearZKN": 2.11119257815199,
+      "torsionKNm": -0.42070491873045823,
+      "bendingYKNm": -1.5373523446103445,
+      "bendingZKNm": -0.18727653512510478,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.8064938249838187,
+        1.7218973870962984,
+        4.005316318432747,
+        -0.27454091262624775,
+        -1.5373523446103445,
+        -0.3697193754008749
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/3",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        4962.857160181847,
+        11667.5,
+        2702.0081708733583
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 4.41155667518076,
+      "shearYKN": -1.7218973870962984,
+      "shearZKN": -2.11119257815199,
+      "torsionKNm": 0.4207049187303801,
+      "bendingYKNm": 1.2527526444470254,
+      "bendingZKNm": 0.41939722612706865,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.8064938249838187,
+        -1.7218973870962984,
+        -4.005316318432747,
+        0.1605655919855716,
+        1.2527526444470254,
+        0.5719312481385661
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/4",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        4962.857160181847,
+        11667.5,
+        2702.0081708733583
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 4.106695889013187,
+      "shearYKN": 1.5719545146097573,
+      "shearZKN": 2.025404602447961,
+      "torsionKNm": -0.39349539896009283,
+      "bendingYKNm": -1.253295706626946,
+      "bendingZKNm": -0.4446485973646775,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.8064938249699463,
+        1.5719545146097573,
+        3.6181220735155897,
+        -0.15927162862164343,
+        -1.253295706626946,
+        -0.5719996087912534
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/4",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5084.073067630827,
+        11667.5,
+        2760.9924139392488
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 4.106695889013187,
+      "shearYKN": -1.5719545146097573,
+      "shearZKN": -2.025404602447961,
+      "torsionKNm": 0.39349539896011276,
+      "bendingYKNm": 0.9802606701596132,
+      "bendingZKNm": 0.6565562121211979,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.8064938249699463,
+        -1.5719545146097573,
+        -3.6181220735155897,
+        0.06655108144339338,
+        0.9802606701596132,
+        0.7625455017482095
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/5",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5084.073067630827,
+        11667.5,
+        2760.9924139392488
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 3.840250962453694,
+      "shearYKN": 1.3123533821137343,
+      "shearZKN": 1.9392379299244695,
+      "torsionKNm": -0.355763062619759,
+      "bendingYKNm": -0.9808516850065286,
+      "bendingZKNm": -0.673405380433466,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.806493824969685,
+        1.3123533821137343,
+        3.2606385285540753,
+        -0.07113897210109765,
+        -0.9808516850065286,
+        -0.7582752862712399
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/5",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5208.627552032061,
+        11667.5,
+        2812.5541978909127
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 3.840250962453694,
+      "shearYKN": -1.3123533821137343,
+      "shearZKN": -1.9392379299244695,
+      "torsionKNm": 0.3557630626198777,
+      "bendingYKNm": 0.7194323625284752,
+      "bendingZKNm": 0.8503174172237853,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.806493824969685,
+        -1.3123533821137343,
+        -3.2606385285540753,
+        0.0034716905444272185,
+        0.7194323625284752,
+        0.921734785132669
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/6",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5208.627552032061,
+        11667.5,
+        2812.5541978909127
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 3.6087215931324703,
+      "shearYKN": 1.0843476726984917,
+      "shearZKN": 1.8557361378508825,
+      "torsionKNm": -0.310468405619237,
+      "bendingYKNm": -0.7200310558208018,
+      "bendingZKNm": -0.8656850354202298,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.806493825004619,
+        1.0843476726984917,
+        2.9309078048067647,
+        -0.011258826837971029,
+        -0.7200310558208018,
+        -0.9196055949462837
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/6",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5336.066609123612,
+        11667.5,
+        2856.5055787150945
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 3.6087215931324703,
+      "shearYKN": -1.0843476726984917,
+      "shearZKN": -1.8557361378508825,
+      "torsionKNm": 0.31046840561925976,
+      "bendingYKNm": 0.4698682076372802,
+      "bendingZKNm": 1.011860721009643,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.806493825004619,
+        -1.0843476726984917,
+        -2.9309078048067647,
+        -0.03639975067062295,
+        0.4698682076372802,
+        1.0577938399144875
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/7",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5336.066609123612,
+        11667.5,
+        2856.5055787150945
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 3.408361500325399,
+      "shearYKN": 0.8634613464090464,
+      "shearZKN": 1.7765480622799883,
+      "torsionKNm": -0.259065492207312,
+      "bendingYKNm": -0.47043586122326453,
+      "bendingZKNm": -1.0247311083665886,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.806493824997144,
+        0.8634613464090464,
+        2.626146139258836,
+        0.025470459091538587,
+        -0.47043586122326453,
+        -1.0566645775365524
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/7",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5465.925720302751,
+        11667.5,
+        2892.686352511403
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 3.408361500325399,
+      "shearYKN": -0.8634613464090464,
+      "shearZKN": -1.7765480622799883,
+      "torsionKNm": 0.2590654922073138,
+      "bendingYKNm": 0.2309479759953963,
+      "bendingZKNm": 1.1411301724944827,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.806493824997144,
+        -0.8634613464090464,
+        -2.626146139258836,
+        -0.056711158747853374,
+        0.2309479759953963,
+        1.168792900518899
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/8",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5465.925720302751,
+        11667.5,
+        2892.686352511403
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 3.2355128899696983,
+      "shearYKN": 0.6569173599388591,
+      "shearZKN": 1.7019961671839412,
+      "torsionKNm": -0.2023476897399447,
+      "bendingYKNm": -0.2314492252887444,
+      "bendingZKNm": -1.1523954365983962,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.8064938249930975,
+        0.6569173599388591,
+        2.3428459242008444,
+        0.043894191817489,
+        -0.2314492252887444,
+        -1.1692019200123605
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/8",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5597.731545808084,
+        11667.5,
+        2920.9646394395986
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 3.2355128899696983,
+      "shearYKN": -0.6569173599388591,
+      "shearZKN": -1.7019961671839412,
+      "torsionKNm": 0.20234768973998704,
+      "bendingYKNm": 0.0020113218626979686,
+      "bendingZKNm": 1.24095130099744,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.8064938249930975,
+        -0.6569173599388591,
+        -2.3428459242008444,
+        -0.06247068940997225,
+        0.0020113218626979686,
+        1.2557874549281784
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/9",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5597.731545808084,
+        11667.5,
+        2920.9646394395986
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 3.086910690370635,
+      "shearYKN": 0.46929181388792784,
+      "shearZKN": 1.6312149414351937,
+      "torsionKNm": -0.1407066835824326,
+      "bendingYKNm": -0.002415768015636104,
+      "bendingZKNm": -1.2491844666991256,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.806493824985674,
+        0.46929181388792784,
+        2.0768900321883237,
+        0.04875255712988543,
+        -0.002415768015636104,
+        -1.2561382849115152
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/9",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5731.0036500550095,
+        11667.5,
+        2941.2373644249665
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 3.086910690370635,
+      "shearYKN": -0.46929181388792784,
+      "shearZKN": -1.6312149414351937,
+      "torsionKNm": 0.14070668358242933,
+      "bendingYKNm": -0.21748045937638108,
+      "bendingZKNm": 1.312447435176588,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.806493824985674,
+        -0.46929181388792784,
+        -2.0768900321883237,
+        -0.05826638101072426,
+        -0.21748045937638108,
+        1.3186817924542233
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/10",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5731.0036500550095,
+        11667.5,
+        2941.2373644249665
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.95994315620294,
+      "shearYKN": 0.280593427428661,
+      "shearZKN": 1.5623506908496858,
+      "torsionKNm": -0.07651960107916574,
+      "bendingYKNm": 0.21719688214609073,
+      "bendingZKNm": -1.3172161472012767,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.806493824959765,
+        0.280593427428661,
+        1.823676391143401,
+        0.04293762583314832,
+        0.21719688214609073,
+        -1.3187380286034458
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/10",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5865.2562528356375,
+        11667.5,
+        2953.430632869582
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.95994315620294,
+      "shearYKN": -0.280593427428661,
+      "shearZKN": -1.5623506908496858,
+      "torsionKNm": 0.0765196010791659,
+      "bendingYKNm": -0.4278098516907912,
+      "bendingZKNm": 1.355041595310525,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.806493824959765,
+        -0.280593427428661,
+        -1.823676391143401,
+        -0.04635897681756373,
+        -0.4278098516907912,
+        1.3564084265586955
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/11",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        5865.2562528356375,
+        11667.5,
+        2953.430632869582
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.8528575048407756,
+      "shearYKN": 0.09644158709097894,
+      "shearZKN": 1.4928117103891028,
+      "torsionKNm": -0.010444235910728747,
+      "bendingYKNm": 0.42766380401962556,
+      "bendingZKNm": -1.3572693757052623,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.8064938249394826,
+        0.09644158709097894,
+        1.5782506632907598,
+        0.030532445670709348,
+        0.42766380401962556,
+        -1.3569661049755355
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/11",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6000.0,
+        11667.5,
+        2957.5
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.8528575048407756,
+      "shearYKN": -0.09644158709097894,
+      "shearZKN": -1.4928117103891028,
+      "torsionKNm": 0.010444235910728076,
+      "bendingYKNm": -0.6289025586331229,
+      "bendingZKNm": 1.3702702014250243,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.8064938249394826,
+        -0.09644158709097894,
+        -1.5782506632907598,
+        -0.030924901895224403,
+        -0.6289025586331229,
+        1.3699610058026859
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/12",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6000.0,
+        11667.5,
+        2957.5
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.7649017134335327,
+      "shearYKN": -0.07839883273160808,
+      "shearZKN": 1.419555874260411,
+      "torsionKNm": 0.056946904948378604,
+      "bendingYKNm": 0.6289025586331206,
+      "bendingZKNm": -1.3688657842490226,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.806493824951712,
+        -0.07839883273160808,
+        1.3354447856810978,
+        0.01559896956050797,
+        0.6289025586331206,
+        -1.3699610058025526
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/12",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6134.7437471643625,
+        11667.5,
+        2953.430632869582
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.7649017134335327,
+      "shearYKN": 0.07839883273160808,
+      "shearZKN": -1.419555874260411,
+      "torsionKNm": -0.05694690494837466,
+      "bendingYKNm": -0.8202660469098839,
+      "bendingZKNm": 1.35829721531818,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.806493824951712,
+        0.07839883273160808,
+        -1.3354447856810978,
+        -0.015918003193484274,
+        -0.8202660469098839,
+        1.3593972533070138
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/13",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6134.7437471643625,
+        11667.5,
+        2953.430632869582
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.69639638301966,
+      "shearYKN": -0.2625506730693017,
+      "shearZKN": 1.3394012399147508,
+      "torsionKNm": 0.12299954496704572,
+      "bendingYKNm": 0.8204120945810883,
+      "bendingZKNm": -1.353261286889467,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.8064938249390035,
+        -0.2625506730693017,
+        1.090019057826936,
+        9.147204660893937e-05,
+        0.8204120945810883,
+        -1.358839574890539
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/13",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6268.9963499449905,
+        11667.5,
+        2941.2373644249665
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.69639638301966,
+      "shearYKN": 0.2625506730693017,
+      "shearZKN": -1.3394012399147508,
+      "torsionKNm": -0.12299954496702879,
+      "bendingYKNm": -1.0009703227705151,
+      "bendingZKNm": 1.3178680955688067,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.8064938249390035,
+        0.2625506730693017,
+        -1.090019057826936,
+        -0.0032928228836478115,
+        -1.0009703227705151,
+        1.3235914636690984
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/14",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6268.9963499449905,
+        11667.5,
+        2941.2373644249665
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.6487335700923693,
+      "shearYKN": -0.45124905952738104,
+      "shearZKN": 1.2493443758912441,
+      "torsionKNm": 0.18714126000457265,
+      "bendingYKNm": 1.0012539000011382,
+      "bendingZKNm": -1.310293291960738,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.8064938249252545,
+        -0.45124905952738104,
+        0.8368054167856265,
+        -0.012035932293914257,
+        1.0012539000011382,
+        -1.323535227520304
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/14",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6402.268454191916,
+        11667.5,
+        2920.9646394395986
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.6487335700923693,
+      "shearYKN": 0.45124905952738104,
+      "shearZKN": -1.2493443758912441,
+      "torsionKNm": -0.18714126000455195,
+      "bendingYKNm": -1.1696719962271362,
+      "bendingZKNm": 1.2494625802725152,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.8064938249252545,
+        0.45124905952738104,
+        -0.8368054167856265,
+        0.0028878842102629003,
+        -1.1696719962271362,
+        1.2633963158178556
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/15",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6402.268454191916,
+        11667.5,
+        2920.9646394395986
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.6243025893712613,
+      "shearYKN": -0.63887460558173,
+      "shearZKN": 1.1468708247587789,
+      "torsionKNm": 0.24871442174605451,
+      "bendingYKNm": 1.1700764423798085,
+      "bendingZKNm": -1.2384267420748032,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.8064938249239733,
+        -0.63887460558173,
+        0.5708495247674232,
+        -0.01660601649017724,
+        1.1700764423798085,
+        -1.2630454858344624
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/15",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6534.074279697249,
+        11667.5,
+        2892.686352511403
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.6243025893712613,
+      "shearYKN": 0.63887460558173,
+      "shearZKN": -1.1468708247587789,
+      "torsionKNm": -0.24871442174603794,
+      "bendingYKNm": -1.3246805728743403,
+      "bendingZKNm": 1.152303134464691,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.8064938249239733,
+        0.63887460558173,
+        -0.5708495247674232,
+        -0.0014602629175659487,
+        -1.3246805728743403,
+        1.178838091051451
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/16",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6534.074279697249,
+        11667.5,
+        2892.686352511403
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.626345896503699,
+      "shearYKN": -0.8454185920468653,
+      "shearZKN": 1.0302424116850915,
+      "torsionKNm": 0.3053421501414393,
+      "bendingYKNm": 1.3251818221672602,
+      "bendingZKNm": -1.1382399671267216,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.80649382493528,
+        -0.8454185920468653,
+        0.2875493097134374,
+        -0.011356704012547894,
+        1.3251818221672602,
+        -1.1784290715573886
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/16",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6663.933390876388,
+        11667.5,
+        2856.5055787150945
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.626345896503699,
+      "shearYKN": 0.8454185920468653,
+      "shearZKN": -1.0302424116850915,
+      "torsionKNm": -0.30534215014145244,
+      "bendingYKNm": -1.46406383818768,
+      "bendingZKNm": 1.0242731597880952,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.80649382493528,
+        0.8454185920468653,
+        -0.2875493097134374,
+        -0.019231194829531995,
+        -1.46406383818768,
+        1.068643764619774
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/17",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6663.933390876388,
+        11667.5,
+        2856.5055787150945
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.658751152813465,
+      "shearYKN": -1.0663049183333584,
+      "shearZKN": 0.8987469954927355,
+      "torsionKNm": 0.35663308814786293,
+      "bendingYKNm": 1.4646314917736893,
+      "bendingZKNm": -1.0086109712505023,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.8064938249176197,
+        -1.0663049183333584,
+        -0.017212355835757087,
+        0.00830190325063964,
+        1.4646314917736893,
+        -1.0697730269974
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/17",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6791.372447967939,
+        11667.5,
+        2812.5541978909127
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.658751152813465,
+      "shearYKN": 1.0663049183333584,
+      "shearZKN": -0.8987469954927355,
+      "torsionKNm": -0.3566330881478903,
+      "bendingYKNm": -1.585787244255357,
+      "bendingZKNm": 0.8648675424506614,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.8064938249176197,
+        1.0663049183333584,
+        0.017212355835757087,
+        -0.0551674767910815,
+        -1.585787244255357,
+        0.9338841336327827
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/18",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6791.372447967939,
+        11667.5,
+        2812.5541978909127
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.725788352105351,
+      "shearYKN": -1.2943106277509884,
+      "shearZKN": 0.752897701769857,
+      "torsionKNm": 0.4017942765623213,
+      "bendingYKNm": 1.586385937548053,
+      "bendingZKNm": -0.846715535675097,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.8064938249222635,
+        -1.2943106277509884,
+        -0.3469430795919415,
+        0.047380340497448915,
+        1.586385937548053,
+        -0.9360133238187112
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/18",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6915.926932369173,
+        11667.5,
+        2760.9924139392488
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.725788352105351,
+      "shearYKN": 1.2943106277509884,
+      "shearZKN": -0.752897701769857,
+      "torsionKNm": -0.4017942765623663,
+      "bendingYKNm": -1.6878804494151614,
+      "bendingZKNm": 0.6722357556741919,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.8064938249222635,
+        1.2943106277509884,
+        0.3469430795919415,
+        -0.11411730545188625,
+        -1.6878804494151614,
+        0.77480113092427
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/19",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        6915.926932369173,
+        11667.5,
+        2760.9924139392488
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.831803353138098,
+      "shearYKN": -1.5539117602512036,
+      "shearZKN": 0.5945706247725896,
+      "torsionKNm": 0.439372137632229,
+      "bendingYKNm": 1.6884714642624628,
+      "bendingZKNm": -0.652610894913866,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.806493824917709,
+        -1.5539117602512036,
+        -0.7044266245574562,
+        0.10952941479375636,
+        1.6884714642624628,
+        -0.7790713464007829
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/19",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        7037.142839818153,
+        11667.5,
+        2702.008170873358
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.831803353138098,
+      "shearYKN": 1.5539117602512036,
+      "shearZKN": -0.5945706247725896,
+      "torsionKNm": -0.43937213763231703,
+      "bendingYKNm": -1.7686226656672954,
+      "bendingZKNm": 0.44313553694618635,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.806493824917709,
+        1.5539117602512036,
+        0.7044266245574562,
+        -0.2011857237633995,
+        -1.7686226656672954,
+        0.5907125222864109
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/20",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        7037.142839818153,
+        11667.5,
+        2702.008170873358
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.9808812294800937,
+      "shearYKN": -1.703854632742832,
+      "shearZKN": 0.4270723682902482,
+      "torsionKNm": 0.46640673851511233,
+      "bendingYKNm": 1.769165727831672,
+      "bendingZKNm": -0.4151184212235668,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.8064938249258873,
+        -1.703854632742832,
+        -1.0916208694765146,
+        0.2024796871273368,
+        1.769165727831672,
+        -0.590644161633946
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/20",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        7154.578335250797,
+        11667.5,
+        2635.8164677586537
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 2.9808812294800937,
+      "shearYKN": 1.703854632742832,
+      "shearZKN": -0.4270723682902482,
+      "torsionKNm": -0.4664067385151145,
+      "bendingYKNm": -1.8267372962533113,
+      "bendingZKNm": 0.18542998700952223,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.8064938249258873,
+        1.703854632742832,
+        1.0916208694765146,
+        -0.3152607271284789,
+        -1.8267372962533113,
+        0.39055114869256347
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/21",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        7154.578335250797,
+        11667.5,
+        2635.8164677586537
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 3.176494452054876,
+      "shearYKN": -2.0897774445198323,
+      "shearZKN": 0.2551315285828335,
+      "torsionKNm": 0.39678713701299373,
+      "bendingYKNm": 1.8271924917117373,
+      "bendingZKNm": -0.20937931508841026,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.8064938249406666,
+        -2.0897774445198323,
+        -1.509569975649466,
+        0.21964495976347453,
+        1.8271924917117373,
+        -0.391197931150411
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/21",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        7267.805363300926,
+        11667.5,
+        2562.658575035648
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 3.176494452054876,
+      "shearYKN": 2.0897774445198323,
+      "shearZKN": -0.2551315285828335,
+      "torsionKNm": -0.39678713701312085,
+      "bendingYKNm": -1.8615855439078763,
+      "bendingZKNm": -0.07233351408343339,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.8064938249406666,
+        2.0897774445198323,
+        1.509569975649466,
+        -0.37252867386472255,
+        -1.8615855439078763,
+        0.15457864182130276
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/22",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        7267.805363300926,
+        11667.5,
+        2562.658575035648
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 3.421152023629884,
+      "shearYKN": -2.9872456896095727,
+      "shearZKN": 0.0848112059293078,
+      "torsionKNm": -0.310644708466125,
+      "bendingYKNm": 1.8619152830872063,
+      "bendingZKNm": -0.42981356688915584,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.8064938249169415,
+        -2.9872456896095727,
+        -1.9583325867025536,
+        -0.504888851767071,
+        1.8619152830872063,
+        -0.1622562311324632
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/22",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        7376.411208572956,
+        11667.5,
+        2482.8011550830615
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 3.421152023629884,
+      "shearYKN": 2.9872456896095727,
+      "shearZKN": -0.0848112059293078,
+      "torsionKNm": 0.31064470846608305,
+      "bendingYKNm": -1.8733482731556546,
+      "bendingZKNm": 0.027117367416752074,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.8064938249169415,
+        2.9872456896095727,
+        1.9583325867025536,
+        0.266335118230336,
+        -1.8733482731556546,
+        -0.1621761120227816
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/23",
+      "end": 0,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        7376.411208572956,
+        11667.5,
+        2482.8011550830615
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 3.7160662833147526,
+      "shearYKN": -3.9857956896020426,
+      "shearZKN": -0.07665724726842615,
+      "torsionKNm": -0.9753631107360043,
+      "bendingYKNm": 1.8735192307652142,
+      "bendingZKNm": -0.6459035184091623,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.806493824911186,
+        -3.9857956896020426,
+        -2.4369278541398955,
+        -1.1628344616393624,
+        1.8735192307652142,
+        0.12783022999996665
+      ]
+    },
+    {
+      "memberId": "outer-north/arch/23",
+      "end": 1,
+      "kind": "curved-ring",
+      "physicalPointMm": [
+        7480.0,
+        11667.5,
+        2396.5352902266773
+      ],
+      "breadthMm": 290,
+      "depthMm": 215,
+      "axialCompressionKN": 3.7160662833147526,
+      "shearYKN": 3.9857956896020426,
+      "shearZKN": 0.07665724726842615,
+      "torsionKNm": 0.9753631107361732,
+      "bendingYKNm": -1.8631854365799525,
+      "bendingZKNm": 0.10859760424889828,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.806493824911186,
+        3.9857956896020426,
+        2.4369278541398955,
+        0.8189963493349672,
+        -1.8631854365799525,
+        -0.5407139883612604
+      ]
+    }
+  ],
+  "capCuts": [
+    {
+      "memberId": "court-north/west/finite-cap",
+      "end": 0,
+      "kind": "source-finite-upper-cap",
+      "physicalPointMm": [
+        4500,
+        8050,
+        -405.0
+      ],
+      "breadthMm": 600,
+      "depthMm": 600,
+      "axialCompressionKN": 16.712930110533904,
+      "shearYKN": 0.6398633426233822,
+      "shearZKN": -2.3794452126979486,
+      "torsionKNm": -0.09786077634297413,
+      "bendingYKNm": 3.9235097666453833,
+      "bendingZKNm": 1.713225571998507,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.3794452126979486,
+        0.6398633426233822,
+        16.712930110533904,
+        -1.713225571998507,
+        3.9235097666453833,
+        -0.09786077634297413
+      ],
+      "scope": "Only actual finite uppercap gridaxis\u2212405 to top\u2212180. Headmaster\u2212750 eccentricity is transformed to the physicalcut; inherited lowercap transfer, actual fullcap cage, pile interface and soil are not qualified."
+    },
+    {
+      "memberId": "court-north/west/finite-cap",
+      "end": 1,
+      "kind": "source-finite-upper-cap",
+      "physicalPointMm": [
+        4500,
+        8050,
+        -180
+      ],
+      "breadthMm": 600,
+      "depthMm": 600,
+      "axialCompressionKN": 16.712930110533904,
+      "shearYKN": -0.6398633426233822,
+      "shearZKN": 2.3794452126979486,
+      "torsionKNm": 0.09786077634297413,
+      "bendingYKNm": -3.388134593788344,
+      "bendingZKNm": -1.5692563199082408,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.3794452126979486,
+        -0.6398633426233822,
+        -16.712930110533904,
+        1.5692563199082408,
+        -3.388134593788344,
+        0.09786077634297413
+      ],
+      "scope": "Only actual finite uppercap gridaxis\u2212405 to top\u2212180. Headmaster\u2212750 eccentricity is transformed to the physicalcut; inherited lowercap transfer, actual fullcap cage, pile interface and soil are not qualified."
+    },
+    {
+      "memberId": "court-north/east/finite-cap",
+      "end": 0,
+      "kind": "source-finite-upper-cap",
+      "physicalPointMm": [
+        7500,
+        8050,
+        -405.0
+      ],
+      "breadthMm": 600,
+      "depthMm": 600,
+      "axialCompressionKN": 10.703385955488073,
+      "shearYKN": 0.38369350236789224,
+      "shearZKN": -1.296786751971375,
+      "torsionKNm": -0.0033269825715514117,
+      "bendingYKNm": 0.572326470645013,
+      "bendingZKNm": 1.1573155612164314,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.296786751971375,
+        0.38369350236789224,
+        10.703385955488073,
+        -1.1573155612164314,
+        0.572326470645013,
+        -0.0033269825715514117
+      ],
+      "scope": "Only actual finite uppercap gridaxis\u2212405 to top\u2212180. Headmaster\u2212750 eccentricity is transformed to the physicalcut; inherited lowercap transfer, actual fullcap cage, pile interface and soil are not qualified."
+    },
+    {
+      "memberId": "court-north/east/finite-cap",
+      "end": 1,
+      "kind": "source-finite-upper-cap",
+      "physicalPointMm": [
+        7500,
+        8050,
+        -180
+      ],
+      "breadthMm": 600,
+      "depthMm": 600,
+      "axialCompressionKN": 10.703385955488073,
+      "shearYKN": -0.38369350236789224,
+      "shearZKN": 1.296786751971375,
+      "torsionKNm": 0.0033269825715514117,
+      "bendingYKNm": -0.28054945145144733,
+      "bendingZKNm": -1.0709845231836521,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.296786751971375,
+        -0.38369350236789224,
+        -10.703385955488073,
+        1.0709845231836521,
+        -0.28054945145144733,
+        0.0033269825715514117
+      ],
+      "scope": "Only actual finite uppercap gridaxis\u2212405 to top\u2212180. Headmaster\u2212750 eccentricity is transformed to the physicalcut; inherited lowercap transfer, actual fullcap cage, pile interface and soil are not qualified."
+    },
+    {
+      "memberId": "outer-north/west/finite-cap",
+      "end": 0,
+      "kind": "source-finite-upper-cap",
+      "physicalPointMm": [
+        4500,
+        11667.5,
+        -405.0
+      ],
+      "breadthMm": 600,
+      "depthMm": 600,
+      "axialCompressionKN": 17.35170630933374,
+      "shearYKN": 2.6132113553818073,
+      "shearZKN": -2.2709312860330613,
+      "torsionKNm": 0.028867154978179578,
+      "bendingYKNm": 3.938843713187782,
+      "bendingZKNm": 3.2159958405730142,
+      "globalPhysicalEndWrenchKN_KNm": [
+        2.2709312860330613,
+        2.6132113553818073,
+        17.35170630933374,
+        -3.2159958405730142,
+        3.938843713187782,
+        0.028867154978179578
+      ],
+      "scope": "Only actual finite uppercap gridaxis\u2212405 to top\u2212180. Headmaster\u2212750 eccentricity is transformed to the physicalcut; inherited lowercap transfer, actual fullcap cage, pile interface and soil are not qualified."
+    },
+    {
+      "memberId": "outer-north/west/finite-cap",
+      "end": 1,
+      "kind": "source-finite-upper-cap",
+      "physicalPointMm": [
+        4500,
+        11667.5,
+        -180
+      ],
+      "breadthMm": 600,
+      "depthMm": 600,
+      "axialCompressionKN": 17.35170630933374,
+      "shearYKN": -2.6132113553818073,
+      "shearZKN": 2.2709312860330613,
+      "torsionKNm": -0.028867154978179578,
+      "bendingYKNm": -3.4278841738303236,
+      "bendingZKNm": -2.628023285612102,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -2.2709312860330613,
+        -2.6132113553818073,
+        -17.35170630933374,
+        2.628023285612102,
+        -3.4278841738303236,
+        -0.028867154978179578
+      ],
+      "scope": "Only actual finite uppercap gridaxis\u2212405 to top\u2212180. Headmaster\u2212750 eccentricity is transformed to the physicalcut; inherited lowercap transfer, actual fullcap cage, pile interface and soil are not qualified."
+    },
+    {
+      "memberId": "outer-north/east/finite-cap",
+      "end": 0,
+      "kind": "source-finite-upper-cap",
+      "physicalPointMm": [
+        7500,
+        11667.5,
+        -405.0
+      ],
+      "breadthMm": 600,
+      "depthMm": 600,
+      "axialCompressionKN": 11.58785975667584,
+      "shearYKN": 2.320931073399457,
+      "shearZKN": -1.3029537291561724,
+      "torsionKNm": -0.02063384438616356,
+      "bendingYKNm": 0.5494138886646035,
+      "bendingZKNm": 2.3861817163154067,
+      "globalPhysicalEndWrenchKN_KNm": [
+        1.3029537291561724,
+        2.320931073399457,
+        11.58785975667584,
+        -2.3861817163154067,
+        0.5494138886646035,
+        -0.02063384438616356
+      ],
+      "scope": "Only actual finite uppercap gridaxis\u2212405 to top\u2212180. Headmaster\u2212750 eccentricity is transformed to the physicalcut; inherited lowercap transfer, actual fullcap cage, pile interface and soil are not qualified."
+    },
+    {
+      "memberId": "outer-north/east/finite-cap",
+      "end": 1,
+      "kind": "source-finite-upper-cap",
+      "physicalPointMm": [
+        7500,
+        11667.5,
+        -180
+      ],
+      "breadthMm": 600,
+      "depthMm": 600,
+      "axialCompressionKN": 11.58785975667584,
+      "shearYKN": -2.320931073399457,
+      "shearZKN": 1.3029537291561724,
+      "torsionKNm": 0.02063384438616356,
+      "bendingYKNm": -0.256249299604448,
+      "bendingZKNm": -1.8639722248005313,
+      "globalPhysicalEndWrenchKN_KNm": [
+        -1.3029537291561724,
+        -2.320931073399457,
+        -11.58785975667584,
+        1.8639722248005313,
+        -0.256249299604448,
+        0.02063384438616356
+      ],
+      "scope": "Only actual finite uppercap gridaxis\u2212405 to top\u2212180. Headmaster\u2212750 eccentricity is transformed to the physicalcut; inherited lowercap transfer, actual fullcap cage, pile interface and soil are not qualified."
+    }
+  ],
+  "portalNormalContactResults": [
+    {
+      "pierId": "NORTH/LOWER-RC/court-north/west",
+      "normalMode": "compression",
+      "quadratureOrder": 8,
+      "normalCompressionKN": 16.532676985533886,
+      "momentAboutPierCutKNm": [
+        -2.0228456805318586,
+        1.6135220419778185
+      ],
+      "resultantEccentricityXYMm": [
+        -97.59593339842375,
+        -122.35439440943843
+      ],
+      "physicalFootprintHalfWidthsXYMm": [
+        106.25,
+        145.0
+      ],
+      "thisResultantOutsideCompressionFootprint": false,
+      "activeNormalSamples": 3,
+      "normalSamples": [
+        {
+          "id": "court-north/west/NORMAL/exact/0",
+          "active": true,
+          "forceOnUpperKN": 8.266338492763081,
+          "relativeMm": -0.03163517753372026,
+          "areaWeightMm2": 522.6042107051181,
+          "normalCompressionMPa": 15.817588766860132
+        },
+        {
+          "id": "court-north/west/NORMAL/exact/1",
+          "active": true,
+          "forceOnUpperKN": -2.8270823802941312e-11,
+          "relativeMm": 1.0819210111145949e-13,
+          "areaWeightMm2": 522.6042107051181,
+          "normalCompressionMPa": -5.4096050555729747e-11
+        },
+        {
+          "id": "court-north/west/NORMAL/exact/2",
+          "active": true,
+          "forceOnUpperKN": 8.266338492799076,
+          "relativeMm": -0.03163517753385801,
+          "areaWeightMm2": 522.6042107051181,
+          "normalCompressionMPa": 15.817588766929003
+        }
+      ],
+      "continuousPlaneContactInspection": {
+        "physicalCompressedPolygonXYMm": [
+          [
+            4307.5,
+            7937.5
+          ],
+          [
+            4342.116266406305,
+            7937.5
+          ],
+          [
+            4307.5,
+            8028.082422362247
+          ]
+        ],
+        "contactAreaMm2": 1567.8126321099824,
+        "contactAreaFraction": 0.02544117861436077,
+        "normalCompressionKN": 16.532676985533563,
+        "momentAboutPierCutKNm": [
+          -2.022845680531819,
+          1.6135220419777865
+        ],
+        "maximumNormalCompressionMPa": 31.635177533843233,
+        "maximumOpeningGapMm": 0.5276897341188214,
+        "relativeRotationXYMrad": [
+          0.6984838053310531,
+          -1.8277636971317759
+        ],
+        "scope": "Exact clipped affine-gap Winkler compression area/pressure integration for inspection of the solved plane; difference from finite Gauss actions is quadrature error, not a new compatible solve or accepted material resistance."
+      },
+      "normalQuadratureActiveAreaMm2": 1567.8126321153545,
+      "normalQuadratureVsContinuousForceKN": 3.232969447708456e-13,
+      "unqualifiedShearLawResultantKN": [
+        2.379445212697897,
+        0.6398633426233864
+      ],
+      "shearWithoutNormalCompression": false,
+      "frictionOnlyRequiredCoefficient": 0.14903680753435716,
+      "nominalSourceFootprintXYMm": [
+        4307.5,
+        7975,
+        4520,
+        8190
+      ],
+      "effectiveContactFootprintXYMm": [
+        4307.5,
+        7937.5,
+        4520,
+        8227.5
+      ],
+      "scope": "The current solved resultant is necessary evidence. A bilateral resultant outside the footprint does not rule out redistribution in a separately solved unilateral system."
+    },
+    {
+      "pierId": "NORTH/LOWER-RC/court-north/east",
+      "normalMode": "compression",
+      "quadratureOrder": 8,
+      "normalCompressionKN": 10.523132830488073,
+      "momentAboutPierCutKNm": [
+        -1.3651274764060906,
+        1.0221663448332015
+      ],
+      "resultantEccentricityXYMm": [
+        -97.1351746004514,
+        -129.72633705154652
+      ],
+      "physicalFootprintHalfWidthsXYMm": [
+        106.25,
+        145.0
+      ],
+      "thisResultantOutsideCompressionFootprint": false,
+      "activeNormalSamples": 3,
+      "normalSamples": [
+        {
+          "id": "court-north/east/NORMAL/exact/0",
+          "active": true,
+          "forceOnUpperKN": 5.26156641523117,
+          "relativeMm": -0.028345541873013927,
+          "areaWeightMm2": 371.24472263064325,
+          "normalCompressionMPa": 14.172770936506964
+        },
+        {
+          "id": "court-north/east/NORMAL/exact/1",
+          "active": true,
+          "forceOnUpperKN": 7.998407655062221e-12,
+          "relativeMm": -4.3089677334053056e-14,
+          "areaWeightMm2": 371.24472263064325,
+          "normalCompressionMPa": 2.1544838667026528e-11
+        },
+        {
+          "id": "court-north/east/NORMAL/exact/2",
+          "active": true,
+          "forceOnUpperKN": 5.261566415248907,
+          "relativeMm": -0.028345541873109482,
+          "areaWeightMm2": 371.24472263064325,
+          "normalCompressionMPa": 14.17277093655474
+        }
+      ],
+      "continuousPlaneContactInspection": {
+        "physicalCompressedPolygonXYMm": [
+          [
+            7480,
+            7937.5
+          ],
+          [
+            7516.4593015981945,
+            7937.5
+          ],
+          [
+            7480.0,
+            7998.594651793814
+          ]
+        ],
+        "contactAreaMm2": 1113.7341678936652,
+        "contactAreaFraction": 0.0180727654019256,
+        "normalCompressionKN": 10.523132830488217,
+        "momentAboutPierCutKNm": [
+          -1.3651274764061092,
+          1.0221663448332154
+        ],
+        "maximumNormalCompressionMPa": 28.345541873040155,
+        "maximumOpeningGapMm": 0.542825610131374,
+        "relativeRotationXYMrad": [
+          0.9279222007419724,
+          -1.554914144293093
+        ],
+        "scope": "Exact clipped affine-gap Winkler compression area/pressure integration for inspection of the solved plane; difference from finite Gauss actions is quadrature error, not a new compatible solve or accepted material resistance."
+      },
+      "normalQuadratureActiveAreaMm2": 1113.7341678919297,
+      "normalQuadratureVsContinuousForceKN": -1.438849039914203e-13,
+      "unqualifiedShearLawResultantKN": [
+        1.2967867519713605,
+        0.3836935023678959
+      ],
+      "shearWithoutNormalCompression": false,
+      "frictionOnlyRequiredCoefficient": 0.12851302528706496,
+      "nominalSourceFootprintXYMm": [
+        7480,
+        7975,
+        7692.5,
+        8190
+      ],
+      "effectiveContactFootprintXYMm": [
+        7480,
+        7937.5,
+        7692.5,
+        8227.5
+      ],
+      "scope": "The current solved resultant is necessary evidence. A bilateral resultant outside the footprint does not rule out redistribution in a separately solved unilateral system."
+    },
+    {
+      "pierId": "NORTH/LOWER-RC/outer-north/west",
+      "normalMode": "compression",
+      "quadratureOrder": 8,
+      "normalCompressionKN": 17.171453184333743,
+      "momentAboutPierCutKNm": [
+        -2.2621736958613723,
+        1.6133691246059212
+      ],
+      "resultantEccentricityXYMm": [
+        -93.95646992054623,
+        -131.74037581893484
+      ],
+      "physicalFootprintHalfWidthsXYMm": [
+        106.25,
+        145.0
+      ],
+      "thisResultantOutsideCompressionFootprint": false,
+      "activeNormalSamples": 3,
+      "normalSamples": [
+        {
+          "id": "outer-north/west/NORMAL/exact/0",
+          "active": true,
+          "forceOnUpperKN": 8.585726592166289,
+          "relativeMm": -0.03950303783398209,
+          "areaWeightMm2": 434.68690323256624,
+          "normalCompressionMPa": 19.75151891699105
+        },
+        {
+          "id": "outer-north/west/NORMAL/exact/1",
+          "active": true,
+          "forceOnUpperKN": -1.6766559136516447e-12,
+          "relativeMm": 7.714315297668861e-15,
+          "areaWeightMm2": 434.68690323256624,
+          "normalCompressionMPa": -3.8571576488344306e-12
+        },
+        {
+          "id": "outer-north/west/NORMAL/exact/2",
+          "active": true,
+          "forceOnUpperKN": 8.585726592169133,
+          "relativeMm": -0.039503037833995176,
+          "areaWeightMm2": 434.68690323256624,
+          "normalCompressionMPa": 19.75151891699759
+        }
+      ],
+      "continuousPlaneContactInspection": {
+        "physicalCompressedPolygonXYMm": [
+          [
+            4307.5,
+            11522.5
+          ],
+          [
+            4356.674120317815,
+            11522.5
+          ],
+          [
+            4307.5,
+            11575.53849672426
+          ]
+        ],
+        "contactAreaMm2": 1304.0607096974263,
+        "contactAreaFraction": 0.02116122855492781,
+        "normalCompressionKN": 17.171453184333426,
+        "momentAboutPierCutKNm": [
+          -2.2621736958613305,
+          1.6133691246058914
+        ],
+        "maximumNormalCompressionMPa": 39.503037833992494,
+        "maximumOpeningGapMm": 0.6943927255477107,
+        "relativeRotationXYMrad": [
+          1.4895986980687974,
+          -1.6066596648270324
+        ],
+        "scope": "Exact clipped affine-gap Winkler compression area/pressure integration for inspection of the solved plane; difference from finite Gauss actions is quadrature error, not a new compatible solve or accepted material resistance."
+      },
+      "normalQuadratureActiveAreaMm2": 1304.0607096976987,
+      "normalQuadratureVsContinuousForceKN": 3.161915174132446e-13,
+      "unqualifiedShearLawResultantKN": [
+        2.270931286032945,
+        2.6132113553815435
+      ],
+      "shearWithoutNormalCompression": false,
+      "frictionOnlyRequiredCoefficient": 0.20161838502915796,
+      "nominalSourceFootprintXYMm": [
+        4307.5,
+        11560,
+        4520,
+        11775
+      ],
+      "effectiveContactFootprintXYMm": [
+        4307.5,
+        11522.5,
+        4520,
+        11812.5
+      ],
+      "scope": "The current solved resultant is necessary evidence. A bilateral resultant outside the footprint does not rule out redistribution in a separately solved unilateral system."
+    },
+    {
+      "pierId": "NORTH/LOWER-RC/outer-north/east",
+      "normalMode": "compression",
+      "quadratureOrder": 8,
+      "normalCompressionKN": 11.407606631675833,
+      "momentAboutPierCutKNm": [
+        -1.539041874524588,
+        1.073288681535894
+      ],
+      "resultantEccentricityXYMm": [
+        -94.08535165962527,
+        -134.91365228628112
+      ],
+      "physicalFootprintHalfWidthsXYMm": [
+        106.25,
+        145.0
+      ],
+      "thisResultantOutsideCompressionFootprint": false,
+      "activeNormalSamples": 3,
+      "normalSamples": [
+        {
+          "id": "outer-north/east/NORMAL/exact/0",
+          "active": true,
+          "forceOnUpperKN": 5.703803315845235,
+          "relativeMm": -0.03486521199045842,
+          "areaWeightMm2": 327.1916612700475,
+          "normalCompressionMPa": 17.43260599522921
+        },
+        {
+          "id": "outer-north/east/NORMAL/exact/1",
+          "active": true,
+          "forceOnUpperKN": -6.0308607887951335e-12,
+          "relativeMm": 3.686439174754863e-14,
+          "areaWeightMm2": 327.1916612700475,
+          "normalCompressionMPa": -1.8432195873774315e-11
+        },
+        {
+          "id": "outer-north/east/NORMAL/exact/2",
+          "active": true,
+          "forceOnUpperKN": 5.703803315836628,
+          "relativeMm": -0.034865211990405806,
+          "areaWeightMm2": 327.1916612700475,
+          "normalCompressionMPa": 17.432605995202902
+        }
+      ],
+      "continuousPlaneContactInspection": {
+        "physicalCompressedPolygonXYMm": [
+          [
+            7480,
+            11522.5
+          ],
+          [
+            7528.658593361499,
+            11522.5
+          ],
+          [
+            7480.0,
+            11562.845390854876
+          ]
+        ],
+        "contactAreaMm2": 981.5749838090793,
+        "contactAreaFraction": 0.015928194463433337,
+        "normalCompressionKN": 11.407606631675316,
+        "momentAboutPierCutKNm": [
+          -1.5390418745245182,
+          1.0732886815358456
+        ],
+        "maximumNormalCompressionMPa": 34.86521199045055,
+        "maximumOpeningGapMm": 0.736011365175678,
+        "relativeRotationXYMrad": [
+          1.728336806346112,
+          -1.4330546603115601
+        ],
+        "scope": "Exact clipped affine-gap Winkler compression area/pressure integration for inspection of the solved plane; difference from finite Gauss actions is quadrature error, not a new compatible solve or accepted material resistance."
+      },
+      "normalQuadratureActiveAreaMm2": 981.5749838101426,
+      "normalQuadratureVsContinuousForceKN": 5.169198402654729e-13,
+      "unqualifiedShearLawResultantKN": [
+        1.3029537291562103,
+        2.3209310733996116
+      ],
+      "shearWithoutNormalCompression": false,
+      "frictionOnlyRequiredCoefficient": 0.2333228595475063,
+      "nominalSourceFootprintXYMm": [
+        7480,
+        11560,
+        7692.5,
+        11775
+      ],
+      "effectiveContactFootprintXYMm": [
+        7480,
+        11522.5,
+        7692.5,
+        11812.5
+      ],
+      "scope": "The current solved resultant is necessary evidence. A bilateral resultant outside the footprint does not rule out redistribution in a separately solved unilateral system."
+    }
+  ]
+}

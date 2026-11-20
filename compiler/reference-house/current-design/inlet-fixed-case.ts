@@ -2,6 +2,9 @@ import { sha256SemanticFingerprint } from '../../core/identity.js'
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { compileFixedInletCandidate, readFixedInletSettings } from './inlet-fixed-entry.js'
+import { compareCurrentFixedInletSupport } from './inlet-fixed-support-integration.js'
+import { renderCompactInletSupportView } from './inlet-fixed-support-view.js'
+import { compareTemporaryFixedInletKeeper } from './inlet-fixed-temporary-keeper.js'
 import { readInletSillInsertCase, runInletSillInsertCase } from './inlet-sill-insert.js'
 import { readInletFaultCase, runInletFaultCase } from './inlet-fault.js'
 import type { CurrentDesignResolution } from './resolve.js'
@@ -14,6 +17,12 @@ function boundSource(resolved: CurrentDesignResolution) {
     'compiler/reference-house/current-design/inlet-fixed-case.ts',
     'compiler/reference-house/current-design/inlet-fixed-entry.ts',
     'compiler/reference-house/current-design/inlet-fixed-operating.ts',
+    'compiler/reference-house/current-design/inlet-fixed-support-integration.ts',
+    'compiler/reference-house/current-design/inlet-fixed-thermal.ts',
+    'compiler/reference-house/current-design/inlet-fixed-receiver.ts',
+    'compiler/reference-house/current-design/inlet-fixed-compact-receiver.ts',
+    'compiler/reference-house/current-design/inlet-fixed-support-view.ts',
+    'compiler/reference-house/current-design/inlet-fixed-temporary-keeper.ts',
     'project/had/studies/incoming-water-geometry.mjs',
     'project/had/studies/service-interface-geometry.mjs',
     'project/had/studies/south-inlet-relief-hydraulics.mjs',
@@ -51,6 +60,10 @@ export function runFixedInletCase(resolved: CurrentDesignResolution, input: unkn
   const candidate = compileFixedInletCandidate(resolved, value.settings, {
     insert, fault, faultCase: faultCase as typeof referenceFault.fault,
   })
-  return { ...candidate, source: { ...candidate.source, bindingDigest: binding.bindingDigest },
+  const supportDevelopment = compareCurrentFixedInletSupport(resolved, candidate)
+  const temporaryKeeper = compareTemporaryFixedInletKeeper(candidate, supportDevelopment.compactReceiver)
+  return { ...candidate, supportDevelopment, temporaryKeeper,
+    supportReviewSvg: renderCompactInletSupportView(candidate, supportDevelopment),
+    source: { ...candidate.source, bindingDigest: binding.bindingDigest },
     method: { ...candidate.method, currentImplementations: binding.implementations } }
 }

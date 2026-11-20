@@ -41,19 +41,19 @@ node --import tsx scripts/compile-current-design.ts --read-georgian-source |
 node --import tsx scripts/compile-current-design.ts --structural-interfaces structural-interfaces.json
 ```
 
-The replay requests one or more named current interfaces. It checks the plan, structural binding, native method, receipt and declared inputs before running the native producer. The collar and roof shoe outputs compare byte for byte against their receipts. The arch comparison uses the owner method's existing `--check` path. Each result identifies the producer, receipt and source inputs. An unsupported request, stale provenance or edited plan withholds the comparison.
+The replay requests one or more named bounded interfaces. It checks the plan, structural binding, native method, receipt and declared inputs before running the native producer. The collar and roof shoe outputs compare byte for byte against their receipts. The arch comparison uses the owner method's existing `--check` path. Each result identifies the producer, receipt and source inputs. An unsupported request, stale provenance or edited plan withholds the comparison.
 
 | Interface | Recomputed geometry or control | Scope |
 | --- | --- | --- |
-| North floor collar | Z3170 soffit, Z3370 slab and Z3415 collar, 200 mm contact, 107.5 mm minimum raw window clearance | Collar geometry, bar cover and documented force comparisons. The pressure field, confinement and steel development remain open. |
-| North roof shoe | 60 × 34 mm slot, Ø28 pin, X4340/7660 shifted rods | Independent compression, uplift and normal routes remain separate. Coupled actions, stiffness and installation remain open. |
+| Historical north floor collar | Z3170 soffit, Z3370 slab and Z3415 collar, 200 mm contact, 107.5 mm minimum raw window clearance | Collar geometry, bar cover and documented force comparisons. The pressure field, confinement and steel development remain open. |
+| Historical north roof shoe | 60 × 34 mm slot, Ø28 pin, X4340/7660 shifted rods | Independent compression, uplift and normal routes remain separate. Coupled actions, stiffness and installation remain open. |
 | Outward arch controls | 160 mm and 180 mm widths retain the 50 mm cavity; both have at least one adverse section ratio above unity | Eight modeled opening occurrences under four response controls per width. No width or physical assembly is accepted. |
 
-The same request also runs the active roof action route and stiffness, principal membrane and permanent floor stops, wall transfers, north cap layer and floor cage methods. These calls verify their named underlying receipt sources and return the recomputed comparison or fail closed. The caller can request any supported subset. The current CLI withholds every one of these references on a differently shaped candidate.
+The generated current request defaults to outward arch controls, wall transfers, north cap layer and north floor cage. Retired collar/shoe and predecessor roof-route/stiffness, membrane and floor-stop comparisons remain available only by explicit interface ID. Their disposition is `historical-comparison`; every result retains `successorProof: not-established` and `installedAcceptance: false`. Exact receipt/source verification is unchanged. The caller can request any supported subset; a differently shaped candidate withholds these references. Explicit historical CLI regression still executes all ten native methods, so removal from the default does not discard their evidence.
 
 ## Acceptance boundary
 
-The current structural compile contract integrates the signed foundation actions, explicit service and wind load sensitivity, local support or section inputs and current joint and opening comparisons. Actual reactions change under the supported signed load case and satisfy the same equilibrium as the existing solver. The bridge records actual axes and reference materials for its bounded geometry and cover cases. The floor, wall, roof and arch replays bind their active comparison sources and retain separate installed authority.
+The current structural compile contract integrates the signed foundation actions, explicit service and wind load sensitivity, local support or section inputs and current joint and opening comparisons. Actual reactions change under the supported signed load case and satisfy the same equilibrium as the existing solver. The bridge records actual axes and reference materials for its bounded geometry and cover cases. The floor, wall, roof and arch replays bind their declared comparison sources and preserve their current or historical disposition and separate installed authority.
 
 The portal development baseline still needs a confined continuous transfer into both northern piers, its solved joined force and stiffness actions, and the new signed and service replay. That physical design is owned by STR-FLOOR-PORTAL and its downstream gates. These compiler comparisons preserve those limits.
 

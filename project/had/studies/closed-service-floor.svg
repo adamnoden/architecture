@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1500" viewBox="0 0 1800 1500">
+<rect width="1800" height="1500" fill="#faf8f1"/><g font-family="sans-serif" fill="#263b42">
+<text x="45" y="42" font-size="26">Enclosed E gravity body + actual-grid N support · FFL715 comparison</text>
+<text x="45" y="72" font-size="17">All dimensions mm. Author inputs and numerical comparisons; no selected-house, installed seal, grid capacity or site acceptance.</text>
+<text x="45" y="118" font-size="20">A · E transverse at upstream pressure cleanout</text>
+<rect x="65.00" y="485.00" width="710.00" height="100.00" fill="#dfc990" stroke="#52666b"/>
+<rect x="65.00" y="585.00" width="710.00" height="45.00" fill="#b5bfba" stroke="#52666b"/>
+<text x="85" y="570" font-size="16">100 bare cellular glass350..450</text>
+<text x="85" y="615" font-size="16">RC150..350 continues below; mineral0..150</text>
+<polyline points="129.20,325.50 129.20,405.50 707.60,405.50 707.60,325.50" fill="none" stroke="#b45b3c" stroke-width="3" />
+<rect x="176.00" y="328.50" width="484.80" height="71.00" fill="#9cc9d2" stroke="#52666b"/>
+<rect x="417.20" y="331.50" width="2.40" height="65.00" fill="#536e77" stroke="#52666b"/>
+<rect x="144.00" y="314.50" width="32.00" height="14.00" fill="#405e69" stroke="#52666b"/>
+<rect x="384.80" y="314.50" width="67.20" height="14.00" fill="#405e69" stroke="#52666b"/>
+<rect x="660.80" y="314.50" width="32.00" height="14.00" fill="#405e69" stroke="#52666b"/>
+<rect x="144.00" y="309.30" width="273.60" height="4.00" fill="#607d86" stroke="#52666b"/>
+<rect x="144.00" y="299.30" width="32.00" height="10.00" fill="#607d86" stroke="#52666b"/>
+<rect x="156.00" y="290.30" width="8.00" height="9.00" fill="#42565f" stroke="#52666b"/>
+<rect x="385.60" y="299.30" width="32.00" height="10.00" fill="#607d86" stroke="#52666b"/>
+<rect x="397.60" y="290.30" width="8.00" height="9.00" fill="#42565f" stroke="#52666b"/>
+<rect x="419.20" y="309.30" width="273.60" height="4.00" fill="#607d86" stroke="#52666b"/>
+<rect x="419.20" y="299.30" width="32.00" height="10.00" fill="#607d86" stroke="#52666b"/>
+<rect x="431.20" y="290.30" width="8.00" height="9.00" fill="#42565f" stroke="#52666b"/>
+<rect x="660.80" y="299.30" width="32.00" height="10.00" fill="#607d86" stroke="#52666b"/>
+<rect x="672.80" y="290.30" width="8.00" height="9.00" fill="#42565f" stroke="#52666b"/>
+<rect x="65.00" y="220.00" width="710.00" height="15.00" fill="#a08e76" stroke="#52666b"/>
+<rect x="65.00" y="235.00" width="710.00" height="12.00" fill="#71868a" stroke="#52666b"/>
+<rect x="65.00" y="247.00" width="710.00" height="40.00" fill="#ead698" stroke="#52666b"/>
+<rect x="144.00" y="278.50" width="32.00" height="10.00" fill="#faf8f1" stroke="#faf8f1"/>
+<rect x="385.60" y="278.50" width="32.00" height="10.00" fill="#faf8f1" stroke="#faf8f1"/>
+<rect x="419.20" y="278.50" width="32.00" height="10.00" fill="#faf8f1" stroke="#faf8f1"/>
+<rect x="660.80" y="278.50" width="32.00" height="10.00" fill="#faf8f1" stroke="#faf8f1"/>
+<rect x="80.00" y="247.00" width="48.00" height="40.00" fill="#9aa5a4" stroke="#52666b"/>
+<rect x="378.40" y="247.00" width="80.00" height="30.00" fill="#9aa5a4" stroke="#52666b"/>
+<rect x="708.80" y="247.00" width="48.00" height="40.00" fill="#9aa5a4" stroke="#52666b"/>
+<rect x="80.00" y="287.00" width="48.00" height="192.00" fill="#b4b1a1" stroke="#52666b"/>
+<rect x="80.00" y="479.00" width="48.00" height="6.00" fill="#7b9194" stroke="#52666b"/>
+<rect x="708.80" y="287.00" width="48.00" height="192.00" fill="#b4b1a1" stroke="#52666b"/>
+<rect x="708.80" y="479.00" width="48.00" height="6.00" fill="#7b9194" stroke="#52666b"/>
+<polyline points="780.00,220.00 820.00,220.00" fill="none" stroke="#52666b" stroke-width="2" />
+<text x="825" y="225" font-size="14">FFL715</text>
+<polyline points="780.00,288.50 820.00,288.50" fill="none" stroke="#52666b" stroke-width="2" />
+<text x="825" y="276.5" font-size="14">40-core646.5</text>
+<polyline points="780.00,290.30 820.00,290.30" fill="none" stroke="#52666b" stroke-width="2" />
+<text x="825" y="302.29999999999995" font-size="14">bolt644.7</text>
+<polyline points="780.00,396.50 820.00,396.50" fill="none" stroke="#52666b" stroke-width="2" />
+<text x="825" y="401.5" font-size="14">water invert538.5</text>
+<text x="45" y="660" font-size="16">600 water clear /686 frame /846 gross. Two lids 342×530;4field+10rim;30bolt/40cleanout/50ordinary glass.</text>
+<text x="45" y="687" font-size="16">Catch723clear below body; side crest80, normal local leak trial0.1L/s, computed adverse limit0.585L/s.</text>
+<text x="45" y="714" font-size="16">Walking plates → separate40deep grid/60rails/60×280soles →100glass →RC. Water body carries no walking load.</text>
+<text x="1030" y="118" font-size="20">B · E passage and accessible joints</text>
+<rect x="1089.50" y="185.00" width="47.24" height="180.00" fill="#bab4a6" stroke="#52666b"/>
+<rect x="1089.50" y="213.05" width="47.24" height="138.90" fill="#faf8f1" stroke="#52666b"/>
+<rect x="1249.33" y="185.00" width="57.15" height="180.00" fill="#bab4a6" stroke="#52666b"/>
+<rect x="1249.33" y="205.55" width="57.15" height="138.90" fill="#faf8f1" stroke="#52666b"/>
+<rect x="1509.76" y="185.00" width="47.24" height="180.00" fill="#bab4a6" stroke="#52666b"/>
+<rect x="1089.50" y="215.30" width="550.00" height="126.90" fill="#a2c6ce" stroke="#52666b"/>
+<rect x="1040.00" y="203.75" width="49.50" height="131.25" fill="#7aadb9" stroke="#52666b"/>
+<rect x="1159.35" y="278.90" width="58.30" height="51.30" fill="#708c95" stroke="#52666b"/>
+<rect x="1159.35" y="227.30" width="58.30" height="51.30" fill="#8eaab3" stroke="#52666b"/>
+<rect x="1313.35" y="278.90" width="58.30" height="51.30" fill="#708c95" stroke="#52666b"/>
+<rect x="1313.35" y="227.30" width="58.30" height="51.30" fill="#8eaab3" stroke="#52666b"/>
+<rect x="1549.85" y="278.90" width="58.30" height="51.30" fill="#708c95" stroke="#52666b"/>
+<rect x="1549.85" y="227.30" width="58.30" height="51.30" fill="#8eaab3" stroke="#52666b"/>
+<polyline points="1078.50,337.20 1078.50,220.30" fill="none" stroke="#c2563e" stroke-width="2" />
+<polyline points="1147.74,337.20 1147.74,220.30" fill="none" stroke="#c2563e" stroke-width="2" />
+<polyline points="1238.33,337.20 1238.33,220.30" fill="none" stroke="#c2563e" stroke-width="2" />
+<polyline points="1317.47,337.20 1317.47,220.30" fill="none" stroke="#c2563e" stroke-width="2" />
+<polyline points="1557.00,275.00 1722.00,275.00" fill="none" stroke="#b45b3c" stroke-width="3" stroke-dasharray="7 5"/>
+<text x="1030" y="430" font-size="15">E1200 passage6300..7500; gross6452..7298; all service bodies aboveRC350.</text>
+<text x="1030" y="458" font-size="15">New scuppers: raw1200; bottom350; spring700/crown850/ring1065.</text>
+<text x="1030" y="486" font-size="15">Finished crown713 below FFL715; window sill1465.</text>
+<text x="1030" y="514" font-size="15">Joint-free wall bodies draw550/750 into real8179.5..9203 gallery.</text>
+<text x="1030" y="542" font-size="15">Main bed538.5→479.676;1:85; quiet680 / return730.</text>
+<text x="1030" y="570" font-size="15">Intake front6500..7375, returns730, hood780: visible, not walking.</text>
+<text x="1030" y="598" font-size="15">Local catch ends12000; separate80OD pipe390→345 to13500/6900.</text>
+<text x="1030" y="626" font-size="15">Pressure lids lifted only after N full-duty verification, E isolation/drain.</text>
+<text x="1030" y="654" font-size="15">New masonry/90mm local glass reduction, welds, air collars remain unqualified.</text>
+<text x="45" y="790" font-size="20">C · N plan: actual heads, new support and operator domain</text>
+<rect x="121.75" y="1043.75" width="204.00" height="361.25" fill="#ebe5d5" stroke="#52666b"/>
+<rect x="102.62" y="988.50" width="76.50" height="55.25" fill="#e2c9a0" stroke="#52666b"/>
+<rect x="70.75" y="1354.00" width="51.00" height="51.00" fill="#bebcaf" stroke="#52666b"/>
+<text x="81.25" y="1384.5" font-size="13">P28</text>
+<rect x="126.00" y="1375.25" width="8.50" height="8.50" fill="#526d74" stroke="#52666b"/>
+<rect x="325.75" y="1354.00" width="51.00" height="51.00" fill="#bebcaf" stroke="#52666b"/>
+<text x="336.25" y="1384.5" font-size="13">P30</text>
+<rect x="313.00" y="1375.25" width="8.50" height="8.50" fill="#526d74" stroke="#52666b"/>
+<rect x="70.75" y="1198.88" width="51.00" height="51.00" fill="#bebcaf" stroke="#52666b"/>
+<text x="81.25" y="1229.375" font-size="13">P29</text>
+<rect x="126.00" y="1220.12" width="8.50" height="8.50" fill="#526d74" stroke="#52666b"/>
+<rect x="325.75" y="1198.88" width="51.00" height="51.00" fill="#bebcaf" stroke="#52666b"/>
+<text x="336.25" y="1229.375" font-size="13">P31</text>
+<rect x="313.00" y="1220.12" width="8.50" height="8.50" fill="#526d74" stroke="#52666b"/>
+<rect x="70.75" y="1046.51" width="51.00" height="51.00" fill="#bebcaf" stroke="#52666b"/>
+<text x="81.25" y="1077.0125" font-size="13">P25</text>
+<rect x="126.00" y="1067.76" width="8.50" height="8.50" fill="#526d74" stroke="#52666b"/>
+<rect x="325.75" y="1046.51" width="51.00" height="51.00" fill="#bebcaf" stroke="#52666b"/>
+<text x="336.25" y="1077.0125" font-size="13">P26</text>
+<rect x="313.00" y="1067.76" width="8.50" height="8.50" fill="#526d74" stroke="#52666b"/>
+<rect x="126.00" y="1375.25" width="195.50" height="8.50" fill="#657f87" stroke="#52666b"/>
+<rect x="126.00" y="1220.12" width="195.50" height="8.50" fill="#657f87" stroke="#52666b"/>
+<rect x="126.00" y="1067.76" width="195.50" height="8.50" fill="#657f87" stroke="#52666b"/>
+<rect x="132.35" y="912.00" width="6.00" height="493.00" fill="#42849a" stroke="#52666b"/>
+<rect x="159.12" y="912.00" width="6.00" height="493.00" fill="#42849a" stroke="#52666b"/>
+<text x="435" y="860" font-size="15">6actual heads:4500/7500×8050/9875/11667.5.</text>
+<text x="435" y="890" font-size="15">Columns4900/7100 sit beyond wrapped jambs.</text>
+<text x="435" y="920" font-size="15">Brackets anchored to actual inward girder faces4800/7200.</text>
+<text x="435" y="950" font-size="15">No cap-centred stool passes through portal pier or wrap.</text>
+<text x="435" y="980" font-size="15">NSrails4960/5275; transverse bearers support edgeframes4835/5215.</text>
+<text x="435" y="1010" font-size="15">Operator platform4575..5475/Y12000..12650.</text>
+<text x="435" y="1040" font-size="15">Actual endoperator5025/12350 fits900wide platform.</text>
+<text x="435" y="1070" font-size="15">Water-only terminal continues13550 into existing N receiver.</text>
+<text x="435" y="1100" font-size="15">Local cantilever is a selection cost, no new foundation invented.</text>
+<text x="980" y="790" font-size="20">D · N section along the rail; cold structure unchanged</text>
+<polyline points="990.00,966.40 1024.50,967.36 1129.44,970.28 1234.38,973.20 1440.51,978.94 1478.75,980.00 1553.50,982.08 1657.00,984.96" fill="none" stroke="#8d6d45" stroke-width="3" />
+<polyline points="990.00,1020.80 1024.50,1021.76 1129.44,1024.68 1234.38,1027.60 1440.51,1033.34 1478.75,1034.40 1553.50,1036.48 1657.00,1039.36" fill="none" stroke="#3e8093" stroke-width="4" />
+<polyline points="990.00,1078.40 1024.50,1079.36 1129.44,1082.28 1234.38,1085.20 1440.51,1090.94 1478.75,1092.00 1553.50,1094.08 1657.00,1096.96" fill="none" stroke="#3e8093" stroke-width="2" />
+<polyline points="990.00,999.60 1478.75,1013.20 1616.75,1017.04" fill="none" stroke="#58a6b8" stroke-width="3" />
+<rect x="1018.50" y="1079.36" width="12.00" height="64.00" fill="#65818a" stroke="#52666b"/>
+<rect x="1019.50" y="1143.36" width="10.00" height="74.24" fill="#879998" stroke="#52666b"/>
+<rect x="1004.50" y="1217.60" width="40.00" height="182.40" fill="#adb7b0" stroke="#52666b"/>
+<rect x="1228.38" y="1085.20" width="12.00" height="64.00" fill="#65818a" stroke="#52666b"/>
+<rect x="1229.38" y="1149.20" width="10.00" height="68.40" fill="#879998" stroke="#52666b"/>
+<rect x="1214.38" y="1217.60" width="40.00" height="182.40" fill="#adb7b0" stroke="#52666b"/>
+<rect x="1434.51" y="1090.94" width="12.00" height="64.00" fill="#65818a" stroke="#52666b"/>
+<rect x="1435.51" y="1154.94" width="10.00" height="62.66" fill="#879998" stroke="#52666b"/>
+<rect x="1420.51" y="1217.60" width="40.00" height="182.40" fill="#adb7b0" stroke="#52666b"/>
+<rect x="1024.50" y="1217.60" width="209.88" height="144.00" fill="#b8c0b9" stroke="#52666b"/>
+<rect x="1234.38" y="1217.60" width="206.14" height="144.00" fill="#b8c0b9" stroke="#52666b"/>
+<polyline points="1616.75,1017.04 1657.00,1018.16 1657.00,1123.20" fill="none" stroke="#58a6b8" stroke-width="3" />
+<polyline points="1645.50,1187.20 1680.00,1187.20" fill="none" stroke="#448c9e" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="1000" y="842" font-size="15">12cover +50frame +58mineral +50crossbearer +180rail +200crossbeam; no coplanar overlap.</text>
+<text x="1000" y="870" font-size="15">EW top=walk−350; bottom=walk−550. Stools end above−180 coldRC top.</text>
+<text x="1000" y="898" font-size="15">Cold anchors−300/−500; bracket bottom−550; retained caps/ties−750 still governD1250.</text>
+<text x="1000" y="926" font-size="15">N shoe sole350 staysRC-owned; crest730; taller return, no apron cut.</text>
+<text x="1000" y="1450" font-size="15">Rail projection1882.5; people982.5. SLS loaded maximum5.11mm.</text>
+<text x="45" y="1478" font-size="16">No actual site grade/outfall capacity, qualified first harm or installed seal claim. bounded-numerical-comparison.</text>
+</g></svg>

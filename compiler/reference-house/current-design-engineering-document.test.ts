@@ -23,7 +23,7 @@ test('one saved engineering document replays its bound stages and preserves thei
   assert.equal(result.source.planDigest, sha256SemanticFingerprint(design))
   assert.equal(result.documentIdentity.planDigest, result.source.planDigest)
   assert.deepEqual(result.manifest.map(item => item.stage), ['plans', 'occupiedServices', 'selectedWaterEvent',
-    'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'fixedInlet', 'studyRoomKit'])
+    'roofPitch', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'fixedInlet', 'studyRoomKit'])
   assert.equal(result.engineering.inletAssembly, undefined)
   assert.equal(result.engineering.inletRemovals, undefined)
   assert.equal(result.engineering.fixedInlet?.status, 'conditional-whole-arrangement')

@@ -7,6 +7,7 @@ import { resolveCurrentDesign, type CurrentDesignResolution } from './resolve.js
 import { readStructuralDpcOriginSettings } from './structural-dpc.js'
 import { compileInletAssembly, readInletAssemblySettings } from './inlet-assembly.js'
 import { readFixedInletSettings } from './inlet-fixed-entry.js'
+import { joinedRcFloorStageFields, savedJoinedRcFloorCase } from './structural-rc-floor.js'
 
 const repository = new URL('../../../', import.meta.url)
 const implementationRoots = [
@@ -39,8 +40,9 @@ const additionalImplementationFiles = [
   'project/str/studies/distributed_floor_compatibility.py',
   'project/str/studies/perforated_floor_condensation.py',
   'project/str/studies/distributed_floor_views.py',
+  'project/mat/studies/ring-roof-pitch-case.py',
 ] as const
-const stageKeys = ['structuralSuccessor', 'distributedFloor', 'retainedComponents', 'groundSection', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'fixedInlet', 'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit'] as const
+const stageKeys = ['structuralSuccessor', 'distributedFloor', 'joinedRcFloor', 'retainedComponents', 'groundSection', 'roofPitch', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'fixedInlet', 'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit'] as const
 type Settings = Readonly<Record<string, unknown>>
 type EngineeringStages = Partial<Readonly<Record<Exclude<typeof stageKeys[number], 'inletCovers' | 'inletRemovals'>, Settings>>> & {
   readonly inletRemovals?: readonly Settings[]
@@ -147,8 +149,10 @@ export async function readRetainedInletComparisonDocument(design: unknown) {
 
 export async function readEngineeringDocument(design: unknown) {
   const retained = await readRetainedInletComparisonDocument(design)
+  const { compile } = acceptedCompile(design)
+  const roof = await compile.readRoofPitchCase()
   const { inletRemovals: _removals, inletCovers: _covers, inletAssembly: _assembly, ...stages } = retained.stages
-  return { ...retained, stages: { ...stages, fixedInlet: readFixedInletSettings() } }
+  return { ...retained, stages: { ...stages, roofPitch: { pitchDeg: roof.roof.pitchDeg }, fixedInlet: readFixedInletSettings() } }
 }
 
 function branchSettings(value: unknown, fields: readonly string[], name: string) {
@@ -171,8 +175,10 @@ function admitStages(value: unknown): EngineeringStages {
   const stages: EngineeringStages = {
     ...(Object.hasOwn(value, 'structuralSuccessor') ? { structuralSuccessor: settings(value.structuralSuccessor, successorFields, 'structural successor') } : {}),
     ...(Object.hasOwn(value, 'distributedFloor') ? { distributedFloor: settings(value.distributedFloor, distributedFields, 'distributed floor') } : {}),
+    ...(Object.hasOwn(value, 'joinedRcFloor') ? { joinedRcFloor: settings(value.joinedRcFloor, joinedRcFloorStageFields, 'joined RC floor') } : {}),
     ...(Object.hasOwn(value, 'retainedComponents') ? { retainedComponents: settings(value.retainedComponents, retainedFields, 'retained components') } : {}),
     ...(Object.hasOwn(value, 'groundSection') ? { groundSection: settings(value.groundSection, ['caseId', 'settings'], 'ground section') } : {}),
+    ...(Object.hasOwn(value, 'roofPitch') ? { roofPitch: settings(value.roofPitch, ['pitchDeg'], 'roof pitch') } : {}),
     ...(Object.hasOwn(value, 'northCollector') ? { northCollector: settings(value.northCollector, northFields, 'north collector') } : {}),
     ...(Object.hasOwn(value, 'rearFoulVent') ? { rearFoulVent: settings(value.rearFoulVent, foulFields, 'rear foul vent') } : {}),
     ...(Object.hasOwn(value, 'inletSillInsert') ? { inletSillInsert: settings(value.inletSillInsert, insertFields, 'inlet sill insert') } : {}),
@@ -206,8 +212,10 @@ export async function compileEngineeringDocument(input: unknown) {
   const engineering: {
     structuralSuccessor?: Awaited<ReturnType<typeof compile.structuralSuccessorCase>>
     distributedFloor?: Awaited<ReturnType<typeof compile.distributedFloorCase>>
+    joinedRcFloor?: Awaited<ReturnType<typeof compile.joinedRcFloorCase>>
     retainedComponents?: Awaited<ReturnType<typeof compile.retainedComponentCase>>
     groundSection?: Awaited<ReturnType<typeof compile.groundSectionCase>>
+    roofPitch?: Awaited<ReturnType<typeof compile.roofPitch>>
     northCollector?: Awaited<ReturnType<typeof compile.northCollectorCase>>
     rearFoulVent?: Awaited<ReturnType<typeof compile.rearFoulVent>>
     inletSillInsert?: Awaited<ReturnType<typeof compile.inletSillInsert>>
@@ -218,7 +226,8 @@ export async function compileEngineeringDocument(input: unknown) {
     inletAssembly?: ReturnType<typeof compileInletAssembly>
     studyRoomKit?: Awaited<ReturnType<typeof compile.studyRoomKit>>
   } = {}
-  const manifest: { stage: string; settingsDigest: string; resultDigest: string; controls: readonly string[]; dependsOn: readonly string[] }[] = []
+  const manifest: { stage: string; settingsDigest: string; resultDigest: string; controls: readonly string[]; dependsOn: readonly string[];
+    applicability?: { state: 'withheld-for-stage-change'; controllingStage: 'roofPitch'; reason: string } }[] = []
   const recordResult = (stage: string, settings: unknown, result: unknown, upstream: readonly string[] = []) => {
     manifest.push({ stage, settingsDigest: sha256SemanticFingerprint(settings), resultDigest: sha256SemanticFingerprint(result),
       controls: object(settings) && Object.keys(settings).length ? Object.keys(settings).sort().map(key => `stages.${stage}.${key}`) : ['design'],
@@ -228,6 +237,18 @@ export async function compileEngineeringDocument(input: unknown) {
   recordResult('plans', {}, base.plans)
   recordResult('occupiedServices', {}, base.occupiedServices)
   recordResult('selectedWaterEvent', {}, base.selectedWaterEvent)
+  if (stages.roofPitch) {
+    if (!exactKeys(stages.roofPitch, ['pitchDeg'])) throw new TypeError('The saved roof stage requires its authored pitch')
+    const request = await compile.readRoofPitchCase()
+    engineering.roofPitch = await compile.roofPitch({ ...request.roof, ...stages.roofPitch })
+    recordResult('roofPitch', stages.roofPitch, engineering.roofPitch)
+    const water = manifest.find(row => row.stage === 'selectedWaterEvent')!
+    water.dependsOn = [...water.dependsOn, 'roofPitch']
+    if (engineering.roofPitch.evidence.state === 'withheld-for-pitch-change') {
+      water.applicability = { state: 'withheld-for-stage-change', controllingStage: 'roofPitch',
+        reason: 'The returned water event retains its bound reference roof. It is not a recomputed event or applicable proof for the edited roof pitch.' }
+    }
+  }
   if (stages.structuralSuccessor) {
     const request = await compile.readStructuralSuccessorCase()
     if (!object(request.successor.comparison)) throw new Error('The bound structural successor case is unavailable')
@@ -235,14 +256,21 @@ export async function compileEngineeringDocument(input: unknown) {
       comparison: { ...request.successor.comparison, ...stages.structuralSuccessor } })
     recordResult('structuralSuccessor', stages.structuralSuccessor, engineering.structuralSuccessor)
   }
+  let sharedDistributedFloor: Readonly<Record<string, unknown>> | undefined
   if (stages.distributedFloor) {
     const request = await compile.readDistributedFloorCase()
     if (!object(request.floor.comparison) || !object(request.floor.comparison.componentCase)) throw new Error('The current distributed floor inputs are unavailable')
     const { edits, ...authored } = stages.distributedFloor
-    engineering.distributedFloor = await compile.distributedFloorCase({ ...request.floor,
-      comparison: { ...request.floor.comparison, ...authored,
-        componentCase: { ...request.floor.comparison.componentCase, edits: edits ?? request.floor.comparison.componentCase.edits } } })
+    sharedDistributedFloor = { ...request.floor.comparison, ...authored,
+      componentCase: { ...request.floor.comparison.componentCase, edits: edits ?? request.floor.comparison.componentCase.edits } }
+    engineering.distributedFloor = await compile.distributedFloorCase({ ...request.floor, comparison: sharedDistributedFloor })
     recordResult('distributedFloor', stages.distributedFloor, engineering.distributedFloor)
+  }
+  if (stages.joinedRcFloor) {
+    const request = await compile.readJoinedRcFloorCase()
+    engineering.joinedRcFloor = await compile.joinedRcFloorCase(savedJoinedRcFloorCase(request.joined,
+      stages.joinedRcFloor, sharedDistributedFloor))
+    recordResult('joinedRcFloor', stages.joinedRcFloor, engineering.joinedRcFloor, ['distributedFloor'])
   }
   if (stages.retainedComponents) {
     const request = await compile.readRetainedComponentCase()

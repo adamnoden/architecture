@@ -154,6 +154,7 @@ test('the exact named house receives separately scoped source bindings', () => {
     ['had-inlet-south-fault-envelope', 'candidate-interface'],
     ['had-inlet-south-removal', 'candidate-interface'],
     ['had-fixed-inlet-arrangement', 'candidate-interface'],
+    ['had-closed-service-floor', 'candidate-interface'],
   ])
   for (const binding of current.disciplineBindings) {
     assert.equal(binding.applicability.sourceId, current.design.source.id)

@@ -70,8 +70,31 @@ test('first and second lower-pipe repairs leave real separate old and new fittin
   }
   const formerInitialStart=1080-48,formerRepairEnd=1000+48
   assert.equal(formerRepairEnd-formerInitialStart,16)
-  const formerCuts=compileFixedInletCandidate(resolved,{...input,lowerCutZMm:1000,upperCutZMm:1400},joined)
+  const formerCuts=compileFixedInletCandidate(resolved,{...input,lowerCutZMm:1000,upperCutZMm:1400,valveCentreZMm:1200},joined)
   assert.ok(formerCuts.geometryBlockers.includes('utility:lower-cut:INITIAL_BODY_INTERCEPTS_VALVE'))
+})
+
+test('a wider control hood updates its real bodies, seats and view while preserving independent fault paths',()=>{
+  const {resolved,joined}=source(),settings=readFixedInletSettings()
+  const before=compileFixedInletCandidate(resolved,{...settings,controlHoodEastAllowanceMm:40},joined)
+  const after=compileFixedInletCandidate(resolved,settings,joined)
+  assert.equal(after.controlHoodClearances.siblingAfterTwo3PlateAndTwo5SettingMm,19)
+  assert.equal(after.controlHoodClearances.eastConditionalWindowAfter3PlateAnd5SettingMm,47)
+  for(const [index,branch] of after.branches.entries()){
+    const old=before.branches[index],hood=branch.controlArrangementComparison.wholeOrdinaryValveHood
+    assert.equal(hood.bodyMm[3],170)
+    assert.equal(hood.bodyMm[3]-old.controlArrangementComparison.wholeOrdinaryValveHood.bodyMm[3],20)
+    assert.equal(hood.normalControlOpening.uHoodBodyMm[3],170)
+    assert.equal(hood.normalControlOpening.lowerSeatCleatPointsMm[1][0]-old.controlArrangementComparison.wholeOrdinaryValveHood.normalControlOpening.lowerSeatCleatPointsMm[1][0],20)
+    assert.deepEqual(branch.components.find(part=>part.id==='fixed-upper-wet-guard')?.boxMm,hood.bodyMm)
+    assert.deepEqual(branch.pressurePathMm,old.pressurePathMm)
+    assert.deepEqual(branch.fault.inheritedLowerReliefAndIndependentReceiver,old.fault.inheritedLowerReliefAndIndependentReceiver)
+    assert.deepEqual(hood.ownCellReturnThroatPlanMm,old.controlArrangementComparison.wholeOrdinaryValveHood.ownCellReturnThroatPlanMm)
+  }
+  assert.notDeepEqual(after.drawing,before.drawing)
+  assert.equal(after.evidence.preSiteArrangementComplete,false)
+  const tooWide=compileFixedInletCandidate(resolved,{...settings,controlHoodEastAllowanceMm:100},joined)
+  assert.ok(tooWide.geometryBlockers.includes('CONTROL_HOODS_LOSE_INDEPENDENT_SEPARATION'))
 })
 
 test('native joined jaw motions, known-action reactions and frost sensitivity keep distinct proof ceilings',()=>{
@@ -146,7 +169,7 @@ test('a riser or repair edit propagates through actual fittings, routes and draw
   assert.notDeepEqual(rear.branches.map(row => row.fault.ownUpperGuard.bodyMm), before.branches.map(row => row.fault.ownUpperGuard.bodyMm))
   const long = compileFixedInletCandidate(resolved, { ...input, outerCutYMm: -500 }, joined)
   assert.ok(long.geometryBlockers.some(code => code.includes('LOWER_MODULE_RENEWAL_REACHES_WASHER_FIRST_REST')))
-  const short = compileFixedInletCandidate(resolved, { ...input, upperCutZMm: 1250 }, joined)
+  const short = compileFixedInletCandidate(resolved, { ...input, upperCutZMm: input.valveCentreZMm + 50 }, joined)
   assert.ok(short.geometryBlockers.some(code => code.includes('REPAIR_BODY_INTERCEPTS_VALVE')))
   assert.deepEqual(short.branches.map(row => row.pressurePathMm), before.branches.map(row => row.pressurePathMm))
   const warm = compileFixedInletCandidate(resolved, { ...input, localPipeTemperatureRangeK: 80 }, joined)

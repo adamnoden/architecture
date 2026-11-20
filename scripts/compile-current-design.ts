@@ -43,6 +43,10 @@ const trialModes: Readonly<Record<string, TrialMode>> = {
     schema: 'str-distributed-floor-request/1', key: 'floor', name: 'distributed floor',
     run: (compile, value) => compile.distributedFloorCase(value),
   },
+  '--joined-rc-floor': {
+    schema: 'str-current-rc-floor-request/1', key: 'joined', name: 'joined RC floor',
+    run: (compile, value) => compile.joinedRcFloorCase(value),
+  },
   '--structural-case': {
     schema: 'str-structural-case-request/1', key: 'case', name: 'structural',
     run: (compile, value) => compile.structuralCase(value),
@@ -107,7 +111,7 @@ const modes = [
   '--occupied-services', '--occupied-service-drawings', '--selected-water-event', '--structural-bridge', '--structural-actions',
   '--bundle', '--read-engineering', '--read-retained-inlet-comparison', '--study-assembly', '--study-linings', '--renewable-openings',
   '--read-roof-pitch', '--read-court-intake', '--read-inlet-route', '--read-east-ground-receiving',
-  '--read-occupied-condensate', '--read-structural-successor', '--read-retained-components', '--read-ground-section', '--read-distributed-floor', '--read-structural-case', '--read-structural-interfaces',
+  '--read-occupied-condensate', '--read-structural-successor', '--read-retained-components', '--read-ground-section', '--read-distributed-floor', '--read-joined-rc-floor', '--read-structural-case', '--read-structural-interfaces',
   '--read-north-collector', '--read-rear-foul-vent', '--read-inlet-sill-insert', '--read-inlet-fault', '--read-fixed-inlet', '--read-inlet-removal', '--read-inlet-cover', ...Object.keys(trialModes),
 ]
 const mode = modes.includes(args[0]) ? args.shift() : undefined
@@ -142,6 +146,7 @@ try {
     } else {
       const compile = prepareCurrentDesignCompile(input)
       if (mode === '--read-distributed-floor') process.stdout.write(JSON.stringify(await compile.readDistributedFloorCase(), null, 2) + '\n')
+      else if (mode === '--read-joined-rc-floor') process.stdout.write(JSON.stringify(await compile.readJoinedRcFloorCase(), null, 2) + '\n')
       else if (mode === '--read-ground-section') process.stdout.write(JSON.stringify(await compile.readGroundSectionCase(), null, 2) + '\n')
       else if (mode === '--read-roof-pitch') process.stdout.write(JSON.stringify(await compile.readRoofPitchCase(), null, 2) + '\n')
       else if (mode === '--read-court-intake') process.stdout.write(JSON.stringify(await compile.readCourtIntakeCase(), null, 2) + '\n')

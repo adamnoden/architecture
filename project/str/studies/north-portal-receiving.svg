@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1126" viewBox="0 0 1232.800 925.600" role="img" aria-label="Actual north RC taper and missing upper masonry receiving path">
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="sans-serif" fill="#222">
+<text x="30.000" y="30.000" font-size="20" font-weight="bold">NORTH PORTAL — ACTUAL LOWER RECEIVER BOUNDARY</text>
+<text x="30.000" y="53.000" font-size="13" font-weight="normal">Both north portal planes use this source section. The operator stops at the mean skewbacks.</text>
+<polygon points="91.750,741.000 130.000,741.000 130.000,303.600 103.051,275.825 91.750,275.825" fill="#ddd" stroke="#777" stroke-width="1" />
+<polygon points="91.750,741.000 130.000,741.000 130.000,303.600 116.525,289.713 91.750,289.713 91.750,303.600" fill="#c7a37c" stroke="#654" stroke-width="1" />
+<polygon points="72.400,843.600 180.400,843.600 180.400,741.000 72.400,741.000" fill="#eee" stroke="#555" stroke-width="1" />
+<polygon points="91.750,316.200 130.000,316.200 130.000,309.000 91.750,309.000" fill="white" stroke="#777" stroke-width="1" />
+<polygon points="91.750,717.600 130.000,717.600 130.000,714.000 91.750,714.000" fill="white" stroke="#777" stroke-width="1" />
+<path d="M 91.750 717.600 H 130.000" stroke="#333" stroke-width="1" stroke-dasharray="3 2"/>
+<path d="M 91.750 714.000 H 130.000" stroke="#333" stroke-width="1" stroke-dasharray="3 2"/>
+<circle cx="116.525" cy="289.713" r="4" fill="#222"/>
+<circle cx="104.350" cy="138.000" r="4" fill="white" stroke="#333" stroke-width="1.5"/>
+<path d="M 116.525 289.713 L 104.350 138.000" stroke="#777" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="80.875" y="761.000" font-size="12" font-weight="bold">P28</text>
+<polygon points="662.800,741.000 701.050,741.000 701.050,275.825 689.749,275.825 662.800,303.600" fill="#ddd" stroke="#777" stroke-width="1" />
+<polygon points="662.800,741.000 701.050,741.000 701.050,303.600 701.050,289.713 676.275,289.713 662.800,303.600" fill="#c7a37c" stroke="#654" stroke-width="1" />
+<polygon points="612.400,843.600 720.400,843.600 720.400,741.000 612.400,741.000" fill="#eee" stroke="#555" stroke-width="1" />
+<polygon points="662.800,316.200 701.050,316.200 701.050,309.000 662.800,309.000" fill="white" stroke="#777" stroke-width="1" />
+<polygon points="662.800,717.600 701.050,717.600 701.050,714.000 662.800,714.000" fill="white" stroke="#777" stroke-width="1" />
+<path d="M 662.800 717.600 H 701.050" stroke="#333" stroke-width="1" stroke-dasharray="3 2"/>
+<path d="M 662.800 714.000 H 701.050" stroke="#333" stroke-width="1" stroke-dasharray="3 2"/>
+<circle cx="676.275" cy="289.713" r="4" fill="#222"/>
+<circle cx="688.450" cy="138.000" r="4" fill="white" stroke="#333" stroke-width="1.5"/>
+<path d="M 676.275 289.713 L 688.450 138.000" stroke="#777" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="651.925" y="761.000" font-size="12" font-weight="bold">P30</text>
+<polygon points="103.051,275.825 110.910,268.393 118.957,261.166 127.187,254.147 135.595,247.342 144.174,240.755 152.920,234.391 161.826,228.253 170.887,222.346 180.097,216.673 189.449,211.239 198.938,206.046 208.557,201.099 218.299,196.401 228.159,191.954 238.130,187.762 248.206,183.827 258.379,180.152 268.643,176.740 278.991,173.592 289.417,170.711 299.913,168.099 310.473,165.757 321.090,163.686 331.756,161.890 342.465,160.367 353.209,159.120 363.982,158.149 374.776,157.455 385.584,157.039 396.400,156.900 407.216,157.039 418.024,157.455 428.818,158.149 439.591,159.120 450.335,160.367 461.044,161.890 471.710,163.686 482.327,165.757 492.887,168.099 503.383,170.711 513.809,173.592 524.157,176.740 534.421,180.152 544.594,183.827 554.670,187.762 564.641,191.954 574.501,196.401 584.243,201.099 593.862,206.046 603.351,211.239 612.703,216.673 621.913,222.346 630.974,228.253 639.880,234.391 648.626,240.755 657.205,247.342 665.613,254.147 673.843,261.166 681.890,268.393 689.749,275.825 662.800,303.600 655.663,296.851 648.355,290.287 640.881,283.913 633.246,277.733 625.455,271.752 617.512,265.972 609.424,260.398 601.196,255.033 592.832,249.882 584.339,244.947 575.722,240.231 566.987,235.739 558.139,231.472 549.185,227.434 540.130,223.627 530.980,220.053 521.741,216.716 512.420,213.617 503.023,210.759 493.555,208.142 484.023,205.770 474.433,203.643 464.792,201.763 455.105,200.131 445.380,198.749 435.623,197.616 425.840,196.734 416.037,196.104 406.222,195.726 396.400,195.600 386.578,195.726 376.763,196.104 366.960,196.734 357.177,197.616 347.420,198.749 337.695,200.131 328.008,201.763 318.367,203.643 308.777,205.770 299.245,208.142 289.777,210.759 280.380,213.617 271.059,216.716 261.820,220.053 252.670,223.627 243.615,227.434 234.661,231.472 225.813,235.739 217.078,240.231 208.461,244.947 199.968,249.882 191.604,255.033 183.376,260.398 175.288,265.972 167.345,271.752 159.554,277.733 151.919,283.913 144.445,290.287 137.137,296.851 130.000,303.600" fill="#f4f4f4" stroke="#777" stroke-width="1" stroke-dasharray="4 3"/>
+<path d="M 91.750 138.000 H 701.050" stroke="#777" stroke-width="1" stroke-dasharray="6 4"/>
+<text x="792.800" y="115.000" font-size="16" font-weight="bold">SOURCE GEOMETRY</text>
+<text x="792.800" y="139.000" font-size="13" font-weight="normal">RC foot: 212.5 × 215 mm</text>
+<text x="792.800" y="163.000" font-size="13" font-weight="normal">Mean skewback Z2327.152 mm</text>
+<text x="792.800" y="187.000" font-size="13" font-weight="normal">RC shoulder Z2404.304 mm</text>
+<text x="792.800" y="211.000" font-size="13" font-weight="normal">Floor receiver Z3170 mm</text>
+<text x="792.800" y="235.000" font-size="13" font-weight="normal">Missing upper path 842.848 mm</text>
+<text x="792.800" y="259.000" font-size="13" font-weight="normal"></text>
+<text x="792.800" y="283.000" font-size="16" font-weight="bold">OPERATOR SCOPE</text>
+<text x="792.800" y="307.000" font-size="13" font-weight="normal">Brown: finite partial RC below mean cut</text>
+<text x="792.800" y="331.000" font-size="13" font-weight="normal">Grey RC shoulder: outside this operator</text>
+<text x="792.800" y="355.000" font-size="13" font-weight="normal">Brick arch: source geometry only</text>
+<text x="792.800" y="379.000" font-size="13" font-weight="normal">White bore: section through actual tie axis</text>
+<text x="792.800" y="403.000" font-size="13" font-weight="normal">Open circles: unresolved floor ports</text>
+<text x="792.800" y="427.000" font-size="13" font-weight="normal">Dashed connectors: absent upper path</text>
+<text x="792.800" y="451.000" font-size="13" font-weight="normal">Four finite caps and all 52 grid heads</text>
+<text x="792.800" y="475.000" font-size="13" font-weight="normal">Explicit finite bilateral DPC comparison</text>
+<text x="792.800" y="499.000" font-size="13" font-weight="normal">No installed/contact/moisture acceptance</text>
+<text x="792.800" y="523.000" font-size="13" font-weight="normal"></text>
+<text x="792.800" y="547.000" font-size="14" font-weight="bold">0 COMPLETE FLOOR RECEIVING PATHS</text>
+<text x="792.800" y="571.000" font-size="13" font-weight="normal">All 28 floor receiver duties remain open</text>
+</g></svg>

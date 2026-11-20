@@ -63,6 +63,25 @@ class DrySectionTests(unittest.TestCase):
         self.assertEqual(low['levelsMm']['localSolum'], high['levelsMm']['localSolum'])
         self.assertNotEqual(low['levelsMm']['authoredExteriorGrade'], high['levelsMm']['authoredExteriorGrade'])
 
+    def test_service_depth_controls_the_floor_without_moving_rc_or_glass(self):
+        before = self.result()
+        case = copy.deepcopy(self.case)
+        case['settings']['serviceZoneMm'] = 250
+        after = self.result(case)
+        self.assertEqual(after['levelsMm']['ffl'], 715)
+        self.assertEqual(after['levelsMm']['accessibleDistribution'], [450, 700])
+        self.assertEqual(after['levelsMm']['dryRC'], before['levelsMm']['dryRC'])
+        self.assertEqual(after['levelsMm']['glass'], before['levelsMm']['glass'])
+        self.assertEqual(after['quantities'], before['quantities'])
+        self.assertEqual(after['sourceSupportControl'], before['sourceSupportControl'])
+        self.assertEqual(after['floorAssembly']['authoredLayersTopDownMm'], [15, 250, 100, 200])
+        self.assertGreater(after['approaches']['front']['totalStraightReservationMm'], before['approaches']['front']['totalStraightReservationMm'])
+        self.assertIn('FFL +715', render_section(after))
+        for invalid in [0, -1, 501, float('nan')]:
+            case['settings']['serviceZoneMm'] = invalid
+            with self.assertRaisesRegex(ValueError, 'service zone|nonfinite'):
+                self.result(case)
+
     def test_union_quantities_do_not_double_count_corners(self):
         self.assertEqual(union_area([[0, 0, 2, 2], [1, 1, 3, 3]]), 7)
         self.assertEqual(union_area([[0, 0, 3, 3], [1, 1, 2, 2]]), 9)

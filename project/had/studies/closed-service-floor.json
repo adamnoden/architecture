@@ -1,0 +1,111 @@
+{
+  "schema": "closed-service-floor/2",
+  "sources": {
+    "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+    "project/rwt/studies/open-loggia-event.json": "ab123fbc8ef4b916088c75a8d15d7f0f105f2e95f0383f951ea86322ac41520e",
+    "project/rwt/studies/selected-receiving-interface.json": "b0c85061120dcf1ef79e0d40606848b2f82802801a58ae197b3950c371130b65",
+    "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+    "project/mat/studies/upper-access-renewal.json": "54481965f1ac39b83b8725e2550ab5c0f3e3e5b60df4e23ad55c9f4fc20b2114",
+    "project/owner-house-charter.md": "891ed6b72ff7452826a18bf5f91458746b8594a5c5ac89f75407e9a40b776371",
+    "project/had/studies/closed-service-gasket-evidence.json": "4206c3b9af4662b5922255e6f56a1d1abc0ea8bbc6c82908c741f870cdce4d73",
+    "project/had/studies/closed_service_floor.py": "7a82f026579ffe68a58faacab52d9b8b0cf0da40bd76908ffa2a9e9ab3efa680"
+  },
+  "settings": {
+    "endXmm": 12750,
+    "centreYmm": 6875,
+    "invertMm": 538.5,
+    "slopeRatio": 85,
+    "waterWidthMm": 600,
+    "waterHeightMm": 65,
+    "bodyMm": 3,
+    "webMm": 3,
+    "lidMm": 4,
+    "lidRimMm": 10,
+    "centralFlangeMm": 84,
+    "lidButtGapMm": 2,
+    "flangeWidthMm": 40,
+    "flangeMm": 14,
+    "frameGapMm": 20,
+    "railWidthMm": 60,
+    "boltProjectionMm": 9,
+    "metalLossMm": 0.5,
+    "debrisMm": 10,
+    "lapMm": 3,
+    "widthFraction": 0.8,
+    "roughness": 0.025,
+    "localK": 4.8,
+    "flowSettingMm": 10,
+    "splashMm": 25,
+    "waterSettingMm": 25,
+    "supportHeightMm": 20,
+    "ventDiameterMm": 40,
+    "ventAreaFraction": 0.5,
+    "ventK": 5,
+    "pressureProofKPa": 3,
+    "elasticMPa": 190000,
+    "stressScreenMPa": 150,
+    "lidClearLengthMm": 450,
+    "gasketWidthMm": 10,
+    "boltEdgeOffsetMm": 25,
+    "boltsOnLongSide": 7,
+    "boltsOnShortSide": 5,
+    "boltPreloadKN": 16,
+    "preloadLossFraction": 0.2,
+    "boltProofMPa": 600,
+    "boltTensileAreaMm2": 58,
+    "gasketMinimumStressMPa": 13,
+    "scupperSpanMm": 1200,
+    "scupperSpringMm": 700,
+    "scupperRiseMm": 150,
+    "jambGlassMm": 110,
+    "liningMm": 27,
+    "ringMm": 215,
+    "wallTailMm": 100,
+    "courtDrawMm": 550,
+    "spineDrawMm": 750,
+    "pointLoadKN": 2,
+    "liveKPa": 2,
+    "cantileverDeflectionRatio": 150,
+    "bracketMassKg": 25,
+    "localLeakTrialLps": 0.1,
+    "lidCarryLiftMm": 800,
+    "capturedBailHeightMm": 700,
+    "handleDynamicFactor": 1.5,
+    "gasketMassAllowanceKg": 0.1,
+    "retainedWaterAllowanceKg": 0.25,
+    "weldMassAllowanceKg": 0.1
+  },
+  "groundStack": {
+    "schema": "service-floor-ground-stack/1",
+    "source": {
+      "caseId": "raised715-service-floor-reference",
+      "caseDigest": "f563bc6127b0b09acde760b2bb61435c394158d78f1bc13bc1c1ff493ff271a0",
+      "planDigest": "standalone-native-ground-reference"
+    },
+    "levelsMm": {
+      "mineralCourse": [
+        0,
+        150
+      ],
+      "dryRC": [
+        150,
+        350
+      ],
+      "glass": [
+        350,
+        450
+      ],
+      "accessibleDistribution": [
+        450,
+        700
+      ],
+      "finish": [
+        700,
+        715
+      ],
+      "ffl": 715,
+      "authoredExteriorGrade": -150,
+      "localSolum": -1800
+    }
+  }
+}

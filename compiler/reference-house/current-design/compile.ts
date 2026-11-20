@@ -127,6 +127,14 @@ export function prepareCurrentDesignCompile(input: unknown) {
       const { readNorthCollectorCase } = await import('./north-collector.js')
       return readNorthCollectorCase(resolved)
     },
+    readJoinedRcFloorCase: async () => {
+      const { readJoinedRcFloorCase } = await import('./structural-rc-floor.js')
+      return readJoinedRcFloorCase(resolved)
+    },
+    joinedRcFloorCase: async (input: unknown) => {
+      const { runJoinedRcFloorCase } = await import('./structural-rc-floor.js')
+      return runJoinedRcFloorCase(resolved, input)
+    },
     northCollectorCase: async (input: unknown, westVentCase?: unknown) => {
       const { runNorthCollectorCase } = await import('./north-collector.js')
       return runNorthCollectorCase(resolved, input, westVentCase)
