@@ -2,11 +2,51 @@
 
 Reference design — not released for construction. This development candidate replaces the old low chassis and one-jamb cantilever together. No current entry source, selected support, owner adoption or installed acceptance changes here.
 
-The recommendation is **one permanent two-jamb wall frame with separately removable pipe and wet brackets**. The represented steel, bolt, nominal thread, weld and isolated anchor comparisons are credible under explicit boundary assumptions. The current two-hood enclosure remains incomplete because its850 pipe arm crosses the back skin without a dimensioned passive closure. A frame calculation cannot discharge that enclosure defect.
+The recommendation is **one permanent two-jamb wall frame with separately removable pipe and wet brackets**. The original normal, wet-fault and cold comparisons remain credible under explicit boundary assumptions. The newly coupled seized-top-exit plus closed-fault comparison fails at the upper wet-beam endplates and Plant fixed bracket; it must not inherit their pass. The current two-hood enclosure remains incomplete because its850 pipe arm crosses the back skin without a dimensioned passive closure. A frame calculation cannot discharge that enclosure defect.
 
 The method is `compiler/reference-house/current-design/inlet-fixed-shared-service-frame.ts`. The thin current-source adapter is `compareCurrentSharedFixedInletServiceFrame(candidate, support, wet, representedSubsystem?, anchorGaugeMm?)`; the pure core additionally takes raw spatial source texts as its last argument. It consumes the actual compiled candidate, source-bound current support result and source-bound wet comparison; mismatched candidate identities throw. The adapter checks actual hot route, bowl transport, washer/inverter and vent geometry against every represented permanent frame body, with candidate-matched source hashes. A pure call without that context explicitly withholds the spatial pass. `representedSubsystem` is `both`, `pipe-only` or `wet-only`. The200mm pad pitch is the new unselected trial;160 remains an explicit failed adverse comparison. The same function supports actual guide changes1760..2000 and current riser edits; geometry and actions recompute together. It creates no alternative saved-document or compiler authority.
 
 The existing saved `fixedInlet` stage now returns this actual comparison as `sharedServiceFrameDevelopment`; the bundle CLI consumes the same wrapper. Saved inputs remain inlet settings, and injected derived frame results are rejected. The source account and request binding include the new method; stale resolved method identities cannot generate a new apparently current request. Saved temperature and guide edits regenerate actions and physical members respectively, with reversible save/load and CLI checks. A guide below1760mm keeps the earlier inlet result and returns an explicit unsupported-geometry diagnostic for this frame comparison. Neither that comparison nor its conditional steel results remove the current wet-enclosure rejection or admit a selected support arrangement.
+
+## Joined top-exit decision — 20 November 2026
+
+**Do not adopt a packed/sliding top exit on the existing frame merely because its normal drag or isolated seizure passes. Develop the noncontact gravity-shed exit first, with the actual raised-guide requirement and unresolved pressure-spray boundary.** This recommendation removes the intended mechanical coupling; it does not claim that a weather-style labyrinth already contains pressure spray. The lower fixed-arm/back-shell closure is still absent. Neither exit completes HAD-INLET-RESOLUTION.
+
+The same frame solver now contains seven additional joined states, returned by the existing saved `fixedInlet` stage as `sharedServiceFrameDevelopment.mechanics.enclosureInteraction`. No second solver, authored geometry source or editor stage is introduced. The ordinary four cases remain separately identified. The additional states include both150N drag pairs, full closed-fault water/jet plus drag, each individual seized exit, paired seizure, full closed-fault water/jet plus paired seizure, and the noncontact replacement's actual added stock/water.
+
+A seized exit connects the actual pipe fixed clamp Z850 to the actual hood top Z1723 through the straight tube's EA/L spring and thermal eigenstrain. The wet beam receives that force at Y600 from its actual Y515 node, preserving the85mm lever moment. Pipe and wet loads are equal/opposite members of one correlated variable; treating them as independent external forces would destroy their physical relationship. The spring enters the **same assembled stiffness matrix**, so frame opening changes pipe force. The actual valves, couplings, seal and local shell stiffness remain unqualified. This is a tube-only sensitivity, not a measured installed constitutive law.
+
+At40K, E/A/expansion from the bound pipe facts gives free extension0.57618mm over873mm and a rigid-frame comparison13.336438kN. The compliant single-branch source cases instead give own-thermal forces0.859208/0.925082kN. Paired seizing also couples the branches: their own-heating influences are1.081221/1.164116kN, while the full independent thermal-sign/stock force bounds are2.002556/2.185542kN. Those are distinct quantities. A headline13.336kN imposed on this flexible frame would be misleading.
+
+| Source guide1800,40K | Maximum member MPa | Maximum removable-interface MPa | Isolated anchor interaction |
+| --- | ---: | ---: | ---: |
+| Both exits,150N drag each |51.125|124.434|0.721|
+| Closed fault plus drag |79.831|124.434|0.800|
+| Utility exit seized alone |75.902|100.413|0.318|
+| Plant exit seized alone |86.605|122.093|0.323|
+| Both exits seized, no fault |102.492|131.865|0.338|
+| **Both exits seized plus closed fault** |**118.497**|**156.094**|0.425|
+| Noncontact replacement, additional stock/water and closed fault |65.220|122.093|0.793|
+
+The comparison limit is133.333MPa. The compound rejection is real within the declared model: the east upper-wet-beam12mm endplate reaches156.094MPa, the west142.594MPa; the Plant fixed bracket also reaches136.772MPa plate bending and135.111MPa combined nominal bolt stress. Isolated anchors passing does not rescue these failures. This rejects the **current combined arrangement**, not every packing gland or an actual certified product. The tube-only model and the inherited pad restraint assumptions still need qualification before forces become design demands.
+
+### Conventional noncontact replacement
+
+The derived candidate places a64ID/70OD metal upstand60mm above the actual hood roof. A90OD/84ID cap has45mm downward return and3mm roof at Z1795. The resulting nominal33mm vertical overlap leaves23mm after two5mm settings. At the declared50mm protected pipe envelope, radial pipe/upstand and upstand/cap reserves are2mm after setting; the nearest hood side retains7mm after metal/setting. These are tight explicit geometric checks, not a fitted spray pass. The cap's interface to the actual plain pipe/protected assembly is still unresolved and cannot be assumed sealed through insulation.
+
+The source1800 guide fails the cap clearance by30mm. An authored **1850mm guide** trial moves its real post/arm and reruns the same thermal/support method; it leaves20mm after setting. The actual1850 trial, additional stock and full closed fault give65.225MPa maximum member,122.089MPa removable interface and0.793544 isolated anchor comparison. It supplies no new mechanical link between pipe and wet frame.
+
+Each branch adds0.303101kg upstand to the wet beam and0.400742kg cap to the pipe fixed support. An adverse0.316673kg upper water cylinder is also charged to the wet frame. These are explicit gross metal/water bounds; fasteners, seams, actual jackets and retention remain undisclosed. The method does not silently reuse an old light-shell result. Existing pressure/thermal wrenches, source service clearances and lower removal reserves remain independently visible.
+
+Cold renewal must split the cap and remove its halves sideways; the small top gap cannot be called an adequate vertical lift. Both Lodge branches are isolated, electricity excluded, pressure proved zero, fronts removed and actual upper retention established first. The actual cap seams, dry fastening, parking/full sweeps and operator access remain unqualified. The existing lower-pipe renewal evidence does not prove this new cap sequence.
+
+Before this candidate can become a complete arrangement: dimension and qualify the plain-pipe/cap closure and all split wet seams; demonstrate pressure-spray capture at the retained90L/min/9bar fault envelope, blocked relief and independent returns; complete the static dry pocket around the fixed850 arm without contact/cross-loading; qualify cap retention/renewal and actual local shell transfer; and bind complete metal, seal, jacket, weld/anchor and valve constituents. If the passive exit cannot satisfy pressure spray without a loaded seal, return explicitly to a stationary cabinet/route redesign rather than crediting an untested force-free closure. Actual DPC/cage/anchors, frost/Lodge boundary and occupied-house isolation duties remain attached to their existing owners.
+
+### Computation, change proof and limits
+
+The existing document and `--bundle` CLI consume these methods. Saved temperature and guide changes recompute compatible forces, actual guide geometry, the replacement's additional load case, diagnostic disposition and a source-bound review SVG. The SVG is a labelled load-path diagram, not an enclosure fabrication drawing. Changing the temperature to0K removes the eigenstrain and passes the conditional steel envelope; the40K default exposes the compound failure. An80K adverse edit increases the thermal forces. Nominal plans and the unrelated stages remain unchanged. Save/reload, reversal, public-CLI equality, stale method rejection and injected-result rejection are exercised in the production tests.
+
+Analytical verification uses the independent series-spring equation F=EAαΔT/(1+(EA/L)C) for each single exit; a separate2×2 compatibility inversion and Maxwell–Betti reciprocity check the paired branch influences. Existing cantilever, exact gravity and rigid-offset tests retain the frame's element controls. Force/moment residuals and paired equal/opposite loads are checked. This is internal numerical verification; it establishes no product, physical or professional acceptance.
 
 ## Audit of the previous28kN result
 

@@ -170,3 +170,107 @@ test('missing and stale room-service context cannot acquire an actual spatial pa
   const stale={...candidate,source:{...candidate.source,inputs:{...candidate.source.inputs,'project/had/studies/utility-wide-capture.json':'0'.repeat(40)}}}
   assert.throws(()=>compareCurrentSharedFixedInletServiceFrame(stale,support,wet),/spatial context differs from the actual candidate/)
 })
+
+test('a seized top exit solves pipe and wet-frame compatibility rather than applying rigid-frame thermal thrust',()=>{
+  const {result,candidate}=current(),comparison=result.mechanics.enclosureInteraction
+  assert.equal(comparison.completeEnclosureQualified,false)
+  assert.equal(comparison.cases.length,7)
+  const singles=comparison.cases.filter(c=>c.topExitCouplings.length===1)
+  assert.equal(singles.length,2)
+  for(const state of singles){
+    const coupling=state.topExitCouplings[0]
+    const facts=candidate.productFacts.pressurePipe
+    close(coupling.rigidFrameThrustN,facts.elasticModulusMpa*coupling.pipeAreaMm2*facts.expansionMmMK/1000*candidate.settings.localPipeTemperatureRangeK)
+    // Independent series-spring equilibrium: pipe compression plus frame opening equals free extension.
+    const expected=coupling.rigidFrameThrustN/(1+coupling.tubeOnlyStiffnessNPerMm*coupling.uncoupledFrameComplianceMmPerN)
+    close(coupling.ownThermalCompatibleForceN,expected,1e-5)
+    close(coupling.ownThermalFrameOpeningMm+coupling.ownThermalCompatibleForceN/coupling.tubeOnlyStiffnessNPerMm,coupling.freeExpansionMm,1e-9)
+    assert.ok(coupling.ownThermalCompatibleForceN<coupling.rigidFrameThrustN/10)
+    assert.equal(state.pressureAndSourceRouteThermalIncluded,false)
+    assert.equal(state.fullStructuralWetInventoryIncluded,false)
+    assert.equal(coupling.actualValveAndSealStiffnessQualified,false)
+    assert.deepEqual(coupling.pointMm.slice(1),[600,1723])
+  }
+  const paired=comparison.cases.find(c=>c.topExitCouplings.length===2&&!c.fullStructuralWetInventoryIncluded)!
+  assert.ok(paired.maximumRemovableJointStressMpa>130&&paired.maximumRemovableJointStressMpa<result.mechanics.allowableComparisonMpa)
+  assert.ok(paired.topExitCouplings.every(c=>c.allBoundLoadForceN>c.ownThermalCompatibleForceN))
+  const [a,b]=paired.topExitCouplings,A=1/a.tubeOnlyStiffnessNPerMm+a.uncoupledFrameComplianceMmPerN,D=1/b.tubeOnlyStiffnessNPerMm+b.uncoupledFrameComplianceMmPerN
+  const B=a.uncoupledFrameCrossCompliance.find(c=>c.branch===b.branch)!.complianceMmPerN,C=b.uncoupledFrameCrossCompliance.find(c=>c.branch===a.branch)!.complianceMmPerN,det=A*D-B*C
+  close(B,C,1e-10) // Maxwell–Betti reciprocity of the unsealed frame.
+  close(a.ownThermalCompatibleForceN,a.freeExpansionMm*D/det,1e-5)
+  close(b.ownThermalCompatibleForceN,b.freeExpansionMm*A/det,1e-5)
+  close(a.sameSignThermalForceN,(a.freeExpansionMm*D-B*b.freeExpansionMm)/det,1e-5)
+  close(b.sameSignThermalForceN,(A*b.freeExpansionMm-C*a.freeExpansionMm)/det,1e-5)
+
+  assert.equal(comparison.conditionalSteelPass,false)
+  const joinedFault=comparison.cases.find(c=>c.topExitState==='seized'&&c.fullStructuralWetInventoryIncluded)!
+  assert.ok(joinedFault.maximumRemovableJointStressMpa>result.mechanics.allowableComparisonMpa)
+  assert.ok(comparison.diagnostics.includes('TOP_EXIT_COUPLING_CONDITIONAL_STEEL_COMPARISON_FAILS'))
+})
+
+test('top-exit drag and thermal eigenloads are correlated internal force pairs at the actual gland lever',()=>{
+  const {result}=current()
+  for(const state of result.mechanics.enclosureInteraction.cases){
+    const grouped=new Map<string,typeof state.loads>()
+    for(const load of state.loads.filter(l=>l.correlatedGroup))grouped.set(load.correlatedGroup!,[...grouped.get(load.correlatedGroup!)??[],load])
+    for(const group of grouped.values()){
+      assert.equal(group.length,2)
+      for(let k=0;k<3;k++)close(group[0].force[k]+group[1].force[k],0)
+      // Wet beam Y515 to pipe Y600: the actual Z load has an 85 mm X moment.
+      close(group[0].moment[0],85*group[0].force[2])
+      close(group[1].moment[0],0)
+    }
+    for(const v of state.deadAndFixedLoadEquilibrium.forceResidualN)assert.ok(Math.abs(v)<1e-4)
+    for(const v of state.deadAndFixedLoadEquilibrium.momentResidualNmm)assert.ok(Math.abs(v)<1e-3)
+  }
+  const drag=result.mechanics.enclosureInteraction.cases[0]
+  assert.equal(drag.topExitState,'drag')
+  assert.equal(drag.pressureAndSourceRouteThermalIncluded,true)
+  assert.ok(drag.loads.filter(l=>l.correlatedGroup).every(l=>Math.abs(l.force[2])===150))
+})
+
+test('temperature perturbation crosses the enclosure comparison while geometry and original case identity stay explicit',()=>{
+  const base=current(),hot=current({localPipeTemperatureRangeK:80}),zero=current({localPipeTemperatureRangeK:0})
+  const coupled=(r:typeof base.result)=>r.mechanics.enclosureInteraction.cases.find(c=>c.topExitCouplings.length===2&&!c.fullStructuralWetInventoryIncluded)!
+  for(let i=0;i<2;i++){
+    close(coupled(hot.result).topExitCouplings[i].ownThermalCompatibleForceN,2*coupled(base.result).topExitCouplings[i].ownThermalCompatibleForceN,1e-5)
+    close(coupled(zero.result).topExitCouplings[i].ownThermalCompatibleForceN,0,1e-9)
+  }
+  assert.deepEqual(hot.result.geometry,base.result.geometry)
+  assert.notEqual(hot.result.source.candidateCaseDigest,base.result.source.candidateCaseDigest)
+  assert.equal(hot.result.mechanics.enclosureInteraction.conditionalSteelPass,false)
+  assert.equal(zero.result.mechanics.enclosureInteraction.conditionalSteelPass,true)
+  assert.ok(hot.result.diagnostics.includes('TOP_EXIT_COUPLING_CONDITIONAL_STEEL_COMPARISON_FAILS'))
+  assert.equal(base.result.mechanics.cases.length,4)
+  assert.equal(hot.result.selected,false)
+  assert.equal(hot.result.completeSupportCapacity,false)
+})
+
+
+test('a conventional noncontact gravity-shed replacement prices real geometry and stock through the same frame',()=>{
+  const source=current(),raised=current({upperPipeGuideZMm:1850}),replacement=raised.result.mechanics.enclosureInteraction.passiveExitReplacement
+  assert.ok(source.result.mechanics.enclosureInteraction.passiveExitReplacement.branches.every(b=>!b.sourceGeometryPass&&b.capToGuideAfter5Mm===-30))
+  assert.ok(replacement.branches.every(b=>b.sourceGeometryPass&&b.capToGuideAfter5Mm===20))
+  for(const b of replacement.branches){
+    assert.equal(b.requiredGuideCentreFor20MmReserve,1850)
+    assert.equal(b.overlapAfterTwo5Mm,23)
+    assert.equal(b.upstandToProtectedPipeAfter5Mm,2)
+    assert.equal(b.capToUpstandAfter5Mm,2)
+    assert.ok(b.upstandMassKg>0&&b.capMassKg>0&&b.extraStructuralWaterMassKg>0)
+    assert.equal(b.fullPressureSprayAndPlainPipeCapClosureQualified,false)
+  }
+  const state=raised.result.mechanics.enclosureInteraction.cases.find(c=>c.topExitState==='passive-shed')!
+  assert.equal(state.pressureAndSourceRouteThermalIncluded,true)
+  assert.equal(state.fullStructuralWetInventoryIncluded,true)
+  assert.equal(state.topExitCouplings.length,0)
+  assert.ok(state.maximumRemovableJointStressMpa<raised.result.mechanics.allowableComparisonMpa)
+  assert.ok(state.maximumMemberStressMpa<raised.result.mechanics.allowableComparisonMpa)
+  assert.ok(state.maximumIsolatedAnchorInteraction<1)
+  assert.ok(state.loads.some(l=>l.id.endsWith('passive-cap-stock')&&l.force[2]<0))
+  assert.ok(state.loads.some(l=>l.id.endsWith('passive-upstand-stock')&&l.force[2]<0))
+  assert.ok(state.loads.some(l=>l.id.endsWith('passive-upper-water')&&l.force[2]<0))
+  assert.equal(replacement.actualEnclosureOrSealAdopted,false)
+  assert.equal(replacement.completeBackArmClosureSupplied,false)
+  assert.notDeepEqual(raised.result.geometry.members,source.result.geometry.members)
+  assert.deepEqual(raised.result.source.hostWindow,source.result.source.hostWindow)
+})

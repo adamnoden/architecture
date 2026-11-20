@@ -14,7 +14,7 @@ type B=readonly [number,number,number,number,number,number]
 type Section={a:number;iy:number;iz:number;j:number;y:number;z:number;t:number}
 type Node={id:string;p:P;restrained:number[]}
 type Member={id:string;a:number;b:number;pa:P;pb:P;s:Section;body:B;leg:number;massKg:number}
-type Load={id:string;node:number;force:P;moment:P;bound:boolean}
+type Load={id:string;node:number;force:P;moment:P;bound:boolean;correlatedGroup?:string}
 type SpatialSources={hot:string;bowl:string;services:string;cells:string}
 const spatialPaths={hot:'project/had/studies/utility-wide-capture.json',bowl:'project/had/studies/utility-dry-bowl-release.json',services:'project/had/studies/current-house-services.json',cells:'project/had/studies/south-inlet-wet-box.json'} as const
 const r=(n:number)=>Number(n.toFixed(6))||0
@@ -202,13 +202,16 @@ export function compareSharedFixedInletServiceFrame(candidate:Candidate,support:
   }
   const apply=(v:number[],load:Load,scale=1)=>{for(let i=0;i<3;i++){v[load.node*6+i]+=load.force[i]*scale;v[load.node*6+3+i]+=load.moment[i]*scale}}
   const stockLoads=stock.map(m=>transfer(m.id,m.node,m.point,[0,0,-m.massKg*9.81],[0,0,0],true))
-  const activeNodes=new Set(members.flatMap(m=>[m.a,m.b])),restrained=new Set(nodes.flatMap((n,i)=>n.restrained.map(d=>i*6+d))),free=Array.from({length:ndof},(_,i)=>i).filter(i=>activeNodes.has(Math.floor(i/6))&&!restrained.has(i)),reduced=free.map(i=>free.map(j=>K[i][j])),solveReduced=factor(reduced)
-  const response=(f:readonly number[],selfWeight:boolean)=>{
+  const activeNodes=new Set(members.flatMap(m=>[m.a,m.b])),restrained=new Set(nodes.flatMap((n,i)=>n.restrained.map(d=>i*6+d))),free=Array.from({length:ndof},(_,i)=>i).filter(i=>activeNodes.has(Math.floor(i/6))&&!restrained.has(i))
+  const responseFor=(stiffness:readonly (readonly number[])[])=>{
+  const solveReduced=factor(free.map(i=>free.map(j=>stiffness[i][j])))
+  return (f:readonly number[],selfWeight:boolean)=>{
     const u=Array<number>(ndof).fill(0),active=solveReduced(free.map(i=>f[i]));free.forEach((d,i)=>u[d]=active[i])
-    const reaction=sub(matvec(K,u),f),ends=members.map((m,e)=>sub(matvec(assembled[e].k,matvec(assembled[e].T,memberDofs[e].map(d=>u[d]))),selfWeight?assembled[e].f:Array<number>(12).fill(0)))
+    const reaction=sub(matvec(stiffness,u),f),ends=members.map((m,e)=>sub(matvec(assembled[e].k,matvec(assembled[e].T,memberDofs[e].map(d=>u[d]))),selfWeight?assembled[e].f:Array<number>(12).fill(0)))
     return {u,reaction,ends}
-  }
-  const dead=response(gravity,true),baseMass=members.reduce((n,m)=>n+m.massKg,0)+stock.reduce((n,m)=>n+m.massKg,0)
+  }}
+  const ordinaryResponse=responseFor(K)
+  const baseMass=members.reduce((n,m)=>n+m.massKg,0)+stock.reduce((n,m)=>n+m.massKg,0)
   const baselineLoads:Load[]=[]
   for(const b of representedSubsystem==='wet-only'?[]:input.branches){
     const n=pipeNodes.find(n=>n.branch===b.id)!,water=support.receivers.guidedRoute.actions.pipeWaterMassKg.find(row=>row.id===b.id)!.massKg
@@ -237,11 +240,43 @@ export function compareSharedFixedInletServiceFrame(candidate:Candidate,support:
     const total=prisms.reduce((n,p)=>n+p.volume,0),centre=[0,1,2].map(k=>prisms.reduce((n,p)=>n+p.volume*p.centre[k],0)/total)
     return {branch:b.branch,massKg:total/1e6,centreMm:centre,prisms,scope:'Exact centroid of the declared adverse two-prism/full-funnel structural inventory; not a measured operational water level'}
   })
-  const caseSpecs=[{id:'sealed-normal',faults:[] as string[],cold:false,pull:null as string|null},
+  const passiveExitBranches=input.branches.map(b=>{
+    const hood=candidate.branches.find(o=>o.branch===b.id)!.controlArrangementComparison.wholeOrdinaryValveHood.bodyMm,roof=hood[2]+hood[5],protectedRadius=candidate.settings.protectedLowerDiameterMm/2
+    const upstand={innerDiameterMm:64,outerDiameterMm:70,heightMm:60,bottomZMm:roof},cap={innerDiameterMm:84,outerDiameterMm:90,returnHeightMm:45,roofThicknessMm:3,roofZMm:roof+72}
+    const upstandMassKg=Math.PI*(70**2-64**2)/4*60*density,capMassKg=(Math.PI*(90**2-84**2)/4*45+Math.PI*(90**2-candidate.settings.protectedLowerDiameterMm**2)/4*3)*density
+    const waterMassKg=Math.PI*(90**2-candidate.settings.protectedLowerDiameterMm**2)/4*72/1e6
+    const requiredGuideZMm=cap.roofZMm+30+5+20,guideReserve=candidate.settings.upperPipeGuideZMm-30-cap.roofZMm-5
+    const radialPipe=32-protectedRadius-5,radialCap=42-35-5,side=Math.min(b.pipeAxisXMm-hood[0],hood[0]+hood[3]-b.pipeAxisXMm)-45-3-5
+    return {branch:b.id,axisMm:[b.pipeAxisXMm,b.riserYMm] as const,upstand,cap,upstandMassKg,capMassKg,extraStructuralWaterMassKg:waterMassKg,
+      nominalVerticalOverlapMm:roof+60-(cap.roofZMm-45),overlapAfterTwo5Mm:roof+60-(cap.roofZMm-45)-10,
+      upstandToProtectedPipeAfter5Mm:radialPipe,capToUpstandAfter5Mm:radialCap,capToHoodSideAfterMetalAnd5Mm:side,
+      capToGuideAfter5Mm:guideReserve,requiredGuideCentreFor20MmReserve:requiredGuideZMm,sourceGeometryPass:Math.min(radialPipe,radialCap,side,guideReserve)>=0,
+      fullPressureSprayAndPlainPipeCapClosureQualified:false,upperCapGravityCarriedByPipe:true,fullSplitCapRemovalSweepQualified:false,
+      coldRemoval:'Isolate both Lodge branches, exclude electricity, drain and prove zero pressure. Remove both front covers; establish the actual upper keeper. Split and remove the cap sideways rather than assuming a vertical lift under the guide. Remove split backs and funnels before admitting press-tool poses. Actual split seams, dry retainers, tool and hand sweeps remain unqualified.'}
+  })
+  const caseSpecs:{id:string;faults:string[];cold:boolean;pull:string|null;topExit?:'drag'|'seized'|'passive-shed';seizedBranches?:string[]}[]=[{id:'sealed-normal',faults:[],cold:false,pull:null},
     {id:'both-closed-faults-full-water',faults:representedSubsystem==='pipe-only'?[]:input.branches.map(b=>b.id),cold:false,pull:null},
-    ...input.branches.map(b=>({id:b.id+'-isolated-cold-removal',faults:[] as string[],cold:true,pull:representedSubsystem==='pipe-only'?null:b.id}))]
-  const cases=caseSpecs.map(spec=>{
-    const loads:Load[]=spec.cold?(representedSubsystem==='wet-only'?[]:pipeNodes).flatMap(n=>{
+    ...input.branches.map(b=>({id:b.id+'-isolated-cold-removal',faults:[] as string[],cold:true,pull:representedSubsystem==='pipe-only'?null:b.id})),
+    ...(representedSubsystem==='both'?[{id:'both-top-exits-150N-drag',faults:[],cold:false,pull:null,topExit:'drag' as const},
+      {id:'passive-shed-top-exit-closed-faults',faults:input.branches.map(b=>b.id),cold:false,pull:null,topExit:'passive-shed' as const},
+      {id:'closed-faults-with-top-exit-drag',faults:input.branches.map(b=>b.id),cold:false,pull:null,topExit:'drag' as const},
+      {id:'closed-faults-with-both-top-exits-seized',faults:input.branches.map(b=>b.id),cold:false,pull:null,topExit:'seized' as const,seizedBranches:input.branches.map(b=>b.id)},
+      ...[...input.branches.map(b=>[b.id]),input.branches.map(b=>b.id)].map(branches=>({id:branches.join('-')+'-top-exit-seized',faults:[],cold:false,pull:null,topExit:'seized' as const,seizedBranches:branches}))]:[])]
+  const allCases=caseSpecs.map(spec=>{
+    const couplingMatrix=K.map(row=>[...row])
+    const couplings=(spec.topExit==='seized'?input.branches.filter(b=>spec.seizedBranches!.includes(b.id)):[]).map(b=>{
+      const pipe=pipeNodes.find(n=>n.branch===b.id)!,wetNode=wetUpper.map.get(b.pipeAxisXMm)!,hood=candidate.branches.find(o=>o.branch===b.id)!.controlArrangementComparison.wholeOrdinaryValveHood.bodyMm
+      const point:P=[b.pipeAxisXMm,b.riserYMm,hood[2]+hood[5]],length=point[2]-nodes[pipe.fixed].p[2],facts=candidate.productFacts.pressurePipe
+      if(!(length>0))throw new Error('Seized enclosure comparison needs the top exit above the actual fixed clamp')
+      const area=Math.PI*(facts.outerDiameterMm**2-(facts.outerDiameterMm-2*facts.minimumWallMm)**2)/4,k=facts.elasticModulusMpa*area/length
+      const c=Array<number>(ndof).fill(0),offset=sub(point,nodes[wetNode].p)
+      c[wetNode*6+2]=1;c[wetNode*6+3]=offset[1];c[wetNode*6+4]=-offset[0];c[pipe.fixed*6+2]=-1
+      const active=c.flatMap((value,index)=>value!==0?[index]:[])
+      for(const i of active)for(const j of active)couplingMatrix[i][j]+=k*c[i]*c[j]
+      return {branch:b.id,pipeNode:pipe.fixed,wetNode,point,lengthMm:length,pipeAreaMm2:area,stiffnessNPerMm:k,c,freeExpansionMm: facts.expansionMmMK/1000*candidate.settings.localPipeTemperatureRangeK*length,group:b.id+'-seized-top-exit'}
+    })
+    const response=couplings.length?responseFor(couplingMatrix):ordinaryResponse,dead=response(gravity,true)
+    const loads:Load[]=spec.topExit==='seized'?baselineLoads.filter(l=>l.id.includes('pipe-stock-water')||l.id.includes('deadweight-route-moment')):spec.cold?(representedSubsystem==='wet-only'?[]:pipeNodes).flatMap(n=>{
       const additional=support.compactReceiver.mass.ledger.filter(m=>m.id.startsWith(n.branch+'-')&&['ring','lug','ear'].some(part=>m.id.startsWith(n.branch+'-'+part+'-'+guideZ))).reduce((sum,m)=>sum+m.massUpperKg*(m.id.includes('-ear-')?1.5:1),0)
       return [transfer(n.branch+'-cold-upper-keeper',n.guide,nodes[n.guide].p,[0,0,coldAxial],[0,0,0],true),transfer(n.branch+'-additional40mm-keeper-stock',n.guide,nodes[n.guide].p,[0,0,-additional*9.81])]
     }):[...baselineLoads]
@@ -251,8 +286,21 @@ export function compareSharedFixedInletServiceFrame(candidate:Candidate,support:
       loads.push(transfer(id+'-full-structural-water',node,water.centreMm,[0,0,-water.massKg*9.81]))
       for(let k=0;k<3;k++){const f=[0,0,0];f[k]=b.jetForceNormN;loads.push(transfer(id+'-closed-jet-'+k,wetUpper.map.get(x)!,b.jetPointMm,f as unknown as P,[0,0,0],true))}
     }
+    for(const b of spec.topExit==='passive-shed'?passiveExitBranches:[]){
+      const pipe=pipeNodes.find(n=>n.branch===b.branch)!,wetNode=wetUpper.map.get(b.axisMm[0])!,point:P=[b.axisMm[0],b.axisMm[1],b.cap.roofZMm-20]
+      loads.push(transfer(b.branch+'-passive-upstand-stock',wetNode,point,[0,0,-b.upstandMassKg*9.81],[0,0,0],true),transfer(b.branch+'-passive-cap-stock',pipe.fixed,point,[0,0,-b.capMassKg*9.81],[0,0,0],true),transfer(b.branch+'-passive-upper-water',wetNode,point,[0,0,-b.extraStructuralWaterMassKg*9.81]))
+    }
+    for(const b of spec.topExit==='drag'?input.branches:[]){
+      const pipe=pipeNodes.find(n=>n.branch===b.id)!,wetNode=wetUpper.map.get(b.pipeAxisXMm)!,hood=candidate.branches.find(o=>o.branch===b.id)!.controlArrangementComparison.wholeOrdinaryValveHood.bodyMm,point:P=[b.pipeAxisXMm,b.riserYMm,hood[2]+hood[5]],group=b.id+'-top-exit-drag'
+      loads.push({...transfer(group+'-wet',wetNode,point,[0,0,150],[0,0,0],true),correlatedGroup:group}, {...transfer(group+'-pipe',pipe.fixed,point,[0,0,-150],[0,0,0],true),correlatedGroup:group})
+    }
+    for(const c of couplings){const force=c.stiffnessNPerMm*c.freeExpansionMm
+      loads.push({...transfer(c.group+'-wet',c.wetNode,c.point,[0,0,force],[0,0,0],true),correlatedGroup:c.group}, {...transfer(c.group+'-pipe',c.pipeNode,c.point,[0,0,-force],[0,0,0],true),correlatedGroup:c.group})
+    }
     if(spec.pull){const x=input.branches.find(b=>b.id===spec.pull)!.pipeAxisXMm;for(let k=0;k<3;k++){const f=[0,0,0];f[k]=150;loads.push(transfer(spec.pull+'-cold-manual-pull-'+k,wetUpper.map.get(x)!,[x,685,candidate.settings.valveCentreZMm],f as unknown as P,[0,0,0],true))}}
-    const fixed=Array<number>(ndof).fill(0),variables=[...stockLoads,...loads.filter(l=>l.bound)].map(l=>{const v=Array<number>(ndof).fill(0);apply(v,l);return response(v,false)})
+    const groups=new Map<string,Load[]>()
+    for(const l of [...stockLoads,...loads.filter(l=>l.bound)]){const key=l.correlatedGroup??l.id;groups.set(key,[...groups.get(key)??[],l])}
+    const groupKeys=[...groups.keys()],fixed=Array<number>(ndof).fill(0),variables=[...groups.values()].map(group=>{const v=Array<number>(ndof).fill(0);for(const l of group)apply(v,l);return response(v,false)})
     for(const l of loads.filter(l=>!l.bound))apply(fixed,l)
     const specific=response(fixed,false),bound=(base:number,value:(result:ReturnType<typeof response>)=>number)=>Math.abs(base)+variables.reduce((n,v)=>n+Math.abs(value(v)),0)
     const endBounds=members.map((m,e)=>Array.from({length:12},(_,i)=>bound(dead.ends[e][i]+specific.ends[e][i],v=>v.ends[e][i])))
@@ -317,13 +365,31 @@ export function compareSharedFixedInletServiceFrame(candidate:Candidate,support:
     })():[])
     const applied=gravity.map((v,i)=>v+fixed[i]),reaction=dead.reaction.map((v,i)=>v+specific.reaction[i]),sumForce=[0,0,0],sumMoment=[0,0,0]
     for(let i=0;i<nodes.length;i++){const f=Array.from({length:3},(_,k)=>applied[i*6+k]+reaction[i*6+k]),m=Array.from({length:3},(_,k)=>applied[i*6+3+k]+reaction[i*6+3+k]),c=cross(nodes[i].p,f);for(let k=0;k<3;k++){sumForce[k]+=f[k];sumMoment[k]+=m[k]+c[k]}}
-    return {id:spec.id,operatingState:spec.cold?'both-branches-isolated-drained-zero-pressure':'closed-occupied-normal-or-fault',loads,
-      pressureAndSourceRouteThermalIncluded:!spec.cold&&representedSubsystem!=='wet-only',sourcePipeTemperatureRangeK:candidate.settings.localPipeTemperatureRangeK,fullStructuralWetInventoryIncluded:spec.faults.length>0,jetIncluded:spec.faults.length>0,manualPullIncluded:spec.pull!==null,
+    const topExitCouplings=couplings.map(c=>{
+      const unit=Array<number>(ndof).fill(0);for(let i=0;i<ndof;i++)unit[i]=c.c[i]
+      const uncoupledCompliance=dot(c.c,ordinaryResponse(unit,false).u)
+      const uncoupledFrameCrossCompliance=couplings.map(other=>({branch:other.branch,complianceMmPerN:dot(c.c,ordinaryResponse(other.c,false).u)}))
+      const thermalInfluences=couplings.map(other=>({branch:other.branch,forceN:c.stiffnessNPerMm*((other.branch===c.branch?c.freeExpansionMm:0)-dot(c.c,variables[groupKeys.indexOf(other.group)].u))}))
+      const thermalIndex=groupKeys.indexOf(c.group),thermal=variables[thermalIndex],actualThermalForce=c.stiffnessNPerMm*(c.freeExpansionMm-dot(c.c,thermal.u)),rigidForce=c.stiffnessNPerMm*c.freeExpansionMm
+      const base=-c.stiffnessNPerMm*dot(c.c,dead.u.map((v,i)=>v+specific.u[i])),forceBound=Math.abs(base)+variables.reduce((n,v,i)=>n+Math.abs(c.stiffnessNPerMm*((groupKeys[i]===c.group?c.freeExpansionMm:0)-dot(c.c,v.u))),0)
+      return {branch:c.branch,pointMm:c.point,lengthMm:c.lengthMm,pipeAreaMm2:c.pipeAreaMm2,tubeOnlyStiffnessNPerMm:c.stiffnessNPerMm,freeExpansionMm:c.freeExpansionMm,rigidFrameThrustN:rigidForce,ownThermalCompatibleForceN:actualThermalForce,ownThermalFrameOpeningMm:dot(c.c,thermal.u),allBoundLoadForceN:forceBound,uncoupledFrameComplianceMmPerN:uncoupledCompliance,uncoupledFrameCrossCompliance,thermalInfluences,sameSignThermalForceN:thermalInfluences.reduce((n,row)=>n+row.forceN,0),actualValveAndSealStiffnessQualified:false}
+    })
+    return {id:spec.id,topExitState:spec.topExit??'uncoupled',topExitCouplings,operatingState:spec.cold?'both-branches-isolated-drained-zero-pressure':'closed-occupied-normal-or-fault',loads,
+      pressureAndSourceRouteThermalIncluded:!spec.cold&&spec.topExit!=='seized'&&representedSubsystem!=='wet-only',sourcePipeTemperatureRangeK:candidate.settings.localPipeTemperatureRangeK,fullStructuralWetInventoryIncluded:spec.faults.length>0,jetIncluded:spec.faults.length>0,manualPullIncluded:spec.pull!==null,
       coldAxialEachN:spec.cold&&representedSubsystem!=='wet-only'?r(coldAxial):null,steelDeadloadRetainedAfterRemovalAsAdverse:true,memberResults,jointResults,wetJointResults,anchors,
       deadAndFixedLoadEquilibrium:{forceResidualN:sumForce.map(r),momentResidualNmm:sumMoment.map(r)},
       maximumMemberStressMpa:Math.max(...memberResults.map(m=>m.maximumStressMpa)),maximumWeldStressMpa:Math.max(...memberResults.map(m=>m.maximumWeldMpa)),
       maximumPlateStressMpa:Math.max(...anchors.map(a=>a.plateBendingMpa)),maximumRemovableJointStressMpa:Math.max(0,...anchors.map(a=>a.postToPadReturned4MmWeldMpa),...wetJointResults.flatMap(j=>[j.returned4MmWeldStressMpa,j.upperEndplate12MmStressMpa]),...jointResults.flatMap(j=>[j.boltCombinedStressMpa,j.plateBendingMpa,Math.sqrt(3)*j.nominalInternalThreadShearMpa,j.padReturned4MmWeldStressMpa,j.adjacentRhsWebMembraneStressMpa])),maximumIsolatedAnchorInteraction:Math.max(...anchors.map(a=>a.isolatedCatalogueInteraction))}
   })
+  const cases=allCases.filter(c=>c.topExitState==='uncoupled'),enclosureInteractionCases=allCases.filter(c=>c.topExitState!=='uncoupled')
+  const display=(value:number)=>Number(value.toFixed(2))
+  const xml=(value:string|number)=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('\"','&quot;')
+  const governingEnclosure=enclosureInteractionCases.find(c=>c.topExitCouplings.length===2&&!c.fullStructuralWetInventoryIncluded)
+  const normalPoint=governingEnclosure?.topExitCouplings[0]?.pointMm
+  const reviewRows=enclosureInteractionCases.map((c,i)=>`<text x="500" y="${170+i*56}" font-size="15">${xml(c.id)}</text><text x="500" y="${194+i*56}" font-size="14">Member ${display(c.maximumMemberStressMpa)} MPa · joint ${display(c.maximumRemovableJointStressMpa)} MPa · anchor ${display(c.maximumIsolatedAnchorInteraction)}</text>`).join('')
+  const enclosureReviewSvg=`<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="760" viewBox="0 0 1120 760"><title>Fixed inlet: coupled top-exit load path</title><desc>Source-bound frame comparison. A diagram of the thermal pipe and wet-frame interaction, not a fabricated enclosure or seal detail.</desc><rect width="1120" height="760" fill="white"/><g fill="#202020" stroke="none" font-family="Arial,sans-serif"><text x="40" y="48" font-size="26">Fixed inlet · top-exit interaction</text><text x="40" y="78" font-size="15">Same assembled frame; dimensions in mm. Load-path diagram, not to scale.</text><text x="500" y="130" font-size="18">${candidate.settings.localPipeTemperatureRangeK} K local pipe range · comparison limit ${display(allowable)} MPa</text>${reviewRows}<text x="40" y="555" font-size="17">A rigid-frame calculation is not the assembled force.</text><text x="40" y="583" font-size="15">${governingEnclosure?.topExitCouplings.map(c=>xml(c.branch)+': own thermal '+display(c.ownThermalCompatibleForceN)+' N; full bound '+display(c.allBoundLoadForceN)+' N').join(' · ')??'Both pipe and wet assemblies are required for the interaction comparison.'}</text><text x="40" y="611" font-size="15">Independent branch heating/cooling signs and stock bounds retained; ordinary route thermal omitted in seizure.</text><text x="40" y="645" font-size="15">No actual gland, valve stiffness, local shell, wet seam, material or installed acceptance is supplied.</text><text x="40" y="673" font-size="15">The existing fixed-arm/back-shell opening remains unresolved. This drawing does not close it.</text><text x="40" y="719" font-size="11">Candidate ${xml(candidate.source.caseDigest)}</text></g>${normalPoint?`<g stroke="#202020" fill="none" stroke-width="2"><path d="M80 126V475M80 450H290M80 120H190"/><path d="M290 450V127" stroke-width="5"/><rect x="178" y="110" width="24" height="20"/><path d="M202 120H290" stroke-dasharray="5 4"/><circle cx="290" cy="127" r="12"/><rect x="278" y="438" width="24" height="24"/></g><g font-family="Arial,sans-serif" fill="#202020" font-size="14"><text x="42" y="102">Wet upper beam Y515 / Z1740</text><text x="311" y="132">Top exit Z${normalPoint[2]}</text><text x="311" y="155">Pipe Y${normalPoint[1]}</text><text x="302" y="290">EA/L + thermal strain</text><text x="105" y="150">85 normal lever</text><text x="111" y="498">Fixed clamp Z850</text><text x="110" y="522">Equal/opposite internal force pair</text></g>`:''}</svg>`
+  const enclosureSteelFails=enclosureInteractionCases.some(c=>c.maximumMemberStressMpa>allowable||c.maximumWeldStressMpa>allowable||c.maximumPlateStressMpa>allowable||c.maximumRemovableJointStressMpa>allowable)
+  const enclosureAnchorFails=enclosureInteractionCases.some(c=>c.maximumIsolatedAnchorInteraction>1)
   const guidePostCaps=representedSubsystem==='wet-only'?[]:input.branches.map(b=>[b.pipeAxisXMm-20,440,guideZ,40,40,30] as B)
   const wetEndplates=representedSubsystem==='pipe-only'?[]:stays.map((stay,i)=>[stay.x+(i===0?20:-32),500,1720,12,60,40] as B)
   const retainedCaps=endcaps.filter(c=>representedSubsystem==='both'||representedSubsystem==='pipe-only'&&!isWet(c.id)||representedSubsystem==='wet-only'&&!isPipe(c.id))
@@ -367,7 +433,12 @@ export function compareSharedFixedInletServiceFrame(candidate:Candidate,support:
       wallPadRotationalStiffnessQualified:false,rhsWallLocalResistanceQualified:false,coldGripQualified:false,actualPressToolActionN:null,
       coldLoadChallenge:{upperPayloadEachN:500,independentUpperTemperatureK:5,requiredMatchedGripHeightMm:40,clampBoltPreloadEachN:1800,
         minimumGripCoefficient:coldAxial/(2*Math.PI*1800),actualUpperPayloadAndContactQualified:false},
-      structuralWaterInventory,thermalTerminalScope:support.thermal.map(t=>({branch:t.branch,outerTerminal:t.result.outerTerminalWrench,upperTerminal:t.result.upperTerminalWrench,fullLodgeNetworkEstablished:false})),cases},
+      enclosureInteraction:{sourcePipeTemperatureRangeK:candidate.settings.localPipeTemperatureRangeK,normalDragEachN:150,
+        method:'Same assembled frame with equal-and-opposite correlated seal forces; closed-fault water and jet are also replayed with both drag and paired seizure. A seized top exit adds the actual straight tube EA/L spring and thermal eigenstrain between the fixed pipe clamp and wet upper beam, with physical gland lever moments; frame compliance is solved, not ignored. Each single-branch and paired seizure omits pressure and inherited route thermal actions to avoid double credit. Valves, unions, local shell and gland compliance are unqualified; this is a tube-only sensitivity, not measured installed thrust.',
+        passiveExitReplacement:{strategy:'noncontact-gravity-shed-upstand-and-returned-cap' as const,branches:passiveExitBranches,
+          recommendation:'Develop the gravity-shed noncontact exit before enlarging hardware for an unqualified packed seal. The raised guide requirement, actual cap retention/plain-pipe closure and pressure-spray qualification remain mandatory; no force-free seal is inferred.',
+          diagnostics:[...passiveExitBranches.filter(b=>!b.sourceGeometryPass).map(b=>b.branch+':PASSIVE_TOP_EXIT_INTERCEPTS_SOURCE_GUIDE_OR_ENVELOPE'),'PLAIN_PIPE_TO_CAP_CLOSURE_AND_PRESSURE_SPRAY_UNQUALIFIED','FULL_SPLIT_CAP_AND_BACK_ARM_CLOSURES_UNRESOLVED'],actualEnclosureOrSealAdopted:false,completeBackArmClosureSupplied:false},reviewSvg:enclosureReviewSvg,cases:enclosureInteractionCases,conditionalSteelPass:!enclosureSteelFails,isolatedAnchorScreenPass:!enclosureAnchorFails,
+        diagnostics:[...(enclosureSteelFails?['TOP_EXIT_COUPLING_CONDITIONAL_STEEL_COMPARISON_FAILS']:[]),...(enclosureAnchorFails?['TOP_EXIT_COUPLING_ISOLATED_ANCHOR_SCREEN_FAILS']:[]),'ACTUAL_TOP_EXIT_SEAL_VALVE_STIFFNESS_SHELL_LOAD_PATH_AND_MATERIALS_UNQUALIFIED'],completeEnclosureQualified:false},structuralWaterInventory,thermalTerminalScope:support.thermal.map(t=>({branch:t.branch,outerTerminal:t.result.outerTerminalWrench,upperTerminal:t.result.upperTerminalWrench,fullLodgeNetworkEstablished:false})),cases},
     geometry:{members:members.map(m=>({id:m.id,bodyMm:m.body,massKg:r(m.massKg),returnedWeldLegMm:m.leg})),wallPosts:posts.map(({byZ,...p})=>p),backboneRails:rails.map(r=>r.bodyMm),wetStays:stays.map(s=>s.bodyMm),wetBeams:wetBeams.map(b=>({id:b.id,bodyMm:b.bodyMm})),
       retainedPipeMounts,closedRhsEndcapsMm:retainedCaps.map(c=>({id:c.id,bodyMm:c.bodyMm})),wetUpperBeamEndplatesMm:wetEndplates,pipeGuidePostCapsMm:guidePostCaps,plantCarrierBodyMm:[plant.pipeAxisXMm-85,600,plantFloor-80,170,40,40],plantShortStanchionsMm:[-75,75].map(dx=>[plant.pipeAxisXMm+dx-10,560,plantStanchionStart,20,40,plantStanchionHeight]),
       wetFloorRibs:wet.branches.map((b,i)=>({branch:b.branch,ribs:b.floor.ribs.map(rib=>({...rib,carrierSeatNotchBodyMm:[rib.carrierSeatNotchBodyMm[0],i===0?560:600,...rib.carrierSeatNotchBodyMm.slice(2)]}))})),
@@ -387,7 +458,7 @@ export function compareSharedFixedInletServiceFrame(candidate:Candidate,support:
     operating:{tools,renewals,saws,panels,roomReview,rearClampCapReleaseEvidence:support.compactReceiver.operatingReview.lowerRenewalReview,
       retainedMountProfileLaw:'Actual solid mounting plates are present in every permanent-body sweep. Fitted curved rear ring/lug release follows the source matched-profile proof; gross lug/ring boxes are used for tools, not as solid obstructions through their subtracted bore.',
       representedPermanentGeometryPass:geometryPass,completePanelSweepAndOperatorSpaceQualified:false},
-    diagnostics:[...(geometryPass?[]:['REPRESENTED_SHARED_FRAME_INTERCEPTS_TOOL_OR_LOWER_DRAW']),
+    diagnostics:[...(enclosureSteelFails?['TOP_EXIT_COUPLING_CONDITIONAL_STEEL_COMPARISON_FAILS']:[]),...(enclosureAnchorFails?['TOP_EXIT_COUPLING_ISOLATED_ANCHOR_SCREEN_FAILS']:[]),...(geometryPass?[]:['REPRESENTED_SHARED_FRAME_INTERCEPTS_TOOL_OR_LOWER_DRAW']),
       ...(roomReview===null?['CURRENT_SPATIAL_CONTEXT_NOT_SUPPLIED']:roomReview.allRepresentedFrameClear?[]:['SHARED_FRAME_INTERCEPTS_BOUND_ROOM_SERVICE_GEOMETRY']),
       ...(cases.some(c=>c.maximumMemberStressMpa>allowable||c.maximumWeldStressMpa>allowable||c.maximumPlateStressMpa>allowable||c.maximumRemovableJointStressMpa>allowable)?['SHARED_FRAME_CONDITIONAL_STEEL_COMPARISON_FAILS']:[]),
       ...(cases.some(c=>c.maximumIsolatedAnchorInteraction>1)?['SHARED_FRAME_ISOLATED_ANCHOR_SCREEN_FAILS']:[]),

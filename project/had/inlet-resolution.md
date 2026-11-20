@@ -8,6 +8,8 @@ The current saved inlet uses the [joint-free lower-tube proposal](fixed-inlet-en
 
 The [matched metal-compression decision](inlet-metal-compression-decision.md) does not establish a replacement system or an owner exception. The older loaded-carrier assembly below remains available only as explicit rejected/historical replay. HAD-INLET-RESOLUTION stays open for a real joined pre-site arrangement and its material/occupied-house consequences.
 
+The [shared-frame top-exit reconciliation](fixed-inlet-shared-service-frame-development.md#joined-top-exit-decision--20-november-2026) now joins the moving seal to the actual frame stiffness and closed-fault load case. Isolated seizure passes narrowly; paired seizure plus the actual full wet/jet envelope fails at156.094MPa against133.333MPa. The recommended noncontact upstand/cap replacement has an explicit1850 guide trial, actual added metal/water and same-frame load replay; its pressure-spray/plain-pipe closure, split renewal and lower fixed-arm pocket remain unresolved. No source adoption or HAD completion follows.
+
 ## Current joined result — 19 November 2026
 
 The [whole inlet convergence result](inlet-assembly-convergence.md) now controls the integration checkpoint. The saved compiler joins the actual sill axes, wet-cell risers, upper routes and named pressure endpoints with both fault, removal and cover cases. It rejects the native closure arrangement, distinguishes the refitted conditional option from a complete assembly, and identifies the remaining internal design obligations. Retain the indoor reference; no inlet or physical acceptance is adopted.
