@@ -9,8 +9,8 @@
     "label": "ZR-HAD-20261120"
   },
   "claimedAt": "2026-11-20T22:25:10.512Z",
-  "heartbeatAt": "2026-11-20T22:25:10.512Z",
-  "expiresAt": "2026-11-20T23:10:10.512Z",
+  "heartbeatAt": "2026-11-20T22:42:36.264Z",
+  "expiresAt": "2026-11-20T23:27:36.264Z",
   "branch": "work/had-inlet-converge-20261120",
   "predecessor": {
     "leaseId": "4fc55435-7e36-4112-9d39-f14c8f486b4c",
@@ -33,5 +33,11 @@
       "next": "Recover enclosure candidate; replay changed stock/water/drag/seize loads in the same frame solver, then finish isolation, renewal, fault and material proof. Default wet neck remains rejected.",
       "blocker": "Execution workspace unavailable; enclosure successor partly local-only. Whole support, containment, materials and occupied-house acceptance remain open."
     }
+  },
+  "pr": 1601,
+  "checkpoint": {
+    "evidence": "PR1601 d60a1eed4b41dd054d0262fbb32a1f82f769b390; coupled top-exit/fault rejection and passive replacement in saved fixedInlet stage, source-bound SVG and perturbation proofs",
+    "next": "Finish exact-head local/hosted checks, fresh publication preflight, merge then continue static shell and cap qualification; no HAD closeout",
+    "blocker": "CI pending; actual pressure-spray/plain-pipe closure, back-arm pocket, materials and acceptance remain open"
   }
 }
