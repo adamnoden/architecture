@@ -61,6 +61,7 @@ test('a changed active RWT receiving input contradicts the existing HAD producer
   assert.deepEqual(audit.findings.map(({ kind, path, receipt, source }) => ({ kind, path, receipt, source })), [
     { kind: 'changed-file', path: rwtSource, receipt: undefined, source: undefined },
     { kind: 'source-contradiction', path: undefined, receipt: hadReceipt, source: rwtSource },
+    { kind: 'source-contradiction', path: undefined, receipt: 'project/had/studies/receiver-selection.json', source: rwtSource },
   ])
 })
 
@@ -89,4 +90,17 @@ test('changed discipline receipts invalidate both the affected candidate and its
     assert.notEqual(digest(changed, id), digest(baseline, id))
     assert.equal(digest(changed, 'had-inlet-indoor-reference'), digest(baseline, 'had-inlet-indoor-reference'))
   }
+})
+
+
+test('current court intake identity invalidates both active RWT records and their downstream receiver before full numerical replay', () => {
+  const source = 'project/had/studies/court-intake-selection.json'
+  const changed = auditSourceCoverage(path => path === source ? Buffer.concat([read(path), Buffer.from('\n')]) : read(path))
+  const receipts = changed.findings.filter(finding => finding.kind === 'source-contradiction' && finding.source === source)
+    .map(finding => finding.receipt).sort()
+  assert.deepEqual(receipts, [
+    'project/had/studies/receiver-selection.json',
+    'project/rwt/studies/court-bypass-choice.json',
+    'project/rwt/studies/joined-service-routes.json',
+  ])
 })

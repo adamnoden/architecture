@@ -8,18 +8,18 @@
     "project/mat/studies/service-material-offer.json": "e5686440fa6a3f68387576883b1e0c768e0596bb",
     "project/mat/studies/tempered-kitchen-air.json": "b18044acaec99caf00eab9a542fff78e510857c9",
     "project/mat/studies/local-extract-heat-and-store.json": "550709d0e0ca0acff81cb42e502640771f4ac2d0",
-    "project/had/studies/receiver-selection.json": "2def3f7221d55b180cd46392a227b8c56972d03f",
+    "project/had/studies/receiver-selection.json": "f43ca5bc2bb8d5800d80c2dd6951ac7c3f5e8354",
     "project/mat/studies/whole-house-leakage-duty.json": "5b93cdd9ea1ee7d825fa4596a44caf06431afc49",
     "project/mat/studies/loggia-soffit.json": "c9c914169547bd42b90cd69512ba1a28d97ca6fe",
     "project/mat/studies/joined-cooker-system.json": "d04dd78ba3fd040c7abd1aecb94aa9a3ce95d5e0",
-    "project/ias/studies/shared-family-bathing.json": "f89302f9d87708b5314bd68a768c976efcd07b8d",
+    "project/ias/studies/shared-family-bathing.json": "8f49647baf8c07260438fd909c11af8eaaad4ba8",
     "project/ias/studies/household-water.json": "30c96e79dd3a35c96bb30e355b668c9a710a4060",
     "project/ias/studies/fitted-wc-schedule.json": "5e20c73409b5406a2de9d7ee7e5853e9302189c8",
     "project/ias/studies/utility-first-release.json": "be84a64623c8042a002af108a784b8668acd7542",
     "project/ias/studies/utility-host-revised-route.json": "69e6b0aa5e1847f09c7ac3da3b98eec9bf1d5c0b",
-    "project/str/studies/reconciled-house-interface.json": "4d3080dc4540ce7218b86f1d27518fbeb1f8e85d",
+    "project/str/studies/reconciled-house-interface.json": "4b680b7012bda54d4aff83da8f8718b3b191ea69",
     "project/str/studies/current-house-arch-movement.json": "05db94a987c7bf45b885c6d02f701b31bcf91740",
-    "project/str/studies/house-corner-rewind.json": "6471d89c213724ec02a26d797c85185beadb25b5"
+    "project/str/studies/house-corner-rewind.json": "2a3f6ccb0f869c0ab860ba7846bbdbe2613ee640"
   },
   "sources": {
     "project/had/studies/current-house.mjs": "58bf1a6248af8268de70d838cce23f249ce30b91",
@@ -38,7 +38,7 @@
     "project/mat/interiors-whole-house-assembly-schedule.md": "fbee773fba1c46cd7c403e08dfc99de7f3154649",
     "project/mat/interiors-b-wetroom-assembly.md": "bd3fca8006fd8d4d63256fb2809645904cbc5850",
     "project/mra/mra-00-moisture-constitution-threat-model.md": "40129a2e1149142769d34dfc10709ca73968c682",
-    "project/mra/studies/internal-leak-study.mjs": "835b4c10b3f1184db98e1ce0f973682372abf579"
+    "project/mra/studies/internal-leak-study.mjs": "4d549e972d7c3dea28941b63058720eff156ec14"
   },
   "sourceCorrection": {
     "preFix": {
@@ -80,7 +80,48 @@
         }
       }
     },
+    "sourceRefresh": {
+      "baselineCommit": "0b982539e9e3407e6a57863f2de8cbf5ed612a8d",
+      "baselineScheduleBlob": "248c8281369d16a8885506660f740c1f66462d9d",
+      "scheduleBlob": "e649805e78244527fe6498b516fa5f23734ac5ea",
+      "houseExceptDeclaredChangesSHA256": "07efe59dcb947e3936ba9b2fcb5553e04e56af62e3518c943ba1dd96c5b95982",
+      "houseInputs": {
+        "project/had/studies/receiver-selection.json": {
+          "before": "2def3f7221d55b180cd46392a227b8c56972d03f",
+          "after": "f43ca5bc2bb8d5800d80c2dd6951ac7c3f5e8354"
+        },
+        "project/ias/studies/shared-family-bathing.json": {
+          "before": "f89302f9d87708b5314bd68a768c976efcd07b8d",
+          "after": "8f49647baf8c07260438fd909c11af8eaaad4ba8"
+        },
+        "project/str/studies/reconciled-house-interface.json": {
+          "before": "4d3080dc4540ce7218b86f1d27518fbeb1f8e85d",
+          "after": "4b680b7012bda54d4aff83da8f8718b3b191ea69"
+        },
+        "project/str/studies/house-corner-rewind.json": {
+          "before": "6471d89c213724ec02a26d797c85185beadb25b5",
+          "after": "2a3f6ccb0f869c0ab860ba7846bbdbe2613ee640"
+        }
+      },
+      "receiverInputs": {
+        "had/studies/court-intake-selection": {
+          "before": "887a3df5b7a335b3eaafc7c8de4529a339428cbc",
+          "after": "d4e6c37dbac7777abeb83e85ee3232f608523bdc"
+        },
+        "rwt/studies/court-bypass-choice": {
+          "before": "450d121b5c70d95073f1daadd1332c789751156d",
+          "after": "ee11908156548b7c03daea8ddf0ad972ea0cf188"
+        }
+      }
+    },
     "observed": {
+      "scheduleBlob": "e649805e78244527fe6498b516fa5f23734ac5ea",
+      "exteriorPortsSHA256": "9d16691683c6255acad78736c3f6a77ac3c27d01e5f6d7ab908fab1e8fdffabb",
+      "weatherFacesSHA256": "1155d413b399a8ea93c4097f402e2089ded7131a68177b93a37d881216d7986f",
+      "selectedInterfacesSHA256": "aefbf9f05d1dd275b0aebd6393a3c7fe09b31c6220ee0303424aff46bbb9deaa",
+      "houseExceptDeclaredChangesSHA256": "07efe59dcb947e3936ba9b2fcb5553e04e56af62e3518c943ba1dd96c5b95982"
+    },
+    "joinedObserved": {
       "scheduleBlob": "248c8281369d16a8885506660f740c1f66462d9d",
       "exteriorPortsSHA256": "9d16691683c6255acad78736c3f6a77ac3c27d01e5f6d7ab908fab1e8fdffabb",
       "weatherFacesSHA256": "1155d413b399a8ea93c4097f402e2089ded7131a68177b93a37d881216d7986f",
@@ -100,7 +141,7 @@
       "Both incoming-water duties: rejected status, current witness and adoption duty added; path geometry retained.",
       "model.currentAdoptionBlockers: explicit incoming-water duty replaces the empty list."
     ],
-    "scope": "The original a060 observation remains exact after five named source-identity normalizations from the independently replayed f794 pre-water-correction house. Current and normalized schedules and complete unaffected models are separately guarded. Only the two declared water duties and their blocker are excluded from physical comparison; no other provenance or geometry is omitted. No whole-house structural or moisture acceptance is claimed."
+    "scope": "The independently replayed 0b producer and current regenerated producer differ only at the four named house-input identities and two named receiver-input identities. That exact refresh first returns the original joined schedule and unaffected-house hashes; the preserved f794 bridge then returns the original a060 observation. Current, joined and normalized schedules and complete unaffected models are separately guarded. Only the two declared water duties and their blocker are excluded from physical comparison; no blanket provenance normalization or other geometry exclusion is applied. No whole-house structural or moisture acceptance is claimed."
   },
   "stressBasis": {
     "inheritedFlowsLmin": [

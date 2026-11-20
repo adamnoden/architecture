@@ -51,7 +51,7 @@ const inletFields = ['branch', 'washer', 'cheekMm', 'retainedSideLandMm', 'recei
   'minimumFrontBridgeMm', 'axialTravelMm', 'sideTravelMm', 'closure'] as const
 const insertFields = ['eastEdgeMm', 'headZMm', 'plantPressureAxisXMm', 'plantVentOuterZMm'] as const
 const faultFields = ['branches'] as const
-const assemblyFields = ['plantSouthLegLevelMm', 'splitRoof', 'supportRails'] as const
+const assemblyFields = ['plantSouthLegLevelMm', 'splitRoof'] as const
 const removalFields = ['branch', 'drawMm', 'roofAccess', 'washer', 'utilityTaperRemoved', 'preparation'] as const
 const studyFields = ['pitchMm', 'wearingFace', 'finishDepthMm', 'groundDeckLevelLossMm', 'firstRestBoardSizeMm', 'ordinaryHandling', 'frameFootClearanceMm', 'floorBorderMinimumMm', 'installedServices', 'floorWorkerTopMm', 'floorPosture', 'wallPanelWidthMm', 'wallFace', 'wallReleaseMm', 'opening'] as const
 
