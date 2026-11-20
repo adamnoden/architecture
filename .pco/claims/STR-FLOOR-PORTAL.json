@@ -9,8 +9,8 @@
     "label": "convergence-resumed-20261120"
   },
   "claimedAt": "2026-11-20T07:38:27.612Z",
-  "heartbeatAt": "2026-11-20T14:06:46.462Z",
-  "expiresAt": "2026-11-20T15:36:46.462Z",
+  "heartbeatAt": "2026-11-20T14:48:54.746Z",
+  "expiresAt": "2026-11-20T16:18:54.746Z",
   "branch": "work/convergence-next-systems-20261120",
   "predecessor": {
     "leaseId": "dec44b72-4e34-40df-8172-25ba1d1a5e53",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1597 exact head14d41047740febb0b83b50ec792f80325db257db; integrated native cage rejection and source-bound floor/inlet/roof stages; hosted browser/typography proofs green",
-    "next": "Complete exact-head health/publication CI, fresh dual merge preflight, merge1597 then bind next gravity-house integration",
-    "blocker": "STR remains open: complete receiving details, replacementA, actual gravity/roof and enclosure acceptance are not earned"
+    "evidence": "PR1597 head e3047a0186137cca783c5dab6510b0a1596bbefb: exact canonical receipt now passes clean-runner fast proof; native wrapper and10actualconsumer checks pass. Next gravity-house checkpoint48ee86d0 contains tested35source gravity, derived house profile, shared inlet frame and book plates.",
+    "next": "Finish exact-head CI and fresh dual preflight, merge1597, then publish gravity-house integration and continue replacementA/roof/occupied interfaces.",
+    "blocker": "No STR/HAD closeout: actual complete receiving, roof, enclosure/material and installed proof remain open. Current PR full CI still running."
   },
   "pr": 1597
 }
