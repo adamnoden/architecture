@@ -6,7 +6,7 @@
       "sourceIdentities": {
         "project/had/studies/house_vertical_profile.py": "1686512e9ba1fd80091973d7f7d40d0eeddd9bb2657a46d40307cf029c583b58",
         "project/str/studies/dry_side_ground_section.py": "1ebd67c260283463ab190aa2b8bf29c514c1fbcdf4e489fb44a1b0f8cc7643c7",
-        "project/str/studies/dry-side-ground-section.json": "03bc894b050eb9c257201fb5747e1bc28fdc4e2138f440cf06e21bfad6130e46",
+        "project/str/studies/dry-side-ground-section.json": "54fdbc4ce7dbceb48f1945d1b664cc481070f8bab9ee65c6c8253db1015e139d",
         "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
         "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
         "project/str/studies/current-house-occupied-interfaces.json": "8083132336cdbdd1d51f7652e620e75741a4e66b0ac2cedae552c026cbfc3f77",
@@ -19,7 +19,7 @@
         "project/had/studies/water-replan.mjs": "9ef245c2f354dcd4952e3ffe2d07a24b3d8fff4a73257bca8d9d27627015c078",
         "project/mat/studies/whole-house-leakage-duty.json": "b2700cfa84010eea0c9d8f118a5e658138c75b180b4368110c1ab5f3c4c0cad8",
         "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
-        "project/triad-interface-contract.md": "3f489e840a2711873b9a8148970507e9504c31f5ad482967af6cfcccb2f42810",
+        "project/triad-interface-contract.md": "106872fe635fef8cd10051676cb05b06c1ed58e72e04910f4edfbf9954c8f195",
         "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
         "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
         "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
@@ -27,8 +27,8 @@
       },
       "groundAuthority": {
         "caseId": "raised-530-local-solum",
-        "caseDigest": "5677fcc42fd81655d24d937da4e6069a831841a1b7ddf41bc4f4e05e941de77d",
-        "resultDigest": "a2eee202f9c7c6714456b08399807fe71e249314af6804299919d8bc246d7499"
+        "caseDigest": "c1b7ca458d263a0b850605b8eb3cfae9c7fbef55b386e2dbdfec9c6d4be612bb",
+        "resultDigest": "c5d69460a3b97278a5bbf6f31db24c614f1c2efef4b443e9d3b7bf27f856392a"
       },
       "status": "unselected-source-derived-vertical-proposal",
       "selectedHouseAdmitted": false,
@@ -880,7 +880,7 @@
       "sourceIdentities": {
         "project/had/studies/house_vertical_profile.py": "1686512e9ba1fd80091973d7f7d40d0eeddd9bb2657a46d40307cf029c583b58",
         "project/str/studies/dry_side_ground_section.py": "1ebd67c260283463ab190aa2b8bf29c514c1fbcdf4e489fb44a1b0f8cc7643c7",
-        "project/str/studies/dry-side-ground-section.json": "03bc894b050eb9c257201fb5747e1bc28fdc4e2138f440cf06e21bfad6130e46",
+        "project/str/studies/dry-side-ground-section.json": "54fdbc4ce7dbceb48f1945d1b664cc481070f8bab9ee65c6c8253db1015e139d",
         "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
         "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
         "project/str/studies/current-house-occupied-interfaces.json": "8083132336cdbdd1d51f7652e620e75741a4e66b0ac2cedae552c026cbfc3f77",
@@ -893,7 +893,7 @@
         "project/had/studies/water-replan.mjs": "9ef245c2f354dcd4952e3ffe2d07a24b3d8fff4a73257bca8d9d27627015c078",
         "project/mat/studies/whole-house-leakage-duty.json": "b2700cfa84010eea0c9d8f118a5e658138c75b180b4368110c1ab5f3c4c0cad8",
         "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
-        "project/triad-interface-contract.md": "3f489e840a2711873b9a8148970507e9504c31f5ad482967af6cfcccb2f42810",
+        "project/triad-interface-contract.md": "106872fe635fef8cd10051676cb05b06c1ed58e72e04910f4edfbf9954c8f195",
         "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
         "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
         "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
@@ -901,8 +901,8 @@
       },
       "groundAuthority": {
         "caseId": "raised-715-profile",
-        "caseDigest": "105889c4c2958df25471a64595d08069d26519cd449ea5dcf5acf5494795e1d1",
-        "resultDigest": "704067444438742eecfd3427ea6dfd37e3f04c574375e2324679bc3e2ea61681"
+        "caseDigest": "6fb17c70efe0940d590c01317b4a1bd88c3bd3df83eb56490b08cbc58797e2dd",
+        "resultDigest": "654a5c78cbe32595bf7bd4f5d4bc530944a53f785b529c09878b47ba666b94bd"
       },
       "status": "unselected-source-derived-vertical-proposal",
       "selectedHouseAdmitted": false,

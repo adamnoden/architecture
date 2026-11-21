@@ -10,6 +10,7 @@ import { readFixedInletSettings } from './inlet-fixed-entry.js'
 import { inletCabinetStageFields } from './inlet-cabinet-copper.js'
 import { joinedRcFloorStageFields, savedJoinedRcFloorCase } from './structural-rc-floor.js'
 import { verticalRcFloorStageFields, savedVerticalRcFloorCase } from './structural-vertical-floor.js'
+import { masonryFrameStageFields, savedMasonryFrameCase } from './structural-masonry-frame.js'
 
 const repository = new URL('../../../', import.meta.url)
 const implementationRoots = [
@@ -50,8 +51,8 @@ const additionalImplementationFiles = [
   'project/str/studies/distributed_floor_views.py',
   'project/mat/studies/ring-roof-pitch-case.py',
 ] as const
-const stageKeys = ['structuralSuccessor', 'distributedFloor', 'joinedRcFloor', 'verticalRcFloor', 'retainedComponents', 'groundSection', 'houseVerticalProfile', 'serviceFloor', 'roofPitch', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'fixedInlet', 'inletCabinet', 'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit'] as const
-const sourceDatumStages = ['occupiedServices', 'selectedWaterEvent', 'structuralSuccessor', 'distributedFloor', 'joinedRcFloor', 'verticalRcFloor',
+const stageKeys = ['structuralSuccessor', 'distributedFloor', 'joinedRcFloor', 'verticalRcFloor', 'masonryFrame', 'retainedComponents', 'groundSection', 'houseVerticalProfile', 'serviceFloor', 'roofPitch', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'fixedInlet', 'inletCabinet', 'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit'] as const
+const sourceDatumStages = ['occupiedServices', 'selectedWaterEvent', 'structuralSuccessor', 'distributedFloor', 'joinedRcFloor', 'verticalRcFloor', 'masonryFrame',
   'retainedComponents', 'roofPitch', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'fixedInlet', 'inletCabinet',
   'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit'] as const
 type Settings = Readonly<Record<string, unknown>>
@@ -188,6 +189,7 @@ function admitStages(value: unknown): EngineeringStages {
     ...(Object.hasOwn(value, 'distributedFloor') ? { distributedFloor: settings(value.distributedFloor, distributedFields, 'distributed floor') } : {}),
     ...(Object.hasOwn(value, 'joinedRcFloor') ? { joinedRcFloor: settings(value.joinedRcFloor, joinedRcFloorStageFields, 'joined RC floor') } : {}),
     ...(Object.hasOwn(value, 'verticalRcFloor') ? { verticalRcFloor: settings(value.verticalRcFloor, verticalRcFloorStageFields, 'vertical RC floor') } : {}),
+    ...(Object.hasOwn(value, 'masonryFrame') ? { masonryFrame: settings(value.masonryFrame, masonryFrameStageFields, 'masonry frame') } : {}),
     ...(Object.hasOwn(value, 'retainedComponents') ? { retainedComponents: settings(value.retainedComponents, retainedFields, 'retained components') } : {}),
     ...(Object.hasOwn(value, 'groundSection') ? { groundSection: settings(value.groundSection, ['caseId', 'settings'], 'ground section') } : {}),
     ...(Object.hasOwn(value, 'houseVerticalProfile') ? { houseVerticalProfile: settings(value.houseVerticalProfile, [], 'house vertical profile') } : {}),
@@ -231,6 +233,7 @@ export async function compileEngineeringDocument(input: unknown) {
     distributedFloor?: Awaited<ReturnType<typeof compile.distributedFloorCase>>
     joinedRcFloor?: Awaited<ReturnType<typeof compile.joinedRcFloorCase>>
     verticalRcFloor?: Awaited<ReturnType<typeof compile.verticalRcFloorCase>>
+    masonryFrame?: Awaited<ReturnType<typeof compile.masonryFrameCase>>
     retainedComponents?: Awaited<ReturnType<typeof compile.retainedComponentCase>>
     groundSection?: Awaited<ReturnType<typeof compile.groundSectionCase>>
     houseVerticalProfile?: Awaited<ReturnType<typeof compile.houseVerticalProfileCase>>
@@ -248,7 +251,7 @@ export async function compileEngineeringDocument(input: unknown) {
     studyRoomKit?: Awaited<ReturnType<typeof compile.studyRoomKit>>
   } = {}
   const manifest: { stage: string; settingsDigest: string; resultDigest: string; controls: readonly string[]; dependsOn: readonly string[];
-    applicability?: { state: 'withheld-for-stage-change'; controllingStage: 'roofPitch' | 'groundSection' | 'joinedRcFloor' | 'verticalRcFloor' | 'inletCabinet';
+    applicability?: { state: 'withheld-for-stage-change'; controllingStage: 'roofPitch' | 'groundSection' | 'joinedRcFloor' | 'verticalRcFloor' | 'masonryFrame' | 'inletCabinet';
       additionalControllingStages?: readonly string[]; reason: string } }[] = []
   const coordinationDiagnostics: { code: string; state: 'uncoordinated-comparisons'; stages: readonly string[]; message: string }[] = []
   const recordResult = (stage: string, settings: unknown, result: unknown, upstream: readonly string[] = []) => {
@@ -311,6 +314,19 @@ export async function compileEngineeringDocument(input: unknown) {
       joined.dependsOn = [...joined.dependsOn, 'verticalRcFloor']
       joined.applicability = { state: 'withheld-for-stage-change', controllingStage: 'verticalRcFloor',
         reason: 'This earlier joined portal replay omits the actual vertical plate self-weight and finite clear-core normal bearings. It cannot be combined with or substitute for the verticalRcFloor head response.' }
+    }
+  }
+  if (stages.masonryFrame) {
+    const request = await compile.readMasonryFrameCase()
+    engineering.masonryFrame = await compile.masonryFrameCase(savedMasonryFrameCase(request.masonry,
+      stages.masonryFrame, sharedDistributedFloor))
+    recordResult('masonryFrame', stages.masonryFrame, engineering.masonryFrame, ['distributedFloor'])
+    for (const stage of ['distributedFloor', 'joinedRcFloor', 'verticalRcFloor']) {
+      const preceding = manifest.find(row => row.stage === stage)
+      if (!preceding) continue
+      if (stage !== 'distributedFloor') preceding.dependsOn = [...new Set([...preceding.dependsOn, 'masonryFrame'])]
+      preceding.applicability = { state: 'withheld-for-stage-change', controllingStage: 'masonryFrame',
+        reason: 'The separate masonry arch and straight frame replace the former curved RC load path. Earlier membrane/curved-frame responses cannot substitute for or be added to this actual joined gravity response. All remain unqualified comparisons.' }
     }
   }
   if (stages.retainedComponents) {
@@ -466,12 +482,12 @@ export async function compileEngineeringDocument(input: unknown) {
       row.applicability = { state: 'withheld-for-stage-change', controllingStage: 'groundSection',
         ...(previous ? { additionalControllingStages: [...new Set([previous.controllingStage,
           ...(previous.additionalControllingStages ?? [])])].filter(value => value !== 'groundSection') } : {}),
-        reason: [previous?.reason, ['joinedRcFloor', 'verticalRcFloor'].includes(row.stage) ? rcReason : sourceReason].filter(Boolean).join(' ') }
+        reason: [previous?.reason, ['joinedRcFloor', 'verticalRcFloor', 'masonryFrame'].includes(row.stage) ? rcReason : sourceReason].filter(Boolean).join(' ') }
     }
     coordinationDiagnostics.push({ code: 'GROUND_STAGE_OUTPUTS_NOT_COORDINATED', state: 'uncoordinated-comparisons',
       stages: ['groundSection', ...affected.map(row => row.stage)], message: sourceReason })
-    if (engineering.joinedRcFloor || engineering.verticalRcFloor) coordinationDiagnostics.push({ code: 'RC_GROUND_DATUM_NOT_COORDINATED',
-      state: 'uncoordinated-comparisons', stages: [...(engineering.joinedRcFloor ? ['joinedRcFloor'] : []), ...(engineering.verticalRcFloor ? ['verticalRcFloor'] : []), 'groundSection'], message: rcReason })
+    if (engineering.joinedRcFloor || engineering.verticalRcFloor || engineering.masonryFrame) coordinationDiagnostics.push({ code: 'RC_GROUND_DATUM_NOT_COORDINATED',
+      state: 'uncoordinated-comparisons', stages: [...(engineering.joinedRcFloor ? ['joinedRcFloor'] : []), ...(engineering.verticalRcFloor ? ['verticalRcFloor'] : []), ...(engineering.masonryFrame ? ['masonryFrame'] : []), 'groundSection'], message: rcReason })
   }
   const completedBindings = sourceBindings(resolveCurrentDesign(resolved.design))
   if (stableJsonStringify(completedBindings) !== stableJsonStringify(observedBindings)) {

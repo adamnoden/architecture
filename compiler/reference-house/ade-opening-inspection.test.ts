@@ -20,7 +20,7 @@ test('the nominal front Study produces a cutout and schedule row from the exact 
     'had-selected-water', 'had-occupied-services', 'str-conditional-interface', 'rwt-conditional-receiving',
     'had-inlet-indoor-reference', 'had-inlet-south-development', 'had-inlet-south-sill-insert', 'had-inlet-south-fault-envelope',
     'had-inlet-south-removal', 'had-fixed-inlet-arrangement',
-    'mat-roof-pitch-reference', 'had-closed-service-floor', 'had-house-vertical-profile', 'str-vertical-floor-comparison',
+    'mat-roof-pitch-reference', 'had-closed-service-floor', 'had-house-vertical-profile', 'str-vertical-floor-comparison', 'str-masonry-frame-comparison',
   ].sort())
   assert.equal(inspection.row.hostWallId, ground.hostWallId)
   assert.equal(inspection.row.openingId, ground.openingId)
