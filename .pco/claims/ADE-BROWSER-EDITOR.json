@@ -9,9 +9,9 @@
     "label": "rush-engineering-editor-20261121"
   },
   "claimedAt": "2026-11-21T10:37:11.879Z",
-  "heartbeatAt": "2026-11-21T10:48:24.953Z",
-  "expiresAt": "2026-11-21T11:33:24.953Z",
-  "branch": "work/rush-engineering-editor-20261121",
+  "heartbeatAt": "2026-11-21T10:58:54.735Z",
+  "expiresAt": "2026-11-21T11:43:54.735Z",
+  "branch": "work/rush-converged-model-20261121",
   "predecessor": {
     "leaseId": "26302d48-f336-4b76-8f81-04a395291437",
     "generation": 1,
@@ -36,8 +36,8 @@
   },
   "pr": 1608,
   "checkpoint": {
-    "evidence": "PR1608 head14bc3be8; exact remote tree validated; four semantic HTTP CLI tests and source audit pass",
-    "next": "Inspect native ADE browser CI and screenshot; consolidate jointly leased integration head with STR and HAD",
-    "blocker": "Exact-head native browser proof pending; local profile UNIX socket denied"
+    "evidence": "Preserved PR1608 head14bc3be8; native ADE run44896049629 green; both verified screenshots inspected",
+    "next": "Bind joint PR when known; verify joint source account witnesses and exact-head proofs before final publication",
+    "blocker": "Joint integration head and PR publication pending"
   }
 }
