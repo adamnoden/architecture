@@ -9,8 +9,8 @@
     "label": "rush-had-service-hub-20261121"
   },
   "claimedAt": "2026-11-21T09:44:40.547Z",
-  "heartbeatAt": "2026-11-21T10:59:07.944Z",
-  "expiresAt": "2026-11-21T11:44:07.944Z",
+  "heartbeatAt": "2026-11-21T11:13:51.682Z",
+  "expiresAt": "2026-11-21T11:58:51.682Z",
   "branch": "work/rush-converged-model-20261121",
   "predecessor": {
     "leaseId": "b5b027b5-54c3-4568-96ea-1f3d11bdcec6",
@@ -28,10 +28,10 @@
       "blocker": "Execution environment unavailable; exec recovery45s failed. No local preflight or new tests. Handoff release follows checkpoint readback; no packet completion."
     }
   },
-  "pr": 1607,
+  "pr": 1609,
   "checkpoint": {
-    "evidence": "PR1607/c33 source,14tests and room handoff comments7061248282/7061365165; joint branch awaiting combined head/PR",
-    "next": "Bind forthcoming joint PR and exact combined head; fresh preflight before integration",
-    "blocker": "Joint head unpublished; no independent1607merge; actual wet-room/thermal/material proof remains open"
+    "evidence": "Joint PR1609 head0f329089; final HAD c33 source and 14 tests; bounded room review comments7061248282/7061365165 retained",
+    "next": "Exact combined-head CI and fresh publication preflight; root integrates joint PR; HAD remains open",
+    "blocker": "Whole wet Utility replan and physical/source/material proof remain unresolved; no HAD completion"
   }
 }
