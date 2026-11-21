@@ -572,7 +572,8 @@
         "project/had/fixed-inlet-shared-service-frame-development.md",
         "project/had/inlet-cabinet-copper-comparison.md",
         "project/had/inlet-cabinet-copper-wet-matrix.md",
-        "project/had/inlet-source-and-room-decision.md"
+        "project/had/inlet-source-and-room-decision.md",
+        "project/had/inlet-whole-room-convergence.md"
       ],
       "authorRoots": [
         "compiler/reference-house/current-design/inlet-fixed-entry.ts",
@@ -591,9 +592,12 @@
         "project/had/studies/inlet-cabinet-copper.ts",
         "project/had/studies/south-inlet-relief-hydraulics.mjs",
         "compiler/reference-house/current-design/inlet-source-envelope.ts",
-        "project/had/studies/inlet-source-envelope.ts"
+        "project/had/studies/inlet-source-envelope.ts",
+        "compiler/reference-house/current-design/inlet-room-catchment.ts"
       ],
-      "authoredInputs": [],
+      "authoredInputs": [
+        "compiler/reference-house/current-design/inlet-electrical-screen.ts"
+      ],
       "inputReceipts": [
         "project/had/studies/south-inlet-under-sill.json",
         "project/had/studies/current-house-services.json",
@@ -627,7 +631,9 @@
         "node --import tsx --test compiler/reference-house/current-design-inlet-cabinet-pipeline.test.ts",
         "node --import tsx --test compiler/reference-house/current-design-inlet-cabinet-wet.test.ts",
         "node --import tsx --test compiler/reference-house/current-design-inlet-source-envelope.test.ts",
-        "node --import tsx project/had/studies/inlet-source-envelope.ts --check"
+        "node --import tsx project/had/studies/inlet-source-envelope.ts --check",
+        "node --import tsx --test compiler/reference-house/current-design-inlet-room-catchment.test.ts",
+        "node --import tsx --test compiler/reference-house/current-design-inlet-electrical-screen.test.ts"
       ]
     },
     {
@@ -1621,7 +1627,7 @@
     "project/str/studies/joined_successor_kernel.py": "bbf1e80933260d0182db34d777427b68a361b2f0",
     "compiler/reference-house/current-design/structural-successor.ts": "9ae813ed40695e6e94df43caa0b45e7db54d02c4",
     "compiler/reference-house/current-design/inlet-support.ts": "a2404befdbeda6464bc9f772d25bccd8d78d2479",
-    "compiler/reference-house/current-design/engineering-document.ts": "a5d9ccb460ef3bf63e4ba7087e6d4533ed8da648",
+    "compiler/reference-house/current-design/engineering-document.ts": "4d4a8bf488667050a95276db5cb24e78c0cb5a35",
     "project/had/inlet-assembly-convergence.md": "21719c69b3ec916043e53d7ae0891d5c6ce7aae5",
     "project/str/studies/floor-portal-fixed-wall-head.py": "807159aa9439837489d3e95f9bf359983635c342",
     "project/str/studies/floor-portal-north-transfer.py": "20f79473e3fd3e88351b3fa4d68ac1f1ef476d03",
@@ -1634,7 +1640,7 @@
     "compiler/reference-house/current-design/inlet-fixed-entry.ts": "9ad3f449b36d8770ac1a1bfe167210fbca7581bf",
     "compiler/reference-house/current-design/inlet-fixed-case.ts": "6a6670cf3dab365e41b4bf5e7c4a82ee2a0cd82f",
     "compiler/reference-house/current-design/inlet-fixed-operating.ts": "8d2a9e0132d300e697cff2661f01222a7b661b45",
-    "compiler/reference-house/current-design/compile.ts": "93ced0bd9352dee6eb9d5c69396089ca7d4e9276",
+    "compiler/reference-house/current-design/compile.ts": "679ae46c218ee56fae8b2ace10e32f4eb9062884",
     "project/mat/envelope-ground-boundary.md": "7aae65350ded7bff6e21c4425153af3cdaec41d2",
     "project/owner-house-charter.md": "285202ef6be2ccd9954de51213d1faa23a158813",
     "project/mat/studies/conventional-ground-junction.json": "5d899197848d0f951d8ff4573983aff81d4fd32f",
@@ -1746,11 +1752,11 @@
     "project/str/studies/roof-surface-pressure.svg": "bf17bdc9c139c76a80fa0a8352f4bd40c3938c92",
     "project/str/studies/roof_surface_pressure_proof.py": "c6de2ceb21f113e4672d870f3512754318b99c23",
     "project/str/studies/straight_frame_cage_proof.py": "04a03d0ec19f885e611cd1549d9d0a5fc2c4eeb1",
-    "compiler/reference-house/current-design/inlet-source-envelope.ts": "c6baca027717145854aa7cca790fa8e3858df89c",
+    "compiler/reference-house/current-design/inlet-source-envelope.ts": "8e20c49017c4e5524d77c5647abfa217a1163189",
     "project/had/studies/inlet-source-envelope.ts": "d2e00dfe467c48bfbe984d44a9f9c5e77d2511c1",
-    "project/had/inlet-source-and-room-decision.md": "6c12c4880a842ed13465ab8f31b0955c79c2c223",
-    "project/had/studies/inlet-source-envelope.results.json": "b1f335c9720f18689bac671ad2b75a63e00a8f7a",
-    "project/had/studies/inlet-source-envelope.svg": "53c0c3a45bb4f7e8c46fcbc7f2894f45c9125c4f",
+    "project/had/inlet-source-and-room-decision.md": "db8a94d12636eff3a9f840649d7b2599c90faccb",
+    "project/had/studies/inlet-source-envelope.results.json": "c7a9de1842f1879bcb790d9e9a57683d9bb0a433",
+    "project/had/studies/inlet-source-envelope.svg": "7ac35380ad6f7536b8bb6151df012ab6bdd387c9",
     "compiler/reference-house/current-design/engineering-edit.ts": "4c024e7edea46e79b3b4f8e17646170f9a80458d",
     "project/ade/browser-editor/engineering-api.ts": "2db0efb4e3cdb698009b69cc7fa9ff80389f1158",
     "project/ade/browser-editor/engineering-editor.ts": "cb109c701742575cc1bae5b5122eb2ee750a4a8f",
@@ -1769,6 +1775,9 @@
     "compiler/reference-house/current-design/structural-floor-section.ts": "38e4b821ae311fa13a1c1358e30947da206152a7",
     "project/str/studies/floor_section_proof.py": "56f68116fadbc4f74f863257f132a091dd2f523c",
     "project/str/studies/floor-section-proof.json": "64e77fefeb7f9221c6a902075d95192de33c9083",
-    "project/str/studies/floor-section-250.svg": "b9743f51fd2b5eca6f8d6749c1134415f44a67c1"
+    "project/str/studies/floor-section-250.svg": "b9743f51fd2b5eca6f8d6749c1134415f44a67c1",
+    "compiler/reference-house/current-design/inlet-room-catchment.ts": "4808849a1197d0b90891cda2859bb578d274c026",
+    "project/had/inlet-whole-room-convergence.md": "71045fe623b6f03cf732fa35a1750e730f6f63c2",
+    "compiler/reference-house/current-design/inlet-electrical-screen.ts": "af15dc6e80e9896151875a0e8723cec4f3451440"
   }
 }

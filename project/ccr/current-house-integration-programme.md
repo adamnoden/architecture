@@ -131,6 +131,8 @@ node --import tsx scripts/compile-current-design.ts --read-georgian-source |
   node --import tsx scripts/compile-current-design.ts --north-collector -
 ```
 
+The inlet source/room stage now also consumes the actual saved ground-section result when present: changing service depth recomputes outlet envelopes, the room plan/section and source-to-room delivery head. It records a real ground dependency, rejects forged ground results and retains the failed65mm floor-zone case. No second inlet floor datum, selected raised house or new engineering stage is introduced. [Finite inlet convergence result](../had/inlet-whole-room-convergence.md).
+
 ## What completion does and does not mean
 
 The implemented result will be a coherent, editable and change-aware model for the supported Reference House and its declared variant families. It does not promise an arbitrary-building generator, automatic architectural judgement, complete physical validation, a shipped browser UI, real-time execution of every analysis or construction permission. Those limits do not excuse leaving current model data fragmented.
