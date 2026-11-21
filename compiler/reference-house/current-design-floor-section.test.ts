@@ -104,3 +104,24 @@ test('floor section rejects stale source, unsupported geometry, implicit stage c
   for (const units of ['degrees','m']) assert.equal(applyEngineeringEdit(explicit,{...transaction,base:engineeringBase(explicit),units}).status,'rejected')
   assert.equal(applyEngineeringEdit(explicit,{...transaction,base:engineeringBase(explicit),operation:{...operation,thicknessMm:251}}).status,'rejected')
 })
+
+test('the saved wet support runs the same coupled52head case and explicitly withholds physical beam demands', async () => {
+  const source=await readEngineeringDocument(readGeorgianDesignSnapshot())
+  const stages=authoredStages()
+  stages.masonryFrame.physicalGFactor=1.35;stages.masonryFrame.freshUniformLiveKPa=2
+  stages.masonryFrame.plateLaw={...vertical.plateLaw,unitWeightKNPerM3:27}
+  stages.masonryFrame.floorReinforcement={...numerical.floorReinforcement,barDiameterMm:16,pitchMm:80}
+  const proof=JSON.parse(readFileSync(new URL('../../project/str/studies/floor-section-proof.json',import.meta.url),'utf8'))
+  const control=proof.controls.find((row:{nativeCaseId:string})=>row.nativeCaseId==='wet-aligned-G135-Q2-rho27')
+  const bundle=await compileEngineeringDocument({...source,stages:{...stages,
+    roofPitch:source.stages.roofPitch,floorSection:{thicknessMm:200,wetSupport:control.executedRequest.wetSupport}}})
+  const result=bundle.engineering.floorSection!
+  const expected=new Map<string,number[]>(control.heads.map((row:{id:string;reactionKN_KNm:number[]})=>[row.id,row.reactionKN_KNm]))
+  for(const row of result.native.heads) for(let i=0;i<6;i++) assert.ok(Math.abs(row.reactionKN_KNm[i]!-expected.get(row.id)![i]!)<1e-6)
+  assert.equal(result.floorSection.finishStairServiceEvidenceApplicable,false)
+  assert.equal(result.wetBeamCutRecovery!.physicalBeamCutsAvailable,false)
+  assert.equal(result.wetBeamCutRecovery!.completeBeamDemandEnvelopeAvailable,false)
+  assert.equal(result.servicePenetrations.additionalStructuralSolids.length,3)
+  assert.ok(result.servicePenetrations.additionalStructuralSolids.some(row=>row.id==='STR/wet-wall-support/beam'&&row.boxXYZMm[2]===3020))
+  assert.ok(bundle.coordinationDiagnostics.some(row=>row.code==='WET_BEAM_PHYSICAL_CUTS_UNAVAILABLE'))
+})

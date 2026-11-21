@@ -2,6 +2,18 @@
 
 ## Current development disposition — 20 November 2026
 
+**21 November continuation:** the [seated wet-wall beam/post model](seated-wet-support-result.md)
+now joins the actual source supports and floor/frame/roof/52-head response, with
+complete authored geometry, independent material/Q wrenches and unilateral pad
+controls. Fresh fixed physical cuts and paired700/500 meshes fail their declared
+stability screen; the raw corner peak changes75.109→107.239kNm/m. The beam is
+not a remedy for that corner and no slab thickness is selected. Its almost
+unloaded north pad, adverse lift-off, actual cages/local joints and weather
+closure remain explicit. The shared saved-document/CLI path exposes these
+edits, actual beam/post service intersections and dependent-evidence invalidation.
+The source-ground-zero model has not adopted HAD's raised service-floor or new
+screen loads. STR-FLOOR-PORTAL remains open.
+
 **Reject further local repairs of the loaded portal DPC and the worked crossing arch/post cage. Develop a straight RC frame with a separate compression masonry arch on direct-bearing abutments as the recommended architectural replacement.** The [architectural comparison](portal-architectural-simplification.md) retains the finished2400 opening and775 envelope; its major cost is only60 mm local jamb glass. The [joined replacement](masonry-frame-a-result.md) now removes the curved RC stiffness, mass and infill, introduces the separate masonry courses at their actual seats, and solves the same perforated RC200 floor and 52-head grid. This is an unselected source-ground-zero comparison, not complete structural or thermal proof. The inward-enlarged curved RC alternative remains rejected at its joint links.
 
 The saved `masonryFrame` stage uses the sole `distributedFloor` authoring stage.

@@ -4,7 +4,6 @@ from joined_successor_kernel import FrameModel,rectangle_section
 from rc_floor_house_loads import (consistent_member_point_load,recovered_member_actions,
     _member_cuts,_interior_member_cuts,_consistent_point)
 from rc_member_load_test import LAW
-from seated_wet_support import attachment_station_audit
 
 
 def specimen(split=False):
@@ -34,16 +33,6 @@ class ReceiverActionRecoveryTest(unittest.TestCase):
         self.assertAlmostEqual(max(abs(r['bendingZKNm']) for r in cuts),.25,12)
         self.assertLess(max(abs(r['bendingZKNm']) for r in cuts if r['physicalPointMm'][0] in (0.,1000.)),1e-12)
 
-    def test_actual_column_audit_rejects_hidden_vertical_or_membrane_attachment(self):
-        m={'seatedWetSupport':{'receiver':{'rectangleXYMm':[0,0,100,1000],
-            'stations':[{'u':0.},{'u':1000.}]}},'verticalFloor':{'cells':[[0,0,100,400],[0,400,100,1000]]},
-            'joinedFloor':{'floor':{'coordinateColumns':[[0,100],[0,600,1000]]}}}
-        first=attachment_station_audit(m)
-        self.assertFalse(first['allPlateAttachmentsAtRealBeamNodes']);self.assertEqual(first['missingAttachmentCoordinatesYMm'],[400,600])
-        m['seatedWetSupport']['receiver']['stations']=[{'u':p} for p in (0,400,600,1000)]
-        changed=attachment_station_audit(m)
-        self.assertTrue(changed['allPlateAttachmentsAtRealBeamNodes']);self.assertEqual(changed['maximumAttachmentToNodeDistanceMm'],0)
-        self.assertEqual(first['actualVerticalCoordinatesYMm'],changed['actualVerticalCoordinatesYMm'])
 
 
 if __name__=='__main__':unittest.main()

@@ -34,6 +34,7 @@ function check(proof: any) {
     if(row.caseId!==expected[0] || !equal(row.executedRequest,expected[1]) || !/^[a-f0-9]{64}$/.test(row.fullResultSHA256)
       || !equal(row.sectionCuts.cuts.map((c: any)=>({id:c.id,normal:c.normal,positionMm:c.positionMm,intervalMm:c.intervalMm})),authored.cuts)
       || row.sectionCuts.stripResistanceAccepted!==false || row.sectionCuts.localStressConvergenceProven!==false
+      || row.physicalWetBeamCutDemandAvailable!==false
       || row.heads.length!==52 || new Set(row.heads.map((h: any)=>h.id)).size!==52) throw new Error('Floor cut evidence lost actual request, material sections,52heads or proof limits')
   })
   if (proof.candidateAccepted!==false || proof.completeHouseProof!==false || proof.localCornerJointAccepted!==false) throw new Error('Unearned floor cut acceptance')
@@ -65,7 +66,8 @@ else if(process.argv[2]==='--write') {
       heads:result.nativeVertical.native.heads,
       sectionCuts:recoverFloorSectionCuts(result.plateBending as FloorBendingField,authored.cuts),
       wetBearingExactDeclaredFields:support?.posts.map((post:any)=>({id:post.id,...post.exactDeclaredNormalField}))??[],
-      wetBeamSimultaneousCuts:[...result.nativeVertical.native.memberCuts,...result.nativeVertical.native.interiorMemberCuts].filter((row:any)=>row.memberId.startsWith('WET-SUPPORT/')),
+      wetBeamGeneralizedActionDiagnostics:[...result.nativeVertical.native.memberCuts,...result.nativeVertical.native.interiorMemberCuts].filter((row:any)=>row.memberId.startsWith('WET-SUPPORT/')),
+      physicalWetBeamCutDemandAvailable:false,
       capturedSourceEquilibriumResidualKN_KNm:receipt.summary.independent52HeadBalanceResidualKN_KNm }
   })
   const a=controls.at(-2)!,b=controls.at(-1)!,heads=new Map(a.heads.map((row:any)=>[row.id,row.reactionKN_KNm]))
