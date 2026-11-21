@@ -9,8 +9,8 @@
     "label": "rush-20261121-recovery"
   },
   "claimedAt": "2026-11-21T09:40:30.038Z",
-  "heartbeatAt": "2026-11-21T09:44:38.665Z",
-  "expiresAt": "2026-11-21T10:29:38.665Z",
+  "heartbeatAt": "2026-11-21T10:02:46.738Z",
+  "expiresAt": "2026-11-21T10:47:46.738Z",
   "branch": "work/rush-editor-scope-20261121",
   "predecessor": {
     "leaseId": "37f8e399-fda2-42a8-8282-b3e5bda5c950",
@@ -35,7 +35,7 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1605 merged984f40fd; exact784 health/publication/ADE/PLT passed; source-only successor preflights verified.",
-    "next": "Reopen existing ADE packet for actual engineering-document browser consumer, then continue structural resolution."
+    "evidence": "PR1606 exact8e349d8; publication passed, health running. PR1605 merged984f40fd. New local upper-seat coupled trial69s;14 analytic tests pass, adverse heads retained.",
+    "next": "Merge scope1606 after exact-head checks; integrate upper masonry/normal roof seats with named plate recovery and real52-head mutation proof."
   }
 }
