@@ -9,8 +9,8 @@
     "label": "structure-review-seated-wet-beam"
   },
   "claimedAt": "2026-11-21T12:29:12.173Z",
-  "heartbeatAt": "2026-11-21T13:02:32.098Z",
-  "expiresAt": "2026-11-21T13:47:32.098Z",
+  "heartbeatAt": "2026-11-21T13:31:42.683Z",
+  "expiresAt": "2026-11-21T14:16:42.683Z",
   "branch": "work/rush-floor-inlet-convergence-20261121",
   "predecessor": {
     "leaseId": "112c4e59-d3c1-4931-a15b-ba4d2433a70f",
@@ -33,8 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Prepared PR1610 remains frozen. Separate recoverable WIP remote5dcba617b050f425dec3782ceb8cbcf738c3bdb4 tree00f6ec4dd8ac8a5c075ad2b69fd7bdc8e1cd91b4 on work/rush-seated-wet-beam-20261121: actual finite wet beam/post/grid/pads in floorSection,20 focused tests+tsc; exploratory unchanged200 all312heads delta0, matchedwetG135/Q2/rho27 peak84.435634 and partialnorthcontact. Remote18blob/tree hashes verified. Local retained receipts intentionally stale, no hash rebinding; WIP not merge-ready.",
-    "next": "Observe prepared PR1610 exactCI/root preflight. Freeze actual wet methods after cold review, execute source-bound original/offset/quadrature/adverse/reversal controls and owning proof regeneration, bind source-account consumers, verify API saved edit/undo, then publish a separate ready PR after joint merge. No engineering or owner acceptance fabricated."
+    "evidence": "Prepared PR1610 remains frozen pending exact health/root preflight. Durable separate WIP remote d9d04b8dbaef7b6f4543194a93a30c68a9a32d31 tree c40e5119c0f6a5539e78923614a8a5e332e18b5a on work/rush-seated-wet-beam-20261121 now preserves genuinely re-executed vertical36 ten, upper53 six, masonry49 eight, distributed96, north24, continuous portal seven and actual floor/cage consumers.23 focused tests+2 semantic edits+tsc pass. Frozen actual finite seated methods integrate in floorSection57. Wet quadrature8 worker was SIGKILLed after5 uncheckpointed states; no partial proof promoted. Driver now stores full exact-source/request/checksum-bound native responses with adversarial validation; missing states must execute.",
+    "next": "Finish already-running monolithic96 and joined/RC-house/corner/foundation/lower owning producers, then resume wet8state programme serially with full durable per-case captures and complete signed pressure controls. Preserve immutable historical receipts. Reconcile source-account consumers, validate saved compiler pad edit/undo and drawings, then separate ready PR only after prepared1610 merge. No design or owner acceptance fabricated."
   },
   "pr": 1610
 }
