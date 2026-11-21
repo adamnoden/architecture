@@ -22,7 +22,7 @@ The [Crafted Study result](../../project/ias/crafted-room-kit-result.md) supplie
 
 The [services and access study](../../project/ias/ias-02s-services-access.md) already distinguishes low horizontal distribution from declared vertical rises. It also distinguishes removable decoration from cable containment and electrical enclosures. Its deeper skirting trial is selective; the west gallery does not acquire that projection by default.
 
-The [P04 junction pack](../prototypes/p04-wall-ceiling-build-pack.md) and its [applicability record](../../project/phy/current-house-prototype-applicability.md) study wall/ceiling movement and reinstatement. They do not constitute a demountable ceiling design. Historical specimen dimensions and floor-depth budgets must be checked against the latest owning model before reuse.
+The [wall/ceiling junction prototype pack](../prototypes/p04-wall-ceiling-build-pack.md) and its [applicability record](../../project/phy/current-house-prototype-applicability.md) study wall/ceiling movement and reinstatement. They do not constitute a demountable ceiling design. Historical specimen dimensions and floor-depth budgets must be checked against the latest owning model before reuse.
 
 The earlier suggestion to ban recessed ceiling lights remains an unadopted suggestion from the preceding discussion. Likewise, requiring fixed wall lights in every room would be stronger than the evidence: the requirement worth testing is dependable useful illumination, which can be achieved by different arrangements.
 
@@ -137,7 +137,7 @@ Overhead panels require their own support, positive retention and controlled-rem
 
 Distinguish panel support, luminaire support and any service restraint. Include the worker, ladder or platform, first released edge, temporary support and safe first rest. A tether can help control removal but is not a substitute for correctly designed primary support.
 
-Preserve required fire/acoustic/air boundaries during ordinary decorative renewal wherever practicable. A detachable visible panel cannot casually replace a tested protective ceiling. Reuse P04's comparison and movement logic, while designing the actual new assembly and checking current room-height and structural/service reservations. No spare ceiling depth is assumed.
+Preserve required fire/acoustic/air boundaries during ordinary decorative renewal wherever practicable. A detachable visible panel cannot casually replace a tested protective ceiling. Reuse the wall/ceiling junction prototype's comparison and movement logic, while designing the actual new assembly and checking current room-height and structural/service reservations. No spare ceiling depth is assumed.
 
 ## 8. The proposed inch behind the panels
 
