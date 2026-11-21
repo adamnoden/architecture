@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "node": "PCO-ROOM-LIGHTING",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "a1216f76-6734-46cc-b44d-5d1ed4480ba6",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "room-lighting-registration-20261121"
+  },
+  "claimedAt": "2026-11-21T21:57:05.404Z",
+  "heartbeatAt": "2026-11-21T21:57:05.404Z",
+  "expiresAt": "2026-11-21T23:27:05.404Z",
+  "checkpoint": {
+    "evidence": "Issue #1614 records owner scope and exceptional registration bootstrap; dedicated branch starts from current main",
+    "next": "Register one IAS/HAD package and its integration edges, validate, publish and release the registration lease"
+  },
+  "branch": "work/register-room-lighting-20261121",
+  "note": "Exceptional registration-only bootstrap authorised and recorded in issue #1614; unknown-node dispatch safety temporarily fails closed until integration/release."
+}
