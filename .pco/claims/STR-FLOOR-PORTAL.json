@@ -9,8 +9,8 @@
     "label": "convergence-20261121"
   },
   "claimedAt": "2026-11-21T19:47:07.671Z",
-  "heartbeatAt": "2026-11-21T19:56:56.147Z",
-  "expiresAt": "2026-11-21T20:41:56.147Z",
+  "heartbeatAt": "2026-11-21T20:26:16.251Z",
+  "expiresAt": "2026-11-21T21:11:16.251Z",
   "branch": "work/convergence-structure-20261121",
   "predecessor": {
     "leaseId": "95dc0271-adfc-448a-9789-0f1476b4b26b",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote7df279185d tree421a4e3 matches localf2b54522; recovered d9d04b8 provenance retained. Five of eight source-bound floor states executed; fixed physical cuts and actual beam/post service intersection tests pass.",
-    "next": "Finish eight native controls and matched mesh700/500; regenerate affected legacy controls and source account; exact-head checks and merge.",
-    "blocker": "Native proof regeneration and final coordinated interfaces pending."
+    "evidence": "Recovery64c6d015 on primary branch. Separate nodal/zero-port successor recovery/str-nodal-attachments-20261121 preserves validatedPL4/zero-work regressions; native replays active in isolated worktree. Main integration first retains source-bound8states+failed700/500cuts and explicit unavailable wet-beam physical-demand diagnostic;48legacycases freshly regenerated.",
+    "next": "Finish governing replays, source audit and savedAPI; publish exact baseline tree and require CI before merge. Continue isolated nodal successor replays, then reconcile.",
+    "blocker": "Baseline exact-head validation; successor source-bound native replay and complete physical corner/beam duties remain."
   }
 }
