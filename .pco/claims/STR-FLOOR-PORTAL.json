@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 46,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "ba0fc4e9-5e82-4fee-ba2b-a68692aaf759",
   "holder": {
     "kind": "chatgpt",
     "label": "rush-structural-20261120"
   },
   "claimedAt": "2026-11-20T22:25:00.372Z",
-  "heartbeatAt": "2026-11-21T00:29:21.186Z",
-  "expiresAt": "2026-11-21T01:14:21.186Z",
+  "heartbeatAt": "2026-11-21T00:42:08.827Z",
+  "expiresAt": "2026-11-21T00:42:08.827Z",
   "branch": "work/rush-structural-20261120",
   "predecessor": {
     "leaseId": "a044c93f-78e1-4267-955e-f89e12b23997",
@@ -38,5 +38,7 @@
     "evidence": "PR1602 exact e22a66e9 remains in hosted full health; publication/browser/physical proofs pass. Actual pre851 assembly audit confirms982ports/904normal/2074cells, zero duplicate or unused rows. Successor47 proofs quarantined: integer/float point strings orphaned10roof ports; QA canonical point fix plus net-floor-Q and signed roof-pressure integration underway in isolated branches.",
     "next": "Merge validated e22 after fresh preflight. Combine canonical point fix, netQ and explicit roof pressure into source48; verify all18 physical receiver traces, regenerate24 legacy vertical/current-house proofs and saved CLI changes before publication. No structural closure or valid successor head demands yet."
   },
-  "pr": 1602
+  "pr": 1602,
+  "releasedAt": "2026-11-21T00:42:08.827Z",
+  "releaseReason": "handoff"
 }
