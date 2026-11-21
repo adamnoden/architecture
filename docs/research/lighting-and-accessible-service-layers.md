@@ -2,7 +2,7 @@
 
 **Research study - 21 November 2026.** This study answers the owner's request to reconsider lighting from first principles, alongside the Crafted Room Kit, service skirting and a possible stand-off space behind wall panels. It records evidence, candidate arrangements and a reasoned development recommendation. It does not select a house-wide lighting scheme, alter accepted room geometry, approve products or material exceptions, or establish measured lighting/acoustic performance.
 
-**Project baseline inspected:** `131471446d43a31ecea53c62577b17effd86a62c`. The [owner-house charter](../../project/owner-house-charter.md), [Crafted Room Kit brief](../../project/ias/crafted-room-kit-brief.md) and [whole-house material policy](../reference-house/material-policy.md) remain governing sources. The owner's attraction to lamps, wall-light panels and ceiling panels is an exploration preference, not a preselected answer.
+**Project baseline inspected:** `131471446d43a31ecea53c62577b17effd86a62c`. The [owner-house charter](https://github.com/adamnoden/architecture/blob/131471446d43a31ecea53c62577b17effd86a62c/project/owner-house-charter.md), [Crafted Room Kit brief](https://github.com/adamnoden/architecture/blob/131471446d43a31ecea53c62577b17effd86a62c/project/ias/crafted-room-kit-brief.md) and [whole-house material policy](../reference-house/material-policy.md) remain governing sources. The owner's attraction to lamps, wall-light panels and ceiling panels is an exploration preference, not a preselected answer.
 
 ## Research judgement
 
@@ -18,11 +18,11 @@ A plausible eventual result is a house with many movable lamps, a few excellent 
 
 The [Controlled Attachment Plane](../patterns/controlled-attachment-plane.md) already supplies the relevant general pattern: sparse documented attachment to permanent fabric, explicit load classes, safe fixing zones and replaceable fit-out. Lighting does not require a parallel universal rail system.
 
-The [Crafted Study result](../../project/ias/crafted-room-kit-result.md) supplies a worked candidate for locally removable faces, mouldings, release pockets and independently supported services. Its timber wall proposal is a concept for owner review, not an accepted whole-house assembly. A new light-bearing face must include its fitting, wiring connection, weight and centre of gravity in the actual removal operation.
+The [Crafted Study result](https://github.com/adamnoden/architecture/blob/131471446d43a31ecea53c62577b17effd86a62c/project/ias/crafted-room-kit-result.md) supplies a worked candidate for locally removable faces, mouldings, release pockets and independently supported services. Its timber wall proposal is a concept for owner review, not an accepted whole-house assembly. A new light-bearing face must include its fitting, wiring connection, weight and centre of gravity in the actual removal operation.
 
-The [services and access study](../../project/ias/ias-02s-services-access.md) already distinguishes low horizontal distribution from declared vertical rises. It also distinguishes removable decoration from cable containment and electrical enclosures. Its deeper skirting trial is selective; the west gallery does not acquire that projection by default.
+The [services and access study](https://github.com/adamnoden/architecture/blob/131471446d43a31ecea53c62577b17effd86a62c/project/ias/ias-02s-services-access.md) already distinguishes low horizontal distribution from declared vertical rises. It also distinguishes removable decoration from cable containment and electrical enclosures. Its deeper skirting trial is selective; the west gallery does not acquire that projection by default.
 
-The [wall/ceiling junction prototype pack](../prototypes/p04-wall-ceiling-build-pack.md) and its [applicability record](../../project/phy/current-house-prototype-applicability.md) study wall/ceiling movement and reinstatement. They do not constitute a demountable ceiling design. Historical specimen dimensions and floor-depth budgets must be checked against the latest owning model before reuse.
+The [wall/ceiling junction prototype pack](https://github.com/adamnoden/architecture/blob/131471446d43a31ecea53c62577b17effd86a62c/docs/prototypes/p04-wall-ceiling-build-pack.md) and its [applicability record](https://github.com/adamnoden/architecture/blob/131471446d43a31ecea53c62577b17effd86a62c/project/phy/current-house-prototype-applicability.md) study wall/ceiling movement and reinstatement. They do not constitute a demountable ceiling design. Historical specimen dimensions and floor-depth budgets must be checked against the latest owning model before reuse.
 
 The earlier suggestion to ban recessed ceiling lights remains an unadopted suggestion from the preceding discussion. Likewise, requiring fixed wall lights in every room would be stronger than the evidence: the requirement worth testing is dependable useful illumination, which can be achieved by different arrangements.
 
@@ -153,7 +153,7 @@ A nominal rail dimension is not proof of the third. A 25 mm-deep route may cease
 
 ### The current Study has no spare 25 mm void
 
-The [gauged wall-transition study](../../project/ias/crafted-study-wall-transition.md) allocates a maximum 26.35 mm stack within a 27 mm finished-face datum: 0.5 mm fixed air plane, 0.5 mm correction, 6.5 mm fixed board, 6.35 mm cleat, 2 mm fitting space and 10.5 mm complete moving cassette, before measured packing.
+The [gauged wall-transition study](https://github.com/adamnoden/architecture/blob/131471446d43a31ecea53c62577b17effd86a62c/project/ias/crafted-study-wall-transition.md) allocates a maximum 26.35 mm stack within a 27 mm finished-face datum: 0.5 mm fixed air plane, 0.5 mm correction, 6.5 mm fixed board, 6.35 mm cleat, 2 mm fitting space and 10.5 mm complete moving cassette, before measured packing.
 
 That is a tightly fitted whole lining. A hypothetical 25 mm gross stand-off plus the 10.5 mm complete moving cassette already totals 35.5 mm before separate backing. Keeping the existing 7.5 mm fixed-plane/correction/board allowance makes the simple comparison 43 mm before additional local packing or other allowances. Rails occupy part of the gross stand-off; demanding 25 mm clear at every crossing may require more. This arithmetic is illustrative, not a selected revised stack.
 
