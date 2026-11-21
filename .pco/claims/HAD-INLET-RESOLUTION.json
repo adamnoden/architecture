@@ -9,9 +9,9 @@
     "label": "rush-had-service-hub-20261121"
   },
   "claimedAt": "2026-11-21T09:44:40.547Z",
-  "heartbeatAt": "2026-11-21T11:49:37.614Z",
-  "expiresAt": "2026-11-21T12:34:37.614Z",
-  "branch": "work/rush-converged-model-20261121",
+  "heartbeatAt": "2026-11-21T12:02:19.011Z",
+  "expiresAt": "2026-11-21T12:47:19.011Z",
+  "branch": "work/rush-had-joined-source-20261121",
   "predecessor": {
     "leaseId": "b5b027b5-54c3-4568-96ea-1f3d11bdcec6",
     "generation": 50,
@@ -30,8 +30,8 @@
   },
   "pr": 1609,
   "checkpoint": {
-    "evidence": "PR1609 head0f329089 frozen; HTTP7061780414; room7061826946; purge7061843567; separate20/45duty7062033129 plus hot/cold backfeed and stored-water obligations",
-    "next": "Fresh exact-head merge preflight after joint CI; root integrates; then one joined Utility/Plant cut-source-room proposal",
-    "blocker": "HAD OPEN: Plant45 cannot use old receiver at current source; hot/cold separation, stored inventory, cuts/renewal/support, complete fault/thermal/material proof unresolved"
+    "evidence": "PR1609 merged9dbd639e; PR1607 superseded; coherent20/45 topology and Streethead PV decisions7062172685/7062265380",
+    "next": "Implement asymmetric duties/source limits and joined room/topology decision through existing inlet-source-envelope consumer; shared3TScontracts untouched",
+    "blocker": "HAD OPEN; old Plant receiver rejected, actual stored release/indoorcuts/support/drains/jet/material proof unresolved; previousPR1609 metadata retained until nextjointPR"
   }
 }
