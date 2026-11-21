@@ -74,5 +74,18 @@ class PerforatedFloorReceivingTest(unittest.TestCase):
         b=compile_perforated_floor(bodies,holes,loops,default_patches,law,pitch,boundary_receivers=[])
         self.assertEqual(a,b)
 
+    def test_unattached_retained_coordinate_is_exact_zero_work_not_an_artificial_support(self):
+        bodies,holes,loops,patches,law,pitch,receivers=fixture()
+        before=compile_perforated_floor(bodies,holes,loops,patches,law,pitch,boundary_receivers=receivers)
+        extended=patches+[{'id':'vertical-only-node','originXYMm':[400,400],'rectangles':[]}]
+        after=compile_perforated_floor(bodies,holes,loops,extended,law,pitch,boundary_receivers=receivers)
+        self.assertEqual(before['meshTrianglesXYMm'],after['meshTrianglesXYMm'])
+        n=3*len(patches)
+        for old,new in zip(before['condensedStiffnessKNPerMm'],after['condensedStiffnessKNPerMm'][:n]):
+            for a,b in zip(old,new[:n]):self.assertAlmostEqual(a,b,9)
+        for row in after['condensedStiffnessKNPerMm'][-3:]:self.assertEqual(row,[0.]*len(row))
+        self.assertEqual(after['condensedForceKN'][-3:],[0.,0.,0.])
+        self.assertLess(max(after['rigidModeResidualKN']),1e-5)
+
 
 if __name__=='__main__':unittest.main()

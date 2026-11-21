@@ -155,6 +155,9 @@ export function runFloorSectionCase(resolved: CurrentDesignResolution, input: un
       || wet.momentFixityAtBearingsCredited !== false || wet.frictionOrHorizontalBearingRestraintCredited !== false
       || wet.beamCageAccepted !== false || wet.columnCageAccepted !== false
       || wet.padMaterialAndRotationAccepted !== false || wet.localGridCapJointAccepted !== false
+      || !record(wet.plateAttachmentAudit) || wet.plateAttachmentAudit.allPlateAttachmentsAtRealBeamNodes !== true
+      || wet.plateAttachmentAudit.physicalBeamElementCutsAvailable !== true || wet.plateAttachmentAudit.completePhysicalBeamDemandEnvelopeAvailable !== false
+      || !Array.isArray(wet.plateAttachmentAudit.missingAttachmentCoordinatesYMm) || wet.plateAttachmentAudit.missingAttachmentCoordinatesYMm.length !== 0
       || !six(wet.sourceMaterialWrenchResidualKN_KNm) || wet.sourceMaterialWrenchResidualKN_KNm.some(v => Math.abs(v) > 1e-6)
       || !Array.isArray(wet.posts) || wet.posts.length !== 2 || !Array.isArray(wet.contactFibres) || wet.contactFibres.length < 8
       || wet.contactFibres.some((row: unknown) => !record(row) || !finite(row.normalCompressionKN) || row.normalCompressionKN < -1e-7)
@@ -188,9 +191,9 @@ export function runFloorSectionCase(resolved: CurrentDesignResolution, input: un
     native: vertical.native, vertical, floorSection: section, upperMasonry: output.upperMasonry,
     mass: output.mass, plateBending: output.plateBending, sectionCuts: recoverFloorSectionCuts(output.plateBending as FloorBendingField, sectionCuts), floorReinforcement: output.floorReinforcement,
     roofCoupling: output.roofCoupling, ...(output.seatedWetSupport ? { seatedWetSupport: output.seatedWetSupport,
-      wetBeamCutRecovery: { status: 'unsupported-interior-interface-origin-recovery' as const,
-        physicalBeamCutsAvailable: false as const, completeBeamDemandEnvelopeAvailable: false as const,
-        scope: 'The coupled plate/frame response is computed, but interior plate and membrane interaction origins are not recorded in member cut recovery. Wet-beam memberCuts are generalised FE action diagnostics and must not supply reinforcement, anchorage or local joint demands.' } } : {}), drawings: output.drawings, floorSvg: output.drawings['floor-section-floor.svg'],
+      wetBeamCutRecovery: { status: 'computed-discrete-element-cuts' as const,
+        physicalBeamCutsAvailable: true as const, completeBeamDemandEnvelopeAvailable: false as const,
+        scope: 'Actual plate/membrane attachment stations are real beam nodes, and executed discrete beam cuts are recovered. The full load envelope, bearing stress spreading, ground-grid local load origins and resistance remain unqualified.' } } : {}), drawings: output.drawings, floorSvg: output.drawings['floor-section-floor.svg'],
     servicePenetrations, diagnostics: output.diagnostics, evidence: { state: 'unselected-actual-section-replacement' as const,
       candidateAccepted: false as const, completeHouseProof: false as const, installedAcceptance: false as const,
       scope: 'Actual plate and membrane reassembly, work maps, upper body starts, self-weight and recovery at the authored thickness. Finish, FFL, stairs, services, aerodynamic tributaries, local stress convergence, reinforcement and joints remain unqualified.' } }

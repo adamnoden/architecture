@@ -117,11 +117,29 @@ def run(case,source,name):
     support=case['wetSupport'];h=json.loads((source['root']/'project/had/studies/water-replan.json').read_text())['model']
     if support is not None:
         if case['thicknessMm']!=200:raise ValueError('Seated wet support currently requires actual RC200 slab datum; rebuild beam/slab union explicitly before another depth')
-        from seated_wet_support import build_support,replacement_cores,finish_support,add_live_load,route_free_patch
-    model=_build_base(bearing,source['bearing'],
-        additional_receiver_builder=(lambda m:build_support(m,support,h)) if support is not None else None,
-        core_transform=(lambda cores,m:replacement_cores(cores,support,m)) if support is not None else None)
-    section=replace_floor_section(model,source['bearing'],case['thicknessMm']);frame=model['model'];data=model['verticalFloor'];top=section['topZMm']
+        from seated_wet_support import build_support,replacement_cores,finish_support,add_live_load,route_free_patch,attachment_station_audit
+    # A bounded common-coordinate closure places every actual plate attachment
+    # on a real beam node. No solved forces, fictitious supports or stale mesh
+    # are used to choose these purely derived discretisation coordinates.
+    required_stations=[];station_history=[]
+    for mesh_pass in range(4):
+        model=_build_base(bearing,source['bearing'],
+            additional_receiver_builder=(lambda m:build_support(m,support,h,required_stations)) if support is not None else None,
+            core_transform=(lambda cores,m:replacement_cores(cores,support,m)) if support is not None else None)
+        section=replace_floor_section(model,source['bearing'],case['thicknessMm'])
+        if support is None:break
+        audit=attachment_station_audit(model);station_history.append(audit)
+        if audit['allPlateAttachmentsAtRealBeamNodes']:
+            model['seatedWetSupport']['plateAttachmentAudit']={**audit,'coordinateClosurePasses':mesh_pass+1,
+                'closureHistory':station_history,'physicalBeamElementCutsAvailable':True,
+                'completePhysicalBeamDemandEnvelopeAvailable':False,
+                'scope':audit['scope']+' Beam end/within-element cut recovery may use the actual nodal interface jumps and authored distributed loads. Full signed load envelope, local joint/spreader resistance and physical acceptance remain unproved.'}
+            break
+        for u in audit['missingAttachmentCoordinatesYMm']:
+            if not any(abs(u-v)<=1e-7 for v in required_stations):required_stations.append(u)
+        if mesh_pass==3:raise ValueError('Wet beam/plate common-coordinate closure did not converge; no physical beam cuts may be emitted')
+        del model
+    frame=model['model'];data=model['verticalFloor'];top=section['topZMm']
     if support is not None:section['finishStairServiceEvidenceApplicable']=False
     h=json.loads((source['root']/'project/had/studies/water-replan.json').read_text())['model']
     native_floor=source['bearing']['base']['vertical']['parent']['house']['joined']['floor'];rectangles=[r for c in model['joinedFloor']['corners'] for r in c['rectangles']]

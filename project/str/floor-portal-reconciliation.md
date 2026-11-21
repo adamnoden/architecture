@@ -9,7 +9,9 @@ controls. Fresh fixed physical cuts and paired700/500 meshes fail their declared
 stability screen; the raw corner peak changes75.109→107.239kNm/m. The beam is
 not a remedy for that corner and no slab thickness is selected. Its almost
 unloaded north pad, adverse lift-off, actual cages/local joints and weather
-closure remain explicit. The shared saved-document/CLI path exposes these
+closure remain explicit. Nodal plate attachments now recover the executed discrete beam cuts; complete
+load envelopes and local ground-grid action recovery remain unqualified. The
+shared saved-document/CLI path exposes these
 edits, actual beam/post service intersections and dependent-evidence invalidation.
 The source-ground-zero model has not adopted HAD's raised service-floor or new
 screen loads. STR-FLOOR-PORTAL remains open.

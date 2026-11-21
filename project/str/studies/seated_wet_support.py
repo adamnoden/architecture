@@ -76,7 +76,7 @@ def _pad_fit(setting,beam_rectangle,post_rectangle,centre):
     return pad,{'nominalRectangleXYMm':pad,'combinedToleranceEnvelopeXYMm':envelope,'remainingMarginsMm':margins,'toleranceOwnership':'One combined relative pad/member-placement bound; independent10+10mm errors are not admitted.'}
 
 
-def build_support(model,setting,h):
+def build_support(model,setting,h,required_stations=()):
     """Insert actual members before both physical floor operators are built."""
     expected=reference_support(h)
     if not isinstance(setting,dict) or set(setting)!=set(expected) or setting['scope']!=expected['scope']:raise ValueError('Exact explicit seated wet-support controls required')
@@ -99,6 +99,9 @@ def build_support(model,setting,h):
     if not lo<=supports[0][1]<supports[1][1]<=hi:raise ValueError('Actual support axes must lie in physical wet beam')
     pad_centres=[[p[0],p[1]+offset] for p,offset in zip(supports,offsets)]
     axes={lo,hi,*[p[1] for p in supports],*[p[1] for p in pad_centres]}
+    if len(required_stations)>256 or any(type(u) not in (int,float) or not math.isfinite(u) or not lo<=u<=hi for u in required_stations):raise ValueError('Bounded finite derived wet-beam attachment stations required')
+    for u in required_stations:
+        if not any(abs(u-v)<=1e-7 for v in axes):axes.add(u)
     for a,b in zip(sorted(axes),sorted(axes)[1:]):axes.update(a+(b-a)*i/max(1,math.ceil((b-a)/setting['maxBeamPitchMm'])) for i in range(1,max(1,math.ceil((b-a)/setting['maxBeamPitchMm']))))
     stations=[{'u':u,'node':frame.node('WET-SUPPORT/beam/'+str(u),[x,u,z])} for u in sorted(axes)];names=[];density=setting['concreteUnitWeightKNPerM3'];g=model['families']['physical-G'];law=model['request']['frameLaw']
     for i,(a,b) in enumerate(zip(stations,stations[1:])):
@@ -158,6 +161,25 @@ def build_support(model,setting,h):
         northWeatherBoundaryYMm=setting['receiverRectanglesXYMm'][1][3],weatherBoundaryIntersection=hi>=setting['receiverRectanglesXYMm'][1][3],
         closureScope='Exposed seated piers and explicit empty head recess. No masonry/infill G or stiffness is invented. Removable independent finish/thermal/air/weather closure with seams remains unselected; it must add no structural bearing or retention.')
     return [receiver]
+
+
+def attachment_station_audit(model):
+    """Every actual plate/membrane trace must meet a real beam section node.
+
+    Otherwise force-only work maps can give the correct coupled response but
+    omit the physical interior interaction origins from beam cut recovery.
+    This plans a shared discretisation; it adds no physical support or law.
+    """
+    receiver=model['seatedWetSupport']['receiver'];r=receiver['rectangleXYMm']
+    stations=[s['u'] for s in receiver['stations']]
+    vertical=sorted({p for cell in model['verticalFloor']['cells'] for p in (cell[1],cell[3]) if r[1]<=p<=r[3]})
+    membrane=[p for p in model['joinedFloor']['floor']['coordinateColumns'][1] if r[1]<=p<=r[3]]
+    actual=sorted(set(vertical+membrane));missing=[p for p in actual if min(abs(p-u) for u in stations)>1e-7]
+    return {'actualVerticalCoordinatesYMm':vertical,'actualMembraneCoordinatesYMm':membrane,
+        'actualBeamSectionNodesYMm':stations,'missingAttachmentCoordinatesYMm':missing,
+        'maximumAttachmentToNodeDistanceMm':max((min(abs(p-u) for u in stations) for p in actual),default=0.),
+        'allPlateAttachmentsAtRealBeamNodes':not missing,
+        'scope':'All actual coordinate columns crossing the beam span, including unused columns conservatively. Each applied plate trace is therefore nodal in the along-beam direction; rigid cross-section offsets and declared bearing-plane idealisations remain explicit.'}
 
 
 def route_free_patch(model,rectangle,pressure,target):

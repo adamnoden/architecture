@@ -30,93 +30,38 @@ Normal bearing quadrature, pad offsets, beam dimensions and material controls ar
 explicit and bounded. Independent beam/post/pad G and beam-top Q ledgers check all
 six source-wrench components. Added load does not masquerade as physical mass.
 
-## Regenerated current-source result — 21 November 2026
+The source-bound nine-state replay now reproduces all312 unchanged RC200 head
+components exactly and includes matched heavy200/250, both pad positions,
+4/8-point contact quadrature, zero-G suction, a3kPa roof comparison and reversal.
+At matched1.35G/Q2/rho27, the nodal seated case gives84.441416kNm/m against
+84.680040 without this support. South-pad+160 gives84.459202; eight-point
+quadrature gives84.459091. These remain raw floor samples, not design strips.
 
-The [eight-state full-native capture](studies/floor-section-proof.json) now
-executes the unchanged RC200 control, matched1.35G/Q2/rho27 RC200/250 pair,
-actual aligned support, south-pad160mm offset, four/eight-point bearing
-quadrature, zero-G roof suction and exact restoration. The unchanged control
-and restoration reproduce all312 current RC200 head components. Each capture
-checks the actual request,57 source identities, full-result checksum and
-independent all-head/source-material wrench balances before reuse. No local-only
-predecessor result or exploratory number supplies this evidence.
+Review found that generalised FE end forces omitted physical interior plate and
+membrane load origins when recovering beam cuts. The common-coordinate builder
+now inserts every actual MITC4/CST/band attachment station as a real beam node,
+then rebuilds until the station audit closes. The zero-work membrane rows remain
+zero; no artificial restraint or stiffness is added. An independent simply
+supported point-load oracle recovers PL/4 and both cut limits. The current native
+audit reports discrete beam-element cuts available, complete demand envelope
+unavailable. The saved compiler enforces that distinction.
 
-The aligned wet support gives84.439256kNm/m raw floor demand against84.680040
-without it under matched heavy controls. The south-pad160mm offset gives
-84.456499; eight-point quadrature gives84.456379. The largest four/eight change
-among312 head components is0.006976kN/kNm. The beam is therefore **not a cure for
-the south floor peak**, and global numerical agreement does not qualify a pad.
+For the shifted eight-point case, executed beam-element absolute extrema are
+N8.2931kN, Vy1.1046kN, Vz23.3453kN, T1.8855kNm, My6.5678kNm and Mz0.4216kNm.
+These component maxima are not a simultaneous design combination. Zero-G suction
+opens both normal-only seats and can govern other actions. Contact-force and local
+material convergence, full pressure families and resistance remain unproved.
 
-The shifted south pad carries45.097602kN over its full22000mm² declared plane.
-The north pad has only1342.416mm² compressed area and0.209115kN exact positive-part
-normal force. Its eight-point force differs by0.005270kN, about2.52%; the
-four-point result differs by0.014860kN. These exact integrals audit the declared
-rigid beam/post planes and linear normal law. Every sample attaches to its
-single beam station: actual beam-face/pad flexibility, spreader stiffness and
-concrete bearing are **not** qualified by quadrature refinement. Both pads open
-under the executed zero-G roof-suction challenge; no fictitious tension,
-friction or beam-column moment restraint is added to rescue them.
+The fixed-cut producer evaluates actual authored coordinates, including material
+gaps and separate signed bending/twisting integrals.700→500mm controls change
+52-head components by up to1.686609kN/kNm and cut integrals by up to15.406607%.
+The declared0.1kN/kNm and5% screens fail. No floor thickness or local corner
+reinforcement has been selected from an unconverged peak.
 
-**Physical wet-beam section demands remain unavailable.** Internal review found
-that plate and membrane interactions enter the coupled work maps but their
-interior application origins do not enter member-cut load recovery. The
-6.550528kNm bendingY,1.904417kNm torsion and21.661068kN shearZ values are only
-generalised FE action diagnostics. Do not use them for reinforcement, anchorage
-or local joint demands. A separate simply supported1kN/1m analytical witness
-shows the consequence: unrecorded interior mapping invents0.125kNm end moments
-and misses the real0.250kNm midpoint moment. Recorded origins or an actual
-attachment node recover the closed-form PL/4 result. Global equilibrium does
-not discharge this missing local recovery.
-
-The compiler emits `WET_BEAM_PHYSICAL_CUTS_UNAVAILABLE` and an explicit false
-demand-availability field. A separately checkpointed successor aligns every
-actual vertical/membrane attachment with a real beam section node and preserves
-zero-work in-plane coordinates where no slab exists; it requires fresh native
-replays before promotion. No result from that unfinished successor is used here.
-
-## Fixed physical cuts and failed mesh stability
-
-The [authored cuts](studies/floor-section-cuts-inputs.json) and
-[ten-state comparison](studies/floor-section-cuts-proof.json) hold physical
-sections around the same south-west L while the existing plate and membrane
-meshes change. The shared compiler consumer integrates signed normal and
-twisting moments and the separate absolute envelope exactly through each
-element field, retains every aperture gap and the raw point peak, and rejects
-ambiguous element-face cuts. It does not invent an effective design width.
-
-| Worked wet-support mesh | Raw point envelope kNm/m | Y450 cut absolute integral kNm | X1450 cut absolute integral kNm |
-| --- | ---: | ---: | ---: |
-| Vertical1000 / membrane1400 |84.456|33.272|30.770|
-| Both700 |75.109|34.028|30.980|
-| Both500 |107.239|32.705|36.299|
-
-The predeclared700→500 stability screen fails: the largest head-component change
-is1.699700kN at P07 horizontalX, and fixed-cut component changes reach15.409%.
-Near-edge absolute integrals change by about3.8–3.9%, but the farther cuts remain
-unstable. Do not call the current corner/strip demand converged, infer a local
-capacity from an averaged peak, or choose a whole-house thickness from it.
-The conventional finite corner-transfer/local recovery must be resolved before
-the necessary strain-compatible slab screen becomes a selection basis.
-
-## Shared authoring and material interfaces
-
-The existing saved `floorSection` stage accepts optional `wetSupport` and
-`sectionCuts`; `set-wet-bearing-offset` and `set-floor-section-cut` use stable
-assembly/cut IDs, explicit millimetres, revision checks, save/load and exact
-undo. Unknown cuts, invalid geometry/units and RC250 with the unreconciled RC200
-wet beam reject. The same CLI/API cut consumer retains its source identity.
-
-Service-centreline checks now also inspect the actual replacement beam and post
-solids. Removing their footprint from the plate mesh cannot hide their material.
-The existing PV crossing remains a separate conflict; no new route, opening,
-fire or withdrawal envelope is invented. The nominal room plans remain an
-unchanged control, while dependent stair/finish/service evidence stays withheld.
-
-The [computed wet-support floor view](studies/seated-wet-support-floor.svg) was
-rendered and inspected at1200×1080. Its normal-receiving legend describes the
-ordinary floor/core fibres; the wet-pad forces/partial contact are reported
-separately above. It is a source-ground-zero comparison, not a transformed
-raised-service-floor drawing or an accepted house revision.
+The wet posts transfer full base wrenches into the actual ground-grid members,
+but those receivers also have interior load-origin recovery obligations. Their
+current memberCuts do not establish local grid/cap demand or resistance. The
+source-bound floor and cut receipts retain that incomplete-house boundary.
 
 The south beam-end run is short because of the stair. Actual simultaneous beam
 N/M/V/T, force-shift, source bond/minimum anchorage comparisons, ordinary returned
