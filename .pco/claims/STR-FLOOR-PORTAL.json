@@ -9,11 +9,12 @@
     "label": "rush-coupled48-20261121"
   },
   "claimedAt": "2026-11-21T00:42:51.058Z",
-  "heartbeatAt": "2026-11-21T01:32:24.950Z",
-  "expiresAt": "2026-11-21T03:02:24.950Z",
+  "heartbeatAt": "2026-11-21T01:57:45.000Z",
+  "expiresAt": "2026-11-21T02:42:45.000Z",
   "checkpoint": {
-    "evidence": "Shared PR1604 exact1d79732eb20e6c4825f297d950d4484c8e32dbce/tree72035d9a submitted. Fresh final-scope8+extra3 and24ancestorcontrols, canonical cage/roof inputs, actualwhole-inlet rejection/cache, sourceaudit15families0findings and19contracts/tsc pass. Actualsaved/API/CLI3solves running same submitted tree; exactCI pending. Localdistributedgrid/caprecovery false and adversedesignfails retained.",
-    "next": "Observe saved pipeline and exactheadCI; fixowningfailures only, then fresh dualSTR/HADpreflight and expected-head sharedmerge. Close1603assuperseded onlywithpreservedevidence, release/dispatch again. Current51P0/upperreceiver/reinforcementdevelopment remainsisolated, no fabricatedstructuralcloseout."
+    "evidence": "PR1604 head784b9f362af2fc50f183148cfbdec4b370a4567e; fresh11coupled/24controls, saved3solves/reversal pass; sourceaudit15/0. Durable recovery: PR1604#issuecomment-7055489871; physical failures retained.",
+    "next": "Recover canonical leases/current main; inspect exact-head CI; fresh dual STR/HAD merge-check and expected-head merge; then combined51 and service-hub replan.",
+    "blocker": "Execution environment unavailable; exec recovery45s failed. No local preflight or new tests. Handoff release follows checkpoint readback; no packet completion."
   },
   "branch": "work/rush-structural-coupling-20261120",
   "predecessor": {
