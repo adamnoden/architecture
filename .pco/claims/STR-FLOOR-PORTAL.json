@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 49,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "95dc0271-adfc-448a-9789-0f1476b4b26b",
   "holder": {
     "kind": "chatgpt",
     "label": "structure-review-seated-wet-beam"
   },
   "claimedAt": "2026-11-21T12:29:12.173Z",
-  "heartbeatAt": "2026-11-21T14:05:25.000Z",
-  "expiresAt": "2026-11-21T14:50:25.000Z",
+  "heartbeatAt": "2026-11-21T14:07:37.000Z",
+  "expiresAt": "2026-11-21T14:07:37.000Z",
   "branch": "work/rush-floor-inlet-convergence-20261121",
   "predecessor": {
     "leaseId": "112c4e59-d3c1-4931-a15b-ba4d2433a70f",
@@ -37,5 +37,7 @@
     "next": "Handoff: recover d9d04b8 from fresh main; verify local FULL source/request/checksums if available. Finish700/500/roof3, actual floor/cage closures, source account, saved API and exact CI.",
     "blocker": "Execution environment unavailable; no filesystem, native solver or test access."
   },
-  "pr": 1610
+  "pr": 1610,
+  "releasedAt": "2026-11-21T14:07:37.000Z",
+  "releaseReason": "handoff"
 }
