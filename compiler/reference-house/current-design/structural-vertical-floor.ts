@@ -73,7 +73,7 @@ function currentBinding(resolved: CurrentDesignResolution) {
   const comparison = exact(JSON.parse(execFileSync('python3', ['-B', fileURLToPath(new URL(methodPath, root)), '--read'],
     { encoding: 'utf8', maxBuffer: 4 * 1024 * 1024 })), fields, 'native vertical RC floor') as Comparison
   if (comparison.schema !== 'str-vertical-rc-floor-case/1' || !record(comparison.sourceSHA256)
-    || Object.keys(comparison.sourceSHA256).length !== 35 || !record(comparison.monolithicCase)
+    || Object.keys(comparison.sourceSHA256).length !== 36 || !record(comparison.monolithicCase)
     || !record(comparison.monolithicCase.houseCase) || !record(comparison.monolithicCase.houseCase.joinedCase)
     || !record(comparison.monolithicCase.houseCase.joinedCase.floor) || !record(comparison.monolithicCase.houseCase.joinedCase.portal)) {
     throw new Error('The vertical RC floor source inventory or exact native schema changed; integrate it explicitly')

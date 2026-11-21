@@ -41,7 +41,7 @@ class VerticalRCFloorCurrentTest(unittest.TestCase):
                 x,y=row['receivingXYMm'];dx,dy=row['residualOffsetXYMm'];cls.upper_g=add(cls.upper_g,gravity(row['valueKN'],[x+dx,y+dy]))
 
     def test_source_method_runtime_and_false_acceptance_are_bound(self):
-        p=self.proof;self.assertEqual(p['sourceSHA256'],self.source['identities']);self.assertEqual(len(p['sourceSHA256']),35)
+        p=self.proof;self.assertEqual(p['sourceSHA256'],self.source['identities']);self.assertEqual(len(p['sourceSHA256']),36)
         self.assertEqual(p['proofProducerSHA256'],hashlib.sha256((D/'vertical_rc_floor_proof.py').read_bytes()).hexdigest())
         self.assertEqual(p['floorSvgSHA256'],hashlib.sha256((D/'vertical-rc-floor.svg').read_bytes()).hexdigest())
         self.assertEqual(self.base['native']['sourceSHA256'],self.source['identities']);self.assertEqual(self.base['native']['request'],p['authoredNumericalCase'])

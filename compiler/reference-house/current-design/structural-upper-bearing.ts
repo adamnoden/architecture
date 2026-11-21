@@ -31,7 +31,7 @@ function currentBinding(resolved: CurrentDesignResolution) {
   const comparison = JSON.parse(execFileSync('python3', ['-B', fileURLToPath(new URL(methodPath, root)), '--read'],
     { encoding: 'utf8', maxBuffer: 8 * 1024 * 1024 })) as NativeCase
   if (comparison.schema !== 'str-upper-masonry-roof-bearing-case/1' || !record(comparison.sourceSHA256)
-      || Object.keys(comparison.sourceSHA256).length !== 52) throw new Error('The upper bearing source contract changed; integrate explicitly')
+      || Object.keys(comparison.sourceSHA256).length !== 53) throw new Error('The upper bearing source contract changed; integrate explicitly')
   const inputs = Object.fromEntries([...Object.keys(comparison.sourceSHA256), adapterPath].map(path => {
     const bytes = readFileSync(new URL(path, root))
     const blob = createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')
@@ -84,7 +84,7 @@ export function runUpperRoofBearingCase(resolved: CurrentDesignResolution, input
   const grid = JSON.parse(readFileSync(new URL('project/str/studies/current-house-grid.json', root), 'utf8')) as { heads: { id: string }[] }
   if (output.schema !== 'str-upper-masonry-roof-bearing-result/1' || !same(output.sourceSHA256, current.comparison.sourceSHA256)
       || !same(output.request, input.comparison) || !record(vertical) || !record(vertical.native)
-      || vertical.native.caseId !== input.caseId || !Array.isArray(vertical.native.heads) || vertical.native.heads.length !== 52
+      || vertical.native.caseId !== input.caseId || !Array.isArray(vertical.native.heads) || vertical.native.heads.length !== 53
       || new Set(vertical.native.heads.map(row => row.id)).size !== 52
       || grid.heads.some(row => !vertical.native.heads.some(head => head.id === row.id))
       || vertical.native.heads.some(row => !six(row.reactionKN_KNm))

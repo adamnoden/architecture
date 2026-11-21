@@ -22,7 +22,7 @@ KERNEL='project/str/studies/vertical_floor_plate.py'
 
 def load_vertical_rc_floor_source(root):
     root=Path(root);parent=load_monolithic_rc_source(root)
-    return {'root':root,'parent':parent,'identities':{**parent['identities'],**{p:hashlib.sha256((root/p).read_bytes()).hexdigest() for p in (METHOD,KERNEL,'project/str/studies/vertical_floor_numerics.py','project/str/studies/vertical-floor-requirements.txt','project/str/studies/vertical_floor_views.py')}}}
+    return {'root':root,'parent':parent,'identities':{**parent['identities'],**{p:hashlib.sha256((root/p).read_bytes()).hexdigest() for p in (METHOD,KERNEL,'project/str/studies/finite_plate_receiver.py','project/str/studies/vertical_floor_numerics.py','project/str/studies/vertical-floor-requirements.txt','project/str/studies/vertical_floor_views.py')}}}
 
 
 def reference_vertical_rc_floor_case(source):
@@ -186,7 +186,8 @@ def _replace_legacy_floor_cards(model):
         'physicalGWasSlabFree':True,'oldFloorAndFinishBudgetsAdded':False,'newFreshUniformLiveIsNetPlateAreaOnly':True}
 
 
-def build_vertical_rc_floor(case,source,retained_point_receivers=None,pre_plate_model_transform=None,portal_builder=None):
+def build_vertical_rc_floor(case,source,retained_point_receivers=None,pre_plate_model_transform=None,portal_builder=None,
+        additional_receiver_builder=None,core_transform=None):
     expected=reference_vertical_rc_floor_case(source)
     if not isinstance(case,dict) or set(case)!=set(expected) or any(case[k]!=expected[k] for k in ('schema','sourceSHA256','geometryPolicy','supportPolicy','use')):raise ValueError('Exact current source-bound verticalfloor case required; no injected result')
     law=case['bearingLaw']
@@ -204,6 +205,11 @@ def build_vertical_rc_floor(case,source,retained_point_receivers=None,pre_plate_
     if pre_plate_model_transform is not None:
         if not callable(pre_plate_model_transform):raise ValueError('An internal source-owned pre-plate transform must be callable')
         pre_plate_model_transform(model)
+    extra_receivers=[]
+    if additional_receiver_builder is not None:
+        if not callable(additional_receiver_builder):raise ValueError('An internal physical receiver builder must be callable')
+        extra_receivers=additional_receiver_builder(model)
+        if not isinstance(extra_receivers,list):raise ValueError('Explicit actual finite receiver list required')
     frame=model['model'];floor_source=source['parent']['house']['joined']['floor'];request=case['monolithicCase']['houseCase']['joinedCase']['floor'];retained=evaluate_retained_components(request['componentCase'],floor_source['retained'])
     bodies=[row['geometry']['bodyRectangleXYMm'] for row in retained['components'] if row['kind']=='first-floor']
     for loop in model['joinedFloor']['floor']['bands']:
@@ -237,12 +243,28 @@ def build_vertical_rc_floor(case,source,retained_point_receivers=None,pre_plate_
         north.append({'wallId':wall,'rectangle':rectangle,'stations':stations,'frame':row})
         rc_rectangles.extend(model['widthEdit']['footprints'][i]['authoredCoreFootprintXYMm'] for i in range(len(model['widthEdit']['footprints'])) if model['widthEdit']['footprints'][i]['pierId'].split('/')[-2]==wall)
     cores=clear_ground_core_rectangles(source);members=grid_member_geometry(model);ground_rectangles=[]
+    if core_transform is not None:
+        if not callable(core_transform):raise ValueError('An internal physical core ownership transform must be callable')
+        cores=core_transform(cores,model)
+    for receiver in extra_receivers:
+        if set(receiver)!={'id','axis','rectangleXYMm','stations','memberNames','centroidZMm','depthMm'} or receiver['axis'] not in (0,1):
+            raise ValueError('Exact actual orthogonal receiver geometry required')
+        rectangle=receiver['rectangleXYMm']
+        if len(rectangle)!=4 or any(type(v) not in (int,float) or not math.isfinite(v) for v in rectangle) or rectangle[2]<=rectangle[0] or rectangle[3]<=rectangle[1]:raise ValueError('Positive finite physical receiver footprint required')
+        for aperture in physical_holes:
+            if intersect(rectangle,aperture['bounds']):raise ValueError('APERTURE_INTERSECTS_STRUCTURAL_PATH: '+aperture['id']+' intersects '+receiver['id'])
+        if len(receiver['stations'])<2 or len(receiver['memberNames'])!=len(receiver['stations'])-1:raise ValueError('Actual receiver stations and member catalogue required')
+        for station in receiver['stations']:
+            node=station['node'];p=list(frame.nodes[node][:2])
+            station['indices']=[port('BEAM/'+node+'/'+str(a),p,node,a) for a in range(3)]
+            if station['u']!=p[receiver['axis']]:raise ValueError('Receiver station differs from actual physical node')
+        holes.append(list(rectangle))
     for row in members.values():
         a,b=row['physicalStartMm'],row['physicalEndMm'];half=row['widthMm']/2
         ground_rectangles.append([min(a[0],b[0]),a[1]-half,max(a[0],b[0]),a[1]+half] if a[0]!=b[0] else [a[0]-half,min(a[1],b[1]),a[0]+half,max(a[1],b[1])])
     cap_rectangles=[[head['xy'][0]-head['capXY'][0]/2,head['xy'][1]-head['capXY'][1]/2,head['xy'][0]+head['capXY'][0]/2,head['xy'][1]+head['capXY'][1]/2] for head in model['grid']['heads']]
     extra=[[],[]]
-    for rectangle in [*rc_rectangles,*[r['rectangle'] for r in north]]:
+    for rectangle in [*rc_rectangles,*[r['rectangle'] for r in north],*[r['rectangleXYMm'] for r in extra_receivers]]:
         for axis in (0,1):extra[axis].extend(rectangle[axis::2])
     for receiver in north:extra[0].extend(row['x'] for row in receiver['stations'])
     receiver_points={};receiver_ids=set()
@@ -282,6 +304,11 @@ def build_vertical_rc_floor(case,source,retained_point_receivers=None,pre_plate_
             member=next(m for m in model['members'].values() if m['kind']=='upstand' and m['a']==a['node'] and m['b']==b['node']);material=model['request']['frameLaw'];e=material['elasticModulusMPa'];g=e/(2*(1+material['poissonRatio']));area=member['breadthMm']*member['depthMm'];iy=member['breadthMm']*member['depthMm']**3/12;phi=12*e*material['flexuralFactor']*iy/(g*material['shearAreaFactor']*area*length**2)
             n,r=_timoshenko_shapes(v,length,phi);wa,rxa,rya=a['indices'];wb,rxb,ryb=b['indices']
             return [(wa,n[0]),(rya,-n[1]/1000),(wb,n[2]),(ryb,-n[3]/1000),(rxa,dy*(1-v)/1000),(rxb,dy*v/1000)] if axis==0 else [(rxa,(1-v)/1000),(rxb,v/1000)] if axis==1 else [(wa,-r[0]),(rya,r[1]/1000),(wb,-r[2]),(ryb,r[3]/1000)]
+        if extra_receivers:
+            from finite_plate_receiver import vertical_receiver_trace
+            for receiver in extra_receivers:
+                coefficients=vertical_receiver_trace(model,receiver,point,axis)
+                if coefficients is not None:return coefficients
         for receiver in north:
             for side,index in (('west',0),('east',-1)):
                 footprint=next(row['authoredCoreFootprintXYMm'] for row in model['widthEdit']['footprints'] if row['pierId'].endswith('/'+receiver['wallId']+'/'+side))
@@ -357,7 +384,8 @@ def build_vertical_rc_floor(case,source,retained_point_receivers=None,pre_plate_
     if max(abs(v) for v in gravity_residual)>1e-5:raise ValueError('Verticalfloorcondensation loses actualgravity force or first moments: '+str(gravity_residual))
     if abs(new_weight-old_weight-assembled['physicalSelfGKN'])>1e-6:raise ValueError('NewphysicalfloorG is duplicated or lost during condensation')
     model['verticalFloor']={'request':case,'operator':operator,'ports':ports,'portTerms':port_terms,'fibres':fibres,'missingGroundContactFibres':missing,'cores':cores,'cells':cells,'holes':holes,'inPlaneStairCreditReservationXYMm':stair_reservation,'principalWetReservation':next(row['bounds'] for row in physical_holes if row['id']=='FLOOR-UNKNOWN/principal-wet-territory'),'openingInventory':[{'id':row['id'],'sourceServiceShape':({'kind':'rectangle','boundsXYMm':stair} if row['id']=='FLOOR-VOID/stair' else row['shape']),'structuralOpeningEnvelopeXYMm':next(item['bounds'] for item in physical_holes if item['id']==row['id']),'policy':'explicitformedrectangularstructuralopeningcomparison' if row['shape']['kind']=='circle' else 'actualsourceaperture'} for row in retained['floorApertures']],
-        'northUpstandStrips':[{'wallId':receiver['wallId'],'rectangleXYMm':receiver['rectangle'],'centroidZMm':frame.nodes[receiver['stations'][0]['node']][2],'depthMm':model['members'][next(name for name,m in model['members'].items() if m['kind']=='upstand' and name.startswith(receiver['wallId']+'/'))]['depthMm']} for receiver in north],'legacyReplacement':ledger,
+        'northUpstandStrips':[{'wallId':receiver['wallId'],'rectangleXYMm':receiver['rectangle'],'centroidZMm':frame.nodes[receiver['stations'][0]['node']][2],'depthMm':model['members'][next(name for name,m in model['members'].items() if m['kind']=='upstand' and name.startswith(receiver['wallId']+'/'))]['depthMm']} for receiver in north],
+        **({'additionalBeamReceivers':extra_receivers} if extra_receivers else {}),'legacyReplacement':ledger,
         'retainedPointReceivers':retained_receiver_traces,
         'portFrameRigidWorkResidual':binding_error,'mass':{'sourceRCAndInfillBeforeSlabKN':old_weight,'newPlatePhysicalSelfGKN':assembled['physicalSelfGKN'],'joinedPhysicalGKN':new_weight,'newPlateAreaM2':assembled['areaM2'],'newPlateCentroidXYMm':assembled['centroidXYMm'],'floorSlabThicknessMm':200,'northUpstandOwnsRemovedStripMaterial':True,'authoredSlabLevelBandsUnionIncluded':True,'sourceSelfGCondensationResidualKN_KNm':gravity_residual}}
     return model

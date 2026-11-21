@@ -28,7 +28,7 @@ from vertical_rc_floor import fresh_net_floor_live_load
 from vertical_floor_views import draw_vertical_floor
 
 METHOD='project/str/studies/floor_section_model.py'
-EXTRA=(METHOD,'project/str/studies/floor_section_successor.py')
+EXTRA=(METHOD,'project/str/studies/floor_section_successor.py','project/str/studies/seated_wet_support.py','project/str/studies/finite_mapped_frame.py')
 
 
 def load_source(root):
@@ -39,7 +39,7 @@ def load_source(root):
 
 def reference_case(source):
     return {'schema':'str-coupled-floor-section-case/1','sourceSHA256':source['identities'],
-        'bearingCase':worked_case(source['bearing']),'thicknessMm':200.,
+        'bearingCase':worked_case(source['bearing']),'thicknessMm':200.,'wetSupport':None,
         'use':'unselected-source0-section-replacement-with-fixed-origin-load-controls'}
 
 
@@ -113,8 +113,16 @@ def run(case,source,name):
     if type(case['thicknessMm']) not in (int,float) or not math.isfinite(case['thicknessMm']) or not 200<=case['thicknessMm']<=250:
         raise ValueError('Explicit finite supported200..250mm slab section required')
     if source['identities']!=load_source(source['root'])['identities']:raise ValueError('Stale floor-section source')
-    bearing=case['bearingCase'];_admit(bearing,source['bearing']);model=_build_base(bearing,source['bearing'])
+    bearing=case['bearingCase'];_admit(bearing,source['bearing'])
+    support=case['wetSupport'];h=json.loads((source['root']/'project/had/studies/water-replan.json').read_text())['model']
+    if support is not None:
+        if case['thicknessMm']!=200:raise ValueError('Seated wet support currently requires actual RC200 slab datum; rebuild beam/slab union explicitly before another depth')
+        from seated_wet_support import build_support,replacement_cores,finish_support,add_live_load,route_free_patch
+    model=_build_base(bearing,source['bearing'],
+        additional_receiver_builder=(lambda m:build_support(m,support,h)) if support is not None else None,
+        core_transform=(lambda cores,m:replacement_cores(cores,support,m)) if support is not None else None)
     section=replace_floor_section(model,source['bearing'],case['thicknessMm']);frame=model['model'];data=model['verticalFloor'];top=section['topZMm']
+    if support is not None:section['finishStairServiceEvidenceApplicable']=False
     h=json.loads((source['root']/'project/had/studies/water-replan.json').read_text())['model']
     native_floor=source['bearing']['base']['vertical']['parent']['house']['joined']['floor'];rectangles=[r for c in model['joinedFloor']['corners'] for r in c['rectangles']]
     boxes=[]
@@ -123,7 +131,7 @@ def run(case,source,name):
     inventory=upper_clear_core_inventory(h,native_floor['retained']['policy']['axes'],rectangles,bearing['seats'],
         bearing['masonryUnitWeightKNPerM3'],bottom_z=top,pad_depth=bearing['padThicknessMm'],rc_boxes=boxes)
     before_upper=_family_wrench(model,model['families']['physical-G'])
-    seats=_add_roof(model,bearing,source['bearing'],inventory);_replace_upper_L_start(model,bearing,top);free=_free_top_load(model,inventory)
+    seats=_add_roof(model,bearing,source['bearing'],inventory);_replace_upper_L_start(model,bearing,top);free=_free_top_load(model,inventory,additional_patch_receiver=(lambda rectangle,pressure,target:route_free_patch(model,rectangle,pressure,target)) if support is not None else None)
     expected_upper=_upper_origin_wrench(model,bearing,inventory,free)
     after_upper=_family_wrench(model,model['families']['physical-G'])
     section['sourceUpperMaterialResidualKN_KNm']=[b-a-e for a,b,e in zip(before_upper,after_upper,expected_upper)]
@@ -132,7 +140,11 @@ def run(case,source,name):
     data['mass'].update(joinedPhysicalGKN=total,appliedPhysicalGKN=total*g_factor,
         upperClearMasonryPhysicalGKN=inventory['masonryPhysicalGKN']-free['unroutedPhysicalGKN'],
         upperBearingPadsPhysicalGKN=sum(s['padPhysicalGKN'] for s in seats))
-    live=fresh_net_floor_live_load(model);captured={};original=frame.solve
+    live=fresh_net_floor_live_load(model)
+    multipliers={'physical-G':g_factor,'native-floor-reconciled':1.,'actual-outer-portal-ground-pressure':1.}
+    if support is not None:
+        add_live_load(model,data['request']['freshUniformLiveKPa']);multipliers['wet-support-Q']=1.
+    captured={};original=frame.solve
     def solve():
         for loads in (model['roofFloorCoupling']['additionalNodalLoads'],live['loads']):
             for node,row in loads.items():frame.load(node,row)
@@ -140,9 +152,9 @@ def run(case,source,name):
     try:
         frame.solve=solve
         portal_source=source['bearing']['base']['vertical']['parent']['house']['joined']['portal']
-        native=solve_continuous_rc_case(model,portal_source,name,{'physical-G':g_factor,'native-floor-reconciled':1.,'actual-outer-portal-ground-pressure':1.})
+        native=solve_continuous_rc_case(model,portal_source,name,multipliers)
     finally:frame.solve=original
-    raw=captured['raw'];multipliers={'physical-G':g_factor,'native-floor-reconciled':1.,'actual-outer-portal-ground-pressure':1.}
+    raw=captured['raw']
     recovered=recovered_member_actions(model,raw,multipliers)
     for key in ('dpc','memberNecessaryScreens','freeFloorPortalStatics','domainReason','bilateralFullContactDomainRejected','freeFloorCompressionOnlyEquilibriumRejected'):native.pop(key,None)
     native.update(schema='str-explicit-section-compatible-frame/1',caseId=name,sourceSHA256=source['identities'],
@@ -159,6 +171,7 @@ def run(case,source,name):
         'plate':{'physicalRecovery':plate,'cellsXYMm':data['cells'],'holesXYMm':data['holes']},
         'headPositions':[{'id':r['id'],'xyMm':r['xy'],'xyzMm':frame.nodes[r['id']]} for r in model['grid']['heads']],
         'normalCoreGeometry':data['cores'],'northUpstandStrips':data['northUpstandStrips'],
+        **({'additionalBeamReceivers':data['additionalBeamReceivers'],'seatedWetSupportGeometry':model['seatedWetSupport']} if support is not None else {}),
         'principalWetReservationXYMm':data['principalWetReservation'],'missingGroundContactFibres':data['missingGroundContactFibres'],
         'missingGroundContactAreaMm2':sum(r['areaMm2'] for r in data['missingGroundContactFibres']),'bearings':bearings}
     bending=recover_plate_bending(vertical);reinforcement=assess_floor_reinforcement(vertical,bearing['masonryCase']['floorReinforcement'])
@@ -170,7 +183,7 @@ def run(case,source,name):
     svg=svg.replace('x="865"','x="900"').replace('</svg>',
         f'<text x="35" y="124">RCsoffit3170 / top{top:g} / centroid{section["midplaneZMm"]:g}mm; retainedFFL3450 leaves{section["remainingSourceFinishDepthMm"]:g}mm finish, unadopted.</text></svg>')
     return {'schema':'str-coupled-floor-section-result/1','sourceSHA256':source['identities'],'request':case,
-        'floorSection':section,'nativeVertical':vertical,'mass':data['mass'],'plateBending':bending,'floorReinforcement':reinforcement,
+        'floorSection':section,**({'seatedWetSupport':finish_support(model,raw,g_factor)} if support is not None else {}),'nativeVertical':vertical,'mass':data['mass'],'plateBending':bending,'floorReinforcement':reinforcement,
         'roofCoupling':roof,'upperMasonry':{'inventory':inventory,'seats':seats,'unroutedPhysicalGKN':free['unroutedPhysicalGKN']},
         'drawings':{'floor-section-floor.svg':svg},'candidateAccepted':False,'completeHouseProof':False,
         'loadControlScope':'The same inherited source-origin facade and roof pressure programme is held as an explicit mechanical control; new aerodynamic tributaries are not adopted.',

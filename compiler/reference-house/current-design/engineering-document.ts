@@ -559,10 +559,18 @@ export async function compileEngineeringDocument(input: unknown) {
     }
     coordinationDiagnostics.push({ code: 'FLOOR_SECTION_NOT_ARCHITECTURALLY_ADOPTED', state: 'uncoordinated-comparisons',
       stages: ['floorSection', 'selectedWaterEvent', 'houseVerticalProfile', 'serviceFloor', 'studyRoomKit'], message: reason })
+    if (engineering.floorSection.seatedWetSupport) coordinationDiagnostics.push({ code: 'SEATED_WET_SUPPORT_NOT_ADOPTED', state: 'uncoordinated-comparisons',
+      stages: ['floorSection', 'occupiedServices', 'selectedWaterEvent', 'studyRoomKit'],
+      message: 'The seated wet beam, original RC piers and finite normal pads use this same floor/roof/foundation model. Empty pier-head recesses remain explicit; bearing material, reinforcement/development, local joints, stair/service access and independent finish/thermal/air/weather closure remain unqualified. Bearing tension, friction and beam-column moment fixity are not credited.' })
     for (const conflict of engineering.floorSection.servicePenetrations.conflicts) {
       coordinationDiagnostics.push({ code: 'UNQUALIFIED_SERVICE_PENETRATION', state: 'uncoordinated-comparisons',
         stages: ['floorSection', 'occupiedServices'],
         message: `${engineering.floorSection.servicePenetrations.sourcePath}#PV.DCRequiredRoutes/${conflict.routeIndex}/${conflict.segmentIndex} intersects actual slab material at ${JSON.stringify(conflict.intervalXYZMm)}. ${conflict.preExistingAt200Mm ? 'This conflict already exists at RC200.' : 'This intersection enters the added slab band.'} No new hole, qualified envelope or service fit is inferred.` })
+    }
+    for (const conflict of engineering.floorSection.servicePenetrations.additionalMaterialConflicts) {
+      coordinationDiagnostics.push({ code: 'UNQUALIFIED_SERVICE_PENETRATION', state: 'uncoordinated-comparisons',
+        stages: ['floorSection', 'occupiedServices'],
+        message: `${engineering.floorSection.servicePenetrations.sourcePath}#PV.DCRequiredRoutes/${conflict.routeIndex}/${conflict.segmentIndex} intersects actual ${conflict.solidId} at ${JSON.stringify(conflict.intervalXYZMm)}. This beam/post material replaces the omitted slab footprint; no new hole, qualified envelope or service fit is inferred.` })
     }
   }
   if (engineering.groundSection) {
