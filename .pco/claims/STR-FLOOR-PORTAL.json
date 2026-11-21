@@ -9,11 +9,11 @@
     "label": "rush-coupled48-20261121"
   },
   "claimedAt": "2026-11-21T00:42:51.058Z",
-  "heartbeatAt": "2026-11-21T00:42:51.058Z",
-  "expiresAt": "2026-11-21T01:27:51.058Z",
+  "heartbeatAt": "2026-11-21T01:17:33.428Z",
+  "expiresAt": "2026-11-21T02:47:33.428Z",
   "checkpoint": {
-    "evidence": "Merged PR1602 at4e3ae570 after all exact-head workflows and fresh canonical preflight. Corrected coupled48 code recovery branch91899443; successor proof/account pending. Actual correctedbaseline all18physicaltraces passes; prior orphan47 receipts invalid/quarantined. Q/pressure inputs now applied, exact owning source frozen0fc3d09e.",
-    "next": "Finish corrected8 nativecases plus3additional signedroof controls and24source35receipts; refresh actual root sourceaccount, savedCLI propagation/reversal, publish integrated successor and require exact CI. Continue genuine receiver and whole-inlet resolution; no STR closure."
+    "evidence": "Merged PR1602 main4e3ae570. Published exact recovery c93b1966 contains joined inlet whole-wet rejection/cache, pressure/body/Q methods, proper physical receiver identity and corrected grid-cap elastic scope. Current48 truth-scope baseline/aperture fresh and source-bound; remaining8/3 proof refresh plus canonical account/saved pipeline pending. Existing24 native35 receipts fresh; no design acceptance or node closure.",
+    "next": "Complete all fresh final-scope8+3 controls, regenerate cage/portable roof receipts and actual root account; run saved API/CLI propagation/reversal and relevant contracts, then shared STR/HAD PR with both leases and exact-head CI/fresh preflight. Preserve adverse design failures and known physical receiver/service/cage/roof obligations."
   },
   "branch": "work/rush-structural-coupling-20261120",
   "predecessor": {
