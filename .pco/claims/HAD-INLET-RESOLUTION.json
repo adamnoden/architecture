@@ -9,8 +9,8 @@
     "label": "rush-had-service-hub-20261121"
   },
   "claimedAt": "2026-11-21T09:44:40.547Z",
-  "heartbeatAt": "2026-11-21T12:20:02.381Z",
-  "expiresAt": "2026-11-21T13:05:02.381Z",
+  "heartbeatAt": "2026-11-21T12:27:34.319Z",
+  "expiresAt": "2026-11-21T13:12:34.319Z",
   "branch": "work/rush-had-joined-source-20261121",
   "predecessor": {
     "leaseId": "b5b027b5-54c3-4568-96ea-1f3d11bdcec6",
@@ -30,8 +30,8 @@
   },
   "pr": 1609,
   "checkpoint": {
-    "evidence": "Published5ddb1786 tree02f4208f parent9dbd639e;7isolatedfiles;16tests+tsc+generator/repo integrity pass;SVG inspected;1607 closed superseded1609",
-    "next": "Root combines frozen HAD source with floor successor; refresh controlled witnesses; bind next jointPR and exact-head CI; planned canonical HAD51 to52 handoff",
-    "blocker": "HAD remains OPEN: old Plant receiver, stored inventory, whole indoor cuts/renewal/independent supports/52-head loads/warm drains/jet/material acceptance unresolved; no independent merge"
+    "evidence": "FINAL71a7248174ef9c9dc92d4d6ae679691f1390556e treecd1cd1e12a278a90fc41a7d753df81d7d0992f85;8affected API/CLI/edit+tsc+strictgen+15family audit pass;prior8source tests pass;80.1jacket retains25insulation;SVG inspected",
+    "next": "HANDOFF to root: acquire HAD52 from fresh main; combine frozen seven HAD files with STR followon; reconcile source account/witnesses; one exact joint-head CI and preflight",
+    "blocker": "HAD OPEN:20/45reference only; Plantreceiver/storedrelease/indoorcuts/renewal/supports/52head loads/warmdrains/jet/material/owner proof unresolved. NoindependentPR or merge"
   }
 }
