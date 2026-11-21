@@ -9,8 +9,8 @@
     "label": "rush-had-service-hub-20261121"
   },
   "claimedAt": "2026-11-21T09:44:40.547Z",
-  "heartbeatAt": "2026-11-21T09:44:40.547Z",
-  "expiresAt": "2026-11-21T10:29:40.547Z",
+  "heartbeatAt": "2026-11-21T10:00:45.202Z",
+  "expiresAt": "2026-11-21T10:45:45.202Z",
   "branch": "work/rush-had-service-hub-20261121",
   "predecessor": {
     "leaseId": "b5b027b5-54c3-4568-96ea-1f3d11bdcec6",
@@ -27,5 +27,11 @@
       "next": "Recover canonical leases/current main; inspect exact-head CI; fresh dual STR/HAD merge-check and expected-head merge; then combined51 and service-hub replan.",
       "blocker": "Execution environment unavailable; exec recovery45s failed. No local preflight or new tests. Handoff release follows checkpoint readback; no packet completion."
     }
+  },
+  "pr": 1607,
+  "checkpoint": {
+    "evidence": "PR1607 d0f8b403; source receiver proof;13focused+8account tests pass",
+    "next": "Review exact-head full CI; integrate only after fresh preflight",
+    "blocker": "Full CI and whole internal wet-room replan remain"
   }
 }
