@@ -9,9 +9,9 @@
     "label": "rush-had-service-hub-20261121"
   },
   "claimedAt": "2026-11-21T09:44:40.547Z",
-  "heartbeatAt": "2026-11-21T10:38:37.978Z",
-  "expiresAt": "2026-11-21T11:23:37.978Z",
-  "branch": "work/rush-had-service-hub-20261121",
+  "heartbeatAt": "2026-11-21T10:59:07.944Z",
+  "expiresAt": "2026-11-21T11:44:07.944Z",
+  "branch": "work/rush-converged-model-20261121",
   "predecessor": {
     "leaseId": "b5b027b5-54c3-4568-96ea-1f3d11bdcec6",
     "generation": 50,
@@ -30,8 +30,8 @@
   },
   "pr": 1607,
   "checkpoint": {
-    "evidence": "PR1607 head5110a9cb; corrected14 tests/source audit pass; whole-Utility dry-cabinet sketch in comment7061365165",
-    "next": "Observe exact-head CI, reconcile moved main and run fresh preflight before coordinator merge; then release",
-    "blocker": "Full CI pending; actual room/wet door/outfalls/source/material/thermal proofs still open"
+    "evidence": "PR1607/c33 source,14tests and room handoff comments7061248282/7061365165; joint branch awaiting combined head/PR",
+    "next": "Bind forthcoming joint PR and exact combined head; fresh preflight before integration",
+    "blocker": "Joint head unpublished; no independent1607merge; actual wet-room/thermal/material proof remains open"
   }
 }
