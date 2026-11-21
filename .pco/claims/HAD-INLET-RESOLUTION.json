@@ -9,12 +9,12 @@
     "label": "rush-20261121-had-convergence"
   },
   "claimedAt": "2026-11-21T12:30:11.345Z",
-  "heartbeatAt": "2026-11-21T13:50:56.848Z",
-  "expiresAt": "2026-11-21T14:35:56.848Z",
+  "heartbeatAt": "2026-11-21T14:06:32.000Z",
+  "expiresAt": "2026-11-21T14:51:32.000Z",
   "checkpoint": {
-    "evidence": "Merged1610 at13147144; follow-on e1b79cdeec78b67038e01fc2b346289301b9fbc3/tree2ad26a10e6bc736cf07c37a5b1fe084025ca0389 is remote-verified. Actual saved ground/inlet stage coupling:65void fails,250void/FFL715 exposes10.2Plant residual0.981438;10.4 restores1.090704 and charges327.403857Lmin.20tests/typecheck/gen/repo pass. FiniteMRA audit preserves1477 blocked-cock case; no zero-water/N+2 universal gate.",
-    "next": "Finish conventional passive service-backboard/actualcut/renewal proposal in allocated NEWfiles; keep whole-floor catchment optional unselected. Integrate frozen STR mechanical/cage closure when ready, one exact joinedCI. NoHADclose untiljoinedpre-sitecriteriaearned.",
-    "blocker": "HADopen: indoorcut operation/renewal/support, singlefault wetting/electricalseparation, material and actual source/store interfaces. Noowner/material/installedapproval."
+    "evidence": "Main13147144 includes1605/1606/1609/1610. VerifiedHAD e1b79cde/tree2ad26a10:20tests+tsc/gen/repo. Archivea787210f recovers electrical helper literals (2tests observed), not integrated.1610#7063811698 records local backboard7tests, unknowntsc. Executor unavailable.",
+    "next": "HANDOFF: recovere1b79cde and local had-full-catchment; verify electrical archive, backboard actual joins, regenerate own receipts, integrate STR closure then exact-headCI. HAD remains open.",
+    "blocker": "Execution environment unavailable; last local board-height patch outcome unknown. Do not merge archive/stale receipts or infer material/owner/installed approval."
   },
   "branch": "work/rush-floor-inlet-convergence-20261121",
   "predecessor": {
