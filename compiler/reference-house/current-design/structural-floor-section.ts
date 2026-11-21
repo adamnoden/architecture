@@ -155,6 +155,9 @@ export function runFloorSectionCase(resolved: CurrentDesignResolution, input: un
       || wet.momentFixityAtBearingsCredited !== false || wet.frictionOrHorizontalBearingRestraintCredited !== false
       || wet.beamCageAccepted !== false || wet.columnCageAccepted !== false
       || wet.padMaterialAndRotationAccepted !== false || wet.localGridCapJointAccepted !== false
+      || !record(wet.plateAttachmentAudit) || wet.plateAttachmentAudit.allPlateAttachmentsAtRealBeamNodes !== true
+      || wet.plateAttachmentAudit.physicalBeamElementCutsAvailable !== true || wet.plateAttachmentAudit.completePhysicalBeamDemandEnvelopeAvailable !== false
+      || !Array.isArray(wet.plateAttachmentAudit.missingAttachmentCoordinatesYMm) || wet.plateAttachmentAudit.missingAttachmentCoordinatesYMm.length !== 0
       || !six(wet.sourceMaterialWrenchResidualKN_KNm) || wet.sourceMaterialWrenchResidualKN_KNm.some(v => Math.abs(v) > 1e-6)
       || !Array.isArray(wet.posts) || wet.posts.length !== 2 || !Array.isArray(wet.contactFibres) || wet.contactFibres.length < 8
       || wet.contactFibres.some((row: unknown) => !record(row) || !finite(row.normalCompressionKN) || row.normalCompressionKN < -1e-7)

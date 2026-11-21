@@ -36,7 +36,8 @@ test('a semantic floor-section edit recompiles actual operators, datums, drawing
   stages.masonryFrame.freshUniformLiveKPa = 2
   stages.masonryFrame.plateLaw = { ...vertical.plateLaw, unitWeightKNPerM3: 27 }
   stages.masonryFrame.floorReinforcement = { ...numerical.floorReinforcement, barDiameterMm: 16, pitchMm: 80 }
-  const document = { ...source, stages: { ...stages, floorSection: { thicknessMm: 200 }, roofPitch: source.stages.roofPitch, studyRoomKit: source.stages.studyRoomKit } }
+  const document = { ...source, stages: { ...stages, floorSection: { thicknessMm: 200,
+    sectionCuts:[{id:'STR/SW/normal-y-450',normal:'y',positionMm:450,intervalMm:[262.5,3262.5]}] }, roofPitch: source.stages.roofPitch, studyRoomKit: source.stages.studyRoomKit } }
   const state = beginEngineeringEdit(document, 'actual-floor-section')
   const baselineBundle = await compileEngineeringDocument(JSON.parse(saveEngineeringEdit(state)))
   const baseline = baselineBundle.engineering.floorSection!
@@ -45,6 +46,8 @@ test('a semantic floor-section edit recompiles actual operators, datums, drawing
   assert.equal(baselineBundle.engineering.masonryFrame, undefined)
   assert.equal(baseline.native.heads.length, 52)
   assert.equal(baseline.floorSection.topZMm, 3370)
+  assert.equal(baseline.sectionCuts.cuts[0]!.id,'STR/SW/normal-y-450')
+  assert.equal(baseline.sectionCuts.stripResistanceAccepted,false)
   const operation = { kind: 'set-floor-section-thickness', assemblyId: editableFloorSectionId, thicknessMm: 250 }
   const edit = applyEngineeringEdit(state, { schema: 'current-engineering-edit/1', units: 'mm', base: engineeringBase(state), operation })
   assert.equal(edit.status, 'applied')
@@ -60,6 +63,8 @@ test('a semantic floor-section edit recompiles actual operators, datums, drawing
   assert.equal(changed.floorSection.steelChordAxialRigidityKN, baseline.floorSection.steelChordAxialRigidityKN)
   assert.notDeepEqual(changed.native.heads, baseline.native.heads)
   assert.notEqual(changed.floorSvg, baseline.floorSvg)
+  assert.notEqual(changed.sectionCuts.cuts[0]!.absoluteBendingPlusTwistingKNm,baseline.sectionCuts.cuts[0]!.absoluteBendingPlusTwistingKNm)
+  assert.equal(changed.sectionCuts.rawPointEnvelopeKNmPerM,(changed.plateBending as {maximumAbsoluteBendingPlusTwistingKNmPerM:number}).maximumAbsoluteBendingPlusTwistingKNmPerM)
   assert.ok(changed.floorSvg.includes('top3420 / centroid3295mm'))
   assert.notEqual(changedBundle.documentIdentity.digest, baselineBundle.documentIdentity.digest)
   assert.equal(changed.evidence.candidateAccepted, false)

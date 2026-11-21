@@ -36,3 +36,25 @@ test('authoring rejects unknown geometry, overhanging pad, wrong units and unsup
   const absent = beginEngineeringEdit(noSupport, 'no-wet')
   assert.equal(applyEngineeringEdit(absent, { ...transaction, base: engineeringBase(absent), operation: { ...operation, offsetMm: 0 } }).status, 'rejected')
 })
+
+test('a stable physical section cut edits atomically, saves and reverses without changing the support or other controls', () => {
+  const source=document()
+  const d={...source,stages:{...source.stages,floorSection:{...source.stages.floorSection,
+    sectionCuts:[{id:'STR/SW/normal-y-450',normal:'y',positionMm:450,intervalMm:[262.5,3262.5]}]}}}
+  const state=beginEngineeringEdit(d,'fixed-cut')
+  const operation={kind:'set-floor-section-cut',assemblyId:editableFloorSectionId,cutId:'STR/SW/normal-y-450',positionMm:460,intervalMm:[262.5,3262.5]}
+  const transaction={schema:'current-engineering-edit/1',units:'mm',base:engineeringBase(state),operation}
+  const result=applyEngineeringEdit(state,transaction)
+  assert.equal(result.status,'applied')
+  const changed=JSON.parse(saveEngineeringEdit(result.state))
+  assert.equal(changed.stages.floorSection.sectionCuts[0].positionMm,460)
+  assert.deepEqual(changed.stages.floorSection.wetSupport,source.stages.floorSection.wetSupport)
+  assert.deepEqual(beginEngineeringEdit(changed,'reload-cut').document,changed)
+  const undo=replayEngineeringEdit(result.state,engineeringBase(result.state),'undo')
+  assert.equal(saveEngineeringEdit(undo.state),saveEngineeringEdit(state))
+  for(const replacement of [{...operation,cutId:'STR/missing'},{...operation,positionMm:NaN},{...operation,intervalMm:[100,0]}]) {
+    const rejected=applyEngineeringEdit(state,{...transaction,operation:replacement})
+    assert.equal(rejected.status,'rejected');assert.equal(rejected.state,state)
+  }
+  assert.equal(applyEngineeringEdit(state,{...transaction,units:'m'}).status,'rejected')
+})
