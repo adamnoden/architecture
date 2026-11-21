@@ -232,6 +232,14 @@ export function prepareCurrentDesignCompile(input: unknown) {
       const { runInletRouteCase } = await import('./inlet-route.js')
       return runInletRouteCase(resolved, input)
     },
+    readInletSourceEnvelopeCase: async () => {
+      const { readInletSourceEnvelopeCase } = await import('./inlet-source-envelope.js')
+      return readInletSourceEnvelopeCase(resolved)
+    },
+    inletSourceEnvelopeCase: async (input: unknown) => {
+      const { runInletSourceEnvelopeCase } = await import('./inlet-source-envelope.js')
+      return runInletSourceEnvelopeCase(resolved, input)
+    },
     readInletCabinetCase: async () => {
       const { readInletCabinetCase } = await import('./inlet-cabinet-copper.js')
       return readInletCabinetCase(resolved)

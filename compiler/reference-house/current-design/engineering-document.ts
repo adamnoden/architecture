@@ -8,6 +8,7 @@ import { readStructuralDpcOriginSettings } from './structural-dpc.js'
 import { compileInletAssembly, readInletAssemblySettings } from './inlet-assembly.js'
 import { readFixedInletSettings } from './inlet-fixed-entry.js'
 import { inletCabinetStageFields } from './inlet-cabinet-copper.js'
+import { inletSourceEnvelopeFields } from './inlet-source-envelope.js'
 import { joinedRcFloorStageFields, savedJoinedRcFloorCase } from './structural-rc-floor.js'
 import { verticalRcFloorStageFields, savedVerticalRcFloorCase } from './structural-vertical-floor.js'
 import { masonryFrameStageFields, savedMasonryFrameCase } from './structural-masonry-frame.js'
@@ -51,9 +52,9 @@ const additionalImplementationFiles = [
   'project/str/studies/distributed_floor_views.py',
   'project/mat/studies/ring-roof-pitch-case.py',
 ] as const
-const stageKeys = ['structuralSuccessor', 'distributedFloor', 'joinedRcFloor', 'verticalRcFloor', 'masonryFrame', 'retainedComponents', 'groundSection', 'houseVerticalProfile', 'serviceFloor', 'roofPitch', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'fixedInlet', 'inletCabinet', 'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit'] as const
+const stageKeys = ['structuralSuccessor', 'distributedFloor', 'joinedRcFloor', 'verticalRcFloor', 'masonryFrame', 'retainedComponents', 'groundSection', 'houseVerticalProfile', 'serviceFloor', 'roofPitch', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'fixedInlet', 'inletCabinet', 'inletSourceEnvelope', 'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit'] as const
 const sourceDatumStages = ['occupiedServices', 'selectedWaterEvent', 'structuralSuccessor', 'distributedFloor', 'joinedRcFloor', 'verticalRcFloor', 'masonryFrame',
-  'retainedComponents', 'roofPitch', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'fixedInlet', 'inletCabinet',
+  'retainedComponents', 'roofPitch', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'fixedInlet', 'inletCabinet', 'inletSourceEnvelope',
   'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit'] as const
 type Settings = Readonly<Record<string, unknown>>
 type EngineeringStages = Partial<Readonly<Record<Exclude<typeof stageKeys[number], 'inletCovers' | 'inletRemovals'>, Settings>>> & {
@@ -200,6 +201,7 @@ function admitStages(value: unknown): EngineeringStages {
     ...(Object.hasOwn(value, 'inletSillInsert') ? { inletSillInsert: settings(value.inletSillInsert, insertFields, 'inlet sill insert') } : {}),
     ...(Object.hasOwn(value, 'inletFault') ? { inletFault: settings(value.inletFault, faultFields, 'inlet fault') } : {}),
     ...(Object.hasOwn(value, 'fixedInlet') ? { fixedInlet: settings(value.fixedInlet, Object.keys(readFixedInletSettings()), 'fixed inlet') } : {}),
+    ...(Object.hasOwn(value, 'inletSourceEnvelope') ? { inletSourceEnvelope: settings(value.inletSourceEnvelope, inletSourceEnvelopeFields, 'inlet source envelope') } : {}),
     ...(Object.hasOwn(value, 'inletCabinet') ? { inletCabinet: settings(value.inletCabinet, inletCabinetStageFields, 'inlet cabinet') } : {}),
     ...(Object.hasOwn(value, 'inletRemovals') ? { inletRemovals: branchSettings(value.inletRemovals, removalFields, 'inlet removal') } : {}),
     ...(Object.hasOwn(value, 'inletCovers') ? { inletCovers: branchSettings(value.inletCovers, inletFields, 'inlet cover') } : {}),
@@ -244,6 +246,7 @@ export async function compileEngineeringDocument(input: unknown) {
     inletSillInsert?: Awaited<ReturnType<typeof compile.inletSillInsert>>
     inletFault?: Awaited<ReturnType<typeof compile.inletFault>>
     fixedInlet?: Awaited<ReturnType<typeof compile.fixedInletCase>>
+    inletSourceEnvelope?: Awaited<ReturnType<typeof compile.inletSourceEnvelopeCase>>
     inletCabinet?: Awaited<ReturnType<typeof compile.inletCabinetCase>>
     inletRemovals?: readonly Awaited<ReturnType<typeof compile.inletRemoval>>[]
     inletCovers?: readonly Awaited<ReturnType<typeof compile.inletCover>>[]
@@ -251,7 +254,7 @@ export async function compileEngineeringDocument(input: unknown) {
     studyRoomKit?: Awaited<ReturnType<typeof compile.studyRoomKit>>
   } = {}
   const manifest: { stage: string; settingsDigest: string; resultDigest: string; controls: readonly string[]; dependsOn: readonly string[];
-    applicability?: { state: 'withheld-for-stage-change'; controllingStage: 'roofPitch' | 'groundSection' | 'joinedRcFloor' | 'verticalRcFloor' | 'masonryFrame' | 'inletCabinet';
+    applicability?: { state: 'withheld-for-stage-change'; controllingStage: 'roofPitch' | 'groundSection' | 'joinedRcFloor' | 'verticalRcFloor' | 'masonryFrame' | 'inletCabinet' | 'inletSourceEnvelope';
       additionalControllingStages?: readonly string[]; reason: string } }[] = []
   const coordinationDiagnostics: { code: string; state: 'uncoordinated-comparisons'; stages: readonly string[]; message: string }[] = []
   const recordResult = (stage: string, settings: unknown, result: unknown, upstream: readonly string[] = []) => {
@@ -482,6 +485,25 @@ export async function compileEngineeringDocument(input: unknown) {
     coordinationDiagnostics.push({ code: 'COPPER_CABINET_SERVICES_NOT_COORDINATED', state: 'uncoordinated-comparisons',
       stages: ['inletCabinet', ...affected.map(row => row.stage)], message: reason })
 
+  }
+  if (stages.inletSourceEnvelope) {
+    const request = await compile.readInletSourceEnvelopeCase()
+    engineering.inletSourceEnvelope = await compile.inletSourceEnvelopeCase({ ...request.sourceEnvelope,
+      settings: { ...request.sourceEnvelope.settings, ...stages.inletSourceEnvelope } })
+    recordResult('inletSourceEnvelope', stages.inletSourceEnvelope, engineering.inletSourceEnvelope)
+    const reason = 'The source-envelope comparison authors boundary restrictions and a whole internal service-hub replacement. Neither the retained occupied network nor earlier inlet/cabinet outputs include that source or room; their former fault and operating claims are withheld.'
+    const previousStages = new Set(['occupiedServices', 'inletSillInsert', 'inletFault', 'fixedInlet', 'inletCabinet', 'inletRemovals', 'inletCovers', 'inletAssembly'])
+    const affected = manifest.filter(row => previousStages.has(row.stage.split('/')[0]))
+    for (const row of affected) {
+      const previous = row.applicability
+      row.dependsOn = [...new Set([...row.dependsOn, 'inletSourceEnvelope'])]
+      row.applicability = { state: 'withheld-for-stage-change', controllingStage: 'inletSourceEnvelope',
+        ...(previous ? { additionalControllingStages: [...new Set([previous.controllingStage,
+          ...(previous.additionalControllingStages ?? [])])].filter(value => value !== 'inletSourceEnvelope') } : {}),
+        reason: [previous?.reason, reason].filter(Boolean).join(' ') }
+    }
+    coordinationDiagnostics.push({ code: 'INLET_SOURCE_AND_ROOM_REPLAN_NOT_COORDINATED', state: 'uncoordinated-comparisons',
+      stages: ['inletSourceEnvelope', ...affected.map(row => row.stage)], message: reason })
   }
   if (stages.studyRoomKit) {
     engineering.studyRoomKit = await compile.studyRoomKit({ schema: 'ias-study-room-kit-case/1', units: 'mm', ...stages.studyRoomKit })

@@ -1,0 +1,370 @@
+{
+  "schema": "had-inlet-source-envelope-result/1",
+  "state": "existing-whole-arrangement-rejected",
+  "source": {
+    "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
+    "bindingDigest": "4e2751de0b999a3f05efcce0c5a20d28435a0824362a88b3898bcaa80d2ab3e8",
+    "inputs": {
+      "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
+      "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
+      "project/had/studies/south-inlet-relief.json": "f6e424b744bb7e8cac26a8676ea7a358cb137d38",
+      "project/had/studies/south-utility-inlet.json": "1298b8e175326fa1f91ca753da52a168b858758f",
+      "project/had/studies/current-house-services.json": "e649805e78244527fe6498b516fa5f23734ac5ea"
+    },
+    "methods": {
+      "compiler/reference-house/current-design/inlet-source-envelope.ts": "d74831282eda939ffc276526e61fad81ffa7db06",
+      "project/had/studies/south-inlet-relief-hydraulics.mjs": "1cb8dd67e832ce2986f042844122a39e625fef93",
+      "compiler/reference-house/current-design/inlet-cabinet-copper.ts": "34d774e3ccd4ff0bac3dcaef63dfa5cdedff6ca4"
+    }
+  },
+  "settings": {
+    "apertureNominalMm": 9,
+    "apertureToleranceMm": 0.1,
+    "sourceMaximumTotalBar": 9,
+    "sourceMinimumDynamicBar": 3.5,
+    "requiredEachLmin": 50,
+    "requiredResidualBar": 1,
+    "additionalNetworkLossBar": 0.5,
+    "dischargeCoefficientComparison": 0.62
+  },
+  "bound": {
+    "method": "Incompressible steady energy upper bound Q<=A sqrt(2 p_total/rho), Cd<=1; no upstream velocity-head double count.",
+    "minimumDensityKgM3": 990,
+    "maximumDensityKgM3ForDeliveryLoss": 1000,
+    "declaredWaterDomainC": [
+      0,
+      40
+    ],
+    "densityDomainQualification": "authored-water-comparison-bound",
+    "maximumPressureIncludesStaticDynamicElevationAndTransientHead": true,
+    "installedSourceMaximumProved": false,
+    "minimumDiameterMm": 8.9,
+    "maximumDiameterMm": 9.1,
+    "maximumEachLmin": 166.395881,
+    "sourceMinimumIsAtSimultaneousDemand": true,
+    "deliveryCdIsComparisonNotGuaranteedLowerBound": true
+  },
+  "branches": [
+    {
+      "id": "utility",
+      "seriesPath": [
+        "public utility source",
+        "Lodge/utility/independent upstream cut",
+        "Lodge/utility/accessible fixed metal restriction",
+        "utility/joint-free replaceable wall spool",
+        "SERVICEHUB/utility/independent indoor house cut",
+        "utility/supported upper network and local appliance cuts"
+      ],
+      "sourceEntryAxisMm": [
+        10080,
+        429.5,
+        478.39
+      ],
+      "retainedUpperDestinationMm": [
+        10760,
+        1250,
+        1000
+      ],
+      "internalHouseCut": {
+        "required": true,
+        "suppliedByLodge": false,
+        "suppliedByApplianceStop": false,
+        "location": "unresolved-internal-wet-service-hub",
+        "usableOrdinaryAccessProved": false
+      },
+      "maximumLimitedEachLmin": 166.395881,
+      "requiredDeliveryEachLmin": 50,
+      "pressureLossComparisonBar": 2.333911,
+      "residualPressureComparisonBar": 0.666089,
+      "minimumResidualScreen": false,
+      "dischargeCoefficientQualified": false,
+      "existingReceiver": {
+        "lowerBore": {
+          "outer": [
+            10080,
+            -90,
+            190
+          ],
+          "inner": [
+            10080,
+            429.5,
+            233.29166666666666
+          ],
+          "radius": 55
+        },
+        "maximumScreenedLmin": 101.179931,
+        "crownOnlyCapacityLmin": 122.400407,
+        "limitedFault": {
+          "entranceHeadMm": 225.330857,
+          "crownReserveMm": -7.902984,
+          "staticHeadReserveMm": -75.330857,
+          "receiverWaterZMm": 72.80195,
+          "freeDropReserveMm": -14.46865,
+          "necessaryChannelAndReceiverScreen": false
+        },
+        "requiredDemandControl": {
+          "entranceHeadMm": 101.630681,
+          "crownReserveMm": 22.322168,
+          "staticHeadReserveMm": 48.369319,
+          "receiverWaterZMm": 31.006766,
+          "freeDropReserveMm": 27.326534,
+          "necessaryChannelAndReceiverScreen": true
+        },
+        "fullBoreWithoutRestriction": {
+          "maximumLmin": 1364.610189,
+          "entranceHeadMm": null,
+          "crownReserveMm": null,
+          "staticHeadReserveMm": null,
+          "receiverWaterZMm": 305.26513,
+          "freeDropReserveMm": -246.93183,
+          "necessaryChannelAndReceiverScreen": false
+        }
+      },
+      "feasibleNominalApertureIntervalMm": {
+        "minimumForDelivery": 9.350253,
+        "maximumForExistingReceiver": 6.99606,
+        "existsForNecessaryScreens": false,
+        "optimisticCdOneMinimumForDelivery": 7.383656,
+        "optimisticCdOneIntervalExists": false,
+        "verdict": "reject-existing-receiver-plus-demand-envelope"
+      },
+      "minimumSourceDynamicBarForExistingReceiverComparison": 7.975006
+    },
+    {
+      "id": "plant",
+      "seriesPath": [
+        "public utility source",
+        "Lodge/plant/independent upstream cut",
+        "Lodge/plant/accessible fixed metal restriction",
+        "plant/joint-free replaceable wall spool",
+        "SERVICEHUB/plant/independent indoor house cut",
+        "plant/supported upper network and local appliance cuts"
+      ],
+      "sourceEntryAxisMm": [
+        10285,
+        429.5,
+        598.39
+      ],
+      "retainedUpperDestinationMm": [
+        10222.5,
+        3842.9,
+        2260
+      ],
+      "internalHouseCut": {
+        "required": true,
+        "suppliedByLodge": false,
+        "suppliedByApplianceStop": false,
+        "location": "unresolved-internal-wet-service-hub",
+        "usableOrdinaryAccessProved": false
+      },
+      "maximumLimitedEachLmin": 166.395881,
+      "requiredDeliveryEachLmin": 50,
+      "pressureLossComparisonBar": 2.333911,
+      "residualPressureComparisonBar": 0.666089,
+      "minimumResidualScreen": false,
+      "dischargeCoefficientQualified": false,
+      "existingReceiver": {
+        "lowerBore": {
+          "outer": [
+            10285,
+            -90,
+            290
+          ],
+          "inner": [
+            10285,
+            429.5,
+            333.2916666666667
+          ],
+          "radius": 55
+        },
+        "maximumScreenedLmin": 101.179931,
+        "crownOnlyCapacityLmin": 122.400407,
+        "limitedFault": {
+          "entranceHeadMm": 225.330857,
+          "crownReserveMm": -7.902984,
+          "staticHeadReserveMm": -75.330857,
+          "receiverWaterZMm": 172.80195,
+          "freeDropReserveMm": -14.46865,
+          "necessaryChannelAndReceiverScreen": false
+        },
+        "requiredDemandControl": {
+          "entranceHeadMm": 101.630681,
+          "crownReserveMm": 22.322168,
+          "staticHeadReserveMm": 48.369319,
+          "receiverWaterZMm": 131.006766,
+          "freeDropReserveMm": 27.326534,
+          "necessaryChannelAndReceiverScreen": true
+        },
+        "fullBoreWithoutRestriction": {
+          "maximumLmin": 1364.610189,
+          "entranceHeadMm": null,
+          "crownReserveMm": null,
+          "staticHeadReserveMm": null,
+          "receiverWaterZMm": 405.26513,
+          "freeDropReserveMm": -246.93183,
+          "necessaryChannelAndReceiverScreen": false
+        }
+      },
+      "feasibleNominalApertureIntervalMm": {
+        "minimumForDelivery": 9.350253,
+        "maximumForExistingReceiver": 6.99606,
+        "existsForNecessaryScreens": false,
+        "optimisticCdOneMinimumForDelivery": 7.383656,
+        "optimisticCdOneIntervalExists": false,
+        "verdict": "reject-existing-receiver-plus-demand-envelope"
+      },
+      "minimumSourceDynamicBarForExistingReceiverComparison": 7.975006
+    }
+  ],
+  "states": [
+    {
+      "id": "ordinary-both-open",
+      "sourceFed": true,
+      "eachLmin": 50,
+      "result": "unqualified-delivery-and-internal-access",
+      "obligation": "Prove simultaneous two-branch source curve, actual restriction Cd, full valves and network losses; no double allocation of one source."
+    },
+    {
+      "id": "downstream-house-cut-closed",
+      "sourceFed": true,
+      "eachLmin": 0,
+      "result": "full-source-static-pressure-retained",
+      "obligation": "A restriction does not reduce shut-in pressure; all pressure components still require the complete maximum pressure and transient envelope."
+    },
+    {
+      "id": "one-wall-spool-ruptures-primary-mouth-blocked",
+      "sourceFed": true,
+      "eachLmin": 166.395881,
+      "result": "reject-existing-channel",
+      "obligation": "Actual low receiver, reverse sleeve, impact shield, support and wet seams still require joined proof."
+    },
+    {
+      "id": "downstream-indoor-cut-or-upper-joint-fault",
+      "sourceFed": true,
+      "eachLmin": 166.395881,
+      "result": "reject-uncontained-upper-network",
+      "obligation": "Low entry containment does not catch the relocated house cut or upper joints. Replan the complete internal wet station; do not reuse the rejected tall cabinet."
+    },
+    {
+      "id": "both-branches-rupture",
+      "sourceFed": true,
+      "eachLmin": 166.395881,
+      "combinedLmin": 332.791762,
+      "result": "separate-outfall-and-common-site-proof-required",
+      "obligation": "Charge both flows independently. One receiving depression, obstruction or site flood cannot be credited twice."
+    },
+    {
+      "id": "secondary-high-or-submerged",
+      "sourceFed": true,
+      "eachLmin": 166.395881,
+      "result": "reject-tailwater-outside-envelope",
+      "obligation": "The free-drop model is inapplicable; no pressure-backed or submerged outlet credit."
+    },
+    {
+      "id": "both-reliefs-blocked",
+      "sourceFed": true,
+      "eachLmin": 166.395881,
+      "result": "reject-unattended-event",
+      "obligation": "Finite storage is time to spill, not isolation. No manual response time is assigned."
+    },
+    {
+      "id": "restriction-missing-eroded-or-bypassed",
+      "sourceFed": true,
+      "eachLmin": 1364.610189,
+      "result": "reject-limited-flow-credit",
+      "obligation": "Use full-bore source bound, tamper/effective-bore inspection and no bypass. A nameplate flow setting is insufficient."
+    },
+    {
+      "id": "upstream-of-restriction-rupture",
+      "sourceFed": true,
+      "eachLmin": null,
+      "result": "separate-boundary-wet-territory-required",
+      "obligation": "Keep restriction immediately after the Lodge cut and all upstream joints outside the house. Public-side flow is not bounded by this aperture; independent provider action remains required."
+    },
+    {
+      "id": "own-branch-isolated-sibling-live",
+      "sourceFed": false,
+      "eachLmin": 0,
+      "result": "own-branch-cold-work-only",
+      "obligation": "Close own Lodge and house cuts; isolate/drain the upper trapped network and prove zero pressure. Keep sibling enclosure and supports independent."
+    },
+    {
+      "id": "restriction-or-house-cut-renewal",
+      "sourceFed": false,
+      "eachLmin": 0,
+      "result": "two-sided-cold-isolation-required",
+      "obligation": "Close Lodge/provider side as applicable and isolate/drain house side; support both pipe ends. Restriction removal temporarily destroys the flow bound; prohibit charging until verified reinstatement."
+    },
+    {
+      "id": "wall-spool-renewal-inward-and-outward",
+      "sourceFed": false,
+      "eachLmin": 0,
+      "result": "retained-pan-inward-conflict-not-discharged",
+      "obligation": "The prior permanent-pan and ordinary operator/tool/rest conflicts remain. New room geometry must prove both actual extraction directions or explicitly reject one with a complete ordinary alternative."
+    },
+    {
+      "id": "frost-or-loss-of-warmth",
+      "sourceFed": false,
+      "eachLmin": null,
+      "result": "whole-route-thermal-proof-required",
+      "obligation": "Restriction, Lodge, spool and room drains must stay serviceable through the declared cold event. Permanent open spill slots do not establish a warm enclosure; no trace heating, antifreeze or moving flap is invented."
+    }
+  ],
+  "architectureDecision": {
+    "prefer": "internal-wet-utility-and-service-hub-replan",
+    "reject": [
+      "further-tall-cabinet-glands-and-local-steel",
+      "adopt-low-box-without-genuine-internal-house-cuts",
+      "default-east-annex"
+    ],
+    "retainedPlantCylinderPathMm": [
+      [
+        9830,
+        4250
+      ],
+      [
+        10500,
+        4250
+      ],
+      [
+        10500,
+        4575
+      ],
+      [
+        12500,
+        4575
+      ]
+    ],
+    "retainedBufferStationMm": [
+      10125,
+      5000,
+      650,
+      650
+    ],
+    "retainedD2OutfallMm": [
+      12350,
+      2500,
+      -1850
+    ],
+    "retainedUtilityElectricalFieldMm": [
+      9697,
+      1750,
+      1000,
+      650
+    ],
+    "rationale": "The current small lobby is circulation, the Utility valve bay already contains rack/waste duties, and the plant control reservation is occupied. None is spare room. Replan the whole Utility wet station and separate its electrical task before adding footprint, roof, openings and another frost boundary.",
+    "newRoomGeometryAuthored": false,
+    "electricalRelocationSelected": false,
+    "annexSelected": false
+  },
+  "materials": {
+    "valve": "ConexS701 DZR28",
+    "knownPolymerItemsAcrossTwoValves": 6,
+    "ownerExceptionsApproved": 0,
+    "fixedRestrictionAllConstituentsQualified": false,
+    "potableApprovalQualified": false
+  },
+  "selected": false,
+  "preSiteArrangementComplete": false,
+  "installedAcceptance": false
+}
