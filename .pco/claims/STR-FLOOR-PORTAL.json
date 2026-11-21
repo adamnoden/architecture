@@ -9,8 +9,8 @@
     "label": "structure-review-seated-wet-beam"
   },
   "claimedAt": "2026-11-21T12:29:12.173Z",
-  "heartbeatAt": "2026-11-21T13:31:42.683Z",
-  "expiresAt": "2026-11-21T14:16:42.683Z",
+  "heartbeatAt": "2026-11-21T14:05:25.000Z",
+  "expiresAt": "2026-11-21T14:50:25.000Z",
   "branch": "work/rush-floor-inlet-convergence-20261121",
   "predecessor": {
     "leaseId": "112c4e59-d3c1-4931-a15b-ba4d2433a70f",
@@ -33,8 +33,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Prepared PR1610 remains frozen pending exact health/root preflight. Durable separate WIP remote d9d04b8dbaef7b6f4543194a93a30c68a9a32d31 tree c40e5119c0f6a5539e78923614a8a5e332e18b5a on work/rush-seated-wet-beam-20261121 now preserves genuinely re-executed vertical36 ten, upper53 six, masonry49 eight, distributed96, north24, continuous portal seven and actual floor/cage consumers.23 focused tests+2 semantic edits+tsc pass. Frozen actual finite seated methods integrate in floorSection57. Wet quadrature8 worker was SIGKILLed after5 uncheckpointed states; no partial proof promoted. Driver now stores full exact-source/request/checksum-bound native responses with adversarial validation; missing states must execute.",
-    "next": "Finish already-running monolithic96 and joined/RC-house/corner/foundation/lower owning producers, then resume wet8state programme serially with full durable per-case captures and complete signed pressure controls. Preserve immutable historical receipts. Reconcile source-account consumers, validate saved compiler pad edit/undo and drawings, then separate ready PR only after prepared1610 merge. No design or owner acceptance fabricated."
+    "evidence": "Durable WIP d9d04b8dbaef7b6f4543194a93a30c68a9a32d31 tree c40e5119 on work/rush-seated-wet-beam-20261121. PR1610 merged main131471. Serial8 wet controls succeeded locally; final receipts/helpers unpublished after executor became unavailable. STR remains open.",
+    "next": "Handoff: recover d9d04b8 from fresh main; verify local FULL source/request/checksums if available. Finish700/500/roof3, actual floor/cage closures, source account, saved API and exact CI.",
+    "blocker": "Execution environment unavailable; no filesystem, native solver or test access."
   },
   "pr": 1610
 }
