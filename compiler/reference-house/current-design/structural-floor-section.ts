@@ -134,6 +134,20 @@ export function runFloorSectionCase(resolved: CurrentDesignResolution, input: un
     || !record(output.drawings) || !output.drawings['floor-section-floor.svg']?.startsWith('<svg')) {
     throw new Error('Floor-section result lost current source, actual datums, 52-head balance or explicit proof limits')
   }
+  const wet = output.seatedWetSupport
+  if (input.comparison.wetSupport !== null && input.comparison.wetSupport !== undefined) {
+    if (!record(wet) || !same(wet.settings, input.comparison.wetSupport)
+      || wet.physicalAcceptance !== false || wet.candidateAccepted !== false
+      || wet.momentFixityAtBearingsCredited !== false || wet.frictionOrHorizontalBearingRestraintCredited !== false
+      || wet.beamCageAccepted !== false || wet.columnCageAccepted !== false
+      || wet.padMaterialAndRotationAccepted !== false || wet.localGridCapJointAccepted !== false
+      || !six(wet.sourceMaterialWrenchResidualKN_KNm) || wet.sourceMaterialWrenchResidualKN_KNm.some(v => Math.abs(v) > 1e-6)
+      || !Array.isArray(wet.posts) || wet.posts.length !== 2 || !Array.isArray(wet.contactFibres) || wet.contactFibres.length < 8
+      || wet.contactFibres.some((row: unknown) => !record(row) || !finite(row.normalCompressionKN) || row.normalCompressionKN < -1e-7)
+      || section.finishStairServiceEvidenceApplicable !== false) {
+      throw new Error('Actual seated wet support lost authored geometry, source wrench, unilateral contact or explicit acceptance limits')
+    }
+  } else if (wet !== undefined) throw new Error('An unauthored wet support appeared in the current floor result')
   const services = JSON.parse(readFileSync(new URL('project/mat/studies/whole-house-service-baseline.json', root), 'utf8')) as {
     PV: { DCRequiredRoutes: number[][][] }
   }
