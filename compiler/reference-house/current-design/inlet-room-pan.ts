@@ -1,3 +1,4 @@
+export const inletStaticGravityMps2 = 9.81
 type Point = readonly number[]
 type Wrench = { Fx: number; Fy: number; Fz: number; Mx: number; My: number; Mz: number }
 const cross = (a: Point, b: Point) => [a[1]*b[2]-a[2]*b[1], a[2]*b[0]-a[0]*b[2], a[0]*b[1]-a[1]*b[0]]
@@ -21,13 +22,13 @@ function clipUnderWater(points: readonly Point[], level: number) {
 function faceWaterLoad(face:{id:string;cornersMm:readonly Point[];normal:Point},level:number,origin:Point) {
   let force=0;const weighted=[0,0,0]
   for(const t of triangles(clipUnderWater(face.cornersMm,level))) {
-    const area=triangleArea(t),p=t.map(v=>9.80665*(level-v[2])/1000),sum=p.reduce((a,b)=>a+b,0)
+    const area=triangleArea(t),p=t.map(v=>inletStaticGravityMps2*(level-v[2])/1000),sum=p.reduce((a,b)=>a+b,0)
     force+=area*sum/3
     for(let k=0;k<3;k++)weighted[k]+=area/12*(sum*t.reduce((s,v)=>s+v[k],0)+t.reduce((s,v,i)=>s+p[i]*v[k],0))
   }
   const f=face.normal.map(n=>n*force),m=cross(weighted.map((v,i)=>(v-origin[i]*force)/1000),face.normal)
   return {id:face.id+'/water',originMm:origin,wrenchKN_KNm:{Fx:f[0],Fy:f[1],Fz:f[2],Mx:m[0],My:m[1],Mz:m[2]},
-    maximumHydrostaticKPa:Math.max(0,...face.cornersMm.map(p=>9.80665*(level-p[2])/1000))}
+    maximumHydrostaticKPa:Math.max(0,...face.cornersMm.map(p=>inletStaticGravityMps2*(level-p[2])/1000))}
 }
 
 /** Authored piecewise-planar floor-pan reservation. Each cell has exact slope;
@@ -83,8 +84,9 @@ export function inletRoomPan(input: { roomPlanMm: readonly number[]; outletXmm: 
         meanH = h00 - sx * dx / 2 - sy * dy / 2, litres = c.projectedAreaM2 * meanH,
         cx = a[0] + (h00 * dx / 2 - sx * dx ** 2 / 3 - sy * dx * dy / 4) / meanH,
         cy = a[1] + (h00 * dy / 2 - sy * dy ** 2 / 3 - sx * dx * dy / 4) / meanH,
-        fz = -litres * 9.80665 / 1000
-      return { id: c.id + '/water-to-floor-upper', massKg: litres, originMm: centroid,
+        fz = -litres * inletStaticGravityMps2 / 1000
+      return { id: c.id + '/water-to-floor-upper', massKg: litres,
+        massCentroidXYZMm:[cx,cy,input.floorMm-meanH/2-(sx*sx*dx*dx+sy*sy*dy*dy)/(24*meanH)],originMm: centroid,
         wrenchKN_KNm: { Fx: 0, Fy: 0, Fz: fz, Mx: (cy - centroid[1]) / 1000 * fz, My: -(cx - centroid[0]) / 1000 * fz, Mz: 0 } }
     }) : []
   const floorFaces=cells.map(c=>{const normal=cross(subtract(c.cornersMm[1],c.cornersMm[0]),subtract(c.cornersMm[3],c.cornersMm[0])),length=Math.hypot(...normal)
@@ -119,9 +121,10 @@ export function inletRoomPan(input: { roomPlanMm: readonly number[]; outletXmm: 
     stockLoads=(rows:typeof faces)=>rows.map(face=>{
       const pieces=triangles(face.cornersMm),area=pieces.reduce((sum,t)=>sum+triangleArea(t),0),
         centre=[0,1,2].map(k=>pieces.reduce((sum,t)=>sum+triangleArea(t)*t.reduce((s,p)=>s+p[k],0)/3,0)/area),
-        mass=area*input.metalMm/1000*8960,fz=-mass*9.80665/1000
-      return {id:face.id+'/sheet-G',massKg:mass,developedAreaM2:area,originMm:centroid,
-        wrenchKN_KNm:{Fx:0,Fy:0,Fz:fz,Mx:(centre[1]-centroid[1])/1000*fz,My:-(centre[0]-centroid[0])/1000*fz,Mz:0}}
+        mass=area*input.metalMm/1000*8960,fz=-mass*inletStaticGravityMps2/1000
+      const massCentre=centre.map((v,i)=>v+face.normal[i]*input.metalMm/2)
+      return {id:face.id+'/sheet-G',massKg:mass,massCentroidXYZMm:massCentre,developedAreaM2:area,originMm:centroid,
+        wrenchKN_KNm:{Fx:0,Fy:0,Fz:fz,Mx:(massCentre[1]-centroid[1])/1000*fz,My:-(massCentre[0]-centroid[0])/1000*fz,Mz:0}}
     }),
     sheetLoads=stockLoads(faces),upperStockLoads=stockLoads(lowerSettingFaces),
     lowerPorts=flowInterfaceFaces.map(f=>({...f,cornersMm:f.cornersMm.map(p=>[p[0],p[1],p[2]-input.settingMm])})),
@@ -165,7 +168,8 @@ export function inletRoomPan(input: { roomPlanMm: readonly number[]; outletXmm: 
     loadOrigins:sheetLoads,
     upperMetalStockCase:{id:'pan-bed-low-fixed-crest',faces:lowerSettingFaces,loadOrigins:upperStockLoads,
       summedWrenchKN_KNm:sumWrenches(upperStockLoads),concurrentWithNominalStock:false},hydrostaticCases,
-    nominalPanMetalAndReturnsAdmitted:false,metalBendsSeamsSeatsFrameInsulationAndFloorStockKg:null,
+    sheetStockModel:'Uniform2mm developed prisms outside their flow faces; actual bends, seam/corner intersections, tolerances and fabricated centroids remain unqualified.',
+    staticGravityMps2:inletStaticGravityMps2,nominalPanMetalAndReturnsAdmitted:false,metalBendsSeamsSeatsFrameInsulationAndFloorStockKg:null,
     waterLoadOrigins: water, independentWaterWeightControlNotAdditionalToHydrostaticMetalLoads:true,
     wholeFaultMaximumLoadKg: null, supportAnd52HeadTransferQualified: false,
     diagnostics: [...(!waterDomain ? ['INLET_ROOM_PAN_CROSSES_OVERFLOW_PLANE_WATER_INTEGRAL_UNSUPPORTED'] : []), ...(lower < 0 || upper < 0 ? ['INLET_ROOM_GRADED_PAN_EXCEEDS_ACTUAL_ZONE'] : []),
@@ -194,20 +198,21 @@ export function inletClosedOutfall(input:{id:string;axisXMm:number;wallInnerYMm:
     volume=s.widthMm*h*(y-yy)/1e9,waterKg=volume*1000,
     stockKg=((s.widthMm+2*s.metalMm)*(h+2*s.metalMm)-s.widthMm*h)*(y-yy)/1e9*8960,
     centre=[s.axisXMm,(y+yy)/2,(z+zz)/2+h/2],
-    gravity=(id:string,mass:number)=>{const fz=-mass*9.80665/1000
-      return{id,massKg:mass,originMm:s.originMm,wrenchKN_KNm:{Fx:0,Fy:0,Fz:fz,Mx:(centre[1]-s.originMm[1])/1000*fz,My:-(centre[0]-s.originMm[0])/1000*fz,Mz:0}}},
+    gravity=(id:string,mass:number,deltaZ=0)=>{const fz=-mass*inletStaticGravityMps2/1000
+      return{id,massKg:mass,massCentroidXYZMm:[centre[0],centre[1],centre[2]+deltaZ],originMm:s.originMm,wrenchKN_KNm:{Fx:0,Fy:0,Fz:fz,Mx:(centre[1]-s.originMm[1])/1000*fz,My:-(centre[0]-s.originMm[0])/1000*fz,Mz:0}}},
     cases=Object.entries(s.waterStageComparisonsMm).map(([id,stage])=>{
       const metal=metalFaces.map(f=>faceWaterLoad(lower(f),stage,s.originMm)),ports=interfaces.map(f=>faceWaterLoad(lower(f),stage,s.originMm))
       return{id,declaredStageMm:stage,metalFaceLoads:metal,openInterfaceLoads:ports,
         summedMetalWrenchKN_KNm:sumWrenches(metal),summedOpenInterfaceWrenchKN_KNm:sumWrenches(ports),
         summedClosureWrenchKN_KNm:sumWrenches([...metal,...ports]),fullWaterPrism:stage>=Math.max(z,zz)+h-s.settingMm,
-        maximumInnerPressureKPa:Math.max(0,9.80665*(stage-Math.min(z,zz)+s.settingMm)/1000),
+        maximumInnerPressureKPa:Math.max(0,inletStaticGravityMps2*(stage-Math.min(z,zz)+s.settingMm)/1000),
         physicalPressureTransitionSealAndSupportQualified:false}
     })
   return{id:s.id,clearCornersMm:[a,b,c,d,...[a,b,c,d].map(up)],metalFaces,hydraulicInterfaces:interfaces,
     material:'2mm copper closed-body reference; complete weather jacket/insulation, corrosion, seams, bends and support stock unqualified',
-    bodyStockGravity:gravity(s.id+'/copper-body-G',stockKg),fullWaterInventoryControl:gravity(s.id+'/full-water-control',waterKg),
-    fullWaterGravityIsNotAdditionalToHydrostaticMetalLoads:true,hydrostaticCases:cases,
+    bodyStockGravity:gravity(s.id+'/copper-body-G',stockKg),lowerSettingClearCornersMm:[a,b,c,d,...[a,b,c,d].map(up)].map(p=>[p[0],p[1],p[2]-s.settingMm]),
+    fullWaterInventoryControl:gravity(s.id+'/full-water-control',waterKg,-s.settingMm),
+    staticGravityMps2:inletStaticGravityMps2,fullWaterGravityIsNotAdditionalToHydrostaticMetalLoads:true,hydrostaticCases:cases,
     installedResistanceOr52HeadTransferQualified:false}
 }
 

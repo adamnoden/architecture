@@ -36,7 +36,7 @@ test('exact pressure on every inclined/vertical face balances independently inte
     assert.ok(Math.abs(hydro.summedSurfaceWrenchKN_KNm[k]-columns[k])<1e-9,k)
   const sum=pan.waterLoadOrigins.reduce((s,c)=>s+c.massKg,0)
   assert.ok(Math.abs(sum-pan.afterLowerSettingGrossWaterToFloorUpperKg!)<1e-9)
-  assert.ok(Math.abs(columns.Fz+sum*9.80665/1000)<1e-9)
+  assert.ok(Math.abs(columns.Fz+sum*9.81/1000)<1e-9)
   assert.ok(Math.abs(columns.My)>0.1,'The actual asymmetrical drain placement must retain its real moment')
   const submerged=pan.hydrostaticCases.find(c=>c.id==='declared-submerged')!
   assert.equal(submerged.stageAboveFlushFloorMm,170)

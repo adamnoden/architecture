@@ -36,6 +36,20 @@ Every inclined floor, internal step, vertical return and real open cut receives 
 
 The sheet returns have no qualified seat/fold/seam/corrosion/plate resistance, nor a demonstrated ordinary full-pan export, positive first rest, hot-work/cut renewal or floor-equipment reaction. Lowering a bed cannot transfer the old ordinary maintenance pass. Both sources, internal cuts, actual hot/store/upper inventory and independent electrical paths require their real isolated state before common pan work. The pressure/source/thermal restraints remain independent of the pan. The full above-floor fault, dry escape, cylinder inventory and site/foundation response remain unresolved. These are explicit physical construction and receiver duties within one replacement arrangement, not reasons to restore the rejected cabinet or whole-house715mm premise.
 
+The receipt now contains the named `HAD/utility-room/vertical-inventory` ledger, with common9.81m/s² static gravity, piece IDs, exact reference-prism/water centroids, endpoints and all six available wrench components. Pan water owns Y429.5..2453 including both **open** indoor chutes; closed water owns Y−990..429.5 in disjoint X intervals9440..9840 and9960..10360. They share only zero-volume hydraulic cut planes. Neither the same open-chute water nor hydraulic equilibrium-control forces are counted twice.
+
+| Named inventory | Applicable state | Reference mass kg |
+| --- | --- | ---: |
+| Developed pan/folds/returns,10mm low bed | Permanent stock comparison; joints/seats unknown | 106.913795 |
+| Closed wall/outside copper body1 / body2 | Permanent stock comparison | 28.184684 each |
+| Shield sheets/frame/fixings reference | Permanent stock; nominalFFL0, full centroid unresolved | 187.050836 |
+| Actual graded pan/chute water to flush floor | Both-blocked comparison,10mm low bed | 889.979793 |
+| Closed body1 / body2 full water | Same event; independent water-weight controls | 85.170000 each |
+
+Requested reference dead stock is350.333997kg; the disjoint blocked-water subtotal is1060.319793kg. Their1410.653790kg combined inventory is **not** one local-floor reaction or a whole-house fault maximum. The independent26.5kg empty mainboard comparator and unknown actual contents, water above floor, store inventory, jackets/insulation, seams, seats, floor covers and temporary loads are outside that subtotal. Actual full-frame centroid remains null because the4kg hardware budget and returned-cover developed centroids are not qualified; no convenient aggregate point is fabricated. Full-source piece bounds and nonconcurrent core-interface demands remain available.
+
+The review must show the missing physical path explicitly: pan/walking-floor seats→local RC−30..170→mineral−180..−30 with real bed/bond/shear/retention→the actual four cold-grid strips/caps at−180→52 heads/foundation/soil. Actual contact is not resistance. The frame has its separate opposed-core→wall-ground-receiver path, and each exterior closed body needs real independent pressure/thermal/gravity supports. The25.006099kN RC/mineral quantity is replacement stock, requiring removal of the original corresponding floor quantity. No distribution to convenient grid heads, sourceSTR0 insertion or uncoordinated530 frame translation is accepted.
+
 ## Current supported-room replacement — 21 November 2026
 
 Reject the former25mm frame pocket. Its complete-portal screen was a useful optical comparison, but a conventional40–50mm frame cannot fit beside the real case after settings and deflection. Moving that screen west by itself also fails: the retained Utility opening projects past the screen plane. The same optional source-bound stage now develops a coordinated wall-hung replacement; neither the room source nor a structural receiver is adopted.

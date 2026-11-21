@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto'
 import { sha256SemanticFingerprint } from '../../core/identity.js'
 import type { CurrentDesignResolution } from './resolve.js'
 import type { runGroundSectionCase } from './structural-ground.js'
+import { inletStaticGravityMps2 } from './inlet-room-pan.js'
 import { inletScreenFrame } from './inlet-screen-frame.js'
 import { inletElectricalScreen } from './inlet-electrical-screen.js'
 import { runInletRoomCatchment } from './inlet-room-catchment.js'
@@ -170,9 +171,12 @@ export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, in
   })
   const maximumCombinedLmin = round(branches.reduce((total, branch) => total + branch.maximumLimitedEachLmin, 0))
     const joinedDirection = joinedServiceDirection(resolved, b, s, branches, absoluteMaximumBar),
-    roomCatchment = runInletRoomCatchment(resolved, ground, maximumCombinedLmin, { planMm: joinedDirection.room.wetUtilityPlanMm,
+    rawCatchment = runInletRoomCatchment(resolved, ground, maximumCombinedLmin, { planMm: joinedDirection.room.wetUtilityPlanMm,
       rawWindowXMm: joinedDirection.room.southWindowOpeningXMm, retainedFurniture: joinedDirection.room.retainedFurniture,
       northOpeningXMm: joinedDirection.room.northOpeningXMm, purgeBodyMm: joinedDirection.room.purge.body, wallFacesYMm: [native.branches[0].bores[0].outer[1], native.branches[0].bores[0].inner[1]] }, s, b.data['project/str/studies/current-house-grid.json'])
+  if(rawCatchment.state==='whole-room-development-comparison'&&!ground)throw new Error('A computed room inventory requires its actual saved ground case')
+  const roomCatchment=rawCatchment.state==='whole-room-development-comparison'
+    ?{...rawCatchment,verticalInventory:inletVerticalInventory(rawCatchment,joinedDirection,ground!)}:rawCatchment
   const states = [
     { id: 'plant-stored-water-backflow', sourceFed: false, eachLmin: null, result: 'actual-factory-release-model-required', obligation: 'Catalogue/minimum litres are not maximum inventory. Model actual store/expansion/upper-pipe pressure, nonreturn and anti-vacuum states; the Lodge aperture does not bound this release.' },
     { id: 'utility-crossfeed-from-plant', sourceFed: true, eachLmin: null, result: 'retire-cold-link-and-separate-pillar-taps', obligation: 'Retire the original Plant-fed Utility cold link and exclude mixer crossconnection using actual independent air-gapped taps. No invented nonreturn protection.' },
@@ -219,6 +223,72 @@ export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, in
 
 
 /** One source-bound architectural direction. Geometry is a proposal, never a replacement occupied-house pass. */
+function inletVerticalInventory(c:Extract<ReturnType<typeof runInletRoomCatchment>,{state:'whole-room-development-comparison'}>,
+  direction:ReturnType<typeof joinedServiceDirection>,ground:ReturnType<typeof runGroundSectionCase>) {
+  const pan=c.room.actualGradedPan,pipes=c.room.closedOutfalls,frame=direction.room.electricalScreen.supportFrame,
+    [x,y,width,depth]=c.wetFloorPlanMm,origin=[x+width/2,y+depth/2,(ground.native.levelsMm as unknown as Record<string,number>).coldGridTop],
+    keys=['Fx','Fy','Fz','Mx','My','Mz'] as const,
+    summary=(id:string,event:string,loads:readonly{massKg:number;massCentroidXYZMm:readonly number[];wrenchKN_KNm:Record<typeof keys[number],number>}[])=>{
+      const mass=loads.reduce((s,l)=>s+l.massKg,0)
+      return{id,event,massKg:mass,massCentroidXYZMm:mass?origin.map((_v,i)=>loads.reduce((s,l)=>s+l.massKg*l.massCentroidXYZMm[i],0)/mass):null,
+        originMm:origin,wrenchKN_KNm:Object.fromEntries(keys.map(k=>[k,loads.reduce((s,l)=>s+l.wrenchKN_KNm[k],0)])),
+        sourcePieceIds:loads.map((l:any)=>l.id),installedSupportQualified:false}
+    },
+    panStock=pan.afterLowerSettingDevelopedSheetUpperKg===null?null:summary('HAD/inventory/pan-developed-stock-low-bed','permanent-reference-stock',pan.upperMetalStockCase.loadOrigins),
+    bodyStock=pipes.map(p=>summary(p.id+'/inventory-copper-body','permanent-reference-stock',[p.bodyStockGravity])),
+    panWater=pan.afterLowerSettingGrossWaterToFloorUpperKg===null?null:summary('HAD/inventory/pan-water-low-bed-to-flush-floor','both-blocked-before-overflow-comparison',pan.waterLoadOrigins),
+    pipeWater=pipes.map(p=>summary(p.id+'/inventory-full-water','same-both-blocked-comparison',[p.fullWaterInventoryControl])),
+    frameMass=frame.quantities.totalReferenceKg,
+    frameStock={id:'HAD/inventory/shield-frame-stock',event:'permanent-reference-stock',massKg:frameMass,
+      massCentroidXYZMm:null,coordinateDatum:'Existing nominal occupied groundFFL0 frame geometry; no ground-candidate translation/adoption executed.',
+      forceKN:[0,0,-frameMass*inletStaticGravityMps2],fullGravityMomentKNm:null,
+      sourceGeometry:'joinedDirection.room.electricalScreen.supportFrame:members,panelSeats,panelRetainers; electricalScreen.panels',
+      actualConnectionOriginsMm:frame.structuralHandoff.attachmentPointsMm,
+      missing:'Actual4kg nut/washer/bolt budget distribution and returned-cover developed-stock centroids; weld/unknown hardware mass. Use actual member/sheet pieces and existing nonconcurrent core-interface envelopes, not a fabricated aggregate centroid or four summed envelopes.'},
+    bounds=pipes.map(p=>{const v=p.clearCornersMm;return{id:p.id,x:[Math.min(...v.map(v=>v[0])),Math.max(...v.map(v=>v[0]))],
+      y:[Math.min(...v.map(v=>v[1])),Math.max(...v.map(v=>v[1]))],nominalEndpointsMm:[v[0],v[2]],
+      nominalPrismCentroidMm:p.bodyStockGravity.massCentroidXYZMm,lowBedWaterCentroidMm:p.fullWaterInventoryControl.massCentroidXYZMm}}),
+    roomPortTouch=bounds.every(b=>b.y[1]===y),
+    pairwiseDisjoint=bounds.every((a,i)=>bounds.every((b,j)=>i===j||a.x[1]<=b.x[0]||b.x[1]<=a.x[0]||a.y[1]<=b.y[0]||b.y[1]<=a.y[0])),
+    positiveVolumeDisjoint=roomPortTouch&&pairwiseDisjoint&&bounds.every(b=>b.y[1]<=y),
+    dead=panStock?panStock.massKg+bodyStock.reduce((s,b)=>s+b.massKg,0)+frameMass:null,
+    water=panWater?panWater.massKg+pipeWater.reduce((s,b)=>s+b.massKg,0):null
+  return{schema:'had-service-room-vertical-inventory/1',id:'HAD/utility-room/vertical-inventory',selected:false,
+    source:{...c.groundAuthority,sourcePlanId:ground.source.id},units:{mass:'kg',length:'mm',force:'kN',moment:'kNm',staticGravityMps2:inletStaticGravityMps2},
+    groundDatum:'Pan, local plate/mineral and outfalls use exact saved-ground absolute coordinates. SourceSTR ground0 and the nominal-FFL0 shield are NOT silently transformed or loaded.',
+    proposedFrameTranslationMm:[0,0,c.levelsMm.ffl],frameTranslationAndMasonryLoadPathAdmitted:false,
+    permanentReferenceStock:[...(panStock?[panStock]:[]),...bodyStock,frameStock],
+    blockedEventWaterInventory:[...(panWater?[panWater]:[]),...pipeWater],
+    ownership:{panWaterPlanMinMaxMm:[x,y,x+width,y+depth],openChutesIncludedInsidePanWaterOnce:true,
+      actualClosedPassageBounds:bounds,sharedWallHydraulicCutYMm:y,sharedCutsHaveZeroVolume:true,
+      positiveVolumeDisjoint,waterMassSubtotalsCanCombine:positiveVolumeDisjoint&&panWater!==null,
+      metalFoldSeamAndToleranceOverlapQualified:false,
+      hydraulicFaceAndCutLoadsAreNotExtraWaterGravity:'Use their independent weight controls for equilibrium only; do not add them again to the metal pressure actions of the same water.'},
+    requestedReferenceSubtotals:{deadStockKg:dead,blockedBelowFloorAndFullClosedBodyWaterKg:positiveVolumeDisjoint?water:null,
+      concurrentRequestedMassKg:dead!==null&&water!==null&&positiveVolumeDisjoint?dead+water:null,
+      wholeHouseOrWholeFaultMaximumKg:null,fullCombinedWrench:null,headShares:null},
+    localFloorReplacement:c.localPocket?{id:c.localPocket.id,planMinMaxMm:c.localPocket.bodyMinMaxMm,levelBoxes:c.localPocket.levelBoxes,
+      replacementRcAndMineralKN:c.localPocket.quantityBounds.slabAndMineralWeightKN,
+      sourceLoadOrigins:c.localPocket.loadOrigins,notAutomaticallyAdditionalToExistingFloor:true,
+      mineralContactUnionM2:c.localPocket.contactUnionM2,disjointContactCells:c.localPocket.disjointContactCells,
+      physicalReceiverPath:[
+        `Pan, removable walking floor and actual seats/stands → local RC${c.localPocket.levelBoxes.find(b=>b.id==='dryRC')!.zMm.join('..')}: actual attachments, spans, resistance and full temporary/removal actions unqualified.`,
+        `Local RC plate → mineral${c.localPocket.levelBoxes.find(b=>b.id==='mineralCourse')!.zMm.join('..')} on the exact${c.localPocket.contactUnionM2}m² contact union: local plate/contact, bed pressure/shear, mineral bond/retention and anti-slip evidence unqualified.`,
+        'Mineral/contact → actual spine, outer-E, outer-S, utility-north cold-grid strips/caps at−180: no arbitrary distribution or positive receiver resistance inferred.',
+        `Actual grid → existing52 heads/foundation/soil: thisFFL${c.levelsMm.ffl}/local-pocket arrangement has no compatible candidate solve, signed head actions or foundation resistance.`
+      ],wallAndExteriorDpcRetainedMm:c.localPocket.wallAndExteriorDpcMm}:null,
+    independentFrameReceiver:'Actual opposed140mm cores → named wall ground receivers → grid/52heads remains unqualified; wall-hung frame is not supported by this pan or local floor.',
+    closedBodyReceiver:'Actual wall/outside copper bodies have no qualified independent seats/anchors/thermal restraints or weather receivers. Join the real inside/outside hydraulic cuts once, then derive actual support actions; do not assign their centroid wrench to arbitrary grid heads.',
+    independentMainboardCaseReference:{emptyKg:direction.room.newMainboard.emptyKg,
+      grossBoxMm:direction.room.newMainboard.proposedGrossBoxMm,actualLoadedMassAndCentroidQualified:false,includedInRequestedSubtotals:false},
+    missingMassAndEvents:['Pan bends/seams/seats/insulation and walking/perimeter covers; complete ordinary removal rests and access-equipment reactions.',
+      'Closed-body weather jackets/insulation, joints, pressure/thermal restraints and receiving supports.',
+      'Frame unknown weld/hardware; mainboard actual contents/doors/cables; separate Streethead PV stock and supports.',
+      'Actual hot/store/upper-network release, flooded room above flush floor, transient source jet/air loads and real adverse site tailwater. No whole-fault cap or manual-response credit.'],
+    diagnostics:[...(!positiveVolumeDisjoint?['INLET_PAN_CLOSED_OUTFALL_WATER_OWNERSHIP_MISMATCH']:[]),
+      'INLET_VERTICAL_INVENTORY_NOT_ADOPTED_IN_SOURCE_STR_GROUND0','INLET_LOCAL_RC_MINERAL_RETENTION_GRID_AND_SOIL_PATH_UNQUALIFIED']}
+}
+
 function joinedServiceDirection(resolved: CurrentDesignResolution, b: ReturnType<typeof binding>, s: InletSourceEnvelopeSettings, branches: readonly any[], maximumAbsoluteBar: number) {
   const model = b.occupied.house.model as unknown as { architecturalServices: any; groundWalls: any[]; shell: number; envelope: number; groundFurniture: Record<string, readonly number[]>; plantReferenceDoor: any; archOpeningRegister: any; serviceMaintenanceFields: any[]; internalArchControls: any }, services = model.architecturalServices, utilityWall = model.groundWalls.find((w: any) => w.id === 'utility-north'),
     spine = model.groundWalls.find((w: any) => w.id === 'service-spine'), plantWall = model.groundWalls.find((w: any) => w.id === 'plant-intermediate-arch')
