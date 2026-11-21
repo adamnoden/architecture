@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 52,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "94d2339d-61ab-49db-96e2-66d5ed0ff6e4",
   "holder": {
     "kind": "chatgpt",
     "label": "rush-20261121-had-convergence"
   },
   "claimedAt": "2026-11-21T12:30:11.345Z",
-  "heartbeatAt": "2026-11-21T14:06:32.000Z",
-  "expiresAt": "2026-11-21T14:51:32.000Z",
+  "heartbeatAt": "2026-11-21T14:07:24.000Z",
+  "expiresAt": "2026-11-21T14:07:24.000Z",
   "checkpoint": {
     "evidence": "Main13147144 includes1605/1606/1609/1610. VerifiedHAD e1b79cde/tree2ad26a10:20tests+tsc/gen/repo. Archivea787210f recovers electrical helper literals (2tests observed), not integrated.1610#7063811698 records local backboard7tests, unknowntsc. Executor unavailable.",
     "next": "HANDOFF: recovere1b79cde and local had-full-catchment; verify electrical archive, backboard actual joins, regenerate own receipts, integrate STR closure then exact-headCI. HAD remains open.",
@@ -39,5 +39,7 @@
       "blocker": "HAD OPEN:20/45reference only; Plantreceiver/storedrelease/indoorcuts/renewal/supports/52head loads/warmdrains/jet/material/owner proof unresolved. NoindependentPR or merge"
     }
   },
-  "pr": 1610
+  "pr": 1610,
+  "releasedAt": "2026-11-21T14:07:24.000Z",
+  "releaseReason": "handoff"
 }
