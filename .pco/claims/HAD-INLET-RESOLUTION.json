@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 50,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "b5b027b5-54c3-4568-96ea-1f3d11bdcec6",
   "holder": {
     "kind": "chatgpt",
     "label": "rush-20261121-recovery"
   },
   "claimedAt": "2026-11-21T09:41:49.533Z",
-  "heartbeatAt": "2026-11-21T09:41:49.533Z",
-  "expiresAt": "2026-11-21T10:26:49.533Z",
+  "heartbeatAt": "2026-11-21T09:43:43.984Z",
+  "expiresAt": "2026-11-21T09:43:43.984Z",
   "branch": "work/rush-recovered-coupling-20261121",
   "predecessor": {
     "leaseId": "de383544-b716-40f5-8dfb-6a7fb19e8c2d",
@@ -33,5 +33,7 @@
       "next": "Recover canonical leases/current main; inspect exact-head CI; fresh dual STR/HAD merge-check and expected-head merge; then combined51 and service-hub replan.",
       "blocker": "Execution environment unavailable; exec recovery45s failed. No local preflight or new tests. Handoff release follows checkpoint readback; no packet completion."
     }
-  }
+  },
+  "releasedAt": "2026-11-21T09:43:43.984Z",
+  "releaseReason": "handoff"
 }
