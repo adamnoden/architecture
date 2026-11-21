@@ -3,7 +3,7 @@
   "state": "existing-whole-arrangement-rejected",
   "source": {
     "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-    "bindingDigest": "3cbc8c3717258dbb07fb5111dd76903627172c5d3e5adf711d399d8527bec975",
+    "bindingDigest": "1aec01d974db2502ae073133400fd23ebbba80a5c8a12776d93199cadb5e2ce8",
     "inputs": {
       "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
       "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
@@ -16,9 +16,10 @@
       "project/str/studies/current-house-grid.json": "56aca6f99f5fa60b21d58c89115ac1ee824e3828"
     },
     "methods": {
-      "compiler/reference-house/current-design/inlet-source-envelope.ts": "2935f1718d5a524a0668ebc19b3ab56fe74afda5",
-      "compiler/reference-house/current-design/inlet-room-catchment.ts": "fe3f40d174ae4a30b13123e56b065d211479d661",
+      "compiler/reference-house/current-design/inlet-source-envelope.ts": "108930d064ef127a3c1fed2db2ed2e4b9b0a6a85",
+      "compiler/reference-house/current-design/inlet-room-catchment.ts": "a2b5cd0b166996cb4dc0ede9ed4d6dbfd4e2fb58",
       "compiler/reference-house/current-design/inlet-room-pocket.ts": "6262535d5a03666b92c876e4b8d52c4a0b097fb3",
+      "compiler/reference-house/current-design/inlet-room-pan.ts": "12baf6a1aed67209d9c9965ba8fa836b9cda42e5",
       "compiler/reference-house/current-design/inlet-electrical-screen.ts": "38f7d1a752f835ec464e2bdd10432d4dbd32ff74",
       "compiler/reference-house/current-design/inlet-screen-frame.ts": "fff2a33daf6c6d3fe05d2e571ffd8db4f5806c51",
       "compiler/reference-house/current-design/inlet-fixed-receiver.ts": "c8cd4c81c3419fdb3b97f79b3c641d5e307256e3",
@@ -52,6 +53,7 @@
     "catchmentClearWidthMm": 400,
     "catchmentClearHeightMm": 150,
     "catchmentPocketDepthMm": 0,
+    "catchmentPanSlopeRatio": 100,
     "catchmentIsolationGapMm": 50,
     "catchmentInvertAboveDistributionMm": 60,
     "catchmentReceiverWidthMm": 400,

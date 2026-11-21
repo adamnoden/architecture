@@ -13,6 +13,7 @@ const local = { schema: 'had-local-room-pocket-receipt/1', source: localResult.s
   houseAdopted: false, physicalInstallationAdmitted: false }
 for (const [name, content] of [['inlet-source-envelope.results.json', JSON.stringify(result, null, 2) + '\n'],
   ['inlet-source-envelope.svg', reviewSvg + '\n'],
+  ['inlet-local-pan.svg', localResult.roomCatchment.state === 'whole-room-development-comparison' ? localResult.roomCatchment.room.actualGradedPanSvg + '\n' : ''],
   ['inlet-local-pocket.results.json', JSON.stringify(local, null, 2) + '\n'],
   ['inlet-local-pocket.svg', localResult.roomCatchment.state === 'whole-room-development-comparison' ? localResult.roomCatchment.localPocketSvg + '\n' : ''],
   ['inlet-frame-support.svg', result.joinedDirection.room.electricalScreen.supportFrame.reviewSvg + '\n']]) {

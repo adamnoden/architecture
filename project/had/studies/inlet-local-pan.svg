@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="950" viewBox="0 0 1280 950"><rect width="1280" height="950" fill="#f5f1e6"/><g font-family="Arial,sans-serif" fill="#28251e">
+<text x="40" y="42" font-size="25">Utility graded copper pan · actual open chutes and wall cuts</text>
+<text x="40" y="78" font-size="15">Development geometry and static face actions. Seats, seams, plate resistance, warmth and complete handling remain unqualified.</text>
+<polygon points="40,540 48.17,540 48.17,490.6 40,490.6" fill="#d9b486" stroke="#6f675a"/><polygon points="48.17,540 86.17,540 86.17,490.6 48.17,490.6" fill="#88bbc1" stroke="#6f675a"/><polygon points="86.17,540 124.17,540 124.17,490.6 86.17,490.6" fill="#88bbc1" stroke="#6f675a"/><polygon points="124.17,540 135.57,540 135.57,490.6 124.17,490.6" fill="#d9b486" stroke="#6f675a"/><polygon points="135.57,540 146.97,540 146.97,490.6 135.57,490.6" fill="#d9b486" stroke="#6f675a"/><polygon points="146.97,540 184.97,540 184.97,490.6 146.97,490.6" fill="#88bbc1" stroke="#6f675a"/><polygon points="184.97,540 222.97,540 222.97,490.6 184.97,490.6" fill="#88bbc1" stroke="#6f675a"/><polygon points="222.97,540 452.96500000000003,540 452.96500000000003,490.6 222.97,490.6" fill="#d9b486" stroke="#6f675a"/><polygon points="40,490.6 48.17,490.6 48.17,155.53499999999997 40,155.53499999999997" fill="#d9b486" stroke="#6f675a"/><polygon points="48.17,490.6 86.17,490.6 86.17,155.53499999999997 48.17,155.53499999999997" fill="#d9b486" stroke="#6f675a"/><polygon points="86.17,490.6 124.17,490.6 124.17,155.53499999999997 86.17,155.53499999999997" fill="#d9b486" stroke="#6f675a"/><polygon points="124.17,490.6 135.57,490.6 135.57,155.53499999999997 124.17,155.53499999999997" fill="#d9b486" stroke="#6f675a"/><polygon points="135.57,490.6 146.97,490.6 146.97,155.53499999999997 135.57,155.53499999999997" fill="#d9b486" stroke="#6f675a"/><polygon points="146.97,490.6 184.97,490.6 184.97,155.53499999999997 146.97,155.53499999999997" fill="#d9b486" stroke="#6f675a"/><polygon points="184.97,490.6 222.97,490.6 222.97,155.53499999999997 184.97,155.53499999999997" fill="#d9b486" stroke="#6f675a"/><polygon points="222.97,490.6 452.96500000000003,490.6 452.96500000000003,155.53499999999997 222.97,155.53499999999997" fill="#d9b486" stroke="#6f675a"/>
+<circle cx="86.17" cy="490.6" r="5" fill="#254f5a"/><text x="94.17" y="480.6" font-size="12">mouth1 Z325</text><circle cx="184.97" cy="490.6" r="5" fill="#254f5a"/><text x="192.97" y="480.6" font-size="12">mouth2 Z325</text>
+<text x="40" y="580" font-size="15">Pan1:100; indoor chutes1:50; exact clear width400mm.</text>
+<text x="40" y="610" font-size="15">Surface319.80–356.74mm; no trapped heel.</text>
+<text x="40" y="640" font-size="15">Blue: open chutes. Closed boxes start at the south wall.</text>
+<text x="40" y="670" font-size="15">Fold lines show pieces; seams/strength/renewal unqualified.</text>
+<text x="610" y="160" font-size="18">Actual north-edge section · vertical scale exaggerated</text>
+<line x1="590" y1="397" x2="1130" y2="397" stroke="#373126" stroke-width="3"/>
+<polyline points="610,507.961 619.46,508.21900000000005 619.46,508.21900000000005 663.46,509.419 663.46,509.419 707.46,508.21900000000005 707.46,508.21900000000005 720.66,507.85900000000004 720.66,507.85900000000004 733.86,508.21900000000005 733.86,508.21900000000005 777.86,509.419 777.86,509.419 821.86,508.21900000000005 821.86,508.21900000000005 1088.17,500.956" fill="none" stroke="#9b582c" stroke-width="4"/>
+<text x="610" y="230" font-size="15">Retained flush FFL530mm. Same absolute source-ground datum.</text>
+<text x="610" y="270" font-size="15">Pan/chute bottom/top after setting:17.80/148.26mm.</text>
+<text x="610" y="310" font-size="15">Metal sheets+returns105.410kg nominal.</text>
+<text x="610" y="350" font-size="15">Lower-bed stock envelope106.914kg +unknown ancillary stock.</text>
+<text x="610" y="590" font-size="15">Gross water tofloor845.999L; low-bed upper889.980kg.</text>
+<text x="610" y="630" font-size="15">Blocked metal Fz-8.727720kN at source origin.</text>
+<text x="610" y="670" font-size="15">Origin10483.75,1441.25,-180.00mm. Full six-component wrenches in receipt.</text>
+<text x="40" y="750" font-size="17">Hydraulic open-cut actions are NOT metal endcaps or extra structural loads. Join once to the actual wall/outside channels.</text>
+<text x="40" y="790" font-size="15">Independent water-weight/first-moment integration balances all pressure faces and cuts. Do not add the same water twice.</text>
+<text x="40" y="830" font-size="15">Both blocked rejects unattended operation. Declared submerged pressure is a comparison, not an actual maximum flood level.</text>
+<text x="40" y="870" font-size="15">Actual cylinder/upper-network release, water above floor, dry escape and complete support/foundation response remain unbounded.</text>
+<text x="40" y="915" font-size="18">HAD OPEN · no house, material, physical, professional or owner acceptance</text>
+</g></svg>
