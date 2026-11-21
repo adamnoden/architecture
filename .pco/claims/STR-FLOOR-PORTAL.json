@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 48,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "112c4e59-d3c1-4931-a15b-ba4d2433a70f",
   "holder": {
     "kind": "chatgpt",
     "label": "rush-20261121-recovery"
   },
   "claimedAt": "2026-11-21T09:40:30.038Z",
-  "heartbeatAt": "2026-11-21T12:27:36.148Z",
-  "expiresAt": "2026-11-21T13:12:36.148Z",
+  "heartbeatAt": "2026-11-21T12:27:58.690Z",
+  "expiresAt": "2026-11-21T12:27:58.690Z",
   "branch": "work/rush-floor-section-20261121",
   "predecessor": {
     "leaseId": "37f8e399-fda2-42a8-8282-b3e5bda5c950",
@@ -38,5 +38,7 @@
     "evidence": "Final remote1e3cf61826b5939b4d35850f404bdf6634798d4c/tree9a7135d9912cf07f55578089d2ace280a362c25d includesmain9dbd. Fresh6upper52/4floor54 native states, analytical/receipt3 and editor/penetration6, tsc, audit15/0,13witnesses and repo pass. Final API3solve suites pending frozenhead. Durablehandoff PR1609comment7062574718.",
     "next": "Designatedstructure worker claimnextgeneration; retainpreparedsource and joinHAD71a7248 underfreshleases; observeexactfinalAPI/CLI suites andsubmitjointPR/allCI. Thenimplementaligned250seatedwetbeam onoriginal260x450posts withactualaxisawareworkmaps/finitegrid/CSGandfreshproofs. STRnotcomplete."
   },
-  "pr": 1609
+  "pr": 1609,
+  "releasedAt": "2026-11-21T12:27:58.690Z",
+  "releaseReason": "handoff"
 }
