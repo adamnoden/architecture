@@ -122,13 +122,15 @@ test('saved document and public CLI carry branch and room edits through the exis
  assert.ok(!Object.hasOwn(original.stages,'inletSourceEnvelope'))
  const doc={...original,stages:{inletSourceEnvelope:request.sourceEnvelope.settings}}
  const first=await compileEngineeringDocument(JSON.parse(JSON.stringify(doc)))
- const changedDoc={...doc,stages:{inletSourceEnvelope:{...request.sourceEnvelope.settings,utilityApertureNominalMm:6.7,plantTransferZMm:2220}}}
+ const changedDoc={...doc,stages:{inletSourceEnvelope:{...request.sourceEnvelope.settings,utilityApertureNominalMm:6.7,plantTransferZMm:2220,mainboardBaseZMm:2600}}}
  const changed=JSON.parse(execFileSync(process.execPath,['--import','tsx','scripts/compile-current-design.ts','--bundle','-'],{input:JSON.stringify(changedDoc),encoding:'utf8',maxBuffer:24*1024*1024}))
  const a=first.engineering.inletSourceEnvelope!,c=changed.engineering.inletSourceEnvelope
  assert.notEqual(a.branches[0].maximumLimitedEachLmin,c.branches[0].maximumLimitedEachLmin)
  assert.notEqual(a.branches[0].existingReceiver.limitedFault.entranceHeadMm,c.branches[0].existingReceiver.limitedFault.entranceHeadMm)
  assert.deepEqual(a.branches[1],c.branches[1])
  assert.ok(c.joinedDirection.transfer.bufferAfter10Mm<0)
+ assert.equal(c.joinedDirection.room.newMainboard.proposedGrossBoxMm[2],2600)
+ assert.equal(c.joinedDirection.room.electricalScreen.visibility.allDirectPortalRaysIntercepted,false)
  assert.notEqual(a.reviewSvg,c.reviewSvg)
  assert.deepEqual(changed.plans,JSON.parse(JSON.stringify(first.plans)))
  assert.equal(changed.manifest.find((r:any)=>r.stage==='occupiedServices').applicability.controllingStage,'inletSourceEnvelope')
@@ -136,4 +138,26 @@ test('saved document and public CLI carry branch and room edits through the exis
  assert.deepEqual((await compileEngineeringDocument(doc)).engineering.inletSourceEnvelope,a)
  const standalone=JSON.parse(execFileSync(process.execPath,['--import','tsx','scripts/compile-current-design.ts','--inlet-source-envelope','-'],{input:JSON.stringify({...request,sourceEnvelope:{...request.sourceEnvelope,settings:changedDoc.stages.inletSourceEnvelope}}),encoding:'utf8',maxBuffer:4*1024*1024}))
  assert.deepEqual(standalone,c)
+})
+
+test('actual elevated mainboard and complete portal shield join geometry, source actions and sheet quantities',()=>{
+ const room=baseline.joinedDirection.room,shield=room.electricalScreen
+ assert.equal(room.newMainboard.proposedGrossBoxMm[2],900)
+ assert.ok(shield.nominalClearHeightMm >= 3000)
+ assert.equal(shield.visibility.allDirectPortalRaysIntercepted,true)
+ assert.ok(shield.visibility.portalToShieldReserveMm>0)
+ assert.ok(shield.ordinaryRouteAfterSettingMm>300)
+ assert.ok(shield.actions.totalFlatSheetOnlyKg>90)
+ assert.equal(shield.wetBoundary.assembledElectricalOrInstalledAcceptance,false)
+ assert.equal(shield.actions.localImpactPanelAndIndependentFloorCeilingSupportQualified,false)
+ assert.equal(shield.changedGroundOrSlabHeightAcceptanceTransferred,false)
+ const raised=run({mainboardBaseZMm:2600})
+ assert.equal(raised.joinedDirection.room.electricalScreen.visibility.allDirectPortalRaysIntercepted,false)
+ assert.ok(raised.joinedDirection.diagnostics.includes('MAINBOARD_SCREEN_DIRECT_PORTAL_INTERCEPTION_FAILS'))
+ assert.deepEqual(raised.branches,baseline.branches,'Board elevation does not alter the hydraulic branches')
+ assert.notEqual(raised.reviewSvg,baseline.reviewSvg)
+ const stronger=run({plantApertureNominalMm:10.4})
+ assert.ok(stronger.joinedDirection.room.electricalScreen.actions.simultaneousPairN>shield.actions.simultaneousPairN)
+ assert.deepEqual(stronger.joinedDirection.room.electricalScreen.panels,shield.panels)
+ assert.throws(()=>run({mainboardBaseZMm:0}),/comparison domain/)
 })

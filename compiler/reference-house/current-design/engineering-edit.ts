@@ -107,6 +107,14 @@ export function applyEngineeringEdit(state: EngineeringEditorState, transaction:
       const rectangle = rectangles[index] as number[]
       const remaining = (rectangle[3]! - rectangle[1]! - support.padLengthMm) / 2 - support.combinedRelativePlacementToleranceMm
       if (remaining < 0 || Math.abs(operation.offsetMm) > remaining) throw new TypeError('Complete relative-placement pad envelope leaves its actual source post')
+      if (typeof support.beamSouthEndYMm !== 'number' || !Number.isFinite(support.beamSouthEndYMm)
+        || typeof support.beamNorthEndYMm !== 'number' || !Number.isFinite(support.beamNorthEndYMm)
+        || support.beamNorthEndYMm <= support.beamSouthEndYMm) throw new TypeError('Actual finite wet-beam end coordinates required')
+      const centre = (rectangle[1]! + rectangle[3]!) / 2 + operation.offsetMm
+      const endReserve = support.padLengthMm / 2 + support.combinedRelativePlacementToleranceMm
+      if (centre-endReserve < support.beamSouthEndYMm || centre+endReserve > support.beamNorthEndYMm) {
+        throw new TypeError('Complete relative-placement pad envelope leaves its actual wet beam')
+      }
       if (offsets[index] === operation.offsetMm) return { status: 'applied', state }
       const changed = [...offsets]; changed[index] = operation.offsetMm
       stages = { ...state.document.stages, floorSection: { ...current, wetSupport: { ...support, padCentreOffsetsYMm: changed } } }

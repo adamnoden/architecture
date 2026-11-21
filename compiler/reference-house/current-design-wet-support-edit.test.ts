@@ -30,6 +30,9 @@ test('authoring rejects unknown geometry, overhanging pad, wrong units and unsup
   const operation = { kind: 'set-wet-bearing-offset', assemblyId: editableWetSupportId, receiverId: 'south', offsetMm: 166 }
   const transaction = { schema: 'current-engineering-edit/1', units: 'mm', base: engineeringBase(state), operation }
   assert.equal(applyEngineeringEdit(state, transaction).status, 'rejected')
+  const leavesBeam = { ...operation, offsetMm: -11 }
+  assert.equal(applyEngineeringEdit(state, { ...transaction, operation: leavesBeam }).status, 'rejected', 'A pad can fit its post yet overhang the short south beam end')
+  assert.equal(applyEngineeringEdit(state, { ...transaction, operation: { ...leavesBeam, offsetMm: -10 } }).status, 'applied', 'The exact combined-tolerance end boundary remains admissible data')
   for (const units of ['m', 'degrees']) assert.equal(applyEngineeringEdit(state, { ...transaction, units, operation: { ...operation, offsetMm: 0 } }).status, 'rejected')
   assert.equal(applyEngineeringEdit(state, { ...transaction, operation: { kind: 'set-floor-section-thickness', assemblyId: editableFloorSectionId, thicknessMm: 250 } }).status, 'rejected')
   const noSupport = document(); (noSupport.stages.floorSection as unknown as Record<string, unknown>).wetSupport = null

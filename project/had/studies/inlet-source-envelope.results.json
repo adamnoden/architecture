@@ -1,9 +1,9 @@
 {
-  "schema": "had-inlet-source-envelope-result/2",
+  "schema": "had-inlet-source-envelope-result/4",
   "state": "existing-whole-arrangement-rejected",
   "source": {
     "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-    "bindingDigest": "c660fd6fc075f9db8713c36363ee7d5586face1a893a498e040b2bf091ccdf75",
+    "bindingDigest": "b8bd400497c411614f5d37b432cf41e9974a53b2b6d1f436473725206f1bbbfb",
     "inputs": {
       "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
       "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
@@ -15,7 +15,9 @@
       "project/had/studies/boundary-service-lodge.json": "edccc843f1829bf583e517095442ad9fe481da53"
     },
     "methods": {
-      "compiler/reference-house/current-design/inlet-source-envelope.ts": "c6baca027717145854aa7cca790fa8e3858df89c",
+      "compiler/reference-house/current-design/inlet-source-envelope.ts": "8e20c49017c4e5524d77c5647abfa217a1163189",
+      "compiler/reference-house/current-design/inlet-room-catchment.ts": "4808849a1197d0b90891cda2859bb578d274c026",
+      "compiler/reference-house/current-design/inlet-electrical-screen.ts": "af15dc6e80e9896151875a0e8723cec4f3451440",
       "project/had/studies/south-inlet-relief-hydraulics.mjs": "1cb8dd67e832ce2986f042844122a39e625fef93",
       "compiler/reference-house/current-design/inlet-cabinet-copper.ts": "34d774e3ccd4ff0bac3dcaef63dfa5cdedff6ca4"
     }
@@ -36,7 +38,13 @@
     "atmosphericMinimumBar": 0.9,
     "atmosphericMaximumBar": 1.1,
     "mainboardNorthOffsetMm": 0,
-    "plantTransferZMm": 2235
+    "mainboardBaseZMm": 900,
+    "plantTransferZMm": 2235,
+    "catchmentClearWidthMm": 400,
+    "catchmentClearHeightMm": 150,
+    "catchmentInvertAboveDistributionMm": 60,
+    "catchmentReceiverWidthMm": 400,
+    "catchmentReceiverCrestAboveGradeMm": 0
   },
   "bound": {
     "method": "Incompressible energy comparison Q<=A sqrt(2 p_total_absolute/rho), Cd<=1, local pressure>=0absolute; recovery/cavitation qualification remains required.",
@@ -59,6 +67,11 @@
       "plant": 225.825858
     },
     "sourceMinimumIsAtSimultaneousDemand": true,
+    "sourcePressureReferenceDatumMm": 0,
+    "additionalGroundDatumLiftMm": 0,
+    "sourceToRoomLiftDebitedSeparately": true,
+    "existingNetworkLossBudgetIncludesRetainedRoomToFixtureRise": true,
+    "sourceDatumAndInternalPressureBudgetQualified": false,
     "deliveryCdIsComparisonNotGuaranteedLowerBound": true
   },
   "branches": [
@@ -96,6 +109,8 @@
       "minimumDiameterMm": 6.4,
       "maximumDiameterMm": 6.6,
       "additionalNetworkLossBar": 0.5,
+      "additionalGroundDatumLiftMm": 0,
+      "additionalGroundDatumLiftBar": 0,
       "pressureLossComparisonBar": 1.774608,
       "residualPressureComparisonBar": 1.225392,
       "throatAbsolutePressureComparisonBar": 2.625392,
@@ -188,6 +203,8 @@
       "minimumDiameterMm": 10.1,
       "maximumDiameterMm": 10.299999999999999,
       "additionalNetworkLossBar": 1,
+      "additionalGroundDatumLiftMm": 0,
+      "additionalGroundDatumLiftBar": 0,
       "pressureLossComparisonBar": 1.448445,
       "residualPressureComparisonBar": 1.051555,
       "throatAbsolutePressureComparisonBar": 2.951555,
@@ -501,6 +518,10 @@
         2173.5,
         2023.5
       ],
+      "southWindowOpeningXMm": [
+        9400,
+        10400
+      ],
       "northWallFacesYMm": [
         2453,
         2647
@@ -597,7 +618,7 @@
         "proposedGrossBoxMm": [
           11190.5,
           2647,
-          300,
+          900,
           380,
           610,
           605
@@ -978,6 +999,177 @@
           "scope": "Maximumcompleteequipmentfield inclguards/stabilisers screened againstactualwalls/trim/furniture atalloverlappingheights. Actualmatchedratedequipment/person/firstrelease/erection/carry/stabilityremainrequired; notphysicalPASS."
         }
       ],
+      "electricalScreen": {
+        "state": "passive-screen-pre-site-proposal",
+        "selected": false,
+        "barrierPlaneMm": {
+          "x": 11165.5,
+          "y": [
+            2647,
+            3603
+          ],
+          "z": [
+            0,
+            3100
+          ]
+        },
+        "panels": [
+          {
+            "id": "HAD/mainboard-shield-panel-1",
+            "boxMm": [
+              11161.5,
+              2647,
+              0,
+              4,
+              478,
+              775
+            ],
+            "flatSheetOnlyKg": 11.8544,
+            "retainedBy": "passive bottom seating and accessible captive mechanical retention; actual detail unqualified"
+          },
+          {
+            "id": "HAD/mainboard-shield-panel-2",
+            "boxMm": [
+              11161.5,
+              3125,
+              0,
+              4,
+              478,
+              775
+            ],
+            "flatSheetOnlyKg": 11.8544,
+            "retainedBy": "passive bottom seating and accessible captive mechanical retention; actual detail unqualified"
+          },
+          {
+            "id": "HAD/mainboard-shield-panel-3",
+            "boxMm": [
+              11161.5,
+              2647,
+              775,
+              4,
+              478,
+              775
+            ],
+            "flatSheetOnlyKg": 11.8544,
+            "retainedBy": "passive bottom seating and accessible captive mechanical retention; actual detail unqualified"
+          },
+          {
+            "id": "HAD/mainboard-shield-panel-4",
+            "boxMm": [
+              11161.5,
+              3125,
+              775,
+              4,
+              478,
+              775
+            ],
+            "flatSheetOnlyKg": 11.8544,
+            "retainedBy": "passive bottom seating and accessible captive mechanical retention; actual detail unqualified"
+          },
+          {
+            "id": "HAD/mainboard-shield-panel-5",
+            "boxMm": [
+              11161.5,
+              2647,
+              1550,
+              4,
+              478,
+              775
+            ],
+            "flatSheetOnlyKg": 11.8544,
+            "retainedBy": "passive bottom seating and accessible captive mechanical retention; actual detail unqualified"
+          },
+          {
+            "id": "HAD/mainboard-shield-panel-6",
+            "boxMm": [
+              11161.5,
+              3125,
+              1550,
+              4,
+              478,
+              775
+            ],
+            "flatSheetOnlyKg": 11.8544,
+            "retainedBy": "passive bottom seating and accessible captive mechanical retention; actual detail unqualified"
+          },
+          {
+            "id": "HAD/mainboard-shield-panel-7",
+            "boxMm": [
+              11161.5,
+              2647,
+              2325,
+              4,
+              478,
+              775
+            ],
+            "flatSheetOnlyKg": 11.8544,
+            "retainedBy": "passive bottom seating and accessible captive mechanical retention; actual detail unqualified"
+          },
+          {
+            "id": "HAD/mainboard-shield-panel-8",
+            "boxMm": [
+              11161.5,
+              3125,
+              2325,
+              4,
+              478,
+              775
+            ],
+            "flatSheetOnlyKg": 11.8544,
+            "retainedBy": "passive bottom seating and accessible captive mechanical retention; actual detail unqualified"
+          }
+        ],
+        "ordinaryRouteAfterSettingMm": 306.5,
+        "boardToShieldNominalMm": 25,
+        "visibility": {
+          "portalMaximumXMm": [
+            11150,
+            10925
+          ],
+          "portalToShieldReserveMm": 15.5,
+          "allDirectPortalRaysIntercepted": true,
+          "proof": "Both complete portals lie west of the shield; every target point lies east. A connecting segment crosses the plane. Its Y/Z are convex combinations within the full lobby/ceiling rectangle. No corner sampling or arbitrary jet cone is used.",
+          "scope": "Straight rays through either actual Utility or Plant portal, plus a source west of the shield inside the lobby. No pressure pipe is permitted inside the dry cupboard.",
+          "pressureJetRicochetSeamsOrFloodQualification": false
+        },
+        "actions": {
+          "fullReversalUpperN": [
+            133.24691105458734,
+            324.52168960808444
+          ],
+          "maximumSingleBranchN": 324.52168960808444,
+          "simultaneousPairN": 457.7686006626718,
+          "totalFlatSheetOnlyKg": 94.8352,
+          "framesSeatsRetainersAndFinishKg": null,
+          "localImpactPanelAndIndependentFloorCeilingSupportQualified": false
+        },
+        "maintenance": {
+          "normalState": "All shield panels retained, board case closed, no water-bearing service in dry cupboard. Routine house water cuts remain in Utility.",
+          "boardOpening": "Temporarily close the service suite; isolate BOTH Lodge feeds and actual hot/store/upper inventory, drain and verify zero pressure; isolate utility AC and PV AC. Remove supported shield panels to a dry rest, then open the board from its retained1000mm work field.",
+          "restoration": "Close and inspect board, restore all shield/backing/receiving and fire boundaries, verify electrical and water systems, then restore occupied use.",
+          "liveWetBoardMaintenanceClaimed": false,
+          "siblingLiveWithCommonShieldRemoved": false,
+          "actualSeatedPanelLiftAndDryRestProved": false
+        },
+        "wetBoundary": {
+          "material": "uncoated316 stainless comparison",
+          "gaps": "independently supported overlapping backing and visible removable wet-side toe receiver required",
+          "hiddenFloorOrWallVoidReceivingCredited": false,
+          "hydraulicDrainOrDryRetreatPass": false,
+          "heatFromFilledBoardWithShieldClosedW": null,
+          "passiveThermalPassTransferred": false,
+          "ownerMaterialOrAppearanceApproval": false,
+          "assembledElectricalOrInstalledAcceptance": false
+        },
+        "diagnostics": [
+          "MAINBOARD_SCREEN_IMPACT_SEAMS_TOE_AND_DRY_ESCAPE_UNQUALIFIED",
+          "MAINBOARD_SCREEN_ACTUAL_SUPPORT_HANDLING_AND_HEAT_UNQUALIFIED"
+        ],
+        "coordinateDatum": "local nominal ground FFL; actual raised-ground and changed intermediate-floor coordination remain unadmitted",
+        "actualHouseSource": "RH-LAYOUT-REVISION-02",
+        "nominalClearHeightMm": 3100,
+        "changedGroundOrSlabHeightAcceptanceTransferred": false
+      },
       "sourceOpenArchMustBecomeRealWetDoor": true,
       "doorOpenSprayPass": false,
       "ordinaryWasherIsNotSprayRated": true,
@@ -1184,11 +1376,20 @@
     "diagnostics": [
       "PLANT_REQUIRES_NEW_RECEIVER_AND_STORED_RELEASE_MODEL",
       "ACTUAL_INDOOR_CUT_RENEWAL_AND_INDEPENDENT_SUPPORT_REQUIRED",
+      "MAINBOARD_SCREEN_IMPACT_SEAMS_TOE_AND_DRY_ESCAPE_UNQUALIFIED",
+      "MAINBOARD_SCREEN_ACTUAL_SUPPORT_HANDLING_AND_HEAT_UNQUALIFIED",
       "WET_DOOR_OPEN_MAINBOARD_JET_AND_MATERIALS_UNQUALIFIED",
       "ACTUAL_WARM_FLOOR_DRAINS_AND_52_HEAD_LOAD_ACCOUNT_UNQUALIFIED"
     ],
     "completeArrangementSelected": false,
     "hadPacketComplete": false
+  },
+  "roomCatchment": {
+    "state": "missing-ground-section",
+    "diagnostics": [
+      "INLET_ROOM_CATCHMENT_REQUIRES_SAVED_GROUND_SECTION"
+    ],
+    "selected": false
   },
   "architectureDecision": {
     "prefer": "internal-wet-utility-and-service-hub-replan",
