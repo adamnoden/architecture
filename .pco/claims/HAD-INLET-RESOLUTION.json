@@ -9,8 +9,8 @@
     "label": "rush-had-service-hub-20261121"
   },
   "claimedAt": "2026-11-21T09:44:40.547Z",
-  "heartbeatAt": "2026-11-21T10:00:45.202Z",
-  "expiresAt": "2026-11-21T10:45:45.202Z",
+  "heartbeatAt": "2026-11-21T10:14:26.059Z",
+  "expiresAt": "2026-11-21T10:59:26.059Z",
   "branch": "work/rush-had-service-hub-20261121",
   "predecessor": {
     "leaseId": "b5b027b5-54c3-4568-96ea-1f3d11bdcec6",
@@ -30,8 +30,8 @@
   },
   "pr": 1607,
   "checkpoint": {
-    "evidence": "PR1607 d0f8b403; source receiver proof;13focused+8account tests pass",
-    "next": "Review exact-head full CI; integrate only after fresh preflight",
-    "blocker": "Full CI and whole internal wet-room replan remain"
+    "evidence": "PR1607 head5110a9cb; corrected absolute-head/recovery model;14 tests, typecheck and source audit pass",
+    "next": "Review exact-head CI, reconcile moved main, fresh preflight then integrate",
+    "blocker": "Actual internal wet-room replan and material/source/frost duties remain; no packet closure"
   }
 }
