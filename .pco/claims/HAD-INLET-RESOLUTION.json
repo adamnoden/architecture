@@ -9,9 +9,9 @@
     "label": "had-shield-room-20261121"
   },
   "claimedAt": "2026-11-21T21:29:47.686Z",
-  "heartbeatAt": "2026-11-21T23:16:51.101Z",
-  "expiresAt": "2026-11-22T00:01:51.101Z",
-  "branch": "work/had-shield-supported-room-20261121",
+  "heartbeatAt": "2026-11-21T23:32:08.501Z",
+  "expiresAt": "2026-11-22T00:17:08.501Z",
+  "branch": "work/convergence-structure-20261121",
   "predecessor": {
     "leaseId": "244d4381-c833-4676-bf37-31b3ac789276",
     "generation": 53,
@@ -34,10 +34,10 @@
       "blocker": "Canonical fullhealth stillrunning;GitHub requires sign-in for live logs and connector download404 beforecompletion. No engineering/material/owner/installed approval inferred."
     }
   },
-  "pr": 1615,
+  "pr": 1613,
   "checkpoint": {
-    "evidence": "Coherent HAD successor recovery/had-local-pocket-20261121 head15269b47/tree136a3ded verified/fetched clean.39 focused tests,TypeScript,repository,full source audit0,ordinary six-artifact producer and local SVG reviews pass. Named inventory350.333997kg requested dead INCLUDING frame187.050836kg; disjoint blocked water1060.319793kg. No whole-fault cap, frame centroid fiction or sourceSTR0 load insertion. Frozen1615 head27a full CI passed but is historical only.",
-    "next": "Remain available for final source58 joint review and canonical rebind54 to work/convergence-structure-20261121 PR1613 at root publication time; exact coordinated-head CI and both preflights then merge/release. Root has all four HAD commits and source-account hunk.",
-    "blocker": "New main1216 reconciled by root in same coordinatedPR. SourceSTR0-to-ground530/localRC-mineral retention/four-grid/soil load path, actual masonry receiver, pressure/thermal seats and loaded renewal remain unqualified. #1615 stays frozen until coordinated positive supersession."
+    "evidence": "Prepared coordinated remotehead7cf3083a829b5513a1db31ebf3a1a881a4dda34e/tree3ffc22cc603c206cf49441617d1bececc0f399cb on recovery/str-grid-corner-20261121 preserves49,1216,HAD15269b47 parents. Root reports320Python+77MJS+43HAD/profile+9sourceguard+actualsavedwet/cageAPI,types,repo and source audit0 PASS. HAD private39tests and six-artifact genuine producer/check+SVG review passed; joint physical HAD controls independently match. Rebinding to single dualWork1613;1615 remains historical.",
+    "next": "Root immediately publishes prepared7cf to work/convergence-structure-20261121 and updates1613 dualWork/twoLease body. Maintain54 during exact coordinated-head CI; run fresh both-lease publication preflights and merge when earned. Continue separate ordinary indoor-cut successor without changing frozen head.",
+    "blocker": "Exact coordinated-head CI not yet run. LocalRC/mineral retention/four-grid/soil and actual frame/pipe receiver paths remain unqualified; no sourceSTR0 insertion,530 adoption, whole-fault cap or fabricated full-frame centroid. Frozen1615 will be closed only after positive coordinated supersession."
   }
 }
