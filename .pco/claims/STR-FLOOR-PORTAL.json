@@ -1,44 +1,39 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 46,
-  "state": "released",
-  "leaseId": "ba0fc4e9-5e82-4fee-ba2b-a68692aaf759",
+  "generation": 47,
+  "state": "claimed",
+  "leaseId": "37f8e399-fda2-42a8-8282-b3e5bda5c950",
   "holder": {
     "kind": "chatgpt",
-    "label": "rush-structural-20261120"
+    "label": "rush-coupled48-20261121"
   },
-  "claimedAt": "2026-11-20T22:25:00.372Z",
-  "heartbeatAt": "2026-11-21T00:42:08.827Z",
-  "expiresAt": "2026-11-21T00:42:08.827Z",
-  "branch": "work/rush-structural-20261120",
+  "claimedAt": "2026-11-21T00:42:51.058Z",
+  "heartbeatAt": "2026-11-21T00:42:51.058Z",
+  "expiresAt": "2026-11-21T01:27:51.058Z",
+  "checkpoint": {
+    "evidence": "Merged PR1602 at4e3ae570 after all exact-head workflows and fresh canonical preflight. Corrected coupled48 code recovery branch91899443; successor proof/account pending. Actual correctedbaseline all18physicaltraces passes; prior orphan47 receipts invalid/quarantined. Q/pressure inputs now applied, exact owning source frozen0fc3d09e.",
+    "next": "Finish corrected8 nativecases plus3additional signedroof controls and24source35receipts; refresh actual root sourceaccount, savedCLI propagation/reversal, publish integrated successor and require exact CI. Continue genuine receiver and whole-inlet resolution; no STR closure."
+  },
+  "branch": "work/rush-structural-coupling-20261120",
   "predecessor": {
-    "leaseId": "a044c93f-78e1-4267-955e-f89e12b23997",
-    "generation": 45,
-    "branch": "work/convergence-gravity-house-20261120",
-    "pr": 1598,
+    "leaseId": "ba0fc4e9-5e82-4fee-ba2b-a68692aaf759",
+    "generation": 46,
+    "branch": "work/rush-structural-20261120",
+    "pr": 1602,
     "checkpoint": {
-      "evidence": "Merged PR1598 at c1683cfc; e5dff991 adds STATUS only. All 10 exact-head checks and fresh dual preflight passed; 14 source families/41 consumer paths. Local-only successors: PR1597 comment7043849237.",
-      "next": "Recover A4482/foundation746a from local handoff first; finish RC anchorage, receivers/cap-grid, wind/roof and water barriers through saved model. No structural closeout.",
-      "blocker": "Execution workspace unavailable; successor source partly local-only and not remotely fetchable. STR/HAD/roof/whole-house gates remain open."
+      "evidence": "PR1602 exact e22a66e9 remains in hosted full health; publication/browser/physical proofs pass. Actual pre851 assembly audit confirms982ports/904normal/2074cells, zero duplicate or unused rows. Successor47 proofs quarantined: integer/float point strings orphaned10roof ports; QA canonical point fix plus net-floor-Q and signed roof-pressure integration underway in isolated branches.",
+      "next": "Merge validated e22 after fresh preflight. Combine canonical point fix, netQ and explicit roof pressure into source48; verify all18 physical receiver traces, regenerate24 legacy vertical/current-house proofs and saved CLI changes before publication. No structural closure or valid successor head demands yet."
     }
   },
   "recoverySource": {
-    "leaseId": "a044c93f-78e1-4267-955e-f89e12b23997",
-    "generation": 45,
-    "branch": "work/convergence-gravity-house-20261120",
-    "pr": 1598,
+    "leaseId": "ba0fc4e9-5e82-4fee-ba2b-a68692aaf759",
+    "generation": 46,
+    "branch": "work/rush-structural-20261120",
+    "pr": 1602,
     "checkpoint": {
-      "evidence": "Merged PR1598 at c1683cfc; e5dff991 adds STATUS only. All 10 exact-head checks and fresh dual preflight passed; 14 source families/41 consumer paths. Local-only successors: PR1597 comment7043849237.",
-      "next": "Recover A4482/foundation746a from local handoff first; finish RC anchorage, receivers/cap-grid, wind/roof and water barriers through saved model. No structural closeout.",
-      "blocker": "Execution workspace unavailable; successor source partly local-only and not remotely fetchable. STR/HAD/roof/whole-house gates remain open."
+      "evidence": "PR1602 exact e22a66e9 remains in hosted full health; publication/browser/physical proofs pass. Actual pre851 assembly audit confirms982ports/904normal/2074cells, zero duplicate or unused rows. Successor47 proofs quarantined: integer/float point strings orphaned10roof ports; QA canonical point fix plus net-floor-Q and signed roof-pressure integration underway in isolated branches.",
+      "next": "Merge validated e22 after fresh preflight. Combine canonical point fix, netQ and explicit roof pressure into source48; verify all18 physical receiver traces, regenerate24 legacy vertical/current-house proofs and saved CLI changes before publication. No structural closure or valid successor head demands yet."
     }
-  },
-  "checkpoint": {
-    "evidence": "PR1602 exact e22a66e9 remains in hosted full health; publication/browser/physical proofs pass. Actual pre851 assembly audit confirms982ports/904normal/2074cells, zero duplicate or unused rows. Successor47 proofs quarantined: integer/float point strings orphaned10roof ports; QA canonical point fix plus net-floor-Q and signed roof-pressure integration underway in isolated branches.",
-    "next": "Merge validated e22 after fresh preflight. Combine canonical point fix, netQ and explicit roof pressure into source48; verify all18 physical receiver traces, regenerate24 legacy vertical/current-house proofs and saved CLI changes before publication. No structural closure or valid successor head demands yet."
-  },
-  "pr": 1602,
-  "releasedAt": "2026-11-21T00:42:08.827Z",
-  "releaseReason": "handoff"
+  }
 }
