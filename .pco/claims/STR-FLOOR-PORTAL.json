@@ -9,9 +9,9 @@
     "label": "structure-review-seated-wet-beam"
   },
   "claimedAt": "2026-11-21T12:29:12.173Z",
-  "heartbeatAt": "2026-11-21T12:29:12.173Z",
-  "expiresAt": "2026-11-21T13:14:12.173Z",
-  "branch": "work/rush-seated-wet-beam-20261121",
+  "heartbeatAt": "2026-11-21T12:30:01.425Z",
+  "expiresAt": "2026-11-21T13:15:01.425Z",
+  "branch": "work/rush-floor-inlet-convergence-20261121",
   "predecessor": {
     "leaseId": "112c4e59-d3c1-4931-a15b-ba4d2433a70f",
     "generation": 48,
@@ -31,5 +31,9 @@
       "evidence": "Final remote1e3cf61826b5939b4d35850f404bdf6634798d4c/tree9a7135d9912cf07f55578089d2ace280a362c25d includesmain9dbd. Fresh6upper52/4floor54 native states, analytical/receipt3 and editor/penetration6, tsc, audit15/0,13witnesses and repo pass. Final API3solve suites pending frozenhead. Durablehandoff PR1609comment7062574718.",
       "next": "Designatedstructure worker claimnextgeneration; retainpreparedsource and joinHAD71a7248 underfreshleases; observeexactfinalAPI/CLI suites andsubmitjointPR/allCI. Thenimplementaligned250seatedwetbeam onoriginal260x450posts withactualaxisawareworkmaps/finitegrid/CSGandfreshproofs. STRnotcomplete."
     }
+  },
+  "checkpoint": {
+    "evidence": "Prepared STR source1e3cf618 and HAD71a7248 retained for joint integration; numerical source frozen",
+    "next": "Root integrates joint prepared PR; this holder develops seated wet-beam successor separately without publishing before joint merge"
   }
 }
