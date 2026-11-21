@@ -9,8 +9,8 @@
     "label": "had-shield-room-20261121"
   },
   "claimedAt": "2026-11-21T21:29:47.686Z",
-  "heartbeatAt": "2026-11-21T21:29:47.686Z",
-  "expiresAt": "2026-11-21T22:14:47.686Z",
+  "heartbeatAt": "2026-11-21T21:57:51.699Z",
+  "expiresAt": "2026-11-21T22:42:51.699Z",
   "branch": "work/had-shield-supported-room-20261121",
   "predecessor": {
     "leaseId": "244d4381-c833-4676-bf37-31b3ac789276",
@@ -33,5 +33,11 @@
       "next": "Actively monitor exact-head fullhealth;fresh preflight and merge on success, then release HAD and verify cleanup. Root continues independent STR integration.",
       "blocker": "Canonical fullhealth stillrunning;GitHub requires sign-in for live logs and connector download404 beforecompletion. No engineering/material/owner/installed approval inferred."
     }
+  },
+  "pr": 1615,
+  "checkpoint": {
+    "evidence": "PR1615 head27a7870e/tree770fe7af matches local e557abee:20focused tests,tsc,repo,producercheck and actual frameSVG review passed. Source case5 carries door/transfer/frame choices and actual core-origin load/stock ledger; long-arm torsion rejects.",
+    "next": "Inspect exact-head CI and reconcile STR1613 movedmain; inspect source-based local deep-void premise without changing STR native inputs; then preflight/merge earned result.",
+    "blocker": "No actual masonry group/receiver, dynamic impact/weld, loaded removal/temporary rest, material or owner acceptance. No raised floor/current house or52-head load adoption."
   }
 }
