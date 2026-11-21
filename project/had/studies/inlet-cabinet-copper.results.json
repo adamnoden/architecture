@@ -2,9 +2,9 @@
   "schema": "had-copper-cabinet-comparison/1",
   "status": "unselected-whole-arrangement-comparison",
   "source": {
-    "caseDigest": "0871f8a8ee4c67119618336a89461ed65295ec1a527d37073bc9955da5aa8a54",
+    "caseDigest": "9d35d22dfd0595a1849f8065e185702d1855acfbf4dd968cec077f6d489103a3",
     "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-    "bindingDigest": "449c2028afa6b230f9bd75e7711820f7ea5bb91817f981866c8a79063405a3d1",
+    "bindingDigest": "1e086fd5ba4f3f183583c3bb097d28c2c47ad1b9d2386f061d9faf9a8140d010",
     "inputs": {
       "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
       "project/had/studies/current-house-services.json": "e649805e78244527fe6498b516fa5f23734ac5ea",
@@ -15,7 +15,7 @@
       "project/str/studies/reconciled-house-interface.json": "4b680b7012bda54d4aff83da8f8718b3b191ea69"
     },
     "methods": {
-      "compiler/reference-house/current-design/inlet-cabinet-copper.ts": "1ba33647e0cf89c6f5d3cecf60a51faa22b1558a",
+      "compiler/reference-house/current-design/inlet-cabinet-copper.ts": "bede711cd0495fa4a6a836bd654e799016e54833",
       "compiler/reference-house/current-design/inlet-fixed-thermal.ts": "07632911487d9a2a30ef5aa53cbac2609a3e40d8",
       "project/had/studies/incoming-water-geometry.mjs": "ed658b7df0edf5d8e6d1826d32730a14b00199c7"
     }

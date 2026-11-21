@@ -37,6 +37,8 @@ test('whole copper cabinet recomputes real routes, access, quantities, source wi
  assert.throws(()=>runInletCabinetCase(d,{...request.cabinet,bindingDigest:'stale'}),/Stale/)
  assert.throws(()=>runInletCabinetCase(d,{...request.cabinet,settings:{...request.cabinet.settings,pipeWallMm:.9}}),/domain/)
  assert.throws(()=>runInletCabinetCase(d,{...request.cabinet,selected:true}),/Versioned/)
+ assert.throws(()=>runInletCabinetCase(d,{...request.cabinet,settings:{...request.cabinet.settings,cabinetXMm:9000}}),/both actual source compartments/)
+ assert.ok(runInletCabinetCase(d,{...request.cabinet,settings:{...request.cabinet.settings,frontYMm:600,riserYMm:600}}).diagnostics.includes('RISER_OR_VALVE_NOT_CONTAINED_IN_CABINET'))
  const missing={...d,disciplineBindings:d.disciplineBindings.map(f=>f.id==='had-fixed-inlet-arrangement'?{...f,identities:{...f.identities,'compiler/reference-house/current-design/inlet-cabinet-copper.ts':'0'.repeat(40)}}:f)}
  assert.throws(()=>readInletCabinetCase(missing),/not admitted/)
 })

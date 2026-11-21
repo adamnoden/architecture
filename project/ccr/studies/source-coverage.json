@@ -608,7 +608,8 @@
         "node --import tsx --test compiler/reference-house/current-design-inlet-fixed-temporary-keeper.test.ts compiler/reference-house/current-design-inlet-fixed-support-view.test.ts",
         "node --import tsx --test compiler/reference-house/current-design-inlet-fixed-shared-service-frame.test.ts",
         "node --import tsx --test compiler/reference-house/current-design-inlet-cabinet.test.ts",
-        "node --import tsx project/had/studies/inlet-cabinet-copper.ts --check"
+        "node --import tsx project/had/studies/inlet-cabinet-copper.ts --check",
+        "node --import tsx --test compiler/reference-house/current-design-inlet-cabinet-pipeline.test.ts"
       ]
     },
     {
@@ -1436,7 +1437,7 @@
     "project/str/studies/joined_successor_kernel.py": "bbf1e80933260d0182db34d777427b68a361b2f0",
     "compiler/reference-house/current-design/structural-successor.ts": "9ae813ed40695e6e94df43caa0b45e7db54d02c4",
     "compiler/reference-house/current-design/inlet-support.ts": "a2404befdbeda6464bc9f772d25bccd8d78d2479",
-    "compiler/reference-house/current-design/engineering-document.ts": "28d09453b740f87ee9eb82da0d137506673c3f3a",
+    "compiler/reference-house/current-design/engineering-document.ts": "ed63951ad30627240fb1f33e0d9f7184d679f5b5",
     "project/had/inlet-assembly-convergence.md": "21719c69b3ec916043e53d7ae0891d5c6ce7aae5",
     "project/str/studies/floor-portal-fixed-wall-head.py": "807159aa9439837489d3e95f9bf359983635c342",
     "project/str/studies/floor-portal-north-transfer.py": "20f79473e3fd3e88351b3fa4d68ac1f1ef476d03",
@@ -1449,7 +1450,7 @@
     "compiler/reference-house/current-design/inlet-fixed-entry.ts": "9ad3f449b36d8770ac1a1bfe167210fbca7581bf",
     "compiler/reference-house/current-design/inlet-fixed-case.ts": "6a6670cf3dab365e41b4bf5e7c4a82ee2a0cd82f",
     "compiler/reference-house/current-design/inlet-fixed-operating.ts": "8d2a9e0132d300e697cff2661f01222a7b661b45",
-    "compiler/reference-house/current-design/compile.ts": "4756411d47028cc6383e454e44ec5066ad6987ae",
+    "compiler/reference-house/current-design/compile.ts": "498b986bcc4180624d6cb152b8484f28fb771582",
     "project/mat/envelope-ground-boundary.md": "7aae65350ded7bff6e21c4425153af3cdaec41d2",
     "project/owner-house-charter.md": "285202ef6be2ccd9954de51213d1faa23a158813",
     "project/mat/studies/conventional-ground-junction.json": "5d899197848d0f951d8ff4573983aff81d4fd32f",
@@ -1508,8 +1509,8 @@
     "project/had/studies/house-vertical-profile.svg": "2e8599cf6f0d7f3fb2c9bd39e2fd33849c555d1e",
     "compiler/reference-house/current-design/house-vertical-profile.ts": "3f3cbb5b711763265ad8c65358ceb15a9acf066c",
     "compiler/reference-house/current-design/inlet-fixed-shared-service-frame.ts": "dd082ec2f48fc9bfba53bfe8fa37661911322f74",
-    "project/had/fixed-inlet-shared-service-frame-development.md": "2e8d28c3c22f1df24944a7f4c1efd038a0ecbf89",
-    "scripts/compile-current-design.ts": "2eb172d6b7ceddfe3a72cf659ea92edfd4122b14",
+    "project/had/fixed-inlet-shared-service-frame-development.md": "6b52562f403e1b2c2c8df405c0471408f0952feb",
+    "scripts/compile-current-design.ts": "1ab779b742c489804464e0a128262265a0964b5d",
     "project/str/studies/vertical_rc_floor.py": "81d09fcd8ca14a553e16f6ebaca5348c64558ac1",
     "project/str/vertical-rc-floor-gravity-result.md": "0e1e13b47a082c77ebc9d652b54b5b10a36b814d",
     "project/str/studies/vertical-rc-floor-proof.json": "4e7f1f7c771d15b2f1bdb9a5763716536198a7fe",
@@ -1523,10 +1524,10 @@
     "project/str/studies/continuous_rc_closed_links.py": "005de10b93766e5fddd1e75b64df8f07df17652e",
     "project/str/studies/continuous_rc_closed_links_proof.py": "efd5717d7f41a053d99cd6c5f5d5a518869fa080",
     "project/str/studies/cage-requirements.txt": "d59d856f1cc6c05962ca6bd4f14dd3315acd207c",
-    "compiler/reference-house/current-design/inlet-cabinet-copper.ts": "1ba33647e0cf89c6f5d3cecf60a51faa22b1558a",
+    "compiler/reference-house/current-design/inlet-cabinet-copper.ts": "bede711cd0495fa4a6a836bd654e799016e54833",
     "project/had/inlet-cabinet-copper-comparison.md": "acebcac35f2e001c790132471b66a3a4c81252ce",
     "project/had/studies/inlet-cabinet-copper.ts": "933455bb9aec94932da96d9dcc9dd1cb4890b32d",
-    "project/had/studies/inlet-cabinet-copper.results.json": "4e3712ceb836144b3508341f67ded1c3b8b27ee5",
-    "project/had/studies/inlet-cabinet-copper.svg": "8346a0a93bb565f35cc7aeb5aa8ec4be8e1e199b"
+    "project/had/studies/inlet-cabinet-copper.results.json": "059c40b23c7ffb296fae95e38b61dd52a012f0e9",
+    "project/had/studies/inlet-cabinet-copper.svg": "82c9210551e84494ba97e02a90cd3414f6cdace1"
   }
 }
