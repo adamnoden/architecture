@@ -55,9 +55,9 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `MRA-03` | Vapour, condensation and drying assault | TRIAD-GATE |
 | `MRA-04` | Whole-house moisture failure matrix and adversarial gate | MRA-01, MRA-02, MRA-03 |
 | `MRA-05` | Post-BCR moisture assurance closeout | BCR-CONVERGENCE |
-| `PLT-FINAL-FREEZE` | Final resolved-house plate integration and freeze | PLT-FINAL-PREP, PLT-PRINT-REVIEW, PLT-OWNER-FINAL-DESIGN-ACCEPTANCE |
-| `EDA-RENEWED` | Renewed editorial-doctrine assurance over enlarged final source | PLT-FINAL-FREEZE |
-| `PUB-02-FINAL` | Final private-object content, drawing and manufacture gate | EDA-RENEWED |
+| `PLT-FINAL-FREEZE` | Final resolved-house plate integration and freeze | PLT-FINAL-PREP, PLT-PRINT-REVIEW, PLT-OWNER-FINAL-DESIGN-ACCEPTANCE, EDA-RENEWED |
+| `EDA-RENEWED` | Renewed editorial-doctrine assurance over enlarged final source | PLT-FINAL-PREP |
+| `PUB-02-FINAL` | Final private-object content, drawing and manufacture gate | EDA-RENEWED, PLT-FINAL-FREEZE |
 | `PLT-FINAL-PREP` | Prepare coherent final current-house digital and print proof set | HRS-SYNTHESIS, CCR-CURRENT-RELEASE |
 | `PLT-OWNER-FINAL-DESIGN-ACCEPTANCE` | Receive the owner’s acceptance of the assembled book and final design drawings | PLT-FINAL-PREP |
 | `PLT-PRINT-REVIEW` | Receive and disposition actual-size BOOK and WALL print verdicts | PLT-FINAL-PREP |
@@ -73,7 +73,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 ### Structural critical path
 
-`STR-FLOOR-PORTAL` → `ROF-RWT-GATE` → `MAT-COORDINATION` → `TRIAD-GATE` → `HAD-OWNER-DESIGN-REVIEW` → `IAS-WORKABLE-DETAILS` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `CCR-CURRENT-RELEASE` → `PLT-FINAL-PREP` → `PLT-OWNER-FINAL-DESIGN-ACCEPTANCE` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
+`STR-FLOOR-PORTAL` → `ROF-RWT-GATE` → `MAT-COORDINATION` → `TRIAD-GATE` → `HAD-OWNER-DESIGN-REVIEW` → `IAS-WORKABLE-DETAILS` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `CCR-CURRENT-RELEASE` → `PLT-FINAL-PREP` → `EDA-RENEWED` → `PLT-FINAL-FREEZE` → `PUB-02-FINAL`
 
 This path is structural by node count. It is not a wall-clock estimate; weighted scheduling is withheld unless every remaining node on the model has an explicit planning estimate.
 <!-- project-control:end -->
