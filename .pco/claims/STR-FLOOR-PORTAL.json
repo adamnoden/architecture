@@ -1,44 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 48,
-  "state": "released",
-  "leaseId": "112c4e59-d3c1-4931-a15b-ba4d2433a70f",
+  "generation": 49,
+  "state": "claimed",
+  "leaseId": "95dc0271-adfc-448a-9789-0f1476b4b26b",
   "holder": {
     "kind": "chatgpt",
-    "label": "rush-20261121-recovery"
+    "label": "structure-review-seated-wet-beam"
   },
-  "claimedAt": "2026-11-21T09:40:30.038Z",
-  "heartbeatAt": "2026-11-21T12:27:58.690Z",
-  "expiresAt": "2026-11-21T12:27:58.690Z",
-  "branch": "work/rush-floor-section-20261121",
+  "claimedAt": "2026-11-21T12:29:12.173Z",
+  "heartbeatAt": "2026-11-21T12:29:12.173Z",
+  "expiresAt": "2026-11-21T13:14:12.173Z",
+  "branch": "work/rush-seated-wet-beam-20261121",
   "predecessor": {
-    "leaseId": "37f8e399-fda2-42a8-8282-b3e5bda5c950",
-    "generation": 47,
-    "branch": "work/rush-structural-coupling-20261120",
-    "pr": 1604,
+    "leaseId": "112c4e59-d3c1-4931-a15b-ba4d2433a70f",
+    "generation": 48,
+    "branch": "work/rush-floor-section-20261121",
+    "pr": 1609,
     "checkpoint": {
-      "evidence": "PR1604 head784b9f362af2fc50f183148cfbdec4b370a4567e; fresh11coupled/24controls, saved3solves/reversal pass; sourceaudit15/0. Durable recovery: PR1604#issuecomment-7055489871; physical failures retained.",
-      "next": "Recover canonical leases/current main; inspect exact-head CI; fresh dual STR/HAD merge-check and expected-head merge; then combined51 and service-hub replan.",
-      "blocker": "Execution environment unavailable; exec recovery45s failed. No local preflight or new tests. Handoff release follows checkpoint readback; no packet completion."
+      "evidence": "Final remote1e3cf61826b5939b4d35850f404bdf6634798d4c/tree9a7135d9912cf07f55578089d2ace280a362c25d includesmain9dbd. Fresh6upper52/4floor54 native states, analytical/receipt3 and editor/penetration6, tsc, audit15/0,13witnesses and repo pass. Final API3solve suites pending frozenhead. Durablehandoff PR1609comment7062574718.",
+      "next": "Designatedstructure worker claimnextgeneration; retainpreparedsource and joinHAD71a7248 underfreshleases; observeexactfinalAPI/CLI suites andsubmitjointPR/allCI. Thenimplementaligned250seatedwetbeam onoriginal260x450posts withactualaxisawareworkmaps/finitegrid/CSGandfreshproofs. STRnotcomplete."
     }
   },
   "recoverySource": {
-    "leaseId": "37f8e399-fda2-42a8-8282-b3e5bda5c950",
-    "generation": 47,
-    "branch": "work/rush-structural-coupling-20261120",
-    "pr": 1604,
+    "leaseId": "112c4e59-d3c1-4931-a15b-ba4d2433a70f",
+    "generation": 48,
+    "branch": "work/rush-floor-section-20261121",
+    "pr": 1609,
     "checkpoint": {
-      "evidence": "PR1604 head784b9f362af2fc50f183148cfbdec4b370a4567e; fresh11coupled/24controls, saved3solves/reversal pass; sourceaudit15/0. Durable recovery: PR1604#issuecomment-7055489871; physical failures retained.",
-      "next": "Recover canonical leases/current main; inspect exact-head CI; fresh dual STR/HAD merge-check and expected-head merge; then combined51 and service-hub replan.",
-      "blocker": "Execution environment unavailable; exec recovery45s failed. No local preflight or new tests. Handoff release follows checkpoint readback; no packet completion."
+      "evidence": "Final remote1e3cf61826b5939b4d35850f404bdf6634798d4c/tree9a7135d9912cf07f55578089d2ace280a362c25d includesmain9dbd. Fresh6upper52/4floor54 native states, analytical/receipt3 and editor/penetration6, tsc, audit15/0,13witnesses and repo pass. Final API3solve suites pending frozenhead. Durablehandoff PR1609comment7062574718.",
+      "next": "Designatedstructure worker claimnextgeneration; retainpreparedsource and joinHAD71a7248 underfreshleases; observeexactfinalAPI/CLI suites andsubmitjointPR/allCI. Thenimplementaligned250seatedwetbeam onoriginal260x450posts withactualaxisawareworkmaps/finitegrid/CSGandfreshproofs. STRnotcomplete."
     }
-  },
-  "checkpoint": {
-    "evidence": "Final remote1e3cf61826b5939b4d35850f404bdf6634798d4c/tree9a7135d9912cf07f55578089d2ace280a362c25d includesmain9dbd. Fresh6upper52/4floor54 native states, analytical/receipt3 and editor/penetration6, tsc, audit15/0,13witnesses and repo pass. Final API3solve suites pending frozenhead. Durablehandoff PR1609comment7062574718.",
-    "next": "Designatedstructure worker claimnextgeneration; retainpreparedsource and joinHAD71a7248 underfreshleases; observeexactfinalAPI/CLI suites andsubmitjointPR/allCI. Thenimplementaligned250seatedwetbeam onoriginal260x450posts withactualaxisawareworkmaps/finitegrid/CSGandfreshproofs. STRnotcomplete."
-  },
-  "pr": 1609,
-  "releasedAt": "2026-11-21T12:27:58.690Z",
-  "releaseReason": "handoff"
+  }
 }
