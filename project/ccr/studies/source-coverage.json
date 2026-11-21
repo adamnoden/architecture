@@ -133,7 +133,8 @@
         "docs/reference-house/structural-brief.md",
         "project/triad-interface-contract.md",
         "project/str/distributed-floor-compatibility-result.md",
-        "project/str/dry-side-ground-section.md"
+        "project/str/dry-side-ground-section.md",
+        "project/str/sparse-inplane-condensation-result.md"
       ],
       "authorRoots": [
         "project/str/studies/current-house-grid.py",
@@ -228,7 +229,8 @@
         "project/str/studies/current-house-roof-connection.json",
         "project/str/studies/current-house-floor-closure.svg",
         "project/str/studies/current-house-occupied-interfaces.json",
-        "project/mat/studies/conventional-ground-junction.json"
+        "project/mat/studies/conventional-ground-junction.json",
+        "project/str/studies/vertical-floor-requirements.txt"
       ],
       "authoredInputs": [
         "project/str/dpc-origin-paths.json",

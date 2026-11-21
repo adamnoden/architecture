@@ -32,6 +32,7 @@ const nativePaths = [
   'project/str/studies/retained_component_geometry.py',
   'project/str/studies/retained_components.py',
   'project/str/studies/structural-linear.py',
+  'project/str/studies/vertical-floor-requirements.txt',
 ] as const
 const comparisonFields = ['schema', 'sourceSHA256', 'cornerWidthsMm', 'memberLaw', 'jointLaw', 'membraneLaw',
   'edgeBand', 'maxPitchMm', 'componentCase', 'boundaryCase', 'receivingLaws', 'use'] as const

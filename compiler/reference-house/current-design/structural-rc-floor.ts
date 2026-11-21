@@ -59,7 +59,7 @@ function currentBinding(resolved: CurrentDesignResolution) {
   const comparison = exact(JSON.parse(execFileSync('python3', ['-B', fileURLToPath(new URL(methodPath, root)), '--read'],
     { encoding: 'utf8' })), comparisonFields, 'native joined RC floor') as NativeCase
   if (comparison.schema !== 'str-monolithic-rc-portal-case/1' || !record(comparison.sourceSHA256)
-    || Object.keys(comparison.sourceSHA256).length !== 30 || !record(comparison.houseCase)
+    || Object.keys(comparison.sourceSHA256).length !== 31 || !record(comparison.houseCase)
     || !record(comparison.houseCase.joinedCase) || !record(comparison.houseCase.joinedCase.portal)
     || !record(comparison.houseCase.joinedCase.floor)) {
     throw new Error('The joined RC floor native source inventory or schema changed; integrate it explicitly')

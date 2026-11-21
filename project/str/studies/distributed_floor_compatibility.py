@@ -19,7 +19,8 @@ EXTRA_SOURCES = ('project/str/studies/current-house-roof-bracing.py',
                  'project/str/studies/joined_successor_compatibility.py',
                  'project/str/studies/joined_successor_kernel.py',
                  'project/str/studies/retained_components.py',
-                 'project/str/studies/distributed_floor_views.py')
+                 'project/str/studies/distributed_floor_views.py',
+                 'project/str/studies/vertical-floor-requirements.txt')
 CORNERS = ('SW','SE','NW','NE')
 
 
