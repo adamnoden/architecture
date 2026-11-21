@@ -213,7 +213,9 @@ function joinedServiceDirection(b: ReturnType<typeof binding>, s: InletSourceEnv
     normalPathX = model.plantReferenceDoor.operatorCentrePath[1][0], normalBodyR = model.plantReferenceDoor.retainedBodyRadius
   const transfer: readonly (readonly number[])[] = [[utilityWall.holes[0][1] - 150, north - 93, s.plantTransferZMm],
     [plantWall.holes[0][1] - 325, plantWall.finishedFaces[1] + 103, s.plantTransferZMm]]
-  const delta = transfer[1].map((v, i) => v - transfer[0][i]), fullyDrawn = transfer.map(p => p.map((v, i) => v + delta[i])), jacketR = 37,
+  const delta = transfer[1].map((v, i) => v - transfer[0][i]), fullyDrawn = transfer.map(p => p.map((v, i) => v + delta[i])),
+    insulation = b.data[paths[5]].pipeInsulation, jacketMaximumMm = inletCabinetProductFacts.pipe.maximumOuterDiameterIncludingOvalityMm
+      + 2 * insulation.selectedInternalRadialThickness + 2 * insulation.jacketThicknessEachSide, jacketR = jacketMaximumMm / 2,
     buffer = services.plant.primaryBuffer, bufferReserve = s.plantTransferZMm - jacketR - buffer.maxRetainedHeight,
     doorReserve = services.plant.cylinder.minDoor[1] - s.plantTransferZMm - jacketR
   const crossing = (wall: any) => wall.finishedFaces.map((y: number) => {
@@ -257,7 +259,8 @@ function joinedServiceDirection(b: ReturnType<typeof binding>, s: InletSourceEnv
       maintenanceFields: model.serviceMaintenanceFields.filter((f: any) => f.id === 'utility'),
       sourceOpenArchMustBecomeRealWetDoor: true, doorOpenSprayPass: false, ordinaryWasherIsNotSprayRated: true,
       counterfactualRoomGeometryAuthored: true, replacementOccupiedHouseCompiled: false },
-    transfer: { jacketMaximumMm: 74, pathMm: transfer, centrelineLengthMm: round(Math.hypot(...delta)), fullNorthDrawPathMm: fullyDrawn,
+    transfer: { jacketMaximumMm: round(jacketMaximumMm), pipeMaximumOdMm: inletCabinetProductFacts.pipe.maximumOuterDiameterIncludingOvalityMm,
+      radialInsulationMm: insulation.selectedInternalRadialThickness, jacketEachSideMm: insulation.jacketThicknessEachSide, pathMm: transfer, centrelineLengthMm: round(Math.hypot(...delta)), fullNorthDrawPathMm: fullyDrawn,
       utilityArch: crossing(utilityWall), plantArch: crossing(plantWall),
       bufferAfter10Mm: round(bufferReserve - 10), doorAfter10Mm: round(doorReserve - 10),
       independentClampsReleaseToolsCradleAndExportQualified: false, supportOnApparatusCredited: false,

@@ -3,7 +3,7 @@
   "state": "existing-whole-arrangement-rejected",
   "source": {
     "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-    "bindingDigest": "66ffadadfef8cb23384f3cd5506c67aebd1711e5d93273b58329de210b88eaed",
+    "bindingDigest": "c660fd6fc075f9db8713c36363ee7d5586face1a893a498e040b2bf091ccdf75",
     "inputs": {
       "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
       "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
@@ -15,7 +15,7 @@
       "project/had/studies/boundary-service-lodge.json": "edccc843f1829bf583e517095442ad9fe481da53"
     },
     "methods": {
-      "compiler/reference-house/current-design/inlet-source-envelope.ts": "75b3571953db20f9ebeaf0735d101f38c9e912c9",
+      "compiler/reference-house/current-design/inlet-source-envelope.ts": "c6baca027717145854aa7cca790fa8e3858df89c",
       "project/had/studies/south-inlet-relief-hydraulics.mjs": "1cb8dd67e832ce2986f042844122a39e625fef93",
       "compiler/reference-house/current-design/inlet-cabinet-copper.ts": "34d774e3ccd4ff0bac3dcaef63dfa5cdedff6ca4"
     }
@@ -985,7 +985,10 @@
       "replacementOccupiedHouseCompiled": false
     },
     "transfer": {
-      "jacketMaximumMm": 74,
+      "jacketMaximumMm": 80.1,
+      "pipeMaximumOdMm": 28.1,
+      "radialInsulationMm": 25,
+      "jacketEachSideMm": 1,
       "pathMm": [
         [
           11000,
@@ -1015,32 +1018,32 @@
         {
           "wallYmm": 2453,
           "centreXMm": 10975.844156,
-          "horizontalAfterJacketAnd10Mm": 100.155844,
-          "archHeadAfterJacketAnd10Mm": 449.241443
+          "horizontalAfterJacketAnd10Mm": 97.105844,
+          "archHeadAfterJacketAnd10Mm": 446.191443
         },
         {
           "wallYmm": 2647,
           "centreXMm": 10925.454545,
-          "horizontalAfterJacketAnd10Mm": 150.545455,
-          "archHeadAfterJacketAnd10Mm": 482.035176
+          "horizontalAfterJacketAnd10Mm": 147.495455,
+          "archHeadAfterJacketAnd10Mm": 478.985176
         }
       ],
       "plantArch": [
         {
           "wallYmm": 3603,
           "centreXMm": 10677.142857,
-          "horizontalAfterJacketAnd10Mm": 173.857143,
-          "archHeadAfterJacketAnd10Mm": 439.74749
+          "horizontalAfterJacketAnd10Mm": 170.807143,
+          "archHeadAfterJacketAnd10Mm": 436.69749
         },
         {
           "wallYmm": 3797,
           "centreXMm": 10626.753247,
-          "horizontalAfterJacketAnd10Mm": 224.246753,
-          "archHeadAfterJacketAnd10Mm": 465.540622
+          "horizontalAfterJacketAnd10Mm": 221.196753,
+          "archHeadAfterJacketAnd10Mm": 462.490622
         }
       ],
-      "bufferAfter10Mm": 13,
-      "doorAfter10Mm": 18,
+      "bufferAfter10Mm": 9.95,
+      "doorAfter10Mm": 14.95,
       "independentClampsReleaseToolsCradleAndExportQualified": false,
       "supportOnApparatusCredited": false,
       "retainedPlantCylinderPathMm": [

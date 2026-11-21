@@ -58,6 +58,7 @@ test('the symmetric50/50 predecessor remains reproducible as an explicit adverse
 
 test('joined direction prices cold backfeed, open-bowl taps, actual stored release and separate outdoor PV without false approval',()=>{
  const j=baseline.joinedDirection
+ assert.equal(j.transfer.jacketMaximumMm,80.1,'28.1mm tube must retain actual25mm radial insulation and1mm jackets, not borrow22mm pipe envelope')
  assert.equal(j.designDuties.fixtureIds.length,14)
  assert.deepEqual(j.topology.directUtilityColdOnly,['utility-sink-PROPOSED','washer-PROPOSED'])
  assert.match(j.topology.retireColdTreeConnection,/ground-utility/)
