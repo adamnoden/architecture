@@ -10,6 +10,12 @@ The [Crafted Room Kit brief](crafted-room-kit-brief.md) records a central origin
 
 `IAS-CRAFT-ROOM-KIT` develops and tests this refinement before `TRIAD-GATE`, using the existing current compiler. The completed `IAS-WORKABLE-CONCEPT` remains earlier evidence, not approval of its lifting apparatus or module choices. `IAS-WORKABLE-DETAILS` retains the post-owner-selection detail work and must satisfy the new brief. Both owner gates must include the actual room composition and its appearance-only comparison with the best fixed-construction references. A rendered concept or digital installation sequence cannot establish physical performance or achieved assembly time. Canonical registration and delivery are tracked in [#1555](https://github.com/adamnoden/architecture/issues/1555).
 
+## Lighting and service interface successor — 21 November 2026
+
+The owner has agreed the [adaptable room lighting and services brief](adaptable-room-lighting-brief.md), registered in [#1614](https://github.com/adamnoden/architecture/issues/1614). `IAS-ROOM-LIGHTING` develops the lamp-dominant working direction through four fair Study comparisons, a kitchen-task check and one representative wall/skirting/service detail. It consumes the completed crafted-kit and service/access results independently of the remaining whole-house integration work, then becomes an input to `TRIAD-GATE`.
+
+Include the result in the existing owner design pack: useful light and controls, furnished appearance, socket/lead positions, complete lining consequences and actual replacement access. This is pre-owner candidate design and trial planning; `IAS-WORKABLE-DETAILS` still owns fabrication/tolerance/material detail after the presented design receives the owner's decision. No ceiling ban, universal stand-off, material exception, acoustic rating, physical result or aesthetic acceptance follows from agreeing this brief. Whole-ceiling panelling and acoustic improvement need separate justification.
+
 ## Architectural decision
 
 Develop a house whose **interior finishes can be deliberately opened, worked on and reinstated**, without making ordinary life feel like a plant room. The owner specifically wants to explore:
