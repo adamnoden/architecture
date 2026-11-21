@@ -3,7 +3,7 @@ import test from 'node:test'
 import { inletElectricalScreen } from './current-design/inlet-electrical-screen.js'
 
 const source = { boardBoxMm: [11190.5, 2647, 300, 380, 610, 605], lobbyYMm: [2647, 3603],
-  portalMaximumXMm: [11150, 10925], clearHeightMm: 3100,
+  portalMaximumXMm: [11150, 10925],portalMinimumXMm:[10250,9650],standOffMm:25,horizontalInsetMm:0,verticalInsetMm:0, clearHeightMm: 3100,
   ordinaryBody: { axisXMm: 10545, radiusMm: 300 }, fullReversalUpperN: [140, 340] }
 
 test('the full passive cupboard intercepts complete-portal direct rays while a short front screen would miss them', () => {

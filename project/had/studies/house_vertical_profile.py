@@ -2,6 +2,7 @@ import ast
 import copy
 import hashlib
 import json
+import math
 from pathlib import Path
 import sys
 from xml.sax.saxutils import escape
@@ -10,6 +11,7 @@ from xml.sax.saxutils import escape
 METHOD='project/had/studies/house_vertical_profile.py'
 GROUND_METHOD='project/str/studies/dry_side_ground_section.py'
 GROUND_CASE='project/str/studies/dry-side-ground-section.json'
+WET_SUPPORT_RECEIPT='project/str/studies/floor-section-proof.json'
 EXTRA=('project/str/studies/current-house-lateral.json','project/str/studies/current-house-roof-bracing.py','project/mat/studies/ring-roof-family.json')
 
 
@@ -25,9 +27,14 @@ def ground_method(raw):
 
 def load_profile_source(root):
     root=Path(root);document=json.loads((root/GROUND_CASE).read_bytes())
-    paths=tuple(dict.fromkeys((METHOD,GROUND_METHOD,GROUND_CASE,*document['sources'],*EXTRA)))
+    receipt=json.loads((root/WET_SUPPORT_RECEIPT).read_bytes());native_sources=receipt.get('sourceSHA256',{})
+    if not isinstance(native_sources,dict) or len(native_sources)!=58:raise ValueError('Current58-source wet-support receipt required')
+    paths=tuple(dict.fromkeys((METHOD,GROUND_METHOD,GROUND_CASE,*document['sources'],*EXTRA,WET_SUPPORT_RECEIPT,*native_sources)))
     raw={p:(root/p).read_bytes() for p in paths}
-    return {'raw':raw,'identities':{p:hashlib.sha256(v).hexdigest() for p,v in raw.items()},'ground':ground_method(raw[GROUND_METHOD]),'groundDocument':document}
+    identities={p:hashlib.sha256(v).hexdigest() for p,v in raw.items()}
+    for path,value in native_sources.items():
+        if identities[path]!=value:raise ValueError('Stale wet-support geometry receipt at '+path)
+    return {'raw':raw,'identities':identities,'ground':ground_method(raw[GROUND_METHOD]),'groundDocument':document}
 
 
 def reference_profile_case(source):
@@ -50,6 +57,81 @@ def numeric_declarations(raw,names):
     return found
 
 
+def common_wet_support_geometry(raw):
+    """Only geometry common to all seven actual controls, never a selected solve."""
+    proof=json.loads(raw)
+    if (not isinstance(proof,dict) or proof.get('schema')!='str-coupled-floor-section-proof/1'
+            or not isinstance(proof.get('sourceSHA256'),dict) or len(proof['sourceSHA256'])!=58
+            or not isinstance(proof.get('controls'),list)):
+        raise ValueError('Current58-source floor receipt required for wet-support profile geometry')
+    controls=[r for r in proof['controls'] if r['executedRequest'].get('wetSupport') is not None]
+    if len(controls)!=7 or len({r['nativeCaseId'] for r in controls})!=7:
+        raise ValueError('All seven distinct actual wet-support geometry controls are required')
+    common=None;densities=set()
+    for row in controls:
+        request=row['executedRequest'];wet=row.get('seatedWetSupport');section=row['floorSection']
+        if (row.get('sourceSHA256')!=proof['sourceSHA256'] or request.get('sourceSHA256')!=proof['sourceSHA256']
+                or not isinstance(wet,dict) or wet.get('settings')!=request['wetSupport']
+                or row.get('candidateAccepted') is not False or row.get('completeHouseProof') is not False
+                or wet.get('physicalAcceptance') is not False):
+            raise ValueError('Wet-support geometry must retain its actual request/source and unadopted status')
+        setting=wet['settings'];posts=wet['posts']
+        keys=('beamAxisXMm','beamWidthMm','beamDepthMm','beamTopZMm','beamSouthEndYMm','beamNorthEndYMm','padThicknessMm')
+        if any(type(setting.get(k)) not in (int,float) or not math.isfinite(setting[k]) for k in keys):
+            raise ValueError('Finite actual wet-beam/post geometry required')
+        if (min(setting['beamWidthMm'],setting['beamDepthMm'],setting['padThicknessMm'])<=0
+                or setting['beamNorthEndYMm']<=setting['beamSouthEndYMm']
+                or setting['beamTopZMm']!=section['topZMm'] or section['topZMm']-section['soffitZMm']!=section['thicknessMm']
+                or len(posts)!=2 or len({p['id'] for p in posts})!=2):
+            raise ValueError('Contradictory actual wet-beam/floor/post geometry')
+        geometry={'beam':{k:setting[k] for k in keys},'sourceRCIntervalMm':[section['soffitZMm'],section['topZMm']], 'posts':[]}
+        for index,post in enumerate(posts):
+            r=post['rectangleXYMm'];bottom=post['physicalBottomZMm'];top=post['physicalTopZMm']
+            if (not isinstance(r,list) or len(r)!=4 or any(type(v) not in (int,float) or not math.isfinite(v) for v in [*r,bottom,top])
+                    or r[2]<=r[0] or r[3]<=r[1] or top<=bottom or r!=setting['receiverRectanglesXYMm'][index]
+                    or top!=setting['beamTopZMm']-setting['beamDepthMm']-setting['padThicknessMm']):
+                raise ValueError('Contradictory actual wet-beam/pad/post geometry')
+            geometry['posts'].append({'id':post['id'],'rectangleXYMm':r,'physicalBottomZMm':bottom,'physicalTopZMm':top})
+        if common is not None and geometry!=common:raise ValueError('Contradictory wet-support geometry across actual controls')
+        common=geometry;density=setting['concreteUnitWeightKNPerM3']
+        if type(density) not in (int,float) or not math.isfinite(density) or density<=0:raise ValueError('Finite authored wet-concrete comparison density required')
+        densities.add(density)
+    return {'geometry':common,'controlIds':[r['nativeCaseId'] for r in controls],
+            'authoredBulkUnitWeightsKNPerM3':sorted(densities),'nativeSourceIdentityDigest':digest(proof['sourceSHA256'])}
+
+
+def translate_wet_support(source,shift,ground_ffl,cold_grid_top,source_floor,source_ground_ffl):
+    joined=common_wet_support_geometry(source['raw'][WET_SUPPORT_RECEIPT]);geometry=joined['geometry'];beam=geometry['beam']
+    if geometry['sourceRCIntervalMm']!=[source_floor['bottom'],source_floor['top']]:
+        raise ValueError('Actual wet-support receipt and occupied source floor use different datums')
+    soffit=beam['beamTopZMm']-beam['beamDepthMm'];posts=[];additional=0.;source_volume=0.
+    for post in geometry['posts']:
+        if post['physicalBottomZMm']!=cold_grid_top:raise ValueError('Actual wet post base disagrees with the fixed cold-grid source')
+        a,b,c,d=post['rectangleXYMm'];area=(c-a)*(d-b);top=post['physicalTopZMm']+shift
+        old_height=post['physicalTopZMm']-post['physicalBottomZMm'];height=top-cold_grid_top
+        extra_volume=area*(height-old_height)/1e9;additional+=extra_volume;source_volume+=area*old_height/1e9
+        posts.append({**post,'fixedBottomMm':cold_grid_top,'translatedTopMm':top,'sourceHeightMm':old_height,
+            'translatedHeightMm':height,'heightIncreaseMm':height-old_height,'knownSectionMm':[c-a,d-b],
+            'additionalGrossConcreteEnvelopeM3':extra_volume})
+    beam_volume=beam['beamWidthMm']*beam['beamDepthMm']*(beam['beamNorthEndYMm']-beam['beamSouthEndYMm'])/1e9
+    return {'status':'unselected-common-geometry-translation-only','geometrySource':{'receiptPath':WET_SUPPORT_RECEIPT,
+            'receiptSHA256':source['identities'][WET_SUPPORT_RECEIPT],'nativeSourceIdentityDigest':joined['nativeSourceIdentityDigest'],
+            'consistentControlIds':joined['controlIds'],'numericalCaseSelected':False},
+        'beam':{'id':'STR/wet-wall-support/beam','axisXMm':beam['beamAxisXMm'],'spanYMm':[beam['beamSouthEndYMm'],beam['beamNorthEndYMm']],
+            'widthMm':beam['beamWidthMm'],'depthMm':beam['beamDepthMm'],'sourceTopMm':beam['beamTopZMm'],'sourceSoffitMm':soffit,
+            'translatedTopMm':beam['beamTopZMm']+shift,'translatedSoffitMm':soffit+shift,
+            'undersideBelowOrdinarySlabMm':source_floor['bottom']-soffit,
+            'localGroundStructuralClearHeightMm':soffit+shift-ground_ffl,
+            'sourceLocalGroundStructuralClearHeightMm':soffit-source_ground_ffl,'finishedCeilingClearanceQualified':False},
+        'posts':posts,'quantities':{'unadoptedPrismaticExtensionComparison':True,
+            'additionalGrossPostConcreteEnvelopeM3':additional,'sourceBeamAndPostGrossEnvelopeM3':beam_volume+source_volume,
+            'translatedBeamAndPostGrossEnvelopeM3':beam_volume+source_volume+additional,
+            'additionalCharacteristicWeightComparisons':[{'authoredBulkUnitWeightKNPerM3':rho,'additionalGrossWeightKN':rho*additional} for rho in joined['authoredBulkUnitWeightsKNPerM3']],
+            'reinforcementAndDeliveredDensityQualified':False,'wholeHouseQuantityReconciliationComplete':False},
+        'raisedGeometryAdopted':False,'raisedForcesReplayed':False,
+        'scope':'Actual common beam/post section geometry only. Posts keep the cold-grid base while their heads follow the occupied translation. Prismatic extension and authored-density arithmetic are conditional; no new joint, cage, raised stiffness, mass acceptance or force replay is supplied.'}
+
+
 def derive_profile(case,source):
     if not isinstance(case,dict) or set(case)!={'schema','sources','groundCase'} or case['schema']!='house-vertical-profile/1' or case['sources']!=source['identities']:
         raise ValueError('Exact current source-bound profile and authored ground case required; no injected levels')
@@ -63,14 +145,16 @@ def derive_profile(case,source):
     lateral=json.loads(source['raw']['project/str/studies/current-house-lateral.json'])
     roof=json.loads(source['raw']['project/mat/studies/ring-roof-family.json'])
     structural=numeric_declarations(source['raw']['project/str/studies/current-house-roof-bracing.py'],{'base','ff','rr'})
-    if structural!={'base':-180.,'ff':3370.,'rr':6600.} or h['sections']['groundFFL']!=0:
+    floor=h['sections']['firstFloorRC']
+    if structural['base']!=g['coldGridTop'] or structural['ff']!=floor['top'] or structural['rr']!=6600. or h['sections']['groundFFL']!=0:
         raise ValueError('Unsupported source structural/occupied reference domain')
-    if h['sections']['firstFloorRC']!={'top':3370,'bottom':3170} or h['sections']['firstFFL']!=3450:
+    if set(floor)!={'top','bottom'} or floor['top']-floor['bottom']!=200 or h['sections']['firstFFL']-floor['top']!=80:
         raise ValueError('Source first occupied datum is not the structural floor top')
     if lateral['capillarySplice']['plateZ']!=[-50,-30]:raise ValueError('Unsupported source20mm waterstop reference')
     z=g['ffl']-h['sections']['groundFFL'];grade=g['authoredExteriorGrade']
     floor=h['sections']['firstFloorRC'];first=h['sections']['firstFFL']+z;attic=h['sections']['atticDatum']+z
     core_height=floor['bottom']+z-g['coldGridTop']
+    wet_profile=translate_wet_support(source,z,g['ffl'],g['coldGridTop'],floor,h['sections']['groundFFL'])
     roof_rows=[{'id':'STR-ring-centre','sourceMm':structural['rr'],'translatedComparisonMm':structural['rr']+z,'role':'Structural ring/pressure datum; not weather eave or attic floor'},
                {'id':'HAD-weather-eave','sourceMm':h['exterior']['eaves'],'translatedComparisonMm':h['exterior']['eaves']+z,'role':'HAD explicitly rewound7100eave; not native structural ring'}]
     weather=next(r for r in roof['families'] if r['family']=='slate and combined Sarket below two-direction airspace')
@@ -92,8 +176,10 @@ def derive_profile(case,source):
                   'message':'Exact ground slab construction is inherited only as an unselected ground case. Enclosure/air/gas/thermal/water returns, cold wet-leaf separation, anchors/bar continuity and site grade need actual joined construction.'},
                  {'code':'PROFILE_WIND_OCCLUSION_UNPROVEN','objects':['exposed-plinth','lower-posts','exterior-grade'],
                   'message':f'WalkingFFL does not occlude piers. Exposed grade-to-FFL envelope{exposed:g}mm under no-occlusion comparison; actual facade/plinth closures, openings, pressure law and member tributaries must define raised wind.'}]
+    diagnostics.append({'code':'PROFILE_WET_SUPPORT_REPLAY_REQUIRED','objects':[wet_profile['beam']['id'],*[p['id'] for p in wet_profile['posts']]],
+        'message':f'Common actual wet beam soffit{wet_profile["beam"]["sourceSoffitMm"]:g} translates to{wet_profile["beam"]["translatedSoffitMm"]:g}; local unfinished structural clearance{wet_profile["beam"]["localGroundStructuralClearHeightMm"]:g}. Cold post bases stay fixed, extending both known sections by{z:g}. The extension envelopes and density arithmetic are unadopted; actual cage/joints, mass, stiffness, loads and52-head response must rebuild.'})
     return {'schema':'house-vertical-profile-result/1','sourceIdentities':case['sources'],'groundAuthority':{'caseId':native['caseId'],'caseDigest':digest(case['groundCase']),'resultDigest':digest(native)},
-            'status':'unselected-source-derived-vertical-proposal','selectedHouseAdmitted':False,'installedAcceptance':False,'groundLevelsMm':g,'floorAssembly':native['floorAssembly'],
+            'status':'unselected-source-derived-vertical-proposal','selectedHouseAdmitted':False,'installedAcceptance':False,'groundLevelsMm':g,'floorAssembly':native['floorAssembly'],'wetSupportProfile':wet_profile,
             'transforms':{'occupiedTranslationMm':z,'coldGridTranslationMm':0,'wetPlinthReceivingTopIsNotGridTop':True},
             'occupied':{'groundFFLMm':g['ffl'],'firstRCMm':[floor['bottom']+z,floor['top']+z],'firstFFLMm':first,'firstFinishAboveRCMm':first-(floor['top']+z),
                         'storeyIntervalMm':first-g['ffl'],'atticDatumMm':attic,'atticDatumIsNotVerifiedFloor':True,'atticMinusFirstDatumMm':attic-first},
@@ -123,13 +209,17 @@ def render_profile(results):
     text(45,40,'Whole-house vertical proposal · one authored ground case per section',26)
     text(45,72,'Fixed cold foundations; occupied levels move. No accepted roof profile, inherited structural forces or installed enclosure.',18)
     for index,r in enumerate(results):
-        x=55+875*index;g=r['groundLevelsMm'];p=r['occupied'];z=lambda v:1000-v*.09
+        x=55+875*index;g=r['groundLevelsMm'];p=r['occupied'];wet=r['wetSupportProfile'];wb=wet['beam'];z=lambda v:1000-v*.09
         text(x,115,f'Ground FFL{g["ffl"]:g} · service zone{g["accessibleDistribution"][1]-g["accessibleDistribution"][0]:g}',21)
         grade=g['authoredExteriorGrade'];line(x,z(grade),x+760,z(grade),'#8d704b');text(x+430,z(grade)+22,f'Authored grade{grade:g}; actual site unknown',14)
         box(x+110,z(p['firstRCMm'][0]),24,(p['firstRCMm'][0]-g['dryRC'][1])*.09,'#c6c6b1')
         for key,color in [('wetRCPlinth','#8eaaa6'),('mineralCourse','#d3b77f'),('dryRC','#a4b7b4'),('glass','#e5d79c'),('accessibleDistribution','#e9ebdb'),('finish','#8b7f6e')]:
             lo,hi=g[key];box(x+110,z(hi),320,(hi-lo)*.09,color)
         lo,hi=p['firstRCMm'];box(x+110,z(hi),320,(hi-lo)*.09,'#a4b7b4')
+        line(x+300,z(g['coldGridTop']),x+300,z(wet['posts'][0]['translatedTopMm']),'#a6624f',True)
+        box(x+280,z(wb['translatedTopMm']),130,wb['depthMm']*.09,'#d8b6a1')
+        line(x+280,z(wb['translatedSoffitMm']),x+450,z(wb['translatedSoffitMm']),'#a6624f',True)
+        text(x+455,z(wb['translatedSoffitMm'])+16,f'Wet beam soffit {wb["translatedSoffitMm"]:g} · unadopted',14)
         line(x+122,z(p['firstFFLMm']),x+122,z(p['atticDatumMm']),'#9a9c8a',True)
         text(x+150,z((p['firstFFLMm']+p['atticDatumMm'])/2),'Upper wall/roof termination not assigned',13)
         for value,label in [(g['coldGridTop'],'Coldgrid/captop fixed'),(g['ffl'],'Ground occupied'),(lo,'First RC soffit'),(p['firstFFLMm'],'First FFL'),(p['atticDatumMm'],'Attic DATUM: floor unproved')]:
@@ -144,6 +234,7 @@ def render_profile(results):
         text(x,1162,f'Service{g["accessibleDistribution"]}; finish{g["finish"]}; waterstop CONCEPT{r["waterstop"]["candidateConceptIntervalMm"]}.',14)
         text(x,1190,f'North arch spring{r["walls"]["northPortal"]["rawSpringMm"]:g}; crown{r["walls"]["northPortal"]["rawCrownMm"]:g}.',15)
         text(x,1218,f'Exposed grade-to-FFL envelope{r["wind"]["exposedGradeToFFLEnvelopeMm"]:g}; no walking-plane occlusion credit.',15)
+        text(x,1246,f'Wet soffit{wb["translatedSoffitMm"]:g}; local clear{wb["localGroundStructuralClearHeightMm"]:g}; post top{wet["posts"][0]["translatedTopMm"]:g}; extension{wet["posts"][0]["heightIncreaseMm"]:g}.',14)
         inset=lambda value:1900-value*.35
         width=r['spineSection']['coldGirderWidthMm'];core=r['spineSection']['coreWidthMm'];middle=x+240
         text(x,1480,'Ground detail · source900-wide spine girder /140 core',19)
@@ -159,7 +250,8 @@ def render_profile(results):
         text(x,2140,'Dashed red: new top20 waterstop concept. No hidden continuous bars or accepted air/water joint.',13)
     text(45,1278,'Roof lines are separate arithmetic assembly references. Weather roof shape and complete house height are withheld.',19)
     text(45,1314,'Ground floor/wall closure, outside wet leaf, DPC/air/gas/thermal returns and new receiving load path remain unresolved.',18)
-    text(45,1350,'Source firstFFL3450 = RC3370 +80. Ground/first occupied interval3450 is preserved, not compressed to source RCtop.',18)
+    first=results[0];source_first=first['occupied']['firstFFLMm']-first['transforms']['occupiedTranslationMm']
+    text(45,1350,f'Source firstFFL{source_first:g} = RC{first["wetSupportProfile"]["beam"]["sourceTopMm"]:g} +{first["occupied"]["firstFinishAboveRCMm"]:g}. Occupied interval{first["occupied"]["storeyIntervalMm"]:g}; wet overlay is unadopted.',18)
     text(45,1386,'No transplanted source52 forces, old lower-post stiffness, wind pressures, roof actions or capacity verdict.',18)
     text(45,1422,'Front step count/going is withheld: no actual step geometry is authored. Ramp reservations are source-derived comparisons.',18)
     out.append('</g></svg>');return '\n'.join(out)+'\n'

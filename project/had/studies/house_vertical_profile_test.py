@@ -1,7 +1,9 @@
 import copy
+import hashlib
+import json
 from pathlib import Path
 import unittest
-from house_vertical_profile import derive_profile, load_profile_source, reference_profile_case, render_profile
+from house_vertical_profile import derive_profile, load_profile_source, reference_profile_case, render_profile, WET_SUPPORT_RECEIPT
 
 
 class HouseVerticalProfileTests(unittest.TestCase):
@@ -62,6 +64,57 @@ class HouseVerticalProfileTests(unittest.TestCase):
         self.assertIsNone(a['heights']['actualLowestAdjacentGroundMm'])
         self.assertGreaterEqual(len(a['groundHolds']),10)
         self.assertIn('actual 52-head compatible actions/movement',a['groundInvalidatedEvidence'])
+
+    def test_actual_common_wet_beam_lowers_local_clearance_without_selecting_a_case(self):
+        r=self.result();wet=r['wetSupportProfile'];beam=wet['beam']
+        self.assertEqual(beam['sourceTopMm'],3370);self.assertEqual(beam['sourceSoffitMm'],3020)
+        self.assertEqual(beam['translatedTopMm'],3900);self.assertEqual(beam['translatedSoffitMm'],3550)
+        self.assertEqual(beam['undersideBelowOrdinarySlabMm'],150)
+        self.assertEqual(beam['localGroundStructuralClearHeightMm'],3020)
+        self.assertEqual(len(wet['geometrySource']['consistentControlIds']),7)
+        self.assertEqual(wet['geometrySource']['receiptSHA256'],self.source['identities'][WET_SUPPORT_RECEIPT])
+        self.assertFalse(wet['geometrySource']['numericalCaseSelected']);self.assertFalse(wet['raisedGeometryAdopted'])
+        self.assertFalse(wet['raisedForcesReplayed']);self.assertFalse(beam['finishedCeilingClearanceQualified'])
+        for post in wet['posts']:
+            self.assertEqual(post['fixedBottomMm'],-180);self.assertEqual(post['translatedTopMm'],3540)
+            self.assertEqual(post['heightIncreaseMm'],530);self.assertEqual(post['knownSectionMm'],[260,450])
+        self.assertAlmostEqual(wet['quantities']['additionalGrossPostConcreteEnvelopeM3'],.124020)
+        self.assertIn('Wet beam soffit 3550',render_profile([r]))
+        self.assertIn('PROFILE_WET_SUPPORT_REPLAY_REQUIRED',[d['code'] for d in r['diagnostics']])
+
+    def test_service_zone_edit_extends_fixed_base_posts_but_keeps_local_clearance_and_no_force_receipt(self):
+        before=self.result(250);after=self.result(270);a=before['wetSupportProfile'];b=after['wetSupportProfile']
+        self.assertEqual(a['beam']['translatedSoffitMm'],3735);self.assertEqual(a['posts'][0]['translatedTopMm'],3725)
+        self.assertEqual(b['beam']['translatedSoffitMm']-a['beam']['translatedSoffitMm'],20)
+        self.assertEqual(a['beam']['localGroundStructuralClearHeightMm'],b['beam']['localGroundStructuralClearHeightMm'])
+        self.assertEqual(a['posts'][0]['fixedBottomMm'],b['posts'][0]['fixedBottomMm'])
+        self.assertEqual(b['posts'][0]['translatedTopMm']-a['posts'][0]['translatedTopMm'],20)
+        self.assertAlmostEqual(a['quantities']['additionalGrossPostConcreteEnvelopeM3'],.167310)
+        self.assertAlmostEqual(b['quantities']['additionalGrossPostConcreteEnvelopeM3']-a['quantities']['additionalGrossPostConcreteEnvelopeM3'],2*.260*.450*.020)
+        self.assertEqual([x['authoredBulkUnitWeightKNPerM3'] for x in a['quantities']['additionalCharacteristicWeightComparisons']],[25,27])
+        for old,new in zip(a['quantities']['additionalCharacteristicWeightComparisons'],b['quantities']['additionalCharacteristicWeightComparisons']):
+            self.assertAlmostEqual(new['additionalGrossWeightKN']-old['additionalGrossWeightKN'],2*.260*.450*.020*old['authoredBulkUnitWeightKNPerM3'])
+        self.assertEqual(before['groundQuantityReceipt'],after['groundQuantityReceipt'])
+        self.assertIsNone(after['roof']['coherentWeatherProfile']);self.assertFalse(after['forceReplay']['raisedCaseSolved'])
+        self.assertIn('Wet beam soffit 3755',render_profile([after]))
+
+    def test_bound_wet_receipt_rejects_missing_or_contradictory_control_geometry(self):
+        def changed_receipt(change):
+            source={**self.source,'raw':dict(self.source['raw']),'identities':dict(self.source['identities'])}
+            receipt=json.loads(source['raw'][WET_SUPPORT_RECEIPT]);change(receipt)
+            raw=json.dumps(receipt).encode();source['raw'][WET_SUPPORT_RECEIPT]=raw;source['identities'][WET_SUPPORT_RECEIPT]=hashlib.sha256(raw).hexdigest()
+            return source
+        def contradictory(receipt):
+            row=next(r for r in receipt['controls'] if r['nativeCaseId']=='wet-aligned-concrete27')
+            row['seatedWetSupport']['posts'][0]['physicalTopZMm']+=1
+        source=changed_receipt(contradictory)
+        with self.assertRaisesRegex(ValueError,'Contradictory actual wet-beam/pad/post'):derive_profile(reference_profile_case(source),source)
+        def missing(receipt):receipt['controls']=[r for r in receipt['controls'] if r['nativeCaseId']!='wet-aligned-concrete27']
+        source=changed_receipt(missing)
+        with self.assertRaisesRegex(ValueError,'All seven'):derive_profile(reference_profile_case(source),source)
+        stale={**self.source,'raw':dict(self.source['raw'])};stale['raw'][WET_SUPPORT_RECEIPT]+=b' '
+        with self.assertRaisesRegex(ValueError,'Stale profile source'):derive_profile(self.case,stale)
+
 
     def test_stale_sources_and_direct_level_injection_reject(self):
         bad=copy.deepcopy(self.case);bad['ffl']=715

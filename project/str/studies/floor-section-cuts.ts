@@ -10,7 +10,8 @@ const root = new URL('../../../',import.meta.url)
 const directory = new URL('./',import.meta.url)
 const proofPath = new URL('floor-section-cuts-proof.json',directory)
 const sourcePaths = ['compiler/reference-house/current-design/structural-floor-cuts.ts',
-  'project/str/studies/floor-section-cuts-inputs.json','project/str/studies/floor-section-cuts.ts']
+  'project/str/studies/floor-section-cuts-inputs.json','project/str/studies/floor-section-cuts.ts',
+  'project/str/studies/floor-refinement-execution-limit.json']
 const sha = (value: string | Buffer) => createHash('sha256').update(value).digest('hex')
 const authored = JSON.parse(readFileSync(new URL('floor-section-cuts-inputs.json',directory),'utf8'))
 const python = (args: string[]) => execFileSync('python3',['-B',...args],{
@@ -24,7 +25,21 @@ const meshCases: [string,Record<string,any>][] = authored.meshPitchesMm.map((pit
   v.maxPitchMm=pitch;v.monolithicCase.houseCase.joinedCase.floor.maxPitchMm=pitch
   return ['wet-floor-mesh-'+pitch,c]
 })
-const selected=[...cases,...meshCases]
+const executionLimit = JSON.parse(readFileSync(new URL('floor-refinement-execution-limit.json',directory),'utf8'))
+if (executionLimit.schema!=='str-floor-refinement-execution-limit/2'
+  || !equal(executionLimit.sourceSHA256,cases[0]![1].sourceSHA256)
+  || !Array.isArray(executionLimit.attemptedRefinements)
+  || !equal(executionLimit.attemptedRefinements.map((r:any)=>r.caseId),['wet-floor-mesh-250','wet-floor-mesh-274'])) throw new Error('Missing exact-source finer-mesh execution-limit evidence')
+const unavailable = executionLimit.attemptedRefinements as Record<string,any>[]
+for (const row of unavailable) {
+  const expected=meshCases.find(([name])=>name===row.caseId)
+  if (!expected || !equal(row.executedRequest,expected[1]) || row.outcome!=='worker-killed-exit137'
+    || row.completeNativeResultAvailable!==false || row.convergenceResultAvailable!==false || row.candidateAccepted!==false
+    || !Array.isArray(row.attempts) || row.attempts.length<1) throw new Error('Execution failure became a numerical convergence result')
+}
+// Every declared refinement is accounted for: actual response or explicit exact-source execution failure.
+const selected=[...cases,...meshCases.filter(([name])=>!unavailable.some(row=>row.caseId===name))]
+const unsupported = (pitch:number) => ({state:'unsupported-execution-limit',caseId:'wet-floor-mesh-'+pitch,convergenceResultAvailable:false})
 
 function check(proof: any) {
   if (proof.schema!=='str-fixed-floor-cut-comparison/1' || !equal(proof.sourceSHA256,identities)
@@ -39,6 +54,7 @@ function check(proof: any) {
       || (row.wetReceivingGrid !== null && (row.wetReceivingGrid.completePhysicalGridDemandEnvelopeAvailable !== false || row.wetReceivingGrid.gridResistanceAccepted !== false))
       || row.heads.length!==52 || new Set(row.heads.map((h: any)=>h.id)).size!==52) throw new Error('Floor cut evidence lost actual request, material sections,52heads or proof limits')
   })
+  if (!equal(proof.unavailableRefinements,unavailable) || !equal(proof.mesh500To250,unsupported(250)) || !equal(proof.mesh500To274,unsupported(274))) throw new Error('Execution failure became a numerical convergence result')
   if (proof.candidateAccepted!==false || proof.completeHouseProof!==false || proof.localCornerJointAccepted!==false) throw new Error('Unearned floor cut acceptance')
 }
 
@@ -84,9 +100,10 @@ else if(process.argv[2]==='--write') {
     return {coarsePitchMm:coarse,finePitchMm:fine,maximumHeadComponentDifferenceKN_KNm:headDelta,relativeCutIntegralChanges:cutChanges,
       declaredScreenPasses:headDelta<=authored.stabilityComparison.maximumHeadComponentDifferenceKN_KNm && cutChanges.every(c=>metrics.every(key=>((c as unknown as Record<string,number>)[key]!)<=authored.stabilityComparison.maximumRelativeCutIntegralDifference))}
   }
-  const stability=compare(700,500),refinedStability=compare(500,250)
-  const proof={schema:'str-fixed-floor-cut-comparison/1',sourceSHA256:identities,authored,controls,mesh700To500:stability,mesh500To250:refinedStability,
+  const stability=compare(700,500)
+  const proof={schema:'str-fixed-floor-cut-comparison/1',sourceSHA256:identities,authored,controls,mesh700To500:stability,mesh500To274:unsupported(274),
+    mesh500To250:unsupported(250),unavailableRefinements:unavailable,
     candidateAccepted:false,completeHouseProof:false,localCornerJointAccepted:false,
     scope:'Fresh exact-request full native responses; shared fixed section-cut method preserves actual apertures and raw point peaks. Global/cut numerical stability is separate from the rigid-corner idealisation, local bearing material, joint/cage and whole-house acceptance.'}
-  check(proof);writeFileSync(proofPath,JSON.stringify(proof,null,2)+'\n');process.stdout.write(JSON.stringify({mesh700To500:stability,mesh500To250:refinedStability})+'\n')
+  check(proof);writeFileSync(proofPath,JSON.stringify(proof,null,2)+'\n');process.stdout.write(JSON.stringify({mesh700To500:stability,mesh500To274:proof.mesh500To274,mesh500To250:proof.mesh500To250})+'\n')
 } else throw new Error('Use --write or --check')

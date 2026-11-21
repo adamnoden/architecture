@@ -13,6 +13,10 @@
 <rect x="165" y="953.65" width="320" height="5.85" fill="#e9ebdb" stroke="#536b70"/>
 <rect x="165" y="952.3" width="320" height="1.3499999999999999" fill="#8b7f6e" stroke="#536b70"/>
 <rect x="165" y="649.0" width="320" height="18.0" fill="#a4b7b4" stroke="#536b70"/>
+<path d="M355,1016.2 L355,681.4000000000001" fill="none" stroke="#a6624f" stroke-width="2" stroke-dasharray="6 5"/>
+<rect x="335" y="649.0" width="130" height="31.5" fill="#d8b6a1" stroke="#536b70"/>
+<path d="M335,680.5 L505,680.5" fill="none" stroke="#a6624f" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="510" y="696.5" font-size="14">Wet beam soffit 3550 · unadopted</text>
 <path d="M177,641.8 L177,331.30000000000007" fill="none" stroke="#9a9c8a" stroke-width="2" stroke-dasharray="6 5"/>
 <text x="205" y="486.55000000000007" font-size="13">Upper wall/roof termination not assigned</text>
 <path d="M190,1016.2 L505,1016.2" fill="none" stroke="#49636a" stroke-width="2"/>
@@ -40,6 +44,7 @@
 <text x="55" y="1162" font-size="14">Service[450, 515]; finish[515, 530]; waterstop CONCEPT[130, 150].</text>
 <text x="55" y="1190" font-size="15">North arch spring2780; crown3380.</text>
 <text x="55" y="1218" font-size="15">Exposed grade-to-FFL envelope680; no walking-plane occlusion credit.</text>
+<text x="55" y="1246" font-size="14">Wet soffit3550; local clear3020; post top3540; extension530.</text>
 <text x="55" y="1480" font-size="19">Ground detail · source900-wide spine girder /140 core</text>
 <rect x="70.0" y="1963.0" width="450.0" height="157.5" fill="#8eaaa6" stroke="#536b70"/>
 <rect x="70.0" y="1900.0" width="450.0" height="62.99999999999999" fill="#8eaaa6" stroke="#536b70"/>
@@ -72,6 +77,10 @@
 <rect x="1040" y="937.0" width="320" height="22.5" fill="#e9ebdb" stroke="#536b70"/>
 <rect x="1040" y="935.65" width="320" height="1.3499999999999999" fill="#8b7f6e" stroke="#536b70"/>
 <rect x="1040" y="632.35" width="320" height="18.0" fill="#a4b7b4" stroke="#536b70"/>
+<path d="M1230,1016.2 L1230,664.75" fill="none" stroke="#a6624f" stroke-width="2" stroke-dasharray="6 5"/>
+<rect x="1210" y="632.35" width="130" height="31.5" fill="#d8b6a1" stroke="#536b70"/>
+<path d="M1210,663.85 L1380,663.85" fill="none" stroke="#a6624f" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="1385" y="679.85" font-size="14">Wet beam soffit 3735 · unadopted</text>
 <path d="M1052,625.1500000000001 L1052,314.65" fill="none" stroke="#9a9c8a" stroke-width="2" stroke-dasharray="6 5"/>
 <text x="1080" y="469.9" font-size="13">Upper wall/roof termination not assigned</text>
 <path d="M1065,1016.2 L1380,1016.2" fill="none" stroke="#49636a" stroke-width="2"/>
@@ -99,6 +108,7 @@
 <text x="930" y="1162" font-size="14">Service[450, 700]; finish[700, 715]; waterstop CONCEPT[130, 150].</text>
 <text x="930" y="1190" font-size="15">North arch spring2965; crown3565.</text>
 <text x="930" y="1218" font-size="15">Exposed grade-to-FFL envelope865; no walking-plane occlusion credit.</text>
+<text x="930" y="1246" font-size="14">Wet soffit3735; local clear3020; post top3725; extension715.</text>
 <text x="930" y="1480" font-size="19">Ground detail · source900-wide spine girder /140 core</text>
 <rect x="945.0" y="1963.0" width="450.0" height="157.5" fill="#8eaaa6" stroke="#536b70"/>
 <rect x="945.0" y="1900.0" width="450.0" height="62.99999999999999" fill="#8eaaa6" stroke="#536b70"/>
@@ -122,7 +132,7 @@
 <text x="930" y="2140" font-size="13">Dashed red: new top20 waterstop concept. No hidden continuous bars or accepted air/water joint.</text>
 <text x="45" y="1278" font-size="19">Roof lines are separate arithmetic assembly references. Weather roof shape and complete house height are withheld.</text>
 <text x="45" y="1314" font-size="18">Ground floor/wall closure, outside wet leaf, DPC/air/gas/thermal returns and new receiving load path remain unresolved.</text>
-<text x="45" y="1350" font-size="18">Source firstFFL3450 = RC3370 +80. Ground/first occupied interval3450 is preserved, not compressed to source RCtop.</text>
+<text x="45" y="1350" font-size="18">Source firstFFL3450 = RC3370 +80. Occupied interval3450; wet overlay is unadopted.</text>
 <text x="45" y="1386" font-size="18">No transplanted source52 forces, old lower-post stiffness, wind pressures, roof actions or capacity verdict.</text>
 <text x="45" y="1422" font-size="18">Front step count/going is withheld: no actual step geometry is authored. Ramp reservations are source-derived comparisons.</text>
 </g></svg>

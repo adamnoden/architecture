@@ -45,18 +45,39 @@ plate energy and finite-receiver pressure work against the unchanged500mm
 controls. Admission tests distinguish reaching the builder from executing a
 house solve. This is numerical capability, not a new positive house result.
 
-The next actual control should be250mm in **both** vertical and in-plane pitches,
+The intended finer control was250mm in **both** vertical and in-plane pitches,
 with the same physical case and common-coordinate wet-beam closure.350mm alone
 would not refine the particular550mm interval beside this tip: both500 and350
 split it into two cells, whereas250 splits it into three. Maximum-pitch meshes
 are not generally nested, so no Richardson extrapolation or convergence order
 is inferred from their names.
 
-Run and source-bind the new control; retain the700/500 failure. Compare the same
+The250mm whole-house trial was then killed without a complete native response,
+first during concurrent execution and again as the sole native worker with
+BLAS/OpenMP thread counts fixed to one. The shell reports exit137; its underlying
+cause is not established. The [exact request/source execution record](studies/floor-refinement-execution-limit.json)
+retains this as unavailable evidence, never a failed or passing numerical screen.
+No incomplete field or convergence value is promoted.
+
+The second declared trial was274mm: the largest whole-millimetre pitch below
+550/2=275mm. It introduces the same third subdivision of the controlling550mm
+interval while refining the rest of the house less than250mm. This isolated
+worker was also killed with exit137 before producing a complete response.
+Both declared trials remain visible as unavailable in the fixed-cut receipt;
+neither contributes invented fields or a numerical pass. The0.1kN/kNm and5%
+screens are unchanged. An actual274mm response could not be relabelled250mm.
+
+A separate numerical continuation now tests a sparse implementation of the
+existing in-plane condensation against the retained Python oracle. The old
+minimum-fill graph and scalar Schur elimination are a plausible scaling
+obstacle, not an established cause of either kill. A successful smaller-memory
+condensation alone would not be a whole-house solve or a convergence result.
+
+Execute and source-bind the finer control; retain the700/500 failure. Compare the same
 physical cut coordinates, complete52-head response, actual material/G/Q wrenches,
 contact resultants and unchanged controls before making a numerical stability
 claim. This source change invalidates dependent receipts until their producers
-are genuinely rerun. No refreshed current evidence is supplied by this note.
+are genuinely rerun. The eleven-case current-source floor receipt is regenerated; the700/500 fixed-cut replay is regenerated separately, while finer convergence remains unavailable.
 
 ## What a numerical pass would still leave open
 
