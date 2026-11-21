@@ -8,11 +8,11 @@ import { criticalHalfRoundFlow, receiverWeirHeadMm, reliefEntranceHeadMm, solveH
 
 export const inletSourceEnvelopeFields = ['apertureNominalMm', 'apertureToleranceMm', 'sourceMaximumTotalBar',
   'sourceMinimumDynamicBar', 'requiredEachLmin', 'requiredResidualBar', 'additionalNetworkLossBar',
-  'dischargeCoefficientComparison'] as const
+  'dischargeCoefficientComparison', 'pressureRecoveryFractionComparison', 'atmosphericMinimumBar', 'atmosphericMaximumBar'] as const
 export type InletSourceEnvelopeSettings = Readonly<Record<typeof inletSourceEnvelopeFields[number], number>>
 export const readInletSourceEnvelopeSettings = (): InletSourceEnvelopeSettings => ({ apertureNominalMm: 9,
   apertureToleranceMm: .1, sourceMaximumTotalBar: 9, sourceMinimumDynamicBar: 3.5,
-  requiredEachLmin: 50, requiredResidualBar: 1, additionalNetworkLossBar: .5, dischargeCoefficientComparison: .62 })
+  requiredEachLmin: 50, requiredResidualBar: 1, additionalNetworkLossBar: .5, dischargeCoefficientComparison: .62, pressureRecoveryFractionComparison: 0, atmosphericMinimumBar: .9, atmosphericMaximumBar: 1.1 })
 const paths = ['project/had/studies/south-inlet-under-sill.json', 'project/had/studies/south-inlet-wet-box.json',
   'project/had/studies/south-inlet-relief.json', 'project/had/studies/south-utility-inlet.json',
   'project/had/studies/current-house-services.json'] as const
@@ -56,7 +56,8 @@ function settings(value: unknown): InletSourceEnvelopeSettings {
     || s.apertureToleranceMm < 0 || s.apertureToleranceMm > .5 || s.sourceMaximumTotalBar <= 0 || s.sourceMaximumTotalBar > 10
     || s.sourceMinimumDynamicBar <= 0 || s.sourceMinimumDynamicBar > s.sourceMaximumTotalBar || s.requiredEachLmin <= 0
     || s.requiredEachLmin > 90 || s.requiredResidualBar < 0 || s.additionalNetworkLossBar < 0
-    || s.dischargeCoefficientComparison <= 0 || s.dischargeCoefficientComparison > 1) throw new Error('Inlet source settings exceed the comparison domain')
+    || s.dischargeCoefficientComparison <= 0 || s.dischargeCoefficientComparison > 1 || s.pressureRecoveryFractionComparison < 0 || s.pressureRecoveryFractionComparison > 1
+    || s.atmosphericMinimumBar < .5 || s.atmosphericMaximumBar > 1.5 || s.atmosphericMinimumBar > s.atmosphericMaximumBar) throw new Error('Inlet source settings exceed the comparison domain')
   return s
 }
 
@@ -68,14 +69,22 @@ export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, in
   if (v.schema !== 'had-inlet-source-envelope-case/1' || v.planDigest !== b.planDigest || v.bindingDigest !== b.bindingDigest) throw new Error('Stale inlet source-envelope source, design or method')
   const s = settings(v.settings), native = b.data[paths[0]], wet = b.data[paths[1]], relief = b.data[paths[2]], inlet = b.data[paths[3]], services = b.data[paths[4]]
   const maximumDiameterMm = s.apertureNominalMm + s.apertureToleranceMm, minimumDiameterMm = s.apertureNominalMm - s.apertureToleranceMm
-  const maximumEachLmin = flow(maximumDiameterMm, s.sourceMaximumTotalBar)
+  const absoluteMaximumBar = s.sourceMaximumTotalBar + s.atmosphericMaximumBar
+  const maximumEachLmin = flow(maximumDiameterMm, absoluteMaximumBar)
+  // A flooded throat may be below atmospheric after downstream pressure recovery.
+  // Bound against zero absolute throat pressure, not an assumed atmospheric free jet.
   // Maximum flow uses Cd<=1 and the lowest declared density. Delivery LOSS uses density1000,
   // the smallest bore and an explicitly unqualified Cd comparison; these are different bounds.
-  const pressureLossBar = .5 * 1000 * (s.requiredEachLmin / 60000 / (s.dischargeCoefficientComparison * Math.PI * (minimumDiameterMm / 1000) ** 2 / 4)) ** 2 / 1e5
+  const throatDynamicBar = .5 * 1000 * (s.requiredEachLmin / 60000 / (s.dischargeCoefficientComparison * Math.PI * (minimumDiameterMm / 1000) ** 2 / 4)) ** 2 / 1e5
+  const pressureLossBar = (1 - s.pressureRecoveryFractionComparison) * throatDynamicBar
+  const throatAbsoluteBar = s.sourceMinimumDynamicBar + s.atmosphericMinimumBar - throatDynamicBar
   const residualBar = s.sourceMinimumDynamicBar - pressureLossBar - s.additionalNetworkLossBar
   const availableRestrictionBar = s.sourceMinimumDynamicBar - s.requiredResidualBar - s.additionalNetworkLossBar
-  const minimumDeliveryDiameterMm = availableRestrictionBar > 0 ? diameter(s.requiredEachLmin, availableRestrictionBar, s.dischargeCoefficientComparison, 1000) : null
-  const optimisticDeliveryDiameterMm = availableRestrictionBar > 0 ? diameter(s.requiredEachLmin, availableRestrictionBar, 1, 1000) : null
+  const deliveryDiameter = (cd: number) => availableRestrictionBar > 0 ? Math.max(
+    s.pressureRecoveryFractionComparison === 1 ? 0 : diameter(s.requiredEachLmin, availableRestrictionBar / (1 - s.pressureRecoveryFractionComparison), cd, 1000),
+    diameter(s.requiredEachLmin, s.sourceMinimumDynamicBar + s.atmosphericMinimumBar, cd, 1000)) : null
+  const minimumDeliveryDiameterMm = deliveryDiameter(s.dischargeCoefficientComparison)
+  const optimisticDeliveryDiameterMm = deliveryDiameter(1)
   const fullBoreMm = inletCabinetProductFacts.pipe.maximumOuterDiameterIncludingOvalityMm - 2 * inletCabinetProductFacts.pipe.minimumWallMm
   type Point = readonly [number, number, number]
   type Branch = { id: string; coordinates: readonly Point[]; bores: readonly { inner: Point; outer: Point; radius: number }[] }
@@ -98,7 +107,7 @@ export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, in
     }
     let lo = 0, hi = 2000
     for (let step = 0; step < 70; step++) { const mid = (lo + hi) / 2; if (capacity(mid).necessaryChannelAndReceiverScreen) lo = mid; else hi = mid }
-    const maximumScreenedLmin = lo, maximumContainmentDiameterMm = diameter(maximumScreenedLmin, s.sourceMaximumTotalBar)
+    const maximumScreenedLmin = lo, maximumContainmentDiameterMm = diameter(maximumScreenedLmin, absoluteMaximumBar)
     const nominalMinimumMm = minimumDeliveryDiameterMm === null ? null : minimumDeliveryDiameterMm + s.apertureToleranceMm
     const nominalMaximumMm = maximumContainmentDiameterMm - s.apertureToleranceMm
     const intervalExists = nominalMinimumMm !== null && nominalMinimumMm <= nominalMaximumMm
@@ -109,18 +118,20 @@ export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, in
       internalHouseCut: { required: true, suppliedByLodge: false, suppliedByApplianceStop: false, location: 'unresolved-internal-wet-service-hub', usableOrdinaryAccessProved: false },
       maximumLimitedEachLmin: round(maximumEachLmin), requiredDeliveryEachLmin: s.requiredEachLmin,
       pressureLossComparisonBar: round(pressureLossBar), residualPressureComparisonBar: round(residualBar),
-      minimumResidualScreen: residualBar >= s.requiredResidualBar, dischargeCoefficientQualified: false,
+      throatAbsolutePressureComparisonBar: round(throatAbsoluteBar), nonnegativeThroatPressureScreen: throatAbsoluteBar >= 0,
+      minimumResidualScreen: residualBar >= s.requiredResidualBar && throatAbsoluteBar >= 0, dischargeCoefficientQualified: false,
       existingReceiver: { lowerBore: lower, maximumScreenedLmin: round(maximumScreenedLmin),
         crownOnlyCapacityLmin: round(criticalHalfRoundFlow(clear / 1000, (clear - relief.hydraulics.spareAirMM) / 1000, bed / 1000) * 60000),
         limitedFault: capacity(maximumEachLmin), requiredDemandControl: capacity(s.requiredEachLmin),
-        fullBoreWithoutRestriction: { maximumLmin: round(flow(fullBoreMm, s.sourceMaximumTotalBar)), ...capacity(flow(fullBoreMm, s.sourceMaximumTotalBar)) } },
+        fullBoreWithoutRestriction: { maximumLmin: round(flow(fullBoreMm, absoluteMaximumBar)), ...capacity(flow(fullBoreMm, absoluteMaximumBar)) } },
       feasibleNominalApertureIntervalMm: { minimumForDelivery: nominalMinimumMm === null ? null : round(nominalMinimumMm),
         maximumForExistingReceiver: round(nominalMaximumMm), existsForNecessaryScreens: intervalExists,
         optimisticCdOneMinimumForDelivery: optimisticDeliveryDiameterMm === null ? null : round(optimisticDeliveryDiameterMm + s.apertureToleranceMm),
         optimisticCdOneIntervalExists: optimisticDeliveryDiameterMm !== null && optimisticDeliveryDiameterMm + s.apertureToleranceMm <= nominalMaximumMm,
         verdict: intervalExists ? 'necessary-hydraulic-interval-only' : 'reject-existing-receiver-plus-demand-envelope' },
-      minimumSourceDynamicBarForExistingReceiverComparison: round(s.requiredResidualBar + s.additionalNetworkLossBar
-        + .5 * 1000 * (s.requiredEachLmin / 60000 / (s.dischargeCoefficientComparison * Math.PI * ((maximumContainmentDiameterMm - 2 * s.apertureToleranceMm) / 1000) ** 2 / 4)) ** 2 / 1e5) }
+      minimumSourceDynamicBarForExistingReceiverComparison: round(Math.max(s.requiredResidualBar + s.additionalNetworkLossBar
+        + (1 - s.pressureRecoveryFractionComparison) * .5 * 1000 * (s.requiredEachLmin / 60000 / (s.dischargeCoefficientComparison * Math.PI * ((maximumContainmentDiameterMm - 2 * s.apertureToleranceMm) / 1000) ** 2 / 4)) ** 2 / 1e5,
+        .5 * 1000 * (s.requiredEachLmin / 60000 / (s.dischargeCoefficientComparison * Math.PI * ((maximumContainmentDiameterMm - 2 * s.apertureToleranceMm) / 1000) ** 2 / 4)) ** 2 / 1e5 - s.atmosphericMinimumBar)) }
   })
   const states = [
     { id: 'ordinary-both-open', sourceFed: true, eachLmin: s.requiredEachLmin, result: 'unqualified-delivery-and-internal-access', obligation: 'Prove simultaneous two-branch source curve, actual restriction Cd, full valves and network losses; no double allocation of one source.' },
@@ -130,7 +141,7 @@ export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, in
     { id: 'both-branches-rupture', sourceFed: true, eachLmin: round(maximumEachLmin), combinedLmin: round(2 * maximumEachLmin), result: 'separate-outfall-and-common-site-proof-required', obligation: 'Charge both flows independently. One receiving depression, obstruction or site flood cannot be credited twice.' },
     { id: 'secondary-high-or-submerged', sourceFed: true, eachLmin: round(maximumEachLmin), result: 'reject-tailwater-outside-envelope', obligation: 'The free-drop model is inapplicable; no pressure-backed or submerged outlet credit.' },
     { id: 'both-reliefs-blocked', sourceFed: true, eachLmin: round(maximumEachLmin), result: 'reject-unattended-event', obligation: 'Finite storage is time to spill, not isolation. No manual response time is assigned.' },
-    { id: 'restriction-missing-eroded-or-bypassed', sourceFed: true, eachLmin: round(flow(fullBoreMm, s.sourceMaximumTotalBar)), result: 'reject-limited-flow-credit', obligation: 'Use full-bore source bound, tamper/effective-bore inspection and no bypass. A nameplate flow setting is insufficient.' },
+    { id: 'restriction-missing-eroded-or-bypassed', sourceFed: true, eachLmin: round(flow(fullBoreMm, absoluteMaximumBar)), result: 'reject-limited-flow-credit', obligation: 'Use full-bore source bound, tamper/effective-bore inspection and no bypass. A nameplate flow setting is insufficient.' },
     { id: 'upstream-of-restriction-rupture', sourceFed: true, eachLmin: null, result: 'separate-boundary-wet-territory-required', obligation: 'Keep restriction immediately after the Lodge cut and all upstream joints outside the house. Public-side flow is not bounded by this aperture; independent provider action remains required.' },
     { id: 'own-branch-isolated-sibling-live', sourceFed: false, eachLmin: 0, result: 'own-branch-cold-work-only', obligation: 'Close own Lodge and house cuts; isolate/drain the upper trapped network and prove zero pressure. Keep sibling enclosure and supports independent.' },
     { id: 'restriction-or-house-cut-renewal', sourceFed: false, eachLmin: 0, result: 'two-sided-cold-isolation-required', obligation: 'Close Lodge/provider side as applicable and isolate/drain house side; support both pipe ends. Restriction removal temporarily destroys the flow bound; prohibit charging until verified reinstatement.' },
@@ -139,9 +150,12 @@ export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, in
   ]
   const result = { schema: 'had-inlet-source-envelope-result/1' as const, state: 'existing-whole-arrangement-rejected' as const,
     source: { planDigest: b.planDigest, bindingDigest: b.bindingDigest, inputs: b.inputs, methods: b.methods }, settings: s,
-    bound: { method: 'Incompressible steady energy upper bound Q<=A sqrt(2 p_total/rho), Cd<=1; no upstream velocity-head double count.',
+    bound: { method: 'Incompressible energy comparison Q<=A sqrt(2 p_total_absolute/rho), Cd<=1, local pressure>=0absolute; recovery/cavitation qualification remains required.',
+      maximumAbsoluteTotalBar: absoluteMaximumBar, minimumThroatAbsoluteBarForUpperBound: 0,
+      pressureRecoveryAndCavitationQualified: false,
       minimumDensityKgM3: 990, maximumDensityKgM3ForDeliveryLoss: 1000, declaredWaterDomainC: [0, 40], densityDomainQualification: 'authored-water-comparison-bound',
       maximumPressureIncludesStaticDynamicElevationAndTransientHead: true, installedSourceMaximumProved: false,
+      pressureRecoveryFractionIsAuthoredComparisonNotProductEvidence: true,
       minimumDiameterMm: round(minimumDiameterMm), maximumDiameterMm: round(maximumDiameterMm), maximumEachLmin: round(maximumEachLmin),
       sourceMinimumIsAtSimultaneousDemand: true, deliveryCdIsComparisonNotGuaranteedLowerBound: true }, branches, states,
     architectureDecision: { prefer: 'internal-wet-utility-and-service-hub-replan',
@@ -157,5 +171,5 @@ export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, in
 }
 function draw(result: { branches: readonly any[]; bound: { maximumEachLmin: number }; settings: InletSourceEnvelopeSettings }) {
   const rows = result.branches.map((b, i) => `<text x="45" y="${220 + i * 95}" font-size="18">${b.id}: ${b.maximumLimitedEachLmin.toFixed(1)} L/min upper fault bound; existing channel ${b.existingReceiver.maximumScreenedLmin.toFixed(1)} L/min</text><text x="45" y="${249 + i * 95}" font-size="15">Nominal aperture: delivery ≥${b.feasibleNominalApertureIntervalMm.minimumForDelivery?.toFixed(2) ?? 'none'} mm; existing receiver ≤${b.feasibleNominalApertureIntervalMm.maximumForExistingReceiver.toFixed(2)} mm → ${b.feasibleNominalApertureIntervalMm.existsForNecessaryScreens ? 'necessary interval only' : 'NO COMMON INTERVAL'}</text>`).join('')
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="690" viewBox="0 0 1100 690"><rect width="1100" height="690" fill="#f5f1e6"/><g font-family="Arial,sans-serif" fill="#25221c"><text x="40" y="45" font-size="27">Incoming water · resolve the source and the whole room</text><text x="40" y="80" font-size="17">Reject the existing whole arrangement; an aperture does not repair its upper wet boundary.</text><rect x="40" y="110" width="1020" height="65" fill="none" stroke="#6a6251"/><text x="55" y="136" font-size="15">Utility source → Lodge cut → fixed metal restriction → joint-free wall spool</text><text x="55" y="160" font-size="15">→ genuine internal house cut → independently supported upper network and local appliance cuts</text>${rows}<text x="45" y="435" font-size="17">${result.settings.apertureNominalMm} ±${result.settings.apertureToleranceMm} mm; maximum ${result.settings.sourceMaximumTotalBar} bar TOTAL head; both branches ${ (2 * result.bound.maximumEachLmin).toFixed(1)} L/min.</text><text x="45" y="468" font-size="16">Restriction retains full shut-in pressure. Bypass/missing aperture loses all limited-flow credit.</text><text x="45" y="510" font-size="17">Develop: a real internal wet Utility / service hub with a separated electrical task.</text><text x="45" y="540" font-size="16">Retain cylinder, buffer, D2, dock and normal passage; price every moved appliance and route.</text><text x="45" y="580" font-size="16">No annex, valve exception, frost pass, ordinary loaded renewal or source adoption is granted.</text><text x="45" y="625" font-size="14">New whole-room geometry, support, independent drainage, source curve and warm boundary remain proof duties.</text><text x="45" y="655" font-size="13">Reference investigation. Diagram and hydraulic screens do not establish an installed inlet.</text></g></svg>`
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="690" viewBox="0 0 1100 690"><rect width="1100" height="690" fill="#f5f1e6"/><g font-family="Arial,sans-serif" fill="#25221c"><text x="40" y="45" font-size="27">Incoming water · resolve the source and the whole room</text><text x="40" y="80" font-size="17">Default non-recovering comparison; recovered-throat alternatives remain unqualified.</text><rect x="40" y="110" width="1020" height="65" fill="none" stroke="#6a6251"/><text x="55" y="136" font-size="15">Utility source → Lodge cut → fixed metal restriction → joint-free wall spool</text><text x="55" y="160" font-size="15">→ genuine internal house cut → independently supported upper network and local appliance cuts</text>${rows}<text x="45" y="435" font-size="17">${result.settings.apertureNominalMm} ±${result.settings.apertureToleranceMm} mm; maximum ${result.settings.sourceMaximumTotalBar} bar TOTAL gauge + atmosphere ≤${result.settings.atmosphericMaximumBar}bar; both branches ${ (2 * result.bound.maximumEachLmin).toFixed(1)} L/min.</text><text x="45" y="468" font-size="16">Restriction retains full shut-in pressure. Bypass/missing aperture loses all limited-flow credit.</text><text x="45" y="510" font-size="17">Develop: a real internal wet Utility / service hub with a separated electrical task.</text><text x="45" y="540" font-size="16">Retain cylinder, buffer, D2, dock and normal passage; price every moved appliance and route.</text><text x="45" y="580" font-size="16">No annex, valve exception, frost pass, ordinary loaded renewal or source adoption is granted.</text><text x="45" y="625" font-size="14">New whole-room geometry, support, independent drainage, source curve and warm boundary remain proof duties.</text><text x="45" y="655" font-size="13">Reference investigation. Diagram and hydraulic screens do not establish an installed inlet.</text></g></svg>`
 }

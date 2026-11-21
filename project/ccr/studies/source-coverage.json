@@ -559,7 +559,7 @@
     {
       "id": "had-fixed-inlet-arrangement",
       "state": "candidate-interface",
-      "authority": "Unselected incoming-water comparisons. Tall cabinet and local restriction rescue rejected as whole arrangements. Source-bound energy/delivery/actual-receiver proof selects an internal wet Utility/service-hub replan as development direction, preserving genuine indoor cuts, source/renewal/frost/material failures and actual occupied controls; no new room or inlet adopted.",
+      "authority": "Unselected incoming-water comparisons. Tall cabinet and the non-recovering restriction/old-receiver comparison are rejected; pressure-recovering throats remain unqualified. Corrected absolute-pressure/source/delivery/receiver proof supports an internal wet Utility/service-hub replan, preserving genuine indoor cuts, source/renewal/frost/material failures and actual occupied controls; no new room or inlet adopted.",
       "decisions": [
         "project/had/fixed-inlet-entry-candidate.md",
         "project/had/fixed-inlet-receiver-development.md",
@@ -1702,10 +1702,10 @@
     "project/str/studies/roof-surface-pressure.svg": "bf17bdc9c139c76a80fa0a8352f4bd40c3938c92",
     "project/str/studies/roof_surface_pressure_proof.py": "c6de2ceb21f113e4672d870f3512754318b99c23",
     "project/str/studies/straight_frame_cage_proof.py": "04a03d0ec19f885e611cd1549d9d0a5fc2c4eeb1",
-    "compiler/reference-house/current-design/inlet-source-envelope.ts": "d74831282eda939ffc276526e61fad81ffa7db06",
+    "compiler/reference-house/current-design/inlet-source-envelope.ts": "e8531efa64be773109d38558b0c8fda3366135c1",
     "project/had/studies/inlet-source-envelope.ts": "d2e00dfe467c48bfbe984d44a9f9c5e77d2511c1",
-    "project/had/inlet-source-and-room-decision.md": "fd95744177d58bf9168ae00c4f2522a2f6a907e0",
-    "project/had/studies/inlet-source-envelope.results.json": "f0a8b0e82684a6d46c7e2d56faf7c266f2c18023",
-    "project/had/studies/inlet-source-envelope.svg": "f62dbee3a56c4977b2ead0cb01d5d662fe995989"
+    "project/had/inlet-source-and-room-decision.md": "882664242fc214b90b73f5c3fb4016a91ee8fd4d",
+    "project/had/studies/inlet-source-envelope.results.json": "9e618c74dcb961dafea07cd50d00825684b96aee",
+    "project/had/studies/inlet-source-envelope.svg": "d24260e9f6acaf2235dd0e36d269aa3f35ac16fb"
   }
 }
