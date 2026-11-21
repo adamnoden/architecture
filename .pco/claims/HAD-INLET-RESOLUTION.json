@@ -9,8 +9,8 @@
     "label": "had-shield-room-20261121"
   },
   "claimedAt": "2026-11-21T21:29:47.686Z",
-  "heartbeatAt": "2026-11-21T21:57:51.699Z",
-  "expiresAt": "2026-11-21T22:42:51.699Z",
+  "heartbeatAt": "2026-11-21T22:26:16.843Z",
+  "expiresAt": "2026-11-21T23:11:16.843Z",
   "branch": "work/had-shield-supported-room-20261121",
   "predecessor": {
     "leaseId": "244d4381-c833-4676-bf37-31b3ac789276",
@@ -36,8 +36,8 @@
   },
   "pr": 1615,
   "checkpoint": {
-    "evidence": "PR1615 head27a7870e/tree770fe7af matches local e557abee:20focused tests,tsc,repo,producercheck and actual frameSVG review passed. Source case5 carries door/transfer/frame choices and actual core-origin load/stock ledger; long-arm torsion rejects.",
-    "next": "Inspect exact-head CI and reconcile STR1613 movedmain; inspect source-based local deep-void premise without changing STR native inputs; then preflight/merge earned result.",
-    "blocker": "No actual masonry group/receiver, dynamic impact/weld, loaded removal/temporary rest, material or owner acceptance. No raised floor/current house or52-head load adoption."
+    "evidence": "PR1615 head27a7870e unchanged: publication,ADE,PLT passed; full health active. Successor recovery/had-local-pocket-20261121 6a02cb9b/tree9892a6b8 preserves27a parent; 35 focused inlet/ground/service tests, TypeScript, repository, source audit0 and ordinary producer check pass. Source-dependent local245 pocket retains global530/65 and wall DPC0..150, with actual support cells and replacement origins; no adoption.",
+    "next": "Finish exact-head CI and coordinate merge order with STR1613; then migrate earned frame and rebind local-pocket successor after fresh-main reconciliation. Keep shared engineering-edit frozen until coordinated.",
+    "blocker": "STR1613 health has failed and root is resolving it; HAD1615 health still active. Local slab/contact, mineral retention, thermal/waterproof/perimeter bridge, actual wall ports, full inventory and52-head integration remain unqualified."
   }
 }
