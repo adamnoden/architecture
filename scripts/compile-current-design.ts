@@ -91,6 +91,10 @@ const trialModes: Readonly<Record<string, TrialMode>> = {
     schema: 'had-inlet-fault-request/1', key: 'fault', name: 'inlet fault envelope',
     run: (compile, value) => compile.inletFault(value),
   },
+  '--inlet-cabinet': {
+    schema: 'had-copper-cabinet-request/1', key: 'cabinet', name: 'copper inlet cabinet',
+    run: (compile, value) => compile.inletCabinetCase(value),
+  },
   '--fixed-inlet': {
     schema: 'had-fixed-inlet-request/1', key: 'fixed', name: 'fixed inlet',
     run: (compile, value) => compile.fixedInletCase(value),
@@ -144,7 +148,7 @@ const modes = [
   '--read-service-floor', '--service-floor', '--read-vertical-rc-floor', '--read-masonry-frame', '--read-house-vertical-profile',
   '--read-roof-pitch', '--read-court-intake', '--read-inlet-route', '--read-east-ground-receiving',
   '--read-occupied-condensate', '--read-structural-successor', '--read-retained-components', '--read-ground-section', '--read-distributed-floor', '--read-joined-rc-floor', '--read-structural-case', '--read-structural-interfaces',
-  '--read-north-collector', '--read-rear-foul-vent', '--read-inlet-sill-insert', '--read-inlet-fault', '--read-fixed-inlet', '--read-inlet-removal', '--read-inlet-cover', ...Object.keys(trialModes),
+  '--read-north-collector', '--read-rear-foul-vent', '--read-inlet-sill-insert', '--read-inlet-fault', '--read-fixed-inlet', '--read-inlet-cabinet', '--read-inlet-removal', '--read-inlet-cover', ...Object.keys(trialModes),
 ]
 const mode = modes.includes(args[0]) ? args.shift() : undefined
 const [argument, ...extra] = args
@@ -198,6 +202,7 @@ try {
       else if (mode === '--read-rear-foul-vent') process.stdout.write(JSON.stringify(await compile.readRearFoulVentCase(), null, 2) + '\n')
       else if (mode === '--read-inlet-sill-insert') process.stdout.write(JSON.stringify(await compile.readInletSillInsertCase(), null, 2) + '\n')
       else if (mode === '--read-inlet-fault') process.stdout.write(JSON.stringify(await compile.readInletFaultCase(), null, 2) + '\n')
+      else if (mode === '--read-inlet-cabinet') process.stdout.write(JSON.stringify(await compile.readInletCabinetCase(), null, 2) + '\n')
       else if (mode === '--read-fixed-inlet') process.stdout.write(JSON.stringify(await compile.readFixedInletCase(), null, 2) + '\n')
       else if (mode === '--read-inlet-removal') process.stdout.write(JSON.stringify(await compile.readInletRemovalCases(), null, 2) + '\n')
       else if (mode === '--read-inlet-cover') process.stdout.write(JSON.stringify(await compile.readInletCoverCases(), null, 2) + '\n')

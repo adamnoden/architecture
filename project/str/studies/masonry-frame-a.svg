@@ -12,16 +12,16 @@
 <path d="M61.750,736.950 L142.750,736.950 L142.750,660.000 L61.750,660.000 Z" fill="#bdc9cf" stroke="#344d54"/>
 <path d="M466.750,736.950 L547.750,736.950 L547.750,660.000 L466.750,660.000 Z" fill="#bdc9cf" stroke="#344d54"/>
 <text x="710" y="105" class="small ">OUTER-NORTH FRAME SECTION</text>
-<text x="710" y="128" class="small ">Actual upstand depth 750 mm</text>
+<text x="710" y="128" class="small ">Upstand depth 750 / normal 290 mm</text>
 <text x="710" y="151" class="small ">MASONRY-FRAME-A/baseline</text>
-<text x="710" y="174" class="small ">Known plate 98.75938m²</text>
-<text x="710" y="197" class="small ">Plate selfG 493.797kN</text>
+<text x="710" y="174" class="small ">Known plate 98.30241m²</text>
+<text x="710" y="197" class="small ">Plate selfG 491.512kN</text>
 <text x="710" y="220" class="small ">Four RC post union 1.389370m³</text>
 <text x="710" y="243" class="small ">Two masonry rings 5.4345kN</text>
 <text x="710" y="266" class="small ">Foundation union 884.830kN</text>
-<text x="710" y="289" class="small ">52-head min -50.806kN/P10</text>
-<text x="710" y="312" class="small ">52-head max 86.117kN/P01</text>
-<text x="710" y="335" class="small "></text>
+<text x="710" y="289" class="small ">52-head min -118.958kN/P10</text>
+<text x="710" y="312" class="small ">52-head max 229.788kN/P01</text>
+<text x="710" y="335" class="small ">Modeled physical G 2476.873 kN</text>
 <text x="710" y="358" class="small hold">RETAINED ARCHITECTURAL COST</text>
 <text x="710" y="381" class="small ">Finished opening2400 / normal775 retained</text>
 <text x="710" y="404" class="small hold">Local jamb glass 60mm remains unqualified</text>

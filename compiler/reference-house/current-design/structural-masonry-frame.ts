@@ -50,7 +50,7 @@ function currentBinding(resolved: CurrentDesignResolution) {
   const comparison = exact(JSON.parse(execFileSync('python3', ['-B', fileURLToPath(new URL(methodPath, root)), '--read'],
     { encoding: 'utf8', maxBuffer: 8 * 1024 * 1024 })), nativeFields, 'native masonry frame') as Comparison
   if (comparison.schema !== 'str-masonry-frame-a-case/1' || !record(comparison.sourceSHA256)
-    || Object.keys(comparison.sourceSHA256).length !== 47
+    || Object.keys(comparison.sourceSHA256).length !== 48
     || !record(comparison.verticalCase) || comparison.verticalCase.schema !== 'str-vertical-rc-floor-case/1') {
     throw new Error('The separate masonry frame native schema changed; integrate it explicitly')
   }
@@ -258,7 +258,7 @@ export function runMasonryFrameCase(resolved: CurrentDesignResolution, input: un
     method: { id: 'str-current-masonry-frame/1', path: methodPath, inputs: current.inputs,
       adapter: { path: adapterPath, blob: current.inputs[adapterPath] } },
     native: vertical.native, vertical, ...lower, lowerLWeight, roofCoupling, roofSteelGravity, roofSvg: roofCoupling?.roofSvg ?? null, straightFrameCage, courtCornerClosure: closure, geometry: output.geometry, mass: output.mass, foundationWeight: output.foundationWeight,
-    floorLiveLoad, computableIntegrationDebt: [],
+    floorLiveLoad, floorLiveLoadIntegrationDebt: [],
     plateBending: output.plateBending, floorReinforcement: output.floorReinforcement, frameSvg: output.drawings['masonry-frame-a.svg'], floorSvg: output.drawings['masonry-frame-a-floor.svg'],
     evidence: { state: 'unqualified-separate-masonry-straight-frame-comparison' as const,
       candidateAccepted: false as const, completeHouseProof: false as const, installedAcceptance: false as const,

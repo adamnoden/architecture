@@ -5,12 +5,131 @@ const finite = (value: unknown): value is number => typeof value === 'number' &&
 const same = (a: unknown, b: unknown) => sha256SemanticFingerprint(a) === sha256SemanticFingerprint(b)
 const close = (a: number, b: number, tolerance = 1e-6) => Math.abs(a - b) <= tolerance
 const six = (value: unknown): value is number[] => Array.isArray(value) && value.length === 6 && value.every(finite)
-const roofSources = ['project/str/studies/roof_floor_compatibility.py', 'project/str/studies/roof_stock_gravity.py',
+const roofSources = ['project/str/studies/roof_floor_compatibility.py', 'project/str/studies/roof_stock_gravity.py', 'project/str/studies/roof_surface_pressure.py',
   'project/str/studies/current-house-roof-bracing.py', 'project/str/studies/current-house-welded-network.json',
   'project/str/studies/current-house-welded-heel.json', 'project/had/studies/water-replan.json'] as const
 function sourceMap(value: unknown, expected: Readonly<Record<string, string>>, paths: readonly string[]) {
   return record(value) && same(Object.keys(value).sort(), [...paths].sort())
     && Object.entries(value).every(([path, hash]) => expected[path] === hash)
+}
+
+/** A matching coordinate is insufficient: every receiver must use a physical element row. */
+export function hasPhysicalPlateTrace(value: unknown) {
+  const trace = record(value) ? value.physicalPlateParticipation : undefined
+  return record(trace) && trace.schema === 'str-retained-plate-operator-participation/1'
+    && trace.physicalTraceConfirmed === true
+    && ['actual-physical-mesh-point-trace', 'existing-finite-rc-member-trace'].includes(String(trace.traceSource))
+    && trace.createdScalarCoordinateCount === 0 && trace.allCoefficientRowsUsedByPhysicalElements === true
+    && Number.isInteger(trace.participatingPortCount) && Number(trace.participatingPortCount) > 0
+    && finite(trace.assembledTraceRowMaxAbs) && trace.assembledTraceRowMaxAbs > 0
+    && finite(trace.condensedTraceRowMaxAbs) && trace.condensedTraceRowMaxAbs > 0
+    && Array.isArray(trace.portIndices) && trace.portIndices.length === trace.participatingPortCount
+    && new Set(trace.portIndices).size === trace.portIndices.length
+    && trace.portIndices.every(index => Number.isInteger(index) && index >= 0)
+}
+
+/** Pressure rows retain their actual area, sign and origins through condensation and local recovery. */
+export function validateRoofSurfacePressure(roof: Readonly<Record<string, unknown>>, setting: unknown,
+  sources: Readonly<Record<string, string>>) {
+  const ledger = roof.roofSurfacePressure
+  if (setting === null) {
+    if (ledger !== null || roof.roofSurfacePressureIntegrated !== false) throw new Error('Unrequested roof surface pressure cannot enter the current result')
+    return null
+  }
+  if (!record(setting) || setting.kind !== 'authored-equivalent-plan-pressure-control'
+    || !finite(setting.uniformKPa) || setting.uniformKPa < -2.25 || setting.uniformKPa > 6.3
+    || !record(setting.rowMultipliers) || !record(ledger) || ledger.schema !== 'str-roof-surface-pressure/1'
+    || !same(ledger.request, setting) || !sourceMap(ledger.sourceSHA256, sources, roofSources)
+    || roof.roofSurfacePressureIntegrated !== true || !finite(ledger.planAreaM2) || ledger.planAreaM2 <= 0
+    || !finite(ledger.loadedWeightedPlanAreaM2) || !finite(ledger.verticalDownKN)
+    || !six(ledger.pressureWrenchKN_KNm) || !six(ledger.originAndCondensedWrenchResidualKN_KNm)
+    || ledger.originAndCondensedWrenchResidualKN_KNm.some(value => Math.abs(value) > 1e-7)
+    || !six(ledger.sixRigidWorkResidualKN_KNmm) || ledger.sixRigidWorkResidualKN_KNmm.some(value => Math.abs(value) > 1e-5)
+    || !finite(ledger.loadOnlyEnergyKNmm) || ledger.loadOnlyEnergyKNmm < 0
+    || ['siteWindQualified', 'siteSnowQualified', 'facadePressureCorrelationQualified', 'roofLayerGravityIncluded', 'candidateAccepted']
+      .some(key => ledger[key] !== false)
+    || !Array.isArray(ledger.origins) || ledger.origins.length !== 108
+    || !Array.isArray(ledger.actualLocalActions) || ledger.actualLocalActions.length !== 24) {
+    throw new Error('The signed roof pressure lost its authored rows, physical work recovery or unqualified scope')
+  }
+  const expectedIds = Array.from({ length: 12 }, (_, frame) => Array.from({ length: 9 }, (_, row) => `ROOF-ROW/${frame}/${row}`)).flat()
+  if (!same(Object.keys(setting.rowMultipliers).sort(), expectedIds.sort())) throw new Error('Roof pressure requires the exact actual 108 row IDs')
+  const ids = new Set<string>(), wrench = [0, 0, 0, 0, 0, 0]
+  let area = 0, weightedArea = 0
+  const halfPressure = new Map<string, number>()
+  for (const row of ledger.origins) {
+    if (!record(row) || typeof row.id !== 'string' || ids.has(row.id) || !expectedIds.includes(row.id)
+      || !Number.isInteger(row.frameIndex) || !Number.isInteger(row.rowIndex)
+      || row.id !== `ROOF-ROW/${row.frameIndex}/${row.rowIndex}`
+      || !['ordinary', 'hip'].includes(String(row.frameFamily)) || !['inner', 'outer'].includes(String(row.halfKind))
+      || !finite(row.planAreaM2) || row.planAreaM2 <= 0 || !finite(row.multiplier) || row.multiplier < 0 || row.multiplier > 1
+      || row.multiplier !== setting.rowMultipliers[row.id] || !finite(row.pressureKPa)
+      || !close(row.pressureKPa, setting.uniformKPa * row.multiplier)
+      || !Array.isArray(row.pointXYZMm) || row.pointXYZMm.length !== 3 || !row.pointXYZMm.every(finite)
+      || !Array.isArray(row.forceKN) || row.forceKN.length !== 3 || !row.forceKN.every(finite)
+      || row.forceKN[0] !== 0 || row.forceKN[1] !== 0 || !close(row.forceKN[2], -row.pressureKPa * row.planAreaM2)) {
+      throw new Error('A roof pressure row changed its actual territory, signed pressure or physical origin')
+    }
+    ids.add(row.id); area += row.planAreaM2; weightedArea += row.planAreaM2 * row.multiplier
+    const halfId = `ROOF-PRIMARY/${row.frameIndex}/${row.halfKind}`
+    halfPressure.set(halfId, (halfPressure.get(halfId) ?? 0) - row.forceKN[2])
+    const p = row.pointXYZMm as number[], f = row.forceKN as number[]
+    for (let axis = 0; axis < 3; axis++) wrench[axis] += f[axis]
+    wrench[3] += (p[1] * f[2] - p[2] * f[1]) / 1000
+    wrench[4] += (p[2] * f[0] - p[0] * f[2]) / 1000
+    wrench[5] += (p[0] * f[1] - p[1] * f[0]) / 1000
+  }
+  if (!close(area, ledger.planAreaM2) || !close(weightedArea, ledger.loadedWeightedPlanAreaM2)
+    || !close(ledger.verticalDownKN, setting.uniformKPa * weightedArea)
+    || !close(ledger.verticalDownKN, -wrench[2])
+    || wrench.some((value, axis) => !close(value, (ledger.pressureWrenchKN_KNm as number[])[axis]))) {
+    throw new Error('The roof surface pressure loses signed force, actual area or originating first moment')
+  }
+  const actions = ledger.actualLocalActions
+  const actionIds = new Set(actions.map(row => record(row) ? row.id : undefined))
+  if (actionIds.size !== 24 || actions.some(row => !record(row) || typeof row.id !== 'string'
+    || !['finite-outer', 'pin-ended-inner'].includes(String(row.physicalHalfKind)) || row.strengthAccepted !== false
+    || !Array.isArray(row.actualAxialEndForcesN) || row.actualAxialEndForcesN.length !== 2 || !row.actualAxialEndForcesN.every(finite)
+    || !finite(row.appliedSteelGKN) || !finite(row.appliedSurfaceVerticalDownKN))) {
+    throw new Error('The roof pressure lost its actual combined local member cuts')
+  }
+  const expectedActions = Array.from({ length: 12 }, (_, frame) => ['inner', 'outer'].map(half => `ROOF-PRIMARY/${frame}/${half}`)).flat().sort()
+  if (!same([...actionIds].sort(), expectedActions)) throw new Error('Roof pressure local cuts require all actual twelve finite/released primary pairs')
+  for (const row of actions as Record<string, unknown>[]) {
+    if (!close(Number(row.appliedSurfaceVerticalDownKN), halfPressure.get(String(row.id)) ?? 0)
+      || String(row.id).endsWith('/outer') !== (row.physicalHalfKind === 'finite-outer')) {
+      throw new Error('A roof primary cut changed its actual signed row load territory or end release')
+    }
+    if (row.physicalHalfKind === 'finite-outer') {
+      const elastic = row.elasticStrongEndVectorN_Nmm, applied = row.appliedEquivalentStrongEndVectorN_Nmm, actual = row.actualStrongEndVectorN_Nmm
+      if (![elastic, applied, actual].every(value => Array.isArray(value) && value.length === 4 && value.every(finite))
+        || (actual as number[]).some((value, axis) => !close(value, (elastic as number[])[axis] - (applied as number[])[axis], 1e-5))
+        || !Array.isArray(row.momentSamples) || !row.momentSamples.length
+        || row.momentSamples.some(point => !record(point) || !finite(point.axisMm) || !finite(point.momentKNm))
+        || !finite(row.maximumAbsoluteStrongMomentKNm)
+        || !close(row.maximumAbsoluteStrongMomentKNm, Math.max(...row.momentSamples.map(point => Math.abs(Number(point.momentKNm)))))
+        || !finite(row.rightEndMomentResidualNmm)
+        || Math.abs(row.rightEndMomentResidualNmm) > 1e-7 * Math.max(1, ...(actual as number[]).map(Math.abs))) {
+        throw new Error('The finite roof cuts must subtract the actual combined applied load vector and recover their moment diagram')
+      }
+    } else {
+      const local = row.localReleasedBending
+      if (!record(local) || !finite(local.heelReactionN) || !finite(local.crownReactionN)
+        || !finite(local.forceResidualN) || Math.abs(local.forceResidualN) > 1e-6
+        || !finite(local.momentResidualNmm) || Math.abs(local.momentResidualNmm) > 1e-3
+        || local.strengthAccepted !== false || local.releasedRotationLawPreserved !== true
+        || !Array.isArray(local.samples) || !local.samples.length
+        || local.samples.some(point => !record(point) || !finite(point.axisMm) || !finite(point.momentKNm))
+        || !finite(local.maximumAbsoluteLocalMomentKNm)
+        || !close(local.maximumAbsoluteLocalMomentKNm, Math.max(...local.samples.map(point => Math.abs(Number(point.momentKNm)))))) {
+        throw new Error('The released roof half lost its actual particular bending or its release law')
+      }
+    }
+  }
+  if (record(roof.roofSteelGravity) && !same(roof.roofSteelGravity.actualLocalActions, actions)) {
+    throw new Error('Roof pressure and steel gravity must recover the same combined local cuts')
+  }
+  return ledger
 }
 
 /** A body's own weight and its unilateral top contact are different load paths. */
@@ -123,7 +242,7 @@ export function validateRoofCoupling(input: unknown, setting: unknown, sources: 
     || new Set(receivers.map(row => record(row) ? row.id : undefined)).size !== 18
     || receivers.some(row => !record(row) || typeof row.id !== 'string' || !same(row.law, laws[row.id])
       || row.physicalAcceptance !== false || typeof row.active !== 'boolean'
-      || !finite(row.forceKN) || !finite(row.relativeExtensionMm))
+      || !finite(row.forceKN) || !finite(row.relativeExtensionMm) || !hasPhysicalPlateTrace(row.plateTrace))
     || !Array.isArray(ring) || ring.length !== 58 || new Set(ring.map(row => record(row) ? row.id : undefined)).size !== 58
     || ring.some(row => !record(row) || typeof row.id !== 'string' || !six(row.displacementMmRad) || !Array.isArray(row.xyMm)
       || row.xyMm.length !== 2 || !row.xyMm.every(finite))
@@ -155,6 +274,7 @@ export function validateRoofCoupling(input: unknown, setting: unknown, sources: 
   if (pressureWrench.some((value, axis) => !close(value, declaredPressure[axis]))) {
     throw new Error('The roof pressure ledger loses its actual force or originating moment')
   }
+  validateRoofSurfacePressure(input, setting.roofSurfacePressure, sources)
   return input
 }
 

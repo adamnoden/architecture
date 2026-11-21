@@ -6,7 +6,7 @@ import { compileEngineeringDocument, readEngineeringDocument } from './current-d
 import { readGeorgianDesignSnapshot } from './current-design/georgian-source.js'
 import { readCurrentDesignResolution } from './current-design/resolve.js'
 import { readMasonryFrameCase, runMasonryFrameCase, savedMasonryFrameCase } from './current-design/structural-masonry-frame.js'
-import { validateRoofCoupling } from './current-design/structural-house-coupling.js'
+import { hasPhysicalPlateTrace, validateRoofCoupling } from './current-design/structural-house-coupling.js'
 
 const proof = JSON.parse(readFileSync(new URL('../../project/str/studies/masonry-frame-a-proof.json', import.meta.url), 'utf8'))
 const numerical = proof.authoredNumericalCase
@@ -19,6 +19,10 @@ const joinedFields = ['geometry', 'portalDPCNormalMode', 'portalDPCNormalIntegra
 const nativeFields = ['plateLaw', 'bearingLaw', 'maxPitchMm', 'bearingQuadratureOrder', 'freshUniformLiveKPa']
 const masonryFields = ['masonrySeatProjectionMm', 'masonryUnitWeightKNM3', 'abutmentSlices', 'foundationWeight', 'courtCornerClosure', 'floorReinforcement', 'lowerCoreBodies', 'lowerLWeight', 'roofCoupling', 'straightFrameCage']
 function stages() {
+  const roof = numerical.roofCoupling ? { ...numerical.roofCoupling, roofSurfacePressure: {
+    kind: 'authored-equivalent-plan-pressure-control', uniformKPa: 1.5,
+    rowMultipliers: Object.fromEntries(Array.from({ length: 12 }, (_, frame) => Array.from({ length: 9 }, (_, row) => [`ROOF-ROW/${frame}/${row}`, 1])).flat()),
+  } } : null
   return {
     distributedFloor: { ...Object.fromEntries(floorFields.map(key => [key, joined.floor[key]])), edits: joined.floor.componentCase.edits },
     masonryFrame: { ...Object.fromEntries(joinedFields.map(key => [key, joined[key]])),
@@ -27,7 +31,7 @@ function stages() {
       northUpstandWidthMm: house.northUpstandWidthMm, physicalGFactor: house.boundary.physicalGFactor,
       includeExternalGMAXQ: house.boundary.includeExternalGMAXQ,
       ...Object.fromEntries(nativeFields.map(key => [key, vertical[key]])),
-      ...Object.fromEntries(masonryFields.map(key => [key, numerical[key]])) },
+      ...Object.fromEntries(masonryFields.map(key => [key, numerical[key]])), roofCoupling: roof },
   }
 }
 function result(bundle: { engineering: object }) {
@@ -62,6 +66,9 @@ test('one saved floor, body and roof edit propagates through the actual coupled 
   const changedDocument = JSON.parse(JSON.stringify(document))
   changedDocument.stages.masonryFrame.lowerCoreBodies.masonryUnitWeightKNPerM3 += 1
   changedDocument.stages.masonryFrame.roofCoupling.roofWindFactor *= .8
+  changedDocument.stages.masonryFrame.roofCoupling.roofSurfacePressure.uniformKPa = -2.25
+  changedDocument.stages.masonryFrame.roofCoupling.roofSurfacePressure.rowMultipliers['ROOF-ROW/0/0'] = 0
+  changedDocument.stages.masonryFrame.freshUniformLiveKPa = 2
   changedDocument.stages.distributedFloor.edits.floorApertures = [{ id: 'FLOOR-APERTURE/plant-riser',
     shape: { kind: 'rectangle', boundsXYMm: [9240, 4760, 9905, 5305] } }]
   const changedBundle = JSON.parse(execFileSync(process.execPath, ['--import', 'tsx', 'scripts/compile-current-design.ts', '--bundle', '-'], {
@@ -72,7 +79,7 @@ test('one saved floor, body and roof edit propagates through the actual coupled 
   assert.equal(baseline.vertical.schema, 'str-masonry-frame-a-vertical-result/1')
   assert.equal(baseline.native.schema, 'str-masonry-frame-a-compatible-frame-result/1')
   assert.deepEqual(baseline.vertical.request, baseline.native.request)
-  assert.equal(Object.keys(baseline.native.sourceSHA256 as object).length, 47)
+  assert.equal(Object.keys(baseline.native.sourceSHA256 as object).length, 48)
   if (numerical.courtCornerClosure) {
     assert.equal(baseline.courtCornerClosure?.newSupportCount, 0)
     assert.equal(baseline.courtCornerClosure?.localJointRigidityAccepted, false)
@@ -81,6 +88,15 @@ test('one saved floor, body and roof edit propagates through the actual coupled 
   assert.ok(baseline.native.equilibriumResidualKN_KNm.every(value => Math.abs(value) < 1e-6))
   assert.ok(Math.abs(changed.vertical.mass.newPlatePhysicalSelfGKN - baseline.vertical.mass.newPlatePhysicalSelfGKN + .545) < 1e-7)
   assert.ok(headDelta(baseline, changed) > 1e-5)
+  assert.equal(baseline.floorLiveLoad.characteristicPressureKPa, 0)
+  assert.equal(baseline.floorLiveLoad.appliedQKN, 0)
+  assert.equal(changed.floorLiveLoad.characteristicPressureKPa, 2)
+  assert.equal(changed.floorLiveLoad.combinationFactor, 1.5)
+  assert.equal(changed.floorLiveLoad.addedPhysicalMassKN, 0)
+  assert.equal(changed.floorLiveLoad.legacyGrossGFlagRequired, false)
+  assert.equal(changed.floorLiveLoad.appliedQKN, 3 * Number(changed.vertical.mass.newPlateAreaM2))
+  assert.equal(changed.floorLiveLoadIntegrationDebt.length, 0)
+  assert.equal(changed.floorLiveLoad.candidateAccepted, false)
   assert.notEqual(changed.floorSvg, baseline.floorSvg)
   assert.notEqual(changed.source.caseDigest, baseline.source.caseDigest)
   assert.ok(baseline.lowerCoreBodies && changed.lowerCoreBodies && baseline.roofCoupling && changed.roofCoupling)
@@ -94,9 +110,22 @@ test('one saved floor, body and roof edit propagates through the actual coupled 
     ...current.comparison.verticalCase.monolithicCase.houseCase.joinedCase.floor,
     ...Object.fromEntries(floorFields.map(key => [key, joined.floor[key]])), componentCase: joined.floor.componentCase })
   assert.throws(() => validateRoofCoupling({ ...baseline.roofCoupling, windIndex: Number(baseline.roofCoupling!.windIndex) + 1 },
-    numerical.roofCoupling, checked.comparison.sourceSHA256,
+    document.stages.masonryFrame.roofCoupling, checked.comparison.sourceSHA256,
     checked.comparison.verticalCase.monolithicCase.houseCase.joinedCase.floor, baseline.native), /sole floor wind programme/)
 
+  const pressureBaseline = baseline.roofCoupling.roofSurfacePressure as Record<string, unknown>
+  const pressureChanged = changed.roofCoupling.roofSurfacePressure as Record<string, unknown>
+  assert.equal(pressureBaseline.schema, 'str-roof-surface-pressure/1')
+  assert.ok(Math.abs(Number(pressureBaseline.verticalDownKN) - 216.225) < 1e-7)
+  assert.ok(Number(pressureChanged.verticalDownKN) < 0, 'The authored edit must actually execute suction')
+  assert.ok(Number(pressureChanged.loadedWeightedPlanAreaM2) < Number(pressureBaseline.loadedWeightedPlanAreaM2))
+  assert.notDeepEqual(pressureBaseline.actualLocalActions, pressureChanged.actualLocalActions)
+  for (const roof of [baseline.roofCoupling, changed.roofCoupling]) {
+    const receivers = roof.receivers as Record<string, unknown>[]
+    assert.equal(receivers.length, 18)
+    assert.ok(receivers.every(row => hasPhysicalPlateTrace(row.plateTrace)), 'All eighteen receivers must participate in the actual physical operator')
+    assert.equal((roof.roofSurfacePressure as Record<string, unknown>).facadePressureCorrelationQualified, false)
+  }
   assert.deepEqual(changed.roofCoupling.datumsMm, baseline.roofCoupling.datumsMm)
   assert.notEqual(changed.roofCoupling.roofSvg, baseline.roofCoupling.roofSvg)
   assert.ok(baseline.roofSteelGravity && changed.roofSteelGravity, 'Actual modeled roof stock G must join this worked case')
@@ -124,11 +153,14 @@ test('one saved floor, body and roof edit propagates through the actual coupled 
   changedDocument.stages.distributedFloor.edits = JSON.parse(JSON.stringify(document.stages.distributedFloor.edits))
   changedDocument.stages.masonryFrame.lowerCoreBodies = JSON.parse(JSON.stringify((document.stages.masonryFrame as Record<string, unknown>).lowerCoreBodies))
   changedDocument.stages.masonryFrame.roofCoupling = JSON.parse(JSON.stringify((document.stages.masonryFrame as Record<string, unknown>).roofCoupling))
+  changedDocument.stages.masonryFrame.freshUniformLiveKPa = Reflect.get(document.stages.masonryFrame, 'freshUniformLiveKPa')
   const restored = result(await compileEngineeringDocument(changedDocument))
   assert.equal(restored.source.caseDigest, baseline.source.caseDigest)
   assert.ok(headDelta(baseline, restored) < 1e-7)
+  assert.deepEqual(restored.floorLiveLoad, baseline.floorLiveLoad)
   assert.equal(restored.floorSvg, baseline.floorSvg)
   assert.equal(restored.roofCoupling?.roofSvg, baseline.roofCoupling.roofSvg)
+  assert.deepEqual(restored.roofCoupling?.roofSurfacePressure, baseline.roofCoupling.roofSurfacePressure)
 })
 
 test('masonry stage rejects second-floor, result, historical-method and stale binding substitutions', async () => {

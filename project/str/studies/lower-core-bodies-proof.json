@@ -31,7 +31,7 @@
     "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
     "project/str/studies/rc_floor_house_loads.py": "eaade7a26ecc682f742a1c3b3246ee648e5d497c236b52f656250994d0517654",
     "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-    "project/str/studies/vertical_rc_floor.py": "0d0e359c270a5a59fefed5b2d1edbaa0e16d4129a97a639135a0e22e81d47539",
+    "project/str/studies/vertical_rc_floor.py": "30a222fe8c7104b03cab7593b62fcd3ee224574f71380bb7cb7dc95cd275a7d7",
     "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
     "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
     "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
@@ -74,7 +74,7 @@
       "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
       "project/str/studies/rc_floor_house_loads.py": "eaade7a26ecc682f742a1c3b3246ee648e5d497c236b52f656250994d0517654",
       "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-      "project/str/studies/vertical_rc_floor.py": "0d0e359c270a5a59fefed5b2d1edbaa0e16d4129a97a639135a0e22e81d47539",
+      "project/str/studies/vertical_rc_floor.py": "30a222fe8c7104b03cab7593b62fcd3ee224574f71380bb7cb7dc95cd275a7d7",
       "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
       "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
       "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
@@ -1620,7 +1620,7 @@
         },
         "sourceSHA256": {
           "project/str/studies/lower_core_bodies.py": "9f6e0b2d232441c0a2e278de7d25f9b5d2e1db330527cf1aed36f4e6a0ecb392",
-          "project/str/studies/vertical_rc_floor.py": "0d0e359c270a5a59fefed5b2d1edbaa0e16d4129a97a639135a0e22e81d47539",
+          "project/str/studies/vertical_rc_floor.py": "30a222fe8c7104b03cab7593b62fcd3ee224574f71380bb7cb7dc95cd275a7d7",
           "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
           "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
           "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294"
@@ -3706,7 +3706,7 @@
         },
         "sourceSHA256": {
           "project/str/studies/lower_core_bodies.py": "9f6e0b2d232441c0a2e278de7d25f9b5d2e1db330527cf1aed36f4e6a0ecb392",
-          "project/str/studies/vertical_rc_floor.py": "0d0e359c270a5a59fefed5b2d1edbaa0e16d4129a97a639135a0e22e81d47539",
+          "project/str/studies/vertical_rc_floor.py": "30a222fe8c7104b03cab7593b62fcd3ee224574f71380bb7cb7dc95cd275a7d7",
           "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
           "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
           "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294"
@@ -5775,7 +5775,7 @@
         -1.3460521586239338e-10,
         -8.083879947662353e-10,
         1.650303602218628e-09,
-        -6.888640200486407e-10
+        -6.888567440910264e-10
       ],
       "maximumFrameTranslationMm": 3.413420886008262,
       "maximumPlateDeflectionMm": 1.214817121779513,
@@ -5792,7 +5792,7 @@
         },
         "sourceSHA256": {
           "project/str/studies/lower_core_bodies.py": "9f6e0b2d232441c0a2e278de7d25f9b5d2e1db330527cf1aed36f4e6a0ecb392",
-          "project/str/studies/vertical_rc_floor.py": "0d0e359c270a5a59fefed5b2d1edbaa0e16d4129a97a639135a0e22e81d47539",
+          "project/str/studies/vertical_rc_floor.py": "30a222fe8c7104b03cab7593b62fcd3ee224574f71380bb7cb7dc95cd275a7d7",
           "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
           "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
           "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294"
@@ -7271,7 +7271,7 @@
         "addedPhysicalFamilyWrenchKN_KNm": [
           0.0,
           0.0,
-          -628.5486075000271,
+          -628.548607500027,
           -3778.0369545874846,
           4053.6192263742787,
           0.0
@@ -7279,7 +7279,7 @@
         "sourceSelfGAndFirstMomentResidualKN_KNm": [
           0.0,
           0.0,
-          -2.7057467377744615e-11,
+          -2.6943780540023e-11,
           1.5006662579253316e-11,
           -9.640643838793039e-11,
           0.0

@@ -4,9 +4,13 @@ import hashlib
 import json
 from pathlib import Path
 import sys
+import subprocess
+import tempfile
 import time
 
-from masonry_frame_a import load_masonry_frame_a_source, reference_masonry_frame_a_case, run_masonry_frame_a
+from masonry_frame_a import (load_masonry_frame_a_source, reference_masonry_frame_a_case,
+    build_masonry_frame_a, finish_masonry_frame_a)
+from vertical_rc_floor import solve_vertical_rc_floor
 from vertical_rc_floor_proof import numerical_case as vertical_numerical_case
 
 D=Path(__file__).resolve().parent
@@ -52,7 +56,9 @@ def roof_summary(result):
 
 def summarize(result):
     n=result['nativeVertical'];heads=n['native']['heads'];case=result['request'];house=case['verticalCase']['monolithicCase']['houseCase']
-    return {'caseId':n['native']['caseId'],'changedControls':{'physicalGFactor':house['boundary']['physicalGFactor'],
+    return {'caseId':n['native']['caseId'],'executedRequest':case,'floorLiveLoad':n['floorLiveLoad'],
+        'physicalPlateParticipation':{r['id']:r['plateTrace']['physicalPlateParticipation'] for r in result['roofCoupling']['receivers']},
+        'changedControls':{'physicalGFactor':house['boundary']['physicalGFactor'],
         'northUpstandWidthMm':house['northUpstandWidthMm'],'abutmentSlices':case['abutmentSlices'],
         'floorApertures':house['joinedCase']['floor']['componentCase']['edits']['floorApertures'],
         'windIndex':house['joinedCase']['floor']['boundaryCase']['windIndex'],
@@ -89,7 +95,23 @@ def _audit_head_wrench(summary):
     return total
 
 
-def proof(source):
+def solve_control(case,source,name):
+    model=build_masonry_frame_a(case,source)
+    traces=model['verticalFloor']['retainedPointReceivers']
+    if len(traces)!=18:raise ValueError('All eighteen actual roof feet must participate in the sole plate')
+    for identifier,trace in traces.items():
+        audit=trace['physicalPlateParticipation']
+        if (not audit['physicalTraceConfirmed'] or not audit['allCoefficientRowsUsedByPhysicalElements']
+                or audit['createdScalarCoordinateCount']!=0 or audit['assembledTraceRowMaxAbs']<=0
+                or audit['condensedTraceRowMaxAbs']<=0):raise ValueError('Orphan/nonphysical roof receiving trace: '+identifier)
+    print(name,'all18 physical plate traces verified before solve',flush=True)
+    captured={}
+    native=solve_vertical_rc_floor(model,source['vertical'],'MASONRY-FRAME-A/'+name,
+        additional_nodal_loads=model['roofFloorCoupling']['additionalNodalLoads'],result_observer=lambda raw:captured.update(raw=raw))
+    return finish_masonry_frame_a(model,source,native,captured['raw'])
+
+
+def proof(source,baseline_capture=None):
     start=time.time();base=numerical_case(source);controls=[('baseline',base)]
     aperture=copy.deepcopy(base)
     aperture['verticalCase']['monolithicCase']['houseCase']['joinedCase']['floor']['componentCase']['edits']['floorApertures']=[{'id':'FLOOR-APERTURE/plant-riser','shape':{'kind':'rectangle','boundsXYMm':[9240,4760,9905,5305]}}]
@@ -97,11 +119,33 @@ def proof(source):
     roof_edit=copy.deepcopy(base);roof_edit['roofCoupling']['ringPlanEIRatio']=.5;controls.append(('roof-ring-EI-half',roof_edit))
     court=copy.deepcopy(base);court['verticalCase']['monolithicCase']['houseCase']['joinedCase']['floor']['boundaryCase']['windIndex']=79;controls.append(('roof-court-W79',court))
     adverse=copy.deepcopy(base);adverse['verticalCase']['monolithicCase']['houseCase']['boundary']['physicalGFactor']=0.;controls.append(('zero-physical-G',adverse))
+    live=copy.deepcopy(base);live['verticalCase']['freshUniformLiveKPa']=2.;controls.append(('net-floor-Q2',live))
+    from roof_floor_compatibility import load_roof_only_source,_scope
+    from roof_surface_pressure import reference_roof_surface_pressure_settings
+    scope,_=_scope(load_roof_only_source(source['root']))
+    suction=copy.deepcopy(base);pressure=reference_roof_surface_pressure_settings({'scope':scope});pressure['uniformKPa']=-2.25
+    suction['roofCoupling']['roofSurfacePressure']=pressure;controls.append(('roof-plan-uniform-minus2p25',suction))
     controls.append(('restored',copy.deepcopy(base)))
     summaries=[];baseline=None
     for name,case in controls:
-        result=run_masonry_frame_a(case,source,'MASONRY-FRAME-A/'+name)
-        if baseline is None:baseline=result
+        if name=='baseline' and baseline_capture is not None:
+            result=json.loads(Path(baseline_capture).read_text())
+            if result['sourceSHA256']!=source['identities'] or result['request']!=case or result['nativeVertical']['native']['caseId']!='MASONRY-FRAME-A/baseline':raise ValueError('Baseline capture is not the exact source/request actual control')
+            for row in result['roofCoupling']['receivers']:
+                audit=row['plateTrace']['physicalPlateParticipation']
+                if not audit['physicalTraceConfirmed'] or not audit['allCoefficientRowsUsedByPhysicalElements'] or audit['createdScalarCoordinateCount']!=0 or audit['condensedTraceRowMaxAbs']<=0:raise ValueError('Captured baseline contains a nonphysical receiver')
+            print('baseline recovered exact-source exact-request actual solved capture',flush=True)
+        else:
+            # Process isolation releases cyclic frame/condensation objects before
+            # the next control and does not alter the owning numerical methods.
+            with tempfile.TemporaryDirectory(prefix='masonry-frame-control-') as directory:
+                request=Path(directory)/'request.json';response=Path(directory)/'response.json'
+                request.write_text(json.dumps(case,allow_nan=False))
+                subprocess.run([sys.executable,'-B',str(Path(__file__).resolve()),'--solve-control',name,str(request),str(response)],check=True)
+                result=json.loads(response.read_text())
+        if baseline is None:
+            baseline=result
+            Path('/tmp/masonry48-baseline-full.json').write_text(json.dumps(result,allow_nan=False)+'\n')
         summary=summarize(result);summary['maximum52HeadComponentDeltaFromBaselineKN_KNm']=head_delta(baseline,result)
         summary['independentlySummedHeadWrenchKN_KNm']=_audit_head_wrench(summary);summaries.append(summary)
         print(name,'elapsed',round(time.time()-start,2),'minHead',summary['minimumHeadVerticalKN'],'headDelta',summary['maximum52HeadComponentDeltaFromBaselineKN_KNm'],flush=True)
@@ -111,6 +155,13 @@ def proof(source):
     for key in ('RCPostVolumeM3','masonryPhysicalGKN','newPlatePhysicalSelfGKN','newPlateAreaM2','referenceStructuralShellPhysicalGKN','foundationPhysicalGKN','cornerClosurePhysicalGKN','lowerLPhysicalGKN','lowerCorePhysicalGKN','roofAddedPhysicalGKN','joinedPhysicalGKN'):
         if abs(summaries[0]['mass'][key]-summaries[2]['mass'][key])>1e-8:raise ValueError('Roof stiffness-only edit changed physical inventory: '+key)
     if summaries[-1]['maximum52HeadComponentDeltaFromBaselineKN_KNm']>1e-6:raise ValueError('Restored full case failed to reproduce actual all-head response')
+    for index,load_key,wrench_key in ((5,'floorLiveLoad','appliedWrenchKN_KNm'),(6,'roofCoupling','pressureWrenchKN_KNm')):
+        changed=summaries[index];ledger=changed[load_key] if index==5 else changed[load_key]['roofSurfacePressure']
+        delta=[a-b for a,b in zip(changed['externalWrenchKN_KNm'],summaries[0]['externalWrenchKN_KNm'])]
+        if max(abs(a-b) for a,b in zip(delta,ledger[wrench_key]))>1e-6:raise ValueError('Independent added-load six-wrench delta fails: '+changed['caseId'])
+        if abs(changed['mass']['joinedPhysicalGKN']-summaries[0]['mass']['joinedPhysicalGKN'])>1e-8:raise ValueError('Q/roof pressure changed physical mass')
+    live=summaries[5]['floorLiveLoad']
+    if abs(live['appliedQKN']-1.5*2*live['actualNetPlateAreaM2'])>1e-8:raise ValueError('Independent actual-net-area Q2 application missing')
     if summaries[0]['missingGroundContactAreaMm2']>1e-8:raise ValueError('Authored formed court corner did not close actual missing normal route')
     kept={k:baseline[k] for k in ('schema','sourceSHA256','geometry','mass','foundationWeight','courtCornerClosure','masonryCourses','loadIntroduction','lowerLWeight','lowerCoreBodies','lowerCoreResponse')}
     kept['request']=base
@@ -119,7 +170,7 @@ def proof(source):
     kept['plateBending']={k:v for k,v in baseline['plateBending'].items() if k!='cells'}
     n=baseline['nativeVertical']
     kept['nativeVertical']={'schema':n['schema'],'sourceSHA256':n['sourceSHA256'],'parentVerticalMethodSchema':n['parentVerticalMethodSchema'],
-        'missingGroundContactAreaMm2':n['missingGroundContactAreaMm2'],'normalCoreCount':len(n['normalCoreGeometry']),
+        'missingGroundContactAreaMm2':n['missingGroundContactAreaMm2'],'normalCoreCount':len(n['normalCoreGeometry']),'floorLiveLoad':n['floorLiveLoad'],
         'native':{k:n['native'][k] for k in ('schema','sourceSHA256','caseId','heads','equilibriumResidualKN_KNm','memberCuts','capCuts','adjacentGridMemberCuts','maximumFrameTranslationMm','energyRelativeResidual')},
         'plate':{'cellCount':n['plate']['cellCount'],'maximumDeflectionMm':n['plate']['physicalRecovery']['maximumDeflectionMm'],
             'workRelativeResidual':n['plate']['physicalRecovery']['workRelativeResidual']}}
@@ -142,9 +193,14 @@ def run_geometry_control(source,case):
 
 
 if __name__=='__main__':
-    if sys.argv[1:]!=['--write']:raise SystemExit('Use --write for fresh source-bound joined masonry-frame controls')
-    source=load_masonry_frame_a_source(D.parents[2]);result,drawings=proof(source)
+    source=load_masonry_frame_a_source(D.parents[2])
+    if len(sys.argv)==5 and sys.argv[1]=='--solve-control':
+        case=json.loads(Path(sys.argv[3]).read_text());result=solve_control(case,source,sys.argv[2])
+        if source['identities']!=load_masonry_frame_a_source(D.parents[2])['identities']:raise SystemExit('Source changed while solving; stale control not written')
+        Path(sys.argv[4]).write_text(json.dumps(result,allow_nan=False)+'\n');raise SystemExit(0)
+    if sys.argv[1:]!=['--write'] and not (len(sys.argv)==4 and sys.argv[1:3]==['--write','--baseline-capture']):raise SystemExit('Use --write [--baseline-capture exact-result.json] for source-bound joined controls')
+    result,drawings=proof(source,sys.argv[3] if len(sys.argv)==4 else None)
     if source['identities']!=load_masonry_frame_a_source(D.parents[2])['identities']:raise SystemExit('Source changed while solving; stale proof not written')
     (D/'masonry-frame-a-proof.json').write_text(json.dumps(result,indent=2,allow_nan=False)+'\n')
     for name,svg in drawings.items():(D/name).write_text(svg)
-    print('Six actual compatible states; all installed/complete-house gates remain false',flush=True)
+    print('Eight actual compatible states; all installed/complete-house gates remain false',flush=True)

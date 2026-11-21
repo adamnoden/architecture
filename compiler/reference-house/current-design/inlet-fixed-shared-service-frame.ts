@@ -211,6 +211,8 @@ export function compareSharedFixedInletServiceFrame(candidate:Candidate,support:
     return {u,reaction,ends}
   }}
   const ordinaryResponse=responseFor(K)
+  // Invocation-local only: identical geometry/support/coupling laws share a factorization, never results.
+  const coupledResponses=new Map<string,typeof ordinaryResponse>()
   const baseMass=members.reduce((n,m)=>n+m.massKg,0)+stock.reduce((n,m)=>n+m.massKg,0)
   const baselineLoads:Load[]=[]
   for(const b of representedSubsystem==='wet-only'?[]:input.branches){
@@ -277,7 +279,10 @@ export function compareSharedFixedInletServiceFrame(candidate:Candidate,support:
       for(const i of active)for(const j of active)couplingMatrix[i][j]+=k*c[i]*c[j]
       return {branch:b.id,pipeNode:pipe.fixed,wetNode,point,lengthMm:length,pipeAreaMm2:area,stiffnessNPerMm:k,c,freeExpansionMm: facts.expansionMmMK/1000*candidate.settings.localPipeTemperatureRangeK*length,group:b.id+'-seized-top-exit'}
     })
-    const response=couplings.length?responseFor(couplingMatrix):ordinaryResponse,dead=response(gravity,true)
+    const couplingKey=JSON.stringify(couplings.map(c=>[c.branch,c.stiffnessNPerMm,c.c]))
+    let response=ordinaryResponse
+    if(couplings.length){const found=coupledResponses.get(couplingKey);if(found)response=found;else{response=responseFor(couplingMatrix);coupledResponses.set(couplingKey,response)}}
+    const dead=response(gravity,true)
     const loads:Load[]=spec.topExit==='seized'?baselineLoads.filter(l=>l.id.includes('pipe-stock-water')||l.id.includes('deadweight-route-moment')||l.id.includes('-pressure-')):spec.cold?(representedSubsystem==='wet-only'?[]:pipeNodes).flatMap(n=>{
       const additional=support.compactReceiver.mass.ledger.filter(m=>m.id.startsWith(n.branch+'-')&&['ring','lug','ear'].some(part=>m.id.startsWith(n.branch+'-'+part+'-'+guideZ))).reduce((sum,m)=>sum+m.massUpperKg*(m.id.includes('-ear-')?1.5:1),0)
       return [transfer(n.branch+'-cold-upper-keeper',n.guide,nodes[n.guide].p,[0,0,coldAxial],[0,0,0],true),transfer(n.branch+'-additional40mm-keeper-stock',n.guide,nodes[n.guide].p,[0,0,-additional*9.81])]

@@ -31,7 +31,7 @@
     "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
     "project/str/studies/rc_floor_house_loads.py": "eaade7a26ecc682f742a1c3b3246ee648e5d497c236b52f656250994d0517654",
     "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-    "project/str/studies/vertical_rc_floor.py": "0d0e359c270a5a59fefed5b2d1edbaa0e16d4129a97a639135a0e22e81d47539",
+    "project/str/studies/vertical_rc_floor.py": "30a222fe8c7104b03cab7593b62fcd3ee224574f71380bb7cb7dc95cd275a7d7",
     "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
     "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
     "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
@@ -71,7 +71,7 @@
       "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
       "project/str/studies/rc_floor_house_loads.py": "eaade7a26ecc682f742a1c3b3246ee648e5d497c236b52f656250994d0517654",
       "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-      "project/str/studies/vertical_rc_floor.py": "0d0e359c270a5a59fefed5b2d1edbaa0e16d4129a97a639135a0e22e81d47539",
+      "project/str/studies/vertical_rc_floor.py": "30a222fe8c7104b03cab7593b62fcd3ee224574f71380bb7cb7dc95cd275a7d7",
       "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
       "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
       "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
@@ -460,7 +460,7 @@
       "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
       "project/str/studies/rc_floor_house_loads.py": "eaade7a26ecc682f742a1c3b3246ee648e5d497c236b52f656250994d0517654",
       "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-      "project/str/studies/vertical_rc_floor.py": "0d0e359c270a5a59fefed5b2d1edbaa0e16d4129a97a639135a0e22e81d47539",
+      "project/str/studies/vertical_rc_floor.py": "30a222fe8c7104b03cab7593b62fcd3ee224574f71380bb7cb7dc95cd275a7d7",
       "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
       "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
       "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
@@ -499,7 +499,7 @@
         "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
         "project/str/studies/rc_floor_house_loads.py": "eaade7a26ecc682f742a1c3b3246ee648e5d497c236b52f656250994d0517654",
         "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-        "project/str/studies/vertical_rc_floor.py": "0d0e359c270a5a59fefed5b2d1edbaa0e16d4129a97a639135a0e22e81d47539",
+        "project/str/studies/vertical_rc_floor.py": "30a222fe8c7104b03cab7593b62fcd3ee224574f71380bb7cb7dc95cd275a7d7",
         "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
         "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
         "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
@@ -856,12 +856,12 @@
         "actual-outer-portal-ground-pressure": 1.0
       },
       "externalWrenchKN_KNm": [
-        -94.58100000006128,
+        -94.5810000000613,
         -93.94433100856261,
         -500.8840227570519,
         -2957.4895877045387,
         2822.263292022588,
-        3.820013948900416
+        3.8200139489003577
       ],
       "heads": [
         {
@@ -1438,12 +1438,12 @@
         }
       ],
       "equilibriumResidualKN_KNm": [
-        -5.03774799653911e-11,
+        -5.0391690820106305e-11,
         1.1610268302320037e-10,
         -2.027604750765022e-10,
         -1.4510005712509156e-09,
         1.5203841030597687e-09,
-        7.528960850322619e-10
+        7.528378773713485e-10
       ],
       "energyRelativeResidual": 4.542891274238189e-13,
       "maximumFreeResidualKNOrKNmm": 1.0784587334278228e-08,
@@ -1523,24 +1523,24 @@
         {
           "wallId": "court-north",
           "applicableFreeFloorBoundary": false,
-          "appliedNormalShearKN": -5.969597290072231,
-          "verticalCompressionRequiredKN": 41.92444538773413,
+          "appliedNormalShearKN": -5.9695972900722305,
+          "verticalCompressionRequiredKN": 41.924445387734146,
           "normalOverturningAtDPCMidplaneKNm": 15.431757910918181,
           "physicalFootprintNormalWidthMm": 215,
-          "maximumCompressionOnlyNormalMomentKNm": 4.5068778791814195,
-          "requiredNormalEccentricityMm": 368.0849625606034,
+          "maximumCompressionOnlyNormalMomentKNm": 4.50687787918142,
+          "requiredNormalEccentricityMm": 368.0849625606033,
           "compressionOnlyEquilibriumImpossible": null,
           "scope": "Necessary per-portal equilibrium bound for the free-floor boundary. Finite-contact redistribution cannot exceed the actual215mm normal footprint. Joined floor interface wrenches must be included before applying this bound."
         },
         {
           "wallId": "outer-north",
           "applicableFreeFloorBoundary": false,
-          "appliedNormalShearKN": -39.95803997592729,
-          "verticalCompressionRequiredKN": 40.03458459553449,
-          "normalOverturningAtDPCMidplaneKNm": 123.68170857000756,
+          "appliedNormalShearKN": -39.9580399759273,
+          "verticalCompressionRequiredKN": 40.034584595534504,
+          "normalOverturningAtDPCMidplaneKNm": 123.68170857000752,
           "physicalFootprintNormalWidthMm": 215,
-          "maximumCompressionOnlyNormalMomentKNm": 4.303717844019958,
-          "requiredNormalEccentricityMm": 3089.3715975712453,
+          "maximumCompressionOnlyNormalMomentKNm": 4.3037178440199595,
+          "requiredNormalEccentricityMm": 3089.371597571243,
           "compressionOnlyEquilibriumImpossible": null,
           "scope": "Necessary per-portal equilibrium bound for the free-floor boundary. Finite-contact redistribution cannot exceed the actual215mm normal footprint. Joined floor interface wrenches must be included before applying this bound."
         }
@@ -2372,7 +2372,7 @@
         "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
         "project/str/studies/rc_floor_house_loads.py": "eaade7a26ecc682f742a1c3b3246ee648e5d497c236b52f656250994d0517654",
         "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-        "project/str/studies/vertical_rc_floor.py": "0d0e359c270a5a59fefed5b2d1edbaa0e16d4129a97a639135a0e22e81d47539",
+        "project/str/studies/vertical_rc_floor.py": "30a222fe8c7104b03cab7593b62fcd3ee224574f71380bb7cb7dc95cd275a7d7",
         "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
         "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
         "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
@@ -10803,7 +10803,7 @@
           "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
           "project/str/studies/rc_floor_house_loads.py": "eaade7a26ecc682f742a1c3b3246ee648e5d497c236b52f656250994d0517654",
           "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-          "project/str/studies/vertical_rc_floor.py": "0d0e359c270a5a59fefed5b2d1edbaa0e16d4129a97a639135a0e22e81d47539",
+          "project/str/studies/vertical_rc_floor.py": "30a222fe8c7104b03cab7593b62fcd3ee224574f71380bb7cb7dc95cd275a7d7",
           "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
           "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
           "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
@@ -18406,7 +18406,7 @@
       "sourceSelfGCondensationResidualKN_KNm": [
         0.0,
         0.0,
-        -1.9895196601282805e-12,
+        -2.1032064978498966e-12,
         -1.0459189070388675e-11,
         1.1368683772161603e-11,
         0.0
@@ -21714,6 +21714,39 @@
         ]
       }
     ],
+    "floorLiveLoad": {
+      "schema": "str-independent-net-floor-live-load/1",
+      "characteristicPressureKPa": 0,
+      "combinationFactor": 1.5,
+      "factoredPressureKPa": 0.0,
+      "actualNetPlateAreaM2": 98.75938125,
+      "plateCentroidXYMm": [
+        6305.337238769279,
+        6069.886010908078
+      ],
+      "characteristicQKN": 0.0,
+      "appliedQKN": 0.0,
+      "appliedWrenchKN_KNm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "sourceForceAndFirstMomentResidualKN_KNm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "legacyGrossGFlagRequired": false,
+      "addedPhysicalMassKN": 0.0,
+      "candidateAccepted": false,
+      "scope": "Uniform characteristic live pressure on the actual known net plate only, with the existing explicit1.5Q comparison factor. Withheld wet territory and unknown openings remain absent. Q is separate from physicalG and gross upper-wall/legacy floor budgets."
+    },
     "numericalRuntime": {
       "python": "3.12.14",
       "numpy": "2.3.5",
@@ -260688,7 +260721,7 @@
           "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
           "project/str/studies/rc_floor_house_loads.py": "eaade7a26ecc682f742a1c3b3246ee648e5d497c236b52f656250994d0517654",
           "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-          "project/str/studies/vertical_rc_floor.py": "0d0e359c270a5a59fefed5b2d1edbaa0e16d4129a97a639135a0e22e81d47539",
+          "project/str/studies/vertical_rc_floor.py": "30a222fe8c7104b03cab7593b62fcd3ee224574f71380bb7cb7dc95cd275a7d7",
           "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
           "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
           "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
@@ -261052,7 +261085,7 @@
         "sourceSelfGCondensationResidualKN_KNm": [
           0.0,
           0.0,
-          -1.9895196601282805e-12,
+          -2.1032064978498966e-12,
           -1.0459189070388675e-11,
           1.1368683772161603e-11,
           0.0
@@ -261633,17 +261666,17 @@
         }
       ],
       "equilibriumResidualKN_KNm": [
-        -5.03774799653911e-11,
+        -5.0391690820106305e-11,
         1.1610268302320037e-10,
         -2.027604750765022e-10,
         -1.4510005712509156e-09,
         1.5203841030597687e-09,
-        7.528960850322619e-10
+        7.528378773713485e-10
       ],
       "sourceSelfGCondensationResidualKN_KNm": [
         0.0,
         0.0,
-        -1.9895196601282805e-12,
+        -2.1032064978498966e-12,
         -1.0459189070388675e-11,
         1.1368683772161603e-11,
         0.0
@@ -262600,7 +262633,7 @@
           "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
           "project/str/studies/rc_floor_house_loads.py": "eaade7a26ecc682f742a1c3b3246ee648e5d497c236b52f656250994d0517654",
           "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-          "project/str/studies/vertical_rc_floor.py": "0d0e359c270a5a59fefed5b2d1edbaa0e16d4129a97a639135a0e22e81d47539",
+          "project/str/studies/vertical_rc_floor.py": "30a222fe8c7104b03cab7593b62fcd3ee224574f71380bb7cb7dc95cd275a7d7",
           "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
           "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
           "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
@@ -262965,7 +262998,7 @@
           0.0,
           0.0,
           -3.922195901395753e-12,
-          -2.5011104298755527e-11,
+          -2.4556356947869062e-11,
           1.7280399333685637e-11,
           0.0
         ]
@@ -263545,18 +263578,18 @@
         }
       ],
       "equilibriumResidualKN_KNm": [
-        -9.553957625030307e-11,
+        -9.555378710501827e-11,
         1.1546319456101628e-10,
         -1.8752643882180564e-10,
-        -9.08970832824707e-10,
+        -9.080395102500915e-10,
         9.187497198581696e-10,
-        1.1719912436092272e-09
+        1.1719330359483139e-09
       ],
       "sourceSelfGCondensationResidualKN_KNm": [
         0.0,
         0.0,
         -3.922195901395753e-12,
-        -2.5011104298755527e-11,
+        -2.4556356947869062e-11,
         1.7280399333685637e-11,
         0.0
       ],
@@ -264512,7 +264545,7 @@
           "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
           "project/str/studies/rc_floor_house_loads.py": "eaade7a26ecc682f742a1c3b3246ee648e5d497c236b52f656250994d0517654",
           "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-          "project/str/studies/vertical_rc_floor.py": "0d0e359c270a5a59fefed5b2d1edbaa0e16d4129a97a639135a0e22e81d47539",
+          "project/str/studies/vertical_rc_floor.py": "30a222fe8c7104b03cab7593b62fcd3ee224574f71380bb7cb7dc95cd275a7d7",
           "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
           "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
           "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
@@ -264876,7 +264909,7 @@
         "sourceSelfGCondensationResidualKN_KNm": [
           0.0,
           0.0,
-          -1.9895196601282805e-12,
+          -2.1032064978498966e-12,
           -1.0459189070388675e-11,
           1.1368683772161603e-11,
           0.0
@@ -265457,17 +265490,17 @@
         }
       ],
       "equilibriumResidualKN_KNm": [
-        -9.316636351286434e-11,
+        -9.318057436757954e-11,
         1.0311396181350574e-10,
         -1.7104184735217132e-10,
         -1.2130476534366608e-09,
         1.2158416211605073e-09,
-        1.066780896508135e-09
+        1.0667226888472215e-09
       ],
       "sourceSelfGCondensationResidualKN_KNm": [
         0.0,
         0.0,
-        -1.9895196601282805e-12,
+        -2.1032064978498966e-12,
         -1.0459189070388675e-11,
         1.1368683772161603e-11,
         0.0
@@ -266424,7 +266457,7 @@
           "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
           "project/str/studies/rc_floor_house_loads.py": "eaade7a26ecc682f742a1c3b3246ee648e5d497c236b52f656250994d0517654",
           "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-          "project/str/studies/vertical_rc_floor.py": "0d0e359c270a5a59fefed5b2d1edbaa0e16d4129a97a639135a0e22e81d47539",
+          "project/str/studies/vertical_rc_floor.py": "30a222fe8c7104b03cab7593b62fcd3ee224574f71380bb7cb7dc95cd275a7d7",
           "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
           "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
           "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
@@ -266788,7 +266821,7 @@
         "sourceSelfGCondensationResidualKN_KNm": [
           0.0,
           0.0,
-          -1.9895196601282805e-12,
+          -2.1032064978498966e-12,
           -1.0459189070388675e-11,
           1.1368683772161603e-11,
           0.0
@@ -267369,17 +267402,17 @@
         }
       ],
       "equilibriumResidualKN_KNm": [
-        -1.7105605820688652e-10,
+        -1.7107026906160172e-10,
         1.0982148523908108e-10,
         -2.2163249013829045e-10,
         -9.592622518539429e-10,
         1.1506490409374237e-09,
-        1.8546943465480581e-09
+        1.8546361388871446e-09
       ],
       "sourceSelfGCondensationResidualKN_KNm": [
         0.0,
         0.0,
-        -1.9895196601282805e-12,
+        -2.1032064978498966e-12,
         -1.0459189070388675e-11,
         1.1368683772161603e-11,
         0.0
@@ -268336,7 +268369,7 @@
           "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
           "project/str/studies/rc_floor_house_loads.py": "eaade7a26ecc682f742a1c3b3246ee648e5d497c236b52f656250994d0517654",
           "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-          "project/str/studies/vertical_rc_floor.py": "0d0e359c270a5a59fefed5b2d1edbaa0e16d4129a97a639135a0e22e81d47539",
+          "project/str/studies/vertical_rc_floor.py": "30a222fe8c7104b03cab7593b62fcd3ee224574f71380bb7cb7dc95cd275a7d7",
           "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
           "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
           "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
@@ -268700,7 +268733,7 @@
         "sourceSelfGCondensationResidualKN_KNm": [
           0.0,
           0.0,
-          -1.9895196601282805e-12,
+          -2.1032064978498966e-12,
           -1.0459189070388675e-11,
           1.1368683772161603e-11,
           0.0
@@ -269281,17 +269314,17 @@
         }
       ],
       "equilibriumResidualKN_KNm": [
-        -1.1748113593057496e-10,
+        -1.1749534678529017e-10,
         9.796963240660261e-11,
         -5.911715561524034e-11,
         -8.633360266685486e-10,
         4.3958425521850584e-10,
-        1.3381159078562631e-09
+        1.3380577001953498e-09
       ],
       "sourceSelfGCondensationResidualKN_KNm": [
         0.0,
         0.0,
-        -1.9895196601282805e-12,
+        -2.1032064978498966e-12,
         -1.0459189070388675e-11,
         1.1368683772161603e-11,
         0.0
@@ -270248,7 +270281,7 @@
           "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
           "project/str/studies/rc_floor_house_loads.py": "eaade7a26ecc682f742a1c3b3246ee648e5d497c236b52f656250994d0517654",
           "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-          "project/str/studies/vertical_rc_floor.py": "0d0e359c270a5a59fefed5b2d1edbaa0e16d4129a97a639135a0e22e81d47539",
+          "project/str/studies/vertical_rc_floor.py": "30a222fe8c7104b03cab7593b62fcd3ee224574f71380bb7cb7dc95cd275a7d7",
           "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
           "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
           "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
@@ -270626,7 +270659,7 @@
           0.0,
           0.0,
           1.1368683772161603e-12,
-          1.2278178473934531e-11,
+          1.2732925824820995e-11,
           -2.2737367544323206e-12,
           0.0
         ]
@@ -271209,15 +271242,15 @@
         1.1254996934439987e-11,
         1.1756640105886618e-10,
         -2.505089469195809e-10,
-        -1.9730068743228913e-09,
-        2.0051375031471253e-09,
-        5.344372766558081e-11
+        -1.972075551748276e-09,
+        2.005603164434433e-09,
+        5.342189979273826e-11
       ],
       "sourceSelfGCondensationResidualKN_KNm": [
         0.0,
         0.0,
         1.1368683772161603e-12,
-        1.2278178473934531e-11,
+        1.2732925824820995e-11,
         -2.2737367544323206e-12,
         0.0
       ],
@@ -272173,7 +272206,7 @@
           "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
           "project/str/studies/rc_floor_house_loads.py": "eaade7a26ecc682f742a1c3b3246ee648e5d497c236b52f656250994d0517654",
           "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-          "project/str/studies/vertical_rc_floor.py": "0d0e359c270a5a59fefed5b2d1edbaa0e16d4129a97a639135a0e22e81d47539",
+          "project/str/studies/vertical_rc_floor.py": "30a222fe8c7104b03cab7593b62fcd3ee224574f71380bb7cb7dc95cd275a7d7",
           "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
           "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
           "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
@@ -272537,7 +272570,7 @@
         "sourceSelfGCondensationResidualKN_KNm": [
           0.0,
           0.0,
-          -1.9895196601282805e-12,
+          -2.1032064978498966e-12,
           -1.0459189070388675e-11,
           1.1368683772161603e-11,
           0.0
@@ -272547,9 +272580,9 @@
         {
           "id": "P01",
           "reactionKN_KNm": [
-            -58.91359966991226,
-            -49.13636765124147,
-            104.82996028752493,
+            -58.9135996699121,
+            -49.136367651241486,
+            104.82996028752439,
             0.0,
             0.0,
             0.0
@@ -272558,9 +272591,9 @@
         {
           "id": "P02",
           "reactionKN_KNm": [
-            48.29118618592783,
-            1.16422739064793,
-            -25.694438591784433,
+            48.29118618592766,
+            1.1642273906479337,
+            -25.694438591784383,
             0.0,
             0.0,
             0.0
@@ -272569,9 +272602,9 @@
         {
           "id": "P03",
           "reactionKN_KNm": [
-            0.43704538604905574,
-            39.25980555164274,
-            -20.9066779958498,
+            0.4370453860490604,
+            39.25980555164291,
+            -20.906677995849837,
             0.0,
             0.0,
             0.0
@@ -272580,9 +272613,9 @@
         {
           "id": "P04",
           "reactionKN_KNm": [
-            -170.17464156951942,
-            -128.7451942649717,
-            21.709291094039074,
+            -170.17464156951857,
+            -128.74519426497193,
+            21.709291094039642,
             0.0,
             0.0,
             0.0
@@ -272591,9 +272624,9 @@
         {
           "id": "P05",
           "reactionKN_KNm": [
-            103.40721825661015,
-            2.084235639378069,
-            44.9439827572846,
+            103.40721825660991,
+            2.0842356393780745,
+            44.94398275728451,
             0.0,
             0.0,
             0.0
@@ -272602,9 +272635,9 @@
         {
           "id": "P06",
           "reactionKN_KNm": [
-            1.8392762502070532,
-            89.71041688869673,
-            -49.017161723778344,
+            1.839276250207087,
+            89.71041688869668,
+            -49.01716172377837,
             0.0,
             0.0,
             0.0
@@ -272613,9 +272646,9 @@
         {
           "id": "P07",
           "reactionKN_KNm": [
-            -121.21870871779848,
-            -163.80516603492646,
-            27.366563792298848,
+            -121.2187087177985,
+            -163.80516603492694,
+            27.3665637922988,
             0.0,
             0.0,
             0.0
@@ -272625,8 +272658,8 @@
           "id": "P08",
           "reactionKN_KNm": [
             95.86263094937425,
-            4.457132471903504,
-            -42.92711867200329,
+            4.457132471903509,
+            -42.927118672003274,
             0.0,
             0.0,
             0.0
@@ -272635,9 +272668,9 @@
         {
           "id": "P09",
           "reactionKN_KNm": [
-            4.525993772021047,
-            99.41735186610691,
-            54.183984609082515,
+            4.525993772021039,
+            99.41735186610707,
+            54.18398460908256,
             0.0,
             0.0,
             0.0
@@ -272646,9 +272679,9 @@
         {
           "id": "P10",
           "reactionKN_KNm": [
-            -77.32459283967246,
-            -69.6453812549587,
-            -37.991885692976304,
+            -77.32459283967218,
+            -69.64538125495847,
+            -37.991885692974485,
             0.0,
             0.0,
             0.0
@@ -272657,9 +272690,9 @@
         {
           "id": "P11",
           "reactionKN_KNm": [
-            43.8499715303533,
-            1.1371026870709597,
-            19.82207928064951,
+            43.84997153035312,
+            1.1371026870709544,
+            19.82207928064945,
             0.0,
             0.0,
             0.0
@@ -272668,9 +272701,9 @@
         {
           "id": "P12",
           "reactionKN_KNm": [
-            -1.7733571410169802,
-            35.93436667648139,
-            41.92354554261509,
+            -1.7733571410169842,
+            35.934366676481396,
+            41.923545542615166,
             0.0,
             0.0,
             0.0
@@ -272679,9 +272712,9 @@
         {
           "id": "P13",
           "reactionKN_KNm": [
-            12.78381902396862,
-            23.95419286205839,
-            24.185705235319876,
+            12.783819023968585,
+            23.95419286205838,
+            24.185705235319844,
             0.0,
             0.0,
             0.0
@@ -272690,9 +272723,9 @@
         {
           "id": "P14",
           "reactionKN_KNm": [
-            1.8675717081102219,
-            21.244221548857034,
-            -0.5390381874794583,
+            1.8675717081102112,
+            21.244221548857066,
+            -0.5390381874794894,
             0.0,
             0.0,
             0.0
@@ -272701,9 +272734,9 @@
         {
           "id": "P15",
           "reactionKN_KNm": [
-            -0.40324072374029385,
-            16.30383766523174,
-            5.06525643910973,
+            -0.40324072374029507,
+            16.303837665231775,
+            5.06525643911003,
             0.0,
             0.0,
             0.0
@@ -272712,9 +272745,9 @@
         {
           "id": "P16",
           "reactionKN_KNm": [
-            9.123308124134898,
+            9.123308124135061,
             45.61483052009252,
-            27.68418917025851,
+            27.68418917025865,
             0.0,
             0.0,
             0.0
@@ -272723,9 +272756,9 @@
         {
           "id": "P17",
           "reactionKN_KNm": [
-            -10.766932885209254,
-            40.42631666330006,
-            12.52962551064675,
+            -10.766932885209139,
+            40.42631666330027,
+            12.529625510646683,
             0.0,
             0.0,
             0.0
@@ -272734,9 +272767,9 @@
         {
           "id": "P18",
           "reactionKN_KNm": [
-            -15.46398886884846,
-            12.662701840651472,
-            23.248996490113825,
+            -15.463988868848865,
+            12.662701840650975,
+            23.248996490114152,
             0.0,
             0.0,
             0.0
@@ -272745,9 +272778,9 @@
         {
           "id": "P19",
           "reactionKN_KNm": [
-            -15.645664265284653,
-            51.306076191189135,
-            18.334611427680198,
+            -15.645664265284658,
+            51.30607619118904,
+            18.33461142768018,
             0.0,
             0.0,
             0.0
@@ -272756,9 +272789,9 @@
         {
           "id": "P20",
           "reactionKN_KNm": [
-            20.855245811418435,
-            -0.5692376187058569,
-            5.143930502132029,
+            20.855245811418577,
+            -0.5692376187058554,
+            5.143930502131694,
             0.0,
             0.0,
             0.0
@@ -272767,9 +272800,9 @@
         {
           "id": "P21",
           "reactionKN_KNm": [
-            20.855409793103448,
-            0.36394021861876324,
-            1.5580600321352964,
+            20.855409793103355,
+            0.3639402186187647,
+            1.5580600321353266,
             0.0,
             0.0,
             0.0
@@ -272778,9 +272811,9 @@
         {
           "id": "P22",
           "reactionKN_KNm": [
-            24.462576753789456,
-            12.166846368345068,
-            15.733737020017891,
+            24.462576753789378,
+            12.166846368345064,
+            15.73373702001795,
             0.0,
             0.0,
             0.0
@@ -272789,9 +272822,9 @@
         {
           "id": "P23",
           "reactionKN_KNm": [
-            46.355529407561654,
-            15.54307682887692,
-            42.696059152381714,
+            46.35552940756152,
+            15.543076828876707,
+            42.696059152381544,
             0.0,
             0.0,
             0.0
@@ -272800,9 +272833,9 @@
         {
           "id": "P24",
           "reactionKN_KNm": [
-            58.78240550854541,
-            -9.789799336945705,
-            5.061858284217033,
+            58.78240550854544,
+            -9.789799336945723,
+            5.061858284217066,
             0.0,
             0.0,
             0.0
@@ -272811,9 +272844,9 @@
         {
           "id": "P25",
           "reactionKN_KNm": [
-            -13.03670695493998,
+            -13.03670695494014,
             -20.238440775385065,
-            65.99195780086582,
+            65.99195780087167,
             0.0,
             0.0,
             0.0
@@ -272823,8 +272856,8 @@
           "id": "P26",
           "reactionKN_KNm": [
             32.26729579726934,
-            -23.819037076856347,
-            83.21442538097153,
+            -23.81903707685627,
+            83.21442538097133,
             0.0,
             0.0,
             0.0
@@ -272833,9 +272866,9 @@
         {
           "id": "P27",
           "reactionKN_KNm": [
-            15.433328091249194,
+            15.43332809124913,
             -1.173743656632697,
-            18.3712916613119,
+            18.371291661311854,
             0.0,
             0.0,
             0.0
@@ -272844,9 +272877,9 @@
         {
           "id": "P28",
           "reactionKN_KNm": [
-            -24.52925106805274,
-            4.282125678283249,
-            75.12446543982702,
+            -24.5292510680527,
+            4.282125678283193,
+            75.1244654398301,
             0.0,
             0.0,
             0.0
@@ -272855,9 +272888,9 @@
         {
           "id": "P29",
           "reactionKN_KNm": [
-            -5.192187201618124,
-            19.421728969741874,
-            33.543724151217205,
+            -5.192187201618116,
+            19.421728969741906,
+            33.54372415121719,
             0.0,
             0.0,
             0.0
@@ -272866,9 +272899,9 @@
         {
           "id": "P30",
           "reactionKN_KNm": [
-            16.852032296306884,
-            11.12086931626065,
-            94.22947006009541,
+            16.85203229630683,
+            11.12086931626062,
+            94.2294700600951,
             0.0,
             0.0,
             0.0
@@ -272877,9 +272910,9 @@
         {
           "id": "P31",
           "reactionKN_KNm": [
-            6.747329342231321,
-            15.386391174176994,
-            47.151879293047,
+            6.747329342231332,
+            15.386391174176971,
+            47.151879293047045,
             0.0,
             0.0,
             0.0
@@ -272888,9 +272921,9 @@
         {
           "id": "P32",
           "reactionKN_KNm": [
-            -0.023423651333911666,
-            -4.2178029651852835,
-            15.541704042563882,
+            -0.02342365133395108,
+            -4.217802965185374,
+            15.54170404256391,
             0.0,
             0.0,
             0.0
@@ -272899,9 +272932,9 @@
         {
           "id": "P33",
           "reactionKN_KNm": [
-            -0.16560487140620544,
-            2.944079509908285,
-            6.920585512411744,
+            -0.16560487140620228,
+            2.944079509908322,
+            6.920585512411756,
             0.0,
             0.0,
             0.0
@@ -272910,9 +272943,9 @@
         {
           "id": "P34",
           "reactionKN_KNm": [
-            18.129711183093935,
-            0.6747164988925256,
-            23.654599928369862,
+            18.129711183093978,
+            0.6747164988925451,
+            23.654599928369827,
             0.0,
             0.0,
             0.0
@@ -272921,9 +272954,9 @@
         {
           "id": "P35",
           "reactionKN_KNm": [
-            0.9084004822921993,
-            2.719592092312308,
-            20.490701729252528,
+            0.9084004822921848,
+            2.7195920923123147,
+            20.490701729252706,
             0.0,
             0.0,
             0.0
@@ -272932,9 +272965,9 @@
         {
           "id": "P36",
           "reactionKN_KNm": [
-            0.8931804978117337,
-            -4.395636650264786,
-            6.548900675070058,
+            0.8931804978117239,
+            -4.395636650264766,
+            6.548900675070009,
             0.0,
             0.0,
             0.0
@@ -272943,9 +272976,9 @@
         {
           "id": "P37",
           "reactionKN_KNm": [
-            -2.83346015849168,
-            5.851737475237135,
-            12.440756781384707,
+            -2.8334601584916803,
+            5.851737475237115,
+            12.44075678138467,
             0.0,
             0.0,
             0.0
@@ -272954,9 +272987,9 @@
         {
           "id": "P38",
           "reactionKN_KNm": [
-            -6.429017306571469,
-            -0.3032747219576948,
-            19.006463351325998,
+            -6.429017306571429,
+            -0.3032747219576907,
+            19.00646335132599,
             0.0,
             0.0,
             0.0
@@ -272965,9 +272998,9 @@
         {
           "id": "P39",
           "reactionKN_KNm": [
-            2.028126131290795,
-            0.25295900792683634,
-            -0.5666352777138736,
+            2.028126131290768,
+            0.2529590079268336,
+            -0.5666352777138696,
             0.0,
             0.0,
             0.0
@@ -272976,9 +273009,9 @@
         {
           "id": "P40",
           "reactionKN_KNm": [
-            3.2674686805512243,
-            -0.2370786657424896,
-            12.755846196566106,
+            3.267468680551222,
+            -0.23707866574249192,
+            12.755846196566152,
             0.0,
             0.0,
             0.0
@@ -272987,9 +273020,9 @@
         {
           "id": "P41",
           "reactionKN_KNm": [
-            7.129380390236983,
-            -22.306200890580946,
-            44.753721847657154,
+            7.129380390236679,
+            -22.30620089058063,
+            44.75372184765669,
             0.0,
             0.0,
             0.0
@@ -272998,9 +273031,9 @@
         {
           "id": "P42",
           "reactionKN_KNm": [
-            2.4462462860456196,
-            6.399370270297747,
-            31.287687176854224,
+            2.4462462860455956,
+            6.399370270297901,
+            31.287687176854398,
             0.0,
             0.0,
             0.0
@@ -273009,9 +273042,9 @@
         {
           "id": "P43",
           "reactionKN_KNm": [
-            16.022454071025496,
-            -26.17782994344351,
-            33.07101912618315,
+            16.022454071025933,
+            -26.17782994344382,
+            33.07101912618384,
             0.0,
             0.0,
             0.0
@@ -273020,9 +273053,9 @@
         {
           "id": "P44",
           "reactionKN_KNm": [
-            5.89747704839423,
-            33.34257693237989,
-            37.78917665463847,
+            5.897477048394229,
+            33.342576932379906,
+            37.78917665463843,
             0.0,
             0.0,
             0.0
@@ -273031,9 +273064,9 @@
         {
           "id": "P45",
           "reactionKN_KNm": [
-            -5.649502663775013,
-            6.328851901437693,
-            29.184347636835405,
+            -5.64950266377492,
+            6.328851901437242,
+            29.184347636834723,
             0.0,
             0.0,
             0.0
@@ -273042,9 +273075,9 @@
         {
           "id": "P46",
           "reactionKN_KNm": [
-            0.04507902640174542,
-            -9.312017443814447,
-            15.085057255726666,
+            0.04507902640176,
+            -9.312017443814085,
+            15.085057255726568,
             0.0,
             0.0,
             0.0
@@ -273053,9 +273086,9 @@
         {
           "id": "P47",
           "reactionKN_KNm": [
-            -0.12694126272935868,
-            16.952569624561363,
-            34.207779494630124,
+            -0.12694126272960116,
+            16.95256962456137,
+            34.207779494630266,
             0.0,
             0.0,
             0.0
@@ -273064,9 +273097,9 @@
         {
           "id": "P48",
           "reactionKN_KNm": [
-            -3.326125976872699,
-            0.9255043774542329,
-            10.886383084672586,
+            -3.326125976872661,
+            0.9255043774542249,
+            10.886383084672511,
             0.0,
             0.0,
             0.0
@@ -273075,9 +273108,9 @@
         {
           "id": "P49",
           "reactionKN_KNm": [
-            -0.07710857474434585,
-            -0.9530475398685447,
-            10.72159746359467,
+            -0.07710857474434818,
+            -0.9530475398685372,
+            10.721597463594605,
             0.0,
             0.0,
             0.0
@@ -273086,9 +273119,9 @@
         {
           "id": "P50",
           "reactionKN_KNm": [
-            6.830229261808072,
-            5.7238999974361615,
-            16.325717003942565,
+            6.830229261808008,
+            5.7238999974361064,
+            16.325717003942337,
             0.0,
             0.0,
             0.0
@@ -273097,9 +273130,9 @@
         {
           "id": "P51",
           "reactionKN_KNm": [
-            -8.104770748656271,
-            -2.6591682398442313,
-            38.45063045374072,
+            -8.104770748656211,
+            -2.659168239844136,
+            38.4506304537404,
             0.0,
             0.0,
             0.0
@@ -273108,9 +273141,9 @@
         {
           "id": "P52",
           "reactionKN_KNm": [
-            7.5629000729118445,
-            -13.64889696545569,
-            25.285683646015478,
+            7.562900072912016,
+            -13.648896965455679,
+            25.285683646015624,
             0.0,
             0.0,
             0.0
@@ -273118,33 +273151,33 @@
         }
       ],
       "equilibriumResidualKN_KNm": [
-        -1.5997159152902896e-10,
-        1.12066800284083e-10,
-        -3.64480001735501e-10,
-        -2.2854655981063844e-09,
-        1.7648562788963318e-09,
-        1.7563379515195266e-09
+        -1.595878984517185e-10,
+        1.1148415524075972e-10,
+        -3.5493030736688524e-10,
+        -2.1718442440032958e-09,
+        1.6996636986732482e-09,
+        1.7523798305774107e-09
       ],
       "sourceSelfGCondensationResidualKN_KNm": [
         0.0,
         0.0,
-        -1.9895196601282805e-12,
+        -2.1032064978498966e-12,
         -1.0459189070388675e-11,
         1.1368683772161603e-11,
         0.0
       ],
-      "nativeCondensedSystemEnergyRelativeResidual": 5.499386712170779e-13,
-      "physicalPlateWorkRelativeResidual": 3.767071629224775e-13,
+      "nativeCondensedSystemEnergyRelativeResidual": 5.477529054332266e-13,
+      "physicalPlateWorkRelativeResidual": 1.406282826419437e-13,
       "plateCellCount": 2074,
       "platePointCount": 2282,
       "retainedCoordinateCount": 982,
-      "maximumFrameTranslationMm": 3.3168083632141085,
-      "maximumPlateDeflectionMm": 1.6980364433740196,
+      "maximumFrameTranslationMm": 3.3168083632141094,
+      "maximumPlateDeflectionMm": 1.6980364433740327,
       "normalFibreCount": 17984,
       "activeNormalFibreCount": 15833,
-      "normalCompressionKN": 728.762601880942,
-      "maximumNormalPressureMPa": 0.9915775545172245,
-      "maximumClosureMm": 0.819933145238031,
+      "normalCompressionKN": 728.7626018809416,
+      "maximumNormalPressureMPa": 0.9915775545172214,
+      "maximumClosureMm": 0.8199331452380301,
       "missingGroundContactAreaMm2": 10506.249999999998,
       "fourLComparisonInterfaces": [
         {
@@ -273154,92 +273187,92 @@
               "id": "SW/compression/0/0",
               "mode": "compression",
               "active": true,
-              "forceKN": -118.60812372957369,
-              "relativeMm": -0.006777607070261354
+              "forceKN": -118.6081237295729,
+              "relativeMm": -0.006777607070261309
             },
             {
               "id": "SW/compression/0/1",
               "mode": "compression",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": 0.1810564372207184
+              "relativeMm": 0.18105643722071862
             },
             {
               "id": "SW/compression/0/2",
               "mode": "compression",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": 0.011349856587922955
+              "relativeMm": 0.011349856587922993
             },
             {
               "id": "SW/compression/0/3",
               "mode": "compression",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": 0.1991839008789027
+              "relativeMm": 0.19918390087890292
             },
             {
               "id": "SW/compression/1/0",
               "mode": "compression",
               "active": true,
-              "forceKN": -5.76764526649832,
-              "relativeMm": -0.0003832322436211509
+              "forceKN": -5.767645266499404,
+              "relativeMm": -0.00038323224362122287
             },
             {
               "id": "SW/compression/1/1",
               "mode": "compression",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": 0.02591353395711601
+              "relativeMm": 0.02591353395711598
             },
             {
               "id": "SW/compression/1/2",
               "mode": "compression",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": 0.11097118737093963
+              "relativeMm": 0.11097118737093946
             },
             {
               "id": "SW/compression/1/3",
               "mode": "compression",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": 0.1372679535716768
+              "relativeMm": 0.13726795357167665
             },
             {
               "id": "SW/tie/0",
               "mode": "tension",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": -0.05853163691198365
+              "relativeMm": -0.058531636911983674
             },
             {
               "id": "SW/tie/1",
               "mode": "tension",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": -0.04096337907441519
+              "relativeMm": -0.0409633790744152
             },
             {
               "id": "SW/tie/2",
               "mode": "tension",
               "active": true,
-              "forceKN": 10.200810816361699,
-              "relativeMm": 0.204016216327234
+              "forceKN": 10.20081081636171,
+              "relativeMm": 0.20401621632723418
             },
             {
               "id": "SW/tie/3",
               "mode": "tension",
               "active": true,
-              "forceKN": 11.827501356877299,
-              "relativeMm": 0.236550027137546
+              "forceKN": 11.827501356877312,
+              "relativeMm": 0.23655002713754622
             },
             {
               "id": "SW/tie/4",
               "mode": "tension",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": -0.04642110008562641
+              "relativeMm": -0.04642110008562642
             },
             {
               "id": "SW/tie/5",
@@ -273252,97 +273285,97 @@
               "id": "SW/tie/6",
               "mode": "tension",
               "active": true,
-              "forceKN": 10.806337657679563,
-              "relativeMm": 0.21612675315359126
+              "forceKN": 10.806337657679572,
+              "relativeMm": 0.21612675315359145
             },
             {
               "id": "SW/tie/7",
               "mode": "tension",
               "active": true,
-              "forceKN": 12.433028198195162,
-              "relativeMm": 0.24866056396390324
+              "forceKN": 12.433028198195172,
+              "relativeMm": 0.24866056396390346
             },
             {
               "id": "SW/tie/8",
               "mode": "tension",
               "active": true,
-              "forceKN": 6.122680394095541,
-              "relativeMm": 0.12245360788191081
+              "forceKN": 6.122680394095535,
+              "relativeMm": 0.1224536078819107
             },
             {
               "id": "SW/tie/9",
               "mode": "tension",
               "active": true,
-              "forceKN": 7.001093285973964,
-              "relativeMm": 0.14002186571947928
+              "forceKN": 7.001093285973958,
+              "relativeMm": 0.14002186571947917
             },
             {
               "id": "SW/tie/10",
               "mode": "tension",
               "active": true,
-              "forceKN": 7.244026396536027,
-              "relativeMm": 0.14488052793072054
+              "forceKN": 7.244026396536022,
+              "relativeMm": 0.14488052793072043
             },
             {
               "id": "SW/tie/11",
               "mode": "tension",
               "active": true,
-              "forceKN": 8.122439288414448,
-              "relativeMm": 0.16244878576828897
+              "forceKN": 8.122439288414444,
+              "relativeMm": 0.1624487857682889
             },
             {
               "id": "SW/key/0/0",
               "mode": "bilateral",
               "active": true,
-              "forceKN": -7.442217611127898,
-              "relativeMm": -0.07442217611127898
+              "forceKN": -7.442217611127888,
+              "relativeMm": -0.07442217611127888
             },
             {
               "id": "SW/key/0/1",
               "mode": "bilateral",
               "active": true,
-              "forceKN": -6.608654903318563,
-              "relativeMm": -0.06608654903318563
+              "forceKN": -6.60865490331855,
+              "relativeMm": -0.0660865490331855
             },
             {
               "id": "SW/key/1/0",
               "mode": "bilateral",
               "active": true,
-              "forceKN": -7.442217611127898,
-              "relativeMm": -0.07442217611127898
+              "forceKN": -7.442217611127888,
+              "relativeMm": -0.07442217611127888
             },
             {
               "id": "SW/key/1/1",
               "mode": "bilateral",
               "active": true,
-              "forceKN": -6.692402679249125,
-              "relativeMm": -0.06692402679249125
+              "forceKN": -6.692402679249108,
+              "relativeMm": -0.06692402679249108
             },
             {
               "id": "SW/key/2/0",
               "mode": "bilateral",
               "active": true,
-              "forceKN": -7.358469835197337,
-              "relativeMm": -0.07358469835197337
+              "forceKN": -7.358469835197331,
+              "relativeMm": -0.07358469835197332
             },
             {
               "id": "SW/key/2/1",
               "mode": "bilateral",
               "active": true,
-              "forceKN": -6.608654903318563,
-              "relativeMm": -0.06608654903318563
+              "forceKN": -6.60865490331855,
+              "relativeMm": -0.0660865490331855
             }
           ],
           "forceOnUpperKN_KNm": [
-            22.242905057453132,
-            19.90971248588625,
-            50.617851601938305,
-            -32.755974921388365,
-            38.61282590115903,
-            -0.013441757838221293
+            22.242905057453108,
+            19.90971248588621,
+            50.617851601938554,
+            -32.755974921388606,
+            38.61282590115878,
+            -0.01344175783822584
           ],
           "activeCompressionSamples": 2,
-          "unqualifiedTieTensionKN": 73.7579173941337
+          "unqualifiedTieTensionKN": 73.75791739413373
         },
         {
           "id": "SE",
@@ -273352,77 +273385,77 @@
               "mode": "compression",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": 0.11757658505962786
+              "relativeMm": 0.11757658505962827
             },
             {
               "id": "SE/compression/0/1",
               "mode": "compression",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": 0.3076517101748745
+              "relativeMm": 0.3076517101748747
             },
             {
               "id": "SE/compression/0/2",
               "mode": "compression",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": 0.11092474112764163
+              "relativeMm": 0.110924741127642
             },
             {
               "id": "SE/compression/0/3",
               "mode": "compression",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": 0.3009998662428883
+              "relativeMm": 0.3009998662428884
             },
             {
               "id": "SE/compression/1/0",
               "mode": "compression",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": 0.033701514547309505
+              "relativeMm": 0.03370151454730982
             },
             {
               "id": "SE/compression/1/1",
               "mode": "compression",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": 0.06031203206344404
+              "relativeMm": 0.06031203206344432
             },
             {
               "id": "SE/compression/1/2",
               "mode": "compression",
               "active": true,
-              "forceKN": -107.75517757511378,
-              "relativeMm": -0.00715981246346271
+              "forceKN": -107.75517757511385,
+              "relativeMm": -0.007159812463462714
             },
             {
               "id": "SE/compression/1/3",
               "mode": "compression",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": 0.019450705052671827
+              "relativeMm": 0.01945070505267179
             },
             {
               "id": "SE/tie/0",
               "mode": "tension",
               "active": true,
-              "forceKN": 3.052838002936984,
-              "relativeMm": 0.061056760058739674
+              "forceKN": 3.0528380029370092,
+              "relativeMm": 0.06105676005874018
             },
             {
               "id": "SE/tie/1",
               "mode": "tension",
               "active": true,
-              "forceKN": 3.9417313926144533,
-              "relativeMm": 0.07883462785228906
+              "forceKN": 3.9417313926144772,
+              "relativeMm": 0.07883462785228955
             },
             {
               "id": "SE/tie/2",
               "mode": "tension",
               "active": true,
-              "forceKN": 16.33685588200584,
-              "relativeMm": 0.32673711764011676
+              "forceKN": 16.336855882005842,
+              "relativeMm": 0.32673711764011687
             },
             {
               "id": "SE/tie/3",
@@ -273435,22 +273468,22 @@
               "id": "SE/tie/4",
               "mode": "tension",
               "active": true,
-              "forceKN": 2.830640892462764,
-              "relativeMm": 0.05661281784925528
+              "forceKN": 2.830640892462787,
+              "relativeMm": 0.05661281784925574
             },
             {
               "id": "SE/tie/5",
               "mode": "tension",
               "active": true,
-              "forceKN": 3.7195342821402333,
-              "relativeMm": 0.07439068564280467
+              "forceKN": 3.719534282140255,
+              "relativeMm": 0.0743906856428051
             },
             {
               "id": "SE/tie/6",
               "mode": "tension",
               "active": true,
-              "forceKN": 16.114658771531616,
-              "relativeMm": 0.32229317543063235
+              "forceKN": 16.11465877153162,
+              "relativeMm": 0.3222931754306324
             },
             {
               "id": "SE/tie/7",
@@ -273464,82 +273497,82 @@
               "mode": "tension",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": -0.005355487405221677
+              "relativeMm": -0.005355487405221709
             },
             {
               "id": "SE/tie/9",
               "mode": "tension",
               "active": true,
-              "forceKN": 0.6211190194163859,
-              "relativeMm": 0.012422380388327717
+              "forceKN": 0.6211190194163829,
+              "relativeMm": 0.012422380388327658
             },
             {
               "id": "SE/tie/10",
               "mode": "tension",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": -0.013585010015377982
+              "relativeMm": -0.013585010015378096
             },
             {
               "id": "SE/tie/11",
               "mode": "tension",
               "active": true,
-              "forceKN": 0.20964288890857075,
-              "relativeMm": 0.004192857778171415
+              "forceKN": 0.20964288890856358,
+              "relativeMm": 0.004192857778171272
             },
             {
               "id": "SE/key/0/0",
               "mode": "bilateral",
               "active": true,
-              "forceKN": -8.968382927129236,
-              "relativeMm": -0.08968382927129236
+              "forceKN": -8.968382927129245,
+              "relativeMm": -0.08968382927129244
             },
             {
               "id": "SE/key/0/1",
               "mode": "bilateral",
               "active": true,
-              "forceKN": -10.48764950522068,
-              "relativeMm": -0.10487649505220681
+              "forceKN": -10.487649505220661,
+              "relativeMm": -0.10487649505220661
             },
             {
               "id": "SE/key/1/0",
               "mode": "bilateral",
               "active": true,
-              "forceKN": -8.968382927129236,
-              "relativeMm": -0.08968382927129236
+              "forceKN": -8.968382927129245,
+              "relativeMm": -0.08968382927129244
             },
             {
               "id": "SE/key/1/1",
               "mode": "bilateral",
               "active": true,
-              "forceKN": -8.53900024124901,
-              "relativeMm": -0.0853900024124901
+              "forceKN": -8.539000241248992,
+              "relativeMm": -0.08539000241248992
             },
             {
               "id": "SE/key/2/0",
               "mode": "bilateral",
               "active": true,
-              "forceKN": -7.019733663157565,
-              "relativeMm": -0.07019733663157565
+              "forceKN": -7.019733663157576,
+              "relativeMm": -0.07019733663157576
             },
             {
               "id": "SE/key/2/1",
               "mode": "bilateral",
               "active": true,
-              "forceKN": -10.48764950522068,
-              "relativeMm": -0.10487649505220681
+              "forceKN": -10.487649505220661,
+              "relativeMm": -0.10487649505220661
             }
           ],
           "forceOnUpperKN_KNm": [
-            24.956499517416034,
-            29.51429925169037,
-            25.184444050013287,
-            -66.71901999589825,
-            73.91221905453848,
+            24.956499517416066,
+            29.51429925169031,
+            25.184444050013262,
+            -66.71901999589826,
+            73.91221905453854,
             -0.32103759726186765
           ],
           "activeCompressionSamples": 1,
-          "unqualifiedTieTensionKN": 82.5707335251005
+          "unqualifiedTieTensionKN": 82.57073352510058
         },
         {
           "id": "NW",
@@ -273549,42 +273582,42 @@
               "mode": "compression",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": 0.032566463745066415
+              "relativeMm": 0.03256646374506661
             },
             {
               "id": "NW/compression/0/1",
               "mode": "compression",
               "active": true,
-              "forceKN": -110.293591506826,
-              "relativeMm": -0.00441174366027304
+              "forceKN": -110.29359150682731,
+              "relativeMm": -0.004411743660273092
             },
             {
               "id": "NW/compression/0/2",
               "mode": "compression",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": 0.07057974952256306
+              "relativeMm": 0.07057974952256323
             },
             {
               "id": "NW/compression/0/3",
               "mode": "compression",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": 0.033601542117223604
+              "relativeMm": 0.033601542117223535
             },
             {
               "id": "NW/compression/1/0",
               "mode": "compression",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": 0.1509768615393817
+              "relativeMm": 0.15097686153938186
             },
             {
               "id": "NW/compression/1/1",
               "mode": "compression",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": 0.14358122005831375
+              "relativeMm": 0.1435812200583139
             },
             {
               "id": "NW/compression/1/2",
@@ -273598,63 +273631,63 @@
               "mode": "compression",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": 0.2956343631683003
+              "relativeMm": 0.2956343631683002
             },
             {
               "id": "NW/tie/0",
               "mode": "tension",
               "active": true,
-              "forceKN": 2.1794665802394295,
-              "relativeMm": 0.04358933160478859
+              "forceKN": 2.179466580239444,
+              "relativeMm": 0.04358933160478888
             },
             {
               "id": "NW/tie/1",
               "mode": "tension",
               "active": true,
-              "forceKN": 2.0065366184424867,
-              "relativeMm": 0.04013073236884973
+              "forceKN": 2.0065366184425004,
+              "relativeMm": 0.04013073236885001
             },
             {
               "id": "NW/tie/2",
               "mode": "tension",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": -0.00809751253229768
+              "relativeMm": -0.008097512532297731
             },
             {
               "id": "NW/tie/3",
               "mode": "tension",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": -0.014502325932184451
+              "relativeMm": -0.014502325932184531
             },
             {
               "id": "NW/tie/4",
               "mode": "tension",
               "active": true,
-              "forceKN": 3.0683193016844337,
-              "relativeMm": 0.06136638603368867
+              "forceKN": 3.068319301684447,
+              "relativeMm": 0.061366386033688936
             },
             {
               "id": "NW/tie/5",
               "mode": "tension",
               "active": true,
-              "forceKN": 2.895389339887491,
-              "relativeMm": 0.05790778679774981
+              "forceKN": 2.8953893398875032,
+              "relativeMm": 0.05790778679775006
             },
             {
               "id": "NW/tie/6",
               "mode": "tension",
               "active": true,
-              "forceKN": 0.4839770948301202,
-              "relativeMm": 0.009679541896602403
+              "forceKN": 0.4839770948301162,
+              "relativeMm": 0.009679541896602323
             },
             {
               "id": "NW/tie/7",
               "mode": "tension",
               "active": true,
-              "forceKN": 0.16373642483578157,
-              "relativeMm": 0.0032747284967156315
+              "forceKN": 0.1637364248357762,
+              "relativeMm": 0.003274728496715524
             },
             {
               "id": "NW/tie/8",
@@ -273688,55 +273721,55 @@
               "id": "NW/key/0/0",
               "mode": "bilateral",
               "active": true,
-              "forceKN": -10.193729646213722,
-              "relativeMm": -0.10193729646213721
+              "forceKN": -10.19372964621373,
+              "relativeMm": -0.10193729646213731
             },
             {
               "id": "NW/key/0/1",
               "mode": "bilateral",
               "active": true,
-              "forceKN": -7.366671573725206,
-              "relativeMm": -0.07366671573725206
+              "forceKN": -7.366671573725209,
+              "relativeMm": -0.07366671573725209
             },
             {
               "id": "NW/key/1/0",
               "mode": "bilateral",
               "active": true,
-              "forceKN": -10.193729646213722,
-              "relativeMm": -0.10193729646213721
+              "forceKN": -10.19372964621373,
+              "relativeMm": -0.10193729646213731
             },
             {
               "id": "NW/key/1/1",
               "mode": "bilateral",
               "active": true,
-              "forceKN": -6.6622799864930835,
-              "relativeMm": -0.06662279986493083
+              "forceKN": -6.662279986493086,
+              "relativeMm": -0.06662279986493086
             },
             {
               "id": "NW/key/2/0",
               "mode": "bilateral",
               "active": true,
-              "forceKN": -9.489338058981598,
-              "relativeMm": -0.09489338058981599
+              "forceKN": -9.489338058981609,
+              "relativeMm": -0.09489338058981608
             },
             {
               "id": "NW/key/2/1",
               "mode": "bilateral",
               "active": true,
-              "forceKN": -7.366671573725206,
-              "relativeMm": -0.07366671573725206
+              "forceKN": -7.366671573725209,
+              "relativeMm": -0.07366671573725209
             }
           ],
           "forceOnUpperKN_KNm": [
-            29.876797351409042,
-            21.395623133943495,
-            34.69847217336701,
-            -69.79666597854249,
-            65.52412818104908,
-            0.47379914421616853
+            29.87679735140907,
+            21.395623133943506,
+            34.69847217336829,
+            -69.79666597854313,
+            65.52412818104943,
+            0.4737991442161706
           ],
           "activeCompressionSamples": 1,
-          "unqualifiedTieTensionKN": 75.59511933345901
+          "unqualifiedTieTensionKN": 75.59511933345905
         },
         {
           "id": "NE",
@@ -273746,77 +273779,77 @@
               "mode": "compression",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": 0.27942251510877664
+              "relativeMm": 0.2794225151087765
             },
             {
               "id": "NE/compression/0/1",
               "mode": "compression",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": 0.04256516000054366
+              "relativeMm": 0.042565160000543625
             },
             {
               "id": "NE/compression/0/2",
               "mode": "compression",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": 0.2349595670309606
+              "relativeMm": 0.2349595670309605
             },
             {
               "id": "NE/compression/0/3",
               "mode": "compression",
               "active": true,
-              "forceKN": -47.44470193180977,
-              "relativeMm": -0.0018977880772723908
+              "forceKN": -47.44470193180986,
+              "relativeMm": -0.0018977880772723943
             },
             {
               "id": "NE/compression/1/0",
               "mode": "compression",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": 0.2229433716470596
+              "relativeMm": 0.22294337164705946
             },
             {
               "id": "NE/compression/1/1",
               "mode": "compression",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": 0.17557190062541267
+              "relativeMm": 0.17557190062541259
             },
             {
               "id": "NE/compression/1/2",
               "mode": "compression",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": 0.04509157933579681
+              "relativeMm": 0.04509157933579675
             },
             {
               "id": "NE/compression/1/3",
               "mode": "compression",
               "active": true,
-              "forceKN": -45.59783371700203,
-              "relativeMm": -0.0022798916858501016
+              "forceKN": -45.597833717002445,
+              "relativeMm": -0.0022798916858501224
             },
             {
               "id": "NE/tie/0",
               "mode": "tension",
               "active": true,
-              "forceKN": 17.40972942629925,
-              "relativeMm": 0.348194588525985
+              "forceKN": 17.40972942629924,
+              "relativeMm": 0.3481945885259848
             },
             {
               "id": "NE/tie/1",
               "mode": "tension",
               "active": true,
-              "forceKN": 16.30205719867587,
-              "relativeMm": 0.3260411439735174
+              "forceKN": 16.30205719867586,
+              "relativeMm": 0.32604114397351724
             },
             {
               "id": "NE/tie/2",
               "mode": "tension",
               "active": true,
-              "forceKN": 0.8561833579276406,
-              "relativeMm": 0.017123667158552812
+              "forceKN": 0.8561833579276392,
+              "relativeMm": 0.017123667158552784
             },
             {
               "id": "NE/tie/3",
@@ -273829,114 +273862,114 @@
               "id": "NE/tie/4",
               "mode": "tension",
               "active": true,
-              "forceKN": 16.370066277110748,
-              "relativeMm": 0.32740132554221496
+              "forceKN": 16.37006627711074,
+              "relativeMm": 0.32740132554221485
             },
             {
               "id": "NE/tie/5",
               "mode": "tension",
               "active": true,
-              "forceKN": 15.262394049487368,
-              "relativeMm": 0.30524788098974737
+              "forceKN": 15.262394049487362,
+              "relativeMm": 0.30524788098974726
             },
             {
               "id": "NE/tie/6",
               "mode": "tension",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": -0.0036695958252171874
+              "relativeMm": -0.0036695958252171944
             },
             {
               "id": "NE/tie/7",
               "mode": "tension",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": -0.04469449314460158
+              "relativeMm": -0.04469449314460157
             },
             {
               "id": "NE/tie/8",
               "mode": "tension",
               "active": true,
-              "forceKN": 1.872541252315567,
-              "relativeMm": 0.03745082504631134
+              "forceKN": 1.872541252315564,
+              "relativeMm": 0.03745082504631128
             },
             {
               "id": "NE/tie/9",
               "mode": "tension",
               "active": true,
-              "forceKN": 0.7648690246921872,
-              "relativeMm": 0.015297380493843743
+              "forceKN": 0.7648690246921851,
+              "relativeMm": 0.015297380493843701
             },
             {
               "id": "NE/tie/10",
               "mode": "tension",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": -0.0010552175162256566
+              "relativeMm": -0.0010552175162257121
             },
             {
               "id": "NE/tie/11",
               "mode": "tension",
               "active": false,
               "forceKN": 0.0,
-              "relativeMm": -0.02320866206869325
+              "relativeMm": -0.023208662068693292
             },
             {
               "id": "NE/key/0/0",
               "mode": "bilateral",
               "active": true,
-              "forceKN": -2.6458799432608164,
-              "relativeMm": -0.026458799432608163
+              "forceKN": -2.6458799432608004,
+              "relativeMm": -0.026458799432608007
             },
             {
               "id": "NE/key/0/1",
               "mode": "bilateral",
               "active": true,
-              "forceKN": -2.9558607473999556,
-              "relativeMm": -0.029558607473999556
+              "forceKN": -2.9558607473999716,
+              "relativeMm": -0.029558607473999715
             },
             {
               "id": "NE/key/1/0",
               "mode": "bilateral",
               "active": true,
-              "forceKN": -2.6458799432608164,
-              "relativeMm": -0.026458799432608163
+              "forceKN": -2.6458799432608004,
+              "relativeMm": -0.026458799432608007
             },
             {
               "id": "NE/key/1/1",
               "mode": "bilateral",
               "active": true,
-              "forceKN": -2.892337380475037,
-              "relativeMm": -0.028923373804750373
+              "forceKN": -2.892337380475054,
+              "relativeMm": -0.02892337380475054
             },
             {
               "id": "NE/key/2/0",
               "mode": "bilateral",
               "active": true,
-              "forceKN": -2.7094033101857344,
-              "relativeMm": -0.027094033101857345
+              "forceKN": -2.7094033101857184,
+              "relativeMm": -0.027094033101857182
             },
             {
               "id": "NE/key/2/1",
               "mode": "bilateral",
               "active": true,
-              "forceKN": -2.9558607473999556,
-              "relativeMm": -0.029558607473999556
+              "forceKN": -2.9558607473999716,
+              "relativeMm": -0.029558607473999715
             }
           ],
           "forceOnUpperKN_KNm": [
-            8.001163196707367,
-            8.804058875274947,
-            24.204695062303163,
-            -31.326750580937524,
-            30.696887835412248,
-            0.050672853920813506
+            8.001163196707319,
+            8.804058875274997,
+            24.204695062303717,
+            -31.32675058093749,
+            30.696887835412433,
+            0.05067285392081044
           ],
           "activeCompressionSamples": 2,
-          "unqualifiedTieTensionKN": 68.83784058650863
+          "unqualifiedTieTensionKN": 68.83784058650859
         }
       ],
-      "maximumUnqualifiedLTieDemandKN": 82.5707335251005,
+      "maximumUnqualifiedLTieDemandKN": 82.57073352510058,
       "auxiliaryGaugeMaximumReactionKN_KNmm": 0.0,
       "portFrameRigidWorkResidual": 5.551115123125783e-17,
       "additionalGroundCapCuts": [
@@ -273951,19 +273984,19 @@
           ],
           "breadthMm": 600,
           "depthMm": 600,
-          "axialCompressionKN": 0.041829460331697155,
-          "shearYKN": -1.7763568394002505e-15,
-          "shearZKN": 0.0,
-          "torsionKNm": 0.0,
-          "bendingYKNm": 0.001792192587039608,
-          "bendingZKNm": -0.002045322527380973,
+          "axialCompressionKN": 0.04182946033169781,
+          "shearYKN": 3.552713678800501e-15,
+          "shearZKN": -1.4210854715202004e-14,
+          "torsionKNm": -1.1368683772161603e-16,
+          "bendingYKNm": 0.0017921925870492573,
+          "bendingZKNm": -0.002045322527382698,
           "globalPhysicalEndWrenchKN_KNm": [
-            0.0,
-            -1.7763568394002505e-15,
-            0.041829460331697155,
-            0.002045322527380973,
-            0.001792192587039608,
-            0.0
+            1.4210854715202004e-14,
+            3.552713678800501e-15,
+            0.04182946033169781,
+            0.002045322527382698,
+            0.0017921925870492573,
+            -1.1368683772161603e-16
           ]
         },
         {
@@ -273977,19 +274010,19 @@
           ],
           "breadthMm": 600,
           "depthMm": 600,
-          "axialCompressionKN": 0.041829460331697155,
-          "shearYKN": 1.7763568394002505e-15,
-          "shearZKN": 0.0,
-          "torsionKNm": 0.0,
-          "bendingYKNm": -0.0017921925870386986,
+          "axialCompressionKN": 0.04182946033169781,
+          "shearYKN": -3.552713678800501e-15,
+          "shearZKN": 1.4210854715202004e-14,
+          "torsionKNm": 1.1368683772161603e-16,
+          "bendingYKNm": -0.0017921925870364249,
           "bendingZKNm": 0.002045322527384997,
           "globalPhysicalEndWrenchKN_KNm": [
-            0.0,
-            1.7763568394002505e-15,
-            -0.041829460331697155,
+            -1.4210854715202004e-14,
+            -3.552713678800501e-15,
+            -0.04182946033169781,
             -0.002045322527384997,
-            -0.0017921925870386986,
-            0.0
+            -0.0017921925870364249,
+            1.1368683772161603e-16
           ]
         },
         {
@@ -274003,19 +274036,19 @@
           ],
           "breadthMm": 600,
           "depthMm": 600,
-          "axialCompressionKN": 1.422765031950805,
-          "shearYKN": 7.105427357601002e-15,
-          "shearZKN": 0.0,
-          "torsionKNm": 0.0,
-          "bendingYKNm": -0.21487571862162458,
-          "bendingZKNm": 0.07288361352956582,
+          "axialCompressionKN": 1.422765031950826,
+          "shearYKN": 2.6645352591003757e-15,
+          "shearZKN": 2.220446049250313e-16,
+          "torsionKNm": 1.4210854715202004e-17,
+          "bendingYKNm": -0.2148757186216276,
+          "bendingZKNm": 0.072883613529567,
           "globalPhysicalEndWrenchKN_KNm": [
-            0.0,
-            7.105427357601002e-15,
-            1.422765031950805,
-            -0.07288361352956582,
-            -0.21487571862162458,
-            0.0
+            -2.220446049250313e-16,
+            2.6645352591003757e-15,
+            1.422765031950826,
+            -0.072883613529567,
+            -0.2148757186216276,
+            1.4210854715202004e-17
           ]
         },
         {
@@ -274029,26 +274062,26 @@
           ],
           "breadthMm": 600,
           "depthMm": 600,
-          "axialCompressionKN": 1.422765031950805,
-          "shearYKN": -7.105427357601002e-15,
-          "shearZKN": 0.0,
-          "torsionKNm": 0.0,
-          "bendingYKNm": 0.21487571862162455,
-          "bendingZKNm": -0.07288361352956553,
+          "axialCompressionKN": 1.422765031950826,
+          "shearYKN": -2.6645352591003757e-15,
+          "shearZKN": -2.220446049250313e-16,
+          "torsionKNm": -1.4210854715202004e-17,
+          "bendingYKNm": 0.21487571862162763,
+          "bendingZKNm": -0.07288361352956736,
           "globalPhysicalEndWrenchKN_KNm": [
-            0.0,
-            -7.105427357601002e-15,
-            -1.422765031950805,
-            0.07288361352956553,
-            0.21487571862162455,
-            0.0
+            2.220446049250313e-16,
+            -2.6645352591003757e-15,
+            -1.422765031950826,
+            0.07288361352956736,
+            0.21487571862162763,
+            -1.4210854715202004e-17
           ]
         }
       ],
       "candidateAccepted": false,
       "floorGravityAccepted": false,
       "completeHouseProof": false,
-      "maximum52HeadComponentDeltaFromBaselineKN_KNm": 57.82319748122405
+      "maximum52HeadComponentDeltaFromBaselineKN_KNm": 57.82319748122374
     },
     {
       "caseId": "VERTICAL-FLOOR/opposite-W7",
@@ -274085,7 +274118,7 @@
           "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
           "project/str/studies/rc_floor_house_loads.py": "eaade7a26ecc682f742a1c3b3246ee648e5d497c236b52f656250994d0517654",
           "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-          "project/str/studies/vertical_rc_floor.py": "0d0e359c270a5a59fefed5b2d1edbaa0e16d4129a97a639135a0e22e81d47539",
+          "project/str/studies/vertical_rc_floor.py": "30a222fe8c7104b03cab7593b62fcd3ee224574f71380bb7cb7dc95cd275a7d7",
           "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
           "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
           "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
@@ -274449,7 +274482,7 @@
         "sourceSelfGCondensationResidualKN_KNm": [
           0.0,
           0.0,
-          -1.9895196601282805e-12,
+          -2.1032064978498966e-12,
           -1.0459189070388675e-11,
           1.1368683772161603e-11,
           0.0
@@ -275030,17 +275063,17 @@
         }
       ],
       "equilibriumResidualKN_KNm": [
-        1.7041656974470243e-10,
+        1.7040235888998723e-10,
         -3.377920165803516e-11,
         -3.0183855415089056e-10,
         -7.948838174343109e-10,
         2.9997900128364564e-09,
-        -1.237727701663971e-09
+        -1.2377568054944278e-09
       ],
       "sourceSelfGCondensationResidualKN_KNm": [
         0.0,
         0.0,
-        -1.9895196601282805e-12,
+        -2.1032064978498966e-12,
         -1.0459189070388675e-11,
         1.1368683772161603e-11,
         0.0
@@ -275997,7 +276030,7 @@
           "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
           "project/str/studies/rc_floor_house_loads.py": "eaade7a26ecc682f742a1c3b3246ee648e5d497c236b52f656250994d0517654",
           "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-          "project/str/studies/vertical_rc_floor.py": "0d0e359c270a5a59fefed5b2d1edbaa0e16d4129a97a639135a0e22e81d47539",
+          "project/str/studies/vertical_rc_floor.py": "30a222fe8c7104b03cab7593b62fcd3ee224574f71380bb7cb7dc95cd275a7d7",
           "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
           "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
           "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
@@ -276361,7 +276394,7 @@
         "sourceSelfGCondensationResidualKN_KNm": [
           0.0,
           0.0,
-          -1.9895196601282805e-12,
+          -2.1032064978498966e-12,
           -1.0459189070388675e-11,
           1.1368683772161603e-11,
           0.0
@@ -276942,8 +276975,8 @@
         }
       ],
       "equilibriumResidualKN_KNm": [
-        1.1020517831639154e-11,
-        -1.4338752407638822e-10,
+        1.1027623258996755e-11,
+        -1.4340173493110342e-10,
         -3.7488234738702886e-10,
         -9.83942300081253e-10,
         2.8223730623722076e-09,
@@ -276952,7 +276985,7 @@
       "sourceSelfGCondensationResidualKN_KNm": [
         0.0,
         0.0,
-        -1.9895196601282805e-12,
+        -2.1032064978498966e-12,
         -1.0459189070388675e-11,
         1.1368683772161603e-11,
         0.0
@@ -277909,7 +277942,7 @@
           "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
           "project/str/studies/rc_floor_house_loads.py": "eaade7a26ecc682f742a1c3b3246ee648e5d497c236b52f656250994d0517654",
           "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-          "project/str/studies/vertical_rc_floor.py": "0d0e359c270a5a59fefed5b2d1edbaa0e16d4129a97a639135a0e22e81d47539",
+          "project/str/studies/vertical_rc_floor.py": "30a222fe8c7104b03cab7593b62fcd3ee224574f71380bb7cb7dc95cd275a7d7",
           "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
           "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
           "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
@@ -278273,7 +278306,7 @@
         "sourceSelfGCondensationResidualKN_KNm": [
           0.0,
           0.0,
-          -1.9895196601282805e-12,
+          -2.1032064978498966e-12,
           -1.0459189070388675e-11,
           1.1368683772161603e-11,
           0.0
@@ -278854,17 +278887,17 @@
         }
       ],
       "equilibriumResidualKN_KNm": [
-        -9.131895239988808e-11,
+        -9.133316325460328e-11,
         8.350298230652697e-11,
         1.3530110365422843e-10,
-        -7.549533620476722e-11,
+        -7.543712854385376e-11,
         1.087901182472706e-09,
-        1.0921085049631075e-09
+        1.092050297302194e-09
       ],
       "sourceSelfGCondensationResidualKN_KNm": [
         0.0,
         0.0,
-        -1.9895196601282805e-12,
+        -2.1032064978498966e-12,
         -1.0459189070388675e-11,
         1.1368683772161603e-11,
         0.0

@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="900pt" height="439.2pt" viewBox="0 0 900 439.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <title>Actual joined roof pressure comparison</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>Actual joined roof pressure comparison</dc:title>
+    <dc:description>{"candidateAccepted": false, "proofSHA256": "9eea5d1523c4a0f8919276cc3c7b21578ca482aa27d5bba256f66fdf1a1635d1", "siteSnowQualified": false, "siteWindQualified": false, "sourceSHA256": {"project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc", "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e", "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c", "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7", "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f", "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09", "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e", "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad", "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294", "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6", "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6", "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f", "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574", "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e", "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1", "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723", "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e", "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b", "project/str/studies/distributed_floor_compatibility.py": "343eb90499aabaf0a9d62302d1b91221599b66e3520fda7e40ba32da11a975c1", "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41", "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695", "project/str/studies/floor_reinforcement.py": "e904f747686fdf3811f78ab7917ad9d3972c1d464be8960d66de61801d7c4bec", "project/str/studies/foundation_solid_weight.py": "0537c47e21c59ffadd21c5c6d3765fac9798db21de58e722396f0b7c8e707ce2", "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21", "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4", "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c", "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76", "project/str/studies/lower_core_bodies.py": "9f6e0b2d232441c0a2e278de7d25f9b5d2e1db330527cf1aed36f4e6a0ecb392", "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e", "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883", "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5", "project/str/studies/perforated_floor_condensation.py": "2f0dcba9128d110204212fec6f2bad14449edd27a30eaa6f1a68a3bbbe4a08bd", "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c", "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d", "project/str/studies/rc_floor_house_loads.py": "eaade7a26ecc682f742a1c3b3246ee648e5d497c236b52f656250994d0517654", "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137", "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8", "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808", "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc", "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6", "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03", "project/str/studies/straight_frame_cage.py": "6404893c699b7179b8380afc8dfcb8d25ae6725e20c2897987917de7e83c511e", "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c", "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3", "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c", "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf", "project/str/studies/vertical_floor_views.py": "701f63dda777b63b44b45b31c00f9fda9716034a398f56384fc249ae59ad3cce", "project/str/studies/vertical_rc_floor.py": "30a222fe8c7104b03cab7593b62fcd3ee224574f71380bb7cb7dc95cd275a7d7"}, "viewMethodSHA256": "b0e6f8da564a4095508ca427c0805c3191d679a749e6f77b5dc1e2ba1a414d25"}</dc:description>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 439.2 
+L 900 439.2 
+L 900 0 
+L 0 0 
+z
+" style="fill: #faf8f2"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 297 320.616 
+L 597.269058 320.616 
+L 597.269058 74.664 
+L 297 74.664 
+z
+" style="fill: #faf8f2"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 297 320.616 
+L 297 74.664 
+" clip-path="url(#pdf12b612cf)" style="fill: none; stroke: #ddd9cf; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2">
+      <defs>
+       <path id="m3852e34c0f" d="M 0 0 
+L 0 3.5 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m3852e34c0f" x="297" y="320.616" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="297" y="335.214437" transform="rotate(-0 297 335.214437)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 354.74405 320.616 
+L 354.74405 74.664 
+" clip-path="url(#pdf12b612cf)" style="fill: none; stroke: #ddd9cf; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m3852e34c0f" x="354.74405" y="320.616" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="354.74405" y="335.214437" transform="rotate(-0 354.74405 335.214437)">50</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 412.488099 320.616 
+L 412.488099 74.664 
+" clip-path="url(#pdf12b612cf)" style="fill: none; stroke: #ddd9cf; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m3852e34c0f" x="412.488099" y="320.616" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="412.488099" y="335.214437" transform="rotate(-0 412.488099 335.214437)">100</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 470.232149 320.616 
+L 470.232149 74.664 
+" clip-path="url(#pdf12b612cf)" style="fill: none; stroke: #ddd9cf; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m3852e34c0f" x="470.232149" y="320.616" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="470.232149" y="335.214437" transform="rotate(-0 470.232149 335.214437)">150</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 527.976199 320.616 
+L 527.976199 74.664 
+" clip-path="url(#pdf12b612cf)" style="fill: none; stroke: #ddd9cf; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m3852e34c0f" x="527.976199" y="320.616" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="527.976199" y="335.214437" transform="rotate(-0 527.976199 335.214437)">200</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_11">
+      <path d="M 585.720248 320.616 
+L 585.720248 74.664 
+" clip-path="url(#pdf12b612cf)" style="fill: none; stroke: #ddd9cf; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m3852e34c0f" x="585.720248" y="320.616" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="585.720248" y="335.214437" transform="rotate(-0 585.720248 335.214437)">250</text>
+     </g>
+    </g>
+    <g id="text_7">
+     <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="447.134529" y="348.892562" transform="rotate(-0 447.134529 348.892562)">Tension at the most uplifted ideal head (kN)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_13"/>
+     <g id="text_8">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="293.5" y="103.608697" transform="rotate(-0 293.5 103.608697)">No roof surface pressure | W31 | 0.9G</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_14"/>
+     <g id="text_9">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="293.5" y="152.534895" transform="rotate(-0 293.5 152.534895)">Uniform suction | W31 | 0.9G</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_15"/>
+     <g id="text_10">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="293.5" y="201.461094" transform="rotate(-0 293.5 201.461094)">Half-origin suction | W79 | 0.9G</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_16"/>
+     <g id="text_11">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="293.5" y="250.387292" transform="rotate(-0 293.5 250.387292)">Downward pressure | W31 | 0.9G</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_17"/>
+     <g id="text_12">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="293.5" y="299.313491" transform="rotate(-0 293.5 299.313491)">Uniform suction | W31 | 0G</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 297 85.843636 
+L 434.382063 85.843636 
+L 434.382063 113.73157 
+L 297 113.73157 
+z
+" clip-path="url(#pdf12b612cf)" style="fill: #718d89"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 297 134.769835 
+L 452.53155 134.769835 
+L 452.53155 162.657768 
+L 297 162.657768 
+z
+" clip-path="url(#pdf12b612cf)" style="fill: #ac6f56"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 297 183.696033 
+L 437.431101 183.696033 
+L 437.431101 211.583967 
+L 297 211.583967 
+z
+" clip-path="url(#pdf12b612cf)" style="fill: #8d858c"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 297 232.622232 
+L 423.073729 232.622232 
+L 423.073729 260.510165 
+L 297 260.510165 
+z
+" clip-path="url(#pdf12b612cf)" style="fill: #6c8ca3"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 297 281.54843 
+L 552.372362 281.54843 
+L 552.372362 309.436364 
+L 297 309.436364 
+z
+" clip-path="url(#pdf12b612cf)" style="fill: #a2473e"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 297 320.616 
+L 597.269058 320.616 
+" style="fill: none; stroke: #aaa69d; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #263d43" x="438.886099" y="102.546978" transform="rotate(-0 438.886099 102.546978)">118.96</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #263d43" x="457.035585" y="151.473176" transform="rotate(-0 457.035585 151.473176)">134.67</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #263d43" x="441.935137" y="200.399375" transform="rotate(-0 441.935137 200.399375)">121.60</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #263d43" x="427.577765" y="249.325574" transform="rotate(-0 427.577765 249.325574)">109.17</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #263d43" x="556.876398" y="298.251772" transform="rotate(-0 556.876398 298.251772)">221.12</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_9">
+    <path d="M 654.820628 320.616 
+L 855 320.616 
+L 855 74.664 
+L 654.820628 74.664 
+z
+" style="fill: #faf8f2"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_7">
+     <g id="line2d_18">
+      <path d="M 654.820628 320.616 
+L 654.820628 74.664 
+" clip-path="url(#pb27aeb2ed6)" style="fill: none; stroke: #ddd9cf; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_19">
+      <g>
+       <use xlink:href="#m3852e34c0f" x="654.820628" y="320.616" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_18">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="654.820628" y="335.214437" transform="rotate(-0 654.820628 335.214437)">0</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_20">
+      <path d="M 712.014734 320.616 
+L 712.014734 74.664 
+" clip-path="url(#pb27aeb2ed6)" style="fill: none; stroke: #ddd9cf; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_21">
+      <g>
+       <use xlink:href="#m3852e34c0f" x="712.014734" y="320.616" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_19">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="712.014734" y="335.214437" transform="rotate(-0 712.014734 335.214437)">10</text>
+     </g>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_22">
+      <path d="M 769.20884 320.616 
+L 769.20884 74.664 
+" clip-path="url(#pb27aeb2ed6)" style="fill: none; stroke: #ddd9cf; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_23">
+      <g>
+       <use xlink:href="#m3852e34c0f" x="769.20884" y="320.616" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_20">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="769.20884" y="335.214437" transform="rotate(-0 769.20884 335.214437)">20</text>
+     </g>
+    </g>
+    <g id="xtick_10">
+     <g id="line2d_24">
+      <path d="M 826.402947 320.616 
+L 826.402947 74.664 
+" clip-path="url(#pb27aeb2ed6)" style="fill: none; stroke: #ddd9cf; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_25">
+      <g>
+       <use xlink:href="#m3852e34c0f" x="826.402947" y="320.616" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_21">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="826.402947" y="335.214437" transform="rotate(-0 826.402947 335.214437)">30</text>
+     </g>
+    </g>
+    <g id="text_22">
+     <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="754.910314" y="348.892562" transform="rotate(-0 754.910314 348.892562)">Maximum roof-ring translation (mm)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_6">
+     <g id="line2d_26"/>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_27"/>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_28"/>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_29"/>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_30"/>
+    </g>
+   </g>
+   <g id="patch_10">
+    <path d="M 654.820628 85.843636 
+L 781.804085 85.843636 
+L 781.804085 113.73157 
+L 654.820628 113.73157 
+z
+" clip-path="url(#pb27aeb2ed6)" style="fill: #718d89"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 654.820628 134.769835 
+L 785.233835 134.769835 
+L 785.233835 162.657768 
+L 654.820628 162.657768 
+z
+" clip-path="url(#pb27aeb2ed6)" style="fill: #ac6f56"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 654.820628 183.696033 
+L 783.296022 183.696033 
+L 783.296022 211.583967 
+L 654.820628 211.583967 
+z
+" clip-path="url(#pb27aeb2ed6)" style="fill: #8d858c"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 654.820628 232.622232 
+L 780.515093 232.622232 
+L 780.515093 260.510165 
+L 654.820628 260.510165 
+z
+" clip-path="url(#pb27aeb2ed6)" style="fill: #6c8ca3"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 654.820628 281.54843 
+L 822.436341 281.54843 
+L 822.436341 309.436364 
+L 654.820628 309.436364 
+z
+" clip-path="url(#pb27aeb2ed6)" style="fill: #a2473e"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 654.820628 320.616 
+L 855 320.616 
+" style="fill: none; stroke: #aaa69d; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #263d43" x="784.806775" y="102.546978" transform="rotate(-0 784.806775 102.546978)">22.20</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #263d43" x="788.236526" y="151.473176" transform="rotate(-0 788.236526 151.473176)">22.80</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #263d43" x="786.298713" y="200.399375" transform="rotate(-0 786.298713 200.399375)">22.46</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #263d43" x="783.517783" y="249.325574" transform="rotate(-0 783.517783 249.325574)">21.98</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #263d43" x="825.439032" y="298.251772" transform="rotate(-0 825.439032 298.251772)">29.31</text>
+   </g>
+  </g>
+  <g id="text_28">
+   <text style="font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #263d43" x="36" y="25.3335" transform="rotate(-0 36 25.3335)">ROOF PRESSURE / ONE RC200 FRAME / 52 HEADS</text>
+  </g>
+  <g id="text_29">
+   <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #263d43" x="36" y="43.92" transform="rotate(-0 36 43.92)">Five separately solved mechanical controls; inherited roof geometry and receiving laws remain unselected.</text>
+  </g>
+  <g id="text_30">
+   <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #263d43" x="36" y="368.928" transform="rotate(-0 36 368.928)">Uniform suction: −2.25 kPa × 144.15 m² = −324.3375 kN. Half-origin control: −162.16875 kN.</text>
+  </g>
+  <g id="text_31">
+   <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #263d43" x="36" y="386.496" transform="rotate(-0 36 386.496)">Downward control: +1.5 kPa = +216.225 kN. Facade programme and physical-G factor are explicit in each row.</text>
+  </g>
+  <g id="text_32">
+   <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #a2473e" x="36" y="406.26" transform="rotate(-0 36 406.26)">Unresolved: adverse post screen 1.265 &gt; 1; H12 floor moment screen exceeded; ground resistance and roof fixings unqualified.</text>
+  </g>
+  <g id="text_33">
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #65736d" x="36" y="426.024" transform="rotate(-0 36 426.024)">Actual source inventory: 48 files. Pressure proof SHA256 9eea5d1523c4a0f8919276cc…</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pdf12b612cf">
+   <rect x="297" y="74.664" width="300.269058" height="245.952"/>
+  </clipPath>
+  <clipPath id="pb27aeb2ed6">
+   <rect x="654.820628" y="74.664" width="200.179372" height="245.952"/>
+  </clipPath>
+ </defs>
+</svg>

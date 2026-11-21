@@ -6,7 +6,7 @@ from pathlib import Path
 import unittest
 import xml.etree.ElementTree as ET
 
-from masonry_frame_a import (_add_lower_l_weight, _ring_witness, build_masonry_frame_a, geometry, load_masonry_frame_a_source,
+from masonry_frame_a import (_add_lower_l_weight, _label_ground_element_actions, _ring_witness, build_masonry_frame_a, geometry, load_masonry_frame_a_source,
                              reference_masonry_frame_a_case, render_masonry_frame_a)
 
 D=Path(__file__).resolve().parent
@@ -85,24 +85,62 @@ class MasonryFrameTests(unittest.TestCase):
         self.assertFalse(result['newUpperRoofLOwnGIncluded']);self.assertTrue(result['DPCGapOwnGExcluded'])
         with self.assertRaises(ValueError):_add_lower_l_weight(model,{'unitWeightKNPerM3':25.})
 
+    def test_ground_action_scope_preserves_solved_values_and_rejects_local_recovery_claim(self):
+        row={'memberId':'GRID/example','end':1,'physicalPointMm':[100.,200.,-180.],
+            'axialCompressionKN':-12.5,'bendingYKNm':3.25,'scope':'old physical-cut claim'}
+        native={'native':{'adjacentGridMemberCuts':[copy.deepcopy(row)],'capCuts':[copy.deepcopy(row)],
+            'memberCuts':[copy.deepcopy(row)],'heads':[{'id':'P1','reactionKN_KNm':[1,2,-3,4,5,6]}]},
+            'additionalGroundCapCuts':[copy.deepcopy(row)]}
+        before=copy.deepcopy(native);_label_ground_element_actions(native)
+        for after,previous in ((native['native']['adjacentGridMemberCuts'],before['native']['adjacentGridMemberCuts']),
+                (native['native']['capCuts'],before['native']['capCuts']),
+                (native['additionalGroundCapCuts'],before['additionalGroundCapCuts'])):
+            self.assertEqual([{k:v for k,v in item.items() if k not in ('scope','localDistributedLoadRecoveryQualified')} for item in after],
+                [{k:v for k,v in item.items() if k!='scope'} for item in previous])
+            self.assertFalse(after[0]['localDistributedLoadRecoveryQualified'])
+            self.assertIn('Elastic element-end actions',after[0]['scope'])
+            self.assertIn('not recovered distributed physical local cuts',after[0]['scope'])
+        self.assertEqual(native['native']['memberCuts'],before['native']['memberCuts'])
+        self.assertEqual(native['native']['heads'],before['native']['heads'])
+
     def test_frozen_proof_binds_actual_joined_sources_and_adverse_results(self):
         path=D/'masonry-frame-a-proof.json'
         self.assertTrue(path.exists(),'Fresh source-bound numerical proof required')
-        proof=json.loads(path.read_text());self.assertEqual(len(self.source['identities']),47);self.assertEqual(proof['sourceSHA256'],self.source['identities'])
+        proof=json.loads(path.read_text());self.assertEqual(len(self.source['identities']),48);self.assertEqual(proof['sourceSHA256'],self.source['identities'])
         self.assertEqual(proof['proofProducerSHA256'],hashlib.sha256((D/'masonry_frame_a_proof.py').read_bytes()).hexdigest())
-        self.assertEqual(proof['executedCoupledCaseCount'],6)
+        self.assertEqual(proof['executedCoupledCaseCount'],8)
         for case in proof['cases']:
             self.assertEqual(len(case['headWrenches']),52);self.assertEqual(len({r['id'] for r in case['headWrenches']}),52)
             self.assertLess(max(abs(v) for v in case['equilibriumResidualKN_KNm']),1e-6)
             self.assertFalse(case['candidateAccepted']);self.assertFalse(case['completeHouseProof'])
-            self.assertAlmostEqual(math.fsum(row['reactionKN_KNm'][2] for row in case['headWrenches']),case['mass']['appliedPhysicalGKN'],places=6)
+            self.assertAlmostEqual(math.fsum(row['reactionKN_KNm'][2] for row in case['headWrenches']),-case['externalWrenchKN_KNm'][2],places=6)
+            self.assertEqual(case['executedRequest']['sourceSHA256'],proof['sourceSHA256'])
+            self.assertEqual(len(case['physicalPlateParticipation']),18)
+            for audit in case['physicalPlateParticipation'].values():
+                self.assertTrue(audit['physicalTraceConfirmed']);self.assertTrue(audit['allCoefficientRowsUsedByPhysicalElements'])
+                self.assertEqual(audit['createdScalarCoordinateCount'],0)
+                self.assertGreater(audit['assembledTraceRowMaxAbs'],0);self.assertGreater(audit['condensedTraceRowMaxAbs'],0)
             self.assertAlmostEqual(case['mass']['joinedPhysicalGKN'],sum(case['mass'][key] for key in ('referenceStructuralShellPhysicalGKN','foundationPhysicalGKN','cornerClosurePhysicalGKN','lowerLPhysicalGKN','lowerCorePhysicalGKN','roofAddedPhysicalGKN')))
         self.assertLess(proof['cases'][0]['minimumHeadVerticalKN'],0)
         self.assertGreater(proof['cases'][1]['maximum52HeadComponentDeltaFromBaselineKN_KNm'],1e-6)
         self.assertAlmostEqual(proof['aperturePhysicalSelfGDeltaKN'],-.545)
         self.assertGreater(proof['roofRingStiffnessHeadDeltaKN_KNm'],1e-6)
         self.assertLess(proof['actualFullCaseReversalHeadDeltaKN_KNm'],1e-6)
+        base,live,surface=proof['cases'][0],proof['cases'][5],proof['cases'][6]
+        self.assertEqual(live['floorLiveLoad']['characteristicPressureKPa'],2)
+        self.assertAlmostEqual(live['floorLiveLoad']['appliedQKN'],3*live['floorLiveLoad']['actualNetPlateAreaM2'])
+        self.assertEqual(live['floorLiveLoad']['addedPhysicalMassKN'],0)
+        self.assertFalse(live['floorLiveLoad']['legacyGrossGFlagRequired'])
+        for changed,ledger,key in ((live,live['floorLiveLoad'],'appliedWrenchKN_KNm'),(surface,surface['roofCoupling']['roofSurfacePressure'],'pressureWrenchKN_KNm')):
+            for a,b,c in zip(changed['externalWrenchKN_KNm'],base['externalWrenchKN_KNm'],ledger[key]):self.assertAlmostEqual(a-b,c,places=6)
+            self.assertAlmostEqual(changed['mass']['joinedPhysicalGKN'],base['mass']['joinedPhysicalGKN'])
+        self.assertEqual(surface['roofCoupling']['roofSurfacePressure']['request']['uniformKPa'],-2.25)
+        self.assertEqual(len(surface['roofCoupling']['roofSurfacePressure']['origins']),108)
         baseline=proof['baseline'];self.assertEqual(baseline['nativeVertical']['sourceSHA256'],proof['sourceSHA256'])
+        for key in ('adjacentGridMemberCuts','capCuts'):
+            for row in baseline['nativeVertical']['native'][key]:
+                self.assertFalse(row['localDistributedLoadRecoveryQualified'])
+                self.assertIn('Elastic element-end actions',row['scope'])
         self.assertEqual(baseline['nativeVertical']['schema'],'str-masonry-frame-a-vertical-result/1')
         cut_heights=[row['physicalPointMm'][2] for row in baseline['nativeVertical']['native']['memberCuts'] if '/A-post/' in row['memberId']]
         for course in baseline['masonryCourses']:

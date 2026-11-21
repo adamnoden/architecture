@@ -320,6 +320,19 @@ def run_masonry_frame_a(case,source,name):
     return finish_masonry_frame_a(model,source,native,captured.get('raw'))
 
 
+def _label_ground_element_actions(native):
+    """Keep actual solved actions; do not invent distributed local recovery."""
+    groups=((native['native']['adjacentGridMemberCuts'],'grid member'),
+        (native['native']['capCuts'],'upper-cap member'),
+        (native.get('additionalGroundCapCuts',[]),'additional upper-cap member'))
+    for rows,kind in groups:
+        for row in rows:
+            row['localDistributedLoadRecoveryQualified']=False
+            row['scope']=('Elastic element-end actions at the actual '+kind+' geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. '
+                'Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. '
+                'Local3D node, cap cage, pile and soil resistance remain unqualified.')
+
+
 def finish_masonry_frame_a(model,source,native,roof_raw=None):
     """Format one actual solved model; never rerun or substitute another case."""
     from plate_bending_recovery import recover_plate_bending
@@ -342,8 +355,7 @@ def finish_masonry_frame_a(model,source,native,roof_raw=None):
     native['native']['barrierDuties']=[]
     native['native']['scopeOfFormerDPC']='The actual enlarged continuous A post union crosses the former20mm gap in finite slices. No old curved-control cage, bridge section, flange or seal geometry is adopted.'
     native['native']['memberLoadRecovery']='New RC post/upstand gravity uses consistent member vectors and physical local cut recovery. Source post pressure retains its original equivalent nodal cards as an explicit load-introduction comparison; changed-post distributed pressure cuts and actual cladding restraint are not qualified.'
-    for row in native['native']['adjacentGridMemberCuts']:
-        row['scope']='Actual finite grid cut in the same compatible A model, including authored cap/grid union selfweight and optional formed court-corner addition. Local3D node, pile and soil resistance remain unqualified.'
+    _label_ground_element_actions(native)
     native['reusedPlateMethod']='str-vertical-rc-floor-case/1'
     native['verticalGravityMethod']='str-masonry-frame-a-native-plate-comparison/1'
     native['reusedMonolithicKernelSourceSHA256']=native['native'].pop('parentMonolithicControlSourceSHA256')

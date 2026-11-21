@@ -559,14 +559,16 @@
     {
       "id": "had-fixed-inlet-arrangement",
       "state": "candidate-interface",
-      "authority": "Unselected fixed pressure entry with rejected current wet enclosure and an alternative shared pipe/wet support frame. Thermal, tool, material, whole enclosure, support and installed duties remain unqualified.",
+      "authority": "Unselected incoming-water comparisons: tight hoods/shared frame and full-height copper cabinet rejected as complete arrangements. Current executable wet matrix preserves graded pans, individual fronts, source/fault/renewal and actual receiving demands; independent internal isolation, materials and complete boundaries remain unresolved.",
       "decisions": [
         "project/had/fixed-inlet-entry-candidate.md",
         "project/had/fixed-inlet-receiver-development.md",
         "project/had/fixed-inlet-temporary-keeper.md",
         "project/had/fixed-inlet-wet-support-development.md",
         "project/had/inlet-metal-compression-decision.md",
-        "project/had/fixed-inlet-shared-service-frame-development.md"
+        "project/had/fixed-inlet-shared-service-frame-development.md",
+        "project/had/inlet-cabinet-copper-comparison.md",
+        "project/had/inlet-cabinet-copper-wet-matrix.md"
       ],
       "authorRoots": [
         "compiler/reference-house/current-design/inlet-fixed-entry.ts",
@@ -579,11 +581,28 @@
         "compiler/reference-house/current-design/inlet-fixed-compact-receiver.ts",
         "compiler/reference-house/current-design/inlet-fixed-temporary-keeper.ts",
         "compiler/reference-house/current-design/inlet-fixed-wet-support.ts",
-        "compiler/reference-house/current-design/inlet-fixed-shared-service-frame.ts"
+        "compiler/reference-house/current-design/inlet-fixed-shared-service-frame.ts",
+        "compiler/reference-house/current-design/inlet-cabinet-copper.ts",
+        "project/had/studies/incoming-water-geometry.mjs",
+        "project/had/studies/inlet-cabinet-copper.ts",
+        "project/had/studies/south-inlet-relief-hydraulics.mjs"
       ],
       "authoredInputs": [],
-      "inputReceipts": [],
-      "receipts": [],
+      "inputReceipts": [
+        "project/had/studies/south-inlet-under-sill.json",
+        "project/had/studies/current-house-services.json",
+        "project/had/studies/south-inlet-wet-box.json",
+        "project/had/studies/utility-wide-capture.json",
+        "project/had/studies/utility-dry-bowl-release.json",
+        "project/str/studies/floor-portal-interface-review.json",
+        "project/str/studies/reconciled-house-interface.json",
+        "project/had/studies/south-inlet-relief.json",
+        "project/had/studies/south-utility-inlet.json"
+      ],
+      "receipts": [
+        "project/had/studies/inlet-cabinet-copper.results.json",
+        "project/had/studies/inlet-cabinet-copper.svg"
+      ],
       "consumers": [
         "compiler/reference-house/current-design/compile.ts",
         "compiler/reference-house/current-design/engineering-document.ts"
@@ -591,7 +610,11 @@
       "producerChecks": [
         "node --import tsx --test compiler/reference-house/current-design-inlet-fixed-entry.test.ts compiler/reference-house/current-design-inlet-fixed-pipeline.test.ts",
         "node --import tsx --test compiler/reference-house/current-design-inlet-fixed-temporary-keeper.test.ts compiler/reference-house/current-design-inlet-fixed-support-view.test.ts",
-        "node --import tsx --test compiler/reference-house/current-design-inlet-fixed-shared-service-frame.test.ts"
+        "node --import tsx --test compiler/reference-house/current-design-inlet-fixed-shared-service-frame.test.ts",
+        "node --import tsx --test compiler/reference-house/current-design-inlet-cabinet.test.ts",
+        "node --import tsx project/had/studies/inlet-cabinet-copper.ts --check",
+        "node --import tsx --test compiler/reference-house/current-design-inlet-cabinet-pipeline.test.ts",
+        "node --import tsx --test compiler/reference-house/current-design-inlet-cabinet-wet.test.ts"
       ]
     },
     {
@@ -1256,6 +1279,24 @@
       "format": "value",
       "algorithm": "sha256",
       "source": "project/str/studies/masonry_frame_a_proof.py"
+    },
+    {
+      "receipt": "project/had/studies/inlet-cabinet-copper.results.json",
+      "location": [
+        "source",
+        "inputs"
+      ],
+      "format": "map",
+      "algorithm": "gitBlob"
+    },
+    {
+      "receipt": "project/had/studies/inlet-cabinet-copper.results.json",
+      "location": [
+        "source",
+        "methods"
+      ],
+      "format": "map",
+      "algorithm": "gitBlob"
     }
   ],
   "gitBlobs": {
@@ -1488,7 +1529,7 @@
     "project/str/studies/joined_successor_kernel.py": "bbf1e80933260d0182db34d777427b68a361b2f0",
     "compiler/reference-house/current-design/structural-successor.ts": "9ae813ed40695e6e94df43caa0b45e7db54d02c4",
     "compiler/reference-house/current-design/inlet-support.ts": "a2404befdbeda6464bc9f772d25bccd8d78d2479",
-    "compiler/reference-house/current-design/engineering-document.ts": "33c4dff1745fec545537276a86b7a6ab002efea5",
+    "compiler/reference-house/current-design/engineering-document.ts": "2205058d912a509b9301be89ce66fbcc7a667b89",
     "project/had/inlet-assembly-convergence.md": "21719c69b3ec916043e53d7ae0891d5c6ce7aae5",
     "project/str/studies/floor-portal-fixed-wall-head.py": "807159aa9439837489d3e95f9bf359983635c342",
     "project/str/studies/floor-portal-north-transfer.py": "20f79473e3fd3e88351b3fa4d68ac1f1ef476d03",
@@ -1501,7 +1542,7 @@
     "compiler/reference-house/current-design/inlet-fixed-entry.ts": "9ad3f449b36d8770ac1a1bfe167210fbca7581bf",
     "compiler/reference-house/current-design/inlet-fixed-case.ts": "6a6670cf3dab365e41b4bf5e7c4a82ee2a0cd82f",
     "compiler/reference-house/current-design/inlet-fixed-operating.ts": "8d2a9e0132d300e697cff2661f01222a7b661b45",
-    "compiler/reference-house/current-design/compile.ts": "ba570f0011c8c9b7f20898640c2b6b3d33d64ca4",
+    "compiler/reference-house/current-design/compile.ts": "d98f33f82aabaae3dda91e8971a3dba0fa24447c",
     "project/mat/envelope-ground-boundary.md": "7aae65350ded7bff6e21c4425153af3cdaec41d2",
     "project/owner-house-charter.md": "285202ef6be2ccd9954de51213d1faa23a158813",
     "project/mat/studies/conventional-ground-junction.json": "5d899197848d0f951d8ff4573983aff81d4fd32f",
@@ -1521,7 +1562,7 @@
     "project/str/distributed-floor-compatibility-result.md": "827ccf5db6c09c98d70d9b1b8c1270f4d72dbbe2",
     "project/str/studies/distributed_floor_proof.py": "16ba7594db1280d7fcfad80bf132eacc0c0dfd8a",
     "compiler/reference-house/current-design/inlet-fixed-support-integration.ts": "40c8429e2506cc9cdffee83983eacf42352fb587",
-    "compiler/reference-house/current-design/inlet-fixed-thermal.ts": "a2cbc28b9ef8127d73ad2d6340db6d03965b3f0d",
+    "compiler/reference-house/current-design/inlet-fixed-thermal.ts": "07632911487d9a2a30ef5aa53cbac2609a3e40d8",
     "compiler/reference-house/current-design/inlet-fixed-receiver.ts": "c8cd4c81c3419fdb3b97f79b3c641d5e307256e3",
     "project/had/fixed-inlet-receiver-development.md": "46fb9edd36b6e9424cdf54319a6e4f8982597380",
     "compiler/reference-house/current-design/inlet-fixed-support-view.ts": "40c326dc13dbd11bdc6830754e97f539c1865124",
@@ -1559,9 +1600,9 @@
     "project/had/studies/house-vertical-profile.results.json": "1f259d75c85c52ac5f725b086772223303d18986",
     "project/had/studies/house-vertical-profile.svg": "2e8599cf6f0d7f3fb2c9bd39e2fd33849c555d1e",
     "compiler/reference-house/current-design/house-vertical-profile.ts": "3f3cbb5b711763265ad8c65358ceb15a9acf066c",
-    "compiler/reference-house/current-design/inlet-fixed-shared-service-frame.ts": "dd082ec2f48fc9bfba53bfe8fa37661911322f74",
-    "project/had/fixed-inlet-shared-service-frame-development.md": "2e8d28c3c22f1df24944a7f4c1efd038a0ecbf89",
-    "scripts/compile-current-design.ts": "2cafe67d7e412487dcba2e5885ef20a543244a01",
+    "compiler/reference-house/current-design/inlet-fixed-shared-service-frame.ts": "43a0ff67f3a38aa1f050859c893efbb8f5087f32",
+    "project/had/fixed-inlet-shared-service-frame-development.md": "6b52562f403e1b2c2c8df405c0471408f0952feb",
+    "scripts/compile-current-design.ts": "428152de2ec58a72ede8639409ec3e2d808e5331",
     "project/str/studies/vertical_rc_floor.py": "81d09fcd8ca14a553e16f6ebaca5348c64558ac1",
     "project/str/vertical-rc-floor-gravity-result.md": "0e1e13b47a082c77ebc9d652b54b5b10a36b814d",
     "project/str/studies/vertical-rc-floor-proof.json": "4e7f1f7c771d15b2f1bdb9a5763716536198a7fe",
@@ -1586,6 +1627,12 @@
     "project/str/studies/masonry-frame-a-proof.json": "6614965318bc9ab06380a755fce6c5335061efcf",
     "project/str/studies/masonry-frame-a.svg": "211f1619bb98176afde98ecc0693d258105766c3",
     "project/str/studies/masonry-frame-a-floor.svg": "35e119036bf41dc0b81a70315b34478638b71c23",
-    "project/str/studies/masonry_frame_a_proof.py": "42fedc5eecbe93be936c7c4ebd8a72f703a4b912"
+    "project/str/studies/masonry_frame_a_proof.py": "42fedc5eecbe93be936c7c4ebd8a72f703a4b912",
+    "compiler/reference-house/current-design/inlet-cabinet-copper.ts": "7400c37aa74194699e6fe685ab934599e0452180",
+    "project/had/inlet-cabinet-copper-comparison.md": "c64671f8f841d21e4ae5ae87fa43f7480147aacd",
+    "project/had/studies/inlet-cabinet-copper.ts": "933455bb9aec94932da96d9dcc9dd1cb4890b32d",
+    "project/had/studies/inlet-cabinet-copper.results.json": "2215983867f879b7741a92430319090f1ddba9d3",
+    "project/had/studies/inlet-cabinet-copper.svg": "68a7bcf5c97978fcd87dc221df40ae7523ee0e10",
+    "project/had/inlet-cabinet-copper-wet-matrix.md": "7f1e75afc0ccc694232bb27fa0ac90c800233cbb"
   }
 }

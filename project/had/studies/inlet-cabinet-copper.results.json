@@ -1,0 +1,4135 @@
+{
+  "schema": "had-copper-cabinet-comparison/1",
+  "status": "unselected-whole-arrangement-comparison",
+  "source": {
+    "caseDigest": "0af7ef33ea8997b97a18ef9bc86039b949b71f437ed805b785e738a05e83bae3",
+    "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
+    "bindingDigest": "26889fdcd75b62aa4a7cfadd97921cc6a30387663447c00de7fb1121b59aa645",
+    "inputs": {
+      "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
+      "project/had/studies/current-house-services.json": "e649805e78244527fe6498b516fa5f23734ac5ea",
+      "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
+      "project/had/studies/utility-wide-capture.json": "999fe25948911c6325590186db1e94f884d44ae2",
+      "project/had/studies/utility-dry-bowl-release.json": "7f1e60c8dbbb93a4a50ed7bb7db13e426ef25603",
+      "project/str/studies/floor-portal-interface-review.json": "ad8aac21e936f0199b331c3bd886c8bb41f30ee3",
+      "project/str/studies/reconciled-house-interface.json": "4b680b7012bda54d4aff83da8f8718b3b191ea69",
+      "project/had/studies/south-inlet-relief.json": "f6e424b744bb7e8cac26a8676ea7a358cb137d38",
+      "project/had/studies/south-utility-inlet.json": "1298b8e175326fa1f91ca753da52a168b858758f"
+    },
+    "methods": {
+      "compiler/reference-house/current-design/inlet-cabinet-copper.ts": "7400c37aa74194699e6fe685ab934599e0452180",
+      "compiler/reference-house/current-design/inlet-fixed-thermal.ts": "07632911487d9a2a30ef5aa53cbac2609a3e40d8",
+      "project/had/studies/incoming-water-geometry.mjs": "ed658b7df0edf5d8e6d1826d32730a14b00199c7",
+      "project/had/studies/south-inlet-relief-hydraulics.mjs": "1cb8dd67e832ce2986f042844122a39e625fef93"
+    }
+  },
+  "settings": {
+    "cabinetXMm": 9760,
+    "cabinetWidthMm": 850,
+    "frontYMm": 680,
+    "bottomZMm": 140,
+    "topZMm": 1900,
+    "riserOffsetXMm": 100,
+    "riserYMm": 600,
+    "valveZMm": 1200,
+    "fixedZMm": 1900,
+    "guideZMm": 2100,
+    "temperatureRangeK": 40,
+    "pressureBar": 9,
+    "flowEachLmin": 90,
+    "pipeElasticModulusMpa": 117200,
+    "pipeWallMm": 1.2,
+    "sheetMm": 1.5,
+    "panLipRiseMm": 240
+  },
+  "productFacts": {
+    "checkedOn": "2026-11-20",
+    "pipe": {
+      "toleranceCheckedOn": "2026-11-21",
+      "model": "Lawton TY0283",
+      "description": "28×1.2mm R250 EN1057 plain copper; no22mm substitution",
+      "outerDiameterMm": 28,
+      "nominalWallMm": 1.2,
+      "minimumWallMm": 1.02,
+      "maximumWallMm": 1.38,
+      "minimumOuterDiameterIncludingOvalityMm": 27.9,
+      "maximumOuterDiameterIncludingOvalityMm": 28.1,
+      "densityKgM3": 8960,
+      "expansionMmMK": 0.017,
+      "source": "https://lawtontubes.co.uk/product/copper-tube-plain-straight-length/",
+      "toleranceSource": "https://lawtontubes.com/lt-product/28mm-copper-pipe/",
+      "elasticComparison": "117200MPa C12200/Cu-DHP reference; actual R250 tube certificate not supplied;130000 sensitivity remains authored",
+      "elasticSource": "https://alloys.copper.org/alloy/C12200",
+      "markingAndLubricantConstituentsQualified": false
+    },
+    "coupling": {
+      "model": "Conex301 DZR",
+      "sku": "HH-5020301--",
+      "sizeMm": 28,
+      "lengthMm": 53,
+      "tubeInsertionMm": 26,
+      "spannerMm": 39
+    },
+    "elbow": {
+      "model": "Conex401 DZR",
+      "sku": "HH-5020401--",
+      "sizeMm": 28,
+      "portToVirtualCornerMm": 42,
+      "tubeInsertionMm": 26
+    },
+    "joint": {
+      "method": "metal cone/olive/capnut on EN1057 R250 copper",
+      "torqueNm": [
+        50,
+        60
+      ],
+      "turnsAfterHandTight": 0.75,
+      "additionalWaterSealantRequired": false,
+      "source": "https://conexbanninger.com/en/wp-content/uploads/sites/12/2024/08/Conex-Compression-Tech-Brochure-International-17-02-25-New-Branding-WEB.pdf",
+      "dimensions": "https://conexbanninger.co.uk/wp-content/uploads/2024/02/Conex-Compression-Technical-Brochure.pdf",
+      "actualFactoryLubricantsAndAllConstituentsQualified": false
+    },
+    "valve": {
+      "model": "ConexS701 DZR28",
+      "sku": "HH-5012701--",
+      "axialMm": 99.5,
+      "fullStemReservationMm": 138,
+      "handwheelWidthMm": 56,
+      "pnBar": 10,
+      "maximumTemperatureC": 65,
+      "source": "https://conexbanninger.com/wp-content/uploads/2024/02/Compression-Valve-Tech-brochure-.pdf",
+      "knownPolymerItems": [
+        "PTFE packing",
+        "PTFE sealing gasket",
+        "EPDM seat constituent"
+      ],
+      "knownPolymerItemsPerValve": 3,
+      "ownerExceptionApproved": false,
+      "flowCoefficient": null
+    },
+    "steel": {
+      "densityKgM3": 8000,
+      "comparisonElasticModulusMpa": 200000,
+      "comparisonProofStressMpa": 200,
+      "source": "https://www.thyssenkrupp-materials.co.uk/stainless-steel-316-14401.html/index.html"
+    },
+    "tools": {
+      "acrossFlatsMm": 39,
+      "authoredHandleLengthMm": 400,
+      "authoredHeadDiameterMm": 92,
+      "authoredShaftWidthMm": 40,
+      "authoredSwingDegrees": 25,
+      "wholeToolAndOperatorEnvelopeMeasured": false
+    }
+  },
+  "completeArrangementDisposition": "rejected-at-wet-control-and-receiving-interfaces",
+  "architecture": {
+    "bodyMm": [
+      9760,
+      429.5,
+      140,
+      850,
+      250.5,
+      1760
+    ],
+    "backWetFaceYMm": 429.5,
+    "compartmentDividerXMm": 10182.5,
+    "doors": [
+      {
+        "id": "utility-front-0",
+        "branch": "utility",
+        "bodyMm": [
+          9760,
+          678.5,
+          633.2917,
+          422.5,
+          1.5,
+          633.35415
+        ],
+        "flatSheetKg": 3.211106,
+        "foldsRetainersAndHandlingMassQualified": false,
+        "siblingFrontDisturbed": false
+      },
+      {
+        "id": "utility-front-1",
+        "branch": "utility",
+        "bodyMm": [
+          9760,
+          678.5,
+          1266.6458499999999,
+          422.5,
+          1.5,
+          633.35415
+        ],
+        "flatSheetKg": 3.211106,
+        "foldsRetainersAndHandlingMassQualified": false,
+        "siblingFrontDisturbed": false
+      },
+      {
+        "id": "plant-front-0",
+        "branch": "plant",
+        "bodyMm": [
+          10182.5,
+          678.5,
+          733.2917,
+          427.5,
+          1.5,
+          583.35415
+        ],
+        "flatSheetKg": 2.992607,
+        "foldsRetainersAndHandlingMassQualified": false,
+        "siblingFrontDisturbed": false
+      },
+      {
+        "id": "plant-front-1",
+        "branch": "plant",
+        "bodyMm": [
+          10182.5,
+          678.5,
+          1316.6458499999999,
+          427.5,
+          1.5,
+          583.35415
+        ],
+        "flatSheetKg": 2.992607,
+        "foldsRetainersAndHandlingMassQualified": false,
+        "siblingFrontDisturbed": false
+      }
+    ],
+    "sourceHost": {
+      "nominal": [
+        9700,
+        750,
+        1000,
+        2100
+      ],
+      "conditional": [
+        9400,
+        750,
+        1000,
+        2100
+      ],
+      "nominalBoundingWindowObscuredMm2": 977500,
+      "conditionalBoundingWindowObscuredMm2": 736000,
+      "archedWindowAndDaylightPerformanceAccepted": false
+    },
+    "roomControls": {
+      "washerAfter5Mm": 115,
+      "inverterAfter5Mm": 195,
+      "energisedPvFieldAfter10Mm": 10,
+      "bowlTransportAfter5Mm": 359
+    },
+    "noSlidingUpperPackingProposal": true,
+    "no850ArmThroughBackShell": true,
+    "noSourcePressToolOrViegaValveEnvelopeReused": true
+  },
+  "pressureSupports": [
+    {
+      "id": "utility",
+      "postBodyMm": [
+        9950,
+        480,
+        12,
+        60,
+        80,
+        2118
+      ],
+      "baseBodyMm": [
+        9890,
+        445,
+        0,
+        180,
+        150,
+        12
+      ],
+      "armsMm": [
+        [
+          9960,
+          560,
+          1870,
+          40,
+          40,
+          60
+        ],
+        [
+          9960,
+          560,
+          2070,
+          40,
+          40,
+          60
+        ]
+      ],
+      "anchorAxisMm": [
+        [
+          9915,
+          470,
+          0
+        ],
+        [
+          9915,
+          570,
+          0
+        ],
+        [
+          10045,
+          470,
+          0
+        ],
+        [
+          10045,
+          570,
+          0
+        ]
+      ],
+      "receivingDemand": {
+        "footprintMm": [
+          9890,
+          445,
+          180,
+          150
+        ],
+        "seatZMm": 0,
+        "forceComponentBoundsN": [
+          513.042059,
+          506.037305,
+          926.791898
+        ],
+        "momentComponentBoundsNmm": [
+          1035178.495316,
+          973394.395418,
+          41581.97783
+        ],
+        "fourEqualStiffnessFastenerTensionUpperEachN": 9151.415049,
+        "fourEqualStiffnessFastenerShearUpperEachN": 306.918635,
+        "boltAndFloorResistanceInvented": false,
+        "section": "Authored4hole13mm/M12reservation at130×100mm pitch on180×150×12plate; no qualified anchor product or substrate. Elastic equilibrium demand only; no favorable gravity or interface friction. Plate bending, prying, substrate, group interaction and moisture closure remain required.",
+        "holeEdgeAfter5Mm": 13.5,
+        "socket30ToPostAfter5Mm": 16.400549
+      },
+      "steelKg": 20.955904,
+      "baseToFinishedBackAfter5Mm": 10.5,
+      "receiverForceBoundsN": [
+        513.042059,
+        506.037305,
+        926.791898
+      ],
+      "receiverMomentBoundsNmm": [
+        1035178.495316,
+        973394.395418,
+        41581.97783
+      ],
+      "grossSectionNormalStressMpa": 93.774102,
+      "grossSectionComparisonLimitMpa": 133.33333333333334,
+      "actualClampGripLocalJointBaseAnchorFloorAndCombinedTorsionQualified": false,
+      "law": "Independent source thermal wrench, sliding-guide force, adverse pA per horizontal axis and full route gravity charged to an explicit post running from its12mm baseplate at the proposed floor seat; straight gross-section normal stress only. Not a complete 3D frame, contact, local buckling, torsion or base resistance proof."
+    },
+    {
+      "id": "plant",
+      "postBodyMm": [
+        10355,
+        480,
+        12,
+        60,
+        80,
+        2118
+      ],
+      "baseBodyMm": [
+        10295,
+        445,
+        0,
+        180,
+        150,
+        12
+      ],
+      "armsMm": [
+        [
+          10365,
+          560,
+          1870,
+          40,
+          40,
+          60
+        ],
+        [
+          10365,
+          560,
+          2070,
+          40,
+          40,
+          60
+        ]
+      ],
+      "anchorAxisMm": [
+        [
+          10320,
+          470,
+          0
+        ],
+        [
+          10320,
+          570,
+          0
+        ],
+        [
+          10450,
+          470,
+          0
+        ],
+        [
+          10450,
+          570,
+          0
+        ]
+      ],
+      "receivingDemand": {
+        "footprintMm": [
+          10295,
+          445,
+          180,
+          150
+        ],
+        "seatZMm": 0,
+        "forceComponentBoundsN": [
+          483.535612,
+          497.919204,
+          963.112046
+        ],
+        "momentComponentBoundsNmm": [
+          1021778.834846,
+          913694.425979,
+          39835.937805
+        ],
+        "fourEqualStiffnessFastenerTensionUpperEachN": 8863.881516,
+        "fourEqualStiffnessFastenerShearUpperEachN": 294.95897,
+        "boltAndFloorResistanceInvented": false,
+        "section": "Authored4hole13mm/M12reservation at130×100mm pitch on180×150×12plate; no qualified anchor product or substrate. Elastic equilibrium demand only; no favorable gravity or interface friction. Plate bending, prying, substrate, group interaction and moisture closure remain required.",
+        "holeEdgeAfter5Mm": 13.5,
+        "socket30ToPostAfter5Mm": 16.400549
+      },
+      "steelKg": 20.955904,
+      "baseToFinishedBackAfter5Mm": 10.5,
+      "receiverForceBoundsN": [
+        483.535612,
+        497.919204,
+        963.112046
+      ],
+      "receiverMomentBoundsNmm": [
+        1021778.834846,
+        913694.425979,
+        39835.937805
+      ],
+      "grossSectionNormalStressMpa": 90.236608,
+      "grossSectionComparisonLimitMpa": 133.33333333333334,
+      "actualClampGripLocalJointBaseAnchorFloorAndCombinedTorsionQualified": false,
+      "law": "Independent source thermal wrench, sliding-guide force, adverse pA per horizontal axis and full route gravity charged to an explicit post running from its12mm baseplate at the proposed floor seat; straight gross-section normal stress only. Not a complete 3D frame, contact, local buckling, torsion or base resistance proof."
+    }
+  ],
+  "wetDuty": {
+    "schema": "had-cabinet-whole-wet-matrix/1",
+    "method": "Existing half-round critical/normal energy, reverse sleeve and receiver-weir kernels replayed on this cabinet and proposed individually graded permanent pans. No inherited enclosure pass.",
+    "sourceEnvelope": {
+      "pressureCeilingBar": 9,
+      "benchmarkFlowEachLmin": 90,
+      "benchmarkIsVerifiedMaximum": false,
+      "adverseTubeBoreMm": 26.06,
+      "boreBasis": "Manufacturer28.1mm outside-envelope/minimum1.02mm wall; independent adverse bound, not an assertion that incompatible tolerance extrema coincide.",
+      "sourceOnlyIdealFullBoreFlowLmin": 1357.769995,
+      "sourceOnlyIdealReflectedJetN": 1920.176741,
+      "benchmarkReflectedJetN": 127.279221,
+      "factoredBenchmarkJetN": 190.918831,
+      "factoredIdealFullBoreJetN": 2880.265112,
+      "actualSupplyPressureFlowCurveRequired": true,
+      "passiveRestrictionCredited": false,
+      "normalDutyAt50LminPlusSimultaneousDemandQualified": false
+    },
+    "compartments": [
+      {
+        "id": "utility",
+        "pan": {
+          "leftXMm": 9760,
+          "rightXMm": 10182.5,
+          "backYMm": 429.5,
+          "frontYMm": 680,
+          "reliefAxisMm": [
+            10080,
+            429.5,
+            233.29166666666666
+          ],
+          "outletInvertZMm": 183.291667,
+          "crestZMm": 603.2917,
+          "floorFallToOutlet": 0.04,
+          "maximumFloorRiseMm": 22.82,
+          "meanFloorRiseMm": 10.354675,
+          "recommendedLinerMm": 3,
+          "actualLoftAndEntryDetailQualified": false
+        },
+        "maximumBelowLipWaterKg": 43.355329,
+        "maximumWaterCentroidMm": [
+          9972.272544,
+          554.239394,
+          398.441528
+        ],
+        "lowerRelief": {
+          "waterZMm": 322.543769,
+          "toPanLipAfterSplashSettingMm": 250.747931,
+          "toVentAfterSettingMm": 289.456231,
+          "insideDeclaredVentedHead": true
+        },
+        "primaryReverseSleeve": {
+          "waterZMm": 507.1125,
+          "toPanLipAfterSplashSettingMm": 66.1792,
+          "toVentAfterSettingMm": 104.8875,
+          "insideDeclaredVentedHead": true
+        },
+        "receiver": {
+          "actual": {
+            "x": [
+              9980,
+              10160
+            ],
+            "terminalY": -650,
+            "terminalInvertZ": 93.3333,
+            "receiverY": [
+              -1300,
+              -650
+            ],
+            "clearWidthMM": 180,
+            "adverseBottomOpenWidthMM": 90,
+            "overflowCrestZ": -35,
+            "raisedCrestSensitivityMM": 32,
+            "overflowHeadMM": 50.3207,
+            "ratedReceiverWaterZ": 47.3207,
+            "maximumReceiverWaterZ": 68.3333,
+            "freeDropReserveAfterSettingsMM": 11.0126
+          },
+          "openStageZMm": 47.320738,
+          "freeDropAfter25AndSettingMm": 11.012562,
+          "independentFromRoofD2AndSiblingRequired": true,
+          "completePrimaryAndSecondaryReceivingPathsQualified": false
+        },
+        "stockAndAction": {
+          "threeMmPanGrossStockKg": 16.107751,
+          "panFrontHydrostaticForceUpperN": 365.564803,
+          "panFrontMomentAboutInvertUpperNmm": 51179.076485,
+          "oneWayFullMaxPressureSheetStressMpa": 61.290126,
+          "oneWayFullMaxPressureDeflectionMm": 3.798844,
+          "sheetComparisonLimitMpa": 133.33333333333334,
+          "actualPlateAndEdgeWeldQualification": false
+        },
+        "jointFaults": [
+          {
+            "id": "outer-source-coupler",
+            "pointMm": [
+              10080,
+              -300,
+              463.8
+            ],
+            "scope": "Outside new cabinet; separate source exterior capture remains required",
+            "insideCabinet": false,
+            "boundingFaceImpacts": [],
+            "containmentEarned": false
+          },
+          {
+            "id": "lower-wall-elbow-wall-port",
+            "pointMm": [
+              10080,
+              558,
+              481.79999999999995
+            ],
+            "scope": "Catalogue pressure port",
+            "insideCabinet": true,
+            "boundingFaceImpacts": [
+              {
+                "face": "left",
+                "axis": 0,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 320,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "right",
+                "axis": 0,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 102.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "back",
+                "axis": 1,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 128.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "front",
+                "axis": 1,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 122,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "bottom",
+                "axis": 2,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 298.508333,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "top",
+                "axis": 2,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 1418.2,
+                "actualOpeningSeamAndRicochetQualified": false
+              }
+            ],
+            "containmentEarned": false
+          },
+          {
+            "id": "lower-wall-elbow-offset-port",
+            "pointMm": [
+              10038,
+              600,
+              481.79999999999995
+            ],
+            "scope": "Catalogue pressure port",
+            "insideCabinet": true,
+            "boundingFaceImpacts": [
+              {
+                "face": "left",
+                "axis": 0,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 278,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "right",
+                "axis": 0,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 144.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "back",
+                "axis": 1,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 170.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "front",
+                "axis": 1,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 80,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "bottom",
+                "axis": 2,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 298.508333,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "top",
+                "axis": 2,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 1418.2,
+                "actualOpeningSeamAndRicochetQualified": false
+              }
+            ],
+            "containmentEarned": false
+          },
+          {
+            "id": "lower-riser-elbow-offset-port",
+            "pointMm": [
+              10022,
+              600,
+              481.79999999999995
+            ],
+            "scope": "Catalogue pressure port",
+            "insideCabinet": true,
+            "boundingFaceImpacts": [
+              {
+                "face": "left",
+                "axis": 0,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 262,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "right",
+                "axis": 0,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 160.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "back",
+                "axis": 1,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 170.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "front",
+                "axis": 1,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 80,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "bottom",
+                "axis": 2,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 298.508333,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "top",
+                "axis": 2,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 1418.2,
+                "actualOpeningSeamAndRicochetQualified": false
+              }
+            ],
+            "containmentEarned": false
+          },
+          {
+            "id": "lower-riser-elbow-up-port",
+            "pointMm": [
+              9980,
+              600,
+              523.8
+            ],
+            "scope": "Catalogue pressure port",
+            "insideCabinet": true,
+            "boundingFaceImpacts": [
+              {
+                "face": "left",
+                "axis": 0,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 220,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "right",
+                "axis": 0,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 202.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "back",
+                "axis": 1,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 170.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "front",
+                "axis": 1,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 80,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "bottom",
+                "axis": 2,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 340.508333,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "top",
+                "axis": 2,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 1376.2,
+                "actualOpeningSeamAndRicochetQualified": false
+              }
+            ],
+            "containmentEarned": false
+          },
+          {
+            "id": "entry-valve-bottom",
+            "pointMm": [
+              9980,
+              600,
+              1150.25
+            ],
+            "scope": "Known valve pressure joint",
+            "insideCabinet": true,
+            "boundingFaceImpacts": [
+              {
+                "face": "left",
+                "axis": 0,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 220,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "right",
+                "axis": 0,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 202.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "back",
+                "axis": 1,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 170.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "front",
+                "axis": 1,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 80,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "bottom",
+                "axis": 2,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 966.958333,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "top",
+                "axis": 2,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 749.75,
+                "actualOpeningSeamAndRicochetQualified": false
+              }
+            ],
+            "containmentEarned": false
+          },
+          {
+            "id": "entry-valve-top",
+            "pointMm": [
+              9980,
+              600,
+              1249.75
+            ],
+            "scope": "Known valve pressure joint",
+            "insideCabinet": true,
+            "boundingFaceImpacts": [
+              {
+                "face": "left",
+                "axis": 0,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 220,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "right",
+                "axis": 0,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 202.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "back",
+                "axis": 1,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 170.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "front",
+                "axis": 1,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 80,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "bottom",
+                "axis": 2,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 1066.458333,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "top",
+                "axis": 2,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 650.25,
+                "actualOpeningSeamAndRicochetQualified": false
+              }
+            ],
+            "containmentEarned": false
+          },
+          {
+            "id": "entry-valve-packing",
+            "pointMm": null,
+            "scope": "Actual stem packing leak point is not established by the symmetric138mm reservation",
+            "insideCabinet": false,
+            "boundingFaceImpacts": [],
+            "containmentEarned": false
+          },
+          {
+            "id": "upper-source-coupler",
+            "pointMm": null,
+            "scope": "Actual upper bought-part/joint schedule is incomplete; do not invent a contained location",
+            "insideCabinet": false,
+            "boundingFaceImpacts": [],
+            "containmentEarned": false
+          }
+        ],
+        "impact": {
+          "benchmarkFirstStripStressMpa": 2063.525353,
+          "pressureWidthMm": 26.060000000000002,
+          "unsupportedFrontWidthMm": 422.5,
+          "upperSheetMm": 1.5,
+          "comparisonLimitMpa": 133.33333333333334,
+          "status": "rejects-unribbed-front-strip",
+          "completePlateRibsFastenersAndRicochetQualified": false
+        },
+        "renewal": {
+          "inwardTravelMm": 739.5,
+          "inwardToPermanentPanFrontAfter5Mm": -153.6817,
+          "outwardTravelMm": 684,
+          "outwardParkYmm": [
+            -984,
+            -100
+          ],
+          "outwardTubeBoreAfter5Mm": 24.27,
+          "outerTubeToReceiverWaterAfter5Mm": 397.479262,
+          "representedRouteWaterLitres": 3.334486,
+          "unknownHouseAndUpstreamInventoryNotZero": true,
+          "upperSpoolCutOrExactUnionSequenceRequired": true
+        },
+        "cases": [
+          {
+            "id": "ordinary-closed-no-leak",
+            "sourceFed": false,
+            "flowLmin": 0,
+            "status": "no-water-event",
+            "remaining": "Closed-front ordinary valve actuation is not dimensioned; panel access cannot be represented as closed-boundary operation."
+          },
+          {
+            "id": "source-fed-inner-joint-primary-mouth-blocked",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "conditional-channel-only",
+            "stage": {
+              "waterZMm": 322.543769,
+              "toPanLipAfterSplashSettingMm": 250.747931,
+              "toVentAfterSettingMm": 289.456231,
+              "insideDeclaredVentedHead": true
+            },
+            "remaining": "New pan entry, static closures, impact/seams and actual tailwater need this assembly proof."
+          },
+          {
+            "id": "source-fed-inner-joint-lower-relief-blocked",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "conditional-primary-head-only",
+            "stage": {
+              "waterZMm": 507.1125,
+              "toPanLipAfterSplashSettingMm": 66.1792,
+              "toVentAfterSettingMm": 104.8875,
+              "insideDeclaredVentedHead": true
+            },
+            "remaining": "Upper outlet is a reverse sleeve path; full air, exterior primary receiver and independence remain unqualified."
+          },
+          {
+            "id": "source-fed-wall-rupture-outer-mouth-blocked",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "conditional-series-path-only",
+            "stage": {
+              "waterZMm": 322.543769,
+              "toPanLipAfterSplashSettingMm": 250.747931,
+              "toVentAfterSettingMm": 289.456231,
+              "insideDeclaredVentedHead": true
+            },
+            "remaining": "Replay uses actual new carrier and source bores, never an inherited hood pass."
+          },
+          {
+            "id": "primary-blocked-secondary-high",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "rejected-unproved-tailwater",
+            "imposedTailwaterZMm": 78.3333,
+            "remaining": "Free-drop reserve exhausted; no submerged discharge or favorable pressure credit."
+          },
+          {
+            "id": "primary-blocked-secondary-submerged",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "rejected-submerged-path",
+            "imposedTailwaterZMm": 603.2917,
+            "remaining": "No vented gravity capacity follows. This supply/plot condition is outside the admissible reference envelope."
+          },
+          {
+            "id": "source-only-full-bore-upper-sensitivity",
+            "sourceFed": true,
+            "flowLmin": 1357.769995,
+            "status": "rejected-existing-channel-capacity",
+            "lowerChannelSolution": null,
+            "receiverStageZMm": 304.234136,
+            "receiverFreeDropAfter25AndSettingMm": -245.900836,
+            "remaining": "Ideal source-only upper bound is not a predicted sustained mains flow. It proves90L/min cannot be inferred from pressure rating or normal demand."
+          },
+          {
+            "id": "both-passive-outlets-blocked",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "rejected-unattended-event",
+            "emptyToLipUpperSeconds": 28.903552,
+            "remaining": "Finite volume is time to spill, never a passive pass or manual-response allowance."
+          },
+          {
+            "id": "high-vent-blocked",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "rejected-no-atmospheric-model",
+            "remaining": "No pressure-vessel claim for this cabinet."
+          },
+          {
+            "id": "source-fed-open-front",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "rejected-dry-room-boundary",
+            "remaining": "Isolate at the independent Lodge before opening a known wet compartment."
+          },
+          {
+            "id": "own-branch-isolated-cold-service-sibling-live",
+            "sourceFed": false,
+            "flowLmin": 0,
+            "status": "conditional-separate-fronts-only",
+            "remaining": "Each compartment has two independent panels above its own permanent pan; sibling stays closed. Seams, actual operator/tool/rest and electrical exclusion remain required."
+          },
+          {
+            "id": "both-isolated-inward-wall-spool-renewal",
+            "sourceFed": false,
+            "flowLmin": 0,
+            "status": "rejected-permanent-pan-front",
+            "after5Mm": -153.6817,
+            "remaining": "Raised permanent pan cannot be removed as if it were a harmless cover."
+          },
+          {
+            "id": "both-isolated-outward-wall-spool-renewal",
+            "sourceFed": false,
+            "flowLmin": 0,
+            "status": "conditional-tube-body-only",
+            "remaining": "Open own exterior shield, independently retain feed and prove full tool/crew/rest/screen sweep at the actual plot."
+          }
+        ]
+      },
+      {
+        "id": "plant",
+        "pan": {
+          "leftXMm": 10182.5,
+          "rightXMm": 10610,
+          "backYMm": 429.5,
+          "frontYMm": 680,
+          "reliefAxisMm": [
+            10285,
+            429.5,
+            333.2916666666667
+          ],
+          "outletInvertZMm": 283.291667,
+          "crestZMm": 703.2917,
+          "floorFallToOutlet": 0.04,
+          "maximumFloorRiseMm": 23.02,
+          "meanFloorRiseMm": 10.443041,
+          "recommendedLinerMm": 3,
+          "actualLoftAndEntryDetailQualified": false
+        },
+        "maximumBelowLipWaterKg": 43.858946,
+        "maximumWaterCentroidMm": [
+          10395.193615,
+          554.239284,
+          498.485102
+        ],
+        "lowerRelief": {
+          "waterZMm": 422.543769,
+          "toPanLipAfterSplashSettingMm": 250.747931,
+          "toVentAfterSettingMm": 242.456231,
+          "insideDeclaredVentedHead": true
+        },
+        "primaryReverseSleeve": {
+          "waterZMm": 627.1125,
+          "toPanLipAfterSplashSettingMm": 46.1792,
+          "toVentAfterSettingMm": 37.8875,
+          "insideDeclaredVentedHead": true
+        },
+        "receiver": {
+          "actual": {
+            "x": [
+              10200,
+              10380
+            ],
+            "terminalY": -650,
+            "terminalInvertZ": 193.3333,
+            "receiverY": [
+              -1300,
+              -650
+            ],
+            "clearWidthMM": 180,
+            "adverseBottomOpenWidthMM": 90,
+            "overflowCrestZ": 65,
+            "raisedCrestSensitivityMM": 32,
+            "overflowHeadMM": 50.3207,
+            "ratedReceiverWaterZ": 147.3207,
+            "maximumReceiverWaterZ": 168.3333,
+            "freeDropReserveAfterSettingsMM": 11.0126
+          },
+          "openStageZMm": 147.320738,
+          "freeDropAfter25AndSettingMm": 11.012562,
+          "independentFromRoofD2AndSiblingRequired": true,
+          "completePrimaryAndSecondaryReceivingPathsQualified": false
+        },
+        "stockAndAction": {
+          "threeMmPanGrossStockKg": 16.238611,
+          "panFrontHydrostaticForceUpperN": 369.891014,
+          "panFrontMomentAboutInvertUpperNmm": 51784.74603,
+          "oneWayFullMaxPressureSheetStressMpa": 62.749363,
+          "oneWayFullMaxPressureDeflectionMm": 3.981888,
+          "sheetComparisonLimitMpa": 133.33333333333334,
+          "actualPlateAndEdgeWeldQualification": false
+        },
+        "jointFaults": [
+          {
+            "id": "outer-source-coupler",
+            "pointMm": [
+              10285,
+              -300,
+              583.8
+            ],
+            "scope": "Outside new cabinet; separate source exterior capture remains required",
+            "insideCabinet": false,
+            "boundingFaceImpacts": [],
+            "containmentEarned": false
+          },
+          {
+            "id": "lower-wall-elbow-wall-port",
+            "pointMm": [
+              10285,
+              558,
+              601.8
+            ],
+            "scope": "Catalogue pressure port",
+            "insideCabinet": true,
+            "boundingFaceImpacts": [
+              {
+                "face": "left",
+                "axis": 0,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 102.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "right",
+                "axis": 0,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 325,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "back",
+                "axis": 1,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 128.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "front",
+                "axis": 1,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 122,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "bottom",
+                "axis": 2,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 318.508333,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "top",
+                "axis": 2,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 1298.2,
+                "actualOpeningSeamAndRicochetQualified": false
+              }
+            ],
+            "containmentEarned": false
+          },
+          {
+            "id": "lower-wall-elbow-offset-port",
+            "pointMm": [
+              10327,
+              600,
+              601.8
+            ],
+            "scope": "Catalogue pressure port",
+            "insideCabinet": true,
+            "boundingFaceImpacts": [
+              {
+                "face": "left",
+                "axis": 0,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 144.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "right",
+                "axis": 0,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 283,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "back",
+                "axis": 1,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 170.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "front",
+                "axis": 1,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 80,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "bottom",
+                "axis": 2,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 318.508333,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "top",
+                "axis": 2,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 1298.2,
+                "actualOpeningSeamAndRicochetQualified": false
+              }
+            ],
+            "containmentEarned": false
+          },
+          {
+            "id": "lower-riser-elbow-offset-port",
+            "pointMm": [
+              10343,
+              600,
+              601.8
+            ],
+            "scope": "Catalogue pressure port",
+            "insideCabinet": true,
+            "boundingFaceImpacts": [
+              {
+                "face": "left",
+                "axis": 0,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 160.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "right",
+                "axis": 0,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 267,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "back",
+                "axis": 1,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 170.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "front",
+                "axis": 1,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 80,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "bottom",
+                "axis": 2,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 318.508333,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "top",
+                "axis": 2,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 1298.2,
+                "actualOpeningSeamAndRicochetQualified": false
+              }
+            ],
+            "containmentEarned": false
+          },
+          {
+            "id": "lower-riser-elbow-up-port",
+            "pointMm": [
+              10385,
+              600,
+              643.8
+            ],
+            "scope": "Catalogue pressure port",
+            "insideCabinet": true,
+            "boundingFaceImpacts": [
+              {
+                "face": "left",
+                "axis": 0,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 202.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "right",
+                "axis": 0,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 225,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "back",
+                "axis": 1,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 170.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "front",
+                "axis": 1,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 80,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "bottom",
+                "axis": 2,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 360.508333,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "top",
+                "axis": 2,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 1256.2,
+                "actualOpeningSeamAndRicochetQualified": false
+              }
+            ],
+            "containmentEarned": false
+          },
+          {
+            "id": "entry-valve-bottom",
+            "pointMm": [
+              10385,
+              600,
+              1150.25
+            ],
+            "scope": "Known valve pressure joint",
+            "insideCabinet": true,
+            "boundingFaceImpacts": [
+              {
+                "face": "left",
+                "axis": 0,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 202.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "right",
+                "axis": 0,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 225,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "back",
+                "axis": 1,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 170.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "front",
+                "axis": 1,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 80,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "bottom",
+                "axis": 2,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 866.958333,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "top",
+                "axis": 2,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 749.75,
+                "actualOpeningSeamAndRicochetQualified": false
+              }
+            ],
+            "containmentEarned": false
+          },
+          {
+            "id": "entry-valve-top",
+            "pointMm": [
+              10385,
+              600,
+              1249.75
+            ],
+            "scope": "Known valve pressure joint",
+            "insideCabinet": true,
+            "boundingFaceImpacts": [
+              {
+                "face": "left",
+                "axis": 0,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 202.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "right",
+                "axis": 0,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 225,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "back",
+                "axis": 1,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 170.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "front",
+                "axis": 1,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 80,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "bottom",
+                "axis": 2,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 966.458333,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "top",
+                "axis": 2,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 650.25,
+                "actualOpeningSeamAndRicochetQualified": false
+              }
+            ],
+            "containmentEarned": false
+          },
+          {
+            "id": "entry-valve-packing",
+            "pointMm": null,
+            "scope": "Actual stem packing leak point is not established by the symmetric138mm reservation",
+            "insideCabinet": false,
+            "boundingFaceImpacts": [],
+            "containmentEarned": false
+          },
+          {
+            "id": "upper-source-coupler",
+            "pointMm": null,
+            "scope": "Actual upper bought-part/joint schedule is incomplete; do not invent a contained location",
+            "insideCabinet": false,
+            "boundingFaceImpacts": [],
+            "containmentEarned": false
+          }
+        ],
+        "impact": {
+          "benchmarkFirstStripStressMpa": 2087.945772,
+          "pressureWidthMm": 26.060000000000002,
+          "unsupportedFrontWidthMm": 427.5,
+          "upperSheetMm": 1.5,
+          "comparisonLimitMpa": 133.33333333333334,
+          "status": "rejects-unribbed-front-strip",
+          "completePlateRibsFastenersAndRicochetQualified": false
+        },
+        "renewal": {
+          "inwardTravelMm": 739.5,
+          "inwardToPermanentPanFrontAfter5Mm": -133.6817,
+          "outwardTravelMm": 684,
+          "outwardParkYmm": [
+            -984,
+            -100
+          ],
+          "outwardTubeBoreAfter5Mm": 24.27,
+          "outerTubeToReceiverWaterAfter5Mm": 417.479262,
+          "representedRouteWaterLitres": 4.712604,
+          "unknownHouseAndUpstreamInventoryNotZero": true,
+          "upperSpoolCutOrExactUnionSequenceRequired": true
+        },
+        "cases": [
+          {
+            "id": "ordinary-closed-no-leak",
+            "sourceFed": false,
+            "flowLmin": 0,
+            "status": "no-water-event",
+            "remaining": "Closed-front ordinary valve actuation is not dimensioned; panel access cannot be represented as closed-boundary operation."
+          },
+          {
+            "id": "source-fed-inner-joint-primary-mouth-blocked",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "conditional-channel-only",
+            "stage": {
+              "waterZMm": 422.543769,
+              "toPanLipAfterSplashSettingMm": 250.747931,
+              "toVentAfterSettingMm": 242.456231,
+              "insideDeclaredVentedHead": true
+            },
+            "remaining": "New pan entry, static closures, impact/seams and actual tailwater need this assembly proof."
+          },
+          {
+            "id": "source-fed-inner-joint-lower-relief-blocked",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "conditional-primary-head-only",
+            "stage": {
+              "waterZMm": 627.1125,
+              "toPanLipAfterSplashSettingMm": 46.1792,
+              "toVentAfterSettingMm": 37.8875,
+              "insideDeclaredVentedHead": true
+            },
+            "remaining": "Upper outlet is a reverse sleeve path; full air, exterior primary receiver and independence remain unqualified."
+          },
+          {
+            "id": "source-fed-wall-rupture-outer-mouth-blocked",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "conditional-series-path-only",
+            "stage": {
+              "waterZMm": 422.543769,
+              "toPanLipAfterSplashSettingMm": 250.747931,
+              "toVentAfterSettingMm": 242.456231,
+              "insideDeclaredVentedHead": true
+            },
+            "remaining": "Replay uses actual new carrier and source bores, never an inherited hood pass."
+          },
+          {
+            "id": "primary-blocked-secondary-high",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "rejected-unproved-tailwater",
+            "imposedTailwaterZMm": 178.3333,
+            "remaining": "Free-drop reserve exhausted; no submerged discharge or favorable pressure credit."
+          },
+          {
+            "id": "primary-blocked-secondary-submerged",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "rejected-submerged-path",
+            "imposedTailwaterZMm": 703.2917,
+            "remaining": "No vented gravity capacity follows. This supply/plot condition is outside the admissible reference envelope."
+          },
+          {
+            "id": "source-only-full-bore-upper-sensitivity",
+            "sourceFed": true,
+            "flowLmin": 1357.769995,
+            "status": "rejected-existing-channel-capacity",
+            "lowerChannelSolution": null,
+            "receiverStageZMm": 404.234136,
+            "receiverFreeDropAfter25AndSettingMm": -245.900836,
+            "remaining": "Ideal source-only upper bound is not a predicted sustained mains flow. It proves90L/min cannot be inferred from pressure rating or normal demand."
+          },
+          {
+            "id": "both-passive-outlets-blocked",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "rejected-unattended-event",
+            "emptyToLipUpperSeconds": 29.239298,
+            "remaining": "Finite volume is time to spill, never a passive pass or manual-response allowance."
+          },
+          {
+            "id": "high-vent-blocked",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "rejected-no-atmospheric-model",
+            "remaining": "No pressure-vessel claim for this cabinet."
+          },
+          {
+            "id": "source-fed-open-front",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "rejected-dry-room-boundary",
+            "remaining": "Isolate at the independent Lodge before opening a known wet compartment."
+          },
+          {
+            "id": "own-branch-isolated-cold-service-sibling-live",
+            "sourceFed": false,
+            "flowLmin": 0,
+            "status": "conditional-separate-fronts-only",
+            "remaining": "Each compartment has two independent panels above its own permanent pan; sibling stays closed. Seams, actual operator/tool/rest and electrical exclusion remain required."
+          },
+          {
+            "id": "both-isolated-inward-wall-spool-renewal",
+            "sourceFed": false,
+            "flowLmin": 0,
+            "status": "rejected-permanent-pan-front",
+            "after5Mm": -133.6817,
+            "remaining": "Raised permanent pan cannot be removed as if it were a harmless cover."
+          },
+          {
+            "id": "both-isolated-outward-wall-spool-renewal",
+            "sourceFed": false,
+            "flowLmin": 0,
+            "status": "conditional-tube-body-only",
+            "remaining": "Open own exterior shield, independently retain feed and prove full tool/crew/rest/screen sweep at the actual plot."
+          }
+        ]
+      }
+    ],
+    "knownPressureBoundaryInventory": [
+      {
+        "id": "utility",
+        "lowerElbowPressurePorts": 4,
+        "valveEndJoints": 2,
+        "valvePackingBoundary": 1,
+        "plainCouplerPressurePorts": 4,
+        "upperBoughtPartScheduleComplete": false,
+        "allKnownSourceFedJointDirectionsRequired": [
+          "normal-to-front",
+          "back/sleeve",
+          "both-sides",
+          "up-to-roof",
+          "down-to-pan"
+        ],
+        "missingAnyJointPreventsCompleteContainmentClaim": true
+      },
+      {
+        "id": "plant",
+        "lowerElbowPressurePorts": 4,
+        "valveEndJoints": 2,
+        "valvePackingBoundary": 1,
+        "plainCouplerPressurePorts": 4,
+        "upperBoughtPartScheduleComplete": false,
+        "allKnownSourceFedJointDirectionsRequired": [
+          "normal-to-front",
+          "back/sleeve",
+          "both-sides",
+          "up-to-roof",
+          "down-to-pan"
+        ],
+        "missingAnyJointPreventsCompleteContainmentClaim": true
+      }
+    ],
+    "pairCases": [
+      {
+        "id": "utility-source-fed",
+        "active": [
+          "utility"
+        ],
+        "representedFlowLmin": 90,
+        "benchmark90FlowBound": {
+          "originMm": [
+            10185,
+            554.75,
+            0
+          ],
+          "jetNormSumFactoredN": 190.918831,
+          "waterGravityN": 425.315777,
+          "partialWaterAbsoluteMomentBoundsNmm": [
+            53270.801131,
+            180759.205433
+          ],
+          "horizontalComponentBoxN": [
+            190.918831,
+            190.918831
+          ],
+          "momentComponentBoxNmm": [
+            416016.579879,
+            543504.984182,
+            84590.737691
+          ],
+          "fourFootUpliftUpperEachBeforePryingN": 1990.063595,
+          "fourFootCompressionUpperEachBeforePryingN": 2402.562683,
+          "law": "Component boxes contain each jet norm and every asymmetric0..full pan fill using absolute geometric lever bounds; maxima need not coincide. Four-foot elastic equilibrium demand only, no favorable gravity/friction in uplift. Actual frame, plate, anchors and substrate must earn resistance."
+        },
+        "sourceOnlyFullBoreSensitivity": {
+          "originMm": [
+            10185,
+            554.75,
+            0
+          ],
+          "jetNormSumFactoredN": 2880.265112,
+          "waterGravityN": 425.315777,
+          "partialWaterAbsoluteMomentBoundsNmm": [
+            53270.801131,
+            180759.205433
+          ],
+          "horizontalComponentBoxN": [
+            2880.265112,
+            2880.265112
+          ],
+          "momentComponentBoxNmm": [
+            5525774.514051,
+            5653262.918353,
+            1276164.06093
+          ],
+          "fourFootUpliftUpperEachBeforePryingN": 25515.502626,
+          "fourFootCompressionUpperEachBeforePryingN": 25928.001715,
+          "law": "Component boxes contain each jet norm and every asymmetric0..full pan fill using absolute geometric lever bounds; maxima need not coincide. Four-foot elastic equilibrium demand only, no favorable gravity/friction in uplift. Actual frame, plate, anchors and substrate must earn resistance."
+        },
+        "independentDestinationsAndFloorResistanceQualified": false
+      },
+      {
+        "id": "plant-source-fed",
+        "active": [
+          "plant"
+        ],
+        "representedFlowLmin": 90,
+        "benchmark90FlowBound": {
+          "originMm": [
+            10185,
+            554.75,
+            0
+          ],
+          "jetNormSumFactoredN": 190.918831,
+          "waterGravityN": 430.25626,
+          "partialWaterAbsoluteMomentBoundsNmm": [
+            53889.596598,
+            182858.910611
+          ],
+          "horizontalComponentBoxN": [
+            190.918831,
+            190.918831
+          ],
+          "momentComponentBoxNmm": [
+            416635.375346,
+            545604.689359,
+            84590.737691
+          ],
+          "fourFootUpliftUpperEachBeforePryingN": 1993.780424,
+          "fourFootCompressionUpperEachBeforePryingN": 2407.514633,
+          "law": "Component boxes contain each jet norm and every asymmetric0..full pan fill using absolute geometric lever bounds; maxima need not coincide. Four-foot elastic equilibrium demand only, no favorable gravity/friction in uplift. Actual frame, plate, anchors and substrate must earn resistance."
+        },
+        "sourceOnlyFullBoreSensitivity": {
+          "originMm": [
+            10185,
+            554.75,
+            0
+          ],
+          "jetNormSumFactoredN": 2880.265112,
+          "waterGravityN": 430.25626,
+          "partialWaterAbsoluteMomentBoundsNmm": [
+            53889.596598,
+            182858.910611
+          ],
+          "horizontalComponentBoxN": [
+            2880.265112,
+            2880.265112
+          ],
+          "momentComponentBoxNmm": [
+            5526393.309518,
+            5655362.623531,
+            1276164.06093
+          ],
+          "fourFootUpliftUpperEachBeforePryingN": 25519.219455,
+          "fourFootCompressionUpperEachBeforePryingN": 25932.953664,
+          "law": "Component boxes contain each jet norm and every asymmetric0..full pan fill using absolute geometric lever bounds; maxima need not coincide. Four-foot elastic equilibrium demand only, no favorable gravity/friction in uplift. Actual frame, plate, anchors and substrate must earn resistance."
+        },
+        "independentDestinationsAndFloorResistanceQualified": false
+      },
+      {
+        "id": "both-source-fed",
+        "active": [
+          "utility",
+          "plant"
+        ],
+        "representedFlowLmin": 180,
+        "benchmark90FlowBound": {
+          "originMm": [
+            10185,
+            554.75,
+            0
+          ],
+          "jetNormSumFactoredN": 381.837662,
+          "waterGravityN": 855.572038,
+          "partialWaterAbsoluteMomentBoundsNmm": [
+            107160.397728,
+            363618.116044
+          ],
+          "horizontalComponentBoxN": [
+            381.837662,
+            381.837662
+          ],
+          "momentComponentBoxNmm": [
+            832651.955226,
+            1089109.673541,
+            169181.475382
+          ],
+          "fourFootUpliftUpperEachBeforePryingN": 3983.844018,
+          "fourFootCompressionUpperEachBeforePryingN": 4503.907172,
+          "law": "Component boxes contain each jet norm and every asymmetric0..full pan fill using absolute geometric lever bounds; maxima need not coincide. Four-foot elastic equilibrium demand only, no favorable gravity/friction in uplift. Actual frame, plate, anchors and substrate must earn resistance."
+        },
+        "sourceOnlyFullBoreSensitivity": {
+          "originMm": [
+            10185,
+            554.75,
+            0
+          ],
+          "jetNormSumFactoredN": 5760.530224,
+          "waterGravityN": 855.572038,
+          "partialWaterAbsoluteMomentBoundsNmm": [
+            107160.397728,
+            363618.116044
+          ],
+          "horizontalComponentBoxN": [
+            5760.530224,
+            5760.530224
+          ],
+          "momentComponentBoxNmm": [
+            11052167.823569,
+            11308625.541884,
+            2552328.12186
+          ],
+          "fourFootUpliftUpperEachBeforePryingN": 51034.722082,
+          "fourFootCompressionUpperEachBeforePryingN": 51554.785235,
+          "law": "Component boxes contain each jet norm and every asymmetric0..full pan fill using absolute geometric lever bounds; maxima need not coincide. Four-foot elastic equilibrium demand only, no favorable gravity/friction in uplift. Actual frame, plate, anchors and substrate must earn resistance."
+        },
+        "independentDestinationsAndFloorResistanceQualified": false
+      }
+    ],
+    "feetGeometry": {
+      "feet": [
+        {
+          "axisMm": [
+            9795,
+            489.5,
+            0
+          ],
+          "baseBodyMm": [
+            9745,
+            439.5,
+            0,
+            100,
+            100,
+            10
+          ],
+          "postBodyMm": [
+            9780,
+            474.5,
+            10,
+            30,
+            30,
+            130
+          ]
+        },
+        {
+          "axisMm": [
+            9795,
+            620,
+            0
+          ],
+          "baseBodyMm": [
+            9745,
+            570,
+            0,
+            100,
+            100,
+            10
+          ],
+          "postBodyMm": [
+            9780,
+            605,
+            10,
+            30,
+            30,
+            130
+          ]
+        },
+        {
+          "axisMm": [
+            10575,
+            489.5,
+            0
+          ],
+          "baseBodyMm": [
+            10525,
+            439.5,
+            0,
+            100,
+            100,
+            10
+          ],
+          "postBodyMm": [
+            10560,
+            474.5,
+            10,
+            30,
+            30,
+            130
+          ]
+        },
+        {
+          "axisMm": [
+            10575,
+            620,
+            0
+          ],
+          "baseBodyMm": [
+            10525,
+            570,
+            0,
+            100,
+            100,
+            10
+          ],
+          "postBodyMm": [
+            10560,
+            605,
+            10,
+            30,
+            30,
+            130
+          ]
+        }
+      ],
+      "finishedBackAfter5Mm": 5,
+      "independentPipeFeetAfterTwo5Mm": 35,
+      "actualCornerTransfersToBodyFrameQualified": false
+    },
+    "ordinaryProxy": {
+      "shoulderMm": [
+        9756,
+        1000,
+        1250
+      ],
+      "bodyAxisMm": [
+        [
+          9756,
+          1000,
+          100
+        ],
+        [
+          9756,
+          1000,
+          1750
+        ]
+      ],
+      "bodyRadiusMm": 300,
+      "toCabinetAfter10Mm": 10.024999,
+      "toWasherAfter5Mm": 15,
+      "toInverterAfter5Mm": 61.580141,
+      "leftFacingHandleReachProxyMm": [
+        412.184425,
+        635.280253
+      ],
+      "actualGripPointHandAndClosedDoorControlQualified": false
+    },
+    "dryRoomAndEscape": {
+      "cabinetDryFaceYMm": 680,
+      "noOccupiedFloorSpillCredited": true,
+      "manualClosureOrAlarmDoesNotEarnPassivePass": true,
+      "closedFrontLocalValveControlQualified": false,
+      "completeJetSeamPenetrationAndCrewSweepQualified": false
+    },
+    "diagnostics": [
+      "NEW_CABINET_STATIC_SEAMS_AND_ALL_JOINT_DIRECTIONS_UNPROVED",
+      "UNRIBBED_UPPER_FRONT_JET_STRIP_REJECTED",
+      "INDEPENDENT_PRESSUREPOSTS_CROSS_PANS_WITHOUT_RELATIVE_MOVEMENT_CLOSURE",
+      "CLOSED_FRONT_LOCAL_CONTROL_NOT_DIMENSIONED",
+      "RAISED_PERMANENT_PANS_REJECT_INWARD_WALL_TUBE_DRAW",
+      "SOURCE_MAXIMUM_AND_BOTH_EXTERNAL_RECEIVING_PATHS_NOT_PROVED"
+    ],
+    "completeWetBoundary": false,
+    "completeOccupiedRenewal": false
+  },
+  "quantities": {
+    "knownSteelGrossKg": 166.751826,
+    "cabinetSteelGrossKg": 124.840018,
+    "independentPipeSupportSteelKg": 41.911808,
+    "grossSolidBrassFittingValveUpperKg": 27.06699,
+    "wholeRoutePipeAndWaterKg": 23.470822,
+    "retainedPanWaterUpperKg": 87.214275,
+    "totalDeclaredGrossUpperKg": 304.503913,
+    "excludes": "Actual seals, fasteners, welds, jackets and bought-part masses; gross solid brass reservations deliberately include voids and cannot be called a net mass or favorable counterweight."
+  },
+  "footprintWaterDuty": {
+    "compartments": [
+      {
+        "id": "utility",
+        "pan": {
+          "leftXMm": 9760,
+          "rightXMm": 10182.5,
+          "backYMm": 429.5,
+          "frontYMm": 680,
+          "reliefAxisMm": [
+            10080,
+            429.5,
+            233.29166666666666
+          ],
+          "outletInvertZMm": 183.291667,
+          "crestZMm": 603.2917,
+          "floorFallToOutlet": 0.04,
+          "maximumFloorRiseMm": 22.82,
+          "meanFloorRiseMm": 10.354675,
+          "recommendedLinerMm": 3,
+          "actualLoftAndEntryDetailQualified": false
+        },
+        "maximumBelowLipWaterKg": 43.355329,
+        "maximumWaterCentroidMm": [
+          9972.272544,
+          554.239394,
+          398.441528
+        ],
+        "lowerRelief": {
+          "waterZMm": 322.543769,
+          "toPanLipAfterSplashSettingMm": 250.747931,
+          "toVentAfterSettingMm": 289.456231,
+          "insideDeclaredVentedHead": true
+        },
+        "primaryReverseSleeve": {
+          "waterZMm": 507.1125,
+          "toPanLipAfterSplashSettingMm": 66.1792,
+          "toVentAfterSettingMm": 104.8875,
+          "insideDeclaredVentedHead": true
+        },
+        "receiver": {
+          "actual": {
+            "x": [
+              9980,
+              10160
+            ],
+            "terminalY": -650,
+            "terminalInvertZ": 93.3333,
+            "receiverY": [
+              -1300,
+              -650
+            ],
+            "clearWidthMM": 180,
+            "adverseBottomOpenWidthMM": 90,
+            "overflowCrestZ": -35,
+            "raisedCrestSensitivityMM": 32,
+            "overflowHeadMM": 50.3207,
+            "ratedReceiverWaterZ": 47.3207,
+            "maximumReceiverWaterZ": 68.3333,
+            "freeDropReserveAfterSettingsMM": 11.0126
+          },
+          "openStageZMm": 47.320738,
+          "freeDropAfter25AndSettingMm": 11.012562,
+          "independentFromRoofD2AndSiblingRequired": true,
+          "completePrimaryAndSecondaryReceivingPathsQualified": false
+        },
+        "stockAndAction": {
+          "threeMmPanGrossStockKg": 16.107751,
+          "panFrontHydrostaticForceUpperN": 365.564803,
+          "panFrontMomentAboutInvertUpperNmm": 51179.076485,
+          "oneWayFullMaxPressureSheetStressMpa": 61.290126,
+          "oneWayFullMaxPressureDeflectionMm": 3.798844,
+          "sheetComparisonLimitMpa": 133.33333333333334,
+          "actualPlateAndEdgeWeldQualification": false
+        },
+        "jointFaults": [
+          {
+            "id": "outer-source-coupler",
+            "pointMm": [
+              10080,
+              -300,
+              463.8
+            ],
+            "scope": "Outside new cabinet; separate source exterior capture remains required",
+            "insideCabinet": false,
+            "boundingFaceImpacts": [],
+            "containmentEarned": false
+          },
+          {
+            "id": "lower-wall-elbow-wall-port",
+            "pointMm": [
+              10080,
+              558,
+              481.79999999999995
+            ],
+            "scope": "Catalogue pressure port",
+            "insideCabinet": true,
+            "boundingFaceImpacts": [
+              {
+                "face": "left",
+                "axis": 0,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 320,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "right",
+                "axis": 0,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 102.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "back",
+                "axis": 1,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 128.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "front",
+                "axis": 1,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 122,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "bottom",
+                "axis": 2,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 298.508333,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "top",
+                "axis": 2,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 1418.2,
+                "actualOpeningSeamAndRicochetQualified": false
+              }
+            ],
+            "containmentEarned": false
+          },
+          {
+            "id": "lower-wall-elbow-offset-port",
+            "pointMm": [
+              10038,
+              600,
+              481.79999999999995
+            ],
+            "scope": "Catalogue pressure port",
+            "insideCabinet": true,
+            "boundingFaceImpacts": [
+              {
+                "face": "left",
+                "axis": 0,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 278,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "right",
+                "axis": 0,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 144.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "back",
+                "axis": 1,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 170.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "front",
+                "axis": 1,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 80,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "bottom",
+                "axis": 2,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 298.508333,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "top",
+                "axis": 2,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 1418.2,
+                "actualOpeningSeamAndRicochetQualified": false
+              }
+            ],
+            "containmentEarned": false
+          },
+          {
+            "id": "lower-riser-elbow-offset-port",
+            "pointMm": [
+              10022,
+              600,
+              481.79999999999995
+            ],
+            "scope": "Catalogue pressure port",
+            "insideCabinet": true,
+            "boundingFaceImpacts": [
+              {
+                "face": "left",
+                "axis": 0,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 262,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "right",
+                "axis": 0,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 160.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "back",
+                "axis": 1,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 170.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "front",
+                "axis": 1,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 80,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "bottom",
+                "axis": 2,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 298.508333,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "top",
+                "axis": 2,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 1418.2,
+                "actualOpeningSeamAndRicochetQualified": false
+              }
+            ],
+            "containmentEarned": false
+          },
+          {
+            "id": "lower-riser-elbow-up-port",
+            "pointMm": [
+              9980,
+              600,
+              523.8
+            ],
+            "scope": "Catalogue pressure port",
+            "insideCabinet": true,
+            "boundingFaceImpacts": [
+              {
+                "face": "left",
+                "axis": 0,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 220,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "right",
+                "axis": 0,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 202.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "back",
+                "axis": 1,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 170.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "front",
+                "axis": 1,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 80,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "bottom",
+                "axis": 2,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 340.508333,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "top",
+                "axis": 2,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 1376.2,
+                "actualOpeningSeamAndRicochetQualified": false
+              }
+            ],
+            "containmentEarned": false
+          },
+          {
+            "id": "entry-valve-bottom",
+            "pointMm": [
+              9980,
+              600,
+              1150.25
+            ],
+            "scope": "Known valve pressure joint",
+            "insideCabinet": true,
+            "boundingFaceImpacts": [
+              {
+                "face": "left",
+                "axis": 0,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 220,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "right",
+                "axis": 0,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 202.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "back",
+                "axis": 1,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 170.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "front",
+                "axis": 1,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 80,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "bottom",
+                "axis": 2,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 966.958333,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "top",
+                "axis": 2,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 749.75,
+                "actualOpeningSeamAndRicochetQualified": false
+              }
+            ],
+            "containmentEarned": false
+          },
+          {
+            "id": "entry-valve-top",
+            "pointMm": [
+              9980,
+              600,
+              1249.75
+            ],
+            "scope": "Known valve pressure joint",
+            "insideCabinet": true,
+            "boundingFaceImpacts": [
+              {
+                "face": "left",
+                "axis": 0,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 220,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "right",
+                "axis": 0,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 202.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "back",
+                "axis": 1,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 170.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "front",
+                "axis": 1,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 80,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "bottom",
+                "axis": 2,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 1066.458333,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "top",
+                "axis": 2,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 650.25,
+                "actualOpeningSeamAndRicochetQualified": false
+              }
+            ],
+            "containmentEarned": false
+          },
+          {
+            "id": "entry-valve-packing",
+            "pointMm": null,
+            "scope": "Actual stem packing leak point is not established by the symmetric138mm reservation",
+            "insideCabinet": false,
+            "boundingFaceImpacts": [],
+            "containmentEarned": false
+          },
+          {
+            "id": "upper-source-coupler",
+            "pointMm": null,
+            "scope": "Actual upper bought-part/joint schedule is incomplete; do not invent a contained location",
+            "insideCabinet": false,
+            "boundingFaceImpacts": [],
+            "containmentEarned": false
+          }
+        ],
+        "impact": {
+          "benchmarkFirstStripStressMpa": 2063.525353,
+          "pressureWidthMm": 26.060000000000002,
+          "unsupportedFrontWidthMm": 422.5,
+          "upperSheetMm": 1.5,
+          "comparisonLimitMpa": 133.33333333333334,
+          "status": "rejects-unribbed-front-strip",
+          "completePlateRibsFastenersAndRicochetQualified": false
+        },
+        "renewal": {
+          "inwardTravelMm": 739.5,
+          "inwardToPermanentPanFrontAfter5Mm": -153.6817,
+          "outwardTravelMm": 684,
+          "outwardParkYmm": [
+            -984,
+            -100
+          ],
+          "outwardTubeBoreAfter5Mm": 24.27,
+          "outerTubeToReceiverWaterAfter5Mm": 397.479262,
+          "representedRouteWaterLitres": 3.334486,
+          "unknownHouseAndUpstreamInventoryNotZero": true,
+          "upperSpoolCutOrExactUnionSequenceRequired": true
+        },
+        "cases": [
+          {
+            "id": "ordinary-closed-no-leak",
+            "sourceFed": false,
+            "flowLmin": 0,
+            "status": "no-water-event",
+            "remaining": "Closed-front ordinary valve actuation is not dimensioned; panel access cannot be represented as closed-boundary operation."
+          },
+          {
+            "id": "source-fed-inner-joint-primary-mouth-blocked",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "conditional-channel-only",
+            "stage": {
+              "waterZMm": 322.543769,
+              "toPanLipAfterSplashSettingMm": 250.747931,
+              "toVentAfterSettingMm": 289.456231,
+              "insideDeclaredVentedHead": true
+            },
+            "remaining": "New pan entry, static closures, impact/seams and actual tailwater need this assembly proof."
+          },
+          {
+            "id": "source-fed-inner-joint-lower-relief-blocked",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "conditional-primary-head-only",
+            "stage": {
+              "waterZMm": 507.1125,
+              "toPanLipAfterSplashSettingMm": 66.1792,
+              "toVentAfterSettingMm": 104.8875,
+              "insideDeclaredVentedHead": true
+            },
+            "remaining": "Upper outlet is a reverse sleeve path; full air, exterior primary receiver and independence remain unqualified."
+          },
+          {
+            "id": "source-fed-wall-rupture-outer-mouth-blocked",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "conditional-series-path-only",
+            "stage": {
+              "waterZMm": 322.543769,
+              "toPanLipAfterSplashSettingMm": 250.747931,
+              "toVentAfterSettingMm": 289.456231,
+              "insideDeclaredVentedHead": true
+            },
+            "remaining": "Replay uses actual new carrier and source bores, never an inherited hood pass."
+          },
+          {
+            "id": "primary-blocked-secondary-high",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "rejected-unproved-tailwater",
+            "imposedTailwaterZMm": 78.3333,
+            "remaining": "Free-drop reserve exhausted; no submerged discharge or favorable pressure credit."
+          },
+          {
+            "id": "primary-blocked-secondary-submerged",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "rejected-submerged-path",
+            "imposedTailwaterZMm": 603.2917,
+            "remaining": "No vented gravity capacity follows. This supply/plot condition is outside the admissible reference envelope."
+          },
+          {
+            "id": "source-only-full-bore-upper-sensitivity",
+            "sourceFed": true,
+            "flowLmin": 1357.769995,
+            "status": "rejected-existing-channel-capacity",
+            "lowerChannelSolution": null,
+            "receiverStageZMm": 304.234136,
+            "receiverFreeDropAfter25AndSettingMm": -245.900836,
+            "remaining": "Ideal source-only upper bound is not a predicted sustained mains flow. It proves90L/min cannot be inferred from pressure rating or normal demand."
+          },
+          {
+            "id": "both-passive-outlets-blocked",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "rejected-unattended-event",
+            "emptyToLipUpperSeconds": 28.903552,
+            "remaining": "Finite volume is time to spill, never a passive pass or manual-response allowance."
+          },
+          {
+            "id": "high-vent-blocked",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "rejected-no-atmospheric-model",
+            "remaining": "No pressure-vessel claim for this cabinet."
+          },
+          {
+            "id": "source-fed-open-front",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "rejected-dry-room-boundary",
+            "remaining": "Isolate at the independent Lodge before opening a known wet compartment."
+          },
+          {
+            "id": "own-branch-isolated-cold-service-sibling-live",
+            "sourceFed": false,
+            "flowLmin": 0,
+            "status": "conditional-separate-fronts-only",
+            "remaining": "Each compartment has two independent panels above its own permanent pan; sibling stays closed. Seams, actual operator/tool/rest and electrical exclusion remain required."
+          },
+          {
+            "id": "both-isolated-inward-wall-spool-renewal",
+            "sourceFed": false,
+            "flowLmin": 0,
+            "status": "rejected-permanent-pan-front",
+            "after5Mm": -153.6817,
+            "remaining": "Raised permanent pan cannot be removed as if it were a harmless cover."
+          },
+          {
+            "id": "both-isolated-outward-wall-spool-renewal",
+            "sourceFed": false,
+            "flowLmin": 0,
+            "status": "conditional-tube-body-only",
+            "remaining": "Open own exterior shield, independently retain feed and prove full tool/crew/rest/screen sweep at the actual plot."
+          }
+        ]
+      },
+      {
+        "id": "plant",
+        "pan": {
+          "leftXMm": 10182.5,
+          "rightXMm": 10610,
+          "backYMm": 429.5,
+          "frontYMm": 680,
+          "reliefAxisMm": [
+            10285,
+            429.5,
+            333.2916666666667
+          ],
+          "outletInvertZMm": 283.291667,
+          "crestZMm": 703.2917,
+          "floorFallToOutlet": 0.04,
+          "maximumFloorRiseMm": 23.02,
+          "meanFloorRiseMm": 10.443041,
+          "recommendedLinerMm": 3,
+          "actualLoftAndEntryDetailQualified": false
+        },
+        "maximumBelowLipWaterKg": 43.858946,
+        "maximumWaterCentroidMm": [
+          10395.193615,
+          554.239284,
+          498.485102
+        ],
+        "lowerRelief": {
+          "waterZMm": 422.543769,
+          "toPanLipAfterSplashSettingMm": 250.747931,
+          "toVentAfterSettingMm": 242.456231,
+          "insideDeclaredVentedHead": true
+        },
+        "primaryReverseSleeve": {
+          "waterZMm": 627.1125,
+          "toPanLipAfterSplashSettingMm": 46.1792,
+          "toVentAfterSettingMm": 37.8875,
+          "insideDeclaredVentedHead": true
+        },
+        "receiver": {
+          "actual": {
+            "x": [
+              10200,
+              10380
+            ],
+            "terminalY": -650,
+            "terminalInvertZ": 193.3333,
+            "receiverY": [
+              -1300,
+              -650
+            ],
+            "clearWidthMM": 180,
+            "adverseBottomOpenWidthMM": 90,
+            "overflowCrestZ": 65,
+            "raisedCrestSensitivityMM": 32,
+            "overflowHeadMM": 50.3207,
+            "ratedReceiverWaterZ": 147.3207,
+            "maximumReceiverWaterZ": 168.3333,
+            "freeDropReserveAfterSettingsMM": 11.0126
+          },
+          "openStageZMm": 147.320738,
+          "freeDropAfter25AndSettingMm": 11.012562,
+          "independentFromRoofD2AndSiblingRequired": true,
+          "completePrimaryAndSecondaryReceivingPathsQualified": false
+        },
+        "stockAndAction": {
+          "threeMmPanGrossStockKg": 16.238611,
+          "panFrontHydrostaticForceUpperN": 369.891014,
+          "panFrontMomentAboutInvertUpperNmm": 51784.74603,
+          "oneWayFullMaxPressureSheetStressMpa": 62.749363,
+          "oneWayFullMaxPressureDeflectionMm": 3.981888,
+          "sheetComparisonLimitMpa": 133.33333333333334,
+          "actualPlateAndEdgeWeldQualification": false
+        },
+        "jointFaults": [
+          {
+            "id": "outer-source-coupler",
+            "pointMm": [
+              10285,
+              -300,
+              583.8
+            ],
+            "scope": "Outside new cabinet; separate source exterior capture remains required",
+            "insideCabinet": false,
+            "boundingFaceImpacts": [],
+            "containmentEarned": false
+          },
+          {
+            "id": "lower-wall-elbow-wall-port",
+            "pointMm": [
+              10285,
+              558,
+              601.8
+            ],
+            "scope": "Catalogue pressure port",
+            "insideCabinet": true,
+            "boundingFaceImpacts": [
+              {
+                "face": "left",
+                "axis": 0,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 102.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "right",
+                "axis": 0,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 325,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "back",
+                "axis": 1,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 128.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "front",
+                "axis": 1,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 122,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "bottom",
+                "axis": 2,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 318.508333,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "top",
+                "axis": 2,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 1298.2,
+                "actualOpeningSeamAndRicochetQualified": false
+              }
+            ],
+            "containmentEarned": false
+          },
+          {
+            "id": "lower-wall-elbow-offset-port",
+            "pointMm": [
+              10327,
+              600,
+              601.8
+            ],
+            "scope": "Catalogue pressure port",
+            "insideCabinet": true,
+            "boundingFaceImpacts": [
+              {
+                "face": "left",
+                "axis": 0,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 144.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "right",
+                "axis": 0,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 283,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "back",
+                "axis": 1,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 170.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "front",
+                "axis": 1,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 80,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "bottom",
+                "axis": 2,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 318.508333,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "top",
+                "axis": 2,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 1298.2,
+                "actualOpeningSeamAndRicochetQualified": false
+              }
+            ],
+            "containmentEarned": false
+          },
+          {
+            "id": "lower-riser-elbow-offset-port",
+            "pointMm": [
+              10343,
+              600,
+              601.8
+            ],
+            "scope": "Catalogue pressure port",
+            "insideCabinet": true,
+            "boundingFaceImpacts": [
+              {
+                "face": "left",
+                "axis": 0,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 160.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "right",
+                "axis": 0,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 267,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "back",
+                "axis": 1,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 170.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "front",
+                "axis": 1,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 80,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "bottom",
+                "axis": 2,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 318.508333,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "top",
+                "axis": 2,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 1298.2,
+                "actualOpeningSeamAndRicochetQualified": false
+              }
+            ],
+            "containmentEarned": false
+          },
+          {
+            "id": "lower-riser-elbow-up-port",
+            "pointMm": [
+              10385,
+              600,
+              643.8
+            ],
+            "scope": "Catalogue pressure port",
+            "insideCabinet": true,
+            "boundingFaceImpacts": [
+              {
+                "face": "left",
+                "axis": 0,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 202.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "right",
+                "axis": 0,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 225,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "back",
+                "axis": 1,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 170.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "front",
+                "axis": 1,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 80,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "bottom",
+                "axis": 2,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 360.508333,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "top",
+                "axis": 2,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 1256.2,
+                "actualOpeningSeamAndRicochetQualified": false
+              }
+            ],
+            "containmentEarned": false
+          },
+          {
+            "id": "entry-valve-bottom",
+            "pointMm": [
+              10385,
+              600,
+              1150.25
+            ],
+            "scope": "Known valve pressure joint",
+            "insideCabinet": true,
+            "boundingFaceImpacts": [
+              {
+                "face": "left",
+                "axis": 0,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 202.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "right",
+                "axis": 0,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 225,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "back",
+                "axis": 1,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 170.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "front",
+                "axis": 1,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 80,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "bottom",
+                "axis": 2,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 866.958333,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "top",
+                "axis": 2,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 749.75,
+                "actualOpeningSeamAndRicochetQualified": false
+              }
+            ],
+            "containmentEarned": false
+          },
+          {
+            "id": "entry-valve-top",
+            "pointMm": [
+              10385,
+              600,
+              1249.75
+            ],
+            "scope": "Known valve pressure joint",
+            "insideCabinet": true,
+            "boundingFaceImpacts": [
+              {
+                "face": "left",
+                "axis": 0,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 202.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "right",
+                "axis": 0,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 225,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "back",
+                "axis": 1,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 170.5,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "front",
+                "axis": 1,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 80,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "bottom",
+                "axis": 2,
+                "sign": -1,
+                "firstBoundingFaceDistanceMm": 966.458333,
+                "actualOpeningSeamAndRicochetQualified": false
+              },
+              {
+                "face": "top",
+                "axis": 2,
+                "sign": 1,
+                "firstBoundingFaceDistanceMm": 650.25,
+                "actualOpeningSeamAndRicochetQualified": false
+              }
+            ],
+            "containmentEarned": false
+          },
+          {
+            "id": "entry-valve-packing",
+            "pointMm": null,
+            "scope": "Actual stem packing leak point is not established by the symmetric138mm reservation",
+            "insideCabinet": false,
+            "boundingFaceImpacts": [],
+            "containmentEarned": false
+          },
+          {
+            "id": "upper-source-coupler",
+            "pointMm": null,
+            "scope": "Actual upper bought-part/joint schedule is incomplete; do not invent a contained location",
+            "insideCabinet": false,
+            "boundingFaceImpacts": [],
+            "containmentEarned": false
+          }
+        ],
+        "impact": {
+          "benchmarkFirstStripStressMpa": 2087.945772,
+          "pressureWidthMm": 26.060000000000002,
+          "unsupportedFrontWidthMm": 427.5,
+          "upperSheetMm": 1.5,
+          "comparisonLimitMpa": 133.33333333333334,
+          "status": "rejects-unribbed-front-strip",
+          "completePlateRibsFastenersAndRicochetQualified": false
+        },
+        "renewal": {
+          "inwardTravelMm": 739.5,
+          "inwardToPermanentPanFrontAfter5Mm": -133.6817,
+          "outwardTravelMm": 684,
+          "outwardParkYmm": [
+            -984,
+            -100
+          ],
+          "outwardTubeBoreAfter5Mm": 24.27,
+          "outerTubeToReceiverWaterAfter5Mm": 417.479262,
+          "representedRouteWaterLitres": 4.712604,
+          "unknownHouseAndUpstreamInventoryNotZero": true,
+          "upperSpoolCutOrExactUnionSequenceRequired": true
+        },
+        "cases": [
+          {
+            "id": "ordinary-closed-no-leak",
+            "sourceFed": false,
+            "flowLmin": 0,
+            "status": "no-water-event",
+            "remaining": "Closed-front ordinary valve actuation is not dimensioned; panel access cannot be represented as closed-boundary operation."
+          },
+          {
+            "id": "source-fed-inner-joint-primary-mouth-blocked",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "conditional-channel-only",
+            "stage": {
+              "waterZMm": 422.543769,
+              "toPanLipAfterSplashSettingMm": 250.747931,
+              "toVentAfterSettingMm": 242.456231,
+              "insideDeclaredVentedHead": true
+            },
+            "remaining": "New pan entry, static closures, impact/seams and actual tailwater need this assembly proof."
+          },
+          {
+            "id": "source-fed-inner-joint-lower-relief-blocked",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "conditional-primary-head-only",
+            "stage": {
+              "waterZMm": 627.1125,
+              "toPanLipAfterSplashSettingMm": 46.1792,
+              "toVentAfterSettingMm": 37.8875,
+              "insideDeclaredVentedHead": true
+            },
+            "remaining": "Upper outlet is a reverse sleeve path; full air, exterior primary receiver and independence remain unqualified."
+          },
+          {
+            "id": "source-fed-wall-rupture-outer-mouth-blocked",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "conditional-series-path-only",
+            "stage": {
+              "waterZMm": 422.543769,
+              "toPanLipAfterSplashSettingMm": 250.747931,
+              "toVentAfterSettingMm": 242.456231,
+              "insideDeclaredVentedHead": true
+            },
+            "remaining": "Replay uses actual new carrier and source bores, never an inherited hood pass."
+          },
+          {
+            "id": "primary-blocked-secondary-high",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "rejected-unproved-tailwater",
+            "imposedTailwaterZMm": 178.3333,
+            "remaining": "Free-drop reserve exhausted; no submerged discharge or favorable pressure credit."
+          },
+          {
+            "id": "primary-blocked-secondary-submerged",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "rejected-submerged-path",
+            "imposedTailwaterZMm": 703.2917,
+            "remaining": "No vented gravity capacity follows. This supply/plot condition is outside the admissible reference envelope."
+          },
+          {
+            "id": "source-only-full-bore-upper-sensitivity",
+            "sourceFed": true,
+            "flowLmin": 1357.769995,
+            "status": "rejected-existing-channel-capacity",
+            "lowerChannelSolution": null,
+            "receiverStageZMm": 404.234136,
+            "receiverFreeDropAfter25AndSettingMm": -245.900836,
+            "remaining": "Ideal source-only upper bound is not a predicted sustained mains flow. It proves90L/min cannot be inferred from pressure rating or normal demand."
+          },
+          {
+            "id": "both-passive-outlets-blocked",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "rejected-unattended-event",
+            "emptyToLipUpperSeconds": 29.239298,
+            "remaining": "Finite volume is time to spill, never a passive pass or manual-response allowance."
+          },
+          {
+            "id": "high-vent-blocked",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "rejected-no-atmospheric-model",
+            "remaining": "No pressure-vessel claim for this cabinet."
+          },
+          {
+            "id": "source-fed-open-front",
+            "sourceFed": true,
+            "flowLmin": 90,
+            "status": "rejected-dry-room-boundary",
+            "remaining": "Isolate at the independent Lodge before opening a known wet compartment."
+          },
+          {
+            "id": "own-branch-isolated-cold-service-sibling-live",
+            "sourceFed": false,
+            "flowLmin": 0,
+            "status": "conditional-separate-fronts-only",
+            "remaining": "Each compartment has two independent panels above its own permanent pan; sibling stays closed. Seams, actual operator/tool/rest and electrical exclusion remain required."
+          },
+          {
+            "id": "both-isolated-inward-wall-spool-renewal",
+            "sourceFed": false,
+            "flowLmin": 0,
+            "status": "rejected-permanent-pan-front",
+            "after5Mm": -133.6817,
+            "remaining": "Raised permanent pan cannot be removed as if it were a harmless cover."
+          },
+          {
+            "id": "both-isolated-outward-wall-spool-renewal",
+            "sourceFed": false,
+            "flowLmin": 0,
+            "status": "conditional-tube-body-only",
+            "remaining": "Open own exterior shield, independently retain feed and prove full tool/crew/rest/screen sweep at the actual plot."
+          }
+        ]
+      }
+    ],
+    "partitionPlaneXMm": 10182.5,
+    "partitionContinuousToClosedRoof": true,
+    "sharedPrimaryReceiverCredited": false,
+    "sourceIndependentOutletsRetainedByIdentity": [
+      "utility",
+      "plant"
+    ],
+    "newPanToOutletJunctionQualified": false
+  },
+  "floorReceiving": {
+    "basis": "Proposed independent cabinet gravity plinth onto the actual structural floor through sleeved finish interruptions; no strength or dry-side DPC capacity is supplied by a finish datum.",
+    "sourceGroundFinishZMm": 0,
+    "proposedSeatZMm": 0,
+    "cabinetBottomZMm": 140,
+    "pressureBaseTopZMm": 12,
+    "gravityUpperN": 2987.183386,
+    "fourWetFootGravityOnlyN": 520.063154,
+    "twoIndependentPipeFeetGravityOnlyN": 453.465386,
+    "worstSingleSideWaterGravityN": 2150.712773,
+    "actualLoadDistributionAndFloorCapacityQualified": false,
+    "pipeAndWetAssembliesIndependentlySupported": true,
+    "frictionOnlyHorizontalResistanceCredited": false,
+    "pressureFrameAndCabinetWallRestraintActions": [
+      {
+        "fixedPointWrench": {
+          "pointMm": [
+            9980,
+            600,
+            1900
+          ],
+          "forceComponentBoundsN": [
+            16.40726385,
+            14.41606955,
+            13.19606738
+          ],
+          "momentComponentBoundsNmm": [
+            3321.30255507,
+            1452.86499395,
+            538.61307129
+          ],
+          "uniformForceN": [
+            -6.30654642,
+            -8.98263793,
+            -11.27773357
+          ],
+          "uniformMomentNmm": [
+            -2330.66396406,
+            -896.76673468,
+            172.90820001
+          ]
+        },
+        "guideWrench": {
+          "pointMm": [
+            9980,
+            600,
+            2100
+          ],
+          "forceComponentBoundsN": [
+            16.59061063,
+            11.57704998,
+            0
+          ],
+          "axialSlide": true,
+          "actualGripAndFrictionQualified": false
+        },
+        "independentUpperTerminal": {
+          "pointMm": [
+            10760,
+            1250,
+            1000
+          ],
+          "forceComponentBoundsN": [
+            1.05316026,
+            1.38880023,
+            3.37695199
+          ],
+          "momentComponentBoundsNmm": [
+            716.21996483,
+            687.4080205,
+            189.74396249
+          ]
+        },
+        "outerRepairCutTerminal": {
+          "pointMm": [
+            10080,
+            -300,
+            463.8
+          ],
+          "forceComponentBoundsN": [
+            0.83544985,
+            4.22510493,
+            9.82225237
+          ],
+          "momentComponentBoundsNmm": [
+            5430.19568878,
+            301.87317703,
+            353.73961436
+          ]
+        },
+        "sourcePressureEndComponentBoundN": 480.044185,
+        "jetReversalNormN": 127.279221,
+        "completeLodgeRestraintInvented": false
+      },
+      {
+        "fixedPointWrench": {
+          "pointMm": [
+            10385,
+            600,
+            1900
+          ],
+          "forceComponentBoundsN": [
+            2.11565348,
+            10.65348445,
+            9.68873364
+          ],
+          "momentComponentBoundsNmm": [
+            3214.10807753,
+            504.03627804,
+            1153.08886226
+          ],
+          "uniformForceN": [
+            -1.2308281,
+            -9.56289683,
+            -9.59551222
+          ],
+          "uniformMomentNmm": [
+            -2530.8424277,
+            413.23592945,
+            895.92311476
+          ]
+        },
+        "guideWrench": {
+          "pointMm": [
+            10385,
+            600,
+            2100
+          ],
+          "forceComponentBoundsN": [
+            1.3757733,
+            7.2215341,
+            0
+          ],
+          "axialSlide": true,
+          "actualGripAndFrictionQualified": false
+        },
+        "independentUpperTerminal": {
+          "pointMm": [
+            10222.5,
+            3842.9,
+            2260
+          ],
+          "forceComponentBoundsN": [
+            0.19807239,
+            1.37935478,
+            0.14622332
+          ],
+          "momentComponentBoundsNmm": [
+            363.13117372,
+            157.30816342,
+            1406.15411837
+          ]
+        },
+        "outerRepairCutTerminal": {
+          "pointMm": [
+            10285,
+            -300,
+            583.8
+          ],
+          "forceComponentBoundsN": [
+            0.91174047,
+            4.79538024,
+            9.54846414
+          ],
+          "momentComponentBoundsNmm": [
+            5126.59084805,
+            265.26861149,
+            375.9901565
+          ]
+        },
+        "sourcePressureEndComponentBoundN": 480.044185,
+        "jetReversalNormN": 127.279221,
+        "completeLodgeRestraintInvented": false
+      }
+    ],
+    "actualJambCageAndAnchorGroupQualified": false
+  },
+  "diagnostics": [
+    "NEW_CABINET_STATIC_SEAMS_AND_ALL_JOINT_DIRECTIONS_UNPROVED",
+    "UNRIBBED_UPPER_FRONT_JET_STRIP_REJECTED",
+    "INDEPENDENT_PRESSUREPOSTS_CROSS_PANS_WITHOUT_RELATIVE_MOVEMENT_CLOSURE",
+    "CLOSED_FRONT_LOCAL_CONTROL_NOT_DIMENSIONED",
+    "RAISED_PERMANENT_PANS_REJECT_INWARD_WALL_TUBE_DRAW",
+    "SOURCE_MAXIMUM_AND_BOTH_EXTERNAL_RECEIVING_PATHS_NOT_PROVED",
+    "CONEX_VALVE_KNOWN_POLYMERS_HAVE_NO_OWNER_EXCEPTION",
+    "ACTUAL_POTABLE_FLOW_LOSS_AND_UPPER_FITTING_SCHEDULE_UNQUALIFIED",
+    "STATIC_BULKHEADS_AND_DOOR_SEAMS_REQUIRE_DIMENSIONED_WET_PROOF",
+    "NEW_INDEPENDENT_PANS_TO_EXISTING_OUTLETS_UNQUALIFIED",
+    "ACTUAL_FLOOR_SEAT_MOISTURE_PATH_AND_WALL_GROUP_RESISTANCE_UNQUALIFIED",
+    "UPPER_TERMINAL_AND_LODGE_SUPPORT_LAWS_NOT_QUALIFIED",
+    "STATIC_BULKHEAD_RELATIVE_MOVEMENT_AND_COUPLING_NOT_SOLVED",
+    "SOURCE_BOUND_TUBE_FLEXIBILITY_IS_NOT_CAST_FITTING_STIFFNESS",
+    "FROST_AND_WARM_ENVELOPE_STRATEGY_REQUIRES_WHOLE_ROUTE",
+    "OWNER_WINDOW_AND_ROOM_APPEARANCE_REVIEW_REQUIRED"
+  ],
+  "operating": {
+    "ordinaryInsideIsolation": "Each house branch retains its own reachable ordinary indoor stopvalve. Opening a known wet/faulted compartment requires independent Lodge isolation first; no live-fault-open containment is claimed.",
+    "coldSequence": [
+      "Close both independent Lodge cuts; exclude electricity, drain and prove zero pressure. Move washer to its restrained first rest before a wall-tube draw.",
+      "Remove the four independent front panels. Independently retain the actual upper network before loosening its first source-bound overhead connection and the separate pipe clamp.",
+      "Use two39mm spanners; withdraw the released upper plain riser27mm from the lower valve compression socket before removing it forward. Do not claim zero retreat or a reusable damaged olive.",
+      "Remove the valve and separate lower dogleg tubes after releasing their ordinary compression nuts. Withdraw the now-straight wall tube by the computed travel, with separate wall wet closures opened.",
+      "Restore the pressure fittings, static bulkheads, independent pans/returns, all protective boundaries and electrical field; pressure/leak and fitted fault/spray checks precede charging."
+    ],
+    "sourcePressJawRequired": false,
+    "completeRemovalAndOperatorAcceptance": false
+  },
+  "selected": false,
+  "installedAcceptance": false,
+  "preSiteArrangementComplete": false,
+  "branches": [
+    {
+      "id": "utility",
+      "entryAxisMm": [
+        10080,
+        429.5,
+        478.39
+      ],
+      "riserAxisMm": [
+        9980,
+        600
+      ],
+      "lowerVerticesMm": [
+        [
+          10080,
+          -300,
+          463.8
+        ],
+        [
+          10080,
+          600,
+          481.79999999999995
+        ],
+        [
+          9980,
+          600,
+          481.79999999999995
+        ],
+        [
+          9980,
+          600,
+          1200
+        ]
+      ],
+      "upperVerticesMm": [
+        [
+          9980,
+          600,
+          2725
+        ],
+        [
+          10760,
+          600,
+          2725
+        ],
+        [
+          10760,
+          1250,
+          2725
+        ],
+        [
+          10760,
+          1250,
+          1000
+        ]
+      ],
+      "catalogueLowerElbowStraightGapMm": 16,
+      "pipeStockLengthUpperMm": 6138.085507,
+      "pipeStockScope": "Copper stock uses maximum OD/maximum wall; contained water and pA use maximum OD/minimum wall as independent adverse bounds. Nominal tube flexibility remains the declared comparative law; no tolerance-corner thermal/fitting certificate. Known service gaps deducted from the tube-only centreline; upper1degree arc chords carry their stated approximation. Cast fitting/valve stiffness and final bought-part masses remain separate.",
+      "pipeMetalKg": 6.370982,
+      "pipeWaterKg": 3.334486,
+      "inCabinetTubeStockKg": 1.752774,
+      "valveBodyMm": [
+        9952,
+        572,
+        1150.25,
+        56,
+        56,
+        99.5
+      ],
+      "valveFullStemReservationMm": [
+        9842,
+        572,
+        1172,
+        276,
+        56,
+        56
+      ],
+      "valveSideAfter5Mm": 59.5,
+      "wrenchSideAfter5Mm": 140.195387,
+      "wrenchFrontOpenSweepMm": [
+        680,
+        1000
+      ],
+      "receiverActions": {
+        "fixedPointWrench": {
+          "pointMm": [
+            9980,
+            600,
+            1900
+          ],
+          "forceComponentBoundsN": [
+            16.40726385,
+            14.41606955,
+            13.19606738
+          ],
+          "momentComponentBoundsNmm": [
+            3321.30255507,
+            1452.86499395,
+            538.61307129
+          ],
+          "uniformForceN": [
+            -6.30654642,
+            -8.98263793,
+            -11.27773357
+          ],
+          "uniformMomentNmm": [
+            -2330.66396406,
+            -896.76673468,
+            172.90820001
+          ]
+        },
+        "guideWrench": {
+          "pointMm": [
+            9980,
+            600,
+            2100
+          ],
+          "forceComponentBoundsN": [
+            16.59061063,
+            11.57704998,
+            0
+          ],
+          "axialSlide": true,
+          "actualGripAndFrictionQualified": false
+        },
+        "independentUpperTerminal": {
+          "pointMm": [
+            10760,
+            1250,
+            1000
+          ],
+          "forceComponentBoundsN": [
+            1.05316026,
+            1.38880023,
+            3.37695199
+          ],
+          "momentComponentBoundsNmm": [
+            716.21996483,
+            687.4080205,
+            189.74396249
+          ]
+        },
+        "outerRepairCutTerminal": {
+          "pointMm": [
+            10080,
+            -300,
+            463.8
+          ],
+          "forceComponentBoundsN": [
+            0.83544985,
+            4.22510493,
+            9.82225237
+          ],
+          "momentComponentBoundsNmm": [
+            5430.19568878,
+            301.87317703,
+            353.73961436
+          ]
+        },
+        "sourcePressureEndComponentBoundN": 480.044185,
+        "jetReversalNormN": 127.279221,
+        "completeLodgeRestraintInvented": false
+      },
+      "flow": {
+        "tubeNominalIdMm": 25.6,
+        "howdenRequiredMm": 28,
+        "howdenRequiredLmin": 50,
+        "nominalVelocityAtHowdenFlowMps": 1.619008,
+        "faultVelocityMps": 2.914214,
+        "fittingAndValveLossCoefficient": null,
+        "guaranteedHowdenDuty": false
+      },
+      "renewal": {
+        "throughWallStraightDrawMm": 739.5,
+        "drawnTubeBodyMm": [
+          10066,
+          439.5,
+          449.8,
+          28,
+          884,
+          45.99999999999994
+        ],
+        "drawToInstalledWasherAfter5Mm": -23,
+        "drawToFirstRestWasherAfter5Mm": 171.5,
+        "upperRiserFirstReleaseZMm": 2725,
+        "requiredUnseatTravelMm": 27,
+        "upperNetworkMustBeIndependentlyRetained": true,
+        "pressureJointZeroRetreatClaimed": false,
+        "completeToolAndOperatorSweepQualified": false
+      },
+      "materialResidues": [
+        {
+          "id": "utility-valve-polymer-0",
+          "material": "PTFE packing",
+          "quantity": 1,
+          "part": "HH-5012701--",
+          "ownerExceptionApproved": false
+        },
+        {
+          "id": "utility-valve-polymer-1",
+          "material": "PTFE sealing gasket",
+          "quantity": 1,
+          "part": "HH-5012701--",
+          "ownerExceptionApproved": false
+        },
+        {
+          "id": "utility-valve-polymer-2",
+          "material": "EPDM seat constituent",
+          "quantity": 1,
+          "part": "HH-5012701--",
+          "ownerExceptionApproved": false
+        }
+      ],
+      "componentTakeoff": {
+        "lowerElbows": {
+          "sku": "HH-5020401--",
+          "quantity": 2
+        },
+        "plainCouplers": {
+          "sku": "HH-5020301--",
+          "quantity": 2
+        },
+        "valve": {
+          "sku": "HH-5012701--",
+          "quantity": 1
+        },
+        "upperShapedTubeAndConnections": "Upper path is a source-bound tube-only flexibility route; actual formed/fitting schedule and joint stiffness remain unresolved."
+      },
+      "formedRoute": {
+        "vertices": 278,
+        "digest": "7ca975bfd03c86fc297a5fcb8898b38da7c13d927cfcab8dc65658f34bd5d06a"
+      },
+      "thermal": {
+        "schema": "had-inlet-finite-receiver-thermal/1",
+        "sourceContext": {
+          "input": {
+            "pathMm": {
+              "vertices": 278,
+              "digest": "7ca975bfd03c86fc297a5fcb8898b38da7c13d927cfcab8dc65658f34bd5d06a"
+            },
+            "fixedPointZMm": 1900,
+            "guideZMm": 2100,
+            "temperatureExcursionK": 40,
+            "pipe": {
+              "outerDiameterMm": 28,
+              "wallMm": 1.2,
+              "elasticModulusMpa": 117200,
+              "poissonRatio": 0.34,
+              "expansionMmMK": 0.017
+            }
+          },
+          "receiver": {
+            "baseZMm": 12,
+            "postAxisXYMm": [
+              9980,
+              520
+            ],
+            "topZMm": 2130,
+            "widthXMm": 60,
+            "depthYMm": 80,
+            "wallMm": 4,
+            "elasticModulusMpa": 200000,
+            "poissonRatio": 0.3
+          }
+        },
+        "method": "Same upper/lower3D tube-flexibility kernels, joined by exact Simpson receiver strain-energy integrals and all physical fixed/guide lever moments. One14-redundant compatible solve; independently signed segment temperatures retained. Fixed-base post, rigid arms and source six-axis endpoint laws are explicit comparison assumptions.",
+        "fixedPointWrench": {
+          "pointMm": [
+            9980,
+            600,
+            1900
+          ],
+          "forceComponentBoundsN": [
+            16.40726385,
+            14.41606955,
+            13.19606738
+          ],
+          "momentComponentBoundsNmm": [
+            3321.30255507,
+            1452.86499395,
+            538.61307129
+          ],
+          "uniformForceN": [
+            -6.30654642,
+            -8.98263793,
+            -11.27773357
+          ],
+          "uniformMomentNmm": [
+            -2330.66396406,
+            -896.76673468,
+            172.90820001
+          ]
+        },
+        "guideWrench": {
+          "pointMm": [
+            9980,
+            600,
+            2100
+          ],
+          "forceComponentBoundsN": [
+            16.59061063,
+            11.57704998,
+            0
+          ],
+          "axialSlide": true,
+          "actualGripAndFrictionQualified": false
+        },
+        "upperTerminalWrench": {
+          "pointMm": [
+            10760,
+            1250,
+            1000
+          ],
+          "forceComponentBoundsN": [
+            1.05316026,
+            1.38880023,
+            3.37695199
+          ],
+          "momentComponentBoundsNmm": [
+            716.21996483,
+            687.4080205,
+            189.74396249
+          ]
+        },
+        "outerTerminalWrench": {
+          "pointMm": [
+            10080,
+            -300,
+            463.8
+          ],
+          "forceComponentBoundsN": [
+            0.83544985,
+            4.22510493,
+            9.82225237
+          ],
+          "momentComponentBoundsNmm": [
+            5430.19568878,
+            301.87317703,
+            353.73961436
+          ]
+        },
+        "fixedPointReceiverMotion": {
+          "uniformTranslationMm": [
+            -0.03949204,
+            -0.0010585,
+            0.00104043
+          ],
+          "translationBoundsMm": [
+            0.06239231,
+            0.05169641,
+            0.00291898
+          ],
+          "rotationBoundsRad": [
+            0.00003721,
+            0.00005746,
+            0.00001236
+          ]
+        },
+        "guideReceiverMotion": {
+          "uniformTranslationMm": [
+            -0.04661252,
+            -0.00348691,
+            0.00108805
+          ],
+          "translationBoundsMm": [
+            0.07444645,
+            0.05929975,
+            0.00301626
+          ]
+        },
+        "compatibilityResidual": 0,
+        "postComplianceSymmetryError": 0,
+        "actualTerminalClampFittingAndFloorStiffnessQualified": false,
+        "completeInstalledThermalAcceptance": false
+      }
+    },
+    {
+      "id": "plant",
+      "entryAxisMm": [
+        10285,
+        429.5,
+        598.39
+      ],
+      "riserAxisMm": [
+        10385,
+        600
+      ],
+      "lowerVerticesMm": [
+        [
+          10285,
+          -300,
+          583.8
+        ],
+        [
+          10285,
+          600,
+          601.8
+        ],
+        [
+          10385,
+          600,
+          601.8
+        ],
+        [
+          10385,
+          600,
+          1200
+        ]
+      ],
+      "upperVerticesMm": [
+        [
+          10385,
+          600,
+          2585
+        ],
+        [
+          11505,
+          600,
+          2585
+        ],
+        [
+          11505,
+          820,
+          2585
+        ],
+        [
+          11505,
+          1180,
+          2725
+        ],
+        [
+          11505,
+          2199.2,
+          2725
+        ],
+        [
+          11315,
+          2323,
+          2725
+        ],
+        [
+          11315,
+          2940,
+          2725
+        ],
+        [
+          11385,
+          3050,
+          2725
+        ],
+        [
+          11385,
+          3370,
+          2725
+        ],
+        [
+          11385,
+          3370,
+          2260
+        ],
+        [
+          10245,
+          3370,
+          2260
+        ],
+        [
+          10245,
+          3797,
+          2260
+        ],
+        [
+          10222.5,
+          3842.9,
+          2260
+        ]
+      ],
+      "catalogueLowerElbowStraightGapMm": 16,
+      "pipeStockLengthUpperMm": 8721.819621,
+      "pipeStockScope": "Copper stock uses maximum OD/maximum wall; contained water and pA use maximum OD/minimum wall as independent adverse bounds. Nominal tube flexibility remains the declared comparative law; no tolerance-corner thermal/fitting certificate. Known service gaps deducted from the tube-only centreline; upper1degree arc chords carry their stated approximation. Cast fitting/valve stiffness and final bought-part masses remain separate.",
+      "pipeMetalKg": 9.05275,
+      "pipeWaterKg": 4.712604,
+      "inCabinetTubeStockKg": 1.628221,
+      "valveBodyMm": [
+        10357,
+        572,
+        1150.25,
+        56,
+        56,
+        99.5
+      ],
+      "valveFullStemReservationMm": [
+        10247,
+        572,
+        1172,
+        276,
+        56,
+        56
+      ],
+      "valveSideAfter5Mm": 59.5,
+      "wrenchSideAfter5Mm": 140.195387,
+      "wrenchFrontOpenSweepMm": [
+        680,
+        1000
+      ],
+      "receiverActions": {
+        "fixedPointWrench": {
+          "pointMm": [
+            10385,
+            600,
+            1900
+          ],
+          "forceComponentBoundsN": [
+            2.11565348,
+            10.65348445,
+            9.68873364
+          ],
+          "momentComponentBoundsNmm": [
+            3214.10807753,
+            504.03627804,
+            1153.08886226
+          ],
+          "uniformForceN": [
+            -1.2308281,
+            -9.56289683,
+            -9.59551222
+          ],
+          "uniformMomentNmm": [
+            -2530.8424277,
+            413.23592945,
+            895.92311476
+          ]
+        },
+        "guideWrench": {
+          "pointMm": [
+            10385,
+            600,
+            2100
+          ],
+          "forceComponentBoundsN": [
+            1.3757733,
+            7.2215341,
+            0
+          ],
+          "axialSlide": true,
+          "actualGripAndFrictionQualified": false
+        },
+        "independentUpperTerminal": {
+          "pointMm": [
+            10222.5,
+            3842.9,
+            2260
+          ],
+          "forceComponentBoundsN": [
+            0.19807239,
+            1.37935478,
+            0.14622332
+          ],
+          "momentComponentBoundsNmm": [
+            363.13117372,
+            157.30816342,
+            1406.15411837
+          ]
+        },
+        "outerRepairCutTerminal": {
+          "pointMm": [
+            10285,
+            -300,
+            583.8
+          ],
+          "forceComponentBoundsN": [
+            0.91174047,
+            4.79538024,
+            9.54846414
+          ],
+          "momentComponentBoundsNmm": [
+            5126.59084805,
+            265.26861149,
+            375.9901565
+          ]
+        },
+        "sourcePressureEndComponentBoundN": 480.044185,
+        "jetReversalNormN": 127.279221,
+        "completeLodgeRestraintInvented": false
+      },
+      "flow": {
+        "tubeNominalIdMm": 25.6,
+        "howdenRequiredMm": 28,
+        "howdenRequiredLmin": 50,
+        "nominalVelocityAtHowdenFlowMps": 1.619008,
+        "faultVelocityMps": 2.914214,
+        "fittingAndValveLossCoefficient": null,
+        "guaranteedHowdenDuty": false
+      },
+      "renewal": {
+        "throughWallStraightDrawMm": 739.5,
+        "drawnTubeBodyMm": [
+          10271,
+          439.5,
+          569.8,
+          28,
+          884,
+          46
+        ],
+        "drawToInstalledWasherAfter5Mm": -228,
+        "drawToFirstRestWasherAfter5Mm": 171.5,
+        "upperRiserFirstReleaseZMm": 2585,
+        "requiredUnseatTravelMm": 27,
+        "upperNetworkMustBeIndependentlyRetained": true,
+        "pressureJointZeroRetreatClaimed": false,
+        "completeToolAndOperatorSweepQualified": false
+      },
+      "materialResidues": [
+        {
+          "id": "plant-valve-polymer-0",
+          "material": "PTFE packing",
+          "quantity": 1,
+          "part": "HH-5012701--",
+          "ownerExceptionApproved": false
+        },
+        {
+          "id": "plant-valve-polymer-1",
+          "material": "PTFE sealing gasket",
+          "quantity": 1,
+          "part": "HH-5012701--",
+          "ownerExceptionApproved": false
+        },
+        {
+          "id": "plant-valve-polymer-2",
+          "material": "EPDM seat constituent",
+          "quantity": 1,
+          "part": "HH-5012701--",
+          "ownerExceptionApproved": false
+        }
+      ],
+      "componentTakeoff": {
+        "lowerElbows": {
+          "sku": "HH-5020401--",
+          "quantity": 2
+        },
+        "plainCouplers": {
+          "sku": "HH-5020301--",
+          "quantity": 2
+        },
+        "valve": {
+          "sku": "HH-5012701--",
+          "quantity": 1
+        },
+        "upperShapedTubeAndConnections": "Upper path is a source-bound tube-only flexibility route; actual formed/fitting schedule and joint stiffness remain unresolved."
+      },
+      "formedRoute": {
+        "vertices": 718,
+        "digest": "a99b0e0e8c397910c9812345fe33284312527656bffb070a7333cac09fc6558b"
+      },
+      "thermal": {
+        "schema": "had-inlet-finite-receiver-thermal/1",
+        "sourceContext": {
+          "input": {
+            "pathMm": {
+              "vertices": 718,
+              "digest": "a99b0e0e8c397910c9812345fe33284312527656bffb070a7333cac09fc6558b"
+            },
+            "fixedPointZMm": 1900,
+            "guideZMm": 2100,
+            "temperatureExcursionK": 40,
+            "pipe": {
+              "outerDiameterMm": 28,
+              "wallMm": 1.2,
+              "elasticModulusMpa": 117200,
+              "poissonRatio": 0.34,
+              "expansionMmMK": 0.017
+            }
+          },
+          "receiver": {
+            "baseZMm": 12,
+            "postAxisXYMm": [
+              10385,
+              520
+            ],
+            "topZMm": 2130,
+            "widthXMm": 60,
+            "depthYMm": 80,
+            "wallMm": 4,
+            "elasticModulusMpa": 200000,
+            "poissonRatio": 0.3
+          }
+        },
+        "method": "Same upper/lower3D tube-flexibility kernels, joined by exact Simpson receiver strain-energy integrals and all physical fixed/guide lever moments. One14-redundant compatible solve; independently signed segment temperatures retained. Fixed-base post, rigid arms and source six-axis endpoint laws are explicit comparison assumptions.",
+        "fixedPointWrench": {
+          "pointMm": [
+            10385,
+            600,
+            1900
+          ],
+          "forceComponentBoundsN": [
+            2.11565348,
+            10.65348445,
+            9.68873364
+          ],
+          "momentComponentBoundsNmm": [
+            3214.10807753,
+            504.03627804,
+            1153.08886226
+          ],
+          "uniformForceN": [
+            -1.2308281,
+            -9.56289683,
+            -9.59551222
+          ],
+          "uniformMomentNmm": [
+            -2530.8424277,
+            413.23592945,
+            895.92311476
+          ]
+        },
+        "guideWrench": {
+          "pointMm": [
+            10385,
+            600,
+            2100
+          ],
+          "forceComponentBoundsN": [
+            1.3757733,
+            7.2215341,
+            0
+          ],
+          "axialSlide": true,
+          "actualGripAndFrictionQualified": false
+        },
+        "upperTerminalWrench": {
+          "pointMm": [
+            10222.5,
+            3842.9,
+            2260
+          ],
+          "forceComponentBoundsN": [
+            0.19807239,
+            1.37935478,
+            0.14622332
+          ],
+          "momentComponentBoundsNmm": [
+            363.13117372,
+            157.30816342,
+            1406.15411837
+          ]
+        },
+        "outerTerminalWrench": {
+          "pointMm": [
+            10285,
+            -300,
+            583.8
+          ],
+          "forceComponentBoundsN": [
+            0.91174047,
+            4.79538024,
+            9.54846414
+          ],
+          "momentComponentBoundsNmm": [
+            5126.59084805,
+            265.26861149,
+            375.9901565
+          ]
+        },
+        "fixedPointReceiverMotion": {
+          "uniformTranslationMm": [
+            0.0115635,
+            -0.00166021,
+            0.00109678
+          ],
+          "translationBoundsMm": [
+            0.01691184,
+            0.04832101,
+            0.00247331
+          ],
+          "rotationBoundsRad": [
+            0.00003196,
+            0.00001244,
+            0.00002726
+          ]
+        },
+        "guideReceiverMotion": {
+          "uniformTranslationMm": [
+            0.01273452,
+            -0.00427416,
+            0.00114864
+          ],
+          "translationBoundsMm": [
+            0.01907471,
+            0.05481159,
+            0.00253222
+          ]
+        },
+        "compatibilityResidual": 0,
+        "postComplianceSymmetryError": 0,
+        "actualTerminalClampFittingAndFloorStiffnessQualified": false,
+        "completeInstalledThermalAcceptance": false
+      }
+    }
+  ]
+}

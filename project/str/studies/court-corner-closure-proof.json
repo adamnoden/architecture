@@ -31,7 +31,7 @@
     "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
     "project/str/studies/rc_floor_house_loads.py": "eaade7a26ecc682f742a1c3b3246ee648e5d497c236b52f656250994d0517654",
     "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-    "project/str/studies/vertical_rc_floor.py": "0d0e359c270a5a59fefed5b2d1edbaa0e16d4129a97a639135a0e22e81d47539",
+    "project/str/studies/vertical_rc_floor.py": "30a222fe8c7104b03cab7593b62fcd3ee224574f71380bb7cb7dc95cd275a7d7",
     "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
     "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
     "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
@@ -73,7 +73,7 @@
       "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
       "project/str/studies/rc_floor_house_loads.py": "eaade7a26ecc682f742a1c3b3246ee648e5d497c236b52f656250994d0517654",
       "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-      "project/str/studies/vertical_rc_floor.py": "0d0e359c270a5a59fefed5b2d1edbaa0e16d4129a97a639135a0e22e81d47539",
+      "project/str/studies/vertical_rc_floor.py": "30a222fe8c7104b03cab7593b62fcd3ee224574f71380bb7cb7dc95cd275a7d7",
       "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
       "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
       "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
@@ -1001,12 +1001,12 @@
     "minimumHeadVerticalReactionKN": -58.30341588397999,
     "negativeHeadCount": 10,
     "equilibriumResidualKN_KNm": [
-      -5.03774799653911e-11,
+      -5.0391690820106305e-11,
       1.1611689387791557e-10,
       -2.027604750765022e-10,
       -1.4510005712509156e-09,
       1.5203841030597687e-09,
-      7.528233254561201e-10
+      7.528669812018051e-10
     ],
     "maximumFrameTranslationMm": 3.43956387184206,
     "maximumPlateDeflectionMm": 1.1324433212674143,
@@ -1595,12 +1595,12 @@
     "minimumHeadVerticalReactionKN": -58.301902169097076,
     "negativeHeadCount": 10,
     "equilibriumResidualKN_KNm": [
-      -5.114486612001201e-11,
+      -5.1159076974727213e-11,
       1.1544898370630108e-10,
       -2.112869879056234e-10,
       -1.3979151844978331e-09,
       1.710839569568634e-09,
-      7.525250111939385e-10
+      7.525686669396236e-10
     ],
     "maximumFrameTranslationMm": 3.439522842586672,
     "maximumPlateDeflectionMm": 1.1324308277800046,
