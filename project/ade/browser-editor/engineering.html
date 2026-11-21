@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Ovid’s House | Engineering authoring</title></head>
+<body><main>
+  <header><h1>Engineering authoring</h1><p>Conditional roof comparison from the shared saved house document.</p><a href="./index.html">Schematic plan editor</a></header>
+  <div class="toolbar"><p id="stage-scope">Opening the bound document…</p><div class="actions">
+    <button id="save" type="button">Save document</button><button id="reload" type="button">Load saved document</button>
+    <button id="export" type="button">Export JSON</button><button id="import" type="button">Import JSON</button>
+    <input id="document-file" type="file" accept=".json,application/json" hidden>
+  </div></div>
+  <div class="workspace"><aside><div class="actions"><button id="undo" disabled>Undo</button><button id="redo" disabled>Redo</button></div>
+    <form id="edit"><label>Roof pitch (degrees)<input id="pitch" type="number" step="any" required></label>
+      <div class="actions"><button type="button" id="decrease">Decrease 1 degree</button><button type="button" id="increase">Increase 1 degree</button></div>
+      <button class="primary" type="submit">Apply pitch</button></form>
+    <p id="diagnostic" role="alert"></p><p id="evidence"></p>
+  </aside><section class="drawing" aria-label="Roof comparison"><div class="drawing-bar"><p id="analysis" role="status"></p><button id="pin" disabled>Use current as comparison</button></div>
+    <p id="stale" role="status"></p><p id="identity"></p><p id="affected"></p>
+    <div class="plans"><figure><figcaption id="current-caption">Current revision</figcaption><img id="current-roof" alt="Compiled roof section"></figure>
+    <figure><figcaption id="comparison-caption">Starting document</figcaption><img id="comparison-roof" alt="Comparison roof section"></figure></div>
+    <table><thead><tr><th>Output</th><th>Current</th><th>Comparison</th></tr></thead><tbody id="schedule"></tbody></table>
+  </section></div><p id="storage" role="status"></p>
+</main><script type="module" src="./engineering-editor.ts"></script></body></html>

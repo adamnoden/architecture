@@ -28,5 +28,8 @@ img:not([src]) { visibility: hidden; }
 #diagnostic { color: #8b3528; }
 #analysis, #affected, #stale, #storage { font-size: .9rem; }
 #stale:empty, #diagnostic:empty { display: none; }
+table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: .9rem; }
+th, td { padding: .5rem; text-align: left; border-bottom: 1px solid #cac7b9; }
+#identity { overflow-wrap: anywhere; font-size: .8rem; }
 @media (max-width: 760px) { .workspace { grid-template-columns: 1fr; } }
 @media (max-width: 440px) { .plans { grid-template-columns: 1fr; } }

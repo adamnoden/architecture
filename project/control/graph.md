@@ -19,13 +19,6 @@ flowchart LR
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
     n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>BLOCKED</b>"]
   end
-  subgraph g_ADE["ADE"]
-    direction TB
-    n_ADE_BROWSER_EDITOR["ADE-BROWSER-EDITOR<br/>Demonstrate browser authoring through the shared current engineering document<br/><b>READY</b>"]
-    n_ADE_DETAILS["ADE-DETAILS<br/>Produce source-bound technical bay drawings and details<br/><b>BLOCKED</b>"]
-    n_ADE_SCHEDULES["ADE-SCHEDULES<br/>Produce linked bay schedules specifications and quantities<br/><b>BLOCKED</b>"]
-    n_ADE_EVIDENCE["ADE-EVIDENCE<br/>Bind bay calculations and external evidence to controlling inputs<br/><b>BLOCKED</b>"]
-  end
   subgraph g_HAD["HAD"]
     direction TB
     n_HAD_OWNER_DESIGN_REVIEW["HAD-OWNER-DESIGN-REVIEW<br/>Receive the owner’s decision on the coordinated architectural design<br/><b>BLOCKED</b>"]
@@ -82,6 +75,12 @@ flowchart LR
   subgraph g_PUB["PUB"]
     direction TB
     n_PUB_02_FINAL["PUB-02-FINAL<br/>Final private-object content, drawing and manufacture gate<br/><b>BLOCKED</b>"]
+  end
+  subgraph g_ADE["ADE"]
+    direction TB
+    n_ADE_DETAILS["ADE-DETAILS<br/>Produce source-bound technical bay drawings and details<br/><b>BLOCKED</b>"]
+    n_ADE_SCHEDULES["ADE-SCHEDULES<br/>Produce linked bay schedules specifications and quantities<br/><b>BLOCKED</b>"]
+    n_ADE_EVIDENCE["ADE-EVIDENCE<br/>Bind bay calculations and external evidence to controlling inputs<br/><b>BLOCKED</b>"]
   end
   subgraph g_DEL["DEL"]
     direction TB
@@ -166,7 +165,6 @@ flowchart LR
 
   linkStyle default stroke:#aab1a9,stroke-width:1.5px;
   style g_SHARED fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
-  style g_ADE fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_HAD fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_IAS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_BCR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
@@ -179,6 +177,7 @@ flowchart LR
   style g_PLT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_EDA fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_PUB fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_ADE fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_DEL fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_EPR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_DPL fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
@@ -195,7 +194,6 @@ flowchart LR
   classDef activeUnclaimed fill:#dce9e8,stroke:#356966,color:#1f4542,stroke-width:3px,stroke-dasharray:4 3;
   classDef invalidClaim fill:#f1e0dc,stroke:#a45f54,color:#693d37,stroke-width:3px;
   class n_CCR_CURRENT_RELEASE blocked;
-  class n_ADE_BROWSER_EDITOR ready;
   class n_HAD_INLET_RESOLUTION ready;
   class n_HAD_OWNER_DESIGN_REVIEW blocked;
   class n_IAS_WORKABLE_DETAILS blocked;
@@ -322,7 +320,7 @@ flowchart LR
   end
   subgraph g_ADE["ADE"]
     direction TB
-    n_ADE_BROWSER_EDITOR["ADE-BROWSER-EDITOR<br/>Demonstrate browser authoring through the shared current engineering document<br/><b>READY</b>"]
+    n_ADE_BROWSER_EDITOR["ADE-BROWSER-EDITOR<br/>Demonstrate browser authoring through the shared current engineering document<br/><b>DONE</b>"]
     n_ADE_DELIVERY_AUDIT["ADE-DELIVERY-AUDIT<br/>Map construction-information needs to existing capabilities<br/><b>DONE</b>"]
     n_ADE_SECTION_VIEW["ADE-SECTION-VIEW<br/>Prove source-owned orthographic cut, context and occlusion semantics<br/><b>DONE</b>"]
     n_ADE_SECTION_PARITY["ADE-SECTION-PARITY<br/>Migrate principal and service sections to source-bound visible geometry and cross-view parity<br/><b>DONE</b>"]
@@ -910,7 +908,7 @@ flowchart LR
   class n_CCR_CHANGE_PROOF done;
   class n_CCR_CURRENT_GALLERY done;
   class n_CCR_CURRENT_RELEASE blocked;
-  class n_ADE_BROWSER_EDITOR ready;
+  class n_ADE_BROWSER_EDITOR done;
   class n_PCO_CURRENT_GALLERY done;
   class n_PCO_LOCAL_OPENING done;
   class n_PCO_WORKABLE_INTERIORS done;

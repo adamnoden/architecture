@@ -164,6 +164,14 @@ export function prepareCurrentDesignCompile(input: unknown) {
       const { runMasonryFrameCase } = await import('./structural-masonry-frame.js')
       return runMasonryFrameCase(resolved, input)
     },
+    readUpperRoofBearingCase: async () => {
+      const { readUpperRoofBearingCase } = await import('./structural-upper-bearing.js')
+      return readUpperRoofBearingCase(resolved)
+    },
+    upperRoofBearingCase: async (input: unknown) => {
+      const { runUpperRoofBearingCase } = await import('./structural-upper-bearing.js')
+      return runUpperRoofBearingCase(resolved, input)
+    },
     joinedRcFloorCase: async (input: unknown) => {
       const { runJoinedRcFloorCase } = await import('./structural-rc-floor.js')
       return runJoinedRcFloorCase(resolved, input)
@@ -231,6 +239,14 @@ export function prepareCurrentDesignCompile(input: unknown) {
     inletRoute: async (input: unknown) => {
       const { runInletRouteCase } = await import('./inlet-route.js')
       return runInletRouteCase(resolved, input)
+    },
+    readInletSourceEnvelopeCase: async () => {
+      const { readInletSourceEnvelopeCase } = await import('./inlet-source-envelope.js')
+      return readInletSourceEnvelopeCase(resolved)
+    },
+    inletSourceEnvelopeCase: async (input: unknown) => {
+      const { runInletSourceEnvelopeCase } = await import('./inlet-source-envelope.js')
+      return runInletSourceEnvelopeCase(resolved, input)
     },
     readInletCabinetCase: async () => {
       const { readInletCabinetCase } = await import('./inlet-cabinet-copper.js')
