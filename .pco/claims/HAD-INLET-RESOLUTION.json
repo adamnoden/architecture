@@ -9,8 +9,8 @@
     "label": "convergence-water-20261121"
   },
   "claimedAt": "2026-11-21T19:48:28.453Z",
-  "heartbeatAt": "2026-11-21T19:56:05.770Z",
-  "expiresAt": "2026-11-21T20:41:05.770Z",
+  "heartbeatAt": "2026-11-21T20:10:57.591Z",
+  "expiresAt": "2026-11-21T20:55:57.591Z",
   "branch": "work/convergence-water-room-20261121",
   "predecessor": {
     "leaseId": "94d2339d-61ab-49db-96e2-66d5ed0ff6e4",
@@ -36,8 +36,8 @@
   },
   "pr": 1611,
   "checkpoint": {
-    "evidence": "PR1611 head1c386c7b/tree28c1a352 matches local2d693e42;15focused tests plus saved-board9/9,tsc,repo,producercheck passed; recovered e1b79cde and source-bound a787210f helper.",
-    "next": "Inspect exact-head CI,visual drawing,merge coordination with STR; keep HAD open and prospective loads unadmitted.",
-    "blocker": "Whole pressure/renewal/thermal/support/stored-release arrangement remains open; owner/material/installed acceptance not inferred."
+    "evidence": "PR1611 head03e9ac71/tree7f04d16c matches local e40bd684;16focused tests,tsc,repo,producercheck pass;actual SVG inspected. Below-source pressure now reaches both flow and jet actions.",
+    "next": "Require fresh03e9ac71 CI then canonical preflight and merge; releaseHAD and coordinate moved-main STR receipts.",
+    "blocker": "Fresh CI pending. HAD whole pressure/renewal/thermal/support/stored-release arrangement remains open; no coordinated house/material/owner/installed adoption."
   }
 }
