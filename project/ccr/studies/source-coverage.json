@@ -932,7 +932,8 @@
       ],
       "historicalInputs": [
         "project/str/studies/seated-pre-nodal-history.json",
-        "project/str/studies/wet-support-cage-comparison-paths.json"
+        "project/str/studies/wet-support-cage-comparison-paths.json",
+        "project/str/studies/sparse-floor250-execution-history.json"
       ]
     }
   ],

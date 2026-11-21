@@ -27,3 +27,13 @@ OPENBLAS_NUM_THREADS=1 python3 -B -m unittest perforated_floor_sparse_test perfo
 ```
 
 The earlier individual250/274 whole-house workers exited137 without results. This work does **not** prove their kill cause, or that this change removes their controlling resource limit: the initial500mm in-plane oracle itself completed quickly. The next decisive experiment is the actual250mm whole-house native case, run serially on the successor source identity, with phase/resource evidence if it fails. All affected ancestor and current receipts must subsequently be genuinely regenerated. Predecessor receipts remain on their original source identity and are not rehashed into this candidate.
+
+
+The first full250mm successor execution is now retained as [exact historical
+execution evidence](studies/sparse-floor250-execution-history.json): source
+`d054ea76`, native tuple`f2de55ea`,163.225seconds, SIGKILL and maximum child
+RSS4,427,904KiB. No native response or convergence result exists. This narrows the
+next computational question but does not establish the kill cause. A read-only
+audit found large scalar vertical-plate energy representations alongside the
+same directly assembled condensed plate block; an exact compact representation
+is being investigated separately, preserving global energy diagnostics.
