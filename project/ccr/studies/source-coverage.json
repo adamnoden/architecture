@@ -562,7 +562,7 @@
     {
       "id": "had-fixed-inlet-arrangement",
       "state": "candidate-interface",
-      "authority": "Unselected incoming-water comparisons. Tall cabinet and the non-recovering restriction/old-receiver comparison are rejected; pressure-recovering throats remain unqualified. Corrected absolute-pressure/source/delivery/receiver proof supports an internal wet Utility/service-hub replan, preserving genuine indoor cuts, source/renewal/frost/material failures and actual occupied controls; no new room or inlet adopted.",
+      "authority": "Unselected inlet architecture. Authored Utility20/Plant45 duties and separate restrictions join actual occupied fixture/topology, wet Utility, indoor mainboard-only and independent Streethead PV proposals. Utility earns necessary hydraulic screens; old Plant receiver, cabinet and combined indoor PV enclosure are rejected. Stored release, ordinary cuts/renewal, receiving supports, drains/frost and material/owner acceptance remain open.",
       "decisions": [
         "project/had/fixed-inlet-entry-candidate.md",
         "project/had/fixed-inlet-receiver-development.md",
@@ -603,7 +603,10 @@
         "project/str/studies/floor-portal-interface-review.json",
         "project/str/studies/reconciled-house-interface.json",
         "project/had/studies/south-inlet-relief.json",
-        "project/had/studies/south-utility-inlet.json"
+        "project/had/studies/south-utility-inlet.json",
+        "project/mat/studies/whole-house-service-baseline.json",
+        "project/ias/studies/utility-first-release.json",
+        "project/had/studies/boundary-service-lodge.json"
       ],
       "receipts": [
         "project/had/studies/inlet-cabinet-copper.results.json",
@@ -1724,11 +1727,11 @@
     "project/str/studies/roof-surface-pressure.svg": "bf17bdc9c139c76a80fa0a8352f4bd40c3938c92",
     "project/str/studies/roof_surface_pressure_proof.py": "c6de2ceb21f113e4672d870f3512754318b99c23",
     "project/str/studies/straight_frame_cage_proof.py": "04a03d0ec19f885e611cd1549d9d0a5fc2c4eeb1",
-    "compiler/reference-house/current-design/inlet-source-envelope.ts": "9de3090009b65300e48c7867f5b030cd89205e7b",
+    "compiler/reference-house/current-design/inlet-source-envelope.ts": "75b3571953db20f9ebeaf0735d101f38c9e912c9",
     "project/had/studies/inlet-source-envelope.ts": "d2e00dfe467c48bfbe984d44a9f9c5e77d2511c1",
-    "project/had/inlet-source-and-room-decision.md": "882664242fc214b90b73f5c3fb4016a91ee8fd4d",
-    "project/had/studies/inlet-source-envelope.results.json": "425e39402a3b77d580a8d0b5514c4a5e0bdbcfda",
-    "project/had/studies/inlet-source-envelope.svg": "d24260e9f6acaf2235dd0e36d269aa3f35ac16fb",
+    "project/had/inlet-source-and-room-decision.md": "3349517d498a592dc6290577a60564840b0245cc",
+    "project/had/studies/inlet-source-envelope.results.json": "5d93751f27d07b1df2dde75b21254ab66c648841",
+    "project/had/studies/inlet-source-envelope.svg": "1ca081d27703f4622481d3ba9da48fc90417f61a",
     "compiler/reference-house/current-design/engineering-edit.ts": "463b22e8fe900cff15cf9419c54b4cbce016f63a",
     "project/ade/browser-editor/engineering-api.ts": "2db0efb4e3cdb698009b69cc7fa9ff80389f1158",
     "project/ade/browser-editor/engineering-editor.ts": "cb109c701742575cc1bae5b5122eb2ee750a4a8f",

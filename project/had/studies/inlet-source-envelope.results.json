@@ -1,34 +1,42 @@
 {
-  "schema": "had-inlet-source-envelope-result/1",
+  "schema": "had-inlet-source-envelope-result/2",
   "state": "existing-whole-arrangement-rejected",
   "source": {
     "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-    "bindingDigest": "9e9e2aeb63e6e9264df12acbec249f457f326742599fedebe3ba8311135716cd",
+    "bindingDigest": "66ffadadfef8cb23384f3cd5506c67aebd1711e5d93273b58329de210b88eaed",
     "inputs": {
       "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
       "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
       "project/had/studies/south-inlet-relief.json": "f6e424b744bb7e8cac26a8676ea7a358cb137d38",
       "project/had/studies/south-utility-inlet.json": "1298b8e175326fa1f91ca753da52a168b858758f",
-      "project/had/studies/current-house-services.json": "e649805e78244527fe6498b516fa5f23734ac5ea"
+      "project/had/studies/current-house-services.json": "e649805e78244527fe6498b516fa5f23734ac5ea",
+      "project/mat/studies/whole-house-service-baseline.json": "049161ebac29b24e0acc7d8085302fca906fe9d2",
+      "project/ias/studies/utility-first-release.json": "be84a64623c8042a002af108a784b8668acd7542",
+      "project/had/studies/boundary-service-lodge.json": "edccc843f1829bf583e517095442ad9fe481da53"
     },
     "methods": {
-      "compiler/reference-house/current-design/inlet-source-envelope.ts": "9de3090009b65300e48c7867f5b030cd89205e7b",
+      "compiler/reference-house/current-design/inlet-source-envelope.ts": "75b3571953db20f9ebeaf0735d101f38c9e912c9",
       "project/had/studies/south-inlet-relief-hydraulics.mjs": "1cb8dd67e832ce2986f042844122a39e625fef93",
       "compiler/reference-house/current-design/inlet-cabinet-copper.ts": "34d774e3ccd4ff0bac3dcaef63dfa5cdedff6ca4"
     }
   },
   "settings": {
-    "apertureNominalMm": 9,
+    "utilityApertureNominalMm": 6.5,
+    "plantApertureNominalMm": 10.2,
     "apertureToleranceMm": 0.1,
     "sourceMaximumTotalBar": 9,
     "sourceMinimumDynamicBar": 3.5,
-    "requiredEachLmin": 50,
+    "requiredUtilityLmin": 20,
+    "requiredPlantLmin": 45,
     "requiredResidualBar": 1,
-    "additionalNetworkLossBar": 0.5,
-    "dischargeCoefficientComparison": 0.62,
+    "utilityNetworkLossBar": 0.5,
+    "plantNetworkLossBar": 1,
+    "dischargeCoefficientComparison": 0.55,
     "pressureRecoveryFractionComparison": 0,
     "atmosphericMinimumBar": 0.9,
-    "atmosphericMaximumBar": 1.1
+    "atmosphericMaximumBar": 1.1,
+    "mainboardNorthOffsetMm": 0,
+    "plantTransferZMm": 2235
   },
   "bound": {
     "method": "Incompressible energy comparison Q<=A sqrt(2 p_total_absolute/rho), Cd<=1, local pressure>=0absolute; recovery/cavitation qualification remains required.",
@@ -45,9 +53,11 @@
     "maximumPressureIncludesStaticDynamicElevationAndTransientHead": true,
     "installedSourceMaximumProved": false,
     "pressureRecoveryFractionIsAuthoredComparisonNotProductEvidence": true,
-    "minimumDiameterMm": 8.9,
-    "maximumDiameterMm": 9.1,
-    "maximumEachLmin": 176.271461,
+    "maximumCombinedLmin": 318.548776,
+    "branchMaximumsLmin": {
+      "utility": 92.722918,
+      "plant": 225.825858
+    },
     "sourceMinimumIsAtSimultaneousDemand": true,
     "deliveryCdIsComparisonNotGuaranteedLowerBound": true
   },
@@ -79,13 +89,18 @@
         "location": "unresolved-internal-wet-service-hub",
         "usableOrdinaryAccessProved": false
       },
-      "maximumLimitedEachLmin": 176.271461,
-      "requiredDeliveryEachLmin": 50,
-      "pressureLossComparisonBar": 2.333911,
-      "residualPressureComparisonBar": 0.666089,
-      "throatAbsolutePressureComparisonBar": 2.066089,
+      "maximumLimitedEachLmin": 92.722918,
+      "requiredDeliveryEachLmin": 20,
+      "apertureNominalMm": 6.5,
+      "apertureToleranceMm": 0.1,
+      "minimumDiameterMm": 6.4,
+      "maximumDiameterMm": 6.6,
+      "additionalNetworkLossBar": 0.5,
+      "pressureLossComparisonBar": 1.774608,
+      "residualPressureComparisonBar": 1.225392,
+      "throatAbsolutePressureComparisonBar": 2.625392,
       "nonnegativeThroatPressureScreen": true,
-      "minimumResidualScreen": false,
+      "minimumResidualScreen": true,
       "dischargeCoefficientQualified": false,
       "existingReceiver": {
         "lowerBore": {
@@ -104,19 +119,19 @@
         "maximumScreenedLmin": 101.179931,
         "crownOnlyCapacityLmin": 122.400407,
         "limitedFault": {
-          "entranceHeadMm": 239.585338,
-          "crownReserveMm": -9.071413,
-          "staticHeadReserveMm": -89.585338,
-          "receiverWaterZMm": 75.772265,
-          "freeDropReserveMm": -17.438965,
-          "necessaryChannelAndReceiverScreen": false
+          "entranceHeadMm": 141.841561,
+          "crownReserveMm": 7.801342,
+          "staticHeadReserveMm": 8.158439,
+          "receiverWaterZMm": 48.330645,
+          "freeDropReserveMm": 10.002655,
+          "necessaryChannelAndReceiverScreen": true
         },
         "requiredDemandControl": {
-          "entranceHeadMm": 101.630681,
-          "crownReserveMm": 22.322168,
-          "staticHeadReserveMm": 48.369319,
-          "receiverWaterZMm": 31.006766,
-          "freeDropReserveMm": 27.326534,
+          "entranceHeadMm": 69.628988,
+          "crownReserveMm": 36.0577,
+          "staticHeadReserveMm": 80.371012,
+          "receiverWaterZMm": 15.461713,
+          "freeDropReserveMm": 42.871587,
           "necessaryChannelAndReceiverScreen": true
         },
         "fullBoreWithoutRestriction": {
@@ -130,14 +145,14 @@
         }
       },
       "feasibleNominalApertureIntervalMm": {
-        "minimumForDelivery": 9.350253,
+        "minimumForDelivery": 6.311523,
         "maximumForExistingReceiver": 6.794418,
-        "existsForNecessaryScreens": false,
-        "optimisticCdOneMinimumForDelivery": 7.383656,
-        "optimisticCdOneIntervalExists": false,
-        "verdict": "reject-existing-receiver-plus-demand-envelope"
+        "existsForNecessaryScreens": true,
+        "optimisticCdOneMinimumForDelivery": 4.706589,
+        "optimisticCdOneIntervalExists": true,
+        "verdict": "necessary-hydraulic-interval-only"
       },
-      "minimumSourceDynamicBarForExistingReceiverComparison": 8.791102
+      "minimumSourceDynamicBarForExistingReceiverComparison": 2.98242
     },
     {
       "id": "plant",
@@ -166,13 +181,18 @@
         "location": "unresolved-internal-wet-service-hub",
         "usableOrdinaryAccessProved": false
       },
-      "maximumLimitedEachLmin": 176.271461,
-      "requiredDeliveryEachLmin": 50,
-      "pressureLossComparisonBar": 2.333911,
-      "residualPressureComparisonBar": 0.666089,
-      "throatAbsolutePressureComparisonBar": 2.066089,
+      "maximumLimitedEachLmin": 225.825858,
+      "requiredDeliveryEachLmin": 45,
+      "apertureNominalMm": 10.2,
+      "apertureToleranceMm": 0.1,
+      "minimumDiameterMm": 10.1,
+      "maximumDiameterMm": 10.299999999999999,
+      "additionalNetworkLossBar": 1,
+      "pressureLossComparisonBar": 1.448445,
+      "residualPressureComparisonBar": 1.051555,
+      "throatAbsolutePressureComparisonBar": 2.951555,
       "nonnegativeThroatPressureScreen": true,
-      "minimumResidualScreen": false,
+      "minimumResidualScreen": true,
       "dischargeCoefficientQualified": false,
       "existingReceiver": {
         "lowerBore": {
@@ -191,19 +211,19 @@
         "maximumScreenedLmin": 101.179931,
         "crownOnlyCapacityLmin": 122.400407,
         "limitedFault": {
-          "entranceHeadMm": 239.585338,
-          "crownReserveMm": -9.071413,
-          "staticHeadReserveMm": -89.585338,
-          "receiverWaterZMm": 175.772265,
-          "freeDropReserveMm": -17.438965,
+          "entranceHeadMm": null,
+          "crownReserveMm": null,
+          "staticHeadReserveMm": null,
+          "receiverWaterZMm": 189.918268,
+          "freeDropReserveMm": -31.584968,
           "necessaryChannelAndReceiverScreen": false
         },
         "requiredDemandControl": {
-          "entranceHeadMm": 101.630681,
-          "crownReserveMm": 22.322168,
-          "staticHeadReserveMm": 48.369319,
-          "receiverWaterZMm": 131.006766,
-          "freeDropReserveMm": 27.326534,
+          "entranceHeadMm": 96.741958,
+          "crownReserveMm": 24.329412,
+          "staticHeadReserveMm": 53.258042,
+          "receiverWaterZMm": 128.700079,
+          "freeDropReserveMm": 29.633221,
           "necessaryChannelAndReceiverScreen": true
         },
         "fullBoreWithoutRestriction": {
@@ -217,21 +237,46 @@
         }
       },
       "feasibleNominalApertureIntervalMm": {
-        "minimumForDelivery": 9.350253,
+        "minimumForDelivery": 10.112074,
         "maximumForExistingReceiver": 6.794418,
         "existsForNecessaryScreens": false,
-        "optimisticCdOneMinimumForDelivery": 7.383656,
+        "optimisticCdOneMinimumForDelivery": 7.525152,
         "optimisticCdOneIntervalExists": false,
         "verdict": "reject-existing-receiver-plus-demand-envelope"
       },
-      "minimumSourceDynamicBarForExistingReceiverComparison": 8.791102
+      "minimumSourceDynamicBarForExistingReceiverComparison": 9.50475
     }
   ],
   "states": [
     {
+      "id": "plant-stored-water-backflow",
+      "sourceFed": false,
+      "eachLmin": null,
+      "result": "actual-factory-release-model-required",
+      "obligation": "Catalogue/minimum litres are not maximum inventory. Model actual store/expansion/upper-pipe pressure, nonreturn and anti-vacuum states; the Lodge aperture does not bound this release."
+    },
+    {
+      "id": "utility-crossfeed-from-plant",
+      "sourceFed": true,
+      "eachLmin": null,
+      "result": "retire-cold-link-and-separate-pillar-taps",
+      "obligation": "Retire the original Plant-fed Utility cold link and exclude mixer crossconnection using actual independent air-gapped taps. No invented nonreturn protection."
+    },
+    {
+      "id": "wet-room-door-open-mainboard",
+      "sourceFed": true,
+      "eachLmin": null,
+      "result": "assembled-jet-and-dry-escape-unqualified",
+      "obligation": "Move PV to a separated dry Streethead occurrence; qualify actual mainboard seams, entries, heat and source-jet duty with the Utility door open. Source/store isolation is required before cabinet opening."
+    },
+    {
       "id": "ordinary-both-open",
       "sourceFed": true,
-      "eachLmin": 50,
+      "byBranchLmin": {
+        "utility": 20,
+        "plant": 45
+      },
+      "combinedLmin": 65,
       "result": "unqualified-delivery-and-internal-access",
       "obligation": "Prove simultaneous two-branch source curve, actual restriction Cd, full valves and network losses; no double allocation of one source."
     },
@@ -245,36 +290,51 @@
     {
       "id": "one-wall-spool-ruptures-primary-mouth-blocked",
       "sourceFed": true,
-      "eachLmin": 176.271461,
+      "byBranchLmin": {
+        "utility": 92.722918,
+        "plant": 225.825858
+      },
       "result": "reject-existing-channel",
       "obligation": "Actual low receiver, reverse sleeve, impact shield, support and wet seams still require joined proof."
     },
     {
       "id": "downstream-indoor-cut-or-upper-joint-fault",
       "sourceFed": true,
-      "eachLmin": 176.271461,
+      "byBranchLmin": {
+        "utility": 92.722918,
+        "plant": 225.825858
+      },
       "result": "reject-uncontained-upper-network",
       "obligation": "Low entry containment does not catch the relocated house cut or upper joints. Replan the complete internal wet station; do not reuse the rejected tall cabinet."
     },
     {
       "id": "both-branches-rupture",
       "sourceFed": true,
-      "eachLmin": 176.271461,
-      "combinedLmin": 352.542922,
+      "byBranchLmin": {
+        "utility": 92.722918,
+        "plant": 225.825858
+      },
+      "combinedLmin": 318.548776,
       "result": "separate-outfall-and-common-site-proof-required",
       "obligation": "Charge both flows independently. One receiving depression, obstruction or site flood cannot be credited twice."
     },
     {
       "id": "secondary-high-or-submerged",
       "sourceFed": true,
-      "eachLmin": 176.271461,
+      "byBranchLmin": {
+        "utility": 92.722918,
+        "plant": 225.825858
+      },
       "result": "reject-tailwater-outside-envelope",
       "obligation": "The free-drop model is inapplicable; no pressure-backed or submerged outlet credit."
     },
     {
       "id": "both-reliefs-blocked",
       "sourceFed": true,
-      "eachLmin": 176.271461,
+      "byBranchLmin": {
+        "utility": 92.722918,
+        "plant": 225.825858
+      },
       "result": "reject-unattended-event",
       "obligation": "Finite storage is time to spill, not isolation. No manual response time is assigned."
     },
@@ -321,6 +381,812 @@
       "obligation": "Restriction, Lodge, spool and room drains must stay serviceable through the declared cold event. Permanent open spill slots do not establish a warm enclosure; no trace heating, antifreeze or moving flap is invented."
     }
   ],
+  "joinedDirection": {
+    "state": "one-recommended-replacement-not-an-adopted-room",
+    "sourceOccupiedBindingDigest": "384837dd37a4ca46629d67068e5fd3352301f8e4172911513cabcb54f5e1fb1c",
+    "designDuties": {
+      "status": "authored-reference-design-requirements",
+      "utilityLmin": 20,
+      "plantLmin": 45,
+      "commonSourceSimultaneousLmin": 65,
+      "utilityAllocation": [
+        {
+          "id": "utility-sink-PROPOSED",
+          "Lmin": 6
+        },
+        {
+          "id": "washer-PROPOSED",
+          "Lmin": 12
+        },
+        {
+          "id": "design-allowance",
+          "Lmin": 2
+        }
+      ],
+      "plantComfortExample": [
+        {
+          "id": "two-showers",
+          "Lmin": 18
+        },
+        {
+          "id": "bath-fill",
+          "Lmin": 12
+        },
+        {
+          "id": "kitchen",
+          "Lmin": 6
+        },
+        {
+          "id": "aggregate-cistern-refill",
+          "Lmin": 8
+        }
+      ],
+      "plantComfortAllowanceLmin": 1,
+      "fixtureIds": [
+        "guest-WC",
+        "guest-basin",
+        "utility-sink-PROPOSED",
+        "washer-PROPOSED",
+        "kitchen-sink",
+        "principal-WC",
+        "principal-basin",
+        "principal-shower",
+        "family-WC",
+        "family-basin",
+        "family-bath",
+        "rear-WC",
+        "rear-basin",
+        "rear-shower"
+      ],
+      "allOutletsSimultaneousGuaranteed": false,
+      "nativeFixtureRateGuaranteesInvented": false,
+      "washer": {
+        "model": "Bosch WAN282X2GB",
+        "status": "Retired product used as one native first-release comparator; not a procurement or material selection.",
+        "pressureBar": [
+          1,
+          10
+        ],
+        "selectedRateLmin": 12,
+        "factoryRateGuaranteeAvailable": false,
+        "source": "https://media3.bosch-home.com/Documents/9001906867_B.pdf"
+      }
+    },
+    "topology": {
+      "directUtilityColdOnly": [
+        "utility-sink-PROPOSED",
+        "washer-PROPOSED"
+      ],
+      "plantColdAndStore": [
+        "guest-WC",
+        "guest-basin",
+        "kitchen-sink",
+        "principal-WC",
+        "principal-basin",
+        "principal-shower",
+        "family-WC",
+        "family-basin",
+        "family-bath",
+        "rear-WC",
+        "rear-basin",
+        "rear-shower"
+      ],
+      "utilityHotRemainsPlantFed": true,
+      "retireColdTreeConnection": "ground-utility/cold from ground-front-west at [10350,3200]",
+      "retireRejectedInlet": [
+        "lobby-I0",
+        "lobby-U0",
+        "lobby-P0",
+        "lobby-common-header",
+        "inherited-east-low-route"
+      ],
+      "requiredSink": {
+        "kind": "two-independent-pillar-taps",
+        "holesMm": [
+          28,
+          28
+        ],
+        "centresMm": 180,
+        "mixingOnlyInOpenBowl": true,
+        "actualAirGapAboveFloodRimRequired": true,
+        "tapProductsAndConstituentsSelected": false
+      },
+      "oldColdConnectionRetiredInOccupiedSource": false,
+      "crossfeedIndependenceQualified": false
+    },
+    "room": {
+      "wetUtilityPlanMm": [
+        9397,
+        429.5,
+        2173.5,
+        2023.5
+      ],
+      "northWallFacesYMm": [
+        2453,
+        2647
+      ],
+      "northOpeningXMm": [
+        10250,
+        11150
+      ],
+      "retainedFurniture": {
+        "service-emitter-utility-E": [
+          11370.5,
+          1778,
+          200,
+          650
+        ],
+        "service-utility-washer": [
+          10076,
+          800,
+          598,
+          600
+        ],
+        "service-utility-sink": [
+          10935,
+          740,
+          600,
+          600
+        ],
+        "service-utility-rearServiceChase": [
+          10050,
+          450,
+          1500,
+          250
+        ],
+        "service-utility-valveBay": [
+          10700,
+          700,
+          235,
+          700
+        ]
+      },
+      "retiredFurniture": [
+        "service-utility-electricalStation",
+        "service-utility-PVinverter"
+      ],
+      "newMainboard": {
+        "model": "nVent HDW0606130",
+        "bodyWidthMm": 610,
+        "rearHeightMm": 605,
+        "frontHeightMm": 430,
+        "bodyDepthMm": 300,
+        "wallStandOffMm": 50,
+        "roofOverhangMm": 30,
+        "emptyKg": 26.5,
+        "passiveOnWallWAt20K": 108,
+        "doorOpenDeg": 120,
+        "gasket": "replaceable silicone",
+        "actualBoardContentsSelected": false,
+        "assembledHeatLossW": null,
+        "completeJetDutyQualified": false,
+        "ownerMaterialExceptionApproved": false,
+        "jetComparison": {
+          "coldOnly": true,
+          "nozzlePressureIsNotImpactEquivalence": true,
+          "ip69kComparator": {
+            "nozzleBar": 100,
+            "flowLmin": 16,
+            "nozzle": "30-degree fan",
+            "standOffMm": [
+              100,
+              150
+            ],
+            "idealIncidentMomentumN": 37.712362
+          },
+          "sourceAirVelocityUpperMps": 43.111319,
+          "byBranch": [
+            {
+              "id": "utility",
+              "incidentMomentumUpperN": 66.623456,
+              "fullReversalUpperN": 133.246911
+            },
+            {
+              "id": "plant",
+              "incidentMomentumUpperN": 162.260845,
+              "fullReversalUpperN": 324.52169
+            }
+          ],
+          "actualFootprintSeamsDurationPenetrationsAndStoredHotReleaseQualified": false,
+          "source": "https://www.nvent.com/sites/default/files/dam/cat-00059_chapter13.pdf"
+        },
+        "sources": [
+          "https://www.nvent.com/en-us/hoffman/products/enchdw0606130/pdf",
+          "https://www.nvent.com/sites/default/files/dam/hoffman-im-hdw-mi-manual-usen-2108.pdf"
+        ],
+        "proposedGrossBoxMm": [
+          11190.5,
+          2647,
+          300,
+          380,
+          610,
+          605
+        ],
+        "normalRouteAfter10Mm": 335.5,
+        "northWallAfter10Mm": 336,
+        "southWallGapMm": 0,
+        "workingFieldPlanMm": [
+          10190.5,
+          2647,
+          1000,
+          610
+        ],
+        "serviceState": "Temporary service-suite closure. Before enclosure opening isolate source-fed water and cylinder/upper inventory, relieve and prove zero pressure; independently isolate utility AC and PV AC."
+      },
+      "purge": {
+        "room": "utility",
+        "level": "GROUND",
+        "opening": "south-window-4",
+        "wall": "south",
+        "body": [
+          9725,
+          754.5
+        ],
+        "centre": 9900,
+        "roomAreaM2": 4.81459525,
+        "operatingTierLocalZ": [
+          1250,
+          2410
+        ],
+        "fixedLowerGlassToLocalZ": 1175,
+        "guardTopMaximumLocalZ": 1100,
+        "fixedCentrePost": {
+          "widthMM": 50,
+          "normalMM": [
+            301.5,
+            429.5
+          ]
+        },
+        "hingeHalfSpacingMM": 425,
+        "leaves": [
+          {
+            "hand": -1,
+            "hinge": [
+              9475,
+              301.5,
+              1250
+            ],
+            "completeWHDepth": [
+              370,
+              1160,
+              128
+            ],
+            "maximumMassKG": 25,
+            "frames": [
+              {
+                "angle": 0,
+                "plan": [
+                  [
+                    9475,
+                    301.5
+                  ],
+                  [
+                    9845,
+                    301.5
+                  ],
+                  [
+                    9845,
+                    429.5
+                  ],
+                  [
+                    9475,
+                    429.5
+                  ]
+                ]
+              },
+              {
+                "angle": 17.5,
+                "plan": [
+                  [
+                    9475,
+                    301.5
+                  ],
+                  [
+                    9827.875271776844,
+                    190.23885418341894
+                  ],
+                  [
+                    9866.36561411339,
+                    312.31462387919197
+                  ],
+                  [
+                    9513.490342336547,
+                    423.57576969577303
+                  ]
+                ]
+              },
+              {
+                "angle": 35,
+                "plan": [
+                  [
+                    9475,
+                    301.5
+                  ],
+                  [
+                    9778.086256386927,
+                    89.27671855011297
+                  ],
+                  [
+                    9851.50404023986,
+                    194.1281802191039
+                  ],
+                  [
+                    9548.417783852934,
+                    406.35146166899096
+                  ]
+                ]
+              }
+            ],
+            "gripPath": [
+              [
+                9745,
+                494.5,
+                1370
+              ],
+              [
+                9790.539796006346,
+                404.37680562825403,
+                1370
+              ],
+              [
+                9806.87130417378,
+                304.730706732993,
+                1370
+              ]
+            ],
+            "maximumSampledReachMM": 458.143348323446,
+            "reachSamplingErrorMM": 0.7240651750283577,
+            "articulatedArm": {
+              "elbow": [
+                9810,
+                550,
+                1380
+              ],
+              "upperLengthMM": 222.36287909630963,
+              "maximumForearmLengthMM": 245.49300388660797,
+              "capsuleRadiusMM": 40,
+              "maximumCombinedLengthMM": 467.8558829829176,
+              "upperToPostLowerMM": 80.5,
+              "forearmToPostLowerMM": 25,
+              "handToOwnLeafMM": 25,
+              "handToPostLowerMM": 28.112971027790877,
+              "rejected350HandleToPostMM": -39.68612685456077
+            },
+            "stay": {
+              "pivot": [
+                9597.872806643349,
+                215.4635345473431,
+                1190
+              ],
+              "openPeg": [
+                9706.773515925866,
+                495,
+                1190
+              ],
+              "closedPeg": [
+                9854.254770942722,
+                495,
+                1190
+              ],
+              "pivotToHoleMM": 300,
+              "completeBarSectionMM": [
+                20,
+                5
+              ],
+              "completeVerticalEnvelopeMM": 20,
+              "openLengthMM": 299.99999999999983,
+              "pegReachMM": 357.97632018257224
+            },
+            "scope": "Plain bronze pin-and-peg stay, positive closed catch and three butt hinges. Grip remains controlled through the complete 0–35 degree travel before the stay is seated. The two stay planes are staggered below the moving leaves."
+          },
+          {
+            "hand": 1,
+            "hinge": [
+              10325,
+              301.5,
+              1250
+            ],
+            "completeWHDepth": [
+              370,
+              1160,
+              128
+            ],
+            "maximumMassKG": 25,
+            "frames": [
+              {
+                "angle": 0,
+                "plan": [
+                  [
+                    10325,
+                    301.5
+                  ],
+                  [
+                    9955,
+                    301.5
+                  ],
+                  [
+                    9955,
+                    429.5
+                  ],
+                  [
+                    10325,
+                    429.5
+                  ]
+                ]
+              },
+              {
+                "angle": 17.5,
+                "plan": [
+                  [
+                    10325,
+                    301.5
+                  ],
+                  [
+                    9972.124728223156,
+                    190.23885418341894
+                  ],
+                  [
+                    9933.63438588661,
+                    312.31462387919197
+                  ],
+                  [
+                    10286.509657663453,
+                    423.57576969577303
+                  ]
+                ]
+              },
+              {
+                "angle": 35,
+                "plan": [
+                  [
+                    10325,
+                    301.5
+                  ],
+                  [
+                    10021.913743613073,
+                    89.27671855011297
+                  ],
+                  [
+                    9948.49595976014,
+                    194.1281802191039
+                  ],
+                  [
+                    10251.582216147066,
+                    406.35146166899096
+                  ]
+                ]
+              }
+            ],
+            "gripPath": [
+              [
+                10055,
+                494.5,
+                1370
+              ],
+              [
+                10009.460203993654,
+                404.37680562825403,
+                1370
+              ],
+              [
+                9993.12869582622,
+                304.730706732993,
+                1370
+              ]
+            ],
+            "maximumSampledReachMM": 524.4858574750829,
+            "reachSamplingErrorMM": 0.7240651750283577,
+            "articulatedArm": {
+              "elbow": [
+                9990,
+                550,
+                1380
+              ],
+              "upperLengthMM": 335.3285702113675,
+              "maximumForearmLengthMM": 245.49300388660797,
+              "capsuleRadiusMM": 40,
+              "maximumCombinedLengthMM": 580.8215740979755,
+              "upperToPostLowerMM": 80.5,
+              "forearmToPostLowerMM": 25,
+              "handToOwnLeafMM": 25,
+              "handToPostLowerMM": 28.112971027790877,
+              "rejected350HandleToPostMM": -39.68612685456077
+            },
+            "stay": {
+              "pivot": [
+                10202.127193356651,
+                215.4635345473431,
+                1225
+              ],
+              "openPeg": [
+                10093.226484074134,
+                495,
+                1225
+              ],
+              "closedPeg": [
+                9945.745229057278,
+                495,
+                1225
+              ],
+              "pivotToHoleMM": 300,
+              "completeBarSectionMM": [
+                20,
+                5
+              ],
+              "completeVerticalEnvelopeMM": 20,
+              "openLengthMM": 299.99999999999983,
+              "pegReachMM": 483.27631182750747
+            },
+            "scope": "Plain bronze pin-and-peg stay, positive closed catch and three butt hinges. Grip remains controlled through the complete 0–35 degree travel before the stay is seated. The two stay planes are staggered below the moving leaves."
+          }
+        ],
+        "openingAngleMinimumDegrees": 35,
+        "nominalOpeningWH": [
+          700,
+          1000
+        ],
+        "nominalOpeningAreaM2": 0.7,
+        "openingAreaMethod": "England ADF Volume1,2021 Table1.4. A hinged opening of at least30 degrees uses opening area at least floor area/20. The selected stop is35 degrees. This is the nominal opening-area method; finite leaves still occupy part of the aperture plane.",
+        "floorTwentiethM2": 0.2407297625,
+        "lowerBoundAreaRatio": 2.907824910100179,
+        "minimumUnobstructedGlassM2": 0.5724000000000001,
+        "bodyRadiusMM": 300,
+        "bodyHeightMM": 2000,
+        "shoulder": [
+          9725,
+          754.5,
+          1400
+        ],
+        "minimumFurnitureClearance": {
+          "id": "service-utility-rearServiceChase",
+          "mm": 29.53793408346786,
+          "verticalGapMM": 0
+        },
+        "bodyToFinishedWallMM": 25,
+        "bodyToAnyMovingLeafMM": 25,
+        "completeLeafToCentrePostMM": 8.484993901893972,
+        "rejected400WideLeafToCentrePostMM": -19.980951949014013,
+        "maximumGripReachMM": 525.2099226501113,
+        "stayVerticalSeparationMM": 15,
+        "upperStayToMovingLeafMM": 15,
+        "operation": "Close the room door where its swing enters the task. Open the positive catches from the standing position. Hold each leaf through its full outward travel, then seat its bronze stay before releasing the grip. Reverse this sequence to close. Keep both stays controlled during handover.",
+        "weather": "Two-stage drained meeting rebates and cill. No inward-opening arched coupled sash or removable guard is inherited. The defined rectangular sash, hinges, catches, stays, seals, glazing and frame require joined wind, rain, cycle and whole-window Uw qualification.",
+        "materials": {
+          "frame": "Mechanically jointed solid timber and retained glass family",
+          "hardware": "Unlacquered bronze hinges, catches, stay bars and pins",
+          "unresolved": [
+            "Glazing edge materials and flexible weather seals",
+            "Lubricants and any coatings or bushings",
+            "Actual hinge, stay and catch fastener constituents"
+          ],
+          "approvedExceptions": 0
+        },
+        "hardwareComparator": "https://croft.co.uk/products/bulb-end-casement-stay",
+        "hardwareBoundary": "The 305 mm Croft family is a dimensional and material comparator. This reference requires 300 mm between the actual pivot and selected peg hole, explicit 20×5 mm bronze bars and the drawn offset mounting lugs. No unmeasured stock pivot spacing or load rating is credited."
+      },
+      "maintenanceFields": [
+        {
+          "id": "utility",
+          "platform": [
+            10245,
+            1525,
+            1100,
+            750
+          ],
+          "conflicts": [],
+          "pass": true,
+          "scope": "Maximumcompleteequipmentfield inclguards/stabilisers screened againstactualwalls/trim/furniture atalloverlappingheights. Actualmatchedratedequipment/person/firstrelease/erection/carry/stabilityremainrequired; notphysicalPASS."
+        }
+      ],
+      "sourceOpenArchMustBecomeRealWetDoor": true,
+      "doorOpenSprayPass": false,
+      "ordinaryWasherIsNotSprayRated": true,
+      "counterfactualRoomGeometryAuthored": true,
+      "replacementOccupiedHouseCompiled": false
+    },
+    "transfer": {
+      "jacketMaximumMm": 74,
+      "pathMm": [
+        [
+          11000,
+          2360,
+          2235
+        ],
+        [
+          10600,
+          3900,
+          2235
+        ]
+      ],
+      "centrelineLengthMm": 1591.100248,
+      "fullNorthDrawPathMm": [
+        [
+          10600,
+          3900,
+          2235
+        ],
+        [
+          10200,
+          5440,
+          2235
+        ]
+      ],
+      "utilityArch": [
+        {
+          "wallYmm": 2453,
+          "centreXMm": 10975.844156,
+          "horizontalAfterJacketAnd10Mm": 100.155844,
+          "archHeadAfterJacketAnd10Mm": 449.241443
+        },
+        {
+          "wallYmm": 2647,
+          "centreXMm": 10925.454545,
+          "horizontalAfterJacketAnd10Mm": 150.545455,
+          "archHeadAfterJacketAnd10Mm": 482.035176
+        }
+      ],
+      "plantArch": [
+        {
+          "wallYmm": 3603,
+          "centreXMm": 10677.142857,
+          "horizontalAfterJacketAnd10Mm": 173.857143,
+          "archHeadAfterJacketAnd10Mm": 439.74749
+        },
+        {
+          "wallYmm": 3797,
+          "centreXMm": 10626.753247,
+          "horizontalAfterJacketAnd10Mm": 224.246753,
+          "archHeadAfterJacketAnd10Mm": 465.540622
+        }
+      ],
+      "bufferAfter10Mm": 13,
+      "doorAfter10Mm": 18,
+      "independentClampsReleaseToolsCradleAndExportQualified": false,
+      "supportOnApparatusCredited": false,
+      "retainedPlantCylinderPathMm": [
+        [
+          9830,
+          4250
+        ],
+        [
+          10500,
+          4250
+        ],
+        [
+          10500,
+          4575
+        ],
+        [
+          12500,
+          4575
+        ]
+      ],
+      "retainedBufferStationMm": [
+        10125,
+        5000,
+        650,
+        650
+      ],
+      "retainedD2Mm": [
+        12350,
+        2500,
+        -1850
+      ]
+    },
+    "storedRelease": {
+      "factoryStore": "Bespoke pressure-rated unvented Howden mineral-clad direct store in MS103-size territory",
+      "orderedMinimumUsableL": 300,
+      "catalogueComparatorL": 370,
+      "actualMaximumRetainedAndDrainableL": null,
+      "catalogueOrMinimumUsedAsMaximum": false,
+      "houseSideFlowLimitedByLodgeAperture": false,
+      "actualThermalPressureStateQualified": false,
+      "cases": [
+        "cold-break-with-house-cut-open",
+        "factory-nonreturn-normal",
+        "failed-nonreturn-plus-rupture",
+        "hot-store-and-expansion-release",
+        "trapped-upper-network-drain"
+      ],
+      "primaryBuffer": "Separate closed primary; no ordinary potable connection. Actual heat-exchanger separation failure is a separately declared compound case."
+    },
+    "receivingAndThermal": {
+      "plantOldReceiver": "reject",
+      "requiredSourcePairOutfallLmin": 318.548776,
+      "storedReleaseAdditional": "Unbounded until the actual factory inventory/pressure model is supplied; no restriction credit transferred.",
+      "floorSeatZMm": 0,
+      "newPipeAndWetLoadsIn52HeadSolve": false,
+      "newBoardEmptyGravityN": 259.965,
+      "boardContentsAnchorsAndReceivingResistanceQualified": false,
+      "sourceFloorOrDpcDepthBorrowed": false,
+      "floorDrainTrapWarmEnvelopeOneBlockedAndTailwaterQualified": false,
+      "rejectTransplantedBase": {
+        "rectangleMm": [
+          9990,
+          445,
+          180,
+          150
+        ],
+        "body": [
+          9725,
+          754.5
+        ],
+        "bodyClearanceMm": 9.297995,
+        "afterTwo5MmSettings": -0.702005
+      },
+      "rejectPermanentOpenSpills": {
+        "slotEachMm": [
+          750,
+          50
+        ],
+        "pressureComparisonPa": 2,
+        "airLps": 29.047375,
+        "addedAt15K_W": 525.467015,
+        "currentWholeHouseHotSpareW": 467.49524599,
+        "currentUtilitySpareW": 187.140338599598,
+        "inheritedHeatOrFrostPass": false,
+        "actualWindPrediction": false
+      }
+    },
+    "pv": {
+      "direction": "separate-outdoor-ventilated-streethead-dry-bay",
+      "inverterComparator": "SMA STP4.0-3AV-40",
+      "bodyMm": [
+        435,
+        470,
+        176
+      ],
+      "massKg": 17,
+      "sideClearEachMm": 200,
+      "topClearMm": 300,
+      "bottomClearMm": 500,
+      "frontClearMm": 500,
+      "requiredWidthMm": 835,
+      "requiredHeightMm": 1270,
+      "proposedClearBayMm": [
+        900,
+        1400,
+        350
+      ],
+      "existingDnoClearBayMm": [
+        795,
+        1100,
+        250
+      ],
+      "dnoCellBorrowed": false,
+      "streetheadFoundationReceivingQualified": false,
+      "combinedIndoorBoardPvRejected": true,
+      "shadedConvectionOutdoorInstallationRequired": true,
+      "sourceTopology": [
+        "roof-PV-strings",
+        "separate-rated-DC-conduit-and-dry-raceway",
+        "accessible-DC-disconnection",
+        "inverter",
+        "local-AC-isolation-and-protection",
+        "service-AC"
+      ],
+      "maximumDcV": 850,
+      "minimumMppV": 175,
+      "moduleStringsAndCablesMatched": false,
+      "enclosedWorstCaseHeatLossW": null,
+      "wetValveSeparatorQualified": false,
+      "actualGridAndElectricalAdmission": false,
+      "ownerVisibleKioskAppearanceAccepted": false,
+      "sources": [
+        "https://manuals.sma.de/STPxx-3av-40-BE/en-US/391431051.html",
+        "https://manuals.sma.de/STPxx-3av-40-BE/en-US/505337995.html",
+        "https://manuals.sma.de/STPxx-3av-40-BE/en-US/3190770571.html"
+      ]
+    },
+    "diagnostics": [
+      "PLANT_REQUIRES_NEW_RECEIVER_AND_STORED_RELEASE_MODEL",
+      "ACTUAL_INDOOR_CUT_RENEWAL_AND_INDEPENDENT_SUPPORT_REQUIRED",
+      "WET_DOOR_OPEN_MAINBOARD_JET_AND_MATERIALS_UNQUALIFIED",
+      "ACTUAL_WARM_FLOOR_DRAINS_AND_52_HEAD_LOAD_ACCOUNT_UNQUALIFIED"
+    ],
+    "completeArrangementSelected": false,
+    "hadPacketComplete": false
+  },
   "architectureDecision": {
     "prefer": "internal-wet-utility-and-service-hub-replan",
     "reject": [
@@ -363,9 +1229,15 @@
       1000,
       650
     ],
+    "selectedReferenceDutiesLmin": {
+      "utility": 20,
+      "plant": 45
+    },
+    "electricalDirection": "sealed-indoor-mainboard-and-independent-streethead-pv",
     "rationale": "The current small lobby is circulation, the Utility valve bay already contains rack/waste duties, and the plant control reservation is occupied. None is spare room. Replan the whole Utility wet station and separate its electrical task before adding footprint, roof, openings and another frost boundary.",
-    "newRoomGeometryAuthored": false,
+    "newRoomGeometryAuthored": true,
     "electricalRelocationSelected": false,
+    "replacementOccupiedHouseCompiled": false,
     "annexSelected": false
   },
   "materials": {
