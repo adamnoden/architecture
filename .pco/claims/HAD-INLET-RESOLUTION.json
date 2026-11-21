@@ -9,8 +9,8 @@
     "label": "ZR-HAD-CABINET-20261120"
   },
   "claimedAt": "2026-11-20T23:32:07.738Z",
-  "heartbeatAt": "2026-11-21T01:35:24.847Z",
-  "expiresAt": "2026-11-21T03:05:24.847Z",
+  "heartbeatAt": "2026-11-21T01:57:40.000Z",
+  "expiresAt": "2026-11-21T02:42:40.000Z",
   "branch": "work/rush-structural-coupling-20261120",
   "predecessor": {
     "leaseId": "e177187b-d7d4-43ff-86ee-12aba745f8e0",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Shared PR1604 head1d79732eb20e6c4825f297d950d4484c8e32dbce tree72035d9a79725437023fcf7b90e7d36f0c8b65d0 contains whole-wet rejection9fe and14-test verified cache8c. Root source audit15families/0findings; native STR48 proof and actual HAD producers present; saved3 tests running and exact-head CI pending.",
-    "next": "Observe shared exact-head CI and saved tests, preserve both leases, then fresh HAD publication preflight on the validated shared head; root performs expected-head merge after both preflights. Supersede1603 without deleting recovery branch.",
-    "blocker": "HAD stays open/unselected: tall cabinet rejected; replacement preserves internal branch isolation. Valve materials, source/tailwater, actual support/wet/control interfaces remain unresolved; no approval invented."
+    "evidence": "PR1604 head784b9f362af2fc50f183148cfbdec4b370a4567e; fresh11coupled/24controls, saved3solves/reversal pass; sourceaudit15/0. Durable recovery: PR1604#issuecomment-7055489871; physical failures retained.",
+    "next": "Recover canonical leases/current main; inspect exact-head CI; fresh dual STR/HAD merge-check and expected-head merge; then combined51 and service-hub replan.",
+    "blocker": "Execution environment unavailable; exec recovery45s failed. No local preflight or new tests. Handoff release follows checkpoint readback; no packet completion."
   },
   "pr": 1604
 }
