@@ -9,8 +9,8 @@
     "label": "convergence-20261121"
   },
   "claimedAt": "2026-11-21T19:47:07.671Z",
-  "heartbeatAt": "2026-11-21T22:38:40.348Z",
-  "expiresAt": "2026-11-21T23:23:40.348Z",
+  "heartbeatAt": "2026-11-21T22:55:08.496Z",
+  "expiresAt": "2026-11-21T23:40:08.496Z",
   "branch": "work/convergence-structure-20261121",
   "predecessor": {
     "leaseId": "95dc0271-adfc-448a-9789-0f1476b4b26b",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1613 head49d8868a fixes52head/53source andmissingverticalbinding; all4legacyAPIrechecks+9sourcecontracts passed. Source58 successor635d1ff0 retains48signedsolves,fouruniquegovernors,4canonicalcapturedcontrols;11fullnativecaptures nowverified locally, newcage/sharededit integration committedlocally.",
-    "next": "Waitexacthead49CIthenpreflightmerge. Finishserialmasonry/upperreceipts,700/500/250mesh,Cagecurrent11caseevidence andsharedsourcejoin; coordinateHADframe/localpocket/pan successor.",
-    "blocker": "Noengineering/houseadoption. Rootnative58unchanged; localjoint/cage/fullpressure/resistance/weatherholds remain. ParallelSIGKILL historyretained; serialfullsolves inprogress."
+    "evidence": "PR1613 head49d8868 has six green workflow families; fullhealth running. Recovery/str-grid-corner-20261121 at385a9053 preserves all11 exact source58 captures and shared cage choices; genuine current parent joins done locally. No structural acceptance.",
+    "next": "Merge primary after exact-head CI/preflight; complete isolated250 mesh, source-bound cage/contact/grid joins, coordinate water successor.",
+    "blocker": "Primary fullhealth pending; successor250 stability and local joints unqualified."
   },
   "pr": 1613
 }
