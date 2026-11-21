@@ -9,8 +9,8 @@
     "label": "rush-20261121-recovery"
   },
   "claimedAt": "2026-11-21T09:40:30.038Z",
-  "heartbeatAt": "2026-11-21T12:24:42.146Z",
-  "expiresAt": "2026-11-21T13:09:42.146Z",
+  "heartbeatAt": "2026-11-21T12:27:36.148Z",
+  "expiresAt": "2026-11-21T13:12:36.148Z",
   "branch": "work/rush-floor-section-20261121",
   "predecessor": {
     "leaseId": "37f8e399-fda2-42a8-8282-b3e5bda5c950",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1609 merged9dbd639e with all exact0f CI and fresh3lease preflights. Follow-on remote2c4a preserved; strictnativeupperlaw guard+PVpenetration diagnostic now have fresh6upper/4floor native source-bound controls and typed/analytical checks locally; preparing final recovery commit and STRhandoff.",
-    "next": "Publish exact final source/account/witness checkpoint; handoffSTR48 to designatedstructure worker49 for final savedAPI3solves and jointintegration; continue actual seatedwetbeam under newowner. No STRcompletion."
+    "evidence": "Final remote1e3cf61826b5939b4d35850f404bdf6634798d4c/tree9a7135d9912cf07f55578089d2ace280a362c25d includesmain9dbd. Fresh6upper52/4floor54 native states, analytical/receipt3 and editor/penetration6, tsc, audit15/0,13witnesses and repo pass. Final API3solve suites pending frozenhead. Durablehandoff PR1609comment7062574718.",
+    "next": "Designatedstructure worker claimnextgeneration; retainpreparedsource and joinHAD71a7248 underfreshleases; observeexactfinalAPI/CLI suites andsubmitjointPR/allCI. Thenimplementaligned250seatedwetbeam onoriginal260x450posts withactualaxisawareworkmaps/finitegrid/CSGandfreshproofs. STRnotcomplete."
   },
   "pr": 1609
 }
