@@ -2,20 +2,22 @@
   "schemaVersion": 1,
   "node": "PCO-ROOM-LIGHTING",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "a1216f76-6734-46cc-b44d-5d1ed4480ba6",
   "holder": {
     "kind": "chatgpt",
     "label": "room-lighting-registration-20261121"
   },
   "claimedAt": "2026-11-21T21:57:05.404Z",
-  "heartbeatAt": "2026-11-21T22:46:27.237Z",
-  "expiresAt": "2026-11-22T00:16:27.237Z",
+  "heartbeatAt": "2026-11-21T22:58:46.000Z",
+  "expiresAt": "2026-11-21T22:58:46.000Z",
   "checkpoint": {
     "evidence": "PR #1616 at 64ee6a8d1753bb12ede6e66940efec676c28272d; publication CI passed; full repository health still running at 22:46 UTC; main remains c8b16ee9",
     "next": "Inspect final CI and fresh main, run canonical publication preflight, merge, release registration lease, verify new design dispatch and close cleanup"
   },
   "branch": "work/register-room-lighting-20261121",
   "note": "Exceptional registration-only bootstrap authorised and recorded in issue #1614; unknown-node dispatch safety temporarily fails closed until integration/release.",
-  "pr": 1616
+  "pr": 1616,
+  "releasedAt": "2026-11-21T22:58:46.000Z",
+  "releaseReason": "completed"
 }
