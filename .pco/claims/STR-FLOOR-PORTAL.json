@@ -9,9 +9,9 @@
     "label": "rush-20261121-recovery"
   },
   "claimedAt": "2026-11-21T09:40:30.038Z",
-  "heartbeatAt": "2026-11-21T11:45:54.366Z",
-  "expiresAt": "2026-11-21T12:30:54.366Z",
-  "branch": "work/rush-converged-model-20261121",
+  "heartbeatAt": "2026-11-21T12:24:42.146Z",
+  "expiresAt": "2026-11-21T13:09:42.146Z",
+  "branch": "work/rush-floor-section-20261121",
   "predecessor": {
     "leaseId": "37f8e399-fda2-42a8-8282-b3e5bda5c950",
     "generation": 47,
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Joint0f329089 exact browser/publication/PLT proofs passed; health remains active after corrected three-lease binding. New isolated floor-section four-state native source54 proof and independent material/pressure/52-head balances passed locally; not yet published.",
-    "next": "Verify exact1609health and fresh three-lease merge-check; finish saved/API/CLI actual floor-section edit/reversal and publish source-bound follow-on after joint merge."
+    "evidence": "PR1609 merged9dbd639e with all exact0f CI and fresh3lease preflights. Follow-on remote2c4a preserved; strictnativeupperlaw guard+PVpenetration diagnostic now have fresh6upper/4floor native source-bound controls and typed/analytical checks locally; preparing final recovery commit and STRhandoff.",
+    "next": "Publish exact final source/account/witness checkpoint; handoffSTR48 to designatedstructure worker49 for final savedAPI3solves and jointintegration; continue actual seatedwetbeam under newowner. No STRcompletion."
   },
   "pr": 1609
 }
