@@ -9,8 +9,8 @@
     "label": "ZR-HAD-CABINET-20261120"
   },
   "claimedAt": "2026-11-20T23:32:07.738Z",
-  "heartbeatAt": "2026-11-21T00:07:28.723Z",
-  "expiresAt": "2026-11-21T00:52:28.723Z",
+  "heartbeatAt": "2026-11-21T00:35:51.940Z",
+  "expiresAt": "2026-11-21T01:20:51.940Z",
   "branch": "work/had-cabinet-copper-20261120",
   "predecessor": {
     "leaseId": "e177187b-d7d4-43ff-86ee-12aba745f8e0",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1603 a21e7c64 recovery published; native8focused thermal/cabinet/public-authoring tests pass; exact source-bound compact result and SVG.",
-    "next": "Publish integrated stage/CLI tested head with source account reconciled, then full exact-head CI, preflight and merge.",
-    "blocker": "HAD remains incomplete: explicit unapproved valve material decision, actual floor/clamp/network, wet joints/outlets and frost duties."
+    "evidence": "PR1603 submitted ca8975098a1e015e6c845fe2c8c18cb1f0dedb49;8focused tests/producers/tsc passed; publication proof passed; exact-head fullhealth running. Actual floor feet/base wrenches corrected and old M12/50 rejected.",
+    "next": "Observe exact ca897509 fullhealth, fresh canonical preflight then merge1603. Continue newcabinet wet/fault/renewal matrix with individual pans and fronts; preserve internal branch isolation.",
+    "blocker": "Valve exception remains unapproved. Cabinet static boundary, source curve/tailwater, post-through-pan closure, closed-front controls and actual floor receiver still do not earn HAD closeout."
   },
   "pr": 1603
 }
