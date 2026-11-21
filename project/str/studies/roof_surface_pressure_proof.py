@@ -104,6 +104,8 @@ def solve_one_control(name,output):
 
 def join_fresh_native_controls(output,native_path,extra_path):
     """Reuse only exact current-source/executed-request native controls."""
+    if any(not path.resolve().is_relative_to(ROOT) for path in (native_path,extra_path)):
+        raise ValueError('Joined proof inputs must be canonical repository artifacts')
     source=load_masonry_frame_a_source(ROOT);controls=pressure_controls(source)
     native=json.loads(native_path.read_text());extra=json.loads(extra_path.read_text())
     method_hash=hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
@@ -119,9 +121,13 @@ def join_fresh_native_controls(output,native_path,extra_path):
         else:matches=[row for row in extra['cases'] if row['controlName']==name]
         if len(matches)!=1 or matches[0].get('executedRequest')!=request:raise ValueError('Fresh proof executed-request mismatch: '+name)
         row=copy.deepcopy(matches[0]);row['controlName']=name;_audit_head_wrench(row);result['cases'].append(row)
-    result['reusedNativeEvidence']={'schema':native['schema'],'path':str(native_path),
+    result['reusedNativeEvidence']={'schema':native['schema'],'path':str(native_path.resolve().relative_to(ROOT)),
         'sha256':hashlib.sha256(native_path.read_bytes()).hexdigest(),'caseCount':2,
         'binding':'Exact current source inventory and every authored executed-request field; no result/hash patching'}
+    result['additionalPressureEvidence']={'schema':extra['schema'],
+        'path':str(extra_path.resolve().relative_to(ROOT)),
+        'sha256':hashlib.sha256(extra_path.read_bytes()).hexdigest(),'caseCount':3,
+        'binding':'Exact current source inventory, producer and complete executed requests; separately solved additional controls'}
     result['changePropagation']=verify_change_propagation(result)
     output.write_text(json.dumps(result,indent=2,sort_keys=True,allow_nan=False)+'\n')
     return result

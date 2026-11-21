@@ -27,6 +27,6 @@ if __name__=='__main__':
     if sys.argv[1:] not in (['--write'],['--check']):raise SystemExit('Use --write or --check')
     value,svg=proof();encoded=json.dumps(value,indent=2,allow_nan=False)+'\n'
     if sys.argv[1:] == ['--write']:
-        (D/'straight-frame-cage-proof.json').write_text(encoded);(D/'straight-frame-cage.svg').write_text(svg)
+        (D/'straight-frame-cage-proof.json').write_text(encoded);(D/'masonry-frame-a-cage.svg').write_text(svg)
     else:
-        if json.loads((D/'straight-frame-cage-proof.json').read_text())!=value or (D/'straight-frame-cage.svg').read_text()!=svg:raise SystemExit('Stale straight frame cage source/output')
+        if json.loads((D/'straight-frame-cage-proof.json').read_text())!=value or (D/'masonry-frame-a-cage.svg').read_text()!=svg:raise SystemExit('Stale straight frame cage source/output')

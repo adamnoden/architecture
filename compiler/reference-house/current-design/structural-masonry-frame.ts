@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url'
 import { sha256SemanticFingerprint } from '../../core/identity.js'
 import type { CurrentDesignResolution } from './resolve.js'
 import { savedVerticalRcFloorCase, verticalRcFloorStageFields } from './structural-vertical-floor.js'
-import { validateLowerCoreBodies, validateLowerLWeight, validateRoofCoupling, validateRoofSteelGravity, validateStraightFrameCage } from './structural-house-coupling.js'
+import { validateGroundElasticActionScope, validateLowerCoreBodies, validateLowerLWeight, validateRoofCoupling, validateRoofSteelGravity, validateStraightFrameCage } from './structural-house-coupling.js'
 
 const root = new URL('../../../', import.meta.url)
 const methodPath = 'project/str/studies/masonry_frame_a.py'
@@ -151,6 +151,7 @@ export function runMasonryFrameCase(resolved: CurrentDesignResolution, input: un
     || !output.drawings?.['masonry-frame-a-floor.svg']?.startsWith('<svg')) {
     throw new Error('The masonry frame result differs from current sources, actual 52 heads or unearned proof boundary')
   }
+  validateGroundElasticActionScope(vertical)
   const receiving = comparison.verticalCase.monolithicCase.houseCase.joinedCase.floor.receivingLaws
   if (!record(receiving) || !record(receiving.intermediateSupports)) throw new Error('The actual masonry-frame receiving catalogue is unavailable')
   const receivingIds = Object.keys(receiving.intermediateSupports)

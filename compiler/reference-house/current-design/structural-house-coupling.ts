@@ -132,6 +132,22 @@ export function validateRoofSurfacePressure(roof: Readonly<Record<string, unknow
   return ledger
 }
 
+/** Current grid/cap rows are elastic actions, before distributed body-load subtraction. */
+export function validateGroundElasticActionScope(vertical: unknown) {
+  if (!record(vertical) || !record(vertical.native)) throw new Error('Actual grid and cap elastic action inventories are required')
+  const groups = [[vertical.native.adjacentGridMemberCuts, 'grid member'],
+    [vertical.native.capCuts, 'upper-cap member'], [vertical.additionalGroundCapCuts, 'additional upper-cap member']] as const
+  for (const [rows, kind] of groups) {
+    const scope = `Elastic element-end actions at the actual ${kind} geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. `
+      + 'Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. '
+      + 'Local3D node, cap cage, pile and soil resistance remain unqualified.'
+    if (!Array.isArray(rows) || rows.some(row => !record(row)
+      || row.localDistributedLoadRecoveryQualified !== false || row.scope !== scope)) {
+      throw new Error('Grid and cap elastic element-end actions cannot claim recovered distributed physical cuts or local strength')
+    }
+  }
+}
+
 /** A body's own weight and its unilateral top contact are different load paths. */
 export function validateLowerCoreBodies(input: unknown, responseInput: unknown, setting: unknown,
   sources: Readonly<Record<string, string>>, physicalGFactor: unknown) {

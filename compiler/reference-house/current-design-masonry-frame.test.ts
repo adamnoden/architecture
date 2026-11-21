@@ -6,7 +6,7 @@ import { compileEngineeringDocument, readEngineeringDocument } from './current-d
 import { readGeorgianDesignSnapshot } from './current-design/georgian-source.js'
 import { readCurrentDesignResolution } from './current-design/resolve.js'
 import { readMasonryFrameCase, runMasonryFrameCase, savedMasonryFrameCase } from './current-design/structural-masonry-frame.js'
-import { hasPhysicalPlateTrace, validateRoofCoupling } from './current-design/structural-house-coupling.js'
+import { validateGroundElasticActionScope, hasPhysicalPlateTrace, validateRoofCoupling } from './current-design/structural-house-coupling.js'
 
 const proof = JSON.parse(readFileSync(new URL('../../project/str/studies/masonry-frame-a-proof.json', import.meta.url), 'utf8'))
 const numerical = proof.authoredNumericalCase
@@ -75,6 +75,17 @@ test('one saved floor, body and roof edit propagates through the actual coupled 
     input: JSON.stringify(changedDocument), encoding: 'utf8', maxBuffer: 96 * 1024 * 1024,
   }))
   const changed = result(changedBundle)
+  for (const group of ['adjacentGridMemberCuts', 'capCuts', 'additionalGroundCapCuts']) {
+    const actual = JSON.parse(JSON.stringify(baseline.vertical))
+    const rows = group === 'additionalGroundCapCuts' ? actual[group] : actual.native[group]
+    assert.ok(rows.length > 0)
+    assert.ok(rows.every((row: Record<string, unknown>) => row.localDistributedLoadRecoveryQualified === false))
+    rows[0].localDistributedLoadRecoveryQualified = true
+    assert.throws(() => validateGroundElasticActionScope(actual), /cannot claim recovered distributed physical cuts/)
+    rows[0].localDistributedLoadRecoveryQualified = false
+    rows[0].scope = 'Recovered physical local actions including distributed body loads'
+    assert.throws(() => validateGroundElasticActionScope(actual), /cannot claim recovered distributed physical cuts/)
+  }
   assert.equal(baseline.native.heads.length, 52)
   assert.equal(baseline.vertical.schema, 'str-masonry-frame-a-vertical-result/1')
   assert.equal(baseline.native.schema, 'str-masonry-frame-a-compatible-frame-result/1')

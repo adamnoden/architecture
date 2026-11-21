@@ -41,7 +41,7 @@
     "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
     "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
     "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
-    "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+    "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
     "project/str/studies/foundation_solid_weight.py": "0537c47e21c59ffadd21c5c6d3765fac9798db21de58e722396f0b7c8e707ce2",
     "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
     "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
@@ -94,7 +94,7 @@
       "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
       "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
       "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
-      "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+      "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
       "project/str/studies/foundation_solid_weight.py": "0537c47e21c59ffadd21c5c6d3765fac9798db21de58e722396f0b7c8e707ce2",
       "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
       "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
@@ -688,7 +688,7 @@
       "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
       "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
       "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
-      "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+      "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
       "project/str/studies/foundation_solid_weight.py": "0537c47e21c59ffadd21c5c6d3765fac9798db21de58e722396f0b7c8e707ce2",
       "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
       "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
@@ -7678,7 +7678,7 @@
         "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
         "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
         "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
-        "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+        "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
         "project/str/studies/foundation_solid_weight.py": "0537c47e21c59ffadd21c5c6d3765fac9798db21de58e722396f0b7c8e707ce2",
         "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
         "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
@@ -8306,7 +8306,7 @@
         "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
         "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
         "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
-        "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+        "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
         "project/str/studies/foundation_solid_weight.py": "0537c47e21c59ffadd21c5c6d3765fac9798db21de58e722396f0b7c8e707ce2",
         "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
         "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
@@ -42885,7 +42885,7 @@
         "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
         "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
         "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
-        "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+        "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
         "project/str/studies/foundation_solid_weight.py": "0537c47e21c59ffadd21c5c6d3765fac9798db21de58e722396f0b7c8e707ce2",
         "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
         "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
@@ -42973,7 +42973,7 @@
           "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
           "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
           "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
-          "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
           "project/str/studies/foundation_solid_weight.py": "0537c47e21c59ffadd21c5c6d3765fac9798db21de58e722396f0b7c8e707ce2",
           "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
           "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
@@ -49417,7 +49417,8 @@
               28.11129090426351,
               -0.6983046331104223
             ],
-            "scope": "Only actual finite uppercap gridaxis\u2212405 to top\u2212180. Headmaster\u2212750 eccentricity is transformed to the physicalcut; inherited lowercap transfer, actual fullcap cage, pile interface and soil are not qualified."
+            "scope": "Elastic element-end actions at the actual upper-cap member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           },
           {
             "memberId": "court-north/west/finite-cap",
@@ -49444,7 +49445,8 @@
               -25.709913373262413,
               0.6983046331104223
             ],
-            "scope": "Only actual finite uppercap gridaxis\u2212405 to top\u2212180. Headmaster\u2212750 eccentricity is transformed to the physicalcut; inherited lowercap transfer, actual fullcap cage, pile interface and soil are not qualified."
+            "scope": "Elastic element-end actions at the actual upper-cap member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           },
           {
             "memberId": "court-north/east/finite-cap",
@@ -49471,7 +49473,8 @@
               29.775330695588092,
               0.03350737761720906
             ],
-            "scope": "Only actual finite uppercap gridaxis\u2212405 to top\u2212180. Headmaster\u2212750 eccentricity is transformed to the physicalcut; inherited lowercap transfer, actual fullcap cage, pile interface and soil are not qualified."
+            "scope": "Elastic element-end actions at the actual upper-cap member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           },
           {
             "memberId": "court-north/east/finite-cap",
@@ -49498,7 +49501,8 @@
               -26.946044835290227,
               -0.03350737761720906
             ],
-            "scope": "Only actual finite uppercap gridaxis\u2212405 to top\u2212180. Headmaster\u2212750 eccentricity is transformed to the physicalcut; inherited lowercap transfer, actual fullcap cage, pile interface and soil are not qualified."
+            "scope": "Elastic element-end actions at the actual upper-cap member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           },
           {
             "memberId": "outer-north/west/finite-cap",
@@ -49525,7 +49529,8 @@
               27.45557718882168,
               -0.17175104955445067
             ],
-            "scope": "Only actual finite uppercap gridaxis\u2212405 to top\u2212180. Headmaster\u2212750 eccentricity is transformed to the physicalcut; inherited lowercap transfer, actual fullcap cage, pile interface and soil are not qualified."
+            "scope": "Elastic element-end actions at the actual upper-cap member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           },
           {
             "memberId": "outer-north/west/finite-cap",
@@ -49552,7 +49557,8 @@
               -24.974284905939296,
               0.17175104955445067
             ],
-            "scope": "Only actual finite uppercap gridaxis\u2212405 to top\u2212180. Headmaster\u2212750 eccentricity is transformed to the physicalcut; inherited lowercap transfer, actual fullcap cage, pile interface and soil are not qualified."
+            "scope": "Elastic element-end actions at the actual upper-cap member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           },
           {
             "memberId": "outer-north/east/finite-cap",
@@ -49579,7 +49585,8 @@
               26.932732441266612,
               0.3316798853152445
             ],
-            "scope": "Only actual finite uppercap gridaxis\u2212405 to top\u2212180. Headmaster\u2212750 eccentricity is transformed to the physicalcut; inherited lowercap transfer, actual fullcap cage, pile interface and soil are not qualified."
+            "scope": "Elastic element-end actions at the actual upper-cap member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           },
           {
             "memberId": "outer-north/east/finite-cap",
@@ -49606,7 +49613,8 @@
               -24.523536542086063,
               -0.3316798853152445
             ],
-            "scope": "Only actual finite uppercap gridaxis\u2212405 to top\u2212180. Headmaster\u2212750 eccentricity is transformed to the physicalcut; inherited lowercap transfer, actual fullcap cage, pile interface and soil are not qualified."
+            "scope": "Elastic element-end actions at the actual upper-cap member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           }
         ],
         "adjacentGridMemberCuts": [
@@ -49658,7 +49666,8 @@
               "P25"
             ],
             "isCapGridInterfaceEnd": false,
-            "scope": "Actual finite grid cut in the same compatible A model, including authored cap/grid union selfweight and optional formed court-corner addition. Local3D node, pile and soil resistance remain unqualified."
+            "scope": "Elastic element-end actions at the actual grid member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           },
           {
             "memberId": "GRID/outer-NW/2",
@@ -49708,7 +49717,8 @@
               "P25"
             ],
             "isCapGridInterfaceEnd": true,
-            "scope": "Actual finite grid cut in the same compatible A model, including authored cap/grid union selfweight and optional formed court-corner addition. Local3D node, pile and soil resistance remain unqualified."
+            "scope": "Elastic element-end actions at the actual grid member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           },
           {
             "memberId": "GRID/outer-NE/0",
@@ -49758,7 +49768,8 @@
               "P26"
             ],
             "isCapGridInterfaceEnd": true,
-            "scope": "Actual finite grid cut in the same compatible A model, including authored cap/grid union selfweight and optional formed court-corner addition. Local3D node, pile and soil resistance remain unqualified."
+            "scope": "Elastic element-end actions at the actual grid member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           },
           {
             "memberId": "GRID/outer-NE/0",
@@ -49808,7 +49819,8 @@
               "P26"
             ],
             "isCapGridInterfaceEnd": false,
-            "scope": "Actual finite grid cut in the same compatible A model, including authored cap/grid union selfweight and optional formed court-corner addition. Local3D node, pile and soil resistance remain unqualified."
+            "scope": "Elastic element-end actions at the actual grid member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           },
           {
             "memberId": "GRID/loggia-W/0",
@@ -49858,7 +49870,8 @@
               "P28"
             ],
             "isCapGridInterfaceEnd": true,
-            "scope": "Actual finite grid cut in the same compatible A model, including authored cap/grid union selfweight and optional formed court-corner addition. Local3D node, pile and soil resistance remain unqualified."
+            "scope": "Elastic element-end actions at the actual grid member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           },
           {
             "memberId": "GRID/loggia-W/0",
@@ -49908,7 +49921,8 @@
               "P28"
             ],
             "isCapGridInterfaceEnd": false,
-            "scope": "Actual finite grid cut in the same compatible A model, including authored cap/grid union selfweight and optional formed court-corner addition. Local3D node, pile and soil resistance remain unqualified."
+            "scope": "Elastic element-end actions at the actual grid member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           },
           {
             "memberId": "GRID/loggia-W/2",
@@ -49958,7 +49972,8 @@
               "P25"
             ],
             "isCapGridInterfaceEnd": false,
-            "scope": "Actual finite grid cut in the same compatible A model, including authored cap/grid union selfweight and optional formed court-corner addition. Local3D node, pile and soil resistance remain unqualified."
+            "scope": "Elastic element-end actions at the actual grid member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           },
           {
             "memberId": "GRID/loggia-W/2",
@@ -50008,7 +50023,8 @@
               "P25"
             ],
             "isCapGridInterfaceEnd": true,
-            "scope": "Actual finite grid cut in the same compatible A model, including authored cap/grid union selfweight and optional formed court-corner addition. Local3D node, pile and soil resistance remain unqualified."
+            "scope": "Elastic element-end actions at the actual grid member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           },
           {
             "memberId": "GRID/loggia-E/0",
@@ -50058,7 +50074,8 @@
               "P30"
             ],
             "isCapGridInterfaceEnd": true,
-            "scope": "Actual finite grid cut in the same compatible A model, including authored cap/grid union selfweight and optional formed court-corner addition. Local3D node, pile and soil resistance remain unqualified."
+            "scope": "Elastic element-end actions at the actual grid member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           },
           {
             "memberId": "GRID/loggia-E/0",
@@ -50108,7 +50125,8 @@
               "P30"
             ],
             "isCapGridInterfaceEnd": false,
-            "scope": "Actual finite grid cut in the same compatible A model, including authored cap/grid union selfweight and optional formed court-corner addition. Local3D node, pile and soil resistance remain unqualified."
+            "scope": "Elastic element-end actions at the actual grid member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           },
           {
             "memberId": "GRID/loggia-E/2",
@@ -50158,7 +50176,8 @@
               "P26"
             ],
             "isCapGridInterfaceEnd": false,
-            "scope": "Actual finite grid cut in the same compatible A model, including authored cap/grid union selfweight and optional formed court-corner addition. Local3D node, pile and soil resistance remain unqualified."
+            "scope": "Elastic element-end actions at the actual grid member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           },
           {
             "memberId": "GRID/loggia-E/2",
@@ -50208,7 +50227,8 @@
               "P26"
             ],
             "isCapGridInterfaceEnd": true,
-            "scope": "Actual finite grid cut in the same compatible A model, including authored cap/grid union selfweight and optional formed court-corner addition. Local3D node, pile and soil resistance remain unqualified."
+            "scope": "Elastic element-end actions at the actual grid member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           },
           {
             "memberId": "GRID/court-NW/0",
@@ -50258,7 +50278,8 @@
               "P28"
             ],
             "isCapGridInterfaceEnd": false,
-            "scope": "Actual finite grid cut in the same compatible A model, including authored cap/grid union selfweight and optional formed court-corner addition. Local3D node, pile and soil resistance remain unqualified."
+            "scope": "Elastic element-end actions at the actual grid member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           },
           {
             "memberId": "GRID/court-NW/0",
@@ -50308,7 +50329,8 @@
               "P28"
             ],
             "isCapGridInterfaceEnd": true,
-            "scope": "Actual finite grid cut in the same compatible A model, including authored cap/grid union selfweight and optional formed court-corner addition. Local3D node, pile and soil resistance remain unqualified."
+            "scope": "Elastic element-end actions at the actual grid member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           },
           {
             "memberId": "GRID/court-NE/0",
@@ -50358,7 +50380,8 @@
               "P30"
             ],
             "isCapGridInterfaceEnd": true,
-            "scope": "Actual finite grid cut in the same compatible A model, including authored cap/grid union selfweight and optional formed court-corner addition. Local3D node, pile and soil resistance remain unqualified."
+            "scope": "Elastic element-end actions at the actual grid member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           },
           {
             "memberId": "GRID/court-NE/0",
@@ -50408,7 +50431,8 @@
               "P30"
             ],
             "isCapGridInterfaceEnd": false,
-            "scope": "Actual finite grid cut in the same compatible A model, including authored cap/grid union selfweight and optional formed court-corner addition. Local3D node, pile and soil resistance remain unqualified."
+            "scope": "Elastic element-end actions at the actual grid member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           },
           {
             "memberId": "GRID/low-tie-8050/0",
@@ -50459,7 +50483,8 @@
               "P30"
             ],
             "isCapGridInterfaceEnd": true,
-            "scope": "Actual finite grid cut in the same compatible A model, including authored cap/grid union selfweight and optional formed court-corner addition. Local3D node, pile and soil resistance remain unqualified."
+            "scope": "Elastic element-end actions at the actual grid member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           },
           {
             "memberId": "GRID/low-tie-8050/0",
@@ -50510,7 +50535,8 @@
               "P30"
             ],
             "isCapGridInterfaceEnd": true,
-            "scope": "Actual finite grid cut in the same compatible A model, including authored cap/grid union selfweight and optional formed court-corner addition. Local3D node, pile and soil resistance remain unqualified."
+            "scope": "Elastic element-end actions at the actual grid member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           },
           {
             "memberId": "GRID/low-tie-11667/0",
@@ -50561,7 +50587,8 @@
               "P26"
             ],
             "isCapGridInterfaceEnd": true,
-            "scope": "Actual finite grid cut in the same compatible A model, including authored cap/grid union selfweight and optional formed court-corner addition. Local3D node, pile and soil resistance remain unqualified."
+            "scope": "Elastic element-end actions at the actual grid member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           },
           {
             "memberId": "GRID/low-tie-11667/0",
@@ -50612,7 +50639,8 @@
               "P26"
             ],
             "isCapGridInterfaceEnd": true,
-            "scope": "Actual finite grid cut in the same compatible A model, including authored cap/grid union selfweight and optional formed court-corner addition. Local3D node, pile and soil resistance remain unqualified."
+            "scope": "Elastic element-end actions at the actual grid member geometry in the same compatible A model under the declared equivalent nodal loads, including mapped foundation gravity. Per-member distributed body-load vectors have not been subtracted here; these are not recovered distributed physical local cuts or a local strength proof. Local3D node, cap cage, pile and soil resistance remain unqualified.",
+            "localDistributedLoadRecoveryQualified": false
           }
         ],
         "maximumFrameTranslationMm": 16.320519295722693,
@@ -50671,7 +50699,7 @@
           "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
           "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
           "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
-          "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
           "project/str/studies/foundation_solid_weight.py": "0537c47e21c59ffadd21c5c6d3765fac9798db21de58e722396f0b7c8e707ce2",
           "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
           "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
@@ -64360,7 +64388,7 @@
           "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
           "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
           "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
-          "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
           "project/str/studies/foundation_solid_weight.py": "0537c47e21c59ffadd21c5c6d3765fac9798db21de58e722396f0b7c8e707ce2",
           "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
           "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
@@ -71249,7 +71277,7 @@
           "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
           "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
           "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
-          "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
           "project/str/studies/foundation_solid_weight.py": "0537c47e21c59ffadd21c5c6d3765fac9798db21de58e722396f0b7c8e707ce2",
           "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
           "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
@@ -84989,7 +85017,7 @@
           "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
           "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
           "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
-          "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
           "project/str/studies/foundation_solid_weight.py": "0537c47e21c59ffadd21c5c6d3765fac9798db21de58e722396f0b7c8e707ce2",
           "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
           "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
@@ -91878,7 +91906,7 @@
           "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
           "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
           "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
-          "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
           "project/str/studies/foundation_solid_weight.py": "0537c47e21c59ffadd21c5c6d3765fac9798db21de58e722396f0b7c8e707ce2",
           "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
           "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
@@ -105567,7 +105595,7 @@
           "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
           "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
           "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
-          "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
           "project/str/studies/foundation_solid_weight.py": "0537c47e21c59ffadd21c5c6d3765fac9798db21de58e722396f0b7c8e707ce2",
           "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
           "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
@@ -112456,7 +112484,7 @@
           "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
           "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
           "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
-          "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
           "project/str/studies/foundation_solid_weight.py": "0537c47e21c59ffadd21c5c6d3765fac9798db21de58e722396f0b7c8e707ce2",
           "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
           "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
@@ -126145,7 +126173,7 @@
           "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
           "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
           "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
-          "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
           "project/str/studies/foundation_solid_weight.py": "0537c47e21c59ffadd21c5c6d3765fac9798db21de58e722396f0b7c8e707ce2",
           "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
           "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
@@ -133034,7 +133062,7 @@
           "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
           "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
           "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
-          "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
           "project/str/studies/foundation_solid_weight.py": "0537c47e21c59ffadd21c5c6d3765fac9798db21de58e722396f0b7c8e707ce2",
           "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
           "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
@@ -146667,7 +146695,7 @@
           "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
           "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
           "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
-          "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
           "project/str/studies/foundation_solid_weight.py": "0537c47e21c59ffadd21c5c6d3765fac9798db21de58e722396f0b7c8e707ce2",
           "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
           "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
@@ -153556,7 +153584,7 @@
           "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
           "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
           "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
-          "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
           "project/str/studies/foundation_solid_weight.py": "0537c47e21c59ffadd21c5c6d3765fac9798db21de58e722396f0b7c8e707ce2",
           "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
           "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
@@ -167249,7 +167277,7 @@
           "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
           "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
           "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
-          "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
           "project/str/studies/foundation_solid_weight.py": "0537c47e21c59ffadd21c5c6d3765fac9798db21de58e722396f0b7c8e707ce2",
           "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
           "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
@@ -174138,7 +174166,7 @@
           "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
           "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
           "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
-          "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
           "project/str/studies/foundation_solid_weight.py": "0537c47e21c59ffadd21c5c6d3765fac9798db21de58e722396f0b7c8e707ce2",
           "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
           "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
@@ -191946,7 +191974,7 @@
           "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
           "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
           "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
-          "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
           "project/str/studies/foundation_solid_weight.py": "0537c47e21c59ffadd21c5c6d3765fac9798db21de58e722396f0b7c8e707ce2",
           "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
           "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
@@ -198835,7 +198863,7 @@
           "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
           "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
           "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
-          "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
           "project/str/studies/foundation_solid_weight.py": "0537c47e21c59ffadd21c5c6d3765fac9798db21de58e722396f0b7c8e707ce2",
           "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
           "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
@@ -212524,7 +212552,7 @@
           "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
           "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
           "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
-          "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
           "project/str/studies/foundation_solid_weight.py": "0537c47e21c59ffadd21c5c6d3765fac9798db21de58e722396f0b7c8e707ce2",
           "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
           "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",

@@ -1,4 +1,11 @@
 {
+  "additionalPressureEvidence": {
+    "binding": "Exact current source inventory, producer and complete executed requests; separately solved additional controls",
+    "caseCount": 3,
+    "path": "project/str/studies/roof-surface-pressure-extra-proof.json",
+    "schema": "str-roof-surface-pressure-proof/1",
+    "sha256": "510dde7c1cee1e324c88983368831212e884fd5a7756a57a7262f0d7d2e22e8b"
+  },
   "candidateAccepted": false,
   "cases": [
     {
@@ -182,7 +189,7 @@
           "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
           "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
           "project/str/studies/lower_core_bodies.py": "9f6e0b2d232441c0a2e278de7d25f9b5d2e1db330527cf1aed36f4e6a0ecb392",
-          "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
           "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
           "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
           "project/str/studies/perforated_floor_condensation.py": "2f0dcba9128d110204212fec6f2bad14449edd27a30eaa6f1a68a3bbbe4a08bd",
@@ -20449,7 +20456,7 @@
           "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
           "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
           "project/str/studies/lower_core_bodies.py": "9f6e0b2d232441c0a2e278de7d25f9b5d2e1db330527cf1aed36f4e6a0ecb392",
-          "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
           "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
           "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
           "project/str/studies/perforated_floor_condensation.py": "2f0dcba9128d110204212fec6f2bad14449edd27a30eaa6f1a68a3bbbe4a08bd",
@@ -20874,7 +20881,7 @@
           "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
           "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
           "project/str/studies/lower_core_bodies.py": "9f6e0b2d232441c0a2e278de7d25f9b5d2e1db330527cf1aed36f4e6a0ecb392",
-          "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
           "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
           "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
           "project/str/studies/perforated_floor_condensation.py": "2f0dcba9128d110204212fec6f2bad14449edd27a30eaa6f1a68a3bbbe4a08bd",
@@ -45147,7 +45154,7 @@
           "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
           "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
           "project/str/studies/lower_core_bodies.py": "9f6e0b2d232441c0a2e278de7d25f9b5d2e1db330527cf1aed36f4e6a0ecb392",
-          "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
           "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
           "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
           "project/str/studies/perforated_floor_condensation.py": "2f0dcba9128d110204212fec6f2bad14449edd27a30eaa6f1a68a3bbbe4a08bd",
@@ -45572,7 +45579,7 @@
           "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
           "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
           "project/str/studies/lower_core_bodies.py": "9f6e0b2d232441c0a2e278de7d25f9b5d2e1db330527cf1aed36f4e6a0ecb392",
-          "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
           "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
           "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
           "project/str/studies/perforated_floor_condensation.py": "2f0dcba9128d110204212fec6f2bad14449edd27a30eaa6f1a68a3bbbe4a08bd",
@@ -46013,6 +46020,39 @@
         12612.16359004741,
         3.8200139486241533
       ],
+      "floorLiveLoad": {
+        "actualNetPlateAreaM2": 98.30240625,
+        "addedPhysicalMassKN": 0.0,
+        "appliedQKN": 0.0,
+        "appliedWrenchKN_KNm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "candidateAccepted": false,
+        "characteristicPressureKPa": 0,
+        "characteristicQKN": 0.0,
+        "combinationFactor": 1.5,
+        "factoredPressureKPa": 0.0,
+        "legacyGrossGFlagRequired": false,
+        "plateCentroidXYMm": [
+          6306.756649443029,
+          6055.164707072595
+        ],
+        "schema": "str-independent-net-floor-live-load/1",
+        "scope": "Uniform characteristic live pressure on the actual known net plate only, with the existing explicit1.5Q comparison factor. Withheld wet territory and unknown openings remain absent. Q is separate from physicalG and gross upper-wall/legacy floor budgets.",
+        "sourceForceAndFirstMomentResidualKN_KNm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
       "floorReinforcement": {
         "anchorageAccepted": false,
         "floorThicknessMm": 200,
@@ -49051,6 +49091,269 @@
       "minimumHeadVerticalKN": -121.5978978153646,
       "missingGroundContactAreaMm2": 0,
       "negativeHeadCount": 7,
+      "physicalPlateParticipation": {
+        "ROOF/FLOOR/11667.5,3800": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 134062.5,
+          "condensedTraceRowMaxAbs": 6987.644266082536,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            974
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/11667.5,6000": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 200520.8333333333,
+          "condensedTraceRowMaxAbs": 9711.002320169477,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            976
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/11667.5,8200": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 32083.33333333333,
+          "condensedTraceRowMaxAbs": 4438.110727974808,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            984
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/332.5,3800": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 134062.5,
+          "condensedTraceRowMaxAbs": 8277.462053662854,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            106
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/332.5,6000": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 200520.8333333333,
+          "condensedTraceRowMaxAbs": 9202.673481681453,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            111
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/332.5,8200": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 32083.33333333333,
+          "condensedTraceRowMaxAbs": 4418.714339266941,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            118
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/3917.5,3917.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 32083.333333333336,
+          "condensedTraceRowMaxAbs": 3373.4014518275985,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            364
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/3917.5,6000": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 200520.8333333333,
+          "condensedTraceRowMaxAbs": 10054.720096210624,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            373
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/3917.5,8082.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 32083.333333333336,
+          "condensedTraceRowMaxAbs": 3380.8802690450193,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            379
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/4700,11667.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 54240.42655560705,
+          "condensedTraceRowMaxAbs": 411.22192617754894,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 4,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            48,
+            50,
+            51,
+            53
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "existing-finite-rc-member-trace"
+        },
+        "ROOF/FLOOR/4700,332.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 64166.666666666664,
+          "condensedTraceRowMaxAbs": 3929.954059194098,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            508
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/5925,8082.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 96879.7180469562,
+          "condensedTraceRowMaxAbs": 790.6224829783899,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 4,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            24,
+            26,
+            27,
+            29
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "existing-finite-rc-member-trace"
+        },
+        "ROOF/FLOOR/6000,3917.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 108854.16666666666,
+          "condensedTraceRowMaxAbs": 77.6094861222009,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            539
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/7300,11667.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 54240.42655560705,
+          "condensedTraceRowMaxAbs": 411.3263649972583,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 4,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            69,
+            71,
+            72,
+            74
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "existing-finite-rc-member-trace"
+        },
+        "ROOF/FLOOR/7300,332.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 64166.66666666667,
+          "condensedTraceRowMaxAbs": 3910.212510765629,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            562
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/8082.5,3917.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 32083.333333333336,
+          "condensedTraceRowMaxAbs": 3374.367254558205,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            683
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/8082.5,6000": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 200520.8333333333,
+          "condensedTraceRowMaxAbs": 10043.372053279345,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            692
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/8082.5,8082.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 32083.333333333336,
+          "condensedTraceRowMaxAbs": 3379.1448400099694,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            698
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        }
+      },
       "plateWorkRelativeResidual": 3.0283740412617416e-13,
       "roofCoupling": {
         "actualHeadCount": 52,
@@ -69572,7 +69875,7 @@
           "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
           "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
           "project/str/studies/lower_core_bodies.py": "9f6e0b2d232441c0a2e278de7d25f9b5d2e1db330527cf1aed36f4e6a0ecb392",
-          "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
           "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
           "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
           "project/str/studies/perforated_floor_condensation.py": "2f0dcba9128d110204212fec6f2bad14449edd27a30eaa6f1a68a3bbbe4a08bd",
@@ -69997,7 +70300,7 @@
           "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
           "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
           "project/str/studies/lower_core_bodies.py": "9f6e0b2d232441c0a2e278de7d25f9b5d2e1db330527cf1aed36f4e6a0ecb392",
-          "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
           "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
           "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
           "project/str/studies/perforated_floor_condensation.py": "2f0dcba9128d110204212fec6f2bad14449edd27a30eaa6f1a68a3bbbe4a08bd",
@@ -70438,6 +70741,39 @@
         14336.808840047413,
         3.820013948624197
       ],
+      "floorLiveLoad": {
+        "actualNetPlateAreaM2": 98.30240625,
+        "addedPhysicalMassKN": 0.0,
+        "appliedQKN": 0.0,
+        "appliedWrenchKN_KNm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "candidateAccepted": false,
+        "characteristicPressureKPa": 0,
+        "characteristicQKN": 0.0,
+        "combinationFactor": 1.5,
+        "factoredPressureKPa": 0.0,
+        "legacyGrossGFlagRequired": false,
+        "plateCentroidXYMm": [
+          6306.756649443029,
+          6055.164707072595
+        ],
+        "schema": "str-independent-net-floor-live-load/1",
+        "scope": "Uniform characteristic live pressure on the actual known net plate only, with the existing explicit1.5Q comparison factor. Withheld wet territory and unknown openings remain absent. Q is separate from physicalG and gross upper-wall/legacy floor budgets.",
+        "sourceForceAndFirstMomentResidualKN_KNm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
       "floorReinforcement": {
         "anchorageAccepted": false,
         "floorThicknessMm": 200,
@@ -73476,6 +73812,269 @@
       "minimumHeadVerticalKN": -109.1659919227798,
       "missingGroundContactAreaMm2": 0,
       "negativeHeadCount": 6,
+      "physicalPlateParticipation": {
+        "ROOF/FLOOR/11667.5,3800": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 134062.5,
+          "condensedTraceRowMaxAbs": 6987.644266082536,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            974
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/11667.5,6000": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 200520.8333333333,
+          "condensedTraceRowMaxAbs": 9711.002320169477,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            976
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/11667.5,8200": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 32083.33333333333,
+          "condensedTraceRowMaxAbs": 4438.110727974808,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            984
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/332.5,3800": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 134062.5,
+          "condensedTraceRowMaxAbs": 8277.462053662854,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            106
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/332.5,6000": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 200520.8333333333,
+          "condensedTraceRowMaxAbs": 9202.673481681453,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            111
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/332.5,8200": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 32083.33333333333,
+          "condensedTraceRowMaxAbs": 4418.714339266941,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            118
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/3917.5,3917.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 32083.333333333336,
+          "condensedTraceRowMaxAbs": 3373.4014518275985,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            364
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/3917.5,6000": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 200520.8333333333,
+          "condensedTraceRowMaxAbs": 10054.720096210624,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            373
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/3917.5,8082.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 32083.333333333336,
+          "condensedTraceRowMaxAbs": 3380.8802690450193,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            379
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/4700,11667.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 54240.42655560705,
+          "condensedTraceRowMaxAbs": 411.22192617754894,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 4,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            48,
+            50,
+            51,
+            53
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "existing-finite-rc-member-trace"
+        },
+        "ROOF/FLOOR/4700,332.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 64166.666666666664,
+          "condensedTraceRowMaxAbs": 3929.954059194098,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            508
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/5925,8082.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 96879.7180469562,
+          "condensedTraceRowMaxAbs": 790.6224829783899,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 4,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            24,
+            26,
+            27,
+            29
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "existing-finite-rc-member-trace"
+        },
+        "ROOF/FLOOR/6000,3917.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 108854.16666666666,
+          "condensedTraceRowMaxAbs": 77.6094861222009,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            539
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/7300,11667.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 54240.42655560705,
+          "condensedTraceRowMaxAbs": 411.3263649972583,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 4,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            69,
+            71,
+            72,
+            74
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "existing-finite-rc-member-trace"
+        },
+        "ROOF/FLOOR/7300,332.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 64166.66666666667,
+          "condensedTraceRowMaxAbs": 3910.212510765629,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            562
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/8082.5,3917.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 32083.333333333336,
+          "condensedTraceRowMaxAbs": 3374.367254558205,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            683
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/8082.5,6000": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 200520.8333333333,
+          "condensedTraceRowMaxAbs": 10043.372053279345,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            692
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/8082.5,8082.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 32083.333333333336,
+          "condensedTraceRowMaxAbs": 3379.1448400099694,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            698
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        }
+      },
       "plateWorkRelativeResidual": 4.958129206859828e-13,
       "roofCoupling": {
         "actualHeadCount": 52,
@@ -93909,7 +94508,7 @@
           "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
           "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
           "project/str/studies/lower_core_bodies.py": "9f6e0b2d232441c0a2e278de7d25f9b5d2e1db330527cf1aed36f4e6a0ecb392",
-          "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
           "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
           "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
           "project/str/studies/perforated_floor_condensation.py": "2f0dcba9128d110204212fec6f2bad14449edd27a30eaa6f1a68a3bbbe4a08bd",
@@ -94334,7 +94933,7 @@
           "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
           "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
           "project/str/studies/lower_core_bodies.py": "9f6e0b2d232441c0a2e278de7d25f9b5d2e1db330527cf1aed36f4e6a0ecb392",
-          "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
           "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
           "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
           "project/str/studies/perforated_floor_condensation.py": "2f0dcba9128d110204212fec6f2bad14449edd27a30eaa6f1a68a3bbbe4a08bd",
@@ -94775,6 +95374,39 @@
         -2912.823891406428,
         3.8200139486241387
       ],
+      "floorLiveLoad": {
+        "actualNetPlateAreaM2": 98.30240625,
+        "addedPhysicalMassKN": 0.0,
+        "appliedQKN": 0.0,
+        "appliedWrenchKN_KNm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "candidateAccepted": false,
+        "characteristicPressureKPa": 0,
+        "characteristicQKN": 0.0,
+        "combinationFactor": 1.5,
+        "factoredPressureKPa": 0.0,
+        "legacyGrossGFlagRequired": false,
+        "plateCentroidXYMm": [
+          6306.756649443029,
+          6055.164707072595
+        ],
+        "schema": "str-independent-net-floor-live-load/1",
+        "scope": "Uniform characteristic live pressure on the actual known net plate only, with the existing explicit1.5Q comparison factor. Withheld wet territory and unknown openings remain absent. Q is separate from physicalG and gross upper-wall/legacy floor budgets.",
+        "sourceForceAndFirstMomentResidualKN_KNm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
       "floorReinforcement": {
         "anchorageAccepted": false,
         "floorThicknessMm": 200,
@@ -97813,6 +98445,269 @@
       "minimumHeadVerticalKN": -221.1243959398071,
       "missingGroundContactAreaMm2": 0,
       "negativeHeadCount": 22,
+      "physicalPlateParticipation": {
+        "ROOF/FLOOR/11667.5,3800": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 134062.5,
+          "condensedTraceRowMaxAbs": 6987.644266082536,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            974
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/11667.5,6000": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 200520.8333333333,
+          "condensedTraceRowMaxAbs": 9711.002320169477,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            976
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/11667.5,8200": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 32083.33333333333,
+          "condensedTraceRowMaxAbs": 4438.110727974808,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            984
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/332.5,3800": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 134062.5,
+          "condensedTraceRowMaxAbs": 8277.462053662854,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            106
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/332.5,6000": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 200520.8333333333,
+          "condensedTraceRowMaxAbs": 9202.673481681453,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            111
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/332.5,8200": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 32083.33333333333,
+          "condensedTraceRowMaxAbs": 4418.714339266941,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            118
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/3917.5,3917.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 32083.333333333336,
+          "condensedTraceRowMaxAbs": 3373.4014518275985,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            364
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/3917.5,6000": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 200520.8333333333,
+          "condensedTraceRowMaxAbs": 10054.720096210624,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            373
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/3917.5,8082.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 32083.333333333336,
+          "condensedTraceRowMaxAbs": 3380.8802690450193,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            379
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/4700,11667.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 54240.42655560705,
+          "condensedTraceRowMaxAbs": 411.22192617754894,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 4,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            48,
+            50,
+            51,
+            53
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "existing-finite-rc-member-trace"
+        },
+        "ROOF/FLOOR/4700,332.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 64166.666666666664,
+          "condensedTraceRowMaxAbs": 3929.954059194098,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            508
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/5925,8082.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 96879.7180469562,
+          "condensedTraceRowMaxAbs": 790.6224829783899,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 4,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            24,
+            26,
+            27,
+            29
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "existing-finite-rc-member-trace"
+        },
+        "ROOF/FLOOR/6000,3917.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 108854.16666666666,
+          "condensedTraceRowMaxAbs": 77.6094861222009,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            539
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/7300,11667.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 54240.42655560705,
+          "condensedTraceRowMaxAbs": 411.3263649972583,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 4,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            69,
+            71,
+            72,
+            74
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "existing-finite-rc-member-trace"
+        },
+        "ROOF/FLOOR/7300,332.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 64166.66666666667,
+          "condensedTraceRowMaxAbs": 3910.212510765629,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            562
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/8082.5,3917.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 32083.333333333336,
+          "condensedTraceRowMaxAbs": 3374.367254558205,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            683
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/8082.5,6000": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 200520.8333333333,
+          "condensedTraceRowMaxAbs": 10043.372053279345,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            692
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        },
+        "ROOF/FLOOR/8082.5,8082.5": {
+          "allCoefficientRowsUsedByPhysicalElements": true,
+          "assembledTraceRowMaxAbs": 32083.333333333336,
+          "condensedTraceRowMaxAbs": 3379.1448400099694,
+          "createdScalarCoordinateCount": 0,
+          "participatingPortCount": 1,
+          "physicalTraceConfirmed": true,
+          "portIndices": [
+            698
+          ],
+          "schema": "str-retained-plate-operator-participation/1",
+          "scope": "Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.",
+          "traceSource": "actual-physical-mesh-point-trace"
+        }
+      },
       "plateWorkRelativeResidual": 5.996424014835471e-12,
       "roofCoupling": {
         "actualHeadCount": 52,
@@ -118238,7 +119133,7 @@
           "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
           "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
           "project/str/studies/lower_core_bodies.py": "9f6e0b2d232441c0a2e278de7d25f9b5d2e1db330527cf1aed36f4e6a0ecb392",
-          "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
           "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
           "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
           "project/str/studies/perforated_floor_condensation.py": "2f0dcba9128d110204212fec6f2bad14449edd27a30eaa6f1a68a3bbbe4a08bd",
@@ -118407,13 +119302,13 @@
     "positive-PLAN-pressure",
     "suction-zero-physical-G"
   ],
-  "methodSHA256": "be9d6064f9decc396e811010c8b26753023b7d404b21ed600f2be1657fd7a3c8",
+  "methodSHA256": "de1cd7529ebb052fd078a5cf35e69570bd122b798de2161c0f450d1a1621091c",
   "reusedNativeEvidence": {
     "binding": "Exact current source inventory and every authored executed-request field; no result/hash patching",
     "caseCount": 2,
-    "path": "/workspace/scratch/5fba92029ea1/masonry48/project/str/studies/masonry-frame-a-proof.json",
+    "path": "project/str/studies/masonry-frame-a-proof.json",
     "schema": "str-masonry-frame-a-proof/1",
-    "sha256": "2026a8cb27248a5192f29444f0e91e05229d50a25b187b4bee3268bda652b5dd"
+    "sha256": "6add5771056fd111fa438739a7a3b6607112b427a73c82cab1e2e8fc8f73a80b"
   },
   "schema": "str-roof-surface-pressure-proof/1",
   "scope": "Executed mechanical load controls, independently authored from facade wind. No site wind/snow, weather adoption or installed resistance qualification.",
@@ -118446,7 +119341,7 @@
     "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
     "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
     "project/str/studies/lower_core_bodies.py": "9f6e0b2d232441c0a2e278de7d25f9b5d2e1db330527cf1aed36f4e6a0ecb392",
-    "project/str/studies/masonry_frame_a.py": "d05d8bb8ea1996c670d8892480a79cb7a310f4c1b2feb450e317fe789db6880e",
+    "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
     "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
     "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
     "project/str/studies/perforated_floor_condensation.py": "2f0dcba9128d110204212fec6f2bad14449edd27a30eaa6f1a68a3bbbe4a08bd",
