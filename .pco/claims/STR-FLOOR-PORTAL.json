@@ -9,8 +9,8 @@
     "label": "convergence-20261121"
   },
   "claimedAt": "2026-11-21T19:47:07.671Z",
-  "heartbeatAt": "2026-11-21T20:26:16.251Z",
-  "expiresAt": "2026-11-21T21:11:16.251Z",
+  "heartbeatAt": "2026-11-21T21:04:37.133Z",
+  "expiresAt": "2026-11-21T21:49:37.133Z",
   "branch": "work/convergence-structure-20261121",
   "predecessor": {
     "leaseId": "95dc0271-adfc-448a-9789-0f1476b4b26b",
@@ -35,8 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Recovery64c6d015 on primary branch. Separate nodal/zero-port successor recovery/str-nodal-attachments-20261121 preserves validatedPL4/zero-work regressions; native replays active in isolated worktree. Main integration first retains source-bound8states+failed700/500cuts and explicit unavailable wet-beam physical-demand diagnostic;48legacycases freshly regenerated.",
-    "next": "Finish governing replays, source audit and savedAPI; publish exact baseline tree and require CI before merge. Continue isolated nodal successor replays, then reconcile.",
-    "blocker": "Baseline exact-head validation; successor source-bound native replay and complete physical corner/beam duties remain."
-  }
+    "evidence": "PR1613 at1ad6f238 exacttreec535 published.276Python+10focused+3nativeAPI passed; CI found3extra stale foundation/lower-body receipts now actually regenerated. Full76MJS suite rerunning; pad edit now rejects beam-end overhang as well as post fit. Nodal9+700/500+freshupstream/48wind states preserved on recovery/str-nodal-attachments-20261121 at6613f764.",
+    "next": "Publish refreshed3receipts/source projections after76tests, exactCI/preflight/merge1613; reconcile HAD1611 movedmain. Finish nodal source-account/API integration and preserve fullproofs.",
+    "blocker": "Exact-head fullhealth pending; nodal corner-cut mesh screen still fails and post-to-grid local cut recovery remains missing."
+  },
+  "pr": 1613
 }
