@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 1000">
+<rect width="1300" height="1000" fill="#faf8f2"/><style>text{font:14px sans-serif;fill:#253941}.small{font-size:12px}.hold{fill:#a54a38}</style>
+<text x="32" y="34" font-size="22">CONVENTIONAL STRAIGHT FRAME: WHOLE REINFORCEMENT ROUTE</text>
+<text x="32" y="60">Actual simultaneous source case MASONRY-FRAME-A/baseline / necessary comparisons only</text>
+<path d="M60.425,743.800 L135.000,743.800 L135.000,330.032 L106.508,299.000 L100.800,299.000 L100.800,207.800 L60.425,207.800 Z" fill="#d1dcd8" stroke="#65796f"/>
+<path d="M703.575,743.800 L629.000,743.800 L629.000,330.032 L657.492,299.000 L663.200,299.000 L663.200,207.800 L703.575,207.800 Z" fill="#d1dcd8" stroke="#65796f"/>
+<path d="M60.425,207.800 L703.575,207.800 L703.575,103.800 L60.425,103.800 Z" fill="#d1dcd8" stroke="#65796f"/>
+<path d="M73.535,823.800 L73.535,113.240" fill="none" stroke="#284e7d" stroke-width="1.5"/>
+<path d="M73.535,823.800 L73.535,113.240" fill="none" stroke="#284e7d" stroke-width="1.5"/>
+<path d="M87.690,811.000 L87.690,113.240" fill="none" stroke="#284e7d" stroke-width="1.5"/>
+<path d="M87.690,811.000 L87.690,113.240" fill="none" stroke="#284e7d" stroke-width="1.5"/>
+<path d="M118.850,823.800 L118.850,355.000" fill="none" stroke="#a76d35" stroke-width="1.5"/>
+<path d="M118.850,823.800 L118.850,355.000" fill="none" stroke="#a76d35" stroke-width="1.5"/>
+<path d="M690.465,823.800 L690.465,113.240" fill="none" stroke="#284e7d" stroke-width="1.5"/>
+<path d="M690.465,823.800 L690.465,113.240" fill="none" stroke="#284e7d" stroke-width="1.5"/>
+<path d="M676.310,811.000 L676.310,113.240" fill="none" stroke="#284e7d" stroke-width="1.5"/>
+<path d="M676.310,811.000 L676.310,113.240" fill="none" stroke="#284e7d" stroke-width="1.5"/>
+<path d="M645.150,823.800 L645.150,355.000" fill="none" stroke="#a76d35" stroke-width="1.5"/>
+<path d="M645.150,823.800 L645.150,355.000" fill="none" stroke="#a76d35" stroke-width="1.5"/>
+<path d="M74.200,215.640 L74.200,127.640 L74.233,126.803 L74.330,125.969 L74.492,125.143 L74.718,124.327 L75.007,123.526 L75.357,122.742 L75.768,121.979 L76.236,121.240 L76.762,120.529 L77.341,119.848 L77.972,119.200 L78.652,118.589 L79.378,118.016 L80.147,117.485 L80.955,116.997 L81.800,116.555 L82.677,116.160 L83.583,115.814 L84.514,115.519 L85.466,115.276 L86.435,115.086 L87.416,114.950 L88.406,114.867 L89.400,114.840 L674.600,114.840 L675.594,114.867 L676.584,114.950 L677.565,115.086 L678.534,115.276 L679.486,115.519 L680.417,115.814 L681.323,116.160 L682.200,116.555 L683.045,116.997 L683.853,117.485 L684.622,118.016 L685.348,118.589 L686.028,119.200 L686.659,119.848 L687.238,120.529 L687.764,121.240 L688.232,121.979 L688.643,122.742 L688.993,123.526 L689.282,124.327 L689.508,125.143 L689.670,125.969 L689.767,126.803 L689.800,127.640 L689.800,215.640" fill="none" stroke="#a24542" stroke-width="1.5"/>
+<path d="M74.200,215.640 L74.200,127.640 L74.233,126.803 L74.330,125.969 L74.492,125.143 L74.718,124.327 L75.007,123.526 L75.357,122.742 L75.768,121.979 L76.236,121.240 L76.762,120.529 L77.341,119.848 L77.972,119.200 L78.652,118.589 L79.378,118.016 L80.147,117.485 L80.955,116.997 L81.800,116.555 L82.677,116.160 L83.583,115.814 L84.514,115.519 L85.466,115.276 L86.435,115.086 L87.416,114.950 L88.406,114.867 L89.400,114.840 L674.600,114.840 L675.594,114.867 L676.584,114.950 L677.565,115.086 L678.534,115.276 L679.486,115.519 L680.417,115.814 L681.323,116.160 L682.200,116.555 L683.045,116.997 L683.853,117.485 L684.622,118.016 L685.348,118.589 L686.028,119.200 L686.659,119.848 L687.238,120.529 L687.764,121.240 L688.232,121.979 L688.643,122.742 L688.993,123.526 L689.282,124.327 L689.508,125.143 L689.670,125.969 L689.767,126.803 L689.800,127.640 L689.800,215.640" fill="none" stroke="#a24542" stroke-width="1.5"/>
+<path d="M85.600,297.560 L85.600,209.560 L85.633,208.723 L85.730,207.889 L85.892,207.063 L86.118,206.247 L86.407,205.446 L86.757,204.662 L87.168,203.899 L87.636,203.160 L88.162,202.449 L88.741,201.768 L89.372,201.120 L90.052,200.509 L90.778,199.936 L91.547,199.405 L92.355,198.917 L93.200,198.475 L94.077,198.080 L94.983,197.734 L95.914,197.439 L96.866,197.196 L97.835,197.006 L98.816,196.870 L99.806,196.787 L100.800,196.760 L663.200,196.760 L664.194,196.787 L665.184,196.870 L666.165,197.006 L667.134,197.196 L668.086,197.439 L669.017,197.734 L669.923,198.080 L670.800,198.475 L671.645,198.917 L672.453,199.405 L673.222,199.936 L673.948,200.509 L674.628,201.120 L675.259,201.768 L675.838,202.449 L676.364,203.160 L676.832,203.899 L677.243,204.662 L677.593,205.446 L677.882,206.247 L678.108,207.063 L678.270,207.889 L678.367,208.723 L678.400,209.560 L678.400,297.560" fill="none" stroke="#a24542" stroke-width="1.5"/>
+<path d="M85.600,297.560 L85.600,209.560 L85.633,208.723 L85.730,207.889 L85.892,207.063 L86.118,206.247 L86.407,205.446 L86.757,204.662 L87.168,203.899 L87.636,203.160 L88.162,202.449 L88.741,201.768 L89.372,201.120 L90.052,200.509 L90.778,199.936 L91.547,199.405 L92.355,198.917 L93.200,198.475 L94.077,198.080 L94.983,197.734 L95.914,197.439 L96.866,197.196 L97.835,197.006 L98.816,196.870 L99.806,196.787 L100.800,196.760 L663.200,196.760 L664.194,196.787 L665.184,196.870 L666.165,197.006 L667.134,197.196 L668.086,197.439 L669.017,197.734 L669.923,198.080 L670.800,198.475 L671.645,198.917 L672.453,199.405 L673.222,199.936 L673.948,200.509 L674.628,201.120 L675.259,201.768 L675.838,202.449 L676.364,203.160 L676.832,203.899 L677.243,204.662 L677.593,205.446 L677.882,206.247 L678.108,207.063 L678.270,207.889 L678.367,208.723 L678.400,209.560 L678.400,297.560" fill="none" stroke="#a24542" stroke-width="1.5"/>
+<rect x="68.785" y="818.52" width="9.5" height="5.279999999999973" fill="#a76d35"/>
+<rect x="68.785" y="818.52" width="9.5" height="5.279999999999973" fill="#a76d35"/>
+<rect x="82.94" y="805.72" width="9.5" height="5.279999999999973" fill="#a76d35"/>
+<rect x="82.94" y="805.72" width="9.5" height="5.279999999999973" fill="#a76d35"/>
+<rect x="114.1" y="818.52" width="9.5" height="5.279999999999973" fill="#a76d35"/>
+<rect x="114.1" y="355.0" width="9.5" height="5.279999999999973" fill="#a76d35"/>
+<rect x="114.1" y="818.52" width="9.5" height="5.279999999999973" fill="#a76d35"/>
+<rect x="114.1" y="355.0" width="9.5" height="5.279999999999973" fill="#a76d35"/>
+<rect x="685.715" y="818.52" width="9.5" height="5.279999999999973" fill="#a76d35"/>
+<rect x="685.715" y="818.52" width="9.5" height="5.279999999999973" fill="#a76d35"/>
+<rect x="671.5600000000001" y="805.72" width="9.5" height="5.279999999999973" fill="#a76d35"/>
+<rect x="671.5600000000001" y="805.72" width="9.5" height="5.279999999999973" fill="#a76d35"/>
+<rect x="640.4" y="818.52" width="9.5" height="5.279999999999973" fill="#a76d35"/>
+<rect x="640.4" y="355.0" width="9.5" height="5.279999999999973" fill="#a76d35"/>
+<rect x="640.4" y="818.52" width="9.5" height="5.279999999999973" fill="#a76d35"/>
+<rect x="640.4" y="355.0" width="9.5" height="5.279999999999973" fill="#a76d35"/>
+<rect x="40.0" y="743.8" width="114.0" height="91.20000000000005" fill="none" stroke="#65796f"/>
+<rect x="610.0" y="743.8" width="114.0" height="91.20000000000005" fill="none" stroke="#65796f"/>
+<text class="small" x="42" y="815.8">−680 / −600 staggered heads</text>
+<text class="small" x="42" y="735.8">−180 cap top</text>
+<text class="small" x="42" y="347.0">2250 headed lower bars</text>
+<text class="small" x="42" y="199.79999999999995">3170 beam underside</text>
+<text x="750" y="118">ACTUAL GEOMETRY AND FULL-YIELD ANCHORAGE</text>
+<text class="small" x="750" y="149">Solved beam width 290 mm; post normal 290 mm</text>
+<text class="small" x="750" y="176">Post: four continuous H16; six H16 below2250</text>
+<text class="small" x="750" y="203">Beam: four H10, staggered ordinary downward tails</text>
+<text class="small" x="750" y="230">Lower wing: two straight H16 with50 ×33 TTH16 heads</text>
+<text class="small" x="750" y="257">H10 mandrel required 145.072 / authored 150 mm</text>
+<text class="small" x="750" y="284">Poor-bond straight tails 550 mm; no hook reduction</text>
+<text class="small" x="750" y="311">Main-bar adverse clearance ≥ 21.829 mm</text>
+<text class="hold" x="750" y="360">ACTUAL WIDENED BEAM: SAME-CASE NECESSARY CHECKS</text>
+<text class="small" x="750" y="389">Actual worst nominal section comparison 0.8699; no resistance acceptance.</text>
+<text class="small" x="750" y="416">Concrete geometry and simultaneous cuts are source-bound.</text>
+<text class="hold" x="750" y="465">REJECT INHERITANCE OF THE OLD570 CAP HOOK ASSEMBLY</text>
+<text class="small" x="750" y="494">Full-force H12 needs200 mm mandrel; actual source cap</text>
+<text class="small" x="750" y="521">top/bottom return envelopes conflict after tolerances.</text>
+<text class="small" x="750" y="548">650 clears top/bottom only; orthogonal hook fit fails.</text>
+<text class="small" x="750" y="575">Straight headed mats need actual C32/40/local proof.</text>
+<text class="hold" x="750" y="624">Closed-link135° hooks and cross-tie closure are not proved.</text>
+<text class="small" x="750" y="653">Ideal closed perimeters are not a fabrication schedule.</text>
+<text class="small" x="32" y="902">Blue: continuous post bars. Red: beam bars and ordinary returns. Ochre: independent lower-wing bars and manufactured heads.</text>
+<text class="small" x="32" y="930">View shows the court frame; normal planes are projected together. Full3D routes and exact named caps accompany the calculation.</text>
+<text class="hold" x="32" y="963">No cage, joint, material, moisture, roof, pile or construction acceptance is asserted.</text></svg>

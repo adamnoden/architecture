@@ -31,12 +31,12 @@
     "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
     "project/str/studies/rc_floor_house_loads.py": "eaade7a26ecc682f742a1c3b3246ee648e5d497c236b52f656250994d0517654",
     "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-    "project/str/studies/vertical_rc_floor.py": "1392db4fdc6695af2989d212d574058bc93b0fae4c4c1994e7ffb54d7789a71a",
+    "project/str/studies/vertical_rc_floor.py": "30a222fe8c7104b03cab7593b62fcd3ee224574f71380bb7cb7dc95cd275a7d7",
     "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
-    "project/str/studies/vertical_floor_numerics.py": "3a999a223eedf37792ae9ffa2368eb59854f6b4e465783d7efc086dece20fa40",
+    "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
     "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
     "project/str/studies/vertical_floor_views.py": "701f63dda777b63b44b45b31c00f9fda9716034a398f56384fc249ae59ad3cce",
-    "project/str/studies/vertical-rc-floor-proof.json": "9878bf56ae06322c2eb594776803b5ca05ea8956ede18368032663403e57c780",
+    "project/str/studies/vertical-rc-floor-proof.json": "8a71074b295b152aef410c7fd37f53796d92a4d0336dc9417ed0513b2e279678",
     "project/str/studies/floor_reinforcement.py": "e904f747686fdf3811f78ab7917ad9d3972c1d464be8960d66de61801d7c4bec",
     "project/str/studies/floor_reinforcement_proof.py": "cb26adb1aaee6a1584c6ecd9a2063c91cc660bc2922e42d86549442687478026",
     "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
@@ -66,7 +66,7 @@
     },
     "sourceCaseId": "VERTICAL-FLOOR/baseline",
     "floorThicknessMm": 200,
-    "momentInspectionKNmPerM": 29.5783293122226,
+    "momentInspectionKNmPerM": 29.578329312227112,
     "governingMomentCell": {
       "cellIndex": 273,
       "direction": 1,
@@ -75,18 +75,18 @@
         405.6698729810778
       ],
       "curvaturePerMm": [
-        1.6947719481221226e-06,
-        2.8337149180534963e-06,
-        4.9752340670477865e-06
+        1.6947719481224242e-06,
+        2.8337149180532917e-06,
+        4.975234067050116e-06
       ],
       "momentKNmPerM": [
-        12.956595963052626,
-        18.176751241904757,
-        11.401578070317845
+        12.956595963054118,
+        18.17675124190393,
+        11.401578070323184
       ],
       "absoluteBendingPlusTwistingKNmPerM": [
-        24.35817403337047,
-        29.5783293122226
+        24.358174033377303,
+        29.578329312227112
       ]
     },
     "section": {
@@ -97,15 +97,15 @@
       "clearComparatorPasses": true,
       "adverseInnerEffectiveDepthMm": 122.0,
       "authoredLeverArmMm": 109.8,
-      "inspectionForcePerMetreN": 269383.69136814756,
-      "inspectionSteelStressMPa": 238.18747816434566,
+      "inspectionForcePerMetreN": 269383.69136818865,
+      "inspectionSteelStressMPa": 238.18747816438201,
       "sourceDesignSteelStressMPa": 400.00000000000006,
       "inspectionMomentCapacityKNmPerM": 49.67234976443894,
       "inspectionStressComparatorPasses": true
     },
     "straightDevelopment": {
       "fullSourceDesignStressDevelopmentMm": 571.4285714285717,
-      "inspectionDemandDevelopmentMm": 340.2678259490653,
+      "inspectionDemandDevelopmentMm": 340.2678259491172,
       "fullSourceDesignStressLapMm": 857.1428571428576,
       "policy": "No hook/cover/confinement reduction is credited; source poor-bond comparison retained.",
       "fieldRouteCount": 434,

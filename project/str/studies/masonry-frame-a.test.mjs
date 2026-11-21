@@ -10,6 +10,6 @@ test('straight-frame candidate: independent geometry/equilibrium, actual source-
     cwd: root, encoding: 'utf8', timeout: 30000, maxBuffer: 1024 * 1024,
   })
   assert.equal(result.status, 0, result.stdout + result.stderr)
-  assert.match(result.stderr, /Ran 6 tests/)
+  assert.match(result.stderr, /Ran 8 tests/)
   assert.doesNotMatch(result.stderr, /skipped=/)
 })

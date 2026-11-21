@@ -1,5 +1,7 @@
 # One shared fixed-inlet service frame
 
+**Superseded development direction —21November2026:** keep these adverse results as evidence; the [one copper cabinet comparison](inlet-cabinet-copper-comparison.md) is the preferred conventional development route. Do not continue local refinement of the tight two-hood/frame interfaces without first earning a reason to reverse that whole-arrangement comparison. Neither proposal is selected or admitted.
+
 Reference design — not released for construction. This development candidate replaces the old low chassis and one-jamb cantilever together. No current entry source, selected support, owner adoption or installed acceptance changes here.
 
 The recommendation is **one permanent two-jamb wall frame with separately removable pipe and wet brackets**. The original normal, wet-fault and cold comparisons remain credible under explicit boundary assumptions. The newly coupled seized-top-exit plus closed-fault comparison fails at the upper wet-beam endplates and Plant fixed bracket; it must not inherit their pass. The current two-hood enclosure remains incomplete because its850 pipe arm crosses the back skin without a dimensioned passive closure. A frame calculation cannot discharge that enclosure defect.

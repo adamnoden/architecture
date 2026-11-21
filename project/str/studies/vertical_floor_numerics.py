@@ -33,7 +33,13 @@ def solve_vertical_frame(frame,vertical):
     from scipy.sparse.linalg import splu
     names=list(frame.nodes);indices={name:6*i for i,name in enumerate(names)};count=6*len(names);fixed={indices[name]+axis:value for (name,axis),value in frame.fixed.items()}
     if any(value!=0 for value in fixed.values()):raise ValueError('Verticalfloor sparse route supports only sourcezero fixedtranslations/gauges')
-    free=[i for i in range(count) if i not in fixed];lookup={i:j for j,i in enumerate(free)};scale=np.array([.001 if i%6>=3 else 1. for i in free]);external=np.zeros(count)
+    free=[i for i in range(count) if i not in fixed];lookup={i:j for j,i in enumerate(free)}
+    internal_scales=getattr(frame,'internalScalarCoordinateScales',{})
+    if not isinstance(internal_scales,dict):raise ValueError('Explicit internal scalar coordinate scales must be a named map')
+    for name,value in internal_scales.items():
+        if name not in indices or not name.startswith('LOWER-CORE/body-top/') or type(value) not in (int,float) or not math.isfinite(value) or value<=0 or (name,2) in frame.fixed or any((name,axis) not in frame.fixed for axis in (0,1,3,4,5)):
+            raise ValueError('Only positive reversible lower-body scalar normalisation is supported; no physical restraint or other DOF change')
+    scale=np.array([internal_scales.get(names[i//6],1.) if i%6==2 else .001 if i%6>=3 else 1. for i in free]);external=np.zeros(count)
     for node,wrench in frame.loads.items():external[indices[node]:indices[node]+6]+=wrench
     rows=[];cols=[];values=[]
     for name,a,b,matrix in frame.members:
