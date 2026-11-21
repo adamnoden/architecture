@@ -58,6 +58,18 @@ merely because it covers that boundary in an image.
 
 ## Structural direction and selection compatibility
 
+**Current convergence boundary — 20 November.** The governing development
+disposition is [floor/portal reconciliation](str/floor-portal-reconciliation.md),
+not the dated hardware directions below. The nested hip/collar, radial guides,
+short shear tooth and crossing curved RC cage are rejected development paths.
+Do not carry their roomward collars, roof shoes, bar schedules or force results
+into new house drawings. The recommended successor is a straight RC frame with
+separately seated masonry arches, developed against the actual perforated floor
+and named foundation heads. It is not yet a selected or complete structural
+scheme. Source-ground-zero structural comparisons and the raised occupied-floor
+proposal remain different cases; neither supplies the other's roof, water or
+thermal acceptance. Both house gates retain the actual joined-proof obligation.
+
 The [structural brief](../docs/reference-house/structural-brief.md) and [STR programme](str/structural-architecture-programme.md) direct investigation of solid masonry, real arches, aligned support and non-timber primary structure. The controlled 125 mm partitions and 350 mm floor remain actual source reservations until an explicit rewind is adopted; neither is a preselected solution. IAS owns renewable layers and service fronts; STR owns the permanent support they connect to. An outer-leaf arch cannot certify the inner-leaf head or a doorway bearing below a floor reaction.
 
 STR-HOUSE coordinates proposed structure with HAD in the owning plan/section. STR-RECONCILE supplies exact candidate/source identities, support/reaction envelopes, interface budgets and affected-evidence dispositions. ROF-RWT-GATE must check its selected roof against that handoff. TRIAD-GATE must check actual selected walls, floor layers, opening heads, stair/void and service crossings against it, including the selected construction bay. Changed geometry or assembly outside the declared envelope requires targeted rechecking before admission; a completed study is not automatic compatibility.
@@ -74,9 +86,12 @@ dated study record; it no longer establishes a current coherent structure.
 The correction owns the choice between a joined floor/jamb and a real separated
 collector bypass. Neither is adopted here.
 
-**15 November north collector development.** The [straight north hold-down and paired arch ties](str/floor-portal-twin-garden-tie.md) develop separate uplift and arch-thrust paths. The [local collector cage](str/floor-portal-north-cage.md) compares a 200 × 750 mm section at the sleeve with short bent-bar returns and shared jig setting. Keep the existing floor and arch levels. Coordinate the room finish, insulation, window sill return and slab/bar force development at the widened shoulders. The [split cap mat and linked starter routes](str/floor-portal-north-cap-layer.md) retain the four north head axes and bound the catalogue splice bodies. The [slotted north roof shoe and separate dry ferrule](str/floor-portal-north-roof-shoe.md) preserve separate compression and normal restraint. Reconcile the full joint, far-head cages, tool and closure interfaces with signed actions and movements across all 52 heads before admission to the roof and TRIAD gates.
+**15 November north collector development — historical.** The [straight north hold-down and paired arch ties](str/floor-portal-twin-garden-tie.md) developed separate uplift and arch-thrust paths. The [local collector cage](str/floor-portal-north-cage.md) compared a 200 × 750 mm section at the sleeve with short bent-bar returns and shared jig setting. The [split cap mat and linked starter routes](str/floor-portal-north-cap-layer.md) retained the four north head axes and bounded the catalogue splice bodies. The [slotted north roof shoe and separate dry ferrule](str/floor-portal-north-roof-shoe.md) compared separate compression and normal restraint. These are retained evidence for their original geometry, not instructions to insert their hardware into the current successor.
 
-The [north corner diaphragm collar](str/floor-portal-north-collar.md) brings the top-mesh bars straight across the receiving plane on both northern L piers. Carry the 120 mm roomward extension and Z3415 concrete top into the floor, northwest cabinet base and service-depth drawings. Develop restraint around the H16 bends and the transfer into the original L piers before admitting that joint into the coupled replay.
+The historical [north corner diaphragm collar](str/floor-portal-north-collar.md)
+carried a 120 mm roomward extension and Z3415 concrete top. Those dimensions
+belong to that rejected mechanism. Its retained drawing is not current authority
+for the floor, northwest cabinet or service-depth model.
 
 **SAP-C1 retained comparison.** The [paired-jamb, raised-roof candidate](str/provisional-house-handoff.md)
 and its [source-bound interface schedule](str/studies/reconciled-house-interface.json)

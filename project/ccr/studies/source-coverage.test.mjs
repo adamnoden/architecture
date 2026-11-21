@@ -68,6 +68,10 @@ test('current RC, service-floor and keeper methods have canonical bindings witho
   }
   for (const [id, source] of [
     ['str-conditional-interface', 'project/str/studies/rc_portal_monolithic.py'],
+    ['str-masonry-frame-comparison', 'project/str/studies/masonry_frame_a.py'],
+    ['str-masonry-frame-comparison', 'project/str/studies/foundation_solid_weight.py'],
+    ['str-masonry-frame-comparison', 'project/str/studies/court_corner_closure.py'],
+    ['str-masonry-frame-comparison', 'project/str/studies/floor_reinforcement.py'],
     ['str-conditional-interface', 'project/str/studies/rc_floor_house_loads.py'],
     ['had-fixed-inlet-arrangement', 'compiler/reference-house/current-design/inlet-fixed-temporary-keeper.ts'],
     ['had-fixed-inlet-arrangement', 'compiler/reference-house/current-design/inlet-fixed-support-view.ts'],

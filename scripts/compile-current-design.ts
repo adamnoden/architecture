@@ -51,6 +51,10 @@ const trialModes: Readonly<Record<string, TrialMode>> = {
     schema: 'str-current-rc-floor-request/1', key: 'joined', name: 'joined RC floor',
     run: (compile, value) => compile.joinedRcFloorCase(value),
   },
+  '--masonry-frame': {
+    schema: 'str-current-masonry-frame-request/1', key: 'masonry', name: 'separate masonry frame',
+    run: (compile, value) => compile.masonryFrameCase(value),
+  },
   '--vertical-rc-floor': {
     schema: 'str-current-vertical-rc-floor-request/1', key: 'vertical', name: 'vertical RC floor',
     run: (compile, value) => compile.verticalRcFloorCase(value),
@@ -137,7 +141,7 @@ const args = process.argv.slice(2)
 const modes = [
   '--occupied-services', '--occupied-service-drawings', '--selected-water-event', '--structural-bridge', '--structural-actions',
   '--bundle', '--read-engineering', '--read-retained-inlet-comparison', '--study-assembly', '--study-linings', '--renewable-openings',
-  '--read-service-floor', '--service-floor', '--read-vertical-rc-floor', '--read-house-vertical-profile',
+  '--read-service-floor', '--service-floor', '--read-vertical-rc-floor', '--read-masonry-frame', '--read-house-vertical-profile',
   '--read-roof-pitch', '--read-court-intake', '--read-inlet-route', '--read-east-ground-receiving',
   '--read-occupied-condensate', '--read-structural-successor', '--read-retained-components', '--read-ground-section', '--read-distributed-floor', '--read-joined-rc-floor', '--read-structural-case', '--read-structural-interfaces',
   '--read-north-collector', '--read-rear-foul-vent', '--read-inlet-sill-insert', '--read-inlet-fault', '--read-fixed-inlet', '--read-inlet-removal', '--read-inlet-cover', ...Object.keys(trialModes),
@@ -177,6 +181,7 @@ try {
       const compile = prepareCurrentDesignCompile(input)
       if (mode === '--read-distributed-floor') process.stdout.write(JSON.stringify(await compile.readDistributedFloorCase(), null, 2) + '\n')
       else if (mode === '--read-joined-rc-floor') process.stdout.write(JSON.stringify(await compile.readJoinedRcFloorCase(), null, 2) + '\n')
+      else if (mode === '--read-masonry-frame') process.stdout.write(JSON.stringify(await compile.readMasonryFrameCase(), null, 2) + '\n')
       else if (mode === '--read-vertical-rc-floor') process.stdout.write(JSON.stringify(await compile.readVerticalRcFloorCase(), null, 2) + '\n')
       else if (mode === '--read-ground-section') process.stdout.write(JSON.stringify(await compile.readGroundSectionCase(), null, 2) + '\n')
       else if (mode === '--read-house-vertical-profile') process.stdout.write(JSON.stringify(await compile.readHouseVerticalProfileCase(), null, 2) + '\n')
