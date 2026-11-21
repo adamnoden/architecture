@@ -96,3 +96,22 @@ test('one saved document and public CLI regenerate the joined floor/source resul
   assert.notEqual(after.engineering.inletSourceEnvelope.roomCatchment.groundAuthority.resultDigest, beforeCatchment.groundAuthority.resultDigest)
   assert.deepEqual(await compileEngineeringDocument(make(65)), before)
 })
+
+
+test('a below-source ground datum raises both the flow bound and actual electrical jet action', () => {
+  const low = runGroundSectionCase(current, { ...ground, settings: { ...ground.settings, courseBottomMm: -1000 } })
+  assert.ok(low.native.levelsMm.ffl < 0)
+  const raised = runInletSourceEnvelopeCase(current, source), lowered = runInletSourceEnvelopeCase(current, source, low)
+  assert.ok(lowered.bound.maximumAbsoluteTotalBar > raised.bound.maximumAbsoluteTotalBar)
+  assert.ok(lowered.bound.maximumCombinedLmin > raised.bound.maximumCombinedLmin)
+  const room = lowered.joinedDirection.room, expectedVelocity = Math.sqrt(2 * (lowered.bound.maximumAbsoluteTotalBar - source.settings.atmosphericMinimumBar) * 1e5 / 990)
+  assert.ok(Math.abs(room.newMainboard.jetComparison.sourceAirVelocityUpperMps - expectedVelocity) < 1e-6)
+  for (let i = 0; i < lowered.branches.length; i++) {
+    const expected = 2 * 1000 * lowered.branches[i].maximumLimitedEachLmin / 60000 * expectedVelocity
+    assert.ok(Math.abs(room.electricalScreen.actions.fullReversalUpperN[i] - expected) < 1e-9)
+    assert.ok(Math.abs(room.newMainboard.jetComparison.byBranch[i].fullReversalUpperN - expected) < 1e-6)
+  }
+  assert.deepEqual(lowered.joinedDirection.room.electricalScreen.panels, raised.joinedDirection.room.electricalScreen.panels)
+  assert.equal(room.electricalScreen.changedGroundOrSlabHeightAcceptanceTransferred, false)
+  assert.equal(lowered.selected, false)
+})

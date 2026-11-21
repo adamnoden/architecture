@@ -156,7 +156,7 @@ export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, in
         .5 * 1000 * (requiredLmin / 60000 / (s.dischargeCoefficientComparison * Math.PI * ((maximumContainmentDiameterMm - 2 * s.apertureToleranceMm) / 1000) ** 2 / 4)) ** 2 / 1e5 - s.atmosphericMinimumBar)) }
   })
   const maximumCombinedLmin = round(branches.reduce((total, branch) => total + branch.maximumLimitedEachLmin, 0))
-    const joinedDirection = joinedServiceDirection(resolved, b, s, branches),
+    const joinedDirection = joinedServiceDirection(resolved, b, s, branches, absoluteMaximumBar),
     roomCatchment = runInletRoomCatchment(resolved, ground, maximumCombinedLmin, { planMm: joinedDirection.room.wetUtilityPlanMm,
       rawWindowXMm: joinedDirection.room.southWindowOpeningXMm, retainedFurniture: joinedDirection.room.retainedFurniture,
       northOpeningXMm: joinedDirection.room.northOpeningXMm, purgeBodyMm: joinedDirection.room.purge.body, wallFacesYMm: [native.branches[0].bores[0].outer[1], native.branches[0].bores[0].inner[1]] }, s)
@@ -206,7 +206,7 @@ export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, in
 
 
 /** One source-bound architectural direction. Geometry is a proposal, never a replacement occupied-house pass. */
-function joinedServiceDirection(resolved: CurrentDesignResolution, b: ReturnType<typeof binding>, s: InletSourceEnvelopeSettings, branches: readonly any[]) {
+function joinedServiceDirection(resolved: CurrentDesignResolution, b: ReturnType<typeof binding>, s: InletSourceEnvelopeSettings, branches: readonly any[], maximumAbsoluteBar: number) {
   const model = b.occupied.house.model as unknown as { architecturalServices: any; groundWalls: any[]; shell: number; envelope: number; groundFurniture: Record<string, readonly number[]>; plantReferenceDoor: any; archOpeningRegister: any; serviceMaintenanceFields: any[]; internalArchControls: any }, services = model.architecturalServices, utilityWall = model.groundWalls.find((w: any) => w.id === 'utility-north'),
     spine = model.groundWalls.find((w: any) => w.id === 'service-spine'), plantWall = model.groundWalls.find((w: any) => w.id === 'plant-intermediate-arch')
   if (!utilityWall || !spine || !plantWall || utilityWall.holes.length !== 1 || plantWall.holes.length !== 1) throw new Error('Unsupported joined Utility/Plant room topology')
@@ -220,8 +220,8 @@ function joinedServiceDirection(resolved: CurrentDesignResolution, b: ReturnType
     jetComparison: { coldOnly: true, nozzlePressureIsNotImpactEquivalence: true,
       ip69kComparator: { nozzleBar: 100, flowLmin: 16, nozzle: '30-degree fan', standOffMm: [100, 150],
         idealIncidentMomentumN: round(1000 * 16 / 60000 * Math.sqrt(2 * 100e5 / 1000)) },
-      sourceAirVelocityUpperMps: round(Math.sqrt(2 * (s.sourceMaximumTotalBar + s.atmosphericMaximumBar - s.atmosphericMinimumBar) * 1e5 / 990)),
-      byBranch: branches.map(c => { const momentum = 1000 * c.maximumLimitedEachLmin / 60000 * Math.sqrt(2 * (s.sourceMaximumTotalBar + s.atmosphericMaximumBar - s.atmosphericMinimumBar) * 1e5 / 990);
+      sourceAirVelocityUpperMps: round(Math.sqrt(2 * (maximumAbsoluteBar - s.atmosphericMinimumBar) * 1e5 / 990)),
+      byBranch: branches.map(c => { const momentum = 1000 * c.maximumLimitedEachLmin / 60000 * Math.sqrt(2 * (maximumAbsoluteBar - s.atmosphericMinimumBar) * 1e5 / 990);
         return { id: c.id, incidentMomentumUpperN: round(momentum), fullReversalUpperN: round(2 * momentum) } }),
       actualFootprintSeamsDurationPenetrationsAndStoredHotReleaseQualified: false,
       source: 'https://www.nvent.com/sites/default/files/dam/cat-00059_chapter13.pdf' },
@@ -231,7 +231,7 @@ function joinedServiceDirection(resolved: CurrentDesignResolution, b: ReturnType
     normalPathX = model.plantReferenceDoor.operatorCentrePath[1][0], normalBodyR = model.plantReferenceDoor.retainedBodyRadius,
     intermediateFloor = resolved.design.assemblies.find(a => a.id === resolved.design.assemblyRefs['intermediate-floor']),
     clearHeight = resolved.design.storeys.FIRST.elevationMm - resolved.design.storeys.GROUND.elevationMm - (intermediateFloor?.depthMm ?? NaN),
-    sourceAirVelocity = Math.sqrt(2 * (s.sourceMaximumTotalBar + s.atmosphericMaximumBar - s.atmosphericMinimumBar) * 1e5 / 990),
+    sourceAirVelocity = Math.sqrt(2 * (maximumAbsoluteBar - s.atmosphericMinimumBar) * 1e5 / 990),
     dryScreen = inletElectricalScreen({ boardBoxMm: boardBox,
       lobbyYMm: [lobbySouth, plantWall.finishedFaces[0]],
       portalMaximumXMm: [utilityWall.holes[0][1], plantWall.holes[0][1]], clearHeightMm: clearHeight,

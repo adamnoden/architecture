@@ -3,7 +3,7 @@
   "state": "existing-whole-arrangement-rejected",
   "source": {
     "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-    "bindingDigest": "b0ddeec62596dba2e8010fd572f8cf2a5ed2568dc2936b47c29faa87d4de5497",
+    "bindingDigest": "b8bd400497c411614f5d37b432cf41e9974a53b2b6d1f436473725206f1bbbfb",
     "inputs": {
       "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
       "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
@@ -15,7 +15,7 @@
       "project/had/studies/boundary-service-lodge.json": "edccc843f1829bf583e517095442ad9fe481da53"
     },
     "methods": {
-      "compiler/reference-house/current-design/inlet-source-envelope.ts": "41f39d6118acccf561206804502171839999ce72",
+      "compiler/reference-house/current-design/inlet-source-envelope.ts": "8e20c49017c4e5524d77c5647abfa217a1163189",
       "compiler/reference-house/current-design/inlet-room-catchment.ts": "4808849a1197d0b90891cda2859bb578d274c026",
       "compiler/reference-house/current-design/inlet-electrical-screen.ts": "af15dc6e80e9896151875a0e8723cec4f3451440",
       "project/had/studies/south-inlet-relief-hydraulics.mjs": "1cb8dd67e832ce2986f042844122a39e625fef93",

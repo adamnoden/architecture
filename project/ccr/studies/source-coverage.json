@@ -1752,10 +1752,10 @@
     "project/str/studies/roof-surface-pressure.svg": "bf17bdc9c139c76a80fa0a8352f4bd40c3938c92",
     "project/str/studies/roof_surface_pressure_proof.py": "c6de2ceb21f113e4672d870f3512754318b99c23",
     "project/str/studies/straight_frame_cage_proof.py": "04a03d0ec19f885e611cd1549d9d0a5fc2c4eeb1",
-    "compiler/reference-house/current-design/inlet-source-envelope.ts": "41f39d6118acccf561206804502171839999ce72",
+    "compiler/reference-house/current-design/inlet-source-envelope.ts": "8e20c49017c4e5524d77c5647abfa217a1163189",
     "project/had/studies/inlet-source-envelope.ts": "d2e00dfe467c48bfbe984d44a9f9c5e77d2511c1",
     "project/had/inlet-source-and-room-decision.md": "db8a94d12636eff3a9f840649d7b2599c90faccb",
-    "project/had/studies/inlet-source-envelope.results.json": "59d99bc2fb8c78df09cc1026410d40e7a783cd46",
+    "project/had/studies/inlet-source-envelope.results.json": "c7a9de1842f1879bcb790d9e9a57683d9bb0a433",
     "project/had/studies/inlet-source-envelope.svg": "7ac35380ad6f7536b8bb6151df012ab6bdd387c9",
     "compiler/reference-house/current-design/engineering-edit.ts": "4c024e7edea46e79b3b4f8e17646170f9a80458d",
     "project/ade/browser-editor/engineering-api.ts": "2db0efb4e3cdb698009b69cc7fa9ff80389f1158",
@@ -1777,7 +1777,7 @@
     "project/str/studies/floor-section-proof.json": "64e77fefeb7f9221c6a902075d95192de33c9083",
     "project/str/studies/floor-section-250.svg": "b9743f51fd2b5eca6f8d6749c1134415f44a67c1",
     "compiler/reference-house/current-design/inlet-room-catchment.ts": "4808849a1197d0b90891cda2859bb578d274c026",
-    "project/had/inlet-whole-room-convergence.md": "f8be8b2e8352e6db938899511f0ca29e191ccbb5",
+    "project/had/inlet-whole-room-convergence.md": "71045fe623b6f03cf732fa35a1750e730f6f63c2",
     "compiler/reference-house/current-design/inlet-electrical-screen.ts": "af15dc6e80e9896151875a0e8723cec4f3451440"
   }
 }
