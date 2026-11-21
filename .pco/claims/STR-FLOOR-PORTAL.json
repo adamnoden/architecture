@@ -9,8 +9,8 @@
     "label": "convergence-20261121"
   },
   "claimedAt": "2026-11-21T19:47:07.671Z",
-  "heartbeatAt": "2026-11-21T19:47:07.671Z",
-  "expiresAt": "2026-11-21T20:32:07.671Z",
+  "heartbeatAt": "2026-11-21T19:56:56.147Z",
+  "expiresAt": "2026-11-21T20:41:56.147Z",
   "branch": "work/convergence-structure-20261121",
   "predecessor": {
     "leaseId": "95dc0271-adfc-448a-9789-0f1476b4b26b",
@@ -33,5 +33,10 @@
       "next": "Handoff: recover d9d04b8 from fresh main; verify local FULL source/request/checksums if available. Finish700/500/roof3, actual floor/cage closures, source account, saved API and exact CI.",
       "blocker": "Execution environment unavailable; no filesystem, native solver or test access."
     }
+  },
+  "checkpoint": {
+    "evidence": "Remote7df279185d tree421a4e3 matches localf2b54522; recovered d9d04b8 provenance retained. Five of eight source-bound floor states executed; fixed physical cuts and actual beam/post service intersection tests pass.",
+    "next": "Finish eight native controls and matched mesh700/500; regenerate affected legacy controls and source account; exact-head checks and merge.",
+    "blocker": "Native proof regeneration and final coordinated interfaces pending."
   }
 }
