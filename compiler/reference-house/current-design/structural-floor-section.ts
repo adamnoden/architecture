@@ -14,6 +14,55 @@ const same = (a: unknown, b: unknown) => sha256SemanticFingerprint(a) === sha256
 const finite = (v: unknown): v is number => typeof v === 'number' && Number.isFinite(v)
 const six = (v: unknown): v is number[] => Array.isArray(v) && v.length === 6 && v.every(finite)
 export const floorSectionStageFields = ['thicknessMm'] as const
+
+/** Inspect declared source centrelines; absent service envelopes never earn fit. */
+export function inspectFloorServiceRoutes(routes: readonly (readonly (readonly number[])[])[], cells: readonly (readonly number[])[], soffit: number, top: number) {
+  if (!Array.isArray(routes) || !Array.isArray(cells) || !cells.length || !finite(soffit) || !finite(top) || top <= soffit
+    || cells.some(r => !Array.isArray(r) || r.length !== 4 || r.some(v => !finite(v)) || r[2]! <= r[0]! || r[3]! <= r[1]!)) {
+    throw new Error('Unsupported actual floor material or declared service geometry')
+  }
+  const clip = (p: readonly number[], q: readonly number[], box: readonly number[]) => {
+    let lo = 0, hi = 1
+    for (let a = 0; a < 3; a++) {
+      const d = q[a]! - p[a]!
+      if (d === 0) { if (p[a]! < box[a]! || p[a]! > box[a+3]!) return undefined }
+      else {
+        const ends = [(box[a]! - p[a]!) / d, (box[a+3]! - p[a]!) / d].sort((a, b) => a-b)
+        lo = Math.max(lo, ends[0]!); hi = Math.min(hi, ends[1]!)
+      }
+    }
+    return hi-lo > 1e-10 ? [lo, hi] as const : undefined
+  }
+  const conflicts: { routeIndex: number; segmentIndex: number; intervalXYZMm: number[][]; preExistingAt200Mm: boolean }[] = []
+  routes.forEach((route: readonly (readonly number[])[], routeIndex: number) => {
+    if (!Array.isArray(route) || route.some((p: readonly number[]) => !Array.isArray(p) || p.length !== 3 || p.some((v: number) => !finite(v)))) throw new Error('Unsupported declared service route geometry')
+    for (let segmentIndex = 0; segmentIndex < route.length-1; segmentIndex++) {
+      const p: readonly number[] = route[segmentIndex]!, q: readonly number[] = route[segmentIndex+1]!
+      if (p.every((v, a) => v === q[a])) continue
+      const ranges = cells.flatMap(r => {
+        const interval = clip(p, q, [r[0]!, r[1]!, soffit, r[2]!, r[3]!, top])
+        return interval ? [interval] : []
+      }).sort((a, b) => a[0]-b[0])
+      const merged: number[][] = []
+      for (const [lo, hi] of ranges) {
+        const last = merged.at(-1)
+        if (last && lo <= last[1]!+1e-10) last[1] = Math.max(last[1]!, hi)
+        else merged.push([lo, hi])
+      }
+      for (const interval of merged) {
+        const at = (t: number) => p.map((v, a) => v + t*(q[a]!-v))
+        const before = cells.some(r => {
+          const old = clip(p, q, [r[0]!, r[1]!, soffit, r[2]!, r[3]!, Math.min(top, 3370)])
+          return old && Math.min(old[1], interval[1]!) - Math.max(old[0], interval[0]!) > 1e-10
+        })
+        conflicts.push({ routeIndex, segmentIndex, intervalXYZMm: [at(interval[0]!), at(interval[1]!)], preExistingAt200Mm: before })
+      }
+    }
+  })
+  return { schema: 'str-declared-floor-service-intersection/1' as const, conflicts,
+    completeServiceEnvelopesAvailable: false as const, serviceFitAccepted: false as const,
+    scope: 'Source centrelines against actual known-domain plate cells. No tube, insulation, support, sleeve, fire or removal envelope is inferred; no hole is added.' }
+}
 type NativeCase = Record<string, unknown> & { sourceSHA256: Record<string, string>; bearingCase: unknown }
 type NativeResult = {
   schema: string; sourceSHA256: Record<string, string>; request: unknown
@@ -84,13 +133,22 @@ export function runFloorSectionCase(resolved: CurrentDesignResolution, input: un
     || !record(output.drawings) || !output.drawings['floor-section-floor.svg']?.startsWith('<svg')) {
     throw new Error('Floor-section result lost current source, actual datums, 52-head balance or explicit proof limits')
   }
+  const services = JSON.parse(readFileSync(new URL('project/mat/studies/whole-house-service-baseline.json', root), 'utf8')) as {
+    PV: { DCRequiredRoutes: number[][][] }
+  }
+  if (!record(services.PV) || !Array.isArray(services.PV.DCRequiredRoutes) || !record(vertical.plate)) {
+    throw new Error('Missing actual PV route or physical floor material contract')
+  }
+  const servicePenetrations = { ...inspectFloorServiceRoutes(services.PV.DCRequiredRoutes,
+    vertical.plate.cellsXYMm as number[][], 3170, section.topZMm),
+    sourcePath: 'project/mat/studies/whole-house-service-baseline.json', sourceObject: 'PV.DCRequiredRoutes' }
   return { status: 'computed-comparison' as const,
     source: { planDigest: current.planDigest, bindingDigest: current.bindingDigest, caseDigest: sha256SemanticFingerprint(input) },
     method: { id: 'str-current-floor-section/1', path: methodPath, inputs: current.inputs },
     native: vertical.native, vertical, floorSection: section, upperMasonry: output.upperMasonry,
     mass: output.mass, plateBending: output.plateBending, floorReinforcement: output.floorReinforcement,
     roofCoupling: output.roofCoupling, drawings: output.drawings, floorSvg: output.drawings['floor-section-floor.svg'],
-    diagnostics: output.diagnostics, evidence: { state: 'unselected-actual-section-replacement' as const,
+    servicePenetrations, diagnostics: output.diagnostics, evidence: { state: 'unselected-actual-section-replacement' as const,
       candidateAccepted: false as const, completeHouseProof: false as const, installedAcceptance: false as const,
       scope: 'Actual plate and membrane reassembly, work maps, upper body starts, self-weight and recovery at the authored thickness. Finish, FFL, stairs, services, aerodynamic tributaries, local stress convergence, reinforcement and joints remain unqualified.' } }
 }

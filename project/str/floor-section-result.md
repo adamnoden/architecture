@@ -14,13 +14,15 @@ Every trial uses the same actual roof, lower bodies, floor, frame, grid and52hea
 
 The existing source FFL3450 leaves80mm above RC200 and only30mm above RC250. The latter is not a coordinated finish assembly. No FFL3500, altered stair, moved service or revised room kit is inferred. The manifest withholds affected roof/water, vertical-profile, service-floor and room-kit evidence. Nominal plan geometry remains an explicit unrelated control until architectural adoption.
 
+The adapter also intersects declared, source-bound PV route segments with the actual material cells. The PV descent atX10000/Y5000 crosses the retained slab **already at RC200**, outside the plant-riser aperture ending atX9905. It emits an object-linked `UNQUALIFIED_SERVICE_PENETRATION` diagnostic, also atRC250, without silently adding a hole or calling the conflict new. Missing cable/sleeve/support/fire/removal envelopes prevent a general clearance pass. Resolving the actual PV route remains with the joined services/roof choice.
+
 ## Section judgement
 
 Do not select a global slab thickness to repair one unqualified point peak. The governing south-corner sample lies beside the rigid L boundary in a narrow15mm source partition, with substantial twisting. Physical joint/strip demand and local convergence remain unproved. The actual west wet-wall beam is a separate missing load-path duty; its north-west position is not an evidenced cure for this south-corner peak.
 
 The new necessary section result uses the same rectangular concrete block, ultimate concrete strain and steel law as the retained frame comparison. It solves zero-axial-force equilibrium with a single tension direction at the adverse actual depth, without compression-mat benefit. It retains neutral-axis depth, steel strain/stress, force residual and moment capacity. The earlier authored-lever-arm comparison remains visible but is not a crushing/strain-compatible capacity.
 
-At the matched1.35G+Q2,25kN/m³ controls, actual RC200/H16/80 gives83.893808kNm/m raw demand against86.833302kNm/m necessary strain capacity: only3.5% reserve, with almost exhausted steel strain. RC250/H16/100 gives113.923915 against114.481169: only0.49% reserve. Neither is a convincing replacement. RC250/H16/80 gives137.156476kNm/m necessary capacity and is the stronger **provisional comparison**, subject to missing loads and the actual joint/strip proof. No section is selected.
+At the matched1.35G+Q2,25kN/m³ controls, actual RC200/H16/80 gives83.893808kNm/m raw demand against86.833302kNm/m necessary strain capacity: only3.5% reserve; concrete reaches its source strain limit just before steel reaches the comparison yield stress. RC250/H16/100 gives113.923915 against114.481169: only0.49% reserve. Neither is a convincing replacement. RC250/H16/80 gives137.156476kNm/m necessary capacity and is the stronger **provisional comparison**, subject to missing loads and the actual joint/strip proof. No section is selected.
 
 The fresh receipt also executes a matched density27kN/m³,1.35G+Q2 pair, rather than comparing Q0/0.9G RC200 with Q2 RC250 or assuming ordinary reinforced-concrete density qualifies a heavy four-layer cage. The density is an authored adverse trial, not an approved complete reinforcement takeoff. See the [source-bound four-state evidence](studies/floor-section-proof.json) and [actual RC250 floor field](studies/floor-section-250.svg).
 
@@ -31,6 +33,8 @@ The fresh receipt also executes a matched density27kN/m³,1.35G+Q2 pair, rather 
 `--read-floor-section` / `--floor-section` expose the same source-bound method as `--bundle`. The saved document stores only thickness plus its existing stage controls. The semantic `set-floor-section-thickness` operation names stable assembly `STR/current-floor-section`, uses millimetres, requires an existing explicit stage, and shares revision checks, save/load, undo/redo and stale-reply rejection with roof edits. Browser transport can carry this command; no new visual floor control is claimed.
 
 Analytical tests independently separate bending-cubic and shear-linear thickness effects, verify strain equilibrium and reject unsupported sections before assembly. Native evidence checks actual200 identity against all312 components of the current52-source response, a matched heavy200/250 pair, source wrench conservation and exact reversal. The saved API/public CLI proof edits200→250→200 and checks quantities, datums,52heads, floor drawing, affected evidence and unchanged nominal plans.
+
+Review also restored strict native upper-L material-law admission: finite positive properties, the supported Poisson range and stiffness factors no greater than one are required before assembly. Invalid extra/missing keys, modes, booleans, non-finite values and enhanced stiffness reject. Valid current numerical controls remain unchanged; their source-bound evidence is regenerated after the guard change.
 
 ## Remaining structural work
 

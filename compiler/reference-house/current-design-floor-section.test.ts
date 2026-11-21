@@ -64,6 +64,9 @@ test('a semantic floor-section edit recompiles actual operators, datums, drawing
   assert.notEqual(changedBundle.documentIdentity.digest, baselineBundle.documentIdentity.digest)
   assert.equal(changed.evidence.candidateAccepted, false)
   assert.equal(changed.evidence.completeHouseProof, false)
+  assert.ok(changed.servicePenetrations.conflicts.some(row => row.routeIndex === 0 && row.segmentIndex === 1 && row.preExistingAt200Mm))
+  assert.equal(changed.servicePenetrations.serviceFitAccepted, false)
+  assert.ok(changedBundle.coordinationDiagnostics.some(row => row.code === 'UNQUALIFIED_SERVICE_PENETRATION' && row.message.includes('already exists at RC200')))
   assert.deepEqual(changedBundle.plans, JSON.parse(JSON.stringify(baselineBundle.plans)), 'Unadopted nominal plan remains explicit control')
   for (const stage of ['roofPitch', 'selectedWaterEvent', 'studyRoomKit']) {
     assert.equal(changedBundle.manifest.find(row => row.stage === stage)?.applicability?.controllingStage, 'floorSection')

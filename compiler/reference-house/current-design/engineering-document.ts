@@ -548,7 +548,7 @@ export async function compileEngineeringDocument(input: unknown) {
   }
   if (engineering.floorSection) {
     const reason = 'The authored section replaces plate/membrane stiffness, work maps, actual mass and upper body starts in one roof/floor/52-head solve. Nominal plans and fixed-origin pressures are explicit controls; finish, stairs, services, weather tributaries, joints and reinforcement have not been adopted.'
-    for (const stage of ['distributedFloor', 'joinedRcFloor', 'verticalRcFloor', 'masonryFrame', 'upperRoofBearing', 'roofPitch', 'selectedWaterEvent', 'houseVerticalProfile', 'serviceFloor', 'studyRoomKit']) {
+    for (const stage of ['distributedFloor', 'joinedRcFloor', 'verticalRcFloor', 'masonryFrame', 'upperRoofBearing', 'roofPitch', 'selectedWaterEvent', 'houseVerticalProfile', 'serviceFloor', 'studyRoomKit', 'occupiedServices']) {
       const row = manifest.find(item => item.stage === stage)
       if (!row) continue
       const previous = row.applicability
@@ -559,6 +559,11 @@ export async function compileEngineeringDocument(input: unknown) {
     }
     coordinationDiagnostics.push({ code: 'FLOOR_SECTION_NOT_ARCHITECTURALLY_ADOPTED', state: 'uncoordinated-comparisons',
       stages: ['floorSection', 'selectedWaterEvent', 'houseVerticalProfile', 'serviceFloor', 'studyRoomKit'], message: reason })
+    for (const conflict of engineering.floorSection.servicePenetrations.conflicts) {
+      coordinationDiagnostics.push({ code: 'UNQUALIFIED_SERVICE_PENETRATION', state: 'uncoordinated-comparisons',
+        stages: ['floorSection', 'occupiedServices'],
+        message: `${engineering.floorSection.servicePenetrations.sourcePath}#PV.DCRequiredRoutes/${conflict.routeIndex}/${conflict.segmentIndex} intersects actual slab material at ${JSON.stringify(conflict.intervalXYZMm)}. ${conflict.preExistingAt200Mm ? 'This conflict already exists at RC200.' : 'This intersection enters the added slab band.'} No new hole, qualified envelope or service fit is inferred.` })
+    }
   }
   if (engineering.groundSection) {
     const sourceReason = 'The retained source output does not adopt the saved ground-section levels, raised walls or service-floor arrangement; its drawing and prior evidence remain source comparisons.'

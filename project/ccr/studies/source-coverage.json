@@ -881,7 +881,8 @@
         "node --test project/str/studies/upper-roof-bearing.test.mjs",
         "node --import tsx --test compiler/reference-house/current-design-upper-bearing.test.ts",
         "node --test project/str/studies/floor-section.test.mjs",
-        "node --import tsx --test compiler/reference-house/current-design-floor-section.test.ts"
+        "node --import tsx --test compiler/reference-house/current-design-floor-section.test.ts",
+        "node --import tsx --test compiler/reference-house/current-design-floor-penetrations.test.ts"
       ]
     }
   ],
@@ -1617,7 +1618,7 @@
     "project/str/studies/joined_successor_kernel.py": "bbf1e80933260d0182db34d777427b68a361b2f0",
     "compiler/reference-house/current-design/structural-successor.ts": "9ae813ed40695e6e94df43caa0b45e7db54d02c4",
     "compiler/reference-house/current-design/inlet-support.ts": "a2404befdbeda6464bc9f772d25bccd8d78d2479",
-    "compiler/reference-house/current-design/engineering-document.ts": "bf8e5668fcf787bf90b58bd17584563ac41fa6ab",
+    "compiler/reference-house/current-design/engineering-document.ts": "a5d9ccb460ef3bf63e4ba7087e6d4533ed8da648",
     "project/had/inlet-assembly-convergence.md": "21719c69b3ec916043e53d7ae0891d5c6ce7aae5",
     "project/str/studies/floor-portal-fixed-wall-head.py": "807159aa9439837489d3e95f9bf359983635c342",
     "project/str/studies/floor-portal-north-transfer.py": "20f79473e3fd3e88351b3fa4d68ac1f1ef476d03",
@@ -1753,18 +1754,18 @@
     "compiler/reference-house/current-design/structural-upper-bearing.ts": "7dff13246907c49a8e5e6bd96dd4a64f8f13b354",
     "project/str/studies/named_plate_load.py": "bb85eb7836d4ff1bccff91729a31112ac1f961cb",
     "project/str/studies/roof_bearing_trace.py": "09aa8236bfedee0289dcdf0a5a275b9e1ec646ef",
-    "project/str/studies/upper-roof-bearing-proof.json": "d2b0cb97c0e08e411bac27894b737d6b91c3fe27",
+    "project/str/studies/upper-roof-bearing-proof.json": "2fd2fc4e00d455c880c756101f20e51681866a53",
     "project/str/studies/upper-roof-bearing.svg": "0c0ceb017c21ff713f7d9dfb879062c30d97b534",
     "project/str/studies/upper_masonry_inventory.py": "f67f24b64bc4245272b4961325415be72f77eaf3",
-    "project/str/studies/upper_roof_bearing.py": "4570cdd5ee5a04285aa31201c0010927c1bd87cc",
+    "project/str/studies/upper_roof_bearing.py": "9a62b86dea186a193c67fd7a5a4def6d9498b456",
     "project/str/studies/upper_roof_bearing_proof.py": "28c75e7b5dadb1d2a6d9af26f1b60431656a8712",
     "project/str/upper-masonry-roof-bearing-result.md": "7102ac5c85c17efa85bf128673893d20b33de935",
     "project/str/studies/floor_section_model.py": "dd4ce82183159851244db04e3114268d38bca70f",
     "project/str/studies/floor_section_successor.py": "3351c9ba6a3f248d7e9bfed65a548394cefbadb3",
-    "project/str/floor-section-result.md": "d8b2594654d54bf5fab89ab5ae80d7f9b2f79e3a",
-    "compiler/reference-house/current-design/structural-floor-section.ts": "0f79bc1bbebae398f630e4eaf3b814846b57659a",
+    "project/str/floor-section-result.md": "a4eb5f60805a600196089f458d542a5673b0c4bd",
+    "compiler/reference-house/current-design/structural-floor-section.ts": "38e4b821ae311fa13a1c1358e30947da206152a7",
     "project/str/studies/floor_section_proof.py": "56f68116fadbc4f74f863257f132a091dd2f523c",
-    "project/str/studies/floor-section-proof.json": "f7a5bc04bd6c060112dcc3896512e4be7de8e6e5",
+    "project/str/studies/floor-section-proof.json": "64e77fefeb7f9221c6a902075d95192de33c9083",
     "project/str/studies/floor-section-250.svg": "b9743f51fd2b5eca6f8d6749c1134415f44a67c1"
   }
 }
