@@ -171,6 +171,7 @@ def run(case,source,name):
         'plate':{'physicalRecovery':plate,'cellsXYMm':data['cells'],'holesXYMm':data['holes']},
         'headPositions':[{'id':r['id'],'xyMm':r['xy'],'xyzMm':frame.nodes[r['id']]} for r in model['grid']['heads']],
         'normalCoreGeometry':data['cores'],'northUpstandStrips':data['northUpstandStrips'],
+        **({'additionalBeamReceivers':data['additionalBeamReceivers'],'seatedWetSupportGeometry':model['seatedWetSupport']} if support is not None else {}),
         'principalWetReservationXYMm':data['principalWetReservation'],'missingGroundContactFibres':data['missingGroundContactFibres'],
         'missingGroundContactAreaMm2':sum(r['areaMm2'] for r in data['missingGroundContactFibres']),'bearings':bearings}
     bending=recover_plate_bending(vertical);reinforcement=assess_floor_reinforcement(vertical,bearing['masonryCase']['floorReinforcement'])

@@ -2,7 +2,7 @@ import copy
 import json
 from pathlib import Path
 import unittest
-from seated_wet_support import reference_support,_pad_fit,replacement_cores,bearing_quadrature
+from seated_wet_support import reference_support,_pad_fit,replacement_cores,bearing_quadrature,exact_bearing_field
 
 
 class SeatedWetSupportGeometryTest(unittest.TestCase):
@@ -41,6 +41,18 @@ class SeatedWetSupportGeometryTest(unittest.TestCase):
             self.assertAlmostEqual(sum(x*x*a for x,y,a in rows),22000*220**2/12,6)
         for bad in (True,1,3,9):
             with self.assertRaises(ValueError):bearing_quadrature(r,bad)
+
+    def test_exact_positive_part_field_handles_full_open_half_and_triangle_contact(self):
+        rect=[-1.,-1.,1.,1.]
+        full=exact_bearing_field(rect,[-1.,0.,0.],1.)
+        self.assertAlmostEqual(full['normalCompressionKN'],.004);self.assertEqual(full['compressedAreaMm2'],4.)
+        self.assertAlmostEqual(full['compressionFirstMomentXKNmm'],0.)
+        self.assertEqual(exact_bearing_field(rect,[1.,0.,0.],1.)['normalCompressionKN'],0.)
+        half=exact_bearing_field(rect,[0.,1.,0.],1.)
+        self.assertAlmostEqual(half['normalCompressionKN'],.001);self.assertAlmostEqual(half['compressionFirstMomentXKNmm'],-.002/3)
+        tri=exact_bearing_field(rect,[0.,1.,1.],1.)
+        self.assertAlmostEqual(tri['compressedAreaMm2'],2.);self.assertAlmostEqual(tri['normalCompressionKN'],.004/3)
+        self.assertAlmostEqual(tri['compressionFirstMomentXKNmm'],-.002/3);self.assertEqual(tri['maximumPlanePressureMPa'],2.)
 
     def test_actual_posts_replace_old_scalar_RC_and_exact_masonry_territory_once(self):
         rows=[{'id':'ordinary','sourceWallId':'rear-west','materialKind':'source-core-material-unqualified','rectangleXYMm':[2700,8782.5,3100,8922.5]},

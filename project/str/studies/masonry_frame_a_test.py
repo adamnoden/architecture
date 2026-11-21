@@ -106,7 +106,7 @@ class MasonryFrameTests(unittest.TestCase):
     def test_frozen_proof_binds_actual_joined_sources_and_adverse_results(self):
         path=D/'masonry-frame-a-proof.json'
         self.assertTrue(path.exists(),'Fresh source-bound numerical proof required')
-        proof=json.loads(path.read_text());self.assertEqual(len(self.source['identities']),48);self.assertEqual(proof['sourceSHA256'],self.source['identities'])
+        proof=json.loads(path.read_text());self.assertEqual(len(self.source['identities']),49);self.assertEqual(proof['sourceSHA256'],self.source['identities'])
         self.assertEqual(proof['proofProducerSHA256'],hashlib.sha256((D/'masonry_frame_a_proof.py').read_bytes()).hexdigest())
         self.assertEqual(proof['executedCoupledCaseCount'],8)
         for case in proof['cases']:

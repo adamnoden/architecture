@@ -180,7 +180,15 @@ def finish_support(model,raw,g_factor):
     for contact in result['contactFibres']:
         state=states[contact['id']];contact.update(active=state['active'],relativeDisplacementMm=state['relativeMm'],normalCompressionKN=-state['forceKN'],normalPressureMPa=-state['forceKN']*1000/contact['areaMm2'])
         if contact['normalCompressionKN']<-1e-7:raise ValueError('Wet bearing supplied fictitious tension')
-    for post in result['posts']:
+    for index,post in enumerate(result['posts']):
+        beamnode=next(s['node'] for s in model['seatedWetSupport']['receiver']['stations'] if s['u']==post['padCentreXYMm'][1])
+        ub=raw['displacements'][beamnode];up=raw['displacements'][post['node']];pb=model['model'].nodes[beamnode];pp=model['model'].nodes[post['node']]
+        plane=[ub[2]-up[2]-ub[3]*pb[1]+ub[4]*pb[0]+up[3]*pp[1]-up[4]*pp[0],-ub[4]+up[4],ub[3]-up[3]]
+        exact=exact_bearing_field(post['padFit']['nominalRectangleXYMm'],plane,result['settings']['jointNormalComplianceMmPerMPa'])
+        numerical=[c for c in result['contactFibres'] if c['receiverIndex']==index]
+        exact['quadratureForceResidualKN']=sum(c['normalCompressionKN'] for c in numerical)-exact['normalCompressionKN']
+        exact['quadratureFirstMomentResidualKNmm']=[sum(c['normalCompressionKN']*c['pointXYZMm'][j] for c in numerical)-exact[k] for j,k in ((0,'compressionFirstMomentXKNmm'),(1,'compressionFirstMomentYKNmm'))]
+        post['exactDeclaredNormalField']=exact
         post['recovery']=recover_mapped_member(model['model'].mappedMembers[post['id']],raw['displacements'],[g_factor*v for v in post['consistentEquivalentGKN_KNmm']])
     result.update(candidateAccepted=False,beamCageAccepted=False,columnCageAccepted=False,padMaterialAndRotationAccepted=False,localGridCapJointAccepted=False,
         scope='Actual finite frame/post/base work and finite quadrature normal bearing comparison. Contact quadrature convergence, physical pad distribution/material, RC cages/development, shear/torsion/deflection/cracks, local base/joints, moisture and installation remain unqualified.')
@@ -208,3 +216,35 @@ def bearing_quadrature(rectangle,order):
     if not all(math.isfinite(v) for v in rectangle) or c<=a or d<=b:raise ValueError('Actual positive bearing rectangle required')
     coordinates,weights=np.polynomial.legendre.leggauss(order)
     return [((a+c)/2+float(x)*(c-a)/2,(b+d)/2+float(y)*(d-b)/2,float(wx*wy)*(c-a)*(d-b)/4) for x,wx in zip(coordinates,weights) for y,wy in zip(coordinates,weights)]
+
+
+def exact_bearing_field(rectangle,relative_plane,joint_compliance):
+    """Integrate the positive compression part of a linear relative-w plane.
+
+    Half-plane clipping and degree-two triangle quadrature are exact for force
+    and first moments of this declared rigid-plane/Winkler comparison. This
+    audits finite contact quadrature; it supplies no physical pad material.
+    """
+    a,b,c,d=rectangle;p0,px,py=relative_plane
+    if any(not math.isfinite(v) for v in [*rectangle,*relative_plane,joint_compliance]) or c<=a or d<=b or joint_compliance<=0:raise ValueError('Finite positive actual bearing geometry/law required')
+    polygon=[[a,b],[c,b],[c,d],[a,d]]
+    def relative(p):return p0+px*p[0]+py*p[1]
+    clipped=[]
+    for left,right in zip(polygon,polygon[1:]+polygon[:1]):
+        u,v=relative(left),relative(right)
+        if u<=0:clipped.append(left)
+        if (u<0<v) or (v<0<u):
+            t=u/(u-v);clipped.append([x+t*(y-x) for x,y in zip(left,right)])
+    force=mx=my=area=0.
+    if len(clipped)>=3:
+        o=clipped[0]
+        for u,v in zip(clipped[1:-1],clipped[2:]):
+            tri=abs((u[0]-o[0])*(v[1]-o[1])-(v[0]-o[0])*(u[1]-o[1]))/2;area+=tri
+            for weights in ((2/3,1/6,1/6),(1/6,2/3,1/6),(1/6,1/6,2/3)):
+                x,y=[sum(w*p[j] for w,p in zip(weights,(o,u,v))) for j in (0,1)];f=max(0.,-relative([x,y]))/joint_compliance*tri/3000
+                force+=f;mx+=f*x;my+=f*y
+    maximum=max(0.,max(-relative(p)/joint_compliance for p in polygon))
+    return {'compressedPolygonXYMm':clipped,'compressedAreaMm2':area,'normalCompressionKN':force,
+        'compressionFirstMomentXKNmm':mx,'compressionFirstMomentYKNmm':my,'maximumPlanePressureMPa':maximum,
+        'scope':'Exact positive-part linear normal field on the declared rigid beam/post planes; local pad flexibility/material and concrete pressure distribution remain unqualified.'}
+

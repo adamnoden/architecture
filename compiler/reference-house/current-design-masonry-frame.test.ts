@@ -90,7 +90,7 @@ test('one saved floor, body and roof edit propagates through the actual coupled 
   assert.equal(baseline.vertical.schema, 'str-masonry-frame-a-vertical-result/1')
   assert.equal(baseline.native.schema, 'str-masonry-frame-a-compatible-frame-result/1')
   assert.deepEqual(baseline.vertical.request, baseline.native.request)
-  assert.equal(Object.keys(baseline.native.sourceSHA256 as object).length, 48)
+  assert.equal(Object.keys(baseline.native.sourceSHA256 as object).length, 49)
   if (numerical.courtCornerClosure) {
     assert.equal(baseline.courtCornerClosure?.newSupportCount, 0)
     assert.equal(baseline.courtCornerClosure?.localJointRigidityAccepted, false)
