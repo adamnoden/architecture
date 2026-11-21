@@ -9,8 +9,8 @@
     "label": "convergence-20261121"
   },
   "claimedAt": "2026-11-21T19:47:07.671Z",
-  "heartbeatAt": "2026-11-21T22:55:08.496Z",
-  "expiresAt": "2026-11-21T23:40:08.496Z",
+  "heartbeatAt": "2026-11-21T23:10:25.180Z",
+  "expiresAt": "2026-11-21T23:55:25.180Z",
   "branch": "work/convergence-structure-20261121",
   "predecessor": {
     "leaseId": "95dc0271-adfc-448a-9789-0f1476b4b26b",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1613 head49d8868 has six green workflow families; fullhealth running. Recovery/str-grid-corner-20261121 at385a9053 preserves all11 exact source58 captures and shared cage choices; genuine current parent joins done locally. No structural acceptance.",
-    "next": "Merge primary after exact-head CI/preflight; complete isolated250 mesh, source-bound cage/contact/grid joins, coordinate water successor.",
-    "blocker": "Primary fullhealth pending; successor250 stability and local joints unqualified."
+    "evidence": "Recovery e4d93bc1 preserves genuine58source floor/cage/contact and parent joins. HAD coherent candidate separately15269b47. Main1216 integrated locally; both open packets will share coordinated1613. No adoption.",
+    "next": "Finish274/700/500 comparisons and finalsource/HAD/profile joins; submit one dualWork head, exactCI, canonical preflight and merge.",
+    "blocker": "Isolated250mesh worker killedexit137 with no result;274 trial running. Full joints/raised force replay unqualified."
   },
   "pr": 1613
 }
