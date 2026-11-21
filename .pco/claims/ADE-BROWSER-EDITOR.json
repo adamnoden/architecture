@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "ADE-BROWSER-EDITOR",
   "generation": 2,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "9b18b023-5755-43b4-bd5d-1e7997fdefbc",
   "holder": {
     "kind": "chatgpt",
     "label": "rush-engineering-editor-20261121"
   },
   "claimedAt": "2026-11-21T10:37:11.879Z",
-  "heartbeatAt": "2026-11-21T11:47:06.040Z",
-  "expiresAt": "2026-11-21T12:32:06.040Z",
+  "heartbeatAt": "2026-11-21T12:01:20.000Z",
+  "expiresAt": "2026-11-21T12:01:20.000Z",
   "branch": "work/rush-converged-model-20261121",
   "predecessor": {
     "leaseId": "26302d48-f336-4b76-8f81-04a395291437",
@@ -39,5 +39,7 @@
     "evidence": "Exact0f329089 ADE44897935416 and PLT44897935430 green; full publication job136828363550 success; native screenshot reviewed in comment7061809064",
     "next": "Await current full-health job136828361557, then perform own fresh merge preflight and verified lease release",
     "blocker": "Canonical full repository health remains running; sources frozen"
-  }
+  },
+  "releasedAt": "2026-11-21T12:01:20.000Z",
+  "releaseReason": "completed"
 }
