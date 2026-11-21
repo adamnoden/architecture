@@ -69,7 +69,7 @@ export function runInletCabinetCase(resolved:CurrentDesignResolution,input:unkno
     // Conex lower elbows use the catalogue virtual centres. This is a tube-only flexibility comparison,
     // not qualified cast fitting/joint stiffness. The upper route retains its actual source destination.
     const pipe={outerDiameterMm:28,wallMm:s.pipeWallMm,elasticModulusMpa:s.pipeElasticModulusMpa,poissonRatio:.34,expansionMmMK:facts.pipe.expansionMmMK}
-    const thermal=compareFixedInletThermalWithReceiver({pathMm:vertices,fixedPointZMm:s.fixedZMm,guideZMm:s.guideZMm,temperatureExcursionK:s.temperatureRangeK,pipe},{baseZMm:100,postAxisXYMm:[axisX,s.riserYMm-80],topZMm:s.guideZMm+30,widthXMm:60,depthYMm:80,wallMm:4,elasticModulusMpa:200000,poissonRatio:.3})
+    const thermal=compareFixedInletThermalWithReceiver({pathMm:vertices,fixedPointZMm:s.fixedZMm,guideZMm:s.guideZMm,temperatureExcursionK:s.temperatureRangeK,pipe},{baseZMm:12,postAxisXYMm:[axisX,s.riserYMm-80],topZMm:s.guideZMm+30,widthXMm:60,depthYMm:80,wallMm:4,elasticModulusMpa:200000,poissonRatio:.3})
     const actualLength=length(vertices)-47.5-2-4*(facts.elbow.portToVirtualCornerMm-facts.elbow.tubeInsertionMm),metalArea=Math.PI*(28**2-(28-2*s.pipeWallMm)**2)/4,waterArea=Math.PI*(28-2*s.pipeWallMm)**2/4
     const lowerPhysicalGap=s.riserOffsetXMm-2*facts.elbow.portToVirtualCornerMm
     const cellLeft=index===0?body[0]:partition,cellRight=index===0?partition:right,headRadius=facts.tools.authoredHeadDiameterMm/2
@@ -98,17 +98,23 @@ export function runInletCabinetCase(resolved:CurrentDesignResolution,input:unkno
   const frameLength=4*(H+s.bottomZMm)+4*W+6*D,frameArea=30*30-24*24,steelKg=sheetVolume*density+frameLength*frameArea*density+4*100*100*10*density
   const doors=Array.from({length:4},(_,i)=>({id:'front-panel-'+i,bodyMm:[body[0],s.frontYMm-s.sheetMm,s.bottomZMm+i*H/4,W,s.sheetMm,H/4] as B,flatSheetKg:r(W*s.sheetMm*H/4*density),foldsRetainersAndHandlingMassQualified:false}))
   const perCellWater=cells.branches.map((c,i)=>({id:c.id,maximumWaterZMm:c.case.permanentLowerTroughLipZ,planMm:[i===0?body[0]:partition,back,i===0?partition-body[0]:right-partition,D],upperPrismWaterKg:r(Math.max(0,c.case.permanentLowerTroughLipZ-s.bottomZMm)*(i===0?partition-body[0]:right-partition)*D/1e6),actualReliefRouteReconciled:false}))
-  const pressurePostArea=80*60-72*52,pressurePostLength=s.guideZMm+30-100
+  const pressurePostArea=80*60-72*52,pressurePostLength=s.guideZMm+30-12
   const pressureSupports=branches.map(c=>{
-    const x=c.riserAxisMm[0],y=s.riserYMm-80,post:B=[x-30,y-40,100,60,80,pressurePostLength],base:B=[x-60,y-65,88,120,130,12]
+    const x=c.riserAxisMm[0],y=s.riserYMm-80,post:B=[x-30,y-40,12,60,80,pressurePostLength],base:B=[x-90,y-75,0,180,150,12]
     const arms=[s.fixedZMm,s.guideZMm].map(z=>[x-20,y+40,z-30,40,s.riserYMm-y-40,60] as B)
-    const postKg=pressurePostArea*pressurePostLength*density,baseKg=120*130*12*density,armArea=40*60-32*52,armKg=arms.reduce((n,a)=>n+armArea*a[4]*density,0)
+    const postKg=pressurePostArea*pressurePostLength*density,baseKg=180*150*12*density,armArea=40*60-32*52,armKg=arms.reduce((n,a)=>n+armArea*a[4]*density,0)
     const sx=(60*80**3-52*72**3)/12/40,sy=(80*60**3-72*52**3)/12/30,force=c.receiverActions.fixedPointWrench.forceComponentBoundsN,moment=c.receiverActions.fixedPointWrench.momentComponentBoundsNmm,guide=c.receiverActions.guideWrench.forceComponentBoundsN,pressure=c.receiverActions.sourcePressureEndComponentBoundN
     const fx=force[0]+guide[0]+pressure,fy=force[1]+guide[1]+pressure,fz=force[2]+pressure+(c.pipeMetalKg+c.pipeWaterKg+13.533495+postKg+baseKg+armKg)*9.81
-    const mx=moment[0]+(force[1]+pressure)*(s.fixedZMm-100)+guide[1]*(s.guideZMm-100)+fz*80,my=moment[1]+(force[0]+pressure)*(s.fixedZMm-100)+guide[0]*(s.guideZMm-100),stress=fz/pressurePostArea+mx/sx+my/sy
-    return {id:c.id,postBodyMm:post,baseBodyMm:base,armsMm:arms,steelKg:r(postKg+baseKg+armKg),baseToFinishedBackAfter5Mm:r(base[1]-back-5),receiverForceBoundsN:[r(fx),r(fy),r(fz)],receiverMomentBoundsNmm:[r(mx),r(my),r(moment[2])],
+    const mz=moment[2]+80*(force[0]+guide[0]+pressure)
+    const mx=moment[0]+(force[1]+pressure)*(s.fixedZMm-12)+guide[1]*(s.guideZMm-12)+fz*80,my=moment[1]+(force[0]+pressure)*(s.fixedZMm-12)+guide[0]*(s.guideZMm-12),stress=fz/pressurePostArea+mx/sx+my/sy
+    const boltRadius=Math.hypot(65,50),boltTension=fz/4+mx/(2*100)+my/(2*130),boltShear=Math.hypot(fx,fy)/4+mz/(4*boltRadius)
+    return {id:c.id,postBodyMm:post,baseBodyMm:base,armsMm:arms,anchorAxisMm:[-65,65].flatMap(dx=>[-50,50].map(dy=>[x+dx,y+dy,0])),
+      receivingDemand:{footprintMm:[base[0],base[1],base[3],base[4]],seatZMm:0,forceComponentBoundsN:[r(fx),r(fy),r(fz)],momentComponentBoundsNmm:[r(mx),r(my),r(mz)],
+        fourEqualStiffnessFastenerTensionUpperEachN:r(boltTension),fourEqualStiffnessFastenerShearUpperEachN:r(boltShear),boltAndFloorResistanceInvented:false,
+        section:'Authored4hole13mm/M12reservation at130×100mm pitch on180×150×12plate; no qualified anchor product or substrate. Elastic equilibrium demand only; no favorable gravity or interface friction. Plate bending, prying, substrate, group interaction and moisture closure remain required.',
+        holeEdgeAfter5Mm:r(25-6.5-5),socket30ToPostAfter5Mm:r(Math.hypot(65-30,50-40)-15-5)},steelKg:r(postKg+baseKg+armKg),baseToFinishedBackAfter5Mm:r(base[1]-back-5),receiverForceBoundsN:[r(fx),r(fy),r(fz)],receiverMomentBoundsNmm:[r(mx),r(my),r(mz)],
       grossSectionNormalStressMpa:r(stress),grossSectionComparisonLimitMpa:200/1.5,actualClampGripLocalJointBaseAnchorFloorAndCombinedTorsionQualified:false,
-      law:'Independent source thermal wrench, sliding-guide force, adverse pA per horizontal axis and full route gravity charged to an explicit grounded post; straight gross-section normal stress only. Not a complete 3D frame, contact, local buckling, torsion or base resistance proof.'}
+      law:'Independent source thermal wrench, sliding-guide force, adverse pA per horizontal axis and full route gravity charged to an explicit post running from its12mm baseplate at the proposed floor seat; straight gross-section normal stress only. Not a complete 3D frame, contact, local buckling, torsion or base resistance proof.'}
   })
   const pressureSupportKg=pressureSupports.reduce((n,c)=>n+c.steelKg,0)
   const unqualifiedFittingStockKg=branches.length*(2*Math.PI*46**2/4*53+2*2*66*46*46+99.5*138*56)*9000/1e9
@@ -120,7 +126,7 @@ export function runInletCabinetCase(resolved:CurrentDesignResolution,input:unkno
   if(!acceptedOpening||!edit||acceptedOpening.centreMm!==edit.old||edit.head<=edit.sill)throw new Error('Copper cabinet needs reconciled nominal and conditional opening sources')
   const nominalWindow:[number,number,number,number]=[acceptedOpening.centreMm-acceptedOpening.widthMm/2,edit.sill,acceptedOpening.widthMm,edit.head-edit.sill],conditionalWindow:[number,number,number,number]=[edit.new-acceptedOpening.widthMm/2,edit.sill,acceptedOpening.widthMm,edit.head-edit.sill],projection=[body[0],body[2],body[3],body[5]]
   const sourceHost={nominal:nominalWindow,conditional:conditionalWindow,nominalBoundingWindowObscuredMm2:rectOverlap(projection,nominalWindow),conditionalBoundingWindowObscuredMm2:rectOverlap(projection,conditionalWindow),archedWindowAndDaylightPerformanceAccepted:false}
-  const floorReceiving={basis:'Proposed independent cabinet gravity plinth onto the actual structural floor through sleeved finish interruptions; no strength or dry-side DPC capacity is supplied by a finish datum.',sourceGroundFinishZMm:0,proposedSeatZMm:s.bottomZMm,
+  const floorReceiving={basis:'Proposed independent cabinet gravity plinth onto the actual structural floor through sleeved finish interruptions; no strength or dry-side DPC capacity is supplied by a finish datum.',sourceGroundFinishZMm:0,proposedSeatZMm:0,cabinetBottomZMm:s.bottomZMm,pressureBaseTopZMm:12,
     gravityUpperN:r(grossKg*9.81),fourWetFootGravityOnlyN:r((steelKg+waterKg)*9.81/4),twoIndependentPipeFeetGravityOnlyN:r((pressureSupportKg+unqualifiedFittingStockKg+pipeFullKg)*9.81/2),worstSingleSideWaterGravityN:r((steelKg+unqualifiedFittingStockKg+pipeFullKg+Math.max(...perCellWater.map(c=>c.upperPrismWaterKg)))*9.81),actualLoadDistributionAndFloorCapacityQualified:false,
     pipeAndWetAssembliesIndependentlySupported:true,frictionOnlyHorizontalResistanceCredited:false,pressureFrameAndCabinetWallRestraintActions:branches.map(c=>c.receiverActions),actualJambCageAndAnchorGroupQualified:false}
   const diagnostics=[...(s.riserYMm+28+5>s.frontYMm?['RISER_OR_VALVE_NOT_CONTAINED_IN_CABINET']:[]),...branches.filter(c=>c.catalogueLowerElbowStraightGapMm<10).map(c=>c.id+':LOWER_ELBOW_INSTALLATION_GAP_FAILS'),...branches.filter(c=>c.valveSideAfter5Mm<0||c.wrenchSideAfter5Mm<0).map(c=>c.id+':VALVE_OR_SPANNER_INTERCEPTS_CASE'),...Object.entries(controls).filter(([,v])=>v<0).map(([k])=>'CABINET_INTERCEPTS_'+k),

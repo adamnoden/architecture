@@ -21,19 +21,19 @@ Reproduce the compact source-bound result and drawing with `node --import tsx pr
 | Lower matching elbow gap outside bodies |46mm |
 | Valve side reserve after5mm allowance |47 /52mm |
 | Spanner side reserve after5mm allowance |118 /123mm |
-| Pipe support bases clear of finished back after5mm |20.5mm |
+| Pipe support bases clear of finished back after5mm |10.5mm |
 | Washer / inverter body clearance after5mm |115 /195mm |
 | Energised PV field clearance after10mm |10mm |
 | Bowl transport clearance after5mm |359mm |
-| Cabinet plus independent support steel |130.730kg |
+| Cabinet plus independent support steel |134.405kg |
 | Conservative pan water |58.253kg |
 | Whole route tube plus water |21.303kg |
 | Gross solid brass reservations, deliberately including voids |27.067kg |
-| Total declared upper mass |237.353kg |
+| Total declared upper mass |241.029kg |
 | Nominal / conditional bounding-window obscuration |0.9775 /0.736m² |
-| Pressurepost gross normal-stress screen |86.515 /83.246MPa against133.333MPa |
+| Pressurepost gross normal-stress screen |90.595 /87.189MPa against133.333MPa |
 
-Steel falls from the earlier approximately185kg steel comparison;237kg is a different **whole gross** bound and must not be compared with185kg as if both described the same mass. Door flat stock is4.488kg each, before folded edges and retainers. Four cabinet feet and two separate pipe feet receive distinct gravity demands. No finishes, damp barrier or friction-only foot is credited as a structural receiving system.
+Steel falls from the earlier approximately185kg steel comparison;241kg is a different **whole gross** bound and must not be compared with185kg as if both described the same mass. Door flat stock is4.488kg each, before folded edges and retainers. Four cabinet feet and two separate pipe feet receive distinct gravity demands. No finishes, damp barrier or friction-only foot is credited as a structural receiving system.
 
 The cabinet masks a significant part of a window. It cannot become an accepted Reference House detail through an engineering clearance test. Its wet back, four lift-off front panels and continuous compartment divider need an architectural elevation, actual folded-seam details and owner review. The drawing is a dimensioned study, not a beauty claim.
 
@@ -49,7 +49,9 @@ Two lower catalogue elbows provide the130mm lateral dogleg; the upper path is a1
 
 The existing upper and lower3D tube flexibility kernels now share **one finite receiver**. Their14 redundant reactions are solved together using receiver strain-energy compliance, physical80mm lever offsets and separate fixed/guide heights. Receiver EA, both EI values and closed-RHS GJ are retained; Simpson integration is exact on each straight receiver segment. Independently signed segment-temperature bounds remain; cancellation under uniform heating is never the design envelope.
 
-Default upper/lower compatibility residual and reciprocity error round to0. The utility fixed clamp thermal translation component bounds are0.0571/0.0419/0.0026mm; the plant bounds0.0169/0.0403/0.0022mm. A rigid-receiver limit converges to the previous solver, zero temperature gives zero response, and doubling temperature doubles thermal actions and motion. The post gross screen includes independent pA components, complete declared route gravity, clamp moments and actual guide lever heights. It is a conservative component screen, not a coupled pressure/deadload contact analysis or an anchor/floor/clamp proof.
+Default upper/lower compatibility residual and reciprocity error round to0. The utility fixed clamp thermal translation component bounds are0.0644/0.0488/0.0028mm; the plant bounds0.0196/0.0474/0.0025mm. A rigid-receiver limit converges to the previous solver, zero temperature gives zero response, and doubling temperature doubles thermal actions and motion. The post gross screen includes independent pA components, complete declared route gravity, clamp moments and actual guide lever heights. It is a conservative component screen, not a coupled pressure/deadload contact analysis or an anchor/floor/clamp proof.
+
+The pressure posts now run continuously from a12mm plate at the proposedZ0 receiving seat toZ2130; the earlier Z88..100 plate had no authored pedestal and is corrected. Each180×150×12 plate has four13mm hole reservations at130×100 pitch; a30mm socket clears the post by16.40mm after5mm setting. Retain the full vertical force and both bending **and torsional** base demands. The Utility/Plant force component bounds are496.15/487.87/901.09N and466.88/481.24/932.91N. Their moment component bounds are998.56/941.56/40.24Nm and987.81/882.34/38.53Nm. An equal-stiffness four-fastener equilibrium comparison demands8.840/8.566kN tension and0.297/0.285kN shear per fastener, before prying or substrate/group reduction. This exceeds the inherited5.8kN isolatedM12/50mm anchor comparator even before those reductions: that old anchor detail is rejected here. No actual anchor or floor capacity is supplied. The exact two required receiving cutouts are X9860..10040 and10325..10505/Y445..595 atZ0. Finish and DPC are interrupted only by an authored, moisture-closed structural receiver; they are never credited as its substrate.
 
 The receiver's fixed base, rigid arms and source six-axis end restraints are declared comparison laws. They do not invent real Lodge restraint, floor stiffness, cast fitting stiffness, a qualified guide friction law or a sliding-guide seizure allowance. Those exact receiving/support and fault laws remain to be joined before structural admission. This is a much less cramped architecture worth developing, not a pass certificate.
 

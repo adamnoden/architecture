@@ -2,9 +2,9 @@
   "schema": "had-copper-cabinet-comparison/1",
   "status": "unselected-whole-arrangement-comparison",
   "source": {
-    "caseDigest": "9d35d22dfd0595a1849f8065e185702d1855acfbf4dd968cec077f6d489103a3",
+    "caseDigest": "1f9a1aa67a1b62f49e9a6d533db8925a6611450faa43408d4d3c65ac4beb39af",
     "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-    "bindingDigest": "1e086fd5ba4f3f183583c3bb097d28c2c47ad1b9d2386f061d9faf9a8140d010",
+    "bindingDigest": "a5b96b601ce77a3647c8b37ec4b9bf5d09230b7837077acd8bc7ccc7ec434873",
     "inputs": {
       "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
       "project/had/studies/current-house-services.json": "e649805e78244527fe6498b516fa5f23734ac5ea",
@@ -15,7 +15,7 @@
       "project/str/studies/reconciled-house-interface.json": "4b680b7012bda54d4aff83da8f8718b3b191ea69"
     },
     "methods": {
-      "compiler/reference-house/current-design/inlet-cabinet-copper.ts": "bede711cd0495fa4a6a836bd654e799016e54833",
+      "compiler/reference-house/current-design/inlet-cabinet-copper.ts": "7c7035a17f6ff1e5447c7f13e40ce4c02216ba17",
       "compiler/reference-house/current-design/inlet-fixed-thermal.ts": "07632911487d9a2a30ef5aa53cbac2609a3e40d8",
       "project/had/studies/incoming-water-geometry.mjs": "ed658b7df0edf5d8e6d1826d32730a14b00199c7"
     }
@@ -212,17 +212,17 @@
       "postBodyMm": [
         9920,
         480,
-        100,
+        12,
         60,
         80,
-        2030
+        2118
       ],
       "baseBodyMm": [
-        9890,
-        455,
-        88,
-        120,
-        130,
+        9860,
+        445,
+        0,
+        180,
+        150,
         12
       ],
       "armsMm": [
@@ -243,39 +243,86 @@
           60
         ]
       ],
-      "steelKg": 19.11808,
-      "baseToFinishedBackAfter5Mm": 20.5,
+      "anchorAxisMm": [
+        [
+          9885,
+          470,
+          0
+        ],
+        [
+          9885,
+          570,
+          0
+        ],
+        [
+          10015,
+          470,
+          0
+        ],
+        [
+          10015,
+          570,
+          0
+        ]
+      ],
+      "receivingDemand": {
+        "footprintMm": [
+          9860,
+          445,
+          180,
+          150
+        ],
+        "seatZMm": 0,
+        "forceComponentBoundsN": [
+          496.148494,
+          487.872455,
+          901.086403
+        ],
+        "momentComponentBoundsNmm": [
+          998563.691454,
+          941561.493776,
+          40236.152846
+        ],
+        "fourEqualStiffnessFastenerTensionUpperEachN": 8839.480419,
+        "fourEqualStiffnessFastenerShearUpperEachN": 296.6202,
+        "boltAndFloorResistanceInvented": false,
+        "section": "Authored4hole13mm/M12reservation at130×100mm pitch on180×150×12plate; no qualified anchor product or substrate. Elastic equilibrium demand only; no favorable gravity or interface friction. Plate bending, prying, substrate, group interaction and moisture closure remain required.",
+        "holeEdgeAfter5Mm": 13.5,
+        "socket30ToPostAfter5Mm": 16.400549
+      },
+      "steelKg": 20.955904,
+      "baseToFinishedBackAfter5Mm": 10.5,
       "receiverForceBoundsN": [
-        496.271854,
-        487.922425,
-        883.068262
+        496.148494,
+        487.872455,
+        901.086403
       ],
       "receiverMomentBoundsNmm": [
-        954293.317847,
-        898142.28349,
-        545.63288
+        998563.691454,
+        941561.493776,
+        40236.152846
       ],
-      "grossSectionNormalStressMpa": 86.514618,
+      "grossSectionNormalStressMpa": 90.594586,
       "grossSectionComparisonLimitMpa": 133.33333333333334,
       "actualClampGripLocalJointBaseAnchorFloorAndCombinedTorsionQualified": false,
-      "law": "Independent source thermal wrench, sliding-guide force, adverse pA per horizontal axis and full route gravity charged to an explicit grounded post; straight gross-section normal stress only. Not a complete 3D frame, contact, local buckling, torsion or base resistance proof."
+      "law": "Independent source thermal wrench, sliding-guide force, adverse pA per horizontal axis and full route gravity charged to an explicit post running from its12mm baseplate at the proposed floor seat; straight gross-section normal stress only. Not a complete 3D frame, contact, local buckling, torsion or base resistance proof."
     },
     {
       "id": "plant",
       "postBodyMm": [
         10385,
         480,
-        100,
+        12,
         60,
         80,
-        2030
+        2118
       ],
       "baseBodyMm": [
-        10355,
-        455,
-        88,
-        120,
-        130,
+        10325,
+        445,
+        0,
+        180,
+        150,
         12
       ],
       "armsMm": [
@@ -296,32 +343,79 @@
           60
         ]
       ],
-      "steelKg": 19.11808,
-      "baseToFinishedBackAfter5Mm": 20.5,
+      "anchorAxisMm": [
+        [
+          10350,
+          470,
+          0
+        ],
+        [
+          10350,
+          570,
+          0
+        ],
+        [
+          10480,
+          470,
+          0
+        ],
+        [
+          10480,
+          570,
+          0
+        ]
+      ],
+      "receivingDemand": {
+        "footprintMm": [
+          10325,
+          445,
+          180,
+          150
+        ],
+        "seatZMm": 0,
+        "forceComponentBoundsN": [
+          466.877657,
+          481.238224,
+          932.907137
+        ],
+        "momentComponentBoundsNmm": [
+          987807.491817,
+          882338.598624,
+          38525.307714
+        ],
+        "fourEqualStiffnessFastenerTensionUpperEachN": 8565.874238,
+        "fourEqualStiffnessFastenerShearUpperEachN": 285.07049,
+        "boltAndFloorResistanceInvented": false,
+        "section": "Authored4hole13mm/M12reservation at130×100mm pitch on180×150×12plate; no qualified anchor product or substrate. Elastic equilibrium demand only; no favorable gravity or interface friction. Plate bending, prying, substrate, group interaction and moisture closure remain required.",
+        "holeEdgeAfter5Mm": 13.5,
+        "socket30ToPostAfter5Mm": 16.400549
+      },
+      "steelKg": 20.955904,
+      "baseToFinishedBackAfter5Mm": 10.5,
       "receiverForceBoundsN": [
-        466.8731,
-        481.232997,
-        914.881455
+        466.877657,
+        481.238224,
+        932.907137
       ],
       "receiverMomentBoundsNmm": [
-        944016.851111,
-        841247.287875,
-        1176.097451
+        987807.491817,
+        882338.598624,
+        38525.307714
       ],
-      "grossSectionNormalStressMpa": 83.246498,
+      "grossSectionNormalStressMpa": 87.189009,
       "grossSectionComparisonLimitMpa": 133.33333333333334,
       "actualClampGripLocalJointBaseAnchorFloorAndCombinedTorsionQualified": false,
-      "law": "Independent source thermal wrench, sliding-guide force, adverse pA per horizontal axis and full route gravity charged to an explicit grounded post; straight gross-section normal stress only. Not a complete 3D frame, contact, local buckling, torsion or base resistance proof."
+      "law": "Independent source thermal wrench, sliding-guide force, adverse pA per horizontal axis and full route gravity charged to an explicit post running from its12mm baseplate at the proposed floor seat; straight gross-section normal stress only. Not a complete 3D frame, contact, local buckling, torsion or base resistance proof."
     }
   ],
   "quantities": {
-    "knownSteelGrossKg": 130.729816,
+    "knownSteelGrossKg": 134.405464,
     "cabinetSteelGrossKg": 92.493656,
-    "independentPipeSupportSteelKg": 38.23616,
+    "independentPipeSupportSteelKg": 41.911808,
     "grossSolidBrassFittingValveUpperKg": 27.06699,
     "wholeRoutePipeAndWaterKg": 21.302805,
     "retainedPanWaterUpperKg": 58.25326,
-    "totalDeclaredGrossUpperKg": 237.352871,
+    "totalDeclaredGrossUpperKg": 241.028519,
     "excludes": "Actual seals, fasteners, welds, jackets and bought-part masses; gross solid brass reservations deliberately include voids and cannot be called a net mass or favorable counterweight."
   },
   "footprintWaterDuty": {
@@ -363,10 +457,12 @@
   "floorReceiving": {
     "basis": "Proposed independent cabinet gravity plinth onto the actual structural floor through sleeved finish interruptions; no strength or dry-side DPC capacity is supplied by a finish datum.",
     "sourceGroundFinishZMm": 0,
-    "proposedSeatZMm": 140,
-    "gravityUpperN": 2328.431664,
+    "proposedSeatZMm": 0,
+    "cabinetBottomZMm": 140,
+    "pressureBaseTopZMm": 12,
+    "gravityUpperN": 2364.489771,
     "fourWetFootGravityOnlyN": 369.706811,
-    "twoIndependentPipeFeetGravityOnlyN": 424.802209,
+    "twoIndependentPipeFeetGravityOnlyN": 442.831263,
     "worstSingleSideWaterGravityN": 1721.501523,
     "actualLoadDistributionAndFloorCapacityQualified": false,
     "pipeAndWetAssembliesIndependentlySupported": true,
@@ -380,24 +476,24 @@
             1900
           ],
           "forceComponentBoundsN": [
-            16.51286684,
-            13.66954636,
-            12.59717536
+            16.45624624,
+            13.6458643,
+            12.58626278
           ],
           "momentComponentBoundsNmm": [
-            3186.25304035,
-            1550.48611778,
-            545.63287951
+            3177.6035824,
+            1544.02416762,
+            544.27330323
           ],
           "uniformForceN": [
-            -6.08299311,
-            -8.54532286,
-            -10.78058967
+            -6.05944249,
+            -8.53440888,
+            -10.77214406
           ],
           "uniformMomentNmm": [
-            -2234.44496077,
-            -1002.02371806,
-            165.3770414
+            -2233.15195432,
+            -997.83970404,
+            166.18857122
           ]
         },
         "guideWrench": {
@@ -407,8 +503,8 @@
             2100
           ],
           "forceComponentBoundsN": [
-            16.51230113,
-            11.00619278,
+            16.44556204,
+            10.97990452,
             0
           ],
           "axialSlide": true,
@@ -421,14 +517,14 @@
             1000
           ],
           "forceComponentBoundsN": [
-            1.07190023,
-            1.33215202,
-            3.2167388
+            1.06503136,
+            1.32821167,
+            3.20790237
           ],
           "momentComponentBoundsNmm": [
-            690.8820395,
-            716.15112452,
-            189.32810306
+            688.22094142,
+            709.12225482,
+            190.36433171
           ]
         },
         "outerRepairCutTerminal": {
@@ -438,14 +534,14 @@
             463.8
           ],
           "forceComponentBoundsN": [
-            1.03791454,
-            3.99452286,
-            9.3901552
+            1.03477202,
+            3.99213771,
+            9.38397067
           ],
           "momentComponentBoundsNmm": [
-            5265.80975972,
-            371.97357476,
-            444.64381375
+            5264.92144947,
+            374.88121013,
+            442.45849264
           ]
         },
         "sourcePressureEndComponentBoundN": 463.246686,
@@ -460,24 +556,24 @@
             1900
           ],
           "forceComponentBoundsN": [
-            2.295386,
-            10.55834201,
-            9.25475155
+            2.29677891,
+            10.55940758,
+            9.25138008
           ],
           "momentComponentBoundsNmm": [
-            3121.3469949,
-            609.50219452,
-            1176.09745076
+            3110.72809489,
+            606.74356061,
+            1175.09514483
           ],
           "uniformForceN": [
-            -1.41600347,
-            -9.42898192,
-            -9.16080432
+            -1.41769458,
+            -9.43094978,
+            -9.15741819
           ],
           "uniformMomentNmm": [
-            -2406.50645213,
-            521.86669329,
-            909.91402415
+            -2404.40199045,
+            520.44389271,
+            909.2999948
           ]
         },
         "guideWrench": {
@@ -487,8 +583,8 @@
             2100
           ],
           "forceComponentBoundsN": [
-            1.33102804,
-            7.42796865,
+            1.3341922,
+            7.43213031,
             0
           ],
           "axialSlide": true,
@@ -501,14 +597,14 @@
             2260
           ],
           "forceComponentBoundsN": [
-            0.19116106,
-            1.40996966,
-            0.14912854
+            0.19143822,
+            1.41054382,
+            0.14936372
           ],
           "momentComponentBoundsNmm": [
-            367.17383755,
-            157.77073455,
-            1420.60216411
+            367.18623006,
+            158.18357222,
+            1421.6282997
           ]
         },
         "outerRepairCutTerminal": {
@@ -518,14 +614,14 @@
             583.8
           ],
           "forceComponentBoundsN": [
-            1.12912235,
-            4.53424499,
-            9.11125291
+            1.12769344,
+            4.53184129,
+            9.1083225
           ],
           "momentComponentBoundsNmm": [
-            4960.74776912,
-            332.73185464,
-            470.01736034
+            4959.70819128,
+            333.55889067,
+            469.08314305
           ]
         },
         "sourcePressureEndComponentBoundN": 463.246686,
@@ -654,24 +750,24 @@
             1900
           ],
           "forceComponentBoundsN": [
-            16.51286684,
-            13.66954636,
-            12.59717536
+            16.45624624,
+            13.6458643,
+            12.58626278
           ],
           "momentComponentBoundsNmm": [
-            3186.25304035,
-            1550.48611778,
-            545.63287951
+            3177.6035824,
+            1544.02416762,
+            544.27330323
           ],
           "uniformForceN": [
-            -6.08299311,
-            -8.54532286,
-            -10.78058967
+            -6.05944249,
+            -8.53440888,
+            -10.77214406
           ],
           "uniformMomentNmm": [
-            -2234.44496077,
-            -1002.02371806,
-            165.3770414
+            -2233.15195432,
+            -997.83970404,
+            166.18857122
           ]
         },
         "guideWrench": {
@@ -681,8 +777,8 @@
             2100
           ],
           "forceComponentBoundsN": [
-            16.51230113,
-            11.00619278,
+            16.44556204,
+            10.97990452,
             0
           ],
           "axialSlide": true,
@@ -695,14 +791,14 @@
             1000
           ],
           "forceComponentBoundsN": [
-            1.07190023,
-            1.33215202,
-            3.2167388
+            1.06503136,
+            1.32821167,
+            3.20790237
           ],
           "momentComponentBoundsNmm": [
-            690.8820395,
-            716.15112452,
-            189.32810306
+            688.22094142,
+            709.12225482,
+            190.36433171
           ]
         },
         "outerRepairCutTerminal": {
@@ -712,14 +808,14 @@
             463.8
           ],
           "forceComponentBoundsN": [
-            1.03791454,
-            3.99452286,
-            9.3901552
+            1.03477202,
+            3.99213771,
+            9.38397067
           ],
           "momentComponentBoundsNmm": [
-            5265.80975972,
-            371.97357476,
-            444.64381375
+            5264.92144947,
+            374.88121013,
+            442.45849264
           ]
         },
         "sourcePressureEndComponentBoundN": 463.246686,
@@ -815,7 +911,7 @@
             }
           },
           "receiver": {
-            "baseZMm": 100,
+            "baseZMm": 12,
             "postAxisXYMm": [
               9950,
               520
@@ -836,24 +932,24 @@
             1900
           ],
           "forceComponentBoundsN": [
-            16.51286684,
-            13.66954636,
-            12.59717536
+            16.45624624,
+            13.6458643,
+            12.58626278
           ],
           "momentComponentBoundsNmm": [
-            3186.25304035,
-            1550.48611778,
-            545.63287951
+            3177.6035824,
+            1544.02416762,
+            544.27330323
           ],
           "uniformForceN": [
-            -6.08299311,
-            -8.54532286,
-            -10.78058967
+            -6.05944249,
+            -8.53440888,
+            -10.77214406
           ],
           "uniformMomentNmm": [
-            -2234.44496077,
-            -1002.02371806,
-            165.3770414
+            -2233.15195432,
+            -997.83970404,
+            166.18857122
           ]
         },
         "guideWrench": {
@@ -863,8 +959,8 @@
             2100
           ],
           "forceComponentBoundsN": [
-            16.51230113,
-            11.00619278,
+            16.44556204,
+            10.97990452,
             0
           ],
           "axialSlide": true,
@@ -877,14 +973,14 @@
             1000
           ],
           "forceComponentBoundsN": [
-            1.07190023,
-            1.33215202,
-            3.2167388
+            1.06503136,
+            1.32821167,
+            3.20790237
           ],
           "momentComponentBoundsNmm": [
-            690.8820395,
-            716.15112452,
-            189.32810306
+            688.22094142,
+            709.12225482,
+            190.36433171
           ]
         },
         "outerTerminalWrench": {
@@ -894,43 +990,43 @@
             463.8
           ],
           "forceComponentBoundsN": [
-            1.03791454,
-            3.99452286,
-            9.3901552
+            1.03477202,
+            3.99213771,
+            9.38397067
           ],
           "momentComponentBoundsNmm": [
-            5265.80975972,
-            371.97357476,
-            444.64381375
+            5264.92144947,
+            374.88121013,
+            442.45849264
           ]
         },
         "fixedPointReceiverMotion": {
           "uniformTranslationMm": [
-            -0.0367906,
-            -0.00317394,
-            0.0011002
+            -0.04184461,
+            -0.00172156,
+            0.00104064
           ],
           "translationBoundsMm": [
-            0.05712307,
-            0.04193231,
-            0.00258455
+            0.0643699,
+            0.04883361,
+            0.00277113
           ],
           "rotationBoundsRad": [
-            0.00003263,
-            0.00005485,
-            0.00001225
+            0.00003506,
+            0.00005854,
+            0.00001278
           ]
         },
         "guideReceiverMotion": {
           "uniformTranslationMm": [
-            -0.04365502,
-            -0.00577079,
-            0.00114583
+            -0.04924482,
+            -0.00415834,
+            0.00108619
           ],
           "translationBoundsMm": [
-            0.06860926,
-            0.04836522,
-            0.00267761
+            0.07662105,
+            0.05600046,
+            0.00286383
           ]
         },
         "compatibilityResidual": 0,
@@ -1075,24 +1171,24 @@
             1900
           ],
           "forceComponentBoundsN": [
-            2.295386,
-            10.55834201,
-            9.25475155
+            2.29677891,
+            10.55940758,
+            9.25138008
           ],
           "momentComponentBoundsNmm": [
-            3121.3469949,
-            609.50219452,
-            1176.09745076
+            3110.72809489,
+            606.74356061,
+            1175.09514483
           ],
           "uniformForceN": [
-            -1.41600347,
-            -9.42898192,
-            -9.16080432
+            -1.41769458,
+            -9.43094978,
+            -9.15741819
           ],
           "uniformMomentNmm": [
-            -2406.50645213,
-            521.86669329,
-            909.91402415
+            -2404.40199045,
+            520.44389271,
+            909.2999948
           ]
         },
         "guideWrench": {
@@ -1102,8 +1198,8 @@
             2100
           ],
           "forceComponentBoundsN": [
-            1.33102804,
-            7.42796865,
+            1.3341922,
+            7.43213031,
             0
           ],
           "axialSlide": true,
@@ -1116,14 +1212,14 @@
             2260
           ],
           "forceComponentBoundsN": [
-            0.19116106,
-            1.40996966,
-            0.14912854
+            0.19143822,
+            1.41054382,
+            0.14936372
           ],
           "momentComponentBoundsNmm": [
-            367.17383755,
-            157.77073455,
-            1420.60216411
+            367.18623006,
+            158.18357222,
+            1421.6282997
           ]
         },
         "outerRepairCutTerminal": {
@@ -1133,14 +1229,14 @@
             583.8
           ],
           "forceComponentBoundsN": [
-            1.12912235,
-            4.53424499,
-            9.11125291
+            1.12769344,
+            4.53184129,
+            9.1083225
           ],
           "momentComponentBoundsNmm": [
-            4960.74776912,
-            332.73185464,
-            470.01736034
+            4959.70819128,
+            333.55889067,
+            469.08314305
           ]
         },
         "sourcePressureEndComponentBoundN": 463.246686,
@@ -1236,7 +1332,7 @@
             }
           },
           "receiver": {
-            "baseZMm": 100,
+            "baseZMm": 12,
             "postAxisXYMm": [
               10415,
               520
@@ -1257,24 +1353,24 @@
             1900
           ],
           "forceComponentBoundsN": [
-            2.295386,
-            10.55834201,
-            9.25475155
+            2.29677891,
+            10.55940758,
+            9.25138008
           ],
           "momentComponentBoundsNmm": [
-            3121.3469949,
-            609.50219452,
-            1176.09745076
+            3110.72809489,
+            606.74356061,
+            1175.09514483
           ],
           "uniformForceN": [
-            -1.41600347,
-            -9.42898192,
-            -9.16080432
+            -1.41769458,
+            -9.43094978,
+            -9.15741819
           ],
           "uniformMomentNmm": [
-            -2406.50645213,
-            521.86669329,
-            909.91402415
+            -2404.40199045,
+            520.44389271,
+            909.2999948
           ]
         },
         "guideWrench": {
@@ -1284,8 +1380,8 @@
             2100
           ],
           "forceComponentBoundsN": [
-            1.33102804,
-            7.42796865,
+            1.3341922,
+            7.43213031,
             0
           ],
           "axialSlide": true,
@@ -1298,14 +1394,14 @@
             2260
           ],
           "forceComponentBoundsN": [
-            0.19116106,
-            1.40996966,
-            0.14912854
+            0.19143822,
+            1.41054382,
+            0.14936372
           ],
           "momentComponentBoundsNmm": [
-            367.17383755,
-            157.77073455,
-            1420.60216411
+            367.18623006,
+            158.18357222,
+            1421.6282997
           ]
         },
         "outerTerminalWrench": {
@@ -1315,43 +1411,43 @@
             583.8
           ],
           "forceComponentBoundsN": [
-            1.12912235,
-            4.53424499,
-            9.11125291
+            1.12769344,
+            4.53184129,
+            9.1083225
           ],
           "momentComponentBoundsNmm": [
-            4960.74776912,
-            332.73185464,
-            470.01736034
+            4959.70819128,
+            333.55889067,
+            469.08314305
           ]
         },
         "fixedPointReceiverMotion": {
           "uniformTranslationMm": [
-            0.01228492,
-            -0.00519527,
-            0.00126345
+            0.01438368,
+            -0.00399411,
+            0.00121551
           ],
           "translationBoundsMm": [
-            0.01688229,
-            0.04025733,
-            0.00215321
+            0.01956927,
+            0.04735157,
+            0.00245382
           ],
           "rotationBoundsRad": [
-            0.00002787,
-            0.00001249,
-            0.00002674
+            0.00003167,
+            0.00001375,
+            0.00002802
           ]
         },
         "guideReceiverMotion": {
           "uniformTranslationMm": [
-            0.01360065,
-            -0.00824742,
-            0.00131668
+            0.01591668,
+            -0.00691702,
+            0.00126879
           ],
           "translationBoundsMm": [
-            0.01909014,
-            0.04593333,
-            0.00221494
+            0.02205853,
+            0.05378751,
+            0.00251519
           ]
         },
         "compatibilityResidual": 0,

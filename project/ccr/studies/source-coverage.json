@@ -1524,10 +1524,10 @@
     "project/str/studies/continuous_rc_closed_links.py": "005de10b93766e5fddd1e75b64df8f07df17652e",
     "project/str/studies/continuous_rc_closed_links_proof.py": "efd5717d7f41a053d99cd6c5f5d5a518869fa080",
     "project/str/studies/cage-requirements.txt": "d59d856f1cc6c05962ca6bd4f14dd3315acd207c",
-    "compiler/reference-house/current-design/inlet-cabinet-copper.ts": "bede711cd0495fa4a6a836bd654e799016e54833",
-    "project/had/inlet-cabinet-copper-comparison.md": "acebcac35f2e001c790132471b66a3a4c81252ce",
+    "compiler/reference-house/current-design/inlet-cabinet-copper.ts": "7c7035a17f6ff1e5447c7f13e40ce4c02216ba17",
+    "project/had/inlet-cabinet-copper-comparison.md": "3d3b828fb17be44b1a6b1f868e5124372ad4243c",
     "project/had/studies/inlet-cabinet-copper.ts": "933455bb9aec94932da96d9dcc9dd1cb4890b32d",
-    "project/had/studies/inlet-cabinet-copper.results.json": "059c40b23c7ffb296fae95e38b61dd52a012f0e9",
-    "project/had/studies/inlet-cabinet-copper.svg": "82c9210551e84494ba97e02a90cd3414f6cdace1"
+    "project/had/studies/inlet-cabinet-copper.results.json": "8d306f0d68814efb06959ee6309cf3c488ebd524",
+    "project/had/studies/inlet-cabinet-copper.svg": "bf426843ac225d52cc9fddfdbf2f38ff00af8be5"
   }
 }
