@@ -256,7 +256,8 @@ const researchSidebar: DefaultTheme.SidebarItem[] = [
     page('Primary floor structure baseline', '/docs/research/primary-floor-structure-baseline'),
     page('Seated floor structure options', '/docs/research/seated-floor-structure-options'),
     page('Finish-agnostic floor platform options', '/docs/research/finish-agnostic-floor-platform-options'),
-    page('Replaceable wall system options', '/docs/research/replaceable-wall-system-options')
+    page('Replaceable wall system options', '/docs/research/replaceable-wall-system-options'),
+    page('Lighting and accessible service layers', '/docs/research/lighting-and-accessible-service-layers')
   ]),
   group('Roof & rainwater', [
     page('Rainfall & hydraulic basis', '/docs/research/rainfall-and-hydraulic-basis'),
