@@ -9,9 +9,9 @@
     "label": "rush-20261121-recovery"
   },
   "claimedAt": "2026-11-21T09:40:30.038Z",
-  "heartbeatAt": "2026-11-21T10:37:34.756Z",
-  "expiresAt": "2026-11-21T11:22:34.756Z",
-  "branch": "work/rush-upper-bearing-20261121",
+  "heartbeatAt": "2026-11-21T11:11:49.597Z",
+  "expiresAt": "2026-11-21T11:56:49.597Z",
+  "branch": "work/rush-converged-model-20261121",
   "predecessor": {
     "leaseId": "37f8e399-fda2-42a8-8282-b3e5bda5c950",
     "generation": 47,
@@ -35,7 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1606 merged8e39e330 after exact8e349d8 health/pub/ADE/preflight. Upper-seat branch57ab0542 pushed;6state/15analytic andAPI/CLI3solve restoration pass. New no-overlap guard regenerating evidence.",
-    "next": "Publish guarded upper-seat exact head and CI; continue true RC250 stiffness/mass/datum replay under same STR packet."
-  }
+    "evidence": "Exact joint tree7878726 passed source-bound analytical, saved-document three-solve, inlet, editor HTTP and controlled witness checks; joint head0f329089 submitted for full CI.",
+    "next": "Verify exact joint-head CI and fresh three-lease merge preflight; continue isolated actual floor/support redesign comparison."
+  },
+  "pr": 1609
 }
