@@ -9,8 +9,8 @@
     "label": "convergence-water-20261121"
   },
   "claimedAt": "2026-11-21T19:48:28.453Z",
-  "heartbeatAt": "2026-11-21T20:36:45.788Z",
-  "expiresAt": "2026-11-21T21:21:45.788Z",
+  "heartbeatAt": "2026-11-21T21:05:57.163Z",
+  "expiresAt": "2026-11-21T21:50:57.163Z",
   "branch": "work/convergence-water-room-20261121",
   "predecessor": {
     "leaseId": "94d2339d-61ab-49db-96e2-66d5ed0ff6e4",
@@ -36,8 +36,8 @@
   },
   "pr": 1611,
   "checkpoint": {
-    "evidence": "PR1611 exacthead03e9ac71:ADE44944881094,PLT44944881135 and publication job44944881166 succeeded;fullhealth job136969970120 stillrunning at20:36Z.16focused tests,tsc,repo,producercheck pass;actualSVG inspected.",
-    "next": "Continue observing active exact-head fullhealth;on success run fresh merge-check then merge1611 and releaseHAD. RootSTR integration follows movedmain.",
-    "blocker": "Canonical fullhealth stillinprogress;live downloadablelogs404 until jobcompletion. No source,product,material,owner or installed adoption inferred."
+    "evidence": "PR1611 exact head03e9ac71/tree7f04d16c unchanged. At21:05Z fullhealth job136969970120 remainsactive;publication,ADE,PLT success.16focused tests,tsc,repo,producercheck and actualSVG inspection passed.",
+    "next": "Actively monitor exact-head fullhealth;fresh preflight and merge on success, then release HAD and verify cleanup. Root continues independent STR integration.",
+    "blocker": "Canonical fullhealth stillrunning;GitHub requires sign-in for live logs and connector download404 beforecompletion. No engineering/material/owner/installed approval inferred."
   }
 }
