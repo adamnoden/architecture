@@ -79,6 +79,8 @@ Close only when the default current path, domain migrations, editor contract and
 
 ### ADE-BROWSER-EDITOR — bounded browser delivery
 
+The 21 November convergence audit reopens this existing packet after its delivered schematic plan increment: the browser must now author the same saved engineering document used by the current roof/structural/services CLI. Start with the already supported roof-pitch stage and its actual native output, retaining every imported stage and source binding. The [ADE result](../ade/browser-editor-result.md#joined-engineering-document-continuation--21-november-2026) owns the bounded continuation and preserves the earlier proof. No new work packet or final acceptance dependency is introduced.
+
 Use the same document, semantic commands and headless compiler to move a partition, resize an opening and change a floor or assembly parameter. Surface linked diagnostics and affected views. Demonstrate keyboard and pointer editing, undo/redo, save/reload and revision comparison with late-response rejection. Keep unsupported shapes explicit. The evidence is a working browser client with exercised edit paths in `project/ade/browser-editor-result.md`. This packet belongs to ADE and sits outside the publication and architectural approval dependencies.
 
 ## Re-sequencing existing work

@@ -1,5 +1,13 @@
 # ADE candidate plan editor
 
+## Joined engineering-document continuation — 21 November 2026
+
+The original schematic plan client below is a delivered increment, with its retained browser proof. It is not the browser authoring client of the saved `current-engineering-document/1` now used by the structural, services and roof compiler. The convergence audit following the joined structural/inlet integration reopens the existing ADE-BROWSER-EDITOR packet to close that actual consumer split; it adds no new packet or final design prerequisite.
+
+The continuation must edit the existing `stages.roofPitch` through the same saved document and `compileEngineeringDocument` used by the public CLI. Preserve its admitted design, source bindings and any other stages; keep nominal plans explicitly separate from the conditional roof comparison. Supply revisioned atomic edits, reversal/undo/redo, save/load and stale-response rejection. Render the actual native roof output and stock schedule, and show the dependent evidence that the compiler withholds after a change. Prove exported JSON works through the existing CLI, real API/compiler equality and a late browser response. A thin local server may run specialist analysis; browser state must not become a second engineering model.
+
+The selected-house release, physical/material evidence and owner aesthetic gates retain their existing boundaries. This scope repair does not reopen completed plan computations or fabricate an engineering or owner verdict.
+
 The browser editor opens a new candidate from the actual RH-LAYOUT-REVISION-02 plan or from the separate non-square free-standing partition specimen used by the headless edit regression. Edits use the same versioned transactions and stable object IDs. The browser worker runs the shared candidate plan compiler and V2 SVG renderer for Ground and First. The editor shows which plan drawings differ from the pinned revision and links diagnostics to their affected object.
 
 Open the editor with the installed Vite tool from the repository root.
