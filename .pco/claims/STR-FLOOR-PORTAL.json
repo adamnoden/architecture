@@ -9,8 +9,8 @@
     "label": "convergence-20261121"
   },
   "claimedAt": "2026-11-21T19:47:07.671Z",
-  "heartbeatAt": "2026-11-21T23:10:25.180Z",
-  "expiresAt": "2026-11-21T23:55:25.180Z",
+  "heartbeatAt": "2026-11-21T23:32:06.430Z",
+  "expiresAt": "2026-11-22T00:17:06.430Z",
   "branch": "work/convergence-structure-20261121",
   "predecessor": {
     "leaseId": "95dc0271-adfc-448a-9789-0f1476b4b26b",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Recovery e4d93bc1 preserves genuine58source floor/cage/contact and parent joins. HAD coherent candidate separately15269b47. Main1216 integrated locally; both open packets will share coordinated1613. No adoption.",
-    "next": "Finish274/700/500 comparisons and finalsource/HAD/profile joins; submit one dualWork head, exactCI, canonical preflight and merge.",
-    "blocker": "Isolated250mesh worker killedexit137 with no result;274 trial running. Full joints/raised force replay unqualified."
+    "evidence": "Coordinated remote7cf3083a exacttree3ffc22cc onrecovery/str-grid-corner-20261121 includes49/1216/HAD1526 ancestry.320Python77MJS43HADprofile9sourceguards+nativewetAPI pass; sourceaudit0. No adoption.",
+    "next": "Publish dualWork1613 afterHAD54 rebind; exactheadCI/preflight/merge. Isolated sparse-kernel and indoor-isolation successors continue without mutating submitted head.",
+    "blocker": "ExactheadCI pending;250/274 executionlimits explicit, complete joints/raisedforce/receiver evidence unqualified."
   },
   "pr": 1613
 }
