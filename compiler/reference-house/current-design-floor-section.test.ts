@@ -36,7 +36,7 @@ test('a semantic floor-section edit recompiles actual operators, datums, drawing
   stages.masonryFrame.freshUniformLiveKPa = 2
   stages.masonryFrame.plateLaw = { ...vertical.plateLaw, unitWeightKNPerM3: 27 }
   stages.masonryFrame.floorReinforcement = { ...numerical.floorReinforcement, barDiameterMm: 16, pitchMm: 80 }
-  const document = { ...source, stages: { ...stages, floorSection: { thicknessMm: 200 }, roofPitch: source.stages.roofPitch, studyRoomKit: {} } }
+  const document = { ...source, stages: { ...stages, floorSection: { thicknessMm: 200 }, roofPitch: source.stages.roofPitch, studyRoomKit: source.stages.studyRoomKit } }
   const state = beginEngineeringEdit(document, 'actual-floor-section')
   const baselineBundle = await compileEngineeringDocument(JSON.parse(saveEngineeringEdit(state)))
   const baseline = baselineBundle.engineering.floorSection!
