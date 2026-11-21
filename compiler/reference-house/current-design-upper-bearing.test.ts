@@ -68,7 +68,7 @@ test('one saved current document executes the new upper bearing method through A
   assert.notEqual(changed.roofSvg, baseline.roofSvg)
   assert.notEqual(changed.floorSvg, baseline.floorSvg)
   assert.notEqual(changedBundle.documentIdentity.digest, baselineBundle.documentIdentity.digest)
-  assert.deepEqual(changedBundle.plans, baselineBundle.plans, 'Nominal plans remain an explicit unrelated control')
+  assert.deepEqual(changedBundle.plans, JSON.parse(JSON.stringify(baselineBundle.plans)), 'The serialized nominal plans remain an explicit unrelated control')
   assertAcyclic(changedBundle.manifest)
   const restored = (await compileEngineeringDocument(JSON.parse(JSON.stringify(document)))).engineering.upperRoofBearing
   assert.ok(restored)
