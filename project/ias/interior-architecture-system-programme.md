@@ -18,6 +18,12 @@ The [completed concept](workable-interior-concept-result.md) provides detailed v
 
 **Acceptance must be visual and concrete**: show a real panelled study, family/dining room, bedroom and wet-service transition; actual floor-module layout; visible grates, skirting, window/door interface, joints and ordinary room furniture. An essay about reversibility or a single isolated diagram is inadequate.
 
+## Adaptable room lighting and services — 21 November 2026
+
+The owner has authorised the [adaptable room lighting and services package](adaptable-room-lighting-brief.md), tracked in [#1614](https://github.com/adamnoden/architecture/issues/1614). `IAS-ROOM-LIGHTING` is one shared IAS/HAD design packet: compare four furnished Study lighting arrangements, challenge the result in the kitchen, and resolve one component-grounded wall/skirting/service corner ready for physical trial. Lamps are the working default; ceiling lighting remains an available comparator. No universal cavity, complete panelled ceiling or acoustic improvement is selected by the brief.
+
+The completed Crafted Room Kit and IAS-02S results are inputs, not reopened work. The new result feeds `TRIAD-GATE` and the existing owner review. `IAS-WORKABLE-DETAILS` retains subsequent detail development of the owner's selected family. Physical evidence, material admission and construction acceptance remain separate. This extends the existing programme without adding a lighting workstream or an extra owner gate.
+
 ## Question and scope
 
 What bounded interior assembly family best realises the Reference House proposition that faster-changing domestic layers should attach, carry services, be maintained and be replaced without routinely consuming slower permanent fabric?
@@ -39,6 +45,7 @@ Issue #941 records the authorised parallel topology.
 - **IAS-OAS-JUNCTION / IAS-HAD-JUNCTION:** opening and visible architectural interfaces
   reconciled with the corresponding streams, without silent geometry changes.
 - **IAS-03:** compare and select the bounded family; coordinate drawings and disassembly.
+- **IAS-ROOM-LIGHTING:** compare room lighting and resolve the accessible electrical/panel interface before owner selection, using the completed crafted kit and service/access evidence.
 - **TRIAD-GATE:** jointly establish one coordinated house before selected BCR input.
 
 This topology supersedes the earlier linear IAS-01…06 packet list. BSR completion

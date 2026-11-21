@@ -165,6 +165,34 @@ test('workable interior concept runs early and owner decisions gate details and 
   ])
 })
 
+test('room lighting develops independently and remains required for coordinated owner review', () => {
+  const lighting = node('IAS-ROOM-LIGHTING')
+  assert.equal(lighting.agentDispatch?.mode, 'self-service')
+  const pending = new Set([
+    lighting.id, 'TRIAD-GATE', 'HAD-OWNER-DESIGN-REVIEW', 'IAS-WORKABLE-DETAILS',
+    'HAD-INLET-RESOLUTION', 'STR-FLOOR-PORTAL', 'ROF-RWT-GATE',
+    'DPL-COMMISSION', 'EPR-RH11', 'PHY-04'
+  ])
+  const fixture: ControlNode[] = controlNodes.map(candidate => ({
+    ...candidate, lifecycle: pending.has(candidate.id) ? 'planned' : 'complete'
+  }))
+  const entry = (id: string) => fixture.find(candidate => candidate.id === id)!
+  const state = (id: string) => derivedState(entry(id), fixture)
+  assert.equal(state(lighting.id), 'ready')
+  assert.equal(state('TRIAD-GATE'), 'blocked')
+  for (const id of ['HAD-INLET-RESOLUTION', 'STR-FLOOR-PORTAL', 'ROF-RWT-GATE']) {
+    entry(id).lifecycle = 'complete'
+  }
+  assert.deepEqual(directBlockers(entry('TRIAD-GATE'), fixture), [lighting.id])
+  entry(lighting.id).lifecycle = 'complete'
+  assert.equal(state('TRIAD-GATE'), 'ready')
+  assert.equal(state('HAD-OWNER-DESIGN-REVIEW'), 'blocked')
+  entry('TRIAD-GATE').lifecycle = 'complete'
+  assert.equal(state('HAD-OWNER-DESIGN-REVIEW'), 'ready')
+  assert.equal(entry('HAD-OWNER-DESIGN-REVIEW').agentDispatch?.mode, 'manual')
+  assert.equal(state('IAS-WORKABLE-DETAILS'), 'blocked')
+})
+
 test('final digital editorial assurance precedes freeze without waiting for physical or owner verdicts', () => {
   assert.deepEqual(node('EDA-RENEWED').dependencies, ['PLT-FINAL-PREP', 'EDA-ADAPTER'])
   const fixture = controlNodes.map(candidate => candidate.id === 'PLT-FINAL-PREP'
