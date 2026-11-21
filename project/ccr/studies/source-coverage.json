@@ -593,7 +593,8 @@
         "project/had/studies/south-inlet-relief-hydraulics.mjs",
         "compiler/reference-house/current-design/inlet-source-envelope.ts",
         "project/had/studies/inlet-source-envelope.ts",
-        "compiler/reference-house/current-design/inlet-room-catchment.ts"
+        "compiler/reference-house/current-design/inlet-room-catchment.ts",
+        "compiler/reference-house/current-design/inlet-room-pocket.ts"
       ],
       "authoredInputs": [
         "compiler/reference-house/current-design/inlet-electrical-screen.ts",
@@ -612,14 +613,17 @@
         "project/had/studies/south-utility-inlet.json",
         "project/mat/studies/whole-house-service-baseline.json",
         "project/ias/studies/utility-first-release.json",
-        "project/had/studies/boundary-service-lodge.json"
+        "project/had/studies/boundary-service-lodge.json",
+        "project/str/studies/current-house-grid.json"
       ],
       "receipts": [
         "project/had/studies/inlet-cabinet-copper.results.json",
         "project/had/studies/inlet-cabinet-copper.svg",
         "project/had/studies/inlet-source-envelope.results.json",
         "project/had/studies/inlet-source-envelope.svg",
-        "project/had/studies/inlet-frame-support.svg"
+        "project/had/studies/inlet-frame-support.svg",
+        "project/had/studies/inlet-local-pocket.results.json",
+        "project/had/studies/inlet-local-pocket.svg"
       ],
       "consumers": [
         "compiler/reference-house/current-design/compile.ts",
@@ -637,7 +641,8 @@
         "node --import tsx project/had/studies/inlet-source-envelope.ts --check",
         "node --import tsx --test compiler/reference-house/current-design-inlet-room-catchment.test.ts",
         "node --import tsx --test compiler/reference-house/current-design-inlet-electrical-screen.test.ts",
-        "node --import tsx --test compiler/reference-house/current-design-inlet-screen-frame.test.ts"
+        "node --import tsx --test compiler/reference-house/current-design-inlet-screen-frame.test.ts",
+        "node --import tsx --test compiler/reference-house/current-design-inlet-room-pocket.test.ts"
       ]
     },
     {
@@ -1399,6 +1404,34 @@
       ],
       "format": "map",
       "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/had/studies/inlet-local-pocket.results.json",
+      "location": [
+        "source",
+        "inputs"
+      ],
+      "format": "map",
+      "algorithm": "gitBlob"
+    },
+    {
+      "receipt": "project/had/studies/inlet-local-pocket.results.json",
+      "location": [
+        "source",
+        "methods"
+      ],
+      "format": "map",
+      "algorithm": "gitBlob"
+    },
+    {
+      "receipt": "project/had/studies/inlet-local-pocket.results.json",
+      "location": [
+        "ground",
+        "method",
+        "inputs"
+      ],
+      "format": "map",
+      "algorithm": "gitBlob"
     }
   ],
   "gitBlobs": {
@@ -1650,7 +1683,7 @@
     "project/mat/studies/conventional-ground-junction.json": "5d899197848d0f951d8ff4573983aff81d4fd32f",
     "project/str/studies/current-house-occupied-interfaces.json": "fb9f19324385a50c22761b38333c478075987a08",
     "docs/reference-house/structural-brief.md": "ee6ffe9704e1da927ff3a6a1d052da2f0dba7abf",
-    "compiler/reference-house/current-design/structural-ground.ts": "aad31e4b671976347944405de02e1b81d8e930a5",
+    "compiler/reference-house/current-design/structural-ground.ts": "533a741386a47a69e54a1881d4cdaf314f8ae72a",
     "project/str/studies/dry-side-ground-section.json": "5867083e33d0a1388ffb961c3f169d58f7b34987",
     "project/triad-interface-contract.md": "a82cfbf0c4a7be0f18cfed6307583e3cff3ddfe9",
     "project/str/studies/dry_side_ground_section.py": "ab7455c6b2a7f3406bed27babed2b6cbd17276e7",
@@ -1756,10 +1789,10 @@
     "project/str/studies/roof-surface-pressure.svg": "bf17bdc9c139c76a80fa0a8352f4bd40c3938c92",
     "project/str/studies/roof_surface_pressure_proof.py": "c6de2ceb21f113e4672d870f3512754318b99c23",
     "project/str/studies/straight_frame_cage_proof.py": "04a03d0ec19f885e611cd1549d9d0a5fc2c4eeb1",
-    "compiler/reference-house/current-design/inlet-source-envelope.ts": "736362f1e1308db96fcdff3f83a47f042b1e6a02",
-    "project/had/studies/inlet-source-envelope.ts": "b232d1953774997ff2a80ab54bb6ba8f23cf5bb6",
-    "project/had/inlet-source-and-room-decision.md": "965183116ae023cd4c28025a4782e722fb38719f",
-    "project/had/studies/inlet-source-envelope.results.json": "4abdb93bd5b91bba1378677f3935f4b3f753d192",
+    "compiler/reference-house/current-design/inlet-source-envelope.ts": "2935f1718d5a524a0668ebc19b3ab56fe74afda5",
+    "project/had/studies/inlet-source-envelope.ts": "4825b0d49ec3795947548450517e016d735344d2",
+    "project/had/inlet-source-and-room-decision.md": "60c2f3c38881c4b00b5cc2e3cdf43c3e82bce6a8",
+    "project/had/studies/inlet-source-envelope.results.json": "5a0a47a82d1cf6d2f0fe690ed7db51dffc9f5fb3",
     "project/had/studies/inlet-source-envelope.svg": "6f33f6c1a830e3647de0d962196ff83eeed54662",
     "compiler/reference-house/current-design/engineering-edit.ts": "4c024e7edea46e79b3b4f8e17646170f9a80458d",
     "project/ade/browser-editor/engineering-api.ts": "2db0efb4e3cdb698009b69cc7fa9ff80389f1158",
@@ -1780,10 +1813,13 @@
     "project/str/studies/floor_section_proof.py": "56f68116fadbc4f74f863257f132a091dd2f523c",
     "project/str/studies/floor-section-proof.json": "64e77fefeb7f9221c6a902075d95192de33c9083",
     "project/str/studies/floor-section-250.svg": "b9743f51fd2b5eca6f8d6749c1134415f44a67c1",
-    "compiler/reference-house/current-design/inlet-room-catchment.ts": "4808849a1197d0b90891cda2859bb578d274c026",
-    "project/had/inlet-whole-room-convergence.md": "a7de473061de2399d6ef7e07ada7fa870796d5f3",
+    "compiler/reference-house/current-design/inlet-room-catchment.ts": "fe3f40d174ae4a30b13123e56b065d211479d661",
+    "project/had/inlet-whole-room-convergence.md": "f5745d1066a1441034e42aca23e9f9a477730914",
     "compiler/reference-house/current-design/inlet-electrical-screen.ts": "38f7d1a752f835ec464e2bdd10432d4dbd32ff74",
     "compiler/reference-house/current-design/inlet-screen-frame.ts": "fff2a33daf6c6d3fe05d2e571ffd8db4f5806c51",
-    "project/had/studies/inlet-frame-support.svg": "7ee3aa332351720f5256bb38bd3e22c274a623e3"
+    "project/had/studies/inlet-frame-support.svg": "7ee3aa332351720f5256bb38bd3e22c274a623e3",
+    "compiler/reference-house/current-design/inlet-room-pocket.ts": "6262535d5a03666b92c876e4b8d52c4a0b097fb3",
+    "project/had/studies/inlet-local-pocket.results.json": "a1975321a46b667e4a1ed9b6d67c9bc135a6e437",
+    "project/had/studies/inlet-local-pocket.svg": "1b055c9299705e175d8fe523102bb991e6dbd913"
   }
 }

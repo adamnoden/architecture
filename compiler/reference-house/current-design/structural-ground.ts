@@ -8,6 +8,7 @@ import type { CurrentDesignResolution } from './resolve.js'
 const root = new URL('../../../', import.meta.url)
 const methodPath = 'project/str/studies/dry_side_ground_section.py'
 const defaultsPath = 'project/str/studies/dry-side-ground-section.json'
+const wrapperPath = 'compiler/reference-house/current-design/structural-ground.ts'
 type Settings = Readonly<Record<string, unknown>>
 type NativeCase = {
   readonly schema: 'dry-side-ground-section/2'
@@ -39,7 +40,7 @@ function binding(resolved: CurrentDesignResolution) {
     throw new Error('The ground section did not provide its versioned source-bound inputs')
   }
   const identities = Object.assign({}, ...resolved.disciplineBindings.map(value => value.identities)) as Record<string, string>
-  const inputs = Object.fromEntries([methodPath, defaultsPath, ...Object.keys(reference.sources)].map(path => {
+  const inputs = Object.fromEntries([wrapperPath, methodPath, defaultsPath, ...Object.keys(reference.sources)].map(path => {
     const bytes = readFileSync(new URL(path, root))
     const blob = createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')
     if (identities[path] !== blob) throw new Error(`The ground section differs from its current source binding at ${path}`)
@@ -48,8 +49,10 @@ function binding(resolved: CurrentDesignResolution) {
     }
     return [path, blob]
   }))
-  return { reference, inputs, source: { id: resolved.design.source.id, planDigest: sha256SemanticFingerprint(resolved.design) },
-    bindingDigest: sha256SemanticFingerprint({ disciplines: resolved.disciplineBindings, inputs }) }
+  const source = { id: resolved.design.source.id, planDigest: sha256SemanticFingerprint(resolved.design) }
+  // Only actual checked inputs own this calculation. Hashing every discipline's
+  // OUTPUT receipts here makes a ground-dependent receipt depend on itself.
+  return { reference, inputs, source, bindingDigest: sha256SemanticFingerprint({ source, inputs }) }
 }
 
 export function readGroundSectionCase(resolved: CurrentDesignResolution) {
@@ -80,7 +83,7 @@ export function runGroundSectionCase(resolved: CurrentDesignResolution, input: u
   return { status: 'computed-comparison' as const,
     authoredCase: structuredClone(input),
     source: { ...current.source, caseId: input.caseId, caseDigest: sha256SemanticFingerprint(input) },
-    method: { id: 'str-separated-dry-ground/1', path: methodPath, blob: current.inputs[methodPath], inputs: current.inputs },
+    method: { id: 'str-separated-dry-ground/2', path: methodPath, blob: current.inputs[methodPath], inputs: current.inputs },
     native: output.result, sectionSvg: output.sectionSvg,
     diagnostics: [{ code: 'GROUND_SECTION_JOINED_HOUSE_RECHECK', state: 'unqualified-candidate' as const,
       objects: [{ kind: 'ground-section' as const, id: input.caseId }],

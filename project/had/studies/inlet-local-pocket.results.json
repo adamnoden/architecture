@@ -1,0 +1,2012 @@
+{
+  "schema": "had-local-room-pocket-receipt/1",
+  "source": {
+    "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
+    "bindingDigest": "3cbc8c3717258dbb07fb5111dd76903627172c5d3e5adf711d399d8527bec975",
+    "inputs": {
+      "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
+      "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
+      "project/had/studies/south-inlet-relief.json": "f6e424b744bb7e8cac26a8676ea7a358cb137d38",
+      "project/had/studies/south-utility-inlet.json": "1298b8e175326fa1f91ca753da52a168b858758f",
+      "project/had/studies/current-house-services.json": "e649805e78244527fe6498b516fa5f23734ac5ea",
+      "project/mat/studies/whole-house-service-baseline.json": "049161ebac29b24e0acc7d8085302fca906fe9d2",
+      "project/ias/studies/utility-first-release.json": "be84a64623c8042a002af108a784b8668acd7542",
+      "project/had/studies/boundary-service-lodge.json": "edccc843f1829bf583e517095442ad9fe481da53",
+      "project/str/studies/current-house-grid.json": "56aca6f99f5fa60b21d58c89115ac1ee824e3828"
+    },
+    "methods": {
+      "compiler/reference-house/current-design/inlet-source-envelope.ts": "2935f1718d5a524a0668ebc19b3ab56fe74afda5",
+      "compiler/reference-house/current-design/inlet-room-catchment.ts": "fe3f40d174ae4a30b13123e56b065d211479d661",
+      "compiler/reference-house/current-design/inlet-room-pocket.ts": "6262535d5a03666b92c876e4b8d52c4a0b097fb3",
+      "compiler/reference-house/current-design/inlet-electrical-screen.ts": "38f7d1a752f835ec464e2bdd10432d4dbd32ff74",
+      "compiler/reference-house/current-design/inlet-screen-frame.ts": "fff2a33daf6c6d3fe05d2e571ffd8db4f5806c51",
+      "compiler/reference-house/current-design/inlet-fixed-receiver.ts": "c8cd4c81c3419fdb3b97f79b3c641d5e307256e3",
+      "project/had/studies/south-inlet-relief-hydraulics.mjs": "1cb8dd67e832ce2986f042844122a39e625fef93",
+      "compiler/reference-house/current-design/inlet-cabinet-copper.ts": "34d774e3ccd4ff0bac3dcaef63dfa5cdedff6ca4"
+    }
+  },
+  "authoredSettings": {
+    "utilityApertureNominalMm": 6.5,
+    "plantApertureNominalMm": 10.4,
+    "apertureToleranceMm": 0.1,
+    "sourceMaximumTotalBar": 9,
+    "sourceMinimumDynamicBar": 3.5,
+    "requiredUtilityLmin": 20,
+    "requiredPlantLmin": 45,
+    "requiredResidualBar": 1,
+    "utilityNetworkLossBar": 0.5,
+    "plantNetworkLossBar": 1,
+    "dischargeCoefficientComparison": 0.55,
+    "pressureRecoveryFractionComparison": 0,
+    "atmosphericMinimumBar": 0.9,
+    "atmosphericMaximumBar": 1.1,
+    "mainboardNorthOffsetMm": 250,
+    "mainboardBaseZMm": 900,
+    "utilityPortalShiftXMm": -100,
+    "shieldStandOffMm": 100,
+    "shieldVerticalInsetMm": 50,
+    "frameLowerConnectionZMm": 1100,
+    "frameAnchorOffsetMm": 89.5,
+    "plantTransferZMm": 2235,
+    "catchmentClearWidthMm": 400,
+    "catchmentClearHeightMm": 150,
+    "catchmentPocketDepthMm": 245,
+    "catchmentIsolationGapMm": 50,
+    "catchmentInvertAboveDistributionMm": 55,
+    "catchmentReceiverWidthMm": 400,
+    "catchmentReceiverCrestAboveGradeMm": 0
+  },
+  "ground": {
+    "source": {
+      "id": "RH-LAYOUT-REVISION-02",
+      "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
+      "caseId": "raised-530-local-solum",
+      "caseDigest": "3927f5d0c1323b3e35e35e42c141fe4066c1f2fdb9481a6439970664f214af3e"
+    },
+    "method": {
+      "id": "str-separated-dry-ground/2",
+      "path": "project/str/studies/dry_side_ground_section.py",
+      "blob": "ab7455c6b2a7f3406bed27babed2b6cbd17276e7",
+      "inputs": {
+        "compiler/reference-house/current-design/structural-ground.ts": "533a741386a47a69e54a1881d4cdaf314f8ae72a",
+        "project/str/studies/dry_side_ground_section.py": "ab7455c6b2a7f3406bed27babed2b6cbd17276e7",
+        "project/str/studies/dry-side-ground-section.json": "5867083e33d0a1388ffb961c3f169d58f7b34987",
+        "project/had/studies/water-replan.json": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+        "project/str/studies/current-house-grid.json": "56aca6f99f5fa60b21d58c89115ac1ee824e3828",
+        "project/str/studies/current-house-occupied-interfaces.json": "fb9f19324385a50c22761b38333c478075987a08",
+        "project/str/studies/current-house-bridge.py": "7562197dc35a2753c9e593a8e38199b148de7207",
+        "project/mat/studies/conventional-ground-junction.json": "5d899197848d0f951d8ff4573983aff81d4fd32f",
+        "project/mat/envelope-ground-boundary.md": "7aae65350ded7bff6e21c4425153af3cdaec41d2",
+        "project/owner-house-charter.md": "285202ef6be2ccd9954de51213d1faa23a158813",
+        "docs/reference-house/structural-brief.md": "ee6ffe9704e1da927ff3a6a1d052da2f0dba7abf",
+        "project/str/studies/current-house-grid.py": "abb96e665bdc4d1b900d73125acb3bde68ca0b0b",
+        "project/had/studies/water-replan.mjs": "5525676d6cc2bb167eccd35249afaa6928142011",
+        "project/mat/studies/whole-house-leakage-duty.json": "5b93cdd9ea1ee7d825fa4596a44caf06431afc49",
+        "project/str/studies/current-house-head-actions.py": "6635d8b11ea9edf948583097ad674d7741d62bf1",
+        "project/triad-interface-contract.md": "a82cfbf0c4a7be0f18cfed6307583e3cff3ddfe9",
+        "project/str/studies/open-loggia-support.json": "20dec4384d09a0d02075fdd34a247e775532763b"
+      }
+    },
+    "authoredCase": {
+      "schema": "str-dry-ground-case/1",
+      "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
+      "bindingDigest": "aa84d32dc4bfce960a08572af3ddfb94c4ef0ac74522bf4ad970c76ca84b2b15",
+      "caseId": "raised-530-local-solum",
+      "settings": {
+        "minimumGradeClearanceMm": 150,
+        "approachSlopeRatio": 20,
+        "newBeam": {
+          "axisYmm": 4355,
+          "widthMm": 230,
+          "depthMm": 450,
+          "endExtensionMm": 200,
+          "nodeTransferLengthMm": 200,
+          "barsEachFace": 3,
+          "barDiameterMm": 20,
+          "linkDiameterMm": 8,
+          "linkPitchMm": 100,
+          "coverRangeMm": [
+            40,
+            50
+          ]
+        },
+        "rcDensityKNm3": 25,
+        "mineralDensityBudgetKNm3": 20,
+        "ordinaryBarClearanceMm": 21,
+        "serviceZoneMm": 65,
+        "courseBottomMm": 0,
+        "exteriorGradeMm": -150,
+        "localSolumMm": -1800
+      }
+    }
+  },
+  "sourceOnlyEvent": {
+    "method": "Incompressible energy comparison Q<=A sqrt(2 p_total_absolute/rho), Cd<=1, local pressure>=0absolute; recovery/cavitation qualification remains required.",
+    "maximumAbsoluteTotalBar": 10.1,
+    "minimumThroatAbsoluteBarForUpperBound": 0,
+    "pressureRecoveryAndCavitationQualified": false,
+    "minimumDensityKgM3": 990,
+    "maximumDensityKgM3ForDeliveryLoss": 1000,
+    "declaredWaterDomainC": [
+      0,
+      40
+    ],
+    "densityDomainQualification": "authored-water-comparison-bound",
+    "maximumPressureIncludesStaticDynamicElevationAndTransientHead": true,
+    "installedSourceMaximumProved": false,
+    "pressureRecoveryFractionIsAuthoredComparisonNotProductEvidence": true,
+    "maximumCombinedLmin": 327.403857,
+    "branchMaximumsLmin": {
+      "utility": 92.722918,
+      "plant": 234.680939
+    },
+    "sourceMinimumIsAtSimultaneousDemand": true,
+    "sourcePressureReferenceDatumMm": 0,
+    "additionalGroundDatumLiftMm": 530,
+    "sourceToRoomLiftDebitedSeparately": true,
+    "existingNetworkLossBudgetIncludesRetainedRoomToFixtureRise": true,
+    "sourceDatumAndInternalPressureBudgetQualified": false,
+    "deliveryCdIsComparisonNotGuaranteedLowerBound": true
+  },
+  "branches": [
+    {
+      "id": "utility",
+      "seriesPath": [
+        "public utility source",
+        "Lodge/utility/independent upstream cut",
+        "Lodge/utility/accessible fixed metal restriction",
+        "utility/joint-free replaceable wall spool",
+        "SERVICEHUB/utility/independent indoor house cut",
+        "utility/supported upper network and local appliance cuts"
+      ],
+      "sourceEntryAxisMm": [
+        10080,
+        429.5,
+        478.39
+      ],
+      "retainedUpperDestinationMm": [
+        10760,
+        1250,
+        1000
+      ],
+      "internalHouseCut": {
+        "required": true,
+        "suppliedByLodge": false,
+        "suppliedByApplianceStop": false,
+        "location": "unresolved-internal-wet-service-hub",
+        "usableOrdinaryAccessProved": false
+      },
+      "maximumLimitedEachLmin": 92.722918,
+      "requiredDeliveryEachLmin": 20,
+      "apertureNominalMm": 6.5,
+      "apertureToleranceMm": 0.1,
+      "minimumDiameterMm": 6.4,
+      "maximumDiameterMm": 6.6,
+      "additionalNetworkLossBar": 0.5,
+      "additionalGroundDatumLiftMm": 530,
+      "additionalGroundDatumLiftBar": 0.051975,
+      "pressureLossComparisonBar": 1.774608,
+      "residualPressureComparisonBar": 1.173417,
+      "throatAbsolutePressureComparisonBar": 2.573417,
+      "nonnegativeThroatPressureScreen": true,
+      "minimumResidualScreen": true,
+      "dischargeCoefficientQualified": false,
+      "existingReceiver": {
+        "lowerBore": {
+          "outer": [
+            10080,
+            -90,
+            190
+          ],
+          "inner": [
+            10080,
+            429.5,
+            233.29166666666666
+          ],
+          "radius": 55
+        },
+        "maximumScreenedLmin": 101.179931,
+        "crownOnlyCapacityLmin": 122.400407,
+        "limitedFault": {
+          "entranceHeadMm": 141.841561,
+          "crownReserveMm": 7.801342,
+          "staticHeadReserveMm": 8.158439,
+          "receiverWaterZMm": 48.330645,
+          "freeDropReserveMm": 10.002655,
+          "necessaryChannelAndReceiverScreen": true
+        },
+        "requiredDemandControl": {
+          "entranceHeadMm": 69.628988,
+          "crownReserveMm": 36.0577,
+          "staticHeadReserveMm": 80.371012,
+          "receiverWaterZMm": 15.461713,
+          "freeDropReserveMm": 42.871587,
+          "necessaryChannelAndReceiverScreen": true
+        },
+        "fullBoreWithoutRestriction": {
+          "maximumLmin": 1445.599675,
+          "entranceHeadMm": null,
+          "crownReserveMm": null,
+          "staticHeadReserveMm": null,
+          "receiverWaterZMm": 317.344563,
+          "freeDropReserveMm": -259.011263,
+          "necessaryChannelAndReceiverScreen": false
+        }
+      },
+      "feasibleNominalApertureIntervalMm": {
+        "minimumForDelivery": 6.352547,
+        "maximumForExistingReceiver": 6.794418,
+        "existsForNecessaryScreens": true,
+        "optimisticCdOneMinimumForDelivery": 4.737013,
+        "optimisticCdOneIntervalExists": true,
+        "verdict": "necessary-hydraulic-interval-only"
+      },
+      "minimumSourceDynamicBarForExistingReceiverComparison": 3.034395
+    },
+    {
+      "id": "plant",
+      "seriesPath": [
+        "public utility source",
+        "Lodge/plant/independent upstream cut",
+        "Lodge/plant/accessible fixed metal restriction",
+        "plant/joint-free replaceable wall spool",
+        "SERVICEHUB/plant/independent indoor house cut",
+        "plant/supported upper network and local appliance cuts"
+      ],
+      "sourceEntryAxisMm": [
+        10285,
+        429.5,
+        598.39
+      ],
+      "retainedUpperDestinationMm": [
+        10222.5,
+        3842.9,
+        2260
+      ],
+      "internalHouseCut": {
+        "required": true,
+        "suppliedByLodge": false,
+        "suppliedByApplianceStop": false,
+        "location": "unresolved-internal-wet-service-hub",
+        "usableOrdinaryAccessProved": false
+      },
+      "maximumLimitedEachLmin": 234.680939,
+      "requiredDeliveryEachLmin": 45,
+      "apertureNominalMm": 10.4,
+      "apertureToleranceMm": 0.1,
+      "minimumDiameterMm": 10.3,
+      "maximumDiameterMm": 10.5,
+      "additionalNetworkLossBar": 1,
+      "additionalGroundDatumLiftMm": 530,
+      "additionalGroundDatumLiftBar": 0.051975,
+      "pressureLossComparisonBar": 1.339179,
+      "residualPressureComparisonBar": 1.108846,
+      "throatAbsolutePressureComparisonBar": 3.008846,
+      "nonnegativeThroatPressureScreen": true,
+      "minimumResidualScreen": true,
+      "dischargeCoefficientQualified": false,
+      "existingReceiver": {
+        "lowerBore": {
+          "outer": [
+            10285,
+            -90,
+            290
+          ],
+          "inner": [
+            10285,
+            429.5,
+            333.2916666666667
+          ],
+          "radius": 55
+        },
+        "maximumScreenedLmin": 101.179931,
+        "crownOnlyCapacityLmin": 122.400407,
+        "limitedFault": {
+          "entranceHeadMm": null,
+          "crownReserveMm": null,
+          "staticHeadReserveMm": null,
+          "receiverWaterZMm": 192.331671,
+          "freeDropReserveMm": -33.998371,
+          "necessaryChannelAndReceiverScreen": false
+        },
+        "requiredDemandControl": {
+          "entranceHeadMm": 96.741958,
+          "crownReserveMm": 24.329412,
+          "staticHeadReserveMm": 53.258042,
+          "receiverWaterZMm": 128.700079,
+          "freeDropReserveMm": 29.633221,
+          "necessaryChannelAndReceiverScreen": true
+        },
+        "fullBoreWithoutRestriction": {
+          "maximumLmin": 1445.599675,
+          "entranceHeadMm": null,
+          "crownReserveMm": null,
+          "staticHeadReserveMm": null,
+          "receiverWaterZMm": 417.344563,
+          "freeDropReserveMm": -259.011263,
+          "necessaryChannelAndReceiverScreen": false
+        }
+      },
+      "feasibleNominalApertureIntervalMm": {
+        "minimumForDelivery": 10.200732,
+        "maximumForExistingReceiver": 6.794418,
+        "existsForNecessaryScreens": false,
+        "optimisticCdOneMinimumForDelivery": 7.590903,
+        "optimisticCdOneIntervalExists": false,
+        "verdict": "reject-existing-receiver-plus-demand-envelope"
+      },
+      "minimumSourceDynamicBarForExistingReceiverComparison": 9.556725
+    }
+  ],
+  "roomCatchment": {
+    "state": "whole-room-development-comparison",
+    "selected": false,
+    "groundAuthority": {
+      "caseId": "raised-530-local-solum",
+      "caseDigest": "3927f5d0c1323b3e35e35e42c141fe4066c1f2fdb9481a6439970664f214af3e",
+      "resultDigest": "c24520b33e1ff12bf22afc33e1584c96f7a6fd93cfe33053f209a5f53289d2e4",
+      "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e"
+    },
+    "levelsMm": {
+      "ffl": 530,
+      "distribution": [
+        270,
+        515
+      ],
+      "finish": [
+        515,
+        530
+      ],
+      "mineralCourse": [
+        -180,
+        -30
+      ],
+      "exteriorGrade": -150
+    },
+    "localPocket": {
+      "id": "HAD/local-utility-service-pocket",
+      "selected": false,
+      "groundDatum": "Same absolute datum as saved groundSection; no translation of house, roof or retained walls",
+      "roomMinMaxMm": [
+        9397,
+        429.5,
+        11570.5,
+        2453
+      ],
+      "bodyMinMaxMm": [
+        9447,
+        479.5,
+        11520.5,
+        2403
+      ],
+      "depthMm": 245,
+      "loweringMm": 180,
+      "isolationGapMm": 50,
+      "levelBoxes": [
+        {
+          "id": "mineralCourse",
+          "planMinMaxMm": [
+            9447,
+            479.5,
+            11520.5,
+            2403
+          ],
+          "zMm": [
+            -180,
+            -30
+          ]
+        },
+        {
+          "id": "dryRC",
+          "planMinMaxMm": [
+            9447,
+            479.5,
+            11520.5,
+            2403
+          ],
+          "zMm": [
+            -30,
+            170
+          ]
+        },
+        {
+          "id": "glass",
+          "planMinMaxMm": [
+            9447,
+            479.5,
+            11520.5,
+            2403
+          ],
+          "zMm": [
+            170,
+            270
+          ]
+        },
+        {
+          "id": "accessibleDistribution",
+          "planMinMaxMm": [
+            9447,
+            479.5,
+            11520.5,
+            2403
+          ],
+          "zMm": [
+            270,
+            515
+          ]
+        },
+        {
+          "id": "finish",
+          "planMinMaxMm": [
+            9447,
+            479.5,
+            11520.5,
+            2403
+          ],
+          "zMm": [
+            515,
+            530
+          ]
+        }
+      ],
+      "retainedGlobal": {
+        "mineralCourse": [
+          0,
+          150
+        ],
+        "dryRC": [
+          150,
+          350
+        ],
+        "glass": [
+          350,
+          450
+        ],
+        "accessibleDistribution": [
+          450,
+          515
+        ],
+        "finish": [
+          515,
+          530
+        ],
+        "ffl": 530,
+        "coldGridTop": -180
+      },
+      "wallAndExteriorDpcMm": [
+        0,
+        150
+      ],
+      "floorStep": {
+        "northEdgeYmm": 2453,
+        "thresholdOpeningSupport": "Independent flush bridge over50mm perimeter separation; exact metal, fixings, removal and foot loads unqualified",
+        "clearanceClaim": "No RC or mineral bridges the declared perimeter gap. Upstand and gap infill cannot be credited as structural or waterproof support."
+      },
+      "thermalReservation": {
+        "horizontalGlassMm": [
+          170,
+          270
+        ],
+        "verticalSeparationGapMm": 50,
+        "minimumJunctionTemperatureOrPsi": null,
+        "requirement": "Continuous load-compatible insulation across slab edge and lower mineral/cold-grid contact; complete2D/3D thermal and moisture path not established."
+      },
+      "lowerPlinthRequiredMm": 0,
+      "coldGridContact": [
+        {
+          "id": "outer-E",
+          "rectangleMm": [
+            11217.5,
+            479.5,
+            11520.5,
+            2403
+          ],
+          "coldTopMm": -180
+        },
+        {
+          "id": "outer-S",
+          "rectangleMm": [
+            9447,
+            479.5,
+            11520.5,
+            682.5
+          ],
+          "coldTopMm": -180
+        },
+        {
+          "id": "spine",
+          "rectangleMm": [
+            9447,
+            479.5,
+            9750,
+            2403
+          ],
+          "coldTopMm": -180
+        },
+        {
+          "id": "utility-north",
+          "rectangleMm": [
+            9447,
+            2250,
+            11520.5,
+            2403
+          ],
+          "coldTopMm": -180
+        },
+        {
+          "id": "P04",
+          "rectangleMm": [
+            11217.5,
+            479.5,
+            11520.5,
+            632.5
+          ],
+          "coldTopMm": -180
+        },
+        {
+          "id": "P05",
+          "rectangleMm": [
+            10507.5,
+            479.5,
+            11107.5,
+            632.5
+          ],
+          "coldTopMm": -180
+        },
+        {
+          "id": "P06",
+          "rectangleMm": [
+            11217.5,
+            892.5,
+            11520.5,
+            1492.5
+          ],
+          "coldTopMm": -180
+        },
+        {
+          "id": "P23",
+          "rectangleMm": [
+            9447,
+            479.5,
+            9750,
+            632.5
+          ],
+          "coldTopMm": -180
+        },
+        {
+          "id": "P41",
+          "rectangleMm": [
+            9447,
+            2350,
+            9750,
+            2403
+          ],
+          "coldTopMm": -180
+        }
+      ],
+      "disjointContactCells": [
+        {
+          "id": "HAD/local-utility-contact/1-1",
+          "rectangleMm": [
+            9447,
+            479.5,
+            9750,
+            632.5
+          ],
+          "possibleReceivers": [
+            "outer-S",
+            "spine",
+            "P23"
+          ]
+        },
+        {
+          "id": "HAD/local-utility-contact/1-2",
+          "rectangleMm": [
+            9447,
+            632.5,
+            9750,
+            682.5
+          ],
+          "possibleReceivers": [
+            "outer-S",
+            "spine"
+          ]
+        },
+        {
+          "id": "HAD/local-utility-contact/1-3",
+          "rectangleMm": [
+            9447,
+            682.5,
+            9750,
+            892.5
+          ],
+          "possibleReceivers": [
+            "spine"
+          ]
+        },
+        {
+          "id": "HAD/local-utility-contact/1-4",
+          "rectangleMm": [
+            9447,
+            892.5,
+            9750,
+            1492.5
+          ],
+          "possibleReceivers": [
+            "spine"
+          ]
+        },
+        {
+          "id": "HAD/local-utility-contact/1-5",
+          "rectangleMm": [
+            9447,
+            1492.5,
+            9750,
+            2250
+          ],
+          "possibleReceivers": [
+            "spine"
+          ]
+        },
+        {
+          "id": "HAD/local-utility-contact/1-6",
+          "rectangleMm": [
+            9447,
+            2250,
+            9750,
+            2350
+          ],
+          "possibleReceivers": [
+            "spine",
+            "utility-north"
+          ]
+        },
+        {
+          "id": "HAD/local-utility-contact/1-7",
+          "rectangleMm": [
+            9447,
+            2350,
+            9750,
+            2403
+          ],
+          "possibleReceivers": [
+            "spine",
+            "utility-north",
+            "P41"
+          ]
+        },
+        {
+          "id": "HAD/local-utility-contact/2-1",
+          "rectangleMm": [
+            9750,
+            479.5,
+            10507.5,
+            632.5
+          ],
+          "possibleReceivers": [
+            "outer-S"
+          ]
+        },
+        {
+          "id": "HAD/local-utility-contact/2-2",
+          "rectangleMm": [
+            9750,
+            632.5,
+            10507.5,
+            682.5
+          ],
+          "possibleReceivers": [
+            "outer-S"
+          ]
+        },
+        {
+          "id": "HAD/local-utility-contact/2-6",
+          "rectangleMm": [
+            9750,
+            2250,
+            10507.5,
+            2350
+          ],
+          "possibleReceivers": [
+            "utility-north"
+          ]
+        },
+        {
+          "id": "HAD/local-utility-contact/2-7",
+          "rectangleMm": [
+            9750,
+            2350,
+            10507.5,
+            2403
+          ],
+          "possibleReceivers": [
+            "utility-north"
+          ]
+        },
+        {
+          "id": "HAD/local-utility-contact/3-1",
+          "rectangleMm": [
+            10507.5,
+            479.5,
+            11107.5,
+            632.5
+          ],
+          "possibleReceivers": [
+            "outer-S",
+            "P05"
+          ]
+        },
+        {
+          "id": "HAD/local-utility-contact/3-2",
+          "rectangleMm": [
+            10507.5,
+            632.5,
+            11107.5,
+            682.5
+          ],
+          "possibleReceivers": [
+            "outer-S"
+          ]
+        },
+        {
+          "id": "HAD/local-utility-contact/3-6",
+          "rectangleMm": [
+            10507.5,
+            2250,
+            11107.5,
+            2350
+          ],
+          "possibleReceivers": [
+            "utility-north"
+          ]
+        },
+        {
+          "id": "HAD/local-utility-contact/3-7",
+          "rectangleMm": [
+            10507.5,
+            2350,
+            11107.5,
+            2403
+          ],
+          "possibleReceivers": [
+            "utility-north"
+          ]
+        },
+        {
+          "id": "HAD/local-utility-contact/4-1",
+          "rectangleMm": [
+            11107.5,
+            479.5,
+            11217.5,
+            632.5
+          ],
+          "possibleReceivers": [
+            "outer-S"
+          ]
+        },
+        {
+          "id": "HAD/local-utility-contact/4-2",
+          "rectangleMm": [
+            11107.5,
+            632.5,
+            11217.5,
+            682.5
+          ],
+          "possibleReceivers": [
+            "outer-S"
+          ]
+        },
+        {
+          "id": "HAD/local-utility-contact/4-6",
+          "rectangleMm": [
+            11107.5,
+            2250,
+            11217.5,
+            2350
+          ],
+          "possibleReceivers": [
+            "utility-north"
+          ]
+        },
+        {
+          "id": "HAD/local-utility-contact/4-7",
+          "rectangleMm": [
+            11107.5,
+            2350,
+            11217.5,
+            2403
+          ],
+          "possibleReceivers": [
+            "utility-north"
+          ]
+        },
+        {
+          "id": "HAD/local-utility-contact/5-1",
+          "rectangleMm": [
+            11217.5,
+            479.5,
+            11520.5,
+            632.5
+          ],
+          "possibleReceivers": [
+            "outer-E",
+            "outer-S",
+            "P04"
+          ]
+        },
+        {
+          "id": "HAD/local-utility-contact/5-2",
+          "rectangleMm": [
+            11217.5,
+            632.5,
+            11520.5,
+            682.5
+          ],
+          "possibleReceivers": [
+            "outer-E",
+            "outer-S"
+          ]
+        },
+        {
+          "id": "HAD/local-utility-contact/5-3",
+          "rectangleMm": [
+            11217.5,
+            682.5,
+            11520.5,
+            892.5
+          ],
+          "possibleReceivers": [
+            "outer-E"
+          ]
+        },
+        {
+          "id": "HAD/local-utility-contact/5-4",
+          "rectangleMm": [
+            11217.5,
+            892.5,
+            11520.5,
+            1492.5
+          ],
+          "possibleReceivers": [
+            "outer-E",
+            "P06"
+          ]
+        },
+        {
+          "id": "HAD/local-utility-contact/5-5",
+          "rectangleMm": [
+            11217.5,
+            1492.5,
+            11520.5,
+            2250
+          ],
+          "possibleReceivers": [
+            "outer-E"
+          ]
+        },
+        {
+          "id": "HAD/local-utility-contact/5-6",
+          "rectangleMm": [
+            11217.5,
+            2250,
+            11520.5,
+            2350
+          ],
+          "possibleReceivers": [
+            "outer-E",
+            "utility-north"
+          ]
+        },
+        {
+          "id": "HAD/local-utility-contact/5-7",
+          "rectangleMm": [
+            11217.5,
+            2350,
+            11520.5,
+            2403
+          ],
+          "possibleReceivers": [
+            "outer-E",
+            "utility-north"
+          ]
+        }
+      ],
+      "contactUnionM2": 1.688071,
+      "supportPresentAtSides": {
+        "west": true,
+        "east": true,
+        "south": true,
+        "north": true
+      },
+      "unsupportedCentralSlabAreaM2": 2.30030625,
+      "loadOrigins": [
+        {
+          "id": "HAD/local-utility-dry-rc-G",
+          "piece": {
+            "planMinMaxMm": [
+              9447,
+              479.5,
+              11520.5,
+              2403
+            ],
+            "zMm": [
+              -30,
+              170
+            ]
+          },
+          "originMm": [
+            10483.75,
+            1441.25,
+            -180
+          ],
+          "wrenchKN_KNm": {
+            "Fx": 0,
+            "Fy": 0,
+            "Fz": -19.941886250000003,
+            "Mx": 0,
+            "My": 0,
+            "Mz": 0
+          },
+          "action": "unfactored-gravity-only",
+          "transferToReceivers": "unresolved-plate/contact-distribution"
+        },
+        {
+          "id": "HAD/local-utility-contact/1-1/mineral-G",
+          "piece": {
+            "planMinMaxMm": [
+              9447,
+              479.5,
+              9750,
+              632.5
+            ],
+            "zMm": [
+              -180,
+              -30
+            ]
+          },
+          "originMm": [
+            9598.5,
+            556,
+            -180
+          ],
+          "wrenchKN_KNm": {
+            "Fx": 0,
+            "Fy": 0,
+            "Fz": -0.13907699999999998,
+            "Mx": 0,
+            "My": 0,
+            "Mz": 0
+          },
+          "action": "unfactored-gravity-only",
+          "transferToReceivers": "unresolved-plate/contact-distribution"
+        },
+        {
+          "id": "HAD/local-utility-contact/1-2/mineral-G",
+          "piece": {
+            "planMinMaxMm": [
+              9447,
+              632.5,
+              9750,
+              682.5
+            ],
+            "zMm": [
+              -180,
+              -30
+            ]
+          },
+          "originMm": [
+            9598.5,
+            657.5,
+            -180
+          ],
+          "wrenchKN_KNm": {
+            "Fx": 0,
+            "Fy": 0,
+            "Fz": -0.04545,
+            "Mx": 0,
+            "My": 0,
+            "Mz": 0
+          },
+          "action": "unfactored-gravity-only",
+          "transferToReceivers": "unresolved-plate/contact-distribution"
+        },
+        {
+          "id": "HAD/local-utility-contact/1-3/mineral-G",
+          "piece": {
+            "planMinMaxMm": [
+              9447,
+              682.5,
+              9750,
+              892.5
+            ],
+            "zMm": [
+              -180,
+              -30
+            ]
+          },
+          "originMm": [
+            9598.5,
+            787.5,
+            -180
+          ],
+          "wrenchKN_KNm": {
+            "Fx": 0,
+            "Fy": 0,
+            "Fz": -0.19089,
+            "Mx": 0,
+            "My": 0,
+            "Mz": 0
+          },
+          "action": "unfactored-gravity-only",
+          "transferToReceivers": "unresolved-plate/contact-distribution"
+        },
+        {
+          "id": "HAD/local-utility-contact/1-4/mineral-G",
+          "piece": {
+            "planMinMaxMm": [
+              9447,
+              892.5,
+              9750,
+              1492.5
+            ],
+            "zMm": [
+              -180,
+              -30
+            ]
+          },
+          "originMm": [
+            9598.5,
+            1192.5,
+            -180
+          ],
+          "wrenchKN_KNm": {
+            "Fx": 0,
+            "Fy": 0,
+            "Fz": -0.5454,
+            "Mx": 0,
+            "My": 0,
+            "Mz": 0
+          },
+          "action": "unfactored-gravity-only",
+          "transferToReceivers": "unresolved-plate/contact-distribution"
+        },
+        {
+          "id": "HAD/local-utility-contact/1-5/mineral-G",
+          "piece": {
+            "planMinMaxMm": [
+              9447,
+              1492.5,
+              9750,
+              2250
+            ],
+            "zMm": [
+              -180,
+              -30
+            ]
+          },
+          "originMm": [
+            9598.5,
+            1871.25,
+            -180
+          ],
+          "wrenchKN_KNm": {
+            "Fx": 0,
+            "Fy": 0,
+            "Fz": -0.6885675,
+            "Mx": 0,
+            "My": 0,
+            "Mz": 0
+          },
+          "action": "unfactored-gravity-only",
+          "transferToReceivers": "unresolved-plate/contact-distribution"
+        },
+        {
+          "id": "HAD/local-utility-contact/1-6/mineral-G",
+          "piece": {
+            "planMinMaxMm": [
+              9447,
+              2250,
+              9750,
+              2350
+            ],
+            "zMm": [
+              -180,
+              -30
+            ]
+          },
+          "originMm": [
+            9598.5,
+            2300,
+            -180
+          ],
+          "wrenchKN_KNm": {
+            "Fx": 0,
+            "Fy": 0,
+            "Fz": -0.0909,
+            "Mx": 0,
+            "My": 0,
+            "Mz": 0
+          },
+          "action": "unfactored-gravity-only",
+          "transferToReceivers": "unresolved-plate/contact-distribution"
+        },
+        {
+          "id": "HAD/local-utility-contact/1-7/mineral-G",
+          "piece": {
+            "planMinMaxMm": [
+              9447,
+              2350,
+              9750,
+              2403
+            ],
+            "zMm": [
+              -180,
+              -30
+            ]
+          },
+          "originMm": [
+            9598.5,
+            2376.5,
+            -180
+          ],
+          "wrenchKN_KNm": {
+            "Fx": 0,
+            "Fy": 0,
+            "Fz": -0.048177000000000005,
+            "Mx": 0,
+            "My": 0,
+            "Mz": 0
+          },
+          "action": "unfactored-gravity-only",
+          "transferToReceivers": "unresolved-plate/contact-distribution"
+        },
+        {
+          "id": "HAD/local-utility-contact/2-1/mineral-G",
+          "piece": {
+            "planMinMaxMm": [
+              9750,
+              479.5,
+              10507.5,
+              632.5
+            ],
+            "zMm": [
+              -180,
+              -30
+            ]
+          },
+          "originMm": [
+            10128.75,
+            556,
+            -180
+          ],
+          "wrenchKN_KNm": {
+            "Fx": 0,
+            "Fy": 0,
+            "Fz": -0.3476925,
+            "Mx": 0,
+            "My": 0,
+            "Mz": 0
+          },
+          "action": "unfactored-gravity-only",
+          "transferToReceivers": "unresolved-plate/contact-distribution"
+        },
+        {
+          "id": "HAD/local-utility-contact/2-2/mineral-G",
+          "piece": {
+            "planMinMaxMm": [
+              9750,
+              632.5,
+              10507.5,
+              682.5
+            ],
+            "zMm": [
+              -180,
+              -30
+            ]
+          },
+          "originMm": [
+            10128.75,
+            657.5,
+            -180
+          ],
+          "wrenchKN_KNm": {
+            "Fx": 0,
+            "Fy": 0,
+            "Fz": -0.11362499999999999,
+            "Mx": 0,
+            "My": 0,
+            "Mz": 0
+          },
+          "action": "unfactored-gravity-only",
+          "transferToReceivers": "unresolved-plate/contact-distribution"
+        },
+        {
+          "id": "HAD/local-utility-contact/2-6/mineral-G",
+          "piece": {
+            "planMinMaxMm": [
+              9750,
+              2250,
+              10507.5,
+              2350
+            ],
+            "zMm": [
+              -180,
+              -30
+            ]
+          },
+          "originMm": [
+            10128.75,
+            2300,
+            -180
+          ],
+          "wrenchKN_KNm": {
+            "Fx": 0,
+            "Fy": 0,
+            "Fz": -0.22724999999999998,
+            "Mx": 0,
+            "My": 0,
+            "Mz": 0
+          },
+          "action": "unfactored-gravity-only",
+          "transferToReceivers": "unresolved-plate/contact-distribution"
+        },
+        {
+          "id": "HAD/local-utility-contact/2-7/mineral-G",
+          "piece": {
+            "planMinMaxMm": [
+              9750,
+              2350,
+              10507.5,
+              2403
+            ],
+            "zMm": [
+              -180,
+              -30
+            ]
+          },
+          "originMm": [
+            10128.75,
+            2376.5,
+            -180
+          ],
+          "wrenchKN_KNm": {
+            "Fx": 0,
+            "Fy": 0,
+            "Fz": -0.12044250000000001,
+            "Mx": 0,
+            "My": 0,
+            "Mz": 0
+          },
+          "action": "unfactored-gravity-only",
+          "transferToReceivers": "unresolved-plate/contact-distribution"
+        },
+        {
+          "id": "HAD/local-utility-contact/3-1/mineral-G",
+          "piece": {
+            "planMinMaxMm": [
+              10507.5,
+              479.5,
+              11107.5,
+              632.5
+            ],
+            "zMm": [
+              -180,
+              -30
+            ]
+          },
+          "originMm": [
+            10807.5,
+            556,
+            -180
+          ],
+          "wrenchKN_KNm": {
+            "Fx": 0,
+            "Fy": 0,
+            "Fz": -0.27540000000000003,
+            "Mx": 0,
+            "My": 0,
+            "Mz": 0
+          },
+          "action": "unfactored-gravity-only",
+          "transferToReceivers": "unresolved-plate/contact-distribution"
+        },
+        {
+          "id": "HAD/local-utility-contact/3-2/mineral-G",
+          "piece": {
+            "planMinMaxMm": [
+              10507.5,
+              632.5,
+              11107.5,
+              682.5
+            ],
+            "zMm": [
+              -180,
+              -30
+            ]
+          },
+          "originMm": [
+            10807.5,
+            657.5,
+            -180
+          ],
+          "wrenchKN_KNm": {
+            "Fx": 0,
+            "Fy": 0,
+            "Fz": -0.09,
+            "Mx": 0,
+            "My": 0,
+            "Mz": 0
+          },
+          "action": "unfactored-gravity-only",
+          "transferToReceivers": "unresolved-plate/contact-distribution"
+        },
+        {
+          "id": "HAD/local-utility-contact/3-6/mineral-G",
+          "piece": {
+            "planMinMaxMm": [
+              10507.5,
+              2250,
+              11107.5,
+              2350
+            ],
+            "zMm": [
+              -180,
+              -30
+            ]
+          },
+          "originMm": [
+            10807.5,
+            2300,
+            -180
+          ],
+          "wrenchKN_KNm": {
+            "Fx": 0,
+            "Fy": 0,
+            "Fz": -0.18,
+            "Mx": 0,
+            "My": 0,
+            "Mz": 0
+          },
+          "action": "unfactored-gravity-only",
+          "transferToReceivers": "unresolved-plate/contact-distribution"
+        },
+        {
+          "id": "HAD/local-utility-contact/3-7/mineral-G",
+          "piece": {
+            "planMinMaxMm": [
+              10507.5,
+              2350,
+              11107.5,
+              2403
+            ],
+            "zMm": [
+              -180,
+              -30
+            ]
+          },
+          "originMm": [
+            10807.5,
+            2376.5,
+            -180
+          ],
+          "wrenchKN_KNm": {
+            "Fx": 0,
+            "Fy": 0,
+            "Fz": -0.09540000000000001,
+            "Mx": 0,
+            "My": 0,
+            "Mz": 0
+          },
+          "action": "unfactored-gravity-only",
+          "transferToReceivers": "unresolved-plate/contact-distribution"
+        },
+        {
+          "id": "HAD/local-utility-contact/4-1/mineral-G",
+          "piece": {
+            "planMinMaxMm": [
+              11107.5,
+              479.5,
+              11217.5,
+              632.5
+            ],
+            "zMm": [
+              -180,
+              -30
+            ]
+          },
+          "originMm": [
+            11162.5,
+            556,
+            -180
+          ],
+          "wrenchKN_KNm": {
+            "Fx": 0,
+            "Fy": 0,
+            "Fz": -0.05049000000000001,
+            "Mx": 0,
+            "My": 0,
+            "Mz": 0
+          },
+          "action": "unfactored-gravity-only",
+          "transferToReceivers": "unresolved-plate/contact-distribution"
+        },
+        {
+          "id": "HAD/local-utility-contact/4-2/mineral-G",
+          "piece": {
+            "planMinMaxMm": [
+              11107.5,
+              632.5,
+              11217.5,
+              682.5
+            ],
+            "zMm": [
+              -180,
+              -30
+            ]
+          },
+          "originMm": [
+            11162.5,
+            657.5,
+            -180
+          ],
+          "wrenchKN_KNm": {
+            "Fx": 0,
+            "Fy": 0,
+            "Fz": -0.0165,
+            "Mx": 0,
+            "My": 0,
+            "Mz": 0
+          },
+          "action": "unfactored-gravity-only",
+          "transferToReceivers": "unresolved-plate/contact-distribution"
+        },
+        {
+          "id": "HAD/local-utility-contact/4-6/mineral-G",
+          "piece": {
+            "planMinMaxMm": [
+              11107.5,
+              2250,
+              11217.5,
+              2350
+            ],
+            "zMm": [
+              -180,
+              -30
+            ]
+          },
+          "originMm": [
+            11162.5,
+            2300,
+            -180
+          ],
+          "wrenchKN_KNm": {
+            "Fx": 0,
+            "Fy": 0,
+            "Fz": -0.033,
+            "Mx": 0,
+            "My": 0,
+            "Mz": 0
+          },
+          "action": "unfactored-gravity-only",
+          "transferToReceivers": "unresolved-plate/contact-distribution"
+        },
+        {
+          "id": "HAD/local-utility-contact/4-7/mineral-G",
+          "piece": {
+            "planMinMaxMm": [
+              11107.5,
+              2350,
+              11217.5,
+              2403
+            ],
+            "zMm": [
+              -180,
+              -30
+            ]
+          },
+          "originMm": [
+            11162.5,
+            2376.5,
+            -180
+          ],
+          "wrenchKN_KNm": {
+            "Fx": 0,
+            "Fy": 0,
+            "Fz": -0.017490000000000002,
+            "Mx": 0,
+            "My": 0,
+            "Mz": 0
+          },
+          "action": "unfactored-gravity-only",
+          "transferToReceivers": "unresolved-plate/contact-distribution"
+        },
+        {
+          "id": "HAD/local-utility-contact/5-1/mineral-G",
+          "piece": {
+            "planMinMaxMm": [
+              11217.5,
+              479.5,
+              11520.5,
+              632.5
+            ],
+            "zMm": [
+              -180,
+              -30
+            ]
+          },
+          "originMm": [
+            11369,
+            556,
+            -180
+          ],
+          "wrenchKN_KNm": {
+            "Fx": 0,
+            "Fy": 0,
+            "Fz": -0.13907699999999998,
+            "Mx": 0,
+            "My": 0,
+            "Mz": 0
+          },
+          "action": "unfactored-gravity-only",
+          "transferToReceivers": "unresolved-plate/contact-distribution"
+        },
+        {
+          "id": "HAD/local-utility-contact/5-2/mineral-G",
+          "piece": {
+            "planMinMaxMm": [
+              11217.5,
+              632.5,
+              11520.5,
+              682.5
+            ],
+            "zMm": [
+              -180,
+              -30
+            ]
+          },
+          "originMm": [
+            11369,
+            657.5,
+            -180
+          ],
+          "wrenchKN_KNm": {
+            "Fx": 0,
+            "Fy": 0,
+            "Fz": -0.04545,
+            "Mx": 0,
+            "My": 0,
+            "Mz": 0
+          },
+          "action": "unfactored-gravity-only",
+          "transferToReceivers": "unresolved-plate/contact-distribution"
+        },
+        {
+          "id": "HAD/local-utility-contact/5-3/mineral-G",
+          "piece": {
+            "planMinMaxMm": [
+              11217.5,
+              682.5,
+              11520.5,
+              892.5
+            ],
+            "zMm": [
+              -180,
+              -30
+            ]
+          },
+          "originMm": [
+            11369,
+            787.5,
+            -180
+          ],
+          "wrenchKN_KNm": {
+            "Fx": 0,
+            "Fy": 0,
+            "Fz": -0.19089,
+            "Mx": 0,
+            "My": 0,
+            "Mz": 0
+          },
+          "action": "unfactored-gravity-only",
+          "transferToReceivers": "unresolved-plate/contact-distribution"
+        },
+        {
+          "id": "HAD/local-utility-contact/5-4/mineral-G",
+          "piece": {
+            "planMinMaxMm": [
+              11217.5,
+              892.5,
+              11520.5,
+              1492.5
+            ],
+            "zMm": [
+              -180,
+              -30
+            ]
+          },
+          "originMm": [
+            11369,
+            1192.5,
+            -180
+          ],
+          "wrenchKN_KNm": {
+            "Fx": 0,
+            "Fy": 0,
+            "Fz": -0.5454,
+            "Mx": 0,
+            "My": 0,
+            "Mz": 0
+          },
+          "action": "unfactored-gravity-only",
+          "transferToReceivers": "unresolved-plate/contact-distribution"
+        },
+        {
+          "id": "HAD/local-utility-contact/5-5/mineral-G",
+          "piece": {
+            "planMinMaxMm": [
+              11217.5,
+              1492.5,
+              11520.5,
+              2250
+            ],
+            "zMm": [
+              -180,
+              -30
+            ]
+          },
+          "originMm": [
+            11369,
+            1871.25,
+            -180
+          ],
+          "wrenchKN_KNm": {
+            "Fx": 0,
+            "Fy": 0,
+            "Fz": -0.6885675,
+            "Mx": 0,
+            "My": 0,
+            "Mz": 0
+          },
+          "action": "unfactored-gravity-only",
+          "transferToReceivers": "unresolved-plate/contact-distribution"
+        },
+        {
+          "id": "HAD/local-utility-contact/5-6/mineral-G",
+          "piece": {
+            "planMinMaxMm": [
+              11217.5,
+              2250,
+              11520.5,
+              2350
+            ],
+            "zMm": [
+              -180,
+              -30
+            ]
+          },
+          "originMm": [
+            11369,
+            2300,
+            -180
+          ],
+          "wrenchKN_KNm": {
+            "Fx": 0,
+            "Fy": 0,
+            "Fz": -0.0909,
+            "Mx": 0,
+            "My": 0,
+            "Mz": 0
+          },
+          "action": "unfactored-gravity-only",
+          "transferToReceivers": "unresolved-plate/contact-distribution"
+        },
+        {
+          "id": "HAD/local-utility-contact/5-7/mineral-G",
+          "piece": {
+            "planMinMaxMm": [
+              11217.5,
+              2350,
+              11520.5,
+              2403
+            ],
+            "zMm": [
+              -180,
+              -30
+            ]
+          },
+          "originMm": [
+            11369,
+            2376.5,
+            -180
+          ],
+          "wrenchKN_KNm": {
+            "Fx": 0,
+            "Fy": 0,
+            "Fz": -0.048177000000000005,
+            "Mx": 0,
+            "My": 0,
+            "Mz": 0
+          },
+          "action": "unfactored-gravity-only",
+          "transferToReceivers": "unresolved-plate/contact-distribution"
+        }
+      ],
+      "quantityBounds": {
+        "dryRcM3": 0.7976754500000001,
+        "mineralOnContactOnlyM3": 0.25321065000000004,
+        "glassM3": 0.39883772500000003,
+        "slabAndMineralWeightKN": 25.006099250000005,
+        "glassLinerCoversFramesFixturesAndUnknownPlinthWeightKN": null,
+        "floorCoverAndEquipmentTemporaryReactionsKN": null
+      },
+      "structuralJoin": {
+        "originMm": [
+          10483.75,
+          1441.25,
+          -180
+        ],
+        "reactionsAtColdGridAnd52Heads": null,
+        "replacingExistingFloorNotAutomaticallyAdded": true,
+        "requirement": "Remove original floor/mineral stock over the exact replaced polygon before adding this candidate. Preserve wall and exterior DPC/plinth. Solve actual local plate/contact and signed full wrenches on current grid; no centroid lump or head mapping invented."
+      },
+      "necessaryGeometryScreen": true,
+      "constructionAdmitted": false,
+      "diagnostics": [
+        "LOCAL_POCKET_SLAB_SPAN_EDGE_AND_CONTACT_RESISTANCE_UNQUALIFIED",
+        "LOCAL_POCKET_MINERAL_DRY_BEARING_AND_RETENTION_UNQUALIFIED",
+        "LOCAL_POCKET_STEP_THERMAL_AND_WATERPROOFING_UNQUALIFIED",
+        "LOCAL_POCKET_PERIMETER_FLOOR_BRIDGE_AND_LOADED_RENEWAL_UNQUALIFIED",
+        "LOCAL_POCKET_REPLACEMENT_ACTIONS_NOT_IN_52_HEAD_MODEL"
+      ]
+    },
+    "localPocketSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1280\" height=\"950\" viewBox=\"0 0 1280 950\"><rect width=\"1280\" height=\"950\" fill=\"#f5f1e6\"/><g font-family=\"Arial,sans-serif\" fill=\"#29271f\">\n<text x=\"40\" y=\"42\" font-size=\"26\">Local Utility245 · retained global530/65 · geometry reservation</text>\n<text x=\"40\" y=\"76\" font-size=\"15\">Same saved ground datum. No wall/roof/frame rise; no structural, thermal or waterproof admission.</text>\n<rect x=\"40\" y=\"155.77000000000004\" width=\"391.22999999999996\" height=\"364.22999999999996\" fill=\"#e8ddc7\" stroke=\"#46564f\"/><rect x=\"49\" y=\"164.77000000000004\" width=\"373.22999999999996\" height=\"346.22999999999996\" fill=\"#e7efeb\" stroke=\"#46564f\"/>\n<rect x=\"49\" y=\"483.46\" width=\"54.54\" height=\"27.54\" fill=\"#b1c0b5\" stroke=\"#46564f\"/><rect x=\"49\" y=\"474.46\" width=\"54.54\" height=\"9\" fill=\"#b1c0b5\" stroke=\"#46564f\"/><rect x=\"49\" y=\"436.65999999999997\" width=\"54.54\" height=\"37.8\" fill=\"#b1c0b5\" stroke=\"#46564f\"/><rect x=\"49\" y=\"328.65999999999997\" width=\"54.54\" height=\"108\" fill=\"#b1c0b5\" stroke=\"#46564f\"/><rect x=\"49\" y=\"192.31\" width=\"54.54\" height=\"136.35\" fill=\"#b1c0b5\" stroke=\"#46564f\"/><rect x=\"49\" y=\"174.31\" width=\"54.54\" height=\"18\" fill=\"#b1c0b5\" stroke=\"#46564f\"/><rect x=\"49\" y=\"164.77000000000004\" width=\"54.54\" height=\"9.54\" fill=\"#b1c0b5\" stroke=\"#46564f\"/><rect x=\"103.53999999999999\" y=\"483.46\" width=\"136.35\" height=\"27.54\" fill=\"#b1c0b5\" stroke=\"#46564f\"/><rect x=\"103.53999999999999\" y=\"474.46\" width=\"136.35\" height=\"9\" fill=\"#b1c0b5\" stroke=\"#46564f\"/><rect x=\"103.53999999999999\" y=\"174.31\" width=\"136.35\" height=\"18\" fill=\"#b1c0b5\" stroke=\"#46564f\"/><rect x=\"103.53999999999999\" y=\"164.77000000000004\" width=\"136.35\" height=\"9.54\" fill=\"#b1c0b5\" stroke=\"#46564f\"/><rect x=\"239.89\" y=\"483.46\" width=\"108\" height=\"27.54\" fill=\"#b1c0b5\" stroke=\"#46564f\"/><rect x=\"239.89\" y=\"474.46\" width=\"108\" height=\"9\" fill=\"#b1c0b5\" stroke=\"#46564f\"/><rect x=\"239.89\" y=\"174.31\" width=\"108\" height=\"18\" fill=\"#b1c0b5\" stroke=\"#46564f\"/><rect x=\"239.89\" y=\"164.77000000000004\" width=\"108\" height=\"9.54\" fill=\"#b1c0b5\" stroke=\"#46564f\"/><rect x=\"347.89\" y=\"483.46\" width=\"19.8\" height=\"27.54\" fill=\"#b1c0b5\" stroke=\"#46564f\"/><rect x=\"347.89\" y=\"474.46\" width=\"19.8\" height=\"9\" fill=\"#b1c0b5\" stroke=\"#46564f\"/><rect x=\"347.89\" y=\"174.31\" width=\"19.8\" height=\"18\" fill=\"#b1c0b5\" stroke=\"#46564f\"/><rect x=\"347.89\" y=\"164.77000000000004\" width=\"19.8\" height=\"9.54\" fill=\"#b1c0b5\" stroke=\"#46564f\"/><rect x=\"367.69\" y=\"483.46\" width=\"54.54\" height=\"27.54\" fill=\"#b1c0b5\" stroke=\"#46564f\"/><rect x=\"367.69\" y=\"474.46\" width=\"54.54\" height=\"9\" fill=\"#b1c0b5\" stroke=\"#46564f\"/><rect x=\"367.69\" y=\"436.65999999999997\" width=\"54.54\" height=\"37.8\" fill=\"#b1c0b5\" stroke=\"#46564f\"/><rect x=\"367.69\" y=\"328.65999999999997\" width=\"54.54\" height=\"108\" fill=\"#b1c0b5\" stroke=\"#46564f\"/><rect x=\"367.69\" y=\"192.31\" width=\"54.54\" height=\"136.35\" fill=\"#b1c0b5\" stroke=\"#46564f\"/><rect x=\"367.69\" y=\"174.31\" width=\"54.54\" height=\"18\" fill=\"#b1c0b5\" stroke=\"#46564f\"/><rect x=\"367.69\" y=\"164.77000000000004\" width=\"54.54\" height=\"9.54\" fill=\"#b1c0b5\" stroke=\"#46564f\"/>\n<text x=\"40\" y=\"560\" font-size=\"15\">Room2173.5 ×2023.5; perimeter separation50mm.</text>\n<text x=\"40\" y=\"590\" font-size=\"15\">Cold contact union1.688071m²; central slab span2.300306m².</text>\n<text x=\"40\" y=\"620\" font-size=\"15\">Green polygons are actual girders/caps, partitioned without overlap.</text>\n<text x=\"40\" y=\"650\" font-size=\"15\">Mineral only above those contacts; the200mm RC body spans between them.</text>\n<text x=\"40\" y=\"680\" font-size=\"15\">Perimeter gap is not a support: flush cover, tool and renewal reactions remain open.</text>\n<text x=\"600\" y=\"150\" font-size=\"19\">Retained global section</text><text x=\"920\" y=\"150\" font-size=\"19\">Local Utility section</text>\n<rect x=\"600\" y=\"515\" width=\"215\" height=\"75\" fill=\"#c5b08a\" stroke=\"#665e4c\"/><rect x=\"600\" y=\"415\" width=\"215\" height=\"100\" fill=\"#afbfb7\" stroke=\"#665e4c\"/><rect x=\"600\" y=\"365\" width=\"215\" height=\"50\" fill=\"#e5cc8a\" stroke=\"#665e4c\"/><rect x=\"600\" y=\"332.5\" width=\"215\" height=\"32.5\" fill=\"#d9e7ea\" stroke=\"#665e4c\"/><rect x=\"600\" y=\"325\" width=\"215\" height=\"7.5\" fill=\"#c09a77\" stroke=\"#665e4c\"/>\n<rect x=\"920\" y=\"605\" width=\"215\" height=\"75\" fill=\"#c5b08a\" stroke=\"#665e4c\"/><rect x=\"920\" y=\"505\" width=\"215\" height=\"100\" fill=\"#afbfb7\" stroke=\"#665e4c\"/><rect x=\"920\" y=\"455\" width=\"215\" height=\"50\" fill=\"#e5cc8a\" stroke=\"#665e4c\"/><rect x=\"920\" y=\"332.5\" width=\"215\" height=\"122.5\" fill=\"#d9e7ea\" stroke=\"#665e4c\"/><rect x=\"920\" y=\"325\" width=\"215\" height=\"7.5\" fill=\"#c09a77\" stroke=\"#665e4c\"/>\n<rect x=\"600\" y=\"590\" width=\"215\" height=\"90\" fill=\"#949c95\" stroke=\"#665e4c\"/>\n<rect x=\"600\" y=\"680\" width=\"535\" height=\"30\" fill=\"#718c7e\" stroke=\"#665e4c\"/>\n<line x1=\"580\" y1=\"325\" x2=\"1155\" y2=\"325\" stroke=\"#332b20\" stroke-width=\"3\"/>\n<path d=\"M855 680 V365\" fill=\"none\" stroke=\"#bb8335\" stroke-width=\"12\" stroke-dasharray=\"7 5\"/>\n<text x=\"600\" y=\"205\" font-size=\"17\">FFL530; finish515–530.</text>\n<text x=\"600\" y=\"245\" font-size=\"15\">Brown mineral; gray RC; gold glass; blue service.</text>\n<text x=\"600\" y=\"725\" font-size=\"15\">Local mineral-180–-30; RC-30–170; glass170–270.</text>\n<text x=\"600\" y=\"755\" font-size=\"15\">Local service270–515; cold-grid top-180.</text>\n<text x=\"600\" y=\"790\" font-size=\"15\">Diagram separates sections; horizontal gap is schematic.</text>\n<text x=\"40\" y=\"835\" font-size=\"17\">Retain wall/exterior DPC0..150 and plinth. Local mineral-180..-30 stays separate.</text>\n<text x=\"40\" y=\"870\" font-size=\"15\">No thermal bridge coefficient, local plate/contact capacity, waterproof junction or installed outlet qualification is inferred.</text>\n<text x=\"40\" y=\"910\" font-size=\"15\">Source-only drain route, retained furniture and actual wall ports are shown in the accompanying room catchment receipt.</text>\n</g></svg>",
+    "retainedGlobalDistributionMm": [
+      450,
+      515
+    ],
+    "wetFloorPlanMm": [
+      9397,
+      429.5,
+      2173.5,
+      2023.5
+    ],
+    "retainedRoom": {
+      "furniture": {
+        "service-emitter-utility-E": [
+          11370.5,
+          1778,
+          200,
+          650
+        ],
+        "service-utility-washer": [
+          10076,
+          800,
+          598,
+          600
+        ],
+        "service-utility-sink": [
+          10935,
+          740,
+          600,
+          600
+        ],
+        "service-utility-rearServiceChase": [
+          10050,
+          450,
+          1500,
+          250
+        ],
+        "service-utility-valveBay": [
+          10700,
+          700,
+          235,
+          700
+        ]
+      },
+      "northOpeningXMm": [
+        10150,
+        11050
+      ],
+      "purgeBodyMm": [
+        9725,
+        754.5
+      ]
+    },
+    "settings": {
+      "utilityApertureNominalMm": 6.5,
+      "plantApertureNominalMm": 10.4,
+      "apertureToleranceMm": 0.1,
+      "sourceMaximumTotalBar": 9,
+      "sourceMinimumDynamicBar": 3.5,
+      "requiredUtilityLmin": 20,
+      "requiredPlantLmin": 45,
+      "requiredResidualBar": 1,
+      "utilityNetworkLossBar": 0.5,
+      "plantNetworkLossBar": 1,
+      "dischargeCoefficientComparison": 0.55,
+      "pressureRecoveryFractionComparison": 0,
+      "atmosphericMinimumBar": 0.9,
+      "atmosphericMaximumBar": 1.1,
+      "mainboardNorthOffsetMm": 250,
+      "mainboardBaseZMm": 900,
+      "utilityPortalShiftXMm": -100,
+      "shieldStandOffMm": 100,
+      "shieldVerticalInsetMm": 50,
+      "frameLowerConnectionZMm": 1100,
+      "frameAnchorOffsetMm": 89.5,
+      "plantTransferZMm": 2235,
+      "catchmentClearWidthMm": 400,
+      "catchmentClearHeightMm": 150,
+      "catchmentPocketDepthMm": 245,
+      "catchmentIsolationGapMm": 50,
+      "catchmentInvertAboveDistributionMm": 55,
+      "catchmentReceiverWidthMm": 400,
+      "catchmentReceiverCrestAboveGradeMm": 0
+    },
+    "sourceOnlyEvent": {
+      "maximumCombinedLmin": 327.403857,
+      "storedInventoryIncluded": false,
+      "scope": "Both restricted cold branches together; one complete outlet unavailable and half the surviving width blocked, plus32mm bed deposit.",
+      "hydraulic": {
+        "validDepth": true,
+        "requiredHeadAboveInvertMm": 127.25648368450231,
+        "criticalDepthMm": 42.336214970889905,
+        "maximumWaterDepthMm": 103,
+        "control": "critical-inlet-supercritical-chute",
+        "criticalFrictionSlope": 0.010139924780061496,
+        "actualBedSlope": 0.02,
+        "chargedFrictionHeadMm": 0,
+        "survivingClearWidthMm": 200,
+        "velocityAtControlMps": 0.6444519135392727,
+        "openEntryHeadReserveMm": 7.743516315497686,
+        "necessaryOpenChannelScreen": true,
+        "entranceKComparison": 1.5,
+        "entranceKMaximumBeforeOpenEntryFailure": 1.8658105156931049,
+        "entranceKCeilingQualified": false
+      },
+      "availableHeadMm": 190,
+      "headReserveMm": 62.743516315497686,
+      "receiverWaterMm": -77.91802752167762,
+      "raisedCrestAdverseMm": 32,
+      "receiverCoefficientComparison": 1.7,
+      "receiverCoefficientQualified": false,
+      "freeDropReserveMm": 334.3280275216776,
+      "necessarySourceOnlyScreen": true
+    },
+    "route": {
+      "clearMm": [
+        400,
+        150
+      ],
+      "insulationEachSideMm": 20,
+      "metalEachSideMm": 2,
+      "wholeOuterMm": [
+        444,
+        194
+      ],
+      "outerZMm": [
+        303,
+        497
+      ],
+      "bottomAfterSettingMm": 7.410000000000025,
+      "topAfterSettingMm": 8,
+      "fitsActualDistributionZone": true,
+      "lengthMm": 1679.5,
+      "slopeRatio": 50,
+      "dpcVerticalReserveMm": 137.41000000000003,
+      "exteriorWallDpcMm": [
+        0,
+        150
+      ],
+      "wallOutletBelowAfterSettingMm": 277.41,
+      "outlets": [
+        {
+          "id": "HAD/utility-floor-outfall-1",
+          "newWallApertureMm": [
+            9418,
+            -90,
+            287.41,
+            444,
+            519.5,
+            204.39
+          ],
+          "inletMm": [
+            9640,
+            689.5,
+            325
+          ],
+          "terminalMm": [
+            9640,
+            -990,
+            291.40999999999997
+          ],
+          "dischargeWidthMm": 400,
+          "receiverCrestMm": -118,
+          "receiverWaterMm": -77.91802752167762,
+          "sharesD2OrRoofReceiver": false,
+          "structuralOpeningAdmitted": false,
+          "localFloorBodyWestOverhangMm": 29,
+          "localFloorBodyEastOverhangMm": 0,
+          "pipeSeatsAndPerimeterCrossingQualified": false
+        },
+        {
+          "id": "HAD/utility-floor-outfall-2",
+          "newWallApertureMm": [
+            9938,
+            -90,
+            287.41,
+            444,
+            519.5,
+            204.39
+          ],
+          "inletMm": [
+            10160,
+            689.5,
+            325
+          ],
+          "terminalMm": [
+            10160,
+            -990,
+            291.40999999999997
+          ],
+          "dischargeWidthMm": 400,
+          "receiverCrestMm": -118,
+          "receiverWaterMm": -77.91802752167762,
+          "sharesD2OrRoofReceiver": false,
+          "structuralOpeningAdmitted": false,
+          "localFloorBodyWestOverhangMm": 0,
+          "localFloorBodyEastOverhangMm": 0,
+          "pipeSeatsAndPerimeterCrossingQualified": false
+        }
+      ],
+      "actualApertureOrFloorSupportApproval": false
+    },
+    "room": {
+      "floorLipAboveFflMm": 0,
+      "pressurePoolIsBelowFlushRemovableFloor": true,
+      "normalFloorAndCoverSupportResolved": false,
+      "panMaterial": "2mm copper comparison; seams, corrosion, touch/jet protection and complete material admission remain open",
+      "flatPanSheetOnlyKg": 78.81354432,
+      "upstandsSeamsGratesAndStandsKg": null,
+      "grossBelowFloorPoolDepthMm": 205,
+      "grossUndisplacedBelowFloorPoolLitres": 901.60583625,
+      "maximumGrossPoolWaterKg": 901.60583625,
+      "assuredAvailableStorageLitres": null,
+      "optimisticGrossBothBlockedTimeToFloorSeconds": 165.22820064089836,
+      "bothBlockedVerdict": "reject-unattended-event",
+      "manualResponseCredited": false,
+      "retainedWasherOrElectricalEquipmentSprayRated": false,
+      "loadTransferAnd52HeadsSolved": false
+    },
+    "maintenance": {
+      "pressureNetworkSupportIndependentOfPan": "required-not-proved",
+      "commonPanRenewal": "Close BOTH Lodge and indoor cold cuts, isolate/drain actual hot store and upper network, verify zero energy, then release supported retained ends. No live-sibling credit with common pan open.",
+      "normalBranchIsolation": "Independent Lodge and indoor cuts remain required; appliance stop is not the house cut.",
+      "floorPanRenewal": "All fixtures and removable floor/seat assemblies over pan must be removed on proved dry rests; full-room pan export and reinstatement remain unproved.",
+      "failureInventory": "Actual cylinder, expansion and upper-network release is unbounded here. No catalogue/minimum litres or aperture is used as its maximum."
+    },
+    "methodReferences": [
+      "https://www.fhwa.dot.gov/publications/research/infrastructure/hydraulics/06138/chapt3.cfm",
+      "https://www.txdot.gov/manuals/des/hyd/chapter-8--culverts/section-3--hydraulic-operation-of-culverts/direct-step-backwater-method.html"
+    ],
+    "diagnostics": [
+      "LOCAL_POCKET_SLAB_SPAN_EDGE_AND_CONTACT_RESISTANCE_UNQUALIFIED",
+      "LOCAL_POCKET_MINERAL_DRY_BEARING_AND_RETENTION_UNQUALIFIED",
+      "LOCAL_POCKET_STEP_THERMAL_AND_WATERPROOFING_UNQUALIFIED",
+      "LOCAL_POCKET_PERIMETER_FLOOR_BRIDGE_AND_LOADED_RENEWAL_UNQUALIFIED",
+      "LOCAL_POCKET_REPLACEMENT_ACTIONS_NOT_IN_52_HEAD_MODEL",
+      "INLET_FLOOR_RECEIVER_COEFFICIENT_AND_FULL_PLAN_UNQUALIFIED",
+      "INLET_FLOOR_NEW_WALL_OPENINGS_NOT_ADMITTED",
+      "INLET_FLOOR_COMMON_SITE_RECEIVING_NOT_ADMITTED",
+      "INLET_ROOM_STORED_RELEASE_UNBOUNDED",
+      "INLET_ROOM_PRESSURE_JET_AND_OPEN_DOOR_UNQUALIFIED",
+      "INLET_ROOM_WARM_OUTFALL_BOUNDARY_UNQUALIFIED",
+      "INLET_ROOM_PAN_SUPPORT_SEAMS_AND_MATERIALS_UNQUALIFIED",
+      "INLET_ROOM_ADDED_LOADS_NOT_IN_52_HEAD_MODEL"
+    ],
+    "preSiteArrangementComplete": false,
+    "sectionSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1080\" height=\"870\" viewBox=\"0 0 1080 870\"><rect width=\"1080\" height=\"870\" fill=\"#f5f1e6\"/><g font-family=\"Arial,sans-serif\" fill=\"#25221c\">\n<text x=\"35\" y=\"40\" font-size=\"25\">Utility whole-floor catchment · actual ground authority</text>\n<text x=\"35\" y=\"72\" font-size=\"15\">Source-only 327.4 L/min; actual stored release remains unbounded.</text>\n<text x=\"35\" y=\"104\" font-size=\"15\">Conditional room comparison. Flush floor; independent pressure supports and safe pan renewal still required.</text>\n<rect x=\"35\" y=\"165.77000000000004\" width=\"391.22999999999996\" height=\"364.22999999999996\" fill=\"#dce9e5\" stroke=\"#554f43\"/>\n<rect x=\"390.22999999999996\" y=\"170.27000000000004\" width=\"36\" height=\"117\" fill=\"#cbc5b5\" stroke=\"#554f43\"/><rect x=\"157.22\" y=\"355.31\" width=\"107.64\" height=\"108\" fill=\"#cbc5b5\" stroke=\"#554f43\"/><rect x=\"311.84\" y=\"366.11\" width=\"108\" height=\"108\" fill=\"#cbc5b5\" stroke=\"#554f43\"/><rect x=\"152.54\" y=\"481.31\" width=\"270\" height=\"45\" fill=\"#cbc5b5\" stroke=\"#554f43\"/><rect x=\"269.53999999999996\" y=\"355.31\" width=\"42.3\" height=\"126\" fill=\"#cbc5b5\" stroke=\"#554f43\"/>\n<line x1=\"170.54\" y1=\"165.77000000000004\" x2=\"332.53999999999996\" y2=\"165.77000000000004\" stroke=\"#f5f1e6\" stroke-width=\"8\"/>\n<circle cx=\"94.03999999999999\" cy=\"471.5\" r=\"54\" fill=\"none\" stroke=\"#906944\" stroke-dasharray=\"5 4\"/>\n<line x1=\"78.74\" y1=\"483.2\" x2=\"78.74\" y2=\"785.51\" stroke=\"#247b91\" stroke-width=\"7\"/><text x=\"33.739999999999995\" y=\"810.51\" font-size=\"13\">Outfall1</text><line x1=\"172.34\" y1=\"483.2\" x2=\"172.34\" y2=\"785.51\" stroke=\"#247b91\" stroke-width=\"7\"/><text x=\"127.34\" y=\"810.51\" font-size=\"13\">Outfall2</text>\n<text x=\"35\" y=\"565\" font-size=\"15\">Retained washer/sink/heat and purge stance shown.</text><text x=\"35\" y=\"590\" font-size=\"15\">Blue routes BELOW floor; new structural wall ports.</text><text x=\"35\" y=\"840\" font-size=\"13\">Plan: floor and pressure supports are not borrowed from the retained furniture.</text>\n<text x=\"535\" y=\"155\" font-size=\"20\">Ground FFL530mm</text>\n<text x=\"535\" y=\"185\" font-size=\"15\">Accessible distribution270–515mm</text>\n<rect x=\"540\" y=\"396.75\" width=\"450\" height=\"134.75\" fill=\"#ded8ba\"/>\n<rect x=\"580\" y=\"406.65\" width=\"320\" height=\"106.7\" fill=\"#97bcc5\" stroke=\"#173a44\"/>\n<line x1=\"520\" y1=\"388.5\" x2=\"1010\" y2=\"388.5\" stroke=\"#25221c\" stroke-width=\"3\"/>\n<text x=\"535\" y=\"480\" font-size=\"15\">Full insulated route303–497mm at inlet.</text>\n<text x=\"535\" y=\"510\" font-size=\"15\">Top/bottom after setting:8.0/7.4mm.</text>\n<text x=\"535\" y=\"550\" font-size=\"15\">Pool-head reserve:62.7mm.</text>\n<text x=\"535\" y=\"580\" font-size=\"15\">Open-entry reserve:7.7mm at assumedK1.5.</text>\n<text x=\"535\" y=\"620\" font-size=\"15\">Neither entrance coefficient nor tailwater is qualified.</text>\n<text x=\"535\" y=\"660\" font-size=\"15\">No concealed-fabric opening or warm outlet is admitted.</text>\n<text x=\"535\" y=\"700\" font-size=\"15\">Whole pan water, covers and supports need load transfer.</text>\n<text x=\"535\" y=\"740\" font-size=\"15\">No raised threshold, guaranteed response or storage credit.</text>\n<text x=\"535\" y=\"790\" font-size=\"17\">13 explicit diagnostics retained. HAD remains open.</text>\n</g></svg>"
+  },
+  "houseAdopted": false,
+  "physicalInstallationAdmitted": false
+}

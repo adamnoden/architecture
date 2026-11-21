@@ -14,19 +14,23 @@ import { criticalHalfRoundFlow, receiverWeirHeadMm, reliefEntranceHeadMm, solveH
 export const inletSourceEnvelopeFields = ['utilityApertureNominalMm', 'plantApertureNominalMm', 'apertureToleranceMm', 'sourceMaximumTotalBar',
   'sourceMinimumDynamicBar', 'requiredUtilityLmin', 'requiredPlantLmin', 'requiredResidualBar', 'utilityNetworkLossBar', 'plantNetworkLossBar',
   'dischargeCoefficientComparison', 'pressureRecoveryFractionComparison', 'atmosphericMinimumBar', 'atmosphericMaximumBar', 'mainboardNorthOffsetMm', 'mainboardBaseZMm', 'utilityPortalShiftXMm', 'shieldStandOffMm', 'shieldVerticalInsetMm', 'frameLowerConnectionZMm', 'frameAnchorOffsetMm', 'plantTransferZMm', 'catchmentClearWidthMm', 'catchmentClearHeightMm',
-  'catchmentInvertAboveDistributionMm', 'catchmentReceiverWidthMm', 'catchmentReceiverCrestAboveGradeMm'] as const
+  'catchmentPocketDepthMm', 'catchmentIsolationGapMm', 'catchmentInvertAboveDistributionMm', 'catchmentReceiverWidthMm', 'catchmentReceiverCrestAboveGradeMm'] as const
 export type InletSourceEnvelopeSettings = Readonly<Record<typeof inletSourceEnvelopeFields[number], number>>
 export const readInletSourceEnvelopeSettings = (): InletSourceEnvelopeSettings => ({ utilityApertureNominalMm: 6.5, plantApertureNominalMm: 10.2,
   apertureToleranceMm: .1, sourceMaximumTotalBar: 9, sourceMinimumDynamicBar: 3.5, requiredUtilityLmin: 20, requiredPlantLmin: 45,
   requiredResidualBar: 1, utilityNetworkLossBar: .5, plantNetworkLossBar: 1, dischargeCoefficientComparison: .55,
   pressureRecoveryFractionComparison: 0, atmosphericMinimumBar: .9, atmosphericMaximumBar: 1.1, mainboardNorthOffsetMm: 250, mainboardBaseZMm: 900, utilityPortalShiftXMm: -100, shieldStandOffMm: 100, shieldVerticalInsetMm: 50, frameLowerConnectionZMm: 1100, frameAnchorOffsetMm: 89.5, plantTransferZMm: 2235, catchmentClearWidthMm: 400, catchmentClearHeightMm: 150,
-  catchmentInvertAboveDistributionMm: 60, catchmentReceiverWidthMm: 400, catchmentReceiverCrestAboveGradeMm: 0 })
+  catchmentPocketDepthMm: 0, catchmentIsolationGapMm: 50, catchmentInvertAboveDistributionMm: 60, catchmentReceiverWidthMm: 400, catchmentReceiverCrestAboveGradeMm: 0 })
+/** Authored coordinated comparison; no house/source adoption. Ground remains530/65. */
+export const readLocalUtilityPocketSettings = (): InletSourceEnvelopeSettings => ({ ...readInletSourceEnvelopeSettings(),
+  catchmentPocketDepthMm: 245, catchmentIsolationGapMm: 50, catchmentInvertAboveDistributionMm: 55, plantApertureNominalMm: 10.4 })
 const paths = ['project/had/studies/south-inlet-under-sill.json', 'project/had/studies/south-inlet-wet-box.json',
   'project/had/studies/south-inlet-relief.json', 'project/had/studies/south-utility-inlet.json',
   'project/had/studies/current-house-services.json', 'project/mat/studies/whole-house-service-baseline.json',
-  'project/ias/studies/utility-first-release.json', 'project/had/studies/boundary-service-lodge.json'] as const
+  'project/ias/studies/utility-first-release.json', 'project/had/studies/boundary-service-lodge.json', 'project/str/studies/current-house-grid.json'] as const
 const methodPaths = ['compiler/reference-house/current-design/inlet-source-envelope.ts',
   'compiler/reference-house/current-design/inlet-room-catchment.ts',
+  'compiler/reference-house/current-design/inlet-room-pocket.ts',
   'compiler/reference-house/current-design/inlet-electrical-screen.ts',
   'compiler/reference-house/current-design/inlet-screen-frame.ts',
   'compiler/reference-house/current-design/inlet-fixed-receiver.ts',
@@ -59,7 +63,7 @@ function binding(resolved: CurrentDesignResolution) {
 export function readInletSourceEnvelopeCase(resolved: CurrentDesignResolution) {
   const b = binding(resolved)
   return { schema: 'had-inlet-source-envelope-request/1' as const, design: resolved.design,
-    sourceEnvelope: { schema: 'had-inlet-source-envelope-case/5' as const, planDigest: b.planDigest,
+    sourceEnvelope: { schema: 'had-inlet-source-envelope-case/6' as const, planDigest: b.planDigest,
       bindingDigest: b.bindingDigest, settings: readInletSourceEnvelopeSettings() } }
 }
 function settings(value: unknown): InletSourceEnvelopeSettings {
@@ -77,6 +81,7 @@ function settings(value: unknown): InletSourceEnvelopeSettings {
     || s.mainboardBaseZMm < 300 || s.mainboardBaseZMm > 2700
     || s.mainboardNorthOffsetMm < -100 || s.mainboardNorthOffsetMm > 400 || s.plantTransferZMm < 2100 || s.plantTransferZMm > 2600
     || s.catchmentClearWidthMm < 150 || s.catchmentClearWidthMm > 450 || s.catchmentClearHeightMm < 60 || s.catchmentClearHeightMm > 250
+    || s.catchmentPocketDepthMm < 0 || s.catchmentPocketDepthMm > 350 || s.catchmentIsolationGapMm < 25 || s.catchmentIsolationGapMm > 100
     || s.catchmentInvertAboveDistributionMm < 30 || s.catchmentInvertAboveDistributionMm > 200
     || s.catchmentReceiverWidthMm < 300 || s.catchmentReceiverWidthMm > 800 || s.catchmentReceiverCrestAboveGradeMm < -500 || s.catchmentReceiverCrestAboveGradeMm > 1000
     || s.requiredUtilityLmin < 18 || s.requiredPlantLmin < 44 || s.atmosphericMinimumBar < .5 || s.atmosphericMaximumBar > 1.5 || s.atmosphericMinimumBar > s.atmosphericMaximumBar) throw new Error('Inlet source settings exceed the comparison domain')
@@ -88,7 +93,7 @@ export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, in
   if (!input || typeof input !== 'object' || Array.isArray(input)
     || Object.keys(input).length !== 4 || !['schema', 'planDigest', 'bindingDigest', 'settings'].every(key => Object.hasOwn(input, key))) throw new Error('Versioned source-bound inlet source-envelope case required')
   const v = input as Record<string, unknown>
-  if (v.schema !== 'had-inlet-source-envelope-case/5' || v.planDigest !== b.planDigest || v.bindingDigest !== b.bindingDigest) throw new Error('Stale inlet source-envelope source, design or method')
+  if (v.schema !== 'had-inlet-source-envelope-case/6' || v.planDigest !== b.planDigest || v.bindingDigest !== b.bindingDigest) throw new Error('Stale inlet source-envelope source, design or method')
   const s = settings(v.settings), native = b.data[paths[0]], wet = b.data[paths[1]], relief = b.data[paths[2]], inlet = b.data[paths[3]], services = b.data[paths[4]]
   const groundDatumLiftMm = ground?.native.levelsMm.ffl ?? 0, groundDatumLiftBar = groundDatumLiftMm * 9.80665e-5,
     deliveryAtRoomDatumBar = s.sourceMinimumDynamicBar - groundDatumLiftBar,
@@ -165,7 +170,7 @@ export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, in
     const joinedDirection = joinedServiceDirection(resolved, b, s, branches, absoluteMaximumBar),
     roomCatchment = runInletRoomCatchment(resolved, ground, maximumCombinedLmin, { planMm: joinedDirection.room.wetUtilityPlanMm,
       rawWindowXMm: joinedDirection.room.southWindowOpeningXMm, retainedFurniture: joinedDirection.room.retainedFurniture,
-      northOpeningXMm: joinedDirection.room.northOpeningXMm, purgeBodyMm: joinedDirection.room.purge.body, wallFacesYMm: [native.branches[0].bores[0].outer[1], native.branches[0].bores[0].inner[1]] }, s)
+      northOpeningXMm: joinedDirection.room.northOpeningXMm, purgeBodyMm: joinedDirection.room.purge.body, wallFacesYMm: [native.branches[0].bores[0].outer[1], native.branches[0].bores[0].inner[1]] }, s, b.data['project/str/studies/current-house-grid.json'])
   const states = [
     { id: 'plant-stored-water-backflow', sourceFed: false, eachLmin: null, result: 'actual-factory-release-model-required', obligation: 'Catalogue/minimum litres are not maximum inventory. Model actual store/expansion/upper-pipe pressure, nonreturn and anti-vacuum states; the Lodge aperture does not bound this release.' },
     { id: 'utility-crossfeed-from-plant', sourceFed: true, eachLmin: null, result: 'retire-cold-link-and-separate-pillar-taps', obligation: 'Retire the original Plant-fed Utility cold link and exclude mixer crossconnection using actual independent air-gapped taps. No invented nonreturn protection.' },
@@ -184,7 +189,7 @@ export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, in
     { id: 'wall-spool-renewal-inward-and-outward', sourceFed: false, eachLmin: 0, result: 'retained-pan-inward-conflict-not-discharged', obligation: 'The prior permanent-pan and ordinary operator/tool/rest conflicts remain. New room geometry must prove both actual extraction directions or explicitly reject one with a complete ordinary alternative.' },
     { id: 'frost-or-loss-of-warmth', sourceFed: false, eachLmin: null, result: 'whole-route-thermal-proof-required', obligation: 'Restriction, Lodge, spool and room drains must stay serviceable through the declared cold event. Permanent open spill slots do not establish a warm enclosure; no trace heating, antifreeze or moving flap is invented.' },
   ]
-  const result = { schema: 'had-inlet-source-envelope-result/5' as const, state: 'existing-whole-arrangement-rejected' as const,
+  const result = { schema: 'had-inlet-source-envelope-result/6' as const, state: 'existing-whole-arrangement-rejected' as const,
     source: { planDigest: b.planDigest, bindingDigest: b.bindingDigest, inputs: b.inputs, methods: b.methods }, settings: s,
     bound: { method: 'Incompressible energy comparison Q<=A sqrt(2 p_total_absolute/rho), Cd<=1, local pressure>=0absolute; recovery/cavitation qualification remains required.',
       maximumAbsoluteTotalBar: absoluteMaximumBar, minimumThroatAbsoluteBarForUpperBound: 0,

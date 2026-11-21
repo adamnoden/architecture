@@ -1,9 +1,12 @@
 import { sha256SemanticFingerprint } from '../../core/identity.js'
 import type { CurrentDesignResolution } from './resolve.js'
 import { runGroundSectionCase } from './structural-ground.js'
+import { inletRoomPocket, drawInletRoomPocket } from './inlet-room-pocket.js'
 
 type Ground = ReturnType<typeof runGroundSectionCase>
 export type RoomCatchmentSettings = {
+  catchmentPocketDepthMm: number
+  catchmentIsolationGapMm: number
   catchmentClearWidthMm: number
   catchmentClearHeightMm: number
   catchmentInvertAboveDistributionMm: number
@@ -44,7 +47,7 @@ export function rectangularCatchmentScreen(qLmin: number, clearWidthMm: number, 
 }
 
 export function runInletRoomCatchment(resolved: CurrentDesignResolution, ground: Ground | undefined,
-  maximumSourceLmin: number, room: { planMm: readonly number[]; rawWindowXMm: readonly number[]; wallFacesYMm: readonly number[]; retainedFurniture: Record<string, readonly number[]>; northOpeningXMm: readonly number[]; purgeBodyMm: readonly number[] }, settings: RoomCatchmentSettings) {
+  maximumSourceLmin: number, room: { planMm: readonly number[]; rawWindowXMm: readonly number[]; wallFacesYMm: readonly number[]; retainedFurniture: Record<string, readonly number[]>; northOpeningXMm: readonly number[]; purgeBodyMm: readonly number[] }, settings: RoomCatchmentSettings, grid: Parameters<typeof inletRoomPocket>[0]['grid']) {
   if (!ground) return { state: 'missing-ground-section' as const,
     diagnostics: ['INLET_ROOM_CATCHMENT_REQUIRES_SAVED_GROUND_SECTION'], selected: false as const }
   if (room.planMm.length !== 4 || room.rawWindowXMm.length !== 2 || room.wallFacesYMm.length !== 2
@@ -59,8 +62,14 @@ export function runInletRoomCatchment(resolved: CurrentDesignResolution, ground:
     if (!Array.isArray(v) || v.length !== 2 || !v.every(Number.isFinite) || v[0] >= v[1]) throw new Error('Unsupported inlet catchment ground interval: ' + key)
     return [v[0], v[1]]
   }
-  const distribution = pair('accessibleDistribution'), finish = pair('finish'), mineral = pair('mineralCourse'),
-    ffl = ground.native.levelsMm.ffl, grade = levels.authoredExteriorGrade as number
+  const globalDistribution = pair('accessibleDistribution'), finish = pair('finish'), globalMineral = pair('mineralCourse'),
+    ffl = ground.native.levelsMm.ffl, grade = levels.authoredExteriorGrade as number,
+    pocket = inletRoomPocket({ levels: { mineralCourse: globalMineral, dryRC: pair('dryRC'), glass: pair('glass'),
+      accessibleDistribution: globalDistribution, finish, ffl, coldGridTop: levels.coldGridTop as number },
+      roomPlanMm: room.planMm, depthMm: settings.catchmentPocketDepthMm, isolationGapMm: settings.catchmentIsolationGapMm, grid,
+      rcDensityKNm3: (ground.authoredCase.settings as Record<string, number>).rcDensityKNm3,
+      mineralDensityKNm3: (ground.authoredCase.settings as Record<string, number>).mineralDensityBudgetKNm3 }),
+    distribution = pocket.levels.accessibleDistribution, mineral = pocket.levels.mineralCourse
   if (!Number.isFinite(grade) || finish[1] !== ffl || finish[0] !== distribution[1]) throw new Error('Unsupported inlet catchment ground datum')
   const [x, y, width, depth] = room.planMm, [windowLo, windowHi] = room.rawWindowXMm,
     [wallOuterY, wallInnerY] = room.wallFacesYMm, wallDepth = wallInnerY - wallOuterY,
@@ -84,8 +93,12 @@ export function runInletRoomCatchment(resolved: CurrentDesignResolution, ground:
       newWallApertureMm: [axisX - outerWidth / 2, wallOuterY, outerBottom - (wallDepth + 260) / fallRatio, outerWidth, wallDepth, outerTop - outerBottom + wallDepth / fallRatio],
       inletMm: [axisX, y + 260, invert], terminalMm: [axisX, y + 260 - length, terminalInvert],
       dischargeWidthMm: settings.catchmentReceiverWidthMm, receiverCrestMm: receiverCrest,
-      receiverWaterMm: receiverWater, sharesD2OrRoofReceiver: false, structuralOpeningAdmitted: false }))
+      receiverWaterMm: receiverWater, sharesD2OrRoofReceiver: false, structuralOpeningAdmitted: false,
+      localFloorBodyWestOverhangMm: pocket.local ? Math.max(0, pocket.local.bodyMinMaxMm[0] - (axisX - outerWidth / 2)) : null,
+      localFloorBodyEastOverhangMm: pocket.local ? Math.max(0, axisX + outerWidth / 2 - pocket.local.bodyMinMaxMm[2]) : null,
+      pipeSeatsAndPerimeterCrossingQualified: false }))
   const diagnostics = [
+    ...(pocket.local?.diagnostics ?? []),
     ...(bottomReserve < 0 || topReserve < 0 ? ['INLET_FLOOR_ROUTE_EXCEEDS_ACTUAL_DISTRIBUTION_ZONE'] : []),
     ...(!hydraulic.necessaryOpenChannelScreen || headReserve < 0 ? ['INLET_FLOOR_SINGLE_SURVIVING_OUTLET_SCREEN_FAILS'] : []),
     ...(freeDrop < 0 ? ['INLET_FLOOR_RECEIVER_TAILWATER_SCREEN_FAILS'] : []),
@@ -100,6 +113,7 @@ export function runInletRoomCatchment(resolved: CurrentDesignResolution, ground:
     groundAuthority: { caseId: ground.source.caseId, caseDigest: ground.source.caseDigest,
       resultDigest: sha256SemanticFingerprint(ground), planDigest: ground.source.planDigest },
     levelsMm: { ffl, distribution, finish, mineralCourse: mineral, exteriorGrade: grade },
+    localPocket: pocket.local, localPocketSvg: pocket.local ? drawInletRoomPocket(pocket.local) : null, retainedGlobalDistributionMm: globalDistribution,
     wetFloorPlanMm: [x, y, width, depth], retainedRoom: { furniture: room.retainedFurniture, northOpeningXMm: room.northOpeningXMm, purgeBodyMm: room.purgeBodyMm }, settings,
     sourceOnlyEvent: { maximumCombinedLmin: maximumSourceLmin, storedInventoryIncluded: false,
       scope: 'Both restricted cold branches together; one complete outlet unavailable and half the surviving width blocked, plus32mm bed deposit.',
@@ -110,7 +124,8 @@ export function runInletRoomCatchment(resolved: CurrentDesignResolution, ground:
       insulationEachSideMm: insulation, metalEachSideMm: metal, wholeOuterMm: [outerWidth, outerTop - outerBottom],
       outerZMm: [outerBottom, outerTop], bottomAfterSettingMm: bottomReserve, topAfterSettingMm: topReserve,
       fitsActualDistributionZone: bottomReserve >= 0 && topReserve >= 0, lengthMm: length, slopeRatio: fallRatio,
-      dpcVerticalReserveMm: outerBottom - (wallDepth + 260) / fallRatio - mineral[1], outlets, actualApertureOrFloorSupportApproval: false },
+      dpcVerticalReserveMm: outerBottom - (wallDepth + 260) / fallRatio - globalMineral[1],
+      exteriorWallDpcMm: globalMineral, wallOutletBelowAfterSettingMm: outerBottom - (wallDepth + 260) / fallRatio - allowance, outlets, actualApertureOrFloorSupportApproval: false },
     room: { floorLipAboveFflMm: 0, pressurePoolIsBelowFlushRemovableFloor: true, normalFloorAndCoverSupportResolved: false,
       panMaterial: '2mm copper comparison; seams, corrosion, touch/jet protection and complete material admission remain open',
       flatPanSheetOnlyKg: panMassKg, upstandsSeamsGratesAndStandsKg: null, grossBelowFloorPoolDepthMm: grossPoolDepthMm,
