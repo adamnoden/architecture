@@ -9,8 +9,8 @@
     "label": "convergence-water-20261121"
   },
   "claimedAt": "2026-11-21T19:48:28.453Z",
-  "heartbeatAt": "2026-11-21T20:10:57.591Z",
-  "expiresAt": "2026-11-21T20:55:57.591Z",
+  "heartbeatAt": "2026-11-21T20:36:45.788Z",
+  "expiresAt": "2026-11-21T21:21:45.788Z",
   "branch": "work/convergence-water-room-20261121",
   "predecessor": {
     "leaseId": "94d2339d-61ab-49db-96e2-66d5ed0ff6e4",
@@ -36,8 +36,8 @@
   },
   "pr": 1611,
   "checkpoint": {
-    "evidence": "PR1611 head03e9ac71/tree7f04d16c matches local e40bd684;16focused tests,tsc,repo,producercheck pass;actual SVG inspected. Below-source pressure now reaches both flow and jet actions.",
-    "next": "Require fresh03e9ac71 CI then canonical preflight and merge; releaseHAD and coordinate moved-main STR receipts.",
-    "blocker": "Fresh CI pending. HAD whole pressure/renewal/thermal/support/stored-release arrangement remains open; no coordinated house/material/owner/installed adoption."
+    "evidence": "PR1611 exacthead03e9ac71:ADE44944881094,PLT44944881135 and publication job44944881166 succeeded;fullhealth job136969970120 stillrunning at20:36Z.16focused tests,tsc,repo,producercheck pass;actualSVG inspected.",
+    "next": "Continue observing active exact-head fullhealth;on success run fresh merge-check then merge1611 and releaseHAD. RootSTR integration follows movedmain.",
+    "blocker": "Canonical fullhealth stillinprogress;live downloadablelogs404 until jobcompletion. No source,product,material,owner or installed adoption inferred."
   }
 }
