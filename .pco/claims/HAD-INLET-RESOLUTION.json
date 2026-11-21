@@ -9,8 +9,8 @@
     "label": "had-shield-room-20261121"
   },
   "claimedAt": "2026-11-21T21:29:47.686Z",
-  "heartbeatAt": "2026-11-21T22:26:16.843Z",
-  "expiresAt": "2026-11-21T23:11:16.843Z",
+  "heartbeatAt": "2026-11-21T22:59:47.081Z",
+  "expiresAt": "2026-11-21T23:44:47.081Z",
   "branch": "work/had-shield-supported-room-20261121",
   "predecessor": {
     "leaseId": "244d4381-c833-4676-bf37-31b3ac789276",
@@ -36,8 +36,8 @@
   },
   "pr": 1615,
   "checkpoint": {
-    "evidence": "PR1615 head27a7870e unchanged: publication,ADE,PLT passed; full health active. Successor recovery/had-local-pocket-20261121 6a02cb9b/tree9892a6b8 preserves27a parent; 35 focused inlet/ground/service tests, TypeScript, repository, source audit0 and ordinary producer check pass. Source-dependent local245 pocket retains global530/65 and wall DPC0..150, with actual support cells and replacement origins; no adoption.",
-    "next": "Finish exact-head CI and coordinate merge order with STR1613; then migrate earned frame and rebind local-pocket successor after fresh-main reconciliation. Keep shared engineering-edit frozen until coordinated.",
-    "blocker": "STR1613 health has failed and root is resolving it; HAD1615 health still active. Local slab/contact, mineral retention, thermal/waterproof/perimeter bridge, actual wall ports, full inventory and52-head integration remain unqualified."
+    "evidence": "Frozen PR1615 head27a7870e retained, no independent merge. Coherent frame+pocket+pan checkpoint recovery/had-local-pocket-20261121 at0980c279/tree61b6f4d8:39 focused tests,TypeScript,repo,full source audit0,ordinary producer and SVG inspection pass. Exact pan pressure/weight moments and real open-cut/closed-body joins verified. Compact named inventory/centroid/volume-ownership continuation is undergoing full checks locally.",
+    "next": "Publish complete inventory checkpoint, then root combines HAD and STR successor after1613 main. Rebind own canonical lease to the single dualWork PR/head when coordinated; full exact-head validation and publication preflight still required.",
+    "blocker": "Primary STR1613 49d8868 full health active. No separate1615 merge. SourceSTR0 has no adopted530/localRC-mineral retention/four-grid-strip/52-head or soil load path. Frame masonry receiver, pan seats/seams/renewal/warmth, stored and above-floor flood remain unqualified."
   }
 }
