@@ -9,11 +9,11 @@
     "label": "room-lighting-registration-20261121"
   },
   "claimedAt": "2026-11-21T21:57:05.404Z",
-  "heartbeatAt": "2026-11-21T21:57:05.404Z",
-  "expiresAt": "2026-11-21T23:27:05.404Z",
+  "heartbeatAt": "2026-11-21T22:03:26.365Z",
+  "expiresAt": "2026-11-21T23:33:26.365Z",
   "checkpoint": {
-    "evidence": "Issue #1614 records owner scope and exceptional registration bootstrap; dedicated branch starts from current main",
-    "next": "Register one IAS/HAD package and its integration edges, validate, publish and release the registration lease"
+    "evidence": "PR #1616 at 64ee6a8d1753bb12ede6e66940efec676c28272d; local typecheck, 185 control tests, repository checks and docs build passed",
+    "next": "Inspect exact-head CI, reconcile moved main, run canonical publication preflight, merge and release registration lease"
   },
   "branch": "work/register-room-lighting-20261121",
   "note": "Exceptional registration-only bootstrap authorised and recorded in issue #1614; unknown-node dispatch safety temporarily fails closed until integration/release."
