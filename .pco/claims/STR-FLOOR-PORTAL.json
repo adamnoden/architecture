@@ -9,9 +9,9 @@
     "label": "rush-20261121-recovery"
   },
   "claimedAt": "2026-11-21T09:40:30.038Z",
-  "heartbeatAt": "2026-11-21T09:40:30.038Z",
-  "expiresAt": "2026-11-21T10:25:30.038Z",
-  "branch": "work/rush-recovered-coupling-20261121",
+  "heartbeatAt": "2026-11-21T09:44:38.665Z",
+  "expiresAt": "2026-11-21T10:29:38.665Z",
+  "branch": "work/rush-editor-scope-20261121",
   "predecessor": {
     "leaseId": "37f8e399-fda2-42a8-8282-b3e5bda5c950",
     "generation": 47,
@@ -33,5 +33,9 @@
       "next": "Recover canonical leases/current main; inspect exact-head CI; fresh dual STR/HAD merge-check and expected-head merge; then combined51 and service-hub replan.",
       "blocker": "Execution environment unavailable; exec recovery45s failed. No local preflight or new tests. Handoff release follows checkpoint readback; no packet completion."
     }
+  },
+  "checkpoint": {
+    "evidence": "PR1605 merged984f40fd; exact784 health/publication/ADE/PLT passed; source-only successor preflights verified.",
+    "next": "Reopen existing ADE packet for actual engineering-document browser consumer, then continue structural resolution."
   }
 }
