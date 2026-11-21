@@ -37,6 +37,12 @@ test('pressure recovery is separate from throat pressure and prevents a false un
   assert.equal(noRecovery.bound.maximumEachLmin,recovered.bound.maximumEachLmin)
   assert.ok(noRecovery.branches.every(b=>!b.minimumResidualScreen))
   assert.ok(recovered.branches[0].pressureLossComparisonBar<noRecovery.branches[0].pressureLossComparisonBar/9)
+  const idealEquality = run({apertureNominalMm:6.5,dischargeCoefficientComparison:1,
+    pressureRecoveryFractionComparison:1,sourceMinimumDynamicBar:3,requiredResidualBar:2.5})
+  assert.ok(idealEquality.branches.every(b=>b.minimumResidualScreen && b.feasibleNominalApertureIntervalMm.existsForNecessaryScreens))
+  assert.ok(run({apertureNominalMm:6.5,dischargeCoefficientComparison:1,
+    pressureRecoveryFractionComparison:.999,sourceMinimumDynamicBar:3,requiredResidualBar:2.5})
+    .branches.every(b=>!b.minimumResidualScreen && !b.feasibleNominalApertureIntervalMm.existsForNecessaryScreens))
 })
 
 test('actual entrance and receiver controls reject a locally restricted old arrangement without borrowing crown-only capacity', () => {

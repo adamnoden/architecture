@@ -3,7 +3,7 @@
   "state": "existing-whole-arrangement-rejected",
   "source": {
     "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-    "bindingDigest": "a4bf91a6747109d3a41ba5d5578982aad77800cdd260e5125c1681cf7b8be010",
+    "bindingDigest": "9e9e2aeb63e6e9264df12acbec249f457f326742599fedebe3ba8311135716cd",
     "inputs": {
       "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
       "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
@@ -12,7 +12,7 @@
       "project/had/studies/current-house-services.json": "e649805e78244527fe6498b516fa5f23734ac5ea"
     },
     "methods": {
-      "compiler/reference-house/current-design/inlet-source-envelope.ts": "e8531efa64be773109d38558b0c8fda3366135c1",
+      "compiler/reference-house/current-design/inlet-source-envelope.ts": "9de3090009b65300e48c7867f5b030cd89205e7b",
       "project/had/studies/south-inlet-relief-hydraulics.mjs": "1cb8dd67e832ce2986f042844122a39e625fef93",
       "compiler/reference-house/current-design/inlet-cabinet-copper.ts": "34d774e3ccd4ff0bac3dcaef63dfa5cdedff6ca4"
     }

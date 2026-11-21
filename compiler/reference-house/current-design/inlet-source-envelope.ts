@@ -80,7 +80,8 @@ export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, in
   const throatAbsoluteBar = s.sourceMinimumDynamicBar + s.atmosphericMinimumBar - throatDynamicBar
   const residualBar = s.sourceMinimumDynamicBar - pressureLossBar - s.additionalNetworkLossBar
   const availableRestrictionBar = s.sourceMinimumDynamicBar - s.requiredResidualBar - s.additionalNetworkLossBar
-  const deliveryDiameter = (cd: number) => availableRestrictionBar > 0 ? Math.max(
+  const deliveryDiameter = (cd: number) => availableRestrictionBar >= 0
+    && (availableRestrictionBar > 0 || s.pressureRecoveryFractionComparison === 1) ? Math.max(
     s.pressureRecoveryFractionComparison === 1 ? 0 : diameter(s.requiredEachLmin, availableRestrictionBar / (1 - s.pressureRecoveryFractionComparison), cd, 1000),
     diameter(s.requiredEachLmin, s.sourceMinimumDynamicBar + s.atmosphericMinimumBar, cd, 1000)) : null
   const minimumDeliveryDiameterMm = deliveryDiameter(s.dischargeCoefficientComparison)
