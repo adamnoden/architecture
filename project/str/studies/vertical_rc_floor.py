@@ -12,7 +12,7 @@ from joined_successor_kernel import FrameModel, cross, rectangle_section
 from rc_floor_house_loads import _beam_point, _family_wrench, _physical_cut_rows, _timoshenko_shapes
 from rc_portal_monolithic import build_monolithic_rc_portals, load_monolithic_rc_source, reference_monolithic_rc_case, solve_monolithic_rc_portals
 from retained_components import evaluate_retained_components
-from vertical_floor_numerics import solve_vertical_frame
+from vertical_floor_numerics import solve_vertical_frame,install_vertical_plate_energy,DIRECT_PLATE_POLICY
 from vertical_floor_plate import GAUSS, assemble_vertical_plate, condense_vertical_plate, plate_cells, rectangle_shapes, recover_vertical_plate
 
 
@@ -187,7 +187,7 @@ def _replace_legacy_floor_cards(model):
 
 
 def build_vertical_rc_floor(case,source,retained_point_receivers=None,pre_plate_model_transform=None,portal_builder=None,
-        additional_receiver_builder=None,core_transform=None):
+        additional_receiver_builder=None,core_transform=None,plate_energy_policy=DIRECT_PLATE_POLICY):
     expected=reference_vertical_rc_floor_case(source)
     if not isinstance(case,dict) or set(case)!=set(expected) or any(case[k]!=expected[k] for k in ('schema','sourceSHA256','geometryPolicy','supportPolicy','use')):raise ValueError('Exact current source-bound verticalfloor case required; no injected result')
     law=case['bearingLaw']
@@ -357,7 +357,7 @@ def build_vertical_rc_floor(case,source,retained_point_receivers=None,pre_plate_
     operator=condense_vertical_plate(assembled,rigid)
     for point,identifier in receiver_points.items():
         retained_receiver_traces[identifier]['physicalPlateParticipation']=retained_receiver_operator_participation(point,receiver_coefficients[identifier],assembled,operator)
-    for index,mode in enumerate(operator['energyModes']):frame.springs.append({'id':'VERTICAL-FLOOR/energy/'+str(index),'terms':_combine_port_terms(port_terms,enumerate(mode)),'stiffness':1.,'mode':'bilateral','gap':0.})
+    energy_policy=install_vertical_plate_energy(frame,operator,port_terms,plate_energy_policy)
     ledger=_replace_legacy_floor_cards(model);old_weight=-sum(row[2] for row in model['families']['physical-G'].values());old_wrench=_family_wrench(model,model['families']['physical-G'])
     for index,value in enumerate(operator['condensedSelfG']):
         for node,row in port_terms[index]:
@@ -383,7 +383,7 @@ def build_vertical_rc_floor(case,source,retained_point_receivers=None,pre_plate_
     gravity_residual=[b-a-c for a,b,c in zip(old_wrench,new_wrench,expected)]
     if max(abs(v) for v in gravity_residual)>1e-5:raise ValueError('Verticalfloorcondensation loses actualgravity force or first moments: '+str(gravity_residual))
     if abs(new_weight-old_weight-assembled['physicalSelfGKN'])>1e-6:raise ValueError('NewphysicalfloorG is duplicated or lost during condensation')
-    model['verticalFloor']={'request':case,'operator':operator,'ports':ports,'portTerms':port_terms,'fibres':fibres,'missingGroundContactFibres':missing,'cores':cores,'cells':cells,'holes':holes,'inPlaneStairCreditReservationXYMm':stair_reservation,'principalWetReservation':next(row['bounds'] for row in physical_holes if row['id']=='FLOOR-UNKNOWN/principal-wet-territory'),'openingInventory':[{'id':row['id'],'sourceServiceShape':({'kind':'rectangle','boundsXYMm':stair} if row['id']=='FLOOR-VOID/stair' else row['shape']),'structuralOpeningEnvelopeXYMm':next(item['bounds'] for item in physical_holes if item['id']==row['id']),'policy':'explicitformedrectangularstructuralopeningcomparison' if row['shape']['kind']=='circle' else 'actualsourceaperture'} for row in retained['floorApertures']],
+    model['verticalFloor']={'request':case,'operator':operator,'ports':ports,'portTerms':port_terms,'plateEnergyRepresentationPolicy':energy_policy,'fibres':fibres,'missingGroundContactFibres':missing,'cores':cores,'cells':cells,'holes':holes,'inPlaneStairCreditReservationXYMm':stair_reservation,'principalWetReservation':next(row['bounds'] for row in physical_holes if row['id']=='FLOOR-UNKNOWN/principal-wet-territory'),'openingInventory':[{'id':row['id'],'sourceServiceShape':({'kind':'rectangle','boundsXYMm':stair} if row['id']=='FLOOR-VOID/stair' else row['shape']),'structuralOpeningEnvelopeXYMm':next(item['bounds'] for item in physical_holes if item['id']==row['id']),'policy':'explicitformedrectangularstructuralopeningcomparison' if row['shape']['kind']=='circle' else 'actualsourceaperture'} for row in retained['floorApertures']],
         'northUpstandStrips':[{'wallId':receiver['wallId'],'rectangleXYMm':receiver['rectangle'],'centroidZMm':frame.nodes[receiver['stations'][0]['node']][2],'depthMm':model['members'][next(name for name,m in model['members'].items() if m['kind']=='upstand' and name.startswith(receiver['wallId']+'/'))]['depthMm']} for receiver in north],
         **({'additionalBeamReceivers':extra_receivers} if extra_receivers else {}),'legacyReplacement':ledger,
         'retainedPointReceivers':retained_receiver_traces,
@@ -448,7 +448,7 @@ def solve_vertical_rc_floor(model,source,name,additional_nodal_loads=None,result
     return {'schema':'str-vertical-rc-floor-result/1','sourceSHA256':source['identities'],'request':data['request'],'native':native,'mass':data['mass'],'legacyReplacement':data['legacyReplacement'],
         'headPositions':[{'id':row['id'],'xyMm':row['xy']} for row in model['grid']['heads']],
         'floorLiveLoad':live_load['evidence'],
-        'numericalRuntime':__import__('vertical_floor_numerics').runtime_versions(),'auxiliaryGaugeMaximumReactionKN_KNmm':gauge,'portFrameRigidWorkResidual':data['portFrameRigidWorkResidual'],
+        'numericalRuntime':__import__('vertical_floor_numerics').runtime_versions(),'plateEnergyRepresentationPolicy':data['plateEnergyRepresentationPolicy'],'auxiliaryGaugeMaximumReactionKN_KNmm':gauge,'portFrameRigidWorkResidual':data['portFrameRigidWorkResidual'],
         'plate':{'cellCount':len(data['cells']),'pointCount':len(data['operator']['assembled']['points']),'retainedCoordinateCount':len(data['ports']),
             'rigidModeResidualKN':data['operator']['rigidModeResidualKN'],'modeReconstructionRelativeError':data['operator']['modeReconstructionRelativeError'],'assemblySymmetryRelativeError':data['operator']['assembled']['assemblySymmetryRelativeError'],
             'physicalRecovery':recovered,'cellsXYMm':data['cells'],'holesXYMm':data['holes']},
