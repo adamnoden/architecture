@@ -4,7 +4,8 @@ import { readInletSourceEnvelopeCase, runInletSourceEnvelopeCase } from '../../.
 const resolved = readCurrentDesignResolution(), request = readInletSourceEnvelopeCase(resolved)
 const { reviewSvg, ...result } = runInletSourceEnvelopeCase(resolved, request.sourceEnvelope)
 for (const [name, content] of [['inlet-source-envelope.results.json', JSON.stringify(result, null, 2) + '\n'],
-  ['inlet-source-envelope.svg', reviewSvg + '\n']]) {
+  ['inlet-source-envelope.svg', reviewSvg + '\n'],
+  ['inlet-frame-support.svg', result.joinedDirection.room.electricalScreen.supportFrame.reviewSvg + '\n']]) {
   const path = new URL(name, import.meta.url)
   if (process.argv.includes('--check')) { if (readFileSync(path, 'utf8') !== content) throw new Error('Stale source-and-room decision: ' + name) }
   else writeFileSync(path, content)

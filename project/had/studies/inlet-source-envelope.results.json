@@ -1,9 +1,9 @@
 {
-  "schema": "had-inlet-source-envelope-result/4",
+  "schema": "had-inlet-source-envelope-result/5",
   "state": "existing-whole-arrangement-rejected",
   "source": {
     "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-    "bindingDigest": "b8bd400497c411614f5d37b432cf41e9974a53b2b6d1f436473725206f1bbbfb",
+    "bindingDigest": "36479393f5abbf5882e5ace25218494c6ef8ff48947ba5ef5393041e8a8840fe",
     "inputs": {
       "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
       "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
@@ -15,9 +15,11 @@
       "project/had/studies/boundary-service-lodge.json": "edccc843f1829bf583e517095442ad9fe481da53"
     },
     "methods": {
-      "compiler/reference-house/current-design/inlet-source-envelope.ts": "8e20c49017c4e5524d77c5647abfa217a1163189",
+      "compiler/reference-house/current-design/inlet-source-envelope.ts": "736362f1e1308db96fcdff3f83a47f042b1e6a02",
       "compiler/reference-house/current-design/inlet-room-catchment.ts": "4808849a1197d0b90891cda2859bb578d274c026",
-      "compiler/reference-house/current-design/inlet-electrical-screen.ts": "af15dc6e80e9896151875a0e8723cec4f3451440",
+      "compiler/reference-house/current-design/inlet-electrical-screen.ts": "38f7d1a752f835ec464e2bdd10432d4dbd32ff74",
+      "compiler/reference-house/current-design/inlet-screen-frame.ts": "fff2a33daf6c6d3fe05d2e571ffd8db4f5806c51",
+      "compiler/reference-house/current-design/inlet-fixed-receiver.ts": "c8cd4c81c3419fdb3b97f79b3c641d5e307256e3",
       "project/had/studies/south-inlet-relief-hydraulics.mjs": "1cb8dd67e832ce2986f042844122a39e625fef93",
       "compiler/reference-house/current-design/inlet-cabinet-copper.ts": "34d774e3ccd4ff0bac3dcaef63dfa5cdedff6ca4"
     }
@@ -37,8 +39,13 @@
     "pressureRecoveryFractionComparison": 0,
     "atmosphericMinimumBar": 0.9,
     "atmosphericMaximumBar": 1.1,
-    "mainboardNorthOffsetMm": 0,
+    "mainboardNorthOffsetMm": 250,
     "mainboardBaseZMm": 900,
+    "utilityPortalShiftXMm": -100,
+    "shieldStandOffMm": 100,
+    "shieldVerticalInsetMm": 50,
+    "frameLowerConnectionZMm": 1100,
+    "frameAnchorOffsetMm": 89.5,
     "plantTransferZMm": 2235,
     "catchmentClearWidthMm": 400,
     "catchmentClearHeightMm": 150,
@@ -527,9 +534,23 @@
         2647
       ],
       "northOpeningXMm": [
-        10250,
-        11150
+        10150,
+        11050
       ],
+      "portalReplacement": {
+        "sourceOpeningXMm": [
+          10250,
+          11150
+        ],
+        "candidateOpeningXMm": [
+          10150,
+          11050
+        ],
+        "shiftXMm": -100,
+        "widthPreservedMm": 900,
+        "normalBodyAfter10Mm": 58,
+        "adoptedInOccupiedSource": false
+      },
       "retainedFurniture": {
         "service-emitter-utility-E": [
           11370.5,
@@ -617,18 +638,18 @@
         ],
         "proposedGrossBoxMm": [
           11190.5,
-          2647,
+          2897,
           900,
           380,
           610,
           605
         ],
         "normalRouteAfter10Mm": 335.5,
-        "northWallAfter10Mm": 336,
-        "southWallGapMm": 0,
+        "northWallAfter10Mm": 86,
+        "southWallGapMm": 250,
         "workingFieldPlanMm": [
           10190.5,
-          2647,
+          2897,
           1000,
           610
         ],
@@ -1003,132 +1024,155 @@
         "state": "passive-screen-pre-site-proposal",
         "selected": false,
         "barrierPlaneMm": {
-          "x": 11165.5,
+          "x": 11090.5,
           "y": [
-            2647,
-            3603
+            2652,
+            3598
           ],
           "z": [
-            0,
-            3100
+            50,
+            3050
           ]
         },
         "panels": [
           {
             "id": "HAD/mainboard-shield-panel-1",
             "boxMm": [
-              11161.5,
-              2647,
-              0,
+              11086.5,
+              2652,
+              50,
               4,
-              478,
-              775
+              473,
+              750
             ],
-            "flatSheetOnlyKg": 11.8544,
+            "flatSheetOnlyKg": 11.351999999999999,
             "retainedBy": "passive bottom seating and accessible captive mechanical retention; actual detail unqualified"
           },
           {
             "id": "HAD/mainboard-shield-panel-2",
             "boxMm": [
-              11161.5,
+              11086.5,
               3125,
-              0,
+              50,
               4,
-              478,
-              775
+              473,
+              750
             ],
-            "flatSheetOnlyKg": 11.8544,
+            "flatSheetOnlyKg": 11.351999999999999,
             "retainedBy": "passive bottom seating and accessible captive mechanical retention; actual detail unqualified"
           },
           {
             "id": "HAD/mainboard-shield-panel-3",
             "boxMm": [
-              11161.5,
-              2647,
-              775,
+              11086.5,
+              2652,
+              800,
               4,
-              478,
-              775
+              473,
+              750
             ],
-            "flatSheetOnlyKg": 11.8544,
+            "flatSheetOnlyKg": 11.351999999999999,
             "retainedBy": "passive bottom seating and accessible captive mechanical retention; actual detail unqualified"
           },
           {
             "id": "HAD/mainboard-shield-panel-4",
             "boxMm": [
-              11161.5,
+              11086.5,
               3125,
-              775,
+              800,
               4,
-              478,
-              775
+              473,
+              750
             ],
-            "flatSheetOnlyKg": 11.8544,
+            "flatSheetOnlyKg": 11.351999999999999,
             "retainedBy": "passive bottom seating and accessible captive mechanical retention; actual detail unqualified"
           },
           {
             "id": "HAD/mainboard-shield-panel-5",
             "boxMm": [
-              11161.5,
-              2647,
+              11086.5,
+              2652,
               1550,
               4,
-              478,
-              775
+              473,
+              750
             ],
-            "flatSheetOnlyKg": 11.8544,
+            "flatSheetOnlyKg": 11.351999999999999,
             "retainedBy": "passive bottom seating and accessible captive mechanical retention; actual detail unqualified"
           },
           {
             "id": "HAD/mainboard-shield-panel-6",
             "boxMm": [
-              11161.5,
+              11086.5,
               3125,
               1550,
               4,
-              478,
-              775
+              473,
+              750
             ],
-            "flatSheetOnlyKg": 11.8544,
+            "flatSheetOnlyKg": 11.351999999999999,
             "retainedBy": "passive bottom seating and accessible captive mechanical retention; actual detail unqualified"
           },
           {
             "id": "HAD/mainboard-shield-panel-7",
             "boxMm": [
-              11161.5,
-              2647,
-              2325,
+              11086.5,
+              2652,
+              2300,
               4,
-              478,
-              775
+              473,
+              750
             ],
-            "flatSheetOnlyKg": 11.8544,
+            "flatSheetOnlyKg": 11.351999999999999,
             "retainedBy": "passive bottom seating and accessible captive mechanical retention; actual detail unqualified"
           },
           {
             "id": "HAD/mainboard-shield-panel-8",
             "boxMm": [
-              11161.5,
+              11086.5,
               3125,
-              2325,
+              2300,
               4,
-              478,
-              775
+              473,
+              750
             ],
-            "flatSheetOnlyKg": 11.8544,
+            "flatSheetOnlyKg": 11.351999999999999,
             "retainedBy": "passive bottom seating and accessible captive mechanical retention; actual detail unqualified"
           }
         ],
-        "ordinaryRouteAfterSettingMm": 306.5,
-        "boardToShieldNominalMm": 25,
+        "ordinaryRouteAfterSettingMm": 231.5,
+        "boardToShieldNominalMm": 100,
         "visibility": {
           "portalMaximumXMm": [
-            11150,
+            11050,
             10925
           ],
-          "portalToShieldReserveMm": 15.5,
+          "portalToShieldReserveMm": 40.5,
           "allDirectPortalRaysIntercepted": true,
-          "proof": "Both complete portals lie west of the shield; every target point lies east. A connecting segment crosses the plane. Its Y/Z are convex combinations within the full lobby/ceiling rectangle. No corner sampling or arbitrary jet cone is used.",
+          "projectedRayBoundsMm": [
+            [
+              2666.4524495677233,
+              3578.3865220759103
+            ],
+            [
+              70.02881844380404,
+              2975.8933717579253
+            ]
+          ],
+          "edgeReservesMm": [
+            14.452449567723306,
+            19.613477924089693,
+            20.02881844380404,
+            74.10662824207475
+          ],
+          "afterTwo5MmSettings": [
+            4.452449567723306,
+            9.613477924089693,
+            10.028818443804042,
+            64.10662824207475
+          ],
+          "necessaryInterceptionAfterSettings": true,
+          "proof": "Both conservative complete portal boxes lie west of the shield and the target box lies east. Vertex extrema of the monotone interpolation fraction bound every segment-plane intersection. The finite shield covers those Y/Z bounds; raw and10mm setting reserves are separate. No arbitrary jet cone or installed impact resistance is inferred.",
           "scope": "Straight rays through either actual Utility or Plant portal, plus a source west of the shield inside the lobby. No pressure pipe is permitted inside the dry cupboard.",
           "pressureJetRicochetSeamsOrFloodQualification": false
         },
@@ -1139,7 +1183,7 @@
           ],
           "maximumSingleBranchN": 324.52168960808444,
           "simultaneousPairN": 457.7686006626718,
-          "totalFlatSheetOnlyKg": 94.8352,
+          "totalFlatSheetOnlyKg": 90.81599999999999,
           "framesSeatsRetainersAndFinishKg": null,
           "localImpactPanelAndIndependentFloorCeilingSupportQualified": false
         },
@@ -1165,6 +1209,4412 @@
           "MAINBOARD_SCREEN_IMPACT_SEAMS_TOE_AND_DRY_ESCAPE_UNQUALIFIED",
           "MAINBOARD_SCREEN_ACTUAL_SUPPORT_HANDLING_AND_HEAT_UNQUALIFIED"
         ],
+        "supportFrame": {
+          "state": "wall-hung-shield-frame-comparison",
+          "selected": false,
+          "members": [
+            {
+              "id": "HAD/shield-post-1",
+              "boxMm": [
+                11090.5,
+                2662,
+                50,
+                50,
+                50,
+                3000
+              ],
+              "netSectionAreaMm2": 736,
+              "stockLengthMm": 3000,
+              "massKg": 17.664,
+              "basis": "50x50x4 reference RHS"
+            },
+            {
+              "id": "HAD/shield-post-2",
+              "boxMm": [
+                11090.5,
+                3538,
+                50,
+                50,
+                50,
+                3000
+              ],
+              "netSectionAreaMm2": 736,
+              "stockLengthMm": 3000,
+              "massKg": 17.664,
+              "basis": "50x50x4 reference RHS"
+            },
+            {
+              "id": "HAD/shield-rail-1",
+              "boxMm": [
+                11090.5,
+                2712,
+                30,
+                40,
+                826,
+                40
+              ],
+              "netSectionAreaMm2": 444,
+              "stockLengthMm": 826,
+              "massKg": 2.933952,
+              "basis": "40x40x3 rail ends meet post faces;4mm returned weld comparison"
+            },
+            {
+              "id": "HAD/shield-rail-2",
+              "boxMm": [
+                11090.5,
+                2712,
+                780,
+                40,
+                826,
+                40
+              ],
+              "netSectionAreaMm2": 444,
+              "stockLengthMm": 826,
+              "massKg": 2.933952,
+              "basis": "40x40x3 rail ends meet post faces;4mm returned weld comparison"
+            },
+            {
+              "id": "HAD/shield-rail-3",
+              "boxMm": [
+                11090.5,
+                2712,
+                1530,
+                40,
+                826,
+                40
+              ],
+              "netSectionAreaMm2": 444,
+              "stockLengthMm": 826,
+              "massKg": 2.933952,
+              "basis": "40x40x3 rail ends meet post faces;4mm returned weld comparison"
+            },
+            {
+              "id": "HAD/shield-rail-4",
+              "boxMm": [
+                11090.5,
+                2712,
+                2280,
+                40,
+                826,
+                40
+              ],
+              "netSectionAreaMm2": 444,
+              "stockLengthMm": 826,
+              "massKg": 2.933952,
+              "basis": "40x40x3 rail ends meet post faces;4mm returned weld comparison"
+            },
+            {
+              "id": "HAD/shield-rail-5",
+              "boxMm": [
+                11090.5,
+                2712,
+                3030,
+                40,
+                826,
+                40
+              ],
+              "netSectionAreaMm2": 444,
+              "stockLengthMm": 826,
+              "massKg": 2.933952,
+              "basis": "40x40x3 rail ends meet post faces;4mm returned weld comparison"
+            },
+            {
+              "id": "HAD/utility-north/shield-arm-1",
+              "boxMm": [
+                11140.5,
+                2662,
+                1075,
+                114.5,
+                50,
+                50
+              ],
+              "netSectionAreaMm2": 736,
+              "stockLengthMm": 114.5,
+              "massKg": 0.674176,
+              "basis": "50x50x4 arm side welded to endplate; no interpenetrating stock"
+            },
+            {
+              "id": "HAD/utility-north/front-plate-1",
+              "boxMm": [
+                11105,
+                2652,
+                1025,
+                150,
+                10,
+                150
+              ],
+              "netSectionAreaMm2": 1500,
+              "stockLengthMm": 150,
+              "massKg": 1.8,
+              "basis": "150x150x10 front plate"
+            },
+            {
+              "id": "HAD/utility-north/back-plate-1",
+              "boxMm": [
+                11105,
+                2438,
+                1025,
+                150,
+                10,
+                150
+              ],
+              "netSectionAreaMm2": 1500,
+              "stockLengthMm": 150,
+              "massKg": 1.8,
+              "basis": "150x150x10 opposed accessible backing plate"
+            },
+            {
+              "id": "HAD/utility-north/through-rod-1-1",
+              "boxMm": [
+                11120,
+                2418,
+                1040,
+                20,
+                264,
+                20
+              ],
+              "netSectionAreaMm2": 314.1592653589793,
+              "stockLengthMm": 264,
+              "massKg": 0.6635043684381644,
+              "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+            },
+            {
+              "id": "HAD/utility-north/front-core-spacer-1-1",
+              "boxMm": [
+                11107.5,
+                2620,
+                1027.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+            },
+            {
+              "id": "HAD/utility-north/back-core-spacer-1-1",
+              "boxMm": [
+                11107.5,
+                2448,
+                1027.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+            },
+            {
+              "id": "HAD/utility-north/through-rod-1-2",
+              "boxMm": [
+                11120,
+                2418,
+                1140,
+                20,
+                264,
+                20
+              ],
+              "netSectionAreaMm2": 314.1592653589793,
+              "stockLengthMm": 264,
+              "massKg": 0.6635043684381644,
+              "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+            },
+            {
+              "id": "HAD/utility-north/front-core-spacer-1-2",
+              "boxMm": [
+                11107.5,
+                2620,
+                1127.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+            },
+            {
+              "id": "HAD/utility-north/back-core-spacer-1-2",
+              "boxMm": [
+                11107.5,
+                2448,
+                1127.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+            },
+            {
+              "id": "HAD/utility-north/through-rod-1-3",
+              "boxMm": [
+                11220,
+                2418,
+                1040,
+                20,
+                264,
+                20
+              ],
+              "netSectionAreaMm2": 314.1592653589793,
+              "stockLengthMm": 264,
+              "massKg": 0.6635043684381644,
+              "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+            },
+            {
+              "id": "HAD/utility-north/front-core-spacer-1-3",
+              "boxMm": [
+                11207.5,
+                2620,
+                1027.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+            },
+            {
+              "id": "HAD/utility-north/back-core-spacer-1-3",
+              "boxMm": [
+                11207.5,
+                2448,
+                1027.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+            },
+            {
+              "id": "HAD/utility-north/through-rod-1-4",
+              "boxMm": [
+                11220,
+                2418,
+                1140,
+                20,
+                264,
+                20
+              ],
+              "netSectionAreaMm2": 314.1592653589793,
+              "stockLengthMm": 264,
+              "massKg": 0.6635043684381644,
+              "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+            },
+            {
+              "id": "HAD/utility-north/front-core-spacer-1-4",
+              "boxMm": [
+                11207.5,
+                2620,
+                1127.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+            },
+            {
+              "id": "HAD/utility-north/back-core-spacer-1-4",
+              "boxMm": [
+                11207.5,
+                2448,
+                1127.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+            },
+            {
+              "id": "HAD/utility-north/back-cover-1",
+              "boxMm": [
+                11098,
+                2421,
+                1018,
+                164,
+                40,
+                164
+              ],
+              "netSectionAreaMm2": 492,
+              "stockLengthMm": 244,
+              "massKg": 0.960384,
+              "basis": "3mm returned metal cover stock budget; exact corners and fasteners additional"
+            },
+            {
+              "id": "HAD/utility-north/shield-arm-2",
+              "boxMm": [
+                11140.5,
+                2662,
+                2675,
+                114.5,
+                50,
+                50
+              ],
+              "netSectionAreaMm2": 736,
+              "stockLengthMm": 114.5,
+              "massKg": 0.674176,
+              "basis": "50x50x4 arm side welded to endplate; no interpenetrating stock"
+            },
+            {
+              "id": "HAD/utility-north/front-plate-2",
+              "boxMm": [
+                11105,
+                2652,
+                2625,
+                150,
+                10,
+                150
+              ],
+              "netSectionAreaMm2": 1500,
+              "stockLengthMm": 150,
+              "massKg": 1.8,
+              "basis": "150x150x10 front plate"
+            },
+            {
+              "id": "HAD/utility-north/back-plate-2",
+              "boxMm": [
+                11105,
+                2438,
+                2625,
+                150,
+                10,
+                150
+              ],
+              "netSectionAreaMm2": 1500,
+              "stockLengthMm": 150,
+              "massKg": 1.8,
+              "basis": "150x150x10 opposed accessible backing plate"
+            },
+            {
+              "id": "HAD/utility-north/through-rod-2-1",
+              "boxMm": [
+                11120,
+                2418,
+                2640,
+                20,
+                264,
+                20
+              ],
+              "netSectionAreaMm2": 314.1592653589793,
+              "stockLengthMm": 264,
+              "massKg": 0.6635043684381644,
+              "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+            },
+            {
+              "id": "HAD/utility-north/front-core-spacer-2-1",
+              "boxMm": [
+                11107.5,
+                2620,
+                2627.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+            },
+            {
+              "id": "HAD/utility-north/back-core-spacer-2-1",
+              "boxMm": [
+                11107.5,
+                2448,
+                2627.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+            },
+            {
+              "id": "HAD/utility-north/through-rod-2-2",
+              "boxMm": [
+                11120,
+                2418,
+                2740,
+                20,
+                264,
+                20
+              ],
+              "netSectionAreaMm2": 314.1592653589793,
+              "stockLengthMm": 264,
+              "massKg": 0.6635043684381644,
+              "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+            },
+            {
+              "id": "HAD/utility-north/front-core-spacer-2-2",
+              "boxMm": [
+                11107.5,
+                2620,
+                2727.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+            },
+            {
+              "id": "HAD/utility-north/back-core-spacer-2-2",
+              "boxMm": [
+                11107.5,
+                2448,
+                2727.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+            },
+            {
+              "id": "HAD/utility-north/through-rod-2-3",
+              "boxMm": [
+                11220,
+                2418,
+                2640,
+                20,
+                264,
+                20
+              ],
+              "netSectionAreaMm2": 314.1592653589793,
+              "stockLengthMm": 264,
+              "massKg": 0.6635043684381644,
+              "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+            },
+            {
+              "id": "HAD/utility-north/front-core-spacer-2-3",
+              "boxMm": [
+                11207.5,
+                2620,
+                2627.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+            },
+            {
+              "id": "HAD/utility-north/back-core-spacer-2-3",
+              "boxMm": [
+                11207.5,
+                2448,
+                2627.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+            },
+            {
+              "id": "HAD/utility-north/through-rod-2-4",
+              "boxMm": [
+                11220,
+                2418,
+                2740,
+                20,
+                264,
+                20
+              ],
+              "netSectionAreaMm2": 314.1592653589793,
+              "stockLengthMm": 264,
+              "massKg": 0.6635043684381644,
+              "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+            },
+            {
+              "id": "HAD/utility-north/front-core-spacer-2-4",
+              "boxMm": [
+                11207.5,
+                2620,
+                2727.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+            },
+            {
+              "id": "HAD/utility-north/back-core-spacer-2-4",
+              "boxMm": [
+                11207.5,
+                2448,
+                2727.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+            },
+            {
+              "id": "HAD/utility-north/back-cover-2",
+              "boxMm": [
+                11098,
+                2421,
+                2618,
+                164,
+                40,
+                164
+              ],
+              "netSectionAreaMm2": 492,
+              "stockLengthMm": 244,
+              "massKg": 0.960384,
+              "basis": "3mm returned metal cover stock budget; exact corners and fasteners additional"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/shield-arm-1",
+              "boxMm": [
+                11140.5,
+                3538,
+                1075,
+                114.5,
+                50,
+                50
+              ],
+              "netSectionAreaMm2": 736,
+              "stockLengthMm": 114.5,
+              "massKg": 0.674176,
+              "basis": "50x50x4 arm side welded to endplate; no interpenetrating stock"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/front-plate-1",
+              "boxMm": [
+                11105,
+                3588,
+                1025,
+                150,
+                10,
+                150
+              ],
+              "netSectionAreaMm2": 1500,
+              "stockLengthMm": 150,
+              "massKg": 1.8,
+              "basis": "150x150x10 front plate"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/back-plate-1",
+              "boxMm": [
+                11105,
+                3802,
+                1025,
+                150,
+                10,
+                150
+              ],
+              "netSectionAreaMm2": 1500,
+              "stockLengthMm": 150,
+              "massKg": 1.8,
+              "basis": "150x150x10 opposed accessible backing plate"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/through-rod-1-1",
+              "boxMm": [
+                11120,
+                3568,
+                1040,
+                20,
+                264,
+                20
+              ],
+              "netSectionAreaMm2": 314.1592653589793,
+              "stockLengthMm": 264,
+              "massKg": 0.6635043684381644,
+              "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/front-core-spacer-1-1",
+              "boxMm": [
+                11107.5,
+                3598,
+                1027.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/back-core-spacer-1-1",
+              "boxMm": [
+                11107.5,
+                3770,
+                1027.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/through-rod-1-2",
+              "boxMm": [
+                11120,
+                3568,
+                1140,
+                20,
+                264,
+                20
+              ],
+              "netSectionAreaMm2": 314.1592653589793,
+              "stockLengthMm": 264,
+              "massKg": 0.6635043684381644,
+              "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/front-core-spacer-1-2",
+              "boxMm": [
+                11107.5,
+                3598,
+                1127.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/back-core-spacer-1-2",
+              "boxMm": [
+                11107.5,
+                3770,
+                1127.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/through-rod-1-3",
+              "boxMm": [
+                11220,
+                3568,
+                1040,
+                20,
+                264,
+                20
+              ],
+              "netSectionAreaMm2": 314.1592653589793,
+              "stockLengthMm": 264,
+              "massKg": 0.6635043684381644,
+              "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/front-core-spacer-1-3",
+              "boxMm": [
+                11207.5,
+                3598,
+                1027.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/back-core-spacer-1-3",
+              "boxMm": [
+                11207.5,
+                3770,
+                1027.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/through-rod-1-4",
+              "boxMm": [
+                11220,
+                3568,
+                1140,
+                20,
+                264,
+                20
+              ],
+              "netSectionAreaMm2": 314.1592653589793,
+              "stockLengthMm": 264,
+              "massKg": 0.6635043684381644,
+              "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/front-core-spacer-1-4",
+              "boxMm": [
+                11207.5,
+                3598,
+                1127.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/back-core-spacer-1-4",
+              "boxMm": [
+                11207.5,
+                3770,
+                1127.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/back-cover-1",
+              "boxMm": [
+                11098,
+                3802,
+                1018,
+                164,
+                40,
+                164
+              ],
+              "netSectionAreaMm2": 492,
+              "stockLengthMm": 244,
+              "massKg": 0.960384,
+              "basis": "3mm returned metal cover stock budget; exact corners and fasteners additional"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/shield-arm-2",
+              "boxMm": [
+                11140.5,
+                3538,
+                2675,
+                114.5,
+                50,
+                50
+              ],
+              "netSectionAreaMm2": 736,
+              "stockLengthMm": 114.5,
+              "massKg": 0.674176,
+              "basis": "50x50x4 arm side welded to endplate; no interpenetrating stock"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/front-plate-2",
+              "boxMm": [
+                11105,
+                3588,
+                2625,
+                150,
+                10,
+                150
+              ],
+              "netSectionAreaMm2": 1500,
+              "stockLengthMm": 150,
+              "massKg": 1.8,
+              "basis": "150x150x10 front plate"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/back-plate-2",
+              "boxMm": [
+                11105,
+                3802,
+                2625,
+                150,
+                10,
+                150
+              ],
+              "netSectionAreaMm2": 1500,
+              "stockLengthMm": 150,
+              "massKg": 1.8,
+              "basis": "150x150x10 opposed accessible backing plate"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/through-rod-2-1",
+              "boxMm": [
+                11120,
+                3568,
+                2640,
+                20,
+                264,
+                20
+              ],
+              "netSectionAreaMm2": 314.1592653589793,
+              "stockLengthMm": 264,
+              "massKg": 0.6635043684381644,
+              "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/front-core-spacer-2-1",
+              "boxMm": [
+                11107.5,
+                3598,
+                2627.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/back-core-spacer-2-1",
+              "boxMm": [
+                11107.5,
+                3770,
+                2627.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/through-rod-2-2",
+              "boxMm": [
+                11120,
+                3568,
+                2740,
+                20,
+                264,
+                20
+              ],
+              "netSectionAreaMm2": 314.1592653589793,
+              "stockLengthMm": 264,
+              "massKg": 0.6635043684381644,
+              "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/front-core-spacer-2-2",
+              "boxMm": [
+                11107.5,
+                3598,
+                2727.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/back-core-spacer-2-2",
+              "boxMm": [
+                11107.5,
+                3770,
+                2727.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/through-rod-2-3",
+              "boxMm": [
+                11220,
+                3568,
+                2640,
+                20,
+                264,
+                20
+              ],
+              "netSectionAreaMm2": 314.1592653589793,
+              "stockLengthMm": 264,
+              "massKg": 0.6635043684381644,
+              "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/front-core-spacer-2-3",
+              "boxMm": [
+                11207.5,
+                3598,
+                2627.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/back-core-spacer-2-3",
+              "boxMm": [
+                11207.5,
+                3770,
+                2627.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/through-rod-2-4",
+              "boxMm": [
+                11220,
+                3568,
+                2740,
+                20,
+                264,
+                20
+              ],
+              "netSectionAreaMm2": 314.1592653589793,
+              "stockLengthMm": 264,
+              "massKg": 0.6635043684381644,
+              "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/front-core-spacer-2-4",
+              "boxMm": [
+                11207.5,
+                3598,
+                2727.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/back-core-spacer-2-4",
+              "boxMm": [
+                11207.5,
+                3770,
+                2727.5,
+                45,
+                32,
+                45
+              ],
+              "netSectionAreaMm2": 1210.2985697954678,
+              "stockLengthMm": 32,
+              "massKg": 0.3098364338676397,
+              "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/back-cover-2",
+              "boxMm": [
+                11098,
+                3802,
+                2618,
+                164,
+                40,
+                164
+              ],
+              "netSectionAreaMm2": 492,
+              "stockLengthMm": 244,
+              "massKg": 0.960384,
+              "basis": "3mm returned metal cover stock budget; exact corners and fasteners additional"
+            }
+          ],
+          "connections": [
+            {
+              "id": "HAD/utility-north/shield-connection-1",
+              "wallId": "utility-north",
+              "coreYMm": [
+                2480,
+                2620
+              ],
+              "coreDepthMm": 140,
+              "localZMm": 1100,
+              "pointMm": [
+                11180,
+                2550,
+                1100
+              ],
+              "frontPlateMm": [
+                11105,
+                2652,
+                1025,
+                150,
+                10,
+                150
+              ],
+              "backPlateMm": [
+                11105,
+                2438,
+                1025,
+                150,
+                10,
+                150
+              ],
+              "armMm": [
+                11140.5,
+                2662,
+                1075,
+                114.5,
+                50,
+                50
+              ],
+              "oppositeCoverEnvelopeMm": [
+                11098,
+                2413,
+                1018,
+                164,
+                40,
+                164
+              ],
+              "rods": [
+                {
+                  "pointMm": [
+                    11130,
+                    2550,
+                    1050
+                  ],
+                  "diameterMm": 20,
+                  "clearBoreMm": 22,
+                  "minimumCutLengthMm": 264
+                },
+                {
+                  "pointMm": [
+                    11130,
+                    2550,
+                    1150
+                  ],
+                  "diameterMm": 20,
+                  "clearBoreMm": 22,
+                  "minimumCutLengthMm": 264
+                },
+                {
+                  "pointMm": [
+                    11230,
+                    2550,
+                    1050
+                  ],
+                  "diameterMm": 20,
+                  "clearBoreMm": 22,
+                  "minimumCutLengthMm": 264
+                },
+                {
+                  "pointMm": [
+                    11230,
+                    2550,
+                    1150
+                  ],
+                  "diameterMm": 20,
+                  "clearBoreMm": 22,
+                  "minimumCutLengthMm": 264
+                }
+              ],
+              "spacerToBareCoreMm": [
+                32,
+                32
+              ],
+              "finishRadialClearanceMm": 2.5,
+              "minimumCoreEdgeAfterPlateAnd10Mm": 45,
+              "oppositeCoreFaceMm": 2480,
+              "floorDpcOrLinerAnchor": false,
+              "caseOrPipeReactionCredited": false,
+              "substrateAndGroupResistanceQualified": false
+            },
+            {
+              "id": "HAD/utility-north/shield-connection-2",
+              "wallId": "utility-north",
+              "coreYMm": [
+                2480,
+                2620
+              ],
+              "coreDepthMm": 140,
+              "localZMm": 2700,
+              "pointMm": [
+                11180,
+                2550,
+                2700
+              ],
+              "frontPlateMm": [
+                11105,
+                2652,
+                2625,
+                150,
+                10,
+                150
+              ],
+              "backPlateMm": [
+                11105,
+                2438,
+                2625,
+                150,
+                10,
+                150
+              ],
+              "armMm": [
+                11140.5,
+                2662,
+                2675,
+                114.5,
+                50,
+                50
+              ],
+              "oppositeCoverEnvelopeMm": [
+                11098,
+                2413,
+                2618,
+                164,
+                40,
+                164
+              ],
+              "rods": [
+                {
+                  "pointMm": [
+                    11130,
+                    2550,
+                    2650
+                  ],
+                  "diameterMm": 20,
+                  "clearBoreMm": 22,
+                  "minimumCutLengthMm": 264
+                },
+                {
+                  "pointMm": [
+                    11130,
+                    2550,
+                    2750
+                  ],
+                  "diameterMm": 20,
+                  "clearBoreMm": 22,
+                  "minimumCutLengthMm": 264
+                },
+                {
+                  "pointMm": [
+                    11230,
+                    2550,
+                    2650
+                  ],
+                  "diameterMm": 20,
+                  "clearBoreMm": 22,
+                  "minimumCutLengthMm": 264
+                },
+                {
+                  "pointMm": [
+                    11230,
+                    2550,
+                    2750
+                  ],
+                  "diameterMm": 20,
+                  "clearBoreMm": 22,
+                  "minimumCutLengthMm": 264
+                }
+              ],
+              "spacerToBareCoreMm": [
+                32,
+                32
+              ],
+              "finishRadialClearanceMm": 2.5,
+              "minimumCoreEdgeAfterPlateAnd10Mm": 45,
+              "oppositeCoreFaceMm": 2480,
+              "floorDpcOrLinerAnchor": false,
+              "caseOrPipeReactionCredited": false,
+              "substrateAndGroupResistanceQualified": false
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/shield-connection-1",
+              "wallId": "plant-intermediate-arch",
+              "coreYMm": [
+                3630,
+                3770
+              ],
+              "coreDepthMm": 140,
+              "localZMm": 1100,
+              "pointMm": [
+                11180,
+                3700,
+                1100
+              ],
+              "frontPlateMm": [
+                11105,
+                3588,
+                1025,
+                150,
+                10,
+                150
+              ],
+              "backPlateMm": [
+                11105,
+                3802,
+                1025,
+                150,
+                10,
+                150
+              ],
+              "armMm": [
+                11140.5,
+                3538,
+                1075,
+                114.5,
+                50,
+                50
+              ],
+              "oppositeCoverEnvelopeMm": [
+                11098,
+                3797,
+                1018,
+                164,
+                40,
+                164
+              ],
+              "rods": [
+                {
+                  "pointMm": [
+                    11130,
+                    3700,
+                    1050
+                  ],
+                  "diameterMm": 20,
+                  "clearBoreMm": 22,
+                  "minimumCutLengthMm": 264
+                },
+                {
+                  "pointMm": [
+                    11130,
+                    3700,
+                    1150
+                  ],
+                  "diameterMm": 20,
+                  "clearBoreMm": 22,
+                  "minimumCutLengthMm": 264
+                },
+                {
+                  "pointMm": [
+                    11230,
+                    3700,
+                    1050
+                  ],
+                  "diameterMm": 20,
+                  "clearBoreMm": 22,
+                  "minimumCutLengthMm": 264
+                },
+                {
+                  "pointMm": [
+                    11230,
+                    3700,
+                    1150
+                  ],
+                  "diameterMm": 20,
+                  "clearBoreMm": 22,
+                  "minimumCutLengthMm": 264
+                }
+              ],
+              "spacerToBareCoreMm": [
+                32,
+                32
+              ],
+              "finishRadialClearanceMm": 2.5,
+              "minimumCoreEdgeAfterPlateAnd10Mm": 170,
+              "oppositeCoreFaceMm": 3770,
+              "floorDpcOrLinerAnchor": false,
+              "caseOrPipeReactionCredited": false,
+              "substrateAndGroupResistanceQualified": false
+            },
+            {
+              "id": "HAD/plant-intermediate-arch/shield-connection-2",
+              "wallId": "plant-intermediate-arch",
+              "coreYMm": [
+                3630,
+                3770
+              ],
+              "coreDepthMm": 140,
+              "localZMm": 2700,
+              "pointMm": [
+                11180,
+                3700,
+                2700
+              ],
+              "frontPlateMm": [
+                11105,
+                3588,
+                2625,
+                150,
+                10,
+                150
+              ],
+              "backPlateMm": [
+                11105,
+                3802,
+                2625,
+                150,
+                10,
+                150
+              ],
+              "armMm": [
+                11140.5,
+                3538,
+                2675,
+                114.5,
+                50,
+                50
+              ],
+              "oppositeCoverEnvelopeMm": [
+                11098,
+                3797,
+                2618,
+                164,
+                40,
+                164
+              ],
+              "rods": [
+                {
+                  "pointMm": [
+                    11130,
+                    3700,
+                    2650
+                  ],
+                  "diameterMm": 20,
+                  "clearBoreMm": 22,
+                  "minimumCutLengthMm": 264
+                },
+                {
+                  "pointMm": [
+                    11130,
+                    3700,
+                    2750
+                  ],
+                  "diameterMm": 20,
+                  "clearBoreMm": 22,
+                  "minimumCutLengthMm": 264
+                },
+                {
+                  "pointMm": [
+                    11230,
+                    3700,
+                    2650
+                  ],
+                  "diameterMm": 20,
+                  "clearBoreMm": 22,
+                  "minimumCutLengthMm": 264
+                },
+                {
+                  "pointMm": [
+                    11230,
+                    3700,
+                    2750
+                  ],
+                  "diameterMm": 20,
+                  "clearBoreMm": 22,
+                  "minimumCutLengthMm": 264
+                }
+              ],
+              "spacerToBareCoreMm": [
+                32,
+                32
+              ],
+              "finishRadialClearanceMm": 2.5,
+              "minimumCoreEdgeAfterPlateAnd10Mm": 170,
+              "oppositeCoreFaceMm": 3770,
+              "floorDpcOrLinerAnchor": false,
+              "caseOrPipeReactionCredited": false,
+              "substrateAndGroupResistanceQualified": false
+            }
+          ],
+          "panelSeats": [
+            {
+              "id": "HAD/shield-panel-1/seat-1",
+              "boxMm": [
+                11090.5,
+                2750.25,
+                70,
+                25,
+                40,
+                6
+              ],
+              "massKg": 0.048,
+              "bearingAreaMm2": 1000,
+              "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+            },
+            {
+              "id": "HAD/shield-panel-1/seat-2",
+              "boxMm": [
+                11090.5,
+                2986.75,
+                70,
+                25,
+                40,
+                6
+              ],
+              "massKg": 0.048,
+              "bearingAreaMm2": 1000,
+              "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+            },
+            {
+              "id": "HAD/shield-panel-2/seat-1",
+              "boxMm": [
+                11090.5,
+                3223.25,
+                70,
+                25,
+                40,
+                6
+              ],
+              "massKg": 0.048,
+              "bearingAreaMm2": 1000,
+              "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+            },
+            {
+              "id": "HAD/shield-panel-2/seat-2",
+              "boxMm": [
+                11090.5,
+                3459.75,
+                70,
+                25,
+                40,
+                6
+              ],
+              "massKg": 0.048,
+              "bearingAreaMm2": 1000,
+              "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+            },
+            {
+              "id": "HAD/shield-panel-3/seat-1",
+              "boxMm": [
+                11090.5,
+                2750.25,
+                820,
+                25,
+                40,
+                6
+              ],
+              "massKg": 0.048,
+              "bearingAreaMm2": 1000,
+              "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+            },
+            {
+              "id": "HAD/shield-panel-3/seat-2",
+              "boxMm": [
+                11090.5,
+                2986.75,
+                820,
+                25,
+                40,
+                6
+              ],
+              "massKg": 0.048,
+              "bearingAreaMm2": 1000,
+              "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+            },
+            {
+              "id": "HAD/shield-panel-4/seat-1",
+              "boxMm": [
+                11090.5,
+                3223.25,
+                820,
+                25,
+                40,
+                6
+              ],
+              "massKg": 0.048,
+              "bearingAreaMm2": 1000,
+              "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+            },
+            {
+              "id": "HAD/shield-panel-4/seat-2",
+              "boxMm": [
+                11090.5,
+                3459.75,
+                820,
+                25,
+                40,
+                6
+              ],
+              "massKg": 0.048,
+              "bearingAreaMm2": 1000,
+              "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+            },
+            {
+              "id": "HAD/shield-panel-5/seat-1",
+              "boxMm": [
+                11090.5,
+                2750.25,
+                1570,
+                25,
+                40,
+                6
+              ],
+              "massKg": 0.048,
+              "bearingAreaMm2": 1000,
+              "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+            },
+            {
+              "id": "HAD/shield-panel-5/seat-2",
+              "boxMm": [
+                11090.5,
+                2986.75,
+                1570,
+                25,
+                40,
+                6
+              ],
+              "massKg": 0.048,
+              "bearingAreaMm2": 1000,
+              "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+            },
+            {
+              "id": "HAD/shield-panel-6/seat-1",
+              "boxMm": [
+                11090.5,
+                3223.25,
+                1570,
+                25,
+                40,
+                6
+              ],
+              "massKg": 0.048,
+              "bearingAreaMm2": 1000,
+              "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+            },
+            {
+              "id": "HAD/shield-panel-6/seat-2",
+              "boxMm": [
+                11090.5,
+                3459.75,
+                1570,
+                25,
+                40,
+                6
+              ],
+              "massKg": 0.048,
+              "bearingAreaMm2": 1000,
+              "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+            },
+            {
+              "id": "HAD/shield-panel-7/seat-1",
+              "boxMm": [
+                11090.5,
+                2750.25,
+                2320,
+                25,
+                40,
+                6
+              ],
+              "massKg": 0.048,
+              "bearingAreaMm2": 1000,
+              "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+            },
+            {
+              "id": "HAD/shield-panel-7/seat-2",
+              "boxMm": [
+                11090.5,
+                2986.75,
+                2320,
+                25,
+                40,
+                6
+              ],
+              "massKg": 0.048,
+              "bearingAreaMm2": 1000,
+              "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+            },
+            {
+              "id": "HAD/shield-panel-8/seat-1",
+              "boxMm": [
+                11090.5,
+                3223.25,
+                2320,
+                25,
+                40,
+                6
+              ],
+              "massKg": 0.048,
+              "bearingAreaMm2": 1000,
+              "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+            },
+            {
+              "id": "HAD/shield-panel-8/seat-2",
+              "boxMm": [
+                11090.5,
+                3459.75,
+                2320,
+                25,
+                40,
+                6
+              ],
+              "massKg": 0.048,
+              "bearingAreaMm2": 1000,
+              "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+            }
+          ],
+          "panelRetainers": [
+            {
+              "id": "HAD/shield-panel-1/retainer-0.25-60",
+              "axisXYZMm": [
+                11090.5,
+                2770.25,
+                60
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                2767.25,
+                57,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-1/retainer-0.25-790",
+              "axisXYZMm": [
+                11090.5,
+                2770.25,
+                790
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                2767.25,
+                787,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-1/retainer-0.75-60",
+              "axisXYZMm": [
+                11090.5,
+                3006.75,
+                60
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                3003.75,
+                57,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-1/retainer-0.75-790",
+              "axisXYZMm": [
+                11090.5,
+                3006.75,
+                790
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                3003.75,
+                787,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-2/retainer-0.25-60",
+              "axisXYZMm": [
+                11090.5,
+                3243.25,
+                60
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                3240.25,
+                57,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-2/retainer-0.25-790",
+              "axisXYZMm": [
+                11090.5,
+                3243.25,
+                790
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                3240.25,
+                787,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-2/retainer-0.75-60",
+              "axisXYZMm": [
+                11090.5,
+                3479.75,
+                60
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                3476.75,
+                57,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-2/retainer-0.75-790",
+              "axisXYZMm": [
+                11090.5,
+                3479.75,
+                790
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                3476.75,
+                787,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-3/retainer-0.25-810",
+              "axisXYZMm": [
+                11090.5,
+                2770.25,
+                810
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                2767.25,
+                807,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-3/retainer-0.25-1540",
+              "axisXYZMm": [
+                11090.5,
+                2770.25,
+                1540
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                2767.25,
+                1537,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-3/retainer-0.75-810",
+              "axisXYZMm": [
+                11090.5,
+                3006.75,
+                810
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                3003.75,
+                807,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-3/retainer-0.75-1540",
+              "axisXYZMm": [
+                11090.5,
+                3006.75,
+                1540
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                3003.75,
+                1537,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-4/retainer-0.25-810",
+              "axisXYZMm": [
+                11090.5,
+                3243.25,
+                810
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                3240.25,
+                807,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-4/retainer-0.25-1540",
+              "axisXYZMm": [
+                11090.5,
+                3243.25,
+                1540
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                3240.25,
+                1537,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-4/retainer-0.75-810",
+              "axisXYZMm": [
+                11090.5,
+                3479.75,
+                810
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                3476.75,
+                807,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-4/retainer-0.75-1540",
+              "axisXYZMm": [
+                11090.5,
+                3479.75,
+                1540
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                3476.75,
+                1537,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-5/retainer-0.25-1560",
+              "axisXYZMm": [
+                11090.5,
+                2770.25,
+                1560
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                2767.25,
+                1557,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-5/retainer-0.25-2290",
+              "axisXYZMm": [
+                11090.5,
+                2770.25,
+                2290
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                2767.25,
+                2287,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-5/retainer-0.75-1560",
+              "axisXYZMm": [
+                11090.5,
+                3006.75,
+                1560
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                3003.75,
+                1557,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-5/retainer-0.75-2290",
+              "axisXYZMm": [
+                11090.5,
+                3006.75,
+                2290
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                3003.75,
+                2287,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-6/retainer-0.25-1560",
+              "axisXYZMm": [
+                11090.5,
+                3243.25,
+                1560
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                3240.25,
+                1557,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-6/retainer-0.25-2290",
+              "axisXYZMm": [
+                11090.5,
+                3243.25,
+                2290
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                3240.25,
+                2287,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-6/retainer-0.75-1560",
+              "axisXYZMm": [
+                11090.5,
+                3479.75,
+                1560
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                3476.75,
+                1557,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-6/retainer-0.75-2290",
+              "axisXYZMm": [
+                11090.5,
+                3479.75,
+                2290
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                3476.75,
+                2287,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-7/retainer-0.25-2310",
+              "axisXYZMm": [
+                11090.5,
+                2770.25,
+                2310
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                2767.25,
+                2307,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-7/retainer-0.25-3040",
+              "axisXYZMm": [
+                11090.5,
+                2770.25,
+                3040
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                2767.25,
+                3037,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-7/retainer-0.75-2310",
+              "axisXYZMm": [
+                11090.5,
+                3006.75,
+                2310
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                3003.75,
+                2307,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-7/retainer-0.75-3040",
+              "axisXYZMm": [
+                11090.5,
+                3006.75,
+                3040
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                3003.75,
+                3037,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-8/retainer-0.25-2310",
+              "axisXYZMm": [
+                11090.5,
+                3243.25,
+                2310
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                3240.25,
+                2307,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-8/retainer-0.25-3040",
+              "axisXYZMm": [
+                11090.5,
+                3243.25,
+                3040
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                3240.25,
+                3037,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-8/retainer-0.75-2310",
+              "axisXYZMm": [
+                11090.5,
+                3479.75,
+                2310
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                3476.75,
+                2307,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            },
+            {
+              "id": "HAD/shield-panel-8/retainer-0.75-3040",
+              "axisXYZMm": [
+                11090.5,
+                3479.75,
+                3040
+              ],
+              "shaftEnvelopeMm": [
+                11086.5,
+                3476.75,
+                3037,
+                60,
+                6,
+                6
+              ],
+              "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+            }
+          ],
+          "layout": {
+            "frameFrontXMm": 11090.5,
+            "frameBackXMm": 11140.5,
+            "postAxesYMm": [
+              2687,
+              3563
+            ],
+            "attachmentRowsZMm": [
+              1100,
+              2700
+            ],
+            "anchorAxisXMm": 11180,
+            "panelSeat": "Two25x40x6 feet each panel, underside20mm above sheet bottom, directly bearing on40mm rail top; no pressure pipe or liner support.",
+            "panelRetention": "Four captive M6 upper/side retainers per panel; exact weld/local panel and pressure impact resistance unqualified.",
+            "normalFloorClearanceMm": 30,
+            "topFrameBelowCeilingMm": 30,
+            "requiredInstallation": "Fit opposed backing plates and noncompressible sleeves directly to exposed core;50mm finish clear holes keep45mm sleeves independent of finish. Both room faces remain accessible."
+          },
+          "quantities": {
+            "sheetKg": 90.81599999999999,
+            "frameAndPlatesAndRodStockKg": 91.46683577877523,
+            "panelSeatKg": 0.7680000000000001,
+            "boltWasherNutBudgetKg": 4,
+            "totalReferenceKg": 187.05083577877522,
+            "weldAndUnknownHardwareKg": null,
+            "exactSupplierMaximumLoadedMassQualified": false
+          },
+          "staticComparison": {
+            "steel": {
+              "elasticModulusMpa": 200000,
+              "densityKgM3": 8000,
+              "comparisonProofStressMpa": 200,
+              "source": "https://www.thyssenkrupp-materials.co.uk/stainless-steel-316-14401.html/index.html",
+              "status": "bare stainless fabricated reference sections; exact stock, weld filler, proof stress and complete constituents require certificates"
+            },
+            "proofDivisor": 1.5,
+            "gravityActionFactor": 1.35,
+            "sourceActionFactor": 1.5,
+            "dynamicImpactFactorQualified": false,
+            "totalGravityN": 1834.968698989785,
+            "gravityDesignN": 2477.20774363621,
+            "sourceDesignN": 686.6529009940077,
+            "postStressMpa": 72.28696698343347,
+            "railStressMpa": 29.493779727314884,
+            "armStressMpa": 16.819047577738036,
+            "boltTensionN": 2475.916478471662,
+            "boltShearN": 1226.9442766057484,
+            "boltGroupMyNmm": 159779.89946453556,
+            "boltGroupShearPolarMm2": 20000,
+            "boltTorsionShearN": 399.4497486613389,
+            "boltCombinedMpa": 126.25727453226287,
+            "threadRootMm": 16.9325,
+            "tensileAreaMm2": 244.79397575955002,
+            "rodFreeSpanComparisonMm": 45,
+            "rodBendingMpa": 115.84417623503616,
+            "frontPlateStripStressMpa": 99.03665913886648,
+            "allowableMpa": 133.33333333333334,
+            "postDeflectionMm": 12.784881782431643,
+            "railDeflectionMm": 0.4715170565005831,
+            "boardReserveAfter10AndDeflectionMm": 26.743601161067772,
+            "necessaryStaticSteelScreen": true,
+            "scope": "Full paired steady-reversal envelope is charged to either single rail/post at its worst height; full gravity charged to each bracket as a nonconcurrent resistance envelope. Not a measured jet/dynamic load, exact frame-stiffness/group solution or installed resistance."
+          },
+          "structuralHandoff": {
+            "massItems": [
+              {
+                "id": "HAD/shield-post-1",
+                "boxMm": [
+                  11090.5,
+                  2662,
+                  50,
+                  50,
+                  50,
+                  3000
+                ],
+                "netSectionAreaMm2": 736,
+                "stockLengthMm": 3000,
+                "massKg": 17.664,
+                "basis": "50x50x4 reference RHS"
+              },
+              {
+                "id": "HAD/shield-post-2",
+                "boxMm": [
+                  11090.5,
+                  3538,
+                  50,
+                  50,
+                  50,
+                  3000
+                ],
+                "netSectionAreaMm2": 736,
+                "stockLengthMm": 3000,
+                "massKg": 17.664,
+                "basis": "50x50x4 reference RHS"
+              },
+              {
+                "id": "HAD/shield-rail-1",
+                "boxMm": [
+                  11090.5,
+                  2712,
+                  30,
+                  40,
+                  826,
+                  40
+                ],
+                "netSectionAreaMm2": 444,
+                "stockLengthMm": 826,
+                "massKg": 2.933952,
+                "basis": "40x40x3 rail ends meet post faces;4mm returned weld comparison"
+              },
+              {
+                "id": "HAD/shield-rail-2",
+                "boxMm": [
+                  11090.5,
+                  2712,
+                  780,
+                  40,
+                  826,
+                  40
+                ],
+                "netSectionAreaMm2": 444,
+                "stockLengthMm": 826,
+                "massKg": 2.933952,
+                "basis": "40x40x3 rail ends meet post faces;4mm returned weld comparison"
+              },
+              {
+                "id": "HAD/shield-rail-3",
+                "boxMm": [
+                  11090.5,
+                  2712,
+                  1530,
+                  40,
+                  826,
+                  40
+                ],
+                "netSectionAreaMm2": 444,
+                "stockLengthMm": 826,
+                "massKg": 2.933952,
+                "basis": "40x40x3 rail ends meet post faces;4mm returned weld comparison"
+              },
+              {
+                "id": "HAD/shield-rail-4",
+                "boxMm": [
+                  11090.5,
+                  2712,
+                  2280,
+                  40,
+                  826,
+                  40
+                ],
+                "netSectionAreaMm2": 444,
+                "stockLengthMm": 826,
+                "massKg": 2.933952,
+                "basis": "40x40x3 rail ends meet post faces;4mm returned weld comparison"
+              },
+              {
+                "id": "HAD/shield-rail-5",
+                "boxMm": [
+                  11090.5,
+                  2712,
+                  3030,
+                  40,
+                  826,
+                  40
+                ],
+                "netSectionAreaMm2": 444,
+                "stockLengthMm": 826,
+                "massKg": 2.933952,
+                "basis": "40x40x3 rail ends meet post faces;4mm returned weld comparison"
+              },
+              {
+                "id": "HAD/utility-north/shield-arm-1",
+                "boxMm": [
+                  11140.5,
+                  2662,
+                  1075,
+                  114.5,
+                  50,
+                  50
+                ],
+                "netSectionAreaMm2": 736,
+                "stockLengthMm": 114.5,
+                "massKg": 0.674176,
+                "basis": "50x50x4 arm side welded to endplate; no interpenetrating stock"
+              },
+              {
+                "id": "HAD/utility-north/front-plate-1",
+                "boxMm": [
+                  11105,
+                  2652,
+                  1025,
+                  150,
+                  10,
+                  150
+                ],
+                "netSectionAreaMm2": 1500,
+                "stockLengthMm": 150,
+                "massKg": 1.8,
+                "basis": "150x150x10 front plate"
+              },
+              {
+                "id": "HAD/utility-north/back-plate-1",
+                "boxMm": [
+                  11105,
+                  2438,
+                  1025,
+                  150,
+                  10,
+                  150
+                ],
+                "netSectionAreaMm2": 1500,
+                "stockLengthMm": 150,
+                "massKg": 1.8,
+                "basis": "150x150x10 opposed accessible backing plate"
+              },
+              {
+                "id": "HAD/utility-north/through-rod-1-1",
+                "boxMm": [
+                  11120,
+                  2418,
+                  1040,
+                  20,
+                  264,
+                  20
+                ],
+                "netSectionAreaMm2": 314.1592653589793,
+                "stockLengthMm": 264,
+                "massKg": 0.6635043684381644,
+                "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+              },
+              {
+                "id": "HAD/utility-north/front-core-spacer-1-1",
+                "boxMm": [
+                  11107.5,
+                  2620,
+                  1027.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+              },
+              {
+                "id": "HAD/utility-north/back-core-spacer-1-1",
+                "boxMm": [
+                  11107.5,
+                  2448,
+                  1027.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+              },
+              {
+                "id": "HAD/utility-north/through-rod-1-2",
+                "boxMm": [
+                  11120,
+                  2418,
+                  1140,
+                  20,
+                  264,
+                  20
+                ],
+                "netSectionAreaMm2": 314.1592653589793,
+                "stockLengthMm": 264,
+                "massKg": 0.6635043684381644,
+                "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+              },
+              {
+                "id": "HAD/utility-north/front-core-spacer-1-2",
+                "boxMm": [
+                  11107.5,
+                  2620,
+                  1127.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+              },
+              {
+                "id": "HAD/utility-north/back-core-spacer-1-2",
+                "boxMm": [
+                  11107.5,
+                  2448,
+                  1127.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+              },
+              {
+                "id": "HAD/utility-north/through-rod-1-3",
+                "boxMm": [
+                  11220,
+                  2418,
+                  1040,
+                  20,
+                  264,
+                  20
+                ],
+                "netSectionAreaMm2": 314.1592653589793,
+                "stockLengthMm": 264,
+                "massKg": 0.6635043684381644,
+                "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+              },
+              {
+                "id": "HAD/utility-north/front-core-spacer-1-3",
+                "boxMm": [
+                  11207.5,
+                  2620,
+                  1027.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+              },
+              {
+                "id": "HAD/utility-north/back-core-spacer-1-3",
+                "boxMm": [
+                  11207.5,
+                  2448,
+                  1027.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+              },
+              {
+                "id": "HAD/utility-north/through-rod-1-4",
+                "boxMm": [
+                  11220,
+                  2418,
+                  1140,
+                  20,
+                  264,
+                  20
+                ],
+                "netSectionAreaMm2": 314.1592653589793,
+                "stockLengthMm": 264,
+                "massKg": 0.6635043684381644,
+                "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+              },
+              {
+                "id": "HAD/utility-north/front-core-spacer-1-4",
+                "boxMm": [
+                  11207.5,
+                  2620,
+                  1127.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+              },
+              {
+                "id": "HAD/utility-north/back-core-spacer-1-4",
+                "boxMm": [
+                  11207.5,
+                  2448,
+                  1127.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+              },
+              {
+                "id": "HAD/utility-north/back-cover-1",
+                "boxMm": [
+                  11098,
+                  2421,
+                  1018,
+                  164,
+                  40,
+                  164
+                ],
+                "netSectionAreaMm2": 492,
+                "stockLengthMm": 244,
+                "massKg": 0.960384,
+                "basis": "3mm returned metal cover stock budget; exact corners and fasteners additional"
+              },
+              {
+                "id": "HAD/utility-north/shield-arm-2",
+                "boxMm": [
+                  11140.5,
+                  2662,
+                  2675,
+                  114.5,
+                  50,
+                  50
+                ],
+                "netSectionAreaMm2": 736,
+                "stockLengthMm": 114.5,
+                "massKg": 0.674176,
+                "basis": "50x50x4 arm side welded to endplate; no interpenetrating stock"
+              },
+              {
+                "id": "HAD/utility-north/front-plate-2",
+                "boxMm": [
+                  11105,
+                  2652,
+                  2625,
+                  150,
+                  10,
+                  150
+                ],
+                "netSectionAreaMm2": 1500,
+                "stockLengthMm": 150,
+                "massKg": 1.8,
+                "basis": "150x150x10 front plate"
+              },
+              {
+                "id": "HAD/utility-north/back-plate-2",
+                "boxMm": [
+                  11105,
+                  2438,
+                  2625,
+                  150,
+                  10,
+                  150
+                ],
+                "netSectionAreaMm2": 1500,
+                "stockLengthMm": 150,
+                "massKg": 1.8,
+                "basis": "150x150x10 opposed accessible backing plate"
+              },
+              {
+                "id": "HAD/utility-north/through-rod-2-1",
+                "boxMm": [
+                  11120,
+                  2418,
+                  2640,
+                  20,
+                  264,
+                  20
+                ],
+                "netSectionAreaMm2": 314.1592653589793,
+                "stockLengthMm": 264,
+                "massKg": 0.6635043684381644,
+                "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+              },
+              {
+                "id": "HAD/utility-north/front-core-spacer-2-1",
+                "boxMm": [
+                  11107.5,
+                  2620,
+                  2627.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+              },
+              {
+                "id": "HAD/utility-north/back-core-spacer-2-1",
+                "boxMm": [
+                  11107.5,
+                  2448,
+                  2627.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+              },
+              {
+                "id": "HAD/utility-north/through-rod-2-2",
+                "boxMm": [
+                  11120,
+                  2418,
+                  2740,
+                  20,
+                  264,
+                  20
+                ],
+                "netSectionAreaMm2": 314.1592653589793,
+                "stockLengthMm": 264,
+                "massKg": 0.6635043684381644,
+                "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+              },
+              {
+                "id": "HAD/utility-north/front-core-spacer-2-2",
+                "boxMm": [
+                  11107.5,
+                  2620,
+                  2727.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+              },
+              {
+                "id": "HAD/utility-north/back-core-spacer-2-2",
+                "boxMm": [
+                  11107.5,
+                  2448,
+                  2727.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+              },
+              {
+                "id": "HAD/utility-north/through-rod-2-3",
+                "boxMm": [
+                  11220,
+                  2418,
+                  2640,
+                  20,
+                  264,
+                  20
+                ],
+                "netSectionAreaMm2": 314.1592653589793,
+                "stockLengthMm": 264,
+                "massKg": 0.6635043684381644,
+                "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+              },
+              {
+                "id": "HAD/utility-north/front-core-spacer-2-3",
+                "boxMm": [
+                  11207.5,
+                  2620,
+                  2627.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+              },
+              {
+                "id": "HAD/utility-north/back-core-spacer-2-3",
+                "boxMm": [
+                  11207.5,
+                  2448,
+                  2627.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+              },
+              {
+                "id": "HAD/utility-north/through-rod-2-4",
+                "boxMm": [
+                  11220,
+                  2418,
+                  2740,
+                  20,
+                  264,
+                  20
+                ],
+                "netSectionAreaMm2": 314.1592653589793,
+                "stockLengthMm": 264,
+                "massKg": 0.6635043684381644,
+                "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+              },
+              {
+                "id": "HAD/utility-north/front-core-spacer-2-4",
+                "boxMm": [
+                  11207.5,
+                  2620,
+                  2727.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+              },
+              {
+                "id": "HAD/utility-north/back-core-spacer-2-4",
+                "boxMm": [
+                  11207.5,
+                  2448,
+                  2727.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+              },
+              {
+                "id": "HAD/utility-north/back-cover-2",
+                "boxMm": [
+                  11098,
+                  2421,
+                  2618,
+                  164,
+                  40,
+                  164
+                ],
+                "netSectionAreaMm2": 492,
+                "stockLengthMm": 244,
+                "massKg": 0.960384,
+                "basis": "3mm returned metal cover stock budget; exact corners and fasteners additional"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/shield-arm-1",
+                "boxMm": [
+                  11140.5,
+                  3538,
+                  1075,
+                  114.5,
+                  50,
+                  50
+                ],
+                "netSectionAreaMm2": 736,
+                "stockLengthMm": 114.5,
+                "massKg": 0.674176,
+                "basis": "50x50x4 arm side welded to endplate; no interpenetrating stock"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/front-plate-1",
+                "boxMm": [
+                  11105,
+                  3588,
+                  1025,
+                  150,
+                  10,
+                  150
+                ],
+                "netSectionAreaMm2": 1500,
+                "stockLengthMm": 150,
+                "massKg": 1.8,
+                "basis": "150x150x10 front plate"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/back-plate-1",
+                "boxMm": [
+                  11105,
+                  3802,
+                  1025,
+                  150,
+                  10,
+                  150
+                ],
+                "netSectionAreaMm2": 1500,
+                "stockLengthMm": 150,
+                "massKg": 1.8,
+                "basis": "150x150x10 opposed accessible backing plate"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/through-rod-1-1",
+                "boxMm": [
+                  11120,
+                  3568,
+                  1040,
+                  20,
+                  264,
+                  20
+                ],
+                "netSectionAreaMm2": 314.1592653589793,
+                "stockLengthMm": 264,
+                "massKg": 0.6635043684381644,
+                "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/front-core-spacer-1-1",
+                "boxMm": [
+                  11107.5,
+                  3598,
+                  1027.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/back-core-spacer-1-1",
+                "boxMm": [
+                  11107.5,
+                  3770,
+                  1027.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/through-rod-1-2",
+                "boxMm": [
+                  11120,
+                  3568,
+                  1140,
+                  20,
+                  264,
+                  20
+                ],
+                "netSectionAreaMm2": 314.1592653589793,
+                "stockLengthMm": 264,
+                "massKg": 0.6635043684381644,
+                "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/front-core-spacer-1-2",
+                "boxMm": [
+                  11107.5,
+                  3598,
+                  1127.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/back-core-spacer-1-2",
+                "boxMm": [
+                  11107.5,
+                  3770,
+                  1127.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/through-rod-1-3",
+                "boxMm": [
+                  11220,
+                  3568,
+                  1040,
+                  20,
+                  264,
+                  20
+                ],
+                "netSectionAreaMm2": 314.1592653589793,
+                "stockLengthMm": 264,
+                "massKg": 0.6635043684381644,
+                "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/front-core-spacer-1-3",
+                "boxMm": [
+                  11207.5,
+                  3598,
+                  1027.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/back-core-spacer-1-3",
+                "boxMm": [
+                  11207.5,
+                  3770,
+                  1027.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/through-rod-1-4",
+                "boxMm": [
+                  11220,
+                  3568,
+                  1140,
+                  20,
+                  264,
+                  20
+                ],
+                "netSectionAreaMm2": 314.1592653589793,
+                "stockLengthMm": 264,
+                "massKg": 0.6635043684381644,
+                "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/front-core-spacer-1-4",
+                "boxMm": [
+                  11207.5,
+                  3598,
+                  1127.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/back-core-spacer-1-4",
+                "boxMm": [
+                  11207.5,
+                  3770,
+                  1127.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/back-cover-1",
+                "boxMm": [
+                  11098,
+                  3802,
+                  1018,
+                  164,
+                  40,
+                  164
+                ],
+                "netSectionAreaMm2": 492,
+                "stockLengthMm": 244,
+                "massKg": 0.960384,
+                "basis": "3mm returned metal cover stock budget; exact corners and fasteners additional"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/shield-arm-2",
+                "boxMm": [
+                  11140.5,
+                  3538,
+                  2675,
+                  114.5,
+                  50,
+                  50
+                ],
+                "netSectionAreaMm2": 736,
+                "stockLengthMm": 114.5,
+                "massKg": 0.674176,
+                "basis": "50x50x4 arm side welded to endplate; no interpenetrating stock"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/front-plate-2",
+                "boxMm": [
+                  11105,
+                  3588,
+                  2625,
+                  150,
+                  10,
+                  150
+                ],
+                "netSectionAreaMm2": 1500,
+                "stockLengthMm": 150,
+                "massKg": 1.8,
+                "basis": "150x150x10 front plate"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/back-plate-2",
+                "boxMm": [
+                  11105,
+                  3802,
+                  2625,
+                  150,
+                  10,
+                  150
+                ],
+                "netSectionAreaMm2": 1500,
+                "stockLengthMm": 150,
+                "massKg": 1.8,
+                "basis": "150x150x10 opposed accessible backing plate"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/through-rod-2-1",
+                "boxMm": [
+                  11120,
+                  3568,
+                  2640,
+                  20,
+                  264,
+                  20
+                ],
+                "netSectionAreaMm2": 314.1592653589793,
+                "stockLengthMm": 264,
+                "massKg": 0.6635043684381644,
+                "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/front-core-spacer-2-1",
+                "boxMm": [
+                  11107.5,
+                  3598,
+                  2627.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/back-core-spacer-2-1",
+                "boxMm": [
+                  11107.5,
+                  3770,
+                  2627.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/through-rod-2-2",
+                "boxMm": [
+                  11120,
+                  3568,
+                  2740,
+                  20,
+                  264,
+                  20
+                ],
+                "netSectionAreaMm2": 314.1592653589793,
+                "stockLengthMm": 264,
+                "massKg": 0.6635043684381644,
+                "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/front-core-spacer-2-2",
+                "boxMm": [
+                  11107.5,
+                  3598,
+                  2727.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/back-core-spacer-2-2",
+                "boxMm": [
+                  11107.5,
+                  3770,
+                  2727.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/through-rod-2-3",
+                "boxMm": [
+                  11220,
+                  3568,
+                  2640,
+                  20,
+                  264,
+                  20
+                ],
+                "netSectionAreaMm2": 314.1592653589793,
+                "stockLengthMm": 264,
+                "massKg": 0.6635043684381644,
+                "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/front-core-spacer-2-3",
+                "boxMm": [
+                  11207.5,
+                  3598,
+                  2627.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/back-core-spacer-2-3",
+                "boxMm": [
+                  11207.5,
+                  3770,
+                  2627.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/through-rod-2-4",
+                "boxMm": [
+                  11220,
+                  3568,
+                  2740,
+                  20,
+                  264,
+                  20
+                ],
+                "netSectionAreaMm2": 314.1592653589793,
+                "stockLengthMm": 264,
+                "massKg": 0.6635043684381644,
+                "basis": "M20 gross stock mass; nominal2.5mm pitch/root geometry comparison, supplied grade unqualified"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/front-core-spacer-2-4",
+                "boxMm": [
+                  11207.5,
+                  3598,
+                  2727.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "45OD/22ID bare-core sleeve; no finish bearing"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/back-core-spacer-2-4",
+                "boxMm": [
+                  11207.5,
+                  3770,
+                  2727.5,
+                  45,
+                  32,
+                  45
+                ],
+                "netSectionAreaMm2": 1210.2985697954678,
+                "stockLengthMm": 32,
+                "massKg": 0.3098364338676397,
+                "basis": "Separate opposite-face45OD/22ID sleeve; no fictitious sleeve through core"
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/back-cover-2",
+                "boxMm": [
+                  11098,
+                  3802,
+                  2618,
+                  164,
+                  40,
+                  164
+                ],
+                "netSectionAreaMm2": 492,
+                "stockLengthMm": 244,
+                "massKg": 0.960384,
+                "basis": "3mm returned metal cover stock budget; exact corners and fasteners additional"
+              }
+            ],
+            "panelSeats": [
+              {
+                "id": "HAD/shield-panel-1/seat-1",
+                "boxMm": [
+                  11090.5,
+                  2750.25,
+                  70,
+                  25,
+                  40,
+                  6
+                ],
+                "massKg": 0.048,
+                "bearingAreaMm2": 1000,
+                "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+              },
+              {
+                "id": "HAD/shield-panel-1/seat-2",
+                "boxMm": [
+                  11090.5,
+                  2986.75,
+                  70,
+                  25,
+                  40,
+                  6
+                ],
+                "massKg": 0.048,
+                "bearingAreaMm2": 1000,
+                "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+              },
+              {
+                "id": "HAD/shield-panel-2/seat-1",
+                "boxMm": [
+                  11090.5,
+                  3223.25,
+                  70,
+                  25,
+                  40,
+                  6
+                ],
+                "massKg": 0.048,
+                "bearingAreaMm2": 1000,
+                "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+              },
+              {
+                "id": "HAD/shield-panel-2/seat-2",
+                "boxMm": [
+                  11090.5,
+                  3459.75,
+                  70,
+                  25,
+                  40,
+                  6
+                ],
+                "massKg": 0.048,
+                "bearingAreaMm2": 1000,
+                "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+              },
+              {
+                "id": "HAD/shield-panel-3/seat-1",
+                "boxMm": [
+                  11090.5,
+                  2750.25,
+                  820,
+                  25,
+                  40,
+                  6
+                ],
+                "massKg": 0.048,
+                "bearingAreaMm2": 1000,
+                "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+              },
+              {
+                "id": "HAD/shield-panel-3/seat-2",
+                "boxMm": [
+                  11090.5,
+                  2986.75,
+                  820,
+                  25,
+                  40,
+                  6
+                ],
+                "massKg": 0.048,
+                "bearingAreaMm2": 1000,
+                "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+              },
+              {
+                "id": "HAD/shield-panel-4/seat-1",
+                "boxMm": [
+                  11090.5,
+                  3223.25,
+                  820,
+                  25,
+                  40,
+                  6
+                ],
+                "massKg": 0.048,
+                "bearingAreaMm2": 1000,
+                "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+              },
+              {
+                "id": "HAD/shield-panel-4/seat-2",
+                "boxMm": [
+                  11090.5,
+                  3459.75,
+                  820,
+                  25,
+                  40,
+                  6
+                ],
+                "massKg": 0.048,
+                "bearingAreaMm2": 1000,
+                "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+              },
+              {
+                "id": "HAD/shield-panel-5/seat-1",
+                "boxMm": [
+                  11090.5,
+                  2750.25,
+                  1570,
+                  25,
+                  40,
+                  6
+                ],
+                "massKg": 0.048,
+                "bearingAreaMm2": 1000,
+                "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+              },
+              {
+                "id": "HAD/shield-panel-5/seat-2",
+                "boxMm": [
+                  11090.5,
+                  2986.75,
+                  1570,
+                  25,
+                  40,
+                  6
+                ],
+                "massKg": 0.048,
+                "bearingAreaMm2": 1000,
+                "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+              },
+              {
+                "id": "HAD/shield-panel-6/seat-1",
+                "boxMm": [
+                  11090.5,
+                  3223.25,
+                  1570,
+                  25,
+                  40,
+                  6
+                ],
+                "massKg": 0.048,
+                "bearingAreaMm2": 1000,
+                "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+              },
+              {
+                "id": "HAD/shield-panel-6/seat-2",
+                "boxMm": [
+                  11090.5,
+                  3459.75,
+                  1570,
+                  25,
+                  40,
+                  6
+                ],
+                "massKg": 0.048,
+                "bearingAreaMm2": 1000,
+                "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+              },
+              {
+                "id": "HAD/shield-panel-7/seat-1",
+                "boxMm": [
+                  11090.5,
+                  2750.25,
+                  2320,
+                  25,
+                  40,
+                  6
+                ],
+                "massKg": 0.048,
+                "bearingAreaMm2": 1000,
+                "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+              },
+              {
+                "id": "HAD/shield-panel-7/seat-2",
+                "boxMm": [
+                  11090.5,
+                  2986.75,
+                  2320,
+                  25,
+                  40,
+                  6
+                ],
+                "massKg": 0.048,
+                "bearingAreaMm2": 1000,
+                "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+              },
+              {
+                "id": "HAD/shield-panel-8/seat-1",
+                "boxMm": [
+                  11090.5,
+                  3223.25,
+                  2320,
+                  25,
+                  40,
+                  6
+                ],
+                "massKg": 0.048,
+                "bearingAreaMm2": 1000,
+                "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+              },
+              {
+                "id": "HAD/shield-panel-8/seat-2",
+                "boxMm": [
+                  11090.5,
+                  3459.75,
+                  2320,
+                  25,
+                  40,
+                  6
+                ],
+                "massKg": 0.048,
+                "bearingAreaMm2": 1000,
+                "contact": "Foot underside bears on the actual rail top; local weld and positive retention remain unqualified."
+              }
+            ],
+            "panelRetainers": [
+              {
+                "id": "HAD/shield-panel-1/retainer-0.25-60",
+                "axisXYZMm": [
+                  11090.5,
+                  2770.25,
+                  60
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  2767.25,
+                  57,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-1/retainer-0.25-790",
+                "axisXYZMm": [
+                  11090.5,
+                  2770.25,
+                  790
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  2767.25,
+                  787,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-1/retainer-0.75-60",
+                "axisXYZMm": [
+                  11090.5,
+                  3006.75,
+                  60
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  3003.75,
+                  57,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-1/retainer-0.75-790",
+                "axisXYZMm": [
+                  11090.5,
+                  3006.75,
+                  790
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  3003.75,
+                  787,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-2/retainer-0.25-60",
+                "axisXYZMm": [
+                  11090.5,
+                  3243.25,
+                  60
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  3240.25,
+                  57,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-2/retainer-0.25-790",
+                "axisXYZMm": [
+                  11090.5,
+                  3243.25,
+                  790
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  3240.25,
+                  787,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-2/retainer-0.75-60",
+                "axisXYZMm": [
+                  11090.5,
+                  3479.75,
+                  60
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  3476.75,
+                  57,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-2/retainer-0.75-790",
+                "axisXYZMm": [
+                  11090.5,
+                  3479.75,
+                  790
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  3476.75,
+                  787,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-3/retainer-0.25-810",
+                "axisXYZMm": [
+                  11090.5,
+                  2770.25,
+                  810
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  2767.25,
+                  807,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-3/retainer-0.25-1540",
+                "axisXYZMm": [
+                  11090.5,
+                  2770.25,
+                  1540
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  2767.25,
+                  1537,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-3/retainer-0.75-810",
+                "axisXYZMm": [
+                  11090.5,
+                  3006.75,
+                  810
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  3003.75,
+                  807,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-3/retainer-0.75-1540",
+                "axisXYZMm": [
+                  11090.5,
+                  3006.75,
+                  1540
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  3003.75,
+                  1537,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-4/retainer-0.25-810",
+                "axisXYZMm": [
+                  11090.5,
+                  3243.25,
+                  810
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  3240.25,
+                  807,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-4/retainer-0.25-1540",
+                "axisXYZMm": [
+                  11090.5,
+                  3243.25,
+                  1540
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  3240.25,
+                  1537,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-4/retainer-0.75-810",
+                "axisXYZMm": [
+                  11090.5,
+                  3479.75,
+                  810
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  3476.75,
+                  807,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-4/retainer-0.75-1540",
+                "axisXYZMm": [
+                  11090.5,
+                  3479.75,
+                  1540
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  3476.75,
+                  1537,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-5/retainer-0.25-1560",
+                "axisXYZMm": [
+                  11090.5,
+                  2770.25,
+                  1560
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  2767.25,
+                  1557,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-5/retainer-0.25-2290",
+                "axisXYZMm": [
+                  11090.5,
+                  2770.25,
+                  2290
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  2767.25,
+                  2287,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-5/retainer-0.75-1560",
+                "axisXYZMm": [
+                  11090.5,
+                  3006.75,
+                  1560
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  3003.75,
+                  1557,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-5/retainer-0.75-2290",
+                "axisXYZMm": [
+                  11090.5,
+                  3006.75,
+                  2290
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  3003.75,
+                  2287,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-6/retainer-0.25-1560",
+                "axisXYZMm": [
+                  11090.5,
+                  3243.25,
+                  1560
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  3240.25,
+                  1557,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-6/retainer-0.25-2290",
+                "axisXYZMm": [
+                  11090.5,
+                  3243.25,
+                  2290
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  3240.25,
+                  2287,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-6/retainer-0.75-1560",
+                "axisXYZMm": [
+                  11090.5,
+                  3479.75,
+                  1560
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  3476.75,
+                  1557,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-6/retainer-0.75-2290",
+                "axisXYZMm": [
+                  11090.5,
+                  3479.75,
+                  2290
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  3476.75,
+                  2287,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-7/retainer-0.25-2310",
+                "axisXYZMm": [
+                  11090.5,
+                  2770.25,
+                  2310
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  2767.25,
+                  2307,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-7/retainer-0.25-3040",
+                "axisXYZMm": [
+                  11090.5,
+                  2770.25,
+                  3040
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  2767.25,
+                  3037,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-7/retainer-0.75-2310",
+                "axisXYZMm": [
+                  11090.5,
+                  3006.75,
+                  2310
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  3003.75,
+                  2307,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-7/retainer-0.75-3040",
+                "axisXYZMm": [
+                  11090.5,
+                  3006.75,
+                  3040
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  3003.75,
+                  3037,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-8/retainer-0.25-2310",
+                "axisXYZMm": [
+                  11090.5,
+                  3243.25,
+                  2310
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  3240.25,
+                  2307,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-8/retainer-0.25-3040",
+                "axisXYZMm": [
+                  11090.5,
+                  3243.25,
+                  3040
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  3240.25,
+                  3037,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-8/retainer-0.75-2310",
+                "axisXYZMm": [
+                  11090.5,
+                  3479.75,
+                  2310
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  3476.75,
+                  2307,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              },
+              {
+                "id": "HAD/shield-panel-8/retainer-0.75-3040",
+                "axisXYZMm": [
+                  11090.5,
+                  3479.75,
+                  3040
+                ],
+                "shaftEnvelopeMm": [
+                  11086.5,
+                  3476.75,
+                  3037,
+                  60,
+                  6,
+                  6
+                ],
+                "reference": "M6x60 through the4mm sheet and40mm rail, workshop-captive rear nut/washer. Exact component, perforated rail section, washer bearing and local impact/weld qualification are not supplied."
+              }
+            ],
+            "panelSheetKg": 90.81599999999999,
+            "seatKg": 0.7680000000000001,
+            "hardwareBudgetKg": 4,
+            "attachmentPointsMm": [
+              [
+                11180,
+                2550,
+                1100
+              ],
+              [
+                11180,
+                2550,
+                2700
+              ],
+              [
+                11180,
+                3700,
+                1100
+              ],
+              [
+                11180,
+                3700,
+                2700
+              ]
+            ],
+            "globalGravityN": 1834.968698989785,
+            "eachConnectionNonconcurrentEnvelope": {
+              "verticalN": 2477.20774363621,
+              "horizontalXN": 1137.2688672713252,
+              "boltTensionN": 2475.916478471662,
+              "boltShearN": 1226.9442766057484
+            },
+            "physicalInterfaces": [
+              {
+                "id": "HAD/utility-north/shield-connection-1",
+                "owningWallId": "utility-north",
+                "originXYZMm": [
+                  11180,
+                  2550,
+                  1100
+                ],
+                "frameLoadApplicationXYZMm": [
+                  11115.5,
+                  2687,
+                  1100
+                ],
+                "forceComponentBoundsN": [
+                  [
+                    -1137.2688672713252,
+                    1137.2688672713252
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    -2477.20774363621,
+                    0
+                  ]
+                ],
+                "momentComponentBoundsNmm": [
+                  [
+                    -339377.4608781608,
+                    339377.4608781608
+                  ],
+                  [
+                    -159779.89946453556,
+                    159779.89946453556
+                  ],
+                  [
+                    -155805.83481617155,
+                    155805.83481617155
+                  ]
+                ],
+                "scope": "Nonconcurrent resistance envelope at this actual core origin; do not sum all four into a global equilibrium load. Global mass items and source-hit alternatives remain authoritative for coupled analysis.",
+                "missingReceiverEvidence": "Actual140mm core material/reinforcement, four-hole group, local bearing/splitting, preload/prying, wall transfer to its ground receiver and coupled52-head representation."
+              },
+              {
+                "id": "HAD/utility-north/shield-connection-2",
+                "owningWallId": "utility-north",
+                "originXYZMm": [
+                  11180,
+                  2550,
+                  2700
+                ],
+                "frameLoadApplicationXYZMm": [
+                  11115.5,
+                  2687,
+                  2700
+                ],
+                "forceComponentBoundsN": [
+                  [
+                    -1137.2688672713252,
+                    1137.2688672713252
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    -2477.20774363621,
+                    0
+                  ]
+                ],
+                "momentComponentBoundsNmm": [
+                  [
+                    -339377.4608781608,
+                    339377.4608781608
+                  ],
+                  [
+                    -159779.89946453556,
+                    159779.89946453556
+                  ],
+                  [
+                    -155805.83481617155,
+                    155805.83481617155
+                  ]
+                ],
+                "scope": "Nonconcurrent resistance envelope at this actual core origin; do not sum all four into a global equilibrium load. Global mass items and source-hit alternatives remain authoritative for coupled analysis.",
+                "missingReceiverEvidence": "Actual140mm core material/reinforcement, four-hole group, local bearing/splitting, preload/prying, wall transfer to its ground receiver and coupled52-head representation."
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/shield-connection-1",
+                "owningWallId": "plant-intermediate-arch",
+                "originXYZMm": [
+                  11180,
+                  3700,
+                  1100
+                ],
+                "frameLoadApplicationXYZMm": [
+                  11115.5,
+                  3563,
+                  1100
+                ],
+                "forceComponentBoundsN": [
+                  [
+                    -1137.2688672713252,
+                    1137.2688672713252
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    -2477.20774363621,
+                    0
+                  ]
+                ],
+                "momentComponentBoundsNmm": [
+                  [
+                    -339377.4608781608,
+                    339377.4608781608
+                  ],
+                  [
+                    -159779.89946453556,
+                    159779.89946453556
+                  ],
+                  [
+                    -155805.83481617155,
+                    155805.83481617155
+                  ]
+                ],
+                "scope": "Nonconcurrent resistance envelope at this actual core origin; do not sum all four into a global equilibrium load. Global mass items and source-hit alternatives remain authoritative for coupled analysis.",
+                "missingReceiverEvidence": "Actual140mm core material/reinforcement, four-hole group, local bearing/splitting, preload/prying, wall transfer to its ground receiver and coupled52-head representation."
+              },
+              {
+                "id": "HAD/plant-intermediate-arch/shield-connection-2",
+                "owningWallId": "plant-intermediate-arch",
+                "originXYZMm": [
+                  11180,
+                  3700,
+                  2700
+                ],
+                "frameLoadApplicationXYZMm": [
+                  11115.5,
+                  3563,
+                  2700
+                ],
+                "forceComponentBoundsN": [
+                  [
+                    -1137.2688672713252,
+                    1137.2688672713252
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    -2477.20774363621,
+                    0
+                  ]
+                ],
+                "momentComponentBoundsNmm": [
+                  [
+                    -339377.4608781608,
+                    339377.4608781608
+                  ],
+                  [
+                    -159779.89946453556,
+                    159779.89946453556
+                  ],
+                  [
+                    -155805.83481617155,
+                    155805.83481617155
+                  ]
+                ],
+                "scope": "Nonconcurrent resistance envelope at this actual core origin; do not sum all four into a global equilibrium load. Global mass items and source-hit alternatives remain authoritative for coupled analysis.",
+                "missingReceiverEvidence": "Actual140mm core material/reinforcement, four-hole group, local bearing/splitting, preload/prying, wall transfer to its ground receiver and coupled52-head representation."
+              }
+            ],
+            "exactMasonryReceiverAnd52HeadModelUpdated": false,
+            "contactPreloadPryingAndFrameWeldsQualified": false
+          },
+          "diagnostics": [
+            "SHIELD_FRAME_MASONRY_GROUP_PRYING_AND_RECEIVER_UNQUALIFIED",
+            "SHIELD_FRAME_IMPACT_LOCAL_PANEL_WELDS_AND_HANDLING_UNQUALIFIED",
+            "SHIELD_FRAME_LOADS_NOT_IN_52_HEAD_MODEL"
+          ],
+          "reviewSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1600\" height=\"950\" viewBox=\"0 0 1600 950\"><rect width=\"1600\" height=\"950\" fill=\"#f5f1e6\"/><g fill=\"#25221c\" font-family=\"Arial,sans-serif\">\n<text x=\"40\" y=\"42\" font-size=\"26\">Wall-hung service shield · coordinated development candidate</text><text x=\"40\" y=\"76\" font-size=\"16\">Unadopted Utility portal/transfer shift; actual support cores and full load ledger; no floor, DPC or ceiling anchors.</text>\n<text x=\"45\" y=\"120\" font-size=\"18\">WEST ELEVATION · model mm</text><rect x=\"67.2\" y=\"129\" width=\"11\" height=\"660\" fill=\"#48636b\" stroke=\"#20353b\"/><rect x=\"259.91999999999996\" y=\"129\" width=\"11\" height=\"660\" fill=\"#48636b\" stroke=\"#20353b\"/><rect x=\"78.2\" y=\"784.6\" width=\"181.72\" height=\"8.8\" fill=\"#48636b\" stroke=\"#20353b\"/><rect x=\"78.2\" y=\"619.6\" width=\"181.72\" height=\"8.8\" fill=\"#48636b\" stroke=\"#20353b\"/><rect x=\"78.2\" y=\"454.6\" width=\"181.72\" height=\"8.8\" fill=\"#48636b\" stroke=\"#20353b\"/><rect x=\"78.2\" y=\"289.6\" width=\"181.72\" height=\"8.8\" fill=\"#48636b\" stroke=\"#20353b\"/><rect x=\"78.2\" y=\"124.60000000000002\" width=\"181.72\" height=\"8.8\" fill=\"#48636b\" stroke=\"#20353b\"/>\n<rect x=\"65\" y=\"129\" width=\"208.12\" height=\"660\" fill=\"#d2ddd8\" fill-opacity=\".3\" stroke=\"#834a3b\" stroke-width=\"2\"/>\n<line x1=\"65\" x2=\"273.12\" y1=\"624\" y2=\"624\" stroke=\"#834a3b\"/><line x1=\"65\" x2=\"273.12\" y1=\"459\" y2=\"459\" stroke=\"#834a3b\"/><line x1=\"65\" x2=\"273.12\" y1=\"294\" y2=\"294\" stroke=\"#834a3b\"/>\n<line x1=\"169.06\" x2=\"169.06\" y1=\"789\" y2=\"129\" stroke=\"#834a3b\"/>\n<text x=\"300\" y=\"205\" font-size=\"16\">Eight removable4mm sheets; bottom50, top3050mm.</text>\n<text x=\"300\" y=\"245\" font-size=\"16\">50 x50 x4 posts;40 x40 x3 rails; two feet per panel.</text>\n<text x=\"300\" y=\"285\" font-size=\"16\">Lower/upper wall groups1100/2700mm.</text>\n<text x=\"300\" y=\"325\" font-size=\"16\">150-square opposed plates; four M20 rods each group.</text>\n<text x=\"300\" y=\"365\" font-size=\"16\">45OD/22ID bare-core sleeves; finish remains clear.</text>\n<text x=\"300\" y=\"420\" font-size=\"16\">Reference stock+sheet+fixing budget:187.1kg.</text>\n<text x=\"300\" y=\"460\" font-size=\"16\">Static steel screen:PASS; post72.3MPa.</text>\n<text x=\"300\" y=\"500\" font-size=\"16\">Board reserve after10mm+deflections:26.7mm.</text>\n<text x=\"300\" y=\"555\" font-size=\"16\">Masonry group, splitting, prying and wall-to-ground transfer unqualified.</text>\n<text x=\"300\" y=\"595\" font-size=\"16\">Local panel/seat/weld impact and loaded handling remain unqualified.</text>\n<text x=\"1130\" y=\"120\" font-size=\"18\">PLAN · cropped at east service wall</text>\n<rect x=\"1146.775\" y=\"170\" width=\"234.225\" height=\"63\" fill=\"#c8c3b8\"/><rect x=\"1120\" y=\"687.5\" width=\"261\" height=\"63\" fill=\"#c8c3b8\"/>\n<rect x=\"1210\" y=\"357.65\" width=\"171\" height=\"274.5\" fill=\"#d4b580\" stroke=\"#66512b\"/><rect x=\"1165\" y=\"251.9\" width=\"22.5\" height=\"22.5\" fill=\"#526970\" fill-opacity=\".65\" stroke=\"#20353b\"/><rect x=\"1165\" y=\"646.1\" width=\"22.5\" height=\"22.5\" fill=\"#526970\" fill-opacity=\".65\" stroke=\"#20353b\"/><rect x=\"1187.5\" y=\"251.9\" width=\"51.525\" height=\"22.5\" fill=\"#526970\" fill-opacity=\".65\" stroke=\"#20353b\"/><rect x=\"1171.525\" y=\"247.4\" width=\"67.5\" height=\"4.5\" fill=\"#526970\" fill-opacity=\".65\" stroke=\"#20353b\"/><rect x=\"1171.525\" y=\"151.1\" width=\"67.5\" height=\"4.5\" fill=\"#526970\" fill-opacity=\".65\" stroke=\"#20353b\"/><rect x=\"1187.5\" y=\"251.9\" width=\"51.525\" height=\"22.5\" fill=\"#526970\" fill-opacity=\".65\" stroke=\"#20353b\"/><rect x=\"1171.525\" y=\"247.4\" width=\"67.5\" height=\"4.5\" fill=\"#526970\" fill-opacity=\".65\" stroke=\"#20353b\"/><rect x=\"1171.525\" y=\"151.1\" width=\"67.5\" height=\"4.5\" fill=\"#526970\" fill-opacity=\".65\" stroke=\"#20353b\"/><rect x=\"1187.5\" y=\"646.1\" width=\"51.525\" height=\"22.5\" fill=\"#526970\" fill-opacity=\".65\" stroke=\"#20353b\"/><rect x=\"1171.525\" y=\"668.6\" width=\"67.5\" height=\"4.5\" fill=\"#526970\" fill-opacity=\".65\" stroke=\"#20353b\"/><rect x=\"1171.525\" y=\"764.9\" width=\"67.5\" height=\"4.5\" fill=\"#526970\" fill-opacity=\".65\" stroke=\"#20353b\"/><rect x=\"1187.5\" y=\"646.1\" width=\"51.525\" height=\"22.5\" fill=\"#526970\" fill-opacity=\".65\" stroke=\"#20353b\"/><rect x=\"1171.525\" y=\"668.6\" width=\"67.5\" height=\"4.5\" fill=\"#526970\" fill-opacity=\".65\" stroke=\"#20353b\"/><rect x=\"1171.525\" y=\"764.9\" width=\"67.5\" height=\"4.5\" fill=\"#526970\" fill-opacity=\".65\" stroke=\"#20353b\"/>\n<line x1=\"1165\" x2=\"1165\" y1=\"247.4\" y2=\"673.1\" stroke=\"#834a3b\" stroke-width=\"3\"/>\n<text x=\"40\" y=\"850\" font-size=\"17\">The opening width stays900mm; its westward100mm relocation and the elevated board remain counterfactual source choices.</text>\n<text x=\"40\" y=\"885\" font-size=\"17\">No adopted house, measured jet resistance, substrate acceptance, material exception or owner appearance approval is claimed.</text>\n<text x=\"40\" y=\"920\" font-size=\"16\">The52-head model does not yet consume these interface origins/loads. Read the source-bound result and named receiver obligations.</text>\n</g></svg>",
+          "opposedAccess": {
+            "nutToolRadiusComparisonMm": 200,
+            "actualToolAndHandAdmission": false,
+            "plantRadiator": {
+              "id": "plant-N",
+              "bodyTopMm": 700,
+              "renewalLiftMm": 50,
+              "frontPullMm": 150,
+              "toolAfterLiftAnd10Mm": 90
+            },
+            "utilityEquipmentFieldMm": [
+              10245,
+              1525,
+              1100,
+              750
+            ],
+            "utilityCoverToEquipmentPlanMm": 128,
+            "utilityHeadWorkerAndCompleteToolSweepQualified": false,
+            "opposedPlateWithdrawal": "Both water branches and stored inventory isolated/drained; utilityAC andPVAC independently isolated. Retain whole frame on independent rated capture before removing any load-bearing rod or backing plate. Both room faces and source radiator renewal remain accessible."
+          },
+          "sourceReference": {
+            "sourceId": "RH-LAYOUT-REVISION-02",
+            "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
+            "occupiedBindingDigest": "384837dd37a4ca46629d67068e5fd3352301f8e4172911513cabcb54f5e1fb1c",
+            "datum": "Local nominal groundFFL0; uncoordinated raised-ground or changed-slab acceptance not transferred"
+          },
+          "loadedRemoval": {
+            "panelGrossDesignLimitKg": 15,
+            "actualGrossMassMeasured": false,
+            "referenceBareSheetEachKg": 11.351999999999999,
+            "seatFeetEachKg": 0.096,
+            "actualRetainersFinishAndWeldKg": null,
+            "requiredPhases": [
+              "Retain all panels and isolate/drain both sources plus actual stored pressure; independently isolate AC/PVAC.",
+              "Reach and release each captive retainer with panel still on both bearing feet and under independent rated capture.",
+              "Lift at least12mm, draw clear of the50mm frame and independently support the complete payload; no live-sibling or ladder carrying credit.",
+              "Lower to a qualified positive first rest, then export through the actual occupied door; qualify temporary access equipment, people and every swept body.",
+              "For frame renewal support the complete loaded frame before removing opposed through-rods; retained case, pipes and finishes stay independent."
+            ],
+            "panelFirstRestAndCompleteHandlingProved": false,
+            "wholeFrameGrossHandlingMassKg": null,
+            "temporaryEquipmentFloorLoadsQualified": false
+          }
+        },
         "coordinateDatum": "local nominal ground FFL; actual raised-ground and changed intermediate-floor coordination remain unadmitted",
         "actualHouseSource": "RH-LAYOUT-REVISION-02",
         "nominalClearHeightMm": 3100,
@@ -1183,7 +5633,7 @@
       "jacketEachSideMm": 1,
       "pathMm": [
         [
-          11000,
+          10900,
           2360,
           2235
         ],
@@ -1193,7 +5643,7 @@
           2235
         ]
       ],
-      "centrelineLengthMm": 1591.100248,
+      "centrelineLengthMm": 1568.948693,
       "fullNorthDrawPathMm": [
         [
           10600,
@@ -1201,7 +5651,7 @@
           2235
         ],
         [
-          10200,
+          10300,
           5440,
           2235
         ]
@@ -1209,29 +5659,29 @@
       "utilityArch": [
         {
           "wallYmm": 2453,
-          "centreXMm": 10975.844156,
-          "horizontalAfterJacketAnd10Mm": 97.105844,
-          "archHeadAfterJacketAnd10Mm": 446.191443
+          "centreXMm": 10881.883117,
+          "horizontalAfterJacketAnd10Mm": 91.066883,
+          "archHeadAfterJacketAnd10Mm": 441.595793
         },
         {
           "wallYmm": 2647,
-          "centreXMm": 10925.454545,
-          "horizontalAfterJacketAnd10Mm": 147.495455,
-          "archHeadAfterJacketAnd10Mm": 478.985176
+          "centreXMm": 10844.090909,
+          "horizontalAfterJacketAnd10Mm": 128.859091,
+          "archHeadAfterJacketAnd10Mm": 467.936719
         }
       ],
       "plantArch": [
         {
           "wallYmm": 3603,
-          "centreXMm": 10677.142857,
-          "horizontalAfterJacketAnd10Mm": 170.807143,
-          "archHeadAfterJacketAnd10Mm": 436.69749
+          "centreXMm": 10657.857143,
+          "horizontalAfterJacketAnd10Mm": 190.092857,
+          "archHeadAfterJacketAnd10Mm": 447.103047
         },
         {
           "wallYmm": 3797,
-          "centreXMm": 10626.753247,
-          "horizontalAfterJacketAnd10Mm": 221.196753,
-          "archHeadAfterJacketAnd10Mm": 462.490622
+          "centreXMm": 10620.064935,
+          "horizontalAfterJacketAnd10Mm": 227.885065,
+          "archHeadAfterJacketAnd10Mm": 465.583366
         }
       ],
       "bufferAfter10Mm": 9.95,
@@ -1378,6 +5828,9 @@
       "ACTUAL_INDOOR_CUT_RENEWAL_AND_INDEPENDENT_SUPPORT_REQUIRED",
       "MAINBOARD_SCREEN_IMPACT_SEAMS_TOE_AND_DRY_ESCAPE_UNQUALIFIED",
       "MAINBOARD_SCREEN_ACTUAL_SUPPORT_HANDLING_AND_HEAT_UNQUALIFIED",
+      "SHIELD_FRAME_MASONRY_GROUP_PRYING_AND_RECEIVER_UNQUALIFIED",
+      "SHIELD_FRAME_IMPACT_LOCAL_PANEL_WELDS_AND_HANDLING_UNQUALIFIED",
+      "SHIELD_FRAME_LOADS_NOT_IN_52_HEAD_MODEL",
       "WET_DOOR_OPEN_MAINBOARD_JET_AND_MATERIALS_UNQUALIFIED",
       "ACTUAL_WARM_FLOOR_DRAINS_AND_52_HEAD_LOAD_ACCOUNT_UNQUALIFIED"
     ],
