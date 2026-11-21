@@ -9,8 +9,8 @@
     "label": "convergence-20261121"
   },
   "claimedAt": "2026-11-21T19:47:07.671Z",
-  "heartbeatAt": "2026-11-21T21:27:43.883Z",
-  "expiresAt": "2026-11-21T22:12:43.883Z",
+  "heartbeatAt": "2026-11-21T21:54:56.615Z",
+  "expiresAt": "2026-11-21T22:39:56.615Z",
   "branch": "work/convergence-structure-20261121",
   "predecessor": {
     "leaseId": "95dc0271-adfc-448a-9789-0f1476b4b26b",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1613 current source57 nodal9cases and11cuts,278Python+76MJS+3nativeAPI passed; ownerreview/book scope reconciled at6094b1bf; recovery48a2d803 pushed",
-    "next": "Exact-head CI then canonical publication preflight; isolated grid-origin and250mesh successor in progress",
-    "blocker": "No slab/house adoption; local grid demand, corner/contact convergence and resistance remain open"
+    "evidence": "PR1613 source57 head90f3fa78 all focused/native/publication checks passed, canonical health running. Source58 grid+250 successor checkpoint3c91238e has4verified native controls and8fresh ancestor receipts; interruptedparallel cases unpromoted.",
+    "next": "Merge1613 after exact-head health/preflight; finish serial58source controls and250mesh, regenerate/join all affectedproofs and source bindings; cage geometry continuation isolated.",
+    "blocker": "Parallel native processes SIGKILLed; resume verifiedcaptures serially. Corner/contact convergence, fullsignedloads, cages/joints/resistance and raisedhouse adoption stillopen."
   },
   "pr": 1613
 }
