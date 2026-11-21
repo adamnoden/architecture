@@ -187,7 +187,10 @@ def compile_perforated_floor(bodies, omissions, loops, corner_patches, law, max_
             coefficient = -(point[1]-projected[1]) if axis == 0 else point[0]-projected[0]
             return terms+[(index,value*coefficient) for index,value in rotation]
         return [(dof(('mesh',point,axis)),1.)]
-    matrix = {}
+    # A real frame node may have no in-plane plate attachment (for example a
+    # vertical-only station). Retain its exact zero work row rather than
+    # inventing membrane stiffness or dropping an interface coordinate.
+    matrix = {i:{i:0.} for i in range(len(corner_patches)*3)}
     e, nu, shear, thickness = [law[key] for key in ('elasticModulusMPa','poissonRatio','shearModulusMPa','thicknessMm')]
     constitutive = [[e/(1-nu**2),e*nu/(1-nu**2),0],[e*nu/(1-nu**2),e/(1-nu**2),0],[0,0,shear]]
     area_total = 0.
