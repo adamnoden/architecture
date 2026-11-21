@@ -50,6 +50,21 @@ jobs:
           mkdir -p "$RUNNER_TEMP/ade-browser-review"
           node node_modules/vite/bin/vite.js build --config project/ade/browser-editor/vite.config.ts --outDir "$RUNNER_TEMP/ade-editor-dist"
           "$RUNNER_TEMP/ade-browser-proof/bin/python" project/ade/browser-editor/browser_test.py --dist "$RUNNER_TEMP/ade-editor-dist" --screenshot "$RUNNER_TEMP/ade-browser-review/editor.png"
+          node node_modules/vite/bin/vite.js preview --config project/ade/browser-editor/vite.config.ts --outDir "$RUNNER_TEMP/ade-editor-dist" --host 127.0.0.1 --port 4187 --strictPort > "$RUNNER_TEMP/ade-browser-review/server.log" 2>&1 &
+          ADE_PREVIEW_PID=$!
+          trap 'kill "$ADE_PREVIEW_PID" 2>/dev/null || true' EXIT
+          python3 - <<'PY'
+          import time, urllib.request
+          for attempt in range(60):
+              try:
+                  urllib.request.urlopen('http://127.0.0.1:4187/engineering.html', timeout=2)
+                  break
+              except OSError:
+                  if attempt == 59:
+                      raise
+                  time.sleep(1)
+          PY
+          "$RUNNER_TEMP/ade-browser-proof/bin/python" project/ade/browser-editor/engineering_browser_test.py --screenshot "$RUNNER_TEMP/ade-browser-review/engineering-editor.png"
       - name: Retain browser evidence
         uses: actions/upload-artifact@v6
         with:
