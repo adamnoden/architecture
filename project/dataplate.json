@@ -70,7 +70,7 @@
     "activePatterns": 21,
     "strategies": 3,
     "heldCandidates": 4,
-    "publicRoutes": 132,
+    "publicRoutes": 133,
     "workingEditionEntries": 42,
     "primerEntries": 5
   },
@@ -78,8 +78,8 @@
     "schemaVersion": 1,
     "workingEdition": {
       "file": "publication/dist/ovids-house.pdf",
-      "pages": 261,
-      "duplexLeaves": 131,
+      "pages": 263,
+      "duplexLeaves": 132,
       "pageSize": {
         "format": "A4",
         "widthMm": 210,

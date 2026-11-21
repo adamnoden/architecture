@@ -78,7 +78,10 @@ def check(proof,source):
         if grid.get('completePhysicalGridDemandEnvelopeAvailable') is not False or grid.get('candidateAccepted') is not False:
             raise ValueError('Receiving grid recovery loses its incomplete-envelope boundary')
         if grid.get('physicalElementCutsAvailable'):
-            if grid.get('gridResistanceAccepted') is not False or not grid.get('nativeSupportReactionsUnchanged') or grid.get('nativeSupportReactionCountUnchanged')!=52:
+            # This count covers raw node-residual wrench entries, including free nodes;
+            # the52 physical foundation heads are independently checked above.
+            raw_count=grid.get('nativeSupportReactionCountUnchanged')
+            if grid.get('gridResistanceAccepted') is not False or not grid.get('nativeSupportReactionsUnchanged') or type(raw_count) is not int or raw_count<52:
                 raise ValueError('Receiving grid invents resistance or changes actual support reactions')
         elif grid.get('memberCuts') or grid.get('interiorMemberCuts') or not grid.get('diagnostics'):
             raise ValueError('Unclosed grid recovery emitted unsupported physical cuts')

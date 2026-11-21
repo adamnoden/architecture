@@ -796,7 +796,8 @@
         "project/str/seated-wet-support-result.md",
         "project/str/wet-receiving-grid-origin-result.md",
         "project/str/floor-corner-convergence-result.md",
-        "project/str/wet-support-cage-comparison.md"
+        "project/str/wet-support-cage-comparison.md",
+        "project/str/wet-bearing-and-post-head-result.md"
       ],
       "authorRoots": [
         "project/str/studies/masonry_frame_a.py",
@@ -881,7 +882,8 @@
         "project/str/studies/floor-section-proof.json",
         "project/str/studies/floor-section-250.svg",
         "project/str/studies/floor-section-cuts-proof.json",
-        "project/str/studies/seated-wet-support-floor.svg"
+        "project/str/studies/seated-wet-support-floor.svg",
+        "project/str/studies/wet-support-cage-comparison-proof.json"
       ],
       "consumers": [
         "compiler/reference-house/current-design/structural-masonry-frame.ts",
@@ -900,7 +902,8 @@
         "project/str/studies/floor_section_proof.py",
         "compiler/reference-house/current-design/structural-floor-cuts.ts",
         "project/str/studies/floor-section-cuts.ts",
-        "compiler/reference-house/current-design/structural-wet-support-cage.ts"
+        "compiler/reference-house/current-design/structural-wet-support-cage.ts",
+        "project/str/studies/wet_support_cage_comparison_proof.py"
       ],
       "producerChecks": [
         "node --test project/str/studies/masonry-frame-a.test.mjs",
@@ -1422,6 +1425,22 @@
       "receipt": "project/str/studies/floor-section-cuts-proof.json",
       "location": [
         "sourceSHA256"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/str/studies/wet-support-cage-comparison-proof.json",
+      "location": [
+        "sourceSHA256"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/str/studies/wet-support-cage-comparison-proof.json",
+      "location": [
+        "processingSourceSHA256"
       ],
       "format": "map",
       "algorithm": "sha256"

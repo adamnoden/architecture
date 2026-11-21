@@ -57,3 +57,20 @@ an unused helper input.
 Even a closed executed-case member recovery supplies neither a complete signed
 grid demand envelope nor a local three-dimensional joint, reinforcement,
 foundation, pile or soil resistance pass. Those acceptance flags remain false.
+
+
+## Integrated current-source continuation
+
+The current [floor receipt](studies/floor-section-proof.json) now joins eleven
+actually executed source58 controls, including seven wet-support states. Every
+wet state closes the two receiving members with901 independently inventoried
+origins and a maximum local force/moment residual no larger than
+2.274×10⁻¹³kN/kNm. All nine states shared with the source57 predecessor retain
+all52 physical heads:2,808 component comparisons differ by at most
+2.395×10⁻⁹kN/kNm. This is numerical reproduction, not a new resistance claim.
+
+The raw solver's unchanged-wrench entry count includes free nodes (18,924 in
+these wet cases); it is not the physical foundation-head count. Consumers check
+all52 unique actual heads independently. The source/request/full-response hashes
+in the current receipt own these executed results. The earlier guarded witness
+above remains historical provenance; it is not rebound to the final source.

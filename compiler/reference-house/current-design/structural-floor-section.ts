@@ -177,7 +177,9 @@ export function runFloorSectionCase(resolved: CurrentDesignResolution, input: un
       || !Array.isArray(grid.memberCuts) || !Array.isArray(grid.interiorMemberCuts)
       || (grid.physicalElementCutsAvailable && (grid.gridResistanceAccepted !== false || grid.localJointAccepted !== false
         || grid.soilOrPileResistanceAccepted !== false || grid.nativeSupportReactionsUnchanged !== true
-        || grid.nativeSupportReactionCountUnchanged !== 52 || !Array.isArray(grid.origins) || grid.origins.length !== grid.originCount))
+        // Raw solver wrench entries include free nodes; the52 physical heads are checked independently above.
+        || !Number.isSafeInteger(grid.nativeSupportReactionCountUnchanged) || Number(grid.nativeSupportReactionCountUnchanged) < 52
+        || !Array.isArray(grid.origins) || grid.origins.length !== grid.originCount))
       || (!grid.physicalElementCutsAvailable && (grid.memberCuts.length || grid.interiorMemberCuts.length
         || !Array.isArray(grid.diagnostics) || grid.diagnostics.length === 0))) {
       throw new Error('Wet receiving-grid cuts lost actual member identities, source origins, unchanged native response or explicit proof limits')

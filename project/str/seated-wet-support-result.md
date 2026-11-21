@@ -77,3 +77,14 @@ No candidate, floor section, reinforcement, weather detail or whole house has
 been accepted by this comparison.
 
 The [corner convergence continuation](floor-corner-convergence-result.md) separates the rigid-tip point behavior from the fixed-cut screen and extends the numerical trial scope to250mm without changing its acceptance thresholds.
+
+
+The [bearing and post-head continuation](wet-bearing-and-post-head-result.md)
+separates actual compression-only pad forces from the concrete post-head section
+screen. It records all seven current wet cases, the remaining local quadrature
+error and the floor-attachment load path when both pads open. Centred pads reduce
+the deliberate eccentricity but increase some beam actions; neither a global
+reaction tolerance nor a gross-section kern screen supplies joint acceptance.
+The [current cage comparison](wet-support-cage-comparison.md) replays the same
+actual cases through the saved-document comparison method. All installed,
+complete-envelope, reinforcement and mass-feedback acceptances remain false.

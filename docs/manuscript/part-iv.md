@@ -173,6 +173,8 @@ If engineering later demonstrates otherwise, the architecture must respond. The 
 
 The nominal drawings reserve 350 millimetres between ground ceiling and first-floor level. That reservation is not a selected floor assembly.
 
+The present concrete comparisons retain a soffit at +3170 millimetres. A 200 millimetre slab leaves 80 millimetres to the nominal +3450 finished floor; a 250 millimetre slab leaves only 30. Those are remaining dimensional budgets, not complete finish and service assemblies. The local seated wet-wall beam has its own lower soffit and supporting posts. Neither a thicker slab nor that beam is adopted by the nominal room drawings; the physical corner joint, complete load path and affected interior interfaces remain unresolved.
+
 The mineral-floor fields, local collectors, finish supports, service crossings and ceiling must still be reconciled in one section. Account for every layer and its actual tolerance before adoption. Structural, acoustic, fire or wet-room requirements that exceed the reservation require an explicit revision, not another invisible layer or a mixture of different design comparisons.
 
 Services are deliberately prevented from consuming this zone indiscriminately. The structural floor is not treated as a universal horizontal service void. Necessary crossings are designed and recorded; larger service distribution prefers explicit routes and the service flank.

@@ -21,6 +21,10 @@ These sources clarify the argument; they do not create architectural requirement
 
 The objective is broader than any one psychological measure: domestic space should not require continuous monitoring, compensation or interpretation merely to remain comfortable and usable.
 
+## Lighting and accessible service layers
+
+[Lighting and Accessible Service Layers](lighting-and-accessible-service-layers.md) compares portable, wall-led and ceiling lighting against the Crafted Room Kit and accessible electrical distribution. It separates total lining depth from usable service space, examines acoustic and material consequences, and recommends a bounded comparison without selecting a ceiling ban, universal cavity depth or house lighting scheme.
+
 ## Workmanship and robustness
 
 [Workmanship Robustness](workmanship-robustness.md) examines tolerance, mistake-proofing, inspection, installation sequence and representative-installer testing. Its central proposition is that design should accommodate ordinary competent construction variability deliberately rather than asking later trades to improvise around unresolved geometry.

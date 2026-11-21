@@ -4,6 +4,37 @@ This is an unselected geometric and quantity comparison for the actual 250 ×350
 
 The development reference retains centred pads `[0,0]`. The retained path witness uses the frozen `GRID-ORIGIN-wet-shifted-quadrature8` result with `[160,0]` offsets as an **adverse edit probe**, not a selected arrangement. The same method consumes each subsequently supplied centred or density-control result independently. It never borrows that probe's actions for another geometry.
 
+## Current11-case batch
+
+[Current batch receipt](studies/wet-support-cage-comparison-proof.json) is produced by [the cage batch producer](studies/wet_support_cage_comparison_proof.py) from11 complete, source58/request/checksum-verified native captures. Four controls have no seated support and explicitly carry no cage evidence. All7 wet controls use the same `assess` method and sole versioned default choices as CLI/browser. The earlier compact path witness remains frozen history, separate from this receipt.
+
+The producer executes **zero native solves**. It verifies each native manifest, request, complete response checksum, actual52-head equilibrium and source-wrench checks. Full-result and minimal retained-input assessments must be exactly equal. Every wet record retains its own actual six-action beam rows and post end wrenches. The beam-origin audit must prove actual nodal plate attachments and retain the incomplete-envelope boundary. Exact main paths, links, source-solid union and settings hash to one common geometry across these7 cases; all three geometry checks are evaluated once per identical geometry during each replay, not once per case name. Postprocessing replay does not assert physical cage acceptance.
+
+| Actual native case | Supported nominal beam ratio | Necessary link-flow ratio | North head compression kN | North gross kern ratio |
+| --- | --- | --- | --- | --- |
+| `wet-aligned-G135-Q2-rho27` |0.265468 |0.186888 |0.472164 |2.479545 |
+| `wet-south-pad-north160` |0.251696 |0.267200 |0.242493 |2.427931 |
+| `wet-shifted-quadrature8` |0.251688 |0.267206 |0.235808 |2.463299 |
+| `wet-zeroG-roof-suction` |0.122830 |0.250497 |Numerically unloaded |Not applicable |
+| `wet-heavy-roof3` |0.249622 |0.268974 |0.587633 |2.439899 |
+| `wet-aligned-quadrature8` |0.265427 |0.186863 |0.446672 |2.480092 |
+| `wet-aligned-concrete27` |0.266817 |0.187217 |0.549406 |2.453594 |
+
+These ratios belong to separate actual rows, not an invented simultaneous combination. Every case has16 unsupported return/ramp beam rows; the small straight-section ratios do not close those regions. The centred south head satisfies the necessary gross full-compression condition, with kern ratio≈0.0538. The **centred north head fails that condition in both wet25 and wet27 controls**, albeit at small absolute load. For alignedq8@25 its actual head wrench includes N0.44667161kN, Mx0.01376199kNm and My0.04005271kNm. The result requires local head/contact investigation; it does not itself establish cracking, failure or required anchorage. Shifted-pad cases remain adverse edit probes.
+
+The zeroG head rows retain their raw nearzero wrenches and explicitly report `not-loaded-not-applicable`, with null kern ratio/condition. The declared numerical tolerances are1e−8kN axial force and1e−4kNmm bending moment. Axial tension or moment without compression remains unsupported. No unloaded row becomes an anchorage pass.
+
+The actual wet27 control changes native beam/post weight; it does not qualify the installed cage mass at25. Plain-concrete density bounds, wire/chairs, existing grid steel, full signed loads and all head/end/grid D-regions remain unresolved in every case.
+
+```sh
+python3 -B project/str/studies/wet_support_cage_comparison_proof.py --write --captures-root /tmp/ovid-seated-wet-controls
+python3 -B project/str/studies/wet_support_cage_comparison_proof.py --check-inputs
+python3 -B project/str/studies/wet_support_cage_comparison_proof.py --check
+python3 -B project/str/studies/wet_support_cage_comparison_proof.py --check-captures --captures-root /tmp/ovid-seated-wet-controls
+```
+
+`--check-inputs` replays retained exact inputs, source/processing identities and geometry checks without claiming an ancestor join. `--check` additionally requires the current canonical11-case floor receipt to match every source/request/full-response hash, actual post wrench/geometry and beam-origin audit. The canonical floor receipt does not retain beam cut rows; those exact inputs are retained here under their native full-response origin checksum. `--check-captures` additionally verifies the external full bytes and exact cropped inputs. CI's reproducible contract is therefore retained-input replay plus canonical capture-hash join; it does not pretend a cryptographic full-response hash can reconstruct omitted native bytes.
+
 ## Authored choices and methods
 
 - [Versioned choices](studies/wet-support-cage-comparison-settings.json), schema `str-wet-support-cage-comparison/1`.
