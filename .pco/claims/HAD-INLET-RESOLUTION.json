@@ -1,39 +1,41 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 51,
-  "state": "released",
-  "leaseId": "8841aae6-7c4f-40f1-af86-530da69f0b66",
+  "generation": 52,
+  "state": "claimed",
+  "leaseId": "94d2339d-61ab-49db-96e2-66d5ed0ff6e4",
   "holder": {
     "kind": "chatgpt",
-    "label": "rush-had-service-hub-20261121"
+    "label": "rush-20261121-had-convergence"
   },
-  "claimedAt": "2026-11-21T09:44:40.547Z",
-  "heartbeatAt": "2026-11-21T12:28:14.587Z",
-  "expiresAt": "2026-11-21T12:28:14.587Z",
-  "branch": "work/rush-had-joined-source-20261121",
+  "claimedAt": "2026-11-21T12:30:11.345Z",
+  "heartbeatAt": "2026-11-21T12:30:11.345Z",
+  "expiresAt": "2026-11-21T13:15:11.345Z",
+  "checkpoint": {
+    "evidence": "Recover verifiedHAD51handoff71a7248174ef9c9dc92d4d6ae679691f1390556e/treecd1cd1e:16tests/tsc/gen/audit plus80.1jacket correction8tests pass; frozen7files. RootSTR48releasedtoassignedstructure worker; main1609merged9dbd.",
+    "next": "IntegratepreparedSTR1e3cf618+HAD71a underfreshSTR49/HAD52 jointclaims; exactCI+preflightmerge. Advancejoinedwholewetroom/newgravityreceiver/isolations withoutold101screen beinguniversalbound. NoHADcompletion."
+  },
+  "branch": "work/rush-floor-inlet-convergence-20261121",
   "predecessor": {
-    "leaseId": "b5b027b5-54c3-4568-96ea-1f3d11bdcec6",
-    "generation": 50,
-    "branch": "work/rush-recovered-coupling-20261121"
-  },
-  "recoverySource": {
-    "leaseId": "de383544-b716-40f5-8dfb-6a7fb19e8c2d",
-    "generation": 49,
-    "branch": "work/rush-structural-coupling-20261120",
-    "pr": 1604,
+    "leaseId": "8841aae6-7c4f-40f1-af86-530da69f0b66",
+    "generation": 51,
+    "branch": "work/rush-had-joined-source-20261121",
+    "pr": 1609,
     "checkpoint": {
-      "evidence": "PR1604 head784b9f362af2fc50f183148cfbdec4b370a4567e; fresh11coupled/24controls, saved3solves/reversal pass; sourceaudit15/0. Durable recovery: PR1604#issuecomment-7055489871; physical failures retained.",
-      "next": "Recover canonical leases/current main; inspect exact-head CI; fresh dual STR/HAD merge-check and expected-head merge; then combined51 and service-hub replan.",
-      "blocker": "Execution environment unavailable; exec recovery45s failed. No local preflight or new tests. Handoff release follows checkpoint readback; no packet completion."
+      "evidence": "FINAL71a7248174ef9c9dc92d4d6ae679691f1390556e treecd1cd1e12a278a90fc41a7d753df81d7d0992f85;8affected API/CLI/edit+tsc+strictgen+15family audit pass;prior8source tests pass;80.1jacket retains25insulation;SVG inspected",
+      "next": "HANDOFF to root: acquire HAD52 from fresh main; combine frozen seven HAD files with STR followon; reconcile source account/witnesses; one exact joint-head CI and preflight",
+      "blocker": "HAD OPEN:20/45reference only; Plantreceiver/storedrelease/indoorcuts/renewal/supports/52head loads/warmdrains/jet/material/owner proof unresolved. NoindependentPR or merge"
     }
   },
-  "pr": 1609,
-  "checkpoint": {
-    "evidence": "FINAL71a7248174ef9c9dc92d4d6ae679691f1390556e treecd1cd1e12a278a90fc41a7d753df81d7d0992f85;8affected API/CLI/edit+tsc+strictgen+15family audit pass;prior8source tests pass;80.1jacket retains25insulation;SVG inspected",
-    "next": "HANDOFF to root: acquire HAD52 from fresh main; combine frozen seven HAD files with STR followon; reconcile source account/witnesses; one exact joint-head CI and preflight",
-    "blocker": "HAD OPEN:20/45reference only; Plantreceiver/storedrelease/indoorcuts/renewal/supports/52head loads/warmdrains/jet/material/owner proof unresolved. NoindependentPR or merge"
-  },
-  "releasedAt": "2026-11-21T12:28:14.587Z",
-  "releaseReason": "handoff"
+  "recoverySource": {
+    "leaseId": "8841aae6-7c4f-40f1-af86-530da69f0b66",
+    "generation": 51,
+    "branch": "work/rush-had-joined-source-20261121",
+    "pr": 1609,
+    "checkpoint": {
+      "evidence": "FINAL71a7248174ef9c9dc92d4d6ae679691f1390556e treecd1cd1e12a278a90fc41a7d753df81d7d0992f85;8affected API/CLI/edit+tsc+strictgen+15family audit pass;prior8source tests pass;80.1jacket retains25insulation;SVG inspected",
+      "next": "HANDOFF to root: acquire HAD52 from fresh main; combine frozen seven HAD files with STR followon; reconcile source account/witnesses; one exact joint-head CI and preflight",
+      "blocker": "HAD OPEN:20/45reference only; Plantreceiver/storedrelease/indoorcuts/renewal/supports/52head loads/warmdrains/jet/material/owner proof unresolved. NoindependentPR or merge"
+    }
+  }
 }
