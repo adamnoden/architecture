@@ -1,27 +1,21 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 50,
-  "state": "released",
-  "leaseId": "b5b027b5-54c3-4568-96ea-1f3d11bdcec6",
+  "generation": 51,
+  "state": "claimed",
+  "leaseId": "8841aae6-7c4f-40f1-af86-530da69f0b66",
   "holder": {
     "kind": "chatgpt",
-    "label": "rush-20261121-recovery"
+    "label": "rush-had-service-hub-20261121"
   },
-  "claimedAt": "2026-11-21T09:41:49.533Z",
-  "heartbeatAt": "2026-11-21T09:43:43.984Z",
-  "expiresAt": "2026-11-21T09:43:43.984Z",
-  "branch": "work/rush-recovered-coupling-20261121",
+  "claimedAt": "2026-11-21T09:44:40.547Z",
+  "heartbeatAt": "2026-11-21T09:44:40.547Z",
+  "expiresAt": "2026-11-21T10:29:40.547Z",
+  "branch": "work/rush-had-service-hub-20261121",
   "predecessor": {
-    "leaseId": "de383544-b716-40f5-8dfb-6a7fb19e8c2d",
-    "generation": 49,
-    "branch": "work/rush-structural-coupling-20261120",
-    "pr": 1604,
-    "checkpoint": {
-      "evidence": "PR1604 head784b9f362af2fc50f183148cfbdec4b370a4567e; fresh11coupled/24controls, saved3solves/reversal pass; sourceaudit15/0. Durable recovery: PR1604#issuecomment-7055489871; physical failures retained.",
-      "next": "Recover canonical leases/current main; inspect exact-head CI; fresh dual STR/HAD merge-check and expected-head merge; then combined51 and service-hub replan.",
-      "blocker": "Execution environment unavailable; exec recovery45s failed. No local preflight or new tests. Handoff release follows checkpoint readback; no packet completion."
-    }
+    "leaseId": "b5b027b5-54c3-4568-96ea-1f3d11bdcec6",
+    "generation": 50,
+    "branch": "work/rush-recovered-coupling-20261121"
   },
   "recoverySource": {
     "leaseId": "de383544-b716-40f5-8dfb-6a7fb19e8c2d",
@@ -33,7 +27,5 @@
       "next": "Recover canonical leases/current main; inspect exact-head CI; fresh dual STR/HAD merge-check and expected-head merge; then combined51 and service-hub replan.",
       "blocker": "Execution environment unavailable; exec recovery45s failed. No local preflight or new tests. Handoff release follows checkpoint readback; no packet completion."
     }
-  },
-  "releasedAt": "2026-11-21T09:43:43.984Z",
-  "releaseReason": "handoff"
+  }
 }
