@@ -9,8 +9,8 @@
     "label": "convergence-water-20261121"
   },
   "claimedAt": "2026-11-21T19:48:28.453Z",
-  "heartbeatAt": "2026-11-21T19:48:28.453Z",
-  "expiresAt": "2026-11-21T20:33:28.453Z",
+  "heartbeatAt": "2026-11-21T19:56:05.770Z",
+  "expiresAt": "2026-11-21T20:41:05.770Z",
   "branch": "work/convergence-water-room-20261121",
   "predecessor": {
     "leaseId": "94d2339d-61ab-49db-96e2-66d5ed0ff6e4",
@@ -33,5 +33,11 @@
       "next": "HANDOFF: recovere1b79cde and local had-full-catchment; verify electrical archive, backboard actual joins, regenerate own receipts, integrate STR closure then exact-headCI. HAD remains open.",
       "blocker": "Execution environment unavailable; last local board-height patch outcome unknown. Do not merge archive/stale receipts or infer material/owner/installed approval."
     }
+  },
+  "pr": 1611,
+  "checkpoint": {
+    "evidence": "PR1611 head1c386c7b/tree28c1a352 matches local2d693e42;15focused tests plus saved-board9/9,tsc,repo,producercheck passed; recovered e1b79cde and source-bound a787210f helper.",
+    "next": "Inspect exact-head CI,visual drawing,merge coordination with STR; keep HAD open and prospective loads unadmitted.",
+    "blocker": "Whole pressure/renewal/thermal/support/stored-release arrangement remains open; owner/material/installed acceptance not inferred."
   }
 }
