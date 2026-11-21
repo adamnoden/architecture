@@ -9,8 +9,8 @@
     "label": "rush-engineering-editor-20261121"
   },
   "claimedAt": "2026-11-21T10:37:11.879Z",
-  "heartbeatAt": "2026-11-21T11:23:34.305Z",
-  "expiresAt": "2026-11-21T12:08:34.305Z",
+  "heartbeatAt": "2026-11-21T11:47:06.040Z",
+  "expiresAt": "2026-11-21T12:32:06.040Z",
   "branch": "work/rush-converged-model-20261121",
   "predecessor": {
     "leaseId": "26302d48-f336-4b76-8f81-04a395291437",
@@ -36,8 +36,8 @@
   },
   "pr": 1609,
   "checkpoint": {
-    "evidence": "Joint0f329089 native ADE run44897935416 green; artifact14704807898 digest verified; screenshot review in PR1609 comment7061809064",
-    "next": "Observe final joint full-health/publication proofs, then own fresh publication preflight and release after verified merge",
-    "blocker": "Full joint repository validation still pending"
+    "evidence": "Exact0f329089 ADE44897935416 and PLT44897935430 green; full publication job136828363550 success; native screenshot reviewed in comment7061809064",
+    "next": "Await current full-health job136828361557, then perform own fresh merge preflight and verified lease release",
+    "blocker": "Canonical full repository health remains running; sources frozen"
   }
 }
