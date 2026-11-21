@@ -20,6 +20,7 @@ export interface EngineeringTicket {
   readonly documentJson: string
 }
 export const editableRoofId = 'MAT/ring-roof-field'
+export const editableFloorSectionId = 'STR/current-floor-section'
 function record(input: unknown): input is Record<string, unknown> {
   return input !== null && typeof input === 'object' && Object.getPrototypeOf(input) === Object.prototype
 }
@@ -55,16 +56,29 @@ type EditResult = { readonly status: 'applied'; readonly state: EngineeringEdito
 export function applyEngineeringEdit(state: EngineeringEditorState, transaction: unknown): EditResult {
   try {
     if (!exact(transaction, ['schema', 'units', 'base', 'operation']) || transaction.schema !== 'current-engineering-edit/1'
-        || transaction.units !== 'degrees' || !exact(transaction.base, ['sessionId', 'revision'])
+        || !exact(transaction.base, ['sessionId', 'revision'])
         || !sameEditBase(state, transaction.base as unknown as EditBase)) throw new TypeError('Invalid transaction or stale edit revision')
     const operation = transaction.operation
-    if (!exact(operation, ['kind', 'roofId', 'pitchDeg']) || operation.kind !== 'set-roof-pitch'
+    let stages: EngineeringDocument['stages']
+    if (record(operation) && operation.kind === 'set-roof-pitch') {
+      if (transaction.units !== 'degrees' || !exact(operation, ['kind', 'roofId', 'pitchDeg'])
         || operation.roofId !== editableRoofId || typeof operation.pitchDeg !== 'number' || !Number.isFinite(operation.pitchDeg)) {
-      throw new TypeError('Expected a finite pitch for MAT/ring-roof-field; unsupported fields are not edited')
-    }
-    if (operation.pitchDeg === state.document.stages.roofPitch.pitchDeg) return { status: 'applied', state }
-    const document = readEngineeringEditDocument({ ...state.document,
-      stages: { ...state.document.stages, roofPitch: { pitchDeg: operation.pitchDeg } } })
+        throw new TypeError('Expected a finite pitch for MAT/ring-roof-field; unsupported fields are not edited')
+      }
+      if (operation.pitchDeg === state.document.stages.roofPitch.pitchDeg) return { status: 'applied', state }
+      stages = { ...state.document.stages, roofPitch: { pitchDeg: operation.pitchDeg } }
+    } else if (record(operation) && operation.kind === 'set-floor-section-thickness') {
+      const current = state.document.stages.floorSection
+      if (transaction.units !== 'mm' || !exact(operation, ['kind', 'assemblyId', 'thicknessMm'])
+        || operation.assemblyId !== editableFloorSectionId || typeof operation.thicknessMm !== 'number'
+        || !Number.isFinite(operation.thicknessMm) || operation.thicknessMm < 200 || operation.thicknessMm > 250
+        || !exact(current, ['thicknessMm']) || typeof current.thicknessMm !== 'number') {
+        throw new TypeError('An existing explicit STR/current-floor-section with supported thickness 200..250 mm is required')
+      }
+      if (operation.thicknessMm === current.thicknessMm) return { status: 'applied', state }
+      stages = { ...state.document.stages, floorSection: { thicknessMm: operation.thicknessMm } }
+    } else throw new TypeError('Unsupported engineering edit; no fields changed')
+    const document = readEngineeringEditDocument({ ...state.document, stages })
     return { status: 'applied', state: { ...state, revision: state.revision + 1, document,
       undo: [...state.undo, { before: state.document, after: document }], redo: [] } }
   } catch (error) { return { status: 'rejected', state, message: error instanceof Error ? error.message : String(error) } }

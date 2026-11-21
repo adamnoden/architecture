@@ -83,6 +83,13 @@ def _admit(case,source):
         raise ValueError('Exact roof controls without superseded intermediate laws required')
     if roof['upperFrameLaw'] is None or roof['upperUnitWeightKNPerM3'] is None:
         raise ValueError('Explicit current upper-L material controls required')
+    law=roof['upperFrameLaw'];frame_law=base['verticalCase']['monolithicCase']['houseCase']['joinedCase']['portal']['frameLaw']
+    if (not isinstance(frame_law,dict) or not isinstance(law,dict) or set(law)!=set(frame_law)
+            or law.get('mode')!=frame_law.get('mode')
+            or any(type(v) not in (int,float) or not math.isfinite(v) or v<=0 for k,v in law.items() if k!='mode')
+            or not 0<law.get('poissonRatio',1)<.5
+            or any(k not in law or law[k]>1 for k in ('flexuralFactor','torsionFactor','shearAreaFactor'))):
+        raise ValueError('Explicit finite upper-L frame law required; no stiffness enhancement')
     for key,lo,hi in [('upperUnitWeightKNPerM3',18,30),('roofWindFactor',0,2)]:
         v=roof[key]
         if type(v) not in (int,float) or not math.isfinite(v) or not lo<=v<=hi:raise ValueError('Finite explicit roof control required: '+key)

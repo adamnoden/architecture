@@ -164,6 +164,14 @@ export function prepareCurrentDesignCompile(input: unknown) {
       const { runMasonryFrameCase } = await import('./structural-masonry-frame.js')
       return runMasonryFrameCase(resolved, input)
     },
+    readFloorSectionCase: async () => {
+      const { readFloorSectionCase } = await import('./structural-floor-section.js')
+      return readFloorSectionCase(resolved)
+    },
+    floorSectionCase: async (input: unknown) => {
+      const { runFloorSectionCase } = await import('./structural-floor-section.js')
+      return runFloorSectionCase(resolved, input)
+    },
     readUpperRoofBearingCase: async () => {
       const { readUpperRoofBearingCase } = await import('./structural-upper-bearing.js')
       return readUpperRoofBearingCase(resolved)

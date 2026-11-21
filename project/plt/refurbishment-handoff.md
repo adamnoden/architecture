@@ -44,8 +44,8 @@ Prior candidate acceptance carries forward only where the final object has no ma
 
 ## Final integration and release
 
-After applicable physical acceptance, PLT-FINAL-FREEZE verifies that the accepted source/object still matches the intended release. Integrate manuscript descriptions and captions, placement anchors, drawing register and generated views together; rebuild and inspect the full publication's prose/plate rhythm, facing pages, gutters, fonts and scales. No mixed current/historical set may be labelled final.
+PLT-FINAL-PREP integrates manuscript descriptions and captions, placement anchors, the drawing register and generated views, then rebuilds and inspects the full publication's prose/plate rhythm, facing pages, gutters, fonts and scales. EDA-RENEWED audits that prepared digital source and typeset object before final freeze, independently of the human print and owner design verdicts. No mixed current/historical set may be labelled final.
 
-Only then freeze source/token identities, create and verify drawing-publication-v2 and reconcile PLT-owned issue, branch and evidence residue under the existing closeout rules. Renewed EDA follows this integration; a later material editorial/layout change reopens the affected PLT evidence before manufacture.
+After renewed editorial assurance and the applicable physical-print and owner design acceptance, PLT-FINAL-FREEZE verifies that the accepted source/object still matches the intended release. Only then freeze source/token identities, create and verify drawing-publication-v2 and reconcile PLT-owned issue, branch and evidence residue under the existing closeout rules. A material editorial, layout or design change reopens the affected evidence before manufacture.
 
 PLT does not certify structural, moisture, fire, environmental, product, service or site adequacy. It carries the source owners' results and explicit unknowns faithfully. PUB retains the final manual manufacture/release gate.
