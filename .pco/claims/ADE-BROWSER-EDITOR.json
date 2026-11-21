@@ -9,8 +9,8 @@
     "label": "rush-engineering-editor-20261121"
   },
   "claimedAt": "2026-11-21T10:37:11.879Z",
-  "heartbeatAt": "2026-11-21T10:58:54.735Z",
-  "expiresAt": "2026-11-21T11:43:54.735Z",
+  "heartbeatAt": "2026-11-21T11:12:07.815Z",
+  "expiresAt": "2026-11-21T11:57:07.815Z",
   "branch": "work/rush-converged-model-20261121",
   "predecessor": {
     "leaseId": "26302d48-f336-4b76-8f81-04a395291437",
@@ -34,10 +34,10 @@
       "blocker": "Corrected exact CI running"
     }
   },
-  "pr": 1608,
+  "pr": 1609,
   "checkpoint": {
-    "evidence": "Preserved PR1608 head14bc3be8; native ADE run44896049629 green; both verified screenshots inspected",
-    "next": "Bind joint PR when known; verify joint source account witnesses and exact-head proofs before final publication",
-    "blocker": "Joint integration head and PR publication pending"
+    "evidence": "Joint PR1609 head0f329089; preserved PR1608 native browser green with both screenshots inspected; joint witnesses regenerated",
+    "next": "Inspect exact joint CI and native browser artifact; verify own lease and submitted head before merge",
+    "blocker": "Exact joint CI pending"
   }
 }
