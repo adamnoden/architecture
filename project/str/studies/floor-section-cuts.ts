@@ -34,6 +34,9 @@ function check(proof: any) {
     if(row.caseId!==expected[0] || !equal(row.executedRequest,expected[1]) || !/^[a-f0-9]{64}$/.test(row.fullResultSHA256)
       || !equal(row.sectionCuts.cuts.map((c: any)=>({id:c.id,normal:c.normal,positionMm:c.positionMm,intervalMm:c.intervalMm})),authored.cuts)
       || row.sectionCuts.stripResistanceAccepted!==false || row.sectionCuts.localStressConvergenceProven!==false
+      || row.physicalWetBeamElementCutsAvailable !== (expected[1].wetSupport != null)
+      || row.completeWetBeamDemandEnvelopeAvailable !== false
+      || (row.wetReceivingGrid !== null && (row.wetReceivingGrid.completePhysicalGridDemandEnvelopeAvailable !== false || row.wetReceivingGrid.gridResistanceAccepted !== false))
       || row.heads.length!==52 || new Set(row.heads.map((h: any)=>h.id)).size!==52) throw new Error('Floor cut evidence lost actual request, material sections,52heads or proof limits')
   })
   if (proof.candidateAccepted!==false || proof.completeHouseProof!==false || proof.localCornerJointAccepted!==false) throw new Error('Unearned floor cut acceptance')
@@ -65,18 +68,25 @@ else if(process.argv[2]==='--write') {
       heads:result.nativeVertical.native.heads,
       sectionCuts:recoverFloorSectionCuts(result.plateBending as FloorBendingField,authored.cuts),
       wetBearingExactDeclaredFields:support?.posts.map((post:any)=>({id:post.id,...post.exactDeclaredNormalField}))??[],
+      physicalWetBeamElementCutsAvailable:support?.plateAttachmentAudit.physicalBeamElementCutsAvailable??false,
+      completeWetBeamDemandEnvelopeAvailable:false,
+      wetReceivingGrid:support ? Object.fromEntries(['memberIds','physicalElementCutsAvailable','completePhysicalGridDemandEnvelopeAvailable','gridResistanceAccepted','originCount','memberCuts','interiorMemberCuts','memberLoadEquilibrium','nativeSupportReactionsUnchanged','scope','diagnostics'].filter(k=>Object.hasOwn(support.receivingGridCuts,k)).map(k=>[k,support.receivingGridCuts[k]])) : null,
       wetBeamSimultaneousCuts:[...result.nativeVertical.native.memberCuts,...result.nativeVertical.native.interiorMemberCuts].filter((row:any)=>row.memberId.startsWith('WET-SUPPORT/')),
       capturedSourceEquilibriumResidualKN_KNm:receipt.summary.independent52HeadBalanceResidualKN_KNm }
   })
-  const a=controls.at(-2)!,b=controls.at(-1)!,heads=new Map(a.heads.map((row:any)=>[row.id,row.reactionKN_KNm]))
-  const headDelta=Math.max(...b.heads.flatMap((row:any)=>row.reactionKN_KNm.map((v:number,i:number)=>Math.abs(v-(heads.get(row.id) as number[])[i]!))))
   const metrics=['signedNormalMomentKNm','signedTwistingMomentKNm','absoluteBendingPlusTwistingKNm'] as const
-  const cutChanges=b.sectionCuts.cuts.map((cut,i)=>({id:cut.id,...Object.fromEntries(metrics.map(key=>[key,
-    Math.abs(cut[key]-a.sectionCuts.cuts[i]![key])/Math.max(authored.stabilityComparison.absoluteCutIntegralFloorKNm,Math.abs(cut[key]),Math.abs(a.sectionCuts.cuts[i]![key]))]))}))
-  const stability={maximumHeadComponentDifferenceKN_KNm:headDelta,relativeCutIntegralChanges:cutChanges,
-    declaredScreenPasses:headDelta<=authored.stabilityComparison.maximumHeadComponentDifferenceKN_KNm && cutChanges.every(c=>metrics.every(key=>((c as unknown as Record<string,number>)[key]!)<=authored.stabilityComparison.maximumRelativeCutIntegralDifference))}
-  const proof={schema:'str-fixed-floor-cut-comparison/1',sourceSHA256:identities,authored,controls,mesh700To500:stability,
+  const compare=(coarse:number,fine:number)=>{
+    const a=controls.find(c=>c.caseId==='wet-floor-mesh-'+coarse)!,b=controls.find(c=>c.caseId==='wet-floor-mesh-'+fine)!
+    const heads=new Map(a.heads.map((row:any)=>[row.id,row.reactionKN_KNm]))
+    const headDelta=Math.max(...b.heads.flatMap((row:any)=>row.reactionKN_KNm.map((v:number,i:number)=>Math.abs(v-(heads.get(row.id) as number[])[i]!))))
+    const cutChanges=b.sectionCuts.cuts.map((cut,i)=>({id:cut.id,...Object.fromEntries(metrics.map(key=>[key,
+      Math.abs(cut[key]-a.sectionCuts.cuts[i]![key])/Math.max(authored.stabilityComparison.absoluteCutIntegralFloorKNm,Math.abs(cut[key]),Math.abs(a.sectionCuts.cuts[i]![key]))]))}))
+    return {coarsePitchMm:coarse,finePitchMm:fine,maximumHeadComponentDifferenceKN_KNm:headDelta,relativeCutIntegralChanges:cutChanges,
+      declaredScreenPasses:headDelta<=authored.stabilityComparison.maximumHeadComponentDifferenceKN_KNm && cutChanges.every(c=>metrics.every(key=>((c as unknown as Record<string,number>)[key]!)<=authored.stabilityComparison.maximumRelativeCutIntegralDifference))}
+  }
+  const stability=compare(700,500),refinedStability=compare(500,250)
+  const proof={schema:'str-fixed-floor-cut-comparison/1',sourceSHA256:identities,authored,controls,mesh700To500:stability,mesh500To250:refinedStability,
     candidateAccepted:false,completeHouseProof:false,localCornerJointAccepted:false,
     scope:'Fresh exact-request full native responses; shared fixed section-cut method preserves actual apertures and raw point peaks. Global/cut numerical stability is separate from the rigid-corner idealisation, local bearing material, joint/cage and whole-house acceptance.'}
-  check(proof);writeFileSync(proofPath,JSON.stringify(proof,null,2)+'\n');process.stdout.write(JSON.stringify(stability)+'\n')
+  check(proof);writeFileSync(proofPath,JSON.stringify(proof,null,2)+'\n');process.stdout.write(JSON.stringify({mesh700To500:stability,mesh500To250:refinedStability})+'\n')
 } else throw new Error('Use --write or --check')

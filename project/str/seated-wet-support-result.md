@@ -59,8 +59,9 @@ The declared0.1kN/kNm and5% screens fail. No floor thickness or local corner
 reinforcement has been selected from an unconverged peak.
 
 The wet posts transfer full base wrenches into the actual ground-grid members,
-but those receivers also have interior load-origin recovery obligations. Their
-current memberCuts do not establish local grid/cap demand or resistance. The
+but those receivers also have interior load-origin recovery obligations. The [bounded receiving-grid recovery](wet-receiving-grid-origin-result.md)
+now captures actual interior source origins for the two wet-post receivers.
+Executed discrete cuts still do not establish local joint, complete envelope or resistance. The
 source-bound floor and cut receipts retain that incomplete-house boundary.
 
 The south beam-end run is short because of the stair. Actual simultaneous beam
@@ -74,3 +75,5 @@ finish/stair/service evidence is withheld even at RC200 when this support change
 
 No candidate, floor section, reinforcement, weather detail or whole house has
 been accepted by this comparison.
+
+The [corner convergence continuation](floor-corner-convergence-result.md) separates the rigid-tip point behavior from the fixed-cut screen and extends the numerical trial scope to250mm without changing its acceptance thresholds.

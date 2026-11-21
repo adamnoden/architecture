@@ -72,6 +72,14 @@ def check(proof,source):
         audit=support.get('plateAttachmentAudit',{})
         if not audit.get('allPlateAttachmentsAtRealBeamNodes') or audit.get('missingAttachmentCoordinatesYMm') or not audit.get('physicalBeamElementCutsAvailable') or audit.get('completePhysicalBeamDemandEnvelopeAvailable') is not False:
             raise ValueError('Wet beam cut recovery lacks actual common nodal attachments or invents a complete load envelope')
+        grid=support.get('receivingGridCuts',{})
+        if grid.get('completePhysicalGridDemandEnvelopeAvailable') is not False or grid.get('candidateAccepted') is not False:
+            raise ValueError('Receiving grid recovery loses its incomplete-envelope boundary')
+        if grid.get('physicalElementCutsAvailable'):
+            if grid.get('gridResistanceAccepted') is not False or not grid.get('nativeSupportReactionsUnchanged') or grid.get('nativeSupportReactionCountUnchanged')!=52:
+                raise ValueError('Receiving grid invents resistance or changes actual support reactions')
+        elif grid.get('memberCuts') or grid.get('interiorMemberCuts') or not grid.get('diagnostics'):
+            raise ValueError('Unclosed grid recovery emitted unsupported physical cuts')
         if any(c['normalCompressionKN'] < -1e-7 for c in support['contactFibres']):raise ValueError('Wet pad carried tension')
     p4={h['id']:h['reactionKN_KNm'] for h in rows[4]['heads']}
     difference=max(abs(a-b) for h in rows[5]['heads'] for a,b in zip(h['reactionKN_KNm'],p4[h['id']]))

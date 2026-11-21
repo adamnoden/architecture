@@ -28,7 +28,7 @@ from vertical_rc_floor import fresh_net_floor_live_load
 from vertical_floor_views import draw_vertical_floor
 
 METHOD='project/str/studies/floor_section_model.py'
-EXTRA=(METHOD,'project/str/studies/floor_section_successor.py','project/str/studies/seated_wet_support.py','project/str/studies/finite_mapped_frame.py')
+EXTRA=(METHOD,'project/str/studies/floor_section_successor.py','project/str/studies/seated_wet_support.py','project/str/studies/finite_mapped_frame.py','project/str/studies/grid_origin_recovery.py')
 
 
 def load_source(root):

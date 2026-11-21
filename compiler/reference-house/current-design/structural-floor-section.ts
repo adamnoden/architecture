@@ -90,7 +90,7 @@ function currentBinding(resolved: CurrentDesignResolution) {
   const comparison = JSON.parse(execFileSync('python3', ['-B', fileURLToPath(new URL(methodPath, root)), '--read'],
     { encoding: 'utf8', maxBuffer: 8 * 1024 * 1024 })) as NativeCase
   if (comparison.schema !== 'str-coupled-floor-section-case/1' || !record(comparison.sourceSHA256)
-    || Object.keys(comparison.sourceSHA256).length !== 57) throw new Error('Floor-section source contract changed; integrate explicitly')
+    || Object.keys(comparison.sourceSHA256).length !== 58) throw new Error('Floor-section source contract changed; integrate explicitly')
   const inputs = Object.fromEntries([...Object.keys(comparison.sourceSHA256), adapterPath, cutsPath].map(path => {
     const bytes = readFileSync(new URL(path, root))
     const blob = createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')
@@ -164,6 +164,19 @@ export function runFloorSectionCase(resolved: CurrentDesignResolution, input: un
       || section.finishStairServiceEvidenceApplicable !== false) {
       throw new Error('Actual seated wet support lost authored geometry, source wrench, unilateral contact or explicit acceptance limits')
     }
+    const grid = wet.receivingGridCuts
+    if (!record(grid) || grid.schema !== 'str-wet-receiving-grid-cut-comparison/1'
+      || typeof grid.physicalElementCutsAvailable !== 'boolean' || grid.completePhysicalGridDemandEnvelopeAvailable !== false
+      || grid.candidateAccepted !== false || !Array.isArray(grid.memberIds)
+      || !same([...grid.memberIds].sort(), ['GRID/rear-W/0','GRID/wet/0'])
+      || !Array.isArray(grid.memberCuts) || !Array.isArray(grid.interiorMemberCuts)
+      || (grid.physicalElementCutsAvailable && (grid.gridResistanceAccepted !== false || grid.localJointAccepted !== false
+        || grid.soilOrPileResistanceAccepted !== false || grid.nativeSupportReactionsUnchanged !== true
+        || grid.nativeSupportReactionCountUnchanged !== 52 || !Array.isArray(grid.origins) || grid.origins.length !== grid.originCount))
+      || (!grid.physicalElementCutsAvailable && (grid.memberCuts.length || grid.interiorMemberCuts.length
+        || !Array.isArray(grid.diagnostics) || grid.diagnostics.length === 0))) {
+      throw new Error('Wet receiving-grid cuts lost actual member identities, source origins, unchanged native response or explicit proof limits')
+    }
   } else if (wet !== undefined) throw new Error('An unauthored wet support appeared in the current floor result')
   const services = JSON.parse(readFileSync(new URL('project/mat/studies/whole-house-service-baseline.json', root), 'utf8')) as {
     PV: { DCRequiredRoutes: number[][][] }
@@ -193,7 +206,12 @@ export function runFloorSectionCase(resolved: CurrentDesignResolution, input: un
     roofCoupling: output.roofCoupling, ...(output.seatedWetSupport ? { seatedWetSupport: output.seatedWetSupport,
       wetBeamCutRecovery: { status: 'computed-discrete-element-cuts' as const,
         physicalBeamCutsAvailable: true as const, completeBeamDemandEnvelopeAvailable: false as const,
-        scope: 'Actual plate/membrane attachment stations are real beam nodes, and executed discrete beam cuts are recovered. The full load envelope, bearing stress spreading, ground-grid local load origins and resistance remain unqualified.' } } : {}), drawings: output.drawings, floorSvg: output.drawings['floor-section-floor.svg'],
+        scope: 'Actual plate/membrane attachment stations are real beam nodes, and executed discrete beam cuts are recovered. The full load envelope, bearing stress spreading and resistance remain unqualified; receiving-grid discrete cuts have their own explicit scope.' } , wetGridCutRecovery: {
+        status: (output.seatedWetSupport as Record<string, any>).receivingGridCuts.physicalElementCutsAvailable
+          ? 'computed-discrete-element-cuts' as const : 'unsupported-incomplete-origin-closure' as const,
+        physicalElementCutsAvailable: (output.seatedWetSupport as Record<string, any>).receivingGridCuts.physicalElementCutsAvailable as boolean,
+        completeGridDemandEnvelopeAvailable: false as const,
+        scope: 'Only the two actual wet-post receiving members in this executed discrete case. Full signed demand, local3D joint/cage and foundation/site resistance remain unqualified.' } } : {}), drawings: output.drawings, floorSvg: output.drawings['floor-section-floor.svg'],
     servicePenetrations, diagnostics: output.diagnostics, evidence: { state: 'unselected-actual-section-replacement' as const,
       candidateAccepted: false as const, completeHouseProof: false as const, installedAcceptance: false as const,
       scope: 'Actual plate and membrane reassembly, work maps, upper body starts, self-weight and recovery at the authored thickness. Finish, FFL, stairs, services, aerodynamic tributaries, local stress convergence, reinforcement and joints remain unqualified.' } }

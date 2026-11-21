@@ -141,6 +141,8 @@ def build_support(model,setting,h,required_stations=()):
     model['seatedWetSupport']={'settings':copy.deepcopy(setting),'receiver':receiver,'posts':posts,'contactFibres':pads,
         'beamPhysicalGKN':width*depth*(hi-lo)*density/1e9,'physicalPostAxesYMm':[p[1] for p in supports],'physicalBearingAxesYMm':[p[1] for p in pad_centres],'northLoadedEndYMm':hi,
         'momentFixityAtBearingsCredited':False,'frictionOrHorizontalBearingRestraintCredited':False,'physicalAcceptance':False}
+    from grid_origin_recovery import initialise_grid_origins
+    initialise_grid_origins(model,geometry,[post['sourceGridMemberId'] for post in posts])
     expected_g=[0.]*6
     def origin(weight,point):
         expected_g[2]-=weight;expected_g[3]-=weight*point[1]/1000;expected_g[4]+=weight*point[0]/1000
@@ -212,6 +214,8 @@ def finish_support(model,raw,g_factor):
         exact['quadratureFirstMomentResidualKNmm']=[sum(c['normalCompressionKN']*c['pointXYZMm'][j] for c in numerical)-exact[k] for j,k in ((0,'compressionFirstMomentXKNmm'),(1,'compressionFirstMomentYKNmm'))]
         post['exactDeclaredNormalField']=exact
         post['recovery']=recover_mapped_member(model['model'].mappedMembers[post['id']],raw['displacements'],[g_factor*v for v in post['consistentEquivalentGKN_KNmm']])
+    from grid_origin_recovery import recover_wet_receiving_grid
+    result['receivingGridCuts']=recover_wet_receiving_grid(model,raw,result['posts'],g_factor)
     result.update(candidateAccepted=False,beamCageAccepted=False,columnCageAccepted=False,padMaterialAndRotationAccepted=False,localGridCapJointAccepted=False,
         scope='Actual finite frame/post/base work and finite quadrature normal bearing comparison. Contact quadrature convergence, physical pad distribution/material, RC cages/development, shear/torsion/deflection/cracks, local base/joints, moisture and installation remain unqualified.')
     return result

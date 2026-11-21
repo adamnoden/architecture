@@ -195,7 +195,7 @@ def build_vertical_rc_floor(case,source,retained_point_receivers=None,pre_plate_
     versions=__import__('vertical_floor_numerics').runtime_versions();pins=dict(line.split('==') for line in (source['root']/'project/str/studies/vertical-floor-requirements.txt').read_text().splitlines() if line)
     if any(versions[key]!=value for key,value in pins.items()):raise ValueError('Pinnedverticalnumericalruntime drift; regenerateevidenceafterexplicitdependencychange')
     if type(case['bearingQuadratureOrder']) is not int or case['bearingQuadratureOrder'] not in (2,4):raise ValueError('Normal contact quadrature order2or4 must be explicit')
-    if type(case['maxPitchMm']) not in (int,float) or not 500<=case['maxPitchMm']<=1800:raise ValueError('Bounded500..1800mm vertical mesh pitch required')
+    if type(case['maxPitchMm']) not in (int,float) or not 250<=case['maxPitchMm']<=1800:raise ValueError('Bounded250..1800mm vertical mesh pitch required')
     if not isinstance(case['plateLaw'],dict) or case['plateLaw'].get('thicknessMm')!=200:raise ValueError('ActualRC200 source floor required')
     if type(case['freshUniformLiveKPa']) not in (int,float) or not 0<=case['freshUniformLiveKPa']<=5:raise ValueError('Explicit0..5kPa netplate live challenge required')
     if case['monolithicCase']['houseCase']['boundary']['includeExternalGMAXQ'] and case['monolithicCase']['houseCase']['joinedCase']['floor']['componentCase']['edits']['wallOpenings']:raise ValueError('Changedupperwallopenings need regeneratedupperwallGMAXcards; oldfloorcards are separatelyremoved')

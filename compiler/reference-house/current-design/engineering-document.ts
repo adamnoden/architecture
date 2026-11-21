@@ -564,6 +564,8 @@ export async function compileEngineeringDocument(input: unknown) {
       message: 'The seated wet beam, original RC piers and finite normal pads use this same floor/roof/foundation model. Empty pier-head recesses remain explicit; bearing material, reinforcement/development, local joints, stair/service access and independent finish/thermal/air/weather closure remain unqualified. Bearing tension, friction and beam-column moment fixity are not credited.' })
     if (engineering.floorSection.wetBeamCutRecovery) coordinationDiagnostics.push({ code: 'WET_BEAM_COMPLETE_ENVELOPE_UNAVAILABLE', state: 'uncoordinated-comparisons',
       stages: ['floorSection'], message: 'STR/wet-wall-support: '+engineering.floorSection.wetBeamCutRecovery.scope })
+    if (engineering.floorSection.wetGridCutRecovery) coordinationDiagnostics.push({ code: 'WET_GRID_COMPLETE_ENVELOPE_UNAVAILABLE', state: 'uncoordinated-comparisons',
+      stages: ['floorSection'], message: 'STR/wet-wall-support/grid: '+engineering.floorSection.wetGridCutRecovery.scope })
     for (const conflict of engineering.floorSection.servicePenetrations.conflicts) {
       coordinationDiagnostics.push({ code: 'UNQUALIFIED_SERVICE_PENETRATION', state: 'uncoordinated-comparisons',
         stages: ['floorSection', 'occupiedServices'],

@@ -6,7 +6,7 @@
 now joins the actual source supports and floor/frame/roof/52-head response, with
 complete authored geometry, independent material/Q wrenches and unilateral pad
 controls. Fresh fixed physical cuts and paired700/500 meshes fail their declared
-stability screen; the raw corner peak changes75.109→107.239kNm/m. The beam is
+stability screen; the raw corner peak rises sharply under refinement. The beam is
 not a remedy for that corner and no slab thickness is selected. Its almost
 unloaded north pad, adverse lift-off, actual cages/local joints and weather
 closure remain explicit. Nodal plate attachments now recover the executed discrete beam cuts; complete
