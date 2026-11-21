@@ -9,8 +9,8 @@
     "label": "rush-20261121-recovery"
   },
   "claimedAt": "2026-11-21T09:40:30.038Z",
-  "heartbeatAt": "2026-11-21T11:11:49.597Z",
-  "expiresAt": "2026-11-21T11:56:49.597Z",
+  "heartbeatAt": "2026-11-21T11:45:54.366Z",
+  "expiresAt": "2026-11-21T12:30:54.366Z",
   "branch": "work/rush-converged-model-20261121",
   "predecessor": {
     "leaseId": "37f8e399-fda2-42a8-8282-b3e5bda5c950",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Exact joint tree7878726 passed source-bound analytical, saved-document three-solve, inlet, editor HTTP and controlled witness checks; joint head0f329089 submitted for full CI.",
-    "next": "Verify exact joint-head CI and fresh three-lease merge preflight; continue isolated actual floor/support redesign comparison."
+    "evidence": "Joint0f329089 exact browser/publication/PLT proofs passed; health remains active after corrected three-lease binding. New isolated floor-section four-state native source54 proof and independent material/pressure/52-head balances passed locally; not yet published.",
+    "next": "Verify exact1609health and fresh three-lease merge-check; finish saved/API/CLI actual floor-section edit/reversal and publish source-bound follow-on after joint merge."
   },
   "pr": 1609
 }
