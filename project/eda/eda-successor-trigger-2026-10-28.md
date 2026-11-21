@@ -28,6 +28,10 @@ They do **not** invalidate the historical EDA findings, Editorial Doctrine v0.4,
 
 ## Downstream gate
 
+### Execution order correction — 20 November 2026
+
+The definitive digital integration is `PLT-FINAL-PREP`. It supplies the resolved HRS source and integrated drawings needed for this audit. `EDA-RENEWED` therefore follows that preparation and `EDA-ADAPTER`, rather than waiting for the physical-print and owner verdicts inside `PLT-FINAL-FREEZE`. Final freeze now requires the renewed editorial result as well as both genuine human verdicts; `PUB-02-FINAL` explicitly retains final freeze as a prerequisite. This changes execution order only: no editorial audit, print inspection, owner acceptance or final-source match is presumed. A change arising from editorial review must be reflected in the final reviewed source and proofs before freeze.
+
 Do not reopen EDA as a free-form editorial workstream during IAS/OAS/HAD design. Re-assurance should occur after HRS has stabilised the resolved house and final PLT has integrated the definitive book drawings.
 
 At that point perform a proportionate successor pass that, at minimum:

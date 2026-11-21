@@ -31,9 +31,9 @@
     "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
     "project/str/studies/rc_floor_house_loads.py": "eaade7a26ecc682f742a1c3b3246ee648e5d497c236b52f656250994d0517654",
     "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-    "project/str/studies/vertical_rc_floor.py": "1392db4fdc6695af2989d212d574058bc93b0fae4c4c1994e7ffb54d7789a71a",
+    "project/str/studies/vertical_rc_floor.py": "0d0e359c270a5a59fefed5b2d1edbaa0e16d4129a97a639135a0e22e81d47539",
     "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
-    "project/str/studies/vertical_floor_numerics.py": "3a999a223eedf37792ae9ffa2368eb59854f6b4e465783d7efc086dece20fa40",
+    "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
     "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
     "project/str/studies/vertical_floor_views.py": "701f63dda777b63b44b45b31c00f9fda9716034a398f56384fc249ae59ad3cce",
     "project/str/studies/foundation_solid_weight.py": "0537c47e21c59ffadd21c5c6d3765fac9798db21de58e722396f0b7c8e707ce2"
@@ -72,9 +72,9 @@
       "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
       "project/str/studies/rc_floor_house_loads.py": "eaade7a26ecc682f742a1c3b3246ee648e5d497c236b52f656250994d0517654",
       "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-      "project/str/studies/vertical_rc_floor.py": "1392db4fdc6695af2989d212d574058bc93b0fae4c4c1994e7ffb54d7789a71a",
+      "project/str/studies/vertical_rc_floor.py": "0d0e359c270a5a59fefed5b2d1edbaa0e16d4129a97a639135a0e22e81d47539",
       "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
-      "project/str/studies/vertical_floor_numerics.py": "3a999a223eedf37792ae9ffa2368eb59854f6b4e465783d7efc086dece20fa40",
+      "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
       "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
       "project/str/studies/vertical_floor_views.py": "701f63dda777b63b44b45b31c00f9fda9716034a398f56384fc249ae59ad3cce"
     },
@@ -1051,9 +1051,9 @@
         -1.6838441752042854e-10,
         1.0949463558063144e-10,
         -2.1714186004828662e-10,
-        -1.5627592802047729e-09,
+        -1.560896635055542e-09,
         1.1306256055831909e-09,
-        1.8222290236735716e-09
+        1.8221708160126582e-09
       ],
       "maximumFrameTranslationMm": 3.441119797675295,
       "maximumPlateDeflectionMm": 1.1403201264896743,
@@ -1803,7 +1803,7 @@
         -1.8053469830192626e-10,
         -1.3159587979316712e-09,
         9.788200259208679e-10,
-        1.8188966350862756e-09
+        1.8188384274253622e-09
       ],
       "maximumFrameTranslationMm": 3.4408074269756237,
       "maximumPlateDeflectionMm": 1.1387425388844925,
@@ -2551,9 +2551,9 @@
         -5.0391690820106305e-11,
         1.1611689387791557e-10,
         -2.027604750765022e-10,
-        -1.4510005712509156e-09,
+        -1.4500692486763e-09,
         1.5203841030597687e-09,
-        7.528815331170336e-10
+        7.528233254561201e-10
       ],
       "maximumFrameTranslationMm": 3.43956387184206,
       "maximumPlateDeflectionMm": 1.1324433212674143,
@@ -3301,9 +3301,9 @@
         -5.0391690820106305e-11,
         1.1611689387791557e-10,
         -2.027604750765022e-10,
-        -1.4510005712509156e-09,
+        -1.4500692486763e-09,
         1.5203841030597687e-09,
-        7.528815331170336e-10
+        7.528233254561201e-10
       ],
       "maximumFrameTranslationMm": 3.43956387184206,
       "maximumPlateDeflectionMm": 1.1324433212674143,
@@ -3897,7 +3897,7 @@
         -3.069544618483633e-10,
         -1.7844140529632568e-09,
         1.1455267667770386e-09,
-        1.744609107845463e-09
+        1.7445509001845494e-09
       ],
       "maximumFrameTranslationMm": 3.3193221651343072,
       "maximumPlateDeflectionMm": 1.710270329211059,
@@ -4647,7 +4647,7 @@
         -3.306013240944594e-10,
         -2.041459083557129e-09,
         1.601874828338623e-09,
-        1.7552902136230841e-09
+        1.7552320059621706e-09
       ],
       "maximumFrameTranslationMm": 3.3188070764127984,
       "maximumPlateDeflectionMm": 1.707812935329872,
@@ -5394,10 +5394,10 @@
       "equilibriumResidualKN_KNm": [
         -1.5998580238374416e-10,
         1.120810111387982e-10,
-        -3.6425262806005776e-10,
+        -3.64480001735501e-10,
         -2.2836029529571533e-09,
         1.7648562788963318e-09,
-        1.7563233996042981e-09
+        1.7562651919433848e-09
       ],
       "maximumFrameTranslationMm": 3.3168083632141085,
       "maximumPlateDeflectionMm": 1.6980364433740196,
@@ -6144,10 +6144,10 @@
       "equilibriumResidualKN_KNm": [
         -1.5998580238374416e-10,
         1.120810111387982e-10,
-        -3.6425262806005776e-10,
+        -3.64480001735501e-10,
         -2.2836029529571533e-09,
         1.7648562788963318e-09,
-        1.7563233996042981e-09
+        1.7562651919433848e-09
       ],
       "maximumFrameTranslationMm": 3.3168083632141085,
       "maximumPlateDeflectionMm": 1.6980364433740196,

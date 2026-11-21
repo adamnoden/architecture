@@ -2,6 +2,7 @@ import copy
 import hashlib
 import json
 import math
+import re
 from pathlib import Path
 import sys
 
@@ -42,6 +43,50 @@ def intersect(a,b):
 def clear_intervals(lo,hi,holes):
     cuts=sorted({lo,hi,*[x for pair in holes for x in pair if lo<x<hi]})
     return [(a,b) for a,b in zip(cuts,cuts[1:]) if not any(left<(a+b)/2<right for left,right in holes)]
+
+
+def normal_point_port_id(point):
+    """Equal numeric XY values must name the same physical scalar coordinate.
+
+    Float repr retains the full binary value; no decimal rounding merges nearby
+    physical points. int3800 and float3800.0 deliberately have one identity.
+    """
+    if len(point)!=2 or any(type(v) not in (int,float) or not math.isfinite(v) for v in point):raise ValueError('Finite physical normal-port XY required')
+    return 'NORMAL/'+str(tuple(0. if v==0 else float(v) for v in point))
+
+
+def retained_physical_receiver_coefficients(receiver_points,physical_traces,boundary,port_count):
+    """Reuse the actual mesh trace; an equal-XY orphan is not a receiver."""
+    result={}
+    for point,identifier in receiver_points.items():
+        before=port_count()
+        coefficients=physical_traces[point] if point in physical_traces else boundary(point,0)
+        if port_count()!=before:raise ValueError('Retained receiver created an orphan coordinate instead of reusing a physical mesh/member trace: '+identifier)
+        if not coefficients or not any(value for _,value in coefficients):raise ValueError('Retained receiver has no actual work-dual physical trace: '+identifier)
+        result[identifier]=list(coefficients)
+    return result
+
+
+def retained_receiver_operator_participation(point,coefficients,assembled,operator):
+    """Source-derived participation audit, not an invented support stiffness."""
+    physical=assembled['pointTerms'].get((point,0));trace_source='existing-finite-rc-member-trace'
+    if physical is not None:
+        if coefficients!=physical:raise ValueError('Retained receiver differs from the actual assembled physical-point trace')
+        trace_source='actual-physical-mesh-point-trace'
+    used={i for element in assembled['elements'] for terms in element['terms'] for i,value in terms if value}
+    active=[(i,value) for i,value in coefficients if value]
+    if not active or any(i not in used or assembled['matrix'].get(i,{}).get(i,0.)<=0 for i,_ in active):raise ValueError('Retained receiver has an unused/zero physical plate row')
+    assembled_row={}
+    for i,coefficient in active:
+        for j,value in assembled['matrix'][i].items():assembled_row[j]=assembled_row.get(j,0.)+coefficient*value
+    condensed=operator['condensedStiffness'];assembled_max=max(abs(v) for v in assembled_row.values())
+    condensed_max=max(abs(math.fsum(coefficient*condensed[i][j] for i,coefficient in active)) for j in range(len(condensed)))
+    if assembled_max<=0 or condensed_max<=0:raise ValueError('Retained receiver has no actual assembled/condensed plate participation')
+    return {'schema':'str-retained-plate-operator-participation/1','physicalTraceConfirmed':True,
+        'traceSource':trace_source,'createdScalarCoordinateCount':0,'participatingPortCount':len(active),
+        'allCoefficientRowsUsedByPhysicalElements':True,'assembledTraceRowMaxAbs':assembled_max,
+        'condensedTraceRowMaxAbs':condensed_max,'portIndices':[i for i,_ in active],
+        'scope':'Native mixed-coordinate matrix participation only; no physical receiving law, stiffness or resistance is earned.'}
 
 
 def clear_ground_core_rectangles(source):
@@ -141,7 +186,7 @@ def _replace_legacy_floor_cards(model):
         'physicalGWasSlabFree':True,'oldFloorAndFinishBudgetsAdded':False,'newFreshUniformLiveIsNetPlateAreaOnly':True}
 
 
-def build_vertical_rc_floor(case,source):
+def build_vertical_rc_floor(case,source,retained_point_receivers=None,pre_plate_model_transform=None,portal_builder=None):
     expected=reference_vertical_rc_floor_case(source)
     if not isinstance(case,dict) or set(case)!=set(expected) or any(case[k]!=expected[k] for k in ('schema','sourceSHA256','geometryPolicy','supportPolicy','use')):raise ValueError('Exact current source-bound verticalfloor case required; no injected result')
     law=case['bearingLaw']
@@ -153,7 +198,13 @@ def build_vertical_rc_floor(case,source):
     if not isinstance(case['plateLaw'],dict) or case['plateLaw'].get('thicknessMm')!=200:raise ValueError('ActualRC200 source floor required')
     if type(case['freshUniformLiveKPa']) not in (int,float) or not 0<=case['freshUniformLiveKPa']<=5:raise ValueError('Explicit0..5kPa netplate live challenge required')
     if case['monolithicCase']['houseCase']['boundary']['includeExternalGMAXQ'] and case['monolithicCase']['houseCase']['joinedCase']['floor']['componentCase']['edits']['wallOpenings']:raise ValueError('Changedupperwallopenings need regeneratedupperwallGMAXcards; oldfloorcards are separatelyremoved')
-    model=build_monolithic_rc_portals(case['monolithicCase'],source['parent']);frame=model['model'];floor_source=source['parent']['house']['joined']['floor'];request=case['monolithicCase']['houseCase']['joinedCase']['floor'];retained=evaluate_retained_components(request['componentCase'],floor_source['retained'])
+    builder=build_monolithic_rc_portals if portal_builder is None else portal_builder
+    if not callable(builder):raise ValueError('An internal source-owned portal builder must be callable')
+    model=builder(case['monolithicCase'],source['parent'])
+    if pre_plate_model_transform is not None:
+        if not callable(pre_plate_model_transform):raise ValueError('An internal source-owned pre-plate transform must be callable')
+        pre_plate_model_transform(model)
+    frame=model['model'];floor_source=source['parent']['house']['joined']['floor'];request=case['monolithicCase']['houseCase']['joinedCase']['floor'];retained=evaluate_retained_components(request['componentCase'],floor_source['retained'])
     bodies=[row['geometry']['bodyRectangleXYMm'] for row in retained['components'] if row['kind']=='first-floor']
     for loop in model['joinedFloor']['floor']['bands']:
         axis,datum,lo,hi,width=loop['axis'],loop['datum'],loop['lo'],loop['hi'],loop['width'];half=width/2
@@ -194,6 +245,19 @@ def build_vertical_rc_floor(case,source):
     for rectangle in [*rc_rectangles,*[r['rectangle'] for r in north]]:
         for axis in (0,1):extra[axis].extend(rectangle[axis::2])
     for receiver in north:extra[0].extend(row['x'] for row in receiver['stations'])
+    receiver_points={};receiver_ids=set()
+    if retained_point_receivers is not None:
+        if not isinstance(retained_point_receivers,list) or len(retained_point_receivers)>64:raise ValueError('Explicit bounded retained vertical receiver list required')
+        for receiver in retained_point_receivers:
+            if not isinstance(receiver,dict) or set(receiver)!={'id','xyMm'} or not isinstance(receiver['id'],str) or not re.fullmatch(r'[A-Za-z][A-Za-z0-9._:/,-]*',receiver['id']):raise ValueError('Stable retained point ID and explicit XY millimetres required')
+            point=receiver['xyMm']
+            if not isinstance(point,(list,tuple)) or len(point)!=2 or any(type(v) not in (int,float) or not math.isfinite(v) for v in point):raise ValueError('Finite retained receiver XY millimetres required')
+            point=tuple(point)
+            if point in receiver_points or receiver['id'] in receiver_ids:raise ValueError('Duplicate retained physical receiver point or ID')
+            on_north=any(inside(point,row['rectangle'],1e-7) for row in north)
+            if not on_north and (not any(inside(point,r,1e-7) for r in bodies) or any(inside(point,r,-1e-7) for r in holes)):raise ValueError('Retained receiver has no actual plate or north-upstand body: '+receiver['id'])
+            receiver_points[point]=receiver['id'];receiver_ids.add(receiver['id'])
+            for axis in (0,1):extra[axis].append(point[axis])
     cells,columns=plate_cells(bodies,holes,case['maxPitchMm'],extra);contacts=[];contact_points=set()
     for cell_index,rectangle in enumerate(cells):
         pieces=[(core,intersect(rectangle,core['rectangleXYMm'])) for core in cores];pieces=[(core,r) for core,r in pieces if r]
@@ -227,11 +291,26 @@ def build_vertical_rc_floor(case,source):
         for corner,indices in corners:
             if any(inside(point,r,1e-7) for r in corner['rectangles']):
                 w,rx,ry=indices;cx,cy=corner['originXYMm'];return [(w,1),(rx,(y-cy)/1000),(ry,-(x-cx)/1000)] if axis==0 else [(rx if axis==1 else ry,.001)]
-        if axis==0 and point in contact_points:return [(port('NORMAL/'+str(point),point),1)]
+        if axis==0 and point in contact_points:return [(port(normal_point_port_id(point),point),1)]
+        if axis==0 and point in receiver_points:return [(port('POINT/'+receiver_points[point],point,axis=0),1)]
         return None
-    for point in sorted({p for a,b,c,d in cells for p in ((a,b),(c,b),(c,d),(a,d))}):
-        for axis in range(3):boundary(point,axis)
-    assembled=assemble_vertical_plate(cells,case['plateLaw'],boundary,len(ports));rigid=[]
+    physical_mesh_points={p for a,b,c,d in cells for p in ((a,b),(c,b),(c,d),(a,d))}
+    physical_boundary_traces={}
+    for point in sorted(physical_mesh_points):
+        for axis in range(3):
+            coefficients=boundary(point,axis)
+            if axis==0:physical_boundary_traces[point]=coefficients
+    receiver_coefficients=retained_physical_receiver_coefficients(receiver_points,physical_boundary_traces,boundary,lambda:len(ports))
+    frozen_port_count=len(ports)
+    assembled=assemble_vertical_plate(cells,case['plateLaw'],boundary,frozen_port_count);rigid=[]
+    if len(ports)!=frozen_port_count:raise ValueError('Physical plate assembly created an unregistered boundary port')
+    retained_receiver_traces={}
+    for point,identifier in receiver_points.items():
+        coefficients=receiver_coefficients[identifier]
+        retained_receiver_traces[identifier]={'id':identifier,'xyMm':list(point),'units':'mm',
+            'terms':_combine_port_terms(port_terms,coefficients),
+            'route':'actual-north-upstand-work-trace' if any(inside(point,r['rectangle'],1e-7) for r in north) else 'actual-plate-retained-vertical-coordinate',
+            'rotationRestraintAdded':False}
     for kind in range(3):
         vector=[]
         for row in ports:
@@ -249,17 +328,14 @@ def build_vertical_rc_floor(case,source):
             binding_error=max(binding_error,abs(value-vector[index]))
     if binding_error>1e-9:raise ValueError('Verticalfloor port/frame rigid virtualwork units mismatch')
     operator=condense_vertical_plate(assembled,rigid)
+    for point,identifier in receiver_points.items():
+        retained_receiver_traces[identifier]['physicalPlateParticipation']=retained_receiver_operator_participation(point,receiver_coefficients[identifier],assembled,operator)
     for index,mode in enumerate(operator['energyModes']):frame.springs.append({'id':'VERTICAL-FLOOR/energy/'+str(index),'terms':_combine_port_terms(port_terms,enumerate(mode)),'stiffness':1.,'mode':'bilateral','gap':0.})
     ledger=_replace_legacy_floor_cards(model);old_weight=-sum(row[2] for row in model['families']['physical-G'].values());old_wrench=_family_wrench(model,model['families']['physical-G'])
     for index,value in enumerate(operator['condensedSelfG']):
         for node,row in port_terms[index]:
             target=model['families']['physical-G'].setdefault(node,[0.]*6)
             for axis,coefficient in enumerate(row):target[axis]+=value*coefficient
-    live_ratio=case['freshUniformLiveKPa']/(case['plateLaw']['unitWeightKNPerM3']*.2)
-    for index,value in enumerate(operator['condensedSelfG']):
-        for node,row in port_terms[index]:
-            target=model['families']['external-Q'].setdefault(node,[0.]*6)
-            for axis,coefficient in enumerate(row):target[axis]+=value*coefficient*live_ratio
     fibres=[];missing=[];quadrature=[(-1/math.sqrt(3),1.),(1/math.sqrt(3),1.)] if case['bearingQuadratureOrder']==2 else [(-.8611363115940526,.3478548451374538),(-.3399810435848563,.6521451548625461),(.3399810435848563,.6521451548625461),(.8611363115940526,.3478548451374538)]
     for contact in contacts:
         rect=contact['rectangleXYMm'];cell=cells[contact['cellIndex']];x0,y0,x1,y1=cell;owner=contact['owner'];area=(rect[2]-rect[0])*(rect[3]-rect[1])/4
@@ -282,29 +358,68 @@ def build_vertical_rc_floor(case,source):
     if abs(new_weight-old_weight-assembled['physicalSelfGKN'])>1e-6:raise ValueError('NewphysicalfloorG is duplicated or lost during condensation')
     model['verticalFloor']={'request':case,'operator':operator,'ports':ports,'portTerms':port_terms,'fibres':fibres,'missingGroundContactFibres':missing,'cores':cores,'cells':cells,'holes':holes,'inPlaneStairCreditReservationXYMm':stair_reservation,'principalWetReservation':next(row['bounds'] for row in physical_holes if row['id']=='FLOOR-UNKNOWN/principal-wet-territory'),'openingInventory':[{'id':row['id'],'sourceServiceShape':({'kind':'rectangle','boundsXYMm':stair} if row['id']=='FLOOR-VOID/stair' else row['shape']),'structuralOpeningEnvelopeXYMm':next(item['bounds'] for item in physical_holes if item['id']==row['id']),'policy':'explicitformedrectangularstructuralopeningcomparison' if row['shape']['kind']=='circle' else 'actualsourceaperture'} for row in retained['floorApertures']],
         'northUpstandStrips':[{'wallId':receiver['wallId'],'rectangleXYMm':receiver['rectangle'],'centroidZMm':frame.nodes[receiver['stations'][0]['node']][2],'depthMm':model['members'][next(name for name,m in model['members'].items() if m['kind']=='upstand' and name.startswith(receiver['wallId']+'/'))]['depthMm']} for receiver in north],'legacyReplacement':ledger,
+        'retainedPointReceivers':retained_receiver_traces,
         'portFrameRigidWorkResidual':binding_error,'mass':{'sourceRCAndInfillBeforeSlabKN':old_weight,'newPlatePhysicalSelfGKN':assembled['physicalSelfGKN'],'joinedPhysicalGKN':new_weight,'newPlateAreaM2':assembled['areaM2'],'newPlateCentroidXYMm':assembled['centroidXYMm'],'floorSlabThicknessMm':200,'northUpstandOwnsRemovedStripMaterial':True,'authoredSlabLevelBandsUnionIncluded':True,'sourceSelfGCondensationResidualKN_KNm':gravity_residual}}
     return model
 
 
-def solve_vertical_rc_floor(model,source,name):
-    data=model['verticalFloor'];frame=model['model'];original=frame.solve;captured={}
+
+def fresh_net_floor_live_load(model):
+    """Independent factored Q on this same actual plate, never a grossG flag.
+
+    Uniform Q reuses the exact linear plate load operator. The ratio is against
+    its actual assembled selfG pressure; characteristic Q is not physical mass.
+    """
+    data=model['verticalFloor'];q=data['request']['freshUniformLiveKPa'];assembled=data['operator']['assembled']
+    if type(q) not in (int,float) or not math.isfinite(q) or not 0<=q<=5:raise ValueError('Finite independent net floor live pressure0..5kPa required')
+    area=assembled['areaM2'];self_g=assembled['physicalSelfGKN'];factor=1.5
+    if not math.isfinite(area) or area<=0 or not math.isfinite(self_g) or self_g<=0:raise ValueError('Actual positive net plate area/selfG load operator required for independentQ')
+    ratio=factor*q*area/self_g;loads={}
+    if q:
+        if len(data['operator']['condensedSelfG'])!=len(data['portTerms']):raise ValueError('Actual plate Q port map is incomplete')
+        for index,value in enumerate(data['operator']['condensedSelfG']):
+            for node,row in data['portTerms'][index]:
+                target=loads.setdefault(node,[0.]*6)
+                for axis,coefficient in enumerate(row):target[axis]+=ratio*value*coefficient
+    applied=factor*q*area;cx,cy=assembled['centroidXYMm'];expected=[0.,0.,-applied,-applied*cy/1000,applied*cx/1000,0.]
+    actual=_family_wrench(model,loads);residual=[a-b for a,b in zip(actual,expected)]
+    if max(abs(value) for value in residual)>1e-6:raise ValueError('Independent net floor Q loses physical force or source first moments')
+    return {'loads':loads,'pressureRatioToSelfG':ratio,'evidence':{
+        'schema':'str-independent-net-floor-live-load/1','characteristicPressureKPa':q,'combinationFactor':factor,
+        'factoredPressureKPa':factor*q,'actualNetPlateAreaM2':area,'plateCentroidXYMm':[cx,cy],
+        'characteristicQKN':q*area,'appliedQKN':applied,'appliedWrenchKN_KNm':actual,
+        'sourceForceAndFirstMomentResidualKN_KNm':residual,'legacyGrossGFlagRequired':False,
+        'addedPhysicalMassKN':0.,'candidateAccepted':False,
+        'scope':'Uniform characteristic live pressure on the actual known net plate only, with the existing explicit1.5Q comparison factor. Withheld wet territory and unknown openings remain absent. Q is separate from physicalG and gross upper-wall/legacy floor budgets.'}}
+
+
+def solve_vertical_rc_floor(model,source,name,additional_nodal_loads=None,result_observer=None):
+    data=model['verticalFloor'];frame=model['model'];original=frame.solve;captured={};live_load=fresh_net_floor_live_load(model)
+    if additional_nodal_loads is not None:
+        if not isinstance(additional_nodal_loads,dict) or any(node not in frame.nodes or not isinstance(row,(list,tuple)) or len(row)!=6 or any(type(v) not in (int,float) or not math.isfinite(v) for v in row) for node,row in additional_nodal_loads.items()):raise ValueError('Finite source-derived additional nodal KN/KNmm loads at actual nodes required')
+    if result_observer is not None and not callable(result_observer):raise ValueError('An internal frame result observer must be callable')
     def record():
+        for node,wrench in (additional_nodal_loads or {}).items():frame.load(node,wrench)
+        for node,wrench in live_load['loads'].items():frame.load(node,wrench)
         result=solve_vertical_frame(frame,data);captured['raw']=result;return result
     try:
         frame.solve=record;native=solve_monolithic_rc_portals(model,source['parent'],name)
     finally:frame.solve=original
     native['parentMonolithicControlSourceSHA256']=source['parent']['identities'];native['sourceSHA256']=source['identities'];native['request']=data['request'];native['verticalGravityMethod']='str-vertical-rc-floor-case/1'
-    raw=captured['raw'];gauge=max((abs(value) for name,row in raw['supportWrenches'].items() if name.startswith('VERTICAL-FLOOR/normal/') for value in row),default=0.)
+    raw=captured['raw']
+    if result_observer is not None:result_observer(raw)
+    gauge=max((abs(value) for name,row in raw['supportWrenches'].items() if name.startswith('VERTICAL-FLOOR/normal/') for value in row),default=0.)
     if gauge>1e-9:raise ValueError('Unusednormal-coordinategauges are carrying fictitiousphysicalreaction')
     u=[]
     for terms in data['portTerms']:u.append(sum(value*raw['displacements'][node][axis] for node,row in terms for axis,value in enumerate(row)))
-    factor=model['houseLoadCase']['boundary']['physicalGFactor'];live=1.5*data['request']['freshUniformLiveKPa']/(data['request']['plateLaw']['unitWeightKNPerM3']*.2) if model['houseLoadCase']['boundary']['includeExternalGMAXQ'] else 0.;load_factor=factor+live
+    factor=model['houseLoadCase']['boundary']['physicalGFactor'];load_factor=factor+live_load['pressureRatioToSelfG']
     recovery_operator={**data['operator'],'assembled':{**data['operator']['assembled'],'force':{i:load_factor*v for i,v in data['operator']['assembled']['force'].items()}}}
     recovered=recover_vertical_plate(recovery_operator,u);springs={row['id']:row for row in raw['springs']};bearings=[]
     for fibre in data['fibres']:
         row=springs[fibre['id']];bearings.append({**fibre,'active':row['active'],'relativeClosureMm':-row['relativeMm'],'normalCompressionKN':-row['forceKN'],'normalPressureMPa':-row['forceKN']*1000/fibre['areaMm2']})
     return {'schema':'str-vertical-rc-floor-result/1','sourceSHA256':source['identities'],'request':data['request'],'native':native,'mass':data['mass'],'legacyReplacement':data['legacyReplacement'],
         'headPositions':[{'id':row['id'],'xyMm':row['xy']} for row in model['grid']['heads']],
+        'floorLiveLoad':live_load['evidence'],
         'numericalRuntime':__import__('vertical_floor_numerics').runtime_versions(),'auxiliaryGaugeMaximumReactionKN_KNmm':gauge,'portFrameRigidWorkResidual':data['portFrameRigidWorkResidual'],
         'plate':{'cellCount':len(data['cells']),'pointCount':len(data['operator']['assembled']['points']),'retainedCoordinateCount':len(data['ports']),
             'rigidModeResidualKN':data['operator']['rigidModeResidualKN'],'modeReconstructionRelativeError':data['operator']['modeReconstructionRelativeError'],'assemblySymmetryRelativeError':data['operator']['assembled']['assemblySymmetryRelativeError'],

@@ -161,7 +161,24 @@ test('workable interior concept runs early and owner decisions gate details and 
   assert.deepEqual(finalApproval.dependencies, ['PLT-FINAL-PREP'])
   assert.equal(finalApproval.agentDispatch?.mode, 'manual')
   assert.deepEqual(node('PLT-FINAL-FREEZE').dependencies, [
-    'PLT-FINAL-PREP', 'PLT-PRINT-REVIEW', finalApproval.id
+    'PLT-FINAL-PREP', 'PLT-PRINT-REVIEW', finalApproval.id, 'EDA-RENEWED'
+  ])
+})
+
+test('final digital editorial assurance precedes freeze without waiting for physical or owner verdicts', () => {
+  assert.deepEqual(node('EDA-RENEWED').dependencies, ['PLT-FINAL-PREP', 'EDA-ADAPTER'])
+  const fixture = controlNodes.map(candidate => candidate.id === 'PLT-FINAL-PREP'
+    ? { ...candidate, lifecycle: 'complete' as const } : candidate)
+  assert.equal(derivedState(fixture.find(candidate => candidate.id === 'EDA-RENEWED')!, fixture), 'ready')
+  assert.deepEqual(directBlockers(fixture.find(candidate => candidate.id === 'PLT-FINAL-FREEZE')!, fixture), [
+    'PLT-PRINT-REVIEW', 'PLT-OWNER-FINAL-DESIGN-ACCEPTANCE', 'EDA-RENEWED'
+  ])
+  assert.equal(node('PLT-PRINT-REVIEW').agentDispatch?.mode, 'manual')
+  assert.equal(node('PLT-OWNER-FINAL-DESIGN-ACCEPTANCE').agentDispatch?.mode, 'manual')
+  const editorialDone = fixture.map(candidate => candidate.id === 'EDA-RENEWED'
+    ? { ...candidate, lifecycle: 'complete' as const } : candidate)
+  assert.deepEqual(directBlockers(editorialDone.find(candidate => candidate.id === 'PUB-02-FINAL')!, editorialDone), [
+    'PLT-FINAL-FREEZE'
   ])
 })
 

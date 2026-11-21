@@ -6,6 +6,7 @@ import { compileEngineeringDocument, readEngineeringDocument } from './current-d
 import { readGeorgianDesignSnapshot } from './current-design/georgian-source.js'
 import { readCurrentDesignResolution } from './current-design/resolve.js'
 import { readMasonryFrameCase, runMasonryFrameCase, savedMasonryFrameCase } from './current-design/structural-masonry-frame.js'
+import { validateRoofCoupling } from './current-design/structural-house-coupling.js'
 
 const proof = JSON.parse(readFileSync(new URL('../../project/str/studies/masonry-frame-a-proof.json', import.meta.url), 'utf8'))
 const numerical = proof.authoredNumericalCase
@@ -16,7 +17,7 @@ const floorFields = ['cornerWidthsMm', 'memberLaw', 'jointLaw', 'membraneLaw', '
 const portalFields = ['frameLaw', 'dpcLaw', 'dpcIntervalZMm', 'coverMm', 'archSegments', 'infillHeadGapMm']
 const joinedFields = ['geometry', 'portalDPCNormalMode', 'portalDPCNormalIntegration', 'portalDPCQuadratureOrder', 'portalDPCNormalSubdivisions', 'portalDPCInsetMm']
 const nativeFields = ['plateLaw', 'bearingLaw', 'maxPitchMm', 'bearingQuadratureOrder', 'freshUniformLiveKPa']
-const masonryFields = ['masonrySeatProjectionMm', 'masonryUnitWeightKNM3', 'abutmentSlices', 'foundationWeight', 'courtCornerClosure', 'floorReinforcement']
+const masonryFields = ['masonrySeatProjectionMm', 'masonryUnitWeightKNM3', 'abutmentSlices', 'foundationWeight', 'courtCornerClosure', 'floorReinforcement', 'lowerCoreBodies', 'lowerLWeight', 'roofCoupling', 'straightFrameCage']
 function stages() {
   return {
     distributedFloor: { ...Object.fromEntries(floorFields.map(key => [key, joined.floor[key]])), edits: joined.floor.componentCase.edits },
@@ -34,16 +35,33 @@ function result(bundle: { engineering: object }) {
   assert.ok(value, 'The saved document must execute the actual separate masonry frame consumer')
   return value
 }
+function assertAcyclicManifest(manifest: readonly { stage: string; dependsOn: readonly string[] }[]) {
+  const rows = new Map(manifest.map(row => [row.stage, row]))
+  const seen = new Set<string>(), active = new Set<string>()
+  function visit(stage: string) {
+    if (seen.has(stage) || !rows.has(stage)) return
+    assert.ok(!active.has(stage), `Compiler manifest dependency cycle at ${stage}`)
+    active.add(stage)
+    for (const dependency of rows.get(stage)!.dependsOn) visit(dependency)
+    active.delete(stage); seen.add(stage)
+  }
+  for (const row of manifest) visit(row.stage)
+}
+
 function headDelta(a: ReturnType<typeof runMasonryFrameCase>, b: ReturnType<typeof runMasonryFrameCase>) {
   const before = new Map(a.native.heads.map(head => [head.id, head.reactionKN_KNm]))
   return Math.max(...b.native.heads.flatMap(head => head.reactionKN_KNm.map((value, axis) => Math.abs(value - before.get(head.id)![axis]!))))
 }
 
-test('a saved opening edit changes the actual straight-frame gravity response and drawing through the public CLI and reverses', async () => {
-  const document = { ...await readEngineeringDocument(readGeorgianDesignSnapshot()), stages: stages() }
+test('one saved floor, body and roof edit propagates through the actual coupled response, public CLI and reversal', async () => {
+  const sourceDocument = await readEngineeringDocument(readGeorgianDesignSnapshot())
+  const document = { ...sourceDocument, stages: { ...stages(), roofPitch: sourceDocument.stages.roofPitch } }
   const baselineBundle = await compileEngineeringDocument(JSON.parse(JSON.stringify(document)))
   const baseline = result(baselineBundle)
+  assert.ok(numerical.lowerCoreBodies && numerical.roofCoupling, 'The current worked case must exercise real body and roof composition')
   const changedDocument = JSON.parse(JSON.stringify(document))
+  changedDocument.stages.masonryFrame.lowerCoreBodies.masonryUnitWeightKNPerM3 += 1
+  changedDocument.stages.masonryFrame.roofCoupling.roofWindFactor *= .8
   changedDocument.stages.distributedFloor.edits.floorApertures = [{ id: 'FLOOR-APERTURE/plant-riser',
     shape: { kind: 'rectangle', boundsXYMm: [9240, 4760, 9905, 5305] } }]
   const changedBundle = JSON.parse(execFileSync(process.execPath, ['--import', 'tsx', 'scripts/compile-current-design.ts', '--bundle', '-'], {
@@ -54,7 +72,7 @@ test('a saved opening edit changes the actual straight-frame gravity response an
   assert.equal(baseline.vertical.schema, 'str-masonry-frame-a-vertical-result/1')
   assert.equal(baseline.native.schema, 'str-masonry-frame-a-compatible-frame-result/1')
   assert.deepEqual(baseline.vertical.request, baseline.native.request)
-  assert.equal(Object.keys(baseline.native.sourceSHA256 as object).length, 41)
+  assert.equal(Object.keys(baseline.native.sourceSHA256 as object).length, 47)
   if (numerical.courtCornerClosure) {
     assert.equal(baseline.courtCornerClosure?.newSupportCount, 0)
     assert.equal(baseline.courtCornerClosure?.localJointRigidityAccepted, false)
@@ -65,6 +83,33 @@ test('a saved opening edit changes the actual straight-frame gravity response an
   assert.ok(headDelta(baseline, changed) > 1e-5)
   assert.notEqual(changed.floorSvg, baseline.floorSvg)
   assert.notEqual(changed.source.caseDigest, baseline.source.caseDigest)
+  assert.ok(baseline.lowerCoreBodies && changed.lowerCoreBodies && baseline.roofCoupling && changed.roofCoupling)
+  const bodyInventory = baseline.lowerCoreBodies.inventory as { netClearCoreVolumeM3: number }
+  assert.ok(Math.abs(Number(changed.lowerCoreBodies.addedPhysicalGKN) - Number(baseline.lowerCoreBodies.addedPhysicalGKN) - bodyInventory.netClearCoreVolumeM3) < 1e-6)
+  assert.equal(changed.lowerCoreBodies.noNewLateralStiffness, true)
+  assert.equal(changed.lowerCoreResponse?.gaugeReactionsAcceptedAsSupport, false)
+  assert.equal(changed.roofCoupling.windIndex, changedDocument.stages.distributedFloor.boundaryCase.windIndex)
+  const current = readMasonryFrameCase(readCurrentDesignResolution()).masonry
+  const checked = savedMasonryFrameCase(current, document.stages.masonryFrame, {
+    ...current.comparison.verticalCase.monolithicCase.houseCase.joinedCase.floor,
+    ...Object.fromEntries(floorFields.map(key => [key, joined.floor[key]])), componentCase: joined.floor.componentCase })
+  assert.throws(() => validateRoofCoupling({ ...baseline.roofCoupling, windIndex: Number(baseline.roofCoupling!.windIndex) + 1 },
+    numerical.roofCoupling, checked.comparison.sourceSHA256,
+    checked.comparison.verticalCase.monolithicCase.houseCase.joinedCase.floor, baseline.native), /sole floor wind programme/)
+
+  assert.deepEqual(changed.roofCoupling.datumsMm, baseline.roofCoupling.datumsMm)
+  assert.notEqual(changed.roofCoupling.roofSvg, baseline.roofCoupling.roofSvg)
+  assert.ok(baseline.roofSteelGravity && changed.roofSteelGravity, 'Actual modeled roof stock G must join this worked case')
+  assert.equal(changed.roofSteelGravity.physicalGKN, baseline.roofSteelGravity.physicalGKN)
+  assert.equal(changed.roofSteelGravity.completeRoofGravity, false)
+  assert.equal(changed.roofSteelGravity.retainedMinimumGQualified, false)
+  const roofWrench = baseline.roofCoupling.additionalPressureWrenchKN_KNm as number[]
+  assert.ok((changed.roofCoupling.additionalPressureWrenchKN_KNm as number[]).every((value, axis) => Math.abs(value - .8 * roofWrench[axis]) < 1e-6))
+  assert.equal(changedBundle.manifest.find((row: { stage: string }) => row.stage === 'roofPitch').applicability.controllingStage, 'masonryFrame')
+  assert.equal(changedBundle.manifest.find((row: { stage: string }) => row.stage === 'selectedWaterEvent').applicability.controllingStage, 'masonryFrame')
+  assert.ok(changedBundle.coordinationDiagnostics.some((row: { code: string }) => row.code === 'COUPLED_ROOF_WEATHER_NOT_COORDINATED'))
+  assertAcyclicManifest(changedBundle.manifest)
+
   for (const key of ['RCVolumeM3', 'physicalGKN', 'centroidXYZMm', 'request']) {
     assert.deepEqual(changed.foundationWeight[key], baseline.foundationWeight[key])
   }
@@ -77,10 +122,13 @@ test('a saved opening edit changes the actual straight-frame gravity response an
   assert.ok(changedBundle.manifest.find((row: { stage: string }) => row.stage === 'masonryFrame').dependsOn.includes('distributedFloor'))
   assert.ok(!changedBundle.manifest.find((row: { stage: string }) => row.stage === 'distributedFloor').dependsOn.includes('masonryFrame'))
   changedDocument.stages.distributedFloor.edits = JSON.parse(JSON.stringify(document.stages.distributedFloor.edits))
+  changedDocument.stages.masonryFrame.lowerCoreBodies = JSON.parse(JSON.stringify((document.stages.masonryFrame as Record<string, unknown>).lowerCoreBodies))
+  changedDocument.stages.masonryFrame.roofCoupling = JSON.parse(JSON.stringify((document.stages.masonryFrame as Record<string, unknown>).roofCoupling))
   const restored = result(await compileEngineeringDocument(changedDocument))
   assert.equal(restored.source.caseDigest, baseline.source.caseDigest)
   assert.ok(headDelta(baseline, restored) < 1e-7)
   assert.equal(restored.floorSvg, baseline.floorSvg)
+  assert.equal(restored.roofCoupling?.roofSvg, baseline.roofCoupling.roofSvg)
 })
 
 test('masonry stage rejects second-floor, result, historical-method and stale binding substitutions', async () => {
@@ -89,6 +137,16 @@ test('masonry stage rejects second-floor, result, historical-method and stale bi
   const authored = stages()
   const shared = { ...masonry.comparison.verticalCase.monolithicCase.houseCase.joinedCase.floor,
     ...Object.fromEntries(floorFields.map(key => [key, joined.floor[key]])), componentCase: joined.floor.componentCase }
+  assert.deepEqual(savedMasonryFrameCase(masonry, JSON.parse(JSON.stringify(authored.masonryFrame)), shared),
+    savedMasonryFrameCase(masonry, authored.masonryFrame, shared), 'A save/load no-op must preserve the exact authored case')
+  assert.equal(Reflect.get(savedMasonryFrameCase(masonry, { ...authored.masonryFrame, freshUniformLiveKPa: 2 }, shared)
+    .comparison.verticalCase, 'freshUniformLiveKPa'), 2)
+  assert.equal(Reflect.get(savedMasonryFrameCase(masonry, { ...authored.masonryFrame, roofCoupling: null, freshUniformLiveKPa: 2 }, shared)
+    .comparison.verticalCase, 'freshUniformLiveKPa'), 2)
+  for (const invalid of [-1, 6, Number.NaN, Number.POSITIVE_INFINITY]) {
+    assert.throws(() => savedMasonryFrameCase(masonry, { ...authored.masonryFrame, freshUniformLiveKPa: invalid }, shared),
+      /Independent net floor live pressure/)
+  }
   assert.throws(() => savedMasonryFrameCase(masonry, authored.masonryFrame, undefined), /sole shared distributed-floor/)
   assert.throws(() => savedMasonryFrameCase(masonry, { ...authored.masonryFrame, floor: shared }, shared), /another floor/)
   assert.throws(() => savedMasonryFrameCase(masonry, { ...authored.masonryFrame, native: {} }, shared), /derived approval/)

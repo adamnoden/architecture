@@ -23,8 +23,10 @@ EXTRA=('project/str/studies/foundation_solid_weight.py','project/str/studies/pla
 
 def load_masonry_frame_a_source(root):
     root=Path(root);vertical=load_vertical_rc_floor_source(root)
-    paths=[METHOD,*EXTRA]
-    return {'root':root,'vertical':vertical,'identities':{**vertical['identities'],**{p:hashlib.sha256((root/p).read_bytes()).hexdigest() for p in paths}}}
+    paths=[METHOD,*EXTRA,'project/str/studies/lower_core_bodies.py','project/str/studies/straight_frame_cage.py']
+    from roof_floor_compatibility import load_roof_only_source
+    roof=load_roof_only_source(root)
+    return {'root':root,'vertical':vertical,'roof':roof,'identities':{**vertical['identities'],**roof['identities'],**{p:hashlib.sha256((root/p).read_bytes()).hexdigest() for p in paths}}}
 
 
 def reference_masonry_frame_a_case(source):
@@ -33,7 +35,7 @@ def reference_masonry_frame_a_case(source):
         'verticalCase':reference_vertical_rc_floor_case(source['vertical']),
         'masonrySeatProjectionMm':180.,'masonryUnitWeightKNM3':20.,'abutmentSlices':12,
         'foundationWeight':{'unitWeightKNPerM3':25.,'gravityFactor':1.},'courtCornerClosure':None,
-        'floorReinforcement':reference_floor_reinforcement_settings(),
+        'floorReinforcement':reference_floor_reinforcement_settings(),'lowerCoreBodies':None,'roofCoupling':None,'lowerLWeight':None,'straightFrameCage':None,
         'use':'unqualified-separate-masonry-and-straight-RC-frame'}
 
 
@@ -98,15 +100,52 @@ def _transfer_loads_from_deleted_nodes(model,deleted):
     return ledger
 
 
-def build_masonry_frame_a(case,source):
-    expected=reference_masonry_frame_a_case(source)
-    if not isinstance(case,dict) or set(case)!=set(expected) or any(case[k]!=expected[k] for k in ('schema','sourceSHA256','use')):raise ValueError('Exact source-bound masonry frame case required; no injected result or approval')
-    for key in ('masonrySeatProjectionMm','masonryUnitWeightKNM3'):
-        if type(case[key]) not in (int,float) or not math.isfinite(case[key]):raise ValueError('Finite authored masonry geometry/material required')
-    if not 100<=case['masonrySeatProjectionMm']<=180 or not 15<=case['masonryUnitWeightKNM3']<=25:raise ValueError('Unsupported masonry seat or density comparison')
-    if type(case['abutmentSlices']) is not int or not 4<=case['abutmentSlices']<=48:raise ValueError('Explicit4..48 tapered abutment slices required')
-    model=build_vertical_rc_floor(case['verticalCase'],source['vertical']);frame=model['model'];g=geometry(case,model['portal'],model['grid']);courses=_ring_witness(g,case['masonryUnitWeightKNM3'])
+def _add_lower_l_weight(model,setting):
+    if setting is None:return None
+    if not isinstance(setting,dict) or set(setting)!={'unitWeightKNPerM3'} or type(setting['unitWeightKNPerM3']) not in (int,float) or not math.isfinite(setting['unitWeightKNPerM3']) or not 0<=setting['unitWeightKNPerM3']<=30:
+        raise ValueError('Explicit finite lowerL density0..30kN/m3 required; zero is an unchanged stiffness control')
+    if 'lowerLWeight' in model:raise ValueError('LowerL ownG already included; duplicate mass rejected')
+    frame=model['model'];before=_family_wrench(model,model['families']['physical-G']);members={r[0]:r for r in frame.members};rows=[]
+    for corner in model['joinedFloor']['corners']:
+        area=math.fsum((r[2]-r[0])*(r[3]-r[1]) for r in corner['rectangles'])
+        for kind in ('upper-wall','lower-wall'):
+            name=corner['id']+'/'+kind
+            if name not in members:raise ValueError('Actual source lowerL finite member missing: '+name)
+            _,a,b,_=members[name];p,q=frame.nodes[a],frame.nodes[b]
+            if p[:2]!=q[:2]:raise ValueError('LowerL ownG method supports only actual vertical member axes')
+            length=math.dist(p,q);volume=area*length/1e9;weight=volume*setting['unitWeightKNPerM3'];centre=[(x+y)/2 for x,y in zip(p,q)]
+            for node in (a,b):_add(model['families']['physical-G'],node,_wrench_at([0,0,-weight/2],centre,frame.nodes[node]))
+            rows.append({'memberId':name,'physicalStartXYZMm':list(p),'physicalEndXYZMm':list(q),'sectionAreaMm2':area,'physicalLengthMm':length,'RCVolumeM3':volume,'physicalGKN':weight,'centroidXYZMm':centre})
+    total=math.fsum(row['physicalGKN'] for row in rows);after=_family_wrench(model,model['families']['physical-G']);actual=[b-a for a,b in zip(before,after)]
+    expected=[0,0,-total,-math.fsum(r['physicalGKN']*r['centroidXYZMm'][1]/1000 for r in rows),math.fsum(r['physicalGKN']*r['centroidXYZMm'][0]/1000 for r in rows),0]
+    residual=[a-b for a,b in zip(actual,expected)]
+    if max(abs(v) for v in residual)>1e-7:raise ValueError('LowerL actual mass or first moments lost')
+    result={'schema':'str-lower-L-physical-weight-comparison/1','request':setting,'memberCount':len(rows),'members':rows,'RCVolumeM3':math.fsum(r['RCVolumeM3'] for r in rows),'physicalGKN':total,
+        'addedPhysicalFamilyWrenchKN_KNm':actual,'sourceSelfGAndFirstMomentResidualKN_KNm':residual,
+        'DPCGapOwnGExcluded':True,'newUpperRoofLOwnGIncluded':False,'reinforcementAccepted':False,'candidateAccepted':False}
+    model['lowerLWeight']=result
+    return result
+
+
+def _build_masonry_portal(case,source,monolithic_case,monolithic_source):
+    """Compose the actual northern frame before the sole plate condensation.
+
+    Legacy200mm barrier controls remain untouched. Their case schema is a
+    reused input boundary, never a certificate for this independent A frame.
+    """
+    from rc_portal_monolithic import reference_monolithic_rc_case
+    from rc_floor_house_loads import build_rc_floor_house
+    expected=reference_monolithic_rc_case(monolithic_source)
+    if not isinstance(monolithic_case,dict) or set(monolithic_case)!=set(expected) or any(monolithic_case[k]!=expected[k] for k in ('schema','sourceSHA256','jointMode','waterControl','barGeometry','use')):
+        raise ValueError('Exact current parent inputs required; no old barrier/bridge acceptance is transferred')
+    house=monolithic_case['houseCase']
+    if house['coreAxialWidthMm']!=290 or house['northUpstandWidthMm'] not in (200,290):
+        raise ValueError('Explicit A normalcore290 and northbeam200or290 required')
+    model=build_rc_floor_house(house,monolithic_source['house'])
+    frame=model['model'];g=geometry(case,model['portal'],model['grid']);courses=_ring_witness(g,case['masonryUnitWeightKNM3'])
     removed={name for name,m in model['members'].items() if m['kind']=='curved-ring' or m['kind']=='post'}
+    virtual=model.get('virtualJointLoadMembers',{})
+    frame.springs=[spring for spring in frame.springs if '/dpc/' not in spring['id'] and '/NORMAL/' not in spring['id']]
     deleted={name for name in frame.nodes if '/arch/' in name}
     # End arch masters are shared post nodes and remain. Internal arch nodes have
     # no independent acceptance role in the straight frame.
@@ -115,8 +154,8 @@ def build_masonry_frame_a(case,source):
     for family,rows in model.get('memberEquivalentLoads',{}).items():
         if family=='physical-G':continue
         for name,vector in rows.items():
-            if name in removed:
-                removed_loads.append({'family':family,'originalMemberId':name,'originalMember':copy.deepcopy(model['members'][name]),
+            if name in removed or name in virtual:
+                removed_loads.append({'family':family,'originalMemberId':name,'originalMember':copy.deepcopy(model['members'].get(name,virtual.get(name))),
                     'equivalentEndWrenchesKN_KNmm':list(vector),'pointLoads':copy.deepcopy(model.get('memberPointLoads',{}).get(family,{}).get(name,[])),
                     'distributedLoads':copy.deepcopy(model.get('memberDistributedLoads',{}).get(family,{}).get(name,[])),
                     'scope':'Original source member-equivalent nodal loads retained at their actual masters; the enlarged A post is a nodal-envelope comparison. These are not recovered distributed pressure cuts in the changed post.'})
@@ -124,9 +163,8 @@ def build_masonry_frame_a(case,source):
     for name in removed:model['members'].pop(name)
     for family in ('memberEquivalentLoads','memberPointLoads','memberDistributedLoads'):
         for rows in model.get(family,{}).values():
-            for name in removed:rows.pop(name,None)
+            for name in removed|set(virtual):rows.pop(name,None)
     for node in deleted:frame.nodes.pop(node)
-    data=model['verticalFloor']
     left=model['portal']['piers']['westEW'][0];edge=model['portal']['piers']['westEW'][1];inner=g['innerSpringXZMm'][0];spring=g['innerSpringXZMm'][1];top=2600.;clip=g['seatTopXAt2600Mm']
     new_members=[];seat_nodes={};post_volume=0.
     def right_at(z):return inner if z<=spring else inner+(clip-inner)*(z-spring)/(top-spring) if z<top else edge
@@ -160,15 +198,12 @@ def build_masonry_frame_a(case,source):
     # equivalent endpoint entries and keeps physical local cut recovery exact.
     model['families']['physical-G']={}
     for key in ('memberEquivalentLoads','memberPointLoads','memberDistributedLoads'):model[key]['physical-G']={}
-    for index,value in enumerate(data['operator']['condensedSelfG']):
-        for node,row in data['portTerms'][index]:_add(model['families']['physical-G'],node,[value*c for c in row])
     for name,m in model['members'].items():
         if m['kind'] in ('post','upstand'):register_member_gravity(model,name,already_lumped=False)
     end_strips=[]
     for wall,row in model['wallFrames'].items():
         nodes=row['beamNodes'];y=frame.nodes[nodes[0]][1];depth=row['west']['topMm']-3170;width=model['widthEdit']['northUpstandWidthMm']
-        west_edge=model['portal']['piers']['westEW'][0]
-        for edge,node in ((west_edge,nodes[0]),(12000-west_edge,nodes[-1])):
+        for edge,node in ((model['portal']['piers']['westEW'][0],nodes[0]),(12000-model['portal']['piers']['westEW'][0],nodes[-1])):
             at=frame.nodes[node];length=abs(edge-at[0]);volume=length*width*depth/1e9;weight=volume*25;point=[(edge+at[0])/2,y,at[2]]
             _add(model['families']['physical-G'],node,_wrench_at([0,0,-weight],point,at))
             end_strips.append({'wallId':wall,'receivingNode':node,'physicalCentroidXYZMm':point,'lengthMm':length,'widthMm':width,'depthMm':depth,'RCVolumeM3':volume,'physicalGKN':weight,'scope':'Actual end-zone material outside the finite upstand axis. Rigid joint-zone work trace only; local cage/resistance remains unqualified.'})
@@ -180,21 +215,48 @@ def build_masonry_frame_a(case,source):
                 node=seat_nodes[wall,side,course['id']];force=[sign*course['seatHorizontalKN'],0,-course['seatVerticalKN']]
                 _add(model['families']['physical-G'],node,_wrench_at(force,[x,cy,sz],frame.nodes[node]))
     if abs(post_volume-g['fourRCPostUnionVolumeM3'])>1e-9:raise ValueError('Tapered post material integration differs from exact polygon union')
-    data['mass']['sourceRCAndInfillBeforeSlabKN']=-sum(v[2] for v in model['families']['physical-G'].values())-data['mass']['newPlatePhysicalSelfGKN']
-    data['mass']['joinedPhysicalGKN']=-sum(v[2] for v in model['families']['physical-G'].values())
     model['masonryFrameA']={'request':case,'geometry':g,'courses':courses,'newPostMembers':new_members,'explicitTransferredLoads':transfer,
         'RCPostVolumeM3':post_volume,'masonryPhysicalGKN':2*sum(r['physicalGKN'] for r in courses),'retainedOriginalMemberEquivalentLoads':removed_loads,'upstandEndStrips':end_strips,
         'oldCurvedRCAndInfillRemoved':True,'sourceWindTransferQualified':False,'archMovementCompatibilityQualified':False}
+    model['monolithic']={'request':monolithic_case,'bridges':[],'additionalRCVolumeM3':0.,'additionalPhysicalGKN':0.,
+        'barrierDuties':[],'allOtherSourceDPCsPreserved':True,'actualCapCageAxesKnown':False,'actualCapPileInterfaceQualified':False,
+        'scope':'Independent source-bound A frame composition. No legacy200beam barrier/cage/20mmbridge metadata supplies acceptance.'}
+    return model
+
+
+def build_masonry_frame_a(case,source):
+    expected=reference_masonry_frame_a_case(source)
+    if not isinstance(case,dict) or set(case)!=set(expected) or any(case[k]!=expected[k] for k in ('schema','sourceSHA256','use')):raise ValueError('Exact source-bound masonry frame case required; no injected result or approval')
+    for key in ('masonrySeatProjectionMm','masonryUnitWeightKNM3'):
+        if type(case[key]) not in (int,float) or not math.isfinite(case[key]):raise ValueError('Finite authored masonry geometry/material required')
+    if not 100<=case['masonrySeatProjectionMm']<=180 or not 15<=case['masonryUnitWeightKNM3']<=25:raise ValueError('Unsupported masonry seat or density comparison')
+    if type(case['abutmentSlices']) is not int or not 4<=case['abutmentSlices']<=48:raise ValueError('Explicit4..48 tapered abutment slices required')
+    receivers=None
+    if case['roofCoupling'] is not None:
+        from roof_floor_compatibility import roof_floor_receiver_points
+        receivers=roof_floor_receiver_points(source['root'])
+    model=build_vertical_rc_floor(case['verticalCase'],source['vertical'],retained_point_receivers=receivers,
+        portal_builder=lambda inner_case,inner_source:_build_masonry_portal(case,source,inner_case,inner_source))
+    data=model['verticalFloor']
     from court_corner_closure import apply_court_corner_closure
     if case['courtCornerClosure'] is not None:
         apply_court_corner_closure(model,source,case['courtCornerClosure'],case['foundationWeight'])
+    _add_lower_l_weight(model,case['lowerLWeight'])
+    from lower_core_bodies import add_lower_core_bodies
+    add_lower_core_bodies(model,source,case['lowerCoreBodies'])
     from foundation_solid_weight import add_foundation_solid_weight
     shell_weight=data['mass']['joinedPhysicalGKN']
     model['foundationWeight']=add_foundation_solid_weight(model,source,case['foundationWeight'])
+    roof_before=-sum(row[2] for row in model['families']['physical-G'].values())
+    if case['roofCoupling'] is not None:
+        from roof_floor_compatibility import apply_roof_floor_coupling
+        apply_roof_floor_coupling(model,source,case['roofCoupling'])
     total=-sum(row[2] for row in model['families']['physical-G'].values())
     data['mass'].update(referenceStructuralShellPhysicalGKN=shell_weight,
         foundationPhysicalGKN=model['foundationWeight']['physicalGKN'],
         cornerClosurePhysicalGKN=model.get('courtCornerClosure',{}).get('addedGKN',0.),
+        lowerLPhysicalGKN=model.get('lowerLWeight',{}).get('physicalGKN',0.),
+        lowerCorePhysicalGKN=model.get('lowerCoreBodies',{}).get('addedPhysicalGKN',0.),roofAddedPhysicalGKN=total-roof_before,
         joinedPhysicalGKN=total,authoredPhysicalGFactor=model['houseLoadCase']['boundary']['physicalGFactor'],
         appliedPhysicalGKN=total*model['houseLoadCase']['boundary']['physicalGFactor'])
     return model
@@ -227,7 +289,7 @@ def render_masonry_frame_a(result):
     rows.append(f'<path d="{path(curve,False)}" fill="none" stroke="#a64e3c" stroke-width="2"/>')
     for x in (4500,7500):rows.append(f'<path d="{path([(x-300,-750),(x+300,-750),(x+300,-180),(x-300,-180)])}" fill="#bdc9cf" stroke="#344d54"/>')
     heads=native['native']['heads'];minhead=min(heads,key=lambda r:r['reactionKN_KNm'][2]);maxhead=max(heads,key=lambda r:r['reactionKN_KNm'][2]);lines=[
-        ('OUTER-NORTH FRAME SECTION',False),(f"Actual upstand depth {outer['depthMm']:g} mm",False),(html.escape(native['native']['caseId']),False),
+        ('OUTER-NORTH FRAME SECTION',False),(f"Upstand depth {outer['depthMm']:g} / normal {outer['rectangleXYMm'][3]-outer['rectangleXYMm'][1]:g} mm",False),(html.escape(native['native']['caseId']),False),
         (f"Known plate {native['mass']['newPlateAreaM2']:.5f}m²",False),
         (f"Plate selfG {native['mass']['newPlatePhysicalSelfGKN']:.3f}kN",False),
         (f"Four RC post union {result['mass']['RCPostVolumeM3']:.6f}m³",False),
@@ -235,7 +297,7 @@ def render_masonry_frame_a(result):
         (f"Foundation union {result['foundationWeight']['physicalGKN']:.3f}kN",False),
         (f"52-head min {minhead['reactionKN_KNm'][2]:.3f}kN/{minhead['id']}",False),
         (f"52-head max {maxhead['reactionKN_KNm'][2]:.3f}kN/{maxhead['id']}",False),
-        ('',False),('RETAINED ARCHITECTURAL COST',True),('Finished opening2400 / normal775 retained',False),
+        (f"Modeled physical G {result['mass']['joinedPhysicalGKN']:.3f} kN",False),('RETAINED ARCHITECTURAL COST',True),('Finished opening2400 / normal775 retained',False),
         (f"Local jamb glass {g['localJambGlassMm']:.0f}mm remains unqualified",True),
         ('105mm gross crown-to-upstand clearance',False),('No structural masonry infill credited',False),
         ('',False),('OPEN ASSEMBLED-PATH OBLIGATIONS',True),('Actual RC cage, anchorage and cap/grid node',True),
@@ -250,9 +312,27 @@ def render_masonry_frame_a(result):
 
 
 def run_masonry_frame_a(case,source,name):
+    model=build_masonry_frame_a(case,source);captured={}
+    if case['roofCoupling'] is not None:
+        def observe(raw):captured['raw']=raw
+        native=solve_vertical_rc_floor(model,source['vertical'],name,additional_nodal_loads=model['roofFloorCoupling']['additionalNodalLoads'],result_observer=observe)
+    else:native=solve_vertical_rc_floor(model,source['vertical'],name)
+    return finish_masonry_frame_a(model,source,native,captured.get('raw'))
+
+
+def finish_masonry_frame_a(model,source,native,roof_raw=None):
+    """Format one actual solved model; never rerun or substitute another case."""
     from plate_bending_recovery import recover_plate_bending
     from floor_reinforcement import assess_floor_reinforcement
-    model=build_masonry_frame_a(case,source);native=solve_vertical_rc_floor(model,source['vertical'],name)
+    case=model['masonryFrameA']['request']
+    native['headPositions']=[{'id':row['id'],'xyMm':list(model['model'].nodes[row['id']][:2]),'xyzMm':list(model['model'].nodes[row['id']])} for row in model['grid']['heads']]
+    from lower_core_bodies import summarize_lower_core_body_response
+    lower_response=summarize_lower_core_body_response(model,native)
+    roof_result=None
+    if case['roofCoupling'] is not None:
+        from roof_floor_compatibility import finish_roof_floor_coupling
+        if roof_raw is None:raise ValueError('Actual joined roof solve state is required for its result')
+        roof_result=finish_roof_floor_coupling(model,roof_raw)
     native['request']=case['verticalCase'];native['mass']['includesNewStraightFrameAndSeparateMasonryGravity']=True
     # Old schedules/bridge bar diagnostics belong to the rejected curved control.
     native['native'].pop('continuousSectionStressDiagnostics',None)
@@ -278,13 +358,20 @@ def run_masonry_frame_a(case,source,name):
     svg=draw_vertical_floor(native).replace('RC200 VERTICAL FLOOR / FINITE NORMAL RECEIVERS / ACTUAL 52 HEADS','STRAIGHT FRAME / SEPARATE MASONRY / RC200 / ACTUAL 52 HEADS')
     result={'schema':'str-masonry-frame-a-result/1','sourceSHA256':source['identities'],'request':case,'nativeVertical':native,
         'geometry':data['geometry'],'masonryCourses':data['courses'],'mass':{'RCPostVolumeM3':data['RCPostVolumeM3'],'masonryPhysicalGKN':data['masonryPhysicalGKN'],**native['mass']},
-        'foundationWeight':model['foundationWeight'],'courtCornerClosure':model.get('courtCornerClosure'),'plateBending':bending,'floorReinforcement':reinforcement,'explicitTransferredLoads':data['explicitTransferredLoads'],
+        'foundationWeight':model['foundationWeight'],'courtCornerClosure':model.get('courtCornerClosure'),
+        'lowerLWeight':model.get('lowerLWeight'),'lowerCoreBodies':None if model.get('lowerCoreBodies') is None else {k:v for k,v in model['lowerCoreBodies'].items() if k!='contactBodies'},
+        'lowerCoreResponse':None if lower_response is None else {k:v for k,v in lower_response.items() if k!='response'},'roofCoupling':roof_result,'plateBending':bending,'floorReinforcement':reinforcement,'explicitTransferredLoads':data['explicitTransferredLoads'],
         'loadIntroduction':{'physicalGravityConsistentMemberRecovery':True,'sourceWindEquivalentNodalComparison':True,'upstandEndStripGravity':data['upstandEndStrips'],
             'changedPostDistributedPressureRecoveryQualified':False,'retainedOriginalMemberEquivalentLoads':data['retainedOriginalMemberEquivalentLoads']},
-        'drawings':{'masonry-frame-a-floor.svg':svg},'candidateAccepted':False,'completeHouseProof':False,'roofAdoption':False,
+        'straightFrameCage':None,'drawings':{'masonry-frame-a-floor.svg':svg},'candidateAccepted':False,'completeHouseProof':False,'roofAdoption':False,
         'masonryStrengthAccepted':False,'archMovementCompatibilityAccepted':False,'frameReinforcementAccepted':False,
         'waterControlAccepted':False,'thermalAccepted':False,'installedAcceptance':False}
     result['drawings']['masonry-frame-a.svg']=render_masonry_frame_a(result)
+    if roof_result is not None:result['drawings']['masonry-frame-a-roof.svg']=roof_result['roofSvg']
+    if case['straightFrameCage'] is not None:
+        from straight_frame_cage import assess_straight_frame_cage,render_straight_frame_cage
+        result['straightFrameCage']=assess_straight_frame_cage(result,case['straightFrameCage'])
+        result['drawings']['masonry-frame-a-cage.svg']=render_straight_frame_cage(result,result['straightFrameCage'])
     return result
 
 

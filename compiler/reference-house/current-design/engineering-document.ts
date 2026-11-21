@@ -318,6 +318,21 @@ export async function compileEngineeringDocument(input: unknown) {
     engineering.masonryFrame = await compile.masonryFrameCase(savedMasonryFrameCase(request.masonry,
       stages.masonryFrame, sharedDistributedFloor))
     recordResult('masonryFrame', stages.masonryFrame, engineering.masonryFrame, ['distributedFloor'])
+    if (engineering.masonryFrame.roofCoupling) {
+      const reason = 'The coupled structural roof retains ring master Z6600 and heel Z6860 mm, with no qualified roof-weather datum. The nominal/MAT weather geometry is a different source comparison; neither its roofPitch field nor the retained water event is evidence for this coupled structure.'
+      for (const companion of ['roofPitch', 'selectedWaterEvent']) {
+        const row = manifest.find(item => item.stage === companion)
+        if (!row) continue
+        const previous = row.applicability
+        row.dependsOn = [...new Set([...row.dependsOn, 'masonryFrame'])]
+        row.applicability = { state: 'withheld-for-stage-change', controllingStage: 'masonryFrame',
+          ...(previous ? { additionalControllingStages: [...new Set([previous.controllingStage,
+            ...(previous.additionalControllingStages ?? [])])].filter(value => value !== 'masonryFrame') } : {}),
+          reason: [previous?.reason, reason].filter(Boolean).join(' ') }
+      }
+      coordinationDiagnostics.push({ code: 'COUPLED_ROOF_WEATHER_NOT_COORDINATED', state: 'uncoordinated-comparisons',
+        stages: ['masonryFrame', ...(engineering.roofPitch ? ['roofPitch'] : []), 'selectedWaterEvent'], message: reason })
+    }
     for (const stage of ['distributedFloor', 'joinedRcFloor', 'verticalRcFloor']) {
       const preceding = manifest.find(row => row.stage === stage)
       if (!preceding) continue

@@ -5,14 +5,16 @@ import { fileURLToPath } from 'node:url'
 import { sha256SemanticFingerprint } from '../../core/identity.js'
 import type { CurrentDesignResolution } from './resolve.js'
 import { savedVerticalRcFloorCase, verticalRcFloorStageFields } from './structural-vertical-floor.js'
+import { validateLowerCoreBodies, validateLowerLWeight, validateRoofCoupling, validateRoofSteelGravity, validateStraightFrameCage } from './structural-house-coupling.js'
 
 const root = new URL('../../../', import.meta.url)
 const methodPath = 'project/str/studies/masonry_frame_a.py'
 const adapterPath = 'compiler/reference-house/current-design/structural-masonry-frame.ts'
+const couplingPath = 'compiler/reference-house/current-design/structural-house-coupling.ts'
 const familyId = 'str-masonry-frame-comparison'
 const nativeFields = ['schema', 'sourceSHA256', 'verticalCase', 'masonrySeatProjectionMm', 'masonryUnitWeightKNM3',
-  'abutmentSlices', 'foundationWeight', 'courtCornerClosure', 'floorReinforcement', 'use'] as const
-const ownFields = ['masonrySeatProjectionMm', 'masonryUnitWeightKNM3', 'abutmentSlices', 'foundationWeight', 'courtCornerClosure', 'floorReinforcement'] as const
+  'abutmentSlices', 'foundationWeight', 'courtCornerClosure', 'floorReinforcement', 'lowerCoreBodies', 'lowerLWeight', 'roofCoupling', 'straightFrameCage', 'use'] as const
+const ownFields = ['masonrySeatProjectionMm', 'masonryUnitWeightKNM3', 'abutmentSlices', 'foundationWeight', 'courtCornerClosure', 'floorReinforcement', 'lowerCoreBodies', 'lowerLWeight', 'roofCoupling', 'straightFrameCage'] as const
 export const masonryFrameStageFields = [...verticalRcFloorStageFields, ...ownFields] as const
 const record = (value: unknown): value is Record<string, unknown> => value !== null && typeof value === 'object' && !Array.isArray(value)
 const exact = (value: unknown, keys: readonly string[], label: string): Record<string, unknown> => {
@@ -37,7 +39,7 @@ type Result = {
   geometry: Readonly<Record<string, unknown>>; mass: Readonly<Record<string, unknown>>
   courtCornerClosure: Readonly<Record<string, unknown>> | null
   foundationWeight: Readonly<Record<string, unknown>>; plateBending: Readonly<Record<string, unknown>>; floorReinforcement: Readonly<Record<string, unknown>>
-  drawings: { 'masonry-frame-a.svg': string; 'masonry-frame-a-floor.svg': string }; [key: string]: unknown
+  drawings: { 'masonry-frame-a.svg': string; 'masonry-frame-a-floor.svg': string; 'masonry-frame-a-roof.svg'?: string }; [key: string]: unknown
 }
 
 function currentBinding(resolved: CurrentDesignResolution) {
@@ -48,11 +50,11 @@ function currentBinding(resolved: CurrentDesignResolution) {
   const comparison = exact(JSON.parse(execFileSync('python3', ['-B', fileURLToPath(new URL(methodPath, root)), '--read'],
     { encoding: 'utf8', maxBuffer: 8 * 1024 * 1024 })), nativeFields, 'native masonry frame') as Comparison
   if (comparison.schema !== 'str-masonry-frame-a-case/1' || !record(comparison.sourceSHA256)
-    || Object.keys(comparison.sourceSHA256).length !== 41
+    || Object.keys(comparison.sourceSHA256).length !== 47
     || !record(comparison.verticalCase) || comparison.verticalCase.schema !== 'str-vertical-rc-floor-case/1') {
     throw new Error('The separate masonry frame native schema changed; integrate it explicitly')
   }
-  const inputs = Object.fromEntries([...Object.keys(comparison.sourceSHA256), adapterPath].map(path => {
+  const inputs = Object.fromEntries([...Object.keys(comparison.sourceSHA256), adapterPath, couplingPath].map(path => {
     const bytes = readFileSync(new URL(path, root))
     const blob = createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')
     const owners = resolved.disciplineBindings.flatMap(binding => binding.identities[path] ? [binding.identities[path]] : [])
@@ -76,6 +78,12 @@ export function readMasonryFrameCase(resolved: CurrentDesignResolution) {
       bindingDigest: current.bindingDigest, comparison: current.comparison, caseId: 'MASONRY-FRAME-A-GRAVITY' } }
 }
 
+function admitMasonryLoadControls(q: unknown) {
+  if (typeof q !== 'number' || !Number.isFinite(q) || q < 0 || q > 5) {
+    throw new Error('Independent net floor live pressure must be finite and between 0 and 5 kPa')
+  }
+}
+
 export function savedMasonryFrameCase(request: ReturnType<typeof readMasonryFrameCase>['masonry'],
   settings: Readonly<Record<string, unknown>>, sharedFloor: unknown) {
   if (Object.keys(settings).some(key => !(masonryFrameStageFields as readonly string[]).includes(key))) {
@@ -86,8 +94,10 @@ export function savedMasonryFrameCase(request: ReturnType<typeof readMasonryFram
   const vertical = savedVerticalRcFloorCase({ schema: 'str-current-vertical-rc-floor-case/1',
     planDigest: request.planDigest, bindingDigest: request.bindingDigest, comparison: request.comparison.verticalCase,
     caseId: request.caseId }, verticalSettings, sharedFloor)
-  return { ...request, caseId: vertical.caseId, comparison: { ...request.comparison, verticalCase: vertical.comparison,
+  const saved = { ...request, caseId: vertical.caseId, comparison: { ...request.comparison, verticalCase: vertical.comparison,
     ...Object.fromEntries(ownFields.filter(key => Object.hasOwn(settings, key)).map(key => [key, settings[key]])) } }
+  admitMasonryLoadControls(Reflect.get(saved.comparison.verticalCase, 'freshUniformLiveKPa'))
+  return saved
 }
 
 function nestedBindings(actual: unknown, expected: unknown) {
@@ -112,6 +122,7 @@ export function runMasonryFrameCase(resolved: CurrentDesignResolution, input: un
     || request.bindingDigest !== current.bindingDigest) throw new Error('Stale masonry frame design or method binding')
   const comparison = exact(request.comparison, nativeFields, 'native masonry frame comparison') as Comparison
   nestedBindings(comparison, current.comparison)
+  admitMasonryLoadControls(comparison.verticalCase.freshUniformLiveKPa)
   if (typeof request.caseId !== 'string' || !/^[A-Za-z][A-Za-z0-9._:-]*$/.test(request.caseId)) throw new Error('The masonry frame requires a stable case ID')
   const output: Result = JSON.parse(execFileSync('python3', ['-B', fileURLToPath(new URL(methodPath, root))], {
     input: JSON.stringify({ case: comparison, name: request.caseId }), encoding: 'utf8', maxBuffer: 96 * 1024 * 1024,
@@ -161,6 +172,31 @@ export function runMasonryFrameCase(resolved: CurrentDesignResolution, input: un
     || ['localStressConvergenceProven', 'reinforcementAccepted', 'anchorageAccepted'].some(key => bending[key] !== false)) {
     throw new Error('The masonry-frame plate recovery changed its physical cell inventory or asserted unearned reinforcement proof')
   }
+  const floorLiveLoad = vertical.floorLiveLoad
+  const q = comparison.verticalCase.freshUniformLiveKPa
+  const area = vertical.mass.newPlateAreaM2
+  const centroid = vertical.mass.newPlateCentroidXYMm
+  if (!record(floorLiveLoad) || floorLiveLoad.schema !== 'str-independent-net-floor-live-load/1'
+    || !finite(q) || !finite(area) || area <= 0
+    || !Array.isArray(centroid) || centroid.length !== 2 || centroid.some(value => !finite(value))
+    || floorLiveLoad.characteristicPressureKPa !== q || floorLiveLoad.combinationFactor !== 1.5
+    || floorLiveLoad.factoredPressureKPa !== 1.5 * q || floorLiveLoad.actualNetPlateAreaM2 !== area
+    || !same(floorLiveLoad.plateCentroidXYMm, centroid)
+    || floorLiveLoad.characteristicQKN !== q * area || floorLiveLoad.appliedQKN !== 1.5 * q * area
+    || floorLiveLoad.addedPhysicalMassKN !== 0 || floorLiveLoad.legacyGrossGFlagRequired !== false
+    || floorLiveLoad.candidateAccepted !== false
+    || !Array.isArray(floorLiveLoad.sourceForceAndFirstMomentResidualKN_KNm)
+    || floorLiveLoad.sourceForceAndFirstMomentResidualKN_KNm.length !== 6
+    || floorLiveLoad.sourceForceAndFirstMomentResidualKN_KNm.some(value => !finite(value) || Math.abs(value) > 1e-6)
+    || !Array.isArray(floorLiveLoad.appliedWrenchKN_KNm) || floorLiveLoad.appliedWrenchKN_KNm.length !== 6
+    || floorLiveLoad.appliedWrenchKN_KNm.some(value => !finite(value))) {
+    throw new Error('Independent floor Q changed its actual area, authored pressure, load factor or evidence boundary')
+  }
+  const qForce = 1.5 * q * area
+  const expectedQWrench = [0, 0, -qForce, -qForce * Number(centroid[1]) / 1000, qForce * Number(centroid[0]) / 1000, 0]
+  if (floorLiveLoad.appliedWrenchKN_KNm.some((value, axis) => Math.abs(Number(value) - expectedQWrench[axis]!) > 1e-6)) {
+    throw new Error('Independent floor Q lost its source force or first moments')
+  }
   const foundation = output.foundationWeight
   const foundationSettings = comparison.foundationWeight
   if (!record(foundationSettings) || foundation.schema !== 'str-foundation-solid-inventory/1'
@@ -196,6 +232,19 @@ export function runMasonryFrameCase(resolved: CurrentDesignResolution, input: un
       .some(key => closure[key] !== false)) {
     throw new Error('The court closure changed its source-bound contact, material or unqualified rigid-joint assumption')
   }
+  const roofCoupling = validateRoofCoupling(output.roofCoupling, comparison.roofCoupling, comparison.sourceSHA256,
+    comparison.verticalCase.monolithicCase.houseCase.joinedCase.floor, vertical.native)
+  if (roofCoupling && output.drawings['masonry-frame-a-roof.svg'] !== roofCoupling.roofSvg) {
+    throw new Error('The actual coupled roof view differs from its solved source-bound result')
+  }
+  const roofSettings = record(comparison.roofCoupling) ? comparison.roofCoupling : null
+  const roofSteelGravity = validateRoofSteelGravity(roofCoupling, roofSettings?.roofSteelGravity ?? null,
+    comparison.sourceSHA256, comparison.verticalCase.monolithicCase.houseCase.boundary.physicalGFactor)
+  const straightFrameCage = validateStraightFrameCage(output.straightFrameCage, comparison.straightFrameCage,
+    comparison.sourceSHA256, request.caseId, comparison.verticalCase.monolithicCase.houseCase.northUpstandWidthMm, vertical.native)
+  const lowerLWeight = validateLowerLWeight(output.lowerLWeight, comparison.lowerLWeight)
+  const lower = validateLowerCoreBodies(output.lowerCoreBodies, output.lowerCoreResponse, comparison.lowerCoreBodies,
+    comparison.sourceSHA256, comparison.verticalCase.monolithicCase.houseCase.boundary.physicalGFactor)
   const reinforcement = output.floorReinforcement
   if (!record(reinforcement) || reinforcement.schema !== 'str-floor-reinforcement-result/1'
     || !same(reinforcement.settings, comparison.floorReinforcement) || reinforcement.sourceCaseId !== request.caseId
@@ -208,9 +257,10 @@ export function runMasonryFrameCase(resolved: CurrentDesignResolution, input: un
     source: { planDigest: current.planDigest, bindingDigest: current.bindingDigest, caseDigest: sha256SemanticFingerprint(request) },
     method: { id: 'str-current-masonry-frame/1', path: methodPath, inputs: current.inputs,
       adapter: { path: adapterPath, blob: current.inputs[adapterPath] } },
-    native: vertical.native, vertical, courtCornerClosure: closure, geometry: output.geometry, mass: output.mass, foundationWeight: output.foundationWeight,
+    native: vertical.native, vertical, ...lower, lowerLWeight, roofCoupling, roofSteelGravity, roofSvg: roofCoupling?.roofSvg ?? null, straightFrameCage, courtCornerClosure: closure, geometry: output.geometry, mass: output.mass, foundationWeight: output.foundationWeight,
+    floorLiveLoad, computableIntegrationDebt: [],
     plateBending: output.plateBending, floorReinforcement: output.floorReinforcement, frameSvg: output.drawings['masonry-frame-a.svg'], floorSvg: output.drawings['masonry-frame-a-floor.svg'],
     evidence: { state: 'unqualified-separate-masonry-straight-frame-comparison' as const,
       candidateAccepted: false as const, completeHouseProof: false as const, installedAcceptance: false as const,
-      scope: 'Separate direct-bearing masonry arch and straight RC frame, actual floor gravity and exact cap/grid self-weight in one52head solve. Sourceground0 only. Reinforcement, actual masonry/receiver resistance, roof/wind, moisture/thermal continuity and raised-ground coordination remain unresolved.' } }
+      scope: 'Separate masonry and straight RC frame with the sole authored plate, exact foundation gravity and optional lower bodies/roof-pressure paths in one52head solve. Sourceground0 only. Constitutive/receiving resistance, complete roof gravity, moisture/thermal continuity and raised-ground/weather coordination remain unresolved.' } }
 }

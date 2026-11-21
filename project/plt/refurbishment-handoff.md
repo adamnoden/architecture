@@ -17,9 +17,12 @@ The registered manual packet `PLT-OWNER-FINAL-DESIGN-ACCEPTANCE` must precede `P
 | Node | Dispatch | Dependencies | Bounded result |
 |---|---|---|---|
 | PLT-CURRENT-REVIEW | Complete; [digital result](current-review-digital-closeout.md) | BSR-ROOT | Complete the remaining candidate representation capability, source-consistent review pack and explicit handoff. Retain and cite useful partial evidence; no physical acceptance is inferred. |
-| PLT-FINAL-PREP | Self-service | HRS-SYNTHESIS, PLT-CURRENT-REVIEW | Prepare the source-reconciled candidate publication integration, role dispositions, complete source delta and final print-review files. No release or final freeze. |
+| PLT-FINAL-PREP | Self-service | HRS-SYNTHESIS, PLT-CURRENT-REVIEW, CCR-CURRENT-RELEASE | Prepare the source-reconciled candidate publication integration, role dispositions, complete source delta and final print-review files. No release or final freeze. |
+| EDA-RENEWED | Self-service | PLT-FINAL-PREP, EDA-ADAPTER | Audit the integrated digital source and typeset object before final freeze; no physical or owner verdict is inferred. |
 | PLT-PRINT-REVIEW | Manual | PLT-FINAL-PREP | Process the actual owner BOOK/WALL print verdict, bound to the prepared source/object. Material revise/reject findings require repair and acceptance of affected reprints. |
-| PLT-FINAL-FREEZE | Self-service | PLT-FINAL-PREP, PLT-PRINT-REVIEW | Verify that current source still matches accepted evidence; complete atomic publication integration, freeze/release and normal closeout. |
+| PLT-OWNER-FINAL-DESIGN-ACCEPTANCE | Manual | PLT-FINAL-PREP | Receive the owner's actual final book and design verdict on the versioned prepared object. |
+| PLT-FINAL-FREEZE | Self-service | PLT-FINAL-PREP, PLT-PRINT-REVIEW, PLT-OWNER-FINAL-DESIGN-ACCEPTANCE, EDA-RENEWED | Verify that current source still matches accepted evidence; complete atomic publication integration, freeze/release and normal closeout. |
+| PUB-02-FINAL | Manual | PUB-02-PREP, EDA-RENEWED, PLT-FINAL-FREEZE | Retain the final owner-controlled manufacture/release decision after editorial assurance and actual freeze. |
 
 The [digital closeout](current-review-digital-closeout.md) and [artifact index](current-review-artifacts.json) reconcile the retained candidate work and exact review files. Requeueing PLT-CURRENT-REVIEW did not erase its completed candidate work. It separates the remaining digital packet from the physical judgement it cannot autonomously provide. Do not retain an idle agent lease while awaiting physical evidence; leave a durable handoff and release normally.
 
