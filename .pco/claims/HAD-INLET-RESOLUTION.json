@@ -9,8 +9,8 @@
     "label": "rush-had-service-hub-20261121"
   },
   "claimedAt": "2026-11-21T09:44:40.547Z",
-  "heartbeatAt": "2026-11-21T10:14:26.059Z",
-  "expiresAt": "2026-11-21T10:59:26.059Z",
+  "heartbeatAt": "2026-11-21T10:38:37.978Z",
+  "expiresAt": "2026-11-21T11:23:37.978Z",
   "branch": "work/rush-had-service-hub-20261121",
   "predecessor": {
     "leaseId": "b5b027b5-54c3-4568-96ea-1f3d11bdcec6",
@@ -30,8 +30,8 @@
   },
   "pr": 1607,
   "checkpoint": {
-    "evidence": "PR1607 head5110a9cb; corrected absolute-head/recovery model;14 tests, typecheck and source audit pass",
-    "next": "Review exact-head CI, reconcile moved main, fresh preflight then integrate",
-    "blocker": "Actual internal wet-room replan and material/source/frost duties remain; no packet closure"
+    "evidence": "PR1607 head5110a9cb; corrected14 tests/source audit pass; whole-Utility dry-cabinet sketch in comment7061365165",
+    "next": "Observe exact-head CI, reconcile moved main and run fresh preflight before coordinator merge; then release",
+    "blocker": "Full CI pending; actual room/wet door/outfalls/source/material/thermal proofs still open"
   }
 }
