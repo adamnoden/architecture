@@ -9,12 +9,13 @@
     "label": "room-lighting-registration-20261121"
   },
   "claimedAt": "2026-11-21T21:57:05.404Z",
-  "heartbeatAt": "2026-11-21T22:03:26.365Z",
-  "expiresAt": "2026-11-21T23:33:26.365Z",
+  "heartbeatAt": "2026-11-21T22:13:15.600Z",
+  "expiresAt": "2026-11-21T23:43:15.600Z",
   "checkpoint": {
-    "evidence": "PR #1616 at 64ee6a8d1753bb12ede6e66940efec676c28272d; local typecheck, 185 control tests, repository checks and docs build passed",
-    "next": "Inspect exact-head CI, reconcile moved main, run canonical publication preflight, merge and release registration lease"
+    "evidence": "PR #1616 at 64ee6a8d1753bb12ede6e66940efec676c28272d; publication CI passed; full repository health still running in run 44954680159; local scoped validation passed",
+    "next": "Wait for full exact-head CI, reconcile current main, run canonical merge-check, merge, release PCO registration lease and verify IAS-ROOM-LIGHTING dispatch"
   },
   "branch": "work/register-room-lighting-20261121",
-  "note": "Exceptional registration-only bootstrap authorised and recorded in issue #1614; unknown-node dispatch safety temporarily fails closed until integration/release."
+  "note": "Exceptional registration-only bootstrap authorised and recorded in issue #1614; unknown-node dispatch safety temporarily fails closed until integration/release.",
+  "pr": 1616
 }
