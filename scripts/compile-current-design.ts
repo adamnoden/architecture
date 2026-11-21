@@ -55,6 +55,10 @@ const trialModes: Readonly<Record<string, TrialMode>> = {
     schema: 'str-current-masonry-frame-request/1', key: 'masonry', name: 'separate masonry frame',
     run: (compile, value) => compile.masonryFrameCase(value),
   },
+  '--upper-roof-bearing': {
+    schema: 'str-current-upper-roof-bearing-request/1', key: 'bearing', name: 'upper masonry roof bearing',
+    run: (compile, value) => compile.upperRoofBearingCase(value),
+  },
   '--vertical-rc-floor': {
     schema: 'str-current-vertical-rc-floor-request/1', key: 'vertical', name: 'vertical RC floor',
     run: (compile, value) => compile.verticalRcFloorCase(value),
@@ -186,6 +190,7 @@ try {
       if (mode === '--read-distributed-floor') process.stdout.write(JSON.stringify(await compile.readDistributedFloorCase(), null, 2) + '\n')
       else if (mode === '--read-joined-rc-floor') process.stdout.write(JSON.stringify(await compile.readJoinedRcFloorCase(), null, 2) + '\n')
       else if (mode === '--read-masonry-frame') process.stdout.write(JSON.stringify(await compile.readMasonryFrameCase(), null, 2) + '\n')
+      else if (mode === '--read-upper-roof-bearing') process.stdout.write(JSON.stringify(await compile.readUpperRoofBearingCase(), null, 2) + '\n')
       else if (mode === '--read-vertical-rc-floor') process.stdout.write(JSON.stringify(await compile.readVerticalRcFloorCase(), null, 2) + '\n')
       else if (mode === '--read-ground-section') process.stdout.write(JSON.stringify(await compile.readGroundSectionCase(), null, 2) + '\n')
       else if (mode === '--read-house-vertical-profile') process.stdout.write(JSON.stringify(await compile.readHouseVerticalProfileCase(), null, 2) + '\n')
