@@ -1,3 +1,4 @@
+import { execFileSync } from 'node:child_process'
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
 import { copyFileSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
@@ -160,4 +161,23 @@ test('a changed north-transfer receipt invalidates the actual twin-tie and roof-
     'project/str/studies/floor-portal-north-roof-shoe.json',
     'project/str/studies/floor-portal-twin-garden-tie.json',
   ])
+})
+
+test('actual native stage inventories are completely bound in their consuming source families', () => {
+  const audit=auditSourceCoverage()
+  for(const [id,method] of [
+    ['str-vertical-floor-comparison','vertical_rc_floor.py'],
+    ['str-masonry-frame-comparison','upper_roof_bearing.py'],
+    ['str-masonry-frame-comparison','floor_section_model.py'],
+  ]) {
+    const request=JSON.parse(execFileSync('python3',['-B','project/str/studies/'+method,'--read'],{cwd:root,encoding:'utf8'}))
+    const binding=audit.bindings.find(row=>row.id===id)
+    assert.ok(binding, 'Missing actual consuming source family '+id)
+    for(const [path,digest] of Object.entries(request.sourceSHA256)) {
+      const bytes=read(path)
+      assert.equal(createHash('sha256').update(bytes).digest('hex'),digest,'Native source drift at '+path)
+      assert.equal(binding.identities[path],createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex'),
+        id+' lost the actual native dependency '+path)
+    }
+  }
 })

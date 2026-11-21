@@ -730,7 +730,8 @@
         "project/str/studies/vertical_floor_numerics.py",
         "project/str/studies/vertical-floor-requirements.txt",
         "project/str/studies/vertical_floor_views.py",
-        "project/str/studies/vertical_rc_floor_proof.py"
+        "project/str/studies/vertical_rc_floor_proof.py",
+        "project/str/studies/finite_plate_receiver.py"
       ],
       "authoredInputs": [],
       "inputReceipts": [
@@ -1781,7 +1782,7 @@
     "compiler/reference-house/current-design/engineering-edit.ts": "6fe88b1d89b5eb56dc045a58c39eff1501bc7f34",
     "project/ade/browser-editor/engineering-api.ts": "2db0efb4e3cdb698009b69cc7fa9ff80389f1158",
     "project/ade/browser-editor/engineering-editor.ts": "cb109c701742575cc1bae5b5122eb2ee750a4a8f",
-    "compiler/reference-house/current-design/structural-upper-bearing.ts": "2f6a3260598b9d74ece2b3b4a75d234e64705b9f",
+    "compiler/reference-house/current-design/structural-upper-bearing.ts": "6a00ab6cfc80888a76de7959ecbd0d2e52e15ddf",
     "project/str/studies/named_plate_load.py": "bb85eb7836d4ff1bccff91729a31112ac1f961cb",
     "project/str/studies/roof_bearing_trace.py": "09aa8236bfedee0289dcdf0a5a275b9e1ec646ef",
     "project/str/studies/upper-roof-bearing-proof.json": "1124528dbdcd6216189352987316aef78a7415e6",
