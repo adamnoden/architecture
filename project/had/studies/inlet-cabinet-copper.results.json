@@ -1,0 +1,1364 @@
+{
+  "schema": "had-copper-cabinet-comparison/1",
+  "status": "unselected-whole-arrangement-comparison",
+  "source": {
+    "caseDigest": "0871f8a8ee4c67119618336a89461ed65295ec1a527d37073bc9955da5aa8a54",
+    "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
+    "bindingDigest": "449c2028afa6b230f9bd75e7711820f7ea5bb91817f981866c8a79063405a3d1",
+    "inputs": {
+      "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
+      "project/had/studies/current-house-services.json": "e649805e78244527fe6498b516fa5f23734ac5ea",
+      "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
+      "project/had/studies/utility-wide-capture.json": "999fe25948911c6325590186db1e94f884d44ae2",
+      "project/had/studies/utility-dry-bowl-release.json": "7f1e60c8dbbb93a4a50ed7bb7db13e426ef25603",
+      "project/str/studies/floor-portal-interface-review.json": "ad8aac21e936f0199b331c3bd886c8bb41f30ee3",
+      "project/str/studies/reconciled-house-interface.json": "4b680b7012bda54d4aff83da8f8718b3b191ea69"
+    },
+    "methods": {
+      "compiler/reference-house/current-design/inlet-cabinet-copper.ts": "1ba33647e0cf89c6f5d3cecf60a51faa22b1558a",
+      "compiler/reference-house/current-design/inlet-fixed-thermal.ts": "07632911487d9a2a30ef5aa53cbac2609a3e40d8",
+      "project/had/studies/incoming-water-geometry.mjs": "ed658b7df0edf5d8e6d1826d32730a14b00199c7"
+    }
+  },
+  "settings": {
+    "cabinetXMm": 9760,
+    "cabinetWidthMm": 850,
+    "frontYMm": 680,
+    "bottomZMm": 140,
+    "topZMm": 1900,
+    "riserOffsetXMm": 130,
+    "riserYMm": 600,
+    "valveZMm": 1100,
+    "fixedZMm": 1900,
+    "guideZMm": 2100,
+    "temperatureRangeK": 40,
+    "pressureBar": 9,
+    "flowEachLmin": 90,
+    "pipeElasticModulusMpa": 117200,
+    "pipeWallMm": 1.2,
+    "sheetMm": 1.5
+  },
+  "productFacts": {
+    "checkedOn": "2026-11-20",
+    "pipe": {
+      "model": "Lawton TY0283",
+      "description": "28×1.2mm R250 EN1057 plain copper; no22mm substitution",
+      "outerDiameterMm": 28,
+      "nominalWallMm": 1.2,
+      "minimumWallMm": 1.02,
+      "densityKgM3": 8960,
+      "expansionMmMK": 0.017,
+      "source": "https://lawtontubes.co.uk/product/copper-tube-plain-straight-length/",
+      "toleranceSource": "https://lawtontubes.com/lt-product/28mm-copper-pipe/",
+      "elasticComparison": "117200MPa C12200/Cu-DHP reference; actual R250 tube certificate not supplied;130000 sensitivity remains authored",
+      "elasticSource": "https://alloys.copper.org/alloy/C12200",
+      "markingAndLubricantConstituentsQualified": false
+    },
+    "coupling": {
+      "model": "Conex301 DZR",
+      "sku": "HH-5020301--",
+      "sizeMm": 28,
+      "lengthMm": 53,
+      "tubeInsertionMm": 26,
+      "spannerMm": 39
+    },
+    "elbow": {
+      "model": "Conex401 DZR",
+      "sku": "HH-5020401--",
+      "sizeMm": 28,
+      "portToVirtualCornerMm": 42,
+      "tubeInsertionMm": 26
+    },
+    "joint": {
+      "method": "metal cone/olive/capnut on EN1057 R250 copper",
+      "torqueNm": [
+        50,
+        60
+      ],
+      "turnsAfterHandTight": 0.75,
+      "additionalWaterSealantRequired": false,
+      "source": "https://conexbanninger.com/en/wp-content/uploads/sites/12/2024/08/Conex-Compression-Tech-Brochure-International-17-02-25-New-Branding-WEB.pdf",
+      "dimensions": "https://conexbanninger.co.uk/wp-content/uploads/2024/02/Conex-Compression-Technical-Brochure.pdf",
+      "actualFactoryLubricantsAndAllConstituentsQualified": false
+    },
+    "valve": {
+      "model": "ConexS701 DZR28",
+      "sku": "HH-5012701--",
+      "axialMm": 99.5,
+      "fullStemReservationMm": 138,
+      "handwheelWidthMm": 56,
+      "pnBar": 10,
+      "maximumTemperatureC": 65,
+      "source": "https://conexbanninger.com/wp-content/uploads/2024/02/Compression-Valve-Tech-brochure-.pdf",
+      "knownPolymerItems": [
+        "PTFE packing",
+        "PTFE sealing gasket",
+        "EPDM seat constituent"
+      ],
+      "knownPolymerItemsPerValve": 3,
+      "ownerExceptionApproved": false,
+      "flowCoefficient": null
+    },
+    "steel": {
+      "densityKgM3": 8000,
+      "comparisonElasticModulusMpa": 200000,
+      "comparisonProofStressMpa": 200,
+      "source": "https://www.thyssenkrupp-materials.co.uk/stainless-steel-316-14401.html/index.html"
+    },
+    "tools": {
+      "acrossFlatsMm": 39,
+      "authoredHandleLengthMm": 400,
+      "authoredHeadDiameterMm": 92,
+      "authoredShaftWidthMm": 40,
+      "authoredSwingDegrees": 25,
+      "wholeToolAndOperatorEnvelopeMeasured": false
+    }
+  },
+  "architecture": {
+    "bodyMm": [
+      9760,
+      429.5,
+      140,
+      850,
+      250.5,
+      1760
+    ],
+    "backWetFaceYMm": 429.5,
+    "compartmentDividerXMm": 10182.5,
+    "doors": [
+      {
+        "id": "front-panel-0",
+        "bodyMm": [
+          9760,
+          678.5,
+          140,
+          850,
+          1.5,
+          440
+        ],
+        "flatSheetKg": 4.488,
+        "foldsRetainersAndHandlingMassQualified": false
+      },
+      {
+        "id": "front-panel-1",
+        "bodyMm": [
+          9760,
+          678.5,
+          580,
+          850,
+          1.5,
+          440
+        ],
+        "flatSheetKg": 4.488,
+        "foldsRetainersAndHandlingMassQualified": false
+      },
+      {
+        "id": "front-panel-2",
+        "bodyMm": [
+          9760,
+          678.5,
+          1020,
+          850,
+          1.5,
+          440
+        ],
+        "flatSheetKg": 4.488,
+        "foldsRetainersAndHandlingMassQualified": false
+      },
+      {
+        "id": "front-panel-3",
+        "bodyMm": [
+          9760,
+          678.5,
+          1460,
+          850,
+          1.5,
+          440
+        ],
+        "flatSheetKg": 4.488,
+        "foldsRetainersAndHandlingMassQualified": false
+      }
+    ],
+    "sourceHost": {
+      "nominal": [
+        9700,
+        750,
+        1000,
+        2100
+      ],
+      "conditional": [
+        9400,
+        750,
+        1000,
+        2100
+      ],
+      "nominalBoundingWindowObscuredMm2": 977500,
+      "conditionalBoundingWindowObscuredMm2": 736000,
+      "archedWindowAndDaylightPerformanceAccepted": false
+    },
+    "roomControls": {
+      "washerAfter5Mm": 115,
+      "inverterAfter5Mm": 195,
+      "energisedPvFieldAfter10Mm": 10,
+      "bowlTransportAfter5Mm": 359
+    },
+    "noSlidingUpperPackingProposal": true,
+    "no850ArmThroughBackShell": true,
+    "noSourcePressToolOrViegaValveEnvelopeReused": true
+  },
+  "pressureSupports": [
+    {
+      "id": "utility",
+      "postBodyMm": [
+        9920,
+        480,
+        100,
+        60,
+        80,
+        2030
+      ],
+      "baseBodyMm": [
+        9890,
+        455,
+        88,
+        120,
+        130,
+        12
+      ],
+      "armsMm": [
+        [
+          9930,
+          560,
+          1870,
+          40,
+          40,
+          60
+        ],
+        [
+          9930,
+          560,
+          2070,
+          40,
+          40,
+          60
+        ]
+      ],
+      "steelKg": 19.11808,
+      "baseToFinishedBackAfter5Mm": 20.5,
+      "receiverForceBoundsN": [
+        496.271854,
+        487.922425,
+        883.068262
+      ],
+      "receiverMomentBoundsNmm": [
+        954293.317847,
+        898142.28349,
+        545.63288
+      ],
+      "grossSectionNormalStressMpa": 86.514618,
+      "grossSectionComparisonLimitMpa": 133.33333333333334,
+      "actualClampGripLocalJointBaseAnchorFloorAndCombinedTorsionQualified": false,
+      "law": "Independent source thermal wrench, sliding-guide force, adverse pA per horizontal axis and full route gravity charged to an explicit grounded post; straight gross-section normal stress only. Not a complete 3D frame, contact, local buckling, torsion or base resistance proof."
+    },
+    {
+      "id": "plant",
+      "postBodyMm": [
+        10385,
+        480,
+        100,
+        60,
+        80,
+        2030
+      ],
+      "baseBodyMm": [
+        10355,
+        455,
+        88,
+        120,
+        130,
+        12
+      ],
+      "armsMm": [
+        [
+          10395,
+          560,
+          1870,
+          40,
+          40,
+          60
+        ],
+        [
+          10395,
+          560,
+          2070,
+          40,
+          40,
+          60
+        ]
+      ],
+      "steelKg": 19.11808,
+      "baseToFinishedBackAfter5Mm": 20.5,
+      "receiverForceBoundsN": [
+        466.8731,
+        481.232997,
+        914.881455
+      ],
+      "receiverMomentBoundsNmm": [
+        944016.851111,
+        841247.287875,
+        1176.097451
+      ],
+      "grossSectionNormalStressMpa": 83.246498,
+      "grossSectionComparisonLimitMpa": 133.33333333333334,
+      "actualClampGripLocalJointBaseAnchorFloorAndCombinedTorsionQualified": false,
+      "law": "Independent source thermal wrench, sliding-guide force, adverse pA per horizontal axis and full route gravity charged to an explicit grounded post; straight gross-section normal stress only. Not a complete 3D frame, contact, local buckling, torsion or base resistance proof."
+    }
+  ],
+  "quantities": {
+    "knownSteelGrossKg": 130.729816,
+    "cabinetSteelGrossKg": 92.493656,
+    "independentPipeSupportSteelKg": 38.23616,
+    "grossSolidBrassFittingValveUpperKg": 27.06699,
+    "wholeRoutePipeAndWaterKg": 21.302805,
+    "retainedPanWaterUpperKg": 58.25326,
+    "totalDeclaredGrossUpperKg": 237.352871,
+    "excludes": "Actual seals, fasteners, welds, jackets and bought-part masses; gross solid brass reservations deliberately include voids and cannot be called a net mass or favorable counterweight."
+  },
+  "footprintWaterDuty": {
+    "compartments": [
+      {
+        "id": "utility",
+        "maximumWaterZMm": 363.2917,
+        "planMm": [
+          9760,
+          429.5,
+          422.5,
+          250.5
+        ],
+        "upperPrismWaterKg": 23.632356,
+        "actualReliefRouteReconciled": false
+      },
+      {
+        "id": "plant",
+        "maximumWaterZMm": 463.2917,
+        "planMm": [
+          10182.5,
+          429.5,
+          427.5,
+          250.5
+        ],
+        "upperPrismWaterKg": 34.620904,
+        "actualReliefRouteReconciled": false
+      }
+    ],
+    "partitionPlaneXMm": 10182.5,
+    "partitionContinuousToClosedRoof": true,
+    "sharedPrimaryReceiverCredited": false,
+    "sourceIndependentOutletsRetainedByIdentity": [
+      "utility",
+      "plant"
+    ],
+    "newPanToOutletJunctionQualified": false
+  },
+  "floorReceiving": {
+    "basis": "Proposed independent cabinet gravity plinth onto the actual structural floor through sleeved finish interruptions; no strength or dry-side DPC capacity is supplied by a finish datum.",
+    "sourceGroundFinishZMm": 0,
+    "proposedSeatZMm": 140,
+    "gravityUpperN": 2328.431664,
+    "fourWetFootGravityOnlyN": 369.706811,
+    "twoIndependentPipeFeetGravityOnlyN": 424.802209,
+    "worstSingleSideWaterGravityN": 1721.501523,
+    "actualLoadDistributionAndFloorCapacityQualified": false,
+    "pipeAndWetAssembliesIndependentlySupported": true,
+    "frictionOnlyHorizontalResistanceCredited": false,
+    "pressureFrameAndCabinetWallRestraintActions": [
+      {
+        "fixedPointWrench": {
+          "pointMm": [
+            9950,
+            600,
+            1900
+          ],
+          "forceComponentBoundsN": [
+            16.51286684,
+            13.66954636,
+            12.59717536
+          ],
+          "momentComponentBoundsNmm": [
+            3186.25304035,
+            1550.48611778,
+            545.63287951
+          ],
+          "uniformForceN": [
+            -6.08299311,
+            -8.54532286,
+            -10.78058967
+          ],
+          "uniformMomentNmm": [
+            -2234.44496077,
+            -1002.02371806,
+            165.3770414
+          ]
+        },
+        "guideWrench": {
+          "pointMm": [
+            9950,
+            600,
+            2100
+          ],
+          "forceComponentBoundsN": [
+            16.51230113,
+            11.00619278,
+            0
+          ],
+          "axialSlide": true,
+          "actualGripAndFrictionQualified": false
+        },
+        "independentUpperTerminal": {
+          "pointMm": [
+            10760,
+            1250,
+            1000
+          ],
+          "forceComponentBoundsN": [
+            1.07190023,
+            1.33215202,
+            3.2167388
+          ],
+          "momentComponentBoundsNmm": [
+            690.8820395,
+            716.15112452,
+            189.32810306
+          ]
+        },
+        "outerRepairCutTerminal": {
+          "pointMm": [
+            10080,
+            -300,
+            463.8
+          ],
+          "forceComponentBoundsN": [
+            1.03791454,
+            3.99452286,
+            9.3901552
+          ],
+          "momentComponentBoundsNmm": [
+            5265.80975972,
+            371.97357476,
+            444.64381375
+          ]
+        },
+        "sourcePressureEndComponentBoundN": 463.246686,
+        "jetReversalNormN": 127.279221,
+        "completeLodgeRestraintInvented": false
+      },
+      {
+        "fixedPointWrench": {
+          "pointMm": [
+            10415,
+            600,
+            1900
+          ],
+          "forceComponentBoundsN": [
+            2.295386,
+            10.55834201,
+            9.25475155
+          ],
+          "momentComponentBoundsNmm": [
+            3121.3469949,
+            609.50219452,
+            1176.09745076
+          ],
+          "uniformForceN": [
+            -1.41600347,
+            -9.42898192,
+            -9.16080432
+          ],
+          "uniformMomentNmm": [
+            -2406.50645213,
+            521.86669329,
+            909.91402415
+          ]
+        },
+        "guideWrench": {
+          "pointMm": [
+            10415,
+            600,
+            2100
+          ],
+          "forceComponentBoundsN": [
+            1.33102804,
+            7.42796865,
+            0
+          ],
+          "axialSlide": true,
+          "actualGripAndFrictionQualified": false
+        },
+        "independentUpperTerminal": {
+          "pointMm": [
+            10222.5,
+            3842.9,
+            2260
+          ],
+          "forceComponentBoundsN": [
+            0.19116106,
+            1.40996966,
+            0.14912854
+          ],
+          "momentComponentBoundsNmm": [
+            367.17383755,
+            157.77073455,
+            1420.60216411
+          ]
+        },
+        "outerRepairCutTerminal": {
+          "pointMm": [
+            10285,
+            -300,
+            583.8
+          ],
+          "forceComponentBoundsN": [
+            1.12912235,
+            4.53424499,
+            9.11125291
+          ],
+          "momentComponentBoundsNmm": [
+            4960.74776912,
+            332.73185464,
+            470.01736034
+          ]
+        },
+        "sourcePressureEndComponentBoundN": 463.246686,
+        "jetReversalNormN": 127.279221,
+        "completeLodgeRestraintInvented": false
+      }
+    ],
+    "actualJambCageAndAnchorGroupQualified": false
+  },
+  "diagnostics": [
+    "CONEX_VALVE_KNOWN_POLYMERS_HAVE_NO_OWNER_EXCEPTION",
+    "ACTUAL_POTABLE_FLOW_LOSS_AND_UPPER_FITTING_SCHEDULE_UNQUALIFIED",
+    "STATIC_BULKHEADS_AND_DOOR_SEAMS_REQUIRE_DIMENSIONED_WET_PROOF",
+    "NEW_INDEPENDENT_PANS_TO_EXISTING_OUTLETS_UNQUALIFIED",
+    "ACTUAL_FLOOR_SEAT_MOISTURE_PATH_AND_WALL_GROUP_RESISTANCE_UNQUALIFIED",
+    "UPPER_TERMINAL_AND_LODGE_SUPPORT_LAWS_NOT_QUALIFIED",
+    "STATIC_BULKHEAD_RELATIVE_MOVEMENT_AND_COUPLING_NOT_SOLVED",
+    "SOURCE_BOUND_TUBE_FLEXIBILITY_IS_NOT_CAST_FITTING_STIFFNESS",
+    "FROST_AND_WARM_ENVELOPE_STRATEGY_REQUIRES_WHOLE_ROUTE",
+    "OWNER_WINDOW_AND_ROOM_APPEARANCE_REVIEW_REQUIRED"
+  ],
+  "operating": {
+    "ordinaryInsideIsolation": "Each house branch retains its own reachable ordinary indoor stopvalve. Opening a known wet/faulted compartment requires independent Lodge isolation first; no live-fault-open containment is claimed.",
+    "coldSequence": [
+      "Close both independent Lodge cuts; exclude electricity, drain and prove zero pressure. Move washer to its restrained first rest before a wall-tube draw.",
+      "Remove the four independent front panels. Independently retain the actual upper network before loosening its first source-bound overhead connection and the separate pipe clamp.",
+      "Use two39mm spanners; withdraw the released upper plain riser27mm from the lower valve compression socket before removing it forward. Do not claim zero retreat or a reusable damaged olive.",
+      "Remove the valve and separate lower dogleg tubes after releasing their ordinary compression nuts. Withdraw the now-straight wall tube by the computed travel, with separate wall wet closures opened.",
+      "Restore the pressure fittings, static bulkheads, independent pans/returns, all protective boundaries and electrical field; pressure/leak and fitted fault/spray checks precede charging."
+    ],
+    "sourcePressJawRequired": false,
+    "completeRemovalAndOperatorAcceptance": false
+  },
+  "selected": false,
+  "installedAcceptance": false,
+  "preSiteArrangementComplete": false,
+  "branches": [
+    {
+      "id": "utility",
+      "entryAxisMm": [
+        10080,
+        429.5,
+        478.39
+      ],
+      "riserAxisMm": [
+        9950,
+        600
+      ],
+      "lowerVerticesMm": [
+        [
+          10080,
+          -300,
+          463.8
+        ],
+        [
+          10080,
+          600,
+          481.79999999999995
+        ],
+        [
+          9950,
+          600,
+          481.79999999999995
+        ],
+        [
+          9950,
+          600,
+          1100
+        ]
+      ],
+      "upperVerticesMm": [
+        [
+          9950,
+          600,
+          2725
+        ],
+        [
+          10760,
+          600,
+          2725
+        ],
+        [
+          10760,
+          1250,
+          2725
+        ],
+        [
+          10760,
+          1250,
+          1000
+        ]
+      ],
+      "catalogueLowerElbowStraightGapMm": 46,
+      "pipeStockLengthUpperMm": 6198.085507,
+      "pipeStockScope": "Known service gaps deducted from the tube-only centreline; upper1degree arc chords carry their stated approximation. Cast fitting/valve stiffness and final bought-part masses remain separate.",
+      "pipeMetalKg": 5.610887,
+      "pipeWaterKg": 3.24869,
+      "inCabinetTubeStockKg": 1.555872,
+      "valveBodyMm": [
+        9922,
+        572,
+        1050.25,
+        56,
+        56,
+        99.5
+      ],
+      "valveFullStemReservationMm": [
+        9812,
+        572,
+        1072,
+        276,
+        56,
+        56
+      ],
+      "valveSideAfter5Mm": 47,
+      "wrenchSideAfter5Mm": 127.695387,
+      "wrenchFrontOpenSweepMm": [
+        680,
+        1000
+      ],
+      "receiverActions": {
+        "fixedPointWrench": {
+          "pointMm": [
+            9950,
+            600,
+            1900
+          ],
+          "forceComponentBoundsN": [
+            16.51286684,
+            13.66954636,
+            12.59717536
+          ],
+          "momentComponentBoundsNmm": [
+            3186.25304035,
+            1550.48611778,
+            545.63287951
+          ],
+          "uniformForceN": [
+            -6.08299311,
+            -8.54532286,
+            -10.78058967
+          ],
+          "uniformMomentNmm": [
+            -2234.44496077,
+            -1002.02371806,
+            165.3770414
+          ]
+        },
+        "guideWrench": {
+          "pointMm": [
+            9950,
+            600,
+            2100
+          ],
+          "forceComponentBoundsN": [
+            16.51230113,
+            11.00619278,
+            0
+          ],
+          "axialSlide": true,
+          "actualGripAndFrictionQualified": false
+        },
+        "independentUpperTerminal": {
+          "pointMm": [
+            10760,
+            1250,
+            1000
+          ],
+          "forceComponentBoundsN": [
+            1.07190023,
+            1.33215202,
+            3.2167388
+          ],
+          "momentComponentBoundsNmm": [
+            690.8820395,
+            716.15112452,
+            189.32810306
+          ]
+        },
+        "outerRepairCutTerminal": {
+          "pointMm": [
+            10080,
+            -300,
+            463.8
+          ],
+          "forceComponentBoundsN": [
+            1.03791454,
+            3.99452286,
+            9.3901552
+          ],
+          "momentComponentBoundsNmm": [
+            5265.80975972,
+            371.97357476,
+            444.64381375
+          ]
+        },
+        "sourcePressureEndComponentBoundN": 463.246686,
+        "jetReversalNormN": 127.279221,
+        "completeLodgeRestraintInvented": false
+      },
+      "flow": {
+        "tubeNominalIdMm": 25.6,
+        "howdenRequiredMm": 28,
+        "howdenRequiredLmin": 50,
+        "nominalVelocityAtHowdenFlowMps": 1.619008,
+        "faultVelocityMps": 2.914214,
+        "fittingAndValveLossCoefficient": null,
+        "guaranteedHowdenDuty": false
+      },
+      "renewal": {
+        "throughWallStraightDrawMm": 739.5,
+        "drawnTubeBodyMm": [
+          10066,
+          439.5,
+          449.8,
+          28,
+          884,
+          45.99999999999994
+        ],
+        "drawToInstalledWasherAfter5Mm": -23,
+        "drawToFirstRestWasherAfter5Mm": 171.5,
+        "upperRiserFirstReleaseZMm": 2725,
+        "requiredUnseatTravelMm": 27,
+        "upperNetworkMustBeIndependentlyRetained": true,
+        "pressureJointZeroRetreatClaimed": false,
+        "completeToolAndOperatorSweepQualified": false
+      },
+      "materialResidues": [
+        {
+          "id": "utility-valve-polymer-0",
+          "material": "PTFE packing",
+          "quantity": 1,
+          "part": "HH-5012701--",
+          "ownerExceptionApproved": false
+        },
+        {
+          "id": "utility-valve-polymer-1",
+          "material": "PTFE sealing gasket",
+          "quantity": 1,
+          "part": "HH-5012701--",
+          "ownerExceptionApproved": false
+        },
+        {
+          "id": "utility-valve-polymer-2",
+          "material": "EPDM seat constituent",
+          "quantity": 1,
+          "part": "HH-5012701--",
+          "ownerExceptionApproved": false
+        }
+      ],
+      "componentTakeoff": {
+        "lowerElbows": {
+          "sku": "HH-5020401--",
+          "quantity": 2
+        },
+        "plainCouplers": {
+          "sku": "HH-5020301--",
+          "quantity": 2
+        },
+        "valve": {
+          "sku": "HH-5012701--",
+          "quantity": 1
+        },
+        "upperShapedTubeAndConnections": "Upper path is a source-bound tube-only flexibility route; actual formed/fitting schedule and joint stiffness remain unresolved."
+      },
+      "formedRoute": {
+        "vertices": 278,
+        "digest": "04bfa238410ef44a3e23b5fde23714583aa1d4d39b112b81fd3a48e33bb2b17d"
+      },
+      "thermal": {
+        "schema": "had-inlet-finite-receiver-thermal/1",
+        "sourceContext": {
+          "input": {
+            "pathMm": {
+              "vertices": 278,
+              "digest": "04bfa238410ef44a3e23b5fde23714583aa1d4d39b112b81fd3a48e33bb2b17d"
+            },
+            "fixedPointZMm": 1900,
+            "guideZMm": 2100,
+            "temperatureExcursionK": 40,
+            "pipe": {
+              "outerDiameterMm": 28,
+              "wallMm": 1.2,
+              "elasticModulusMpa": 117200,
+              "poissonRatio": 0.34,
+              "expansionMmMK": 0.017
+            }
+          },
+          "receiver": {
+            "baseZMm": 100,
+            "postAxisXYMm": [
+              9950,
+              520
+            ],
+            "topZMm": 2130,
+            "widthXMm": 60,
+            "depthYMm": 80,
+            "wallMm": 4,
+            "elasticModulusMpa": 200000,
+            "poissonRatio": 0.3
+          }
+        },
+        "method": "Same upper/lower3D tube-flexibility kernels, joined by exact Simpson receiver strain-energy integrals and all physical fixed/guide lever moments. One14-redundant compatible solve; independently signed segment temperatures retained. Fixed-base post, rigid arms and source six-axis endpoint laws are explicit comparison assumptions.",
+        "fixedPointWrench": {
+          "pointMm": [
+            9950,
+            600,
+            1900
+          ],
+          "forceComponentBoundsN": [
+            16.51286684,
+            13.66954636,
+            12.59717536
+          ],
+          "momentComponentBoundsNmm": [
+            3186.25304035,
+            1550.48611778,
+            545.63287951
+          ],
+          "uniformForceN": [
+            -6.08299311,
+            -8.54532286,
+            -10.78058967
+          ],
+          "uniformMomentNmm": [
+            -2234.44496077,
+            -1002.02371806,
+            165.3770414
+          ]
+        },
+        "guideWrench": {
+          "pointMm": [
+            9950,
+            600,
+            2100
+          ],
+          "forceComponentBoundsN": [
+            16.51230113,
+            11.00619278,
+            0
+          ],
+          "axialSlide": true,
+          "actualGripAndFrictionQualified": false
+        },
+        "upperTerminalWrench": {
+          "pointMm": [
+            10760,
+            1250,
+            1000
+          ],
+          "forceComponentBoundsN": [
+            1.07190023,
+            1.33215202,
+            3.2167388
+          ],
+          "momentComponentBoundsNmm": [
+            690.8820395,
+            716.15112452,
+            189.32810306
+          ]
+        },
+        "outerTerminalWrench": {
+          "pointMm": [
+            10080,
+            -300,
+            463.8
+          ],
+          "forceComponentBoundsN": [
+            1.03791454,
+            3.99452286,
+            9.3901552
+          ],
+          "momentComponentBoundsNmm": [
+            5265.80975972,
+            371.97357476,
+            444.64381375
+          ]
+        },
+        "fixedPointReceiverMotion": {
+          "uniformTranslationMm": [
+            -0.0367906,
+            -0.00317394,
+            0.0011002
+          ],
+          "translationBoundsMm": [
+            0.05712307,
+            0.04193231,
+            0.00258455
+          ],
+          "rotationBoundsRad": [
+            0.00003263,
+            0.00005485,
+            0.00001225
+          ]
+        },
+        "guideReceiverMotion": {
+          "uniformTranslationMm": [
+            -0.04365502,
+            -0.00577079,
+            0.00114583
+          ],
+          "translationBoundsMm": [
+            0.06860926,
+            0.04836522,
+            0.00267761
+          ]
+        },
+        "compatibilityResidual": 0,
+        "postComplianceSymmetryError": 0,
+        "actualTerminalClampFittingAndFloorStiffnessQualified": false,
+        "completeInstalledThermalAcceptance": false
+      }
+    },
+    {
+      "id": "plant",
+      "entryAxisMm": [
+        10285,
+        429.5,
+        598.39
+      ],
+      "riserAxisMm": [
+        10415,
+        600
+      ],
+      "lowerVerticesMm": [
+        [
+          10285,
+          -300,
+          583.8
+        ],
+        [
+          10285,
+          600,
+          601.8
+        ],
+        [
+          10415,
+          600,
+          601.8
+        ],
+        [
+          10415,
+          600,
+          1100
+        ]
+      ],
+      "upperVerticesMm": [
+        [
+          10415,
+          600,
+          2585
+        ],
+        [
+          11505,
+          600,
+          2585
+        ],
+        [
+          11505,
+          820,
+          2585
+        ],
+        [
+          11505,
+          1180,
+          2725
+        ],
+        [
+          11505,
+          2199.2,
+          2725
+        ],
+        [
+          11315,
+          2323,
+          2725
+        ],
+        [
+          11315,
+          2940,
+          2725
+        ],
+        [
+          11385,
+          3050,
+          2725
+        ],
+        [
+          11385,
+          3370,
+          2725
+        ],
+        [
+          11385,
+          3370,
+          2260
+        ],
+        [
+          10245,
+          3370,
+          2260
+        ],
+        [
+          10245,
+          3797,
+          2260
+        ],
+        [
+          10222.5,
+          3842.9,
+          2260
+        ]
+      ],
+      "catalogueLowerElbowStraightGapMm": 46,
+      "pipeStockLengthUpperMm": 8721.819621,
+      "pipeStockScope": "Known service gaps deducted from the tube-only centreline; upper1degree arc chords carry their stated approximation. Cast fitting/valve stiffness and final bought-part masses remain separate.",
+      "pipeMetalKg": 7.895525,
+      "pipeWaterKg": 4.547703,
+      "inCabinetTubeStockKg": 1.447241,
+      "valveBodyMm": [
+        10387,
+        572,
+        1050.25,
+        56,
+        56,
+        99.5
+      ],
+      "valveFullStemReservationMm": [
+        10277,
+        572,
+        1072,
+        276,
+        56,
+        56
+      ],
+      "valveSideAfter5Mm": 52,
+      "wrenchSideAfter5Mm": 132.695387,
+      "wrenchFrontOpenSweepMm": [
+        680,
+        1000
+      ],
+      "receiverActions": {
+        "fixedPointWrench": {
+          "pointMm": [
+            10415,
+            600,
+            1900
+          ],
+          "forceComponentBoundsN": [
+            2.295386,
+            10.55834201,
+            9.25475155
+          ],
+          "momentComponentBoundsNmm": [
+            3121.3469949,
+            609.50219452,
+            1176.09745076
+          ],
+          "uniformForceN": [
+            -1.41600347,
+            -9.42898192,
+            -9.16080432
+          ],
+          "uniformMomentNmm": [
+            -2406.50645213,
+            521.86669329,
+            909.91402415
+          ]
+        },
+        "guideWrench": {
+          "pointMm": [
+            10415,
+            600,
+            2100
+          ],
+          "forceComponentBoundsN": [
+            1.33102804,
+            7.42796865,
+            0
+          ],
+          "axialSlide": true,
+          "actualGripAndFrictionQualified": false
+        },
+        "independentUpperTerminal": {
+          "pointMm": [
+            10222.5,
+            3842.9,
+            2260
+          ],
+          "forceComponentBoundsN": [
+            0.19116106,
+            1.40996966,
+            0.14912854
+          ],
+          "momentComponentBoundsNmm": [
+            367.17383755,
+            157.77073455,
+            1420.60216411
+          ]
+        },
+        "outerRepairCutTerminal": {
+          "pointMm": [
+            10285,
+            -300,
+            583.8
+          ],
+          "forceComponentBoundsN": [
+            1.12912235,
+            4.53424499,
+            9.11125291
+          ],
+          "momentComponentBoundsNmm": [
+            4960.74776912,
+            332.73185464,
+            470.01736034
+          ]
+        },
+        "sourcePressureEndComponentBoundN": 463.246686,
+        "jetReversalNormN": 127.279221,
+        "completeLodgeRestraintInvented": false
+      },
+      "flow": {
+        "tubeNominalIdMm": 25.6,
+        "howdenRequiredMm": 28,
+        "howdenRequiredLmin": 50,
+        "nominalVelocityAtHowdenFlowMps": 1.619008,
+        "faultVelocityMps": 2.914214,
+        "fittingAndValveLossCoefficient": null,
+        "guaranteedHowdenDuty": false
+      },
+      "renewal": {
+        "throughWallStraightDrawMm": 739.5,
+        "drawnTubeBodyMm": [
+          10271,
+          439.5,
+          569.8,
+          28,
+          884,
+          46
+        ],
+        "drawToInstalledWasherAfter5Mm": -228,
+        "drawToFirstRestWasherAfter5Mm": 171.5,
+        "upperRiserFirstReleaseZMm": 2585,
+        "requiredUnseatTravelMm": 27,
+        "upperNetworkMustBeIndependentlyRetained": true,
+        "pressureJointZeroRetreatClaimed": false,
+        "completeToolAndOperatorSweepQualified": false
+      },
+      "materialResidues": [
+        {
+          "id": "plant-valve-polymer-0",
+          "material": "PTFE packing",
+          "quantity": 1,
+          "part": "HH-5012701--",
+          "ownerExceptionApproved": false
+        },
+        {
+          "id": "plant-valve-polymer-1",
+          "material": "PTFE sealing gasket",
+          "quantity": 1,
+          "part": "HH-5012701--",
+          "ownerExceptionApproved": false
+        },
+        {
+          "id": "plant-valve-polymer-2",
+          "material": "EPDM seat constituent",
+          "quantity": 1,
+          "part": "HH-5012701--",
+          "ownerExceptionApproved": false
+        }
+      ],
+      "componentTakeoff": {
+        "lowerElbows": {
+          "sku": "HH-5020401--",
+          "quantity": 2
+        },
+        "plainCouplers": {
+          "sku": "HH-5020301--",
+          "quantity": 2
+        },
+        "valve": {
+          "sku": "HH-5012701--",
+          "quantity": 1
+        },
+        "upperShapedTubeAndConnections": "Upper path is a source-bound tube-only flexibility route; actual formed/fitting schedule and joint stiffness remain unresolved."
+      },
+      "formedRoute": {
+        "vertices": 718,
+        "digest": "69d137d396f110d808eef65410c88e4534f5510d4b330fd15defe9a30d972347"
+      },
+      "thermal": {
+        "schema": "had-inlet-finite-receiver-thermal/1",
+        "sourceContext": {
+          "input": {
+            "pathMm": {
+              "vertices": 718,
+              "digest": "69d137d396f110d808eef65410c88e4534f5510d4b330fd15defe9a30d972347"
+            },
+            "fixedPointZMm": 1900,
+            "guideZMm": 2100,
+            "temperatureExcursionK": 40,
+            "pipe": {
+              "outerDiameterMm": 28,
+              "wallMm": 1.2,
+              "elasticModulusMpa": 117200,
+              "poissonRatio": 0.34,
+              "expansionMmMK": 0.017
+            }
+          },
+          "receiver": {
+            "baseZMm": 100,
+            "postAxisXYMm": [
+              10415,
+              520
+            ],
+            "topZMm": 2130,
+            "widthXMm": 60,
+            "depthYMm": 80,
+            "wallMm": 4,
+            "elasticModulusMpa": 200000,
+            "poissonRatio": 0.3
+          }
+        },
+        "method": "Same upper/lower3D tube-flexibility kernels, joined by exact Simpson receiver strain-energy integrals and all physical fixed/guide lever moments. One14-redundant compatible solve; independently signed segment temperatures retained. Fixed-base post, rigid arms and source six-axis endpoint laws are explicit comparison assumptions.",
+        "fixedPointWrench": {
+          "pointMm": [
+            10415,
+            600,
+            1900
+          ],
+          "forceComponentBoundsN": [
+            2.295386,
+            10.55834201,
+            9.25475155
+          ],
+          "momentComponentBoundsNmm": [
+            3121.3469949,
+            609.50219452,
+            1176.09745076
+          ],
+          "uniformForceN": [
+            -1.41600347,
+            -9.42898192,
+            -9.16080432
+          ],
+          "uniformMomentNmm": [
+            -2406.50645213,
+            521.86669329,
+            909.91402415
+          ]
+        },
+        "guideWrench": {
+          "pointMm": [
+            10415,
+            600,
+            2100
+          ],
+          "forceComponentBoundsN": [
+            1.33102804,
+            7.42796865,
+            0
+          ],
+          "axialSlide": true,
+          "actualGripAndFrictionQualified": false
+        },
+        "upperTerminalWrench": {
+          "pointMm": [
+            10222.5,
+            3842.9,
+            2260
+          ],
+          "forceComponentBoundsN": [
+            0.19116106,
+            1.40996966,
+            0.14912854
+          ],
+          "momentComponentBoundsNmm": [
+            367.17383755,
+            157.77073455,
+            1420.60216411
+          ]
+        },
+        "outerTerminalWrench": {
+          "pointMm": [
+            10285,
+            -300,
+            583.8
+          ],
+          "forceComponentBoundsN": [
+            1.12912235,
+            4.53424499,
+            9.11125291
+          ],
+          "momentComponentBoundsNmm": [
+            4960.74776912,
+            332.73185464,
+            470.01736034
+          ]
+        },
+        "fixedPointReceiverMotion": {
+          "uniformTranslationMm": [
+            0.01228492,
+            -0.00519527,
+            0.00126345
+          ],
+          "translationBoundsMm": [
+            0.01688229,
+            0.04025733,
+            0.00215321
+          ],
+          "rotationBoundsRad": [
+            0.00002787,
+            0.00001249,
+            0.00002674
+          ]
+        },
+        "guideReceiverMotion": {
+          "uniformTranslationMm": [
+            0.01360065,
+            -0.00824742,
+            0.00131668
+          ],
+          "translationBoundsMm": [
+            0.01909014,
+            0.04593333,
+            0.00221494
+          ]
+        },
+        "compatibilityResidual": 0,
+        "postComplianceSymmetryError": 0,
+        "actualTerminalClampFittingAndFloorStiffnessQualified": false,
+        "completeInstalledThermalAcceptance": false
+      }
+    }
+  ]
+}
