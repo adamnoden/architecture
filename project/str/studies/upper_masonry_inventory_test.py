@@ -88,5 +88,22 @@ class UpperMasonryInventoryTest(unittest.TestCase):
         case['masonryCase']['verticalCase']['monolithicCase']['houseCase']['boundary']['includeExternalGMAXQ']=True
         with self.assertRaisesRegex(ValueError,'Gross upper GMAX/Q budgets overlap'):_admit(case,source)
 
+    def test_actual_upper_L_material_law_rejects_unsupported_values_before_assembly(self):
+        from pathlib import Path
+        from upper_roof_bearing import load_source,_admit
+        from upper_roof_bearing_proof import worked_case
+        source=load_source(Path(__file__).resolve().parents[3]);base=worked_case(source)
+        _admit(base,source)
+        for key,value in (('elasticModulusMPa',0),('elasticModulusMPa',float('nan')),
+                ('poissonRatio',0),('poissonRatio',.5),('flexuralFactor',1.001),
+                ('torsionFactor',True),('shearAreaFactor',-1),('mode','invented-law')):
+            case=copy.deepcopy(base);case['roofControls']['upperFrameLaw'][key]=value
+            with self.assertRaisesRegex(ValueError,'upper-L frame law'):_admit(case,source)
+        for extra in (True,False):
+            case=copy.deepcopy(base);law=case['roofControls']['upperFrameLaw']
+            if extra:law['inventedStiffness']=1.
+            else:del law['elasticModulusMPa']
+            with self.assertRaisesRegex(ValueError,'upper-L frame law'):_admit(case,source)
+
 
 if __name__=='__main__':unittest.main()

@@ -562,7 +562,7 @@
     {
       "id": "had-fixed-inlet-arrangement",
       "state": "candidate-interface",
-      "authority": "Unselected incoming-water comparisons. Tall cabinet and the non-recovering restriction/old-receiver comparison are rejected; pressure-recovering throats remain unqualified. Corrected absolute-pressure/source/delivery/receiver proof supports an internal wet Utility/service-hub replan, preserving genuine indoor cuts, source/renewal/frost/material failures and actual occupied controls; no new room or inlet adopted.",
+      "authority": "Unselected inlet architecture. Authored Utility20/Plant45 duties and separate restrictions join actual occupied fixture/topology, wet Utility, indoor mainboard-only and independent Streethead PV proposals. Utility earns necessary hydraulic screens; old Plant receiver, cabinet and combined indoor PV enclosure are rejected. Stored release, ordinary cuts/renewal, receiving supports, drains/frost and material/owner acceptance remain open.",
       "decisions": [
         "project/had/fixed-inlet-entry-candidate.md",
         "project/had/fixed-inlet-receiver-development.md",
@@ -603,7 +603,10 @@
         "project/str/studies/floor-portal-interface-review.json",
         "project/str/studies/reconciled-house-interface.json",
         "project/had/studies/south-inlet-relief.json",
-        "project/had/studies/south-utility-inlet.json"
+        "project/had/studies/south-utility-inlet.json",
+        "project/mat/studies/whole-house-service-baseline.json",
+        "project/ias/studies/utility-first-release.json",
+        "project/had/studies/boundary-service-lodge.json"
       ],
       "receipts": [
         "project/had/studies/inlet-cabinet-copper.results.json",
@@ -773,7 +776,7 @@
     {
       "id": "str-masonry-frame-comparison",
       "state": "candidate-interface",
-      "authority": "One actual source0 RC plate/frame and52heads, lower bodies and roof steel/pressure. The optional upperRoofBearing successor joins ordinary clear-column gravity and bedded-pad compression-only axial roof seats, replacing intermediate bilateral paths; complete pad contact, wall/roof gravity/pressure, reinforcement, moisture/thermal/weather and installed acceptance remain unresolved.",
+      "authority": "One actual source0 RC plate/frame and52heads, lower bodies and roof steel/pressure. The optional upperRoofBearing successor joins ordinary clear-column gravity and bedded-pad compression-only axial roof seats, replacing intermediate bilateral paths; complete pad contact, wall/roof gravity/pressure, reinforcement, moisture/thermal/weather and installed acceptance remain unresolved. The optional floorSection successor reassembles the actual floor/membrane operators, work maps, weight and upper body starts for an authored200..250mm trial; it does not adopt finish/FFL/stair/service/weather or a section design.",
       "decisions": [
         "project/str/portal-architectural-simplification.md",
         "project/str/masonry-frame-a-result.md",
@@ -781,7 +784,8 @@
         "project/str/floor-live-load-result.md",
         "project/str/straight-frame-cage-result.md",
         "project/str/roof-surface-pressure-result.md",
-        "project/str/upper-masonry-roof-bearing-result.md"
+        "project/str/upper-masonry-roof-bearing-result.md",
+        "project/str/floor-section-result.md"
       ],
       "authorRoots": [
         "project/str/studies/masonry_frame_a.py",
@@ -797,7 +801,9 @@
         "project/str/studies/upper_roof_bearing.py",
         "project/str/studies/upper_masonry_inventory.py",
         "project/str/studies/named_plate_load.py",
-        "project/str/studies/roof_bearing_trace.py"
+        "project/str/studies/roof_bearing_trace.py",
+        "project/str/studies/floor_section_model.py",
+        "project/str/studies/floor_section_successor.py"
       ],
       "authoredInputs": [],
       "inputReceipts": [
@@ -852,7 +858,9 @@
         "project/str/studies/roof-surface-pressure.svg",
         "project/str/studies/lower-core-bodies-proof.json",
         "project/str/studies/upper-roof-bearing-proof.json",
-        "project/str/studies/upper-roof-bearing.svg"
+        "project/str/studies/upper-roof-bearing.svg",
+        "project/str/studies/floor-section-proof.json",
+        "project/str/studies/floor-section-250.svg"
       ],
       "consumers": [
         "compiler/reference-house/current-design/structural-masonry-frame.ts",
@@ -865,13 +873,19 @@
         "project/str/studies/roof_surface_pressure_proof.py",
         "project/str/studies/roof_surface_pressure_view.py",
         "compiler/reference-house/current-design/structural-upper-bearing.ts",
-        "project/str/studies/upper_roof_bearing_proof.py"
+        "project/str/studies/upper_roof_bearing_proof.py",
+        "compiler/reference-house/current-design/structural-floor-section.ts",
+        "compiler/reference-house/current-design/engineering-edit.ts",
+        "project/str/studies/floor_section_proof.py"
       ],
       "producerChecks": [
         "node --test project/str/studies/masonry-frame-a.test.mjs",
         "node --import tsx --test compiler/reference-house/current-design-masonry-frame.test.ts",
         "node --test project/str/studies/upper-roof-bearing.test.mjs",
-        "node --import tsx --test compiler/reference-house/current-design-upper-bearing.test.ts"
+        "node --import tsx --test compiler/reference-house/current-design-upper-bearing.test.ts",
+        "node --test project/str/studies/floor-section.test.mjs",
+        "node --import tsx --test compiler/reference-house/current-design-floor-section.test.ts",
+        "node --import tsx --test compiler/reference-house/current-design-floor-penetrations.test.ts"
       ]
     }
   ],
@@ -1367,6 +1381,14 @@
       ],
       "format": "map",
       "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/str/studies/floor-section-proof.json",
+      "location": [
+        "sourceSHA256"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
     }
   ],
   "gitBlobs": {
@@ -1599,7 +1621,7 @@
     "project/str/studies/joined_successor_kernel.py": "bbf1e80933260d0182db34d777427b68a361b2f0",
     "compiler/reference-house/current-design/structural-successor.ts": "9ae813ed40695e6e94df43caa0b45e7db54d02c4",
     "compiler/reference-house/current-design/inlet-support.ts": "a2404befdbeda6464bc9f772d25bccd8d78d2479",
-    "compiler/reference-house/current-design/engineering-document.ts": "d5685e9fe7f59d8ad7ed2422d2636157d8128f85",
+    "compiler/reference-house/current-design/engineering-document.ts": "a5d9ccb460ef3bf63e4ba7087e6d4533ed8da648",
     "project/had/inlet-assembly-convergence.md": "21719c69b3ec916043e53d7ae0891d5c6ce7aae5",
     "project/str/studies/floor-portal-fixed-wall-head.py": "807159aa9439837489d3e95f9bf359983635c342",
     "project/str/studies/floor-portal-north-transfer.py": "20f79473e3fd3e88351b3fa4d68ac1f1ef476d03",
@@ -1612,7 +1634,7 @@
     "compiler/reference-house/current-design/inlet-fixed-entry.ts": "9ad3f449b36d8770ac1a1bfe167210fbca7581bf",
     "compiler/reference-house/current-design/inlet-fixed-case.ts": "6a6670cf3dab365e41b4bf5e7c4a82ee2a0cd82f",
     "compiler/reference-house/current-design/inlet-fixed-operating.ts": "8d2a9e0132d300e697cff2661f01222a7b661b45",
-    "compiler/reference-house/current-design/compile.ts": "3dd19f18b7a57885549de243f5489ec20587cc5a",
+    "compiler/reference-house/current-design/compile.ts": "93ced0bd9352dee6eb9d5c69396089ca7d4e9276",
     "project/mat/envelope-ground-boundary.md": "7aae65350ded7bff6e21c4425153af3cdaec41d2",
     "project/owner-house-charter.md": "285202ef6be2ccd9954de51213d1faa23a158813",
     "project/mat/studies/conventional-ground-junction.json": "5d899197848d0f951d8ff4573983aff81d4fd32f",
@@ -1672,7 +1694,7 @@
     "compiler/reference-house/current-design/house-vertical-profile.ts": "3f3cbb5b711763265ad8c65358ceb15a9acf066c",
     "compiler/reference-house/current-design/inlet-fixed-shared-service-frame.ts": "43a0ff67f3a38aa1f050859c893efbb8f5087f32",
     "project/had/fixed-inlet-shared-service-frame-development.md": "6b52562f403e1b2c2c8df405c0471408f0952feb",
-    "scripts/compile-current-design.ts": "902d036fa451c18a51a122c213e1f9be5c88584f",
+    "scripts/compile-current-design.ts": "7c2da179b1bdbd90e20f31151b481bc4188cf639",
     "project/str/studies/vertical_rc_floor.py": "7e2fa42912ff8fa6d54a0494f55cbc006450f58c",
     "project/str/vertical-rc-floor-gravity-result.md": "0e1e13b47a082c77ebc9d652b54b5b10a36b814d",
     "project/str/studies/vertical-rc-floor-proof.json": "f9dceb329aa496a69897c555edbc8feedcf838e6",
@@ -1724,22 +1746,29 @@
     "project/str/studies/roof-surface-pressure.svg": "bf17bdc9c139c76a80fa0a8352f4bd40c3938c92",
     "project/str/studies/roof_surface_pressure_proof.py": "c6de2ceb21f113e4672d870f3512754318b99c23",
     "project/str/studies/straight_frame_cage_proof.py": "04a03d0ec19f885e611cd1549d9d0a5fc2c4eeb1",
-    "compiler/reference-house/current-design/inlet-source-envelope.ts": "9de3090009b65300e48c7867f5b030cd89205e7b",
+    "compiler/reference-house/current-design/inlet-source-envelope.ts": "c6baca027717145854aa7cca790fa8e3858df89c",
     "project/had/studies/inlet-source-envelope.ts": "d2e00dfe467c48bfbe984d44a9f9c5e77d2511c1",
-    "project/had/inlet-source-and-room-decision.md": "882664242fc214b90b73f5c3fb4016a91ee8fd4d",
-    "project/had/studies/inlet-source-envelope.results.json": "425e39402a3b77d580a8d0b5514c4a5e0bdbcfda",
-    "project/had/studies/inlet-source-envelope.svg": "d24260e9f6acaf2235dd0e36d269aa3f35ac16fb",
-    "compiler/reference-house/current-design/engineering-edit.ts": "463b22e8fe900cff15cf9419c54b4cbce016f63a",
+    "project/had/inlet-source-and-room-decision.md": "6c12c4880a842ed13465ab8f31b0955c79c2c223",
+    "project/had/studies/inlet-source-envelope.results.json": "b1f335c9720f18689bac671ad2b75a63e00a8f7a",
+    "project/had/studies/inlet-source-envelope.svg": "53c0c3a45bb4f7e8c46fcbc7f2894f45c9125c4f",
+    "compiler/reference-house/current-design/engineering-edit.ts": "4c024e7edea46e79b3b4f8e17646170f9a80458d",
     "project/ade/browser-editor/engineering-api.ts": "2db0efb4e3cdb698009b69cc7fa9ff80389f1158",
     "project/ade/browser-editor/engineering-editor.ts": "cb109c701742575cc1bae5b5122eb2ee750a4a8f",
     "compiler/reference-house/current-design/structural-upper-bearing.ts": "7dff13246907c49a8e5e6bd96dd4a64f8f13b354",
     "project/str/studies/named_plate_load.py": "bb85eb7836d4ff1bccff91729a31112ac1f961cb",
     "project/str/studies/roof_bearing_trace.py": "09aa8236bfedee0289dcdf0a5a275b9e1ec646ef",
-    "project/str/studies/upper-roof-bearing-proof.json": "d2b0cb97c0e08e411bac27894b737d6b91c3fe27",
+    "project/str/studies/upper-roof-bearing-proof.json": "2fd2fc4e00d455c880c756101f20e51681866a53",
     "project/str/studies/upper-roof-bearing.svg": "0c0ceb017c21ff713f7d9dfb879062c30d97b534",
     "project/str/studies/upper_masonry_inventory.py": "f67f24b64bc4245272b4961325415be72f77eaf3",
-    "project/str/studies/upper_roof_bearing.py": "4570cdd5ee5a04285aa31201c0010927c1bd87cc",
+    "project/str/studies/upper_roof_bearing.py": "9a62b86dea186a193c67fd7a5a4def6d9498b456",
     "project/str/studies/upper_roof_bearing_proof.py": "28c75e7b5dadb1d2a6d9af26f1b60431656a8712",
-    "project/str/upper-masonry-roof-bearing-result.md": "bda6620d875fdeb51d120598cfc350ee53752745"
+    "project/str/upper-masonry-roof-bearing-result.md": "7102ac5c85c17efa85bf128673893d20b33de935",
+    "project/str/studies/floor_section_model.py": "dd4ce82183159851244db04e3114268d38bca70f",
+    "project/str/studies/floor_section_successor.py": "3351c9ba6a3f248d7e9bfed65a548394cefbadb3",
+    "project/str/floor-section-result.md": "a4eb5f60805a600196089f458d542a5673b0c4bd",
+    "compiler/reference-house/current-design/structural-floor-section.ts": "38e4b821ae311fa13a1c1358e30947da206152a7",
+    "project/str/studies/floor_section_proof.py": "56f68116fadbc4f74f863257f132a091dd2f523c",
+    "project/str/studies/floor-section-proof.json": "64e77fefeb7f9221c6a902075d95192de33c9083",
+    "project/str/studies/floor-section-250.svg": "b9743f51fd2b5eca6f8d6749c1134415f44a67c1"
   }
 }
