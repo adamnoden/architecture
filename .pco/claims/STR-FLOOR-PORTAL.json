@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 47,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "37f8e399-fda2-42a8-8282-b3e5bda5c950",
   "holder": {
     "kind": "chatgpt",
     "label": "rush-coupled48-20261121"
   },
   "claimedAt": "2026-11-21T00:42:51.058Z",
-  "heartbeatAt": "2026-11-21T01:57:45.000Z",
-  "expiresAt": "2026-11-21T02:42:45.000Z",
+  "heartbeatAt": "2026-11-21T01:59:15.000Z",
+  "expiresAt": "2026-11-21T01:59:15.000Z",
   "checkpoint": {
     "evidence": "PR1604 head784b9f362af2fc50f183148cfbdec4b370a4567e; fresh11coupled/24controls, saved3solves/reversal pass; sourceaudit15/0. Durable recovery: PR1604#issuecomment-7055489871; physical failures retained.",
     "next": "Recover canonical leases/current main; inspect exact-head CI; fresh dual STR/HAD merge-check and expected-head merge; then combined51 and service-hub replan.",
@@ -37,5 +37,7 @@
       "next": "Merge validated e22 after fresh preflight. Combine canonical point fix, netQ and explicit roof pressure into source48; verify all18 physical receiver traces, regenerate24 legacy vertical/current-house proofs and saved CLI changes before publication. No structural closure or valid successor head demands yet."
     }
   },
-  "pr": 1604
+  "pr": 1604,
+  "releasedAt": "2026-11-21T01:59:15.000Z",
+  "releaseReason": "handoff"
 }
