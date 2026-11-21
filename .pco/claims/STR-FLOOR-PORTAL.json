@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 47,
-  "state": "released",
-  "leaseId": "37f8e399-fda2-42a8-8282-b3e5bda5c950",
+  "generation": 48,
+  "state": "claimed",
+  "leaseId": "112c4e59-d3c1-4931-a15b-ba4d2433a70f",
   "holder": {
     "kind": "chatgpt",
-    "label": "rush-coupled48-20261121"
+    "label": "rush-20261121-recovery"
   },
-  "claimedAt": "2026-11-21T00:42:51.058Z",
-  "heartbeatAt": "2026-11-21T01:59:15.000Z",
-  "expiresAt": "2026-11-21T01:59:15.000Z",
-  "checkpoint": {
-    "evidence": "PR1604 head784b9f362af2fc50f183148cfbdec4b370a4567e; fresh11coupled/24controls, saved3solves/reversal pass; sourceaudit15/0. Durable recovery: PR1604#issuecomment-7055489871; physical failures retained.",
-    "next": "Recover canonical leases/current main; inspect exact-head CI; fresh dual STR/HAD merge-check and expected-head merge; then combined51 and service-hub replan.",
-    "blocker": "Execution environment unavailable; exec recovery45s failed. No local preflight or new tests. Handoff release follows checkpoint readback; no packet completion."
-  },
-  "branch": "work/rush-structural-coupling-20261120",
+  "claimedAt": "2026-11-21T09:40:30.038Z",
+  "heartbeatAt": "2026-11-21T09:40:30.038Z",
+  "expiresAt": "2026-11-21T10:25:30.038Z",
+  "branch": "work/rush-recovered-coupling-20261121",
   "predecessor": {
-    "leaseId": "ba0fc4e9-5e82-4fee-ba2b-a68692aaf759",
-    "generation": 46,
-    "branch": "work/rush-structural-20261120",
-    "pr": 1602,
+    "leaseId": "37f8e399-fda2-42a8-8282-b3e5bda5c950",
+    "generation": 47,
+    "branch": "work/rush-structural-coupling-20261120",
+    "pr": 1604,
     "checkpoint": {
-      "evidence": "PR1602 exact e22a66e9 remains in hosted full health; publication/browser/physical proofs pass. Actual pre851 assembly audit confirms982ports/904normal/2074cells, zero duplicate or unused rows. Successor47 proofs quarantined: integer/float point strings orphaned10roof ports; QA canonical point fix plus net-floor-Q and signed roof-pressure integration underway in isolated branches.",
-      "next": "Merge validated e22 after fresh preflight. Combine canonical point fix, netQ and explicit roof pressure into source48; verify all18 physical receiver traces, regenerate24 legacy vertical/current-house proofs and saved CLI changes before publication. No structural closure or valid successor head demands yet."
+      "evidence": "PR1604 head784b9f362af2fc50f183148cfbdec4b370a4567e; fresh11coupled/24controls, saved3solves/reversal pass; sourceaudit15/0. Durable recovery: PR1604#issuecomment-7055489871; physical failures retained.",
+      "next": "Recover canonical leases/current main; inspect exact-head CI; fresh dual STR/HAD merge-check and expected-head merge; then combined51 and service-hub replan.",
+      "blocker": "Execution environment unavailable; exec recovery45s failed. No local preflight or new tests. Handoff release follows checkpoint readback; no packet completion."
     }
   },
   "recoverySource": {
-    "leaseId": "ba0fc4e9-5e82-4fee-ba2b-a68692aaf759",
-    "generation": 46,
-    "branch": "work/rush-structural-20261120",
-    "pr": 1602,
+    "leaseId": "37f8e399-fda2-42a8-8282-b3e5bda5c950",
+    "generation": 47,
+    "branch": "work/rush-structural-coupling-20261120",
+    "pr": 1604,
     "checkpoint": {
-      "evidence": "PR1602 exact e22a66e9 remains in hosted full health; publication/browser/physical proofs pass. Actual pre851 assembly audit confirms982ports/904normal/2074cells, zero duplicate or unused rows. Successor47 proofs quarantined: integer/float point strings orphaned10roof ports; QA canonical point fix plus net-floor-Q and signed roof-pressure integration underway in isolated branches.",
-      "next": "Merge validated e22 after fresh preflight. Combine canonical point fix, netQ and explicit roof pressure into source48; verify all18 physical receiver traces, regenerate24 legacy vertical/current-house proofs and saved CLI changes before publication. No structural closure or valid successor head demands yet."
+      "evidence": "PR1604 head784b9f362af2fc50f183148cfbdec4b370a4567e; fresh11coupled/24controls, saved3solves/reversal pass; sourceaudit15/0. Durable recovery: PR1604#issuecomment-7055489871; physical failures retained.",
+      "next": "Recover canonical leases/current main; inspect exact-head CI; fresh dual STR/HAD merge-check and expected-head merge; then combined51 and service-hub replan.",
+      "blocker": "Execution environment unavailable; exec recovery45s failed. No local preflight or new tests. Handoff release follows checkpoint readback; no packet completion."
     }
-  },
-  "pr": 1604,
-  "releasedAt": "2026-11-21T01:59:15.000Z",
-  "releaseReason": "handoff"
+  }
 }
