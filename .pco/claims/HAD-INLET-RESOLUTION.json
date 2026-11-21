@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 53,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "244d4381-c833-4676-bf37-31b3ac789276",
   "holder": {
     "kind": "chatgpt",
     "label": "convergence-water-20261121"
   },
   "claimedAt": "2026-11-21T19:48:28.453Z",
-  "heartbeatAt": "2026-11-21T21:05:57.163Z",
-  "expiresAt": "2026-11-21T21:50:57.163Z",
+  "heartbeatAt": "2026-11-21T21:09:27.345Z",
+  "expiresAt": "2026-11-21T21:09:27.345Z",
   "branch": "work/convergence-water-room-20261121",
   "predecessor": {
     "leaseId": "94d2339d-61ab-49db-96e2-66d5ed0ff6e4",
@@ -39,5 +39,7 @@
     "evidence": "PR1611 exact head03e9ac71/tree7f04d16c unchanged. At21:05Z fullhealth job136969970120 remainsactive;publication,ADE,PLT success.16focused tests,tsc,repo,producercheck and actualSVG inspection passed.",
     "next": "Actively monitor exact-head fullhealth;fresh preflight and merge on success, then release HAD and verify cleanup. Root continues independent STR integration.",
     "blocker": "Canonical fullhealth stillrunning;GitHub requires sign-in for live logs and connector download404 beforecompletion. No engineering/material/owner/installed approval inferred."
-  }
+  },
+  "releasedAt": "2026-11-21T21:09:27.345Z",
+  "releaseReason": "handoff"
 }
