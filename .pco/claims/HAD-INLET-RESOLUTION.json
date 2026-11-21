@@ -9,11 +9,11 @@
     "label": "rush-20261121-had-convergence"
   },
   "claimedAt": "2026-11-21T12:30:11.345Z",
-  "heartbeatAt": "2026-11-21T12:30:11.345Z",
-  "expiresAt": "2026-11-21T13:15:11.345Z",
+  "heartbeatAt": "2026-11-21T12:41:48.219Z",
+  "expiresAt": "2026-11-21T13:26:48.219Z",
   "checkpoint": {
-    "evidence": "Recover verifiedHAD51handoff71a7248174ef9c9dc92d4d6ae679691f1390556e/treecd1cd1e:16tests/tsc/gen/audit plus80.1jacket correction8tests pass; frozen7files. RootSTR48releasedtoassignedstructure worker; main1609merged9dbd.",
-    "next": "IntegratepreparedSTR1e3cf618+HAD71a underfreshSTR49/HAD52 jointclaims; exactCI+preflightmerge. Advancejoinedwholewetroom/newgravityreceiver/isolations withoutold101screen beinguniversalbound. NoHADcompletion."
+    "evidence": "JointPR1610 head8a97035496238a5a3a8338fa1860fb3ed3d98f1e/tree6c63de8 joinsfrozenSTR1e3/HAD71a;22fast+3nativechecks,tsc,audit15/0,13witness,repo pass. FinalSTRsavedAPI6solves4tests passed beforejoin; fullsubmittedheadCIpending. HADnotcomplete.",
+    "next": "Verifyexact1610CI/freshdualpreflightmerge; developlargerindependentgravityoutfalls/wholewetcatchmentandactualfloorrelease/mainboardisolation onSEPARATEworktree. Preserveactualstored-release,blockeduppermouth,thermalandrenewalobligations."
   },
   "branch": "work/rush-floor-inlet-convergence-20261121",
   "predecessor": {
@@ -37,5 +37,6 @@
       "next": "HANDOFF to root: acquire HAD52 from fresh main; combine frozen seven HAD files with STR followon; reconcile source account/witnesses; one exact joint-head CI and preflight",
       "blocker": "HAD OPEN:20/45reference only; Plantreceiver/storedrelease/indoorcuts/renewal/supports/52head loads/warmdrains/jet/material/owner proof unresolved. NoindependentPR or merge"
     }
-  }
+  },
+  "pr": 1610
 }
