@@ -6,6 +6,7 @@ import { sha256SemanticFingerprint } from '../../core/identity.js'
 import type { CurrentDesignResolution } from './resolve.js'
 import type { savedUpperRoofBearingCase } from './structural-upper-bearing.js'
 import { readFloorSectionCuts, recoverFloorSectionCuts, type FloorBendingField } from './structural-floor-cuts.js'
+import { readWetSupportCageDefaults, runWetSupportCageComparison, validateWetSupportCageChoices, wetSupportCageConsumerPaths, type WetSupportCageChoices } from './structural-wet-support-cage.js'
 
 const root = new URL('../../../', import.meta.url)
 const methodPath = 'project/str/studies/floor_section_model.py'
@@ -15,7 +16,7 @@ const record = (v: unknown): v is Record<string, unknown> => v !== null && typeo
 const same = (a: unknown, b: unknown) => sha256SemanticFingerprint(a) === sha256SemanticFingerprint(b)
 const finite = (v: unknown): v is number => typeof v === 'number' && Number.isFinite(v)
 const six = (v: unknown): v is number[] => Array.isArray(v) && v.length === 6 && v.every(finite)
-export const floorSectionStageFields = ['thicknessMm', 'wetSupport', 'sectionCuts'] as const
+export const floorSectionStageFields = ['thicknessMm', 'wetSupport', 'sectionCuts', 'cageComparison'] as const
 
 /** Inspect declared source centrelines; absent service envelopes never earn fit. */
 export function inspectFloorServiceRoutes(routes: readonly (readonly (readonly number[])[])[], cells: readonly (readonly number[])[], soffit: number, top: number,
@@ -91,7 +92,7 @@ function currentBinding(resolved: CurrentDesignResolution) {
     { encoding: 'utf8', maxBuffer: 8 * 1024 * 1024 })) as NativeCase
   if (comparison.schema !== 'str-coupled-floor-section-case/1' || !record(comparison.sourceSHA256)
     || Object.keys(comparison.sourceSHA256).length !== 58) throw new Error('Floor-section source contract changed; integrate explicitly')
-  const inputs = Object.fromEntries([...Object.keys(comparison.sourceSHA256), adapterPath, cutsPath].map(path => {
+  const inputs = Object.fromEntries([...Object.keys(comparison.sourceSHA256), adapterPath, cutsPath, ...wetSupportCageConsumerPaths].map(path => {
     const bytes = readFileSync(new URL(path, root))
     const blob = createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')
     if (owner.identities[path] !== blob || (Object.hasOwn(comparison.sourceSHA256, path)
@@ -103,9 +104,9 @@ function currentBinding(resolved: CurrentDesignResolution) {
 
 export function readFloorSectionCase(resolved: CurrentDesignResolution) {
   const current = currentBinding(resolved)
-  return { schema: 'str-current-floor-section-request/1' as const, design: resolved.design,
+  return { schema: 'str-current-floor-section-request/1' as const, design: resolved.design, cageComparisonDefaults: readWetSupportCageDefaults(),
     section: { schema: 'str-current-floor-section-case/1' as const, planDigest: current.planDigest,
-      bindingDigest: current.bindingDigest, comparison: current.comparison, sectionCuts: [], caseId: 'FLOOR-SECTION' } }
+      bindingDigest: current.bindingDigest, comparison: current.comparison, sectionCuts: [], cageComparison: null as WetSupportCageChoices | null, caseId: 'FLOOR-SECTION' } }
 }
 
 /** A section edit reuses the sole saved floor, frame, roof and seat inputs. */
@@ -116,13 +117,15 @@ export function savedFloorSectionCase(request: ReturnType<typeof readFloorSectio
     || (settings.wetSupport !== undefined && settings.wetSupport !== null && !record(settings.wetSupport))) {
     throw new Error('Explicit finite floor-section thickness 200..250 mm required; no duplicate floor or derived approval')
   }
-  return { ...request, caseId: upper.caseId, sectionCuts: readFloorSectionCuts(settings.sectionCuts ?? []),
+  const cageComparison = settings.cageComparison === undefined || settings.cageComparison === null ? null : validateWetSupportCageChoices(settings.cageComparison)
+  if (cageComparison && !record(settings.wetSupport)) throw new Error('An explicit actual wet support is required before selecting its cage comparison')
+  return { ...request, cageComparison, caseId: upper.caseId, sectionCuts: readFloorSectionCuts(settings.sectionCuts ?? []),
     comparison: { ...request.comparison, bearingCase: upper.comparison, thicknessMm: settings.thicknessMm, wetSupport: settings.wetSupport ?? null } }
 }
 
 export function runFloorSectionCase(resolved: CurrentDesignResolution, input: unknown) {
   const current = currentBinding(resolved)
-  if (!record(input) || !same(Object.keys(input).sort(), ['schema', 'planDigest', 'bindingDigest', 'comparison', 'sectionCuts', 'caseId'].sort())
+  if (!record(input) || !same(Object.keys(input).sort(), ['schema', 'planDigest', 'bindingDigest', 'comparison', 'sectionCuts', 'cageComparison', 'caseId'].sort())
     || input.schema !== 'str-current-floor-section-case/1' || input.planDigest !== current.planDigest || input.bindingDigest !== current.bindingDigest
     || !record(input.comparison) || !same(Object.keys(input.comparison).sort(), Object.keys(current.comparison).sort())
     || !same(input.comparison.sourceSHA256, current.comparison.sourceSHA256) || input.comparison.schema !== current.comparison.schema
@@ -130,6 +133,8 @@ export function runFloorSectionCase(resolved: CurrentDesignResolution, input: un
     throw new Error('Stale or malformed floor-section request or binding')
   }
   const sectionCuts = readFloorSectionCuts(input.sectionCuts)
+  const cageChoices = input.cageComparison === null ? null : validateWetSupportCageChoices(input.cageComparison)
+  if (cageChoices && !record(input.comparison.wetSupport)) throw new Error('An explicit actual wet support is required before selecting its cage comparison')
   const output = JSON.parse(execFileSync('python3', ['-B', fileURLToPath(new URL(methodPath, root))], {
     input: JSON.stringify({ case: input.comparison, name: input.caseId }), encoding: 'utf8', maxBuffer: 128 * 1024 * 1024,
     env: { ...process.env, OPENBLAS_NUM_THREADS: '1', OMP_NUM_THREADS: '1' },
@@ -195,13 +200,14 @@ export function runFloorSectionCase(resolved: CurrentDesignResolution, input: un
       additionalSolids.push({ id: `STR/wet-wall-support/post/${i}`, boxXYZMm: [r[0]!,r[1]!,post.physicalBottomZMm as number,r[2]!,r[3]!,post.physicalTopZMm as number] })
     }
   }
+  const cageComparison = cageChoices ? runWetSupportCageComparison(output, cageChoices) : null
   const servicePenetrations = { ...inspectFloorServiceRoutes(services.PV.DCRequiredRoutes,
     vertical.plate.cellsXYMm as number[][], 3170, section.topZMm, additionalSolids),
     sourcePath: 'project/mat/studies/whole-house-service-baseline.json', sourceObject: 'PV.DCRequiredRoutes' }
   return { status: 'computed-comparison' as const,
     source: { planDigest: current.planDigest, bindingDigest: current.bindingDigest, caseDigest: sha256SemanticFingerprint(input) },
     method: { id: 'str-current-floor-section/1', path: methodPath, inputs: current.inputs },
-    native: vertical.native, vertical, floorSection: section, upperMasonry: output.upperMasonry,
+    native: vertical.native, vertical, floorSection: section, cageComparison, upperMasonry: output.upperMasonry,
     mass: output.mass, plateBending: output.plateBending, sectionCuts: recoverFloorSectionCuts(output.plateBending as FloorBendingField, sectionCuts), floorReinforcement: output.floorReinforcement,
     roofCoupling: output.roofCoupling, ...(output.seatedWetSupport ? { seatedWetSupport: output.seatedWetSupport,
       wetBeamCutRecovery: { status: 'computed-discrete-element-cuts' as const,

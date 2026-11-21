@@ -730,7 +730,8 @@
         "project/str/studies/vertical_floor_numerics.py",
         "project/str/studies/vertical-floor-requirements.txt",
         "project/str/studies/vertical_floor_views.py",
-        "project/str/studies/vertical_rc_floor_proof.py"
+        "project/str/studies/vertical_rc_floor_proof.py",
+        "project/str/studies/finite_plate_receiver.py"
       ],
       "authoredInputs": [],
       "inputReceipts": [
@@ -794,7 +795,8 @@
         "project/str/floor-section-result.md",
         "project/str/seated-wet-support-result.md",
         "project/str/wet-receiving-grid-origin-result.md",
-        "project/str/floor-corner-convergence-result.md"
+        "project/str/floor-corner-convergence-result.md",
+        "project/str/wet-support-cage-comparison.md"
       ],
       "authorRoots": [
         "project/str/studies/masonry_frame_a.py",
@@ -816,10 +818,12 @@
         "project/str/studies/seated_wet_support.py",
         "project/str/studies/finite_mapped_frame.py",
         "project/str/studies/finite_plate_receiver.py",
-        "project/str/studies/grid_origin_recovery.py"
+        "project/str/studies/grid_origin_recovery.py",
+        "project/str/studies/wet_support_cage_comparison.py"
       ],
       "authoredInputs": [
-        "project/str/studies/floor-section-cuts-inputs.json"
+        "project/str/studies/floor-section-cuts-inputs.json",
+        "project/str/studies/wet-support-cage-comparison-settings.json"
       ],
       "inputReceipts": [
         "project/str/studies/current-house-grid.json",
@@ -895,7 +899,8 @@
         "compiler/reference-house/current-design/engineering-edit.ts",
         "project/str/studies/floor_section_proof.py",
         "compiler/reference-house/current-design/structural-floor-cuts.ts",
-        "project/str/studies/floor-section-cuts.ts"
+        "project/str/studies/floor-section-cuts.ts",
+        "compiler/reference-house/current-design/structural-wet-support-cage.ts"
       ],
       "producerChecks": [
         "node --test project/str/studies/masonry-frame-a.test.mjs",
@@ -907,7 +912,8 @@
         "node --import tsx --test compiler/reference-house/current-design-floor-penetrations.test.ts"
       ],
       "historicalInputs": [
-        "project/str/studies/seated-pre-nodal-history.json"
+        "project/str/studies/seated-pre-nodal-history.json",
+        "project/str/studies/wet-support-cage-comparison-paths.json"
       ]
     }
   ],
@@ -1651,7 +1657,7 @@
     "project/str/studies/joined_successor_kernel.py": "bbf1e80933260d0182db34d777427b68a361b2f0",
     "compiler/reference-house/current-design/structural-successor.ts": "9ae813ed40695e6e94df43caa0b45e7db54d02c4",
     "compiler/reference-house/current-design/inlet-support.ts": "a2404befdbeda6464bc9f772d25bccd8d78d2479",
-    "compiler/reference-house/current-design/engineering-document.ts": "de5296f8b17d498738d7aa7cb39552dfeddc5823",
+    "compiler/reference-house/current-design/engineering-document.ts": "00f1d4c0840e7ff3ff981ca62efb2bab7bc1d285",
     "project/had/inlet-assembly-convergence.md": "21719c69b3ec916043e53d7ae0891d5c6ce7aae5",
     "project/str/studies/floor-portal-fixed-wall-head.py": "807159aa9439837489d3e95f9bf359983635c342",
     "project/str/studies/floor-portal-north-transfer.py": "20f79473e3fd3e88351b3fa4d68ac1f1ef476d03",
@@ -1674,7 +1680,7 @@
     "project/str/studies/dry-side-ground-section.json": "5867083e33d0a1388ffb961c3f169d58f7b34987",
     "project/triad-interface-contract.md": "a82cfbf0c4a7be0f18cfed6307583e3cff3ddfe9",
     "project/str/studies/dry_side_ground_section.py": "ab7455c6b2a7f3406bed27babed2b6cbd17276e7",
-    "project/str/studies/distributed-floor-compatibility-proof.json": "2eca12a519eaa8346786d97b34449192b0100fd3",
+    "project/str/studies/distributed-floor-compatibility-proof.json": "316459810aacccc24fd29dd6c781225e31dbda92",
     "project/str/studies/perforated_floor_condensation.py": "43cd7022b8a3b9a103e4bcae31ac31435d812b85",
     "project/str/studies/distributed-floor-compatibility.svg": "ea960660b19f1a43fd65e6e00e5db601eeb4becc",
     "project/str/studies/distributed_floor_compatibility.py": "d6bb9a608a35e6bd0f5bf11f2c126c61b5709df0",
@@ -1727,7 +1733,7 @@
     "scripts/compile-current-design.ts": "7c2da179b1bdbd90e20f31151b481bc4188cf639",
     "project/str/studies/vertical_rc_floor.py": "6a3746beea7ee9cde3545ba6d67ceb295848f3b6",
     "project/str/vertical-rc-floor-gravity-result.md": "0e1e13b47a082c77ebc9d652b54b5b10a36b814d",
-    "project/str/studies/vertical-rc-floor-proof.json": "100040b267c08f2501c847750bf9202b4789ee81",
+    "project/str/studies/vertical-rc-floor-proof.json": "d064c5d3adbb927d29d0e5d500975f1bd81c9176",
     "project/str/studies/vertical_floor_views.py": "d7a071e9026343b27618668b658dd5d4c894e79b",
     "project/str/studies/vertical-floor-requirements.txt": "871c966c09f89af68c058514f0f7ecce9f1578d3",
     "project/str/studies/vertical_rc_floor_proof.py": "931d6f005da92f55922bd0976fc52e687a2a0080",
@@ -1749,7 +1755,7 @@
     "project/str/studies/masonry-frame-a-proof.json": "e52cdf3751648ae0eb46bfd2f8d9808467eb4e78",
     "project/str/studies/masonry-frame-a.svg": "95b405b9f3191a1bc0841fd6b757fa53211c4f2b",
     "project/str/studies/masonry-frame-a-floor.svg": "3f9491cbe067ede2b1468cd1cb51387ace6439c6",
-    "project/str/studies/masonry_frame_a_proof.py": "e4960bccb125072a870ca3ca3c6d077b6c64591f",
+    "project/str/studies/masonry_frame_a_proof.py": "7c5377ba77ab792c9f62219fdccbdbe06e2920a0",
     "compiler/reference-house/current-design/inlet-cabinet-copper.ts": "34d774e3ccd4ff0bac3dcaef63dfa5cdedff6ca4",
     "project/had/inlet-cabinet-copper-comparison.md": "c64671f8f841d21e4ae5ae87fa43f7480147aacd",
     "project/had/studies/inlet-cabinet-copper.ts": "933455bb9aec94932da96d9dcc9dd1cb4890b32d",
@@ -1771,7 +1777,7 @@
     "project/str/studies/roof_surface_pressure.py": "297af8c04556abae8b34a99a1faeefaac602ed48",
     "project/str/floor-live-load-result.md": "642433ba6f4c42de8dde2fb48a24ab0bad411248",
     "project/str/studies/straight-frame-cage-proof.json": "5aa3c6b187a388026d8052d3097bae892093ba39",
-    "project/str/studies/lower-core-bodies-proof.json": "92530e89a9979101c3247fe310610190afb4067a",
+    "project/str/studies/lower-core-bodies-proof.json": "eab32c680ff32aea3b571eac661e8e1ff938e9f9",
     "project/str/studies/masonry-frame-a-roof.svg": "def19673bfd27b7dbf382b5eb3382b9574194d1d",
     "project/str/studies/roof-surface-pressure.svg": "04421dfc9229f79296bc0120c69d7c769e138178",
     "project/str/studies/roof_surface_pressure_proof.py": "c6de2ceb21f113e4672d870f3512754318b99c23",
@@ -1781,10 +1787,10 @@
     "project/had/inlet-source-and-room-decision.md": "db8a94d12636eff3a9f840649d7b2599c90faccb",
     "project/had/studies/inlet-source-envelope.results.json": "c7a9de1842f1879bcb790d9e9a57683d9bb0a433",
     "project/had/studies/inlet-source-envelope.svg": "7ac35380ad6f7536b8bb6151df012ab6bdd387c9",
-    "compiler/reference-house/current-design/engineering-edit.ts": "6fe88b1d89b5eb56dc045a58c39eff1501bc7f34",
+    "compiler/reference-house/current-design/engineering-edit.ts": "839554bab04bb25a9d11db25ed5ea7eb05908fa2",
     "project/ade/browser-editor/engineering-api.ts": "2db0efb4e3cdb698009b69cc7fa9ff80389f1158",
     "project/ade/browser-editor/engineering-editor.ts": "cb109c701742575cc1bae5b5122eb2ee750a4a8f",
-    "compiler/reference-house/current-design/structural-upper-bearing.ts": "2f6a3260598b9d74ece2b3b4a75d234e64705b9f",
+    "compiler/reference-house/current-design/structural-upper-bearing.ts": "6a00ab6cfc80888a76de7959ecbd0d2e52e15ddf",
     "project/str/studies/named_plate_load.py": "bb85eb7836d4ff1bccff91729a31112ac1f961cb",
     "project/str/studies/roof_bearing_trace.py": "09aa8236bfedee0289dcdf0a5a275b9e1ec646ef",
     "project/str/studies/upper-roof-bearing-proof.json": "1124528dbdcd6216189352987316aef78a7415e6",
@@ -1796,8 +1802,8 @@
     "project/str/studies/floor_section_model.py": "f3cdbbf118b0d5d064c3f6564786de770b5ffd88",
     "project/str/studies/floor_section_successor.py": "3351c9ba6a3f248d7e9bfed65a548394cefbadb3",
     "project/str/floor-section-result.md": "af964cd29bc789b43dae08845373a4c07e0fa22b",
-    "compiler/reference-house/current-design/structural-floor-section.ts": "a88f1ed4f8474c382fc7c44110409d1edbffb882",
-    "project/str/studies/floor_section_proof.py": "c83a72a1453b7a4f40dd966cf5d8374ba75e5128",
+    "compiler/reference-house/current-design/structural-floor-section.ts": "67c509940e7d3777ef110b24f0a752831f6924a2",
+    "project/str/studies/floor_section_proof.py": "cd976d86af435eb78942da473c481cd9dded6eb6",
     "project/str/studies/floor-section-proof.json": "c66c790bbcd0a9a67876cbe8a3d51ca05c33503c",
     "project/str/studies/floor-section-250.svg": "b9743f51fd2b5eca6f8d6749c1134415f44a67c1",
     "project/str/seated-wet-support-result.md": "c0e30ccd2c7b74136bb4851c77100dc61905f24b",
@@ -1815,6 +1821,11 @@
     "compiler/reference-house/current-design/inlet-electrical-screen.ts": "af15dc6e80e9896151875a0e8723cec4f3451440",
     "project/str/studies/grid_origin_recovery.py": "c09369bc1acbaaa9438545fb12e0a4e15f1a90b7",
     "project/str/floor-corner-convergence-result.md": "7634ede678c760a4091c88a604c4ade440f9c0d8",
-    "project/str/wet-receiving-grid-origin-result.md": "fcabd7dad45ab1526cf86e57e19224c9fe08d20e"
+    "project/str/wet-receiving-grid-origin-result.md": "fcabd7dad45ab1526cf86e57e19224c9fe08d20e",
+    "project/str/studies/wet_support_cage_comparison.py": "df065621b1d471ceef47ee1317272a6cb203ed34",
+    "project/str/studies/wet-support-cage-comparison-settings.json": "a856a5a869b417eb4392baaec027166967711bf1",
+    "compiler/reference-house/current-design/structural-wet-support-cage.ts": "886cbbeeccdb52032778eff0e8c91ed54abbf810",
+    "project/str/wet-support-cage-comparison.md": "8cb659a1d6e5c7745e9335ab7f5e94c551bdc9f1",
+    "project/str/studies/wet-support-cage-comparison-paths.json": "b7956df5103bdf008a73f218f8570cdacb6f7199"
   }
 }

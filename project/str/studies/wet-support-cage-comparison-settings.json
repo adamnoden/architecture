@@ -1,0 +1,50 @@
+{
+  "schema": "str-wet-support-cage-comparison/1",
+  "mainDiameterMm": 12.0,
+  "beamMainFaceMm": 69.0,
+  "beamNormalMainFaceMm": 75.0,
+  "postMainFaceMm": 72.0,
+  "beamReturnMandrelMm": 200.0,
+  "topLapLengthMm": 960.0,
+  "topLapVerticalSeparationMm": 44.0,
+  "topLapIntervalsYMm": [
+    [
+      9150.0,
+      10110.0
+    ],
+    [
+      10280.0,
+      11240.0
+    ]
+  ],
+  "lapRampSlope": 0.16666666666666666,
+  "linkDiameterMm": 8.0,
+  "linkMandrelMm": 32.0,
+  "linkNominalCoverMm": 47.0,
+  "linkPitchMm": 100.0,
+  "linkHookTailMm": 80.0,
+  "beamLinkReturnOffsetFromTangentMm": 30.0,
+  "linkHookPlaneOffsetMm": 6.0,
+  "linkPlaneJogRunMm": 60.0,
+  "linkClosureMandrelMm": 40.0,
+  "postCrossTiePlaneOffsetMm": 18.0,
+  "cageInstallationToleranceMm": 5.0,
+  "mainRelativePositionToleranceMm": 5.0,
+  "linkFabricationToleranceMm": 1.0,
+  "minimumConcreteCoverMm": 40.0,
+  "minimumIndependentMainClearMm": 21.0,
+  "postTopEndInsetMm": 56.0,
+  "postStraightGridEndZMm": -680.0,
+  "northShortGridBendStartZMm": -480.0,
+  "northShortGridTailMm": 160.0,
+  "northShortGridOutwardAngleDeg": 30.0,
+  "plainConcreteWeightKNPerM3": 24.0,
+  "steelWeightKNPerM3": 78.5,
+  "comparisonSteelMassDensityKgPerM3": 7850.0,
+  "sourceSteelYieldMPa": 434.7826086956522,
+  "comparisonSteelFraction": 0.92,
+  "sourceGoodBondMPa": 3.0,
+  "sourcePoorBondMPa": 2.1,
+  "sourceConcreteCompressionMPa": 17.0,
+  "curveChordErrorMm": 0.01
+}

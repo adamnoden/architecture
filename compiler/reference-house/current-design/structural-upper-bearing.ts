@@ -84,7 +84,7 @@ export function runUpperRoofBearingCase(resolved: CurrentDesignResolution, input
   const grid = JSON.parse(readFileSync(new URL('project/str/studies/current-house-grid.json', root), 'utf8')) as { heads: { id: string }[] }
   if (output.schema !== 'str-upper-masonry-roof-bearing-result/1' || !same(output.sourceSHA256, current.comparison.sourceSHA256)
       || !same(output.request, input.comparison) || !record(vertical) || !record(vertical.native)
-      || vertical.native.caseId !== input.caseId || !Array.isArray(vertical.native.heads) || vertical.native.heads.length !== 53
+      || vertical.native.caseId !== input.caseId || !Array.isArray(vertical.native.heads) || vertical.native.heads.length !== 52
       || new Set(vertical.native.heads.map(row => row.id)).size !== 52
       || grid.heads.some(row => !vertical.native.heads.some(head => head.id === row.id))
       || vertical.native.heads.some(row => !six(row.reactionKN_KNm))

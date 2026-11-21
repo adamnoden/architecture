@@ -34,8 +34,10 @@ def cases(source):
     adverse['bearingCase']['roofControls']['roofSurfacePressure']=pressure
     roof3=copy.deepcopy(refined);roof3_pressure=copy.deepcopy(pressure);roof3_pressure['uniformKPa']=3.
     roof3['bearingCase']['roofControls']['roofSurfacePressure']=roof3_pressure
+    aligned8=copy.deepcopy(wet);aligned8['wetSupport']['bearingQuadratureOrder']=8
+    concrete27=copy.deepcopy(aligned8);concrete27['wetSupport']['concreteUnitWeightKNPerM3']=27.
     return [('current200',base),('matched200-G135-Q2-rho27',heavy),('matched250-G135-Q2-rho27',deep),
-        ('wet-aligned-G135-Q2-rho27',wet),('wet-south-pad-north160',shifted),('wet-shifted-quadrature8',refined),('wet-zeroG-roof-suction',adverse),('wet-heavy-roof3',roof3),('restored200',copy.deepcopy(base))]
+        ('wet-aligned-G135-Q2-rho27',wet),('wet-south-pad-north160',shifted),('wet-shifted-quadrature8',refined),('wet-zeroG-roof-suction',adverse),('wet-heavy-roof3',roof3),('wet-aligned-quadrature8',aligned8),('wet-aligned-concrete27',concrete27),('restored200',copy.deepcopy(base))]
 
 
 def summarize(result):
@@ -81,6 +83,16 @@ def check(proof,source):
         elif grid.get('memberCuts') or grid.get('interiorMemberCuts') or not grid.get('diagnostics'):
             raise ValueError('Unclosed grid recovery emitted unsupported physical cuts')
         if any(c['normalCompressionKN'] < -1e-7 for c in support['contactFibres']):raise ValueError('Wet pad carried tension')
+    by_name={r['nativeCaseId']:r for r in rows}
+    light,heavy=by_name['wet-aligned-quadrature8'],by_name['wet-aligned-concrete27']
+    support=light['seatedWetSupport'];setting=support['settings']
+    volume=setting['beamWidthMm']*setting['beamDepthMm']*(setting['beamNorthEndYMm']-setting['beamSouthEndYMm'])/1e9
+    volume+=sum((p['rectangleXYMm'][2]-p['rectangleXYMm'][0])*(p['rectangleXYMm'][3]-p['rectangleXYMm'][1])*(p['physicalTopZMm']-p['physicalBottomZMm'])/1e9 for p in support['posts'])
+    expected_delta=2*volume
+    actual_delta=heavy['mass']['joinedPhysicalGKN']-light['mass']['joinedPhysicalGKN']
+    if abs(actual_delta-expected_delta)>1e-6:raise ValueError('Wet concrete mass edit did not change actual complete beam/post source volume once')
+    proof['wetConcrete25To27CharacteristicGDeltaKN']=actual_delta
+    proof['wetConcrete25To27GeometryVolumeM3']=volume
     p4={h['id']:h['reactionKN_KNm'] for h in rows[4]['heads']}
     difference=max(abs(a-b) for h in rows[5]['heads'] for a,b in zip(h['reactionKN_KNm'],p4[h['id']]))
     proof['wetBearing4To8Maximum312ComponentDifferenceKN_KNm']=difference

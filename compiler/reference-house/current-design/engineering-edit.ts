@@ -23,6 +23,7 @@ export interface EngineeringTicket {
 export const editableRoofId = 'MAT/ring-roof-field'
 export const editableFloorSectionId = 'STR/current-floor-section'
 export const editableWetSupportId = 'STR/wet-wall-support'
+export const editableWetCageId = 'STR/wet-wall-support/reinforcement'
 function record(input: unknown): input is Record<string, unknown> {
   return input !== null && typeof input === 'object' && Object.getPrototypeOf(input) === Object.prototype
 }
@@ -74,7 +75,7 @@ export function applyEngineeringEdit(state: EngineeringEditorState, transaction:
       if (transaction.units !== 'mm' || !exact(operation, ['kind', 'assemblyId', 'thicknessMm'])
         || operation.assemblyId !== editableFloorSectionId || typeof operation.thicknessMm !== 'number'
         || !Number.isFinite(operation.thicknessMm) || operation.thicknessMm < 200 || operation.thicknessMm > 250
-        || !record(current) || Object.keys(current).some(key => !['thicknessMm', 'wetSupport', 'sectionCuts'].includes(key)) || typeof current.thicknessMm !== 'number'
+        || !record(current) || Object.keys(current).some(key => !['thicknessMm', 'wetSupport', 'sectionCuts', 'cageComparison'].includes(key)) || typeof current.thicknessMm !== 'number'
         || (current.wetSupport !== undefined && current.wetSupport !== null && operation.thicknessMm !== 200)) {
         throw new TypeError('An existing explicit STR/current-floor-section with supported thickness 200..250 mm is required')
       }
@@ -91,6 +92,19 @@ export function applyEngineeringEdit(state: EngineeringEditorState, transaction:
       const changed = readFloorSectionCuts(cuts.map((cut,i) => i === index ? { ...cut, positionMm: operation.positionMm, intervalMm: operation.intervalMm } : cut))
       if (JSON.stringify(changed) === JSON.stringify(cuts)) return { status: 'applied', state }
       stages = { ...state.document.stages, floorSection: { ...current, sectionCuts: changed } }
+    } else if (record(operation) && operation.kind === 'set-wet-cage-hook-tail') {
+      const current = state.document.stages.floorSection
+      if (transaction.units !== 'mm' || !exact(operation, ['kind', 'assemblyId', 'linkHookTailMm'])
+        || operation.assemblyId !== editableWetCageId || typeof operation.linkHookTailMm !== 'number'
+        || !Number.isFinite(operation.linkHookTailMm) || operation.linkHookTailMm < 80 || operation.linkHookTailMm > 120
+        || !record(current) || current.thicknessMm !== 200 || !record(current.wetSupport) || !record(current.cageComparison)
+        || current.cageComparison.schema !== 'str-wet-support-cage-comparison/1'
+        || typeof current.cageComparison.linkHookTailMm !== 'number' || !Number.isFinite(current.cageComparison.linkHookTailMm)) {
+        throw new TypeError('An existing explicit STR/wet-wall-support/reinforcement comparison and hook tail80..120mm are required')
+      }
+      if (operation.linkHookTailMm === current.cageComparison.linkHookTailMm) return { status: 'applied', state }
+      stages = { ...state.document.stages, floorSection: { ...current,
+        cageComparison: { ...current.cageComparison, linkHookTailMm: operation.linkHookTailMm } } }
     } else if (record(operation) && operation.kind === 'set-wet-bearing-offset') {
       const current = state.document.stages.floorSection
       if (transaction.units !== 'mm' || !exact(operation, ['kind', 'assemblyId', 'receiverId', 'offsetMm'])

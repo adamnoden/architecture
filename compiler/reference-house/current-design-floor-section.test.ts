@@ -8,6 +8,7 @@ import { beginEngineeringEdit, applyEngineeringEdit, replayEngineeringEdit, save
 import { readGeorgianDesignSnapshot } from './current-design/georgian-source.js'
 import { readCurrentDesignResolution } from './current-design/resolve.js'
 import { readFloorSectionCase, runFloorSectionCase } from './current-design/structural-floor-section.js'
+import { readWetSupportCageDefaults } from './current-design/structural-wet-support-cage.js'
 
 const predecessor = JSON.parse(readFileSync(new URL('../../project/str/studies/masonry-frame-a-proof.json', import.meta.url), 'utf8'))
 const numerical = predecessor.authoredNumericalCase
@@ -114,10 +115,21 @@ test('the saved wet support runs the same coupled52head case and recovers discre
   const proof=JSON.parse(readFileSync(new URL('../../project/str/studies/floor-section-proof.json',import.meta.url),'utf8'))
   const control=proof.controls.find((row:{nativeCaseId:string})=>row.nativeCaseId==='wet-aligned-G135-Q2-rho27')
   const bundle=await compileEngineeringDocument({...source,stages:{...stages,
-    roofPitch:source.stages.roofPitch,floorSection:{thicknessMm:200,wetSupport:control.executedRequest.wetSupport}}})
+    roofPitch:source.stages.roofPitch,floorSection:{thicknessMm:200,wetSupport:control.executedRequest.wetSupport,cageComparison:readWetSupportCageDefaults()}}})
   const result=bundle.engineering.floorSection!
   const expected=new Map<string,number[]>(control.heads.map((row:{id:string;reactionKN_KNm:number[]})=>[row.id,row.reactionKN_KNm]))
   for(const row of result.native.heads) for(let i=0;i<6;i++) assert.ok(Math.abs(row.reactionKN_KNm[i]!-expected.get(row.id)![i]!)<1e-6)
+  assert.ok(result.cageComparison)
+  assert.equal(result.cageComparison.nativeCaseId,result.native.caseId)
+  assert.equal(Object.keys(result.cageComparison.nativeSourceSHA256).length,58)
+  assert.equal(result.cageComparison.source.rawGridIdentityVerified,true)
+  assert.equal(result.cageComparison.geometry.independentPathFailureCount,0)
+  assert.equal(result.cageComparison.geometry.internalClosureFailureCount,0)
+  assert.equal(result.cageComparison.geometry.coverFailureCount,0)
+  assert.equal(result.cageComparison.evidence.cageAccepted,false)
+  assert.equal(result.cageComparison.evidence.massFeedbackApplied,false)
+  assert.ok(bundle.coordinationDiagnostics.some(row=>row.code==='WET_SUPPORT_CAGE_MASS_NOT_COUPLED'))
+  assert.ok(bundle.coordinationDiagnostics.some(row=>row.code==='WET_SUPPORT_CAGE_NOT_ADOPTED'))
   assert.equal(result.floorSection.finishStairServiceEvidenceApplicable,false)
   assert.equal(result.wetBeamCutRecovery!.physicalBeamCutsAvailable,true)
   assert.equal(result.wetBeamCutRecovery!.completeBeamDemandEnvelopeAvailable,false)

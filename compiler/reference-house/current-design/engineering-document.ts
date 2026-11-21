@@ -264,7 +264,7 @@ export async function compileEngineeringDocument(input: unknown) {
   const manifest: { stage: string; settingsDigest: string; resultDigest: string; controls: readonly string[]; dependsOn: readonly string[];
     applicability?: { state: 'withheld-for-stage-change'; controllingStage: 'roofPitch' | 'groundSection' | 'joinedRcFloor' | 'verticalRcFloor' | 'masonryFrame' | 'upperRoofBearing' | 'floorSection' | 'inletCabinet' | 'inletSourceEnvelope';
       additionalControllingStages?: readonly string[]; reason: string } }[] = []
-  const coordinationDiagnostics: { code: string; state: 'uncoordinated-comparisons'; stages: readonly string[]; message: string }[] = []
+  const coordinationDiagnostics: { code: string; objectId?: string; state: 'uncoordinated-comparisons'; stages: readonly string[]; message: string }[] = []
   const recordResult = (stage: string, settings: unknown, result: unknown, upstream: readonly string[] = []) => {
     manifest.push({ stage, settingsDigest: sha256SemanticFingerprint(settings), resultDigest: sha256SemanticFingerprint(result),
       controls: object(settings) && Object.keys(settings).length ? Object.keys(settings).sort().map(key => `stages.${stage}.${key}`) : ['design'],
@@ -566,6 +566,9 @@ export async function compileEngineeringDocument(input: unknown) {
       stages: ['floorSection'], message: 'STR/wet-wall-support: '+engineering.floorSection.wetBeamCutRecovery.scope })
     if (engineering.floorSection.wetGridCutRecovery) coordinationDiagnostics.push({ code: 'WET_GRID_COMPLETE_ENVELOPE_UNAVAILABLE', state: 'uncoordinated-comparisons',
       stages: ['floorSection'], message: 'STR/wet-wall-support/grid: '+engineering.floorSection.wetGridCutRecovery.scope })
+    if (engineering.floorSection.cageComparison) coordinationDiagnostics.push(...engineering.floorSection.cageComparison.diagnostics.map(row => ({
+      ...row, stages: ['floorSection'],
+    })))
     for (const conflict of engineering.floorSection.servicePenetrations.conflicts) {
       coordinationDiagnostics.push({ code: 'UNQUALIFIED_SERVICE_PENETRATION', state: 'uncoordinated-comparisons',
         stages: ['floorSection', 'occupiedServices'],
