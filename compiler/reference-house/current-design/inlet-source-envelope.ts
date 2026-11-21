@@ -2,6 +2,8 @@ import { readFileSync } from 'node:fs'
 import { createHash } from 'node:crypto'
 import { sha256SemanticFingerprint } from '../../core/identity.js'
 import type { CurrentDesignResolution } from './resolve.js'
+import type { runGroundSectionCase } from './structural-ground.js'
+import { runInletRoomCatchment } from './inlet-room-catchment.js'
 import { readBoundOccupiedServices } from './occupied-services.js'
 import { inletCabinetProductFacts } from './inlet-cabinet-copper.js'
 import { criticalHalfRoundFlow, receiverWeirHeadMm, reliefEntranceHeadMm, solveHalfRoundRelief,
@@ -9,17 +11,20 @@ import { criticalHalfRoundFlow, receiverWeirHeadMm, reliefEntranceHeadMm, solveH
 
 export const inletSourceEnvelopeFields = ['utilityApertureNominalMm', 'plantApertureNominalMm', 'apertureToleranceMm', 'sourceMaximumTotalBar',
   'sourceMinimumDynamicBar', 'requiredUtilityLmin', 'requiredPlantLmin', 'requiredResidualBar', 'utilityNetworkLossBar', 'plantNetworkLossBar',
-  'dischargeCoefficientComparison', 'pressureRecoveryFractionComparison', 'atmosphericMinimumBar', 'atmosphericMaximumBar', 'mainboardNorthOffsetMm', 'plantTransferZMm'] as const
+  'dischargeCoefficientComparison', 'pressureRecoveryFractionComparison', 'atmosphericMinimumBar', 'atmosphericMaximumBar', 'mainboardNorthOffsetMm', 'plantTransferZMm', 'catchmentClearWidthMm', 'catchmentClearHeightMm',
+  'catchmentInvertAboveDistributionMm', 'catchmentReceiverWidthMm', 'catchmentReceiverCrestAboveGradeMm'] as const
 export type InletSourceEnvelopeSettings = Readonly<Record<typeof inletSourceEnvelopeFields[number], number>>
 export const readInletSourceEnvelopeSettings = (): InletSourceEnvelopeSettings => ({ utilityApertureNominalMm: 6.5, plantApertureNominalMm: 10.2,
   apertureToleranceMm: .1, sourceMaximumTotalBar: 9, sourceMinimumDynamicBar: 3.5, requiredUtilityLmin: 20, requiredPlantLmin: 45,
   requiredResidualBar: 1, utilityNetworkLossBar: .5, plantNetworkLossBar: 1, dischargeCoefficientComparison: .55,
-  pressureRecoveryFractionComparison: 0, atmosphericMinimumBar: .9, atmosphericMaximumBar: 1.1, mainboardNorthOffsetMm: 0, plantTransferZMm: 2235 })
+  pressureRecoveryFractionComparison: 0, atmosphericMinimumBar: .9, atmosphericMaximumBar: 1.1, mainboardNorthOffsetMm: 0, plantTransferZMm: 2235, catchmentClearWidthMm: 400, catchmentClearHeightMm: 150,
+  catchmentInvertAboveDistributionMm: 60, catchmentReceiverWidthMm: 400, catchmentReceiverCrestAboveGradeMm: 0 })
 const paths = ['project/had/studies/south-inlet-under-sill.json', 'project/had/studies/south-inlet-wet-box.json',
   'project/had/studies/south-inlet-relief.json', 'project/had/studies/south-utility-inlet.json',
   'project/had/studies/current-house-services.json', 'project/mat/studies/whole-house-service-baseline.json',
   'project/ias/studies/utility-first-release.json', 'project/had/studies/boundary-service-lodge.json'] as const
 const methodPaths = ['compiler/reference-house/current-design/inlet-source-envelope.ts',
+  'compiler/reference-house/current-design/inlet-room-catchment.ts',
   'project/had/studies/south-inlet-relief-hydraulics.mjs',
   'compiler/reference-house/current-design/inlet-cabinet-copper.ts'] as const
 const blob = (bytes: Buffer) => createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')
@@ -49,7 +54,7 @@ function binding(resolved: CurrentDesignResolution) {
 export function readInletSourceEnvelopeCase(resolved: CurrentDesignResolution) {
   const b = binding(resolved)
   return { schema: 'had-inlet-source-envelope-request/1' as const, design: resolved.design,
-    sourceEnvelope: { schema: 'had-inlet-source-envelope-case/2' as const, planDigest: b.planDigest,
+    sourceEnvelope: { schema: 'had-inlet-source-envelope-case/3' as const, planDigest: b.planDigest,
       bindingDigest: b.bindingDigest, settings: readInletSourceEnvelopeSettings() } }
 }
 function settings(value: unknown): InletSourceEnvelopeSettings {
@@ -62,18 +67,23 @@ function settings(value: unknown): InletSourceEnvelopeSettings {
     || s.sourceMinimumDynamicBar <= 0 || s.sourceMinimumDynamicBar > s.sourceMaximumTotalBar || [s.requiredUtilityLmin, s.requiredPlantLmin].some(q => q <= 0 || q > 90) || s.requiredResidualBar < 0 || s.utilityNetworkLossBar < 0 || s.plantNetworkLossBar < 0
     || s.dischargeCoefficientComparison <= 0 || s.dischargeCoefficientComparison > 1 || s.pressureRecoveryFractionComparison < 0 || s.pressureRecoveryFractionComparison > 1
     || s.mainboardNorthOffsetMm < -100 || s.mainboardNorthOffsetMm > 400 || s.plantTransferZMm < 2100 || s.plantTransferZMm > 2600
+    || s.catchmentClearWidthMm < 150 || s.catchmentClearWidthMm > 450 || s.catchmentClearHeightMm < 60 || s.catchmentClearHeightMm > 250
+    || s.catchmentInvertAboveDistributionMm < 30 || s.catchmentInvertAboveDistributionMm > 200
+    || s.catchmentReceiverWidthMm < 300 || s.catchmentReceiverWidthMm > 800 || s.catchmentReceiverCrestAboveGradeMm < -500 || s.catchmentReceiverCrestAboveGradeMm > 1000
     || s.requiredUtilityLmin < 18 || s.requiredPlantLmin < 44 || s.atmosphericMinimumBar < .5 || s.atmosphericMaximumBar > 1.5 || s.atmosphericMinimumBar > s.atmosphericMaximumBar) throw new Error('Inlet source settings exceed the comparison domain')
   return s
 }
 
-export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, input: unknown) {
+export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, input: unknown, ground?: ReturnType<typeof runGroundSectionCase>) {
   const b = binding(resolved)
   if (!input || typeof input !== 'object' || Array.isArray(input)
     || Object.keys(input).length !== 4 || !['schema', 'planDigest', 'bindingDigest', 'settings'].every(key => Object.hasOwn(input, key))) throw new Error('Versioned source-bound inlet source-envelope case required')
   const v = input as Record<string, unknown>
-  if (v.schema !== 'had-inlet-source-envelope-case/2' || v.planDigest !== b.planDigest || v.bindingDigest !== b.bindingDigest) throw new Error('Stale inlet source-envelope source, design or method')
+  if (v.schema !== 'had-inlet-source-envelope-case/3' || v.planDigest !== b.planDigest || v.bindingDigest !== b.bindingDigest) throw new Error('Stale inlet source-envelope source, design or method')
   const s = settings(v.settings), native = b.data[paths[0]], wet = b.data[paths[1]], relief = b.data[paths[2]], inlet = b.data[paths[3]], services = b.data[paths[4]]
-  const absoluteMaximumBar = s.sourceMaximumTotalBar + s.atmosphericMaximumBar
+  const groundDatumLiftMm = ground?.native.levelsMm.ffl ?? 0, groundDatumLiftBar = groundDatumLiftMm * 9.80665e-5,
+    deliveryAtRoomDatumBar = s.sourceMinimumDynamicBar - groundDatumLiftBar,
+    absoluteMaximumBar = s.sourceMaximumTotalBar + s.atmosphericMaximumBar + Math.max(0, -groundDatumLiftBar)
   const fullBoreMm = inletCabinetProductFacts.pipe.maximumOuterDiameterIncludingOvalityMm - 2 * inletCabinetProductFacts.pipe.minimumWallMm
   type Point = readonly [number, number, number]
   type Branch = { id: string; coordinates: readonly Point[]; bores: readonly { inner: Point; outer: Point; radius: number }[] }
@@ -89,13 +99,13 @@ export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, in
   // the smallest bore and an explicitly unqualified Cd comparison; these are different bounds.
     const throatDynamicBar = .5 * 1000 * (requiredLmin / 60000 / (s.dischargeCoefficientComparison * Math.PI * (minimumDiameterMm / 1000) ** 2 / 4)) ** 2 / 1e5
   const pressureLossBar = (1 - s.pressureRecoveryFractionComparison) * throatDynamicBar
-  const throatAbsoluteBar = s.sourceMinimumDynamicBar + s.atmosphericMinimumBar - throatDynamicBar
-  const residualBar = s.sourceMinimumDynamicBar - pressureLossBar - networkLossBar
-  const availableRestrictionBar = s.sourceMinimumDynamicBar - s.requiredResidualBar - networkLossBar
+  const throatAbsoluteBar = deliveryAtRoomDatumBar + s.atmosphericMinimumBar - throatDynamicBar
+  const residualBar = deliveryAtRoomDatumBar - pressureLossBar - networkLossBar
+  const availableRestrictionBar = deliveryAtRoomDatumBar - s.requiredResidualBar - networkLossBar
   const deliveryDiameter = (cd: number) => availableRestrictionBar >= 0
     && (availableRestrictionBar > 0 || s.pressureRecoveryFractionComparison === 1) ? Math.max(
     s.pressureRecoveryFractionComparison === 1 ? 0 : diameter(requiredLmin, availableRestrictionBar / (1 - s.pressureRecoveryFractionComparison), cd, 1000),
-    diameter(requiredLmin, s.sourceMinimumDynamicBar + s.atmosphericMinimumBar, cd, 1000)) : null
+    diameter(requiredLmin, deliveryAtRoomDatumBar + s.atmosphericMinimumBar, cd, 1000)) : null
   const minimumDeliveryDiameterMm = deliveryDiameter(s.dischargeCoefficientComparison)
   const optimisticDeliveryDiameterMm = deliveryDiameter(1)
     const cell = wet.branches.find((item: any) => item.id === branch.id), lower = branch.bores[1], receiver = cell.case.exteriorReceiver
@@ -125,7 +135,7 @@ export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, in
       `SERVICEHUB/${branch.id}/independent indoor house cut`, `${branch.id}/supported upper network and local appliance cuts`],
       sourceEntryAxisMm: branch.coordinates[1], retainedUpperDestinationMm: branch.coordinates.at(-1),
       internalHouseCut: { required: true, suppliedByLodge: false, suppliedByApplianceStop: false, location: 'unresolved-internal-wet-service-hub', usableOrdinaryAccessProved: false },
-      maximumLimitedEachLmin: round(maximumEachLmin), requiredDeliveryEachLmin: requiredLmin, apertureNominalMm: nominalMm, apertureToleranceMm: s.apertureToleranceMm, minimumDiameterMm, maximumDiameterMm, additionalNetworkLossBar: networkLossBar,
+      maximumLimitedEachLmin: round(maximumEachLmin), requiredDeliveryEachLmin: requiredLmin, apertureNominalMm: nominalMm, apertureToleranceMm: s.apertureToleranceMm, minimumDiameterMm, maximumDiameterMm, additionalNetworkLossBar: networkLossBar, additionalGroundDatumLiftMm: groundDatumLiftMm, additionalGroundDatumLiftBar: round(groundDatumLiftBar),
       pressureLossComparisonBar: round(pressureLossBar), residualPressureComparisonBar: round(residualBar),
       throatAbsolutePressureComparisonBar: round(throatAbsoluteBar), nonnegativeThroatPressureScreen: throatAbsoluteBar >= 0,
       minimumResidualScreen: residualBar >= s.requiredResidualBar && throatAbsoluteBar >= 0, dischargeCoefficientQualified: false,
@@ -138,12 +148,15 @@ export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, in
         optimisticCdOneMinimumForDelivery: optimisticDeliveryDiameterMm === null ? null : round(optimisticDeliveryDiameterMm + s.apertureToleranceMm),
         optimisticCdOneIntervalExists: optimisticDeliveryDiameterMm !== null && optimisticDeliveryDiameterMm + s.apertureToleranceMm <= nominalMaximumMm,
         verdict: intervalExists ? 'necessary-hydraulic-interval-only' : 'reject-existing-receiver-plus-demand-envelope' },
-      minimumSourceDynamicBarForExistingReceiverComparison: round(Math.max(s.requiredResidualBar + networkLossBar
+      minimumSourceDynamicBarForExistingReceiverComparison: round(groundDatumLiftBar + Math.max(s.requiredResidualBar + networkLossBar
         + (1 - s.pressureRecoveryFractionComparison) * .5 * 1000 * (requiredLmin / 60000 / (s.dischargeCoefficientComparison * Math.PI * ((maximumContainmentDiameterMm - 2 * s.apertureToleranceMm) / 1000) ** 2 / 4)) ** 2 / 1e5,
         .5 * 1000 * (requiredLmin / 60000 / (s.dischargeCoefficientComparison * Math.PI * ((maximumContainmentDiameterMm - 2 * s.apertureToleranceMm) / 1000) ** 2 / 4)) ** 2 / 1e5 - s.atmosphericMinimumBar)) }
   })
   const maximumCombinedLmin = round(branches.reduce((total, branch) => total + branch.maximumLimitedEachLmin, 0))
-    const joinedDirection = joinedServiceDirection(b, s, branches)
+    const joinedDirection = joinedServiceDirection(b, s, branches),
+    roomCatchment = runInletRoomCatchment(resolved, ground, maximumCombinedLmin, { planMm: joinedDirection.room.wetUtilityPlanMm,
+      rawWindowXMm: joinedDirection.room.southWindowOpeningXMm, retainedFurniture: joinedDirection.room.retainedFurniture,
+      northOpeningXMm: joinedDirection.room.northOpeningXMm, purgeBodyMm: joinedDirection.room.purge.body, wallFacesYMm: [native.branches[0].bores[0].outer[1], native.branches[0].bores[0].inner[1]] }, s)
   const states = [
     { id: 'plant-stored-water-backflow', sourceFed: false, eachLmin: null, result: 'actual-factory-release-model-required', obligation: 'Catalogue/minimum litres are not maximum inventory. Model actual store/expansion/upper-pipe pressure, nonreturn and anti-vacuum states; the Lodge aperture does not bound this release.' },
     { id: 'utility-crossfeed-from-plant', sourceFed: true, eachLmin: null, result: 'retire-cold-link-and-separate-pillar-taps', obligation: 'Retire the original Plant-fed Utility cold link and exclude mixer crossconnection using actual independent air-gapped taps. No invented nonreturn protection.' },
@@ -162,7 +175,7 @@ export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, in
     { id: 'wall-spool-renewal-inward-and-outward', sourceFed: false, eachLmin: 0, result: 'retained-pan-inward-conflict-not-discharged', obligation: 'The prior permanent-pan and ordinary operator/tool/rest conflicts remain. New room geometry must prove both actual extraction directions or explicitly reject one with a complete ordinary alternative.' },
     { id: 'frost-or-loss-of-warmth', sourceFed: false, eachLmin: null, result: 'whole-route-thermal-proof-required', obligation: 'Restriction, Lodge, spool and room drains must stay serviceable through the declared cold event. Permanent open spill slots do not establish a warm enclosure; no trace heating, antifreeze or moving flap is invented.' },
   ]
-  const result = { schema: 'had-inlet-source-envelope-result/2' as const, state: 'existing-whole-arrangement-rejected' as const,
+  const result = { schema: 'had-inlet-source-envelope-result/3' as const, state: 'existing-whole-arrangement-rejected' as const,
     source: { planDigest: b.planDigest, bindingDigest: b.bindingDigest, inputs: b.inputs, methods: b.methods }, settings: s,
     bound: { method: 'Incompressible energy comparison Q<=A sqrt(2 p_total_absolute/rho), Cd<=1, local pressure>=0absolute; recovery/cavitation qualification remains required.',
       maximumAbsoluteTotalBar: absoluteMaximumBar, minimumThroatAbsoluteBarForUpperBound: 0,
@@ -171,7 +184,9 @@ export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, in
       maximumPressureIncludesStaticDynamicElevationAndTransientHead: true, installedSourceMaximumProved: false,
       pressureRecoveryFractionIsAuthoredComparisonNotProductEvidence: true,
       maximumCombinedLmin, branchMaximumsLmin: Object.fromEntries(branches.map(branch => [branch.id, branch.maximumLimitedEachLmin])),
-      sourceMinimumIsAtSimultaneousDemand: true, deliveryCdIsComparisonNotGuaranteedLowerBound: true }, branches, states, joinedDirection,
+      sourceMinimumIsAtSimultaneousDemand: true, sourcePressureReferenceDatumMm: 0, additionalGroundDatumLiftMm: groundDatumLiftMm,
+      sourceToRoomLiftDebitedSeparately: true, existingNetworkLossBudgetIncludesRetainedRoomToFixtureRise: true,
+      sourceDatumAndInternalPressureBudgetQualified: false, deliveryCdIsComparisonNotGuaranteedLowerBound: true }, branches, states, joinedDirection, roomCatchment,
     architectureDecision: { prefer: 'internal-wet-utility-and-service-hub-replan',
       reject: ['further-tall-cabinet-glands-and-local-steel', 'adopt-low-box-without-genuine-internal-house-cuts', 'default-east-annex'],
       retainedPlantCylinderPathMm: services.plant.cylinder.path, retainedBufferStationMm: services.plant.primaryBuffer.station,
@@ -247,7 +262,8 @@ function joinedServiceDirection(b: ReturnType<typeof binding>, s: InletSourceEnv
       requiredSink: { kind: 'two-independent-pillar-taps', holesMm: [28, 28], centresMm: 180, mixingOnlyInOpenBowl: true,
         actualAirGapAboveFloodRimRequired: true, tapProductsAndConstituentsSelected: false },
       oldColdConnectionRetiredInOccupiedSource: false, crossfeedIndependenceQualified: false },
-    room: { wetUtilityPlanMm: [west, model.envelope, east - west, north - model.envelope], northWallFacesYMm: utilityWall.finishedFaces, northOpeningXMm: utilityWall.holes[0],
+    room: { wetUtilityPlanMm: [west, model.envelope, east - west, north - model.envelope],
+      southWindowOpeningXMm: (() => { const opening = model.archOpeningRegister.GROUND.find((o: any) => o.id === 'south-window-4'); return [opening.centre - opening.width / 2, opening.centre + opening.width / 2] })(), northWallFacesYMm: utilityWall.finishedFaces, northOpeningXMm: utilityWall.holes[0],
       retainedFurniture: Object.fromEntries(Object.entries(model.groundFurniture).filter(([id]) => /service-utility-|service-emitter-utility-/.test(id) && !/electricalStation|PVinverter/.test(id))),
       retiredFurniture: ['service-utility-electricalStation', 'service-utility-PVinverter'],
       newMainboard: { ...board, proposedGrossBoxMm: boardBox, normalRouteAfter10Mm: round(boardBox[0] - normalPathX - normalBodyR - 10),

@@ -1,9 +1,9 @@
 {
-  "schema": "had-inlet-source-envelope-result/2",
+  "schema": "had-inlet-source-envelope-result/3",
   "state": "existing-whole-arrangement-rejected",
   "source": {
     "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-    "bindingDigest": "c660fd6fc075f9db8713c36363ee7d5586face1a893a498e040b2bf091ccdf75",
+    "bindingDigest": "b309c0eced2d2f44265638faa08967d5887741b078249f8e6fed1c021b52b5fd",
     "inputs": {
       "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
       "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
@@ -15,7 +15,8 @@
       "project/had/studies/boundary-service-lodge.json": "edccc843f1829bf583e517095442ad9fe481da53"
     },
     "methods": {
-      "compiler/reference-house/current-design/inlet-source-envelope.ts": "c6baca027717145854aa7cca790fa8e3858df89c",
+      "compiler/reference-house/current-design/inlet-source-envelope.ts": "558c6c34f0d421e2bb9d7b34ff4714356b7187e3",
+      "compiler/reference-house/current-design/inlet-room-catchment.ts": "4808849a1197d0b90891cda2859bb578d274c026",
       "project/had/studies/south-inlet-relief-hydraulics.mjs": "1cb8dd67e832ce2986f042844122a39e625fef93",
       "compiler/reference-house/current-design/inlet-cabinet-copper.ts": "34d774e3ccd4ff0bac3dcaef63dfa5cdedff6ca4"
     }
@@ -36,7 +37,12 @@
     "atmosphericMinimumBar": 0.9,
     "atmosphericMaximumBar": 1.1,
     "mainboardNorthOffsetMm": 0,
-    "plantTransferZMm": 2235
+    "plantTransferZMm": 2235,
+    "catchmentClearWidthMm": 400,
+    "catchmentClearHeightMm": 150,
+    "catchmentInvertAboveDistributionMm": 60,
+    "catchmentReceiverWidthMm": 400,
+    "catchmentReceiverCrestAboveGradeMm": 0
   },
   "bound": {
     "method": "Incompressible energy comparison Q<=A sqrt(2 p_total_absolute/rho), Cd<=1, local pressure>=0absolute; recovery/cavitation qualification remains required.",
@@ -59,6 +65,11 @@
       "plant": 225.825858
     },
     "sourceMinimumIsAtSimultaneousDemand": true,
+    "sourcePressureReferenceDatumMm": 0,
+    "additionalGroundDatumLiftMm": 0,
+    "sourceToRoomLiftDebitedSeparately": true,
+    "existingNetworkLossBudgetIncludesRetainedRoomToFixtureRise": true,
+    "sourceDatumAndInternalPressureBudgetQualified": false,
     "deliveryCdIsComparisonNotGuaranteedLowerBound": true
   },
   "branches": [
@@ -96,6 +107,8 @@
       "minimumDiameterMm": 6.4,
       "maximumDiameterMm": 6.6,
       "additionalNetworkLossBar": 0.5,
+      "additionalGroundDatumLiftMm": 0,
+      "additionalGroundDatumLiftBar": 0,
       "pressureLossComparisonBar": 1.774608,
       "residualPressureComparisonBar": 1.225392,
       "throatAbsolutePressureComparisonBar": 2.625392,
@@ -188,6 +201,8 @@
       "minimumDiameterMm": 10.1,
       "maximumDiameterMm": 10.299999999999999,
       "additionalNetworkLossBar": 1,
+      "additionalGroundDatumLiftMm": 0,
+      "additionalGroundDatumLiftBar": 0,
       "pressureLossComparisonBar": 1.448445,
       "residualPressureComparisonBar": 1.051555,
       "throatAbsolutePressureComparisonBar": 2.951555,
@@ -500,6 +515,10 @@
         429.5,
         2173.5,
         2023.5
+      ],
+      "southWindowOpeningXMm": [
+        9400,
+        10400
       ],
       "northWallFacesYMm": [
         2453,
@@ -1189,6 +1208,13 @@
     ],
     "completeArrangementSelected": false,
     "hadPacketComplete": false
+  },
+  "roomCatchment": {
+    "state": "missing-ground-section",
+    "diagnostics": [
+      "INLET_ROOM_CATCHMENT_REQUIRES_SAVED_GROUND_SECTION"
+    ],
+    "selected": false
   },
   "architectureDecision": {
     "prefer": "internal-wet-utility-and-service-hub-replan",

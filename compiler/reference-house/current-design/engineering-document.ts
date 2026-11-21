@@ -526,8 +526,8 @@ export async function compileEngineeringDocument(input: unknown) {
   if (stages.inletSourceEnvelope) {
     const request = await compile.readInletSourceEnvelopeCase()
     engineering.inletSourceEnvelope = await compile.inletSourceEnvelopeCase({ ...request.sourceEnvelope,
-      settings: { ...request.sourceEnvelope.settings, ...stages.inletSourceEnvelope } })
-    recordResult('inletSourceEnvelope', stages.inletSourceEnvelope, engineering.inletSourceEnvelope)
+      settings: { ...request.sourceEnvelope.settings, ...stages.inletSourceEnvelope } }, engineering.groundSection)
+    recordResult('inletSourceEnvelope', stages.inletSourceEnvelope, engineering.inletSourceEnvelope, engineering.groundSection ? ['groundSection'] : [])
     const reason = 'The source-envelope comparison authors boundary restrictions and a whole internal service-hub replacement. Neither the retained occupied network nor earlier inlet/cabinet outputs include that source or room; their former fault and operating claims are withheld.'
     const previousStages = new Set(['occupiedServices', 'inletSillInsert', 'inletFault', 'fixedInlet', 'inletCabinet', 'inletRemovals', 'inletCovers', 'inletAssembly'])
     const affected = manifest.filter(row => previousStages.has(row.stage.split('/')[0]))
