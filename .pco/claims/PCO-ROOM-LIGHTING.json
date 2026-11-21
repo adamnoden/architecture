@@ -9,11 +9,11 @@
     "label": "room-lighting-registration-20261121"
   },
   "claimedAt": "2026-11-21T21:57:05.404Z",
-  "heartbeatAt": "2026-11-21T22:35:25.205Z",
-  "expiresAt": "2026-11-22T00:05:25.205Z",
+  "heartbeatAt": "2026-11-21T22:46:27.237Z",
+  "expiresAt": "2026-11-22T00:16:27.237Z",
   "checkpoint": {
-    "evidence": "PR #1616 at 64ee6a8d1753bb12ede6e66940efec676c28272d; publication CI passed and full repository health is still active at 22:35 UTC; main remains c8b16ee9",
-    "next": "Finish exact-head validation, perform fresh canonical merge-check, merge registration, release lease and verify normal dispatch plus cleanup"
+    "evidence": "PR #1616 at 64ee6a8d1753bb12ede6e66940efec676c28272d; publication CI passed; full repository health still running at 22:46 UTC; main remains c8b16ee9",
+    "next": "Inspect final CI and fresh main, run canonical publication preflight, merge, release registration lease, verify new design dispatch and close cleanup"
   },
   "branch": "work/register-room-lighting-20261121",
   "note": "Exceptional registration-only bootstrap authorised and recorded in issue #1614; unknown-node dispatch safety temporarily fails closed until integration/release.",
