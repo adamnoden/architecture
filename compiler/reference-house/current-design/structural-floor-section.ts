@@ -13,7 +13,7 @@ const record = (v: unknown): v is Record<string, unknown> => v !== null && typeo
 const same = (a: unknown, b: unknown) => sha256SemanticFingerprint(a) === sha256SemanticFingerprint(b)
 const finite = (v: unknown): v is number => typeof v === 'number' && Number.isFinite(v)
 const six = (v: unknown): v is number[] => Array.isArray(v) && v.length === 6 && v.every(finite)
-export const floorSectionStageFields = ['thicknessMm'] as const
+export const floorSectionStageFields = ['thicknessMm', 'wetSupport'] as const
 
 /** Inspect declared source centrelines; absent service envelopes never earn fit. */
 export function inspectFloorServiceRoutes(routes: readonly (readonly (readonly number[])[])[], cells: readonly (readonly number[])[], soffit: number, top: number) {
@@ -77,7 +77,7 @@ function currentBinding(resolved: CurrentDesignResolution) {
   const comparison = JSON.parse(execFileSync('python3', ['-B', fileURLToPath(new URL(methodPath, root)), '--read'],
     { encoding: 'utf8', maxBuffer: 8 * 1024 * 1024 })) as NativeCase
   if (comparison.schema !== 'str-coupled-floor-section-case/1' || !record(comparison.sourceSHA256)
-    || Object.keys(comparison.sourceSHA256).length !== 54) throw new Error('Floor-section source contract changed; integrate explicitly')
+    || Object.keys(comparison.sourceSHA256).length !== 57) throw new Error('Floor-section source contract changed; integrate explicitly')
   const inputs = Object.fromEntries([...Object.keys(comparison.sourceSHA256), adapterPath].map(path => {
     const bytes = readFileSync(new URL(path, root))
     const blob = createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')
@@ -99,11 +99,12 @@ export function readFloorSectionCase(resolved: CurrentDesignResolution) {
 export function savedFloorSectionCase(request: ReturnType<typeof readFloorSectionCase>['section'],
   settings: Readonly<Record<string, unknown>>, upper: ReturnType<typeof savedUpperRoofBearingCase>) {
   if (Object.keys(settings).some(key => !(floorSectionStageFields as readonly string[]).includes(key))
-    || !finite(settings.thicknessMm) || settings.thicknessMm < 200 || settings.thicknessMm > 250) {
+    || !finite(settings.thicknessMm) || settings.thicknessMm < 200 || settings.thicknessMm > 250
+    || (settings.wetSupport !== undefined && settings.wetSupport !== null && !record(settings.wetSupport))) {
     throw new Error('Explicit finite floor-section thickness 200..250 mm required; no duplicate floor or derived approval')
   }
   return { ...request, caseId: upper.caseId,
-    comparison: { ...request.comparison, bearingCase: upper.comparison, thicknessMm: settings.thicknessMm } }
+    comparison: { ...request.comparison, bearingCase: upper.comparison, thicknessMm: settings.thicknessMm, wetSupport: settings.wetSupport ?? null } }
 }
 
 export function runFloorSectionCase(resolved: CurrentDesignResolution, input: unknown) {
@@ -147,7 +148,7 @@ export function runFloorSectionCase(resolved: CurrentDesignResolution, input: un
     method: { id: 'str-current-floor-section/1', path: methodPath, inputs: current.inputs },
     native: vertical.native, vertical, floorSection: section, upperMasonry: output.upperMasonry,
     mass: output.mass, plateBending: output.plateBending, floorReinforcement: output.floorReinforcement,
-    roofCoupling: output.roofCoupling, drawings: output.drawings, floorSvg: output.drawings['floor-section-floor.svg'],
+    roofCoupling: output.roofCoupling, ...(output.seatedWetSupport ? { seatedWetSupport: output.seatedWetSupport } : {}), drawings: output.drawings, floorSvg: output.drawings['floor-section-floor.svg'],
     servicePenetrations, diagnostics: output.diagnostics, evidence: { state: 'unselected-actual-section-replacement' as const,
       candidateAccepted: false as const, completeHouseProof: false as const, installedAcceptance: false as const,
       scope: 'Actual plate and membrane reassembly, work maps, upper body starts, self-weight and recovery at the authored thickness. Finish, FFL, stairs, services, aerodynamic tributaries, local stress convergence, reinforcement and joints remain unqualified.' } }

@@ -95,12 +95,13 @@ def _admit(case,source):
         if type(v) not in (int,float) or not math.isfinite(v) or not lo<=v<=hi:raise ValueError('Finite explicit roof control required: '+key)
 
 
-def _build_base(case,source):
+def _build_base(case,source,additional_receiver_builder=None,core_transform=None):
     """Same specialist assembly, with moved physical feet retained before Schur."""
     base=copy.deepcopy(case['masonryCase']);base['roofCoupling']=None
     receivers=[{'id':r['id'],'xyMm':r['xyMm']} for r in case['seats']]
     model=build_vertical_rc_floor(base['verticalCase'],source['base']['vertical'],retained_point_receivers=receivers,
-        portal_builder=lambda inner,inner_source:_build_masonry_portal(base,source['base'],inner,inner_source))
+        portal_builder=lambda inner,inner_source:_build_masonry_portal(base,source['base'],inner,inner_source),
+        additional_receiver_builder=additional_receiver_builder,core_transform=core_transform)
     from court_corner_closure import apply_court_corner_closure
     if base['courtCornerClosure'] is not None:apply_court_corner_closure(model,source['base'],base['courtCornerClosure'],base['foundationWeight'])
     _add_lower_l_weight(model,base['lowerLWeight']);add_lower_core_bodies(model,source['base'],base['lowerCoreBodies'])
@@ -171,7 +172,7 @@ def _add_roof(model,case,source,inventory):
     return seat_records
 
 
-def _free_top_load(model,inventory):
+def _free_top_load(model,inventory,additional_patch_receiver=None):
     data=model['verticalFloor'];density=inventory['densityKNPerM3'];patches=[]
     for index,row in enumerate(inventory['freeTopBodyBoxes']):
         a,b,c,d,e,f=row['boxXYZMm'];patches.append({'id':'UPPER-FREE/'+str(index),
@@ -179,7 +180,7 @@ def _free_top_load(model,inventory):
     load=patch_force(data['operator']['assembled'],patches);condensed=condense_named_force(data['operator'],load['force'])
     for index,value in enumerate(condensed['condensedForceKN']):
         for node,row in data['portTerms'][index]:_add(model['families']['physical-G'],node,[value*v for v in row])
-    missing=[];beam_g=0.;beam_distributed=[];end_joint_point=[]
+    missing=[];beam_g=0.;beam_distributed=[];end_joint_point=[];wet_g=0.;wet_distributed=[]
     for patch in patches:
         r=patch['rectangleXYMm'];parts=[{'boxXYZMm':[r[0],r[1],0,r[2],r[3],1]}]
         for cell in data['cells']:
@@ -187,6 +188,10 @@ def _free_top_load(model,inventory):
             if not parts:break
         for row in parts:
             a,b,_,c,d,_=row['boxXYZMm'];point=[(a+c)/2,(b+d)/2,3370.];weight=(c-a)*(d-b)*patch['pressureKNPerMm2']
+            if additional_patch_receiver is not None and not callable(additional_patch_receiver):raise ValueError('An actual additional patch receiver must be callable')
+            wet=additional_patch_receiver([a,b,c,d],patch['pressureKNPerMm2'],model['families']['physical-G']) if additional_patch_receiver is not None else None
+            if wet is not None:
+                wet_g+=wet['physicalGKN'];wet_distributed.extend(wet['distributedLoads']);continue
             owners=[north for north in data['northUpstandStrips'] if north['rectangleXYMm'][0]<=a and north['rectangleXYMm'][1]<=b and north['rectangleXYMm'][2]>=c and north['rectangleXYMm'][3]>=d]
             if len(owners)==1:
                 wall=owners[0]['wallId'];members=[(name,m) for name,m in model['members'].items() if name.startswith(wall+'/upstand/')]
@@ -208,10 +213,10 @@ def _free_top_load(model,inventory):
                             'lineDownKNPerMm':line_density,'normalOffsetMm':normal_offset})
                 beam_g+=weight
             else:missing.append({'patchId':patch['id'],'rectangleXYMm':[a,b,c,d],'physicalGKN':weight,'pointXYMm':point[:2]})
-    load.update(northBeamPhysicalGKN=beam_g,unroutedBodies=missing,
+    load.update(northBeamPhysicalGKN=beam_g,**({'wetBeamPhysicalGKN':wet_g,'wetBeamDistributedLoads':wet_distributed} if additional_patch_receiver is not None else {}),unroutedBodies=missing,
         northBeamDistributedLoads=beam_distributed,northEndJointPointLoads=end_joint_point,
         unroutedPhysicalGKN=math.fsum(r['physicalGKN'] for r in missing),condensation=condensed)
-    if abs(load['uncoveredDownKN']-beam_g-load['unroutedPhysicalGKN'])>1e-6:raise ValueError('Upper body plate/beam/missing load partition loses mass')
+    if abs(load['uncoveredDownKN']-beam_g-wet_g-load['unroutedPhysicalGKN'])>1e-6:raise ValueError('Upper body plate/beam/missing load partition loses mass')
     return load
 
 

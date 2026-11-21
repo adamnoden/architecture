@@ -17,6 +17,28 @@ def beam():
 
 
 class ConsistentMemberLoadTest(unittest.TestCase):
+    def test_y_axis_gravity_and_offset_load_preserve_actual_wrench_and_rigid_work(self):
+        model,member=beam();member.update(physicalStartMm=[30,10,40],physicalEndMm=[30,1010,40],yAxisGlobal=[1,0,0])
+        model['model'].nodes={'a':(-20,0,-10),'b':(80,1040,90)}
+        point=[55,370,65];force=[1.2,-2.3,-3.4];couple=[11,22,-33]
+        vector=consistent_member_point_load(model,member,point,force,couple)
+        actual=[vector[i]+vector[6+i] for i in range(3)];moment=[0.,0.,0.]
+        for end,node in enumerate(('a','b')):
+            addition=cross(model['model'].nodes[node],vector[end*6:end*6+3])
+            moment=[a+b+c for a,b,c in zip(moment,addition,vector[end*6+3:end*6+6])]
+        for a,b in zip(actual,force):self.assertAlmostEqual(a,b,12)
+        for a,b in zip(moment,[a+b for a,b in zip(cross(point,force),couple)]):self.assertAlmostEqual(a,b,9)
+        for translation,rotation in [([1,0,0],[0,0,0]),([0,1,0],[0,0,0]),([0,0,1],[0,0,0]),
+                ([0,0,0],[1,0,0]),([0,0,0],[0,1,0]),([0,0,0],[0,0,1])]:
+            work=0.
+            for end,node in enumerate(('a','b')):
+                displacement=[a+b for a,b in zip(translation,cross(rotation,model['model'].nodes[node]))]
+                work+=sum(a*b for a,b in zip(vector[6*end:6*end+6],[*displacement,*rotation]))
+            exact=sum(a*b for a,b in zip(force,[a+b for a,b in zip(translation,cross(rotation,point))]))+sum(a*b for a,b in zip(couple,rotation))
+            self.assertAlmostEqual(work,exact,9)
+        member.pop('yAxisGlobal')
+        with self.assertRaisesRegex(ValueError,'parallel'):consistent_member_point_load(model,member,point,force)
+
     def test_uniform_consistent_vector_independent_fixedend_formula(self):
         model,member=beam();loads={};_consistent_line(model,loads,'test','beam',member,0,1000,[0,.01,0])
         self.assertAlmostEqual(loads['a'][1],5,12);self.assertAlmostEqual(loads['b'][1],5,12)

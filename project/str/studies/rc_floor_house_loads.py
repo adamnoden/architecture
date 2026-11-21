@@ -111,9 +111,22 @@ def _timoshenko_shapes(value,length,phi):
     return n,r
 
 
+def member_physical_basis(member):
+    """The actual orthonormal frame, shared by loads and physical cut recovery."""
+    p,q=member['physicalStartMm'],member['physicalEndMm'];length=math.dist(p,q)
+    if not math.isfinite(length) or length<=0:raise ValueError('Positive actual member length required')
+    axis=[(b-a)/length for a,b in zip(p,q)];trial=member.get('yAxisGlobal',[0,1,0])
+    if len(trial)!=3 or any(type(v) not in (int,float) or not math.isfinite(v) for v in trial):raise ValueError('Finite actual member orientation required')
+    projection=sum(a*b for a,b in zip(trial,axis));normal=[a-projection*b for a,b in zip(trial,axis)]
+    scale=math.sqrt(sum(v*v for v in normal))
+    if scale<1e-8:raise ValueError('Actual member orientation is parallel to its axis')
+    normal=[v/scale for v in normal]
+    return axis,normal,cross(axis,normal)
+
+
 def consistent_member_point_load(model,member,point,force,moment=(0,0,0)):
     p,q=member['physicalStartMm'],member['physicalEndMm'];length=math.dist(p,q)
-    axis=[(b-a)/length for a,b in zip(p,q)];normal=[0,1,0];radial=cross(axis,normal);basis=[axis,normal,radial]
+    axis,normal,radial=member_physical_basis(member);basis=[axis,normal,radial]
     dot=lambda a,b:sum(x*y for x,y in zip(a,b))
     s=dot([a-b for a,b in zip(point,p)],axis);v=s/length
     if not -1e-8<=v<=1+1e-8:raise ValueError('Consistent load point lies outside its actual finite member')
@@ -476,7 +489,7 @@ def _member_left_resultant(model,name,member,recovered,multipliers,s,side='right
 def _interior_member_cuts(model,recovered,multipliers):
     rows=[]
     for name,member in model['members'].items():
-        p,q=member['physicalStartMm'],member['physicalEndMm'];length=math.dist(p,q);axis=[(b-a)/length for a,b in zip(p,q)];normal=[0,1,0];radial=cross(axis,normal)
+        p,q=member['physicalStartMm'],member['physicalEndMm'];length=math.dist(p,q);axis,normal,radial=member_physical_basis(member)
         breaks={0.,length};point_stations=set()
         for family in model.get('memberPointLoads',{}):
             for load in model['memberPointLoads'][family].get(name,[]):
