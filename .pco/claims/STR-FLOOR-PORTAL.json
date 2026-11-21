@@ -9,8 +9,8 @@
     "label": "structure-review-seated-wet-beam"
   },
   "claimedAt": "2026-11-21T12:29:12.173Z",
-  "heartbeatAt": "2026-11-21T12:30:01.425Z",
-  "expiresAt": "2026-11-21T13:15:01.425Z",
+  "heartbeatAt": "2026-11-21T12:41:36.140Z",
+  "expiresAt": "2026-11-21T13:26:36.140Z",
   "branch": "work/rush-floor-inlet-convergence-20261121",
   "predecessor": {
     "leaseId": "112c4e59-d3c1-4931-a15b-ba4d2433a70f",
@@ -33,7 +33,7 @@
     }
   },
   "checkpoint": {
-    "evidence": "Prepared STR source1e3cf618 and HAD71a7248 retained for joint integration; numerical source frozen",
-    "next": "Root integrates joint prepared PR; this holder develops seated wet-beam successor separately without publishing before joint merge"
+    "evidence": "Prepared STR source1e3cf618 remains frozen for root joint integration. Isolated work/rush-seated-wet-beam-20261121 now has exact axis-aware point-work/CST/vertical receiver seams and finite mapped-frame substitution:13 focused tests pass, unchanged X operator byte-equal. Stair aperture constrains south beam/pad physical end; no design acceptance.",
+    "next": "Complete actual original-axis seated wet beam,260x450 finite posts/grid traces, compression-only bearing footprint and exact material/G ownership in existing floorSection path. Regenerate affected source-bound numerical proofs; no stale receipt relabelling. Root coordinates prepared joint merge before any new PR publication."
   }
 }
