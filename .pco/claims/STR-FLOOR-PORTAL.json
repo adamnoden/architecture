@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 49,
-  "state": "released",
-  "leaseId": "95dc0271-adfc-448a-9789-0f1476b4b26b",
+  "generation": 50,
+  "state": "claimed",
+  "leaseId": "9e437f78-ddc0-47bb-ad78-f6e2a5644fc9",
   "holder": {
     "kind": "chatgpt",
-    "label": "structure-review-seated-wet-beam"
+    "label": "convergence-20261121"
   },
-  "claimedAt": "2026-11-21T12:29:12.173Z",
-  "heartbeatAt": "2026-11-21T14:07:37.000Z",
-  "expiresAt": "2026-11-21T14:07:37.000Z",
-  "branch": "work/rush-floor-inlet-convergence-20261121",
+  "claimedAt": "2026-11-21T19:47:07.671Z",
+  "heartbeatAt": "2026-11-21T19:47:07.671Z",
+  "expiresAt": "2026-11-21T20:32:07.671Z",
+  "branch": "work/convergence-structure-20261121",
   "predecessor": {
-    "leaseId": "112c4e59-d3c1-4931-a15b-ba4d2433a70f",
-    "generation": 48,
-    "branch": "work/rush-floor-section-20261121",
-    "pr": 1609,
+    "leaseId": "95dc0271-adfc-448a-9789-0f1476b4b26b",
+    "generation": 49,
+    "branch": "work/rush-floor-inlet-convergence-20261121",
+    "pr": 1610,
     "checkpoint": {
-      "evidence": "Final remote1e3cf61826b5939b4d35850f404bdf6634798d4c/tree9a7135d9912cf07f55578089d2ace280a362c25d includesmain9dbd. Fresh6upper52/4floor54 native states, analytical/receipt3 and editor/penetration6, tsc, audit15/0,13witnesses and repo pass. Final API3solve suites pending frozenhead. Durablehandoff PR1609comment7062574718.",
-      "next": "Designatedstructure worker claimnextgeneration; retainpreparedsource and joinHAD71a7248 underfreshleases; observeexactfinalAPI/CLI suites andsubmitjointPR/allCI. Thenimplementaligned250seatedwetbeam onoriginal260x450posts withactualaxisawareworkmaps/finitegrid/CSGandfreshproofs. STRnotcomplete."
+      "evidence": "Durable WIP d9d04b8dbaef7b6f4543194a93a30c68a9a32d31 tree c40e5119 on work/rush-seated-wet-beam-20261121. PR1610 merged main131471. Serial8 wet controls succeeded locally; final receipts/helpers unpublished after executor became unavailable. STR remains open.",
+      "next": "Handoff: recover d9d04b8 from fresh main; verify local FULL source/request/checksums if available. Finish700/500/roof3, actual floor/cage closures, source account, saved API and exact CI.",
+      "blocker": "Execution environment unavailable; no filesystem, native solver or test access."
     }
   },
   "recoverySource": {
-    "leaseId": "112c4e59-d3c1-4931-a15b-ba4d2433a70f",
-    "generation": 48,
-    "branch": "work/rush-floor-section-20261121",
-    "pr": 1609,
+    "leaseId": "95dc0271-adfc-448a-9789-0f1476b4b26b",
+    "generation": 49,
+    "branch": "work/rush-floor-inlet-convergence-20261121",
+    "pr": 1610,
     "checkpoint": {
-      "evidence": "Final remote1e3cf61826b5939b4d35850f404bdf6634798d4c/tree9a7135d9912cf07f55578089d2ace280a362c25d includesmain9dbd. Fresh6upper52/4floor54 native states, analytical/receipt3 and editor/penetration6, tsc, audit15/0,13witnesses and repo pass. Final API3solve suites pending frozenhead. Durablehandoff PR1609comment7062574718.",
-      "next": "Designatedstructure worker claimnextgeneration; retainpreparedsource and joinHAD71a7248 underfreshleases; observeexactfinalAPI/CLI suites andsubmitjointPR/allCI. Thenimplementaligned250seatedwetbeam onoriginal260x450posts withactualaxisawareworkmaps/finitegrid/CSGandfreshproofs. STRnotcomplete."
+      "evidence": "Durable WIP d9d04b8dbaef7b6f4543194a93a30c68a9a32d31 tree c40e5119 on work/rush-seated-wet-beam-20261121. PR1610 merged main131471. Serial8 wet controls succeeded locally; final receipts/helpers unpublished after executor became unavailable. STR remains open.",
+      "next": "Handoff: recover d9d04b8 from fresh main; verify local FULL source/request/checksums if available. Finish700/500/roof3, actual floor/cage closures, source account, saved API and exact CI.",
+      "blocker": "Execution environment unavailable; no filesystem, native solver or test access."
     }
-  },
-  "checkpoint": {
-    "evidence": "Durable WIP d9d04b8dbaef7b6f4543194a93a30c68a9a32d31 tree c40e5119 on work/rush-seated-wet-beam-20261121. PR1610 merged main131471. Serial8 wet controls succeeded locally; final receipts/helpers unpublished after executor became unavailable. STR remains open.",
-    "next": "Handoff: recover d9d04b8 from fresh main; verify local FULL source/request/checksums if available. Finish700/500/roof3, actual floor/cage closures, source account, saved API and exact CI.",
-    "blocker": "Execution environment unavailable; no filesystem, native solver or test access."
-  },
-  "pr": 1610,
-  "releasedAt": "2026-11-21T14:07:37.000Z",
-  "releaseReason": "handoff"
+  }
 }
