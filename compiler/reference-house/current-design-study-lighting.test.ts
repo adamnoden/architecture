@@ -248,6 +248,8 @@ test('common-depth purpose cases preserve real device/route volumes while reject
     assert.equal(box.bodyDepthMm[0], 13.5)
     assert.equal(box.fixings.length, 4)
     assert.ok(box.fixings.every(f => f.hardLandDepthMm[0]! >= 7.5 && f.hardLandDepthMm[1]! >= f.hardLandDepthMm[0]!))
+    assert.equal(box.actualProductInterfaceQualified, false)
+    assert.match(box.deviceReferenceBinding, /unbound/)
     assert.equal(box.protectedCoverRetainedOnDecorativeRelease, true)
     assert.equal(box.fixedRecessSurroundRetainedOnDecorativeRelease, true)
   }

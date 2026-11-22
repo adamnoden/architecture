@@ -266,7 +266,7 @@ export function drawCommonDepthCornerComparison(result: StudyLightingResult) {
     + text(320, 475, 'No actual HGS06 connection has been qualified')
     + text(320, 525, `Purpose side bypass ${p.internalBypassWidthMm} mm`)
     + text(320, 560, `Collar side clearances ${p.collarSideClearanceMm} mm; depth ${p.collarRearClearanceMm}/${p.collarFrontClearanceMm} mm`)
-    + text(320, 605, `The ${result.commonDepthCornerComparison.purpose.enclosures[0]!.accessoryReservedVolumeXYZMm[4]! - result.commonDepthCornerComparison.purpose.enclosures[0]!.accessoryReservedVolumeXYZMm[1]!} mm device volume is retained; nothing enters permanent fabric`)
+    + text(320, 605, `The ${result.commonDepthCornerComparison.purpose.enclosures[0]!.accessoryReservedVolumeXYZMm[4]! - result.commonDepthCornerComparison.purpose.enclosures[0]!.accessoryReservedVolumeXYZMm[1]!} mm interface reserve is retained; nothing enters permanent fabric`)
     + text(320, 650, 'Independent closed cases remain when decoration is released')
     + text(320, 685, 'Unbound device/earth terminals and union/tool details stay explicit')
     + text(320, 730, 'Equipment terminals and circuit acceptance remain unqualified')
