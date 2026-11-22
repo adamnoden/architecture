@@ -1,44 +1,39 @@
 {
   "schemaVersion": 1,
   "node": "IAS-ROOM-LIGHTING",
-  "generation": 4,
-  "state": "released",
-  "leaseId": "26712064-31c6-4c7b-ac68-dc22f8a4423b",
+  "generation": 5,
+  "state": "claimed",
+  "leaseId": "68f6136d-f6b2-495d-a338-9f14cd05b3b2",
   "holder": {
     "kind": "chatgpt",
     "label": "convergence-lighting-review-20261122"
   },
-  "claimedAt": "2026-11-22T14:35:58.888Z",
-  "heartbeatAt": "2026-11-22T17:45:21.924Z",
-  "expiresAt": "2026-11-22T17:45:21.924Z",
-  "branch": "work/convergence-primary-20261122",
+  "claimedAt": "2026-11-22T17:46:22.080Z",
+  "heartbeatAt": "2026-11-22T17:46:22.080Z",
+  "expiresAt": "2026-11-22T18:31:22.080Z",
+  "checkpoint": {
+    "evidence": "Fresh main 0bdbfaaad08331a4f3f33fe35aa10d1320b3059f doctor verified; safe canonical dispatcher exposes IAS as the sole eligible candidate after generation4 merged handoff. Prior-cycle unselected common-depth geometry is preserved at recovery/lighting-common-depth-20261122 cd3d23c3294e0958068ad939d8533f17c9779ff3 and is recovery evidence, not a newly validated result",
+    "next": "Reconcile the recovered common-depth comparison with shared STR/HAD integrated source, regenerate affected current evidence, preserve actual terminal/product/renewal/load obligations and validate exact combined head before publication"
+  },
+  "branch": "work/convergence-integrated-house-20261122",
   "predecessor": {
-    "leaseId": "3cec4ae0-f28f-47a4-b739-ca8b4bc3e962",
-    "generation": 3,
-    "branch": "work/convergence-integrate-20261122",
-    "pr": 1617,
+    "leaseId": "26712064-31c6-4c7b-ac68-dc22f8a4423b",
+    "generation": 4,
+    "branch": "work/convergence-primary-20261122",
+    "pr": 1618,
     "checkpoint": {
-      "evidence": "Remote9024e5d8 exacttreec2f3c5fe:10 focused shared/CLI/edit/producer tests,typecheck and5 raster-inspected views; root integrates equivalent local e2a9da0d into PR1617.",
-      "next": "Validate shared head, reconcile source family/evidence, inspect exact-head CI and canonical publication preflight; retain open feeder/material/physical and full conduit-tangent obligations.",
-      "blocker": "Current Study feeder/protection/cable absent. Full bend+collar/setting not yet coordinated; installed and owner acceptance remain false."
+      "evidence": "Verified PR1618 merged at main 0bdbfaaad08331a4f3f33fe35aa10d1320b3059f, submitted head 890379a22e3515aca747dfaddab08755be0c4414 passed all20 workflows and fresh IAS preflight. Unselected successor preserved at recovery/lighting-common-depth-20261122 head cd3d23c3294e0958068ad939d8533f17c9779ff3; geometry/comparison only, not actual product/circuit/renewal acceptance",
+      "next": "Release this merged cycle as handoff; fresh-main directed claim before coordinating successor onto work/convergence-integrated-house-20261122 with current source/evidence regeneration"
     }
   },
   "recoverySource": {
-    "leaseId": "3cec4ae0-f28f-47a4-b739-ca8b4bc3e962",
-    "generation": 3,
-    "branch": "work/convergence-integrate-20261122",
-    "pr": 1617,
+    "leaseId": "26712064-31c6-4c7b-ac68-dc22f8a4423b",
+    "generation": 4,
+    "branch": "work/convergence-primary-20261122",
+    "pr": 1618,
     "checkpoint": {
-      "evidence": "Remote9024e5d8 exacttreec2f3c5fe:10 focused shared/CLI/edit/producer tests,typecheck and5 raster-inspected views; root integrates equivalent local e2a9da0d into PR1617.",
-      "next": "Validate shared head, reconcile source family/evidence, inspect exact-head CI and canonical publication preflight; retain open feeder/material/physical and full conduit-tangent obligations.",
-      "blocker": "Current Study feeder/protection/cable absent. Full bend+collar/setting not yet coordinated; installed and owner acceptance remain false."
+      "evidence": "Verified PR1618 merged at main 0bdbfaaad08331a4f3f33fe35aa10d1320b3059f, submitted head 890379a22e3515aca747dfaddab08755be0c4414 passed all20 workflows and fresh IAS preflight. Unselected successor preserved at recovery/lighting-common-depth-20261122 head cd3d23c3294e0958068ad939d8533f17c9779ff3; geometry/comparison only, not actual product/circuit/renewal acceptance",
+      "next": "Release this merged cycle as handoff; fresh-main directed claim before coordinating successor onto work/convergence-integrated-house-20261122 with current source/evidence regeneration"
     }
-  },
-  "checkpoint": {
-    "evidence": "Verified PR1618 merged at main 0bdbfaaad08331a4f3f33fe35aa10d1320b3059f, submitted head 890379a22e3515aca747dfaddab08755be0c4414 passed all20 workflows and fresh IAS preflight. Unselected successor preserved at recovery/lighting-common-depth-20261122 head cd3d23c3294e0958068ad939d8533f17c9779ff3; geometry/comparison only, not actual product/circuit/renewal acceptance",
-    "next": "Release this merged cycle as handoff; fresh-main directed claim before coordinating successor onto work/convergence-integrated-house-20261122 with current source/evidence regeneration"
-  },
-  "pr": 1618,
-  "releasedAt": "2026-11-22T17:45:21.924Z",
-  "releaseReason": "handoff"
+  }
 }
