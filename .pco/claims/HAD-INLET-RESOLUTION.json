@@ -9,8 +9,8 @@
     "label": "convergence-water-primary-20261122"
   },
   "claimedAt": "2026-11-22T14:35:48.378Z",
-  "heartbeatAt": "2026-11-22T17:30:05.076Z",
-  "expiresAt": "2026-11-22T18:15:05.076Z",
+  "heartbeatAt": "2026-11-22T17:41:51.432Z",
+  "expiresAt": "2026-11-22T18:26:51.432Z",
   "branch": "work/convergence-primary-20261122",
   "predecessor": {
     "leaseId": "6674cab5-5562-4cd0-bab3-37b04006cbd7",
@@ -32,7 +32,7 @@
   },
   "pr": 1618,
   "checkpoint": {
-    "evidence": "Joint1618 exact890 awaits two health jobs; final water fc54a405 integrated. Recovery/had-bank-carrier-20261122 now9eb9ac3d retains7finite clamp/tail variants, actual geometry/loss/stock/action propagation and all physical holds. PR1619 ed903 actual263/313 proof green and visually inspected.",
-    "next": "Merge coordinator runs exact-head publication preflight after CI; promptly release merged gen58 and fresh-main claim before any shared carrier integration. Combine reviewed5file publication delta with next eligible engineering PR; keep current source frozen."
+    "evidence": "VERIFIED PR1618 merged as main0bdbfaaad08331a4f3f33fe35aa10d1320b3059f with exact890 ancestor and all20 workflows green. Water routes/operator/movingdoor and actions integrated; complete physical system still open. Recovery9eb9ac3d and reviewed publication1619 retained.",
+    "next": "Release gen58 handoff now. Fresh-main doctor/dispatch and explicit HAD claim59 for combined work/convergence-integrated-house-20261122; integrate jacket and finite receiver candidate methods without native acceptance or pressure/thermal/renewal claims."
   }
 }
