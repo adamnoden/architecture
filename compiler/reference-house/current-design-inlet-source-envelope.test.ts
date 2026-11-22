@@ -184,3 +184,25 @@ test('the supported-room replacement preserves width and proves its actual porta
  assert.equal(oldGap.joinedDirection.room.electricalScreen.supportFrame.staticComparison.necessaryStaticSteelScreen,false)
  assert.throws(()=>runInletSourceEnvelopeCase(resolved,{...request.sourceEnvelope,schema:'had-inlet-source-envelope-case/4'}),/Stale/)
 })
+
+test('saved indoor-bank and pipe-law edits recompute actual paths without changing Lodge fault bounds; undo restores source revision',async()=>{
+ const original=await readEngineeringDocument(readGeorgianDesignSnapshot()),doc={...original,stages:{inletSourceEnvelope:request.sourceEnvelope.settings}},
+   base=await compileEngineeringDocument(doc),
+   moved=await compileEngineeringDocument({...doc,stages:{inletSourceEnvelope:{...doc.stages.inletSourceEnvelope,indoorBankXMm:11340,pipeCornerKComparison:2}}}),
+   a=base.engineering.inletSourceEnvelope!,b=moved.engineering.inletSourceEnvelope!,
+   ar=a.joinedDirection.room.indoorRoutes,br=b.joinedDirection.room.indoorRoutes
+ assert.notDeepEqual(br.paths[0].pointsMm,ar.paths[0].pointsMm)
+ assert.notEqual(br.straightCopperStockComparisonKg,ar.straightCopperStockComparisonKg)
+ assert.ok(br.branches[0].cornerLossBar>ar.branches[0].cornerLossBar)
+ assert.deepEqual(b.bound,a.bound)
+ assert.deepEqual(b.branches,a.branches)
+ assert.notEqual(br.reviewSvg,ar.reviewSvg)
+ assert.equal(br.support.nativeStructuralActionsAdopted,false)
+ assert.equal(br.wholeOccupiedArrangementComplete,false)
+ assert.deepEqual((await compileEngineeringDocument(JSON.parse(JSON.stringify(doc)))).engineering.inletSourceEnvelope,a)
+ const adverse=run({pipeCornerKComparison:20})
+ assert.equal(adverse.joinedDirection.room.indoorRoutes.necessaryStraightPipeGeometryAndBudgetComparison,false)
+ assert.deepEqual(adverse.bound,baseline.bound)
+ assert.throws(()=>run({pipeFrictionFactorComparison:0}),/comparison domain/)
+ assert.throws(()=>runInletSourceEnvelopeCase(resolved,{...request.sourceEnvelope,schema:'had-inlet-source-envelope-case/6'}),/Stale/)
+})
