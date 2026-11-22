@@ -9,12 +9,12 @@
     "label": "convergence-20261122-primary"
   },
   "claimedAt": "2026-11-22T17:41:01.835Z",
-  "heartbeatAt": "2026-11-22T17:41:01.835Z",
-  "expiresAt": "2026-11-22T18:26:01.835Z",
+  "heartbeatAt": "2026-11-22T18:24:45.677Z",
+  "expiresAt": "2026-11-22T19:09:45.677Z",
   "checkpoint": {
-    "evidence": "Fresh main0bdbfaaa after20green merged1618. Recoverednextwork dceb3985 contact/sourcecomplete; e6c33d20 actualjoint strictproof and semanticadmissionrepair; book1619 and preparedIAS/HAD comparisons.",
-    "next": "Integrate matched sources into one next reviewable branch; validate exact submittedhead, canonicalpreflight and merge verified results",
-    "blocker": "Finite joint resistance, complete signed envelopes, actual watercarrier/thermal path and coherent house selection remain open"
+    "evidence": "Merged1618 main0bdbfaaa all20CIgreen; currentcoordinatedcheckpoint ee7a52d1. HADsource8 8cf468b8/c78bb8d6, IAScommon-depth cd3d23c3/browser64c5c2ae; structuraljointproof e6c33d20. Combinedsourceaudit0/typecheck and10fullfloor/cagetests pass.",
+    "next": "Finish semantic JSON identity repair from captured actual fresh-call failure, combine browser/receiver/grip tests, publish exacthead review batch withbook263/313 andvalidate/merge",
+    "blocker": "Opaque Python numeric-spelling hashes wrongly reject Node roundtrip; no physical tolerances relaxed. Finitejoint resistance, fullsignedwindprogramme and actualcarrier/thermal/house selection remain unqualified"
   },
   "branch": "work/convergence-integrated-house-20261122",
   "predecessor": {
