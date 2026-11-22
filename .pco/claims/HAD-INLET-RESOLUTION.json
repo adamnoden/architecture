@@ -9,9 +9,9 @@
     "label": "convergence-water-primary-20261122"
   },
   "claimedAt": "2026-11-22T14:35:48.378Z",
-  "heartbeatAt": "2026-11-22T14:35:48.378Z",
-  "expiresAt": "2026-11-22T15:20:48.378Z",
-  "branch": "work/convergence-water-primary-20261122",
+  "heartbeatAt": "2026-11-22T14:50:48.435Z",
+  "expiresAt": "2026-11-22T15:35:48.435Z",
+  "branch": "work/convergence-primary-20261122",
   "predecessor": {
     "leaseId": "6674cab5-5562-4cd0-bab3-37b04006cbd7",
     "generation": 57,
@@ -29,5 +29,10 @@
       "evidence": "Recovery8b844bfa revalidated; local continuation propagates saved indoor cuts and corrects single-leaf own-reveal collision. Remote successor publication pending.",
       "next": "Finish complete pipe routes, regenerate source7 evidence and verify exact submitted head."
     }
+  },
+  "pr": 1618,
+  "checkpoint": {
+    "evidence": "Published work/convergence-water-primary-20261122 exact tree5c083b3a; recovered indoor cuts plus four cold paths, 24 focused checks, typecheck, source audit, producer and rendered SVG inspection pass.",
+    "next": "Integrate published HAD checkpoint into joint PR1618, reconcile shared source account and exact-head full health, then run fresh joint publication preflights."
   }
 }
