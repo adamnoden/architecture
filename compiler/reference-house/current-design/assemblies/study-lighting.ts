@@ -9,35 +9,14 @@ import type { compileStudyRoomKitProjection } from './study-room-kit-projection.
 export const studyLightingMethod = 'ias-study-lighting/1'
 export const studyLightingDefaultsPath = 'project/ias/studies/adaptable-study-lighting.json'
 export const studyLightingComponentsPath = 'project/ias/studies/lighting-component-references.json'
-export const studyLightingStageFields = ['arrangement', 'socketCentreZMm', 'serviceTotalDepthMm', 'lampHand', 'failedSourceId', 'finishTrial', 'automationConnected', 'localWallModule'] as const
-export const studyLightingArrangements = ['portable', 'lamps-with-wall', 'wall-led', 'ceiling-with-lamps'] as const
+export { admitStudyLightingCase, studyLightingStageFields, studyLightingArrangements, type StudyLightingCase } from './study-lighting-case.js'
+import { admitStudyLightingCase, type StudyLightingCase } from './study-lighting-case.js'
 type Point = readonly [number, number, number]
 type Box = readonly [number, number, number, number]
 type Projection = ReturnType<typeof compileStudyRoomKitProjection>
-export interface StudyLightingCase {
-  readonly schema: 'ias-study-lighting-case/1'; readonly units: 'mm'
-  readonly arrangement: typeof studyLightingArrangements[number]
-  readonly socketCentreZMm: number; readonly serviceTotalDepthMm: number
-  readonly lampHand: 'left' | 'right'; readonly failedSourceId: string | null
-  readonly finishTrial: 'crafted-oak' | 'darker-oak'; readonly automationConnected: boolean; readonly localWallModule: boolean
-}
 const root = new URL('../../../../', import.meta.url)
 const read = (path: string) => readFileSync(new URL(path, root))
 const sha256 = (data: Buffer) => createHash('sha256').update(data).digest('hex')
-const plain = (v: unknown): v is Record<string, unknown> => !!v && typeof v === 'object' && Object.getPrototypeOf(v) === Object.prototype
-const sourceIds = ['desk-task', 'floor-fill', 'side-task', 'wall-arrival', 'wall-task', 'wall-fill', 'ceiling-general']
-export function admitStudyLightingCase(value: unknown): StudyLightingCase {
-  const keys = ['schema', 'units', ...studyLightingStageFields]
-  if (!plain(value) || Object.keys(value).length !== keys.length || keys.some(key => !Object.hasOwn(value, key))
-    || value.schema !== 'ias-study-lighting-case/1' || value.units !== 'mm'
-    || !studyLightingArrangements.includes(value.arrangement as StudyLightingCase['arrangement'])
-    || !['left', 'right'].includes(value.lampHand as string) || !['crafted-oak', 'darker-oak'].includes(value.finishTrial as string)
-    || typeof value.socketCentreZMm !== 'number' || !Number.isFinite(value.socketCentreZMm) || value.socketCentreZMm < 150 || value.socketCentreZMm > 1400
-    || typeof value.serviceTotalDepthMm !== 'number' || !Number.isFinite(value.serviceTotalDepthMm) || value.serviceTotalDepthMm < 25 || value.serviceTotalDepthMm > 100
-    || typeof value.automationConnected !== 'boolean' || typeof value.localWallModule !== 'boolean'
-    || !(value.failedSourceId === null || sourceIds.includes(value.failedSourceId as string))) throw new TypeError('IAS_LIGHTING_UNSUPPORTED_INPUT: exact authored choices, known source IDs and finite mm dimensions required')
-  return structuredClone(value) as unknown as StudyLightingCase
-}
 export const readStudyLightingReferenceCase = () => admitStudyLightingCase(JSON.parse(read(studyLightingDefaultsPath).toString('utf8')))
 export function readLightingComponents() {
   const data = JSON.parse(read(studyLightingComponentsPath).toString('utf8'))
