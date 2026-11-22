@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 51,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "4c335045-933e-4aad-afbc-ff6e25cbc6ad",
   "holder": {
     "kind": "chatgpt",
     "label": "convergence-20261121"
   },
   "claimedAt": "2026-11-22T00:18:18.241Z",
-  "heartbeatAt": "2026-11-22T00:18:18.241Z",
-  "expiresAt": "2026-11-22T01:03:18.241Z",
+  "heartbeatAt": "2026-11-22T00:42:50.802Z",
+  "expiresAt": "2026-11-22T00:42:50.802Z",
   "checkpoint": {
     "evidence": "Merged1613 main769b60bc exact7cf passed689 compiler tests and all publication gates; packetremainsopen. Remote sparse8cd3438c preserves numerical methods,23+9 component checks and exact unsuccessful725 native/initialgeometry evidence.",
     "next": "Locate actual finalassembly/factor memory through boundedphase diagnostic; execute250 and unchangedcontrol on proven numerical method, regenerate all dependent current proofs and integrate ordinaryindoorcuts continuation.",
@@ -38,5 +38,7 @@
       "next": "Merge7cf afterexactheadCI andfreshboth-nodepreflight; continue exactcompactmodal representation and independent indoorcuts successor inisolatedworktrees.",
       "blocker": "Fullhealthpending;250 numericalconvergence unavailable, modalduplication fix undergoing independent physical/energy controls."
     }
-  }
+  },
+  "releasedAt": "2026-11-22T00:42:50.802Z",
+  "releaseReason": "handoff"
 }
