@@ -1,4 +1,4 @@
-import { applyEngineeringEdit, beginEngineeringEdit, currentEngineeringReply, editableRoofId, engineeringBase,
+import { applyEngineeringEdit, beginEngineeringEdit, currentEngineeringReply, editableRoofId, editableWetCageId, engineeringBase,
   engineeringTicket, replayEngineeringEdit, saveEngineeringEdit, type EngineeringEditorState, type EngineeringTicket,
 } from '../../../compiler/reference-house/current-design/engineering-edit.js'
 import type { EngineeringReply } from './engineering-api.js'
@@ -6,6 +6,8 @@ import './editor.css'
 const element = <T extends HTMLElement>(id: string) => document.getElementById(id) as T
 const button = (id: string) => element<HTMLButtonElement>(id)
 const pitch = element<HTMLInputElement>('pitch')
+const cageTop = element<HTMLInputElement>('cage-top-level')
+const record = (v: unknown): v is Record<string, unknown> => v !== null && typeof v === 'object' && !Array.isArray(v)
 const storageKey = 'ovid-current-engineering-document/1'
 let state: EngineeringEditorState
 let active: EngineeringTicket | null = null
@@ -23,6 +25,12 @@ function controls() {
   for (const control of document.querySelectorAll<HTMLButtonElement>('button')) control.disabled = false
   pitch.disabled = false
   pitch.value = String(state.document.stages.roofPitch.pitchDeg)
+  const floor = state.document.stages.floorSection
+  const choices = record(floor) && record(floor.wetSupport) && record(floor.cageComparison) ? floor.cageComparison : undefined
+  const available = typeof choices?.postTopLevelRaiseMm === 'number'
+  element('wet-cage-controls').hidden = !available
+  cageTop.disabled = !available
+  cageTop.value = available ? String(choices.postTopLevelRaiseMm) : ''
   button('undo').disabled = !state.undo.length
   button('redo').disabled = !state.redo.length
   element('stage-scope').textContent = `Saved stages: ${Object.keys(state.document.stages).join(', ')}. All are retained and compiled.`
@@ -33,6 +41,10 @@ function draw() {
     if (result) image.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(result.roof.svg)
     else image.removeAttribute('src')
   }
+  const cage = current?.wetCage
+  element('cage-result').textContent = cage
+    ? `Graded raise ${cage.settings.postTopLevelRaiseMm} mm. Cage geometry: ${cage.geometry.independentPathFailureCount} path-pair, ${cage.geometry.internalClosureFailureCount} closure and ${cage.geometry.coverFailureCount} cover failures. Explicit steel ${cage.quantities.actualSteelMassUpperKg.toFixed(3)} kg. Native case ${cage.nativeCaseId}. Comparison only; post-head resistance and installed acceptance remain unqualified.`
+    : ''
   element('current-caption').textContent = `Draft revision ${state.revision}`
   element('comparison-caption').textContent = comparisonLabel
   button('pin').disabled = !current
@@ -87,6 +99,11 @@ function edit(value: number) {
     operation: { kind: 'set-roof-pitch', roofId: editableRoofId, pitchDeg: value } }))
 }
 element('edit').addEventListener('submit', event => { event.preventDefault(); edit(pitch.valueAsNumber) })
+element('wet-cage-edit').addEventListener('submit', event => {
+  event.preventDefault()
+  changed(applyEngineeringEdit(state, { schema: 'current-engineering-edit/1', units: 'mm', base: engineeringBase(state),
+    operation: { kind: 'set-wet-cage-top-level', assemblyId: editableWetCageId, postTopLevelRaiseMm: cageTop.valueAsNumber } }))
+})
 button('increase').addEventListener('click', () => edit(pitch.valueAsNumber + 1))
 button('decrease').addEventListener('click', () => edit(pitch.valueAsNumber - 1))
 for (const direction of ['undo', 'redo'] as const) button(direction).addEventListener('click', () => changed(replayEngineeringEdit(state, engineeringBase(state), direction)))
@@ -129,6 +146,7 @@ file.addEventListener('change', () => {
 })
 for (const control of document.querySelectorAll<HTMLButtonElement>('button')) control.disabled = true
 pitch.disabled = true
+cageTop.disabled = true
 void fetch('/api/engineering/document').then(async response => {
   if (!response.ok) throw new Error('The local engineering compiler is unavailable')
   state = beginEngineeringEdit(await response.json(), id()); controls(); await refresh()
