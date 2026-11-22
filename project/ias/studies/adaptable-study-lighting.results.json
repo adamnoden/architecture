@@ -1,9 +1,10 @@
 {
   "schema": "ias-study-lighting-review/1",
   "methodSHA256": {
-    "compiler/reference-house/current-design/assemblies/study-lighting.ts": "ee5cc60f38ae637a5744c8c4248a8148133bf18a38e30588ac4f2e2c68280115",
-    "compiler/reference-house/current-design/assemblies/study-lighting-views.ts": "00682e5d373686e527dd038450154ca1d5bb8eec272cb4796d8eba22f7f721ac",
-    "project/ias/studies/adaptable-study-lighting.mjs": "aadb6c394d66a2713ff55705427a8b2319a959cba98a739c592937547aabaa3f"
+    "compiler/reference-house/current-design/assemblies/study-lighting-corner.ts": "f9c9e5136ec8548a7f6626901c4a72f2181d07a4497e78b66f7e9aa9f6dcbac1",
+    "compiler/reference-house/current-design/assemblies/study-lighting.ts": "debf6200f856cd3c1bbc46c86d9f00673d0e80512779d58b05ec2d2b24d4f2d5",
+    "compiler/reference-house/current-design/assemblies/study-lighting-views.ts": "05bdc22ad9fdcd051c1425eb5654087a0ceb176e9078efc041d2c71a6933f6e7",
+    "project/ias/studies/adaptable-study-lighting.mjs": "d5302ab7207d234e0814539508471f546073353aedb8ab8c062186ffefbbdb79"
   },
   "reference": {
     "schema": "ias-study-lighting/1",
@@ -41,10 +42,10 @@
       "occupiedBindingDigest": "384837dd37a4ca46629d67068e5fd3352301f8e4172911513cabcb54f5e1fb1c",
       "inputsSHA256": {
         "project/ias/studies/adaptable-study-lighting.json": "02fb40391ab20ff76f90aef1074b82fca711f6b46bb8d6dd66a36fb5778f2302",
-        "project/ias/studies/lighting-component-references.json": "1ebeab18920fb0226733d44e874d0bcdcfc1ead70747e3ff02f4d9f872282d13"
+        "project/ias/studies/lighting-component-references.json": "7eba359950c5c2ed07786aa2d638aba656e4bd4b1871bf8468494921b402fc60"
       }
     },
-    "caseDigest": "d3754c9e7dbe4aa8fba563bff89e3ae84e553f6d10049e4dfb8f47c017542380",
+    "caseDigest": "cd4162b2aa209986420b15570bc42888260f28b4e9a654340679bc466d1e1d8f",
     "commonRoom": {
       "bands": [
         [
@@ -2580,6 +2581,408 @@
         "qualification": "UNQUALIFIED_CEILING_SUPPORT_AND_ACCESS"
       }
     ],
+    "construction": {
+      "schema": "ias-study-lighting-corner-detail/1",
+      "status": "DEAD_MOCKUP_GEOMETRY_COMPARISON",
+      "coordinateConvention": "XYZ house mm; depth d is roomward from actual masonry core face. No invented anchor embedment.",
+      "coreFaceYMm": 3177.5,
+      "fixedRails": [
+        {
+          "id": "IAS/STUDY/service-corner/rail/0",
+          "xMm": [
+            1020,
+            1040
+          ],
+          "zMm": [
+            155,
+            2100
+          ],
+          "depthMm": [
+            7.5,
+            9.5
+          ]
+        },
+        {
+          "id": "IAS/STUDY/service-corner/rail/1",
+          "xMm": [
+            1260,
+            1280
+          ],
+          "zMm": [
+            155,
+            2100
+          ],
+          "depthMm": [
+            7.5,
+            9.5
+          ]
+        }
+      ],
+      "fixedRailStockMassKgComparison": 1.22146,
+      "carrier": {
+        "id": "IAS/STUDY/service-corner/carrier",
+        "xMm": [
+          1020,
+          1280
+        ],
+        "zMm": [
+          1575,
+          2025
+        ],
+        "depthMm": [
+          62.5,
+          64.5
+        ],
+        "stripsXZMm": [
+          [
+            1020,
+            1575,
+            1040,
+            2025
+          ],
+          [
+            1260,
+            1575,
+            1280,
+            2025
+          ],
+          [
+            1040,
+            1575,
+            1260,
+            1595
+          ],
+          [
+            1040,
+            2005,
+            1260,
+            2025
+          ],
+          [
+            1100,
+            1710,
+            1200,
+            1890
+          ],
+          [
+            1040,
+            1730,
+            1260,
+            1750
+          ],
+          [
+            1040,
+            1850,
+            1260,
+            1870
+          ]
+        ],
+        "centralCableOpening": {
+          "centreXMm": 1150,
+          "centreZMm": 1800,
+          "diameterMm": 20,
+          "holeStockCreditTaken": false
+        },
+        "steelThicknessMm": 2,
+        "steelDensityKgM3Comparison": 7850,
+        "carrierStockMassKgUpperComparison": 0.84152,
+        "completeModuleMassLimitKg": 3,
+        "remainingAuthoredMassBudgetKg": 2.15848,
+        "note": "Overlap stock is charged twice conservatively. Fasteners, decoration, bracket, luminaire, shade, lamp and wiring must fit remaining authored budget; none has a qualified installed upper mass."
+      },
+      "attachmentPoints": [
+        {
+          "id": "IAS/STUDY/carrier/bolt/0/0",
+          "xMm": 1030,
+          "zMm": 1590,
+          "holeDiameterMm": 5
+        },
+        {
+          "id": "IAS/STUDY/carrier/bolt/0/1",
+          "xMm": 1030,
+          "zMm": 2010,
+          "holeDiameterMm": 5
+        },
+        {
+          "id": "IAS/STUDY/carrier/bolt/1/0",
+          "xMm": 1270,
+          "zMm": 1590,
+          "holeDiameterMm": 5
+        },
+        {
+          "id": "IAS/STUDY/carrier/bolt/1/1",
+          "xMm": 1270,
+          "zMm": 2010,
+          "holeDiameterMm": 5
+        }
+      ],
+      "hardLands": [
+        {
+          "id": "IAS/STUDY/carrier/bolt/0/0",
+          "xMm": 1030,
+          "zMm": 1590,
+          "holeDiameterMm": 5,
+          "coreDepthStartMm": 0,
+          "coreDepthEndMm": 64.5,
+          "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+        },
+        {
+          "id": "IAS/STUDY/carrier/bolt/0/1",
+          "xMm": 1030,
+          "zMm": 2010,
+          "holeDiameterMm": 5,
+          "coreDepthStartMm": 0,
+          "coreDepthEndMm": 64.5,
+          "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+        },
+        {
+          "id": "IAS/STUDY/carrier/bolt/1/0",
+          "xMm": 1270,
+          "zMm": 1590,
+          "holeDiameterMm": 5,
+          "coreDepthStartMm": 0,
+          "coreDepthEndMm": 64.5,
+          "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+        },
+        {
+          "id": "IAS/STUDY/carrier/bolt/1/1",
+          "xMm": 1270,
+          "zMm": 2010,
+          "holeDiameterMm": 5,
+          "coreDepthStartMm": 0,
+          "coreDepthEndMm": 64.5,
+          "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+        }
+      ],
+      "loadDemand": {
+        "weightN": 29.43,
+        "faceMomentNm": 5.2974,
+        "coreMomentNm": 7.50465,
+        "moduleCoupleSpacingMm": 420,
+        "normalCoupleN": 17.868214285714284,
+        "equalFourFixingShearN": 7.3575,
+        "equalTwoUpperFixingTensionN": 8.934107142857142,
+        "oneUpperFixingLostNecessaryTensionN": 17.868214285714284,
+        "resistanceAccepted": false
+      },
+      "fixedEnclosures": [
+        {
+          "id": "IAS/STUDY/service-corner/fixed-island/0",
+          "bodyXZMm": [
+            1114,
+            564,
+            1186,
+            636
+          ],
+          "faceXZMm": [
+            1107,
+            557,
+            1193,
+            643
+          ],
+          "bodyDepthMm": [
+            28,
+            75
+          ],
+          "requiredDecorativeJointMm": 5,
+          "independentIslandXZMm": [
+            1075,
+            550,
+            1225,
+            650
+          ],
+          "sideEntryAxisDepthMm": 51.5,
+          "independentFixedCoverDepthMm": null,
+          "clearanceToCarrierDepthMm": null,
+          "independentOfDecoration": true,
+          "bodyDepthAuthority": "Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required."
+        },
+        {
+          "id": "IAS/STUDY/service-corner/fixed-island/1",
+          "bodyXZMm": [
+            1114,
+            1064,
+            1186,
+            1136
+          ],
+          "faceXZMm": [
+            1107,
+            1057,
+            1193,
+            1143
+          ],
+          "bodyDepthMm": [
+            28,
+            75
+          ],
+          "requiredDecorativeJointMm": 5,
+          "independentIslandXZMm": [
+            1075,
+            1050,
+            1225,
+            1150
+          ],
+          "sideEntryAxisDepthMm": 51.5,
+          "independentFixedCoverDepthMm": null,
+          "clearanceToCarrierDepthMm": null,
+          "independentOfDecoration": true,
+          "bodyDepthAuthority": "Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required."
+        },
+        {
+          "id": "IAS/STUDY/service-corner/fixed-island/2",
+          "bodyXZMm": [
+            1114,
+            1764,
+            1186,
+            1836
+          ],
+          "faceXZMm": [
+            1107,
+            1757,
+            1193,
+            1843
+          ],
+          "bodyDepthMm": [
+            13.5,
+            60.5
+          ],
+          "requiredDecorativeJointMm": 5,
+          "independentIslandXZMm": [
+            1075,
+            1750,
+            1225,
+            1850
+          ],
+          "sideEntryAxisDepthMm": 37,
+          "independentFixedCoverDepthMm": [
+            60.5,
+            62.5
+          ],
+          "clearanceToCarrierDepthMm": 2,
+          "independentOfDecoration": true,
+          "bodyDepthAuthority": "Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required."
+        }
+      ],
+      "containment": {
+        "outsideDiameterRequirementMm": 20,
+        "localUsableDepthMm": 55,
+        "riserAxisXMm": 1044,
+        "branchSideEntryPointsXMmZMm": [
+          [
+            1114,
+            600
+          ],
+          [
+            1114,
+            1100
+          ],
+          [
+            1114,
+            1800
+          ]
+        ],
+        "sideEntryBendCentrelineRadiusRequirementMm": 70,
+        "outerBendTerritoryMm": 80,
+        "entryCollarEnvelopeMm": [
+          30,
+          30
+        ],
+        "sourceInterfaceId": "IAS/STUDY/room-supply-interface",
+        "sourceConnectedToCurrentHouseCircuit": false,
+        "topology": [
+          "Room supply interface (unconnected)",
+          "Independent enclosed riser",
+          "Fixed socket island and ordinary switch island",
+          "Factory-enclosed fixed luminaire terminals"
+        ],
+        "switching": "Ordinary switch in fixed island controls arrival light; dedicated floor-lamp socket control remains manual. Fixed light and sockets must each be identified and locked dead for common service work.",
+        "limitation": "Geometric routing requirements only. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred."
+      },
+      "infill": {
+        "id": "IAS/STUDY/service-corner/infill/central",
+        "xMm": [
+          1020,
+          1280
+        ],
+        "zMm": [
+          1200,
+          1550
+        ],
+        "firstDrawMm": 50,
+        "positiveFrontScrewCount": 4,
+        "boundary": "Stopped decoration between fixed electrical islands and light carrier. Retained enclosure/rails remain closed and independently supported."
+      },
+      "firstRelease": {
+        "withdrawn": {
+          "xMm": [
+            1020,
+            1280
+          ],
+          "yMm": [
+            2872.5,
+            3052.5
+          ],
+          "zMm": [
+            1575,
+            2025
+          ]
+        },
+        "parked": {
+          "xMm": [
+            1020,
+            1280
+          ],
+          "yMm": [
+            2770.5,
+            2950.5
+          ],
+          "zMm": [
+            100,
+            550
+          ]
+        },
+        "sweepPlanMm": [
+          1020,
+          2770.5,
+          1280,
+          3102.5
+        ],
+        "conflictingOccupiedIds": [],
+        "cradle": {
+          "planMm": [
+            1000,
+            2700.5,
+            1300,
+            3000.5
+          ],
+          "supportedModuleBottomZMm": 100,
+          "jawClearWidthRequirementMm": 260,
+          "positivelyRetainedUpright": true,
+          "demandKg": 3,
+          "capacityAndFloorSupportAccepted": false
+        },
+        "stages": [
+          "Keep floor closed. Identify and isolate/prove dead both affected fixed-light and socket circuits; ordinary switch OFF is insufficient.",
+          "Latch an independent temporary tether/support before loosening either factory side screw. Follow the Astro body/bracket sequence; do not pull on the supply.",
+          "Support and release the fitting body to access factory-enclosed terminals, disconnect there after proof dead; retain the factory earth and strain-relief arrangements. Actual tail/work space requires product trial.",
+          "The independent fixed socket/switch islands remain enclosed when decoration alone is removed. An opened luminaire repair enclosure stays locked dead until fully reinstated.",
+          "Support the complete module, release four front positive carrier screws, draw normal by the declared stroke, translate to the reserved rest, then lower into the positively retained upright cradle.",
+          "Release the separate central decorative infill at its four front screws with support before normal draw; adjacent panels, skirt, door reveal, rails and electrical islands remain fixed.",
+          "Reinstate carrier retention, manufacturer bracket/body, connections, earth, strain relief and enclosures; complete required electrical verification before enabling the identified circuits."
+        ]
+      },
+      "evidence": {
+        "prototypeGeometryOnly": true,
+        "anchorsAccepted": false,
+        "installedCircuitAccepted": false,
+        "liveReplacementPermitted": false,
+        "manufacturerBracketHolePatternConfirmed": false,
+        "physicalTrialComplete": false,
+        "materialAdmission": false,
+        "completeModuleMassQualified": false
+      },
+      "issues": []
+    },
     "leads": {
       "desk": {
         "pathMm": [
@@ -2724,7 +3127,15 @@
       "craftedKitReopened": false,
       "localInterfacesChanged": true
     },
-    "diagnostics": []
+    "diagnostics": [
+      {
+        "code": "IAS_LIGHTING_SUPPLY_INTERFACE_UNBOUND",
+        "message": "Current occupied source has no bound Study feeder, protection or cable specification. The identified room interface remains unconnected; do not infer an installed circuit.",
+        "objectIds": [
+          "IAS/STUDY/room-supply-interface"
+        ]
+      }
+    ]
   },
   "probes": {
     "shallow": {
@@ -2740,7 +3151,7 @@
         "automationConnected": false,
         "localWallModule": true
       },
-      "caseDigest": "5bdd1ec433b428b0f51108d4a3b18737071afcd3a6553d7c93043206fc3dfe4f",
+      "caseDigest": "071d0b5369441cabdeff1944ca370fbc4cf665058e98ca80c0887935bd3beed0",
       "status": "GEOMETRY_REJECTED",
       "corner": {
         "id": "IAS/STUDY/service-corner",
@@ -2917,6 +3328,408 @@
           ]
         }
       ],
+      "construction": {
+        "schema": "ias-study-lighting-corner-detail/1",
+        "status": "DEAD_MOCKUP_GEOMETRY_COMPARISON",
+        "coordinateConvention": "XYZ house mm; depth d is roomward from actual masonry core face. No invented anchor embedment.",
+        "coreFaceYMm": 3177.5,
+        "fixedRails": [
+          {
+            "id": "IAS/STUDY/service-corner/rail/0",
+            "xMm": [
+              1020,
+              1040
+            ],
+            "zMm": [
+              155,
+              2100
+            ],
+            "depthMm": [
+              7.5,
+              9.5
+            ]
+          },
+          {
+            "id": "IAS/STUDY/service-corner/rail/1",
+            "xMm": [
+              1260,
+              1280
+            ],
+            "zMm": [
+              155,
+              2100
+            ],
+            "depthMm": [
+              7.5,
+              9.5
+            ]
+          }
+        ],
+        "fixedRailStockMassKgComparison": 1.22146,
+        "carrier": {
+          "id": "IAS/STUDY/service-corner/carrier",
+          "xMm": [
+            1020,
+            1280
+          ],
+          "zMm": [
+            1575,
+            2025
+          ],
+          "depthMm": [
+            14.5,
+            16.5
+          ],
+          "stripsXZMm": [
+            [
+              1020,
+              1575,
+              1040,
+              2025
+            ],
+            [
+              1260,
+              1575,
+              1280,
+              2025
+            ],
+            [
+              1040,
+              1575,
+              1260,
+              1595
+            ],
+            [
+              1040,
+              2005,
+              1260,
+              2025
+            ],
+            [
+              1100,
+              1710,
+              1200,
+              1890
+            ],
+            [
+              1040,
+              1730,
+              1260,
+              1750
+            ],
+            [
+              1040,
+              1850,
+              1260,
+              1870
+            ]
+          ],
+          "centralCableOpening": {
+            "centreXMm": 1150,
+            "centreZMm": 1800,
+            "diameterMm": 20,
+            "holeStockCreditTaken": false
+          },
+          "steelThicknessMm": 2,
+          "steelDensityKgM3Comparison": 7850,
+          "carrierStockMassKgUpperComparison": 0.84152,
+          "completeModuleMassLimitKg": 3,
+          "remainingAuthoredMassBudgetKg": 2.15848,
+          "note": "Overlap stock is charged twice conservatively. Fasteners, decoration, bracket, luminaire, shade, lamp and wiring must fit remaining authored budget; none has a qualified installed upper mass."
+        },
+        "attachmentPoints": [
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/0",
+            "xMm": 1030,
+            "zMm": 1590,
+            "holeDiameterMm": 5
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/1",
+            "xMm": 1030,
+            "zMm": 2010,
+            "holeDiameterMm": 5
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/0",
+            "xMm": 1270,
+            "zMm": 1590,
+            "holeDiameterMm": 5
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/1",
+            "xMm": 1270,
+            "zMm": 2010,
+            "holeDiameterMm": 5
+          }
+        ],
+        "hardLands": [
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/0",
+            "xMm": 1030,
+            "zMm": 1590,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 16.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/1",
+            "xMm": 1030,
+            "zMm": 2010,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 16.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/0",
+            "xMm": 1270,
+            "zMm": 1590,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 16.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/1",
+            "xMm": 1270,
+            "zMm": 2010,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 16.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          }
+        ],
+        "loadDemand": {
+          "weightN": 29.43,
+          "faceMomentNm": 5.2974,
+          "coreMomentNm": 6.09201,
+          "moduleCoupleSpacingMm": 420,
+          "normalCoupleN": 14.504785714285715,
+          "equalFourFixingShearN": 7.3575,
+          "equalTwoUpperFixingTensionN": 7.2523928571428575,
+          "oneUpperFixingLostNecessaryTensionN": 14.504785714285715,
+          "resistanceAccepted": false
+        },
+        "fixedEnclosures": [
+          {
+            "id": "IAS/STUDY/service-corner/fixed-island/0",
+            "bodyXZMm": [
+              1114,
+              564,
+              1186,
+              636
+            ],
+            "faceXZMm": [
+              1107,
+              557,
+              1193,
+              643
+            ],
+            "bodyDepthMm": [
+              -20,
+              27
+            ],
+            "requiredDecorativeJointMm": 5,
+            "independentIslandXZMm": [
+              1075,
+              550,
+              1225,
+              650
+            ],
+            "sideEntryAxisDepthMm": 3.5,
+            "independentFixedCoverDepthMm": null,
+            "clearanceToCarrierDepthMm": null,
+            "independentOfDecoration": true,
+            "bodyDepthAuthority": "Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required."
+          },
+          {
+            "id": "IAS/STUDY/service-corner/fixed-island/1",
+            "bodyXZMm": [
+              1114,
+              1064,
+              1186,
+              1136
+            ],
+            "faceXZMm": [
+              1107,
+              1057,
+              1193,
+              1143
+            ],
+            "bodyDepthMm": [
+              -20,
+              27
+            ],
+            "requiredDecorativeJointMm": 5,
+            "independentIslandXZMm": [
+              1075,
+              1050,
+              1225,
+              1150
+            ],
+            "sideEntryAxisDepthMm": 3.5,
+            "independentFixedCoverDepthMm": null,
+            "clearanceToCarrierDepthMm": null,
+            "independentOfDecoration": true,
+            "bodyDepthAuthority": "Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required."
+          },
+          {
+            "id": "IAS/STUDY/service-corner/fixed-island/2",
+            "bodyXZMm": [
+              1114,
+              1764,
+              1186,
+              1836
+            ],
+            "faceXZMm": [
+              1107,
+              1757,
+              1193,
+              1843
+            ],
+            "bodyDepthMm": [
+              -34.5,
+              12.5
+            ],
+            "requiredDecorativeJointMm": 5,
+            "independentIslandXZMm": [
+              1075,
+              1750,
+              1225,
+              1850
+            ],
+            "sideEntryAxisDepthMm": -11,
+            "independentFixedCoverDepthMm": [
+              12.5,
+              14.5
+            ],
+            "clearanceToCarrierDepthMm": 2,
+            "independentOfDecoration": true,
+            "bodyDepthAuthority": "Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required."
+          }
+        ],
+        "containment": {
+          "outsideDiameterRequirementMm": 20,
+          "localUsableDepthMm": 7,
+          "riserAxisXMm": 1044,
+          "branchSideEntryPointsXMmZMm": [
+            [
+              1114,
+              600
+            ],
+            [
+              1114,
+              1100
+            ],
+            [
+              1114,
+              1800
+            ]
+          ],
+          "sideEntryBendCentrelineRadiusRequirementMm": 70,
+          "outerBendTerritoryMm": 80,
+          "entryCollarEnvelopeMm": [
+            30,
+            30
+          ],
+          "sourceInterfaceId": "IAS/STUDY/room-supply-interface",
+          "sourceConnectedToCurrentHouseCircuit": false,
+          "topology": [
+            "Room supply interface (unconnected)",
+            "Independent enclosed riser",
+            "Fixed socket island and ordinary switch island",
+            "Factory-enclosed fixed luminaire terminals"
+          ],
+          "switching": "Ordinary switch in fixed island controls arrival light; dedicated floor-lamp socket control remains manual. Fixed light and sockets must each be identified and locked dead for common service work.",
+          "limitation": "Geometric routing requirements only. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred."
+        },
+        "infill": {
+          "id": "IAS/STUDY/service-corner/infill/central",
+          "xMm": [
+            1020,
+            1280
+          ],
+          "zMm": [
+            1200,
+            1550
+          ],
+          "firstDrawMm": 50,
+          "positiveFrontScrewCount": 4,
+          "boundary": "Stopped decoration between fixed electrical islands and light carrier. Retained enclosure/rails remain closed and independently supported."
+        },
+        "firstRelease": {
+          "withdrawn": {
+            "xMm": [
+              1020,
+              1280
+            ],
+            "yMm": [
+              2920.5,
+              3100.5
+            ],
+            "zMm": [
+              1575,
+              2025
+            ]
+          },
+          "parked": {
+            "xMm": [
+              1020,
+              1280
+            ],
+            "yMm": [
+              2770.5,
+              2950.5
+            ],
+            "zMm": [
+              100,
+              550
+            ]
+          },
+          "sweepPlanMm": [
+            1020,
+            2770.5,
+            1280,
+            3150.5
+          ],
+          "conflictingOccupiedIds": [],
+          "cradle": {
+            "planMm": [
+              1000,
+              2700.5,
+              1300,
+              3000.5
+            ],
+            "supportedModuleBottomZMm": 100,
+            "jawClearWidthRequirementMm": 260,
+            "positivelyRetainedUpright": true,
+            "demandKg": 3,
+            "capacityAndFloorSupportAccepted": false
+          },
+          "stages": [
+            "Keep floor closed. Identify and isolate/prove dead both affected fixed-light and socket circuits; ordinary switch OFF is insufficient.",
+            "Latch an independent temporary tether/support before loosening either factory side screw. Follow the Astro body/bracket sequence; do not pull on the supply.",
+            "Support and release the fitting body to access factory-enclosed terminals, disconnect there after proof dead; retain the factory earth and strain-relief arrangements. Actual tail/work space requires product trial.",
+            "The independent fixed socket/switch islands remain enclosed when decoration alone is removed. An opened luminaire repair enclosure stays locked dead until fully reinstated.",
+            "Support the complete module, release four front positive carrier screws, draw normal by the declared stroke, translate to the reserved rest, then lower into the positively retained upright cradle.",
+            "Release the separate central decorative infill at its four front screws with support before normal draw; adjacent panels, skirt, door reveal, rails and electrical islands remain fixed.",
+            "Reinstate carrier retention, manufacturer bracket/body, connections, earth, strain relief and enclosures; complete required electrical verification before enabling the identified circuits."
+          ]
+        },
+        "evidence": {
+          "prototypeGeometryOnly": true,
+          "anchorsAccepted": false,
+          "installedCircuitAccepted": false,
+          "liveReplacementPermitted": false,
+          "manufacturerBracketHolePatternConfirmed": false,
+          "physicalTrialComplete": false,
+          "materialAdmission": false,
+          "completeModuleMassQualified": false
+        },
+        "issues": []
+      },
       "leads": {
         "desk": {
           "pathMm": [
@@ -3006,6 +3819,13 @@
           "objectIds": [
             "IAS/STUDY/service-corner"
           ]
+        },
+        {
+          "code": "IAS_LIGHTING_SUPPLY_INTERFACE_UNBOUND",
+          "message": "Current occupied source has no bound Study feeder, protection or cable specification. The identified room interface remains unconnected; do not infer an installed circuit.",
+          "objectIds": [
+            "IAS/STUDY/room-supply-interface"
+          ]
         }
       ],
       "unchangedRoomGeometry": true,
@@ -3036,7 +3856,7 @@
         "automationConnected": false,
         "localWallModule": true
       },
-      "caseDigest": "e9c44ba78dd344d9a30643d4c11a6ccec7109a610f1d1a458b94742a9f877751",
+      "caseDigest": "046f6a9dfcef84a48c20a3124a610075ce0ddb696307582f39722bd275ad1a3c",
       "status": "DEVELOPMENT_COMPARISON",
       "corner": {
         "id": "IAS/STUDY/service-corner",
@@ -3213,6 +4033,408 @@
           ]
         }
       ],
+      "construction": {
+        "schema": "ias-study-lighting-corner-detail/1",
+        "status": "DEAD_MOCKUP_GEOMETRY_COMPARISON",
+        "coordinateConvention": "XYZ house mm; depth d is roomward from actual masonry core face. No invented anchor embedment.",
+        "coreFaceYMm": 3177.5,
+        "fixedRails": [
+          {
+            "id": "IAS/STUDY/service-corner/rail/0",
+            "xMm": [
+              1020,
+              1040
+            ],
+            "zMm": [
+              155,
+              2100
+            ],
+            "depthMm": [
+              7.5,
+              9.5
+            ]
+          },
+          {
+            "id": "IAS/STUDY/service-corner/rail/1",
+            "xMm": [
+              1260,
+              1280
+            ],
+            "zMm": [
+              155,
+              2100
+            ],
+            "depthMm": [
+              7.5,
+              9.5
+            ]
+          }
+        ],
+        "fixedRailStockMassKgComparison": 1.22146,
+        "carrier": {
+          "id": "IAS/STUDY/service-corner/carrier",
+          "xMm": [
+            1020,
+            1280
+          ],
+          "zMm": [
+            1575,
+            2025
+          ],
+          "depthMm": [
+            72.5,
+            74.5
+          ],
+          "stripsXZMm": [
+            [
+              1020,
+              1575,
+              1040,
+              2025
+            ],
+            [
+              1260,
+              1575,
+              1280,
+              2025
+            ],
+            [
+              1040,
+              1575,
+              1260,
+              1595
+            ],
+            [
+              1040,
+              2005,
+              1260,
+              2025
+            ],
+            [
+              1100,
+              1710,
+              1200,
+              1890
+            ],
+            [
+              1040,
+              1730,
+              1260,
+              1750
+            ],
+            [
+              1040,
+              1850,
+              1260,
+              1870
+            ]
+          ],
+          "centralCableOpening": {
+            "centreXMm": 1150,
+            "centreZMm": 1800,
+            "diameterMm": 20,
+            "holeStockCreditTaken": false
+          },
+          "steelThicknessMm": 2,
+          "steelDensityKgM3Comparison": 7850,
+          "carrierStockMassKgUpperComparison": 0.84152,
+          "completeModuleMassLimitKg": 3,
+          "remainingAuthoredMassBudgetKg": 2.15848,
+          "note": "Overlap stock is charged twice conservatively. Fasteners, decoration, bracket, luminaire, shade, lamp and wiring must fit remaining authored budget; none has a qualified installed upper mass."
+        },
+        "attachmentPoints": [
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/0",
+            "xMm": 1030,
+            "zMm": 1590,
+            "holeDiameterMm": 5
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/1",
+            "xMm": 1030,
+            "zMm": 2010,
+            "holeDiameterMm": 5
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/0",
+            "xMm": 1270,
+            "zMm": 1590,
+            "holeDiameterMm": 5
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/1",
+            "xMm": 1270,
+            "zMm": 2010,
+            "holeDiameterMm": 5
+          }
+        ],
+        "hardLands": [
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/0",
+            "xMm": 1030,
+            "zMm": 1590,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 74.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/1",
+            "xMm": 1030,
+            "zMm": 2010,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 74.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/0",
+            "xMm": 1270,
+            "zMm": 1590,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 74.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/1",
+            "xMm": 1270,
+            "zMm": 2010,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 74.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          }
+        ],
+        "loadDemand": {
+          "weightN": 29.43,
+          "faceMomentNm": 5.2974,
+          "coreMomentNm": 7.79895,
+          "moduleCoupleSpacingMm": 420,
+          "normalCoupleN": 18.56892857142857,
+          "equalFourFixingShearN": 7.3575,
+          "equalTwoUpperFixingTensionN": 9.284464285714286,
+          "oneUpperFixingLostNecessaryTensionN": 18.56892857142857,
+          "resistanceAccepted": false
+        },
+        "fixedEnclosures": [
+          {
+            "id": "IAS/STUDY/service-corner/fixed-island/0",
+            "bodyXZMm": [
+              1114,
+              564,
+              1186,
+              636
+            ],
+            "faceXZMm": [
+              1107,
+              557,
+              1193,
+              643
+            ],
+            "bodyDepthMm": [
+              38,
+              85
+            ],
+            "requiredDecorativeJointMm": 5,
+            "independentIslandXZMm": [
+              1075,
+              550,
+              1225,
+              650
+            ],
+            "sideEntryAxisDepthMm": 61.5,
+            "independentFixedCoverDepthMm": null,
+            "clearanceToCarrierDepthMm": null,
+            "independentOfDecoration": true,
+            "bodyDepthAuthority": "Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required."
+          },
+          {
+            "id": "IAS/STUDY/service-corner/fixed-island/1",
+            "bodyXZMm": [
+              1114,
+              1064,
+              1186,
+              1136
+            ],
+            "faceXZMm": [
+              1107,
+              1057,
+              1193,
+              1143
+            ],
+            "bodyDepthMm": [
+              38,
+              85
+            ],
+            "requiredDecorativeJointMm": 5,
+            "independentIslandXZMm": [
+              1075,
+              1050,
+              1225,
+              1150
+            ],
+            "sideEntryAxisDepthMm": 61.5,
+            "independentFixedCoverDepthMm": null,
+            "clearanceToCarrierDepthMm": null,
+            "independentOfDecoration": true,
+            "bodyDepthAuthority": "Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required."
+          },
+          {
+            "id": "IAS/STUDY/service-corner/fixed-island/2",
+            "bodyXZMm": [
+              1114,
+              1764,
+              1186,
+              1836
+            ],
+            "faceXZMm": [
+              1107,
+              1757,
+              1193,
+              1843
+            ],
+            "bodyDepthMm": [
+              23.5,
+              70.5
+            ],
+            "requiredDecorativeJointMm": 5,
+            "independentIslandXZMm": [
+              1075,
+              1750,
+              1225,
+              1850
+            ],
+            "sideEntryAxisDepthMm": 47,
+            "independentFixedCoverDepthMm": [
+              70.5,
+              72.5
+            ],
+            "clearanceToCarrierDepthMm": 2,
+            "independentOfDecoration": true,
+            "bodyDepthAuthority": "Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required."
+          }
+        ],
+        "containment": {
+          "outsideDiameterRequirementMm": 20,
+          "localUsableDepthMm": 65,
+          "riserAxisXMm": 1044,
+          "branchSideEntryPointsXMmZMm": [
+            [
+              1114,
+              600
+            ],
+            [
+              1114,
+              1100
+            ],
+            [
+              1114,
+              1800
+            ]
+          ],
+          "sideEntryBendCentrelineRadiusRequirementMm": 70,
+          "outerBendTerritoryMm": 80,
+          "entryCollarEnvelopeMm": [
+            30,
+            30
+          ],
+          "sourceInterfaceId": "IAS/STUDY/room-supply-interface",
+          "sourceConnectedToCurrentHouseCircuit": false,
+          "topology": [
+            "Room supply interface (unconnected)",
+            "Independent enclosed riser",
+            "Fixed socket island and ordinary switch island",
+            "Factory-enclosed fixed luminaire terminals"
+          ],
+          "switching": "Ordinary switch in fixed island controls arrival light; dedicated floor-lamp socket control remains manual. Fixed light and sockets must each be identified and locked dead for common service work.",
+          "limitation": "Geometric routing requirements only. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred."
+        },
+        "infill": {
+          "id": "IAS/STUDY/service-corner/infill/central",
+          "xMm": [
+            1020,
+            1280
+          ],
+          "zMm": [
+            1200,
+            1550
+          ],
+          "firstDrawMm": 50,
+          "positiveFrontScrewCount": 4,
+          "boundary": "Stopped decoration between fixed electrical islands and light carrier. Retained enclosure/rails remain closed and independently supported."
+        },
+        "firstRelease": {
+          "withdrawn": {
+            "xMm": [
+              1020,
+              1280
+            ],
+            "yMm": [
+              2862.5,
+              3042.5
+            ],
+            "zMm": [
+              1575,
+              2025
+            ]
+          },
+          "parked": {
+            "xMm": [
+              1020,
+              1280
+            ],
+            "yMm": [
+              2770.5,
+              2950.5
+            ],
+            "zMm": [
+              100,
+              550
+            ]
+          },
+          "sweepPlanMm": [
+            1020,
+            2770.5,
+            1280,
+            3092.5
+          ],
+          "conflictingOccupiedIds": [],
+          "cradle": {
+            "planMm": [
+              1000,
+              2700.5,
+              1300,
+              3000.5
+            ],
+            "supportedModuleBottomZMm": 100,
+            "jawClearWidthRequirementMm": 260,
+            "positivelyRetainedUpright": true,
+            "demandKg": 3,
+            "capacityAndFloorSupportAccepted": false
+          },
+          "stages": [
+            "Keep floor closed. Identify and isolate/prove dead both affected fixed-light and socket circuits; ordinary switch OFF is insufficient.",
+            "Latch an independent temporary tether/support before loosening either factory side screw. Follow the Astro body/bracket sequence; do not pull on the supply.",
+            "Support and release the fitting body to access factory-enclosed terminals, disconnect there after proof dead; retain the factory earth and strain-relief arrangements. Actual tail/work space requires product trial.",
+            "The independent fixed socket/switch islands remain enclosed when decoration alone is removed. An opened luminaire repair enclosure stays locked dead until fully reinstated.",
+            "Support the complete module, release four front positive carrier screws, draw normal by the declared stroke, translate to the reserved rest, then lower into the positively retained upright cradle.",
+            "Release the separate central decorative infill at its four front screws with support before normal draw; adjacent panels, skirt, door reveal, rails and electrical islands remain fixed.",
+            "Reinstate carrier retention, manufacturer bracket/body, connections, earth, strain relief and enclosures; complete required electrical verification before enabling the identified circuits."
+          ]
+        },
+        "evidence": {
+          "prototypeGeometryOnly": true,
+          "anchorsAccepted": false,
+          "installedCircuitAccepted": false,
+          "liveReplacementPermitted": false,
+          "manufacturerBracketHolePatternConfirmed": false,
+          "physicalTrialComplete": false,
+          "materialAdmission": false,
+          "completeModuleMassQualified": false
+        },
+        "issues": []
+      },
       "leads": {
         "desk": {
           "pathMm": [
@@ -3295,7 +4517,15 @@
         "ordinaryArrivalWorking": true,
         "ordinaryControl": "Door-side ordinary switch operates fixed wall/ceiling or dedicated floor-lamp socket. Task lamps retain local controls. No dimmer compatibility is assumed."
       },
-      "diagnostics": [],
+      "diagnostics": [
+        {
+          "code": "IAS_LIGHTING_SUPPLY_INTERFACE_UNBOUND",
+          "message": "Current occupied source has no bound Study feeder, protection or cable specification. The identified room interface remains unconnected; do not infer an installed circuit.",
+          "objectIds": [
+            "IAS/STUDY/room-supply-interface"
+          ]
+        }
+      ],
       "unchangedRoomGeometry": true,
       "unchangedKitchen": true,
       "evidence": {
@@ -3324,7 +4554,7 @@
         "automationConnected": false,
         "localWallModule": true
       },
-      "caseDigest": "dd62102dbc4555e921f47967dcdf325367c6d501b60db98a6a2a503da39d81f3",
+      "caseDigest": "519c4027e83e8ebf08ed3a89fb8a6537e95af11a2d38b28ba023664a95f72e77",
       "status": "DEVELOPMENT_COMPARISON",
       "corner": {
         "id": "IAS/STUDY/service-corner",
@@ -3501,6 +4731,408 @@
           ]
         }
       ],
+      "construction": {
+        "schema": "ias-study-lighting-corner-detail/1",
+        "status": "DEAD_MOCKUP_GEOMETRY_COMPARISON",
+        "coordinateConvention": "XYZ house mm; depth d is roomward from actual masonry core face. No invented anchor embedment.",
+        "coreFaceYMm": 3177.5,
+        "fixedRails": [
+          {
+            "id": "IAS/STUDY/service-corner/rail/0",
+            "xMm": [
+              1020,
+              1040
+            ],
+            "zMm": [
+              155,
+              2100
+            ],
+            "depthMm": [
+              7.5,
+              9.5
+            ]
+          },
+          {
+            "id": "IAS/STUDY/service-corner/rail/1",
+            "xMm": [
+              1260,
+              1280
+            ],
+            "zMm": [
+              155,
+              2100
+            ],
+            "depthMm": [
+              7.5,
+              9.5
+            ]
+          }
+        ],
+        "fixedRailStockMassKgComparison": 1.22146,
+        "carrier": {
+          "id": "IAS/STUDY/service-corner/carrier",
+          "xMm": [
+            1020,
+            1280
+          ],
+          "zMm": [
+            1575,
+            2025
+          ],
+          "depthMm": [
+            62.5,
+            64.5
+          ],
+          "stripsXZMm": [
+            [
+              1020,
+              1575,
+              1040,
+              2025
+            ],
+            [
+              1260,
+              1575,
+              1280,
+              2025
+            ],
+            [
+              1040,
+              1575,
+              1260,
+              1595
+            ],
+            [
+              1040,
+              2005,
+              1260,
+              2025
+            ],
+            [
+              1100,
+              1710,
+              1200,
+              1890
+            ],
+            [
+              1040,
+              1730,
+              1260,
+              1750
+            ],
+            [
+              1040,
+              1850,
+              1260,
+              1870
+            ]
+          ],
+          "centralCableOpening": {
+            "centreXMm": 1150,
+            "centreZMm": 1800,
+            "diameterMm": 20,
+            "holeStockCreditTaken": false
+          },
+          "steelThicknessMm": 2,
+          "steelDensityKgM3Comparison": 7850,
+          "carrierStockMassKgUpperComparison": 0.84152,
+          "completeModuleMassLimitKg": 3,
+          "remainingAuthoredMassBudgetKg": 2.15848,
+          "note": "Overlap stock is charged twice conservatively. Fasteners, decoration, bracket, luminaire, shade, lamp and wiring must fit remaining authored budget; none has a qualified installed upper mass."
+        },
+        "attachmentPoints": [
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/0",
+            "xMm": 1030,
+            "zMm": 1590,
+            "holeDiameterMm": 5
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/1",
+            "xMm": 1030,
+            "zMm": 2010,
+            "holeDiameterMm": 5
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/0",
+            "xMm": 1270,
+            "zMm": 1590,
+            "holeDiameterMm": 5
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/1",
+            "xMm": 1270,
+            "zMm": 2010,
+            "holeDiameterMm": 5
+          }
+        ],
+        "hardLands": [
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/0",
+            "xMm": 1030,
+            "zMm": 1590,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 64.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/1",
+            "xMm": 1030,
+            "zMm": 2010,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 64.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/0",
+            "xMm": 1270,
+            "zMm": 1590,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 64.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/1",
+            "xMm": 1270,
+            "zMm": 2010,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 64.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          }
+        ],
+        "loadDemand": {
+          "weightN": 29.43,
+          "faceMomentNm": 5.2974,
+          "coreMomentNm": 7.50465,
+          "moduleCoupleSpacingMm": 420,
+          "normalCoupleN": 17.868214285714284,
+          "equalFourFixingShearN": 7.3575,
+          "equalTwoUpperFixingTensionN": 8.934107142857142,
+          "oneUpperFixingLostNecessaryTensionN": 17.868214285714284,
+          "resistanceAccepted": false
+        },
+        "fixedEnclosures": [
+          {
+            "id": "IAS/STUDY/service-corner/fixed-island/0",
+            "bodyXZMm": [
+              1114,
+              564,
+              1186,
+              636
+            ],
+            "faceXZMm": [
+              1107,
+              557,
+              1193,
+              643
+            ],
+            "bodyDepthMm": [
+              28,
+              75
+            ],
+            "requiredDecorativeJointMm": 5,
+            "independentIslandXZMm": [
+              1075,
+              550,
+              1225,
+              650
+            ],
+            "sideEntryAxisDepthMm": 51.5,
+            "independentFixedCoverDepthMm": null,
+            "clearanceToCarrierDepthMm": null,
+            "independentOfDecoration": true,
+            "bodyDepthAuthority": "Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required."
+          },
+          {
+            "id": "IAS/STUDY/service-corner/fixed-island/1",
+            "bodyXZMm": [
+              1114,
+              1064,
+              1186,
+              1136
+            ],
+            "faceXZMm": [
+              1107,
+              1057,
+              1193,
+              1143
+            ],
+            "bodyDepthMm": [
+              28,
+              75
+            ],
+            "requiredDecorativeJointMm": 5,
+            "independentIslandXZMm": [
+              1075,
+              1050,
+              1225,
+              1150
+            ],
+            "sideEntryAxisDepthMm": 51.5,
+            "independentFixedCoverDepthMm": null,
+            "clearanceToCarrierDepthMm": null,
+            "independentOfDecoration": true,
+            "bodyDepthAuthority": "Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required."
+          },
+          {
+            "id": "IAS/STUDY/service-corner/fixed-island/2",
+            "bodyXZMm": [
+              1114,
+              1764,
+              1186,
+              1836
+            ],
+            "faceXZMm": [
+              1107,
+              1757,
+              1193,
+              1843
+            ],
+            "bodyDepthMm": [
+              13.5,
+              60.5
+            ],
+            "requiredDecorativeJointMm": 5,
+            "independentIslandXZMm": [
+              1075,
+              1750,
+              1225,
+              1850
+            ],
+            "sideEntryAxisDepthMm": 37,
+            "independentFixedCoverDepthMm": [
+              60.5,
+              62.5
+            ],
+            "clearanceToCarrierDepthMm": 2,
+            "independentOfDecoration": true,
+            "bodyDepthAuthority": "Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required."
+          }
+        ],
+        "containment": {
+          "outsideDiameterRequirementMm": 20,
+          "localUsableDepthMm": 55,
+          "riserAxisXMm": 1044,
+          "branchSideEntryPointsXMmZMm": [
+            [
+              1114,
+              600
+            ],
+            [
+              1114,
+              1100
+            ],
+            [
+              1114,
+              1800
+            ]
+          ],
+          "sideEntryBendCentrelineRadiusRequirementMm": 70,
+          "outerBendTerritoryMm": 80,
+          "entryCollarEnvelopeMm": [
+            30,
+            30
+          ],
+          "sourceInterfaceId": "IAS/STUDY/room-supply-interface",
+          "sourceConnectedToCurrentHouseCircuit": false,
+          "topology": [
+            "Room supply interface (unconnected)",
+            "Independent enclosed riser",
+            "Fixed socket island and ordinary switch island",
+            "Factory-enclosed fixed luminaire terminals"
+          ],
+          "switching": "Ordinary switch in fixed island controls arrival light; dedicated floor-lamp socket control remains manual. Fixed light and sockets must each be identified and locked dead for common service work.",
+          "limitation": "Geometric routing requirements only. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred."
+        },
+        "infill": {
+          "id": "IAS/STUDY/service-corner/infill/central",
+          "xMm": [
+            1020,
+            1280
+          ],
+          "zMm": [
+            1200,
+            1550
+          ],
+          "firstDrawMm": 50,
+          "positiveFrontScrewCount": 4,
+          "boundary": "Stopped decoration between fixed electrical islands and light carrier. Retained enclosure/rails remain closed and independently supported."
+        },
+        "firstRelease": {
+          "withdrawn": {
+            "xMm": [
+              1020,
+              1280
+            ],
+            "yMm": [
+              2872.5,
+              3052.5
+            ],
+            "zMm": [
+              1575,
+              2025
+            ]
+          },
+          "parked": {
+            "xMm": [
+              1020,
+              1280
+            ],
+            "yMm": [
+              2770.5,
+              2950.5
+            ],
+            "zMm": [
+              100,
+              550
+            ]
+          },
+          "sweepPlanMm": [
+            1020,
+            2770.5,
+            1280,
+            3102.5
+          ],
+          "conflictingOccupiedIds": [],
+          "cradle": {
+            "planMm": [
+              1000,
+              2700.5,
+              1300,
+              3000.5
+            ],
+            "supportedModuleBottomZMm": 100,
+            "jawClearWidthRequirementMm": 260,
+            "positivelyRetainedUpright": true,
+            "demandKg": 3,
+            "capacityAndFloorSupportAccepted": false
+          },
+          "stages": [
+            "Keep floor closed. Identify and isolate/prove dead both affected fixed-light and socket circuits; ordinary switch OFF is insufficient.",
+            "Latch an independent temporary tether/support before loosening either factory side screw. Follow the Astro body/bracket sequence; do not pull on the supply.",
+            "Support and release the fitting body to access factory-enclosed terminals, disconnect there after proof dead; retain the factory earth and strain-relief arrangements. Actual tail/work space requires product trial.",
+            "The independent fixed socket/switch islands remain enclosed when decoration alone is removed. An opened luminaire repair enclosure stays locked dead until fully reinstated.",
+            "Support the complete module, release four front positive carrier screws, draw normal by the declared stroke, translate to the reserved rest, then lower into the positively retained upright cradle.",
+            "Release the separate central decorative infill at its four front screws with support before normal draw; adjacent panels, skirt, door reveal, rails and electrical islands remain fixed.",
+            "Reinstate carrier retention, manufacturer bracket/body, connections, earth, strain relief and enclosures; complete required electrical verification before enabling the identified circuits."
+          ]
+        },
+        "evidence": {
+          "prototypeGeometryOnly": true,
+          "anchorsAccepted": false,
+          "installedCircuitAccepted": false,
+          "liveReplacementPermitted": false,
+          "manufacturerBracketHolePatternConfirmed": false,
+          "physicalTrialComplete": false,
+          "materialAdmission": false,
+          "completeModuleMassQualified": false
+        },
+        "issues": []
+      },
       "leads": {
         "desk": {
           "pathMm": [
@@ -3583,7 +5215,15 @@
         "ordinaryArrivalWorking": true,
         "ordinaryControl": "Door-side ordinary switch operates fixed wall/ceiling or dedicated floor-lamp socket. Task lamps retain local controls. No dimmer compatibility is assumed."
       },
-      "diagnostics": [],
+      "diagnostics": [
+        {
+          "code": "IAS_LIGHTING_SUPPLY_INTERFACE_UNBOUND",
+          "message": "Current occupied source has no bound Study feeder, protection or cable specification. The identified room interface remains unconnected; do not infer an installed circuit.",
+          "objectIds": [
+            "IAS/STUDY/room-supply-interface"
+          ]
+        }
+      ],
       "unchangedRoomGeometry": true,
       "unchangedKitchen": true,
       "evidence": {
@@ -3612,7 +5252,7 @@
         "automationConnected": false,
         "localWallModule": true
       },
-      "caseDigest": "9602f89c81f5bb2142e86be89b83cffdc55be701cd89a219dd484a29d617a08f",
+      "caseDigest": "edf2b7d6f10fb0873dd11fa737cf92321cf761c303a905d8419aa7bb62d86fb8",
       "status": "DEVELOPMENT_COMPARISON",
       "corner": {
         "id": "IAS/STUDY/service-corner",
@@ -3789,6 +5429,408 @@
           ]
         }
       ],
+      "construction": {
+        "schema": "ias-study-lighting-corner-detail/1",
+        "status": "DEAD_MOCKUP_GEOMETRY_COMPARISON",
+        "coordinateConvention": "XYZ house mm; depth d is roomward from actual masonry core face. No invented anchor embedment.",
+        "coreFaceYMm": 3177.5,
+        "fixedRails": [
+          {
+            "id": "IAS/STUDY/service-corner/rail/0",
+            "xMm": [
+              1020,
+              1040
+            ],
+            "zMm": [
+              155,
+              2100
+            ],
+            "depthMm": [
+              7.5,
+              9.5
+            ]
+          },
+          {
+            "id": "IAS/STUDY/service-corner/rail/1",
+            "xMm": [
+              1260,
+              1280
+            ],
+            "zMm": [
+              155,
+              2100
+            ],
+            "depthMm": [
+              7.5,
+              9.5
+            ]
+          }
+        ],
+        "fixedRailStockMassKgComparison": 1.22146,
+        "carrier": {
+          "id": "IAS/STUDY/service-corner/carrier",
+          "xMm": [
+            1020,
+            1280
+          ],
+          "zMm": [
+            1575,
+            2025
+          ],
+          "depthMm": [
+            62.5,
+            64.5
+          ],
+          "stripsXZMm": [
+            [
+              1020,
+              1575,
+              1040,
+              2025
+            ],
+            [
+              1260,
+              1575,
+              1280,
+              2025
+            ],
+            [
+              1040,
+              1575,
+              1260,
+              1595
+            ],
+            [
+              1040,
+              2005,
+              1260,
+              2025
+            ],
+            [
+              1100,
+              1710,
+              1200,
+              1890
+            ],
+            [
+              1040,
+              1730,
+              1260,
+              1750
+            ],
+            [
+              1040,
+              1850,
+              1260,
+              1870
+            ]
+          ],
+          "centralCableOpening": {
+            "centreXMm": 1150,
+            "centreZMm": 1800,
+            "diameterMm": 20,
+            "holeStockCreditTaken": false
+          },
+          "steelThicknessMm": 2,
+          "steelDensityKgM3Comparison": 7850,
+          "carrierStockMassKgUpperComparison": 0.84152,
+          "completeModuleMassLimitKg": 3,
+          "remainingAuthoredMassBudgetKg": 2.15848,
+          "note": "Overlap stock is charged twice conservatively. Fasteners, decoration, bracket, luminaire, shade, lamp and wiring must fit remaining authored budget; none has a qualified installed upper mass."
+        },
+        "attachmentPoints": [
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/0",
+            "xMm": 1030,
+            "zMm": 1590,
+            "holeDiameterMm": 5
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/1",
+            "xMm": 1030,
+            "zMm": 2010,
+            "holeDiameterMm": 5
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/0",
+            "xMm": 1270,
+            "zMm": 1590,
+            "holeDiameterMm": 5
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/1",
+            "xMm": 1270,
+            "zMm": 2010,
+            "holeDiameterMm": 5
+          }
+        ],
+        "hardLands": [
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/0",
+            "xMm": 1030,
+            "zMm": 1590,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 64.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/1",
+            "xMm": 1030,
+            "zMm": 2010,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 64.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/0",
+            "xMm": 1270,
+            "zMm": 1590,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 64.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/1",
+            "xMm": 1270,
+            "zMm": 2010,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 64.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          }
+        ],
+        "loadDemand": {
+          "weightN": 29.43,
+          "faceMomentNm": 5.2974,
+          "coreMomentNm": 7.50465,
+          "moduleCoupleSpacingMm": 420,
+          "normalCoupleN": 17.868214285714284,
+          "equalFourFixingShearN": 7.3575,
+          "equalTwoUpperFixingTensionN": 8.934107142857142,
+          "oneUpperFixingLostNecessaryTensionN": 17.868214285714284,
+          "resistanceAccepted": false
+        },
+        "fixedEnclosures": [
+          {
+            "id": "IAS/STUDY/service-corner/fixed-island/0",
+            "bodyXZMm": [
+              1114,
+              564,
+              1186,
+              636
+            ],
+            "faceXZMm": [
+              1107,
+              557,
+              1193,
+              643
+            ],
+            "bodyDepthMm": [
+              28,
+              75
+            ],
+            "requiredDecorativeJointMm": 5,
+            "independentIslandXZMm": [
+              1075,
+              550,
+              1225,
+              650
+            ],
+            "sideEntryAxisDepthMm": 51.5,
+            "independentFixedCoverDepthMm": null,
+            "clearanceToCarrierDepthMm": null,
+            "independentOfDecoration": true,
+            "bodyDepthAuthority": "Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required."
+          },
+          {
+            "id": "IAS/STUDY/service-corner/fixed-island/1",
+            "bodyXZMm": [
+              1114,
+              1064,
+              1186,
+              1136
+            ],
+            "faceXZMm": [
+              1107,
+              1057,
+              1193,
+              1143
+            ],
+            "bodyDepthMm": [
+              28,
+              75
+            ],
+            "requiredDecorativeJointMm": 5,
+            "independentIslandXZMm": [
+              1075,
+              1050,
+              1225,
+              1150
+            ],
+            "sideEntryAxisDepthMm": 51.5,
+            "independentFixedCoverDepthMm": null,
+            "clearanceToCarrierDepthMm": null,
+            "independentOfDecoration": true,
+            "bodyDepthAuthority": "Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required."
+          },
+          {
+            "id": "IAS/STUDY/service-corner/fixed-island/2",
+            "bodyXZMm": [
+              1114,
+              1764,
+              1186,
+              1836
+            ],
+            "faceXZMm": [
+              1107,
+              1757,
+              1193,
+              1843
+            ],
+            "bodyDepthMm": [
+              13.5,
+              60.5
+            ],
+            "requiredDecorativeJointMm": 5,
+            "independentIslandXZMm": [
+              1075,
+              1750,
+              1225,
+              1850
+            ],
+            "sideEntryAxisDepthMm": 37,
+            "independentFixedCoverDepthMm": [
+              60.5,
+              62.5
+            ],
+            "clearanceToCarrierDepthMm": 2,
+            "independentOfDecoration": true,
+            "bodyDepthAuthority": "Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required."
+          }
+        ],
+        "containment": {
+          "outsideDiameterRequirementMm": 20,
+          "localUsableDepthMm": 55,
+          "riserAxisXMm": 1044,
+          "branchSideEntryPointsXMmZMm": [
+            [
+              1114,
+              600
+            ],
+            [
+              1114,
+              1100
+            ],
+            [
+              1114,
+              1800
+            ]
+          ],
+          "sideEntryBendCentrelineRadiusRequirementMm": 70,
+          "outerBendTerritoryMm": 80,
+          "entryCollarEnvelopeMm": [
+            30,
+            30
+          ],
+          "sourceInterfaceId": "IAS/STUDY/room-supply-interface",
+          "sourceConnectedToCurrentHouseCircuit": false,
+          "topology": [
+            "Room supply interface (unconnected)",
+            "Independent enclosed riser",
+            "Fixed socket island and ordinary switch island",
+            "Factory-enclosed fixed luminaire terminals"
+          ],
+          "switching": "Ordinary switch in fixed island controls arrival light; dedicated floor-lamp socket control remains manual. Fixed light and sockets must each be identified and locked dead for common service work.",
+          "limitation": "Geometric routing requirements only. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred."
+        },
+        "infill": {
+          "id": "IAS/STUDY/service-corner/infill/central",
+          "xMm": [
+            1020,
+            1280
+          ],
+          "zMm": [
+            1200,
+            1550
+          ],
+          "firstDrawMm": 50,
+          "positiveFrontScrewCount": 4,
+          "boundary": "Stopped decoration between fixed electrical islands and light carrier. Retained enclosure/rails remain closed and independently supported."
+        },
+        "firstRelease": {
+          "withdrawn": {
+            "xMm": [
+              1020,
+              1280
+            ],
+            "yMm": [
+              2872.5,
+              3052.5
+            ],
+            "zMm": [
+              1575,
+              2025
+            ]
+          },
+          "parked": {
+            "xMm": [
+              1020,
+              1280
+            ],
+            "yMm": [
+              2770.5,
+              2950.5
+            ],
+            "zMm": [
+              100,
+              550
+            ]
+          },
+          "sweepPlanMm": [
+            1020,
+            2770.5,
+            1280,
+            3102.5
+          ],
+          "conflictingOccupiedIds": [],
+          "cradle": {
+            "planMm": [
+              1000,
+              2700.5,
+              1300,
+              3000.5
+            ],
+            "supportedModuleBottomZMm": 100,
+            "jawClearWidthRequirementMm": 260,
+            "positivelyRetainedUpright": true,
+            "demandKg": 3,
+            "capacityAndFloorSupportAccepted": false
+          },
+          "stages": [
+            "Keep floor closed. Identify and isolate/prove dead both affected fixed-light and socket circuits; ordinary switch OFF is insufficient.",
+            "Latch an independent temporary tether/support before loosening either factory side screw. Follow the Astro body/bracket sequence; do not pull on the supply.",
+            "Support and release the fitting body to access factory-enclosed terminals, disconnect there after proof dead; retain the factory earth and strain-relief arrangements. Actual tail/work space requires product trial.",
+            "The independent fixed socket/switch islands remain enclosed when decoration alone is removed. An opened luminaire repair enclosure stays locked dead until fully reinstated.",
+            "Support the complete module, release four front positive carrier screws, draw normal by the declared stroke, translate to the reserved rest, then lower into the positively retained upright cradle.",
+            "Release the separate central decorative infill at its four front screws with support before normal draw; adjacent panels, skirt, door reveal, rails and electrical islands remain fixed.",
+            "Reinstate carrier retention, manufacturer bracket/body, connections, earth, strain relief and enclosures; complete required electrical verification before enabling the identified circuits."
+          ]
+        },
+        "evidence": {
+          "prototypeGeometryOnly": true,
+          "anchorsAccepted": false,
+          "installedCircuitAccepted": false,
+          "liveReplacementPermitted": false,
+          "manufacturerBracketHolePatternConfirmed": false,
+          "physicalTrialComplete": false,
+          "materialAdmission": false,
+          "completeModuleMassQualified": false
+        },
+        "issues": []
+      },
       "leads": {
         "desk": {
           "pathMm": [
@@ -3878,6 +5920,13 @@
           "objectIds": [
             "floor-fill"
           ]
+        },
+        {
+          "code": "IAS_LIGHTING_SUPPLY_INTERFACE_UNBOUND",
+          "message": "Current occupied source has no bound Study feeder, protection or cable specification. The identified room interface remains unconnected; do not infer an installed circuit.",
+          "objectIds": [
+            "IAS/STUDY/room-supply-interface"
+          ]
         }
       ],
       "unchangedRoomGeometry": true,
@@ -3908,7 +5957,7 @@
         "automationConnected": false,
         "localWallModule": true
       },
-      "caseDigest": "8631da541ceff5bb9d857c42cd8bc4d82b55ab3bd6ddeb78995289546e8591ee",
+      "caseDigest": "9547e6c104a0fc137f294a949bf6e7a57af830146161519770cc37104bb8dbf9",
       "status": "DEVELOPMENT_COMPARISON",
       "corner": {
         "id": "IAS/STUDY/service-corner",
@@ -4085,6 +6134,408 @@
           ]
         }
       ],
+      "construction": {
+        "schema": "ias-study-lighting-corner-detail/1",
+        "status": "DEAD_MOCKUP_GEOMETRY_COMPARISON",
+        "coordinateConvention": "XYZ house mm; depth d is roomward from actual masonry core face. No invented anchor embedment.",
+        "coreFaceYMm": 3177.5,
+        "fixedRails": [
+          {
+            "id": "IAS/STUDY/service-corner/rail/0",
+            "xMm": [
+              1020,
+              1040
+            ],
+            "zMm": [
+              155,
+              2100
+            ],
+            "depthMm": [
+              7.5,
+              9.5
+            ]
+          },
+          {
+            "id": "IAS/STUDY/service-corner/rail/1",
+            "xMm": [
+              1260,
+              1280
+            ],
+            "zMm": [
+              155,
+              2100
+            ],
+            "depthMm": [
+              7.5,
+              9.5
+            ]
+          }
+        ],
+        "fixedRailStockMassKgComparison": 1.22146,
+        "carrier": {
+          "id": "IAS/STUDY/service-corner/carrier",
+          "xMm": [
+            1020,
+            1280
+          ],
+          "zMm": [
+            1575,
+            2025
+          ],
+          "depthMm": [
+            62.5,
+            64.5
+          ],
+          "stripsXZMm": [
+            [
+              1020,
+              1575,
+              1040,
+              2025
+            ],
+            [
+              1260,
+              1575,
+              1280,
+              2025
+            ],
+            [
+              1040,
+              1575,
+              1260,
+              1595
+            ],
+            [
+              1040,
+              2005,
+              1260,
+              2025
+            ],
+            [
+              1100,
+              1710,
+              1200,
+              1890
+            ],
+            [
+              1040,
+              1730,
+              1260,
+              1750
+            ],
+            [
+              1040,
+              1850,
+              1260,
+              1870
+            ]
+          ],
+          "centralCableOpening": {
+            "centreXMm": 1150,
+            "centreZMm": 1800,
+            "diameterMm": 20,
+            "holeStockCreditTaken": false
+          },
+          "steelThicknessMm": 2,
+          "steelDensityKgM3Comparison": 7850,
+          "carrierStockMassKgUpperComparison": 0.84152,
+          "completeModuleMassLimitKg": 3,
+          "remainingAuthoredMassBudgetKg": 2.15848,
+          "note": "Overlap stock is charged twice conservatively. Fasteners, decoration, bracket, luminaire, shade, lamp and wiring must fit remaining authored budget; none has a qualified installed upper mass."
+        },
+        "attachmentPoints": [
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/0",
+            "xMm": 1030,
+            "zMm": 1590,
+            "holeDiameterMm": 5
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/1",
+            "xMm": 1030,
+            "zMm": 2010,
+            "holeDiameterMm": 5
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/0",
+            "xMm": 1270,
+            "zMm": 1590,
+            "holeDiameterMm": 5
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/1",
+            "xMm": 1270,
+            "zMm": 2010,
+            "holeDiameterMm": 5
+          }
+        ],
+        "hardLands": [
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/0",
+            "xMm": 1030,
+            "zMm": 1590,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 64.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/1",
+            "xMm": 1030,
+            "zMm": 2010,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 64.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/0",
+            "xMm": 1270,
+            "zMm": 1590,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 64.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/1",
+            "xMm": 1270,
+            "zMm": 2010,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 64.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          }
+        ],
+        "loadDemand": {
+          "weightN": 29.43,
+          "faceMomentNm": 5.2974,
+          "coreMomentNm": 7.50465,
+          "moduleCoupleSpacingMm": 420,
+          "normalCoupleN": 17.868214285714284,
+          "equalFourFixingShearN": 7.3575,
+          "equalTwoUpperFixingTensionN": 8.934107142857142,
+          "oneUpperFixingLostNecessaryTensionN": 17.868214285714284,
+          "resistanceAccepted": false
+        },
+        "fixedEnclosures": [
+          {
+            "id": "IAS/STUDY/service-corner/fixed-island/0",
+            "bodyXZMm": [
+              1114,
+              564,
+              1186,
+              636
+            ],
+            "faceXZMm": [
+              1107,
+              557,
+              1193,
+              643
+            ],
+            "bodyDepthMm": [
+              28,
+              75
+            ],
+            "requiredDecorativeJointMm": 5,
+            "independentIslandXZMm": [
+              1075,
+              550,
+              1225,
+              650
+            ],
+            "sideEntryAxisDepthMm": 51.5,
+            "independentFixedCoverDepthMm": null,
+            "clearanceToCarrierDepthMm": null,
+            "independentOfDecoration": true,
+            "bodyDepthAuthority": "Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required."
+          },
+          {
+            "id": "IAS/STUDY/service-corner/fixed-island/1",
+            "bodyXZMm": [
+              1114,
+              1064,
+              1186,
+              1136
+            ],
+            "faceXZMm": [
+              1107,
+              1057,
+              1193,
+              1143
+            ],
+            "bodyDepthMm": [
+              28,
+              75
+            ],
+            "requiredDecorativeJointMm": 5,
+            "independentIslandXZMm": [
+              1075,
+              1050,
+              1225,
+              1150
+            ],
+            "sideEntryAxisDepthMm": 51.5,
+            "independentFixedCoverDepthMm": null,
+            "clearanceToCarrierDepthMm": null,
+            "independentOfDecoration": true,
+            "bodyDepthAuthority": "Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required."
+          },
+          {
+            "id": "IAS/STUDY/service-corner/fixed-island/2",
+            "bodyXZMm": [
+              1114,
+              1764,
+              1186,
+              1836
+            ],
+            "faceXZMm": [
+              1107,
+              1757,
+              1193,
+              1843
+            ],
+            "bodyDepthMm": [
+              13.5,
+              60.5
+            ],
+            "requiredDecorativeJointMm": 5,
+            "independentIslandXZMm": [
+              1075,
+              1750,
+              1225,
+              1850
+            ],
+            "sideEntryAxisDepthMm": 37,
+            "independentFixedCoverDepthMm": [
+              60.5,
+              62.5
+            ],
+            "clearanceToCarrierDepthMm": 2,
+            "independentOfDecoration": true,
+            "bodyDepthAuthority": "Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required."
+          }
+        ],
+        "containment": {
+          "outsideDiameterRequirementMm": 20,
+          "localUsableDepthMm": 55,
+          "riserAxisXMm": 1044,
+          "branchSideEntryPointsXMmZMm": [
+            [
+              1114,
+              600
+            ],
+            [
+              1114,
+              1100
+            ],
+            [
+              1114,
+              1800
+            ]
+          ],
+          "sideEntryBendCentrelineRadiusRequirementMm": 70,
+          "outerBendTerritoryMm": 80,
+          "entryCollarEnvelopeMm": [
+            30,
+            30
+          ],
+          "sourceInterfaceId": "IAS/STUDY/room-supply-interface",
+          "sourceConnectedToCurrentHouseCircuit": false,
+          "topology": [
+            "Room supply interface (unconnected)",
+            "Independent enclosed riser",
+            "Fixed socket island and ordinary switch island",
+            "Factory-enclosed fixed luminaire terminals"
+          ],
+          "switching": "Ordinary switch in fixed island controls arrival light; dedicated floor-lamp socket control remains manual. Fixed light and sockets must each be identified and locked dead for common service work.",
+          "limitation": "Geometric routing requirements only. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred."
+        },
+        "infill": {
+          "id": "IAS/STUDY/service-corner/infill/central",
+          "xMm": [
+            1020,
+            1280
+          ],
+          "zMm": [
+            1200,
+            1550
+          ],
+          "firstDrawMm": 50,
+          "positiveFrontScrewCount": 4,
+          "boundary": "Stopped decoration between fixed electrical islands and light carrier. Retained enclosure/rails remain closed and independently supported."
+        },
+        "firstRelease": {
+          "withdrawn": {
+            "xMm": [
+              1020,
+              1280
+            ],
+            "yMm": [
+              2872.5,
+              3052.5
+            ],
+            "zMm": [
+              1575,
+              2025
+            ]
+          },
+          "parked": {
+            "xMm": [
+              1020,
+              1280
+            ],
+            "yMm": [
+              2770.5,
+              2950.5
+            ],
+            "zMm": [
+              100,
+              550
+            ]
+          },
+          "sweepPlanMm": [
+            1020,
+            2770.5,
+            1280,
+            3102.5
+          ],
+          "conflictingOccupiedIds": [],
+          "cradle": {
+            "planMm": [
+              1000,
+              2700.5,
+              1300,
+              3000.5
+            ],
+            "supportedModuleBottomZMm": 100,
+            "jawClearWidthRequirementMm": 260,
+            "positivelyRetainedUpright": true,
+            "demandKg": 3,
+            "capacityAndFloorSupportAccepted": false
+          },
+          "stages": [
+            "Keep floor closed. Identify and isolate/prove dead both affected fixed-light and socket circuits; ordinary switch OFF is insufficient.",
+            "Latch an independent temporary tether/support before loosening either factory side screw. Follow the Astro body/bracket sequence; do not pull on the supply.",
+            "Support and release the fitting body to access factory-enclosed terminals, disconnect there after proof dead; retain the factory earth and strain-relief arrangements. Actual tail/work space requires product trial.",
+            "The independent fixed socket/switch islands remain enclosed when decoration alone is removed. An opened luminaire repair enclosure stays locked dead until fully reinstated.",
+            "Support the complete module, release four front positive carrier screws, draw normal by the declared stroke, translate to the reserved rest, then lower into the positively retained upright cradle.",
+            "Release the separate central decorative infill at its four front screws with support before normal draw; adjacent panels, skirt, door reveal, rails and electrical islands remain fixed.",
+            "Reinstate carrier retention, manufacturer bracket/body, connections, earth, strain relief and enclosures; complete required electrical verification before enabling the identified circuits."
+          ]
+        },
+        "evidence": {
+          "prototypeGeometryOnly": true,
+          "anchorsAccepted": false,
+          "installedCircuitAccepted": false,
+          "liveReplacementPermitted": false,
+          "manufacturerBracketHolePatternConfirmed": false,
+          "physicalTrialComplete": false,
+          "materialAdmission": false,
+          "completeModuleMassQualified": false
+        },
+        "issues": []
+      },
       "leads": {
         "desk": {
           "pathMm": [
@@ -4181,6 +6632,13 @@
           "objectIds": [
             "IAS/STUDY/service-corner"
           ]
+        },
+        {
+          "code": "IAS_LIGHTING_SUPPLY_INTERFACE_UNBOUND",
+          "message": "Current occupied source has no bound Study feeder, protection or cable specification. The identified room interface remains unconnected; do not infer an installed circuit.",
+          "objectIds": [
+            "IAS/STUDY/room-supply-interface"
+          ]
         }
       ],
       "unchangedRoomGeometry": true,
@@ -4211,7 +6669,7 @@
         "automationConnected": true,
         "localWallModule": true
       },
-      "caseDigest": "2084f77ede10b467cc5bca379a9819fbac5b8ac19a5cfeef10c28162f9cbc122",
+      "caseDigest": "2f81f6c3507eeafab84a61e23bfd0ab92cad63e6d5b627575a386c2c7fa1cc25",
       "status": "DEVELOPMENT_COMPARISON",
       "corner": {
         "id": "IAS/STUDY/service-corner",
@@ -4388,6 +6846,408 @@
           ]
         }
       ],
+      "construction": {
+        "schema": "ias-study-lighting-corner-detail/1",
+        "status": "DEAD_MOCKUP_GEOMETRY_COMPARISON",
+        "coordinateConvention": "XYZ house mm; depth d is roomward from actual masonry core face. No invented anchor embedment.",
+        "coreFaceYMm": 3177.5,
+        "fixedRails": [
+          {
+            "id": "IAS/STUDY/service-corner/rail/0",
+            "xMm": [
+              1020,
+              1040
+            ],
+            "zMm": [
+              155,
+              2100
+            ],
+            "depthMm": [
+              7.5,
+              9.5
+            ]
+          },
+          {
+            "id": "IAS/STUDY/service-corner/rail/1",
+            "xMm": [
+              1260,
+              1280
+            ],
+            "zMm": [
+              155,
+              2100
+            ],
+            "depthMm": [
+              7.5,
+              9.5
+            ]
+          }
+        ],
+        "fixedRailStockMassKgComparison": 1.22146,
+        "carrier": {
+          "id": "IAS/STUDY/service-corner/carrier",
+          "xMm": [
+            1020,
+            1280
+          ],
+          "zMm": [
+            1575,
+            2025
+          ],
+          "depthMm": [
+            62.5,
+            64.5
+          ],
+          "stripsXZMm": [
+            [
+              1020,
+              1575,
+              1040,
+              2025
+            ],
+            [
+              1260,
+              1575,
+              1280,
+              2025
+            ],
+            [
+              1040,
+              1575,
+              1260,
+              1595
+            ],
+            [
+              1040,
+              2005,
+              1260,
+              2025
+            ],
+            [
+              1100,
+              1710,
+              1200,
+              1890
+            ],
+            [
+              1040,
+              1730,
+              1260,
+              1750
+            ],
+            [
+              1040,
+              1850,
+              1260,
+              1870
+            ]
+          ],
+          "centralCableOpening": {
+            "centreXMm": 1150,
+            "centreZMm": 1800,
+            "diameterMm": 20,
+            "holeStockCreditTaken": false
+          },
+          "steelThicknessMm": 2,
+          "steelDensityKgM3Comparison": 7850,
+          "carrierStockMassKgUpperComparison": 0.84152,
+          "completeModuleMassLimitKg": 3,
+          "remainingAuthoredMassBudgetKg": 2.15848,
+          "note": "Overlap stock is charged twice conservatively. Fasteners, decoration, bracket, luminaire, shade, lamp and wiring must fit remaining authored budget; none has a qualified installed upper mass."
+        },
+        "attachmentPoints": [
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/0",
+            "xMm": 1030,
+            "zMm": 1590,
+            "holeDiameterMm": 5
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/1",
+            "xMm": 1030,
+            "zMm": 2010,
+            "holeDiameterMm": 5
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/0",
+            "xMm": 1270,
+            "zMm": 1590,
+            "holeDiameterMm": 5
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/1",
+            "xMm": 1270,
+            "zMm": 2010,
+            "holeDiameterMm": 5
+          }
+        ],
+        "hardLands": [
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/0",
+            "xMm": 1030,
+            "zMm": 1590,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 64.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/1",
+            "xMm": 1030,
+            "zMm": 2010,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 64.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/0",
+            "xMm": 1270,
+            "zMm": 1590,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 64.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/1",
+            "xMm": 1270,
+            "zMm": 2010,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 64.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          }
+        ],
+        "loadDemand": {
+          "weightN": 29.43,
+          "faceMomentNm": 5.2974,
+          "coreMomentNm": 7.50465,
+          "moduleCoupleSpacingMm": 420,
+          "normalCoupleN": 17.868214285714284,
+          "equalFourFixingShearN": 7.3575,
+          "equalTwoUpperFixingTensionN": 8.934107142857142,
+          "oneUpperFixingLostNecessaryTensionN": 17.868214285714284,
+          "resistanceAccepted": false
+        },
+        "fixedEnclosures": [
+          {
+            "id": "IAS/STUDY/service-corner/fixed-island/0",
+            "bodyXZMm": [
+              1114,
+              564,
+              1186,
+              636
+            ],
+            "faceXZMm": [
+              1107,
+              557,
+              1193,
+              643
+            ],
+            "bodyDepthMm": [
+              28,
+              75
+            ],
+            "requiredDecorativeJointMm": 5,
+            "independentIslandXZMm": [
+              1075,
+              550,
+              1225,
+              650
+            ],
+            "sideEntryAxisDepthMm": 51.5,
+            "independentFixedCoverDepthMm": null,
+            "clearanceToCarrierDepthMm": null,
+            "independentOfDecoration": true,
+            "bodyDepthAuthority": "Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required."
+          },
+          {
+            "id": "IAS/STUDY/service-corner/fixed-island/1",
+            "bodyXZMm": [
+              1114,
+              1064,
+              1186,
+              1136
+            ],
+            "faceXZMm": [
+              1107,
+              1057,
+              1193,
+              1143
+            ],
+            "bodyDepthMm": [
+              28,
+              75
+            ],
+            "requiredDecorativeJointMm": 5,
+            "independentIslandXZMm": [
+              1075,
+              1050,
+              1225,
+              1150
+            ],
+            "sideEntryAxisDepthMm": 51.5,
+            "independentFixedCoverDepthMm": null,
+            "clearanceToCarrierDepthMm": null,
+            "independentOfDecoration": true,
+            "bodyDepthAuthority": "Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required."
+          },
+          {
+            "id": "IAS/STUDY/service-corner/fixed-island/2",
+            "bodyXZMm": [
+              1114,
+              1764,
+              1186,
+              1836
+            ],
+            "faceXZMm": [
+              1107,
+              1757,
+              1193,
+              1843
+            ],
+            "bodyDepthMm": [
+              13.5,
+              60.5
+            ],
+            "requiredDecorativeJointMm": 5,
+            "independentIslandXZMm": [
+              1075,
+              1750,
+              1225,
+              1850
+            ],
+            "sideEntryAxisDepthMm": 37,
+            "independentFixedCoverDepthMm": [
+              60.5,
+              62.5
+            ],
+            "clearanceToCarrierDepthMm": 2,
+            "independentOfDecoration": true,
+            "bodyDepthAuthority": "Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required."
+          }
+        ],
+        "containment": {
+          "outsideDiameterRequirementMm": 20,
+          "localUsableDepthMm": 55,
+          "riserAxisXMm": 1044,
+          "branchSideEntryPointsXMmZMm": [
+            [
+              1114,
+              600
+            ],
+            [
+              1114,
+              1100
+            ],
+            [
+              1114,
+              1800
+            ]
+          ],
+          "sideEntryBendCentrelineRadiusRequirementMm": 70,
+          "outerBendTerritoryMm": 80,
+          "entryCollarEnvelopeMm": [
+            30,
+            30
+          ],
+          "sourceInterfaceId": "IAS/STUDY/room-supply-interface",
+          "sourceConnectedToCurrentHouseCircuit": false,
+          "topology": [
+            "Room supply interface (unconnected)",
+            "Independent enclosed riser",
+            "Fixed socket island and ordinary switch island",
+            "Factory-enclosed fixed luminaire terminals"
+          ],
+          "switching": "Ordinary switch in fixed island controls arrival light; dedicated floor-lamp socket control remains manual. Fixed light and sockets must each be identified and locked dead for common service work.",
+          "limitation": "Geometric routing requirements only. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred."
+        },
+        "infill": {
+          "id": "IAS/STUDY/service-corner/infill/central",
+          "xMm": [
+            1020,
+            1280
+          ],
+          "zMm": [
+            1200,
+            1550
+          ],
+          "firstDrawMm": 50,
+          "positiveFrontScrewCount": 4,
+          "boundary": "Stopped decoration between fixed electrical islands and light carrier. Retained enclosure/rails remain closed and independently supported."
+        },
+        "firstRelease": {
+          "withdrawn": {
+            "xMm": [
+              1020,
+              1280
+            ],
+            "yMm": [
+              2872.5,
+              3052.5
+            ],
+            "zMm": [
+              1575,
+              2025
+            ]
+          },
+          "parked": {
+            "xMm": [
+              1020,
+              1280
+            ],
+            "yMm": [
+              2770.5,
+              2950.5
+            ],
+            "zMm": [
+              100,
+              550
+            ]
+          },
+          "sweepPlanMm": [
+            1020,
+            2770.5,
+            1280,
+            3102.5
+          ],
+          "conflictingOccupiedIds": [],
+          "cradle": {
+            "planMm": [
+              1000,
+              2700.5,
+              1300,
+              3000.5
+            ],
+            "supportedModuleBottomZMm": 100,
+            "jawClearWidthRequirementMm": 260,
+            "positivelyRetainedUpright": true,
+            "demandKg": 3,
+            "capacityAndFloorSupportAccepted": false
+          },
+          "stages": [
+            "Keep floor closed. Identify and isolate/prove dead both affected fixed-light and socket circuits; ordinary switch OFF is insufficient.",
+            "Latch an independent temporary tether/support before loosening either factory side screw. Follow the Astro body/bracket sequence; do not pull on the supply.",
+            "Support and release the fitting body to access factory-enclosed terminals, disconnect there after proof dead; retain the factory earth and strain-relief arrangements. Actual tail/work space requires product trial.",
+            "The independent fixed socket/switch islands remain enclosed when decoration alone is removed. An opened luminaire repair enclosure stays locked dead until fully reinstated.",
+            "Support the complete module, release four front positive carrier screws, draw normal by the declared stroke, translate to the reserved rest, then lower into the positively retained upright cradle.",
+            "Release the separate central decorative infill at its four front screws with support before normal draw; adjacent panels, skirt, door reveal, rails and electrical islands remain fixed.",
+            "Reinstate carrier retention, manufacturer bracket/body, connections, earth, strain relief and enclosures; complete required electrical verification before enabling the identified circuits."
+          ]
+        },
+        "evidence": {
+          "prototypeGeometryOnly": true,
+          "anchorsAccepted": false,
+          "installedCircuitAccepted": false,
+          "liveReplacementPermitted": false,
+          "manufacturerBracketHolePatternConfirmed": false,
+          "physicalTrialComplete": false,
+          "materialAdmission": false,
+          "completeModuleMassQualified": false
+        },
+        "issues": []
+      },
       "leads": {
         "desk": {
           "pathMm": [
@@ -4470,7 +7330,15 @@
         "ordinaryArrivalWorking": true,
         "ordinaryControl": "Door-side ordinary switch operates fixed wall/ceiling or dedicated floor-lamp socket. Task lamps retain local controls. No dimmer compatibility is assumed."
       },
-      "diagnostics": [],
+      "diagnostics": [
+        {
+          "code": "IAS_LIGHTING_SUPPLY_INTERFACE_UNBOUND",
+          "message": "Current occupied source has no bound Study feeder, protection or cable specification. The identified room interface remains unconnected; do not infer an installed circuit.",
+          "objectIds": [
+            "IAS/STUDY/room-supply-interface"
+          ]
+        }
+      ],
       "unchangedRoomGeometry": true,
       "unchangedKitchen": true,
       "evidence": {
@@ -4499,7 +7367,7 @@
         "automationConnected": false,
         "localWallModule": true
       },
-      "caseDigest": "9a750fdc81b58e9f64d8c94c9634809b403fb58cf7705f085df963723a022d0e",
+      "caseDigest": "29a26782b5362c431a3146d573ffa4e3fd55ee1276ed51de0658647c042686ce",
       "status": "DEVELOPMENT_COMPARISON",
       "corner": {
         "id": "IAS/STUDY/service-corner",
@@ -4676,6 +7544,408 @@
           ]
         }
       ],
+      "construction": {
+        "schema": "ias-study-lighting-corner-detail/1",
+        "status": "DEAD_MOCKUP_GEOMETRY_COMPARISON",
+        "coordinateConvention": "XYZ house mm; depth d is roomward from actual masonry core face. No invented anchor embedment.",
+        "coreFaceYMm": 3177.5,
+        "fixedRails": [
+          {
+            "id": "IAS/STUDY/service-corner/rail/0",
+            "xMm": [
+              1020,
+              1040
+            ],
+            "zMm": [
+              155,
+              2100
+            ],
+            "depthMm": [
+              7.5,
+              9.5
+            ]
+          },
+          {
+            "id": "IAS/STUDY/service-corner/rail/1",
+            "xMm": [
+              1260,
+              1280
+            ],
+            "zMm": [
+              155,
+              2100
+            ],
+            "depthMm": [
+              7.5,
+              9.5
+            ]
+          }
+        ],
+        "fixedRailStockMassKgComparison": 1.22146,
+        "carrier": {
+          "id": "IAS/STUDY/service-corner/carrier",
+          "xMm": [
+            1020,
+            1280
+          ],
+          "zMm": [
+            1575,
+            2025
+          ],
+          "depthMm": [
+            62.5,
+            64.5
+          ],
+          "stripsXZMm": [
+            [
+              1020,
+              1575,
+              1040,
+              2025
+            ],
+            [
+              1260,
+              1575,
+              1280,
+              2025
+            ],
+            [
+              1040,
+              1575,
+              1260,
+              1595
+            ],
+            [
+              1040,
+              2005,
+              1260,
+              2025
+            ],
+            [
+              1100,
+              1710,
+              1200,
+              1890
+            ],
+            [
+              1040,
+              1730,
+              1260,
+              1750
+            ],
+            [
+              1040,
+              1850,
+              1260,
+              1870
+            ]
+          ],
+          "centralCableOpening": {
+            "centreXMm": 1150,
+            "centreZMm": 1800,
+            "diameterMm": 20,
+            "holeStockCreditTaken": false
+          },
+          "steelThicknessMm": 2,
+          "steelDensityKgM3Comparison": 7850,
+          "carrierStockMassKgUpperComparison": 0.84152,
+          "completeModuleMassLimitKg": 3,
+          "remainingAuthoredMassBudgetKg": 2.15848,
+          "note": "Overlap stock is charged twice conservatively. Fasteners, decoration, bracket, luminaire, shade, lamp and wiring must fit remaining authored budget; none has a qualified installed upper mass."
+        },
+        "attachmentPoints": [
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/0",
+            "xMm": 1030,
+            "zMm": 1590,
+            "holeDiameterMm": 5
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/1",
+            "xMm": 1030,
+            "zMm": 2010,
+            "holeDiameterMm": 5
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/0",
+            "xMm": 1270,
+            "zMm": 1590,
+            "holeDiameterMm": 5
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/1",
+            "xMm": 1270,
+            "zMm": 2010,
+            "holeDiameterMm": 5
+          }
+        ],
+        "hardLands": [
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/0",
+            "xMm": 1030,
+            "zMm": 1590,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 64.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/1",
+            "xMm": 1030,
+            "zMm": 2010,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 64.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/0",
+            "xMm": 1270,
+            "zMm": 1590,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 64.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/1",
+            "xMm": 1270,
+            "zMm": 2010,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 64.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          }
+        ],
+        "loadDemand": {
+          "weightN": 29.43,
+          "faceMomentNm": 5.2974,
+          "coreMomentNm": 7.50465,
+          "moduleCoupleSpacingMm": 420,
+          "normalCoupleN": 17.868214285714284,
+          "equalFourFixingShearN": 7.3575,
+          "equalTwoUpperFixingTensionN": 8.934107142857142,
+          "oneUpperFixingLostNecessaryTensionN": 17.868214285714284,
+          "resistanceAccepted": false
+        },
+        "fixedEnclosures": [
+          {
+            "id": "IAS/STUDY/service-corner/fixed-island/0",
+            "bodyXZMm": [
+              1114,
+              564,
+              1186,
+              636
+            ],
+            "faceXZMm": [
+              1107,
+              557,
+              1193,
+              643
+            ],
+            "bodyDepthMm": [
+              28,
+              75
+            ],
+            "requiredDecorativeJointMm": 5,
+            "independentIslandXZMm": [
+              1075,
+              550,
+              1225,
+              650
+            ],
+            "sideEntryAxisDepthMm": 51.5,
+            "independentFixedCoverDepthMm": null,
+            "clearanceToCarrierDepthMm": null,
+            "independentOfDecoration": true,
+            "bodyDepthAuthority": "Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required."
+          },
+          {
+            "id": "IAS/STUDY/service-corner/fixed-island/1",
+            "bodyXZMm": [
+              1114,
+              1064,
+              1186,
+              1136
+            ],
+            "faceXZMm": [
+              1107,
+              1057,
+              1193,
+              1143
+            ],
+            "bodyDepthMm": [
+              28,
+              75
+            ],
+            "requiredDecorativeJointMm": 5,
+            "independentIslandXZMm": [
+              1075,
+              1050,
+              1225,
+              1150
+            ],
+            "sideEntryAxisDepthMm": 51.5,
+            "independentFixedCoverDepthMm": null,
+            "clearanceToCarrierDepthMm": null,
+            "independentOfDecoration": true,
+            "bodyDepthAuthority": "Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required."
+          },
+          {
+            "id": "IAS/STUDY/service-corner/fixed-island/2",
+            "bodyXZMm": [
+              1114,
+              1764,
+              1186,
+              1836
+            ],
+            "faceXZMm": [
+              1107,
+              1757,
+              1193,
+              1843
+            ],
+            "bodyDepthMm": [
+              13.5,
+              60.5
+            ],
+            "requiredDecorativeJointMm": 5,
+            "independentIslandXZMm": [
+              1075,
+              1750,
+              1225,
+              1850
+            ],
+            "sideEntryAxisDepthMm": 37,
+            "independentFixedCoverDepthMm": [
+              60.5,
+              62.5
+            ],
+            "clearanceToCarrierDepthMm": 2,
+            "independentOfDecoration": true,
+            "bodyDepthAuthority": "Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required."
+          }
+        ],
+        "containment": {
+          "outsideDiameterRequirementMm": 20,
+          "localUsableDepthMm": 55,
+          "riserAxisXMm": 1044,
+          "branchSideEntryPointsXMmZMm": [
+            [
+              1114,
+              600
+            ],
+            [
+              1114,
+              1100
+            ],
+            [
+              1114,
+              1800
+            ]
+          ],
+          "sideEntryBendCentrelineRadiusRequirementMm": 70,
+          "outerBendTerritoryMm": 80,
+          "entryCollarEnvelopeMm": [
+            30,
+            30
+          ],
+          "sourceInterfaceId": "IAS/STUDY/room-supply-interface",
+          "sourceConnectedToCurrentHouseCircuit": false,
+          "topology": [
+            "Room supply interface (unconnected)",
+            "Independent enclosed riser",
+            "Fixed socket island and ordinary switch island",
+            "Factory-enclosed fixed luminaire terminals"
+          ],
+          "switching": "Ordinary switch in fixed island controls arrival light; dedicated floor-lamp socket control remains manual. Fixed light and sockets must each be identified and locked dead for common service work.",
+          "limitation": "Geometric routing requirements only. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred."
+        },
+        "infill": {
+          "id": "IAS/STUDY/service-corner/infill/central",
+          "xMm": [
+            1020,
+            1280
+          ],
+          "zMm": [
+            1200,
+            1550
+          ],
+          "firstDrawMm": 50,
+          "positiveFrontScrewCount": 4,
+          "boundary": "Stopped decoration between fixed electrical islands and light carrier. Retained enclosure/rails remain closed and independently supported."
+        },
+        "firstRelease": {
+          "withdrawn": {
+            "xMm": [
+              1020,
+              1280
+            ],
+            "yMm": [
+              2872.5,
+              3052.5
+            ],
+            "zMm": [
+              1575,
+              2025
+            ]
+          },
+          "parked": {
+            "xMm": [
+              1020,
+              1280
+            ],
+            "yMm": [
+              2770.5,
+              2950.5
+            ],
+            "zMm": [
+              100,
+              550
+            ]
+          },
+          "sweepPlanMm": [
+            1020,
+            2770.5,
+            1280,
+            3102.5
+          ],
+          "conflictingOccupiedIds": [],
+          "cradle": {
+            "planMm": [
+              1000,
+              2700.5,
+              1300,
+              3000.5
+            ],
+            "supportedModuleBottomZMm": 100,
+            "jawClearWidthRequirementMm": 260,
+            "positivelyRetainedUpright": true,
+            "demandKg": 3,
+            "capacityAndFloorSupportAccepted": false
+          },
+          "stages": [
+            "Keep floor closed. Identify and isolate/prove dead both affected fixed-light and socket circuits; ordinary switch OFF is insufficient.",
+            "Latch an independent temporary tether/support before loosening either factory side screw. Follow the Astro body/bracket sequence; do not pull on the supply.",
+            "Support and release the fitting body to access factory-enclosed terminals, disconnect there after proof dead; retain the factory earth and strain-relief arrangements. Actual tail/work space requires product trial.",
+            "The independent fixed socket/switch islands remain enclosed when decoration alone is removed. An opened luminaire repair enclosure stays locked dead until fully reinstated.",
+            "Support the complete module, release four front positive carrier screws, draw normal by the declared stroke, translate to the reserved rest, then lower into the positively retained upright cradle.",
+            "Release the separate central decorative infill at its four front screws with support before normal draw; adjacent panels, skirt, door reveal, rails and electrical islands remain fixed.",
+            "Reinstate carrier retention, manufacturer bracket/body, connections, earth, strain relief and enclosures; complete required electrical verification before enabling the identified circuits."
+          ]
+        },
+        "evidence": {
+          "prototypeGeometryOnly": true,
+          "anchorsAccepted": false,
+          "installedCircuitAccepted": false,
+          "liveReplacementPermitted": false,
+          "manufacturerBracketHolePatternConfirmed": false,
+          "physicalTrialComplete": false,
+          "materialAdmission": false,
+          "completeModuleMassQualified": false
+        },
+        "issues": []
+      },
       "leads": {
         "desk": {
           "pathMm": [
@@ -4765,6 +8035,13 @@
           "objectIds": [
             "IAS/STUDY/service-corner"
           ]
+        },
+        {
+          "code": "IAS_LIGHTING_SUPPLY_INTERFACE_UNBOUND",
+          "message": "Current occupied source has no bound Study feeder, protection or cable specification. The identified room interface remains unconnected; do not infer an installed circuit.",
+          "objectIds": [
+            "IAS/STUDY/room-supply-interface"
+          ]
         }
       ],
       "unchangedRoomGeometry": true,
@@ -4795,7 +8072,7 @@
         "automationConnected": false,
         "localWallModule": false
       },
-      "caseDigest": "7cd34f74516203ab1ba600b2eb8d20171a784d699c410ed93d2919c7702f29c1",
+      "caseDigest": "7123595af4397f731d30fdd2eb6bed5213b1d8611fc3e3a198ca87338b9da43c",
       "status": "GEOMETRY_REJECTED",
       "corner": {
         "id": "IAS/STUDY/service-corner",
@@ -4972,6 +8249,408 @@
           ]
         }
       ],
+      "construction": {
+        "schema": "ias-study-lighting-corner-detail/1",
+        "status": "DEAD_MOCKUP_GEOMETRY_COMPARISON",
+        "coordinateConvention": "XYZ house mm; depth d is roomward from actual masonry core face. No invented anchor embedment.",
+        "coreFaceYMm": 3177.5,
+        "fixedRails": [
+          {
+            "id": "IAS/STUDY/service-corner/rail/0",
+            "xMm": [
+              1020,
+              1040
+            ],
+            "zMm": [
+              155,
+              2100
+            ],
+            "depthMm": [
+              7.5,
+              9.5
+            ]
+          },
+          {
+            "id": "IAS/STUDY/service-corner/rail/1",
+            "xMm": [
+              1260,
+              1280
+            ],
+            "zMm": [
+              155,
+              2100
+            ],
+            "depthMm": [
+              7.5,
+              9.5
+            ]
+          }
+        ],
+        "fixedRailStockMassKgComparison": 1.22146,
+        "carrier": {
+          "id": "IAS/STUDY/service-corner/carrier",
+          "xMm": [
+            1020,
+            1280
+          ],
+          "zMm": [
+            1575,
+            2025
+          ],
+          "depthMm": [
+            62.5,
+            64.5
+          ],
+          "stripsXZMm": [
+            [
+              1020,
+              1575,
+              1040,
+              2025
+            ],
+            [
+              1260,
+              1575,
+              1280,
+              2025
+            ],
+            [
+              1040,
+              1575,
+              1260,
+              1595
+            ],
+            [
+              1040,
+              2005,
+              1260,
+              2025
+            ],
+            [
+              1100,
+              1710,
+              1200,
+              1890
+            ],
+            [
+              1040,
+              1730,
+              1260,
+              1750
+            ],
+            [
+              1040,
+              1850,
+              1260,
+              1870
+            ]
+          ],
+          "centralCableOpening": {
+            "centreXMm": 1150,
+            "centreZMm": 1800,
+            "diameterMm": 20,
+            "holeStockCreditTaken": false
+          },
+          "steelThicknessMm": 2,
+          "steelDensityKgM3Comparison": 7850,
+          "carrierStockMassKgUpperComparison": 0.84152,
+          "completeModuleMassLimitKg": 3,
+          "remainingAuthoredMassBudgetKg": 2.15848,
+          "note": "Overlap stock is charged twice conservatively. Fasteners, decoration, bracket, luminaire, shade, lamp and wiring must fit remaining authored budget; none has a qualified installed upper mass."
+        },
+        "attachmentPoints": [
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/0",
+            "xMm": 1030,
+            "zMm": 1590,
+            "holeDiameterMm": 5
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/1",
+            "xMm": 1030,
+            "zMm": 2010,
+            "holeDiameterMm": 5
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/0",
+            "xMm": 1270,
+            "zMm": 1590,
+            "holeDiameterMm": 5
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/1",
+            "xMm": 1270,
+            "zMm": 2010,
+            "holeDiameterMm": 5
+          }
+        ],
+        "hardLands": [
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/0",
+            "xMm": 1030,
+            "zMm": 1590,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 64.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/0/1",
+            "xMm": 1030,
+            "zMm": 2010,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 64.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/0",
+            "xMm": 1270,
+            "zMm": 1590,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 64.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          },
+          {
+            "id": "IAS/STUDY/carrier/bolt/1/1",
+            "xMm": 1270,
+            "zMm": 2010,
+            "holeDiameterMm": 5,
+            "coreDepthStartMm": 0,
+            "coreDepthEndMm": 64.5,
+            "path": "Carrier positive screw → fixed steel sleeve/hard land → permanent masonry substrate; anchor resistance and sealed penetration unqualified."
+          }
+        ],
+        "loadDemand": {
+          "weightN": 29.43,
+          "faceMomentNm": 5.2974,
+          "coreMomentNm": 7.50465,
+          "moduleCoupleSpacingMm": 420,
+          "normalCoupleN": 17.868214285714284,
+          "equalFourFixingShearN": 7.3575,
+          "equalTwoUpperFixingTensionN": 8.934107142857142,
+          "oneUpperFixingLostNecessaryTensionN": 17.868214285714284,
+          "resistanceAccepted": false
+        },
+        "fixedEnclosures": [
+          {
+            "id": "IAS/STUDY/service-corner/fixed-island/0",
+            "bodyXZMm": [
+              1114,
+              564,
+              1186,
+              636
+            ],
+            "faceXZMm": [
+              1107,
+              557,
+              1193,
+              643
+            ],
+            "bodyDepthMm": [
+              28,
+              75
+            ],
+            "requiredDecorativeJointMm": 5,
+            "independentIslandXZMm": [
+              1075,
+              550,
+              1225,
+              650
+            ],
+            "sideEntryAxisDepthMm": 51.5,
+            "independentFixedCoverDepthMm": null,
+            "clearanceToCarrierDepthMm": null,
+            "independentOfDecoration": true,
+            "bodyDepthAuthority": "Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required."
+          },
+          {
+            "id": "IAS/STUDY/service-corner/fixed-island/1",
+            "bodyXZMm": [
+              1114,
+              1064,
+              1186,
+              1136
+            ],
+            "faceXZMm": [
+              1107,
+              1057,
+              1193,
+              1143
+            ],
+            "bodyDepthMm": [
+              28,
+              75
+            ],
+            "requiredDecorativeJointMm": 5,
+            "independentIslandXZMm": [
+              1075,
+              1050,
+              1225,
+              1150
+            ],
+            "sideEntryAxisDepthMm": 51.5,
+            "independentFixedCoverDepthMm": null,
+            "clearanceToCarrierDepthMm": null,
+            "independentOfDecoration": true,
+            "bodyDepthAuthority": "Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required."
+          },
+          {
+            "id": "IAS/STUDY/service-corner/fixed-island/2",
+            "bodyXZMm": [
+              1114,
+              1764,
+              1186,
+              1836
+            ],
+            "faceXZMm": [
+              1107,
+              1757,
+              1193,
+              1843
+            ],
+            "bodyDepthMm": [
+              13.5,
+              60.5
+            ],
+            "requiredDecorativeJointMm": 5,
+            "independentIslandXZMm": [
+              1075,
+              1750,
+              1225,
+              1850
+            ],
+            "sideEntryAxisDepthMm": 37,
+            "independentFixedCoverDepthMm": [
+              60.5,
+              62.5
+            ],
+            "clearanceToCarrierDepthMm": 2,
+            "independentOfDecoration": true,
+            "bodyDepthAuthority": "Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required."
+          }
+        ],
+        "containment": {
+          "outsideDiameterRequirementMm": 20,
+          "localUsableDepthMm": 55,
+          "riserAxisXMm": 1044,
+          "branchSideEntryPointsXMmZMm": [
+            [
+              1114,
+              600
+            ],
+            [
+              1114,
+              1100
+            ],
+            [
+              1114,
+              1800
+            ]
+          ],
+          "sideEntryBendCentrelineRadiusRequirementMm": 70,
+          "outerBendTerritoryMm": 80,
+          "entryCollarEnvelopeMm": [
+            30,
+            30
+          ],
+          "sourceInterfaceId": "IAS/STUDY/room-supply-interface",
+          "sourceConnectedToCurrentHouseCircuit": false,
+          "topology": [
+            "Room supply interface (unconnected)",
+            "Independent enclosed riser",
+            "Fixed socket island and ordinary switch island",
+            "Factory-enclosed fixed luminaire terminals"
+          ],
+          "switching": "Ordinary switch in fixed island controls arrival light; dedicated floor-lamp socket control remains manual. Fixed light and sockets must each be identified and locked dead for common service work.",
+          "limitation": "Geometric routing requirements only. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred."
+        },
+        "infill": {
+          "id": "IAS/STUDY/service-corner/infill/central",
+          "xMm": [
+            1020,
+            1280
+          ],
+          "zMm": [
+            1200,
+            1550
+          ],
+          "firstDrawMm": 50,
+          "positiveFrontScrewCount": 4,
+          "boundary": "Stopped decoration between fixed electrical islands and light carrier. Retained enclosure/rails remain closed and independently supported."
+        },
+        "firstRelease": {
+          "withdrawn": {
+            "xMm": [
+              1020,
+              1280
+            ],
+            "yMm": [
+              2872.5,
+              3052.5
+            ],
+            "zMm": [
+              1575,
+              2025
+            ]
+          },
+          "parked": {
+            "xMm": [
+              1020,
+              1280
+            ],
+            "yMm": [
+              2770.5,
+              2950.5
+            ],
+            "zMm": [
+              100,
+              550
+            ]
+          },
+          "sweepPlanMm": [
+            1020,
+            2770.5,
+            1280,
+            3102.5
+          ],
+          "conflictingOccupiedIds": [],
+          "cradle": {
+            "planMm": [
+              1000,
+              2700.5,
+              1300,
+              3000.5
+            ],
+            "supportedModuleBottomZMm": 100,
+            "jawClearWidthRequirementMm": 260,
+            "positivelyRetainedUpright": true,
+            "demandKg": 3,
+            "capacityAndFloorSupportAccepted": false
+          },
+          "stages": [
+            "Keep floor closed. Identify and isolate/prove dead both affected fixed-light and socket circuits; ordinary switch OFF is insufficient.",
+            "Latch an independent temporary tether/support before loosening either factory side screw. Follow the Astro body/bracket sequence; do not pull on the supply.",
+            "Support and release the fitting body to access factory-enclosed terminals, disconnect there after proof dead; retain the factory earth and strain-relief arrangements. Actual tail/work space requires product trial.",
+            "The independent fixed socket/switch islands remain enclosed when decoration alone is removed. An opened luminaire repair enclosure stays locked dead until fully reinstated.",
+            "Support the complete module, release four front positive carrier screws, draw normal by the declared stroke, translate to the reserved rest, then lower into the positively retained upright cradle.",
+            "Release the separate central decorative infill at its four front screws with support before normal draw; adjacent panels, skirt, door reveal, rails and electrical islands remain fixed.",
+            "Reinstate carrier retention, manufacturer bracket/body, connections, earth, strain relief and enclosures; complete required electrical verification before enabling the identified circuits."
+          ]
+        },
+        "evidence": {
+          "prototypeGeometryOnly": true,
+          "anchorsAccepted": false,
+          "installedCircuitAccepted": false,
+          "liveReplacementPermitted": false,
+          "manufacturerBracketHolePatternConfirmed": false,
+          "physicalTrialComplete": false,
+          "materialAdmission": false,
+          "completeModuleMassQualified": false
+        },
+        "issues": []
+      },
       "leads": {
         "desk": {
           "pathMm": [
@@ -5060,6 +8739,13 @@
           "message": "A fixed wall choice requires its independent carrier; decoration may not carry it.",
           "objectIds": [
             "IAS/STUDY/service-corner"
+          ]
+        },
+        {
+          "code": "IAS_LIGHTING_SUPPLY_INTERFACE_UNBOUND",
+          "message": "Current occupied source has no bound Study feeder, protection or cable specification. The identified room interface remains unconnected; do not infer an installed circuit.",
+          "objectIds": [
+            "IAS/STUDY/room-supply-interface"
           ]
         }
       ],

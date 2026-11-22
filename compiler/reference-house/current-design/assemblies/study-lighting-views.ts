@@ -183,3 +183,63 @@ export function drawStudyLightingRoutes(result: StudyLightingResult) {
     + text(55, 985, `Source case ${result.caseDigest.slice(0, 16)} · no furniture position changed except the explicit added portable side stand.`, 'small')
   return page(1470, 1030, 'Study lighting socket and lead routes', body)
 }
+
+export function drawStudyLightingConstruction(result: StudyLightingResult) {
+  const d = result.construction, c = result.corner
+  const carrier = d.carrier, [x0] = carrier.xMm, top = carrier.zMm[1]
+  const p = (x: number, z: number) => [110 + x - x0, 190 + top - z]
+  let body = text(35, 48, 'The service corner · actual carrier and first release', 'title')
+    + text(35, 80, 'Dead-mock-up geometry · fixed islands stay independent · anchors, circuit, materials and physical trial unqualified')
+    + text(70, 135, 'Positive front carrier', 'heading')
+  for (const strip of carrier.stripsXZMm) {
+    const q = p(strip[0], strip[3]); body += rect(q[0], q[1], strip[2] - strip[0], strip[3] - strip[1], '#8f9b9b')
+  }
+  for (const point of d.attachmentPoints) {
+    const q = p(point.xMm, point.zMm)
+    body += `<circle cx="${n(q[0])}" cy="${n(q[1])}" r="${n(point.holeDiameterMm / 2)}" fill="#f2eee3" stroke="#315d64"/>`
+  }
+  const cable = p(carrier.centralCableOpening.centreXMm, carrier.centralCableOpening.centreZMm)
+  body += `<circle cx="${n(cable[0])}" cy="${n(cable[1])}" r="${n(carrier.centralCableOpening.diameterMm / 2)}" fill="#f2eee3" stroke="#315d64"/>`
+    + text(70, 690, `${carrier.xMm[1] - carrier.xMm[0]} × ${carrier.zMm[1] - carrier.zMm[0]} × ${carrier.steelThicknessMm} mm frame`)
+    + text(70, 720, 'Four positive front fixings; two fixed side rails')
+    + text(70, 750, 'Hard lands carry loads directly to masonry')
+    + text(70, 780, 'No load through decoration or mineral board')
+    + text(550, 135, 'Depth and actual demand', 'heading')
+    + text(550, 185, `Core face Y ${d.coreFaceYMm} mm; datum is not decorative face`)
+    + text(550, 220, `Module G ${d.loadDemand.weightN.toFixed(3)} N; face moment ${d.loadDemand.faceMomentNm.toFixed(4)} Nm`)
+    + text(550, 255, `Core moment ${d.loadDemand.coreMomentNm.toFixed(4)} Nm (includes ${c.totalLiningDepthMm} mm stand-off)`)
+    + text(550, 290, `Fixing rows ${d.loadDemand.moduleCoupleSpacingMm} mm apart; couple ${d.loadDemand.normalCoupleN.toFixed(4)} N`)
+    + text(550, 325, `Equal upper fixing ${d.loadDemand.equalTwoUpperFixingTensionN.toFixed(4)} N; no anchor rating inferred`)
+    + text(550, 360, `Carrier stock upper comparison ${carrier.carrierStockMassKgUpperComparison.toFixed(5)} kg`)
+    + text(550, 395, `Remaining ${carrier.remainingAuthoredMassBudgetKg.toFixed(5)} kg is a budget, not actual installed mass`)
+    + text(550, 445, `Riser centre X ${d.containment.riserAxisXMm}; side-entry radius ${d.containment.sideEntryBendCentrelineRadiusRequirementMm} mm`)
+    + text(550, 480, `Outer bend requirement ${d.containment.outerBendTerritoryMm} mm; three independent fixed boxes`)
+    + text(550, 515, 'Factory bracket pattern, cable/tail and protective closures need actual component detail')
+    + text(550, 550, 'Study source interface is unconnected: no current feeder/protection/cable is invented')
+    + text(550, 605, 'Removal follows factory body/bracket access after isolation and support')
+    + text(550, 640, 'Full module is released only after the electrical disconnection is safe')
+  const depthX = (depth: number) => 550 + depth * 4
+  const socketBox = d.fixedEnclosures[0], junctionBox = d.fixedEnclosures[2]
+  body += text(550, 685, 'Real box depths behind the finish · enlarged', 'small')
+    + rect(depthX(0), 700, c.boundaryDepthMm * 4, 100, '#aaa99d')
+    + rect(depthX(socketBox.bodyDepthMm[0]), 700, (socketBox.bodyDepthMm[1] - socketBox.bodyDepthMm[0]) * 4, 35, '#a5b4b7')
+    + text(900, 724, `Socket box d ${socketBox.bodyDepthMm.join('..')} mm; fixed island interrupts decoration`, 'small')
+    + rect(depthX(junctionBox.bodyDepthMm[0]), 760, (junctionBox.bodyDepthMm[1] - junctionBox.bodyDepthMm[0]) * 4, 35, '#a5b4b7')
+    + rect(depthX(junctionBox.independentFixedCoverDepthMm![0]), 760, (junctionBox.independentFixedCoverDepthMm![1] - junctionBox.independentFixedCoverDepthMm![0]) * 4, 35, '#6b8a87')
+    + rect(depthX(carrier.depthMm[0]), 760, (carrier.depthMm[1] - carrier.depthMm[0]) * 4, 35, '#a47c50')
+    + text(900, 784, `Junction d ${junctionBox.bodyDepthMm.join('..')}; own cover; carrier d ${carrier.depthMm.join('..')}`, 'small')
+  const q = (x: number, y: number) => [110 + (x - c.bayPlanMm[0]) * .9, 1050 - (y - c.firstRestPlanMm[1]) * .5]
+  const box = (r: readonly number[], fill: string) => polygon([q(r[0], r[1]), q(r[2], r[1]), q(r[2], r[3]), q(r[0], r[3])], fill)
+  const r = d.firstRelease
+  body += text(70, 855, 'Full fitting + module first rest', 'heading')
+    + box(c.firstRestPlanMm, '#b4c3ae')
+    + box([r.withdrawn.xMm[0], r.withdrawn.yMm[0], r.withdrawn.xMm[1], r.withdrawn.yMm[1]], '#dec58e')
+    + box([r.parked.xMm[0], r.parked.yMm[0], r.parked.xMm[1], r.parked.yMm[1]], '#899e9e')
+    + text(500, 895, `Draw ${c.normalDrawMm} mm, translate into rest, then lower upright into captive cradle`)
+    + text(500, 930, `Parked module Z ${r.parked.zMm.join('..')} mm; cradle ${c.firstRestPlanMm[2] - c.firstRestPlanMm[0]} × ${c.firstRestPlanMm[3] - c.firstRestPlanMm[1]} mm`)
+    + text(500, 965, `Complete swept footprint has ${r.conflictingOccupiedIds.length} current furniture conflicts`)
+    + text(500, 1000, 'Cradle capacity/floor support, actual human handling and full supplied tail remain unqualified')
+    + text(70, 1080, 'Ordinary infill: support → release four front screws → normal draw; fixed electrical islands and reveal remain closed.')
+    + text(70, 1115, 'Never enable an opened repair enclosure. Reconnect earth/strain relief, reinstate closures and verify before energising.')
+  return page(1510, 1170, 'Study lighting carrier and first-release detail', body)
+}

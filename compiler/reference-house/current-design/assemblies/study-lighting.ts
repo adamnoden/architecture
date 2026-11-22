@@ -1,3 +1,4 @@
+import { deriveLightingCornerDetail, type LightingCornerDetailInput } from './study-lighting-corner.js'
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { sha256SemanticFingerprint } from '../../../core/identity.js'
@@ -42,13 +43,14 @@ export function readLightingComponents() {
   const data = JSON.parse(read(studyLightingComponentsPath).toString('utf8'))
   if (data.schema !== 'ias-lighting-component-references/1') throw new TypeError('Unsupported lighting component reference schema')
   return data as {
+    cornerConstruction: LightingCornerDetailInput['construction'],
     socket: { plateWidthMm: number; plateHeightMm: number; recommendedBoxDepthMm: number },
     backBox: { widthMm: number; heightMm: number; depthMm: number }, plug: { insertedProjectionMm: number },
     deskLamp: { baseDiameterMm: number; leadLengthMm: number }, floorLamp: { baseDiameterMm: number; leadLengthMm: number },
     wallLamp: { shadeWidthMm: number; shadeHeightMm: number; reservedCompleteProjectionMm: number },
     wallTaskLamp: { wallPlateDiameterMm: number; maximumReachMm: number; shadeDiameterMm: number; shadeHeightMm: number },
     projectRequirements: { fixedBoundaryDepthMm: number; removableFaceDepthMm: number; localCarrierDepthReserveMm: number; bayWidthMm: number;
-      doorStopMm: number; containmentEnvelopeMm: number; cornerBendOuterReserveMm: number; socketGripNormalMm: number;
+      doorStopMm: number;  socketGripNormalMm: number;
       panelRoomwardDrawMm: number; parkingSquareMm: number; wallModuleWidthMm: number; wallModuleHeightMm: number;
       wallModuleMaximumInstalledMassKg: number; wallModuleCentreOfGravityNormalMm: number;
       ceilingSurfaceBaseDiameterMm: number; ceilingCompleteFittingEnvelopeMm: readonly number[] }
@@ -156,8 +158,9 @@ export function deriveStudyLighting(input: unknown, basis: LightingBasis, compon
     addedOccupiedStandMm: item.id === 'portable' ? sideStand : null }))
   const diagnostics: { code: string; message: string; objectIds: string[] }[] = []
   const fail = (code: string, message: string, objectIds = ['IAS/STUDY/service-corner']) => diagnostics.push({ code, message, objectIds })
-  if (usable < components.backBox.depthMm || usable < p.containmentEnvelopeMm) fail('IAS_LIGHTING_DEPTH_REJECTED', 'Actual independently enclosed box/route does not fit the usable local depth; the crafted lining is not spare cavity.')
-  if (p.bayWidthMm - components.backBox.widthMm < 2 * p.cornerBendOuterReserveMm) fail('IAS_LIGHTING_BEND_REJECTED', 'The box leaves insufficient side territory for the authored bend envelope.')
+  if (components.cornerConstruction.steelThicknessMm > p.localCarrierDepthReserveMm) fail('IAS_LIGHTING_CARRIER_RESERVE_REJECTED', 'Actual steel thickness exceeds the authored carrier reserve; increase the reservation and recheck connected routing depth.')
+  if (usable < components.backBox.depthMm || usable < components.cornerConstruction.containmentOutsideDiameterMm) fail('IAS_LIGHTING_DEPTH_REJECTED', 'Actual independently enclosed box/route does not fit the usable local depth; the crafted lining is not spare cavity.')
+  if (p.bayWidthMm - components.backBox.widthMm < 2 * (components.cornerConstruction.bendCentrelineRadiusMm + components.cornerConstruction.containmentOutsideDiameterMm / 2)) fail('IAS_LIGHTING_BEND_REJECTED', 'The box leaves insufficient side territory for the authored bend envelope.')
   if (left < west || right > room.bands.at(-1)![2] || room.occupied.some(([, box]) => [bay, use, moduleDraw, parking, sideStand].some(test => intersects(test, box)))) fail('IAS_LIGHTING_ACCESS_REJECTED', 'A local service/use/draw/rest or portable-comparator stand conflicts with actual furniture or room boundaries.')
   for (const station of serviceStations) {
     const obstructions = room.occupied.filter(([, box]) => intersects(station.usePlanMm, box) || intersects(station.bayPlanMm, box)).map(([id]) => id)
@@ -183,7 +186,7 @@ export function deriveStudyLighting(input: unknown, basis: LightingBasis, compon
     retainedSkirtingEndXMm: room.retainedSkirtingEndXMm, retainedSkirtingDrawMm: room.retainedSkirtingDrawMm,
     lowRouteStopXMm: room.retainedSkirtingEndXMm[0] - room.settingMm,
     handUsePlanMm: use, panelDrawPlanMm: draw, completeModuleDrawPlanMm: moduleDraw, firstRestPlanMm: parking,
-    normalDrawMm: p.panelRoomwardDrawMm, containmentEnvelopeMm: p.containmentEnvelopeMm, bendReserveMm: p.cornerBendOuterReserveMm,
+    normalDrawMm: p.panelRoomwardDrawMm, containmentEnvelopeMm: components.cornerConstruction.containmentOutsideDiameterMm, bendReserveMm: (components.cornerConstruction.bendCentrelineRadiusMm + components.cornerConstruction.containmentOutsideDiameterMm / 2),
     localReplacedNorthPanelIds: room.walls.find(wall => wall.id === 'north-door')!.pieces.filter(piece => intersects(piece.box, [left, room.skirtingTopMm + room.settingMm, right, 2100])).map(piece => piece.id),
     module: { present: request.localWallModule, centreMm: W.positionMm, sizeMm: [p.wallModuleWidthMm, p.wallModuleHeightMm], completeProjectionMm: components.wallLamp.reservedCompleteProjectionMm,
       authoredMassLimitKg: p.wallModuleMaximumInstalledMassKg, gravityDemandN: 9.81 * p.wallModuleMaximumInstalledMassKg,
@@ -197,9 +200,17 @@ export function deriveStudyLighting(input: unknown, basis: LightingBasis, compon
       'Repair/refit retention, earthing, strain relief and closures, verify electrical safety and manual operation before reinstating.'],
     acousticCreditDb: null,
   }
+  const construction = deriveLightingCornerDetail({ bayPlanMm: bay, jointMm: room.settingMm, totalDepthMm: request.serviceTotalDepthMm,
+    fixedBoundaryMm: p.fixedBoundaryDepthMm, decorativeFaceMm: p.removableFaceDepthMm, bottomZMm: corner.bayBottomZMm, topZMm: 2100,
+    moduleCentreZMm: W.positionMm[2], moduleSizeMm: corner.module.sizeMm, completeProjectionMm: corner.module.completeProjectionMm,
+    moduleMassLimitKg: corner.module.authoredMassLimitKg, socketCentreZMm: request.socketCentreZMm, firstRestPlanMm: parking,
+    normalDrawMm: p.panelRoomwardDrawMm, occupied: room.occupied, ceilingZMm: room.ceilingZMm,
+    construction: components.cornerConstruction, boxSizeMm: corner.backBoxSizeMm, plateSizeMm: corner.plateSizeMm })
+  fail('IAS_LIGHTING_SUPPLY_INTERFACE_UNBOUND', 'Current occupied source has no bound Study feeder, protection or cable specification. The identified room interface remains unconnected; do not infer an installed circuit.', ['IAS/STUDY/room-supply-interface'])
+  for (const issue of construction.issues) fail('IAS_LIGHTING_CONSTRUCTION_REJECTED', issue)
   return {
     schema: studyLightingMethod, status: diagnostics.some(d => /REJECTED|MISSING/.test(d.code)) ? 'GEOMETRY_REJECTED' : 'DEVELOPMENT_COMPARISON', request, source: basis.source,
-    caseDigest: sha256SemanticFingerprint({ request, basis, components }), commonRoom: room, arrangements, selectedArrangement: selected.id, corner, serviceStations, fixedInterfaces,
+    caseDigest: sha256SemanticFingerprint({ request, basis, components }), commonRoom: room, arrangements, selectedArrangement: selected.id, corner, serviceStations, fixedInterfaces, construction,
     leads: { desk: { pathMm: deskLead, routedMm: length(deskLead), suppliedMm: components.deskLamp.leadLengthMm }, floor: { pathMm: floorLead, routedMm: length(floorLead), suppliedMm: components.floorLamp.leadLengthMm },
       side: { pathMm: sideLead, routedMm: length(sideLead), suppliedMm: components.deskLamp.leadLengthMm }, authoredSlackMm: 200 },
     controls: { automationConnected: request.automationConnected, automationRequired: false, ordinaryArrivalWorking: !!selected.roles[0].liveSourceIds.length,
