@@ -9,12 +9,12 @@
     "label": "convergence-20261122-primary"
   },
   "claimedAt": "2026-11-22T17:41:01.835Z",
-  "heartbeatAt": "2026-11-22T18:24:45.677Z",
-  "expiresAt": "2026-11-22T19:09:45.677Z",
+  "heartbeatAt": "2026-11-22T18:59:22.328Z",
+  "expiresAt": "2026-11-22T19:44:22.328Z",
   "checkpoint": {
-    "evidence": "Merged1618 main0bdbfaaa all20CIgreen; currentcoordinatedcheckpoint ee7a52d1. HADsource8 8cf468b8/c78bb8d6, IAScommon-depth cd3d23c3/browser64c5c2ae; structuraljointproof e6c33d20. Combinedsourceaudit0/typecheck and10fullfloor/cagetests pass.",
-    "next": "Finish semantic JSON identity repair from captured actual fresh-call failure, combine browser/receiver/grip tests, publish exacthead review batch withbook263/313 andvalidate/merge",
-    "blocker": "Opaque Python numeric-spelling hashes wrongly reject Node roundtrip; no physical tolerances relaxed. Finitejoint resistance, fullsignedwindprogramme and actualcarrier/thermal/house selection remain unqualified"
+    "evidence": "MERGED1618 main0bdbfaaad08331a4f3f33fe35aa10d1320b3059f; all20exact-headCI and3preflights passed. Durable handoff618481bf8ac92101881fee82b1b3220fd88eac69; STR contact/book sourceee7; finaljointrepair28dcb24a passes2freshproductioncalls; preparedexperiment doc7a5f0f57 is not validated code.",
+    "next": "Fresh main/graph/occupancy then new claim; recover combined HADc78bb8d6, IAS8f12c01e, HADbrowserae142435, apply joint28dcb; genuine source-account/receipt regen, exact-head fullCI/realbrowser/publication preflight then merge. No secondbatchPR yet.",
+    "blocker": "Execution environment explicitly unavailable; exec-server recovery timed out. Local combinedb673d6c2 not published as one tree; components durable. Joint resistance, signed load programme, carrier/thermal/renewal and wholehouse selection unresolved."
   },
   "branch": "work/convergence-integrated-house-20261122",
   "predecessor": {
