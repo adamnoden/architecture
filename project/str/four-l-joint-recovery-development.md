@@ -191,3 +191,75 @@ source load assumptions. It will not establish finite joint shear/torsion,
 diagonal compression, anchorage/development, local floor strip convergence,
 contact/bearing law, reinforcement fit, foundation resistance or acceptance.
 The bounded one-case result must precede extension to signed/adverse cases.
+
+## Browser numeric transport — retained production rejection and repair
+
+The first fresh production call for`BROWSER-WET-CAGE` failed the unchanged
+observation fingerprint. A direct Python replay with that label passed, so
+neither cached-envelope admission nor a Python-only labelled replay qualified
+the production boundary. The exact Node call was repeated with an
+`execFileSync` interceptor that saved its actual stdout before admission.
+It failed again after65.707s. The original and repeated rejection remain
+negative evidence; no physical tolerance was changed to erase them.
+
+Only four observation fields differed from the original proof:
+
+| Field | Original capture | Actual Node/browser transport |
+| --- | --- | --- |
+| Case ID |`wet-aligned-quadrature8`|`BROWSER-WET-CAGE`|
+| Complete native semantic-byte checksum |`16f14bea…66b4d`|`03ab8d2a…44f4`|
+| Python request-byte checksum |`04e0d748…5dea4`|`83439025…66fc`|
+| Python cut-byte checksum |`cf536736…9cfe`|`1ced3b05…b7ed`|
+
+JavaScript serialization changes numeric JSON spelling such as290.0→290.
+All actual request values and all four native cut catalogues were
+semantically identical;252 cut metadata numbers changed Python numeric type
+spelling. Every raw L action, component, port/work map, head and recovery
+diagnostic matched exactly. The four-catalogue semantic fingerprint was
+`b08f7ec3624385cbcd406e7db7ae7e0ecd13c0905faa1a38840133a0d7c84648`
+on both captures. No nested case label was found in the cuts.
+
+The captured failing stdout SHA256 is
+`1f1b2438350336b12cd99ad3e66b05f172e1b5406ad558d58d9e18badacd74f6`.
+Complete stdout/native JSON, exact incoming request, command environment,
+failure trace and exhaustive field/type differences were retained under
+`/tmp/four-l-production-intercept-20261122`. The original failed production
+log remains at`/tmp/convergence-fresh-joint-case-label.log`.
+
+The repair treats the four channels above as representation/label metadata
+while fingerprinting the entire semantic request and every physical observed
+value without rounding. The existing pure Python postprocess independently
+checks both Python digests against the **exact native JSON string** before
+recovery. The current proof now also retains a lossless compressed crop of
+all426 existing native cut rows (258member ends,140interior cuts,8caps,
+20adjacent-grid cuts), verified from the original complete ordinary capture.
+Its decoded hash must equal both stored original physical-cut controls.
+Fresh native cut values must match that trusted crop semantically and exactly;
+changing a native cut plus recomputing its opaque/full checksums still rejects.
+
+The original and captured rejected envelopes both pass repaired postprocessing
+with unchanged physical numbers. Nine Node tests,20Python tests and TypeScript
+checks cover numeric-spelling transport, altered request/cut/hash negatives,
+complete pure recovery and balanced raw/derived tampering.
+
+Two subsequent **fresh complete production** calls to
+`runFloorNativeWithFourLJointCapability` with the exact admitted request and
+`BROWSER-WET-CAGE` label passed serially in66.248s and66.344s. Each executed
+one actual observer child, returned52 heads and4 joint free bodies, and made
+zero ordinary-fallback calls. Both child stdout files were captured before
+admission. Their bytes were identical to each other and to the genuinely
+rejected pre-repair stdout: SHA256
+`1f1b2438350336b12cd99ad3e66b05f172e1b5406ad558d58d9e18badacd74f6`.
+The complete native string SHA256 was identically
+`03ab8d2aa8f2ae105e7d338db878d9c6772cfcd5a135f0b1b88b417d5deb44f4`.
+Thus the repaired admission accepted unchanged physical data; neither fresh
+solve needed different arithmetic or relaxed physical comparisons.
+
+Both executions used the production one-thread BLAS/OMP environment with no
+`PYTHONHASHSEED` override. Exact incoming request, command environment,
+stdout/native JSON and per-call reports are retained under
+`/tmp/four-l-production-repaired-20261122`. The matched trusted/incoming
+observation semantic fingerprint was
+`27fa2953caa0e1211b13927e767d3891a608a67053d91f7a620e7cc495cd7873`.
+This validates only the bounded exact-request capability and browser numeric
+transport. Signed demand-envelope and finite-joint capacity flags remain false.

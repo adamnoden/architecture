@@ -4,9 +4,15 @@ import { readFileSync } from 'node:fs'
 import { execFileSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
 import test from 'node:test'
-import { admitFourLJointDerivedDemand, admitFourLJointEnvelope, dispatchFourLJointNative, fourLJointMethodPaths, fourLJointObservationFingerprint, inspectFourLJointCapability, readFourLJointExecution, runObservedFourLJointCase } from './current-design/structural-four-l-joint-adapter.js'
+import { sha256SemanticFingerprint } from '../core/identity.js'
+import { admitFourLJointDerivedDemand, admitFourLJointEnvelope, dispatchFourLJointNative, fourLJointMethodPaths, fourLJointObservationFingerprint, fourLNativeCutFingerprint, inspectFourLJointCapability, readFourLJointExecution, runObservedFourLJointCase } from './current-design/structural-four-l-joint-adapter.js'
 
 const hash=(s:string)=>createHash('sha256').update(s).digest('hex')
+function pythonNativeDigests(nativeJSON:string):{requestSHA256:string;physicalCutSHA256:string} {
+  return JSON.parse(execFileSync('python3',['-B','-c',
+    'import json,hashlib,sys;v=json.load(sys.stdin);d=lambda x:hashlib.sha256(json.dumps(x,sort_keys=True,separators=(",",":"),allow_nan=False).encode()).hexdigest();print(json.dumps({"requestSHA256":d(v["request"]),"physicalCutSHA256":d({k:v["nativeVertical"]["native"][k] for k in ("memberCuts","interiorMemberCuts","capCuts","adjacentGridMemberCuts")})}))'],
+    {input:nativeJSON,encoding:'utf8'}))
+}
 function fixture() {
   const sourceSHA256=Object.fromEntries(Array.from({length:58},(_,i)=>[`project/native-${i}.py`,hash('source'+i)]))
   const comparison={sourceSHA256,thicknessMm:200,wetSupport:{bearingQuadratureOrder:8}}
@@ -27,10 +33,11 @@ function fixture() {
     directAppliedLoads:r.directAppliedLoads.map(d=>({...d,loadAtReferenceKN_KNm:[0,0,-7,0,0,0]})),
     freeBodyResidualKN_KNm:[0,0,0,0,0,0],maximumAbsoluteResidualKN_KNm:0}))
   const native={schema:'str-coupled-floor-section-result/1',sourceSHA256,request:comparison,candidateAccepted:false,completeHouseProof:false,
-    numericControl:1,nativeVertical:{native:{caseId:'actual-case',heads}}}
+    numericControl:1,nativeVertical:{native:{caseId:'actual-case',heads,memberCuts:[{memberId:'existing-cut',breadthMm:1}],interiorMemberCuts:[],capCuts:[],adjacentGridMemberCuts:[]}}}
   // A real Python JSON spelling that JS parse/stringify does not retain.
   const nativeResultJSON=JSON.stringify(native).replace('"numericControl":1,','"numericControl":1.0,')
   const observation={schema:'str-four-L-joint-observation/1',sourceSHA256,request:comparison,caseId:'actual-case',
+    requestSHA256:sha256SemanticFingerprint(comparison),physicalCutSHA256:fourLNativeCutFingerprint(native),
     fullNativeResultSHA256:hash(nativeResultJSON),runtimeThreads:{OPENBLAS_NUM_THREADS:'1',OMP_NUM_THREADS:'1'},
     methodSourceSHA256:Object.fromEntries(fourLJointMethodPaths.slice(1).map(p=>[p,methods[p]])),
     nonlinearSolvesExecuted:1,finiteJointCapacityAvailable:false,candidateAccepted:false,completeHouseProof:false,heads,joints:originals}
@@ -41,13 +48,13 @@ function fixture() {
     methodSourceSHA256:methods,runtimeThreads:{OPENBLAS_NUM_THREADS:'1',OMP_NUM_THREADS:'1'},
     ordinaryFullNativeResultSHA256:hash(nativeResultJSON),observedFullNativeResultSHA256:hash(nativeResultJSON),
     exactFullResultEqualityVerified:true,exactPhysicalHeadAndCutEqualityVerified:true,physicalHeadCount:52,finiteJointCapacityAvailable:false}
-  return {comparison,methods,envelope,witness,trustedObservationFingerprint:fourLJointObservationFingerprint(observation)}
+  return {comparison,methods,envelope,witness,trustedObservationFingerprint:fourLJointObservationFingerprint(observation),trustedNativeCutFingerprint:fourLNativeCutFingerprint(native)}
 }
 
 test('prepared optional capability preserves exact native bytes and all joint components without starting a house builder',()=>{
   const f=fixture(),before=JSON.stringify(f)
   assert.equal(inspectFourLJointCapability(f.comparison,f.witness,f.methods).status,'available')
-  const result=admitFourLJointEnvelope(f.envelope,f.comparison,'actual-case',f.methods,f.trustedObservationFingerprint)
+  const result=admitFourLJointEnvelope(f.envelope,f.comparison,'actual-case',f.methods,f.trustedObservationFingerprint,f.trustedNativeCutFingerprint)
   assert.equal(result.nativeResult.numericControl,1)
   assert.notEqual(hash(JSON.stringify(JSON.parse(f.envelope.nativeResultJSON))),f.envelope.observation.fullNativeResultSHA256)
   assert.equal(result.jointDemands.joints.length,4)
@@ -81,7 +88,7 @@ test('full native edits, stale replies, runtime drift, invented acceptance and m
   ]
   for(const mutation of mutations) {
     const f=fixture();mutation(f)
-    assert.throws(()=>admitFourLJointEnvelope(f.envelope,f.comparison,'actual-case',f.methods,f.trustedObservationFingerprint))
+    assert.throws(()=>admitFourLJointEnvelope(f.envelope,f.comparison,'actual-case',f.methods,f.trustedObservationFingerprint,f.trustedNativeCutFingerprint))
   }
 })
 
@@ -111,7 +118,7 @@ test('synthetic complete-cut edits and balanced joint-action redistribution fail
     const f=fixture(),cuts=f.envelope.freeBodies.joints[0]!.memberCuts
     if(mutation==='physical-cut')cuts[0]!.forceOnMemberAtPhysicalCutKN_KNm[0]!+=1000
     else {cuts[0]!.memberOnJointAtReferenceKN_KNm[2]!+=1;cuts[1]!.memberOnJointAtReferenceKN_KNm[2]!-=1}
-    assert.throws(()=>admitFourLJointEnvelope(f.envelope,f.comparison,'actual-case',f.methods,f.trustedObservationFingerprint),/complete pure recovery/)
+    assert.throws(()=>admitFourLJointEnvelope(f.envelope,f.comparison,'actual-case',f.methods,f.trustedObservationFingerprint,f.trustedNativeCutFingerprint),/complete pure recovery/)
   }
 })
 
@@ -141,5 +148,30 @@ test('actual retained complete cuts and all observation channels are bound, incl
       mutation==='physical-cut'||mutation==='balanced-joint-actions'?/complete pure recovery/:/source-bound exact-request captured input/)
   }
   const relabelled={...input.observation,caseId:'OTHER-VALID-CASE',fullNativeResultSHA256:hash('renamed-native-bytes')}
-  assert.equal(fourLJointObservationFingerprint(relabelled),trusted,'Only explicit case-label metadata is excluded')
+  assert.equal(fourLJointObservationFingerprint(relabelled),trusted,'Case labels do not alter physical observed inputs')
+})
+
+test('browser1.0/int transport keeps exact physical controls while Python request/cut digests stay independently validated',()=>{
+  const f=fixture(),typed=f.envelope.nativeResultJSON.replace('"thicknessMm":200,','"thicknessMm":200.0,').replace('"breadthMm":1}','"breadthMm":1.0}')
+  const roundtrip=JSON.stringify(JSON.parse(typed)),a=pythonNativeDigests(typed),b=pythonNativeDigests(roundtrip)
+  assert.notEqual(a.requestSHA256,b.requestSHA256);assert.notEqual(a.physicalCutSHA256,b.physicalCutSHA256)
+  for(const nativeJSON of [typed,roundtrip]) {
+    const envelope=structuredClone(f.envelope);envelope.nativeResultJSON=nativeJSON
+    Object.assign(envelope.observation,pythonNativeDigests(nativeJSON),{fullNativeResultSHA256:hash(nativeJSON)})
+    assert.doesNotThrow(()=>admitFourLJointEnvelope(envelope,f.comparison,'actual-case',f.methods,f.trustedObservationFingerprint,f.trustedNativeCutFingerprint))
+    for(const key of ['requestSHA256','physicalCutSHA256'] as const) {
+      const changed=structuredClone(envelope);changed.observation[key]=hash('wrong Python digest')
+      assert.throws(()=>admitFourLJointEnvelope(changed,f.comparison,'actual-case',f.methods,f.trustedObservationFingerprint,f.trustedNativeCutFingerprint),/does not match exact native JSON/)
+    }
+  }
+  const request=structuredClone(f.envelope.observation);request.request.thicknessMm=201
+  assert.throws(()=>admitFourLJointDerivedDemand(request,f.envelope.freeBodies,f.trustedObservationFingerprint),/source-bound exact-request/)
+})
+
+test('changed native cut plus matching opaque and full hashes cannot bypass the trusted ordinary semantic cut control',()=>{
+  const f=fixture(),native=JSON.parse(f.envelope.nativeResultJSON)
+  native.nativeVertical.native.memberCuts[0].breadthMm+=1
+  f.envelope.nativeResultJSON=JSON.stringify(native)
+  Object.assign(f.envelope.observation,pythonNativeDigests(f.envelope.nativeResultJSON),{fullNativeResultSHA256:hash(f.envelope.nativeResultJSON)})
+  assert.throws(()=>admitFourLJointEnvelope(f.envelope,f.comparison,'actual-case',f.methods,f.trustedObservationFingerprint,f.trustedNativeCutFingerprint),/source-bound ordinary cut control/)
 })

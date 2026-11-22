@@ -5,9 +5,12 @@ replays the lossless observed input and source/method joins; the crop cannot
 reconstruct omitted full native bytes and never substitutes for a new solve.
 """
 import argparse
+import base64
 import hashlib
 import json
 from pathlib import Path
+import subprocess
+import zlib
 
 from four_l_joint_observer import _controls, digest
 from four_l_joint_recovery import recover, verify_passivity
@@ -17,12 +20,40 @@ METHOD='project/str/studies/four_l_joint_proof.py'
 METHODS=('compiler/reference-house/current-design/structural-four-l-joint-adapter.ts',
     'project/str/studies/four_l_joint_observer.py','project/str/studies/four_l_joint_recovery.py')
 PROOF=ROOT/'project/str/studies/four-l-joint-proof.json'
+CUT_KEYS=('memberCuts','interiorMemberCuts','capCuts','adjacentGridMemberCuts')
 
 
 def file_sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
 def methods():return {p:file_sha(ROOT/p) for p in METHODS}
+
+
+def pack_cut_control(native,full_file_sha):
+    data=json.dumps({key:native['nativeVertical']['native'][key] for key in CUT_KEYS},
+        sort_keys=True,separators=(',',':'),allow_nan=False).encode()
+    return {'encoding':'base64-zlib-json','decodedBytes':len(data),'decodedSHA256':hashlib.sha256(data).hexdigest(),
+        'data':base64.b64encode(zlib.compress(data)).decode(),'ordinaryFullCaptureFileSHA256':full_file_sha}
+
+
+def unpack_cut_control(control):
+    if control['encoding']!='base64-zlib-json':raise ValueError('Unsupported native cut control encoding')
+    try:data=zlib.decompress(base64.b64decode(control['data'],validate=True))
+    except Exception as failure:raise ValueError('Corrupt retained native cut control') from failure
+    if len(data)!=control['decodedBytes'] or hashlib.sha256(data).hexdigest()!=control['decodedSHA256']:
+        raise ValueError('Corrupt retained native cut control')
+    value=json.loads(data)
+    if set(value)!=set(CUT_KEYS) or any(not isinstance(value[key],list) for key in CUT_KEYS):
+        raise ValueError('Missing actual native cut catalogue')
+    return value
+
+
+def semantic_cut_fingerprint(catalogues):
+    code=('import {fourLNativeCutFingerprint} from "./compiler/reference-house/current-design/structural-four-l-joint-adapter.ts";'
+        'let text="";for await(const chunk of process.stdin)text+=chunk;'
+        'console.log(fourLNativeCutFingerprint({nativeVertical:{native:JSON.parse(text)}}));')
+    return subprocess.run(['node','--import','tsx','--input-type=module','-e',code],
+        input=json.dumps(catalogues,allow_nan=False),text=True,capture_output=True,check=True,cwd=ROOT).stdout.strip()
 
 
 def source_current(identities):
@@ -53,9 +84,12 @@ def check(proof):
             or observed['freeBodies']!=recover(observation)):
         raise ValueError('Actual source/witness/free-body replay differs')
     captures=proof['verifiedFullCaptures'];node=proof['actualNodeAdmission']
+    cut_control=proof['nativeCutControl'];cut_fingerprint=semantic_cut_fingerprint(unpack_cut_control(cut_control))
     if (captures['exactFullNativeBytesEqual'] is not True
             or captures['retainedCropReconstructsCompleteNativeBytes'] is not False
             or captures['ordinaryFullCaptureFileSHA256']!=captures['observedFullCaptureFileSHA256']
+            or cut_control['ordinaryFullCaptureFileSHA256']!=captures['ordinaryFullCaptureFileSHA256']
+            or cut_control['decodedSHA256']!=ordinary['physicalCutSHA256']
             or len(captures['ordinaryFullCaptureFileSHA256'])!=64
             or node['actualNodeAdmissionPassing'] is not True or node['physicalHeadCount']!=52
             or node['methodSourceSHA256']!=methods()
@@ -63,6 +97,7 @@ def check(proof):
             or node['jointDemands']!={**observed['freeBodies'],
                 'status':'computed-rigid-joint-demand','methodSourceSHA256':methods(),
                 'nativeResultSHA256':observation['fullNativeResultSHA256'],
+                'nativeCutSemanticFingerprint':cut_fingerprint,
                 'patchOwnGAlreadyIncludedInPlateContribution':True,
                 'diagnostics':['FOUR_L_JOINT/finite-joint-laws-and-resistance-unqualified',
                     'FOUR_L_JOINT/complete-signed-demand-envelope-unavailable']}
@@ -95,6 +130,7 @@ def write(ordinary_path,ordinary_manifest,observed_path,envelope_path,node_path)
     observed={key:envelope[key] for key in ('observation','freeBodies')}
     proof={'schema':'str-four-L-actual-joint-demand-proof/1','sourceSHA256':actual['sourceSHA256'],
         'processingSourceSHA256':{**methods(),METHOD:file_sha(ROOT/METHOD)},
+        'nativeCutControl':pack_cut_control(old,file_sha(ordinary_path)),
         'witness':witness(ordinary,observed),'ordinaryControl':ordinary,'exactObservedInput':observed,
         'verifiedFullCaptures':{'ordinaryFullCaptureFileSHA256':file_sha(ordinary_path),
             'ordinaryManifestFileSHA256':file_sha(ordinary_manifest),

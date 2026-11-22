@@ -4,7 +4,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from four_l_joint_proof import PROOF, check, write
+from four_l_joint_proof import PROOF, check, write, pack_cut_control, unpack_cut_control
 
 
 class ActualJointProof(unittest.TestCase):
@@ -56,6 +56,19 @@ class ActualJointProof(unittest.TestCase):
             paths[2].write_text(json.dumps(native));paths[3].write_text(json.dumps(self.proof['exactObservedInput']))
             paths[4].write_text(json.dumps(self.proof['actualNodeAdmission']))
             with self.assertRaisesRegex(ValueError,'manifest mismatch'):write(*paths)
+
+    def test_lossless_native_cut_control_is_bound_to_original_physical_cut_digest(self):
+        control=self.proof['nativeCutControl'];catalogues=unpack_cut_control(control)
+        self.assertEqual(sum(map(len,catalogues.values())),426)
+        self.assertEqual(control['decodedSHA256'],self.proof['ordinaryControl']['physicalCutSHA256'])
+        for key,value in [('decodedBytes',control['decodedBytes']+1),('decodedSHA256','0'*64),('data','not-base64')]:
+            with self.subTest(key=key),self.assertRaises(ValueError):unpack_cut_control({**control,key:value})
+
+    def test_altered_native_cuts_with_regenerated_crop_cannot_supply_trusted_ordinary_control(self):
+        proof=copy.deepcopy(self.proof);catalogues=unpack_cut_control(proof['nativeCutControl'])
+        catalogues['memberCuts'][0]['breadthMm']+=1
+        proof['nativeCutControl']=pack_cut_control({'nativeVertical':{'native':catalogues}},proof['verifiedFullCaptures']['ordinaryFullCaptureFileSHA256'])
+        with self.assertRaises(ValueError):check(proof)
 
 
 if __name__=='__main__':unittest.main()
