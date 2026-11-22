@@ -9,8 +9,8 @@
     "label": "convergence-water-primary-20261122"
   },
   "claimedAt": "2026-11-22T14:35:48.378Z",
-  "heartbeatAt": "2026-11-22T16:16:54.497Z",
-  "expiresAt": "2026-11-22T17:01:54.497Z",
+  "heartbeatAt": "2026-11-22T16:50:28.175Z",
+  "expiresAt": "2026-11-22T17:35:28.175Z",
   "branch": "work/convergence-primary-20261122",
   "predecessor": {
     "leaseId": "6674cab5-5562-4cd0-bab3-37b04006cbd7",
@@ -32,7 +32,7 @@
   },
   "pr": 1618,
   "checkpoint": {
-    "evidence": "Durable fc54a405/treeac4777fc with25 focused tests, source audit, producer and inspected views; coordinator final joint PR1618 exact-head CI repair underway. No new HAD source mutations.",
-    "next": "Observe coordinator submitted validated head, run canonical HAD publication preflight on joint branch, merge then explicitly release HAD lease."
+    "evidence": "FinalHAD fc54a405 remainsdurable/integratedcandidate; carrier-onlyrecovery a24bf9cf/treeb0ee1242 nowpreserves jacketvolume, density sensitivities and signed ideal-guide/lockedthermal reaction scenarios. IndependentpublicationPR1619 ed903114 exact-head typographyproofGREEN. Coordinator890379a2 CIpending; no currentHAD source mutation.",
+    "next": "Keep jointPR1618 lease live through exact890CI; canonical publicationpreflight and merge, then release promptly and freshlydispatch/claim HAD newgeneration before carrier-source integration."
   }
 }
