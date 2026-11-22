@@ -1,41 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "IAS-ROOM-LIGHTING",
-  "generation": 3,
+  "generation": 4,
   "state": "claimed",
-  "leaseId": "3cec4ae0-f28f-47a4-b739-ca8b4bc3e962",
+  "leaseId": "26712064-31c6-4c7b-ac68-dc22f8a4423b",
   "holder": {
     "kind": "chatgpt",
-    "label": "convergence-lighting-20261122"
+    "label": "convergence-lighting-review-20261122"
   },
-  "claimedAt": "2026-11-22T10:04:36.075Z",
-  "heartbeatAt": "2026-11-22T10:32:50.819Z",
-  "expiresAt": "2026-11-22T11:17:50.819Z",
-  "branch": "work/convergence-integrate-20261122",
+  "claimedAt": "2026-11-22T14:35:58.888Z",
+  "heartbeatAt": "2026-11-22T14:35:58.888Z",
+  "expiresAt": "2026-11-22T15:20:58.888Z",
+  "branch": "work/lighting-review-20261122",
   "predecessor": {
-    "leaseId": "3525cb90-39f7-46b3-b4dc-d297a862ccb2",
-    "generation": 2,
-    "branch": "work/ias-room-lighting-resume-20261122",
+    "leaseId": "3cec4ae0-f28f-47a4-b739-ca8b4bc3e962",
+    "generation": 3,
+    "branch": "work/convergence-integrate-20261122",
+    "pr": 1617,
     "checkpoint": {
-      "evidence": "remote57cd81f06848a4fdd304b47dc6be6613a5496712;6focusedtests+typecheck",
-      "next": "Finish review outputs, owning result and fresh source account; exact-head CI/preflight",
-      "blocker": "No physical/photometric/material/owner acceptance claimed"
+      "evidence": "Remote9024e5d8 exacttreec2f3c5fe:10 focused shared/CLI/edit/producer tests,typecheck and5 raster-inspected views; root integrates equivalent local e2a9da0d into PR1617.",
+      "next": "Validate shared head, reconcile source family/evidence, inspect exact-head CI and canonical publication preflight; retain open feeder/material/physical and full conduit-tangent obligations.",
+      "blocker": "Current Study feeder/protection/cable absent. Full bend+collar/setting not yet coordinated; installed and owner acceptance remain false."
     }
   },
   "recoverySource": {
-    "leaseId": "3525cb90-39f7-46b3-b4dc-d297a862ccb2",
-    "generation": 2,
-    "branch": "work/ias-room-lighting-resume-20261122",
+    "leaseId": "3cec4ae0-f28f-47a4-b739-ca8b4bc3e962",
+    "generation": 3,
+    "branch": "work/convergence-integrate-20261122",
+    "pr": 1617,
     "checkpoint": {
-      "evidence": "remote57cd81f06848a4fdd304b47dc6be6613a5496712;6focusedtests+typecheck",
-      "next": "Finish review outputs, owning result and fresh source account; exact-head CI/preflight",
-      "blocker": "No physical/photometric/material/owner acceptance claimed"
+      "evidence": "Remote9024e5d8 exacttreec2f3c5fe:10 focused shared/CLI/edit/producer tests,typecheck and5 raster-inspected views; root integrates equivalent local e2a9da0d into PR1617.",
+      "next": "Validate shared head, reconcile source family/evidence, inspect exact-head CI and canonical publication preflight; retain open feeder/material/physical and full conduit-tangent obligations.",
+      "blocker": "Current Study feeder/protection/cable absent. Full bend+collar/setting not yet coordinated; installed and owner acceptance remain false."
     }
-  },
-  "checkpoint": {
-    "evidence": "Remote9024e5d8 exacttreec2f3c5fe:10 focused shared/CLI/edit/producer tests,typecheck and5 raster-inspected views; root integrates equivalent local e2a9da0d into PR1617.",
-    "next": "Validate shared head, reconcile source family/evidence, inspect exact-head CI and canonical publication preflight; retain open feeder/material/physical and full conduit-tangent obligations.",
-    "blocker": "Current Study feeder/protection/cable absent. Full bend+collar/setting not yet coordinated; installed and owner acceptance remain false."
-  },
-  "pr": 1617
+  }
 }
