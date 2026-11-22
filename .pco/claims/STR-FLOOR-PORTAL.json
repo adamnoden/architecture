@@ -1,40 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 52,
+  "generation": 53,
   "state": "claimed",
-  "leaseId": "8ede94e9-ec3a-4f5f-8c74-95f2372cf61b",
+  "leaseId": "785add08-d18d-4e80-ba11-5c594226a2d6",
   "holder": {
     "kind": "chatgpt",
-    "label": "convergence-resume-20261122"
+    "label": "convergence-20261122"
   },
-  "claimedAt": "2026-11-22T07:45:22.878Z",
-  "heartbeatAt": "2026-11-22T07:52:41.939Z",
-  "expiresAt": "2026-11-22T08:37:41.939Z",
-  "checkpoint": {
-    "evidence": "Remote06d1bed9 exacttree72d38f9b preserves MMD-only global ordering;10 focused physical/contact/energy controls pass. Native58 canonical147fdd25 frozen;500 fullcontrol running with exactsource captures inworkspace.",
-    "next": "Validate actual500 versus all312 historicalheadcomponents, then serial250; complete head/cage localcomparison and fresh sourceproofs before merge.",
-    "blocker": "No complete new native500/250 result yet; all prior numerical/physical acceptance limits retained."
-  },
-  "branch": "work/convergence-resume-20261122",
+  "claimedAt": "2026-11-22T10:03:07.790Z",
+  "heartbeatAt": "2026-11-22T10:03:07.790Z",
+  "expiresAt": "2026-11-22T10:48:07.790Z",
+  "branch": "work/convergence-integrate-20261122",
   "predecessor": {
-    "leaseId": "4c335045-933e-4aad-afbc-ff6e25cbc6ad",
-    "generation": 51,
-    "branch": "work/convergence-sparse-20261121",
+    "leaseId": "8ede94e9-ec3a-4f5f-8c74-95f2372cf61b",
+    "generation": 52,
+    "branch": "work/convergence-resume-20261122",
     "checkpoint": {
-      "evidence": "Merged1613 main769b60bc exact7cf passed689 compiler tests and all publication gates; packetremainsopen. Remote sparse8cd3438c preserves numerical methods,23+9 component checks and exact unsuccessful725 native/initialgeometry evidence.",
-      "next": "Locate actual finalassembly/factor memory through boundedphase diagnostic; execute250 and unchangedcontrol on proven numerical method, regenerate all dependent current proofs and integrate ordinaryindoorcuts continuation.",
-      "blocker": "250 fullnative remains unavailable; no force/convergence/capacity result is inferred from failed executions. Newsource receipts intentionally stale until genuine regeneration."
+      "evidence": "Remote06d1bed9 exacttree72d38f9b preserves MMD-only global ordering;10 focused physical/contact/energy controls pass. Native58 canonical147fdd25 frozen;500 fullcontrol running with exactsource captures inworkspace.",
+      "next": "Validate actual500 versus all312 historicalheadcomponents, then serial250; complete head/cage localcomparison and fresh sourceproofs before merge.",
+      "blocker": "No complete new native500/250 result yet; all prior numerical/physical acceptance limits retained."
     }
   },
   "recoverySource": {
-    "leaseId": "4c335045-933e-4aad-afbc-ff6e25cbc6ad",
-    "generation": 51,
-    "branch": "work/convergence-sparse-20261121",
+    "leaseId": "8ede94e9-ec3a-4f5f-8c74-95f2372cf61b",
+    "generation": 52,
+    "branch": "work/convergence-resume-20261122",
     "checkpoint": {
-      "evidence": "Merged1613 main769b60bc exact7cf passed689 compiler tests and all publication gates; packetremainsopen. Remote sparse8cd3438c preserves numerical methods,23+9 component checks and exact unsuccessful725 native/initialgeometry evidence.",
-      "next": "Locate actual finalassembly/factor memory through boundedphase diagnostic; execute250 and unchangedcontrol on proven numerical method, regenerate all dependent current proofs and integrate ordinaryindoorcuts continuation.",
-      "blocker": "250 fullnative remains unavailable; no force/convergence/capacity result is inferred from failed executions. Newsource receipts intentionally stale until genuine regeneration."
+      "evidence": "Remote06d1bed9 exacttree72d38f9b preserves MMD-only global ordering;10 focused physical/contact/energy controls pass. Native58 canonical147fdd25 frozen;500 fullcontrol running with exactsource captures inworkspace.",
+      "next": "Validate actual500 versus all312 historicalheadcomponents, then serial250; complete head/cage localcomparison and fresh sourceproofs before merge.",
+      "blocker": "No complete new native500/250 result yet; all prior numerical/physical acceptance limits retained."
     }
   }
 }
