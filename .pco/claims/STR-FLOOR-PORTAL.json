@@ -9,8 +9,8 @@
     "label": "convergence-20261122-primary"
   },
   "claimedAt": "2026-11-22T14:35:17.012Z",
-  "heartbeatAt": "2026-11-22T14:35:17.012Z",
-  "expiresAt": "2026-11-22T15:20:17.012Z",
+  "heartbeatAt": "2026-11-22T14:45:47.160Z",
+  "expiresAt": "2026-11-22T15:30:47.160Z",
   "branch": "work/convergence-primary-20261122",
   "predecessor": {
     "leaseId": "785add08-d18d-4e80-ba11-5c594226a2d6",
@@ -33,5 +33,11 @@
       "next": "Publish completed16case cuts/cage and named joint-demand capability; integrate HAD door/pipe correction and finish exact-head health/publication preflight.",
       "blocker": "Five mesh stability screens fail unchangedlimits. Local joint resistance, full house/ground coordination and water completion remain unresolved."
     }
+  },
+  "pr": 1618,
+  "checkpoint": {
+    "evidence": "PR1618 remote757f2eec preserves99file structural recovery. Independent32 focused controls and375 current source bindings pass; actual16case recapture underway to supply missing named-interface receipt.",
+    "next": "Complete native captures and named-interface receipt; integrate water and corrected lighting; validate exacthead before publication.",
+    "blocker": "Missing16case interface receipt and source-consumer classification; no structural/slab/wholehouse acceptance earned."
   }
 }
