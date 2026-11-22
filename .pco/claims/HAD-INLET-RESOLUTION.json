@@ -1,40 +1,39 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 58,
-  "state": "released",
-  "leaseId": "95a6f95d-33db-45e4-8550-8a723558f996",
+  "generation": 59,
+  "state": "claimed",
+  "leaseId": "468f5084-031b-46c6-80ea-50280340b9bc",
   "holder": {
     "kind": "chatgpt",
-    "label": "convergence-water-primary-20261122"
+    "label": "convergence-water-carrier-20261122"
   },
-  "claimedAt": "2026-11-22T14:35:48.378Z",
-  "heartbeatAt": "2026-11-22T17:42:33.739Z",
-  "expiresAt": "2026-11-22T17:42:33.739Z",
-  "branch": "work/convergence-primary-20261122",
+  "claimedAt": "2026-11-22T17:43:56.358Z",
+  "heartbeatAt": "2026-11-22T17:43:56.358Z",
+  "expiresAt": "2026-11-22T18:28:56.358Z",
+  "checkpoint": {
+    "evidence": "Fresh main0bdbfaaad08331a4f3f33fe35aa10d1320b3059f doctor verified; canonical HAD dispatcher safe with one eligible predecessor recovery after merged gen58 handoff. Recovery9eb9ac3d finite placement and a24bf9cf jacket/reaction references preserved.",
+    "next": "Integrate genuine jacket/insulation inventory and bounded finite receiver cases through shared current inlet method, preserving actual geometry/pressure/thermal/renewal holds; coordinate combined PR and exact-head tests with root."
+  },
+  "branch": "work/convergence-integrated-house-20261122",
   "predecessor": {
-    "leaseId": "6674cab5-5562-4cd0-bab3-37b04006cbd7",
-    "generation": 57,
-    "branch": "work/convergence-water-20261122",
+    "leaseId": "95a6f95d-33db-45e4-8550-8a723558f996",
+    "generation": 58,
+    "branch": "work/convergence-primary-20261122",
+    "pr": 1618,
     "checkpoint": {
-      "evidence": "Recovery8b844bfa revalidated; local continuation propagates saved indoor cuts and corrects single-leaf own-reveal collision. Remote successor publication pending.",
-      "next": "Finish complete pipe routes, regenerate source7 evidence and verify exact submitted head."
+      "evidence": "VERIFIED PR1618 merged as main0bdbfaaad08331a4f3f33fe35aa10d1320b3059f with exact890 ancestor and all20 workflows green. Water routes/operator/movingdoor and actions integrated; complete physical system still open. Recovery9eb9ac3d and reviewed publication1619 retained.",
+      "next": "Release gen58 handoff now. Fresh-main doctor/dispatch and explicit HAD claim59 for combined work/convergence-integrated-house-20261122; integrate jacket and finite receiver candidate methods without native acceptance or pressure/thermal/renewal claims."
     }
   },
   "recoverySource": {
-    "leaseId": "6674cab5-5562-4cd0-bab3-37b04006cbd7",
-    "generation": 57,
-    "branch": "work/convergence-water-20261122",
+    "leaseId": "95a6f95d-33db-45e4-8550-8a723558f996",
+    "generation": 58,
+    "branch": "work/convergence-primary-20261122",
+    "pr": 1618,
     "checkpoint": {
-      "evidence": "Recovery8b844bfa revalidated; local continuation propagates saved indoor cuts and corrects single-leaf own-reveal collision. Remote successor publication pending.",
-      "next": "Finish complete pipe routes, regenerate source7 evidence and verify exact submitted head."
+      "evidence": "VERIFIED PR1618 merged as main0bdbfaaad08331a4f3f33fe35aa10d1320b3059f with exact890 ancestor and all20 workflows green. Water routes/operator/movingdoor and actions integrated; complete physical system still open. Recovery9eb9ac3d and reviewed publication1619 retained.",
+      "next": "Release gen58 handoff now. Fresh-main doctor/dispatch and explicit HAD claim59 for combined work/convergence-integrated-house-20261122; integrate jacket and finite receiver candidate methods without native acceptance or pressure/thermal/renewal claims."
     }
-  },
-  "pr": 1618,
-  "checkpoint": {
-    "evidence": "VERIFIED PR1618 merged as main0bdbfaaad08331a4f3f33fe35aa10d1320b3059f with exact890 ancestor and all20 workflows green. Water routes/operator/movingdoor and actions integrated; complete physical system still open. Recovery9eb9ac3d and reviewed publication1619 retained.",
-    "next": "Release gen58 handoff now. Fresh-main doctor/dispatch and explicit HAD claim59 for combined work/convergence-integrated-house-20261122; integrate jacket and finite receiver candidate methods without native acceptance or pressure/thermal/renewal claims."
-  },
-  "releasedAt": "2026-11-22T17:42:33.739Z",
-  "releaseReason": "handoff"
+  }
 }
