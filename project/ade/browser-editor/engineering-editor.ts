@@ -1,4 +1,4 @@
-import { applyEngineeringEdit, beginEngineeringEdit, currentEngineeringReply, editableRoofId, editableWetCageId, editableInletBankId, editableInletBankFields, engineeringBase,
+import { applyEngineeringEdit, beginEngineeringEdit, currentEngineeringReply, editableRoofId, editableWetCageId, editableInletBankId, editableInletBankFields, editableStudyLightingId, engineeringBase,
   engineeringTicket, replayEngineeringEdit, saveEngineeringEdit, type EngineeringEditorState, type EngineeringTicket,
 } from '../../../compiler/reference-house/current-design/engineering-edit.js'
 import type { EngineeringReply } from './engineering-api.js'
@@ -8,6 +8,7 @@ const button = (id: string) => element<HTMLButtonElement>(id)
 const pitch = element<HTMLInputElement>('pitch')
 const inletField=element<HTMLSelectElement>('inlet-field'),inletValue=element<HTMLInputElement>('inlet-value')
 const cageTop = element<HTMLInputElement>('cage-top-level')
+const lightingDepth = element<HTMLInputElement>('lighting-depth')
 const record = (v: unknown): v is Record<string, unknown> => v !== null && typeof v === 'object' && !Array.isArray(v)
 const storageKey = 'ovid-current-engineering-document/1'
 let state: EngineeringEditorState
@@ -37,6 +38,11 @@ function controls() {
   element('inlet-bank-controls').hidden=!hasInlet
   inletField.disabled=!hasInlet;inletValue.disabled=!hasInlet
   if(hasInlet){inletValue.value=String(inlet[inletField.value]);element('inlet-unit').textContent=inletField.value.endsWith('KgM3')?'kg/m³ density comparison':'mm'}
+  const lighting = state.document.stages.studyLighting
+  const hasLighting = record(lighting) && typeof lighting.serviceTotalDepthMm === 'number'
+  element('lighting-controls').hidden = !hasLighting
+  lightingDepth.disabled = !hasLighting
+  lightingDepth.value = hasLighting ? String(lighting.serviceTotalDepthMm) : ''
   button('undo').disabled = !state.undo.length
   button('redo').disabled = !state.redo.length
   element('stage-scope').textContent = `Saved stages: ${Object.keys(state.document.stages).join(', ')}. All are retained and compiled.`
@@ -46,7 +52,16 @@ function draw() {
     const image = element<HTMLImageElement>(`${name}-roof`)
     if (result) image.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(result.roof.svg)
     else image.removeAttribute('src')
+    const lightingImage = element<HTMLImageElement>(`${name}-lighting`)
+    if (result?.studyLighting) lightingImage.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(result.studyLighting.svg)
+    else lightingImage.removeAttribute('src')
   }
+  const lighting = current?.studyLighting?.comparison
+  element('lighting-views').hidden = !lighting
+  element('lighting-result').textContent = lighting
+    ? `Unselected comparison: common axis ${lighting.commonAxisCoreDepthMm} mm from the masonry core; accessory recess ${lighting.accessoryFaceRecessMm} mm. Local enclosure geometry ${lighting.evidence.localGeometryPassing ? 'within declared checks' : 'REJECTED'}. Actual device connections, protective qualification, materials, loaded renewal and owner acceptance remain unqualified.`
+    : ''
+  element('lighting-diagnostics').textContent = lighting ? lighting.diagnostics.map(issue => issue.message).join(' ') : ''
   const bank=current?.inletBank
   element('inlet-bank-views').hidden=!bank
   for(const [name,result]of [['current',current],['comparison',comparison]] as const){const image=element<HTMLImageElement>(`${name}-inlet-bank`);if(result?.inletBank)image.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(result.inletBank.receiver.reviewSvg);else image.removeAttribute('src')}
@@ -109,6 +124,11 @@ function edit(value: number) {
     operation: { kind: 'set-roof-pitch', roofId: editableRoofId, pitchDeg: value } }))
 }
 element('edit').addEventListener('submit', event => { event.preventDefault(); edit(pitch.valueAsNumber) })
+element('lighting-edit').addEventListener('submit', event => {
+  event.preventDefault()
+  changed(applyEngineeringEdit(state, { schema: 'current-engineering-edit/1', units: 'mm', base: engineeringBase(state),
+    operation: { kind: 'set-lighting-service-depth', assemblyId: editableStudyLightingId, totalDepthMm: lightingDepth.valueAsNumber } }))
+})
 inletField.addEventListener('change',controls)
 element('inlet-bank-edit').addEventListener('submit',event=>{event.preventDefault();changed(applyEngineeringEdit(state,{schema:'current-engineering-edit/1',units:inletField.value.endsWith('KgM3')?'kg/m3':'mm',base:engineeringBase(state),operation:{kind:'set-inlet-bank-field',assemblyId:editableInletBankId,inputId:inletField.value,value:inletValue.valueAsNumber}}))})
 element('wet-cage-edit').addEventListener('submit', event => {
@@ -159,6 +179,7 @@ file.addEventListener('change', () => {
 for (const control of document.querySelectorAll<HTMLButtonElement>('button')) control.disabled = true
 pitch.disabled = true
 cageTop.disabled = true
+lightingDepth.disabled = true
 void fetch('/api/engineering/document').then(async response => {
   if (!response.ok) throw new Error('The local engineering compiler is unavailable')
   state = beginEngineeringEdit(await response.json(), id()); controls(); await refresh()

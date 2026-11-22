@@ -7,7 +7,7 @@ import { readStudyRoomKitReferenceCase } from '../../../compiler/reference-house
 
 const check = process.argv.includes('--check');
 const root = new URL('../../../', import.meta.url);
-const methods = ['compiler/reference-house/current-design/assemblies/study-lighting-case.ts', 'compiler/reference-house/current-design/assemblies/study-lighting-corner.ts', 'compiler/reference-house/current-design/assemblies/study-lighting.ts', 'compiler/reference-house/current-design/assemblies/study-lighting-views.ts',
+const methods = ['compiler/reference-house/current-design/assemblies/study-lighting-common-depth.ts', 'compiler/reference-house/current-design/assemblies/study-lighting-case.ts', 'compiler/reference-house/current-design/assemblies/study-lighting-corner.ts', 'compiler/reference-house/current-design/assemblies/study-lighting.ts', 'compiler/reference-house/current-design/assemblies/study-lighting-views.ts',
   'project/ias/studies/adaptable-study-lighting.mjs'];
 const methodSHA256 = Object.fromEntries(methods.map(path => [path, createHash('sha256').update(readFileSync(new URL(path, root))).digest('hex')]));
 const compile = prepareCurrentDesignCompile(readGeorgianDesignSnapshot());
@@ -20,7 +20,7 @@ for (const [id, change] of Object.entries({ shallow: { serviceTotalDepthMm: 27 }
   automationConnected: { automationConnected: true }, darkerFinish: { finishTrial: 'darker-oak' }, missingCarrier: { localWallModule: false } })) {
   const { lighting } = await compile.studyLighting({ ...defaults, ...change }, kit);
   probes[id] = { request: lighting.request, caseDigest: lighting.caseDigest, status: lighting.status, corner: lighting.corner,
-    serviceStations: lighting.serviceStations, construction: lighting.construction, leads: lighting.leads, controls: lighting.controls, diagnostics: lighting.diagnostics,
+    serviceStations: lighting.serviceStations, construction: lighting.construction, commonDepthCornerComparison: lighting.commonDepthCornerComparison, leads: lighting.leads, controls: lighting.controls, diagnostics: lighting.diagnostics,
     unchangedRoomGeometry: JSON.stringify(lighting.commonRoom) === JSON.stringify(baseline.lighting.commonRoom),
     unchangedKitchen: JSON.stringify(lighting.kitchen) === JSON.stringify(baseline.lighting.kitchen), evidence: lighting.evidence };
 }
@@ -30,6 +30,7 @@ const outputs = [
   ['adaptable-kitchen-lighting.svg', baseline.kitchenSvg],
   ['adaptable-study-lighting-routes.svg', baseline.routesSvg],
   ['adaptable-study-lighting-construction.svg', baseline.constructionSvg],
+  ['adaptable-study-lighting-common-depth.svg', baseline.commonDepthCornerSvg],
   ['adaptable-study-lighting.results.json', JSON.stringify({ schema: 'ias-study-lighting-review/1', methodSHA256,
     reference: baseline.lighting, probes, acceptance: 'Unselected geometry and operational comparison; no photometry, product/material admission, installed capacity, physical trial or owner acceptance.' }, null, 2) + '\n'],
 ];
