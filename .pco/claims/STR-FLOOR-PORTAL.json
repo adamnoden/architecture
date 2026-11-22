@@ -9,12 +9,12 @@
     "label": "convergence-resume-20261122"
   },
   "claimedAt": "2026-11-22T07:45:22.878Z",
-  "heartbeatAt": "2026-11-22T07:45:22.878Z",
-  "expiresAt": "2026-11-22T08:30:22.878Z",
+  "heartbeatAt": "2026-11-22T07:52:41.939Z",
+  "expiresAt": "2026-11-22T08:37:41.939Z",
   "checkpoint": {
-    "evidence": "Main769b60bc unchanged; recovery2797e058 preserves experimental methods and exact failed native histories; temporary matrices lost.",
-    "next": "Recover exact experimental source; regenerate matrix experiment and execute unchanged500 and fine250 with earned ordering candidate.",
-    "blocker": "No fine-mesh convergence or whole structural baseline selected."
+    "evidence": "Remote06d1bed9 exacttree72d38f9b preserves MMD-only global ordering;10 focused physical/contact/energy controls pass. Native58 canonical147fdd25 frozen;500 fullcontrol running with exactsource captures inworkspace.",
+    "next": "Validate actual500 versus all312 historicalheadcomponents, then serial250; complete head/cage localcomparison and fresh sourceproofs before merge.",
+    "blocker": "No complete new native500/250 result yet; all prior numerical/physical acceptance limits retained."
   },
   "branch": "work/convergence-resume-20261122",
   "predecessor": {
