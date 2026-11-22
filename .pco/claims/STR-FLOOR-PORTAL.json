@@ -9,8 +9,8 @@
     "label": "convergence-20261122-primary"
   },
   "claimedAt": "2026-11-22T14:35:17.012Z",
-  "heartbeatAt": "2026-11-22T15:24:43.854Z",
-  "expiresAt": "2026-11-22T16:09:43.854Z",
+  "heartbeatAt": "2026-11-22T16:05:20.024Z",
+  "expiresAt": "2026-11-22T16:50:20.024Z",
   "branch": "work/convergence-primary-20261122",
   "predecessor": {
     "leaseId": "785add08-d18d-4e80-ba11-5c594226a2d6",
@@ -36,8 +36,8 @@
   },
   "pr": 1618,
   "checkpoint": {
-    "evidence": "PR1618 remote84af659c; durable HADfc54a405 and IAS7468f3f4 correct joined room paths and browser admission. All16 source58 nativecontrols recaptured; physical cuts/reactions reproduced. Named-interface replay12of16 reconstructed sofar. Follow-on numerical method checkpointdc48c109 has9 analytical/localcontrols; no house acceptance.",
-    "next": "Finish named-interface receipt, audit/regenerate current consumers, publish final integrated head and complete exacthead CI/publication preflight; continue actual pad refinement after currentintegration.",
-    "blocker": "Remaining named-interface metadata/replay and exacthead CI; no owner aesthetic, physical joint/contact, reinforcement, foundation or wholehouse selection."
+    "evidence": "Remote87711a31/tree1bc5420 has complete16case/64corner evidence and coordinated HAD/IAS. Exacthead publication passed. Realbrowser identified fixture roof-control projection; localfix042fe8ba passes7tests. Canonicalhealth exposed stale old30source monolithic48case regression; genuine31source sweep nowexecuting. Nextpad64states captured; frozenlocal32to64screens pass bothwet25and27, no physicalacceptance.",
+    "next": "Finish genuine48case ancestor replay and sourcewatch repair, publish browserfixture fix with currentreceipts, rerun exacthead CI and all3lease publicationpreflights; then integrate numericalpad continuation.",
+    "blocker": "CurrentCI blocked by oldmonolithic96receipt and missingroof mapping in browserfixture. No thresholds weakened; all physical/wholehouse holds retained."
   }
 }
