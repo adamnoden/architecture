@@ -1,9 +1,9 @@
 {
-  "schema": "had-inlet-source-envelope-result/6",
+  "schema": "had-inlet-source-envelope-result/7",
   "state": "existing-whole-arrangement-rejected",
   "source": {
     "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-    "bindingDigest": "523de89812c10c0cc0e1c62b5dca4d1e10313d9ec0b88969f7ae6f472d571697",
+    "bindingDigest": "cc43417778c032d9efc9b7cdba4ea3e771383018715a55ced6db3d8bd70a1614",
     "inputs": {
       "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
       "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
@@ -16,7 +16,10 @@
       "project/str/studies/current-house-grid.json": "56aca6f99f5fa60b21d58c89115ac1ee824e3828"
     },
     "methods": {
-      "compiler/reference-house/current-design/inlet-source-envelope.ts": "7aad4d48d1f0940d78fa77a0a914027e27d5f1ac",
+      "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2",
+      "compiler/reference-house/current-design/inlet-indoor-routes.ts": "1ee500a54338ea8b45de5b791f8de6f125dbca8c",
+      "compiler/reference-house/current-design/inlet-indoor-cuts.ts": "ccb60bb90d928501dcd1b69cbdf6565a7caa4f41",
+      "compiler/reference-house/current-design/inlet-source-envelope.ts": "848fc8655430e4f24326985644cc5cc8d1c18423",
       "compiler/reference-house/current-design/inlet-room-catchment.ts": "a2b5cd0b166996cb4dc0ede9ed4d6dbfd4e2fb58",
       "compiler/reference-house/current-design/inlet-room-pocket.ts": "6262535d5a03666b92c876e4b8d52c4a0b097fb3",
       "compiler/reference-house/current-design/inlet-room-pan.ts": "81c7736c2b91de574c582dd902ff903953dc9b46",
@@ -49,9 +52,24 @@
     "shieldVerticalInsetMm": 50,
     "frameLowerConnectionZMm": 1100,
     "frameAnchorOffsetMm": 89.5,
-    "plantTransferZMm": 2235,
+    "plantTransferZMm": 2400,
+    "plantWithdrawalLoweringZMm": 2235,
     "catchmentClearWidthMm": 400,
     "catchmentClearHeightMm": 150,
+    "indoorBankXMm": 11350,
+    "indoorBankYMm": 2350,
+    "indoorUtilityAxisZMm": 1350,
+    "indoorPlantAxisZMm": 1890,
+    "indoorOperatorXMm": 10670,
+    "indoorOperatorYMm": 2430,
+    "indoorOperatorZMm": 1450,
+    "indoorMaintenanceShiftXMm": -100,
+    "indoorMaintenanceShiftYMm": -20,
+    "indoorWheelInboardMm": 40,
+    "indoorDoorHingeNorthOfWallMm": 50,
+    "pipeFrictionFactorComparison": 0.03,
+    "pipeCornerKComparison": 0.9,
+    "pipeTemperatureChangeK": 40,
     "catchmentPocketDepthMm": 0,
     "catchmentPanSlopeRatio": 100,
     "catchmentIsolationGapMm": 50,
@@ -531,6 +549,3854 @@
         2173.5,
         2023.5
       ],
+      "indoorRoutes": {
+        "schema": "had-indoor-pipe-routes/1",
+        "state": "unadopted-route-comparison",
+        "coordinateDatum": "Local occupied-groundFFL; stock origins include supplied saved-groundFFL translation.",
+        "pipe": {
+          "source": "Lawton TY0283",
+          "maximumOuterDiameterMm": 28.1,
+          "minimumWallMm": 1.02,
+          "maximumWallMm": 1.38,
+          "minimumHydraulicBoreMm": 25.14,
+          "maximumWaterAndPressureBoreMm": 26.060000000000002,
+          "toleranceInterpretation": "Separate adverse extrema for friction, copper stock and contained water/pressure; these are not one physical tolerance state or installed mass.",
+          "radialInsulationMm": 25,
+          "jacketEachSideMm": 1,
+          "settingEachPipeMm": 10,
+          "copperDensityComparisonKgM3": 8960,
+          "waterDensityComparisonKgM3": 1000
+        },
+        "cornerTerritory": {
+          "basis": "Authored full boxed territory containing both42mm virtual-port legs and39mm AF circumscribed hex plus25mm insulation/1mm jacket; actual commercial body, tails and tools remain unqualified.",
+          "portTakeoffMm": 42,
+          "insulatedBodyRadiusComparisonMm": 48.5166604983954,
+          "minimumCeilingReserveMm": 51.483339501604405,
+          "minimumOtherCornerReserveMm": 10.981763616409498,
+          "minimumOtherPipeReserveMm": 11.433339501387465,
+          "minimumObstacleReserveMm": 5.161380418860087,
+          "perOtherCorner": [],
+          "perOtherPipe": [],
+          "perObstacle": [
+            {
+              "corner": "HAD/indoor-pipe/utility/downstream/corner/3",
+              "obstacle": "complete-shifted-utility-maintenance",
+              "reserveMm": 5.161380418860087
+            }
+          ],
+          "necessaryBoxedCornerTerritoryComparison": true,
+          "actualFittingBodyAndToolsQualified": false
+        },
+        "roomPlanMm": [
+          9397,
+          429.5,
+          2173.5,
+          2023.5
+        ],
+        "checkedObstacles": [
+          {
+            "id": "ordinary-operator-body-and-approach",
+            "boxMm": [
+              10370,
+              2130,
+              0,
+              600,
+              1060,
+              2000
+            ]
+          },
+          {
+            "id": "wet-door-complete-moving-leaf-0",
+            "boxMm": [
+              10147,
+              2667,
+              0,
+              468,
+              468,
+              2300
+            ]
+          },
+          {
+            "id": "wet-door-complete-moving-leaf-1",
+            "boxMm": [
+              10585,
+              2667,
+              0,
+              468,
+              468,
+              2300
+            ]
+          },
+          {
+            "id": "protected-parked-leaf-full2300-comparison",
+            "boxMm": [
+              9397,
+              3534,
+              0,
+              762,
+              44,
+              2300
+            ]
+          },
+          {
+            "id": "complete-shifted-utility-maintenance",
+            "boxMm": [
+              10145,
+              1505,
+              0,
+              1100,
+              750,
+              3100
+            ]
+          },
+          {
+            "id": "occupied-washer-rest",
+            "boxMm": [
+              10076,
+              1500,
+              0,
+              598,
+              600,
+              848
+            ]
+          },
+          {
+            "id": "retained-washer",
+            "boxMm": [
+              10076,
+              800,
+              0,
+              598,
+              600,
+              848
+            ]
+          },
+          {
+            "id": "retained-sink-conservative2000-high-envelope",
+            "boxMm": [
+              10935,
+              740,
+              0,
+              600,
+              600,
+              2000
+            ]
+          },
+          {
+            "id": "utility-radiator",
+            "boxMm": [
+              11370.5,
+              1778,
+              100,
+              200,
+              650,
+              600
+            ]
+          },
+          {
+            "id": "HAD/utility-north/shield-connection-1",
+            "boxMm": [
+              11098,
+              2413,
+              1018,
+              164,
+              40,
+              164
+            ]
+          },
+          {
+            "id": "HAD/utility-north/shield-connection-2",
+            "boxMm": [
+              11098,
+              2413,
+              2618,
+              164,
+              40,
+              164
+            ]
+          }
+        ],
+        "authoredComparison": {
+          "frictionFactor": 0.03,
+          "cornerK": 0.9,
+          "temperatureChangeK": 40
+        },
+        "paths": [
+          {
+            "id": "utility/upstream",
+            "pointsMm": [
+              [
+                10080,
+                600,
+                478.39
+              ],
+              [
+                10080,
+                600,
+                2740
+              ],
+              [
+                11490,
+                600,
+                2740
+              ],
+              [
+                11490,
+                2110,
+                2740
+              ],
+              [
+                11490,
+                2110,
+                1150
+              ],
+              [
+                11490,
+                2350,
+                1150
+              ],
+              [
+                11350,
+                2350,
+                1150
+              ],
+              [
+                11350,
+                2350,
+                1270
+              ]
+            ],
+            "centrelineLengthMm": 7271.610000000001,
+            "stock": [
+              {
+                "id": "HAD/indoor-pipe/utility/upstream/0",
+                "originMm": [
+                  10080,
+                  600,
+                  1609.195
+                ],
+                "copperKg": 2.347421826329093,
+                "fullWaterKg": 1.2063030333506286,
+                "fullWaterGravityWrenchKNKNm": [
+                  0,
+                  0,
+                  -0.034862040873458074,
+                  -0.020917224524074844,
+                  0.3514093720044574,
+                  0
+                ]
+              },
+              {
+                "id": "HAD/indoor-pipe/utility/upstream/1",
+                "originMm": [
+                  10785,
+                  600,
+                  2740
+                ],
+                "copperKg": 1.4634993544970267,
+                "fullWaterKg": 0.7520692237054072,
+                "fullWaterGravityWrenchKNKNm": [
+                  0,
+                  0,
+                  -0.021734727752165874,
+                  -0.013040836651299523,
+                  0.23440903880710895,
+                  0
+                ]
+              },
+              {
+                "id": "HAD/indoor-pipe/utility/upstream/2",
+                "originMm": [
+                  11490,
+                  1355,
+                  2740
+                ],
+                "copperKg": 1.5672936349578088,
+                "fullWaterKg": 0.8054074665213936,
+                "fullWaterGravityWrenchKNKNm": [
+                  0,
+                  0,
+                  -0.02327619780551098,
+                  -0.031539248026467376,
+                  0.26744351278532114,
+                  0
+                ]
+              },
+              {
+                "id": "HAD/indoor-pipe/utility/upstream/3",
+                "originMm": [
+                  11490,
+                  2110,
+                  1945
+                ],
+                "copperKg": 1.6503290593264346,
+                "fullWaterKg": 0.8480780607741828,
+                "fullWaterGravityWrenchKNKNm": [
+                  0,
+                  0,
+                  -0.024509373848187056,
+                  -0.051714778819674685,
+                  0.2816127055156693,
+                  0
+                ]
+              },
+              {
+                "id": "HAD/indoor-pipe/utility/upstream/4",
+                "originMm": [
+                  11490,
+                  2230,
+                  1150
+                ],
+                "copperKg": 0.2491062731058769,
+                "fullWaterKg": 0.1280117827583672,
+                "fullWaterGravityWrenchKNKNm": [
+                  0,
+                  0,
+                  -0.003699528128028235,
+                  -0.008249947725502964,
+                  0.04250757819104442,
+                  0
+                ]
+              },
+              {
+                "id": "HAD/indoor-pipe/utility/upstream/5",
+                "originMm": [
+                  11420,
+                  2350,
+                  1150
+                ],
+                "copperKg": 0.14531199264509487,
+                "fullWaterKg": 0.07467353994238088,
+                "fullWaterGravityWrenchKNKNm": [
+                  0,
+                  0,
+                  -0.002158058074683137,
+                  -0.0050714364755053715,
+                  0.024645023212881423,
+                  0
+                ]
+              },
+              {
+                "id": "HAD/indoor-pipe/utility/upstream/6",
+                "originMm": [
+                  11350,
+                  2350,
+                  1210
+                ],
+                "copperKg": 0.12455313655293845,
+                "fullWaterKg": 0.0640058913791836,
+                "fullWaterGravityWrenchKNKNm": [
+                  0,
+                  0,
+                  -0.0018497640640141174,
+                  -0.004346945550433176,
+                  0.02099482212656023,
+                  0
+                ]
+              }
+            ],
+            "corners": [
+              {
+                "id": "HAD/indoor-pipe/utility/upstream/corner/0",
+                "pointMm": [
+                  10080,
+                  600,
+                  2740
+                ],
+                "turnAngleDeg": 90,
+                "fullPressureComparisonForceN": [
+                  -490.7118339070742,
+                  0,
+                  490.7118339070742
+                ],
+                "previousLegMm": 2261.61,
+                "nextLegMm": 1410,
+                "territoryBoxMm": [
+                  10031.483339501605,
+                  551.4833395016046,
+                  2649.4833395016044,
+                  139.03332099679028,
+                  97.03332099679074,
+                  139.0333209967912
+                ],
+                "factoryBendTangentAndFittingSelected": false,
+                "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
+              },
+              {
+                "id": "HAD/indoor-pipe/utility/upstream/corner/1",
+                "pointMm": [
+                  11490,
+                  600,
+                  2740
+                ],
+                "turnAngleDeg": 90,
+                "fullPressureComparisonForceN": [
+                  490.7118339070742,
+                  -490.7118339070742,
+                  0
+                ],
+                "previousLegMm": 1410,
+                "nextLegMm": 1510,
+                "territoryBoxMm": [
+                  11399.483339501605,
+                  551.4833395016046,
+                  2691.4833395016044,
+                  139.03332099679028,
+                  139.03332099679074,
+                  97.03332099679119
+                ],
+                "factoryBendTangentAndFittingSelected": false,
+                "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
+              },
+              {
+                "id": "HAD/indoor-pipe/utility/upstream/corner/2",
+                "pointMm": [
+                  11490,
+                  2110,
+                  2740
+                ],
+                "turnAngleDeg": 90,
+                "fullPressureComparisonForceN": [
+                  0,
+                  490.7118339070742,
+                  490.7118339070742
+                ],
+                "previousLegMm": 1510,
+                "nextLegMm": 1590,
+                "territoryBoxMm": [
+                  11441.483339501605,
+                  2019.4833395016046,
+                  2649.4833395016044,
+                  97.03332099679028,
+                  139.03332099679096,
+                  139.0333209967912
+                ],
+                "factoryBendTangentAndFittingSelected": false,
+                "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
+              },
+              {
+                "id": "HAD/indoor-pipe/utility/upstream/corner/3",
+                "pointMm": [
+                  11490,
+                  2110,
+                  1150
+                ],
+                "turnAngleDeg": 90,
+                "fullPressureComparisonForceN": [
+                  0,
+                  -490.7118339070742,
+                  -490.7118339070742
+                ],
+                "previousLegMm": 1590,
+                "nextLegMm": 240,
+                "territoryBoxMm": [
+                  11441.483339501605,
+                  2061.4833395016044,
+                  1101.4833395016046,
+                  97.03332099679028,
+                  139.0333209967912,
+                  139.03332099679074
+                ],
+                "factoryBendTangentAndFittingSelected": false,
+                "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
+              },
+              {
+                "id": "HAD/indoor-pipe/utility/upstream/corner/4",
+                "pointMm": [
+                  11490,
+                  2350,
+                  1150
+                ],
+                "turnAngleDeg": 90,
+                "fullPressureComparisonForceN": [
+                  490.7118339070742,
+                  490.7118339070742,
+                  0
+                ],
+                "previousLegMm": 240,
+                "nextLegMm": 140,
+                "territoryBoxMm": [
+                  11399.483339501605,
+                  2259.4833395016044,
+                  1101.4833395016046,
+                  139.03332099679028,
+                  139.0333209967912,
+                  97.03332099679074
+                ],
+                "factoryBendTangentAndFittingSelected": false,
+                "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
+              },
+              {
+                "id": "HAD/indoor-pipe/utility/upstream/corner/5",
+                "pointMm": [
+                  11350,
+                  2350,
+                  1150
+                ],
+                "turnAngleDeg": 90,
+                "fullPressureComparisonForceN": [
+                  -490.7118339070742,
+                  0,
+                  -490.7118339070742
+                ],
+                "previousLegMm": 140,
+                "nextLegMm": 120,
+                "territoryBoxMm": [
+                  11301.483339501605,
+                  2301.4833395016044,
+                  1101.4833395016046,
+                  139.03332099679028,
+                  97.03332099679119,
+                  139.03332099679074
+                ],
+                "factoryBendTangentAndFittingSelected": false,
+                "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
+              }
+            ],
+            "obstacles": [
+              {
+                "id": "ordinary-operator-body-and-approach",
+                "afterJacketAndSettingMm": 329.94999999996696
+              },
+              {
+                "id": "wet-door-complete-moving-leaf-0",
+                "afterJacketAndSettingMm": 750.396125607431
+              },
+              {
+                "id": "wet-door-complete-moving-leaf-1",
+                "afterJacketAndSettingMm": 384.343830527059
+              },
+              {
+                "id": "protected-parked-leaf-full2300-comparison",
+                "afterJacketAndSettingMm": 1629.3358996668662
+              },
+              {
+                "id": "complete-shifted-utility-maintenance",
+                "afterJacketAndSettingMm": 91.54802258502993
+              },
+              {
+                "id": "occupied-washer-rest",
+                "afterJacketAndSettingMm": 731.4101717297872
+              },
+              {
+                "id": "retained-washer",
+                "afterJacketAndSettingMm": 149.94999999946668
+              },
+              {
+                "id": "retained-sink-conservative2000-high-envelope",
+                "afterJacketAndSettingMm": 689.949999999644
+              },
+              {
+                "id": "utility-radiator",
+                "afterJacketAndSettingMm": 399.94999999962505
+              },
+              {
+                "id": "HAD/utility-north/shield-connection-1",
+                "afterJacketAndSettingMm": 58.176614102044496
+              },
+              {
+                "id": "HAD/utility-north/shield-connection-2",
+                "afterJacketAndSettingMm": 329.15047468287224
+              }
+            ],
+            "roomReserveAfterSettingMm": 30.450000000000003,
+            "ceilingReserveAfterSettingMm": 309.95,
+            "minimumLegMm": 120,
+            "straightLeg84MmTakeoffScreen": true,
+            "actualFittingTakeoffAndInsulatedCornerEnvelopeQualified": false
+          },
+          {
+            "id": "utility/downstream",
+            "pointsMm": [
+              [
+                11350,
+                2350,
+                1430
+              ],
+              [
+                11350,
+                2350,
+                1550
+              ],
+              [
+                11180,
+                2350,
+                1550
+              ],
+              [
+                11180,
+                2350,
+                2250
+              ],
+              [
+                10040,
+                2350,
+                2250
+              ],
+              [
+                10040,
+                1250,
+                2250
+              ],
+              [
+                10760,
+                1250,
+                2250
+              ],
+              [
+                10760,
+                1250,
+                1000
+              ]
+            ],
+            "centrelineLengthMm": 5200,
+            "stock": [
+              {
+                "id": "HAD/indoor-pipe/utility/downstream/0",
+                "originMm": [
+                  11350,
+                  2350,
+                  1490
+                ],
+                "copperKg": 0.12455313655293845,
+                "fullWaterKg": 0.0640058913791836,
+                "fullWaterGravityWrenchKNKNm": [
+                  0,
+                  0,
+                  -0.0018497640640141174,
+                  -0.004346945550433176,
+                  0.02099482212656023,
+                  0
+                ]
+              },
+              {
+                "id": "HAD/indoor-pipe/utility/downstream/1",
+                "originMm": [
+                  11265,
+                  2350,
+                  1550
+                ],
+                "copperKg": 0.17645027678332947,
+                "fullWaterKg": 0.09067501278717678,
+                "fullWaterGravityWrenchKNKNm": [
+                  0,
+                  0,
+                  -0.002620499090686666,
+                  -0.0061581728631136656,
+                  0.029519922256585295,
+                  0
+                ]
+              },
+              {
+                "id": "HAD/indoor-pipe/utility/downstream/2",
+                "originMm": [
+                  11180,
+                  2350,
+                  1900
+                ],
+                "copperKg": 0.7265599632254742,
+                "fullWaterKg": 0.37336769971190437,
+                "fullWaterGravityWrenchKNKNm": [
+                  0,
+                  0,
+                  -0.010790290373415685,
+                  -0.02535718237752686,
+                  0.12063544637478735,
+                  0
+                ]
+              },
+              {
+                "id": "HAD/indoor-pipe/utility/downstream/3",
+                "originMm": [
+                  10610,
+                  2350,
+                  2250
+                ],
+                "copperKg": 1.1832547972529153,
+                "fullWaterKg": 0.6080559681022442,
+                "fullWaterGravityWrenchKNKNm": [
+                  0,
+                  0,
+                  -0.017572758608134117,
+                  -0.04129598272911517,
+                  0.18644696883230297,
+                  0
+                ]
+              },
+              {
+                "id": "HAD/indoor-pipe/utility/downstream/4",
+                "originMm": [
+                  10040,
+                  1800,
+                  2250
+                ],
+                "copperKg": 1.1417370850686026,
+                "fullWaterKg": 0.5867206709758498,
+                "fullWaterGravityWrenchKNKNm": [
+                  0,
+                  0,
+                  -0.01695617058679608,
+                  -0.030521107056232944,
+                  0.17023995269143263,
+                  0
+                ]
+              },
+              {
+                "id": "HAD/indoor-pipe/utility/downstream/5",
+                "originMm": [
+                  10400,
+                  1250,
+                  2250
+                ],
+                "copperKg": 0.7473188193176307,
+                "fullWaterKg": 0.3840353482751016,
+                "fullWaterGravityWrenchKNKNm": [
+                  0,
+                  0,
+                  -0.011098584384084705,
+                  -0.01387323048010588,
+                  0.11542527759448093,
+                  0
+                ]
+              },
+              {
+                "id": "HAD/indoor-pipe/utility/downstream/6",
+                "originMm": [
+                  10760,
+                  1250,
+                  1625
+                ],
+                "copperKg": 1.2974285057597756,
+                "fullWaterKg": 0.6667280351998291,
+                "fullWaterGravityWrenchKNKNm": [
+                  0,
+                  0,
+                  -0.019268375666813723,
+                  -0.024085469583517153,
+                  0.20732772217491566,
+                  0
+                ]
+              }
+            ],
+            "corners": [
+              {
+                "id": "HAD/indoor-pipe/utility/downstream/corner/0",
+                "pointMm": [
+                  11350,
+                  2350,
+                  1550
+                ],
+                "turnAngleDeg": 90,
+                "fullPressureComparisonForceN": [
+                  490.7118339070742,
+                  0,
+                  490.7118339070742
+                ],
+                "previousLegMm": 120,
+                "nextLegMm": 170,
+                "territoryBoxMm": [
+                  11259.483339501605,
+                  2301.4833395016044,
+                  1459.4833395016046,
+                  139.03332099679028,
+                  97.03332099679119,
+                  139.03332099679074
+                ],
+                "factoryBendTangentAndFittingSelected": false,
+                "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
+              },
+              {
+                "id": "HAD/indoor-pipe/utility/downstream/corner/1",
+                "pointMm": [
+                  11180,
+                  2350,
+                  1550
+                ],
+                "turnAngleDeg": 90,
+                "fullPressureComparisonForceN": [
+                  -490.7118339070742,
+                  0,
+                  -490.7118339070742
+                ],
+                "previousLegMm": 170,
+                "nextLegMm": 700,
+                "territoryBoxMm": [
+                  11131.483339501605,
+                  2301.4833395016044,
+                  1501.4833395016046,
+                  139.03332099679028,
+                  97.03332099679119,
+                  139.03332099679074
+                ],
+                "factoryBendTangentAndFittingSelected": false,
+                "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
+              },
+              {
+                "id": "HAD/indoor-pipe/utility/downstream/corner/2",
+                "pointMm": [
+                  11180,
+                  2350,
+                  2250
+                ],
+                "turnAngleDeg": 90,
+                "fullPressureComparisonForceN": [
+                  490.7118339070742,
+                  0,
+                  490.7118339070742
+                ],
+                "previousLegMm": 700,
+                "nextLegMm": 1140,
+                "territoryBoxMm": [
+                  11089.483339501605,
+                  2301.4833395016044,
+                  2159.4833395016044,
+                  139.03332099679028,
+                  97.03332099679119,
+                  139.0333209967912
+                ],
+                "factoryBendTangentAndFittingSelected": false,
+                "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
+              },
+              {
+                "id": "HAD/indoor-pipe/utility/downstream/corner/3",
+                "pointMm": [
+                  10040,
+                  2350,
+                  2250
+                ],
+                "turnAngleDeg": 90,
+                "fullPressureComparisonForceN": [
+                  -490.7118339070742,
+                  490.7118339070742,
+                  0
+                ],
+                "previousLegMm": 1140,
+                "nextLegMm": 1100,
+                "territoryBoxMm": [
+                  9991.483339501605,
+                  2259.4833395016044,
+                  2201.4833395016044,
+                  139.03332099679028,
+                  139.0333209967912,
+                  97.03332099679119
+                ],
+                "factoryBendTangentAndFittingSelected": false,
+                "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
+              },
+              {
+                "id": "HAD/indoor-pipe/utility/downstream/corner/4",
+                "pointMm": [
+                  10040,
+                  1250,
+                  2250
+                ],
+                "turnAngleDeg": 90,
+                "fullPressureComparisonForceN": [
+                  -490.7118339070742,
+                  -490.7118339070742,
+                  0
+                ],
+                "previousLegMm": 1100,
+                "nextLegMm": 720,
+                "territoryBoxMm": [
+                  9991.483339501605,
+                  1201.4833395016046,
+                  2201.4833395016044,
+                  139.03332099679028,
+                  139.03332099679074,
+                  97.03332099679119
+                ],
+                "factoryBendTangentAndFittingSelected": false,
+                "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
+              },
+              {
+                "id": "HAD/indoor-pipe/utility/downstream/corner/5",
+                "pointMm": [
+                  10760,
+                  1250,
+                  2250
+                ],
+                "turnAngleDeg": 90,
+                "fullPressureComparisonForceN": [
+                  490.7118339070742,
+                  0,
+                  490.7118339070742
+                ],
+                "previousLegMm": 720,
+                "nextLegMm": 1250,
+                "territoryBoxMm": [
+                  10669.483339501605,
+                  1201.4833395016046,
+                  2159.4833395016044,
+                  139.03332099679028,
+                  97.03332099679074,
+                  139.0333209967912
+                ],
+                "factoryBendTangentAndFittingSelected": false,
+                "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
+              }
+            ],
+            "obstacles": [
+              {
+                "id": "ordinary-operator-body-and-approach",
+                "afterJacketAndSettingMm": 159.94999999983492
+              },
+              {
+                "id": "wet-door-complete-moving-leaf-0",
+                "afterJacketAndSettingMm": 266.9499999997312
+              },
+              {
+                "id": "wet-door-complete-moving-leaf-1",
+                "afterJacketAndSettingMm": 266.9499999997312
+              },
+              {
+                "id": "protected-parked-leaf-full2300-comparison",
+                "afterJacketAndSettingMm": 1133.9499999997313
+              },
+              {
+                "id": "complete-shifted-utility-maintenance",
+                "afterJacketAndSettingMm": 44.949999999731176
+              },
+              {
+                "id": "occupied-washer-rest",
+                "afterJacketAndSettingMm": 254.90901363924337
+              },
+              {
+                "id": "retained-washer",
+                "afterJacketAndSettingMm": 124.59249196543504
+              },
+              {
+                "id": "retained-sink-conservative2000-high-envelope",
+                "afterJacketAndSettingMm": 124.94999999970526
+              },
+              {
+                "id": "utility-radiator",
+                "afterJacketAndSettingMm": 680.2377857392651
+              },
+              {
+                "id": "HAD/utility-north/shield-connection-1",
+                "afterJacketAndSettingMm": 220.5364002495038
+              },
+              {
+                "id": "HAD/utility-north/shield-connection-2",
+                "afterJacketAndSettingMm": 323.30371968121506
+              }
+            ],
+            "roomReserveAfterSettingMm": 52.95,
+            "ceilingReserveAfterSettingMm": 799.95,
+            "minimumLegMm": 120,
+            "straightLeg84MmTakeoffScreen": true,
+            "actualFittingTakeoffAndInsulatedCornerEnvelopeQualified": false
+          },
+          {
+            "id": "plant/upstream",
+            "pointsMm": [
+              [
+                10285,
+                545,
+                598.39
+              ],
+              [
+                10285,
+                545,
+                2610
+              ],
+              [
+                11350,
+                545,
+                2610
+              ],
+              [
+                11350,
+                2230,
+                2610
+              ],
+              [
+                11350,
+                2230,
+                1690
+              ],
+              [
+                11350,
+                2350,
+                1690
+              ],
+              [
+                11350,
+                2350,
+                1810
+              ]
+            ],
+            "centrelineLengthMm": 5921.610000000001,
+            "stock": [
+              {
+                "id": "HAD/indoor-pipe/plant/upstream/0",
+                "originMm": [
+                  10285,
+                  545,
+                  1604.195
+                ],
+                "copperKg": 2.087936125177138,
+                "fullWaterKg": 1.0729574263106627,
+                "fullWaterGravityWrenchKNKNm": [
+                  0,
+                  0,
+                  -0.03100836574009533,
+                  -0.016899559328351955,
+                  0.31892104163688045,
+                  0
+                ]
+              },
+              {
+                "id": "HAD/indoor-pipe/plant/upstream/1",
+                "originMm": [
+                  10817.5,
+                  545,
+                  2610
+                ],
+                "copperKg": 1.1054090869073285,
+                "fullWaterKg": 0.5680522859902545,
+                "fullWaterGravityWrenchKNKNm": [
+                  0,
+                  0,
+                  -0.016416656068125292,
+                  -0.008947077557128284,
+                  0.17758717701694535,
+                  0
+                ]
+              },
+              {
+                "id": "HAD/indoor-pipe/plant/upstream/2",
+                "originMm": [
+                  11350,
+                  1387.5,
+                  2610
+                ],
+                "copperKg": 1.7489336257641774,
+                "fullWaterKg": 0.8987493914493698,
+                "fullWaterGravityWrenchKNKNm": [
+                  0,
+                  0,
+                  -0.0259737703988649,
+                  -0.036038606428425046,
+                  0.2948022940271166,
+                  0
+                ]
+              },
+              {
+                "id": "HAD/indoor-pipe/plant/upstream/3",
+                "originMm": [
+                  11350,
+                  2230,
+                  2150
+                ],
+                "copperKg": 0.9549073802391949,
+                "fullWaterKg": 0.4907118339070743,
+                "fullWaterGravityWrenchKNKNm": [
+                  0,
+                  0,
+                  -0.0141815244907749,
+                  -0.03162479961442803,
+                  0.16096030297029512,
+                  0
+                ]
+              },
+              {
+                "id": "HAD/indoor-pipe/plant/upstream/4",
+                "originMm": [
+                  11350,
+                  2290,
+                  1690
+                ],
+                "copperKg": 0.12455313655293845,
+                "fullWaterKg": 0.0640058913791836,
+                "fullWaterGravityWrenchKNKNm": [
+                  0,
+                  0,
+                  -0.0018497640640141174,
+                  -0.004235959706592329,
+                  0.02099482212656023,
+                  0
+                ]
+              },
+              {
+                "id": "HAD/indoor-pipe/plant/upstream/5",
+                "originMm": [
+                  11350,
+                  2350,
+                  1750
+                ],
+                "copperKg": 0.12455313655293845,
+                "fullWaterKg": 0.0640058913791836,
+                "fullWaterGravityWrenchKNKNm": [
+                  0,
+                  0,
+                  -0.0018497640640141174,
+                  -0.004346945550433176,
+                  0.02099482212656023,
+                  0
+                ]
+              }
+            ],
+            "corners": [
+              {
+                "id": "HAD/indoor-pipe/plant/upstream/corner/0",
+                "pointMm": [
+                  10285,
+                  545,
+                  2610
+                ],
+                "turnAngleDeg": 90,
+                "fullPressureComparisonForceN": [
+                  -490.7118339070742,
+                  0,
+                  490.7118339070742
+                ],
+                "previousLegMm": 2011.6100000000001,
+                "nextLegMm": 1065,
+                "territoryBoxMm": [
+                  10236.483339501605,
+                  496.4833395016046,
+                  2519.4833395016044,
+                  139.03332099679028,
+                  97.03332099679079,
+                  139.0333209967912
+                ],
+                "factoryBendTangentAndFittingSelected": false,
+                "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
+              },
+              {
+                "id": "HAD/indoor-pipe/plant/upstream/corner/1",
+                "pointMm": [
+                  11350,
+                  545,
+                  2610
+                ],
+                "turnAngleDeg": 90,
+                "fullPressureComparisonForceN": [
+                  490.7118339070742,
+                  -490.7118339070742,
+                  0
+                ],
+                "previousLegMm": 1065,
+                "nextLegMm": 1685,
+                "territoryBoxMm": [
+                  11259.483339501605,
+                  496.4833395016046,
+                  2561.4833395016044,
+                  139.03332099679028,
+                  139.0333209967908,
+                  97.03332099679119
+                ],
+                "factoryBendTangentAndFittingSelected": false,
+                "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
+              },
+              {
+                "id": "HAD/indoor-pipe/plant/upstream/corner/2",
+                "pointMm": [
+                  11350,
+                  2230,
+                  2610
+                ],
+                "turnAngleDeg": 90,
+                "fullPressureComparisonForceN": [
+                  0,
+                  490.7118339070742,
+                  490.7118339070742
+                ],
+                "previousLegMm": 1685,
+                "nextLegMm": 920,
+                "territoryBoxMm": [
+                  11301.483339501605,
+                  2139.4833395016044,
+                  2519.4833395016044,
+                  97.03332099679028,
+                  139.0333209967912,
+                  139.0333209967912
+                ],
+                "factoryBendTangentAndFittingSelected": false,
+                "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
+              },
+              {
+                "id": "HAD/indoor-pipe/plant/upstream/corner/3",
+                "pointMm": [
+                  11350,
+                  2230,
+                  1690
+                ],
+                "turnAngleDeg": 90,
+                "fullPressureComparisonForceN": [
+                  0,
+                  -490.7118339070742,
+                  -490.7118339070742
+                ],
+                "previousLegMm": 920,
+                "nextLegMm": 120,
+                "territoryBoxMm": [
+                  11301.483339501605,
+                  2181.4833395016044,
+                  1641.4833395016046,
+                  97.03332099679028,
+                  139.0333209967912,
+                  139.03332099679074
+                ],
+                "factoryBendTangentAndFittingSelected": false,
+                "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
+              },
+              {
+                "id": "HAD/indoor-pipe/plant/upstream/corner/4",
+                "pointMm": [
+                  11350,
+                  2350,
+                  1690
+                ],
+                "turnAngleDeg": 90,
+                "fullPressureComparisonForceN": [
+                  0,
+                  490.7118339070742,
+                  -490.7118339070742
+                ],
+                "previousLegMm": 120,
+                "nextLegMm": 120,
+                "territoryBoxMm": [
+                  11301.483339501605,
+                  2259.4833395016044,
+                  1641.4833395016046,
+                  97.03332099679028,
+                  139.0333209967912,
+                  139.03332099679074
+                ],
+                "factoryBendTangentAndFittingSelected": false,
+                "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
+              }
+            ],
+            "obstacles": [
+              {
+                "id": "ordinary-operator-body-and-approach",
+                "afterJacketAndSettingMm": 329.949999999783
+              },
+              {
+                "id": "wet-door-complete-moving-leaf-0",
+                "afterJacketAndSettingMm": 750.3961256074357
+              },
+              {
+                "id": "wet-door-complete-moving-leaf-1",
+                "afterJacketAndSettingMm": 384.34383052706374
+              },
+              {
+                "id": "protected-parked-leaf-full2300-comparison",
+                "afterJacketAndSettingMm": 1629.335899666871
+              },
+              {
+                "id": "complete-shifted-utility-maintenance",
+                "afterJacketAndSettingMm": 54.94999999960267
+              },
+              {
+                "id": "occupied-washer-rest",
+                "afterJacketAndSettingMm": 904.9499999995256
+              },
+              {
+                "id": "retained-washer",
+                "afterJacketAndSettingMm": 204.94999999952563
+              },
+              {
+                "id": "retained-sink-conservative2000-high-envelope",
+                "afterJacketAndSettingMm": 559.9499999996027
+              },
+              {
+                "id": "utility-radiator",
+                "afterJacketAndSettingMm": 940.1622247273916
+              },
+              {
+                "id": "HAD/utility-north/shield-connection-1",
+                "afterJacketAndSettingMm": 469.3506160951011
+              },
+              {
+                "id": "HAD/utility-north/shield-connection-2",
+                "afterJacketAndSettingMm": 153.16663317710612
+              }
+            ],
+            "roomReserveAfterSettingMm": 52.95,
+            "ceilingReserveAfterSettingMm": 439.95,
+            "minimumLegMm": 120,
+            "straightLeg84MmTakeoffScreen": true,
+            "actualFittingTakeoffAndInsulatedCornerEnvelopeQualified": false
+          },
+          {
+            "id": "plant/downstream",
+            "pointsMm": [
+              [
+                11350,
+                2350,
+                1970
+              ],
+              [
+                11350,
+                2350,
+                2090
+              ],
+              [
+                11490,
+                2350,
+                2090
+              ],
+              [
+                11490,
+                2350,
+                2990
+              ],
+              [
+                10900,
+                2360,
+                2990
+              ],
+              [
+                10900,
+                2360,
+                2400
+              ],
+              [
+                10600,
+                3900,
+                2400
+              ]
+            ],
+            "centrelineLengthMm": 3909.033432273692,
+            "stock": [
+              {
+                "id": "HAD/indoor-pipe/plant/downstream/0",
+                "originMm": [
+                  11350,
+                  2350,
+                  2030
+                ],
+                "copperKg": 0.12455313655293845,
+                "fullWaterKg": 0.0640058913791836,
+                "fullWaterGravityWrenchKNKNm": [
+                  0,
+                  0,
+                  -0.0018497640640141174,
+                  -0.004346945550433176,
+                  0.02099482212656023,
+                  0
+                ]
+              },
+              {
+                "id": "HAD/indoor-pipe/plant/downstream/1",
+                "originMm": [
+                  11420,
+                  2350,
+                  2090
+                ],
+                "copperKg": 0.14531199264509487,
+                "fullWaterKg": 0.07467353994238088,
+                "fullWaterGravityWrenchKNKNm": [
+                  0,
+                  0,
+                  -0.002158058074683137,
+                  -0.0050714364755053715,
+                  0.024645023212881423,
+                  0
+                ]
+              },
+              {
+                "id": "HAD/indoor-pipe/plant/downstream/2",
+                "originMm": [
+                  11490,
+                  2350,
+                  2540
+                ],
+                "copperKg": 0.9341485241470384,
+                "fullWaterKg": 0.480044185343877,
+                "fullWaterGravityWrenchKNKNm": [
+                  0,
+                  0,
+                  -0.013873230480105882,
+                  -0.03260209162824883,
+                  0.1594034182164166,
+                  0
+                ]
+              },
+              {
+                "id": "HAD/indoor-pipe/plant/downstream/3",
+                "originMm": [
+                  11195,
+                  2355,
+                  2990
+                ],
+                "copperKg": 0.6124742096569087,
+                "fullWaterKg": 0.3147408312691469,
+                "fullWaterGravityWrenchKNKNm": [
+                  0,
+                  0,
+                  -0.009095979551484605,
+                  -0.021421031843746243,
+                  0.10182949107887015,
+                  0
+                ]
+              },
+              {
+                "id": "HAD/indoor-pipe/plant/downstream/4",
+                "originMm": [
+                  10900,
+                  2360,
+                  2695
+                ],
+                "copperKg": 0.6123862547186141,
+                "fullWaterKg": 0.3146956326143194,
+                "fullWaterGravityWrenchKNKNm": [
+                  0,
+                  0,
+                  -0.009094673314736077,
+                  -0.02146342902277714,
+                  0.09913193913062324,
+                  0
+                ]
+              },
+              {
+                "id": "HAD/indoor-pipe/plant/downstream/5",
+                "originMm": [
+                  10750,
+                  3130,
+                  2400
+                ],
+                "copperKg": 1.6284790062792962,
+                "fullWaterKg": 0.8368496633153188,
+                "fullWaterGravityWrenchKNKNm": [
+                  0,
+                  0,
+                  -0.024184874248723173,
+                  -0.07569865639850352,
+                  0.2599873981737741,
+                  0
+                ]
+              }
+            ],
+            "corners": [
+              {
+                "id": "HAD/indoor-pipe/plant/downstream/corner/0",
+                "pointMm": [
+                  11350,
+                  2350,
+                  2090
+                ],
+                "turnAngleDeg": 90,
+                "fullPressureComparisonForceN": [
+                  -490.7118339070742,
+                  0,
+                  490.7118339070742
+                ],
+                "previousLegMm": 120,
+                "nextLegMm": 140,
+                "territoryBoxMm": [
+                  11301.483339501605,
+                  2301.4833395016044,
+                  1999.4833395016046,
+                  139.03332099679028,
+                  97.03332099679119,
+                  139.03332099679096
+                ],
+                "factoryBendTangentAndFittingSelected": false,
+                "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
+              },
+              {
+                "id": "HAD/indoor-pipe/plant/downstream/corner/1",
+                "pointMm": [
+                  11490,
+                  2350,
+                  2090
+                ],
+                "turnAngleDeg": 90,
+                "fullPressureComparisonForceN": [
+                  490.7118339070742,
+                  0,
+                  -490.7118339070742
+                ],
+                "previousLegMm": 140,
+                "nextLegMm": 900,
+                "territoryBoxMm": [
+                  11399.483339501605,
+                  2301.4833395016044,
+                  2041.4833395016046,
+                  139.03332099679028,
+                  97.03332099679119,
+                  139.03332099679096
+                ],
+                "factoryBendTangentAndFittingSelected": false,
+                "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
+              },
+              {
+                "id": "HAD/indoor-pipe/plant/downstream/corner/2",
+                "pointMm": [
+                  11490,
+                  2350,
+                  2990
+                ],
+                "turnAngleDeg": 90,
+                "fullPressureComparisonForceN": [
+                  490.64136476993957,
+                  -8.315955335083721,
+                  490.7118339070742
+                ],
+                "previousLegMm": 900,
+                "nextLegMm": 590.0847396772772,
+                "territoryBoxMm": [
+                  11399.489370951338,
+                  2301.4833395016044,
+                  2899.4833395016044,
+                  139.02728954705708,
+                  97.74508317560912,
+                  139.0333209967912
+                ],
+                "factoryBendTangentAndFittingSelected": false,
+                "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
+              },
+              {
+                "id": "HAD/indoor-pipe/plant/downstream/corner/3",
+                "pointMm": [
+                  10900,
+                  2360,
+                  2990
+                ],
+                "turnAngleDeg": 90,
+                "fullPressureComparisonForceN": [
+                  -490.64136476993957,
+                  8.315955335083721,
+                  490.7118339070742
+                ],
+                "previousLegMm": 590.0847396772772,
+                "nextLegMm": 590,
+                "territoryBoxMm": [
+                  10851.483339501605,
+                  2310.7715773227865,
+                  2899.4833395016044,
+                  139.02728954705708,
+                  97.74508317560912,
+                  139.0333209967912
+                ],
+                "factoryBendTangentAndFittingSelected": false,
+                "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
+              },
+              {
+                "id": "HAD/indoor-pipe/plant/downstream/corner/4",
+                "pointMm": [
+                  10900,
+                  2360,
+                  2400
+                ],
+                "turnAngleDeg": 90,
+                "fullPressureComparisonForceN": [
+                  93.82942276366101,
+                  -481.6577035201266,
+                  -490.7118339070742
+                ],
+                "previousLegMm": 590,
+                "nextLegMm": 1568.9486925964152,
+                "territoryBoxMm": [
+                  10843.45248415276,
+                  2311.4833395016044,
+                  2351.4833395016044,
+                  105.06417634563513,
+                  138.2583784541912,
+                  139.0333209967912
+                ],
+                "factoryBendTangentAndFittingSelected": false,
+                "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
+              }
+            ],
+            "obstacles": [
+              {
+                "id": "ordinary-operator-body-and-approach",
+                "afterJacketAndSettingMm": 329.9499999999717
+              },
+              {
+                "id": "wet-door-complete-moving-leaf-0",
+                "afterJacketAndSettingMm": 115.19589963050286
+              },
+              {
+                "id": "wet-door-complete-moving-leaf-1",
+                "afterJacketAndSettingMm": 49.94999999962994
+              },
+              {
+                "id": "protected-parked-leaf-full2300-comparison",
+                "afterJacketAndSettingMm": 454.39423464093665
+              },
+              {
+                "id": "complete-shifted-utility-maintenance",
+                "afterJacketAndSettingMm": 49.08830347809382
+              },
+              {
+                "id": "occupied-washer-rest",
+                "afterJacketAndSettingMm": 1283.5016487935236
+              },
+              {
+                "id": "retained-washer",
+                "afterJacketAndSettingMm": 1568.0847286304404
+              },
+              {
+                "id": "retained-sink-conservative2000-high-envelope",
+                "afterJacketAndSettingMm": 959.9499999999717
+              },
+              {
+                "id": "utility-radiator",
+                "afterJacketAndSettingMm": 1220.1154419798738
+              },
+              {
+                "id": "HAD/utility-north/shield-connection-1",
+                "afterJacketAndSettingMm": 745.3473849592134
+              },
+              {
+                "id": "HAD/utility-north/shield-connection-2",
+                "afterJacketAndSettingMm": 154.92072961753092
+              }
+            ],
+            "roomReserveAfterSettingMm": 30.450000000000003,
+            "ceilingReserveAfterSettingMm": 59.95,
+            "minimumLegMm": 120,
+            "straightLeg84MmTakeoffScreen": true,
+            "actualFittingTakeoffAndInsulatedCornerEnvelopeQualified": false
+          }
+        ],
+        "nearestPair": {
+          "a": "plant/upstream",
+          "aSegment": 3,
+          "b": "plant/downstream",
+          "bSegment": 0,
+          "afterTwoJacketsAndSettingsMm": 19.900000000000006
+        },
+        "minimumSelfClearanceMm": 19.900000000000006,
+        "branches": [
+          {
+            "id": "utility",
+            "centrelineLengthMm": 12471.61,
+            "velocityMps": 0.6715190186797806,
+            "comparisonCornerCount": 12,
+            "straightLossBar": 0.03355561027255714,
+            "cornerLossBar": 0.024350640792227395,
+            "valveLossBar": 0.009999999999999998,
+            "comparisonLossBar": 0.06790625106478454,
+            "allocatedNetworkLossBar": 0.5,
+            "unallocatedNetworkAllowanceBeforeRiseBar": 0.43209374893521546,
+            "unallocatedNetworkAllowanceAfterRiseBar": 0.38092380793521546,
+            "netLocalRiseMm": 521.61,
+            "netRiseBar": 0.051169941000000004,
+            "lossAndRiseWithinExistingAllowanceComparison": true,
+            "pipeFrictionBendCoefficientsAndInstalledKvQualified": false,
+            "remainingActualNetworkLossQualified": false,
+            "freeAxialThermalExpansionMm": 8.4806948
+          },
+          {
+            "id": "plant",
+            "centrelineLengthMm": 9830.643432273693,
+            "velocityMps": 1.5109177920295065,
+            "comparisonCornerCount": 10,
+            "straightLossBar": 0.1339027820941413,
+            "cornerLossBar": 0.10272926584220937,
+            "valveLossBar": 0.05062499999999999,
+            "comparisonLossBar": 0.28725704793635065,
+            "allocatedNetworkLossBar": 1,
+            "unallocatedNetworkAllowanceBeforeRiseBar": 0.7127429520636493,
+            "unallocatedNetworkAllowanceAfterRiseBar": 0.5360050110636494,
+            "netLocalRiseMm": 1801.6100000000001,
+            "netRiseBar": 0.176737941,
+            "lossAndRiseWithinExistingAllowanceComparison": true,
+            "pipeFrictionBendCoefficientsAndInstalledKvQualified": false,
+            "remainingActualNetworkLossQualified": false,
+            "freeAxialThermalExpansionMm": 6.68483753394611
+          }
+        ],
+        "straightCopperStockComparisonKg": 23.148463476568544,
+        "maximumStraightPipeWaterComparisonKg": 11.895630089142788,
+        "twoValveReferenceKg": 12,
+        "otherInstalledStockMassKg": null,
+        "straightLengthInterpretation": "Full virtual-corner polyline stock comparison, not actual tube cut lengths; fittings and exact installed contents remain unqualified.",
+        "completelyLockedStraightTubeAxialComparisonN": 9232.130553127774,
+        "reservedConnections": {
+          "sourceChaseAndTerminalBayAreInterfacesNotSolidObstacleBoxes": true,
+          "actualLiveSourceTailAndTerminalRenewalQualified": false,
+          "finalPlantTransferUsesExistingActualTwoArchCrossingProof": true
+        },
+        "topology": {
+          "independentColdBranches": true,
+          "sharedHeader": false,
+          "permanentBypass": false,
+          "sourceRestrictionsChanged": false,
+          "utilityOldIndoorPathRemoved": [
+            [
+              10080,
+              600,
+              478.39
+            ],
+            [
+              10080,
+              600,
+              2725
+            ],
+            [
+              10760,
+              600,
+              2725
+            ],
+            [
+              10760,
+              1250,
+              2725
+            ],
+            [
+              10760,
+              1250,
+              1000
+            ]
+          ],
+          "plantOldIndoorPathRemoved": [
+            [
+              10285,
+              545,
+              598.39
+            ],
+            [
+              10285,
+              545,
+              2610
+            ],
+            [
+              11505,
+              545,
+              2610
+            ],
+            [
+              11505,
+              820,
+              2610
+            ],
+            [
+              11505,
+              1180,
+              2725
+            ],
+            [
+              11505,
+              2199.2,
+              2725
+            ],
+            [
+              11315,
+              2323,
+              2725
+            ],
+            [
+              11315,
+              2940,
+              2725
+            ],
+            [
+              11385,
+              3050,
+              2725
+            ],
+            [
+              11385,
+              3370,
+              2725
+            ],
+            [
+              11385,
+              3370,
+              2260
+            ],
+            [
+              10245,
+              3370,
+              2260
+            ],
+            [
+              10245,
+              3797,
+              2260
+            ],
+            [
+              10222.5,
+              3842.9,
+              2260
+            ]
+          ],
+          "plantTransferConnected": true,
+          "actualDownstreamTreeAndStoreReleaseQualified": false
+        },
+        "support": {
+          "pressureCornersAndKnownGravityExported": true,
+          "actualIndependentClipsGuidesAnchorsAndMasonryReceiversQualified": false,
+          "thermalFlexibilityQualified": false,
+          "installedResistanceQualified": false,
+          "loadedWithdrawalCaptureAndFirstRestsQualified": false,
+          "nativeStructuralActionsAdopted": false,
+          "noPanShieldFurnitureOrFloorCoverSupportCredited": true
+        },
+        "necessaryStraightPipeGeometryAndBudgetComparison": true,
+        "diagnostics": [],
+        "fullInsulatedFittingEnvelopeQualified": false,
+        "fullRouteRenewalQualified": false,
+        "wholeOccupiedArrangementComplete": false,
+        "selected": false,
+        "reviewSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1200\" height=\"1250\" viewBox=\"0 0 1200 1250\"><rect width=\"1200\" height=\"1250\" fill=\"#f5f1e6\"/><g font-family=\"Arial,sans-serif\" fill=\"#29271f\"><text x=\"35\" y=\"40\" font-size=\"25\">Independent indoor cold paths · actual saved-bank comparison</text><text x=\"35\" y=\"75\" font-size=\"16\">Declared pipe and boxed fitting territories. Factory fit, independent supports and loaded renewal remain unqualified.</text><text x=\"35\" y=\"120\" font-size=\"18\">PLAN · source entry to separate indoor valves and the retained terminal/Plant transfer</text><rect x=\"50\" y=\"376.945\" width=\"282.555\" height=\"263.055\" fill=\"none\" stroke=\"#6f766e\"/><rect x=\"147.24\" y=\"402.685\" width=\"143\" height=\"97.5\" fill=\"#d7d2c5\" stroke=\"#9f9a8d\"/><rect x=\"138.26999999999998\" y=\"422.835\" width=\"77.74000000000001\" height=\"78\" fill=\"#d7d2c5\" stroke=\"#9f9a8d\"/><rect x=\"138.26999999999998\" y=\"513.835\" width=\"77.74000000000001\" height=\"78\" fill=\"#d7d2c5\" stroke=\"#9f9a8d\"/><polyline points=\"138.79000000000002,617.835 138.79000000000002,617.835 322.09000000000003,617.835 322.09000000000003,421.53499999999997 322.09000000000003,421.53499999999997 322.09000000000003,390.335 303.89,390.335 303.89,390.335\" fill=\"none\" stroke=\"#267a87\" stroke-width=\"3\"/><polyline points=\"303.89,390.335 303.89,390.335 281.79,390.335 281.79,390.335 133.59,390.335 133.59,533.335 227.19,533.335 227.19,533.335\" fill=\"none\" stroke=\"#64a2a4\" stroke-width=\"3\"/><polyline points=\"165.44,624.985 165.44,624.985 303.89,624.985 303.89,405.935 303.89,405.935 303.89,390.335 303.89,390.335\" fill=\"none\" stroke=\"#93513d\" stroke-width=\"3\"/><polyline points=\"303.89,390.335 303.89,390.335 322.09000000000003,390.335 322.09000000000003,390.335 245.39000000000001,389.03499999999997 245.39000000000001,389.03499999999997 206.39000000000001,188.83499999999998\" fill=\"none\" stroke=\"#c58c55\" stroke-width=\"3\"/><text x=\"35\" y=\"720\" font-size=\"18\">X/Z PROJECTION · local floor datum; no vertical exaggeration used as clearance proof</text><polyline points=\"138.79000000000002,1097.8093 138.79000000000002,803.8 322.09000000000003,803.8 322.09000000000003,803.8 322.09000000000003,1010.5 322.09000000000003,1010.5 303.89,1010.5 303.89,994.9\" fill=\"none\" stroke=\"#267a87\" stroke-width=\"3\"/><polyline points=\"303.89,974.1 303.89,958.5 281.79,958.5 281.79,867.5 133.59,867.5 133.59,867.5 227.19,867.5 227.19,1030\" fill=\"none\" stroke=\"#64a2a4\" stroke-width=\"3\"/><polyline points=\"165.44,1082.2093 165.44,820.7 303.89,820.7 303.89,820.7 303.89,940.3 303.89,940.3 303.89,924.7\" fill=\"none\" stroke=\"#93513d\" stroke-width=\"3\"/><polyline points=\"303.89,903.9 303.89,888.3 322.09000000000003,888.3 322.09000000000003,771.3 245.39000000000001,771.3 245.39000000000001,848 206.39000000000001,848\" fill=\"none\" stroke=\"#c58c55\" stroke-width=\"3\"/><line x1=\"600\" x2=\"615\" y1=\"145\" y2=\"145\" stroke=\"#267a87\" stroke-width=\"4\"/><text x=\"620\" y=\"150\" font-size=\"16\">utility/upstream: 7.272m; corner interfaces: 6.</text><line x1=\"600\" x2=\"615\" y1=\"185\" y2=\"185\" stroke=\"#64a2a4\" stroke-width=\"4\"/><text x=\"620\" y=\"190\" font-size=\"16\">utility/downstream: 5.200m; corner interfaces: 6.</text><line x1=\"600\" x2=\"615\" y1=\"225\" y2=\"225\" stroke=\"#93513d\" stroke-width=\"4\"/><text x=\"620\" y=\"230\" font-size=\"16\">plant/upstream: 5.922m; corner interfaces: 5.</text><line x1=\"600\" x2=\"615\" y1=\"265\" y2=\"265\" stroke=\"#c58c55\" stroke-width=\"4\"/><text x=\"620\" y=\"270\" font-size=\"16\">plant/downstream: 3.909m; corner interfaces: 5.</text><text x=\"620\" y=\"345\" font-size=\"16\">Closest pipes after jackets/settings: 19.90mm.</text><text x=\"620\" y=\"385\" font-size=\"16\">Upper copper stock: 23.148 kg; water: 11.896 kg.</text><text x=\"620\" y=\"425\" font-size=\"16\">Valve references: 12 kg; fittings, jackets and supports unweighed.</text><text x=\"620\" y=\"485\" font-size=\"16\">utility: loss: 0.0679 bar; rise: 0.0512 bar.</text><text x=\"620\" y=\"525\" font-size=\"16\">plant: loss: 0.2873 bar; rise: 0.1767 bar.</text><text x=\"620\" y=\"570\" font-size=\"16\">Boxed fitting territories: within declared bounds.</text><text x=\"620\" y=\"610\" font-size=\"16\">Geometry/budget comparison: within declared comparisons.</text><text x=\"620\" y=\"650\" font-size=\"16\">Loss coefficients are authored comparisons, not proved limits.</text><text x=\"620\" y=\"850\" font-size=\"16\">Four paths; no cross-connection, header or bypass.</text><text x=\"620\" y=\"890\" font-size=\"16\">Upstream/downstream tails end at actual 160 mm valve faces.</text><text x=\"620\" y=\"930\" font-size=\"16\">Named copper/water gravity and pressure-corner vectors exported.</text><text x=\"620\" y=\"970\" font-size=\"16\">Actual fixed/sliding clips and masonry receivers still required.</text><text x=\"620\" y=\"1010\" font-size=\"16\">Lodge cuts and actual hot/store/upper draining remain required.</text><text x=\"620\" y=\"1050\" font-size=\"16\">No route or added mass is admitted into native ground-zero STR.</text><text x=\"35\" y=\"1210\" font-size=\"18\">HAD OPEN · no product/material selection, full occupied arrangement or construction acceptance</text></g></svg>"
+      },
+      "indoorCuts": {
+        "schema": "had-entry-side-indoor-cuts/2",
+        "state": "unadopted-project-envelope",
+        "coordinateDatum": "All geometry is relative to its actual occupied-groundFFL; the supplied saved ground stage maps explicit absolute coordinates without native structural adoption.",
+        "groundStage": {
+          "fflMm": 0,
+          "nominalSourceFflMm": 0,
+          "absoluteValveAxesMm": [
+            [
+              11350,
+              2350,
+              1350
+            ],
+            [
+              11350,
+              2350,
+              1890
+            ]
+          ],
+          "absoluteDoorHingeMm": [
+            10177,
+            2697,
+            0
+          ],
+          "adoptedInNativeStructure": false
+        },
+        "authoredChoices": {
+          "bankXMm": 11350,
+          "bankYMm": 2350,
+          "utilityAxisZMm": 1350,
+          "plantAxisZMm": 1890,
+          "maintenanceShiftXMm": -100,
+          "maintenanceShiftYMm": -20,
+          "wheelInboardMm": 40,
+          "doorHingeNorthOfWallMm": 50
+        },
+        "exactRoomPlanMm": [
+          9397,
+          429.5,
+          2173.5,
+          2023.5
+        ],
+        "rawPortalXMm": [
+          10150,
+          11050
+        ],
+        "finishedJambXMm": [
+          10177,
+          11023
+        ],
+        "door": {
+          "id": "HAD/utility/wet-door",
+          "kind": "paired-outward-north-west-then-east",
+          "hingeMm": [
+            10177,
+            2697,
+            0
+          ],
+          "rawOpeningMm": 900,
+          "finishedOpeningMm": 846,
+          "projectLeafMm": [
+            408,
+            2300,
+            60
+          ],
+          "leafCount": 2,
+          "leafSweptOuterBoxesMm": [
+            [
+              10147,
+              2667,
+              0,
+              468,
+              468,
+              2300
+            ],
+            [
+              10585,
+              2667,
+              0,
+              468,
+              468,
+              2300
+            ]
+          ],
+          "meetingGapComparisonMm": 30,
+          "meetingEdgesAstragalSealsAndHardwareQualified": false,
+          "hardwareProjectionComparisonMm": 80,
+          "openingStopDeg": 90,
+          "effectiveOpenClearComparisonMm": 766,
+          "no900FinishedClearClaim": true,
+          "openingClosingSamePathReversed": true,
+          "openingBodyAndHandleStates": [
+            {
+              "phase": "west-first",
+              "angleDeg": 0,
+              "hingeMm": [
+                10177,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3097,
+                1450
+              ],
+              "handleMm": [
+                10535,
+                2697,
+                1100
+              ],
+              "tipMm": [
+                10585,
+                2697,
+                1100
+              ],
+              "reachMm": 532.6584271369411,
+              "wall": 287.4520901294094,
+              "furniture": 501.2336284942828,
+              "leaf": 60,
+              "handleBody": 51.52833025827704,
+              "protectedGap": 797.1935260140507,
+              "shield": 465.5,
+              "rest": 556.9999999999038,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 790.2838370098748,
+              "handleWalls": 311.4747570716384,
+              "sibling": 62.52329125157462
+            },
+            {
+              "phase": "west-first",
+              "angleDeg": 5,
+              "hingeMm": [
+                10177,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3136.2200842364464,
+                1450
+              ],
+              "handleMm": [
+                10533.637701916845,
+                2728.2017559036617,
+                1100
+              ],
+              "tipMm": [
+                10583.447436821432,
+                2732.5595430410444,
+                1100
+              ],
+              "reachMm": 538.796040239132,
+              "wall": 260.49758085396843,
+              "furniture": 467.64393977995417,
+              "leaf": 63.88447119842476,
+              "handleBody": 59.63541470113188,
+              "protectedGap": 795.3837656721527,
+              "shield": 467.05256317856765,
+              "rest": 556.9999999999038,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 803.9243167862629,
+              "handleWalls": 315.76519187911543,
+              "sibling": 101.51928881609581
+            },
+            {
+              "phase": "west-first",
+              "angleDeg": 10,
+              "hingeMm": [
+                10177,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3175.1416799501185,
+                1450
+              ],
+              "handleMm": [
+                10529.56117557837,
+                2759.166047604761,
+                1100
+              ],
+              "tipMm": [
+                10578.80156322898,
+                2767.848456488108,
+                1100
+              ],
+              "reachMm": 545.1339516354889,
+              "wall": 229.11663119950856,
+              "furniture": 434.85419393010136,
+              "leaf": 67.38831278443564,
+              "handleBody": 67.9366282413202,
+              "protectedGap": 787.4097564691265,
+              "shield": 471.69843677101926,
+              "rest": 556.9999999999038,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 821.558696876109,
+              "handleWalls": 319.973789288479,
+              "sibling": 140.254584679336
+            },
+            {
+              "phase": "west-first",
+              "angleDeg": 15,
+              "hingeMm": [
+                10177,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3213.468570296134,
+                1450
+              ],
+              "handleMm": [
+                10522.801445811487,
+                2789.6572181467022,
+                1100
+              ],
+              "tipMm": [
+                10571.09773712594,
+                2802.5981704018286,
+                1100
+              ],
+              "reachMm": 551.6736043424734,
+              "wall": 199.23347761821174,
+              "furniture": 403.168233625305,
+              "leaf": 70.8718663234369,
+              "handleBody": 76.43143144967144,
+              "protectedGap": 773.1386594156992,
+              "shield": 479.4022628740604,
+              "rest": 556.9999999999038,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 842.8180827080945,
+              "handleWalls": 324.07181371318313,
+              "sibling": 178.42529269291344
+            },
+            {
+              "phase": "west-first",
+              "angleDeg": 20,
+              "hingeMm": [
+                10177,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3250.909064496551,
+                1450
+              ],
+              "handleMm": [
+                10513.409958241355,
+                2819.4432113105895,
+                1100
+              ],
+              "tipMm": [
+                10560.394589280651,
+                2836.5442184768726,
+                1100
+              ],
+              "reachMm": 558.4489370495164,
+              "wall": 171.1985316516396,
+              "furniture": 372.87283577473795,
+              "leaf": 74.47616280312076,
+              "handleBody": 85.1611371569557,
+              "protectedGap": 752.6790861775713,
+              "shield": 490.1054107193486,
+              "rest": 556.9999999999038,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 867.2922103310866,
+              "handleWalls": 328.0321694393991,
+              "sibling": 215.73397568570897
+            },
+            {
+              "phase": "west-first",
+              "angleDeg": 25,
+              "hingeMm": [
+                10177,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3287.1782177833147,
+                1450
+              ],
+              "handleMm": [
+                10501.45818775912,
+                2848.2973377031703,
+                1100
+              ],
+              "tipMm": [
+                10546.773577110953,
+                2869.4282507902053,
+                1100
+              ],
+              "reachMm": 565.5213585048632,
+              "wall": 145.3321843693057,
+              "furniture": 344.23103688421656,
+              "leaf": 78.39515011883788,
+              "handleBody": 94.20086326479151,
+              "protectedGap": 726.1867464609122,
+              "shield": 503.72642288904717,
+              "rest": 556.9999999999038,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 894.5502235627072,
+              "handleWalls": 331.82945639423514,
+              "sibling": 251.8913149775808
+            },
+            {
+              "phase": "west-first",
+              "angleDeg": 30,
+              "hingeMm": [
+                10177,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3322,
+                1450
+              ],
+              "handleMm": [
+                10487.03709455483,
+                2876,
+                1100
+              ],
+              "tipMm": [
+                10530.338364744051,
+                2901,
+                1100
+              ],
+              "reachMm": 572.9736849803003,
+              "wall": 121.9085551363853,
+              "furniture": 317.4750991075264,
+              "leaf": 82.86409792175067,
+              "handleBody": 103.65057442915725,
+              "protectedGap": 693.8632629674792,
+              "shield": 520.1616352559486,
+              "rest": 556.9999999999038,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 924.1579607905358,
+              "handleWalls": 335.4400083022002,
+              "sibling": 286.6179059043876
+            },
+            {
+              "phase": "west-first",
+              "angleDeg": 35,
+              "hingeMm": [
+                10177,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3350,
+                1450
+              ],
+              "handleMm": [
+                10470.25643185546,
+                2902.3403642136745,
+                1100
+              ],
+              "tipMm": [
+                10511.214034069908,
+                2931.0191860312266,
+                1100
+              ],
+              "reachMm": 576.9297434684314,
+              "wall": 104.23785437837523,
+              "furniture": 296.555026357873,
+              "leaf": 83.08475777823747,
+              "handleBody": 108.6370339370232,
+              "protectedGap": 658.3126719529787,
+              "shield": 539.2859659300921,
+              "rest": 556.9999999999038,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 944.724861072797,
+              "handleWalls": 338.8419170066002,
+              "sibling": 314.548699486906
+            },
+            {
+              "phase": "west-first",
+              "angleDeg": 40,
+              "hingeMm": [
+                10177,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3350,
+                1450
+              ],
+              "handleMm": [
+                10451.243910636595,
+                2927.117964267781,
+                1100
+              ],
+              "tipMm": [
+                10489.546132792542,
+                2959.257344752108,
+                1100
+              ],
+              "reachMm": 561.6335325689829,
+              "wall": 104.23785437837523,
+              "furniture": 296.555026357873,
+              "leaf": 58.93940314138956,
+              "handleBody": 89.2405091813763,
+              "protectedGap": 623.0157356091743,
+              "shield": 560.9538672074577,
+              "rest": 556.9999999999038,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 912.6794972324442,
+              "handleWalls": 342.0150461739682,
+              "sibling": 314.548699486906
+            },
+            {
+              "phase": "west-first",
+              "angleDeg": 45,
+              "hingeMm": [
+                10177,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3350,
+                1450
+              ],
+              "handleMm": [
+                10430.144227664785,
+                2950.144227664784,
+                1100
+              ],
+              "tipMm": [
+                10465.499566724111,
+                2985.4995667241114,
+                1100
+              ],
+              "reachMm": 549.4945638723567,
+              "wall": 104.23785437837523,
+              "furniture": 296.555026357873,
+              "leaf": 39.18452818272931,
+              "handleBody": 73.6086350929022,
+              "protectedGap": 588.3269130840923,
+              "shield": 585.000433275889,
+              "rest": 556.9999999999038,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 880.6633722817835,
+              "handleWalls": 344.94103707576255,
+              "sibling": 314.548699486906
+            },
+            {
+              "phase": "west-first",
+              "angleDeg": 50,
+              "hingeMm": [
+                10177,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3350,
+                1450
+              ],
+              "handleMm": [
+                10407.117964267782,
+                2971.243910636594,
+                1100
+              ],
+              "tipMm": [
+                10439.257344752108,
+                3009.546132792543,
+                1100
+              ],
+              "reachMm": 540.8204256443463,
+              "wall": 104.23785437837523,
+              "furniture": 296.555026357873,
+              "leaf": 24.695047399579835,
+              "handleBody": 62.29447339751226,
+              "protectedGap": 554.6394185691396,
+              "shield": 611.2426552478919,
+              "rest": 556.9999999999038,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 850.4716658686472,
+              "handleWalls": 347.60330866789786,
+              "sibling": 314.548699486906
+            },
+            {
+              "phase": "west-first",
+              "angleDeg": 55,
+              "hingeMm": [
+                10177,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3350,
+                1450
+              ],
+              "handleMm": [
+                10382.340364213675,
+                2990.256431855459,
+                1100
+              ],
+              "tipMm": [
+                10411.019186031226,
+                3031.214034069909,
+                1100
+              ],
+              "reachMm": 535.8465953281986,
+              "wall": 104.23785437837523,
+              "furniture": 296.555026357873,
+              "leaf": 16.229408224749363,
+              "handleBody": 55.74816539920698,
+              "protectedGap": 522.4121243927698,
+              "shield": 639.4808139687739,
+              "rest": 556.9999999999038,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 822.5373092184284,
+              "handleWalls": 349.98705377242646,
+              "sibling": 314.548699486906
+            },
+            {
+              "phase": "west-first",
+              "angleDeg": 60,
+              "hingeMm": [
+                10177,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3350,
+                1450
+              ],
+              "handleMm": [
+                10356,
+                3007.0370945548293,
+                1100
+              ],
+              "tipMm": [
+                10381,
+                3050.338364744051,
+                1100
+              ],
+              "reachMm": 534.714460727773,
+              "wall": 104.23785437837523,
+              "furniture": 296.555026357873,
+              "leaf": 14.285330834158913,
+              "handleBody": 54.251845402582035,
+              "protectedGap": 492.17720490298746,
+              "shield": 669.5,
+              "rest": 556.9999999999038,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 797.3089013681243,
+              "handleWalls": 352.07923280801646,
+              "sibling": 314.548699486906
+            },
+            {
+              "phase": "west-first",
+              "angleDeg": 65,
+              "hingeMm": [
+                10177,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3350,
+                1450
+              ],
+              "handleMm": [
+                10328.29733770317,
+                3021.458187759121,
+                1100
+              ],
+              "tipMm": [
+                10349.428250790206,
+                3066.7735771109533,
+                1100
+              ],
+              "reachMm": 537.4568813885411,
+              "wall": 104.23785437837523,
+              "furniture": 296.555026357873,
+              "leaf": 18.983430219269678,
+              "handleBody": 57.872405724996725,
+              "protectedGap": 464.54281180551453,
+              "shield": 701.0717492097938,
+              "rest": 556.9999999999038,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 775.23795516732,
+              "handleWalls": 353.8685662141982,
+              "sibling": 314.548699486906
+            },
+            {
+              "phase": "west-first",
+              "angleDeg": 70,
+              "hingeMm": [
+                10177,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3350,
+                1450
+              ],
+              "handleMm": [
+                10299.443211310589,
+                3033.409958241355,
+                1100
+              ],
+              "tipMm": [
+                10316.544218476873,
+                3080.3945892806505,
+                1100
+              ],
+              "reachMm": 543.9946970758698,
+              "wall": 104.23785437837523,
+              "furniture": 296.555026357873,
+              "leaf": 30.036363992308793,
+              "handleBody": 66.44955330347915,
+              "protectedGap": 440.18543231679354,
+              "shield": 733.9557815231274,
+              "rest": 556.9999999999038,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 756.7611782259268,
+              "handleWalls": 355.34552646370133,
+              "sibling": 314.548699486906
+            },
+            {
+              "phase": "west-first",
+              "angleDeg": 75,
+              "hingeMm": [
+                10177,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3350,
+                1450
+              ],
+              "handleMm": [
+                10269.657218146702,
+                3042.8014458114867,
+                1100
+              ],
+              "tipMm": [
+                10282.598170401829,
+                3091.09773712594,
+                1100
+              ],
+              "reachMm": 554.1450516849274,
+              "wall": 104.23785437837523,
+              "furniture": 296.555026357873,
+              "leaf": 46.82062170686447,
+              "handleBody": 79.62394987580802,
+              "protectedGap": 419.82488208616314,
+              "shield": 767.9018295981714,
+              "rest": 556.9999999999038,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 742.2782302070497,
+              "handleWalls": 356.50233035143685,
+              "sibling": 314.548699486906
+            },
+            {
+              "phase": "west-first",
+              "angleDeg": 80,
+              "hingeMm": [
+                10177,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3350,
+                1450
+              ],
+              "handleMm": [
+                10239.166047604762,
+                3049.5611755783702,
+                1100
+              ],
+              "tipMm": [
+                10247.848456488107,
+                3098.8015632289807,
+                1100
+              ],
+              "reachMm": 567.6394905900272,
+              "wall": 104.23785437837523,
+              "furniture": 296.555026357873,
+              "leaf": 68.5122661846259,
+              "handleBody": 96.89438492478911,
+              "protectedGap": 404.17533428610426,
+              "shield": 802.6515435118927,
+              "rest": 556.9999999999038,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 732.1266311534964,
+              "handleWalls": 357.33293208116254,
+              "sibling": 314.548699486906
+            },
+            {
+              "phase": "west-first",
+              "angleDeg": 85,
+              "hingeMm": [
+                10177,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3350,
+                1450
+              ],
+              "handleMm": [
+                10208.201755903661,
+                3053.637701916845,
+                1100
+              ],
+              "tipMm": [
+                10212.559543041045,
+                3103.4474368214323,
+                1100
+              ],
+              "reachMm": 584.1477391519398,
+              "wall": 104.23785437837523,
+              "furniture": 296.555026357873,
+              "leaf": 94.22557119652475,
+              "handleBody": 117.68427507916363,
+              "protectedGap": 393.8711033363671,
+              "shield": 837.9404569589551,
+              "rest": 556.9999999999038,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 726.5568363637908,
+              "handleWalls": 357.83301753497653,
+              "sibling": 314.548699486906
+            },
+            {
+              "phase": "west-first",
+              "angleDeg": 90,
+              "hingeMm": [
+                10177,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3350,
+                1450
+              ],
+              "handleMm": [
+                10177,
+                3055,
+                1100
+              ],
+              "tipMm": [
+                10177,
+                3105,
+                1100
+              ],
+              "reachMm": 603.3025774849632,
+              "wall": 104.23785437837523,
+              "furniture": 296.555026357873,
+              "leaf": 123.11337704713304,
+              "handleBody": 141.40004070003897,
+              "protectedGap": 389.37745632475554,
+              "shield": 873.5,
+              "rest": 556.9999999999038,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 724.9999999999038,
+              "handleWalls": 358,
+              "sibling": 314.548699486906
+            },
+            {
+              "phase": "east-second",
+              "angleDeg": 0,
+              "hingeMm": [
+                11023,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3097,
+                1450
+              ],
+              "handleMm": [
+                10665,
+                2697,
+                1100
+              ],
+              "tipMm": [
+                10615,
+                2697,
+                1100
+              ],
+              "reachMm": 539.9305510896749,
+              "wall": 287.4520901294094,
+              "furniture": 501.2336284942828,
+              "leaf": 62.52329125157462,
+              "handleBody": 61.12650121343427,
+              "protectedGap": 913.1552864039608,
+              "shield": 27.5,
+              "rest": 556.9999999999038,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 399.45107805069205,
+              "handleWalls": 311.4747570716384,
+              "sibling": 53
+            },
+            {
+              "phase": "east-second",
+              "angleDeg": 4.9,
+              "hingeMm": [
+                11023,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3135.4376154118154,
+                1450
+              ],
+              "handleMm": [
+                10666.308383963655,
+                2727.5792584831775,
+                1100
+              ],
+              "tipMm": [
+                10616.49111915411,
+                2731.850104640046,
+                1100
+              ],
+              "reachMm": 546.0070916556111,
+              "wall": 261.13797236901485,
+              "furniture": 468.30892883353533,
+              "leaf": 66.2564498086827,
+              "handleBody": 69.07486698467011,
+              "protectedGap": 883.4406200350339,
+              "shield": 27.5,
+              "rest": 584.6286480008164,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 399.45107805069205,
+              "handleWalls": 315.68008675387057,
+              "sibling": 54.27386460183715
+            },
+            {
+              "phase": "east-second",
+              "angleDeg": 9.9,
+              "hingeMm": [
+                11023,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3174.3680951257343,
+                1450
+              ],
+              "handleMm": [
+                10670.33086123659,
+                2758.5506179000286,
+                1100
+              ],
+              "tipMm": [
+                10621.075394928852,
+                2767.147072913999,
+                1100
+              ],
+              "reachMm": 552.693817662932,
+              "wall": 229.73077536503467,
+              "furniture": 435.50016027319316,
+              "leaf": 70.41157013211591,
+              "handleBody": 77.75046006150171,
+              "protectedGap": 855.3083727849581,
+              "shield": 27.5,
+              "rest": 608.1135237118178,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 399.45107805069205,
+              "handleWalls": 319.8906078694117,
+              "sibling": 59.56857634459794
+            },
+            {
+              "phase": "east-second",
+              "angleDeg": 14.9,
+              "hingeMm": [
+                11023,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3212.7097569196135,
+                1450
+              ],
+              "handleMm": [
+                10677.037363602964,
+                2789.053539949381,
+                1100
+              ],
+              "tipMm": [
+                10628.718559636898,
+                2801.910179607116,
+                1100
+              ],
+              "reachMm": 559.8585422985003,
+              "wall": 199.81415618217903,
+              "furniture": 403.78924631780285,
+              "leaf": 74.97489317542897,
+              "handleBody": 86.96863432585371,
+              "protectedGap": 829.8224131338994,
+              "shield": 27.5,
+              "rest": 626.6658641657264,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 399.45107805069205,
+              "handleWalls": 323.9911148609529,
+              "sibling": 68.64282871286792
+            },
+            {
+              "phase": "east-second",
+              "angleDeg": 19.9,
+              "hingeMm": [
+                11023,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3250.1707975958725,
+                1450
+              ],
+              "handleMm": [
+                10686.37685053027,
+                2818.855878976272,
+                1100
+              ],
+              "tipMm": [
+                10639.36244417975,
+                2835.8748564869243,
+                1100
+              ],
+              "reachMm": 567.5175154681815,
+              "wall": 171.7389812638508,
+              "furniture": 373.46336888083044,
+              "leaf": 80.06222810666748,
+              "handleBody": 96.73944348263853,
+              "protectedGap": 807.423621209211,
+              "shield": 27.5,
+              "rest": 640.144474849478,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 399.45107805069205,
+              "handleWalls": 327.9544786050654,
+              "sibling": 80.95212043755663
+            },
+            {
+              "phase": "east-second",
+              "angleDeg": 24.9,
+              "hingeMm": [
+                11023,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3286.466116015371,
+                1450
+              ],
+              "handleMm": [
+                10698.278242883656,
+                2847.7308211855616,
+                1100
+              ],
+              "tipMm": [
+                10652.926042169081,
+                2868.7826118539365,
+                1100
+              ],
+              "reachMm": 575.7117043509868,
+              "wall": 145.82639207311655,
+              "furniture": 344.7861075927243,
+              "leaf": 85.83592863731371,
+              "handleBody": 107.10389029926023,
+              "protectedGap": 788.5391412748853,
+              "shield": 27.5,
+              "rest": 648.4467753971627,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 399.45107805069205,
+              "handleWalls": 331.755264690031,
+              "sibling": 95.83118566924361
+            },
+            {
+              "phase": "east-second",
+              "angleDeg": 29.9,
+              "hingeMm": [
+                11023,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3321.3194828892238,
+                1450
+              ],
+              "handleMm": [
+                10712.650963881055,
+                2875.4586108318713,
+                1100
+              ],
+              "tipMm": [
+                10669.306126434274,
+                2900.3829978195627,
+                1100
+              ],
+              "reachMm": 584.5008252585593,
+              "wall": 122.35160890159102,
+              "furniture": 317.99040944808667,
+              "leaf": 92.49188571599933,
+              "handleBody": 118.12521265996435,
+              "protectedGap": 773.5618280919534,
+              "shield": 27.5,
+              "rest": 651.509580288545,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 399.45107805069205,
+              "handleWalls": 335.3697718856355,
+              "sibling": 112.56729485072691
+            },
+            {
+              "phase": "east-second",
+              "angleDeg": 34.9,
+              "hingeMm": [
+                11023,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3350,
+                1450
+              ],
+              "handleMm": [
+                10729.38562843719,
+                2901.828222693495,
+                1100
+              ],
+              "tipMm": [
+                10688.378034643501,
+                2930.4355163657706,
+                1100
+              ],
+              "reachMm": 590.5605138564463,
+              "wall": 104.23785437837523,
+              "furniture": 296.555026357873,
+              "leaf": 95.9446237921918,
+              "handleBody": 125.66975994526899,
+              "protectedGap": 762.8269984669897,
+              "shield": 27.5,
+              "rest": 651.5272951951116,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 399.45107805069205,
+              "handleWalls": 338.77605670790604,
+              "sibling": 127.94291865493153
+            },
+            {
+              "phase": "east-second",
+              "angleDeg": 39.9,
+              "hingeMm": [
+                11023,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3350,
+                1450
+              ],
+              "handleMm": [
+                10748.354875650122,
+                2926.6389681017586,
+                1100
+              ],
+              "tipMm": [
+                10709.996618059358,
+                2958.7114496802164,
+                1100
+              ],
+              "reachMm": 577.5335704512028,
+              "wall": 104.23785437837523,
+              "furniture": 296.555026357873,
+              "leaf": 75.57885254114609,
+              "handleBody": 109.3963702491721,
+              "protectedGap": 756.5890968634552,
+              "shield": 27.5,
+              "rest": 651.5272951951116,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 399.45107805069205,
+              "handleWalls": 341.9539473078134,
+              "sibling": 127.94291865493153
+            },
+            {
+              "phase": "east-second",
+              "angleDeg": 44.9,
+              "hingeMm": [
+                11023,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3350,
+                1450
+              ],
+              "handleMm": [
+                10769.414338094619,
+                2949.7020223029676,
+                1100
+              ],
+              "tipMm": [
+                10733.997346208393,
+                2984.9956008369018,
+                1100
+              ],
+              "reachMm": 567.8948399008823,
+              "wall": 104.23785437837523,
+              "furniture": 296.555026357873,
+              "leaf": 60.1541465133277,
+              "handleBody": 97.2186816156597,
+              "protectedGap": 755.0017474490077,
+              "shield": 27.5,
+              "rest": 651.5272951951116,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 399.45107805069205,
+              "handleWalls": 344.88504938816885,
+              "sibling": 127.94291865493153
+            },
+            {
+              "phase": "east-second",
+              "angleDeg": 49.9,
+              "hingeMm": [
+                11023,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3350,
+                1450
+              ],
+              "handleMm": [
+                10792.403740545424,
+                2970.8418615287987,
+                1100
+              ],
+              "tipMm": [
+                10760.197559057355,
+                3009.08793157472,
+                1100
+              ],
+              "reachMm": 561.8935110655245,
+              "wall": 104.23785437837523,
+              "furniture": 296.555026357873,
+              "leaf": 50.37949468354327,
+              "handleBody": 89.57288107609952,
+              "protectedGap": 758.1047453779946,
+              "shield": 27.5,
+              "rest": 651.5272951951116,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 399.45107805069205,
+              "handleWalls": 347.55274637823834,
+              "sibling": 127.94291865493153
+            },
+            {
+              "phase": "east-second",
+              "angleDeg": 54.9,
+              "hingeMm": [
+                11023,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3350,
+                1450
+              ],
+              "handleMm": [
+                10817.148119768506,
+                2989.8975988381585,
+                1100
+              ],
+              "tipMm": [
+                10788.397857166343,
+                3030.8050847094096,
+                1100
+              ],
+              "reachMm": 559.692712501808,
+              "wall": 104.23785437837523,
+              "furniture": 296.555026357873,
+              "leaf": 46.759638486512074,
+              "handleBody": 86.75614755562589,
+              "protectedGap": 765.8205664909116,
+              "shield": 27.5,
+              "rest": 651.5272951951116,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 399.45107805069205,
+              "handleWalls": 349.94219567809546,
+              "sibling": 127.94291865493153
+            },
+            {
+              "phase": "east-second",
+              "angleDeg": 59.9,
+              "hingeMm": [
+                11023,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3350,
+                1450
+              ],
+              "handleMm": [
+                10843.459156096915,
+                3006.724208563954,
+                1100
+              ],
+              "tipMm": [
+                10818.38361923894,
+                3049.9817795924396,
+                1100
+              ],
+              "reachMm": 561.3538803992367,
+              "wall": 104.23785437837523,
+              "furniture": 296.555026357873,
+              "leaf": 49.493716101755126,
+              "handleBody": 88.88287622016014,
+              "protectedGap": 777.9611207184538,
+              "shield": 27.5,
+              "rest": 651.5272951951116,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 399.45107805069205,
+              "handleWalls": 352.0403224259915,
+              "sibling": 127.94291865493153
+            },
+            {
+              "phase": "east-second",
+              "angleDeg": 64.9,
+              "hingeMm": [
+                11023,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3350,
+                1450
+              ],
+              "handleMm": [
+                10871.13660665715,
+                3021.193630045988,
+                1100
+              ],
+              "tipMm": [
+                10849.926635519882,
+                3066.472069996545,
+                1100
+              ],
+              "reachMm": 566.8305609186203,
+              "wall": 104.23785437837523,
+              "furniture": 296.555026357873,
+              "leaf": 58.43068200820659,
+              "handleBody": 95.86644277330146,
+              "protectedGap": 794.2433583817004,
+              "shield": 27.5,
+              "rest": 651.5272951951116,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 399.45107805069205,
+              "handleWalls": 353.83581193920736,
+              "sibling": 127.94291865493153
+            },
+            {
+              "phase": "east-second",
+              "angleDeg": 69.9,
+              "hingeMm": [
+                11023,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3350,
+                1450
+              ],
+              "handleMm": [
+                10899.96982933835,
+                3033.195742249906,
+                1100
+              ],
+              "tipMm": [
+                10882.786844609069,
+                3080.1504548546413,
+                1100
+              ],
+              "reachMm": 575.973112221541,
+              "wall": 104.23785437837523,
+              "furniture": 296.555026357873,
+              "leaf": 73.10336137055901,
+              "handleBody": 107.43308363318869,
+              "protectedGap": 814.3107198541037,
+              "shield": 27.5,
+              "rest": 651.5272951951116,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 399.45107805069205,
+              "handleWalls": 355.31910172725696,
+              "sibling": 127.94291865493153
+            },
+            {
+              "phase": "east-second",
+              "angleDeg": 74.9,
+              "hingeMm": [
+                11023,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3350,
+                1450
+              ],
+              "handleMm": [
+                10929.739385905932,
+                3042.6392018547626,
+                1100
+              ],
+              "tipMm": [
+                10916.714160473799,
+                3090.9128333987237,
+                1100
+              ],
+              "reachMm": 588.5431895863331,
+              "wall": 104.23785437837523,
+              "furniture": 296.555026357873,
+              "leaf": 92.82429341538665,
+              "handleBody": 123.16285358051351,
+              "protectedGap": 837.7567921634627,
+              "shield": 27.5,
+              "rest": 651.5272951951116,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 399.45107805069205,
+              "handleWalls": 356.4823737697322,
+              "sibling": 127.94291865493153
+            },
+            {
+              "phase": "east-second",
+              "angleDeg": 79.9,
+              "hingeMm": [
+                11023,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3350,
+                1450
+              ],
+              "handleMm": [
+                10960.218712059068,
+                3049.452138430848,
+                1100
+              ],
+              "tipMm": [
+                10951.45037575447,
+                3098.67729742957,
+                1100
+              ],
+              "reachMm": 604.2347725303699,
+              "wall": 104.23785437837523,
+              "furniture": 296.555026357873,
+              "leaf": 116.80136820124687,
+              "handleBody": 142.54406943422612,
+              "protectedGap": 864.1479156678125,
+              "shield": 27.5,
+              "rest": 651.5272951951116,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 399.45107805069205,
+              "handleWalls": 357.31954758283433,
+              "sibling": 127.94291865493153
+            },
+            {
+              "phase": "east-second",
+              "angleDeg": 84.9,
+              "hingeMm": [
+                11023,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3350,
+                1450
+              ],
+              "handleMm": [
+                10991.175841721813,
+                3053.5827014170554,
+                1100
+              ],
+              "tipMm": [
+                10986.731126878492,
+                3103.384754687594,
+                1100
+              ],
+              "reachMm": 622.6976028131862,
+              "wall": 104.23785437837523,
+              "furniture": 296.555026357873,
+              "leaf": 144.23538834942286,
+              "handleBody": 165.02650858891582,
+              "protectedGap": 893.0425005854895,
+              "shield": 27.5,
+              "rest": 651.5272951951116,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 399.45107805069205,
+              "handleWalls": 357.82627446218515,
+              "sibling": 127.94291865493153
+            },
+            {
+              "phase": "east-second",
+              "angleDeg": 89.9,
+              "hingeMm": [
+                11023,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3350,
+                1450
+              ],
+              "handleMm": [
+                11022.375172445009,
+                3054.999454734957,
+                1100
+              ],
+              "tipMm": [
+                11022.287906026713,
+                3104.9993785806214,
+                1100
+              ],
+              "reachMm": 643.559335532726,
+              "wall": 104.23785437837523,
+              "furniture": 296.555026357873,
+              "leaf": 174.38278979171798,
+              "handleBody": 190.06353177318306,
+              "protectedGap": 924.0059864285154,
+              "shield": 27.5,
+              "rest": 651.5272951951116,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 399.45107805069205,
+              "handleWalls": 357.9999331782981,
+              "sibling": 127.94291865493153
+            },
+            {
+              "phase": "east-second",
+              "angleDeg": 90,
+              "hingeMm": [
+                11023,
+                2697,
+                0
+              ],
+              "bodyMm": [
+                10570,
+                3350,
+                1450
+              ],
+              "handleMm": [
+                11023,
+                3055,
+                1100
+              ],
+              "tipMm": [
+                11023,
+                3105,
+                1100
+              ],
+              "reachMm": 643.9984472030969,
+              "wall": 104.23785437837523,
+              "furniture": 296.555026357873,
+              "leaf": 175.00873778995242,
+              "handleBody": 190.58671829781395,
+              "protectedGap": 924.6434574493388,
+              "shield": 27.5,
+              "rest": 651.5272951951116,
+              "leafWalls": 9.999999999903785,
+              "leafFurniture": 399.45107805069205,
+              "handleWalls": 358,
+              "sibling": 127.94291865493153
+            }
+          ],
+          "continuousBoundsMm": {
+            "wallBodyMm": 103.84515529667651,
+            "fixedFurnitureBodyMm": 296.16232727617427,
+            "movingLeafBodyMm": 13.390925617071641,
+            "movingHandleBodyMm": 50.77862280887112,
+            "parkedProtectedDoorMm": 389.02044795704836,
+            "shieldMm": 27.142991632292805,
+            "occupiedWasherRestMm": 556.6429916321966,
+            "movingLeafWallMm": 9.642991632196589,
+            "movingLeafFurnitureMm": 399.09406968298487,
+            "movingHandleWallMm": 311.1177487039312,
+            "stationarySiblingBodyMm": 52.60730091830128,
+            "leafSiblingSeparatingXMm": 18.898545590461197,
+            "maximumReachMm": 644.7481546525029
+          },
+          "sampling": {
+            "stepDeg": 0.1,
+            "executedStates": 1802,
+            "relativeSpeedUpperMmPerRadian": 859.1014544095387,
+            "relativeDistanceAllowanceMm": 0.7497074494059205
+          },
+          "connectedBeforeMm": 23.999999999805084,
+          "connectedAfterMm": 12.999999999818442,
+          "connectedPhaseChangeMm": 52.999999999940314,
+          "approachMm": [
+            [
+              9750,
+              3200,
+              1450
+            ],
+            [
+              10570,
+              3097,
+              1450
+            ]
+          ],
+          "afterOpenPathMm": [
+            [
+              10570,
+              3350,
+              1450
+            ],
+            [
+              10570,
+              3250,
+              1450
+            ],
+            [
+              10670,
+              3200,
+              1450
+            ],
+            [
+              10670,
+              2430,
+              1450
+            ]
+          ],
+          "ordinaryBodyRmm": 300,
+          "ordinaryBodyTopMm": 2000,
+          "reachLimitMm": 650,
+          "parkedOpenLeafMm": [
+            10147,
+            2697,
+            0,
+            60,
+            408,
+            2300
+          ],
+          "allParkedOpenLeavesMm": [
+            [
+              10147,
+              2697,
+              0,
+              60,
+              408,
+              2300
+            ],
+            [
+              10993,
+              2697,
+              0,
+              60,
+              408,
+              2300
+            ]
+          ],
+          "assessmentScope": "Operator/handle and moving-leaf capsule checks against both actual wall openings, declared fixed furniture and occupied washer rest. Paired-leaf separation uses full rectangular X extents. Hinges/frame/seals and operating force remain unqualified.",
+          "hingeNorthOfWallMm": 50,
+          "hingeFrameProjectedLoadReceiverQualified": false,
+          "actualHingesJambReceiverMassAndResistanceQualified": false,
+          "actualWetSealsMeetingEdgesToeContainmentAndMaterialsQualified": false,
+          "noFloorTrackOrBuriedPocket": true,
+          "selectedAsDevelopmentDoor": false,
+          "necessaryDoorEventScreen": true,
+          "diagnostics": [],
+          "physicalDoorOrManualFaultResponseTimeQualified": false
+        },
+        "rejectedSingleLeafComparison": {
+          "hingeNorthOfWallMm": 50,
+          "continuousBoundsMm": {
+            "wallBodyMm": 17.25823506790241,
+            "fixedFurnitureBodyMm": 60.33774137349187,
+            "movingLeafBodyMm": -35.37796894776828,
+            "movingHandleBodyMm": 4.621844377101536,
+            "parkedProtectedDoorMm": -22.738738311270932,
+            "shieldMm": 26.761261688928563,
+            "occupiedWasherRestMm": 556.2612616887291,
+            "movingLeafWallMm": 9.261261688729057,
+            "movingLeafFurnitureMm": 286.26126168872906,
+            "movingHandleWallMm": 19.97193980758332,
+            "maximumReachMm": 646.2277178131696
+          },
+          "diagnostics": [
+            "wet-door/movingLeafBodyMm",
+            "wet-door/parkedProtectedDoorMm"
+          ],
+          "selected": false
+        },
+        "ordinaryOperator": {
+          "bodyRadiusMm": 300,
+          "armRadiusMm": 40,
+          "reachLimitMm": 650,
+          "shoulderMm": [
+            10670,
+            2430,
+            1450
+          ],
+          "approachMm": [
+            [
+              10670,
+              2890,
+              1450
+            ],
+            [
+              10670,
+              2430,
+              1450
+            ]
+          ],
+          "connectedWallAndOpenLeafAfterSettingMm": 12.999999999891543,
+          "occupiedWasherRestAfterSettingMm": 19.999999999891543,
+          "dryShieldAfterSettingMm": 110.5,
+          "passDoesNotProvideSourceFaultContainmentOrManualResponseTime": true,
+          "closedDoorControlClaimed": false,
+          "approachAssumesAlreadyOpenDoor": true,
+          "closedToOpenDoorOperatorRouteQualified": false,
+          "closedToOpenDoorGeometryScreen": true,
+          "regrip": "Repeated30degree grip sector; physical grip/torque and wheel engagement remain unqualified."
+        },
+        "sourceMaintenancePlanMm": [
+          10245,
+          1525,
+          1100,
+          750
+        ],
+        "candidateMaintenancePlanMm": [
+          10145,
+          1505,
+          1100,
+          750
+        ],
+        "sameCompleteMaintenanceFieldSizePreserved": true,
+        "actualRelocatedRatedEquipmentAndHeadHandlingQualified": false,
+        "valves": [
+          {
+            "id": "HAD/entry-indoor-cut/utility",
+            "branch": "utility",
+            "axisMm": [
+              11350,
+              2350,
+              1350
+            ],
+            "flowAxis": "vertical",
+            "stem": "horizontal-west",
+            "insulatedValveBodyEnvelopeMm": [
+              11266.5,
+              2266.5,
+              1244,
+              167,
+              167,
+              212
+            ],
+            "stemWheelEnvelopeMm": [
+              11133,
+              2287.5,
+              1287.5,
+              217,
+              125,
+              125
+            ],
+            "tailElbowVirtualCornersMm": [
+              [
+                11350,
+                2350,
+                1150
+              ],
+              [
+                11350,
+                2350,
+                1550
+              ]
+            ],
+            "minimumSourceMaintenanceAfterSettingMm": -18.5,
+            "minimumMovedMaintenanceAfterSettingMm": 14.382370680473215,
+            "minimumFixedFrameCoverAfterSettingMm": 52.16309194369276,
+            "grips": [
+              {
+                "pointMm": [
+                  11133,
+                  2333.8238096810924,
+                  1410.3703641430668
+                ],
+                "inboardMm": 0,
+                "regripAngleDeg": -15,
+                "reachMm": 474.5412180437142,
+                "wallAfterArmSettingMm": 44.31327102054445,
+                "washerRestAfterArmSettingMm": 625.769836899033
+              },
+              {
+                "pointMm": [
+                  11133,
+                  2350,
+                  1412.5
+                ],
+                "inboardMm": 0,
+                "regripAngleDeg": 0,
+                "reachMm": 471.35469659270393,
+                "wallAfterArmSettingMm": 32.76709845586676,
+                "washerRestAfterArmSettingMm": 628.0061316222227
+              },
+              {
+                "pointMm": [
+                  11133,
+                  2366.1761903189076,
+                  1410.3703641430668
+                ],
+                "inboardMm": 0,
+                "regripAngleDeg": 15,
+                "reachMm": 469.05541966846675,
+                "wallAfterArmSettingMm": 20.98918490940305,
+                "washerRestAfterArmSettingMm": 629.2476192776197
+              },
+              {
+                "pointMm": [
+                  11173,
+                  2333.8238096810924,
+                  1410.3703641430668
+                ],
+                "inboardMm": 40,
+                "regripAngleDeg": -15,
+                "reachMm": 513.6432299002995,
+                "wallAfterArmSettingMm": 38.885207494702996,
+                "washerRestAfterArmSettingMm": 627.3045566604989
+              },
+              {
+                "pointMm": [
+                  11173,
+                  2350,
+                  1412.5
+                ],
+                "inboardMm": 40,
+                "regripAngleDeg": 0,
+                "reachMm": 510.7007440762153,
+                "wallAfterArmSettingMm": 28.160755480173307,
+                "washerRestAfterArmSettingMm": 629.2293478913482
+              },
+              {
+                "pointMm": [
+                  11173,
+                  2366.1761903189076,
+                  1410.3703641430668
+                ],
+                "inboardMm": 40,
+                "regripAngleDeg": 15,
+                "reachMm": 508.57938094299635,
+                "wallAfterArmSettingMm": 17.251645915042786,
+                "washerRestAfterArmSettingMm": 630.2975044481501
+              }
+            ],
+            "maximumGripReachMm": 513.6432299002995,
+            "wallNorthAfterSettingMm": 9.5,
+            "wallEastAfterSettingMm": 127,
+            "actualWheelCentreFitsAuthoredEnvelopeVerified": false,
+            "actualProductAndFactoryTailsSelected": false,
+            "fullyOpenKv12ComparisonLossBar": 0.009999999999999998,
+            "branchHydraulicBudgetInterpretation": "Charge this valve, new pipe, bends and rise inside the existing network allowance; never add an invented fresh pressure budget or change the Lodge fault bound.",
+            "replacement": {
+              "releaseEachFlangeMm": 10,
+              "firstTranslationMm": [
+                -275,
+                0,
+                0
+              ],
+              "wholeValveSweepMm": [
+                10858,
+                2266.5,
+                1244,
+                575.5,
+                167,
+                212
+              ],
+              "firstRestAxisMm": [
+                11075,
+                2350,
+                1350
+              ],
+              "actualCaptureAndRestCapacityQualified": false,
+              "actualTailReleaseToolsAndReinstatementQualified": false,
+              "isolatedColdCutAndReplaceTailsRequired": true,
+              "zeroRetreatOrPipeFlexCredited": false,
+              "plannedRoomState": "Washer home, maintenance equipment absent; independent Lodge and store/house-side isolation, zero pressure, sibling support and AC/PV isolation as applicable. This is planned renewal, never manual fault-response credit."
+            },
+            "nominalValveKg": 6,
+            "actualCompletedPayloadKg": null,
+            "actualGravityCentroidMm": null,
+            "knownGravityN": 58.86,
+            "pressureCutClearBoreComparisonN": 490.7118339070742,
+            "receivingPathQualified": false
+          },
+          {
+            "id": "HAD/entry-indoor-cut/plant",
+            "branch": "plant",
+            "axisMm": [
+              11350,
+              2350,
+              1890
+            ],
+            "flowAxis": "vertical",
+            "stem": "horizontal-west",
+            "insulatedValveBodyEnvelopeMm": [
+              11266.5,
+              2266.5,
+              1784,
+              167,
+              167,
+              212
+            ],
+            "stemWheelEnvelopeMm": [
+              11133,
+              2287.5,
+              1827.5,
+              217,
+              125,
+              125
+            ],
+            "tailElbowVirtualCornersMm": [
+              [
+                11350,
+                2350,
+                1690
+              ],
+              [
+                11350,
+                2350,
+                2090
+              ]
+            ],
+            "minimumSourceMaintenanceAfterSettingMm": -18.5,
+            "minimumMovedMaintenanceAfterSettingMm": 14.382370680473215,
+            "minimumFixedFrameCoverAfterSettingMm": 592.0168187019362,
+            "grips": [
+              {
+                "pointMm": [
+                  11133,
+                  2333.8238096810924,
+                  1829.6296358569332
+                ],
+                "inboardMm": 0,
+                "regripAngleDeg": -15,
+                "reachMm": 606.4136542040643,
+                "wallAfterArmSettingMm": 44.31327102051334,
+                "washerRestAfterArmSettingMm": 636.5158410406883
+              },
+              {
+                "pointMm": [
+                  11133,
+                  2350,
+                  1827.5
+                ],
+                "inboardMm": 0,
+                "regripAngleDeg": 0,
+                "reachMm": 602.7231951733731,
+                "wallAfterArmSettingMm": 32.76709845583579,
+                "washerRestAfterArmSettingMm": 636.5158410406892
+              },
+              {
+                "pointMm": [
+                  11133,
+                  2366.1761903189076,
+                  1829.6296358569332
+                ],
+                "inboardMm": 0,
+                "regripAngleDeg": 15,
+                "reachMm": 602.1305000604735,
+                "wallAfterArmSettingMm": 20.98918490937166,
+                "washerRestAfterArmSettingMm": 636.5158410406893
+              },
+              {
+                "pointMm": [
+                  11173,
+                  2333.8238096810924,
+                  1829.6296358569332
+                ],
+                "inboardMm": 40,
+                "regripAngleDeg": -15,
+                "reachMm": 637.4774662724374,
+                "wallAfterArmSettingMm": 38.88520749467379,
+                "washerRestAfterArmSettingMm": 636.515841040681
+              },
+              {
+                "pointMm": [
+                  11173,
+                  2350,
+                  1827.5
+                ],
+                "inboardMm": 40,
+                "regripAngleDeg": 0,
+                "reachMm": 633.967861961472,
+                "wallAfterArmSettingMm": 28.160755480144232,
+                "washerRestAfterArmSettingMm": 636.5158410406818
+              },
+              {
+                "pointMm": [
+                  11173,
+                  2366.1761903189076,
+                  1829.6296358569332
+                ],
+                "inboardMm": 40,
+                "regripAngleDeg": 15,
+                "reachMm": 633.4044040761605,
+                "wallAfterArmSettingMm": 17.25164591501334,
+                "washerRestAfterArmSettingMm": 636.515841040682
+              }
+            ],
+            "maximumGripReachMm": 637.4774662724374,
+            "wallNorthAfterSettingMm": 9.5,
+            "wallEastAfterSettingMm": 127,
+            "actualWheelCentreFitsAuthoredEnvelopeVerified": false,
+            "actualProductAndFactoryTailsSelected": false,
+            "fullyOpenKv12ComparisonLossBar": 0.05062499999999999,
+            "branchHydraulicBudgetInterpretation": "Charge this valve, new pipe, bends and rise inside the existing network allowance; never add an invented fresh pressure budget or change the Lodge fault bound.",
+            "replacement": {
+              "releaseEachFlangeMm": 10,
+              "firstTranslationMm": [
+                -275,
+                0,
+                0
+              ],
+              "wholeValveSweepMm": [
+                10858,
+                2266.5,
+                1784,
+                575.5,
+                167,
+                212
+              ],
+              "firstRestAxisMm": [
+                11075,
+                2350,
+                1890
+              ],
+              "actualCaptureAndRestCapacityQualified": false,
+              "actualTailReleaseToolsAndReinstatementQualified": false,
+              "isolatedColdCutAndReplaceTailsRequired": true,
+              "zeroRetreatOrPipeFlexCredited": false,
+              "plannedRoomState": "Washer home, maintenance equipment absent; independent Lodge and store/house-side isolation, zero pressure, sibling support and AC/PV isolation as applicable. This is planned renewal, never manual fault-response credit."
+            },
+            "nominalValveKg": 6,
+            "actualCompletedPayloadKg": null,
+            "actualGravityCentroidMm": null,
+            "knownGravityN": 58.86,
+            "pressureCutClearBoreComparisonN": 490.7118339070742,
+            "receivingPathQualified": false
+          }
+        ],
+        "productEvidence": {
+          "accessed": "2026-11-21",
+          "bellows": {
+            "model": "Spirax Sarco BSA6T DN25 PN40, metal seat; on/off only",
+            "technicalRevision": "TI-P137-18 CMGT Issue15, pp2,4,5,10,16; PDF SHA256 da348814a1f8c2a464bea0caac89a1310500a73c56c47df27787ebee6baac0ec",
+            "installationRevision": "IM-P137-02 CMGT Issue18, sections3,6",
+            "technicalUrl": "https://content.spiraxsarco.com/-/media/spiraxsarco/international/documents/en/ti/bsat_bsa-ti-p137-18-en.ashx?rev=97eb6d9d6bf84649a5291682e5f4b781",
+            "installationUrl": "https://content.spiraxsarco.com/-/media/spiraxsarco/international/documents/en/im/bsa-im-p137-02-en.ashx?rev=e2301d3b866a411f90814a67b1ad645a",
+            "faceMm": 160,
+            "axisToTopMm": 217,
+            "wheelDiameterMm": 125,
+            "approximateKg": 6,
+            "fullOpenKvM3h": 12,
+            "manufacturerPreferredStem": "vertical-up",
+            "permissibleOnOffDifferential": "limited to PMO; not the separate2bar throttling duty",
+            "actualPotableQualification": false,
+            "actualWholeConstituentQualification": false,
+            "knownConstituents": [
+              "stainless body/bonnet/seat/disc/bellows/stem",
+              "pressed-steel wheel",
+              "graphite packing",
+              "graphite/stainless bonnet gasket"
+            ],
+            "unresolvedConstituents": [
+              "graphite binder and gasket manufacture",
+              "supplied coatings and lubricants",
+              "specified maintenance grease/molybdenum compound",
+              "matching flange gaskets/tails"
+            ],
+            "excluded": "Optional R-PTFE soft seat; unavailable DN25 flat-disc BSA3 is not invented."
+          },
+          "ordinaryPotable": {
+            "model": "Pegler PB350EL28 DN25, item254245",
+            "url": "https://aalberts-ips.co.uk/products/item/254245/",
+            "listedCatalogueKg": 0.78,
+            "connectionLengthEachMm": 49,
+            "declaredPressureBar": 16,
+            "knownConstituents": [
+              "CW602N DZR brass",
+              "PTFE ball seats",
+              "FPM/FKM spindle seal",
+              "blue handle sleeve, composition undisclosed"
+            ],
+            "greaseFree": false,
+            "manufacturerPotableApplication": true,
+            "exact28MmCertificateVerified": false,
+            "certificateLimit": "Live NSF page lists PB35025420328mm but PB350EL only15/22mm; do not borrow that certification for254245.",
+            "defaultMaterialPolicyDisposition": "excluded without explicit owner exception; no exception proposed or approved",
+            "valveBodySelection": false
+          },
+          "existingStop": {
+            "model": "Conex S70128",
+            "disposition": "Retain prior PTFE/EPDM adverse comparison; not selected by concealment or familiarity."
+          },
+          "decision": "Reserve an accessible two-cut bank with a bounded envelope; do not select the industrial valve merely because the ordinary potable alternative contains polymers. Actual product/material duty remains unresolved."
+        },
+        "majorShieldRenewal": "The current200mm opposed-nut/tool comparison can meet this bank. Remove/retain the affected isolated valve module on its independent receiver before major frame backing-plate work; actual all-part tool and capture sweeps remain required. Ordinary valve operation does not remove the shield.",
+        "sourceAndBackfeed": {
+          "twoIndependentBranchesRetained": true,
+          "noCommonHeaderOrInterconnection": true,
+          "sourceFaultAperturesAnd327LminEnvelopeChanged": false,
+          "houseSideStoreAndUpperNetworkReleaseBounded": false,
+          "permanentBypassAllowed": false
+        },
+        "hydraulicAndThermal": {
+          "fullIndependentPipeReroutesAuthored": false,
+          "extraRunBendsElevationAndInstalledKvQualified": false,
+          "full25MmPipeInsulationAnd1MmJacketRetained": true,
+          "wholeBankFrostAndCondensationProofQualified": false
+        },
+        "support": {
+          "newKnownValveGravityN": 117.72,
+          "totalBankAndPipeMassKg": null,
+          "actualCentroidsAndWrenches": null,
+          "pressureThermalDeadAndTemporaryLoadReceiversQualified": false,
+          "path": "Independent metal valve/tail bearers → actual east-wall masonry receiver → its ground/grid/foundation path; no pan, shield, case, washer or floor-cover support credited."
+        },
+        "necessaryOrdinaryOperationEnvelopeScreen": true,
+        "diagnostics": [],
+        "selectedProduct": false,
+        "fullOccupiedArrangementComplete": false,
+        "installedAcceptance": false,
+        "reviewSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1200\" height=\"1020\" viewBox=\"0 0 1200 1020\"><rect width=\"1200\" height=\"1020\" fill=\"#f5f1e6\"/><g font-family=\"Arial,sans-serif\" fill=\"#29271f\">\n<text x=\"35\" y=\"38\" font-size=\"25\">Utility indoor isolation · one saved source-bound comparison</text>\n<text x=\"35\" y=\"72\" font-size=\"16\">Unselected geometry. Real door hardware, full fitted routes, pressure/thermal supports and loaded renewal remain open.</text>\n<rect x=\"45\" y=\"355.77000000000004\" width=\"391.22999999999996\" height=\"364.22999999999996\" fill=\"#e2eae1\" stroke=\"#625c50\"/><rect x=\"197.64\" y=\"387.81\" width=\"198\" height=\"135\" fill=\"none\" stroke=\"#b78e67\"/><rect x=\"179.64\" y=\"391.41\" width=\"198\" height=\"135\" fill=\"#ded3b5\" stroke=\"#625c50\"/>\n<rect x=\"180\" y=\"238.41000000000003\" width=\"10.799999999999999\" height=\"73.44\" fill=\"#9b7c54\" stroke=\"#625c50\"/><rect x=\"332.28\" y=\"238.41000000000003\" width=\"10.799999999999999\" height=\"73.44\" fill=\"#9b7c54\" stroke=\"#625c50\"/>\n<polyline points=\"185.4,311.85 258.84000000000003,311.85\" fill=\"none\" stroke=\"#a9865c\" stroke-width=\"3\"/><polyline points=\"256.14,194.31000000000006 256.14,212.31 274.14,221.31 274.14,359.91\" fill=\"none\" stroke=\"#2e7c83\" stroke-width=\"3\"/><polyline points=\"108.53999999999999,221.31 256.14,239.85000000000002\" fill=\"none\" stroke=\"#496983\" stroke-width=\"3\"/>\n<circle cx=\"256.14\" cy=\"239.85000000000002\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"218.88565734669584\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"199.35000000000002\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"194.31000000000006\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"194.31000000000006\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"194.31000000000006\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"194.31000000000006\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"225.92374287736783\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"205.74609911723326\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"194.31000000000006\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"194.31000000000006\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"194.31000000000006\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"194.31000000000006\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/>\n<circle cx=\"274.14\" cy=\"359.91\" r=\"54\" fill=\"none\" stroke=\"#25747c\" stroke-width=\"3\"/>\n<circle cx=\"396.53999999999996\" cy=\"374.31\" r=\"15.03\" fill=\"#bc9759\" stroke=\"#755e38\"/><polyline points=\"274.14,359.91 357.47999999999996,377.2217142574034\" fill=\"none\" stroke=\"#755e38\" stroke-width=\"3\"/><circle cx=\"396.53999999999996\" cy=\"374.31\" r=\"15.03\" fill=\"#bc9759\" stroke=\"#755e38\"/><polyline points=\"274.14,359.91 357.47999999999996,377.2217142574034\" fill=\"none\" stroke=\"#755e38\" stroke-width=\"3\"/>\n<text x=\"505\" y=\"150\" font-size=\"20\">Geometry screen: within declared envelopes</text>\n<text x=\"505\" y=\"190\" font-size=\"16\">Local bank XY 11350/2350mm.</text>\n<text x=\"505\" y=\"230\" font-size=\"16\">Valve local axes 1350 / 1890mm above FFL.</text>\n<text x=\"505\" y=\"270\" font-size=\"16\">Saved ground FFL 0mm; absolute axes 1350 / 1890mm.</text>\n<text x=\"505\" y=\"310\" font-size=\"16\">Maximum reaches 513.64 / 637.48mm; limit650.</text>\n<text x=\"505\" y=\"350\" font-size=\"16\">Complete field shift -100/-20mm; size preserved.</text>\n<text x=\"505\" y=\"390\" font-size=\"16\">Finished opening 846mm; projected open-clear 766mm.</text>\n<text x=\"505\" y=\"430\" font-size=\"16\">Connected parked-leaf route reserve 13.000mm.</text>\n<text x=\"505\" y=\"470\" font-size=\"16\">Conventional paired leaves; continuous sampled bound shown.</text>\n<text x=\"505\" y=\"510\" font-size=\"16\">Actual frame/hinge/seals and support resistance unqualified.</text>\n<text x=\"505\" y=\"550\" font-size=\"16\">Brown fields: original outline and moved full equipment field.</text>\n<text x=\"505\" y=\"590\" font-size=\"16\">Blue paths/body circles: actual opening and cut approach.</text>\n<text x=\"505\" y=\"630\" font-size=\"16\">Valve product/potable/whole-constituent admission unresolved.</text>\n<text x=\"35\" y=\"800\" font-size=\"17\">Independent Utility20 / Plant45 L/min duties and Lodge restrictions remain. No source-fault response-time credit.</text>\n<text x=\"35\" y=\"840\" font-size=\"16\">Two6kg valve references only:117.72N. Bank, pipe, pressure, thermal, capture and grid receivers remain unqualified.</text>\n<text x=\"35\" y=\"880\" font-size=\"16\">Existing shield and shifted equipment field are retained candidates. No pan, shield or decorative cover supports the bank.</text>\n<text x=\"35\" y=\"920\" font-size=\"16\">Ground translation is explicit geometry only; native structural forces and whole-house floor levels are not adopted.</text>\n<text x=\"35\" y=\"970\" font-size=\"17\">HAD OPEN · common support, backfeed/store release, blocked/submerged drainage and occupied renewal remain unresolved.</text>\n</g></svg>"
+      },
       "southWindowOpeningXMm": [
         9400,
         10400
@@ -5641,12 +9507,12 @@
         [
           10900,
           2360,
-          2235
+          2400
         ],
         [
           10600,
           3900,
-          2235
+          2400
         ]
       ],
       "centrelineLengthMm": 1568.948693,
@@ -5654,12 +9520,12 @@
         [
           10600,
           3900,
-          2235
+          2400
         ],
         [
           10300,
           5440,
-          2235
+          2400
         ]
       ],
       "utilityArch": [
@@ -5667,13 +9533,13 @@
           "wallYmm": 2453,
           "centreXMm": 10881.883117,
           "horizontalAfterJacketAnd10Mm": 91.066883,
-          "archHeadAfterJacketAnd10Mm": 441.595793
+          "archHeadAfterJacketAnd10Mm": 276.595793
         },
         {
           "wallYmm": 2647,
           "centreXMm": 10844.090909,
           "horizontalAfterJacketAnd10Mm": 128.859091,
-          "archHeadAfterJacketAnd10Mm": 467.936719
+          "archHeadAfterJacketAnd10Mm": 302.936719
         }
       ],
       "plantArch": [
@@ -5681,17 +9547,27 @@
           "wallYmm": 3603,
           "centreXMm": 10657.857143,
           "horizontalAfterJacketAnd10Mm": 190.092857,
-          "archHeadAfterJacketAnd10Mm": 447.103047
+          "archHeadAfterJacketAnd10Mm": 282.103047
         },
         {
           "wallYmm": 3797,
           "centreXMm": 10620.064935,
           "horizontalAfterJacketAnd10Mm": 227.885065,
-          "archHeadAfterJacketAnd10Mm": 465.583366
+          "archHeadAfterJacketAnd10Mm": 300.583366
         }
       ],
-      "bufferAfter10Mm": 9.95,
-      "doorAfter10Mm": 14.95,
+      "bufferAfter10Mm": 174.95,
+      "fixedTransferAboveWetLeafAfter10Mm": 49.95,
+      "wetDoorHeadAndFrameProjectionQualified": false,
+      "eastCargoExport": {
+        "requiredClearHeightMm": 2300,
+        "requiredClearWidthMm": 1000,
+        "datum": "Actual east cargo doorway; this is not the installed two-arch transfer height limit.",
+        "plannedNorthWithdrawnLoweringZMm": 2235,
+        "loweredTubeApertureAfter10Mm": 14.95,
+        "loweredTubeBufferAfter10Mm": 9.95,
+        "fullNorthWithdrawalLoweringRotationExportAndCaptureQualified": false
+      },
       "independentClampsReleaseToolsCradleAndExportQualified": false,
       "supportOnApparatusCredited": false,
       "retainedPlantCylinderPathMm": [

@@ -47,6 +47,8 @@ The **3450 mm first-floor finish and 3170–3370 mm structural slab are compatib
 
 The [named floor-to-corner comparison](../str/floor-interface-result.md) now distinguishes simultaneous six-component interface actions from a complete joint free body. It joins the actual plate and membrane actions at each named collector, with physical origins and work checks. It does not supply the missing upper/lower member actions, finite concrete transfer, reinforcement or a converged local demand. The next structural selection must resolve those actual interfaces rather than treating a raw corner sample as a whole-floor thickness instruction.
 
+The [indoor isolation view](../had/studies/inlet-indoor-cuts.svg) and [four cold-water paths](../had/studies/inlet-indoor-routes.svg) now show the actual valve bank, the unchanged full equipment field and separate Utility/Plant continuations. The full single leaf clashes with the protected door; the paired outward leaves pass the declared connected access comparison. The pipes have explicit lengths, tolerance-specific bores, pressure losses and named gravity/pressure actions. Their fitted turns, independent supports and loaded removal still need completion. These proposed loads are not admitted to the source-ground-zero structural model.
+
 ## The interior should earn its place on beauty
 
 The [completed IAS proposal](../ias/crafted-room-kit-result.md), integrated through [PR #1584](https://github.com/adamnoden/architecture/pull/1584), puts a fixed furnished room beside hung timber faces and seated oak floor modules. The furniture and occupied-room openings are matched. This is the strongest available appearance comparison, rather than an isolated panel detail.
@@ -62,6 +64,8 @@ Read the [eight timber wall faces](../ias/studies/crafted-study-whole-timber.svg
 For an ordinary renewal, the [eastern](../ias/studies/crafted-study-handling-east.svg), [northern](../ias/studies/crafted-study-handling-north.svg) and [corner](../ias/studies/crafted-study-handling-corner.svg) views show actual furniture staging, the person, the moving finish and the supported temporary rest. The nominal source now has a geometric operation for every shaped floor piece. Real loaded handling, tolerance, reinstatement and the one-hour installation ambition remain unearned. In particular, the tight floor-support depth and small board-clearance reserves are not construction allowances.
 
 The occupied Study opening/set-out still differs from the nominal house plan; the wall-hung inlet support is a stated candidate. Judge the matched room comparison at that scope, then reconcile its actual openings and support with the selected house before calling it the interior scheme.
+
+The [lighting service corner](../ias/studies/adaptable-study-lighting-corner.svg) charges the real bend, straight entry collar and setting envelope to the room. Its proposed service bay is now310mm wide, retaining the door stop; the former300mm comparison fails the declared setting margin. Local entries do not establish a connected common riser: the remaining depth transition, independent support, electrical/material admission and actual removal sequence stay visible in the [owning comparison](../ias/adaptable-room-lighting-result.md). The browser and command line now share the same editable lighting choices, with pure input admission kept separate from source loading.
 
 ## The owner decision this package prepares
 

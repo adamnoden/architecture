@@ -184,3 +184,52 @@ test('the supported-room replacement preserves width and proves its actual porta
  assert.equal(oldGap.joinedDirection.room.electricalScreen.supportFrame.staticComparison.necessaryStaticSteelScreen,false)
  assert.throws(()=>runInletSourceEnvelopeCase(resolved,{...request.sourceEnvelope,schema:'had-inlet-source-envelope-case/4'}),/Stale/)
 })
+
+test('saved indoor-bank and pipe-law edits recompute actual paths without changing Lodge fault bounds; undo restores source revision',async()=>{
+ const original=await readEngineeringDocument(readGeorgianDesignSnapshot()),doc={...original,stages:{inletSourceEnvelope:request.sourceEnvelope.settings}},
+   base=await compileEngineeringDocument(doc),
+   moved=await compileEngineeringDocument({...doc,stages:{inletSourceEnvelope:{...doc.stages.inletSourceEnvelope,indoorBankXMm:11340,pipeCornerKComparison:2}}}),
+   a=base.engineering.inletSourceEnvelope!,b=moved.engineering.inletSourceEnvelope!,
+   ar=a.joinedDirection.room.indoorRoutes,br=b.joinedDirection.room.indoorRoutes
+ assert.notDeepEqual(br.paths[0].pointsMm,ar.paths[0].pointsMm)
+ assert.notEqual(br.straightCopperStockComparisonKg,ar.straightCopperStockComparisonKg)
+ assert.ok(br.branches[0].cornerLossBar>ar.branches[0].cornerLossBar)
+ assert.deepEqual(b.bound,a.bound)
+ assert.deepEqual(b.branches,a.branches)
+ assert.notEqual(br.reviewSvg,ar.reviewSvg)
+ assert.equal(br.support.nativeStructuralActionsAdopted,false)
+ assert.equal(br.wholeOccupiedArrangementComplete,false)
+ assert.deepEqual((await compileEngineeringDocument(JSON.parse(JSON.stringify(doc)))).engineering.inletSourceEnvelope,a)
+ const adverse=run({pipeCornerKComparison:20})
+ assert.equal(adverse.joinedDirection.room.indoorRoutes.necessaryStraightPipeGeometryAndBudgetComparison,false)
+ assert.deepEqual(adverse.bound,baseline.bound)
+ assert.throws(()=>run({pipeFrictionFactorComparison:0}),/comparison domain/)
+ assert.throws(()=>runInletSourceEnvelopeCase(resolved,{...request.sourceEnvelope,schema:'had-inlet-source-envelope-case/6'}),/Stale/)
+})
+
+test('installed pipes preserve complete moving leaves and ordinary bodies while real east-export height remains a separate duty',()=>{
+ const j=baseline.joinedDirection,r=j.room.indoorRoutes,c=j.room.indoorCuts
+ assert.equal(j.transfer.pathMm[0][2],2400)
+ assert.equal(c.door.projectLeafMm[1],2300)
+ assert.ok(j.transfer.fixedTransferAboveWetLeafAfter10Mm>=49.94)
+ assert.ok([...j.transfer.utilityArch,...j.transfer.plantArch].every(a=>a.archHeadAfterJacketAnd10Mm!>276))
+ assert.equal(c.necessaryOrdinaryOperationEnvelopeScreen,true)
+ assert.equal(r.necessaryStraightPipeGeometryAndBudgetComparison,true)
+ assert.equal(r.cornerTerritory.necessaryBoxedCornerTerritoryComparison,true)
+ assert.ok(r.checkedObstacles.some(o=>o.id==='ordinary-operator-body-and-approach'))
+ assert.equal(r.checkedObstacles.filter(o=>o.id.startsWith('wet-door-complete-moving-leaf-')).length,2)
+ assert.ok(r.paths.every(p=>p.corners.every(c=>Math.abs(c.turnAngleDeg-90)<1e-6)))
+ assert.ok(r.paths.every(p=>p.obstacles.every(o=>o.afterJacketAndSettingMm>=0)))
+ const low=run({plantTransferZMm:2235})
+ assert.ok(low.joinedDirection.room.indoorRoutes.diagnostics.includes('INLET_PIPE_ENVELOPE/plant/downstream'))
+ assert.ok(low.joinedDirection.transfer.fixedTransferAboveWetLeafAfter10Mm<0)
+ const wrongExport=run({plantWithdrawalLoweringZMm:2300})
+ assert.ok(wrongExport.joinedDirection.diagnostics.includes('TRANSFER_LOWERED_EXPORT_EXCEEDS_EAST_CARGO_HEIGHT'))
+ assert.deepEqual(wrongExport.joinedDirection.room.indoorRoutes,r)
+ assert.equal(j.transfer.eastCargoExport.requiredClearHeightMm,2300)
+ assert.equal(j.transfer.eastCargoExport.loweredTubeApertureAfter10Mm,14.95)
+ assert.equal(j.transfer.eastCargoExport.loweredTubeBufferAfter10Mm,9.95)
+ assert.equal(j.transfer.eastCargoExport.fullNorthWithdrawalLoweringRotationExportAndCaptureQualified,false)
+ assert.equal(j.transfer.wetDoorHeadAndFrameProjectionQualified,false)
+ assert.deepEqual(low.bound,baseline.bound)
+})

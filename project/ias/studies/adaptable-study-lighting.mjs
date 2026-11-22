@@ -7,7 +7,7 @@ import { readStudyRoomKitReferenceCase } from '../../../compiler/reference-house
 
 const check = process.argv.includes('--check');
 const root = new URL('../../../', import.meta.url);
-const methods = ['compiler/reference-house/current-design/assemblies/study-lighting-corner.ts', 'compiler/reference-house/current-design/assemblies/study-lighting.ts', 'compiler/reference-house/current-design/assemblies/study-lighting-views.ts',
+const methods = ['compiler/reference-house/current-design/assemblies/study-lighting-case.ts', 'compiler/reference-house/current-design/assemblies/study-lighting-corner.ts', 'compiler/reference-house/current-design/assemblies/study-lighting.ts', 'compiler/reference-house/current-design/assemblies/study-lighting-views.ts',
   'project/ias/studies/adaptable-study-lighting.mjs'];
 const methodSHA256 = Object.fromEntries(methods.map(path => [path, createHash('sha256').update(readFileSync(new URL(path, root))).digest('hex')]));
 const compile = prepareCurrentDesignCompile(readGeorgianDesignSnapshot());
