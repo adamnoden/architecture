@@ -3,6 +3,7 @@ import { readdirSync, readFileSync } from 'node:fs'
 import { sha256SemanticFingerprint, stableJsonStringify } from '../../core/identity.js'
 import { compileCurrentDesignBundle, prepareCurrentDesignCompile } from './compile.js'
 import { readStudyRoomKitReferenceCase } from './assemblies/study-room-kit.js'
+import { admitStudyLightingCase, readStudyLightingReferenceCase, studyLightingStageFields, studyLightingDefaultsPath, studyLightingComponentsPath } from './assemblies/study-lighting.js'
 import { resolveCurrentDesign, type CurrentDesignResolution } from './resolve.js'
 import { readStructuralDpcOriginSettings } from './structural-dpc.js'
 import { compileInletAssembly, readInletAssemblySettings } from './inlet-assembly.js'
@@ -54,10 +55,10 @@ const additionalImplementationFiles = [
   'project/str/studies/distributed_floor_views.py',
   'project/mat/studies/ring-roof-pitch-case.py',
 ] as const
-const stageKeys = ['structuralSuccessor', 'distributedFloor', 'joinedRcFloor', 'verticalRcFloor', 'masonryFrame', 'upperRoofBearing', 'floorSection', 'retainedComponents', 'groundSection', 'houseVerticalProfile', 'serviceFloor', 'roofPitch', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'fixedInlet', 'inletCabinet', 'inletSourceEnvelope', 'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit'] as const
+const stageKeys = ['structuralSuccessor', 'distributedFloor', 'joinedRcFloor', 'verticalRcFloor', 'masonryFrame', 'upperRoofBearing', 'floorSection', 'retainedComponents', 'groundSection', 'houseVerticalProfile', 'serviceFloor', 'roofPitch', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'fixedInlet', 'inletCabinet', 'inletSourceEnvelope', 'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit', 'studyLighting'] as const
 const sourceDatumStages = ['occupiedServices', 'selectedWaterEvent', 'structuralSuccessor', 'distributedFloor', 'joinedRcFloor', 'verticalRcFloor', 'masonryFrame', 'upperRoofBearing', 'floorSection',
   'retainedComponents', 'roofPitch', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'fixedInlet', 'inletCabinet', 'inletSourceEnvelope',
-  'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit'] as const
+  'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit', 'studyLighting'] as const
 type Settings = Readonly<Record<string, unknown>>
 type EngineeringStages = Partial<Readonly<Record<Exclude<typeof stageKeys[number], 'inletCovers' | 'inletRemovals'>, Settings>>> & {
   readonly inletRemovals?: readonly Settings[]
@@ -114,9 +115,10 @@ function sourceBindings(resolved: CurrentDesignResolution): SourceBindings {
   const paths = [...implementationRoots.flatMap(implementationFiles), ...additionalImplementationFiles].sort()
   return {
     disciplines: Object.fromEntries(resolved.disciplineBindings.map(binding => [binding.id, binding.digest]).sort(([a], [b]) => a.localeCompare(b))),
-    authoredDefaults: { 'project/ias/studies/crafted-study-handling-plan.json': createHash('sha1')
-      .update(`blob ${readFileSync(new URL('project/ias/studies/crafted-study-handling-plan.json', repository)).length}\0`)
-      .update(readFileSync(new URL('project/ias/studies/crafted-study-handling-plan.json', repository))).digest('hex') },
+    authoredDefaults: Object.fromEntries(['project/ias/studies/crafted-study-handling-plan.json', studyLightingDefaultsPath, studyLightingComponentsPath].map(path => {
+      const bytes = readFileSync(new URL(path, repository))
+      return [path, createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')]
+    })),
     implementations: Object.fromEntries(paths.map(path => {
       const bytes = readFileSync(new URL(path, repository))
       return [path, createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')]
@@ -170,6 +172,13 @@ export async function readEngineeringDocument(design: unknown) {
   return { ...retained, stages: { ...stages, roofPitch: { pitchDeg: roof.roof.pitchDeg }, fixedInlet: readFixedInletSettings() } }
 }
 
+/** Explicit opt-in review document; existing callers do not silently adopt a lighting stage. */
+export async function readStudyLightingDocument(design: unknown) {
+  const document = await readEngineeringDocument(design)
+  const { schema: _schema, units: _units, ...lighting } = readStudyLightingReferenceCase()
+  return { ...document, stages: { roofPitch: document.stages.roofPitch, studyRoomKit: document.stages.studyRoomKit, studyLighting: lighting } }
+}
+
 function branchSettings(value: unknown, fields: readonly string[], name: string) {
   if (!Array.isArray(value) || !value.length) throw new TypeError(`Specify at least one ${name} branch`)
   const seen = new Set<unknown>()
@@ -211,6 +220,7 @@ function admitStages(value: unknown): EngineeringStages {
     ...(Object.hasOwn(value, 'inletCovers') ? { inletCovers: branchSettings(value.inletCovers, inletFields, 'inlet cover') } : {}),
     ...(Object.hasOwn(value, 'inletAssembly') ? { inletAssembly: settings(value.inletAssembly, assemblyFields, 'inlet assembly') } : {}),
     ...(Object.hasOwn(value, 'studyRoomKit') ? { studyRoomKit: settings(value.studyRoomKit, studyFields, 'Study room kit') } : {}),
+    ...(Object.hasOwn(value, 'studyLighting') ? { studyLighting: settings(value.studyLighting, studyLightingStageFields, 'Study lighting') } : {}),
   }
   return stages
 }
@@ -226,6 +236,8 @@ export async function compileEngineeringDocument(input: unknown) {
     throw new Error('Stale engineering source or implementation binding; explicitly read and review a refreshed document')
   }
   const stages = admitStages(input.stages)
+  if (stages.studyLighting && !stages.studyRoomKit) throw new Error('Study lighting requires the sole explicit saved studyRoomKit stage')
+  if (stages.studyLighting) admitStudyLightingCase({ schema: 'ias-study-lighting-case/1', units: 'mm', ...stages.studyLighting })
   if (stages.floorSection && (!stages.upperRoofBearing || typeof stages.floorSection.thicknessMm !== 'number' || !Number.isFinite(stages.floorSection.thicknessMm) || stages.floorSection.thicknessMm < 200 || stages.floorSection.thicknessMm > 250)) throw new Error('Floor section requires sole saved upperRoofBearing controls and explicit finite thickness 200..250 mm')
   if (stages.upperRoofBearing && !stages.masonryFrame) throw new Error('Upper roof bearing requires the sole saved masonryFrame controls and distributed floor')
   if (stages.houseVerticalProfile && !stages.groundSection) throw new Error('The house vertical profile requires the sole saved groundSection stage')
@@ -260,6 +272,7 @@ export async function compileEngineeringDocument(input: unknown) {
     inletCovers?: readonly Awaited<ReturnType<typeof compile.inletCover>>[]
     inletAssembly?: ReturnType<typeof compileInletAssembly>
     studyRoomKit?: Awaited<ReturnType<typeof compile.studyRoomKit>>
+    studyLighting?: Awaited<ReturnType<typeof compile.studyLighting>>
   } = {}
   const manifest: { stage: string; settingsDigest: string; resultDigest: string; controls: readonly string[]; dependsOn: readonly string[];
     applicability?: { state: 'withheld-for-stage-change'; controllingStage: 'roofPitch' | 'groundSection' | 'joinedRcFloor' | 'verticalRcFloor' | 'masonryFrame' | 'upperRoofBearing' | 'floorSection' | 'inletCabinet' | 'inletSourceEnvelope';
@@ -546,9 +559,13 @@ export async function compileEngineeringDocument(input: unknown) {
     engineering.studyRoomKit = await compile.studyRoomKit({ schema: 'ias-study-room-kit-case/1', units: 'mm', ...stages.studyRoomKit })
     recordResult('studyRoomKit', stages.studyRoomKit, engineering.studyRoomKit)
   }
+  if (stages.studyLighting) {
+    engineering.studyLighting = await compile.studyLighting({ schema: 'ias-study-lighting-case/1', units: 'mm', ...stages.studyLighting }, engineering.studyRoomKit!)
+    recordResult('studyLighting', stages.studyLighting, engineering.studyLighting, ['bindings.authoredDefaults', 'studyRoomKit', 'occupiedServices'])
+  }
   if (engineering.floorSection) {
     const reason = 'The authored section replaces plate/membrane stiffness, work maps, actual mass and upper body starts in one roof/floor/52-head solve. Nominal plans and fixed-origin pressures are explicit controls; finish, stairs, services, weather tributaries, joints and reinforcement have not been adopted.'
-    for (const stage of ['distributedFloor', 'joinedRcFloor', 'verticalRcFloor', 'masonryFrame', 'upperRoofBearing', 'roofPitch', 'selectedWaterEvent', 'houseVerticalProfile', 'serviceFloor', 'studyRoomKit', 'occupiedServices']) {
+    for (const stage of ['distributedFloor', 'joinedRcFloor', 'verticalRcFloor', 'masonryFrame', 'upperRoofBearing', 'roofPitch', 'selectedWaterEvent', 'houseVerticalProfile', 'serviceFloor', 'studyRoomKit', 'studyLighting', 'occupiedServices']) {
       const row = manifest.find(item => item.stage === stage)
       if (!row) continue
       const previous = row.applicability
