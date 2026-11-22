@@ -9,12 +9,12 @@
     "label": "had-indoor-cuts-resume-20261122"
   },
   "claimedAt": "2026-11-22T07:45:46.646Z",
-  "heartbeatAt": "2026-11-22T07:45:46.646Z",
-  "expiresAt": "2026-11-22T08:30:46.646Z",
+  "heartbeatAt": "2026-11-22T08:04:03.854Z",
+  "expiresAt": "2026-11-22T08:49:03.854Z",
   "checkpoint": {
-    "evidence": "Fresh main769b60bc; occupancy available; recovered aba784e5/treeb6f9219f into new workspace worktree after old cuts/tmp loss. Replayed3 saved controls:2pass, old operatorY2500 adverse assertion no longer fails wider envelope and requires correction from actual geometry. Case6 current source outputs unchanged.",
-    "next": "Complete connected wet-door event, independent routes, full tails/withdrawal/support and product/material comparison; integrate into existing saved inlet stage with explicit ground-relative datum and regenerate affected evidence.",
-    "blocker": "No product/material/installed admission; complete route/thermal/receiving/renewal proofs remain unqualified. NativeSTR58 inputs remain frozen; FEM heavy compute slot reserved root."
+    "evidence": "Durable8b844bfa/tree0a3ab14f from recoveryaba/main769:4focused controls PASS. Conventional single outward leaf now has connected opening/closing/operator/hand path through actual Plant arch, occupied washer rest and protected parked leaf;901states+Lipschitz bound. Exact groundFFL translation exported; source6 receipts and nativeSTR inputs unchanged.",
+    "next": "Complete independent inlet pipe routes and valve/door physical interfaces, then integrate settings and actual methods into shared saved inlet stage and regenerate affected evidence/views. Keep product/material and receiver limits explicit.",
+    "blocker": "Bank remains dimensional comparator, no potable/material or physical installation admission. Complete pipe/pressure/thermal/dead receiver and loaded renewal remain unfinished. Structural force/FFL adoption still unearned."
   },
   "branch": "work/had-indoor-cuts-resume-20261122",
   "predecessor": {
