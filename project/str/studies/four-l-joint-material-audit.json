@@ -1,0 +1,2963 @@
+{
+  "schema": "str-four-L-existing-plate-material-attribution/1",
+  "sourceSHA256": {
+    "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+    "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+    "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+    "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+    "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+    "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+    "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+    "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+    "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+    "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+    "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+    "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+    "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+    "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+    "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+    "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+    "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+    "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+    "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+    "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+    "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+    "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+    "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+    "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+    "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+    "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+    "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+    "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+    "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+    "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
+    "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+    "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
+    "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
+    "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
+    "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521",
+    "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+    "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+    "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
+    "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
+    "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
+    "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
+    "project/str/studies/foundation_solid_weight.py": "32b56c32e47217d17806a2a6cc3f0c997e52c5dbf70feb7c9c155bdf7077e0f7",
+    "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
+    "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
+    "project/str/studies/floor_reinforcement.py": "e904f747686fdf3811f78ab7917ad9d3972c1d464be8960d66de61801d7c4bec",
+    "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c",
+    "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
+    "project/str/studies/straight_frame_cage.py": "6404893c699b7179b8380afc8dfcb8d25ae6725e20c2897987917de7e83c511e",
+    "project/str/studies/upper_roof_bearing.py": "bd6b5b4e139ea022eece8040cd031c1d52a7126683af26a39eac8bb16e02b3f2",
+    "project/str/studies/named_plate_load.py": "c0b24595548325d80843c39e217990a489d54a0e0c4d83bb7f9181ceb5d8e5d2",
+    "project/str/studies/upper_masonry_inventory.py": "308531fd0e5c2de62dabc09dc31882def9f91082c60b17205b2de14231b82501",
+    "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
+    "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
+    "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
+    "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
+    "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
+    "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
+  },
+  "caseId": "wet-aligned-quadrature8",
+  "requestSHA256": "04e0d748801e3498d0372c4ccea9c64fa915044e7f02989f3f12dcac1795dea4",
+  "plateThicknessMm": 200.0,
+  "plateUnitWeightKNPerM3": 27.0,
+  "joints": [
+    {
+      "id": "SW",
+      "footprintRectanglesXYMm": [
+        [
+          262.5,
+          262.5,
+          402.5,
+          1262.5
+        ],
+        [
+          402.5,
+          262.5,
+          1262.5,
+          402.5
+        ]
+      ],
+      "physicalAreaMm2": 260400.0,
+      "coveredByActualPlateCellsMm2": 260400.0,
+      "volumeM3": 0.05208,
+      "physicalGKN": 1.40616,
+      "appliedGKN": 1.8983160000000003,
+      "gravityCentroidXYZMm": [
+        563.6827956989247,
+        563.6827956989248,
+        3269.9999999999995
+      ],
+      "attributedActualCellPieces": [
+        {
+          "actualPlateCellIndex": 0,
+          "actualPlateCellXYMm": [
+            262.5,
+            262.5,
+            332.5,
+            332.5
+          ],
+          "overlapRectangleXYMm": [
+            262.5,
+            262.5,
+            332.5,
+            332.5
+          ],
+          "areaMm2": 4900.0,
+          "volumeM3": 0.00098,
+          "physicalGKN": 0.026459999999999997,
+          "gravityCentroidXYZMm": [
+            297.5,
+            297.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 1,
+          "actualPlateCellXYMm": [
+            262.5,
+            332.5,
+            332.5,
+            402.5
+          ],
+          "overlapRectangleXYMm": [
+            262.5,
+            332.5,
+            332.5,
+            402.5
+          ],
+          "areaMm2": 4900.0,
+          "volumeM3": 0.00098,
+          "physicalGKN": 0.026459999999999997,
+          "gravityCentroidXYZMm": [
+            297.5,
+            367.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2,
+          "actualPlateCellXYMm": [
+            262.5,
+            402.5,
+            332.5,
+            417.5
+          ],
+          "overlapRectangleXYMm": [
+            262.5,
+            402.5,
+            332.5,
+            417.5
+          ],
+          "areaMm2": 1050.0,
+          "volumeM3": 0.00021,
+          "physicalGKN": 0.0056700000000000006,
+          "gravityCentroidXYZMm": [
+            297.5,
+            410.0,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 3,
+          "actualPlateCellXYMm": [
+            262.5,
+            417.5,
+            332.5,
+            1262.5
+          ],
+          "overlapRectangleXYMm": [
+            262.5,
+            417.5,
+            332.5,
+            1262.5
+          ],
+          "areaMm2": 59150.0,
+          "volumeM3": 0.01183,
+          "physicalGKN": 0.31941,
+          "gravityCentroidXYZMm": [
+            297.5,
+            840.0,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 50,
+          "actualPlateCellXYMm": [
+            332.5,
+            262.5,
+            402.5,
+            332.5
+          ],
+          "overlapRectangleXYMm": [
+            332.5,
+            262.5,
+            402.5,
+            332.5
+          ],
+          "areaMm2": 4900.0,
+          "volumeM3": 0.00098,
+          "physicalGKN": 0.026459999999999997,
+          "gravityCentroidXYZMm": [
+            367.5,
+            297.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 51,
+          "actualPlateCellXYMm": [
+            332.5,
+            332.5,
+            402.5,
+            402.5
+          ],
+          "overlapRectangleXYMm": [
+            332.5,
+            332.5,
+            402.5,
+            402.5
+          ],
+          "areaMm2": 4900.0,
+          "volumeM3": 0.00098,
+          "physicalGKN": 0.026459999999999997,
+          "gravityCentroidXYZMm": [
+            367.5,
+            367.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 52,
+          "actualPlateCellXYMm": [
+            332.5,
+            402.5,
+            402.5,
+            417.5
+          ],
+          "overlapRectangleXYMm": [
+            332.5,
+            402.5,
+            402.5,
+            417.5
+          ],
+          "areaMm2": 1050.0,
+          "volumeM3": 0.00021,
+          "physicalGKN": 0.0056700000000000006,
+          "gravityCentroidXYZMm": [
+            367.5,
+            410.0,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 53,
+          "actualPlateCellXYMm": [
+            332.5,
+            417.5,
+            402.5,
+            1262.5
+          ],
+          "overlapRectangleXYMm": [
+            332.5,
+            417.5,
+            402.5,
+            1262.5
+          ],
+          "areaMm2": 59150.0,
+          "volumeM3": 0.01183,
+          "physicalGKN": 0.31941,
+          "gravityCentroidXYZMm": [
+            367.5,
+            840.0,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 100,
+          "actualPlateCellXYMm": [
+            402.5,
+            262.5,
+            417.5,
+            332.5
+          ],
+          "overlapRectangleXYMm": [
+            402.5,
+            262.5,
+            417.5,
+            332.5
+          ],
+          "areaMm2": 1050.0,
+          "volumeM3": 0.00021,
+          "physicalGKN": 0.0056700000000000006,
+          "gravityCentroidXYZMm": [
+            410.0,
+            297.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 101,
+          "actualPlateCellXYMm": [
+            402.5,
+            332.5,
+            417.5,
+            402.5
+          ],
+          "overlapRectangleXYMm": [
+            402.5,
+            332.5,
+            417.5,
+            402.5
+          ],
+          "areaMm2": 1050.0,
+          "volumeM3": 0.00021,
+          "physicalGKN": 0.0056700000000000006,
+          "gravityCentroidXYZMm": [
+            410.0,
+            367.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 150,
+          "actualPlateCellXYMm": [
+            417.5,
+            262.5,
+            462.5,
+            332.5
+          ],
+          "overlapRectangleXYMm": [
+            417.5,
+            262.5,
+            462.5,
+            332.5
+          ],
+          "areaMm2": 3150.0,
+          "volumeM3": 0.00063,
+          "physicalGKN": 0.01701,
+          "gravityCentroidXYZMm": [
+            440.0,
+            297.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 151,
+          "actualPlateCellXYMm": [
+            417.5,
+            332.5,
+            462.5,
+            402.5
+          ],
+          "overlapRectangleXYMm": [
+            417.5,
+            332.5,
+            462.5,
+            402.5
+          ],
+          "areaMm2": 3150.0,
+          "volumeM3": 0.00063,
+          "physicalGKN": 0.01701,
+          "gravityCentroidXYZMm": [
+            440.0,
+            367.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 183,
+          "actualPlateCellXYMm": [
+            462.5,
+            262.5,
+            487.5,
+            332.5
+          ],
+          "overlapRectangleXYMm": [
+            462.5,
+            262.5,
+            487.5,
+            332.5
+          ],
+          "areaMm2": 1750.0,
+          "volumeM3": 0.00035,
+          "physicalGKN": 0.00945,
+          "gravityCentroidXYZMm": [
+            475.0,
+            297.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 184,
+          "actualPlateCellXYMm": [
+            462.5,
+            332.5,
+            487.5,
+            402.5
+          ],
+          "overlapRectangleXYMm": [
+            462.5,
+            332.5,
+            487.5,
+            402.5
+          ],
+          "areaMm2": 1750.0,
+          "volumeM3": 0.00035,
+          "physicalGKN": 0.00945,
+          "gravityCentroidXYZMm": [
+            475.0,
+            367.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 216,
+          "actualPlateCellXYMm": [
+            487.5,
+            262.5,
+            647.5,
+            332.5
+          ],
+          "overlapRectangleXYMm": [
+            487.5,
+            262.5,
+            647.5,
+            332.5
+          ],
+          "areaMm2": 11200.0,
+          "volumeM3": 0.00224,
+          "physicalGKN": 0.06047999999999999,
+          "gravityCentroidXYZMm": [
+            567.5,
+            297.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 217,
+          "actualPlateCellXYMm": [
+            487.5,
+            332.5,
+            647.5,
+            402.5
+          ],
+          "overlapRectangleXYMm": [
+            487.5,
+            332.5,
+            647.5,
+            402.5
+          ],
+          "areaMm2": 11200.0,
+          "volumeM3": 0.00224,
+          "physicalGKN": 0.06047999999999999,
+          "gravityCentroidXYZMm": [
+            567.5,
+            367.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 248,
+          "actualPlateCellXYMm": [
+            647.5,
+            262.5,
+            1262.5,
+            332.5
+          ],
+          "overlapRectangleXYMm": [
+            647.5,
+            262.5,
+            1262.5,
+            332.5
+          ],
+          "areaMm2": 43050.0,
+          "volumeM3": 0.00861,
+          "physicalGKN": 0.23246999999999998,
+          "gravityCentroidXYZMm": [
+            955.0,
+            297.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 249,
+          "actualPlateCellXYMm": [
+            647.5,
+            332.5,
+            1262.5,
+            402.5
+          ],
+          "overlapRectangleXYMm": [
+            647.5,
+            332.5,
+            1262.5,
+            402.5
+          ],
+          "areaMm2": 43050.0,
+          "volumeM3": 0.00861,
+          "physicalGKN": 0.23246999999999998,
+          "gravityCentroidXYZMm": [
+            955.0,
+            367.5,
+            3270.0
+          ]
+        }
+      ],
+      "newJointBodyGRequired": false
+    },
+    {
+      "id": "SE",
+      "footprintRectanglesXYMm": [
+        [
+          11597.5,
+          262.5,
+          11737.5,
+          1262.5
+        ],
+        [
+          10737.5,
+          262.5,
+          11597.5,
+          402.5
+        ]
+      ],
+      "physicalAreaMm2": 260400.0,
+      "coveredByActualPlateCellsMm2": 260400.0,
+      "volumeM3": 0.05208,
+      "physicalGKN": 1.40616,
+      "appliedGKN": 1.8983160000000003,
+      "gravityCentroidXYZMm": [
+        11436.317204301075,
+        563.6827956989248,
+        3270.0
+      ],
+      "attributedActualCellPieces": [
+        {
+          "actualPlateCellIndex": 2257,
+          "actualPlateCellXYMm": [
+            11597.5,
+            262.5,
+            11667.5,
+            332.5
+          ],
+          "overlapRectangleXYMm": [
+            11597.5,
+            262.5,
+            11667.5,
+            332.5
+          ],
+          "areaMm2": 4900.0,
+          "volumeM3": 0.00098,
+          "physicalGKN": 0.026459999999999997,
+          "gravityCentroidXYZMm": [
+            11632.5,
+            297.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2258,
+          "actualPlateCellXYMm": [
+            11597.5,
+            332.5,
+            11667.5,
+            402.5
+          ],
+          "overlapRectangleXYMm": [
+            11597.5,
+            332.5,
+            11667.5,
+            402.5
+          ],
+          "areaMm2": 4900.0,
+          "volumeM3": 0.00098,
+          "physicalGKN": 0.026459999999999997,
+          "gravityCentroidXYZMm": [
+            11632.5,
+            367.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2259,
+          "actualPlateCellXYMm": [
+            11597.5,
+            402.5,
+            11667.5,
+            417.5
+          ],
+          "overlapRectangleXYMm": [
+            11597.5,
+            402.5,
+            11667.5,
+            417.5
+          ],
+          "areaMm2": 1050.0,
+          "volumeM3": 0.00021,
+          "physicalGKN": 0.0056700000000000006,
+          "gravityCentroidXYZMm": [
+            11632.5,
+            410.0,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2260,
+          "actualPlateCellXYMm": [
+            11597.5,
+            417.5,
+            11667.5,
+            1262.5
+          ],
+          "overlapRectangleXYMm": [
+            11597.5,
+            417.5,
+            11667.5,
+            1262.5
+          ],
+          "areaMm2": 59150.0,
+          "volumeM3": 0.01183,
+          "physicalGKN": 0.31941,
+          "gravityCentroidXYZMm": [
+            11632.5,
+            840.0,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2307,
+          "actualPlateCellXYMm": [
+            11667.5,
+            262.5,
+            11737.5,
+            332.5
+          ],
+          "overlapRectangleXYMm": [
+            11667.5,
+            262.5,
+            11737.5,
+            332.5
+          ],
+          "areaMm2": 4900.0,
+          "volumeM3": 0.00098,
+          "physicalGKN": 0.026459999999999997,
+          "gravityCentroidXYZMm": [
+            11702.5,
+            297.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2308,
+          "actualPlateCellXYMm": [
+            11667.5,
+            332.5,
+            11737.5,
+            402.5
+          ],
+          "overlapRectangleXYMm": [
+            11667.5,
+            332.5,
+            11737.5,
+            402.5
+          ],
+          "areaMm2": 4900.0,
+          "volumeM3": 0.00098,
+          "physicalGKN": 0.026459999999999997,
+          "gravityCentroidXYZMm": [
+            11702.5,
+            367.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2309,
+          "actualPlateCellXYMm": [
+            11667.5,
+            402.5,
+            11737.5,
+            417.5
+          ],
+          "overlapRectangleXYMm": [
+            11667.5,
+            402.5,
+            11737.5,
+            417.5
+          ],
+          "areaMm2": 1050.0,
+          "volumeM3": 0.00021,
+          "physicalGKN": 0.0056700000000000006,
+          "gravityCentroidXYZMm": [
+            11702.5,
+            410.0,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2310,
+          "actualPlateCellXYMm": [
+            11667.5,
+            417.5,
+            11737.5,
+            1262.5
+          ],
+          "overlapRectangleXYMm": [
+            11667.5,
+            417.5,
+            11737.5,
+            1262.5
+          ],
+          "areaMm2": 59150.0,
+          "volumeM3": 0.01183,
+          "physicalGKN": 0.31941,
+          "gravityCentroidXYZMm": [
+            11702.5,
+            840.0,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 1945,
+          "actualPlateCellXYMm": [
+            10737.5,
+            262.5,
+            10895.0,
+            332.5
+          ],
+          "overlapRectangleXYMm": [
+            10737.5,
+            262.5,
+            10895.0,
+            332.5
+          ],
+          "areaMm2": 11025.0,
+          "volumeM3": 0.002205,
+          "physicalGKN": 0.059535,
+          "gravityCentroidXYZMm": [
+            10816.25,
+            297.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 1946,
+          "actualPlateCellXYMm": [
+            10737.5,
+            332.5,
+            10895.0,
+            402.5
+          ],
+          "overlapRectangleXYMm": [
+            10737.5,
+            332.5,
+            10895.0,
+            402.5
+          ],
+          "areaMm2": 11025.0,
+          "volumeM3": 0.002205,
+          "physicalGKN": 0.059535,
+          "gravityCentroidXYZMm": [
+            10816.25,
+            367.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 1989,
+          "actualPlateCellXYMm": [
+            10895.0,
+            262.5,
+            11005.0,
+            332.5
+          ],
+          "overlapRectangleXYMm": [
+            10895.0,
+            262.5,
+            11005.0,
+            332.5
+          ],
+          "areaMm2": 7700.0,
+          "volumeM3": 0.00154,
+          "physicalGKN": 0.04158,
+          "gravityCentroidXYZMm": [
+            10950.0,
+            297.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 1990,
+          "actualPlateCellXYMm": [
+            10895.0,
+            332.5,
+            11005.0,
+            402.5
+          ],
+          "overlapRectangleXYMm": [
+            10895.0,
+            332.5,
+            11005.0,
+            402.5
+          ],
+          "areaMm2": 7700.0,
+          "volumeM3": 0.00154,
+          "physicalGKN": 0.04158,
+          "gravityCentroidXYZMm": [
+            10950.0,
+            367.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2032,
+          "actualPlateCellXYMm": [
+            11005.0,
+            262.5,
+            11352.5,
+            332.5
+          ],
+          "overlapRectangleXYMm": [
+            11005.0,
+            262.5,
+            11352.5,
+            332.5
+          ],
+          "areaMm2": 24325.0,
+          "volumeM3": 0.004865,
+          "physicalGKN": 0.131355,
+          "gravityCentroidXYZMm": [
+            11178.75,
+            297.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2033,
+          "actualPlateCellXYMm": [
+            11005.0,
+            332.5,
+            11352.5,
+            402.5
+          ],
+          "overlapRectangleXYMm": [
+            11005.0,
+            332.5,
+            11352.5,
+            402.5
+          ],
+          "areaMm2": 24325.0,
+          "volumeM3": 0.004865,
+          "physicalGKN": 0.131355,
+          "gravityCentroidXYZMm": [
+            11178.75,
+            367.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2076,
+          "actualPlateCellXYMm": [
+            11352.5,
+            262.5,
+            11512.5,
+            332.5
+          ],
+          "overlapRectangleXYMm": [
+            11352.5,
+            262.5,
+            11512.5,
+            332.5
+          ],
+          "areaMm2": 11200.0,
+          "volumeM3": 0.00224,
+          "physicalGKN": 0.06047999999999999,
+          "gravityCentroidXYZMm": [
+            11432.5,
+            297.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2077,
+          "actualPlateCellXYMm": [
+            11352.5,
+            332.5,
+            11512.5,
+            402.5
+          ],
+          "overlapRectangleXYMm": [
+            11352.5,
+            332.5,
+            11512.5,
+            402.5
+          ],
+          "areaMm2": 11200.0,
+          "volumeM3": 0.00224,
+          "physicalGKN": 0.06047999999999999,
+          "gravityCentroidXYZMm": [
+            11432.5,
+            367.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2119,
+          "actualPlateCellXYMm": [
+            11512.5,
+            262.5,
+            11537.5,
+            332.5
+          ],
+          "overlapRectangleXYMm": [
+            11512.5,
+            262.5,
+            11537.5,
+            332.5
+          ],
+          "areaMm2": 1750.0,
+          "volumeM3": 0.00035,
+          "physicalGKN": 0.00945,
+          "gravityCentroidXYZMm": [
+            11525.0,
+            297.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2120,
+          "actualPlateCellXYMm": [
+            11512.5,
+            332.5,
+            11537.5,
+            402.5
+          ],
+          "overlapRectangleXYMm": [
+            11512.5,
+            332.5,
+            11537.5,
+            402.5
+          ],
+          "areaMm2": 1750.0,
+          "volumeM3": 0.00035,
+          "physicalGKN": 0.00945,
+          "gravityCentroidXYZMm": [
+            11525.0,
+            367.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2163,
+          "actualPlateCellXYMm": [
+            11537.5,
+            262.5,
+            11567.5,
+            332.5
+          ],
+          "overlapRectangleXYMm": [
+            11537.5,
+            262.5,
+            11567.5,
+            332.5
+          ],
+          "areaMm2": 2100.0,
+          "volumeM3": 0.00042,
+          "physicalGKN": 0.011340000000000001,
+          "gravityCentroidXYZMm": [
+            11552.5,
+            297.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2164,
+          "actualPlateCellXYMm": [
+            11537.5,
+            332.5,
+            11567.5,
+            402.5
+          ],
+          "overlapRectangleXYMm": [
+            11537.5,
+            332.5,
+            11567.5,
+            402.5
+          ],
+          "areaMm2": 2100.0,
+          "volumeM3": 0.00042,
+          "physicalGKN": 0.011340000000000001,
+          "gravityCentroidXYZMm": [
+            11552.5,
+            367.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2207,
+          "actualPlateCellXYMm": [
+            11567.5,
+            262.5,
+            11597.5,
+            332.5
+          ],
+          "overlapRectangleXYMm": [
+            11567.5,
+            262.5,
+            11597.5,
+            332.5
+          ],
+          "areaMm2": 2100.0,
+          "volumeM3": 0.00042,
+          "physicalGKN": 0.011340000000000001,
+          "gravityCentroidXYZMm": [
+            11582.5,
+            297.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2208,
+          "actualPlateCellXYMm": [
+            11567.5,
+            332.5,
+            11597.5,
+            402.5
+          ],
+          "overlapRectangleXYMm": [
+            11567.5,
+            332.5,
+            11597.5,
+            402.5
+          ],
+          "areaMm2": 2100.0,
+          "volumeM3": 0.00042,
+          "physicalGKN": 0.011340000000000001,
+          "gravityCentroidXYZMm": [
+            11582.5,
+            367.5,
+            3270.0
+          ]
+        }
+      ],
+      "newJointBodyGRequired": false
+    },
+    {
+      "id": "NW",
+      "footprintRectanglesXYMm": [
+        [
+          262.5,
+          10737.5,
+          462.5,
+          11737.5
+        ],
+        [
+          462.5,
+          11537.5,
+          1262.5,
+          11737.5
+        ]
+      ],
+      "physicalAreaMm2": 360000.0,
+      "coveredByActualPlateCellsMm2": 360000.0,
+      "volumeM3": 0.072,
+      "physicalGKN": 1.944,
+      "appliedGKN": 2.6244,
+      "gravityCentroidXYZMm": [
+        584.7222222222223,
+        11415.277777777777,
+        3270.0
+      ],
+      "attributedActualCellPieces": [
+        {
+          "actualPlateCellIndex": 43,
+          "actualPlateCellXYMm": [
+            262.5,
+            10737.5,
+            332.5,
+            11097.5
+          ],
+          "overlapRectangleXYMm": [
+            262.5,
+            10737.5,
+            332.5,
+            11097.5
+          ],
+          "areaMm2": 25200.0,
+          "volumeM3": 0.00504,
+          "physicalGKN": 0.13608,
+          "gravityCentroidXYZMm": [
+            297.5,
+            10917.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 44,
+          "actualPlateCellXYMm": [
+            262.5,
+            11097.5,
+            332.5,
+            11257.5
+          ],
+          "overlapRectangleXYMm": [
+            262.5,
+            11097.5,
+            332.5,
+            11257.5
+          ],
+          "areaMm2": 11200.0,
+          "volumeM3": 0.00224,
+          "physicalGKN": 0.06047999999999999,
+          "gravityCentroidXYZMm": [
+            297.5,
+            11177.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 45,
+          "actualPlateCellXYMm": [
+            262.5,
+            11257.5,
+            332.5,
+            11522.5
+          ],
+          "overlapRectangleXYMm": [
+            262.5,
+            11257.5,
+            332.5,
+            11522.5
+          ],
+          "areaMm2": 18550.0,
+          "volumeM3": 0.00371,
+          "physicalGKN": 0.10017000000000001,
+          "gravityCentroidXYZMm": [
+            297.5,
+            11390.0,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 46,
+          "actualPlateCellXYMm": [
+            262.5,
+            11522.5,
+            332.5,
+            11537.5
+          ],
+          "overlapRectangleXYMm": [
+            262.5,
+            11522.5,
+            332.5,
+            11537.5
+          ],
+          "areaMm2": 1050.0,
+          "volumeM3": 0.00021,
+          "physicalGKN": 0.0056700000000000006,
+          "gravityCentroidXYZMm": [
+            297.5,
+            11530.0,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 47,
+          "actualPlateCellXYMm": [
+            262.5,
+            11537.5,
+            332.5,
+            11597.5
+          ],
+          "overlapRectangleXYMm": [
+            262.5,
+            11537.5,
+            332.5,
+            11597.5
+          ],
+          "areaMm2": 4200.0,
+          "volumeM3": 0.00084,
+          "physicalGKN": 0.022680000000000002,
+          "gravityCentroidXYZMm": [
+            297.5,
+            11567.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 48,
+          "actualPlateCellXYMm": [
+            262.5,
+            11597.5,
+            332.5,
+            11667.5
+          ],
+          "overlapRectangleXYMm": [
+            262.5,
+            11597.5,
+            332.5,
+            11667.5
+          ],
+          "areaMm2": 4900.0,
+          "volumeM3": 0.00098,
+          "physicalGKN": 0.026459999999999997,
+          "gravityCentroidXYZMm": [
+            297.5,
+            11632.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 49,
+          "actualPlateCellXYMm": [
+            262.5,
+            11667.5,
+            332.5,
+            11737.5
+          ],
+          "overlapRectangleXYMm": [
+            262.5,
+            11667.5,
+            332.5,
+            11737.5
+          ],
+          "areaMm2": 4900.0,
+          "volumeM3": 0.00098,
+          "physicalGKN": 0.026459999999999997,
+          "gravityCentroidXYZMm": [
+            297.5,
+            11702.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 93,
+          "actualPlateCellXYMm": [
+            332.5,
+            10737.5,
+            402.5,
+            11097.5
+          ],
+          "overlapRectangleXYMm": [
+            332.5,
+            10737.5,
+            402.5,
+            11097.5
+          ],
+          "areaMm2": 25200.0,
+          "volumeM3": 0.00504,
+          "physicalGKN": 0.13608,
+          "gravityCentroidXYZMm": [
+            367.5,
+            10917.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 94,
+          "actualPlateCellXYMm": [
+            332.5,
+            11097.5,
+            402.5,
+            11257.5
+          ],
+          "overlapRectangleXYMm": [
+            332.5,
+            11097.5,
+            402.5,
+            11257.5
+          ],
+          "areaMm2": 11200.0,
+          "volumeM3": 0.00224,
+          "physicalGKN": 0.06047999999999999,
+          "gravityCentroidXYZMm": [
+            367.5,
+            11177.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 95,
+          "actualPlateCellXYMm": [
+            332.5,
+            11257.5,
+            402.5,
+            11522.5
+          ],
+          "overlapRectangleXYMm": [
+            332.5,
+            11257.5,
+            402.5,
+            11522.5
+          ],
+          "areaMm2": 18550.0,
+          "volumeM3": 0.00371,
+          "physicalGKN": 0.10017000000000001,
+          "gravityCentroidXYZMm": [
+            367.5,
+            11390.0,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 96,
+          "actualPlateCellXYMm": [
+            332.5,
+            11522.5,
+            402.5,
+            11537.5
+          ],
+          "overlapRectangleXYMm": [
+            332.5,
+            11522.5,
+            402.5,
+            11537.5
+          ],
+          "areaMm2": 1050.0,
+          "volumeM3": 0.00021,
+          "physicalGKN": 0.0056700000000000006,
+          "gravityCentroidXYZMm": [
+            367.5,
+            11530.0,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 97,
+          "actualPlateCellXYMm": [
+            332.5,
+            11537.5,
+            402.5,
+            11597.5
+          ],
+          "overlapRectangleXYMm": [
+            332.5,
+            11537.5,
+            402.5,
+            11597.5
+          ],
+          "areaMm2": 4200.0,
+          "volumeM3": 0.00084,
+          "physicalGKN": 0.022680000000000002,
+          "gravityCentroidXYZMm": [
+            367.5,
+            11567.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 98,
+          "actualPlateCellXYMm": [
+            332.5,
+            11597.5,
+            402.5,
+            11667.5
+          ],
+          "overlapRectangleXYMm": [
+            332.5,
+            11597.5,
+            402.5,
+            11667.5
+          ],
+          "areaMm2": 4900.0,
+          "volumeM3": 0.00098,
+          "physicalGKN": 0.026459999999999997,
+          "gravityCentroidXYZMm": [
+            367.5,
+            11632.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 99,
+          "actualPlateCellXYMm": [
+            332.5,
+            11667.5,
+            402.5,
+            11737.5
+          ],
+          "overlapRectangleXYMm": [
+            332.5,
+            11667.5,
+            402.5,
+            11737.5
+          ],
+          "areaMm2": 4900.0,
+          "volumeM3": 0.00098,
+          "physicalGKN": 0.026459999999999997,
+          "gravityCentroidXYZMm": [
+            367.5,
+            11702.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 143,
+          "actualPlateCellXYMm": [
+            402.5,
+            10737.5,
+            417.5,
+            11097.5
+          ],
+          "overlapRectangleXYMm": [
+            402.5,
+            10737.5,
+            417.5,
+            11097.5
+          ],
+          "areaMm2": 5400.0,
+          "volumeM3": 0.00108,
+          "physicalGKN": 0.029160000000000002,
+          "gravityCentroidXYZMm": [
+            410.0,
+            10917.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 144,
+          "actualPlateCellXYMm": [
+            402.5,
+            11097.5,
+            417.5,
+            11257.5
+          ],
+          "overlapRectangleXYMm": [
+            402.5,
+            11097.5,
+            417.5,
+            11257.5
+          ],
+          "areaMm2": 2400.0,
+          "volumeM3": 0.00048,
+          "physicalGKN": 0.012960000000000001,
+          "gravityCentroidXYZMm": [
+            410.0,
+            11177.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 145,
+          "actualPlateCellXYMm": [
+            402.5,
+            11257.5,
+            417.5,
+            11522.5
+          ],
+          "overlapRectangleXYMm": [
+            402.5,
+            11257.5,
+            417.5,
+            11522.5
+          ],
+          "areaMm2": 3975.0,
+          "volumeM3": 0.000795,
+          "physicalGKN": 0.021465,
+          "gravityCentroidXYZMm": [
+            410.0,
+            11390.0,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 146,
+          "actualPlateCellXYMm": [
+            402.5,
+            11522.5,
+            417.5,
+            11537.5
+          ],
+          "overlapRectangleXYMm": [
+            402.5,
+            11522.5,
+            417.5,
+            11537.5
+          ],
+          "areaMm2": 225.0,
+          "volumeM3": 4.5e-05,
+          "physicalGKN": 0.0012150000000000002,
+          "gravityCentroidXYZMm": [
+            410.0,
+            11530.0,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 147,
+          "actualPlateCellXYMm": [
+            402.5,
+            11537.5,
+            417.5,
+            11597.5
+          ],
+          "overlapRectangleXYMm": [
+            402.5,
+            11537.5,
+            417.5,
+            11597.5
+          ],
+          "areaMm2": 900.0,
+          "volumeM3": 0.00018,
+          "physicalGKN": 0.004860000000000001,
+          "gravityCentroidXYZMm": [
+            410.0,
+            11567.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 148,
+          "actualPlateCellXYMm": [
+            402.5,
+            11597.5,
+            417.5,
+            11667.5
+          ],
+          "overlapRectangleXYMm": [
+            402.5,
+            11597.5,
+            417.5,
+            11667.5
+          ],
+          "areaMm2": 1050.0,
+          "volumeM3": 0.00021,
+          "physicalGKN": 0.0056700000000000006,
+          "gravityCentroidXYZMm": [
+            410.0,
+            11632.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 149,
+          "actualPlateCellXYMm": [
+            402.5,
+            11667.5,
+            417.5,
+            11737.5
+          ],
+          "overlapRectangleXYMm": [
+            402.5,
+            11667.5,
+            417.5,
+            11737.5
+          ],
+          "areaMm2": 1050.0,
+          "volumeM3": 0.00021,
+          "physicalGKN": 0.0056700000000000006,
+          "gravityCentroidXYZMm": [
+            410.0,
+            11702.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 176,
+          "actualPlateCellXYMm": [
+            417.5,
+            10737.5,
+            462.5,
+            11097.5
+          ],
+          "overlapRectangleXYMm": [
+            417.5,
+            10737.5,
+            462.5,
+            11097.5
+          ],
+          "areaMm2": 16200.0,
+          "volumeM3": 0.00324,
+          "physicalGKN": 0.08748,
+          "gravityCentroidXYZMm": [
+            440.0,
+            10917.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 177,
+          "actualPlateCellXYMm": [
+            417.5,
+            11097.5,
+            462.5,
+            11257.5
+          ],
+          "overlapRectangleXYMm": [
+            417.5,
+            11097.5,
+            462.5,
+            11257.5
+          ],
+          "areaMm2": 7200.0,
+          "volumeM3": 0.00144,
+          "physicalGKN": 0.038880000000000005,
+          "gravityCentroidXYZMm": [
+            440.0,
+            11177.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 178,
+          "actualPlateCellXYMm": [
+            417.5,
+            11257.5,
+            462.5,
+            11522.5
+          ],
+          "overlapRectangleXYMm": [
+            417.5,
+            11257.5,
+            462.5,
+            11522.5
+          ],
+          "areaMm2": 11925.0,
+          "volumeM3": 0.002385,
+          "physicalGKN": 0.064395,
+          "gravityCentroidXYZMm": [
+            440.0,
+            11390.0,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 179,
+          "actualPlateCellXYMm": [
+            417.5,
+            11522.5,
+            462.5,
+            11537.5
+          ],
+          "overlapRectangleXYMm": [
+            417.5,
+            11522.5,
+            462.5,
+            11537.5
+          ],
+          "areaMm2": 675.0,
+          "volumeM3": 0.000135,
+          "physicalGKN": 0.0036450000000000002,
+          "gravityCentroidXYZMm": [
+            440.0,
+            11530.0,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 180,
+          "actualPlateCellXYMm": [
+            417.5,
+            11537.5,
+            462.5,
+            11597.5
+          ],
+          "overlapRectangleXYMm": [
+            417.5,
+            11537.5,
+            462.5,
+            11597.5
+          ],
+          "areaMm2": 2700.0,
+          "volumeM3": 0.00054,
+          "physicalGKN": 0.014580000000000001,
+          "gravityCentroidXYZMm": [
+            440.0,
+            11567.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 181,
+          "actualPlateCellXYMm": [
+            417.5,
+            11597.5,
+            462.5,
+            11667.5
+          ],
+          "overlapRectangleXYMm": [
+            417.5,
+            11597.5,
+            462.5,
+            11667.5
+          ],
+          "areaMm2": 3150.0,
+          "volumeM3": 0.00063,
+          "physicalGKN": 0.01701,
+          "gravityCentroidXYZMm": [
+            440.0,
+            11632.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 182,
+          "actualPlateCellXYMm": [
+            417.5,
+            11667.5,
+            462.5,
+            11737.5
+          ],
+          "overlapRectangleXYMm": [
+            417.5,
+            11667.5,
+            462.5,
+            11737.5
+          ],
+          "areaMm2": 3150.0,
+          "volumeM3": 0.00063,
+          "physicalGKN": 0.01701,
+          "gravityCentroidXYZMm": [
+            440.0,
+            11702.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 213,
+          "actualPlateCellXYMm": [
+            462.5,
+            11537.5,
+            487.5,
+            11597.5
+          ],
+          "overlapRectangleXYMm": [
+            462.5,
+            11537.5,
+            487.5,
+            11597.5
+          ],
+          "areaMm2": 1500.0,
+          "volumeM3": 0.0003,
+          "physicalGKN": 0.0081,
+          "gravityCentroidXYZMm": [
+            475.0,
+            11567.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 214,
+          "actualPlateCellXYMm": [
+            462.5,
+            11597.5,
+            487.5,
+            11667.5
+          ],
+          "overlapRectangleXYMm": [
+            462.5,
+            11597.5,
+            487.5,
+            11667.5
+          ],
+          "areaMm2": 1750.0,
+          "volumeM3": 0.00035,
+          "physicalGKN": 0.00945,
+          "gravityCentroidXYZMm": [
+            475.0,
+            11632.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 215,
+          "actualPlateCellXYMm": [
+            462.5,
+            11667.5,
+            487.5,
+            11737.5
+          ],
+          "overlapRectangleXYMm": [
+            462.5,
+            11667.5,
+            487.5,
+            11737.5
+          ],
+          "areaMm2": 1750.0,
+          "volumeM3": 0.00035,
+          "physicalGKN": 0.00945,
+          "gravityCentroidXYZMm": [
+            475.0,
+            11702.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 245,
+          "actualPlateCellXYMm": [
+            487.5,
+            11537.5,
+            647.5,
+            11597.5
+          ],
+          "overlapRectangleXYMm": [
+            487.5,
+            11537.5,
+            647.5,
+            11597.5
+          ],
+          "areaMm2": 9600.0,
+          "volumeM3": 0.00192,
+          "physicalGKN": 0.051840000000000004,
+          "gravityCentroidXYZMm": [
+            567.5,
+            11567.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 246,
+          "actualPlateCellXYMm": [
+            487.5,
+            11597.5,
+            647.5,
+            11667.5
+          ],
+          "overlapRectangleXYMm": [
+            487.5,
+            11597.5,
+            647.5,
+            11667.5
+          ],
+          "areaMm2": 11200.0,
+          "volumeM3": 0.00224,
+          "physicalGKN": 0.06047999999999999,
+          "gravityCentroidXYZMm": [
+            567.5,
+            11632.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 247,
+          "actualPlateCellXYMm": [
+            487.5,
+            11667.5,
+            647.5,
+            11737.5
+          ],
+          "overlapRectangleXYMm": [
+            487.5,
+            11667.5,
+            647.5,
+            11737.5
+          ],
+          "areaMm2": 11200.0,
+          "volumeM3": 0.00224,
+          "physicalGKN": 0.06047999999999999,
+          "gravityCentroidXYZMm": [
+            567.5,
+            11702.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 278,
+          "actualPlateCellXYMm": [
+            647.5,
+            11537.5,
+            1262.5,
+            11597.5
+          ],
+          "overlapRectangleXYMm": [
+            647.5,
+            11537.5,
+            1262.5,
+            11597.5
+          ],
+          "areaMm2": 36900.0,
+          "volumeM3": 0.00738,
+          "physicalGKN": 0.19926000000000002,
+          "gravityCentroidXYZMm": [
+            955.0,
+            11567.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 279,
+          "actualPlateCellXYMm": [
+            647.5,
+            11597.5,
+            1262.5,
+            11667.5
+          ],
+          "overlapRectangleXYMm": [
+            647.5,
+            11597.5,
+            1262.5,
+            11667.5
+          ],
+          "areaMm2": 43050.0,
+          "volumeM3": 0.00861,
+          "physicalGKN": 0.23246999999999998,
+          "gravityCentroidXYZMm": [
+            955.0,
+            11632.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 280,
+          "actualPlateCellXYMm": [
+            647.5,
+            11667.5,
+            1262.5,
+            11737.5
+          ],
+          "overlapRectangleXYMm": [
+            647.5,
+            11667.5,
+            1262.5,
+            11737.5
+          ],
+          "areaMm2": 43050.0,
+          "volumeM3": 0.00861,
+          "physicalGKN": 0.23246999999999998,
+          "gravityCentroidXYZMm": [
+            955.0,
+            11702.5,
+            3270.0
+          ]
+        }
+      ],
+      "newJointBodyGRequired": false
+    },
+    {
+      "id": "NE",
+      "footprintRectanglesXYMm": [
+        [
+          11537.5,
+          10737.5,
+          11737.5,
+          11737.5
+        ],
+        [
+          10737.5,
+          11537.5,
+          11537.5,
+          11737.5
+        ]
+      ],
+      "physicalAreaMm2": 360000.0,
+      "coveredByActualPlateCellsMm2": 360000.0,
+      "volumeM3": 0.072,
+      "physicalGKN": 1.944,
+      "appliedGKN": 2.6244,
+      "gravityCentroidXYZMm": [
+        11415.277777777777,
+        11415.277777777777,
+        3270.0
+      ],
+      "attributedActualCellPieces": [
+        {
+          "actualPlateCellIndex": 2200,
+          "actualPlateCellXYMm": [
+            11537.5,
+            10737.5,
+            11567.5,
+            11097.5
+          ],
+          "overlapRectangleXYMm": [
+            11537.5,
+            10737.5,
+            11567.5,
+            11097.5
+          ],
+          "areaMm2": 10800.0,
+          "volumeM3": 0.00216,
+          "physicalGKN": 0.058320000000000004,
+          "gravityCentroidXYZMm": [
+            11552.5,
+            10917.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2201,
+          "actualPlateCellXYMm": [
+            11537.5,
+            11097.5,
+            11567.5,
+            11257.5
+          ],
+          "overlapRectangleXYMm": [
+            11537.5,
+            11097.5,
+            11567.5,
+            11257.5
+          ],
+          "areaMm2": 4800.0,
+          "volumeM3": 0.00096,
+          "physicalGKN": 0.025920000000000002,
+          "gravityCentroidXYZMm": [
+            11552.5,
+            11177.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2202,
+          "actualPlateCellXYMm": [
+            11537.5,
+            11257.5,
+            11567.5,
+            11522.5
+          ],
+          "overlapRectangleXYMm": [
+            11537.5,
+            11257.5,
+            11567.5,
+            11522.5
+          ],
+          "areaMm2": 7950.0,
+          "volumeM3": 0.00159,
+          "physicalGKN": 0.04293,
+          "gravityCentroidXYZMm": [
+            11552.5,
+            11390.0,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2203,
+          "actualPlateCellXYMm": [
+            11537.5,
+            11522.5,
+            11567.5,
+            11537.5
+          ],
+          "overlapRectangleXYMm": [
+            11537.5,
+            11522.5,
+            11567.5,
+            11537.5
+          ],
+          "areaMm2": 450.0,
+          "volumeM3": 9e-05,
+          "physicalGKN": 0.0024300000000000003,
+          "gravityCentroidXYZMm": [
+            11552.5,
+            11530.0,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2204,
+          "actualPlateCellXYMm": [
+            11537.5,
+            11537.5,
+            11567.5,
+            11597.5
+          ],
+          "overlapRectangleXYMm": [
+            11537.5,
+            11537.5,
+            11567.5,
+            11597.5
+          ],
+          "areaMm2": 1800.0,
+          "volumeM3": 0.00036,
+          "physicalGKN": 0.009720000000000001,
+          "gravityCentroidXYZMm": [
+            11552.5,
+            11567.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2205,
+          "actualPlateCellXYMm": [
+            11537.5,
+            11597.5,
+            11567.5,
+            11667.5
+          ],
+          "overlapRectangleXYMm": [
+            11537.5,
+            11597.5,
+            11567.5,
+            11667.5
+          ],
+          "areaMm2": 2100.0,
+          "volumeM3": 0.00042,
+          "physicalGKN": 0.011340000000000001,
+          "gravityCentroidXYZMm": [
+            11552.5,
+            11632.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2206,
+          "actualPlateCellXYMm": [
+            11537.5,
+            11667.5,
+            11567.5,
+            11737.5
+          ],
+          "overlapRectangleXYMm": [
+            11537.5,
+            11667.5,
+            11567.5,
+            11737.5
+          ],
+          "areaMm2": 2100.0,
+          "volumeM3": 0.00042,
+          "physicalGKN": 0.011340000000000001,
+          "gravityCentroidXYZMm": [
+            11552.5,
+            11702.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2250,
+          "actualPlateCellXYMm": [
+            11567.5,
+            10737.5,
+            11597.5,
+            11097.5
+          ],
+          "overlapRectangleXYMm": [
+            11567.5,
+            10737.5,
+            11597.5,
+            11097.5
+          ],
+          "areaMm2": 10800.0,
+          "volumeM3": 0.00216,
+          "physicalGKN": 0.058320000000000004,
+          "gravityCentroidXYZMm": [
+            11582.5,
+            10917.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2251,
+          "actualPlateCellXYMm": [
+            11567.5,
+            11097.5,
+            11597.5,
+            11257.5
+          ],
+          "overlapRectangleXYMm": [
+            11567.5,
+            11097.5,
+            11597.5,
+            11257.5
+          ],
+          "areaMm2": 4800.0,
+          "volumeM3": 0.00096,
+          "physicalGKN": 0.025920000000000002,
+          "gravityCentroidXYZMm": [
+            11582.5,
+            11177.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2252,
+          "actualPlateCellXYMm": [
+            11567.5,
+            11257.5,
+            11597.5,
+            11522.5
+          ],
+          "overlapRectangleXYMm": [
+            11567.5,
+            11257.5,
+            11597.5,
+            11522.5
+          ],
+          "areaMm2": 7950.0,
+          "volumeM3": 0.00159,
+          "physicalGKN": 0.04293,
+          "gravityCentroidXYZMm": [
+            11582.5,
+            11390.0,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2253,
+          "actualPlateCellXYMm": [
+            11567.5,
+            11522.5,
+            11597.5,
+            11537.5
+          ],
+          "overlapRectangleXYMm": [
+            11567.5,
+            11522.5,
+            11597.5,
+            11537.5
+          ],
+          "areaMm2": 450.0,
+          "volumeM3": 9e-05,
+          "physicalGKN": 0.0024300000000000003,
+          "gravityCentroidXYZMm": [
+            11582.5,
+            11530.0,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2254,
+          "actualPlateCellXYMm": [
+            11567.5,
+            11537.5,
+            11597.5,
+            11597.5
+          ],
+          "overlapRectangleXYMm": [
+            11567.5,
+            11537.5,
+            11597.5,
+            11597.5
+          ],
+          "areaMm2": 1800.0,
+          "volumeM3": 0.00036,
+          "physicalGKN": 0.009720000000000001,
+          "gravityCentroidXYZMm": [
+            11582.5,
+            11567.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2255,
+          "actualPlateCellXYMm": [
+            11567.5,
+            11597.5,
+            11597.5,
+            11667.5
+          ],
+          "overlapRectangleXYMm": [
+            11567.5,
+            11597.5,
+            11597.5,
+            11667.5
+          ],
+          "areaMm2": 2100.0,
+          "volumeM3": 0.00042,
+          "physicalGKN": 0.011340000000000001,
+          "gravityCentroidXYZMm": [
+            11582.5,
+            11632.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2256,
+          "actualPlateCellXYMm": [
+            11567.5,
+            11667.5,
+            11597.5,
+            11737.5
+          ],
+          "overlapRectangleXYMm": [
+            11567.5,
+            11667.5,
+            11597.5,
+            11737.5
+          ],
+          "areaMm2": 2100.0,
+          "volumeM3": 0.00042,
+          "physicalGKN": 0.011340000000000001,
+          "gravityCentroidXYZMm": [
+            11582.5,
+            11702.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2300,
+          "actualPlateCellXYMm": [
+            11597.5,
+            10737.5,
+            11667.5,
+            11097.5
+          ],
+          "overlapRectangleXYMm": [
+            11597.5,
+            10737.5,
+            11667.5,
+            11097.5
+          ],
+          "areaMm2": 25200.0,
+          "volumeM3": 0.00504,
+          "physicalGKN": 0.13608,
+          "gravityCentroidXYZMm": [
+            11632.5,
+            10917.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2301,
+          "actualPlateCellXYMm": [
+            11597.5,
+            11097.5,
+            11667.5,
+            11257.5
+          ],
+          "overlapRectangleXYMm": [
+            11597.5,
+            11097.5,
+            11667.5,
+            11257.5
+          ],
+          "areaMm2": 11200.0,
+          "volumeM3": 0.00224,
+          "physicalGKN": 0.06047999999999999,
+          "gravityCentroidXYZMm": [
+            11632.5,
+            11177.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2302,
+          "actualPlateCellXYMm": [
+            11597.5,
+            11257.5,
+            11667.5,
+            11522.5
+          ],
+          "overlapRectangleXYMm": [
+            11597.5,
+            11257.5,
+            11667.5,
+            11522.5
+          ],
+          "areaMm2": 18550.0,
+          "volumeM3": 0.00371,
+          "physicalGKN": 0.10017000000000001,
+          "gravityCentroidXYZMm": [
+            11632.5,
+            11390.0,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2303,
+          "actualPlateCellXYMm": [
+            11597.5,
+            11522.5,
+            11667.5,
+            11537.5
+          ],
+          "overlapRectangleXYMm": [
+            11597.5,
+            11522.5,
+            11667.5,
+            11537.5
+          ],
+          "areaMm2": 1050.0,
+          "volumeM3": 0.00021,
+          "physicalGKN": 0.0056700000000000006,
+          "gravityCentroidXYZMm": [
+            11632.5,
+            11530.0,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2304,
+          "actualPlateCellXYMm": [
+            11597.5,
+            11537.5,
+            11667.5,
+            11597.5
+          ],
+          "overlapRectangleXYMm": [
+            11597.5,
+            11537.5,
+            11667.5,
+            11597.5
+          ],
+          "areaMm2": 4200.0,
+          "volumeM3": 0.00084,
+          "physicalGKN": 0.022680000000000002,
+          "gravityCentroidXYZMm": [
+            11632.5,
+            11567.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2305,
+          "actualPlateCellXYMm": [
+            11597.5,
+            11597.5,
+            11667.5,
+            11667.5
+          ],
+          "overlapRectangleXYMm": [
+            11597.5,
+            11597.5,
+            11667.5,
+            11667.5
+          ],
+          "areaMm2": 4900.0,
+          "volumeM3": 0.00098,
+          "physicalGKN": 0.026459999999999997,
+          "gravityCentroidXYZMm": [
+            11632.5,
+            11632.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2306,
+          "actualPlateCellXYMm": [
+            11597.5,
+            11667.5,
+            11667.5,
+            11737.5
+          ],
+          "overlapRectangleXYMm": [
+            11597.5,
+            11667.5,
+            11667.5,
+            11737.5
+          ],
+          "areaMm2": 4900.0,
+          "volumeM3": 0.00098,
+          "physicalGKN": 0.026459999999999997,
+          "gravityCentroidXYZMm": [
+            11632.5,
+            11702.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2350,
+          "actualPlateCellXYMm": [
+            11667.5,
+            10737.5,
+            11737.5,
+            11097.5
+          ],
+          "overlapRectangleXYMm": [
+            11667.5,
+            10737.5,
+            11737.5,
+            11097.5
+          ],
+          "areaMm2": 25200.0,
+          "volumeM3": 0.00504,
+          "physicalGKN": 0.13608,
+          "gravityCentroidXYZMm": [
+            11702.5,
+            10917.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2351,
+          "actualPlateCellXYMm": [
+            11667.5,
+            11097.5,
+            11737.5,
+            11257.5
+          ],
+          "overlapRectangleXYMm": [
+            11667.5,
+            11097.5,
+            11737.5,
+            11257.5
+          ],
+          "areaMm2": 11200.0,
+          "volumeM3": 0.00224,
+          "physicalGKN": 0.06047999999999999,
+          "gravityCentroidXYZMm": [
+            11702.5,
+            11177.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2352,
+          "actualPlateCellXYMm": [
+            11667.5,
+            11257.5,
+            11737.5,
+            11522.5
+          ],
+          "overlapRectangleXYMm": [
+            11667.5,
+            11257.5,
+            11737.5,
+            11522.5
+          ],
+          "areaMm2": 18550.0,
+          "volumeM3": 0.00371,
+          "physicalGKN": 0.10017000000000001,
+          "gravityCentroidXYZMm": [
+            11702.5,
+            11390.0,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2353,
+          "actualPlateCellXYMm": [
+            11667.5,
+            11522.5,
+            11737.5,
+            11537.5
+          ],
+          "overlapRectangleXYMm": [
+            11667.5,
+            11522.5,
+            11737.5,
+            11537.5
+          ],
+          "areaMm2": 1050.0,
+          "volumeM3": 0.00021,
+          "physicalGKN": 0.0056700000000000006,
+          "gravityCentroidXYZMm": [
+            11702.5,
+            11530.0,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2354,
+          "actualPlateCellXYMm": [
+            11667.5,
+            11537.5,
+            11737.5,
+            11597.5
+          ],
+          "overlapRectangleXYMm": [
+            11667.5,
+            11537.5,
+            11737.5,
+            11597.5
+          ],
+          "areaMm2": 4200.0,
+          "volumeM3": 0.00084,
+          "physicalGKN": 0.022680000000000002,
+          "gravityCentroidXYZMm": [
+            11702.5,
+            11567.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2355,
+          "actualPlateCellXYMm": [
+            11667.5,
+            11597.5,
+            11737.5,
+            11667.5
+          ],
+          "overlapRectangleXYMm": [
+            11667.5,
+            11597.5,
+            11737.5,
+            11667.5
+          ],
+          "areaMm2": 4900.0,
+          "volumeM3": 0.00098,
+          "physicalGKN": 0.026459999999999997,
+          "gravityCentroidXYZMm": [
+            11702.5,
+            11632.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2356,
+          "actualPlateCellXYMm": [
+            11667.5,
+            11667.5,
+            11737.5,
+            11737.5
+          ],
+          "overlapRectangleXYMm": [
+            11667.5,
+            11667.5,
+            11737.5,
+            11737.5
+          ],
+          "areaMm2": 4900.0,
+          "volumeM3": 0.00098,
+          "physicalGKN": 0.026459999999999997,
+          "gravityCentroidXYZMm": [
+            11702.5,
+            11702.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 1986,
+          "actualPlateCellXYMm": [
+            10737.5,
+            11537.5,
+            10895.0,
+            11597.5
+          ],
+          "overlapRectangleXYMm": [
+            10737.5,
+            11537.5,
+            10895.0,
+            11597.5
+          ],
+          "areaMm2": 9450.0,
+          "volumeM3": 0.00189,
+          "physicalGKN": 0.05103,
+          "gravityCentroidXYZMm": [
+            10816.25,
+            11567.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 1987,
+          "actualPlateCellXYMm": [
+            10737.5,
+            11597.5,
+            10895.0,
+            11667.5
+          ],
+          "overlapRectangleXYMm": [
+            10737.5,
+            11597.5,
+            10895.0,
+            11667.5
+          ],
+          "areaMm2": 11025.0,
+          "volumeM3": 0.002205,
+          "physicalGKN": 0.059535,
+          "gravityCentroidXYZMm": [
+            10816.25,
+            11632.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 1988,
+          "actualPlateCellXYMm": [
+            10737.5,
+            11667.5,
+            10895.0,
+            11737.5
+          ],
+          "overlapRectangleXYMm": [
+            10737.5,
+            11667.5,
+            10895.0,
+            11737.5
+          ],
+          "areaMm2": 11025.0,
+          "volumeM3": 0.002205,
+          "physicalGKN": 0.059535,
+          "gravityCentroidXYZMm": [
+            10816.25,
+            11702.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2029,
+          "actualPlateCellXYMm": [
+            10895.0,
+            11537.5,
+            11005.0,
+            11597.5
+          ],
+          "overlapRectangleXYMm": [
+            10895.0,
+            11537.5,
+            11005.0,
+            11597.5
+          ],
+          "areaMm2": 6600.0,
+          "volumeM3": 0.00132,
+          "physicalGKN": 0.03564,
+          "gravityCentroidXYZMm": [
+            10950.0,
+            11567.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2030,
+          "actualPlateCellXYMm": [
+            10895.0,
+            11597.5,
+            11005.0,
+            11667.5
+          ],
+          "overlapRectangleXYMm": [
+            10895.0,
+            11597.5,
+            11005.0,
+            11667.5
+          ],
+          "areaMm2": 7700.0,
+          "volumeM3": 0.00154,
+          "physicalGKN": 0.04158,
+          "gravityCentroidXYZMm": [
+            10950.0,
+            11632.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2031,
+          "actualPlateCellXYMm": [
+            10895.0,
+            11667.5,
+            11005.0,
+            11737.5
+          ],
+          "overlapRectangleXYMm": [
+            10895.0,
+            11667.5,
+            11005.0,
+            11737.5
+          ],
+          "areaMm2": 7700.0,
+          "volumeM3": 0.00154,
+          "physicalGKN": 0.04158,
+          "gravityCentroidXYZMm": [
+            10950.0,
+            11702.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2073,
+          "actualPlateCellXYMm": [
+            11005.0,
+            11537.5,
+            11352.5,
+            11597.5
+          ],
+          "overlapRectangleXYMm": [
+            11005.0,
+            11537.5,
+            11352.5,
+            11597.5
+          ],
+          "areaMm2": 20850.0,
+          "volumeM3": 0.00417,
+          "physicalGKN": 0.11259,
+          "gravityCentroidXYZMm": [
+            11178.75,
+            11567.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2074,
+          "actualPlateCellXYMm": [
+            11005.0,
+            11597.5,
+            11352.5,
+            11667.5
+          ],
+          "overlapRectangleXYMm": [
+            11005.0,
+            11597.5,
+            11352.5,
+            11667.5
+          ],
+          "areaMm2": 24325.0,
+          "volumeM3": 0.004865,
+          "physicalGKN": 0.131355,
+          "gravityCentroidXYZMm": [
+            11178.75,
+            11632.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2075,
+          "actualPlateCellXYMm": [
+            11005.0,
+            11667.5,
+            11352.5,
+            11737.5
+          ],
+          "overlapRectangleXYMm": [
+            11005.0,
+            11667.5,
+            11352.5,
+            11737.5
+          ],
+          "areaMm2": 24325.0,
+          "volumeM3": 0.004865,
+          "physicalGKN": 0.131355,
+          "gravityCentroidXYZMm": [
+            11178.75,
+            11702.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2116,
+          "actualPlateCellXYMm": [
+            11352.5,
+            11537.5,
+            11512.5,
+            11597.5
+          ],
+          "overlapRectangleXYMm": [
+            11352.5,
+            11537.5,
+            11512.5,
+            11597.5
+          ],
+          "areaMm2": 9600.0,
+          "volumeM3": 0.00192,
+          "physicalGKN": 0.051840000000000004,
+          "gravityCentroidXYZMm": [
+            11432.5,
+            11567.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2117,
+          "actualPlateCellXYMm": [
+            11352.5,
+            11597.5,
+            11512.5,
+            11667.5
+          ],
+          "overlapRectangleXYMm": [
+            11352.5,
+            11597.5,
+            11512.5,
+            11667.5
+          ],
+          "areaMm2": 11200.0,
+          "volumeM3": 0.00224,
+          "physicalGKN": 0.06047999999999999,
+          "gravityCentroidXYZMm": [
+            11432.5,
+            11632.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2118,
+          "actualPlateCellXYMm": [
+            11352.5,
+            11667.5,
+            11512.5,
+            11737.5
+          ],
+          "overlapRectangleXYMm": [
+            11352.5,
+            11667.5,
+            11512.5,
+            11737.5
+          ],
+          "areaMm2": 11200.0,
+          "volumeM3": 0.00224,
+          "physicalGKN": 0.06047999999999999,
+          "gravityCentroidXYZMm": [
+            11432.5,
+            11702.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2160,
+          "actualPlateCellXYMm": [
+            11512.5,
+            11537.5,
+            11537.5,
+            11597.5
+          ],
+          "overlapRectangleXYMm": [
+            11512.5,
+            11537.5,
+            11537.5,
+            11597.5
+          ],
+          "areaMm2": 1500.0,
+          "volumeM3": 0.0003,
+          "physicalGKN": 0.0081,
+          "gravityCentroidXYZMm": [
+            11525.0,
+            11567.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2161,
+          "actualPlateCellXYMm": [
+            11512.5,
+            11597.5,
+            11537.5,
+            11667.5
+          ],
+          "overlapRectangleXYMm": [
+            11512.5,
+            11597.5,
+            11537.5,
+            11667.5
+          ],
+          "areaMm2": 1750.0,
+          "volumeM3": 0.00035,
+          "physicalGKN": 0.00945,
+          "gravityCentroidXYZMm": [
+            11525.0,
+            11632.5,
+            3270.0
+          ]
+        },
+        {
+          "actualPlateCellIndex": 2162,
+          "actualPlateCellXYMm": [
+            11512.5,
+            11667.5,
+            11537.5,
+            11737.5
+          ],
+          "overlapRectangleXYMm": [
+            11512.5,
+            11667.5,
+            11537.5,
+            11737.5
+          ],
+          "areaMm2": 1750.0,
+          "volumeM3": 0.00035,
+          "physicalGKN": 0.00945,
+          "gravityCentroidXYZMm": [
+            11525.0,
+            11702.5,
+            3270.0
+          ]
+        }
+      ],
+      "newJointBodyGRequired": false
+    }
+  ],
+  "totalJointVolumeM3": 0.24816,
+  "totalJointPhysicalGAlreadyInPlateKN": 6.70032,
+  "newJointBodyGRequired": false,
+  "loadInsertedKN": 0.0,
+  "finiteJointCapacityAvailable": false,
+  "scope": "Exact per-cell material attribution within retained native uniform plate cells. Joint own-G already enters the recovered plate contribution. Separating it requires subtracting the identical plate part before adding it once; no new load is needed. No local joint resistance or observer numerical passivity is established.",
+  "actualFullNativeCaptureFileSHA256": "e20abd0f305c963a250acd3e0857079dccc9ed851bf39e43b2e41bf531a6b5ff",
+  "geometryObservationMethodSourceSHA256": {
+    "project/str/studies/four_l_joint_observer.py": "609be2b7ea80e2dba020233e705e1d20cb1ca384bd79a71191e61ca43074a503",
+    "project/str/studies/four_l_joint_recovery.py": "3f29a5d73d59db9c0150e791dfdedd916a25ef5e7a4ddd2f794dd2d40185ac62"
+  },
+  "methodSourceSHA256": {
+    "project/str/studies/four_l_joint_material_audit.py": "4b2b332717eb3ebd43ff244df2efee18c04910ed2aa3dc1c18bc8bdd40feaa8c"
+  }
+}

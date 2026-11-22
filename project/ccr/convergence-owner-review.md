@@ -49,6 +49,10 @@ The [named floor-to-corner comparison](../str/floor-interface-result.md) now dis
 
 The [indoor isolation view](../had/studies/inlet-indoor-cuts.svg) and [four cold-water paths](../had/studies/inlet-indoor-routes.svg) now show the actual valve bank, the unchanged full equipment field and separate Utility/Plant continuations. The full single leaf clashes with the protected door; the paired outward leaves pass the declared connected access comparison. The pipes have explicit lengths, tolerance-specific bores, pressure losses and named gravity/pressure actions. Their fitted turns, independent supports and loaded removal still need completion. These proposed loads are not admitted to the source-ground-zero structural model.
 
+The [wet-beam normal-bearing comparison](../str/wet-bearing-refinement-development.md) now passes the declared32→64 quadrature check for both tested wet-support material weights. The16→32 adverse failure remains recorded. This resolves numerical contact integration for those cases; pad material, post-head resistance, a complete signed envelope and floor/corner convergence remain unqualified. It selects no slab thickness, plinth or house revision.
+
+The [four L-corner demand recovery](../str/four-l-joint-recovery-development.md) now joins eight actual physical member ends into four balanced rigid-joint free bodies for one verified request. The complete ordinary native result remains byte-for-byte unchanged. Joint concrete weight is already in the plate, so no extra joint load is added. Changed or unverified requests retain explicit unavailable diagnostics; finite-joint behaviour, resistance and a complete signed load envelope remain unresolved.
+
 ## The interior should earn its place on beauty
 
 The [completed IAS proposal](../ias/crafted-room-kit-result.md), integrated through [PR #1584](https://github.com/adamnoden/architecture/pull/1584), puts a fixed furnished room beside hung timber faces and seated oak floor modules. The furniture and occupied-room openings are matched. This is the strongest available appearance comparison, rather than an isolated panel detail.

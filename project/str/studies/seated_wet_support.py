@@ -89,7 +89,7 @@ def build_support(model,setting,h,required_stations=()):
     if setting['receiverRectanglesXYMm']!=expected['receiverRectanglesXYMm'] or setting['beamAxisXMm']!=expected['beamAxisXMm'] or setting['beamTopZMm']!=3370.:raise ValueError('Only actual original-axis/source receiver geometry and RC200 datum supported')
     if not 200<=setting['beamWidthMm']<=260 or not 300<=setting['beamDepthMm']<=400 or not 18<=setting['concreteUnitWeightKNPerM3']<=30 or not 0<=setting['combinedRelativePlacementToleranceMm']<=20:raise ValueError('Wet support outside bounded explicit comparison domain')
     before_g=_family_wrench(model,model['families']['physical-G'])
-    if type(setting['bearingQuadratureOrder']) is not int or setting['bearingQuadratureOrder'] not in (2,4,8):raise ValueError('Explicit wet-bearing quadrature2/4/8 required')
+    if type(setting['bearingQuadratureOrder']) is not int or setting['bearingQuadratureOrder'] not in (2,4,8,16,32,64):raise ValueError('Explicit wet-bearing quadrature2/4/8/16/32/64 required')
     if setting['beamNorthEndYMm']!=expected['beamNorthEndYMm']:raise ValueError('Actual north beam end must retain current core/weather boundary; no unsupported extension')
     frame=model['model'];x=setting['beamAxisXMm'];width=setting['beamWidthMm'];depth=setting['beamDepthMm'];lo=setting['beamSouthEndYMm'];hi=setting['beamNorthEndYMm'];top=setting['beamTopZMm'];z=top-depth/2
     rectangle=[x-width/2,lo,x+width/2,hi]
@@ -237,7 +237,7 @@ def add_live_load(model,characteristic_kpa):
 
 def bearing_quadrature(rectangle,order):
     import numpy as np
-    if type(order) is not int or order not in (2,4,8):raise ValueError('Explicit wet-bearing quadrature2/4/8 required')
+    if type(order) is not int or order not in (2,4,8,16,32,64):raise ValueError('Explicit wet-bearing quadrature2/4/8/16/32/64 required')
     a,b,c,d=rectangle
     if not all(math.isfinite(v) for v in rectangle) or c<=a or d<=b:raise ValueError('Actual positive bearing rectangle required')
     coordinates,weights=np.polynomial.legendre.leggauss(order)

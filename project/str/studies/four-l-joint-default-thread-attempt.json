@@ -1,0 +1,4301 @@
+{
+  "schema": "str-four-L-joint-rejected-runtime-attempt/1",
+  "status": "strict-passivity-failed-no-current-demand-admission",
+  "nativeSourceIdentityDigest": "f25a58d9e517a13fc7b04d52685a750e8d5ef9d43b579883ba55fb699e5e7d88",
+  "executedRuntimeThreads": {
+    "OPENBLAS_NUM_THREADS": null,
+    "OMP_NUM_THREADS": null
+  },
+  "ordinaryRuntimeConvention": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "sourceAndRequestMatch": true,
+  "exactFullResultEqualityVerified": false,
+  "ordinaryFullCaptureFileSHA256": "e20abd0f305c963a250acd3e0857079dccc9ed851bf39e43b2e41bf531a6b5ff",
+  "observedFullBytesRetained": false,
+  "maximum52HeadComponentDifferenceKN_KNm": 1.480430000810884e-09,
+  "ordinaryControl": {
+    "schema": "str-four-L-joint-ordinary-control/1",
+    "sourceSHA256": {
+      "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+      "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+      "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+      "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+      "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+      "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+      "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+      "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+      "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+      "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+      "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+      "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+      "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+      "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+      "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+      "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+      "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+      "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+      "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+      "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+      "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+      "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+      "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+      "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+      "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+      "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+      "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+      "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+      "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+      "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+      "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
+      "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+      "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
+      "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
+      "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
+      "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521",
+      "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+      "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+      "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
+      "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
+      "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
+      "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
+      "project/str/studies/foundation_solid_weight.py": "32b56c32e47217d17806a2a6cc3f0c997e52c5dbf70feb7c9c155bdf7077e0f7",
+      "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
+      "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
+      "project/str/studies/floor_reinforcement.py": "e904f747686fdf3811f78ab7917ad9d3972c1d464be8960d66de61801d7c4bec",
+      "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c",
+      "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
+      "project/str/studies/straight_frame_cage.py": "6404893c699b7179b8380afc8dfcb8d25ae6725e20c2897987917de7e83c511e",
+      "project/str/studies/upper_roof_bearing.py": "bd6b5b4e139ea022eece8040cd031c1d52a7126683af26a39eac8bb16e02b3f2",
+      "project/str/studies/named_plate_load.py": "c0b24595548325d80843c39e217990a489d54a0e0c4d83bb7f9181ceb5d8e5d2",
+      "project/str/studies/upper_masonry_inventory.py": "308531fd0e5c2de62dabc09dc31882def9f91082c60b17205b2de14231b82501",
+      "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
+      "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
+      "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
+      "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
+      "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
+      "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
+    },
+    "requestSHA256": "04e0d748801e3498d0372c4ccea9c64fa915044e7f02989f3f12dcac1795dea4",
+    "caseId": "wet-aligned-quadrature8",
+    "fullNativeResultSHA256": "16f14bea7b3c08c10af3b60b21e14c8c2ef60a2687950afd0595ec775df66b4d",
+    "heads": [
+      {
+        "id": "P01",
+        "reactionKN_KNm": [
+          -102.16033731547978,
+          -78.20868173088314,
+          284.72323888596037,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P02",
+        "reactionKN_KNm": [
+          93.98171397598128,
+          2.6365156100873595,
+          -24.409591527457888,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P03",
+        "reactionKN_KNm": [
+          0.090465171327204,
+          74.80143506969003,
+          -15.51608797842318,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P04",
+        "reactionKN_KNm": [
+          -465.4184359537583,
+          -302.5371205292017,
+          83.56531644758923,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P05",
+        "reactionKN_KNm": [
+          274.5192145918285,
+          2.500148406186166,
+          134.2584945817498,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P06",
+        "reactionKN_KNm": [
+          -0.33690685555023947,
+          211.85340687736374,
+          -74.73466825234749,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P07",
+        "reactionKN_KNm": [
+          -241.22931042784387,
+          -431.4906681840142,
+          94.3668210173427,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P08",
+        "reactionKN_KNm": [
+          181.08451958711493,
+          6.374164637374154,
+          -63.62326725533159,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P09",
+        "reactionKN_KNm": [
+          5.764778274339792,
+          258.12394049100214,
+          160.78261124052426,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P10",
+        "reactionKN_KNm": [
+          -154.0197643447692,
+          -201.9129337640353,
+          -65.89885572717921,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P11",
+        "reactionKN_KNm": [
+          131.7253112059459,
+          2.316673541608205,
+          64.03555209796042,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P12",
+        "reactionKN_KNm": [
+          -2.3470402278695426,
+          71.91240336572392,
+          152.7227874297789,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P13",
+        "reactionKN_KNm": [
+          40.38221047365634,
+          36.413068586022575,
+          102.82450336899011,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P14",
+        "reactionKN_KNm": [
+          17.41587600196139,
+          64.6735971275757,
+          38.24044992380826,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P15",
+        "reactionKN_KNm": [
+          -0.5956671333667646,
+          28.792045900740547,
+          74.62154042982385,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P16",
+        "reactionKN_KNm": [
+          51.809480525423254,
+          106.875284978531,
+          152.04792447696622,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P17",
+        "reactionKN_KNm": [
+          -33.70637017925585,
+          83.2996244392192,
+          93.46850595031597,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P18",
+        "reactionKN_KNm": [
+          -62.588753017637345,
+          3.5161417534858757,
+          125.11768424101254,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P19",
+        "reactionKN_KNm": [
+          -45.613266166662484,
+          188.03281552590482,
+          151.2553417518785,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P20",
+        "reactionKN_KNm": [
+          30.607432240442364,
+          -0.8441059711365817,
+          33.19961896020079,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P21",
+        "reactionKN_KNm": [
+          53.20121210425369,
+          4.318485105581001,
+          48.478199357672935,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P22",
+        "reactionKN_KNm": [
+          59.71772473820394,
+          56.90127889690682,
+          107.65690975030775,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P23",
+        "reactionKN_KNm": [
+          119.2112447065667,
+          46.41890560280561,
+          143.9471944014124,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P24",
+        "reactionKN_KNm": [
+          102.74336272717656,
+          -26.671177189353216,
+          42.226508543798154,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P25",
+        "reactionKN_KNm": [
+          0.9821207968365471,
+          -52.96125057154396,
+          93.29903875184206,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P26",
+        "reactionKN_KNm": [
+          -37.36882057253066,
+          -53.030293632833185,
+          159.53768442531972,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P27",
+        "reactionKN_KNm": [
+          81.56423499849032,
+          -2.1367887882426206,
+          56.91156674053022,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P28",
+        "reactionKN_KNm": [
+          -5.682085063530156,
+          1.082734460751956,
+          120.2081287411813,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P29",
+        "reactionKN_KNm": [
+          -9.752909585947211,
+          56.770376709984106,
+          84.851928406506,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P30",
+        "reactionKN_KNm": [
+          -50.16292780763432,
+          9.66019254873827,
+          257.6404912931579,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P31",
+        "reactionKN_KNm": [
+          11.776946325080829,
+          51.59924227940321,
+          102.97859055756547,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P32",
+        "reactionKN_KNm": [
+          -1.429837973068648,
+          -6.258344608598983,
+          54.17816708111436,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P33",
+        "reactionKN_KNm": [
+          -0.013373195855018616,
+          14.694185441018355,
+          33.53702534258868,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P34",
+        "reactionKN_KNm": [
+          23.98321373781158,
+          -5.304252764746579,
+          55.26340520683078,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P35",
+        "reactionKN_KNm": [
+          2.1687356477697013,
+          23.316065513117575,
+          70.02059182180477,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P36",
+        "reactionKN_KNm": [
+          0.5861452371201669,
+          3.170186574613364,
+          36.81153879077054,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P37",
+        "reactionKN_KNm": [
+          13.628326126388396,
+          -18.511794053480887,
+          -16.56221035476745,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P38",
+        "reactionKN_KNm": [
+          -15.111002408237026,
+          -1.0414899451403805,
+          52.68932489781675,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P39",
+        "reactionKN_KNm": [
+          4.998719659597802,
+          0.6470233235998126,
+          10.976317835829061,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P40",
+        "reactionKN_KNm": [
+          5.79490280236149,
+          0.10175591564264996,
+          37.92000006860548,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P41",
+        "reactionKN_KNm": [
+          17.617656437874615,
+          -64.92285874380904,
+          141.54578082973222,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P42",
+        "reactionKN_KNm": [
+          11.558242680833937,
+          14.42981869695903,
+          114.9993879287164,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P43",
+        "reactionKN_KNm": [
+          60.00298461744656,
+          -74.45366504221022,
+          138.05720375395427,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P44",
+        "reactionKN_KNm": [
+          80.51374343925389,
+          101.40951406707168,
+          175.74780497196866,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P45",
+        "reactionKN_KNm": [
+          -29.95349406082947,
+          21.304838604188955,
+          103.87941701234432,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P46",
+        "reactionKN_KNm": [
+          -0.1741414099334233,
+          -20.78907825079208,
+          70.62863361588785,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P47",
+        "reactionKN_KNm": [
+          -39.383266019824255,
+          33.49213209917003,
+          143.06966385457756,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P48",
+        "reactionKN_KNm": [
+          -13.399868336529225,
+          2.6195661526109166,
+          67.1832163097242,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P49",
+        "reactionKN_KNm": [
+          -2.4595587752774684,
+          -7.294619166402388,
+          42.31626030404319,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P50",
+        "reactionKN_KNm": [
+          20.770738245602136,
+          15.067625649891053,
+          48.41618603433932,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P51",
+        "reactionKN_KNm": [
+          -22.964165135935527,
+          -4.536338529677122,
+          112.08121542080546,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "P52",
+        "reactionKN_KNm": [
+          24.416587317962072,
+          -60.10985904538056,
+          92.71011676168706,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "physicalCutSHA256": "cf536736ff623d1d693ddd2e28fab52516a129ef9beb4963e42765e070c19cfe",
+    "physicalHeadCount": 52
+  },
+  "actualObservedAttempt": {
+    "observation": {
+      "schema": "str-four-L-joint-observation/1",
+      "joints": [
+        {
+          "id": "SW",
+          "collectorNodeId": "SW/collector",
+          "referenceXYZMm": [
+            563.6827956989248,
+            563.6827956989248,
+            3170
+          ],
+          "memberEnds": [
+            {
+              "memberId": "SW/upper-wall",
+              "role": "lower",
+              "end": 1,
+              "masterNodeId": "SW/collector",
+              "masterXYZMm": [
+                563.6827956989248,
+                563.6827956989248,
+                3170
+              ],
+              "physicalCutXYZMm": [
+                563.6827956989248,
+                563.6827956989248,
+                3170
+              ],
+              "rawMasterWrenchKN_KNmm": [
+                -35.62855333925606,
+                -33.98677345849064,
+                -169.65729068089547,
+                -33024.72281860976,
+                23332.48786421532,
+                -24.566801574946652
+              ],
+              "equivalentBodyLoadMasterKN_KNmm": [
+                0.0,
+                0.0,
+                -14.061600000000002,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "memberId": "JOINED-ROOF/upper-L/SW",
+              "role": "upper",
+              "end": 0,
+              "masterNodeId": "SW/collector",
+              "masterXYZMm": [
+                563.6827956989248,
+                563.6827956989248,
+                3170
+              ],
+              "physicalCutXYZMm": [
+                563.6827956989248,
+                563.6827956989248,
+                3370.0
+              ],
+              "rawMasterWrenchKN_KNmm": [
+                21.58183013812328,
+                20.24370121167675,
+                54.658699409725386,
+                -44074.45723613177,
+                48816.59257137368,
+                147.89804879140127
+              ],
+              "equivalentBodyLoadMasterKN_KNmm": [
+                0.0,
+                0.0,
+                -13.929772500000002,
+                -0.0,
+                0.0,
+                0.0
+              ]
+            }
+          ],
+          "componentReactions": [
+            {
+              "id": "actual-vertical-plate",
+              "originXYZMm": [
+                563.6827956989248,
+                563.6827956989248,
+                3170
+              ],
+              "forceOnComponentKN_KNm": [
+                0.0,
+                0.0,
+                87.00721877117023,
+                78.47348727942334,
+                -73.55375275570266,
+                0.0
+              ]
+            },
+            {
+              "id": "actual-in-plane-membrane",
+              "originXYZMm": [
+                563.6827956989248,
+                563.6827956989248,
+                3170
+              ],
+              "forceOnComponentKN_KNm": [
+                14.046723201132602,
+                13.74307224681364,
+                0.0,
+                -1.374307224681364,
+                1.4046723201132603,
+                -0.12333124726307193
+              ]
+            }
+          ],
+          "directAppliedLoads": [
+            {
+              "id": "physical-G-other-actual-collector-cards",
+              "originXYZMm": [
+                563.6827956989248,
+                563.6827956989248,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                9.094947017729283e-16,
+                -9.094947017729283e-16,
+                0.0
+              ]
+            },
+            {
+              "id": "source-pressure-explicit-offset-couples",
+              "originXYZMm": [
+                563.6827956989248,
+                563.6827956989248,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "id": "fresh-Q-other-actual-collector-cards",
+              "originXYZMm": [
+                563.6827956989248,
+                563.6827956989248,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "id": "roof-additional-actual-collector-cards",
+              "originXYZMm": [
+                563.6827956989248,
+                563.6827956989248,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          ],
+          "actualAppliedMasterWrenchKN_KNmm": [
+            -10.151167542167762,
+            -4.716853737389354,
+            -48.6863499775531,
+            -4829.640363587051,
+            6345.7070537156105,
+            3823.7655660119344
+          ],
+          "appliedCardPartitionResidualKN_KNmm": [
+            0.0,
+            0.0,
+            0.0,
+            9.094947017729282e-13,
+            -9.094947017729282e-13,
+            0.0
+          ],
+          "storedButUnappliedCollectorFamiliesKN_KNmm": {},
+          "rawNodalEquilibriumResidualKN_KNmm": [
+            -1.7541523789077473e-13,
+            -2.495781359357352e-13,
+            1.4921397450962104e-13,
+            4.2882675188593566e-10,
+            -3.8198777474462986e-10,
+            -4.6616804638688336e-08
+          ],
+          "actualIncidentMembraneEnergySpringCount": 121,
+          "membraneEnergyWorkMapResidualKN_KNmm": [
+            -2.398081733190338e-13,
+            -1.545430450278218e-13,
+            0.0,
+            1.546140993013978e-11,
+            -2.3987922759260982e-11,
+            4.6611148718511686e-08
+          ],
+          "verticalPortMaps": [
+            {
+              "id": "CORNER/SW/0",
+              "index": 0,
+              "nodeDisplacementCoefficients": [
+                0,
+                0,
+                1,
+                -231.1827956989248,
+                231.1827956989248,
+                0
+              ]
+            },
+            {
+              "id": "CORNER/SW/1",
+              "index": 1,
+              "nodeDisplacementCoefficients": [
+                0,
+                0,
+                0,
+                1000.0,
+                0,
+                0
+              ]
+            },
+            {
+              "id": "CORNER/SW/2",
+              "index": 2,
+              "nodeDisplacementCoefficients": [
+                0,
+                0,
+                0,
+                0,
+                1000.0,
+                0
+              ]
+            }
+          ],
+          "jointFootprintRectanglesXYMm": [
+            [
+              262.5,
+              262.5,
+              402.5,
+              1262.5
+            ],
+            [
+              402.5,
+              262.5,
+              1262.5,
+              402.5
+            ]
+          ],
+          "excludedRigidJointVolumeM3": 0.05208,
+          "jointBodyGravityInsertedByObserverKN": 0.0
+        },
+        {
+          "id": "SE",
+          "collectorNodeId": "SE/collector",
+          "referenceXYZMm": [
+            11436.317204301075,
+            563.6827956989248,
+            3170
+          ],
+          "memberEnds": [
+            {
+              "memberId": "SE/upper-wall",
+              "role": "lower",
+              "end": 1,
+              "masterNodeId": "SE/collector",
+              "masterXYZMm": [
+                11436.317204301075,
+                563.6827956989248,
+                3170
+              ],
+              "physicalCutXYZMm": [
+                11436.317204301075,
+                563.6827956989248,
+                3170
+              ],
+              "rawMasterWrenchKN_KNmm": [
+                -52.12745760960925,
+                -46.581184338995214,
+                -97.59751950016994,
+                23210.918684921395,
+                -30703.392417269904,
+                199.95705931504077
+              ],
+              "equivalentBodyLoadMasterKN_KNmm": [
+                0.0,
+                0.0,
+                -14.061600000000002,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "memberId": "JOINED-ROOF/upper-L/SE",
+              "role": "upper",
+              "end": 0,
+              "masterNodeId": "SE/collector",
+              "masterXYZMm": [
+                11436.317204301075,
+                563.6827956989248,
+                3170
+              ],
+              "physicalCutXYZMm": [
+                11436.317204301075,
+                563.6827956989248,
+                3370.0
+              ],
+              "rawMasterWrenchKN_KNmm": [
+                24.09855258019121,
+                33.62472130884703,
+                42.64908433069104,
+                -98011.25633546012,
+                73466.9616195315,
+                814.571870582169
+              ],
+              "equivalentBodyLoadMasterKN_KNmm": [
+                0.0,
+                0.0,
+                -13.929772500000002,
+                -0.0,
+                0.0,
+                0.0
+              ]
+            }
+          ],
+          "componentReactions": [
+            {
+              "id": "actual-vertical-plate",
+              "originXYZMm": [
+                11436.317204301075,
+                563.6827956989248,
+                3170
+              ],
+              "forceOnComponentKN_KNm": [
+                0.0,
+                0.0,
+                26.95706266947849,
+                76.09598395355356,
+                -50.295509705204495,
+                0.0
+              ]
+            },
+            {
+              "id": "actual-in-plane-membrane",
+              "originXYZMm": [
+                11436.317204301075,
+                563.6827956989248,
+                3170
+              ],
+              "forceOnComponentKN_KNm": [
+                28.028905029772822,
+                12.956463030147578,
+                0.0,
+                -1.2956463030147578,
+                2.802890502977282,
+                -1.0145289297989497
+              ]
+            }
+          ],
+          "directAppliedLoads": [
+            {
+              "id": "physical-G-other-actual-collector-cards",
+              "originXYZMm": [
+                11436.317204301075,
+                563.6827956989248,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                1.7763568394002505e-15,
+                -4.547473508864641e-16,
+                4.547473508864641e-16,
+                0.0
+              ]
+            },
+            {
+              "id": "source-pressure-explicit-offset-couples",
+              "originXYZMm": [
+                11436.317204301075,
+                563.6827956989248,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -4.72905,
+                0.0
+              ]
+            },
+            {
+              "id": "fresh-Q-other-actual-collector-cards",
+              "originXYZMm": [
+                11436.317204301075,
+                563.6827956989248,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "id": "roof-additional-actual-collector-cards",
+              "originXYZMm": [
+                11436.317204301075,
+                563.6827956989248,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          ],
+          "actualAppliedMasterWrenchKN_KNmm": [
+            -34.009885638478764,
+            4.399217419415387,
+            -44.59857218379454,
+            -3162.6315653685724,
+            -13004.100521843437,
+            19592.008629606826
+          ],
+          "appliedCardPartitionResidualKN_KNmm": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.8189894035458565e-12,
+            0.0
+          ],
+          "storedButUnappliedCollectorFamiliesKN_KNmm": {},
+          "rawNodalEquilibriumResidualKN_KNmm": [
+            3.547793170355362e-10,
+            -6.084022174945858e-13,
+            -4.0323300254385686e-13,
+            7.503331289626658e-11,
+            3.438594831095543e-08,
+            9.825865276980039e-08
+          ],
+          "actualIncidentMembraneEnergySpringCount": 121,
+          "membraneEnergyWorkMapResidualKN_KNmm": [
+            -3.5432368150623006e-10,
+            6.927791673660977e-13,
+            0.0,
+            -6.957634468562901e-11,
+            -3.543232196534518e-08,
+            -9.834548109211028e-08
+          ],
+          "verticalPortMaps": [
+            {
+              "id": "CORNER/SE/0",
+              "index": 3,
+              "nodeDisplacementCoefficients": [
+                0,
+                0,
+                1,
+                -231.1827956989248,
+                -231.18279569892547,
+                0
+              ]
+            },
+            {
+              "id": "CORNER/SE/1",
+              "index": 4,
+              "nodeDisplacementCoefficients": [
+                0,
+                0,
+                0,
+                1000.0,
+                0,
+                0
+              ]
+            },
+            {
+              "id": "CORNER/SE/2",
+              "index": 5,
+              "nodeDisplacementCoefficients": [
+                0,
+                0,
+                0,
+                0,
+                1000.0,
+                0
+              ]
+            }
+          ],
+          "jointFootprintRectanglesXYMm": [
+            [
+              11597.5,
+              262.5,
+              11737.5,
+              1262.5
+            ],
+            [
+              10737.5,
+              262.5,
+              11597.5,
+              402.5
+            ]
+          ],
+          "excludedRigidJointVolumeM3": 0.05208,
+          "jointBodyGravityInsertedByObserverKN": 0.0
+        },
+        {
+          "id": "NW",
+          "collectorNodeId": "NW/collector",
+          "referenceXYZMm": [
+            584.7222222222222,
+            11415.277777777777,
+            3170
+          ],
+          "memberEnds": [
+            {
+              "memberId": "NW/upper-wall",
+              "role": "lower",
+              "end": 1,
+              "masterNodeId": "NW/collector",
+              "masterXYZMm": [
+                584.7222222222222,
+                11415.277777777777,
+                3170
+              ],
+              "physicalCutXYZMm": [
+                584.7222222222222,
+                11415.277777777777,
+                3170
+              ],
+              "rawMasterWrenchKN_KNmm": [
+                -40.0377376312762,
+                -41.040027144758454,
+                -128.61152170089224,
+                45075.02411270955,
+                -27167.73866871692,
+                -80.19847967385147
+              ],
+              "equivalentBodyLoadMasterKN_KNmm": [
+                0.0,
+                0.0,
+                -19.439999999999998,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "memberId": "JOINED-ROOF/upper-L/NW",
+              "role": "upper",
+              "end": 0,
+              "masterNodeId": "NW/collector",
+              "masterXYZMm": [
+                584.7222222222222,
+                11415.277777777777,
+                3170
+              ],
+              "physicalCutXYZMm": [
+                584.7222222222222,
+                11415.277777777777,
+                3370.0
+              ],
+              "rawMasterWrenchKN_KNmm": [
+                33.75391518051629,
+                25.540293920779163,
+                44.07445001318911,
+                -74458.57085510367,
+                103651.51870257582,
+                -1533.4588370803608
+              ],
+              "equivalentBodyLoadMasterKN_KNmm": [
+                0.0,
+                0.0,
+                -19.25775,
+                -0.0,
+                0.0,
+                0.0
+              ]
+            }
+          ],
+          "componentReactions": [
+            {
+              "id": "actual-vertical-plate",
+              "originXYZMm": [
+                584.7222222222222,
+                11415.277777777777,
+                3170
+              ],
+              "forceOnComponentKN_KNm": [
+                0.0,
+                0.0,
+                45.83932168770333,
+                34.371615689790154,
+                -77.11216227893264,
+                0.0
+              ]
+            },
+            {
+              "id": "actual-in-plane-membrane",
+              "originXYZMm": [
+                584.7222222222222,
+                11415.277777777777,
+                3170
+              ],
+              "forceOnComponentKN_KNm": [
+                6.283822450759356,
+                15.499733223979542,
+                0.0,
+                -1.5499733223979542,
+                0.6283822450759355,
+                1.6136573166998578
+              ]
+            }
+          ],
+          "directAppliedLoads": [
+            {
+              "id": "physical-G-other-actual-collector-cards",
+              "originXYZMm": [
+                584.7222222222222,
+                11415.277777777777,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                -1.4210854715202004e-14,
+                1.8189894035458565e-15,
+                -9.094947017729283e-16,
+                0.0
+              ]
+            },
+            {
+              "id": "source-pressure-explicit-offset-couples",
+              "originXYZMm": [
+                584.7222222222222,
+                11415.277777777777,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                3.4380956250000008,
+                0.0,
+                -4.547473508864641e-16
+              ]
+            },
+            {
+              "id": "fresh-Q-other-actual-collector-cards",
+              "originXYZMm": [
+                584.7222222222222,
+                11415.277777777777,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "id": "roof-additional-actual-collector-cards",
+              "originXYZMm": [
+                584.7222222222222,
+                11415.277777777777,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          ],
+          "actualAppliedMasterWrenchKN_KNmm": [
+            0.31452790498555355,
+            -16.585196446507435,
+            -62.46326309703251,
+            13538.920253265467,
+            7121.6115539503135,
+            -3152.0711456988447
+          ],
+          "appliedCardPartitionResidualKN_KNmm": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -2.7284841053187847e-12,
+            0.0
+          ],
+          "storedButUnappliedCollectorFamiliesKN_KNmm": {},
+          "rawNodalEquilibriumResidualKN_KNmm": [
+            -5.581646256302975e-13,
+            2.498001805406602e-13,
+            2.0961010704922955e-13,
+            -1.9219754676669254e-09,
+            2.191313797084149e-09,
+            -5.4353108680516016e-08
+          ],
+          "actualIncidentMembraneEnergySpringCount": 121,
+          "membraneEnergyWorkMapResidualKN_KNmm": [
+            -4.0234482412415673e-13,
+            -5.537792446830281e-13,
+            0.0,
+            5.5422333389287814e-11,
+            -4.035882739117369e-11,
+            5.372362466005143e-08
+          ],
+          "verticalPortMaps": [
+            {
+              "id": "CORNER/NW/0",
+              "index": 6,
+              "nodeDisplacementCoefficients": [
+                0,
+                0,
+                1,
+                252.22222222222263,
+                252.22222222222217,
+                0
+              ]
+            },
+            {
+              "id": "CORNER/NW/1",
+              "index": 7,
+              "nodeDisplacementCoefficients": [
+                0,
+                0,
+                0,
+                1000.0,
+                0,
+                0
+              ]
+            },
+            {
+              "id": "CORNER/NW/2",
+              "index": 8,
+              "nodeDisplacementCoefficients": [
+                0,
+                0,
+                0,
+                0,
+                1000.0,
+                0
+              ]
+            }
+          ],
+          "jointFootprintRectanglesXYMm": [
+            [
+              262.5,
+              10737.5,
+              462.5,
+              11737.5
+            ],
+            [
+              462.5,
+              11537.5,
+              1262.5,
+              11737.5
+            ]
+          ],
+          "excludedRigidJointVolumeM3": 0.072,
+          "jointBodyGravityInsertedByObserverKN": 0.0
+        },
+        {
+          "id": "NE",
+          "collectorNodeId": "NE/collector",
+          "referenceXYZMm": [
+            11415.277777777777,
+            11415.277777777777,
+            3170
+          ],
+          "memberEnds": [
+            {
+              "memberId": "NE/upper-wall",
+              "role": "lower",
+              "end": 1,
+              "masterNodeId": "NE/collector",
+              "masterXYZMm": [
+                11415.277777777777,
+                11415.277777777777,
+                3170
+              ],
+              "physicalCutXYZMm": [
+                11415.277777777777,
+                11415.277777777777,
+                3170
+              ],
+              "rawMasterWrenchKN_KNmm": [
+                -15.402870775438828,
+                -25.977251577109044,
+                -79.52813645611644,
+                -1.5937007134780288,
+                -7090.331118729868,
+                -182.19929120940313
+              ],
+              "equivalentBodyLoadMasterKN_KNmm": [
+                0.0,
+                0.0,
+                -19.439999999999998,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "memberId": "JOINED-ROOF/upper-L/NE",
+              "role": "upper",
+              "end": 0,
+              "masterNodeId": "NE/collector",
+              "masterXYZMm": [
+                11415.277777777777,
+                11415.277777777777,
+                3170
+              ],
+              "physicalCutXYZMm": [
+                11415.277777777777,
+                11415.277777777777,
+                3370.0
+              ],
+              "rawMasterWrenchKN_KNmm": [
+                12.73124453666236,
+                12.756825993141206,
+                31.647490793201086,
+                -21073.491710377508,
+                23124.775954933022,
+                450.55088423189216
+              ],
+              "equivalentBodyLoadMasterKN_KNmm": [
+                0.0,
+                0.0,
+                -19.25775,
+                -0.0,
+                0.0,
+                0.0
+              ]
+            }
+          ],
+          "componentReactions": [
+            {
+              "id": "actual-vertical-plate",
+              "originXYZMm": [
+                11415.277777777777,
+                11415.277777777777,
+                3170
+              ],
+              "forceOnComponentKN_KNm": [
+                0.0,
+                0.0,
+                9.182895662915321,
+                25.83522359448538,
+                -21.030657460081876,
+                0.0
+              ]
+            },
+            {
+              "id": "actual-in-plane-membrane",
+              "originXYZMm": [
+                11415.277777777777,
+                11415.277777777777,
+                3170
+              ],
+              "forceOnComponentKN_KNm": [
+                2.6716262329772817,
+                13.220425582049355,
+                0.0,
+                -1.3220425582049353,
+                0.26716262329772816,
+                -0.268351592074477
+              ]
+            }
+          ],
+          "directAppliedLoads": [
+            {
+              "id": "physical-G-other-actual-collector-cards",
+              "originXYZMm": [
+                11415.277777777777,
+                11415.277777777777,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                -7.105427357601002e-15,
+                -1.8189894035458565e-15,
+                9.094947017729283e-16,
+                0.0
+              ]
+            },
+            {
+              "id": "source-pressure-explicit-offset-couples",
+              "originXYZMm": [
+                11415.277777777777,
+                11415.277777777777,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                3.4380956250000003,
+                -4.72905,
+                0.0
+              ]
+            },
+            {
+              "id": "fresh-Q-other-actual-collector-cards",
+              "originXYZMm": [
+                11415.277777777777,
+                11415.277777777777,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "id": "roof-additional-actual-collector-cards",
+              "originXYZMm": [
+                11415.277777777777,
+                11415.277777777777,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          ],
+          "actualAppliedMasterWrenchKN_KNmm": [
+            -24.897270601830677,
+            -26.879409486958497,
+            -64.51529457357668,
+            17391.247640498823,
+            -15745.434608955306,
+            -1345.304445096846
+          ],
+          "appliedCardPartitionResidualKN_KNmm": [
+            0.0,
+            0.0,
+            0.0,
+            -3.637978807091713e-12,
+            1.8189894035458565e-12,
+            0.0
+          ],
+          "storedButUnappliedCollectorFamiliesKN_KNmm": {},
+          "rawNodalEquilibriumResidualKN_KNmm": [
+            -5.7991869084617065e-09,
+            -1.9184831501206645e-09,
+            -2.4868995751603507e-14,
+            1.8945092961075716e-07,
+            -5.809911272081081e-07,
+            9.480123424054909e-07
+          ],
+          "actualIncidentMembraneEnergySpringCount": 121,
+          "membraneEnergyWorkMapResidualKN_KNmm": [
+            5.7984195223070856e-09,
+            1.9185932842447073e-09,
+            0.0,
+            -1.9185904420737643e-07,
+            5.79841980652418e-07,
+            -9.481636880082078e-07
+          ],
+          "verticalPortMaps": [
+            {
+              "id": "CORNER/NE/0",
+              "index": 9,
+              "nodeDisplacementCoefficients": [
+                0,
+                0,
+                1,
+                252.22222222222263,
+                -252.22222222222263,
+                0
+              ]
+            },
+            {
+              "id": "CORNER/NE/1",
+              "index": 10,
+              "nodeDisplacementCoefficients": [
+                0,
+                0,
+                0,
+                1000.0,
+                0,
+                0
+              ]
+            },
+            {
+              "id": "CORNER/NE/2",
+              "index": 11,
+              "nodeDisplacementCoefficients": [
+                0,
+                0,
+                0,
+                0,
+                1000.0,
+                0
+              ]
+            }
+          ],
+          "jointFootprintRectanglesXYMm": [
+            [
+              11537.5,
+              10737.5,
+              11737.5,
+              11737.5
+            ],
+            [
+              10737.5,
+              11537.5,
+              11537.5,
+              11737.5
+            ]
+          ],
+          "excludedRigidJointVolumeM3": 0.072,
+          "jointBodyGravityInsertedByObserverKN": 0.0
+        }
+      ],
+      "nonlinearSolvesExecuted": 1,
+      "sourceSHA256": {
+        "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+        "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+        "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+        "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+        "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+        "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+        "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+        "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+        "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+        "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+        "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+        "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+        "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+        "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+        "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+        "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+        "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+        "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+        "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+        "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+        "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+        "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+        "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+        "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+        "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+        "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+        "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+        "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+        "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
+        "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+        "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
+        "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
+        "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
+        "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521",
+        "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+        "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+        "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
+        "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
+        "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
+        "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
+        "project/str/studies/foundation_solid_weight.py": "32b56c32e47217d17806a2a6cc3f0c997e52c5dbf70feb7c9c155bdf7077e0f7",
+        "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
+        "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
+        "project/str/studies/floor_reinforcement.py": "e904f747686fdf3811f78ab7917ad9d3972c1d464be8960d66de61801d7c4bec",
+        "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c",
+        "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
+        "project/str/studies/straight_frame_cage.py": "6404893c699b7179b8380afc8dfcb8d25ae6725e20c2897987917de7e83c511e",
+        "project/str/studies/upper_roof_bearing.py": "bd6b5b4e139ea022eece8040cd031c1d52a7126683af26a39eac8bb16e02b3f2",
+        "project/str/studies/named_plate_load.py": "c0b24595548325d80843c39e217990a489d54a0e0c4d83bb7f9181ceb5d8e5d2",
+        "project/str/studies/upper_masonry_inventory.py": "308531fd0e5c2de62dabc09dc31882def9f91082c60b17205b2de14231b82501",
+        "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
+        "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
+        "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
+        "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
+        "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
+        "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
+      },
+      "request": {
+        "schema": "str-coupled-floor-section-case/1",
+        "sourceSHA256": {
+          "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+          "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+          "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+          "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+          "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+          "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+          "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+          "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+          "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+          "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+          "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+          "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+          "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+          "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+          "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+          "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+          "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+          "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+          "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+          "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+          "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+          "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+          "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+          "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+          "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+          "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+          "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+          "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+          "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
+          "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+          "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
+          "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
+          "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
+          "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521",
+          "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+          "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+          "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
+          "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
+          "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
+          "project/str/studies/foundation_solid_weight.py": "32b56c32e47217d17806a2a6cc3f0c997e52c5dbf70feb7c9c155bdf7077e0f7",
+          "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
+          "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
+          "project/str/studies/floor_reinforcement.py": "e904f747686fdf3811f78ab7917ad9d3972c1d464be8960d66de61801d7c4bec",
+          "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c",
+          "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
+          "project/str/studies/straight_frame_cage.py": "6404893c699b7179b8380afc8dfcb8d25ae6725e20c2897987917de7e83c511e",
+          "project/str/studies/upper_roof_bearing.py": "bd6b5b4e139ea022eece8040cd031c1d52a7126683af26a39eac8bb16e02b3f2",
+          "project/str/studies/named_plate_load.py": "c0b24595548325d80843c39e217990a489d54a0e0c4d83bb7f9181ceb5d8e5d2",
+          "project/str/studies/upper_masonry_inventory.py": "308531fd0e5c2de62dabc09dc31882def9f91082c60b17205b2de14231b82501",
+          "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
+          "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
+          "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
+          "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
+          "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
+          "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
+        },
+        "bearingCase": {
+          "schema": "str-upper-masonry-roof-bearing-case/1",
+          "sourceSHA256": {
+            "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+            "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+            "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+            "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+            "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+            "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+            "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+            "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+            "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+            "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+            "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+            "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+            "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+            "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+            "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+            "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+            "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+            "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+            "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+            "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+            "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+            "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+            "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+            "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+            "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+            "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+            "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+            "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+            "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+            "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+            "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
+            "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+            "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
+            "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
+            "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
+            "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521",
+            "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+            "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+            "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
+            "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
+            "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
+            "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
+            "project/str/studies/foundation_solid_weight.py": "32b56c32e47217d17806a2a6cc3f0c997e52c5dbf70feb7c9c155bdf7077e0f7",
+            "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
+            "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
+            "project/str/studies/floor_reinforcement.py": "e904f747686fdf3811f78ab7917ad9d3972c1d464be8960d66de61801d7c4bec",
+            "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c",
+            "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
+            "project/str/studies/straight_frame_cage.py": "6404893c699b7179b8380afc8dfcb8d25ae6725e20c2897987917de7e83c511e",
+            "project/str/studies/upper_roof_bearing.py": "bd6b5b4e139ea022eece8040cd031c1d52a7126683af26a39eac8bb16e02b3f2",
+            "project/str/studies/named_plate_load.py": "c0b24595548325d80843c39e217990a489d54a0e0c4d83bb7f9181ceb5d8e5d2",
+            "project/str/studies/upper_masonry_inventory.py": "308531fd0e5c2de62dabc09dc31882def9f91082c60b17205b2de14231b82501",
+            "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e"
+          },
+          "masonryCase": {
+            "schema": "str-masonry-frame-a-case/1",
+            "sourceSHA256": {
+              "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+              "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+              "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+              "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+              "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+              "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+              "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+              "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+              "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+              "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+              "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+              "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+              "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+              "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+              "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+              "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+              "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+              "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+              "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+              "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+              "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+              "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+              "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+              "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+              "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+              "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+              "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+              "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+              "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+              "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+              "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
+              "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+              "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
+              "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
+              "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
+              "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521",
+              "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+              "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+              "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
+              "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
+              "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
+              "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
+              "project/str/studies/foundation_solid_weight.py": "32b56c32e47217d17806a2a6cc3f0c997e52c5dbf70feb7c9c155bdf7077e0f7",
+              "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
+              "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
+              "project/str/studies/floor_reinforcement.py": "e904f747686fdf3811f78ab7917ad9d3972c1d464be8960d66de61801d7c4bec",
+              "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c",
+              "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
+              "project/str/studies/straight_frame_cage.py": "6404893c699b7179b8380afc8dfcb8d25ae6725e20c2897987917de7e83c511e"
+            },
+            "verticalCase": {
+              "schema": "str-vertical-rc-floor-case/1",
+              "sourceSHA256": {
+                "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+                "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+                "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+                "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+                "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+                "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+                "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+                "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+                "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+                "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+                "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+                "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+                "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+                "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+                "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+                "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+                "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+                "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+                "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+                "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+                "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+                "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+                "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+                "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+                "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+                "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+                "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+                "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+                "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+                "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
+                "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+                "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
+                "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
+                "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
+                "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521"
+              },
+              "monolithicCase": {
+                "schema": "str-monolithic-rc-portal-case/1",
+                "sourceSHA256": {
+                  "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+                  "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+                  "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+                  "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+                  "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+                  "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+                  "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+                  "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+                  "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+                  "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+                  "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+                  "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+                  "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+                  "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+                  "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+                  "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+                  "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+                  "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+                  "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                  "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+                  "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+                  "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+                  "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+                  "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+                  "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+                  "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+                  "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+                  "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+                  "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+                  "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+                  "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137"
+                },
+                "houseCase": {
+                  "schema": "str-rc-floor-house-load-case/1",
+                  "sourceSHA256": {
+                    "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+                    "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+                    "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+                    "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+                    "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+                    "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+                    "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+                    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+                    "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+                    "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+                    "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+                    "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+                    "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+                    "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+                    "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+                    "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+                    "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+                    "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+                    "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                    "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+                    "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+                    "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+                    "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+                    "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+                    "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+                    "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+                    "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+                    "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+                    "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+                    "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6"
+                  },
+                  "joinedCase": {
+                    "schema": "str-joined-rc-floor-case/1",
+                    "sourceSHA256": {
+                      "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+                      "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+                      "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+                      "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+                      "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+                      "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+                      "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+                      "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+                      "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+                      "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+                      "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+                      "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+                      "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+                      "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+                      "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+                      "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+                      "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+                      "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+                      "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                      "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+                      "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+                      "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+                      "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+                      "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+                      "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+                      "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+                      "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+                      "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+                      "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4"
+                    },
+                    "portal": {
+                      "schema": "str-continuous-rc-portal-case/1",
+                      "sourceSHA256": {
+                        "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+                        "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+                        "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+                        "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+                        "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+                        "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+                        "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+                        "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+                        "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+                        "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+                        "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+                        "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+                        "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+                        "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+                        "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+                        "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+                        "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+                        "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+                        "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                        "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+                        "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+                        "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+                        "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+                        "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+                        "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+                        "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+                        "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7"
+                      },
+                      "scheme": "fullheight-piers-integral-curved-ring-no-tie-no-bore",
+                      "gridLaw": {
+                        "mode": "authored-linear-comparison",
+                        "elasticModulusMPa": 33000,
+                        "poissonRatio": 0.2,
+                        "flexuralFactor": 0.25,
+                        "torsionFactor": 0.25,
+                        "shearAreaFactor": 0.5
+                      },
+                      "frameLaw": {
+                        "mode": "authored-linear-comparison",
+                        "elasticModulusMPa": 33000,
+                        "poissonRatio": 0.2,
+                        "flexuralFactor": 0.25,
+                        "torsionFactor": 0.25,
+                        "shearAreaFactor": 0.5
+                      },
+                      "dpcLaw": {
+                        "mode": "authored-bilateral-elastic-comparison",
+                        "normalStiffnessKNPerMm3": 0.5,
+                        "shearStiffnessKNPerMm3": 0.05
+                      },
+                      "dpcIntervalZMm": [
+                        -50,
+                        -30
+                      ],
+                      "coverMm": 40,
+                      "archSegments": 24,
+                      "infillHeadGapMm": 30,
+                      "jointZone": "authored-monolithic-rigid-end-offset-comparison",
+                      "headBoundary": "source52-ideal-pinned-translations-free-rotations",
+                      "use": "unqualified-continuous-rc-challenger"
+                    },
+                    "floor": {
+                      "schema": "str-distributed-floor-case/1",
+                      "sourceSHA256": {
+                        "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+                        "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+                        "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+                        "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+                        "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+                        "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+                        "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+                        "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+                        "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+                        "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+                        "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+                        "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+                        "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+                        "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+                        "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+                        "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+                        "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+                        "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+                        "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                        "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+                        "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+                        "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+                        "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+                        "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3"
+                      },
+                      "cornerWidthsMm": {
+                        "NW": 200,
+                        "NE": 200,
+                        "SW": 140,
+                        "SE": 140
+                      },
+                      "memberLaw": {
+                        "mode": "authored-linear-comparison",
+                        "elasticModulusMPa": 33000,
+                        "poissonRatio": 0.2,
+                        "flexuralFactor": 0.25,
+                        "torsionFactor": 0.25,
+                        "shearAreaFactor": 0.5
+                      },
+                      "jointLaw": {
+                        "mode": "authored-spring-comparison",
+                        "compressionStiffnessKNPerMm3": 0.5,
+                        "tieStiffnessKNPerMm": 50,
+                        "shearKeyStiffnessKNPerMm": 100,
+                        "compressionGapMm": 0,
+                        "tieGapMm": 0
+                      },
+                      "membraneLaw": {
+                        "mode": "authored-linear-comparison",
+                        "elasticModulusMPa": 1200,
+                        "poissonRatio": 0.15,
+                        "shearModulusMPa": 440
+                      },
+                      "edgeBand": {
+                        "mode": "authored-conventional-slab-level-band",
+                        "widthMm": 140,
+                        "depthMm": 200,
+                        "elasticModulusMPa": 33000,
+                        "flexuralFactor": 0.25,
+                        "axialRigidityKN": 180955.73684677208
+                      },
+                      "maxPitchMm": 1400,
+                      "componentCase": {
+                        "schema": "str-retained-components-case/1",
+                        "sourceSHA256": {
+                          "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+                          "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+                          "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+                          "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+                          "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+                          "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+                          "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+                          "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+                          "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+                          "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+                          "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8"
+                        },
+                        "edits": {
+                          "floorApertures": [],
+                          "wallOpenings": []
+                        },
+                        "retentionPaths": []
+                      },
+                      "boundaryCase": {
+                        "kind": "native-floor-wind-band-only",
+                        "windIndex": 31
+                      },
+                      "receivingLaws": {
+                        "successorRoof": null,
+                        "verticalFloor": null,
+                        "dryGround": null,
+                        "intermediateSupports": {
+                          "FLOOR/RECEIVER/court-east/3917.5": null,
+                          "FLOOR/RECEIVER/court-east/6000.0": null,
+                          "FLOOR/RECEIVER/court-east/8082.5": null,
+                          "FLOOR/RECEIVER/court-north/3917.5": null,
+                          "FLOOR/RECEIVER/court-north/4377.5": null,
+                          "FLOOR/RECEIVER/court-north/7622.5": null,
+                          "FLOOR/RECEIVER/court-north/8082.5": null,
+                          "FLOOR/RECEIVER/court-south/3917.5": null,
+                          "FLOOR/RECEIVER/court-south/4785": null,
+                          "FLOOR/RECEIVER/court-south/7215": null,
+                          "FLOOR/RECEIVER/court-south/8082.5": null,
+                          "FLOOR/RECEIVER/court-west/3917.5": null,
+                          "FLOOR/RECEIVER/court-west/6000.0": null,
+                          "FLOOR/RECEIVER/court-west/8082.5": null,
+                          "FLOOR/RECEIVER/outer-east/3100.0": null,
+                          "FLOOR/RECEIVER/outer-east/5786.5": null,
+                          "FLOOR/RECEIVER/outer-east/8613.5": null,
+                          "FLOOR/RECEIVER/outer-north/2825.0": null,
+                          "FLOOR/RECEIVER/outer-north/4377.5": null,
+                          "FLOOR/RECEIVER/outer-north/7622.5": null,
+                          "FLOOR/RECEIVER/outer-north/9175.0": null,
+                          "FLOOR/RECEIVER/outer-south/2850.0": null,
+                          "FLOOR/RECEIVER/outer-south/4750.0": null,
+                          "FLOOR/RECEIVER/outer-south/7250.0": null,
+                          "FLOOR/RECEIVER/outer-south/9150.0": null,
+                          "FLOOR/RECEIVER/outer-west/3200.0": null,
+                          "FLOOR/RECEIVER/outer-west/6000.0": null,
+                          "FLOOR/RECEIVER/outer-west/8800.0": null
+                        }
+                      },
+                      "use": "bounded-diaphragm-comparison"
+                    },
+                    "geometry": {
+                      "outerUpstandDepthMm": 750,
+                      "courtUpstandDepthMm": 650
+                    },
+                    "portalDPCNormalMode": "compression",
+                    "portalDPCNormalIntegration": "exact-active-patch",
+                    "portalDPCQuadratureOrder": 8,
+                    "portalDPCNormalSubdivisions": 4,
+                    "portalDPCInsetMm": 0,
+                    "floorBoundary": "passive-floor-receiving-local-portal-challenges",
+                    "northUnion": "full-3D-upstand-owns-central-north-band-material",
+                    "use": "unqualified-eight-path-joined-comparison"
+                  },
+                  "coreAxialWidthMm": 290,
+                  "northUpstandWidthMm": 290.0,
+                  "finishedAxialWidthMm": 775,
+                  "mineralFaceLiningMm": 40,
+                  "boundary": {
+                    "kind": "native-floor-and-actual-open-north-portal-replacement",
+                    "physicalGFactor": 1.35,
+                    "includeExternalGMAXQ": false
+                  },
+                  "courtyardPressure": null,
+                  "reinforcement": "separate-worked-cage-proof-required",
+                  "use": "unqualified-source-loaded-RC-house-subsystem"
+                },
+                "jointMode": "finite-RC-20mm-former-DPC-continuity-diagnostic",
+                "waterControl": "coordinate-defined-metal-puddle-and-sealed-rod-concept-unqualified",
+                "barGeometry": {
+                  "diameterMm": 12,
+                  "nominalCoverMm": 45,
+                  "minimumCoverMm": 40,
+                  "roundedLinkBarFaceMm": 69
+                },
+                "use": "unqualified-continuous-RC-structural-replacement"
+              },
+              "plateLaw": {
+                "elasticModulusMPa": 33000,
+                "poissonRatio": 0.2,
+                "thicknessMm": 200,
+                "flexuralFactor": 0.25,
+                "shearFactor": 0.5,
+                "unitWeightKNPerM3": 27.0
+              },
+              "bearingLaw": {
+                "masonryModulusMPa": 1000,
+                "jointNormalComplianceMmPerMPa": 0.01
+              },
+              "maxPitchMm": 1000,
+              "bearingQuadratureOrder": 4,
+              "freshUniformLiveKPa": 2.0,
+              "geometryPolicy": "actual-source-voids-and-service-envelopes-plus-slab-band-union-with-withheld-wet-domain",
+              "supportPolicy": "finite-clear-core-vertical-compression-only",
+              "use": "unqualified-vertical-floor-gravity-comparison"
+            },
+            "masonrySeatProjectionMm": 180.0,
+            "masonryUnitWeightKNM3": 20.0,
+            "abutmentSlices": 12,
+            "foundationWeight": {
+              "unitWeightKNPerM3": 25.0,
+              "gravityFactor": 1.0
+            },
+            "courtCornerClosure": {
+              "mode": "source-sw-formed-quarter-node-comparison"
+            },
+            "floorReinforcement": {
+              "schema": "str-floor-reinforcement-settings/1",
+              "barDiameterMm": 16.0,
+              "pitchMm": 80.0,
+              "mainBarNominalCoverMm": 50.0,
+              "minimumCoverMm": 40.0,
+              "cageSettingToleranceMm": 5.0,
+              "independentBarToleranceMm": 5.0,
+              "minimumIndependentClearMm": 21.0,
+              "steelYieldMPa": 434.7826086956522,
+              "strengthSteelFraction": 0.92,
+              "bondMPa": 2.0999999999999996,
+              "concreteCompressionMPa": 17.0,
+              "mandrelMm": 160.0,
+              "leverArmFactor": 0.9,
+              "comparisonDeeperSectionMm": 320.0,
+              "lapMultiplier": 1.5,
+              "use": "unqualified-conventional-section-and-anchorage-comparison"
+            },
+            "lowerCoreBodies": {
+              "masonryUnitWeightKNPerM3": 20.0
+            },
+            "lowerLWeight": {
+              "unitWeightKNPerM3": 25.0
+            },
+            "straightFrameCage": {
+              "schema": "str-straight-frame-six-bar-settings/1",
+              "postBarMm": 16.0,
+              "beamBarMm": 10.0,
+              "lowerWingBarMm": 16.0,
+              "postTopEndInsetMm": 59.0,
+              "lowerWingEndZMm": 2250.0,
+              "wingNormalOffsetMm": 70.0,
+              "wingInnerFaceInsetMm": 85.0,
+              "capPostEndLevelsZMm": [
+                -680.0,
+                -600.0
+              ],
+              "capWingEndZMm": -680.0,
+              "beamReturnLegWestXMm": {
+                "top": 4380.0,
+                "bottom": 4440.0
+              },
+              "capMatEWFrameOffsetsMm": [
+                -170.0,
+                0.0,
+                170.0
+              ],
+              "headProduct": "Leviat Ancon TTH16",
+              "headDiameterMm": 50.0,
+              "headLengthMm": 33.0,
+              "headTorqueNm": 110.0
+            },
+            "use": "unqualified-separate-masonry-and-straight-RC-frame",
+            "roofCoupling": null
+          },
+          "seats": [
+            {
+              "id": "ROOF/FLOOR/332.5,3800",
+              "xyMm": [
+                332.5,
+                3800
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/332.5,6000",
+              "xyMm": [
+                332.5,
+                6000
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/332.5,8200",
+              "xyMm": [
+                332.5,
+                8200
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/3917.5,3917.5",
+              "xyMm": [
+                4050.0,
+                3917.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/3917.5,6000",
+              "xyMm": [
+                3917.5,
+                6000
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/3917.5,8082.5",
+              "xyMm": [
+                4050.0,
+                8082.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/4700,332.5",
+              "xyMm": [
+                4700,
+                332.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/4700,11667.5",
+              "xyMm": [
+                4500.0,
+                11667.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/5925,8082.5",
+              "xyMm": [
+                5925,
+                8082.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/6000,3917.5",
+              "xyMm": [
+                6000,
+                3917.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/7300,332.5",
+              "xyMm": [
+                7300,
+                332.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/7300,11667.5",
+              "xyMm": [
+                7300,
+                11667.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/8082.5,3917.5",
+              "xyMm": [
+                7950.0,
+                3917.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/8082.5,6000",
+              "xyMm": [
+                8082.5,
+                6000
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/8082.5,8082.5",
+              "xyMm": [
+                7950.0,
+                8082.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/11667.5,3800",
+              "xyMm": [
+                11667.5,
+                3800
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/11667.5,6000",
+              "xyMm": [
+                11667.5,
+                6100.0
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/11667.5,8200",
+              "xyMm": [
+                11667.5,
+                8200
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            }
+          ],
+          "roofControls": {
+            "schema": "str-roof-floor-coupling-settings/1",
+            "upperFrameLaw": {
+              "mode": "authored-linear-comparison",
+              "elasticModulusMPa": 33000,
+              "poissonRatio": 0.2,
+              "flexuralFactor": 0.25,
+              "torsionFactor": 0.25,
+              "shearAreaFactor": 0.5
+            },
+            "upperUnitWeightKNPerM3": 25.0,
+            "ringPlanEIRatio": 1.0,
+            "ridgeJointKRatio": 1.0,
+            "roofWindFactor": 1.0,
+            "roofSteelGravity": {
+              "unitWeightKNPerM3": 78.5
+            },
+            "roofSurfacePressure": null,
+            "use": "unqualified-source0-roof-P2-and-crown-coupling"
+          },
+          "masonryUnitWeightKNPerM3": 20.0,
+          "masonryModulusMPa": 3000.0,
+          "jointNormalComplianceMmPerMPa": 0.1,
+          "padThicknessMm": 10.0,
+          "padUnitWeightKNPerM3": 78.5,
+          "use": "unselected-upper-clear-masonry-and-axial-roof-seat-comparison"
+        },
+        "thicknessMm": 200.0,
+        "wetSupport": {
+          "beamWidthMm": 250.0,
+          "beamDepthMm": 350.0,
+          "beamAxisXMm": 2902.5,
+          "beamSouthEndYMm": 8782.5,
+          "beamNorthEndYMm": 11737.5,
+          "beamTopZMm": 3370.0,
+          "receiverRectanglesXYMm": [
+            [
+              2772.5,
+              8627.5,
+              3032.5,
+              9077.5
+            ],
+            [
+              2772.5,
+              11287.5,
+              3032.5,
+              11737.5
+            ]
+          ],
+          "padCentreOffsetsYMm": [
+            0.0,
+            0.0
+          ],
+          "padWidthMm": 220.0,
+          "padLengthMm": 100.0,
+          "padThicknessMm": 10.0,
+          "combinedRelativePlacementToleranceMm": 10.0,
+          "bearingQuadratureOrder": 8,
+          "jointNormalComplianceMmPerMPa": 0.1,
+          "padUnitWeightKNPerM3": 78.5,
+          "concreteUnitWeightKNPerM3": 25.0,
+          "maxBeamPitchMm": 500.0,
+          "scope": "unselected-finite-gravity-support-no-friction-or-moment-frame-credit"
+        },
+        "use": "unselected-source0-section-replacement-with-fixed-origin-load-controls"
+      },
+      "requestSHA256": "04e0d748801e3498d0372c4ccea9c64fa915044e7f02989f3f12dcac1795dea4",
+      "caseId": "wet-aligned-quadrature8",
+      "methodSourceSHA256": {
+        "project/str/studies/four_l_joint_observer.py": "71c45c6f458e905568bda1b275192695dbadc34653e1c55ab13833fcfe0037fd",
+        "project/str/studies/four_l_joint_recovery.py": "8350a77cafa21dadf7dc8b4e6137fc9f27b77efd862faed68fde8ce4ba65073d"
+      },
+      "fullNativeResultSHA256": "f1ec53827f91fa3597ede8285368605073910d8a74fd7659de740af2bf7aa121",
+      "heads": [
+        {
+          "id": "P01",
+          "reactionKN_KNm": [
+            -102.16033731658159,
+            -78.20868173029866,
+            284.72323888618223,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P02",
+          "reactionKN_KNm": [
+            93.98171397664731,
+            2.6365156100876197,
+            -24.40959152783373,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P03",
+          "reactionKN_KNm": [
+            0.09046517133520826,
+            74.80143506941646,
+            -15.516087978267812,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P04",
+          "reactionKN_KNm": [
+            -465.4184359544165,
+            -302.5371205294185,
+            83.56531644729418,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P05",
+          "reactionKN_KNm": [
+            274.51921459226963,
+            2.5001484061873125,
+            134.2584945819388,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P06",
+          "reactionKN_KNm": [
+            -0.3369068555420256,
+            211.85340687740847,
+            -74.73466825238827,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P07",
+          "reactionKN_KNm": [
+            -241.2293104284895,
+            -431.4906681844085,
+            94.36682101757724,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P08",
+          "reactionKN_KNm": [
+            181.08451958759733,
+            6.374164637370804,
+            -63.62326725553455,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P09",
+          "reactionKN_KNm": [
+            5.764778274337889,
+            258.12394049123,
+            160.78261124064258,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P10",
+          "reactionKN_KNm": [
+            -154.01976434624962,
+            -201.91293376278588,
+            -65.8988557274723,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P11",
+          "reactionKN_KNm": [
+            131.7253112070047,
+            2.31667354158753,
+            64.0355520983827,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P12",
+          "reactionKN_KNm": [
+            -2.3470402278264193,
+            71.91240336488488,
+            152.7227874292563,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P13",
+          "reactionKN_KNm": [
+            40.38221047369044,
+            36.41306858593678,
+            102.8245033691961,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P14",
+          "reactionKN_KNm": [
+            17.415876001957695,
+            64.67359712752122,
+            38.24044992386977,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P15",
+          "reactionKN_KNm": [
+            -0.5956671333686379,
+            28.792045900718605,
+            74.62154042992262,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P16",
+          "reactionKN_KNm": [
+            51.80948052538346,
+            106.87528497860654,
+            152.04792447695903,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P17",
+          "reactionKN_KNm": [
+            -33.70637017925233,
+            83.29962443913416,
+            93.46850595021382,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P18",
+          "reactionKN_KNm": [
+            -62.58875301755996,
+            3.5161417533966954,
+            125.11768424075632,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P19",
+          "reactionKN_KNm": [
+            -45.61326616663925,
+            188.03281552568657,
+            151.25534175197353,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P20",
+          "reactionKN_KNm": [
+            30.60743224072023,
+            -0.8441059711380148,
+            33.1996189602145,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P21",
+          "reactionKN_KNm": [
+            53.20121210445663,
+            4.318485105585563,
+            48.47819935760337,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P22",
+          "reactionKN_KNm": [
+            59.71772473833762,
+            56.901278896921404,
+            107.65690975028326,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P23",
+          "reactionKN_KNm": [
+            119.21124470679827,
+            46.41890560280941,
+            143.94719440146426,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P24",
+          "reactionKN_KNm": [
+            102.74336272752315,
+            -26.671177189325068,
+            42.22650854371648,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P25",
+          "reactionKN_KNm": [
+            0.9821207966982346,
+            -52.96125057153827,
+            93.29903875171024,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P26",
+          "reactionKN_KNm": [
+            -37.368820572599134,
+            -53.03029363276274,
+            159.5376844254646,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P27",
+          "reactionKN_KNm": [
+            81.56423499909994,
+            -2.1367887882426615,
+            56.9115667406772,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P28",
+          "reactionKN_KNm": [
+            -5.68208506366903,
+            1.08273446079553,
+            120.20812874098507,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P29",
+          "reactionKN_KNm": [
+            -9.752909585957225,
+            56.770376709939995,
+            84.85192840652437,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P30",
+          "reactionKN_KNm": [
+            -50.162927807775176,
+            9.660192548715623,
+            257.6404912932346,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P31",
+          "reactionKN_KNm": [
+            11.776946325071327,
+            51.59924227938336,
+            102.97859055754442,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P32",
+          "reactionKN_KNm": [
+            -1.4298379730734552,
+            -6.2583446085394145,
+            54.178167080972194,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P33",
+          "reactionKN_KNm": [
+            -0.01337319585574448,
+            14.694185440963878,
+            33.537025342629136,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P34",
+          "reactionKN_KNm": [
+            23.983213737984396,
+            -5.304252764774855,
+            55.263405207098,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P35",
+          "reactionKN_KNm": [
+            2.1687356477672455,
+            23.316065513153145,
+            70.02059182188766,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P36",
+          "reactionKN_KNm": [
+            0.5861452371236516,
+            3.1701865746324494,
+            36.81153879082562,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P37",
+          "reactionKN_KNm": [
+            13.628326126445993,
+            -18.5117940535752,
+            -16.56221035494714,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P38",
+          "reactionKN_KNm": [
+            -15.11100240817818,
+            -1.0414899451372062,
+            52.68932489763984,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P39",
+          "reactionKN_KNm": [
+            4.9987196595724495,
+            0.6470233235973679,
+            10.9763178358337,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P40",
+          "reactionKN_KNm": [
+            5.794902802346858,
+            0.10175591564478026,
+            37.92000006858589,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P41",
+          "reactionKN_KNm": [
+            17.61765643788334,
+            -64.92285874383307,
+            141.54578082977858,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P42",
+          "reactionKN_KNm": [
+            11.558242680815647,
+            14.429818696982972,
+            114.99938792876249,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P43",
+          "reactionKN_KNm": [
+            60.00298461735428,
+            -74.45366504221391,
+            138.05720375397203,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P44",
+          "reactionKN_KNm": [
+            80.51374343936567,
+            101.40951406707971,
+            175.74780497198788,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P45",
+          "reactionKN_KNm": [
+            -29.953494060850165,
+            21.30483860424643,
+            103.87941701235906,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P46",
+          "reactionKN_KNm": [
+            -0.17414140993018748,
+            -20.78907825086126,
+            70.62863361600955,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P47",
+          "reactionKN_KNm": [
+            -39.383266019726214,
+            33.49213209915806,
+            143.0696638545304,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P48",
+          "reactionKN_KNm": [
+            -13.399868336533292,
+            2.619566152616205,
+            67.18321630975198,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P49",
+          "reactionKN_KNm": [
+            -2.459558775276259,
+            -7.294619166406518,
+            42.31626030403153,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P50",
+          "reactionKN_KNm": [
+            20.770738245624827,
+            15.067625649894147,
+            48.416186034348705,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P51",
+          "reactionKN_KNm": [
+            -22.964165135943233,
+            -4.536338529690526,
+            112.08121542080966,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P52",
+          "reactionKN_KNm": [
+            24.41658731798041,
+            -60.10985904539886,
+            92.71011676173414,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "physicalCutSHA256": "d82a787f1ccecd8cc98c5250e4673680f7090e9f53c67c629cc92f3e5d4beeea",
+      "physicalHeadCount": 52,
+      "maximumPlateReactionDifferenceFromNativePhysicalRecovery": 2.2664359278223856e-10,
+      "finiteJointCapacityAvailable": false,
+      "completeHouseProof": false,
+      "candidateAccepted": false
+    },
+    "freeBodies": {
+      "schema": "str-four-L-joint-free-bodies/1",
+      "joints": [
+        {
+          "id": "SW",
+          "referenceXYZMm": [
+            563.6827956989248,
+            563.6827956989248,
+            3170
+          ],
+          "memberCuts": [
+            {
+              "memberId": "SW/upper-wall",
+              "role": "lower",
+              "end": 1,
+              "masterNodeId": "SW/collector",
+              "masterXYZMm": [
+                563.6827956989248,
+                563.6827956989248,
+                3170
+              ],
+              "physicalCutXYZMm": [
+                563.6827956989248,
+                563.6827956989248,
+                3170
+              ],
+              "rawMasterWrenchKN_KNmm": [
+                -35.62855333925606,
+                -33.98677345849064,
+                -169.65729068089547,
+                -33024.72281860976,
+                23332.48786421532,
+                -24.566801574946652
+              ],
+              "equivalentBodyLoadMasterKN_KNmm": [
+                0.0,
+                0.0,
+                -14.061600000000002,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "forceOnMemberAtPhysicalCutKN_KNm": [
+                -35.62855333925606,
+                -33.98677345849064,
+                -155.59569068089547,
+                -33.02472281860976,
+                23.33248786421532,
+                -0.024566801574946652
+              ],
+              "memberOnJointAtReferenceKN_KNm": [
+                35.62855333925606,
+                33.98677345849064,
+                155.59569068089547,
+                33.02472281860976,
+                -23.33248786421532,
+                0.024566801574946652
+              ]
+            },
+            {
+              "memberId": "JOINED-ROOF/upper-L/SW",
+              "role": "upper",
+              "end": 0,
+              "masterNodeId": "SW/collector",
+              "masterXYZMm": [
+                563.6827956989248,
+                563.6827956989248,
+                3170
+              ],
+              "physicalCutXYZMm": [
+                563.6827956989248,
+                563.6827956989248,
+                3370.0
+              ],
+              "rawMasterWrenchKN_KNmm": [
+                21.58183013812328,
+                20.24370121167675,
+                54.658699409725386,
+                -44074.45723613177,
+                48816.59257137368,
+                147.89804879140127
+              ],
+              "equivalentBodyLoadMasterKN_KNmm": [
+                0.0,
+                0.0,
+                -13.929772500000002,
+                -0.0,
+                0.0,
+                0.0
+              ],
+              "forceOnMemberAtPhysicalCutKN_KNm": [
+                21.58183013812328,
+                20.24370121167675,
+                68.58847190972538,
+                -40.02571699379642,
+                44.50022654374903,
+                0.14789804879140125
+              ],
+              "memberOnJointAtReferenceKN_KNm": [
+                -21.58183013812328,
+                -20.24370121167675,
+                -68.58847190972538,
+                44.07445723613177,
+                -48.81659257137368,
+                -0.14789804879140125
+              ]
+            }
+          ],
+          "components": [
+            {
+              "id": "actual-vertical-plate",
+              "originXYZMm": [
+                563.6827956989248,
+                563.6827956989248,
+                3170
+              ],
+              "forceOnComponentKN_KNm": [
+                0.0,
+                0.0,
+                87.00721877117023,
+                78.47348727942334,
+                -73.55375275570266,
+                0.0
+              ],
+              "componentOnJointAtReferenceKN_KNm": [
+                -0.0,
+                -0.0,
+                -87.00721877117023,
+                -78.47348727942334,
+                73.55375275570266,
+                -0.0
+              ]
+            },
+            {
+              "id": "actual-in-plane-membrane",
+              "originXYZMm": [
+                563.6827956989248,
+                563.6827956989248,
+                3170
+              ],
+              "forceOnComponentKN_KNm": [
+                14.046723201132602,
+                13.74307224681364,
+                0.0,
+                -1.374307224681364,
+                1.4046723201132603,
+                -0.12333124726307193
+              ],
+              "componentOnJointAtReferenceKN_KNm": [
+                -14.046723201132602,
+                -13.74307224681364,
+                -0.0,
+                1.374307224681364,
+                -1.4046723201132603,
+                0.12333124726307193
+              ]
+            }
+          ],
+          "directAppliedLoads": [
+            {
+              "id": "physical-G-other-actual-collector-cards",
+              "originXYZMm": [
+                563.6827956989248,
+                563.6827956989248,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                9.094947017729283e-16,
+                -9.094947017729283e-16,
+                0.0
+              ],
+              "loadAtReferenceKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                9.094947017729283e-16,
+                -9.094947017729283e-16,
+                0.0
+              ]
+            },
+            {
+              "id": "source-pressure-explicit-offset-couples",
+              "originXYZMm": [
+                563.6827956989248,
+                563.6827956989248,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "loadAtReferenceKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "id": "fresh-Q-other-actual-collector-cards",
+              "originXYZMm": [
+                563.6827956989248,
+                563.6827956989248,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "loadAtReferenceKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "id": "roof-additional-actual-collector-cards",
+              "originXYZMm": [
+                563.6827956989248,
+                563.6827956989248,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "loadAtReferenceKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          ],
+          "freeBodyResidualKN_KNm": [
+            1.758593271006248e-13,
+            2.4868995751603507e-13,
+            -1.4210854715202004e-13,
+            -4.425135813335146e-13,
+            3.9677239271895814e-13,
+            4.6617328053333296e-11
+          ],
+          "maximumAbsoluteResidualKN_KNm": 4.6617328053333296e-11,
+          "rigidJointConstitutiveAssumptionRetained": true,
+          "finiteJointCapacityAvailable": false,
+          "reinforcementAccepted": false,
+          "candidateAccepted": false
+        },
+        {
+          "id": "SE",
+          "referenceXYZMm": [
+            11436.317204301075,
+            563.6827956989248,
+            3170
+          ],
+          "memberCuts": [
+            {
+              "memberId": "SE/upper-wall",
+              "role": "lower",
+              "end": 1,
+              "masterNodeId": "SE/collector",
+              "masterXYZMm": [
+                11436.317204301075,
+                563.6827956989248,
+                3170
+              ],
+              "physicalCutXYZMm": [
+                11436.317204301075,
+                563.6827956989248,
+                3170
+              ],
+              "rawMasterWrenchKN_KNmm": [
+                -52.12745760960925,
+                -46.581184338995214,
+                -97.59751950016994,
+                23210.918684921395,
+                -30703.392417269904,
+                199.95705931504077
+              ],
+              "equivalentBodyLoadMasterKN_KNmm": [
+                0.0,
+                0.0,
+                -14.061600000000002,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "forceOnMemberAtPhysicalCutKN_KNm": [
+                -52.12745760960925,
+                -46.581184338995214,
+                -83.53591950016994,
+                23.210918684921396,
+                -30.703392417269903,
+                0.19995705931504076
+              ],
+              "memberOnJointAtReferenceKN_KNm": [
+                52.12745760960925,
+                46.581184338995214,
+                83.53591950016994,
+                -23.210918684921396,
+                30.703392417269903,
+                -0.19995705931504076
+              ]
+            },
+            {
+              "memberId": "JOINED-ROOF/upper-L/SE",
+              "role": "upper",
+              "end": 0,
+              "masterNodeId": "SE/collector",
+              "masterXYZMm": [
+                11436.317204301075,
+                563.6827956989248,
+                3170
+              ],
+              "physicalCutXYZMm": [
+                11436.317204301075,
+                563.6827956989248,
+                3370.0
+              ],
+              "rawMasterWrenchKN_KNmm": [
+                24.09855258019121,
+                33.62472130884703,
+                42.64908433069104,
+                -98011.25633546012,
+                73466.9616195315,
+                814.571870582169
+              ],
+              "equivalentBodyLoadMasterKN_KNmm": [
+                0.0,
+                0.0,
+                -13.929772500000002,
+                -0.0,
+                0.0,
+                0.0
+              ],
+              "forceOnMemberAtPhysicalCutKN_KNm": [
+                24.09855258019121,
+                33.62472130884703,
+                56.57885683069104,
+                -91.28631207369071,
+                68.64725110349326,
+                0.8145718705821691
+              ],
+              "memberOnJointAtReferenceKN_KNm": [
+                -24.09855258019121,
+                -33.62472130884703,
+                -56.57885683069104,
+                98.01125633546012,
+                -73.4669616195315,
+                -0.8145718705821691
+              ]
+            }
+          ],
+          "components": [
+            {
+              "id": "actual-vertical-plate",
+              "originXYZMm": [
+                11436.317204301075,
+                563.6827956989248,
+                3170
+              ],
+              "forceOnComponentKN_KNm": [
+                0.0,
+                0.0,
+                26.95706266947849,
+                76.09598395355356,
+                -50.295509705204495,
+                0.0
+              ],
+              "componentOnJointAtReferenceKN_KNm": [
+                -0.0,
+                -0.0,
+                -26.95706266947849,
+                -76.09598395355356,
+                50.295509705204495,
+                -0.0
+              ]
+            },
+            {
+              "id": "actual-in-plane-membrane",
+              "originXYZMm": [
+                11436.317204301075,
+                563.6827956989248,
+                3170
+              ],
+              "forceOnComponentKN_KNm": [
+                28.028905029772822,
+                12.956463030147578,
+                0.0,
+                -1.2956463030147578,
+                2.802890502977282,
+                -1.0145289297989497
+              ],
+              "componentOnJointAtReferenceKN_KNm": [
+                -28.028905029772822,
+                -12.956463030147578,
+                -0.0,
+                1.2956463030147578,
+                -2.802890502977282,
+                1.0145289297989497
+              ]
+            }
+          ],
+          "directAppliedLoads": [
+            {
+              "id": "physical-G-other-actual-collector-cards",
+              "originXYZMm": [
+                11436.317204301075,
+                563.6827956989248,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                1.7763568394002505e-15,
+                -4.547473508864641e-16,
+                4.547473508864641e-16,
+                0.0
+              ],
+              "loadAtReferenceKN_KNm": [
+                0.0,
+                0.0,
+                1.7763568394002505e-15,
+                -4.547473508864641e-16,
+                4.547473508864641e-16,
+                0.0
+              ]
+            },
+            {
+              "id": "source-pressure-explicit-offset-couples",
+              "originXYZMm": [
+                11436.317204301075,
+                563.6827956989248,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -4.72905,
+                0.0
+              ],
+              "loadAtReferenceKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -4.72905,
+                0.0
+              ]
+            },
+            {
+              "id": "fresh-Q-other-actual-collector-cards",
+              "originXYZMm": [
+                11436.317204301075,
+                563.6827956989248,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "loadAtReferenceKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "id": "roof-additional-actual-collector-cards",
+              "originXYZMm": [
+                11436.317204301075,
+                563.6827956989248,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "loadAtReferenceKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          ],
+          "freeBodyResidualKN_KNm": [
+            -3.547810933923756e-10,
+            6.075140390748857e-13,
+            4.1389114358025836e-13,
+            -7.683809144509723e-14,
+            -3.438670503896901e-11,
+            -9.826012226099579e-11
+          ],
+          "maximumAbsoluteResidualKN_KNm": 3.547810933923756e-10,
+          "rigidJointConstitutiveAssumptionRetained": true,
+          "finiteJointCapacityAvailable": false,
+          "reinforcementAccepted": false,
+          "candidateAccepted": false
+        },
+        {
+          "id": "NW",
+          "referenceXYZMm": [
+            584.7222222222222,
+            11415.277777777777,
+            3170
+          ],
+          "memberCuts": [
+            {
+              "memberId": "NW/upper-wall",
+              "role": "lower",
+              "end": 1,
+              "masterNodeId": "NW/collector",
+              "masterXYZMm": [
+                584.7222222222222,
+                11415.277777777777,
+                3170
+              ],
+              "physicalCutXYZMm": [
+                584.7222222222222,
+                11415.277777777777,
+                3170
+              ],
+              "rawMasterWrenchKN_KNmm": [
+                -40.0377376312762,
+                -41.040027144758454,
+                -128.61152170089224,
+                45075.02411270955,
+                -27167.73866871692,
+                -80.19847967385147
+              ],
+              "equivalentBodyLoadMasterKN_KNmm": [
+                0.0,
+                0.0,
+                -19.439999999999998,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "forceOnMemberAtPhysicalCutKN_KNm": [
+                -40.0377376312762,
+                -41.040027144758454,
+                -109.17152170089224,
+                45.07502411270955,
+                -27.167738668716922,
+                -0.08019847967385146
+              ],
+              "memberOnJointAtReferenceKN_KNm": [
+                40.0377376312762,
+                41.040027144758454,
+                109.17152170089224,
+                -45.07502411270955,
+                27.167738668716922,
+                0.08019847967385146
+              ]
+            },
+            {
+              "memberId": "JOINED-ROOF/upper-L/NW",
+              "role": "upper",
+              "end": 0,
+              "masterNodeId": "NW/collector",
+              "masterXYZMm": [
+                584.7222222222222,
+                11415.277777777777,
+                3170
+              ],
+              "physicalCutXYZMm": [
+                584.7222222222222,
+                11415.277777777777,
+                3370.0
+              ],
+              "rawMasterWrenchKN_KNmm": [
+                33.75391518051629,
+                25.540293920779163,
+                44.07445001318911,
+                -74458.57085510367,
+                103651.51870257582,
+                -1533.4588370803608
+              ],
+              "equivalentBodyLoadMasterKN_KNmm": [
+                0.0,
+                0.0,
+                -19.25775,
+                -0.0,
+                0.0,
+                0.0
+              ],
+              "forceOnMemberAtPhysicalCutKN_KNm": [
+                33.75391518051629,
+                25.540293920779163,
+                63.33220001318911,
+                -69.35051207094783,
+                96.90073566647256,
+                -1.5334588370803608
+              ],
+              "memberOnJointAtReferenceKN_KNm": [
+                -33.75391518051629,
+                -25.540293920779163,
+                -63.33220001318911,
+                74.45857085510366,
+                -103.65151870257581,
+                1.5334588370803608
+              ]
+            }
+          ],
+          "components": [
+            {
+              "id": "actual-vertical-plate",
+              "originXYZMm": [
+                584.7222222222222,
+                11415.277777777777,
+                3170
+              ],
+              "forceOnComponentKN_KNm": [
+                0.0,
+                0.0,
+                45.83932168770333,
+                34.371615689790154,
+                -77.11216227893264,
+                0.0
+              ],
+              "componentOnJointAtReferenceKN_KNm": [
+                -0.0,
+                -0.0,
+                -45.83932168770333,
+                -34.371615689790154,
+                77.11216227893264,
+                -0.0
+              ]
+            },
+            {
+              "id": "actual-in-plane-membrane",
+              "originXYZMm": [
+                584.7222222222222,
+                11415.277777777777,
+                3170
+              ],
+              "forceOnComponentKN_KNm": [
+                6.283822450759356,
+                15.499733223979542,
+                0.0,
+                -1.5499733223979542,
+                0.6283822450759355,
+                1.6136573166998578
+              ],
+              "componentOnJointAtReferenceKN_KNm": [
+                -6.283822450759356,
+                -15.499733223979542,
+                -0.0,
+                1.5499733223979542,
+                -0.6283822450759355,
+                -1.6136573166998578
+              ]
+            }
+          ],
+          "directAppliedLoads": [
+            {
+              "id": "physical-G-other-actual-collector-cards",
+              "originXYZMm": [
+                584.7222222222222,
+                11415.277777777777,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                -1.4210854715202004e-14,
+                1.8189894035458565e-15,
+                -9.094947017729283e-16,
+                0.0
+              ],
+              "loadAtReferenceKN_KNm": [
+                0.0,
+                0.0,
+                -1.4210854715202004e-14,
+                1.8189894035458565e-15,
+                -9.094947017729283e-16,
+                0.0
+              ]
+            },
+            {
+              "id": "source-pressure-explicit-offset-couples",
+              "originXYZMm": [
+                584.7222222222222,
+                11415.277777777777,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                3.4380956250000008,
+                0.0,
+                -4.547473508864641e-16
+              ],
+              "loadAtReferenceKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                3.4380956250000008,
+                0.0,
+                -4.547473508864641e-16
+              ]
+            },
+            {
+              "id": "fresh-Q-other-actual-collector-cards",
+              "originXYZMm": [
+                584.7222222222222,
+                11415.277777777777,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "loadAtReferenceKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "id": "roof-additional-actual-collector-cards",
+              "originXYZMm": [
+                584.7222222222222,
+                11415.277777777777,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "loadAtReferenceKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          ],
+          "freeBodyResidualKN_KNm": [
+            5.577760475716786e-13,
+            -2.504663143554353e-13,
+            -2.1316282072803006e-13,
+            1.912290770178515e-12,
+            -2.1847181841394557e-12,
+            5.435401062570122e-11
+          ],
+          "maximumAbsoluteResidualKN_KNm": 5.435401062570122e-11,
+          "rigidJointConstitutiveAssumptionRetained": true,
+          "finiteJointCapacityAvailable": false,
+          "reinforcementAccepted": false,
+          "candidateAccepted": false
+        },
+        {
+          "id": "NE",
+          "referenceXYZMm": [
+            11415.277777777777,
+            11415.277777777777,
+            3170
+          ],
+          "memberCuts": [
+            {
+              "memberId": "NE/upper-wall",
+              "role": "lower",
+              "end": 1,
+              "masterNodeId": "NE/collector",
+              "masterXYZMm": [
+                11415.277777777777,
+                11415.277777777777,
+                3170
+              ],
+              "physicalCutXYZMm": [
+                11415.277777777777,
+                11415.277777777777,
+                3170
+              ],
+              "rawMasterWrenchKN_KNmm": [
+                -15.402870775438828,
+                -25.977251577109044,
+                -79.52813645611644,
+                -1.5937007134780288,
+                -7090.331118729868,
+                -182.19929120940313
+              ],
+              "equivalentBodyLoadMasterKN_KNmm": [
+                0.0,
+                0.0,
+                -19.439999999999998,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "forceOnMemberAtPhysicalCutKN_KNm": [
+                -15.402870775438828,
+                -25.977251577109044,
+                -60.088136456116445,
+                -0.0015937007134780288,
+                -7.090331118729868,
+                -0.18219929120940312
+              ],
+              "memberOnJointAtReferenceKN_KNm": [
+                15.402870775438828,
+                25.977251577109044,
+                60.088136456116445,
+                0.0015937007134780288,
+                7.090331118729868,
+                0.18219929120940312
+              ]
+            },
+            {
+              "memberId": "JOINED-ROOF/upper-L/NE",
+              "role": "upper",
+              "end": 0,
+              "masterNodeId": "NE/collector",
+              "masterXYZMm": [
+                11415.277777777777,
+                11415.277777777777,
+                3170
+              ],
+              "physicalCutXYZMm": [
+                11415.277777777777,
+                11415.277777777777,
+                3370.0
+              ],
+              "rawMasterWrenchKN_KNmm": [
+                12.73124453666236,
+                12.756825993141206,
+                31.647490793201086,
+                -21073.491710377508,
+                23124.775954933022,
+                450.55088423189216
+              ],
+              "equivalentBodyLoadMasterKN_KNmm": [
+                0.0,
+                0.0,
+                -19.25775,
+                -0.0,
+                0.0,
+                0.0
+              ],
+              "forceOnMemberAtPhysicalCutKN_KNm": [
+                12.73124453666236,
+                12.756825993141206,
+                50.90524079320109,
+                -18.522126511749263,
+                20.57852704760055,
+                0.45055088423189216
+              ],
+              "memberOnJointAtReferenceKN_KNm": [
+                -12.73124453666236,
+                -12.756825993141206,
+                -50.90524079320109,
+                21.073491710377503,
+                -23.12477595493302,
+                -0.45055088423189216
+              ]
+            }
+          ],
+          "components": [
+            {
+              "id": "actual-vertical-plate",
+              "originXYZMm": [
+                11415.277777777777,
+                11415.277777777777,
+                3170
+              ],
+              "forceOnComponentKN_KNm": [
+                0.0,
+                0.0,
+                9.182895662915321,
+                25.83522359448538,
+                -21.030657460081876,
+                0.0
+              ],
+              "componentOnJointAtReferenceKN_KNm": [
+                -0.0,
+                -0.0,
+                -9.182895662915321,
+                -25.83522359448538,
+                21.030657460081876,
+                -0.0
+              ]
+            },
+            {
+              "id": "actual-in-plane-membrane",
+              "originXYZMm": [
+                11415.277777777777,
+                11415.277777777777,
+                3170
+              ],
+              "forceOnComponentKN_KNm": [
+                2.6716262329772817,
+                13.220425582049355,
+                0.0,
+                -1.3220425582049353,
+                0.26716262329772816,
+                -0.268351592074477
+              ],
+              "componentOnJointAtReferenceKN_KNm": [
+                -2.6716262329772817,
+                -13.220425582049355,
+                -0.0,
+                1.3220425582049353,
+                -0.26716262329772816,
+                0.268351592074477
+              ]
+            }
+          ],
+          "directAppliedLoads": [
+            {
+              "id": "physical-G-other-actual-collector-cards",
+              "originXYZMm": [
+                11415.277777777777,
+                11415.277777777777,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                -7.105427357601002e-15,
+                -1.8189894035458565e-15,
+                9.094947017729283e-16,
+                0.0
+              ],
+              "loadAtReferenceKN_KNm": [
+                0.0,
+                0.0,
+                -7.105427357601002e-15,
+                -1.8189894035458565e-15,
+                9.094947017729283e-16,
+                0.0
+              ]
+            },
+            {
+              "id": "source-pressure-explicit-offset-couples",
+              "originXYZMm": [
+                11415.277777777777,
+                11415.277777777777,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                3.4380956250000003,
+                -4.72905,
+                0.0
+              ],
+              "loadAtReferenceKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                3.4380956250000003,
+                -4.72905,
+                0.0
+              ]
+            },
+            {
+              "id": "fresh-Q-other-actual-collector-cards",
+              "originXYZMm": [
+                11415.277777777777,
+                11415.277777777777,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "loadAtReferenceKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "id": "roof-additional-actual-collector-cards",
+              "originXYZMm": [
+                11415.277777777777,
+                11415.277777777777,
+                3170
+              ],
+              "wrenchKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "loadAtReferenceKN_KNm": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          ],
+          "freeBodyResidualKN_KNm": [
+            5.7991869084617065e-09,
+            1.9184831501206645e-09,
+            2.842170943040401e-14,
+            -1.8946587584597886e-10,
+            5.809955507807274e-10,
+            -9.480120299887318e-10
+          ],
+          "maximumAbsoluteResidualKN_KNm": 5.7991869084617065e-09,
+          "rigidJointConstitutiveAssumptionRetained": true,
+          "finiteJointCapacityAvailable": false,
+          "reinforcementAccepted": false,
+          "candidateAccepted": false
+        }
+      ],
+      "maximumAbsoluteResidualKN_KNm": 5.7991869084617065e-09,
+      "finiteJointCapacityAvailable": false,
+      "completeHouseProof": false,
+      "candidateAccepted": false
+    }
+  },
+  "diagnostic": "Actual solve completed190.03871618s and four rigid-joint free bodies close, but the process omitted the project single-thread numerical runtime convention. Strict full-result/head/cut equality failed. This is retained rejected experiment evidence, not an admitted joint demand or finite joint capacity. A new matched single-thread run must retain complete bytes before verification."
+}

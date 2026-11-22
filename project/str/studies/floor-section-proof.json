@@ -56,7 +56,7 @@
     "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
     "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
     "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-    "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+    "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
     "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
     "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
   },
@@ -120,7 +120,7 @@
           "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
           "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
           "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-          "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+          "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
           "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
           "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
         },
@@ -939,7 +939,7 @@
         "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
         "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
         "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-        "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+        "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
         "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
         "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
       },
@@ -2766,7 +2766,7 @@
           "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
           "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
           "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-          "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+          "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
           "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
           "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
         },
@@ -3585,7 +3585,7 @@
         "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
         "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
         "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-        "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+        "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
         "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
         "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
       },
@@ -5412,7 +5412,7 @@
           "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
           "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
           "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-          "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+          "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
           "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
           "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
         },
@@ -6231,7 +6231,7 @@
         "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
         "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
         "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-        "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+        "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
         "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
         "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
       },
@@ -8058,7 +8058,7 @@
           "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
           "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
           "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-          "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+          "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
           "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
           "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
         },
@@ -8912,7 +8912,7 @@
         "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
         "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
         "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-        "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+        "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
         "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
         "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
       },
@@ -39662,7 +39662,7 @@
           "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
           "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
           "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-          "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+          "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
           "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
           "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
         },
@@ -40516,7 +40516,7 @@
         "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
         "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
         "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-        "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+        "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
         "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
         "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
       },
@@ -71283,7 +71283,7 @@
           "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
           "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
           "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-          "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+          "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
           "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
           "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
         },
@@ -72137,7 +72137,7 @@
         "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
         "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
         "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-        "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+        "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
         "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
         "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
       },
@@ -104344,7 +104344,7 @@
           "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
           "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
           "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-          "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+          "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
           "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
           "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
         },
@@ -105311,7 +105311,7 @@
         "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
         "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
         "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-        "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+        "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
         "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
         "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
       },
@@ -137467,7 +137467,7 @@
           "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
           "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
           "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-          "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+          "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
           "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
           "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
         },
@@ -138434,7 +138434,7 @@
         "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
         "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
         "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-        "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+        "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
         "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
         "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
       },
@@ -170641,7 +170641,7 @@
           "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
           "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
           "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-          "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+          "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
           "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
           "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
         },
@@ -171495,7 +171495,7 @@
         "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
         "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
         "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-        "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+        "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
         "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
         "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
       },
@@ -203685,7 +203685,7 @@
           "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
           "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
           "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-          "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+          "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
           "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
           "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
         },
@@ -204539,7 +204539,7 @@
         "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
         "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
         "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-        "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+        "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
         "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
         "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
       },
@@ -236729,7 +236729,7 @@
           "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
           "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
           "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-          "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+          "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
           "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
           "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
         },
@@ -237548,7 +237548,7 @@
         "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
         "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
         "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-        "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+        "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
         "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
         "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
       },
@@ -239317,19 +239317,19 @@
       "maximum52HeadComponentDeltaFromBaseline": 0.0
     }
   ],
-  "fullCaptureSourceIdentityDigest": "147fdd255ea081e8eff05768d8c34efb6ed658c33d97894d1e17044d2a94c48b",
+  "fullCaptureSourceIdentityDigest": "f25a58d9e517a13fc7b04d52685a750e8d5ef9d43b579883ba55fb699e5e7d88",
   "fullResultCaptureSHA256ByCase": {
-    "current200": "8b234b83183d28c5db2bb1f1eefb6779254dddc8c786d6d5c73774aae18e6995",
-    "matched200-G135-Q2-rho27": "ea83b05f528b6c2616ee177fa44e6a35f5c038380f7762ca4c9195de4f49838f",
-    "matched250-G135-Q2-rho27": "524e168b04a47d1ab615220f3ba8914b302d90ef6cc4d558bb62431885a1c5b3",
-    "wet-aligned-G135-Q2-rho27": "25eb3e45c0cbdd8afbbed90d37bd7c2b9f6b6483e66469f714876903e0855af4",
-    "wet-south-pad-north160": "fd8802751287734fa0d3745fa9600e30bce2f862f7e34401034b4390677a9985",
-    "wet-shifted-quadrature8": "35ec6ce62cf309ca5731a3e1663ad039a849eb5e2571c6aa41ed756ad3aedd06",
-    "wet-zeroG-roof-suction": "480c50b0cf958534252ecf46f03c8c3e221caba0da5c622206faba0182476819",
-    "wet-heavy-roof3": "d52e18050eccdf9a7b79967709f71cf84a2fb748e443445eba6fff1bcc7b3f70",
-    "wet-aligned-quadrature8": "5f12af2343027548c4a0916d5c087a1234f4a2a1c24017cc5bd5400740d8dbba",
-    "wet-aligned-concrete27": "a3fa67978070ee76021d15683a1f3964d8a25f7510ae6a23cf1cbd2797494a50",
-    "restored200": "3ded67e279869260c49bb0fcda146f16ccf9c88b66e17a9e4e491bf0cf383da1"
+    "current200": "2323d51ddcbef4a2040142644de2108fa6dd3681cc7eb1d83da2a557362e90c3",
+    "matched200-G135-Q2-rho27": "ccee00e0bf7c50b0504ba87cd5b4446f01f908a2ecaa85178cc339c222d25995",
+    "matched250-G135-Q2-rho27": "e224737b89dea1d7bbda85689f540b082d424a5ad5f7ab7521f1b8f4552ed0d0",
+    "wet-aligned-G135-Q2-rho27": "bc0b157abe068a54cc5fcebb071150b20df6f779148f75720d2612d1d8726daf",
+    "wet-south-pad-north160": "408b759f654e7d7c393c6721348327391205b01b5e215d488b12c6fb909ffb32",
+    "wet-shifted-quadrature8": "6a2b43867d4c88aabb8ee9c1e7cda8a9b76038018c9e7b97dfaeca6940dec25e",
+    "wet-zeroG-roof-suction": "99a52f542b001aa97d5a0aa8ebd1f0114e2fb3764e697bee861608a68abd1cf8",
+    "wet-heavy-roof3": "68bddf16d82f792d1b20d2827e36627621a1e2cff17a3e58bb5cfad7cc010b8f",
+    "wet-aligned-quadrature8": "e20abd0f305c963a250acd3e0857079dccc9ed851bf39e43b2e41bf531a6b5ff",
+    "wet-aligned-concrete27": "250e0ea17cbda4a0568296fdce2d70947f1f39e09cd774943a48260cccb82fc2",
+    "restored200": "e05c9e6126f6969ceb9a6c7c840ed46b2b2bc1667085988856565e42880eeee5"
   },
   "fullCaptureScope": "Complete native responses are retained separately during execution for recovery. This canonical receipt retains complete authored inputs, source identities, actual52head values, source-wrench/contact/reversal checks and full-response checksums; rerun the same source-bound native method for complete fields.",
   "executionFailureHistory": [

@@ -1,4 +1,5 @@
 import { execFileSync } from 'node:child_process'
+import { runWetBearingContactAnalysis, wetBearingConsumerPaths } from './structural-wet-bearing.js'
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
@@ -9,6 +10,7 @@ import { readFloorSectionCuts, recoverFloorSectionCuts, type FloorBendingField }
 import { recoverFloorTransverseShear, recoverFloorTransverseCuts } from './structural-floor-transverse.js'
 import { floorInterfaceConsumerPaths, runFloorCornerInterfaceRecovery } from './structural-floor-interface-adapter.js'
 import { readWetSupportCageDefaults, runWetSupportCageComparison, validateWetSupportCageChoices, wetSupportCageConsumerPaths, type WetSupportCageChoices } from './structural-wet-support-cage.js'
+import { fourLJointConsumerPaths, runFloorNativeWithFourLJointCapability } from './structural-four-l-joint-adapter.js'
 
 const root = new URL('../../../', import.meta.url)
 const methodPath = 'project/str/studies/floor_section_model.py'
@@ -95,7 +97,7 @@ function currentBinding(resolved: CurrentDesignResolution) {
     { encoding: 'utf8', maxBuffer: 8 * 1024 * 1024 })) as NativeCase
   if (comparison.schema !== 'str-coupled-floor-section-case/1' || !record(comparison.sourceSHA256)
     || Object.keys(comparison.sourceSHA256).length !== 58) throw new Error('Floor-section source contract changed; integrate explicitly')
-  const inputs = Object.fromEntries([...Object.keys(comparison.sourceSHA256), adapterPath, cutsPath, transversePath, ...floorInterfaceConsumerPaths, ...wetSupportCageConsumerPaths].map(path => {
+  const inputs = Object.fromEntries([...Object.keys(comparison.sourceSHA256), adapterPath, cutsPath, transversePath, ...floorInterfaceConsumerPaths, ...wetSupportCageConsumerPaths, ...wetBearingConsumerPaths, ...fourLJointConsumerPaths].map(path => {
     const bytes = readFileSync(new URL(path, root))
     const blob = createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')
     if (owner.identities[path] !== blob || (Object.hasOwn(comparison.sourceSHA256, path)
@@ -138,10 +140,11 @@ export function runFloorSectionCase(resolved: CurrentDesignResolution, input: un
   const sectionCuts = readFloorSectionCuts(input.sectionCuts)
   const cageChoices = input.cageComparison === null ? null : validateWetSupportCageChoices(input.cageComparison)
   if (cageChoices && !record(input.comparison.wetSupport)) throw new Error('An explicit actual wet support is required before selecting its cage comparison')
-  const output = JSON.parse(execFileSync('python3', ['-B', fileURLToPath(new URL(methodPath, root))], {
+  const jointExecution = runFloorNativeWithFourLJointCapability(input.comparison, input.caseId, () => JSON.parse(execFileSync('python3', ['-B', fileURLToPath(new URL(methodPath, root))], {
     input: JSON.stringify({ case: input.comparison, name: input.caseId }), encoding: 'utf8', maxBuffer: 128 * 1024 * 1024,
     env: { ...process.env, OPENBLAS_NUM_THREADS: '1', OMP_NUM_THREADS: '1' },
-  })) as NativeResult
+  })))
+  const output = jointExecution.nativeResult as NativeResult
   const vertical = output.nativeVertical, section = output.floorSection
   const grid = JSON.parse(readFileSync(new URL('project/str/studies/current-house-grid.json', root), 'utf8')) as { heads: { id: string }[] }
   if (output.schema !== 'str-coupled-floor-section-result/1' || !same(output.sourceSHA256, current.comparison.sourceSHA256)
@@ -205,6 +208,7 @@ export function runFloorSectionCase(resolved: CurrentDesignResolution, input: un
       additionalSolids.push({ id: `STR/wet-wall-support/post/${i}`, boxXYZMm: [r[0]!,r[1]!,post.physicalBottomZMm as number,r[2]!,r[3]!,post.physicalTopZMm as number] })
     }
   }
+  const wetBearingContact = wet ? runWetBearingContactAnalysis(output) : null
   const cageComparison = cageChoices ? runWetSupportCageComparison(output, cageChoices) : null
   const plateTransverseShear = recoverFloorTransverseShear(vertical)
   const cornerInterfaces = runFloorCornerInterfaceRecovery(output)
@@ -216,8 +220,8 @@ export function runFloorSectionCase(resolved: CurrentDesignResolution, input: un
     method: { id: 'str-current-floor-section/1', path: methodPath, inputs: current.inputs },
     native: vertical.native, vertical, floorSection: section, cageComparison, upperMasonry: output.upperMasonry,
     mass: output.mass, plateBending: output.plateBending, sectionCuts: recoverFloorSectionCuts(output.plateBending as FloorBendingField, sectionCuts),
-    plateTransverseShear, transverseSectionCuts:recoverFloorTransverseCuts(plateTransverseShear,sectionCuts), cornerInterfaces, floorReinforcement: output.floorReinforcement,
-    roofCoupling: output.roofCoupling, ...(output.seatedWetSupport ? { seatedWetSupport: output.seatedWetSupport,
+    plateTransverseShear, transverseSectionCuts:recoverFloorTransverseCuts(plateTransverseShear,sectionCuts), cornerInterfaces, fourLJointDemands: jointExecution.jointDemands, floorReinforcement: output.floorReinforcement,
+    roofCoupling: output.roofCoupling, ...(output.seatedWetSupport ? { seatedWetSupport: output.seatedWetSupport, wetBearingContact,
       wetBeamCutRecovery: { status: 'computed-discrete-element-cuts' as const,
         physicalBeamCutsAvailable: true as const, completeBeamDemandEnvelopeAvailable: false as const,
         scope: 'Actual plate/membrane attachment stations are real beam nodes, and executed discrete beam cuts are recovered. The full load envelope, bearing stress spreading and resistance remain unqualified; receiving-grid discrete cuts have their own explicit scope.' } , wetGridCutRecovery: {
@@ -226,7 +230,7 @@ export function runFloorSectionCase(resolved: CurrentDesignResolution, input: un
         physicalElementCutsAvailable: (output.seatedWetSupport as Record<string, any>).receivingGridCuts.physicalElementCutsAvailable as boolean,
         completeGridDemandEnvelopeAvailable: false as const,
         scope: 'Only the two actual wet-post receiving members in this executed discrete case. Full signed demand, local3D joint/cage and foundation/site resistance remain unqualified.' } } : {}), drawings: output.drawings, floorSvg: output.drawings['floor-section-floor.svg'],
-    servicePenetrations, diagnostics: output.diagnostics, evidence: { state: 'unselected-actual-section-replacement' as const,
+    servicePenetrations, diagnostics: [...(output.diagnostics as unknown[]), ...(wetBearingContact?.diagnostics ?? []), ...jointExecution.jointDemands.diagnostics], evidence: { state: 'unselected-actual-section-replacement' as const,
       candidateAccepted: false as const, completeHouseProof: false as const, installedAcceptance: false as const,
       scope: 'Actual plate and membrane reassembly, work maps, upper body starts, self-weight and recovery at the authored thickness. Finish, FFL, stairs, services, aerodynamic tributaries, local stress convergence, reinforcement and joints remain unqualified.' } }
 }
