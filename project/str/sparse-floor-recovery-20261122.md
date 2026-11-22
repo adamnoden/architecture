@@ -59,3 +59,7 @@ The symmetric no-pivot global benchmark and interior-policy benchmark were never
 4. Choose the simplest demonstrated numerical change, then complete the actual250 nonlinear house solve. Regenerate all dependent ancestor/current proofs, source-account witnesses and profile joins on the exact final source. Run exact-head CI and canonical publication preflight before any main merge.
 5. Retain the failed700-to500 fixed-cut screen (15.4066067% maximum cut difference,1.68660862035kN/kNm head change) and existing0.1/5% limits. The250mm slab-thickness comparison remains unselected; numerical250 here denotes mesh pitch.
 6. Complete cage mass feedback/anchorage/D-regions, contact/support qualification, raised-floor structural replay, foundation resistance and the actual coordinated house. None is closed by this checkpoint.
+
+## Additional retained observer identities
+
+Observer script SHA256 `81d3f536b4be160cb7dc6c50be45b7f8ad641cae13e1f02ae75809f33c256308`; events SHA256 `bd41da0d55bb15d080c5309d951592e9ed11a47f9427c23566e701d059bf4891`. Benchmark completion was recorded at2026-11-22T00:36:42.831903+00:00. Its factor-only elapsed time was2.461716754s with296560KiB RSS at that observation; full benchmark peak and residuals are recorded above. Benchmark source script was `/tmp/ovid-factor-order-benchmark.py`; it too is local-only. The earlier observer session62526 was interrupted7.536s into initial factorisation by a separate environment interruption; it is distinct from both the completed observer and the committed native SIGKILL histories.
