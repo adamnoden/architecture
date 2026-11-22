@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 55,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "cc0f34b3-6b3d-4fab-8e8d-f83c5d89ea10",
   "holder": {
     "kind": "chatgpt",
     "label": "convergence-20261122-primary"
   },
   "claimedAt": "2026-11-22T17:41:01.835Z",
-  "heartbeatAt": "2026-11-22T18:59:22.328Z",
-  "expiresAt": "2026-11-22T19:44:22.328Z",
+  "heartbeatAt": "2026-11-22T18:59:33.509Z",
+  "expiresAt": "2026-11-22T18:59:33.509Z",
   "checkpoint": {
     "evidence": "MERGED1618 main0bdbfaaad08331a4f3f33fe35aa10d1320b3059f; all20exact-headCI and3preflights passed. Durable handoff618481bf8ac92101881fee82b1b3220fd88eac69; STR contact/book sourceee7; finaljointrepair28dcb24a passes2freshproductioncalls; preparedexperiment doc7a5f0f57 is not validated code.",
     "next": "Fresh main/graph/occupancy then new claim; recover combined HADc78bb8d6, IAS8f12c01e, HADbrowserae142435, apply joint28dcb; genuine source-account/receipt regen, exact-head fullCI/realbrowser/publication preflight then merge. No secondbatchPR yet.",
@@ -38,5 +38,7 @@
       "next": "Release gen54 merged increment, freshclaim STR continuation on currentmain, coordinate next integrated house/book review batch",
       "blocker": "STR packet still planned: complete signed envelope, finitejoint capacity, physical bearing and house selection remain unresolved"
     }
-  }
+  },
+  "releasedAt": "2026-11-22T18:59:33.509Z",
+  "releaseReason": "handoff"
 }
