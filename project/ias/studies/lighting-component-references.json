@@ -22,7 +22,14 @@
     "heightMm": 72,
     "depthMm": 47,
     "entryNominalMm": 20,
-    "materialAdmission": "NOT_ADMITTED: steel and earth terminal described; coating, fittings, bushes and assembly constituents require admission."
+    "materialAdmission": "NOT_ADMITTED: steel and earth terminal described; coating, fittings, bushes and assembly constituents require admission.",
+    "entryGeometryEvidence": {
+      "source": "https://res.cloudinary.com/lu1/fl_attachment:BG_SPCDOC_EN_20230124AQ_Steel-Knockout-Boxes/665146/Original.pdf",
+      "checkedDate": "2026-11-22",
+      "page": 2,
+      "retrievedSHA256": "f35f5c4a73ed1c1e730c2a6048fceb52053d39e0c5d4753205c0fd105aafaa2c",
+      "finding": "HGS06 line diagrams show offset side knockouts. No dimensioned knockout coordinates establish the legacy centred entries. Envelope reference only; no actual connection pass."
+    }
   },
   "plug": {
     "manufacturer": "ML Accessories",
@@ -123,5 +130,21 @@
     "fixedIslandHeightMm": 100,
     "entryCollarOutsideDiameterMm": 30,
     "entryCollarAxialLengthMm": 30
+  },
+  "commonDepthCornerCandidate": {
+    "schema": "ias-common-depth-corner-choices/1",
+    "units": "mm",
+    "enclosureWidthMm": 180,
+    "enclosureHeightMm": 200,
+    "shellThicknessMm": 2,
+    "internalPortProjectionMm": 15,
+    "firstNormalDrawMm": 75,
+    "secondaryRestSizeMm": 200,
+    "secondaryRestGapMm": 50,
+    "secondaryRestSideGapMm": 15,
+    "maximumEnclosureMassKg": 3,
+    "fixingEdgeMm": 25,
+    "fixingHoleDiameterMm": 5,
+    "maximumClipSpanMm": 300
   }
 }
