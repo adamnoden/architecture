@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-ROOM-LIGHTING",
   "generation": 4,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "26712064-31c6-4c7b-ac68-dc22f8a4423b",
   "holder": {
     "kind": "chatgpt",
     "label": "convergence-lighting-review-20261122"
   },
   "claimedAt": "2026-11-22T14:35:58.888Z",
-  "heartbeatAt": "2026-11-22T17:44:53.404Z",
-  "expiresAt": "2026-11-22T18:29:53.404Z",
+  "heartbeatAt": "2026-11-22T17:45:21.924Z",
+  "expiresAt": "2026-11-22T17:45:21.924Z",
   "branch": "work/convergence-primary-20261122",
   "predecessor": {
     "leaseId": "3cec4ae0-f28f-47a4-b739-ca8b4bc3e962",
@@ -38,5 +38,7 @@
     "evidence": "Verified PR1618 merged at main 0bdbfaaad08331a4f3f33fe35aa10d1320b3059f, submitted head 890379a22e3515aca747dfaddab08755be0c4414 passed all20 workflows and fresh IAS preflight. Unselected successor preserved at recovery/lighting-common-depth-20261122 head cd3d23c3294e0958068ad939d8533f17c9779ff3; geometry/comparison only, not actual product/circuit/renewal acceptance",
     "next": "Release this merged cycle as handoff; fresh-main directed claim before coordinating successor onto work/convergence-integrated-house-20261122 with current source/evidence regeneration"
   },
-  "pr": 1618
+  "pr": 1618,
+  "releasedAt": "2026-11-22T17:45:21.924Z",
+  "releaseReason": "handoff"
 }
